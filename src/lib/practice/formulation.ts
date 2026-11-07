@@ -1,8 +1,8 @@
 /**
- * Formulation Forge (Part 6.2) — 5P grid.
+ * Formulation Forge (Part 6.2): 5P grid.
  * Presenting / Predisposing / Precipitating / Perpetuating / Protective.
  * Stage 1: sort factor cards (with distractors that belong nowhere).
- * Stage 2: write the narrative. Stage 3: diff against the model — a diff, not
+ * Stage 2: write the narrative. Stage 3: diff against the model, a diff, not
  * a grade. Stage 4: extract factors from a raw transcript (their own CR turn).
  *
  * Mobile: tap-to-select-then-tap-to-place fallback for drag-and-drop.
@@ -20,7 +20,7 @@ export interface FormulationFactor {
 /** A seed case with model answer (Dr. Sarthak's formulation). */
 export const SEED_FORMULATION = {
   id: "form-1",
-  title: "Ravi — 'the heaviness' (somatic depression)",
+  title: "Ravi: 'the heaviness' (somatic depression)",
   prompt: "Sort the factors into the 5P grid. Leave distractors out.",
   factors: [
     { id: "f1", text: "Body ache, heaviness, poor sleep, 6kg weight loss", bucket: "presenting" as const },
@@ -35,7 +35,7 @@ export const SEED_FORMULATION = {
     { id: "f10", text: "Two-year help-seeking delay before any mental-health contact", bucket: "perpetuating" as const },
   ],
   modelNarrative:
-    "Ravi presents with somatic depression: 8 months of body ache, broken sleep and weight loss following a promotion that added night shifts (precipitant). A family history of paternal 'nervous breakdown' and a core belief of failing his family (predisposing) shape his coping: he avoids disclosing distress and keeps working through exhaustion (perpetuating), and a two-year help-seeking delay reinforced it. Protective factors include a supportive wife and stable employment. The formulation explains why he presents somatically — the heaviness is the only acceptable language his belief system permits for distress.",
+    "Ravi presents with somatic depression: 8 months of body ache, broken sleep and weight loss following a promotion that added night shifts (precipitant). A family history of paternal 'nervous breakdown' and a core belief of failing his family (predisposing) shape his coping: he avoids disclosing distress and keeps working through exhaustion (perpetuating), and a two-year help-seeking delay reinforced it. Protective factors include a supportive wife and stable employment. The formulation explains why he presents somatically: the heaviness is the only acceptable language his belief system permits for distress.",
 };
 
 export interface SortAttempt {

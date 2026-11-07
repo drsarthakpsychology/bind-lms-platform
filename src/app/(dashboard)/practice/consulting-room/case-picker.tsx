@@ -2,8 +2,9 @@
 
 import * as React from "react";
 import { useRouter } from "next/navigation";
-import { Info, Lock } from "lucide-react";
+import { Check, ClipboardCheck, Info, Lock, MessageCircle } from "lucide-react";
 import { haptic } from "@/lib/haptics";
+import { cn } from "@/lib/utils";
 import { StatusPill } from "@/components/mobile/status-pill";
 import { MobileBottomSheet } from "@/components/mobile/mobile-bottom-sheet";
 
@@ -13,7 +14,7 @@ export interface CaseCard {
   difficulty: string;
   summary: string;
   source: "hand_built" | "corpus";
-  /** The patient's own words — the hook. Never the diagnosis. */
+  /** The patient's own words: the hook. Never the diagnosis. */
   hook?: string;
   /** Session state per card: not attempted / in progress / completed. */
   state?: "not_started" | "in_progress" | "completed";
@@ -49,7 +50,7 @@ const STATE_TONE: Record<NonNullable<CaseCard["state"]>, "neutral" | "ai"> = {
 };
 
 /**
- * Case picker — grouped by difficulty, each card led by the patient's OWN words
+ * Case picker: grouped by difficulty, each card led by the patient's OWN words
  * (the hook) with the clinical line secondary. The diagnosis never appears on
  * the card; it stays with the faculty debrief. One dominant tap target per
  * card: the whole card starts/resumes the session. "In progress" cases are
@@ -59,6 +60,7 @@ export function CasePicker({ cases }: { cases: CaseCard[] }) {
   const router = useRouter();
   const [starting, setStarting] = React.useState<string | null>(null);
   const [error, setError] = React.useState<string | null>(null);
+  const [graded, setGraded] = React.useState(false);
 
   async function start(c: CaseCard) {
     if (starting) return;
@@ -80,7 +82,7 @@ export function CasePicker({ cases }: { cases: CaseCard[] }) {
       }
       const j = (await res.json()) as { sessionId: string };
       haptic("success");
-      router.push(`/practice/consulting-room/session/${j.sessionId}`);
+      router.push(`/practice/consulting-room/session/${j.sessionId}${graded ? "?mode=graded" : ""}`);
     } catch {
       setError("Network error. Please try again.");
     } finally {
@@ -100,6 +102,7 @@ export function CasePicker({ cases }: { cases: CaseCard[] }) {
 
   return (
     <div className="space-y-8">
+      <ModePicker graded={graded} onChange={setGraded} />
       {error ? (
         <div
           className="rounded-md border border-status-alert-fg/40 bg-status-alert-bg p-3 text-small text-status-alert-fg"
@@ -112,7 +115,7 @@ export function CasePicker({ cases }: { cases: CaseCard[] }) {
         <div className="rounded-md border-2 border-dashed border-border bg-card p-8 text-center">
           <p className="text-base font-medium">No patients are ready yet</p>
           <p className="mt-1 text-small text-muted-foreground">
-            Your faculty is finalising the case list. Check back soon — the first
+            Your faculty is finalising the case list. Check back soon: the first
             patient will be waiting here.
           </p>
         </div>
@@ -235,7 +238,7 @@ function CaseCardItem({
 }
 
 /**
- * The "Safety first" disclosure — moved out of the list into a header action
+ * The "Safety first" disclosure: moved out of the list into a header action
  * that opens a bottom sheet (T33), so the case list stays clean and the first
  * patient is reachable immediately.
  */
@@ -254,10 +257,48 @@ export function SafetyFirstSheet() {
       <MobileBottomSheet open={open} onOpenChange={setOpen} title="Safety first">
         <ul className="space-y-2 text-small text-muted-foreground">
           <li>Everything here is a <strong className="text-foreground">simulation</strong>. The patient is not real.</li>
-          <li>If you&apos;re struggling yourself, this is not the place — reach out to your faculty or a helpline.</li>
+          <li>If you&apos;re struggling yourself, this is not the place: reach out to your faculty or a helpline.</li>
           <li>Your sessions are private to you and your faculty, and are used only for your debrief.</li>
         </ul>
       </MobileBottomSheet>
     </>
+  );
+}
+
+/** Practice (free talk + debrief) or a graded interview (hand in MSE, risk and formulation). */
+function ModePicker({ graded, onChange }: { graded: boolean; onChange: (g: boolean) => void }) {
+  const opts = [
+    { g: false, label: "Practice", note: "Talk, then get a debrief.", Icon: MessageCircle },
+    { g: true, label: "Graded interview", note: "Take a history, then hand in the MSE, a risk assessment and a short formulation for a score.", Icon: ClipboardCheck },
+  ];
+  return (
+    <fieldset>
+      <legend className="text-eyebrow text-muted-foreground">How do you want to practise?</legend>
+      <div className="mt-2 grid gap-3 sm:grid-cols-2">
+        {opts.map(({ g, label, note, Icon }) => {
+          const on = graded === g;
+          return (
+            <label
+              key={label}
+              className={cn(
+                "flex min-h-11 cursor-pointer items-start gap-3 rounded-md border-2 p-3 transition-[transform,box-shadow] has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-ring",
+                on ? "border-foreground bg-card hard-shadow-sm" : "border-border bg-background hover:-translate-y-0.5",
+              )}
+            >
+              <input type="radio" name="sim-mode" checked={on} onChange={() => onChange(g)} className="sr-only" />
+              <span className={cn("grid size-6 shrink-0 place-items-center rounded-md border-2 border-foreground", on ? "bg-primary text-primary-foreground" : "bg-background")} aria-hidden>
+                {on ? <Check className="size-4" /> : null}
+              </span>
+              <span className="min-w-0">
+                <span className="flex items-center gap-1.5 text-body-strong">
+                  <Icon className="size-4 shrink-0" aria-hidden /> {label}
+                </span>
+                <span className="mt-0.5 block text-caption text-muted-foreground">{note}</span>
+              </span>
+            </label>
+          );
+        })}
+      </div>
+    </fieldset>
   );
 }

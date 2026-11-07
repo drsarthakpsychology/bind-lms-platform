@@ -14,11 +14,11 @@ const schema = z.object({
 });
 
 /**
- * POST /api/admin/modules — bulk module actions. Admin-only.
+ * POST /api/admin/modules: bulk module actions. Admin-only.
  * publish/schedule/unpublish flip module state.
  * grant_cohort grants access to the whole cohort (scope='cohort') or a single
  * student (scope='student').
- * revoke removes module_access rows — either a cohort-wide grant (scope='cohort')
+ * revoke removes module_access rows: either a cohort-wide grant (scope='cohort')
  * or a single student's grant (scope='student').
  */
 export async function POST(req: Request) {
@@ -32,7 +32,7 @@ export async function POST(req: Request) {
   const supabase = createAdminClient();
   const d = parsed.data;
 
-  // publish / schedule / unpublish — flip module state.
+  // publish / schedule / unpublish: flip module state.
   if (d.action === "publish" || d.action === "schedule" || d.action === "unpublish") {
     const state = d.action === "publish" ? "published" : d.action === "schedule" ? "scheduled" : "archived";
     const update: { state: string; release_at?: string } = { state };
@@ -44,7 +44,7 @@ export async function POST(req: Request) {
     return NextResponse.json({ ok: true });
   }
 
-  // grant_cohort — grant to the cohort (scope='cohort') or one student (scope='student').
+  // grant_cohort: grant to the cohort (scope='cohort') or one student (scope='student').
   if (d.action === "grant_cohort") {
     let studentId = d.targetStudentId ?? null;
     if (!studentId && d.targetEmail) {
@@ -59,14 +59,14 @@ export async function POST(req: Request) {
       student_id: studentId ?? undefined,
       granted_by: admin.id,
     }));
-    // Upsert — repeated clicks on Grant must not mint duplicate access rows
+    // Upsert: repeated clicks on Grant must not mint duplicate access rows
     // (module_access_grant_unique backs this).
     const { error } = await supabase.from("module_access").upsert(rows, { onConflict: "module_id,scope,student_id" });
     if (error) return NextResponse.json({ error: error.message }, { status: 500 });
     return NextResponse.json({ ok: true });
   }
 
-  // revoke — remove access. Cohort revoke deletes every cohort-scoped row for
+  // revoke: remove access. Cohort revoke deletes every cohort-scoped row for
   // the modules; student revoke deletes one student's individual grants.
   if (d.action === "revoke") {
     if (d.revokeScope === "cohort") {

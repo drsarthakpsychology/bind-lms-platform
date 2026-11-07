@@ -1,6 +1,6 @@
 /**
  * Synthesis identifiers shared between the server synthesizer and the
- * pre-generation script — NO server-only deps so local scripts can import
+ * pre-generation script, NO server-only deps so local scripts can import
  * it. The cache key is sha256(text|voice|emotion|speed): the R2 object key
  * for every synthesis (cache-once, replay-forever).
  */

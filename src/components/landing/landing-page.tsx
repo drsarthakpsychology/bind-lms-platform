@@ -42,13 +42,13 @@ function CaseFragment({
 function Hero() {
   return (
     <section className="hero-dots relative overflow-hidden">
-      {/* Clinical graph paper — the hero's background (see .hero-dots::before
+      {/* Clinical graph paper: the hero's background (see .hero-dots::before
           in globals.css): points, not shapes. 24px minor + 120px major dot
           grid in the warm hairline, radially masked densest behind the card
           stack and absent behind the headline. Zero DOM nodes. */}
       <div className="relative z-10 rail pb-16 pt-14 lg:pt-24">
         {/* The eyebrow + headline + copy on the left, the intake file on the
-            right — one grid, tops aligned. Typography: 0.9 leading +
+            right: one grid, tops aligned. Typography: 0.9 leading +
             -0.038em tracking make the display lines read as one block; the
             negative left margin is optical alignment for Geist (re-checked at
             the larger size). */}
@@ -71,7 +71,7 @@ function Hero() {
             </h1>
             <Reveal delay={160}>
               <p className="mt-7 max-w-[62ch] min-w-0 break-words text-base leading-relaxed text-muted-foreground sm:text-lg">
-                Psychology graduates can describe therapy. Few can practise it —
+                Psychology graduates can describe therapy. Few can practise it.
                 VIBHA closes that gap with real cases and a debrief after every
                 session.
               </p>
@@ -104,11 +104,11 @@ function Hero() {
           {/* The intake file: the product's raw material, drawn with the LMS's
               card and hard-shadow language. Three equal-height fragments step
               right by a deliberate stagger (0 / 2.2rem / 4rem). The two tabs
-              clamp the deck into one labelled object — "CASE FILE" pinned to
+              clamp the deck into one labelled object: "CASE FILE" pinned to
               the top-left overlapping the first card, "PRACTISE" mirrored to
               the bottom-right overlapping the third card, rotated the opposite
               way. They are one pair: same amber fill, same ink border, same
-              radius, hard-shadow — identical apart from rotation. */}
+              radius, hard-shadow: identical apart from rotation. */}
           <div className="relative mx-auto w-full max-w-md lg:mt-2 lg:max-w-none">
             <div className="relative space-y-3.5 pb-6">
               <div
@@ -171,7 +171,7 @@ function Problem() {
               with a patient and think in real time.
             </p>
             <p>
-              That gap is not a failure of students — it is a failure of method.
+              That gap is not a failure of students. It is a failure of method.
               You cannot learn to be in the room by reading about it.
             </p>
           </div>
@@ -188,7 +188,7 @@ function ThreeIdeas() {
       num: "01",
       eyebrow: "Learn",
       title: "The structured science",
-      body: "Interviewing, the mental status exam, formulation, ethics and the law — one working method, taught in order.",
+      body: "Interviewing, the mental status exam, formulation, ethics and the law: one working method, taught in order.",
     },
     {
       num: "02",
@@ -200,7 +200,7 @@ function ThreeIdeas() {
       num: "03",
       eyebrow: "Apply",
       title: "Write it, defend it, learn from the debrief",
-      body: "You write the formulation and make the call. Then the debrief shows what the patient actually presented — and where your ears went quiet.",
+      body: "You write the formulation and make the call. Then the debrief shows what the patient actually presented, and where your ears went quiet.",
     },
   ];
   return (
@@ -226,7 +226,7 @@ function ThreeIdeas() {
                   // h-full keeps the three cards equal within the desktop row;
                   // min-h-64 keeps the stacked mobile view equal too (the Learn
                   // card has one line less of body copy). All cards on --card;
-                  // the middle card keeps its peach border as the highlight —
+                  // the middle card keeps its peach border as the highlight,
                   // no third surface.
                   "flex h-full min-h-64 flex-col rounded-lg border-2 p-6 hard-shadow-sm transition-[transform,box-shadow] duration-base ease-snappy hover:-translate-y-0.5 hover:hard-shadow-md",
                   i === 1 ? "border-primary bg-card" : "border-foreground bg-card",
@@ -302,7 +302,7 @@ function ClosingCta() {
       <Reveal>
         <div className="relative">
           <Stamp className="absolute -top-4 right-0 hidden rotate-[8deg] sm:block">Invite-only</Stamp>
-          <p className="text-eyebrow text-muted-foreground">Cohort One — by invitation</p>
+          <p className="text-eyebrow text-muted-foreground">Cohort One, by invitation</p>
           <h2 className="mt-4 max-w-[20ch] text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl">
             {hasCohortStarted() ? (
               <>

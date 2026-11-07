@@ -6,7 +6,7 @@ import { setViewMode } from "./view-mode-actions";
 import { Button } from "@/components/ui/button";
 
 /**
- * Admin/student switch — a single compact icon button in the sidebar footer,
+ * Admin/student switch: a single compact icon button in the sidebar footer,
  * the same size as the theme and logout buttons (no more full-width segmented
  * control).
  *

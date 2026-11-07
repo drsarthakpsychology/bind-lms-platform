@@ -1,5 +1,5 @@
 /**
- * Draft extraction types — the schema the extraction pipeline emits and the
+ * Draft extraction types: the schema the extraction pipeline emits and the
  * reviewer approves. Mirrors the DB tables (psych_drug_fields, psych_dose_ranges,
  * psych_dose_bands, psych_drug_links, psych_comorbidity_notes,
  * psych_observation_prompts, psych_session_observations, ...) but as plain

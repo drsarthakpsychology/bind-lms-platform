@@ -11,10 +11,10 @@ import { Button } from "@/components/ui/button";
  * Client wrapper for the single forward action on a lesson.
  *
  * Three states, one button:
- *   - Mid-course          → "Next lesson" — advance, no toast.
- *   - Final, not complete → "Finish course" — fires a success toast before the
+ *   - Mid-course          → "Next lesson": advance, no toast.
+ *   - Final, not complete → "Finish course": fires a success toast before the
  *     redirect lands on the dashboard (a clear success moment).
- *   - Final, already done → "Back to my courses" — secondary variant; nothing
+ *   - Final, already done → "Back to my courses": secondary variant; nothing
  *     to mark complete, just a link back.
  *
  * Completing the final lesson always calls completeAndAdvance, which marks the
@@ -42,7 +42,7 @@ export function CompleteButton({
     haptic("success");
     if (isFinalLesson && !alreadyComplete) {
       toast.success("Course complete! 🎉", {
-        description: "Great work — you finished the course.",
+        description: "Great work. You finished the course.",
       });
     }
     startTransition(() => {

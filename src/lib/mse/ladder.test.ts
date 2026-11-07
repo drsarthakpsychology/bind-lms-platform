@@ -86,15 +86,17 @@ describe("MSE expert codes", () => {
   });
 
   it("getExpertMseForCase resolves by title and returns null for unknown", () => {
-    expect(getExpertMseForCase("Ravi, 34 — the heaviness in his chest")).not.toBeNull();
+    expect(getExpertMseForCase("Ravi, 34: the heaviness in his chest")).not.toBeNull();
+    // A title stored in the database before the dash clean-up still resolves.
+    expect(getExpertMseForCase("Ravi, 34 \u2014 the heaviness in his chest")).not.toBeNull();
     expect(getExpertMseForCase("no such case")).toBeNull();
   });
 
   it("expert codes match the authored patient presentations", () => {
-    const vikram = getExpertMseForCase("Vikram, 27 — the Lonazep case (four traps at once)")!;
+    const vikram = getExpertMseForCase("Vikram, 27: the Lonazep case (four traps at once)")!;
     expect(vikram.perception.join(" ")).toContain("auditory hallucination");
     expect(vikram.insight.some((i) => i.includes("poor"))).toBe(true);
-    const neha = getExpertMseForCase("Neha, 26 — the 'best three months ever' that ended badly")!;
+    const neha = getExpertMseForCase("Neha, 26: the 'best three months ever' that ended badly")!;
     expect(neha.thought_process.join(" ")).toContain("flight of ideas");
   });
 });

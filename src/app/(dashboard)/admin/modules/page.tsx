@@ -7,7 +7,7 @@ import { ModulesAdmin } from "./modules-admin";
 export const dynamic = "force-dynamic";
 
 /**
- * /admin/modules — publish, schedule, grant and revoke module access.
+ * /admin/modules: publish, schedule, grant and revoke module access.
  * Multi-select + bulk actions: Publish · Schedule · Unpublish · Grant/Revoke
  * to cohort or a single student. Selecting one module expands an explicit
  * access list (who has access, with per-row revoke).
@@ -42,7 +42,7 @@ export default async function AdminModulesPage() {
     <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6">
       <PageHeader
         title="Modules"
-        description="Publish, schedule and unpublish modules — and control exactly who has access, with the power to revoke it."
+        description="Publish, schedule and unpublish modules, and control exactly who has access, with the power to revoke it."
       />
       <div className="mt-6">
         <ModulesAdmin

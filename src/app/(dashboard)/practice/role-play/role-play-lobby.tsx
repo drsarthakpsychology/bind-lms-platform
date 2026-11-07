@@ -14,7 +14,7 @@ interface SessionRow {
 }
 
 /**
- * The role-play lobby — start a new session with a classmate (by email) or
+ * The role-play lobby: start a new session with a classmate (by email) or
  * rejoin an existing one.
  */
 export function RolePlayLobby({

@@ -15,7 +15,7 @@ export const SEED_CASES: SimCase[] = [
   // 1. First-episode depression presenting somatically
   // ---------------------------------------------------------------------------
   {
-    title: "Ravi, 34 — 'the heaviness'",
+    title: "Ravi, 34: 'the heaviness'",
     difficulty: "cooperative",
     identity: {
       name: "Ravi",
@@ -37,7 +37,7 @@ export const SEED_CASES: SimCase[] = [
       prior_episodes: "none",
       substance_use: "occasional alcohol (2-3 pegs on weekends), no tobacco",
       medical: "visits GP for acidity/weakness every few months; no chronic illness",
-      family: "father had 'nervous breakdown' in his 40s — family calls it that, never treated formally",
+      family: "father had 'nervous breakdown' in his 40s: family calls it that, never treated formally",
       treatment_history: "GP gave 'digestive tonic' and B-complex; no improvement",
       help_seeking_delay: "~2 years before a mental-health consult",
       prior_contacts: ["GP for gas/weakness", "digestive tonic", "family 'it's just stress'"],
@@ -71,7 +71,7 @@ export const SEED_CASES: SimCase[] = [
       family_in_room: false,
       stigma: ["mental illness = weakness", "'what will the office say'"],
       cost_concerns: true,
-      legal_relevance: ["MHA 2017 — right to confidentiality"],
+      legal_relevance: ["MHA 2017: right to confidentiality"],
     },
     style_refs: ["hesitation", "topic_shift", "indirect"],
     rubric_targets: ["risk assessment", "somatic-first recognition", "validation", "cultural attunement"],
@@ -98,7 +98,7 @@ export const SEED_CASES: SimCase[] = [
       "The heaviness is here again. My head, my chest. The clinic doctor says it's gas. Maybe it is gas.",
       "I haven't slept properly in weeks. I lie down, I'm awake, I watch the ceiling. Then I get up and it's another day.",
       "My wife says I look tired all the time. I tell her it's the night shifts. It's not just the night shifts.",
-      "The GP gave me a tonic. B-complex, something. It did nothing. I didn't go back — what's the point?",
+      "The GP gave me a tonic. B-complex, something. It did nothing. I didn't go back: what's the point?",
       "You're the first person who's asked me that. At home, nobody asks. They assume the body is the problem.",
       "Some days all I want is to sleep and not have to wake up for the alarm. I wouldn't… I just want the rest.",
     ],
@@ -108,7 +108,7 @@ export const SEED_CASES: SimCase[] = [
   // 2. Panic mistaken for cardiac
   // ---------------------------------------------------------------------------
   {
-    title: "Meera, 28 — 'my heart is racing'",
+    title: "Meera, 28: 'my heart is racing'",
     difficulty: "cooperative",
     identity: {
       name: "Meera",
@@ -130,7 +130,7 @@ export const SEED_CASES: SimCase[] = [
       prior_episodes: "none",
       substance_use: "coffee (5-6 cups/day), no alcohol",
       medical: "3 ER visits, ECGs + echo normal",
-      family: "mother has anxiety — 'always worried'",
+      family: "mother has anxiety: 'always worried'",
       treatment_history: "ER doctors said anxiety, offered no follow-up",
       help_seeking_delay: "~4 months from first attack to psychiatry consult",
       prior_contacts: ["ER visits", "cardiac workups", "'it's just anxiety' from family"],
@@ -142,7 +142,7 @@ export const SEED_CASES: SimCase[] = [
     },
     disclosure_rules: [
       { fact: "She cancelled her engagement because she couldn't imagine 'being trapped' at the ceremony.", gate: "asked_open_about_family" },
-      { fact: "Worried she is 'going mad' — never told anyone this.", gate: "two_or_more_reflective_statements" },
+      { fact: "Worried she is 'going mad', never told anyone this.", gate: "two_or_more_reflective_statements" },
     ],
     resistance: {
       deflections: ["It's physical, not mental."],
@@ -184,11 +184,11 @@ export const SEED_CASES: SimCase[] = [
       language_mix: ["Hinglish", "Hindi with English words", "mostly English"],
     },
     fixture_lines: [
-      "The heart starts racing and I think — this is it. This time I'm dying. My father had a heart attack at my age, you know.",
-      "The doctors checked everything. ECG, echo, thyroid — all normal. They said it's my nerves. But it doesn't feel like nerves.",
+      "The heart starts racing and I think: this is it. This time I'm dying. My father had a heart attack at my age, you know.",
+      "The doctors checked everything. ECG, echo, thyroid: all normal. They said it's my nerves. But it doesn't feel like nerves.",
       "I've stopped taking the train to work. I take the bus, and even then I sit near the door. In case I need to get off.",
       "When it happens I just hold onto the bench and wait for it to pass. People stare. I pretend I'm checking my phone.",
-      "My mother says it's 'dil ka darr' — fear of the heart. Maybe she's right. But knowing that doesn't stop it.",
+      "My mother says it's 'dil ka darr': fear of the heart. Maybe she's right. But knowing that doesn't stop it.",
       "In the night, sometimes, I pray that if it's going to happen, let it happen while I'm asleep. That's terrible to say, isn't it.",
     ],
   },
@@ -197,7 +197,7 @@ export const SEED_CASES: SimCase[] = [
   // 3. OCD with religious content
   // ---------------------------------------------------------------------------
   {
-    title: "Arjun, 22 — 'unclean thoughts'",
+    title: "Arjun, 22: 'unclean thoughts'",
     difficulty: "guarded",
     identity: {
       name: "Arjun",
@@ -231,7 +231,7 @@ export const SEED_CASES: SimCase[] = [
     },
     disclosure_rules: [
       { fact: "He has missed 11 days of college this semester due to washing rituals.", gate: "validation_given" },
-      { fact: "Has thought the thoughts are 'from the devil' — terrified of being possessed.", gate: "two_or_more_reflective_statements" },
+      { fact: "Has thought the thoughts are 'from the devil': terrified of being possessed.", gate: "two_or_more_reflective_statements" },
     ],
     resistance: {
       deflections: ["It's about cleanliness, not my mind."],
@@ -260,12 +260,12 @@ export const SEED_CASES: SimCase[] = [
     few_shot: [
       {
         student: "When the thoughts come, what do you do?",
-        patient: "I have to wash. Not once — many times. Until it feels clean. It never fully feels clean.",
+        patient: "I have to wash. Not once: many times. Until it feels clean. It never fully feels clean.",
       },
     ],
     variation: {
       mood_today: ["ashamed", "exhausted", "tense", "numb"],
-      recent_event: ["cried at the temple", "missed a deadline because of the washing", "his mother asked what's wrong", "a wedding is coming — he'll have to shake hands"],
+      recent_event: ["cried at the temple", "missed a deadline because of the washing", "his mother asked what's wrong", "a wedding is coming: he'll have to shake hands"],
       most_defended_topic: ["the thoughts", "the temple", "his relationship with his mother"],
       opening_posture: ["came willingly", "brought by his mother", "sits at the edge of the chair"],
       somatic_focus: ["hands", "head", "stomach"],
@@ -273,10 +273,10 @@ export const SEED_CASES: SimCase[] = [
       language_mix: ["Hindi with English words", "Hinglish", "mostly English"],
     },
     fixture_lines: [
-      "If I touch the door handle, I have to wash. Ten times sometimes. My hands are cracked — my mother notices, asks why.",
-      "It's worse at the temple. Images of God mixed with — I can't say it out loud. If I say it, it becomes more real.",
+      "If I touch the door handle, I have to wash. Ten times sometimes. My hands are cracked: my mother notices, asks why.",
+      "It's worse at the temple. Images of God mixed with... I can't say it out loud. If I say it, it becomes more real.",
       "I don't tell anyone. My friends would think I've lost my mind. Maybe I have. That's what I want to know from you.",
-      "I have to check — lock the door, check it again. And again. My father shouts at me for being late to everything.",
+      "I have to check: lock the door, check it again. And again. My father shouts at me for being late to everything.",
       "The thoughts aren't mine. I know they're not mine. But my body reacts as if they are. I shake.",
       "I used to be able to push them away. Now they're there the whole day. It's exhausting. I'm exhausted.",
     ],
@@ -286,7 +286,7 @@ export const SEED_CASES: SimCase[] = [
   // 4. Adolescent brought by parents (patient hostile, parent talks)
   // ---------------------------------------------------------------------------
   {
-    title: "Ananya, 15 — brought in, not walked in",
+    title: "Ananya, 15: brought in, not walked in",
     difficulty: "guarded",
     identity: {
       name: "Ananya",
@@ -348,7 +348,7 @@ export const SEED_CASES: SimCase[] = [
     rubric_targets: ["engaging the adolescent directly", "managing the parent dynamic", "confidentiality with minor", "safety assessment"],
     few_shot: [
       {
-        student: "Ananya, I'd like to hear from you — what's it been like at home lately?",
+        student: "Ananya, I'd like to hear from you: what's it been like at home lately?",
         patient: "(Looks at parents, then floor) Like you'd care. They already told you everything.",
       },
     ],
@@ -375,7 +375,7 @@ export const SEED_CASES: SimCase[] = [
   // 5. Alcohol use disorder in denial
   // ---------------------------------------------------------------------------
   {
-    title: "Suresh, 45 — 'I can stop any time'",
+    title: "Suresh, 45: 'I can stop any time'",
     difficulty: "resistant",
     identity: {
       name: "Suresh",
@@ -409,7 +409,7 @@ export const SEED_CASES: SimCase[] = [
     },
     disclosure_rules: [
       { fact: "He drives home from the shop after drinking most evenings.", gate: "two_or_more_reflective_statements" },
-      { fact: "His father died of liver failure — he's terrified but won't say it.", gate: "validation_given" },
+      { fact: "His father died of liver failure: he's terrified but won't say it.", gate: "validation_given" },
     ],
     resistance: {
       deflections: ["This is between my wife and me."],
@@ -452,7 +452,7 @@ export const SEED_CASES: SimCase[] = [
     },
     fixture_lines: [
       "My wife says I have a problem. I say the shop has a problem. Everyone drinks a little after work.",
-      "One peg, maybe two. That's normal. You tell me — a man can't have a peg after work?",
+      "One peg, maybe two. That's normal. You tell me: a man can't have a peg after work?",
       "She found the bottle. That's the whole issue. I keep telling her, it's not what she thinks.",
       "My liver? That report was from years ago. I'm fine. I get it checked, it comes back fine.",
       "You're going to start about the drinking. Everyone starts about the drinking. Can we not?",
@@ -464,7 +464,7 @@ export const SEED_CASES: SimCase[] = [
   // 6. Postpartum with mother-in-law present
   // ---------------------------------------------------------------------------
   {
-    title: "Priya, 26 — 'after the baby'",
+    title: "Priya, 26: 'after the baby'",
     difficulty: "cooperative",
     identity: {
       name: "Priya",
@@ -497,7 +497,7 @@ export const SEED_CASES: SimCase[] = [
       coping: ["hiding tears", "over-compensating with the baby", "staying quiet"],
     },
     disclosure_rules: [
-      { fact: "She has had thoughts of 'the baby would be better off without me' — passive, no plan.", gate: "asked_about_self_harm_clearly" },
+      { fact: "She has had thoughts of 'the baby would be better off without me': passive, no plan.", gate: "asked_about_self_harm_clearly" },
       { fact: "Mother-in-law criticises her parenting daily.", gate: "validation_given" },
     ],
     resistance: {
@@ -540,11 +540,11 @@ export const SEED_CASES: SimCase[] = [
       language_mix: ["soft Hindi", "Hindi with English words", "mostly English"],
     },
     fixture_lines: [
-      "I shouldn't be tired — she sleeps, mostly. But I lie awake anyway. Watching her breathe. Making sure she's still breathing.",
+      "I shouldn't be tired: she sleeps, mostly. But I lie awake anyway. Watching her breathe. Making sure she's still breathing.",
       "My mother-in-law says ''when I had mine, I did everything alone''. She doesn't mean it as a knife, but it lands like one.",
       "I feed her, I bathe her, I do it all. But there's a part of me that's just… switched off. I'm ashamed to say that.",
       "Sometimes I think she'd be better off with a mother who feels something. I say that, and everyone says I'm being dramatic.",
-      "The joy everyone promised me — I keep waiting for it. It's like a guest who never arrives.",
+      "The joy everyone promised me: I keep waiting for it. It's like a guest who never arrives.",
       "Please don't tell them about the crying. They'll say I'm weak, that I can't be a mother. You won't tell them, will you?",
     ],
   },
@@ -553,7 +553,7 @@ export const SEED_CASES: SimCase[] = [
   // 7. Grief vs depression
   // ---------------------------------------------------------------------------
   {
-    title: "Mohan, 60 — 'my wife's chair'",
+    title: "Mohan, 60: 'my wife's chair'",
     difficulty: "cooperative",
     identity: {
       name: "Mohan",
@@ -577,7 +577,7 @@ export const SEED_CASES: SimCase[] = [
       medical: "controlled hypertension",
       family: "wife's death was expected (6-month cancer illness)",
       treatment_history: "daughter pushed for consult",
-      help_seeking_delay: "not applicable — grief",
+      help_seeking_delay: "not applicable: grief",
       prior_contacts: ["daughter's concern", "temple visits"],
     },
     cognitive_model: {
@@ -636,10 +636,10 @@ export const SEED_CASES: SimCase[] = [
   },
 
   // ---------------------------------------------------------------------------
-  // 8. The patient with NO disorder — over-diagnosis trap
+  // 8. The patient with NO disorder: over-diagnosis trap
   // ---------------------------------------------------------------------------
   {
-    title: "Deepa, 31 — 'just tired'",
+    title: "Deepa, 31: 'just tired'",
     difficulty: "cooperative",
     identity: {
       name: "Deepa",
@@ -651,8 +651,8 @@ export const SEED_CASES: SimCase[] = [
       language_register: "warm, clear English",
     },
     presentation:
-      "The trap case: healthy woman experiencing a normal, difficult season — new school term, child starting school, husband transferred. No disorder. The right answer is 'this person is fine'.",
-    chief_complaint_in_own_words: "I'm not here for me, exactly. My colleague made an appointment and said I should come. I'm just tired — it's a big term.",
+      "The trap case: healthy woman experiencing a normal, difficult season: new school term, child starting school, husband transferred. No disorder. The right answer is 'this person is fine'.",
+    chief_complaint_in_own_words: "I'm not here for me, exactly. My colleague made an appointment and said I should come. I'm just tired: it's a big term.",
     opening_idiom: "I'm fine, just tired",
     traps: ["over_diagnosis", "under_diagnosis", "adherence_fiction"],
     history: {
@@ -673,7 +673,7 @@ export const SEED_CASES: SimCase[] = [
     },
     disclosure_rules: [],
     resistance: {
-      deflections: ["Really, I'm fine — I don't want to take your time."],
+      deflections: ["Really, I'm fine: I don't want to take your time."],
       topic_changes: ["My child loves her new school."],
       irritation_triggers: ["being told she has a disorder"],
       silence_tolerance_seconds: 5,
@@ -710,10 +710,10 @@ export const SEED_CASES: SimCase[] = [
       language_mix: ["Hindi", "English with Hindi words", "mostly English"],
     },
     fixture_lines: [
-      "Tired is the word. All the teachers are tired — it's the third term. But I'm still laughing at my own jokes, so I'm fine.",
-      "I sleep badly three nights a week, sleep deeply on the weekend. My mother gave me ''kadha'' — didn't change a thing.",
+      "Tired is the word. All the teachers are tired: it's the third term. But I'm still laughing at my own jokes, so I'm fine.",
+      "I sleep badly three nights a week, sleep deeply on the weekend. My mother gave me ''kadha'': didn't change a thing.",
       "If I were truly depressed I'd stop cooking. I make the best biryani in the staff room. So. Not depressed.",
-      "Last week I cried once — over a stray dog. The next day I was fine. Everyone has days like that.",
+      "Last week I cried once: over a stray dog. The next day I was fine. Everyone has days like that.",
       "I'm not here because I'm sick. I'm here because my sister-in-law got my husband worried. He worried, she pushed, here I am.",
       "Ask me again in December after the board exams. If I'm still like this then, I'll come back myself.",
     ],

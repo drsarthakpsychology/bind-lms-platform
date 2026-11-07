@@ -3,7 +3,7 @@ import { readFileSync } from "node:fs";
 
 function env(name: string): string | undefined {
   if (process.env[name]) return process.env[name];
-  // Standalone workers / scripts don't auto-load .env.local — read it.
+  // Standalone workers / scripts don't auto-load .env.local: read it.
   try {
     for (const line of readFileSync(".env.local", "utf8").split("\n")) {
       const m = line.match(new RegExp(`^${name}=(.*)$`));
@@ -18,11 +18,11 @@ function env(name: string): string | undefined {
 /**
  * Mint a short-lived LiveKit participant token for a student's patient
  * session. The secret NEVER leaves the server. The token is scoped to a single
- * room (the sim session) and expires in 10 minutes — a student who pauses and
+ * room (the sim session) and expires in 10 minutes: a student who pauses and
  * comes back requests a fresh token.
  */
 export async function createLiveKitToken(opts: {
-  room: string; // the sim session id — the LiveKit room name
+  room: string; // the sim session id: the LiveKit room name
   identity: string; // the authenticated student's id
   name: string; // the patient's display name
   metadata?: string;

@@ -4,11 +4,11 @@ import * as React from "react";
 import { cn } from "@/lib/utils";
 
 /**
- * MobileStickyAction — the single thumb-reachable primary action.
+ * MobileStickyAction: the single thumb-reachable primary action.
  *
  * The mobile principle: every screen answers "what is the ONE thing I do
  * next?". This bar pins that action above the safe area (and above the bottom
- * tab bar where one is present) so it is reachable at every scroll position —
+ * tab bar where one is present) so it is reachable at every scroll position,
  * never buried below the fold behind a video, a quiz, or a long form.
  *
  * Compose a `Button` (or buttonVariants link) as the primary `children`.
@@ -42,7 +42,9 @@ export function MobileStickyAction({
         // offsetForNav: the --nav-h margin already includes the safe-area
         // inset, so drop the bar's own safe-area padding here (double-count).
         // Immersive pages (sim): the bar sits flush to the bottom, so keep it.
-        paddingBottom: offsetForNav ? "0.75rem" : "max(env(safe-area-inset-bottom), 0.75rem)",
+        // --free-inset is the safe-area inset when no tab bar is on screen
+        // (lesson pages, tablets) and 0 when the tab bar already covers it.
+        paddingBottom: offsetForNav ? "calc(0.75rem + var(--free-inset, 0px))" : "max(env(safe-area-inset-bottom), 0.75rem)",
         ...(offsetForNav ? { marginBottom: "var(--nav-h, 0px)" } : null),
       }}
     >

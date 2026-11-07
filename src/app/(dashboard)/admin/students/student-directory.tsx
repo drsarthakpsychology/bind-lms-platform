@@ -27,7 +27,7 @@ const FILTERS = [
 ] as const;
 
 /**
- * The student list with a search box and filter chips — the Gmail / Google
+ * The student list with a search box and filter chips: the Gmail / Google
  * Admin pattern. Filtering is instant and local; the rows (and their action
  * buttons) are rendered on the server and passed in.
  */

@@ -7,7 +7,7 @@ import { Reveal } from "@/components/motion/reveal";
 export const dynamic = "force-dynamic";
 
 /**
- * /passport — Skills Passport (Part 6.9). Its own route since casebook
+ * /passport: Skills Passport (Part 6.9). Its own route since casebook
  * Finding 4: it's a dashboard you check, not a practice drill. Built from
  * competency_events (fed by supervision tagging today; sim/SCT/etc. wiring
  * to come). The PDF certificate appendix is the deferred big item.

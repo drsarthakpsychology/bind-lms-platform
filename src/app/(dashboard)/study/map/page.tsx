@@ -186,7 +186,7 @@ export default async function MapPage() {
                   if (!c.hasItems) {
                     return (
                       <div key={c.skill} className="hidden min-h-11 items-center rounded-md px-2 text-sm text-muted-foreground lg:flex">
-                        <span aria-hidden>–</span>
+                        <span aria-hidden>-</span>
                         <span className="sr-only">
                           {c.label}: no questions yet
                         </span>

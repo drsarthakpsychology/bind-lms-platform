@@ -48,9 +48,10 @@ const LECTURE_ONLY_TABS: Tab[] = [
 ];
 
 /**
- * Phone bottom navigation (Android/Instagram/YouTube pattern): icon over a
+ * Phone bottom navigation (<768px; tablets get the icon rail instead)
+ * (Android/Instagram/YouTube pattern): icon over a
  * short label, the active tab gets a lime pill behind its icon, and the last
- * slot is always "More" — the drawer with everything else and your account.
+ * slot is always "More": the drawer with everything else and your account.
  * Hidden on lesson/material pages and in the patient session.
  */
 export function BottomTabBar({
@@ -73,7 +74,7 @@ export function BottomTabBar({
   const tabs = mode === "admin" ? wanted : wanted.filter((t) => !blockedBy(t.href, blocked));
 
   const focusedPath =
-    isImmersiveSessionPath(pathname) || /^\/courses\/[^/]+\/(?:lessons|materials)\//.test(pathname) || /^\/games\/(?:play|coach|detective|scenarios|terms|lab\/)/.test(pathname) || /^\/study\/(?!notes\/)[^/]+\/[^/]+/.test(pathname);
+    isImmersiveSessionPath(pathname) || /^\/courses\/[^/]+\/(?:lessons|materials)\//.test(pathname) || /^\/games\/(?:play|coach|detective|scenarios|terms|lab\/)/.test(pathname) || /^\/study\/(?!notes\/)[^/]+\/[^/]+/.test(pathname) || /^\/prep\/mock\/(?!result\/)[^/]+$/.test(pathname);
   if (focusedPath) return null;
 
   const cell =
@@ -83,7 +84,7 @@ export function BottomTabBar({
 
   return (
     <nav
-      className="fixed inset-x-0 bottom-0 z-40 border-t-2 border-foreground bg-card lg:hidden"
+      className="bottom-tabs fixed inset-x-0 bottom-0 z-40 border-t-2 border-foreground bg-card md:hidden"
       style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
       aria-label="Primary tabs"
     >

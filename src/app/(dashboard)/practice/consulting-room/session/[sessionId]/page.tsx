@@ -4,6 +4,7 @@ import { createAdminClient } from "@/lib/supabase/server";
 import { provisionalKeys } from "@/lib/practice/rubric";
 import { SimSessionView } from "./session-view";
 import { requireFeature } from "@/lib/flags";
+import { loadGrade } from "@/lib/interview-grade/store";
 
 export const dynamic = "force-dynamic";
 
@@ -14,11 +15,14 @@ export const dynamic = "force-dynamic";
  */
 export default async function SimSessionPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ sessionId: string }>;
+  searchParams: Promise<{ mode?: string }>;
 }) {
   await requireFeature("consulting_room");
   const { sessionId } = await params;
+  const { mode } = await searchParams;
   // Malformed id → PostgREST 400, not a clean 404 (same guard as the lesson page).
   if (!/^[0-9a-f-]{36}$/i.test(sessionId)) {
     notFound();
@@ -57,13 +61,17 @@ export default async function SimSessionPage({
     gender: patientGender === "male" || patientGender === "female" ? patientGender : undefined,
   };
 
+  // Graded interview (?mode=graded): a stored grade shows straight away.
+  const stored = await loadGrade(sessionId, user.id);
+  const graded = mode === "graded" || stored !== null;
+
   const { data: turns } = await admin
     .from("sim_turns")
     .select("id, role, content, content_type, created_at")
     .eq("session_id", sessionId)
     .order("created_at", { ascending: true });
 
-  // A3 — provisional scoring dimensions hide their NUMBER from students
+  // A3: provisional scoring dimensions hide their NUMBER from students
   // (qualitative feedback only) until calibrated against faculty scores.
   const { data: rubricDims } = await admin
     .from("rubric_dimensions")
@@ -78,7 +86,7 @@ export default async function SimSessionPage({
     })),
   );
 
-  // A1 retry — comparison strip data. If this session is a branch (created by
+  // A1 retry: comparison strip data. If this session is a branch (created by
   // "Try this again"), load the parent's turns at the branch point + the
   // parent's debrief so the student sees attempt 1 vs attempt 2 side by side.
   const { data: branch } = await admin
@@ -129,7 +137,7 @@ export default async function SimSessionPage({
     // Edge-to-edge: the shell already renders this route full-bleed (immersive
     // path), so any padding wrapper here would inset the h-dvh conversation and
     // make it taller than the viewport. The SimSessionView owns the whole
-    // screen — header, chat, composer, sheets.
+    // screen: header, chat, composer, sheets.
     <SimSessionView
       sessionId={sessionId}
       patientName={patientName}
@@ -146,6 +154,8 @@ export default async function SimSessionPage({
       }))}
       branchInfo={branchInfo}
       provisionalDims={provisionalDims}
+      graded={graded}
+      initialGrade={stored?.grade ?? null}
     />
   );
 }

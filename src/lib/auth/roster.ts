@@ -5,14 +5,14 @@ import { createPacer } from "@/lib/email/pace";
 
 /**
  * Shared roster-provisioning logic. One source of truth for turning a list of
- * (name, email) into student accounts — used by both the admin server action
+ * (name, email) into student accounts: used by both the admin server action
  * (`admin/students/bulk-import.ts`) and the CLI (`scripts/roster-import.ts`).
  *
  * Credential flow (2026-11, security rebuild): no password is ever generated
  * for a student to read, stored in plain text, shown to an admin or emailed.
  * Each account gets an unguessable throwaway password nobody knows, and the
  * student sets their own through a one-time setup link (`/setup?t=…`). The
- * link is our own token (hashed in `account_setup_tokens`, 72 h, single use) —
+ * link is our own token (hashed in `account_setup_tokens`, 72 h, single use),
  * not Supabase's recovery link, which died on the redirect allowlist before.
  * Admins can email the link or copy it to share on WhatsApp; making a new one
  * cancels the old one.
@@ -84,7 +84,7 @@ export function parseRosterCsv(text: string, rowOffset = 2): RosterParse {
   const emptyNames: string[] = [];
   const seen = new Set<string>();
 
-  // `bom: true` strips a UTF-8 BOM — a leading BOM on the first header
+  // `bom: true` strips a UTF-8 BOM: a leading BOM on the first header
   // otherwise turns `name` into `﻿name`, silently dropping every name.
   const parsed = parse(text, {
     columns: true,
@@ -115,12 +115,12 @@ export function parseRosterCsv(text: string, rowOffset = 2): RosterParse {
 }
 
 /**
- * Letters + digits only (no symbols — Kavya has to read these over the phone /
+ * Letters + digits only (no symbols, Kavya has to read these over the phone /
  * WhatsApp), excluding look-alike characters (0/O, 1/I/l) so nobody mistypes.
  */
 /**
  * An unguessable throwaway password for a brand-new account. Nobody is ever
- * told it — the student replaces it from their setup link — it only exists
+ * told it, the student replaces it from their setup link, it only exists
  * because the auth API wants the account to have one.
  */
 export function generateCredential(): string {
@@ -129,7 +129,7 @@ export function generateCredential(): string {
 
 const SETUP_TTL_MS = 72 * 60 * 60 * 1000;
 
-/** sha256 of a setup token — only the hash is ever stored. */
+/** sha256 of a setup token, only the hash is ever stored. */
 export function hashSetupToken(token: string): string {
   return createHash("sha256").update(token).digest("hex");
 }
@@ -178,11 +178,11 @@ Then sign in at ${appUrl}/login with ${email}.
 
 If the link has expired, reply to this email and we'll send a new one.
 
-— The VIBHA team`;
+The VIBHA team`;
 }
 
 /**
- * The setup email as ready-made HTML (inline styles only — email clients strip
+ * The setup email as ready-made HTML (inline styles only, email clients strip
  * <style> blocks). Brand colours: blue #1d44d8, lime #cdf24b, ink #111111.
  */
 export function credentialsEmailHtml(name: string, email: string, setupUrl: string, appUrl: string): string {
@@ -203,7 +203,7 @@ export function credentialsEmailHtml(name: string, email: string, setupUrl: stri
       <p style="margin:0 0 20px;"><a href="${l}" style="display:inline-block;background:#cdf24b;color:#111111;border:2px solid #111111;border-radius:999px;padding:12px 24px;font-size:15px;font-weight:800;text-decoration:none;">Set my password</a></p>
       <p style="margin:0 0 6px;font-size:13px;line-height:1.5;color:#4d4d4d;">The link works once and expires in 3 days. Then sign in at <a href="${u}/login" style="color:#1d44d8;font-weight:700;">${u}/login</a> with ${e}.</p>
       <p style="margin:0;font-size:13px;line-height:1.5;color:#4d4d4d;">If the button doesn't work, copy this link: ${l}</p>
-      <p style="margin:16px 0 0;font-size:13px;color:#4d4d4d;">— The VIBHA team</p>
+      <p style="margin:16px 0 0;font-size:13px;color:#4d4d4d;">The VIBHA team</p>
     </td></tr>
   </table>
 </td></tr></table>
@@ -215,14 +215,14 @@ export type ImportDeps = {
   admin: SupabaseClient;
   /** Profile scope to stamp on each created account (e.g. "lectures_only"). */
   scope: string;
-  /** Report only — no account creation, no DB writes. */
+  /** Report only, no account creation, no DB writes. */
   dryRun?: boolean;
 };
 
 /**
  * IMPORT step (no email). Creates the auth account, stamps the scope, and
  * records a `credential_invites` row in `pending` state. No email is sent here
- * — sending is a separate, explicit step so Kavya sees the full batch first.
+ *: sending is a separate, explicit step so Kavya sees the full batch first.
  * Idempotent: an email that already has an auth user is skipped (duplicate).
  */
 export async function importRoster(rows: RosterRow[], deps: ImportDeps): Promise<RosterReport> {
@@ -297,7 +297,7 @@ export async function importRoster(rows: RosterRow[], deps: ImportDeps): Promise
     }
   }
 
-  // Record all pending invites — NOT sent yet.
+  // Record all pending invites, NOT sent yet.
   if (pendingCredentials.length) {
     const { error: credErr } = await admin.from("credential_invites").upsert(pendingCredentials, { onConflict: "email" });
     if (credErr) {
@@ -364,7 +364,7 @@ export async function sendCredentialEmails(
       continue;
     }
 
-    // The ready-made HTML credential email — the text body is the fallback for
+    // The ready-made HTML credential email: the text body is the fallback for
     // clients that can't render HTML.
     const subject = "Set up your VIBHA account";
     const res = await sendEmail(
@@ -418,7 +418,7 @@ type EmailSendLog = {
   errorReason: string | null;
   sentAt: string | null;
   sentBy: string | null;
-  /** Resend's message id — lets delivery/open/bounce webhooks find the row. */
+  /** Resend's message id: lets delivery/open/bounce webhooks find the row. */
   providerId?: string | null;
   /** Plain-text copy for the Mail reading pane (setup emails: never stored, the link is secret). */
   bodyText?: string | null;
@@ -434,7 +434,7 @@ type EmailSendLog = {
  * (2026_11_admin_redesign.sql); older databases get the basic row.
  */
 export async function logEmailSend(admin: SupabaseClient, log: EmailSendLog): Promise<void> {
-  // A preview site's skipped send isn't a failure — don't put it in Failed.
+  // A preview site's skipped send isn't a failure: don't put it in Failed.
   if (log.errorReason === PREVIEW_GATE) return;
   const base = {
     recipient: log.recipient,
@@ -473,13 +473,13 @@ export async function resetCredential(
 }
 
 /**
- * The single Resend sender — the ONLY code path that talks to Resend, so the
+ * The single Resend sender: the ONLY code path that talks to Resend, so the
  * real send and the test-email control can never drift apart. Reads the key
  * from the environment (never a fallback default key). Returns the real Resend
  * API result (id on success, message on failure).
  *
  * `body` is the plain-text fallback; `html` (optional) is the ready-made HTML
- * version — Resend gets both, so every client renders the right one.
+ * version: Resend gets both, so every client renders the right one.
  */
 // One pacer for the whole server instance: at most 4 sends a second, under
 // the provider's 10/second limit (the cause of 41 failed sends in Nov 2026).
@@ -504,7 +504,7 @@ export const PREVIEW_GATE = "Not sent: this is a preview site, so email only goe
 /**
  * Preview and development sites may point at the live database, so they must never
  * email real students by accident. They send only to ALLOWED_TEST_RECIPIENT
- * (one or more addresses, comma-separated) — the same rule the achievements
+ * (one or more addresses, comma-separated): the same rule the achievements
  * email already follows. Production sends normally.
  */
 export function previewBlocks(to: string, env: Record<string, string | undefined> = process.env): boolean {

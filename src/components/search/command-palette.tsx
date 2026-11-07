@@ -19,7 +19,7 @@ const GROUP_LABEL: Record<PaletteEntry["group"], string> = {
 };
 
 /**
- * Ask the Syllabus — ⌘K command palette.
+ * Ask the Syllabus: ⌘K command palette.
  * Opens with ⌘K (mac) / Ctrl+K (elsewhere) or from the sidebar. Searches the
  * real content available in this install (tools, courses, case docs) and
  * navigates. Keyboard: ↑/↓ move, Enter selects, Esc closes.
@@ -32,7 +32,7 @@ export function CommandPalette({ entries }: { entries: PaletteEntry[] }) {
   const inputRef = React.useRef<HTMLInputElement>(null);
 
   // Focus the input whenever the palette opens. The focus call is a DOM side
-  // effect, not a state update — safe inside the effect.
+  // effect, not a state update: safe inside the effect.
   React.useEffect(() => {
     if (open) inputRef.current?.focus();
   }, [open]);
@@ -53,7 +53,7 @@ export function CommandPalette({ entries }: { entries: PaletteEntry[] }) {
         setQuery("");
         setIdx(0);
       }
-      // "/" opens search like YouTube/GitHub — but never while typing.
+      // "/" opens search like YouTube/GitHub, but never while typing.
       if (e.key === "/" && !e.metaKey && !e.ctrlKey && !e.altKey) {
         const el = e.target as HTMLElement | null;
         const typing =
@@ -152,7 +152,7 @@ export function CommandPalette({ entries }: { entries: PaletteEntry[] }) {
           {flat.length === 0 ? (
             <p className="px-3 py-6 text-center text-small text-muted-foreground">
               {query.trim()
-                ? "Nothing matches that yet — try a tool name, a condition, or 'ethics'."
+                ? "Nothing matches that yet: try a tool name, a condition, or 'ethics'."
                 : "Type to search the syllabus, tools, and case library."}
             </p>
           ) : (

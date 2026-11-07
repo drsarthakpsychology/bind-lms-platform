@@ -57,7 +57,7 @@ function Row({ item }: { item: RefListItem }) {
 }
 
 /**
- * Quick Reference A–Z: search, filter by kind, jump by letter. Every row opens
+ * Quick Reference A to Z: search, filter by kind, jump by letter. Every row opens
  * its own page. A separate library (owner rule: never inside lessons).
  */
 export function ReferenceLibrary({ items, initialQuery = "", initialKind = "all" }: { items: RefListItem[]; initialQuery?: string; initialKind?: RefKind | "all" }) {

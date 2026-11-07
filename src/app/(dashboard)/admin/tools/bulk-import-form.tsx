@@ -132,7 +132,7 @@ export function BulkImportForm() {
           {/* Summary */}
           <div className="flex flex-wrap items-center gap-2">
             <p className="text-small font-medium text-foreground">
-              <span className="font-semibold">{fileName}</span> — {rows.length} ready to import
+              <span className="font-semibold">{fileName}</span>: {rows.length} ready to import
               {issueCount > 0 && `, ${issueCount} need attention`}
             </p>
             <Button type="button" variant="outline" size="xs" onClick={reset}>
@@ -180,13 +180,13 @@ export function BulkImportForm() {
           {showIssues && (
             <div className="space-y-2 rounded-md border-2 border-border bg-muted/40 p-3 text-caption text-muted-foreground">
               {duplicates.map((d) => (
-                <p key={d.email}>Row {d.row}: {d.email} — {d.reason}</p>
+                <p key={d.email}>Row {d.row}: {d.email}, {d.reason}</p>
               ))}
               {invalid.map((d) => (
-                <p key={`${d.row}-${d.email}`}>Row {d.row}: {d.email} — {d.reason}</p>
+                <p key={`${d.row}-${d.email}`}>Row {d.row}: {d.email}, {d.reason}</p>
               ))}
               {emptyNames.map((email) => (
-                <p key={`empty-${email}`}>{email} — has no name (we&apos;ll use their email address)</p>
+                <p key={`empty-${email}`}>{email}: has no name (we&apos;ll use their email address)</p>
               ))}
             </div>
           )}
@@ -246,7 +246,7 @@ export function BulkImportForm() {
       {phase === "importing" && (
         <div className="flex items-center gap-2 text-small text-muted-foreground">
           <Loader2 className="size-4 animate-spin text-link" aria-hidden />
-          Creating {rows.length} accounts — each gets an 8-char password…
+          Creating {rows.length} accounts: each gets an 8-char password…
         </div>
       )}
 
@@ -267,7 +267,7 @@ export function BulkImportForm() {
                     {result.invalidSkipped > 0 && ` ${result.invalidSkipped} invalid row(s) skipped.`}
                   </>
                 ) : (
-                  "Nothing was created — the file had no valid rows."
+                  "Nothing was created: the file had no valid rows."
                 )}
               </span>
             </AlertDescription>

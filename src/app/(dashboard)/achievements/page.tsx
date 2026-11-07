@@ -6,7 +6,7 @@ import { AchievementsClient } from "./achievements-client";
 
 export const metadata: Metadata = { title: "My Achievements" };
 
-/** My Achievements — the student's badges, certificates and progress. */
+/** My Achievements: the student's badges, certificates and progress. */
 export default async function AchievementsPage() {
   const me = await requireSession();
   if (!me) redirect("/login");

@@ -5,7 +5,7 @@ import { headingSlug } from "@/lib/policies";
  * The shared rendering rules for legal copy. Clause headings (h2/h3) get the
  * anchor id the brief's deep-links rely on (`/policies/refund#2-3-...`); every
  * table lives in an overflow-x container so no policy ever breaks a mobile
- * layout. All text uses the site's token scale (text-body = 16px/1.6) — legal
+ * layout. All text uses the site's token scale (text-body = 16px/1.6): legal
  * copy is a reading surface, not decoration.
  *
  * Deliberately NOT "use client": these render server-side with MDXRemote (RSC).
@@ -33,7 +33,7 @@ function PolicyHeading({
       <a
         href={`#${id}`}
         aria-label={`Link to this section: ${text}`}
-        className="ml-2 text-link opacity-0 transition-opacity focus-visible:opacity-100 group-hover:opacity-100"
+        className="ml-2 text-link opacity-0 transition-opacity focus-visible:opacity-100 group-hover:opacity-100 pointer-coarse:opacity-100"
       >
         #
       </a>
@@ -77,7 +77,7 @@ export const policyMdxComponents = {
     />
   ),
   table: (props: React.TableHTMLAttributes<HTMLTableElement>) => (
-    <div className="my-5 overflow-x-auto overscroll-x-contain" role="region" aria-label="Policy table — scroll horizontally if needed">
+    <div className="my-5 overflow-x-auto overscroll-x-contain" role="region" aria-label="Policy table: scroll horizontally if needed">
       <table
         className="w-full min-w-[18rem] border-collapse text-small"
         {...props}

@@ -1,23 +1,23 @@
 /**
- * MSE ladder (v5 Part 2.1) — the five levels, unlocked in order.
+ * MSE ladder (v5 Part 2.1): the five levels, unlocked in order.
  *
- * Level 1 — Observe: write free-text description; diagnostic terms are
+ * Level 1: Observe: write free-text description; diagnostic terms are
  *   flagged. Score = observations kept, conclusions removed. (Already the
  *   "describe, don't diagnose" mode; this adds the scoring function.)
- * Level 2 — Domain by domain: one of the 11 domains at a time with a
+ * Level 2: Domain by domain: one of the 11 domains at a time with a
  *   controlled vocabulary. Novices must not skip ahead.
- * Level 3 — Confusable pairs: mood vs affect, thought form vs content,
+ * Level 3: Confusable pairs: mood vs affect, thought form vs content,
  *   akathisia vs anxiety, etc. (lives in ./confusable.ts).
- * Level 4 — Full MSE under time: ten minutes, complete write-up, scored
+ * Level 4: Full MSE under time: ten minutes, complete write-up, scored
  *   against expert coding with green/amber/red per domain.
- * Level 5 — MSE from live interview: run a Consulting Room session, then
+ * Level 5: MSE from live interview: run a Consulting Room session, then
  *   write the MSE from your own transcript, scored against what the patient
  *   actually presented (the case's expert MSE coding).
  *
- * Everything here is authored data or pure logic — no prompt text.
+ * Everything here is authored data or pure logic, no prompt text.
  */
 
-/** A case's expert MSE code — what the patient actually presents. This is
+/** A case's expert MSE code: what the patient actually presents. This is
  *  what Level 5 and Level 4 score against. Authored per case (never derived
  *  from a model). */
 export interface MseCode {
@@ -34,7 +34,7 @@ export interface MseCode {
   insight: string[];
   judgment: string[];
   /** Observable "small things" the student should have noticed in the
-   *  interview (v5 Part 2.2) — these are the missed-observation teach. */
+   *  interview (v5 Part 2.2): these are the missed-observation teach. */
   small_things: string[];
 }
 
@@ -78,7 +78,7 @@ export function scoreObserve(text: string): {
 }
 
 /** Diagnostic/clinical terms the Level 1 observe mode flags as smuggled
- *  conclusions. A conclusion is "patient was depressed" — a label applied by
+ *  conclusions. A conclusion is "patient was depressed": a label applied by
  *  the writer. Observations use behaviour words instead. */
 const DIAGNOSTIC_TERMS_FOR_OBSERVE = [
   "depressed", "depressive", "depression", "anxious", "anxiety", "psychotic",
@@ -89,7 +89,7 @@ const DIAGNOSTIC_TERMS_FOR_OBSERVE = [
   "hysterical", "manipulative", "attention-seeking", "dramatic", "withdrawn",
 ];
 
-/** Level 2 — domain by domain. The 11 domains in the order students must
+/** Level 2: domain by domain. The 11 domains in the order students must
  *  learn them, each with its controlled vocabulary (see practice/mse.ts) and
  *  a probe question that elicits that domain. */
 export interface DomainUnit {
@@ -113,17 +113,17 @@ export function formatDomainKey(key: string): string {
 }
 
 export const DOMAIN_UNITS: DomainUnit[] = [
-  { domain: "appearance", order: 1, probe: "Describe the patient as they sit before you.", whatYoureLookingFor: "Grooming, dress, posture, eye contact — the observable surface." },
-  { domain: "behavior", order: 2, probe: "What is the patient doing as you talk?", whatYoureLookingFor: "Cooperation, restlessness, agitation, withdrawal — behaviour you can see." },
-  { domain: "speech", order: 3, probe: "How is the patient speaking?", whatYoureLookingFor: "Rate, volume, tone, quantity, fluency — the how of speech, not the content." },
+  { domain: "appearance", order: 1, probe: "Describe the patient as they sit before you.", whatYoureLookingFor: "Grooming, dress, posture, eye contact: the observable surface." },
+  { domain: "behavior", order: 2, probe: "What is the patient doing as you talk?", whatYoureLookingFor: "Cooperation, restlessness, agitation, withdrawal: behaviour you can see." },
+  { domain: "speech", order: 3, probe: "How is the patient speaking?", whatYoureLookingFor: "Rate, volume, tone, quantity, fluency: the how of speech, not the content." },
   { domain: "mood", order: 4, probe: "How have you been feeling inside, most days?", whatYoureLookingFor: "The patient's REPORTED, sustained inner state. Ask, don't infer." },
-  { domain: "affect", order: 5, probe: "What do you observe on the patient's face as they speak?", whatYoureLookingFor: "The OBSERVED emotional range right now — flat, labile, congruent, incongruent." },
+  { domain: "affect", order: 5, probe: "What do you observe on the patient's face as they speak?", whatYoureLookingFor: "The OBSERVED emotional range right now: flat, labile, congruent, incongruent." },
   { domain: "thought_process", order: 6, probe: "How do the patient's answers connect?", whatYoureLookingFor: "Linear, tangential, circumstantial, flight of ideas, thought blocking." },
-  { domain: "thought_content", order: 7, probe: "What is the patient thinking about?", whatYoureLookingFor: "Delusions, obsessions, preoccupations, suicidality, homicidality — the what." },
+  { domain: "thought_content", order: 7, probe: "What is the patient thinking about?", whatYoureLookingFor: "Delusions, obsessions, preoccupations, suicidality, homicidality: the what." },
   { domain: "perception", order: 8, probe: "Any unusual experiences with the senses?", whatYoureLookingFor: "Hallucinations, illusions, depersonalisation, derealisation." },
   { domain: "cognition", order: 9, probe: "Orientation, attention, memory, concentration.", whatYoureLookingFor: "Oriented x3, impaired attention/memory/concentration." },
-  { domain: "insight", order: 10, probe: "What do you think is causing what you're experiencing?", whatYoureLookingFor: "Full, partial, poor, absent — graded, domain-specific, not binary." },
-  { domain: "judgment", order: 11, probe: "How would you handle [a concrete future situation]?", whatYoureLookingFor: "Good, fair, poor — future and social judgment, not just insight." },
+  { domain: "insight", order: 10, probe: "What do you think is causing what you're experiencing?", whatYoureLookingFor: "Full, partial, poor, absent: graded, domain-specific, not binary." },
+  { domain: "judgment", order: 11, probe: "How would you handle [a concrete future situation]?", whatYoureLookingFor: "Good, fair, poor: future and social judgment, not just insight." },
 ];
 
 /** The domain fields of an MSE code (all string-array columns; excludes the

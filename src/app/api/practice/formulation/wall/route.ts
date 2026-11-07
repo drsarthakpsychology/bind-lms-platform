@@ -12,9 +12,9 @@ const postSchema = z.object({
 });
 
 /**
- * POST /api/practice/formulation/wall — post an anonymised formulation
+ * POST /api/practice/formulation/wall: post an anonymised formulation
  * narrative to the peer-critique wall (author stored, never shown).
- * GET  — list the cohort's narratives (author_id nulled via the view).
+ * GET : list the cohort's narratives (author_id nulled via the view).
  */
 export async function POST(req: Request) {
   const supabase = await createClient();
@@ -45,7 +45,7 @@ export async function GET() {
   const access = await requireStudentApi({ path: "/practice/formulation", flag: "formulation" });
   if (!access.ok) return access.response;
 
-  // The view nulls author_id — anonymity is structural, not optional.
+  // The view nulls author_id: anonymity is structural, not optional.
   const { data, error } = await supabase
     .from("formulation_wall_visible")
     .select("id, narrative, case_title, created_at")

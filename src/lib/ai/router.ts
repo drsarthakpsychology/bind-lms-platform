@@ -1,12 +1,12 @@
 /**
- * AI model router — a registry of providers with automatic failover.
+ * AI model router: a registry of providers with automatic failover.
  *
  * The whole point is NOT to hard-code one provider. Free tiers are
  * rate-limited, not rate-free; real capacity comes from stacking independent
  * limits and failing over on 429/5xx/timeout.
  *
  * Providers are all OpenAI-compatible chat endpoints except Gemini's native
- * API. `trainsOnData` is the field that decides what a provider may ever see —
+ * API. `trainsOnData` is the field that decides what a provider may ever see:
  * student data can only go to `trainsOnData === false` providers (see guards.ts).
  *
  * AI_ENABLED=false → the app uses deterministic fixtures in src/lib/ai/fixtures/
@@ -44,12 +44,12 @@ export function modelForTier(provider: Provider, tier: TaskTier): string {
 
 /** Capability → which provider ids can serve it, in priority order. */
 export const PROVIDER_PRIORITY: Record<ProviderCapability, string[]> = {
-  // fast chat / streaming — Groq first (voice needs sub-second TTFB), then the
+  // fast chat / streaming: Groq first (voice needs sub-second TTFB), then the
   // no-train fallbacks (Cerebras + SambaNova) so student data has capacity
   // beyond Groq's RPD ceiling.
   chat: ["groq", "cerebras", "sambanova", "gemini", "openrouter", "opencode", "omniroute", "deepseek", "anthropic"],
   stream: ["groq", "cerebras", "sambanova", "gemini", "openrouter", "opencode", "omniroute", "deepseek", "anthropic"],
-  // structured JSON — Groq is Primary (fast, no-train). The sim Director +
+  // structured JSON: Groq is Primary (fast, no-train). The sim Director +
   // debrief scoring carry student data, so the no-train fallbacks (Cerebras,
   // SambaNova, OpenRouter, OpenCode, OmniRoute) sit next; gemini/deepseek
   // (trainsOnData) are excluded by the guard and sit last as non-student lanes.
@@ -96,10 +96,10 @@ export const PROVIDERS: Provider[] = [
     protocol: "openai",
   },
   {
-    // SambaNova Cloud — the Cerebras-alternative lane (user request 2026-08-14).
+    // SambaNova Cloud: the Cerebras-alternative lane (user request 2026-08-14).
     // Verified catalog: Meta-Llama-3.3-70B-Instruct, DeepSeek-V3.1/V3.2,
     // gpt-oss-120b, gemma-4-31B-it. OpenAI-compatible. NOTE (verified 2026-08-14):
-    // the API now requires a payment method (PAYMENT_METHOD_REQUIRED) — the old
+    // the API now requires a payment method (PAYMENT_METHOD_REQUIRED): the old
     // "free, no card" claim is outdated, so this is a PAID fallback lane, not a
     // free one. Cerebras (free, no-train) remains the true free double.
     id: "sambanova",
@@ -112,10 +112,10 @@ export const PROVIDERS: Provider[] = [
     protocol: "openai",
   },
   {
-    // OpenCode Zen — OpenAI-compatible gateway (user request 2026-08-14).
+    // OpenCode Zen: OpenAI-compatible gateway (user request 2026-08-14).
     // https://opencode.ai/zen/v1 via OPENCODE_API_KEY. USER DIRECTION: use the
     // FREE models. Verified live 2026-08-14: deepseek-v4-flash-free returns
-    // direct content (the other frees — nemotron, mimo — are reasoning/<think>
+    // direct content (the other frees (nemotron, mimo) are reasoning/<think>
     // style). Paid models (claude/gpt-5) exist but need billing; the free lane
     // is the default here.
     id: "opencode",
@@ -128,12 +128,12 @@ export const PROVIDERS: Provider[] = [
     protocol: "openai",
   },
   {
-    // OmniRoute — self-hosted free-model pooling gateway (user request
+    // OmniRoute: self-hosted free-model pooling gateway (user request
     // 2026-08-14; repo diegosouzapw/OmniRoute). OpenAI-compatible /v1 on
     // localhost:20128; "auto" routes across 42 provider pools (~1.5B free
     // tokens/mo) with health/speed/cost/quality scoring + fallback.
     // PRIVACY: the gateway itself does not train (trainsOnData=false), BUT it
-    // can route to training upstreams — for student data it MUST be configured
+    // can route to training upstreams, for student data it MUST be configured
     // with only no-train providers enabled. Env OMNIROUTE_URL/OMNIROUTE_API_KEY.
     id: "omniroute",
     // Cloud-addressable: OMNIROUTE_URL overrides the default local gateway so
@@ -148,7 +148,7 @@ export const PROVIDERS: Provider[] = [
     protocol: "openai",
   },
   {
-    // OpenRouter overflow lane — current free model verified live 2026-08-14:
+    // OpenRouter overflow lane: current free model verified live 2026-08-14:
     // the previous llama-3.3-70b-instruct:free no longer exists; openai/gpt-
     // oss-20b:free is a current free general model that returns real content
     // (verified). Free tier ~50 RPD; $10 one-time → ~1,000 RPD.
@@ -162,11 +162,11 @@ export const PROVIDERS: Provider[] = [
     protocol: "openai",
   },
   {
-    // DeepSeek V4 — verified 2026-08-14 (api-docs.deepseek.com): base
+    // DeepSeek V4: verified 2026-08-14 (api-docs.deepseek.com): base
     // https://api.deepseek.com, OpenAI-compatible, models deepseek-v4-flash
     // (+0731) and deepseek-v4-pro (+0813). PRIVACY: the API training posture is
     // unresolved (sources conflict; CN controller, no fixed retention), so
-    // trainsOnData=true — the data-policy guard keeps it OUT of student-data
+    // trainsOnData=true: the data-policy guard keeps it OUT of student-data
     // lanes automatically. It is ideal for the brief §13 bulk NON-student
     // workloads (corpus processing, metadata, classification, knowledge
     // structuring) where the guard already allows it. Flash = cheap bulk;
@@ -176,7 +176,7 @@ export const PROVIDERS: Provider[] = [
     apiKeyEnv: "DEEPSEEK_API_KEY",
     models: { fast: "deepseek-v4-flash", smart: "deepseek-v4-pro", strong: "deepseek-v4-pro" },
     limits: { rpm: 60, rpd: 10000, tpm: 1000000 },
-    trainsOnData: true, // unresolved posture — never for student data (guard-enforced)
+    trainsOnData: true, // unresolved posture, never for student data (guard-enforced)
     supports: ["chat", "stream", "json"],
     protocol: "openai",
   },
@@ -195,7 +195,7 @@ export const PROVIDERS: Provider[] = [
 export function isEnabled(): boolean {
   // AI is on unless explicitly disabled with AI_ENABLED=false. With provider
   // keys configured, the real models serve; with none, callers degrade
-  // gracefully (fixture / error) — a forgotten flag must never silently run
+  // gracefully (fixture / error): a forgotten flag must never silently run
   // the scripted engine when the user has configured an AI API.
   return process.env.AI_ENABLED !== "false";
 }
@@ -212,7 +212,7 @@ export function availableProviders(): Provider[] {
 
 /**
  * Providers that may serve a given workload. `studentData: true` filters to
- * providers that do not train on data — this is the data-policy hard split.
+ * providers that do not train on data: this is the data-policy hard split.
  */
 export function providersFor(capability: ProviderCapability, studentData: boolean): Provider[] {
   const order = PROVIDER_PRIORITY[capability];

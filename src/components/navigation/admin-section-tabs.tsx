@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 
 /**
  * The tab strip at the top of each admin place (Content, People, Review,
- * System) — the second level of navigation, like Shopify's or Gmail's tabs.
+ * System): the second level of navigation, like Shopify's or Gmail's tabs.
  * Scrolls sideways on phones; the active tab scrolls itself into view.
  */
 export function AdminSectionTabs() {

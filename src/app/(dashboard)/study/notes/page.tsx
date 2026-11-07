@@ -9,7 +9,7 @@ import { loadLearnState, saveLearnState } from "../actions";
 
 export const metadata: Metadata = { title: "One-page summaries" };
 
-/** /study/notes — visual study notes for everything taught, by week. */
+/** /study/notes: visual study notes for everything taught, by week. */
 export default async function NotesPage() {
   await requireFeature("learn");
   const serverState = await loadLearnState();

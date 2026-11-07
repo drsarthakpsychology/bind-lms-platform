@@ -1,0 +1,872 @@
+import type { PrepExam, PrepQuestion } from "@/lib/prep/types";
+
+/** Social · part 1: social perception, impression formation and attribution (Heider, Jones and Davis, Kelley, Weiner) and attributional biases. */
+
+const C: PrepExam = "cuet-pg";
+const N: PrepExam = "ugc-net";
+const M: PrepExam = "mcp-entrance";
+const S: PrepExam = "ma-semester";
+
+const AR: [string, string, string, string] = [
+  "Both A and R are true, and R is the correct explanation of A",
+  "Both A and R are true, but R is not the correct explanation of A",
+  "A is true, but R is false",
+  "A is false, but R is true",
+];
+
+type Q = Omit<PrepQuestion, "subject" | "topic"> & { topic?: string };
+const s = (q: Q): PrepQuestion => ({ subject: "social", topic: "attribution", ...q });
+
+export const QUESTIONS: PrepQuestion[] = [
+  s({
+    id: "soc-attr-0001",
+    exams: [C, N, S],
+    difficulty: 1,
+    type: "mcq",
+    stem: "Fritz Heider, the founder of attribution theory, distinguished between explaining behaviour by:",
+    options: [
+      "Classical and operant conditioning",
+      "Conscious and unconscious causes",
+      "Genetic and environmental causes",
+      "Internal (dispositional) and external (situational) causes",
+    ],
+    answer: 3,
+    explanation:
+      "In his 1958 book on interpersonal relations, Heider described people as 'naive scientists' who explain behaviour by personal forces (ability, effort, traits) or environmental forces (task difficulty, luck, situational pressure). Conscious versus unconscious is a psychoanalytic distinction. Genes versus environment is the nature-nurture question. Conditioning types belong to learning theory.",
+    ref: "Heider 1958; Baron & Branscombe, Social Psychology, ch. 3",
+  }),
+  s({
+    id: "soc-attr-0002",
+    exams: [C, N, M, S],
+    difficulty: 2,
+    type: "mcq",
+    stem: "According to Kelley's covariation model, which combination of information leads most strongly to an internal (person) attribution for 'Ravi laughs at the comedian'?",
+    options: [
+      "Low consensus, low distinctiveness, high consistency",
+      "High consensus, high distinctiveness, high consistency",
+      "Low consensus, high distinctiveness, low consistency",
+      "High consensus, low distinctiveness, low consistency",
+    ],
+    answer: 0,
+    explanation:
+      "If few others laugh (low consensus), Ravi laughs at all comedians (low distinctiveness) and he always laughs at this one (high consistency), the cause is Ravi (he laughs easily). High consensus, high distinctiveness and high consistency point to the stimulus (the comedian is funny). Low consistency points to circumstances, a one-off situation. High consensus with low distinctiveness and low consistency mixes cues and gives no clear attribution.",
+    ref: "Kelley 1967; McArthur 1972",
+  }),
+  s({
+    id: "soc-attr-0003",
+    exams: [C, N, M, S],
+    difficulty: 2,
+    type: "match",
+    stem: "Match Kelley's dimension in List I with the question it asks in List II.",
+    lists: {
+      left: ["A. Consensus", "B. Distinctiveness", "C. Consistency"],
+      right: [
+        "i. Does this person behave the same way toward this stimulus on other occasions?",
+        "ii. Do other people behave the same way toward this stimulus?",
+        "iii. Does this person behave differently toward other stimuli?",
+      ],
+    },
+    options: [
+      "A-ii, B-iii, C-i",
+      "A-iii, B-ii, C-i",
+      "A-ii, B-i, C-iii",
+      "A-i, B-iii, C-ii",
+    ],
+    answer: 0,
+    explanation:
+      "Kelley's model treats people like scientists checking what an effect goes with. Consensus asks whether other people react to the same stimulus in the same way, so it compares the actor with other people (ii). Distinctiveness asks whether the actor reacts this way only to this stimulus or to many others, so it compares stimuli (iii). Consistency asks whether the actor reacts this way to this stimulus on other occasions too, so it compares times (i). High consensus and high distinctiveness point to the stimulus, low consensus and low distinctiveness point to the person, and low consistency points to the circumstances. The other codes mix up these three comparisons.",
+    ref: "Kelley 1967",
+  }),
+  s({
+    id: "soc-attr-0004",
+    exams: [N, M, S],
+    difficulty: 3,
+    type: "mcq",
+    stem: "Jones and Davis's correspondent inference theory predicts that we are most likely to infer that an act reflects a person's true disposition when the act is:",
+    options: [
+      "Performed by a group rather than an individual",
+      "Forced by circumstances and socially expected",
+      "Common to all available choices",
+      "Freely chosen, has distinctive (non-common) effects and is low in social desirability",
+    ],
+    answer: 3,
+    explanation:
+      "Jones and Davis argued that dispositional inferences are strongest when behaviour is chosen, produces effects that alternative actions would not (non-common effects), and departs from social norms (unexpected behaviour is more informative). Hedonic relevance and personalism also strengthen inferences. Forced, socially expected or common-effect behaviour tells us little about the person.",
+    ref: "Jones & Davis 1965",
+  }),
+  s({
+    id: "soc-attr-0005",
+    exams: [C, N, M, S],
+    difficulty: 2,
+    type: "mcq",
+    stem: "In Jones and Harris's study, participants read essays for or against Fidel Castro. Even when told the writer had been assigned the position, participants:",
+    options: [
+      "Still inferred that the writer's attitude matched the essay, showing the correspondence bias (fundamental attribution error)",
+      "Correctly concluded that the essay revealed nothing about the writer",
+      "Inferred the opposite attitude from the essay",
+      "Refused to make any judgement",
+    ],
+    answer: 0,
+    explanation:
+      "Participants rated pro-Castro writers as more pro-Castro even in the no-choice condition, under-weighting the situational constraint. Ross named this tendency the fundamental attribution error. Participants did not discount the essay fully, did not infer the opposite and did make judgements.",
+    ref: "Jones & Harris 1967; Ross 1977",
+  }),
+  s({
+    id: "soc-attr-0006",
+    exams: [N, M, S],
+    difficulty: 3,
+    type: "assertion-reason",
+    stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
+    statements: [
+      "A: In Ross, Amabile and Steinmetz's quiz study, observers rated questioners as more knowledgeable than contestants.",
+      "R: In the same study, the contestants themselves also rated the questioners as more knowledgeable than themselves.",
+    ],
+    options: AR,
+    answer: 1,
+    explanation:
+      "Both are true, but R does not explain A. Observers made this judgement because they did not adjust for the questioners' role advantage: questioners could set questions from their own areas of knowledge, which no one could answer easily. R reports a parallel finding that contestants fell for the same error, but it is another example of the bias, not its cause. That both groups made the error shows its strength, but it does not explain why observers made it. So 'R explains A' is wrong, and since both statements are true, the options calling either false are wrong.",
+    ref: "Ross, Amabile & Steinmetz 1977, J Pers Soc Psychol",
+  }),
+  s({
+    id: "soc-attr-0007",
+    exams: [C, N, M, S],
+    difficulty: 2,
+    type: "match",
+    stem: "Match the cause of success or failure in List I with its position on Weiner's dimensions in List II.",
+    lists: {
+      left: ["A. Ability", "B. Effort", "C. Task difficulty", "D. Luck"],
+      right: [
+        "i. External, unstable, uncontrollable",
+        "ii. Internal, unstable, controllable",
+        "iii. Internal, stable, uncontrollable",
+        "iv. External, stable, uncontrollable",
+      ],
+    },
+    options: [
+      "A-iii, B-ii, C-iv, D-i",
+      "A-ii, B-iii, C-iv, D-i",
+      "A-iii, B-ii, C-i, D-iv",
+      "A-iv, B-ii, C-iii, D-i",
+    ],
+    answer: 0,
+    explanation:
+      "Weiner classified ability as internal, stable and (in the short run) uncontrollable (iii); effort as internal, unstable and controllable (ii); task difficulty as external, stable and uncontrollable (iv); and luck as external, unstable and uncontrollable (i). The other codes swap ability and effort, task difficulty and luck, or ability and task difficulty.",
+    ref: "Weiner 1979, 1985, Psychol Rev",
+  }),
+  s({
+    id: "soc-attr-0008",
+    exams: [N, M],
+    difficulty: 2,
+    type: "mcq",
+    stem: "In Weiner's attribution theory of emotion, attributing another person's failure to a controllable cause (for example, lack of effort) tends to produce:",
+    options: [
+      "Hopelessness about one's own future",
+      "Pity rather than anger",
+      "Pride",
+      "Anger rather than sympathy",
+    ],
+    answer: 3,
+    explanation:
+      "Weiner linked controllability to other-directed emotions: failure due to uncontrollable causes (illness, low ability) evokes pity and help, whereas controllable causes (laziness) evoke anger and less help. Pride is linked to internal attributions for one's own success (locus). Hopelessness is linked to stable attributions for one's own failure (stability).",
+    ref: "Weiner 1985; Weiner 1995, Judgments of Responsibility",
+  }),
+  s({
+    id: "soc-attr-0009",
+    exams: [C, N, S],
+    difficulty: 1,
+    type: "mcq",
+    stem: "The tendency to attribute our own successes to internal factors and our failures to external factors is called:",
+    options: [
+      "Self-serving bias",
+      "Fundamental attribution error",
+      "False consensus effect",
+      "Actor-observer bias",
+    ],
+    answer: 0,
+    explanation:
+      "The self-serving bias protects self-esteem ('I passed because I worked hard; I failed because the paper was unfair'). The fundamental attribution error is overemphasising dispositions when explaining others' behaviour. The false consensus effect is overestimating how many people share our views. The actor-observer bias is attributing our own behaviour to situations and others' to dispositions.",
+    ref: "Miller & Ross 1975; Mezulis et al. 2004 meta-analysis",
+  }),
+  s({
+    id: "soc-attr-0010",
+    exams: [N, M, S],
+    difficulty: 3,
+    type: "mcq",
+    stem: "Storms showed participants videotapes of a conversation from either their own or their partner's visual perspective. Reversing the viewpoint:",
+    options: [
+      "Made everyone more situational",
+      "Had no effect on attributions",
+      "Reversed the actor-observer difference: actors who saw themselves made more dispositional attributions about their own behaviour",
+      "Eliminated the self-serving bias",
+    ],
+    answer: 2,
+    explanation:
+      "Storms argued that the actor-observer difference arises partly from visual focus: actors see the situation, observers see the actor. When actors watched themselves on video, they attributed more to their own dispositions, and observers who saw the actor's view attributed more to the situation. The effect was clear, not null, and it changed perspective-specific attributions rather than the self-serving bias. (Malle's meta-analysis later found the actor-observer asymmetry itself to be small.)",
+    ref: "Storms 1973, J Pers Soc Psychol; Malle 2006, Psychol Bull",
+  }),
+  s({
+    id: "soc-attr-0011",
+    exams: [N, M],
+    difficulty: 4,
+    type: "passage",
+    stem: "What do these results show?",
+    passage:
+      "Participants watched a silent video of a woman who appeared very anxious. Half were told she was discussing anxiety-provoking topics (sexual fantasies); half were told she was discussing neutral topics (travel). Some participants simply watched; others also had to memorise a list of words while watching. Without the memory task, participants who knew the topics were anxiety-provoking rated her as less dispositionally anxious. With the memory task, both topic groups rated her as similarly anxious.",
+    options: [
+      "The memory task improved accuracy",
+      "Cognitive load makes people more situational in their attributions",
+      "Correcting a dispositional inference for situational information requires cognitive effort, so cognitive load increases the correspondence bias",
+      "People never use situational information",
+    ],
+    answer: 2,
+    explanation:
+      "Gilbert, Pelham and Krull proposed a two-stage model: people automatically characterise the actor by disposition and then, if they have resources, correct for the situation. Under load, correction fails, so the situational information has no effect. Load made attributions more dispositional, not more situational. Participants without load did use situational information. Nothing suggests load improved accuracy.",
+    ref: "Gilbert, Pelham & Krull 1988, J Pers Soc Psychol",
+  }),
+  s({
+    id: "soc-attr-0012",
+    exams: [N, M, S],
+    difficulty: 3,
+    type: "mcq",
+    stem: "Joan Miller's study comparing Hindu Indian and American participants of different ages found that:",
+    options: [
+      "Indian and American children differed greatly, but adults did not",
+      "With age, Americans increasingly used dispositional explanations while Indians increasingly used situational and contextual explanations",
+      "Both groups made only dispositional attributions at all ages",
+      "Indian participants used more dispositional explanations than Americans",
+    ],
+    answer: 1,
+    explanation:
+      "Children aged 8 in both cultures gave similar explanations, but by adulthood Americans emphasised personality traits and Indians emphasised social roles, obligations and context, suggesting that the fundamental attribution error is partly learned through culture. Differences grew with age rather than shrinking. Indians used fewer, not more, dispositional explanations.",
+    ref: "Miller 1984, J Pers Soc Psychol",
+  }),
+  s({
+    id: "soc-attr-0013",
+    exams: [N, M],
+    difficulty: 3,
+    type: "assertion-reason",
+    stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
+    statements: [
+      "A: Morris and Peng found that English-language US newspapers explained mass murders more by the killers' personal dispositions than Chinese-language newspapers did.",
+      "R: Collectivist cultural traditions tend to emphasise the influence of context and relationships on behaviour.",
+    ],
+    options: AR,
+    answer: 0,
+    explanation:
+      "Both are true and R explains A. Analysing coverage of two murders, Morris and Peng found that an English-language US newspaper stressed traits (for example 'bad temper'), while a Chinese-language US newspaper stressed situational factors (relationships, pressures). They also found Chinese participants gave more situational explanations of a fish moving apart from a group. The cultural emphasis on context is the proposed explanation.",
+    ref: "Morris & Peng 1994, J Pers Soc Psychol",
+  }),
+  s({
+    id: "soc-attr-0014",
+    exams: [C, N, S],
+    difficulty: 2,
+    type: "mcq",
+    stem: "In Ross, Greene and House's study, students asked whether they would walk around campus wearing an 'Eat at Joe's' sandwich board estimated that most others would make the same choice as themselves. This illustrates:",
+    options: [
+      "Groupthink",
+      "The false uniqueness effect",
+      "The false consensus effect",
+      "The halo effect",
+    ],
+    answer: 2,
+    explanation:
+      "Students who agreed estimated that about 62% of others would agree, while those who refused estimated that about 67% would refuse, each overestimating support for their own choice. False uniqueness is underestimating how common our desirable traits or abilities are. Groupthink is faulty group decision-making. The halo effect is letting one positive trait colour overall impressions.",
+    ref: "Ross, Greene & House 1977, J Exp Soc Psychol",
+  }),
+  s({
+    id: "soc-attr-0015",
+    exams: [N, M, S],
+    difficulty: 3,
+    type: "match",
+    stem: "Match the bias in List I with its description in List II.",
+    lists: {
+      left: [
+        "A. Ultimate attribution error",
+        "B. Just-world belief",
+        "C. Defensive attribution",
+        "D. Hostile attribution bias",
+      ],
+      right: [
+        "i. Blaming victims for their misfortune to preserve a sense that people get what they deserve",
+        "ii. Attributing negative acts by outgroup members to their disposition and positive acts to situations, and the reverse for the ingroup",
+        "iii. Interpreting ambiguous actions of others as intentionally hostile",
+        "iv. Explaining others' misfortunes in ways that make one feel less vulnerable to them",
+      ],
+    },
+    options: [
+      "A-ii, B-i, C-iii, D-iv",
+      "A-i, B-ii, C-iv, D-iii",
+      "A-ii, B-iv, C-i, D-iii",
+      "A-ii, B-i, C-iv, D-iii",
+    ],
+    answer: 3,
+    explanation:
+      "Pettigrew described the ultimate attribution error as the group-level version of the FAE (ii). Lerner's just-world belief leads to victim blaming (i). Defensive attribution (described by Walster and Shaver) protects us from feeling that the same thing could happen to us (iv). Dodge's hostile attribution bias, common in aggressive children, reads hostility into ambiguous acts (iii). The other codes swap these.",
+    ref: "Pettigrew 1979; Lerner 1980; Dodge 1980",
+  }),
+  s({
+    id: "soc-attr-0016",
+    exams: [N, M],
+    difficulty: 4,
+    type: "statement",
+    stem: "Which statements about Kelley's causal schemata are correct?",
+    statements: [
+      "A. The discounting principle: the role of a cause is discounted if other plausible causes are also present.",
+      "B. The augmenting principle: the role of a cause is strengthened if the behaviour occurs despite an inhibiting factor.",
+      "C. Causal schemata allow attributions from a single observation, when covariation information is not available.",
+      "D. Causal schemata require information about consensus, distinctiveness and consistency across many observations.",
+    ],
+    options: [
+      "A and D only",
+      "A, B and C only",
+      "B, C and D only",
+      "A, B, C and D",
+    ],
+    answer: 1,
+    explanation:
+      "Kelley proposed causal schemata (such as multiple sufficient and multiple necessary causes) for situations with limited information. Discounting: a film star praising a product for a large fee tells us less about her liking. Augmenting: a student who succeeds despite illness is judged highly able. These operate from single observations (C), unlike the covariation model, which needs multiple observations (so D describes the covariation model, not schemata).",
+    ref: "Kelley 1972, Causal schemata and the attribution process",
+  }),
+  s({
+    id: "soc-attr-0017",
+    exams: [C, N, S],
+    difficulty: 2,
+    type: "mcq",
+    stem: "Asch's impression-formation study found that changing one trait from 'warm' to 'cold' in a list (intelligent, skilful, industrious,..., determined, practical, cautious) greatly changed overall impressions. Asch called such traits:",
+    options: [
+      "Peripheral traits",
+      "Central traits",
+      "Cardinal traits",
+      "Source traits",
+    ],
+    answer: 1,
+    explanation:
+      "Warm and cold were 'central' because they reorganised the meaning of the other traits, whereas 'polite' and 'blunt' made little difference (peripheral). Kelley replicated this with a guest lecturer described as warm or cold, which changed students' ratings and participation. Cardinal traits are Allport's term for a single dominant disposition. Source traits are Cattell's.",
+    ref: "Asch 1946; Kelley 1950",
+  }),
+  s({
+    id: "soc-attr-0018",
+    exams: [N, M, S],
+    difficulty: 3,
+    type: "assertion-reason",
+    stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
+    statements: [
+      "A: According to the reformulated learned helplessness model, people who explain bad events in internal, stable and global terms are more vulnerable to depression.",
+      "R: The reformulated model was proposed by Abramson, Seligman and Teasdale.",
+    ],
+    options: AR,
+    answer: 1,
+    explanation:
+      "Both are true, but R does not explain A. A states the content of the attributional reformulation: a pessimistic explanatory style ('It's my fault, it will always be this way, it ruins everything') increases vulnerability to helplessness and depression. R only gives the authors and date; naming who proposed a model does not explain why the model makes its claim.",
+    ref: "Abramson, Seligman & Teasdale 1978, J Abnorm Psychol",
+  }),
+  s({
+    id: "soc-attr-0019",
+    exams: [N, M],
+    difficulty: 2,
+    type: "mcq",
+    stem: "Berglas and Jones found that students who had succeeded on unsolvable-looking problems (so their success felt uncertain) were more likely to choose a performance-impairing drug before a retest. This is called:",
+    options: [
+      "Basking in reflected glory",
+      "Self-verification",
+      "Self-handicapping",
+      "Social loafing",
+    ],
+    answer: 2,
+    explanation:
+      "Self-handicapping is creating obstacles before a performance so that failure can be blamed on the obstacle and success looks even more impressive (discounting and augmenting). Self-verification is seeking feedback that confirms existing self-views (described by Swann). Basking in reflected glory is associating with successful others (described by Cialdini). Social loafing is reduced effort in groups.",
+    ref: "Berglas & Jones 1978, J Pers Soc Psychol",
+  }),
+  s({
+    id: "soc-attr-0020",
+    exams: [C, N, S],
+    difficulty: 1,
+    type: "mcq",
+    stem: "Lerner's 'belief in a just world' can lead people to:",
+    options: [
+      "Reject all stereotypes",
+      "Help victims more in every situation",
+      "Attribute all events to luck",
+      "Blame victims of misfortune, assuming they must have deserved it",
+    ],
+    answer: 3,
+    explanation:
+      "Lerner proposed that people need to believe the world is fair; when they cannot help an innocent victim, they may restore this belief by derogating or blaming the victim. It does not reliably increase helping, it is the opposite of attributing events to luck, and it can support, not reject, stereotypes about disadvantaged groups.",
+    ref: "Lerner & Simmons 1966; Lerner 1980",
+  }),
+  s({
+    id: "soc-attr-0021",
+    exams: [N, M, S],
+    difficulty: 3,
+    type: "mcq",
+    stem: "Malle's meta-analysis of the actor-observer asymmetry in attribution concluded that:",
+    options: [
+      "The classic asymmetry (actors situational, observers dispositional) was very small overall and appeared mainly under specific conditions",
+      "The asymmetry is one of the largest effects in social psychology",
+      "Actors always make more dispositional attributions than observers",
+      "The asymmetry is found only in collectivist cultures",
+    ],
+    answer: 0,
+    explanation:
+      "Across 173 studies, Malle found an average effect near zero, with some reversal for positive events and a modest asymmetry for negative events, and argued that a folk-conceptual framework (reasons versus causes) describes explanations better. The effect is not large. The direction is not consistently reversed. The meta-analysis did not find it limited to collectivist cultures.",
+    ref: "Malle 2006, Psychol Bull",
+  }),
+  s({
+    id: "soc-attr-0022",
+    exams: [N, M],
+    difficulty: 4,
+    type: "passage",
+    stem: "Which attribution would Kelley's model predict, and why?",
+    passage:
+      "At a hospital, Dr Mehta shouts at a junior nurse during rounds. Nobody else shouts at this nurse. Dr Mehta shouts at nearly every junior staff member. Over the past month, he has shouted at this nurse every time she has been on his rounds.",
+    options: [
+      "Stimulus (the nurse): high consensus, high distinctiveness, high consistency",
+      "Internal (Dr Mehta): low consensus, low distinctiveness, high consistency",
+      "Circumstance: low consistency",
+      "Stimulus (the nurse): low consensus, low distinctiveness, low consistency",
+    ],
+    answer: 1,
+    explanation:
+      "No one else shouts at her (low consensus); he shouts at almost everyone (low distinctiveness); he always shouts at her (high consistency). This pattern points to something about Dr Mehta. A stimulus attribution needs high consensus and distinctiveness. A circumstance attribution needs low consistency, but consistency here is high. The 'stimulus' option with low consensus, low distinctiveness and low consistency, lists the wrong pattern for a stimulus attribution.",
+    ref: "Kelley 1967; McArthur 1972",
+  }),
+  s({
+    id: "soc-attr-0023",
+    exams: [N, M, S],
+    difficulty: 1,
+    type: "mcq",
+    stem: "The halo effect refers to:",
+    options: [
+      "Underestimating situational influences",
+      "The tendency to remember the first item in a list",
+      "The tendency for a positive impression in one area (for example attractiveness) to influence judgements of unrelated traits",
+      "Blaming victims",
+    ],
+    answer: 2,
+    explanation:
+      "Thorndike found that officers' ratings of soldiers' different qualities were too highly correlated; Dion, Berscheid and Walster's 'what is beautiful is good' study is a social example. Remembering first items is the primacy effect. Underestimating situations is the fundamental attribution error. Victim blaming links to just-world beliefs.",
+    ref: "Thorndike 1920; Dion, Berscheid & Walster 1972",
+  }),
+  s({
+    id: "soc-attr-0024",
+    exams: [C, N, M, S],
+    difficulty: 2,
+    type: "statement",
+    stem: "Which of the following factors increase the strength of correspondent inferences according to Jones and Davis?",
+    statements: [
+      "A. Hedonic relevance: the act has consequences for the perceiver",
+      "B. Personalism: the act seems directed at the perceiver",
+      "C. High social desirability of the act",
+      "D. Free choice by the actor",
+    ],
+    options: [
+      "A, B, C and D",
+      "A and C only",
+      "B and C only",
+      "A, B and D only",
+    ],
+    answer: 3,
+    explanation:
+      "Jones and Davis argued that we learn most about a person from acts that are freely chosen (D), that matter to us personally (hedonic relevance, A), and that seem aimed at us (personalism, B). These conditions make us more confident that the act reflects the person's real character. C is wrong because behaviour that is highly socially desirable, such as thanking a host, is what almost anyone would do, so it says little about that individual. Behaviour that goes against social expectations is the most informative about disposition.",
+    ref: "Jones & Davis 1965",
+  }),
+  s({
+    id: "soc-attr-0025",
+    exams: [N, M],
+    difficulty: 3,
+    type: "assertion-reason",
+    stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
+    statements: [
+      "A: Kelley's covariation model has been criticised as describing how people should reason rather than how they usually do.",
+      "R: Kelley's model uses three kinds of information: consensus, distinctiveness and consistency.",
+    ],
+    options: AR,
+    answer: 1,
+    explanation:
+      "Both statements are true, but R does not explain A. The criticism in A comes from evidence that people under-use consensus information, ignore base rates and usually see a single event, so they rarely have the data for a full covariation analysis; they fall back on causal schemata and shortcuts. R correctly describes the model's three dimensions, but simply listing them does not explain why the model is seen as an ideal rather than a description.",
+    ref: "McArthur 1972; Nisbett & Borgida 1975",
+  }),
+  s({
+    id: "soc-attr-0026",
+    exams: [C, N, S],
+    difficulty: 2,
+    type: "mcq",
+    stem: "Heider's balance theory proposes that in a triad (Person, Other, Object), the system is balanced when:",
+    options: [
+      "The product of the signs of the three relations is positive",
+      "All three relations are negative",
+      "Exactly two relations are positive and one negative",
+      "The person dislikes the other but likes the object the other likes",
+    ],
+    answer: 0,
+    explanation:
+      "Balance requires an even number of negative relations: all positive (I like you, we both like the film) or two negatives (I dislike you, you like the film, I dislike the film). Three negatives produce imbalance, as do exactly one negative ('two positive, one negative') arrangements such as disliking the other while liking the object the other likes. Imbalanced states create tension and pressure to change an attitude.",
+    ref: "Heider 1946, 1958",
+  }),
+  s({
+    id: "soc-attr-0027",
+    exams: [N, M, S],
+    difficulty: 3,
+    type: "match",
+    stem: "Match the researcher in List I with the attribution concept in List II.",
+    lists: {
+      left: ["A. Lee Ross", "B. Thomas Pettigrew", "C. Daniel Gilbert", "D. Bernard Weiner"],
+      right: [
+        "i. Ultimate attribution error",
+        "ii. Locus, stability and controllability of causes",
+        "iii. Named the fundamental attribution error",
+        "iv. Characterisation-correction (two-stage) model",
+      ],
+    },
+    options: [
+      "A-i, B-iii, C-iv, D-ii",
+      "A-iii, B-i, C-iv, D-ii",
+      "A-iii, B-iv, C-i, D-ii",
+      "A-iii, B-i, C-ii, D-iv",
+    ],
+    answer: 1,
+    explanation:
+      "Ross coined 'fundamental attribution error' (iii). Pettigrew described the ultimate attribution error (i). Gilbert proposed the two-stage model of dispositional inference (iv). Weiner developed the three-dimensional achievement attribution model (ii). The other codes swap Ross and Pettigrew, Pettigrew and Gilbert, or Gilbert and Weiner.",
+    ref: "Ross 1977; Pettigrew 1979; Gilbert 1989; Weiner 1985",
+  }),
+  s({
+    id: "soc-attr-0028",
+    exams: [N, M],
+    difficulty: 4,
+    type: "mcq",
+    stem: "Dutton and Aron's 'shaky bridge' study, in which men interviewed by an attractive woman on a fear-arousing suspension bridge were more likely to call her later, is best explained by:",
+    options: [
+      "The matching hypothesis",
+      "The mere exposure effect",
+      "Misattribution of arousal: physiological arousal from fear was attributed to attraction to the woman",
+      "Reactance",
+    ],
+    answer: 2,
+    explanation:
+      "Following Schachter's two-factor theory, the men experienced arousal from the bridge and labelled it as attraction; they also wrote more sexual content in TAT stories. The effect disappeared on a low, stable bridge and with a male interviewer. Mere exposure needs repeated exposure, which did not occur. The matching hypothesis concerns choosing partners of similar attractiveness. Reactance is resistance to threats to freedom.",
+    ref: "Dutton & Aron 1974, J Pers Soc Psychol",
+  }),
+  s({
+    id: "soc-attr-0029",
+    exams: [C, N, S],
+    difficulty: 1,
+    type: "mcq",
+    stem: "The primacy effect in impression formation means that:",
+    options: [
+      "Impressions are formed only after long acquaintance",
+      "The most recent information always dominates",
+      "Negative information is ignored",
+      "Information presented early has a stronger influence on overall impressions than information presented later",
+    ],
+    answer: 3,
+    explanation:
+      "Asch found that 'intelligent, industrious, impulsive, critical, stubborn, envious' produced a more favourable impression than the same traits in reverse order; early information sets an interpretive frame. A recency effect can occur under some conditions (for example when people are warned or tired), but it is not the primacy effect. Negative information tends to carry extra weight (negativity bias), not to be ignored. Impressions form very rapidly, even from brief 'thin slices' of behaviour.",
+    ref: "Asch 1946; Ambady & Rosenthal 1993",
+  }),
+  s({
+    id: "soc-attr-0030",
+    exams: [N, M, S],
+    difficulty: 3,
+    type: "statement",
+    stem: "Which statements about attributional biases are correct?",
+    statements: [
+      "A. The self-serving bias is typically weaker in East Asian samples than in Western samples.",
+      "B. Mildly depressed people sometimes show less self-serving bias than non-depressed people ('depressive realism').",
+      "C. The fundamental attribution error has been found to be completely absent in all non-Western cultures.",
+      "D. Group-serving biases parallel self-serving biases at the level of the ingroup.",
+    ],
+    options: [
+      "A and C only",
+      "A, B and D only",
+      "B and C only",
+      "A, B, C and D",
+    ],
+    answer: 1,
+    explanation:
+      "A: Mezulis and colleagues' meta-analysis found smaller self-serving biases in Asian samples. B: Alloy and Abramson's depressive realism work suggested more even-handed attributions in mild depression (though the effect is debated). D: group-serving (ultimate attribution) biases mirror self-serving biases. C is wrong: correspondence bias has been found in collectivist cultures too, but people there are more sensitive to situational cues when these are made salient.",
+    ref: "Mezulis et al. 2004, Psychol Bull; Choi et al. 1999",
+  }),
+  s({
+    id: "soc-attr-0031",
+    exams: [C, N, S],
+    difficulty: 1,
+    type: "mcq",
+    stem: "Explaining someone's rudeness by saying 'He is an unpleasant person' rather than 'He is having a bad day' is an example of a:",
+    options: [
+      "Situational attribution",
+      "Dispositional attribution",
+      "Self-serving attribution",
+      "Defensive attribution",
+    ],
+    answer: 1,
+    explanation:
+      "Attributing behaviour to a stable trait of the person is dispositional (internal). 'Having a bad day' is situational (external, unstable). A self-serving attribution concerns one's own outcomes. A defensive attribution protects the perceiver from feeling vulnerable to misfortune.",
+    ref: "Baron & Branscombe, ch. 3",
+  }),
+  s({
+    id: "soc-attr-0032",
+    exams: [N, M],
+    difficulty: 3,
+    type: "assertion-reason",
+    stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
+    statements: [
+      "A: Aggressive children are more likely than non-aggressive children to interpret an ambiguous bump in a queue as intentional.",
+      "R: The hostile attribution bias makes these children read hostile intent into ambiguous provocations, which in turn makes retaliation more likely.",
+    ],
+    options: AR,
+    answer: 0,
+    explanation:
+      "Both are true and R explains A. Dodge's social information-processing model shows that aggressive children more often encode cues selectively and attribute hostile intent in ambiguous situations; meta-analysis confirms a robust link between hostile attribution and aggression, and attribution retraining can reduce aggressive behaviour.",
+    ref: "Dodge 1980; de Castro et al. 2002, Child Dev",
+  }),
+  s({
+    id: "soc-attr-0033",
+    exams: [N, M, S],
+    difficulty: 2,
+    type: "mcq",
+    stem: "In Pettigrew's 'ultimate attribution error', a prejudiced person who sees an outgroup member succeed is likely to attribute the success to:",
+    options: [
+      "The person's hard work",
+      "The person's high ability",
+      "Luck, special advantage or exceptional circumstances rather than ability",
+      "The person's good character",
+    ],
+    answer: 2,
+    explanation:
+      "Pettigrew argued that positive outgroup behaviour is explained away (luck, affirmative help, an exception to the rule, or high motivation), while negative outgroup behaviour is attributed to disposition. Attributing success to ability, effort or character would be the pattern usually applied to the ingroup.",
+    ref: "Pettigrew 1979, Pers Soc Psychol Bull; Hewstone 1990",
+  }),
+  s({
+    id: "soc-attr-0034",
+    exams: [N, M],
+    difficulty: 4,
+    type: "statement",
+    stem: "Which statements about cultural differences in social perception are supported by research?",
+    statements: [
+      "A. In Masuda and Nisbett's study, Japanese participants described more of the background in underwater scenes than American participants.",
+      "B. When the central figure's facial expression differed from those of background figures, Japanese participants' judgements of the central figure's emotion were more influenced by the background faces.",
+      "C. Westerners tend to show more analytic, object-focused perception, and East Asians more holistic, context-focused perception.",
+      "D. These differences have been shown to be entirely genetic.",
+    ],
+    options: [
+      "A, B, C and D",
+      "A and D only",
+      "B and D only",
+      "A, B and C only",
+    ],
+    answer: 3,
+    explanation:
+      "A: Japanese participants made more statements about the context and relationships in scenes. B: Masuda and colleagues found Japanese emotion judgements were more affected by surrounding faces. C: Nisbett's work characterises analytic versus holistic cognition. D is wrong: the differences are attributed to cultural practices and socialisation; Asian-Americans and bicultural individuals show intermediate patterns that can be primed.",
+    ref: "Masuda & Nisbett 2001; Masuda et al. 2008; Nisbett 2003",
+  }),
+  s({
+    id: "soc-attr-0035",
+    exams: [C, N, S],
+    difficulty: 2,
+    type: "mcq",
+    stem: "An 'implicit personality theory' is:",
+    options: [
+      "A person's set of assumptions about which traits tend to go together (for example, that warm people are also generous)",
+      "A formal theory of personality published by a psychologist",
+      "An unconscious defence mechanism",
+      "A projective personality test",
+    ],
+    answer: 0,
+    explanation:
+      "An implicit personality theory is the everyday set of beliefs a person holds about which traits go together, for example that someone warm is probably also generous, or that a quiet person is probably shy and thoughtful. People use these beliefs to fill gaps when they know only a little about someone, which helps explain the halo effect and why Asch's 'warm' and 'cold' changed whole impressions. It is not a formal theory written by a psychologist, it is not a defence mechanism (defences protect against anxiety), and it is not a test such as the Rorschach or TAT.",
+    ref: "Bruner & Tagiuri 1954; Schneider 1973",
+  }),
+  s({
+    id: "soc-attr-0036",
+    exams: [N, M, S],
+    difficulty: 3,
+    type: "mcq",
+    stem: "Ambady and Rosenthal's 'thin slices' research showed that:",
+    options: [
+      "Impressions require several weeks of interaction to be accurate",
+      "Ratings of teachers made from silent 30-second (and even 6-second) video clips predicted end-of-term student evaluations",
+      "Brief exposures produce random impressions unrelated to later judgements",
+      "Only verbal content predicts evaluations",
+    ],
+    answer: 1,
+    explanation:
+      "Strangers' ratings of teachers' non-verbal behaviour from very brief, soundless clips correlated substantially with students' end-of-semester ratings, showing that rapid impressions can be surprisingly predictive. The clips were silent, so verbal content was not needed. The predictive correlations contradict the claims that impressions need weeks or are random.",
+    ref: "Ambady & Rosenthal 1993, J Pers Soc Psychol",
+  }),
+  s({
+    id: "soc-attr-0037",
+    exams: [N, M],
+    difficulty: 3,
+    type: "match",
+    stem: "Match the attribution in List I with the most likely emotion in List II, according to Weiner.",
+    lists: {
+      left: [
+        "A. 'I failed because I didn't study' (internal, controllable)",
+        "B. 'I succeeded because I am talented' (internal)",
+        "C. 'She failed because she has a learning disability' (uncontrollable)",
+        "D. 'I will always fail maths; I'm just no good' (stable)",
+      ],
+      right: ["i. Pity or sympathy", "ii. Guilt", "iii. Hopelessness", "iv. Pride"],
+    },
+    options: [
+      "A-ii, B-i, C-iv, D-iii",
+      "A-iv, B-ii, C-i, D-iii",
+      "A-ii, B-iv, C-iii, D-i",
+      "A-ii, B-iv, C-i, D-iii",
+    ],
+    answer: 3,
+    explanation:
+      "Failure due to controllable personal causes evokes guilt (ii). Success due to internal causes evokes pride (iv). Others' failure due to uncontrollable causes evokes pity (i). Stable causes of failure produce low expectancy and hopelessness (iii). Shame is associated with internal, uncontrollable causes such as low ability. The other codes swap these.",
+    ref: "Weiner 1985, Psychol Rev",
+  }),
+  s({
+    id: "soc-attr-0038",
+    exams: [C, N, M, S],
+    difficulty: 2,
+    type: "assertion-reason",
+    stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
+    statements: [
+      "A: People commonly underestimate the impact of situational forces on others' behaviour.",
+      "R: The term 'fundamental attribution error' was introduced by Lee Ross.",
+    ],
+    options: AR,
+    answer: 1,
+    explanation:
+      "Both are true, but R does not explain A. The tendency in A arises because the actor's behaviour is salient and the situational pressures acting on them are often invisible, and because people tend to assume behaviour reflects inner dispositions. R is a correct fact about who named this bias in the 1970s, but naming a bias does not explain why it happens. So 'R explains A' is wrong, and since both statements are true, the options that call one of them false are wrong as well.",
+    ref: "Gilbert & Malone 1995, Psychol Bull",
+  }),
+  s({
+    id: "soc-attr-0039",
+    exams: [N, M, S],
+    difficulty: 3,
+    type: "mcq",
+    stem: "Snyder, Tanke and Berscheid had men talk by phone with women they believed (from a photo) were attractive or unattractive. The women who were believed attractive:",
+    options: [
+      "Refused to continue the conversation",
+      "Behaved no differently",
+      "Became colder and less friendly",
+      "Came across as warmer and more sociable to independent judges, showing a behavioural self-fulfilling prophecy",
+    ],
+    answer: 3,
+    explanation:
+      "Men who believed their partner was attractive behaved more warmly, and the women responded in kind, so judges who heard only the women's side rated them as friendlier: the perceiver's expectation created behavioural confirmation. The women's behaviour did change, and in the direction of warmth, not coldness. All completed the conversations.",
+    ref: "Snyder, Tanke & Berscheid 1977, J Pers Soc Psychol",
+  }),
+  s({
+    id: "soc-attr-0040",
+    exams: [N, M],
+    difficulty: 4,
+    type: "passage",
+    stem: "Which attributional dimension best explains the change in the student's motivation?",
+    passage:
+      "After failing a mid-term, Aarav tells his counsellor, 'I'm just not a maths person; I never will be.' The counsellor helps him see that he spent little time practising problems and that the class average was also low because the paper was unusually hard. Aarav begins studying regularly and says, 'If I practise more, I can do better next time.'",
+    options: [
+      "Shifting from a stable, uncontrollable cause (fixed ability) to an unstable, controllable cause (effort), which raises expectancy of future success",
+      "Shifting from an external to an internal locus only",
+      "Shifting from a controllable to an uncontrollable cause",
+      "Shifting from situational to dispositional attribution for others' behaviour",
+    ],
+    answer: 0,
+    explanation:
+      "Weiner's theory holds that stability affects expectancy and controllability affects persistence; attributional retraining (for example the work of Perry and colleagues) moves failure attributions from fixed ability to effort and strategy, improving motivation. Locus actually stays internal for effort (both ability and effort are internal), so a locus shift alone is not the answer. The shift is toward controllability, not away from it. The scenario concerns self-attributions, not judgements of others.",
+    ref: "Weiner 1985; Perry, Hall & Ruthig 2005",
+  }),
+  s({
+    id: "soc-attr-0041",
+    exams: [C, N, S],
+    difficulty: 2,
+    type: "mcq",
+    stem: "Dion, Berscheid and Walster's study 'What is beautiful is good' found that physically attractive people were assumed to:",
+    options: [
+      "Be less intelligent",
+      "Have more socially desirable personalities and happier lives",
+      "Be more likely to be dishonest",
+      "Have no advantage in judgements of personality",
+    ],
+    answer: 1,
+    explanation:
+      "Participants rated photos of attractive people as more sensitive, kind, interesting, sociable and likely to have happier marriages and better jobs, a physical attractiveness stereotype related to the halo effect. Meta-analyses find the stereotype is strongest for social competence, weaker for integrity and concern for others. The other options contradict the finding.",
+    ref: "Dion, Berscheid & Walster 1972; Eagly et al. 1991",
+  }),
+  s({
+    id: "soc-attr-0042",
+    exams: [N, M, S],
+    difficulty: 3,
+    type: "assertion-reason",
+    stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
+    statements: [
+      "A: When a person is paid a large amount to endorse a product, observers infer less about the person's true liking for the product.",
+      "R: The augmenting principle states that the presence of a facilitating external cause increases confidence in an internal cause.",
+    ],
+    options: AR,
+    answer: 2,
+    explanation:
+      "A is true: this follows Kelley's discounting principle; a plausible external cause (the fee) reduces the weight given to the internal cause (genuine liking). R is false: the augmenting principle applies when behaviour occurs despite an inhibiting cause, which strengthens the internal attribution; a facilitating external cause leads to discounting, not augmenting.",
+    ref: "Kelley 1972",
+  }),
+  s({
+    id: "soc-attr-0043",
+    exams: [N, M],
+    difficulty: 1,
+    type: "mcq",
+    stem: "The 'hindsight bias' refers to:",
+    options: [
+      "Believing that one's own group is more varied than outgroups",
+      "Underestimating the time needed to complete a task",
+      "The tendency, after learning an outcome, to believe one could have predicted it ('I knew it all along')",
+      "Overestimating how much others notice our appearance",
+    ],
+    answer: 2,
+    explanation:
+      "Once people know an outcome, they overestimate how likely it seemed beforehand and misremember their earlier predictions, which can unfairly inflate blame in judgements of negligence. Underestimating task time is the planning fallacy. Seeing outgroups as more alike is the outgroup homogeneity effect. Overestimating others' attention is the spotlight effect.",
+    ref: "Fischhoff 1975, J Exp Psychol Hum Percept Perform",
+  }),
+  s({
+    id: "soc-attr-0044",
+    exams: [C, N, S],
+    difficulty: 1,
+    type: "mcq",
+    stem: "The 'fundamental attribution error' was named by:",
+    options: [
+      "Leon Festinger",
+      "Fritz Heider",
+      "Harold Kelley",
+      "Lee Ross",
+    ],
+    answer: 3,
+    explanation:
+      "Ross coined the term in 1977 for the tendency to overestimate dispositional and underestimate situational causes of others' behaviour. Heider had earlier observed that behaviour 'engulfs the field'. Kelley proposed the covariation model. Festinger proposed cognitive dissonance theory.",
+    ref: "Ross 1977, Adv Exp Soc Psychol",
+  }),
+  s({
+    id: "soc-attr-0045",
+    exams: [N, M, S],
+    difficulty: 3,
+    type: "match",
+    stem: "Match the theory in List I with the type of question it mainly addresses in List II.",
+    lists: {
+      left: [
+        "A. Kelley's covariation model",
+        "B. Jones and Davis's correspondent inference theory",
+        "C. Weiner's attribution theory",
+        "D. Bem's self-perception theory",
+      ],
+      right: [
+        "i. How people infer their own attitudes from their behaviour",
+        "ii. How people infer a specific trait from a single intentional act",
+        "iii. How people decide between person, stimulus and circumstance causes using multiple observations",
+        "iv. How explanations of success and failure affect emotion and motivation",
+      ],
+    },
+    options: [
+      "A-iii, B-ii, C-iv, D-i",
+      "A-ii, B-iii, C-iv, D-i",
+      "A-iii, B-iv, C-ii, D-i",
+      "A-iii, B-ii, C-i, D-iv",
+    ],
+    answer: 0,
+    explanation:
+      "Kelley's model uses covariation across observations (iii). Jones and Davis explain inferences of intentions and traits from single acts (ii). Weiner links attributions to emotion and achievement motivation (iv). Bem argues that people infer their own attitudes by observing their behaviour, as an observer would (i). The other codes swap these.",
+    ref: "Kelley 1967; Jones & Davis 1965; Weiner 1985; Bem 1972",
+  }),
+];

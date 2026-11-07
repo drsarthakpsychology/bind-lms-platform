@@ -1,0 +1,921 @@
+import type { PrepExam, PrepQuestion } from "@/lib/prep/types";
+
+/** Personality · part 2: neo-Freudians (Horney, Fromm, Sullivan), object relations and self psychology (Klein, Winnicott, Kohut, Kernberg, Hartmann), and Murray's personology. */
+
+const C: PrepExam = "cuet-pg";
+const N: PrepExam = "ugc-net";
+const M: PrepExam = "mcp-entrance";
+const S: PrepExam = "ma-semester";
+
+const AR: [string, string, string, string] = [
+  "Both A and R are true, and R is the correct explanation of A",
+  "Both A and R are true, but R is not the correct explanation of A",
+  "A is true, but R is false",
+  "A is false, but R is true",
+];
+
+type Q = Omit<PrepQuestion, "subject" | "topic"> & { topic?: string };
+const p = (q: Q): PrepQuestion => ({ subject: "personality-theories", module: "defences", topic: "neo-freudian", ...q });
+
+export const QUESTIONS: PrepQuestion[] = [
+  // ── Horney ─────────────────────────────────────────────────────────────────
+  p({
+    id: "per-neo-0053",
+    exams: [C, N, S],
+    difficulty: 1,
+    type: "mcq",
+    stem: "Karen Horney described 'basic anxiety' as:",
+    options: [
+      "Fear of the death instinct",
+      "A child's feeling of being isolated and helpless in a potentially hostile world",
+      "Anxiety caused only by sexual frustration",
+      "A normal fear of real dangers such as snakes",
+    ],
+    answer: 1,
+    explanation:
+      "Horney traced neurosis to disturbed early relationships, such as indifference, harshness, inconsistency or lack of warmth from parents, which leave the child feeling alone and insecure. To cope, the child develops protective strategies that can become rigid neurotic trends. Fear of the death instinct and sexual frustration reflect Freud's views, which Horney challenged. Fear of real dangers is Freud's reality anxiety.",
+    ref: "Horney 1945; Feist & Feist, ch. 6",
+  }),
+  p({
+    id: "per-neo-0054",
+    exams: [C, N, M, S],
+    difficulty: 2,
+    type: "match",
+    stem: "Match Horney's neurotic trend in List I with its description in List II.",
+    lists: {
+      left: ["A. Moving toward people", "B. Moving against people", "C. Moving away from people"],
+      right: [
+        "i. Seeking power and control; seeing others as rivals to be defeated",
+        "ii. Seeking independence and self-sufficiency; avoiding closeness",
+        "iii. Seeking affection and approval; being compliant and self-effacing",
+      ],
+    },
+    options: [
+      "A-ii, B-i, C-iii",
+      "A-i, B-iii, C-ii",
+      "A-iii, B-ii, C-i",
+      "A-iii, B-i, C-ii",
+    ],
+    answer: 3,
+    explanation:
+      "Horney grouped her ten neurotic needs into three trends. The compliant person moves toward others for love and protection (iii). The aggressive person moves against others for power and recognition (i). The detached person moves away from others for independence and perfection (ii). Healthy people use all three flexibly; neurotic people are locked into one, while the others cause inner conflict. The other codes swap these trends.",
+    ref: "Horney 1945",
+  }),
+  p({
+    id: "per-neo-0055",
+    exams: [N, M, S],
+    difficulty: 2,
+    type: "mcq",
+    stem: "Horney's idea of the 'tyranny of the shoulds' refers to:",
+    options: [
+      "Rules set by parents in early childhood",
+      "Rigid inner demands that come from an idealised self-image, such as 'I should never be angry' or 'I should be perfect'",
+      "The superego's moral prohibitions as described by Freud",
+      "Social norms of conformity",
+    ],
+    answer: 1,
+    explanation:
+      "Horney proposed that neurotic people build an idealised self (who they think they should be) to escape basic anxiety, and then judge their real self harshly against it. The resulting 'shoulds' are relentless and unrealistic, and failure to meet them leads to self-hatred (the despised self). Parental rules and the superego are related ideas but not her concept; she located the source in the neurotic search for glory. General social norms are a different matter.",
+    ref: "Horney 1950",
+  }),
+  p({
+    id: "per-neo-0056",
+    exams: [N, M, S],
+    difficulty: 3,
+    type: "assertion-reason",
+    stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
+    statements: [
+      "A: Horney rejected Freud's concept of penis envy as a biological explanation of women's psychology.",
+      "R: She argued that women's feelings of inferiority mainly reflect their lower social power and status in male-dominated cultures, and she suggested men might feel 'womb envy'.",
+    ],
+    options: AR,
+    answer: 0,
+    explanation:
+      "Both are true and R explains A. Horney was one of the first to challenge psychoanalysis from a feminist point of view. She held that what women envy is men's social privileges, not their anatomy, and turned the argument round by suggesting that men's drive to achieve might partly compensate for being unable to bear children. Her work laid the groundwork for later feminist psychology.",
+    ref: "Horney 1926, 1967; Feist & Feist, ch. 6",
+  }),
+  p({
+    id: "per-neo-0057",
+    exams: [N, M],
+    difficulty: 3,
+    type: "statement",
+    stem: "Which of the following are among Horney's ten neurotic needs?",
+    statements: [
+      "A. Neurotic need for affection and approval",
+      "B. Neurotic need for power",
+      "C. Neurotic need for self-sufficiency and independence",
+      "D. Neurotic need for self-actualisation",
+    ],
+    options: [
+      "B and D only",
+      "A and D only",
+      "A, B and C only",
+      "A, B, C and D",
+    ],
+    answer: 2,
+    explanation:
+      "Horney's list includes affection and approval, a powerful partner, narrow limits to one's life, power, exploiting others, social recognition, personal admiration, ambition and achievement, self-sufficiency and independence, and perfection. These needs are 'neurotic' because they are compulsive and insatiable. Self-actualisation (D) is Maslow's term for healthy growth, not a neurotic need.",
+    ref: "Horney 1942",
+  }),
+  // ── Fromm ──────────────────────────────────────────────────────────────────
+  p({
+    id: "per-neo-0058",
+    exams: [C, N, S],
+    difficulty: 2,
+    type: "mcq",
+    stem: "Erich Fromm argued that people in modern societies often try to 'escape from freedom' because freedom brings:",
+    options: [
+      "A collective unconscious",
+      "Too much pleasure",
+      "Excessive social interest",
+      "Feelings of isolation and anxiety, which they try to reduce through authoritarianism, destructiveness or conformity",
+    ],
+    answer: 3,
+    explanation:
+      "Fromm, writing after the rise of Nazism, argued that as people gained freedom from traditional ties they also lost security and belonging. Some escape by submitting to or dominating others (authoritarianism), by destroying what threatens them (destructiveness), or by becoming what everyone else expects (automaton conformity). The healthy alternative is positive freedom through love and productive work. The other options are not part of his argument.",
+    ref: "Fromm 1941; Feist & Feist, ch. 7",
+  }),
+  p({
+    id: "per-neo-0059",
+    exams: [N, M, S],
+    difficulty: 3,
+    type: "match",
+    stem: "Match Fromm's character orientation in List I with its description in List II.",
+    lists: {
+      left: ["A. Receptive", "B. Exploitative", "C. Hoarding", "D. Marketing"],
+      right: [
+        "i. Seeks to keep and save what one has; distrusts new ideas",
+        "ii. Sees oneself as a product to be sold; personality adapts to whatever is in demand",
+        "iii. Expects good things to come from others and depends on them",
+        "iv. Takes what one wants from others by force or cunning",
+      ],
+    },
+    options: [
+      "A-iv, B-iii, C-i, D-ii",
+      "A-iii, B-iv, C-i, D-ii",
+      "A-iii, B-i, C-iv, D-ii",
+      "A-iii, B-iv, C-ii, D-i",
+    ],
+    answer: 1,
+    explanation:
+      "Fromm described four non-productive orientations. Receptive people wait passively for others to provide (iii). Exploitative people take aggressively (iv). Hoarding people hold on to possessions, feelings and thoughts (i). Marketing people experience themselves as commodities whose value depends on market demand (ii), which he saw as typical of modern capitalism. The healthy alternative is the productive orientation of love, work and reason. The other codes swap these.",
+    ref: "Fromm 1947",
+  }),
+  p({
+    id: "per-neo-0060",
+    exams: [N, M],
+    difficulty: 2,
+    type: "mcq",
+    stem: "Which of the following did Fromm list as basic existential human needs?",
+    options: [
+      "Physiological, safety, belonging, esteem and self-actualisation needs",
+      "Oral, anal, phallic, latency and genital needs",
+      "Relatedness, transcendence, rootedness, a sense of identity and a frame of orientation",
+      "Achievement, affiliation and power needs",
+    ],
+    answer: 2,
+    explanation:
+      "Fromm believed humans, having lost instinctive bonds to nature, have uniquely human needs: relatedness (union with others), transcendence (rising above passive existence by creating), rootedness (feeling at home in the world), identity, and a frame of orientation (a coherent view of the world). Physiological through self-actualisation is Maslow's hierarchy. Oral through genital lists Freud's psychosexual stages. Achievement, affiliation and power are McClelland's social motives.",
+    ref: "Fromm 1955; Feist & Feist, ch. 7",
+  }),
+  // ── Sullivan ──────────────────────────────────────────────────────────────
+  p({
+    id: "per-neo-0061",
+    exams: [C, N, S],
+    difficulty: 2,
+    type: "mcq",
+    stem: "Harry Stack Sullivan's theory emphasised that personality:",
+    options: [
+      "Depends only on reinforcement",
+      "Is fixed by inherited archetypes",
+      "Is a set of independent traits measured by factor analysis",
+      "Develops and exists only in interpersonal situations; it is the pattern of a person's relationships with others",
+    ],
+    answer: 3,
+    explanation:
+      "Sullivan, an American psychiatrist, defined personality as 'the relatively enduring pattern of recurrent interpersonal situations which characterise a human life'. He studied how anxiety arising in relationships shapes the self. His ideas influenced interpersonal psychotherapy (IPT). Archetypes are Jung's. Factor-analytic traits belong to Cattell and Eysenck. Reinforcement is a behaviourist idea.",
+    ref: "Sullivan 1953",
+  }),
+  p({
+    id: "per-neo-0062",
+    exams: [N, M, S],
+    difficulty: 3,
+    type: "match",
+    stem: "Match Sullivan's mode of experience in List I with its description in List II.",
+    lists: {
+      left: ["A. Prototaxic", "B. Parataxic", "C. Syntaxic"],
+      right: [
+        "i. Experience shared and validated through language, allowing logical communication",
+        "ii. Raw, undifferentiated sensations and feelings with no sense of time or self, as in early infancy",
+        "iii. Private, prelogical experience in which events are linked because they happen together, as in superstitions",
+      ],
+    },
+    options: [
+      "A-ii, B-iii, C-i",
+      "A-iii, B-ii, C-i",
+      "A-ii, B-i, C-iii",
+      "A-i, B-iii, C-ii",
+    ],
+    answer: 0,
+    explanation:
+      "Prototaxic experience is the earliest and most primitive, a stream of sensation (ii). Parataxic experience links things by chance association and is private, as in the belief that wearing a 'lucky' shirt causes success (iii); Sullivan called the distortions in relationships 'parataxic distortions', similar to transference. Syntaxic experience is consensually validated through shared symbols (i). The other codes swap these.",
+    ref: "Sullivan 1953",
+  }),
+  p({
+    id: "per-neo-0063",
+    exams: [N, M],
+    difficulty: 4,
+    type: "statement",
+    stem: "Which statements about Sullivan's theory are correct?",
+    statements: [
+      "A. He described personifications of the self as 'good-me', 'bad-me' and 'not-me'.",
+      "B. He saw anxiety as transmitted from the mothering one to the infant through empathy.",
+      "C. He stressed the importance of a close same-sex friendship ('chum') in preadolescence.",
+      "D. He argued that personality is fully formed by age 5.",
+    ],
+    options: [
+      "A and D only",
+      "A, B and C only",
+      "B and D only",
+      "A, B, C and D",
+    ],
+    answer: 1,
+    explanation:
+      "A: 'good-me' links to approval, 'bad-me' to anxiety-provoking behaviour, and 'not-me' to dread-laden experiences that are dissociated. B: Sullivan believed infants pick up the mother's anxiety through empathic linkage. C: the chum relationship in preadolescence is the first experience of real intimacy and can correct earlier damage. D is wrong: Sullivan described development through stages up to late adolescence and saw personality as open to change through relationships.",
+    ref: "Sullivan 1953; Feist & Feist, ch. 8",
+  }),
+  p({
+    id: "per-neo-0064",
+    exams: [N, M, S],
+    difficulty: 3,
+    type: "assertion-reason",
+    stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
+    statements: [
+      "A: Sullivan described the 'self-system' as a set of 'security operations' that protect a person from anxiety.",
+      "R: Sullivan believed that sexual drives in the oral and anal stages are the main source of anxiety.",
+    ],
+    options: AR,
+    answer: 2,
+    explanation:
+      "A is true: the self-system develops to avoid anxiety in relationships, using security operations such as selective inattention (not noticing things that would cause anxiety) and dissociation. R is false: Sullivan located the source of anxiety in interpersonal relationships, especially the anxious responses of caregivers, not in Freud's psychosexual drives. This is a central difference between interpersonal theory and classical psychoanalysis.",
+    ref: "Sullivan 1953",
+  }),
+  // ── Object relations, ego psychology and self psychology ──────────────────
+  p({
+    id: "per-obj-0065",
+    topic: "object-relations",
+    exams: [C, N, S],
+    difficulty: 1,
+    type: "mcq",
+    stem: "Object relations theories focus mainly on:",
+    options: [
+      "Conditioning to objects",
+      "The objects people own",
+      "Early relationships with caregivers and how these are internalised as mental images of self and others that shape later relationships",
+      "Perception of physical objects",
+    ],
+    answer: 2,
+    explanation:
+      "In psychoanalysis, an 'object' is a person (or part of a person) towards whom feelings are directed. Object relations theorists such as Klein, Fairbairn, Winnicott and Kernberg shifted attention from drives to relationships and their internal representations. The other options use the everyday sense of 'object', which is not what the term means here.",
+    ref: "Greenberg & Mitchell 1983; Feist & Feist, ch. 5",
+  }),
+  p({
+    id: "per-obj-0066",
+    topic: "object-relations",
+    exams: [N, M, S],
+    difficulty: 3,
+    type: "match",
+    stem: "Match Melanie Klein's concept in List I with its description in List II.",
+    lists: {
+      left: ["A. Paranoid-schizoid position", "B. Depressive position", "C. Projective identification", "D. Play technique"],
+      right: [
+        "i. Seeing the mother as a whole person who is both loved and hated, leading to guilt and wishes to repair",
+        "ii. Putting unwanted parts of the self into another person and then trying to control that person",
+        "iii. Interpreting children's play as a way of reaching their unconscious fantasies",
+        "iv. Splitting the world into all-good and all-bad 'part objects', with fear of persecution",
+      ],
+    },
+    options: [
+      "A-iv, B-i, C-iii, D-ii",
+      "A-i, B-iv, C-ii, D-iii",
+      "A-iv, B-ii, C-i, D-iii",
+      "A-iv, B-i, C-ii, D-iii",
+    ],
+    answer: 3,
+    explanation:
+      "Klein proposed that in the first months the infant splits experience into good and bad (the good breast and the bad breast) and fears attack: the paranoid-schizoid position (iv). Later the infant realises the loved and hated mother are the same person, which brings guilt and a wish to make reparation: the depressive position (i). Projective identification involves projecting parts of the self into another and relating to them there (ii). Her play technique made child analysis possible (iii). The other codes swap these.",
+    ref: "Klein 1946; Segal 1964",
+  }),
+  p({
+    id: "per-obj-0067",
+    topic: "object-relations",
+    exams: [C, N, M, S],
+    difficulty: 2,
+    type: "mcq",
+    stem: "Donald Winnicott's 'transitional object' refers to:",
+    options: [
+      "An item such as a soft toy or blanket that comforts the infant and helps the move from dependence on the mother to independence",
+      "The analyst in therapy",
+      "A toy used in play therapy to diagnose anxiety",
+      "A shared archetype",
+    ],
+    answer: 0,
+    explanation:
+      "Winnicott observed that many infants adopt a special object that stands between inner and outer reality: it is 'me' and 'not me' at once and soothes the child during separation. He also described the 'good-enough mother', who meets the baby's needs well enough and fails in small, bearable ways, and the 'holding environment'. The analyst can serve a similar function, but that is not what the term means. It is not a diagnostic toy or an archetype.",
+    ref: "Winnicott 1953, 1965",
+  }),
+  p({
+    id: "per-obj-0068",
+    topic: "object-relations",
+    exams: [N, M, S],
+    difficulty: 3,
+    type: "assertion-reason",
+    stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
+    statements: [
+      "A: Winnicott believed a child can develop a 'false self' that hides the true self.",
+      "R: When a caregiver repeatedly fails to respond to the infant's spontaneous gestures and instead imposes their own needs, the infant learns to comply in order to keep the relationship.",
+    ],
+    options: AR,
+    answer: 0,
+    explanation:
+      "Both are true and R explains A. For Winnicott, the true self is the source of spontaneity and feeling real. If the mother consistently substitutes her own gestures for the baby's, the baby builds a compliant false self to protect the hidden true self, which can later show up as a sense of emptiness or of 'not being real' even in apparently successful adults.",
+    ref: "Winnicott 1960",
+  }),
+  p({
+    id: "per-obj-0069",
+    topic: "object-relations",
+    exams: [N, M],
+    difficulty: 3,
+    type: "match",
+    stem: "Match Kohut's selfobject need in List I with its description in List II.",
+    lists: {
+      left: ["A. Mirroring", "B. Idealising", "C. Twinship (alter ego)"],
+      right: [
+        "i. The need to feel like others and belong among people who are similar",
+        "ii. The need to be admired and to have one's achievements reflected back with delight",
+        "iii. The need to look up to and merge with a calm, powerful figure",
+      ],
+    },
+    options: [
+      "A-iii, B-ii, C-i",
+      "A-ii, B-iii, C-i",
+      "A-ii, B-i, C-iii",
+      "A-i, B-iii, C-ii",
+    ],
+    answer: 1,
+    explanation:
+      "Kohut's self psychology says the developing self needs 'selfobjects', other people experienced as part of the self, who meet mirroring (ii), idealising (iii) and twinship (i) needs. When these responses are good enough, small failures lead to 'transmuting internalisation' and a cohesive self; when they fail badly, narcissistic vulnerability results. The other codes swap these needs.",
+    ref: "Kohut 1971, 1984",
+  }),
+  p({
+    id: "per-obj-0070",
+    topic: "object-relations",
+    exams: [N, M, S],
+    difficulty: 3,
+    type: "mcq",
+    stem: "Heinz Hartmann, a founder of ego psychology, introduced the idea of the 'conflict-free ego sphere'. This means that:",
+    options: [
+      "The id is free of conflict",
+      "The ego has no conflicts at all",
+      "Some ego functions, such as perception, memory, language and motor skills, develop independently of conflicts between id and superego",
+      "Children have no anxiety",
+    ],
+    answer: 2,
+    explanation:
+      "Hartmann argued that the ego is not just a product of conflict; it has inborn apparatuses that develop through maturation in an 'average expectable environment' and help the person adapt. This widened psychoanalysis into a general psychology of adaptation. The ego certainly has conflicts, the id is the source of drives that cause conflict, and children do feel anxiety.",
+    ref: "Hartmann 1939",
+  }),
+  p({
+    id: "per-obj-0071",
+    topic: "object-relations",
+    exams: [N, M],
+    difficulty: 4,
+    type: "passage",
+    stem: "Which concept best explains this pattern?",
+    passage:
+      "A 28-year-old woman describes her new therapist as 'the only person who has ever truly understood me' in the first month. After the therapist changes an appointment time, she says the therapist is 'cold, selfish and just like everyone else'. She describes her mother and former partners in similar extremes. She has a fragile and changeable sense of who she is, but her reality testing is intact.",
+    options: [
+      "Secondary revision",
+      "Sublimation",
+      "The depressive position",
+      "Splitting within borderline personality organisation, as described by Kernberg",
+    ],
+    answer: 3,
+    explanation:
+      "Kernberg described borderline personality organisation as identity diffusion, primitive defences such as splitting and idealisation followed by devaluation, and intact reality testing (which separates it from psychotic organisation). Seeing others as all good and then all bad fits splitting. Sublimation is a mature defence. The depressive position involves tolerating mixed feelings, which is what she struggles with. Secondary revision belongs to dream-work.",
+    ref: "Kernberg 1975, 1984",
+  }),
+  p({
+    id: "per-obj-0072",
+    topic: "object-relations",
+    exams: [N, M, S],
+    difficulty: 2,
+    type: "mcq",
+    stem: "W. R. D. Fairbairn's main revision of Freud's theory was the claim that:",
+    options: [
+      "Libido is object-seeking rather than pleasure-seeking: the basic drive is to form relationships",
+      "The death instinct is the main drive",
+      "Personality consists of 16 source traits",
+      "Behaviour is shaped only by reinforcement",
+    ],
+    answer: 0,
+    explanation:
+      "Fairbairn, a Scottish analyst, argued that infants seek relationships for their own sake, not merely as a means to drive satisfaction, and that bad early relationships are taken inside as internal 'bad objects' to which the person stays loyal. This idea underlies much of object relations theory and fits later attachment research. The other options belong to Freud's late theory, Cattell and behaviourism.",
+    ref: "Fairbairn 1952",
+  }),
+  p({
+    id: "per-obj-0073",
+    topic: "object-relations",
+    exams: [N, M],
+    difficulty: 3,
+    type: "match",
+    stem: "Match the theorist in List I with their key concept in List II.",
+    lists: {
+      left: ["A. Melanie Klein", "B. Donald Winnicott", "C. Heinz Kohut", "D. Otto Kernberg"],
+      right: [
+        "i. Selfobjects and the cohesive self",
+        "ii. Borderline personality organisation",
+        "iii. Paranoid-schizoid and depressive positions",
+        "iv. The good-enough mother and the holding environment",
+      ],
+    },
+    options: [
+      "A-iv, B-iii, C-i, D-ii",
+      "A-iii, B-iv, C-i, D-ii",
+      "A-iii, B-i, C-iv, D-ii",
+      "A-iii, B-iv, C-ii, D-i",
+    ],
+    answer: 1,
+    explanation:
+      "Klein described the two positions (iii). Winnicott described the good-enough mother and holding (iv). Kohut founded self psychology with the concept of selfobjects (i). Kernberg described borderline personality organisation and developed transference-focused psychotherapy (ii). The other codes swap these.",
+    ref: "Greenberg & Mitchell 1983",
+  }),
+  p({
+    id: "per-obj-0074",
+    topic: "object-relations",
+    exams: [N, M, S],
+    difficulty: 3,
+    type: "assertion-reason",
+    stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
+    statements: [
+      "A: Kohut treated narcissism as having its own normal line of development, rather than only as a pathology.",
+      "R: Kohut was trained as a behaviourist in the Skinnerian tradition.",
+    ],
+    options: AR,
+    answer: 2,
+    explanation:
+      "A is true: Kohut argued that healthy narcissism, such as self-esteem, ambition and enjoyment of one's abilities, develops through empathic responses from selfobjects, and that pathological narcissism reflects deficits in this development rather than simply regression. R is false: Kohut was a Viennese-born psychoanalyst trained in the classical tradition in Chicago; he had no behaviourist training.",
+    ref: "Kohut 1966, 1971",
+  }),
+  // ── Murray's personology ───────────────────────────────────────────────────
+  p({
+    id: "per-murray-0075",
+    topic: "murray",
+    module: "assessment",
+    exams: [C, N, M, S],
+    difficulty: 2,
+    type: "mcq",
+    stem: "Henry Murray's personology used the term 'press' to mean:",
+    options: [
+      "A stage of psychosexual development",
+      "An inner drive such as the need for achievement",
+      "Environmental forces that help or hinder the satisfaction of a person's needs",
+      "A score on a personality inventory",
+    ],
+    answer: 2,
+    explanation:
+      "Murray explained behaviour as the interaction of inner needs (such as achievement, affiliation, dominance and autonomy) with press, the features of situations that support or block them. He distinguished alpha press (the real environment) from beta press (the environment as the person sees it). The combination of need and press forms a 'thema'. An inner drive is a need, not press. Stages are Freud's. Inventory scores are a measurement, not a theoretical concept.",
+    ref: "Murray 1938",
+  }),
+  p({
+    id: "per-murray-0076",
+    topic: "murray",
+    module: "assessment",
+    exams: [C, N, M, S],
+    difficulty: 2,
+    type: "mcq",
+    stem: "The Thematic Apperception Test (TAT), in which people tell stories about ambiguous pictures, was developed by:",
+    options: [
+      "Starke Hathaway and J. C. McKinley",
+      "Hermann Rorschach",
+      "Raymond Cattell",
+      "Christiana Morgan and Henry Murray",
+    ],
+    answer: 3,
+    explanation:
+      "Morgan and Murray developed the TAT at the Harvard Psychological Clinic in the 1930s to reveal needs, press and themes in personality. McClelland and Atkinson later used TAT-type stories to score achievement, affiliation and power motivation. Rorschach developed the inkblot test. Cattell developed the 16PF. Hathaway and McKinley developed the MMPI.",
+    ref: "Morgan & Murray 1935; McClelland et al. 1953",
+  }),
+  p({
+    id: "per-murray-0077",
+    topic: "murray",
+    module: "assessment",
+    exams: [N, M],
+    difficulty: 3,
+    type: "statement",
+    stem: "Which statements about McClelland's work on motives, which grew from Murray's needs, are correct?",
+    statements: [
+      "A. He scored the need for achievement (n Ach) from imaginative stories told to TAT-type pictures.",
+      "B. He argued that implicit motives measured this way predict long-term spontaneous behaviour better than self-report questionnaires do.",
+      "C. People high in n Ach tend to prefer tasks of moderate difficulty with clear feedback.",
+      "D. He claimed that n Ach cannot be changed by training.",
+    ],
+    options: [
+      "A, B and C only",
+      "A and D only",
+      "B and D only",
+      "A, B, C and D",
+    ],
+    answer: 0,
+    explanation:
+      "A: McClelland and colleagues developed reliable scoring systems for achievement imagery. B: he and his colleagues distinguished implicit motives (measured by stories) from self-attributed motives (questionnaires) and showed they predict different kinds of behaviour. C: high achievers choose moderate risks where success depends on their own effort. D is wrong: McClelland ran achievement-motivation training programmes, including well-known work with small-business owners in Kakinada, Andhra Pradesh, which reported increased business activity.",
+    ref: "McClelland 1961; McClelland & Winter 1969; McClelland, Koestner & Weinberger 1989",
+  }),
+  // ── Erikson and comparative questions ──────────────────────────────────────
+  p({
+    id: "per-neo-0078",
+    exams: [N, M, S],
+    difficulty: 2,
+    type: "mcq",
+    stem: "What feature do the neo-Freudians Horney, Fromm and Sullivan share?",
+    options: [
+      "Belief that personality is completely determined by genes",
+      "Emphasis on social and cultural influences on personality, rather than mainly biological drives",
+      "Rejection of the idea of anxiety",
+      "Use of factor analysis to identify traits",
+    ],
+    answer: 1,
+    explanation:
+      "All three kept some psychoanalytic ideas, such as unconscious processes and the importance of childhood, but shifted the emphasis from sexual and aggressive drives to relationships, culture and society. Horney stressed culture and basic anxiety, Fromm stressed society and existential needs, and Sullivan stressed interpersonal relations. None saw personality as purely genetic. Anxiety was central for all three. Factor analysis belongs to trait theorists.",
+    ref: "Feist & Feist, chs. 6 to 8",
+  }),
+  p({
+    id: "per-neo-0079",
+    exams: [N, M],
+    difficulty: 3,
+    type: "match",
+    stem: "Match the neo-Freudian theorist in List I with the key concept in List II.",
+    lists: {
+      left: ["A. Karen Horney", "B. Erich Fromm", "C. Harry Stack Sullivan", "D. Erik Erikson"],
+      right: [
+        "i. Psychosocial crises across eight stages of life",
+        "ii. Personifications such as 'good-me' and 'not-me'",
+        "iii. The marketing orientation and escape from freedom",
+        "iv. Moving toward, against and away from people",
+      ],
+    },
+    options: [
+      "A-iv, B-ii, C-iii, D-i",
+      "A-iii, B-iv, C-ii, D-i",
+      "A-iv, B-iii, C-ii, D-i",
+      "A-iv, B-iii, C-i, D-ii",
+    ],
+    answer: 2,
+    explanation:
+      "Horney described the three neurotic trends (iv). Fromm described the marketing orientation and escape from freedom (iii). Sullivan described personifications of the self (ii). Erikson described eight psychosocial stages (i). The other codes swap Horney and Fromm, Fromm and Sullivan, or Sullivan and Erikson.",
+    ref: "Feist & Feist, chs. 6 to 9",
+  }),
+  p({
+    id: "per-neo-0080",
+    exams: [N, M, S],
+    difficulty: 3,
+    type: "assertion-reason",
+    stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
+    statements: [
+      "A: Erikson is described as an ego psychologist.",
+      "R: Erikson introduced the term 'identity crisis'.",
+    ],
+    options: AR,
+    answer: 1,
+    explanation:
+      "Both are true, but R does not explain A. Erikson is called an ego psychologist because he shifted attention from the id to the ego's adaptive strengths, such as hope, will, purpose and competence, which develop through psychosocial stages. R is a correct fact: his work on adolescence made 'identity crisis' widely known. But coining a term about one stage does not explain why his whole approach is classed as ego psychology. So 'R explains A' is wrong, and the options saying either statement is false are wrong too.",
+    ref: "Erikson 1963; Feist & Feist, ch. 9",
+  }),
+  p({
+    id: "per-neo-0081",
+    exams: [N, M],
+    difficulty: 4,
+    type: "passage",
+    stem: "Which theorist's concepts best explain this case?",
+    passage:
+      "Kiran grew up with a cold, critical father and an unpredictable mother. As an adult he feels anxious in groups and believes people may turn against him at any time. To cope, he works hard to please everyone, rarely says no, and feels he must always be liked. When he fails to win someone's approval, he blames himself harshly for not living up to the person he 'should' be: endlessly generous and never irritated.",
+    options: [
+      "Henry Murray: alpha press",
+      "Carl Jung: the collective unconscious and the shadow",
+      "Alfred Adler: birth order",
+      "Karen Horney: basic anxiety, a compliant 'moving toward' trend, and the tyranny of the shoulds",
+    ],
+    answer: 3,
+    explanation:
+      "Kiran's early environment (coldness and unpredictability) fits Horney's sources of basic anxiety. His strategy of pleasing everyone is the compliant trend of moving toward people. His harsh self-judgement against an idealised self is the tyranny of the shoulds. Jung's concepts, birth order and Murray's press do not capture the pattern of anxiety, compliance and idealised self.",
+    ref: "Horney 1945, 1950",
+  }),
+  p({
+    id: "per-obj-0082",
+    topic: "object-relations",
+    exams: [C, N, S],
+    difficulty: 2,
+    type: "mcq",
+    stem: "Winnicott's phrase 'good-enough mother' means a mother who:",
+    options: [
+      "Adapts closely to the infant's needs at first and then gradually allows small, manageable frustrations that help the child grow",
+      "Is perfect and never fails the child",
+      "Leaves the child to cope alone from birth",
+      "Follows a strict feeding schedule regardless of the baby's needs",
+    ],
+    answer: 0,
+    explanation:
+      "Winnicott reassured parents that perfection is neither possible nor helpful. Early on the mother is highly attuned, and over time her small, tolerable failures let the infant learn that needs can wait and that the world is separate from the self. A perfect mother would not allow this development. Neglect and rigid schedules ignore the baby's needs.",
+    ref: "Winnicott 1953",
+  }),
+  p({
+    id: "per-neo-0083",
+    exams: [N, M, S],
+    difficulty: 3,
+    type: "statement",
+    stem: "Which ideas come from Erich Fromm?",
+    statements: [
+      "A. Social character: the shared character structure that a society shapes in its members",
+      "B. Biophilia (love of life) versus necrophilia (attraction to death and destruction)",
+      "C. Automaton conformity as an escape from freedom",
+      "D. The inferiority complex",
+    ],
+    options: [
+      "A and D only",
+      "A, B and C only",
+      "B and D only",
+      "A, B, C and D",
+    ],
+    answer: 1,
+    explanation:
+      "Fromm combined psychoanalysis with Marxist social theory to describe social character (A); he described the biophilous and necrophilous orientations, the latter seen in extreme figures such as Hitler (B); and he described automaton conformity, losing oneself in others' expectations (C). D is Adler's concept.",
+    ref: "Fromm 1941, 1964, 1973",
+  }),
+  p({
+    id: "per-obj-0084",
+    topic: "object-relations",
+    exams: [N, M],
+    difficulty: 4,
+    type: "statement",
+    stem: "Which statements correctly compare Klein with Freud?",
+    statements: [
+      "A. Klein placed the beginnings of the superego and the Oedipus complex much earlier, in the first year of life.",
+      "B. Klein stressed the infant's relationship to the mother (and the breast) more than Freud did.",
+      "C. Klein analysed children directly through play, while Freud's theory of childhood was built mainly from adult patients.",
+      "D. Klein rejected the idea of unconscious fantasy.",
+    ],
+    options: [
+      "B and D only",
+      "A and D only",
+      "A, B and C only",
+      "A, B, C and D",
+    ],
+    answer: 2,
+    explanation:
+      "A: Klein argued that a harsh early superego and Oedipal feelings appear well before age 3. B: her theory centres on the mother and early part-objects rather than the father and the phallic stage. C: she treated young children using play, while Freud's only child case, Little Hans, was conducted mostly through the father. D is wrong: unconscious fantasy (phantasy) is at the very heart of Klein's theory.",
+    ref: "Klein 1932; Segal 1964",
+  }),
+  p({
+    id: "per-neo-0085",
+    exams: [C, N, S],
+    difficulty: 1,
+    type: "mcq",
+    stem: "Which of these theorists is a neo-Freudian who stressed cultural influences and challenged Freud's views on women?",
+    options: [
+      "Abraham Maslow",
+      "B. F. Skinner",
+      "Raymond Cattell",
+      "Karen Horney",
+    ],
+    answer: 3,
+    explanation:
+      "Horney trained as a psychoanalyst in Berlin but argued that culture and relationships, not anatomy, shape women's psychology. Skinner was a radical behaviourist. Cattell was a factor-analytic trait theorist. Maslow was a humanistic psychologist.",
+    ref: "Feist & Feist, ch. 6",
+  }),
+  p({
+    id: "per-neo-0086",
+    exams: [N, M, S],
+    difficulty: 2,
+    type: "mcq",
+    stem: "Horney distinguished three views of the self in neurotic people. Which statement describes them correctly?",
+    options: [
+      "The real self (who one actually is), the idealised self (an impossible image of who one should be) and the despised self (the self-hatred felt for falling short)",
+      "Id, ego and superego",
+      "Persona, shadow and Self",
+      "Good-me, bad-me and not-me",
+    ],
+    answer: 0,
+    explanation:
+      "Horney held that neurotic people, alienated from their real self, create an idealised self and then hate themselves for not matching it, so they live between grandiosity and self-contempt. The therapeutic aim is to recover the real self. The other options belong to Freud, Jung and Sullivan respectively.",
+    ref: "Horney 1950",
+  }),
+  p({
+    id: "per-obj-0087",
+    topic: "object-relations",
+    exams: [N, M, S],
+    difficulty: 2,
+    type: "assertion-reason",
+    stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
+    statements: [
+      "A: Object relations theory has influenced modern psychodynamic treatments of personality disorders, such as transference-focused psychotherapy and mentalisation-based treatment.",
+      "R: Melanie Klein was born in Vienna.",
+    ],
+    options: AR,
+    answer: 1,
+    explanation:
+      "Both are true, but R does not explain A. Kernberg's transference-focused psychotherapy works with split internal object relations as they appear in the therapy relationship, and Bateman and Fonagy's mentalisation-based treatment draws on object relations and attachment ideas; both have evidence for borderline personality disorder. R is a true biographical fact about Klein, but where she was born has nothing to do with the influence of the theory on treatment.",
+    ref: "Clarkin et al. 2007; Bateman & Fonagy 2009",
+  }),
+  p({
+    id: "per-neo-0088",
+    exams: [N, M],
+    difficulty: 2,
+    type: "mcq",
+    stem: "In Sullivan's developmental stages, the preadolescent 'chum' relationship is important because:",
+    options: [
+      "It marks the start of the latency period",
+      "It gives the child a first experience of intimacy and equal concern for another person, which can correct distortions from earlier relationships",
+      "It is when the oral stage ends",
+      "It is when the child first learns to walk",
+    ],
+    answer: 1,
+    explanation:
+      "Sullivan believed that around ages 8 to 12 a close same-sex friendship lets the child see the world through another's eyes and care about the friend's wellbeing as much as their own. This 'consensual validation' can repair earlier damage and prepares the person for later intimate relationships. Latency and the oral stage are Freud's concepts. Walking develops in infancy.",
+    ref: "Sullivan 1953",
+  }),
+  p({
+    id: "per-murray-0089",
+    topic: "murray",
+    module: "assessment",
+    exams: [N, M, S],
+    difficulty: 3,
+    type: "match",
+    stem: "Match Murray's psychogenic need in List I with its description in List II.",
+    lists: {
+      left: ["A. n Achievement", "B. n Affiliation", "C. n Dominance", "D. n Autonomy"],
+      right: [
+        "i. To control and influence others",
+        "ii. To accomplish something difficult and to excel",
+        "iii. To be free of restraint and act independently",
+        "iv. To form friendly relationships and be close to others",
+      ],
+    },
+    options: [
+      "A-ii, B-i, C-iv, D-iii",
+      "A-iv, B-ii, C-i, D-iii",
+      "A-ii, B-iv, C-i, D-iii",
+      "A-ii, B-iv, C-iii, D-i",
+    ],
+    answer: 2,
+    explanation:
+      "Murray listed about 20 psychogenic needs. Achievement is the need to master and excel (ii). Affiliation is the need for close, friendly relationships (iv). Dominance is the need to control others (i). Autonomy is the need for independence (iii). These needs were assessed with the TAT and later with questionnaires such as Edwards' Personal Preference Schedule. The other codes swap these.",
+    ref: "Murray 1938; Edwards 1959",
+  }),
+  p({
+    id: "per-obj-0090",
+    topic: "object-relations",
+    exams: [N, M, S],
+    difficulty: 2,
+    type: "mcq",
+    stem: "The main shift from classical drive theory to object relations theory can be summed up as a move from:",
+    options: [
+      "Using interviews to using brain scans",
+      "Explaining personality through traits to explaining it through learning",
+      "Studying adults to studying animals",
+      "Explaining personality mainly through instinctual drives to explaining it through internalised relationships",
+    ],
+    answer: 3,
+    explanation:
+      "Freud's drive model put sexual and aggressive drives at the centre, with relationships as a way of discharging them. Object relations theorists made relationships the core: what matters is how early experiences with caregivers are internalised as images of self and others. The other options describe different shifts in psychology that are not about object relations.",
+    ref: "Greenberg & Mitchell 1983",
+  }),
+  p({
+    id: "per-neo-0091",
+    exams: [N, M, S],
+    difficulty: 2,
+    type: "mcq",
+    stem: "Fromm's productive orientation describes a healthy person who:",
+    options: [
+      "Uses their powers to love, work and reason creatively, relating to others with care, respect and knowledge",
+      "Expects others to meet all their needs",
+      "Collects and keeps possessions",
+      "Changes personality to suit whatever sells",
+    ],
+    answer: 0,
+    explanation:
+      "For Fromm, productive love involves care, responsibility, respect and knowledge of the other, and productive work is creative self-expression, not just labour. The other options describe the receptive, hoarding and marketing orientations, which Fromm saw as non-productive.",
+    ref: "Fromm 1947, 1956",
+  }),
+  p({
+    id: "per-obj-0092",
+    topic: "object-relations",
+    exams: [N, M],
+    difficulty: 3,
+    type: "assertion-reason",
+    stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
+    statements: [
+      "A: Klein believed that in the paranoid-schizoid position the infant wishes to make reparation to the mother.",
+      "R: In the depressive position the infant first realises that the mother it attacked in fantasy is the same mother it loves, and so feels guilt.",
+    ],
+    options: AR,
+    answer: 3,
+    explanation:
+      "A is false and R is true. In the paranoid-schizoid position, roughly the first three to four months, the infant splits the world into good and bad part-objects and fears persecution; it does not yet feel guilt or wish to repair. Reparation belongs to the depressive position. R correctly describes that later position: the infant sees the mother as a whole person, recognises its own aggression, and feels guilt and a wish to make amends. Because A places reparation in the wrong position, options in which A is true are wrong.",
+    ref: "Klein 1935, 1940",
+  }),
+  p({
+    id: "per-neo-0093",
+    exams: [C, N, S],
+    difficulty: 1,
+    type: "mcq",
+    stem: "Which theorist is linked to the 'interpersonal theory of psychiatry'?",
+    options: [
+      "Melanie Klein",
+      "Harry Stack Sullivan",
+      "Gordon Allport",
+      "George Kelly",
+    ],
+    answer: 1,
+    explanation:
+      "Sullivan developed interpersonal psychiatry, defining personality in terms of relationships and treating schizophrenia through a relationship-focused approach. Klein developed object relations theory. Allport was a trait theorist. Kelly developed personal construct theory.",
+    ref: "Sullivan 1953",
+  }),
+  p({
+    id: "per-obj-0094",
+    topic: "object-relations",
+    exams: [N, M],
+    difficulty: 4,
+    type: "passage",
+    stem: "Which theoretical account best fits the therapist's understanding?",
+    passage:
+      "A young man seeks therapy for feeling empty and easily hurt. He craves praise for his work and becomes deeply wounded and enraged when his boss gives even mild criticism. In therapy, he at first idealises the therapist and wants the therapist to admire him. The therapist understands this as a sign that his parents did not respond warmly to his achievements and did not offer a calm figure he could look up to, and responds with steady empathy, letting him gradually build a more stable sense of self.",
+    options: [
+      "Jung's analytical psychology: integration of the anima",
+      "Freud's drive theory: fixation in the anal stage",
+      "Kohut's self psychology: unmet mirroring and idealising needs, worked through in selfobject transferences",
+      "Bandura's social learning theory: modelling of aggression",
+    ],
+    answer: 2,
+    explanation:
+      "Kohut described mirroring and idealising transferences, in which patients with self-disorders use the therapist to meet needs their parents did not meet; empathic attunement, with small manageable failures, allows transmuting internalisation and a more cohesive self. Narcissistic rage at criticism fits his account. Anal fixation, the anima and modelling of aggression do not explain the selfobject pattern described.",
+    ref: "Kohut 1971, 1977",
+  }),
+  p({
+    id: "per-neo-0095",
+    exams: [N, M, S],
+    difficulty: 2,
+    type: "mcq",
+    stem: "Sullivan's term 'selective inattention' refers to:",
+    options: [
+      "Choosing which friends to spend time with",
+      "Paying close attention to threatening information",
+      "A disorder of attention such as ADHD",
+      "A security operation in which a person simply fails to notice things that would arouse anxiety",
+    ],
+    answer: 3,
+    explanation:
+      "Selective inattention keeps anxiety-provoking aspects of experience out of awareness, so the self-system is not threatened. It is similar to repression and denial, but Sullivan described it in interpersonal terms. It is the opposite of attending closely to threats, it is not a neurodevelopmental disorder, and it has nothing to do with choosing friends.",
+    ref: "Sullivan 1953",
+  }),
+  p({
+    id: "per-murray-0096",
+    topic: "murray",
+    module: "assessment",
+    exams: [N, M],
+    difficulty: 3,
+    type: "assertion-reason",
+    stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
+    statements: [
+      "A: Implicit motives measured from TAT-type stories and self-reported motives measured by questionnaires usually correlate strongly.",
+      "R: McClelland and colleagues argued that implicit and self-attributed motives are separate systems that predict different kinds of behaviour.",
+    ],
+    options: AR,
+    answer: 3,
+    explanation:
+      "A is false and R is true. Meta-analyses find that implicit and explicit measures of the same motive correlate very weakly, often close to zero. McClelland, Koestner and Weinberger explained this by proposing two different systems: implicit motives, based on early affective experience, predict spontaneous, long-term behaviour, while self-attributed motives predict choices in structured situations. So R gives the reason why A is not true.",
+    ref: "McClelland, Koestner & Weinberger 1989; Spangler 1992",
+  }),
+  p({
+    id: "per-neo-0097",
+    exams: [N, M, S],
+    difficulty: 2,
+    type: "statement",
+    stem: "Which statements about the neo-Freudians are correct?",
+    statements: [
+      "A. They generally kept the idea that childhood experiences shape adult personality.",
+      "B. They gave more importance to the ego and conscious processes than Freud did.",
+      "C. They saw social relationships and culture as central to personality.",
+      "D. They all accepted Freud's view that the Oedipus complex is universal and biologically fixed.",
+    ],
+    options: [
+      "A, B and C only",
+      "A and D only",
+      "B and D only",
+      "A, B, C and D",
+    ],
+    answer: 0,
+    explanation:
+      "A, B and C describe the shared ground of theorists such as Adler, Horney, Fromm, Sullivan and Erikson. D is wrong: most of them questioned or reinterpreted the Oedipus complex; Horney and Fromm, for example, explained Oedipal conflicts through family relationships and culture rather than biology, and Malinowski's anthropology was used to argue that the pattern varies with family structure.",
+    ref: "Feist & Feist, chs. 3 to 9",
+  }),
+];

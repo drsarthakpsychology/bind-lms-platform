@@ -5,7 +5,7 @@ import { MobileBottomSheet } from "@/components/mobile/mobile-bottom-sheet";
 import { Textarea } from "@/components/ui/textarea";
 
 /**
- * The student's working notes — MSE scratchpad + hypotheses — in a mobile
+ * The student's working notes, MSE scratchpad + hypotheses, in a mobile
  * bottom sheet (built on MobileBottomSheet). Kept deliberately informal: this
  * is the student's own record, not something the debrief scores.
  */
@@ -24,7 +24,7 @@ export const NotesSheet = React.memo(function NotesSheet({
   onMseNotesChange: (v: string) => void;
   hypotheses: string;
   onHypothesesChange: (v: string) => void;
-  /** True once the student has written anything — drives the saved signal. */
+  /** True once the student has written anything: drives the saved signal. */
   hasContent?: boolean;
 }) {
   return (
@@ -70,7 +70,7 @@ export const NotesSheet = React.memo(function NotesSheet({
           />
         </div>
         <p className="text-caption text-muted-foreground">
-          This is your working record — the debrief doesn&apos;t read it. What you wrote is half the assessment.
+          This is your working record: the debrief doesn&apos;t read it. What you wrote is half the assessment.
         </p>
       </div>
     </MobileBottomSheet>

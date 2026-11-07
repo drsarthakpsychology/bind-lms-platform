@@ -58,7 +58,7 @@ export type PrepQuestion = {
   lists?: { left: string[]; right: string[] };
   /** Always exactly 4 options. */
   options: [string, string, string, string];
-  /** Index 0–3 of the correct option. */
+  /** Index 0 to 3 of the correct option. */
   answer: 0 | 1 | 2 | 3;
   /** Why the answer is right AND why each distractor is wrong. Precise, no padding. */
   explanation: string;
@@ -78,7 +78,7 @@ export type InterviewQuestion = {
   question: string;
   /** Likely follow-ups a panel asks. */
   followUps: string[];
-  /** A strong model answer (spoken style, 120–250 words). */
+  /** A strong model answer (spoken style, 120 to 250 words). */
   modelAnswer: string;
   /** Points a good answer must cover (the rubric checklist). */
   mustCover: string[];
@@ -89,7 +89,8 @@ export type InterviewQuestion = {
 
 /** A mock exam pattern. Patterns come from docs/plans/PG_PREP_RESEARCH.md; mark unverified ones. */
 export type ExamSpec = {
-  exam: PrepExam;
+  /** The exam this pattern mirrors; null for a VIBHA practice mock that covers every exam. */
+  exam: PrepExam | null;
   title: string;
   minutes: number;
   marksPerRight: number;

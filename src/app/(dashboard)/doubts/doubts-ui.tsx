@@ -55,18 +55,22 @@ export function DoubtsBoard({ items, canAskCohort, canAsk = true }: { items: Dou
     <div className="space-y-4">
       {open ? (
         <div className="space-y-3 rounded-2xl border-2 border-foreground bg-card p-4 hard-shadow-sm">
+          <label htmlFor="doubt-title" className="block text-sm font-bold">Your doubt</label>
           <input
+            id="doubt-title"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-            placeholder="Your doubt in one line (e.g. Difference between mood and affect?)"
-            className="h-11 w-full rounded-xl border-2 border-foreground bg-background px-3 text-base font-semibold outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60"
+            placeholder="In one line, e.g. Difference between mood and affect?"
+            className="-mt-1 h-11 w-full rounded-xl border-2 border-foreground bg-background px-3 text-base font-semibold outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60"
           />
+          <label htmlFor="doubt-body" className="block text-sm font-bold">More detail <span className="font-normal text-muted-foreground">(optional)</span></label>
           <textarea
+            id="doubt-body"
             value={body}
             onChange={(e) => setBody(e.target.value)}
             rows={3}
             placeholder="Add any detail. What have you tried or where did you get stuck?"
-            className="w-full rounded-xl border-2 border-foreground bg-background px-3 py-2 text-base outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60"
+            className="-mt-1 w-full rounded-xl border-2 border-foreground bg-background px-3 py-2 text-base outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60"
           />
           {complaintish && title ? (
             <div className="rounded-xl border-2 border-foreground bg-muted p-3 text-sm">
@@ -75,11 +79,11 @@ export function DoubtsBoard({ items, canAskCohort, canAsk = true }: { items: Dou
               </p>
               <p className="mt-1 text-muted-foreground">{COMPLAINT_NOTICE}</p>
               <div className="mt-2 flex flex-wrap gap-2">
-                <button type="button" onClick={() => post("complaint")} disabled={busy} className="h-9 rounded-full border-2 border-foreground bg-foreground px-3.5 text-sm font-bold text-background disabled:opacity-50">
+                <button type="button" onClick={() => post("complaint")} disabled={busy} className="min-h-10 rounded-md border-2 border-foreground bg-foreground px-3.5 text-sm font-bold text-background disabled:opacity-50 pointer-coarse:min-h-11">
                   Send privately to VIBHA
                 </button>
-                <button type="button" onClick={() => post("doubt")} disabled={busy} className="h-9 rounded-full border-2 border-foreground bg-card px-3.5 text-sm font-bold disabled:opacity-50">
-                  No, it&apos;s a study doubt — post it
+                <button type="button" onClick={() => post("doubt")} disabled={busy} className="min-h-10 rounded-md border-2 border-foreground bg-card px-3.5 text-sm font-bold disabled:opacity-50 pointer-coarse:min-h-11">
+                  No, it&apos;s a study doubt: post it
                 </button>
               </div>
             </div>
@@ -87,17 +91,17 @@ export function DoubtsBoard({ items, canAskCohort, canAsk = true }: { items: Dou
           {err ? <p className="text-sm font-semibold text-status-alert-fg">{err}</p> : null}
           <div className="flex gap-2">
             {!complaintish || !title ? (
-              <button type="button" onClick={() => post()} disabled={busy || title.trim().length < 3} className="inline-flex h-10 items-center gap-1.5 rounded-full border-2 border-foreground bg-primary px-4 text-sm font-bold text-primary-foreground disabled:opacity-50">
+              <button type="button" onClick={() => post()} disabled={busy || title.trim().length < 3} className="inline-flex h-10 items-center gap-1.5 rounded-md border-2 border-foreground bg-primary px-4 text-sm font-bold pointer-coarse:h-11 text-primary-foreground disabled:opacity-50">
                 {busy ? <Loader2 className="size-4 animate-spin" aria-hidden /> : <Send className="size-4" aria-hidden />} Post doubt
               </button>
             ) : null}
-            <button type="button" onClick={() => setOpen(false)} className="h-10 rounded-full border-2 border-foreground px-4 text-sm font-semibold">
+            <button type="button" onClick={() => setOpen(false)} className="h-10 rounded-md border-2 border-foreground px-4 text-sm font-semibold pointer-coarse:h-11">
               Cancel
             </button>
           </div>
         </div>
       ) : canAsk ? (
-        <button type="button" onClick={() => setOpen(true)} className="inline-flex h-11 items-center gap-2 rounded-full border-2 border-foreground bg-primary px-5 text-sm font-bold text-primary-foreground hard-shadow-sm">
+        <button type="button" onClick={() => setOpen(true)} className="inline-flex h-11 items-center gap-2 rounded-md border-2 border-foreground bg-primary px-5 text-sm font-bold text-primary-foreground hard-shadow-sm">
           <Plus className="size-5" aria-hidden /> Ask a doubt
         </button>
       ) : null}
@@ -111,14 +115,14 @@ export function DoubtsBoard({ items, canAskCohort, canAsk = true }: { items: Dou
             ["complaint", "My concerns"],
           ] as const
         ).map(([k, l]) => (
-          <button key={k} type="button" aria-pressed={filter === k} onClick={() => setFilter(k)} className={cn("h-9 shrink-0 rounded-full border-2 border-foreground px-3.5 text-sm font-semibold", filter === k ? "bg-foreground text-background" : "bg-card")}>
+          <button key={k} type="button" aria-pressed={filter === k} onClick={() => setFilter(k)} className={cn("h-9 shrink-0 rounded-full border-2 border-foreground px-3.5 pointer-coarse:h-11 text-sm font-semibold", filter === k ? "bg-foreground text-background" : "bg-card")}>
             {l}
           </button>
         ))}
       </nav>
 
       {shown.length === 0 ? (
-        <p className="rounded-2xl border-2 border-dashed border-foreground/30 p-6 text-center text-sm text-muted-foreground">No doubts here yet. Be the first to ask — someone in your batch will help.</p>
+        <p className="rounded-2xl border-2 border-dashed border-foreground/30 p-6 text-center text-sm text-muted-foreground">No doubts here yet. Be the first to ask: someone in your batch will help.</p>
       ) : (
         <ul className="space-y-2">
           {shown.map((d) => (
@@ -128,7 +132,7 @@ export function DoubtsBoard({ items, canAskCohort, canAsk = true }: { items: Dou
                   {d.status === "solved" ? <CheckCircle2 className="size-5" /> : d.kind === "complaint" ? <ShieldAlert className="size-5" /> : <MessageCircleQuestion className="size-5" />}
                 </span>
                 <span className="min-w-0 flex-1">
-                  <span className="block truncate font-bold">{d.title}</span>
+                  <span className="line-clamp-2 block font-bold break-words">{d.title}</span>
                   <span className="block text-caption text-muted-foreground">
                     {d.kind === "complaint" ? "Private concern · " : ""}
                     {d.author} · {ago(d.createdAt)}
@@ -182,7 +186,7 @@ export function DoubtThreadView({ thread, cohortId }: { thread: DoubtThread; coh
         {thread.body ? <p className="mt-2 whitespace-pre-line break-words text-[1.0625rem] leading-relaxed">{thread.body}</p> : null}
         <p className="mt-2 text-caption text-muted-foreground">Asked by {thread.author} · {ago(thread.createdAt)}</p>
         {thread.mine && thread.kind === "doubt" ? (
-          <button type="button" onClick={() => act(() => reclassifyMine(thread.id, "complaint", cohortId))} className="mt-3 text-caption font-semibold text-link underline">
+          <button type="button" onClick={() => act(() => reclassifyMine(thread.id, "complaint", cohortId))} className="mt-1 inline-flex min-h-11 items-center text-caption font-semibold text-link underline">
             This is actually a concern for VIBHA, not a study doubt
           </button>
         ) : null}
@@ -200,11 +204,11 @@ export function DoubtThreadView({ thread, cohortId }: { thread: DoubtThread; coh
             <p className="whitespace-pre-line break-words text-[1.0625rem] leading-relaxed">{r.body}</p>
             <div className="mt-2 flex flex-wrap items-center gap-3 text-caption">
               <span className="text-muted-foreground">{r.author} · {ago(r.createdAt)}</span>
-              <button type="button" onClick={() => act(() => voteReply(thread.id, r.id, !r.youVoted))} className={cn("inline-flex items-center gap-1 rounded-full border-2 border-foreground px-2.5 py-0.5 font-bold", r.youVoted ? "bg-primary text-primary-foreground" : "bg-card")}>
+              <button type="button" aria-pressed={r.youVoted} onClick={() => act(() => voteReply(thread.id, r.id, !r.youVoted))} className={cn("inline-flex min-h-9 items-center gap-1 rounded-md border-2 border-foreground px-2.5 py-0.5 font-bold pointer-coarse:min-h-11", r.youVoted ? "bg-primary text-primary-foreground" : "bg-card")}>
                 <ThumbsUp className="size-3.5" aria-hidden /> {r.votes} helped
               </button>
               {thread.mine && thread.kind === "doubt" ? (
-                <button type="button" onClick={() => act(() => markSolved(thread.id, r.isSolution ? null : r.id))} className="font-bold text-link underline">
+                <button type="button" onClick={() => act(() => markSolved(thread.id, r.isSolution ? null : r.id))} className="inline-flex min-h-9 items-center font-bold text-link underline pointer-coarse:min-h-11">
                   {r.isSolution ? "Unmark" : "Mark as solved"}
                 </button>
               ) : null}
@@ -215,10 +219,10 @@ export function DoubtThreadView({ thread, cohortId }: { thread: DoubtThread; coh
 
       {thread.kind === "doubt" ? (
         <section aria-label="Your answer" className="space-y-2 rounded-2xl border-2 border-foreground bg-card p-4">
-          <h2 className="text-sm font-bold">Help out — add your answer</h2>
-          <textarea value={body} onChange={(e) => setBody(e.target.value)} rows={3} placeholder="Explain it in your own words, or share how you remember it." className="w-full rounded-xl border-2 border-foreground bg-background px-3 py-2 text-base outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60" />
+          <h2 id="doubt-answer" className="text-sm font-bold">Help out: add your answer</h2>
+          <textarea aria-labelledby="doubt-answer" value={body} onChange={(e) => setBody(e.target.value)} rows={3} placeholder="Explain it in your own words, or share how you remember it." className="w-full rounded-xl border-2 border-foreground bg-background px-3 py-2 text-base outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60" />
           {err ? <p className="text-sm font-semibold text-status-alert-fg">{err}</p> : null}
-          <button type="button" onClick={send} disabled={busy || body.trim().length < 1} className="inline-flex h-10 items-center gap-1.5 rounded-full border-2 border-foreground bg-primary px-4 text-sm font-bold text-primary-foreground disabled:opacity-50">
+          <button type="button" onClick={send} disabled={busy || body.trim().length < 1} className="inline-flex h-10 items-center gap-1.5 rounded-md border-2 border-foreground bg-primary px-4 text-sm font-bold text-primary-foreground pointer-coarse:h-11 disabled:opacity-50">
             {busy ? <Loader2 className="size-4 animate-spin" aria-hidden /> : <Send className="size-4" aria-hidden />} Post answer
           </button>
         </section>

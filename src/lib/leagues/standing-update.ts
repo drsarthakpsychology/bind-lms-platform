@@ -67,7 +67,7 @@ export function buildStandingUpdate(input: UpdateInput): Update {
     if (moved < 0) {
       const back = pointsToPlace(input.groupPoints, input.before.rank, input.now.points);
       title = `You dropped ${plural(-moved, "place")}`;
-      parts.push(`You dropped ${plural(-moved, "place")} — ${plural(back, "point")} gets them back.`);
+      parts.push(`You dropped ${plural(-moved, "place")}. ${plural(back, "point")} gets them back.`);
     } else if (moved > 0) {
       title = `You climbed ${plural(moved, "place")}`;
       parts.push(`You climbed ${plural(moved, "place")} to ${ordinal(input.now.rank)}.`);

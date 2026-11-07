@@ -1,5 +1,5 @@
 /**
- * Learn engine — the rules behind XP, levels, streaks, badges, chests and
+ * Learn engine: the rules behind XP, levels, streaks, badges, chests and
  * spaced review. Pure functions (no I/O), so every rule is unit-tested and the
  * same maths runs on the phone and the server.
  *
@@ -88,7 +88,7 @@ export function emptyStudy(): StudyProgress {
 }
 
 export const DAILY_GOALS = [20, 40, 60] as const;
-export const INTERVALS = [0, 1, 3, 7, 14, 30]; // days, indexed by Leitner box (1–5)
+export const INTERVALS = [0, 1, 3, 7, 14, 30]; // days, indexed by Leitner box (1 to 5)
 export const MAX_FREEZES = 2;
 
 export function emptyState(): LearnState {
@@ -393,7 +393,7 @@ export function starsFor(correct: number, total: number): 0 | 1 | 2 | 3 {
   return pct >= 1 ? 3 : pct >= 0.8 ? 2 : pct >= 0.5 ? 1 : 0;
 }
 
-/** Chest bonus: 5–25 XP, with an occasional jackpot. `roll` is 0..1. */
+/** Chest bonus: 5 to 25 XP, with an occasional jackpot. `roll` is 0..1. */
 export function chestBonus(roll: number): { xp: number; jackpot: boolean } {
   if (roll > 0.92) return { xp: 50, jackpot: true };
   return { xp: 5 + Math.round(roll * 20), jackpot: false };
@@ -410,7 +410,7 @@ export const BADGES: Record<string, { title: string; text: string; icon: string 
   streak_30: { title: "Clinician's discipline", text: "30-day streak", icon: "★" },
   goal_5: { title: "Goal getter", text: "Hit your daily goal 5 times", icon: "◎" },
   review_25: { title: "Memory builder", text: "25 review answers right", icon: "↻" },
-  blitz_15: { title: "Quick thinker", text: "15+ in a 60-second blitz", icon: "⏱" },
+  blitz_15: { title: "Quick thinker", text: "15 right in one Blitz round", icon: "⏱" },
   xp_1000: { title: "Four figures", text: "1,000 XP earned", icon: "Ⅿ" },
   unit_master: { title: "Unit master", text: "3 stars on every lesson in a unit", icon: "♛" },
 };
@@ -572,6 +572,40 @@ export const LAB_XP = { firstRun: 20, rerun: 5, checkPerRight: 3, reflect: 5 } a
  * Record a finished experiment run. The first run earns the most; a re-run
  * earns a little, at most once a day, so the Lab rewards doing, not farming.
  */
+/**
+ * A finished Blitz round (XP is paid on the server, so none here): keeps the
+ * best count of right answers and awards the Quick thinker badge at 15.
+ */
+/**
+ * A game whose XP was already paid on the server. Counts towards today's
+ * goal and keeps the streak alive, without adding that XP again here. Only
+ * the daily-goal bonus, earned in the browser, is added to XP and history.
+ */
+export function creditPlay(s: LearnState, serverXp: number, today: string): LearnState {
+  const amount = Math.max(0, Math.round(serverXp));
+  const daily = s.daily.day === today ? { ...s.daily } : { day: today, xp: 0, goalHit: false };
+  daily.xp += amount;
+  let bonus = 0;
+  if (!daily.goalHit && daily.xp >= s.dailyGoal) {
+    daily.goalHit = true;
+    bonus = XP.goal;
+  }
+  return {
+    ...s,
+    xp: s.xp + bonus,
+    daily,
+    streak: touchStreak(s.streak, today).streak,
+    history: bonus ? trimHistory({ ...s.history, [today]: (s.history[today] ?? 0) + bonus }, today) : s.history,
+  };
+}
+
+export function recordBlitzRound(s: LearnState, right: number): LearnState {
+  const n = Math.max(0, Math.floor(right));
+  const badges = s.badges.includes("blitz_15") || n < 15 ? s.badges : [...s.badges, "blitz_15"];
+  if (n <= s.blitzBest && badges === s.badges) return s;
+  return { ...s, blitzBest: Math.max(s.blitzBest, n), badges };
+}
+
 export function recordLabRun(s: LearnState, id: string, result: Record<string, number>, today: string): LearnState {
   const prev = s.lab[id];
   const rec: LabRecord = prev

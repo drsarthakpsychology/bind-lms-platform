@@ -27,7 +27,7 @@ const payloadSchema = z.object({
 const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
 /**
- * POST /api/practice/mse/attempt — persist a completed MSE level attempt.
+ * POST /api/practice/mse/attempt: persist a completed MSE level attempt.
  * The static seed stimuli (mse-* / obs-* / mse4-*) are upserted into
  * mse_stimuli keyed by slug (scripts/upsert-mse-stimuli.ts), so this resolves
  * the slug to the row uuid. Level 5 attempts (MSE from a live interview)
@@ -53,7 +53,7 @@ export async function POST(req: Request) {
   // Level 5 attempts are session-based: no mse_stimulus row exists for them.
   const isSessionLevel = parsed.data.level === "5";
 
-  // Resolve a seed slug (mse-1, obs-1, mse4-*) — or an already-uuid id — to
+  // Resolve a seed slug (mse-1, obs-1, mse4-*), or an already-uuid id, to
   // the actual mse_stimuli row id.
   let stimulusId: string | null = null;
   if (!isSessionLevel && parsed.data.stimulus_id) {
@@ -91,7 +91,7 @@ export async function POST(req: Request) {
 
   if (error) {
     // If FK fails due to an unknown stimulus (not yet seeded), don't block the
-    // student — an attempt is a check, not a test.
+    // student: an attempt is a check, not a test.
     if (error.code === "23503") {
       console.warn("[MSE attempt] FK violation on stimulus_id:", stimulusId);
       return NextResponse.json({ ok: true, warning: "stimulus not in DB; logged locally" });

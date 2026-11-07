@@ -5,7 +5,7 @@ import { useReducedMotion } from "@/lib/motion";
 /**
  * A single chat bubble in the patient conversation. Patient = left, quiet
  * (hairline outline + card fill); student = right, orange fill. No "You"/name
- * label above each message — the sides carry the speaker, and dropping the
+ * label above each message: the sides carry the speaker, and dropping the
  * label keeps the conversation reading like a conversation, not a form.
  *
  * The patient's typing indicator (three bouncing dots) is the same quiet

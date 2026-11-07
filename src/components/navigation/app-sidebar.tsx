@@ -11,9 +11,9 @@ import { cn } from "@/lib/utils";
 export type SidebarMode = "admin" | "student";
 
 /**
- * Desktop sidebar (YouTube-style guide). Full width with labels on wide
- * screens, a slim icon rail on laptops; the ☰ in the top bar flips it and the
- * choice is remembered. `role`/`mode` are decided server-side — this component
+ * Sidebar (YouTube-style guide). Full width with labels on wide screens, a
+ * slim icon rail on laptops and always on tablets (768-1023); on laptops the
+ * ☰ in the top bar flips it and the choice is remembered. `role`/`mode` are decided server-side: this component
  * never makes authorization decisions.
  */
 export function AppSidebar({
@@ -32,6 +32,9 @@ export function AppSidebar({
   className?: string;
 }) {
   const pref = useSidebarPref();
+  const laptop = useLaptopWidth();
+  // Tablets have no room for the full sidebar: the rail, whatever was chosen.
+  const size = laptop ? pref : pref === "auto" ? "auto" : "mini";
   const items =
     role === "admin" && mode === "admin"
       ? ADMIN_SIDEBAR
@@ -39,7 +42,7 @@ export function AppSidebar({
 
   return (
     <aside
-      data-size={pref}
+      data-size={size}
       aria-label="Sections"
       className={cn(
         "app-side flex h-full shrink-0 flex-col border-r-2 border-foreground bg-card",
@@ -59,5 +62,18 @@ export function AppSidebar({
         Press <kbd className="rounded border border-foreground px-1 font-mono text-[0.7rem]">/</kbd> to search
       </p>
     </aside>
+  );
+}
+
+/** True at 1024px and wider (laptops). The server assumes a laptop. */
+function useLaptopWidth(): boolean {
+  return React.useSyncExternalStore(
+    (cb) => {
+      const m = window.matchMedia("(min-width: 1024px)");
+      m.addEventListener("change", cb);
+      return () => m.removeEventListener("change", cb);
+    },
+    () => window.matchMedia("(min-width: 1024px)").matches,
+    () => true,
   );
 }

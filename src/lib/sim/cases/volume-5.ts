@@ -1,5 +1,5 @@
 /**
- * More cases — volume batch 5. Completes the 60-case target.
+ * More cases: volume batch 5. Completes the 60-case target.
  * Each a different person/voice; more no-disorder (A8) and trap coverage.
  */
 
@@ -7,7 +7,7 @@ import { buildCase, type CaseAuthoring } from "../case-builder";
 
 const normalTeen: CaseAuthoring = {
   id: "ado-normal-teen",
-  title: "Rohan, 15 — the 'withdrawn' teenager who is fine",
+  title: "Rohan, 15: the 'withdrawn' teenager who is fine",
   difficulty: "cooperative",
   traps: ["over_diagnosis", "informant_conflict"],
   moduleId: "mod-adolescent",
@@ -18,17 +18,17 @@ const normalTeen: CaseAuthoring = {
   city: "Bhopal",
   family: "lives with parents",
   register: "Slightly monosyllabic teen English",
-  presentation: "Parents fear he's 'depressed' — he's quiet, in his room, on his phone. He is developmentally typical: normal adolescent withdrawal, intact function, no mood disorder.",
+  presentation: "Parents fear he's 'depressed'. He's quiet, in his room, on his phone. He is developmentally typical: normal adolescent withdrawal, intact function, no mood disorder.",
   chiefComplaint: "(Shrugs) They think I'm depressed because I don't talk at dinner. I'm fine. I just don't want to talk about school all the time.",
   timeline: "Parents' concern, not his. Grades fine, friends online, sleeps fine, eats fine.",
   treatmentHistory: "None.",
-  helpSeekingDelay: "N/A — no disorder",
+  helpSeekingDelay: "N/A, no disorder",
   priorContacts: [],
   coreBelief: "They'll never stop treating me like a kid.",
   intermediateBeliefs: ["If I say I'm fine they'll say I'm lying", "Talking to them just starts a fight"],
   coping: ["one-word answers", "headphones", "goes along to stop the lecture"],
   openingIdiom: "I'm fine, just tired",
-  redFlags: [{ content: "none — the 'withdrawal' is age-appropriate", gate: "asked_about_self_harm_clearly" }],
+  redFlags: [{ content: "none: the 'withdrawal' is age-appropriate", gate: "asked_about_self_harm_clearly" }],
   variation: {
     mood_today: ["flat (teenage normal)", "bored", "annoyed"],
     recent_event: ["a report card", "parents argued about his phone", "a friend online quit", "a school event"],
@@ -42,7 +42,7 @@ const normalTeen: CaseAuthoring = {
 
 const examAnxiety: CaseAuthoring = {
   id: "anx-exam",
-  title: "Priyanka, 20 — the exam anxiety within range",
+  title: "Priyanka, 20: the exam anxiety within range",
   difficulty: "cooperative",
   traps: ["over_diagnosis", "under_diagnosis"],
   moduleId: "mod-anxiety",
@@ -60,10 +60,10 @@ const examAnxiety: CaseAuthoring = {
   helpSeekingDelay: "Came because a friend said it's 'anxiety'",
   priorContacts: ["friend's diagnosis"],
   coreBelief: "If I don't perform, I'm worthless.",
-  intermediateBeliefs: ["Other people don't get nervous — something's wrong with me"],
+  intermediateBeliefs: ["Other people don't get nervous: something's wrong with me"],
   coping: ["over-prepare", "last-minute cram", "deep breathing"],
   openingIdiom: "ghabrahat",
-  redFlags: [{ content: "none — situational, non-avoidant", gate: "asked_about_self_harm_clearly" }],
+  redFlags: [{ content: "none: situational, non-avoidant", gate: "asked_about_self_harm_clearly" }],
   variation: {
     mood_today: ["anxious", "brittle-cheerful", "flat"],
     recent_event: ["a test was announced", "her mother compared marks", "a friend passed easily", "an all-nighter"],
@@ -77,7 +77,7 @@ const examAnxiety: CaseAuthoring = {
 
 const depressedMedical: CaseAuthoring = {
   id: "dep-medical",
-  title: "Devika, 39 — the 'depression' that is a brain tumour's warning",
+  title: "Devika, 39: the 'depression' that is a brain tumour's warning",
   difficulty: "guarded",
   traps: ["medical_mimic", "diagnostic_overshadowing"],
   moduleId: "mod-depression",
@@ -89,7 +89,7 @@ const depressedMedical: CaseAuthoring = {
   family: "married; two children",
   register: "English, precise",
   presentation: "New-onset 'depression' at 39 with no personal or family history: mood change, new headaches, morning vomiting, subtle weakness. The mood is the front door of an organic cause.",
-  chiefComplaint: "I've never been sad like this. And the headaches — I've never had headaches. Everyone says it's stress, but something feels different.",
+  chiefComplaint: "I've never been sad like this. And the headaches. I've never had headaches. Everyone says it's stress, but something feels different.",
   timeline: "Three weeks: personality change, headaches, early-morning vomiting, word-finding trouble. Red flags for an intracranial process.",
   treatmentHistory: "None yet. A GP said 'stress, take leave'.",
   helpSeekingDelay: "3 weeks",
@@ -98,7 +98,7 @@ const depressedMedical: CaseAuthoring = {
   intermediateBeliefs: ["If I insist, they'll think I'm hysterical", "The headaches and the sadness are one thing"],
   coping: ["grade her own work slowly", "hide the word-finding", "not complain"],
   openingIdiom: "head",
-  redFlags: [{ content: "none for self-harm — the red flags are neurological", gate: "asked_about_self_harm_clearly" }],
+  redFlags: [{ content: "none for self-harm: the red flags are neurological", gate: "asked_about_self_harm_clearly" }],
   variation: {
     mood_today: ["flat", "anxious", "numb", "agitated"],
     recent_event: ["she couldn't find a word in class", "a morning vomit", "her husband noticed", "a GP said 'stress'"],
@@ -112,7 +112,7 @@ const depressedMedical: CaseAuthoring = {
 
 const substanceOpioid: CaseAuthoring = {
   id: "sub-opioid",
-  title: "Javed, 40 — the painkiller that became a dependence",
+  title: "Javed, 40: the painkiller that became a dependence",
   difficulty: "resistant",
   traps: ["substance_induced", "iatrogenic", "adherence_fiction"],
   moduleId: "mod-substance",
@@ -124,7 +124,7 @@ const substanceOpioid: CaseAuthoring = {
   family: "married; three children",
   register: "Hindi, ashamed, defensive",
   presentation: "Started 'painkillers' after a back injury. Now needs more, gets sick without them, and has borrowed money to buy them. The 'pain' is real, but the dependence is the diagnosis.",
-  chiefComplaint: "My back still hurts. The tablet is the only thing that works. I'm not addicted — I'm in pain. Why is everyone asking about the tablet?",
+  chiefComplaint: "My back still hurts. The tablet is the only thing that works. I'm not addicted. I'm in pain. Why is everyone asking about the tablet?",
   timeline: "Back injury → opioid painkiller → escalating use → withdrawal between doses → buying on the black market.",
   treatmentHistory: "Opioid painkiller from a chemist without prescription.",
   helpSeekingDelay: "2 years of dependence",
@@ -133,7 +133,7 @@ const substanceOpioid: CaseAuthoring = {
   intermediateBeliefs: ["If I admit dependence, they'll take away the one thing that works", "My family will think I'm weak"],
   coping: ["hide the tablets", "buy from multiple chemists", "deny withdrawal"],
   openingIdiom: "kamzori",
-  redFlags: [{ content: "has thought about ending it during withdrawal — no plan", gate: "asked_about_self_harm_clearly" }],
+  redFlags: [{ content: "has thought about ending it during withdrawal, no plan", gate: "asked_about_self_harm_clearly" }],
   variation: {
     mood_today: ["withdrawn", "irritated", "flat", "anxious"],
     recent_event: ["a chemist refused", "his wife found the tablets", "the money ran out", "the back pain flared"],
@@ -147,7 +147,7 @@ const substanceOpioid: CaseAuthoring = {
 
 const ethicsMinor: CaseAuthoring = {
   id: "eth-minor-capacity",
-  title: "Sneha, 16 — the minor who wants therapy without her mother",
+  title: "Sneha, 16: the minor who wants therapy without her mother",
   difficulty: "guarded",
   traps: ["informant_conflict", "diagnostic_overshadowing"],
   moduleId: "mod-adolescent",
@@ -158,7 +158,7 @@ const ethicsMinor: CaseAuthoring = {
   city: "Indore",
   family: "lives with mother (widow) and brother",
   register: "Fluent English, assertive",
-  presentation: "Wants therapy. Mother insists on being in the room and knowing everything. Sneha is a mature minor with capacity — the conflict is the mother's control vs Sneha's autonomy.",
+  presentation: "Wants therapy. Mother insists on being in the room and knowing everything. Sneha is a mature minor with capacity: the conflict is the mother's control vs Sneha's autonomy.",
   chiefComplaint: "My mother wants to sit in the session. She wants to read the notes. She says I'm 'her child'. But it's my mind. Isn't it mine?",
   timeline: "Anxiety + stress, wants privacy. Mother's fear after her husband died is driving the control.",
   treatmentHistory: "None.",

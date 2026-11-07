@@ -4,7 +4,7 @@ import { MASTERY_TEST_PCT, type AnyRequirement, type ModuleFacet } from "./rules
 /**
  * Pure completion engine. Evaluates one configurable requirement against the
  * student's VERIFIED records (study progress, XP, video watch time, lesson
- * completion) — never against browser state. Returns whether the requirement
+ * completion), never against browser state. Returns whether the requirement
  * is satisfied and a human-readable reason for the audit trail.
  *
  * Idempotent by construction: it is a pure predicate over recorded facts, so
@@ -23,7 +23,7 @@ export type EvalCtx = {
   completedLessons: Set<string>;
   /** Best daily streak (days). */
   streakBest?: number;
-  /** Weekly league promotions, and the highest tier reached (1–5). */
+  /** Weekly league promotions, and the highest tier reached (1 to 5). */
   promotions?: number;
   bestTier?: number;
   duelsWon?: number;

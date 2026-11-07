@@ -8,7 +8,7 @@ import Link from "next/link";
 export const metadata: Metadata = { title: "Doubts" };
 export const dynamic = "force-dynamic";
 
-/** The cohort doubts board — students ask and answer each other; complaints go privately to the admin. */
+/** The cohort doubts board: students ask and answer each other; complaints go privately to the admin. */
 export default async function DoubtsPage({ searchParams }: { searchParams: Promise<{ cohort?: string }> }) {
   const session = await getSession();
   if (session.status !== "ok") return null;

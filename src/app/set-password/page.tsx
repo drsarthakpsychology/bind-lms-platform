@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
-// Client-side Supabase auth page — force-dynamic so it's never statically
+// Client-side Supabase auth page: force-dynamic so it's never statically
 // prerendered at build time. Prerendering this server-renders SetPasswordForm,
 // whose browser Supabase client throws when env vars are absent (preview
 // deployments without the Supabase envs failed the whole build here).

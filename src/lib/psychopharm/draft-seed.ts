@@ -1,9 +1,9 @@
 /**
- * Curated draft seed — highest-frequency drugs first.
+ * Curated draft seed: highest-frequency drugs first.
  *
  * Each record is quote-first: every value carries source_id + page_ref + a
  * verbatim snippet read from the source. Bands come ONLY from what the sources
- * describe as functionally distinct ranges (by condition/population) —
+ * describe as functionally distinct ranges (by condition or population),
  * never invented boundaries (Rule 16/18). Where a source gives one continuous
  * range with no functional split, the drug is left to the honest-gap fallback
  * in store.ts, not force-split here.
@@ -18,14 +18,14 @@ const M = "maudsley_2021";
 
 export const DRAFT_DRUGS: DrugDraft[] = [
   // ---------------------------------------------------------------------------
-  // CLONAZEPAM — G1 acceptance target.
+  // CLONAZEPAM: G1 acceptance target.
   //
   // Band evidence (quote-first):
-  //   Stahl 7th p77: panic band 0.5–2 mg/day, max 4 mg/day, start 0.25 mg.
+  //   Stahl 7th p77: panic band 0.5 to 2 mg/day, max 4 mg/day, start 0.25 mg.
   //   Stahl 7th p77: seizure use, dose dependent, some require >20 mg/day.
-  //   Maudsley p136: anxiety band 0.5–3 mg/day — a PARTIAL overlap (rule 2).
+  //   Maudsley p136: anxiety band 0.5 to 3 mg/day: a PARTIAL overlap (rule 2).
   //   Maudsley p463: published equivalence clonazepam 0.5 mg ≈ diazepam 10 mg.
-  // The 0.5–2 (Stahl) vs 0.5–3 (Maudsley) is a partial overlap → store union,
+  // The 0.5 to 2 (Stahl) vs 0.5 to 3 (Maudsley) is a partial overlap → store union,
   // never average. Dependence/discontinuation risk rises with dose & duration.
   // ---------------------------------------------------------------------------
   {
@@ -58,7 +58,7 @@ export const DRAFT_DRUGS: DrugDraft[] = [
     common_uses: [
       {
         value:
-          "Panic disorder (with or without agoraphobia); certain seizure types (absence, akinetic, myoclonic; Lennox–Gastaut); adjunctive agent in psychotic and bipolar disorders, and in anxiety disorders alongside SSRIs/SNRIs.",
+          "Panic disorder (with or without agoraphobia); certain seizure types (absence, akinetic, myoclonic; Lennox-Gastaut); adjunctive agent in psychotic and bipolar disorders, and in anxiety disorders alongside SSRIs/SNRIs.",
         source_id: S,
         page_ref: "p77 (PDF 508)",
         snippet:
@@ -136,14 +136,14 @@ export const DRAFT_DRUGS: DrugDraft[] = [
         range_high: 3,
         unit: "mg",
         frequency: "once daily at bed-time or in divided doses",
-        band_label: "Low–typical anxiolytic / panic band",
+        band_label: "Low-typical anxiolytic / panic band",
         primary_purpose: "Panic disorder (with or without agoraphobia)",
         secondary_purposes: ["anxiety reduction", "as need in panic / intermittent anxiety"],
         is_typical_starting: true,
         is_standard_maintenance: true,
-        why_this_dose: "Sources give the main panic maintenance range: Stahl 0.5–2 mg/day; Maudsley 0.5–3 mg/day (anxiety). Book-marked as the band most people settle on for panic.",
+        why_this_dose: "Sources give the main panic maintenance range: Stahl 0.5 to 2 mg/day; Maudsley 0.5 to 3 mg/day (anxiety). Book-marked as the band most people settle on for panic.",
         what_changes_going_up: "Rates of dependence and withdrawal risk rise as dose and duration rise; above ~2 mg usually for more severe panic or for seizure control.",
-        what_changes_going_down: "At 0.25–0.5 mg the calming effect is gentler with less sedation (see band 0 below).",
+        what_changes_going_down: "At 0.25 to 0.5 mg the calming effect is gentler with less sedation (see band 0 below).",
         onset: {
           value: "Some immediate relief with a first dose; several weeks of daily dosing for maximal benefit.",
           source_id: S,
@@ -154,7 +154,7 @@ export const DRAFT_DRUGS: DrugDraft[] = [
         plain_explanation:
           "At this level clonazepam mostly turns the volume down on the brain's alarm system, easing anxiety and panic without (at the low end) heavy sedation.",
         technical_explanation:
-          "Positive allosteric modulation at GABAA benzodiazepine sites enhances inhibitory conductance; anxiolytic at 0.5–2 mg/day (Stahl), up to 3 mg/day (Maudsley).",
+          "Positive allosteric modulation at GABAA benzodiazepine sites enhances inhibitory conductance; anxiolytic at 0.5 to 2 mg/day (Stahl), up to 3 mg/day (Maudsley).",
         side_effects: [
           {
             label: "common",
@@ -201,14 +201,14 @@ export const DRAFT_DRUGS: DrugDraft[] = [
         ],
         population_notes: ["Elderly should receive lower doses and be monitored."],
         source_ref: {
-          value: "Typical panic contribution: Stahl 0.5–2 mg/day; Maudsley notes 0.5–3 mg/day for anxiety.",
+          value: "Typical panic contribution: Stahl 0.5 to 2 mg/day; Maudsley notes 0.5 to 3 mg/day for anxiety.",
           source_id: S,
           page_ref: "p77",
-          snippet: "Panic: 0.5–2 mg/day either as divided doses or once at bedtime; maximum dose generally 4 mg/day.",
+          snippet: "Panic: 0.5 to 2 mg/day either as divided doses or once at bedtime; maximum dose generally 4 mg/day.",
           agreement: "partial",
           contrib: [
-            { source_id: S, page_ref: "p77", snippet: "Panic: 0.5–2 mg/day either as divided doses or once at bedtime; maximum dose generally 4 mg/day." },
-            { source_id: M, page_ref: "p136", snippet: "clonazepam 0.5–3mg/day (anxiety, consider a benzodiazepine)" },
+            { source_id: S, page_ref: "p77", snippet: "Panic: 0.5 to 2 mg/day either as divided doses or once at bedtime; maximum dose generally 4 mg/day." },
+            { source_id: M, page_ref: "p136", snippet: "clonazepam 0.5 to 3mg/day (anxiety, consider a benzodiazepine)" },
           ],
         },
       },
@@ -236,7 +236,7 @@ export const DRAFT_DRUGS: DrugDraft[] = [
         side_effects: [
           {
             label: "common",
-            items: ["Lighter sedation at 0.25–0.5 mg than a mild maintenance band"],
+            items: ["Lighter sedation at 0.25 to 0.5 mg than a mild maintenance band"],
             time_course: "Same class sedation; gentler at the low end.",
             source: {
               value: "as band 1",
@@ -276,7 +276,7 @@ export const DRAFT_DRUGS: DrugDraft[] = [
     student: {
       plain_language: {
         text:
-          "Clonazepam turns up the brain's brake pedal (GABA). More brake means fewer racing thoughts, less panic, more sleep. Because it is a brake it also slows other things: thinking can get foggy, reactions slower. The body gets used to it, so stopping suddenly is genuinely dangerous — that is the prescriber's job, never the client's decision.",
+          "Clonazepam turns up the brain's brake pedal (GABA). More brake means fewer racing thoughts, less panic, more sleep. Because it is a brake it also slows other things: thinking can get foggy, reactions slower. The body gets used to it, so stopping suddenly is genuinely dangerous: that is the prescriber's job, never the client's decision.",
         kb_parent_field: "mechanism",
         source: { value: "paraphrase of mechanism/liability above", source_id: S, page_ref: "p77", snippet: "Enhances the inhibitory effects of GABA ... Risk of dependence ... How to stop", agreement: "single" },
       },
@@ -293,7 +293,7 @@ export const DRAFT_DRUGS: DrugDraft[] = [
   },
 
   // ---------------------------------------------------------------------------
-  // ARIPIPRAZOLE — the source gives two clearly different functional bands by
+  // ARIPIPRAZOLE: the source gives two clearly different functional bands by
   // job: low-dose SSRI/SNRI adjunct vs the full antipsychotic/mood-stabilising
   // dose. Both quoted from the same "Usual Dosage Range" block.
   // ---------------------------------------------------------------------------
@@ -338,19 +338,19 @@ export const DRAFT_DRUGS: DrugDraft[] = [
         unit: "mg",
         band_label: "Low / adjunct band",
         primary_purpose: "Augmentation of SSRIs/SNRIs in depression",
-        secondary_purposes: ["autism-related irritability (5–15 mg)", "Tourette's (5–20 mg)"],
+        secondary_purposes: ["autism-related irritability (5 to 15 mg)", "Tourette's (5 to 20 mg)"],
         is_typical_starting: true,
         is_standard_maintenance: false,
-        why_this_dose: "The source gives 2–10 mg/day specifically for augmenting SSRIs/SNRIs in depression.",
+        why_this_dose: "The source gives 2 to 10 mg/day specifically for augmenting SSRIs/SNRIs in depression.",
         what_changes_going_up: "Above ~15 mg the drug is treating psychosis/mania, not depression augmentation.",
         source_ref: {
-          value: "2–10 mg/day for augmenting SSRIs/SNRIs in depression (Stahl).",
+          value: "2 to 10 mg/day for augmenting SSRIs/SNRIs in depression (Stahl).",
           source_id: S,
           page_ref: "p184",
-          snippet: "2–10 mg/day for augmenting SSRIs/SNRIs in depression",
+          snippet: "2 to 10 mg/day for augmenting SSRIs/SNRIs in depression",
           agreement: "partial",
           contrib: [
-            { source_id: S, page_ref: "p184", snippet: "2–10 mg/day for augmenting SSRIs/SNRIs in depression" },
+            { source_id: S, page_ref: "p184", snippet: "2 to 10 mg/day for augmenting SSRIs/SNRIs in depression" },
             { source_id: S, page_ref: "p184", snippet: "Depression (adjunct) (Abilify)" },
           ],
         },
@@ -380,7 +380,7 @@ export const DRAFT_DRUGS: DrugDraft[] = [
         secondary_purposes: [],
         is_typical_starting: false,
         is_standard_maintenance: true,
-        why_this_dose: "15–30 mg/day for schizophrenia and mania.",
+        why_this_dose: "15 to 30 mg/day for schizophrenia and mania.",
         side_effects: [
           {
             label: "common",
@@ -397,10 +397,10 @@ export const DRAFT_DRUGS: DrugDraft[] = [
           },
         ],
         source_ref: {
-          value: "15–30 mg/day for schizophrenia and mania (Stahl).",
+          value: "15 to 30 mg/day for schizophrenia and mania (Stahl).",
           source_id: S,
           page_ref: "p184",
-          snippet: "15–30 mg/day for schizophrenia and mania",
+          snippet: "15 to 30 mg/day for schizophrenia and mania",
           agreement: "single",
         },
       },
@@ -441,9 +441,9 @@ export const DRAFT_DRUGS: DrugDraft[] = [
   },
 
   // ---------------------------------------------------------------------------
-  // QUETIAPINE — the source gives two clearly different bands: a lower
+  // QUETIAPINE: the source gives two clearly different bands: a lower
   // treatment of bipolar depression (300 mg) vs the higher schizophrenia /
-  // mania range (400–800 mg).
+  // mania range (400 to 800 mg).
   // ---------------------------------------------------------------------------
   {
     generic_name: "Quetiapine",
@@ -515,12 +515,12 @@ export const DRAFT_DRUGS: DrugDraft[] = [
         secondary_purposes: [],
         is_typical_starting: false,
         is_standard_maintenance: true,
-        why_this_dose: "The source gives 400–800 mg/day for schizophrenia and for bipolar mania.",
+        why_this_dose: "The source gives 400 to 800 mg/day for schizophrenia and for bipolar mania.",
         source_ref: {
-          value: "400–800 mg/day ... for schizophrenia ... for bipolar mania (Stahl).",
+          value: "400 to 800 mg/day ... for schizophrenia ... for bipolar mania (Stahl).",
           source_id: S,
           page_ref: "p1934",
-          snippet: "400–800 mg/day in 1 (quetiapine XR) or 2 (quetiapine) doses for schizophrenia 400–800 mg/day ... for bipolar mania",
+          snippet: "400 to 800 mg/day in 1 (quetiapine XR) or 2 (quetiapine) doses for schizophrenia 400 to 800 mg/day ... for bipolar mania",
           agreement: "full",
         },
         side_effects: [
@@ -537,16 +537,16 @@ export const DRAFT_DRUGS: DrugDraft[] = [
     student: {
       plain_language: {
         text:
-          "Quetiapine is a different medicine depending on the dose. At higher doses it treats psychosis and mania. At its once-daily lower use it is licensed for bipolar depression — and it is sedating either way.",
+          "Quetiapine is a different medicine depending on the dose. At higher doses it treats psychosis and mania. At its once-daily lower use it is licensed for bipolar depression, and it is sedating either way.",
         kb_parent_field: "common_uses",
-        source: { value: "as above", source_id: S, page_ref: "p1934", snippet: "300 mg once daily for bipolar depression; 400–800 mg/day for schizophrenia", agreement: "single" },
+        source: { value: "as above", source_id: S, page_ref: "p1934", snippet: "300 mg once daily for bipolar depression; 400 to 800 mg/day for schizophrenia", agreement: "single" },
       },
     },
   },
 
   // ---------------------------------------------------------------------------
-  // RISPERIDONE — the source separates oral adult dosing (2–8 mg) from the
-  // children/elderly range (0.5–2 mg) and from the long-acting injectables.
+  // RISPERIDONE: the source separates oral adult dosing (2 to 8 mg) from the
+  // children/elderly range (0.5 to 2 mg) and from the long-acting injectables.
   // G2 note: the sources do NOT describe a distinct 0.25 mg band; tablets from
   // 0.25 mg exist but the clinical bands are adult vs child/elderly, not a
   // functional low-dose band. We record what the source actually says.
@@ -577,7 +577,7 @@ export const DRAFT_DRUGS: DrugDraft[] = [
     ],
     common_uses: [
       {
-        value: "Schizophrenia (adults and ages 13–17), other psychotic disorders, acute mania, bipolar maintenance; also agitation, tic disorders in some settings.",
+        value: "Schizophrenia (adults and ages 13 to 17), other psychotic disorders, acute mania, bipolar maintenance; also agitation, tic disorders in some settings.",
         source_id: S,
         page_ref: "p1976",
         snippet: "Schizophrenia; Other psychotic disorders; Acute mania/mixed mania; Bipolar maintenance",
@@ -610,17 +610,17 @@ export const DRAFT_DRUGS: DrugDraft[] = [
         secondary_purposes: ["maintenance", "agitation"],
         is_typical_starting: false,
         is_standard_maintenance: true,
-        why_this_dose: "The source gives 2–8 mg/day for acute psychosis and bipolar disorder in adults.",
+        why_this_dose: "The source gives 2 to 8 mg/day for acute psychosis and bipolar disorder in adults.",
         what_changes_going_up: "Above 8 mg/day some sources see little added benefit but more side effects.",
         source_ref: {
-          value: "Oral: 2–8 mg/day for acute psychosis and bipolar disorder (Stahl).",
+          value: "Oral: 2 to 8 mg/day for acute psychosis and bipolar disorder (Stahl).",
           source_id: S,
           page_ref: "p1986",
-          snippet: "Oral: 2–8 mg/day for acute psychosis and bipolar disorder",
+          snippet: "Oral: 2 to 8 mg/day for acute psychosis and bipolar disorder",
           agreement: "full",
           contrib: [
-            { source_id: S, page_ref: "p1986", snippet: "Oral: 2–8 mg/day for acute psychosis and bipolar disorder" },
-            { source_id: M, page_ref: "p72", snippet: "the usual doses of 2–6mg" },
+            { source_id: S, page_ref: "p1986", snippet: "Oral: 2 to 8 mg/day for acute psychosis and bipolar disorder" },
+            { source_id: M, page_ref: "p72", snippet: "the usual doses of 2 to 6mg" },
           ],
         },
         side_effects: [
@@ -642,12 +642,12 @@ export const DRAFT_DRUGS: DrugDraft[] = [
         secondary_purposes: [],
         is_typical_starting: false,
         is_standard_maintenance: false,
-        why_this_dose: "The source gives 0.5–2.0 mg/day for children and the elderly.",
+        why_this_dose: "The source gives 0.5 to 2.0 mg/day for children and the elderly.",
         source_ref: {
-          value: "Oral: 0.5–2.0 mg/day for children and elderly (Stahl).",
+          value: "Oral: 0.5 to 2.0 mg/day for children and elderly (Stahl).",
           source_id: S,
           page_ref: "p1986",
-          snippet: "Oral: 0.5–2.0 mg/day for children and elderly",
+          snippet: "Oral: 0.5 to 2.0 mg/day for children and elderly",
           agreement: "single",
         },
         side_effects: [
@@ -680,7 +680,7 @@ export const DRAFT_DRUGS: DrugDraft[] = [
   },
 
   // ---------------------------------------------------------------------------
-  // FLUOXETINE — source separates 20–80 mg (depression/anxiety) from 60–80 mg
+  // FLUOXETINE: source separates 20 to 80 mg (depression/anxiety) from 60 to 80 mg
   // (bulimia). Note bulimia overlaps; the functional job differs.
   // ---------------------------------------------------------------------------
   {
@@ -721,12 +721,12 @@ export const DRAFT_DRUGS: DrugDraft[] = [
         secondary_purposes: ["OCD", "panic", "PMDD"],
         is_typical_starting: true,
         is_standard_maintenance: true,
-        why_this_dose: "The source gives 20–80 mg for depression and anxiety disorders.",
+        why_this_dose: "The source gives 20 to 80 mg for depression and anxiety disorders.",
         source_ref: {
-          value: "20–80 mg for depression and anxiety disorders (Stahl).",
+          value: "20 to 80 mg for depression and anxiety disorders (Stahl).",
           source_id: S,
           page_ref: "p892",
-          snippet: "20–80 mg for depression and anxiety disorders",
+          snippet: "20 to 80 mg for depression and anxiety disorders",
           agreement: "single",
         },
         side_effects: [
@@ -746,19 +746,19 @@ export const DRAFT_DRUGS: DrugDraft[] = [
         secondary_purposes: [],
         is_typical_starting: false,
         is_standard_maintenance: false,
-        why_this_dose: "The source gives 60–80 mg specifically for bulimia.",
+        why_this_dose: "The source gives 60 to 80 mg specifically for bulimia.",
         source_ref: {
-          value: "60–80 mg for bulimia (Stahl).",
+          value: "60 to 80 mg for bulimia (Stahl).",
           source_id: S,
           page_ref: "p892",
-          snippet: "60–80 mg for bulimia",
+          snippet: "60 to 80 mg for bulimia",
           agreement: "single",
         },
         side_effects: [
           { label: "common", items: ["Same SSRI class side effects"], source: { value: "as above", source_id: S, page_ref: "p890", snippet: "Sexual dysfunction ... nausea", agreement: "single" } },
         ],
         observation_prompts: [
-          { prompt: "Any new changes in appetite or weight talk?", rationale: "Higher fluoxetine doses are watched in eating-disorder contexts.", urgency: "routine", source: { value: "as above", source_id: S, page_ref: "p892", snippet: "60–80 mg for bulimia", agreement: "single" } },
+          { prompt: "Any new changes in appetite or weight talk?", rationale: "Higher fluoxetine doses are watched in eating-disorder contexts.", urgency: "routine", source: { value: "as above", source_id: S, page_ref: "p892", snippet: "60 to 80 mg for bulimia", agreement: "single" } },
         ],
       },
     ],
@@ -776,13 +776,13 @@ export const DRAFT_DRUGS: DrugDraft[] = [
   },
 
   // ---------------------------------------------------------------------------
-  // VENLAFAXINE — source gives depression 75–225 and GAD 150–225. Both are
+  // VENLAFAXINE: source gives depression 75 to 225 and GAD 150 to 225. Both are
   // SNRIs; the bands overlap but sit at different floors.
   // ---------------------------------------------------------------------------
   {
     generic_name: "Venlafaxine",
     drug_class: "SNRI",
-    subclass: "Serotonin–norepinephrine reuptake inhibitor",
+    subclass: "Serotonin-norepinephrine reuptake inhibitor",
     brand_names: ["Effexor", "Veniz"],
     aliases: [],
     mechanism: [
@@ -817,12 +817,12 @@ export const DRAFT_DRUGS: DrugDraft[] = [
         secondary_purposes: ["panic", "social anxiety"],
         is_typical_starting: true,
         is_standard_maintenance: true,
-        why_this_dose: "The source gives 75–225 mg/day (once daily ER or divided IR) for depression.",
+        why_this_dose: "The source gives 75 to 225 mg/day (once daily ER or divided IR) for depression.",
         source_ref: {
-          value: "Depression: 75–225 mg/day (Stahl).",
+          value: "Depression: 75 to 225 mg/day (Stahl).",
           source_id: S,
           page_ref: "p2406",
-          snippet: "Depression: 75–225 mg/day, once daily (extended-release) or divided into 2–3 doses (immediate-release)",
+          snippet: "Depression: 75 to 225 mg/day, once daily (extended-release) or divided into 2 to 3 doses (immediate-release)",
           agreement: "full",
         },
         side_effects: [
@@ -842,12 +842,12 @@ export const DRAFT_DRUGS: DrugDraft[] = [
         secondary_purposes: [],
         is_typical_starting: false,
         is_standard_maintenance: false,
-        why_this_dose: "The source gives 150–225 mg/day for GAD, a higher floor than the depression range.",
+        why_this_dose: "The source gives 150 to 225 mg/day for GAD, a higher floor than the depression range.",
         source_ref: {
-          value: "GAD: 150–225 mg/day (Stahl).",
+          value: "GAD: 150 to 225 mg/day (Stahl).",
           source_id: S,
           page_ref: "p2406",
-          snippet: "GAD: 150–225 mg/day",
+          snippet: "GAD: 150 to 225 mg/day",
           agreement: "single",
         },
         side_effects: [
@@ -860,7 +860,7 @@ export const DRAFT_DRUGS: DrugDraft[] = [
     ],
     // No published dose equivalence is given in our sources for venlafaxine
     // vs another drug. Per C2, the absence means the tool says so rather than
-    // estimating — handled by the empty equivalences array.
+    // estimating: handled by the empty equivalences array.
     equivalences: [],
     links: [],
     clinical_presentations: [],
@@ -875,7 +875,7 @@ export const DRAFT_DRUGS: DrugDraft[] = [
   },
 
   // ---------------------------------------------------------------------------
-  // LITHIUM — the source's bands are defined by serum level (target range) and
+  // LITHIUM: the source's bands are defined by serum level (target range) and
   // job: mania vs depression vs maintenance. These are genuinely distinct.
   // ---------------------------------------------------------------------------
   {
@@ -916,12 +916,12 @@ export const DRAFT_DRUGS: DrugDraft[] = [
         secondary_purposes: [],
         is_typical_starting: false,
         is_standard_maintenance: false,
-        why_this_dose: "The source recommends a serum level of 1.0–1.5 mEq/L for mania.",
+        why_this_dose: "The source recommends a serum level of 1.0 to 1.5 mEq/L for mania.",
         source_ref: {
-          value: "Mania: recommended 1.0–1.5 mEq/L (Stahl).",
+          value: "Mania: recommended 1.0 to 1.5 mEq/L (Stahl).",
           source_id: S,
           page_ref: "p1216",
-          snippet: "Mania: recommended 1.0–1.5 mEq/L",
+          snippet: "Mania: recommended 1.0 to 1.5 mEq/L",
           agreement: "single",
         },
         side_effects: [
@@ -942,12 +942,12 @@ export const DRAFT_DRUGS: DrugDraft[] = [
         secondary_purposes: [],
         is_typical_starting: false,
         is_standard_maintenance: true,
-        why_this_dose: "The source gives 0.6–1.0 for depression and 0.7–1.0 for maintenance.",
+        why_this_dose: "The source gives 0.6 to 1.0 for depression and 0.7 to 1.0 for maintenance.",
         source_ref: {
-          value: "Depression: 0.6–1.0 mEq/L; Maintenance 0.7–1.0 mEq/L (Stahl).",
+          value: "Depression: 0.6 to 1.0 mEq/L; Maintenance 0.7 to 1.0 mEq/L (Stahl).",
           source_id: S,
           page_ref: "p1216",
-          snippet: "Depression: recommended 0.6–1.0 mEq/L; Maintenance: recommended 0.7–1.0 mEq/L",
+          snippet: "Depression: recommended 0.6 to 1.0 mEq/L; Maintenance: recommended 0.7 to 1.0 mEq/L",
           agreement: "full",
         },
         side_effects: [
@@ -972,7 +972,7 @@ export const DRAFT_DRUGS: DrugDraft[] = [
   },
 
   // ---------------------------------------------------------------------------
-  // PAROXETINE — the source gives three distinct bands: depression, a very low
+  // PAROXETINE: the source gives three distinct bands: depression, a very low
   // vasomotor dose, and the anxiety/OCD range.
   // ---------------------------------------------------------------------------
   {
@@ -1013,7 +1013,7 @@ export const DRAFT_DRUGS: DrugDraft[] = [
         secondary_purposes: [],
         is_typical_starting: true,
         is_standard_maintenance: true,
-        why_this_dose: "The source gives 20–50 mg (25–62.5 mg CR) for depression.",
+        why_this_dose: "The source gives 20 to 50 mg (25 to 62.5 mg CR) for depression.",
         side_effects: [
           { label: "common", items: ["Sexual dysfunction", "sleep disturbances", "weight change"], source: { value: "as above", source_id: S, page_ref: "p1713", snippet: "Sexual dysfunction ... sleep", agreement: "single" } },
         ],
@@ -1021,10 +1021,10 @@ export const DRAFT_DRUGS: DrugDraft[] = [
           { prompt: "Any sexual changes, or sleep shifts?", rationale: "SSRI sexual/weight effects are common and often unvolunteered.", urgency: "routine", source: { value: "as above", source_id: S, page_ref: "p1713", snippet: "Sexual dysfunction", agreement: "single" } },
         ],
         source_ref: {
-          value: "Depression: 20–50 mg (Stahl).",
+          value: "Depression: 20 to 50 mg (Stahl).",
           source_id: S,
           page_ref: "p1715",
-          snippet: "Depression: 20–50 mg (25–62.5 mg CR)",
+          snippet: "Depression: 20 to 50 mg (25 to 62.5 mg CR)",
           agreement: "single",
         },
       },
@@ -1038,7 +1038,7 @@ export const DRAFT_DRUGS: DrugDraft[] = [
         secondary_purposes: ["panic", "generalized anxiety", "social anxiety"],
         is_typical_starting: false,
         is_standard_maintenance: false,
-        why_this_dose: "The source gives 10–60 mg/day (12.5–75 mg CR) for anxiety disorders and OCD.",
+        why_this_dose: "The source gives 10 to 60 mg/day (12.5 to 75 mg CR) for anxiety disorders and OCD.",
         side_effects: [
           { label: "common", items: ["Sexual dysfunction", "activation early"], source: { value: "as above", source_id: S, page_ref: "p1713", snippet: "Sexual dysfunction", agreement: "single" } },
         ],
@@ -1046,10 +1046,10 @@ export const DRAFT_DRUGS: DrugDraft[] = [
           { prompt: "Any increased anxiety in the first days?", rationale: "SSRIs can transiently worsen anxiety before benefit.", urgency: "routine", source: { value: "as above", source_id: S, page_ref: "p1713", snippet: "activation", agreement: "single" } },
         ],
         source_ref: {
-          value: "Anxiety disorders and OCD: 10–60 mg/day (Stahl).",
+          value: "Anxiety disorders and OCD: 10 to 60 mg/day (Stahl).",
           source_id: S,
           page_ref: "p1715",
-          snippet: "Anxiety disorders and OCD: 10–60 mg/day (12.5–75 mg CR)",
+          snippet: "Anxiety disorders and OCD: 10 to 60 mg/day (12.5 to 75 mg CR)",
           agreement: "single",
         },
       },

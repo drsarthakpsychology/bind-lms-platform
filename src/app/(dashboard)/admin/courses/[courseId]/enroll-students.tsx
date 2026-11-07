@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button";
 type Student = { id: string; email: string | null };
 
 /**
- * Course enrollment — bulk by default (Kavya: "select multiple people and
+ * Course enrollment: bulk by default (Kavya: "select multiple people and
  * enroll them in one course"). Search narrows the not-enrolled list, tick the
  * people you want (or Select all), then "Enroll selected". Enrolled students
  * stay listed with a per-row Remove.

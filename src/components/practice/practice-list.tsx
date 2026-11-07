@@ -11,7 +11,7 @@ const STATE_STYLE: Record<string, { label: string; className: string }> = {
 };
 
 /**
- * Every practice tool in one plain grid — no time groups. The student reads
+ * Every practice tool in one plain grid, no time groups. The student reads
  * the names (Ethics, Judgment, MSE…) and picks. Each card says what it is and
  * how long it takes; locked ones show "yet to be live".
  */

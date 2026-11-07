@@ -1,12 +1,12 @@
 /**
- * More cases — volume batch 7. Pushes past the 60-case target.
+ * More cases: volume batch 7. Pushes past the 60-case target.
  */
 
 import { buildCase, type CaseAuthoring } from "../case-builder";
 
 const adolescent3: CaseAuthoring = {
   id: "ado-vikram2",
-  title: "Vikram, 17 — the 'laziness' that is depression",
+  title: "Vikram, 17: the 'laziness' that is depression",
   difficulty: "cooperative",
   traps: ["under_diagnosis", "informant_conflict"],
   moduleId: "mod-adolescent",
@@ -41,7 +41,7 @@ const adolescent3: CaseAuthoring = {
 
 const ethics2: CaseAuthoring = {
   id: "eth-family-pressure",
-  title: "Priya, 29 — the family that pays and decides",
+  title: "Priya, 29: the family that pays and decides",
   difficulty: "guarded",
   traps: ["informant_conflict", "secondary_gain"],
   moduleId: "mod-ethics",
@@ -76,7 +76,7 @@ const ethics2: CaseAuthoring = {
 
 const somatic3: CaseAuthoring = {
   id: "soma-faith-healer",
-  title: "Mangal, 42 — the baba he's still seeing",
+  title: "Mangal, 42: the baba he's still seeing",
   difficulty: "guarded",
   traps: ["cultural_idiom", "adherence_fiction", "diagnostic_overshadowing"],
   moduleId: "mod-somatic",
@@ -87,7 +87,7 @@ const somatic3: CaseAuthoring = {
   city: "Varanasi",
   family: "married; three children",
   register: "Hindi, earnest",
-  presentation: "Brought by his wife. He's simultaneously seeing a baba and a doctor for 'the sickness'. The baba says a ghost; the doctor says depression. He believes both — and tells neither about the other.",
+  presentation: "Brought by his wife. He's simultaneously seeing a baba and a doctor for 'the sickness'. The baba says a ghost; the doctor says depression. He believes both, and tells neither about the other.",
   chiefComplaint: "The baba says a ghost sits on me. The doctor says my mind is tired. I take both treatments and do both rituals. Why am I not better?",
   timeline: "Chronic depression + concurrent faith-healer treatment. Takes the SSRI some days, skips it on holy days.",
   treatmentHistory: "SSRI (sporadic adherence) + baba rituals + holy water.",
@@ -111,7 +111,7 @@ const somatic3: CaseAuthoring = {
 
 const substance3: CaseAuthoring = {
   id: "sub-alcohol-wife",
-  title: "Usha, 51 — the wife who drinks to sleep",
+  title: "Usha, 51: the wife who drinks to sleep",
   difficulty: "cooperative",
   traps: ["substance_induced", "under_diagnosis", "somatic_mask"],
   moduleId: "mod-substance",
@@ -132,7 +132,7 @@ const substance3: CaseAuthoring = {
   intermediateBeliefs: ["If my son knows, I'll lose him", "The drinking is the only thing that lets me rest"],
   coping: ["drink after everyone sleeps", "hide the bottle", "lie about the smell"],
   openingIdiom: "neend nahi aati",
-  redFlags: [{ content: "has thought about 'stopping everything' during withdrawal — no plan", gate: "asked_about_self_harm_clearly" }],
+  redFlags: [{ content: "has thought about 'stopping everything' during withdrawal, no plan", gate: "asked_about_self_harm_clearly" }],
   variation: {
     mood_today: ["flat", "withdrawn", "anxious", "ashamed"],
     recent_event: ["her son smelled alcohol", "the bottle ran out", "a night without sleep", "a neighbour gossiped"],
@@ -146,7 +146,7 @@ const substance3: CaseAuthoring = {
 
 const depression3: CaseAuthoring = {
   id: "dep-boss",
-  title: "Alok, 48 — the burnout that looks like laziness",
+  title: "Alok, 48: the burnout that looks like laziness",
   difficulty: "cooperative",
   traps: ["diagnostic_overshadowing", "under_diagnosis"],
   moduleId: "mod-depression",
@@ -167,7 +167,7 @@ const depression3: CaseAuthoring = {
   intermediateBeliefs: ["If I admit I can't cope, the company will replace me", "My kids only call for money anyway"],
   coping: ["delegate nothing", "work in 3am bursts", "fake competence in meetings"],
   openingIdiom: "I'm stressed",
-  redFlags: [{ content: "has thought about 'disappearing' at a work trip — no plan", gate: "asked_about_self_harm_clearly" }],
+  redFlags: [{ content: "has thought about 'disappearing' at a work trip, no plan", gate: "asked_about_self_harm_clearly" }],
   variation: {
     mood_today: ["flat", "numb", "anxious", "resigned"],
     recent_event: ["a skipped deadline", "a junior got promoted", "his wife asked him to slow down", "an all-nighter that produced nothing"],
@@ -181,7 +181,7 @@ const depression3: CaseAuthoring = {
 
 const anxiety3: CaseAuthoring = {
   id: "anx-agoraphobia",
-  title: "Lalita, 55 — the market she can't enter",
+  title: "Lalita, 55: the market she can't enter",
   difficulty: "resistant",
   traps: ["under_diagnosis", "somatic_mask"],
   moduleId: "mod-anxiety",
@@ -218,11 +218,11 @@ export const VOLUME_7_CASES = [adolescent3, ethics2, somatic3, substance3, depre
 
 const finalBatch: CaseAuthoring[] = [
   {
-    id: "dep-mahmood", title: "Mahmood, 61 — the grief that is complicated", difficulty: "cooperative",
+    id: "dep-mahmood", title: "Mahmood, 61: the grief that is complicated", difficulty: "cooperative",
     traps: ["over_diagnosis", "late_risk_reveal"], moduleId: "mod-depression",
     name: "Mahmood", age: 61, gender: "male", occupation: "retired teacher", city: "Aligarh",
     family: "widowed 10 months ago; children abroad", register: "Educated Urdu-English",
-    presentation: "Ten months since his wife died. Grief is still acute and functional decline is new — he's stopped praying, stopped eating, given up his books.",
+    presentation: "Ten months since his wife died. Grief is still acute and functional decline is new. He's stopped praying, stopped eating, given up his books.",
     chiefComplaint: "I've prayed every day for 40 years. Now I can't. Is that sin or sickness?",
     timeline: "Grief for 10 months, now with anhedonia, isolation, and the loss of daily routines.",
     treatmentHistory: "None.", helpSeekingDelay: "10 months", priorContacts: ["imam"],
@@ -230,7 +230,7 @@ const finalBatch: CaseAuthoring[] = [
     intermediateBeliefs: ["If I enjoy anything, I'm betraying her", "My children don't need me anymore"],
     coping: ["stop praying", "give away her things", "sit in the dark"],
     openingIdiom: "feeling low",
-    redFlags: [{ content: "has told his son 'I'm ready to go when Allah takes me' — passive", gate: "asked_about_self_harm_clearly" }],
+    redFlags: [{ content: "has told his son 'I'm ready to go when Allah takes me': passive", gate: "asked_about_self_harm_clearly" }],
     variation: {
       mood_today: ["flat", "resigned", "numb", "brittle-cheerful"],
       recent_event: ["her clothes were given away", "a grandchild asked about her", "he missed namaz", "his son visited"],
@@ -239,7 +239,7 @@ const finalBatch: CaseAuthoring[] = [
     },
   },
   {
-    id: "anx-social", title: "Karan, 21 — the engineering student who can't speak in class", difficulty: "cooperative",
+    id: "anx-social", title: "Karan, 21: the engineering student who can't speak in class", difficulty: "cooperative",
     traps: ["under_diagnosis", "diagnostic_overshadowing"], moduleId: "mod-anxiety",
     name: "Karan", age: 21, gender: "male", occupation: "engineering student", city: "Chandigarh",
     family: "hostel; parents in Ludhiana", register: "Quiet English",
@@ -260,19 +260,19 @@ const finalBatch: CaseAuthoring[] = [
     },
   },
   {
-    id: "psy-delirium", title: "Ramesh, 70 — the 'sudden madness' that is delirium", difficulty: "crisis",
+    id: "psy-delirium", title: "Ramesh, 70: the 'sudden madness' that is delirium", difficulty: "crisis",
     traps: ["medical_mimic", "diagnostic_overshadowing"], moduleId: "mod-psychosis",
     name: "Ramesh", age: 70, gender: "male", occupation: "retired clerk", city: "Amritsar",
     family: "lives with son and daughter-in-law", register: "Punjabi-English, fluctuating",
-    presentation: "Acute confusion over 2 days: talking to people not there, picking at the air, worse at night. The family says he's 'gone mad'. It's delirium — likely a urinary infection in an older adult.",
-    chiefComplaint: "(Confused, fluctuating) The children — they're hiding in the cupboard. I saw them. Why does it get dark at noon?",
-    timeline: "Acute onset (2 days), fluctuating consciousness, worse at night, visual hallucinations — the delirium signature.",
+    presentation: "Acute confusion over 2 days: talking to people not there, picking at the air, worse at night. The family says he's 'gone mad'. It's delirium: likely a urinary infection in an older adult.",
+    chiefComplaint: "(Confused, fluctuating) The children. They're hiding in the cupboard. I saw them. Why does it get dark at noon?",
+    timeline: "Acute onset (2 days), fluctuating consciousness, worse at night, visual hallucinations: the delirium signature.",
     treatmentHistory: "BP tablets. No new meds.", helpSeekingDelay: "2 days", priorContacts: [],
     coreBelief: "The world has suddenly rearranged itself against me.",
     intermediateBeliefs: ["They're hiding things from me", "I must be possessed to see these things"],
     coping: ["wander at night", "check the cupboard", "fight sleep"],
     openingIdiom: "something is happening to me",
-    redFlags: [{ content: "ACUTE DELIRIUM — urgent medical workup (UTI, electrolytes, hypoxia)", gate: "asked_about_self_harm_clearly" }],
+    redFlags: [{ content: "ACUTE DELIRIUM: urgent medical workup (UTI, electrolytes, hypoxia)", gate: "asked_about_self_harm_clearly" }],
     variation: {
       mood_today: ["confused", "frightened", "suspicious", "agitated"],
       recent_event: ["a fever", "he fell in the bathroom", "the night got worse", "his son brought him in"],
@@ -281,7 +281,7 @@ const finalBatch: CaseAuthoring[] = [
     },
   },
   {
-    id: "ado-custody", title: "Fariha, 12 — the girl caught between two houses", difficulty: "resistant",
+    id: "ado-custody", title: "Fariha, 12: the girl caught between two houses", difficulty: "resistant",
     traps: ["informant_conflict", "secondary_gain"], moduleId: "mod-adolescent",
     name: "Fariha", age: 12, gender: "female", occupation: "school student, class 7", city: "Hyderabad",
     family: "parents separated; she shuttles weekly", register: "Soft English-Urdu",
@@ -293,7 +293,7 @@ const finalBatch: CaseAuthoring[] = [
     intermediateBeliefs: ["If I say I'm happy with one, the other cries", "This is all my fault"],
     coping: ["tell each parent what they want to hear", "hide her feelings", "focus on school to escape"],
     openingIdiom: "I'm fine, just tired",
-    redFlags: [{ content: "has wished she could 'just stop existing' between the houses — no plan", gate: "asked_about_self_harm_clearly" }],
+    redFlags: [{ content: "has wished she could 'just stop existing' between the houses, no plan", gate: "asked_about_self_harm_clearly" }],
     variation: {
       mood_today: ["flat", "anxious", "numb", "brittle-cheerful"],
       recent_event: ["a switch day", "her mother cried", "her father compared her marks", "a school project"],

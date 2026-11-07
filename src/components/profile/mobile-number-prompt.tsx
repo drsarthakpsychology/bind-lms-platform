@@ -13,7 +13,7 @@ import { Label } from "@/components/ui/label";
  * First-login WhatsApp-number capture (Kavya). Shown on /dashboard when the
  * student has no mobile_number yet. Two fields (Mobile + Confirm), client +
  * server validation, "Save" persists it, "Later" dismisses (re-asks after a
- * 7-day grace period). Never blocks login or the dashboard — it is strictly
+ * 7-day grace period). Never blocks login or the dashboard. It is strictly
  * additive; if the number is already set this renders nothing.
  */
 const SKIP_GRACE_MS = 7 * 24 * 60 * 60 * 1000;

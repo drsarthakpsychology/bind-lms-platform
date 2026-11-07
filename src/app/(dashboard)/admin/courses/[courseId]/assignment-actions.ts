@@ -59,7 +59,7 @@ export async function createAssignment(
 
 /**
  * Save an assignment's editable fields (used by the in-place editor + autosave).
- * Admin only. Students' submissions are untouched — only metadata changes.
+ * Admin only. Students' submissions are untouched, only metadata changes.
  */
 export async function saveAssignment(
   courseId: string,
@@ -107,7 +107,7 @@ export async function saveAssignment(
 }
 
 /**
- * Autosave helper — saves the assignment without any explicit "save" click.
+ * Autosave helper: saves the assignment without any explicit "save" click.
  * Admin only. Used by the editor's debounced autosave.
  */
 export async function autosaveAssignment(

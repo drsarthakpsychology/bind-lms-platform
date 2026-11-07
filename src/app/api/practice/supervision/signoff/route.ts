@@ -11,7 +11,7 @@ const schema = z.object({
 });
 
 /**
- * POST /api/practice/supervision/signoff — student requests sign-off on a
+ * POST /api/practice/supervision/signoff: student requests sign-off on a
  * supervision entry. Only the owner may request (RLS enforces). Admin signs
  * or rejects via a separate admin route.
  */

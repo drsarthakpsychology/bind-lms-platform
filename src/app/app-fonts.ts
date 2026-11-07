@@ -4,8 +4,8 @@ import localFont from "next/font/local";
  * Platform fonts, self-hosted (same files as the homepage, so the whole site
  * speaks one type language).
  *
- * - Archivo (variable: weight 100–900, width 62–125%) — every heading and body.
- * - Pixel (Silkscreen letters + Press Start 2P digits) — small uppercase
+ * - Archivo (variable: weight 100 to 900, width 62 to 125%), every heading and body.
+ * - Pixel (Silkscreen letters + Press Start 2P digits): small uppercase
  *   labels only (`text-eyebrow`), never paragraphs.
  */
 export const appSans = localFont({

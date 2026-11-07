@@ -11,9 +11,10 @@ import { OPEN_NAV_EVENT } from "@/components/navigation/sidebar-state";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
 import { logout } from "@/lib/auth/actions";
+import { MiddleTruncate } from "@/components/ui/middle-truncate";
 
 /**
- * Phone "More" drawer — opened by the More tab in the bottom bar (the
+ * Phone "More" drawer: opened by the More tab in the bottom bar (the
  * Instagram/YouTube pattern). Holds every destination, your account, the
  * light/dark switch and log out. Focus is trapped and Escape closes it
  * (Radix Sheet).
@@ -50,7 +51,7 @@ export function MobileNav({
           <SheetTitle className="flex items-center gap-3 text-brand-foreground">
             <Avatar email={email} />
             <span className="min-w-0">
-              <span className="block truncate text-sm font-bold">{email ?? "Signed in"}</span>
+              <MiddleTruncate text={email ?? "Signed in"} className="text-sm font-bold" />
               <span className="block text-caption font-medium capitalize opacity-85">{role}</span>
             </span>
           </SheetTitle>

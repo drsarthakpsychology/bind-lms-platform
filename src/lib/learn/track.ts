@@ -29,7 +29,7 @@ function flush() {
       void fetch("/api/learn/events", { method: "POST", body, keepalive: true, headers: { "content-type": "application/json" } });
     }
   } catch {
-    /* offline — dropped */
+    /* offline: dropped */
   }
   if (queue.length) timer = setTimeout(flush, 1500);
 }

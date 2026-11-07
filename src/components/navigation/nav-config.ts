@@ -3,7 +3,7 @@ import type { NavItem } from "@/components/navigation/nav-items";
 
 /**
  * Icons are referenced by string name (keys into NAV_ICONS in nav-items.tsx),
- * not by component reference — the config is imported into Server Components
+ * not by component reference: the config is imported into Server Components
  * and passed to a Client Component, and function values can't be serialized
  * across that boundary.
  */
@@ -13,6 +13,9 @@ export const STUDENT_ITEMS: NavItem[] = [
   { href: "/study", label: "Notes", icon: "bookOpen" },
   { href: "/games", label: "Games", icon: "gamepad" },
   { href: "/practice", label: "Practice", icon: "stethoscope" },
+  // Psychology Entrance & Competitive Exam Preparation (CUET-PG, UGC-NET, clinical entrances): one shared course.
+  // Short label here; the page title carries the full name.
+  { href: "/prep", label: "Exam Prep", icon: "target" },
   { href: "/doubts", label: "Doubts", icon: "doubt", section: "More" },
   { href: "/leaderboard", label: "Leaderboard", icon: "trophy", section: "More" },
   { href: "/achievements", label: "Achievements", icon: "award", section: "More" },
@@ -132,6 +135,7 @@ export const ADMIN_SECTIONS: AdminSection[] = [
       { href: "/admin/courses", label: "Courses & lectures" },
       { href: "/admin/flags", label: "What's live" },
       { href: "/admin/psychopharm-review", label: "Medicines" },
+      { href: "/admin/ai-cases", label: "AI cases" },
       { href: "/admin/psychopharm", label: "Medicine editor", hidden: true },
 
       // Not an admin job day to day: reachable from What's live → Rounds.
@@ -209,7 +213,7 @@ export function adminSectionFor(pathname: string): AdminSection | null {
 /** Sidebar items for admin: one per section; active across all its tabs. */
 export const ADMIN_SIDEBAR: NavItem[] = ADMIN_ITEMS;
 
-/** Notes and Games only appear in the nav once Learn is unlocked (no links to locked screens). */
+/** Notes, Games and Prep only appear in the nav once Learn is unlocked (no links to locked screens). */
 export function withStudy(items: NavItem[], showStudy: boolean): NavItem[] {
-  return showStudy ? items : items.filter((i) => i.href !== "/study" && i.href !== "/games");
+  return showStudy ? items : items.filter((i) => i.href !== "/study" && i.href !== "/games" && i.href !== "/prep");
 }

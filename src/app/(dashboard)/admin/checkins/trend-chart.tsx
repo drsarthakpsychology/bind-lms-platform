@@ -1,7 +1,7 @@
 import type { AggregateRow } from "./page";
 
 /**
- * Neo-Brutalist cohort trend — a hand-rolled SVG (no chart lib) so the page
+ * Neo-Brutalist cohort trend: a hand-rolled SVG (no chart lib) so the page
  * shows the ACTUAL trend over weeks: workload / energy / preparedness lines on
  * a 1-5 axis, oldest → newest. Matches the design system (2px ink strokes,
  * token colors) and needs zero JS.

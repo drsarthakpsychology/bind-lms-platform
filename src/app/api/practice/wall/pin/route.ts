@@ -11,7 +11,7 @@ const schema = z.object({
 });
 
 /**
- * POST /api/practice/wall/pin — pin/unpin a post (the Case of the Week).
+ * POST /api/practice/wall/pin: pin/unpin a post (the Case of the Week).
  * Faculty/admin only (requireSuperAdmin + RLS). Pinned posts render first with a
  * 📌 badge on the wall.
  */

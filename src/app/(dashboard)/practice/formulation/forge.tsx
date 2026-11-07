@@ -6,7 +6,7 @@ import { diffNarratives, FIVE_P, scoreSort, SEED_FORMULATION, type FiveP, type F
 import { buildFormulationAttemptPayload } from "@/lib/practice/formulation-attempt";
 import { FORMULATION_COMPETENCY_KEYS, recordCompetencyEvent } from "@/lib/practice/competency-client";
 
-/** In-flight snapshot — a refresh mid-sort or mid-narrative restores the work
+/** In-flight snapshot: a refresh mid-sort or mid-narrative restores the work
  *  instead of dropping it (T46/T47). */
 const FORGE_BASE = "formulation:in-flight";
 
@@ -65,7 +65,7 @@ export function FormulationForge({ seed = SEED_FORMULATION }: { seed?: ForgeSeed
     }
   }, [attempt, stage, narrative, FORGE_KEY]);
 
-  /** Persist the completed scaffolded pass (a check, not a test — silent on failure). */
+  /** Persist the completed scaffolded pass (a check, not a test, silent on failure). */
   async function persistSeedAttempt() {
     if (!diff) return;
     const completedAt = new Date();
@@ -86,7 +86,7 @@ export function FormulationForge({ seed = SEED_FORMULATION }: { seed?: ForgeSeed
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),
     }).catch(() => {}); // silent; a check, not a test
-    // The pass is submitted — clear the snapshot so a later visit starts fresh.
+    // The pass is submitted: clear the snapshot so a later visit starts fresh.
     try {
       window.localStorage.removeItem(FORGE_KEY);
     } catch {
@@ -181,7 +181,7 @@ export function FormulationForge({ seed = SEED_FORMULATION }: { seed?: ForgeSeed
               })}
             </div>
             <p className="mt-2 text-caption text-muted-foreground">
-              Score so far: <span className="font-semibold text-numeric">{Math.round(score * 100)}%</span> — a comparison with the model, not a grade.
+              Score so far: <span className="font-semibold text-numeric">{Math.round(score * 100)}%</span>: a comparison with the model, not a grade.
             </p>
           </div>
 
@@ -229,7 +229,7 @@ export function FormulationForge({ seed = SEED_FORMULATION }: { seed?: ForgeSeed
             <span className="italic">{seed.modelNarrative}</span>
           </div>
           <p className="text-small text-muted-foreground">
-            Words the model used that you missed: <span className="text-status-pending-fg">{diff.missing.join(", ") || "(none — excellent)"}</span>
+            Words the model used that you missed: <span className="text-status-pending-fg">{diff.missing.join(", ") || "(none, excellent)"}</span>
           </p>
           <p className="text-small text-muted-foreground">
             Model words you captured: <span className="text-status-success-fg">{diff.present.join(", ") || "(none yet)"}</span>
@@ -256,7 +256,7 @@ export function FormulationForge({ seed = SEED_FORMULATION }: { seed?: ForgeSeed
 }
 
 /**
- * Stage 4 (v5 §4) — the loop that matters: run a Consulting Room session,
+ * Stage 4 (v5 §4): the loop that matters: run a Consulting Room session,
  * then formulate the patient from YOUR OWN transcript. Loads the student's
  * completed sessions via /api/practice/mse/transcripts; the 5P narrative is
  * diffed against the case's expert MSE code (the ground truth of what the
@@ -302,7 +302,7 @@ function OwnTranscriptForge() {
       <div className="rounded-md border-2 border-dashed border-border bg-card p-6 text-center">
         <p className="text-base font-medium">No sessions to formulate from yet</p>
         <p className="mt-1 text-small text-muted-foreground">
-          Run a Consulting Room session and finish its debrief — then come back here
+          Run a Consulting Room session and finish its debrief, then come back here
           and write the formulation from your own transcript. That loop is the point.
         </p>
       </div>
@@ -351,9 +351,9 @@ function OwnTranscriptForge() {
 
   return (
     <div className="space-y-3 rounded-md border-2 border-border bg-card p-5 hard-shadow-sm">
-      <h2 className="text-base font-semibold">Stage 4 — formulate your own session</h2>
+      <h2 className="text-base font-semibold">Stage 4: formulate your own session</h2>
       <p className="text-small text-muted-foreground">
-        Session: <span className="font-medium text-foreground">{data.full?.title ?? "—"}</span> ({data.count} completed
+        Session: <span className="font-medium text-foreground">{data.full?.title ?? "Untitled"}</span> ({data.count} completed
         session{data.count === 1 ? "" : "s"}; the most recent is shown).
       </p>
       <div className="max-h-40 overflow-y-auto rounded-md border border-border bg-background p-3 text-small">
@@ -371,7 +371,7 @@ function OwnTranscriptForge() {
         value={narrative}
         onChange={(e) => setNarrative(e.target.value)}
         rows={6}
-        placeholder="From your own transcript: what was this patient's 5P picture — predisposing, precipitating, perpetuating, protective, presenting?"
+        placeholder="From your own transcript: what was this patient's 5P picture, predisposing, precipitating, perpetuating, protective, presenting?"
         className="w-full resize-none rounded-md border-2 border-border bg-background px-3 py-2 text-small focus:outline-none focus:ring-2 focus:ring-ring"
       />
       <button
@@ -391,7 +391,7 @@ function OwnTranscriptForge() {
             </p>
           ) : null}
           <p className="mt-2 text-muted-foreground">
-            Presentation words you missed: <span className="text-status-pending-fg">{diff.missing.join(", ") || "(none — you caught it all)"}</span>
+            Presentation words you missed: <span className="text-status-pending-fg">{diff.missing.join(", ") || "(none, you caught it all)"}</span>
           </p>
           <p className="text-muted-foreground">
             Presentation words you captured: <span className="text-status-success-fg">{diff.present.join(", ") || "(none yet)"}</span>

@@ -6,7 +6,7 @@ import { createAdminClient } from "@/lib/supabase/server";
  * Server-side verification that an object actually landed in storage.
  *
  * The old upload flow created the DB row in `prepare`, then a revalidate-only
- * `confirm` — a failed upload left a row pointing at a path with no bytes
+ * `confirm`: a failed upload left a row pointing at a path with no bytes
  * ("Object not found" in the viewer). Now every confirm path verifies the
  * object exists and is non-zero BEFORE promoting a row to `ready`. This must
  * run server-side (service-role client); the client's success callback is never

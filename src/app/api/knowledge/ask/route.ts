@@ -19,7 +19,7 @@ const schema = z.object({
 });
 
 /**
- * POST /api/knowledge/ask — grounded psychology Q&A over the authorized book
+ * POST /api/knowledge/ask: grounded psychology Q&A over the authorized book
  * corpus. The Psychology Tutor's backend.
  *
  * Retrieval-first design:
@@ -27,10 +27,10 @@ const schema = z.object({
  *   2. If a no-train AI provider is available (AI_ENABLED=true + key), build a
  *      focused context from ONLY the retrieved passages and generate a
  *      grounded answer with citations.
- *   3. Otherwise return the retrieved passages directly — honest, useful, and
+ *   3. Otherwise return the retrieved passages directly: honest, useful, and
  *      real (the retrieval layer is fully self-hosted; it works with zero keys).
  *
- * The corpus is never dumped into the prompt wholesale — only the retrieved
+ * The corpus is never dumped into the prompt wholesale, only the retrieved
  * (reranked) top-k passages, keeping token use and latency bounded. The query
  * is student data, so the answer generation only routes to no-train providers
  * (guards.ts: knowledge_tutor workload).
@@ -118,7 +118,7 @@ export async function POST(req: Request) {
         await writeCached(cacheKey!, "knowledge_tutor", provider, full, provider);
         send({ type: "done", answer: full, provider });
       } catch {
-        // All providers failed — retrieval-only fallback (sources already sent).
+        // All providers failed: retrieval-only fallback (sources already sent).
         send({ type: "done", answer: null, provider: null });
       }
       controller.close();

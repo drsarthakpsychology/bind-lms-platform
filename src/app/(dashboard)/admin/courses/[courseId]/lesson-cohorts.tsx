@@ -13,7 +13,7 @@ export function LessonCohortChips({ sharedWith, cohorts }: { sharedWith: string[
   if (label.kind === "none") {
     return (
       <span className="inline-flex items-center gap-1 rounded-full border-2 border-dashed border-status-alert-fg bg-status-alert-bg px-2.5 py-0.5 text-xs font-bold text-status-alert-fg">
-        Not shared — no cohort can see it
+        Not shared, no cohort can see it
       </span>
     );
   }

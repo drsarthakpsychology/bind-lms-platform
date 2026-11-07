@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 import { cardVariants } from "@/components/ui/card";
 
 /**
- * MobileCard — a richer tappable surface than MobileListItem, for content that
+ * MobileCard: a richer tappable surface than MobileListItem, for content that
  * needs a leading glyph, a title + description, and room for body/actions.
  *
  * Builds on the shared `cardVariants` (interactive press + hard shadow), so it

@@ -3,7 +3,7 @@ import "server-only";
 /**
  * Media provider abstraction.
  *
- * The player never constructs a storage URL itself — it asks the API for a
+ * The player never constructs a storage URL itself. It asks the API for a
  * playback URL (see getPlaybackUrl). This module is where that URL gets
  * minted, behind an interface so we can swap Supabase Storage for Cloudflare
  * R2 (or anything else) without touching player or route code.

@@ -5,8 +5,8 @@ import { usePathname } from "next/navigation";
 /**
  * Decides whether the persistent desktop sidebar shows.
  *
- * Student drill-down (Round 5, refined Round 10): on the DEEPEST pages —
- * a lesson or a material — we show ONE navigation surface at a time (the
+ * Student drill-down (Round 5, refined Round 10): on the DEEPEST pages,
+ * a lesson or a material. We show ONE navigation surface at a time (the
  * page's own back header) and hide the app sidebar, so there's never two
  * columns of navigation. The course OVERVIEW page (`/courses/[id]`) keeps the
  * sidebar: it's a top-level navigation destination (like the dashboard), and
@@ -21,12 +21,21 @@ export function isInnerStudentPath(pathname: string, role: string): boolean {
   // /courses/<id>/lessons/<lessonId>  ✓ hide sidebar
   // /courses/<id>/materials/<materialId> ✓ hide sidebar
   // /courses/<id>                     ✗ keep sidebar
-  // The live patient session is an immersive full-screen conversation — no
+  // The live patient session is an immersive full-screen conversation, no
   // shell chrome (sidebar/top bar) around it.
   return (
     /^\/courses\/[^/]+\/(?:lessons|materials)\//.test(pathname) ||
     /^\/practice\/consulting-room\/session\//.test(pathname)
   );
+}
+
+/**
+ * A study reading page (a section or a checkpoint). It has its own contents
+ * rail, so on tablets (768-1023) the app's icon rail steps aside to leave
+ * room for two columns: contents + text.
+ */
+export function isReaderPath(pathname: string): boolean {
+  return /^\/study\/(?!notes\/)[^/]+\/[^/]+/.test(pathname);
 }
 
 /** The patient session is full-bleed: no shell padding, no bottom tab bar. */
@@ -45,5 +54,7 @@ export function SidebarGate({
 }) {
   const pathname = usePathname();
   const hide = isInnerStudentPath(pathname ?? "", role);
-  return <>{hide ? fallback : children}</>;
+  if (hide) return <>{fallback}</>;
+  if (isReaderPath(pathname ?? "")) return <div className="contents md:max-lg:hidden">{children}</div>;
+  return <>{children}</>;
 }

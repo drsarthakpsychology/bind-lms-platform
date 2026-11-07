@@ -6,7 +6,7 @@ import { mechanismIndex, normaliseReceptorTag, drugDetail } from "./store";
 
 describe("psychopharm — formatBand", () => {
   it("renders both bounds as a range", () => {
-    expect(formatBand({ low: 20, high: 50, unit: "mg" })).toBe("20–50 mg");
+    expect(formatBand({ low: 20, high: 50, unit: "mg" })).toBe("20 to 50 mg");
   });
   it("renders equal bounds as a single value (no 7.5–7.5)", () => {
     expect(formatBand({ low: 7.5, high: 7.5, unit: "mg" })).toBe("7.5 mg");

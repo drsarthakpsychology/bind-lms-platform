@@ -6,7 +6,7 @@ import * as Sentry from "@sentry/nextjs";
 
 /**
  * Root-layout error boundary. `error.tsx` wraps pages but NOT the layout of
- * its own segment — so if the root layout throws (fonts, theme provider,
+ * its own segment, so if the root layout throws (fonts, theme provider,
  * toaster), this file is the only thing between the user and the bare Next.js
  * fallback. It replaces the root layout entirely, so it must define its own
  * <html>/<body> and cannot rely on globals.css or the app theme: the palette
@@ -21,7 +21,7 @@ export default function GlobalError({
   unstable_retry: () => void;
 }) {
   React.useEffect(() => {
-    // Root-layout failures are the rarest and most important to see — the
+    // Root-layout failures are the rarest and most important to see: the
     // global boundary is the only code that runs when the layout itself threw.
     Sentry.captureException(error);
     console.error(error);
@@ -87,8 +87,8 @@ export default function GlobalError({
                 color: "#5c554a",
               }}
             >
-              This page hit an unexpected snag. Nothing you&apos;ve done is lost
-              — try again, and if it keeps happening we&apos;ll get it sorted.
+              This page hit an unexpected snag. Nothing you&apos;ve done is lost.
+              Try again, and if it keeps happening we&apos;ll get it sorted.
             </p>
             <div
               style={{

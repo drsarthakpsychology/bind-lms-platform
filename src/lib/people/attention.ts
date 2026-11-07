@@ -2,7 +2,7 @@ import type { AccountStatus } from "./account-status";
 import type { Presence } from "./presence";
 
 /**
- * "Needs attention" flags on a student — the short list of things an admin
+ * "Needs attention" flags on a student: the short list of things an admin
  * can act on. Pure, so it is tested. Shown as small chips on the student
  * list and profile, and counted on Home.
  */

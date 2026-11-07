@@ -4,9 +4,9 @@ import { ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 /**
- * A single strong tappable row — the workhorse for courses, practice lists,
+ * A single strong tappable row: the workhorse for courses, practice lists,
  * journal entries, and wall posts. One row, not a card: a light surface, a
- * leading glyph/number, a 1–2 line title, a metadata line, and a trailing
+ * leading glyph/number, a 1 to 2 line title, a metadata line, and a trailing
  * state/chevron. `href` renders a link; omit it for a button.
  *
  * Designed for mobile first (min 48px tap height) and looks identical on
@@ -41,6 +41,8 @@ export function MobileListItem({
   disabled?: boolean;
   className?: string;
 }) {
+  // Static info rows (no link, no action) get no arrow and no button: an arrow promises a tap.
+  const actionable = Boolean(href || onClick);
   const inner = (
     <>
       {leading ? <span className="flex size-9 shrink-0 items-center justify-center">{leading}</span> : null}
@@ -49,16 +51,16 @@ export function MobileListItem({
           {title}
         </span>
         {subtitle ? (
-          <span className={cn("mt-0.5 block truncate text-caption", highlight ? "text-primary-foreground" : "text-muted-foreground")}>
+          <span className={cn("mt-0.5 line-clamp-2 text-caption [overflow-wrap:anywhere]", highlight ? "text-primary-foreground" : "text-muted-foreground")}>
             {subtitle}
           </span>
         ) : null}
       </span>
       {trailing ? (
         <span className="flex shrink-0 items-center gap-1">{trailing}</span>
-      ) : (
+      ) : actionable ? (
         <ChevronRight className={cn("size-4 shrink-0", highlight ? "text-primary-foreground" : "text-muted-foreground")} aria-hidden />
-      )}
+      ) : null}
     </>
   );
 
@@ -86,6 +88,10 @@ export function MobileListItem({
         {inner}
       </Link>
     );
+  }
+
+  if (!actionable) {
+    return <div className={cn(base, "border-foreground/15 bg-card active:translate-y-0", className)}>{inner}</div>;
   }
 
   return (

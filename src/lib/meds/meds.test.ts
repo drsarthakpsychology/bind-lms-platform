@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { MEDS, medIndex, searchMeds } from "./index";
+import { MECHANISMS } from "./mechanisms";
 
 describe("medicine reference", () => {
   it("every medicine is complete, unique, with real doses and its own words", () => {
@@ -29,5 +30,16 @@ describe("medicine reference", () => {
     expect(searchMeds(rows, "oleanz")[0].id).toBe("olanzapine");
     expect(searchMeds(rows, "ocd").map((r) => r.id)).toContain("fluvoxamine");
     expect(searchMeds(rows, "quetapine")[0].id).toBe("quetiapine");
+  });
+  it("every medicine has a mechanism with targets, a receptor and a route, with no dashes", () => {
+    for (const m of MEDS) {
+      const k = MECHANISMS[m.id];
+      expect(k, m.id).toBeTruthy();
+      expect(k.targets.length, m.id).toBeGreaterThan(0);
+      expect(k.routes.length, m.id).toBeGreaterThan(0);
+      expect(m.brands.length, `${m.id} Indian brands`).toBeGreaterThan(0);
+      expect(/[\u2013\u2014]/.test(JSON.stringify(k)), `${m.id} dash`).toBe(false);
+    }
+    expect(Object.keys(MECHANISMS).every((id) => MEDS.some((m) => m.id === id))).toBe(true);
   });
 });

@@ -4,9 +4,9 @@ import { requireFeature } from "@/lib/flags";
 export const dynamic = "force-dynamic";
 
 /**
- * /practice/two-minute-clinic — one clinical one-liner, 120 seconds,
+ * /practice/two-minute-clinic: one clinical one-liner, 120 seconds,
  * type a differential + next question, instant expert comparison.
- * The retention feature — opening the app costs nothing.
+ * The retention feature: opening the app costs nothing.
  */
 export default async function TwoMinuteClinicPage() {
   await requireFeature("two_minute_clinic");

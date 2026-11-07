@@ -19,7 +19,7 @@ import type { Block, BoxKind, Card, Level, ListItem, Mcq, Section, WidgetData, W
  */
 
 const BOXES = new Set<BoxKind>(["define", "word", "trap", "mnemonic", "example", "sounds", "analogy", "note", "safety"]);
-const WIDGETS = new Set<WidgetKind>(["guess", "decide", "sort", "build", "moodline", "worked", "synapse", "reveal"]);
+const WIDGETS = new Set<WidgetKind>(["guess", "decide", "sort", "build", "moodline", "worked", "synapse", "reveal", "flow", "curve", "layers", "brainmap", "journey", "neuron", "pathways", "receptor", "conditioning", "memoryflow", "stress", "timeline", "compare", "attention", "dissonance", "conservation", "experiment", "release", "thoughtrecord", "hypnogram", "strange", "illusion"]);
 
 export function slugNum(num: string): string {
   return num.replace(/\./g, "-").toLowerCase();
@@ -37,6 +37,7 @@ export function countWords(blocks: Block[]): number {
     else if (b.t === "recall" || b.t === "viva") b.items.forEach((c) => (w(c.q), w(c.a)));
     else if (b.t === "mcq") b.items.forEach((m) => (w(m.q), m.options.forEach(w), m.why && w(m.why)));
     else if (b.t === "view") n += countWords(b.blocks);
+    else if (b.t === "qa") n += countWords(b.blocks) + b.q.split(/\s+/).length;
     else if (b.t === "widget") n += JSON.stringify(b.data).split(/\s+/).length * 0.6;
   }
   return n;
@@ -158,7 +159,12 @@ export function parseBlocks(lines: string[]): Block[] {
       if (kind === "recall") blocks.push({ t: "recall", items: parseCards(body, "||") });
       else if (kind === "viva") blocks.push({ t: "viva", items: parseCards(body, "::") });
       else if (kind === "mcq") blocks.push({ t: "mcq", items: parseMcqs(body) });
-      else if (kind === "student" || kind === "clinician") blocks.push({ t: "view", view: kind, blocks: parseBlocks(body) });
+      else if (kind === "qa") {
+        const m = (title ?? "").match(/^(.*?)\s*(?:\[(starting|beginner|advanced)\])?\s*$/);
+        const q = (m?.[1] ?? "").trim();
+        if (!q) throw new Error("A :::qa block needs the question on the same line");
+        blocks.push({ t: "qa", q, level: m?.[2] as Level | undefined, blocks: parseBlocks(body) });
+      } else if (kind === "student" || kind === "clinician") blocks.push({ t: "view", view: kind, blocks: parseBlocks(body) });
       else if (kind === "widget") {
         const wk = (title ?? "") as WidgetKind;
         if (!WIDGETS.has(wk)) throw new Error(`Unknown widget :::widget ${title}`);
@@ -266,7 +272,7 @@ function levelCheckOf(title: string, blocks: Block[]): Level | undefined {
 /** Study minutes for a section: careful reading (about 110 words a minute) plus recall time. */
 export function sectionMinutes(s: Section): number {
   const widgetMin = (b: Block): number =>
-    b.t === "widget" ? (b.kind === "decide" ? 3 : b.kind === "worked" ? 4 : b.kind === "build" || b.kind === "sort" ? 3 : 2) : b.t === "view" || b.t === "box" ? b.blocks.reduce((a, x) => a + widgetMin(x), 0) : 0;
+    b.t === "widget" ? (b.kind === "decide" ? 3 : b.kind === "worked" ? 4 : b.kind === "build" || b.kind === "sort" || b.kind === "curve" || b.kind === "journey" || b.kind === "pathways" || b.kind === "timeline" || b.kind === "conditioning" || b.kind === "attention" || b.kind === "dissonance" || b.kind === "experiment" || b.kind === "release" || b.kind === "thoughtrecord" || b.kind === "hypnogram" || b.kind === "strange" ? 3 : 2) : b.t === "qa" ? 3 : b.t === "view" || b.t === "box" ? b.blocks.reduce((a, x) => a + widgetMin(x), 0) : 0;
   const recall = s.blocks.reduce((a, b) => a + (b.t === "recall" ? b.items.length * 1.5 : b.t === "mcq" ? b.items.length * 1 : b.t === "viva" ? b.items.length * 0.5 : 0) + widgetMin(b), 0);
   return Math.max(3, Math.round(s.words / 110 + recall));
 }

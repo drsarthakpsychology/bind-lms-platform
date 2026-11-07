@@ -1,17 +1,17 @@
 /**
- * AI response cache — trims API calls on repeated requests (§37 capacity).
+ * AI response cache: trims API calls on repeated requests (§37 capacity).
  *
  * Two layers:
- *   1. In-memory LRU (fast, zero network) — keyed by a content hash of the
+ *   1. In-memory LRU (fast, zero network): keyed by a content hash of the
  *      request; TTL'd. This handles the common case (same student re-asks, or
  *      the same grounded question in quick succession).
- *   2. Supabase ai_response_cache (optional, lazy server import) — persists
+ *   2. Supabase ai_response_cache (optional, lazy server import): persists
  *      across serverless instances on Vercel so a common tutor question asked
  *      by many students hits the cache once.
  *
  * The cache is OPT-IN at the call site: only cache requests that are
  * deterministic and safe to share (e.g. the grounded tutor answer for a
- * question — the same for every student). Never cache per-user or sensitive
+ * question: the same for every student). Never cache per-user or sensitive
  * responses. Never cache student data.
  *
  * server-only (uses the service-role client for persistence). The in-memory

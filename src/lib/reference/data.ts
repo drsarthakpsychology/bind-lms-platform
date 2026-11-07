@@ -1,5 +1,5 @@
 /**
- * Quick Reference A–Z: one library built from data that already exists.
+ * Quick Reference A to Z: one library built from data that already exists.
  *
  *  - Disorders: ./disorders (DSM-5-TR criteria, Maudsley/Kaplan treatment)
  *  - Medicines: the psychopharm enriched records (Stahl's Prescriber's Guide,

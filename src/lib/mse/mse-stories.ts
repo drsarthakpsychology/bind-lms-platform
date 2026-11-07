@@ -1,12 +1,12 @@
 /**
- * MSE expert codes (v5 Part 2, Levels 4 & 5) — what each patient ACTUALLY
+ * MSE expert codes (v5 Part 2, Levels 4 & 5): what each patient ACTUALLY
  * presents, authored once per sim case keyed by title. This is the ground
  * truth a full-MSE or MSE-from-live-interview is scored against.
  *
  * These map onto the real authored sim patients (src/lib/sim/cases/). The
  * coding is hand-authored per case (never derived from a model) so a student
  * who writes the MSE from their own Consulting Room transcript is scored
- * against what the patient really presented — the Level 5 loop that matters.
+ * against what the patient really presented: the Level 5 loop that matters.
  *
  * The `title` field matches the authored case title. getExpertMseForCase()
  * falls back to a null code when a case isn't coded yet, so the feature works
@@ -24,7 +24,7 @@ export interface MseCodeWithTitle extends MseCode {
 export const MSE_EXPERT_CODES: MseCodeWithTitle[] = [
   {
     caseKey: "dep-ravi",
-    title: "Ravi, 34 — the heaviness in his chest",
+    title: "Ravi, 34: the heaviness in his chest",
     appearance: ["casual shop-clothes", "groomed but tired", "dark rings"],
     behavior: ["cooperative", "guarded on money", "restless hands"],
     speech: ["slow", "soft", "few words"],
@@ -44,7 +44,7 @@ export const MSE_EXPERT_CODES: MseCodeWithTitle[] = [
   },
   {
     caseKey: "dep-meera",
-    title: "Meera, 22 — 'I can't focus, it's the exams'",
+    title: "Meera, 22: 'I can't focus, it's the exams'",
     appearance: ["hostel-casual", "clean but hastily dressed"],
     behavior: ["cooperative", "brittle-cheerful exterior", "avoids eye contact at 'parents'"],
     speech: ["normal rate", "educated English", "full sentences"],
@@ -64,7 +64,7 @@ export const MSE_EXPERT_CODES: MseCodeWithTitle[] = [
   },
   {
     caseKey: "psy-vikram",
-    title: "Vikram, 27 — the Lonazep case (four traps at once)",
+    title: "Vikram, 27: the Lonazep case (four traps at once)",
     appearance: ["unkempt", "same clothes as described last visit", "avoiding eye contact"],
     behavior: ["guarded", "suspicious", "resistant", "slow to engage"],
     speech: ["monotone", "marathi-accented English", "clipped"],
@@ -84,7 +84,7 @@ export const MSE_EXPERT_CODES: MseCodeWithTitle[] = [
   },
   {
     caseKey: "bip-neha",
-    title: "Neha, 26 — the 'best three months ever' that ended badly",
+    title: "Neha, 26: the 'best three months ever' that ended badly",
     appearance: ["designer clothes, dishevelled", "no makeup today"],
     behavior: ["cooperative", "rapid at first, then collapsed", "tearful in the crash"],
     speech: ["rapid", "vivid", "pressured during high recall", "then slow and flat when describing the drop"],
@@ -99,12 +99,12 @@ export const MSE_EXPERT_CODES: MseCodeWithTitle[] = [
     small_things: [
       "voice speed changed dramatically when recounting the high phase",
       "laughed describing selling her bike, then cried",
-      "said 'the tablet made me fly' — past-tense about herself",
+      "said 'the tablet made me fly': past-tense about herself",
     ],
   },
   {
     caseKey: "som-rohit",
-    title: "Rohit, 24 — 'not feeling fresh' every single morning",
+    title: "Rohit, 24: 'not feeling fresh' every single morning",
     appearance: ["well-groomed", "office casual", "healthy complexion"],
     behavior: ["cooperative", "slightly frustrated", "wants a 'test'"],
     speech: ["normal rate", "clear", "frustrated edge"],
@@ -118,13 +118,13 @@ export const MSE_EXPERT_CODES: MseCodeWithTitle[] = [
     judgment: ["good"],
     small_things: [
       "perked up when you asked about his morning routine",
-      "used biomedical words ('digestion, metabolism') — borrowed register",
-      "relieved when asked about 'motion' — that was the thing",
+      "used biomedical words ('digestion, metabolism'): borrowed register",
+      "relieved when asked about 'motion': that was the thing",
     ],
   },
   {
     caseKey: "som-mrsdesai",
-    title: "Mrs. Desai, 58 — 'the gas, the acidity, the heat'",
+    title: "Mrs. Desai, 58: 'the gas, the acidity, the heat'",
     appearance: ["sari, neat", "worn but tidy"],
     behavior: ["cooperative", "long catalogue of symptoms", "hopeful"],
     speech: ["rambling", "soft", "lists symptoms"],
@@ -137,16 +137,20 @@ export const MSE_EXPERT_CODES: MseCodeWithTitle[] = [
     insight: ["partial", "attributes to 'gas' not mood"],
     judgment: ["good"],
     small_things: [
-      "listed symptoms in the same order each time — a rehearsed list",
+      "listed symptoms in the same order each time: a rehearsed list",
       "looked at her son before answering about the pain",
-      "said 'the heat' with a wave of the hand — idiom for turmoil",
+      "said 'the heat' with a wave of the hand: idiom for turmoil",
     ],
   },
 ];
 /** Look up the expert MSE code for an authored sim case by its title.
  *  Returns null when the case isn't coded yet (feature works regardless). */
 export function getExpertMseForCase(title: string): MseCodeWithTitle | null {
-  return MSE_EXPERT_CODES.find((c) => c.title === title) ?? null;
+  // Compare letters and digits only, so a title stored before the punctuation
+  // clean-up (an em dash where the authored title now has a colon) still matches.
+  const key = (t: string) => t.toLowerCase().replace(/[^a-z0-9]+/g, "");
+  const k = key(title);
+  return MSE_EXPERT_CODES.find((c) => key(c.title) === k) ?? null;
 }
 
 /** Level 5 practice: reference MSE-by-case for the students to re-score after

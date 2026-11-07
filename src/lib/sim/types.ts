@@ -1,5 +1,5 @@
 /**
- * Sim patient engine — core types (Part 2 of the depth brief).
+ * Sim patient engine: core types (Part 2 of the depth brief).
  *
  * The v1 engine sent prose (gates as English sentences) + the whole case into
  * one static prompt, one model call. This rebuild splits that into:
@@ -8,7 +8,7 @@
  *   - a PatientState that mutates every turn and is persisted,
  *   - gates as deterministic code, not prose.
  *
- * Everything here is authored data or pure logic — no prompt text.
+ * Everything here is authored data or pure logic, no prompt text.
  */
 
 import type { SimCase as V1Case } from "@/lib/psychopharm/sim/types";
@@ -45,7 +45,7 @@ export interface VariationSchema {
   language_mix: string[];
 }
 
-/** One drawn variant — frozen per session so a debrief is reproducible. */
+/** One drawn variant: frozen per session so a debrief is reproducible. */
 export interface SessionVariant {
   mood_today: string;
   recent_event: string;
@@ -70,7 +70,7 @@ export type StudentMove =
   | "rapport_bid"
   | "off_topic";
 
-/** A patient move the Director may choose (Part 2.3 — the 24-move set). */
+/** A patient move the Director may choose (Part 2.3, the 24-move set). */
 export type PatientMoveId =
   | "full_disclose"
   | "partial_disclose"
@@ -124,7 +124,7 @@ export interface PatientState {
   last_patient_utterances: string[]; // for the anti-repetition embedding check
   premature_advice_streak: number; // 3 consecutive → hollow_compliance
   hollow_compliance_engaged: boolean;
-  /** consecutive low-effort student messages ("hey", "ok", "hmm") — code-enforced pressure. */
+  /** consecutive low-effort student messages ("hey", "ok", "hmm"): code-enforced pressure. */
   student_abrupt_streak: number;
   variant: SessionVariant;
   turn_count: number;
@@ -180,7 +180,7 @@ export interface DirectorDecision {
   must_not_mention: string[]; // fact ids still gated
 }
 
-/** A scripted fallback rendering of a move — the never-silent guarantee. */
+/** A scripted fallback rendering of a move: the never-silent guarantee. */
 export interface MoveRendering {
   move: PatientMoveId;
   /** register-specific exemplar. e.g. "mostly English", "Hinglish". */
@@ -190,7 +190,7 @@ export interface MoveRendering {
 
 /**
  * A case in the v4 engine: the v1 clinical model PLUS the depth additions.
- * Not every case has all fields yet — the build fills them in.
+ * Not every case has all fields yet: the build fills them in.
  */
 export interface DepthCase extends V1Case {
   case_id: string;
@@ -205,9 +205,9 @@ export interface DepthCase extends V1Case {
   voice_key?: string;
   /** Authoring bookkeeping (compat with the V1 traps field if renamed later). */
   traps_authored?: TrapId[];
-  /** What the patient genuinely doesn't know (or can't recall) — the model must never invent it. */
+  /** What the patient genuinely doesn't know (or can't recall): the model must never invent it. */
   unknown_to_patient?: string[];
-  /** What keeps the patient going — good practice should surface these. */
+  /** What keeps the patient going: good practice should surface these. */
   protective_factors?: string[];
   /** Authored inconsistencies the patient holds (they repeat them; they don't resolve cleanly). */
   contradictions?: Array<{ claim: string; truth: string; cause: string }>;

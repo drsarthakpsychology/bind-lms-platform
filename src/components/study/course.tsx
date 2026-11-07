@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, BookmarkCheck, BookOpen, Check, Clock, Compass, Flame, Lock, Map as MapIcon, NotebookPen, PenLine, RotateCcw, Sparkles, Trophy, Zap, ListChecks } from "lucide-react";
+import { ArrowLeft, ArrowRight, BookmarkCheck, BookOpen, Check, Clock, Compass, Flame, Lock, Map as MapIcon, NotebookPen, PenLine, RotateCcw, Sparkles, Target, Trophy, Zap, ListChecks } from "lucide-react";
 import { emptyState, istToday, liveStreak, markActivity, markWritten, studyKey, type LearnState } from "@/lib/learn/engine";
 import { getLearnState, initLearnStore, setLearnState, useLearnState } from "@/lib/learn/store";
 import { checkpointHref, checkpoints, checkpointStatus, type Checkpoint } from "@/lib/study/checkpoints";
@@ -51,9 +51,11 @@ function ContinueCard({ next, onGo }: { next: Next; onGo?: () => void }) {
         <span className="block text-xl font-bold leading-tight sm:text-2xl">{l.title}</span>
         {l.sub ? <span className="mt-0.5 block text-sm font-semibold opacity-80">{l.sub}</span> : null}
       </span>
-      <span className="flex shrink-0 items-center gap-1 rounded-full border-2 border-foreground bg-foreground px-4 py-2 font-bold text-background">
+      {/* Narrow phones: just the arrow, so the title keeps its room. */}
+      <span className="hidden shrink-0 items-center gap-1 rounded-md border-2 border-foreground bg-foreground px-4 py-2 font-bold text-background min-[400px]:flex">
         {next.kind === "done" ? "Review" : "Continue"} <ArrowRight className="size-4" aria-hidden />
       </span>
+      <ArrowRight className="size-6 shrink-0 min-[400px]:hidden" aria-hidden />
     </Link>
   );
 }
@@ -83,7 +85,7 @@ export function StudyHome({ modules, serverState, save, owner = "" }: { modules:
   const currentId = next.kind !== "done" ? next.module.id : null;
 
   return (
-    <div className="mx-auto max-w-5xl space-y-8 px-4 py-6 sm:px-6 lg:py-10">
+    <div className="mx-auto max-w-5xl space-y-8">
       <header className="space-y-2">
         <p className="text-eyebrow text-link">Notes</p>
         <h1 className="text-h1">Your notes, module by module</h1>
@@ -102,6 +104,18 @@ export function StudyHome({ modules, serverState, save, owner = "" }: { modules:
           <Compass className="size-4" aria-hidden /> Placement quiz
         </Link>
       </nav>
+
+      <Link
+        href="/prep"
+        className="flex min-h-14 items-center gap-3 rounded-md border-2 border-foreground/70 bg-card px-4 py-3 transition-transform hover:-translate-y-0.5 motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60"
+      >
+        <Target className="size-5 shrink-0" aria-hidden />
+        <span className="min-w-0 flex-1">
+          <span className="block font-semibold">Psychology Entrance &amp; Competitive Exam Preparation</span>
+          <span className="block text-sm text-muted-foreground">CUET-PG · UGC-NET · Clinical Psychology Entrances. One course for all three.</span>
+        </span>
+        <ArrowRight className="size-4 shrink-0" aria-hidden />
+      </Link>
 
       <div className="grid grid-cols-2 gap-2 sm:grid-cols-4 sm:gap-3">
         {[
@@ -259,8 +273,8 @@ export function ModuleView({
   const cpAfter = new Map(checkpoints(m).map((cp) => [cp.sectionIds[cp.sectionIds.length - 1], cp]));
 
   return (
-    <div className="mx-auto max-w-4xl space-y-7 px-4 py-6 sm:px-6 lg:py-10">
-      <Link href="/study" className="inline-flex items-center gap-1 rounded-full border-2 border-foreground bg-card px-3 py-1.5 text-sm font-bold">
+    <div className="mx-auto max-w-4xl space-y-7">
+      <Link href="/study" className="inline-flex min-h-11 items-center gap-1 rounded-md border-2 border-foreground bg-card px-3 py-1.5 text-sm font-bold">
         <ArrowLeft className="size-4" aria-hidden /> All modules
       </Link>
 
@@ -268,7 +282,7 @@ export function ModuleView({
         <p className="text-xs font-bold uppercase opacity-90">
           Module {m.num}
         </p>
-        <h1 className="mt-2 text-3xl font-black leading-[1.05] tracking-tight sm:text-5xl">{m.title}</h1>
+        <h1 className="mt-2 break-words text-3xl font-black leading-[1.05] tracking-tight sm:text-5xl short:lg:text-4xl">{m.title}</h1>
         <p className="mt-2 max-w-2xl font-semibold opacity-90">{m.tagline}</p>
         <div className="mt-4 flex flex-wrap gap-2 text-sm font-bold">
           <span className="rounded-full border-2 border-brand-foreground px-3 py-1">{studyTime(m.minutes)}</span>
@@ -300,7 +314,7 @@ export function ModuleView({
             {due ? `Your next re-test is due on ${due}. It takes 20 minutes and doubles how much you keep.` : "All re-tests done. This module is in long-term memory."}
           </p>
           {nextModule ? (
-            <Link href={`/study/${nextModule.id}`} className="mt-3 inline-flex items-center gap-1 rounded-full border-2 border-foreground bg-foreground px-4 py-2 font-bold text-background">
+            <Link href={`/study/${nextModule.id}`} className="mt-3 inline-flex min-h-11 items-center gap-1 rounded-md border-2 border-foreground bg-foreground px-4 py-2 font-bold text-background">
               Start Module {nextModule.num}: {nextModule.title} <ArrowRight className="size-4" aria-hidden />
             </Link>
           ) : null}

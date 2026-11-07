@@ -1,5 +1,5 @@
 /**
- * Self-hosted embedding — all-MiniLM-L6-v2 (Apache-2.0, 384-dim) via
+ * Self-hosted embedding: all-MiniLM-L6-v2 (Apache-2.0, 384-dim) via
  * transformers.js. Matches the schema's halfvec(384) exactly and costs zero
  * API money: the model is downloaded once (~25 MB) to a local cache and then
  * runs on-device.

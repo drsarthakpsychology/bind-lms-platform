@@ -5,7 +5,7 @@ import { CheckCircle2, CircleX } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 /**
- * MobileChoiceList — the single-option-row interaction used by every drill.
+ * MobileChoiceList: the single-option-row interaction used by every drill.
  *
  * Extracted because the correct/wrong reveal states (border/check/x) are
  * duplicated verbatim in QuizCheck, DilemmaFlow, WeakSpotsDrill,
@@ -20,7 +20,7 @@ import { cn } from "@/lib/utils";
  *
  * The parent owns `options` (labels), `correct` (indices that are correct),
  * `picked` (indices the user chose), and `revealed`. That keeps it a pure
- * view — scoring + persistence stay with the flow that owns the data.
+ * view: scoring + persistence stay with the flow that owns the data.
  */
 export function MobileChoiceList({
   options,

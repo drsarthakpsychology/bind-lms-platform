@@ -1,5 +1,5 @@
 /**
- * Case Library index — read-only browse of the normalised PMC corpus.
+ * Case Library index: read-only browse of the normalised PMC corpus.
  * Server-side only (reads the local normalised JSON); pure read, no AI.
  */
 
@@ -20,7 +20,7 @@ export interface LibraryDoc {
  * Read the normalised PMC docs. The file ships with the deployment and never
  * changes at runtime, so it is parsed once per server instance and kept in
  * memory. (It used to go through `unstable_cache`, but the corpus is ~37 MB
- * and the data cache refuses items over 2 MB — so the cache write failed and
+ * and the data cache refuses items over 2 MB, so the cache write failed and
  * the file was re-read and re-parsed on every page that rendered the search
  * palette.)
  */
@@ -51,7 +51,7 @@ export function filterLibrary(docs: LibraryDoc[], query: string): LibraryDoc[] {
 }
 
 /**
- * Keyword-category filters (B5 filter row) — the corpus docs carry no
+ * Keyword-category filters (B5 filter row): the corpus docs carry no
  * structured tags, so each filter is a keyword group matched against the
  * title + first 600 chars. Honest about being substring filters.
  */

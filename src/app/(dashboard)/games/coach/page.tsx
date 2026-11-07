@@ -7,7 +7,7 @@ import { loadLearnState, saveLearnState } from "../../study/actions";
 
 export const metadata: Metadata = { title: "Coach" };
 
-/** /games/coach?domain=… — adaptive teaching with Chai. */
+/** /games/coach?domain=…: adaptive teaching with Chai. */
 export default async function CoachPage({ searchParams }: { searchParams: Promise<{ domain?: string }> }) {
   await requireFeature("learn");
   const { domain } = await searchParams;

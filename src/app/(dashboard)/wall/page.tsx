@@ -5,7 +5,7 @@ import { WallView } from "./wall-view";
 export const dynamic = "force-dynamic";
 
 /**
- * /wall — Cohort Wall (Part 6.11). Threaded, anonymous-post toggle.
+ * /wall: Cohort Wall (Part 6.11). Threaded, anonymous-post toggle.
  * Anonymous posts never expose author_id to non-admins (RLS hides it).
  */
 export default async function WallPage() {
@@ -74,7 +74,7 @@ export default async function WallPage() {
         <p className="text-eyebrow text-muted-foreground">Cohort wall</p>
         <h1 className="mt-1 text-h1">The wall</h1>
         <p className="mt-1 text-small text-muted-foreground">
-          Threaded discussion. Post anonymously if you&apos;d rather — peers never see who wrote
+          Threaded discussion. Post anonymously if you&apos;d rather: peers never see who wrote
           it.
         </p>
       </Reveal>
@@ -90,7 +90,7 @@ export default async function WallPage() {
             isPinned: p.is_pinned as boolean,
             createdAt: p.created_at,
             // NOTE: author_id is deliberately NOT passed to the client for
-            // anonymous posts — it stays server-side.
+            // anonymous posts. It stays server-side.
             replies: (repliesByPost.get(p.id) ?? []).map((r) => ({
               id: String(r.id),
               content: String(r.content),

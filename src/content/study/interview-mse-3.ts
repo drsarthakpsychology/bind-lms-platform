@@ -1,460 +1,388 @@
-/* Module 1 · Part III — Exam zone. Source: VIBHA School of Psychology study notes (2026 edition). */
+/* Module 1 · Part IV: Advanced level. Original text written for VIBHA School of Psychology. */
 export const part3 = String.raw`
-# Part III · Exam zone
+# Part IV · Advanced: phenomenology, reliability and the frontier
 
-## 3.1 Long answers with model skeletons [core]
-Do these cold, before re-reading. Examiners reward structure and completeness. Every long answer follows the same architecture:
+## 4.1 Phenomenology: how we try to understand another mind [core][advanced]
+Every MSE term you have learned rests on a method called **descriptive phenomenology**: describing a person's experience as closely as possible to how they live it, before any theory about its cause. Its founder in psychiatry was Karl Jaspers, a psychiatrist and philosopher working in Heidelberg in the early twentieth century. Knowing the method lets you handle cases that do not fit the textbook boxes.
 
-**Definition → classification or framework → detailed body → table or diagram → clinical example → clinical significance.**
+### Form and content
+Jaspers separated the **form** of an experience (what kind of experience it is) from its **content** (what it is about).
+- A voice saying "You are a sinner" and a voice saying "You will win the lottery" have different contents but the same form: an auditory hallucination.
+- The form usually carries the diagnostic weight. The content carries the personal and cultural meaning, and tells you about risk and distress.
 
-:::example Q1. Define the MSE. Describe its components with clinical examples. (15 marks)
-1. Definition: the standardised format recording signs and symptoms present at the time of interview.
-2. Distinguish from history in a short table: subjective vs objective, longitudinal vs cross-sectional, medical analogue.
-3. State the caution: MSE is not MMSE; gathered throughout the interview but recorded separately.
-4. List the eight headings, then take each in turn with sub-headings.
-5. A clinical example for each: pressure of speech in mania, flight of ideas, persecutory delusion in the patient's words, third-person voices, digit span.
-6. Reproduce the six-grade insight scale in full: this alone carries marks.
-7. Close with significance: where emphasis shifts by diagnosis, monitoring change, contribution to formulation.
+:::example Same form, different content
+A rickshaw driver in Patna and a banker in London both describe a voice outside their head commenting on everything they do. The driver's voice speaks Bhojpuri about his debts; the banker's speaks English about his emails. The content is shaped by their lives. The form, a third-person running commentary in clear consciousness, is what the clinician classifies.
 :::
 
-:::example Q2. Describe psychiatric history taking. How does it differ from a medical interview? (15 marks)
-1. Open with the dual task; the interview is part of treatment.
-2. The seven-point difference table: half the question.
-3. Technique in brief: standard record, flexible interview; patient first; verbatim; open before closed; active listening; confidentiality and its exceptions.
-4. March through the proforma: identification → informants (four reliability parameters) → chief complaints (verbatim, duration) → present illness (onset, duration, course, the three Ps, biological functions, risk, important negatives, life chart) → past history → treatment → family (tree) → personal → premorbid personality → substances → physical exam → MSE.
-5. Draw one figure: a life chart or family tree. Diagrams earn marks disproportionately.
-6. Close with investigations and the biopsychosocial formulation.
+### Understanding and explaining
+Jaspers distinguished two ways of making sense of mental life:
+- **Understanding (empathic, meaningful connection).** You grasp from the inside why a feeling follows from a situation. A man betrayed by his partner becomes jealous: you can follow it.
+- **Explaining (causal).** You link events by cause from the outside, as in natural science. A thyroid storm causes anxiety; you do not need to "understand" it.
+
+He used this to separate a **development** of personality (understandable growth from life events) from a **process** (a new, un-understandable change imposed by illness). The primary delusion was his central example of something that cannot be understood from the person's prior mood, personality and situation.
+
+:::trap Ununderstandability depends on the observer
+Whether something is "understandable" depends on how hard the clinician tries, and on whether they share the patient's language and culture. A belief that seems ununderstandable to a clinician from another background may be quite understandable inside the patient's world. Use the concept with humility; record what you tried.
 :::
 
-:::example Q3. Classify the disorders of thought and describe each with examples. (10 to 15 marks)
-1. Define normal thinking (four clauses); every disorder fails one clause.
-2. Classify: stream, form, content, possession. One line that some schemes combine them.
-3. Stream: flight of ideas (example, reversibility), prolixity, slowing, circumstantiality; perseveration, blocking.
-4. Form: loosening, tangentiality, incoherence, word salad, neologism, clang, verbigeration, concrete thinking, poverty of content.
-5. Content: delusion definition; primary vs secondary; Schneider's three; content table; overvalued ideas; obsessions and compulsions; phobias; suicidal ideas.
-6. Possession: insertion, withdrawal, broadcasting, echo; first-rank status.
-7. A differentiating table: circumstantiality vs tangentiality; flight vs loosening; delusion vs overvalued idea vs obsession.
+### Three practical skills from phenomenology
+1. **Ask for the experience, not the label.** "What is it like when that happens?" rather than "Is it a voice?"
+2. **Bracket your assumptions.** Hold back your first interpretation until you have the person's full description.
+3. **Check form with contrast questions.** "Is it like hearing me now, or like thinking in words?" "Do you know the thought is yours?" "Could someone in the room hear it too?"
+
+:::widget sort
+{"prompt": "Form or content? Place each finding.", "buckets": ["Form", "Content"], "items": [{"text": "The experience is a third-person auditory hallucination", "bucket": 0}, {"text": "The voices accuse her of witchcraft", "bucket": 1}, {"text": "The belief arose suddenly, fully formed, out of nowhere", "bucket": 0, "why": "How it arose is part of its form (a sudden delusional idea)."}, {"text": "He believes he is the tenth avatar of Vishnu", "bucket": 1}, {"text": "The thought is felt as inserted from outside", "bucket": 0, "why": "The loss of ownership is the form; what the thought says is the content."}, {"text": "The intrusive thought is about harming her baby", "bucket": 1}]}
 :::
 
-:::example Q4. Describe the disorders of perception. Differentiate hallucination, illusion and pseudohallucination. (10 marks)
-1. Define perception; then hallucination (classical, Jaspers, current) and why three exist.
-2. Classify on six axes.
-3. The eight follow-up questions.
-4. Causes: emotion, psychiatric disorder, suggestion, sense organ, deprivation and brain disorder.
-5. Illusions: definition, recording, pareidolia, illusion vs functional hallucination.
-6. Pseudohallucination: the three-way table and the Jaspers–Hare debate with the modern resolution.
-7. Depersonalisation, derealisation, somatic passivity, autoscopy.
-8. Close with the cultural caution.
+:::widget decide
+{"scene": "Ama, 30, a nurse from Ghana working in Mumbai, says that since her brother died, she has felt that 'my village people are working against me spiritually'. A trainee writes 'persecutory delusion'.", "ask": "What should happen before that label is accepted?", "choices": [{"label": "Accept it: the belief is clearly false", "verdict": "harm", "outcome": "She is started on an antipsychotic. Her pastor later explains this is a common way of speaking about misfortune in her community; she stops attending.", "why": "Falsity is not the test. The belief must be judged against her own culture, and its form and conviction explored."}, {"label": "Explore its form and context: how she reached the belief, how certain she is, whether others in her community share this way of speaking, whether there are other psychotic features, and its effect on her life; seek a cultural informant", "verdict": "best", "outcome": "The belief is shared and held with some flexibility; there are no other psychotic features. Grief and a low mood emerge as the real problems.", "why": "Phenomenology plus a cultural informant separates a shared explanatory belief from a delusion."}, {"label": "Ignore it as 'just culture'", "verdict": "ok", "outcome": "Nothing harmful today, but a real delusion could be missed in another patient.", "why": "Culture does not rule out a delusion either. Explore, don't assume, in either direction."}]}
 :::
 
-:::example Q5. What is insight? Describe its grading and importance. (10 marks)
-1. Definition. 2. The five eliciting questions. 3. All six grades verbatim, with an example. 4. Grade 5 vs 6: knows vs changes. 5. Western none/partial/full plus reality testing. 6. Importance: adherence, level of care, capacity, monitoring recovery; shaped by intelligence, personality, education, stigma, culture. 7. Not an index of severity; independent of judgement.
-:::
-
-:::example Q6. Discuss interview techniques and establishing rapport. (10 marks)
-1. The dual task. 2. Preliminaries: process, voluntary or not, confidentiality and exceptions, seating, time. 3. Rapport and empathy; empathy vs identification (objectivity). 4. Techniques: open vs closed, funnels, facilitation, reflection, clarification, confrontation, silence, summarising, transitions. 5. What builds the alliance. 6. Person-centred: strengths and the patient's goals. 7. Transference, countertransference, resistance; no interpretation in session one. 8. Four or five common errors.
-:::
-
-## 3.2 Short notes: model 5-mark answers [core]
-A 5-mark short note needs a definition, four to six crisp points and one example. Not more. These are written at the length to reproduce.
-
-:::word Mood versus affect
-Mood is the pervasive, sustained feeling tone that colours the person's whole experience; it is subjective and recorded verbatim. Affect is the outward, objective expression of the immediate experience of emotion. Mood is the climate, affect the weather. Mood is assessed for quality, stability, reactivity and persistence; affect for quality, range, intensity, appropriateness (to the situation) and congruence (with stated mood and thought). Terms: euthymic, dysphoric, elated; restricted, blunted (reduced intensity), flat (absent range), labile. Example: a patient who says his mood is “fine” while tearful with constricted range shows affect incongruent with mood.
-:::
-
-:::word Grades of insight
-Insight is the degree of awareness and understanding a patient has of their illness. Six grades: (1) complete denial; (2) slight awareness of being sick and needing help, while denying it; (3) awareness of illness attributed to external or physical factors; (4) awareness of illness due to something unknown in self; (5) intellectual insight: knows symptoms come from own irrational feelings or thoughts but doesn't apply it; (6) true emotional insight: awareness leads to basic change in behaviour. Insight is shaped by intelligence, personality, education, stigma and culture, and is not an index of severity.
-:::
-
-:::word Types of delusion
-A delusion is a false, unshakeable belief not amenable to reasoning and not in keeping with the patient's socio-cultural and educational background. Primary (not derivable from another morbid phenomenon) or secondary (understandably derived), bizarre or non-bizarre. By content: persecutory (commonest), reference, grandiose, erotomanic, infidelity, nihilistic, somatic, guilt, poverty, control, poisoning. Schneider's three primary experiences: delusional mood, delusional perception (two-memberedness), sudden delusional idea. Example: nihilistic delusion in psychotic depression, “my intestines have rotted away”.
-:::
-
-:::word Circumstantiality versus tangentiality
-Both are digressions into unnecessary detail. In circumstantiality thinking moves slowly through trivial detail but the point is finally reached: the goal is delayed, never lost. In tangentiality the digression is sudden and oblique and the patient never returns: the reply fits the topic but never answers. Circumstantiality: intellectual disability, obsessional traits, epilepsy-associated personality change. Tangentiality: formal thought disorder in schizophrenia. Example: asked when fever began, the circumstantial patient recounts the wedding, bus and food, then says “Tuesday”; the tangential patient ends on bus services.
-:::
-
-:::word Schneider's first-rank symptoms in the MSE
-Phenomena which, without organic disease, were regarded as strongly suggestive of schizophrenia. Thought insertion, withdrawal and broadcasting (thought possession); delusions of control and delusional perception (thought content); somatic passivity, third-person voices, running commentary and thought echo (perception). Somatic passivity is bodily sensation experienced as imposed from outside. They are suggestive, not diagnostic: they occur in other psychoses and organic states.
-:::
-
-:::word Testing cognition in the MSE
-Seven headings in a fixed order, because a deficit at any level makes later tests uninterpretable: consciousness (graded to coma; Glasgow Coma Scale); orientation (lost time, then place, then person); attention (digit span forward and backward to three consecutive failures); concentration (100 minus 7, 50 minus 3, months backwards; record answers and time); memory (immediate, recent with an address at 15 minutes, remote; note amnesia and confabulation); intelligence; abstraction (proverbs, similarities). Significant cognitive disturbance commonly points to an organic disorder.
-:::
-
-:::word Life chart
-A graphical display of the course of illness over time, showing sequence of episodes, polarity, severity, frequency, relation to stressors and response to treatment. Episodes are drawn above or below a baseline according to polarity; bar height is severity, width is duration; stressors and treatment periods are marked along the timeline. Most valuable in recurrent depressive and bipolar disorders, where it shows periodicity, stressor–relapse links and the effect of adherence at a glance.
-:::
-
-## 3.3 Viva rapid-fire [core]
-Tap each card to check yourself. Say the answer aloud first.
-
-:::viva
-Define the mental status examination. :: A standardised format in which the clinician records the psychiatric signs and symptoms present at the time of the interview.
-Is the MSE the same as the MMSE? :: No. The MMSE is a brief cognitive screen that may be used within the cognition section of the MSE.
-Define mood. :: The pervasive feeling tone which is sustained and colours the total experience of the person.
-Define affect. :: The outward objective expression of the immediate, cross-sectional experience of emotion.
-What is euthymia? :: Normal mood: neither depressed nor elevated.
-Grade elevated mood from mild to most severe. :: Euphoria (hypomania), elation (stage II), exaltation (stage III), ecstasy (delirious or stuporous mania).
-Blunted vs flat affect? :: Blunted = severely reduced intensity. Flat = range essentially absent.
-Inappropriate or incongruent: which is mismatched to the situation? :: Inappropriate. Incongruent is mismatched to the patient's own mood or thought.
-Define anhedonia. In which two conditions? :: Inability to feel pleasure in previously enjoyable things; schizophrenia and depression.
-What is pressure of speech? :: Rapid speech output with a feeling of racing thoughts; hard to interrupt.
-Poverty of speech vs poverty of content? :: Less speech vs adequate speech conveying little information.
-Define normal thinking. :: A goal-directed flow of ideas initiated by a problem, with rational connections, towards a reality-oriented conclusion.
-Define flight of ideas. :: Rapid speech with sudden shifts in ideas, without losing logical connection.
-What is prolixity? :: Ordered flight of ideas in hypomania: the patient returns to the task.
-What is knight's move thinking? :: Loosening of associations: ideas without apparent logical connection.
-Which thought abnormality strongly supports an organic disorder? :: Perseveration.
-Define thought blocking and what it suggests. :: Sudden arrest of thought leaving a blank; highly suggestive of schizophrenia.
-Define delusion. :: A false, unshakeable belief not amenable to reasoning, not in keeping with socio-cultural and educational background.
-Why is falsity not essential to a delusion? :: It can be true by coincidence (a jealous patient's spouse may actually be unfaithful).
-Schneider's three primary delusional experiences? :: Delusional mood, delusional perception, sudden delusional idea.
-Commonest type of delusion? :: Persecutory.
-Delusions characteristic of psychotic depression? :: Nihilistic, guilt, poverty.
-Define overvalued idea. :: A thought that, through its feeling tone, takes precedence over all others for a long time.
-Why can't there be an obsessional hallucination? :: An obsession must normally be under the patient's control and resistible.
-What is a compulsion? :: An obsessional motor act.
-Name the four possession phenomena. :: Thought insertion, withdrawal, broadcasting, echo.
-Define hallucination. :: A perception in the absence of an external stimulus.
-Are hypnagogic hallucinations pathological? :: No: hypnagogic and hypnopompic hallucinations are within normal experience.
-Second vs third person hallucinations? :: Second: voices address the patient. Third: voices discuss the patient.
-Define illusion. :: A misinterpretation of stimuli arising from an external object.
-What is pareidolia? :: Effortless vivid illusions from fantasy, like faces in clouds.
-Illusion vs functional hallucination? :: The stimulus transforms (illusion) vs stimulus and hallucination coexist separately (functional).
-Define somatic passivity. :: Bodily sensations experienced as imposed by an external agency; a first-rank symptom.
-In what order is orientation lost? :: Time, then place, then person.
-How do you test attention? :: Digit span forwards and backwards, to three consecutive failures.
-Name three tests of concentration. :: 100 minus 7, 50 minus 3, months in reverse.
-Define confabulation. :: A false memory the patient believes to be true.
-Two methods of testing abstraction? :: Proverbs; similarities and differences.
-What must you exclude before calling a proverb answer concrete? :: Limited education, unfamiliar proverb, language.
-Grade 5 vs grade 6 insight? :: Grade 5 knows but doesn't apply it; grade 6 changes behaviour.
-Is poor insight a marker of severe illness? :: No.
-Three types of judgement? :: Personal, social, test.
-Waxy flexibility or catalepsy: which is the end result? :: Catalepsy.
-Mannerism vs stereotypy? :: Goal-directed vs not.
-Define stupor. :: Akinesis and mutism with relative preservation of awareness.
-Four parameters of informant reliability? :: Relationship; intellectual and observational ability; familiarity and time together; degree of concern.
-How far apart should clinician and patient sit? :: About 4 to 6 feet, equal chairs, no desk between.
-How long is an initial interview? :: 45 to 90 minutes; 20 to 30 or less if confused, distressed or psychotic.
-:::
-
-## 3.3b One-page glossary [core]
-Cover the right column, work down the list, and say each definition aloud before you look. Every term here is taught in full in Part II; this page is for the last week before the exam.
-
-### Appearance, behaviour and movement
-| Term | Definition |
-|---|---|
-| Agitation | Anxiety with severe motor restlessness |
-| Akinesia | Absence of movement |
-| Ambitendency | Because of ambivalence, actions are started but no goal-directed action follows |
-| Catalepsy | The person keeps the posture they have been placed in (the end result of waxy flexibility) |
-| Cataplexy | Sudden loss of muscle tone with full consciousness; a sign of narcolepsy |
-| Echolalia / echopraxia | Repeating words heard / copying actions seen |
-| Mannerism | Odd, repetitive, **goal-directed** movement |
-| Negativism | Motiveless resistance to every command or attempt to move them, or doing the opposite |
-| Posturing | Voluntarily holding an inappropriate, often bizarre posture for long periods |
-| Rigidity (catatonic) | Holding a rigid posture against attempts to move them |
-| Stereotypy | Odd, repetitive, **non-goal-directed** movement (can be verbal) |
-| Stupor | Akinesia and mutism with relative preservation of awareness |
-| Tic | Sudden, rapid, recurrent, non-rhythmic, stereotyped movement or sound, felt as involuntary |
-| Waxy flexibility | Limbs can be moulded into positions that are then held, like wax (the process) |
-
-### Speech
-| Term | Definition |
-|---|---|
-| Mutism | Complete absence of speech |
-| Neologism | A new word the patient has made up, whose origin cannot easily be understood |
-| Poverty of speech | Too little speech |
-| Poverty of content of speech | Enough speech, but it conveys very little information |
-| Pressure of speech | Rapid, hard-to-interrupt speech, with a feeling of racing thoughts |
-| Verbigeration | Senseless repetition of the same words or phrases |
-
-### Mood and affect
-| Term | Definition |
-|---|---|
-| Mood | The sustained, pervasive feeling tone that colours the person's whole experience (what they report) |
-| Affect | The outward expression of emotion at this moment (what you observe) |
-| Euthymia | Mood in the normal range, neither low nor elevated |
-| Euphoria | Mild elevation: a sense of well-being out of keeping with events (hypomania) |
-| Elation | Moderate elevation: confidence and enjoyment with more activity (mania, stage II) |
-| Exaltation | Severe elevation with grandiose delusions (mania, stage III) |
-| Ecstasy | The most severe elevation: intense rapture (delirious or stuporous mania) |
-| Blunted affect | Marked reduction in the intensity of emotional expression |
-| Labile affect | Rapid, abrupt changes in affect unrelated to what is happening |
-| Emotional incontinence | Complete loss of control over affect; the extreme of lability |
-| Anhedonia | Inability to feel pleasure in things that used to be enjoyable |
-| Anergia | Lack of energy for ordinary daily activities |
-| Alexithymia | Inability to put one's feelings into words |
-| Ambivalence | Two opposite feelings or impulses about the same thing at the same time |
-| Panic | A sudden, intense attack of anxiety, often with a sense of impending doom |
-
-### Thought
-| Term | Definition |
-|---|---|
-| Thinking (normal) | A goal-directed flow of ideas, with rational links between them, leading to a reality-based conclusion |
-| Circumstantiality | Too much unnecessary detail, but the patient **does** get back to the point |
-| Tangentiality | Sudden, oblique digression; the patient **never** gets back to the point |
-| Flight of ideas | Fast speech with rapid jumps between ideas that still have understandable links |
-| Prolixity | “Ordered flight of ideas” in hypomania: digressions, but the goal is reached |
-| Loosening of associations | Ideas follow each other with no apparent logical link |
-| Incoherence | Thought so disconnected that it cannot be understood |
-| Perseveration | Repeating a word or theme beyond the point where it was relevant |
-| Thought blocking | A sudden stop in the train of thought, often mid-sentence |
-| Delusion | A false, unshakeable belief, not open to reason, and not shared by the person's culture and education |
-| Delusional perception | A normal perception that suddenly acquires a private, illogical meaning |
-| Overvalued idea | An idea that, because of its emotional weight, dominates all others for a long time; less fixed than a delusion |
-| Obsession | A recurrent, intrusive thought, image or urge, recognised as one's own and resisted |
-| Phobia | An irrational fear of an object, situation or activity, leading to avoidance |
-| Folie à deux | A delusion shared by two people who live closely together |
-| Thought insertion | Thoughts experienced as put into the mind by an outside force |
-| Thought withdrawal | Thoughts experienced as taken out of the mind by an outside force |
-| Thought broadcasting | Thoughts experienced as escaping the mind and known to others |
-| Thought echo | Hearing one's own thoughts spoken aloud |
-
-### Perception
-| Term | Definition |
-|---|---|
-| Hallucination | A perception without an external stimulus |
-| Illusion | A misperception of a real external stimulus |
-| Pseudohallucination | An involuntary image experienced in inner space, lacking the vividness of a real perception and known not to be real |
-| Pareidolia | Vivid illusions that arise effortlessly from imagination (faces in clouds) |
-| Formication | A tactile hallucination of insects crawling on or under the skin |
-| Somatic passivity | Bodily sensations experienced as imposed by an outside force |
-| Depersonalisation | A change in the experience of the self: one feels unreal or detached, while knowing one is real |
-| Derealisation | A change in the experience of the world: it feels unreal or distant |
-| Déjà vu / déjà entendu | False familiarity with something new seen / heard |
-| Jamais vu / jamais entendu | False unfamiliarity with something familiar seen / heard |
-
-### Cognition, insight and judgement
-| Term | Definition |
-|---|---|
-| Somnolence | Cannot stay alert without constant stimulation |
-| Trance | A sleep-like state of reduced awareness and heightened suggestibility |
-| Fugue | Wandering away from one's usual place with loss of memory for personal identity |
-| Perplexity | Puzzled bewilderment |
-| Distractibility | Attention pulled away by irrelevant stimuli; cannot hold focus |
-| Confabulation | Filling a memory gap with a false memory the patient believes is true |
-| Abstract thinking | Shifting between aspects of a situation, holding several in mind, and grasping the essentials of a whole |
-| Intelligence | The ability to think logically, act rationally and deal effectively with the environment |
-| Insight | How aware the patient is of being ill and of what the illness means for them |
-| Judgement | The ability to assess a situation correctly and act appropriately in it |
-
-:::note Contested points, and what to write in an exam
-- **Pseudohallucination**: some define it by where it is experienced (inner space), others by insight; a third view says there is a continuum. Write the classical inner-space definition, then one line on the debate.
-- **Flight of ideas versus derailment**: keep them apart by whether the links are understandable. That is the expected answer.
-- **How to divide thought**: classically four headings (stream, form, content, possession); some schemes use two. Use four and mention the disagreement in one line.
-- **Grading insight**: give the six-point scale, then add the simpler none, partial or full grading.
+:::clinician
+### Depth: phenomenology in modern instruments
+- The Present State Examination (and its successor SCAN) built Jaspers' method into a semi-structured interview: the clinician asks, then decides whether the described experience meets a defined glossary meaning.
+- Phenomenological psychiatry has revived interest in **disturbances of the minimal self** in schizophrenia: a diminished sense of being the subject of one's own experience, hyper-reflexivity, and loss of natural self-evidence (Blankenburg). The **Examination of Anomalous Self-Experience (EASE)** rates these and they appear to cluster in the schizophrenia spectrum more than in other psychoses.
+- **Basic symptoms** (Huber): subtle, self-perceived disturbances of thinking, speech and perception (thought interference, pressure, blocking, disturbance of receptive speech). The COGDIS and COPER criteria built from them are used, with ultra-high-risk criteria, to identify people at clinical high risk of psychosis.
 :::
 
 :::recall
-1. Mannerism or stereotypy: which one is goal-directed? || Mannerism.
-2. Catalepsy or cataplexy: which is a sign of narcolepsy? || Cataplexy.
-3. Order the four grades of elevated mood. || Euphoria, elation, exaltation, ecstasy.
-4. Define delusional perception. || A normal perception that suddenly acquires a private, illogical meaning.
-5. Circumstantiality or tangentiality: which one gets back to the point? || Circumstantiality.
-6. What is formication, and when do you think of it? || Insects crawling on the skin; cocaine use and alcohol withdrawal.
+1. What did Jaspers mean by the form and the content of an experience? || Form is what kind of experience it is (for example a hallucination); content is what it is about. Form carries diagnostic weight; content carries meaning and risk.
+2. Distinguish understanding from explaining. || Understanding grasps meaningful connections from the inside; explaining links events by cause from the outside.
+3. Why must "ununderstandable" be used with caution? || It depends on the observer's effort, language and culture.
+4. Name two phenomenological instruments or concepts used today. || SCAN/PSE; EASE (anomalous self-experience); basic symptoms (COGDIS/COPER).
 :::
 
-## 3.4 Module test [core]
-Answer every question before looking back. Your best score is saved, and you'll be asked to re-test after 3, 7 and 21 days.
+:::mcq
+Q: Two patients hear voices: one hears God praising him, the other hears neighbours insulting him. Both are external, third-person and heard in clear consciousness. Phenomenologically:
+- They are different phenomena because the content differs
+- *They share the same form; the content differs and carries meaning and risk
+- Only the insulting voices are hallucinations
+- Neither can be classified without a brain scan
+> Form is classified; content is explored for meaning, culture and danger.
+:::
+
+## 4.2 Passivity, the self and first-rank symptoms: what the evidence says [core][advanced]
+Kurt Schneider listed **first-rank symptoms** (FRS) as experiences that, in the absence of organic disease, he considered strongly suggestive of schizophrenia. They are still taught everywhere. Here is how far that claim holds.
+
+### The first-rank symptoms
+- Audible thoughts (thought echo)
+- Voices arguing or discussing the patient (third person)
+- Voices commenting on the patient's actions (running commentary)
+- Somatic passivity
+- Thought insertion, thought withdrawal, thought broadcasting
+- Delusional perception
+- Made feelings, made impulses and made actions (passivity of affect, drive and volition)
+
+What they share is a **breakdown of the boundary between self and world**: something that should belong to the self (a thought, a movement, a feeling) is experienced as coming from outside.
+
+:::widget guess
+{"prompt": "In a large review of diagnostic studies, first-rank symptoms correctly identified what share of people who truly had schizophrenia?", "min": 0, "max": 100, "unit": "%", "answer": [55, 62], "reveal": "Only about 57 to 60 in 100. Many people with schizophrenia never show a first-rank symptom. And some people with other psychoses, especially mania and psychotic depression, do show them. So FRS help you suspect schizophrenia and refer, but cannot make the diagnosis alone.", "clinician": "A large 2015 systematic review of FRS against all other diagnoses found sensitivity about 57% and specificity about 81%; against other psychoses, sensitivity about 58% and specificity about 75%. The authors concluded FRS should not be used alone to diagnose schizophrenia."}
+:::
+
+### Where the rulebooks now stand
+- **DSM-5** removed the special rule that one bizarre delusion or one FRS-type voice was enough for criterion A of schizophrenia. All psychotic symptoms now count equally.
+- **ICD-11** keeps passivity, influence and control experiences, and thought insertion, withdrawal and broadcasting, among the core symptoms of schizophrenia, but no single symptom is enough, and FRS no longer carry special weight.
+
+### Eliciting passivity without leading
+:::word Questions that work
+- "Do you ever feel your thoughts are not your own, as if they were put there from outside?"
+- "Do your thoughts ever stop suddenly, as if taken away?"
+- "Do you feel other people can know or hear what you are thinking, without you speaking?"
+- "Do you feel your movements or feelings are controlled by someone or something else?"
+Then always check the "as if": "Does it feel as if, or are you sure it really happens?" A thought that only feels alien in a figure of speech is not thought insertion.
+:::
+
+:::trap Look-alikes of thought insertion
+- **Obsessions**: unwanted but recognised as one's own thoughts.
+- **Intrusive memories in PTSD**: unwanted, but known to be one's own memories.
+- **Religious inspiration or "the voice of conscience"**: often culturally shared, felt as guidance, ownership preserved.
+- **Dissociative and possession states**: may include speech or actions felt as another's, but usually with other dissociative features and in a culturally framed context.
+:::
+
+:::widget decide
+{"scene": "Dr Rao is assessing Priyanka, 24, a postgraduate student in Hyderabad, with a three-week history of no sleep, rapid speech and spending. She says, 'My thoughts are being broadcast to the whole campus.' A colleague says, 'That's a first-rank symptom: schizophrenia.'", "ask": "What is the best response?", "choices": [{"label": "Agree; first-rank symptoms confirm schizophrenia", "verdict": "harm", "outcome": "She is labelled with schizophrenia; mood stabilisation is delayed, and the next manic relapse is not anticipated.", "why": "FRS occur in mania and psychotic depression. The overall pattern (sleep, speech, spending) points to mania with psychotic features."}, {"label": "Record the symptom precisely, weigh it in the whole picture, and consider bipolar disorder (manic episode with psychotic features) as the leading diagnosis", "verdict": "best", "outcome": "She is treated for mania and recovers; a family history of bipolar disorder later emerges.", "why": "FRS are neither necessary nor sufficient. Diagnosis rests on the full pattern over time."}, {"label": "Ignore the symptom because she is manic", "verdict": "ok", "outcome": "The note is incomplete; the next clinician cannot see that she had passivity experiences.", "why": "Record every finding exactly. Its diagnostic weight is a separate judgement."}]}
+:::
+
+:::recall
+1. List Schneider's first-rank symptoms. || Thought echo; third-person discussing voices; running commentary; somatic passivity; thought insertion, withdrawal and broadcasting; delusional perception; made feelings, impulses and actions.
+2. What do FRS have in common? || A breakdown of the self-world boundary: something of the self is experienced as coming from outside.
+3. What did the large 2015 systematic review conclude? || Sensitivity about 57 to 58%; specificity about 75 to 81%; FRS should not be used alone to diagnose schizophrenia.
+4. Name three look-alikes of thought insertion. || Obsessions, PTSD intrusions, religious inspiration (also dissociative states).
+:::
 
 :::mcq
-Q: A man with schizophrenia correctly names the prime minister. Asked next for his state capital, he gives the prime minister's name again, then repeats it when corrected. This is best described as:
-- Verbigeration
-- *Perseveration
-- Echolalia
-- Verbal stereotypy
-> Perseveration is persistence of a mental operation beyond the point of relevance. Stereotypy would be a phrase unrelated to the situation; here the answer fitted the previous question. It strongly supports an organic disorder.
+Q: Which statement about first-rank symptoms is best supported by evidence?
+- They are present in nearly all people with schizophrenia
+- They never occur in mania
+- *They are moderately specific but miss many cases, so they cannot diagnose schizophrenia alone
+- DSM-5-TR still lets one FRS meet criterion A on its own
+> FRS occur in mood disorders with psychosis and are absent in many with schizophrenia.
+:::
 
-Q: A woman states that her intestines have rotted away and that she no longer exists. This delusion is:
-- Somatic delusion
-- Delusion of guilt
-- *Nihilistic delusion
-- Delusion of poverty
-> Nihilistic delusions involve non-existence of self, body parts or the world. Characteristic of severe psychotic depression.
+## 4.3 Structured interviews and the problem of reliability [core][advanced]
+Before the 1970s, two psychiatrists seeing the same patient often gave different diagnoses. The famous US-UK Diagnostic Project found that New York psychiatrists diagnosed schizophrenia far more often than London psychiatrists in similar patients. Much of the difference came from how they interviewed and what they counted. This drove the move to explicit criteria (DSM-III, 1980) and to structured interviews.
 
-Q: A patient hears a voice inside his own head that he knows arises from his own mind, but cannot stop it. This is best termed:
-- True hallucination
-- Illusion
-- *Pseudohallucination
-- Obsessional image
-> Located in subjective inner space, known not to be real, yet involuntary. The concept is contested (Jaspers vs Hare).
+### Kinds of interview
+| Type | What it is | Examples |
+|---|---|---|
+| Unstructured | The ordinary clinical interview; content and order chosen by the clinician | Routine OPD assessment |
+| Semi-structured | Set questions and probes, but the clinician judges whether a symptom is present | SCID-5, SCAN, K-SADS-PL |
+| Fully structured | Questions read exactly as written; answers coded without clinical judgement; lay interviewers can use it | CIDI (World Mental Health surveys), MINI (short, often used in trials) |
+| Rating scales | Measure severity once the diagnosis is known | HAM-D, MADRS, YMRS, PANSS, Y-BOCS, CAPS-5 |
 
-Q: Asked how long she has had fever, a woman describes her sister's wedding, the journey, the food and the bus home, and then says it began four days ago. This is:
-- Tangentiality
-- *Circumstantiality
-- Flight of ideas
-- Loosening of associations
-> The goal is delayed but reached. In tangentiality it is never reached.
+:::define Inter-rater reliability and kappa
+Inter-rater reliability is the degree to which two raters agree. **Cohen's kappa** corrects simple agreement for agreement expected by chance: 1 means perfect agreement, 0 means no better than chance. Rough guide: above 0.8 excellent, 0.6 to 0.8 good, 0.4 to 0.6 fair to moderate, below 0.4 poor.
+:::
 
-Q: The essential feature distinguishing an obsession from a delusion is that the obsession is:
-- Held with less conviction
-- *Recognised as one's own and resisted
-- Culturally sanctioned
-- Always about contamination
-> Obsessions are ego-dystonic and resisted. That is also why there is no obsessional hallucination or mood.
+:::widget guess
+{"prompt": "In the DSM-5 field trials, real clinicians in ordinary clinics each interviewed the same patients. What was the agreement (kappa) for major depressive disorder? (0 means chance, 1 means perfect)", "min": 0, "max": 1, "step": 0.05, "unit": "kappa", "answer": [0.25, 0.35], "reveal": "Only about 0.3, which counts as poor. Generalised anxiety disorder was even lower, about 0.2. Some diagnoses did much better: PTSD about 0.67, autism about 0.69. Even common diagnoses can be unreliable when clinicians interview in their own way.", "clinician": "The 2013 DSM-5 field trials (test-retest, separate clinicians, routine settings) reported kappas of about 0.28 for MDD, 0.20 for GAD, 0.46 for schizophrenia, 0.56 for bipolar I and 0.67 for PTSD. Methods differed from earlier trials, which used joint interviews and inflated agreement."}
+:::
 
-Q: The examiner raises a patient's arm and it stays there for twenty minutes despite discomfort. The maintained posture is:
-- Waxy flexibility
-- Negativism
-- *Catalepsy
-- Ambitendency
-> Waxy flexibility is the process; catalepsy is the end result.
+:::widget compare
+{"title": "Unstructured and structured interviews", "a": {"label": "Unstructured clinical interview", "points": ["Flexible: follows the patient's lead", "Builds rapport naturally", "Different clinicians ask different questions", "Lower agreement on diagnosis between raters"], "summary": "Unstructured: rich and humane, but less reliable."}, "b": {"label": "Structured or semi-structured (SCID, SCAN)", "points": ["Fixed questions and scoring rules", "Every criterion is checked", "Higher agreement between raters", "Can feel mechanical; takes longer"], "summary": "Structured: reliable and complete, used in research and audits."}, "caption": "Most of the gap in reliability comes from information variance (asking different questions) and criterion variance (applying rules differently). Structured interviews reduce both."}
+:::
 
-Q: Which MSE finding most strongly suggests an organic psychiatric disorder?
-- Blunted affect
-- Grandiose delusion
-- *Significant disturbance of cognition
-- Third-person auditory hallucination
-> Significant cognitive disturbance commonly points to an organic disorder, which is why cognition is never skipped.
+### Why agreement fails
+- **Information variance**: the clinicians obtained different information (one asked about past highs; one did not).
+- **Observation variance**: they saw the same thing but judged it differently (is this blunting or depression?).
+- **Criterion variance**: they used different rules to reach a diagnosis.
+- **Patient variance**: the patient really changed between interviews.
 
-Q: A patient accepts he is ill and that symptoms arise from his own irrational thinking, but behaves exactly as before. Insight grade:
-- Three
-- Four
-- *Five
-- Six
-> Grade 5, intellectual insight: knows but doesn't apply. Grade 6 changes behaviour.
+Structured interviews mainly reduce information variance. They do not remove judgement.
 
-Q: Thought broadcasting is the experience that:
-- Thoughts are imposed by an external force
-- Thoughts stop and are removed by an external force
-- *Thoughts escape the self and are experienced by others
-- Thoughts are spoken aloud by voices
-> The others are insertion, withdrawal and thought echo.
+:::clinician
+### Choosing an instrument
+- **SCID-5-CV** (clinician version): DSM-5 diagnoses in clinical settings; 1 to 2 hours; needs training. The research version adds subtypes and specifiers.
+- **MINI 7.x**: about 15 to 30 minutes; screening and trials; less nuanced and tends to over-include.
+- **SCAN** (WHO): phenomenologically rich, glossary-based, used in cross-national research including India.
+- **K-SADS-PL**: children and adolescents, interviewing parent and child separately.
+- **Severity scales**: HAM-D 17 (clinician), MADRS (sensitive to change), PHQ-9 (self-report screen; 10 or more suggests moderate depression), YMRS for mania, PANSS (30 items: positive, negative and general psychopathology), Y-BOCS, CAPS-5 for PTSD, C-SSRS for suicidal ideation and behaviour.
+- **Validation in India.** Check that the translation, cut-offs and norms suit the population. A cut-off validated in one language or setting does not transfer automatically.
+:::
 
-Q: “Birmingham, Kingstanding; see the king he's standing, king, sing, wing, bird.” The most accurate description:
-- Loosening of associations
-- *Flight of ideas with clang associations
-- Word salad
-- Verbigeration
-> Every link is traceable through sound: understandable, so flight of ideas, not loosening.
+:::widget decide
+{"scene": "A district mental health programme in Odisha wants to find out how many villagers have depression. The team has lay health workers with two days of training and no clinicians.", "ask": "Which approach fits best?", "choices": [{"label": "Train them to use the SCID-5-CV", "verdict": "harm", "outcome": "Workers struggle with clinical judgements; results vary wildly between villages.", "why": "Semi-structured interviews need clinical training to judge whether a symptom is present."}, {"label": "Use a validated, fully structured interview or a validated screen in the local language, with a clinician confirming a sample of positives", "verdict": "best", "outcome": "The survey is consistent across workers, and clinician checks show how accurate the screen is locally.", "why": "Fully structured tools suit lay interviewers; local validation and clinical confirmation guard accuracy."}, {"label": "Ask the workers to judge 'who looks depressed'", "verdict": "harm", "outcome": "Women who cry openly are over-counted; quiet men are missed.", "why": "Unstructured lay judgement brings large observation and criterion variance."}]}
+:::
 
-Q: Orientation is typically lost in the order:
-- Person, place, time
-- Place, time, person
-- *Time, place, person
-- Time, person, place
-> Time usually goes first, then place, then person.
+:::widget flow
+{"title": "Where diagnostic disagreement comes from", "layout": "chain", "nodes": [{"id": "info", "label": "Information variance", "detail": "Clinicians obtain different information."}, {"id": "obs", "label": "Observation variance", "detail": "Same information, judged differently."}, {"id": "crit", "label": "Criterion variance", "detail": "Different rules applied."}, {"id": "pat", "label": "Patient variance", "detail": "The patient really changed."}, {"id": "fix", "label": "What structured interviews fix", "detail": "Mainly information variance."}]}
+:::
 
-Q: A widow of two months hears her late husband call her name once from outside the room. She is otherwise well. Best initial description:
-- Third-person auditory hallucination
-- *Second-person auditory hallucination
-- Illusion
-- Delusional perception
-> The voice addresses her directly. Hallucinations from intense emotion such as bereavement are recognised and are not by themselves diagnostic of psychosis.
+:::recall
+1. Distinguish semi-structured from fully structured interviews, with an example of each. || Semi-structured: set questions, clinician judges (SCID-5, SCAN). Fully structured: read verbatim, no judgement, lay use (CIDI, MINI).
+2. What does kappa correct for, and what do 0 and 1 mean? || Chance agreement; 0 = chance, 1 = perfect.
+3. Give approximate DSM-5 field-trial kappas for MDD, GAD and PTSD. || About 0.28, 0.20 and 0.67.
+4. Name the four sources of diagnostic disagreement. || Information, observation, criterion and patient variance.
+:::
 
-Q: A patient hears the ceiling fan and, at the same moment, a separate voice he identifies as distinct from the fan. This is:
-- An illusion
-- *A functional hallucination
-- A reflex hallucination
-- Pareidolia
-> Stimulus and hallucination are perceived together and separately. In an illusion the fan sound itself would become the voice.
+:::mcq
+Q: Two psychiatrists disagree on a diagnosis because one asked about past manic episodes and the other did not. This is:
+- Observation variance
+- *Information variance
+- Criterion variance
+- Patient variance
+> They had different information. Structured interviews mainly reduce this.
+:::
 
-Q: Which statement about the psychiatric interview is correct?
-- The interview must follow a fixed, rigid method
-- *The record should be standardised but the interview flexible
-- Both interview and record should be flexible
-- The informant should always be seen before the patient
-> Standard record, flexible conversation. See the patient first wherever possible.
+## 4.4 Capacity and consent inside the interview [core][advanced]
+Every interview that ends in a treatment decision quietly includes a question: **can this person make this decision?** In India the Mental Healthcare Act 2017 puts capacity at the centre.
 
-Q: Which is NOT one of the four parameters of informant reliability?
-- Relationship with the patient
-- Degree of concern about the patient
-- *Educational qualification of the informant
-- Familiarity and length of stay with the patient
-> The parameter is intellectual and observational ability, not formal qualification.
+### The legal test
+Under section 4 of the Act, every person, including a person with mental illness, is presumed to have capacity to make mental healthcare and treatment decisions if they can:
+1. **Understand** the information relevant to the decision;
+2. **Appreciate** any reasonably foreseeable consequence of making, or not making, the decision; and
+3. **Communicate** the decision, by speech, writing, signs or any other means.
 
-Q: Speech adequate in amount but conveying very little information is:
-- Poverty of speech
-- *Poverty of content of speech
-- Mutism
-- Pressure of speech
-> Amount vs information.
+Information must be given in simple language the person understands, using sign language or visual aids where needed. A decision others consider unwise does not, by itself, show a lack of capacity.
 
-Q: A patient says his movements are controlled by a machine his neighbours operate. This is:
-- Delusion of reference
-- *Delusion of control (passivity)
-- Somatic passivity
-- Thought insertion
-> Control concerns actions; somatic passivity concerns bodily sensations; insertion concerns thoughts.
+:::analogy A bridge with three planks
+Capacity is a bridge across to a decision. The planks are understanding, appreciating and communicating. Missing any plank means the person cannot cross for **this** decision **today**; it says nothing about other decisions or other days.
+:::
 
-Q: In the MSE proforma, hallucinatory behaviour is recorded under:
-- Perception
-- Thought content
-- *General appearance and behaviour
-- Speech
-> It is observed, so it goes under behaviour; the hallucination itself goes under perception.
+:::widget flow
+{"title": "The capacity test under the Mental Healthcare Act", "layout": "chain", "nodes": [{"id": "p", "label": "Presume capacity", "detail": "Every adult, including a person with mental illness, starts with capacity."}, {"id": "s", "label": "Support first", "detail": "Give the information simply, in the person's language, with pictures or a trusted person if needed."}, {"id": "u", "label": "Understand", "detail": "Can they understand the information relevant to this decision?"}, {"id": "a", "label": "Appreciate", "detail": "Can they appreciate the foreseeable consequences of deciding, or not deciding?"}, {"id": "c", "label": "Communicate", "detail": "Can they communicate the decision, by any means?"}, {"id": "d", "label": "Decision for today", "detail": "If all three are present, they have capacity for this decision now, even if others think it unwise."}], "caption": "Capacity is decision-specific and time-specific. Record the questions you asked and the answers given."}
+:::
 
-Q: The best description of the difference between mood and affect:
-- Mood is observed; affect is reported
-- *Mood is sustained and subjective; affect is cross-sectional and objective
-- Mood applies to depression, affect to mania
-- They are the same thing
-> Climate vs weather.
+### Four principles of capacity assessment
+- **Decision-specific.** Capacity to agree to a blood test is not capacity to refuse ECT.
+- **Time-specific.** It can change with delirium, intoxication or recovery. Reassess.
+- **Supported first.** Give the information in the best way for this person (language, time, a trusted person, pictures) before concluding they lack capacity.
+- **Not the diagnosis.** A person with schizophrenia may have full capacity; a person with no diagnosis may lack it when intoxicated.
 
-Q: Severe elevation of mood with grandiose delusions (stage III mania) is called:
-- Euphoria
-- Elation
-- *Exaltation
-- Ecstasy
-> Euphoria mild, elation moderate, exaltation severe with grandiosity, ecstasy very severe.
+### Related provisions to know
+- **Advance directive** (section 5): a person with capacity can state how they wish, or do not wish, to be cared for, and who should be their nominated representative, if they later lose capacity.
+- **Nominated representative** (section 14): chosen by the person; supports decisions and receives information when the person lacks capacity.
+- **Admissions**: independent admission (the person consents), supported admission (when criteria are met, with a nominated representative), and emergency treatment for a short, defined period to prevent death or serious harm.
 
-Q: A patient sees vivid faces in clouds, effortlessly and sometimes against his will. This is:
-- Visual hallucination
-- *Pareidolia
-- Autoscopy
-- Delusional perception
-> An effortless illusion arising from fantasy and vivid imagery.
+:::widget decide
+{"scene": "Mr Thomas, 58, with schizophrenia and diabetes, is advised to have a toe amputated for gangrene. He refuses. He explains, accurately, what gangrene is and that the infection could spread and kill him. He says he would rather die with his body whole, as his faith teaches. His MSE shows stable, long-standing delusions about his neighbours, unrelated to the decision.", "ask": "Does he have capacity to refuse surgery?", "choices": [{"label": "No: he has schizophrenia, so he cannot decide", "verdict": "harm", "outcome": "The team tries to override his refusal; an ethics complaint follows and his trust in all treatment collapses.", "why": "A diagnosis does not remove capacity. The test is decision-specific."}, {"label": "Yes, most likely: he understands, appreciates the consequences and communicates clearly, and his delusions do not touch this decision. Document the assessment, keep offering treatment and involve him and his family", "verdict": "best", "outcome": "He continues wound care and antibiotics. A week later, after talks with his priest, he agrees to a smaller procedure.", "why": "Capacity is judged on the three abilities for this decision. An unwise choice is not proof of incapacity. Respect plus continued engagement often finds a way."}, {"label": "Ask his wife to consent instead", "verdict": "harm", "outcome": "The surgeon refuses; the delay worsens the infection.", "why": "A relative cannot simply replace a capacitous adult's decision."}]}
+:::
 
-Q: “I am of royal descent because I remember the spoon I used as a child had a crown on it.” On Schneider's criteria:
-- A sudden delusional idea
-- *A delusional perception
-- A delusional mood
-- A delusional misinterpretation
-> A memory plus a separate delusional significance: two-memberedness.
+:::clinician
+### Documenting a capacity assessment
+State the specific decision; the information given, in what language and format; the person's own words showing understanding and appreciation (or their absence); how the decision was communicated; the steps taken to support the decision; whether the finding is likely to change and when you will reassess; and who else was consulted (nominated representative, family with consent). Appelbaum's four-ability model (express a choice, understand, appreciate, reason) is a useful structure and maps closely onto the Act's test.
+:::
 
-Q: Which is true of the Cultural Formulation Interview?
-- It is only for patients from minority cultures
-- *It has a 16-question core, an informant version and supplementary modules
-- It replaces the MSE
-- It has right and wrong answers that score cultural competence
-> It can be used with anyone, and there are no right or wrong answers.
+:::recall
+1. State the three abilities in section 4 of the Mental Healthcare Act. || Understand relevant information; appreciate foreseeable consequences; communicate the decision.
+2. Give four principles of capacity assessment. || Decision-specific; time-specific; supported first; not determined by diagnosis.
+3. What is an advance directive under the Act? || A statement made with capacity about how one wishes (or does not wish) to be treated, and who should be the nominated representative, if capacity is later lost.
+:::
 
-Q: The digit span test assesses:
-- *Attention and immediate memory
-- Concentration and recent memory
-- Remote memory only
-- Abstract thinking
-> It does double duty.
+:::mcq
+Q: A man with bipolar disorder in remission refuses lithium. He understands the risks, weighs them, and explains he prefers to accept the risk of relapse. Under the Mental Healthcare Act:
+- He lacks capacity because the choice is unwise
+- His family's view decides
+- *He has capacity for this decision; an unwise choice alone does not show incapacity
+- Capacity cannot be judged in bipolar disorder
+> Section 4(3) is explicit on this point.
+:::
 
-Q: A 55-year-old man with four years of schooling gives a literal reading of an unfamiliar English proverb. The best conclusion:
-- Concrete thinking suggesting schizophrenia
-- Impaired abstraction from an organic cause
-- *The test is invalid; retest with a familiar proverb in his own language
-- Intelligence is below average
-> An unfamiliar proverb tests language and education, not abstraction.
+## 4.5 The MSE through new lenses: ICD-11, HiTOP and RDoC [core][advanced]
+The MSE was built for categories: is the symptom present or absent? Newer systems ask a different question: **how much, and along which dimensions?**
 
-Q: Which statement about confidentiality is correct?
-- It is absolute with no exceptions
-- It does not apply to patients with psychosis
-- *Exceptions include risk of harm to self or others, and child abuse
-- Family may always be informed without consent
-> A strong default with defined, disclosed exceptions.
+### ICD-11: rating dimensions inside the categories
+- For primary psychotic disorders, ICD-11 offers **symptom specifiers** rated as not present, mild, moderate or severe: positive symptoms, negative symptoms, depressive mood symptoms, manic mood symptoms, psychomotor symptoms and cognitive symptoms. Your MSE findings feed straight into these ratings.
+- ICD-11 dropped the old **subtypes of schizophrenia** (paranoid, hebephrenic, catatonic and others), because they were unstable over time and predicted little.
+- **Catatonia** is a syndrome in its own right that can occur with many disorders.
+- **Personality disorder** is now one diagnosis graded by **severity** (mild, moderate, severe), with optional **trait domains**: negative affectivity, detachment, dissociality, disinhibition and anankastia, plus a borderline pattern specifier. The interview therefore asks how badly self and relationships are affected, not which of ten boxes fits.
 
-Q: Which pair is correctly matched?
-- Mannerism: non-goal-directed movement
-- Echolalia: mimicking observed actions
-- *Verbigeration: senseless repetition of the same words
-- Negativism: keeping a posture you are placed in
-> Mannerisms are goal-directed; echolalia is words (echopraxia is actions); negativism is motiveless resistance.
+### HiTOP: symptoms arranged like a family tree
+The Hierarchical Taxonomy of Psychopathology groups symptoms by how they actually co-occur in data. Narrow symptoms combine into syndromes, syndromes into subfactors, and subfactors into broad **spectra**:
+- Internalising (distress and fear: depression, generalised anxiety, PTSD, panic, phobias)
+- Thought disorder (psychosis, and the cognitive end of mania)
+- Detachment (social withdrawal, restricted affect)
+- Disinhibited externalising (impulsivity, substance use)
+- Antagonistic externalising (hostility, manipulativeness)
+- Somatoform (bodily distress)
+Above these sits a general factor (often called "p"), reflecting a person's overall liability to psychopathology.
 
-Q: Regarding insight, which is correct?
-- Poor insight always means severe illness
-- Insight and judgement are always impaired together
-- *A patient with psychosis may have good insight
-- Insight is unaffected by culture and education
-> Insight is not an index of severity and is independent of judgement.
+### RDoC: from symptoms to systems
+The US National Institute of Mental Health's Research Domain Criteria study mental functions from genes to behaviour across six domains: negative valence systems (fear, loss), positive valence systems (reward), cognitive systems, systems for social processes, arousal and regulatory systems (including sleep), and sensorimotor systems. RDoC is a research framework, not a clinical diagnosis.
+
+:::widget sort
+{"prompt": "Map each MSE finding to the HiTOP spectrum it most belongs to.", "buckets": ["Internalising", "Thought disorder", "Detachment", "Disinhibited externalising"], "items": [{"text": "Persistent low mood and worthlessness", "bucket": 0}, {"text": "Third-person auditory hallucinations", "bucket": 1}, {"text": "Prefers being alone; restricted range of affect for years", "bucket": 2}, {"text": "Daily alcohol, impulsive spending, acts without thinking", "bucket": 3}, {"text": "Panic attacks with fear of dying", "bucket": 0}, {"text": "Loosening of associations", "bucket": 1}]}
+:::
+
+:::widget reveal
+{"prompt": "How would a HiTOP-minded clinician write the summary of a patient who has depression, panic and PTSD all at once?", "answer": "Instead of listing three separate disorders as if they were unrelated, they would note high internalising severity, with prominent distress (depression, PTSD) and fear (panic) components, and rate each dimension. This explains why the three so often come together and why one treatment (for example CBT or an SSRI) often helps all three."}
+:::
+
+:::clinician
+### What this changes at the bedside
+- Rate severity on every MSE domain, not only presence. A short dimensional rating (0 to 3) per domain is quick and tracks change.
+- Record transdiagnostic features that predict outcome across diagnoses: anhedonia, sleep disruption, cognitive impairment, suicidal ideation and functioning.
+- HiTOP-informed measures (for example the HiTOP self-report inventories) are entering research and some clinics, but routine Indian practice and examinations still use DSM-5-TR and ICD-11 categories. Use both: categories for communication and law; dimensions for formulation and monitoring.
+:::
+
+:::recall
+1. Name the six ICD-11 symptom specifiers for primary psychotic disorders. || Positive, negative, depressive mood, manic mood, psychomotor and cognitive symptoms.
+2. What did ICD-11 do with schizophrenia subtypes? || Removed them.
+3. List the six HiTOP spectra. || Internalising, thought disorder, detachment, disinhibited externalising, antagonistic externalising, somatoform.
+4. Name the six RDoC domains. || Negative valence, positive valence, cognitive, social processes, arousal and regulatory, sensorimotor.
+:::
+
+:::mcq
+Q: Under ICD-11, a patient with personality difficulties is described by:
+- One of ten specific personality disorder types
+- *A severity level, with optional trait domains and a borderline pattern specifier
+- A single yes/no label
+- RDoC domains
+> ICD-11 moved personality disorder to a severity-plus-traits model.
+:::
+
+## 4.6 The interview's frontier: speech analysis, phones and AI [core][advanced]
+The interview is changing faster now than at any time since structured interviews arrived. As of November 2026, here is what has evidence, what is promising and what is still hype.
+
+### Automated speech and language analysis
+Computer analysis of speech can measure things a clinician perceives only roughly: how closely each sentence links to the last (semantic coherence), sentence complexity, pauses, and use of pronouns. In small studies of young people at clinical high risk, lower coherence and simpler syntax predicted later transition to psychosis better than chance, and similar markers track negative symptoms and thought disorder.
+
+The limits are real: small samples, mostly English speakers, results that often weaken in new groups, and no validated clinical tool. Whether such measures work in Hindi, Tamil or code-switched Hinglish speech is largely untested.
+
+### Digital phenotyping
+Smartphones and wearables can passively record sleep, movement, phone use and social activity. Changes in these signals sometimes precede relapse in bipolar disorder and psychosis. Questions of consent, privacy, data ownership and false alarms are unsolved, and very few tools are used in routine care.
+
+### AI documentation and "AI patients"
+- **Ambient AI scribes** listen to a consultation and draft the note. They save typing time, but they can miss non-verbal findings that are central to the MSE, and can invent details. A large observational study published in January 2026 found that notes from primary-care visits using an AI scribe recorded more psychiatric symptoms, yet those visits were slightly less likely to lead to a depression diagnosis, antidepressant or referral (about 14% versus 17%). More documentation did not mean more action. Causation is not proven.
+- **Simulated patients built on large language models** are increasingly used to let trainees practise interviews and receive feedback. They can rehearse wording and structure; they cannot yet reproduce the subtle non-verbal and relational texture of a real interview.
+
+:::widget decide
+{"scene": "Your hospital in Bengaluru pilots an AI scribe in the psychiatry OPD. After a consultation with a quiet, withdrawn young man, the draft note reads: 'Mood good. No psychotic symptoms. Plan: continue.' You noticed him glancing at an empty corner and muttering twice.", "ask": "What do you do?", "choices": [{"label": "Sign the note; the AI recorded what was said", "verdict": "harm", "outcome": "Six weeks later he is admitted with severe psychosis; the record shows no warning signs.", "why": "The scribe can only record speech. Observed behaviour (hallucinatory behaviour, affect, psychomotor change) is the clinician's responsibility."}, {"label": "Edit the note to add the observed hallucinatory behaviour and affect, ask him directly about voices, and record his answer", "verdict": "best", "outcome": "He admits hearing a voice for a week. Early treatment begins.", "why": "AI drafts are drafts. The MSE depends on observation, and the clinician signs for every line."}, {"label": "Stop using any notes and rely on memory", "verdict": "ok", "outcome": "Your notes become patchy and late.", "why": "Rejecting the tool entirely loses its benefits; the answer is careful review, not abandonment."}]}
+:::
+
+:::clinician
+### Using AI tools responsibly
+- Get explicit consent before any recording; explain where audio and text are stored and who can access them, in line with India's Digital Personal Data Protection Act 2023 and institutional policy.
+- Read every AI-drafted note in full; add the observed MSE; delete anything not said or seen.
+- Do not paste identifiable patient information into public chatbots.
+- Treat language-analysis and digital-phenotyping outputs as research signals until validated in your population.
+:::
+
+:::recall
+1. What do automated speech measures in psychosis risk research capture? || Semantic coherence, syntactic complexity, pauses, pronoun use and similar markers.
+2. Give three limits of this research as of late 2026. || Small samples, poor replication in new groups, mostly English, no validated clinical tool.
+3. What did the 2026 AI-scribe study find? || More psychiatric symptoms documented but slightly fewer depression diagnoses, prescriptions or referrals; observational, not causal.
+:::
+
+:::mcq
+Q: Which MSE content is an audio-only AI scribe most likely to miss?
+- The patient's stated mood
+- *Observed hallucinatory behaviour, facial affect and psychomotor change
+- The chief complaint
+- The list of current medicines
+> Observation is the core of the MSE and cannot be heard.
+:::
+
+## 4.7 Hard interviews: deception, interpreters, trauma and conflict [core][advanced]
+Some interviews test everything you know. This section gathers the hardest.
+
+### When the account may not be true
+People may exaggerate, minimise or invent symptoms for many reasons. Know the terms precisely.
+| Term | Symptoms are | Motive |
+|---|---|---|
+| Malingering | Intentionally produced or exaggerated | External gain (money, avoiding prison or duty, drugs) |
+| Factitious disorder | Intentionally produced or falsified | To be seen as ill, with no obvious external reward |
+| Functional (conversion) disorder | Not intentionally produced | Not a choice; a real disorder of nervous system function |
+
+Clues that raise the question of feigned psychosis: dramatic, over-endorsed symptoms; voices that are continuous and vague; claiming obvious "textbook" symptoms but not subtle ones; symptoms that change when the person thinks they are not observed; a clear external incentive. None is proof. Record what you saw; avoid the word "malingering" without a full assessment.
+
+:::clinician
+### Tools for suspected feigning
+The Structured Interview of Reported Symptoms (SIRS-2) and the shorter M-FAST screen for feigned psychiatric symptoms; performance-validity tests (for example the Test of Memory Malingering) check effort on cognitive testing. Results are interpreted alongside collateral information, records and longitudinal observation. In Indian forensic practice, most of these instruments lack local norms, so caution and documentation matter even more.
+:::
+
+### Working with interpreters
+- Use a trained interpreter, not a family member or child, especially for sensitive topics.
+- Brief them before: confidentiality, word-for-word interpretation, no summarising, and tell you when a word has no direct equivalent.
+- Speak to the patient, not to the interpreter. Short sentences.
+- Thought disorder can be hidden or invented by interpretation; ask the interpreter afterwards whether speech seemed odd **in the patient's language**.
+
+### Trauma-informed interviewing
+- Explain why you are asking, and that the person can decline or pause.
+- Ask about what happened only as much as is needed now; detail can wait.
+- Watch for dissociation (glazed look, delayed responses); ground gently (name, place, the room).
+- Never interview a survivor of violence in front of the person who may be harming them.
+
+:::widget decide
+{"scene": "Fatima, 26, brought by her husband to an OPD in Delhi for 'fits and weakness', speaks only Urdu-accented Hindi and looks at her husband before every answer. He offers to interpret 'because she gets confused'. You notice faded bruises on her forearms.", "ask": "What is your next step?", "choices": [{"label": "Let the husband interpret to save time", "verdict": "harm", "outcome": "He answers for her. The bruises are explained as 'falls during fits'. She leaves without disclosing anything.", "why": "A possible abuser cannot be her interpreter or her informant for sensitive topics."}, {"label": "Thank him and, using routine clinic practice, see her alone with a female staff member (and a trained interpreter if needed); ask open, then gentle direct questions about safety at home", "verdict": "best", "outcome": "Alone, she says he hits her when he drinks. The team assesses risk, documents injuries and links her with support services, with her consent.", "why": "Routine private time protects disclosure without singling anyone out. Safety enquiry is part of every assessment."}, {"label": "Confront the husband about the bruises in front of her", "verdict": "harm", "outcome": "He takes her home immediately; she misses follow-up and her risk rises.", "why": "Confrontation in front of a possible abuser increases danger to the victim."}]}
+:::
+
+### When accounts conflict
+When patient and family disagree, resist choosing a side. Record each account with its source; look for independent evidence (records, school or work reports); consider why each may see things differently (fear, stigma, inheritance disputes, protecting someone). The discrepancy is often the most useful finding of the day.
+
+:::recall
+1. Distinguish malingering, factitious disorder and functional disorder. || Intentional for external gain; intentional to be seen as ill; not intentional.
+2. Give three clues that raise the question of feigned psychosis. || Dramatic over-endorsement; vague continuous voices; obvious but not subtle symptoms; change when unobserved; clear incentive.
+3. Give four rules for working with interpreters. || Trained, not family; brief beforehand; speak to the patient; ask afterwards about speech oddities in the patient's language.
+4. Who should never interpret for a possible victim of abuse? || The suspected abuser (or other family members for sensitive topics).
+:::
+
+:::mcq
+Q: A man facing a court case reports "constant voices telling me everything" and all classic symptoms on a checklist, but none of the subtle features of psychosis. The best course is:
+- Diagnose schizophrenia
+- Write "malingering" in the notes
+- *Record exactly what was reported and observed, gather collateral and records, observe over time, and consider structured tests for feigning
+- Refuse to assess him
+> Feigning is a hypothesis to test, not a label to apply after one interview.
 :::
 `;

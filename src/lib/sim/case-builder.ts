@@ -1,5 +1,5 @@
 /**
- * Case builder — makes authoring many cases systematic (v5 Part 5).
+ * Case builder: makes authoring many cases systematic (v5 Part 5).
  *
  * Each case = the clinical core (fixed facts, never invented) + a distinct
  * VOICE. The voice is what makes two patients with the same diagnosis feel

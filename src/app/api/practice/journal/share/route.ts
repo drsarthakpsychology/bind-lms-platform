@@ -8,7 +8,7 @@ export const runtime = "nodejs";
 
 const shareSchema = z.object({
   entryId: z.string().uuid(),
-  /** The recipient's email (resolved to a profile server-side — the caller
+  /** The recipient's email (resolved to a profile server-side, the caller
    *  never sees another user's id, consistent with the privacy model). */
   sharedToEmail: z.string().email().optional(),
   /** Share to faculty: resolve the first admin profile server-side. */
@@ -22,10 +22,10 @@ const revokeSchema = z.object({
 });
 
 /**
- * POST /api/practice/journal/share — share a journal entry with a named
+ * POST /api/practice/journal/share: share a journal entry with a named
  * person (per-entry sharing, revocable). Only the OWNER of the entry can
  * share it (checked server-side). The share row is logged and revocable.
- * DELETE /api/practice/journal/share — revoke a share.
+ * DELETE /api/practice/journal/share: revoke a share.
  *
  * journal_shares RLS: owner-only (see practice_layer_rest.sql).
  */
@@ -53,7 +53,7 @@ export async function POST(req: Request) {
     .maybeSingle();
   if (!entry) return NextResponse.json({ error: "entry not found" }, { status: 404 });
 
-  // Resolve the recipient (admin client — the caller must never see another
+  // Resolve the recipient (admin client, the caller must never see another
   // user's id; only the share row records it). Faculty preset resolves the
   // first admin profile.
   const admin = createAdminClient();
@@ -89,7 +89,7 @@ export async function POST(req: Request) {
 }
 
 /**
- * DELETE /api/practice/journal/share — revoke a share. Only the sharer
+ * DELETE /api/practice/journal/share: revoke a share. Only the sharer
  * (or the share recipient) can revoke; owner-only RLS enforces it.
  */
 export async function DELETE(req: Request) {
@@ -103,7 +103,7 @@ export async function DELETE(req: Request) {
   if (!parsed.success) return NextResponse.json({ error: "invalid body" }, { status: 400 });
 
   const admin = createAdminClient();
-  // Revoke = set revoked_at (keep the log row — "revocable, logged").
+  // Revoke = set revoked_at (keep the log row: "revocable, logged").
   const { error } = await admin
     .from("journal_shares")
     .update({ revoked_at: new Date().toISOString() })

@@ -4,7 +4,7 @@ import { LEGAL } from "@/lib/legal-constants";
 import { BRAND } from "@/lib/brand";
 
 /**
- * Public front door — the highest-traffic route. Statically rendered with a
+ * Public front door: the highest-traffic route. Statically rendered with a
  * one-hour ISR revalidate so it's CDN-cacheable (the previous version read
  * cookies() via getSession, which opts the route out of caching entirely).
  * Returning students are bounced to /dashboard client-side after hydration;
@@ -13,7 +13,7 @@ import { BRAND } from "@/lib/brand";
  */
 export const revalidate = 3600;
 
-/** Organization structured data — the site root only (legal name, contact). */
+/** Organization structured data: the site root only (legal name, contact). */
 const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",

@@ -16,9 +16,11 @@ import { ChatList } from "@/components/sim/chat-list";
 import { NotesSheet } from "@/components/sim/notes-sheet";
 import { HintSheet } from "@/components/sim/hint-sheet";
 import { DebriefView } from "./debrief-view";
+import { GradedForm, GradedResult } from "./graded-view";
+import type { InterviewGrade } from "@/lib/interview-grade/types";
 
 // The voice screens pull in livekit-client (~557KB). Lazy-load them so that
-// chunk never enters the student's eager bundle — it only fetches when voice
+// chunk never enters the student's eager bundle. It only fetches when voice
 // mode is actually switched on (Part 5).
 const VoiceConversation = dynamic(
   () => import("@/components/sim/voice-conversation").then((m) => m.VoiceConversation),
@@ -59,7 +61,7 @@ const DIFFICULTY_HINT: Record<string, string> = {
 };
 
 /**
- * The live simulated-patient chat — rebuilt as a full-screen conversation
+ * The live simulated-patient chat: rebuilt as a full-screen conversation
  * (not a 70vh card). Header (back + name + status pill + timer + more) →
  * transcript (bubbles, no name labels) → composer (voice toggle + input +
  * send). Notes and hint live in bottom sheets; "finish & debrief" is in the
@@ -77,7 +79,12 @@ export function SimSessionView({
   branchInfo,
   provisionalDims,
   startedAt,
+  graded = false,
+  initialGrade = null,
 }: {
+  /** Graded interview: finishing opens the MSE, risk and formulation hand-in. */
+  graded?: boolean;
+  initialGrade?: InterviewGrade | null;
   sessionId: string;
   patientName: string;
   patientAge?: number;
@@ -113,6 +120,8 @@ export function SimSessionView({
     startedAt ? Math.max(0, Math.floor((Date.now() - new Date(startedAt).getTime()) / 1000)) : 0,
   );
   const [debrief, setDebrief] = React.useState<DebriefData | null>(null);
+  const [grade, setGrade] = React.useState<InterviewGrade | null>(initialGrade);
+  const [wrapUp, setWrapUp] = React.useState(false);
   const [ending, setEnding] = React.useState(false);
   const [voiceMode, setVoiceMode] = React.useState(false);
   const [patientAffect, setPatientAffect] = React.useState<Affect | null>(null);
@@ -151,6 +160,7 @@ export function SimSessionView({
 
   const didAutoFinish = React.useRef(false);
   React.useEffect(() => {
+    if (graded) return; // the time-up hand-in is derived in render below
     if (seconds >= SESSION_LIMIT_S && !didAutoFinish.current && !debrief) {
       didAutoFinish.current = true;
       void finishAndDebrief();
@@ -176,7 +186,7 @@ export function SimSessionView({
       if (!res.ok) {
         const j = await res.json().catch(() => null);
         if (res.status === 429) {
-          setError("You're moving fast — give the patient a moment to respond.");
+          setError("You're moving fast: give the patient a moment to respond.");
         } else {
           setError(j?.error ?? "The patient didn't respond. Please try again.");
         }
@@ -303,6 +313,22 @@ export function SimSessionView({
     return { rate: v.rate, pitch: v.pitch, lang: voicePrefs?.lang ?? "en-IN", gender: voicePrefs?.gender };
   }, [patientAffect, patientFatigue, voicePrefs]);
 
+  const timeUp = seconds >= SESSION_LIMIT_S;
+  if (graded && grade) {
+    return <GradedResult grade={grade} onExit={() => router.push("/practice/consulting-room")} />;
+  }
+  if (graded && (wrapUp || timeUp)) {
+    return (
+      <GradedForm
+        sessionId={sessionId}
+        patientName={patientName}
+        notes={[mseNotesDraft.value, hypothesesDraft.value].filter((x) => x.trim()).join("\n\n")}
+        onBack={timeUp ? null : () => setWrapUp(false)}
+        onGraded={setGrade}
+      />
+    );
+  }
+
   if (debrief) {
     return (
       <DebriefView
@@ -321,7 +347,7 @@ export function SimSessionView({
 
   return (
     <div className="flex h-dvh flex-col bg-background">
-      {/* Focused voice mode — the whole screen becomes the conversation. Same
+      {/* Focused voice mode: the whole screen becomes the conversation. Same
           turns, same session, same patient as text (one brain). Realtime
           LiveKit when configured, the browser conversational loop otherwise. */}
       {voiceMode ? (
@@ -359,17 +385,17 @@ export function SimSessionView({
         aiFallback={aiFallback}
       />
 
-      {/* Transcript — owns the viewport. */}
+      {/* Transcript: owns the viewport. */}
       <ChatList turns={turns} patientName={patientName} typing={typing} scrollRef={scrollRef} />
 
-      {/* Error — a single quiet line, not a panel. */}
+      {/* Error: a single quiet line, not a panel. */}
       {error ? (
         <p className="border-t border-border bg-card px-4 py-2 text-small text-status-alert-fg" role="alert">
           {error}
         </p>
       ) : null}
 
-      {/* Finish & debrief — a visible affordance above the composer once an
+      {/* Finish & debrief: a visible affordance above the composer once an
           exchange exists (T45). Secondary outline so send stays the dominant
           primary; tapping opens a confirm sheet to prevent slip-taps. */}
       {turns.length >= 2 ? (
@@ -380,7 +406,7 @@ export function SimSessionView({
             className="flex w-full items-center justify-center gap-2 rounded-md border-2 border-border bg-card px-3 py-2.5 text-small font-semibold text-foreground transition-transform active:translate-y-px"
           >
             <Flag className="size-4" aria-hidden />
-            Finish &amp; debrief
+            {graded ? "Finish and hand in" : <>Finish &amp; debrief</>}
           </button>
         </div>
       ) : null}
@@ -398,10 +424,10 @@ export function SimSessionView({
         </>
       )}
 
-      {/* "More" menu — hint reveal, notes, finish. Secondary actions live here. */}
+      {/* "More" menu: hint reveal, notes, finish. Secondary actions live here. */}
       <MobileBottomSheet open={menuOpen} onOpenChange={setMenuOpen} title="Session">
         <div className="space-y-2">
-            {/* Hint — opt-in, flagged for the debrief. */}
+            {/* Hint: opt-in, flagged for the debrief. */}
             <button
               type="button"
               onClick={() => {
@@ -416,7 +442,7 @@ export function SimSessionView({
               <span className="flex-1">Need a hint?</span>
             </button>
 
-            {/* Case info — who you're talking to, one tap away. */}
+            {/* Case info, who you're talking to, one tap away. */}
             <button
               type="button"
               onClick={() => {
@@ -430,7 +456,7 @@ export function SimSessionView({
               <span className="flex-1">About {patientName}</span>
             </button>
 
-            {/* Notes — opens the MSE/hypotheses sheet. */}
+            {/* Notes: opens the MSE/hypotheses sheet. */}
             <button
               type="button"
               onClick={() => {
@@ -446,13 +472,13 @@ export function SimSessionView({
           </div>
         </MobileBottomSheet>
 
-      {/* Finish confirm — a two-step sheet so the session-ending action is never
+      {/* Finish confirm: a two-step sheet so the session-ending action is never
           a slip-tap (§3.6). */}
       <MobileBottomSheet
         open={confirmFinish}
         onOpenChange={setConfirmFinish}
         title={`End the session with ${patientName}?`}
-        description="You'll go to the debrief and won't be able to continue this conversation."
+        description={graded ? "Next you write up the MSE, risk and a short formulation, then get your grade." : "You'll go to the debrief and won't be able to continue this conversation."}
         footer={
           <div className="flex gap-2">
             <button
@@ -465,7 +491,14 @@ export function SimSessionView({
             </button>
             <button
               type="button"
-              onClick={() => void finishAndDebrief()}
+              onClick={() => {
+                if (graded) {
+                  setConfirmFinish(false);
+                  setWrapUp(true);
+                  return;
+                }
+                void finishAndDebrief();
+              }}
               disabled={ending}
               className="flex-1 rounded-md border-2 border-foreground bg-primary px-3 py-2.5 text-small font-semibold text-primary-foreground active:translate-y-px disabled:opacity-40"
             >
@@ -475,7 +508,7 @@ export function SimSessionView({
         }
       />
 
-      {/* Notes sheet — MSE scratchpad + hypotheses (a bottom sheet, not a sidebar). */}
+      {/* Notes sheet: MSE scratchpad + hypotheses (a bottom sheet, not a sidebar). */}
       <NotesSheet
         open={notesOpen}
         onOpenChange={setNotesOpen}
@@ -486,29 +519,29 @@ export function SimSessionView({
         hasContent={hasNotes}
       />
 
-      {/* Hint — opt-in, flagged for the debrief. */}
+      {/* Hint: opt-in, flagged for the debrief. */}
       <HintSheet
         open={hintOpen}
         onOpenChange={setHintOpen}
         hint={DIFFICULTY_HINT[difficulty] ?? "Interview the patient."}
       />
 
-      {/* Case info — the patient's context, as far as you know it walking in.
+      {/* Case info: the patient's context, as far as you know it walking in.
           Not a dossier: just who they are. (T135 secondary actions in sheets.) */}
       <MobileBottomSheet
         open={caseInfoOpen}
         onOpenChange={setCaseInfoOpen}
         title={`About ${patientName}`}
-        description="What you know walking in — nothing more."
+        description="What you know walking in. Nothing more."
       >
         <dl className="space-y-2.5 text-small">
           <div className="flex items-baseline justify-between gap-4">
             <dt className="shrink-0 text-muted-foreground">Age</dt>
-            <dd className="text-right font-medium">{patientAge ? `${patientAge} years` : "—"}</dd>
+            <dd className="text-right font-medium">{patientAge ? `${patientAge} years` : "Not given"}</dd>
           </div>
           <div className="flex items-baseline justify-between gap-4">
             <dt className="shrink-0 text-muted-foreground">Background</dt>
-            <dd className="text-right font-medium">{patientContext ?? "—"}</dd>
+            <dd className="text-right font-medium">{patientContext ?? "Not given"}</dd>
           </div>
           <p className="pt-1 text-caption text-muted-foreground">
             Everything else, you find out by asking.

@@ -1,7 +1,7 @@
 /**
- * MSE Trainer (Part 6.4) — tag stimuli across the 11 domains from a
+ * MSE Trainer (Part 6.4): tag stimuli across the 11 domains from a
  * controlled vocabulary. Green/amber/red vs expert coding (amber =
- * defensible alternative). Dedicated mood-vs-affect drill — students conflate
+ * defensible alternative). Dedicated mood-vs-affect drill: students conflate
  * these constantly. "Describe, don't diagnose": AI flags diagnostic terms.
  */
 
@@ -42,7 +42,7 @@ export interface MoodAffectItem {
 
 export const MOOD_AFFECT_ITEMS: MoodAffectItem[] = [
   { text: "\"I've felt empty inside for weeks.\"", answer: "mood", why: "A sustained inner feeling the client reports." },
-  { text: "Client laughs while describing a terrible loss.", answer: "affect", why: "Observable emotional expression — incongruent affect." },
+  { text: "Client laughs while describing a terrible loss.", answer: "affect", why: "Observable emotional expression: incongruent affect." },
   { text: "\"I'm on top of the world these days.\"", answer: "mood", why: "Self-reported sustained feeling." },
   { text: "Client's face stays blank through the whole session.", answer: "affect", why: "Observable flat affect." },
   { text: "\"Everything is grey. Nothing matters.\"", answer: "mood", why: "Reported inner state." },

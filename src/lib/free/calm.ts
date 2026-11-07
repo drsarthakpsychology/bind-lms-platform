@@ -4,7 +4,7 @@ export const CALM_TOOLS = [
     id: "breathing",
     title: "Guided breathing",
     icon: "◯",
-    minutes: "1–5 min",
+    minutes: "1 to 5 min",
     text: "Follow the circle. Box breathing, 4-7-8, or slow breathing at about six breaths a minute.",
     why: "Slow breathing with a longer out-breath activates the body's calming (parasympathetic) system and lowers arousal within a few minutes.",
   },

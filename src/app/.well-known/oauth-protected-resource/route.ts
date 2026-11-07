@@ -2,7 +2,7 @@ import { appUrl as liveAppUrl } from "@/lib/app-url";
 import { NextResponse } from "next/server";
 
 /**
- * RFC 9728 OAuth Protected Resource Metadata — tells agents which
+ * RFC 9728 OAuth Protected Resource Metadata: tells agents which
  * authorization server guards the site's authenticated APIs. The AS is
  * Supabase Auth (the app uses Supabase session JWTs); Supabase publishes its
  * own OIDC discovery at the auth base. The resource itself (the site) is

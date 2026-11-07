@@ -1,3 +1,4 @@
+import { MiddleTruncate } from "@/components/ui/middle-truncate";
 import { Bell, LogOut, MessageSquare, Shield, User } from "lucide-react";
 import { ColourBlindToggle } from "@/components/settings/colour-blind-toggle";
 import { getSession } from "@/lib/auth/session";
@@ -11,15 +12,15 @@ import { Button } from "@/components/ui/button";
 import { BRAND } from "@/lib/brand";
 
 /**
- * /settings — grouped progressive account screen (T41).
+ * /settings: grouped progressive account screen (T41).
  *
  * The mobile principle: settings is NOT a giant scroll of every toggle. It is
- * a few grouped sections — Account, Shortcuts — each revealing its details
+ * a few grouped sections (Account, Shortcuts) each revealing its details
  * contextually, with one obvious action (log out) at the end.
  *
  * Honest data: profiles has id/role/active_session_token/expires_at (no
  * display_name/avatar), so the identity header shows the email + role from the
- * session — never a fabricated name. Preference toggles that the app does not
+ * session, never a fabricated name. Preference toggles that the app does not
  * actually store are not rendered as fake switches; what exists here is real.
  */
 
@@ -33,7 +34,7 @@ export default async function SettingsPage() {
     <MobilePage inset={false}>
       <MobileHeader title="Settings" inset={false} />
       <div className="flex flex-col gap-6 px-4 py-4">
-        {/* Identity — one honest block, not a fake name. */}
+        {/* Identity: one honest block, not a fake name. */}
         <div className="flex items-center gap-3 rounded-lg border-2 border-foreground bg-card p-4 hard-shadow-sm">
           <div
             aria-hidden
@@ -42,7 +43,7 @@ export default async function SettingsPage() {
             {(email?.[0] ?? "S").toUpperCase()}
           </div>
           <div className="min-w-0 flex-1">
-            <p className="truncate text-small font-semibold text-foreground">{email ?? "Signed in"}</p>
+            <MiddleTruncate text={email ?? "Signed in"} className="text-small font-semibold text-foreground" />
             <p className="mt-0.5 flex items-center gap-1.5 text-caption text-muted-foreground">
               <span className="capitalize">{role}</span>
               <span aria-hidden>·</span>
@@ -52,12 +53,12 @@ export default async function SettingsPage() {
           <StatusPill tone="neutral" label="Signed in" />
         </div>
 
-        {/* Account — what the app actually knows. */}
+        {/* Account: what the app actually knows. */}
         <MobileSection title="Account" description="Your sign-in and role on the programme.">
           <MobileListItem
             leading={<User className="size-4 text-foreground" aria-hidden />}
             title="Email address"
-            subtitle={email ?? "—"}
+            subtitle={email ?? "Not set"}
           />
           <MobileListItem
             leading={<Shield className="size-4 text-foreground" aria-hidden />}
@@ -66,13 +67,13 @@ export default async function SettingsPage() {
           />
         </MobileSection>
 
-        {/* Shortcuts — quick jumps, kept honest (they don't change settings). */}
+        {/* Shortcuts: quick jumps, kept honest (they don't change settings). */}
         <MobileSection title="Shortcuts" description="Quick jumps around the programme.">
           <MobileListItem
             href="/courses"
             leading={<span className="font-mono text-xs font-bold text-link">01</span>}
             title="Course modules"
-            subtitle="Browse the curriculum — locked ones say why."
+            subtitle="Browse the curriculum: locked ones say why."
           />
           <MobileListItem
             href="/notifications"
@@ -88,7 +89,7 @@ export default async function SettingsPage() {
           />
         </MobileSection>
 
-        {/* Accessibility — kept closed and quiet at the bottom on purpose. */}
+        {/* Accessibility: kept closed and quiet at the bottom on purpose. */}
         <details className="group rounded-lg border-2 border-line px-4">
           <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between text-small text-muted-foreground [&::-webkit-details-marker]:hidden">
             Accessibility
@@ -107,7 +108,7 @@ export default async function SettingsPage() {
             </Button>
           </form>
           <p className="mt-2 text-center text-caption text-muted-foreground">
-            Signing out keeps your progress — just sign back in.
+            Signing out keeps your progress, just sign back in.
           </p>
         </div>
       </div>

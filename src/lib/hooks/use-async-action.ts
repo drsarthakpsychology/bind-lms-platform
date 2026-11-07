@@ -3,7 +3,7 @@
 import * as React from "react";
 
 /**
- * useAsyncAction — a uniform loading / error contract for async interactions.
+ * useAsyncAction: a uniform loading / error contract for async interactions.
  *
  * The mobile principle (T49/T50): never make the user stare at an unexplained
  * blank screen, and every failure must have a recovery. This hook wraps a
@@ -17,7 +17,7 @@ import * as React from "react";
  *     if (!res.ok) throw new Error("Couldn't save. Try again.");
  *   });
  *
- * `run` rethrows nothing to the caller — the error is captured into `error`.
+ * `run` rethrows nothing to the caller: the error is captured into `error`.
  * Callers render the error inline (MobileErrorLine / AsyncErrorCard) and
  * offer the retry via `run` again.
  */

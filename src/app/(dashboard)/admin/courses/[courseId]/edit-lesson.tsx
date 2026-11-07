@@ -20,7 +20,7 @@ export type EditLessonInitial = {
 };
 
 /**
- * Inline lesson editor — title, notes, week, and the assignment toggle —
+ * Inline lesson editor (title, notes, week, and the assignment toggle)
  * expanded in place under the lesson row. The video is managed separately
  * (replace on the row); this never touches it.
  */

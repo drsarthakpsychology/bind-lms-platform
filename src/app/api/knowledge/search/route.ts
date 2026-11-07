@@ -7,7 +7,7 @@ import { searchKnowledge, cite, type KnowledgeHit } from "@/lib/knowledge/retrie
 export const runtime = "nodejs";
 
 const schema = z.object({
-  /** the student/faculty question — "explain the difference between…" */
+  /** the student/faculty question: "explain the difference between…" */
   q: z.string().min(2).max(500),
   /** max results */
   limit: z.number().int().min(1).max(20).default(8),
@@ -15,15 +15,15 @@ const schema = z.object({
   source: z.string().max(80).optional(),
   /** filter to one concept (knowledge_concepts.name, e.g. "Clozapine") */
   concept: z.string().max(80).optional(),
-  /** true = keyword only (skip embedding/model — fast lane) */
+  /** true = keyword only (skip embedding/model, fast lane) */
   keywordOnly: z.boolean().optional(),
 });
 
 /**
- * GET /api/knowledge/search?q=… — hybrid retrieval over the authorized book
+ * GET /api/knowledge/search?q=…: hybrid retrieval over the authorized book
  * corpus. Returns source-traceable passages (book/chapter/section/page) that
  * any AI feature can feed into its context. This is the reusable knowledge
- * layer's read API — the Psychology Tutor, psychopharmacology answers, quiz
+ * layer's read API: the Psychology Tutor, psychopharmacology answers, quiz
  * generation and patient-simulation context all consume it.
  *
  * Server-side: uses the service-role admin client (corpus tables are

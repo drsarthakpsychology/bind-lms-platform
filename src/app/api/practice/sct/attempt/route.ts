@@ -20,7 +20,7 @@ const schema = z.object({
 });
 
 /**
- * POST /api/practice/sct/attempt — persist a completed judgment call.
+ * POST /api/practice/sct/attempt: persist a completed judgment call.
  * One row per (item, user) via the table's unique constraint. The static
  * seed item is upserted into sct_items keyed by slug on first write, so the
  * FK resolves without a separate seeding pass. Owner-scoped; RLS on

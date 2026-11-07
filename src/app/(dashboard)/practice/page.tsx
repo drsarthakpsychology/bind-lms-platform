@@ -13,10 +13,10 @@ import { Reveal } from "@/components/motion/reveal";
 import { PRACTICE_TOOLS } from "@/lib/practice/tools";
 
 /**
- * /practice — the deliberate browse view (v5.1 Part B).
+ * /practice: the deliberate browse view (v5.1 Part B).
  * Grouped by session length (casebook Axis 5), collapsible, open state
  * remembered per user. Every card shows a state chip, a time badge and a
- * progress line — all honest (computed from real data, blank when none).
+ * progress line: all honest (computed from real data, blank when none).
  * Eyebrow labels are one-word interaction verbs; no two features share an
  * icon. Cards are gated by feature flags.
  */
@@ -57,7 +57,7 @@ export default async function PracticeHubPage() {
   const resume = user ? await lastPracticePlace(user.id, visible.filter((t) => !t.locked).map((t) => ({ href: t.href, title: t.title }))) : null;
 
   return (
-    <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6">
+    <div className="mx-auto max-w-5xl">
       <Reveal delay={0.05}>
         <header className="mb-6">
           <p className="text-eyebrow text-muted-foreground">Practice</p>
@@ -106,7 +106,7 @@ export default async function PracticeHubPage() {
         </Link>
       </Reveal>
 
-      {/* weak-spots banner — real gaps, server-computed */}
+      {/* weak-spots banner: real gaps, server-computed */}
       <Reveal delay={0.15}>
         <WeakSpotsBanner />
       </Reveal>

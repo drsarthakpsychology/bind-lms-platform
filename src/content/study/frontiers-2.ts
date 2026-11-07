@@ -11,10 +11,33 @@ For a long time the brain was thought to be sealed off from the immune system. W
 - Raised inflammation is more common in people whose depression **has not responded** to standard antidepressants, and in people with obesity, childhood adversity and chronic illness.
 - **Interferon-alpha**, an immune treatment once used for hepatitis C, caused depression in a large minority of patients, which is strong evidence that immune signals **can cause** depressive symptoms.
 
+:::widget stress
+{
+  "title": "Stress, cortisol and inflammation",
+  "caption": "Play the stress response: amygdala, hypothalamus, pituitary, adrenal, then cortisol. Normally cortisol damps inflammation and switches the response off through feedback. Under chronic stress, immune cells become resistant to cortisol's calming signal, so inflammation can stay high: one route by which long-term stress and childhood adversity may raise the inflammatory markers seen in a subgroup of people with depression."
+}
+:::
+
 ### What has been tried
 - Anti-inflammatory add-ons (celecoxib, minocycline, omega-3, statins) and immune-targeting antibodies have given **mixed** results.
 - An antibody that blocks TNF (infliximab) helped **only** the depressed patients with high CRP, and not others. This suggests that if immune treatments work, they will work for a **selected subgroup**.
 - **Status: research only.** No anti-inflammatory treatment is a standard treatment for depression or schizophrenia.
+
+:::widget flow
+{
+  "title": "From inflammation to low mood: the proposed chain",
+  "layout": "chain",
+  "nodes": [
+    { "id": "src", "label": "Source of inflammation", "detail": "Infection, obesity, chronic stress, childhood adversity, autoimmune illness, poor sleep." },
+    { "id": "cyt", "label": "Cytokines in the blood", "detail": "IL-6, TNF and IL-1 rise; the liver makes more CRP." },
+    { "id": "sig", "label": "Signal reaches the brain", "detail": "Through the vagus nerve, leaky spots in the blood-brain barrier and active transport." },
+    { "id": "mic", "label": "Microglia activated", "detail": "The brain's own immune cells switch to an inflammatory state." },
+    { "id": "kyn", "label": "Chemistry shifts", "detail": "Tryptophan is diverted from serotonin towards the kynurenine pathway, producing quinolinic acid, which acts on NMDA receptors. Dopamine signalling in reward circuits falls." },
+    { "id": "sick", "label": "Sickness behaviour", "detail": "Fatigue, loss of pleasure, slowing, poor sleep and social withdrawal: overlapping with depression." }
+  ],
+  "caption": "Press Play. Each link has support, mostly from animal and interferon studies; the whole chain is proven in only a subgroup of depressed people, if at all."
+}
+:::
 
 ### Where immune psychiatry already saves lives: autoimmune encephalitis
 In **anti-NMDA receptor encephalitis**, the body makes antibodies against brain receptors. It often starts with **psychiatric symptoms**: anxiety, insomnia, strange behaviour, psychosis, then seizures, abnormal movements, reduced consciousness and unstable blood pressure or heart rate. It is commonest in young women and is sometimes linked to an ovarian **teratoma**. Treated early (immunotherapy, removing a tumour), many recover well. Missed, it can kill.
@@ -40,12 +63,12 @@ In **anti-NMDA receptor encephalitis**, the body makes antibodies against brain 
   "unit": "%",
   "answer": [20, 30],
   "reveal": "About a quarter. That is a real subgroup but not 'depression is inflammation'. Many people with high CRP are not depressed, and many depressed people have normal CRP.",
-  "clinician": "Osimo and colleagues (Psychological Medicine, 2019) estimated about 27% of patients with depression have CRP above 3 mg/L and about 58% above 1 mg/L. CRP is influenced by BMI, smoking, sleep and infection, so confounding is substantial."
+  "clinician": "A 2019 meta-analysis estimated about 27% of patients with depression have CRP above 3 mg/L and about 58% above 1 mg/L. CRP is influenced by BMI, smoking, sleep and infection, so confounding is substantial."
 }
 :::
 
 :::clinician
-Key evidence: elevated IL-6, TNF and CRP in meta-analyses of MDD (Dowlati and colleagues, Biological Psychiatry 2010; Osimo and colleagues 2020 for cytokines); interferon-alpha induced depression in roughly a quarter to half of treated patients (Raison, Capuron and Miller); Raison and colleagues' infliximab RCT (JAMA Psychiatry, 2013) found no overall benefit but improvement in patients with baseline hs-CRP above 5 mg/L. Minocycline was negative for negative symptoms of schizophrenia in the BeneMin trial (Deakin and colleagues, Lancet Psychiatry 2018). The INSIGHT trial of adjunctive minocycline in TRD (Nettis and colleagues, Neuropsychopharmacology 2021) suggested benefit only with CRP of 3 mg/L or more. Microglial PET imaging using TSPO ligands has given inconsistent results, partly due to ligand and genotype issues. For autoimmune encephalitis, use Graus criteria (Lancet Neurology, 2016) and the Pollak criteria for autoimmune psychosis (Lancet Psychiatry, 2020); red flags include seizures, catatonia, dyskinesias, autonomic instability, decreased consciousness, focal neurology, hyponatraemia, and intolerance to antipsychotics.
+Key findings: elevated IL-6, TNF and CRP in meta-analyses of MDD (from 2010, with a larger 2020 update for cytokines); interferon-alpha induced depression in roughly a quarter to half of treated patients; a 2013 infliximab RCT in 60 patients with treatment-resistant depression found no overall benefit but improvement in patients with baseline hs-CRP above 5 mg/L. Minocycline was negative for negative symptoms of schizophrenia in the 2018 BeneMin trial. The INSIGHT trial of adjunctive minocycline in TRD (2021) suggested benefit only with CRP of 3 mg/L or more. Microglial PET imaging using TSPO ligands has given inconsistent results, partly due to ligand and genotype issues. For autoimmune encephalitis, use the 2016 Graus criteria and the 2020 Pollak criteria for autoimmune psychosis; red flags include seizures, catatonia, dyskinesias, autonomic instability, decreased consciousness, focal neurology, hyponatraemia, and intolerance to antipsychotics.
 :::
 
 :::recall
@@ -117,7 +140,7 @@ A **polygenic risk score** adds up a person's many small-risk variants. At the g
 :::
 
 :::clinician
-GWAS: the PGC schizophrenia study (Trubetskoy and colleagues, Nature 2022) reported 287 associated loci, with convergence on synaptic genes; SNP-based heritability is far below twin heritability ("missing heritability"). PRS explain only a few percent of liability variance in non-European samples and are not recommended for clinical prediction. Pharmacogenomics: CPIC guidelines for SSRIs (CYP2D6, CYP2C19; Bousman and colleagues, Clinical Pharmacology and Therapeutics 2023) and for carbamazepine/oxcarbazepine with HLA-B*15:02 and HLA-A*31:01. Trials of combinatorial testing: GUIDED (Greden and colleagues, Journal of Psychiatric Research 2019) missed its primary outcome, with secondary benefits; PRIME Care (Oslin and colleagues, JAMA 2022) found small increases in remission and avoidance of drug-gene interactions in veterans. In India, HLA-B*15:02 frequency varies widely between communities; testing access and cost are the practical limits.
+GWAS: the 2022 PGC schizophrenia study (about 77,000 cases) reported 287 associated loci, with convergence on synaptic genes; SNP-based heritability is far below twin heritability ("missing heritability"). PRS explain only a few percent of liability variance in non-European samples and are not recommended for clinical prediction. Pharmacogenomics: CPIC guidelines for SSRIs (CYP2D6, CYP2C19; updated in 2023) and for carbamazepine/oxcarbazepine with HLA-B*15:02 and HLA-A*31:01. Trials of combinatorial testing: GUIDED (2019, about 1,200 patients) missed its primary outcome, with secondary benefits; PRIME Care (2022, nearly 2,000 participants) found small increases in remission and avoidance of drug-gene interactions in veterans. In India, HLA-B*15:02 frequency varies widely between communities; testing access and cost are the practical limits.
 :::
 
 :::recall
@@ -166,6 +189,22 @@ The **Hierarchical Taxonomy of Psychopathology (HiTOP)** is built from statistic
 - Then **spectra**: **internalising** (depression, anxiety), **thought disorder** (psychosis), **disinhibited externalising** (substance use, impulsivity), **antagonistic externalising** (hostility, manipulation), **detachment** (withdrawal), and **somatoform**.
 - Below these: subfactors, syndromes and specific symptoms.
 
+:::widget layers
+{
+  "title": "The HiTOP hierarchy, from general to specific",
+  "shape": "stack",
+  "layers": [
+    { "label": "General factor (p)", "detail": "A broad tendency towards psychopathology of any kind. People high on p have more disorders, earlier onset and worse outcomes." },
+    { "label": "Superspectra", "detail": "For example emotional dysfunction (internalising plus detachment), psychosis, externalising." },
+    { "label": "Spectra", "detail": "Internalising, thought disorder, disinhibited externalising, antagonistic externalising, detachment, somatoform." },
+    { "label": "Subfactors", "detail": "Within internalising, for example: distress (depression, generalised anxiety, PTSD), fear (panic, phobias), eating pathology, sexual problems." },
+    { "label": "Syndromes", "detail": "Clusters close to familiar diagnoses, such as major depression, but scored as dimensions." },
+    { "label": "Components and symptoms", "detail": "The building blocks: low mood, anhedonia, worry, insomnia, checking. Two people with 'depression' may differ here." }
+  ],
+  "caption": "Tap each level. A clinician can describe the same person at any level, from p down to single symptoms."
+}
+:::
+
 :::widget sort
 {
   "prompt": "Which framework does each statement describe?",
@@ -199,7 +238,7 @@ The **Hierarchical Taxonomy of Psychopathology (HiTOP)** is built from statistic
 :::
 
 :::clinician
-Insel and colleagues introduced RDoC in the American Journal of Psychiatry (2010). Kotov and colleagues described HiTOP in the Journal of Abnormal Psychology (2017), with later updates proposing the somatoform spectrum and clinical measures (HiTOP-SR). Caspi and colleagues (Clinical Psychological Science, 2014) introduced the p factor from the Dunedin cohort; its interpretation (general distress, impairment, or a statistical artefact) is debated. The 227 figure comes from Zimmerman and colleagues (Comprehensive Psychiatry, 2015); Fried and Nesse (Journal of Affective Disorders, 2015) found 1,030 unique symptom profiles among 3,703 STAR*D participants. The APA's 2026 roadmap (Oquendo and colleagues, American Journal of Psychiatry 2026) describes a more dynamic, evidence-graded manual with dimensional and contextual components; specifics, timelines and naming are not final. ICD-11 (in force since January 2022) is the legal reference in Indian practice and the MHCA 2017 requires internationally accepted standards for diagnosis.
+RDoC was launched in 2010 by the US National Institute of Mental Health under Thomas Insel. HiTOP was set out in 2017 by a consortium led by Roman Kotov, with later updates proposing the somatoform spectrum and clinical measures (HiTOP-SR). The p factor was introduced in 2014 using data from the Dunedin birth cohort; its interpretation (general distress, impairment, or a statistical artefact) is debated. The 227 figure comes from a 2015 count of the ways the DSM-5 criteria for major depression can combine; a separate 2015 analysis found 1,030 unique symptom profiles among 3,703 STAR*D participants. The APA's 2026 roadmap describes a more dynamic, evidence-graded manual with dimensional and contextual components; specifics, timelines and naming are not final. ICD-11 (in force since January 2022) is the legal reference in Indian practice and the MHCA 2017 requires internationally accepted standards for diagnosis.
 :::
 
 :::recall
@@ -232,17 +271,56 @@ Computational psychiatry uses **mathematical models of how the brain learns and 
 - **Prediction and belief**: one theory of psychosis says the brain gives **too much weight to surprising signals** (or too little to prior expectations), so random events feel meaningful, which could lead to delusions.
 **Status: research only.** These models are elegant and growing, but no computational test is used to diagnose or treat patients routinely.
 
+:::widget flow
+{
+  "title": "Predictive processing: how a belief is updated",
+  "layout": "cycle",
+  "nodes": [
+    { "id": "prior", "label": "Prior belief", "detail": "What the brain expects, built from past experience: 'The street is quiet tonight.'" },
+    { "id": "pred", "label": "Prediction", "detail": "The brain predicts the sensory input it should receive." },
+    { "id": "in", "label": "Sensory input", "detail": "What actually arrives: a car horn, a stranger's glance." },
+    { "id": "err", "label": "Prediction error", "detail": "The mismatch between prediction and input." },
+    { "id": "prec", "label": "Precision weighting", "detail": "How much the error counts. In one theory of psychosis, dopamine gives too much weight to small errors, so random events feel significant." },
+    { "id": "upd", "label": "Belief updated", "detail": "Ordinary updating is small. Over-weighted errors push towards new, odd explanations ('the glance was a signal'), which may harden into delusions." }
+  ],
+  "caption": "Press Play. Psychosis, anxiety and autism have all been modelled as different settings of precision, which remains a research hypothesis."
+}
+:::
+
+:::widget brainmap
+{
+  "title": "Circuits that computational psychiatry models",
+  "focus": ["basal-ganglia", "prefrontal", "amygdala", "hippocampus", "thalamus"],
+  "notes": {
+    "basal-ganglia": "Dopamine neurons projecting here signal reward prediction errors: 'better or worse than expected'. Models of depression (blunted reward learning) and addiction (over-valued drug cues) focus here.",
+    "prefrontal": "Goal-directed, model-based planning. Weakened model-based control relative to habit has been linked to compulsivity in OCD and addiction.",
+    "amygdala": "Learning about threat. Anxiety models describe over-estimation of threat probability and intolerance of uncertainty.",
+    "hippocampus": "Builds context and maps of possibilities; supports learning which situations are safe.",
+    "thalamus": "Relays and filters sensory input; part of circuits proposed to set the precision of signals in psychosis models."
+  },
+  "caption": "Tap each region. The models are precise and testable, but none is yet a clinical test."
+}
+:::
+
 ### Digital phenotyping
 Smartphones and wearables record **sleep, movement, typing, phone use and voice**. Researchers try to detect **early warning signs** (for example a drop in movement and social contact before a depressive relapse, or reduced sleep before mania).
 **Status: research only to early clinical pilots.** Problems: privacy and consent, data that differ between phones, people who stop wearing devices, and models that work in one group but not another.
 
+
+:::widget hypnogram
+{
+ "title": "The night a wearable tries to measure",
+ "caption": "Drag through a real night of stages, then switch on depression to see REM come earlier and deep sleep shrink. A wrist wearable cannot see these stages directly; it guesses them from movement and heart rate, so it is fair at total sleep and poor at stages. Shortened sleep over several nights, though, is one of the more useful early signs of a coming manic relapse."
+}
+:::
+
 ### Prediction models and the generalisation problem
-Machine-learning models can "predict" who will respond to a treatment in one dataset, then **fail completely** in the next. A 2024 study in **Science** found that models predicting outcomes in schizophrenia trials worked within the trial they were trained on but **not across other trials**. Always ask: **was it tested on new, independent data?**
+Machine-learning models can "predict" who will respond to a treatment in one dataset, then **fail completely** in the next. A large 2024 analysis found that models predicting outcomes in schizophrenia trials worked within the trial they were trained on but **not across other trials**. Always ask: **was it tested on new, independent data?**
 
 ### AI chatbots and large language models (LLMs)
 | What is known (as of Nov 2026) | What is concerning |
 |---|---|
-| A randomised trial of a purpose-built generative AI therapy chatbot (Therabot, NEJM AI, March 2025, 106 participants) reported reduced depression and anxiety symptoms compared with a waitlist | One small trial, waitlist control, selected participants; not a substitute for treatment |
+| A randomised trial of a purpose-built generative AI therapy chatbot (Therabot, March 2025, 210 participants, about half given the chatbot) reported reduced depression and anxiety symptoms compared with a waitlist | One small trial, waitlist control, selected participants; not a substitute for treatment |
 | Older rule-based apps (such as Woebot, Wysa) had small trials, mostly short-term | Woebot Health closed its consumer app in mid-2025 |
 | LLMs can draft notes, summarise research and help practise interview skills | General chatbots can be **sycophantic**, agree with harmful beliefs, give unsafe responses to suicidal users, and invent facts |
 | | Lawsuits in the USA have alleged that chatbots contributed to teenagers' suicides |
@@ -281,13 +359,13 @@ If a person tells you about suicidal thoughts, take it seriously, ask directly, 
 :::
 
 :::clinician
-Computational psychiatry: Huys, Maia and Frank (Nature Neuroscience, 2016) provide a framework; predictive-processing accounts of psychosis (Sterzer and colleagues, Biological Psychiatry 2018) remain largely theoretical with mixed empirical support. Generalisability: Chekroud and colleagues (Science, January 2024) showed that models predicting antipsychotic trial outcomes performed well within trials but at chance across independent trials. Therabot: Heinz and colleagues (NEJM AI, 2025) reported greater symptom reduction than waitlist over the trial period, with human monitoring of conversations, so it is not evidence for unsupervised general-purpose chatbots. Risks documented in 2025 work include stigmatising or unsafe responses to crisis prompts by commercial LLMs (Moore and colleagues, FAccT 2025) and ethics violations against professional standards (Iftikhar and colleagues, 2025). Regulatory status: the FDA Digital Health Advisory Committee met on 6 November 2025 on generative-AI digital mental health devices; India regulates software as a medical device under the Medical Devices Rules 2017 but has no specific framework for therapy chatbots as of late 2026, and the Digital Personal Data Protection Act 2023 applies to sensitive data. Teach students to treat AI as a tool to check, not an authority.
+Computational psychiatry: an influential 2016 framework proposed using models of learning and decision-making as a bridge from neuroscience to clinical care; predictive-processing accounts of psychosis (reviewed in 2018) remain largely theoretical with mixed empirical support. Generalisability: a January 2024 study showed that models predicting antipsychotic trial outcomes performed well within trials but at chance across independent trials. Therabot: the 2025 trial reported greater symptom reduction than waitlist over the trial period, with human monitoring of conversations, so it is not evidence for unsupervised general-purpose chatbots. Risks documented in 2025 work include stigmatising or unsafe responses to crisis prompts by commercial LLMs and ethics violations against professional standards. Regulatory status: the FDA Digital Health Advisory Committee met on 6 November 2025 on generative-AI digital mental health devices; India regulates software as a medical device under the Medical Devices Rules 2017 but has no specific framework for therapy chatbots as of late 2026, and the Digital Personal Data Protection Act 2023 applies to sensitive data. Teach students to treat AI as a tool to check, not an authority.
 :::
 
 :::recall
 1. What is computational psychiatry? || Using mathematical models of learning and prediction to understand symptoms.
 2. What is digital phenotyping? || Using data from phones and wearables (sleep, movement, typing, voice) to detect patterns and warning signs.
-3. What did the 2024 Science study show about prediction models? || They worked within the trial they were trained on but failed across other trials.
+3. What did the 2024 multi-trial study show about prediction models? || They worked within the trial they were trained on but failed across other trials.
 4. What was the Therabot trial and its main limitation? || An RCT of a purpose-built AI therapy chatbot showing symptom reduction versus waitlist; small, waitlist control, supervised.
 5. Name three risks of general chatbots for people in distress. || Sycophancy, unsafe responses to suicidal users, invented facts (also dependence, privacy).
 :::
@@ -316,7 +394,7 @@ Q: Which statement about AI chatbots for mental health is accurate as of Novembe
 ### The claim and the studies
 Parapsychologists have tested whether people can influence **random number generators** (RNGs) by intention, for example by "wishing" a machine to produce more 1s than 0s. Hundreds of such experiments were run from the 1950s to the 2000s.
 
-In **2006**, **Bösch, Steinkamp and Boller** published a meta-analysis in **Psychological Bulletin** of **380 studies**. What they found:
+In **2006**, a large **meta-analysis** pooled **380 of these studies**. What it found:
 - A **statistically significant but extremely small** overall effect: a hit rate a tiny fraction of a percentage point above chance.
 - **Smaller studies showed bigger effects**, and larger studies showed effects close to zero. This pattern is a classic warning sign of **publication bias**.
 - The results varied hugely between studies (**heterogeneity**).
@@ -324,8 +402,8 @@ In **2006**, **Bösch, Steinkamp and Boller** published a meta-analysis in **Psy
 - The authors concluded that the existence of psychokinesis could not be established.
 
 ### Feeling the future: Bem and the replication crisis
-In **2011**, the respected psychologist **Daryl Bem** published nine experiments in a top journal (the Journal of Personality and Social Psychology) claiming **precognition**: for example, that practising words **after** a memory test improved recall of those words **on** the test. Eight of nine experiments were "significant".
-- Independent teams, including **Ritchie, Wiseman and French (2012)**, repeated the experiments carefully and found **nothing**.
+In **2011**, the respected psychologist **Daryl Bem** published nine experiments in a leading psychology journal claiming **precognition**: for example, that practising words **after** a memory test improved recall of those words **on** the test. Eight of nine experiments were "significant".
+- Independent teams, including a three-laboratory replication in 2012, repeated the experiments carefully and found **nothing**.
 - A large multi-lab study (the **Transparent Psi Project**, 2023) with over 2,000 participants and fully pre-registered methods found results **consistent with chance**.
 - Bem's paper became a famous example in the **replication crisis**: if standard methods could "prove" something so implausible, the methods themselves were the problem.
 
@@ -338,7 +416,7 @@ In **2011**, the respected psychologist **Daryl Bem** published nine experiments
   "unit": "%",
   "answer": [49.5, 50.5],
   "reveal": "About 49.9%: chance. With a large, pre-registered, independently audited study, the effect that small studies had 'found' disappeared. Size and transparency are what make results trustworthy.",
-  "clinician": "Kekecs and colleagues (Royal Society Open Science, 2023): 2,115 participants and about 38,000 erotic-picture trials replicating Bem's Experiment 1; observed success rate 49.89%, with Bayesian analyses supporting the null. In a funnel plot of the earlier RNG literature, small positive studies cluster on one side with small null studies missing, the classic asymmetry of publication bias (Egger's regression and trim-and-fill test for it, with limited power under heterogeneity)."
+  "clinician": "The Transparent Psi Project (2023): 2,115 participants and about 38,000 erotic-picture trials replicating Bem's Experiment 1; observed success rate 49.89%, with Bayesian analyses supporting the null. In a funnel plot of the earlier RNG literature, small positive studies cluster on one side with small null studies missing, the classic asymmetry of publication bias (Egger's regression and trim-and-fill test for it, with limited power under heterogeneity)."
 }
 :::
 
@@ -386,11 +464,11 @@ If a friend says she saw a cow in a Pune street, you believe her. If she says sh
 :::
 
 :::clinician
-Bösch, Steinkamp and Boller (Psychological Bulletin, 2006): 380 RNG studies from 117 reports (1959 to 2004); a very small but statistically significant overall effect, strongly and inversely related to sample size, with extreme heterogeneity; Monte Carlo simulation indicated publication bias could account for the main findings. Commentaries by Radin, Nelson, Dobyns and Houtkooper (Psychological Bulletin, 2006) disputed the publication-bias interpretation; Wilson and Shadish argued that the effect was too small and heterogeneous to interpret. Bem (Journal of Personality and Social Psychology, 2011); failed replications by Ritchie, Wiseman and French (PLoS ONE, 2012) and Galak and colleagues (JPSP, 2012); Wagenmakers and colleagues' Bayesian reanalysis (JPSP, 2011) argued that the evidence was weak given the prior. Kekecs and colleagues (Royal Society Open Science, 2023), the Transparent Psi Project: 2,115 participants, about 38,000 trials, success rate essentially at chance, with direct data deposition and independent auditing. Use these as teaching cases for evaluating any claim, including psychiatric ones: the same flaws appear in some drug and psychotherapy literatures.
+The 2006 meta-analysis: 380 RNG studies from 117 reports (1959 to 2004); a very small but statistically significant overall effect, strongly and inversely related to sample size, with extreme heterogeneity; Monte Carlo simulation indicated publication bias could account for the main findings. Replies from parapsychology researchers disputed the publication-bias interpretation; other methodologists argued that the effect was too small and heterogeneous to interpret. Bem's 2011 experiments were followed in 2012 by failed replications (a three-lab attempt, and a series of seven experiments with more than 3,000 participants), and a 2011 Bayesian reanalysis argued that the evidence was weak given the prior. The Transparent Psi Project (2023): 2,115 participants, about 38,000 trials, success rate essentially at chance, with direct data deposition and independent auditing. Use these as teaching cases for evaluating any claim, including psychiatric ones: the same flaws appear in some drug and psychotherapy literatures.
 :::
 
 :::recall
-1. What did Bösch, Steinkamp and Boller find in 2006? || A tiny but significant effect across 380 RNG studies, larger in small studies, highly heterogeneous, explainable by publication bias; psychokinesis not established.
+1. What did the 2006 meta-analysis of psychokinesis studies find? || A tiny but significant effect across 380 RNG studies, larger in small studies, highly heterogeneous, explainable by publication bias; psychokinesis not established.
 2. Why is "small studies show bigger effects" a warning sign? || It suggests publication bias: small positive studies get published, small null ones don't.
 3. What happened when Bem's precognition experiments were replicated? || Careful replications, including a large pre-registered multi-lab study, found results consistent with chance.
 4. Name four fixes for unreliable research. || Pre-registration, registered reports, large multi-lab replication, open data (also adversarial collaboration).
@@ -485,7 +563,7 @@ What did the FDA decide about GLP-1 suicidality warnings in January 2026? :: To 
 Which gene should be tested before carbamazepine in people of Asian ancestry? :: HLA-B*15:02.
 Name the six RDoC domains. :: Negative valence, positive valence, cognitive, social processes, arousal and regulatory, sensorimotor.
 What is the p factor? :: A general factor of psychopathology at the top of HiTOP.
-Who published the 2006 psychokinesis meta-analysis? :: Bösch, Steinkamp and Boller, in Psychological Bulletin.
+What did the 2006 meta-analysis of 380 psychokinesis studies find? :: A tiny overall effect that shrank as studies got bigger, which publication bias could explain.
 What is a registered report? :: A study accepted by a journal on its methods before results are known.
 :::
 
@@ -624,7 +702,7 @@ Q: HiTOP differs from DSM mainly because it is:
 - Based on brain scans only
 > Empirical, dimensional.
 
-Q: The 2024 Science study on clinical prediction models found that:
+Q: A 2024 study of clinical prediction models across several trials found that:
 - Models always generalise
 - *Models that worked within one trial failed across other trials
 - AI is better than clinicians in all cases

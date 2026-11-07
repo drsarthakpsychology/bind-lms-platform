@@ -6,7 +6,7 @@ import { buildCase, type CaseAuthoring } from "../case-builder";
 
 const kavita: CaseAuthoring = {
   id: "ado-kavita",
-  title: "Kavita, 15 — the daughter the mother speaks for",
+  title: "Kavita, 15: the daughter the mother speaks for",
   difficulty: "guarded",
   traps: ["informant_conflict", "under_diagnosis", "diagnostic_overshadowing"],
   moduleId: "mod-adolescent",
@@ -41,7 +41,7 @@ const kavita: CaseAuthoring = {
 
 const arjunMinor: CaseAuthoring = {
   id: "ado-arjun",
-  title: "Arjun, 16 — the minor who wants privacy from his father",
+  title: "Arjun, 16: the minor who wants privacy from his father",
   difficulty: "cooperative",
   traps: ["secondary_gain", "informant_conflict", "diagnostic_overshadowing"],
   moduleId: "mod-adolescent",
@@ -52,13 +52,13 @@ const arjunMinor: CaseAuthoring = {
   city: "Chandigarh",
   family: "lives with father (divorced); mother in another city",
   register: "Direct English, guarded about the father",
-  presentation: "Came alone, explicitly asked that his father not be involved. Mature-minor capacity assessment is the gate. Anxious about a 'friend's' suicidal talk — which is his own.",
+  presentation: "Came alone, explicitly asked that his father not be involved. Mature-minor capacity assessment is the gate. Anxious about a 'friend's' suicidal talk, which is his own.",
   chiefComplaint: "A friend is talking about ending things. I need to know what to do. And please, don't tell my dad. He'll make it about him.",
   timeline: "Weeks of carrying a friend's (his own) suicidal thoughts. Attending school but disconnecting. Father is controlling.",
   treatmentHistory: "None.",
   helpSeekingDelay: "Came because the thoughts got loud",
   priorContacts: [],
-  coreBelief: "Asking for help is a trap — adults will use it.",
+  coreBelief: "Asking for help is a trap: adults will use it.",
   intermediateBeliefs: ["My father will blame the phone, not listen", "If I'm honest, they'll hospitalise me"],
   coping: ["tell half-truths", "frame it as a 'friend'", "stay online late"],
   openingIdiom: "something is happening to me",

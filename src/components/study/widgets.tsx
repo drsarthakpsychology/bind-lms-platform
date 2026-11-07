@@ -18,6 +18,15 @@ import { useExplainView } from "@/components/learn/view-toggle";
 import { cn } from "@/lib/utils";
 import { Rich } from "./rich";
 import { trackLearn } from "@/lib/learn/track";
+import { BrainMap, Curve, Flow, Layers } from "./visuals";
+import { Journey, Neuron, Pathways, Receptor } from "./animations";
+import { Compare, Conditioning, MemoryFlow, StressResponse, Timeline } from "./animations2";
+import { Attention, Conservation, Dissonance, Experiment, Illusion } from "./animations3";
+import { Hypnogram, Release, Strange, ThoughtRecord } from "./animations4";
+import type { AttentionData, ConservationData, DissonanceData, ExperimentData, HypnogramData, IllusionData, ReleaseData, StrangeData, ThoughtRecordData } from "@/lib/study/types";
+import type { CompareData, ConditioningData, MemoryFlowData, StressData, TimelineData } from "@/lib/study/types";
+import type { JourneyData, NeuronData, PathwaysData, ReceptorData } from "@/lib/study/types";
+import type { BrainMapData, CurveData, FlowData, LayersData } from "@/lib/study/types";
 
 /**
  * Interactive pieces inside module text. Every one makes the student commit
@@ -111,7 +120,7 @@ function Guess({ d }: { d: GuessData }) {
       ) : (
         <Verdict kind={inRange ? "good" : "ok"}>
           <p className="font-semibold">
-            {inRange ? "Right in the zone." : "Outside the usual range."} The highlighted band shows it: about {d.answer[0]}–{d.answer[1]} {d.unit}.
+            {inRange ? "Right in the zone." : "Outside the usual range."} The highlighted band shows it: about {d.answer[0]} to {d.answer[1]} {d.unit}.
           </p>
           <p className="mt-1"><Rich text={view === "clinician" && d.clinician ? d.clinician : d.reveal} /></p>
         </Verdict>
@@ -284,13 +293,13 @@ function Build({ d }: { d: BuildData }) {
       <p className={label}>Build the diagnosis</p>
       <div className="mt-2 rounded-xl bg-muted p-3 text-[0.98rem] leading-relaxed"><Rich text={d.vignette} /></div>
       <p className="mt-3 text-sm"><span className="font-semibold">Rule: </span><Rich text={d.rule} /></p>
-      <div className="sticky top-16 z-10 mt-3 flex items-center gap-3 rounded-xl border-2 border-foreground bg-card px-3 py-2">
+      <div className="top-2 z-10 mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 rounded-xl border-2 border-foreground bg-card px-3 py-2 tall:sticky md:top-[calc(var(--top-h)+0.5rem)]">
         <div className="flex gap-1" aria-hidden>
           {Array.from({ length: Math.max(d.need, count) }, (_, i) => (
             <span key={i} className={cn("size-3.5 rounded-full border-2 border-foreground transition-colors duration-base", i < count ? "bg-brand" : "bg-card")} />
           ))}
         </div>
-        <span className="text-sm font-semibold tabular-nums">{count} ticked · need {d.need}{d.needCore ? " incl. a core symptom" : ""}</span>
+        <span className="min-w-0 text-sm font-semibold tabular-nums">{count} ticked · need {d.need}{d.needCore ? " incl. a core symptom" : ""}</span>
         <span className={cn("ml-auto text-sm font-bold", meets ? "text-foreground" : "text-muted-foreground")}>{meets ? "Threshold met" : "Not yet"}</span>
       </div>
       <ul className="mt-3 grid gap-2 sm:grid-cols-2">
@@ -529,6 +538,50 @@ export function Widget({ kind, data }: { kind: WidgetKind; data: WidgetData }) {
       return <Synapse d={data as SynapseData} />;
     case "reveal":
       return <Reveal d={data as RevealData} />;
+    case "flow":
+      return <Flow d={data as FlowData} />;
+    case "curve":
+      return <Curve d={data as CurveData} />;
+    case "layers":
+      return <Layers d={data as LayersData} />;
+    case "brainmap":
+      return <BrainMap d={data as BrainMapData} />;
+    case "journey":
+      return <Journey d={data as JourneyData} />;
+    case "neuron":
+      return <Neuron d={data as NeuronData} />;
+    case "pathways":
+      return <Pathways d={data as PathwaysData} />;
+    case "receptor":
+      return <Receptor d={data as ReceptorData} />;
+    case "conditioning":
+      return <Conditioning d={data as ConditioningData} />;
+    case "memoryflow":
+      return <MemoryFlow d={data as MemoryFlowData} />;
+    case "stress":
+      return <StressResponse d={data as StressData} />;
+    case "timeline":
+      return <Timeline d={data as TimelineData} />;
+    case "compare":
+      return <Compare d={data as CompareData} />;
+    case "attention":
+      return <Attention d={data as AttentionData} />;
+    case "dissonance":
+      return <Dissonance d={data as DissonanceData} />;
+    case "conservation":
+      return <Conservation d={data as ConservationData} />;
+    case "experiment":
+      return <Experiment d={data as ExperimentData} />;
+    case "release":
+      return <Release d={data as ReleaseData} />;
+    case "thoughtrecord":
+      return <ThoughtRecord d={data as ThoughtRecordData} />;
+    case "hypnogram":
+      return <Hypnogram d={data as HypnogramData} />;
+    case "strange":
+      return <Strange d={data as StrangeData} />;
+    case "illusion":
+      return <Illusion d={data as IllusionData} />;
   }
 }
 

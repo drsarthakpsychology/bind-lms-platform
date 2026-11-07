@@ -12,7 +12,7 @@ import { Badge } from "@/components/ui/badge";
 import { LEGAL } from "@/lib/legal-constants";
 
 /**
- * Student Home — answers "what do I do today?" in one scroll, the way a
+ * Student Home: answers "what do I do today?" in one scroll, the way a
  * video/learning app's home does: continue watching, this week's shelf,
  * work that's due, then practice and help.
  */
@@ -65,7 +65,7 @@ export function StudentHome({
             </div>
             <Link
               href={`/courses/${model.courseId}`}
-              className="inline-flex shrink-0 items-center gap-1 text-sm font-bold text-link underline-offset-4 hover:underline"
+              className="inline-flex min-h-11 shrink-0 items-center gap-1 text-sm font-bold text-link underline-offset-4 hover:underline"
             >
               All lectures <ArrowRight className="size-4" aria-hidden />
             </Link>
@@ -120,7 +120,7 @@ export function StudentHome({
               href={wa}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex h-11 items-center gap-2 rounded-full border-2 border-foreground bg-primary px-5 text-sm font-bold text-primary-foreground transition-[transform,box-shadow] duration-fast ease-snappy hover:-translate-y-0.5 hover:hard-shadow-sm active:translate-y-px active:shadow-none"
+              className="inline-flex min-h-11 max-w-full flex-wrap items-center gap-x-2 rounded-md border-2 border-foreground bg-primary px-5 py-2 text-sm font-bold text-primary-foreground transition-[transform,box-shadow] duration-fast ease-snappy hover:-translate-y-0.5 hover:hard-shadow-sm active:translate-y-px active:shadow-none"
             >
               <MessageCircle className="size-4" aria-hidden /> WhatsApp {LEGAL.phone}
             </a>

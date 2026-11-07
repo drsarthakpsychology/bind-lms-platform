@@ -29,7 +29,7 @@ export function VideoUpload({
     setErrorMsg(null);
 
     // 1. Ask the server for a signed upload slot (this is the only part
-    //    that touches our own server — the file bytes never pass through
+    //    that touches our own server: the file bytes never pass through
     //    it, so Next.js's Server Action body-size limit never applies).
     let signed: SignedUploadResult;
     try {

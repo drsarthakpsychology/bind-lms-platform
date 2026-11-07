@@ -5,7 +5,7 @@ import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 /**
- * MobileContinueAction — the actual next meaningful step, in context.
+ * MobileContinueAction: the actual next meaningful step, in context.
  *
  * The mobile principle (T28): "Continue" must always represent the real next
  * action, not a generic placeholder. This component renders a prominent

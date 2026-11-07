@@ -5,6 +5,10 @@ export const part1 = String.raw`
 ## 1.1 What you are really doing in an MSE [core][starting]
 The full list of MSE headings, definitions and the insight grades is in **Module 1, The psychiatric interview and MSE** (sections 2.0 to 2.13). This module does not repeat that list. It trains the **skill**: noticing, telling look-alike signs apart **while the patient is talking**, and writing it down so another clinician can see the patient through your words.
 
+:::widget flow
+{"title": "The MSE sequence", "layout": "chain", "nodes": [{"id": "a", "label": "Appearance", "detail": "Dress, grooming, build, scars, eye contact, expression. Starts at the door."}, {"id": "b", "label": "Behaviour", "detail": "Psychomotor activity, rapport, attitude, abnormal movements."}, {"id": "c", "label": "Speech", "detail": "Rate, volume, quantity, flow, articulation."}, {"id": "d", "label": "Mood", "detail": "What the patient tells you, in their words."}, {"id": "e", "label": "Affect", "detail": "What you see: quality, range, reactivity, congruence, appropriateness."}, {"id": "f", "label": "Thought form", "detail": "How ideas connect, judged from speech."}, {"id": "g", "label": "Thought content", "detail": "Preoccupations, delusions, obsessions, suicidal and homicidal ideas."}, {"id": "h", "label": "Perception", "detail": "Hallucinations, illusions, other perceptual changes."}, {"id": "i", "label": "Cognition", "detail": "Consciousness, orientation, attention, memory, abstraction."}, {"id": "j", "label": "Insight", "detail": "Awareness, attribution, treatment acceptance, relabelling."}, {"id": "k", "label": "Judgement", "detail": "What the person is actually doing about risks and responsibilities."}], "caption": "Press Play. The order moves from what anyone can see towards what you must infer. Use the same order every time so readers know where to look."}
+:::
+
 ### Three habits that make a good examiner
 1. **Start at the door.** The MSE begins before the first question: how the person walks in, sits, looks at you, who comes with them, who answers first.
 2. **Describe, then name.** Write what you saw and heard in plain words, with a quote. Add the technical term only if you are sure.
@@ -30,6 +34,10 @@ The full list of MSE headings, definitions and the insight grades is in **Module
 A useful test for every line you write: **could another clinician picture the patient from this line alone?** "Anxious" fails. "Sat on the edge of the chair, wringing her dupatta, voice shaky, asked twice whether she would be admitted" passes.
 :::
 
+:::widget flow
+{"title": "From what you see to the technical word", "layout": "chain", "nodes": [{"id": "a", "label": "Observe", "detail": "Watch and listen: posture, pauses, glances, exact words."}, {"id": "b", "label": "Describe", "detail": "Plain words another clinician can picture: 'sat on the edge of the chair, wringing her dupatta'."}, {"id": "c", "label": "Quote", "detail": "The patient's own words, in their language, with a translation."}, {"id": "d", "label": "Name", "detail": "Add the term only now, if you are sure: 'agitation'."}, {"id": "e", "label": "Check the alternative", "detail": "Could it be culture, a side effect, fear of the setting, or something else?"}], "caption": "Never jump straight from Observe to Name. The middle steps are what make your note checkable."}
+:::
+
 ### The MSE is a snapshot
 The history tells the story across months. The MSE describes **this person, in this room, now**. A man who was manic last week and is calm today has a calm MSE today. That is why the MSE is repeated at every review and why you date and time it.
 
@@ -47,6 +55,10 @@ The history tells the story across months. The MSE describes **this person, in t
 
 :::clinician
 Reliability: inter-rater agreement for many MSE items is modest when unstructured, and improves when examiners anchor each item in observable behaviour and verbatim speech. Structured instruments that formalise parts of the MSE include the Present State Examination (PSE, now within SCAN), the Comprehensive Psychopathological Rating Scale, and for specific domains the Thought, Language and Communication scale (Andreasen), the Bush-Francis Catatonia Rating Scale and the Confusion Assessment Method. Even when you do not use them, borrowing their anchors improves your notes. In medico-legal settings (MHCA 2017 assessments of capacity, admissions under supported or independent provisions) a contemporaneous, dated, descriptive MSE is often the key document.
+:::
+
+:::widget layers
+{"title": "What you see and what you infer", "shape": "iceberg", "layers": [{"label": "Seen and heard directly", "detail": "Appearance, behaviour, speech, facial expression: anyone in the room could record these."}, {"label": "Told to you", "detail": "Mood, thoughts, perceptions: you depend on what the patient chooses to say."}, {"label": "Inferred carefully", "detail": "Thought form from how speech connects; hallucinations from glances and pauses; insight from how they explain things."}, {"label": "Hidden until asked", "detail": "Suicidal plans, shameful thoughts, abuse. These often stay below the surface unless you ask directly and privately."}], "caption": "Tap from the surface down. The deeper the layer, the more your note should show where the evidence came from."}
 :::
 
 :::recall
@@ -97,6 +109,18 @@ Q: Which line is the best MSE entry for appearance?
 }
 :::
 
+:::widget layers
+{"title": "The psychomotor spectrum", "shape": "stack", "layers": [{"label": "Excitement", "detail": "Purposeless, extreme overactivity, as in catatonic excitement or severe mania."}, {"label": "Agitation", "detail": "Restless, pacing, hand-wringing, driven by anxiety or mood."}, {"label": "Normal", "detail": "Movements fit the conversation."}, {"label": "Retardation", "detail": "Slow movements, long pauses, few gestures."}, {"label": "Stupor", "detail": "Mute and nearly motionless, often with eyes open and following you."}], "caption": "Tap each band from top to bottom. Akathisia sits apart from this scale: an inner urge to move, usually from a medicine."}
+:::
+
+:::widget flow
+{"title": "A restless patient: which kind?", "layout": "tree", "nodes": [{"id": "r", "label": "The patient cannot stay still", "detail": "Ask what it feels like, and check medicines and timing."}, {"id": "ak", "parent": "r", "label": "Inner urge, legs 'won't stay still', after a new antipsychotic", "detail": "Akathisia. Rate it, review the medicine; it can drive distress and even suicidal thoughts."}, {"id": "ag", "parent": "r", "label": "Worry, fear, hand-wringing", "detail": "Agitation from anxiety or depression."}, {"id": "ma", "parent": "r", "label": "Goal-directed, cheerful or irritable, little sleep", "detail": "Manic overactivity."}, {"id": "ca", "parent": "r", "label": "Purposeless, odd, with posturing or echo signs", "detail": "Catatonic excitement: screen for catatonia."}, {"id": "de", "parent": "r", "label": "Fluctuating confusion, worse at night", "detail": "Delirium: look for a medical cause."}], "caption": "Restlessness is a description, not a diagnosis. The tree helps you choose the right word."}
+:::
+
+:::widget compare
+{"title": "Slowed down or wound up?", "a": {"label": "Psychomotor retardation", "points": ["Slow to start moving and to answer", "Long pauses before replies", "Few gestures, a fixed gaze", "Quiet, flat voice", "Typical of severe, melancholic depression"], "summary": "Retardation: everything slows. At the extreme it reaches depressive stupor."}, "b": {"label": "Psychomotor agitation", "points": ["Cannot sit still; gets up and paces", "Wrings hands, picks at skin or clothes", "Restless, pleading, repetitive talk", "Tense, distressed face", "Seen in agitated depression, mixed states, delirium and akathisia"], "summary": "Agitation: purposeless, distressed overactivity. Always check for akathisia if on an antipsychotic."}, "caption": "Describe what you see, in plain words, before you name it. Both can occur in depression, and both raise risk."}
+:::
+
 ### Rapport and attitude
 Note the patient's **attitude to you** (cooperative, guarded, hostile, seductive, over-familiar, indifferent) and how **rapport** developed. Rapport is two-way: write what you observed, not whether you liked them.
 
@@ -145,6 +169,10 @@ Q: A man started on haloperidol injections three days ago now cannot stay seated
 - Follow: "If you had to put a number on your mood, from 0 (worst ever) to 10 (best ever), what is it today?"
 - Avoid: "You're feeling depressed, aren't you?"
 
+:::widget flow
+{"title": "Asking about mood without leading", "layout": "chain", "nodes": [{"id": "a", "label": "Open question", "detail": "'How have you been feeling in yourself?' or 'Aapka mann kaisa rehta hai?'"}, {"id": "b", "label": "Their words", "detail": "Write them down exactly: 'Andar se khaali lagta hai.'"}, {"id": "c", "label": "A number", "detail": "'From 0 (worst ever) to 10 (best ever), where are you today?'"}, {"id": "d", "label": "How it varies", "detail": "Through the day, with events, over recent days."}, {"id": "e", "label": "Link to thoughts", "detail": "'When you feel like that, what goes through your mind?' This often opens the door to hopelessness and risk."}], "caption": "The patient names their mood; you never name it for them."}
+:::
+
 ### Describing affect: five dimensions
 | Dimension | Ask yourself | Words to use |
 |---|---|---|
@@ -179,6 +207,10 @@ Q: A man started on haloperidol injections three days ago now cannot stay seated
     { "label": "Write “mood: fine” and move on to cognition", "verdict": "harm", "outcome": "The key finding is missed.", "why": "Mood in his words is recorded correctly, but the context demands a risk assessment." }
   ]
 }
+:::
+
+:::widget layers
+{"title": "Five dimensions of affect", "shape": "stack", "layers": [{"label": "Quality", "detail": "Which feeling shows: sad, anxious, irritable, euphoric, perplexed."}, {"label": "Range", "detail": "How much it varies: full, restricted, blunted, flat."}, {"label": "Reactivity", "detail": "Does it move with the conversation, for example a brief smile at a joke?"}, {"label": "Congruence", "detail": "Does it match what they say and think? Laughing while saying 'I feel very low' is incongruent."}, {"label": "Appropriateness", "detail": "Does it fit the situation? Laughing while describing a funeral is inappropriate."}], "caption": "Tap each layer. Go through all five for every patient and your affect line writes itself."}
 :::
 
 :::trap Blunted, flat, restricted, constricted
@@ -336,6 +368,14 @@ Thought form is judged from **speech**. You cannot see thoughts, only how words 
 }
 :::
 
+:::widget flow
+{"title": "The thought form decision path", "layout": "tree", "nodes": [{"id": "r", "label": "Listen to how the answer travels", "detail": "Thought form is judged from speech. Ask a simple, open question and listen."}, {"id": "g", "parent": "r", "label": "Did they reach the point?", "detail": "Ask this first."}, {"id": "g1", "parent": "g", "label": "Yes, after many details", "detail": "Circumstantiality. Often normal in older or very detailed people."}, {"id": "g2", "parent": "g", "label": "No, drifted off and never returned", "detail": "Tangentiality."}, {"id": "l", "parent": "r", "label": "Can you follow the links?", "detail": "Ask this when ideas jump."}, {"id": "l1", "parent": "l", "label": "Yes, fast, by sound or pun", "detail": "Flight of ideas: think mania."}, {"id": "l2", "parent": "l", "label": "No, links cannot be followed", "detail": "Loosening of association (derailment)."}, {"id": "b", "parent": "r", "label": "Did the flow stop suddenly?", "detail": "Thought block. Ask whether the thought felt taken away (thought withdrawal)."}, {"id": "p", "parent": "r", "label": "Lots of words, little information?", "detail": "Poverty of content. Very few words at all is poverty of speech."}], "caption": "Four questions sort most thought form findings. Always keep a quote that shows which branch you chose."}
+:::
+
+:::widget compare
+{"title": "Flight of ideas or loosening of association?", "a": {"label": "Flight of ideas", "points": ["Fast, pressured speech", "Each link can be followed: by sound, puns or nearby ideas", "The goal is lost, but the steps make sense", "Typical of mania"], "summary": "Flight of ideas: rapid jumps you can trace. 'Car, star, I'm a star, stars in the sky.'"}, "b": {"label": "Loosening of association", "points": ["Speed may be normal", "The links between ideas cannot be followed", "Even the listener cannot reconstruct the path", "Typical of schizophrenia"], "summary": "Loosening: the bridges between ideas are missing. 'The window went yellow because of my brother's electricity.'"}, "caption": "The test is whether you can follow the bridge between one idea and the next, not how fast the person speaks."}
+:::
+
 ### Rate and flow of speech, heard
 | Finding | What you hear | Often seen in |
 |---|---|---|
@@ -345,6 +385,10 @@ Thought form is judged from **speech**. You cannot see thoughts, only how words 
 | **Thought block** | Stops mid-sentence; says the thought vanished | Schizophrenia (and sometimes anxiety) |
 | **Neologisms** | New words with private meaning | Schizophrenia, some aphasias |
 | **Dysarthria** | Slurred articulation | Intoxication, neurological disease |
+
+:::widget brainmap
+{"title": "Language areas: when it is aphasia, not thought disorder", "focus": ["broca", "wernicke", "prefrontal", "temporal"], "notes": {"broca": "Damage here gives halting, effortful speech with good understanding. Do not mistake it for poverty of speech or thought block.", "wernicke": "Damage here gives fluent speech full of wrong or invented words with poor understanding. It can sound like loosening of association; check comprehension, naming and repetition.", "prefrontal": "Planning and organising speech. Frontal problems can give poverty of speech, perseveration and disinhibited talk.", "temporal": "Language comprehension and memory. Temporal lobe problems can also cause olfactory and complex hallucinations."}, "caption": "If speech suddenly becomes jumbled in an older person, or after a head injury or stroke, think of the brain before thinking of psychosis."}
+:::
 
 :::sounds Thought block, in the patient's words
 "I was telling you about... it's gone. Like someone took it. Just empty." If they explain it as someone removing the thought, ask about **thought withdrawal**, which is a passivity experience, not just a block.
@@ -386,6 +430,14 @@ Q: A patient answers every question with a long, colourless account full of irre
 | Resisted? | No | No | **Yes**, the person tries to push it away |
 | Example | "My neighbours put a chip in my tooth to read my thoughts." | "My nose is ugly and ruins my life." (body dysmorphic concern) | "I keep thinking I'll shout something obscene in the temple. I hate these thoughts." |
 
+:::widget flow
+{"title": "Delusion, overvalued idea, obsession or shared belief?", "layout": "tree", "nodes": [{"id": "r", "label": "A strongly held or troubling idea", "detail": "Ask how they know, how sure they are, and what others in their community think."}, {"id": "o", "parent": "r", "label": "Recognised as their own, unwanted and resisted?", "detail": "Obsession. The person knows it is excessive and tries to push it away."}, {"id": "c", "parent": "r", "label": "Shared by their family and community, held in the usual way?", "detail": "A cultural belief, not a delusion. Ask whether the patient's version goes further than the shared one."}, {"id": "v", "parent": "r", "label": "Strong, emotionally charged, partly open to reason?", "detail": "Overvalued idea, as in weight and shape beliefs in anorexia."}, {"id": "d", "parent": "r", "label": "Fixed, not changed by evidence, not shared?", "detail": "Delusion. Then rate conviction, preoccupation, distress and action."}], "caption": "The questions are about how the belief is held, not only what it says."}
+:::
+
+:::widget layers
+{"title": "The insight dial for intrusive beliefs", "shape": "stack", "layers": [{"label": "Good or fair insight", "detail": "'I know it's ridiculous, but I keep thinking my hands are dirty.' Typical obsession."}, {"label": "Poor insight", "detail": "'It's probably true that my hands are contaminated.'"}, {"label": "Absent insight or delusional belief", "detail": "'I am completely sure the germs are there.' In OCD and body dysmorphic disorder this is still recorded as OCD or BDD with absent insight, not as a psychotic disorder."}], "caption": "In OCD, body dysmorphic disorder and hoarding, insight is a dial rather than a switch."}
+:::
+
 ### How to explore beliefs without arguing
 1. Ask openly: "Has anything strange or puzzling been happening?"
 2. Follow with curiosity: "How did you come to know this?" "What evidence do you have?"
@@ -418,6 +470,10 @@ Q: A patient answers every question with a long, colourless account full of irre
     { "label": "Tell her everyone has such thoughts, so no treatment is needed", "verdict": "ok", "outcome": "She feels better briefly, but the obsessions and avoidance grow.", "why": "Normalising helps, but distressing obsessions with avoidance merit treatment." }
   ]
 }
+:::
+
+:::widget flow
+{"title": "Exploring a belief without arguing", "layout": "chain", "nodes": [{"id": "a", "label": "Open door", "detail": "'Has anything strange or puzzling been happening?'"}, {"id": "b", "label": "Curiosity", "detail": "'How did you come to know this? What makes you sure?'"}, {"id": "c", "label": "Gentle test", "detail": "'Is there any chance it could be something else?' Note how firmly they hold on."}, {"id": "d", "label": "Action and distress", "detail": "'Have you done anything to protect yourself? How much does it worry you?'"}, {"id": "e", "label": "Cultural fit", "detail": "'Would your family see it the same way?'"}], "caption": "You are mapping the belief, not winning an argument. Arguing makes people hide what they believe."}
 :::
 
 :::trap Postpartum obsession versus postpartum psychosis
@@ -465,6 +521,18 @@ Q: A man says, "I know it's ridiculous, but I keep thinking my hands are contami
 }
 :::
 
+:::widget flow
+{"title": "Sorting a perceptual experience", "layout": "tree", "nodes": [{"id": "r", "label": "The person describes an unusual perception", "detail": "Work through the questions in order."}, {"id": "s", "parent": "r", "label": "Is there a real stimulus?", "detail": "Yes and misperceived: illusion. Yes, with a separate voice heard alongside it: functional hallucination."}, {"id": "n", "parent": "r", "label": "No stimulus: where is it experienced?", "detail": "Out in the world through the senses: true hallucination. Inside the head, often with insight: pseudo-hallucination."}, {"id": "t", "parent": "r", "label": "Only when falling asleep or waking?", "detail": "Hypnagogic or hypnopompic: usually normal."}, {"id": "m", "parent": "r", "label": "Which sense?", "detail": "Visual, olfactory and gustatory hallucinations point towards organic causes; look for delirium, seizures, drugs."}], "caption": "Describe location, vividness, control and insight separately; the labels are used inconsistently."}
+:::
+
+:::widget brainmap
+{"title": "Where perception goes wrong", "focus": ["temporal", "occipital", "thalamus", "wernicke"], "notes": {"temporal": "Auditory cortex is active when people hear voices. Temporal lobe seizures can cause smells, tastes, deja vu and complex scenes.", "occipital": "Visual cortex. Visual hallucinations suggest delirium, Lewy body disease, Parkinson's disease, drugs, or visual loss (Charles Bonnet syndrome).", "thalamus": "The sensory relay. Disturbed filtering of input is one theory of hallucinations.", "wernicke": "Language areas are active during verbal hallucinations, supporting the idea that voices can be inner speech experienced as coming from outside."}, "caption": "The sense involved is a clue to the cause. Voices are commonest in psychiatric illness; sight, smell and taste raise the chance of a brain or body cause."}
+:::
+
+:::widget compare
+{"title": "True hallucination or pseudo-hallucination?", "a": {"label": "True hallucination", "points": ["Felt as coming from outside: 'from the corner of the room'", "As real and solid as a normal perception", "Not under the person's control", "Often seen in psychosis"], "summary": "True hallucination: in outer space, with the full quality of a real perception."}, "b": {"label": "Pseudo-hallucination", "points": ["Experienced in inner space: 'inside my head'", "Vivid, but lacks the solid quality of real perception", "May be recognised as not quite real", "Seen in grief, trauma, dissociation and some personality disorders, as well as psychosis"], "summary": "Pseudo-hallucination: vivid inner experience. It is not proof of psychosis, and not proof against it."}, "caption": "Ask: 'Where do you hear it: through your ears, or inside your head?' Then judge it in the context of the whole MSE."}
+:::
+
 ### How to ask, in the room
 - Normalise first: "Sometimes when people are under great stress, they hear things others can't hear. Has anything like that happened to you?"
 - Then specify: "Is it one voice or more? Man or woman? Do you recognise it? Where does it seem to come from? What does it say? Does it talk to you or about you? Does it tell you to do things? Do you obey?"
@@ -482,12 +550,16 @@ Q: A man says, "I know it's ridiculous, but I keep thinking my hands are contami
 }
 :::
 
+:::widget curve
+{"kind": "sdt", "title": "Hearing a voice in the noise", "caption": "Signal detection helps explain voices. Imagine trying to hear a faint voice in background noise. Move the criterion to a very liberal setting: you 'hear' many voices that were never there (false alarms). People who hallucinate tend to have a more liberal criterion, especially when stressed, tired or primed to expect voices. It is a way of thinking about a mechanism, not a test."}
+:::
+
 :::trap "Pseudo" is not "fake"
 A pseudo-hallucination is a real experience of a particular kind (inner space, often with insight). It is not malingering. The term is used inconsistently across books, so **describe the experience** rather than relying on the label.
 :::
 
 :::clinician
-The term "pseudo-hallucination" has two traditions: Jaspers (lacking the concrete, external quality of a true perception, experienced in inner subjective space) and Hare/Sedman usage (experienced with insight into its unreality). Many authorities now recommend describing location, vividness, sense of control and insight separately. Voice-hearing in borderline personality disorder and trauma-related disorders is phenomenologically similar to voices in schizophrenia in many studies (for example Slotema and colleagues), so location alone should not drive the diagnosis. Visual hallucinations should prompt a search for organic causes (delirium, Lewy body disease, Parkinson's disease, Charles Bonnet syndrome in visual loss, drugs). Olfactory and gustatory hallucinations suggest temporal lobe pathology.
+The term "pseudo-hallucination" has two traditions: Jaspers (lacking the concrete, external quality of a true perception, experienced in inner subjective space) and Hare/Sedman usage (experienced with insight into its unreality). Many authorities now recommend describing location, vividness, sense of control and insight separately. Voice-hearing in borderline personality disorder and trauma-related disorders is phenomenologically similar to voices in schizophrenia in several comparative studies, so location alone should not drive the diagnosis. Visual hallucinations should prompt a search for organic causes (delirium, Lewy body disease, Parkinson's disease, Charles Bonnet syndrome in visual loss, drugs). Olfactory and gustatory hallucinations suggest temporal lobe pathology.
 :::
 
 :::recall
@@ -530,6 +602,18 @@ Cognition is the part of the MSE most often done **badly**: rushed, or skipped b
 }
 :::
 
+:::widget flow
+{"title": "The bedside cognitive sequence", "layout": "chain", "nodes": [{"id": "a", "label": "Consciousness", "detail": "Alert, drowsy or fluctuating? If clouded, everything else is affected."}, {"id": "b", "label": "Orientation", "detail": "Time, place and person."}, {"id": "c", "label": "Attention", "detail": "Months backwards, digit span, serial sevens if numerate."}, {"id": "d", "label": "Registration and recall", "detail": "Three words now; recall after five minutes."}, {"id": "e", "label": "Remote memory", "detail": "Verifiable personal and public events."}, {"id": "f", "label": "Language and praxis", "detail": "Naming, a three-step command, copying a figure."}, {"id": "g", "label": "Abstraction", "detail": "Similarities, or local proverbs used with care."}], "caption": "Attention comes before memory: an inattentive patient will fail memory tests for the wrong reason."}
+:::
+
+:::widget curve
+{"kind": "normal", "title": "Reading a score against the right norms", "caption": "A cognitive score means little until you know where it sits for people of the same age and education. Move the score: a result that is normal for someone with many years of schooling can be low for them, and a result that looks low may be average for someone who never went to school. Always record education and the language of testing."}
+:::
+
+:::widget memoryflow
+{"title": "Where each bedside test sits in the memory system", "caption": "Months backwards and digit span test attention and working memory. Three words now and again after five minutes test encoding and retrieval. Remote events test long-term storage. If attention fails, the later tests cannot be read: a person who cannot attend cannot register the words. This is why the order matters."}
+:::
+
 ### Delirium, dementia and depression: the bedside contrast
 | | Delirium | Dementia | Depression with cognitive complaints |
 |---|---|---|---|
@@ -549,6 +633,14 @@ Cognition is the part of the MSE most often done **badly**: rushed, or skipped b
     { "label": "Diagnose dementia and plan a care home", "verdict": "harm", "outcome": "A reversible condition is treated as permanent.", "why": "Dementia is gradual; this was sudden." }
   ]
 }
+:::
+
+:::widget flow
+{"title": "A confused patient: delirium, dementia or depression?", "layout": "tree", "nodes": [{"id": "r", "label": "The patient seems confused or forgetful", "detail": "Ask the family how it started and how it changes through the day."}, {"id": "d1", "parent": "r", "label": "Sudden onset, fluctuating, inattentive", "detail": "Delirium until proven otherwise. Look for infection, drugs, withdrawal, pain, retention, metabolic causes."}, {"id": "d2", "parent": "r", "label": "Slow decline over months, attention fairly kept early", "detail": "Dementia. Screen formally and look for treatable contributors."}, {"id": "d3", "parent": "r", "label": "Followed low mood; 'I don't know' answers; complains loudly", "detail": "Depression with cognitive complaints. Treat and re-test; follow up."}, {"id": "d4", "parent": "r", "label": "More than one?", "detail": "Common in older people: delirium on top of dementia is frequent and often missed."}], "caption": "Onset, course and attention decide most cases at the bedside."}
+:::
+
+:::widget compare
+{"title": "Depression with memory complaints or early dementia?", "a": {"label": "Depression with cognitive complaints", "points": ["Complains a lot about poor memory", "'I don't know' answers, with little effort", "Onset with mood change, often fairly quick", "Low mood, guilt and poor sleep are obvious", "Improves when the depression is treated"], "summary": "Depression: the patient worries about memory more than the tests show."}, "b": {"label": "Early dementia", "points": ["Often unaware of the problem, or plays it down", "Tries hard, gives near misses or makes up answers", "Slow, gradual onset over months to years", "Mood may be normal or low", "Gets steadily worse over time"], "summary": "Dementia: the family worries more than the patient does."}, "caption": "The two often overlap in older adults, and late-life depression can be an early sign of dementia. Treat the depression and recheck cognition afterwards."}
 :::
 
 :::note Make tests fair
@@ -581,6 +673,10 @@ The six insight grades are in Module 1 (section 2.7). In practice, insight is no
 3. **Need for treatment**: "Do you think treatment could help?"
 4. **Relabelling** of experiences: "Could the voices be part of an illness?"
 
+:::widget layers
+{"title": "Four parts of insight", "shape": "stack", "layers": [{"label": "Awareness of change", "detail": "'Have you noticed anything different in yourself?'"}, {"label": "Attribution to illness", "detail": "'What do you think is causing it?' A cultural explanation can sit beside a medical one."}, {"label": "Accepting treatment", "detail": "'Do you think treatment could help?'"}, {"label": "Relabelling experiences", "detail": "'Could the voices be part of an illness?'"}], "caption": "Record each part. A single grade hides the detail that guides treatment."}
+:::
+
 ### Explanatory models: the patient's own story of the illness
 Many Indian patients and families explain illness through **sorcery (jaadu-tona), the evil eye (nazar), spirits, karma, heat ('garmi'), weakness ('kamzori') or loss of semen ('dhat')**. These are **cultural explanations**, not delusions, when they are shared by the family and community and held in the usual way. Many patients hold **both** a cultural and a medical explanation at once, and take medicine while visiting a temple or dargah.
 
@@ -594,6 +690,10 @@ Many Indian patients and families explain illness through **sorcery (jaadu-tona)
     { "label": "Tell him black magic is nonsense and he must stop seeing the healer", "verdict": "harm", "outcome": "He feels insulted and stops coming to the clinic.", "why": "Attacking a culturally held belief damages trust. Ask only about practices that cause harm (for example chaining, fasting, stopping medicine)." }
   ]
 }
+:::
+
+:::widget layers
+{"title": "Explanatory models around the patient", "shape": "rings", "layers": [{"label": "The patient", "detail": "Their own words for the problem: 'tension', 'kamzori', 'jaadu-tona', 'my mind is ill'."}, {"label": "The family", "detail": "Shared explanations, fears about marriage and reputation, who decides about treatment."}, {"label": "The community and healers", "detail": "Temple, dargah or church, a local healer, neighbours' views."}, {"label": "The clinic", "detail": "The medical model you bring. It works best alongside the others, not against them."}], "caption": "Tap from the centre outwards. Ask about each ring; challenge only practices that cause harm."}
 :::
 
 ### Judgement, in real life
@@ -613,7 +713,7 @@ Rather than only the classic "letter in the street" test, look at **what the pat
 :::
 
 :::clinician
-Multidimensional insight models (David, 1990: awareness of illness, relabelling of psychotic phenomena, treatment adherence) and instruments such as the Schedule for Assessment of Insight (SAI-E) and the Scale to Assess Unawareness of Mental Disorder (SUMD) support this componential approach. Kleinman's explanatory model questions ("What do you call it? What caused it? Why now? What does it do to you? What do you fear most? What treatment do you want?") and the DSM-5-TR Cultural Formulation Interview operationalise the explanatory model. Under the MHCA 2017, capacity to make treatment decisions (understand, retain, use and weigh, communicate) is distinct from insight; a person with partial insight may still have capacity for a particular decision. Document both separately.
+Multidimensional insight models, such as David's (awareness of illness, relabelling of psychotic phenomena, treatment adherence), and instruments such as the Schedule for Assessment of Insight (SAI-E) and the Scale to Assess Unawareness of Mental Disorder (SUMD) support this componential approach. Kleinman's explanatory model questions ("What do you call it? What caused it? Why now? What does it do to you? What do you fear most? What treatment do you want?") and the DSM-5-TR Cultural Formulation Interview operationalise the explanatory model. Under the MHCA 2017, capacity to make treatment decisions (understand, retain, use and weigh, communicate) is distinct from insight; a person with partial insight may still have capacity for a particular decision. Document both separately.
 :::
 
 :::recall

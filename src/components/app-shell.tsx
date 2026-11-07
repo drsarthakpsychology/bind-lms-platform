@@ -13,10 +13,11 @@ import { InboxLink } from "@/components/navigation/inbox-link";
 import { AddPeopleHost } from "@/components/admin/add-people-host";
 
 /**
- * Application shell — the layout people already know from YouTube:
+ * Application shell: the layout people already know from YouTube:
  *   - top bar: ☰ + logo, a big search box, bell, avatar menu
  *   - left: a sidebar that folds into a slim icon rail (☰ toggles it)
- *   - phones: a bottom tab bar with a "More" drawer
+ *   - tablets (768-1023): the slim icon rail, ☰ opens the full menu drawer
+ *   - phones (<768): a bottom tab bar with a "More" drawer
  * Server Component; interactive islands are composed in. On lesson/material
  * pages the sidebar steps aside so the video gets the width (YouTube's watch
  * page does the same).
@@ -61,11 +62,11 @@ export function AppShell({
       >
         Skip to content
       </a>
-      {/* Search palette — opens from the top bar, ⌘K or "/". */}
+      {/* Search palette: opens from the top bar, ⌘K or "/". */}
       <React.Suspense fallback={null}>
         <PaletteHost isAdmin={isAdminView} />
       </React.Suspense>
-      {/* Add people panel — one panel, opened from the palette, Home, Students and cohorts. */}
+      {/* Add people panel: one panel, opened from the palette, Home, Students and cohorts. */}
       {isAdminView ? (
         <React.Suspense fallback={null}>
           <AddPeopleHost />
@@ -90,10 +91,10 @@ export function AppShell({
         }
       />
 
-      <div className="lg:flex">
+      <div className="md:flex">
         <SidebarGate role={gateRole} fallback={null}>
-          <div className="hidden shrink-0 lg:block">
-            <div className="sticky top-16 h-[calc(100dvh-4rem)]">
+          <div className="hidden shrink-0 md:block">
+            <div className="sticky top-[var(--top-h)] h-[calc(100dvh-var(--top-h))]">
               <AppSidebar role={role} mode={mode} scope={scope} showStudy={showStudy} blocked={blocked} />
             </div>
           </div>

@@ -23,7 +23,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Switch } from "@/components/ui/switch";
 import { MobileBottomSheet } from "@/components/mobile/mobile-bottom-sheet";
 
-// Accepted types come from the media registry — only types with a working
+// Accepted types come from the media registry, only types with a working
 // student path are offered. Adding a type without its path would show
 // students a dead end; the registry's test enforces that.
 import { SUBMISSION_TYPE_OPTIONS } from "@/lib/media/registry";
@@ -48,8 +48,8 @@ export type EditableAssignment = {
 /**
  * Inline admin assignment editor. Renders the read view by default with a
  * pencil in the top-right corner (always visible, not hover-revealed). Clicking
- * the pencil turns the card into the editor in place — same page, same scroll
- * position — with Save changes / Cancel. Autosaves the draft as you type with a
+ * the pencil turns the card into the editor in place: same page, same scroll
+ * position, with Save changes / Cancel. Autosaves the draft as you type with a
  * quiet "Saved" indicator; publishing is the Switch.
  */
 export function AssignmentEditor({
@@ -216,7 +216,7 @@ export function AssignmentEditor({
           )}
         </div>
 
-        {/* Pencil icon — always visible, top-right. */}
+        {/* Pencil icon: always visible, top-right. */}
         <div className="flex shrink-0 items-center gap-1">
           {!editing && (
             <Button

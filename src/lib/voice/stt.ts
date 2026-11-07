@@ -3,18 +3,18 @@
 /**
  * Speech-to-text via the browser Web Speech API. Cost: zero.
  * Supported: Chrome 25+, Edge 87+, Safari 14.1+ (macOS), 14.5+ (iOS),
- * Samsung Internet 4+. Firefox is behind a flag — detect and fall back to text.
+ * Samsung Internet 4+. Firefox is behind a flag: detect and fall back to text.
  *
  * Known behaviours handled:
- * - NOT offline — Chrome/Safari stream audio to their servers. On poor
+ * - NOT offline: Chrome/Safari stream audio to their servers. On poor
  *   connectivity, degrade to text mode with a clear message.
- * - Safari shows an "Access Speech Recognition" permission modal — warn the
+ * - Safari shows an "Access Speech Recognition" permission modal: warn the
  *   student before the mic button (see the voice UI).
  * - Indian-English recognition: set lang="en-IN", show the interim transcript
  *   live, let the student EDIT before sending.
  * - Use the confidence score; below threshold, show interim text in amber.
  *
- * Upgrade path (off by default): Groq Whisper / Deepgram streaming — the
+ * Upgrade path (off by default): Groq Whisper / Deepgram streaming, the
  * interface is provider-shaped so they can drop in.
  */
 

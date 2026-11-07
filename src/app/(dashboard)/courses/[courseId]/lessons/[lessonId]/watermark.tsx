@@ -5,7 +5,7 @@ import { useCallback, useEffect, useMemo, useRef } from "react";
 /**
  * Dynamic, persistent watermark for video playback.
  *
- * ONE instance that moves to unpredictable positions on an irregular schedule —
+ * ONE instance that moves to unpredictable positions on an irregular schedule:
  * anywhere in the frame, including over the content. Clamped inside the frame
  * so it never overflows, clips, or sits under the controls bar. Low-opacity
  * text with a subtle shadow, no background block. Non-interactive, renders in
@@ -58,7 +58,7 @@ export function Watermark({
     let timeout: ReturnType<typeof setTimeout>;
 
     const schedule = () => {
-      // Normal: every 18–45s. Reduced motion: every 2–4 minutes — still moves,
+      // Normal: every 18 to 45s. Reduced motion: every 2 to 4 minutes, still moves,
       // just slowly.
       const delay = reduce
         ? 120000 + Math.random() * 120000
@@ -67,8 +67,8 @@ export function Watermark({
         const pos = randomPos();
         el.style.top = `${pos.top}%`;
         el.style.left = `${pos.left}%`;
-        el.style.opacity = String(0.3 + Math.random() * 0.2); // 30–50%
-        el.style.fontSize = `${11 + Math.random() * 3}px`; // 11–14px
+        el.style.opacity = String(0.3 + Math.random() * 0.2); // 30 to 50%
+        el.style.fontSize = `${11 + Math.random() * 3}px`; // 11 to 14px
         schedule();
       }, delay);
     };
@@ -80,7 +80,7 @@ export function Watermark({
   // Tamper-proofing: removal or hard-hide (display:none / visibility:hidden) →
   // pause playback. A genuine tamper removes the element or sets one of these;
   // the DRIFT effect legitimately changes `opacity` and `font-size`, so those
-  // are deliberately NOT triggers — an opacity read (or a React re-render that
+  // are deliberately NOT triggers: an opacity read (or a React re-render that
   // momentarily recomputes it during the CSS transition) would otherwise pause
   // honest playback. A debounce also absorbs transient states during re-render.
   useEffect(() => {
@@ -97,11 +97,11 @@ export function Watermark({
     }
 
     // Only pause when the watermark is genuinely gone/hard-hidden for a
-    // sustained period — never on a transient read.
+    // sustained period, never on a transient read.
     function armIfHidden() {
       if (detectedRef.current) return;
       if (!checkHardHidden()) {
-        // Reappeared — cancel any pending pause.
+        // Reappeared: cancel any pending pause.
         if (pending) {
           clearTimeout(pending);
           pending = null;

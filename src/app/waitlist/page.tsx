@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 };
 
 /**
- * /waitlist — the one honest public CTA. No signup exists (invite-only), so this
+ * /waitlist: the one honest public CTA. No signup exists (invite-only), so this
  * captures the lead and feeds the existing WhatsApp/Brevo enrolment workflow.
  * Two-column at lg: the invite pitch (sticky) beside the waitlist sheet. All
  * copy is existing words; nothing new is claimed.
@@ -39,7 +39,7 @@ export default function WaitlistPage() {
         </Reveal>
 
         <div className="mt-3 grid grid-cols-1 gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-          {/* The invite pitch — sticky on lg so it stays beside the sheet. */}
+          {/* The invite pitch: sticky on lg so it stays beside the sheet. */}
           <div className="lg:sticky lg:top-24">
             <Reveal delay={0.06}>
               <p className="text-eyebrow text-muted-foreground">Cohort One · Invite-only</p>

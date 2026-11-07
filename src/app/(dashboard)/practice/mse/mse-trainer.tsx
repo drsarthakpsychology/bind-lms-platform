@@ -11,7 +11,7 @@ import {
 
 type Mode = "tag" | "moodaffect" | "describe";
 
-/** In-flight snapshot — a refresh mid-drill restores position instead of
+/** In-flight snapshot: a refresh mid-drill restores position instead of
  *  restarting the exercise (T46/T47). */
 const MSE_KEY = "mse:trainer-in-flight";
 
@@ -230,7 +230,7 @@ export function MseTrainer() {
             </div>
           ) : describeText.trim().length > 10 ? (
             <div className="mt-3 rounded-md border-2 border-foreground bg-status-success-bg p-3 text-small text-status-success-fg" role="status">
-              Clean — no diagnostic terms. That&apos;s the skill.
+              Clean, no diagnostic terms. That&apos;s the skill.
             </div>
           ) : null}
         </div>

@@ -6,7 +6,7 @@ import { requireAdmin } from "@/lib/auth/guards";
 import { VIEW_MODE_COOKIE } from "./view-mode-constants";
 
 export async function setViewMode(mode: "admin" | "student"): Promise<void> {
-  // Only meaningful for admins — a student flipping this wouldn't do
+  // Only meaningful for admins: a student flipping this wouldn't do
   // anything anyway since the admin section re-checks role independently,
   // but no reason to let a non-admin write the cookie at all.
   if (!(await requireAdmin())) return;

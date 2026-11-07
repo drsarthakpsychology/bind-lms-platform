@@ -5,7 +5,7 @@ import { createWebStt, sttStatus, type SttEngine } from "./stt";
 import { createTts, ttsSupported, type TtsEngine, type TtsVoicePrefs } from "./tts";
 
 /**
- * The voice-session hook — push-to-talk + patient TTS + silence meter.
+ * The voice-session hook: push-to-talk + patient TTS + silence meter.
  *
  * - push-to-talk: the student holds the mic button to speak, or taps to
  *   start/stop. We default to push-to-talk per Part 5.3.
@@ -18,7 +18,7 @@ import { createTts, ttsSupported, type TtsEngine, type TtsVoicePrefs } from "./t
 export type VoiceStatus = "idle" | "listening" | "processing" | "speaking";
 
 export function useVoiceSession() {
-  // Availability is a pure function of the browser — compute lazily, once.
+  // Availability is a pure function of the browser: compute lazily, once.
   const [status, setStatus] = React.useState<VoiceStatus>("idle");
   const [sttAvailable] = React.useState(() => sttStatus().supported);
   const [ttsAvailable] = React.useState(() => ttsSupported());

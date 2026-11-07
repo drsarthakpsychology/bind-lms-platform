@@ -10,7 +10,7 @@ import { LEGAL } from "@/lib/legal-constants";
 
 export const revalidate = 3600;
 
-/** One route per policy — all 14 pre-rendered at build (editable content). */
+/** One route per policy: all 14 pre-rendered at build (editable content). */
 export function generateStaticParams() {
   return getPolicies().map((p) => ({ slug: p.meta.slug }));
 }
@@ -46,7 +46,7 @@ export default async function PolicyPage({
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    name: `${policy.meta.title} — ${LEGAL.operatingName}`,
+    name: `${policy.meta.title}: ${LEGAL.operatingName}`,
     description: policy.meta.summary,
     url: `/policies/${policy.meta.slug}`,
     dateModified: policy.meta.lastUpdated,

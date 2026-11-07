@@ -6,7 +6,7 @@ import type { SupabaseClient } from "@supabase/supabase-js";
  * idiom decoding, open:closed, reflections) across the student's real
  * sessions, and quietly recommends the next focus.
  *
- * It only ever changes recommendation / case selection / suggested difficulty —
+ * It only ever changes recommendation / case selection / suggested difficulty,
  * NEVER the clinical truth of a case. Personalisation adapts the practice,
  * not the facts.
  */
@@ -66,21 +66,21 @@ export async function computeLearningProfile(
     { key: "open_questions", label: "Open questioning", score: Math.min(1, avgRatio / 1.5), weak: avgRatio < 0.8 },
   );
 
-  // The single next focus — the weakest dimension, each mapping to a surface.
+  // The single next focus: the weakest dimension, each mapping to a surface.
   const weakest = [...dimensions].sort((a, b) => a.score - b.score)[0];
   let focus: LearningProfile["focus"] = null;
   switch (weakest?.key) {
     case "risk_timing":
-      focus = { surface: "Consulting Room", reason: "Risk assessment keeps slipping — run a case and ask about it early.", href: "/practice/consulting-room" };
+      focus = { surface: "Consulting Room", reason: "Risk assessment keeps slipping: run a case and ask about it early.", href: "/practice/consulting-room" };
       break;
     case "idiom_decoding":
-      focus = { surface: "Presenting Complaint Decoder", reason: "The opening phrase keeps going undecoded — five minutes fixes your ears.", href: "/practice/decode" };
+      focus = { surface: "Presenting Complaint Decoder", reason: "The opening phrase keeps going undecoded: five minutes fixes your ears.", href: "/practice/decode" };
       break;
     case "premature_reassurance":
-      focus = { surface: "Consulting Room", reason: "You reassure before exploring — a case where restraint matters.", href: "/practice/consulting-room" };
+      focus = { surface: "Consulting Room", reason: "You reassure before exploring: a case where restraint matters.", href: "/practice/consulting-room" };
       break;
     case "open_questions":
-      focus = { surface: "Presenting Complaint Decoder", reason: "Your questions lean closed — practice asking open ones.", href: "/practice/decode" };
+      focus = { surface: "Presenting Complaint Decoder", reason: "Your questions lean closed: practice asking open ones.", href: "/practice/decode" };
       break;
   }
 

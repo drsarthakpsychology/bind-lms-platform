@@ -2,7 +2,7 @@ import * as React from "react";
 import { cn } from "@/lib/utils";
 
 /**
- * A small, quiet status indicator — the anti-"giant warning banner". Where the
+ * A small, quiet status indicator: the anti-"giant warning banner". Where the
  * desktop used a full-width amber box to say "offline/canned", mobile uses a
  * pill with a coloured dot + label. Tapping it can reveal details, but the
  * pill itself never breaks immersion.

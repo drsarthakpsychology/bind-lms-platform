@@ -9,7 +9,7 @@ export const runtime = "nodejs";
 /**
  * GET /api/practice/mse/transcripts
  * The student's own completed Consulting Room sessions, each with its case
- * title — the raw material for Level 5 (MSE from live interview). A student
+ * title: the raw material for Level 5 (MSE from live interview). A student
  * can only ever see their OWN sessions (scoped to user_id server-side).
  */
 export async function GET(req: Request) {
@@ -85,7 +85,7 @@ export async function GET(req: Request) {
       sessionId: expandSession.id,
       title: fullTitle,
       turns: (turns ?? []).map((t) => ({ role: t.role, content: String(t.content) })),
-      // The patient's actual presentation, keyed by authored case title — the
+      // The patient's actual presentation, keyed by authored case title: the
       // ground truth Level 5 scores against. Null when the case isn't coded yet.
       expert: expertDomains as Record<string, string[]>,
       smallThings: small_things as string[],

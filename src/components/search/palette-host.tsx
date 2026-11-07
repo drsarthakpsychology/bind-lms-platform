@@ -5,11 +5,11 @@ import { CommandPalette } from "./command-palette";
 import { createAdminClient } from "@/lib/supabase/server";
 
 /**
- * Server-side palette host — merges the static entries with the case-library
+ * Server-side palette host: merges the static entries with the case-library
  * docs (server read, so the client gets a small plain list, not the JSON
  * blobs), then renders the ⌘K palette.
  */
-/** Admins also get every student (name, roll number, email) — type to jump to their profile. */
+/** Admins also get every student (name, roll number, email): type to jump to their profile. */
 export async function PaletteHost({ isAdmin = false }: { isAdmin?: boolean }) {
   const docs = await getLibraryDocs();
   const caseEntries: PaletteEntry[] = docs.slice(0, 40).map((d) => ({
@@ -34,7 +34,7 @@ export async function PaletteHost({ isAdmin = false }: { isAdmin?: boolean }) {
 }
 
 /**
- * One light query (5 columns) — NOT loadRoster(), which runs ~10 queries plus
+ * One light query (5 columns), NOT loadRoster(), which runs ~10 queries plus
  * the activity rollup and made every admin page load wait on it.
  */
 async function studentPaletteEntries(): Promise<PaletteEntry[]> {

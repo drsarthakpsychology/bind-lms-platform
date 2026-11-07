@@ -23,7 +23,7 @@ export async function POST(req: Request) {
   if (!sessionProfile) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
   const user = sessionProfile;
 
-  // Admin gate — requireSession already carries the profiles role.
+  // Admin gate: requireSession already carries the profiles role.
   if (sessionProfile.role !== "admin") return NextResponse.json({ error: "forbidden" }, { status: 403 });
 
   const body = await req.json().catch(() => null);
@@ -52,7 +52,7 @@ export async function POST(req: Request) {
   const title =
     parsed.data.title ??
     (typeof (dictation.state as Record<string, unknown>).name === "string"
-      ? `${String((dictation.state as Record<string, unknown>).name)} — dictated case`
+      ? `${String((dictation.state as Record<string, unknown>).name)}: dictated case`
       : "Dictated composite case");
 
   const { data: created, error } = await supabase

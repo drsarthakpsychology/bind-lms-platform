@@ -6,7 +6,7 @@ import { ArrowLeft } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 /**
- * Contextual mobile header — a compact sticky bar with a back affordance, a
+ * Contextual mobile header: a compact sticky bar with a back affordance, a
  * truncated title, and right-aligned actions. This is the "native app" header
  * the brief asks for: one back control, one title, nothing else crammed in.
  *
@@ -46,7 +46,7 @@ export function MobileHeader({
     <header
       className={cn(
         "z-30 flex min-h-14 items-center gap-2 border-b-2 border-foreground bg-card",
-        sticky && "sticky top-0 lg:top-16",
+        sticky && "sticky top-0 md:top-[var(--top-h)]",
         className,
       )}
       style={inset ? { paddingTop: "env(safe-area-inset-top)" } : undefined}
@@ -55,7 +55,7 @@ export function MobileHeader({
         type="button"
         onClick={handleBack}
         aria-label="Go back"
-        className="ml-2 flex size-10 shrink-0 items-center justify-center rounded-full border-2 border-foreground bg-card text-foreground transition-transform duration-fast ease-snappy active:translate-y-px"
+        className="ml-2 flex size-10 shrink-0 items-center justify-center rounded-md border-2 border-foreground bg-card text-foreground transition-transform duration-fast ease-snappy active:translate-y-px"
       >
         <ArrowLeft className="size-5" aria-hidden />
       </button>

@@ -12,7 +12,7 @@ const sendSchema = z.object({
 });
 
 /**
- * POST /api/practice/roleplay/message — send a message in a peer session.
+ * POST /api/practice/roleplay/message: send a message in a peer session.
  * RLS enforces that the sender is a participant of that session.
  */
 export async function POST(req: Request) {

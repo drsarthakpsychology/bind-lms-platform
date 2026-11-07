@@ -4,7 +4,7 @@ import { cookies } from "next/headers";
 /**
  * Supabase client for Server Components, Server Actions, and Route Handlers.
  * Must be created fresh per request (it closes over the request's cookies),
- * so call this at the top of each Server Component / action — never module-level.
+ * so call this at the top of each Server Component / action, never module-level.
  */
 export async function createClient() {
   const cookieStore = await cookies();
@@ -34,7 +34,7 @@ export async function createClient() {
 }
 
 /**
- * Admin client using the service role key — bypasses RLS entirely.
+ * Admin client using the service role key: bypasses RLS entirely.
  * Server-only. Never import this from a Client Component, and never
  * bundle the service role key into anything that reaches the browser.
  * This is what Phase 3's "Add Student" flow will use (Supabase Admin API

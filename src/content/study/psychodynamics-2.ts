@@ -6,7 +6,29 @@ export const part2 = String.raw`
 A **formulation** is a short, testable story that explains **why this person has this problem now**, and what is likely to happen in treatment. The descriptive diagnosis says *what*; the formulation says *why* and *what next*. (The general 5P formulation is in the case-sheet module; this is the psychodynamic version.)
 
 ### The five parts of a psychodynamic formulation
-Following Perry, Cooper and Michels (1987), a good formulation has:
+Perry, Cooper and Michels' classic scheme gives a good formulation five parts. Tap through the tree, then read each part below.
+
+:::widget flow
+{
+  "title": "The five-part psychodynamic formulation",
+  "layout": "tree",
+  "nodes": [
+    { "id": "f", "label": "Formulation", "detail": "A short, testable story: why this person, this problem, now, and what will happen in treatment." },
+    { "id": "sum", "label": "1 · Summary", "parent": "f", "detail": "Who, what problem, what trigger, in two or three lines." },
+    { "id": "non", "label": "2 · Non-dynamic factors", "parent": "f", "detail": "Biology, illness, substances, temperament, poverty or ongoing abuse. Named so the dynamic story does not over-explain." },
+    { "id": "core", "label": "3 · Core explanation", "parent": "f", "detail": "The central conflict or deficit, how it developed, how the trigger set it off." },
+    { "id": "tri", "label": "Triangles", "parent": "core", "detail": "Malan: feeling, anxiety, defence; and current, past, therapist." },
+    { "id": "ccrt", "label": "CCRT", "parent": "core", "detail": "Luborsky: Wish, Response of Other, Response of Self." },
+    { "id": "cd", "label": "Conflict or deficit", "parent": "core", "detail": "Two wishes clashing, or a capacity never built, or both." },
+    { "id": "tr", "label": "4 · Predicted transference", "parent": "f", "detail": "How the pattern will show with the therapist, and which resistances to expect." },
+    { "id": "tx", "label": "5 · Treatment implications", "parent": "f", "detail": "Expressive or supportive, brief or long, the focus, and what to watch for." }
+  ],
+  "caption": "Tap each branch. Part 4 makes the formulation testable: if the predicted transference never appears, revise it."
+}
+:::
+
+In words:
+
 1. **Summary statement**: who the person is, the problem, and the trigger, in two or three lines.
 2. **Non-dynamic factors**: biology, medical illness, substances, social stress, temperament. Name them so the dynamic story does not try to explain everything.
 3. **Core psychodynamic explanation**: the central conflict or deficit, how it developed, and how the current trigger set it off.
@@ -18,10 +40,39 @@ Following Perry, Cooper and Michels (1987), a good formulation has:
 - **Triangle of conflict**: a hidden **feeling or impulse** (anger, grief, longing) triggers **anxiety**, which triggers a **defence**. Work starts at the defence and moves to the feeling.
 - **Triangle of person**: the same pattern appears with **current people**, **past people** (parents) and the **therapist**. An interpretation that links all three corners is the most powerful.
 
+:::widget flow
+{
+  "title": "Malan's triangle of conflict",
+  "layout": "cycle",
+  "nodes": [
+    { "id": "feel", "label": "Hidden feeling", "detail": "The true feeling or impulse: grief, anger, longing for closeness. It is what the work aims to reach." },
+    { "id": "anx", "label": "Anxiety", "detail": "As the feeling rises, so does fear: of falling apart, of hurting someone, of being rejected." },
+    { "id": "def", "label": "Defence", "detail": "Joking, changing the subject, intellectualising, smiling. It brings relief and keeps the feeling out." }
+  ],
+  "edgeLabels": { "feel>anx": "stirs", "anx>def": "triggers", "def>feel": "blocks" },
+  "caption": "Work starts at the defence corner, eases the anxiety, and only then reaches the feeling."
+}
+:::
+
+
 **Luborsky's Core Conflictual Relationship Theme (CCRT)**: in the stories a person tells about relationships, find:
 - the **Wish** (W): what I want from others ("to be cared for"),
 - the expected **Response of Other** (RO): what I expect they will do ("they'll find me a burden"),
 - the **Response of Self** (RS): how I then feel and act ("I go quiet and do everything myself, then feel bitter").
+
+:::widget flow
+{
+  "title": "The CCRT as a self-fulfilling loop",
+  "layout": "cycle",
+  "nodes": [
+    { "id": "w", "label": "Wish", "detail": "'I want to be cared for.'" },
+    { "id": "ro", "label": "Expected Response of Other", "detail": "'They will find me a burden.'" },
+    { "id": "rs", "label": "Response of Self", "detail": "'So I go quiet, do everything myself, and feel bitter.'" },
+    { "id": "real", "label": "Others' actual response", "detail": "Seeing her cope alone, others do not offer help. The expectation seems confirmed." }
+  ],
+  "caption": "Change in therapy usually shows first in RO and RS: the wish stays, but the expected and actual responses soften."
+}
+:::
 
 **Conflict versus deficit**: some problems are best explained by **conflict** (two wishes clashing), others by **deficit** (a capacity that never developed, such as self-soothing). Kohut and attachment thinking emphasise deficit; classical and ego psychology emphasise conflict. Good formulations often need both.
 
@@ -46,7 +97,7 @@ Following Perry, Cooper and Michels (1987), a good formulation has:
 :::
 
 :::clinician
-Structured approaches make dynamic formulation more reliable. The CCRT method shows reasonable inter-rater reliability for wish, RO and RS categories, and changes in RO and RS (more than in W) track improvement in supportive-expressive therapy (Luborsky and Crits-Christoph, "Understanding Transference", 1998). The Operationalized Psychodynamic Diagnosis system (OPD-2; OPD Task Force) rates five axes: experience of illness and prerequisites for treatment, interpersonal relations, conflict (seven conflicts such as individuation versus dependency, submission versus control, desire for care versus autarky), structure (level of integration), and the descriptive diagnosis. The Psychodynamic Diagnostic Manual (PDM-2, 2017) adds personality syndromes and levels of organisation alongside symptom patterns. Use the predicted transference as a live hypothesis: if it does not appear, revise the formulation.
+Structured approaches make dynamic formulation more reliable. The CCRT method shows reasonable inter-rater reliability for wish, RO and RS categories, and changes in RO and RS (more than in W) track improvement in supportive-expressive therapy, the treatment Luborsky and Crits-Christoph built around the CCRT. The Operationalized Psychodynamic Diagnosis system (OPD-2; OPD Task Force) rates five axes: experience of illness and prerequisites for treatment, interpersonal relations, conflict (seven conflicts such as individuation versus dependency, submission versus control, desire for care versus autarky), structure (level of integration), and the descriptive diagnosis. The Psychodynamic Diagnostic Manual (PDM-2, 2017) adds personality syndromes and levels of organisation alongside symptom patterns. Use the predicted transference as a live hypothesis: if it does not appear, revise the formulation.
 :::
 
 :::recall
@@ -162,6 +213,52 @@ Long, open-ended therapy is not the only psychodynamic option. From the 1960s on
 - Early work on the **alliance**.
 - **Careful selection**: motivation, some psychological mindedness, at least one meaningful past relationship, ability to tolerate feelings, and a focus that can be found quickly.
 
+:::widget flow
+{
+  "title": "The arc of a brief dynamic therapy",
+  "layout": "chain",
+  "nodes": [
+    { "id": "sel", "label": "Assessment and selection", "detail": "Is there motivation, a meaningful relationship, tolerance of feeling, and a response to a trial interpretation?" },
+    { "id": "foc", "label": "Agree the focus", "detail": "One conflict, one relationship pattern or one loss, put into words both people accept." },
+    { "id": "all", "label": "Build the alliance", "detail": "Agreement on goals and tasks, and a bond. Ruptures are noticed early." },
+    { "id": "work", "label": "Active work on the focus", "detail": "The therapist keeps returning to the focus, works with defences and links the triangles." },
+    { "id": "end", "label": "Ending as part of the work", "detail": "The known end date stirs feelings about loss and separation, which are worked with, not avoided." },
+    { "id": "fu", "label": "Follow-up", "detail": "A review months later checks whether change has held and grown." }
+  ],
+  "caption": "Press Play. Brief models keep the core ideas but add a focus, a limit and a more active therapist."
+}
+:::
+
+
+:::widget compare
+{
+ "title": "Open-ended analysis and a brief dynamic therapy",
+ "a": {
+  "label": "Open-ended psychoanalytic therapy",
+  "points": [
+   "Several sessions a week, often for years",
+   "No fixed focus; whatever comes up is followed",
+   "Therapist mostly listens and interprets",
+   "Transference allowed to deepen over time",
+   "Aims at wide change in personality"
+  ],
+  "summary": "Broad and deep, slow and costly."
+ },
+ "b": {
+  "label": "Brief dynamic therapy",
+  "points": [
+   "Usually weekly, with an ending date set at the start",
+   "One agreed focus: a conflict, pattern or loss",
+   "Therapist is active and keeps returning to the focus",
+   "Transference linked early to the focus",
+   "Aims at change in one key area, then follow-up"
+  ],
+  "summary": "Focused and time-limited, but needs careful selection."
+ },
+ "caption": "Slide between the two. Both rest on the same ideas about conflict, defence and transference; they differ in pace, focus and how active the therapist is."
+}
+:::
+
 ### The main models
 | Model | Founder | Key idea |
 |---|---|---|
@@ -201,7 +298,7 @@ Long, open-ended therapy is not the only psychodynamic option. From the 1960s on
 :::
 
 :::clinician
-Exclusion criteria common to brief expressive models: active psychosis, severe substance dependence, high and current suicide risk, severe antisocial traits, and inability to form a working alliance quickly. These patients may still benefit from supportive dynamic therapy, longer structured models (TFP, MBT) or other evidence-based treatments. ISTDP and related experiential dynamic therapies have a growing trial base but from a small number of research groups, so allegiance effects are hard to rule out (Lilliengren and colleagues, meta-analysis in Psychotherapy, 2016). DIT has early randomised evidence from small pilot work in depression; larger, independent trials are still needed before strong claims are made.
+Exclusion criteria common to brief expressive models: active psychosis, severe substance dependence, high and current suicide risk, severe antisocial traits, and inability to form a working alliance quickly. These patients may still benefit from supportive dynamic therapy, longer structured models (TFP, MBT) or other evidence-based treatments. ISTDP and related experiential dynamic therapies have a growing trial base but from a small number of research groups, so allegiance effects are hard to rule out (as a 2016 meta-analysis noted). DIT has early randomised evidence from small pilot work in depression; larger, independent trials are still needed before strong claims are made.
 :::
 
 :::recall
@@ -247,6 +344,22 @@ Psychodynamic therapy is often called "unscientific". Others claim it is "as goo
 | Psychodynamic therapy targets personality, not just symptoms | Personality outcomes are harder to measure and less often measured |
 | | **Researcher allegiance**: trials often favour the therapy the authors prefer, in every school |
 
+:::widget layers
+{
+  "title": "How confident can we be? Psychodynamic therapy by claim",
+  "shape": "stack",
+  "layers": [
+    { "label": "Fairly confident", "detail": "Short-term psychodynamic therapy beats waiting list or minimal treatment for depression and several anxiety and somatic presentations." },
+    { "label": "Fairly confident", "detail": "Structured dynamic treatments (MBT, TFP) help borderline personality disorder, alongside DBT and other specialist models." },
+    { "label": "Moderately confident", "detail": "In head-to-head trials, results are broadly similar to CBT and other bona fide therapies for depression. True equivalence needs larger trials." },
+    { "label": "Uncertain", "detail": "Gains keep growing after therapy ends. Suggested by some studies, sensitive to method and few in number." },
+    { "label": "Uncertain", "detail": "Long-term therapy is better than shorter therapy for complex, chronic problems. Meta-analyses disagree." },
+    { "label": "Not supported", "detail": "Psychoanalysis is the only route to lasting change; every symptom has an Oedipal cause." }
+  ],
+  "caption": "Tap each level. Confidence depends on the number, size and quality of trials, not on how persuasive the theory sounds."
+}
+:::
+
 :::widget sort
 {
   "prompt": "How strong is each claim, as of the current evidence?",
@@ -263,19 +376,19 @@ Psychodynamic therapy is often called "unscientific". Others claim it is "as goo
 :::
 
 :::analogy The dodo bird verdict
-In "Alice in Wonderland" the dodo declares, "Everybody has won and all must have prizes." Saul Rosenzweig used this in 1936 to describe the finding that different bona fide therapies tend to produce similar results. It is still debated: some specific therapies do better for specific problems (exposure for OCD and phobias, for example), so "all must have prizes" is not the whole truth.
+In Lewis Carroll's story of Alice, the dodo declares, "Everybody has won and all must have prizes." Saul Rosenzweig used this in 1936 to describe the finding that different bona fide therapies tend to produce similar results. It is still debated: some specific therapies do better for specific problems (exposure for OCD and phobias, for example), so "all must have prizes" is not the whole truth.
 :::
 
 :::clinician
 Key reviews to know (and how to read them):
-- **Leichsenring and Rabung, JAMA 2008**: meta-analysis of long-term psychodynamic psychotherapy (LTPP) for complex disorders, reporting large within-group effects and superiority over shorter therapies. It drew sharp methodological criticism (Bhar, Thombs, Beck and colleagues, 2010, on effect-size calculation and comparators), and **Smit and colleagues (Clinical Psychology Review, 2012)** found LTPP not superior to control treatments when trials were pooled differently.
-- **Shedler, American Psychologist 2010**, "The efficacy of psychodynamic psychotherapy": an influential narrative argument that effect sizes are comparable with other therapies; critics noted selective emphasis on within-group effects.
-- **Abbass and colleagues, Cochrane review (2014 update)**: short-term psychodynamic psychotherapies for common mental disorders were better than minimal or waitlist controls, with gains maintained at medium-term follow-up; many trials at risk of bias.
-- **Driessen and colleagues, Clinical Psychology Review 2015**: short-term psychodynamic therapy for depression is effective versus control, comparable to other therapies at post-treatment.
-- **Steinert and colleagues, American Journal of Psychiatry 2017**: an equivalence meta-analysis of psychodynamic versus other established treatments, concluding equivalence within a pre-set margin. Equivalence margins and trial quality remain points of debate.
-- **Cuijpers and colleagues** (multiple meta-analyses of psychotherapies for depression, for example World Psychiatry 2020 and 2021): most bona fide therapies have similar effects; effects shrink markedly when only low-risk-of-bias trials are included; psychodynamic therapy has fewer high-quality trials.
-- **Leichsenring and colleagues, World Psychiatry 2023**: an umbrella review arguing that psychodynamic therapy meets criteria as an empirically supported treatment for several common mental disorders.
-- **Fonagy and colleagues, World Psychiatry 2015 (Tavistock Adult Depression Study)**: 18 months of LTPP for treatment-resistant depression; no difference at end of treatment, but advantages emerged at follow-up. A single trial; promising, not decisive.
+- **A 2008 meta-analysis of long-term psychodynamic psychotherapy (LTPP)** for complex disorders reported large within-group effects and superiority over shorter therapies. It drew sharp methodological criticism in 2010 (on effect-size calculation and comparators), and a **2012 meta-analysis** found LTPP not superior to control treatments when trials were pooled differently.
+- **An influential 2010 narrative review** of the efficacy of psychodynamic psychotherapy argued that effect sizes are comparable with other therapies; critics noted selective emphasis on within-group effects.
+- **A 2014 systematic review update**: short-term psychodynamic psychotherapies for common mental disorders were better than minimal or waitlist controls, with gains maintained at medium-term follow-up; many trials at risk of bias.
+- **A 2015 meta-analysis**: short-term psychodynamic therapy for depression is effective versus control, comparable to other therapies at post-treatment.
+- **A 2017 equivalence meta-analysis** of psychodynamic versus other established treatments, concluding equivalence within a pre-set margin. Equivalence margins and trial quality remain points of debate.
+- **Multiple meta-analyses of psychotherapies for depression** (for example in 2020 and 2021): most bona fide therapies have similar effects; effects shrink markedly when only low-risk-of-bias trials are included; psychodynamic therapy has fewer high-quality trials.
+- **A 2023 umbrella review** argued that psychodynamic therapy meets criteria as an empirically supported treatment for several common mental disorders.
+- **The Tavistock Adult Depression Study (2015)**: 18 months of LTPP for treatment-resistant depression; no difference at end of treatment, but advantages emerged at follow-up. A single trial; promising, not decisive.
 An honest summary for teaching: short-term dynamic therapy is an evidence-based option for depression and several anxiety and personality presentations, comparable on available evidence to other bona fide therapies; the evidence base is smaller and more allegiance-prone than CBT's; claims of LTPP superiority are unresolved. NICE (UK) guidance generally positions short-term dynamic therapy as an option for depression when CBT, IPT or behavioural activation are declined or unsuitable, which reflects quantity and quality of evidence more than proven inferiority.
 :::
 
@@ -307,15 +420,15 @@ Psychoanalysis reached India early and was changed by it.
 
 ### Girindrasekhar Bose (1887 to 1953)
 - A Calcutta doctor and psychologist who developed his own analytic method **independently of Freud**, then wrote to him in 1920. They corresponded for years, often disagreeing politely.
-- His doctoral thesis, **"The Concept of Repression" (1921)**, combined Freudian ideas with Indian philosophical thought.
-- He founded the **Indian Psychoanalytic Society in Calcutta in 1922** and led it until his death. Its journal, Samiksha, began in 1947.
+- His **1921 doctoral thesis on repression** combined Freudian ideas with Indian philosophical thought.
+- He founded the **Indian Psychoanalytic Society in Calcutta in 1922** and led it until his death. The society began publishing its own journal in 1947.
 - He taught psychology at the **University of Calcutta**, home to India's first university psychology department, and is credited with starting an early general-hospital psychiatry clinic in Calcutta.
 - **Theory of the opposite wish**: every wish is paired with an opposite wish (to be active and to be passive, to be male and to be female, to hurt and to be hurt). Repression keeps one side out of awareness; the other side is expressed. He argued this, rather than castration fear, was central to how conflicts are resolved.
 - He **questioned the universality of the Oedipus complex** in its Viennese form, describing Indian men's wishes to identify with the mother and to be like her, which Freud did not accept.
 
 ### The Indian self and the family
-- **Sudhir Kakar** ("The Inner World", 1978) described a Hindu childhood marked by a long, intense bond with the mother, a later and more distant entry of the father, and the extended family's many caregivers. His views are influential and also criticised as over-generalising from particular communities.
-- **Alan Roland** ("In Search of Self in India and Japan", 1988) described a **"familial self"**: a self experienced through relationships, hierarchy and family honour, alongside a private inner self, in contrast to the Western "individualised self".
+- **Sudhir Kakar** (writing in 1978) described a Hindu childhood marked by a long, intense bond with the mother, a later and more distant entry of the father, and the extended family's many caregivers. His views are influential and also criticised as over-generalising from particular communities.
+- **Alan Roland** (1988), comparing patients in India and Japan, described a **"familial self"**: a self experienced through relationships, hierarchy and family honour, alongside a private inner self, in contrast to the Western "individualised self".
 - **J. S. Neki** described the guru-chela model of the therapeutic relationship (see 2.5).
 
 :::trap Avoid the stereotype
@@ -332,6 +445,21 @@ Psychodynamic ideas about inner relationships connect to **systems** ideas about
 | **Boundaries, enmeshment, disengagement** | Salvador Minuchin (structural) | How close or distant family sub-systems are; too blurred or too rigid |
 | **Family as a system** | General systems thinking | A symptom in one person may keep the family's balance (homeostasis) |
 
+:::widget flow
+{
+  "title": "How triangulation keeps a problem going",
+  "layout": "cycle",
+  "nodes": [
+    { "id": "t", "label": "Tension between two", "detail": "Parents disagree about money, in-laws or the father's absence." },
+    { "id": "a", "label": "Anxiety rises", "detail": "Neither can bear the conflict directly." },
+    { "id": "pull", "label": "A third is pulled in", "detail": "A child becomes confidant, messenger or the 'problem' everyone worries about." },
+    { "id": "calm", "label": "Pair calms for now", "detail": "Talking about the child's headaches is easier than talking about the marriage." },
+    { "id": "stuck", "label": "Conflict never resolved", "detail": "The real issue stays untouched, so tension builds again and the child's role hardens." }
+  ],
+  "caption": "Systems work aims to take the child out of the triangle and help the pair talk directly."
+}
+:::
+
 :::widget decide
 {
   "scene": "Ananya, 17, in Jaipur, has severe headaches with no medical cause, worst on days her parents argue. Her mother tells you, in front of her, “She is my only friend. She understands me, not her father.” Her father works away and visits on weekends.",
@@ -345,7 +473,7 @@ Psychodynamic ideas about inner relationships connect to **systems** ideas about
 :::
 
 :::clinician
-Historical sources: Bose's correspondence with Freud and the early Indian Psychoanalytic Society are discussed in Christiane Hartnack's "Psychoanalysis in Colonial India" (2001) and in work by Ashis Nandy, who argued that Bose's psychoanalysis was a culturally rooted alternative rather than a derivative. In Indian practice, psychodynamic therapy is less widely available than CBT and family interventions, and is mainly offered in a few metropolitan centres and training institutes; family-based interventions have deep roots, from family wards and the involvement of relatives in care (notably the Vidyasagar family-ward experiment at Amritsar) to manualised family psychoeducation in schizophrenia. Adaptations commonly reported include a more active and explanatory therapist stance, greater flexibility about family involvement, attention to somatic idioms of distress, and respect for hierarchy while gradually supporting the patient's own voice. Rigorous Indian trials of psychodynamic therapy are scarce; this is an evidence gap, not evidence of ineffectiveness.
+History: Bose's correspondence with Freud and the early Indian Psychoanalytic Society have been studied by the historian Christiane Hartnack and by Ashis Nandy, who argued that Bose's psychoanalysis was a culturally rooted alternative rather than a derivative. In Indian practice, psychodynamic therapy is less widely available than CBT and family interventions, and is mainly offered in a few metropolitan centres and training institutes; family-based interventions have deep roots, from family wards and the involvement of relatives in care (notably the Vidyasagar family-ward experiment at Amritsar) to manualised family psychoeducation in schizophrenia. Adaptations commonly reported include a more active and explanatory therapist stance, greater flexibility about family involvement, attention to somatic idioms of distress, and respect for hierarchy while gradually supporting the patient's own voice. Rigorous Indian trials of psychodynamic therapy are scarce; this is an evidence gap, not evidence of ineffectiveness.
 :::
 
 :::recall
@@ -576,7 +704,7 @@ Q: Roland's term for an Indian self experienced through family relationships and
 - *Familial self
 - Grandiose self
 - Collective unconscious
-> Roland, 1988.
+> Alan Roland's term, from his work with patients in India and Japan.
 
 Q: A mother and daughter are so close the daughter cannot make any decision without her, and the father is left out. Minuchin's term for the mother-daughter relationship is:
 - Disengaged

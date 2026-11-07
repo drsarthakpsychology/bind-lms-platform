@@ -1,5 +1,5 @@
 /**
- * Observer-layer seed — Phase 2 (Parts 1–11).
+ * Observer-layer seed: Phase 2 (Parts 1 to 11).
  *
  * Two separate annotated SHOULD-be-generated sets. Provides the durable schema
  * for the observer tables.
@@ -11,7 +11,7 @@
  *
  * The content below is deliberately small and is EXPLICITLY a scaffold to pin
  * the schema and the language discipline. Full per-drug content is authored in
- * the drug-scoped drafts, not this file — this file holds the CROSS-DRUG
+ * the drug-scoped drafts, not this file: this file holds the CROSS-DRUG
  * (class-level) observations that apply to many bands and drugs at once.
  */
 
@@ -70,7 +70,7 @@ export const TherapistQuestions = [
   {
     category: "sleep" as const,
     question:
-      "Has your sleep changed since you started the medicine — falling asleep, staying asleep, vivid dreams?",
+      "Has your sleep changed since you started the medicine: falling asleep, staying asleep, vivid dreams?",
     explores: "Whether sleep effects began with, or shifted with, the medication.",
     source_id: "stahl_pg_7th",
   },
@@ -138,32 +138,32 @@ export const TherapistQuestions = [
   },
 ];
 
-/** Therapist Q / obs-observation author — a light mapping this script pours into the observer tables. */
+/** Therapist Q / obs-observation author: a light mapping this script pours into the observer tables. */
 export function observerChipsSeeder() {
   return { TherapistQuestions: TherapistQuestions.map((q) => ({ ...q })) };
 }
 
 // Standardise the shared caveat.
 export const OBSERVER_NOTE =
-  "Noticing is in scope. Interpreting or changing the medication is not — that is the prescriber's job.";
+  "Noticing is in scope. Interpreting or changing the medication is not: that is the prescriber's job.";
 
 export function citesFor(source: string) {
   return `${sourceTitle(source)} (see psych_sources)`;
 }
 
 /**
- * Red flags (Part 9) — "encourage the client to discuss with their prescribing
+ * Red flags (Part 9): "encourage the client to discuss with their prescribing
  * clinician". NOT emergency advice. Source-anchored per class.
  */
 export const RED_FLAGS = [
   {
     class: "All classes",
     flags: [
-      { signal: "Sudden severe restlessness (unable to sit still)", guidance: "Encourage the client to discuss with their prescriber — akathisia can be mistaken for agitation." },
+      { signal: "Sudden severe restlessness (unable to sit still)", guidance: "Encourage the client to discuss with their prescriber: akathisia can be mistaken for agitation." },
       { signal: "New involuntary movements (facial, tongue, limbs)", guidance: "Encourage discussion with the prescriber; longer-term movement effects are watched for." },
       { signal: "Rapid or unusual mood change", guidance: "Encourage discussion; mood shifts with a new or changed medication should be reviewed." },
       { signal: "Confusion or marked disorientation", guidance: "Encourage the client to raise it promptly with the prescriber." },
-      { signal: "New falls or unsteadiness", guidance: "Sedation/coordination effects can raise fall risk, especially in older adults — discuss." },
+      { signal: "New falls or unsteadiness", guidance: "Sedation/coordination effects can raise fall risk, especially in older adults: discuss." },
     ],
     source: "stahl_pg_7th",
   },
@@ -176,12 +176,12 @@ export const RED_FLAGS = [
   },
 ];
 
-/** Clinical pearls (Part 11) — from the sources. */
+/** Clinical pearls (Part 11): from the sources. */
 export const CLINICAL_PEARLS = [
   {
     class: "SSRI",
     pearls: [
-      "Patients may describe sexual side effects in everyday language rather than medical terms — ask directly.",
+      "Patients may describe sexual side effects in everyday language rather than medical terms: ask directly.",
       "The benefits of an antidepressant are often not obvious to the client early on; several weeks is normal.",
       "Clients sometimes confuse the medicine's effects (early activation, drowsiness) with worsening of their symptoms.",
     ],
@@ -190,7 +190,7 @@ export const CLINICAL_PEARLS = [
   {
     class: "Antipsychotic",
     pearls: [
-      "Restlessness (akathisia) from antipsychotics is frequently mistaken for anxiety — the distinction matters.",
+      "Restlessness (akathisia) from antipsychotics is frequently mistaken for anxiety: the distinction matters.",
       "Prolactin-related changes, e.g. menstrual or breast changes, are rarely volunteered unless asked.",
     ],
     source: "stahl_pg_7th",
@@ -198,7 +198,7 @@ export const CLINICAL_PEARLS = [
 ];
 
 /**
- * Medication timeline (Part 3) — educational stages, no treatment instructions.
+ * Medication timeline (Part 3): educational stages, no treatment instructions.
  */
 export const TIMELINE_STAGES = [
   { stage_type: "start", label: "Medication started", note: "The onset of effect and of early side effects varies by drug and dose." },

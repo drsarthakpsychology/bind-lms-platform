@@ -2,8 +2,8 @@
  * The exact, private percentile every student sees (owner decision 35).
  * Pure, so it is unit-tested.
  *
- * - `percentile`: the share of other students you are ahead of, 0–99.
- * - `topPct`: the smallest "top X%" that includes you, 1–100.
+ * - `percentile`: the share of other students you are ahead of, 0 to 99.
+ * - `topPct`: the smallest "top X%" that includes you, 1 to 100.
  * Near the top we say "You're in the top 7%"; elsewhere "You're at the 38th
  * percentile". Both are exact, never rounded up to flatter.
  */
@@ -33,12 +33,12 @@ export function ordinal(n: number): string {
 /** Where "top X%" reads better than a percentile. */
 export const TOP_WORDING_UNTIL = 25;
 
-/** "You're in the top 7%" / "You're at the 38th percentile — up 6 this month". */
+/** "You're in the top 7%" / "You're at the 38th percentile: up 6 this month". */
 export function percentileLine(p: Percentile, monthDelta: number | null = null): string {
   if (p.total <= 1) return "You're the only one on the board so far";
   const base = p.topPct <= TOP_WORDING_UNTIL ? `You're in the top ${p.topPct}%` : `You're at the ${ordinal(p.percentile)} percentile`;
   if (monthDelta === null) return base;
-  if (monthDelta > 0) return `${base} — up ${monthDelta} this month`;
-  if (monthDelta < 0) return `${base} — down ${-monthDelta} this month`;
-  return `${base} — same as the start of the month`;
+  if (monthDelta > 0) return `${base}, up ${monthDelta} this month`;
+  if (monthDelta < 0) return `${base}, down ${-monthDelta} this month`;
+  return `${base}, same as the start of the month`;
 }
