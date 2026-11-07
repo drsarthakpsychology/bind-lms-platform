@@ -56,6 +56,34 @@ The relationship is the vehicle; the techniques are the engine. A great engine i
 ### Is one therapy better than another?
 In 1936, Saul Rosenzweig suggested that all therapies might work about equally, quoting the dodo bird from Lewis Carroll's story: "Everybody has won, and all must have prizes." For many common problems (such as mild to moderate depression), well-delivered therapies often do give similar results. But for some conditions, **specific methods clearly matter**: exposure for phobias and OCD, family-based treatment for adolescent anorexia, CBT for insomnia, DBT for recurrent self-harm in borderline personality disorder.
 
+
+:::widget compare
+{
+ "title": "Common factors and specific factors",
+ "a": {
+  "label": "Common factors",
+  "points": [
+   "Alliance, empathy, positive regard",
+   "Hope and expectation",
+   "A believable rationale",
+   "Shared by all good therapies"
+  ],
+  "summary": "Carry much of the benefit for many problems."
+ },
+ "b": {
+  "label": "Specific factors",
+  "points": [
+   "Exposure for phobias and OCD",
+   "Sleep restriction in CBT-I",
+   "Family-led re-feeding in adolescent anorexia",
+   "DBT skills for recurrent self-harm"
+  ],
+  "summary": "Matter most where a clear maintaining mechanism exists."
+ },
+ "caption": "Slide between them: good therapy delivers the right specific method through a strong relationship."
+}
+:::
+
 :::student
 This module teaches the main therapies one by one, with real session examples. The deep psychodynamic approach (transference, defences, formulation, brief dynamic therapy and its evidence) has its own module, **Psychodynamics in depth**, and the learning theories behind behaviour therapy are in **Mind, development and defence mechanisms** (Section 2.6). Here we focus on how each therapy is done and what the evidence says.
 :::
@@ -263,6 +291,69 @@ Q: Unconditional positive regard means:
 | **Supportive** | Strengthen coping and stability | Supportive psychotherapy, problem-solving therapy |
 | **Expressive** | Change through creative expression | Art, music, drama, dance movement and play therapy |
 
+
+:::widget flow
+{
+ "title": "The families of therapy",
+ "layout": "tree",
+ "nodes": [
+  {
+   "id": "t",
+   "label": "Psychological therapies"
+  },
+  {
+   "id": "b",
+   "label": "Behavioural",
+   "parent": "t",
+   "detail": "Exposure, activation, contingency management."
+  },
+  {
+   "id": "c",
+   "label": "Cognitive and CBT",
+   "parent": "t",
+   "detail": "Beck, Ellis, disorder-specific CBT."
+  },
+  {
+   "id": "w",
+   "label": "Third-wave",
+   "parent": "t",
+   "detail": "DBT, ACT, MBCT, compassion-focused."
+  },
+  {
+   "id": "p",
+   "label": "Psychodynamic",
+   "parent": "t",
+   "detail": "Brief dynamic and longer-term therapy."
+  },
+  {
+   "id": "h",
+   "label": "Humanistic and existential",
+   "parent": "t",
+   "detail": "Person-centred, Gestalt, logotherapy."
+  },
+  {
+   "id": "i",
+   "label": "Interpersonal",
+   "parent": "t",
+   "detail": "IPT."
+  },
+  {
+   "id": "s",
+   "label": "Systemic and family",
+   "parent": "t",
+   "detail": "Structural, strategic, Milan, Bowen, narrative, solution-focused."
+  },
+  {
+   "id": "e",
+   "label": "Supportive, motivational, expressive",
+   "parent": "t",
+   "detail": "Supportive therapy, MI, art, music, drama, play."
+  }
+ ],
+ "caption": "Tap each family and name one founder from the box below."
+}
+:::
+
 :::mnemonic Founders you must know
 **Beck**: cognitive therapy. **Ellis**: REBT. **Wolpe**: systematic desensitisation. **Linehan**: DBT. **Hayes**: ACT. **Segal, Williams and Teasdale**: MBCT. **Klerman and Weissman**: IPT. **Miller and Rollnick**: motivational interviewing. **Rogers**: person-centred. **Perls**: Gestalt. **Minuchin**: structural family therapy. **Bowen**: family systems. **White and Epston**: narrative therapy. **Moreno**: psychodrama. **Frankl**: logotherapy.
 :::
@@ -279,6 +370,36 @@ Q: Unconditional positive regard means:
     { "text": "“I trust that you know what you need; I'm here to understand it with you.”", "bucket": 4 },
     { "text": "“Each time you drink, what happens just before and just after?”", "bucket": 0, "why": "Analysing triggers and consequences (ABC of behaviour) is behavioural." }
   ]
+}
+:::
+
+
+:::widget compare
+{
+ "title": "CBT and psychodynamic therapy",
+ "a": {
+  "label": "CBT",
+  "points": [
+   "Present-focused",
+   "Thoughts and behaviour",
+   "Structured agenda and homework",
+   "Collaborative, educational stance",
+   "Usually 12 to 20 sessions"
+  ],
+  "summary": "Change patterns now."
+ },
+ "b": {
+  "label": "Psychodynamic",
+  "points": [
+   "Past and present linked",
+   "Feelings, conflict, relationships",
+   "Open-ended exploration",
+   "Attention to the therapy relationship",
+   "Brief or long-term"
+  ],
+  "summary": "Understand patterns to change them."
+ },
+ "caption": "Slide across and decide which fits a client who wants practical tools quickly, and which fits a client stuck in repeating relationship patterns."
 }
 :::
 
@@ -915,6 +1036,55 @@ The opposite is **sustain talk** ("I need a drink to sleep"). MI does not argue 
 }
 :::
 
+
+:::widget flow
+{
+ "title": "From preparatory to mobilising change talk",
+ "layout": "chain",
+ "nodes": [
+  {
+   "id": "d",
+   "label": "Desire",
+   "detail": "\"I wish I drank less.\""
+  },
+  {
+   "id": "a",
+   "label": "Ability",
+   "detail": "\"I could cut down on weekdays.\""
+  },
+  {
+   "id": "r",
+   "label": "Reasons",
+   "detail": "\"It would help my daughter.\""
+  },
+  {
+   "id": "n",
+   "label": "Need",
+   "detail": "\"I have to stop before my liver goes.\""
+  },
+  {
+   "id": "c",
+   "label": "Commitment",
+   "detail": "\"I will stop from Monday.\""
+  },
+  {
+   "id": "ac",
+   "label": "Activation",
+   "detail": "\"I'm ready.\""
+  },
+  {
+   "id": "t",
+   "label": "Taking steps",
+   "detail": "\"I didn't drink yesterday.\""
+  }
+ ],
+ "edgeLabels": {
+  "n>c": "preparatory to mobilising"
+ },
+ "caption": "Reflect each kind you hear. Mobilising talk predicts change most strongly."
+}
+:::
+
 ### Four processes
 1. **Engaging**: building a working relationship.
 2. **Focusing**: agreeing what to talk about.
@@ -933,6 +1103,32 @@ The opposite is **sustain talk** ("I need a drink to sleep"). MI does not argue 
   "yourTurn": [
     { "q": "A 19-year-old says: 'I know gaming all night is messing up my college, but it's the only thing I enjoy.' Write a double-sided reflection.", "a": "'On one hand, gaming is the one thing you really enjoy right now; on the other, you can see it's costing you at college.' (Placing the change side last tends to invite more change talk.)" }
   ]
+}
+:::
+
+
+:::widget compare
+{
+ "title": "Sustain talk and change talk",
+ "a": {
+  "label": "Sustain talk",
+  "points": [
+   "\"I need a drink to sleep.\"",
+   "\"Everyone at work drinks.\"",
+   "\"I can stop any time.\""
+  ],
+  "summary": "Reflect it without arguing."
+ },
+ "b": {
+  "label": "Change talk",
+  "points": [
+   "\"I don't want my kids to see me drunk.\"",
+   "\"I could try weekends only.\"",
+   "\"I'll call the clinic tomorrow.\""
+  ],
+  "summary": "Reflect, affirm and invite more."
+ },
+ "caption": "Slide across. The ratio of change talk to sustain talk in a session predicts what happens next."
 }
 :::
 
@@ -978,6 +1174,37 @@ Q: In MI, when a client argues against change, the clinician should:
 | **Role transitions** | A life change (new job, marriage, migration, retirement, illness, becoming a parent) | Mourning the old role, accepting the new, building skills and support |
 | **Interpersonal deficits** (or **interpersonal sensitivity**) | Long-standing loneliness, few relationships | Reducing isolation, building new relationships, using the therapy relationship as a model |
 
+
+:::widget flow
+{
+ "title": "How mood and relationships feed each other",
+ "layout": "cycle",
+ "nodes": [
+  {
+   "id": "e",
+   "label": "Interpersonal event",
+   "detail": "A loss, a dispute, a big life change."
+  },
+  {
+   "id": "m",
+   "label": "Low mood",
+   "detail": "Sadness, guilt, low energy."
+  },
+  {
+   "id": "w",
+   "label": "Withdrawal and conflict",
+   "detail": "Less contact, irritability, poorer communication."
+  },
+  {
+   "id": "r",
+   "label": "Relationships worsen",
+   "detail": "Less support, more disputes."
+  }
+ ],
+ "caption": "IPT works on the relationship side of this loop; improving it lifts the mood."
+}
+:::
+
 ### Three phases
 1. **Initial**: diagnose depression, give the "sick role" (depression is a treatable illness, not weakness), do an **interpersonal inventory** (key relationships), choose the problem area, agree a contract.
 2. **Middle**: work on the chosen area with techniques such as communication analysis, role-play, exploring options, encouraging affect.
@@ -1010,6 +1237,42 @@ Q: In MI, when a client argues against change, the clinician should:
   "yourTurn": [
     { "q": "Mr Iqbal, 64, has become depressed since retiring as a schoolteacher in Bhopal. Which problem area, and name two goals.", "a": "Role transition. Goals: mourn the loss of the teacher role and its status and routine; build a new role and support network, such as tutoring, community work or a senior citizens' group, and develop new daily structure." }
   ]
+}
+:::
+
+
+:::widget moodline
+{
+ "prompt": "Mrs Ali's mood over a year, rated monthly (0 is her usual self). Her husband died in month 3. What pattern is this?",
+ "series": [
+  0,
+  0,
+  -1.5,
+  -2.2,
+  -2.5,
+  -2.6,
+  -2.4,
+  -2.7,
+  -2.5,
+  -2.6,
+  -2.4,
+  -2.5
+ ],
+ "labels": [
+  "Month 1",
+  "Month 4",
+  "Month 7",
+  "Month 10",
+  "Month 12"
+ ],
+ "options": [
+  "Normal grief that is easing",
+  "A depressive episode persisting after bereavement",
+  "Bipolar disorder",
+  "Ordinary ups and downs"
+ ],
+ "answer": 1,
+ "why": "Mood fell into the depression zone and stayed there for many months without easing. IPT focused on grief, or another depression treatment, is indicated; normal grief usually lifts gradually."
 }
 :::
 

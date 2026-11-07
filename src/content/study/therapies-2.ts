@@ -46,6 +46,32 @@ Over time the person never learns to trust, label or regulate their emotions, an
 ### Dialectics: acceptance **and** change
 The central dialectic is that the therapist **fully accepts** the person as they are **and** pushes for **change**. Both are true at once: "You are doing the best you can, **and** you need to do better, try harder and be more motivated to change."
 
+
+:::widget compare
+{
+ "title": "Invalidating and validating responses",
+ "a": {
+  "label": "Invalidating",
+  "points": [
+   "\"Stop crying, it's nothing.\"",
+   "\"You're overreacting.\"",
+   "\"Just think positive.\""
+  ],
+  "summary": "Teaches the person to distrust their own feelings."
+ },
+ "b": {
+  "label": "Validating",
+  "points": [
+   "\"That sounds really painful.\"",
+   "\"Given what happened, it makes sense you're upset.\"",
+   "\"Let's work out what might help.\""
+  ],
+  "summary": "Feelings accepted, then change becomes possible."
+ },
+ "caption": "DBT balances validation with change. Slide across and rewrite one invalidating sentence you have heard."
+}
+:::
+
 ### The four skills modules
 | Module | Purpose | Examples |
 |---|---|---|
@@ -409,6 +435,34 @@ Groups are not just a cheaper way to see many people. They offer things individu
 **H**ope, **U**niversality, **I**nformation, **A**ltruism, **C**orrective family recapitulation.
 :::
 
+
+:::widget compare
+{
+ "title": "Group and individual therapy",
+ "a": {
+  "label": "Group",
+  "points": [
+   "Universality and hope",
+   "Learning from others",
+   "Interpersonal feedback",
+   "Cost-effective"
+  ],
+  "summary": "Powerful for shared problems and social learning."
+ },
+ "b": {
+  "label": "Individual",
+  "points": [
+   "Privacy and pace",
+   "Tailored formulation",
+   "Easier for very sensitive topics",
+   "More focus on one person"
+  ],
+  "summary": "Best for complex or private issues."
+ },
+ "caption": "Slide across. Many people benefit from both, at different times."
+}
+:::
+
 ### Expressive (creative arts) therapies
 These use creative activity as the main medium of therapy, especially useful when words are hard: for children, people with trauma, intellectual disability, dementia or severe mental illness.
 
@@ -431,6 +485,32 @@ These use creative activity as the main medium of therapy, especially useful whe
     { "label": "Use play-based therapy (and later trauma-focused CBT adapted for her age, with parents involved): let her express the experience through play, help her and her parents with safety, sleep routines and coping, and gradually build a story of what happened", "verdict": "best", "outcome": "Over several sessions her play shows the flood and rescue; with her mother she makes a picture story. Nightmares lessen.", "why": "Play is a child's natural language; combined with an evidence-based trauma approach and family support it is effective and safe." },
     { "label": "Wait; children forget", "verdict": "ok", "outcome": "Some children recover naturally, but her symptoms persist for months.", "why": "Watchful waiting is reasonable briefly, but persistent symptoms need help." }
   ]
+}
+:::
+
+
+:::widget flow
+{
+ "title": "The three phases of a psychodrama",
+ "layout": "chain",
+ "nodes": [
+  {
+   "id": "w",
+   "label": "Warm-up",
+   "detail": "The group builds trust; a protagonist emerges."
+  },
+  {
+   "id": "a",
+   "label": "Action",
+   "detail": "Scenes are enacted with auxiliary egos; role reversal, doubling, empty chair."
+  },
+  {
+   "id": "s",
+   "label": "Sharing",
+   "detail": "Group members share their own feelings and experiences, not advice; the protagonist is supported back into the group."
+  }
+ ],
+ "caption": "Skipping the sharing phase can leave the protagonist exposed. A trained director manages all three."
 }
 :::
 
@@ -490,6 +570,57 @@ Q: Music therapy has its best evidence for:
 | **Alcohol and drug use** | MI, CBT, contingency management (stimulants), community reinforcement, family approaches | |
 | **Chronic pain** | ACT, CBT | |
 | **Child behaviour problems** | Parent management training | |
+
+
+:::widget flow
+{
+ "title": "Matching the problem to the therapy",
+ "layout": "tree",
+ "nodes": [
+  {
+   "id": "p",
+   "label": "Main problem"
+  },
+  {
+   "id": "a",
+   "label": "Fear and avoidance",
+   "parent": "p",
+   "detail": "Exposure-based CBT (phobias, panic, social anxiety, PTSD); ERP for OCD."
+  },
+  {
+   "id": "d",
+   "label": "Depression",
+   "parent": "p",
+   "detail": "CBT, behavioural activation, IPT, problem-solving; MBCT to prevent relapse."
+  },
+  {
+   "id": "s",
+   "label": "Substance use",
+   "parent": "p",
+   "detail": "MI first, then CBT relapse prevention; contingency management for stimulants."
+  },
+  {
+   "id": "e",
+   "label": "Emotion dysregulation and self-harm",
+   "parent": "p",
+   "detail": "DBT or mentalisation-based treatment."
+  },
+  {
+   "id": "f",
+   "label": "Family-maintained problems",
+   "parent": "p",
+   "detail": "Family therapy; family-based treatment for adolescent anorexia; psychoeducation in psychosis."
+  },
+  {
+   "id": "i",
+   "label": "Insomnia and chronic pain",
+   "parent": "p",
+   "detail": "CBT-I; ACT or CBT for pain."
+  }
+ ],
+ "caption": "A starting map, adjusted for severity, preference and culture."
+}
+:::
 
 ### Task-sharing: therapy delivered by trained non-specialists
 India and other low- and middle-income countries have far too few psychologists. Trials have shown that trained and supervised **lay counsellors** can deliver effective brief therapies:
@@ -582,6 +713,34 @@ Q: Session-by-session outcome monitoring helps mainly by:
 :::
 
 ## 3.6 Putting it together: choosing and sequencing therapy [core][advanced]
+
+:::widget compare
+{
+ "title": "Rina before and after CBT for panic",
+ "a": {
+  "label": "Before",
+  "points": [
+   "Panic attacks several times a week",
+   "Avoids buses, markets and lifts",
+   "Carries water and sits near exits",
+   "Believes a racing heart means a heart attack"
+  ],
+  "summary": "Life shrinking around the fear."
+ },
+ "b": {
+  "label": "After",
+  "points": [
+   "Occasional mild panic she rides out",
+   "Travels by bus and visits the market",
+   "No safety behaviours",
+   "Sees a racing heart as harmless arousal"
+  ],
+  "summary": "Fear tolerated; life back."
+ },
+ "caption": "Slide across and link each change to a CBT technique: interoceptive exposure, in vivo exposure, dropping safety behaviours, cognitive restructuring."
+}
+:::
+
 ### A practical decision sequence
 1. **Safety first**: assess risk; stabilise crises.
 2. **Diagnose and formulate**: what is the problem, what maintains it (see the Case sheet module)?
@@ -615,6 +774,46 @@ Q: Session-by-session outcome monitoring helps mainly by:
     { "label": "Review together: check the diagnosis and formulation (for example bipolarity, substance use, a hidden stressor or trauma), adherence and alliance; consider adding medicine, switching therapy (for example to IPT or behavioural activation focus), or increasing intensity; and get supervision", "verdict": "best", "outcome": "Anil reveals ongoing harassment at work he had felt ashamed to mention. The focus shifts; with a role-dispute plan and an antidepressant, he begins to improve.", "why": "Non-response is information. Systematic review often reveals a missing piece." },
     { "label": "End therapy and tell him he is resistant", "verdict": "harm", "outcome": "He feels blamed and hopeless.", "why": "Blaming the client is unhelpful and inaccurate." }
   ]
+}
+:::
+
+
+:::widget moodline
+{
+ "prompt": "Anil's mood across 16 weekly CBT sessions (0 is his usual self). What should the therapist conclude?",
+ "series": [
+  -2.4,
+  -2.5,
+  -2.3,
+  -2.4,
+  -2.4,
+  -2.5,
+  -2.3,
+  -2.4,
+  -1.8,
+  -1.2,
+  -0.8,
+  -0.5,
+  -0.3,
+  0,
+  0.1,
+  0
+ ],
+ "labels": [
+  "Start",
+  "Session 4",
+  "Session 8",
+  "Session 12",
+  "Session 16"
+ ],
+ "options": [
+  "Therapy failed from the start",
+  "No change at first, then recovery after the plan was reviewed",
+  "Ordinary ups and downs",
+  "A switch into mania"
+ ],
+ "answer": 1,
+ "why": "Mood stayed flat for eight sessions, then improved steadily once the hidden workplace harassment came to light and the plan changed. Non-response is information: review, do not just continue."
 }
 :::
 
