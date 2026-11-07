@@ -373,7 +373,7 @@ export const PART: PrepQuestion[] = [
       "Women account for about two-thirds of all recorded suicides",
     ],
     2,
-    "In recent NCRB reports hanging accounts for more than half of recorded suicides, with poisoning second; 'family problems' and 'illness' are the largest recorded cause categories, and most deaths are in people aged 18 to 45. Men account for roughly 70% of recorded suicides, so the claim that women make up two-thirds reverses the sex ratio, although young Indian women have high rates compared with women worldwide. The data are known to under-count and to misclassify causes, which is why independent studies such as the Million Death Study are also cited.",
+    "In recent NCRB reports hanging accounts for more than half of recorded suicides, with poisoning second; 'family problems' and 'illness' are the largest recorded cause categories, and most deaths are in people aged 18 to 45. Men account for about 73% of recorded suicides (73.5% in the 2024 report, with hanging at 62% and family problems and illness at about 34% and 18%), so the claim that women make up two-thirds reverses the sex ratio, although young Indian women have high rates compared with women worldwide. The data are known to under-count and to misclassify causes, which is why independent studies such as the Million Death Study are also cited.",
     { module: "suicide", ref: "NCRB Accidental Deaths and Suicides in India, recent reports" },
   ),
   q.mcq(

@@ -30,7 +30,7 @@ export const QUESTIONS: PrepQuestion[] = [
     "J. McKeen Cattell, a student of Wundt influenced by Galton, used the term 'mental tests' in an 1890 paper on simple sensory and reaction-time measures. Binet developed the first practical intelligence scale in 1905. Galton pioneered anthropometric testing and correlation. Terman produced the 1916 Stanford revision.",
     { ref: R }),
   mcq("paq2-405", "indian-tests", 2,
-    "Which was one of the earliest Indian adaptations of Binet-type intelligence testing, published in Lahore around 1930?",
+    "Which was one of the earliest Indian adaptations of Binet-type intelligence testing, developed in Lahore and published in 1929?",
     ["C. H. Rice's Hindustani Binet scale", "Malin's Intelligence Scale for Indian Children", "Bhatia's Battery of Performance Tests", "Ramalingaswamy's adult performance scale"], 0,
     "C. Herbert Rice's Hindustani Binet Performance Point Scale was among the first Indian adaptations of Binet-type testing. Kamat's Binet revision followed in the 1930s. Bhatia's performance battery appeared in the 1950s and Malin's MISIC in the late 1960s. Ramalingaswamy's WAPIS is a later adaptation of Wechsler performance tests.",
     { ref: "history of testing in India" }),
