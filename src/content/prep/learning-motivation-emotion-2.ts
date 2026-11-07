@@ -76,7 +76,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     options: ["A-II, B-IV, C-III, D-I", "A-III, B-II, C-IV, D-I", "A-II, B-III, C-IV, D-I", "A-II, B-III, C-I, D-IV"],
     answer: 2,
     explanation:
-      "Praise added, behaviour increases: positive reinforcement (A-II). Beep removed, behaviour increases: negative reinforcement (B-III). Water added, behaviour decreases: positive punishment (C-IV). Privileges removed, behaviour decreases: negative punishment (D-I). The first code swaps the two middle examples. The second swaps the two reinforcers. The fourth swaps the two punishers.",
+      "Praise added, behaviour increases: positive reinforcement (A-II). Beep removed, behaviour increases: negative reinforcement (B-III). Water added, behaviour decreases: positive punishment (C-IV). Privileges removed, behaviour decreases: negative punishment (D-I). A-II, B-IV, C-III, D-I swaps the two middle examples. A-III, B-II, C-IV, D-I swaps the two reinforcers. A-II, B-III, C-I, D-IV swaps the two punishers.",
     module: M,
     ref: "Skinner 1953",
   },
@@ -681,7 +681,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     options: ["A-II, B-IV, C-I, D-III", "A-IV, B-II, C-III, D-I", "A-II, B-III, C-IV, D-I", "A-II, B-IV, C-III, D-I"],
     answer: 3,
     explanation:
-      "Attention = noticing the model (A-II). Retention = storing it in memory (B-IV). Motor reproduction = being able to do it (C-III). Motivation = having a reason to perform it (D-I). The first code swaps reproduction and motivation. The second swaps attention and retention. The third swaps retention and reproduction.",
+      "Attention = noticing the model (A-II). Retention = storing it in memory (B-IV). Motor reproduction = being able to do it (C-III). Motivation = having a reason to perform it (D-I). A-II, B-IV, C-I, D-III swaps reproduction and motivation. A-IV, B-II, C-III, D-I swaps attention and retention. A-II, B-III, C-IV, D-I swaps retention and reproduction.",
     module: M,
     ref: "Bandura 1977, 1986",
   },
@@ -777,7 +777,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "In Bandura's triadic model, a shy student's beliefs affect how she behaves, her behaviour shapes how others treat her, and their response feeds back on her beliefs. The second option is strict behaviourism, which Bandura rejected. Genes alone ignore learning. The last option ignores environmental influence.",
+      "In Bandura's triadic model, a shy student's beliefs affect how she behaves, her behaviour shapes how others treat her, and their response feeds back on her beliefs. 'The environment alone determines behaviour' is strict behaviourism, which Bandura rejected. Genes alone ignore learning. Saying people shape their environment without being affected by it ignores environmental influence.",
     module: M,
     ref: "Bandura 1978, 1986",
   },
@@ -854,7 +854,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     options: ["forming a learning set ('learning to learn')", "latent inhibition", "trial-and-error learning only", "instinctive drift"],
     answer: 0,
     explanation:
-      "Monkeys learnt a general strategy, 'if the first choice is rewarded, stay; if not, switch', which transfers to new problems. Harlow argued that apparent insight may grow out of such learning sets. Latent inhibition slows conditioning. The monkeys went beyond slow trial and error. Instinctive drift is a return to innate behaviour.",
+      "Monkeys learnt a general strategy, 'if the object chosen on the first trial is rewarded, stay; if not, switch', which transfers to new problems. Harlow argued that apparent insight may grow out of such learning sets. Latent inhibition slows conditioning. The monkeys went beyond slow trial and error. Instinctive drift is a return to innate behaviour.",
     module: M,
     ref: "Harlow 1949",
   },

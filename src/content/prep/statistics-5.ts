@@ -226,7 +226,7 @@ const D: Draft[] = [
     ],
     answer: 0,
     explanation:
-      "Step 1: d_z = 3/6 = 0.50. Step 2: d_av = 3/[(10 + 10)/2] = 3/10 = 0.30. Step 3: the SD of change scores is s_D = √(s₁² + s₂² − 2r s₁s₂). With s_D = 6 and both SDs 10, 36 = 200 − 200r, so r = .82. A high pre-post correlation shrinks s_D, which inflates d_z. d_av is comparable with between-groups d, while d_z reflects the power of the paired test. The second option reverses them. They are not equal. 3.00 is the raw mean change in scale points, not a standardised effect size.",
+      "Step 1: d_z = 3/6 = 0.50. Step 2: d_av = 3/[(10 + 10)/2] = 3/10 = 0.30. Step 3: the SD of change scores is s_D = √(s₁² + s₂² − 2r s₁s₂). With s_D = 6 and both SDs 10, 36 = 200 − 200r, so r = .82. A high pre-post correlation shrinks s_D, which inflates d_z. d_av is comparable with between-groups d, while d_z reflects the power of the paired test. 'd_z = 0.30 and d_av = 0.50' reverses them. They are not equal. 3.00 is the raw mean change in scale points, not a standardised effect size.",
     module: "exam-prep",
     ref: "Lakens 2013",
   },
@@ -245,7 +245,7 @@ const D: Draft[] = [
     ],
     answer: 0,
     explanation:
-      "Step 1: SD of the differences s_D = √(10² + 10² − 2 × .50 × 10 × 10) = √(200 − 100) = 10. Step 2: paired SE = 10/√25 = 2, so paired t = 4/2 = 2.00. Step 3: independent SE = √(10²/25 + 10²/25) = √8 = 2.83, so t = 4/2.83 = 1.41. The paired analysis removes the variance shared between the two conditions, which is why it is more powerful when scores are positively correlated. The second option reverses the values. The last option mistakes the mean difference (4) and the independent SE (2.83) for t values.",
+      "Step 1: SD of the differences s_D = √(10² + 10² − 2 × .50 × 10 × 10) = √(200 − 100) = 10. Step 2: paired SE = 10/√25 = 2, so paired t = 4/2 = 2.00. Step 3: independent SE = √(10²/25 + 10²/25) = √8 = 2.83, so t = 4/2.83 = 1.41. The paired analysis removes the variance shared between the two conditions, which is why it is more powerful when scores are positively correlated. 'Paired t = 1.41; independent t = 2.00' reverses the values. 'Paired t = 4.00; independent t ≈ 2.83' mistakes the mean difference (4) and the independent SE (2.83) for t values.",
     module: "exam-prep",
     ref: "standard stats",
   },
@@ -359,7 +359,7 @@ const D: Draft[] = [
     ],
     answer: 0,
     explanation:
-      "Step 1: SE = SD/√N = 4.80/√36 = 4.80/6 = 0.80. Step 2: t = mean difference/SE = 2.40/0.80 = 3.00. Step 3: df = N − 1 = 35, because the paired test analyses one set of 36 difference scores. The second option divides by N instead of √N. The third uses df = N. The fourth uses the SD as if it were the SE.",
+      "Step 1: SE = SD/√N = 4.80/√36 = 4.80/6 = 0.80. Step 2: t = mean difference/SE = 2.40/0.80 = 3.00. Step 3: df = N − 1 = 35, because the paired test analyses one set of 36 difference scores. SE = 0.13 divides by N instead of √N. The answer with df = 36 uses df = N. SE = 4.80 uses the SD as if it were the SE.",
     module: "exam-prep",
     ref: "Field 2018 ch.10",
   },
@@ -433,7 +433,7 @@ const D: Draft[] = [
     ],
     answer: 0,
     explanation:
-      "Step 1: the t distribution is symmetrical, so the two-tailed p is split equally between the tails. Step 2: one-tailed p = .082/2 = .041, because the effect is in the predicted direction. Step 3: .041 < .05, so it is significant one-tailed. This is legitimate only if the directional prediction was made before seeing the data. .164 doubles p instead of halving it. Keeping .082 ignores the one-tailed hypothesis. The last option gets p right but the decision wrong.",
+      "Step 1: the t distribution is symmetrical, so the two-tailed p is split equally between the tails. Step 2: one-tailed p = .082/2 = .041, because the effect is in the predicted direction. Step 3: .041 < .05, so it is significant one-tailed. This is legitimate only if the directional prediction was made before seeing the data. .164 doubles p instead of halving it. Keeping .082 ignores the one-tailed hypothesis. 'p = .041; not significant' gets p right but the decision wrong.",
     module: "exam-prep",
     ref: "standard stats",
   },

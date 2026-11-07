@@ -32,7 +32,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "The modal model proposes a sensory register, a limited short-term store, and a durable long-term store, with control processes such as rehearsal moving information along. The first option reverses the flow. The episodic buffer, phonological loop and central executive are parts of Baddeley's working memory model. The last option mixes sensory, procedural and semantic memory, which are not stages of this model.",
+      "The modal model proposes a sensory register, a limited short-term store, and a durable long-term store, with control processes such as rehearsal moving information along. Long-term to short-term to sensory reverses the flow. The episodic buffer, phonological loop and central executive are parts of Baddeley's working memory model. The iconic, procedural and semantic sequence mixes sensory, procedural and semantic memory, which are not stages of this model.",
     module: M,
     ref: "Atkinson & Shiffrin 1968",
   },
@@ -261,7 +261,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     options: ["A-IV, B-III, C-I, D-II", "A-III, B-I, C-IV, D-II", "A-III, B-IV, C-I, D-II", "A-III, B-IV, C-II, D-I"],
     answer: 2,
     explanation:
-      "Serial position with delay = Glanzer and Cunitz (A-III); partial report = Sperling (B-IV); probe digit = Waugh and Norman (C-I); three-eared man = Darwin, Turvey and Crowder (D-II). The first code swaps Glanzer-Cunitz and Sperling. The second swaps Sperling and Waugh-Norman. The fourth swaps the last two.",
+      "Serial position with delay = Glanzer and Cunitz (A-III); partial report = Sperling (B-IV); probe digit = Waugh and Norman (C-I); three-eared man = Darwin, Turvey and Crowder (D-II). A-IV, B-III, C-I, D-II swaps Glanzer-Cunitz and Sperling. A-III, B-I, C-IV, D-II swaps Sperling and Waugh-Norman. A-III, B-IV, C-II, D-I swaps the last two.",
     module: M,
     ref: "Eysenck & Keane ch. 6",
   },
@@ -320,7 +320,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "The 1974 model had a central executive controlling two slave systems, the phonological loop and visuospatial sketchpad; the episodic buffer was added in 2000. The first option is the Atkinson-Shiffrin model. Episodic, semantic and procedural are long-term memory systems. Iconic, echoic and haptic are sensory stores.",
+      "The 1974 model had a central executive controlling two slave systems, the phonological loop and visuospatial sketchpad; the episodic buffer was added in 2000. Sensory register, short-term store and long-term store is the Atkinson-Shiffrin model. Episodic, semantic and procedural are long-term memory systems. Iconic, echoic and haptic are sensory stores.",
     module: M,
     ref: "Baddeley & Hitch 1974",
   },
@@ -820,7 +820,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     options: ["A-IV, B-II, C-III, D-I", "A-III, B-IV, C-II, D-I", "A-IV, B-III, C-I, D-II", "A-IV, B-III, C-II, D-I"],
     answer: 3,
     explanation:
-      "Partial report taps iconic (sensory) memory (A-IV); digit span taps STM (B-III); remembering a personal event is episodic (C-II); mirror-drawing learning is procedural (D-I). The first code swaps STM and episodic. The second swaps sensory memory and STM. The third swaps episodic and procedural.",
+      "Partial report taps iconic (sensory) memory (A-IV); digit span taps STM (B-III); remembering a personal event is episodic (C-II); mirror-drawing learning is procedural (D-I). A-IV, B-II, C-III, D-I swaps STM and episodic. A-III, B-IV, C-II, D-I swaps sensory memory and STM. A-IV, B-III, C-I, D-II swaps episodic and procedural.",
     module: M,
     ref: "Eysenck & Keane ch. 6–7",
   },

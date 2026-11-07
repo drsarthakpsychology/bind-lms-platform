@@ -418,7 +418,7 @@ const D: Draft[] = [
     ],
     answer: 0,
     explanation:
-      "Anscombe built the quartet to show that identical r, regression lines and moments can come from linear, non-linear and outlier-driven data. Visual inspection is essential before interpreting r. The second option is the misconception the quartet refutes. The means are identical, so they are not more informative. The datasets are small on purpose; the point is not about sample size.",
+      "Anscombe built the quartet to show that identical r, regression lines and moments can come from linear, non-linear and outlier-driven data. Visual inspection is essential before interpreting r. 'Correlation is always a reliable summary' is the misconception the quartet refutes. The means are identical, so they are not more informative. The datasets are small on purpose; the point is not about sample size.",
     module: "exam-prep",
     ref: "Anscombe 1973",
   },

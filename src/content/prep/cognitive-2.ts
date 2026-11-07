@@ -111,7 +111,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "If deep processing is defined as whatever leads to good memory, and good memory is explained by deep processing, the argument is circular, a point made by Baddeley and by Michael Eysenck. The framework predicts the opposite of the first option. It was tested extensively. It relies on semantic processing as the deepest level.",
+      "If deep processing is defined as whatever leads to good memory, and good memory is explained by deep processing, the argument is circular, a point made by Baddeley and by Michael Eysenck. The framework predicts the opposite of 'shallow processing is better than deep processing'. It was tested extensively. It relies on semantic processing as the deepest level.",
     module: M,
     ref: "Baddeley 1978",
   },
@@ -328,7 +328,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     options: ["A-III, B-I, C-IV, D-II", "A-III, B-IV, C-I, D-II", "A-IV, B-III, C-I, D-II", "A-III, B-IV, C-II, D-I"],
     answer: 1,
     explanation:
-      "Declarative memory depends on the medial temporal lobe (hippocampus) and diencephalon (A-III); skills and habits on the striatum (B-IV); priming on neocortex (C-I); delay eyeblink conditioning on the cerebellum (D-II). The first code swaps striatum and neocortex. The third swaps the first two systems. The fourth swaps neocortex and cerebellum.",
+      "Declarative memory depends on the medial temporal lobe (hippocampus) and diencephalon (A-III); skills and habits on the striatum (B-IV); priming on neocortex (C-I); delay eyeblink conditioning on the cerebellum (D-II). A-III, B-I, C-IV, D-II swaps striatum and neocortex. A-IV, B-III, C-I, D-II swaps the first two systems. A-III, B-IV, C-II, D-I swaps neocortex and cerebellum.",
     module: B,
     ref: "Squire 2004",
   },
@@ -463,7 +463,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     options: ["A-II, B-I, C-III, D-IV", "A-I, B-II, C-IV, D-III", "A-III, B-II, C-I, D-IV", "A-I, B-II, C-III, D-IV"],
     answer: 3,
     explanation:
-      "Testing the first list after a second is learned measures retroactive interference (A-I), with the rest-instead-of-B control (C-III). Testing the second list after a first was learned measures proactive interference (B-II), with the rest-instead-of-A control (D-IV). The first code swaps RI and PI. The second swaps the controls. The third treats a control as an experimental group.",
+      "Testing the first list after a second is learned measures retroactive interference (A-I), with the rest-instead-of-B control (C-III). Testing the second list after a first was learned measures proactive interference (B-II), with the rest-instead-of-A control (D-IV). A-II, B-I, C-III, D-IV swaps RI and PI. A-I, B-II, C-IV, D-III swaps the controls. A-III, B-II, C-I, D-IV treats a control as an experimental group.",
     module: M,
     ref: "Underwood 1957; Eysenck & Keane",
   },
@@ -562,7 +562,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "Imaging work by Anderson and colleagues found that suppression engaged lateral prefrontal control regions, which down-regulated hippocampal activity, a proposed mechanism for motivated forgetting. Amygdala activity alone was not the finding. Clear differences were found. The last option reverses the pattern.",
+      "Imaging work by Anderson and colleagues found that suppression engaged lateral prefrontal control regions, which down-regulated hippocampal activity, a proposed mechanism for motivated forgetting. Amygdala activity alone was not the finding. Clear differences were found. Reduced prefrontal with increased hippocampal activity reverses the pattern.",
     module: B,
     ref: "Anderson & Green 2001; Anderson et al. 2004",
   },

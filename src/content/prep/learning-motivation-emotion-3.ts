@@ -287,7 +287,7 @@ export const QUESTIONS_3: PrepQuestion[] = [
     options: ["A-II, B-I, C-IV, D-III", "A-II, B-IV, C-I, D-III", "A-I, B-IV, C-II, D-III", "A-II, B-IV, C-III, D-I"],
     answer: 1,
     explanation:
-      "Achievement = excellence (A-II). Affiliation = warm relationships (B-IV). Power = influence over others (C-I). Autonomy = independence (D-III). The first code swaps affiliation and power. The third swaps achievement and power. The fourth swaps power and autonomy.",
+      "Achievement = excellence (A-II). Affiliation = warm relationships (B-IV). Power = influence over others (C-I). Autonomy = independence (D-III). A-II, B-I, C-IV, D-III swaps affiliation and power. A-I, B-IV, C-II, D-III swaps achievement and power. A-II, B-IV, C-III, D-I swaps power and autonomy.",
     module: M,
     ref: "Murray 1938; McClelland 1987",
   },
@@ -416,7 +416,7 @@ export const QUESTIONS_3: PrepQuestion[] = [
     options: ["A-II, B-III, C-IV, D-I", "A-III, B-II, C-I, D-IV", "A-III, B-II, C-IV, D-I", "A-IV, B-II, C-III, D-I"],
     answer: 2,
     explanation:
-      "Ability is internal, stable and not under one's control at the moment (A-III). Effort is internal, changeable and controllable (B-II). Task difficulty is external and stable (C-IV). Luck is external and unstable (D-I). The first code swaps ability and effort. The second swaps difficulty and luck. The fourth swaps ability and difficulty.",
+      "Ability is internal, stable and not under one's control at the moment (A-III). Effort is internal, changeable and controllable (B-II). Task difficulty is external and stable (C-IV). Luck is external and unstable (D-I). A-II, B-III, C-IV, D-I swaps ability and effort. A-III, B-II, C-I, D-IV swaps difficulty and luck. A-IV, B-II, C-III, D-I swaps ability and difficulty.",
     module: M,
     ref: "Weiner 1979",
   },
@@ -692,7 +692,7 @@ export const QUESTIONS_3: PrepQuestion[] = [
     options: ["A-III, B-I, C-IV, D-II", "A-IV, B-III, C-I, D-II", "A-III, B-IV, C-II, D-I", "A-III, B-IV, C-I, D-II"],
     answer: 3,
     explanation:
-      "Two attractive options = approach-approach (A-III). Two unpleasant options = avoidance-avoidance (B-IV). One goal with good and bad features = approach-avoidance (C-I). Two options each with good and bad features = double approach-avoidance (D-II). The first code swaps the two avoidance types. The second swaps approach-approach and avoidance-avoidance. The third swaps the last two.",
+      "Two attractive options = approach-approach (A-III). Two unpleasant options = avoidance-avoidance (B-IV). One goal with good and bad features = approach-avoidance (C-I). Two options each with good and bad features = double approach-avoidance (D-II). A-III, B-I, C-IV, D-II swaps the two avoidance types. A-IV, B-III, C-I, D-II swaps approach-approach and avoidance-avoidance. A-III, B-IV, C-II, D-I swaps the last two.",
     module: M,
     ref: "Lewin 1935; Miller 1944",
   },
@@ -731,7 +731,7 @@ export const QUESTIONS_3: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "The lateral hypothalamus was called a 'feeding centre' and the ventromedial hypothalamus a 'satiety centre'. Modern work shows a more complex network (including the arcuate nucleus and hormones such as leptin and ghrelin), but the classic results are as described. The first and third options reverse the lesion effects. The hypothalamus is clearly involved.",
+      "The lateral hypothalamus was called a 'feeding centre' and the ventromedial hypothalamus a 'satiety centre'. Modern work shows a more complex network (including the arcuate nucleus and hormones such as leptin and ghrelin), but the classic results are as described. Overeating after lateral lesions, and stopping eating after ventromedial lesions, reverse the lesion effects. The hypothalamus is clearly involved.",
     module: B,
     ref: "Anand & Brobeck 1951; Hetherington & Ranson 1940",
   },
@@ -772,7 +772,7 @@ export const QUESTIONS_3: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "Schachter's studies, such as those with a rigged clock showing dinner time, suggested external cues triggered eating more strongly in people with obesity; later research found externality in people of all weights. The first option is the reverse. Reliance on stomach contractions is the opposite of externality. Hunger hormones are present.",
+      "Schachter's studies, such as those with a rigged clock showing dinner time, suggested external cues triggered eating more strongly in people with obesity; later research found externality in people of all weights. Being less sensitive to food cues is the reverse. Reliance on stomach contractions is the opposite of externality. Hunger hormones are present.",
     module: M,
     ref: "Schachter 1971; Rodin 1981",
   },
@@ -812,7 +812,7 @@ export const QUESTIONS_3: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "Masters and Johnson's laboratory observations gave excitement, plateau, orgasm and resolution. Helen Singer Kaplan later added a desire phase, so the first option mixes models. The second describes behavioural stages of reproduction. The third is not a recognised model.",
+      "Masters and Johnson's laboratory observations gave excitement, plateau, orgasm and resolution. Helen Singer Kaplan later added a desire phase, so 'desire, arousal, orgasm, resolution' mixes models. Attraction, courtship, mating and parenting are behavioural stages of reproduction. Libido, plateau, release and rest is not a recognised model.",
     module: M,
     ref: "Masters & Johnson 1966",
   },

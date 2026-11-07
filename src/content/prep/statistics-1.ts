@@ -213,7 +213,7 @@ const D: Draft[] = [
     ],
     answer: 0,
     explanation:
-      "CV = SD/Mean × 100. A: 10/50 = 20%. B: 12/80 = 15%. A is relatively more variable, even though its absolute SD is smaller. CV is the right comparison when means differ (on ratio-scale data). Judging by raw SD alone is the error in the third option. The CVs are not equal.",
+      "CV = SD/Mean × 100. A: 10/50 = 20%. B: 12/80 = 15%. A is relatively more variable, even though its absolute SD is smaller. CV is the right comparison when means differ (on ratio-scale data). Judging by raw SD alone is the error in 'Group B, because its SD is larger'. The CVs are not equal.",
     module: "exam-prep",
     ref: "Garrett ch.5",
   },
@@ -748,7 +748,7 @@ const D: Draft[] = [
     ],
     answer: 0,
     explanation:
-      "Psychology: z = (72 − 60)/8 = 1.5. Sociology: z = (80 − 70)/10 = 1.0. She stands farther above her class in Psychology. Raw scores cannot be compared across tests with different means and SDs. The 0.8 in the second option is a miscalculation.",
+      "Psychology: z = (72 − 60)/8 = 1.5. Sociology: z = (80 − 70)/10 = 1.0. She stands farther above her class in Psychology. Raw scores cannot be compared across tests with different means and SDs. The 0.8 in 'Sociology (z = 1.0 vs 0.8)' is a miscalculation.",
     module: "assessment",
     ref: "standard stats",
   },

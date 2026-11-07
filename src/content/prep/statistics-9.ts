@@ -135,7 +135,7 @@ const D: Draft[] = [
     options: ["Communality .61, uniqueness .39", "Communality 1.10, uniqueness −.10", "Communality .30, uniqueness .70", "Communality .39, uniqueness .61"],
     answer: 0,
     explanation:
-      "Step 1: communality (h²) is the row sum of squared loadings: .60² + .50² = .36 + .25 = .61. Step 2: uniqueness = 1 − h² = .39, the variance not shared with the factors (specific variance plus error). 1.10 adds loadings without squaring, which also gives an impossible negative uniqueness. .30 multiplies the loadings. The last option swaps the two values.",
+      "Step 1: communality (h²) is the row sum of squared loadings: .60² + .50² = .36 + .25 = .61. Step 2: uniqueness = 1 − h² = .39, the variance not shared with the factors (specific variance plus error). 1.10 adds loadings without squaring, which also gives an impossible negative uniqueness. .30 multiplies the loadings. 'Communality .39, uniqueness .61' swaps the two values.",
     module: "assessment",
     ref: "Tabachnick & Fidell ch.13",
   },
@@ -638,7 +638,7 @@ const D: Draft[] = [
     ],
     answer: 0,
     explanation:
-      "Step 1: Δχ² = 25.0 − 15.0 = 10.0. Step 2: Δdf = 10 − 8 = 2. Step 3: 10.0 > 5.99, so imposing the two constraints makes fit significantly worse, and the less constrained Model B is preferred. The second option misreads the comparison with the critical value. Adding the χ² values is not a valid test. Nested models are compared precisely because their df differ.",
+      "Step 1: Δχ² = 25.0 − 15.0 = 10.0. Step 2: Δdf = 10 − 8 = 2. Step 3: 10.0 > 5.99, so imposing the two constraints makes fit significantly worse, and the less constrained Model B is preferred. Calling Δχ²(2) = 10.0 not significant misreads the comparison with the critical value. Adding the χ² values is not a valid test. Nested models are compared precisely because their df differ.",
     module: "assessment",
     ref: "Kline 2016",
   },

@@ -80,7 +80,7 @@ export const QUESTIONS_4: PrepQuestion[] = [
     options: ["A-III, B-II, C-I, D-IV", "A-IV, B-III, C-I, D-II", "A-III, B-IV, C-I, D-II", "A-I, B-IV, C-III, D-II"],
     answer: 2,
     explanation:
-      "Scale 1 = Hypochondriasis (Hs), 4 = Psychopathic Deviate (Pd), 7 = Psychasthenia (Pt), 9 = Hypomania (Ma). The full order is 1 Hs, 2 D, 3 Hy, 4 Pd, 5 Mf, 6 Pa, 7 Pt, 8 Sc, 9 Ma, 0 Si. The first code swaps Pd and Ma. The second puts Pd at scale 1. The fourth swaps Hs and Pt.",
+      "Scale 1 = Hypochondriasis (Hs), 4 = Psychopathic Deviate (Pd), 7 = Psychasthenia (Pt), 9 = Hypomania (Ma). The full order is 1 Hs, 2 D, 3 Hy, 4 Pd, 5 Mf, 6 Pa, 7 Pt, 8 Sc, 9 Ma, 0 Si. A-III, B-II, C-I, D-IV swaps Pd and Ma. A-IV, B-III, C-I, D-II puts Pd at scale 1. A-I, B-IV, C-III, D-II swaps Hs and Pt.",
     module: M,
     ref: "Graham 2012",
   },
@@ -335,7 +335,7 @@ export const QUESTIONS_4: PrepQuestion[] = [
     options: ["A-IV, B-III, C-II, D-I", "A-III, B-II, C-IV, D-I", "A-III, B-IV, C-I, D-II", "A-III, B-IV, C-II, D-I"],
     answer: 3,
     explanation:
-      "RCd = Demoralisation (A-III); RC2 = Low Positive Emotions (B-IV), the anhedonic core of the old D scale; RC4 = Antisocial Behaviour (C-II); RC8 = Aberrant Experiences (D-I), the unusual perceptual and thought experiences of Sc. The first code swaps RCd and RC2. The second swaps RC2 and RC4. The third swaps RC4 and RC8.",
+      "RCd = Demoralisation (A-III); RC2 = Low Positive Emotions (B-IV), the anhedonic core of the old D scale; RC4 = Antisocial Behaviour (C-II); RC8 = Aberrant Experiences (D-I), the unusual perceptual and thought experiences of Sc. A-IV, B-III, C-II, D-I swaps RCd and RC2. A-III, B-II, C-IV, D-I swaps RC2 and RC4. A-III, B-IV, C-I, D-II swaps RC4 and RC8.",
     module: M,
     ref: "Tellegen et al. 2003",
   },
@@ -475,7 +475,7 @@ export const QUESTIONS_4: PrepQuestion[] = [
     options: ["A-III, B-I, C-II, D-IV", "A-I, B-III, C-II, D-IV", "A-III, B-II, C-I, D-IV", "A-IV, B-I, C-II, D-III"],
     answer: 0,
     explanation:
-      "Disclosure shows how open or secretive the respondent was (A-III). Desirability shows a favourable self-presentation (B-I). Debasement shows self-depreciation and symptom exaggeration (C-II). The Validity index uses improbable items (D-IV). The second code swaps X and Y. The third swaps Y and Z. The fourth swaps X and V.",
+      "Disclosure shows how open or secretive the respondent was (A-III). Desirability shows a favourable self-presentation (B-I). Debasement shows self-depreciation and symptom exaggeration (C-II). The Validity index uses improbable items (D-IV). A-I, B-III, C-II, D-IV swaps X and Y. A-III, B-II, C-I, D-IV swaps Y and Z. A-IV, B-I, C-II, D-III swaps X and V.",
     module: M,
     ref: "Millon et al. 2015",
   },
@@ -580,7 +580,7 @@ export const QUESTIONS_4: PrepQuestion[] = [
     options: ["A-IV, B-III, C-I, D-II", "A-III, B-I, C-IV, D-II", "A-III, B-IV, C-I, D-II", "A-III, B-IV, C-II, D-I"],
     answer: 2,
     explanation:
-      "A = Warmth, C = Emotional Stability, E = Dominance, Q4 = Tension. So A-III, B-IV, C-I, D-II. The first code swaps Warmth and Emotional Stability. The second swaps Emotional Stability and Dominance. The fourth swaps Dominance and Tension.",
+      "A = Warmth, C = Emotional Stability, E = Dominance, Q4 = Tension. So A-III, B-IV, C-I, D-II. A-IV, B-III, C-I, D-II swaps Warmth and Emotional Stability. A-III, B-I, C-IV, D-II swaps Emotional Stability and Dominance. A-III, B-IV, C-II, D-I swaps Dominance and Tension.",
     module: M,
     ref: "Russell & Karol 1994",
   },
@@ -634,7 +634,7 @@ export const QUESTIONS_4: PrepQuestion[] = [
     options: ["A-IV, B-II, C-III, D-I", "A-III, B-IV, C-II, D-I", "A-IV, B-III, C-I, D-II", "A-IV, B-III, C-II, D-I"],
     answer: 3,
     explanation:
-      "Gregariousness is an Extraversion facet (A-IV). Straightforwardness is an Agreeableness facet (B-III). Deliberation is a Conscientiousness facet (C-II). Vulnerability is a Neuroticism facet (D-I). The first code swaps Agreeableness and Conscientiousness. The second swaps Extraversion and Agreeableness. The third swaps Neuroticism and Conscientiousness.",
+      "Gregariousness is an Extraversion facet (A-IV). Straightforwardness is an Agreeableness facet (B-III). Deliberation is a Conscientiousness facet (C-II). Vulnerability is a Neuroticism facet (D-I). A-IV, B-II, C-III, D-I swaps Agreeableness and Conscientiousness. A-III, B-IV, C-II, D-I swaps Extraversion and Agreeableness. A-IV, B-III, C-I, D-II swaps Neuroticism and Conscientiousness.",
     module: M,
     ref: "Costa & McCrae 1992",
   },

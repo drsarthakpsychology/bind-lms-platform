@@ -677,7 +677,7 @@ const D: Draft[] = [
     ],
     answer: 0,
     explanation:
-      "Step 1: SEM = SD × √(1 − r) = 8 × √.16 = 8 × .40 = 3.2. Step 2: both the before and after scores carry error, so SE_diff = 3.2 × √2 = 4.53. Step 3: criterion = 1.96 × 4.53 = 8.87. Step 4: the drop of 8 is just below 8.87, so by this reliable change index it could still be measurement error. The second option uses the SEM as if it were SE_diff, forgetting that two scores carry error. The third forgets the square root when finding the SEM (8 × .16 = 1.28). The fourth uses the SD instead of the SEM.",
+      "Step 1: SEM = SD × √(1 − r) = 8 × √.16 = 8 × .40 = 3.2. Step 2: both the before and after scores carry error, so SE_diff = 3.2 × √2 = 4.53. Step 3: criterion = 1.96 × 4.53 = 8.87. Step 4: the drop of 8 is just below 8.87, so by this reliable change index it could still be measurement error. SE_diff = 3.20 uses the SEM as if it were SE_diff, forgetting that two scores carry error. SE_diff = 1.81 forgets the square root when finding the SEM (8 × .16 = 1.28). SE_diff = 11.31 uses the SD instead of the SEM.",
     module: "assessment",
     ref: "Jacobson & Truax 1991",
   },

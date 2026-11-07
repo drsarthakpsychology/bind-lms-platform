@@ -409,7 +409,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "Parallel forms must have the same true scores and equal error variances, which implies equal means, equal variances and equal correlations with other variables. They need not have identical items; if they did they would be the same test, and carry-over effects would be maximal. The first three options are all consequences of parallelism, so they are requirements.",
+      "Parallel forms must have the same true scores and equal error variances, which implies equal means, equal variances and equal correlations with other variables. They need not have identical items; if they did they would be the same test, and carry-over effects would be maximal. Equal means, equal variances and equal correlations with other variables are all consequences of parallelism, so they are requirements.",
     module: M,
     ref: "Lord & Novick 1968",
   },

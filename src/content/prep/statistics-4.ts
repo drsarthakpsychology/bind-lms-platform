@@ -158,7 +158,7 @@ const D: Draft[] = [
     options: ["Tolerance .20, VIF 5.0", "Tolerance .80, VIF 1.25", "Tolerance .20, VIF 0.20", "Tolerance .64, VIF 1.56"],
     answer: 0,
     explanation:
-      "Tolerance = 1 − R²ⱼ = .20, and VIF = 1/tolerance = 5.0. This is substantial collinearity; common warning thresholds are VIF above 5 or 10, or tolerance below .2 or .1. The second option uses R² as the tolerance. VIF is the reciprocal of tolerance, not equal to it. .64 squares .80 for no reason.",
+      "Tolerance = 1 − R²ⱼ = .20, and VIF = 1/tolerance = 5.0. This is substantial collinearity; common warning thresholds are VIF above 5 or 10, or tolerance below .2 or .1. Tolerance .80 with VIF 1.25 uses R² as the tolerance. VIF is the reciprocal of tolerance, not equal to it. .64 squares .80 for no reason.",
     module: "exam-prep",
     ref: "Field 2018 ch.9",
   },
@@ -349,7 +349,7 @@ const D: Draft[] = [
     ],
     answer: 0,
     explanation:
-      "Indirect effect = a × b = .40 × .50 = .20. In linear OLS models, c = c′ + ab, so c′ = .30 − .20 = .10. The total effect is .30 in the question, so it cannot also be the direct effect, which rules out the third option. .90 adds a and b instead of multiplying them. The last option swaps the two effects.",
+      "Indirect effect = a × b = .40 × .50 = .20. In linear OLS models, c = c′ + ab, so c′ = .30 − .20 = .10. The total effect is .30 in the question, so it cannot also be the direct effect, which rules out 'Indirect .20; direct .30'. .90 adds a and b instead of multiplying them. 'Indirect .10; direct .20' swaps the two effects.",
     module: "exam-prep",
     ref: "Hayes 2018 ch.3",
   },

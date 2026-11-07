@@ -60,7 +60,7 @@ export const QUESTIONS_5: PrepQuestion[] = [
     options: ["A-III, B-IV, C-II, D-I", "A-II, B-III, C-IV, D-I", "A-III, B-I, C-IV, D-II", "A-III, B-II, C-IV, D-I"],
     answer: 3,
     explanation:
-      "W = whole blot (A-III); D = common detail (B-II); Dd = unusual detail (C-IV); S = white space, always coded with another location such as WS or DS (D-I). The first code swaps common and unusual detail. The second swaps whole and common detail. The third swaps D and S.",
+      "W = whole blot (A-III); D = common detail (B-II); Dd = unusual detail (C-IV); S = white space, always coded with another location such as WS or DS (D-I). A-III, B-IV, C-II, D-I swaps common and unusual detail. A-II, B-III, C-IV, D-I swaps whole and common detail. A-III, B-I, C-IV, D-II swaps D and S.",
     module: M,
     ref: "Exner 2003 ch. 4",
   },
@@ -119,7 +119,7 @@ export const QUESTIONS_5: PrepQuestion[] = [
     options: ["A-II, B-III, C-IV, D-I", "A-IV, B-II, C-III, D-I", "A-II, B-IV, C-III, D-I", "A-II, B-IV, C-I, D-III"],
     answer: 2,
     explanation:
-      "FC = form-dominant chromatic colour (A-II). C' = achromatic colour (B-IV). T = texture (C-III). V = vista, shading as depth (D-I). The first code swaps C' and T. The second swaps FC and C'. The fourth swaps T and V.",
+      "FC = form-dominant chromatic colour (A-II). C' = achromatic colour (B-IV). T = texture (C-III). V = vista, shading as depth (D-I). A-II, B-III, C-IV, D-I swaps C' and T. A-IV, B-II, C-III, D-I swaps FC and C'. A-II, B-IV, C-I, D-III swaps T and V.",
     module: M,
     ref: "Exner 2003 ch. 5",
   },
@@ -791,7 +791,7 @@ export const QUESTIONS_5: PrepQuestion[] = [
     options: ["A-II, B-IV, C-I, D-III", "A-IV, B-I, C-II, D-III", "A-IV, B-II, C-I, D-III", "A-IV, B-II, C-III, D-I"],
     answer: 2,
     explanation:
-      "Lindzey grouped techniques by response type: association (Rorschach, word association), construction (TAT stories), completion (sentence completion), choice or ordering (Szondi), and expression (drawing, play). So A-IV, B-II, C-I, D-III. The first code swaps Rorschach and TAT. The second swaps TAT and SCT. The fourth swaps SCT and DAP.",
+      "Lindzey grouped techniques by response type: association (Rorschach, word association), construction (TAT stories), completion (sentence completion), choice or ordering (Szondi), and expression (drawing, play). So A-IV, B-II, C-I, D-III. A-II, B-IV, C-I, D-III swaps Rorschach and TAT. A-IV, B-I, C-II, D-III swaps TAT and SCT. A-IV, B-II, C-III, D-I swaps SCT and DAP.",
     module: M,
     ref: "Lindzey 1959",
   },

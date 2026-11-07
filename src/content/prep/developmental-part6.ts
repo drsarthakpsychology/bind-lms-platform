@@ -94,7 +94,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "Puberty refers to the biological process: rising sex hormones trigger the growth spurt, development of primary and secondary sex characteristics, menarche in girls and spermarche in boys. Adolescence is the broader period of transition, including social, emotional and cognitive change, so the first option describes adolescence rather than puberty. Brain development does not end at 13; the prefrontal cortex keeps maturing into the mid-twenties. An identity crisis is Erikson's psychosocial idea about adolescence, not a definition of puberty, and not every adolescent experiences a dramatic crisis.",
+      "Puberty refers to the biological process: rising sex hormones trigger the growth spurt, development of primary and secondary sex characteristics, menarche in girls and spermarche in boys. Adolescence is the broader period of transition, including social, emotional and cognitive change, so 'the whole period between childhood and adulthood' describes adolescence rather than puberty. Brain development does not end at 13; the prefrontal cortex keeps maturing into the mid-twenties. An identity crisis is Erikson's psychosocial idea about adolescence, not a definition of puberty, and not every adolescent experiences a dramatic crisis.",
     ref: "Steinberg, Adolescence, ch. 1",
   }),
 ];

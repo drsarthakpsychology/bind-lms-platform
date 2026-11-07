@@ -230,7 +230,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     options: ["A-I, B-II, C-III, D-IV", "A-II, B-I, C-III, D-IV", "A-I, B-IV, C-III, D-II", "A-I, B-II, C-IV, D-III"],
     answer: 0,
     explanation:
-      "Shock about 3.5 (expansion), brightness about 0.33 (strong compression), line length about 1.0 (nearly linear), loudness about 0.67 (compression). The second code swaps shock and brightness. The third swaps brightness and loudness. The fourth swaps length and loudness.",
+      "Shock about 3.5 (expansion), brightness about 0.33 (strong compression), line length about 1.0 (nearly linear), loudness about 0.67 (compression). A-II, B-I, C-III, D-IV swaps shock and brightness. A-I, B-IV, C-III, D-II swaps brightness and loudness. A-I, B-II, C-IV, D-III swaps length and loudness.",
     module: M,
     ref: "Stevens 1975",
   },
@@ -592,7 +592,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "Masked priming studies show that unseen words or faces can briefly speed related responses, but the famous 1957 cinema claim about 'eat popcorn' messages was admitted to be invented, and strong persuasion effects have not been shown. So effects exist but are small, making the first, third and fourth options wrong.",
+      "Masked priming studies show that unseen words or faces can briefly speed related responses, but the famous 1957 cinema claim about 'eat popcorn' messages was admitted to be invented, and strong persuasion effects have not been shown. So effects exist but are small, so reliable persuasion, no effects at all, and effects larger than visible stimuli are all wrong.",
     module: M,
     ref: "Greenwald 1992; Pratkanis 1992",
   },
@@ -686,7 +686,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "The first branch is cone adaptation; after the rod-cone break, the more sensitive rods take over and keep improving for about half an hour. The first option reverses the speeds. Rods, not only cones, adapt. Sensitivity increases in the dark, which is the point of dark adaptation.",
+      "The first branch is cone adaptation; after the rod-cone break, the more sensitive rods take over and keep improving for about half an hour. Rods in 2 minutes and cones in 30 reverses the speeds. Rods, not only cones, adapt. Sensitivity increases in the dark, which is the point of dark adaptation.",
     module: M,
     ref: "Goldstein ch. 2",
   },

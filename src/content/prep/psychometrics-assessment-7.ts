@@ -75,7 +75,7 @@ export const QUESTIONS_7: PrepQuestion[] = [
     options: ["A-III, B-II, C-IV, D-I", "A-IV, B-III, C-II, D-I", "A-III, B-IV, C-I, D-II", "A-III, B-IV, C-II, D-I"],
     answer: 3,
     explanation:
-      "BDI-II cut-offs: 0 to 13 minimal, 14 to 19 mild, 20 to 28 moderate, 29 to 63 severe. So A-III, B-IV, C-II, D-I. The first code swaps mild and moderate. The second shifts every label up one band. The third swaps moderate and severe.",
+      "BDI-II cut-offs: 0 to 13 minimal, 14 to 19 mild, 20 to 28 moderate, 29 to 63 severe. So A-III, B-IV, C-II, D-I. A-III, B-II, C-IV, D-I swaps mild and moderate. A-IV, B-III, C-II, D-I shifts every label up one band. A-III, B-IV, C-I, D-II swaps moderate and severe.",
     module: M,
     ref: "Beck, Steer & Brown 1996",
   },
@@ -367,7 +367,7 @@ export const QUESTIONS_7: PrepQuestion[] = [
     options: ["A-II, B-III, C-IV, D-I", "A-II, B-IV, C-III, D-I", "A-I, B-IV, C-III, D-II", "A-II, B-IV, C-I, D-III"],
     answer: 1,
     explanation:
-      "SCID-5: clinician-administered semi-structured DSM interview (A-II). MINI: brief structured interview (B-IV). CIDI: fully structured for lay interviewers (C-III). SCAN: WHO semi-structured, incorporating PSE-10 (D-I). The first code swaps MINI and CIDI. The third swaps SCID and SCAN. The fourth swaps CIDI and SCAN.",
+      "SCID-5: clinician-administered semi-structured DSM interview (A-II). MINI: brief structured interview (B-IV). CIDI: fully structured for lay interviewers (C-III). SCAN: WHO semi-structured, incorporating PSE-10 (D-I). A-II, B-III, C-IV, D-I swaps MINI and CIDI. A-I, B-IV, C-III, D-II swaps SCID and SCAN. A-II, B-IV, C-I, D-III swaps CIDI and SCAN.",
     module: M,
     ref: "First et al. 2015; Sheehan et al. 1998; WHO SCAN",
   },
@@ -1119,7 +1119,7 @@ export const QUESTIONS_7: PrepQuestion[] = [
     options: ["A-III, B-IV, C-I, D-II", "A-IV, B-III, C-I, D-II", "A-III, B-IV, C-II, D-I", "A-III, B-I, C-IV, D-II"],
     answer: 0,
     explanation:
-      "WAIS-IV: individual intelligence scale (A-III). Raven's SPM: non-verbal reasoning, often group-administered (B-IV). MMPI-2: objective personality inventory (C-I). Rorschach: projective (D-II). The second code swaps the WAIS and Raven's. The third swaps the MMPI and Rorschach. The fourth swaps Raven's and the MMPI.",
+      "WAIS-IV: individual intelligence scale (A-III). Raven's SPM: non-verbal reasoning, often group-administered (B-IV). MMPI-2: objective personality inventory (C-I). Rorschach: projective (D-II). A-IV, B-III, C-I, D-II swaps the WAIS and Raven's. A-III, B-IV, C-II, D-I swaps the MMPI and Rorschach. A-III, B-I, C-IV, D-II swaps Raven's and the MMPI.",
     module: M,
     ref: "Anastasi & Urbina",
   },

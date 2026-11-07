@@ -455,7 +455,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     options: ["A-IV, B-II, C-III, D-I", "A-II, B-IV, C-I, D-III", "A-IV, B-II, C-I, D-III", "A-IV, B-I, C-II, D-III"],
     answer: 2,
     explanation:
-      "Convergent = correlates with same-construct measures (A-IV). Discriminant = does not correlate with different constructs (B-II). Incremental = adds unique predictive power (C-I). Predictive = criterion measured later (D-III). The first code swaps incremental and predictive. The second swaps convergent and discriminant. The fourth swaps discriminant and incremental.",
+      "Convergent = correlates with same-construct measures (A-IV). Discriminant = does not correlate with different constructs (B-II). Incremental = adds unique predictive power (C-I). Predictive = criterion measured later (D-III). A-IV, B-II, C-III, D-I swaps incremental and predictive. A-II, B-IV, C-I, D-III swaps convergent and discriminant. A-IV, B-I, C-II, D-III swaps discriminant and incremental.",
     module: M,
     ref: "Campbell & Fiske 1959; Hunsley & Meyer 2003",
   },
