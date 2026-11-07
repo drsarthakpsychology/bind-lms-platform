@@ -182,6 +182,10 @@ Howard Gardner (1983) proposed separate **intelligences**, each meeting criteria
 | **Naturalistic** (added 1999) | A farmer who reads soil and weather, a botanist |
 He has discussed **existential** intelligence (big questions of life and death) as a possible "half" intelligence.
 
+:::widget sort
+{"prompt": "Which of Gardner's intelligences does each person show most?", "buckets": ["Linguistic", "Spatial", "Bodily-kinaesthetic", "Interpersonal"], "items": [{"text": "A radio jockey who can talk wittily for an hour with no script", "bucket": 0, "why": "Skill with words and their sound and meaning."}, {"text": "A woman who draws a perfect kolam freehand on her doorstep each morning", "bucket": 1, "why": "Seeing and holding patterns in space."}, {"text": "A fast bowler who adjusts his run-up and wrist without thinking", "bucket": 2, "why": "Fine control of the body."}, {"text": "A school counsellor who senses which student is upset before anyone speaks", "bucket": 3, "why": "Reading other people's moods and intentions."}, {"text": "A taxi driver who never needs a map in a city of 20 million", "bucket": 1, "why": "Spatial: mental maps and routes."}, {"text": "A village leader who settles family disputes so both sides feel heard", "bucket": 3, "why": "Understanding and influencing others."}]}
+:::
+
 **Evaluation**: hugely popular in schools, and it widens what counts as talent. But most "intelligences" correlate with g when measured, Gardner offered no standard tests, and some are arguably **talents** rather than intelligences. Its spin-off, teaching to "learning styles", has no supporting evidence.
 
 ### Sternberg's triarchic theory (1985) and successful intelligence
@@ -283,6 +287,10 @@ The **Cognitive Assessment System** (CAS, Naglieri and Das, 1997; CAS2, 2014) me
 - **Daniel Goleman's** best-selling 1995 book popularised a **mixed model** including self-awareness, self-regulation, motivation, empathy and social skills.
 - **Trait EI** (K. V. Petrides) treats EI as self-perceived emotional dispositions, measured by questionnaire.
 **Evaluation**: ability EI predicts some social and work outcomes beyond IQ and personality, but modestly; mixed and trait models overlap heavily with personality traits (especially emotional stability and agreeableness). Popular claims that "EQ matters more than IQ" are not supported by the evidence.
+
+:::widget timeline
+{"prompt": "Put the theories of intelligence in the order they were first put forward.", "events": [{"label": "Spearman: one general factor, g, plus specific factors", "when": "1904"}, {"label": "Thurstone: about seven primary mental abilities", "when": "1938"}, {"label": "Vernon: a hierarchy with g at the top", "when": "1950"}, {"label": "Guilford: the structure of intellect cube", "when": "1955"}, {"label": "Gardner: multiple intelligences", "when": "1983"}, {"label": "Sternberg: the triarchic theory", "when": "1985"}, {"label": "Carroll: the three-stratum theory", "when": "1993"}], "why": "The field moved from one g, to many abilities, to hierarchies that hold both, and then broadened what counts as intelligence. Carroll's strata now anchor the CHC model behind most modern tests."}
+:::
 
 :::recall
 1. Name Gardner's eight intelligences. || Linguistic, logical-mathematical, spatial, musical, bodily-kinaesthetic, interpersonal, intrapersonal, naturalistic.
@@ -399,6 +407,10 @@ Older systems, still used in many Indian certificates and exam questions (ICD-10
 - **Joseph Renzulli's three-ring model** (1978): giftedness lies where **above-average ability**, **creativity** and **task commitment** overlap.
 - **Françoys Gagné** separates **gifts** (natural abilities) from **talents** (developed skills), with environment, motivation and chance turning one into the other.
 - **Twice-exceptional** children are gifted and also have a disability (for example, autism or a specific learning disorder); one can mask the other.
+
+:::widget guess
+{"prompt": "IQ tests are scaled to a mean of 100 and a standard deviation of 15. Roughly what percentage of people score above 130, two standard deviations above the mean?", "min": 0, "max": 20, "step": 0.5, "unit": "percent", "answer": [1.5, 3], "reveal": "About 2 percent (2.3 percent on a perfect normal curve). That is about 1 child in 44. Many schemes for gifted children use 130 as a cut-off, but ability, creativity and commitment together predict achievement better than an IQ score alone.", "clinician": "The same symmetry gives about 2 percent below 70, which is why an IQ of about 70, plus adaptive deficits, has long been used as the threshold for intellectual disability. Remember the standard error of measurement: a score of 72 has a 95 percent band of roughly 66 to 78."}
+:::
 
 :::recall
 1. What are the three DSM-5-TR criteria for intellectual disability? || Intellectual deficits confirmed by testing, adaptive deficits, onset in the developmental period.

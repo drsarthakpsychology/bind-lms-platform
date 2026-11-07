@@ -40,6 +40,10 @@ Authority is not bad: you trust a good textbook. The point is that science is th
 - By data: **quantitative** (numbers, measurement, statistics), **qualitative** (words, meanings, experience) and **mixed methods** (both, deliberately combined).
 - By time: **cross-sectional** (one point in time) and **longitudinal** (the same people followed over time).
 
+:::widget compare
+{"title": "Quantitative or qualitative?", "a": {"label": "Quantitative", "points": ["Numbers, measurement and statistics", "Tests hypotheses decided in advance", "Large samples, often random", "Asks how much, how many, does X cause Y", "Aims to generalise"], "summary": "Example: does a sleep programme lower anxiety scores in 300 students?"}, "b": {"label": "Qualitative", "points": ["Words, meanings and experience", "Ideas emerge from the data", "Small samples, chosen on purpose", "Asks what is it like, how do people make sense of it", "Aims for depth"], "summary": "Example: how do 12 students describe living with exam anxiety? Mixed methods combine both on purpose."}}
+:::
+
 :::clinician
 Kerlinger defined scientific research as "systematic, controlled, empirical, amoral, public and critical investigation of natural phenomena, guided by theory and hypotheses about the presumed relations among such phenomena." Two words in that definition are often missed in exams. **Amoral** means that knowledge itself is neither good nor bad; the ethics lie in how it is obtained and used. **Critical** means that the scientist's own procedures are open to scrutiny. Kerlinger also stressed that the aim of science is **theory**: general explanations, not a pile of facts.
 :::
@@ -134,6 +138,10 @@ An **operational definition** defines a variable by the **operations used to mea
 - **Measured** operational definition: "Exam anxiety = total score on the Westside Test Anxiety Scale."
 - **Experimental (manipulated)** operational definition: "Sleep deprivation = being kept awake in the lab from 10 p.m. to 6 a.m., checked by a research assistant every 30 minutes."
 
+:::widget worked
+{"title": "Operationalising 'exam stress'", "steps": [{"q": "Start with the construct. What do you mean by exam stress?", "a": "Worry, tension and body arousal felt by students in the days before an exam."}, {"q": "Choose how to measure it. Give a self-report definition.", "a": "Exam stress is the total score on a standard test anxiety scale, given three days before the board exam."}, {"q": "Add a physical measure so you are not relying on one method.", "a": "Resting heart rate, taken with the same digital monitor, sitting, at 9 a.m., on the same day."}, {"q": "If you wanted to manipulate stress instead, how could you define it?", "a": "High stress condition: told the quiz counts for 20 percent of the final mark and that results will be read aloud. Low stress: told it is a practice quiz with no marks."}], "yourTurn": [{"q": "Write a measured operational definition of 'loneliness in older adults'.", "a": "For example: the total score on a standard loneliness scale, given in the person's first language by a trained interviewer at home. Any answer must name the tool, how and when it is given, and by whom."}]}
+:::
+
 The physicist Percy Bridgman's **operationism**, from the 1920s, argued that a concept *is* its measuring operations. Psychologists now treat that as too narrow: one construct can and should be measured several ways (converging operations), and no single measure captures it fully.
 
 :::widget decide
@@ -200,6 +208,10 @@ Other labels you may meet:
 - **Inductive** hypotheses come from observations (bottom-up); **deductive** hypotheses come from a theory (top-down).
 - **Working** hypotheses are provisional guides in early exploration.
 
+:::widget sort
+{"prompt": "A study compares memory in students who sleep 8 hours with those who sleep 4. What kind of hypothesis is each statement?", "buckets": ["Null", "Directional", "Non-directional"], "items": [{"text": "There is no difference in mean recall between the two sleep groups.", "bucket": 0, "why": "No difference: the null, which statistics directly tests."}, {"text": "The 8-hour group will recall more words than the 4-hour group.", "bucket": 1, "why": "It says which way: one-tailed."}, {"text": "The two groups will differ in recall.", "bucket": 2, "why": "A difference, direction not stated: two-tailed."}, {"text": "Sleep length is unrelated to the number of words recalled.", "bucket": 0, "why": "No relation: a null."}, {"text": "Less sleep will lower recall.", "bucket": 1, "why": "Direction stated."}]}
+:::
+
 :::trap You never "prove" a hypothesis
 Statistics lets you **reject** or **fail to reject** the null. Failing to reject the null does not prove it true; the study may simply lack power. Rejecting the null **supports** the research hypothesis; it does not prove it, because a design flaw could still explain the result.
 :::
@@ -259,6 +271,10 @@ Before you design anything, you find out what is already known. The **review of 
 6. Ethical considerations
 7. Timeline and budget
 8. References (APA style in psychology)
+
+:::widget timeline
+{"prompt": "Put the sections of a research proposal in their usual order.", "events": [{"label": "Title"}, {"label": "Introduction and rationale"}, {"label": "Review of literature, ending with the gap"}, {"label": "Aim, objectives and hypotheses"}, {"label": "Method: design, sample, tools, procedure, analysis"}, {"label": "Ethical considerations"}, {"label": "Schedule and budget"}, {"label": "References"}], "why": "Each part answers the question the previous one raises: why study this, what is already known, what exactly will you test, how, is it safe, and can it be done."}
+:::
 
 :::widget reveal
 {"prompt": "Why does a good literature review end with a 'gap', not just a summary?", "answer": "Because the gap is the reason your study exists. A list of past findings says what is known; the gap says what is not yet known, or not known in this population or setting (for example, no study of exam anxiety in first-generation college students in rural Maharashtra). The gap leads straight into your research question and hypotheses."}
@@ -432,6 +448,10 @@ To check the salt you taste one spoon. If the dal is well stirred (random sampli
 | **Consecutive** | Every eligible patient who walks in during a period | Hospital studies; better than convenience |
 | **Theoretical** | Choose next cases to develop an emerging theory | Grounded theory |
 
+:::widget sort
+{"prompt": "Name the sampling method.", "buckets": ["Simple random", "Stratified", "Cluster", "Systematic", "Convenience", "Snowball", "Quota"], "items": [{"text": "Every 10th name on the college roll, after a random start", "bucket": 3}, {"text": "Ten villages chosen at random, and every household in them surveyed", "bucket": 2}, {"text": "Separate random samples from urban and rural schools, in proportion to their numbers", "bucket": 1}, {"text": "Names drawn by computer from the full list of 2,000 nurses", "bucket": 0}, {"text": "Students in the canteen who agree to fill in a form", "bucket": 4}, {"text": "People who use drugs are asked to bring friends who also use", "bucket": 5}, {"text": "An interviewer must find 50 men and 50 women, picking whoever is available", "bucket": 6, "why": "It looks stratified, but people are not chosen randomly within each group."}]}
+:::
+
 :::example A national survey, the hard way
 India's **National Mental Health Survey (2015 to 2016)** interviewed about 35,000 adults across 12 states. It used **multistage, stratified, random cluster sampling**: districts were chosen within each state, then smaller units within districts, then households, with probability proportionate to population size. This is why its prevalence figures can be generalised to the states surveyed, unlike a convenience survey on Instagram.
 :::
@@ -527,7 +547,15 @@ A single Likert item (strongly disagree to strongly agree) is **ordinal**. A tot
 - **Validity** is **accuracy**: does it measure what it claims? Content, criterion-related (concurrent and predictive) and construct (convergent and discriminant) validity.
 - A measure can be reliable without being valid (a bathroom scale that always reads 2 kg heavy), but it **cannot be valid without being reliable**.
 
+:::widget compare
+{"title": "Reliability and validity: the bathroom scale", "a": {"label": "Reliable, not valid", "points": ["Weigh yourself five times: 62, 62, 62, 62, 62 kg", "Your true weight is 60 kg", "Consistent, but wrong every time", "Like arrows tightly grouped off the target"], "summary": "Reliability is consistency. A biased tool can be perfectly consistent."}, "b": {"label": "Reliable and valid", "points": ["Five readings: 60, 60, 60, 60, 60 kg", "Your true weight is 60 kg", "Consistent and correct", "Like arrows grouped on the bullseye"], "summary": "Validity is accuracy. A measure cannot be valid unless it is reliable, but reliability alone is not enough."}}
+:::
+
 The statistics module shows how to compute reliability coefficients, and the assessment module covers test construction.
+
+:::widget sort
+{"prompt": "Is each check about reliability or validity, and which kind?", "buckets": ["Test-retest reliability", "Inter-rater reliability", "Internal consistency", "Content validity", "Criterion validity", "Construct validity"], "items": [{"text": "The same students take the scale twice, a fortnight apart, and scores correlate highly", "bucket": 0}, {"text": "Two psychologists rate the same interview tapes and agree closely", "bucket": 1}, {"text": "Cronbach's alpha for the 20 items is 0.86", "bucket": 2}, {"text": "Experts check that the items cover every symptom of depression", "bucket": 3}, {"text": "Scores on a new screening tool match diagnoses made by clinicians", "bucket": 4}, {"text": "The anxiety scale correlates with other anxiety tests but not with an intelligence test", "bucket": 5, "why": "Convergent and discriminant evidence for construct validity."}]}
+:::
 
 ### Types of measure, and their biases
 - **Self-report** (questionnaires, interviews): easy, but open to **social desirability** (looking good), **acquiescence** (agreeing with everything), **extreme or central tendency** responding, and poor insight. Fixes: reverse-keyed items, lie scales, anonymous responding, forced-choice formats.
@@ -614,6 +642,10 @@ Total variance in the DV has three sources. A good design:
 - Order effects are handled by **counterbalancing**: **complete** (all possible orders), **ABBA** (reverse order within each person), or a **Latin square** (each condition appears once in each position).
 - **Matched-groups designs** sit between the two.
 
+:::widget compare
+{"title": "Between-subjects or within-subjects?", "a": {"label": "Between-subjects", "points": ["Each person does one condition", "No carry-over or practice effects", "Groups may differ by chance", "Needs more participants"], "summary": "Use when doing one condition would spoil the other, such as learning a technique."}, "b": {"label": "Within-subjects", "points": ["Each person does every condition", "Each person is their own control", "Fewer participants, more power", "Order effects: practice, fatigue, carry-over"], "summary": "Use when conditions can be repeated, and counterbalance the order."}}
+:::
+
 ### Classic designs, in Campbell and Stanley's notation
 Notation: **R** = random assignment, **O** = observation (measurement), **X** = treatment.
 
@@ -632,6 +664,10 @@ Notation: **R** = random assignment, **O** = observation (measurement), **X** = 
 
 :::widget flow
 {"title": "Classifying research designs", "layout": "tree", "nodes": [{"id": "d", "label": "Designs", "detail": "How the study is built"}, {"id": "e", "label": "Experimental", "detail": "Manipulation", "parent": "d"}, {"id": "ne", "label": "Non-experimental", "detail": "No manipulation", "parent": "d"}, {"id": "pre", "label": "Pre-experimental", "detail": "One-shot; one-group pre-post; static group", "parent": "e"}, {"id": "true", "label": "True experimental", "detail": "Random assignment: post-test only, pre-post control, Solomon, factorial", "parent": "e"}, {"id": "quasi", "label": "Quasi-experimental", "detail": "No random assignment: non-equivalent groups, time series, regression discontinuity", "parent": "e"}, {"id": "sc", "label": "Single-case", "detail": "AB, ABAB, multiple baseline, changing criterion", "parent": "e"}, {"id": "cor", "label": "Correlational and survey", "detail": "Measure as variables occur", "parent": "ne"}, {"id": "epf", "label": "Ex post facto", "detail": "The cause has already happened", "parent": "ne"}, {"id": "obs", "label": "Observation and case study", "detail": "Describe in depth", "parent": "ne"}], "caption": "Tap any box for its key idea."}
+:::
+
+:::widget decide
+{"scene": "Farah, an MSc trainee in Hyderabad, wants to know whether a four-session relaxation programme lowers exam anxiety in Class 10 students. The school will let her work with 120 students from three sections.", "ask": "Which design should she choose?", "choices": [{"label": "Give the programme to all 120 and compare anxiety before and after", "verdict": "harm", "outcome": "Anxiety may fall, but she cannot tell whether the programme did it.", "why": "A one-group pretest-posttest design cannot rule out history, maturation, testing or regression. As boards come closer, anxiety may change for many reasons."}, {"label": "Give it to section A and compare with sections B and C", "verdict": "ok", "outcome": "Better, but the sections may already differ.", "why": "This is a non-equivalent control group design, a quasi-experiment. Selection is the main threat; a pretest helps check it."}, {"label": "Randomly assign the 120 students to the programme or a waitlist, measure both groups before and after, and offer the programme to the waitlist afterwards", "verdict": "best", "outcome": "She can make a causal claim, and no one is denied the programme.", "why": "Random assignment controls selection and makes groups equal on average, so other changes affect both groups. A waitlist control is also ethical."}]}
 :::
 
 ### Factorial designs
@@ -713,6 +749,10 @@ Later additions by Cook, Campbell and their colleagues arise when the control gr
 - **Compensatory equalisation:** staff give the control group extras to be fair.
 - **Compensatory rivalry (the John Henry effect):** the control group tries harder to beat the treatment group.
 - **Resentful demoralisation:** the control group gives up because it feels left out.
+
+:::widget sort
+{"prompt": "A memory-training study in a Pune old-age home: which threat to internal validity is each problem?", "buckets": ["History", "Maturation", "Testing", "Regression", "Selection", "Attrition"], "items": [{"text": "A popular brain-games TV show starts during the study", "bucket": 0, "why": "An outside event between the measures."}, {"text": "Over the year, some residents' memory declines with age", "bucket": 1, "why": "Natural change inside participants."}, {"text": "Residents remember the word list from the first test", "bucket": 2, "why": "The pretest changes the post-test."}, {"text": "Only residents with the very worst first scores were chosen", "bucket": 3, "why": "Extreme scorers drift towards the mean on retest anyway."}, {"text": "The training group was mostly retired teachers", "bucket": 4, "why": "Groups differed before training."}, {"text": "The frailest residents drop out of the training group", "bucket": 5, "why": "Different drop-out makes the remaining group look better."}]}
+:::
 
 :::mnemonic The eight threats
 **"History Makes Testing Instruments Regress, Selecting Mortal Interactions"**: history, maturation, testing, instrumentation, regression, selection, mortality, selection-maturation interaction.
@@ -888,6 +928,10 @@ Asks many people questions to describe attitudes, behaviours or prevalence.
 - **Semi-structured:** a guide of key questions with freedom to probe. The workhorse of qualitative research.
 - **Unstructured (in-depth):** a conversation around a topic.
 - Interviewer effects: **interviewer bias**, the **halo effect** and status differences (caste, gender, language) can shape what people say. In many Indian settings a family member may want to be present, which changes answers.
+
+:::widget compare
+{"title": "Structured or unstructured interview?", "a": {"label": "Structured", "points": ["Fixed questions in a fixed order", "Same for every person", "High reliability, easy to compare", "Can miss what matters to the person"], "summary": "Best for diagnosis and surveys, such as the SCID or MINI."}, "b": {"label": "Unstructured", "points": ["A conversation around a topic", "Follows the person's lead", "Rich, unexpected detail", "Hard to compare, open to interviewer bias"], "summary": "Best for exploring experience. Semi-structured interviews sit in between and are the workhorse of qualitative research."}}
+:::
 
 ### Observation
 - **Naturalistic:** watch behaviour in its natural setting without interfering (Jane Goodall's chimpanzees; children's play in an anganwadi).

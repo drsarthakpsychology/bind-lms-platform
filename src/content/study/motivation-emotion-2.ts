@@ -29,6 +29,10 @@ In 1937 the neuroanatomist **James Papez** proposed a loop of structures for emo
 - **Sham rage** (Bard in 1928): cats with the cortex removed but the hypothalamus intact showed sudden, undirected rage attacks at slight touches. The **hypothalamus** organises the bodily side of emotion; the cortex normally restrains and directs it.
 - **Klüver-Bucy syndrome** (1937 to 1939): monkeys with both temporal lobes removed (including the amygdalae) became **tame and fearless**, put objects in their mouths (**hyperorality**), failed to recognise the meaning of objects (**psychic blindness**, a visual agnosia), touched everything (**hypermetamorphosis**) and showed **hypersexuality**. In humans it can follow herpes encephalitis or trauma.
 
+:::widget brainmap
+{"title": "Two classic lesion findings", "focus": ["hypothalamus", "amygdala", "temporal"], "notes": {"hypothalamus": "Sham rage: with the cortex removed but the hypothalamus intact, cats showed sudden, undirected rage. The hypothalamus organises the bodily side of emotion.", "amygdala": "Removing both amygdalae with the temporal lobes made monkeys tame and fearless: the core of Klüver-Bucy syndrome.", "temporal": "Temporal lobe damage also caused psychic blindness, hyperorality and hypersexuality in Klüver-Bucy monkeys."}, "caption": "The cortex normally holds the hypothalamus in check; the amygdala tags things as dangerous or important."}
+:::
+
 :::mnemonic Klüver-Bucy: "Hyper, Hyper, Hyper, Placid, Blind"
 **Hyper**orality, **hyper**sexuality, **hyper**metamorphosis, **placid**ity (loss of fear), psychic **blind**ness.
 :::
@@ -178,6 +182,10 @@ The first four are **antecedent-focused** (they act before the emotion is fully 
 - **Cognitive reappraisal**: changing how you think about a situation to change its emotional impact. Linked to more positive emotion, better relationships and wellbeing.
 - **Expressive suppression**: hiding the outward expression of an emotion. It reduces the visible expression but **not** the inner feeling; it **raises** sympathetic arousal, impairs memory for the event (2000) and can make conversation partners feel less close.
 
+:::widget compare
+{"title": "Reappraisal or suppression?", "a": {"label": "Cognitive reappraisal", "points": ["Acts early, before the emotion is in full flow", "Changes the meaning: 'the examiner is strict with everyone'", "Less negative feeling, less arousal", "Memory and conversation unaffected"], "summary": "Reappraisal changes the emotion itself, and goes with better wellbeing and relationships."}, "b": {"label": "Expressive suppression", "points": ["Acts late, once the emotion is under way", "Hides the face and voice", "Inner feeling unchanged, sympathetic arousal rises", "Worse memory for the event, stiffer conversation"], "summary": "Suppression changes what others see, not what you feel, and costs effort. Habitual use goes with poorer wellbeing."}}
+:::
+
 :::widget sort
 {
   "prompt": "Which family of Gross's model is each strategy?",
@@ -191,6 +199,10 @@ The first four are **antecedent-focused** (they act before the emotion is fully 
     { "text": "Slow belly breathing once panic has already started", "bucket": 3 }
   ]
 }
+:::
+
+:::widget thoughtrecord
+{"situation": "My cousin's wedding photos are full of my old school friends, and I was not invited to the sangeet.", "thought": "Nobody wants me around. I will always be left out.", "emotion": "hurt", "traps": [{"label": "Overgeneralisation", "right": true, "why": "One missed invitation has become 'nobody' and 'always'."}, {"label": "Mind reading", "right": true, "why": "You are assuming what everyone feels about you without asking."}, {"label": "Catastrophising", "why": "Close, but the thought is about others' feelings and a pattern, not a coming disaster."}, {"label": "Should statements", "why": "No 'should' or 'must' rule is being applied here."}], "forEvidence": ["I was not invited to this one event."], "againstEvidence": ["The sangeet was only for the bride's side and close family.", "Two of those friends messaged me last week.", "I was invited to the reception."], "balanced": "Missing one event hurts, but it does not show that nobody wants me. I can ask my cousin, and meet my friends at the reception."}
 :::
 
 :::trap Suppression is not always harmful
@@ -299,6 +311,10 @@ The stress response runs through two linked systems:
 2. **Lack of adaptation**: no getting used to a repeated stressor (still panicking at the hundredth presentation).
 3. **Prolonged response**: failure to switch off after the stressor ends.
 4. **Inadequate response**: too little response from one system, leading others to overreact (for example low cortisol allowing inflammation to rise).
+
+:::widget compare
+{"title": "Acute stress or chronic stress?", "a": {"label": "Acute: a short burst", "points": ["Heart rate and glucose rise, then settle", "Cortisol peaks and the brake switches it off", "Immune defences briefly boosted", "Memory for the event sharpened"], "summary": "A brief stress response is adaptive. It mobilises the body and then shuts down."}, "b": {"label": "Chronic: always on", "points": ["Blood pressure stays high", "Cortisol stays high or becomes blunted", "Immunity suppressed, inflammation rises", "Hippocampus shrinks, mood and memory suffer"], "summary": "Repeated or prolonged activation is allostatic load: the wear and tear of adapting, which raises the risk of heart disease, diabetes and depression."}}
+:::
 
 ### Tend and befriend
 **Shelley Taylor and colleagues** (2000) pointed out that fight or flight was studied mostly in male animals. Especially in females, a common response to threat is **tend and befriend**: protecting offspring and seeking social support, linked to **oxytocin** and endogenous opioids. Both patterns are found in both sexes.

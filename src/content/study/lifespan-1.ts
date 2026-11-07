@@ -22,6 +22,10 @@ export const part1 = String.raw`
 | **Late adulthood** | 65 onwards | Retirement, ageing, life review |
 These ages are social conventions, not natural boundaries. They differ across cultures and history.
 
+:::widget timeline
+{"prompt": "Put the periods of the human lifespan in order, from conception onwards.", "events": [{"label": "Prenatal: one cell becomes a baby", "when": "Before birth"}, {"label": "Infancy and toddlerhood: reflexes, attachment, first words", "when": "0 to 2"}, {"label": "Early childhood: pretend play and a language explosion", "when": "2 to 6"}, {"label": "Middle childhood: school skills and logical thinking", "when": "6 to 11"}, {"label": "Adolescence: puberty, abstract thought, identity", "when": "11 to 18"}, {"label": "Early adulthood: career, partnership, often parenthood", "when": "25 to 40"}, {"label": "Middle adulthood: caring for children and parents", "when": "40 to 65"}, {"label": "Late adulthood: retirement and life review", "when": "65 on"}], "why": "The ages are conventions that differ across cultures. Emerging adulthood (about 18 to 25) sits between adolescence and early adulthood in some societies."}
+:::
+
 ### Paul Baltes's lifespan perspective
 Paul Baltes (1987) summarised the modern view in a set of principles. Development is:
 1. **Lifelong**: no age dominates; change happens at every age.
@@ -63,6 +67,10 @@ Paul Baltes (1987) summarised the modern view in a set of principles. Developmen
 | **Continuity versus discontinuity** | Is change gradual (like a growing tree) or stage-like (like a caterpillar becoming a butterfly)? | Piaget (stages) versus information processing (gradual) |
 | **Stability versus change** | Do early traits persist? | Does a fearful toddler become an anxious adult? |
 | **Critical versus sensitive periods** | Are there windows when experience must happen? | Imprinting; language; attachment |
+
+:::widget compare
+{"title": "Continuous or stage-like change?", "a": {"label": "Continuity", "points": ["Change is gradual, like a tree growing taller", "More of the same: faster, bigger, more efficient", "Example: memory span grows a little each year", "Information-processing and learning views"], "summary": "Development as smooth growth in amount."}, "b": {"label": "Discontinuity", "points": ["Change comes in stages, like a caterpillar becoming a butterfly", "Each stage is different in kind", "Example: Piaget's child suddenly conserves number", "Stage theories: Piaget, Freud, Erikson, Kohlberg"], "summary": "Development as a series of qualitative leaps. Most modern views see both: steady change that can add up to a new way of thinking."}}
+:::
 
 A **critical period** is a fixed window when an experience is **essential** for normal development; if it is missed, the ability never develops normally. Konrad Lorenz's goslings **imprinted** on him (following him as if he were their mother) if he was the first moving object they saw shortly after hatching. In humans, true critical periods are rare (some aspects of vision are an example); most are **sensitive periods**: times when learning is easiest, but not impossible later.
 
@@ -219,6 +227,10 @@ Developmental psychology needs designs that can separate the effects of **age** 
 
 A **cohort** is a group born around the same time, who share historical experiences. The **cohort effect** is the influence of being born at a particular time (for example, people born in India in 1950 had far less schooling on average than those born in 2000).
 
+:::widget compare
+{"title": "Cross-sectional or longitudinal?", "a": {"label": "Cross-sectional", "points": ["Different age groups tested at one time", "Quick and cheap, no drop-out", "Age is mixed up with cohort", "Cannot show how individuals change"], "summary": "Good for a first look. It made older adults look worse than they are, because older cohorts had less schooling."}, "b": {"label": "Longitudinal", "points": ["The same people followed for years", "Shows real individual change and early predictors", "Slow, costly, and people drop out", "Practice effects from repeated testing"], "summary": "Gold standard for change, but the healthiest tend to stay in the study. A sequential design combines both."}}
+:::
+
 ### Schaie's Seattle Longitudinal Study
 K. Warner Schaie began testing adults' mental abilities in 1956 and retested them every seven years, adding new cohorts each time: a sequential design.
 
@@ -291,6 +303,10 @@ Q: A study tests 20-, 40- and 60-year-olds today and finds older groups score lo
 1. **The germinal period**: from conception, the fertilised egg (zygote) divides rapidly, travels down the fallopian tube and **implants** in the wall of the uterus. The placenta and umbilical cord begin to form.
 2. **The embryonic period**: the three layers of cells form all the major organs (**organogenesis**). The heart begins to beat, and the neural tube (which becomes the brain and spinal cord) closes. This is when the developing baby is **most vulnerable** to harmful substances.
 3. **The fetal period**: the longest period. Organs grow and mature; the fetus moves, hears, and gains most of its weight in the final months.
+
+:::widget timeline
+{"prompt": "Put these events of prenatal development in order, from conception to birth.", "events": [{"label": "The fertilised egg divides and implants in the wall of the uterus", "when": "Germinal"}, {"label": "The neural tube closes and the heart begins to beat", "when": "Embryonic"}, {"label": "All major organs have formed: the most sensitive time for teratogens", "when": "End of embryonic"}, {"label": "The fetus moves and can hear sounds", "when": "Fetal"}, {"label": "Most of the birth weight is gained", "when": "Final months"}], "why": "Structures form early and grow later. That is why harm from alcohol, valproate or rubella is worst when it strikes during the embryonic period, while organs are forming."}
+:::
 
 :::widget guess
 {
@@ -441,6 +457,10 @@ Some reflexes are **permanent**: blinking, coughing, sneezing, gagging, yawning.
 
 ### Motor milestones
 **Gross motor** skills use large muscles (holding the head up, sitting, crawling, standing, walking). **Fine motor** skills use small muscles (reaching, the pincer grasp between thumb and finger, scribbling). The **sequence** is similar for almost all children; the **timing** varies widely.
+
+:::widget timeline
+{"prompt": "Put a typical infant's gross motor milestones in order.", "events": [{"label": "Holds the head steady", "when": "About 2 to 3 mo"}, {"label": "Rolls over", "when": "About 4 to 6 mo"}, {"label": "Sits without support", "when": "About 6 mo"}, {"label": "Crawls on hands and knees", "when": "About 8 to 9 mo"}, {"label": "Pulls up to stand", "when": "About 9 to 10 mo"}, {"label": "Walks alone", "when": "About 12 mo"}], "why": "Control spreads from the head downwards (cephalocaudal). The order is very similar across children, but the ages vary widely, and some healthy babies skip crawling."}
+:::
 
 :::widget guess
 {
@@ -594,6 +614,10 @@ Jean Piaget (1896 to 1980), a Swiss biologist turned psychologist, watched his o
 - **Equilibration**: the drive to balance assimilation and accommodation. When a scheme doesn't work (disequilibrium), the child is pushed to a new, better understanding.
 - **Organisation**: combining schemes into more complex systems.
 
+:::widget flow
+{"title": "Piaget's engine of development", "layout": "cycle", "nodes": [{"id": "e", "label": "Equilibrium", "detail": "The child's schemes fit her world. 'Four legs and fur means dog.'"}, {"id": "a", "label": "Assimilation", "detail": "A cow appears. She fits it into her scheme: 'Big dog!'"}, {"id": "d", "label": "Disequilibrium", "detail": "The 'dog' moos and gives milk. The scheme no longer fits, and that feels unsettling."}, {"id": "c", "label": "Accommodation", "detail": "She changes her schemes: dogs and cows are different animals."}], "edgeLabels": {"e>a": "new experience", "a>d": "it does not fit", "d>c": "change the scheme", "c>e": "a better balance"}, "caption": "Each turn of the loop leaves the child with more complex, better organised schemes."}
+:::
+
 ### The four stages
 | Stage | Ages (approximate) | Key achievements | Limits |
 |---|---|---|---|
@@ -601,6 +625,10 @@ Jean Piaget (1896 to 1980), a Swiss biologist turned psychologist, watched his o
 | **Preoperational** | 2 to 7 years | **Symbolic function**: language, pretend play, drawing | **Egocentrism**, **centration**, no **conservation**, irreversibility, **animism**, transductive reasoning |
 | **Concrete operational** | 7 to 11 years | Logical operations on real objects: **conservation**, **reversibility**, **classification**, **seriation**, decentration | Struggles with abstract and hypothetical problems |
 | **Formal operational** | 11 years onwards | **Abstract** and **hypothetico-deductive** reasoning, systematic testing of variables, propositional logic | Not reached by everyone in every area |
+
+:::widget timeline
+{"prompt": "Put Piaget's four stages and their hallmark achievements in order.", "events": [{"label": "Sensorimotor: object permanence, learning through senses and actions", "when": "0 to 2"}, {"label": "Preoperational: language and pretend play, but egocentric and no conservation", "when": "2 to 7"}, {"label": "Concrete operational: conservation, classification and seriation of real objects", "when": "7 to 11"}, {"label": "Formal operational: abstract and hypothetico-deductive reasoning", "when": "11 on"}], "why": "Piaget held that the order is fixed and every child goes through it, though the ages vary. Later research found many abilities appear earlier than he thought when tasks are simpler."}
+:::
 
 ### The six sensorimotor substages
 1. **Reflexes** (the first month).
@@ -630,6 +658,14 @@ Jean Piaget (1896 to 1980), a Swiss biologist turned psychologist, watched his o
     { "label": "“The short one has more, because it's wider.”", "verdict": "ok", "outcome": "Some children say this, centring on width instead.", "why": "Either way, centring on one dimension shows no conservation." }
   ]
 }
+:::
+
+:::widget conservation
+{"kind": "number", "caption": "Spread out one row of coins. The younger child centres on the length of the row; the older child knows nothing was added or taken away."}
+:::
+
+:::widget conservation
+{"kind": "liquid", "caption": "Pour the water, then switch between a preoperational and a concrete operational child. Tap each reason the older child gives."}
 :::
 
 :::widget sort
@@ -694,6 +730,10 @@ Vygotsky, a Russian psychologist who died young, argued that thinking develops t
 
 **The zone of proximal development (ZPD)**: the gap between what a child can do **alone** and what they can do **with guidance** from a more knowledgeable other (an adult or a more skilled peer). Teaching works best inside this zone: too easy and the child learns nothing new; too hard and they can't follow, even with help.
 
+:::widget layers
+{"title": "The zone of proximal development", "shape": "rings", "layers": [{"label": "Can do alone", "detail": "What the child has already mastered. Teaching here adds little: Ishaan can do a 10-piece jigsaw by himself."}, {"label": "Can do with help: the ZPD", "detail": "What the child can do with guidance from an adult or a more skilled peer. A 30-piece jigsaw with his sister's hints. This is where teaching works best."}, {"label": "Cannot do yet, even with help", "detail": "Too far beyond the child's present skills. A 500-piece jigsaw would only frustrate him."}], "caption": "With scaffolding, today's ZPD becomes tomorrow's 'can do alone', and the zone moves outwards."}
+:::
+
 **Scaffolding** (a term introduced by Wood, Bruner and Ross in 1976, building on Vygotsky): temporary support adjusted to the learner's level and gradually withdrawn as competence grows. Good scaffolding includes recruiting interest, simplifying the task, keeping the goal in view, marking key features, controlling frustration, and demonstrating.
 
 **Private speech**: young children talk aloud to themselves while working. Piaget called it **egocentric speech** and saw it as a sign of immature thinking that simply fades. Vygotsky saw it as **self-guidance**: social speech turned inward, which becomes silent **inner speech**. Research by Laura Berk and others supports Vygotsky: children use more private speech on harder tasks, and those who do often perform better.
@@ -725,6 +765,10 @@ The NGO Pratham's annual **ASER** surveys showed that many Indian children in Cl
 | Private speech | Egocentric, fades | Self-guidance, becomes inner speech |
 | Learning and development | Development comes first; learning follows readiness | Learning leads development (within the ZPD) |
 | Stages | Universal stages | No fixed stages; development depends on culture |
+
+:::widget compare
+{"title": "Piaget and Vygotsky", "a": {"label": "Piaget", "points": ["The child as a lone scientist", "Development drives learning", "Language reflects thought", "Private speech is egocentric and fades", "Universal stages"], "summary": "Piaget: the child builds understanding by acting on the world."}, "b": {"label": "Vygotsky", "points": ["The child as an apprentice in a culture", "Learning, within the ZPD, leads development", "Language shapes thought", "Private speech becomes inner speech", "Development depends on culture and tools"], "summary": "Vygotsky: understanding begins between people and is then taken inside."}}
+:::
 
 ### Information processing
 Information-processing approaches compare the mind to a computer that **takes in, stores and uses** information, and ask how its capacity and efficiency grow. Change is mostly **gradual**, not stage-like.
@@ -785,6 +829,10 @@ Erik Erikson (1902 to 1994), a psychoanalyst trained by Anna Freud, extended Fre
 | 6 | Young adulthood | **Intimacy versus isolation** | Love | Partners, friends |
 | 7 | Middle adulthood | **Generativity versus stagnation** | Care | Household, workmates |
 | 8 | Late adulthood | **Integrity versus despair** | Wisdom | Humankind |
+
+:::widget timeline
+{"prompt": "Put Erikson's eight psychosocial crises in the order they arise across life.", "events": [{"label": "Trust versus mistrust (hope)", "when": "0 to 1"}, {"label": "Autonomy versus shame and doubt (will)", "when": "1 to 3"}, {"label": "Initiative versus guilt (purpose)", "when": "3 to 6"}, {"label": "Industry versus inferiority (competence)", "when": "6 to 12"}, {"label": "Identity versus role confusion (fidelity)", "when": "12 to 18"}, {"label": "Intimacy versus isolation (love)", "when": "Young adult"}, {"label": "Generativity versus stagnation (care)", "when": "Middle adult"}, {"label": "Integrity versus despair (wisdom)", "when": "Late adult"}], "why": "Each crisis builds on the last. A child who never resolves trust, for example, meets later crises with less hope. Use the mnemonic for the virtues: Hope Will Push Children Forward; Love, Care, Wisdom."}
+:::
 
 :::mnemonic Erikson's virtues in order
 "**H**ope **W**ill **P**ush **C**hildren **F**orward; **L**ove, **C**are, **W**isdom": hope, will, purpose, competence, fidelity, love, care, wisdom.
@@ -886,6 +934,10 @@ John Bowlby described four phases:
 4. **Formation of a reciprocal relationship** (from about 18 to 24 months): language and understanding of others let the child negotiate ("I'll be back after lunch").
 Bowlby also described **monotropy** (one main attachment figure) and the **maternal deprivation hypothesis**. Later research rejected strict monotropy: children form **multiple** attachments, and quality matters more than who provides it. Michael Rutter separated **privation** (never forming a bond) from **deprivation** (losing one).
 
+:::widget timeline
+{"prompt": "Put Bowlby's phases of attachment in order.", "events": [{"label": "Pre-attachment: signals to anyone, comforted by any adult", "when": "First months"}, {"label": "Attachment in the making: smiles more at familiar people", "when": "To 6 to 8 mo"}, {"label": "Clear-cut attachment: separation and stranger anxiety, a secure base", "when": "6 to 8 mo to 2 yrs"}, {"label": "Reciprocal relationship: can negotiate a parent's leaving", "when": "2 yrs on"}], "why": "Separation and stranger anxiety arrive together with clear-cut attachment, which is why a 9-month-old often protests at a new carer while a 3-month-old does not."}
+:::
+
 :::clinician
 Bowlby's phase timings, with weeks as usually stated: pre-attachment from birth to about 6 weeks; attachment in the making from about 6 weeks to 6 to 8 months; clear-cut from 6 to 8 months to 18 months to 2 years; reciprocal relationship from about 18 months to 2 years onwards. Schaffer and Emerson's Glasgow study (1964) found that by 18 months most infants had multiple attachments, and that the main attachment figure was the person most responsive to the infant, not necessarily the one who fed or spent most time with them; at about a third of infants, the main attachment was to someone other than the mother.
 :::
@@ -898,6 +950,14 @@ Mary Ainsworth's laboratory procedure for children of about 12 to 18 months has 
 | **Insecure-avoidant (A)** | Little visible distress | Ignores or turns away from the parent | Rejecting or emotionally unavailable |
 | **Insecure-resistant (ambivalent) (C)** | Very distressed | Seeks contact but resists it angrily; hard to comfort | Inconsistent |
 | **Disorganised (D)** (added by Main and Solomon) | Contradictory, confused | Freezing, approaching with head turned away, fearful | Frightening or frightened caregiving, unresolved trauma, maltreatment |
+
+:::widget strange
+{"caption": "Step through the eight episodes, then switch between the four patterns. Watch the reunions: they tell you the most."}
+:::
+
+:::widget sort
+{"prompt": "In the Strange Situation, which attachment pattern does each 14-month-old show?", "buckets": ["Secure", "Insecure-avoidant", "Insecure-resistant", "Disorganised"], "items": [{"text": "Cries when mother leaves; on her return reaches for her, calms within a minute and goes back to the toys", "bucket": 0, "why": "Upset, comforted, returns to exploring: the parent works as a secure base."}, {"text": "Barely looks up when mother leaves; on her return keeps playing and turns away from her", "bucket": 1, "why": "Little visible distress and active avoidance at reunion. The body is often still stressed."}, {"text": "Extremely upset; on reunion clings to mother, then arches and kicks her, and cannot settle", "bucket": 2, "why": "Seeks contact and resists it at the same time."}, {"text": "On reunion walks towards mother with his head turned away, then freezes in place", "bucket": 3, "why": "Contradictory, frightened behaviour with no clear strategy. Linked to frightening caregiving or a parent's unresolved trauma."}, {"text": "Plays happily with the stranger present, glancing at mother from time to time, and greets her warmly on return", "bucket": 0, "why": "Using the parent as a base and welcoming the reunion."}]}
+:::
 
 :::widget guess
 {
@@ -994,6 +1054,10 @@ Key claims and findings:
 - Stages are an **invariant sequence**: people move through them in order, without skipping, and rarely go backwards. Colby and colleagues' **20-year longitudinal study** (1983) of Kohlberg's original boys supported this.
 - Reasoning advances through **cognitive development** (formal operations help with stages 5 and 6) and **role-taking** opportunities, and through exposure to reasoning **one stage above** one's own (the "plus-one" effect, used in classroom moral discussion programmes and "just community" schools).
 - **Stage 6** was so rare that Kohlberg later dropped it from scoring.
+
+:::widget sort
+{"prompt": "Heinz has stolen a drug to save his dying wife. Which of Kohlberg's levels does each reason come from?", "buckets": ["Preconventional", "Conventional", "Postconventional"], "items": [{"text": "'He shouldn't steal, because he'll be caught and sent to jail.'", "bucket": 0, "why": "Stage 1: avoiding punishment."}, {"text": "'He should steal it. If she lives, she can look after him.'", "bucket": 0, "why": "Stage 2: what is in his own interest, a fair exchange."}, {"text": "'A good husband would steal it. People would think he was heartless if he didn't.'", "bucket": 1, "why": "Stage 3: being good in others' eyes."}, {"text": "'He shouldn't. If everyone broke the law when they felt like it, society would collapse.'", "bucket": 1, "why": "Stage 4: maintaining the social order."}, {"text": "'He should. The right to life comes before property, and laws exist to protect people's welfare.'", "bucket": 2, "why": "Stage 5: laws serve rights and can be overridden."}, {"text": "'Any life has a value above any law, whatever others think.'", "bucket": 2, "why": "Stage 6: universal ethical principles."}]}
+:::
 
 ### Criticisms
 - **Gilligan's ethic of care** (1982): Kohlberg's original sample was all male, and his scoring placed care-based reasoning (common in women's answers) at stage 3. She proposed a care orientation: **survival** (caring for self), **goodness as self-sacrifice** (caring for others), and the **morality of non-violence** (caring for self and others). Meta-analysis later found only **small** gender differences.
