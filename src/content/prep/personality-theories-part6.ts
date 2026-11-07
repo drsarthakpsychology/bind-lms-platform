@@ -26,7 +26,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Temperament is usually defined as:",
     options: [
-      "A set of values and attitudes learned in adulthood from one's culture",
+      "A set of values, beliefs and attitudes learned in adulthood from one's family and culture",
       "Early, biologically based differences in emotional reactivity and self-regulation",
       "A person's moral character",
       "A personality disorder",
@@ -137,7 +137,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Evolutionary personality psychologists such as David Buss explain individual differences in traits partly by proposing that:",
     options: [
-      "All personality differences are random noise with no function, left over from mutation",
+      "All personality differences are random noise with no function, left over from harmful genetic mutations",
       "Different levels of a trait can be adaptive in different environments, so selection keeps variation",
       "Only one level of each trait is ever adaptive",
       "Personality is unrelated to survival or reproduction",
@@ -264,7 +264,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "On the MMPI-2, the F (infrequency) scale is mainly used to detect:",
     options: [
       "Depression",
-      "Defensiveness and under-reporting ('faking good')",
+      "Defensiveness and under-reporting of real problems ('faking good')",
       "Random responding or over-reporting of symptoms ('faking bad')",
       "Masculinity-femininity",
     ],
@@ -475,7 +475,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "A meta-analysis by Roberts and colleagues of intervention studies found that clinical interventions such as psychotherapy were associated with:",
     options: [
-      "Large increases in neuroticism as clients confronted painful material in therapy",
+      "Large increases in neuroticism as clients confronted painful material during therapy sessions",
       "No change in any trait",
       "Meaningful decreases in neuroticism and smaller increases in extraversion that largely lasted",
       "Changes only in intelligence",

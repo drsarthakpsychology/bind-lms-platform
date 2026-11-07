@@ -34,7 +34,7 @@ export const QUESTIONS: PrepQuestion[] = [
       "The dark, rejected side of the personality",
       "The public face or social mask a person shows to the world",
       "The feminine side of a man's psyche",
-      "The archetype of wholeness and the centre of the psyche",
+      "The archetype of wholeness and the organising centre of the psyche",
     ],
     answer: 1,
     explanation:
@@ -69,7 +69,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "In Maslow's theory, 'self-actualisation' means:",
     options: [
       "Realising one's full potential and becoming all one is capable of",
-      "Satisfying hunger, thirst and other bodily needs completely",
+      "Satisfying hunger, thirst and other bodily needs completely and reliably",
       "Gaining the approval and respect of other people",
       "Feeling safe and protected from danger",
     ],
@@ -87,7 +87,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "According to Julian Rotter, a person with an external locus of control tends to believe that:",
     options: [
       "What happens to them depends mainly on luck, fate or powerful other people",
-      "What happens to them depends mainly on their own effort and ability",
+      "What happens to them depends mainly on their own effort, choices and ability",
       "Other people are generally trustworthy",
       "Rewards have no effect on their behaviour",
     ],

@@ -28,7 +28,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "A person's overall sense of self-worth",
       "A person's belief in their ability to carry out the actions needed for a goal",
-      "The belief that outcomes are controlled by luck or powerful others",
+      "The belief that outcomes are controlled by luck, chance or powerful other people",
       "The ability to delay gratification",
     ],
     answer: 1,
@@ -364,7 +364,7 @@ export const QUESTIONS: PrepQuestion[] = [
       "Machines driven by reinforcement",
       "Scientists who build and test their own constructs to predict and make sense of events",
       "Puppets of unconscious instincts",
-      "Fixed bundles of inherited traits that unfold steadily as they grow older",
+      "Fixed bundles of inherited traits that unfold steadily and predictably as they grow older",
     ],
     answer: 1,
     explanation:
@@ -382,7 +382,7 @@ export const QUESTIONS: PrepQuestion[] = [
       "Answers true or false to hundreds of statements",
       "Interprets inkblots",
       "Considers three important people at a time and says how two are alike and differ from the third",
-      "Arranges cards with statements about the self into piles from most to least like me",
+      "Sorts cards with statements about the self into piles ranging from most like me to least like me",
     ],
     answer: 2,
     explanation:
@@ -548,7 +548,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Higgins' self-discrepancy theory predicts that a gap between the actual self and the ideal self tends to produce:",
     options: [
       "Dejection-related emotions such as sadness and disappointment",
-      "Agitation-related emotions such as anxiety and guilt",
+      "Agitation-related emotions such as anxiety, restlessness and guilt",
       "Euphoria",
       "No emotion",
     ],
@@ -567,7 +567,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Intelligence is fixed at birth",
       "Abilities such as intelligence can be developed through effort and learning",
-      "Effort is a sign of low ability, since talented people succeed easily",
+      "Effort is a sign of low ability, since truly talented people succeed easily",
       "Failure proves one lacks talent",
     ],
     answer: 1,
@@ -669,7 +669,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Kelly's philosophical position of 'constructive alternativism' holds that:",
     options: [
-      "There is only one correct way to see the world, which therapy helps people find",
+      "There is only one correct way to see the world, which therapy helps people to find and accept",
       "Any event can be interpreted in more than one way, and people can revise their constructions",
       "Behaviour is determined by the environment",
       "Personality is fixed by childhood experience",
@@ -705,7 +705,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Follow-ups of Mischel's preschool participants found that children who delayed longer at age 4 were, as adolescents and adults, on average:",
     options: [
       "More impulsive",
-      "Less successful in school, though more popular with their peers and teachers",
+      "Less successful in school, though more popular with their peers, teachers and later colleagues",
       "Identical to children who did not delay",
       "Rated as more competent socially and academically, though later work found a weaker link",
     ],
@@ -724,7 +724,7 @@ export const QUESTIONS: PrepQuestion[] = [
       "A repertoire of behaviours shaped by a history of reinforcement",
       "A set of unconscious drives",
       "An inherited set of traits",
-      "A system of personal constructs used to predict events",
+      "A system of personal constructs that the person uses to predict events",
     ],
     answer: 0,
     explanation:

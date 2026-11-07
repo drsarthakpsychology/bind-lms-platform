@@ -29,7 +29,7 @@ export const QUESTIONS: PrepQuestion[] = [
       "Fear of the death instinct",
       "A child's feeling of being isolated and helpless in a hostile world",
       "Anxiety caused only by sexual frustration",
-      "A normal fear of real dangers such as snakes or traffic",
+      "A normal, realistic fear of real dangers such as snakes or heavy traffic",
     ],
     answer: 1,
     explanation:
@@ -70,7 +70,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Rules set by parents in early childhood",
       "Rigid inner demands from an idealised self-image, such as 'I should be perfect'",
-      "The superego's moral prohibitions, taken in from parents as Freud described",
+      "The superego's moral prohibitions, taken in from the parents just as Freud described",
       "Social norms of conformity",
     ],
     answer: 1,
@@ -414,7 +414,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "W. R. D. Fairbairn's main revision of Freud's theory was the claim that:",
     options: [
       "Libido is object-seeking rather than pleasure-seeking: the basic drive is for relationships",
-      "The death instinct, rather than libido, is the main drive behind all behaviour",
+      "The death instinct, rather than libido, is the main drive behind all human behaviour and conflict",
       "Personality consists of 16 source traits",
       "Behaviour is shaped only by reinforcement",
     ],
@@ -478,7 +478,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Henry Murray's personology used the term 'press' to mean:",
     options: [
       "A stage of psychosexual development",
-      "An inner drive such as the need for achievement or affiliation",
+      "An inner drive such as the need for achievement, affiliation or dominance",
       "Environmental forces that help or hinder the satisfaction of needs",
       "A score on a personality inventory",
     ],
@@ -539,7 +539,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "What feature do the neo-Freudians Horney, Fromm and Sullivan share?",
     options: [
-      "Belief that personality is completely determined by genes and early maturation",
+      "Belief that personality is completely determined by genes and by early maturation",
       "Emphasis on social and cultural influences rather than mainly biological drives",
       "Rejection of the idea of anxiety",
       "Use of factor analysis to identify traits",
@@ -701,7 +701,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Real self (who one is), idealised self (who one should be) and despised self (self-hatred)",
       "Id (drives), ego (reality) and superego (conscience)",
-      "Persona (public mask), shadow (rejected traits) and Self (the goal of wholeness)",
+      "Persona (the public mask), shadow (rejected traits) and Self (the goal of psychic wholeness)",
       "Good-me (praised), bad-me (punished) and not-me (dreaded)",
     ],
     answer: 0,
@@ -799,7 +799,7 @@ export const QUESTIONS: PrepQuestion[] = [
       "Uses their powers to love, work and reason creatively, relating with care and respect",
       "Expects others to meet all their needs",
       "Collects and keeps possessions",
-      "Changes their personality to suit whatever sells in the market for jobs and partners",
+      "Changes their personality to suit whatever sells best in the market for jobs and partners",
     ],
     answer: 0,
     explanation:

@@ -29,7 +29,7 @@ export const QUESTIONS: PrepQuestion[] = [
       "The death instinct",
       "The actualising tendency: a drive to grow and fulfil one's potential",
       "The need to reduce hunger and thirst only",
-      "The striving for superiority over others and over weakness",
+      "The striving for superiority over others and over one's own sense of weakness",
     ],
     answer: 1,
     explanation:
@@ -178,7 +178,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Large reviews of psychotherapy research have found that the therapeutic relationship, including empathy, positive regard and genuineness, is:",
     options: [
-      "Important only in psychoanalysis, where working with transference is the main tool",
+      "Important only in psychoanalysis, where working through the transference is the main therapeutic tool",
       "Unrelated to therapy outcome",
       "Consistently related to outcome across many therapies, though not always sufficient on its own",
       "Harmful to clients",
@@ -293,7 +293,7 @@ export const QUESTIONS: PrepQuestion[] = [
       "Fear of the sea",
       "A complex about one's father",
       "Fear of one's own greatness, which leads people to avoid growth",
-      "A desire to be swallowed up by the group and lose oneself",
+      "A desire to be swallowed up by the group and lose oneself in its identity",
     ],
     answer: 2,
     explanation:
@@ -310,7 +310,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Was based on three core needs",
       "Was the third school founded by Wundt",
-      "Came after cognitive and biological psychology",
+      "Came after cognitive and biological psychology had become dominant",
       "Offered an alternative to psychoanalysis and behaviourism",
     ],
     answer: 3,
@@ -349,7 +349,7 @@ export const QUESTIONS: PrepQuestion[] = [
       "The highest score on an achievement test",
       "A moment of intense joy, wonder or unity in which a person feels fully alive",
       "A period of severe stress",
-      "The point at which a need is fully satisfied and stops motivating",
+      "The point at which a need is fully satisfied and so stops motivating behaviour",
     ],
     answer: 1,
     explanation:
@@ -492,7 +492,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Existential approaches to personality share the belief that:",
     options: [
-      "The unconscious is the only important part of the mind, shaping every choice",
+      "The unconscious is the only important part of the mind, shaping every choice we make",
       "Behaviour is fully determined by reinforcement",
       "Personality is fixed by genes",
       "People are free to choose and responsible for creating meaning, even facing death",
@@ -594,7 +594,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Ignoring a person's feelings",
       "Agreeing with everything a person says",
-      "Praising a person warmly, but only when they succeed or improve",
+      "Praising a person warmly, but only when they succeed or improve in some way",
       "Accepting and valuing a person without requiring them to meet conditions",
     ],
     answer: 3,
@@ -610,7 +610,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Rogers proposed that a person's 'need for positive regard' is:",
     options: [
       "Universal and so strong that people may give up their own valuing to win approval",
-      "Found mainly in people with mental disorders, whose self-esteem is low",
+      "Found mainly in people with mental disorders, whose self-esteem is low and fragile",
       "Easily satisfied and of little importance",
       "The same as the death instinct",
     ],
@@ -647,7 +647,7 @@ export const QUESTIONS: PrepQuestion[] = [
       "Self-esteem",
       "Self-transcendence",
       "Safety",
-      "Belongingness",
+      "Belongingness and love",
     ],
     answer: 1,
     explanation:
@@ -699,7 +699,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Both rejected the importance of subjective experience",
       "Both saw human nature as basically evil",
-      "Rogers saw behaviour as fully determined, while Freud stressed free will and conscious choice",
+      "Rogers saw behaviour as fully determined by the past, while Freud stressed free will and conscious choice",
       "Rogers saw human nature as positive and growth-oriented; Freud saw it as driven by antisocial instincts",
     ],
     answer: 3,

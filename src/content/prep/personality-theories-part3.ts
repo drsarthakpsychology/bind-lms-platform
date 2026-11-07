@@ -286,7 +286,7 @@ export const QUESTIONS: PrepQuestion[] = [
       "Levels of thyroid hormone",
       "The size of the frontal lobes",
       "The reactivity of the limbic system and the autonomic nervous system",
-      "The number of neurons in the cerebellum and the brainstem nuclei",
+      "The number of neurons in the cerebellum and in the brainstem's arousal nuclei",
     ],
     answer: 2,
     explanation:
@@ -365,7 +365,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Organisation, creativity, energy, assertiveness and nervousness",
       "Optimism, courage, empathy, ambition and nurturance",
-      "Obedience, control, emotionality, anxiety and narcissism",
+      "Openness, competitiveness, emotional stability, assertiveness and narcissism",
       "Openness, conscientiousness, extraversion, agreeableness and neuroticism",
     ],
     answer: 3,
@@ -582,7 +582,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "The HEXACO model, developed by Ashton and Lee, adds a sixth factor to the Big Five. This factor is:",
     options: [
       "Hostility",
-      "Happiness-Hope",
+      "Happiness-Hopefulness",
       "Honesty-Humility",
       "Hypnotisability",
     ],
@@ -705,7 +705,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "The 'interactionist' position that emerged from the person-situation debate holds that:",
     options: [
-      "Personality and situation are both unrelated to behaviour, which is random",
+      "Personality and situation are both unrelated to behaviour, which is essentially random",
       "Only the situation determines behaviour",
       "Only traits determine behaviour",
       "Behaviour results from the interaction of dispositions and situation features",
@@ -788,7 +788,7 @@ export const QUESTIONS: PrepQuestion[] = [
       "High extraversion with high openness",
       "High hostility with time urgency",
       "High negative affectivity with high social inhibition",
-      "Low neuroticism with high conscientiousness",
+      "Low neuroticism with high conscientiousness and warmth",
     ],
     answer: 2,
     explanation:
@@ -826,7 +826,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Research on the stability of personality traits across adulthood (for example by Roberts and DelVecchio) found that rank-order stability:",
     options: [
       "Increases with age, reaching a plateau around age 50 or later",
-      "Is highest in childhood and declines steadily in adulthood",
+      "Is highest in childhood and then declines steadily throughout adulthood",
       "Is zero at all ages",
       "Is perfect after age 18",
     ],
@@ -951,7 +951,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Allport's 'common traits' differ from his 'personal dispositions' in that common traits:",
     options: [
-      "Are unique to one individual, so they cannot be compared across people",
+      "Are unique to one individual, so they cannot be compared across different people",
       "Are shared by many people in a culture and allow comparisons between people",
       "Are found only in animals",
       "Are always unconscious",
@@ -987,7 +987,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "According to the idea of 'strong' and 'weak' situations, personality traits will best predict behaviour in:",
     options: [
       "All situations equally",
-      "Strong situations, such as a funeral or a red traffic light, where everyone behaves alike",
+      "Strong situations, such as a funeral or a red traffic light, where everyone is expected to behave alike",
       "Weak situations, such as an informal party, where there are few clear rules about how to behave",
       "No situations",
     ],
@@ -1051,7 +1051,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Are always less accurate than self-reports",
       "Can predict behaviour as well as or better than self-reports for visible traits such as extraversion",
-      "Are completely unrelated to the person's actual behaviour in daily life outside the lab",
+      "Are completely unrelated to the person's actual behaviour in everyday life outside the research laboratory",
       "Are accurate only for close family members",
     ],
     answer: 1,
@@ -1091,7 +1091,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "The Myers-Briggs Type Indicator is widely used in organisations, but personality researchers criticise it mainly because:",
     options: [
-      "It was designed as a projective test, with ambiguous pictures to interpret",
+      "It was designed as a projective test, with ambiguous pictures for people to interpret",
       "It has no relation to Jung's theory",
       "It measures only intelligence",
       "It forces continuous dimensions into types, and many people get a new type on retest",
@@ -1144,7 +1144,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Which theorist is most associated with factor analysis and the 16 Personality Factor Questionnaire?",
     options: [
-      "Gordon Allport",
+      "Gordon W. Allport",
       "Raymond Cattell",
       "Carl Rogers",
       "Albert Bandura",

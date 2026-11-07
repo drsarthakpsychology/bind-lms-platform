@@ -232,7 +232,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "A slip of the tongue that seems to reveal a hidden wish (for example calling one's partner by an ex-partner's name) is known as a:",
     options: [
       "Catharsis",
-      "Reaction formation",
+      "Reaction formation in speech",
       "Projective test",
       "Parapraxis (Freudian slip)",
     ],
@@ -248,7 +248,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "In his later theory, Freud proposed two basic classes of instinct. These are:",
     options: [
-      "Ego (self-preservative) instincts and sexual instincts, kept as separate opposing classes",
+      "Ego (self-preservative) instincts and sexual instincts, which he kept as two separate and opposing classes",
       "Eros (life instincts, including sex) and Thanatos (the death instinct, turned outward as aggression)",
       "Superiority and inferiority",
       "Introversion and extraversion",
@@ -375,7 +375,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "In Freud's view, the ego defends against anxiety by using defence mechanisms that share two features. These are that defences:",
     options: [
       "Are found only in mental illness",
-      "Are always consciously chosen ways of reducing stress",
+      "Are always consciously chosen ways of reducing stress and solving problems",
       "Always improve relationships",
       "Operate unconsciously and distort or deny reality to some extent",
     ],
@@ -515,7 +515,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Jung's concept of libido differs from Freud's in that Jung saw libido as:",
     options: [
-      "Purely sexual energy that drives behaviour from birth through each stage",
+      "Purely sexual energy that drives behaviour from birth through each psychosexual stage",
       "A general psychic energy that can flow into many activities, not mainly sexual",
       "A form of inferiority feeling",
       "A learned habit",
@@ -612,7 +612,7 @@ export const QUESTIONS: PrepQuestion[] = [
       "The death instinct",
       "The sexual drive",
       "Striving for superiority or success, to overcome inferiority",
-      "Reinforcement from the environment for successful behaviour",
+      "Reinforcement from the environment whenever behaviour is successful",
     ],
     answer: 2,
     explanation:
@@ -717,7 +717,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Adler used 'early recollections' in assessment because he believed that:",
     options: [
       "Early memories show which psychosexual stage a person is fixated at",
-      "Early memories are always perfectly accurate records of what actually happened",
+      "Early memories are always perfectly accurate records of what actually happened in early childhood",
       "The memories a person chooses to recall reveal their current style of life, accurate or not",
       "Early memories reveal archetypes",
     ],
@@ -890,7 +890,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Compared with Freud, Jung's view of personality was:",
     options: [
-      "More focused on sexual drives in early childhood and on fixation at each stage",
+      "More focused on sexual drives in early childhood and on fixation at each psychosexual stage",
       "More forward-looking and spiritual, stressing growth across life and the goal of wholeness",
       "Entirely based on learning theory",
       "Opposed to the idea of an unconscious",
@@ -932,7 +932,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Anna Freud's main contributions to psychoanalysis included:",
     options: [
       "Discovering the death instinct",
-      "Proposing the collective unconscious and its archetypes",
+      "Proposing the collective unconscious and the archetypes it contains",
       "Developing person-centred therapy",
       "Systematising the defence mechanisms and pioneering child analysis",
     ],
@@ -1019,7 +1019,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "In Jung's theory, a 'complex' is:",
     options: [
       "A stage of development",
-      "A universal inherited image, such as the mother, stored in the collective unconscious",
+      "A universal inherited image, such as the mother or the hero, stored in the collective unconscious",
       "A conscious plan",
       "A cluster of emotionally charged thoughts and memories around a theme in the personal unconscious",
     ],
