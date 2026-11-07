@@ -15,7 +15,8 @@ export type DuelRoundView = {
   correctFeature: string;
   why: string;
   you: { dx: string | null; feature: string | null; points: number; ms: number | null; dxOk: boolean; featureOk: boolean };
-  opp: { points: number; ms: number | null; dxOk: boolean; featureOk: boolean };
+  /** What the opponent picked; only sent once the round has closed. */
+  opp: { dx: string | null; feature: string | null; points: number; ms: number | null; dxOk: boolean; featureOk: boolean };
 };
 
 export type DuelView = {
@@ -94,7 +95,14 @@ export function buildDuelView(m: MatchRec, answers: AnswerRec[], now: number, me
         dxOk: !!ms?.dxOk,
         featureOk: !!ms?.featureOk,
       },
-      opp: { points: ts?.points ?? 0, ms: theirs ? theirs.at - t.start : null, dxOk: !!ts?.dxOk, featureOk: !!ts?.featureOk },
+      opp: {
+        dx: theirs ? dxName(q.options[theirs.dx]) : null,
+        feature: theirs ? q.features[theirs.feature] : null,
+        points: ts?.points ?? 0,
+        ms: theirs ? theirs.at - t.start : null,
+        dxOk: !!ts?.dxOk,
+        featureOk: !!ts?.featureOk,
+      },
     });
   });
 
