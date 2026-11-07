@@ -1,5 +1,5 @@
 /**
- * Dose ladders (batch 6) — paliperidone, propranolol, trifluoperazine,
+ * Dose ladders (batch 6): paliperidone, propranolol, trifluoperazine,
  * temazepam, melatonin. Quote-first from Stahl/Maudsley/FDA. The tricyclic
  * antidepressants and buspirone stay as honest single ranges (their sources
  * give one continuous band, so they are not split).
@@ -11,7 +11,7 @@ const M = "maudsley_2021";
 const FDA = "fda_label";
 
 export const DRAFT_FDA_6: DrugDraft[] = [
-  // PALIPERIDONE — oral 6 mg + LAI bands.
+  // PALIPERIDONE: oral 6 mg + LAI bands.
   {
     generic_name: "Paliperidone",
     drug_class: "Atypical antipsychotic",
@@ -28,11 +28,11 @@ export const DRAFT_FDA_6: DrugDraft[] = [
         source_ref: { value: "6 mg/day oral", source_id: S, page_ref: "p1687", snippet: "6 mg/day (oral)", agreement: "single" }, side_effects: [], observation_prompts: [] },
       { band_order: 2, band_type: "formulation", range_low: 39, range_high: 234, unit: "mg/month", band_label: "Long-acting injectable (Sustenna)",
         frequency: "monthly", primary_purpose: "Schizophrenia (LAI)", secondary_purposes: [], is_typical_starting: false, is_standard_maintenance: true,
-        source_ref: { value: "39–234 mg/month (Sustenna)", source_id: S, page_ref: "p1687", snippet: "39–234 mg/month (Sustenna)", agreement: "single" }, side_effects: [], observation_prompts: [] },
+        source_ref: { value: "39 to 234 mg/month (Sustenna)", source_id: S, page_ref: "p1687", snippet: "39 to 234 mg/month (Sustenna)", agreement: "single" }, side_effects: [], observation_prompts: [] },
     ],
   },
 
-  // PROPRANOLOL — 40–400 mg/day (anxiety/performance + medical).
+  // PROPRANOLOL: 40 to 400 mg/day (anxiety/performance + medical).
   {
     generic_name: "Propranolol",
     drug_class: "Beta-blocker",
@@ -46,11 +46,11 @@ export const DRAFT_FDA_6: DrugDraft[] = [
     bands: [
       { band_order: 1, band_type: "therapeutic", range_low: 40, range_high: 400, unit: "mg", band_label: "Oral dose range",
         frequency: "divided", primary_purpose: "Anxiety / tremor / hypertension", secondary_purposes: [], is_typical_starting: false, is_standard_maintenance: true,
-        source_ref: { value: "40–400 mg/day", source_id: S, page_ref: "p1890", snippet: "40–400 mg/day", agreement: "single" }, side_effects: [], observation_prompts: [] },
+        source_ref: { value: "40 to 400 mg/day", source_id: S, page_ref: "p1890", snippet: "40 to 400 mg/day", agreement: "single" }, side_effects: [], observation_prompts: [] },
     ],
   },
 
-  // TRIFLUOPERAZINE — psychosis 15–20 mg.
+  // TRIFLUOPERAZINE: psychosis 15 to 20 mg.
   {
     generic_name: "Trifluoperazine",
     drug_class: "Dopamine antagonist (antipsychotic)",
@@ -61,15 +61,15 @@ export const DRAFT_FDA_6: DrugDraft[] = [
     common_uses: [ { value: "Schizophrenia, psychosis.", source_id: S, page_ref: "p2290", snippet: "psychosis", agreement: "single" } ],
     equivalences: [ { drug_b: "Chlorpromazine", note: "chlorpromazine 100 mg ≈ trifluoperazine 5 mg (FGA)", caveat: "Rough guide, not a swap instruction. Only a prescriber decides this.", source: { value: "Table 1.2", source_id: M, page_ref: "p35", snippet: "Trifluoperazine 5mg/day", agreement: "full" } } ],
     links: [], clinical_presentations: [],
-    student: { plain_language: { text: "Trifluoperazine is a high-potency antipsychotic; oral psychosis dosing sits around 15–20 mg.", kb_parent_field: "mechanism", source: { value: "as above", source_id: S, page_ref: "p2290", snippet: "dopamine antagonist", agreement: "single" } } },
+    student: { plain_language: { text: "Trifluoperazine is a high-potency antipsychotic; oral psychosis dosing sits around 15 to 20 mg.", kb_parent_field: "mechanism", source: { value: "as above", source_id: S, page_ref: "p2290", snippet: "dopamine antagonist", agreement: "single" } } },
     bands: [
       { band_order: 1, band_type: "therapeutic", range_low: 15, range_high: 20, unit: "mg", band_label: "Psychosis dose",
         frequency: "oral", primary_purpose: "Psychosis", secondary_purposes: [], is_typical_starting: false, is_standard_maintenance: true,
-        source_ref: { value: "15–20 mg/day oral for psychosis", source_id: S, page_ref: "p2290", snippet: "psychosis: 15–20 mg/day", agreement: "single" }, side_effects: [], observation_prompts: [] },
+        source_ref: { value: "15 to 20 mg/day oral for psychosis", source_id: S, page_ref: "p2290", snippet: "psychosis: 15 to 20 mg/day", agreement: "single" }, side_effects: [], observation_prompts: [] },
     ],
   },
 
-  // TEMAZEPAM — 15 mg at bedtime.
+  // TEMAZEPAM: 15 mg at bedtime.
   {
     generic_name: "Temazepam",
     drug_class: "Benzodiazepine",
@@ -88,7 +88,7 @@ export const DRAFT_FDA_6: DrugDraft[] = [
     ],
   },
 
-  // MELATONIN — 2–5 mg at night.
+  // MELATONIN: 2 to 5 mg at night.
   {
     generic_name: "Melatonin",
     drug_class: "Circadian-regulating hormone",
@@ -102,7 +102,7 @@ export const DRAFT_FDA_6: DrugDraft[] = [
     bands: [
       { band_order: 1, band_type: "therapeutic", range_low: 2, range_high: 5, unit: "mg", band_label: "Usual dose",
         frequency: "at night", primary_purpose: "Sleep-onset difficulty", secondary_purposes: [], is_typical_starting: true, is_standard_maintenance: true,
-        source_ref: { value: "2–5 mg at night (typical OTC)", source_id: FDA, page_ref: "FDA label", snippet: "2–5 mg", agreement: "single" }, side_effects: [], observation_prompts: [] },
+        source_ref: { value: "2 to 5 mg at night (typical OTC)", source_id: FDA, page_ref: "FDA label", snippet: "2 to 5 mg", agreement: "single" }, side_effects: [], observation_prompts: [] },
     ],
   },
 ];

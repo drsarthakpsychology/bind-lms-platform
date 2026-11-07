@@ -8,7 +8,7 @@ import { PRIOR_B, SUBJECT_TITLE } from "./catalog";
 import type { Paper } from "./sampling";
 import type { PrepQuestion, Subject } from "./types";
 
-/** A chosen option 0–3, or null for blank. */
+/** A chosen option 0 to 3, or null for blank. */
 export type Choice = number | null;
 
 export const cleanChoice = (v: unknown): Choice => (typeof v === "number" && Number.isInteger(v) && v >= 0 && v <= 3 ? v : null);

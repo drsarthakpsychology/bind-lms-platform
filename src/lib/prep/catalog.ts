@@ -138,7 +138,7 @@ export function subjectOfSkill(skill: string): Subject | null {
   return m && isSubject(m[1]) ? m[1] : null;
 }
 
-/** Starting difficulty (logits) from the author's 1–4 rating, until real answers calibrate it. */
+/** Starting difficulty (logits) from the author's 1 to 4 rating, until real answers calibrate it. */
 export const PRIOR_B: Record<Difficulty, number> = { 1: -1, 2: 0, 3: 1, 4: 1.8 };
 
 /* ------------------------------------------------------- weights */

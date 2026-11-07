@@ -1,12 +1,12 @@
 /**
- * Admin dose review data — surfaces every drug's extracted evidence for Dr.
+ * Admin dose review data: surfaces every drug's extracted evidence for Dr.
  * Sarthak (Editor-in-Chief) to approve / edit / merge / modify / publish.
  *
  * Every record traces to a source + page + verbatim quotation (Rule 3).
  * Reviewer decision state (approve / edit / reject / publish, rationale,
  * confidence, evidence strength) is captured here so the UI can persist it;
  * the DB constraint independently makes unverifiable rows un-publishable.
- * No extracted evidence is ever deleted — decisions are appended (auditable,
+ * No extracted evidence is ever deleted: decisions are appended (auditable,
  * reversible).
  */
 import { DRAFT_DRUGS } from "./draft-seed";
@@ -64,7 +64,7 @@ export function doseReviewFor(drug: string): DosaReviewView | null {
   if (!draft) return null;
   const bands: ReviewBand[] = draft.bands.map((b) => ({
     bandId: `${draft.generic_name}:band:${b.band_order}`,
-    band: `${b.range_low ?? "?"}–${b.range_high ?? "?"} ${b.unit}`,
+    band: `${b.range_low ?? "?"} to ${b.range_high ?? "?"} ${b.unit}`,
     purpose: b.primary_purpose,
     band_type: b.band_type,
     evidence: b.evidence
@@ -84,7 +84,7 @@ export function doseReviewFor(drug: string): DosaReviewView | null {
   const conflicts = draft.bands
     .filter((b) => b.source_ref?.agreement === "partial" || b.source_ref?.agreement === "conflict")
     .map((b) => ({
-      note: `Band ${b.band_order} (${b.range_low}–${b.range_high} ${b.unit}) is ${b.source_ref?.agreement}`,
+      note: `Band ${b.band_order} (${b.range_low} to ${b.range_high} ${b.unit}) is ${b.source_ref?.agreement}`,
       source_a: SOURCES[b.source_ref?.source_id ?? ""]?.title ?? b.source_ref?.source_id ?? "",
       source_b: (b.source_ref?.contrib ?? []).map((c) => SOURCES[c.source_id]?.title ?? c.source_id).join("; "),
     }));

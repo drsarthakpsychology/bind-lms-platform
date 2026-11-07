@@ -1,5 +1,5 @@
 /**
- * Rule 5 — non-prescriber language, enforced by test.
+ * Rule 5: non-prescriber language, enforced by test.
  *
  * A student of this tool must never read a string that sounds like a
  * prescription, a dose instruction, or a reason to change a client's
@@ -7,7 +7,7 @@
  *
  * The test (tests/psychopharm/forbidden-phrases.test.ts) scans every
  * student-visible content field and fails the build if any forbidden string
- * appears. This list is a seed — extend it as the data grows.
+ * appears. This list is a seed: extend it as the data grows.
  */
 
 export const FORBIDDEN_PHRASES: string[] = [
@@ -102,16 +102,16 @@ export function hasForbiddenPhrase(content: string): string | null {
   for (const phrase of FORBIDDEN_PHRASES) {
     const re = new RegExp(`\\b${phrase.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`, "ig");
     let match: RegExpExecArray | null;
-    // Scan EVERY occurrence — a negated/modally-hedged first occurrence must not
+    // Scan EVERY occurrence: a negated/modally-hedged first occurrence must not
     // mask a real directive later in the string (e.g. "Do not stop taking X
-    // suddenly. Stop taking X over 3 weeks." — the second is an instruction).
+    // suddenly. Stop taking X over 3 weeks.": the second is an instruction).
     while ((match = re.exec(lower)) !== null) {
       const before = lower.slice(Math.max(0, match.index - 18), match.index);
       const trimmedBefore = before.trimEnd();
       const after = lower.slice(match.index + match[0].length, match.index + match[0].length + 34);
       const negated = NEGATION_TOKENS.some((t) => trimmedBefore.endsWith(t));
       if (negated) continue;
-      // Compliant framing describing the prescriber's role passes — education,
+      // Compliant framing describing the prescriber's role passes: education,
       // not an instruction to the reader. "adjusted by your doctor" / "chosen
       // by the prescriber" either precede or follow the directive phrase.
       const byPrescriber =

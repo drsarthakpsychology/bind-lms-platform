@@ -1,5 +1,5 @@
 /**
- * FDA-label dose ladders (batch 3) — MAOIs, stimulants, antipsychotics,
+ * FDA-label dose ladders (batch 3): MAOIs, stimulants, antipsychotics,
  * dementia patches, alpha-blockers. Quote-first from fetched labels.
  */
 import { DrugDraft } from "./draft";
@@ -7,7 +7,7 @@ import { DrugDraft } from "./draft";
 const FDA = "fda_label";
 
 export const DRAFT_FDA_3: DrugDraft[] = [
-  // PHENELZINE — 15 mg TID → ≥60 → 90, maintenance 15 mg.
+  // PHENELZINE: 15 mg TID → ≥60 → 90, maintenance 15 mg.
   {
     generic_name: "Phenelzine",
     drug_class: "MAOI antidepressant",
@@ -25,14 +25,14 @@ export const DRAFT_FDA_3: DrugDraft[] = [
       { band_order: 2, band_type: "therapeutic", range_low: 60, range_high: 90, unit: "mg", band_label: "Therapeutic range",
         primary_purpose: "Depression", secondary_purposes: [], is_typical_starting: false, is_standard_maintenance: true,
         why_this_dose: "Many need 60 mg for ≥4 weeks before response.",
-        source_ref: { value: "60–90 mg/day; many need 60 mg for 4 weeks", source_id: FDA, page_ref: "FDA label", snippet: "at least 60 mg per day ... up to 90 mg per day to obtain sufficient MAO inhibition ... continued for at least 4 weeks", agreement: "single" }, side_effects: [], observation_prompts: [] },
+        source_ref: { value: "60 to 90 mg/day; many need 60 mg for 4 weeks", source_id: FDA, page_ref: "FDA label", snippet: "at least 60 mg per day ... up to 90 mg per day to obtain sufficient MAO inhibition ... continued for at least 4 weeks", agreement: "single" }, side_effects: [], observation_prompts: [] },
       { band_order: 3, band_type: "maintenance", range_low: 15, range_high: 15, unit: "mg", band_label: "Maintenance",
         primary_purpose: "Long-term maintenance", secondary_purposes: [], is_typical_starting: false, is_standard_maintenance: false,
         source_ref: { value: "maintenance 15 mg daily or every other day", source_id: FDA, page_ref: "FDA label", snippet: "maintenance dose ... 15 mg, a day or every other day", agreement: "single" }, side_effects: [], observation_prompts: [] },
     ],
   },
 
-  // TRANYLCYPROMINE — 30 → 60.
+  // TRANYLCYPROMINE: 30 → 60.
   {
     generic_name: "Tranylcypromine",
     drug_class: "MAOI antidepressant",
@@ -46,14 +46,14 @@ export const DRAFT_FDA_3: DrugDraft[] = [
     bands: [
       { band_order: 1, band_type: "starting", range_low: 30, range_high: 30, unit: "mg", band_label: "Starting dose",
         frequency: "divided", primary_purpose: "Initiation", secondary_purposes: [], is_typical_starting: true, is_standard_maintenance: false,
-        source_ref: { value: "30 mg in divided doses; increase by 10 mg/day every 1–3 weeks", source_id: FDA, page_ref: "FDA label", snippet: "30 mg in divided doses. If no adequate response, increase dosage in increments of 10 mg per day every 1 to 3 weeks", agreement: "single" }, side_effects: [], observation_prompts: [] },
+        source_ref: { value: "30 mg in divided doses; increase by 10 mg/day every 1 to 3 weeks", source_id: FDA, page_ref: "FDA label", snippet: "30 mg in divided doses. If no adequate response, increase dosage in increments of 10 mg per day every 1 to 3 weeks", agreement: "single" }, side_effects: [], observation_prompts: [] },
       { band_order: 2, band_type: "therapeutic", range_low: 30, range_high: 60, unit: "mg", band_label: "Therapeutic / maximum",
         primary_purpose: "Depression", secondary_purposes: [], is_typical_starting: false, is_standard_maintenance: true,
         source_ref: { value: "up to 30 mg twice daily (60 mg/day)", source_id: FDA, page_ref: "FDA label", snippet: "30 mg twice daily (60 mg per day)", agreement: "single" }, side_effects: [], observation_prompts: [] },
     ],
   },
 
-  // MODAFINIL — 200 mg once daily (narcolepsy / SWD / OSA).
+  // MODAFINIL: 200 mg once daily (narcolepsy / SWD / OSA).
   {
     generic_name: "Modafinil",
     drug_class: "Wakefulness-promoting agent",
@@ -71,7 +71,7 @@ export const DRAFT_FDA_3: DrugDraft[] = [
     ],
   },
 
-  // FLUPHENAZINE — 5–60 mg (20 effective).
+  // FLUPHENAZINE: 5 to 60 mg (20 effective).
   {
     generic_name: "Fluphenazine",
     drug_class: "Dopamine antagonist (antipsychotic)",
@@ -87,11 +87,11 @@ export const DRAFT_FDA_3: DrugDraft[] = [
       { band_order: 1, band_type: "therapeutic", range_low: 5, range_high: 60, unit: "mg", band_label: "Oral dose range",
         primary_purpose: "Psychosis", secondary_purposes: [], is_typical_starting: false, is_standard_maintenance: true,
         why_this_dose: "20 mg/day was equivalent to higher doses in the source trials.",
-        source_ref: { value: "5–60 mg/day; 20 mg effective", source_id: FDA, page_ref: "FDA label", snippet: "doses from 5 to 60 mg ... 20 mg fluphenazine hydrochloride daily", agreement: "single" }, side_effects: [], observation_prompts: [] },
+        source_ref: { value: "5 to 60 mg/day; 20 mg effective", source_id: FDA, page_ref: "FDA label", snippet: "doses from 5 to 60 mg ... 20 mg fluphenazine hydrochloride daily", agreement: "single" }, side_effects: [], observation_prompts: [] },
     ],
   },
 
-  // RIVASTIGMINE — oral 6–12 mg; transdermal 4.6–13.3 mg/24h.
+  // RIVASTIGMINE: oral 6 to 12 mg; transdermal 4.6 to 13.3 mg/24h.
   {
     generic_name: "Rivastigmine",
     drug_class: "Cholinesterase inhibitor",
@@ -105,11 +105,11 @@ export const DRAFT_FDA_3: DrugDraft[] = [
     bands: [
       { band_order: 1, band_type: "formulation", range_low: 6, range_high: 12, unit: "mg", band_label: "Oral dose",
         frequency: "twice daily", primary_purpose: "Dementia", secondary_purposes: [], is_typical_starting: false, is_standard_maintenance: true,
-        source_ref: { value: "oral 6–12 mg/day in 2 doses", source_id: "stahl_pg_7th", page_ref: "p2011", snippet: "Oral: 6–12 mg/day in 2 doses", agreement: "single" }, side_effects: [], observation_prompts: [] },
+        source_ref: { value: "oral 6 to 12 mg/day in 2 doses", source_id: "stahl_pg_7th", page_ref: "p2011", snippet: "Oral: 6 to 12 mg/day in 2 doses", agreement: "single" }, side_effects: [], observation_prompts: [] },
       { band_order: 2, band_type: "formulation", range_low: 4.6, range_high: 13.3, unit: "mg/24h", band_label: "Transdermal patch",
         frequency: "once daily", primary_purpose: "Dementia (patch)", secondary_purposes: [], is_typical_starting: false, is_standard_maintenance: true,
         why_this_dose: "Start 4.6 mg/24h, may increase to 9.5 then 13.3 mg/24h after ≥4 weeks.",
-        source_ref: { value: "patch 4.6–13.3 mg/24h; titrate up after ≥4 weeks", source_id: FDA, page_ref: "FDA label", snippet: "increase dosage to 13.3 mg/24 hours ... after a minimum of 4 weeks", agreement: "single" }, side_effects: [], observation_prompts: [] },
+        source_ref: { value: "patch 4.6 to 13.3 mg/24h; titrate up after ≥4 weeks", source_id: FDA, page_ref: "FDA label", snippet: "increase dosage to 13.3 mg/24 hours ... after a minimum of 4 weeks", agreement: "single" }, side_effects: [], observation_prompts: [] },
     ],
   },
 ];

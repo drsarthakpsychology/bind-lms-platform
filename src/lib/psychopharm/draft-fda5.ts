@@ -1,5 +1,5 @@
 /**
- * Dose ladders (batch 5) — naltrexone, prazosin, diazepam. Quote-first from
+ * Dose ladders (batch 5): naltrexone, prazosin, diazepam. Quote-first from
  * Maudsley (authoritative guideline, Tier 1) where FDA labels were thin.
  */
 import { DrugDraft } from "./draft";
@@ -7,7 +7,7 @@ import { DrugDraft } from "./draft";
 const M = "maudsley_2021";
 
 export const DRAFT_FDA_5: DrugDraft[] = [
-  // NALTREXONE — 25 start → 50 maintenance; 100–200 in some trials.
+  // NALTREXONE: 25 start → 50 maintenance; 100 to 200 in some trials.
   {
     generic_name: "Naltrexone",
     drug_class: "Opioid antagonist",
@@ -27,13 +27,13 @@ export const DRAFT_FDA_5: DrugDraft[] = [
         source_ref: { value: "50 mg/day maintenance (NICE CG115)", source_id: M, page_ref: "p485", snippet: "Naltrexone [50mg/day] should be offered for relapse prevention", agreement: "single" }, side_effects: [], observation_prompts: [] },
       { band_order: 3, band_type: "high_response", range_low: 100, range_high: 200, unit: "mg", band_label: "Higher-dose range (some trials)",
         primary_purpose: "Adjunctive uses / augmentation", secondary_purposes: [], is_typical_starting: false, is_standard_maintenance: false,
-        why_this_dose: "Some trials used 100–200 mg/day for augmentation/co-morbidity.",
+        why_this_dose: "Some trials used 100 to 200 mg/day for augmentation/co-morbidity.",
         evidence: { strength: "limited", confidence: "low", guideline: "Maudsley (trial evidence)" },
-        source_ref: { value: "100–200 mg/day in some trials", source_id: M, page_ref: "p344", snippet: "Naltrexone 100mg/day", agreement: "single" }, side_effects: [], observation_prompts: [] },
+        source_ref: { value: "100 to 200 mg/day in some trials", source_id: M, page_ref: "p344", snippet: "Naltrexone 100mg/day", agreement: "single" }, side_effects: [], observation_prompts: [] },
     ],
   },
 
-  // PRAZOSIN — start 1 mg nocte, 2–15 mg for nightmares.
+  // PRAZOSIN: start 1 mg nocte, 2 to 15 mg for nightmares.
   {
     generic_name: "Prazosin",
     drug_class: "Alpha-1 blocker",
@@ -50,11 +50,11 @@ export const DRAFT_FDA_5: DrugDraft[] = [
         source_ref: { value: "initiate 1 mg at night, titrate", source_id: M, page_ref: "p449", snippet: "Initiate at 1mg nocte and titrate", agreement: "single" }, side_effects: [], observation_prompts: [] },
       { band_order: 2, band_type: "therapeutic", range_low: 2, range_high: 15, unit: "mg", band_label: "Therapeutic range",
         frequency: "at night", primary_purpose: "Nightmares / sleep in PTSD", secondary_purposes: [], is_typical_starting: false, is_standard_maintenance: true,
-        source_ref: { value: "2–15 mg at night for nightmares", source_id: M, page_ref: "p449", snippet: "Prazosin 2–15mg nocte", agreement: "single" }, side_effects: [], observation_prompts: [] },
+        source_ref: { value: "2 to 15 mg at night for nightmares", source_id: M, page_ref: "p449", snippet: "Prazosin 2 to 15mg nocte", agreement: "single" }, side_effects: [], observation_prompts: [] },
     ],
   },
 
-  // DIAZEPAM — anxiety up to 15 mg/day; 6–25 mg/day range.
+  // DIAZEPAM: anxiety up to 15 mg/day; 6 to 25 mg/day range.
   {
     generic_name: "Diazepam",
     drug_class: "Benzodiazepine",
@@ -69,7 +69,7 @@ export const DRAFT_FDA_5: DrugDraft[] = [
     bands: [
       { band_order: 1, band_type: "therapeutic", range_low: 6, range_high: 25, unit: "mg", band_label: "Anxiolytic range",
         primary_purpose: "Anxiety", secondary_purposes: [], is_typical_starting: false, is_standard_maintenance: true,
-        source_ref: { value: "diazepam 6–25 mg/day (anxiolytic)", source_id: M, page_ref: "p139", snippet: "diazepam 6–25mg/day", agreement: "single" }, side_effects: [], observation_prompts: [] },
+        source_ref: { value: "diazepam 6 to 25 mg/day (anxiolytic)", source_id: M, page_ref: "p139", snippet: "diazepam 6 to 25mg/day", agreement: "single" }, side_effects: [], observation_prompts: [] },
       { band_order: 2, band_type: "indication", range_low: 15, range_high: 15, unit: "mg", band_label: "Upper anxiety band",
         primary_purpose: "Anxiety (up to 15 mg/day)", secondary_purposes: [], is_typical_starting: false, is_standard_maintenance: false,
         source_ref: { value: "diazepam up to 15 mg/day", source_id: M, page_ref: "p136", snippet: "diazepam up to 15mg/day", agreement: "single" }, side_effects: [], observation_prompts: [] },

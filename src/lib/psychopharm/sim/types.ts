@@ -1,5 +1,5 @@
 /**
- * Sim case model — the structured clinical spec per patient (Part 6.1).
+ * Sim case model: the structured clinical spec per patient (Part 6.1).
  * This is authored DATA, not prompt text. A case is a JSONB object with a
  * fixed shape so the router, scorer, and voice layer all read the same fields.
  */
@@ -43,7 +43,7 @@ export interface SimCaseCognitiveModel {
 export interface SimDisclosureRule {
   fact: string;
   gate: DisclosureGate;
-  /** Which patient move renders this fact — used by the fixture engine. */
+  /** Which patient move renders this fact: used by the fixture engine. */
   disclose_via?: string;
 }
 
@@ -58,8 +58,8 @@ export interface SimAffectRules {
   on_interruption: string;
   on_premature_advice: string;
   on_validation: string;
-  tts_rate: number; // 0.6–1.4
-  tts_pitch: number; // 0.6–1.4
+  tts_rate: number; // 0.6 to 1.4
+  tts_pitch: number; // 0.6 to 1.4
 }
 
 export interface SimRedFlag {

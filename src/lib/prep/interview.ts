@@ -50,7 +50,7 @@ export type SelfScore = { pct: number; band: "strong" | "okay" | "weak" };
 
 /**
  * Self-assessment: share of the must-cover points ticked, minus 15 points per
- * red flag the student admits to. Clamped to 0–100.
+ * red flag the student admits to. Clamped to 0 to 100.
  */
 export function selfScore(mustCover: number, covered: number, redFlags: number): SelfScore {
   const base = mustCover > 0 ? (Math.min(covered, mustCover) / mustCover) * 100 : 0;
