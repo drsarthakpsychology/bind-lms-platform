@@ -45,7 +45,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Always distracts people equally on all tasks",
       "Reduces arousal, making people careless",
-      "Raises arousal, which strengthens the dominant (most likely) response",
+      "Raises arousal, which strengthens the dominant response",
       "Makes people loaf",
     ],
     answer: 2,
@@ -86,8 +86,8 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "In a field study, good pool players in a student union made more successful shots when watched by four observers, while poor players made fewer successful shots when watched. This is best explained by:",
     options: [
       "Groupthink",
-      "Social loafing",
-      "Social facilitation: an audience strengthens the dominant response, which is correct for skilled players and incorrect for unskilled ones",
+      "Social loafing by the poor players, whose effort dropped when others were watching",
+      "Social facilitation: an audience strengthens each player's dominant, well-practised response",
       "The bystander effect",
     ],
     answer: 2,
@@ -158,8 +158,8 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Earley found that Chinese managers working on group tasks, unlike American managers, did not show social loafing and sometimes worked harder in groups. This is best explained by:",
     options: [
-      "Higher intelligence among the Chinese managers",
-      "Cultural collectivism, in which group goals and shared responsibility are highly valued",
+      "Higher intelligence and work motivation among the Chinese managers",
+      "Cultural collectivism, in which group goals and shared responsibility are valued",
       "Lower arousal in the American group",
       "Random sampling error",
     ],
@@ -196,10 +196,10 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Irving Janis used the term 'groupthink' for:",
     options: [
-      "The improvement of performance in front of an audience",
+      "The improvement of performance in front of an audience of group members",
       "Any discussion that takes place in a group",
       "The tendency to work less hard in groups",
-      "A way of thinking in highly cohesive groups where the wish for agreement overrides realistic appraisal of alternatives",
+      "Thinking in cohesive groups where the wish for agreement overrides realistic appraisal",
     ],
     answer: 3,
     explanation:
@@ -239,9 +239,9 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Group polarisation refers to the finding that group discussion tends to:",
     options: [
       "Always make groups more cautious",
-      "Strengthen the initial average leaning of group members, making the group more extreme in the same direction",
+      "Strengthen members' initial average leaning, making the group more extreme in that direction",
       "Always make groups more risky",
-      "Move group members to the exact middle of their starting views",
+      "Move group members to the exact middle of their starting views, averaging them",
     ],
     answer: 1,
     explanation:
@@ -302,10 +302,10 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Studies of brainstorming, such as those by Diehl and Stroebe, found that interacting groups usually produce fewer ideas than the same number of people working alone (nominal groups). The main reason is:",
     options: [
-      "Production blocking: only one person can speak at a time, so others forget or hold back ideas while waiting",
+      "Production blocking: only one person can speak at a time, so ideas are lost while waiting",
       "Social facilitation of creative ideas",
       "Group members are always less intelligent",
-      "The leader generates all the ideas",
+      "The leader generates most of the ideas while other members stay silent",
     ],
     answer: 0,
     explanation:
@@ -382,14 +382,14 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Which option correctly distinguishes stereotype, prejudice and discrimination?",
     options: [
-      "Prejudice is behaviour; discrimination is a belief; stereotype is a feeling",
+      "Prejudice is behaviour; discrimination is a belief; stereotype is a feeling towards the group",
       "Stereotype is behaviour; prejudice is a belief; discrimination is a feeling",
       "All three mean the same thing",
-      "Stereotype is a belief about a group; prejudice is a negative attitude or feeling towards the group; discrimination is unfair behaviour towards its members",
+      "Stereotype is a belief; prejudice is a negative attitude or feeling; discrimination is unfair behaviour",
     ],
     answer: 3,
     explanation:
-      "These map onto the cognitive, affective and behavioural parts of intergroup attitudes. A stereotype is a generalised belief ('they are lazy'). Prejudice is an evaluation or feeling ('I dislike them'). Discrimination is action, such as refusing someone a flat or a job because of their group. They often go together but can occur separately; a person can discriminate without strong prejudice, for example by following a biased rule. The other options mix up the three.",
+      "These map onto the cognitive, affective and behavioural parts of intergroup attitudes. A stereotype is a generalised belief ('they are lazy'). Prejudice is an evaluation or feeling ('I dislike them'). Discrimination is action, such as refusing someone a flat or a job because of their group. They often go together but can occur separately; a person can discriminate without strong prejudice, for example by following a biased rule. The options calling prejudice or stereotype a behaviour swap the components, and saying all three mean the same ignores that they can occur separately.",
     ref: "Allport 1954; Baron & Branscombe, ch. 6",
   }),
   s({
@@ -424,8 +424,8 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "In Sherif's Robbers Cave study, two groups of boys at a summer camp became hostile during competitive games. Hostility was most reduced when the groups:",
     options: [
-      "Simply watched films together",
-      "Worked together on superordinate goals, such as fixing the camp's water supply",
+      "Simply spent time together watching films and eating meals",
+      "Worked together on superordinate goals, such as fixing the water supply",
       "Were given lectures about tolerance",
       "Were kept completely apart",
     ],
@@ -442,9 +442,9 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "In Tajfel's minimal group studies, boys were split into groups on a trivial basis (for example, preferring paintings by Klee or Kandinsky) and then allocated points to anonymous others. They often chose allocations that:",
     options: [
-      "Maximised the total points for both groups",
+      "Maximised the total points for both groups, so everyone gained as much as possible",
       "Gave equal points to everyone",
-      "Maximised the difference between their own group and the other group, even at the cost of their own group getting fewer points overall",
+      "Maximised the difference between the groups, even if their own group got fewer points",
       "Favoured the outgroup",
     ],
     answer: 2,
@@ -562,9 +562,9 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Aronson's 'jigsaw classroom' reduces prejudice among schoolchildren by:",
     options: [
       "Increasing competition between individual pupils",
-      "Grouping children of the same background together",
+      "Grouping children of the same background together so that they feel comfortable",
       "Having the teacher lecture about tolerance",
-      "Making each child responsible for one part of the lesson, so that the group can succeed only if every member, including minority children, contributes",
+      "Making each child responsible for one part of the lesson, so the group needs every member",
     ],
     answer: 3,
     explanation:
@@ -604,8 +604,8 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Realistic conflict theory explains prejudice mainly in terms of:",
     options: [
       "Mere categorisation into groups",
-      "Competition between groups for scarce resources such as jobs, land or power",
-      "Personality traits formed in childhood",
+      "Competition between groups for scarce resources such as jobs or land",
+      "Personality traits formed in childhood by harsh parenting",
       "Lack of knowledge about other groups",
     ],
     answer: 1,
@@ -621,14 +621,14 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Adorno and colleagues proposed that prejudice is linked to an 'authoritarian personality'. Which feature belongs to this description?",
     options: [
-      "Easy acceptance of ambiguity",
+      "Easy acceptance of ambiguity and tolerance of people who break social conventions",
       "High openness to experience",
-      "Rigid respect for conventional values and authority, with hostility towards those seen as deviant or weaker, often traced to a strict, punitive upbringing",
+      "Rigid respect for convention and authority, with hostility towards those seen as deviant or weaker",
       "Rejection of all authority",
     ],
     answer: 2,
     explanation:
-      "The F (fascism) scale measured traits such as conventionalism, authoritarian submission and aggression, superstition and intolerance of ambiguity, which Adorno's group linked to harsh parenting and displaced hostility. Criticisms include acquiescence bias, since all items were worded in one direction, a focus on right-wing authoritarianism only, and neglect of social norms; Pettigrew found prejudice in the US South followed local norms more than personality. Altemeyer's right-wing authoritarianism and Pratto and Sidanius' social dominance orientation are modern successors. The other options are the opposite of the authoritarian profile.",
+      "The F (fascism) scale measured traits such as conventionalism, authoritarian submission and aggression, superstition and intolerance of ambiguity, which Adorno's group linked to harsh parenting and displaced hostility. Criticisms include acquiescence bias, since all items were worded in one direction, a focus on right-wing authoritarianism only, and neglect of social norms; Pettigrew found prejudice in the US South followed local norms more than personality. Altemeyer's right-wing authoritarianism and Pratto and Sidanius' social dominance orientation are modern successors. Easy acceptance of ambiguity, high openness and rejection of all authority are the opposite of the authoritarian profile, which features intolerance of ambiguity and submission to authority.",
     ref: "Adorno et al. 1950; Altemeyer 1981; Pettigrew 1958",
   }),
   s({
@@ -676,8 +676,8 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Glick and Fiske's theory of ambivalent sexism distinguishes hostile sexism from benevolent sexism. Benevolent sexism refers to:",
     options: [
-      "Seemingly positive but patronising attitudes, such as believing women are pure and must be protected by men, which still support inequality",
-      "Openly hostile attitudes towards women",
+      "Seemingly positive but patronising attitudes, such as seeing women as pure and needing men's protection",
+      "Openly hostile attitudes towards women who challenge men's power and traditional roles",
       "Complete gender equality",
       "Sexism directed only at men",
     ],
@@ -694,8 +694,8 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "In Word, Zanna and Cooper's study, white interviewers sat further away, made more speech errors and held shorter interviews with Black applicants. When trained interviewers then treated white applicants in the same way, those applicants:",
     options: [
-      "Performed better than usual",
-      "Performed worse and appeared more nervous, showing a self-fulfilling prophecy",
+      "Performed better than usual, rising to the challenge",
+      "Performed worse and seemed more nervous, a self-fulfilling prophecy",
       "Showed no change",
       "Refused to continue",
     ],
@@ -740,9 +740,9 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "The basic idea of social identity theory is that:",
     options: [
       "People always prefer outgroups to ingroups",
-      "Prejudice is caused only by competition for jobs",
+      "Prejudice is caused only by competition for jobs and other scarce goods",
       "Group membership has no effect on behaviour",
-      "Part of our self-concept comes from the groups we belong to, so we are motivated to see our groups positively",
+      "Part of our self-concept comes from our groups, so we want to see them positively",
     ],
     answer: 3,
     explanation:
@@ -774,14 +774,14 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Turner's self-categorisation theory extends social identity theory mainly by explaining:",
     options: [
-      "How people shift between seeing themselves as individuals and as group members, with group behaviour arising when a social identity is salient and the self is 'depersonalised' towards the group prototype",
-      "Why people loaf in groups",
+      "How people shift from personal to social identity, acting as group members when it is salient",
+      "Why people loaf in groups when their individual effort cannot be identified",
       "How personality traits are inherited",
       "Why audiences improve performance",
     ],
     answer: 0,
     explanation:
-      "Self-categorisation theory describes levels of self-categorisation (personal, social, human) and the principle of 'meta-contrast': a category becomes salient when differences between groups are larger than differences within them. When a social identity is salient, people see themselves as interchangeable with fellow members and conform to the group prototype, which explains polarisation, cohesion and stereotyping. The other options concern loafing, genetics and social facilitation.",
+      "Self-categorisation theory describes levels of self-categorisation (personal, social, human) and the principle of 'meta-contrast': a category becomes salient when differences between groups are larger than differences within them. When a social identity is salient, people see themselves as interchangeable with fellow members and conform to the group prototype, which explains polarisation, cohesion and stereotyping. Loafing when effort cannot be identified, inheritance of traits and audience effects on performance are separate topics that the theory does not address.",
     ref: "Turner et al. 1987",
   }),
   s({
@@ -793,13 +793,13 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Kenneth and Mamie Clark's doll studies, later cited in the US Supreme Court's school desegregation ruling, found that many Black children:",
     options: [
       "Showed no preference between dolls",
-      "Preferred white dolls and attributed positive qualities to them, which was interpreted as evidence of the harm caused by segregation",
-      "Preferred Black dolls in every case",
+      "Preferred white dolls and gave them positive qualities, taken as evidence of segregation's harm",
+      "Preferred Black dolls in every case, which was taken as evidence of strong group pride",
       "Refused to choose any doll",
     ],
     answer: 1,
     explanation:
-      "Asked which doll was 'nice' or which they would like to play with, a majority of Black children aged 3 to 7 chose the white doll, and some became upset when asked which doll looked like them. The Clarks argued that this reflected internalised stigma produced by segregation. The other options do not match the findings, although later studies found that preferences shifted as social conditions changed.",
+      "Asked which doll was 'nice' or which they would like to play with, a majority of Black children aged 3 to 7 chose the white doll, and some became upset when asked which doll looked like them. The Clarks argued that this reflected internalised stigma produced by segregation. Most children did choose a doll and did show a preference, mostly for the white doll rather than the Black one; later studies found that preferences shifted as social conditions changed.",
     ref: "Clark & Clark 1947",
   }),
   s({
@@ -835,9 +835,9 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "The 'black sheep effect' (Marques) refers to the finding that:",
     options: [
       "People rate all group members equally",
-      "Outgroup members are always judged more harshly than ingroup members",
+      "Outgroup members are always judged more harshly than ingroup members, whatever their conduct",
       "People prefer members of minority groups",
-      "Likeable ingroup members are judged more positively, and unlikeable ingroup members more negatively, than comparable outgroup members",
+      "Likeable ingroup members are judged more positively, and unlikeable ones more negatively, than outgroup members",
     ],
     answer: 3,
     explanation:
@@ -852,8 +852,8 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Lewin, Lippitt and White studied boys' clubs led by adults using different leadership styles. They found that:",
     options: [
-      "Democratic leadership produced good work, high satisfaction and continued effort when the leader left, while autocratic leadership produced work only while the leader was present and more hostility",
-      "Laissez-faire leadership produced the most and best work",
+      "Democratic groups kept working when the leader left, while autocratic groups stopped and grew hostile",
+      "Laissez-faire leadership produced the most and best work, as boys chose their own tasks",
       "Autocratic leadership produced the highest satisfaction",
       "Leadership style made no difference",
     ],
@@ -887,8 +887,8 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Jane Elliott's classroom exercise, in which she told her pupils that children with blue eyes were superior to children with brown eyes and then reversed the claim the next day, demonstrated that:",
     options: [
-      "Children cannot form groups on arbitrary features",
-      "Arbitrary labels backed by authority can quickly produce discrimination and changes in the self-esteem and performance of the labelled children",
+      "Children cannot form groups on arbitrary features such as eye colour without adult help",
+      "Arbitrary labels backed by authority can quickly produce discrimination and change the children's confidence",
       "Eye colour is linked to intelligence",
       "Prejudice takes many years to develop",
     ],
@@ -931,8 +931,8 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Seeing all groups as identical",
       "Hating all outgroups",
-      "Preferring outgroups to one's own group",
-      "Treating or evaluating members of one's own group more favourably than members of other groups",
+      "Preferring outgroups to one's own group, out of politeness or modesty",
+      "Treating or evaluating one's own group's members more favourably than others",
     ],
     answer: 3,
     explanation:
@@ -975,7 +975,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Which of the following is recommended by Janis to prevent groupthink?",
     options: [
       "The leader should announce the preferred decision at the start",
-      "The leader should avoid stating a preference early and should invite outside experts to challenge the group",
+      "The leader should avoid stating a preference early and invite outside experts to challenge",
       "The group should be kept isolated from outside opinions",
       "Members who disagree should be asked to keep quiet for the sake of unity",
     ],
@@ -1010,8 +1010,8 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "The term 'social facilitation' refers to:",
     options: [
       "Reducing prejudice through contact",
-      "Helping a stranger in an emergency",
-      "The effect of the presence of others on individual performance",
+      "Helping a stranger in an emergency when others are present",
+      "The effect of others' presence on individual performance",
       "Making a group decision by voting",
     ],
     answer: 2,
@@ -1047,10 +1047,10 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Sherif's summer camp studies and Tajfel's minimal group studies are often compared. The key difference in what they show is that:",
     options: [
-      "Sherif showed that competition for resources produces hostility, while Tajfel showed that mere categorisation, without competition, is enough to produce ingroup bias",
+      "Sherif showed competition breeds hostility; Tajfel showed mere categorisation is enough for ingroup bias",
       "Both showed that categorisation alone has no effect",
       "Sherif studied adults and Tajfel studied animals",
-      "Tajfel showed that competition is necessary for bias",
+      "Tajfel showed that competition is necessary for bias, while Sherif showed it is not",
     ],
     answer: 0,
     explanation:
@@ -1065,8 +1065,8 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Myers and Bishop had high-prejudice and low-prejudice students discuss racial issues in like-minded groups. After discussion:",
     options: [
-      "Both groups converged on a moderate view",
-      "High-prejudice groups became more prejudiced and low-prejudice groups became less prejudiced, so the gap between them widened",
+      "Both groups converged on a moderate view, narrowing the gap between them",
+      "High-prejudice groups became more prejudiced and low-prejudice groups less, widening the gap",
       "Both groups became more prejudiced",
       "Discussion had no effect",
     ],
