@@ -5,6 +5,8 @@ import { QUESTIONS_3 } from "./learning-motivation-emotion-3";
 import { QUESTIONS_4 } from "./learning-motivation-emotion-4";
 import { QUESTIONS_X01 } from "./learning-motivation-emotion-x01";
 import { QUESTIONS_X02 } from "./learning-motivation-emotion-x02";
+import { QUESTIONS_X03 } from "./learning-motivation-emotion-x03";
+import { QUESTIONS_X04 } from "./learning-motivation-emotion-x04";
 
 /** Question bank · learning-motivation-emotion. Parts live in learning-motivation-emotion-N.ts. */
-export const QUESTIONS: PrepQuestion[] = [...QUESTIONS_1, ...QUESTIONS_2, ...QUESTIONS_3, ...QUESTIONS_4, ...QUESTIONS_X01, ...QUESTIONS_X02];
+export const QUESTIONS: PrepQuestion[] = [...QUESTIONS_1, ...QUESTIONS_2, ...QUESTIONS_3, ...QUESTIONS_4, ...QUESTIONS_X01, ...QUESTIONS_X02, ...QUESTIONS_X03, ...QUESTIONS_X04];
