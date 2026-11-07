@@ -84,10 +84,18 @@ No medicine yet cures dementia. Current medicines fall into three groups: those 
 
 Common side effects of cholinesterase inhibitors: nausea, vomiting, diarrhoea, loss of appetite, vivid dreams, muscle cramps, and a **slow heart rate** with fainting. They need care in people with heart rhythm problems, asthma and stomach ulcers.
 
+:::widget receptor
+{"receptor": "NMDA", "title": "Memantine at the NMDA receptor", "caption": "In Alzheimer's disease, a constant low-level leak of glutamate may add noise and damage. Memantine is a low-affinity antagonist: it blocks the channel during this background leak but lets go quickly when a strong, meaningful signal arrives. Compare the antagonist setting with the full agonist (glutamate itself)."}
+:::
+
 ### Anti-amyloid antibodies
 **Lecanemab** and **donanemab** are antibodies given by drip that **remove amyloid** from the brain. In large trials they **slowed decline by about a quarter to a third** over 18 months in people with **mild cognitive impairment or mild dementia due to Alzheimer's disease** with confirmed amyloid. The benefit is modest and its meaning for daily life is debated.
 
 They carry a risk of **ARIA** (amyloid-related imaging abnormalities): brain swelling or small bleeds, usually silent but sometimes serious, and more common in people with **two copies of APOE e4**. They require MRI monitoring, amyloid confirmation, careful selection and specialist centres, and are very expensive.
+
+:::widget timeline
+{"prompt": "Order the steps before and during anti-amyloid antibody treatment.", "events": [{"label": "Specialist confirms mild cognitive impairment or mild dementia"}, {"label": "Amyloid is confirmed by PET scan, spinal fluid or a validated blood test"}, {"label": "APOE e4 testing and a baseline MRI to judge ARIA risk"}, {"label": "Regular infusions begin"}, {"label": "Scheduled MRI scans check for brain swelling or small bleeds"}, {"label": "Review of benefit, side effects and whether to continue"}], "why": "These antibodies help only people at an early stage with proven amyloid, and they carry a real risk of ARIA. That is why so much checking comes before the first drip, and safety scans continue during treatment."}
+:::
 
 :::widget sort
 {"prompt": "Which medicine fits each situation best?", "buckets": ["Cholinesterase inhibitor", "Memantine", "Neither; think again"], "items": [{"text": "Mild Alzheimer's dementia, normal heart rate and ECG", "bucket": 0}, {"text": "Severe Alzheimer's disease, bedbound but agitated, already on donepezil", "bucket": 1, "why": "Memantine is licensed for moderate to severe disease and can be added."}, {"text": "Dementia with Lewy bodies with distressing visual hallucinations", "bucket": 0, "why": "Rivastigmine or donepezil are first choice."}, {"text": "Behavioural variant frontotemporal dementia", "bucket": 2, "why": "Cholinesterase inhibitors do not help FTD and may worsen behaviour."}, {"text": "Mild Alzheimer's with a heart rate of 46 and fainting spells", "bucket": 2, "why": "Cholinesterase inhibitors slow the heart; investigate first and seek cardiology advice."}, {"text": "Moderate Alzheimer's who could not tolerate any cholinesterase inhibitor", "bucket": 1}]}
@@ -164,6 +172,10 @@ Antipsychotics are often given for agitation in dementia, but they **increase th
 {"scene": "Mrs Kapoor, 84, with moderate Alzheimer's disease, lives in a care home in Delhi. Lately she has screamed and hit out during morning bathing. The staff request 'something to calm her'. She has had little to drink, is constipated, and winces when her right knee is moved.", "ask": "What do you do first?", "choices": [{"label": "Start risperidone 1 mg twice daily", "verdict": "harm", "outcome": "She becomes drowsy, falls and fractures her hip.", "why": "Antipsychotics before looking for causes expose her to stroke, falls and death risks, and the pain remains untreated."}, {"label": "Use the DICE approach: examine and treat her knee pain and constipation, encourage fluids, change the bathing routine (warmer room, one familiar carer, sponge bath if she prefers, explaining each step), and review", "verdict": "best", "outcome": "Regular paracetamol for her arthritic knee, a laxative and a gentler bathing routine stop the screaming within days.", "why": "Pain and discomfort are common, treatable causes of agitation in dementia. Regular paracetamol alone has reduced agitation in trials."}, {"label": "Stop bathing her altogether", "verdict": "ok", "outcome": "The screaming stops, but she develops skin infections.", "why": "Avoidance removes one trigger but ignores her pain and her care needs."}]}
 :::
 
+:::widget compare
+{"title": "Before and after a behaviour plan", "a": {"label": "Before", "points": ["Shouts and pushes carers at bath time every evening", "Given haloperidol 'as needed', now sleepy and unsteady", "Has had two falls", "Daughter exhausted and thinking of a care home"], "summary": "The behaviour was treated as a problem to sedate."}, "b": {"label": "After DICE", "points": ["Constipation and knee pain found and treated", "Bath moved to late morning, with a female carer and warm room", "Antipsychotic stopped; no more falls", "Shouting much less; daughter coping with respite help"], "summary": "The behaviour was treated as communication: of pain, fear and an unsuitable routine."}, "caption": "Describe, Investigate, Create, Evaluate. Most behaviour in dementia has a cause that can be found."}
+:::
+
 ### Capacity and decisions
 Dementia affects decision-making gradually and unevenly. A person may be able to decide what to eat but not how to invest money. **Capacity is decision-specific**: can the person understand the information, retain it long enough, weigh it up, and communicate a choice? Assess each important decision, support the person to decide where possible, and involve families. Planning ahead **while capacity is present** protects the person's wishes.
 
@@ -228,6 +240,10 @@ No single mechanism explains all delirium. Leading ideas:
 
 :::widget brainmap
 {"title": "Brain systems disturbed in delirium", "focus": ["prefrontal", "thalamus", "brainstem", "hippocampus"], "notes": {"prefrontal": "Sustained attention and executive control fail first, the core of delirium.", "thalamus": "The relay that filters sensory information; disruption contributes to misperceptions and hallucinations.", "brainstem": "Arousal systems (including cholinergic and noradrenergic nuclei) set alertness; disturbance causes drowsiness or hyperalertness and sleep-wake reversal.", "hippocampus": "Memory formation is disrupted, so people often remember little of the episode."}, "caption": "Tap each area. Delirium is a whole-brain network failure rather than damage in one spot."}
+:::
+
+:::widget guess
+{"prompt": "In an intensive care unit, out of 100 older patients on a breathing machine, about how many develop delirium?", "min": 0, "max": 100, "unit": "patients", "answer": [50, 80], "reveal": "Between about 50 and 80. Delirium is common because many causes stack up at once: severe illness, sedatives, sleep loss, pain, infection and an unfamiliar, noisy room. Much of it is hypoactive, quiet and easily missed, which is why ICUs screen every patient routinely."}
 :::
 
 ### Special settings
@@ -302,6 +318,10 @@ In India, low education, high blood pressure, diabetes, hearing loss and air pol
 - **Amyloid and tau PET scans** show the proteins in the living brain.
 - **Spinal fluid tests** measure amyloid and tau.
 - **Blood tests**, especially **p-tau217**, can now detect Alzheimer's changes with good accuracy, and some have been cleared for clinical use in some countries. They are best used in people with symptoms, to help decide who needs further tests, not to screen healthy people.
+
+:::widget timeline
+{"prompt": "In Alzheimer's disease, changes appear in a typical order, beginning years before symptoms. Put them in order.", "events": [{"label": "Amyloid builds up in the brain"}, {"label": "Tau tangles spread from the memory regions"}, {"label": "Brain cells are lost and the hippocampus shrinks"}, {"label": "Subtle memory problems: mild cognitive impairment"}, {"label": "Dementia: loss of independence"}], "why": "Amyloid can be detected 15 to 20 years before dementia. Tau and neurodegeneration track symptoms more closely. This is why trials now aim to treat people earlier, and why a positive amyloid test in a person without symptoms does not mean they will develop dementia soon."}
+:::
 
 ### The frontier, as of Nov 2026
 - **Anti-amyloid antibodies** have arrived, including in India, with modest benefit, real risks and high costs (section 3.2).
