@@ -294,7 +294,7 @@ export const QUESTIONS: PrepQuestion[] = [
       "Show no affected males",
     ],
     0,
-    "If females need a higher liability to cross the threshold, an affected female carries more risk factors on average, so her relatives have higher risk than relatives of an affected male; this has been tested as a 'female protective effect' in autism, with mixed but partly supportive results. The other options contradict the model's prediction.",
+    "If females need a higher liability to cross the threshold, an affected female carries more risk factors on average, so her relatives have higher risk than relatives of an affected male; this has been tested as a 'female protective effect' in autism, with mixed but partly supportive results. Lower risk than male relatives, population-level risk or an absence of affected males would each contradict this prediction.",
     { ref: "Liability-threshold model" },
   ),
   q.mcq(

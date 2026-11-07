@@ -14,6 +14,8 @@ import { PART as p12 } from "./clinical-therapies-12";
 import { PART as p13 } from "./clinical-therapies-13";
 import { PART as p14 } from "./clinical-therapies-14";
 import { PART as p15 } from "./clinical-therapies-15";
+import { PART as x1a } from "./clinical-therapies-x1a";
+import { PART as x1b } from "./clinical-therapies-x1b";
 
 /** Question bank · clinical-therapies. Ordered from foundations (difficulty 1) to entrance-topper level (difficulty 4). Content lives in clinical-therapies-NN.ts part files. */
-export const QUESTIONS: PrepQuestion[] = [...p01, ...p02, ...p03, ...p04, ...p05, ...p06, ...p07, ...p08, ...p09, ...p10, ...p11, ...p12, ...p13, ...p14, ...p15].sort((a, b) => a.difficulty - b.difficulty);
+export const QUESTIONS: PrepQuestion[] = [...p01, ...p02, ...p03, ...p04, ...p05, ...p06, ...p07, ...p08, ...p09, ...p10, ...p11, ...p12, ...p13, ...p14, ...p15, ...x1a, ...x1b].sort((a, b) => a.difficulty - b.difficulty);
