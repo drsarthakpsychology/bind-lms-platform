@@ -1,11 +1,12 @@
 "use client";
 
 import * as React from "react";
-import { Pause, Play, RotateCcw, Ruler } from "lucide-react";
+import { RotateCcw, Ruler } from "lucide-react";
 import type { AttentionData, ConservationData, DissonanceData, ExperimentData, IllusionData } from "@/lib/study/types";
 import { cn } from "@/lib/utils";
 import { Rich } from "./rich";
 import { trackLearn } from "@/lib/learn/track";
+import type { StepPlayer } from "./pacing";
 
 /**
  * Third wave of animated explainers: selective attention, cognitive
@@ -28,53 +29,7 @@ export function choiceCls(on: boolean) {
   );
 }
 
-export function useSteps(n: number, ms: number) {
-  const [i, setI] = React.useState(0);
-  const [playing, setPlaying] = React.useState(false);
-  React.useEffect(() => {
-    if (!playing) return;
-    const t = setTimeout(() => {
-      setI((x) => {
-        if (x + 1 >= n) {
-          setPlaying(false);
-          return x;
-        }
-        return x + 1;
-      });
-    }, ms);
-    return () => clearTimeout(t);
-  }, [playing, i, n, ms]);
-  return {
-    i,
-    playing,
-    setI: (k: number) => {
-      setPlaying(false);
-      setI(k);
-    },
-    play: () => {
-      if (i >= n - 1) setI(0);
-      setPlaying(true);
-    },
-    pause: () => setPlaying(false),
-  };
-}
-
-export function PlayBar({ st, n, kind, first = "Play", again = "Watch again" }: { st: ReturnType<typeof useSteps>; n: number; kind: string; first?: string; again?: string }) {
-  return (
-    <div className="mt-3 flex flex-wrap items-center gap-2">
-      {st.playing ? (
-        <button type="button" className={cn(btn, "bg-card")} onClick={st.pause}><Pause className="size-4" aria-hidden /> Pause</button>
-      ) : (
-        <button type="button" className={cn(btn, "bg-foreground text-background")} onClick={() => { st.play(); trackLearn({ type: "widget", kind }); }}>
-          <Play className="size-4" aria-hidden /> {st.i >= n - 1 ? again : first}
-        </button>
-      )}
-      <span className="text-sm text-muted-foreground">Step {Math.min(st.i + 1, n)} of {n}, or tap a step</span>
-    </div>
-  );
-}
-
-export function StepList({ names, st }: { names: string[]; st: ReturnType<typeof useSteps> }) {
+export function StepList({ names, st }: { names: string[]; st: StepPlayer }) {
   return (
     <ol className="mt-3 flex flex-wrap gap-1.5" aria-label="Steps">
       {names.map((s, k) => (

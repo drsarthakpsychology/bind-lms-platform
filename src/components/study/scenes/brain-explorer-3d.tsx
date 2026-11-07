@@ -27,7 +27,7 @@ export default function BrainExplorer3D(p: BrainViewProps) {
   };
   const v = p.view !== "free" ? guided[p.view] : views[p.layer] ?? views[0];
   return (
-    <Stage className="h-full w-full" camera={views[0].pos} inView={p.inView} active={p.journey.active} wakeKey={`${p.view}-${p.layer}-${p.sel}-${p.damage}-${p.journey.run}`} onReady={p.onReady} minDistance={2.2} maxDistance={8}>
+    <Stage className="h-full w-full" camera={views[0].pos} inView={p.inView} active={p.journey.moving} wakeKey={`${p.view}-${p.layer}-${p.sel}-${p.damage}-${p.journey.run}`} onReady={p.onReady} minDistance={2.2} maxDistance={8}>
       <CameraRig flyKey={p.view !== "free" ? `view-${p.view}` : `layer-${p.layer}`} pos={v.pos} target={v.target} fitAspect={1.5} />
       <BrainScene {...p} />
     </Stage>

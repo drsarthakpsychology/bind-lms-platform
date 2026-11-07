@@ -1,11 +1,12 @@
 "use client";
 
 import * as React from "react";
-import { Pause, Play, RotateCcw } from "lucide-react";
+import { RotateCcw } from "lucide-react";
 import type { CompareData, ConditioningData, MemoryFlowData, StressData, TimelineData } from "@/lib/study/types";
 import { cn } from "@/lib/utils";
 import { Rich } from "./rich";
 import { trackLearn } from "@/lib/learn/track";
+import { PlayBar, useStepPlayer } from "./pacing";
 
 /**
  * Animated explainers for core psychology processes: classical and operant
@@ -17,52 +18,6 @@ import { trackLearn } from "@/lib/learn/track";
 const card = "rounded-2xl border-2 border-foreground bg-card p-4 sm:p-5 shadow-[var(--shadow-hard-sm)]";
 const label = "text-xs font-semibold tracking-wide uppercase text-link";
 const btn = "inline-flex min-h-11 items-center justify-center gap-2 rounded-md border-2 border-foreground px-4 font-semibold";
-
-function useSteps(n: number, ms: number) {
-  const [i, setI] = React.useState(0);
-  const [playing, setPlaying] = React.useState(false);
-  React.useEffect(() => {
-    if (!playing) return;
-    const t = setTimeout(() => {
-      setI((x) => {
-        if (x + 1 >= n) {
-          setPlaying(false);
-          return x;
-        }
-        return x + 1;
-      });
-    }, ms);
-    return () => clearTimeout(t);
-  }, [playing, i, n, ms]);
-  return {
-    i,
-    playing,
-    setI: (k: number) => {
-      setPlaying(false);
-      setI(k);
-    },
-    play: () => {
-      if (i >= n - 1) setI(0);
-      setPlaying(true);
-    },
-    pause: () => setPlaying(false),
-  };
-}
-
-function PlayBar({ st, n, kind, first = "Play", again = "Watch again" }: { st: ReturnType<typeof useSteps>; n: number; kind: string; first?: string; again?: string }) {
-  return (
-    <div className="mt-3 flex flex-wrap items-center gap-2">
-      {st.playing ? (
-        <button type="button" className={cn(btn, "bg-card")} onClick={st.pause}><Pause className="size-4" aria-hidden /> Pause</button>
-      ) : (
-        <button type="button" className={cn(btn, "bg-foreground text-background")} onClick={() => { st.play(); trackLearn({ type: "widget", kind }); }}>
-          <Play className="size-4" aria-hidden /> {st.i >= n - 1 ? again : first}
-        </button>
-      )}
-      <span className="text-sm text-muted-foreground">Step {Math.min(st.i + 1, n)} of {n}, or tap a step</span>
-    </div>
-  );
-}
 
 /* --------------------------------------------------------- conditioning */
 const CLASSICAL = [
@@ -84,7 +39,7 @@ const OPERANT = [
 export function Conditioning({ d }: { d: ConditioningData }) {
   const classical = d.kind === "classical";
   const steps = classical ? CLASSICAL : OPERANT;
-  const st = useSteps(steps.length, 2600);
+  const st = useStepPlayer(steps.length, (k) => `${steps[k]?.name ?? ""} ${steps[k]?.text ?? ""}`);
   const cur = steps[Math.min(st.i, steps.length - 1)];
   const drool = classical ? [0, 0.15, 0.5, 1, 0.2][st.i] : 0;
   const pressRate = classical ? 0 : [0.1, 0.3, 0.7, 1, 0.25][st.i];
@@ -149,7 +104,7 @@ export function Conditioning({ d }: { d: ConditioningData }) {
           </li>
         ))}
       </ol>
-      <PlayBar st={st} n={steps.length} kind="conditioning" />
+      <PlayBar st={st} kind="conditioning" />
       <p className="vibha-pop mt-3 rounded-xl bg-muted p-3 text-[0.95rem] leading-relaxed" key={cur.id} role="status" aria-live="polite">
         <span className="font-semibold">{cur.name}: </span>{cur.text}
       </p>
@@ -168,7 +123,7 @@ const MEM_STEPS = [
 ];
 
 export function MemoryFlow({ d }: { d: MemoryFlowData }) {
-  const st = useSteps(MEM_STEPS.length, 2600);
+  const st = useStepPlayer(MEM_STEPS.length, (k) => `${MEM_STEPS[k]?.name ?? ""} ${MEM_STEPS[k]?.text ?? ""}`);
   const cur = MEM_STEPS[Math.min(st.i, MEM_STEPS.length - 1)];
   const pos = [20, 118, 118, 230, 118][st.i];
   const boxes = [
@@ -220,7 +175,7 @@ export function MemoryFlow({ d }: { d: MemoryFlowData }) {
           </li>
         ))}
       </ol>
-      <PlayBar st={st} n={MEM_STEPS.length} kind="memoryflow" />
+      <PlayBar st={st} kind="memoryflow" />
       <p className="vibha-pop mt-3 rounded-xl bg-muted p-3 text-[0.95rem] leading-relaxed" key={cur.id} role="status" aria-live="polite">
         <span className="font-semibold">{cur.name}: </span>{cur.text}
       </p>
@@ -239,7 +194,7 @@ const STRESS_STEPS = [
 ];
 
 export function StressResponse({ d }: { d: StressData }) {
-  const st = useSteps(STRESS_STEPS.length, 3000);
+  const st = useStepPlayer(STRESS_STEPS.length, (k) => `${STRESS_STEPS[k]?.name ?? ""} ${STRESS_STEPS[k]?.text ?? ""}`);
   const cur = STRESS_STEPS[Math.min(st.i, STRESS_STEPS.length - 1)];
   const hr = [72, 125, 110, 80, 95][st.i];
   const cortisol = [0.1, 0.15, 0.8, 0.3, 0.9][st.i];
@@ -288,7 +243,7 @@ export function StressResponse({ d }: { d: StressData }) {
           </li>
         ))}
       </ol>
-      <PlayBar st={st} n={STRESS_STEPS.length} kind="stress" />
+      <PlayBar st={st} kind="stress" />
       <p className="vibha-pop mt-3 rounded-xl bg-muted p-3 text-[0.95rem] leading-relaxed" key={cur.id} role="status" aria-live="polite">
         <span className="font-semibold">{cur.name}: </span>{cur.text}
       </p>

@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { PlayBar, readingMs, type StepPlayer } from "../pacing";
 import { Box, Check, Square, Target } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Rich } from "../rich";
@@ -189,25 +190,59 @@ export function useMissions<K extends string>(keys: readonly K[]) {
 export type Leg = { path: string; ms: number; say: string; tone: "sense" | "motor" | "symp" | "para" | "info" };
 
 /**
- * A signal travelling leg by leg. With `auto`, legs advance on a timer (the
- * 3D or flat view animates the pulse along each leg); without it, the
- * student steps through with next().
+ * A signal travelling leg by leg. Nothing moves on its own: start() shows
+ * the first leg (its pulse animates once) and waits. The student steps with
+ * Next and Back, or presses Play, which holds each leg for its animation or
+ * its reading time, whichever is longer. The step after the last leg is the
+ * result (done).
  */
-export function useJourney(auto: boolean) {
-  const [s, setS] = React.useState<{ legs: Leg[]; leg: number; run: number; key: string }>({ legs: [], leg: -1, run: 0, key: "" });
+type JourneyState = { legs: Leg[]; leg: number; run: number; key: string; playing: boolean; moving: boolean };
+/** Move to a leg: its pulse plays once (moving), then the view rests until the student acts. */
+const go = (x: JourneyState, leg: number, playing: boolean): JourneyState => ({ ...x, leg, run: x.run + 1, playing, moving: leg < x.legs.length });
+
+export function useJourney() {
+  const [s, setS] = React.useState<JourneyState>({ legs: [], leg: -1, run: 0, key: "", playing: false, moving: false });
+  const curLeg = s.leg >= 0 && s.leg < s.legs.length ? s.legs[s.leg] : null;
+  const hold = curLeg ? readingMs(curLeg.say, curLeg.ms) : 0;
   React.useEffect(() => {
-    if (!auto || s.leg < 0 || s.leg >= s.legs.length) return;
-    const t = setTimeout(() => setS((x) => (x.run === s.run ? { ...x, leg: x.leg + 1 } : x)), s.legs[s.leg].ms);
+    if (!s.playing || !hold) return;
+    const t = setTimeout(() => setS((x) => (x.run === s.run ? go(x, x.leg + 1, x.leg + 1 < x.legs.length) : x)), hold);
     return () => clearTimeout(t);
-  }, [auto, s.leg, s.legs, s.run]);
-  const start = React.useCallback((key: string, legs: Leg[]) => setS((x) => ({ legs, leg: 0, run: x.run + 1, key })), []);
-  const next = React.useCallback(() => setS((x) => (x.leg >= 0 && x.leg < x.legs.length ? { ...x, leg: x.leg + 1 } : x)), []);
-  const clear = React.useCallback(() => setS((x) => ({ legs: [], leg: -1, run: x.run + 1, key: "" })), []);
+  }, [s.playing, s.run, hold]);
+  const legMs = curLeg?.ms ?? 0;
+  React.useEffect(() => {
+    if (!s.moving) return;
+    const t = setTimeout(() => setS((x) => (x.run === s.run ? { ...x, moving: false } : x)), legMs + 120);
+    return () => clearTimeout(t);
+  }, [s.moving, s.run, legMs]);
+  const start = React.useCallback((key: string, legs: Leg[]) => setS((x) => go({ ...x, legs, key }, 0, false)), []);
+  const next = React.useCallback(() => setS((x) => (x.leg >= 0 && x.leg < x.legs.length ? go(x, x.leg + 1, false) : x)), []);
+  const back = React.useCallback(() => setS((x) => (x.leg > 0 ? go(x, x.leg - 1, false) : x)), []);
+  const pause = React.useCallback(() => setS((x) => (x.playing ? { ...x, playing: false } : x)), []);
+  const play = React.useCallback(() => setS((x) => (!x.legs.length ? x : x.leg >= x.legs.length ? go(x, 0, true) : { ...x, playing: true })), []);
+  const clear = React.useCallback(() => setS((x) => ({ legs: [], leg: -1, run: x.run + 1, key: "", playing: false, moving: false })), []);
   const done = s.leg >= s.legs.length && s.legs.length > 0;
-  const cur = s.leg >= 0 && s.leg < s.legs.length ? s.legs[s.leg] : null;
-  return { ...s, cur, done, active: !!cur, start, next, clear };
+  // the same controls as every other step player: the legs, then the result
+  const player: StepPlayer = {
+    i: s.leg,
+    n: s.legs.length + 1,
+    playing: s.playing,
+    setI: (k) => setS((x) => go(x, Math.max(0, Math.min(x.legs.length, k)), false)),
+    next,
+    back,
+    play,
+    pause,
+    reset: () => setS((x) => go(x, 0, false)),
+  };
+  return { ...s, cur: curLeg, done, active: !!curLeg, start, next, back, play, pause, clear, player };
 }
 export type Journey = ReturnType<typeof useJourney>;
+
+/** Back, Next and Play for a journey, once one has started. */
+export function JourneyBar({ journey, kind }: { journey: Journey; kind: string }) {
+  if (!journey.legs.length) return null;
+  return <PlayBar st={journey.player} kind={kind} hint="" count={false} nextLabel={journey.leg === journey.legs.length - 1 ? "Result" : "Next"} />;
+}
 
 /** Progress (0 to 1) through the journey's current leg, driven by animation frames. */
 export function useLegProgress(journey: Journey, reduce: boolean) {

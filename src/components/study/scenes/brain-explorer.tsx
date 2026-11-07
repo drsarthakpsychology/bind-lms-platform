@@ -1,12 +1,13 @@
 "use client";
 
 import * as React from "react";
-import { ChevronRight, RotateCcw, Zap } from "lucide-react";
+import { RotateCcw, Zap } from "lucide-react";
 import type { BrainExplorerData } from "@/lib/study/types";
 import { cn } from "@/lib/utils";
 import { trackLearn } from "@/lib/learn/track";
+import { PlayBar, useStepPlayer } from "../pacing";
 import { SliceCanvas } from "./slice-canvas";
-import { Missions, ModeTabs, Scene3DSlot, SceneCard, TONE_NAME, ViewSwitch, along, btn, chip, flatD, statusCls, useInView, useJourney, useLegProgress, useMissions, useSceneView, useThemeColors, type Journey, type V3 } from "./kit";
+import { JourneyBar, Missions, ModeTabs, Scene3DSlot, SceneCard, TONE_NAME, ViewSwitch, along, btn, chip, flatD, statusCls, useInView, useJourney, useLegProgress, useMissions, useSceneView, useThemeColors, type Journey, type V3 } from "./kit";
 import { ALWAYS, BLOBS, BPATHS_FLAT, CEREBELLUM, CORTEX, DEEP, EAR, EYES, GUIDE, HEMI, LAYERS, NIGRA, PITUITARY, PONS, REGION, REGIONS, REGION_COLOR, TUBES, type GuideView, type RegionId } from "./brain-explorer-data";
 
 /**
@@ -26,7 +27,6 @@ const called = (r: RegionId) => (REGION[r].name.includes("'s") ? REGION[r].name 
 
 const CHALLENGE: RegionId[] = ["broca", "hippocampus", "amygdala", "occipital", "cerebellum", "frontal", "basal-ganglia", "parietal"];
 const MISSIONS = ["peel", "speech", "damage", "explore", "challenge", "tour"] as const;
-const TOUR_MS = 5200;
 
 export function BrainExplorer({ d }: { d: BrainExplorerData }) {
   const v = useSceneView();
@@ -34,9 +34,23 @@ export function BrainExplorer({ d }: { d: BrainExplorerData }) {
   const inView = useInView(box);
   const colors = useThemeColors(box);
   const [mode, setMode] = React.useState<"explore" | "challenge">("explore");
-  const [layer, setLayer] = React.useState(0);
-  const [view, setView] = React.useState<GuideView>("free");
-  const [tour, setTour] = React.useState<number | null>(null);
+  const [freeLayer, setFreeLayer] = React.useState(0);
+  const [freeView, setFreeView] = React.useState<GuideView>("free");
+  // the guided tour is a step player: it waits on each stop until the student moves on (or presses Play)
+  const [touring, setTouring] = React.useState(false);
+  const tourSt = useStepPlayer(GUIDE.length, (k) => `${GUIDE[k]?.name ?? ""} ${GUIDE[k]?.say ?? ""}`);
+  const tour = touring ? Math.max(0, tourSt.i) : null;
+  const view = tour !== null ? GUIDE[tour].id : freeView;
+  const layer = tour !== null ? GUIDE[tour].layer : freeLayer;
+  // any other choice ends the tour
+  const setView = (g: GuideView) => {
+    setTouring(false);
+    setFreeView(g);
+  };
+  const setLayer = (k: number) => {
+    setTouring(false);
+    setFreeLayer(k);
+  };
   const [sel, setSel] = React.useState<RegionId | null>(null);
   const [damage, setDamage] = React.useState(false);
   const [seen, setSeen] = React.useState<RegionId[]>([]);
@@ -44,7 +58,7 @@ export function BrainExplorer({ d }: { d: BrainExplorerData }) {
   const [tries, setTries] = React.useState(0);
   const [score, setScore] = React.useState(0);
   const [feedback, setFeedback] = React.useState<{ ok: boolean; text: string } | null>(null);
-  const journey = useJourney(!v.reduce);
+  const journey = useJourney();
   const ms = useMissions(MISSIONS);
   const focus = d.focus?.length && mode === "explore" ? REGIONS.filter((r) => (d.focus as string[]).includes(r.id)) : REGIONS;
 
@@ -100,30 +114,26 @@ export function BrainExplorer({ d }: { d: BrainExplorerData }) {
     trackLearn({ type: "widget", kind: "brainexplorer", item: `view-${g}` });
   };
   const startTour = () => {
-    setTour(0);
+    tourSt.reset();
+    setTouring(true);
     setSel(null);
     journey.clear();
-    goView(GUIDE[0].id);
+    trackLearn({ type: "widget", kind: "brainexplorer", item: "tour" });
   };
-  const stepTour = React.useCallback(() => {
-    setTour((t) => {
-      if (t === null) return t;
-      const n = t + 1;
-      if (n >= GUIDE.length) {
-        ms.mark("tour");
-        return null;
-      }
-      setView(GUIDE[n].id);
-      setLayer(GUIDE[n].layer);
-      return n;
-    });
-  }, [ms]);
-  // the tour moves on by itself (under reduced motion the student presses Next)
+  const leaveTour = () => {
+    if (tour === null) return;
+    setFreeView(GUIDE[tour].id);
+    setFreeLayer(GUIDE[tour].layer);
+    tourSt.pause();
+    setTouring(false);
+  };
+  // reaching the last stop completes the tour mission (in a timer callback, not render)
+  const lastStop = tour === GUIDE.length - 1;
   React.useEffect(() => {
-    if (tour === null || v.reduce) return;
-    const t = setTimeout(stepTour, TOUR_MS);
+    if (!lastStop) return;
+    const t = setTimeout(() => ms.mark("tour"), 0);
     return () => clearTimeout(t);
-  }, [tour, v.reduce, stepTour]);
+  }, [lastStop, ms]);
   const peel = (k: number) => {
     setLayer(k);
     setView("free");
@@ -173,14 +183,15 @@ export function BrainExplorer({ d }: { d: BrainExplorerData }) {
 
       <div className="mt-3 grid grid-cols-2 gap-1.5 sm:grid-cols-5" role="group" aria-label="Guided views">
         {GUIDE.map((g) => (
-          <button key={g.id} type="button" aria-pressed={view === g.id} className={chip(view === g.id, "px-2 text-center text-xs sm:text-sm")} onClick={() => { setTour(null); goView(g.id); }}>{g.name}</button>
+          <button key={g.id} type="button" aria-pressed={view === g.id} className={chip(view === g.id, "px-2 text-center text-xs sm:text-sm")} onClick={() => goView(g.id)}>{g.name}</button>
         ))}
         {tour === null ? (
           <button type="button" className={cn(btn, "col-span-2 min-h-11 bg-foreground px-2 text-xs text-background sm:col-span-1 sm:text-sm")} onClick={startTour}>Take the tour</button>
         ) : (
-          <button type="button" className={cn(btn, "col-span-2 min-h-11 bg-foreground px-2 text-xs text-background sm:col-span-1 sm:text-sm")} onClick={stepTour}>{tour + 1 < GUIDE.length ? `Next stop (${tour + 2} of ${GUIDE.length})` : "Finish the tour"}</button>
+          <button type="button" className={cn(btn, "col-span-2 min-h-11 bg-card px-2 text-xs sm:col-span-1 sm:text-sm")} onClick={leaveTour}>{lastStop ? "Finish the tour" : "Leave the tour"}</button>
         )}
       </div>
+      {tour !== null ? <PlayBar st={tourSt} kind="brainexplorer" first="Play the tour" nextLabel="Next stop" hint="" /> : null}
       <div className="mt-1.5 grid grid-cols-3 gap-1.5" role="group" aria-label="Peel the layers">
         {LAYERS.map((l, k) => (
           <button key={l.name} type="button" aria-pressed={layer === k} className={chip(layer === k, "px-2 text-center text-xs sm:text-sm")} onClick={() => peel(k)}>{l.name}</button>
@@ -222,7 +233,7 @@ export function BrainExplorer({ d }: { d: BrainExplorerData }) {
           </button>
         ) : null}
         {sel && journey.done ? <button type="button" className={cn(btn, "bg-card text-sm")} onClick={() => play(sel, damage)}><RotateCcw className="size-4" aria-hidden /> Replay</button> : null}
-        {v.reduce && journey.active ? <button type="button" className={cn(btn, "bg-foreground text-background")} onClick={journey.next}><ChevronRight className="size-4" aria-hidden /> Next step</button> : null}
+        <JourneyBar journey={journey} kind="brainexplorer" />
       </div>
 
       <div className={statusCls} role="status" aria-live="polite">

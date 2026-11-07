@@ -12,7 +12,7 @@ import type { NsViewProps } from "./nervous-system";
 export default React.memo(function NervousSystem3D(p: NsViewProps) {
   const view = p.mode === "map" ? LEVEL_VIEW[p.level] : p.mode === "auto" ? { pos: [1.0, 1.0, 3.7] as V3, target: [0, 0.8, 0] as V3 } : LEVEL_VIEW.all;
   return (
-    <Stage className="h-full w-full" camera={LEVEL_VIEW.all.pos} inView={p.inView} active={p.mode === "auto" || p.journey.active} wakeKey={`${p.mode}-${p.level}-${p.auto}-${p.journey.run}-${p.journey.leg}`} onReady={p.onReady} minDistance={1.2} maxDistance={9}>
+    <Stage className="h-full w-full" camera={LEVEL_VIEW.all.pos} inView={p.inView} active={p.mode === "auto" || p.journey.moving} wakeKey={`${p.mode}-${p.level}-${p.auto}-${p.journey.run}-${p.journey.leg}`} onReady={p.onReady} minDistance={1.2} maxDistance={9}>
       <CameraRig flyKey={`${p.mode}-${p.mode === "map" ? p.level : ""}`} pos={view.pos} target={view.target} fitAspect={0.7} />
       <Scene {...p} />
     </Stage>

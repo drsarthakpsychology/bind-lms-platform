@@ -1,11 +1,11 @@
 "use client";
 
 import * as React from "react";
-import { ChevronRight, RotateCcw, Zap } from "lucide-react";
+import { RotateCcw, Zap } from "lucide-react";
 import type { Synapse3dData } from "@/lib/study/types";
 import { cn } from "@/lib/utils";
 import { trackLearn } from "@/lib/learn/track";
-import { Missions, Scene3DSlot, SceneCard, ViewSwitch, btn, chip, statusCls, useInView, useJourney, useMissions, useSceneView, useThemeColors, type V3 } from "./kit";
+import { JourneyBar, Missions, Scene3DSlot, SceneCard, ViewSwitch, btn, chip, statusCls, useInView, useJourney, useMissions, useSceneView, useThemeColors, type V3 } from "./kit";
 
 /**
  * A synapse in 3D: fire the nerve ending and watch calcium flood in,
@@ -109,16 +109,30 @@ function stageText(id: (typeof STAGES)[number]["id"], drug: SynDrug, tx: string)
 const View3D = React.lazy(() => import("./synapse-scene-3d"));
 export type SynViewProps = { fireAt: number | null; stage: number; running: boolean; reduce: boolean; drug: SynDrug; inView: boolean; colors: ReturnType<typeof useThemeColors>; onReady?: () => void };
 
-/** Elapsed ms since the signal arrived; under reduced motion, the end of the current stage. */
+/** When a stage starts, in ms after the signal arrived. */
+export const stageStart = (stage: number) => STAGES.slice(0, Math.max(0, stage)).reduce((a, s) => a + s.ms, 0);
+/**
+ * Where the animation is within a stage that was entered `since` ms ago: it
+ * plays the stage once and then holds on its last frame until the student
+ * moves on (no running ahead of the words).
+ */
+export const stageElapsed = (stage: number, since: number, reduce: boolean) => {
+  const st = Math.max(0, stage);
+  const len = STAGES[Math.min(st, STAGES.length - 1)].ms - 1;
+  return stageStart(st) + (reduce ? len : Math.min(len, Math.max(0, since)));
+};
+
+/** Elapsed ms in the message's timeline for the current stage, driven by frames only while the stage plays. */
 export function useElapsed(fireAt: number | null, stage: number, reduce: boolean) {
   const [e, setE] = React.useState(-1);
   React.useEffect(() => {
     if (fireAt === null) return;
     let raf = 0;
+    const t0 = performance.now();
     const tick = () => {
-      const end = STAGES.slice(0, stage + 1).reduce((a, s) => a + s.ms, 0);
-      setE(reduce ? end - 1 : performance.now() - fireAt);
-      if (!reduce) raf = requestAnimationFrame(tick);
+      const since = performance.now() - t0;
+      setE(stageElapsed(stage, since, reduce));
+      if (!reduce && since < STAGES[Math.min(Math.max(0, stage), STAGES.length - 1)].ms) raf = requestAnimationFrame(tick);
     };
     raf = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(raf);
@@ -134,7 +148,7 @@ export function SynapseScene({ d }: { d: Synapse3dData }) {
   const tx = d.transmitter ?? "serotonin";
   const [drug, setDrug] = React.useState<SynDrug>("none");
   const [fireAt, setFireAt] = React.useState<number | null>(null);
-  const journey = useJourney(!v.reduce);
+  const journey = useJourney();
   const ms = useMissions(["fire", "reuptake", "blocker", "botox"] as const);
   const fire = () => {
     setFireAt(performance.now());
@@ -145,7 +159,7 @@ export function SynapseScene({ d }: { d: Synapse3dData }) {
   };
   const stage = journey.cur ? journey.leg : journey.done ? STAGES.length - 1 : -1;
   const e = useElapsed(fireAt, Math.max(0, stage), v.reduce);
-  const resp = stage < 0 ? 0 : response(v.reduce ? STAGES.slice(0, stage + 1).reduce((a, s) => a + s.ms, 0) - 1 : e, drug);
+  const resp = stage < 0 ? 0 : response(Math.max(0, e), drug);
   const dr = DRUGS.find((x) => x.id === drug)!;
   return (
     <SceneCard title={d.title ?? `A ${tx} synapse, up close`} goal="Fire the nerve ending and follow one message across the gap, then add a drug and find the step it changes." caption={d.caption} tools={<ViewSwitch v={v} />}>
@@ -166,7 +180,7 @@ export function SynapseScene({ d }: { d: Synapse3dData }) {
         <button type="button" className={cn(btn, "min-h-12 bg-primary px-5 text-primary-foreground hover:-translate-y-0.5")} onClick={fire}>
           {journey.done ? <RotateCcw className="size-4" aria-hidden /> : <Zap className="size-4" aria-hidden />} {journey.done ? "Fire again" : "Fire the nerve ending"}
         </button>
-        {v.reduce && journey.active ? <button type="button" className={cn(btn, "bg-foreground text-background")} onClick={journey.next}><ChevronRight className="size-4" aria-hidden /> Next step</button> : null}
+        <JourneyBar journey={journey} kind="synapse3d" />
         <div className="flex min-w-40 flex-1 basis-full items-center gap-2 text-sm font-semibold sm:basis-auto">
           <span>Message received</span>
           <div className="h-3 flex-1 overflow-hidden rounded-full border-2 border-foreground bg-background" role="meter" aria-valuemin={0} aria-valuemax={100} aria-valuenow={Math.round(resp * 100)} aria-label="Message received by the next cell">

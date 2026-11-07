@@ -2,9 +2,9 @@
 
 import * as React from "react";
 import * as THREE from "three";
-import { useFrame } from "@react-three/fiber";
+import { useFrame, useThree } from "@react-three/fiber";
 import { CameraRig, Stage, segs, useQuality, type Quality } from "./three-kit";
-import { CA_CH, N_MOL, N_VES, RECEPTORS, STAGES, T, TRANSPORTER, moleculePos, response, rnd, vesiclePos, type SynViewProps } from "./synapse-scene";
+import { CA_CH, N_MOL, N_VES, RECEPTORS, STAGES, T, TRANSPORTER, moleculePos, response, rnd, stageElapsed, vesiclePos, type SynViewProps } from "./synapse-scene";
 
 /**
  * The synapse in 3D: a see-through nerve ending full of vesicles above a
@@ -13,7 +13,7 @@ import { CA_CH, N_MOL, N_VES, RECEPTORS, STAGES, T, TRANSPORTER, moleculePos, re
  */
 function Synapse3D(p: SynViewProps) {
   return (
-    <Stage className="h-full w-full" camera={[0.6, 0.9, 5.6]} inView={p.inView} active={p.running} wakeKey={`${p.drug}-${p.fireAt}-${p.stage}`} onReady={p.onReady} minDistance={2.2} maxDistance={9}>
+    <Stage className="h-full w-full" camera={[0.6, 0.9, 5.6]} inView={p.inView} active={false} wakeKey={`${p.drug}-${p.fireAt}-${p.stage}`} onReady={p.onReady} minDistance={2.2} maxDistance={9}>
       <CameraRig flyKey="synapse" pos={[0.9, 1.3, 6.0]} target={[0, 0.7, 0]} fitAspect={1.4} />
       <Scene {...p} />
     </Stage>
@@ -60,9 +60,15 @@ function Scene({ fireAt, stage, reduce, drug, colors }: SynViewProps) {
     for (let i = 0; i < N_MOL; i++) m.setColorAt(i, freeC);
     if (m.instanceColor) m.instanceColor.needsUpdate = true;
   }, [freeC]);
+  const entered = React.useRef({ key: "", t0: 0 });
+  const invalidate = useThree((st) => st.invalidate);
   useFrame(() => {
-    const end = STAGES.slice(0, Math.max(0, stage) + 1).reduce((a, s) => a + s.ms, 0) - 1;
-    const e = fireAt === null ? -1 : reduce ? end : performance.now() - fireAt;
+    // each stage plays once from when it was entered, then holds until the student moves on
+    const key = `${fireAt}-${stage}`;
+    if (entered.current.key !== key) entered.current = { key, t0: performance.now() };
+    const since = performance.now() - entered.current.t0;
+    const e = fireAt === null ? -1 : stageElapsed(stage, since, reduce);
+    if (fireAt !== null && !reduce && since < STAGES[Math.min(Math.max(0, stage), STAGES.length - 1)].ms + 50) invalidate();
     const t = performance.now() / 1000;
     const ee = Math.max(0, e);
     if (ves.current) {

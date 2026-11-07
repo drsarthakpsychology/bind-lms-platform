@@ -1,11 +1,11 @@
 "use client";
 
 import * as React from "react";
-import { ChevronRight, RotateCcw } from "lucide-react";
+import { RotateCcw } from "lucide-react";
 import type { NervousSystemData } from "@/lib/study/types";
 import { cn } from "@/lib/utils";
 import { trackLearn } from "@/lib/learn/track";
-import { Missions, ModeTabs, Scene3DSlot, SceneCard, TONE_NAME, ViewSwitch, along, btn, chip, flatD, statusCls, useInView, useJourney, useLegProgress, useMissions, useSceneView, useThemeColors, type Journey } from "./kit";
+import { JourneyBar, Missions, ModeTabs, Scene3DSlot, SceneCard, TONE_NAME, ViewSwitch, along, btn, chip, flatD, statusCls, useInView, useJourney, useLegProgress, useMissions, useSceneView, useThemeColors, type Journey } from "./kit";
 import { AUTO, BODY, LEVELS, LIMBS, PARA, PARTS, PART_NAME, PATHS, SOMATIC, SYMP, levelShows, routeLegs, type Auto, type Level, type Part, type Route } from "./nervous-system-data";
 
 /**
@@ -34,7 +34,7 @@ export function NervousSystem({ d }: { d: NervousSystemData }) {
   const [route, setRoute] = React.useState<Route>("brain");
   const [auto, setAuto] = React.useState<Auto>("everyday");
   const [level, setLevel] = React.useState<Level>("all");
-  const journey = useJourney(!v.reduce);
+  const journey = useJourney();
   const ms = useMissions(MISSIONS);
   const lastKey = React.useRef("");
 
@@ -120,11 +120,7 @@ export function NervousSystem({ d }: { d: NervousSystemData }) {
               <button key={p} type="button" className={cn(btn, "min-h-11 justify-start bg-card px-3 text-left text-sm hover:-translate-y-0.5")} onClick={() => send(p)}>{PART_NAME[p]}</button>
             ))}
           </div>
-          {v.reduce && journey.active ? (
-            <button type="button" className={cn(btn, "bg-foreground text-background")} onClick={journey.next}>
-              <ChevronRight className="size-4" aria-hidden /> Next step
-            </button>
-          ) : null}
+          <JourneyBar journey={journey} kind="nervoussystem" />
         </div>
       ) : null}
       {mode === "auto" ? (

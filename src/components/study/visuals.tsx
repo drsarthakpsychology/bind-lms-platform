@@ -1,11 +1,11 @@
 "use client";
 
 import * as React from "react";
-import { Pause, Play, RotateCcw } from "lucide-react";
+import { RotateCcw } from "lucide-react";
 import type { BrainMapData, CurveData, FlowData, LayersData } from "@/lib/study/types";
 import { cn } from "@/lib/utils";
+import { PlayBar, useStepPlayer } from "./pacing";
 import { Rich } from "./rich";
-import { trackLearn } from "@/lib/learn/track";
 
 /**
  * Visual teaching pieces: flowcharts and cycles, interactive curves, layered
@@ -30,45 +30,9 @@ function useReducedMotion(): boolean {
   );
 }
 
-/** Steps through 0..n-1 on Play; timer state lives in the callback, not the effect body. */
-function useStepper(n: number, ms = 1400) {
-  const [i, setI] = React.useState(-1);
-  const [playing, setPlaying] = React.useState(false);
-  React.useEffect(() => {
-    if (!playing) return;
-    const t = setTimeout(() => {
-      setI((x) => {
-        if (x + 1 >= n) {
-          setPlaying(false);
-          return x;
-        }
-        return x + 1;
-      });
-    }, ms);
-    return () => clearTimeout(t);
-  }, [playing, i, n, ms]);
-  return {
-    i,
-    playing,
-    play: () => {
-      setI((x) => (x + 1 >= n ? 0 : x < 0 ? 0 : x));
-      setPlaying(true);
-    },
-    pause: () => setPlaying(false),
-    reset: () => {
-      setPlaying(false);
-      setI(-1);
-    },
-    pick: (k: number) => {
-      setPlaying(false);
-      setI(k);
-    },
-  };
-}
-
 /* ------------------------------------------------------------------ flow */
 export function Flow({ d }: { d: FlowData }) {
-  const st = useStepper(d.nodes.length);
+  const st = useStepPlayer(d.nodes.length, (k) => `${d.nodes[k]?.label ?? ""} ${d.nodes[k]?.detail ?? ""}`, { start: -1 });
   const active = st.i >= 0 ? d.nodes[st.i] : null;
   const isOn = (k: number) => st.i === k;
   const seen = (k: number) => st.i >= k;
@@ -79,7 +43,7 @@ export function Flow({ d }: { d: FlowData }) {
       <button
         key={n.id}
         type="button"
-        onClick={() => st.pick(k)}
+        onClick={() => st.setI(k)}
         aria-pressed={isOn(k)}
         className={cn(
           "min-h-11 rounded-md border-2 px-3 py-2 text-left text-[0.92rem] leading-snug font-semibold transition-[transform,background-color,opacity] duration-base",
@@ -170,17 +134,8 @@ export function Flow({ d }: { d: FlowData }) {
     <figure className={card}>
       {d.title ? <p className={label}><Rich text={d.title} /></p> : <p className={label}>See how it works</p>}
       <div className="mt-3">{body}</div>
-      <div className="mt-3 flex flex-wrap items-center gap-2">
-        {st.playing ? (
-          <button type="button" className={cn(btn, "bg-card")} onClick={st.pause}><Pause className="size-4" aria-hidden /> Pause</button>
-        ) : (
-          <button type="button" className={cn(btn, "bg-foreground text-background")} onClick={() => { st.play(); trackLearn({ type: "widget", kind: "flow", prompt: String(d.title ?? d.nodes[0]?.label ?? "") }); }}>
-            <Play className="size-4" aria-hidden /> {st.i < 0 ? "Play it step by step" : "Continue"}
-          </button>
-        )}
-        {st.i >= 0 ? <button type="button" className={cn(btn, "bg-card")} onClick={st.reset}><RotateCcw className="size-4" aria-hidden /> Start over</button> : null}
-        <span className="text-sm text-muted-foreground">or tap any box</span>
-      </div>
+      <PlayBar st={st} kind="flow" first="Play step by step" hint="or tap any box" />
+      {st.i >= 0 ? <button type="button" className={cn(btn, "mt-2 bg-card")} onClick={st.reset}><RotateCcw className="size-4" aria-hidden /> Start over</button> : null}
       <div className="mt-3 min-h-[3.5rem] rounded-xl bg-muted p-3 text-[0.95rem] leading-relaxed" role="status" aria-live="polite">
         {active ? (
           <p className="vibha-pop" key={active.id}>
@@ -188,7 +143,7 @@ export function Flow({ d }: { d: FlowData }) {
             {active.detail ? <Rich text={active.detail} /> : null}
           </p>
         ) : (
-          <p className="text-muted-foreground">Press Play, or tap a box to see what happens at that step.</p>
+          <p className="text-muted-foreground">Press Next to go one step at a time, or tap a box to see what happens at that step.</p>
         )}
       </div>
       {d.caption ? <figcaption className="mt-2 text-sm text-muted-foreground"><Rich text={d.caption} /></figcaption> : null}

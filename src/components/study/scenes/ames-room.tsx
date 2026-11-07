@@ -127,10 +127,11 @@ export function AmesRoom({ d }: { d: AmesRoomData }) {
         <p><span className="font-semibold">{st.name}: </span>{st.say}</p>
         <p className="mt-1">
           {sw.swapping
-            ? `They are walking across the back of the room. Through the peephole, the one walking left seems to shrink and the one walking right seems to grow, though neither changes at all.`
+            ? `They are walking across the back of the room.`
             : stop === "peephole"
               ? `${leftName}, in the left corner, looks only about ${pct(1 / RATIO)} percent as tall as ${rightName} in the right corner. Both are ${PERSON_H} metres tall.`
               : `${leftName} stands about ${distFromEye(real(SPOT_L)).toFixed(1)} metres from the peephole and ${rightName} about ${distFromEye(real(SPOT_R)).toFixed(1)} metres. Same height, about ${RATIO.toFixed(1)} times the distance.`}
+          {sw.swapping || ms.done("swap") ? " Through the peephole, the one walking left seems to shrink and the one walking right seems to grow, though neither changes at all." : ""}
         </p>
         <p className="mt-2"><span className="font-semibold">Why it works: </span>Size constancy normally corrects for distance: a person twice as far away casts an image half the size, and you still see them as normal size because you judge the distance. Here the distance cues lie. The floor tiles, windows and corners are drawn so that, from the peephole, linear perspective and texture say both corners are equally far. One eye through a fixed hole removes the cues that would expose the trick: no binocular disparity and no motion parallax. So the brain keeps the assumption that rooms are rectangular, and has to conclude that the people are different sizes.</p>
         <p className="mt-1 text-sm text-muted-foreground">The room was designed by Adelbert Ames Jr. in 1946. The assumption is so strong that familiar size loses: we would rather believe a person has shrunk than that a room is crooked.</p>
