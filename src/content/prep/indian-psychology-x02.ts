@@ -355,7 +355,7 @@ export const QUESTIONS_X02: PrepQuestion[] = [
     { exams: NMS, module: "therapies", ref: "Patel et al. 2017" }),
 
   ps("ipx-098", "cultural-concepts", 3,
-    "Children aged 8, 11 and 15 and adults in the USA and in Mysore described why someone they knew had behaved well or badly. At age 8, both groups gave few dispositional explanations. By adulthood, Americans gave about 40% dispositional explanations and about 18% contextual ones, while Hindu Indians gave about 15% dispositional and about 40% contextual ones.",
+    "Children aged 8, 11 and 15 and adults in the USA and in Mysore described why someone they knew had behaved well or badly. At age 8, both groups gave few dispositional explanations. By adulthood, Americans gave far more dispositional than contextual explanations, while Hindu Indians showed the reverse, giving many more contextual than dispositional ones.",
     "Which conclusion is best supported?",
     ["Attribution styles are fixed from birth onwards", "Indians cannot reason about personal dispositions", "Attribution differences are learned through culture", "Americans ignore situational causes completely"], 2,
     "Because the groups were similar at age 8 and diverged with age, cultural learning best explains the adult difference. Fixed styles would show differences from the start. Indians did give some dispositional explanations. Americans gave some contextual ones.",
