@@ -7,6 +7,7 @@
 import { act, cleanup, fireEvent, render, screen } from "@testing-library/react";
 import { afterEach, beforeAll, describe, expect, it, vi } from "vitest";
 import { NervousSystem } from "./nervous-system";
+import { BrainExplorer } from "./brain-explorer";
 
 vi.mock("@/lib/learn/track", () => ({ trackLearn: () => {} }));
 
@@ -52,5 +53,28 @@ describe("explorable scenes", () => {
     click(/Autonomic/);
     expect(status()).toHaveTextContent(/hypothalamus is its main controller/);
     expect(screen.getByLabelText("4 of 6 missions done")).toBeInTheDocument();
+  });
+
+  it("brainexplorer: a region plays its job, damage shows a real case, and the challenge checks the answer", () => {
+    vi.useFakeTimers();
+    render(<BrainExplorer d={{}} />);
+    expect(status()).toHaveTextContent(/outer layer, the cerebral cortex/);
+    click(/^Broca/);
+    expect(status()).toHaveTextContent(/Step 1 of 4/);
+    wait(4500);
+    expect(status()).toHaveTextContent(/What comes out: .I walked the dog in the park/);
+    click("Damage off");
+    expect(status()).toHaveTextContent(/Broca's aphasia/);
+    expect(status()).toHaveTextContent(/nicknamed Tan/);
+    click(/^Hippocampus/);
+    expect(screen.getByRole("button", { name: "Peel the left side" })).toHaveAttribute("aria-pressed", "true");
+    expect(status()).toHaveTextContent(/H\.M\. \(Henry Molaison\)/);
+    click("Where is the damage?");
+    expect(screen.getByText(/Case 1 of 8/)).toBeInTheDocument();
+    click(/^Hippocampus/);
+    expect(status()).toHaveTextContent(/Not quite/);
+    click(/^Broca/);
+    expect(status()).toHaveTextContent(/Yes: Broca's area/);
+    expect(screen.getByText(/Case 2 of 8/)).toBeInTheDocument();
   });
 });

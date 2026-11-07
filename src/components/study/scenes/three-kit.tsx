@@ -54,14 +54,18 @@ export function Stage({
 }
 
 /** Flies the camera to a new view whenever `flyKey` changes, then hands control back to the student. */
-export function CameraRig({ flyKey, pos, target, ms = 900 }: { flyKey: string; pos: V3; target: V3; ms?: number }) {
-  const { camera, controls } = useThree() as unknown as { camera: THREE.PerspectiveCamera; controls: OrbitLike | null };
+export function CameraRig({ flyKey, pos: rawPos, target, ms = 900, fitAspect = 0 }: { flyKey: string; pos: V3; target: V3; ms?: number; fitAspect?: number }) {
+  const { camera, controls, size } = useThree() as unknown as { camera: THREE.PerspectiveCamera; controls: OrbitLike | null; size: { width: number; height: number } };
+  // on narrow screens, step back so a wide subject still fits
+  const k = fitAspect ? Math.max(1, fitAspect / (size.width / Math.max(1, size.height))) : 1;
+  const pos: V3 = [target[0] + (rawPos[0] - target[0]) * k, target[1] + (rawPos[1] - target[1]) * k, target[2] + (rawPos[2] - target[2]) * k];
   const st = React.useRef<{ key: string; t0: number; from: THREE.Vector3; fromT: THREE.Vector3 } | null>(null);
+  const fk = `${flyKey}-${k.toFixed(2)}`;
   useFrame((state) => {
     const now = state.clock.elapsedTime * 1000;
-    if (!st.current || st.current.key !== flyKey) {
+    if (!st.current || st.current.key !== fk) {
       if (st.current === null) {
-        st.current = { key: flyKey, t0: -1e9, from: camera.position.clone(), fromT: new THREE.Vector3(...target) };
+        st.current = { key: fk, t0: -1e9, from: camera.position.clone(), fromT: new THREE.Vector3(...target) };
         camera.position.set(...pos);
         if (controls) {
           controls.target.set(...target);
@@ -69,11 +73,11 @@ export function CameraRig({ flyKey, pos, target, ms = 900 }: { flyKey: string; p
         } else camera.lookAt(...target);
         return;
       }
-      st.current = { key: flyKey, t0: now, from: camera.position.clone(), fromT: controls ? controls.target.clone() : new THREE.Vector3(...target) };
+      st.current = { key: fk, t0: now, from: camera.position.clone(), fromT: controls ? controls.target.clone() : new THREE.Vector3(...target) };
     }
-    const k = (now - st.current.t0) / ms;
-    if (k > 1) return;
-    const e = k < 0.5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2;
+    const f = (now - st.current.t0) / ms;
+    if (f > 1) return;
+    const e = f < 0.5 ? 2 * f * f : 1 - Math.pow(-2 * f + 2, 2) / 2;
     camera.position.lerpVectors(st.current.from, new THREE.Vector3(...pos), e);
     if (controls) {
       controls.target.lerpVectors(st.current.fromT, new THREE.Vector3(...target), e);
@@ -88,7 +92,7 @@ export function curveOf(pts: V3[]) {
 }
 
 /** A nerve or tract as a tube. `lit` (0 to 1) lights it from the start up to that fraction. */
-export function Tube({ pts, radius = 0.025, color, opacity = 1, lit = 0, litColor, segments = 48, radial = 6, onTap, name }: { pts: V3[]; radius?: number; color: string; opacity?: number; lit?: number; litColor?: string; segments?: number; radial?: number; onTap?: () => void; name?: string }) {
+export function Tube({ pts, radius = 0.025, color, opacity = 1, lit = 0, litColor, segments = 48, radial = 6, onTap, name, xray = false }: { xray?: boolean; pts: V3[]; radius?: number; color: string; opacity?: number; lit?: number; litColor?: string; segments?: number; radial?: number; onTap?: () => void; name?: string }) {
   const geo = React.useMemo(() => new THREE.TubeGeometry(curveOf(pts), segments, radius, radial, false), [pts, segments, radius, radial]);
   const litGeo = React.useMemo(() => new THREE.TubeGeometry(curveOf(pts), segments, radius * 1.6, radial, false), [pts, segments, radius, radial]);
   React.useEffect(() => () => (geo.dispose(), litGeo.dispose()), [geo, litGeo]);
@@ -100,11 +104,11 @@ export function Tube({ pts, radius = 0.025, color, opacity = 1, lit = 0, litColo
   return (
     <group>
       <mesh geometry={geo} name={name} onClick={onTap ? (e: ThreeEvent<MouseEvent>) => { if (e.delta < 8) { e.stopPropagation(); onTap(); } } : undefined}>
-        <meshStandardMaterial color={color} transparent={opacity < 1} opacity={opacity} depthWrite={opacity >= 1} roughness={0.6} />
+        <meshStandardMaterial key={opacity < 1 ? "see-through" : "solid"} color={color} transparent={opacity < 1} opacity={opacity} depthWrite={opacity >= 1} roughness={0.6} />
       </mesh>
       {lit > 0 ? (
-        <mesh geometry={litGeo}>
-          <meshBasicMaterial color={litColor ?? color} transparent opacity={0.55} depthWrite={false} />
+        <mesh geometry={litGeo} renderOrder={xray ? 10 : 0}>
+          <meshBasicMaterial color={litColor ?? color} transparent opacity={xray ? 0.8 : 0.55} depthWrite={false} depthTest={!xray} />
         </mesh>
       ) : null}
     </group>
@@ -116,7 +120,7 @@ export function Tube({ pts, radius = 0.025, color, opacity = 1, lit = 0, litColo
  * journey's current leg from the moment that leg begins. `onProgress` lets
  * a view light the nerve behind it.
  */
-export function Pulse({ journey, paths, colorOf, size = 0.07, onProgress }: { journey: Journey; paths: Record<string, V3[]>; colorOf: (tone: Leg["tone"]) => string; size?: number; onProgress?: (path: string, t: number) => void }) {
+export function Pulse({ journey, paths, colorOf, size = 0.07, onProgress, xray = false }: { xray?: boolean; journey: Journey; paths: Record<string, V3[]>; colorOf: (tone: Leg["tone"]) => string; size?: number; onProgress?: (path: string, t: number) => void }) {
   const head = React.useRef<THREE.Mesh>(null);
   const trail = React.useRef<(THREE.Mesh | null)[]>([]);
   const halo = React.useRef<THREE.Mesh>(null);
@@ -149,16 +153,16 @@ export function Pulse({ journey, paths, colorOf, size = 0.07, onProgress }: { jo
     <group>
       <mesh ref={halo}>
         <sphereGeometry args={[size * 1.9, 12, 10]} />
-        <meshBasicMaterial color={col} transparent opacity={0.28} depthWrite={false} />
+        <meshBasicMaterial color={col} transparent opacity={0.28} depthWrite={false} depthTest={!xray} />
       </mesh>
-      <mesh ref={head}>
+      <mesh ref={head} renderOrder={xray ? 11 : 0}>
         <sphereGeometry args={[size, 14, 12]} />
-        <meshBasicMaterial color={col} />
+        <meshBasicMaterial color={col} depthTest={!xray} transparent={xray} />
       </mesh>
       {[0, 1, 2, 3].map((k) => (
         <mesh key={k} ref={(m) => { trail.current[k] = m; }}>
           <sphereGeometry args={[size * (0.8 - k * 0.15), 8, 6]} />
-          <meshBasicMaterial color={col} transparent opacity={0.6 - k * 0.13} depthWrite={false} />
+          <meshBasicMaterial color={col} transparent opacity={0.6 - k * 0.13} depthWrite={false} depthTest={!xray} />
         </mesh>
       ))}
     </group>

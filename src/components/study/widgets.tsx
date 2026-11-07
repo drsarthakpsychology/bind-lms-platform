@@ -24,7 +24,8 @@ import { Compare, Conditioning, MemoryFlow, StressResponse, Timeline } from "./a
 import { Attention, Conservation, Dissonance, Experiment, Illusion } from "./animations3";
 import { Hypnogram, Release, Strange, ThoughtRecord } from "./animations4";
 import { NervousSystem } from "./scenes/nervous-system";
-import type { NervousSystemData } from "@/lib/study/types";
+import { BrainExplorer } from "./scenes/brain-explorer";
+import type { BrainExplorerData, NervousSystemData } from "@/lib/study/types";
 import type { AttentionData, ConservationData, DissonanceData, ExperimentData, HypnogramData, IllusionData, ReleaseData, StrangeData, ThoughtRecordData } from "@/lib/study/types";
 import type { CompareData, ConditioningData, MemoryFlowData, StressData, TimelineData } from "@/lib/study/types";
 import type { JourneyData, NeuronData, PathwaysData, ReceptorData } from "@/lib/study/types";
@@ -586,6 +587,8 @@ export function Widget({ kind, data }: { kind: WidgetKind; data: WidgetData }) {
       return <Illusion d={data as IllusionData} />;
     case "nervoussystem":
       return <NervousSystem d={data as NervousSystemData} />;
+    case "brainexplorer":
+      return <BrainExplorer d={data as BrainExplorerData} />;
   }
 }
 
