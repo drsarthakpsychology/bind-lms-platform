@@ -13,14 +13,9 @@ import { describe, expect, it } from "vitest";
  */
 const ROOTS = ["src/app", "src/components", "src/lib"];
 const SKIP = [
-  "src/lib/psychopharm",
   "src/app/(dashboard)/medicines",
   "src/lib/games",
   "src/app/(dashboard)/games",
-  "src/components/study",
-  "src/lib/study",
-  "src/lib/prep",
-  "src/app/(dashboard)/prep",
 ];
 const DASH = /[–—]/g;
 
