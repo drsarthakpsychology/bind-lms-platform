@@ -168,7 +168,20 @@ export function ToolSection({ id, title, tools }: { id: string; title: string; t
 }
 
 /** The whole hub (the page loads flags, states and the resume link). */
-export function PracticeHubView({ main, think, more, resume }: { main: ShownTool[]; think: ShownTool[]; more: ShownTool[]; resume: { href: string; title: string } | null }) {
+export function PracticeHubView({
+  main,
+  think,
+  more,
+  resume,
+  records = { passport: false, log: false },
+}: {
+  main: ShownTool[];
+  think: ShownTool[];
+  more: ShownTool[];
+  resume: { href: string; title: string } | null;
+  /** Which record links to show: only those whose feature switch is on. */
+  records?: { passport: boolean; log: boolean };
+}) {
   return (
     <div className="mx-auto max-w-5xl space-y-8">
       <header className="space-y-2">
@@ -197,14 +210,20 @@ export function PracticeHubView({ main, think, more, resume }: { main: ShownTool
         <p className="rounded-2xl border-2 border-dashed border-foreground/30 p-6 text-center text-sm text-muted-foreground">Nothing here yet. Your faculty will switch tools on soon.</p>
       ) : null}
 
-      <nav className="flex flex-wrap gap-x-5 border-t-2 border-foreground/15 pt-3 text-sm" aria-label="Your record">
-        <Link href="/passport" className="inline-flex min-h-11 items-center font-semibold text-muted-foreground hover:text-foreground">
-          Skills Passport
-        </Link>
-        <Link href="/record" className="inline-flex min-h-11 items-center font-semibold text-muted-foreground hover:text-foreground">
-          Supervision log and check-in
-        </Link>
-      </nav>
+      {records.passport || records.log ? (
+        <nav className="flex flex-wrap gap-x-5 border-t-2 border-foreground/15 pt-3 text-sm" aria-label="Your record">
+          {records.passport ? (
+            <Link href="/passport" className="inline-flex min-h-11 items-center font-semibold text-muted-foreground hover:text-foreground">
+              Skills Passport
+            </Link>
+          ) : null}
+          {records.log ? (
+            <Link href="/record" className="inline-flex min-h-11 items-center font-semibold text-muted-foreground hover:text-foreground">
+              Supervision log and check-in
+            </Link>
+          ) : null}
+        </nav>
+      ) : null}
 
     </div>
   );

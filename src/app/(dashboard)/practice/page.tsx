@@ -33,7 +33,13 @@ export default async function PracticeHubPage() {
 
   return (
     <>
-      <PracticeHubView main={main} think={think} more={more} resume={resume} />
+      <PracticeHubView
+        main={main}
+        think={think}
+        more={more}
+        resume={resume}
+        records={{ passport: flags["skills_passport"] === "unlocked", log: flags["supervision"] === "unlocked" || flags["checkin"] === "unlocked" }}
+      />
       <PracticeKeyboardNav links={open.map((t) => ({ href: t.href, title: t.title }))} />
     </>
   );
