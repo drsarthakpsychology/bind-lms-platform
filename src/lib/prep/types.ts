@@ -64,6 +64,8 @@ export type PrepQuestion = {
   answer: 0 | 1 | 2 | 3;
   /** Why the answer is right AND why each distractor is wrong. Precise, no padding. */
   explanation: string;
+  /** Optional diagram shown with the explanation: any Study widget kind and its JSON data (see docs/design/CONTENT_WIDGETS.md). */
+  visual?: PrepVisual;
   /** VIBHA study module id for "Learn this", if one fits. */
   module?: string;
   /** Admin-only source note (book + page or URL). Never shown to students. */
@@ -101,3 +103,6 @@ export type ExamSpec = {
   verified: boolean;
   source?: string;
 };
+
+/** A Study widget (diagram, animation or interaction) attached to an explanation or model answer. */
+export type PrepVisual = { kind: import("@/lib/study/types").WidgetKind; data: unknown; caption?: string };

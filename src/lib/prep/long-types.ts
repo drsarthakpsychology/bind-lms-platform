@@ -1,4 +1,4 @@
-import type { PrepExam, Subject } from "./types";
+import type { PrepExam, PrepVisual, Subject } from "./types";
 
 /**
  * A long-answer (descriptive) exam question with a model answer, for theory
@@ -26,6 +26,8 @@ export type LongQA = {
   pitfalls?: string[];
   /** Study module id (optionally "module/section") for "Learn this". */
   module?: string;
+  /** Diagrams shown inside the model answer, in order (any Study widget kind). */
+  visuals?: PrepVisual[];
   /** Admin-only source note. */
   ref?: string;
 };
