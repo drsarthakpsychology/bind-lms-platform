@@ -170,4 +170,22 @@ describe("explorable scenes", () => {
     expect(status()).toHaveTextContent(/42 percent \(failing\)/);
     expect(screen.getByLabelText("4 of 5 missions done")).toBeInTheDocument();
   });
+
+  it("brainexplorer: guided views and the tour always bring the student back to a textbook view", () => {
+    vi.useFakeTimers();
+    render(<BrainExplorer d={{}} />);
+    click("Take the tour");
+    expect(status()).toHaveTextContent(/Tour stop 1 of 4\. Side view \(lateral\)/);
+    wait(5300);
+    expect(status()).toHaveTextContent(/Tour stop 2 of 4\. Middle view \(medial\)/);
+    expect(screen.getByRole("button", { name: "Peel the left side" })).toHaveAttribute("aria-pressed", "true");
+    click(/^Next stop \(3 of 4\)/);
+    expect(status()).toHaveTextContent(/From below \(inferior\)/);
+    click(/^Next stop \(4 of 4\)/);
+    expect(status()).toHaveTextContent(/Front cut \(coronal\).*basal ganglia/);
+    click("Finish the tour");
+    expect(screen.getByLabelText("1 of 6 missions done")).toBeInTheDocument();
+    click("Side view");
+    expect(status()).toHaveTextContent(/central sulcus separates frontal from parietal/);
+  });
 });

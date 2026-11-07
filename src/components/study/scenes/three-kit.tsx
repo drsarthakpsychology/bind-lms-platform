@@ -127,6 +127,10 @@ export function Stage({
         camera={cam}
         gl={gl}
         onPointerMissed={onMiss}
+        onCreated={(st) => {
+          // allow per-material cut planes (the brain's coronal cut); costs nothing without planes
+          st.gl.localClippingEnabled = true;
+        }}
         style={{ touchAction: "none" }}
       >
         <QualityCtx.Provider value={level}>

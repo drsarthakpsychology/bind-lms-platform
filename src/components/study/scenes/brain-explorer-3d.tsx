@@ -19,10 +19,16 @@ export default function BrainExplorer3D(p: BrainViewProps) {
     { pos: [1.2, 0.7, 4.3], target: [0, -0.15, 0] },
     { pos: [2.4, 1.1, 3.6], target: [0, -0.2, 0] },
   ];
-  const v = views[p.layer] ?? views[0];
+  const guided: Record<Exclude<BrainViewProps["view"], "free">, { pos: V3; target: V3 }> = {
+    lateral: { pos: [0.2, 0.25, 5.0], target: [0, -0.1, 0] },
+    medial: { pos: [0.1, -0.05, 4.7], target: [0, -0.15, 0] },
+    inferior: { pos: [0.25, -4.7, 1.2], target: [0, -0.25, 0] },
+    coronal: { pos: [-4.8, 0.45, 0.9], target: [0, -0.1, 0] },
+  };
+  const v = p.view !== "free" ? guided[p.view] : views[p.layer] ?? views[0];
   return (
-    <Stage className="h-full w-full" camera={views[0].pos} inView={p.inView} active={p.journey.active} wakeKey={`${p.layer}-${p.sel}-${p.damage}-${p.journey.run}`} onReady={p.onReady} minDistance={2.2} maxDistance={8}>
-      <CameraRig flyKey={`layer-${p.layer}`} pos={v.pos} target={v.target} fitAspect={1.5} />
+    <Stage className="h-full w-full" camera={views[0].pos} inView={p.inView} active={p.journey.active} wakeKey={`${p.view}-${p.layer}-${p.sel}-${p.damage}-${p.journey.run}`} onReady={p.onReady} minDistance={2.2} maxDistance={8}>
+      <CameraRig flyKey={p.view !== "free" ? `view-${p.view}` : `layer-${p.layer}`} pos={v.pos} target={v.target} fitAspect={1.5} />
       <BrainScene {...p} />
     </Stage>
   );
@@ -119,12 +125,18 @@ const pickHandler = (fn: () => void) => (e: ThreeEvent<MouseEvent>) => {
 };
 
 /** A region's material: glows when selected, turns grey and flickers red when damaged. */
-function RegionMat({ id, sel, damage, opacity }: { id: RegionId; sel: boolean; damage: boolean; opacity: number }) {
+/** The coronal cut: everything in front of this plane is clipped away. */
+const CUT = [new THREE.Plane(new THREE.Vector3(1, 0, 0), 0.05)];
+
+function RegionMat({ id, sel, damage, opacity, cut = false }: { id: RegionId; sel: boolean; damage: boolean; opacity: number; cut?: boolean }) {
   const ref = React.useRef<THREE.MeshStandardMaterial>(null);
   const base = React.useMemo(() => new THREE.Color(REGION_COLOR[id]), [id]);
   const hurt = React.useMemo(() => new THREE.Color("#7d7272"), []);
   const op = React.useRef(opacity);
   const compiled = React.useRef<boolean | null>(null);
+  React.useLayoutEffect(() => {
+    compiled.current = null; // a new material after the cut changes
+  }, [cut]);
   useFrame((s, dt) => {
     const m = ref.current;
     if (!m) return;
@@ -145,7 +157,7 @@ function RegionMat({ id, sel, damage, opacity }: { id: RegionId; sel: boolean; d
       m.emissiveIntensity = damage ? 0.35 + 0.25 * Math.sin(t * 9) * Math.sin(t * 3.1) : 0.22 + 0.12 * Math.sin(t * 4);
     } else m.emissiveIntensity = 0;
   });
-  return <meshStandardMaterial ref={ref} color={REGION_COLOR[id]} roughness={0.62} metalness={0} />;
+  return <meshStandardMaterial key={cut ? "cut" : "whole"} ref={ref} color={REGION_COLOR[id]} roughness={0.62} metalness={0} clippingPlanes={cut ? CUT : null} side={cut ? THREE.DoubleSide : THREE.FrontSide} />;
 }
 
 function TubeMesh({ pts, r, scale, onClick, children }: { pts: V3[]; r: number; scale?: V3 | number; onClick?: (e: ThreeEvent<MouseEvent>) => void; children: React.ReactNode }) {
@@ -172,7 +184,8 @@ function Ellipsoid({ c, r, children, onClick }: { c: V3; r: V3; children: React.
   );
 }
 
-function BrainScene({ layer, sel, damage, journey, onPick, colors }: BrainViewProps) {
+function BrainScene({ view, layer, sel, damage, journey, onPick, colors }: BrainViewProps) {
+  const cut = view === "coronal";
   const q = useQuality();
   const leftGeo = React.useMemo(() => buildHemisphere(true, q), [q]);
   const rightGeo = React.useMemo(() => buildHemisphere(false, q), [q]);
@@ -196,12 +209,12 @@ function BrainScene({ layer, sel, damage, journey, onPick, colors }: BrainViewPr
     }
     const dg = deep.current;
     if (dg) {
-      const s = dg.scale.x + ((layer >= 1 ? 1 : 0.001) - dg.scale.x) * Math.min(1, dt * 5);
+      const s = dg.scale.x + ((layer >= 1 || cut ? 1 : 0.001) - dg.scale.x) * Math.min(1, dt * 5);
       dg.scale.setScalar(s);
       dg.visible = s > 0.01;
     }
   });
-  const pickDeep = (id: RegionId) => pickHandler(() => layer >= 1 && onPick(id));
+  const pickDeep = (id: RegionId) => pickHandler(() => (layer >= 1 || cut) && onPick(id));
   const leftOp = layer === 0 ? 1 : 0.18;
   const rightOp = layer === 2 ? 0.18 : 1;
   const sense = colors.brand;
@@ -212,13 +225,13 @@ function BrainScene({ layer, sel, damage, journey, onPick, colors }: BrainViewPr
       <group ref={leftGroup}>
         {[...leftGeo.entries()].map(([id, geo]) => (
           <mesh key={`L-${id}`} geometry={geo} onClick={pickHandler(() => layer === 0 && onPick(id))} renderOrder={layer ? 2 : 0}>
-            <RegionMat id={id} sel={sel === id} damage={damage} opacity={leftOp} />
+            <RegionMat id={id} sel={sel === id} damage={damage} opacity={leftOp} cut={cut} />
           </mesh>
         ))}
       </group>
       {[...rightGeo.entries()].map(([id, geo]) => (
         <mesh key={`R-${id}`} geometry={geo} onClick={pickHandler(() => layer < 2 && CORTEX.includes(id) && onPick(id))} renderOrder={layer === 2 ? 2 : 0}>
-          <RegionMat id={id} sel={sel === id} damage={damage} opacity={rightOp} />
+          <RegionMat id={id} sel={sel === id} damage={damage} opacity={rightOp} cut={cut} />
         </mesh>
       ))}
 
@@ -250,13 +263,13 @@ function BrainScene({ layer, sel, damage, journey, onPick, colors }: BrainViewPr
       </group>
 
       {/* eyes and an ear for the senses */}
-      {EYES.map((e, k) => (
+      {cut ? null : EYES.map((e, k) => (
         <group key={k} position={to3(e)}>
           <mesh><sphereGeometry args={[0.13, 18, 14]} /><meshStandardMaterial color="#ffffff" roughness={0.3} /></mesh>
           <mesh position={[-0.12, 0, 0]} rotation={[0, -Math.PI / 2, 0]}><circleGeometry args={[0.055, 18]} /><meshBasicMaterial color="#1d2a44" /></mesh>
         </group>
       ))}
-      <mesh position={to3(EAR)} rotation={[0, 0, 0]}><torusGeometry args={[0.13, 0.04, 8, 20]} /><meshStandardMaterial color="#d8b49a" /></mesh>
+      <mesh position={to3(EAR)} rotation={[0, 0, 0]} visible={!cut}><torusGeometry args={[0.13, 0.04, 8, 20]} /><meshStandardMaterial color="#d8b49a" /></mesh>
 
       {/* the signal */}
       {Object.entries(lit).map(([k, f]) => (f > 0 && BPATHS[k] ? <Tube key={k} xray pts={BPATHS[k]} radius={0.018} color="#ffffff" opacity={0.01} lit={f} litColor={journey.legs.find((l) => l.path === k)?.tone === "motor" ? motor : sense} /> : null))}

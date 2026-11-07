@@ -5,8 +5,9 @@ import { ChevronRight, RotateCcw, Zap } from "lucide-react";
 import type { BrainExplorerData } from "@/lib/study/types";
 import { cn } from "@/lib/utils";
 import { trackLearn } from "@/lib/learn/track";
+import { SliceCanvas } from "./slice-canvas";
 import { Missions, ModeTabs, Scene3DSlot, SceneCard, TONE_NAME, ViewSwitch, along, btn, chip, flatD, statusCls, useInView, useJourney, useLegProgress, useMissions, useSceneView, useThemeColors, type Journey, type V3 } from "./kit";
-import { ALWAYS, BLOBS, BPATHS_FLAT, CEREBELLUM, CORTEX, DEEP, EAR, EYES, HEMI, LAYERS, NIGRA, PITUITARY, PONS, REGION, REGIONS, REGION_COLOR, TUBES, type RegionId } from "./brain-explorer-data";
+import { ALWAYS, BLOBS, BPATHS_FLAT, CEREBELLUM, CORTEX, DEEP, EAR, EYES, GUIDE, HEMI, LAYERS, NIGRA, PITUITARY, PONS, REGION, REGIONS, REGION_COLOR, TUBES, type GuideView, type RegionId } from "./brain-explorer-data";
 
 /**
  * A brain to take apart: spin it, peel the left hemisphere away to reach the
@@ -15,7 +16,7 @@ import { ALWAYS, BLOBS, BPATHS_FLAT, CEREBELLUM, CORTEX, DEEP, EAR, EYES, HEMI, 
  * A challenge round asks the student to find the damage from a symptom.
  */
 
-export type BrainViewProps = { layer: number; sel: RegionId | null; damage: boolean; journey: Journey; onPick: (r: RegionId) => void; inView: boolean; colors: ReturnType<typeof useThemeColors>; onReady?: () => void };
+export type BrainViewProps = { view: GuideView; layer: number; sel: RegionId | null; damage: boolean; journey: Journey; onPick: (r: RegionId) => void; inView: boolean; colors: ReturnType<typeof useThemeColors>; onReady?: () => void };
 
 /** Loaded only when the device can draw 3D: three.js lives in this lazy chunk. */
 const View3D = React.lazy(() => import("./brain-explorer-3d"));
@@ -24,7 +25,8 @@ const View3D = React.lazy(() => import("./brain-explorer-3d"));
 const called = (r: RegionId) => (REGION[r].name.includes("'s") ? REGION[r].name : `the ${REGION[r].name.charAt(0).toLowerCase()}${REGION[r].name.slice(1)}`);
 
 const CHALLENGE: RegionId[] = ["broca", "hippocampus", "amygdala", "occipital", "cerebellum", "frontal", "basal-ganglia", "parietal"];
-const MISSIONS = ["peel", "speech", "damage", "explore", "challenge"] as const;
+const MISSIONS = ["peel", "speech", "damage", "explore", "challenge", "tour"] as const;
+const TOUR_MS = 5200;
 
 export function BrainExplorer({ d }: { d: BrainExplorerData }) {
   const v = useSceneView();
@@ -33,6 +35,8 @@ export function BrainExplorer({ d }: { d: BrainExplorerData }) {
   const colors = useThemeColors(box);
   const [mode, setMode] = React.useState<"explore" | "challenge">("explore");
   const [layer, setLayer] = React.useState(0);
+  const [view, setView] = React.useState<GuideView>("free");
+  const [tour, setTour] = React.useState<number | null>(null);
   const [sel, setSel] = React.useState<RegionId | null>(null);
   const [damage, setDamage] = React.useState(false);
   const [seen, setSeen] = React.useState<RegionId[]>([]);
@@ -47,8 +51,12 @@ export function BrainExplorer({ d }: { d: BrainExplorerData }) {
   const play = (r: RegionId, hurt: boolean) => journey.start(`${r}-${hurt ? "hurt" : "ok"}`, hurt ? REGION[r].hurtAct : REGION[r].act);
   const show = (r: RegionId, hurt = damage) => {
     setSel(r);
-    if (CORTEX.includes(r) && layer !== 0) setLayer(0);
-    if (DEEP.includes(r) && layer === 0) {
+    if (CORTEX.includes(r) && layer !== 0) {
+      setLayer(0);
+      setView("free");
+    }
+    if (DEEP.includes(r) && layer === 0 && view !== "coronal") {
+      setView("free");
       setLayer(1);
       ms.mark("peel");
     }
@@ -86,8 +94,39 @@ export function BrainExplorer({ d }: { d: BrainExplorerData }) {
       setFeedback({ ok: false, text: `Not quite. You picked ${called(r)}: ${REGION[r].does} Read the clue again and try another part.` });
     }
   };
+  const goView = (g: Exclude<GuideView, "free">) => {
+    setView(g);
+    setLayer(GUIDE.find((x) => x.id === g)!.layer);
+    trackLearn({ type: "widget", kind: "brainexplorer", item: `view-${g}` });
+  };
+  const startTour = () => {
+    setTour(0);
+    setSel(null);
+    journey.clear();
+    goView(GUIDE[0].id);
+  };
+  const stepTour = React.useCallback(() => {
+    setTour((t) => {
+      if (t === null) return t;
+      const n = t + 1;
+      if (n >= GUIDE.length) {
+        ms.mark("tour");
+        return null;
+      }
+      setView(GUIDE[n].id);
+      setLayer(GUIDE[n].layer);
+      return n;
+    });
+  }, [ms]);
+  // the tour moves on by itself (under reduced motion the student presses Next)
+  React.useEffect(() => {
+    if (tour === null || v.reduce) return;
+    const t = setTimeout(stepTour, TOUR_MS);
+    return () => clearTimeout(t);
+  }, [tour, v.reduce, stepTour]);
   const peel = (k: number) => {
     setLayer(k);
+    setView("free");
     if (k > 0) ms.mark("peel");
     if (sel && CORTEX.includes(sel) && k > 0) {
       setSel(null);
@@ -120,10 +159,10 @@ export function BrainExplorer({ d }: { d: BrainExplorerData }) {
       <div ref={box} className="relative mt-3 h-[20rem] overflow-hidden rounded-xl border-2 border-foreground bg-background sm:h-[26rem]">
         {v.use3D ? (
           <Scene3DSlot
-            flat={<BrainFlat layer={layer} sel={sel} damage={damage} journey={journey} onPick={pick} reduce={v.reduce} />}
-            render={(onReady) => <View3D layer={layer} sel={sel} damage={damage} journey={journey} onPick={pick} inView={inView} colors={colors} onReady={onReady} />}
+            flat={<GuidedFlat view={view} layer={layer} sel={sel} damage={damage} journey={journey} onPick={pick} reduce={v.reduce} />}
+            render={(onReady) => <View3D view={view} layer={layer} sel={sel} damage={damage} journey={journey} onPick={pick} inView={inView} colors={colors} onReady={onReady} />}
           />
-        ) : <BrainFlat layer={layer} sel={sel} damage={damage} journey={journey} onPick={pick} reduce={v.reduce} />}
+        ) : <GuidedFlat view={view} layer={layer} sel={sel} damage={damage} journey={journey} onPick={pick} reduce={v.reduce} />}
         {bubble ? (
           <p className="vibha-pop absolute right-2 top-2 max-w-[70%] rounded-xl border-2 border-foreground bg-card px-3 py-2 text-sm font-semibold shadow-[var(--shadow-hard-sm)]" aria-hidden>
             “{bubble}”
@@ -132,7 +171,17 @@ export function BrainExplorer({ d }: { d: BrainExplorerData }) {
         {v.use3D ? <p className="pointer-events-none absolute bottom-1.5 left-2 rounded bg-background/80 px-1.5 text-xs text-muted-foreground">Drag to turn, pinch to zoom, tap a part</p> : null}
       </div>
 
-      <div className="mt-3 grid grid-cols-3 gap-1.5" role="group" aria-label="Peel the layers">
+      <div className="mt-3 grid grid-cols-2 gap-1.5 sm:grid-cols-5" role="group" aria-label="Guided views">
+        {GUIDE.map((g) => (
+          <button key={g.id} type="button" aria-pressed={view === g.id} className={chip(view === g.id, "px-2 text-center text-xs sm:text-sm")} onClick={() => { setTour(null); goView(g.id); }}>{g.name}</button>
+        ))}
+        {tour === null ? (
+          <button type="button" className={cn(btn, "col-span-2 min-h-11 bg-foreground px-2 text-xs text-background sm:col-span-1 sm:text-sm")} onClick={startTour}>Take the tour</button>
+        ) : (
+          <button type="button" className={cn(btn, "col-span-2 min-h-11 bg-foreground px-2 text-xs text-background sm:col-span-1 sm:text-sm")} onClick={stepTour}>{tour + 1 < GUIDE.length ? `Next stop (${tour + 2} of ${GUIDE.length})` : "Finish the tour"}</button>
+        )}
+      </div>
+      <div className="mt-1.5 grid grid-cols-3 gap-1.5" role="group" aria-label="Peel the layers">
         {LAYERS.map((l, k) => (
           <button key={l.name} type="button" aria-pressed={layer === k} className={chip(layer === k, "px-2 text-center text-xs sm:text-sm")} onClick={() => peel(k)}>{l.name}</button>
         ))}
@@ -177,6 +226,7 @@ export function BrainExplorer({ d }: { d: BrainExplorerData }) {
       </div>
 
       <div className={statusCls} role="status" aria-live="polite">
+        {view !== "free" ? <p className="mb-2">{tour !== null ? <span className="font-semibold">Tour stop {tour + 1} of {GUIDE.length}. </span> : null}{GUIDE.find((g) => g.id === view)!.say}</p> : null}
         {feedback ? <p className={cn("mb-2 font-semibold", feedback.ok ? "" : "text-[var(--status-alert-fg)]")}>{feedback.ok ? "Right. " : ""}{feedback.text}</p> : null}
         {r ? (
           <>
@@ -192,7 +242,7 @@ export function BrainExplorer({ d }: { d: BrainExplorerData }) {
             ) : null}
           </>
         ) : (
-          <>{LAYERS[layer].say} {mode === "explore" ? "Tap any part to see it work." : ""}</>
+          view === "free" ? <>{LAYERS[layer].say} {mode === "explore" ? "Tap any part to see it work." : ""}</> : mode === "explore" ? <>Tap any part to see it work.</> : null
         )}
       </div>
       <Missions
@@ -203,6 +253,7 @@ export function BrainExplorer({ d }: { d: BrainExplorerData }) {
           { id: "damage", label: "Switch on damage and read a real case", done: ms.done("damage") },
           { id: "explore", label: `Explore 8 parts (${Math.min(8, seen.length)} so far)`, done: ms.done("explore") },
           { id: "challenge", label: "Find 4 injuries first time in the challenge", done: ms.done("challenge") },
+          { id: "tour", label: "Take the guided tour of the four views", done: ms.done("tour") },
         ]}
       />
     </SceneCard>
@@ -265,6 +316,43 @@ const FLAT_REGIONS: { id: RegionId; poly: P2[] }[] = (() => {
 })();
 const poly = (p: P2[]) => p.map(([a, y], i) => `${i ? "L" : "M"}${sx(a).toFixed(1)} ${sy(y).toFixed(1)}`).join(" ") + " Z";
 const FD = (k: string) => flatD(BPATHS_FLAT[k].map((p) => [-p[0], p[1], p[2]] as V3), S, S, OX, OY);
+
+/** The flat twin of the guided views: the side drawing, a coronal scan slice, or the brain from below. */
+function GuidedFlat(p: { view: GuideView; layer: number; sel: RegionId | null; damage: boolean; journey: Journey; onPick: (r: RegionId) => void; reduce: boolean }) {
+  if (p.view === "coronal") {
+    return (
+      <div className="flex h-full items-center justify-center bg-black p-2">
+        <SliceCanvas plane="coronal" u={0.05} tint className="h-full max-w-full" />
+      </div>
+    );
+  }
+  if (p.view === "inferior") return <InferiorFlat onPick={p.onPick} sel={p.sel} />;
+  return <BrainFlat {...p} layer={p.view === "medial" ? 1 : p.layer} />;
+}
+
+/** The brain seen from below: frontal lobes at the top, temporal lobes at the sides, brainstem and cerebellum at the bottom. */
+function InferiorFlat({ onPick, sel }: { onPick: (r: RegionId) => void; sel: RegionId | null }) {
+  const ring = (id: RegionId) => (sel === id ? "stroke-foreground" : "stroke-foreground/50");
+  return (
+    <svg viewBox="0 0 320 290" className="mx-auto block h-full w-full" role="img" aria-label="The brain from below. The written description says what you see.">
+      {[-1, 1].map((m) => (
+        <g key={m}>
+          <path d={`M${160 + m * 6} 22 C ${160 + m * 70} 20 ${160 + m * 112} 70 ${160 + m * 110} 150 C ${160 + m * 108} 220 ${160 + m * 70} 262 ${160 + m * 8} 262 Z`} fill={REGION_COLOR.frontal} className={cn("cursor-pointer", ring("frontal"))} strokeWidth="1.5" onClick={() => onPick("frontal")} />
+          <path d={`M${160 + m * 40} 118 C ${160 + m * 104} 110 ${160 + m * 112} 170 ${160 + m * 96} 214 C ${160 + m * 80} 236 ${160 + m * 46} 214 ${160 + m * 38} 170 Z`} fill={REGION_COLOR.temporal} className={cn("cursor-pointer", ring("temporal"))} strokeWidth="1.5" onClick={() => onPick("temporal")} />
+          <ellipse cx={160 + m * 6} cy="60" rx="5" ry="22" className="fill-[#d9c7b8] stroke-foreground/60" />
+        </g>
+      ))}
+      <path d="M160 22 V 262" className="stroke-foreground/50" strokeWidth="1.5" />
+      <ellipse cx="160" cy="236" rx="74" ry="34" fill={REGION_COLOR.cerebellum} className={cn("cursor-pointer", ring("cerebellum"))} strokeWidth="1.5" onClick={() => onPick("cerebellum")} />
+      <circle cx="160" cy="176" r="24" fill={REGION_COLOR.brainstem} className={cn("cursor-pointer", ring("brainstem"))} strokeWidth="1.5" onClick={() => onPick("brainstem")} />
+      <path d="M136 128 L 184 128 M148 120 L 172 136 M172 120 L 148 136" className="stroke-foreground" strokeWidth="2" />
+      <circle cx="160" cy="146" r="6" className="fill-[#f0a35e] stroke-foreground" onClick={() => onPick("hypothalamus")} />
+      <text x="160" y="14" textAnchor="middle" className="fill-muted-foreground text-[11px]">front</text>
+      <text x="160" y="286" textAnchor="middle" className="fill-muted-foreground text-[11px]">back</text>
+      <text x="112" y="132" textAnchor="end" className="fill-foreground text-[10px]">optic chiasm</text>
+    </svg>
+  );
+}
 
 export function BrainFlat({ layer, sel, damage, journey, onPick, reduce }: { layer: number; sel: RegionId | null; damage: boolean; journey: Journey; onPick: (r: RegionId) => void; reduce: boolean }) {
   const t = useLegProgress(journey, reduce);

@@ -257,3 +257,12 @@ export const LAYERS = [
   { name: "Peel the left side", say: "The left hemisphere is lifted away. Now you can see the deep parts in the middle: thalamus, hypothalamus, basal ganglia, the hippocampus and amygdala, and the corpus callosum bridging the two halves." },
   { name: "See-through", say: "Both hemispheres are see-through. The deep structures, brainstem and cerebellum are all visible at once. Turn the brain to see how they sit inside." },
 ];
+
+/** Fixed camera stops, so a student who has spun the brain can always find a textbook view again. */
+export type GuideView = "free" | "lateral" | "medial" | "inferior" | "coronal";
+export const GUIDE: { id: Exclude<GuideView, "free">; name: string; layer: number; say: string }[] = [
+  { id: "lateral", name: "Side view", layer: 0, say: "Side view (lateral): the outside of the left hemisphere. The front (anterior) is to the left, the back (posterior) to the right. The lateral sulcus separates the temporal lobe below from the frontal and parietal lobes above; the central sulcus separates frontal from parietal." },
+  { id: "medial", name: "Middle view", layer: 1, say: "Middle view (medial): the left hemisphere is lifted away, so you look at the inner face of the right hemisphere, as if the brain had been cut down the middle. You see the corpus callosum arching over the thalamus, with the hippocampus curling below and the brainstem running down." },
+  { id: "inferior", name: "From below", layer: 0, say: "From below (inferior): the underside of the brain. The temporal lobes hang down on each side, the frontal lobes lie over the eyes at the front, and the brainstem and cerebellum sit at the back. This is the view a surgeon sees when lifting the brain." },
+  { id: "coronal", name: "Front cut", layer: 0, say: "Front cut (coronal): the front of the brain is cut away from ear to ear, as on a coronal scan. Inside the cut you see the deep parts at this level: the basal ganglia beside the fluid-filled ventricles, the thalamus in the middle, and the temporal lobes with the hippocampus below." },
+];
