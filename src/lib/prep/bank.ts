@@ -52,7 +52,7 @@ export function learnHrefForTopic(subject: Subject, topic: string): string {
  * its own module, then its subject's.
  */
 export function learnHrefForQuestion(q: PrepQuestion): string {
-  const list = groupLearn(q.subject, groupOf(q.subject, q.topic));
+  const list = groupLearn(q.subject, groupOf(q.subject, q.topic, q.module));
   if (list.length) return studyHref(list, exists);
   const byTopic = topicModules(q.subject, q.topic);
   if (q.module && q.module !== "exam-prep") return studyHref([q.module, ...byTopic], exists);

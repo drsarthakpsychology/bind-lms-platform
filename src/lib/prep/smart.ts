@@ -31,12 +31,12 @@ export const SMART_SIZE = 10;
 
 export function pickSmart(bank: readonly PrepQuestion[], st: SmartState, rng: () => number, size = SMART_SIZE): Picked[] {
   const weak = new Set(st.weakSubjects);
-  const pool = bank.filter((q) => st.due.has(q.id) || weak.has(q.subject) || st.weakTopics.has(`${q.subject}:${groupOf(q.subject, q.topic)}`));
+  const pool = bank.filter((q) => st.due.has(q.id) || weak.has(q.subject) || st.weakTopics.has(`${q.subject}:${groupOf(q.subject, q.topic, q.module)}`));
   const fresh = pool.filter((q) => st.due.has(q.id) || !st.gotRight.has(q.id));
   const use = fresh.length >= size ? fresh : pool;
   const candidates: Candidate[] = use.map((q) => ({
     id: q.id,
-    topic: `${q.subject}:${groupOf(q.subject, q.topic)}`,
+    topic: `${q.subject}:${groupOf(q.subject, q.topic, q.module)}`,
     family: q.subject,
     p: prob(st.theta(q.subject), st.b(q.id) ?? PRIOR_B[q.difficulty]),
     due: st.due.has(q.id),

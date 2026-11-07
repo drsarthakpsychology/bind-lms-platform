@@ -234,17 +234,22 @@ export const TOPIC_GROUPS: Record<Subject, readonly TopicGroup[]> = {
   ],
   "clinical-psychiatry": [
     g("interview", "History, interview and case sheet", /(interview|history|case-sheet|rapport|formulation|premorbid|investigation)/, "interview-mse/1-1", "case-sheet"),
-    g("mse", "Mental status examination", /(mse|phenomenolog|first-rank|delusion|hallucination|thought|catatonia|cognition|insight)/, "interview-mse/2-0", "mse-deep"),
-    g("psychosis", "Schizophrenia and psychosis", /(schizo|psychos|psychotic)/, "psychosis"),
-    g("mood", "Depression and bipolar disorder", /(depress|mood|bipolar|mania|manic|lithium)/, "depression", "bipolar"),
-    g("anxiety", "Anxiety, OCD and trauma", /(anxiety|panic|phobi|ocd|obsess|ptsd|trauma|stress|dissociat|somat|conversion)/, "anxiety", "ocd", "trauma"),
-    g("substance", "Substance use", /(substance|alcohol|opioid|cannabis|tobacco|withdrawal|delirium-tremens|wernicke|addict)/, "substance"),
-    g("organic", "Delirium, dementia and neuropsychiatry", /(delirium|dementia|neurocog|organic|neuropsych|epilep|stroke|head-injury|liaison|consultation|medical)/, "neurocognitive"),
-    g("child", "Child and adolescent psychiatry", /(child|adolescen|adhd|autism|asd|intellectual|learning-disorder|enuresis|tic)/, "child"),
-    g("personality", "Personality disorders", /(personality|borderline|antisocial|cluster)/, "personality"),
-    g("emergencies", "Emergencies, suicide and risk", /(emergenc|suicid|self-harm|risk|agitation|violence|nms|serotonin-syndrome)/, "suicide"),
-    g("other-disorders", "Eating, sleep, sexual and other disorders", /(eating|anorexia|bulimia|sleep|insomnia|sexual|gender|impulse|perinatal|postpartum|geriatric|old-age)/, "more-disorders"),
-    g("law-practice", "Law, ethics and psychiatric services", /(mhca|law|legal|forensic|capacity|consent|ethic|service|community|rehab|epidemiolog|classification|icd|dsm)/, "ethics-law"),
+    g("mse", "Phenomenology and the mental status examination", /(mse|phenomenolog|first-rank|delusion|hallucination|thought|catatonia|catatonic|cognition|insight|autoscopy|circumstantial|poverty-of|word-approx|overvalued|disorders-of-|depersonal|cotard|eponym|^affect$|ambitend|ganser|form-and-content|concrete|pareidolia|orientation|attention-testing|moca|ace-iii|judgement|^speech|mutism|stupor|stereotyp|consciousness|glasgow|flight-of-ideas|misidentification|jaspers|negative-symptoms|charles-bonnet|abulia|distractib|frontal-affect|pseudobulbar)/, "interview-mse/2-0", "mse-deep"),
+    g("signs", "Neurological signs and syndromes", /(argyll|gerstmann|anton|kluver|russell-sign|hoover|balint|frontal-release|functional-neurolog|functional-seizure|movement-disorder-scales)/, "neurocognitive"),
+    g("psychosis", "Schizophrenia and psychosis", /(schizo|psychos|psychotic|liddle|schneider|deficit|22q11|clozapine|first-episode|expressed-emotion|who-outcome|cbtp)/, "psychosis"),
+    g("mood", "Depression, bipolar disorder and physical treatments", /(depress|mood|bipolar|mania|manic|lithium|star-d|^ect|tms|neuromod|ketamine|melancholia|mixed-features|kindling|cyclothym|dmdd|pmdd|rapid-cycling|valproate|lamotrigine|hyponatraemia|zuranolone|baby-blues|epds)/, "depression", "bipolar"),
+    g("anxiety", "Anxiety, OCD, trauma and somatic disorders", /(anxiety|panic|phobi|ocd|obsess|ptsd|trauma|stress|dissociat|somat|conversion|^gad|hoarding|body-dysmorphic|adjustment|prolonged-grief|factitious|ybocs)/, "anxiety", "ocd", "trauma"),
+    g("substance", "Substance use and addiction", /(substance|sud-|alcohol|opioid|cannabis|tobacco|withdrawal|delirium-tremens|wernicke|korsakoff|thiamine|addict|buprenorphine|methadone|stimulant-treatment|cocaine|stages-of-change|varenicline|inhalant|gambling|gaming|disulfiram|urine-testing|dual-diagnosis|harm-reduction|standard-drinks|nicotine|brief-intervention|prohibition|z-drugs|neonatal-abstinence|relapse|^audit$|ciwa|fagerstrom)/, "substance"),
+    g("organic", "Dementia, delirium and neuropsychiatry", /(delirium|dementia|neurocog|organic|neuropsych|epilep|stroke|head-injury|tbi|alzheimer|apoe|dlb|pdd|aphasia|c9orf|cjd|^mci$|bpsd|lancet-commission|cholinesterase|memantine|cadasil|rivastigmine|falls|carer|forced-normal|seizure|geschwind|parkinson|huntington|nmdar|autoimmune|encephal|^ms-|hashimoto|wilson|^nph$|anti-amyloid|drug-induced|^cam$|4at)/, "neurocognitive"),
+    g("liaison", "Consultation-liaison psychiatry", /(liaison|consultation|medical|psycho-oncology|demoralis|^hand$|hiv|^pml$|porphyria|endocrine|parathyroid|sle-|transplant|neurosyphilis|chronic-pain|osa-psychiatry)/, "neurocognitive", "more-disorders"),
+    g("child", "Child and adolescent psychiatry", /(child|adolescen|adhd|autism|asd|intellectual|learning-disorder|enuresis|encopresis|^tic|tourette|mta-study|atomoxetine|conduct|^odd$|pandas|behavioural-phenotypes|down-syndrome|attachment|night-terrors|school-refusal|dsed|milestone|selective-mutism|stimulant-)/, "child"),
+    g("personality", "Personality disorders", /(personality|borderline|antisocial|cluster|bpd|dbt|pcl-r)/, "personality"),
+    g("emergencies", "Emergencies, suicide and risk", /(emergenc|suicid|self-harm|nssi|risk|agitation|violence|nms|serotonin-syndrome|safety-planning|means-restriction|aluminium|organophosphate|paracetamol|de-escalation|acute-dystonia|rapid-tranq|olanzapine-benzo|psychological-autopsy|telephone-crisis|lethality|brief-contact|gatekeeper|media-guidelines|tardive|akathisia)/, "suicide"),
+    g("other-disorders", "Eating, sleep, sexual and cultural syndromes", /(eating|anorexia|bulimia|refeeding|arfid|sleep|insomnia|cbt-i|narcolepsy|^osa$|epworth|restless|^rbd$|circadian|kleine|jet-lag|sexual|premature|sensate|gender|impulse|perinatal|postpartum|geriatric|old-age|dhat|koro|possession|taijin|cultur)/, "more-disorders"),
+    g("law-practice", "Law, ethics and forensic psychiatry", /(mhca|law|legal|forensic|capacity|consent|ethic|advance-directive|admission|nominated|prohibited|insanity|fitness|dusky|marriage|ndps|disability|malingering|confidential|diminished|amnesia|rpwd|tarasoff|mental-health-professional|acquittal|mhrb|intoxication|expert-witness|duty-to-protect|pocso)/, "ethics-law"),
+    g("services", "Epidemiology, scales and mental health services", /(service|community|rehab|epidemiolog|classification|icd|dsm|hitop|rdoc|p-factor|brown-harris|social-drift|goldberg|prevalence|global-burden|berkson|nmhp|nmhs|dmhp|tele-manas|task-sharing|global-mental|erwadi|mhgap|supported-employment|recovery|treatment-gap|workforce|kiran|ayushman|eca-|stigma|friendship-bench|india-programmes|pathway-to-care|cohort|screening|rating|scale|ymrs|phq|ghq|srq|bprs|sans|panss|hcr-20)/, "assessment", "ethics-law"),
+    g("therapies", "Psychotherapies", /(ipt|psychotherap|behavioural-activation|mbct|^act$|malan|brief-dynamic|defence|family-therapy|yalom|common-factors|cbt|morita|guru-chela|transference|solution-focused)/, "therapies"),
+    g("integrative", "Mixed cases and data", /^integrative/, "exam-prep"),
   ],
   "ugc-paper1": [
     g("teaching", "Teaching aptitude", /^(teaching|evaluation|blooms|microteaching|learner|flanders|online-teaching|online-learning)/, "net-paper1/1-2"),
@@ -263,8 +268,12 @@ export const TOPIC_GROUPS: Record<Subject, readonly TopicGroup[]> = {
 /** The fallback group for slugs no pattern names. */
 export const MORE = "more";
 
-export function groupOf(subject: Subject, topic: string): string {
-  for (const grp of TOPIC_GROUPS[subject]) if (grp.match.test(topic)) return grp.id;
+export function groupOf(subject: Subject, topic: string, module?: string): string {
+  const groups = TOPIC_GROUPS[subject];
+  for (const grp of groups) if (grp.match.test(topic)) return grp.id;
+  // No slug pattern fits: fall back on the question's study module, so precise new
+  // slugs still land in the topic that teaches them instead of "More".
+  if (module) for (const grp of groups) if (grp.learn.some((l) => l === module || l.startsWith(`${module}/`))) return grp.id;
   return MORE;
 }
 
@@ -292,7 +301,7 @@ export function topicsOf(subject: Subject, bank: readonly PrepQuestion[], subjec
   const by = new Map<string, PrepQuestion[]>();
   for (const q of bank) {
     if (q.subject !== subject) continue;
-    const id = groupOf(subject, q.topic);
+    const id = groupOf(subject, q.topic, q.module);
     by.set(id, [...(by.get(id) ?? []), q]);
   }
   const order = [...TOPIC_GROUPS[subject].map((x) => x.id), MORE];

@@ -18,7 +18,7 @@ describe("bank topics", () => {
     expect(BANK_SUBJECTS[BANK_SUBJECTS.length - 1]).toBe("ugc-paper1");
   });
   it("puts almost every question in a named topic", () => {
-    const more = ALL_QUESTIONS.filter((q) => groupOf(q.subject, q.topic) === MORE);
+    const more = ALL_QUESTIONS.filter((q) => groupOf(q.subject, q.topic, q.module) === MORE);
     expect(more.length / Math.max(1, ALL_QUESTIONS.length)).toBeLessThan(0.02);
   });
   it("every topic's Learn link points at a real Study module section", () => {
