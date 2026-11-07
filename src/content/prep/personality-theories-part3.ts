@@ -228,7 +228,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "Eysenck's PEN model has three 'superfactors': psychoticism (tough-mindedness, impulsivity, lack of empathy), extraversion versus introversion, and neuroticism versus emotional stability. They are measured by the Eysenck Personality Questionnaire, which also includes a Lie scale. Openness, conscientiousness and agreeableness are part of the Big Five. Id, ego and superego are Freud's. The last option mixes Jungian and MBTI terms.",
+      "Eysenck's PEN model has three 'superfactors': psychoticism (tough-mindedness, impulsivity, lack of empathy), extraversion versus introversion, and neuroticism versus emotional stability. They are measured by the Eysenck Personality Questionnaire, which also includes a Lie scale. Openness, conscientiousness and agreeableness are part of the Big Five. Id, ego and superego are Freud's. Introversion, intuition and judging mix Jungian and MBTI terms.",
     ref: "Eysenck & Eysenck 1975",
   }),
   p({

@@ -404,7 +404,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "Children first protest (crying, searching), then show despair (apathy, withdrawal), and finally detachment (apparent recovery with indifference to the parent on return). The films influenced hospital policies allowing parents to stay with children. The other orders are incorrect, and the last option borrows from Kübler-Ross's stages of dying.",
+      "Children first protest (crying, searching), then show despair (apathy, withdrawal), and finally detachment (apparent recovery with indifference to the parent on return). The films influenced hospital policies allowing parents to stay with children. The other orders put the phases in the wrong sequence, and 'denial, anger, acceptance' borrows from Kübler-Ross's stages of dying.",
     ref: "Robertson & Bowlby 1952; Bowlby 1973, Separation",
   }),
   d({
@@ -463,7 +463,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "Van den Boom's experiment manipulated sensitivity while infant temperament was equivalent at baseline, so the large difference in security supports a causal role for caregiving. That contradicts the view that temperament alone decides classification. Irritability was matched at the start, and attachment changed after birth, so the last two options are not supported.",
+      "Van den Boom's experiment manipulated sensitivity while infant temperament was equivalent at baseline, so the large difference in security supports a causal role for caregiving. That contradicts the view that temperament alone decides classification. Irritability was matched at the start, so a drop in irritability cannot be the whole story, and security changed after birth, so the claim that attachment is fixed at birth is not supported either.",
     ref: "van den Boom 1994, Child Dev",
   }),
   d({

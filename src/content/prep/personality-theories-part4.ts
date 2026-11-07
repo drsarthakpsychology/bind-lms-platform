@@ -168,7 +168,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "Accurate empathy means understanding the client's inner world as if it were one's own and communicating that understanding back, including the feelings beneath the words (conflict, pressure, confusion). The second option gives advice, which places the counsellor as an expert. The third reassures and minimises, which can feel dismissive. The fourth offers a psychoanalytic interpretation, which Rogers avoided because it imposes the therapist's framework.",
+      "Accurate empathy means understanding the client's inner world as if it were one's own and communicating that understanding back, including the feelings beneath the words (conflict, pressure, confusion). Telling the client firmly what to do gives advice, which places the counsellor as an expert. Saying the feeling will pass reassures and minimises, which can feel dismissive. The remark about Oedipal rivalry offers a psychoanalytic interpretation, which Rogers avoided because it imposes the therapist's framework.",
     ref: "Rogers 1957, 1975",
   }),
   p({

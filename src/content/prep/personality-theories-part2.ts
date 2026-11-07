@@ -175,7 +175,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "Fromm believed humans, having lost instinctive bonds to nature, have uniquely human needs: relatedness (union with others), transcendence (rising above passive existence by creating), rootedness (feeling at home in the world), identity, and a frame of orientation (a coherent view of the world). The second option lists Freud's stages. The third is Maslow's hierarchy. The fourth is McClelland's set of social motives.",
+      "Fromm believed humans, having lost instinctive bonds to nature, have uniquely human needs: relatedness (union with others), transcendence (rising above passive existence by creating), rootedness (feeling at home in the world), identity, and a frame of orientation (a coherent view of the world). Physiological through self-actualisation is Maslow's hierarchy. Oral through genital lists Freud's psychosexual stages. Achievement, affiliation and power are McClelland's social motives.",
     ref: "Fromm 1955; Feist & Feist, ch. 7",
   }),
   // ── Sullivan ──────────────────────────────────────────────────────────────

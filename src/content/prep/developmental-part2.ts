@@ -577,7 +577,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "Gilligan described a move from caring only for oneself, through equating goodness with caring for others at one's own expense, to a mature ethic in which care includes oneself as well as others, with transitions between levels. The second option reverses the first two levels. The third lists Kohlberg's stages 4 to 6. The fourth uses Piaget's terms.",
+      "Gilligan described a move from caring only for oneself, through equating goodness with caring for others at one's own expense, to a mature ethic in which care includes oneself as well as others, with transitions between levels. The sequence that begins with goodness as self-sacrifice reverses the first two levels. Law and order, social contract and universal principles are Kohlberg's stages 4 to 6. Heteronomous and autonomous are Piaget's terms for children's moral reasoning.",
     ref: "Gilligan 1982, ch. 3",
   }),
   d({

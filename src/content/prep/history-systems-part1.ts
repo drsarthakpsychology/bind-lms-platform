@@ -76,7 +76,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "Pressing on the closed eye produces flashes of light, because whatever stimulates the optic nerve is experienced as light. Müller concluded that we are aware of the state of our nerves, not of the world directly. This idea encouraged the search for localisation of function in the brain. The second option contradicts it. Helmholtz later measured nerve conduction speed, showing it is not instantaneous. The skull-faculty idea is Gall's phrenology.",
+      "Pressing on the closed eye produces flashes of light, because whatever stimulates the optic nerve is experienced as light. Müller concluded that we are aware of the state of our nerves, not of the world directly. This idea encouraged the search for localisation of function in the brain. The claim that all nerves carry the same energy and give the same sensation is the opposite of his doctrine. Helmholtz later measured nerve conduction speed, showing it is not instantaneous. The skull-faculty idea is Gall's phrenology.",
     ref: "Hergenhahn, ch. 8; Boring 1950",
   }),
   h({

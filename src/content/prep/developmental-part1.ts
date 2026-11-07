@@ -642,7 +642,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "Children first group blocks into syncretic heaps on chance impressions, then into complexes based on concrete, shifting links (the last being pseudoconcepts that look like adult concepts but are formed concretely), and finally into true abstract concepts in adolescence. The second and third options scramble the order. The last uses Piaget's vocabulary.",
+      "Children first group blocks into syncretic heaps on chance impressions, then into complexes based on concrete, shifting links (the last being pseudoconcepts that look like adult concepts but are formed concretely), and finally into true abstract concepts in adolescence. Starting with true concepts runs the sequence backwards, and putting pseudoconcepts before heaps scrambles it. Schemas, operations and equilibration are Piaget's vocabulary, not Vygotsky's.",
     module: undefined,
     ref: "Vygotsky 1934/1986, Thought and Language, ch. 5",
   }),

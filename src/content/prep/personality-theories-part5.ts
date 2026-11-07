@@ -492,7 +492,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "Dollard and Miller argued that a drive (such as hunger or fear) pushes action, cues tell the person when and where to respond, a response is made, and reinforcement (drive reduction) strengthens it. They explained Freud's ideas, such as repression and conflict, in these terms. The second option is Freudian, the third is Bandura's observational learning, and the fourth resembles Rotter's terms.",
+      "Dollard and Miller argued that a drive (such as hunger or fear) pushes action, cues tell the person when and where to respond, a response is made, and reinforcement (drive reduction) strengthens it. They explained Freud's ideas, such as repression and conflict, in these terms. Id, ego, superego and libido are Freudian. Attention, retention, reproduction and motivation are Bandura's processes of observational learning. Expectancy, value, situation and choice resemble Rotter's terms.",
     ref: "Dollard & Miller 1950",
   }),
   p({
