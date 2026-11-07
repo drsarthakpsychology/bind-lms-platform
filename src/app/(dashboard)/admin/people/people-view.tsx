@@ -51,10 +51,10 @@ function readLayout(): "board" | "table" {
 }
 
 const fmt = (iso: string | null) =>
-  iso ? new Date(iso).toLocaleDateString("en-IN", { timeZone: "Asia/Kolkata", day: "numeric", month: "short" }) : "—";
+  iso ? new Date(iso).toLocaleDateString("en-IN", { timeZone: "Asia/Kolkata", day: "numeric", month: "short" }) : "-";
 
 /**
- * The CRM list — saved views as chips, search, and two layouts people know
+ * The CRM list: saved views as chips, search, and two layouts people know
  * from Pipedrive / Attio: a Board (one column per stage) and a Table.
  * Each person opens their own page with the full timeline.
  */

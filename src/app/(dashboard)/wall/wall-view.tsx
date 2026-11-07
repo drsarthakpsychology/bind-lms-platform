@@ -41,11 +41,11 @@ const REACTIONS: Array<{ key: string; label: string; icon: typeof Heart }> = [
 ];
 
 /**
- * The Cohort Wall — threaded, anonymous-post toggle, reactions-not-upvotes.
+ * The Cohort Wall: threaded, anonymous-post toggle, reactions-not-upvotes.
  * Reactions signal without ranking (popularity selects for confidence, not
  * correctness). Anonymous author_id never leaves the server.
  *
- * Mobile (T21/T35): feed-first — the composer moves into a bottom sheet behind
+ * Mobile (T21/T35): feed-first, the composer moves into a bottom sheet behind
  * a "New post" action, and per-post Report/Pin collapse into a single "…"
  * sheet. Composer + reply drafts autosave via useDraft (T46).
  */
@@ -115,7 +115,7 @@ export function WallView({ initialPosts, isFacultyViewer = false }: { initialPos
         ok = true;
       }
     } catch {
-      setError("Network error. Your post is still here — try again.");
+      setError("Network error. Your post is still here: try again.");
     }
     if (!ok) {
       // Roll back the optimistic post and restore the draft.
@@ -182,7 +182,7 @@ export function WallView({ initialPosts, isFacultyViewer = false }: { initialPos
     }
   }
 
-  /** Faculty pin/unpin — the Case of the Week. Admin-only route enforces it. */
+  /** Faculty pin/unpin: the Case of the Week. Admin-only route enforces it. */
   async function reportPost(postId: string) {
     haptic("tap");
     try {
@@ -193,7 +193,7 @@ export function WallView({ initialPosts, isFacultyViewer = false }: { initialPos
       });
       if (res.ok) {
         haptic("success");
-        setSheetMsg({ text: "Reported — thanks for flagging it.", tone: "success" });
+        setSheetMsg({ text: "Reported: thanks for flagging it.", tone: "success" });
       } else {
         setSheetMsg({ text: "Couldn't flag it. Please try again.", tone: "error" });
       }
@@ -267,7 +267,7 @@ export function WallView({ initialPosts, isFacultyViewer = false }: { initialPos
         ok = true;
       }
     } catch {
-      setReplyError("Network error — your reply is still here. Try again.");
+      setReplyError("Network error: your reply is still here. Try again.");
     }
     if (!ok) {
       // Roll back the optimistic reply and restore the draft.
@@ -288,7 +288,7 @@ export function WallView({ initialPosts, isFacultyViewer = false }: { initialPos
         onChange={(e) => contentDraft.setValue(e.target.value)}
         rows={3}
         enterKeyHint="enter"
-        placeholder="Share something with the cohort — a question, a win, a hard moment."
+        placeholder="Share something with the cohort: a question, a win, a hard moment."
         aria-label="Post to the cohort wall"
         className="resize-none"
       />
@@ -312,12 +312,12 @@ export function WallView({ initialPosts, isFacultyViewer = false }: { initialPos
   return (
     <div className="space-y-6">
       {offline ? (
-        <StatusPill tone="warning" label="Offline — your draft saves locally" />
+        <StatusPill tone="warning" label="Offline: your draft saves locally" />
       ) : justReturned ? (
         <StatusPill tone="neutral" label="Back online" />
       ) : null}
 
-      {/* Mobile: feed-first — composer lives in a bottom sheet */}
+      {/* Mobile: feed-first, composer lives in a bottom sheet */}
       <button
         type="button"
         onClick={() => {
@@ -369,7 +369,7 @@ export function WallView({ initialPosts, isFacultyViewer = false }: { initialPos
                 </div>
                 <p className="mt-2 whitespace-pre-wrap break-words text-small">{p.content}</p>
 
-                {/* reactions — not upvotes */}
+                {/* reactions, not upvotes */}
                 <div className="mt-3 flex flex-wrap items-center gap-1.5">
                   {REACTIONS.map((r) => {
                     const Icon = r.icon;

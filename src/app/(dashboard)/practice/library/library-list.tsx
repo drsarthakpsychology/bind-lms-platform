@@ -164,7 +164,7 @@ export function LibraryList({
         </>
       )}
 
-      {/* Read sheet — full abstract + PMC link + the note affordance. */}
+      {/* Read sheet: full abstract + PMC link + the note affordance. */}
       <MobileBottomSheet
         open={readDoc !== null}
         onOpenChange={(o) => !o && setReadDoc(null)}
@@ -202,7 +202,7 @@ export function LibraryList({
         ) : null}
       </MobileBottomSheet>
 
-      {/* Note sheet — your note first, save persists, then peers unlock. */}
+      {/* Note sheet: your note first, save persists, then peers unlock. */}
       <MobileBottomSheet
         open={noteDocId !== null}
         onOpenChange={(o) => !o && setNoteDocId(null)}

@@ -29,7 +29,7 @@ export function isSameOrigin(request: Request): boolean {
   // Build-time constant (NEXT_PUBLIC_* is inlined at build time).
   const appOrigin = process.env.NEXT_PUBLIC_APP_URL ?? "";
 
-  // Fail closed if the app origin isn't configured — a misconfigured deploy
+  // Fail closed if the app origin isn't configured: a misconfigured deploy
   // should refuse media tokens rather than mint them for any origin.
   if (!appOrigin) return false;
 

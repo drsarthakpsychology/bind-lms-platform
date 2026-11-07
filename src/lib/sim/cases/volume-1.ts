@@ -1,5 +1,5 @@
 /**
- * More cases — volume batch 1. Each a different person with a different voice.
+ * More cases: volume batch 1. Each a different person with a different voice.
  * These fill out the thin modules and reach toward the 60-case target.
  */
 
@@ -8,7 +8,7 @@ import { buildCase, type CaseAuthoring } from "../case-builder";
 // Depression additions
 const gita: CaseAuthoring = {
   id: "dep-gita",
-  title: "Gita, 52 — the woman who stopped calling anyone",
+  title: "Gita, 52: the woman who stopped calling anyone",
   difficulty: "cooperative",
   traps: ["over_diagnosis", "somatic_mask", "under_diagnosis"],
   moduleId: "mod-depression",
@@ -43,7 +43,7 @@ const gita: CaseAuthoring = {
 
 const deepa: CaseAuthoring = {
   id: "dep-deepa",
-  title: "Deepa, 29 — the high-functioning one",
+  title: "Deepa, 29: the high-functioning one",
   difficulty: "cooperative",
   traps: ["under_diagnosis", "diagnostic_overshadowing", "adherence_fiction"],
   moduleId: "mod-depression",
@@ -54,14 +54,14 @@ const deepa: CaseAuthoring = {
   city: "Mumbai",
   family: "lives with parents; unmarried, pressure building",
   register: "Brisk professional English, self-deprecating",
-  presentation: "Functioning perfectly on the outside — audits, deadlines, 'the reliable one'. Inside: exhausted, numb, crying in the car.",
+  presentation: "Functioning perfectly on the outside: audits, deadlines, 'the reliable one'. Inside: exhausted, numb, crying in the car.",
   chiefComplaint: "I manage. I always manage. I just cry in the car sometimes and I don't know why.",
   timeline: "A year of presenting a perfect front while anhedonic and exhausted. Took an SSRI a friend gave, stopped after 2 weeks.",
   treatmentHistory: "Borrowed SSRI from a friend, 2 weeks, stopped ('it made it worse at first').",
   helpSeekingDelay: "1 year",
   priorContacts: ["friend's SSRI", "nothing formal"],
   coreBelief: "If I stop being useful, I don't exist.",
-  intermediateBeliefs: ["Asking for help would break the illusion", "My parents think I'm fine — I can't disappoint them"],
+  intermediateBeliefs: ["Asking for help would break the illusion", "My parents think I'm fine. I can't disappoint them"],
   coping: ["smile through it", "cry in the car", "work longer"],
   openingIdiom: "I'm fine, just tired",
   redFlags: [{ content: "has thought about driving into a barrier 'so it looks like an accident'", gate: "asked_about_self_harm_clearly" }],
@@ -76,10 +76,10 @@ const deepa: CaseAuthoring = {
   },
 };
 
-// Psychosis addition — a no-disorder / cultural normative possession
+// Psychosis addition: a no-disorder / cultural normative possession
 const mahesh: CaseAuthoring = {
   id: "psy-mahesh",
-  title: "Mahesh, 21 — the possession that left him intact",
+  title: "Mahesh, 21: the possession that left him intact",
   difficulty: "cooperative",
   traps: ["over_diagnosis", "cultural_idiom"],
   moduleId: "mod-psychosis",
@@ -115,7 +115,7 @@ const mahesh: CaseAuthoring = {
 // Anxiety additions
 const sandeep: CaseAuthoring = {
   id: "anx-sandeep",
-  title: "Sandeep, 35 — the man who can't sit in a meeting",
+  title: "Sandeep, 35: the man who can't sit in a meeting",
   difficulty: "guarded",
   traps: ["iatrogenic", "under_diagnosis", "somatic_mask"],
   moduleId: "mod-anxiety",
@@ -126,14 +126,14 @@ const sandeep: CaseAuthoring = {
   city: "Gurugram",
   family: "married; two kids; in-laws nearby",
   register: "Corporate English, smooth, hides it",
-  presentation: "Started an antipsychotic (amisulpride) for 'anxiety' from a private clinic. Now pacing, can't sit in meetings, reads it as worsening anxiety — it's akathisia.",
+  presentation: "Started an antipsychotic (amisulpride) for 'anxiety' from a private clinic. Now pacing, can't sit in meetings, reads it as worsening anxiety. It's akathisia.",
   chiefComplaint: "The tablet was supposed to calm me down. Now I can't sit still. I'm pacing at my desk. Is my anxiety getting worse?",
   timeline: "Anxiety → private clinic prescribed amisulpride → two weeks of restlessness, inner urge to move, worse than the original anxiety.",
   treatmentHistory: "Amisulpride (atypical antipsychotic) for anxiety. No mood stabiliser, no benzo.",
   helpSeekingDelay: "2 weeks after the new drug",
   priorContacts: ["private clinic", "chemist"],
   coreBelief: "If I lose control in front of people, my career is over.",
-  intermediateBeliefs: ["The doctor must know best — so this restlessness is me failing", "I can't tell them the drug isn't working, they'll think I'm difficult"],
+  intermediateBeliefs: ["The doctor must know best, so this restlessness is me failing", "I can't tell them the drug isn't working, they'll think I'm difficult"],
   coping: ["pace", "avoid meetings", "hide the restlessness with humour"],
   openingIdiom: "bechaini",
   redFlags: [{ content: "no self-harm; despair that 'nothing works'", gate: "asked_about_self_harm_clearly" }],
@@ -151,7 +151,7 @@ const sandeep: CaseAuthoring = {
 // Trauma addition
 const rehana: CaseAuthoring = {
   id: "trm-rehana",
-  title: "Rehana, 34 — the abuse she reported and regretted",
+  title: "Rehana, 34: the abuse she reported and regretted",
   difficulty: "resistant",
   traps: ["informant_conflict", "secondary_gain", "late_risk_reveal"],
   moduleId: "mod-trauma",
@@ -172,7 +172,7 @@ const rehana: CaseAuthoring = {
   intermediateBeliefs: ["If I say I'm affected, they'll use it against me", "If I say I'm fine, the harassment was 'nothing'"],
   coping: ["withdraw from everyone", "avoid the office floor", "replay the conversation"],
   openingIdiom: "tension hai",
-  redFlags: [{ content: "has thought about 'making it all stop' — no plan", gate: "asked_about_self_harm_clearly" }],
+  redFlags: [{ content: "has thought about 'making it all stop', no plan", gate: "asked_about_self_harm_clearly" }],
   variation: {
     mood_today: ["numb", "anxious", "flat", "irritated"],
     recent_event: ["an HR meeting", "her mother-in-law's comment", "she saw the colleague", "a phone call from work"],
@@ -187,7 +187,7 @@ const rehana: CaseAuthoring = {
 // Bipolar addition
 const farooq: CaseAuthoring = {
   id: "bip-farooq",
-  title: "Farooq, 41 — the two 'new businesses' and the crash",
+  title: "Farooq, 41: the two 'new businesses' and the crash",
   difficulty: "cooperative",
   traps: ["iatrogenic", "under_diagnosis", "polypharmacy"],
   moduleId: "mod-bipolar",
@@ -198,13 +198,13 @@ const farooq: CaseAuthoring = {
   city: "Kolkata",
   family: "married; two children; extended family dependent on him",
   register: "Bengali-accented English, expansive then flat",
-  presentation: "Three 'brilliant' months — two new businesses, no sleep, everyone called it energy. Now crippling depression and a loan he can't repay.",
+  presentation: "Three 'brilliant' months: two new businesses, no sleep, everyone called it energy. Now crippling depression and a loan he can't repay.",
   chiefComplaint: "Everyone praised me for three months. Now I can't get out of bed and the shop is closed. What did I do to deserve this?",
   timeline: "Hypomanic phase (3 months) → collapse → now severe depression, suicidality, family terrified.",
   treatmentHistory: "An SSRI from a GP who only saw the 'low' phases.",
-  helpSeekingDelay: "The high was never reported — it was 'good news'",
+  helpSeekingDelay: "The high was never reported. It was 'good news'",
   priorContacts: ["GP for depression", "moneylender"],
-  coreBelief: "I am either a genius or a failure — nothing between.",
+  coreBelief: "I am either a genius or a failure. Nothing between.",
   intermediateBeliefs: ["The tablets made me crash", "If I tell them about the loan they'll lose faith in me"],
   coping: ["alternate grand plans and hiding", "avoid the family", "spend when high"],
   openingIdiom: "mind kharab hai",

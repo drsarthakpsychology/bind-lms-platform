@@ -19,7 +19,7 @@ function openSearch() {
 const iconBtn = TOP_BAR_ICON_BTN;
 
 /**
- * The masthead — the layout people already know from YouTube, Gmail and
+ * The masthead: the layout people already know from YouTube, Gmail and
  * Drive: ☰ + logo on the left, a big search box in the middle, the inbox (admins), the bell and
  * your avatar on the right. Sticky on tablets and laptops; on phones it
  * scrolls away so the page gets the room (and on lesson pages the page's own

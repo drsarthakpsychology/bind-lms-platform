@@ -9,8 +9,8 @@ export type CertificateResult = { error: string | null; success: boolean };
 
 /**
  * Issue a certificate for a student + course. Manual admin click (the
- * instructor sign-off is the human step); everything after — PDF generation
- * with QR, storage to R2/Supabase, and (future) email — is automatic.
+ * instructor sign-off is the human step); everything after: PDF generation
+ * with QR, storage to R2/Supabase, and (future) email: is automatic.
  */
 export async function issueCertificate(
   _prevState: CertificateResult,

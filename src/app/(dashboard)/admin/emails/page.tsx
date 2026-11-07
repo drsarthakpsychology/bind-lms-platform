@@ -30,7 +30,7 @@ type Folder = (typeof FOLDERS)[number]["id"] | "compose";
 const when = (iso: string | null) =>
   iso
     ? new Date(iso).toLocaleString("en-IN", { timeZone: "Asia/Kolkata", day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" })
-    : "—";
+    : "Not yet";
 
 type SentRow = {
   id: string;
@@ -108,7 +108,7 @@ function sentStatus(r: SentRow): { label: string; cls: string } {
 }
 
 /**
- * /admin/emails — Mail, laid out like Gmail: folders on the left, a dense
+ * /admin/emails: Mail, laid out like Gmail: folders on the left, a dense
  * list in the middle, the open email on the right (full screen on phones).
  * Inbox = replies (Resend inbound), Sent = everything we sent with its
  * delivered / opened / bounced status, Logins = account setup links,
@@ -354,7 +354,7 @@ export default async function MailPage({
                       <span className="text-muted-foreground">&lt;{openIn.from_email}&gt; · {when(openIn.received_at)}</span>{" "}
                       <Link href={`/admin/people/${personKey(openIn.from_email)}`} className="font-bold text-link underline-offset-4 hover:underline">Open in People</Link>
                     </p>
-                    <div className="rounded-2xl border-2 border-foreground/15 bg-card p-5 text-sm whitespace-pre-line break-words">{openIn.body_text ?? "(No text version — open it in Resend.)"}</div>
+                    <div className="rounded-2xl border-2 border-foreground/15 bg-card p-5 text-sm whitespace-pre-line break-words">{openIn.body_text ?? "(No text version, open it in Resend.)"}</div>
                     <InboundControls id={openIn.id} archived={Boolean(openIn.archived_at)} unread={!openIn.read_at} />
                   </article>
                 ) : openSent ? (

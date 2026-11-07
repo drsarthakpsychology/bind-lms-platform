@@ -11,7 +11,7 @@ const getSchema = z.object({
 });
 
 /**
- * GET /api/practice/roleplay/messages?sessionId=… — poll the thread.
+ * GET /api/practice/roleplay/messages?sessionId=…: poll the thread.
  * RLS restricts reads to participants. Returns messages oldest-first.
  */
 export async function GET(req: Request) {

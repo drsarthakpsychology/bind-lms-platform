@@ -29,7 +29,7 @@ const schema = z.object({
 });
 
 /**
- * POST /api/practice/formulation/attempt — persist a completed Formulation
+ * POST /api/practice/formulation/attempt: persist a completed Formulation
  * Forge pass. The seed case (static SEED_FORMULATION) is upserted into
  * formulation_cases keyed by slug on first write, so the FK resolves without
  * a separate seeding pass. Own-transcript attempts (Stage 4) are session-

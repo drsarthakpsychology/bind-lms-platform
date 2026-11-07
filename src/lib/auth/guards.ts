@@ -3,7 +3,7 @@ import { getSession, type Profile } from "./session";
 
 /**
  * For Server Actions. Every admin action file previously rolled its own
- * "check the caller is an admin" helper that only checked role — meaning an
+ * "check the caller is an admin" helper that only checked role: meaning an
  * admin whose access had expired, or who'd been signed out elsewhere by the
  * concurrent-session check, could still successfully call the action
  * directly (Server Actions are independently invokable endpoints, not
@@ -16,12 +16,12 @@ export async function requireSession(): Promise<Profile | null> {
   return session.status === "ok" ? session.profile : null;
 }
 
-/** Super Admin / Owner — the ONLY account that may create or manage users/admins. */
+/** Super Admin / Owner: the ONLY account that may create or manage users/admins. */
 export function isSuperAdmin(profile: Profile | null | undefined): boolean {
   return profile?.role === "admin";
 }
 
-/** Any admin (Super Admin or View Admin) — read access to admin surfaces. */
+/** Any admin (Super Admin or View Admin): read access to admin surfaces. */
 export function isAdminLike(profile: Profile | null | undefined): boolean {
   return profile?.role === "admin" || profile?.role === "view_admin";
 }
@@ -38,7 +38,7 @@ export async function requireSuperAdmin(): Promise<Profile | null> {
 
 /**
  * Any admin (Super Admin or View Admin) for READ access to the Admin
- * Dashboard. Every write action must use requireSuperAdmin() instead — this
+ * Dashboard. Every write action must use requireSuperAdmin() instead: this
  * helper never authorises a mutation on its own.
  */
 export async function requireAdmin(): Promise<Profile | null> {

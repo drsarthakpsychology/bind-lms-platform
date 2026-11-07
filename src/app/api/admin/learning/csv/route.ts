@@ -5,7 +5,7 @@ import { studentsCsv } from "@/lib/insights/learning";
 
 export const dynamic = "force-dynamic";
 
-/** GET /api/admin/learning/csv — per-student self-study summary. Admin-only. */
+/** GET /api/admin/learning/csv: per-student self-study summary. Admin-only. */
 export async function GET() {
   if (!(await requireAdmin())) {
     return NextResponse.json({ error: "Not authorized." }, { status: 401 });

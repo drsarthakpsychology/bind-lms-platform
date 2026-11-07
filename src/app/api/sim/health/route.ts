@@ -14,10 +14,10 @@ export const runtime = "nodejs";
  * router's live view of what would actually serve a `sim_patient_turn` right now.
  *
  * - Admin-only (a student must never learn which AI providers are configured).
- * - Never returns a key, secret, or response body — only status + latency.
+ * - Never returns a key, secret, or response body, only status + latency.
  * - Does NOT mutate the circuit-breaker (probes are read-only for the router).
  * - HTTP 200 = the sim patient can be served right now; 503 = it can't (the
- *   body carries the full breakdown either way — curl-able for a green/red).
+ *   body carries the full breakdown either way: curl-able for a green/red).
  *
  * The probe/classify logic lives in src/lib/ai/diagnostics.ts so the same
  * chain runs headlessly via `tsx scripts/sim-health-check.ts`.

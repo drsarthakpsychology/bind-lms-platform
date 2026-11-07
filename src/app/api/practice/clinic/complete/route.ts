@@ -7,7 +7,7 @@ import { rateLimit } from "@/lib/rate-limit";
 export const runtime = "nodejs";
 
 /**
- * POST /api/practice/clinic/complete — record a Two-Minute Clinic daily
+ * POST /api/practice/clinic/complete: record a Two-Minute Clinic daily
  * completion. Marks the day in the streaks table (the same table the practice
  * hub reads), so the daily habit keeps the streak alive.
  */

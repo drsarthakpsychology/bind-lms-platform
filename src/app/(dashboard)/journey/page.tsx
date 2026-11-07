@@ -13,7 +13,7 @@ export const metadata: Metadata = { title: "My journey" };
 export const dynamic = "force-dynamic";
 
 /**
- * My journey — the student's own numbers in one place: hours on VIBHA, time
+ * My journey: the student's own numbers in one place: hours on VIBHA, time
  * in lectures, lectures finished, their level and rank, notes and games
  * progress, and practice done. All real, blank when there's nothing yet.
  */
@@ -56,7 +56,7 @@ export default async function JourneyPage() {
     { icon: <Clock className="size-5" aria-hidden />, label: "Time on VIBHA", value: `${hoursOnline} h`, sub: "all your time here" },
     { icon: <PlayCircle className="size-5" aria-hidden />, label: "In lectures", value: `${lectureHours} h`, sub: `${lecturesStarted} started` },
     { icon: <GraduationCap className="size-5" aria-hidden />, label: "Lectures finished", value: String(lecturesDone) },
-    { icon: <Flame className="size-5" aria-hidden />, label: "Day streak", value: streak ? `${streak} 🔥` : "—", sub: "days in a row" },
+    { icon: <Flame className="size-5" aria-hidden />, label: "Day streak", value: streak ? `${streak} 🔥` : "None yet", sub: "days in a row" },
     { icon: <BookOpen className="size-5" aria-hidden />, label: "Quiz points", value: st ? String(st.xp) : "0", sub: accuracy !== null ? `${accuracy}% right` : undefined },
     { icon: <Target className="size-5" aria-hidden />, label: "Practice done", value: String(practiceCount), sub: "sessions and drills" },
   ];

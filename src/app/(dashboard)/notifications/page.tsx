@@ -11,7 +11,7 @@ import { cn } from "@/lib/utils";
 import { markAllNotificationsRead } from "./actions";
 
 /**
- * /notifications — derived wall feed (T42) plus persisted achievement and
+ * /notifications: derived wall feed (T42) plus persisted achievement and
  * certificate notifications (unread state + mark-as-read).
  */
 

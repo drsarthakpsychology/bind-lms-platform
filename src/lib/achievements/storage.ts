@@ -31,6 +31,6 @@ export async function credentialDownloadUrl(key: string, expiresSeconds = 60 * 6
 
 /** A fresh, cryptographically-unpredictable credential token (not the internal id). */
 export function newCredentialId(): string {
-  // 32 hex chars from two UUIDs — 122 bits, opaque, non-sequential.
+  // 32 hex chars from two UUIDs: 122 bits, opaque, non-sequential.
   return `${crypto.randomUUID().replace(/-/g, "")}${crypto.randomUUID().replace(/-/g, "")}`;
 }

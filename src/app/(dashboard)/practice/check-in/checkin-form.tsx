@@ -19,7 +19,7 @@ interface Props {
 }
 
 /**
- * Weekly check-in — 30 seconds, non-clinical, aggregate-only for admin.
+ * Weekly check-in: 30 seconds, non-clinical, aggregate-only for admin.
  * Slider tap for each of workload / energy / preparedness, one free line.
  */
 export function CheckinForm({ weekLabel, initial }: Props) {
@@ -33,7 +33,7 @@ export function CheckinForm({ weekLabel, initial }: Props) {
 
   // Focus management for keyboard users: refocus the free-text line only after
   // a save completes (busy true→false). Focusing on mount would pop the
-  // software keyboard the moment the page loads — the auto-focus bug.
+  // software keyboard the moment the page loads: the auto-focus bug.
   const freeLineRef = React.useRef<HTMLInputElement>(null);
   const prevBusyRef = React.useRef(false);
   React.useEffect(() => {
@@ -102,11 +102,11 @@ export function CheckinForm({ weekLabel, initial }: Props) {
         disabled={busy || !complete || saved}
         className="w-full rounded-md border-2 border-border bg-primary px-4 py-2.5 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px active:hard-shadow-none disabled:opacity-50"
       >
-        {saved ? "Saved — see you next week" : busy ? "Saving…" : "Save check-in"}
+        {saved ? "Saved: see you next week" : busy ? "Saving…" : "Save check-in"}
       </button>
       {saved ? (
         <p className="text-center text-caption text-muted-foreground">
-          Anonymous in aggregate. Faculty see trends only — never who said what.
+          Anonymous in aggregate. Faculty see trends only, never who said what.
         </p>
       ) : null}
     </form>

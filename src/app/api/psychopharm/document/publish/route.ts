@@ -48,14 +48,14 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: error.message }, { status: 403 });
   }
 
-  // The published doc is served from a shared cache (Part 11) — drop it so
+  // The published doc is served from a shared cache (Part 11): drop it so
   // students see the freshly published version immediately.
   revalidateTag("psych-doc", "hours");
 
   return NextResponse.json({ ok: true, result: published });
 }
 
-/** Publish validation — every medication must be source-backed and internally valid. */
+/** Publish validation: every medication must be source-backed and internally valid. */
 export function validateDocument(d: MedicationDocument): string[] {
   const errors: string[] = [];
   let hasSource = false;
@@ -78,6 +78,6 @@ export function validateDocument(d: MedicationDocument): string[] {
       }
     }
   }
-  if (!hasSource) errors.push("No block carries a source — nothing is quotable.");
+  if (!hasSource) errors.push("No block carries a source. Nothing is quotable.");
   return errors;
 }

@@ -23,7 +23,7 @@ export async function enrollStudent(
 
     const supabase = await createClient();
     // The enrolment record carries the terms acceptance (timestamp + policy
-    // version) — the audit trail that makes the no-refund term defensible. On a
+    // version): the audit trail that makes the no-refund term defensible. On a
     // re-enrol it is only written once (first acceptance wins).
     const { data: existing } = await supabase
       .from("course_enrollments")
@@ -103,7 +103,7 @@ export async function unenrollStudent(
   try {
     if (!(await requireSuperAdmin())) return { error: "Not authorized." };
 
-    // Admin deletes use the service-role client — the anon client's DELETE is
+    // Admin deletes use the service-role client: the anon client's DELETE is
     // RLS-filtered to 0 rows while still returning 204 (no error), so the
     // change silently doesn't happen.
     const admin = createAdminClient();
@@ -123,7 +123,7 @@ export async function unenrollStudent(
 }
 
 /**
- * Called the moment a file is picked, before any lesson row exists — the
+ * Called the moment a file is picked, before any lesson row exists: the
  * YouTube-style flow uploads first and fills in details while that
  * upload runs in the background. The path is keyed on a fresh random id
  * rather than a lesson id, since there is no lesson yet.
@@ -134,7 +134,7 @@ export async function prepareVideoUpload(
 ): Promise<SignedUploadResult> {
   if (!(await requireSuperAdmin())) return { ok: false, error: "Not authorized." };
 
-  // Upload target is Cloudflare R2 (a pre-signed PUT), NOT Supabase Storage —
+  // Upload target is Cloudflare R2 (a pre-signed PUT), NOT Supabase Storage:
   // the Supabase Free-plan global 50MB file cap made large source uploads fail.
   // R2 has no such per-file cap, and R2 is the canonical video store anyway.
   const bucket = process.env.R2_BUCKET_NAME;
@@ -191,7 +191,7 @@ export async function createLessonWithVideo(
   if (!share.ok) return { error: share.error };
 
   // Verify the bytes actually landed before saving a lesson that points at
-  // them. The client's upload success callback is never trusted — a dropped or
+  // them. The client's upload success callback is never trusted: a dropped or
   // network-failed upload leaves a path with no object, and a lesson pointing
   // at it can never play. Mirrors attachVideoToLesson: only write a playable
   // path, and never create a row that points at nothing. The source now lives
@@ -251,7 +251,7 @@ export async function createLessonWithVideo(
       title,
       prompt_text: assignmentPrompt,
       instructions: assignmentPrompt,
-      // The admin just wrote instructions and toggled the switch on — they
+      // The admin just wrote instructions and toggled the switch on. They
       // obviously want students to see it. Default PUBLISHED so the assignment
       // isn't silently invisible (the old lifecycle created drafts that never
       // surfaced, with no way to publish them from the builder).
@@ -330,7 +330,7 @@ export async function deleteLesson(
     // Admin deletes go through the service-role client. The anon client's
     // DELETE was RLS-filtered to 0 rows while still returning 204 (no error),
     // so the lesson silently "came back" on refresh. The admin client bypasses
-    // RLS and actually deletes — the same pattern deleteMaterial uses.
+    // RLS and actually deletes: the same pattern deleteMaterial uses.
     const admin = createAdminClient();
     const { data, error } = await admin
       .from("lessons")
@@ -379,7 +379,7 @@ export async function setLessonStatus(
  * Edit a lesson's metadata (title / notes / week / assignment requirement)
  * without touching its video. The assignment lifecycle follows the switch:
  *   - switched ON  → an existing assignment is updated + re-published; if none
- *     exists it is created PUBLISHED (the admin just wrote the prompt — it
+ *     exists it is created PUBLISHED (the admin just wrote the prompt, it
  *     must not silently vanish).
  *   - switched OFF → the existing assignment is UNpublished, never deleted
  *     (submissions + grading history survive; flipping back is one tap).
@@ -526,7 +526,7 @@ export type RosterForCourse = {
 
 /**
  * Load the full student roster + this course's enrollments on demand. The
- * builder page no longer drags the entire roster into every page load — the
+ * builder page no longer drags the entire roster into every page load: the
  * enrolled-students section fetches only when it's first opened.
  */
 export async function loadRoster(courseId: string): Promise<RosterForCourse> {

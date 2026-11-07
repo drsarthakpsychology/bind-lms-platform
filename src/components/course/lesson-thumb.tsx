@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 export type LessonState = "next" | "done" | "started" | "open" | "live" | "later";
 
 /**
- * A lecture "thumbnail" — the video-tile people scan on YouTube, drawn in the
+ * A lecture "thumbnail": the video-tile people scan on YouTube, drawn in the
  * brand: a numbered tile, a play button that pops on hover, a ✓ when watched,
  * a lock when it isn't open yet. Pure markup; parent supplies `group/thumb`.
  */

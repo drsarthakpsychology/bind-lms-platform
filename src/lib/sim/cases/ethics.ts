@@ -2,7 +2,7 @@ import { buildCase, type CaseAuthoring } from "../case-builder";
 
 const drSaxena: CaseAuthoring = {
   id: "eth-saxena",
-  title: "Dr. Meera, 38 — the certificate she was pressured for",
+  title: "Dr. Meera, 38: the certificate she was pressured for",
   difficulty: "guarded",
   traps: ["secondary_gain", "adherence_fiction", "medical_mimic"],
   moduleId: "mod-ethics",
@@ -13,7 +13,7 @@ const drSaxena: CaseAuthoring = {
   city: "Bhopal",
   family: "married; two children; employer demanding a 'stress certificate'",
   register: "Professional Hindi-English, measured",
-  presentation: "Her employer says she's 'underperforming' and will dismiss her unless she produces a 'stress certificate'. She has genuine anxiety symptoms — but is being forced to perform illness.",
+  presentation: "Her employer says she's 'underperforming' and will dismiss her unless she produces a 'stress certificate'. She has genuine anxiety symptoms, but is being forced to perform illness.",
   chiefComplaint: "They want me to be unwell. If I'm not unwell, they'll fire me. I don't know if I'm sick or they're making me sick.",
   timeline: "Three months of pressure at work. She has real insomnia and anxiety, but the framing (produce a certificate or leave) is coercion.",
   treatmentHistory: "None.",

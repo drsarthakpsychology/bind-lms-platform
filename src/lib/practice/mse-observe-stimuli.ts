@@ -1,7 +1,7 @@
 import type { MseStimulus } from "./mse";
 
 /**
- * MSE Level 1 observe stimuli (Part 6.4) — short vignettes the student
+ * MSE Level 1 observe stimuli (Part 6.4): short vignettes the student
  * describes in free text with zero diagnostic labels. "Describe, don't
  * diagnose": the observation targets are implicit; scoring is done by
  * scoreObserve() against behavioural vocabulary.
@@ -64,7 +64,7 @@ export const OBSERVE_STIMULI: MseStimulus[] = [
   {
     id: "obs-idiom-4",
     content:
-      "A 45-year-old shop owner says: \"My wife dragged me here. I'm not an alcoholic. I can stop any time I want.\" He leans back, arms crossed. A faint smell of alcohol. When you ask about the bottles she found, he says: \"Business stress. That's all. Sab kuch kar liya — I've tried everything.\"",
+      "A 45-year-old shop owner says: \"My wife dragged me here. I'm not an alcoholic. I can stop any time I want.\" He leans back, arms crossed. A faint smell of alcohol. When you ask about the bottles she found, he says: \"Business stress. That's all. Sab kuch kar liya. I've tried everything.\"",
     domain: "behavior",
     expertTags: [],
   },

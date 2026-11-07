@@ -14,10 +14,10 @@ const schema = z.object({
 });
 
 /**
- * POST /api/practice/voice/synthesis — server-side TTS.
+ * POST /api/practice/voice/synthesis: server-side TTS.
  * CosyVoice 2 (NVIDIA NIM) → Kokoro → fixture. Cache-first (R2 keyed on
  * sha256(text+voice+emotion+speed)). Fixture mode returns provider
- * 'fixture' and the client renders with browser speech + affect mapping —
+ * 'fixture' and the client renders with browser speech + affect mapping:
  * the app is fully demoable with zero keys.
  */
 export async function POST(req: Request) {

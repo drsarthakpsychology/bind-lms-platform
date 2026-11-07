@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
  * Shared uncaught-error fallback for error.tsx boundaries. Calm, on-brand,
  * trust-preserving: icon, title, short copy, a retry action, and an optional
  * error digest as a support reference. Boundary files pass their own wrapper
- * height — full viewport for public routes, inside-the-shell for /(dashboard).
+ * height: full viewport for public routes, inside-the-shell for /(dashboard).
  */
 export function ErrorState({
   onRetry,
@@ -36,8 +36,8 @@ export function ErrorState({
         <div className="space-y-1.5">
           <h2 className="text-h2">Something went wrong</h2>
           <p className="mx-auto max-w-sm text-small text-muted-foreground">
-            This page hit an unexpected snag. Nothing you&apos;ve done is lost —
-            try again, and if it keeps happening we&apos;ll get it sorted.
+            This page hit an unexpected snag. Nothing you&apos;ve done is lost.
+            Try again, and if it keeps happening we&apos;ll get it sorted.
           </p>
         </div>
         <Button onClick={onRetry} variant="default">

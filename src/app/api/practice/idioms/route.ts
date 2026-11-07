@@ -6,7 +6,7 @@ import { rateLimit } from "@/lib/rate-limit";
 export const runtime = "nodejs";
 
 /**
- * GET /api/practice/idioms — the approved idiom bank (content wiring).
+ * GET /api/practice/idioms: the approved idiom bank (content wiring).
  * Students read approved rows only (RLS: idioms_select_approved_or_admin).
  * The decode page merges these with the static IDIOMS so the drill always has
  * the full baseline AND picks up newly faculty-approved phrases.

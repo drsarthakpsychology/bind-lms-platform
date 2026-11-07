@@ -5,12 +5,12 @@ import { BRAND } from "@/lib/brand";
 /**
  * The shared site footer, extracted from the landing page and rendered on every
  * public page (landing, waitlist, login, expired, verify, and all /policies).
- * Adds the Legal column the compliance wiring needs — Terms, Privacy, Refund,
+ * Adds the Legal column the compliance wiring needs: Terms, Privacy, Refund,
  * Grievance and Disclaimer are reachable from every page, and the payment
  * gateway / consumer-e-commerce rules expect refund + grievance links visible.
  *
  * Cookie note is the document-only posture (PostHog is not configured; only
- * strictly necessary auth cookies + the Vercel analytics beacon run) — the
+ * strictly necessary auth cookies + the Vercel analytics beacon run): the
  * Cookie Policy page states the reality.
  */
 
@@ -74,7 +74,7 @@ export function SiteFooter() {
             </ul>
           </nav>
           <p className="mt-3 max-w-xl text-caption text-muted-foreground">
-            Cookies: only what’s needed to run the site — see the{" "}
+            Cookies: only what’s needed to run the site. See the{" "}
             <Link
               href="/policies/cookies"
               className="text-link underline underline-offset-4 hover:text-foreground"

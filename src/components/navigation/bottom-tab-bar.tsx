@@ -51,7 +51,7 @@ const LECTURE_ONLY_TABS: Tab[] = [
  * Phone bottom navigation (<768px; tablets get the icon rail instead)
  * (Android/Instagram/YouTube pattern): icon over a
  * short label, the active tab gets a lime pill behind its icon, and the last
- * slot is always "More" — the drawer with everything else and your account.
+ * slot is always "More": the drawer with everything else and your account.
  * Hidden on lesson/material pages and in the patient session.
  */
 export function BottomTabBar({

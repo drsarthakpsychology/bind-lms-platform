@@ -7,7 +7,7 @@ import { createClient } from "@/lib/supabase/server";
 /**
  * Server-side object resolution + streaming for the stream proxy.
  *
- * The proxy never hands the browser a storage URL — it fetches the object
+ * The proxy never hands the browser a storage URL. It fetches the object
  * server-side and streams it back through an authenticated channel. This file
  * centralises "given a lesson, what object lives where and in what form",
  * so both the R2 (S3) and Supabase Storage backends behave the same to the
@@ -35,7 +35,7 @@ export type ResolvedStream =
  * Resolve a lesson's media object(s) server-side from an already-fetched
  * lesson row. Null if the lesson has none.
  *
- * Location comes from RECORDED columns only — never inferred from
+ * Location comes from RECORDED columns only, never inferred from
  * NEXT_PUBLIC_MEDIA_PROVIDER. That variable may decide where a NEW upload
  * goes; it has no business telling us where an existing object lives. Legacy
  * rows with no video_provider/video_bucket were all uploaded to Supabase's
@@ -139,7 +139,7 @@ export async function authorizeAndResolveLesson(opts: {
     return { authorized: Boolean(course?.is_published) && canWatch(access, opts.lessonId, false), resolved };
   }
 
-  // Lecture-only scope: published lessons are the whole surface — no enrollment.
+  // Lecture-only scope: published lessons are the whole surface, no enrollment.
   if (opts.scope === "lectures_only") {
     return { authorized: Boolean(course?.is_published), resolved };
   }
@@ -180,8 +180,8 @@ export async function getObjectStream(
     }
     return await supabaseStream(bucket, key, range);
   } catch (e) {
-    // Log enough to identify the file when something breaks — provider, bucket,
-    // key — not just "Video unavailable".
+    // Log enough to identify the file when something breaks: provider, bucket,
+    // key, not just "Video unavailable".
     console.error("getObjectStream failed:", { provider, bucket, key, error: e instanceof Error ? e.message : e });
     return null;
   }
@@ -231,7 +231,7 @@ async function r2Stream(
   key: string,
   range?: string | null,
 ): Promise<StreamResult> {
-  // Reuse the process-wide R2 client (makeR2Client singleton in ./r2) — the
+  // Reuse the process-wide R2 client (makeR2Client singleton in ./r2): the
   // stream hot path (one segment fetch per 6s) previously allocated a fresh
   // S3Client on every request.
   const { makeR2Client } = await import("./r2");
@@ -246,7 +246,7 @@ async function r2Stream(
   if (!obj.Body) return null;
   // AWS SDK v3's GetObjectCommand Body is an SdkStream (Node Readable), NOT a
   // Web ReadableStream. Passing it straight into NextResponse (a Web Response)
-  // silently fails to deliver bytes to the browser — the proxy returned
+  // silently fails to deliver bytes to the browser: the proxy returned
   // 200/206 + headers but the <video> never played ("blocked"). Convert it.
   const body = obj.Body.transformToWebStream();
   return {
@@ -269,7 +269,7 @@ async function supabaseStream(
   const admin = createAdminClient();
 
   // .download() cannot do HTTP ranges, and passing a `transform` option sends
-  // the request to the IMAGE render endpoint — which fails for video. Every
+  // the request to the IMAGE render endpoint, which fails for video. Every
   // browser <video> element sends a Range header, so the old code hit the
   // image endpoint on every load and could never play. Mint a short-lived
   // signed URL server-side and fetch it with the caller's Range header, so we

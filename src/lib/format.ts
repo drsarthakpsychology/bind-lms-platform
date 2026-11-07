@@ -1,7 +1,7 @@
 /**
  * Shared date/time formatting (brief §1.12). One function everywhere, no bare
  * numeric dates like "12/08/2026" (ambiguous between DD/MM and MM/DD).
- * Relative for the recent past, "12 Aug" / "12 Aug 2026" beyond a week —
+ * Relative for the recent past, "12 Aug" / "12 Aug 2026" beyond a week:
  * unambiguous in every locale.
  */
 const rtf = new Intl.RelativeTimeFormat("en", { numeric: "auto" });

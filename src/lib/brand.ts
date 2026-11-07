@@ -1,5 +1,5 @@
 /**
- * Brand identity — single source of truth for the product name and copy.
+ * Brand identity: single source of truth for the product name and copy.
  * Every user-facing brand string reads from here; a rename is a one-file edit.
  */
 export const BRAND = {
@@ -17,11 +17,11 @@ export const BRAND = {
   lead: "Dr. Sarthak Dave, MBBS, MD (Psychiatry)",
   /** The programme builder. */
   builder: "Kavya Bothra",
-  /** Cohort One start date — single source for the public-site deadline. */
+  /** Cohort One start date: single source for the public-site deadline. */
   cohortStart: "20 August",
 } as const;
 
-/** Cohort One start date as ISO — drives the deadline copy everywhere. */
+/** Cohort One start date as ISO: drives the deadline copy everywhere. */
 export const COHORT = {
   name: "Cohort One",
   startDate: "2026-08-20",
@@ -34,7 +34,7 @@ export function hasCohortStarted(now: Date = new Date()): boolean {
 
 /**
  * Honest deadline copy. Before the start date it names the date; after, it
- * drops the stale date rather than asserting a past one (PFD L1/L4 — a past
+ * drops the stale date rather than asserting a past one (PFD L1/L4, a past
  * "begins X" contradicts what the visitor can verify).
  */
 export function cohortDeadlineText(now: Date = new Date()): string {

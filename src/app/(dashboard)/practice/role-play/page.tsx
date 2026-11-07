@@ -8,10 +8,10 @@ import { requireFeature } from "@/lib/flags";
 export const dynamic = "force-dynamic";
 
 /**
- * /practice/role-play — peer role-play rooms (Part 6.6).
+ * /practice/role-play: peer role-play rooms (Part 6.6).
  * Pair up with a classmate: one plays the patient, one the clinician.
  * Message thread persists per session; both participants can read it.
- * No AI involved — the peer IS the patient.
+ * No AI involved: the peer IS the patient.
  */
 export default async function RolePlayPage(props: {
   searchParams: Promise<{ session?: string }>;
@@ -46,7 +46,7 @@ export default async function RolePlayPage(props: {
     s.student_a === user.id ? s.role_a : s.role_a === "patient" ? "clinician" : "patient";
 
   // Skill-matching (IDEAS: peer role-play skill-matching): find a peer whose
-  // weaknesses complement the caller's — their strong domain covers my gap.
+  // weaknesses complement the caller's: their strong domain covers my gap.
   const admin = createAdminClient();
   const { data: myScores } = await admin
     .from("sim_scores")
@@ -90,7 +90,7 @@ export default async function RolePlayPage(props: {
       if (peerProfile) {
         recommendedPeer = {
           email: String(peerProfile.email),
-          reason: `Their sessions show strength where you miss most (${mySpots[0].label.toLowerCase()}) — a practice pair that teaches both of you.`,
+          reason: `Their sessions show strength where you miss most (${mySpots[0].label.toLowerCase()}): a practice pair that teaches both of you.`,
         };
       }
     }

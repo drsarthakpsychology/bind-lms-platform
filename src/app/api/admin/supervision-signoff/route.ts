@@ -11,7 +11,7 @@ const schema = z.object({
 });
 
 /**
- * POST /api/admin/supervision-signoff — admin signs off (or rejects) a
+ * POST /api/admin/supervision-signoff: admin signs off (or rejects) a
  * student's requested supervision entry. Admin-only; uses the service-role
  * client to write the status.
  */

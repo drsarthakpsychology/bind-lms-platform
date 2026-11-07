@@ -2,7 +2,7 @@ import { appUrl as liveAppUrl } from "@/lib/app-url";
 import { NextResponse } from "next/server";
 
 /**
- * A2A agent card (a2a-protocol.org) — how an AI agent discovers what this
+ * A2A agent card (a2a-protocol.org), how an AI agent discovers what this
  * service offers. Honest scope: VIBHA is a website, not an autonomous agent;
  * the card describes its informational surface so a coordinating agent can
  * decide how to interact with it (visit the public pages, query the tutor).
@@ -20,7 +20,7 @@ const card = {
   url: baseUrl,
   documentationUrl: `${baseUrl}/openapi.json`,
   capabilities: {
-    // The site is informational — it can answer about the programme and report health.
+    // The site is informational. It can answer about the programme and report health.
     actions: ["read.public_pages", "query.health"],
   },
   skills: [

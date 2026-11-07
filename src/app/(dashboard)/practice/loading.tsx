@@ -2,7 +2,7 @@ import { LoadingFrame } from "@/components/design-system/slow-state";
 import { Skeleton } from "@/components/ui/skeleton";
 
 /**
- * /practice loading state — card-shaped skeletons, never a spinner (B5).
+ * /practice loading state: card-shaped skeletons, never a spinner (B5).
  * Matches the browse grid: a wide recommended card + a 3-column card grid.
  */
 export default function PracticeLoading() {

@@ -4,7 +4,7 @@ import { motion, useReducedMotion } from "motion/react";
 import { cn } from "@/lib/utils";
 
 /**
- * Shared neo-brutalist primitives — the recurring marks that hold the public
+ * Shared neo-brutalist primitives: the recurring marks that hold the public
  * surfaces (landing, /waitlist) in one visual language. Extracted from the
  * landing page so the conversion surfaces reuse the same craft.
  */
@@ -23,9 +23,9 @@ export function Rule({ className }: { className?: string }) {
  * A rotated rubber-stamp. Default is the heavy signature stamp (double-ring
  * outline, peach fill, ink text). `variant="accent"` is the light paired
  * treatment (single border, translucent peach, smaller) used for small marks
- * that sit beside other accent pieces — e.g. the hero "PRACTISE" stamp next
+ * that sit beside other accent pieces: e.g. the hero "PRACTISE" stamp next
  * to the tape strip, so the two read as a matched set.
- * Both land once when they enter the viewport — a one-shot scale-settle with
+ * Both land once when they enter the viewport: a one-shot scale-settle with
  * the system's springy ease, mimicking a stamp coming down onto the document.
  * transform/opacity only; reduced-motion and no-JS render them in place.
  */

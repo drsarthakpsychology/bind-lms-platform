@@ -10,17 +10,17 @@ import { rateLimit } from "@/lib/rate-limit";
  * Body: { lessonId: string }
  *
  * Returns a short-lived STREAM SESSION TOKEN plus the stream-proxy base. The
- * player never receives a raw storage URL — it passes the token to the stream
+ * player never receives a raw storage URL. It passes the token to the stream
  * proxy, which resolves the actual object server-side after re-checking
  * enrolment. This is the round-8 "no downloadable file / no reusable URL"
  * end state:
- *   - Same-origin gate (Origin/Referer vs the app origin) — fails closed.
+ *   - Same-origin gate (Origin/Referer vs the app origin): fails closed.
  *   - Token bound to (user, lesson, course), HMAC-signed, 5-min TTL.
  *   - Rate-limited per user and per IP.
  *   - The stream proxy serves playlist + segments + AES-128 key.
  */
 export async function POST(request: Request) {
-  // Same-origin gate — fail closed (missing or mismatched origin rejects).
+  // Same-origin gate: fail closed (missing or mismatched origin rejects).
   if (!isSameOrigin(request)) {
     return NextResponse.json({ error: "Forbidden origin." }, { status: 403 });
   }
@@ -49,7 +49,7 @@ export async function POST(request: Request) {
 
   // Enrollment + publish re-check at request time (admin bypasses). A
   // non-enrolled authenticated user gets nothing, even if they know the lesson
-  // id — this closes the gap where video URLs were gated on publish only.
+  // id: this closes the gap where video URLs were gated on publish only.
   const { canAccessLesson } = await import("@/lib/enrollment");
   const access = await canAccessLesson(lessonId);
   if (!access.ok || !access.profile) {
@@ -77,7 +77,7 @@ export async function POST(request: Request) {
     ? lesson.media_assets[0]
     : lesson.media_assets;
   // Only a real master playlist means HLS. A freshly-uploaded SOURCE row has
-  // key_prefix set but master_playlist null — it must resolve as a plain MP4,
+  // key_prefix set but master_playlist null. It must resolve as a plain MP4,
   // not run hls.js against a raw file.
   const masterKey = media?.master_playlist ?? null;
   const key = masterKey ?? lesson.video_storage_path;
@@ -101,7 +101,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Not authorized." }, { status: 403 });
   }
 
-  // Mint the viewer-bound stream token. No storage key, no signed URL — the
+  // Mint the viewer-bound stream token. No storage key, no signed URL: the
   // proxy resolves the object server-side.
   const token = mintStreamToken({
     userId: profile.id,

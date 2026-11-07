@@ -2,7 +2,7 @@ import { createBrowserClient } from "@supabase/ssr";
 
 /**
  * Supabase client for use in Client Components ("use client").
- * Reads the public URL + anon key, safe to expose to the browser —
+ * Reads the public URL + anon key, safe to expose to the browser:
  * Row Level Security on every table is what actually enforces access.
  */
 export function createClient() {

@@ -8,7 +8,7 @@ import { Bars, LabButton, LineChart, Panel, type RunnerProps } from "../lab-ui";
 import { Meter } from "./batch2-ui";
 
 /* ------------------------------------------------------------------ */
-/* Pavlov's bell: classical conditioning (Rescorla–Wagner teaching model) */
+/* Pavlov's bell: classical conditioning (Rescorla-Wagner teaching model) */
 /* ------------------------------------------------------------------ */
 
 const MIN_PAIRS = 6;

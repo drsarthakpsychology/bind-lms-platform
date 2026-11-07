@@ -5,7 +5,7 @@
  * Deterministic: same demographics ⇒ same voice id. Providers accept these
  * ids as the `voice` parameter (Qwen3-TTS, Chatterbox, CosyVoice2, Kokoro
  * all take a voice name). The mapping is a CONVENTION: if a provider lacks
- * the exact id, it falls back to its default — the cast still drives the
+ * the exact id, it falls back to its default: the cast still drives the
  * affect-mapped rate/pitch, which is the immersion backbone.
  */
 

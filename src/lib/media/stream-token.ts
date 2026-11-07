@@ -3,16 +3,16 @@ import "server-only";
 import { createHmac, timingSafeEqual } from "node:crypto";
 
 /**
- * Stream session tokens — the short-lived, viewer-bound grant the player uses
+ * Stream session tokens: the short-lived, viewer-bound grant the player uses
  * to fetch segments through the stream proxy.
  *
  * Unlike a raw storage signed URL, this token:
  *   - is bound to (user_id, lesson_id, course_id, expiry);
  *   - is HMAC-signed so it can't be forged;
  *   - expires in minutes (refreshed by the player), so sharing it is useless;
- *   - carries no storage key — the proxy resolves the object server-side.
+ *   - carries no storage key: the proxy resolves the object server-side.
  *
- * The secret is SESSION_SECRET — a dedicated signing secret. It deliberately
+ * The secret is SESSION_SECRET: a dedicated signing secret. It deliberately
  * does NOT fall back to SUPABASE_SERVICE_ROLE_KEY, which bypasses RLS and must
  * never double as a generic signing secret (audit finding #5).
  */

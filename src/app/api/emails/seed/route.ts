@@ -4,7 +4,7 @@ import { requireSuperAdmin } from "@/lib/auth/guards";
 import { getEmailTemplate } from "@/lib/email/templates";
 
 /**
- * POST /api/emails/seed — compose a ready-made template for the compose tab's
+ * POST /api/emails/seed: compose a ready-made template for the compose tab's
  * editor. Templates live server-side (they embed the brand + app URL), so the
  * client asks here and gets back {subject, html} to seed the editor + preview.
  * Admin-only.

@@ -6,7 +6,7 @@ import matter from "gray-matter";
 import { LEGAL } from "./legal-constants";
 
 /**
- * Policy content access — the single way routes read `content/policies/*.md`.
+ * Policy content access: the single way routes read `content/policies/*.md`.
  * One file per policy, frontmatter `{ title, slug, lastUpdated, summary,
  * order }`, body verbatim. Placeholders `[REGISTERED_ADDRESS]` /
  * `[EFFECTIVE_DATE]` are substituted here from `legal-constants` so every page
@@ -33,7 +33,7 @@ export interface Heading {
 
 export interface Policy {
   meta: PolicyMeta;
-  /** Markdown body with placeholders substituted — no frontmatter, no title h1. */
+  /** Markdown body with placeholders substituted, no frontmatter, no title h1. */
   body: string;
   /** The section headings, for the "on this page" TOC. */
   headings: Heading[];

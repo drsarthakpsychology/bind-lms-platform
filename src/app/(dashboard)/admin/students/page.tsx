@@ -12,7 +12,7 @@ import { BulkLockControls } from "./bulk-lock";
 export const dynamic = "force-dynamic";
 
 /**
- * Students — the one place to see and manage every student (2026-11
+ * Students: the one place to see and manage every student (2026-11
  * redesign). One account status for everyone (lib/people/account-status),
  * roll numbers, cohorts, last active and lecture progress in one list with
  * no sideways scrolling. Each student opens a profile with tabs for access,

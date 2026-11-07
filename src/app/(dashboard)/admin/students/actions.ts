@@ -17,7 +17,7 @@ export type CreateStudentState = {
  * Add a student by email. The 8-char password is AUTO-GENERATED (the same
  * generator the roster import uses) and the account is added to
  * `credential_invites` (status pending) so the student appears in the roster /
- * send-email screen immediately — bulk or manually.
+ * send-email screen immediately: bulk or manually.
  */
 export async function createStudent(
   _prevState: CreateStudentState,
@@ -51,7 +51,7 @@ export async function createStudent(
   } catch {
     return {
       error:
-        "SUPABASE_SERVICE_ROLE_KEY isn't set in this deployment yet — add it in Vercel's project settings, then redeploy.",
+        "SUPABASE_SERVICE_ROLE_KEY isn't set in this deployment yet: add it in Vercel's project settings, then redeploy.",
       success: false,
     };
   }
@@ -78,7 +78,7 @@ export async function createStudent(
     if (updateError) {
       return {
         error:
-          "Account created, but setting the expiry date failed — set it manually for now.",
+          "Account created, but setting the expiry date failed: set it manually for now.",
         success: false,
       };
     }
@@ -139,7 +139,7 @@ export async function resetStudentPassword(userId: string): Promise<{ error: str
 
 /**
  * Block or unblock an account. `blocked` is the unconditional every-request
- * override (checked in the session guard, not just at login) — it takes effect
+ * override (checked in the session guard, not just at login). It takes effect
  * on the account's very next request. `reason` is the internal-only note
  * ("fee not paid", "requested pause", …), never shown to the student.
  */
@@ -181,7 +181,7 @@ export async function setAllStudentsStatus(
     .from("profiles")
     .update({
       status,
-      block_reason: status === "blocked" ? "Admin lock — whole programme" : null,
+      block_reason: status === "blocked" ? "Admin lock: whole programme" : null,
     })
     .eq("role", "student")
     .select("id");

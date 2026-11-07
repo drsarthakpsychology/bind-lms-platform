@@ -8,7 +8,7 @@ import { makeDirectorActor } from "./llm-gateway";
 
 /**
  * The shared "run one patient turn" service. The LIVEKIT WORKER and any
- * non-Next consumer call this — it is the EXISTING patient engine (state,
+ * non-Next consumer call this. It is the EXISTING patient engine (state,
  * gates, disclosure, memory, case truth) plus the persistence glue, with the
  * real Groq LLM wired through the gateway. There is exactly ONE brain; text
  * mode and realtime voice both route through it, so voice ↔ text always share
@@ -31,7 +31,7 @@ export interface SessionTurnResult {
   state: PatientState;
   /** The Director's affect for this turn (→ the voice layer, v5 §6). */
   affect?: string;
-  /** The patient's fatigue 0–10 (→ the voice layer). */
+  /** The patient's fatigue 0 to 10 (→ the voice layer). */
   fatigue: number;
 }
 
@@ -123,7 +123,7 @@ export async function runSessionTurn(input: SessionTurnInput): Promise<SessionTu
     trust: result.state.trust,
     state: result.state,
     // The Director's affect + fatigue ride along so the VOICE layer can make
-    // the patient's speech match their emotional state (v5 §6) — the realtime
+    // the patient's speech match their emotional state (v5 §6): the realtime
     // worker uses these to add natural colour (sighs, chuckles) rather than a
     // flat narration voice.
     affect: result.decision.affect,

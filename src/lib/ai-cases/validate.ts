@@ -2,7 +2,7 @@
  * The rule check every AI case must pass before a student sees it. Pure (no
  * network, no database) so it is fully unit-tested.
  *
- *   1. zod: the exact JSON shape (6 clues, 3–5 investigations, …).
+ *   1. zod: the exact JSON shape (6 clues, 3 to 5 investigations, …).
  *   2. The criteria checklist: the clues and results really show what the
  *      diagnosis needs, and the duration fits.
  *   3. Each look-alike the checklist names is listed AND ruled out by a fact

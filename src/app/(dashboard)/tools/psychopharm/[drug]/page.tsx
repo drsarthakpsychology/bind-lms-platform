@@ -36,7 +36,7 @@ export default async function DrugPage({ params }: { params: Promise<{ drug: str
 
   return (
     <div className="mx-auto max-w-3xl space-y-6 py-6 pb-24 lg:pb-6">
-      {/* Mobile header — 40px back target + title context. The shell top bar is
+      {/* Mobile header: 40px back target + title context. The shell top bar is
           present on this route, so its own safe-area inset is off. */}
       <MobileHeader
         className="lg:hidden"
@@ -88,7 +88,7 @@ export default async function DrugPage({ params }: { params: Promise<{ drug: str
         </>
       ) : (
         <>
-          {/* Dose ladder — the signature component (D3). One rung per band. */}
+          {/* Dose ladder: the signature component (D3). One rung per band. */}
           <Suspense
             fallback={
               <div className="space-y-3" aria-label="Loading dose bands">
@@ -143,7 +143,7 @@ export default async function DrugPage({ params }: { params: Promise<{ drug: str
         </>
       ) : null}
 
-      {/* ONE dominant action — pinned above the tab bar on mobile (T32). */}
+      {/* ONE dominant action: pinned above the tab bar on mobile (T32). */}
       <div className="lg:hidden">
         <MobileStickyAction
           offsetForNav

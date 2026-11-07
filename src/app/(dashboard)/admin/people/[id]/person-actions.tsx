@@ -82,7 +82,7 @@ export function PersonActions({ email, name, stage, followUp, isStudent }: { ema
             if (r.setupUrl) {
               try {
                 await navigator.clipboard.writeText(r.setupUrl);
-                setMsg("Student account made. Setup link copied — paste it into WhatsApp.");
+                setMsg("Student account made. Setup link copied: paste it into WhatsApp.");
               } catch {
                 setMsg(`Student account made. Setup link: ${r.setupUrl}`);
               }

@@ -180,9 +180,9 @@ export const THERAPIES = [
 export const MIX_EXAMPLE = {
   patient: "A 24-year-old with low mood and panic attacks. She has stopped going to college.",
   plan: [
-    { when: "Sessions 1–2", what: [["Motivational interviewing", "she finds her own reason to get better."]] },
-    { when: "Sessions 3–6", what: [["Behavioural activation", "small daily plans to restart her routine."], ["CBT", "catching and testing her panic thoughts."]] },
-    { when: "Sessions 7–10", what: [["Exposure", "going back to college, one step at a time."]] },
+    { when: "Sessions 1 to 2", what: [["Motivational interviewing", "she finds her own reason to get better."]] },
+    { when: "Sessions 3 to 6", what: [["Behavioural activation", "small daily plans to restart her routine."], ["CBT", "catching and testing her panic thoughts."]] },
+    { when: "Sessions 7 to 10", what: [["Exposure", "going back to college, one step at a time."]] },
     { when: "Throughout", what: [["Mindfulness and ACT", "handling anxious feelings without fighting them."]] },
     { when: "With the psychiatrist", what: [["Medicines", "reviewed, side effects checked, plan adjusted."]] },
   ],
@@ -237,8 +237,8 @@ export const WEEK = [
   { d: "Wed", kind: "patient" },
   { d: "Thu", kind: "patient" },
   { d: "Fri", kind: "patient" },
-  { d: "Sat", kind: "live", time: "8–10 am" },
-  { d: "Sun", kind: "live", time: "8–11 am, some Sundays till 2 pm" },
+  { d: "Sat", kind: "live", time: "8 to 10 am" },
+  { d: "Sun", kind: "live", time: "8 to 11 am, some Sundays till 2 pm" },
 ] as const;
 
 
@@ -310,7 +310,7 @@ export const TICKER = [
   "Psychiatric interview",
 ] as const;
 
-/** One disorder, start to finish — the core promise, as a 9-step journey. */
+/** One disorder, start to finish: the core promise, as a 9-step journey. */
 export const JOURNEY = {
   disorder: "Depression",
   patient: "A 32-year-old man. Low mood for three months, since losing his job.",
@@ -321,7 +321,7 @@ export const JOURNEY = {
     { k: "Diagnosis", title: "Name it, provisionally", text: "Depressive episode, moderate (ICD-11). Written, not guessed.", icon: "clipboard" },
     { k: "Case sheet", title: "Write it up properly", text: "Every finding in its place, in the format psychiatrists read.", icon: "book" },
     { k: "Treatment plan", title: "Plan with the psychiatrist", text: "Medicines reviewed by the psychiatrist. Your role, their role, clearly split.", icon: "pill" },
-    { k: "Therapy plan", title: "Plan the sessions", text: "Sessions 1–2 motivational interviewing · 3–6 behavioural activation + CBT · then relapse prevention.", icon: "puzzle" },
+    { k: "Therapy plan", title: "Plan the sessions", text: "Sessions 1 to 2 motivational interviewing · 3 to 6 behavioural activation + CBT · then relapse prevention.", icon: "puzzle" },
     { k: "Counselling", title: "Talk to him, and his family", text: "Explain the illness simply. Involve family without breaking confidence.", icon: "family" },
     { k: "Follow-up", title: "Review and adjust", text: "Side effects checked. Progress measured. Plan changed when it isn't working.", icon: "loop" },
   ],
@@ -481,7 +481,7 @@ export const DISORDER_FIELDS = [
 
 export const DISORDER_FOOT = "Plus, for every one: the case sheet, the treatment plan, and counselling the family.";
 
-/** Mini game 3 — memory match. A sign you'll write in the MSE, and what it
+/** Mini game 3: memory match. A sign you'll write in the MSE, and what it
  *  looks like in the room. Six pairs are dealt at random each game. */
 export const MEMORY_PAIRS = [
   { term: "Flight of ideas", meaning: "Leaps from topic to topic. The links just about hold." },
@@ -498,7 +498,7 @@ export const MEMORY_PAIRS = [
   { term: "Catatonia", meaning: "Frozen in one posture, barely responds." },
 ] as const;
 
-/** Mini game 1 — clinical judgement. Answers grounded in the brochure. */
+/** Mini game 1: clinical judgement. Answers grounded in the brochure. */
 export const CLINIC_CALL = [
   {
     q: "New patient. Low mood, poor sleep. Says he drinks “only a little” every night.",
@@ -538,7 +538,7 @@ export const CLINIC_CALL = [
   },
 ] as const;
 
-/** Mini game 2 — spot the defence mechanism. */
+/** Mini game 2: spot the defence mechanism. */
 export const DEFENCE_GAME = [
   { quote: "I don't have a drinking problem. I can stop whenever I want.", options: ["Denial", "Projection", "Displacement", "Rationalisation"], a: 0 },
   { quote: "I'm not angry. You're the one who's always angry with me.", options: ["Denial", "Projection", "Displacement", "Rationalisation"], a: 1 },
@@ -546,15 +546,15 @@ export const DEFENCE_GAME = [
   { quote: "I didn't get the job, but I never really wanted it anyway.", options: ["Denial", "Projection", "Displacement", "Rationalisation"], a: 3 },
 ] as const;
 
-/** Therapy mixer — pick a patient, see a session-by-session plan (examples). */
+/** Therapy mixer: pick a patient, see a session-by-session plan (examples). */
 export const MIXER = [
   {
     who: "Low mood + panic, stopped college",
     age: "24, student",
     plan: [
-      { when: "Sessions 1–2", what: "Motivational interviewing", tone: "lime" },
-      { when: "Sessions 3–6", what: "Behavioural activation + CBT", tone: "blue" },
-      { when: "Sessions 7–10", what: "Exposure: back to college, step by step", tone: "ink" },
+      { when: "Sessions 1 to 2", what: "Motivational interviewing", tone: "lime" },
+      { when: "Sessions 3 to 6", what: "Behavioural activation + CBT", tone: "blue" },
+      { when: "Sessions 7 to 10", what: "Exposure: back to college, step by step", tone: "ink" },
       { when: "Throughout", what: "Mindfulness + ACT", tone: "white" },
     ],
   },
@@ -562,8 +562,8 @@ export const MIXER = [
     who: "Checking rituals for hours every day",
     age: "29, engineer",
     plan: [
-      { when: "Sessions 1–2", what: "Psychoeducation: the OCD cycle", tone: "white" },
-      { when: "Sessions 3–10", what: "Exposure and response prevention", tone: "blue" },
+      { when: "Sessions 1 to 2", what: "Psychoeducation: the OCD cycle", tone: "white" },
+      { when: "Sessions 3 to 10", what: "Exposure and response prevention", tone: "blue" },
       { when: "Alongside", what: "ACT: making room for the anxious thoughts", tone: "lime" },
       { when: "With family", what: "Stop joining in the rituals", tone: "ink" },
     ],
@@ -599,18 +599,18 @@ export const BEYOND = [
 ] satisfies { title: string; text: string; icon: IconName }[];
 
 export const WEEKS_TIMELINE = [
-  { w: "Weeks 1–2", t: "Foundations, the therapy room, the psychiatric interview and MSE" },
-  { w: "Weeks 3–4", t: "Defence mechanisms in practice, psychological assessment" },
-  { w: "Weeks 5–6", t: "Depression, anxiety, suicide risk · bipolar, schizophrenia, OCD" },
-  { w: "Weeks 7–8", t: "Medicines and side effects · clinical reasoning and diagnosis" },
-  { w: "Weeks 9–10", t: "Therapies I and II: how each works, then mixing them" },
-  { w: "Weeks 11–12", t: "Personality disorders · couples, families, addiction, crisis" },
-  { w: "Weeks 13–14", t: "Body, culture, memory and dementia · children and development" },
-  { w: "Weeks 15–16", t: "Trauma and eating disorders · notes, reports, final portfolio" },
+  { w: "Weeks 1 to 2", t: "Foundations, the therapy room, the psychiatric interview and MSE" },
+  { w: "Weeks 3 to 4", t: "Defence mechanisms in practice, psychological assessment" },
+  { w: "Weeks 5 to 6", t: "Depression, anxiety, suicide risk · bipolar, schizophrenia, OCD" },
+  { w: "Weeks 7 to 8", t: "Medicines and side effects · clinical reasoning and diagnosis" },
+  { w: "Weeks 9 to 10", t: "Therapies I and II: how each works, then mixing them" },
+  { w: "Weeks 11 to 12", t: "Personality disorders · couples, families, addiction, crisis" },
+  { w: "Weeks 13 to 14", t: "Body, culture, memory and dementia · children and development" },
+  { w: "Weeks 15 to 16", t: "Trauma and eating disorders · notes, reports, final portfolio" },
 ] as const;
 
 /* ======================================================================
-   v3 — student-first flow: quick answers, fees & joining.
+   v3: student-first flow: quick answers, fees & joining.
    ====================================================================== */
 
 /** The five things a student checks first, answered in the hero. */

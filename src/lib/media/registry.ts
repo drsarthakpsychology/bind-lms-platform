@@ -5,7 +5,7 @@
  * exists for it end-to-end. For course materials that means a renderer for its
  * kind (enforced by registry.test.ts). For assignment submissions it means a
  * student can actually submit that type. Never add a format here without its
- * working path — a list with holes is what caused the pptx dead-end.
+ * working path: a list with holes is what caused the pptx dead-end.
  *
  * Everything that lists formats reads from this module: the material uploader's
  * accept list, the assignment editor's accepted-type selector, the server-side
@@ -83,7 +83,7 @@ export const MATERIAL_FORMATS: Record<string, MaterialFormatSpec> = {
     maxBytes: 100 * 1024 * 1024,
     accepted: true,
   },
-  // PowerPoint is intentionally NOT supported — no browser renderer for it.
+  // PowerPoint is intentionally NOT supported, no browser renderer for it.
   // Students use PDF instead. Both .ppt and .pptx are rejected at upload.
   ppt: {
     ext: "ppt",
@@ -112,7 +112,7 @@ export const MATERIAL_FORMATS: Record<string, MaterialFormatSpec> = {
  * Material kinds that have a working renderer in the viewer. Keyed by kind:
  * the viewer renders a whole kind. `document` renders PDFs (pdf.js canvas);
  * PPT/PPTX are rejected because the specific format has no renderer even
- * though its broad kind (`document`) does — that nuance lives in
+ * though its broad kind (`document`) does: that nuance lives in
  * MATERIAL_FORMATS[ext].accepted, not here.
  */
 export const materialRenderers: Record<MediaKind, boolean> = {
@@ -152,7 +152,7 @@ export const SUBMISSION_ATTACH_EXTENSIONS: Record<string, string[]> = {
   ],
 };
 
-/** Selectable options for the assignment editor + lesson form — accepted types only. */
+/** Selectable options for the assignment editor + lesson form: accepted types only. */
 export const SUBMISSION_TYPE_OPTIONS: Array<{ value: SubmissionType; label: string }> = (
   Object.entries(SUBMISSION_TYPES) as Array<[SubmissionType, { label: string; accepted: boolean }]>
 )

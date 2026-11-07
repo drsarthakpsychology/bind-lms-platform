@@ -8,7 +8,7 @@ import { getSession } from "@/lib/auth/session";
  */
 export async function GET(req: Request) {
   const session = await getSession();
-  // Reject EVERY non-ok session — including "blocked" — so an overridden
+  // Reject EVERY non-ok session, including "blocked", so an overridden
   // account can't fetch dose data. (The previous check only excluded
   // unauthenticated/expired/session_replaced and silently admitted blocked.)
   if (session.status !== "ok") {

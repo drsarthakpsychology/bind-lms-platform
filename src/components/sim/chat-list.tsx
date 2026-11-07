@@ -11,7 +11,7 @@ export interface ChatTurn {
 }
 
 /**
- * The conversation transcript — owns the viewport between header and composer.
+ * The conversation transcript: owns the viewport between header and composer.
  * Renders the quiet first-turn empty state, then the bubbles. The `scrollRef`
  * is passed in so the parent can pin to the latest turn as messages arrive.
  */
@@ -32,7 +32,7 @@ export const ChatList = React.memo(function ChatList({
         <div className="py-10 text-center">
           <p className="text-base font-semibold text-foreground">{patientName} is waiting.</p>
           <p className="mx-auto mt-1.5 max-w-[36ch] text-small text-muted-foreground">
-            Introduce yourself and ask how they&apos;re doing. Silence is okay — they&apos;ll wait.
+            Introduce yourself and ask how they&apos;re doing. Silence is okay. They&apos;ll wait.
           </p>
         </div>
       ) : null}

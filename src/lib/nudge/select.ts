@@ -1,5 +1,5 @@
 /**
- * "Email students who've gone quiet" — who goes on the list, and who starts
+ * "Email students who've gone quiet", who goes on the list, and who starts
  * ticked. Pure (no server imports), so it is unit-tested and shared by the
  * Progress page and the bulk-send route.
  *

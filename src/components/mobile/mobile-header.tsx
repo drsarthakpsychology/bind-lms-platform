@@ -6,7 +6,7 @@ import { ArrowLeft } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 /**
- * Contextual mobile header — a compact sticky bar with a back affordance, a
+ * Contextual mobile header: a compact sticky bar with a back affordance, a
  * truncated title, and right-aligned actions. This is the "native app" header
  * the brief asks for: one back control, one title, nothing else crammed in.
  *

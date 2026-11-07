@@ -13,7 +13,7 @@ const createSchema = z.object({
 });
 
 /**
- * POST /api/practice/roleplay/session — create a peer role-play session.
+ * POST /api/practice/roleplay/session: create a peer role-play session.
  * Both participants are students of the cohort; the peer is found by email.
  * The creator takes `myRole`, the peer takes the opposite.
  */
@@ -45,7 +45,7 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "No student with that email." }, { status: 404 });
   }
   if (peer.id === user.id) {
-    return NextResponse.json({ error: "Pick a peer — not yourself." }, { status: 400 });
+    return NextResponse.json({ error: "Pick a peer, not yourself." }, { status: 400 });
   }
 
   // Assign roles: creator takes their choice, peer takes the opposite.

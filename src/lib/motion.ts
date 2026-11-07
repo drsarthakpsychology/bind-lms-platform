@@ -7,13 +7,13 @@ export { motion, useReducedMotion };
 /**
  * Shared motion for the Neo-Brutalist design system.
  *
- * The identity is hard edges, offset shadows, ink borders — so the motion is
+ * The identity is hard edges, offset shadows, ink borders, so the motion is
  * deliberately *snappy*, not floaty: short durations, a bouncy-but-tight
  * easing, and small translate distances. Nothing here introduces a new colour,
  * radius, or shadow; it only moves what already exists.
  */
 
-/** Fast, characterful ease — a hint of overshoot without the float. */
+/** Fast, characterful ease: a hint of overshoot without the float. */
 export const EASE_BRUTAL = [0.22, 1, 0.36, 1] as const;
 
 /** Entrance for a block: fades up from 10px, hard-snaps in. */

@@ -1,9 +1,9 @@
 /**
- * Rounds (Part 6.5) — spaced repetition via ts-fsrs v5.
+ * Rounds (Part 6.5): spaced repetition via ts-fsrs v5.
  *
  * FSRS models stability/difficulty/retrievability per card and hits
  * equivalent retention to SM-2 with materially fewer reviews. We cap the
- * daily queue at 25 — a 200-card backlog is how people quit.
+ * daily queue at 25: a 200-card backlog is how people quit.
  *
  * This wraps ts-fsrs so the scheduler logic is testable and provider-free.
  */

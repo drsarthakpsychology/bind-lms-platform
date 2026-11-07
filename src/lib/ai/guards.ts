@@ -1,5 +1,5 @@
 /**
- * AI guards — rate limits, daily/session caps, kill switch, and the
+ * AI guards: rate limits, daily/session caps, kill switch, and the
  * data-policy split. `assertProviderAllowed` throws BEFORE any request
  * leaves the server.
  */
@@ -8,13 +8,13 @@ import type { Provider } from "./router";
 import { canServe } from "./router";
 
 export type Workload =
-  | "content_generation" // drafting cases, cards, items — NO student data
-  | "corpus_processing" // summarising scraped literature — NO student data
-  | "embeddings" // course content embeddings — NO student data
-  | "sim_patient_turn" // live simulated patient — STUDENT DATA
-  | "debrief_scoring" // scoring a student transcript — STUDENT DATA
-  | "journal_support" // journal "help me think" — STUDENT DATA, most sensitive
-  | "knowledge_tutor"; // grounded Q&A over the book corpus — STUDENT DATA (query)
+  | "content_generation" // drafting cases, cards, items, NO student data
+  | "corpus_processing" // summarising scraped literature, NO student data
+  | "embeddings" // course content embeddings, NO student data
+  | "sim_patient_turn" // live simulated patient: STUDENT DATA
+  | "debrief_scoring" // scoring a student transcript: STUDENT DATA
+  | "journal_support" // journal "help me think": STUDENT DATA, most sensitive
+  | "knowledge_tutor"; // grounded Q&A over the book corpus: STUDENT DATA (query)
 
 /** Whether a workload may ever touch a provider that trains on data. */
 export function workloadHasStudentData(workload: Workload): boolean {
@@ -70,7 +70,7 @@ export class AiGuardError extends Error {
 export function guardStudentCall(workload: Workload, opts: AiGuardOptions = {}): void {
   if (opts.enabled === false) throw new AiGuardError("AI features are disabled");
   // Only skip the whole guard when NO cap was configured at all. (With `||`,
-  // passing just ONE cap made the guard return early — silently skipping the
+  // passing just ONE cap made the guard return early: silently skipping the
   // no-train-provider check below, so journal/debrief surfaced a 500 instead
   // of the honest "needs a paid key" message.)
   if (opts.dailyCap === undefined && opts.sessionCap === undefined) return;
@@ -79,7 +79,7 @@ export function guardStudentCall(workload: Workload, opts: AiGuardOptions = {}):
   const studentData = workloadHasStudentData(workload);
   // AI_STUDENT_TIER: "no_train_only" (default) = student-data workloads demand
   // a trainsOnData===false provider. "any" is a DEV-ONLY override that lets a
-  // free tier serve student data — never set it in production; the router's
+  // free tier serve student data, never set it in production; the router's
   // assertProviderAllowed still applies per-call.
   if (process.env.AI_STUDENT_TIER === "any") return;
   if (studentData && !canServe("chat", true)) {

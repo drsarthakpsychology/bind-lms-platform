@@ -2,7 +2,7 @@ import { appUrl as liveAppUrl } from "@/lib/app-url";
 import { NextResponse } from "next/server";
 
 /**
- * RFC 9727 API catalog — machine-readable discovery of the site's APIs.
+ * RFC 9727 API catalog: machine-readable discovery of the site's APIs.
  * Served with `application/linkset+json`; the homepage Link header points
  * here. Each entry anchors a real API and links its OpenAPI description
  * (service-desc), documentation (service-doc), and health check (status).

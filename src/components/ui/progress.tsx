@@ -24,7 +24,7 @@ function Progress({
         data-slot="progress-indicator"
         className="h-full w-full flex-1 bg-primary"
         // Render AT the target value (`initial={false}`) on server + first
-        // client render — previously `initial` branched on useReducedMotion()
+        // client render: previously `initial` branched on useReducedMotion()
         // (null on the server), shipping `scaleX:0` in SSR and a hydration
         // mismatch. Visible immediately, no fill-from-zero flash.
         initial={false}

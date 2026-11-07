@@ -5,8 +5,8 @@ import { usePathname } from "next/navigation";
 /**
  * Decides whether the persistent desktop sidebar shows.
  *
- * Student drill-down (Round 5, refined Round 10): on the DEEPEST pages —
- * a lesson or a material — we show ONE navigation surface at a time (the
+ * Student drill-down (Round 5, refined Round 10): on the DEEPEST pages,
+ * a lesson or a material. We show ONE navigation surface at a time (the
  * page's own back header) and hide the app sidebar, so there's never two
  * columns of navigation. The course OVERVIEW page (`/courses/[id]`) keeps the
  * sidebar: it's a top-level navigation destination (like the dashboard), and
@@ -21,7 +21,7 @@ export function isInnerStudentPath(pathname: string, role: string): boolean {
   // /courses/<id>/lessons/<lessonId>  ✓ hide sidebar
   // /courses/<id>/materials/<materialId> ✓ hide sidebar
   // /courses/<id>                     ✗ keep sidebar
-  // The live patient session is an immersive full-screen conversation — no
+  // The live patient session is an immersive full-screen conversation, no
   // shell chrome (sidebar/top bar) around it.
   return (
     /^\/courses\/[^/]+\/(?:lessons|materials)\//.test(pathname) ||

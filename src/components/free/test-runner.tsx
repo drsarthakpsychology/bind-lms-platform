@@ -154,7 +154,7 @@ export function TestRunner({ id }: { id: string }) {
             ) : null}
           </div>
           <p className={s.note}>
-            Tip: press 1–{options.length} on a keyboard. {done} of {inst.items.length} answered.
+            Tip: press 1 to {options.length} on a keyboard. {done} of {inst.items.length} answered.
           </p>
         </div>
       </div>
@@ -237,12 +237,12 @@ function ResultView({
             ? "4 or more answers in the shaded range means your symptoms are consistent with adult ADHD, and a full assessment by a psychiatrist or clinical psychologist is worth it."
             : "Fewer than 4 answers in the shaded range. This screener doesn't point to adult ADHD, but if attention problems are affecting your life, it's still worth talking to someone."}
         </p>
-        <p style={{ fontSize: "0.88rem" }}>Questions 1–3 count from “Sometimes”; questions 4–6 count from “Often”.</p>
+        <p style={{ fontSize: "0.88rem" }}>Questions 1 to 3 count from “Sometimes”; questions 4 to 6 count from “Often”.</p>
       </div>
     );
     next = result.positive
       ? ["Ask a psychiatrist or clinical psychologist for a full ADHD assessment.", "Low mood, anxiety, poor sleep and thyroid problems can look like ADHD, so a proper assessment checks for these too."]
-      : ["If focus is still a struggle, sleep, stress and mood are worth checking first.", "The PHQ-9 and GAD-7 here take 2–3 minutes each."];
+      : ["If focus is still a struggle, sleep, stress and mood are worth checking first.", "The PHQ-9 and GAD-7 here take 2 to 3 minutes each."];
   } else {
     headline = (
       <div className={s.scoreCard} data-tone="ok">

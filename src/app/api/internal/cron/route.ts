@@ -4,7 +4,7 @@ export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 /**
- * Internal cron endpoint (Part 3.4) — hit by GitHub Actions with a
+ * Internal cron endpoint (Part 3.4): hit by GitHub Actions with a
  * CRON_SECRET bearer token. Never leave this open: it must 401 without the
  * token, and it only performs idempotent maintenance (no data mutation of
  * student content).
@@ -63,7 +63,7 @@ export async function GET(req: Request) {
     }
     case "alumni-transition": {
       // A10: on cohort end, flip students to alumni for permanent read-only
-      // access. Idempotent — only touches rows with cohort_ended_at <= now.
+      // access. Idempotent, only touches rows with cohort_ended_at <= now.
       const { createAdminClient } = await import("@/lib/supabase/server");
       const admin = createAdminClient();
       const now = new Date().toISOString();
@@ -91,7 +91,7 @@ export async function GET(req: Request) {
     }
     case "send-reminders": {
       // TODO(provider): daily digest via Resend when a template + key exist.
-      // Honest stub — the cron fires, records that it isn't configured, and
+      // Honest stub: the cron fires, records that it isn't configured, and
       // does not pretend to send mail.
       const { createAdminClient } = await import("@/lib/supabase/server");
       const admin = createAdminClient();

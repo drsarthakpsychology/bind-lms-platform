@@ -1,11 +1,11 @@
 /**
- * Legal identity — single source of truth for every value the policy pages
+ * Legal identity: single source of truth for every value the policy pages
  * render. A move, a new phone number, or a new grievance officer is a one-file
  * edit. Mirrors the `src/lib/brand.ts` pattern (frozen const + helpers).
  *
- * One value is STILL OUTSTANDING (never invented — see the brief):
+ * One value is STILL OUTSTANDING (never invented, see the brief):
  *   - REGISTERED_ADDRESS  (legally mandatory; the Ahmedabad clinic address)
- * EFFECTIVE_DATE was resolved to the go-live date (2026-08-26) — it binds the
+ * EFFECTIVE_DATE was resolved to the go-live date (2026-08-26). It binds the
  * policy version recorded at enrolment. Change it here if the publish date
  * differs.
  */
@@ -19,20 +19,20 @@ export const LEGAL = {
   phone: "+91 78770 49920",
   /** Grievance Officer and data-protection contact. */
   grievanceOfficer: "Kavya Bothra, Program Manager & Head",
-  /** GST: not registered — GSTIN deliberately absent everywhere. */
+  /** GST: not registered, GSTIN deliberately absent everywhere. */
   gstin: null as string | null,
   /** Course duration used across policies. */
   courseDuration: "three months",
   /** Live-attendance requirement for certification. */
   liveAttendanceRequirement: "50%",
   /**
-   * TODO (Kavya): full business address with PIN code — the Ahmedabad clinic
+   * TODO (Kavya): full business address with PIN code, the Ahmedabad clinic
    * address is fine. Legally mandatory under the Consumer Protection
    * (E-Commerce) Rules, 2020. Do not invent.
    */
   registeredAddress: "[REGISTERED_ADDRESS]",
   /**
-   * The date the policies took effect — set to the go-live date (2026-08-26).
+   * The date the policies took effect: set to the go-live date (2026-08-26).
    * Binds the policy version shown in enrolment records. ISO form so it is
    * valid in JSON-LD (dateModified) and as a version string.
    */
@@ -49,7 +49,7 @@ export function hasUnresolvedPlaceholders(): boolean {
 
 /**
  * A single stable version string for the accepted-terms record. Uses the
- * effective date when set, else an explicit "draft" marker — never a fake date.
+ * effective date when set, else an explicit "draft" marker, never a fake date.
  */
 export function policyVersion(): string {
   return LEGAL.effectiveDate.startsWith("[")

@@ -41,7 +41,7 @@ export function CourseActions({
   }
 
   function handleTogglePublishConfirmed() {
-    // Unpublishing (published → draft) hides the course from students — confirm.
+    // Unpublishing (published → draft) hides the course from students: confirm.
     if (isPublished) {
       setPublishConfirmOpen(true);
     } else {
@@ -98,7 +98,7 @@ export function CourseActions({
         {isPublished ? "Set to draft" : "Publish"}
       </Button>
 
-      {/* Confirm before unpublishing — it hides the course from students. */}
+      {/* Confirm before unpublishing. It hides the course from students. */}
       <MobileBottomSheet
         open={publishConfirmOpen}
         onOpenChange={setPublishConfirmOpen}

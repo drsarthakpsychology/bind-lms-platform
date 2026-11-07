@@ -17,7 +17,7 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 const initialState: CreateLessonState = { error: null, notice: null };
 
 /**
- * Selectable submission types — only types with a working student path are
+ * Selectable submission types, only types with a working student path are
  * offered (the media registry's test enforces that). Stored comma-separated in
  * assignments.submission_type.
  */
@@ -97,7 +97,7 @@ export function LessonForm({
     }
 
     try {
-      // Upload DIRECTLY to the R2 pre-signed PUT URL — no Supabase byte, so the
+      // Upload DIRECTLY to the R2 pre-signed PUT URL, no Supabase byte, so the
       // 50MB Free-plan cap can't block large source videos.
       const res = await fetch(signed.url, { method: "PUT", body: file });
       if (!res.ok) {
@@ -242,7 +242,7 @@ export function LessonForm({
         />
       </div>
 
-      {/* Live preview — the lesson card as the student sees it (T103). */}
+      {/* Live preview: the lesson card as the student sees it (T103). */}
       <details className="group rounded-md border-2 border-border bg-card">
         <summary className="flex cursor-pointer list-none items-center justify-between gap-3 px-4 py-3">
           <span className="text-small font-medium">Preview</span>
@@ -258,7 +258,7 @@ export function LessonForm({
 
       <label className="flex h-6 items-center gap-2.5 text-small font-medium text-foreground">
         {/* The Switch renders a button and doesn't submit a value, so keep a
-            hidden input synced to it — the server action reads
+            hidden input synced to it: the server action reads
             `requiresAssignment === "on"`. */}
         <input type="hidden" name="requiresAssignment" value={requiresAssignment ? "on" : ""} />
         <Switch

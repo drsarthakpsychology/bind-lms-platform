@@ -1,5 +1,5 @@
 /**
- * Streaks (Part 6.6) — count SHOWING UP, not scoring.
+ * Streaks (Part 6.6): count SHOWING UP, not scoring.
  * IST rollover: everything is India time. Getting this wrong breaks streaks
  * at 5:30am. Tested.
  *
@@ -38,7 +38,7 @@ export function recordActivity(state: StreakState, activityDate: string): Streak
   const last = state.last_active_date;
 
   if (last === activityDate) {
-    // Same-day duplicate — no change.
+    // Same-day duplicate, no change.
     return state;
   }
 
@@ -53,7 +53,7 @@ export function recordActivity(state: StreakState, activityDate: string): Streak
     // First activity ever.
     current = 1;
   } else if (gapDays === 1) {
-    // Consecutive day — streak continues.
+    // Consecutive day: streak continues.
     current += 1;
   } else if (gapDays === 2) {
     // Exactly one missed day. Freeze covers it; else manual grace; else reset.
@@ -67,7 +67,7 @@ export function recordActivity(state: StreakState, activityDate: string): Streak
       current = 1;
     }
   } else if (gapDays > 2) {
-    // More than one missed day — the streak breaks (no single freeze covers it).
+    // More than one missed day: the streak breaks (no single freeze covers it).
     current = 1;
   }
 
@@ -83,7 +83,7 @@ export function recordActivity(state: StreakState, activityDate: string): Streak
 
 /**
  * Whether the streak is still alive (no activity today yet, but a freeze
- * would cover it). Never sends "your streak is about to die" guilt — this is
+ * would cover it). Never sends "your streak is about to die" guilt: this is
  * for the internal display only.
  */
 export function streakAlive(state: StreakState): boolean {

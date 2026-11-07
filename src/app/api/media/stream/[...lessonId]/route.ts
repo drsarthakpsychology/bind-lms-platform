@@ -56,7 +56,7 @@ export async function GET(
   // Video chunks are the hot path (one request every few seconds per
   // viewer). The stream token is HMAC-signed, bound to this user + lesson and
   // lives 5 minutes, so for a chunk whose user already passed the full check
-  // on this instance we skip the database session lookup — it was adding a
+  // on this instance we skip the database session lookup. It was adding a
   // round-trip to every chunk and caused buffering on slow connections.
   // Playlists, the key and first requests still do the full check.
   const restPath = segments.slice(1).join("/");
@@ -103,7 +103,7 @@ export async function GET(
   const { provider, bucket, key } = resolved;
   const rest = segments.slice(1).join("/");
 
-  // Per-session AES-128 key — the same bytes the __key__ endpoint hands the
+  // Per-session AES-128 key: the same bytes the __key__ endpoint hands the
   // player. Bound to this token + lesson.
   const sessionKey = deriveSessionKey(token, lessonId);
 
@@ -121,7 +121,7 @@ export async function GET(
     });
   }
 
-  // ---- Legacy single-file video (migration window) — proxy-gated, not
+  // ---- Legacy single-file video (migration window): proxy-gated, not
   // segmented. Served as-is; there's no per-segment layer for a monolithic
   // file. Keep the existing byte-for-byte delivery. ----
   if (!resolved.isHls) {
@@ -217,7 +217,7 @@ function rewritePlaylist(
   const lines = text.split("\n");
   // Variant playlists (which reference .ts segments) get ONE #EXT-X-KEY line,
   // inserted before the first segment reference. Master playlists (which
-  // reference variant .m3u8s) get NO key line — segments never live there.
+  // reference variant .m3u8s) get NO key line: segments never live there.
   let keyInserted = isMaster; // if master, never insert
   const out: string[] = [];
   for (const line of lines) {
@@ -227,7 +227,7 @@ function rewritePlaylist(
       continue;
     }
     if (t.length > 0 && !t.startsWith("#")) {
-      // Emit the DIR-RELATIVE path only — the route prepends keyPrefix when it
+      // Emit the DIR-RELATIVE path only: the route prepends keyPrefix when it
       // resolves the object (targetKey = `${keyPrefix}/${rest}`). Baking the
       // full prefix here would double-prefix and 404 every segment.
       const relPath = dir ? `${dir}/${t}` : t;

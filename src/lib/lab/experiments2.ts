@@ -22,7 +22,7 @@ export const EXPERIMENTS_2: LabExperiment[] = [
       "The response grows quickly at first, then levels off (acquisition). With the bell alone it fades (extinction). After a rest it partly returns (spontaneous recovery), which shows extinction did not erase the first learning.",
     theory: [
       "Food (the unconditioned stimulus) causes salivation without any learning. The bell (the conditioned stimulus) starts out neutral. After pairings, the bell alone causes salivation: the conditioned response.",
-      "The Rescorla–Wagner model says learning is driven by surprise. Each trial changes the bell's strength by a fraction of the gap between what happened and what was expected. Big gap early, big change; small gap later, small change. That is why the curve bends and levels off.",
+      "The Rescorla-Wagner model says learning is driven by surprise. Each trial changes the bell's strength by a fraction of the gap between what happened and what was expected. Big gap early, big change; small gap later, small change. That is why the curve bends and levels off.",
       "Extinction is new learning (\"the bell no longer means food\") laid over the old learning, not the old learning being deleted. The new learning is weaker and more tied to time and place, so it partly fades after a rest. Relearning is also faster the second time.",
       "A similar but different tone gets part of the response (generalisation). The more different the tone, the smaller the response.",
       "This simulation is a teaching model with fixed settings. It is not data from a real animal.",
@@ -34,7 +34,7 @@ export const EXPERIMENTS_2: LabExperiment[] = [
     ],
     evidence: {
       status: "Well established",
-      note: "Acquisition, extinction, spontaneous recovery and generalisation are among the most replicated findings in psychology. The Rescorla–Wagner model explains many results but not all (for example, some effects of pre-exposure to the tone).",
+      note: "Acquisition, extinction, spontaneous recovery and generalisation are among the most replicated findings in psychology. The Rescorla-Wagner model explains many results but not all (for example, some effects of pre-exposure to the tone).",
     },
     refs: [
       "Pavlov, I. P. (1927). Conditioned reflexes (G. V. Anrep, Trans.). Oxford University Press.",
@@ -53,7 +53,7 @@ export const EXPERIMENTS_2: LabExperiment[] = [
         why: "The response partly returns after a rest because extinction was new learning on top of the old, not erasure.",
       },
       {
-        q: "In the Rescorla–Wagner model, why do early pairings change the response the most?",
+        q: "In the Rescorla-Wagner model, why do early pairings change the response the most?",
         options: ["The animal is more awake", "The food is bigger", "The surprise (prediction error) is biggest", "Later trials are not counted"],
         answer: 2,
         why: "Learning is proportional to the gap between what happens and what was expected. Early on, the gap is largest.",

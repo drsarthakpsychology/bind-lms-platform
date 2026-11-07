@@ -1,5 +1,5 @@
 /**
- * Ask the Syllabus (⌘K) — command palette over the ACTUAL content in this
+ * Ask the Syllabus (⌘K): command palette over the ACTUAL content in this
  * install: practice tools, courses/lessons, case-library docs, competencies,
  * and admin surfaces. Search is lexical (no embeddings needed), honest about
  * what it covers, and works fully offline.
@@ -31,7 +31,7 @@ const TOOLS: PaletteEntry[] = [
   { id: "learn", label: "Games", hint: "Coach, quizzes, Detective, review", href: "/games", group: "Tools", keywords: ["cards", "review", "quiz", "game", "streak", "xp"] },
   { id: "ethics", label: "Ethics & Law", hint: "MHA 2017, POCSO, RCI scope", href: "/practice/ethics", group: "Tools", keywords: ["law", "dilemma", "consent"] },
   { id: "library", label: "Case Library", hint: "Browse the open-access corpus", href: "/practice/library", group: "Tools", keywords: ["corpus", "pmc", "cases"] },
-  { id: "reference", label: "Quick Reference A–Z", hint: "Disorders, medicines and words in one minute each", href: "/study/reference", group: "Tools", keywords: ["glossary", "dictionary", "a-z", "lookup", "criteria", "drug", "medicine", "meaning"] },
+  { id: "reference", label: "Quick Reference A to Z", hint: "Disorders, medicines and words in one minute each", href: "/study/reference", group: "Tools", keywords: ["glossary", "dictionary", "a-z", "lookup", "criteria", "drug", "medicine", "meaning"] },
   { id: "notes", label: "Notes", hint: "One-page revision notes", href: "/study/notes", group: "Tools", keywords: ["notes", "study", "summary", "revision", "mse", "schizophrenia", "bipolar", "depression"] },
   { id: "record", label: "Your record", hint: "Supervision hours + weekly check-in", href: "/record", group: "Tools", keywords: ["hours", "signoff", "workload", "energy"] },
   { id: "passport", label: "Skills Passport", hint: "Competencies, evidenced", href: "/passport", group: "Tools", keywords: ["competency", "evidence"] },

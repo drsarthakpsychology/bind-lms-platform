@@ -19,7 +19,7 @@ export function EmptyState({
   description?: string;
   action?: React.ReactNode;
   compact?: boolean;
-  /** Row layout — left-aligned, matches the height of a filled list row. */
+  /** Row layout: left-aligned, matches the height of a filled list row. */
   row?: boolean;
   className?: string;
 }) {

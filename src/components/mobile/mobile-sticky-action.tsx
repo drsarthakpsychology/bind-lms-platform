@@ -4,11 +4,11 @@ import * as React from "react";
 import { cn } from "@/lib/utils";
 
 /**
- * MobileStickyAction — the single thumb-reachable primary action.
+ * MobileStickyAction: the single thumb-reachable primary action.
  *
  * The mobile principle: every screen answers "what is the ONE thing I do
  * next?". This bar pins that action above the safe area (and above the bottom
- * tab bar where one is present) so it is reachable at every scroll position —
+ * tab bar where one is present) so it is reachable at every scroll position,
  * never buried below the fold behind a video, a quiz, or a long form.
  *
  * Compose a `Button` (or buttonVariants link) as the primary `children`.

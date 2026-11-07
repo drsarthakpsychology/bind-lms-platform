@@ -5,7 +5,7 @@ import Link from "next/link";
 import { AlertTriangle, CheckCircle2, ChevronRight } from "lucide-react";
 
 /**
- * Triage view — the ≤10 item queue + the auto-released count as a number,
+ * Triage view: the ≤10 item queue + the auto-released count as a number,
  * not a backlog. Clicking an item opens the sim-review for that session.
  */
 export function TriageView({
@@ -20,7 +20,7 @@ export function TriageView({
 }) {
   return (
     <div className="space-y-4">
-      {/* low-confidence quiz areas — the curriculum signal */}
+      {/* low-confidence quiz areas: the curriculum signal */}
       {weakQuizItems.length > 0 ? (
         <div className="rounded-md border-2 border-status-pending-fg/40 bg-status-pending-bg p-3">
           <p className="flex items-center gap-1.5 text-small font-semibold text-status-pending-fg">

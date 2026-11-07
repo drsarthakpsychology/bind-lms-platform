@@ -6,7 +6,7 @@
  *   - Try providers in priority order for the requested capability.
  *   - On 429 / 5xx / timeout → fail over to the next provider immediately,
  *     log it, don't surface an error to the student.
- *   - Exponential backoff per provider, but never block — go sideways.
+ *   - Exponential backoff per provider, but never block: go sideways.
  *   - AI_ENABLED=false → deterministic fixture, no network call.
  */
 
@@ -94,7 +94,7 @@ async function callOpenAI(
     },
     body: JSON.stringify(body),
     cache: "no-store",
-    // Abort the request on timeout — the old code raced a manual setTimeout
+    // Abort the request on timeout: the old code raced a manual setTimeout
     // and leaked the timer (the fetch kept running in the background).
     signal: AbortSignal.timeout(TIMEOUT_MS),
   });
@@ -117,7 +117,7 @@ async function callOpenAI(
   return {
     text,
     raw: text,
-    // Real token counts from the provider — what /admin/infra's AI usage panel
+    // Real token counts from the provider: what /admin/infra's AI usage panel
     // needs to be truthful. Absent usage → 0 (some providers omit it).
     usage: {
       tokensIn: j.usage?.prompt_tokens ?? 0,
@@ -172,7 +172,7 @@ function extractJson(text: string): string {
  *  when another provider can serve the request. */
 export async function aiChat(messages: AiChatMessage[], opts: AiRequestOptions): Promise<AiResponse> {
   if (!isEnabled()) {
-    // Fixture path — deterministic, network-free. Logged as provider
+    // Fixture path: deterministic, network-free. Logged as provider
     // "fixture" so the usage panel reflects reality (served by fixtures).
     const turn = fixtureReply(opts.workload);
     void logAiUsage({ workload: opts.workload, provider: "fixture", tokensIn: 0, tokensOut: 0, latencyMs: 0, status: "ok" });
@@ -185,7 +185,7 @@ export async function aiChat(messages: AiChatMessage[], opts: AiRequestOptions):
   const candidates = opts.providerId ? allCandidates.filter((p) => p.id === opts.providerId) : allCandidates;
   if (!candidates.length) {
     const reason = `no configured/enabled providers (AI_ENABLED=${process.env.AI_ENABLED ?? "unset"}, keys present: ${availableProviders().filter((p) => keyFor(p)).map((p) => p.id).join(",") || "none"})`;
-    console.warn(`[SIM] ALL PROVIDERS FAILED — falling back to scripted. Reasons: ["${reason}"]`);
+    console.warn(`[SIM] ALL PROVIDERS FAILED: falling back to scripted. Reasons: ["${reason}"]`);
     if (process.env.AI_FIXTURE_FALLBACK === "true") {
       log(null, opts.workload, "no provider, falling back to fixture");
       const turn = fixtureReply(opts.workload);
@@ -197,7 +197,7 @@ export async function aiChat(messages: AiChatMessage[], opts: AiRequestOptions):
 
   // Cold-start bootstrap: restore the last known failures/latency from the DB
   // so a provider degraded before a serverless cold start isn't retried blind.
-  // Fire-and-forget — never blocks the request.
+  // Fire-and-forget, never blocks the request.
   void warmProviderCircuit();
 
   let attempt = 0;
@@ -218,7 +218,7 @@ export async function aiChat(messages: AiChatMessage[], opts: AiRequestOptions):
           void logAiUsage({ workload: opts.workload, provider: provider.id, tokensIn: usage.tokensIn, tokensOut: usage.tokensOut, latencyMs, status: "ok" });
           return { text, provider: provider.id, json: parsed };
         } catch {
-          // JSON parse/validation failed — try one repair retry, else fail over.
+          // JSON parse/validation failed: try one repair retry, else fail over.
           if (attempt === 1) {
             const repair = await callProvider(provider, [
               ...messages,
@@ -230,7 +230,7 @@ export async function aiChat(messages: AiChatMessage[], opts: AiRequestOptions):
             return { text: repair.text, provider: provider.id, json: parsed };
           }
           const schemaErr = new Error(`schema validation failed on provider ${provider.id}`);
-          // A provider returning valid HTTP but garbage content isn't "down" —
+          // A provider returning valid HTTP but garbage content isn't "down":
           // mark it so the catch doesn't open the circuit for it.
           (schemaErr as Error & { misbehavior?: boolean }).misbehavior = true;
           throw schemaErr;
@@ -246,7 +246,7 @@ export async function aiChat(messages: AiChatMessage[], opts: AiRequestOptions):
       const model = (e as unknown as { model?: string }).model ?? "?";
       const retryable = status !== undefined ? RETRYABLE.has(status) : true;
       // Schema-parse misbehavior (valid HTTP, bad content) and non-retryable
-      // client errors (4xx) are NOT provider outages — don't open the circuit
+      // client errors (4xx) are NOT provider outages: don't open the circuit
       // for them. Only transport failures (429/5xx/timeout) trip the breaker.
       const misbehavior = Boolean((e as { misbehavior?: boolean }).misbehavior);
       const openCircuit = retryable && !misbehavior;
@@ -263,7 +263,7 @@ export async function aiChat(messages: AiChatMessage[], opts: AiRequestOptions):
       }
     }
   }
-  console.warn(`[SIM] ALL PROVIDERS FAILED — falling back to scripted. Reasons: ${JSON.stringify(reasons)}`);
+  console.warn(`[SIM] ALL PROVIDERS FAILED: falling back to scripted. Reasons: ${JSON.stringify(reasons)}`);
   throw new AiUnavailableError(opts.workload);
 }
 
@@ -274,7 +274,7 @@ export async function aiChat(messages: AiChatMessage[], opts: AiRequestOptions):
  *
  * OpenAI-compatible SSE only. First-byte-wins failover: once a provider sends
  * its first token we commit to it (a mid-stream provider death surfaces to the
- * caller as the stream ending early — the client can show a truncated state).
+ * caller as the stream ending early: the client can show a truncated state).
  */
 export async function* aiChatStream(
   messages: AiChatMessage[],

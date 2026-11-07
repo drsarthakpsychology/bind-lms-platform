@@ -1,5 +1,5 @@
 /**
- * A fixture DepthCase for tests — a man with depression, a hidden debt, and a
+ * A fixture DepthCase for tests: a man with depression, a hidden debt, and a
  * buried self-harm history. Used by the engine tests to assert gate behaviour
  * deterministically (no network).
  */
@@ -8,7 +8,7 @@ import type { DepthCase } from "./types";
 
 export const FIXTURE_CASE: DepthCase = {
   case_id: "fixture-ravi",
-  title: "Ravi, 34 — 'the heaviness'",
+  title: "Ravi, 34: 'the heaviness'",
   difficulty: "guarded",
   traps: ["somatic_mask", "late_risk_reveal"],
   identity: {

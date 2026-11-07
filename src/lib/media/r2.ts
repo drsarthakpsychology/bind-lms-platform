@@ -21,7 +21,7 @@ export class R2MediaProvider implements MediaProvider {
     if (!bucket) {
       throw new Error("R2_BUCKET_NAME is not set (see .env.example).");
     }
-    // Shared module-level singleton — one S3 client for the whole process,
+    // Shared module-level singleton: one S3 client for the whole process,
     // so the stream hot path never allocates a new client per request.
     this.client = makeR2Client();
     this.bucket = bucket;
@@ -59,9 +59,9 @@ export class R2MediaProvider implements MediaProvider {
       );
       return true;
     } catch (e) {
-      // R2 returns 404 (NotFound) for a missing key — that still proves the
+      // R2 returns 404 (NotFound) for a missing key: that still proves the
       // endpoint + credentials work, so connectivity is healthy. Anything else
-      // (timeout, DNS, 403, missing env) is a REAL failure — the old code
+      // (timeout, DNS, 403, missing env) is a REAL failure: the old code
       // swallowed every error and reported healthy even when R2 was down.
       const status = (e as { $metadata?: { httpStatusCode?: number } })?.$metadata?.httpStatusCode;
       if (status === 404) return true;
@@ -119,7 +119,7 @@ export { S3Client, GetObjectCommand, PutObjectCommand, DeleteObjectCommand, Head
 export { makeR2Client };
 
 /**
- * Pre-signed PUT URL so the browser can upload a file DIRECTLY to R2 — this is
+ * Pre-signed PUT URL so the browser can upload a file DIRECTLY to R2: this is
  * how the admin builder uploads source videos without any byte touching Supabase
  * Storage (whose Free-plan global file-size cap is 50MB and unraiseable).
  * ContentType is deliberately NOT signed so the browser's File type rides along

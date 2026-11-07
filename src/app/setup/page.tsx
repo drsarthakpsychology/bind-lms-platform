@@ -10,7 +10,7 @@ export const metadata: Metadata = { robots: { index: false, follow: false }, tit
 export const dynamic = "force-dynamic";
 
 /**
- * /setup?t=… — the page a one-time setup link opens. Opening it only CHECKS
+ * /setup?t=…: the page a one-time setup link opens. Opening it only CHECKS
  * the link (read-only); the password form's submit is what uses it up.
  */
 export default async function SetupPage({ searchParams }: { searchParams: Promise<{ t?: string }> }) {
@@ -36,7 +36,7 @@ export default async function SetupPage({ searchParams }: { searchParams: Promis
   return (
     <AuthShell
       title={problem ? "Link not working" : "Set your password"}
-      subtitle={problem ? "No problem — this is easy to fix." : `For ${email}. You'll use it every time you sign in.`}
+      subtitle={problem ? "No problem: this is easy to fix." : `For ${email}. You'll use it every time you sign in.`}
     >
       {problem ? (
         <div className="space-y-4">

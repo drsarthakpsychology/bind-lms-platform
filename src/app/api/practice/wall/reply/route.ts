@@ -13,7 +13,7 @@ const replySchema = z.object({
 });
 
 /**
- * POST /api/practice/wall/reply — reply to a wall post. The author_id is
+ * POST /api/practice/wall/reply: reply to a wall post. The author_id is
  * stored but hidden for anonymous replies (same policy as posts).
  */
 export async function POST(req: Request) {

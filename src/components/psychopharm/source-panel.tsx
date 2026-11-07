@@ -23,8 +23,8 @@ interface KnowledgeHit {
  * lets an editor attach or edit them. Appears for the selected block in the
  * editor's right rail.
  *
- * The "Search books" row queries the knowledge layer (/api/knowledge/search) —
- * the authorised corpus — and one click fills the title/page/quote from a real,
+ * The "Search books" row queries the knowledge layer (/api/knowledge/search):
+ * the authorised corpus, and one click fills the title/page/quote from a real,
  * traceable passage. This is how the psychopharmacology editor consumes the
  * knowledge system (brief §24): source attribution from the corpus, never
  * hand-fabricated.
@@ -69,7 +69,7 @@ export function SourcePanel({
     setPage(
       hit.pageStart != null
         ? hit.pageEnd != null && hit.pageEnd !== hit.pageStart
-          ? `${hit.pageStart}–${hit.pageEnd}`
+          ? `${hit.pageStart}-${hit.pageEnd}`
           : String(hit.pageStart)
         : "",
     );
@@ -86,7 +86,7 @@ export function SourcePanel({
         page:
           hit.pageStart != null
             ? hit.pageEnd != null && hit.pageEnd !== hit.pageStart
-              ? `${hit.pageStart}–${hit.pageEnd}`
+              ? `${hit.pageStart}-${hit.pageEnd}`
               : String(hit.pageStart)
             : "",
         quote: hit.text.slice(0, 500),
@@ -134,7 +134,7 @@ export function SourcePanel({
 
       {searching && <p className="mt-1 text-caption text-muted-foreground">Searching the corpus…</p>}
       {searched && !searching && results.length === 0 && (
-        <p className="mt-1 text-caption text-muted-foreground">No source passages found — try different words.</p>
+        <p className="mt-1 text-caption text-muted-foreground">No source passages found: try different words.</p>
       )}
       {results.length > 0 && (
         <ul className="mt-2 space-y-1">

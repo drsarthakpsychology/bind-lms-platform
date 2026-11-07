@@ -38,7 +38,7 @@ export function ObserverNotes({
       <h2 className="text-h2">Possible therapy session observations</h2>
       <p className="text-caption text-muted-foreground">{OBSERVER_NOTE}</p>
 
-      {/* Part 1 — session observations */}
+      {/* Part 1: session observations */}
       {classObs.length ? (
         <ul className="list-disc space-y-1 pl-5 text-small">
           {classObs.flatMap((c) =>
@@ -51,7 +51,7 @@ export function ObserverNotes({
         </p>
       )}
 
-      {/* Part 3 — timeline */}
+      {/* Part 3: timeline */}
       <div className="mt-4 space-y-2">
         <h3 className="text-caption font-semibold uppercase text-muted-foreground">Medication time-line</h3>
         {TIMELINE_STAGES.map((s) => (
@@ -65,7 +65,7 @@ export function ObserverNotes({
         ))}
       </div>
 
-      {/* Part 2 — therapist questions */}
+      {/* Part 2: therapist questions */}
       <div className="mt-4">
         <h3 className="text-caption font-semibold uppercase text-muted-foreground">Useful follow-up questions</h3>
         <ul className="mt-2 list-disc space-y-1 pl-5 text-small">
@@ -75,7 +75,7 @@ export function ObserverNotes({
         </ul>
       </div>
 
-      {/* Part 9 — red flags */}
+      {/* Part 9: red flags */}
       <div className="mt-4">
         <h3 className="text-caption font-semibold uppercase text-muted-foreground">
           When to encourage the client to contact their prescriber
@@ -89,7 +89,7 @@ export function ObserverNotes({
         </ul>
       </div>
 
-      {/* Part 11 — pearls */}
+      {/* Part 11: pearls */}
       {allPearls.length ? (
         <div className="mt-4">
           <h3 className="text-caption font-semibold uppercase text-muted-foreground">
@@ -101,7 +101,7 @@ export function ObserverNotes({
         </div>
       ) : null}
 
-      {/* Part 4 — in-session observation checklist */}
+      {/* Part 4, in-session observation checklist */}
       <div className="mt-4">
         <h3 className="text-caption font-semibold uppercase text-muted-foreground">
           During today&apos;s session, observe
@@ -116,7 +116,7 @@ export function ObserverNotes({
         </ul>
       </div>
 
-      {/* Part 10 — illustrative vignette */}
+      {/* Part 10: illustrative vignette */}
       {allVignettes.length ? (
         <div className="mt-4">
           <h3 className="text-caption font-semibold uppercase text-muted-foreground">

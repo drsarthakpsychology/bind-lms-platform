@@ -74,7 +74,7 @@ export function CardsAdmin({ cards }: { cards: CardRow[] }) {
     setBusy(true);
     try {
       const res = await fetch(`/api/admin/cards?id=${encodeURIComponent(id)}`, { method: "DELETE" });
-      if (!res.ok) return; // keep the row — a failed delete shouldn't pretend success
+      if (!res.ok) return; // keep the row: a failed delete shouldn't pretend success
       haptic("warning");
       setRows((r) => r.filter((row) => row.id !== id));
     } finally {
@@ -269,7 +269,7 @@ export function CardsAdmin({ cards }: { cards: CardRow[] }) {
 }
 
 /**
- * "Add card" toggle + the minimal creation form (front + back only — advanced
+ * "Add card" toggle + the minimal creation form (front + back only, advanced
  * config lives behind review, not authoring). The whole point of T106: adding
  * a card takes two fields, not a data-model form.
  */

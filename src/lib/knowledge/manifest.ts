@@ -1,11 +1,11 @@
 /**
- * The authorized psychology book corpus — the single registry the knowledge
+ * The authorized psychology book corpus: the single registry the knowledge
  * pipeline reads from. Every entry is a real, verified PDF in the provided
  * books folder; metadata mirrors the psychopharm SOURCES registry where the
  * id overlaps (one source of truth for titles/authors/editions).
  *
  * Text caches (scripts/psychopharm/text/<id>.txt) carry per-page extraction
- * with `<<<PAGE n>>>` markers — this pipeline's document layer. Page numbers
+ * with `<<<PAGE n>>>` markers: this pipeline's document layer. Page numbers
  * are PDF-relative until a front-matter offset is calibrated per book; the
  * system stores PDF page indexes and labels them as such (never fabricates
  * printed page numbers).

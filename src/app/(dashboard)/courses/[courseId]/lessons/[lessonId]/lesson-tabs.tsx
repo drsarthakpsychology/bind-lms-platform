@@ -7,7 +7,7 @@ import { motion, useReducedMotion } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 
 /**
- * Lesson tab bar — Watch / Materials / Assignment.
+ * Lesson tab bar: Watch / Materials / Assignment.
  *
  * URL-driven (`?tab=`) so tabs are linkable and survive refresh, back and
  * forward. Rendered as link-anchored buttons so they work as Server-Component
@@ -44,7 +44,7 @@ export function LessonTabs({
   }
 
   if (tabs.length <= 1) {
-    // Plain video lesson — no tab bar at all.
+    // Plain video lesson, no tab bar at all.
     return null;
   }
 

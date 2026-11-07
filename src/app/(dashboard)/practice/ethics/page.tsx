@@ -5,17 +5,17 @@ import { QuizCheck } from "@/components/practice/quiz-check";
 import type { QuizItem } from "@/lib/quiz/quiz";
 import { requireFeature } from "@/lib/flags";
 
-/** Quiz-after-ethics (v5 §4.1) — checks, not tests. Every item sourced. */
+/** Quiz-after-ethics (v5 §4.1): checks, not tests. Every item sourced. */
 const ETHICS_QUIZ: QuizItem[] = [
   {
     id: "eq-1",
     type: "would_you_report",
     prompt: "A 14-year-old tells you a relative has been touching her. Would you report?",
     options: [
-      "Yes — POCSO mandates reporting to police/Childline, no discretion",
+      "Yes: POCSO mandates reporting to police/Childline, no discretion",
       "Only if the family agrees",
       "Only if she confirms it a second time",
-      "No — confidentiality protects it",
+      "No: confidentiality protects it",
     ],
     correct: 0,
     rationale: "POCSO Section 19 imposes a mandatory reporting duty; failure is itself an offence.",
@@ -48,18 +48,18 @@ const ETHICS_QUIZ: QuizItem[] = [
     ],
     correct: 0,
     rationale: "Assess the immediacy and plan, act on the identified risk, then document the proportionate confidentiality break.",
-    source: "RCI code of ethics — limits of confidentiality",
+    source: "RCI code of ethics: limits of confidentiality",
   },
 ];
 
 /**
- * /practice/ethics — Ethics & Law dilemmas (Part 6.5).
+ * /practice/ethics: Ethics & Law dilemmas (Part 6.5).
  * Consequence-first: commit to an action, then see what the law (MHA 2017,
  * POCSO, RCI scope) and best practice require. The consequence comes first.
  */
 export default async function EthicsPage() {
   await requireFeature("ethics");
-  // Deterministic daily set — the day's three dilemmas are stable for everyone.
+  // Deterministic daily set: the day's three dilemmas are stable for everyone.
   const daySeed = new Date().getTime();
   const dilemmas = todaysDilemmas(daySeed, 3);
 
@@ -69,7 +69,7 @@ export default async function EthicsPage() {
       <h1 className="mt-1 text-h1">The consequence comes first</h1>
       <p className="mt-1 text-small text-muted-foreground">
         {ETHICS_DILEMMAS.length} dilemmas grounded in MHA 2017, POCSO, and RCI scope.
-        Decide before you see the outcome — that&apos;s the skill the clinic never gives you time for.
+        Decide before you see the outcome: that&apos;s the skill the clinic never gives you time for.
       </p>
 
       <Link

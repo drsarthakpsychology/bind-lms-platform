@@ -17,9 +17,9 @@ const SEVEN_READINGS = [
 ];
 
 /**
- * Mode 3 — Seven Readings (Kirmayer & Young). One somatic complaint in
+ * Mode 3: Seven Readings (Kirmayer & Young). One somatic complaint in
  * context; the student assigns which of the seven readings apply and
- * justifies in one line. Often more than one is right — that's the lesson.
+ * justifies in one line. Often more than one is right. That's the lesson.
  */
 export function SevenReadings({ entry }: { entry: IdiomEntry }) {
   type ReadingKey = (typeof SEVEN_READINGS)[number]["key"];
@@ -97,11 +97,11 @@ export function SevenReadings({ entry }: { entry: IdiomEntry }) {
           {missedCorrect.length > 0 ? (
             <p className="mt-2 text-small">
               You missed: <span className="font-medium">{missedCorrect.join(", ")}</span>. For &quot;{entry.phrase}&quot;,
-              several readings are true at once — that coexistence <em>is</em> the clinical skill.
+              several readings are true at once: that coexistence <em>is</em> the clinical skill.
             </p>
           ) : (
             <p className="mt-2 text-small text-muted-foreground">
-              Right — &quot;{entry.phrase}&quot; genuinely spans {entry.readings.length} readings. A student who stops at one
+              Right: &quot;{entry.phrase}&quot; genuinely spans {entry.readings.length} readings. A student who stops at one
               has already lost the case.
             </p>
           )}

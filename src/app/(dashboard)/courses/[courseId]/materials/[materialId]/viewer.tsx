@@ -15,7 +15,7 @@ import {
   ZoomOut,
 } from "lucide-react";
 // pdfjs-dist is pulled in via a runtime dynamic import inside PdfViewer (type
-// import only here — erased at build), so the ~1MB library is code-split into
+// import only here: erased at build), so the ~1MB library is code-split into
 // its own chunk and only fetched when a material is actually a PDF document.
 import type { PDFDocumentProxy } from "pdfjs-dist";
 
@@ -26,10 +26,10 @@ const AUDIO_RATES = [1, 1.25, 1.5, 2, 0.75] as const;
 /**
  * Full-screen material viewer. One instance per type.
  *
- * - PDF: rendered to CANVAS page-by-page via pdf.js — no iframe/embed/object,
+ * - PDF: rendered to CANVAS page-by-page via pdf.js, no iframe/embed/object,
  *   so there's no browser-native download or print affordance. Page nav, page
  *   count, zoom, continuous scroll, remembered scroll position.
- * - Audio: play/pause, scrub, speed (0.75–2×), persistent title.
+ * - Audio: play/pause, scrub, speed (0.75 to 2×), persistent title.
  * - Image: fit to screen, tap/click to zoom, pinch on touch.
  * - Slides/link: handled by the caller or an honest fallback.
  *
@@ -57,7 +57,7 @@ export function MaterialViewer({
   const [loadKey, setLoadKey] = useState(0);
   const [slow, setSlow] = useState(false);
 
-  // A short reference id per failure — the student quotes it to their
+  // A short reference id per failure: the student quotes it to their
   // instructor, who can find the matching server-side log line.
   const fail = useCallback((raw: unknown) => {
     const id = crypto.randomUUID().replace(/-/g, "").slice(0, 6).toUpperCase();
@@ -104,7 +104,7 @@ export function MaterialViewer({
     };
   }, [materialId, loadKey, fail]);
 
-  // Slow-connection signal — after 8s still loading, tell the student it hasn't
+  // Slow-connection signal, after 8s still loading, tell the student it hasn't
   // frozen. Resets on retry (the only path that re-enters loading after an error).
   useEffect(() => {
     if (signedUrl || error || kind === "link") return;
@@ -166,7 +166,7 @@ export function MaterialViewer({
           </div>
           {slow ? (
             <p className="text-caption text-muted-foreground" role="status">
-              Still loading — this may take longer on a slow connection.
+              Still loading: this may take longer on a slow connection.
             </p>
           ) : null}
         </div>
@@ -220,7 +220,7 @@ export function MaterialViewer({
 }
 
 /* ------------------------------------------------------------------ */
-/* PDF — canvas rendering, page-by-page, no iframe                    */
+/* PDF: canvas rendering, page-by-page, no iframe                    */
 /* ------------------------------------------------------------------ */
 function PdfViewer({ signedUrl, materialId, watermarkLabel, onFail }: { signedUrl: string; materialId: string; watermarkLabel: string; onFail: (message: string) => void }) {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -231,7 +231,7 @@ function PdfViewer({ signedUrl, materialId, watermarkLabel, onFail }: { signedUr
   const [rendering, setRendering] = useState(false);
 
   // Load the PDF once. pdfjs-dist is imported lazily here so it only loads
-  // (and its ~1MB chunk downloads) when this component actually mounts — i.e.
+  // (and its ~1MB chunk downloads) when this component actually mounts. I.e.
   // when the material kind is "document". The worker path is pinned to the
   // installed version and resolved from the bundle, never from a CDN.
   useEffect(() => {
@@ -310,7 +310,7 @@ function PdfViewer({ signedUrl, materialId, watermarkLabel, onFail }: { signedUr
     <div className="relative flex h-full flex-col">
       <MaterialWatermark label={watermarkLabel} />
 
-      {/* Toolbar — wraps on narrow screens so the zoom group drops to a second
+      {/* Toolbar: wraps on narrow screens so the zoom group drops to a second
           row instead of colliding with the page counter (T68). */}
       <div className="flex flex-wrap items-center justify-between gap-x-2 gap-y-1 border-b-2 border-border bg-card px-3 py-2">
         <div className="flex items-center gap-1">
@@ -375,7 +375,7 @@ function PdfViewer({ signedUrl, materialId, watermarkLabel, onFail }: { signedUr
 }
 
 /* ------------------------------------------------------------------ */
-/* Audio — play/pause, scrub, speed, persistent title                 */
+/* Audio: play/pause, scrub, speed, persistent title                 */
 /* ------------------------------------------------------------------ */
 function AudioViewer({ signedUrl, title, watermarkLabel }: { signedUrl: string; title: string; watermarkLabel: string }) {
   const audioRef = useRef<HTMLAudioElement>(null);
@@ -474,7 +474,7 @@ function AudioViewer({ signedUrl, title, watermarkLabel }: { signedUrl: string; 
 }
 
 /* ------------------------------------------------------------------ */
-/* Image — fit to screen, tap/click to zoom, pinch on touch            */
+/* Image: fit to screen, tap/click to zoom, pinch on touch            */
 /* ------------------------------------------------------------------ */
 function ImageViewer({ signedUrl, title, watermarkLabel }: { signedUrl: string; title: string; watermarkLabel: string }) {
   const [zoom, setZoom] = useState(1);

@@ -6,7 +6,7 @@ import { rateLimit } from "@/lib/rate-limit";
 export const runtime = "nodejs";
 
 /**
- * GET /api/practice/mse/stimuli — the published MSE stimulus bank.
+ * GET /api/practice/mse/stimuli: the published MSE stimulus bank.
  * Students read published rows (RLS: mse_stimuli_select_published); each row
  * carries its authored expert_coding (Level 2 {expertTags, amberTags}, Level 4
  * {expert: MseCode, amber}). The ladder shapes rows into the level types and

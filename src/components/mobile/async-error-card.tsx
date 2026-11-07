@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 /**
- * AsyncErrorCard — one error language for the whole app.
+ * AsyncErrorCard: one error language for the whole app.
  *
  * The mobile principle (T50): every failure should explain what happened in
  * human language, preserve user state when possible, and offer an obvious
@@ -15,7 +15,7 @@ import { cn } from "@/lib/utils";
  * correlation id for support, and a Retry.
  *
  * `reference` is an optional correlation id the student can copy ("Reference:
- * 7K2M9") — the server-side log uses the same id, so support can trace it.
+ * 7K2M9"): the server-side log uses the same id, so support can trace it.
  */
 export function AsyncErrorCard({
   title = "Something went wrong",

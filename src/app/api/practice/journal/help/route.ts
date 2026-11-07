@@ -14,7 +14,7 @@ const helpSchema = z.object({
 });
 
 /**
- * POST /api/practice/journal/help — "help me think about this".
+ * POST /api/practice/journal/help: "help me think about this".
  * journal_support is the MOST sensitive workload. It routes ONLY to no-train
  * providers (asserted by the guard). If none available → honest 503 message,
  * never a silent downgrade to a training provider.

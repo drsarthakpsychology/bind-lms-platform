@@ -7,7 +7,7 @@ import { Check, ChevronDown, Eye, Lightbulb } from "lucide-react";
 import { scoreDecode, type IdiomEntry } from "@/lib/decode/idioms";
 
 /**
- * Mode 1 — Decode. The phrase appears; the student picks EVERY plausible
+ * Mode 1: Decode. The phrase appears; the student picks EVERY plausible
  * meaning (multi-select). Scored against the idiom bank with partial credit.
  * Missing the physical readings scores harder than missing the emotional ones.
  */
@@ -100,7 +100,7 @@ export function DecodeArena({ entries }: { entries: IdiomEntry[] }) {
             <div className="flex items-center justify-between">
               <p className="text-base font-semibold">Score: {result.score}/{result.max}</p>
               <p className="text-caption text-muted-foreground">
-                {Math.round((result.score / result.max) * 100)}% — physical readings are weighted
+                {Math.round((result.score / result.max) * 100)}%: physical readings are weighted
               </p>
             </div>
             {result.missedPhysical.length > 0 ? (
@@ -115,7 +115,7 @@ export function DecodeArena({ entries }: { entries: IdiomEntry[] }) {
           <details className="group rounded-md border-2 border-border bg-card">
             <summary className="flex cursor-pointer list-none items-center justify-between gap-3 px-5 py-4">
               <p className="flex items-center gap-1.5 text-base font-semibold">
-                <Eye className="size-4" aria-hidden /> Why — the disambiguating questions
+                <Eye className="size-4" aria-hidden /> Why: the disambiguating questions
               </p>
               <ChevronDown className="size-5 text-muted-foreground transition-transform duration-fast ease-snappy group-open:rotate-180" aria-hidden />
             </summary>

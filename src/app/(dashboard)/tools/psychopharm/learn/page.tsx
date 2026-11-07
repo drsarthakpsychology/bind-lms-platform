@@ -9,7 +9,7 @@ import { MobileListItem } from "@/components/mobile/mobile-list-item";
 /**
  * Learning layer (Part 10): browse by mechanism. Drugs that touch the same
  * receptor group sit together so students learn classes by mechanism rather
- * than memorising lists. No dose drills — mechanisms only.
+ * than memorising lists. No dose drills: mechanisms only.
  *
  * Mobile (T32): one receptor group per collapsed card (show → act → reveal);
  * drugs reveal as 48px rows instead of a ~30px pill wall.
@@ -68,7 +68,7 @@ export default function LearnPage() {
 
       <p className="text-caption text-muted-foreground">
         Mechanism tags come from the reviewed sources. Nothing here is a
-        dose or a recommendation — just how the drugs are related by receptor.
+        dose or a recommendation, just how the drugs are related by receptor.
       </p>
     </div>
   );

@@ -22,7 +22,7 @@ export async function login(
   }
 
   // Rate limit login attempts per email (brute-force protection). The key is
-  // LOWERCASED — Supabase matches email case-insensitively, so a case-sprayed
+  // LOWERCASED: Supabase matches email case-insensitively, so a case-sprayed
   // variant (`Admin@x.com`, `ADMIN@x.com`) used to mint its own fresh bucket
   // against the same account, defeating the cap.
   // 10 tries a minute per email. If the shared counter can't be read (for
@@ -34,7 +34,7 @@ export async function login(
     return { error: "Too many attempts. Try again in a minute." };
   }
 
-  // Per-IP limiter in parallel — the per-email cap alone is bypassable from a
+  // Per-IP limiter in parallel: the per-email cap alone is bypassable from a
   // botnet of addresses against many accounts. In-process and generous; it's a
   // coarse abuse throttle, not a hard boundary.
   const ip = ((await headers()).get("x-forwarded-for") ?? "").split(",")[0]?.trim() || "unknown";
@@ -87,7 +87,7 @@ export async function login(
     .eq("id", data.user.id)
     .single();
 
-  // Alumni keep permanent read-only access (A10) — expiry only gates students.
+  // Alumni keep permanent read-only access (A10): expiry only gates students.
   if (profile?.expires_at && profile.role !== "alumni" && new Date(profile.expires_at).getTime() <= new Date().getTime()) {
     await supabase.auth.signOut();
     return { error: "This account's access has expired." };
@@ -113,10 +113,10 @@ export async function login(
     secure: process.env.NODE_ENV === "production",
     sameSite: "lax",
     path: "/",
-    maxAge: 60 * 60 * 24 * 60, // 60 days — expires_at is the real gate, not this
+    maxAge: 60 * 60 * 24 * 60, // 60 days: expires_at is the real gate, not this
   });
 
-  // /dashboard is the front door — the single course view (or course grid).
+  // /dashboard is the front door: the single course view (or course grid).
   redirect("/dashboard");
 }
 

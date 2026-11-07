@@ -27,7 +27,7 @@ const STATUS_TONE: Record<Status, string> = {
 
 /**
  * The new page passes `status: "off" | "live" | "unlocked"`. The old page still
- * passes `enabled` + `liveForCohortOne` booleans — keep a fallback so either
+ * passes `enabled` + `liveForCohortOne` booleans: keep a fallback so either
  * shape works until the page is migrated.
  */
 function normalizeStatus(

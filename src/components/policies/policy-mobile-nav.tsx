@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import type { Policy } from "@/lib/policies";
 
 /**
- * Mobile (<768px) policy jumper — a `<select>` pinned above the content so a
+ * Mobile (<768px) policy jumper: a `<select>` pinned above the content so a
  * phone user can move between policies without scrolling back to the top.
  * A plain, familiar control (44px target), no accordion state to manage.
  */

@@ -1,6 +1,6 @@
 /**
  * "Still watching?" checks during lectures (owner decision 2026-11-06):
- * a check appears at a random moment every 12–20 minutes of actual playback;
+ * a check appears at a random moment every 12 to 20 minutes of actual playback;
  * if nobody taps "Yes" within 60 seconds the video pauses and goes back to
  * where the check appeared, so the unattended minutes don't count as watched.
  * Pure timing rules, so they are tested.

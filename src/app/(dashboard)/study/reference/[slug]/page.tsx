@@ -187,7 +187,7 @@ function MoreLink({ href, label }: { href: string; label: string }) {
   );
 }
 
-/** /study/reference/[slug] — one entry. Aliases (e.g. "ocd") redirect to the main page. */
+/** /study/reference/[slug]: one entry. Aliases (e.g. "ocd") redirect to the main page. */
 export default async function ReferenceEntryPage({ params }: Params) {
   await requireFeature("learn");
   const { slug: raw } = await params;

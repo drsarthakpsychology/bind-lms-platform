@@ -1,5 +1,5 @@
 /**
- * The Funnel (v5 Part 1, Mode 2) — the core drill. A patient opens with a
+ * The Funnel (v5 Part 1, Mode 2): the core drill. A patient opens with a
  * vague phrase; the student gets FIVE questions to disambiguate, typed freely.
  * Scored on question EFFICIENCY.
  *
@@ -26,12 +26,12 @@ export interface FunnelAnswer {
 }
 
 const STEP_HINTS: Record<FunnelStep, string> = {
-  open: "Open — 'Tell me more about that.'",
-  specify: "Specify — 'When you say X, what do you mean?'",
-  instantiate: "Instantiate — 'Walk me through yesterday morning.'",
-  quantify: "Quantify — 'How many days in the last two weeks?'",
-  contextualise: "Contextualise — 'What stops you doing because of it?'",
-  attribute: "Attribute — 'What do you think is causing it?' (DSM-5 CFI)",
+  open: "Open: 'Tell me more about that.'",
+  specify: "Specify: 'When you say X, what do you mean?'",
+  instantiate: "Instantiate: 'Walk me through yesterday morning.'",
+  quantify: "Quantify: 'How many days in the last two weeks?'",
+  contextualise: "Contextualise: 'What stops you doing because of it?'",
+  attribute: "Attribute: 'What do you think is causing it?' (DSM-5 CFI)",
 };
 
 /** Classify a free-typed question into a funnel step (best-effort, local). */
@@ -64,8 +64,8 @@ export function isClosedQuestion(q: string): boolean {
 export function scoreFunnelQuestion(q: string, usedSteps: Set<FunnelStep | null>): { step: FunnelStep | null; value: number; hint: string } {
   const step = classifyFunnelStep(q);
   const closed = isClosedQuestion(q);
-  if (closed) return { step: null, value: 0.1, hint: "Closed question — it gets you a yes or no, not a story. Try an open or instantiate question." };
-  if (!step) return { step: null, value: 0.2, hint: "Unclear step — aim the funnel: open → specify → instantiate → quantify → contextualise → attribute." };
+  if (closed) return { step: null, value: 0.1, hint: "Closed question. It gets you a yes or no, not a story. Try an open or instantiate question." };
+  if (!step) return { step: null, value: 0.2, hint: "Unclear step: aim the funnel: open → specify → instantiate → quantify → contextualise → attribute." };
   const first = !usedSteps.has(step);
   const base: Record<FunnelStep, number> = { open: 0.8, specify: 0.9, instantiate: 1.0, quantify: 0.7, contextualise: 0.7, attribute: 0.8 };
   const value = first ? base[step] : base[step] * 0.5;

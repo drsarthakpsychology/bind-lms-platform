@@ -1,12 +1,12 @@
 /**
- * Debrief scoring — a SEPARATE model call with schema-validated JSON output
+ * Debrief scoring: a SEPARATE model call with schema-validated JSON output
  * (Part 3.4 #4). Scores: open:closed ratio, leading/double-barrelled questions,
  * reflective statements, premature reassurance (the #1 novice error), domain
  * coverage, risk timing, disclosure unlock rate.
  *
  * Output quotes three specific moments from the transcript with a better
  * alternative, plus the missed-disclosures reveal. Never render unvalidated
- * output — parse with the Zod schema, one repair retry, else fixture.
+ * output: parse with the Zod schema, one repair retry, else fixture.
  *
  * The feedback loop: faculty corrections (scoring_corrections) are injected as
  * few-shot examples into future scoring calls.

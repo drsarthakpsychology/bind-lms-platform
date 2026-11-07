@@ -33,7 +33,7 @@ export async function notifyCredential(input: NotifyInput): Promise<void> {
   const title = input.type === "badge" ? `You earned a badge: ${input.title}` : `Your certificate is ready: ${input.title}`;
   const body =
     input.type === "badge"
-      ? `Congratulations — you've earned the "${input.title}" achievement${input.moduleName ? ` for ${input.moduleName}` : ""}. It's now on your My Achievements page.`
+      ? `Congratulations. You've earned the "${input.title}" achievement${input.moduleName ? ` for ${input.moduleName}` : ""}. It's now on your My Achievements page.`
       : `Your certificate for "${input.title}" has been officially issued. View and share it from My Achievements.`;
 
   // In-app notification (source of truth; written even if email fails).
@@ -46,10 +46,10 @@ export async function notifyCredential(input: NotifyInput): Promise<void> {
     href: "/achievements",
   });
 
-  // Email — best-effort, logged, never blocks the credential.
+  // Email: best-effort, logged, never blocks the credential.
   if (!input.email) return;
   // In preview/staging, gate email to the single approved test recipient and
-  // FAIL CLOSED if it's unset — a misconfigured preview must never email a
+  // FAIL CLOSED if it's unset: a misconfigured preview must never email a
   // real student. Production (VERCEL_ENV=production) sends normally.
   const isPreview = process.env.VERCEL_ENV === "preview" || process.env.VERCEL_ENV === "development";
   if (isPreview) {

@@ -8,7 +8,7 @@ import { accountStatus, NEEDS_ACTION, type AccountStatus } from "./account-statu
 import { attentionFlags, type AttentionFlag } from "./attention";
 
 /**
- * One row per real student with everything an admin screen needs — the single
+ * One row per real student with everything an admin screen needs: the single
  * read behind Students, Home, Activity and the cohort workspace, so the same
  * person never shows different facts on different screens.
  */

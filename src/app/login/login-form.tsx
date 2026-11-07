@@ -13,7 +13,7 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 
 const initialState: LoginState = { error: null };
 
-// Cloudflare Turnstile — renders a "prove you're human" widget on login.
+// Cloudflare Turnstile: renders a "prove you're human" widget on login.
 // The site key is public (safe to expose). Server-side verification happens in
 // the login action using the secret key (NEXT_PUBLIC vs private).
 const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
@@ -24,7 +24,7 @@ export function LoginForm({ defaultEmail }: { defaultEmail?: string } = {}) {
   const prevError = useRef(state.error);
 
   // Login volume + failure rate without touching credentials. No email or any
-  // PII is sent — only that an attempt happened and whether it failed.
+  // PII is sent, only that an attempt happened and whether it failed.
   useEffect(() => {
     if (prevError.current === state.error) return;
     prevError.current = state.error;

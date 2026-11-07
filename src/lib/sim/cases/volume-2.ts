@@ -1,5 +1,5 @@
 /**
- * More cases — volume batch 2. Fills substance, adolescent, ethics, somatic,
+ * More cases: volume batch 2. Fills substance, adolescent, ethics, somatic,
  * and adds depth to depression/anxiety. Each a different person/voice.
  */
 
@@ -7,7 +7,7 @@ import { buildCase, type CaseAuthoring } from "../case-builder";
 
 const amar: CaseAuthoring = {
   id: "sub-amar",
-  title: "Amar, 45 — the 'one or two drinks' that became every night",
+  title: "Amar, 45: the 'one or two drinks' that became every night",
   difficulty: "resistant",
   traps: ["substance_induced", "adherence_fiction", "under_diagnosis"],
   moduleId: "mod-substance",
@@ -25,10 +25,10 @@ const amar: CaseAuthoring = {
   helpSeekingDelay: "Years",
   priorContacts: ["wife's threats", "one GP visit for 'gas'"],
   coreBelief: "If I admit it's a problem, I lose everything.",
-  intermediateBeliefs: ["A man works hard and drinks — that's normal", "The shakes in the morning are just 'not enough sleep'"],
+  intermediateBeliefs: ["A man works hard and drinks. That's normal", "The shakes in the morning are just 'not enough sleep'"],
   coping: ["hide the bottles", "deny the blackouts", "drive less, drink more"],
   openingIdiom: "tension hai",
-  redFlags: [{ content: "has thought about 'ending it' during a blackout — no memory of it after", gate: "asked_about_self_harm_clearly" }],
+  redFlags: [{ content: "has thought about 'ending it' during a blackout, no memory of it after", gate: "asked_about_self_harm_clearly" }],
   variation: {
     mood_today: ["irritated", "flat", "brittle-cheerful", "agitated"],
     recent_event: ["a morning shake his wife saw", "a blackout where he hit a wall", "a transport audit at work", "his son asked why he smells"],
@@ -42,7 +42,7 @@ const amar: CaseAuthoring = {
 
 const nimmi: CaseAuthoring = {
   id: "ado-nimmi",
-  title: "Nimmi, 13 — the girl who stopped eating lunch",
+  title: "Nimmi, 13: the girl who stopped eating lunch",
   difficulty: "cooperative",
   traps: ["informant_conflict", "under_diagnosis", "somatic_mask"],
   moduleId: "mod-adolescent",
@@ -77,7 +77,7 @@ const nimmi: CaseAuthoring = {
 
 const ethicsAdd: CaseAuthoring = {
   id: "eth-court-letter",
-  title: "Joseph, 33 — the court letter he can't write",
+  title: "Joseph, 33: the court letter he can't write",
   difficulty: "guarded",
   traps: ["secondary_gain", "medical_mimic"],
   moduleId: "mod-ethics",
@@ -89,8 +89,8 @@ const ethicsAdd: CaseAuthoring = {
   family: "married; one child; custody dispute pending",
   register: "Malayalam-English, anxious",
   presentation: "In a custody dispute, his lawyer said a 'psychological report' would help. He's a counselling client asking for a letter that states his ex-wife is 'unfit'.",
-  chiefComplaint: "My lawyer says if you write that she's unstable, I get my son. You've seen me — write it. It's true, she's the one who's unwell.",
-  timeline: "Divorce and custody dispute. He has genuine anxiety, but the request is a court letter about his ex-wife's fitness — outside scope and outside ethics.",
+  chiefComplaint: "My lawyer says if you write that she's unstable, I get my son. You've seen me: write it. It's true, she's the one who's unwell.",
+  timeline: "Divorce and custody dispute. He has genuine anxiety, but the request is a court letter about his ex-wife's fitness: outside scope and outside ethics.",
   treatmentHistory: "Saw you twice for anxiety.",
   helpSeekingDelay: "Came because the lawyer suggested it",
   priorContacts: ["lawyer"],
@@ -112,7 +112,7 @@ const ethicsAdd: CaseAuthoring = {
 
 const somaticAdd: CaseAuthoring = {
   id: "som-anjali",
-  title: "Anjali, 47 — the thyroid they blamed on menopause",
+  title: "Anjali, 47: the thyroid they blamed on menopause",
   difficulty: "cooperative",
   traps: ["medical_mimic", "diagnostic_overshadowing"],
   moduleId: "mod-somatic",
@@ -123,7 +123,7 @@ const somaticAdd: CaseAuthoring = {
   city: "Jodhpur",
   family: "married; two children; mother-in-law at home",
   register: "Hindi-English, methodical",
-  presentation: "'It's my age, everyone says so.' Fatigue, weight gain, hair fall, cold intolerance, low mood — all blamed on menopause for a year. It's hypothyroidism.",
+  presentation: "'It's my age, everyone says so.' Fatigue, weight gain, hair fall, cold intolerance, low mood: all blamed on menopause for a year. It's hypothyroidism.",
   chiefComplaint: "Everyone says it's my age, my change. But I feel cold even in summer, my hair is falling, and I'm so tired I cry.",
   timeline: "A year of hypothyroid symptoms framed as menopause. A relative told her it's 'the change'. Function declining.",
   treatmentHistory: "A GP said 'menopause' and gave calcium. No thyroid test.",
@@ -147,7 +147,7 @@ const somaticAdd: CaseAuthoring = {
 
 const depAdd2: CaseAuthoring = {
   id: "dep-mohit",
-  title: "Mohit, 19 — the first-year who stopped leaving his room",
+  title: "Mohit, 19: the first-year who stopped leaving his room",
   difficulty: "cooperative",
   traps: ["over_diagnosis", "under_diagnosis"],
   moduleId: "mod-depression",
@@ -158,17 +158,17 @@ const depAdd2: CaseAuthoring = {
   city: "Delhi (from Bikaner)",
   family: "hostel; parents far away; first time away from home",
   register: "Hindi-English, hesitant",
-  presentation: "His roommate sent him to the college counsellor. He's stopped attending classes, sleeping all day, missing home badly. Adjustment disorder with depressive features — or depression? The distinction matters.",
+  presentation: "His roommate sent him to the college counsellor. He's stopped attending classes, sleeping all day, missing home badly. Adjustment disorder with depressive features, or depression? The distinction matters.",
   chiefComplaint: "I don't know anyone here. Everyone else made friends on day one. I just want to go home.",
   timeline: "First semester: homesickness escalating to anhedonia, sleep reversal, missed classes, crying in the hostel room.",
   treatmentHistory: "None.",
   helpSeekingDelay: "3 months",
   priorContacts: ["roommate", "hostel warden"],
   coreBelief: "I'm the only one who can't adjust.",
-  intermediateBeliefs: ["If I go home I'm a failure", "My parents spent everything on this — I can't quit"],
+  intermediateBeliefs: ["If I go home I'm a failure", "My parents spent everything on this. I can't quit"],
   coping: ["sleep all day", "avoid the mess hall", "fake a smile in video calls"],
   openingIdiom: "feeling low",
-  redFlags: [{ content: "has thought about failing on purpose to justify going home — no self-harm", gate: "asked_about_self_harm_clearly" }],
+  redFlags: [{ content: "has thought about failing on purpose to justify going home, no self-harm", gate: "asked_about_self_harm_clearly" }],
   variation: {
     mood_today: ["flat", "numb", "anxious", "resigned"],
     recent_event: ["a video call with his mother", "a roommate's party he skipped", "a missed exam", "the mess hall was loud"],

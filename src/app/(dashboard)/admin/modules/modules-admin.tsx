@@ -28,7 +28,7 @@ const STATE_CHIP: Record<string, string> = {
 };
 
 /**
- * Admin modules — access-control system. Multi-select for bulk
+ * Admin modules: access-control system. Multi-select for bulk
  * publish/schedule/unpublish/cohort grant & revoke, plus per-module access
  * (who has it, revoke per student or revoke the cohort), and an explicit
  * "grant every module to one student" override.
@@ -123,7 +123,7 @@ export function ModulesAdmin({ modules, students }: { modules: ModuleRow[]; stud
           <BulkBtn onClick={() => bulk("revoke_cohort")} label="Revoke cohort access" busy={busy} />
         </div>
 
-        {/* grant to one student — select, not free-text email */}
+        {/* grant to one student: select, not free-text email */}
         <div className="mt-3 flex flex-wrap items-center gap-2 border-t-2 border-border pt-3">
           <label className="text-caption text-muted-foreground" htmlFor="grant-student">
             Grant one student the selected modules:
@@ -153,7 +153,7 @@ export function ModulesAdmin({ modules, students }: { modules: ModuleRow[]; stud
         {error ? <p className="mt-2 text-small text-destructive" role="alert">{error}</p> : null}
       </div>
 
-      {/* module list — selecting one expands its access list */}
+      {/* module list: selecting one expands its access list */}
       <div className="space-y-2">
         {modules.map((m) => {
           const checked = selected.has(m.id);
@@ -206,7 +206,7 @@ export function ModulesAdmin({ modules, students }: { modules: ModuleRow[]; stud
       <div className="rounded-lg border-2 border-dashed border-border bg-card p-4">
         <div className="flex items-center gap-2">
           <LockOpen className="size-4 text-muted-foreground" aria-hidden />
-          <p className="text-caption font-medium">Override — grant every module to one student</p>
+          <p className="text-caption font-medium">Override: grant every module to one student</p>
         </div>
         <p className="mt-1 text-caption text-muted-foreground">
           For fee waivers or catch-up only. Adds an individual grant to every module; it does not
