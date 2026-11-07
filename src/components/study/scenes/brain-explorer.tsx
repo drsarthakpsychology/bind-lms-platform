@@ -322,7 +322,7 @@ function GuidedFlat(p: { view: GuideView; layer: number; sel: RegionId | null; d
   if (p.view === "coronal") {
     return (
       <div className="flex h-full items-center justify-center bg-black p-2">
-        <SliceCanvas plane="coronal" u={0.05} tint className="h-full max-w-full" />
+        <SliceCanvas plane="coronal" u={0.05} tint />
       </div>
     );
   }

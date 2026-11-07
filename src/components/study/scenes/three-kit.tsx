@@ -220,7 +220,7 @@ export function curveOf(pts: V3[]) {
 }
 
 /** A nerve or tract as a tube. `lit` (0 to 1) lights it from the start up to that fraction. */
-export function Tube({ pts, radius = 0.025, color, opacity = 1, lit = 0, litColor, segments = 48, radial = 6, onTap, name, xray = false }: { xray?: boolean; pts: V3[]; radius?: number; color: string; opacity?: number; lit?: number; litColor?: string; segments?: number; radial?: number; onTap?: () => void; name?: string }) {
+export function Tube({ pts, radius = 0.025, color, opacity = 1, lit = 0, litColor, segments = 48, radial = 6, onTap, name, xray = false, clip = null }: { clip?: THREE.Plane[] | null; xray?: boolean; pts: V3[]; radius?: number; color: string; opacity?: number; lit?: number; litColor?: string; segments?: number; radial?: number; onTap?: () => void; name?: string }) {
   const q = useQuality();
   const seg = segs(segments, q, 8);
   const rad = q === 0 ? Math.min(radial, 4) : radial;
@@ -239,7 +239,7 @@ export function Tube({ pts, radius = 0.025, color, opacity = 1, lit = 0, litColo
   return (
     <group>
       <mesh geometry={geo} name={name} onClick={onTap ? (e: ThreeEvent<MouseEvent>) => { if (e.delta < 8) { e.stopPropagation(); onTap(); } } : undefined}>
-        <meshStandardMaterial key={opacity < 1 ? "see-through" : "solid"} color={color} transparent={opacity < 1} opacity={opacity} depthWrite={opacity >= 1} roughness={0.6} />
+        <meshStandardMaterial key={`${opacity < 1 ? "see-through" : "solid"}-${clip ? "cut" : ""}`} color={color} transparent={opacity < 1} opacity={opacity} depthWrite={opacity >= 1} roughness={0.6} clippingPlanes={clip} side={clip ? THREE.DoubleSide : THREE.FrontSide} />
       </mesh>
       {litGeo ? (
         <mesh geometry={litGeo} renderOrder={xray ? 10 : 0}>

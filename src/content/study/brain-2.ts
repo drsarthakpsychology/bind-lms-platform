@@ -501,6 +501,10 @@ Most people with a typical presentation do not need one. Red flags that justify 
 - **Vagus nerve stimulation**: an implanted device; modest evidence in chronic depression.
 - **Transcranial direct current stimulation (tDCS)**: weak current via scalp electrodes; cheap and portable; evidence for depression is mixed.
 
+:::widget brainslicer
+{"title":"Slice the brain, then stimulate it","start":"slice","caption":"Scroll a coronal slice until the hippocampus appears, then switch to the rTMS coil and the ECT electrodes. Which treatment reaches deep structures directly, and which works through connections?"}
+:::
+
 :::widget guess
 {
   "prompt": "In a standard course of rTMS for depression, how many treatment sessions are usually given?",

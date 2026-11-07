@@ -1473,6 +1473,10 @@ Q: A new mother in a village is depressed after childbirth. There is no psycholo
 | Vagus nerve stimulation | Implanted device | Chronic resistant depression (specialist) |
 | Deep brain stimulation | Implanted electrodes | Research for very resistant depression |
 
+:::widget brainslicer
+{"title":"Where ECT electrodes and the rTMS coil go","start":"ect","caption":"Compare bitemporal, bifrontal and right unilateral ECT, then the rTMS coil. Which placement would you choose for a frail 70-year-old worried about memory, and what dose does it need?"}
+:::
+
 :::recall
 1. List the six steps when the first treatment fails. || Optimise, recheck, switch, augment, combine, treat as TRD.
 2. Define treatment-resistant depression. || Failure of at least 2 adequate antidepressant trials.

@@ -12,6 +12,7 @@ import { ActionPotential } from "./action-potential";
 import { SynapseScene } from "./synapse-scene";
 import { Genogram } from "./genogram";
 import { HpaLoop } from "./hpa-loop";
+import { BrainSlicer } from "./brain-slicer";
 
 vi.mock("@/lib/learn/track", () => ({ trackLearn: () => {} }));
 
@@ -187,5 +188,30 @@ describe("explorable scenes", () => {
     expect(screen.getByLabelText("1 of 6 missions done")).toBeInTheDocument();
     click("Side view");
     expect(status()).toHaveTextContent(/central sulcus separates frontal from parietal/);
+  });
+
+  it("brainslicer: slices name what they cut through, and rTMS and each ECT placement are explained", () => {
+    render(<BrainSlicer d={{}} />);
+    expect(status()).toHaveTextContent(/Coronal \(front to back\) slice/);
+    expect(status()).toHaveTextContent(/On this slice: .*Frontal lobe/);
+    expect(status()).not.toHaveTextContent(/Hippocampus/);
+    const slider = screen.getByRole("slider", { name: /Slice position/ });
+    fireEvent.change(slider, { target: { value: "0.0" } });
+    expect(status()).toHaveTextContent(/Hippocampus/);
+    expect(status()).toHaveTextContent(/Thalamus/);
+    click("Axial");
+    click("Sagittal");
+    expect(status()).toHaveTextContent(/Front is on the left/);
+    click("rTMS coil");
+    expect(status()).toHaveTextContent(/left dorsolateral prefrontal cortex/);
+    click("Fire a train of pulses");
+    expect(status()).toHaveTextContent(/Pulses fired/);
+    click("ECT electrodes");
+    expect(status()).toHaveTextContent(/Bitemporal: .*temple/);
+    click("Right unilateral");
+    expect(status()).toHaveTextContent(/about six times the seizure threshold/);
+    click("Bifrontal");
+    expect(status()).toHaveTextContent(/5 cm above the outer corner of each eye/);
+    expect(screen.getByLabelText("4 of 4 missions done")).toBeInTheDocument();
   });
 });

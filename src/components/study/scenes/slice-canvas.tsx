@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { REGION_COLOR, type RegionId } from "./brain-explorer-data";
+import { cn } from "@/lib/utils";
 import { EXTENT, hexToRgb, renderSlice, type Plane, type Slice } from "./brain-slice";
 
 /**
@@ -27,8 +28,6 @@ const canDraw = () => typeof navigator !== "undefined" && !/jsdom/i.test(navigat
 
 export function SliceCanvas({ plane, u, tint, className, children }: { plane: Plane; u: number; tint: boolean; className?: string; children?: React.ReactNode }) {
   const ref = React.useRef<HTMLCanvasElement>(null);
-  const ex = EXTENT[plane];
-  const aspect = (ex.s[1] - ex.s[0]) / (ex.t[1] - ex.t[0]);
   React.useEffect(() => {
     const c = ref.current;
     if (!c || !canDraw()) return;
@@ -44,9 +43,10 @@ export function SliceCanvas({ plane, u, tint, className, children }: { plane: Pl
     return () => cancelAnimationFrame(raf);
   }, [plane, u, tint]);
   return (
-    <div className={className} style={{ aspectRatio: String(aspect) }}>
+    <div className={cn("h-full w-full", className)}>
       <div className="relative h-full w-full overflow-hidden rounded-lg bg-black">
-        <canvas ref={ref} className="h-full w-full" aria-hidden />
+        {/* object-contain keeps the scan's true proportions in any box */}
+        <canvas ref={ref} className="h-full w-full object-contain" aria-hidden />
         {plane !== "sagittal" ? (
           <>
             <span className="absolute left-1.5 top-1 text-xs font-bold text-white/85" aria-hidden>R</span>

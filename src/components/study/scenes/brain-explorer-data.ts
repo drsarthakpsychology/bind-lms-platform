@@ -17,7 +17,7 @@ export const DEEP: RegionId[] = ["thalamus", "hypothalamus", "amygdala", "hippoc
 export const ALWAYS: RegionId[] = ["cerebellum", "brainstem"];
 
 /** Hemisphere half sizes (a, y up, y down, z). */
-export const HEMI = { a: 1.55, up: 1.02, down: 0.78, z: 0.64, gap: 0.035 };
+export const HEMI = { a: 1.55, up: 1.02, down: 0.78, z: 0.92, gap: 0.035 };
 
 const sylvianY = (a: number) => -0.05 + (0.55 - a) * 0.286;
 const centralA = (y: number) => 0.3 - (y - 0.05) * 0.37;
@@ -65,7 +65,7 @@ export const PITUITARY: V3 = [0.28, -0.42, 0];
 export const NIGRA: V3 = [-0.05, -0.32, 0.1];
 export const CEREBELLUM = { c: [-0.98, -0.72, 0] as V3, r: [0.45, 0.32, 0.7] as V3 };
 export const EYES: V3[] = [[1.78, -0.08, 0.38], [1.78, -0.08, -0.38]];
-export const EAR: V3 = [-0.05, -0.32, 1.05];
+export const EAR: V3 = [-0.05, -0.32, 1.4];
 
 /** Convert brain coordinates to 3D scene coordinates. */
 export const to3 = (p: V3): V3 => [-p[0], p[1], p[2]];

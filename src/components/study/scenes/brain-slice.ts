@@ -19,12 +19,12 @@ export const PLANE_NAME: Record<Plane, string> = { axial: "Axial (horizontal)", 
 export const RANGE: Record<Plane, { min: number; max: number; lo: string; hi: string }> = {
   axial: { min: -1.35, max: 1.0, lo: "bottom", hi: "top" },
   coronal: { min: -1.45, max: 1.5, lo: "back", hi: "front" },
-  sagittal: { min: -0.75, max: 0.75, lo: "right side", hi: "left side" },
+  sagittal: { min: -1.05, max: 1.05, lo: "right side", hi: "left side" },
 };
 /** 2D extent of the image (s across, t up) in brain units. */
 export const EXTENT: Record<Plane, { s: [number, number]; t: [number, number] }> = {
-  axial: { s: [-1.1, 1.1], t: [-1.9, 1.9] },
-  coronal: { s: [-1.1, 1.1], t: [-1.55, 1.35] },
+  axial: { s: [-1.45, 1.45], t: [-1.95, 1.95] },
+  coronal: { s: [-1.45, 1.45], t: [-1.55, 1.35] },
   sagittal: { s: [-2.0, 2.0], t: [-1.55, 1.35] },
 };
 
@@ -85,7 +85,7 @@ export function hemiDepth(a: number, y: number, z: number) {
 export function classify(p: V3, tubes: Tube[], blobs: Blob[]): Hit {
   const [a, y, z] = p;
   // head: scalp and skull as shells of one ellipsoid around the brain
-  const hx = (a + 0.05) / 1.92, hy = (y - 0.05) / 1.38, hz = z / 1.02;
+  const hx = (a + 0.05) / 1.92, hy = (y - 0.05) / 1.38, hz = z / 1.36;
   const hm = hx * hx + hy * hy + hz * hz;
   const neck = y < -0.75 && Math.abs(z) < 0.42 && a > -0.75 && a < 0.35;
   if (hm > 1 && !neck) return { tissue: "out", region: null };

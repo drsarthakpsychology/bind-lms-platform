@@ -40,7 +40,7 @@ const sstep = (e0: number, e1: number, x: number) => {
 };
 
 /** One hemisphere as region meshes. left = the side facing the student (positive z). */
-function buildHemisphere(left: boolean, q: Quality): Map<RegionId, THREE.BufferGeometry> {
+export function buildHemisphere(left: boolean, q: Quality): Map<RegionId, THREE.BufferGeometry> {
   // about 19 000 triangles per side at full quality, 4 000 at low
   const g = new THREE.SphereGeometry(1, segs(120, q), segs(80, q));
   const pos = g.attributes.position as THREE.BufferAttribute;
@@ -85,11 +85,13 @@ function buildHemisphere(left: boolean, q: Quality): Map<RegionId, THREE.BufferG
     const r = regionAt(ca, cy, cw, left);
     if (!buckets.has(r)) buckets.set(r, { p: [], n: [] });
     const b = buckets.get(r)!;
-    const order = left ? [0, 1, 2] : [0, 2, 1];
+    // the left side is mirrored once (x = -a), which turns the triangles inside out; the right
+    // side is mirrored twice (x and z), which does not. Flip the left back.
+    const order = left ? [0, 2, 1] : [0, 1, 2];
     for (const o of order) {
       const vi = t + o;
       b.p.push(fp.getX(vi), fp.getY(vi), fp.getZ(vi));
-      const sg = left ? 1 : -1;
+      const sg = left ? -1 : 1;
       b.n.push(fn.getX(vi) * sg, fn.getY(vi) * sg, fn.getZ(vi) * sg);
     }
   }
@@ -106,7 +108,7 @@ function buildHemisphere(left: boolean, q: Quality): Map<RegionId, THREE.BufferG
   return out;
 }
 
-function buildCerebellum(q: Quality) {
+export function buildCerebellum(q: Quality) {
   const g = new THREE.SphereGeometry(1, segs(48, q), segs(32, q));
   const pos = g.attributes.position as THREE.BufferAttribute;
   for (let i = 0; i < pos.count; i++) {
