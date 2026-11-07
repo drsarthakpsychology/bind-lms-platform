@@ -109,7 +109,7 @@ export const QUESTIONS_3: PrepQuestion[] = [
     options: ["A-III, B-IV, C-II, D-I", "A-IV, B-III, C-II, D-I", "A-II, B-III, C-IV, D-I", "A-IV, B-III, C-I, D-II"],
     answer: 1,
     explanation:
-      "Stanine: mean 5, SD about 2 (A-IV). T: 50 and 10 (B-III). Wechsler scaled scores: 10 and 3 (C-II). Deviation IQ: 100 and 15 (D-I). The first code swaps stanine and T. The second swaps scaled scores with IQ. The third gives the stanine the scaled-score metric.",
+      "Stanine: mean 5, SD about 2 (A-IV). T: 50 and 10 (B-III). Wechsler scaled scores: 10 and 3 (C-II). Deviation IQ: 100 and 15 (D-I). A-III, B-IV, C-II, D-I swaps stanine and T. A-IV, B-III, C-I, D-II swaps scaled scores with IQ. A-II, B-III, C-IV, D-I gives the stanine the scaled-score metric.",
     module: M,
     ref: "Anastasi & Urbina ch. 3",
   },
@@ -354,7 +354,7 @@ export const QUESTIONS_3: PrepQuestion[] = [
     options: ["A-IV, B-III, C-II, D-I", "A-II, B-III, C-IV, D-I", "A-II, B-I, C-IV, D-III", "A-III, B-II, C-IV, D-I"],
     answer: 1,
     explanation:
-      "WAIS-IV core subtests: VCI = Similarities, Vocabulary, Information; PRI = Block Design, Matrix Reasoning, Visual Puzzles; WMI = Digit Span, Arithmetic; PSI = Symbol Search, Coding. So A-II, B-III, C-IV, D-I. The second code puts Visual Puzzles in processing speed. The third puts Arithmetic in VCI, as in older verbal-scale thinking. The fourth swaps Visual Puzzles and Arithmetic.",
+      "WAIS-IV core subtests: VCI = Similarities, Vocabulary, Information; PRI = Block Design, Matrix Reasoning, Visual Puzzles; WMI = Digit Span, Arithmetic; PSI = Symbol Search, Coding. So A-II, B-III, C-IV, D-I. A-IV, B-III, C-II, D-I puts Visual Puzzles in processing speed. A-II, B-I, C-IV, D-III puts Arithmetic in VCI, as in older verbal-scale thinking. A-III, B-II, C-IV, D-I swaps Visual Puzzles and Arithmetic.",
     module: M,
     ref: "Wechsler 2008, WAIS-IV manual",
   },
@@ -459,7 +459,7 @@ export const QUESTIONS_3: PrepQuestion[] = [
     options: ["A-IV, B-III, C-I, D-II", "A-III, B-IV, C-II, D-I", "A-III, B-IV, C-I, D-II", "A-III, B-I, C-IV, D-II"],
     answer: 2,
     explanation:
-      "VSI = Block Design + Visual Puzzles (A-III); FRI = Matrix Reasoning + Figure Weights (B-IV); WMI = Digit Span + Picture Span (C-I); PSI = Coding + Symbol Search (D-II). The first code swaps VSI and FRI. The second swaps WMI and PSI. The third swaps FRI and WMI.",
+      "VSI = Block Design + Visual Puzzles (A-III); FRI = Matrix Reasoning + Figure Weights (B-IV); WMI = Digit Span + Picture Span (C-I); PSI = Coding + Symbol Search (D-II). A-IV, B-III, C-I, D-II swaps VSI and FRI. A-III, B-IV, C-II, D-I swaps WMI and PSI. A-III, B-I, C-IV, D-II swaps FRI and WMI.",
     module: M,
     ref: "Wechsler 2014",
   },

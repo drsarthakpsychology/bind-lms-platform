@@ -214,7 +214,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     options: ["A-IV, B-II, C-III, D-I", "A-II, B-IV, C-III, D-I", "A-II, B-III, C-IV, D-I", "A-I, B-IV, C-III, D-II"],
     answer: 1,
     explanation:
-      "Test-retest error comes from time sampling (A-II). Immediate alternate forms capture content sampling between forms (B-IV). Alpha reflects inter-item inconsistency or content heterogeneity (C-III). Inter-scorer reliability reflects scorer differences (D-I). The second code swaps time and form sampling. The third swaps heterogeneity with form sampling. The fourth pairs test-retest with scorer error, which is a different source.",
+      "Test-retest error comes from time sampling (A-II). Immediate alternate forms capture content sampling between forms (B-IV). Alpha reflects inter-item inconsistency or content heterogeneity (C-III). Inter-scorer reliability reflects scorer differences (D-I). A-IV, B-II, C-III, D-I swaps time and form sampling. A-II, B-III, C-IV, D-I swaps heterogeneity with form sampling. A-I, B-IV, C-III, D-II pairs test-retest with scorer error, which is a different source.",
     module: M,
     ref: "Anastasi & Urbina table 4-6",
   },
@@ -617,7 +617,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     options: ["A-IV, B-III, C-II, D-I", "A-III, B-IV, C-II, D-I", "A-III, B-II, C-IV, D-I", "A-I, B-IV, C-II, D-III"],
     answer: 1,
     explanation:
-      "Stepping up a half-test correlation uses Spearman-Brown (A-III). Dichotomous items use KR-20 (B-IV). Polytomous items use alpha, the generalisation of KR-20 (C-II). Categorical rater agreement uses kappa (D-I). The second code gives Spearman-Brown to dichotomous items. The third reverses KR-20 and alpha. The fourth gives kappa to the split-half case.",
+      "Stepping up a half-test correlation uses Spearman-Brown (A-III). Dichotomous items use KR-20 (B-IV). Polytomous items use alpha, the generalisation of KR-20 (C-II). Categorical rater agreement uses kappa (D-I). A-IV, B-III, C-II, D-I gives Spearman-Brown to dichotomous items. A-III, B-II, C-IV, D-I reverses KR-20 and alpha. A-I, B-IV, C-II, D-III gives kappa to the split-half case.",
     module: M,
     ref: "Cohen & Swerdlik ch. 5",
   },
