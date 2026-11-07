@@ -496,6 +496,38 @@ Research ethics grew out of terrible abuses:
 }
 :::
 
+
+:::widget experiment
+{
+ "title": "Milgram's obedience studies",
+ "question": "Ordinary volunteers were told by an experimenter to give increasing 'shocks' to a learner (an actor). What share went all the way to the highest level?",
+ "unit": "%",
+ "conditions": [
+  {
+   "label": "Learner in another room (original study)",
+   "value": 65
+  },
+  {
+   "label": "Learner in the same room",
+   "value": 40
+  },
+  {
+   "label": "Teacher must press the learner's hand onto the plate",
+   "value": 30
+  },
+  {
+   "label": "Experimenter gives orders by telephone",
+   "value": 21
+  },
+  {
+   "label": "Two other 'teachers' refuse first",
+   "value": 10
+  }
+ ],
+ "why": "Obedience fell as the victim became closer and more real, as authority became more distant, and when others modelled refusal. The studies caused real distress through deception, which is why research ethics now demands consent, minimal harm, the right to withdraw and full debriefing."
+}
+:::
+
 ### The key documents
 | Document | Main contribution |
 |---|---|

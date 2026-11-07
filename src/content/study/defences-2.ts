@@ -151,6 +151,13 @@ Q: A toddler who explored happily now clings, then pushes his mother away, then 
 ## 3.2 Attachment across life, and when it goes badly wrong [core][advanced]
 The starting picture of attachment (Bowlby's secure base, Ainsworth's Strange Situation and the four infant patterns) and its adult forms (the Adult Attachment Interview, intergenerational transmission) are taught in depth in the **Psychodynamics in depth** module, Sections 1.4 and 2.4. Here we focus on what development and clinical work add: who the attachment figures are, what severe deprivation does, and the two attachment disorders.
 
+
+:::widget strange
+{
+ "caption": "Step through the episodes and switch between the four infants. Watch the reunions: that is where secure, avoidant, ambivalent and disorganised patterns show most clearly."
+}
+:::
+
 ### A quick reminder of the four infant patterns
 - **Secure**: upset at separation, comforted at reunion, returns to play.
 - **Avoidant**: little visible distress; ignores the parent on return.
@@ -508,6 +515,15 @@ Mainstream psychology has rediscovered defences under new names:
   }
  ],
  "caption": "The deeper the process, the harder it is to measure by asking people directly."
+}
+:::
+
+
+:::widget dissonance
+{
+ "belief": "I am a caring, devoted son.",
+ "behaviour": "I have not visited my ageing mother in the village for a year.",
+ "caption": "Watch the tension rise, then pick a way to reduce it. Which choices look like rationalisation, and which actually change behaviour?"
 }
 :::
 

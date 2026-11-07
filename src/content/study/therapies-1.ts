@@ -935,6 +935,45 @@ Aaron Beck noticed that his depressed patients had a stream of quick, negative t
 }
 :::
 
+
+:::widget thoughtrecord
+{
+ "situation": "My manager returned my report with many corrections in red.",
+ "thought": "I'm useless. He's going to fire me.",
+ "emotion": "ashamed",
+ "traps": [
+  {
+   "label": "Fortune-telling",
+   "right": true,
+   "why": "You are predicting being fired without evidence."
+  },
+  {
+   "label": "Labelling",
+   "right": true,
+   "why": "One report becomes a judgement of your whole self: 'useless'."
+  },
+  {
+   "label": "Mind reading",
+   "why": "Close, but the main thought is a prediction and a label, not a guess about his thoughts."
+  },
+  {
+   "label": "Personalisation",
+   "why": "Not quite: you are not blaming yourself for something outside your control."
+  }
+ ],
+ "forEvidence": [
+  "The report did have many corrections.",
+  "My manager looked irritated."
+ ],
+ "againstEvidence": [
+  "My last two appraisals were good.",
+  "Colleagues' reports also come back with corrections.",
+  "Nobody has mentioned my job being at risk."
+ ],
+ "balanced": "The report needed work, which happens to everyone. One report does not make me useless, and there is no sign I will be fired. I'll make the corrections and ask what to change next time."
+}
+:::
+
 ### REBT: Ellis's ABC
 Albert Ellis's **rational emotive behaviour therapy** uses the **ABC(DE)** model: an **A**ctivating event, a **B**elief about it, and the emotional and behavioural **C**onsequence. The therapist **D**isputes irrational beliefs (especially "musts", "awfulising", "I can't stand it" and global self-rating), leading to a new, **E**ffective philosophy.
 
