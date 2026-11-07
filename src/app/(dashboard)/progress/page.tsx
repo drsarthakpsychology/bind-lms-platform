@@ -63,24 +63,25 @@ export default async function ProgressPage() {
         </Link>
       ) : null}
 
-      <section aria-labelledby="cert" className="space-y-3">
-        <div>
-          <h2 id="cert" className="text-h2">
-            Certificate
-          </h2>
-          <p className="text-sm text-muted-foreground">
-            {cert.passed.length} of {cert.total} module tests passed. Pass each with {CERTIFICATE_PASS_PCT}% or more, in any order.
-          </p>
-        </div>
-        <ol className="space-y-2">
-          {MODULES.map((m) => {
-            const r = results.get(m.id);
-            return <ModuleRow key={m.id} id={m.id} num={m.num} title={m.title} pct={pctOf.get(m.id) ?? 0} result={r} />;
-          })}
-        </ol>
-      </section>
-
       <StrengthsPanel userId={me.id} />
+
+      <details className="group rounded-[10px] border-2 border-foreground bg-card">
+        <summary className="flex min-h-12 cursor-pointer flex-wrap items-center gap-x-2 px-4 py-2">
+          <span className="text-h3">Certificate</span>
+          <span className="text-sm font-semibold text-muted-foreground">
+            {cert.passed.length} of {cert.total} module tests passed
+          </span>
+        </summary>
+        <div className="space-y-3 border-t-2 border-foreground p-3">
+          <p className="text-sm text-muted-foreground">Pass each module test with {CERTIFICATE_PASS_PCT}% or more, in any order.</p>
+          <ol className="space-y-2">
+            {MODULES.map((m) => {
+              const r = results.get(m.id);
+              return <ModuleRow key={m.id} id={m.id} num={m.num} title={m.title} pct={pctOf.get(m.id) ?? 0} result={r} />;
+            })}
+          </ol>
+        </div>
+      </details>
     </div>
   );
 }

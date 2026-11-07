@@ -2,14 +2,12 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, Sparkles, Trophy, Zap } from "lucide-react";
+import { ArrowLeft, ArrowRight, Sparkles, Zap } from "lucide-react";
 import { pick, WEEK_BLOCKS, type Note } from "@/lib/learn/notes/types";
 import { emptyState, istToday, markNoteRead, type LearnState } from "@/lib/learn/engine";
 import { getLearnState, initLearnStore, setLearnState, useLearnState } from "@/lib/learn/store";
 import { toPoints } from "@/lib/psychopharm/points";
 import { cn } from "@/lib/utils";
-import { BOARDS } from "@/lib/standing/boards";
-import { ChaiSays } from "./chai";
 import { useExplainView, ViewToggle } from "./view-toggle";
 import n from "./notes.module.css";
 import l from "./learn.module.css";
@@ -173,14 +171,6 @@ export function NoteView({
             </Link>
           </li>
         </ol>
-        <div className="mt-4">
-          <ChaiSays mood="happy" size={56}>
-            Quizzing right after reading is how it sticks.
-          </ChaiSays>
-        </div>
-        <Link href={BOARDS.quiz.href} className="mt-3 inline-flex items-center gap-1.5 text-sm font-bold underline underline-offset-4">
-          <Trophy className="size-4" aria-hidden /> {BOARDS.quiz.label}
-        </Link>
       </section>
 
       <nav className="flex items-center justify-between gap-3 pt-2" aria-label="Other notes">

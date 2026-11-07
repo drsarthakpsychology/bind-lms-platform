@@ -351,11 +351,7 @@ function CoachIntro({ domain, title, state, onStart }: { domain: Domain | "all";
     <div className="mx-auto max-w-xl space-y-6 px-4 py-8">
       <div className="text-center">
         <Chai mood="happy" size={130} />
-        <p className="mt-2 text-eyebrow text-link">Coach</p>
         <h1 className="text-h1">{title}</h1>
-        <p className="mt-1 text-sm text-muted-foreground">
-          Chai teaches, asks, notices what you mix up, and keeps coming back to it until it sticks. Questions get harder as you improve.
-        </p>
       </div>
       <div className="rounded-2xl border-2 border-foreground bg-card p-4">
         <div className="flex items-baseline justify-between">

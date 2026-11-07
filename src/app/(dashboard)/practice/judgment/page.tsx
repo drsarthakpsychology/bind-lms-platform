@@ -1,3 +1,4 @@
+import { ToolHeader } from "@/components/help/tool-header";
 import { ALL_SEED_SCT_ITEMS } from "@/lib/practice/sct";
 import { JudgmentArena } from "./judgment-arena";
 import { requireFeature } from "@/lib/flags";
@@ -18,11 +19,7 @@ export default async function JudgmentPage() {
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
-      <p className="text-eyebrow text-muted-foreground">Script concordance</p>
-      <h1 className="mt-1 text-h1">5 Judgment Calls</h1>
-      <p className="mt-1 text-small text-muted-foreground">
-        90 seconds, one screen. New information changes the probability: this becomes…
-      </p>
+      <ToolHeader title="Judgment calls" tip={{ id: "judgment", steps: ["Each item adds new information.", "Say whether it makes the diagnosis more or less likely.", "Five items, 90 seconds."] }} />
 
       <div className="mt-6">
         <JudgmentArena items={items.slice(0, 5)} />

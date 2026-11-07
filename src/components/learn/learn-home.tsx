@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, DoorOpen, FlaskConical, Hospital, Layers, LayoutGrid, Lock, Pill, ScanEye, Star, Swords, Timer, Trophy, type LucideIcon } from "lucide-react";
+import { ArrowLeft, ArrowRight, DoorOpen, FlaskConical, Hospital, Layers, LayoutGrid, Pill, ScanEye, Star, Swords, Timer, Trophy, type LucideIcon } from "lucide-react";
 import { BADGES, DAILY_GOALS, emptyState, type LearnState } from "@/lib/learn/engine";
 import { initLearnStore, setLearnState, useLearnState } from "@/lib/learn/store";
 import type { Unit } from "@/lib/learn/types";
@@ -136,9 +136,7 @@ export function QuizPath({ units, serverState, save }: { units: Unit[]; serverSt
       </Link>
       <div className="flex flex-wrap items-end justify-between gap-3">
         <div>
-          <p className="text-eyebrow text-link">Quiz path</p>
-          <h1 className="text-h1">Short quizzes, topic by topic</h1>
-          <p className="text-sm text-muted-foreground">Each lesson opens after the one before. Three stars for a clean round.</p>
+          <h1 className="text-h1">Quiz path</h1>
         </div>
         <ViewToggle />
       </div>
@@ -152,7 +150,7 @@ export function QuizPath({ units, serverState, save }: { units: Unit[]; serverSt
               <div className={cn("flex items-center justify-between gap-3 border-b-2 border-foreground px-4 py-3", u.tone === "lime" ? "bg-primary text-primary-foreground" : u.tone === "blue" ? "bg-brand text-brand-foreground" : "bg-foreground text-background")}>
                 <div className="min-w-0">
                   <p className="text-xs font-semibold uppercase tracking-wide opacity-80">Unit {ui + 1}</p>
-                  <h2 className="truncate text-lg font-bold">{u.title}</h2>
+                  <h2 className="text-lg font-bold leading-tight break-words">{u.title}</h2>
                 </div>
                 <span className="flex shrink-0 items-center gap-1 rounded-full border-2 border-current px-2 py-0.5 text-sm font-semibold tabular-nums">
                   <Star className="size-4" aria-hidden /> {stars}/{max}
@@ -161,33 +159,24 @@ export function QuizPath({ units, serverState, save }: { units: Unit[]; serverSt
               <ul className="flex gap-3 overflow-x-auto p-4 [scrollbar-width:none]">
                 {u.lessons.map((l, li) => {
                   const done = st.lessons[l.id];
-                  const prevDone = li === 0 || (st.lessons[u.lessons[li - 1].id]?.stars ?? 0) > 0;
                   const isNext = up?.lesson.id === l.id;
                   return (
                     <li key={l.id} className="w-44 shrink-0">
-                      {prevDone ? (
-                        <Link
-                          href={`/prep/smart/play?lesson=${l.id}&from=/prep/smart/quizzes`}
-                          className={cn("flex h-full flex-col gap-1 rounded-2xl border-2 border-foreground p-3 transition-transform hover:-translate-y-0.5", isNext ? cn("bg-primary text-primary-foreground", s.pulse) : done ? "bg-background" : "bg-card")}
-                        >
-                          <span className="text-xs font-semibold text-link">Lesson {li + 1}</span>
-                          <span className="font-bold leading-tight">{l.title}</span>
-                          <span className="text-xs text-muted-foreground">{l.items.length} questions</span>
-                          <span className="mt-auto text-lg tracking-wider" aria-label={`${done?.stars ?? 0} of 3 stars`}>
-                            {[0, 1, 2].map((k) => (
-                              <span key={k} className={k < (done?.stars ?? 0) ? "" : "opacity-20"}>
-                                ★
-                              </span>
-                            ))}
-                          </span>
-                        </Link>
-                      ) : (
-                        <div className="flex h-full flex-col gap-1 rounded-2xl border-2 border-dashed border-foreground/40 p-3 text-muted-foreground">
-                          <Lock className="size-4" aria-hidden />
-                          <span className="font-bold leading-tight">{l.title}</span>
-                          <span className="text-xs">Clear lesson {li} first</span>
-                        </div>
-                      )}
+                      <Link
+                        href={`/prep/smart/play?lesson=${l.id}&from=/prep/smart/quizzes`}
+                        className={cn("flex h-full flex-col gap-1 rounded-2xl border-2 border-foreground p-3 transition-transform hover:-translate-y-0.5", isNext ? cn("bg-primary text-primary-foreground", s.pulse) : done ? "bg-background" : "bg-card")}
+                      >
+                        <span className="text-xs font-semibold text-link">Lesson {li + 1}</span>
+                        <span className="font-bold leading-tight">{l.title}</span>
+                        <span className="text-xs text-muted-foreground">{l.items.length} questions</span>
+                        <span className="mt-auto text-lg tracking-wider" aria-label={`${done?.stars ?? 0} of 3 stars`}>
+                          {[0, 1, 2].map((k) => (
+                            <span key={k} className={k < (done?.stars ?? 0) ? "" : "opacity-20"}>
+                              ★
+                            </span>
+                          ))}
+                        </span>
+                      </Link>
                     </li>
                   );
                 })}
@@ -197,10 +186,8 @@ export function QuizPath({ units, serverState, save }: { units: Unit[]; serverSt
         })}
       </ol>
 
-      <section aria-labelledby="badges">
-        <h2 id="badges" className="text-lg font-bold">
-          Badges
-        </h2>
+      <details className="rounded-2xl border-2 border-foreground bg-card p-4">
+        <summary className="flex min-h-11 cursor-pointer items-center text-lg font-bold">Badges</summary>
         <ul className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-4">
           {shownBadges.map(([id, b]) => {
             const has = st.badges.includes(id);
@@ -215,7 +202,7 @@ export function QuizPath({ units, serverState, save }: { units: Unit[]; serverSt
             );
           })}
         </ul>
-      </section>
+      </details>
 
       <section className="rounded-2xl border-2 border-foreground bg-card p-4">
         <p className="font-bold">Daily goal</p>

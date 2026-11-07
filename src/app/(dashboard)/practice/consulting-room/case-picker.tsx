@@ -115,8 +115,7 @@ export function CasePicker({ cases }: { cases: CaseCard[] }) {
         <div className="rounded-md border-2 border-dashed border-border bg-card p-8 text-center">
           <p className="text-base font-medium">No patients are ready yet</p>
           <p className="mt-1 text-small text-muted-foreground">
-            Your faculty is finalising the case list. Check back soon: the first
-            patient will be waiting here.
+            Check back soon.
           </p>
         </div>
       ) : null}
@@ -126,7 +125,6 @@ export function CasePicker({ cases }: { cases: CaseCard[] }) {
           <div className="mb-3 flex items-center gap-3">
             <h2 className="text-eyebrow text-link">In progress</h2>
             <span className="h-px flex-1 bg-border" aria-hidden />
-            <span className="text-caption text-muted-foreground">Continue where you left off</span>
           </div>
           <ul className="grid grid-cols-1 gap-4 lg:grid-cols-2">
             {inProgress.map((c) => (
@@ -269,7 +267,7 @@ export function SafetyFirstSheet() {
 function ModePicker({ graded, onChange }: { graded: boolean; onChange: (g: boolean) => void }) {
   const opts = [
     { g: false, label: "Practice", note: "Talk, then get a debrief.", Icon: MessageCircle },
-    { g: true, label: "Graded interview", note: "Take a history, then hand in the MSE, a risk assessment and a short formulation for a score.", Icon: ClipboardCheck },
+    { g: true, label: "Graded interview", note: "Hand in the MSE, risk and a formulation for a score.", Icon: ClipboardCheck },
   ];
   return (
     <fieldset>

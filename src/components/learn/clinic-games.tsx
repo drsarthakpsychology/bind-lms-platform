@@ -1,7 +1,6 @@
 "use client";
 
 import * as React from "react";
-import Link from "next/link";
 
 import { emptyState, finishLesson, istToday, type LearnState, type Payout } from "@/lib/learn/engine";
 import { SCENARIOS, WORDS, type Choice, type Scenario } from "@/lib/learn/scenarios";
@@ -54,13 +53,9 @@ export function ScenarioGame({ serverState, save, noteId }: { serverState: Learn
       <div className="mx-auto max-w-xl space-y-6 px-4 py-8 text-center">
         <Chai mood="think" size={130} />
         <h1 className="text-h1">What would you do?</h1>
-        <p className="text-muted-foreground">Real clinic moments. The patient says something tricky; you choose your response and see what happens next. Some wrong answers sound kind.</p>
         <button type="button" onClick={start} className="btn-sweep h-14 w-full rounded-2xl border-2 border-foreground bg-primary text-lg font-bold text-primary-foreground hard-shadow-md">
           Start
         </button>
-        <Link href="/study/notes" className="block text-sm font-bold underline-offset-4 hover:underline">
-          Back to notes
-        </Link>
       </div>
     );
   }
@@ -170,7 +165,6 @@ export function TermsGame({ serverState, save }: { serverState: LearnState | nul
       <div className="mx-auto max-w-xl space-y-6 px-4 py-8 text-center">
         <Chai mood="happy" size={130} />
         <h1 className="text-h1">Say it clinically</h1>
-        <p className="text-muted-foreground">Turn everyday words into the clinical term you&apos;d write in a case sheet, and pick the respectful way to say sensitive things.</p>
         <button type="button" onClick={() => setRound(buildRound())} className="btn-sweep h-14 w-full rounded-2xl border-2 border-foreground bg-primary text-lg font-bold text-primary-foreground hard-shadow-md">
           Start (12 questions)
         </button>

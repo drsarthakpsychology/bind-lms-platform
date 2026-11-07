@@ -1,3 +1,4 @@
+import { ToolHeader } from "@/components/help/tool-header";
 import { TwoMinuteClinic } from "./clinic";
 import { requireFeature } from "@/lib/flags";
 
@@ -12,12 +13,7 @@ export default async function TwoMinuteClinicPage() {
   await requireFeature("two_minute_clinic");
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
-      <p className="text-eyebrow text-muted-foreground">Micro-drill</p>
-      <h1 className="mt-1 text-h1">Two-Minute Clinic</h1>
-      <p className="mt-1 text-small text-muted-foreground">
-        One line, two minutes, your differential and your next question. Instant expert
-        comparison.
-      </p>
+      <ToolHeader title="Two-minute clinic" tip={{ id: "two-minute-clinic", steps: ["Read the one line.", "Type your differential and your next question in two minutes.", "Compare with the expert answer."] }} />
 
       <div className="mt-6">
         <TwoMinuteClinic />

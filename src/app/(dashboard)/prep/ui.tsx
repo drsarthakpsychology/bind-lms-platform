@@ -3,6 +3,7 @@ import { ArrowLeft, ChevronRight } from "lucide-react";
 import { PREP_EXAMS, PREP_SHORT, PREP_TITLE } from "@/lib/prep/catalog";
 import type { Stats } from "@/lib/prep/progress";
 import { cn } from "@/lib/utils";
+import { ToolHeader } from "@/components/help/tool-header";
 
 export { btn, btnInk, btnPlain, btnPrimary } from "@/app/(dashboard)/study/map/ui";
 
@@ -15,22 +16,18 @@ export function BackToPrep({ href = "/prep", label = PREP_SHORT }: { href?: stri
   );
 }
 
-/** The section's name, big, with the exams it prepares for as tags underneath. */
+/** The section's name with a help button, and the exams it prepares for as one plain line. */
 export function PrepHero({ children }: { children?: React.ReactNode }) {
   return (
     <header className="space-y-3">
-      <p className="flex items-center gap-2 text-eyebrow text-link">
-        <span className="size-2 shrink-0 rounded-[2px] bg-primary" aria-hidden />
-        {PREP_SHORT}
-      </p>
-      <h1 className="text-h1 text-balance [overflow-wrap:anywhere]">{PREP_TITLE}</h1>
-      <ul aria-label="For these exams" className="flex flex-wrap gap-2">
-        {PREP_EXAMS.map((e) => (
-          <li key={e} className="rounded-full border-2 border-foreground bg-secondary px-3 py-1 text-sm font-bold text-secondary-foreground">
-            {e}
-          </li>
-        ))}
-      </ul>
+      <ToolHeader
+        title={PREP_TITLE}
+        tip={{
+          id: "prep",
+          steps: ["Pick a subject, then a topic. Questions come 10 at a time.", "Every answer shows a full explanation. Save any question to see it again.", "Mock tests are timed and marked."],
+        }}
+      />
+      <p className="text-sm font-semibold text-muted-foreground">{PREP_EXAMS.join(" · ")}</p>
       {children}
     </header>
   );

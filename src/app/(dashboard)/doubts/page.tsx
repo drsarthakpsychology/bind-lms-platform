@@ -4,6 +4,7 @@ import { loadMyCohorts } from "@/lib/cohorts/access";
 import { doubtsReady, loadDoubts } from "@/lib/doubts/data";
 import { DoubtsBoard } from "./doubts-ui";
 import Link from "next/link";
+import { ToolHeader } from "@/components/help/tool-header";
 
 export const metadata: Metadata = { title: "Doubts" };
 export const dynamic = "force-dynamic";
@@ -20,7 +21,7 @@ export default async function DoubtsPage({ searchParams }: { searchParams: Promi
       <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
         <h1 className="text-h1">Doubts</h1>
         <p className="mt-2 rounded-2xl border-2 border-foreground bg-primary p-4 text-sm font-semibold text-primary-foreground">
-          The doubts board isn&apos;t switched on yet. Run the new database step (2026_11_access_doubts.sql) and it appears here.
+          {isAdmin ? "The doubts board needs the database step 2026_11_access_doubts.sql." : "Doubts open soon."}
         </p>
       </div>
     );
@@ -32,13 +33,13 @@ export default async function DoubtsPage({ searchParams }: { searchParams: Promi
 
   return (
     <div className="mx-auto max-w-3xl space-y-6 px-4 py-6 sm:px-6 lg:py-8">
-      <header>
-        <p className="text-eyebrow text-link">Doubts</p>
-        <h1 className="text-h1">{isAdmin ? "Doubts board" : "Ask your batch"}</h1>
-        <p className="mt-1 text-sm text-muted-foreground">
-          {isAdmin ? "Every student's doubts and private concerns." : `A doubt you post here is seen by ${group}. Anyone can answer. If it's really a concern about the course or your account, it goes privately to the VIBHA team instead.`}
-        </p>
-      </header>
+      <ToolHeader
+        title={isAdmin ? "Doubts board" : "Ask your batch"}
+        tip={{
+          id: "doubts",
+          steps: [`${group[0].toUpperCase()}${group.slice(1)} sees what you post here. Anyone can answer.`, "A concern about the course or your account goes privately to the VIBHA team instead."],
+        }}
+      />
       {isAdmin ? (
         <p className="rounded-2xl border-2 border-foreground bg-card p-3 text-sm">
           You&apos;re seeing the board as students see it. To reply to doubts and private concerns, use <Link href="/admin/doubts" className="font-bold text-link underline">Review → Doubts &amp; concerns</Link>.

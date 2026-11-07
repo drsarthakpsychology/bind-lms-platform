@@ -100,13 +100,7 @@ export default async function ConsultingRoomPage() {
   return (
     <div className="mx-auto w-full max-w-5xl">
       <div className="mb-6 flex items-start justify-between gap-3">
-        <div className="min-w-0">
-          <p className="text-eyebrow text-muted-foreground">Consulting Room</p>
-          <h1 className="mt-1 text-h1">Choose your patient</h1>
-          <p className="mt-1 max-w-prose text-small text-muted-foreground">
-            Real presentations, real language. Your debrief shows you what you missed.
-          </p>
-        </div>
+        <h1 className="min-w-0 text-h1">Choose your patient</h1>
         <div className="flex shrink-0 flex-col items-end gap-2">
           <SimulationBadge />
           <SafetyFirstSheet />

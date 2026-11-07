@@ -4,6 +4,7 @@ import * as React from "react";
 import { Check, X } from "lucide-react";
 import type { PrepQView } from "@/lib/prep/view";
 import { cn } from "@/lib/utils";
+import { TipButton, TipPanel, useFirstTimeTip } from "@/components/help/first-time-tip";
 
 import { LETTERS as LETTER, ROMAN } from "@/lib/prep/labels";
 
@@ -153,15 +154,25 @@ export function useShortcuts(handlers: { pick?: (i: number) => void; next?: () =
   }, []);
 }
 
-/** A small "keys" hint shown only where a keyboard is likely (wide screens). */
+/**
+ * Keyboard keys, only where a keyboard is likely (wide screens). Shown once,
+ * then folded into a small "Keys" button.
+ */
 export function KeysHint({ mark = false }: { mark?: boolean }) {
+  const tip = useFirstTimeTip(mark ? "prep-keys-mock" : "prep-keys");
   return (
-    <p className="hidden text-caption text-muted-foreground lg:block">
-      Keys: <kbd className="font-mono">1</kbd> to <kbd className="font-mono">4</kbd> answer · <kbd className="font-mono">N</kbd> next{mark ? (
-        <>
-          {" "}· <kbd className="font-mono">M</kbd> mark for review
-        </>
-      ) : null}
-    </p>
+    <>
+      <TipButton tip={tip} label="Keys" className="hidden lg:inline-flex" />
+      <TipPanel tip={tip} title="Keys" className="hidden lg:block lg:basis-full">
+        <p>
+          <kbd className="font-mono">1</kbd> to <kbd className="font-mono">4</kbd> answer · <kbd className="font-mono">N</kbd> next
+          {mark ? (
+            <>
+              {" "}· <kbd className="font-mono">M</kbd> mark for review
+            </>
+          ) : null}
+        </p>
+      </TipPanel>
+    </>
   );
 }
