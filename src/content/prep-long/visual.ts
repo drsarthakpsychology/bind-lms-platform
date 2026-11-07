@@ -30,6 +30,13 @@ import type {
   ActionPotentialData,
   NervousSystemData,
   ConditioningData,
+  MoodlineData,
+  SortData,
+  DecideData,
+  WorkedData,
+  RevealData,
+  GuessData,
+  BuildData,
 } from "@/lib/study/types";
 
 type DataByKind = {
@@ -57,6 +64,13 @@ type DataByKind = {
   actionpotential: ActionPotentialData;
   nervoussystem: NervousSystemData;
   conditioning: ConditioningData;
+  moodline: MoodlineData;
+  sort: SortData;
+  decide: DecideData;
+  worked: WorkedData;
+  reveal: RevealData;
+  guess: GuessData;
+  build: BuildData;
 };
 
 export function vis<K extends keyof DataByKind>(kind: K, data: DataByKind[K], caption?: string): PrepVisual {
