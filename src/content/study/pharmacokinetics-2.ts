@@ -39,6 +39,15 @@ An **allosteric** drug binds a site other than the messenger's site and changes 
 - **Negative allosteric modulators** (NAMs) reduce it.
 - Allosteric drugs have a natural ceiling: they cannot exceed what the messenger can do, which is one reason benzodiazepines alone are rarely fatal.
 
+
+:::widget receptor
+{
+ "receptor": "GABA-A",
+ "title": "Allosteric is not the same as agonist",
+ "caption": "Try the four ligand types. All of them sit in the main lock. A benzodiazepine is different: it binds a separate site and only turns up the effect of GABA that is already there. With no GABA it does little, which is one reason benzodiazepines alone rarely stop breathing, while barbiturates, which can open the channel directly at high doses, can."
+}
+:::
+
 ### Functional selectivity
 Some agonists favour one signalling pathway over another at the same receptor (biased agonism), for example G protein signalling over beta-arrestin. This is an active area in opioid and dopamine drug design, aiming to keep benefit while losing specific side effects.
 
@@ -86,6 +95,15 @@ Q: In a tissue with a large receptor reserve, a partial agonist is most likely t
 {"title": "From a receptor at the surface to a change in the nucleus", "layout": "chain", "nodes": [{"id": "g1", "label": "Messenger binds a G protein-coupled receptor", "detail": "For example serotonin at 5-HT1A, or dopamine at D2."}, {"id": "g2", "label": "G protein switches on", "detail": "The receptor swaps GDP for GTP on the G protein, which splits and acts on enzymes or channels."}, {"id": "g3", "label": "Second messengers change", "detail": "Cyclic AMP, calcium, IP3 or DAG levels rise or fall."}, {"id": "g4", "label": "Kinases act", "detail": "Protein kinase A, C and others add phosphate groups to target proteins."}, {"id": "g5", "label": "Transcription factors move", "detail": "CREB and others enter the nucleus and switch genes on or off, such as BDNF."}, {"id": "g6", "label": "The neuron changes over days", "detail": "New receptors, new synapses, changed sensitivity: the slow adaptations behind many medicines' delayed effects and their withdrawal syndromes."}], "caption": "Press Play. The early steps take seconds; the last ones take days to weeks. That gap explains why many psychiatric medicines take time."}
 :::
 
+
+:::widget release
+{
+ "transmitter": "serotonin",
+ "title": "The first dose changes the synapse at once",
+ "caption": "Pick SSRI: within hours serotonin lingers in the gap. Yet mood takes weeks to lift. The table below shows why: the brain answers the extra serotonin by desensitising its own brake receptors and changing gene expression, and it is that slow adaptation, not the first change you see here, that tracks recovery."
+}
+:::
+
 ### Adaptation: desensitisation, down-regulation and up-regulation
 | Process | What happens | Timescale | Example |
 |---|---|---|---|
@@ -129,6 +147,21 @@ After an IV or oral dose, a fat-soluble drug first fills a **central compartment
 ### Flip-flop kinetics
 When absorption is much slower than elimination (depot injections, some slow-release formulations), the absorption rate sets the apparent half-life. Steady state then takes four to five **absorption** half-lives: months for some depots.
 
+
+:::widget journey
+{
+ "drug": "Aripiprazole monthly injection",
+ "target": "dopamine D2 receptors, as a partial agonist",
+ "route": "depot",
+ "notes": {
+  "muscle": "Tiny crystals sit in the muscle and dissolve slowly over weeks. This slow release, not the liver, sets how long it lasts.",
+  "slow": "Because release is slower than elimination, the apparent half-life is the release half-life: flip-flop kinetics. Steady state takes months.",
+  "liver": "Once in the blood it is cleared by CYP2D6 and CYP3A4 as usual, so strong inhibitors still mean a dose change."
+ },
+ "caption": "Follow the depot route and stop at the muscle. This is why oral cover is given at the start, and why a missed injection does not cause an immediate drop."
+}
+:::
+
 :::recall
 1. Contrast first-order and zero-order elimination. || A constant fraction versus a constant amount removed per unit time.
 2. Name two psychiatric drugs with self-limiting (non-linear) kinetics. || Paroxetine and fluoxetine (also valproate binding, high-level clozapine).
@@ -155,6 +188,15 @@ Q: Paroxetine 40 mg gives more than twice the level of 20 mg mainly because:
 | Transporter effects | P-glycoprotein inhibition or induction changes absorption and brain entry | Verapamil or ketoconazole raise some P-gp substrates |
 | Protein-binding displacement | Usually only transient unless clearance also falls | Valproate raising free phenytoin |
 | Renal | Changes in kidney handling | Thiazides, NSAIDs and ACE inhibitors raising lithium |
+
+
+:::widget release
+{
+ "transmitter": "noradrenaline",
+ "title": "Two pushes on the same synapse",
+ "caption": "Pick MAOI: noradrenaline stores fill because the enzyme no longer breaks it down. Now imagine adding Amphetamine (or a decongestant, or tyramine from food): the pump reverses and those full stores are dumped into the gap at once. Each drug alone is manageable; together they can cause a hypertensive crisis. Most dangerous interactions are two drugs pushing the same lever."
+}
+:::
 
 ### Pharmacodynamic interactions that cause most harm
 | Shared effect | Combinations | Risk |

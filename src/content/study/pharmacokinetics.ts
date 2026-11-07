@@ -356,6 +356,21 @@ Many psychiatric medicines are bound to blood proteins (albumin for acidic drugs
 ### The blood-brain barrier
 Brain capillaries are sealed by tight junctions and lined with pumps. Drugs cross if they are **small, fat-soluble, not charged**, or carried by a transporter. **P-glycoprotein** pumps push some drugs back out: it limits brain entry of paliperidone, risperidone and loperamide. A few brain areas lie **outside** the barrier: the pituitary and the vomiting centre (area postrema), which is why amisulpride (poor brain entry) still raises prolactin strongly, and why many drugs cause nausea.
 
+
+:::widget journey
+{
+ "drug": "Domperidone",
+ "target": "dopamine D2 receptors in the gut and in the vomiting trigger zone, which sits outside the barrier",
+ "route": "oral",
+ "notes": {
+  "bbb": "Pumped straight back out by P-glycoprotein, so very little enters the brain. That is the whole point of the drug.",
+  "target": "Blocks D2 in the gut and the trigger zone: less nausea and faster stomach emptying, with almost no stiffness or tremor, because the movement circuits are behind the barrier.",
+  "blood": "The pituitary also sits outside the barrier, so prolactin can still rise. At high doses it can also lengthen QT."
+ },
+ "caption": "Compare this journey with haloperidol's earlier in the module. Same receptor, but the barrier decides where it acts and so which side effects follow."
+}
+:::
+
 :::widget brainmap
 {"title": "Inside and outside the barrier", "focus": ["hypothalamus", "brainstem", "prefrontal", "basal-ganglia"], "notes": {"hypothalamus": "The pituitary below it sits outside the blood-brain barrier. Drugs that enter the brain poorly can still block dopamine here and raise prolactin.", "brainstem": "The area postrema (the vomiting centre) is also outside the barrier, so it 'tastes' the blood: many drugs cause early nausea through it.", "prefrontal": "Protected by the barrier. Only drugs that cross reach the targets for mood and thinking.", "basal-ganglia": "Protected too: movement side effects need the drug to have crossed the barrier."}, "caption": "Tap each region. The barrier is not everywhere, and those gaps explain some surprising side effects."}
 :::
@@ -380,6 +395,34 @@ Q: Haemodialysis removes lithium well but removes little sertraline in overdose.
 The liver makes drugs easier to remove in two broad phases:
 - **Phase I**: changing the molecule, mostly by **cytochrome P450 (CYP)** enzymes (oxidation).
 - **Phase II**: attaching a water-soluble group (glucuronidation by UGT enzymes, sulfation). Lorazepam, oxazepam and lamotrigine are cleared mainly this way.
+
+
+:::widget compare
+{
+ "title": "An inhibitor and an inducer",
+ "a": {
+  "label": "Enzyme inhibitor (fluvoxamine on CYP1A2)",
+  "points": [
+   "Works within a day or two, as soon as levels build",
+   "Partner drug levels rise: clozapine can climb several-fold",
+   "Risk: toxicity, such as sedation, seizures, low blood pressure",
+   "Reverses quickly once the inhibitor is stopped"
+  ],
+  "summary": "Fast on, fast off; the danger is too much."
+ },
+ "b": {
+  "label": "Enzyme inducer (carbamazepine, tobacco smoke)",
+  "points": [
+   "Builds over one to two weeks as new enzyme is made",
+   "Partner drug levels fall: the pill, quetiapine, haloperidol",
+   "Risk: loss of effect, relapse, an unplanned pregnancy",
+   "Takes about as long to wear off after stopping"
+  ],
+  "summary": "Slow on, slow off; the danger is too little."
+ },
+ "caption": "Slide between the two. The timing explains why an inhibitor problem shows up in days, while an inducer problem often appears, or reverses, weeks later."
+}
+:::
 
 ### The enzymes to know
 | Enzyme | Psychiatric substrates | Strong inhibitors | Inducers |
@@ -459,6 +502,15 @@ For a drug with a long half-life, waiting 4 to 5 half-lives for steady state may
 
 Examples: valproate loading (about 20 mg/kg) in acute mania; paliperidone palmitate's two deltoid injections a week apart; aripiprazole monthly's two-injection start.
 
+
+:::widget curve
+{
+ "kind": "half-life",
+ "title": "Why a loading dose saves time",
+ "caption": "Set a long half-life and give the same dose each day: the level creeps up and takes four to five half-lives to settle. A loading dose is the shortcut: one larger first dose fills the body's volume straight to the target, and ordinary doses then simply keep it there."
+}
+:::
+
 ### Therapeutic drug monitoring (TDM)
 TDM means measuring a drug level to guide the dose. It is most useful when:
 - The therapeutic range is narrow (lithium).
@@ -504,6 +556,34 @@ Q: Why is a level drawn 2 hours after a dose misleading for most drugs?
 | Kidney disease | Lower clearance of renally cleared drugs | Reduce lithium, paliperidone, amisulpride, pregabalin, gabapentin, desvenlafaxine |
 | Smoking | CYP1A2 induced | Higher clozapine and olanzapine doses; watch when stopping |
 | Obesity | Larger Vd for fat-soluble drugs | Longer half-life of diazepam; loading doses by weight |
+
+:::widget compare
+{
+ "title": "The same tablet at 25 and at 80",
+ "a": {
+  "label": "Aged 25",
+  "points": [
+   "Kidneys clear lithium and paliperidone briskly",
+   "Liver enzymes work at full speed",
+   "More water and muscle, less fat",
+   "Brain tolerates sedation and anticholinergic load"
+  ],
+  "summary": "Usual adult doses usually fit."
+ },
+ "b": {
+  "label": "Aged 80",
+  "points": [
+   "Kidney clearance often halved: lithium builds up",
+   "Some liver pathways slow, especially for diazepam",
+   "More fat: fat-soluble drugs linger longer",
+   "Brain more sensitive: falls, confusion and delirium"
+  ],
+  "summary": "Start low, go slow, review often."
+ },
+ "caption": "Slide from young to old. Each change on its own is modest, but together they explain why older adults need lower doses and fewer medicines."
+}
+:::
+
 
 :::widget decide
 {"scene": "Mrs Krishnan, 82, in Chennai, has depression and poor sleep. She has mild kidney impairment. Her current list: amitriptyline 25 mg at night, diazepam 5 mg at night, chlorpheniramine for an itchy rash, and a bladder tablet (oxybutynin). She has become forgetful, unsteady and constipated.", "ask": "How do you apply pharmacokinetics and pharmacodynamics here?", "choices": [{"label": "Add a memory medicine for dementia", "verdict": "harm", "outcome": "Her confusion continues and she falls.", "why": "The likely cause is drug burden in an older body, not dementia."}, {"label": "Recognise high anticholinergic and sedative burden plus slower clearance with age: taper diazepam slowly, stop chlorpheniramine and oxybutynin where possible, switch amitriptyline to sertraline or mirtazapine at a low dose, and review again", "verdict": "best", "outcome": "Over six weeks her memory, balance and bowels improve, and her mood lifts.", "why": "Older people clear diazepam slowly (more fat, longer half-life) and are very sensitive to anticholinergic drugs; removing the burden treats the problem."}, {"label": "Stop every medicine today", "verdict": "harm", "outcome": "She has rebound insomnia, anxiety and a withdrawal seizure from the diazepam.", "why": "Benzodiazepines must be tapered, even when they are part of the problem."}]}
