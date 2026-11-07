@@ -332,7 +332,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "Children who focused on the 'hot', appealing features of the treat struggled, while those who turned away, sang, or represented the treat in cool, non-consummatory terms waited much longer. Metcalfe and Mischel described this as a hot-cool system model of self-control. Staring at the treat's tasty qualities made waiting harder. The other options do not fit the procedure.",
+      "Children who focused on the 'hot', appealing features of the treat struggled, while those who turned away, sang, or represented the treat in cool, non-consummatory terms waited much longer. Metcalfe and Mischel described this as a hot-cool system model of self-control. Staring at the treat's tasty qualities made waiting harder. Staring at the treat and thinking about its taste ('hot' focus) shortened waiting, and being told the treat would never come or receiving it at once removes the delay that the procedure measures.",
     ref: "Mischel, Shoda & Rodriguez 1989; Metcalfe & Mischel 1999",
   }),
   p({
@@ -711,7 +711,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "Mischel and colleagues reported that longer delay predicted better coping, concentration and academic scores. Watts, Duncan and Quan's larger, more diverse replication found that much of the association disappeared once family background and early cognitive ability were controlled. So the original finding stands as a correlation but its size and meaning are debated. The other options contradict the reported findings.",
+      "Mischel and colleagues reported that longer delay predicted better coping, concentration and academic scores. Watts, Duncan and Quan's larger, more diverse replication found that much of the association disappeared once family background and early cognitive ability were controlled. So the original finding stands as a correlation but its size and meaning are debated. Children who delayed longer were not more impulsive or less successful in school, and they were not identical to non-delayers in the original follow-ups.",
     ref: "Shoda, Mischel & Peake 1990; Watts, Duncan & Quan 2018",
   }),
   p({

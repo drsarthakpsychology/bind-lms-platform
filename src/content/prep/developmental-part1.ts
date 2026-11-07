@@ -718,7 +718,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "Children aged about 10 who were skilled at chess recalled meaningful board positions better than adult novices, yet had shorter digit spans. This showed that a rich knowledge base, not just basic capacity, drives memory performance and can reverse usual age differences. The other options contradict the reported pattern.",
+      "Children aged about 10 who were skilled at chess recalled meaningful board positions better than adult novices, yet had shorter digit spans. This showed that a rich knowledge base, not just basic capacity, drives memory performance and can reverse usual age differences. The children were not worse at both tasks, not better at digits only, and not identical to adults: expertise helped only in the chess domain.",
     module: undefined,
     ref: "Chi 1978",
   }),

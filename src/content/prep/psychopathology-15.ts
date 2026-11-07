@@ -299,7 +299,7 @@ export const PART: PrepQuestion[] = [
     options: ["Illness anxiety involves prominent, distressing physical symptoms", "Somatic symptom disorder involves no somatic symptoms at all", "Illness anxiety centres on the idea of illness; SSD on the symptoms", "The two disorders cannot be distinguished clinically"],
     answer: 2,
     explanation:
-      "DSM-5 split DSM-IV hypochondriasis: those with significant somatic symptoms plus excessive concern go to SSD (about 75%), while those with little or no symptoms but high health anxiety go to illness anxiety disorder. The other options invert or deny this distinction.",
+      "DSM-5 split DSM-IV hypochondriasis: those with significant somatic symptoms plus excessive concern go to SSD (about 75%), while those with little or no symptoms but high health anxiety go to illness anxiety disorder. Prominent distressing physical symptoms point to somatic symptom disorder, not illness anxiety; SSD by definition involves somatic symptoms; and the two can be told apart clinically by this very distinction.",
     ref: "DSM-5-TR illness anxiety disorder",
   }),
   Q({

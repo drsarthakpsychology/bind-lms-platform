@@ -258,7 +258,7 @@ export const PART: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "Clients learn to spot TRAPs (for example, criticism at work, feeling low, then staying in bed) and replace avoidance with alternative coping (going for a planned walk, calling a friend), which gets them 'back on TRAC'. The other options are not part of the acronym.",
+      "Clients learn to spot TRAPs (for example, criticism at work, feeling low, then staying in bed) and replace avoidance with alternative coping (going for a planned walk, calling a friend), which gets them 'back on TRAC'. Automatic cognition, anxiety control and acceptance and commitment are terms from cognitive therapy, anxiety management and ACT, not the AC of TRAC.",
     ref: "Martell, Addis & Jacobson 2001",
   }),
   Q({

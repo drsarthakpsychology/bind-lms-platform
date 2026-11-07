@@ -33,7 +33,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "In the tripartite model an attitude has an affective part (how I feel about the object), a behavioural part (how I tend to act towards it) and a cognitive part (what I believe about it). For example, an attitude to yoga might include enjoying it, attending classes and believing it lowers stress. The other options are made up of real psychological words, but none of them is the standard three-part description of an attitude.",
+      "In the tripartite model an attitude has an affective part (how I feel about the object), a behavioural part (how I tend to act towards it) and a cognitive part (what I believe about it). For example, an attitude to yoga might include enjoying it, attending classes and believing it lowers stress. Attention, belief and conformity; arousal, behaviour and conditioning; and assimilation, balance and consistency are made up of real psychological words, but none is the standard three-part description of an attitude.",
     ref: "Rosenberg & Hovland 1960; Baron & Branscombe, ch. 5",
   }),
   s({
@@ -416,7 +416,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "Aronson and Stone combined public advocacy with a private reminder of past failures. Seeing themselves as hypocrites created dissonance, and the easiest way to reduce it was to act on their own message, so more students in this group bought condoms. The method has been used to promote water saving and safer driving. The other options contradict the finding.",
+      "Aronson and Stone combined public advocacy with a private reminder of past failures. Seeing themselves as hypocrites created dissonance, and the easiest way to reduce it was to act on their own message, so more students in this group bought condoms. The method has been used to promote water saving and safer driving. Students did not use condoms less, did change their behaviour rather than staying the same, and did not simply forget the speech.",
     ref: "Stone et al. 1994; Aronson, Fried & Stone 1991",
   }),
   s({

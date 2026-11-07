@@ -243,7 +243,7 @@ export const PART: PrepQuestion[] = [
     options: ["Free association and interpretation of the urge", "Awareness training and a competing response, with support", "Flooding and implosion with the urge to pull", "Aversive shock combined with response cost"],
     answer: 1,
     explanation:
-      "HRT includes awareness training (detecting early warning signs), competing response training (a physically incompatible action held for about a minute), and social support, with relaxation and motivation components in fuller versions. CBIT for Tourette's builds on HRT. The other options are unrelated or aversive methods.",
+      "HRT includes awareness training (detecting early warning signs), competing response training (a physically incompatible action held for about a minute), and social support, with relaxation and motivation components in fuller versions. CBIT for Tourette's builds on HRT. Free association and interpretation belong to psychoanalysis, flooding and implosion are exposure methods for anxiety, and aversive shock with response cost is an outdated punishment approach.",
     module: "ocd",
     ref: "Azrin & Nunn 1973; Piacentini et al. 2010 CBIT",
   }),

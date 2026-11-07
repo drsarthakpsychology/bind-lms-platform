@@ -50,7 +50,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "A sailor may first go to sea to earn a living but later love the sea for its own sake. Allport argued that many adult motives grow out of earlier ones and then 'cut the cord', so we do not need to trace every adult motive back to childhood drives, as Freud did. He distinguished perseverative autonomy (simple habits) from propriate autonomy (motives tied to the self). The other options contradict the concept.",
+      "A sailor may first go to sea to earn a living but later love the sea for its own sake. Allport argued that many adult motives grow out of earlier ones and then 'cut the cord', so we do not need to trace every adult motive back to childhood drives, as Freud did. He distinguished perseverative autonomy (simple habits) from propriate autonomy (motives tied to the self). Functional autonomy rejects the idea that adult behaviour is driven by childhood conflicts or only by present rewards, and it does not claim that traits are fixed at birth.",
     ref: "Allport 1937, 1961",
   }),
   p({
@@ -657,7 +657,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "Mischel called this ceiling the 'personality coefficient' and argued that behaviour is more consistent within similar situations than across different ones, so situations and how people interpret them matter greatly. This began the person-situation debate. He did not claim personality was non-existent; he later proposed the CAPS model of stable if-then patterns. The other options misstate his argument.",
+      "Mischel called this ceiling the 'personality coefficient' and argued that behaviour is more consistent within similar situations than across different ones, so situations and how people interpret them matter greatly. This began the person-situation debate. He did not claim personality was non-existent; he later proposed the CAPS model of stable if-then patterns. Mischel did not claim traits predict perfectly, did not deny that personality exists, and did not argue that only biological traits matter.",
     ref: "Mischel 1968",
   }),
   p({
@@ -774,7 +774,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: AR,
     answer: 1,
     explanation:
-      "Both are true, but R does not explain A. Dimensions are preferred because most traits are distributed roughly normally, with most people near the middle, so sorting people into two boxes throws away information and splits similar people near the cut-off. R is a correct historical fact about Jung, and Eysenck later turned his types into a dimension, but the fact that the terms came from a type theory gives no reason to prefer dimensions. So 'R explains A' is wrong, and since both are true the other options are wrong.",
+      "Both are true, but R does not explain A. Dimensions are preferred because most traits are distributed roughly normally, with most people near the middle, so sorting people into two boxes throws away information and splits similar people near the cut-off. R is a correct historical fact about Jung, and Eysenck later turned his types into a dimension, but the fact that the terms came from a type theory gives no reason to prefer dimensions. So 'R explains A' is wrong, and since both statements are true, neither 'A is true, but R is false' nor 'A is false, but R is true' applies.",
     ref: "Haslam, Holland & Kuppens 2012; Pittenger 2005",
   }),
   p({
@@ -832,7 +832,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "Test-retest correlations over several years rise from about 0.3 in childhood to about 0.5 in young adulthood and about 0.7 in middle age and beyond. So personality becomes more stable with age but never becomes perfectly fixed, which challenges the idea that it is 'set like plaster' by 30. Mean-level changes also occur, such as increases in conscientiousness and agreeableness. The other options misstate the pattern.",
+      "Test-retest correlations over several years rise from about 0.3 in childhood to about 0.5 in young adulthood and about 0.7 in middle age and beyond. So personality becomes more stable with age but never becomes perfectly fixed, which challenges the idea that it is 'set like plaster' by 30. Mean-level changes also occur, such as increases in conscientiousness and agreeableness. Stability is lowest, not highest, in childhood, is well above zero, and never becomes perfect at any age.",
     ref: "Roberts & DelVecchio 2000, Psychol Bull",
   }),
   p({
@@ -905,7 +905,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "Eysenck held that conscience is largely a set of conditioned fear responses. Extraverts, being under-aroused, condition more slowly, so they develop weaker inhibitions, and high neuroticism adds strong emotional drive; he later added psychoticism as a further risk factor. Research found the strongest link with psychoticism and impulsivity rather than with extraversion. The other options contradict his account.",
+      "Eysenck held that conscience is largely a set of conditioned fear responses. Extraverts, being under-aroused, condition more slowly, so they develop weaker inhibitions, and high neuroticism adds strong emotional drive; he later added psychoticism as a further risk factor. Research found the strongest link with psychoticism and impulsivity rather than with extraversion. Eysenck did not claim stronger superegos or higher intelligence, and his account predicts less, not more, anxiety about punishment.",
     ref: "Eysenck 1964, 1977",
   }),
   p({

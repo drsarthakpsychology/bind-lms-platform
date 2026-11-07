@@ -544,7 +544,7 @@ export const PART: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "COM-B says that for a behaviour to occur a person needs the capability (physical and psychological), the opportunity (physical and social) and the motivation (reflective and automatic). Interventions are chosen to target whichever is lacking. Michie's group also built a taxonomy of 93 behaviour change techniques so that interventions can be described precisely and replicated. The other combinations are made up.",
+      "COM-B says that for a behaviour to occur a person needs the capability (physical and psychological), the opportunity (physical and social) and the motivation (reflective and automatic). Interventions are chosen to target whichever is lacking. Michie's group also built a taxonomy of 93 behaviour change techniques so that interventions can be described precisely and replicated. Cognition, Opportunity and Memory; Control, Obligation and Belief; and Cues, Outcomes and Modelling are made up, although some words (opportunity, cues, modelling) appear in other behaviour change models.",
     ref: "Michie, van Stralen & West 2011; Michie et al. 2013",
   }),
   Q({

@@ -434,7 +434,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "Morgan reacted against the anecdotal method of Romanes, who credited animals with complex reasoning based on stories. Morgan's principle of parsimony urged caution, for example explaining his dog's opening of a gate by trial-and-error learning rather than insight. This shaped the careful experiments of Thorndike and the behaviourists. The other options contradict his canon.",
+      "Morgan reacted against the anecdotal method of Romanes, who credited animals with complex reasoning based on stories. Morgan's principle of parsimony urged caution, for example explaining his dog's opening of a gate by trial-and-error learning rather than insight. This shaped the careful experiments of Thorndike and the behaviourists. The canon warns against assuming human-like thoughts in animals, says nothing about only humans learning, and does not require explaining everything by instinct.",
     ref: "Morgan 1894; Hergenhahn, ch. 10",
   }),
   // ── Early figures and the growth of psychology ─────────────────────────────

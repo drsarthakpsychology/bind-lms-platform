@@ -135,7 +135,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "Analysing over 130 studies from 17 countries, Bond and Smith found that cultural collectivism predicted higher conformity, and that conformity in US studies had fallen over time. This shows Asch's rate was partly a product of its time and place. The other options contradict these findings.",
+      "Analysing over 130 studies from 17 countries, Bond and Smith found that cultural collectivism predicted higher conformity, and that conformity in US studies had fallen over time. This shows Asch's rate was partly a product of its time and place. Conformity was lower, not higher, in individualist cultures, it was not identical everywhere, and in the USA it had declined rather than increased.",
     ref: "Bond & Smith 1996, Psychol Bull",
   }),
   s({
@@ -614,7 +614,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "Over 1,300 trick-or-treaters were told to take one sweet. Anonymous children in groups took extra sweets or money far more often (over half) than identified children alone (under 10%). Both anonymity and being in a group added to the effect. The results contradict the other options.",
+      "Over 1,300 trick-or-treaters were told to take one sweet. Anonymous children in groups took extra sweets or money far more often (over half) than identified children alone (under 10%). Both anonymity and being in a group added to the effect. Being identified reduced rather than increased rule-breaking, children did break rules, and groups increased rule-breaking more than being alone.",
     ref: "Diener et al. 1976",
   }),
   s({
@@ -699,7 +699,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "Moscovici argued that people facing a majority focus on 'what do others think of me?' and comply outwardly. Facing a consistent minority, they ask 'why do they think that?' and examine the arguments, which can lead to delayed, private or indirect change, sometimes on related issues rather than the one under debate. The other options misstate the theory.",
+      "Moscovici argued that people facing a majority focus on 'what do others think of me?' and comply outwardly. Facing a consistent minority, they ask 'why do they think that?' and examine the arguments, which can lead to delayed, private or indirect change, sometimes on related issues rather than the one under debate. Minorities can produce private change, not only compliance; majorities do not always produce deep private change; and both groups do exert influence.",
     ref: "Moscovici 1980",
   }),
   s({

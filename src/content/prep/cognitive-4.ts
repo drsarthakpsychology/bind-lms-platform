@@ -337,7 +337,7 @@ export const QUESTIONS_4: PrepQuestion[] = [
     options: ["functional fixedness", "the availability heuristic", "incubation", "problem representation"],
     answer: 3,
     explanation:
-      "Representing the problem in terms of colour parity makes the impossibility obvious (the removed corners are the same colour), while representing it as geometry leads to endless trial attempts (as Kaplan and Simon showed). The other options are unrelated to the effect of changing the representation.",
+      "Representing the problem in terms of colour parity makes the impossibility obvious (the removed corners are the same colour), while representing it as geometry leads to endless trial attempts (as Kaplan and Simon showed). Functional fixedness is failing to see a new use for an object, the availability heuristic is judging frequency by ease of recall, and incubation is insight after a break, so none describes how re-representing the board solves the problem.",
     module: M,
     ref: "Kaplan & Simon 1990",
   },

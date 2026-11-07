@@ -785,7 +785,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "Participants rated photos of attractive people as more sensitive, kind, interesting, sociable and likely to have happier marriages and better jobs, a physical attractiveness stereotype related to the halo effect. Meta-analyses find the stereotype is strongest for social competence, weaker for integrity and concern for others. The other options contradict the finding.",
+      "Participants rated photos of attractive people as more sensitive, kind, interesting, sociable and likely to have happier marriages and better jobs, a physical attractiveness stereotype related to the halo effect. Meta-analyses find the stereotype is strongest for social competence, weaker for integrity and concern for others. Attractive people were not judged less intelligent or more dishonest, and they did have an advantage in personality judgements.",
     ref: "Dion, Berscheid & Walster 1972; Eagly et al. 1991",
   }),
   s({

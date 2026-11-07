@@ -841,7 +841,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "Because deviant ingroup members threaten the group's positive image, people derogate them more than equally deviant outgroup members, while praising good ingroup members more. This shows that ingroup favouritism is not unconditional; it serves to protect the group's identity. The other options misstate the effect.",
+      "Because deviant ingroup members threaten the group's positive image, people derogate them more than equally deviant outgroup members, while praising good ingroup members more. This shows that ingroup favouritism is not unconditional; it serves to protect the group's identity. Group members are not rated equally, outgroup members are not always judged more harshly, and the effect is not a preference for minority groups.",
     ref: "Marques, Yzerbyt & Leyens 1988",
   }),
   s({

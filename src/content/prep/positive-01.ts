@@ -517,7 +517,7 @@ export const PART: PrepQuestion[] = [
     options: ["Count how many times they smiled the day before", "List their character strengths in order of strength", "Report their monthly income, savings and debts", "Rate their life from worst possible (0) to best (10)"],
     answer: 3,
     explanation:
-      "The Cantril ladder is a life evaluation item: imagine a ladder from 0 (worst possible life) to 10 (best possible life) and say where you stand now. It reflects the cognitive part of subjective well-being. National rankings also examine factors such as income, social support, healthy life expectancy, freedom, generosity and perceived corruption. The other options are not how the ladder works.",
+      "The Cantril ladder is a life evaluation item: imagine a ladder from 0 (worst possible life) to 10 (best possible life) and say where you stand now. It reflects the cognitive part of subjective well-being. National rankings also examine factors such as income, social support, healthy life expectancy, freedom, generosity and perceived corruption. The ladder does not count smiles, rank character strengths or ask about income and debts; those would measure affect, traits or objective circumstances rather than life evaluation.",
     ref: "Cantril 1965; Helliwell et al. World Happiness Report",
   }),
   Q({

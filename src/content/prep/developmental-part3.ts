@@ -110,7 +110,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "Of 14 thieves Bowlby classed as affectionless psychopaths, 12 had experienced early prolonged separation, against far fewer among the other thieves and among clinic controls. He used this to support his maternal deprivation hypothesis. The study is criticised as retrospective, correlational and possibly biased because Bowlby himself made the diagnoses. The other options contradict the reported finding.",
+      "Of 14 thieves Bowlby classed as affectionless psychopaths, 12 had experienced early prolonged separation, against far fewer among the other thieves and among clinic controls. He used this to support his maternal deprivation hypothesis. The study is criticised as retrospective, correlational and possibly biased because Bowlby himself made the diagnoses. The thieves had not mostly had secure relationships or adoption at birth into stable homes, and they did differ from controls in early separation.",
     ref: "Bowlby 1944, Int J Psychoanal",
   }),
   d({
@@ -290,7 +290,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "Sensitivity predicted security with an effect of about r = 0.24, significant but smaller than Ainsworth's original estimates, leading to the 'transmission gap' problem: parental AAI status predicts infant attachment more strongly than measured sensitivity explains. Other contributors include mind-mindedness and reflective functioning, mutuality, stimulation and support. The other options misstate the effect.",
+      "Sensitivity predicted security with an effect of about r = 0.24, significant but smaller than Ainsworth's original estimates, leading to the 'transmission gap' problem: parental AAI status predicts infant attachment more strongly than measured sensitivity explains. Other contributors include mind-mindedness and reflective functioning, mutuality, stimulation and support. The link was neither zero nor negative, and it was far from near perfect, which is why a transmission gap remained.",
     ref: "De Wolff & van IJzendoorn 1997, Child Dev",
   }),
   d({
@@ -514,7 +514,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "Children institutionalised before age 4 (where staff turnover prevented attachment) were followed after adoption or restoration. Adopted children generally formed close family bonds (better than restored children), but both groups were more likely to seek adult attention and have peer difficulties at 16. This suggests partial but not complete recovery from early privation. The other options misstate the results.",
+      "Children institutionalised before age 4 (where staff turnover prevented attachment) were followed after adoption or restoration. Adopted children generally formed close family bonds (better than restored children), but both groups were more likely to seek adult attention and have peer difficulties at 16. This suggests partial but not complete recovery from early privation. The children were not indistinguishable from controls, restored children did not do better in every respect (they often did worse), and most children did form attachments.",
     ref: "Hodges & Tizard 1989, J Child Psychol Psychiatry",
   }),
   d({

@@ -325,7 +325,7 @@ export const PART: PrepQuestion[] = [
     options: ["Vidya Sagar's admission of patients with relatives, who camped in the grounds", "A policy of banning families from hospital wards during treatment", "The first token economy programme set up in Asia", "The development of the MMPI for Indian patients"],
     answer: 0,
     explanation:
-      "In the 1950s, Vidya Sagar at the Amritsar mental hospital involved families directly, with relatives camping on the premises and taking part in group discussions and care. This was an early form of family psychoeducation and community care, and it influenced later Indian family ward models. The other options are wrong or unrelated.",
+      "In the 1950s, Vidya Sagar at the Amritsar mental hospital involved families directly, with relatives camping on the premises and taking part in group discussions and care. This was an early form of family psychoeducation and community care, and it influenced later Indian family ward models. Indian hospitals did not ban families (the Amritsar model did the opposite), the first token economy was set up in the United States, and the MMPI is an American test, not an Indian contribution.",
     ref: "Indian psychiatry history; Chacko 1967",
   }),
   Q({
@@ -353,7 +353,7 @@ export const PART: PrepQuestion[] = [
     options: ["The member presented as 'the problem', whose symptoms reflect the system", "The family member who pays the fees and arranges the sessions", "The therapist's main informant about the family's history", "The oldest member of the family, who usually speaks for the rest"],
     answer: 0,
     explanation:
-      "Systemic therapists see the person brought for help (often a child) as the 'identified patient' whose symptoms may stabilise or express tensions in the family. Treatment therefore targets patterns of interaction, not just the individual. The other options misdefine the term.",
+      "Systemic therapists see the person brought for help (often a child) as the 'identified patient' whose symptoms may stabilise or express tensions in the family. Treatment therefore targets patterns of interaction, not just the individual. The identified patient is not defined by who pays the fees, who gives the most history, or who is oldest and speaks for the family.",
     ref: "Family systems theory",
   }),
 ];

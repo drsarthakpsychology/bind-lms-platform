@@ -304,7 +304,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "In the National Collaborative Perinatal Project, heritability of IQ was about 0.10 or less in the poorest families and about 0.72 in the most affluent, with shared environment dominant at the low end. This is a gene × SES interaction: where environments are restricting, environmental differences matter more. Later meta-analysis found the effect in US but not in Western European or Australian samples. The other options contradict the finding.",
+      "In the National Collaborative Perinatal Project, heritability of IQ was about 0.10 or less in the poorest families and about 0.72 in the most affluent, with shared environment dominant at the low end. This is a gene × SES interaction: where environments are restricting, environmental differences matter more. Later meta-analysis found the effect in US but not in Western European or Australian samples. Heritability was not higher in poor families, not the same across SES and not zero everywhere; it rose with family affluence.",
     ref: "Turkheimer et al. 2003, Psychol Sci",
   }),
   b({
@@ -657,7 +657,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "Comparing adoptees with their biological relatives (genes without shared rearing) and with their adoptive relatives (rearing without shared genes) separates the two influences. Limitations include selective placement (matching homes to birth families), prenatal environment and restricted range of adoptive homes. The other options misdescribe the design.",
+      "Comparing adoptees with their biological relatives (genes without shared rearing) and with their adoptive relatives (rearing without shared genes) separates the two influences. Limitations include selective placement (matching homes to birth families), prenatal environment and restricted range of adoptive homes. Adoption does not remove environmental influence, adoptees do share genes with birth parents and environment with adoptive parents, and adoptive parents are not chosen for genetic similarity.",
     ref: "Plomin et al., Behavioral Genetics, ch. 6",
   }),
   b({

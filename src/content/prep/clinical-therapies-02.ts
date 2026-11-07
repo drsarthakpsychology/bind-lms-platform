@@ -20,7 +20,7 @@ export const PART: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "Beck's cognitive triad is a negative view of the self ('I'm worthless'), the world or experiences ('everything goes wrong'), and the future ('it will never get better'). Id, ego and superego are Freud's structural model. The other options are not Beck's formulation.",
+      "Beck's cognitive triad is a negative view of the self ('I'm worthless'), the world or experiences ('everything goes wrong'), and the future ('it will never get better'). Id, ego and superego are Freud's structural model. Id, ego and superego are Freud's structures, past, present and future relationships is not Beck's triad, and body, mind and spirit is a holistic slogan rather than a cognitive model.",
     module: "depression",
     ref: "Beck, Rush, Shaw & Emery 1979",
   }),

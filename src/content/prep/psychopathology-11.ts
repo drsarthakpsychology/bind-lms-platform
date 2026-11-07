@@ -94,7 +94,7 @@ export const PART: PrepQuestion[] = [
     options: ["Intact anticipatory pleasure but absent pleasure in the moment", "Both kinds of pleasure absent in all patients", "Near-normal in-the-moment pleasure, impaired anticipation and motivation", "No anhedonia at all, as it is a feature only of depression"],
     answer: 2,
     explanation:
-      "Laboratory studies (Gard, Kring) show that people with schizophrenia report near-normal pleasure when actually experiencing rewards but show deficits in anticipating future pleasure and translating it into effortful goal-directed behaviour, linking anhedonia to avolition and dopaminergic 'wanting'. The other options reverse or overstate the pattern. Anhedonia is a recognised negative symptom.",
+      "Laboratory studies (Gard, Kring) show that people with schizophrenia report near-normal pleasure when actually experiencing rewards but show deficits in anticipating future pleasure and translating it into effortful goal-directed behaviour, linking anhedonia to avolition and dopaminergic 'wanting'. Intact anticipation with absent in-the-moment pleasure reverses the pattern, loss of both kinds of pleasure in every patient overstates it, and anhedonia is not limited to depression, since it is a core negative symptom of schizophrenia. Anhedonia is a recognised negative symptom.",
     module: "psychosis",
     ref: "Gard et al. 2007; Kring & Barch 2014",
   }),

@@ -87,7 +87,7 @@ export const PART: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "REBT pairs unhealthy negative emotions with healthy ones: anxiety vs concern, depression vs sadness, guilt vs remorse, unhealthy anger vs healthy annoyance, shame vs disappointment, hurt vs sorrow. Unhealthy emotions stem from irrational beliefs; healthy ones from rational preferences. The goal is not to remove negative emotion but to make it healthy. The other options reverse the pairings.",
+      "REBT pairs unhealthy negative emotions with healthy ones: anxiety vs concern, depression vs sadness, guilt vs remorse, unhealthy anger vs healthy annoyance, shame vs disappointment, hurt vs sorrow. Unhealthy emotions stem from irrational beliefs; healthy ones from rational preferences. The goal is not to remove negative emotion but to make it healthy. Concern paired as unhealthy with anxiety as healthy reverses the order, sadness is the healthy alternative to depression (not the other way round), and remorse is the healthy alternative to guilt.",
     ref: "Dryden, REBT distinctive features",
   }),
   Q({
@@ -263,7 +263,7 @@ export const PART: PrepQuestion[] = [
     options: ["A-2, B-1, C-3", "A-1, B-2, C-3", "A-3, B-1, C-2", "A-2, B-3, C-1"],
     answer: 0,
     explanation:
-      "Hayes described first-wave behaviour therapy (conditioning-based), second-wave cognitive therapy (Beck and Ellis, changing thought content), and third-wave approaches (ACT, DBT, MBCT, FAP) that target the function of and relationship to internal experiences. The other codes misplace these.",
+      "Hayes described first-wave behaviour therapy (conditioning-based), second-wave cognitive therapy (Beck and Ellis, changing thought content), and third-wave approaches (ACT, DBT, MBCT, FAP) that target the function of and relationship to internal experiences. Codes that give the first wave the cognitive focus, or link the third wave to stimulus-response conditioning or to the content of thoughts, misplace these focuses.",
     ref: "Hayes 2004 Behavior Therapy",
   }),
   Q({

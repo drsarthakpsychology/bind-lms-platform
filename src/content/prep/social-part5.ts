@@ -92,7 +92,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: AR,
     answer: 1,
     explanation:
-      "Both are true, but R does not explain A. The bystander effect was absent mainly because the emergency happened in full view in a closed carriage, so there was no doubt that help was needed and no easy way to leave, and responsibility could not easily be spread. R is a correct finding from the same study, interpreted through the arousal and cost-reward model, since helping a drunk person seems more costly. But it is about which victim got help, not about the effect of group size. So 'R explains A' is wrong, and since both are true the other options are wrong too.",
+      "Both are true, but R does not explain A. The bystander effect was absent mainly because the emergency happened in full view in a closed carriage, so there was no doubt that help was needed and no easy way to leave, and responsibility could not easily be spread. R is a correct finding from the same study, interpreted through the arousal and cost-reward model, since helping a drunk person seems more costly. But it is about which victim got help, not about the effect of group size. So 'R explains A' is wrong, and since both statements are true, neither 'A is true, but R is false' nor 'A is false, but R is true' applies.",
     ref: "Piliavin, Rodin & Piliavin 1969; Fischer et al. 2011",
   }),
   s({
@@ -344,7 +344,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "Arousal takes time to fade, but people often think it has already gone. If they are provoked while still aroused, they may attribute the extra arousal to anger at the provoker, so the response becomes stronger. This is similar to Schachter's two-factor theory and to the misattribution in the shaky bridge study. The other options are not part of the theory.",
+      "Arousal takes time to fade, but people often think it has already gone. If they are provoked while still aroused, they may attribute the extra arousal to anger at the provoker, so the response becomes stronger. This is similar to Schachter's two-factor theory and to the misattribution in the shaky bridge study. The theory says nothing about empathy or testosterone, and it predicts more aggression after exercise, not calm.",
     ref: "Zillmann 1971, 1983",
   }),
   s({
@@ -466,7 +466,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "Archival data from many cities show more assaults and riots on hot days and in hot summers, and laboratory heat raises hostile feelings. Possible reasons include discomfort, irritability and more people outdoors. Some researchers suggest violence may level off at very high temperatures, but the general link with heat is well supported. The other options contradict the findings. This has implications for climate change.",
+      "Archival data from many cities show more assaults and riots on hot days and in hot summers, and laboratory heat raises hostile feelings. Possible reasons include discomfort, irritability and more people outdoors. Some researchers suggest violence may level off at very high temperatures, but the general link with heat is well supported. Heat does not reduce aggression, temperature is related to aggression, and cold weather is not the driver of violence.",
     ref: "Anderson 1989, 2001",
   }),
   s({
@@ -835,7 +835,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "Dalal's studies of patients with heart disease, spinal injury and other conditions found that causal beliefs included physical factors, one's own actions, chance, and supernatural or karmic causes. Belief in karma did not always mean passivity: it often helped people accept what could not be changed and cope better. This work shows the importance of cultural causal beliefs for health psychology in India. The other options do not match the findings.",
+      "Dalal's studies of patients with heart disease, spinal injury and other conditions found that causal beliefs included physical factors, one's own actions, chance, and supernatural or karmic causes. Belief in karma did not always mean passivity: it often helped people accept what could not be changed and cope better. This work shows the importance of cultural causal beliefs for health psychology in India. Patients did not give only biomedical explanations, did not blame only their doctors, and did offer explanations.",
     ref: "Dalal & Singh 1992; Dalal 2000",
   }),
   s({
@@ -877,7 +877,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "This research linked prolonged deprivation to lower scores on cognitive tasks, poorer school achievement, lower aspirations and a sense of less control over outcomes, and showed some benefits from early intervention and enrichment. It argued that these effects come from the environment, not from fixed ability. The other options contradict this body of work.",
+      "This research linked prolonged deprivation to lower scores on cognitive tasks, poorer school achievement, lower aspirations and a sense of less control over outcomes, and showed some benefits from early intervention and enrichment. It argued that these effects come from the environment, not from fixed ability. The studies found measurable psychological effects, not none, not higher intelligence, and not physical effects alone.",
     ref: "Misra & Tripathi 1980; Sinha 1982",
   }),
   s({

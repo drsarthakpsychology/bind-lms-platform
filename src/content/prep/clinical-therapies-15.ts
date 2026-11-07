@@ -116,7 +116,7 @@ export const PART: PrepQuestion[] = [
     options: ["Whether therapy should be offered free of charge to all patients", "Whether outcomes depend on common factors or on specific techniques", "Whether medication or psychotherapy came first in the history of care", "Whether therapists should be trained as psychologists or psychiatrists"],
     answer: 1,
     explanation:
-      "Common-factor theorists (Frank, Wampold) argue that the alliance, empathy, expectations and a credible rationale explain most of the benefit, which is why different bona fide therapies often do equally well. Specific-factor theorists point to treatments that clearly beat others for particular problems, such as exposure for OCD. Most researchers now see both as important. The other options are unrelated questions.",
+      "Common-factor theorists (Frank, Wampold) argue that the alliance, empathy, expectations and a credible rationale explain most of the benefit, which is why different bona fide therapies often do equally well. Specific-factor theorists point to treatments that clearly beat others for particular problems, such as exposure for OCD. Most researchers now see both as important. Fees, the historical order of medication and psychotherapy, and the profession of the therapist are separate questions that have nothing to do with what makes therapy work.",
     ref: "Wampold & Imel 2015",
   }),
   Q({
