@@ -1,5 +1,5 @@
 /**
- * The dialogue-move library (Part 2.3) — 24 patient moves the Director can
+ * The dialogue-move library (Part 2.3): 24 patient moves the Director can
  * select. Each move has:
  *   - preconditions on PatientState (soft: the Director prefers them, but
  *     state can force a move),
@@ -24,7 +24,7 @@ export interface MoveDef {
   guardednessRelief?: number;
   /** when true, only usable when state forces it (hollow_compliance etc). */
   forced?: boolean;
-  /** anti-repetition weight — higher = less likely to repeat. */
+  /** anti-repetition weight: higher = less likely to repeat. */
   antiRepeat: number;
   /** scripted fallback renderings. pick in order, wrap around. */
   fallbackLines: string[];
@@ -33,7 +33,7 @@ export interface MoveDef {
 export const MOVES: MoveDef[] = [
   { id: "full_disclose", label: "Full disclosure", minTrust: 6, guardednessRelief: -2, antiRepeat: 2, fallbackLines: [
     "It's the money. The debt has been sitting on us since the shop failed. I haven't told anyone about it until now.",
-    "Look, it's not just the sadness. There's something I haven't said — the drinking. It's worse than I let on.",
+    "Look, it's not just the sadness. There's something I haven't said: the drinking. It's worse than I let on.",
     "Fine. I'll say it plainly. The marriage has been over in every way that counts for two years.",
   ]},
   { id: "partial_disclose", label: "Partial disclosure", minTrust: 3, guardednessRelief: -1, antiRepeat: 2, fallbackLines: [
@@ -43,13 +43,13 @@ export const MOVES: MoveDef[] = [
   ]},
   { id: "reluctant_disclose", label: "Reluctant disclosure", minTrust: 3, guardednessRelief: -1, antiRepeat: 1, fallbackLines: [
     "…I don't usually tell people this. But since you asked. It's been bad, worse than I've said.",
-    "I'm only telling you because you've been patient. The sleep thing — it's not just sleep. I hear things some nights.",
+    "I'm only telling you because you've been patient. The sleep thing. It's not just sleep. I hear things some nights.",
     "Alright. But if this gets back to my family, I'm finished. The panic attacks started about a year ago.",
   ]},
   { id: "deflect_to_somatic", label: "Deflect to the body", antiRepeat: 3, fallbackLines: [
-    "I'm not here about my mind. My chest — there's this heaviness in my chest that won't go away.",
+    "I'm not here about my mind. My chest. There's this heaviness in my chest that won't go away.",
     "You're asking the wrong thing. My head hurts, my stomach's been off for months. That's why I'm here.",
-    "I can't think about all that when my body is falling apart. The ghabrahat, the trembling — that's the real problem.",
+    "I can't think about all that when my body is falling apart. The ghabrahat, the trembling. That's the real problem.",
   ]},
   { id: "deflect_to_other_person", label: "Deflect to someone else", antiRepeat: 2, fallbackLines: [
     "You should ask my wife. She's the one who's always worried. I'm fine.",
@@ -62,12 +62,12 @@ export const MOVES: MoveDef[] = [
     "Compared to what other people go through? This is nothing. I shouldn't even be here.",
   ]},
   { id: "intellectualise", label: "Intellectualise", antiRepeat: 2, fallbackLines: [
-    "Well, if you look at it psychologically, there are several factors — childhood, expectations, the pressure of this economy…",
+    "Well, if you look at it psychologically, there are several factors: childhood, expectations, the pressure of this economy…",
     "I've read about this. It's probably just burnout. There's a name for everything now, isn't there.",
     "Objectively speaking, my situation isn't worse than anyone's. The question is why I react so strongly to it.",
   ]},
   { id: "tangent", label: "Tangent", antiRepeat: 3, fallbackLines: [
-    "Oh, that reminds me — did you see what the vegetable prices are doing? Everything's gone up. My mother says it was never like this.",
+    "Oh, that reminds me: did you see what the vegetable prices are doing? Everything's gone up. My mother says it was never like this.",
     "Speaking of which, my cousin's wedding is next month. Everyone's been calling about the arrangements. It's chaos at home.",
     "My neighbour has this dog that barks all night. I've complained to the society three times. Three times, and nothing.",
   ]},
@@ -93,7 +93,7 @@ export const MOVES: MoveDef[] = [
     "Yes.",
   ]},
   { id: "contradict_earlier", label: "Contradict an earlier statement", antiRepeat: 3, fallbackLines: [
-    "Wait — earlier I said I was sleeping fine. I lied. I haven't slept properly in weeks.",
+    "Wait: earlier I said I was sleeping fine. I lied. I haven't slept properly in weeks.",
     "I told you the tension was at work. It isn't. I just don't want to say where it really is.",
     "I said the tablets were helping. They're not. I've been throwing them away and saying I took them.",
   ]},
@@ -119,9 +119,9 @@ export const MOVES: MoveDef[] = [
     "This is why I didn't want to come. You people talk in circles.",
   ]},
   { id: "tearful_break", label: "Tearful break", minTrust: 4, guardednessRelief: -2, antiRepeat: 3, fallbackLines: [
-    "I'm sorry — I didn't mean to — it's just, when you put it that way, it all comes out at once. (crying)",
+    "I'm sorry, I didn't mean to, it's just, when you put it that way, it all comes out at once. (crying)",
     "(voice breaks) Nobody has ever asked me that before. Nobody.",
-    "I can't — give me a moment. (crying) I've been holding this in for so long.",
+    "I can't: give me a moment. (crying) I've been holding this in for so long.",
   ]},
   { id: "humour_as_shield", label: "Humour as shield", antiRepeat: 2, fallbackLines: [
     "Me? Depressed? I'm the funny one in the family. Everyone says so. It's my job to laugh.",
@@ -139,7 +139,7 @@ export const MOVES: MoveDef[] = [
     "My family pays for everything. If this is expensive, they'll stop sending me.",
   ]},
   { id: "ask_about_confidentiality", label: "Ask about confidentiality", minTrust: 2, antiRepeat: 3, fallbackLines: [
-    "What I tell you — does my family find out? Because they must not find out.",
+    "What I tell you: does my family find out? Because they must not find out.",
     "Is this between us? I need to know before I say what I came here to say.",
     "If I tell you something private, will it go on a record? Will anyone see it?",
   ]},
@@ -151,7 +151,7 @@ export const MOVES: MoveDef[] = [
   { id: "defer_to_accompanying_family", label: "Defer to accompanying family", antiRepeat: 3, fallbackLines: [
     "Ask my husband. He knows my situation better than I do.",
     "My mother is outside. She'll tell you everything. I can't explain it myself.",
-    "I don't know. You should speak to my son — he's the one who made this appointment.",
+    "I don't know. You should speak to my son. He's the one who made this appointment.",
   ]},
 ];
 
@@ -170,7 +170,7 @@ export function fallbackRendering(move: PatientMoveId, register: string, usedCou
     return "…I don't know what to say to that.";
   }
   const line = def.fallbackLines[usedCount % def.fallbackLines.length];
-  // Register-aware: prepend a register cue rarely used directly — keep simple.
+  // Register-aware: prepend a register cue rarely used directly, keep simple.
   // The exemplars are register-neutral; the Actor personalises them.
   return line;
 }

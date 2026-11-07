@@ -1,12 +1,12 @@
 /**
- * Anxiety & Panic module cases — each a different person with a different voice.
+ * Anxiety & Panic module cases: each a different person with a different voice.
  */
 
 import { buildCase, type CaseAuthoring } from "../case-builder";
 
 const anita: CaseAuthoring = {
   id: "anx-anita",
-  title: "Anita, 31 — the panic that comes 'out of nowhere'",
+  title: "Anita, 31: the panic that comes 'out of nowhere'",
   difficulty: "cooperative",
   traps: ["somatic_mask", "medical_mimic", "iatrogenic"],
   moduleId: "mod-anxiety",
@@ -41,7 +41,7 @@ const anita: CaseAuthoring = {
 
 const rohit: CaseAuthoring = {
   id: "anx-rohit",
-  title: "Rohit, 24 — 'not feeling fresh' every single morning",
+  title: "Rohit, 24: 'not feeling fresh' every single morning",
   difficulty: "guarded",
   traps: ["somatic_mask", "misattributed_diagnosis", "under_diagnosis"],
   moduleId: "mod-anxiety",
@@ -76,7 +76,7 @@ const rohit: CaseAuthoring = {
 
 const mrsDesai: CaseAuthoring = {
   id: "anx-desai",
-  title: "Mrs. Desai, 58 — 'the gas, the acidity, the heat'",
+  title: "Mrs. Desai, 58: 'the gas, the acidity, the heat'",
   difficulty: "resistant",
   traps: ["somatic_mask", "cultural_idiom", "informant_conflict"],
   moduleId: "mod-anxiety",

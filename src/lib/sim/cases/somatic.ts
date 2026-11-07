@@ -6,7 +6,7 @@ import { buildCase, type CaseAuthoring } from "../case-builder";
 
 const arjun: CaseAuthoring = {
   id: "som-arjun",
-  title: "Arjun, 22 — the dhat distress",
+  title: "Arjun, 22: the dhat distress",
   difficulty: "cooperative",
   traps: ["cultural_idiom", "somatic_mask", "misattributed_diagnosis"],
   moduleId: "mod-somatic",
@@ -41,7 +41,7 @@ const arjun: CaseAuthoring = {
 
 const dev: CaseAuthoring = {
   id: "som-dev",
-  title: "Dev, 45 — 'it's not me, it's the BP'",
+  title: "Dev, 45: 'it's not me, it's the BP'",
   difficulty: "resistant",
   traps: ["somatic_mask", "cultural_idiom", "over_diagnosis"],
   moduleId: "mod-somatic",
@@ -54,12 +54,12 @@ const dev: CaseAuthoring = {
   register: "Hindi-English, jocular, deflects with jokes",
   presentation: "'BP high ho gaya' whenever upset. Family says he's been lashing out. He insists it's blood pressure, wants 'a checkup, not counselling'.",
   chiefComplaint: "Arre, it's my BP. When I get angry my BP goes up. Fix my BP and I'll be fine. Why does everyone keep sending me to you?",
-  timeline: "Stress at work (transfer threats), a daughter's marriage pressure, rage episodes the family calls 'BP attacks'. Has taken BP readings at home — mostly normal.",
+  timeline: "Stress at work (transfer threats), a daughter's marriage pressure, rage episodes the family calls 'BP attacks'. Has taken BP readings at home, mostly normal.",
   treatmentHistory: "Chemist BP tablets he self-prescribes. Never saw a doctor regularly.",
   helpSeekingDelay: "Years of self-medication",
   priorContacts: ["chemist", "family doctor once"],
   coreBelief: "If I stop working, the family starves.",
-  intermediateBeliefs: ["Men don't get 'stressed' — that's a woman's thing", "Anger is how a man copes"],
+  intermediateBeliefs: ["Men don't get 'stressed'. That's a woman's thing", "Anger is how a man copes"],
   coping: ["yell at the family", "go to the club", "deny everything"],
   openingIdiom: "BP high ho gaya",
   redFlags: [{ content: "no self-harm ideation; rage only", gate: "asked_about_self_harm_clearly" }],

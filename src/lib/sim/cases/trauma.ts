@@ -2,7 +2,7 @@ import { buildCase, type CaseAuthoring } from "../case-builder";
 
 const priya: CaseAuthoring = {
   id: "trm-priya",
-  title: "Priya, 30 — the accident she doesn't remember",
+  title: "Priya, 30: the accident she doesn't remember",
   difficulty: "cooperative",
   traps: ["diagnostic_overshadowing", "late_risk_reveal", "somatic_mask"],
   moduleId: "mod-trauma",
@@ -23,7 +23,7 @@ const priya: CaseAuthoring = {
   intermediateBeliefs: ["Being traumatised means I'm weak", "My husband is tired of my 'moods'"],
   coping: ["not think about it", "drive only on side roads", "sleep with the light on"],
   openingIdiom: "dimag kaam nahi karta",
-  redFlags: [{ content: "recurrent thought of 'joining' the driver — no plan", gate: "asked_about_self_harm_clearly" }],
+  redFlags: [{ content: "recurrent thought of 'joining' the driver, no plan", gate: "asked_about_self_harm_clearly" }],
   variation: {
     mood_today: ["numb", "flat", "anxious", "brittle-cheerful"],
     recent_event: ["a car honked loudly", "her son asked about the accident", "the accident road was reopened", "her husband said 'enough now'"],

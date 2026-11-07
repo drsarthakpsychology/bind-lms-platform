@@ -1,5 +1,5 @@
 /**
- * The patient engine orchestrator (Part 2) — one student turn, end to end:
+ * The patient engine orchestrator (Part 2): one student turn, end to end:
  *
  *   1. classify + decide (Director, structured JSON)
  *   2. apply hard rules + gate evaluation (code, deterministic)
@@ -55,10 +55,10 @@ function serializeCase(c: DepthCase): string {
     `Red flags (never reveal until gated): ${c.red_flags.map((r) => r.content).join(" | ") || "none"}`,
   ];
   if (c.contradictions?.length) {
-    lines.push(`Contradictions the patient holds (do not resolve cleanly): ${c.contradictions.map((x) => `${x.claim} — but actually ${x.truth}`).join(" | ")}`);
+    lines.push(`Contradictions the patient holds (do not resolve cleanly): ${c.contradictions.map((x) => `${x.claim}, but actually ${x.truth}`).join(" | ")}`);
   }
   if (c.unknown_to_patient?.length) {
-    lines.push(`The patient does NOT know: ${c.unknown_to_patient.join("; ")} — never invent or assert these.`);
+    lines.push(`The patient does NOT know: ${c.unknown_to_patient.join("; ")}, never invent or assert these.`);
   }
   if (c.protective_factors?.length) {
     lines.push(`Protective factors: ${c.protective_factors.join("; ")}`);
@@ -170,7 +170,7 @@ export async function runPatientTurn(
   // Record disclosed facts + gates met + topics. THE CODE is the final arbiter
   // of what may be disclosed: a fact the Director tried to leak that isn't in
   // the permitted set (gate not met / trust too low) is dropped, never
-  // recorded. This is the gate-leak fix — the model can TRY, the code refuses.
+  // recorded. This is the gate-leak fix: the model can TRY, the code refuses.
   const actuallyDisclosed = (decision.disclose ?? []).filter((id) => permitted.includes(id));
   for (const id of actuallyDisclosed) if (!s.disclosed.includes(id)) s.disclosed.push(id);
   for (const g of decision.gates_now_met ?? []) if (!s.gates_met.includes(g)) s.gates_met.push(g);
@@ -183,7 +183,7 @@ export async function runPatientTurn(
   }
 
   s.last_moves = [...s.last_moves.slice(-6), decision.patient_move];
-  // Track the STUDENT's classified moves too — move_used disclosure gates
+  // Track the STUDENT's classified moves too: move_used disclosure gates
   // (validation_given, two_or_more_reflective_statements) count these.
   s.student_moves = [...(s.student_moves ?? []).slice(-8), decision.student_move];
 

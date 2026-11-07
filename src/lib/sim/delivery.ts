@@ -1,9 +1,9 @@
 /**
- * STAGE-DIRECTION PARSER (Bug 1 — "stage directions leaking as text").
+ * STAGE-DIRECTION PARSER (Bug 1: "stage directions leaking as text").
  *
  * The Actor's output may contain behaviour markers inside the spoken line:
  *   (pauses) (sighs) (long silence) (looks away) (voice breaks) *laughs* [hesitates]
- * These are NOT words the patient says — they are delivery. This module
+ * These are NOT words the patient says: they are delivery. This module
  * extracts them from the text into a structured `delivery[]` array, leaving
  * a CLEAN spoken `content`. The UI renders delivery as BEHAVIOUR:
  *   - a real typing-pause of 1.5-3s at the marker's position,
@@ -32,7 +32,7 @@ export interface DeliveryCue {
 }
 
 export interface ParsedTurn {
-  /** The clean spoken words — no markers, no parens. */
+  /** The clean spoken words, no markers, no parens. */
   content: string;
   /** Behaviour cues, in order, with positions. */
   delivery: DeliveryCue[];
@@ -92,7 +92,7 @@ export function parseDelivery(raw: string): ParsedTurn {
     .replace(/\s{2,}/g, " ")
     .replace(/\s+([,.!?])/g, "$1")
     .replace(/\s*…\s*/g, " … ")
-    .replace(/\s*—\s*/g, " — ")
+    .replace(/\s*\u2014\s*/g, " \u2014 ")
     .trim();
 
   return { content: contentFinal, delivery, unparsed };
@@ -106,7 +106,7 @@ export function findUnparsedMarkers(raw: string): string[] {
   let m: RegExpExecArray | null;
   while ((m = re.exec(raw)) !== null) {
     const inner = (m[1] ?? m[2] ?? m[3] ?? "").toLowerCase().trim();
-    // Record ANY bracketed token the closed set doesn't cover — the fail-safe
+    // Record ANY bracketed token the closed set doesn't cover: the fail-safe
     // is: never silently lose content, and surface unparsed markers for the
     // audit trail.
     if (inner && !KNOWN.has(inner as DeliveryKind)) out.add(inner);

@@ -1,12 +1,12 @@
 /**
- * More cases — volume batch 6. Completes the 60-case target.
+ * More cases: volume batch 6. Completes the 60-case target.
  */
 
 import { buildCase, type CaseAuthoring } from "../case-builder";
 
 const bipolar2: CaseAuthoring = {
   id: "bip-ravi2",
-  title: "Anita, 33 — the 'depression' that started at 18",
+  title: "Anita, 33: the 'depression' that started at 18",
   difficulty: "cooperative",
   traps: ["iatrogenic", "under_diagnosis", "polypharmacy"],
   moduleId: "mod-bipolar",
@@ -17,8 +17,8 @@ const bipolar2: CaseAuthoring = {
   city: "Mumbai",
   family: "single; lives alone",
   register: "Creative English",
-  presentation: "Fifteen years of 'depression' treated with antidepressants alone. The history reveals hypomanic episodes — 'my productive seasons', 3 hours of sleep, brilliant work, then collapse.",
-  chiefComplaint: "They've treated my lows for 15 years. No one ever asked about the highs. My 'genius seasons' — are those part of it?",
+  presentation: "Fifteen years of 'depression' treated with antidepressants alone. The history reveals hypomanic episodes: 'my productive seasons', 3 hours of sleep, brilliant work, then collapse.",
+  chiefComplaint: "They've treated my lows for 15 years. No one ever asked about the highs. My 'genius seasons': are those part of it?",
   timeline: "Recurrent depression since 18. Hypomanic periods called 'productive seasons'. On SSRIs alone.",
   treatmentHistory: "SSRIs for 15 years. Never a mood stabiliser. 'The highs were never a problem to anyone.'",
   helpSeekingDelay: "15 years",
@@ -41,7 +41,7 @@ const bipolar2: CaseAuthoring = {
 
 const psychosis2: CaseAuthoring = {
   id: "psy-gopal",
-  title: "Gopal, 26 — the delusion that came with TB medicine",
+  title: "Gopal, 26: the delusion that came with TB medicine",
   difficulty: "crisis",
   traps: ["medical_mimic", "iatrogenic", "diagnostic_overshadowing"],
   moduleId: "mod-psychosis",
@@ -54,7 +54,7 @@ const psychosis2: CaseAuthoring = {
   register: "Hindi, confused",
   presentation: "On anti-TB treatment (isoniazid). Two weeks into it: new confusion, visual hallucinations, paranoia. The family thinks he's 'gone mad'. It's a drug-induced delirium.",
   chiefComplaint: "I see shadows in the corner. My wife says I spoke to people who aren't there. I feel like the medicine is changing me. Am I possessed?",
-  timeline: "TB diagnosed, INH started, two weeks later acute psychosis-like state with confusion — the hallmark of INH-induced delirium/psychosis.",
+  timeline: "TB diagnosed, INH started, two weeks later acute psychosis-like state with confusion: the hallmark of INH-induced delirium/psychosis.",
   treatmentHistory: "Anti-TB (isoniazid, rifampicin, etc.) started 2 weeks ago.",
   helpSeekingDelay: "2 weeks into TB treatment",
   priorContacts: ["TB clinic"],
@@ -62,7 +62,7 @@ const psychosis2: CaseAuthoring = {
   intermediateBeliefs: ["If I stop the TB medicine, I'll die of TB", "If I continue, I'll go mad"],
   coping: ["sleep in the day", "check the shadows", "hide the visions"],
   openingIdiom: "something is happening to me",
-  redFlags: [{ content: "confusion + paranoia — urgent medical review needed", gate: "asked_about_self_harm_clearly" }],
+  redFlags: [{ content: "confusion + paranoia: urgent medical review needed", gate: "asked_about_self_harm_clearly" }],
   variation: {
     mood_today: ["confused", "frightened", "suspicious", "flat"],
     recent_event: ["a vision at night", "his wife took the baby away", "a TB clinic visit", "he missed a dose"],
@@ -76,7 +76,7 @@ const psychosis2: CaseAuthoring = {
 
 const anxiety2: CaseAuthoring = {
   id: "anx-kavya",
-  title: "Kavya, 19 — the first panic attack after the medical scare",
+  title: "Kavya, 19: the first panic attack after the medical scare",
   difficulty: "cooperative",
   traps: ["over_diagnosis", "somatic_mask"],
   moduleId: "mod-anxiety",
@@ -97,7 +97,7 @@ const anxiety2: CaseAuthoring = {
   intermediateBeliefs: ["People like me (who see trauma at work) must develop panic disorder", "The next attack could kill me"],
   coping: ["check her pulse", "avoid reading about panic", "study harder to distract"],
   openingIdiom: "ghabrahat",
-  redFlags: [{ content: "none — a single triggered attack, non-recurrent", gate: "asked_about_self_harm_clearly" }],
+  redFlags: [{ content: "none: a single triggered attack, non-recurrent", gate: "asked_about_self_harm_clearly" }],
   variation: {
     mood_today: ["anxious", "brittle-cheerful", "flat"],
     recent_event: ["a patient case in class", "she felt her heart race and panicked", "a friend said it's 'disorder'", "her pulse app"],
@@ -111,7 +111,7 @@ const anxiety2: CaseAuthoring = {
 
 const somatic2: CaseAuthoring = {
   id: "soma-leukorrhea",
-  title: "Rukmini, 35 — the discharge she can't talk about",
+  title: "Rukmini, 35: the discharge she can't talk about",
   difficulty: "cooperative",
   traps: ["cultural_idiom", "somatic_mask", "informant_conflict"],
   moduleId: "mod-somatic",
@@ -146,7 +146,7 @@ const somatic2: CaseAuthoring = {
 
 const trauma2: CaseAuthoring = {
   id: "trm-bhai",
-  title: "Imran, 25 — the hit-and-run he can't stop replaying",
+  title: "Imran, 25: the hit-and-run he can't stop replaying",
   difficulty: "cooperative",
   traps: ["diagnostic_overshadowing", "under_diagnosis"],
   moduleId: "mod-trauma",
