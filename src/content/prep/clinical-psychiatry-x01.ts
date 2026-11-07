@@ -221,10 +221,10 @@ export const PART: PrepQuestion[] = [
     "cpsy01-0018",
     "thought-block",
     2,
-    "Thought block is not a first rank symptom of schizophrenia.",
+    "Thought block is one of Schneider's first rank symptoms of schizophrenia.",
     "In thought block the patient does not, by itself, attribute the sudden emptiness of the mind to an outside agency.",
-    0,
-    "Both are true, and R explains A. Thought block is a sudden arrest of the train of thought. It becomes the first rank symptom of thought withdrawal only when the patient experiences the thoughts as being taken away by an external agency, so the absence of attributed alienness is exactly why plain blocking is not first rank.",
+    3,
+    "A is false and R is true. Thought block is a sudden arrest of the train of thought and is not first rank. It becomes the first rank symptom of thought withdrawal only when the patient experiences the thoughts as being taken away by an external agency, and R correctly states that plain blocking carries no such attribution.",
     { ref: "Fish ch. 4" },
   ),
   mcq(
