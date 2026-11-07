@@ -6,6 +6,7 @@ import {
   dueItems,
   emptyState,
   finishLesson,
+  recordBlitzRound,
   levelFor,
   liveStreak,
   normalise,
@@ -103,5 +104,17 @@ describe("learn engine", () => {
   it("repairs junk from storage", () => {
     expect(normalise(null).xp).toBe(0);
     expect(normalise({ xp: 40, badges: [1, "perfect"] }).badges).toEqual(["perfect"]);
+  });
+});
+
+describe("recordBlitzRound", () => {
+  it("keeps the best and awards Quick thinker at 15 right", () => {
+    const a = recordBlitzRound(emptyState(), 9);
+    expect(a.blitzBest).toBe(9);
+    expect(a.badges).not.toContain("blitz_15");
+    const b = recordBlitzRound(a, 15);
+    expect(b.blitzBest).toBe(15);
+    expect(b.badges).toContain("blitz_15");
+    expect(recordBlitzRound(b, 4)).toBe(b);
   });
 });

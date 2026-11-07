@@ -410,7 +410,7 @@ export const BADGES: Record<string, { title: string; text: string; icon: string 
   streak_30: { title: "Clinician's discipline", text: "30-day streak", icon: "★" },
   goal_5: { title: "Goal getter", text: "Hit your daily goal 5 times", icon: "◎" },
   review_25: { title: "Memory builder", text: "25 review answers right", icon: "↻" },
-  blitz_15: { title: "Quick thinker", text: "15+ in a 60-second blitz", icon: "⏱" },
+  blitz_15: { title: "Quick thinker", text: "15 right in one Blitz round", icon: "⏱" },
   xp_1000: { title: "Four figures", text: "1,000 XP earned", icon: "Ⅿ" },
   unit_master: { title: "Unit master", text: "3 stars on every lesson in a unit", icon: "♛" },
 };
@@ -572,6 +572,17 @@ export const LAB_XP = { firstRun: 20, rerun: 5, checkPerRight: 3, reflect: 5 } a
  * Record a finished experiment run. The first run earns the most; a re-run
  * earns a little, at most once a day, so the Lab rewards doing, not farming.
  */
+/**
+ * A finished Blitz round (XP is paid on the server, so none here): keeps the
+ * best count of right answers and awards the Quick thinker badge at 15.
+ */
+export function recordBlitzRound(s: LearnState, right: number): LearnState {
+  const n = Math.max(0, Math.floor(right));
+  const badges = s.badges.includes("blitz_15") || n < 15 ? s.badges : [...s.badges, "blitz_15"];
+  if (n <= s.blitzBest && badges === s.badges) return s;
+  return { ...s, blitzBest: Math.max(s.blitzBest, n), badges };
+}
+
 export function recordLabRun(s: LearnState, id: string, result: Record<string, number>, today: string): LearnState {
   const prev = s.lab[id];
   const rec: LabRecord = prev

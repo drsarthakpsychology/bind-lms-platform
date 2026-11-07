@@ -13,6 +13,8 @@ import { CountUp } from "@/lib/games/ui/count-up";
 import { btnPrimary, btnSecondary, card, chip } from "@/lib/games/ui/styles";
 import fx from "@/lib/games/ui/fx.module.css";
 import { answerBlitz, finishBlitz, startBlitz } from "./actions";
+import { recordBlitzRound, type LearnState } from "@/lib/learn/engine";
+import { getLearnState, initLearnStore, setLearnState } from "@/lib/learn/store";
 
 type Phase = "ready" | "countdown" | "run" | "finishing" | "done";
 type Miss = { prompt: string; answer: string; why: string; learn: { label: string; href: string } };
@@ -27,7 +29,8 @@ function nextStep(combo: number): number | null {
   return COMBO_STEPS.find((s) => s > combo) ?? null;
 }
 
-export function BlitzGame({ bests }: { bests: Bests }) {
+export function BlitzGame({ bests, serverState, save }: { bests: Bests; serverState: LearnState | null; save: (s: LearnState) => Promise<unknown> }) {
+  initLearnStore(serverState, save);
   const reduce = useReducedMotion();
   const anim = (cls: string) => (reduce === false ? cls : undefined);
   const [phase, setPhase] = React.useState<Phase>("ready");
@@ -73,6 +76,11 @@ export function BlitzGame({ bests }: { bests: Bests }) {
       setDone(res);
       setRun(res.state);
       setShown(res.bests);
+      const ls = getLearnState();
+      if (ls) {
+        const next = recordBlitzRound(ls, res.state.correct);
+        if (next !== ls) setLearnState(next);
+      }
       haptic(res.newBest ? "success" : "tap");
     } else setError(res.error);
     setPhase("done");
