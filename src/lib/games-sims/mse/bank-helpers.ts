@@ -71,9 +71,18 @@ export function parseLines(s: string): Excerpt["lines"] {
 
 const ids = (s?: string) => (s ? (s.split(" ").filter(Boolean) as TermId[]) : undefined);
 
+const lower = (t: string) => t.charAt(0).toLowerCase() + t.slice(1);
+
+/** A short "why" gets the defining contrast added: what the right word means, and what the nearest look-alike would mean instead. */
+export function teach(why: string, a: TermId, rival: TermId): string {
+  if (why.length >= 90) return why;
+  return `${why} ${TERMS[a].label} means: ${lower(TERMS[a].def)} The look-alike, ${lower(TERMS[rival].label)}, would mean: ${lower(TERMS[rival].def)}`;
+}
+
 export function f(q: string, a: TermId, o: string, why: string, close?: string, also?: string): Finding {
-  const out: Finding = { q, a, o: ids(o)!, why };
   const c = ids(close);
+  const opts = ids(o)!;
+  const out: Finding = { q, a, o: opts, why: teach(why, a, c?.[0] ?? opts[0]) };
   if (c) out.close = c;
   const al = also ? (also.split(" ") as Domain[]) : undefined;
   if (al) out.also = al;

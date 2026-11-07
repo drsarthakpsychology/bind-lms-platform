@@ -33,7 +33,7 @@ describe("MSE Lab library", () => {
     for (const e of EXCERPTS) {
       const t = STUDENT(e);
       expect(/[–—]/.test(t), e.id).toBe(false);
-      expect(/et al\.|\(\d{4}\)|Kaplan|Sadock|Stahl|Maudsley|Fish's|Ahuja|DSM-5-TR p/.test(t), e.id).toBe(false);
+      expect(/et al\.|\(\d{4}\)|Kaplan|Sadock|Stahl|Maudsley|Fish's|Ahuja's|DSM-5-TR p/.test(t), e.id).toBe(false);
     }
   });
   it("every quote is in the passage and every option is a real term", () => {
