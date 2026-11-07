@@ -138,6 +138,10 @@ Inter-rater reliability is the degree to which two raters agree. **Cohen's kappa
 {"prompt": "In the DSM-5 field trials, real clinicians in ordinary clinics each interviewed the same patients. What was the agreement (kappa) for major depressive disorder? (0 means chance, 1 means perfect)", "min": 0, "max": 1, "step": 0.05, "unit": "kappa", "answer": [0.25, 0.35], "reveal": "Only about 0.3, which counts as poor. Generalised anxiety disorder was even lower, about 0.2. Some diagnoses did much better: PTSD about 0.67, autism about 0.69. Even common diagnoses can be unreliable when clinicians interview in their own way.", "clinician": "The 2013 DSM-5 field trials (test-retest, separate clinicians, routine settings) reported kappas of about 0.28 for MDD, 0.20 for GAD, 0.46 for schizophrenia, 0.56 for bipolar I and 0.67 for PTSD. Methods differed from earlier trials, which used joint interviews and inflated agreement."}
 :::
 
+:::widget compare
+{"title": "Unstructured and structured interviews", "a": {"label": "Unstructured clinical interview", "points": ["Flexible: follows the patient's lead", "Builds rapport naturally", "Different clinicians ask different questions", "Lower agreement on diagnosis between raters"], "summary": "Unstructured: rich and humane, but less reliable."}, "b": {"label": "Structured or semi-structured (SCID, SCAN)", "points": ["Fixed questions and scoring rules", "Every criterion is checked", "Higher agreement between raters", "Can feel mechanical; takes longer"], "summary": "Structured: reliable and complete, used in research and audits."}, "caption": "Most of the gap in reliability comes from information variance (asking different questions) and criterion variance (applying rules differently). Structured interviews reduce both."}
+:::
+
 ### Why agreement fails
 - **Information variance**: the clinicians obtained different information (one asked about past highs; one did not).
 - **Observation variance**: they saw the same thing but judged it differently (is this blunting or depression?).
@@ -193,6 +197,10 @@ Information must be given in simple language the person understands, using sign 
 
 :::analogy A bridge with three planks
 Capacity is a bridge across to a decision. The planks are understanding, appreciating and communicating. Missing any plank means the person cannot cross for **this** decision **today**; it says nothing about other decisions or other days.
+:::
+
+:::widget flow
+{"title": "The capacity test under the Mental Healthcare Act", "layout": "chain", "nodes": [{"id": "p", "label": "Presume capacity", "detail": "Every adult, including a person with mental illness, starts with capacity."}, {"id": "s", "label": "Support first", "detail": "Give the information simply, in the person's language, with pictures or a trusted person if needed."}, {"id": "u", "label": "Understand", "detail": "Can they understand the information relevant to this decision?"}, {"id": "a", "label": "Appreciate", "detail": "Can they appreciate the foreseeable consequences of deciding, or not deciding?"}, {"id": "c", "label": "Communicate", "detail": "Can they communicate the decision, by any means?"}, {"id": "d", "label": "Decision for today", "detail": "If all three are present, they have capacity for this decision now, even if others think it unwise."}], "caption": "Capacity is decision-specific and time-specific. Record the questions you asked and the answers given."}
 :::
 
 ### Four principles of capacity assessment
