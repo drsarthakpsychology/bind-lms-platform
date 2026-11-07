@@ -131,10 +131,10 @@ const D: Draft[] = [
     type: "mcq",
     stem: "The Welch t-test output reports df = 27.43 rather than a whole number. This is because:",
     options: [
-      "Some participants were counted twice",
-      "SPSS made a rounding error",
-      "The degrees of freedom are estimated from the two sample variances and sizes (the Welch-Satterthwaite approximation)",
-      "Fractional df show that the data are not normal",
+      "Some participants were counted twice in one of the two groups",
+      "SPSS made a rounding error when it averaged the two groups' sample sizes",
+      "The df are estimated from both groups' variances and sizes (Welch-Satterthwaite)",
+      "Fractional df show that the scores in at least one group are not normally distributed",
     ],
     answer: 2,
     explanation:
@@ -407,10 +407,10 @@ const D: Draft[] = [
     type: "mcq",
     stem: "The t distribution was published in 1908 by William Gosset under the pen name 'Student'. He developed it to deal with:",
     options: [
-      "Frequencies in contingency tables",
-      "Very large samples with known population variance",
+      "Frequencies of batches falling into categories in contingency tables",
+      "Very large samples, where the population variance is already known",
       "Small samples, where the population SD has to be estimated from the sample",
-      "Ranked data",
+      "Ranked data from taste tests",
     ],
     answer: 2,
     explanation:
@@ -464,14 +464,14 @@ const D: Draft[] = [
     type: "mcq",
     stem: "Two studies find the same group means (52 vs 48) and the same SDs (10 in each group). Study A has 20 per group and Study B has 200 per group. Compared with Study A, Study B's t will be:",
     options: [
-      "Ten times larger",
-      "Exactly the same",
+      "Ten times larger, because the sample is ten times bigger",
+      "Exactly the same, because the effect size has not changed",
       "About √10 ≈ 3.2 times larger, because the standard error shrinks with √n",
       "Smaller, because larger samples have more variability",
     ],
     answer: 2,
     explanation:
-      "Step 1: t = mean difference/SE, and SE = √(s²/n₁ + s²/n₂). Step 2: multiplying each n by 10 divides the SE by √10 ≈ 3.16. Step 3: so t grows by about 3.16 times: Study A's t ≈ 4/3.16 = 1.26, Study B's t ≈ 4/1.0 = 4.0. The effect size, d = 0.40, is the same in both studies. t is not unchanged and does not grow tenfold. Larger samples do not have more variability.",
+      "Step 1: t = mean difference/SE, and SE = √(s²/n₁ + s²/n₂). Step 2: multiplying each n by 10 divides the SE by √10 ≈ 3.16. Step 3: so t grows by about 3.16 times: Study A's t ≈ 4/3.16 = 1.26, Study B's t ≈ 4/1.0 = 4.0. The effect size, d = 0.40, is the same in both studies, but t is not. t does not grow tenfold, because the SE shrinks with √n, not with n. Larger samples do not have more variability.",
     module: "exam-prep",
     ref: "standard stats",
   },
@@ -557,8 +557,8 @@ const D: Draft[] = [
     type: "mcq",
     stem: "A paired-samples t-test is appropriate when:",
     options: [
-      "Three or more groups are compared",
-      "Two completely separate groups are compared",
+      "Three or more groups are compared on a single outcome",
+      "Two completely separate groups of different participants are compared on one measure",
       "The same participants are measured twice, or participants are matched in pairs",
       "The data are frequencies in categories",
     ],
@@ -632,10 +632,10 @@ const D: Draft[] = [
     type: "mcq",
     stem: "Garrett's 'critical ratio' (CR) for testing a difference between two means is:",
     options: [
-      "The ratio of the larger variance to the smaller variance",
-      "The difference between the means divided by the standard error of that difference, used as a z test with large samples",
-      "The proportion of variance explained",
-      "The ratio of two correlations",
+      "The ratio of the larger variance to the smaller variance of the two groups",
+      "The mean difference divided by the standard error of that difference",
+      "The proportion of variance in scores explained by group membership",
+      "The ratio of the two groups' correlations with a criterion",
     ],
     answer: 1,
     explanation:

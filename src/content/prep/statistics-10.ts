@@ -113,8 +113,8 @@ const D: Draft[] = [
     stem: "In a data file, a missing answer to an age question has been coded 99. If 99 is not declared as a missing value in the software, the main consequence is that:",
     options: [
       "The data file will not open",
-      "The software will automatically ignore it",
-      "The median will become 99",
+      "The software will automatically ignore it as an outlier",
+      "The median will become 99, but the mean will be unaffected",
       "99 will be treated as a real age, distorting the mean and SD",
     ],
     answer: 3,
