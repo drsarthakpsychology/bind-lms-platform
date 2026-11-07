@@ -394,7 +394,7 @@ export const PART: PrepQuestion[] = [
     options: ["A-2, B-1, C-3, D-4", "A-1, B-2, C-3, D-4", "A-2, B-3, C-1, D-4", "A-4, B-1, C-3, D-2"],
     answer: 0,
     explanation:
-      "Sleep terrors and sleepwalking are NREM arousal disorders from slow-wave sleep in the first third of the night, with little recall; they differ in whether there is ambulation. Nightmares arise from REM, usually in the second half of the night, with vivid recall. REM sleep behaviour disorder involves dream enactment due to loss of REM atonia and is a strong predictor of alpha-synucleinopathies. The last code wrongly gives sleep terrors the ambulation feature; the second and third codes misplace the REM parasomnias.",
+      "Sleep terrors and sleepwalking are NREM arousal disorders from slow-wave sleep in the first third of the night, with little recall; they differ in whether there is ambulation. Nightmares arise from REM, usually in the second half of the night, with vivid recall. REM sleep behaviour disorder involves dream enactment due to loss of REM atonia and is a strong predictor of alpha-synucleinopathies. Pairing sleep terrors with ambulation (A-4) gives them the feature of sleepwalking, while pairing sleep terrors with REM sleep (A-1) or nightmares with loss of atonia (B-3) misplaces the REM parasomnias.",
     ref: "DSM-5-TR parasomnias",
   }),
   Q({

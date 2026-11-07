@@ -354,7 +354,7 @@ export const PART: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "Simon's idea of bounded rationality holds that decision makers work with simplified models of reality and 'satisfice', accepting the first alternative that meets minimum criteria. This contrasts with the classical model of optimising, in which every option is weighed to find the best. Escalation of commitment is persisting with a failing course of action, and groupthink is faulty group decision making driven by pressure for agreement.",
+      "Simon's idea of bounded rationality holds that decision makers work with simplified models of reality and 'satisfice', accepting whichever alternative first meets minimum criteria. This contrasts with the classical model of optimising, in which every option is weighed to find the best. Escalation of commitment is persisting with a failing course of action, and groupthink is faulty group decision making driven by pressure for agreement.",
     ref: "Simon 1955, 1957",
   }),
   Q({

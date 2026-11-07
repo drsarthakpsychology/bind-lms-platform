@@ -22,6 +22,12 @@ const BALANCED_SUBJECTS: PrepQuestion["subject"][] = [
   "psychometrics-assessment",
   "statistics",
   "research-methods",
+  "psychopathology",
+  "clinical-therapies",
+  "counselling",
+  "health",
+  "positive",
+  "organisational",
 ];
 const MIN_ITEMS = 12;
 const MAX_SHARE = 0.4;
