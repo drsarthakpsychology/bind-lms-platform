@@ -43,6 +43,42 @@ Serotonin neurons carry **5-HT1A autoreceptors** on their cell bodies. When an S
 {"prompt": "Mirtazapine blocks alpha-2 receptors on noradrenaline and serotonin terminals. Using the idea of autoreceptors and brakes, predict what that does to transmitter release.", "answer": "Alpha-2 receptors are brakes. Blocking them takes the brake off, so more noradrenaline and serotonin are released. Mirtazapine raises monoamines without touching the reuptake pump, which is why it is called a noradrenergic and specific serotonergic antidepressant (NaSSA)."}
 :::
 
+
+:::widget flow
+{
+ "title": "Why an SSRI takes time: the autoreceptor story",
+ "layout": "chain",
+ "nodes": [
+  {
+   "id": "b",
+   "label": "SSRI blocks reuptake",
+   "detail": "Within hours, more serotonin near the cell bodies."
+  },
+  {
+   "id": "a",
+   "label": "Autoreceptors sense it",
+   "detail": "5-HT1A autoreceptors slow the neuron's firing."
+  },
+  {
+   "id": "n",
+   "label": "Little net gain at first",
+   "detail": "Release at the far terminals barely rises; side effects can appear."
+  },
+  {
+   "id": "d",
+   "label": "Autoreceptors desensitise",
+   "detail": "Over the following weeks the brake weakens."
+  },
+  {
+   "id": "r",
+   "label": "Release rises, plasticity follows",
+   "detail": "More serotonin at terminals, BDNF and new connections; mood improves."
+  }
+ ],
+ "caption": "Press Play. This is one reason the first weeks need encouragement and side-effect support."
+}
+:::
+
 ### Allosteric modulators and the NMDA receptor
 - **Benzodiazepines** do not open the GABA-A channel themselves. They bind a separate site and make GABA more effective (positive allosteric modulators). That is why they are safer alone than barbiturates, which can open the channel directly at high doses.
 - The **NMDA receptor** needs two things at once: glutamate binding and a depolarised cell that pushes out the magnesium plug. It is a **coincidence detector**, which makes it the key to learning (Section 3.3). Ketamine and memantine block it inside the channel.
@@ -264,6 +300,37 @@ How it works at the synapse:
 3. Calcium triggers kinases that insert more AMPA receptors (the synapse "listens harder").
 4. With repetition, new proteins are made and the synapse grows (structural change, helped by BDNF).
 
+
+:::widget flow
+{
+ "title": "Long-term potentiation in four steps",
+ "layout": "chain",
+ "nodes": [
+  {
+   "id": "1",
+   "label": "Strong, repeated input",
+   "detail": "Glutamate binds AMPA receptors; the cell depolarises."
+  },
+  {
+   "id": "2",
+   "label": "Magnesium plug leaves NMDA",
+   "detail": "Only with glutamate plus depolarisation: a coincidence detector."
+  },
+  {
+   "id": "3",
+   "label": "Calcium enters",
+   "detail": "Activates kinases."
+  },
+  {
+   "id": "4",
+   "label": "More AMPA receptors, then growth",
+   "detail": "The synapse 'listens harder'; with repetition, new proteins and BDNF make it lasting."
+  }
+ ],
+ "caption": "Cells that fire together wire together."
+}
+:::
+
 **Long-term depression (LTD)** is the opposite: weak, poorly timed input weakens a synapse. Both are needed; a brain that only strengthened would fill up with noise.
 
 ### The brain across life
@@ -281,6 +348,36 @@ How it works at the synapse:
   "answer": [70, 85],
   "reveal": "About 80 per cent, among the highest in psychiatry. Bipolar disorder is similar (around 60 to 85 per cent), depression much lower (around 35 to 40 per cent). But 'heritable' does not mean 'inevitable': an identical twin of a person with schizophrenia has roughly a 40 to 50 per cent chance, not 100 per cent.",
   "clinician": "Heritability is a population statistic for variance explained in a particular environment, not a statement about an individual, and it says nothing about modifiability (phenylketonuria is highly heritable and fully treatable by diet). Twin heritability for schizophrenia is about 0.79; SNP-based heritability is far lower (about 0.24), the 'missing heritability' gap."
+}
+:::
+
+
+:::widget timeline
+{
+ "prompt": "Put these brain development events in order.",
+ "events": [
+  {
+   "label": "Neurons are made and migrate",
+   "when": "before birth"
+  },
+  {
+   "label": "Rapid growth of synapses",
+   "when": "infancy and early childhood"
+  },
+  {
+   "label": "Pruning of unused synapses begins",
+   "when": "childhood"
+  },
+  {
+   "label": "Reward system matures",
+   "when": "early adolescence"
+  },
+  {
+   "label": "Prefrontal pruning and myelination finish",
+   "when": "mid-twenties"
+  }
+ ],
+ "why": "The gap between early-maturing reward systems and late-maturing control helps explain adolescent risk-taking and the age of onset of many illnesses."
 }
 :::
 
@@ -379,6 +476,26 @@ Most people with a typical presentation do not need one. Red flags that justify 
 - **Cognitive decline** or personality change in middle or late life.
 - Head injury, catatonia, or a poor response to standard treatment with atypical features.
 
+
+:::widget brainmap
+{
+ "title": "Where brain stimulation is aimed",
+ "focus": [
+  "prefrontal",
+  "basal-ganglia",
+  "thalamus",
+  "brainstem"
+ ],
+ "notes": {
+  "prefrontal": "rTMS for depression targets the left dorsolateral prefrontal cortex; accelerated protocols use imaging to pick the spot.",
+  "basal-ganglia": "Deep brain stimulation for severe OCD targets the ventral capsule and ventral striatum; for Parkinson's disease, the subthalamic nucleus.",
+  "thalamus": "A DBS target in tremor.",
+  "brainstem": "Vagus nerve stimulation sends signals up through the brainstem."
+ },
+ "caption": "Tap each target and link it to the condition treated."
+}
+:::
+
 ### Stimulating the brain
 - **Electroconvulsive therapy (ECT)**: a brief, controlled seizure under anaesthesia and muscle relaxant. The most effective acute treatment for severe depression, catatonia and some treatment-resistant states. In India, the Mental Healthcare Act 2017 bans ECT without anaesthesia and muscle relaxant (see the Ethics and law module).
 - **Repetitive transcranial magnetic stimulation (rTMS)**: magnetic pulses over the scalp, usually over the left dorsolateral prefrontal cortex for depression. No anaesthesia; awake outpatient sessions. Widely offered in Indian cities.
@@ -465,6 +582,25 @@ Treatment is immunotherapy (steroids, immunoglobulin, plasma exchange) and tumou
 
 ### The gut-brain axis
 The gut has its own nervous system, and gut microbes produce substances that affect immunity and possibly mood. Animal studies are striking; human evidence is still early. As of Nov 2026, probiotics ("psychobiotics") do not have reliable evidence as a treatment for depression or anxiety. Diet quality does relate to mood, and a Mediterranean-style diet trial gave promising but small results.
+
+
+:::widget journey
+{
+ "drug": "carbamazepine",
+ "target": "voltage-gated sodium channels in neurons",
+ "routes": [
+  "oral"
+ ],
+ "notes": {
+  "gut": "Absorbed slowly and somewhat erratically.",
+  "liver": "Broken down by CYP3A4, and it induces this enzyme, so its own levels fall over the first weeks and many other drugs (including oral contraceptives) are weakened.",
+  "blood": "Mostly protein-bound.",
+  "brain": "Stabilises over-active neurons by blocking sodium channels.",
+  "elimination": "Metabolites cleared by the kidneys. Before starting in at-risk Asian groups, test for HLA-B*15:02 because of the risk of severe skin reactions."
+ },
+ "caption": "Find the stops where interactions and genetic risk enter the story."
+}
+:::
 
 ### Genes and prescribing (pharmacogenomics)
 Some gene variants change how a person handles a medicine:
