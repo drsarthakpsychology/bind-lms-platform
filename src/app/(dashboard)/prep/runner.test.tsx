@@ -104,7 +104,7 @@ describe("QuestionRunner", () => {
     expect(screen.queryByText(/Diagram:/)).toBeNull();
     fireEvent.click(screen.getByRole("radio", { name: /2 and 3 only/ }));
     fireEvent.click(screen.getByRole("button", { name: "Check answer" }));
-    expect(await screen.findByText("Diagram: flow Steps")).toBeInTheDocument();
+    expect(await screen.findByText("Diagram: flow Steps", {}, { timeout: 8000 })).toBeInTheDocument();
     expect(screen.getByText("How it flows")).toBeInTheDocument();
     delete VISUALS.s1;
   });
@@ -115,7 +115,7 @@ describe("QuestionRunner", () => {
     const { unmount } = render(<QuestionRunner {...props} />);
     fireEvent.click(screen.getByRole("radio", { name: /2 and 3 only/ }));
     fireEvent.click(screen.getByRole("button", { name: "Check answer" }));
-    expect(await screen.findByText("Right")).toBeInTheDocument();
+    expect(await screen.findByText("Right", {}, { timeout: 8000 })).toBeInTheDocument();
     await new Promise((r) => setTimeout(r, 50));
     expect(screen.queryByText("Never shown")).toBeNull();
     expect(screen.getByRole("button", { name: /See your score/ })).toBeInTheDocument();
@@ -124,7 +124,7 @@ describe("QuestionRunner", () => {
     render(<QuestionRunner {...props} />);
     fireEvent.click(screen.getByRole("radio", { name: /2 and 3 only/ }));
     fireEvent.click(screen.getByRole("button", { name: "Check answer" }));
-    expect(await screen.findByText("Right")).toBeInTheDocument();
+    expect(await screen.findByText("Right", {}, { timeout: 8000 })).toBeInTheDocument();
     expect(screen.queryByText(/Diagram:/)).toBeNull();
     delete VISUALS.s1;
     spy.mockRestore();

@@ -13,7 +13,7 @@ import { ALL_QUESTIONS } from "./index";
 import { ASSIGNED } from "./visuals/assigned";
 import { CONCEPTS } from "./visuals";
 
-const KINDS = ["guess", "decide", "sort", "build", "moodline", "worked", "synapse", "reveal", "flow", "curve", "layers", "brainmap", "journey", "neuron", "pathways", "receptor", "conditioning", "memoryflow", "stress", "timeline", "compare", "attention", "dissonance", "conservation", "experiment", "release", "thoughtrecord", "hypnogram", "strange", "illusion", "nervoussystem", "brainexplorer", "actionpotential", "synapse3d", "genogram", "hpaloop", "brainslicer", "amesroom"] as const satisfies readonly WidgetKind[];
+const KINDS = ["guess", "decide", "sort", "build", "moodline", "worked", "synapse", "reveal", "flow", "curve", "layers", "brainmap", "journey", "neuron", "pathways", "receptor", "conditioning", "memoryflow", "stress", "timeline", "compare", "attention", "dissonance", "conservation", "experiment", "release", "thoughtrecord", "hypnogram", "strange", "illusion", "nervoussystem", "brainexplorer", "actionpotential", "synapse3d", "genogram", "hpaloop", "brainslicer", "amesroom", "figure"] as const satisfies readonly WidgetKind[];
 // Fails to compile if a WidgetKind is missing from the list above.
 const allKinds: Exclude<WidgetKind, (typeof KINDS)[number]> extends never ? true : false = true;
 
