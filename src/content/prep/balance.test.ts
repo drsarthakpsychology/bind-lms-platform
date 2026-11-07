@@ -29,6 +29,7 @@ const BALANCED_SUBJECTS: PrepQuestion["subject"][] = [
   "positive",
   "organisational",
   "psychopharmacology",
+  "clinical-psychiatry",
 ];
 const MIN_ITEMS = 12;
 const MAX_SHARE = 0.4;
