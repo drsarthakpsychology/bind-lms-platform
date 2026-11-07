@@ -666,6 +666,24 @@ Sympathetic-adrenal and HPA axes → feedback → acute versus chronic stress, a
 **4. Basic principles of pharmacokinetics with clinical examples (10 marks).**
 Absorption and first pass → distribution, protein binding, blood-brain barrier → metabolism by CYP enzymes, inducers and inhibitors with psychiatric examples → excretion (lithium) → half-life, steady state, washout → therapeutic index and drug monitoring → special groups (elderly, pregnancy, liver and kidney disease, pharmacogenomics).
 
+**5. Biological basis of schizophrenia (15 marks).**
+Genetics (twin, adoption, Gottesman's risks, GWAS, CNVs) → neurodevelopmental hypothesis and its evidence → dopamine hypothesis in three versions → glutamate and GABA → other transmitters → structural and functional imaging → psychophysiology and endophenotypes → environmental risks acting on biology → an integrated circuit model → limits and conclusion.
+
+**6. Biological theories of depression (15 marks).**
+Monoamine hypothesis (origins: reserpine, iproniazid, imipramine; Schildkraut, Coppen, Prange) → evidence for and against (tryptophan depletion, delay, 2022 review) → receptor sensitivity and autoreceptors → HPA axis (DST), thyroid (TRH test), growth hormone → neurotrophic and glutamate (ketamine) → inflammation → circadian and sleep → circuits and cognitive neuropsychology → genetics → conclusion.
+
+**7. The basal ganglia: anatomy, circuits and disorders (15 marks).**
+Components → inputs and outputs → direct and indirect pathways with D1 and D2 → parallel frontal-subcortical loops → Parkinson's, Huntington's, hemiballismus, Wilson's disease, drug-induced movement disorders → OCD, Tourette syndrome and addiction as loop disorders → DBS → conclusion.
+
+**8. The hypothalamus and the neuroendocrine axes in psychiatry (15 marks).**
+Nuclei and functions → portal system and posterior pituitary → HPA, HPT, HPG axes with feedback → prolactin, growth hormone, melatonin, oxytocin and vasopressin → challenge tests (DST, TRH, clonidine GH) → endocrine disorders that mimic psychiatric illness → psychiatric medicines that disturb hormones (lithium, antipsychotics, SSRIs and SIADH) → conclusion.
+
+**9. Sleep: physiology, regulation and its disorders (10 marks).**
+EEG rhythms and stages → REM features and discovery → two-process model, flip-flop switch, reciprocal interaction → theories of dreaming and function → sleep across life → classification of sleep disorders → sleep in depression and chronotherapy.
+
+**10. Neurobiology of addiction (10 marks).**
+Mesolimbic pathway and the common dopamine pathway → mechanisms of each drug class → prediction error, incentive sensitisation, allostasis, habit, impaired control → tolerance, withdrawal and conditioned tolerance → genetics → treatment implications.
+
 ### Short notes (5 marks each)
 - Synaptic transmission
 - Neurotransmitter receptors: ionotropic versus metabotropic
@@ -677,6 +695,29 @@ Absorption and first pass → distribution, protein binding, blood-brain barrier
 - Anti-NMDA receptor encephalitis
 - HLA-B*15:02 and carbamazepine
 - rTMS
+- Nernst and Goldman equations
+- Refractory periods and saltatory conduction
+- SNARE proteins and the toxins that act on them
+- Endocannabinoids
+- Orexin and narcolepsy
+- Brown-Séquard syndrome
+- Cranial nerves with parasympathetic fibres
+- Papez circuit
+- Klüver-Bucy syndrome
+- Hypothalamic nuclei
+- Brodmann areas
+- Normal pressure hydrocephalus
+- Dexamethasone suppression test
+- TRH stimulation test
+- Event-related potentials in schizophrenia
+- Two-process model of sleep
+- Fragile X syndrome
+- Genomic imprinting
+- Epigenetics and early life stress
+- Kindling hypothesis
+- Lithium's mechanisms of action
+- Amyloid cascade hypothesis
+- Cortical versus subcortical dementia
 
 :::student
 In a short note, aim for five crisp points with one example each, plus a line on clinical relevance. Draw a labelled diagram (synapse, HPA axis or dopamine pathways) whenever you can; examiners award marks quickly for a clear figure.
@@ -715,6 +756,43 @@ What test should precede carbamazepine in at-risk Asian patients? :: HLA-B*15:02
 What is the first antipsychotic approved without direct D2 blockade? :: Xanomeline-trospium, a muscarinic agonist, US approval 2024.
 What EEG finding suggests delirium? :: Diffuse slowing.
 What is a DAT scan used for? :: Showing loss of dopamine transporters in Parkinson's disease and Lewy body dementia.
+What does the sodium-potassium pump move per ATP? :: Three sodium out and two potassium in.
+What is the approximate potassium equilibrium potential? :: About minus 90 millivolts.
+What causes the absolute refractory period? :: Inactivation of voltage-gated sodium channels.
+What is the calcium sensor for vesicle fusion? :: Synaptotagmin.
+What does botulinum toxin cleave? :: SNARE proteins, blocking acetylcholine release.
+What does strychnine block? :: Glycine receptors.
+Which enzyme makes GABA? :: Glutamic acid decarboxylase, which needs vitamin B6.
+What is the main breakdown product of serotonin? :: 5-HIAA.
+Where is histamine made in the brain? :: The tuberomammillary nucleus.
+Where are orexin neurons? :: The lateral hypothalamus.
+What is anandamide? :: An endocannabinoid that acts retrogradely on CB1 receptors.
+What does the Bell-Magendie law state? :: Dorsal roots are sensory, ventral roots motor.
+Which cranial nerve exits the back of the brainstem? :: The trochlear (IV).
+Which cranial nerves carry parasympathetic fibres? :: III, VII, IX and X.
+What is the only output of the cerebellar cortex? :: Purkinje cells, which are GABAergic.
+What lesion causes hemiballismus? :: The contralateral subthalamic nucleus.
+Name the stations of Papez's circuit. :: Hippocampus, fornix, mammillary bodies, anterior thalamus, cingulate gyrus, parahippocampal cortex.
+Who coined the term limbic system? :: Paul MacLean, 1952.
+Which Brodmann area is primary visual cortex? :: Area 17.
+Which Brodmann area is primary auditory cortex? :: Areas 41 and 42.
+What is the triad of normal pressure hydrocephalus? :: Gait disturbance, urinary incontinence and dementia.
+What is the DST cut-off for non-suppression? :: Cortisol above about 5 micrograms per decilitre.
+What share of euthyroid depressed patients show a blunted TSH response to TRH? :: About a quarter.
+What did Moruzzi and Magoun discover? :: The ascending reticular activating system.
+Who discovered REM sleep? :: Aserinsky and Kleitman, 1953.
+What is Process S? :: Homeostatic sleep pressure, linked to adenosine.
+Which ERP is enlarged in OCD? :: The error-related negativity.
+What is Gottesman's risk for the MZ co-twin of a person with schizophrenia? :: About 48 per cent.
+What is the commonest inherited cause of intellectual disability? :: Fragile X syndrome.
+Which syndrome follows loss of the paternal 15q11 to 13 region? :: Prader-Willi syndrome.
+What did Bliss and Lømo discover? :: Long-term potentiation, in 1973.
+What did Kandel study in Aplysia? :: Habituation and sensitisation of the gill-withdrawal reflex.
+Who proposed the kindling hypothesis of mood disorders? :: Robert Post.
+Who introduced lithium for mania? :: John Cade, in 1949.
+What did Di Chiara and Imperato show? :: Most drugs of abuse raise dopamine in the nucleus accumbens.
+What did Siegel show about tolerance? :: It is partly conditioned to the environment.
+What correlates best with cognition in Alzheimer's disease? :: Neurofibrillary tangle burden.
 :::
 
 ## 8.3 Module test [core]
@@ -950,5 +1028,152 @@ Q: Children of mothers with schizophrenia adopted at birth into healthy families
 - Family studies alone
 - Linkage studies
 > Heston's adoption study.
+
+Q: The resting potential is closest to the equilibrium potential of:
+- Sodium
+- *Potassium
+- Calcium
+- Chloride
+> Potassium leak channels dominate at rest.
+
+Q: Tetrodotoxin abolishes action potentials but barely changes the resting potential because it:
+- Blocks potassium leak channels
+- *Blocks voltage-gated sodium channels
+- Stops the sodium-potassium pump
+- Opens chloride channels
+> Rest depends on potassium.
+
+Q: Lambert-Eaton syndrome is caused by antibodies against:
+- Postsynaptic nicotinic receptors
+- *Presynaptic voltage-gated calcium channels
+- NMDA receptors
+- Acetylcholinesterase
+> Often with small-cell lung cancer.
+
+Q: The rate-limiting enzyme in the synthesis of dopamine and noradrenaline is:
+- DOPA decarboxylase
+- Dopamine beta-hydroxylase
+- *Tyrosine hydroxylase
+- MAO-B
+> Tyrosine to L-DOPA.
+
+Q: Which receptor is a G-protein receptor coupled to Gi?
+- 5-HT3
+- NMDA
+- *D2
+- Nicotinic
+> D2, 5-HT1A, alpha-2, M2 and M4 are Gi-coupled.
+
+Q: A stab wound hemisects the right side of the thoracic cord. Below the lesion there will be:
+- Left weakness and right pain loss
+- *Right weakness and loss of vibration, with left loss of pain and temperature
+- Bilateral weakness only
+- No sensory loss
+> Brown-Séquard syndrome.
+
+Q: Bilateral sixth nerve palsy, ataxia and confusion in a malnourished drinker suggest:
+- Korsakoff syndrome only
+- *Wernicke's encephalopathy
+- Cerebellar stroke
+- Myasthenia gravis
+> Give parenteral thiamine.
+
+Q: In Huntington's disease, chorea arises mainly because of early loss of:
+- Dopamine neurons in the substantia nigra
+- *Indirect-pathway striatal neurons
+- Purkinje cells
+- Cholinergic basal forebrain neurons
+> The brake is weakened.
+
+Q: The hypothalamic nucleus that acts as the master circadian clock is the:
+- Arcuate nucleus
+- Paraventricular nucleus
+- *Suprachiasmatic nucleus
+- Ventromedial nucleus
+> Set by light through melanopsin cells.
+
+Q: Alexia without agraphia follows a stroke in the territory of the:
+- Right middle cerebral artery
+- *Left posterior cerebral artery
+- Anterior cerebral artery
+- Basilar artery only
+> Left occipital cortex plus the splenium.
+
+Q: Cortisol is produced mainly by the:
+- Zona glomerulosa
+- *Zona fasciculata
+- Zona reticularis
+- Adrenal medulla
+> "Salt, sugar, sex".
+
+Q: Prolactin taken soon after an event may help distinguish:
+- Delirium from dementia
+- *Epileptic seizures from functional (dissociative) seizures
+- Mania from schizophrenia
+- Depression from anxiety
+> Prolactin rises for about an hour after a generalised seizure.
+
+Q: In chronic PTSD, the HPA axis typically shows:
+- High cortisol with non-suppression
+- *Normal or low cortisol with enhanced negative feedback
+- Absent ACTH
+- Raised thyroid hormone
+> Yehuda's findings.
+
+Q: Shortened REM latency is:
+- Specific to depression
+- *Found in depression but also in narcolepsy, schizophrenia and other conditions
+- Never found in depression
+- Caused only by antidepressants
+> Sensitive but not specific.
+
+Q: The protein whose variation explains part of the MHC-region signal for schizophrenia and which tags synapses for pruning is:
+- BDNF
+- *Complement component 4
+- APOE
+- FMR1
+> Microglia remove tagged synapses.
+
+Q: Meaney's work showed that high maternal licking and grooming produces offspring with:
+- More methylation of the glucocorticoid receptor gene and larger stress responses
+- *Less methylation of the glucocorticoid receptor gene and smaller stress responses
+- No epigenetic change
+- Changes only in the liver
+> Cross-fostering showed the effect was due to mothering.
+
+Q: Antidepressant-like effects of fluoxetine in mice were abolished when researchers blocked:
+- Dopamine release
+- *Hippocampal neurogenesis
+- Melatonin synthesis
+- Thyroid hormone
+> Santarelli and colleagues, 2003; human relevance is debated.
+
+Q: Volkow's raclopride PET studies of people addicted to cocaine and alcohol showed:
+- Increased striatal D2 availability
+- *Reduced striatal D2 receptor availability
+- Absent dopamine transporters
+- Increased serotonin release
+> Linked with reduced orbitofrontal activity.
+
+Q: The amyloid precursor protein gene is on chromosome 21, which explains early Alzheimer's pathology in:
+- Fragile X syndrome
+- *Down syndrome
+- Turner syndrome
+- Williams syndrome
+> Three copies of APP.
+
+Q: A patient with dementia with Lewy bodies should usually avoid:
+- Rivastigmine
+- *Typical antipsychotics such as haloperidol
+- Sleep hygiene
+- Physiotherapy
+> Severe neuroleptic sensitivity.
+
+Q: Interferon-alpha treatment causes depression in a substantial minority of patients, which supports:
+- The monoamine hypothesis only
+- *An inflammatory contribution to depression
+- The dopamine hypothesis of schizophrenia
+- The kindling hypothesis
+> SSRI pretreatment reduces the risk.
 :::
 `;

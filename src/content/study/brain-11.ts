@@ -278,3 +278,213 @@ Tiny voltage changes time-locked to an event, revealed by averaging many EEG tri
 ERPs are cheap, millisecond-precise, and found in unaffected relatives, so they serve as **endophenotypes**: measurable traits between genes and diagnosis. They are research tools, not diagnostic tests.
 :::
 `;
+
+export const qaAdvancedMore = String.raw`
+:::qa Discuss the biological basis of schizophrenia (a 15-mark answer plan). [advanced]
+### Introduction
+Schizophrenia is a heritable neurodevelopmental disorder in which many genetic and environmental hits converge on cortical, hippocampal and striatal circuits.
+### 1. Genetics
+- Heritability about 80 per cent; Gottesman: MZ about 48 per cent, DZ 17, sibling 9, child of two affected parents 46.
+- Adoption studies (Heston; Kety, Rosenthal and Wender; Tienari's gene-environment interaction).
+- GWAS: 287 regions, synaptic genes, DRD2, complement C4; rare CNVs (22q11.2 deletion about 25 per cent psychosis risk) and rare damaging variants (SETD1A, GRIN2A).
+### 2. Neurodevelopment
+Weinberger, and Murray and Lewis (1987): childhood precursors, minor physical anomalies, prenatal famine and infection, obstetric complications, no gliosis; Feinberg's excessive pruning and C4.
+### 3. Neurochemistry
+| Hypothesis | Key evidence |
+|---|---|
+| Dopamine I to III | D2 affinity correlates with potency; amphetamine psychosis; raised presynaptic synthesis capacity (F-DOPA); aberrant salience |
+| Glutamate | Ketamine and PCP reproduce all symptom domains; anti-NMDA receptor encephalitis; reduced MMN |
+| GABA | Reduced GAD67 and parvalbumin interneurons; gamma deficits |
+| Serotonin, acetylcholine | 5-HT2A (LSD, atypicals, pimavanserin); muscarinic agonist xanomeline; heavy smoking |
+### 4. Structure and function
+Enlarged ventricles (Johnstone 1976), reduced temporal, hippocampal and thalamic grey matter, hypofrontality, reduced white matter FA.
+### 5. Psychophysiology
+Smooth pursuit eye movement abnormalities, reduced prepulse inhibition, P50 gating, reduced P300 and MMN, fewer sleep spindles.
+### 6. Environment acting on biology
+Cannabis (Andréasson; Di Forti), urbanicity, migration, childhood adversity, Toxoplasma; stress-vulnerability (Zubin and Spring); dopamine sensitisation by stress.
+### Integration and conclusion
+Genes and early hazards alter interneuron development; NMDA hypofunction disinhibits cortex and hippocampus; hippocampal overdrive raises striatal dopamine; aberrant salience produces positive symptoms, cortical dysfunction produces cognitive and negative symptoms. Limits: treatment resistance with normal dopamine, failed glutamate drugs, small imaging effect sizes, and no diagnostic biomarker as of Nov 2026.
+:::
+
+:::qa Describe the dexamethasone suppression test and the TRH stimulation test, their findings in depression and why neither is used for diagnosis. [advanced]
+| | DST | TRH stimulation test |
+|---|---|---|
+| Axis | HPA | HPT |
+| Protocol | 1 mg dexamethasone at 11 pm; cortisol at 4 pm and 11 pm next day | 500 micrograms TRH intravenously; TSH at 15, 30, 60, 90 minutes |
+| Abnormal result | Cortisol above about 5 micrograms per decilitre (non-suppression) | Blunted rise (below about 5 to 7 units); exaggerated rise (above about 25 to 35) suggests subclinical hypothyroidism |
+| Finding in depression | About 40 to 60 per cent of melancholic inpatients, more in psychotic depression | Blunted in about 25 per cent of euthyroid patients |
+| With recovery | Normalises; persistence predicts relapse | Often persists |
+| Mechanism | Weak glucocorticoid receptor feedback, high CRH drive | Pituitary TRH receptor downregulation from excess TRH |
+| Why not diagnostic | False positives in mania, dementia, weight loss, alcohol, stress, enzyme inducers; low sensitivity in outpatients | Non-specific; sensitive TSH assays now detect thyroid failure directly |
+### Contrast worth adding
+In chronic PTSD, a low-dose DST shows **exaggerated** suppression (enhanced feedback), the opposite of melancholia.
+### Value today
+Research markers of biological subtypes and relapse risk; their history teaches why single biomarkers rarely become diagnostic tests.
+:::
+
+:::qa Explain the neurodevelopmental hypothesis of schizophrenia and critically evaluate the evidence. [advanced]
+### The hypothesis
+An early (mostly prenatal and perinatal) disruption of brain development stays largely silent until adolescent maturation, especially prefrontal pruning, myelination and dopamine regulation, unmasks it (Weinberger; Murray and Lewis, 1987).
+### Evidence for
+1. **Precursors**: delayed milestones, motor oddities, lower IQ and social difficulties in birth cohorts and home movies.
+2. **Markers of early insult**: minor physical anomalies, altered dermatoglyphics, soft neurological signs.
+3. **Imaging at first episode**: enlarged ventricles and grey matter deficits; no gliosis post-mortem.
+4. **Early risk factors**: famine, infection and maternal immune activation, obstetric hypoxia, winter or spring birth, older fathers.
+5. **Genetics**: risk variants enriched in genes active in fetal brain and synapses; CNVs that also cause autism and intellectual disability; C4 and pruning.
+6. **Animal models**: maternal immune activation and neonatal hippocampal lesions produce adolescent-onset dopamine and gating abnormalities.
+### Evidence that complicates it
+- Progressive grey matter loss after onset in some patients (though medicines, cannabis and lifestyle contribute).
+- Most effect sizes for early risks are small; most exposed people never become ill.
+- Some patients have no detectable precursors.
+- It explains timing better than specific symptoms.
+### Conclusion
+The best-supported view is neurodevelopmental origins with a second hit and some progressive change around onset, which justifies early intervention and reducing modifiable adolescent risks such as cannabis.
+:::
+
+:::qa Using LTP, LTD and Kandel's Aplysia work, explain how short-term memory becomes long-term memory at the cellular level. [advanced]
+### Short-term changes: modifying existing proteins
+- **Aplysia sensitisation**: serotonin from facilitating interneurons activates cAMP and PKA in the sensory terminal, closing potassium channels, prolonging spikes and increasing release for minutes.
+- **Early LTP**: NMDA receptor calcium entry activates CaMKII and PKC, which phosphorylate AMPA receptors and insert more into the membrane, lasting 1 to 3 hours.
+### Long-term changes: gene expression and growth
+- **Aplysia**: repeated shocks send PKA and MAP kinase to the nucleus; CREB switches on genes; new synapses form. Protein synthesis inhibitors block long-term but not short-term memory.
+- **Late LTP**: the same cAMP, PKA and CREB pathway, plus BDNF and dopamine signals, produce new proteins and larger or new spines; synaptic tagging lets weakly stimulated synapses capture these proteins.
+### The weakening side
+LTD (low-frequency input, small calcium rise, phosphatases, AMPA removal) and spike-timing rules allow selective forgetting and refinement; cerebellar LTD underlies motor learning.
+### Psychiatric relevance
+| Process | Relevance |
+|---|---|
+| Consolidation and reconsolidation | Trauma memories; propranolol and reactivation research |
+| CREB and BDNF | Antidepressant action and the neurotrophic hypothesis |
+| NMDA dependence | Ketamine; NMDA hypofunction in schizophrenia |
+| Pathological plasticity | Addiction (delta-FosB, glutamate homeostasis), chronic pain, kindling |
+:::
+
+:::qa What do twin, adoption and molecular studies tell us about the genetics of mood disorders, and what are the limits of each method? [advanced]
+### Findings
+| Method | Findings |
+|---|---|
+| Family | First-degree relatives of people with depression have roughly two to three times the risk; for bipolar disorder the risk of any mood disorder is much higher |
+| Twin | Depression heritability about 37 per cent (higher in recurrent, early-onset illness and in women); bipolar 60 to 85 per cent; shared environment small |
+| Adoption | Fewer studies; Danish and Swedish data show biological relatives of adoptees with mood disorders, and with suicide, carry higher risk |
+| GWAS | Hundreds of variants for depression in recent trans-ancestry studies; dozens for bipolar disorder; strong genetic overlap between bipolar disorder and schizophrenia |
+| Candidate genes | 5-HTTLPR by stress and others failed to replicate in very large studies |
+| Epigenetics | Childhood abuse linked with methylation of the glucocorticoid receptor gene (NR3C1) and FKBP5 |
+### Limits
+- **Twin**: equal environments assumption; population-specific estimates.
+- **Adoption**: selective placement, prenatal environment shared with the biological mother, small samples.
+- **GWAS**: tiny individual effects; polygenic scores explain little individual risk and transfer poorly to South Asian ancestry.
+- **Candidate genes**: underpowered, publication bias.
+### Clinical message
+Family history remains the most useful genetic information in the clinic; no gene test diagnoses or predicts a mood disorder as of Nov 2026.
+:::
+
+:::qa Compare the neuroimaging findings in schizophrenia, major depression, OCD and PTSD. [advanced]
+| | Schizophrenia | Major depression | OCD | PTSD |
+|---|---|---|---|---|
+| Structure | Enlarged ventricles; reduced superior temporal, hippocampal, thalamic and prefrontal grey matter; thinner cortex | Smaller hippocampus (recurrent, early onset); reduced subgenual cingulate | Variable; larger pallidum, smaller hippocampus in some meta-analyses | Smaller hippocampus (partly pre-existing) |
+| Function | Hypofrontality; auditory cortex activity in hallucinations | Amygdala and subgenual cingulate overactive; dorsolateral prefrontal underactive | Orbitofrontal, caudate and anterior cingulate hyperactivity | Amygdala overactive; ventromedial prefrontal underactive |
+| Neurochemistry | Raised striatal dopamine synthesis; raised glutamate early | Raised MAO-A binding; altered 5-HT1A | Serotonin and glutamate changes | Noradrenergic hyperactivity |
+| White matter | Widely reduced FA | Hyperintensities in late-life depression | Altered frontostriatal tracts | Altered cingulum |
+| Treatment effects | Antipsychotics affect basal ganglia volume | Normalisation of limbic-cortical activity with drugs, CBT and stimulation | Normalisation with SSRIs or behaviour therapy (Baxter) | Some normalisation with therapy |
+### Caveats
+Small group effects with large overlap, confounding by medication and illness duration, reverse inference and replication problems. No finding diagnoses an individual.
+:::
+
+:::qa Explain the sleep and circadian abnormalities of mood disorders and how chronotherapies use them. [advanced]
+### Abnormalities
+- **Depression**: insomnia (or hypersomnia in atypical and bipolar depression), short REM latency, increased REM density, reduced slow-wave sleep and delta sleep ratio, early morning waking, diurnal variation.
+- **Bipolar disorder**: reduced need for sleep before and during mania; sleep loss triggers mania; irregular social rhythms trigger episodes; evening chronotype.
+- **Molecular clock**: CLOCK, BMAL1, PER and CRY loop; CLOCK mutant mice show mania-like behaviour reversed by lithium; lithium inhibits GSK-3 and lengthens the period.
+### Chronotherapies
+| Therapy | Method | Evidence and caution |
+|---|---|---|
+| Total sleep deprivation | One night awake | Response in about half within hours; relapse after sleep |
+| Sleep phase advance | Earlier sleep for a few nights | Maintains the wake-therapy gain |
+| Bright light | About 10,000 lux for 30 minutes after waking | First-line in seasonal depression; add-on in non-seasonal and bipolar depression |
+| Triple chronotherapy | All three, with lithium in bipolar depression | Rapid and sustained response in some trials; watch for switching |
+| IPSRT | Stabilising daily routines | Reduces recurrence in bipolar disorder |
+| Agomelatine and melatonin | Melatonin receptor agonism | Resynchronisation |
+| CBT-I | Behavioural sleep treatment | Improves insomnia and depressive symptoms |
+:::
+
+:::qa Explain the major neurobiological theories of addiction and how each points to a treatment. [advanced]
+| Theory | Proponents | Core idea | Treatment implication |
+|---|---|---|---|
+| Common dopamine pathway | Di Chiara and Imperato | All misused drugs raise accumbens dopamine | Agonist replacement (methadone, buprenorphine, nicotine replacement, varenicline) |
+| Reward prediction error | Schultz | Drugs produce an unending "better than expected" signal; cues gain value | Cue exposure, contingency management |
+| Incentive sensitisation | Robinson and Berridge | Wanting grows, liking does not | Target craving (naltrexone, cue reactivity work) |
+| Opponent process and allostasis | Koob | Reward deficit and stress surfeit drive negative reinforcement | Treat withdrawal and negative affect; stress-system targets |
+| Habit | Everitt and Robbins | Control shifts from ventral to dorsal striatum | Habit-reversal, environmental change |
+| Impaired inhibitory control | Volkow | Reduced D2 and prefrontal function | Cognitive training, treating comorbid ADHD |
+| Molecular and glutamate | Nestler, Kalivas | Delta-FosB; disturbed glutamate homeostasis | N-acetylcysteine and glutamate agents (research) |
+| Conditioned tolerance | Siegel | Context-specific compensatory responses | Overdose education, naloxone |
+### Conclusion
+Addiction is learning and decision-making captured by drugs in a vulnerable person (genes about 50 per cent heritable; adolescent exposure; stress). Biology informs medicines, but psychosocial treatment and harm reduction remain central.
+:::
+
+:::qa Outline the amyloid cascade hypothesis of Alzheimer's disease, the evidence for and against it, and what anti-amyloid antibodies have shown. [advanced]
+### The hypothesis
+APP cleavage by beta- and gamma-secretase yields amyloid-beta 42, which aggregates and triggers tau tangles, microglial inflammation, synapse loss, neuron death and dementia (Hardy and Higgins, 1992).
+### For
+- All familial early-onset genes (APP, PSEN1, PSEN2) raise amyloid-beta 42.
+- Down syndrome (three APP copies) leads to Alzheimer's pathology by about 40.
+- A protective APP variant reduces amyloid and dementia risk.
+- APOE e4 slows amyloid clearance.
+- Anti-amyloid antibodies that clear plaques slow decline modestly.
+### Against or complicating
+- Plaques are common in cognitively normal older people; tangles track symptoms better.
+- Many earlier anti-amyloid drugs failed.
+- Benefits are modest (roughly a quarter to a third slower decline over 18 months) and side effects (ARIA) are real.
+- Vascular, inflammatory (TREM2), metabolic and mixed pathologies are common.
+### Clinical message
+A useful but incomplete model. In practice: diagnose early, look for reversible causes (B12, thyroid, depression, NPH, syphilis), use cholinesterase inhibitors and memantine where appropriate, and support carers. Antibody therapy is costly, requires MRI monitoring and is not widely available in India.
+:::
+
+:::qa Compare the neurobiology of panic disorder and OCD. [advanced]
+| | Panic disorder | OCD |
+|---|---|---|
+| Core circuit | Amygdala-centred fear network with brainstem (locus coeruleus, periaqueductal grey) and hypothalamus | Cortico-striato-thalamo-cortical loop (orbitofrontal, anterior cingulate, caudate, thalamus) |
+| Neurotransmitters | Noradrenaline (yohimbine provokes, clonidine damps), GABA set-point shift (flumazenil provokes), serotonin dual role | Serotonin (clomipramine over desipramine), dopamine (antipsychotic augmentation, tics), glutamate |
+| Provocation | Lactate, 35 per cent CO2, CCK-4, caffeine | Exposure to symptom triggers; mCPP |
+| Theories | Klein's false suffocation alarm; Gorman's neuroanatomical model; interoceptive sensitivity | Loop hyperactivity; habit over goal-directed control; ERN increase |
+| Treatment biology | SSRIs (start low: early jitteriness), benzodiazepines short term, CBT with interoceptive exposure | Higher-dose SSRIs for longer, clomipramine, antipsychotic augmentation, ERP, DBS or capsulotomy in refractory cases |
+| Heritability | About 40 per cent | About 40 to 50 per cent (higher in childhood onset) |
+:::
+
+:::qa How do psychophysiological measures distinguish anxiety disorders from psychopathy, and what are the limits of using them in forensic settings? [advanced]
+### Measures and patterns
+| Measure | Anxiety disorders and PTSD | Psychopathy and some antisocial behaviour |
+|---|---|---|
+| Skin conductance to threat | Large, slow to habituate | Small; poor fear conditioning (Lykken, 1957) |
+| Fear-potentiated startle | Increased | Reduced |
+| Resting heart rate | Often raised | Low (Raine), a replicated correlate of childhood antisocial behaviour |
+| Amygdala response to distress cues | Increased | Reduced |
+| Heart rate variability | Reduced | Variable |
+### Interpretation
+The findings support a fearlessness or low-arousal theory of some antisocial behaviour and a hyper-reactive threat system in anxiety. They are group averages that overlap heavily between individuals.
+### Forensic limits
+- Polygraphs measure arousal, not deception; innocent anxious people can fail and practised liars can pass.
+- In Selvi versus State of Karnataka (2010), the Supreme Court of India ruled that narcoanalysis, polygraph and brain electrical activation profile tests cannot be forced, and their results are not admissible as evidence by themselves.
+- EEG "brain signature" tests lack independent validation.
+- Psychologists should present such measures as research findings, not as proof about an individual.
+:::
+
+:::qa How do the frontal-subcortical loops explain the overlap between neurological and psychiatric disorders? [advanced]
+### The loops
+Alexander and colleagues described parallel circuits from frontal cortex to striatum to globus pallidus and substantia nigra to thalamus and back:
+| Loop | Cortex | Striatum | Function | Lesion syndrome |
+|---|---|---|---|---|
+| Motor | Supplementary motor area | Putamen | Movement | Parkinsonism, chorea |
+| Oculomotor | Frontal eye fields | Caudate body | Eye movements | Saccade problems |
+| Dorsolateral prefrontal | Areas 9 and 46 | Dorsolateral caudate | Executive function | Dysexecutive syndrome |
+| Orbitofrontal | Areas 11, 12, 47 | Ventromedial caudate | Social behaviour, switching | Disinhibition, OCD-like behaviour |
+| Anterior cingulate | Areas 24, 32 | Ventral striatum (accumbens) | Motivation | Apathy, akinetic mutism |
+### Explaining overlap
+- **Huntington's and Parkinson's diseases** damage the striatum and so produce depression, apathy, OCD features and psychosis alongside movement disorder.
+- **OCD, Tourette syndrome and addiction** are described as loop disorders and respond to treatments targeting the loops (DBS of ventral capsule and striatum, dopamine and serotonin agents).
+- **Caudate and thalamic strokes** produce "frontal" syndromes without cortical damage.
+- **Antipsychotics** acting on striatal D2 receptors produce both therapeutic and motor effects.
+### Conclusion
+Psychiatric symptoms can arise anywhere in a loop, so a "frontal" picture needs a search of deep structures too.
+:::
+`;
