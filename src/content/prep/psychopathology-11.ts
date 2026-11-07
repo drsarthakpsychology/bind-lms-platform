@@ -197,7 +197,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "In a stuporose patient, which finding most strongly suggests a functional (psychiatric) cause rather than an organic one?",
-    options: ["An abnormal EEG showing diffuse slowing of background rhythm", "Eyes follow the examiner, resist opening, and events are recalled later", "Incontinence with decorticate posturing of the upper limbs", "Fluctuating arousal with a flapping tremor of the outstretched hands"],
+    options: ["An abnormal EEG showing diffuse slowing of background rhythm", "Eyes follow the examiner, resist opening, and events are recalled later", "Incontinence with decorticate posturing of the upper limbs", "Fluctuating arousal with a flapping tremor (asterixis) of the outstretched hands"],
     answer: 1,
     explanation:
       "In depressive, catatonic or dissociative stupor, the eyes are often open and follow objects, eye-opening is resisted, and patients may later recall what happened, implying preserved consciousness. Organic stupor shows EEG slowing, abnormal neurological signs (posturing), incontinence and fluctuating arousal with asterixis (metabolic encephalopathy). Even so, organic causes must be excluded carefully.",
@@ -241,7 +241,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "Which feature best distinguishes a complex tic from a compulsion?",
-    options: ["Tics are always simple, whereas compulsions are complex sequences", "Tics follow a sensory urge and do not neutralise an obsession; compulsions do", "Compulsions are entirely involuntary, whereas tics can be fully controlled", "Tics never cause distress, whereas compulsions always do"],
+    options: ["Tics are always simple, whereas compulsions are complex sequences", "Tics follow a sensory urge and do not neutralise an obsession; compulsions do", "Compulsions are entirely involuntary, whereas tics can always be fully controlled", "Tics never cause distress, whereas compulsions always do"],
     answer: 1,
     explanation:
       "Tics are sudden, rapid, recurrent movements or vocalisations often preceded by a premonitory urge and followed by relief, but they are not driven by cognitive content. Compulsions are performed to neutralise obsessions or according to rules. Overlap exists in tic-related OCD ('just right' compulsions). Complex tics do exist. Compulsions are experienced as semi-voluntary. Tics can be distressing and impairing.",
@@ -285,7 +285,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Ambivalence, one of Bleuler's fundamental symptoms of schizophrenia, means:",
-    options: ["Rapid alternation between manic and depressive moods in one day", "Holding contradictory feelings or wishes towards the same object at once", "Inability to make decisions because of persistent obsessional doubt", "A general reduction in the range and intensity of emotional response"],
+    options: ["Rapid alternation between manic and depressive moods in one day", "Holding contradictory feelings or wishes towards the same object at once", "Inability to make decisions because of persistent obsessional doubt", "A general reduction in the range and intensity of outward emotional response"],
     answer: 1,
     explanation:
       "Bleuler's 'four As' are associations (loosening), affect (blunting or incongruity), ambivalence (simultaneous contradictory attitudes, e.g., love and hate, wanting and refusing) and autism (withdrawal into fantasy). Rapid mood alternation is mixed or rapid-cycling mood disorder. Obsessional doubt is different. Reduced responsiveness is blunted affect.",

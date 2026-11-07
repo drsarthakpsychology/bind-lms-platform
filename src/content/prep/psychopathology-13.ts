@@ -16,7 +16,7 @@ export const PART: PrepQuestion[] = [
       "Cultural concepts of distress",
       "Ethnic disorders",
       "Exotic syndromes",
-      "Culture-specific psychoses",
+      "Culture-specific psychotic syndromes",
     ],
     answer: 0,
     explanation:
@@ -160,7 +160,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "Which cultural concept was added to the DSM-5-TR glossary of cultural concepts of distress, describing extreme social withdrawal and prolonged confinement at home?",
-    options: ["Hikikomori", "Latah", "Pibloktoq", "Windigo"],
+    options: ["Hikikomori", "Latah", "Pibloktoq (Arctic hysteria)", "Windigo"],
     answer: 0,
     explanation:
       "DSM-5-TR includes hikikomori, a Japanese term for prolonged (typically 6 months or more) social withdrawal and seclusion at home. DSM-5-TR notes such behaviour has been reported in Japan, India, South Korea and the US, and it overlaps with social anxiety, depression, autism and internet gaming problems. Latah, pibloktoq (Arctic hysteria) and windigo are older culture-bound syndromes not in the current glossary.",
@@ -223,7 +223,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "In psychiatric epidemiology, 'incidence' refers to:",
-    options: ["The number of new cases arising in a population during a specified period", "The total number of existing cases in a population at one point in time", "The proportion of people in a population who have ever had the disorder", "The ratio of male to female cases among those diagnosed in a period"],
+    options: ["The number of new cases arising in a population during a specified period", "The total number of existing cases in a population at a single point in time", "The proportion of people in a population who have ever had the disorder", "The ratio of male to female cases among those diagnosed in a period"],
     answer: 0,
     explanation:
       "Incidence is the rate of new cases over a period, which is needed for studying causes. Point prevalence is the proportion of existing cases at one time; lifetime prevalence is the proportion who have ever had the disorder. Prevalence is roughly incidence multiplied by duration, so chronic disorders have high prevalence relative to incidence. The sex ratio is a separate measure.",
@@ -308,7 +308,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "The lifetime prevalence of schizophrenia is approximately:",
-    options: ["0.3 to 0.7%", "3 to 5%", "10%", "15 to 20%"],
+    options: ["0.3 to 0.7%", "3 to 5%", "10%", "About 15 to 20%"],
     answer: 0,
     explanation:
       "DSM-5-TR gives a lifetime prevalence of approximately 0.3 to 0.7%, with variation by country, ethnicity and migrant status; the common teaching figure is 'about 1%'. Three to five percent is closer to the lifetime prevalence of bipolar spectrum or PTSD figures. Ten percent and 15 to 20% are in the range of lifetime MDD figures in some countries.",
@@ -349,7 +349,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Why might hospital-based studies overestimate the strength of association between two disorders (for example, depression and a medical illness)?",
-    options: ["Berkson's bias: people with two conditions are more likely to be admitted", "The Hawthorne effect: patients change behaviour when they are observed", "Regression to the mean: extreme scores move towards average on retesting", "Recall bias: controls remember past exposures less accurately than cases"],
+    options: ["Berkson's bias: people with two conditions are more likely to be admitted", "The Hawthorne effect: patients change behaviour when they are observed", "Regression to the mean: extreme scores move towards the average on retesting", "Recall bias: controls remember past exposures less accurately than cases"],
     answer: 0,
     explanation:
       "Berkson's (admission rate) bias arises because the probability of hospital admission is higher for those with multiple conditions, creating spurious associations in clinical samples. This is why community surveys (ECA, NCS, NMHS) are preferred for comorbidity estimates. The Hawthorne effect is behaviour change when observed. Regression to the mean affects repeated measurements. Recall bias concerns differential memory between cases and controls.",

@@ -25,7 +25,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Which feature best distinguishes an obsession from a delusion of thought insertion?",
-    options: ["Obsessions always concern contamination, whereas delusions vary", "Delusions of thought insertion are always accompanied by anxiety", "In obsessions the thought is recognised as coming from one's own mind", "Obsessions are never resisted, while inserted thoughts always are"],
+    options: ["Obsessions always concern contamination, whereas delusions vary", "Delusions of thought insertion are always accompanied by anxiety", "In obsessions the thought is recognised as coming from one's own mind", "Obsessions are never resisted, while inserted thoughts always are resisted"],
     answer: 2,
     explanation:
       "The classical criterion (Schneider, Lewis, and Fish) is that obsessions are experienced as the patient's own thoughts, recognised as originating within their own mind even though they are intrusive and resisted, whereas thought insertion is experienced as alien thoughts put in from outside. Obsessions cover many themes, not only contamination. Anxiety is not what defines thought insertion. Resistance is typical of obsessions, especially early on, though it may fade with chronicity.",
@@ -273,7 +273,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "DSM-5-TR acute stress disorder requires how many of its 14 listed symptoms, with what duration?",
-    options: ["Five of 14 symptoms; 2 days to 2 weeks", "Nine of 14 symptoms; 3 days to 1 month after trauma", "Six of 14 symptoms; within 48 hours of trauma", "Nine of 14 symptoms; 1 to 3 months after trauma"],
+    options: ["Five of 14 symptoms; 2 days to 2 weeks", "Nine of 14 symptoms; 3 days to 1 month after trauma", "Six of 14 symptoms; within 48 hours of trauma", "Nine of 14 symptoms; lasting 1 to 3 months after the trauma"],
     answer: 1,
     explanation:
       "ASD needs nine or more of 14 symptoms from any of five categories (intrusion, negative mood, dissociation, avoidance, arousal), lasting 3 days to 1 month after the trauma. DSM-IV's ASD required dissociative symptoms and lasted 2 days to 4 weeks; DSM-5 removed the mandatory dissociation. ICD-11 treats 'acute stress reaction' as a normal response (Z-code-like) rather than a disorder.",

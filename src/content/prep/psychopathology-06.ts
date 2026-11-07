@@ -145,7 +145,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "According to the National Mental Health Survey of India (2015 to 2016), which disorder group had the highest current prevalence among adults?",
-    options: ["Depressive disorders", "Substance use disorders, including tobacco", "Neurotic and stress-related disorders", "Schizophrenia and other psychoses"],
+    options: ["Depressive disorders", "Substance use disorders, including tobacco", "Neurotic and stress-related disorders, including anxiety", "Schizophrenia and other psychoses"],
     answer: 1,
     explanation:
       "NMHS found substance use disorders, including moderate-to-severe tobacco use disorder, at about 22.4% of adults, far exceeding other groups; alcohol use disorder alone was around 4.6%, mostly in men. Current depression was about 2.7%, neurotic and stress-related disorders about 3.5%, and psychotic disorders well under 1%. Men had higher overall morbidity, driven largely by substance use.",
@@ -158,7 +158,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "The incentive-sensitisation theory of addiction (Robinson and Berridge) proposes that repeated drug use:",
-    options: ["Increases the pleasure ('liking') that the drug produces over time", "Sensitises dopamine-based 'wanting', even as 'liking' stays flat or falls", "Leads to addiction only through the avoidance of withdrawal symptoms", "Reduces reactivity to drug-related cues with each new exposure"],
+    options: ["Increases the pleasure ('liking') that the drug produces over time", "Sensitises dopamine-based 'wanting', even as 'liking' stays flat or falls", "Leads to addiction only through the avoidance of unpleasant withdrawal symptoms", "Reduces reactivity to drug-related cues with each new exposure"],
     answer: 1,
     explanation:
       "Robinson and Berridge distinguish 'wanting' (incentive salience, dopamine-dependent) from 'liking' (hedonic impact, opioid and other hotspots). Sensitised wanting, triggered especially by cues, explains compulsive craving even when pleasure has declined. Increased liking contradicts the model. Withdrawal avoidance is the opponent-process or negative reinforcement view (Koob). Cue reactivity increases rather than decreases.",
@@ -199,7 +199,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "The core feature of DSM-5-TR delirium is:",
-    options: ["Gradual decline in memory over many months, with preserved alertness", "Disturbed attention and awareness, developing quickly and fluctuating", "Visual hallucinations occurring in clear consciousness", "Loss of language function with attention largely preserved"],
+    options: ["Gradual decline in memory over many months, with fully preserved alertness", "Disturbed attention and awareness, developing quickly and fluctuating", "Visual hallucinations occurring in clear consciousness", "Loss of language function with attention largely preserved"],
     answer: 1,
     explanation:
       "Delirium is defined by a disturbance in attention (directing, focusing, sustaining, shifting) and awareness, developing over hours to days and fluctuating, plus an additional cognitive disturbance, with evidence of a medical, substance or multiple cause. Gradual memory loss suggests major NCD. Hallucinations in clear consciousness suggest a psychotic disorder. Isolated language loss suggests aphasia or primary progressive aphasia.",
@@ -248,7 +248,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "What distinguishes major from mild neurocognitive disorder in DSM-5-TR?",
-    options: ["The number of cognitive domains that are affected", "Whether deficits interfere with independence in daily life", "Whether memory is among the domains that are impaired", "Whether the underlying cause is Alzheimer's disease"],
+    options: ["The number of cognitive domains that are affected", "Whether deficits interfere with independence in daily life", "Whether memory is among the cognitive domains that are impaired", "Whether the underlying cause is Alzheimer's disease"],
     answer: 1,
     explanation:
       "In major NCD, significant decline interferes with independence in everyday activities (at least needing help with complex instrumental ADLs such as bills or medication). In mild NCD, modest decline does not prevent independence, though greater effort or compensation may be needed. Testing performance is typically more than 2 SD below norms for major and 1 to 2 SD for mild. One domain is enough for either. Memory involvement and aetiology are not the dividing criteria.",
@@ -301,7 +301,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "Which genetic factor is the strongest common risk factor for late-onset Alzheimer's disease?",
-    options: ["Presenilin-1 mutation", "Apolipoprotein E ε4 allele", "Huntingtin CAG repeat", "APP duplication"],
+    options: ["Presenilin-1 (PSEN1) mutation", "Apolipoprotein E ε4 allele", "Huntingtin CAG repeat", "APP duplication"],
     answer: 1,
     explanation:
       "APOE ε4 is the main common susceptibility allele for late-onset AD: one copy roughly triples risk and two copies raise it about 8 to 12-fold, but it is neither necessary nor sufficient. Presenilin-1, presenilin-2 and APP mutations cause rare autosomal dominant early-onset AD. The huntingtin CAG expansion causes Huntington's disease. APP is on chromosome 21, which explains early AD in Down syndrome.",
@@ -374,7 +374,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "A 40-year-old man has irritability, depression, choreiform movements and executive decline; his father had similar symptoms. Which statement is correct?",
-    options: ["It is autosomal recessive, so both parents must carry the gene", "It is autosomal dominant (CAG repeats), with paternal anticipation", "Loss of memory for remote events is the earliest and main deficit", "It is caused by an abnormal prion protein"],
+    options: ["It is autosomal recessive, so both parents must carry the gene", "It is autosomal dominant (CAG repeats), with paternal anticipation", "Loss of memory for remote events is the earliest and the main deficit", "It is caused by an abnormal prion protein"],
     answer: 1,
     explanation:
       "Huntington's disease is autosomal dominant, caused by CAG expansion (36 or more repeats) in HTT on chromosome 4. Anticipation occurs, and is greater with paternal transmission (juvenile Westphal variant). It produces a 'subcortical' pattern of psychomotor slowing, executive dysfunction and psychiatric symptoms, with relative preservation of recognition memory early on. Prion disease causes Creutzfeldt-Jakob disease.",

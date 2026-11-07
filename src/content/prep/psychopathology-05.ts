@@ -290,7 +290,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Binge-eating disorder differs from bulimia nervosa chiefly by:",
-    options: ["The absence of regular inappropriate compensatory behaviours", "Binges that are smaller in size and shorter in duration", "The absence of any marked distress about the bingeing", "Onset that is typically delayed until after age 40"],
+    options: ["The absence of regular inappropriate compensatory behaviours", "Binges that are distinctly smaller in size and shorter in duration", "The absence of any marked distress about the bingeing", "Onset that is typically delayed until after age 40"],
     answer: 0,
     explanation:
       "BED involves recurrent binges (once weekly for 3 months) with marked distress and three of five features (eating rapidly, until uncomfortably full, when not hungry, alone due to embarrassment, feeling disgusted or guilty), but without the regular compensatory behaviours of BN. Binges are of similar size. Marked distress is required. BED onset is typically in adolescence or young adulthood, though it presents later than BN.",
@@ -434,7 +434,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "A 50-year-old obese man reports daytime sleepiness, morning headaches, low mood and poor concentration. His wife reports loud snoring with pauses. Polysomnography shows 22 obstructive apnoeas and hypopnoeas per hour. Before starting an antidepressant or hypnotic, the best step is:",
-    options: ["Moderate obstructive sleep apnoea; refer for CPAP, avoid sedatives", "Insomnia disorder; start zolpidem to improve sleep maintenance", "Hypersomnolence disorder; advise scheduled short daytime naps", "MDD with atypical features; start an SSRI and review in a month"],
+    options: ["Moderate obstructive sleep apnoea; refer for CPAP, avoid sedatives", "Insomnia disorder; start zolpidem to improve sleep maintenance", "Hypersomnolence disorder; advise scheduled short daytime naps", "MDD with atypical features; start an SSRI such as sertraline, review in a month"],
     answer: 0,
     explanation:
       "An AHI of 15 or more meets DSM-5-TR criteria for obstructive sleep apnoea hypopnoea even without symptoms; 15 to 30 is moderate. CPAP is first-line, and sedatives such as benzodiazepines and Z-drugs can worsen apnoeas. Hypersomnolence disorder is not diagnosed when another sleep disorder explains the sleepiness. Depressive symptoms should be reassessed after OSA treatment.",
@@ -447,7 +447,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "A 17-year-old cannot fall asleep before 3 a.m. and struggles to wake for school, but sleeps normally from 3 a.m. to 11 a.m. on holidays. The most likely diagnosis is:",
-    options: ["Circadian rhythm sleep-wake disorder, delayed phase type", "Insomnia disorder, with marked sleep-onset difficulty", "Narcolepsy, with excessive sleepiness and cataplexy", "Hypersomnolence disorder, with long unrefreshing sleep"],
+    options: ["Circadian rhythm sleep-wake disorder, delayed phase type", "Insomnia disorder, with marked sleep-onset difficulty", "Narcolepsy, with excessive sleepiness and cataplexy", "Hypersomnolence disorder, with long and unrefreshing sleep"],
     answer: 0,
     explanation:
       "Delayed sleep phase type involves a delay in the major sleep period relative to desired times, with normal sleep quality and duration when allowed to follow the delayed schedule; it is common in adolescents. Insomnia disorder would involve poor sleep even at the preferred time. Narcolepsy features irresistible sleep attacks and REM phenomena. Hypersomnolence involves excessive sleepiness despite at least 7 hours of sleep.",

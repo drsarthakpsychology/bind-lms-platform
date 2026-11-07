@@ -340,7 +340,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 4,
     type: "mcq",
     stem: "The 'jumping to conclusions' (JTC) reasoning bias in delusions is typically demonstrated using:",
-    options: ["The Wisconsin Card Sorting Test of set-shifting", "The Stroop colour-word interference task", "The Iowa Gambling Task of risky choice", "The beads task, deciding which jar beads come from"],
+    options: ["The Wisconsin Card Sorting Test of cognitive set-shifting", "The Stroop colour-word interference task", "The Iowa Gambling Task of risky choice", "The beads task, deciding which jar beads come from"],
     answer: 3,
     explanation:
       "In the beads task, deluded patients make decisions after seeing only one or two beads, showing a data-gathering bias that is targeted in metacognitive training (Moritz). The WCST tests set-shifting and executive function. The Stroop tests response inhibition and selective attention. The Iowa Gambling Task tests affective decision-making (ventromedial PFC).",
