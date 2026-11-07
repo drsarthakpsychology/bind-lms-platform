@@ -267,6 +267,10 @@ Aaron Beck's **cognitive distortions** are everyday heuristics that have become 
 | **Mind reading** | "Everyone thinks I'm boring" | Conclusions without evidence (jumping to conclusions) |
 | **Emotional reasoning** | "I feel guilty, so I must have done wrong" | System 1 feelings treated as evidence |
 
+:::widget thoughtrecord
+{"situation": "My supervisor read my case report and said 'see me tomorrow'.", "thought": "I have made a terrible mistake and she thinks I am not fit for this course.", "emotion": "anxious", "traps": [{"label": "Mind reading", "right": true, "why": "You are guessing what she thinks of you without any evidence of her view."}, {"label": "Catastrophising", "right": true, "why": "A meeting has become 'not fit for the course': the worst outcome assumed from a neutral event."}, {"label": "All-or-nothing thinking", "why": "Close, but the thought is not about being perfect or a failure on one task; it is about her mind and a disaster."}, {"label": "Emotional reasoning", "why": "Anxiety is present, but the thought rests on her words, not on 'I feel it, so it is true'."}], "forEvidence": ["She did not smile when she said it."], "againstEvidence": ["She asks every trainee to meet after their first report.", "Last month she praised my history-taking.", "'See me' usually means feedback, not failure."], "balanced": "She probably wants to go through the report with me, as she does with everyone. If there are mistakes, feedback is how I learn them."}
+:::
+
 **Worry** in generalised anxiety disorder is a verbal, abstract chain of "what if" thinking; it reduces vivid imagery and physical arousal in the short term and is maintained by **intolerance of uncertainty** and beliefs about worry (as in Wells' metacognitive model). **Rumination** in depression is a repetitive, abstract, evaluative style ("why am I like this?") that prolongs low mood; training a more **concrete** style ("what exactly happened, and what could I do next?") helps.
 
 ### Disorders of thought form and language

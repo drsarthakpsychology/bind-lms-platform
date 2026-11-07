@@ -753,6 +753,10 @@ Other dissonance paradigms:
 - **Post-decision dissonance**, first shown by Jack Brehm: after choosing between two similar options, we rate the chosen one higher and the rejected one lower ("spreading of alternatives").
 - **Hypocrisy induction**: making people publicly advocate a behaviour, then reminding them of times they failed to do it, increases the behaviour (used in condom-use and water-saving campaigns).
 
+:::widget dissonance
+{"belief": "I am an honest student, and marks should reflect real learning.", "behaviour": "I copied two answers from a friend in the internal test.", "caption": "Raise the tension, then pick a way to reduce it. Which choice would Festinger predict most people take, and which is the healthy one?"}
+:::
+
 ### Self-perception: a rival explanation
 Daryl Bem (1967) argued we don't need inner tension at all. We simply **infer our attitudes from our behaviour**, the way an observer would: "I said it was fun for only $1, so I must have liked it." Later work suggests both are right: **self-perception** explains change when the attitude is weak or unclear, and **dissonance** when the behaviour clearly contradicts a strong attitude and produces measurable arousal.
 
@@ -845,6 +849,10 @@ Solomon Asch (1951, 1956) asked a different question: would people conform when 
  "reveal": "About **three or four**. With one confederate, people rarely conformed; with two, a little more; with three or four, conformity was near its peak, and adding more made little difference. A unanimous small group is more powerful than a large divided one.",
  "clinician": "Later work suggests the shape depends on whether the majority are seen as independent sources: several separate people agreeing carries more weight than one large group seen as a single unit."
 }
+:::
+
+:::widget experiment
+{"title": "Asch's line studies", "question": "On the critical trials, what share of answers went along with the wrong majority in each condition?", "unit": "%", "conditions": [{"label": "Alone, no group", "value": 0.7, "note": "Almost nobody makes a mistake on these lines."}, {"label": "With a unanimous wrong majority", "value": 37, "note": "About three in four people conformed at least once."}, {"label": "One ally gives the right answer", "value": 5.5, "note": "A single dissenter breaks the group's power."}], "why": "The lines were never in doubt, so this is mostly normative influence: people went along to avoid standing out. Break the unanimity with a single ally, and most of it disappears."}
 :::
 
 ### Two reasons we conform
@@ -971,6 +979,11 @@ Before the study, Milgram asked 40 psychiatrists to predict the results. They ex
 :::
 
 ### What changed obedience
+
+:::widget experiment
+{"title": "Milgram's obedience variations", "question": "What share of teachers went all the way to 450 volts in each version? Psychiatrists asked beforehand predicted about one in a thousand.", "unit": "%", "conditions": [{"label": "Original: learner in another room", "value": 65}, {"label": "Moved to a run-down office in Bridgeport", "value": 48}, {"label": "Learner in the same room", "value": 40}, {"label": "Teacher presses the learner's hand onto the plate", "value": 30}, {"label": "Experimenter gives orders by telephone", "value": 21}, {"label": "Two other teachers refuse to go on", "value": 10}, {"label": "Teacher chooses the shock level freely", "value": 3}], "why": "Obedience falls as the victim comes closer, as the authority becomes more distant, and above all when others model refusal. With free choice, almost nobody gave strong shocks: the situation, not cruelty, produced the result."}
+:::
+
 | Variation | Obedience to 450 volts |
 |---|---|
 | Learner in another room, no voice (original) | 65% |
@@ -983,10 +996,6 @@ Before the study, Milgram asked 40 psychiatrists to predict the results. They ex
 | Participant chooses the shock level freely | about 3% |
 
 The pattern is clear: obedience falls as the victim becomes **closer** and the authority becomes **more distant or less legitimate**, and it collapses when others **model disobedience**.
-
-:::widget layers
-{"title": "Milgram's variations, from most to least obedience", "shape": "stack", "layers": [{"label": "Original: learner in another room, 65 percent", "detail": "The authority is close and legitimate; the victim is out of sight."}, {"label": "Run-down office in Bridgeport, about 48 percent", "detail": "Less prestige than Yale, yet nearly half still obeyed. The setting mattered less than people expected."}, {"label": "Learner in the same room, 40 percent", "detail": "Seeing the victim's suffering makes it harder to obey."}, {"label": "Teacher presses the learner's hand onto the plate, 30 percent", "detail": "Physical contact with the victim lowers obedience further."}, {"label": "Orders by telephone, about 21 percent", "detail": "A distant authority loses power. Many teachers secretly gave lower shocks."}, {"label": "Two other teachers refuse, 10 percent", "detail": "Seeing others disobey gives people permission and a model to do the same."}, {"label": "Free choice of shock level, about 3 percent", "detail": "Without orders, almost nobody chose to give strong shocks. It was obedience, not cruelty."}], "caption": "Closer victim, more distant authority and models of disobedience all reduce obedience."}
-:::
 
 :::widget flow
 {

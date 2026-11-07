@@ -899,6 +899,10 @@ The idea of a **witness (sakshi)** that observes thoughts without being them has
 }
 :::
 
+:::widget hypnogram
+{"caption": "Modern sleep science maps a night in stages. Drag through it: dreaming (svapna) is most vivid in REM, and deep dreamless sleep (sushupti) is closest to N3. Then switch on depression to see how the night changes."}
+:::
+
 ### The inner instrument (antahkarana)
 Vedanta describes the mind as a fourfold **inner instrument**:
 | Part | Function | Modern parallel |

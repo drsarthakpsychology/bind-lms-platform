@@ -358,6 +358,10 @@ Bibb Latané and John Darley wondered whether the presence of others, rather tha
 }
 :::
 
+:::widget experiment
+{"title": "Darley and Latané's seizure study", "question": "A student over the intercom seems to have a seizure. What share of participants went for help before it ended?", "unit": "%", "conditions": [{"label": "Believed they were alone with him", "value": 85}, {"label": "Believed one other person could hear", "value": 62}, {"label": "Believed four others could hear", "value": 31}], "why": "Responsibility is spread across everyone who might act, so each person feels less of it. Those who did not help were not cold: many were trembling and anxious, unsure whether someone else had already gone."}
+:::
+
 :::widget flow
 {
  "title": "Latané and Darley's decision model of helping",

@@ -660,6 +660,14 @@ Jean Piaget (1896 to 1980), a Swiss biologist turned psychologist, watched his o
 }
 :::
 
+:::widget conservation
+{"kind": "number", "caption": "Spread out one row of coins. The younger child centres on the length of the row; the older child knows nothing was added or taken away."}
+:::
+
+:::widget conservation
+{"kind": "liquid", "caption": "Pour the water, then switch between a preoperational and a concrete operational child. Tap each reason the older child gives."}
+:::
+
 :::widget sort
 {
   "prompt": "Which Piagetian stage does each child show?",
@@ -942,6 +950,10 @@ Mary Ainsworth's laboratory procedure for children of about 12 to 18 months has 
 | **Insecure-avoidant (A)** | Little visible distress | Ignores or turns away from the parent | Rejecting or emotionally unavailable |
 | **Insecure-resistant (ambivalent) (C)** | Very distressed | Seeks contact but resists it angrily; hard to comfort | Inconsistent |
 | **Disorganised (D)** (added by Main and Solomon) | Contradictory, confused | Freezing, approaching with head turned away, fearful | Frightening or frightened caregiving, unresolved trauma, maltreatment |
+
+:::widget strange
+{"caption": "Step through the eight episodes, then switch between the four patterns. Watch the reunions: they tell you the most."}
+:::
 
 :::widget sort
 {"prompt": "In the Strange Situation, which attachment pattern does each 14-month-old show?", "buckets": ["Secure", "Insecure-avoidant", "Insecure-resistant", "Disorganised"], "items": [{"text": "Cries when mother leaves; on her return reaches for her, calms within a minute and goes back to the toys", "bucket": 0, "why": "Upset, comforted, returns to exploring: the parent works as a secure base."}, {"text": "Barely looks up when mother leaves; on her return keeps playing and turns away from her", "bucket": 1, "why": "Little visible distress and active avoidance at reunion. The body is often still stressed."}, {"text": "Extremely upset; on reunion clings to mother, then arches and kicks her, and cannot settle", "bucket": 2, "why": "Seeks contact and resists it at the same time."}, {"text": "On reunion walks towards mother with his head turned away, then freezes in place", "bucket": 3, "why": "Contradictory, frightened behaviour with no clear strategy. Linked to frightening caregiving or a parent's unresolved trauma."}, {"text": "Plays happily with the stranger present, glancing at mother from time to time, and greets her warmly on return", "bucket": 0, "why": "Using the parent as a base and welcoming the reunion."}]}

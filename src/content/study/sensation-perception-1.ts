@@ -312,11 +312,19 @@ In Germany in the 1910s and 1920s, Max Wertheimer, Wolfgang Köhler and Kurt Kof
 }
 :::
 
+:::widget illusion
+{"kind": "figure-ground", "caption": "Is it a vase or two faces? Flip it. You can see either, but never both at the same moment: the brain picks one region as figure and treats the other as ground."}
+:::
+
 ### Seeing depth
 We judge distance from **cues**. Some need only one eye (**monocular cues**): nearer objects block farther ones, parallel railway lines seem to meet in the distance, far mountains look hazy and blue. Others need both eyes (**binocular cues**): each eye sees a slightly different view, and the brain uses the difference.
 
 :::widget flow
 {"title": "The family of depth cues", "layout": "tree", "nodes": [{"id": "d", "label": "Depth cues", "detail": "The image on each retina is flat. The brain works out distance from clues in the image and from the eyes themselves."}, {"id": "m", "label": "Monocular: one eye is enough", "parent": "d", "detail": "These cues work even with one eye closed, and painters use them to make a flat canvas look deep."}, {"id": "b", "label": "Binocular: needs both eyes", "parent": "d", "detail": "These depend on the two eyes seeing from slightly different places. They work best for near objects."}, {"id": "i", "label": "Interposition", "parent": "m", "detail": "A nearer object blocks part of a farther one."}, {"id": "l", "label": "Linear perspective", "parent": "m", "detail": "Parallel railway lines seem to meet in the distance."}, {"id": "r", "label": "Relative size and texture", "parent": "m", "detail": "Of two similar objects, the smaller image seems farther. Texture packs closer together with distance, like pebbles on a beach."}, {"id": "a", "label": "Aerial perspective", "parent": "m", "detail": "Far hills look hazy and bluish."}, {"id": "p", "label": "Motion parallax", "parent": "m", "detail": "From a moving train, nearby poles rush past while far hills drift slowly."}, {"id": "disp", "label": "Retinal disparity", "parent": "b", "detail": "Each eye gets a slightly different view. The closer the object, the bigger the difference. This is stereopsis, the basis of 3D films."}, {"id": "c", "label": "Convergence", "parent": "b", "detail": "The eyes turn inwards to look at a near object. The brain reads the muscle effort as distance."}], "caption": "Many illusions of depth, like a hallway drawing that makes equal figures look different sizes, come from these cues used where they do not fit."}
+:::
+
+:::widget illusion
+{"kind": "ponzo", "caption": "Two equal bars between converging lines. Linear perspective tells the brain the upper bar is farther away, so size constancy makes it look bigger."}
 :::
 
 ### Constancy
@@ -334,6 +342,10 @@ An **illusion** is a perception that does not match the physical stimulus. Illus
   "prompt": "Two lines are exactly the same length. One has short fins at each end that point back over the line, like arrowheads. The other has fins that point away from the line, like a forked tail. Which looks longer, and why might that be?",
   "answer": "The line with the fins pointing outwards looks longer. This is the Müller-Lyer illusion (1889). One explanation is that we read the fins as the corners of a room (far away) or of a building (near), and apply size constancy, so the 'far' line is scaled up. You will test this idea against cross-cultural evidence at the Advanced level."
 }
+:::
+
+:::widget illusion
+{"kind": "muller-lyer", "caption": "Judge first, then measure. Knowing the lines are equal does not make the illusion go away."}
 :::
 
 :::recall

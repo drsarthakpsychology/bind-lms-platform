@@ -597,6 +597,10 @@ J. A. Deutsch and Diana Deutsch argued that **all** inputs are analysed for mean
 }
 :::
 
+:::widget attention
+{"caption": "Attend to one ear, then say the student's name in the ignored ear. Which of the three models can explain hearing it?"}
+:::
+
 ### Flexible selection and perceptual load
 Johnston and Heinz (1978) argued that selection can be **early or late, as the task demands**: later selection is possible but costs more capacity. Nilli Lavie's **load theory** (1995) gave a modern answer: when the main task is **perceptually demanding** (high load), there is no spare capacity, so distractors are not processed (early selection). When the task is easy (low load), spare capacity spills over to distractors (late selection). A student copying a dense table is not distracted by the TV; one copying a single line is.
 
@@ -914,6 +918,10 @@ Size constancy depends on judging distance. **Emmert's law**: an afterimage look
 - **Moon illusion**: the moon looks bigger near the horizon than high in the sky, though its image is the same. One explanation: the horizon moon seems farther (the terrain gives distance cues), so size constancy enlarges it.
 - **Ambiguous figures** (Necker cube, Rubin's vase, the old woman and young woman): one stimulus, two perceptions that flip.
 - **Impossible figures** (the Penrose triangle): locally sensible, globally impossible.
+
+:::widget illusion
+{"kind": "ebbinghaus", "caption": "Two equal circles, one among big circles and one among small ones. Size is judged relative to the surroundings."}
+:::
 
 :::recall
 1. Name five monocular depth cues. || Interposition, relative size, linear perspective, texture gradient, aerial perspective (also relative height, shading, motion parallax).
