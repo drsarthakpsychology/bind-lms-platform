@@ -1,12 +1,11 @@
 "use client";
 
 import * as React from "react";
-import dynamic from "next/dynamic";
 import { ChevronRight, RotateCcw, Zap } from "lucide-react";
 import type { BrainExplorerData } from "@/lib/study/types";
 import { cn } from "@/lib/utils";
 import { trackLearn } from "@/lib/learn/track";
-import { Missions, ModeTabs, SceneCard, TONE_NAME, ViewSwitch, along, btn, chip, flatD, statusCls, useInView, useJourney, useLegProgress, useMissions, useSceneView, useThemeColors, type Journey, type V3 } from "./kit";
+import { Missions, ModeTabs, Scene3DSlot, SceneCard, TONE_NAME, ViewSwitch, along, btn, chip, flatD, statusCls, useInView, useJourney, useLegProgress, useMissions, useSceneView, useThemeColors, type Journey, type V3 } from "./kit";
 import { ALWAYS, BLOBS, BPATHS_FLAT, CEREBELLUM, CORTEX, DEEP, EAR, EYES, HEMI, LAYERS, NIGRA, PITUITARY, PONS, REGION, REGIONS, REGION_COLOR, TUBES, type RegionId } from "./brain-explorer-data";
 
 /**
@@ -16,9 +15,10 @@ import { ALWAYS, BLOBS, BPATHS_FLAT, CEREBELLUM, CORTEX, DEEP, EAR, EYES, HEMI, 
  * A challenge round asks the student to find the damage from a symptom.
  */
 
-export type BrainViewProps = { layer: number; sel: RegionId | null; damage: boolean; journey: Journey; onPick: (r: RegionId) => void; inView: boolean; colors: ReturnType<typeof useThemeColors> };
+export type BrainViewProps = { layer: number; sel: RegionId | null; damage: boolean; journey: Journey; onPick: (r: RegionId) => void; inView: boolean; colors: ReturnType<typeof useThemeColors>; onReady?: () => void };
 
-const View3D = dynamic(() => import("./brain-explorer-3d"), { ssr: false, loading: () => <div className="grid h-full place-items-center text-sm text-muted-foreground">Loading the 3D brain…</div> });
+/** Loaded only when the device can draw 3D: three.js lives in this lazy chunk. */
+const View3D = React.lazy(() => import("./brain-explorer-3d"));
 
 /** "the frontal lobe", but "Broca's area". */
 const called = (r: RegionId) => (REGION[r].name.includes("'s") ? REGION[r].name : `the ${REGION[r].name.charAt(0).toLowerCase()}${REGION[r].name.slice(1)}`);
@@ -118,7 +118,12 @@ export function BrainExplorer({ d }: { d: BrainExplorerData }) {
     <SceneCard title={d.title ?? "Inside the brain"} goal="Peel the brain open, tap each part to watch it work, then switch on damage to see what an injury does." caption={d.caption} tools={<ViewSwitch v={v} />}>
       <ModeTabs name="Mode" value={mode} onChange={(m) => { setMode(m); setFeedback(null); journey.clear(); if (m === "challenge") { setDamage(true); setSel(null); } }} modes={[{ id: "explore", label: "Explore" }, { id: "challenge", label: "Where is the damage?" }]} />
       <div ref={box} className="relative mt-3 h-[20rem] overflow-hidden rounded-xl border-2 border-foreground bg-background sm:h-[26rem]">
-        {v.use3D ? <View3D layer={layer} sel={sel} damage={damage} journey={journey} onPick={pick} inView={inView} colors={colors} /> : <BrainFlat layer={layer} sel={sel} damage={damage} journey={journey} onPick={pick} reduce={v.reduce} />}
+        {v.use3D ? (
+          <Scene3DSlot
+            flat={<BrainFlat layer={layer} sel={sel} damage={damage} journey={journey} onPick={pick} reduce={v.reduce} />}
+            render={(onReady) => <View3D layer={layer} sel={sel} damage={damage} journey={journey} onPick={pick} inView={inView} colors={colors} onReady={onReady} />}
+          />
+        ) : <BrainFlat layer={layer} sel={sel} damage={damage} journey={journey} onPick={pick} reduce={v.reduce} />}
         {bubble ? (
           <p className="vibha-pop absolute right-2 top-2 max-w-[70%] rounded-xl border-2 border-foreground bg-card px-3 py-2 text-sm font-semibold shadow-[var(--shadow-hard-sm)]" aria-hidden>
             “{bubble}”

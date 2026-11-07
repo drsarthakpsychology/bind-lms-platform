@@ -3,7 +3,7 @@
 import * as React from "react";
 import * as THREE from "three";
 import { useFrame } from "@react-three/fiber";
-import { CameraRig, Stage } from "./three-kit";
+import { CameraRig, Stage, segs, useQuality, type Quality } from "./three-kit";
 import { CA_CH, N_MOL, N_VES, RECEPTORS, STAGES, T, TRANSPORTER, moleculePos, response, rnd, vesiclePos, type SynViewProps } from "./synapse-scene";
 
 /**
@@ -11,16 +11,19 @@ import { CA_CH, N_MOL, N_VES, RECEPTORS, STAGES, T, TRANSPORTER, moleculePos, re
  * receiving cell studded with receptors. Vesicles, transmitter molecules
  * and calcium ions are instanced, so one release is a handful of draw calls.
  */
-export default function Synapse3D(p: SynViewProps) {
+function Synapse3D(p: SynViewProps) {
   return (
-    <Stage className="h-full w-full" camera={[0.6, 0.9, 5.6]} inView={p.inView} minDistance={2.2} maxDistance={9}>
+    <Stage className="h-full w-full" camera={[0.6, 0.9, 5.6]} inView={p.inView} active={p.running} wakeKey={`${p.drug}-${p.fireAt}-${p.stage}`} onReady={p.onReady} minDistance={2.2} maxDistance={9}>
       <CameraRig flyKey="synapse" pos={[0.9, 1.3, 6.0]} target={[0, 0.7, 0]} fitAspect={1.4} />
       <Scene {...p} />
     </Stage>
   );
 }
 
-function bulbGeometry() {
+/** Re-renders only when its props change; positions are computed per frame. */
+export default React.memo(Synapse3D);
+
+function bulbGeometry(q: Quality) {
   const pts: THREE.Vector2[] = [];
   for (let i = 0; i <= 24; i++) {
     const t = i / 24;
@@ -29,11 +32,12 @@ function bulbGeometry() {
     pts.push(new THREE.Vector2(t > 0.96 ? r * (1 - (t - 0.96) * 20) : r, y));
   }
   pts.push(new THREE.Vector2(0, 0.38));
-  return new THREE.LatheGeometry(pts, 40);
+  return new THREE.LatheGeometry(pts, segs(40, q, 12));
 }
 
 function Scene({ fireAt, stage, reduce, drug, colors }: SynViewProps) {
-  const bulb = React.useMemo(() => bulbGeometry(), []);
+  const ql = useQuality();
+  const bulb = React.useMemo(() => bulbGeometry(ql), [ql]);
   React.useEffect(() => () => bulb.dispose(), [bulb]);
   const ves = React.useRef<THREE.InstancedMesh>(null);
   const mol = React.useRef<THREE.InstancedMesh>(null);
@@ -116,7 +120,7 @@ function Scene({ fireAt, stage, reduce, drug, colors }: SynViewProps) {
     <group>
       {/* nerve ending */}
       <mesh geometry={bulb}>
-        <meshStandardMaterial color="#9fb8e8" transparent opacity={0.28} depthWrite={false} side={THREE.DoubleSide} roughness={0.5} />
+        <meshStandardMaterial key={ql} color="#9fb8e8" transparent opacity={0.28} depthWrite={false} side={ql === 2 ? THREE.DoubleSide : THREE.FrontSide} roughness={0.5} />
       </mesh>
       <mesh ref={ap} visible={false} rotation={[Math.PI / 2, 0, 0]}>
         <torusGeometry args={[0.45, 0.07, 10, 28]} />
@@ -139,11 +143,11 @@ function Scene({ fireAt, stage, reduce, drug, colors }: SynViewProps) {
         </mesh>
       ) : null}
       <instancedMesh ref={ves} args={[undefined, undefined, N_VES]} frustumCulled={false}>
-        <sphereGeometry args={[0.2, 18, 14]} />
+        <sphereGeometry args={[0.2, segs(18, ql), segs(14, ql)]} />
         <meshStandardMaterial color="#f4efe4" transparent opacity={0.55} depthWrite={false} roughness={0.3} />
       </instancedMesh>
       <instancedMesh ref={mol} args={[undefined, undefined, N_MOL]} frustumCulled={false}>
-        <icosahedronGeometry args={[0.045, 1]} />
+        <icosahedronGeometry args={[0.045, ql ? 1 : 0]} />
         <meshStandardMaterial color="#ffffff" roughness={0.4} />
       </instancedMesh>
       <instancedMesh ref={ca} args={[undefined, undefined, 16]} frustumCulled={false} visible={false}>

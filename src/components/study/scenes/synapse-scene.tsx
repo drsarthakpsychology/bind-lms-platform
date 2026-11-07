@@ -1,12 +1,11 @@
 "use client";
 
 import * as React from "react";
-import dynamic from "next/dynamic";
 import { ChevronRight, RotateCcw, Zap } from "lucide-react";
 import type { Synapse3dData } from "@/lib/study/types";
 import { cn } from "@/lib/utils";
 import { trackLearn } from "@/lib/learn/track";
-import { Missions, SceneCard, ViewSwitch, btn, chip, statusCls, useInView, useJourney, useMissions, useSceneView, useThemeColors, type V3 } from "./kit";
+import { Missions, Scene3DSlot, SceneCard, ViewSwitch, btn, chip, statusCls, useInView, useJourney, useMissions, useSceneView, useThemeColors, type V3 } from "./kit";
 
 /**
  * A synapse in 3D: fire the nerve ending and watch calcium flood in,
@@ -106,8 +105,9 @@ function stageText(id: (typeof STAGES)[number]["id"], drug: SynDrug, tx: string)
   }
 }
 
-const View3D = dynamic(() => import("./synapse-scene-3d"), { ssr: false, loading: () => <div className="grid h-full place-items-center text-sm text-muted-foreground">Loading the 3D synapse…</div> });
-export type SynViewProps = { fireAt: number | null; stage: number; reduce: boolean; drug: SynDrug; inView: boolean; colors: ReturnType<typeof useThemeColors> };
+/** Loaded only when the device can draw 3D: three.js lives in this lazy chunk. */
+const View3D = React.lazy(() => import("./synapse-scene-3d"));
+export type SynViewProps = { fireAt: number | null; stage: number; running: boolean; reduce: boolean; drug: SynDrug; inView: boolean; colors: ReturnType<typeof useThemeColors>; onReady?: () => void };
 
 /** Elapsed ms since the signal arrived; under reduced motion, the end of the current stage. */
 export function useElapsed(fireAt: number | null, stage: number, reduce: boolean) {
@@ -150,7 +150,9 @@ export function SynapseScene({ d }: { d: Synapse3dData }) {
   return (
     <SceneCard title={d.title ?? `A ${tx} synapse, up close`} goal="Fire the nerve ending and follow one message across the gap, then add a drug and find the step it changes." caption={d.caption} tools={<ViewSwitch v={v} />}>
       <div ref={box} className="relative mt-3 h-[18rem] overflow-hidden rounded-xl border-2 border-foreground bg-background sm:h-[22rem]">
-        {v.use3D ? <View3D fireAt={fireAt} stage={stage} reduce={v.reduce} drug={drug} inView={inView} colors={colors} /> : <SynapseFlat e={e} drug={drug} />}
+        {v.use3D ? (
+          <Scene3DSlot flat={<SynapseFlat e={e} drug={drug} />} render={(onReady) => <View3D fireAt={fireAt} stage={stage} running={journey.active} reduce={v.reduce} drug={drug} inView={inView} colors={colors} onReady={onReady} />} />
+        ) : <SynapseFlat e={e} drug={drug} />}
         {v.use3D ? <p className="pointer-events-none absolute bottom-1.5 left-2 rounded bg-background/80 px-1.5 text-xs text-muted-foreground">Drag to turn, pinch to zoom</p> : null}
       </div>
       <ol className="mt-3 grid grid-cols-5 gap-1" aria-label="Steps">

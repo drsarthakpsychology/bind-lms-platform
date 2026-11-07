@@ -1,12 +1,11 @@
 "use client";
 
 import * as React from "react";
-import dynamic from "next/dynamic";
 import { ChevronRight, RotateCcw } from "lucide-react";
 import type { NervousSystemData } from "@/lib/study/types";
 import { cn } from "@/lib/utils";
 import { trackLearn } from "@/lib/learn/track";
-import { Missions, ModeTabs, SceneCard, TONE_NAME, ViewSwitch, along, btn, chip, flatD, statusCls, useInView, useJourney, useLegProgress, useMissions, useSceneView, useThemeColors, type Journey } from "./kit";
+import { Missions, ModeTabs, Scene3DSlot, SceneCard, TONE_NAME, ViewSwitch, along, btn, chip, flatD, statusCls, useInView, useJourney, useLegProgress, useMissions, useSceneView, useThemeColors, type Journey } from "./kit";
 import { AUTO, BODY, LEVELS, LIMBS, PARA, PARTS, PART_NAME, PATHS, SOMATIC, SYMP, levelShows, routeLegs, type Auto, type Level, type Part, type Route } from "./nervous-system-data";
 
 /**
@@ -18,9 +17,10 @@ import { AUTO, BODY, LEVELS, LIMBS, PARA, PARTS, PART_NAME, PATHS, SOMATIC, SYMP
  */
 
 export type NsMode = "signal" | "auto" | "map";
-export type NsViewProps = { mode: NsMode; journey: Journey; auto: Auto; level: Level; onPart: (p: Part) => void; inView: boolean; colors: ReturnType<typeof useThemeColors> };
+export type NsViewProps = { mode: NsMode; journey: Journey; auto: Auto; level: Level; onPart: (p: Part) => void; inView: boolean; colors: ReturnType<typeof useThemeColors>; onReady?: () => void };
 
-const View3D = dynamic(() => import("./nervous-system-3d"), { ssr: false, loading: () => <div className="grid h-full place-items-center text-sm text-muted-foreground">Loading the 3D body…</div> });
+/** Loaded only when the device can draw 3D: three.js lives in this lazy chunk. */
+const View3D = React.lazy(() => import("./nervous-system-3d"));
 
 const MISSIONS = ["brain", "reflex", "fight", "rest", "autonomic", "somatic"] as const;
 const PARTS_LIST: Part[] = ["hand", "foot", "knee", "eye"];
@@ -99,7 +99,10 @@ export function NervousSystem({ d }: { d: NervousSystemData }) {
       <ModeTabs<NsMode> name="What to explore" value={mode} onChange={changeMode} modes={[{ id: "signal", label: "Send a signal" }, { id: "auto", label: "Organs on autopilot" }, { id: "map", label: "Zoom the map" }]} />
       <div ref={box} className="relative mt-3 h-[22rem] overflow-hidden rounded-xl border-2 border-foreground bg-background sm:h-[28rem]">
         {v.use3D ? (
-          <View3D mode={mode} journey={journey} auto={auto} level={level} onPart={send} inView={inView} colors={colors} />
+          <Scene3DSlot
+            flat={<NervousFlat mode={mode} journey={journey} auto={auto} level={level} onPart={send} reduce={v.reduce} />}
+            render={(onReady) => <View3D mode={mode} journey={journey} auto={auto} level={level} onPart={send} inView={inView} colors={colors} onReady={onReady} />}
+          />
         ) : (
           <NervousFlat mode={mode} journey={journey} auto={auto} level={level} onPart={send} reduce={v.reduce} />
         )}
