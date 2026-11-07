@@ -61,6 +61,10 @@ A **theme** captures something important about the data in relation to the quest
 ### Quality in qualitative research
 Reliability and validity are replaced by **trustworthiness**, in Yvonna Lincoln and Egon Guba's framework:
 
+:::widget compare
+{"title": "Quality in quantitative and qualitative research", "a": {"label": "Quantitative", "points": ["Internal validity", "External validity", "Reliability", "Objectivity"], "summary": "Quality means control, measurement and generalising to a population."}, "b": {"label": "Qualitative (trustworthiness)", "points": ["Credibility: member checks, triangulation", "Transferability: thick description", "Dependability: an audit trail", "Confirmability: reflexivity about the researcher's influence"], "summary": "Each criterion parallels a quantitative one, but fits work where meaning, not measurement, is the goal."}}
+:::
+
 | Criterion | Quantitative parallel | How it is achieved |
 |---|---|---|
 | **Credibility** | Internal validity | Prolonged engagement, member checking, triangulation, negative case analysis, peer debriefing |
@@ -214,6 +218,10 @@ Ethics is not a form to fill in at the end. It shapes the question, the design a
 | Zimbardo's Stanford prison study (1971) | Abuse escalated; stopped early; researcher was also the "superintendent" | Concerns about role conflict and harm |
 | Watson and Rayner's Little Albert study (1920) | An infant was conditioned to fear without any de-conditioning | Protection of children and vulnerable people |
 
+:::widget timeline
+{"prompt": "Put these events in the history of research ethics in order.", "events": [{"label": "Little Albert is conditioned to fear and never deconditioned", "when": "1920"}, {"label": "The Tuskegee syphilis study begins", "when": "1932"}, {"label": "The Nuremberg Code: voluntary consent is essential", "when": "1947"}, {"label": "Milgram's obedience studies raise concern about stress and deception", "when": "1961 on"}, {"label": "The Declaration of Helsinki", "when": "1964"}, {"label": "Tuskegee is exposed and stopped", "when": "1972"}, {"label": "The Belmont Report: respect for persons, beneficence, justice", "when": "1979"}, {"label": "ICMR national ethical guidelines in India", "when": "2017"}], "why": "Nearly every rule was written in response to harm. Tuskegee ran for 40 years, through Nuremberg and Helsinki, which is why the Belmont Report and ethics committees followed."}
+:::
+
 :::widget flow
 {"title": "From proposal to publication: the ethics path", "layout": "chain", "nodes": [{"id": "n0", "label": "Protocol", "detail": "Design, risks, consent forms"}, {"id": "n1", "label": "Ethics committee", "detail": "Approval before any data"}, {"id": "n2", "label": "Trial registration", "detail": "CTRI for trials"}, {"id": "n3", "label": "Informed consent", "detail": "Voluntary, understood, right to withdraw"}, {"id": "n4", "label": "Data collection", "detail": "With a risk protocol"}, {"id": "n5", "label": "Debrief", "detail": "Especially after deception"}, {"id": "n6", "label": "Honest reporting", "detail": "No fabrication, falsification or plagiarism"}]}
 :::
@@ -222,6 +230,10 @@ Ethics is not a form to fill in at the end. It shapes the question, the design a
 1. **Respect for persons:** treat people as autonomous; **informed consent**; extra protection for those with reduced autonomy.
 2. **Beneficence:** do no harm; maximise benefits and minimise risks (risk-benefit assessment).
 3. **Justice:** fair distribution of the burdens and benefits of research (do not test on the poor and sell to the rich).
+
+:::widget sort
+{"prompt": "Which Belmont principle is most at stake in each case?", "buckets": ["Respect for persons", "Beneficence", "Justice"], "items": [{"text": "A patient with dementia is enrolled without anyone checking her capacity or asking a carer", "bucket": 0, "why": "Consent and protection for reduced autonomy."}, {"text": "A study exposes students to severe distress for a small gain in knowledge", "bucket": 1, "why": "Risks must be minimised and outweighed by benefits."}, {"text": "A new drug is tested only on poor patients in government hospitals, then sold at a price only private patients can pay", "bucket": 2, "why": "Burdens and benefits are unfairly shared."}, {"text": "Participants are not told they can leave the study at any time", "bucket": 0, "why": "Voluntariness is part of informed consent."}, {"text": "No plan exists to help a participant who reports suicidal thoughts", "bucket": 1, "why": "Do no harm, and plan for foreseeable risks."}]}
+:::
 
 ### Indian rules
 - **ICMR National Ethical Guidelines for Biomedical and Health Research Involving Human Participants (2017)** are the main Indian guidelines; ICMR has separate guidelines for research with children (2017).
