@@ -189,8 +189,8 @@ export const QUESTIONS_2: PrepQuestion[] = [
       "The findings are explained by the environment acting as a retrieval cue.",
       "The context effect was strongest for recognition memory.",
     ],
-    options: ["1 and 2 only", "1, 2 and 3 only", "2, 3 and 4 only", "1, 2, 3 and 4"],
-    answer: 1,
+    options: ["1 and 2 only", "1, 2, 3 and 4", "2, 3 and 4 only", "1, 2 and 3 only"],
+    answer: 3,
     explanation:
       "1 to 3 are correct: in the 1980 follow-up, recognition was unaffected because the test items themselves provide strong cues, reducing reliance on context. Statement 4 contradicts that follow-up.",
     module: M,
@@ -421,8 +421,8 @@ export const QUESTIONS_2: PrepQuestion[] = [
     difficulty: 2,
     type: "numerical",
     stem: "A list took 20 trials to learn originally and 8 trials to relearn a week later. What is the savings score?",
-    options: ["40%", "8%", "60%", "28%"],
-    answer: 2,
+    options: ["60%", "8%", "40%", "28%"],
+    answer: 0,
     explanation:
       "Savings = (original trials − relearning trials) / original trials × 100 = (20 − 8)/20 × 100 = 60%. 40% is the relearning trials as a share of original (8/20). 8% and 28% have no basis in the formula. Savings shows that 'forgotten' material still leaves a trace.",
     module: M,
@@ -923,8 +923,8 @@ export const QUESTIONS_2: PrepQuestion[] = [
       "Verification time is strongly related to how often a property is associated with a concept, as Conrad showed.",
       "The model correctly predicted typicality effects.",
     ],
-    options: ["1 and 2 only", "1, 2 and 3 only", "2, 3 and 4 only", "1, 2, 3 and 4"],
-    answer: 1,
+    options: ["1 and 2 only", "1, 2, 3 and 4", "2, 3 and 4 only", "1, 2 and 3 only"],
+    answer: 3,
     explanation:
       "Typicality effects (1), reversals of the predicted hierarchy (2, shown by Rips, Shoben and Smith) and property-frequency effects (3) all challenged the model. Statement 4 is false: the model treats all category members alike, so it cannot predict typicality. These problems led to spreading activation and feature-comparison models.",
     module: M,
