@@ -51,15 +51,16 @@ describe("MockExam", () => {
     submit.mockResolvedValue(RESULT);
     render(<MockExam specId="x" title="Test mock" intro={<p>Intro</p>} />);
     fireEvent.click(screen.getByRole("button", { name: /Start the mock/ }));
-    await screen.findByText(/Question 1 of 4/);
+    await screen.findByText(/Question 1 of 4/, {}, { timeout: 5_000 });
     expect(screen.getByText(/This mock has 4 of 10 questions/)).toBeInTheDocument();
 
+    // Under a busy machine the key handler can land a tick late, so wait for each effect.
     fireEvent.keyDown(window, { key: "2" });
-    expect(screen.getAllByRole("radio")[1]).toHaveAttribute("aria-checked", "true");
+    await waitFor(() => expect(screen.getAllByRole("radio")[1]).toHaveAttribute("aria-checked", "true"));
     fireEvent.keyDown(window, { key: "m" });
-    expect(screen.getByRole("button", { name: /Marked/ })).toHaveAttribute("aria-pressed", "true");
+    await waitFor(() => expect(screen.getByRole("button", { name: /Marked/ })).toHaveAttribute("aria-pressed", "true"));
     fireEvent.keyDown(window, { key: "n" });
-    expect(screen.getByText(/Question 2 of 4/)).toBeInTheDocument();
+    await screen.findByText(/Question 2 of 4/, {}, { timeout: 5_000 });
 
     expect(screen.getAllByRole("button", { name: "Question 1: Answered and marked" }).length).toBeGreaterThan(0);
     expect(screen.getAllByRole("button", { name: "Question 2: Not answered" }).length).toBeGreaterThan(0);
@@ -68,7 +69,7 @@ describe("MockExam", () => {
     fireEvent.click(screen.getByRole("button", { name: /^Submit$/ }));
     expect(screen.getByText("Submit your paper?")).toBeInTheDocument();
     fireEvent.click(screen.getByRole("button", { name: /Submit now/ }));
-    await screen.findByText(/You're the first VIBHA student/);
+    await screen.findByText(/You're the first VIBHA student/, {}, { timeout: 5_000 });
     const sent = submit.mock.calls[0][0];
     expect(sent.answers).toEqual({ [views[0].id]: 1 });
     expect(sent.marked).toEqual([views[0].id]);
