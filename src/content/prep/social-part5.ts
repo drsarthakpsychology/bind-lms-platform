@@ -145,7 +145,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "If helping were only a way to stop one's own distress, people would leave when escape was easy. Low-empathy participants did just that, but high-empathy participants kept helping, which is what Batson's empathy-altruism hypothesis predicts. The first distractor fits only the low-empathy group. Empathy increased helping. Ease of escape clearly mattered for low-empathy participants.",
+      "If helping were only a way to stop one's own distress, people would leave when escape was easy. Low-empathy participants did just that, but high-empathy participants kept helping, which is what Batson's empathy-altruism hypothesis predicts. The idea that everyone helped only to avoid watching her suffer fits only the low-empathy group. Empathy increased helping. Ease of escape clearly mattered for low-empathy participants.",
     ref: "Batson et al. 1981",
   }),
   s({

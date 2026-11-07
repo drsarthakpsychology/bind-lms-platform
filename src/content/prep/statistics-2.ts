@@ -347,7 +347,7 @@ const D: Draft[] = [
     ],
     answer: 0,
     explanation:
-      "The binomial becomes approximately normal when the expected numbers of both successes and failures are large enough, by the common rule np ≥ 5 and nq ≥ 5, or ≥ 10 for more accuracy. A continuity correction of ±0.5 improves it. n = 2 is far too small. p = .5 gives symmetry, but it is not required. The binomial is discrete by definition, so the last option is a contradiction.",
+      "The binomial becomes approximately normal when the expected numbers of both successes and failures are large enough, by the common rule np ≥ 5 and nq ≥ 5, or ≥ 10 for more accuracy. A continuity correction of ±0.5 improves it. n = 2 is far too small. p = .5 gives symmetry, but it is not required. The binomial is discrete by definition, so calling the outcome continuous is a contradiction.",
     module: "exam-prep",
     ref: "standard stats",
   },
@@ -405,7 +405,7 @@ const D: Draft[] = [
     ],
     answer: 0,
     explanation:
-      "The law of large numbers (Bernoulli) guarantees convergence of the sample proportion or mean to the population value as n grows. The second option misstates the central limit theorem, which concerns sampling distributions, not samples. The third is the gambler's fallacy. Significance depends on n as well as effect size, so the fourth is false.",
+      "The law of large numbers (Bernoulli) guarantees convergence of the sample proportion or mean to the population value as n grows. 'Large samples are always normally distributed' misstates the central limit theorem, which concerns sampling distributions, not samples. Expecting the opposite outcome after a run is the gambler's fallacy. Significance depends on n as well as effect size, so 'larger effects are always significant' is false.",
     module: "exam-prep",
     ref: "standard probability",
   },

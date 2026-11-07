@@ -66,7 +66,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     options: ["A-I, B-III, C-IV, D-II", "A-III, B-I, C-IV, D-II", "A-I, B-IV, C-III, D-II", "A-I, B-III, C-II, D-IV"],
     answer: 0,
     explanation:
-      "Similarity groups like colours (A-I). Good continuation prefers smooth paths (B-III). Closure completes gaps (C-IV). Common fate groups things that move together (D-II). The second code swaps similarity and continuation. The third swaps continuation and closure. The fourth swaps closure and common fate.",
+      "Similarity groups like colours (A-I). Good continuation prefers smooth paths (B-III). Closure completes gaps (C-IV). Common fate groups things that move together (D-II). A-III, B-I, C-IV, D-II swaps similarity and continuation. A-I, B-IV, C-III, D-II swaps continuation and closure. A-I, B-III, C-II, D-IV swaps closure and common fate.",
     module: M,
     ref: "Wertheimer 1923; Goldstein ch. 5",
   },
@@ -222,7 +222,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "The primal sketch codes edges, blobs and bars; the 2½-D sketch codes surfaces and depth from the viewer's position; the 3-D model describes the object in its own object-centred frame, allowing recognition from any view. The first option is in the wrong order. Demons belong to Selfridge's Pandemonium. Geons belong to Biederman's theory.",
+      "The primal sketch codes edges, blobs and bars; the 2½-D sketch codes surfaces and depth from the viewer's position; the 3-D model describes the object in its own object-centred frame, allowing recognition from any view. Starting with the 3-D model puts the stages in the wrong order. Demons belong to Selfridge's Pandemonium. Geons belong to Biederman's theory.",
     module: M,
     ref: "Marr 1982",
   },
@@ -472,7 +472,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     options: ["A-II, B-IV, C-III, D-I", "A-III, B-II, C-IV, D-I", "A-II, B-III, C-I, D-IV", "A-II, B-III, C-IV, D-I"],
     answer: 3,
     explanation:
-      "Müller-Lyer = fins (A-II). Ponzo = converging lines (B-III). Ebbinghaus = surrounding circles (C-IV). Kanizsa = illusory contours (D-I). The first code swaps Ponzo and Ebbinghaus. The second swaps Müller-Lyer and Ponzo. The third swaps Ebbinghaus and Kanizsa.",
+      "Müller-Lyer = fins (A-II). Ponzo = converging lines (B-III). Ebbinghaus = surrounding circles (C-IV). Kanizsa = illusory contours (D-I). A-II, B-IV, C-III, D-I swaps Ponzo and Ebbinghaus. A-III, B-II, C-IV, D-I swaps Müller-Lyer and Ponzo. A-II, B-III, C-I, D-IV swaps Ebbinghaus and Kanizsa.",
     module: M,
     ref: "Goldstein ch. 10",
   },
@@ -652,7 +652,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     options: ["A-III, B-I, C-IV, D-II", "A-IV, B-III, C-I, D-II", "A-III, B-IV, C-I, D-II", "A-III, B-IV, C-II, D-I"],
     answer: 2,
     explanation:
-      "Occlusion (A-III), texture gradient (B-IV), atmospheric perspective (C-I) and motion parallax (D-II). The first code swaps texture and haze. The second swaps occlusion and texture. The fourth swaps atmospheric perspective and motion parallax.",
+      "Occlusion (A-III), texture gradient (B-IV), atmospheric perspective (C-I) and motion parallax (D-II). A-III, B-I, C-IV, D-II swaps texture and haze. A-IV, B-III, C-I, D-II swaps occlusion and texture. A-III, B-IV, C-II, D-I swaps atmospheric perspective and motion parallax.",
     module: M,
     ref: "Goldstein ch. 10",
   },

@@ -73,7 +73,7 @@ const D: Draft[] = [
     options: ["χ² = 3.33; not significant", "χ² = 6.67; significant", "χ² = 6.67; not significant", "χ² = 20.00; significant"],
     answer: 1,
     explanation:
-      "Step 1: expected count in each slot = 90/3 = 30. Step 2: (O − E)²/E = (40 − 30)²/30 + (30 − 30)²/30 + (20 − 30)²/30 = 100/30 + 0 + 100/30. Step 3: χ² = 6.67, with df = 3 − 1 = 2. Step 4: 6.67 > 5.99, so the slots are not equally popular. 3.33 counts only one of the two deviations. 20.00 forgets to divide by E. The third option gets χ² right but compares it wrongly with the critical value.",
+      "Step 1: expected count in each slot = 90/3 = 30. Step 2: (O − E)²/E = (40 − 30)²/30 + (30 − 30)²/30 + (20 − 30)²/30 = 100/30 + 0 + 100/30. Step 3: χ² = 6.67, with df = 3 − 1 = 2. Step 4: 6.67 > 5.99, so the slots are not equally popular. 3.33 counts only one of the two deviations. 20.00 forgets to divide by E. 'χ² = 6.67; not significant' gets χ² right but compares it wrongly with the critical value.",
     module: "exam-prep",
     ref: "standard stats",
   },

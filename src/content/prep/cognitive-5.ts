@@ -71,7 +71,7 @@ export const QUESTIONS_5: PrepQuestion[] = [
     options: ["A-IV, B-II, C-III, D-I", "A-III, B-IV, C-II, D-I", "A-IV, B-III, C-I, D-II", "A-IV, B-III, C-II, D-I"],
     answer: 3,
     explanation:
-      "Classical = defining features (A-IV). Prototype = a summary of the typical member (B-III). Exemplar = stored instances, as in Medin and Schaffer's context model (C-II). Theory-based = causal knowledge, as argued by Murphy and Medin (D-I). The first code swaps prototype and exemplar. The second swaps classical and prototype. The third swaps exemplar and theory-based.",
+      "Classical = defining features (A-IV). Prototype = a summary of the typical member (B-III). Exemplar = stored instances, as in Medin and Schaffer's context model (C-II). Theory-based = causal knowledge, as argued by Murphy and Medin (D-I). A-IV, B-II, C-III, D-I swaps prototype and exemplar. A-III, B-IV, C-II, D-I swaps classical and prototype. A-IV, B-III, C-I, D-II swaps exemplar and theory-based.",
     module: M,
     ref: "Smith & Medin 1981; Murphy 2002",
   },
@@ -146,7 +146,7 @@ export const QUESTIONS_5: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "The behaviour shares almost no surface features with a typical drunk person, but it is explained by a causal theory of what drunkenness does. Similarity alone cannot produce the judgement, so the first option is wrong. Defining features cannot be listed for 'drunk'. The theory view adds to similarity rather than claiming people never use prototypes.",
+      "The behaviour shares almost no surface features with a typical drunk person, but it is explained by a causal theory of what drunkenness does. Similarity alone cannot produce the judgement, so 'only perceptual similarity' is wrong. Defining features cannot be listed for 'drunk'. The theory view adds to similarity rather than claiming people never use prototypes.",
     module: M,
     ref: "Murphy & Medin 1985",
   },
@@ -313,7 +313,7 @@ export const QUESTIONS_5: PrepQuestion[] = [
     options: ["A-III, B-IV, C-II, D-I", "A-IV, B-III, C-I, D-II", "A-III, B-IV, C-I, D-II", "A-I, B-IV, C-III, D-II"],
     answer: 2,
     explanation:
-      "Knowledge about oneself as a learner is person knowledge (A-III). Knowledge about task demands is task knowledge (B-IV). Knowing which methods work is strategy knowledge (C-I). A conscious feeling during thinking is a metacognitive experience (D-II). The first code swaps strategy knowledge and experience. The second swaps person and task. The fourth swaps person and strategy.",
+      "Knowledge about oneself as a learner is person knowledge (A-III). Knowledge about task demands is task knowledge (B-IV). Knowing which methods work is strategy knowledge (C-I). A conscious feeling during thinking is a metacognitive experience (D-II). A-III, B-IV, C-II, D-I swaps strategy knowledge and experience. A-IV, B-III, C-I, D-II swaps person and task. A-I, B-IV, C-III, D-II swaps person and strategy.",
     module: M,
     ref: "Flavell 1979",
   },
@@ -333,7 +333,7 @@ export const QUESTIONS_5: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "Monitoring tells the meta level how learning is going (for example, a judgement of learning); control uses that information to act, such as deciding to restudy an item. The second option swaps the two terms. The framework is about regulation of cognition, not memory systems or perceptual stages.",
+      "Monitoring tells the meta level how learning is going (for example, a judgement of learning); control uses that information to act, such as deciding to restudy an item. Calling control the upward flow and monitoring the downward change swaps the two terms. The framework is about regulation of cognition, not memory systems or perceptual stages.",
     module: M,
     ref: "Nelson & Narens 1990",
   },
@@ -458,7 +458,7 @@ export const QUESTIONS_5: PrepQuestion[] = [
     options: ["A-II, B-III, C-I, D-IV", "A-II, B-III, C-IV, D-I", "A-III, B-II, C-IV, D-I", "A-II, B-IV, C-III, D-I"],
     answer: 1,
     explanation:
-      "Ease-of-learning judgements come before study (A-II). Judgements of learning come after study (B-III). Feelings of knowing come after a recall failure (C-IV). Confidence judgements come after an answer is given (D-I). The first code swaps the last two. The third swaps the first two. The fourth swaps JOL and FOK.",
+      "Ease-of-learning judgements come before study (A-II). Judgements of learning come after study (B-III). Feelings of knowing come after a recall failure (C-IV). Confidence judgements come after an answer is given (D-I). A-II, B-III, C-I, D-IV swaps the last two. A-III, B-II, C-IV, D-I swaps the first two. A-II, B-IV, C-III, D-I swaps JOL and FOK.",
     module: M,
     ref: "Nelson & Narens 1990",
   },
@@ -573,7 +573,7 @@ export const QUESTIONS_5: PrepQuestion[] = [
     options: ["A-II, B-III, C-IV, D-I", "A-III, B-II, C-IV, D-I", "A-II, B-IV, C-III, D-I", "A-II, B-III, C-I, D-IV"],
     answer: 0,
     explanation:
-      "Fluency = number of ideas (A-II). Flexibility = number of different categories (B-III). Originality = how unusual the ideas are compared with norms (C-IV). Elaboration = detail (D-I). The second code swaps fluency and flexibility. The third swaps flexibility and originality. The fourth swaps originality and elaboration.",
+      "Fluency = number of ideas (A-II). Flexibility = number of different categories (B-III). Originality = how unusual the ideas are compared with norms (C-IV). Elaboration = detail (D-I). A-III, B-II, C-IV, D-I swaps fluency and flexibility. A-II, B-IV, C-III, D-I swaps flexibility and originality. A-II, B-III, C-I, D-IV swaps originality and elaboration.",
     module: M,
     ref: "Torrance 1974",
   },
@@ -763,7 +763,7 @@ export const QUESTIONS_5: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "If images keep the spatial layout of what they represent, moving across a longer distance should take longer, which is what happened. Purely verbal (propositional) codes do not obviously contain distance, so the first option conflicts with his interpretation. People clearly formed images. The task was designed to study imagery directly.",
+      "If images keep the spatial layout of what they represent, moving across a longer distance should take longer, which is what happened. Purely verbal (propositional) codes do not obviously contain distance, so 'stored only as verbal descriptions' conflicts with his interpretation. People clearly formed images. The task was designed to study imagery directly.",
     module: M,
     ref: "Kosslyn, Ball & Reiser 1978",
   },
@@ -886,7 +886,7 @@ export const QUESTIONS_5: PrepQuestion[] = [
     options: ["A-IV, B-II, C-III, D-I", "A-III, B-IV, C-II, D-I", "A-IV, B-III, C-I, D-II", "A-IV, B-III, C-II, D-I"],
     answer: 3,
     explanation:
-      "fMRI gives good spatial maps from the BOLD signal (A-IV). EEG/ERP gives millisecond timing (B-III). TMS creates temporary 'virtual lesions' (C-II). PET uses radioactive tracers and can image receptors and neurotransmitter systems (D-I). The first code swaps EEG and TMS. The second swaps fMRI and EEG. The third swaps TMS and PET.",
+      "fMRI gives good spatial maps from the BOLD signal (A-IV). EEG/ERP gives millisecond timing (B-III). TMS creates temporary 'virtual lesions' (C-II). PET uses radioactive tracers and can image receptors and neurotransmitter systems (D-I). A-IV, B-II, C-III, D-I swaps EEG and TMS. A-III, B-IV, C-II, D-I swaps fMRI and EEG. A-IV, B-III, C-I, D-II swaps TMS and PET.",
     module: B,
     ref: "Gazzaniga, Ivry & Mangun ch. 3",
   },
@@ -925,7 +925,7 @@ export const QUESTIONS_5: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "The ventral stream runs to inferior temporal cortex and supports recognition; the dorsal stream runs to posterior parietal cortex and supports spatial processing. Milner and Goodale later reinterpreted the dorsal stream as vision for action ('how'). The first option swaps the destinations. Neither pathway is only for movement. Sound is not processed by visual pathways.",
+      "The ventral stream runs to inferior temporal cortex and supports recognition; the dorsal stream runs to posterior parietal cortex and supports spatial processing. Milner and Goodale later reinterpreted the dorsal stream as vision for action ('how'). A ventral pathway to the parietal lobe and a dorsal one to the temporal lobe swaps the destinations. Neither pathway is only for movement. Sound is not processed by visual pathways.",
     module: B,
     ref: "Ungerleider & Mishkin 1982; Milner & Goodale 1995",
   },
@@ -947,7 +947,7 @@ export const QUESTIONS_5: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "DF's visual form agnosia, with intact visually guided action, is the key evidence for Milner and Goodale's split between a ventral 'perception' stream and a dorsal 'action' stream. She was not blind, since she used vision to guide her hand. Her motor skills were intact. The case shows the two uses of vision can be separated, contradicting the last option.",
+      "DF's visual form agnosia, with intact visually guided action, is the key evidence for Milner and Goodale's split between a ventral 'perception' stream and a dorsal 'action' stream. She was not blind, since she used vision to guide her hand. Her motor skills were intact. The case shows the two uses of vision can be separated, contradicting the claim that perception and action always depend on the same visual system.",
     module: B,
     ref: "Goodale & Milner 1992",
   },

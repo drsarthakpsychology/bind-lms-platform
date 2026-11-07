@@ -47,7 +47,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     options: ["A-IV, B-II, C-I, D-III", "A-II, B-IV, C-I, D-III", "A-II, B-IV, C-III, D-I", "A-II, B-I, C-IV, D-III"],
     answer: 1,
     explanation:
-      "The rat was neutral and became the CS (A-II). The noise naturally caused fear, so it was the US (B-IV). Fear to the noise was the UR (C-I). Fear to the rat after pairing was the CR (D-III). The first code swaps CS and US. The third swaps UR and CR. The fourth mixes up US and UR.",
+      "The rat was neutral and became the CS (A-II). The noise naturally caused fear, so it was the US (B-IV). Fear to the noise was the UR (C-I). Fear to the rat after pairing was the CR (D-III). A-IV, B-II, C-I, D-III swaps CS and US. A-II, B-IV, C-III, D-I swaps UR and CR. A-II, B-I, C-IV, D-III mixes up US and UR.",
     module: M,
     ref: "Watson & Rayner 1920",
   },
@@ -121,7 +121,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     options: ["A-I, B-II, C-III, D-IV", "A-II, B-I, C-III, D-IV", "A-I, B-III, C-II, D-IV", "A-I, B-II, C-IV, D-III"],
     answer: 0,
     explanation:
-      "Delay = CS overlaps until the US (A-I). Trace = gap between CS offset and US (B-II). Simultaneous = together (C-III). Backward = US first (D-IV). The second code swaps delay and trace. The third swaps trace and simultaneous. The fourth swaps simultaneous and backward.",
+      "Delay = CS overlaps until the US (A-I). Trace = gap between CS offset and US (B-II). Simultaneous = together (C-III). Backward = US first (D-IV). A-II, B-I, C-III, D-IV swaps delay and trace. A-I, B-III, C-II, D-IV swaps trace and simultaneous. A-I, B-II, C-IV, D-III swaps simultaneous and backward.",
     module: M,
     ref: "Domjan ch. 3",
   },
@@ -886,7 +886,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "Two processes work together: Pavlovian fear conditioning to the signal, and instrumental reinforcement of avoidance by fear reduction. This explains why avoidance persists without shocks, and it is used to explain how phobias and compulsions are maintained. The first two options leave out one factor. Avoidance in these experiments is learnt.",
+      "Two processes work together: Pavlovian fear conditioning to the signal, and instrumental reinforcement of avoidance by fear reduction. This explains why avoidance persists without shocks, and it is used to explain how phobias and compulsions are maintained. 'Only operant' and 'only classical' each leave out one factor. Avoidance in these experiments is learnt.",
     module: M,
     ref: "Mowrer 1947",
   },

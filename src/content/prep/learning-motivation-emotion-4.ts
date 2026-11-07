@@ -32,7 +32,7 @@ export const QUESTIONS_4: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "William James and Carl Lange independently argued that the perception of bodily changes is the emotion: 'we feel sorry because we cry'. The second option is the common-sense view James rejected. Simultaneous feeling and bodily change is the Cannon-Bard theory. Interpretation-only accounts are appraisal theories.",
+      "William James and Carl Lange independently argued that the perception of bodily changes is the emotion: 'we feel sorry because we cry'. 'We tremble because we feel afraid' is the common-sense view James rejected. Simultaneous feeling and bodily change is the Cannon-Bard theory. Interpretation-only accounts are appraisal theories.",
     module: M,
     ref: "James 1884; Lange 1885",
   },
@@ -52,7 +52,7 @@ export const QUESTIONS_4: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "Cannon and Bard proposed simultaneous, independent routes for feeling and bodily response. The first option is James-Lange. Labelling arousal is Schachter and Singer's two-factor theory. Cannon accepted that emotions involve bodily arousal; he disputed only that arousal causes the feeling.",
+      "Cannon and Bard proposed simultaneous, independent routes for feeling and bodily response. Bodily changes first, then the feeling, is James-Lange. Labelling arousal is Schachter and Singer's two-factor theory. Cannon accepted that emotions involve bodily arousal; he disputed only that arousal causes the feeling.",
     module: M,
     ref: "Cannon 1927; Bard 1928",
   },
@@ -239,7 +239,7 @@ export const QUESTIONS_4: PrepQuestion[] = [
     options: ["A-II, B-IV, C-I, D-III", "A-IV, B-II, C-III, D-I", "A-II, B-III, C-IV, D-I", "A-II, B-IV, C-III, D-I"],
     answer: 3,
     explanation:
-      "Primary appraisal judges relevance (A-II). Secondary appraisal assesses coping options (B-IV). Reappraisal revises earlier appraisals (C-III). Core relational themes define specific emotions (D-I). The first code swaps reappraisal and core themes. The second swaps primary and secondary appraisal. The third swaps secondary appraisal and reappraisal.",
+      "Primary appraisal judges relevance (A-II). Secondary appraisal assesses coping options (B-IV). Reappraisal revises earlier appraisals (C-III). Core relational themes define specific emotions (D-I). A-II, B-IV, C-I, D-III swaps reappraisal and core themes. A-IV, B-II, C-III, D-I swaps primary and secondary appraisal. A-II, B-III, C-IV, D-I swaps secondary appraisal and reappraisal.",
     module: M,
     ref: "Lazarus 1991",
   },
@@ -466,7 +466,7 @@ export const QUESTIONS_4: PrepQuestion[] = [
     options: ["A-III, B-IV, C-I, D-II", "A-I, B-III, C-IV, D-II", "A-III, B-I, C-IV, D-II", "A-III, B-I, C-II, D-IV"],
     answer: 2,
     explanation:
-      "Plutchik's eight primaries form four opposing pairs: joy and sadness (A-III), trust and disgust (B-I), fear and anger (C-IV), surprise and anticipation (D-II). The first code swaps disgust and anger. The second swaps joy and trust's opposites. The fourth swaps anger and anticipation.",
+      "Plutchik's eight primaries form four opposing pairs: joy and sadness (A-III), trust and disgust (B-I), fear and anger (C-IV), surprise and anticipation (D-II). A-III, B-IV, C-I, D-II swaps disgust and anger. A-I, B-III, C-IV, D-II swaps joy and trust's opposites. A-III, B-I, C-II, D-IV swaps anger and anticipation.",
     module: M,
     ref: "Plutchik 1980",
   },
@@ -632,7 +632,7 @@ export const QUESTIONS_4: PrepQuestion[] = [
     options: ["A-II, B-IV, C-III, D-I", "A-II, B-III, C-IV, D-I", "A-III, B-II, C-IV, D-I", "A-II, B-III, C-I, D-IV"],
     answer: 1,
     explanation:
-      "Avoiding the party is situation selection (A-II). Distraction is attentional deployment (B-III). Reinterpreting rejection is cognitive change (C-IV). Hiding feelings is response modulation (D-I). The first code swaps attention and reappraisal. The third swaps selection and attention. The fourth swaps reappraisal and suppression.",
+      "Avoiding the party is situation selection (A-II). Distraction is attentional deployment (B-III). Reinterpreting rejection is cognitive change (C-IV). Hiding feelings is response modulation (D-I). A-II, B-IV, C-III, D-I swaps attention and reappraisal. A-III, B-II, C-IV, D-I swaps selection and attention. A-II, B-III, C-I, D-IV swaps reappraisal and suppression.",
     module: M,
     ref: "Gross 1998, 2015",
   },
@@ -768,7 +768,7 @@ export const QUESTIONS_4: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "The directed facial action task produced some emotion-specific autonomic differences: warm hands in anger (blood flow to the periphery) and cold hands in fear. Identical physiology would contradict their claim of specificity. The third option reverses the temperature findings. Several negative emotions, not only happiness, raised heart rate.",
+      "The directed facial action task produced some emotion-specific autonomic differences: warm hands in anger (blood flow to the periphery) and cold hands in fear. Identical physiology would contradict their claim of specificity. Fear raising and anger lowering finger temperature reverses the findings. Several negative emotions, not only happiness, raised heart rate.",
     module: M,
     ref: "Levenson, Ekman & Friesen 1990",
   },

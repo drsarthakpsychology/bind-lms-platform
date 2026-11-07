@@ -799,7 +799,7 @@ export const QUESTIONS_6: PrepQuestion[] = [
     options: ["A-III, B-I, C-IV, D-II", "A-IV, B-III, C-I, D-II", "A-III, B-IV, C-II, D-I", "A-III, B-IV, C-I, D-II"],
     answer: 3,
     explanation:
-      "Digit Vigilance = sustained attention (A-III); Token Test = comprehension of spoken commands (B-IV); Finger Tapping = motor speed (C-I); Corsi blocks = visuospatial span (D-II). The first code swaps Token Test and Finger Tapping. The second swaps Digit Vigilance and the Token Test. The third swaps tapping and Corsi.",
+      "Digit Vigilance = sustained attention (A-III); Token Test = comprehension of spoken commands (B-IV); Finger Tapping = motor speed (C-I); Corsi blocks = visuospatial span (D-II). A-III, B-I, C-IV, D-II swaps Token Test and Finger Tapping. A-IV, B-III, C-I, D-II swaps Digit Vigilance and the Token Test. A-III, B-IV, C-II, D-I swaps tapping and Corsi.",
     module: M,
     ref: "Lezak et al. 2012",
   },

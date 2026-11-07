@@ -46,3 +46,21 @@ describe("answer-key balance", () => {
     });
   }
 });
+
+/**
+ * Explanations must name options by their content, never by position, so that
+ * options can be reordered without silently breaking the explanation.
+ * Assertion-reason wording such as "Both A and R are true" or "A is false"
+ * refers to the Assertion and Reason, not to option letters, and does not match.
+ */
+const POSITIONAL = [
+  /\b(first|second|third|fourth|last) (two |three )?(option|code|choice|answer|distractor|alternative)s?\b/i,
+  /\boptions? \(?[A-D1-4]\)?(?![a-z0-9(.-])/i,
+];
+
+describe("explanations name options by content", () => {
+  it("no explanation refers to an option by its position or letter", () => {
+    const offenders = ALL_QUESTIONS.filter((q) => POSITIONAL.some((re) => re.test(q.explanation))).map((q) => q.id);
+    expect(offenders).toEqual([]);
+  });
+});

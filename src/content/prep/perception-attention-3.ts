@@ -207,7 +207,7 @@ export const QUESTIONS_3: PrepQuestion[] = [
     options: ["A-III, B-IV, C-II, D-I", "A-IV, B-III, C-I, D-II", "A-III, B-IV, C-I, D-II", "A-III, B-I, C-IV, D-II"],
     answer: 2,
     explanation:
-      "Broadbent = early filter (A-III). Treisman = attenuation (B-IV). Deutsch and Deutsch = late selection (C-I). Johnston and Heinz = flexible, multimode selection (D-II). The first code swaps the last two. The second swaps Broadbent and Treisman. The fourth swaps Treisman and Deutsch and Deutsch.",
+      "Broadbent = early filter (A-III). Treisman = attenuation (B-IV). Deutsch and Deutsch = late selection (C-I). Johnston and Heinz = flexible, multimode selection (D-II). A-III, B-IV, C-II, D-I swaps the last two. A-IV, B-III, C-I, D-II swaps Broadbent and Treisman. A-III, B-I, C-IV, D-II swaps Treisman and Deutsch and Deutsch.",
     module: M,
     ref: "Johnston & Heinz 1978; Eysenck & Keane ch. 5",
   },
@@ -368,7 +368,7 @@ export const QUESTIONS_3: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "When a signal is near threshold, performance hits a ceiling set by the data; extra resources cannot help. Resource-limited performance is the opposite: it improves when more effort is given, which is the first option. Fatigue reduces resources rather than defining data limits. Sharing resources concerns dual-task interference in resource-limited regions.",
+      "When a signal is near threshold, performance hits a ceiling set by the data; extra resources cannot help. Resource-limited performance is the opposite: it improves when more effort is given, which is what 'more attention would improve it greatly' describes. Fatigue reduces resources rather than defining data limits. Sharing resources concerns dual-task interference in resource-limited regions.",
     module: M,
     ref: "Norman & Bobrow 1975",
   },
@@ -388,7 +388,7 @@ export const QUESTIONS_3: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "Valid cues produce a benefit and invalid cues a cost, showing attention moved to the cued location before the eyes moved (covert orienting). Equal speeds would mean the cue had no effect. The second and third options reverse the findings.",
+      "Valid cues produce a benefit and invalid cues a cost, showing attention moved to the cued location before the eyes moved (covert orienting). Equal speeds would mean the cue had no effect. Slower with a valid cue, or faster with an invalid one, reverses the findings.",
     module: M,
     ref: "Posner 1980",
   },
@@ -412,7 +412,7 @@ export const QUESTIONS_3: PrepQuestion[] = [
     options: ["A-II, B-IV, C-III, D-I", "A-IV, B-II, C-III, D-I", "A-II, B-III, C-IV, D-I", "A-II, B-IV, C-I, D-III"],
     answer: 0,
     explanation:
-      "Endogenous = voluntary, from a symbolic cue (A-II). Exogenous = reflexive, from a peripheral onset (B-IV). Inhibition of return follows exogenous cueing after a delay (C-III). Overt orienting involves moving the eyes (D-I); covert orienting shifts attention without eye movements. The second code swaps endogenous and exogenous. The third swaps exogenous and IOR. The fourth swaps IOR and overt orienting.",
+      "Endogenous = voluntary, from a symbolic cue (A-II). Exogenous = reflexive, from a peripheral onset (B-IV). Inhibition of return follows exogenous cueing after a delay (C-III). Overt orienting involves moving the eyes (D-I); covert orienting shifts attention without eye movements. A-IV, B-II, C-III, D-I swaps endogenous and exogenous. A-II, B-III, C-IV, D-I swaps exogenous and IOR. A-II, B-IV, C-I, D-III swaps IOR and overt orienting.",
     module: M,
     ref: "Posner 1980; Posner & Cohen 1984",
   },
@@ -427,7 +427,7 @@ export const QUESTIONS_3: PrepQuestion[] = [
     options: ["Benefit 70 ms, cost 0 ms", "Benefit 30 ms, cost 40 ms", "Benefit 40 ms, cost 30 ms", "Benefit 30 ms, cost 70 ms"],
     answer: 1,
     explanation:
-      "Benefit = neutral − valid = 280 − 250 = 30 ms. Cost = invalid − neutral = 320 − 280 = 40 ms. The first option uses the invalid minus valid difference (70 ms) as the benefit. The third swaps the two values. The fourth uses 70 ms as the cost, ignoring the neutral baseline.",
+      "Benefit = neutral − valid = 280 − 250 = 30 ms. Cost = invalid − neutral = 320 − 280 = 40 ms. 'Benefit 70 ms, cost 0 ms' uses the invalid minus valid difference (70 ms) as the benefit. 'Benefit 40 ms, cost 30 ms' swaps the two values. 'Cost 70 ms' uses 70 ms as the cost, ignoring the neutral baseline.",
     module: M,
     ref: "Posner 1980",
   },
@@ -945,7 +945,7 @@ export const QUESTIONS_3: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "The dorsal network supports top-down selection; the ventral network acts like a 'circuit breaker' for salient events, and its right-sided damage is closely linked to spatial neglect. The second option reverses the roles. The networks serve attention, not only memory, and the ventral network is right-lateralised. The model specifically proposes two networks.",
+      "The dorsal network supports top-down selection; the ventral network acts like a 'circuit breaker' for salient events, and its right-sided damage is closely linked to spatial neglect. A ventral network for voluntary attention and a dorsal one for unexpected stimuli reverses the roles. The networks serve attention, not only memory, and the ventral network is right-lateralised. The model specifically proposes two networks.",
     module: B,
     ref: "Corbetta & Shulman 2002",
   },

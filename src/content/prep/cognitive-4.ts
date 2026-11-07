@@ -31,7 +31,7 @@ export const QUESTIONS_4: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "Algorithms (for example, trying every combination of a lock) guarantee a solution but may be slow; heuristics (such as means-ends analysis) are efficient but fallible. The first two options reverse the definitions. They are clearly different concepts.",
+      "Algorithms (for example, trying every combination of a lock) guarantee a solution but may be slow; heuristics (such as means-ends analysis) are efficient but fallible. Calling a heuristic guaranteed, or an algorithm a rule of thumb, reverses the definitions. They are clearly different concepts.",
     module: M,
     ref: "Newell & Simon 1972; Matlin ch. 11",
   },
@@ -135,7 +135,7 @@ export const QUESTIONS_4: PrepQuestion[] = [
     options: ["A-I, B-IV, C-II, D-III", "A-IV, B-II, C-I, D-III", "A-IV, B-I, C-II, D-III", "A-IV, B-I, C-III, D-II"],
     answer: 2,
     explanation:
-      "Means-ends analysis sets subgoals to reduce differences (A-IV); hill climbing takes the locally best step (B-I); working backward starts at the goal (C-II); analogy transfers a solution from a similar problem (D-III). The first code swaps means-ends and hill climbing. The second swaps hill climbing and working backward. The fourth swaps working backward and analogy.",
+      "Means-ends analysis sets subgoals to reduce differences (A-IV); hill climbing takes the locally best step (B-I); working backward starts at the goal (C-II); analogy transfers a solution from a similar problem (D-III). A-I, B-IV, C-II, D-III swaps means-ends and hill climbing. A-IV, B-II, C-I, D-III swaps hill climbing and working backward. A-IV, B-I, C-III, D-II swaps working backward and analogy.",
     module: M,
     ref: "Newell & Simon 1972; Matlin ch. 11",
   },
@@ -386,7 +386,7 @@ export const QUESTIONS_4: PrepQuestion[] = [
     options: ["A-III, B-II, C-IV, D-I", "A-II, B-III, C-IV, D-I", "A-III, B-II, C-I, D-IV", "A-III, B-IV, C-II, D-I"],
     answer: 0,
     explanation:
-      "A is modus ponens (III), B is modus tollens (II), C affirms the consequent (IV) and D denies the antecedent (I). The second code swaps the two valid forms. The third swaps the two fallacies. The fourth swaps modus tollens and affirming the consequent. People find modus ponens easy but often fail modus tollens and accept the fallacies.",
+      "A is modus ponens (III), B is modus tollens (II), C affirms the consequent (IV) and D denies the antecedent (I). A-II, B-III, C-IV, D-I swaps the two valid forms. A-III, B-II, C-I, D-IV swaps the two fallacies. A-III, B-IV, C-II, D-I swaps modus tollens and affirming the consequent. People find modus ponens easy but often fail modus tollens and accept the fallacies.",
     module: M,
     ref: "Evans, Newstead & Byrne 1993",
   },
@@ -751,7 +751,7 @@ export const QUESTIONS_4: PrepQuestion[] = [
     options: ["₹500", "₹1,200", "₹700", "₹600"],
     answer: 3,
     explanation:
-      "EV = .5 × 1,200 + .5 × 0 = ₹600, which is higher than the sure ₹500. Many people still choose A, showing risk aversion for gains as prospect theory predicts. ₹500 is Option A's value. ₹1,200 is the best outcome. ₹700 is the difference between the two options' best outcomes, not an expected value.",
+      "EV = .5 × 1,200 + .5 × 0 = ₹600, which is higher than the sure ₹500. Many people still choose A, showing risk aversion for gains as prospect theory predicts. ₹500 is the value of the sure option. ₹1,200 is the best outcome. ₹700 is the difference between the two options' best outcomes, not an expected value.",
     module: M,
     ref: "Kahneman & Tversky 1979",
   },

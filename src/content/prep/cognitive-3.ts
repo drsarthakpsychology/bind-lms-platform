@@ -61,7 +61,7 @@ export const QUESTIONS_3: PrepQuestion[] = [
     options: ["A-I, B-II, C-III, D-IV", "A-II, B-I, C-III, D-IV", "A-I, B-III, C-II, D-IV", "A-I, B-II, C-IV, D-III"],
     answer: 0,
     explanation:
-      "Phonology = sound system (A-I); morphology = word structure (B-II); syntax = sentence structure (C-III); pragmatics = use in context (D-IV). The second code swaps phonology and morphology. The third swaps morphology and syntax. The fourth swaps syntax and pragmatics.",
+      "Phonology = sound system (A-I); morphology = word structure (B-II); syntax = sentence structure (C-III); pragmatics = use in context (D-IV). A-II, B-I, C-III, D-IV swaps phonology and morphology. A-I, B-III, C-II, D-IV swaps morphology and syntax. A-I, B-II, C-IV, D-III swaps syntax and pragmatics.",
     module: M,
     ref: "Matlin ch. 9",
   },
@@ -164,7 +164,7 @@ export const QUESTIONS_3: PrepQuestion[] = [
     options: ["A-IV, B-III, C-I, D-II", "A-III, B-IV, C-II, D-I", "A-IV, B-III, C-II, D-I", "A-IV, B-II, C-III, D-I"],
     answer: 2,
     explanation:
-      "Quantity = right amount of information (A-IV); Quality = truthfulness (B-III); Relation = relevance (C-II); Manner = clarity (D-I). The first code swaps relation and manner. The second swaps quantity and quality. The fourth swaps quality and relation.",
+      "Quantity = right amount of information (A-IV); Quality = truthfulness (B-III); Relation = relevance (C-II); Manner = clarity (D-I). A-IV, B-III, C-I, D-II swaps relation and manner. A-III, B-IV, C-II, D-I swaps quantity and quality. A-IV, B-II, C-III, D-I swaps quality and relation.",
     module: M,
     ref: "Grice 1975",
   },
@@ -466,7 +466,7 @@ export const QUESTIONS_3: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "Ganong showed that listeners resolve ambiguous phonemes towards the interpretation that makes a real word, a top-down lexical influence. There is no visual input, so it is not McGurk. The effect is a context effect, contrary to the second option. It is the opposite of pure bottom-up processing.",
+      "Ganong showed that listeners resolve ambiguous phonemes towards the interpretation that makes a real word, a top-down lexical influence. There is no visual input, so it is not McGurk. The effect is a context effect, contrary to 'categorical perception without context effects'. It is the opposite of pure bottom-up processing.",
     module: M,
     ref: "Ganong 1980",
   },
@@ -673,7 +673,7 @@ export const QUESTIONS_3: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "Lenneberg linked a sensitive period to brain maturation and lateralisation ending around puberty. The second and third options contradict the hypothesis. Reading is not the basis of first-language acquisition.",
+      "Lenneberg linked a sensitive period to brain maturation and lateralisation ending around puberty. Learning equally well at any age, or beginning only at puberty, contradicts the hypothesis. Reading is not the basis of first-language acquisition.",
     module: M,
     ref: "Lenneberg 1967",
   },
@@ -747,7 +747,7 @@ export const QUESTIONS_3: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "Vygotsky saw private speech as communication with oneself that guides action and becomes silent inner speech. The first option is Piaget's view of egocentric speech. It is closely related to thought in Vygotsky's account. Babbling is pre-linguistic.",
+      "Vygotsky saw private speech as communication with oneself that guides action and becomes silent inner speech. A sign of immaturity that simply disappears is Piaget's view of egocentric speech. It is closely related to thought in Vygotsky's account. Babbling is pre-linguistic.",
     module: M,
     ref: "Vygotsky 1934/1986",
   },
@@ -807,7 +807,7 @@ export const QUESTIONS_3: PrepQuestion[] = [
     options: ["A-IV, B-II, C-III, D-I", "A-III, B-IV, C-II, D-I", "A-IV, B-III, C-I, D-II", "A-IV, B-III, C-II, D-I"],
     answer: 3,
     explanation:
-      "Chomsky = innate LAD (A-IV); Skinner = verbal behaviour as operant (B-III); Bruner = LASS, the support adults provide (C-II); Whorf = linguistic relativity (D-I). The first code swaps Skinner and Bruner. The second swaps Chomsky and Skinner. The third swaps Bruner and Whorf.",
+      "Chomsky = innate LAD (A-IV); Skinner = verbal behaviour as operant (B-III); Bruner = LASS, the support adults provide (C-II); Whorf = linguistic relativity (D-I). A-IV, B-II, C-III, D-I swaps Skinner and Bruner. A-III, B-IV, C-II, D-I swaps Chomsky and Skinner. A-IV, B-III, C-I, D-II swaps Bruner and Whorf.",
     module: M,
     ref: "Chomsky 1965; Skinner 1957; Bruner 1983; Whorf 1956",
   },

@@ -93,7 +93,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "Locus of control is a generalised expectancy about where control of reinforcement lies. People with an external locus see outcomes as determined by chance, fate or the power of others, while people with an internal locus see outcomes as following from their own actions, effort and skill. So the second option describes an internal locus. Trust in other people is a separate expectancy that Rotter also measured, with his interpersonal trust scale, but it is not locus of control. Rotter's social learning theory assumes rewards matter a great deal; locus of control concerns beliefs about how rewards are obtained.",
+      "Locus of control is a generalised expectancy about where control of reinforcement lies. People with an external locus see outcomes as determined by chance, fate or the power of others, while people with an internal locus see outcomes as following from their own actions, effort and skill. So 'their own effort and ability' describes an internal locus. Trust in other people is a separate expectancy that Rotter also measured, with his interpersonal trust scale, but it is not locus of control. Rotter's social learning theory assumes rewards matter a great deal; locus of control concerns beliefs about how rewards are obtained.",
     ref: "Rotter 1966",
   }),
   p({

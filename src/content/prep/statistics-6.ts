@@ -58,7 +58,7 @@ const D: Draft[] = [
     options: ["3, 36, 39", "4, 36, 40", "3, 37, 40", "4, 40, 44"],
     answer: 0,
     explanation:
-      "Step 1: df_between = k − 1 = 4 − 1 = 3. Step 2: df_within = N − k = 40 − 4 = 36. Step 3: df_total = N − 1 = 39, and 3 + 36 = 39 confirms the split. The second option uses k and N without subtracting. The third makes df_within 37, which does not add up. The fourth adds k to N.",
+      "Step 1: df_between = k − 1 = 4 − 1 = 3. Step 2: df_within = N − k = 40 − 4 = 36. Step 3: df_total = N − 1 = 39, and 3 + 36 = 39 confirms the split. '4, 36, 40' uses k and N without subtracting. '3, 37, 40' makes df_within 37, which does not add up. '4, 40, 44' adds k to N.",
     module: "exam-prep",
     ref: "standard stats",
   },
@@ -88,7 +88,7 @@ const D: Draft[] = [
     options: ["F = 4.00, η² = .23", "F = 4.00, η² = .30", "F = 3.00, η² = .23", "F = 0.30, η² = .77"],
     answer: 0,
     explanation:
-      "Step 1: df_between = k − 1 = 3; df_within = N − k = 40. Step 2: SS_within = 520 − 120 = 400. Step 3: MS_between = 120/3 = 40; MS_within = 400/40 = 10. Step 4: F = 40/10 = 4.00. Step 5: η² = SS_between/SS_total = 120/520 = .23. The second option divides 120 by 400 (SS_within) instead of SS_total. The third uses the wrong df. The last option inverts the ratios.",
+      "Step 1: df_between = k − 1 = 3; df_within = N − k = 40. Step 2: SS_within = 520 − 120 = 400. Step 3: MS_between = 120/3 = 40; MS_within = 400/40 = 10. Step 4: F = 40/10 = 4.00. Step 5: η² = SS_between/SS_total = 120/520 = .23. η² = .30 divides 120 by 400 (SS_within) instead of SS_total. F = 3.00 uses the wrong df. 'F = 0.30, η² = .77' inverts the ratios.",
     module: "exam-prep",
     ref: "standard stats",
   },
@@ -169,7 +169,7 @@ const D: Draft[] = [
     options: ["1, 2, 2, 54", "2, 3, 6, 48", "1, 2, 3, 53", "1, 2, 2, 59"],
     answer: 0,
     explanation:
-      "Step 1: df_A = a − 1 = 2 − 1 = 1. Step 2: df_B = b − 1 = 3 − 1 = 2. Step 3: df_AB = (a − 1)(b − 1) = 1 × 2 = 2. Step 4: df_error = N − ab = 60 − 6 = 54. Check: 1 + 2 + 2 + 54 = 59 = N − 1. The second option uses the number of levels instead of levels minus one. The third adds the main-effect df for the interaction. The last uses N − 1 as the error df.",
+      "Step 1: df_A = a − 1 = 2 − 1 = 1. Step 2: df_B = b − 1 = 3 − 1 = 2. Step 3: df_AB = (a − 1)(b − 1) = 1 × 2 = 2. Step 4: df_error = N − ab = 60 − 6 = 54. Check: 1 + 2 + 2 + 54 = 59 = N − 1. '2, 3, 6, 48' uses the number of levels instead of levels minus one. '1, 2, 3, 53' adds the main-effect df for the interaction. '1, 2, 2, 59' uses N − 1 as the error df.",
     module: "exam-prep",
     ref: "standard stats",
   },
@@ -218,7 +218,7 @@ const D: Draft[] = [
     options: ["3, 11, 33", "4, 12, 48", "3, 11, 44", "3, 44, 47"],
     answer: 0,
     explanation:
-      "Step 1: df_conditions = k − 1 = 3. Step 2: df_subjects = n − 1 = 11. Step 3: df_error = (k − 1)(n − 1) = 3 × 11 = 33. Check: total df = nk − 1 = 47 = 3 + 11 + 33. The second option uses k and n without subtracting. The third treats the error df as N − k, as in a between-subjects design, ignoring that subject variance is removed. The fourth also uses the between-subjects error df.",
+      "Step 1: df_conditions = k − 1 = 3. Step 2: df_subjects = n − 1 = 11. Step 3: df_error = (k − 1)(n − 1) = 3 × 11 = 33. Check: total df = nk − 1 = 47 = 3 + 11 + 33. '4, 12, 48' uses k and n without subtracting. '3, 11, 44' treats the error df as N − k, as in a between-subjects design, ignoring that subject variance is removed. '3, 44, 47' also uses the between-subjects error df.",
     module: "exam-prep",
     ref: "standard stats",
   },
@@ -237,7 +237,7 @@ const D: Draft[] = [
     ],
     answer: 0,
     explanation:
-      "Step 1: the correction multiplies both df by ε: 3 × .60 = 1.80 and 33 × .60 = 19.80. F is unchanged, but it is judged against F(1.80, 19.80), which has a larger critical value, so the test becomes more conservative. Step 2: the lower bound of ε is 1/(k − 1) = 1/3 = .33, which describes the worst possible violation of sphericity. The second option applies no correction and gives 1/k as the bound. The third divides by ε instead of multiplying. The last confuses the observed ε with the lower bound.",
+      "Step 1: the correction multiplies both df by ε: 3 × .60 = 1.80 and 33 × .60 = 19.80. F is unchanged, but it is judged against F(1.80, 19.80), which has a larger critical value, so the test becomes more conservative. Step 2: the lower bound of ε is 1/(k − 1) = 1/3 = .33, which describes the worst possible violation of sphericity. '3 and 33; lower bound .25' applies no correction and gives 1/k as the bound. '5.00 and 55.00' divides by ε instead of multiplying. A lower bound of .60 confuses the observed ε with the lower bound.",
     module: "exam-prep",
     ref: "Greenhouse & Geisser 1959",
   },
@@ -503,7 +503,7 @@ const D: Draft[] = [
     ],
     answer: 0,
     explanation:
-      "Step 1: η² = SS_A/SS_total = 40/400 = .10. Step 2: partial η² = SS_A/(SS_A + SS_error) = 40/(40 + 160) = 40/200 = .20. Partial η² leaves out variance due to other factors and interactions, so it is larger in multi-factor designs. The second option swaps them. The third assumes they are always equal, which is only true in a one-way design. .25 divides 40 by 160.",
+      "Step 1: η² = SS_A/SS_total = 40/400 = .10. Step 2: partial η² = SS_A/(SS_A + SS_error) = 40/(40 + 160) = 40/200 = .20. Partial η² leaves out variance due to other factors and interactions, so it is larger in multi-factor designs. 'η² = .20, partial η² = .10' swaps them. 'Both .10' assumes they are always equal, which is only true in a one-way design. .25 divides 40 by 160.",
     module: "exam-prep",
     ref: "Field 2018 ch.14",
   },
@@ -536,7 +536,7 @@ const D: Draft[] = [
     options: ["3, 3, 3, 6", "3, 3, 3, 9", "4, 4, 4, 3", "3, 3, 3, 15"],
     answer: 0,
     explanation:
-      "Step 1: a 4 × 4 square has 16 cells, so df_total = 16 − 1 = 15. Step 2: rows, columns and treatments each have 4 − 1 = 3 df. Step 3: error df = 15 − 3 − 3 − 3 = 6, which equals (k − 1)(k − 2) = 3 × 2. The second option takes error as (k − 1)², forgetting that treatments also use df. The third uses the number of levels. The fourth puts all 15 df in the error term.",
+      "Step 1: a 4 × 4 square has 16 cells, so df_total = 16 − 1 = 15. Step 2: rows, columns and treatments each have 4 − 1 = 3 df. Step 3: error df = 15 − 3 − 3 − 3 = 6, which equals (k − 1)(k − 2) = 3 × 2. '3, 3, 3, 9' takes error as (k − 1)², forgetting that treatments also use df. '4, 4, 4, 3' uses the number of levels. '3, 3, 3, 15' puts all 15 df in the error term.",
     module: "exam-prep",
     ref: "Kirk, Experimental Design",
   },
@@ -550,7 +550,7 @@ const D: Draft[] = [
     options: ["2, 7, 14", "3, 8, 24", "2, 7, 21", "2, 21, 23"],
     answer: 0,
     explanation:
-      "Step 1: df_treatments = k − 1 = 2. Step 2: df_blocks = b − 1 = 7. Step 3: df_error = (k − 1)(b − 1) = 2 × 7 = 14. Check: total = kb − 1 = 23 = 2 + 7 + 14. The second option uses levels instead of levels minus one. The third adds the block df to error as if blocks were ignored (N − k = 21). The fourth treats the design as completely randomised.",
+      "Step 1: df_treatments = k − 1 = 2. Step 2: df_blocks = b − 1 = 7. Step 3: df_error = (k − 1)(b − 1) = 2 × 7 = 14. Check: total = kb − 1 = 23 = 2 + 7 + 14. '3, 8, 24' uses levels instead of levels minus one. '2, 7, 21' adds the block df to error as if blocks were ignored (N − k = 21). '2, 21, 23' treats the design as completely randomised.",
     module: "exam-prep",
     ref: "Kirk, Experimental Design",
   },
@@ -623,7 +623,7 @@ const D: Draft[] = [
     ],
     answer: 0,
     explanation:
-      "Step 1: condition is significant (p < .001) with partial η² = .288, a large effect by the usual guide (.14 or more). Step 2: gender (p = .363) and the interaction (p = .334) are not significant, so the strategy effect does not depend detectably on gender. Gender is not significant, so the second option is wrong. The interaction is not significant, so the third is wrong. R² for the whole model is .315; partial η² for condition is .288, and partial η² values are not shares of a common total, so the last option misreads both.",
+      "Step 1: condition is significant (p < .001) with partial η² = .288, a large effect by the usual guide (.14 or more). Step 2: gender (p = .363) and the interaction (p = .334) are not significant, so the strategy effect does not depend detectably on gender. Gender is not significant, so the claim that men and women differ is wrong. The interaction is not significant, so the claim that the condition effect cannot be interpreted is wrong. R² for the whole model is .315; partial η² for condition is .288, and partial η² values are not shares of a common total, so the claim that condition explains all of 28.8% misreads both.",
     module: "exam-prep",
     ref: "Field 2018 ch.14",
   },
@@ -799,7 +799,7 @@ const D: Draft[] = [
     options: ["F = 5.00, SS_between = 135", "F = 5.00, SS_between = 15", "F = 0.20, SS_between = 135", "F = 4.05, SS_between = 360"],
     answer: 0,
     explanation:
-      "Step 1: F = MS_between/MS_within = 45/9 = 5.00. Step 2: SS_between = MS_between × df_between = 45 × 3 = 135. The second option divides MS by df instead of multiplying. The third inverts F. The last option has no basis in the formulas.",
+      "Step 1: F = MS_between/MS_within = 45/9 = 5.00. Step 2: SS_between = MS_between × df_between = 45 × 3 = 135. SS_between = 15 divides MS by df instead of multiplying. F = 0.20 inverts F. 'F = 4.05, SS_between = 360' has no basis in the formulas.",
     module: "exam-prep",
     ref: "standard stats",
   },
