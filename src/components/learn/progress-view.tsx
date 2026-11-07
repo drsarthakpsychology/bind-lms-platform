@@ -45,8 +45,8 @@ export function ProgressView({
         {[
           { icon: <Zap className="size-5" />, v: st.xp, l: `XP · Level ${lvl.level}` },
           { icon: <Flame className={cn("size-5", s.flame)} />, v: liveStreak(st.streak, today), l: `day streak (best ${st.streak.best})` },
-          { icon: <Target className="size-5" />, v: accuracy === null ? "—" : `${accuracy}%`, l: `accuracy · ${st.answered} answered` },
-          { icon: <Trophy className="size-5" />, v: myRank ? `#${myRank}` : "—", l: `quiz rank this week, of ${total}` },
+          { icon: <Target className="size-5" />, v: accuracy === null ? "None" : `${accuracy}%`, l: `accuracy · ${st.answered} answered` },
+          { icon: <Trophy className="size-5" />, v: myRank ? `#${myRank}` : "None", l: `quiz rank this week, of ${total}` },
         ].map((x) => (
           <div key={x.l} className="rounded-2xl border-2 border-foreground bg-card p-3">
             <p className="flex items-center gap-1.5 text-2xl font-bold">

@@ -115,7 +115,7 @@ function Guess({ d }: { d: GuessData }) {
       ) : (
         <Verdict kind={inRange ? "good" : "ok"}>
           <p className="font-semibold">
-            {inRange ? "Right in the zone." : "Outside the usual range."} The highlighted band shows it: about {d.answer[0]}–{d.answer[1]} {d.unit}.
+            {inRange ? "Right in the zone." : "Outside the usual range."} The highlighted band shows it: about {d.answer[0]} to {d.answer[1]} {d.unit}.
           </p>
           <p className="mt-1"><Rich text={view === "clinician" && d.clinician ? d.clinician : d.reveal} /></p>
         </Verdict>

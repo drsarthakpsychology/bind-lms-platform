@@ -11,6 +11,7 @@ import { haptic } from "@/lib/haptics";
 import { cn } from "@/lib/utils";
 import { MAX_TRIES, type Tier } from "@/lib/games/sort/engine";
 import { CountUp } from "@/lib/games/ui/count-up";
+import { LearnLink } from "@/lib/games/ui/learn-link";
 import { awardXp } from "@/lib/games/ui/xp";
 import { btnPrimary, btnSecondary, card, chip } from "@/lib/games/ui/styles";
 import fx from "@/lib/games/ui/fx.module.css";
@@ -114,7 +115,7 @@ export function SortGame({ serverState, save, initial }: { serverState: LearnSta
         haptic(r.done.solved ? "success" : "warning");
         for (let g = 0; g < 4; g++) trackLearn({ type: "game", kind: "criteria-sort", ok: r.groupsDone[g], skill: `${r.done.topic}:differentiate`, item: `${v.boardId}:${g}`, prompt: v.groups[g] });
         if (r.xp > 0) {
-          awardXp(r.xp, state);
+          if (!r.xpSaved) awardXp(r.xp, state);
           setGain(r.xp);
         }
       }
@@ -122,7 +123,7 @@ export function SortGame({ serverState, save, initial }: { serverState: LearnSta
     });
   }, [p, v, allPlaced, picksDone, pending, state]);
 
-  // Desktop shortcuts: 1–4 place the selected tile, Enter checks.
+  // Desktop shortcuts: 1 to 4 place the selected tile, Enter checks.
   React.useEffect(() => {
     function onKey(e: KeyboardEvent) {
       const t = e.target as HTMLElement | null;
@@ -265,7 +266,7 @@ export function SortGame({ serverState, save, initial }: { serverState: LearnSta
               {selected !== null && (
                 <div className="sticky bottom-[calc(var(--nav-h)+0.5rem)] z-10 flex flex-wrap items-center gap-2 rounded-md border-2 border-foreground bg-foreground p-3 text-background hard-shadow-sm lg:bottom-4">
                   <span className="min-w-0 flex-1 text-sm">
-                    <strong>Selected:</strong> {v.tiles[selected]} <span className="hidden opacity-80 lg:inline">· press 1–4 to place</span>
+                    <strong>Selected:</strong> {v.tiles[selected]} <span className="hidden opacity-80 lg:inline">· press 1 to 4 to place</span>
                   </span>
                   {p.placement[selected] !== null && (
                     <button type="button" onClick={() => unplace(selected)} className="inline-flex min-h-11 items-center gap-1 rounded-md border-2 border-background px-3 text-sm font-bold">
@@ -361,12 +362,12 @@ function Done({ p, gain, onPractice, onAdvanced }: { p: Play; gain: number; onPr
   const reduce = useReducedMotion();
   return (
     <section className="space-y-4" aria-label="Result">
-      <div className={cn(card, "p-5 text-center hard-shadow-md", d.solved ? "bg-status-success-bg" : "bg-card")}>
+      <div className={cn(card, "p-5 text-center hard-shadow-md", d.solved ? "bg-status-success-bg" : "bg-card", reduce === false && fx.land)}>
         <p className={cn("mx-auto inline-flex items-center gap-2 rounded-md border-2 border-foreground px-3 py-1 font-pix text-lg uppercase", d.solved ? "bg-primary text-primary-foreground" : "bg-foreground text-background", reduce === false && fx.stamp)}>
           {d.solved ? <Check className="size-5" aria-hidden /> : <X className="size-5" aria-hidden />} {d.solved ? `Sorted in ${p.tries}` : "Out of tries"}
         </p>
         <p className="mt-3">
-          <CountUp value={d.score} className="font-pix text-5xl tabular-nums" /> <span className="text-sm font-bold">points</span>
+          <CountUp value={d.score} duration={1} delay={0.3} className="font-pix text-5xl tabular-nums" /> <span className="text-sm font-bold">points</span>
           {gain > 0 && <span className={cn(chip, "ml-3 bg-primary text-primary-foreground", reduce === false && fx.pop)}>+{gain} XP</span>}
         </p>
         {v.cohort && v.cohort.played > 0 && (
@@ -377,7 +378,7 @@ function Done({ p, gain, onPractice, onAdvanced }: { p: Play; gain: number; onPr
       </div>
       <div className="grid gap-3 md:grid-cols-2">
         {v.groups.map((name, g) => (
-          <div key={g} className={cn(card, "p-4")}>
+          <div key={g} className={cn(card, "flex flex-col p-4", reduce === false && fx.stagger)} style={{ "--i": g + 2 } as React.CSSProperties}>
             <h3 className="flex items-center gap-2 font-bold">
               {p.locked[g] ? <Check className="size-4" aria-label="You got this group" /> : <X className="size-4" aria-label="You missed this group" />} {name}
             </h3>
@@ -391,6 +392,7 @@ function Done({ p, gain, onPractice, onAdvanced }: { p: Play; gain: number; onPr
                   </li>
                 ))}
             </ul>
+            <LearnLink topic={name} className="mt-auto pt-2" />
           </div>
         ))}
       </div>

@@ -10,6 +10,10 @@ A silent patient still has a full mental state. Your observation becomes the who
 - **Stupor**: mute and largely motionless, with little response to the surroundings, yet often **with eyes open and following you**. Ask: are the eyes open? Do they track? Is there resistance when you lift an arm?
 - Catatonic stupor, depressive stupor, dissociative stupor and organic stupor look similar. The **physical examination and investigations** are part of the MSE work here.
 
+:::widget flow
+{"title": "A mute, still patient: which kind of stupor?", "layout": "tree", "nodes": [{"id": "r", "label": "Mute and largely motionless", "detail": "Check vital signs, hydration and consciousness first. Then look for the pattern."}, {"id": "c", "parent": "r", "label": "Posturing, waxy flexibility, negativism, echo signs", "detail": "Catatonic stupor. Screen with the Bush-Francis items; consider a lorazepam challenge."}, {"id": "d", "parent": "r", "label": "Profound slowing, sad face, history of low mood, not eating", "detail": "Depressive stupor. Often responds to ECT."}, {"id": "x", "parent": "r", "label": "Resists eye opening, avoids painful stimuli, inconsistent signs", "detail": "Possible dissociative stupor, but only after organic causes are excluded."}, {"id": "o", "parent": "r", "label": "Fever, rigidity, fluctuating consciousness, neurological signs, seizures", "detail": "Organic stupor: encephalitis (including anti-NMDAR), NMS, non-convulsive status, metabolic causes. Medical emergency."}], "caption": "These look alike from the bedside. The physical examination and tests are part of the MSE here."}
+:::
+
 ### What you can still record
 | Domain | What you can observe in a silent patient |
 |---|---|
@@ -30,6 +34,10 @@ A silent patient still has a full mental state. Your observation becomes the who
     { "label": "Tell the family to continue with the healer", "verdict": "harm", "outcome": "Treatment is delayed further.", "why": "Respect beliefs, but catatonia is a medical emergency." }
   ]
 }
+:::
+
+:::widget flow
+{"title": "The lorazepam challenge, step by step", "layout": "chain", "nodes": [{"id": "a", "label": "Baseline", "detail": "Rate catatonic signs; record vital signs, oxygen and airway."}, {"id": "b", "label": "Give lorazepam", "detail": "A small dose by mouth, vein or muscle, under medical supervision."}, {"id": "c", "label": "Observe", "detail": "Watch for speech, movement and eating over the next hour or so; repeat if needed."}, {"id": "d", "label": "Re-rate", "detail": "Repeat the catatonia rating. A clear fall supports the diagnosis."}, {"id": "e", "label": "Plan", "detail": "Continue regular lorazepam; ECT if there is no response or catatonia is malignant; treat the underlying illness."}], "caption": "The test both supports the diagnosis and starts the treatment. Monitor breathing throughout."}
 :::
 
 ### The guarded, hostile or aggressive patient
@@ -90,6 +98,14 @@ Risk is not a separate exam. It runs through every heading. Good notes show **wh
 | Cognition | Delirium (falls, wandering), impaired capacity |
 | Insight and judgement | Refusal of help, reckless behaviour, inability to keep safe |
 
+:::widget layers
+{"title": "Risk as a formulation, not a score", "shape": "stack", "layers": [{"label": "The specific plan", "detail": "What, when, where, how prepared, access to means. This is what you act on today."}, {"label": "Dynamic factors", "detail": "Things that change: hopelessness, intoxication, command hallucinations, recent loss, agitation, insomnia."}, {"label": "Static factors", "detail": "Things that do not change: previous attempts, male sex, older age, chronic illness, family history."}, {"label": "Protective factors", "detail": "Reasons for living, children, faith, support, engagement with care, restricted means."}], "caption": "Tap each layer. Write all four. Categories such as 'low, medium, high' predict poorly for individuals; the formulation tells the next clinician what to do."}
+:::
+
+:::widget flow
+{"title": "Command hallucinations: weighing the risk", "layout": "chain", "nodes": [{"id": "a", "label": "What does it say?", "detail": "Exact words. Harm to self, harm to others, or something minor?"}, {"id": "b", "label": "Who is it?", "detail": "A powerful, known or feared voice is harder to resist."}, {"id": "c", "label": "Have you obeyed before?", "detail": "Past compliance is the strongest clue to future compliance."}, {"id": "d", "label": "Can you resist?", "detail": "How do they cope? Are they fighting it, and for how long?"}, {"id": "e", "label": "Do the beliefs fit?", "detail": "Delusions that support the command (for example 'God wants this') raise risk."}, {"id": "f", "label": "Plan and means", "detail": "Then ask as you would about any suicidal or violent plan."}], "caption": "A command voice is a finding to explore, not a risk level in itself."}
+:::
+
 ### Asking about suicide clearly
 Ask in steps, from general to specific:
 1. "Have you felt that life is not worth living?"
@@ -124,7 +140,7 @@ In India, Tele-MANAS (14416 or 1-800-891-4416) offers free, round-the-clock ment
 :::
 
 :::clinician
-Document risk as a formulation, not a score: static factors (previous attempts, male sex, older age, chronic illness), dynamic factors (current hopelessness, intoxication, command hallucinations, recent loss), protective factors, and the specific plan. Risk scales and categorical risk prediction (low, medium, high) have poor predictive value for individuals; NICE self-harm guidance (2022) advises against using them to determine treatment. Pesticide ingestion remains a major method in rural India; means restriction (safe storage) is evidence-based. Under the MHCA 2017 section 115, a person who attempts suicide is presumed to have severe stress and shall not be tried and punished, and the government has a duty to provide care and rehabilitation.
+Document risk as a formulation, not a score: static factors (previous attempts, male sex, older age, chronic illness), dynamic factors (current hopelessness, intoxication, command hallucinations, recent loss), protective factors, and the specific plan. Risk scales and categorical risk prediction (low, medium, high) have poor predictive value for individuals; national self-harm guidance in England advises against using them to decide treatment. Pesticide ingestion remains a major method in rural India; means restriction (safe storage) is evidence-based. Under the MHCA 2017 section 115, a person who attempts suicide is presumed to have severe stress and shall not be tried and punished, and the government has a duty to provide care and rehabilitation.
 :::
 
 :::recall
@@ -144,6 +160,14 @@ Q: Which MSE finding most raises immediate risk to others?
 
 ## 3.3 Writing the MSE report [core][advanced]
 The MSE you write is often read by someone who will never meet the patient: a night duty doctor, a court, a future therapist. Write so they can see what you saw.
+
+:::widget flow
+{"title": "Building one good MSE line", "layout": "chain", "nodes": [{"id": "a", "label": "Describe", "detail": "'Spoke rapidly, hard to interrupt.'"}, {"id": "b", "label": "Quote", "detail": "'I'm going to fix the whole railway system.'"}, {"id": "c", "label": "Name", "detail": "'Pressure of speech, grandiose content.'"}, {"id": "d", "label": "Add the key negative", "detail": "'No suicidal or homicidal ideation on direct questioning.'"}, {"id": "e", "label": "Qualify uncertainty", "detail": "'Possibly responding to unseen stimuli.'"}, {"id": "f", "label": "Say what was not assessed", "detail": "'Cognition not formally tested: too distractible; to repeat.'"}], "caption": "Every line should survive the question 'how do you know?'"}
+:::
+
+:::widget layers
+{"title": "Who reads your MSE", "shape": "rings", "layers": [{"label": "You, tomorrow", "detail": "You will forget the details by the next shift."}, {"label": "The team", "detail": "The night doctor, the nurse, the therapist who meets the patient next week."}, {"label": "Reviewers", "detail": "Mental Health Review Boards checking admissions and capacity decisions."}, {"label": "Courts and the future", "detail": "A lawyer or a clinician years later, who can only see the patient through your words."}], "caption": "Write for the outermost ring and everyone inside it is served."}
+:::
 
 ### Seven rules for writing
 1. **Use the standard order** of headings, every time.
@@ -279,6 +303,10 @@ Q: In Report 2, the voice saying "You are a sinner, you deserve to die" is best 
 > Addresses her directly and fits her depressive guilt.
 :::
 
+:::widget flow
+{"title": "From MSE findings to a one-line synthesis", "layout": "chain", "nodes": [{"id": "a", "label": "List the abnormal findings", "detail": "Mr Iqbal: overactivity, pressured speech, elated labile affect, flight of ideas, grandiose delusions, distractibility."}, {"id": "b", "label": "Cluster them", "detail": "Speed and expansion across behaviour, speech, affect and thought."}, {"id": "c", "label": "Name the syndrome", "detail": "'Consistent with a manic episode with psychotic features.' Syndromal, not a final diagnosis."}, {"id": "d", "label": "State risk and capacity", "detail": "Financial risk, no insight, impaired judgement."}, {"id": "e", "label": "Point to the plan", "detail": "Physical checks, drug screen, safety, treatment of mania."}], "caption": "The synthesis earns marks because it shows thinking, as long as it stays descriptive."}
+:::
+
 ## 3.5 Common errors, and how examiners mark [core][advanced]
 | Error | Why it costs marks | Fix |
 |---|---|---|
@@ -290,6 +318,10 @@ Q: In Report 2, the voice saying "You are a sinner, you deserve to die" is best 
 | Overusing "bizarre" | Vague and judgmental | Describe the belief |
 | Not grading insight | Insight is always asked | Give grade and components |
 | Ignoring culture | Mislabels shared beliefs and behaviours | Ask about shared beliefs and norms |
+
+:::widget curve
+{"kind": "forgetting", "title": "Keeping the confusable pairs in memory", "caption": "Circumstantial and tangential, flight of ideas and loosening, true and pseudo-hallucination: these pairs fade fast after one reading. Add spaced reviews and watch the curve flatten. A few short reviews spread over days beat one long session the night before a viva."}
+:::
 
 ### OSCE and viva tips
 - In an OSCE, **say what you are observing** aloud: "I notice you're sitting very still. How have you been feeling?"

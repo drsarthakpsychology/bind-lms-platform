@@ -90,7 +90,7 @@ Q: Which is NOT an input device?
 
 Q: A program that disguises itself as useful software but carries hidden harm is a:
 - Worm
-- Firewall
+- Firewall program
 - Cookie
 - *Trojan horse
 > Named after the wooden horse of Troy.
@@ -98,7 +98,7 @@ Q: A program that disguises itself as useful software but carries hidden harm is
 Q: Shodhganga is maintained by:
 - *INFLIBNET
 - NAAC
-- AICTE
+- AICTE's library
 - NCERT
 > INFLIBNET Centre, Gandhinagar.
 :::
@@ -301,7 +301,7 @@ Medieval India had **maktabs** (elementary) and **madrasas** (higher learning) a
 Q: The Indian Universities Act of 1904 followed the recommendations of the:
 - Hunter Commission
 - Sadler Commission
-- Sargent Plan
+- Sargent Plan of 1944
 - *Raleigh Commission
 > The Raleigh (Indian Universities) Commission of 1902.
 
@@ -315,7 +315,7 @@ Q: "The destiny of India is now being shaped in her classrooms" is from the repo
 Q: The Chinese pilgrim who studied at Nalanda in the 7th century was:
 - Fa-Hien
 - Al-Biruni
-- Megasthenes
+- Megasthenes (Greek envoy)
 - *Xuanzang (Hiuen Tsang)
 > He studied there and wrote about it in detail.
 :::
@@ -388,7 +388,7 @@ Q: Under NEP 2020, the school structure is:
 - *5 + 3 + 3 + 4
 - 10 + 2
 - 8 + 4
-- 6 + 3 + 3
+- 6 + 3 + 3 + 2
 > Foundational, preparatory, middle and secondary stages.
 
 Q: NIRF was launched by the Ministry of Education in:

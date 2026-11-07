@@ -116,6 +116,178 @@ The author writes that offloading "becomes a problem when it replaces understand
 - Plagiarism checks (with Shodh Shuddhi or similar) are done before submission, and the thesis is deposited in Shodhganga.
 :::
 
+:::qa What are the maxims of teaching? Explain each with a psychology example. [starting]
+### The maxims
+| Maxim | Meaning | Example in a psychology class |
+|---|---|---|
+| Known to unknown | Start from what learners already know | Begin memory with how students revise for exams, then introduce encoding |
+| Simple to complex | Build up difficulty | Mean before variance, variance before ANOVA |
+| Concrete to abstract | Things they can see before ideas | Show a real reaction-time task before defining "processing speed" |
+| Particular to general | Examples before rules (induction) | Several defence-mechanism stories, then the definition |
+| Whole to part | The overall picture first (a Gestalt idea) | A map of the whole brain before the limbic system |
+| Analysis to synthesis | Break down, then put together | Separate symptoms, then build the diagnosis |
+| Empirical to rational | Experience before reasoning | Run a conditioning demonstration, then explain the theory |
+| Psychological to logical | Follow the learner's way of learning, then the subject's logical order | Start from a case, end with the textbook classification |
+| Induction to deduction | Find the rule, then apply it | Discover the normal curve from class marks, then use it |
+
+### Why they matter
+They are practical forms of learning principles: prior knowledge, cognitive load, and meaningful rather than rote learning.
+:::
+
+:::qa Compare teacher-centred and learner-centred methods. When is each the better choice? [starting]
+### Comparison
+| Feature | Teacher-centred | Learner-centred |
+|---|---|---|
+| Examples | Lecture, demonstration, teacher-led tutorial | Discussion, project, problem-based learning, case study, flipped classroom |
+| Teacher's role | Expert and presenter | Facilitator and guide |
+| Learner's role | Listener, note-taker | Active participant, often in groups |
+| Strength | Covers content quickly; good for large classes; clear structure | Deeper understanding, transfer, motivation, communication skills |
+| Weakness | Passive; attention drops; little feedback | Slower; needs preparation, smaller groups, skilled facilitation |
+
+### When to choose which
+- **Teacher-centred** for introducing new, complex material to beginners, for large classes, and for safety-critical procedures (demonstrating a test administration exactly).
+- **Learner-centred** for applying knowledge, solving real problems, developing judgement (clinical case formulation) and for adult learners.
+- Most good teaching **mixes** them: a short explanation, then an activity, then feedback.
+:::
+
+:::qa What is andragogy? Compare Knowles' assumptions about adult learners with traditional pedagogy. [starting]
+### Comparison
+| Assumption | Pedagogy (children) | Andragogy (adults) |
+|---|---|---|
+| Self-concept | Dependent on the teacher | Self-directing |
+| Experience | Limited; the teacher's is what counts | Rich; a resource for learning |
+| Readiness | Set by age and curriculum | Driven by roles and present needs |
+| Orientation | Subject-centred; for later | Problem-centred; for now |
+| Motivation | External (marks, parents) | Mainly internal (growth, self-esteem) |
+| Need to know | Told what to learn | Need to know why before learning |
+
+### Implications for teaching adults
+1. Explain the **purpose** of each topic.
+2. Use **their experience**: cases from their workplaces.
+3. Organise around **problems**, not chapters.
+4. Give **choice** and involve them in planning.
+5. Offer **respectful, specific feedback**.
+
+### A caution
+These are tendencies, not fixed rules. Many children are self-directed, and many adults want structure when the subject is new.
+:::
+
+:::qa Explain the factors that affect teaching, with an example of how each can help or hinder. [starting]
+### Five groups of factors
+| Factor | Helps when… | Hinders when… |
+|---|---|---|
+| **Teacher** | Knows the subject, communicates clearly, is warm and fair | Poor preparation, monotone delivery, bias |
+| **Learner** | Motivated, has prior knowledge, healthy, attends | Anxiety, hunger, learning disability unsupported, poor attendance |
+| **Support material** | Good textbooks, videos, labs, internet | Outdated or missing materials |
+| **Institution** | Small classes, timetables that allow activity, academic freedom | Overcrowding, frequent cancellations, rigid exam focus |
+| **Environment** | Supportive family, quiet place to study, community valuing education | Household chores, long commutes, noise, conflict |
+
+### Example
+A first-generation student in a rural college may have a gifted teacher (teacher factor) but lack internet at home (support) and travel two hours daily (environment). Recorded lectures on a phone and timetabled library hours may help more than a new teaching method.
+:::
+
+:::qa Compare offline, online and blended learning. What are MOOCs and how do they work in India? [starting]
+### Comparison
+| | Offline (face to face) | Online | Blended |
+|---|---|---|---|
+| Interaction | Rich, immediate | Limited unless designed | Combines both |
+| Flexibility | Low | High (time and place) | Moderate |
+| Reach | Local | Very wide | Wide |
+| Problems | Travel, fixed timetable | Digital divide, isolation, distraction, drop-out | Needs careful design |
+
+### MOOCs
+**Massive Open Online Courses**: open to anyone, usually free, delivered at scale.
+- **cMOOCs** (connectivist): learners build knowledge through networks and discussion.
+- **xMOOCs**: structured, video-led courses with tests.
+
+### In India
+- **SWAYAM** (2017) hosts MOOCs from national coordinators (NPTEL for engineering, IGNOU, UGC's consortium for undergraduate and postgraduate courses, NCERT and NIOS for school).
+- Each course has four quadrants: video, e-content, self-assessment, discussion forum.
+- Students can transfer up to **40%** of a programme's credits from SWAYAM.
+- Completion rates are low globally, so MOOCs work best with local support (blended).
+:::
+
+:::qa What do effective teachers do to communicate well in a classroom? [starting]
+### Verbal behaviours
+1. Clear structure: tell them what is coming, teach it, summarise.
+2. Plain language, with technical terms introduced and explained.
+3. Examples from students' lives.
+4. Questions at different levels: recall, then application, then evaluation.
+5. **Wait time** of 3 to 5 seconds after a question, so more students think and answer.
+6. Specific feedback: what was right, what to change.
+
+### Non-verbal behaviours
+- Eye contact around the room, not just the front row.
+- Movement and gestures that support meaning.
+- Voice: varied pace, pitch and volume; pauses for emphasis.
+- Open posture; facial expressions that show interest.
+
+### Listening behaviours
+- Paraphrasing a student's answer, checking understanding, inviting other views.
+
+### Removing barriers
+| Barrier | Remedy |
+|---|---|
+| Noise, poor acoustics | Microphone, seating changes |
+| Jargon | Define terms; use a glossary on the board |
+| Anxiety | Low-stakes questions, think-pair-share |
+| Language differences | Bilingual explanations, visuals |
+:::
+
+:::qa Explain Edward Hall's proxemic zones and how they apply in Indian classrooms and clinics. [starting]
+### The four zones (approximate, for many Western adults)
+| Zone | Distance | Used for |
+|---|---|---|
+| Intimate | Up to about 45 cm | Close family, comforting |
+| Personal | About 45 cm to 1.2 m | Friends, conversations |
+| Social | About 1.2 to 3.6 m | Work, formal meetings, a teacher at a desk |
+| Public | Beyond about 3.6 m | Lectures, speeches |
+
+### Culture changes the numbers
+- Comfortable distances differ by culture, gender, age and status. In many Indian settings, same-gender friends stand closer, and people keep more distance from elders or across genders.
+- Crowded classrooms and buses shrink usable space; people compensate by avoiding eye contact.
+
+### Practical application
+- A counsellor seating a client at an angle, at a social-personal distance, signals respect without pressure.
+- A teacher who walks between rows enters students' personal zone, which can increase attention but also anxiety.
+- Proxemics is one part of non-verbal communication, alongside kinesics, haptics, chronemics and paralanguage.
+:::
+
+:::qa Compare the main mass-media theories with an Indian example of each. [starting]
+### The theories
+| Theory | Core claim | Indian example |
+|---|---|---|
+| Hypodermic needle | Media inject messages into a passive audience | Early fears about cinema's influence (largely rejected now) |
+| Two-step flow | Media influence passes through opinion leaders | Villagers adopting health practices after the ASHA worker or sarpanch endorses them |
+| Agenda setting | Media decide what we think about | Nightly debates making a single issue the "national conversation" |
+| Uses and gratifications | Audiences choose media to meet needs | Students choosing YouTube lectures for exam prep, reels for relaxation |
+| Cultivation | Heavy viewing shapes beliefs about reality | Heavy crime-show viewers overestimating danger in their city |
+| Spiral of silence | People hide views they think are in the minority | Reluctance to voice unpopular opinions on social media |
+| Gatekeeping | Editors filter what becomes news | Which suicides are reported, and how |
+
+### Why they matter for psychology
+Reporting of suicide is a clear case: sensational coverage is linked to imitation, and responsible guidelines encourage reporting that avoids method details and includes helplines. Theories of influence explain why the framing matters.
+:::
+
+:::qa Explain historical research as a method: its steps and how sources are evaluated. [starting]
+### Steps
+1. **Define the problem**: for example, how mental hospitals in colonial Bengal were run.
+2. **Locate sources**: archives, government reports, hospital registers, letters, newspapers, oral histories.
+3. **Classify** them as **primary** (created at the time: case notes, letters) or **secondary** (later accounts by historians).
+4. **Criticise** them:
+   - **External criticism**: is the source genuine? Who wrote it, when, where? Is the paper, handwriting and language right for the period?
+   - **Internal criticism**: is its content accurate and credible? Was the writer in a position to know? Did they have reasons to exaggerate?
+5. **Synthesise** the evidence into an account, noting gaps and contradictions.
+6. **Interpret** in context, avoiding judging the past only by present standards (presentism).
+
+### Strengths and limits
+| Strengths | Limits |
+|---|---|
+| Studies what cannot be repeated | Sources are incomplete and biased toward the powerful and literate |
+| Explains how present systems arose | No control, no experiments |
+| Uses many kinds of evidence | Interpretation can be subjective |
+:::
+
 ## 4.2 Q&A bank · Beginner [core][beginner]
 
 :::qa Solve these four Paper 1 numericals step by step: an age problem, a mixture problem, a work-efficiency problem and a percentage-of-groups problem. [beginner]
@@ -249,6 +421,194 @@ Note: the **simple** average growth is 50% ÷ 2 = 25% a year, which overstates t
 To compare **consistency**: the series with the lower CV is more consistent, even if its SD is larger in raw units.
 :::
 
+:::qa Find the next term in each series and explain the rule: (a) 2, 5, 10, 17, 26, ? (b) 2, 3, 5, 7, 11, ? (c) 1, 2, 6, 24, ? (d) 3, 4, 7, 11, 18, ? (e) 1, 10, 3, 20, 5, 30, ? [beginner]
+### Answers with rules
+| Series | Next | Rule |
+|---|---|---|
+| (a) 2, 5, 10, 17, 26 | **37** | n² + 1 for n = 1 to 6 (differences 3, 5, 7, 9, 11) |
+| (b) 2, 3, 5, 7, 11 | **13** | Prime numbers |
+| (c) 1, 2, 6, 24 | **120** | Multiply by 2, 3, 4, then 5 (factorials) |
+| (d) 3, 4, 7, 11, 18 | **29** | Each term is the sum of the previous two |
+| (e) 1, 10, 3, 20, 5, 30 | **7** | Two series interleaved: odd numbers 1, 3, 5, 7 and tens 10, 20, 30 |
+
+### A checklist for unseen series
+1. Differences (and differences of differences).
+2. Ratios.
+3. Squares, cubes, primes, factorials.
+4. Sum of previous terms.
+5. Alternating (interleaved) series: look at odd and even positions separately.
+6. Mixed operations (×2 + 1, ×3 − 1).
+:::
+
+:::qa Solve three coding problems: (a) If A = 1, B = 2…, what is the code for DOG if CAT = 24? (b) In a reverse-alphabet code, how is BOOK written? (c) If PEN = QFO, how is INK written? [beginner]
+### (a) Letter values added
+- CAT = 3 + 1 + 20 = 24, which confirms the rule.
+- DOG = 4 + 15 + 7 = **26**.
+
+### (b) Reverse alphabet (A ↔ Z, B ↔ Y …)
+Each letter's partner adds to 27 in position: B (2) → Y (25); O (15) → L (12); K (11) → P (16).
+BOOK = **YLLP**.
+
+### (c) Shift by one
+Each letter moves one place forward: I → J, N → O, K → L. INK = **JOL**.
+
+### Strategy
+| Step | Why |
+|---|---|
+| Write the alphabet with positions (or remember EJOTY = 5, 10, 15, 20, 25) | Speed |
+| Compare letter by letter | Shifts often vary by position |
+| Check reverse partners add to 27 | Quick test for reverse codes |
+| Test the rule on the given example before applying it | Avoids careless errors |
+:::
+
+:::qa Solve this blood-relation problem with a family tree: A is B's sister. C is B's mother. D is C's father. E is D's mother. How is A related to D, and to E? [beginner]
+### Step 1: build the tree from the top
+- E (female) is the mother of D.
+- D (male) is the father of C.
+- C (female) is the mother of B.
+- A (female) is B's sister, so A is also C's daughter.
+
+### Step 2: read the relations
+| Generation | Person |
+|---|---|
+| 1 | E (great-grandmother of A) |
+| 2 | D (grandfather of A) |
+| 3 | C (mother of A and B) |
+| 4 | A and B (siblings) |
+
+### Answers
+- A is D's **granddaughter**.
+- A is E's **great-granddaughter**.
+
+### Method
+Mark males with + and females with −; put each generation on its own row; draw sibling links across and parent links down. Never assume gender unless the question gives it (here "sister", "mother", "father" do).
+:::
+
+:::qa Two problems: (a) Two successive discounts of 20% and 10%; what single discount is this? (b) A man walks 5 km north, turns right and walks 3 km, turns right and walks 5 km, then turns left and walks 2 km. How far and in which direction is he from the start? [beginner]
+### (a) Successive discounts
+1. After 20% off, 80% remains; after another 10% off, 90% of that remains.
+2. 0.80 × 0.90 = 0.72, so the price is 72% of the original.
+3. Single equivalent discount = **28%**, not 30%.
+(Shortcut: a + b − ab ÷ 100 = 20 + 10 − 2 = 28.)
+
+### (b) Directions
+| Move | Facing | Position (east, north) |
+|---|---|---|
+| Start | North | (0, 0) |
+| 5 km north | North | (0, 5) |
+| Right, 3 km | East | (3, 5) |
+| Right, 5 km | South | (3, 0) |
+| Left, 2 km | East | (5, 0) |
+
+He is **5 km east** of the start.
+
+### Tip
+Always draw axes. A right turn rotates north → east → south → west; a left turn goes the other way.
+:::
+
+:::qa Two trains, 150 m and 100 m long, run at 60 km/h and 30 km/h. How long do they take to cross each other if they run in opposite directions, and in the same direction? [beginner]
+### Step 1: total length to clear
+150 + 100 = **250 m**
+
+### Step 2: relative speed
+- Opposite directions: speeds **add**: 60 + 30 = 90 km/h = 90 × 5/18 = **25 m/s**.
+- Same direction: speeds **subtract**: 60 − 30 = 30 km/h = 30 × 5/18 = **8.33 m/s**.
+
+### Step 3: time
+- Opposite: 250 ÷ 25 = **10 seconds**.
+- Same direction: 250 ÷ 8.33 = **30 seconds**.
+
+### Why
+When two objects move, what matters is how fast the gap closes. Moving towards each other closes it at the sum of speeds; moving the same way closes it at the difference.
+:::
+
+:::qa How do you evaluate an inductive argument? Explain with Mill's methods of agreement and difference. [beginner]
+### Strong and weak inductive arguments
+An inductive argument is **strong** if its premises make the conclusion probable, and **cogent** if it is strong with true premises. Ask:
+1. Is the sample **large and representative**?
+2. Are there **counterexamples**?
+3. Is the analogy based on **relevant** similarities?
+4. Are there **other explanations**?
+
+### Mill's methods (for finding causes)
+| Method | Logic | Example |
+|---|---|---|
+| **Agreement** | If several cases share only one factor, it may be the cause | Five students who fell ill all ate at the same canteen stall |
+| **Difference** | If two cases differ only in one factor, it may be the cause | Two identical classes; only one got feedback, and only that class improved |
+| Joint method | Use both together | Ill students ate at the stall; well students did not |
+| Residues | Subtract known causes; the remainder is due to what is left | Known factors explain most of a weight change; the rest is due to a new medicine |
+| Concomitant variation | When one factor varies with another, they are linked | More sleep, better recall, in a graded way |
+
+### Link to research methods
+The method of difference is the logic of the controlled experiment: hold everything constant except the IV.
+:::
+
+:::qa How do you solve analogy and odd-one-out questions? Work through three examples. [beginner]
+### Analogies: find the exact relation
+1. **Psychologist : therapy :: surgeon : ?** Relation: professional to the treatment they give. Answer: **operation**.
+2. **Pupil : eye :: cochlea : ?** Relation: part to organ. Answer: **ear**.
+
+### Odd one out: find the shared property
+3. **Spearman, Thurstone, Guilford, Freud.** Three are intelligence theorists; Freud is not. Answer: **Freud**.
+
+### Common relations
+| Relation | Example |
+|---|---|
+| Part and whole | Neuron : nervous system |
+| Cause and effect | Virus : infection |
+| Worker and tool | Carpenter : saw |
+| Worker and product | Author : book |
+| Degree | Warm : hot |
+| Opposites | Valid : invalid |
+| Function | Pen : write |
+| Category and member | Defence mechanism : projection |
+
+### Tip
+State the relation as a full sentence ("A psychologist gives therapy") and test each option in the same sentence.
+:::
+
+:::qa In a group of 100 students, 60 drink tea, 50 drink coffee and 20 drink both. How many drink neither? Show it with a Venn diagram. [beginner]
+### Step 1: the formula
+n(tea or coffee) = n(tea) + n(coffee) − n(both) = 60 + 50 − 20 = **90**
+
+### Step 2: neither
+100 − 90 = **10 students**
+
+### Step 3: the regions of the diagram
+| Region | Count |
+|---|---|
+| Tea only | 60 − 20 = 40 |
+| Coffee only | 50 − 20 = 30 |
+| Both | 20 |
+| Neither | 10 |
+| Total | 100 |
+
+### Why subtract "both"
+The 20 who drink both were counted once in tea and again in coffee. Removing them once avoids double counting. With three sets, the formula extends: A + B + C − (AB + BC + AC) + ABC.
+:::
+
+:::qa A coaching centre's NET qualifiers were 40 (2022), 50 (2023), 45 (2024) and 60 (2025). Answer: the average; the year-on-year percentage changes; the year with the largest rise; the percentage rise from 2022 to 2025. [beginner]
+### Average
+(40 + 50 + 45 + 60) ÷ 4 = 195 ÷ 4 = **48.75**
+
+### Year-on-year changes
+| Period | Change | Percentage |
+|---|---|---|
+| 2022 to 2023 | +10 | 10 ÷ 40 = **25%** |
+| 2023 to 2024 | −5 | −5 ÷ 50 = **−10%** |
+| 2024 to 2025 | +15 | 15 ÷ 45 = **33.3%** |
+
+### Largest rise
+**2024 to 2025** (33.3%), even though the 2022 to 2023 rise is also large in numbers (10 against 15).
+
+### 2022 to 2025
+(60 − 40) ÷ 40 = **50%**.
+
+### Traps examiners set
+- Asking for the largest rise in **numbers** versus in **percentage**: they can differ.
+- Using the wrong base: always divide by the **earlier** value.
+:::
+
 ## 4.3 Q&A bank · Advanced [core][advanced]
 
 :::qa Critically evaluate NEP 2020 for higher education. [advanced]
@@ -364,6 +724,203 @@ India argues for **common but differentiated responsibilities and respective cap
 The unit is "People, development and environment": it asks you to see development, environment and human well-being as one system, not separate topics.
 :::
 
+:::qa Explain cloud service models and basic cybersecurity hygiene for a college. [advanced]
+### Cloud service models
+| Model | You manage | Provider manages | Example |
+|---|---|---|---|
+| IaaS (infrastructure) | Operating system, apps, data | Servers, storage, network | Renting virtual servers to host a university portal |
+| PaaS (platform) | Apps and data | Everything underneath, including the operating system | A platform for students to build and run apps |
+| SaaS (software) | Just your data and settings | Everything else | Webmail, online documents, a learning management system |
+
+Deployment types: **public** cloud, **private** cloud, **hybrid**.
+
+### Cybersecurity hygiene
+1. **Strong, unique passwords** and a password manager.
+2. **Two-factor authentication** on email and admin accounts.
+3. **Updates and patches** on time.
+4. **Backups** kept separately (protects against ransomware).
+5. **Phishing awareness**: check sender addresses and links; never share OTPs.
+6. **Least privilege**: give staff only the access they need.
+7. **Secure Wi-Fi** and HTTPS for college sites.
+8. **Data protection**: students' personal data handled under the Digital Personal Data Protection Act, 2023.
+9. **Incident reporting** to CERT-In for serious breaches.
+:::
+
+:::qa Convert binary 101101 to decimal, and decimal 45 to octal and hexadecimal. Show the working. [advanced]
+### Binary to decimal
+| Bit | 1 | 0 | 1 | 1 | 0 | 1 |
+|---|---|---|---|---|---|---|
+| Place value | 32 | 16 | 8 | 4 | 2 | 1 |
+| Product | 32 | 0 | 8 | 4 | 0 | 1 |
+
+32 + 8 + 4 + 1 = **45**
+
+### Decimal to octal (divide by 8)
+- 45 ÷ 8 = 5 remainder 5
+- 5 ÷ 8 = 0 remainder 5
+- Read remainders upward: **55** (octal)
+
+### Decimal to hexadecimal (divide by 16)
+- 45 ÷ 16 = 2 remainder 13 (D)
+- 2 ÷ 16 = 0 remainder 2
+- **2D** (hexadecimal)
+
+### Shortcuts
+- Group binary digits in **threes** for octal: 101 101 → 5 5.
+- Group in **fours** for hexadecimal: 0010 1101 → 2 D.
+- Hex digits run 0 to 9, then A (10) to F (15).
+:::
+
+:::qa Classify India's digital initiatives in higher education by purpose, and explain how APAAR, ABC and DigiLocker fit together. [advanced]
+### By purpose
+| Purpose | Initiatives |
+|---|---|
+| Learning content | SWAYAM, SWAYAM Prabha, NPTEL, e-PG Pathshala, Virtual Labs |
+| Libraries and research access | NDLI, ONOS, Shodhganga, Shodhgangotri, INFLIBNET |
+| Research integrity and profiles | Shodh Shuddhi, Vidwan |
+| Records and credentials | DigiLocker, National Academic Depository, APAAR, Academic Bank of Credits |
+| Administration | Samarth |
+| School and teacher platforms | DIKSHA, PM eVidya |
+
+### How APAAR, ABC and DigiLocker connect
+1. **APAAR ID** is a lifelong student ID ("One Nation One Student ID").
+2. The **Academic Bank of Credits** stores credits earned at different institutions, linked to APAAR, so a student can exit and re-enter (NEP 2020's multiple entry and exit).
+3. **DigiLocker** (with the National Academic Depository) holds verified digital degrees and mark sheets that employers and universities can check.
+
+Together they make learning records **portable and verifiable**, reducing fake certificates and paperwork.
+
+### A caution for the exam
+These change quickly; recheck names and features each exam cycle.
+:::
+
+:::qa Explain the greenhouse effect and how India's National Action Plan on Climate Change responds to it. [advanced]
+### The mechanism, step by step
+1. Sunlight (mostly short-wave) passes through the atmosphere and warms the Earth.
+2. The Earth emits heat as long-wave infrared radiation.
+3. **Greenhouse gases** (carbon dioxide, methane, nitrous oxide, water vapour, fluorinated gases) absorb and re-emit some of this heat back toward the surface.
+4. Without them the Earth would be far colder; **extra** gases from fossil fuels, deforestation and agriculture trap more heat: the **enhanced greenhouse effect**.
+5. Results: rising temperatures, heatwaves, changing monsoons, glacier melt, sea-level rise.
+
+### India's response: NAPCC (2008), eight missions
+| Mission | Focus |
+|---|---|
+| Solar | Expanding solar power |
+| Enhanced energy efficiency | Industry and appliances |
+| Sustainable habitat | Cities, buildings, waste, transport |
+| Water | Efficiency and conservation |
+| Himalayan ecosystem | Glaciers, mountain communities |
+| Green India | Forests and carbon sinks |
+| Sustainable agriculture | Climate-resilient farming |
+| Strategic knowledge | Research and data |
+
+States prepare their own action plans. India's NDC targets and net zero by 2070 sit on top of this framework.
+:::
+
+:::qa How is air quality measured in India, what are the health effects of air pollution, and what controls are used? [advanced]
+### Measurement
+The **National Air Quality Index** combines eight pollutants (PM10, PM2.5, nitrogen dioxide, sulphur dioxide, carbon monoxide, ozone, ammonia, lead) into one number with six bands:
+| AQI | Band |
+|---|---|
+| 0 to 50 | Good |
+| 51 to 100 | Satisfactory |
+| 101 to 200 | Moderately polluted |
+| 201 to 300 | Poor |
+| 301 to 400 | Very poor |
+| 401 to 500 | Severe |
+
+### Health effects
+- **PM2.5** reaches deep into the lungs and the bloodstream: asthma, heart attacks, strokes, lung cancer, low birth weight.
+- Growing evidence links long-term exposure to **depression, anxiety and cognitive decline**, and to effects on children's brain development.
+
+### Controls
+| Source | Measures |
+|---|---|
+| Vehicles | Cleaner fuel standards, public transport, electric vehicles |
+| Industry and power | Emission norms, scrubbers, cleaner energy |
+| Crop-residue burning | Machines and incentives for alternatives |
+| Construction dust | Covering, water spraying |
+| Households | Clean cooking fuel instead of wood and dung |
+| City action | The National Clean Air Programme (2019) and graded response plans when AQI worsens |
+:::
+
+:::qa Describe the disaster management cycle and where psychological support fits into it. [advanced]
+### The cycle
+| Phase | What happens | Psychosocial role |
+|---|---|---|
+| **Mitigation** | Reduce risk: building codes, embankments, land-use rules | Community risk awareness, reducing vulnerability of the poorest |
+| **Preparedness** | Plans, drills, early warning, stockpiles | Training volunteers in psychological first aid; plans for vulnerable groups |
+| **Response** | Rescue, shelter, food, medical care | Psychological first aid: safety, calm, connection, practical help, information; reuniting families |
+| **Recovery** | Rebuilding homes, livelihoods and services | Identifying persistent distress (PTSD, depression, grief), referral, community healing, livelihood support |
+
+The cycle returns to mitigation, using lessons learned ("build back better").
+
+### India's framework
+The Disaster Management Act, 2005 set up the NDMA (chaired by the Prime Minister), state and district authorities, and the NDRF. NDMA guidelines include psychosocial support and mental health services in disasters.
+
+### Key principle
+Most people recover with practical help and social support. Avoid forcing people to retell trauma early; offer layered support, with specialised care for those who need it.
+:::
+
+:::qa Evaluate British colonial education policy: what did Macaulay's Minute and Wood's Despatch aim for, and what were the long-term effects? [advanced]
+### Aims
+| Policy | Aim |
+|---|---|
+| Macaulay's Minute (1835) | Fund English-medium Western education to create "a class of persons Indian in blood and colour, but English in taste"; "downward filtration" to the masses |
+| Wood's Despatch (1854) | A system from primary to university: universities on the London model, grants-in-aid to private schools, departments of public instruction, attention to vernacular and women's education |
+
+### Effects
+| Positive | Negative |
+|---|---|
+| Modern universities from 1857 | Neglect of mass primary education; very low literacy at independence |
+| Access to Western science and liberal ideas, which fed social reform and the freedom movement | A gap between an English-educated elite and the masses |
+| A unified administrative and examination system | Neglect and decline of indigenous institutions and knowledge |
+| A pan-Indian educated middle class | Examination-centred, rote learning; affiliating universities that only examined |
+
+### Why it matters today
+Many issues NEP 2020 addresses (the affiliation system, exam pressure, language of instruction, Indian knowledge systems) have roots in colonial choices.
+:::
+
+:::qa List the constitutional provisions on education and explain the Right to Education Act. [advanced]
+### Constitutional provisions
+| Provision | Content |
+|---|---|
+| Article 21A | Free and compulsory education for children aged 6 to 14 (86th Amendment, 2002) |
+| Article 45 | Early childhood care and education up to age 6 |
+| Article 46 | Educational and economic interests of Scheduled Castes, Scheduled Tribes and weaker sections |
+| Article 29 | Protection of minorities' language, script and culture; no denial of admission on grounds of religion, race, caste or language in state-aided institutions |
+| Article 30 | Minorities' right to establish and run educational institutions |
+| Article 350A | Instruction in the mother tongue at the primary stage |
+| Article 51A(k) | Duty of parents or guardians to provide opportunities for education (6 to 14) |
+| Union List, Entry 66 | Coordination and standards in higher education and research |
+| Concurrent List, Entry 25 | Education, including universities (after the 42nd Amendment, 1976) |
+
+### The Right to Education Act, 2009
+- Free and compulsory education in a neighbourhood school for ages 6 to 14.
+- **25% of seats** in private unaided schools for children from disadvantaged groups.
+- Norms for teachers, pupil-teacher ratios and infrastructure.
+- No detention and no board exams up to elementary level (later amended to allow states to hold back students after exams in classes 5 and 8).
+- Ban on capitation fees, screening tests for admission, and physical punishment.
+:::
+
+:::qa Explain the roles of the main bodies inside a university and how graded autonomy is meant to work. [advanced]
+### Bodies inside a university
+| Body | Role |
+|---|---|
+| Visitor (central universities: the President) or Chancellor (state universities: usually the Governor) | Head of the university; formal powers of appointment and inspection |
+| Vice-Chancellor | Chief executive and academic officer |
+| Court or Senate | Large, representative body; broad policy, approves annual reports and budgets in many universities |
+| Executive Council or Syndicate | Main executive body: finance, appointments, property |
+| Academic Council | Academic standards, courses, examinations |
+| Boards of Studies | Syllabus for each subject |
+| Finance Committee | Budget and accounts |
+| IQAC | Internal quality assurance, linked to accreditation |
+
+### Graded autonomy
+- Institutions with strong accreditation results receive more freedom: to start new courses, set fees, hire foreign faculty, run open and distance programmes, without seeking approval each time.
+- NEP 2020 extends this: affiliated colleges should become **autonomous degree-granting colleges** or merge into universities, and the affiliation system is to be phased out over 15 years.
+- The trade-off is **freedom for accountability**: autonomy is tied to quality and transparent public disclosure.
+:::
+
 ## 4.4 Long answers, short notes and viva [core]
 Paper 1 is objective, but writing short explanatory answers is the fastest way to fix these units in memory, and the same topics come up in **interviews for teaching posts**, **PhD entrance interviews** and **university education papers**.
 
@@ -433,7 +990,7 @@ Q: "Characterisation by a value" is the highest level of the:
 Q: The understanding level of teaching was advocated by:
 - Herbart
 - Hunt
-- Bloom
+- Bloom (Benjamin)
 - *Morrison
 > Morrison's understanding level.
 
@@ -441,7 +998,7 @@ Q: The Keller Plan is also known as:
 - Linear programmed instruction
 - The Dalton Plan
 - *Personalised System of Instruction
-- The project method of Kilpatrick
+- The project method of Kilpatrick and Dewey
 > Mastery-based, self-paced learning.
 
 Q: An evaluation that compares a learner's score with the scores of other learners is:
@@ -455,7 +1012,7 @@ Q: Research that generates new theory, without an immediate application, is:
 - Action research
 - *Fundamental research
 - Applied research
-- Evaluation research
+- Evaluation (programme) research
 > Basic or pure research.
 
 Q: Under UGC's 2018 regulations, a thesis with 55% similarity falls in:
@@ -550,7 +1107,7 @@ Q: In "the hill has fire because it has smoke", the paksha is:
 > The subject of the inference.
 
 Q: A reason that is present both where the sadhya is and where it is absent is:
-- Viruddha
+- Viruddha (contradictory)
 - Badhita
 - *Savyabhichara
 - Asiddha
@@ -567,7 +1124,7 @@ Q: The share of BA in total enrolment rose from 30% to 36%. This is a rise of:
 - 6%
 - 36%
 - *6 percentage points, or 20%
-- 20 percentage points
+- 20 percentage points, or 6%
 > 6 points; 6 ÷ 30 = 20% relative.
 
 Q: Which memory is volatile?
@@ -578,10 +1135,10 @@ Q: Which memory is volatile?
 > RAM loses its contents without power.
 
 Q: IMAP is used for:
-- *Receiving mail and keeping it synchronised on the server
+- *Receiving mail, kept in sync on the server
 - Sending mail to an outside server
 - Transferring web pages to a browser
-- Turning domain names into IP addresses
+- Turning website domain names into numeric IP addresses
 > POP3 downloads; IMAP synchronises.
 
 Q: The Environment (Protection) Act was passed in:
@@ -600,7 +1157,7 @@ Q: The Montreal Protocol deals with:
 
 Q: COP31 (November 2026) is being held in:
 - *Antalya
-- Belém
+- Belém, Brazil
 - Baku
 - Dubai
 > Türkiye hosts; Australia presides over negotiations.

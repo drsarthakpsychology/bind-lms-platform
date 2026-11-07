@@ -4,7 +4,7 @@ import s from "./learn.module.css";
 export type ChaiMood = "idle" | "happy" | "think" | "cheer" | "sad" | "sleep";
 
 /*
- * Chai — VIBHA's study cat, drawn as 24×24 pixel art: a white cat with
+ * Chai: VIBHA's study cat, drawn as 24×24 pixel art: a white cat with
  * aviator-style goggles (blue lenses, lime glint), a lime collar and a blue tag.
  * Goggles down = focused (idle, happy, think). Goggles pushed up = feelings
  * showing (cheer, sad, sleep). Original character; palette is the brand four.

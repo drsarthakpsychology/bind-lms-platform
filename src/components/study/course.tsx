@@ -111,8 +111,8 @@ export function StudyHome({ modules, serverState, save, owner = "" }: { modules:
       >
         <Target className="size-5 shrink-0" aria-hidden />
         <span className="min-w-0 flex-1">
-          <span className="block font-semibold">Preparing for an entrance or semester exam?</span>
-          <span className="block text-sm text-muted-foreground">CUET PG, UGC NET, clinical psychology entrances: one plan in Prep.</span>
+          <span className="block font-semibold">Psychology Entrance &amp; Competitive Exam Preparation</span>
+          <span className="block text-sm text-muted-foreground">CUET-PG · UGC-NET · Clinical Psychology Entrances. One course for all three.</span>
         </span>
         <ArrowRight className="size-4 shrink-0" aria-hidden />
       </Link>
