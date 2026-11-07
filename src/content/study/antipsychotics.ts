@@ -523,7 +523,7 @@ Q: A man recovered fully from a first psychotic episode 4 months ago and wants t
 | **Diabetes, obesity** | Aripiprazole, lurasidone, ziprasidone; avoid olanzapine and clozapine where possible |
 
 :::widget decide
-{"scene": "Shabnam, 27, in Srinagar, has schizophrenia that has been stable for two years on olanzapine 15 mg. She is 8 weeks pregnant, unplanned, and her mother-in-law says all medicines will harm the baby. She asks whether to stop today.", "ask": "What is the best plan?", "choices": [{"label": "Stop olanzapine at once to protect the baby", "verdict": "harm", "outcome": "By the second trimester she is hearing voices again, stops eating and is admitted. She misses antenatal care.", "why": "Relapse in pregnancy is dangerous for both mother and baby, and sudden stopping raises that risk."}, {"label": "Explain that the main risks of olanzapine in pregnancy are weight gain and gestational diabetes, not birth defects; continue at the lowest effective dose, screen glucose early, involve the obstetrician and family, and plan care around delivery", "verdict": "best", "outcome": "She stays well, her glucose is watched closely, and she delivers a healthy baby. The baby is checked for sleepiness in the first days.", "why": "Continuing a working antipsychotic is usually safer than relapse. The real risks are metabolic and around delivery, and both can be monitored."}, {"label": "Switch to haloperidol because older drugs are 'more studied'", "verdict": "ok", "outcome": "She becomes stiff and restless. The switch itself risks relapse.", "why": "Haloperidol has a long record in pregnancy, but switching a stable patient adds relapse and side-effect risk without a clear gain."}]}
+{"scene": "Shabnam, 27, in Srinagar, has schizophrenia that has been stable for two years on olanzapine 15 mg. She is two months pregnant, unplanned, and her mother-in-law says all medicines will harm the baby. She asks whether to stop today.", "ask": "What is the best plan?", "choices": [{"label": "Stop olanzapine at once to protect the baby", "verdict": "harm", "outcome": "By the second trimester she is hearing voices again, stops eating and is admitted. She misses antenatal care.", "why": "Relapse in pregnancy is dangerous for both mother and baby, and sudden stopping raises that risk."}, {"label": "Explain that the main risks of olanzapine in pregnancy are weight gain and gestational diabetes, not birth defects; continue at the lowest effective dose, screen glucose early, involve the obstetrician and family, and plan care around delivery", "verdict": "best", "outcome": "She stays well, her glucose is watched closely, and she delivers a healthy baby. The baby is checked for sleepiness in the first days.", "why": "Continuing a working antipsychotic is usually safer than relapse. The real risks are metabolic and around delivery, and both can be monitored."}, {"label": "Switch to haloperidol because older drugs are 'more studied'", "verdict": "ok", "outcome": "She becomes stiff and restless. The switch itself risks relapse.", "why": "Haloperidol has a long record in pregnancy, but switching a stable patient adds relapse and side-effect risk without a clear gain."}]}
 :::
 
 :::widget decide
@@ -557,7 +557,7 @@ Q: An 82-year-old with Lewy body dementia is distressed by visual hallucinations
 | **Tardive dyskinesia** | Months to years | Involuntary repetitive movements: lip smacking, tongue writhing, chewing, grimacing, limb or trunk movements; may be permanent | Review need; reduce or switch (clozapine lowest risk); **VMAT2 inhibitors** (tetrabenazine, valbenazine, deutetrabenazine). **Anticholinergics can worsen it** |
 
 :::mnemonic Rough timing order
-**4 hours, 4 days, 4 weeks, 4 months**: dystonia, akathisia, parkinsonism, tardive dyskinesia. A rough guide, but easy to remember.
+**Hours, days, weeks, months**: dystonia, akathisia, parkinsonism, tardive dyskinesia. A rough guide, but easy to remember.
 :::
 
 :::widget flow
@@ -739,7 +739,7 @@ Q: A man on risperidone has put on 10 kg in 6 months. He is well and wants to st
 
 | Risk | What to know |
 |---|---|
-| **Severe neutropenia (agranulocytosis)** | Under 1%, mostly in the first 18 weeks. Blood counts weekly at first, then less often. Any fever or sore throat: urgent blood count |
+| **Severe neutropenia (agranulocytosis)** | Under 1%, mostly in the first months. Blood counts weekly at first, then less often. Any fever or sore throat: urgent blood count |
 | **Myocarditis**, cardiomyopathy | Mostly in the first two months: fever, chest pain, breathlessness, fast pulse. Check troponin, CRP, ECG |
 | **Seizures** | Dose and level related |
 | **Constipation** | Can lead to fatal bowel obstruction. Ask at every visit; prescribe laxatives |
@@ -767,7 +767,7 @@ Tobacco smoke speeds up the liver enzyme CYP1A2 and can halve clozapine levels. 
 :::
 
 :::mcq
-Q: A man on clozapine for 6 weeks has fever, a sore throat and mouth ulcers. The first test is:
+Q: A man who started clozapine recently has fever, a sore throat and mouth ulcers. The first test is:
 - Clozapine level
 - *Full blood count (neutrophils), urgently
 - Chest X-ray only
@@ -853,7 +853,7 @@ Q: After calm talk and oral medicine fail, a man is about to hit staff. Which IM
 
 ## 3.4 Starting clozapine step by step [core][beginner]
 ### Before
-1. Confirm **treatment resistance**: two antipsychotics, adequate dose, at least 6 weeks each, with good adherence (consider levels or a depot trial).
+1. Confirm **treatment resistance**: two antipsychotics, each at an adequate dose for long enough, with good adherence (consider levels or a depot trial).
 2. Consent: explain benefits (often dramatic), blood tests and side effects.
 3. Baseline: **blood count** (neutrophils), weight, BP, pulse, temperature, ECG, glucose, lipids, **troponin and CRP**, bowel habit, smoking status.
 
@@ -890,7 +890,7 @@ Q: After calm talk and oral medicine fail, a man is about to hit staff. Which IM
 - **Fits**.
 
 :::widget decide
-{"scene": "Ms Bhattacharya, 29, in Kolkata, started clozapine 3 weeks ago and is now on 225 mg. Today she has a temperature of 38.4 °C, a pulse of 128 at rest, feels breathless walking to the bathroom, and has a mild chest ache. Her neutrophils are normal. The junior doctor says 'Clozapine fever is common early, keep going.'", "ask": "What do you do?", "choices": [{"label": "Continue the titration; benign fever is common", "verdict": "harm", "outcome": "Two days later she collapses with heart failure.", "why": "Fever is common early, but fever plus fast pulse, breathlessness and chest pain in the first weeks is myocarditis until proved otherwise."}, {"label": "Hold clozapine, check troponin, CRP, ECG and an echocardiogram urgently, and involve the cardiology team", "verdict": "best", "outcome": "Her troponin and CRP are high: clozapine myocarditis. Clozapine is stopped and she recovers. A careful re-challenge is discussed much later with specialists.", "why": "Early myocarditis is treatable if caught. Troponin and CRP monitoring in the first month exists for exactly this."}, {"label": "Stop clozapine and never use it again, without any tests", "verdict": "ok", "outcome": "She is safe, but no one knows whether it was myocarditis or a harmless fever, and she loses the one medicine that worked.", "why": "Stopping is right, but testing tells you what happened and guides the future."}]}
+{"scene": "Ms Bhattacharya, 29, in Kolkata, started clozapine recently and is now on 225 mg. Today she has a temperature of 38.4 °C, a pulse of 128 at rest, feels breathless walking to the bathroom, and has a mild chest ache. Her neutrophils are normal. The junior doctor says 'Clozapine fever is common early, keep going.'", "ask": "What do you do?", "choices": [{"label": "Continue the titration; benign fever is common", "verdict": "harm", "outcome": "Two days later she collapses with heart failure.", "why": "Fever is common early, but fever plus fast pulse, breathlessness and chest pain in the first weeks is myocarditis until proved otherwise."}, {"label": "Hold clozapine, check troponin, CRP, ECG and an echocardiogram urgently, and involve the cardiology team", "verdict": "best", "outcome": "Her troponin and CRP are high: clozapine myocarditis. Clozapine is stopped and she recovers. A careful re-challenge is discussed much later with specialists.", "why": "Early myocarditis is treatable if caught. Troponin and CRP monitoring in the first month exists for exactly this."}, {"label": "Stop clozapine and never use it again, without any tests", "verdict": "ok", "outcome": "She is safe, but no one knows whether it was myocarditis or a harmless fever, and she loses the one medicine that worked.", "why": "Stopping is right, but testing tells you what happened and guides the future."}]}
 :::
 
 :::analogy The most powerful tool needs the most careful hands

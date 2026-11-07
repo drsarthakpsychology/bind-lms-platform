@@ -287,7 +287,7 @@ After confirming treatment resistance and consent, baseline tests are done, cloz
 ### Steps
 1. Baseline: blood count, ECG, troponin, CRP, weight, glucose, lipids, bowel habit, smoking status.
 2. Titrate slowly; restart from 12.5 mg after a 48-hour gap.
-3. Blood counts weekly for 18 weeks, then less often.
+3. Blood counts weekly at first, then less often (the full schedule is in the clinician view).
 4. Ask about bowels at every visit; prescribe laxatives.
 5. Check a level once stable (at least 350 ng/mL).
 6. Watch for fever, chest pain, seizures, hypersalivation and weight gain.
@@ -636,7 +636,7 @@ Q: A clozapine patient admitted to a no-smoking ward becomes drowsy and has a se
 > CYP1A2 induction by smoke is lost.
 
 Q: Clozapine is indicated after failure of:
-- One antipsychotic for 1 week
+- One antipsychotic for a few days
 - *Two antipsychotics at adequate dose and duration
 - Psychotherapy alone
 - ECT only
@@ -734,8 +734,8 @@ Q: Flip-flop kinetics means that for a depot:
 > Steady state takes months.
 
 Q: Which criterion is part of the definition of treatment-resistant schizophrenia?
-- One failed trial of 2 weeks
-- *Two adequate trials, each at least 6 weeks, with adherence confirmed
+- One failed trial of a few days
+- *Two adequate trials, each long enough at an adequate dose, with adherence confirmed
 - Any patient who smokes
 - Failure of psychotherapy
 > The working group's minimum criteria.

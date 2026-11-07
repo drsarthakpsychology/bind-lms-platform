@@ -53,7 +53,7 @@ Antidote for benzodiazepines? :: Flumazenil.
 First-line treatment for insomnia? :: CBT for insomnia.
 Lithium inhibits which enzyme in the inositol pathway? :: Inositol monophosphatase.
 Episode pattern predicting good lithium response? :: Mania, then depression, then interval (M-D-I).
-How long should lithium be tapered? :: At least 4 weeks.
+How long should lithium be tapered? :: At least a month, ideally longer.
 Mood stabiliser relatively safer in pregnancy? :: Lamotrigine.
 Heart malformation risk with lithium in modern studies? :: About 2 in 100.
 Alprazolam equivalent of 10 mg diazepam? :: 0.5 mg.
@@ -260,7 +260,7 @@ Slowly, with the person's agreement, usually after switching a short-acting drug
 1. Agree the reasons and the pace.
 2. Convert to diazepam equivalents (alprazolam 0.5 mg about 10 mg diazepam).
 3. Switch one dose at a time.
-4. Reduce by about 5 to 10% every 1 to 2 weeks, with smaller steps at the end.
+4. Reduce by about 5 to 10% at a time, holding each step until withdrawal settles, with smaller steps at the end.
 5. Pause rather than reverse if withdrawal is hard.
 6. Offer CBT for anxiety and insomnia.
 7. Admit if high doses, seizures, alcohol or other drug use.
@@ -533,10 +533,10 @@ Q: Benzodiazepines act by:
 - Inhibiting serotonin reuptake
 > Positive allosteric modulation.
 
-Q: The usual maximum duration for benzodiazepine use in anxiety or insomnia is about:
-- 2 to 4 days
-- *2 to 4 weeks
-- 6 months
+Q: The usual maximum duration for benzodiazepine use in anxiety or insomnia is:
+- A single night
+- *A few weeks at most
+- Six months
 - Indefinite
 > Dependence develops quickly.
 

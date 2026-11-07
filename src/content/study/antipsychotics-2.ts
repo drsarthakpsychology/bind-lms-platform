@@ -215,15 +215,19 @@ Q: A woman on quetiapine 600 mg for bipolar disorder starts carbamazepine. Withi
 ## 5.5 Treatment-resistant schizophrenia and the science of clozapine [core][advanced]
 ### Defining resistance properly
 An international working group agreed minimum criteria so that research and practice speak the same language:
-- At least **two** adequate trials of different antipsychotics.
-- Each lasting at least **6 weeks** at a dose equivalent to at least **600 mg chlorpromazine** a day.
+- At least **two** adequate trials of different antipsychotics, each long enough and at a high enough dose.
 - Adherence confirmed (at least 80% of doses, ideally with a level or a depot).
 - At least moderate symptoms on a standard rating scale, with impaired functioning.
+
+:::clinician
+### The working group's minimum numbers
+Each trial at least 6 weeks at a dose equivalent to at least 600 mg chlorpromazine a day; adherence of at least 80% of prescribed doses, confirmed by at least two sources, including a plasma level on at least one occasion where possible.
+:::
 
 About a third of people with schizophrenia meet these criteria. Many are **resistant from the first episode**, which suggests a different biology: imaging finds normal, not raised, dopamine synthesis in many resistant patients, and glutamate differences instead.
 
 :::widget flow
-{"title": "From first episode to clozapine and beyond", "layout": "tree", "nodes": [{"id": "f0", "label": "First antipsychotic at an adequate dose", "detail": "Most first-episode patients respond, often at low doses."}, {"id": "f1", "label": "Responds", "parent": "f0", "detail": "Continue, monitor physical health, relapse prevention plan."}, {"id": "f2", "label": "Little or no response", "parent": "f0", "detail": "Check adherence (level or depot), substances, dose and duration, and diagnosis."}, {"id": "f3", "label": "Second, different antipsychotic", "parent": "f2", "detail": "At least 6 weeks at an adequate dose."}, {"id": "f4", "label": "Still resistant: offer clozapine", "parent": "f3", "detail": "Do not delay. Each year of delay lowers the chance of response."}, {"id": "f5", "label": "Clozapine response", "parent": "f4", "detail": "Continue with full monitoring."}, {"id": "f6", "label": "Partial response on clozapine", "parent": "f4", "detail": "Check level (at least 350 ng/mL), wait long enough, then consider augmentation: amisulpride or aripiprazole, or ECT; treat side effects."}], "caption": "Tap each branch. The commonest error in practice is not a wrong drug but a long delay before clozapine."}
+{"title": "From first episode to clozapine and beyond", "layout": "tree", "nodes": [{"id": "f0", "label": "First antipsychotic at an adequate dose", "detail": "Most first-episode patients respond, often at low doses."}, {"id": "f1", "label": "Responds", "parent": "f0", "detail": "Continue, monitor physical health, relapse prevention plan."}, {"id": "f2", "label": "Little or no response", "parent": "f0", "detail": "Check adherence (level or depot), substances, dose and duration, and diagnosis."}, {"id": "f3", "label": "Second, different antipsychotic", "parent": "f2", "detail": "A full trial, long enough and at an adequate dose."}, {"id": "f4", "label": "Still resistant: offer clozapine", "parent": "f3", "detail": "Do not delay. Each year of delay lowers the chance of response."}, {"id": "f5", "label": "Clozapine response", "parent": "f4", "detail": "Continue with full monitoring."}, {"id": "f6", "label": "Partial response on clozapine", "parent": "f4", "detail": "Check level (at least 350 ng/mL), wait long enough, then consider augmentation: amisulpride or aripiprazole, or ECT; treat side effects."}], "caption": "Tap each branch. The commonest error in practice is not a wrong drug but a long delay before clozapine."}
 :::
 
 ### Why clozapine works, and what we still do not know
@@ -244,7 +248,7 @@ About a third of people with schizophrenia meet these criteria. Many are **resis
 :::
 
 :::recall
-1. State the main criteria for treatment-resistant schizophrenia. || Two adequate trials (6 weeks, at least 600 mg CPZ equivalent), confirmed adherence, at least moderate symptoms and impaired function.
+1. State the main criteria for treatment-resistant schizophrenia. || Two adequate trials (long enough, at least 600 mg chlorpromazine equivalent), confirmed adherence, at least moderate symptoms and impaired function.
 2. What does imaging suggest about dopamine in many resistant patients? || Dopamine synthesis is often normal, not raised.
 3. Name two augmentation options for partial clozapine response. || Amisulpride or aripiprazole; ECT.
 4. What is Duffy-null associated neutrophil count? || A benign, lifelong lower count common in some ancestries, without extra infection risk.

@@ -360,7 +360,7 @@ Valproate is highly teratogenic: **neural tube defects** (spina bifida) and othe
 :::
 
 :::widget decide
-{"scene": "Pooja, 19, a college student in Jaipur, has had two manic episodes. In the emergency department she was started on valproate (Encorate Chrono) by a junior doctor. She has a boyfriend, does not use contraception, and her family wants her married soon. She comes for follow-up.", "ask": "What is the best plan?", "choices": [{"label": "Continue valproate; she is not planning a pregnancy now", "verdict": "harm", "outcome": "Eight months later she is pregnant at 10 weeks. The baby is born with spina bifida and later has learning difficulties.", "why": "Half of pregnancies are unplanned. Valproate's harm happens in the first weeks, often before a woman knows she is pregnant."}, {"label": "Explain the risks clearly and kindly; switch to an alternative such as an antipsychotic with evidence in mania (for example aripiprazole or quetiapine), or lithium with contraception advice, and plan long-term prevention with her", "verdict": "best", "outcome": "She chooses aripiprazole, stays well, and knows to talk to the team before trying for a baby.", "why": "Valproate should be avoided in girls and women who could become pregnant when other effective options exist. Shared decisions respect her future."}, {"label": "Continue valproate and tell her to take folic acid", "verdict": "harm", "outcome": "Folic acid does not prevent valproate's effects on brain development.", "why": "Folic acid lowers neural tube risk a little but does not make valproate safe."}]}
+{"scene": "Pooja, 19, a college student in Jaipur, has had two manic episodes. In the emergency department she was started on valproate (Encorate Chrono) by a junior doctor. She has a boyfriend, does not use contraception, and her family wants her married soon. She comes for follow-up.", "ask": "What is the best plan?", "choices": [{"label": "Continue valproate; she is not planning a pregnancy now", "verdict": "harm", "outcome": "Eight months later she is pregnant, in the first trimester. The baby is born with spina bifida and later has learning difficulties.", "why": "Half of pregnancies are unplanned. Valproate's harm happens in the first weeks, often before a woman knows she is pregnant."}, {"label": "Explain the risks clearly and kindly; switch to an alternative such as an antipsychotic with evidence in mania (for example aripiprazole or quetiapine), or lithium with contraception advice, and plan long-term prevention with her", "verdict": "best", "outcome": "She chooses aripiprazole, stays well, and knows to talk to the team before trying for a baby.", "why": "Valproate should be avoided in girls and women who could become pregnant when other effective options exist. Shared decisions respect her future."}, {"label": "Continue valproate and tell her to take folic acid", "verdict": "harm", "outcome": "Folic acid does not prevent valproate's effects on brain development.", "why": "Folic acid lowers neural tube risk a little but does not make valproate safe."}]}
 :::
 
 :::student
@@ -497,7 +497,7 @@ Q: A patient on valproate is started on lamotrigine. The correct approach is:
 ### Starting and stopping
 - Usual start 300 to 400 mg at night, adjusting by level. Older people and those with kidney problems need lower doses.
 - Once-daily dosing at night is common and may be kinder to the kidneys.
-- **Do not stop suddenly**: abrupt stopping raises the risk of **rebound mania** and suicide. Taper over at least 4 weeks, ideally longer.
+- **Do not stop suddenly**: abrupt stopping raises the risk of **rebound mania** and suicide. Taper over at least a month, ideally longer.
 - **Lithium and suicide**: lithium lowers suicide and self-harm in mood disorders more than other mood stabilisers; this is one reason it remains first choice for maintenance.
 
 ### Kidney and thyroid in practice
@@ -626,7 +626,7 @@ Benzodiazepines are **positive allosteric modulators of the GABA-A receptor**: t
 - Paradoxical agitation (children, older adults, learning disability).
 
 :::define Prescribing rules
-Use the lowest dose for the **shortest time: about 2 to 4 weeks**. Explain dependence risk at the start. Stop long-term use **gradually**, often after switching to a long-acting drug such as diazepam.
+Use the lowest dose for the **shortest time: a few weeks at most**. Explain dependence risk at the start. Stop long-term use **gradually**, often after switching to a long-acting drug such as diazepam.
 :::
 
 :::safety Overdose
@@ -653,7 +653,7 @@ Receptor profile: positive allosteric modulators at alpha1, 2, 3 and 5 containin
 :::recall
 1. How do benzodiazepines work? || Positive allosteric modulation of GABA-A, increasing chloride channel opening frequency.
 2. Give five uses of benzodiazepines. || Short-term anxiety, insomnia, seizures, alcohol withdrawal, catatonia (also agitation, akathisia).
-3. What is the usual maximum duration, and why? || About 2 to 4 weeks, because of tolerance and dependence.
+3. What is the usual maximum duration, and why? || A few weeks at most, because of tolerance and dependence.
 4. What is the antidote, and its risk? || Flumazenil; it can trigger seizures in dependence or mixed overdose.
 :::
 
@@ -745,12 +745,12 @@ Q: A woman sleeps badly for 6 months, lies in bed for 10 hours awake, and naps i
 ### A taper plan
 1. **Engage**: explain why, agree a pace the person can manage, and that symptoms during taper are expected and pass.
 2. **Switch** a short-acting benzodiazepine (alprazolam) to an equivalent dose of a **long-acting** one (diazepam or clonazepam), in steps.
-3. **Reduce slowly**: about **5 to 10% every 1 to 2 weeks**, slower towards the end. Total taper often takes **months**.
+3. **Reduce slowly**: about **5 to 10% at a time**, holding each step until withdrawal settles, slower towards the end. Total taper often takes **months**.
 4. **Support**: CBT for anxiety and insomnia, sleep hygiene, relaxation.
 5. **Do not rush the last steps**; pause rather than go back up if withdrawal is hard.
 
 :::widget worked
-{"title": "Converting alprazolam to diazepam", "steps": [{"q": "Ravi takes alprazolam 0.5 mg three times a day (1.5 mg a day). Using the table, what is his diazepam-equivalent dose?", "a": "0.5 mg alprazolam is about 10 mg diazepam, so 1.5 mg is about **30 mg diazepam** a day."}, {"q": "Do you switch all at once?", "a": "No. Swap one dose at a time over about a week, for example the night dose first (0.5 mg alprazolam to 10 mg diazepam), then the morning, then the afternoon."}, {"q": "How do you then reduce 30 mg diazepam?", "a": "By about 2 to 3 mg every 1 to 2 weeks at first, then 1 mg steps below about 10 mg, pausing if withdrawal is hard."}, {"q": "Roughly how long might this take?", "a": "Several months. A slow, steady taper the person controls is more successful than a fast one."}], "yourTurn": [{"q": "A woman takes clonazepam 1 mg at night. What is the diazepam equivalent?", "a": "About 20 mg diazepam (0.5 mg clonazepam is about 10 mg). Clonazepam is already long-acting, so many people simply taper the clonazepam itself in small steps."}]}
+{"title": "Converting alprazolam to diazepam", "steps": [{"q": "Ravi takes alprazolam 0.5 mg three times a day (1.5 mg a day). Using the table, what is his diazepam-equivalent dose?", "a": "0.5 mg alprazolam is about 10 mg diazepam, so 1.5 mg is about **30 mg diazepam** a day."}, {"q": "Do you switch all at once?", "a": "No. Swap one dose at a time over about a week, for example the night dose first (0.5 mg alprazolam to 10 mg diazepam), then the morning, then the afternoon."}, {"q": "How do you then reduce 30 mg diazepam?", "a": "By about 2 to 3 mg at a time at first, then 1 mg steps below about 10 mg, holding each step until he settles and pausing if withdrawal is hard."}, {"q": "Roughly how long might this take?", "a": "Several months. A slow, steady taper the person controls is more successful than a fast one."}], "yourTurn": [{"q": "A woman takes clonazepam 1 mg at night. What is the diazepam equivalent?", "a": "About 20 mg diazepam (0.5 mg clonazepam is about 10 mg). Clonazepam is already long-acting, so many people simply taper the clonazepam itself in small steps."}]}
 :::
 
 ### Benzodiazepine misuse in India
@@ -765,14 +765,14 @@ A person taking large doses (for example many alprazolam tablets a day) who stop
 :::recall
 1. How much clonazepam roughly equals 10 mg diazepam? || 0.5 mg.
 2. Why switch alprazolam to diazepam before tapering? || A long half-life gives smoother withdrawal.
-3. How fast should a long-term benzodiazepine be reduced? || About 5 to 10% every 1 to 2 weeks, slower at the end.
+3. How fast should a long-term benzodiazepine be reduced? || About 5 to 10% at a time, each step held until settled, slower at the end.
 4. When is inpatient detoxification needed? || High doses, seizure history, alcohol or other drug use.
 :::
 
 :::mcq
 Q: A man on alprazolam 3 mg a day for 4 years wants to stop. Which plan is safest?
 - Stop today
-- *Switch gradually to an equal dose of diazepam, then reduce by about a tenth every 1 to 2 weeks
+- *Switch gradually to an equal dose of diazepam, then reduce by about a tenth at a time, step by step
 - Halve every week
 - Swap to zolpidem
 > Long-acting switch, slow taper, support; stopping suddenly can cause seizures.
@@ -859,10 +859,10 @@ Q: Which antipsychotic treats bipolar depression but not mania?
 - Aripiprazole
 > Lurasidone is used for bipolar depression.
 
-Q: The usual maximum length of a benzodiazepine course for anxiety or insomnia is about:
-- 2 days
-- *2 to 4 weeks
-- 6 months
+Q: The usual maximum length of a benzodiazepine course for anxiety or insomnia is:
+- A single night
+- *A few weeks at most
+- Six months
 - Lifelong
 > Dependence develops quickly.
 

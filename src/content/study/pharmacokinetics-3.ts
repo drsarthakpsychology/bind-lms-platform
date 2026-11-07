@@ -41,7 +41,7 @@ Enzyme induced by smoking? :: CYP1A2.
 Strong CYP1A2 inhibitor? :: Fluvoxamine (also ciprofloxacin).
 Three strong CYP2D6 inhibitors? :: Fluoxetine, paroxetine, bupropion.
 Strong CYP3A4 inducer used for TB? :: Rifampicin.
-How long does induction take? :: About 1 to 3 weeks.
+How long does induction take? :: Weeks, because new enzyme must be made.
 What is phenoconversion? :: A medicine changing the metaboliser phenotype from what genes predict.
 Brain area outside the barrier raising prolactin? :: Pituitary.
 Pump limiting brain entry of paliperidone? :: P-glycoprotein.
@@ -191,12 +191,12 @@ Bioavailability is the fraction of a dose reaching the circulation unchanged; fi
 
 :::qa How do inhibitors and inducers differ in onset, offset and clinical importance? [beginner]
 ### Short answer
-Inhibitors act within days as they reach their level (mechanism-based ones persist until new enzyme forms); inducers take 1 to 3 weeks to build up and to wear off, because enzyme must be made or lost.
+Inhibitors act within days as they reach their level (mechanism-based ones persist until new enzyme forms); inducers take weeks to build up and to wear off, because enzyme must be made or lost.
 | | Inhibitor | Inducer |
 |---|---|---|
 | Effect on substrate | Level rises | Level falls |
-| Onset | Days | 1 to 3 weeks |
-| Offset | Days (longer if irreversible) | 1 to 3 weeks |
+| Onset | Days | Weeks |
+| Offset | Days (longer if irreversible) | Weeks |
 | Example | Fluvoxamine raises clozapine | Carbamazepine lowers quetiapine |
 | Risk | Toxicity | Treatment failure; toxicity when the inducer stops |
 ### The hidden danger
@@ -391,7 +391,7 @@ After a dose, fat-soluble drugs first reach blood and brain, then move into fat 
 
 :::qa How do mechanism-based inhibition and induction through nuclear receptors work? [advanced]
 ### Short answer
-Mechanism-based inhibitors are metabolised by the enzyme into reactive forms that bind it permanently; recovery needs new enzyme (days). Inducers bind nuclear receptors (PXR, CAR, AhR), increasing transcription of CYP and transporter genes over 1 to 3 weeks.
+Mechanism-based inhibitors are metabolised by the enzyme into reactive forms that bind it permanently; recovery needs new enzyme (days). Inducers bind nuclear receptors (PXR, CAR, AhR), increasing transcription of CYP and transporter genes over weeks.
 ### Examples
 - Paroxetine (CYP2D6) and clarithromycin (CYP3A4): mechanism-based.
 - Rifampicin, carbamazepine, St John's wort: PXR inducers of CYP3A4 and P-glycoprotein.

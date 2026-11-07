@@ -126,7 +126,7 @@ The **half-life** is the time it takes for the amount of medicine in the blood t
 | Fluoxetine with norfluoxetine | Days to weeks | Almost tapers itself; long washout |
 
 :::widget worked
-{"title": "Half-life in your head", "steps": [{"q": "A medicine has a half-life of 12 hours. Starting from 100 units, how much is left after one day?", "a": "One day is two half-lives: 100, then 50, then **25 units**."}, {"q": "Taken every day, about how long until it reaches steady level?", "a": "4 to 5 half-lives: about **2 to 2.5 days**."}, {"q": "If a medicine's half-life is 1 week, how long until it is steady?", "a": "About 4 to 5 weeks. This is why changes to slow medicines take a long time to show."}], "yourTurn": [{"q": "A medicine with a half-life of 2 days is stopped. Roughly when is it washed out?", "a": "About 5 half-lives: around 10 days."}]}
+{"title": "Half-life in your head", "steps": [{"q": "A medicine has a half-life of 12 hours. Starting from 100 units, how much is left after one day?", "a": "One day is two half-lives: 100, then 50, then **25 units**."}, {"q": "Taken every day, about how long until it reaches steady level?", "a": "4 to 5 half-lives: about **2 to 2.5 days**."}, {"q": "If a medicine's half-life is 7 days, how long until it is steady?", "a": "4 to 5 half-lives: about a month. This is why changes to slow medicines take a long time to show."}], "yourTurn": [{"q": "A medicine with a half-life of 2 days is stopped. Roughly when is it washed out?", "a": "About 5 half-lives: around 10 days."}]}
 :::
 
 :::recall
@@ -405,7 +405,7 @@ The liver makes drugs easier to remove in two broad phases:
 1. What do Phase I and Phase II metabolism do? || Phase I changes the molecule (mostly CYP); Phase II attaches a water-soluble group (such as glucuronide).
 2. Name the enzyme induced by smoking and two drugs affected. || CYP1A2; clozapine and olanzapine.
 3. Name three strong CYP2D6 inhibitors. || Fluoxetine, paroxetine, bupropion.
-4. How long does enzyme induction take to develop? || About 1 to 3 weeks.
+4. How long does enzyme induction take to develop? || Weeks, because new enzyme must be made.
 :::
 
 :::mcq
@@ -510,7 +510,7 @@ Q: Why is a level drawn 2 hours after a dose misleading for most drugs?
 :::
 
 :::widget decide
-{"scene": "Fatima, 28, in Bhopal, has bipolar II disorder well controlled on lamotrigine 200 mg. She is now 30 weeks pregnant and over the past month her low mood has returned. No one has changed her dose.", "ask": "What is the likely reason, and what should be planned?", "choices": [{"label": "Lamotrigine has stopped working; switch to valproate", "verdict": "harm", "outcome": "Valproate exposes the baby to serious risks, and the switch itself destabilises her.", "why": "Valproate is avoided in pregnancy, and the problem is kinetic."}, {"label": "Pregnancy speeds up lamotrigine clearance, so her level has fallen. Check a level if available, raise the dose step by step, and plan to reduce it promptly after delivery, when clearance falls back", "verdict": "best", "outcome": "On a higher dose her mood recovers. Her dose is reduced in the days after delivery and she avoids toxicity.", "why": "Glucuronidation rises in pregnancy and falls quickly after birth. Planning both changes protects her."}, {"label": "Do nothing until the baby is born", "verdict": "harm", "outcome": "Her depression deepens in the last weeks of pregnancy.", "why": "Untreated depression in late pregnancy harms mother and baby."}]}
+{"scene": "Fatima, 28, in Bhopal, has bipolar II disorder well controlled on lamotrigine 200 mg. She is now in the third trimester and over the past month her low mood has returned. No one has changed her dose.", "ask": "What is the likely reason, and what should be planned?", "choices": [{"label": "Lamotrigine has stopped working; switch to valproate", "verdict": "harm", "outcome": "Valproate exposes the baby to serious risks, and the switch itself destabilises her.", "why": "Valproate is avoided in pregnancy, and the problem is kinetic."}, {"label": "Pregnancy speeds up lamotrigine clearance, so her level has fallen. Check a level if available, raise the dose step by step, and plan to reduce it promptly after delivery, when clearance falls back", "verdict": "best", "outcome": "On a higher dose her mood recovers. Her dose is reduced in the days after delivery and she avoids toxicity.", "why": "Glucuronidation rises in pregnancy and falls quickly after birth. Planning both changes protects her."}, {"label": "Do nothing until the baby is born", "verdict": "harm", "outcome": "Her depression deepens in the last weeks of pregnancy.", "why": "Untreated depression in late pregnancy harms mother and baby."}]}
 :::
 
 :::recall
@@ -592,8 +592,8 @@ Q: Rifampicin added to quetiapine will:
 Q: Induction of liver enzymes typically takes:
 - Minutes
 - Hours
-- *1 to 3 weeks
-- 6 months
+- *Weeks
+- Years
 > New enzyme must be made.
 
 Q: If clearance halves and the dose stays the same, the steady-state level:
