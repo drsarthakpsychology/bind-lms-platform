@@ -57,6 +57,10 @@ Many psychologists, including Keith Stanovich, Richard West and Daniel Kahneman,
 | Good at | Recognising faces, reading emotions, familiar skills, quick gut judgments | Calculation, logic, checking, following rules |
 | Weak spot | Systematic biases | Laziness: it often just endorses System 1 |
 
+:::widget compare
+{"title": "Slide from System 1 to System 2", "a": {"label": "System 1", "points": ["Fast and automatic", "Mostly outside awareness", "Runs alongside other tasks", "Reads a face, finishes '2 plus 2'", "Prone to systematic biases"], "summary": "System 1 answers first, with a feeling of certainty. In the bat and ball puzzle it shouts '10 rupees'."}, "b": {"label": "System 2", "points": ["Slow and effortful", "Conscious, step by step", "Needs working memory", "Checks a sum, follows a rule", "Lazy: often just agrees with System 1"], "summary": "System 2 can catch the error, but only if it bothers to check. Tiredness, hurry and stress make it check less."}}
+:::
+
 :::widget guess
 {
   "prompt": "A cricket bat and a ball cost ₹110 together. The bat costs ₹100 more than the ball. How much does the ball cost?",
@@ -111,6 +115,10 @@ A **problem** exists when you have a goal but no obvious way to reach it. Proble
 - An **algorithm** is a step-by-step procedure that guarantees a solution if followed (long division; trying every combination of a 3-digit lock). Slow, but sure.
 - A **heuristic** is a rule of thumb that usually works and saves effort (try the most common combinations first; "work backwards from the answer"). Fast, but not guaranteed.
 
+:::widget compare
+{"title": "Algorithm or heuristic?", "a": {"label": "Algorithm", "points": ["A fixed step-by-step procedure", "Guarantees an answer if followed", "Can be very slow", "Trying all 1,000 codes on a 3-digit lock"], "summary": "Use an algorithm when being right matters more than being quick, and the problem is small enough."}, "b": {"label": "Heuristic", "points": ["A rule of thumb", "Usually works, but no guarantee", "Fast and saves effort", "Trying birthdays and 1-2-3 first"], "summary": "Heuristics are how people solve most real problems. Their price is occasional, predictable error."}}
+:::
+
 ### Insight: the "aha!" moment
 Sometimes a solution arrives suddenly, after being stuck, as the problem is seen in a new way. Wolfgang Köhler's chimpanzees (you met them in the module on learning) and many human puzzles show this **insight**.
 
@@ -118,6 +126,10 @@ Sometimes a solution arrives suddenly, after being stuck, as the problem is seen
 - **Mental set**: sticking with a method that worked before, even when a simpler one is now available.
 - **Functional fixedness**: seeing an object only in its usual function.
 - **Confirmation bias**: seeking information that supports your idea and ignoring what does not.
+
+:::widget flow
+{"title": "How confirmation bias feeds itself", "layout": "cycle", "nodes": [{"id": "b", "label": "A belief", "detail": "'My new classmate is arrogant.'"}, {"id": "s", "label": "Search for support", "detail": "You notice every time she does not greet you, and ask friends about times she seemed rude."}, {"id": "i", "label": "Ignore the rest", "detail": "The day she helped you with notes feels like an exception, so it is forgotten."}, {"id": "c", "label": "Belief feels confirmed", "detail": "Now you feel even surer, which makes the next search even more one-sided."}], "edgeLabels": {"b>s": "look for", "s>i": "filter out", "i>c": "conclude", "c>b": "stronger"}, "caption": "The way out is to ask: what would I expect to see if I were wrong, and have I looked for it?"}
+:::
 
 :::widget reveal
 {
@@ -192,6 +204,10 @@ Q: A student uses a long formula to solve every statistics question, even when t
 | Around 12 months | **First words** |
 | 18 to 24 months | Vocabulary spurt; **two-word** (telegraphic) speech: "Papa go", "more milk" |
 | 2 to 5 years | Grammar grows fast; **overregularisation** ("mouses", "goed") |
+
+:::widget timeline
+{"prompt": "Put a child's language milestones in order, from birth onwards.", "events": [{"label": "Crying, and a preference for human voices", "when": "Birth"}, {"label": "Cooing: vowel-like sounds such as 'ooo'", "when": "2 to 4 mo"}, {"label": "Babbling: 'ba-ba', 'da-da'", "when": "6 to 10 mo"}, {"label": "First words", "when": "About 1 yr"}, {"label": "Two-word speech: 'more milk'", "when": "18 to 24 mo"}, {"label": "Overregularisation: 'goed', 'mouses'", "when": "2 to 5 yrs"}], "why": "Sounds come before words, and words before grammar. Overregularisation comes late because the child has to learn a rule before over-applying it."}
+:::
 
 :::widget flow
 {
@@ -270,6 +286,14 @@ Definitions vary, but most experts agree that **intelligence** is the general me
 - **William Stern** (1912) proposed the **intelligence quotient**: mental age divided by chronological age, multiplied by 100. A 10-year-old performing like a typical 12-year-old has a ratio IQ of 120.
 - **Lewis Terman** (Stanford, 1916) adapted Binet's test as the **Stanford-Binet** and popularised IQ.
 - Ratio IQ breaks down in adults (mental age stops rising), so modern tests use the **deviation IQ** (David Wechsler): your score compared with others of your age, scaled so the **mean is 100** and the **standard deviation is 15**.
+
+:::widget worked
+{"title": "Ratio IQ and why it fails for adults", "steps": [{"q": "An 8-year-old performs like a typical 10-year-old. What is her ratio IQ?", "a": "Mental age 10 divided by real age 8 is 1.25. Times 100 gives 125."}, {"q": "A 10-year-old performs like a typical 8-year-old. What is his ratio IQ?", "a": "8 divided by 10 is 0.8. Times 100 gives 80."}, {"q": "A 40-year-old performs like a typical 20-year-old adult. What does the formula give?", "a": "20 divided by 40 times 100 gives 50, which is absurd for an average adult. Mental age stops rising in the late teens, so the ratio collapses with age."}, {"q": "How does the deviation IQ fix this?", "a": "It compares you with people of your own age. The average for every age is set at 100, with a standard deviation of 15, so an adult of average ability scores 100 at any age."}], "yourTurn": [{"q": "A 6-year-old has a mental age of 9. Ratio IQ?", "a": "9 divided by 6 is 1.5, times 100 gives 150."}]}
+:::
+
+:::widget timeline
+{"prompt": "Put these steps in order, from the first intelligence test to the modern IQ score.", "events": [{"label": "Binet and Simon build a test to find children who need extra help, using mental age", "when": "1905"}, {"label": "Stern proposes the intelligence quotient: mental age over real age, times 100", "when": "1912"}, {"label": "Terman adapts Binet's test as the Stanford-Binet", "when": "1916"}, {"label": "Wechsler builds an adult test and the deviation IQ", "when": "1939"}], "why": "Mental age, then a ratio, then a test that spread the ratio, then the deviation IQ that works for adults too."}
+:::
 
 :::widget guess
 {

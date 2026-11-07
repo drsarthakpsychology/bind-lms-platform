@@ -9,6 +9,10 @@ export const part4 = String.raw`
 2. It is **specific to a population and its environments**. If every child had identical schooling and nutrition, the heritability of school marks would rise, because only genetic differences would be left.
 3. High heritability **within** groups says **nothing** about the causes of average differences **between** groups. Richard Lewontin's analogy: take a handful of genetically varied seeds and plant half in rich soil and half in poor soil. Within each tray, height differences are largely genetic; the difference between the trays is entirely environmental.
 
+:::widget compare
+{"title": "What heritability does and does not tell you", "a": {"label": "What it says", "points": ["How much of the variation between people in one population goes with genetic variation", "True only for that population, at that time, in those environments", "Can rise when environments become more equal"], "summary": "Heritability is a statement about differences in a group."}, "b": {"label": "What it does not say", "points": ["How much of one person's IQ is 'from genes'", "That a trait cannot be changed by environment", "Anything about why two groups differ on average", "That the trait is fixed at birth"], "summary": "Height is highly heritable, yet average height rose sharply with better food. Lewontin's seeds make the same point for groups."}}
+:::
+
 ### Evidence from families, twins and adoption
 | Relationship | Approximate correlation in IQ (from large reviews) |
 |---|---|
@@ -131,6 +135,10 @@ Q: Adoptive siblings' IQs correlate modestly in childhood but almost not at all 
 - In many African, Asian and Indian communities, ordinary people's ideas of intelligence put more weight on **social competence, responsibility, self-control and wisdom** than Western ideas do, which stress speed and abstract reasoning.
 - In India, J. P. Das and his colleagues described indigenous ideas centred on **buddhi**: a discerning understanding that includes knowing right action, self-awareness and thinking about consequences, together with being **samajhdar** (understanding, sensible) in relationships. Intelligence is seen less as a fixed amount and more as a quality of mind that grows with effort, guidance and good conduct.
 - Among the Kipsigis of Kenya, the word for a clever child includes obedience and helpfulness; in Zambia, cleverness and social responsibility are linked; Taiwanese Chinese conceptions include interpersonal and intrapersonal understanding and knowing when to show one's intelligence.
+
+:::widget compare
+{"title": "Who counts as intelligent?", "a": {"label": "Typical Western idea", "points": ["Speed of thinking", "Abstract reasoning and problem solving", "Verbal fluency", "Individual achievement"], "summary": "Most standard IQ tests grew from this picture, so they reward speed and abstraction."}, "b": {"label": "Many African, Asian and Indian ideas", "points": ["Social competence and responsibility", "Self-control and obedience in children", "Buddhi: discerning right action and its consequences", "Being samajhdar: sensible and understanding"], "summary": "A test built on one picture can underrate ability in people raised with the other. This is a key reason to check test fairness."}}
+:::
 
 ### Two more theories worth knowing
 - **Mike Anderson's theory of the minimal cognitive architecture** (1992) tries to explain both individual differences and development. A **basic processing mechanism**, varying in **speed** between people but not changing much with age, limits two **specific processors** (verbal-propositional and visual-spatial thinking). Separately, **modules** (for example, for perceiving three dimensions, theory of mind, language) mature with age and work regardless of the basic mechanism. This explains why a person with intellectual disability can have normal theory of mind or language, and why savants exist.
@@ -267,6 +275,10 @@ In the mental status examination, **formal thought disorder** describes disorgan
 - **Tangentiality** (replies that go off at a tangent and never return) and **circumstantiality** (taking a long, detailed route but reaching the point).
 - **Derailment** (loosening of associations), **incoherence** (word salad), **illogicality**, **clanging** (words linked by sound), **neologisms** (new words) and **perseveration**.
 **Concrete thinking** (difficulty with abstraction) was traditionally tested with **proverbs** ("What does 'a rolling stone gathers no moss' mean?") and **similarities**. But in India, many people with little schooling, or who never use English proverbs, give concrete answers without any illness, so proverb tests must be used with great caution, in the person's language and with familiar proverbs ("Jaisi karni, waisi bharni"), or not at all.
+
+:::widget sort
+{"prompt": "Name the sign of formal thought disorder in each reply.", "buckets": ["Tangentiality", "Circumstantiality", "Clanging", "Neologism", "Perseveration"], "items": [{"text": "Asked how she slept: 'Sleep is what cats do. My aunt in Kochi had cats. Kerala has many coconut trees.'", "bucket": 0, "why": "The reply goes off at a tangent and never returns to the question."}, {"text": "Asked how he got here: a ten-minute account of the auto, the driver's village, the traffic at the signal, his cousin's shop on the way, ending 'so I came by auto'.", "bucket": 1, "why": "Long and over-detailed, but it does reach the point."}, {"text": "'I am the main, the brain, the train, the rain.'", "bucket": 2, "why": "Words chosen for their sound, not their meaning."}, {"text": "'They put a thoughtsplinter in my head through the fan.'", "bucket": 3, "why": "A new, made-up word with private meaning."}, {"text": "'What is your name?' 'Ravi.' 'Where are you now?' 'Ravi.' 'What day is it?' 'Ravi.'", "bucket": 4, "why": "The same response repeated beyond its point, common in organic brain disorders."}]}
+:::
 
 ### Language disorders
 - **Aphasias** after stroke: **Broca's** (non-fluent, effortful, telegraphic speech; comprehension relatively spared; frontal lesion), **Wernicke's** (fluent but meaningless speech, poor comprehension, often unaware; temporal lesion), **conduction** (poor repetition; arcuate fasciculus) and **global** aphasia. These are covered in more depth in the module on the brain.

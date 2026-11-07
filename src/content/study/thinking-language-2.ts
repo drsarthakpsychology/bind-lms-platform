@@ -114,6 +114,10 @@ Q: People verify "A robin is a bird" faster than "An ostrich is a bird." This is
 ### Validity is not truth
 "All psychologists are doctors. Kavya is a psychologist. So Kavya is a doctor." The argument is **valid** (the conclusion follows), but the first premise is false, so the conclusion need not be **true**. An argument can be invalid with a true conclusion, too.
 
+:::widget sort
+{"prompt": "Ignore whether each conclusion is true in real life. Is the argument valid?", "buckets": ["Valid", "Invalid"], "items": [{"text": "All mammals can fly. Cows are mammals. So cows can fly.", "bucket": 0, "why": "Valid: the conclusion follows. It is false only because the first premise is false."}, {"text": "All flowers need water. Roses need water. So roses are flowers.", "bucket": 1, "why": "Invalid: many things need water. The believable conclusion tempts people to accept it. This is belief bias."}, {"text": "No reptiles have fur. All snakes are reptiles. So no snakes have fur.", "bucket": 0, "why": "Valid, and true as well."}, {"text": "Some students are tired. Some tired people are hungry. So some students are hungry.", "bucket": 1, "why": "Invalid: the tired students and the hungry tired people may be different people."}, {"text": "All doctors are graduates. Rekha is not a graduate. So Rekha is not a doctor.", "bucket": 0, "why": "Valid: this is denying the consequent (modus tollens)."}, {"text": "All doctors are graduates. Rekha is a graduate. So Rekha is a doctor.", "bucket": 1, "why": "Invalid: affirming the consequent. Plenty of graduates are not doctors."}]}
+:::
+
 ### Syllogisms and their traps
 - **Belief bias**: people accept invalid arguments with believable conclusions and reject valid ones with unbelievable conclusions. ("All flowers need water. Roses need water. So roses are flowers." Invalid, but it feels right.)
 - **Atmosphere effect** (Woodworth and Sells, 1935): premises with "some" or "not" create an "atmosphere" that pulls people towards conclusions with "some" or "not".
@@ -324,6 +328,10 @@ Mary Gick and Keith Holyoak (1980) told people a story about a general who captu
 - Experts classify problems by **deep structure** (physics problems by principle, such as conservation of energy); novices by **surface features** (problems "about inclined planes") (Chi, Feltovich and Glaser, 1981).
 - K. Anders Ericsson's **deliberate practice**: focused, effortful practice with feedback, aimed at weaknesses. A large 2014 meta-analysis found it explained only about 12 percent of the differences in performance overall: practice matters, but so do starting abilities, age of starting and other factors.
 
+:::widget compare
+{"title": "How a novice and an expert see the same problem", "a": {"label": "Novice", "points": ["Sorts problems by surface features ('it has a pulley')", "Recalls few pieces from a real chess position", "Works backwards from the goal, step by step", "Holds every detail in working memory", "Slow, effortful, easily overloaded"], "summary": "The novice sees many separate details and has to reason through each one."}, "b": {"label": "Expert", "points": ["Sorts problems by deep principle ('conservation of energy')", "Recalls whole meaningful chunks, but no better for random positions", "Works forwards from a recognised pattern", "Uses large, well-organised knowledge in long-term memory", "Fast, and spots what matters first"], "summary": "Expertise is mostly organised, domain-specific knowledge, built by years of practice. It does not transfer well to other fields."}}
+:::
+
 ### Incubation
 Taking a break from an unsolved problem sometimes helps. Explanations include rest, forgetting a misleading approach (breaking mental set), and continued unconscious processing. A 2009 meta-analysis found a reliable, modest incubation effect, strongest for creative problems with many possible answers.
 
@@ -446,6 +454,10 @@ The same choice described differently can flip decisions. In Tversky and Kahnema
 - **Loss frame**: With C, 400 people die; with D, a one-third chance that nobody dies and a two-thirds chance that all 600 die. **78 percent chose D** (the gamble).
 A and C are identical; so are B and D.
 
+:::widget compare
+{"title": "The same choice in two frames", "a": {"label": "Gain frame", "points": ["A: 200 people will be saved", "B: one-third chance all 600 saved, two-thirds chance none saved", "72 percent choose A"], "summary": "Described as lives saved, most people take the sure thing. People are risk-averse for gains."}, "b": {"label": "Loss frame", "points": ["C: 400 people will die", "D: one-third chance nobody dies, two-thirds chance all 600 die", "78 percent choose D"], "summary": "Described as deaths, most people gamble. People are risk-seeking for losses. A equals C and B equals D: only the words changed."}, "caption": "Clinicians frame too: 'a 90 percent survival rate' and 'a 10 percent death rate' lead patients to different choices."}
+:::
+
 **Prospect theory** (Kahneman and Tversky, 1979) explains this:
 - Outcomes are judged as **gains or losses from a reference point**, not as final states.
 - **Loss aversion**: losses hurt about **twice** as much as equal gains please.
@@ -460,6 +472,10 @@ A and C are identical; so are B and D.
 | **Overconfidence** | Being surer than accuracy justifies | Students predicting marks well above what they get |
 | **Hindsight bias** | "I knew it all along" after the outcome (Fischhoff, 1975) | After a patient's suicide, the warning signs seem obvious in a way they were not before |
 | **Confirmation bias** | Seeking and favouring supporting evidence | Asking only questions that fit the first diagnosis |
+
+:::widget sort
+{"prompt": "Name the bias in each situation.", "buckets": ["Sunk cost", "Endowment effect", "Overconfidence", "Hindsight bias"], "items": [{"text": "Staying in an engineering course you hate because you have already paid two years' fees", "bucket": 0, "why": "Past costs cannot be recovered, so they should not decide the future."}, {"text": "Refusing ₹15,000 for your old phone when you would only pay ₹10,000 for the same model", "bucket": 1, "why": "Owning something makes it feel more valuable."}, {"text": "Being 'sure' you scored 80 in the exam and getting 58", "bucket": 2, "why": "Confidence ran ahead of accuracy."}, {"text": "After the result, saying you always knew that team would win the final", "bucket": 3, "why": "Knowing the outcome makes it feel predictable."}, {"text": "Holding on to shares that keep falling because 'I have already lost so much on them'", "bucket": 0, "why": "Throwing good money after bad."}, {"text": "A trainee who rates her own diagnoses as 95 percent correct when supervisors agree with 70 percent", "bucket": 2, "why": "Overconfidence is common, and feedback is the cure."}]}
+:::
 
 ### Are heuristics bad?
 Gerd Gigerenzer argues that **fast and frugal heuristics** are often **ecologically rational**: they work well in the real world because they fit its structure. In the **recognition heuristic**, if you recognise one of two cities, guess that it is bigger. German students did better than American students at judging which of two American cities was larger, because they recognised only the big ones. Simple rules can beat complex models when information is noisy and limited.
@@ -588,6 +604,10 @@ Edward Sapir and his student Benjamin Lee Whorf (1940s) proposed:
 - **Strong version (linguistic determinism)**: language **determines** thought; you cannot think what your language has no words for.
 - **Weak version (linguistic relativity)**: language **influences** perception, memory and habits of thought.
 
+:::widget compare
+{"title": "Two versions of the Sapir-Whorf hypothesis", "a": {"label": "Strong: determinism", "points": ["Language determines thought", "No word means no concept", "Hopi speakers could not think of time as a quantity", "Little support: the Dani remember focal colours well with only two colour terms"], "summary": "The strong version has largely been rejected."}, "b": {"label": "Weak: relativity", "points": ["Language influences thought", "Words make some distinctions easier and faster", "Berinmo speakers discriminate colours best across their own colour boundary", "Language shapes habits of attention and memory"], "summary": "The weak version has good support: language nudges perception and memory, but does not imprison thought."}}
+:::
+
 Whorf claimed the Hopi language had no words for time as a quantity, so Hopi speakers thought about time differently. Later fieldwork (Malotki, 1983) found the Hopi language does have rich ways of expressing time. The popular claim that "Eskimos have hundreds of words for snow" is also exaggerated.
 
 ### Colour: the test case
@@ -686,6 +706,10 @@ Noam Chomsky's 1959 review of Skinner's account became one of the most influenti
 - **Parents rarely correct grammar**; they correct truth ("That's not a dog, that's a cat").
 Chomsky proposed an innate **language acquisition device (LAD)** containing **universal grammar**: principles common to all languages, with **parameters** set by experience (for example, verb-object order). He also distinguished **deep structure** (the underlying meaning) from **surface structure** (the actual word order), linked by transformational rules.
 
+:::widget compare
+{"title": "Skinner and Chomsky on how children learn language", "a": {"label": "Skinner: learning", "points": ["Language is verbal behaviour like any other", "Learned by imitation, reinforcement and shaping", "Mands and tacts are reinforced by results", "The environment does the teaching"], "summary": "Skinner's view explains accent, vocabulary and why children speak the language around them."}, "b": {"label": "Chomsky: nativist", "points": ["Children produce sentences they have never heard", "Input is too poor to teach grammar alone", "Errors like 'goed' show rules, not copying", "An innate universal grammar, with parameters set by experience"], "summary": "Chomsky's view explains how fast and uniformly grammar appears. Most researchers now combine both, with social interaction in the middle."}}
+:::
+
 ### Interactionist and social views
 - **Jerome Bruner**: a **language acquisition support system (LASS)**: routines, games and **child-directed speech** (slower, higher-pitched, simpler, repetitive, "motherese") scaffold the child.
 - **Michael Tomasello**: language grows from **joint attention** and reading others' intentions.
@@ -710,6 +734,10 @@ Eric Lenneberg (1967) proposed a **critical period** for language, ending around
 - **Jacqueline Johnson and Elissa Newport** (1989) tested Chinese and Korean immigrants to the United States. Those who arrived before about age 7 reached native-like grammar; scores fell steadily with later arrival.
 - **Nicaraguan Sign Language**: deaf children brought together in schools in the 1980s created a new sign language, and younger children made its grammar more systematic than older ones did.
 Most researchers now speak of a **sensitive period**, strongest for phonology and grammar, rather than a sharp cut-off.
+
+:::widget guess
+{"prompt": "Immigrants who arrived in the United States as children were later tested on English grammar. Up to about what age of arrival did they still reach native-like grammar?", "min": 0, "max": 20, "step": 1, "unit": "years", "answer": [6, 8], "reveal": "About 7. After that, scores fell steadily the later they arrived, and adults who arrived after their mid-teens varied a lot. Grammar and accent seem to have a sensitive period; vocabulary can grow at any age.", "clinician": "Age of arrival predicted grammar scores far better than years of exposure. This is one reason sensitive-period language is preferred over a sharp critical period, and why delayed language input in deaf children who are not offered sign language early is a real developmental risk."}
+:::
 
 :::widget brainmap
 {
