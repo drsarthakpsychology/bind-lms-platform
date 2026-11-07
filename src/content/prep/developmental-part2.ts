@@ -67,7 +67,7 @@ export const QUESTIONS: PrepQuestion[] = [
       "Trust versus mistrust",
       "Autonomy versus shame and doubt",
       "Industry versus inferiority",
-      "Identity versus role confusion",
+      "Identity versus identity confusion",
     ],
     answer: 1,
     explanation:
@@ -192,7 +192,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "A key difference between Erikson's and Freud's stage theories is that Erikson:",
     options: [
-      "Believed personality is fixed by age 5, once the Oedipal conflict is resolved",
+      "Believed personality is fixed by age 5, once the Oedipal conflict has been resolved for good",
       "Denied the existence of the ego",
       "Stressed culturally shaped psychosocial tasks and extended development across the lifespan",
       "Focused only on sexual drives",
@@ -308,7 +308,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Freud's case of 'Little Hans' concerned a five-year-old's:",
     options: [
       "Phobia of horses, interpreted as displaced fear of his father",
-      "Obsessional fear of rats being used as a punishment",
+      "Obsessional fear of rats being used as a punishment on his father",
       "Hysterical paralysis",
       "Dream of white wolves sitting in a tree",
     ],
@@ -388,7 +388,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Karl Abraham subdivided Freud's oral stage into:",
     options: [
       "Symbiotic and autistic phases",
-      "An anal expulsive and anal retentive phase, linked to toilet training",
+      "An anal expulsive and an anal retentive phase, both linked to toilet training",
       "Phallic and genital phases",
       "An early sucking (receptive) phase and a later oral sadistic (biting) phase",
     ],
@@ -431,7 +431,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "At the end of the phallic stage, as the Oedipus complex is resolved",
       "In the oral stage, during weaning",
-      "In the anal stage, as parents first demand toilet control",
+      "In the anal stage, as parents first demand toilet control and obedience",
       "In the genital stage, after puberty",
     ],
     answer: 0,
@@ -449,7 +449,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Kohlberg's three levels of moral reasoning are:",
     options: [
       "Oral, anal and phallic",
-      "Heteronomous, autonomous and universal",
+      "Heteronomous, autonomous and universal ethical principles",
       "Preconventional, conventional and postconventional",
       "Sensorimotor, concrete and formal",
     ],
@@ -511,7 +511,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "In Colby, Kohlberg, Gibbs and Lieberman's 20-year longitudinal study of Kohlberg's original sample:",
     options: [
       "Participants moved through the stages in order without skipping, and stage 6 was too rare to keep",
-      "Most participants reached stage 6 by early adulthood, though few reached it in adolescence",
+      "Most participants reached stage 6 by early adulthood, though very few had reached it during adolescence",
       "Participants frequently skipped stages",
       "Moral reasoning declined steadily with age",
     ],
@@ -571,7 +571,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Gilligan's levels of the ethic of care, derived from interviews with women deciding about abortion, run in this order:",
     options: [
       "Heteronomous → autonomous → relational",
-      "Goodness as self-sacrifice → individual survival → universal justice for all",
+      "Goodness as self-sacrifice → individual survival → a universal ethic of justice for all people",
       "Law and order → social contract → universal principles",
       "Individual survival → goodness as self-sacrifice → non-violence (care for self and others)",
     ],
@@ -746,7 +746,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Kohlberg proposed that moral development depends on cognitive development. Which statement best expresses the relation he proposed?",
     options: [
-      "Formal operations guarantee postconventional reasoning once they are reached",
+      "Formal operations guarantee postconventional reasoning as soon as they are reached",
       "Moral development causes cognitive development",
       "The two are unrelated",
       "Logical development is necessary but not sufficient for advanced moral reasoning",
@@ -781,7 +781,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "McAdams and de St. Aubin's model of generativity extended Erikson by emphasising:",
     options: [
-      "Generativity as an exclusively biological drive to have and raise one's own children",
+      "Generativity as an exclusively biological drive to have children of one's own and raise them to adulthood",
       "Generativity as arising from inner desire and cultural demand, expressed in action and life story",
       "Generativity as a stage of early childhood",
       "Generativity as identical to intimacy",
@@ -912,7 +912,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Most adolescents and adults, in Kohlberg's research, reason predominantly at:",
     options: [
-      "The postconventional level only",
+      "The postconventional level only (stages 5 and 6)",
       "Stage 6",
       "Stage 1",
       "The conventional level (stages 3 and 4)",

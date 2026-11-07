@@ -110,7 +110,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Lower levels of dopamine activity than in childhood",
       "A lack of any reward sensitivity in adolescence",
-      "Complete maturity of the prefrontal cortex by age 12, before reward sensitivity rises",
+      "Complete maturity of the prefrontal cortex by about age 12, well before reward sensitivity rises",
       "Earlier maturation of a reward-sensitive system (ventral striatum) than of prefrontal control",
     ],
     answer: 3,
@@ -145,7 +145,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Research on pubertal timing has most consistently found that early-maturing girls are at greater risk of:",
     options: [
       "No psychological effects of any kind",
-      "Higher self-esteem and better academic outcomes than all other groups",
+      "Higher self-esteem and better academic outcomes than all other groups of girls and boys",
       "Depression, eating problems, early sexual activity and older, delinquent peers",
       "Delayed puberty in later years",
     ],
@@ -219,7 +219,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "From interviews with men in midlife, Daniel Levinson proposed that men's adult lives:",
     options: [
-      "Are fully determined by early childhood, with midlife simply repeating earlier conflicts",
+      "Are fully determined by early childhood, with midlife simply repeating the unresolved conflicts of infancy",
       "Show no change after age 20",
       "Follow Freud's psychosexual stages",
       "Alternate between stable structure-building periods and transitions, including one around 40 to 45",
@@ -254,7 +254,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Bernice Neugarten's concept of the 'social clock' refers to:",
     options: [
-      "The biological rate of ageing, measured by changes such as greying and wrinkling",
+      "The biological rate of ageing, measured by visible bodily changes such as greying and wrinkling",
       "Shared expectations about the right ages for life events such as marriage and retirement",
       "The suprachiasmatic nucleus",
       "The age at which intelligence peaks",
@@ -301,7 +301,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Parents' health declines immediately",
       "All mothers become clinically depressed",
-      "Marital satisfaction always falls as couples lose a shared focus",
+      "Marital satisfaction always falls as couples lose their shared focus on children",
       "Most parents' wellbeing and marital satisfaction stay the same or improve",
     ],
     answer: 3,
@@ -425,7 +425,7 @@ export const QUESTIONS: PrepQuestion[] = [
       "Rowe and Kahn",
       "Cumming and Henry",
       "Laura Carstensen",
-      "Paul Baltes",
+      "Paul and Margret Baltes",
     ],
     answer: 1,
     explanation:
@@ -461,7 +461,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "In Horn and Cattell's theory, which type of intelligence tends to remain stable or increase into old age?",
     options: [
-      "Working memory capacity",
+      "Working memory capacity (span)",
       "Fluid intelligence",
       "Processing speed",
       "Crystallised intelligence",
@@ -504,7 +504,7 @@ export const QUESTIONS: PrepQuestion[] = [
       "Nuns never develop dementia",
       "Low 'idea density' in essays the nuns wrote in their early 20s predicted later Alzheimer's disease",
       "Religious practice prevents all brain pathology",
-      "Brain pathology at autopsy always matched the severity of the nuns' cognitive symptoms",
+      "Brain pathology found at autopsy always matched the severity of each nun's cognitive symptoms in life",
     ],
     answer: 1,
     explanation:
@@ -616,7 +616,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Bonanno's research on trajectories of grief after the death of a spouse found that the most common pattern was:",
     options: [
       "Delayed grief appearing years later",
-      "Chronic grief lasting many years, with slow partial recovery",
+      "Chronic grief lasting many years, with only slow and partial recovery over time",
       "Resilience: stable, healthy functioning with only brief, mild disruption",
       "Depression that improved only after loss",
     ],
@@ -862,7 +862,7 @@ export const QUESTIONS: PrepQuestion[] = [
       "Argued that adolescent turmoil is shaped by culture, not biologically inevitable",
       "Proved that puberty does not occur in Samoa",
       "Introduced the Strange Situation",
-      "Was the first longitudinal study of ageing in a non-Western society",
+      "Was the first long-term longitudinal study of ageing carried out in a non-Western society",
     ],
     answer: 0,
     explanation:
@@ -921,7 +921,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "All traits decline in old age",
       "Personality is completely fixed after age 30",
-      "Neuroticism increases steadily throughout adulthood, as responsibilities accumulate",
+      "Neuroticism increases steadily throughout adulthood, as work and family responsibilities accumulate",
       "Conscientiousness, emotional stability and agreeableness rise from young adulthood to midlife",
     ],
     answer: 3,

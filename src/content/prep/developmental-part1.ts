@@ -86,7 +86,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "A 9-month-old watches a toy hidden under cloth A several times and retrieves it. The toy is then hidden under cloth B while she watches, but she searches under A. This is the A-not-B error, which Piaget placed in sensorimotor substage:",
     options: [
-      "6 (beginning of mental representation)",
+      "6 (beginning of mental representation and pretend play)",
       "2 (primary circular reactions)",
       "4 (coordinating secondary circular reactions)",
       "3 (secondary circular reactions)",
@@ -222,7 +222,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Inhelder and Piaget's pendulum problem, in which the child must find what controls the speed of swing, was used to show:",
     options: [
       "Object permanence",
-      "Conservation of length as the string is coiled and uncoiled",
+      "Conservation of length as the string is coiled, uncoiled and laid flat",
       "Formal operational hypothesis testing, isolating one variable at a time",
       "Egocentric speech",
     ],
@@ -306,7 +306,7 @@ export const QUESTIONS: PrepQuestion[] = [
       "Formal operational thinking",
       "Lack of object permanence",
       "Centration on the subclass, unable to consider whole and part at once",
-      "Failure of conservation of number when beads are spread out",
+      "Failure of conservation of number when the beads are spread out in a line",
     ],
     answer: 2,
     explanation:
@@ -340,7 +340,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Object permanence means understanding that:",
     options: [
       "Objects continue to exist even when they cannot be seen, heard or touched",
-      "The amount of liquid stays the same when poured into a taller glass",
+      "The amount of liquid stays the same when it is poured into a taller, thinner glass",
       "Other people can have different viewpoints",
       "Living things grow and change",
     ],
@@ -400,7 +400,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Dasen's cross-cultural studies of Piagetian tasks among Aboriginal Australian children found that:",
     options: [
       "Formal operations appeared before concrete operations",
-      "All stages appeared at exactly the same ages as in Swiss and other Western children",
+      "All stages appeared at exactly the same ages as in the Swiss and other Western samples tested",
       "No child ever acquired conservation",
       "Spatial tasks were mastered earlier and quantity conservation later than in Western samples",
     ],
@@ -434,7 +434,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Flexible questioning that follows the child's answers to uncover their reasoning",
       "Standardised testing with fixed questions and norms",
-      "Observing children only through one-way mirrors without interaction",
+      "Observing children only through one-way mirrors, without any interaction or questioning",
       "Using brain scans to identify stages",
     ],
     answer: 0,
@@ -492,7 +492,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Vygotsky's 'zone of proximal development' is the gap between:",
     options: [
       "The left and right hemispheres' abilities",
-      "A child's mental age and chronological age on an intelligence test",
+      "A child's mental age and chronological age as measured on an intelligence test",
       "Two Piagetian stages",
       "What a child can do alone and what the child can do with skilled guidance",
     ],
@@ -513,7 +513,7 @@ export const QUESTIONS: PrepQuestion[] = [
       "Wood, Bruner and Ross",
       "Vygotsky",
       "Piaget",
-      "Bronfenbrenner",
+      "Bronfenbrenner and Ceci",
     ],
     answer: 0,
     explanation:
@@ -573,7 +573,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Dynamic assessment, such as Feuerstein's Learning Potential Assessment Device, is most directly based on:",
     options: [
       "Binet's concept of mental age",
-      "Piaget's clinical method of following the child's reasoning without help",
+      "Piaget's clinical method of following the child's reasoning without giving any help",
       "Vygotsky's zone of proximal development: how much a child gains from mediated help",
       "Spearman's g factor",
     ],
@@ -637,7 +637,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "True concepts → complexes → heaps",
       "Unorganised heaps → complexes (including pseudoconcepts) → true concepts",
-      "Pseudoconcepts → unorganised heaps → complexes → true concepts",
+      "Pseudoconcepts → unorganised heaps → complexes → true concepts in adulthood",
       "Schemas → operations → equilibration",
     ],
     answer: 1,
@@ -654,7 +654,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "A key difference between Piaget and Vygotsky is that Vygotsky:",
     options: [
-      "Believed development must precede learning in every case, as maturation sets the pace",
+      "Believed development must precede learning in every case, as biological maturation sets the pace",
       "Proposed four universal stages of cognitive development",
       "Gave more weight to social interaction, culture and language as sources of cognitive growth",
       "Rejected any role for adults in children's learning",
@@ -730,7 +730,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Siegler's 'overlapping waves' model proposes that:",
     options: [
-      "Children use only one strategy at each stage, replacing it suddenly when the next stage begins",
+      "Children use only one strategy at each stage, replacing it suddenly when the next stage begins at a set age",
       "Children have several strategies at once, and each one's frequency shifts gradually with experience",
       "Development occurs in four fixed Piagetian stages",
       "Strategy use is unaffected by experience",
@@ -750,7 +750,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "In the Sally-Anne false-belief task, most children with autism, unlike typically developing 4-year-olds and children with Down syndrome of lower mental age:",
     options: [
       "Refused to answer",
-      "Answered correctly that Sally would look in her own basket, where she left it",
+      "Answered correctly that Sally would look in her own basket, where she had left it",
       "Said Sally would look where Anne had moved the marble, not where Sally left it",
       "Could not remember where the marble was",
     ],
@@ -839,7 +839,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Brainerd and Reyna's fuzzy-trace theory explains why children's false memories in the DRM paradigm (recalling 'sleep' after hearing bed, rest, tired...) often increase with age. According to the theory:",
     options: [
-      "Younger children store more gist than older children, so they produce more false alarms",
+      "Younger children store more gist than older children, so they produce many more of these false alarms",
       "Older children extract gist more readily, and gist supports recognising related but unstudied words",
       "Verbatim traces always produce false memories",
       "False memories reflect only guessing",
@@ -898,7 +898,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Observing the same children intensively over a short period of expected change",
       "Studying very young infants under a microscope",
-      "Comparing different age groups at one point in time to estimate change",
+      "Comparing different age groups at one point in time to estimate how change happens",
       "Analysing gene expression in brain tissue",
     ],
     answer: 0,
@@ -1039,7 +1039,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Slightly beyond what the child can do alone, where help makes success possible",
       "Only at the level the child has already mastered alone",
-      "Far beyond the child's reach, so that the child is always struggling",
+      "Far beyond the child's reach, so that the child is always struggling and stretched",
       "Only after the child has reached formal operations",
     ],
     answer: 0,
@@ -1058,7 +1058,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Encoding, storage and retrieval",
       "Sensation, perception and attention",
-      "Assimilation, accommodation, equilibration and organisation",
+      "Assimilation, accommodation, equilibration and organisation of mental schemes",
       "Inhibition, working-memory updating and cognitive flexibility (shifting)",
     ],
     answer: 3,
@@ -1256,7 +1256,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Luria's expeditions to Uzbekistan in the early 1930s, inspired by Vygotsky's ideas, found that unschooled peasants:",
     options: [
       "Performed identically to schooled participants",
-      "Solved abstract syllogisms more easily than schooled participants, using local knowledge",
+      "Solved abstract syllogisms more easily than schooled participants, drawing on their local knowledge",
       "Had no capacity for logical reasoning",
       "Reasoned from practical experience and would not draw conclusions about places they had not seen",
     ],

@@ -28,7 +28,7 @@ export const QUESTIONS: PrepQuestion[] = [
       "The wire 'mother' that provided milk",
       "A soft cloth 'mother' even when a wire 'mother' provided milk",
       "Neither surrogate",
-      "Whichever surrogate was warmer, regardless of texture",
+      "Whichever surrogate was warmer to the touch, regardless of texture",
     ],
     answer: 1,
     explanation:
@@ -44,7 +44,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Freezes, shows contradictory behaviour and seems confused on reunion",
       "Shows little distress at separation and avoids the mother on reunion",
-      "Is extremely distressed and, on reunion, both seeks contact and angrily resists being comforted",
+      "Is extremely distressed and, on reunion, both seeks contact and angrily resists being picked up and comforted",
       "Explores when the mother is present, may be distressed when she leaves, and is quickly comforted on reunion",
     ],
     answer: 3,
@@ -103,7 +103,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Bowlby's '44 juvenile thieves' study reported that many of the thieves diagnosed with 'affectionless psychopathy':",
     options: [
-      "Had securely attached relationships with both parents throughout early childhood",
+      "Had securely attached relationships with both parents throughout their early childhood",
       "Had experienced prolonged early separation from their mothers, unlike most controls",
       "Had been adopted at birth into stable homes",
       "Showed no difference from controls in early separation",
@@ -284,7 +284,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "De Wolff and van IJzendoorn's meta-analysis found that the association between maternal sensitivity and infant attachment security was:",
     options: [
       "Zero",
-      "Near perfect (r about 0.90), as Ainsworth predicted",
+      "Near perfect (r about 0.90), as Ainsworth's early work predicted",
       "Moderate (r about 0.24), leaving a 'transmission gap'",
       "Negative",
     ],
@@ -474,7 +474,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "In DSM-5-TR, a child who shows a pattern of overly familiar behaviour with unfamiliar adults and will readily go off with strangers after social neglect is most likely to meet criteria for:",
     options: [
       "Autism spectrum disorder",
-      "Reactive attachment disorder",
+      "Reactive attachment disorder (inhibited type)",
       "Separation anxiety disorder",
       "Disinhibited social engagement disorder",
     ],
@@ -524,7 +524,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "In attachment theory, using the caregiver as a 'secure base' means that the infant:",
     options: [
-      "Refuses to leave the caregiver's lap until it feels completely safe",
+      "Refuses to leave the caregiver's lap until it feels completely safe again",
       "Explores confidently while knowing the caregiver is there to return to",
       "Ignores the caregiver completely",
       "Prefers strangers to the caregiver",
@@ -749,7 +749,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Fonagy's concept of 'reflective functioning' (mentalisation) in parents is relevant to attachment because it:",
     options: [
       "Is the same as maternal deprivation",
-      "Refers to the reflex responses of newborns, such as rooting towards a parent's touch",
+      "Refers to the reflex responses of newborns, such as rooting and turning towards a parent's touch",
       "Is a measure of IQ",
       "Describes a parent's capacity to understand the child's behaviour in terms of mental states",
     ],

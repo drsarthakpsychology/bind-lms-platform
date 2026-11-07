@@ -43,7 +43,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "A 3-year-old says 'I goed to the park and saw two mouses.' She previously said 'went' correctly. This illustrates:",
     options: [
-      "Overextension of familiar words to new objects and actions",
+      "Overextension of familiar words to new objects, actions and situations",
       "Overregularisation, showing that the child has extracted a rule",
       "Telegraphic speech",
       "Echolalia",
@@ -121,7 +121,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Systematically corrected nearly all grammatical errors",
       "Corrected mainly the truth of what children said, not their grammar",
-      "Rewarded ungrammatical sentences more than grammatical ones",
+      "Rewarded ungrammatical sentences more often than they rewarded grammatical ones",
       "Never responded to children's speech",
     ],
     answer: 1,
@@ -136,7 +136,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Jean Berko's 'wug test' showed that young children:",
     options: [
-      "Learn grammar only by imitation, copying plurals they have heard adults use",
+      "Learn grammar only by imitation, copying the plural forms they have heard adults use",
       "Can only repeat words they have heard",
       "Apply morphological rules to new words, saying 'two wugs' for a made-up creature",
       "Cannot form plurals before age 7",
@@ -262,7 +262,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Child-directed speech ('motherese' or 'parentese') typically includes:",
     options: [
-      "Fast speech with complex grammar, to stretch the child's skills",
+      "Fast speech with complex grammar and long sentences, to stretch the child's skills",
       "Higher pitch, exaggerated intonation, short simple sentences and repetition",
       "Mostly whispered speech",
       "A monotone voice to avoid overstimulation",
@@ -307,7 +307,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Phonological loop span",
       "Type-token ratio",
-      "Peabody picture vocabulary score",
+      "Peabody picture vocabulary score (receptive words)",
       "Mean length of utterance (MLU) in morphemes",
     ],
     answer: 3,
@@ -345,7 +345,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "The 'vocabulary spurt' or 'naming explosion' typically occurs around:",
     options: [
-      "6 months, before first words",
+      "6 months, before the first words appear",
       "18 months, after about 50 words",
       "5 years, at school entry",
       "12 years, in adolescence",
@@ -363,7 +363,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Gleitman's 'syntactic bootstrapping' hypothesis proposes that children:",
     options: [
       "Learn grammar only after vocabulary exceeds 1,000 words",
-      "Use word meanings to discover grammatical categories, such as treating action words as verbs",
+      "Use word meanings to discover grammatical categories, such as treating action words as verbs and objects as nouns",
       "Use the sentence frame a new verb appears in, such as transitive or intransitive, to infer its meaning",
       "Cannot learn verbs before age 4",
     ],
@@ -380,7 +380,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Johnson and Newport tested Chinese and Korean immigrants to the US on English grammar. They found that:",
     options: [
       "Only years of residence predicted performance",
-      "Adults who arrived later always outperformed children, thanks to better study skills",
+      "Adults who arrived later always outperformed children, thanks to their better study skills and motivation",
       "Age of arrival had no effect",
       "Performance declined with age of arrival after about 7, with no clear trend among adult arrivals",
     ],
@@ -414,7 +414,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "The Sapir-Whorf hypothesis (linguistic relativity)",
       "Universal grammar",
-      "The critical period hypothesis (Lenneberg)",
+      "The critical period hypothesis (Lenneberg's maturational view)",
       "Fast mapping",
     ],
     answer: 0,
@@ -477,7 +477,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Microgenetic design",
       "Longitudinal design",
-      "Sequential design",
+      "Sequential (cohort-sequential) design",
       "Cross-sectional design",
     ],
     answer: 3,
@@ -521,7 +521,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Practice effects",
       "Cohort effects: older generations had less schooling",
-      "Floor effects in the young adult samples",
+      "Floor effects in the young adult samples, which hid their real ability",
       "Regression to the mean",
     ],
     answer: 1,
@@ -585,7 +585,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "In the habituation-dishabituation paradigm, an infant who looks longer at a new stimulus after repeated exposure to an old one is taken to:",
     options: [
       "Prefer familiar stimuli in general",
-      "Be unable to tell the stimuli apart",
+      "Be unable to tell the two stimuli apart",
       "Be tired",
       "Discriminate between the two stimuli",
     ],
@@ -698,7 +698,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Differences between generations due to the distinct historical experiences of each",
       "Differences caused by repeated testing",
-      "The influence of a shared peer group, such as classmates of the same year",
+      "The influence of a shared peer group, such as classmates who are in the same school year",
       "The influence of genes on development",
     ],
     answer: 0,
@@ -753,7 +753,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "The 'visual cliff' experiment by Gibson and Walk found that most crawling infants (6 to 14 months):",
     options: [
       "Could not see the checkerboard pattern",
-      "Crawled happily over the deep side when their mothers called",
+      "Crawled happily across the deep side whenever their mothers called to them",
       "Refused to crawl over the apparent drop even when their mothers called",
       "Showed fear only of the shallow side",
     ],
@@ -793,7 +793,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "A study examines the effects of a sudden policy change, such as the introduction of the midday meal scheme in some districts but not others, on children's school attendance, without random assignment by the researcher. This is best described as a:",
     options: [
       "Natural experiment (quasi-experiment)",
-      "Randomised controlled trial",
+      "Randomised controlled trial across districts",
       "Single-case experiment",
       "Laboratory experiment",
     ],
@@ -842,7 +842,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Vygotsky's view of the relation between thought and language was that:",
     options: [
-      "Thought is simply silent speech, as Watson argued, from the first words onward",
+      "Thought is simply silent speech, as Watson argued, from the child's very first words onward",
       "Language completely determines thought from birth",
       "They have separate roots until about age 2, when they merge so that thought becomes verbal",
       "Language is irrelevant to cognitive development",
@@ -885,7 +885,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Which finding best supports a role for social interaction, rather than mere exposure, in early speech learning?",
     options: [
       "Kuhl: infants learned Mandarin sound contrasts from a live speaker but not from video or audio",
-      "Eimas: infants perceive speech categorically, even for sounds absent in their language",
+      "Eimas: infants perceive speech sounds categorically, even contrasts absent in their own language",
       "Brown: morphemes are acquired in a consistent order",
       "Berko: children add plural endings to nonsense words",
     ],
