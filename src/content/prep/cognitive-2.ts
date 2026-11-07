@@ -25,7 +25,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     type: "mcq",
     stem: "Tulving distinguished episodic memory from semantic memory. Episodic memory is memory for",
     options: [
-      "general facts and word meanings shared by a culture",
+      "general facts and word meanings shared by members of a culture",
       "motor skills such as riding a bicycle",
       "information held for a few seconds in consciousness",
       "personally experienced events located in time and place",
@@ -144,7 +144,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     type: "mcq",
     stem: "Tulving's encoding specificity principle states that",
     options: [
-      "information is encoded only in short-term memory, never directly in LTM",
+      "information is encoded only in short-term memory, and never directly in long-term memory",
       "every item is encoded in exactly the same way, whatever the context",
       "a cue is effective to the extent that it was encoded with the target at study",
       "retrieval is independent of the cues present at test",
@@ -251,7 +251,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     stem: "Roediger and Karpicke compared repeated studying with repeated testing of prose passages. On a test one week later,",
     options: [
       "repeated testing beat restudying, although restudying had looked better after 5 minutes",
-      "repeated studying was better at every delay, because it gave more exposure to the text",
+      "repeated studying was better at every delay, because it gave more exposure to the whole text",
       "the two methods were equal once total time was matched",
       "testing helped only if feedback was given after every answer",
     ],
@@ -402,7 +402,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     type: "mcq",
     stem: "Ebbinghaus's forgetting curve, obtained with nonsense syllables, showed that",
     options: [
-      "forgetting is steady and linear over time",
+      "forgetting is steady and linear over the whole retention period",
       "forgetting is rapid at first and then slows down",
       "no forgetting occurs for 24 hours",
       "forgetting is complete within an hour",
@@ -436,7 +436,12 @@ export const QUESTIONS_2: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "After learning her new phone number, Riya finds she can no longer remember her old one. This is an example of",
-    options: ["retroactive interference", "proactive interference", "decay", "repression"],
+    options: [
+      "retroactive interference",
+      "proactive interference from old learning",
+      "decay",
+      "repression",
+    ],
     answer: 0,
     explanation:
       "Retroactive interference is new learning disrupting memory for older material. Proactive interference would be the old number disrupting recall of the new one. Decay is loss through disuse over time without a competing memory. Repression is motivated forgetting of threatening material.",
@@ -476,7 +481,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     type: "mcq",
     stem: "Jenkins and Dallenbach found that participants forgot less over 8 hours of sleep than over 8 hours awake. They interpreted this as evidence that",
     options: [
-      "forgetting is caused mainly by the decay of traces over time",
+      "forgetting is caused mainly by the passive decay of memory traces over time",
       "dreams strengthen memory by replaying the material",
       "forgetting depends largely on interference from waking activities",
       "sleep causes retrograde amnesia for recent learning",
@@ -558,7 +563,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
       "increased dorsolateral prefrontal and reduced hippocampal activity during suppression",
       "increased amygdala activity only, with no prefrontal change",
       "no difference in brain activity between think and no-think trials",
-      "reduced prefrontal activity and increased hippocampal activity during suppression",
+      "reduced prefrontal activity and increased hippocampal activity during the suppression trials",
     ],
     answer: 0,
     explanation:
@@ -677,7 +682,12 @@ export const QUESTIONS_2: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "When misleading information presented after an event is incorporated into a witness's memory of the event, this is known as",
-    options: ["the generation effect", "the reminiscence bump", "the misinformation effect", "encoding specificity"],
+    options: [
+      "the generation effect",
+      "the reminiscence bump in recall",
+      "the misinformation effect",
+      "encoding specificity",
+    ],
     answer: 2,
     explanation:
       "Loftus's work on the misinformation effect shows post-event information can distort reports (for example, a stop sign remembered as a yield sign). The generation effect is a benefit for self-produced items. The reminiscence bump concerns autobiographical memories from adolescence and early adulthood. Encoding specificity is about retrieval cues.",
@@ -734,7 +744,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     stem: "Neisser and Harsch questioned students the day after the Challenger shuttle disaster and again about three years later. They found that",
     options: [
       "flashbulb memories were perfectly accurate over three years",
-      "students could not remember the disaster at all after three years",
+      "students could not remember the disaster itself at all after three years",
       "many later accounts differed from the first, yet confidence stayed high",
       "confidence was low but accuracy was high in later accounts",
     ],
@@ -752,7 +762,12 @@ export const QUESTIONS_2: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "Inability to form new long-term memories after a brain injury is called",
-    options: ["retrograde amnesia", "anterograde amnesia", "infantile amnesia", "dissociative fugue"],
+    options: [
+      "retrograde amnesia after injury",
+      "anterograde amnesia",
+      "infantile amnesia",
+      "dissociative fugue",
+    ],
     answer: 1,
     explanation:
       "Anterograde amnesia affects memory for events after the onset of injury. Retrograde amnesia is loss of memories formed before onset. Infantile amnesia is the normal lack of memories from early childhood. Dissociative fugue is a psychological, not neurological, loss of identity and memory with travel.",
@@ -790,7 +805,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     options: [
       "thiamine deficiency with damage to the mammillary bodies and medial thalamus",
       "a tumour of the occipital lobe causing visual memory loss",
-      "excess vitamin B12 from supplements damaging the hippocampus and fornix",
+      "excess vitamin B12 from supplements, damaging the hippocampus and the fornix",
       "damage limited to the cerebellum from alcohol toxicity",
     ],
     answer: 0,
@@ -809,7 +824,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     stem: "Clive Wearing, a musician who developed herpes simplex encephalitis in 1985, is notable because he",
     options: [
       "lost his musical ability but kept his episodic memory",
-      "had only mild forgetfulness that improved over months",
+      "had only mild forgetfulness that improved steadily over the following months",
       "became densely amnesic yet could still play and conduct music",
       "lost all language but could still recognise his wife",
     ],
@@ -827,7 +842,12 @@ export const QUESTIONS_2: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Most adults can recall very few personal events from before about age 3 to 4. This is called",
-    options: ["retrograde amnesia", "the reminiscence bump", "source amnesia", "childhood (infantile) amnesia"],
+    options: [
+      "retrograde amnesia",
+      "the reminiscence bump of adolescence",
+      "source amnesia",
+      "childhood (infantile) amnesia",
+    ],
     answer: 3,
     explanation:
       "Childhood amnesia is the normal scarcity of memories from the first years, linked to immature hippocampal and prefrontal systems, language and self-concept. Retrograde amnesia follows brain injury. The reminiscence bump is the opposite, extra memories from adolescence and early adulthood. Source amnesia is forgetting where a fact was learnt.",
@@ -859,7 +879,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     stem: "'Remember to give Anil the book when you see him' is an example of",
     options: [
       "event-based prospective memory",
-      "time-based prospective memory",
+      "time-based prospective memory for a task",
       "retrospective episodic memory",
       "semantic memory",
     ],
@@ -960,7 +980,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
     stem: "Schank and Abelson's 'restaurant script' (enter, order, eat, pay, leave) is an example of",
     options: [
       "a schema for a familiar sequence of events",
-      "a prototype of the restaurant category",
+      "a prototype of the restaurant category of events",
       "procedural memory for eating",
       "a retrieval cue for dining",
     ],

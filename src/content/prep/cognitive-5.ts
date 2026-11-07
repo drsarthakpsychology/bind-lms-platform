@@ -178,7 +178,7 @@ export const QUESTIONS_5: PrepQuestion[] = [
     options: [
       "no learning took place",
       "participants learnt only by memorising each character separately",
-      "participants could always state the rule before using it correctly",
+      "participants could always state the rule aloud before they used it correctly",
       "they named new characters correctly, often unable to describe the radical",
     ],
     answer: 3,
@@ -662,7 +662,7 @@ export const QUESTIONS_5: PrepQuestion[] = [
     stem: "Teresa Amabile's componential model of creativity names three components within the individual. Which set is correct?",
     options: [
       "Fluency, flexibility and originality in divergent thinking",
-      "Preparation, incubation and illumination in the creative process",
+      "Preparation, incubation and illumination as stages of the creative process",
       "Person, process and product",
       "Domain skills, creativity-relevant processes and intrinsic motivation",
     ],
@@ -701,7 +701,7 @@ export const QUESTIONS_5: PrepQuestion[] = [
     type: "mcq",
     stem: "Mel Rhodes grouped approaches to creativity into 'four Ps'. These are",
     options: [
-      "preparation, planning, practice and performance",
+      "preparation, planning, practice and public performance",
       "power, pressure, play and purpose",
       "person, process, press (environment) and product",
       "perception, problem, proof and persistence",
@@ -862,7 +862,7 @@ export const QUESTIONS_5: PrepQuestion[] = [
     options: [
       "fMRI of the BOLD signal",
       "EEG and event-related potentials",
-      "PET with a radioactive tracer",
+      "PET with a short-lived radioactive tracer",
       "Structural MRI scanning",
     ],
     answer: 1,
@@ -985,7 +985,7 @@ export const QUESTIONS_5: PrepQuestion[] = [
     type: "mcq",
     stem: "The 'default mode network' (including medial prefrontal cortex, posterior cingulate cortex and angular gyrus) is best described as a network that",
     options: [
-      "is most active during demanding visual search and other externally focused tasks",
+      "is most active during demanding visual search and other externally focused, effortful tasks",
       "is more active at rest, in mind-wandering, recalling the past and imagining the future",
       "controls only motor movements",
       "is found only in people with schizophrenia",

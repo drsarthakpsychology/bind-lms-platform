@@ -122,7 +122,12 @@ export const QUESTIONS_3: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Chomsky's influential 1959 review attacked whose account of language?",
-    options: ["Piaget's account of egocentric speech", "Skinner's operant account of verbal behaviour", "Vygotsky's account of inner speech", "Lenneberg's biological account of language"],
+    options: [
+      "Piaget's account of egocentric speech",
+      "Skinner's operant account of verbal behaviour",
+      "Vygotsky's account of inner speech",
+      "Lenneberg's biological account of language and its critical period",
+    ],
     answer: 1,
     explanation:
       "Chomsky reviewed Skinner's book on verbal behaviour and argued that reinforcement, stimulus control and other operant ideas could not explain how children acquire grammar. Piaget's and Vygotsky's accounts of children's speech were not his target. Lenneberg's biological account came later and actually supported Chomsky's nativist position, so it was not criticised in the review.",
@@ -200,7 +205,7 @@ export const QUESTIONS_3: PrepQuestion[] = [
     options: [
       "the Dani could not distinguish colours at all",
       "Dani memory for colours was better than that of English speakers",
-      "colour vocabulary completely determined how the Dani remembered colours",
+      "colour vocabulary completely determined how well the Dani remembered colours",
       "the Dani learned names for focal colours more easily than for non-focal ones",
     ],
     answer: 3,
@@ -409,7 +414,12 @@ export const QUESTIONS_3: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "When voice onset time is varied gradually from /ba/ to /pa/, listeners hear an abrupt switch at about 25 to 30 ms and find it hard to tell apart two sounds within the same category. This is",
-    options: ["phonemic restoration", "categorical perception", "the McGurk effect", "coarticulation"],
+    options: [
+      "phonemic restoration of sounds",
+      "categorical perception",
+      "the McGurk effect",
+      "coarticulation",
+    ],
     answer: 1,
     explanation:
       "Categorical perception means a physical continuum is heard as discrete categories, with good discrimination across the boundary and poor discrimination within a category. Phonemic restoration is filling in a missing sound. The McGurk effect is audiovisual. Coarticulation is the overlap of articulatory movements for neighbouring sounds.",
@@ -426,7 +436,7 @@ export const QUESTIONS_3: PrepQuestion[] = [
     stem: "In Marslen-Wilson's cohort model of spoken word recognition,",
     options: [
       "the first sounds activate all matching words, which drop out until one remains",
-      "words are recognised only after the whole word has been heard and stored",
+      "words are recognised only after the whole word has been heard and held in memory",
       "context plays no role at any stage of recognition",
       "words are recognised from their final syllable first, then backwards",
     ],
@@ -504,7 +514,7 @@ export const QUESTIONS_3: PrepQuestion[] = [
     type: "mcq",
     stem: "In Frazier's garden-path model, the parser's first analysis is guided by",
     options: [
-      "plausibility and discourse context, which constrain the parse from the very first word",
+      "plausibility and discourse context, which constrain the parse right from the very first word",
       "syntactic principles such as minimal attachment and late closure, with meaning used later",
       "the frequency of each word's meanings",
       "the reader's mood",
@@ -673,7 +683,7 @@ export const QUESTIONS_3: PrepQuestion[] = [
     options: [
       "language is best acquired between about 2 and puberty, and much harder later",
       "language can be learnt equally well at any age with enough exposure",
-      "language learning begins only at puberty, when the brain lateralises",
+      "language learning begins only at puberty, when the brain finally lateralises",
       "language is learnt only through reading",
     ],
     answer: 0,
@@ -727,7 +737,7 @@ export const QUESTIONS_3: PrepQuestion[] = [
     options: [
       "imitation of the speech of older children who make the same errors",
       "overregularisation: applying a newly learnt rule to irregular words",
-      "a hearing problem that makes the child miss irregular word endings",
+      "a hearing problem that makes the child miss the irregular word endings",
       "regression caused by stress",
     ],
     answer: 1,
@@ -885,7 +895,7 @@ export const QUESTIONS_3: PrepQuestion[] = [
     type: "mcq",
     stem: "Kutas and Hillyard found a negative ERP wave peaking about 400 ms after a sentence-final word that did not fit the meaning ('He spread the warm bread with socks'). A different component, peaking around 600 ms, is typically elicited by",
     options: [
-      "semantic anomalies, the same as the N400",
+      "semantic anomalies, the same as the N400 component",
       "unexpected loud tones",
       "syntactic violations or reanalysis (the P600)",
       "visual faces (the N170)",

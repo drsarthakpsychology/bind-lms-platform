@@ -24,7 +24,7 @@ export const QUESTIONS_4: PrepQuestion[] = [
     type: "mcq",
     stem: "Which statement correctly distinguishes an algorithm from a heuristic?",
     options: [
-      "A heuristic always guarantees a correct solution, though it may take much longer",
+      "A heuristic always guarantees a correct solution, though it may take much longer to run",
       "An algorithm is a rule of thumb that is usually but not always right",
       "An algorithm guarantees a solution if followed; a heuristic is a fallible shortcut",
       "They are the same thing",
@@ -58,7 +58,12 @@ export const QUESTIONS_4: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "In Luchins's water-jar experiments, participants who had solved several problems with a long formula kept using it on later problems that had a much simpler solution. This illustrates",
-    options: ["functional fixedness", "incubation", "insight", "mental set (Einstellung)"],
+    options: [
+      "functional fixedness about the formula",
+      "incubation",
+      "insight",
+      "mental set (Einstellung)",
+    ],
     answer: 3,
     explanation:
       "Einstellung is the tendency to persist with a method that worked before, even when a simpler one is available; control participants without the training series found the simple method readily. Functional fixedness concerns object uses. Incubation is a pause that may help solution. Insight is sudden restructuring.",
@@ -89,7 +94,7 @@ export const QUESTIONS_4: PrepQuestion[] = [
     type: "mcq",
     stem: "Köhler's studies of the chimpanzee Sultan, who joined two sticks to reach a banana after a pause, were taken as evidence of",
     options: [
-      "gradual trial-and-error learning over many attempts",
+      "gradual trial-and-error learning over many unsuccessful attempts",
       "insight learning, with sudden restructuring of the problem",
       "operant shaping by successive approximations",
       "classical conditioning to the sight of the banana",
@@ -152,7 +157,12 @@ export const QUESTIONS_4: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "Newell and Simon's General Problem Solver was a computer program built mainly around which heuristic?",
-    options: ["Means-ends analysis", "Random search", "Insight", "Availability"],
+    options: [
+      "Means-ends analysis",
+      "Random trial-and-error search",
+      "Insight",
+      "Availability",
+    ],
     answer: 0,
     explanation:
       "GPS represented problems as a space of states and used means-ends analysis to reduce differences between the current state and the goal. Random search is not a heuristic. Insight is a Gestalt concept. Availability is a judgement heuristic from Tversky and Kahneman.",
@@ -264,7 +274,7 @@ export const QUESTIONS_4: PrepQuestion[] = [
     type: "mcq",
     stem: "In Maier's two-string problem, the experimenter 'accidentally' brushed against one string, setting it swinging. Many participants then solved the problem by",
     options: [
-      "tying the strings together with a third string from the room",
+      "tying the two strings together using a third string found in the room",
       "swinging one string like a pendulum, often without noticing the hint",
       "asking for help",
       "giving up",
@@ -460,7 +470,7 @@ export const QUESTIONS_4: PrepQuestion[] = [
     options: [
       "People do well on abstract versions of the selection task",
       "With switched contracts, people still pick the cheater-revealing cards, even when illogical",
-      "Familiar rules always improve performance, whether or not they involve social exchange",
+      "Familiar rules always improve performance, whether or not they involve a social exchange of benefits",
       "Training in logic eliminates errors",
     ],
     answer: 1,
@@ -610,7 +620,12 @@ export const QUESTIONS_4: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "Judging the probability that someone belongs to a category by how much they resemble the typical member, while ignoring base rates, is the",
-    options: ["availability heuristic", "anchoring heuristic", "representativeness heuristic", "recognition heuristic"],
+    options: [
+      "availability (ease-of-recall) heuristic",
+      "anchoring heuristic",
+      "representativeness heuristic",
+      "recognition heuristic",
+    ],
     answer: 2,
     explanation:
       "Representativeness (Kahneman and Tversky) judges likelihood by similarity to a prototype. Availability judges frequency by ease of recall. Anchoring starts from an initial value and adjusts insufficiently. Recognition (Gigerenzer) chooses the recognised option.",
@@ -625,7 +640,12 @@ export const QUESTIONS_4: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "In the 'Linda problem', most people judge 'Linda is a bank teller and active in the feminist movement' as more probable than 'Linda is a bank teller'. This error is called",
-    options: ["the conjunction fallacy", "the gambler's fallacy", "the sunk cost fallacy", "hindsight bias"],
+    options: [
+      "the conjunction fallacy",
+      "the gambler's fallacy",
+      "the sunk-cost (Concorde) fallacy",
+      "hindsight bias",
+    ],
     answer: 0,
     explanation:
       "A conjunction can never be more probable than either of its parts; the description's resemblance to a feminist makes the conjunction seem more representative, as Tversky and Kahneman showed. The gambler's fallacy concerns sequences of chance events. Sunk cost concerns past investments. Hindsight bias concerns judgements after an outcome is known.",
@@ -849,7 +869,7 @@ export const QUESTIONS_4: PrepQuestion[] = [
     stem: "Herbert Simon's idea of 'satisficing' means",
     options: [
       "taking the first option that is good enough, not searching for the best",
-      "always maximising expected utility after comparing every option",
+      "always maximising expected utility after carefully comparing every option",
       "choosing randomly",
       "avoiding all decisions",
     ],
@@ -867,7 +887,12 @@ export const QUESTIONS_4: PrepQuestion[] = [
     difficulty: 4,
     type: "mcq",
     stem: "Choosing a flat by first rejecting all options over ₹20,000 rent, then all those more than 5 km from work, then all without a lift, until one remains, follows Tversky's",
-    options: ["additive utility model", "recognition heuristic", "elimination-by-aspects model", "anchoring heuristic"],
+    options: [
+      "additive (compensatory) utility model",
+      "recognition heuristic",
+      "elimination-by-aspects model",
+      "anchoring heuristic",
+    ],
     answer: 2,
     explanation:
       "Elimination by aspects removes options that fail on one attribute at a time, chosen in order of importance, a non-compensatory strategy. An additive utility model weighs all attributes so strengths can offset weaknesses. The recognition heuristic picks the recognised option. Anchoring concerns numerical estimates.",

@@ -174,7 +174,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     type: "mcq",
     stem: "In Wickens' 'release from proactive interference', recall in the Brown-Peterson task recovers when",
     options: [
-      "the retention interval is lengthened, giving earlier items time to fade",
+      "the retention interval is lengthened, giving the earlier items time to fade away",
       "the category of the items is changed, for example from fruits to professions",
       "participants are allowed to rehearse during the interval",
       "the same items are repeated on every trial",
@@ -350,7 +350,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     options: [
       "a phonological store and an articulatory rehearsal (control) process",
       "a visual cache and an inner scribe for spatial information",
-      "a central executive and an episodic buffer that links stores",
+      "a central executive and an episodic buffer that links the other stores",
       "iconic and echoic sensory memory",
     ],
     answer: 0,
@@ -368,7 +368,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     type: "mcq",
     stem: "The word-length effect in immediate serial recall shows that",
     options: [
-      "long words are recalled better because they are more distinctive and memorable",
+      "long words are recalled better, because their extra syllables make them more distinctive and memorable",
       "word length affects only long-term memory, not immediate recall",
       "span depends on the number of syllables in the first word",
       "span is smaller for words that take longer to say, about what can be said in 2 seconds",
@@ -551,7 +551,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     stem: "Daneman and Carpenter's reading span task measures working memory capacity by requiring participants to",
     options: [
       "read sentences while remembering the last word of each",
-      "repeat digit strings backwards in increasing length",
+      "repeat digit strings backwards, in order of increasing length",
       "name the ink colours of colour words quickly",
       "copy geometric designs from memory after a delay",
     ],
@@ -589,7 +589,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     type: "mcq",
     stem: "Engle and colleagues found that people with high working memory capacity perform better on the antisaccade task (looking away from a sudden cue). They interpret working memory capacity mainly as",
     options: [
-      "the size of the phonological store, which holds the task instructions",
+      "the size of the phonological store, which holds the task instructions in mind",
       "executive attention: the ability to maintain goals and resist interference",
       "speed of articulation, which lets people rehearse the rule faster",
       "visual acuity",
@@ -646,7 +646,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     options: [
       "how experts quickly reach task knowledge via retrieval structures in long-term memory",
       "why iconic memory lasts longer in chess experts viewing board positions",
-      "why amnesic patients keep a normal digit span despite severe long-term memory loss",
+      "why amnesic patients keep a normal digit span despite their severe long-term memory loss",
       "why short-term memory coding is acoustic, not semantic",
     ],
     answer: 0,
@@ -718,7 +718,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     type: "mcq",
     stem: "In Atkinson and Shiffrin's model, 'control processes' are",
     options: [
-      "fixed structural features of the stores, such as capacity",
+      "fixed structural features of the stores, such as their capacity",
       "biological limits on the duration of each store",
       "strategies the person chooses, such as rehearsal and coding",
       "unconscious defence mechanisms that block recall",
@@ -755,7 +755,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     options: [
       "greatly improved recall",
       "had little or no effect on recall",
-      "eliminated the primacy effect",
+      "eliminated the primacy effect in free recall",
       "produced false memories",
     ],
     answer: 1,
@@ -797,7 +797,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
       "that letters are stored only by name from the start",
       "that long-term memory is visual rather than verbal",
       "a brief visual code that is soon replaced by a name code",
-      "that attention is needed to read letter shapes",
+      "that attention is needed to read letter shapes accurately",
     ],
     answer: 2,
     explanation:
@@ -869,7 +869,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     stem: "Brain imaging work by Paulesu, Frith and Frackowiak linked the two parts of the phonological loop to which brain areas?",
     options: [
       "Store in the left supramarginal (inferior parietal) region; rehearsal in Broca's area",
-      "Phonological store in the left hippocampus; rehearsal in the right cerebellum",
+      "Phonological store in the left hippocampus; rehearsal in the right cerebellar hemisphere",
       "Both in the right occipital lobe",
       "Phonological store in Broca's area; rehearsal in the amygdala",
     ],
@@ -888,7 +888,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     type: "mcq",
     stem: "Craik gave several lists for immediate free recall and then an unexpected final free-recall test of all lists. In the final test, items from the end of each list were recalled worse than earlier items. This 'negative recency' effect is explained by",
     options: [
-      "stronger proactive interference building up for the early items in each list",
+      "stronger proactive interference building up for the early items in each successive list",
       "decay of iconic memory for the last items seen",
       "recency items were output from STM with little rehearsal, so they reached LTM poorly",
       "a ceiling effect in the final test for early items",
@@ -923,7 +923,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     type: "mcq",
     stem: "Rundus asked participants to rehearse aloud during list learning. He found that",
     options: [
-      "the last items were rehearsed most, which explains the recency effect in recall",
+      "the last items were rehearsed most, which explains the recency effect in free recall",
       "rehearsal had no relation to how well items were recalled",
       "early items were rehearsed more often, and rehearsal count predicted their recall",
       "rehearsing aloud abolished the serial position curve",
