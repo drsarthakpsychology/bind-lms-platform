@@ -33,10 +33,7 @@ export default async function MapPage() {
       <Link href="/study" className="inline-flex min-h-11 items-center gap-1.5 text-sm font-bold text-link hover:underline">
         <ArrowLeft className="size-4" aria-hidden /> Notes
       </Link>
-      <header className="space-y-2">
-        <p className="text-eyebrow text-link">Your map</p>
-        <h1 className="text-h1">What you know, and what to fix</h1>
-      </header>
+      <h1 className="text-h1">What you know, and what to fix</h1>
 
       {!isLearner ? <p className="rounded-md border-2 border-foreground bg-status-pending-bg p-3 text-sm font-semibold">Preview: staff accounts have no map of their own.</p> : null}
 

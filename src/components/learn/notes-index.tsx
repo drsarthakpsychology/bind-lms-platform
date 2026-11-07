@@ -32,12 +32,11 @@ export function NotesIndex({ blocks, serverState, save }: { blocks: NoteBlock[];
             <span className="min-w-0">
               <span className="text-eyebrow">{read ? "Continue with" : "Start here"}</span>
               <span className="block text-xl font-bold leading-tight">{nextUp.title}</span>
-              <span className="text-caption">Read it, then take the quiz at the bottom</span>
             </span>
             <ArrowRight className="ml-auto size-6 shrink-0" aria-hidden />
           </Link>
         ) : (
-          <div className="rounded-3xl border-2 border-foreground bg-primary p-4 font-bold text-primary-foreground">You&apos;ve read every note. Keep them fresh with Review on the Learn page.</div>
+          <div className="rounded-3xl border-2 border-foreground bg-primary p-4 font-bold text-primary-foreground">You&apos;ve read every note.</div>
         )}
         <div className="rounded-3xl border-2 border-foreground bg-card p-4">
           <p className="text-2xl font-bold">
