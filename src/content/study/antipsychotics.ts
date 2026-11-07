@@ -418,6 +418,10 @@ These ranges help you understand prescriptions. They are not advice for anyone t
 | Cariprazine | | 1.5 mg | 1.5 to 6 mg | 6 mg | D3-preferring D2 and D3 partial agonist | Very long-lived metabolite: effects and side effects change over weeks |
 :::
 
+
+:::widget compare
+{"title": "Haloperidol and clozapine: two ends of the spectrum", "a": {"label": "Haloperidol", "points": ["Tight, long-lasting D2 block", "High risk of dystonia, parkinsonism, akathisia and tardive dyskinesia", "Raises prolactin", "Little weight gain or sedation", "No blood tests needed; cheap; injections available"], "summary": "Effective for positive symptoms and useful in emergencies, at the cost of movement side effects."}, "b": {"label": "Clozapine", "points": ["Loose, fast-off D2 binding plus many other receptors", "Almost no movement side effects; treats tardive dyskinesia", "Little prolactin rise", "Marked weight gain, sedation, drooling, constipation", "Regular blood counts; risk of low neutrophils and myocarditis"], "summary": "The most effective antipsychotic for treatment resistance and suicidal behaviour, with its own serious risks."}, "caption": "Slide between them. Notice how the side effects almost swap places."}
+:::
 :::trap "Atypical" does not mean "safe"
 Second-generation drugs swap movement side effects for **metabolic harm**. Olanzapine and clozapine carry the highest weight and diabetes risk. Monitor everyone.
 :::
@@ -560,6 +564,10 @@ Q: An 82-year-old with Lewy body dementia is distressed by visual hallucinations
 {"title": "A patient on an antipsychotic is moving abnormally: which one is it?", "layout": "tree", "nodes": [{"id": "m0", "label": "Abnormal movement on an antipsychotic", "detail": "Ask when it started, what it looks like, and whether the person feels it from inside."}, {"id": "m1", "label": "Sudden painful spasm, eyes or neck", "parent": "m0", "detail": "Hours to days after a new drug or dose rise, often in a young man."}, {"id": "m2", "label": "Inner restlessness, cannot stay still", "parent": "m0", "detail": "The person says 'I have to move'. Legs shuffle, pacing, crossing and uncrossing."}, {"id": "m3", "label": "Slow, stiff, tremor at rest", "parent": "m0", "detail": "Weeks in; looks like Parkinson's disease."}, {"id": "m4", "label": "Writhing mouth and tongue, months or years in", "parent": "m0", "detail": "The person may not notice it; the family does. Worse when anxious, gone in sleep."}, {"id": "a1", "label": "Acute dystonia: IM anticholinergic now", "parent": "m1"}, {"id": "a2", "label": "Akathisia: lower dose, propranolol", "parent": "m2"}, {"id": "a3", "label": "Parkinsonism: lower dose, switch, anticholinergic if needed", "parent": "m3"}, {"id": "a4", "label": "Tardive dyskinesia: review, switch, VMAT2 inhibitor, stop anticholinergics", "parent": "m4"}], "caption": "Tap each branch. Timing plus what the person feels inside sorts almost every case."}
 :::
 
+
+:::widget timeline
+{"prompt": "Put the movement side effects in the order they usually appear after starting an antipsychotic.", "events": [{"label": "Acute dystonia", "when": "hours to days"}, {"label": "Akathisia", "when": "days onward"}, {"label": "Parkinsonism", "when": "later"}, {"label": "Tardive dyskinesia", "when": "months to years"}], "why": "Dystonia is a sudden reaction to new blockade; akathisia and parkinsonism build as blockade continues; tardive dyskinesia reflects long-term adaptation (supersensitivity). The rough rule is hours, days, weeks, months."}
+:::
 :::sounds How akathisia sounds
 "Andar se bechaini hai, baith hi nahi paata, pair hilte rehte hain." (A restlessness inside; I can't sit; my legs keep moving.) Staff may misread it as worsening psychosis and raise the dose, making it worse.
 :::

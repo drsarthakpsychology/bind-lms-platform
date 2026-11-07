@@ -399,6 +399,10 @@ Q: A 22-year-old woman with bipolar disorder who may want children asks for valp
 > Avoid valproate in women and girls who could become pregnant.
 :::
 
+
+:::widget compare
+{"title": "Lithium and valproate for long-term prevention", "a": {"label": "Lithium", "points": ["Best evidence for preventing mania and depression", "Lowers suicide", "Blood levels, kidney, thyroid and calcium tests", "Toxic with dehydration, NSAIDs, thiazides, ACE inhibitors", "Small rise in heart malformation risk in pregnancy"], "summary": "First choice for most people with classic bipolar I disorder who can have regular blood tests."}, "b": {"label": "Valproate", "points": ["Good for mania and mixed states", "Weight gain, hair loss, tremor, polycystic ovaries", "Liver and blood count tests; rarely pancreatitis", "Doubles lamotrigine levels", "Highly harmful to an unborn baby"], "summary": "Useful in men and older women, especially with mixed features, but avoided in girls and women who could become pregnant."}, "caption": "Slide between the two and decide which fits a 45-year-old man with mixed episodes, and which fits a 23-year-old woman planning a family."}
+:::
 ## 1.3 Carbamazepine and oxcarbazepine [core][beginner]
 - Used for mania (second-line), epilepsy and trigeminal neuralgia. Level about 4 to 12 mg/L.
 - **Enzyme inducer** (CYP3A4 and others): lowers levels of many drugs, including the contraceptive pill, antipsychotics, antidepressants and itself (**auto-induction** over the first weeks).
@@ -445,6 +449,10 @@ Q: Before starting carbamazepine in a patient of Indian origin, which test lower
 {"prompt": "Lamotrigine is built up slowly to avoid rash. Starting at 25 mg a day, about how many weeks does it take to reach the usual 200 mg target?", "min": 1, "max": 12, "unit": "weeks", "answer": [5, 6], "reveal": "About 5 to 6 weeks: 25 mg for two weeks, 50 mg for two weeks, then 100 mg, then 200 mg. With valproate it is slower still, and the target is lower. If lamotrigine is stopped for more than about five days, the build-up starts again from the beginning.", "clinician": "Monotherapy: 25 mg daily for weeks 1 to 2, 50 mg for weeks 3 to 4, 100 mg in week 5, 200 mg from week 6. With valproate: 25 mg on alternate days for weeks 1 to 2, 25 mg daily for weeks 3 to 4, 50 mg in week 5, 100 mg from week 6. With carbamazepine (without valproate): 50 mg for weeks 1 to 2, 100 mg for weeks 3 to 4, then 200, 300 and 400 mg."}
 :::
 
+
+:::widget timeline
+{"prompt": "Put the steps of a standard lamotrigine build-up (without valproate or carbamazepine) in order.", "events": [{"label": "25 mg a day"}, {"label": "50 mg a day"}, {"label": "100 mg a day"}, {"label": "200 mg a day, the usual target"}], "why": "Each step is held for a set period before the next. Going faster, or adding valproate without halving the plan, raises the risk of serious rash."}
+:::
 | Medicine | Best for | Biggest danger | Key monitoring |
 |---|---|---|---|
 | Lithium | Mania, maintenance, suicide prevention | Toxicity (narrow range) | Levels, kidney, thyroid, calcium |
@@ -606,6 +614,10 @@ Benzodiazepines are **positive allosteric modulators of the GABA-A receptor**: t
 | Diazepam (Valium, Calmpose) | Long (active metabolites) | Withdrawal regimens, seizures |
 | Chlordiazepoxide (Librium) | Long | Alcohol withdrawal |
 
+
+:::widget compare
+{"title": "Alprazolam and diazepam: same receptor, different journeys", "a": {"label": "Alprazolam", "points": ["Short half-life", "Fast calm, fast wear-off", "Rebound anxiety between doses", "Sharp withdrawal; strong misuse potential", "Hard to taper directly"], "summary": "Avoided for new prescriptions where possible."}, "b": {"label": "Diazepam", "points": ["Long half-life with active metabolites", "Smooth levels", "Gentle withdrawal", "Builds up in older people and in liver disease", "Used as the vehicle for tapering"], "summary": "Preferred for planned withdrawal regimens, with care in older adults."}, "caption": "Slide between the two. The receptor action is the same; the half-life decides how dependence and withdrawal feel."}
+:::
 ### Risks
 - **Tolerance and dependence** (can develop within weeks), misuse.
 - **Withdrawal**: anxiety, insomnia, irritability, tremor, sweating, perceptual changes, and **seizures** if stopped suddenly after long use.

@@ -179,6 +179,10 @@ Early registries suggested a large risk of **Ebstein's anomaly** (a malformed tr
 - Lamotrigine levels fall through pregnancy and rise after delivery: doses must be reduced after birth.
 - **Postpartum relapse**: about a third of women with bipolar disorder relapse after birth, and far more among those who stop medication in pregnancy. Postpartum psychosis is a psychiatric emergency.
 
+
+:::widget timeline
+{"prompt": "Put these points in a planned pregnancy on lithium in order.", "events": [{"label": "Review the medicine and start folic acid before trying to conceive"}, {"label": "Early booking and a detailed fetal heart scan"}, {"label": "More frequent lithium levels as pregnancy advances"}, {"label": "Lithium dose reduced or held at the start of labour, with fluids"}, {"label": "Level checked within a day of delivery"}, {"label": "Close review in the weeks after birth, when relapse risk is highest"}], "why": "Risk to the baby is highest early; risk of toxicity peaks at delivery; risk of relapse peaks after birth. The plan follows those three peaks."}
+:::
 :::widget flow
 {"title": "Planning pregnancy with bipolar disorder", "layout": "chain", "nodes": [{"id": "g1", "label": "Before conception", "detail": "Review the medicine: switch away from valproate and carbamazepine; discuss lithium, lamotrigine or an antipsychotic; folic acid; plan care."}, {"id": "g2", "label": "First trimester", "detail": "Early booking, glucose screening if on antipsychotics, detailed fetal heart scan if on lithium."}, {"id": "g3", "label": "Second and third trimesters", "detail": "More frequent levels (lithium monthly, then weekly near term; lamotrigine as needed); doses often rise."}, {"id": "g4", "label": "Delivery", "detail": "Lithium dose reduced or held at the start of labour; fluids; level within a day; paediatric team aware."}, {"id": "g5", "label": "First weeks after birth", "detail": "Highest relapse risk. Protect sleep, family support, early review, lamotrigine dose reduced, breastfeeding plan."}], "caption": "Press Play. Each step reduces either the risk to the baby or the risk of a relapse."}
 :::

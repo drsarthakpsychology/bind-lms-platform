@@ -664,6 +664,10 @@ A small number of days' supply can kill. Features: anticholinergic signs (dry fl
 - **Clomipramine** is the most serotonergic tricyclic: used in OCD. **Nortriptyline** (a secondary amine) is less anticholinergic and less sedating than amitriptyline.
 - Dothiepin (dosulepin) has particularly high toxicity in overdose.
 
+:::widget compare
+{"title": "An SSRI and a tricyclic, side by side", "a": {"label": "Sertraline (SSRI)", "points": ["Blocks the serotonin pump, little else", "Early nausea, loose stools, sexual side effects", "Little sedation, no dry mouth", "Rarely dangerous in overdose on its own", "Usable after a heart attack and in older adults"], "summary": "First-line: as effective for most, easier to live with and far safer."}, "b": {"label": "Amitriptyline (tricyclic)", "points": ["Blocks serotonin and noradrenaline pumps plus muscarinic, H1, alpha-1 and sodium channels", "Dry mouth, constipation, sedation, weight gain, dizziness on standing", "Confusion and falls in older adults", "A few days' supply can be fatal in overdose", "Low doses still useful for pain and migraine"], "summary": "Second-line for depression; keep supplies small and avoid in heart disease and older adults."}, "caption": "Slide between the two. The benefit for mood is similar; almost every difference comes from the extra receptors the tricyclic blocks."}
+:::
+
 :::student
 ### Typical adult daily doses (for learning; check current guidelines)
 | Medicine | Typical daily range |
@@ -1363,6 +1367,10 @@ Classic antidepressants all work through monoamines. Since 2019, medicines that 
 {"prompt": "When an IV ketamine infusion helps depression, how soon does the improvement usually appear?", "min": 0, "max": 72, "unit": "hours", "answer": [2, 24], "reveal": "Within hours, often by the next day. The catch is that a single dose usually wears off within days to about a week, so repeated dosing or a bridge to other treatment is needed.", "clinician": "Off-label IV racemic ketamine (commonly 0.5 mg/kg over 40 minutes) shows response from about 4 to 24 hours, with relapse typically within 1 to 2 weeks after a single infusion."}
 :::
 
+
+:::widget timeline
+{"prompt": "Put these moments in antidepressant history in order.", "events": [{"label": "Iproniazid, a tuberculosis drug, is noticed to lift mood: the first MAOI", "when": "1950s"}, {"label": "Imipramine, the first tricyclic, is found to treat depression", "when": "late 1950s"}, {"label": "Fluoxetine, the first widely used SSRI, is approved in the US", "when": "1987"}, {"label": "Esketamine nasal spray is approved in the US for treatment-resistant depression", "when": "2019"}, {"label": "Zuranolone becomes the first oral medicine approved for postpartum depression in the US", "when": "2023"}, {"label": "Lumateperone is approved in the US as an add-on in major depression", "when": "2025"}], "why": "Each step widened the targets: from enzymes, to pumps, to glutamate and GABA-A receptors. Several early discoveries were accidents noticed by careful clinicians."}
+:::
 ### Dextromethorphan with bupropion: kinetics used on purpose
 Dextromethorphan (the cough suppressant) is an NMDA antagonist and sigma-1 agonist, but it is cleared so fast by CYP2D6 that it barely acts. Combining it with **bupropion**, a strong CYP2D6 inhibitor, keeps its levels high. This combination was approved in the US on 18 August 2022 for major depressive disorder. It is a neat example of a pharmacokinetic interaction turned into a treatment. It carries bupropion's seizure risk and dextromethorphan's serotonergic risk. In April 2026 the same combination was also approved in the US for agitation in Alzheimer's dementia.
 
