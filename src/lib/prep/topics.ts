@@ -221,9 +221,9 @@ export const TOPIC_GROUPS: Record<Subject, readonly TopicGroup[]> = {
     g("research", "Research ethics", /^research-ethics$/, "ethics-law/3-4"),
   ],
   psychopharmacology: [
-    g("principles", "How medicines act and move", /(pharmacokinetic|pharmacodynamic|^pk|^pd|absorption|distribution|metabolism|cyp|half-life|clearance|tdm|drug-level|receptor|occupancy|mechanism|principle|basics|pharmacogen|interaction)/, "medicine-profiles/1-1", "pharmacokinetics"),
+    g("principles", "How medicines act and move", /(pharmacokinetic|pharmacodynamic|^pk|^pd|absorption|distribution|metabolism|cyp|half-life|clearance|tdm|drug-level|therapeutic-drug|receptor|occupancy|mechanism|principle|basics|pharmacogen|interaction)/, "medicine-profiles/1-1", "pharmacokinetics"),
     g("antidepressants", "Antidepressants", /(antidepress|ssri|snri|tca|tricyclic|maoi|bupropion|mirtazapine|vortioxetine|agomelatine|trazodone|serotonin-syndrome|discontinuation|ketamine|esketamine|zuranolone|treatment-resistant|augmentation|switching)/, "antidepressants", "medicine-profiles/2-1"),
-    g("antipsychotics", "Antipsychotics and clozapine", /(antipsych|clozapine|eps|extrapyramidal|nms|neuroleptic|tardive|akathisia|dystonia|parkinsonism|metabolic|prolactin|qtc|depot|lai|long-acting|dopamine|xanomeline)/, "antipsychotics", "medicine-profiles/2-3"),
+    g("antipsychotics", "Antipsychotics and clozapine", /(antipsych|clozapine|(^|-)eps($|-)|extrapyramidal|nms|neuroleptic|tardive|akathisia|dystonia|parkinsonism|metabolic|prolactin|qtc|depot|lai|long-acting|dopamine|xanomeline)/, "antipsychotics", "medicine-profiles/2-3"),
     g("stabilisers", "Lithium and mood stabilisers", /(lithium|valpro|carbamazepine|oxcarbazepine|lamotrigine|mood-stabil|anticonvulsant|bipolar)/, "stabilisers/1-1", "medicine-profiles/2-5"),
     g("anxiolytics", "Benzodiazepines, sleep and anxiety medicines", /(benzo|hypnotic|z-drug|zolpidem|buspirone|pregabalin|anxiolytic|sedative|insomnia|melatonin|orexin)/, "stabilisers/2-1", "medicine-profiles/2-6"),
     g("other-medicines", "ADHD, dementia and addiction medicines", /(adhd|stimulant|methylphenidate|atomoxetine|dementia|cholinesterase|donepezil|memantine|naltrexone|disulfiram|acamprosate|opioid|buprenorphine|methadone|nicotine|varenicline|substance|anticholinergic|alcohol|wernicke|amyloid|behavioural-symptoms)/, "medicine-profiles"),
