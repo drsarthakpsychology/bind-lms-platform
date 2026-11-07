@@ -89,6 +89,24 @@ export function useSceneView(has3D = true) {
   return { reduce, can3D, use3D: can3D && !flat, flat, setFlat };
 }
 
+/**
+ * Holds a lazily loaded 3D view. Until its first frame is drawn, the flat
+ * view is shown and fully usable, so a slow connection never leaves a blank
+ * box; then the 3D view fades in over it.
+ */
+export function Scene3DSlot({ flat, render }: { flat: React.ReactNode; render: (onReady: () => void) => React.ReactNode }) {
+  const [ready, setReady] = React.useState(false);
+  const onReady = React.useCallback(() => setReady(true), []);
+  return (
+    <div className="relative h-full w-full">
+      {!ready ? <div className="absolute inset-0">{flat}</div> : null}
+      <div className={cn("absolute inset-0 transition-opacity duration-slow", ready ? "opacity-100" : "pointer-events-none opacity-0")}>
+        <React.Suspense fallback={null}>{render(onReady)}</React.Suspense>
+      </div>
+    </div>
+  );
+}
+
 export function ViewSwitch({ v }: { v: ReturnType<typeof useSceneView> }) {
   if (!v.can3D) return null;
   return (

@@ -3,21 +3,21 @@
 import * as React from "react";
 import * as THREE from "three";
 import { useFrame, type ThreeEvent } from "@react-three/fiber";
-import { CameraRig, Pulse, Stage, Tube, useLitPaths } from "./three-kit";
+import { CameraRig, Pulse, Stage, Tube, segs, useLitPaths, useQuality } from "./three-kit";
 import { along, type V3 } from "./kit";
 import { AUTO, BODY, CHAIN, LEVEL_VIEW, LIMBS, PARA, PARTS, PATHS, SOMATIC, SYMP, levelShows, type Part } from "./nervous-system-data";
 import type { NsViewProps } from "./nervous-system";
 
 /** The nervous system body in 3D: a glass body with brain, cord, nerves and organs that respond. */
-export default function NervousSystem3D(p: NsViewProps) {
+export default React.memo(function NervousSystem3D(p: NsViewProps) {
   const view = p.mode === "map" ? LEVEL_VIEW[p.level] : p.mode === "auto" ? { pos: [1.0, 1.0, 3.7] as V3, target: [0, 0.8, 0] as V3 } : LEVEL_VIEW.all;
   return (
-    <Stage className="h-full w-full" camera={LEVEL_VIEW.all.pos} inView={p.inView} minDistance={1.2} maxDistance={9}>
+    <Stage className="h-full w-full" camera={LEVEL_VIEW.all.pos} inView={p.inView} active={p.mode === "auto" || p.journey.active} wakeKey={`${p.mode}-${p.level}-${p.auto}-${p.journey.run}-${p.journey.leg}`} onReady={p.onReady} minDistance={1.2} maxDistance={9}>
       <CameraRig flyKey={`${p.mode}-${p.mode === "map" ? p.level : ""}`} pos={view.pos} target={view.target} fitAspect={0.7} />
       <Scene {...p} />
     </Stage>
   );
-}
+});
 
 const SKIN = "#c9a98f";
 const tap = (fn: () => void) => (e: ThreeEvent<MouseEvent>) => {
@@ -111,8 +111,9 @@ function Adrenaline({ on, color }: { on: boolean; color: string }) {
 }
 
 function Brain({ opacity, color }: { opacity: number; color: string }) {
+  const q = useQuality();
   const geo = React.useMemo(() => {
-    const g = new THREE.SphereGeometry(1, 40, 28);
+    const g = new THREE.SphereGeometry(1, segs(40, q), segs(28, q));
     const pos = g.attributes.position as THREE.BufferAttribute;
     const v = new THREE.Vector3();
     for (let i = 0; i < pos.count; i++) {
@@ -123,7 +124,7 @@ function Brain({ opacity, color }: { opacity: number; color: string }) {
     }
     g.computeVertexNormals();
     return g;
-  }, []);
+  }, [q]);
   React.useEffect(() => () => geo.dispose(), [geo]);
   return (
     <mesh geometry={geo} position={BODY.brain.c}>
@@ -133,6 +134,7 @@ function Brain({ opacity, color }: { opacity: number; color: string }) {
 }
 
 function Scene({ mode, journey, auto, level, onPart, colors }: NsViewProps) {
+  const q = useQuality();
   const a = AUTO[auto];
   const show = mode === "map" ? levelShows(level) : { brain: true, cord: true, somatic: mode === "signal", symp: mode === "auto", para: mode === "auto", organs: mode === "auto" };
   const symOn = mode === "auto" ? auto === "fight" : mode === "map" && show.symp;
@@ -166,9 +168,9 @@ function Scene({ mode, journey, auto, level, onPart, colors }: NsViewProps) {
   return (
     <group>
       {/* the body */}
-      <Skin position={BODY.head.c} scale={BODY.head.r} opacity={0.16}><sphereGeometry args={[1, 24, 18]} /></Skin>
+      <Skin position={BODY.head.c} scale={BODY.head.r} opacity={0.16}><sphereGeometry args={[1, segs(24, q), segs(18, q)]} /></Skin>
       <Skin position={[0, 1.27, -0.02]}><cylinderGeometry args={[0.09, 0.11, 0.22, 12]} /></Skin>
-      <Skin position={[0, 0.62, 0]} scale={[1.18, 1, 0.62]}><capsuleGeometry args={[0.38, 0.62, 6, 16]} /></Skin>
+      <Skin position={[0, 0.62, 0]} scale={[1.18, 1, 0.62]}><capsuleGeometry args={[0.38, 0.62, q ? 6 : 3, segs(16, q)]} /></Skin>
       <Skin position={[0, -0.05, 0]} scale={[0.36, 0.2, 0.24]}><sphereGeometry args={[1, 16, 12]} /></Skin>
       {LIMBS.map((l) => (
         <group key={l.id}>
@@ -222,7 +224,7 @@ function Scene({ mode, journey, auto, level, onPart, colors }: NsViewProps) {
           <meshStandardMaterial color="#d79a5c" roughness={0.6} />
         </mesh>
         <mesh position={[-0.13, -0.17, -0.02]} rotation={[Math.PI / 2, 0, 0]}>
-          <torusKnotGeometry args={[0.1, 0.022, 48, 6, 2, 5]} />
+          <torusKnotGeometry args={[0.1, 0.022, segs(48, q), q ? 6 : 4, 2, 5]} />
           <meshStandardMaterial color="#c98a4b" roughness={0.6} emissive="#5a3510" emissiveIntensity={mode === "auto" ? a.gut * 0.6 : 0} />
         </mesh>
       </group>

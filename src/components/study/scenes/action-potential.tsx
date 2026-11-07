@@ -1,12 +1,11 @@
 "use client";
 
 import * as React from "react";
-import dynamic from "next/dynamic";
 import { ChevronRight, Lock, RotateCcw, Timer, Zap } from "lucide-react";
 import type { ActionPotentialData } from "@/lib/study/types";
 import { cn } from "@/lib/utils";
 import { trackLearn } from "@/lib/learn/track";
-import { Missions, SceneCard, ViewSwitch, btn, chip, statusCls, useInView, useSceneView, useThemeColors } from "./kit";
+import { Missions, Scene3DSlot, SceneCard, ViewSwitch, btn, chip, statusCls, useInView, useSceneView, useThemeColors } from "./kit";
 
 /**
  * A playable neuron. Each tap of Stimulate nudges the membrane voltage up;
@@ -107,8 +106,20 @@ export function stimulate(s: Sim, mv: number, myelin: boolean): Sim {
   return { ...s, v, samples, taps: [...s.taps, s.t], event: { kind: ph === "under" ? "relative" : "sub", at: s.t, v } };
 }
 
-const View3D = dynamic(() => import("./action-potential-3d"), { ssr: false, loading: () => <div className="grid h-full place-items-center text-sm text-muted-foreground">Loading the 3D neuron…</div> });
-export type ApViewProps = { sim: Sim; myelin: boolean; inView: boolean; colors: ReturnType<typeof useThemeColors>; onStim: () => void };
+/** Loaded only when the device can draw 3D: three.js lives in this lazy chunk. */
+const View3D = React.lazy(() => import("./action-potential-3d"));
+/**
+ * The 3D view reads the simulation from a ref inside its frame loop, so the
+ * 3D tree does not re-render on every simulation step; it re-renders only
+ * when myelin or "active" changes.
+ */
+export type ApViewProps = { simRef: React.RefObject<Sim>; myelin: boolean; active: boolean; inView: boolean; colors: ReturnType<typeof useThemeColors>; onStim: () => void; onReady?: () => void };
+
+/** Nothing is happening: no spike, voltage at rest, no impulse travelling, no challenge. */
+export function isIdle(s: Sim) {
+  const last = s.fired[s.fired.length - 1];
+  return s.ap === null && Math.abs(s.v - REST) < 0.02 && !s.challenge && (!last || s.t - last.at > 4000) && (!s.event || s.t - s.event.at > 1500);
+}
 
 export function ActionPotential({ d }: { d: ActionPotentialData }) {
   const v = useSceneView();
@@ -118,6 +129,11 @@ export function ActionPotential({ d }: { d: ActionPotentialData }) {
   const [sim, setSim] = React.useState<Sim>(initial);
   const [myelin, setMyelin] = React.useState(d.myelinated ?? true);
   const [mv, setMv] = React.useState(12);
+  const simRef = React.useRef<Sim>(sim);
+  React.useLayoutEffect(() => {
+    simRef.current = sim;
+  });
+  const idle = isIdle(sim);
 
   // time flows on animation frames (not under reduced motion: then the student steps)
   React.useEffect(() => {
@@ -127,17 +143,18 @@ export function ActionPotential({ d }: { d: ActionPotentialData }) {
     const tick = (now: number) => {
       const dt = Math.min(64, now - last);
       last = now;
-      setSim((s) => step(s, dt));
+      // when the neuron is idle, keep the same state so nothing re-renders
+      setSim((s) => (isIdle(s) ? s : step(s, dt)));
       raf = requestAnimationFrame(tick);
     };
     raf = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(raf);
   }, [v.reduce, inView]);
 
-  const stim = () => {
+  const stim = React.useCallback(() => {
     setSim((s) => stimulate(s, mv, myelin));
     trackLearn({ type: "widget", kind: "actionpotential", item: "stimulate" });
-  };
+  }, [mv, myelin]);
   const stepBy = (ms: number) => setSim((s) => {
     let x = s;
     for (let k = 0; k < ms; k += 25) x = step(x, 25);
@@ -193,7 +210,9 @@ export function ActionPotential({ d }: { d: ActionPotentialData }) {
   return (
     <SceneCard title={d.title ?? "Make a neuron fire"} goal="Push the neuron past threshold, watch the impulse race down the axon, and fire 3 times in 10 seconds." caption={d.caption} tools={<ViewSwitch v={v} />}>
       <div ref={box} className="relative mt-3 h-[13rem] overflow-hidden rounded-xl border-2 border-foreground bg-background sm:h-[16rem]">
-        {v.use3D ? <View3D sim={sim} myelin={myelin} inView={inView} colors={colors} onStim={stim} /> : <NeuronFlat sim={sim} myelin={myelin} />}
+        {v.use3D ? (
+          <Scene3DSlot flat={<NeuronFlat sim={sim} myelin={myelin} />} render={(onReady) => <View3D simRef={simRef} myelin={myelin} active={!idle} inView={inView} colors={colors} onStim={stim} onReady={onReady} />} />
+        ) : <NeuronFlat sim={sim} myelin={myelin} />}
         {v.use3D ? <p className="pointer-events-none absolute bottom-1.5 left-2 rounded bg-background/80 px-1.5 text-xs text-muted-foreground">Drag to turn, pinch to zoom, tap the cell body to stimulate</p> : null}
       </div>
       <div className="mt-3 grid gap-3 sm:grid-cols-[minmax(0,3fr)_minmax(0,2fr)]">

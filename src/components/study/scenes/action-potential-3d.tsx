@@ -14,14 +14,17 @@ import { NODES, REST, travelMs, type ApViewProps } from "./action-potential";
  * jumping node to node when the axon has myelin, with sodium ions drawn in
  * where it passes.
  */
-export default function ActionPotential3D(p: ApViewProps) {
+function ActionPotential3D(p: ApViewProps) {
   return (
-    <Stage className="h-full w-full" camera={[0.4, 1.4, 7.4]} inView={p.inView} minDistance={2.5} maxDistance={12}>
+    <Stage className="h-full w-full" camera={[0.4, 1.4, 7.4]} inView={p.inView} active={p.active} wakeKey={`${p.myelin}`} onReady={p.onReady} minDistance={2.5} maxDistance={12}>
       <CameraRig flyKey="neuron" pos={[0.4, 1.3, 6.8]} target={[0.4, 0, 0]} fitAspect={2.2} />
       <Neuron {...p} />
     </Stage>
   );
 }
+
+/** Re-renders only when its props change; the simulation itself is read per frame. */
+export default React.memo(ActionPotential3D);
 
 const AX0 = -1.9, AX1 = 3.6; // axon from the hillock to the terminals
 const axonX = (f: number) => AX0 + (AX1 - AX0) * f;
@@ -56,7 +59,7 @@ function TubeMesh({ pts, r, color }: { pts: V3[]; r: number; color: string }) {
   );
 }
 
-function Neuron({ sim, myelin, colors, onStim }: ApViewProps) {
+function Neuron({ simRef, myelin, colors, onStim }: ApViewProps) {
   const dend = React.useMemo(() => dendrites(), []);
   const soma = React.useRef<THREE.MeshStandardMaterial>(null);
   const ring = React.useRef<THREE.Mesh>(null);
@@ -65,12 +68,13 @@ function Neuron({ sim, myelin, colors, onStim }: ApViewProps) {
   const bulbs = React.useRef<(THREE.MeshStandardMaterial | null)[]>([]);
   const ions = React.useRef<THREE.InstancedMesh>(null);
   const m4 = React.useMemo(() => new THREE.Matrix4(), []);
-  const last = sim.fired[sim.fired.length - 1];
-  const k = last ? (sim.t - last.at) / travelMs(last.myelin) : 2;
-  const glow = Math.max(0, Math.min(1, (sim.v - REST) / 15));
   const nodeX = React.useMemo(() => Array.from({ length: NODES + 1 }, (_, i) => axonX(i / NODES)), []);
   useFrame((s) => {
     const t = s.clock.elapsedTime;
+    const sim = simRef.current;
+    const last = sim.fired[sim.fired.length - 1];
+    const k = last ? (sim.t - last.at) / travelMs(last.myelin) : 2;
+    const glow = Math.max(0, Math.min(1, (sim.v - REST) / 15));
     if (soma.current) soma.current.emissiveIntensity = 0.15 + glow * 1.1;
     const live = !!last && k < 1;
     let f = Math.min(1, k);

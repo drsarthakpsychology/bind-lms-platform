@@ -3,7 +3,7 @@
 import * as React from "react";
 import * as THREE from "three";
 import { useFrame, type ThreeEvent } from "@react-three/fiber";
-import { CameraRig, Pulse, Stage, Tube, useLitPaths } from "./three-kit";
+import { CameraRig, Pulse, Stage, Tube, segs, useLitPaths, useQuality, type Quality } from "./three-kit";
 import type { V3 } from "./kit";
 import { BLOBS, BPATHS, CEREBELLUM, CORTEX, EAR, EYES, HEMI, NIGRA, PITUITARY, PONS, REGION_COLOR, TUBES, regionAt, to3, type RegionId } from "./brain-explorer-data";
 import type { BrainViewProps } from "./brain-explorer";
@@ -21,7 +21,7 @@ export default function BrainExplorer3D(p: BrainViewProps) {
   ];
   const v = views[p.layer] ?? views[0];
   return (
-    <Stage className="h-full w-full" camera={views[0].pos} inView={p.inView} minDistance={2.2} maxDistance={8}>
+    <Stage className="h-full w-full" camera={views[0].pos} inView={p.inView} active={p.journey.active} wakeKey={`${p.layer}-${p.sel}-${p.damage}-${p.journey.run}`} onReady={p.onReady} minDistance={2.2} maxDistance={8}>
       <CameraRig flyKey={`layer-${p.layer}`} pos={v.pos} target={v.target} fitAspect={1.5} />
       <BrainScene {...p} />
     </Stage>
@@ -34,8 +34,9 @@ const sstep = (e0: number, e1: number, x: number) => {
 };
 
 /** One hemisphere as region meshes. left = the side facing the student (positive z). */
-function buildHemisphere(left: boolean): Map<RegionId, THREE.BufferGeometry> {
-  const g = new THREE.SphereGeometry(1, 150, 100);
+function buildHemisphere(left: boolean, q: Quality): Map<RegionId, THREE.BufferGeometry> {
+  // about 19 000 triangles per side at full quality, 4 000 at low
+  const g = new THREE.SphereGeometry(1, segs(120, q), segs(80, q));
   const pos = g.attributes.position as THREE.BufferAttribute;
   const ay: [number, number, number][] = [];
   for (let i = 0; i < pos.count; i++) {
@@ -99,8 +100,8 @@ function buildHemisphere(left: boolean): Map<RegionId, THREE.BufferGeometry> {
   return out;
 }
 
-function buildCerebellum() {
-  const g = new THREE.SphereGeometry(1, 48, 32);
+function buildCerebellum(q: Quality) {
+  const g = new THREE.SphereGeometry(1, segs(48, q), segs(32, q));
   const pos = g.attributes.position as THREE.BufferAttribute;
   for (let i = 0; i < pos.count; i++) {
     const x = pos.getX(i), y = pos.getY(i), z = pos.getZ(i);
@@ -148,7 +149,8 @@ function RegionMat({ id, sel, damage, opacity }: { id: RegionId; sel: boolean; d
 }
 
 function TubeMesh({ pts, r, scale, onClick, children }: { pts: V3[]; r: number; scale?: V3 | number; onClick?: (e: ThreeEvent<MouseEvent>) => void; children: React.ReactNode }) {
-  const geo = React.useMemo(() => new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts.map((p) => new THREE.Vector3(...p))), 32, r, 10, false), [pts, r]);
+  const q = useQuality();
+  const geo = React.useMemo(() => new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts.map((p) => new THREE.Vector3(...p))), segs(32, q), r, q ? 10 : 6, false), [pts, r, q]);
   React.useEffect(() => () => geo.dispose(), [geo]);
   return (
     <mesh geometry={geo} scale={scale ?? 1} onClick={onClick}>
@@ -171,9 +173,10 @@ function Ellipsoid({ c, r, children, onClick }: { c: V3; r: V3; children: React.
 }
 
 function BrainScene({ layer, sel, damage, journey, onPick, colors }: BrainViewProps) {
-  const leftGeo = React.useMemo(() => buildHemisphere(true), []);
-  const rightGeo = React.useMemo(() => buildHemisphere(false), []);
-  const cbGeo = React.useMemo(() => buildCerebellum(), []);
+  const q = useQuality();
+  const leftGeo = React.useMemo(() => buildHemisphere(true, q), [q]);
+  const rightGeo = React.useMemo(() => buildHemisphere(false, q), [q]);
+  const cbGeo = React.useMemo(() => buildCerebellum(q), [q]);
   React.useEffect(() => () => {
     leftGeo.forEach((g) => g.dispose());
     rightGeo.forEach((g) => g.dispose());
