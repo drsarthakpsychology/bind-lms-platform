@@ -33,6 +33,10 @@ A traumatic event is like a deep cut. Most cuts heal by themselves if they are k
 {"title": "The survival responses", "layout": "chain", "nodes": [{"id": "detect", "label": "Danger detected", "detail": "The alarm fires before conscious thought."}, {"id": "fight", "label": "Fight", "detail": "Heart and muscles prepare to resist."}, {"id": "flight", "label": "Flight", "detail": "Prepare to escape."}, {"id": "freeze", "label": "Freeze", "detail": "If neither is possible: stillness, numbness, things feel unreal or slow."}, {"id": "after", "label": "Afterwards", "detail": "Shaking, tears, exhaustion; the body settles over hours to days."}], "caption": "None of these responses is a choice or a weakness; they are automatic."}
 :::
 
+:::widget stress
+{"title": "What the body does in the moment of danger", "caption": "During a trauma this chain fires at full strength: adrenaline in seconds, cortisol in minutes. The flood of stress hormones also stamps the memory in vividly, which is one reason trauma memories can feel so raw later."}
+:::
+
 :::recall
 1. What is the clinical meaning of trauma? || Exposure to actual or threatened death, serious injury or sexual violence (directly, as a witness, by learning of it in a close person, or by repeated work exposure).
 2. What is the freeze response? || An automatic survival response in which the person goes still or numb when fight or flight is impossible.
@@ -57,6 +61,10 @@ In the days and weeks after a traumatic event, many people have strong reactions
 - **Body**: headaches, stomach upset, tiredness, aches.
 
 For most people these reactions **fade gradually** as life returns to its rhythm, especially with support, safety and routine.
+
+:::widget timeline
+{"prompt": "Ravi was in a bus accident. Order how his reactions usually change if he recovers naturally.", "events": [{"label": "Shock, shaking, feeling numb or unreal", "when": "First hours"}, {"label": "Vivid memories, poor sleep, jumpy at horns", "when": "First days"}, {"label": "Reactions slowly ease as routine returns", "when": "First month"}, {"label": "Travels by bus again; remembers it without being overwhelmed", "when": "A few months on"}], "why": "Most people follow this path. If strong reactions are still there after a month and getting in the way of life, it is time for an assessment for PTSD."}
+:::
 
 ### What helps natural recovery
 - Being safe, and feeling safe.
@@ -117,6 +125,10 @@ In an ordinary memory you know you are remembering. In a **flashback**, the past
 
 :::widget flow
 {"title": "How avoidance keeps PTSD going", "layout": "cycle", "nodes": [{"id": "remind", "label": "Reminder", "detail": "A smell, sound, place or thought."}, {"id": "fear", "label": "Fear and re-living", "detail": "The memory floods back as if happening now."}, {"id": "avoid", "label": "Avoidance", "detail": "Stay away, push the memory down, drink to forget."}, {"id": "relief", "label": "Short relief", "detail": "Distress drops."}, {"id": "stuck", "label": "Memory stays unprocessed", "detail": "The fear is never updated, so the next reminder hits as hard."}], "caption": "Trauma-focused therapy helps the person approach the memory safely so it can be filed as past."}
+:::
+
+:::widget compare
+{"title": "An ordinary bad memory and a flashback", "a": {"label": "Ordinary memory", "points": ["You know you are remembering", "It has a beginning, middle and end", "It sits in the past: 'that was then'", "You can mostly choose when to think of it"], "summary": "A memory: painful, but clearly in the past."}, "b": {"label": "Flashback", "points": ["Feels as if it is happening now", "Comes in fragments: a smell, a sound, a picture", "The body reacts as if the danger is present", "Triggered by reminders, often without warning"], "summary": "A flashback: the past breaks into the present. Therapy helps turn it into an ordinary memory."}, "caption": "Trauma-focused therapy works on this difference: it links the fragments into a story with a time and place, so the memory can stay in the past."}
 :::
 
 :::recall
@@ -373,6 +385,10 @@ Plus: **F** more than 1 month; **G** distress or impairment; **H** not due to su
 **One** intrusion, **one** avoidance, **two** negative cognition and mood, **two** arousal. Then: more than a month.
 :::
 
+:::widget sort
+{"prompt": "Which DSM-5-TR PTSD cluster does each symptom belong to?", "buckets": ["B. Intrusion", "C. Avoidance", "D. Thinking and mood", "E. Arousal"], "items": [{"text": "Nightmares about the fire", "bucket": 0}, {"text": "Stays away from the old neighbourhood", "bucket": 1}, {"text": "'It was my fault my brother died.'", "bucket": 2}, {"text": "Jumps at every loud noise", "bucket": 3}, {"text": "Will not talk about that night", "bucket": 1, "why": "Avoiding thoughts, feelings or conversations counts as avoidance."}, {"text": "Cannot feel love for his children", "bucket": 2}, {"text": "Racing heart when he hears sirens", "bucket": 0, "why": "A strong body reaction to reminders is an intrusion symptom."}, {"text": "Drives recklessly", "bucket": 3}]}
+:::
+
 ### Specifiers
 - **With dissociative symptoms**: persistent or recurrent depersonalisation or derealisation.
 - **With delayed expression**: full criteria not met until at least 6 months after the event (though some symptoms may start earlier).
@@ -406,6 +422,10 @@ Q: Which symptom belongs to cluster E (arousal and reactivity)?
 - **Fear conditioning**: cues present during the trauma (a smell, a sound, a time of day) become linked to terror; afterwards they trigger fear on their own.
 - **Avoidance** prevents the person learning that the cues are now safe, so fear does not extinguish.
 - **Generalisation**: fear spreads to similar cues (all men with beards, all loud bangs).
+
+:::widget conditioning
+{"kind": "classical", "title": "How a smell becomes a trigger", "caption": "For Sakina, smoke was present during the riot (pairing). Now smoke alone sets off terror (conditioned response), and the fear spreads to similar cues such as a gas stove or incense. Extinction needs safe contact with the cues, which avoidance never allows."}
+:::
 
 ### The cognitive model (Ehlers and Clark)
 PTSD persists when the trauma produces a **sense of serious current threat**, from two sources:
