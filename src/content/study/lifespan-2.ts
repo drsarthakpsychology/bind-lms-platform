@@ -31,17 +31,8 @@ Adolescence begins in biology (puberty) and ends in culture (when a society trea
 - The **limbic and reward system** (including the ventral striatum) becomes very responsive around puberty, while the **prefrontal cortex**, which supports planning, inhibition and weighing long-term consequences, keeps maturing into the mid-twenties.
 - The **dual systems model** (Laurence Steinberg and others) says this gap explains why adolescents take more risks, especially when emotions run high ("hot" cognition) and **peers are watching**. In calm, unhurried situations ("cold" cognition), adolescents reason about risk almost as well as adults.
 
-:::widget brainmap
-{
-  "title": "Two systems that mature at different speeds",
-  "focus": ["prefrontal", "basal-ganglia", "amygdala"],
-  "notes": {
-    "prefrontal": "Planning, impulse control and long-term thinking. Matures gradually into the mid-twenties.",
-    "basal-ganglia": "Includes the ventral striatum, the reward hub. Very responsive from puberty, especially to rewards in front of peers.",
-    "amygdala": "Fast emotional responses. Reactive in adolescence, and only gradually brought under prefrontal regulation."
-  },
-  "caption": "The gap between an early-revving reward system and a slowly maturing control system is the core of the dual systems model."
-}
+:::widget brainexplorer
+{"title":"Two systems that mature at different speeds","focus":["frontal","basal-ganglia","amygdala","hippocampus"],"caption":"Tap the frontal lobe and watch its brake reach the amygdala; then switch on damage. In adolescence that brake is still being built, while the reward and alarm systems are already running at full power: the core of the dual systems model."}
 :::
 
 :::widget decide

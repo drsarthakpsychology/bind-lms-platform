@@ -203,6 +203,10 @@ Some children have mainly the first group, some mainly the second, and many have
 - **Not only a boyhood problem.** Girls more often have the inattentive picture: quiet, dreamy and disorganised. They are diagnosed later or missed.
 - **Not something everyone grows out of.** Hyperactivity often settles by the teens, but inattention and disorganisation often continue into adult life.
 
+:::widget genogram
+{"title":"ADHD in the family","condition":"ADHD","start":"blank","caption":"Aarav, 9, has ADHD. His father was always in trouble at school for fidgeting, and his father's brother was never diagnosed but lost many jobs. Draw the family, mark who has ADHD, and run the pattern finder. Why does this pattern matter for how you talk to the parents?"}
+:::
+
 :::widget sort
 {"prompt": "Inattention or hyperactivity-impulsivity? Place each behaviour.", "buckets": ["Inattention", "Hyperactivity or impulsivity"], "items": [{"text": "Loses his water bottle and pencil box nearly every day", "bucket": 0}, {"text": "Shouts the answer before the teacher finishes the question", "bucket": 1}, {"text": "Copies homework from the board but misses half the lines", "bucket": 0}, {"text": "Climbs on the furniture at a family wedding", "bucket": 1}, {"text": "Seems not to hear when spoken to directly, even with no noise around", "bucket": 0}, {"text": "Cannot wait in the queue at the school canteen", "bucket": 1}, {"text": "Avoids long writing tasks and says they are 'boring'", "bucket": 0, "why": "Avoiding tasks that need sustained mental effort is an inattention symptom."}, {"text": "Talks non-stop, even when told to be quiet", "bucket": 1}]}
 :::

@@ -37,6 +37,8 @@ const LENGTH_CHECKED_SUBJECTS: PrepQuestion["subject"][] = [
   "health",
   "positive",
   "organisational",
+  "psychopharmacology",
+  "clinical-psychiatry",
 ];
 const RANK_CHECKED_SUBJECTS: PrepQuestion["subject"][] = [
   "history-systems",

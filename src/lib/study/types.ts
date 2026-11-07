@@ -42,7 +42,7 @@ export type Block =
 export type Level = "starting" | "beginner" | "advanced";
 export const LEVELS: Level[] = ["starting", "beginner", "advanced"];
 
-export type WidgetKind = "guess" | "decide" | "sort" | "build" | "moodline" | "worked" | "synapse" | "reveal" | "flow" | "curve" | "layers" | "brainmap" | "journey" | "neuron" | "pathways" | "receptor" | "conditioning" | "memoryflow" | "stress" | "timeline" | "compare" | "attention" | "dissonance" | "conservation" | "experiment" | "release" | "thoughtrecord" | "hypnogram" | "strange" | "illusion";
+export type WidgetKind = "guess" | "decide" | "sort" | "build" | "moodline" | "worked" | "synapse" | "reveal" | "flow" | "curve" | "layers" | "brainmap" | "journey" | "neuron" | "pathways" | "receptor" | "conditioning" | "memoryflow" | "stress" | "timeline" | "compare" | "attention" | "dissonance" | "conservation" | "experiment" | "release" | "thoughtrecord" | "hypnogram" | "strange" | "illusion" | "nervoussystem" | "brainexplorer" | "actionpotential" | "synapse3d" | "genogram" | "hpaloop";
 
 export type GuessData = { prompt: Inline; min: number; max: number; step?: number; unit: string; answer: [number, number]; reveal: Inline; clinician?: Inline };
 export type DecideData = {
@@ -118,7 +118,19 @@ export type HypnogramData = { title?: Inline; caption?: Inline };
 export type StrangeData = { title?: Inline; caption?: Inline };
 /** Perception illusions: judge, then measure to see the parts are equal (or flip figure and ground). */
 export type IllusionData = { kind: "muller-lyer" | "ponzo" | "ebbinghaus" | "figure-ground"; title?: Inline; caption?: Inline };
-export type WidgetData = AttentionData | DissonanceData | ConservationData | ExperimentData | ReleaseData | ThoughtRecordData | HypnogramData | StrangeData | IllusionData | ConditioningData | MemoryFlowData | StressData | TimelineData | CompareData | JourneyData | NeuronData | PathwaysData | ReceptorData | GuessData | DecideData | SortData | BuildData | MoodlineData | WorkedData | SynapseData | RevealData | FlowData | CurveData | LayersData | BrainMapData;
+/** Explorable nervous system body (3D when the device can draw it): send signals through the brain or a reflex shortcut, switch fight or flight and rest and digest, zoom from CNS and PNS to the autonomic divisions. `start` picks the opening mode. */
+export type NervousSystemData = { title?: Inline; caption?: Inline; start?: "signal" | "auto" | "map" };
+/** Explorable brain (3D when the device can draw it): peel the layers, tap a region to watch what it does, switch on damage for a real case, and a "Where is the damage?" challenge. `focus` limits the region buttons (frontal, motor, parietal, occipital, temporal, broca, wernicke, cerebellum, brainstem, thalamus, hypothalamus, amygdala, hippocampus, basal-ganglia, corpus-callosum). */
+export type BrainExplorerData = { title?: Inline; caption?: Inline; focus?: string[] };
+/** A playable neuron (3D when the device can draw it): push the membrane with Stimulate and a push-size slider, watch the live voltage trace, the sodium and potassium channels and the impulse racing down the axon (myelin on or off); the refractory period blocks a too-early push; challenge: fire 3 in 10 seconds. */
+export type ActionPotentialData = { title?: Inline; caption?: Inline; myelinated?: boolean };
+/** A synapse in 3D (flat cross-section without WebGL): fire the nerve ending and follow calcium entry, vesicle fusion, binding and reuptake, with a live "message received" meter; drugs: reuptake blocker, receptor blocker, botulinum toxin. */
+export type Synapse3dData = { title?: Inline; caption?: Inline; transmitter?: string };
+/** Genogram builder for case work: tap a person to add parents, siblings, partner, children and grandparents with standard symbols, mark the condition (shaded), deaths (cross) and divorce (two slashes), then a pattern finder traces the condition through the family. Opens on a built-in example unless `start` is "blank". */
+export type GenogramData = { title?: Inline; caption?: Inline; condition?: string; start?: "example" | "blank" };
+/** A day of stress, played: events arrive (exam, argument, deadline, bedtime), adrenaline and cortisol meters and a live curve respond, and the student picks how to cope (talk, exercise, rest or sleep, avoid) to keep the stress load low; chronic stress mode replays five hard days and shows the HPA feedback loop failing. `start` opens "day" or "chronic". */
+export type HpaLoopData = { title?: Inline; caption?: Inline; start?: "day" | "chronic" };
+export type WidgetData = HpaLoopData | GenogramData | Synapse3dData | ActionPotentialData | BrainExplorerData | NervousSystemData | AttentionData | DissonanceData | ConservationData | ExperimentData | ReleaseData | ThoughtRecordData | HypnogramData | StrangeData | IllusionData | ConditioningData | MemoryFlowData | StressData | TimelineData | CompareData | JourneyData | NeuronData | PathwaysData | ReceptorData | GuessData | DecideData | SortData | BuildData | MoodlineData | WorkedData | SynapseData | RevealData | FlowData | CurveData | LayersData | BrainMapData;
 
 export type Section = {
   /** Stable id, e.g. "2-3" for "2.3". */
