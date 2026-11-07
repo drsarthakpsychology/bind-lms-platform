@@ -110,6 +110,14 @@ Development flows in four streams at once.
 Before a child can say "Look, a bird!", she says it with one finger and a glance back at you. That point-and-glance is called **joint attention**: two people sharing interest in a third thing. It is one of the most important social milestones, and its absence is one of the earliest signs of autism.
 :::
 
+:::widget timeline
+{"prompt": "Match each motor milestone to the age it usually appears. Tap a card, then the age.", "events": [{"label": "Lifts head when lying on tummy", "when": "2 months"}, {"label": "Sits with support, reaches and grasps", "when": "6 months"}, {"label": "Sits alone and crawls", "when": "9 months"}, {"label": "Stands and walks holding on", "when": "12 months"}, {"label": "Walks well and scribbles", "when": "18 months"}, {"label": "Runs and kicks a ball", "when": "2 years"}, {"label": "Hops and draws a person", "when": "4 to 5 years"}], "why": "Development runs head to toe and centre to fingers: head control first, then sitting, standing, walking and fine hand skills. Ages vary from child to child; a red flag is a skill that is very late, or a skill that is lost."}
+:::
+
+:::widget timeline
+{"prompt": "Now social and language milestones. Match each one to its usual age.", "events": [{"label": "Social smile and cooing", "when": "2 months"}, {"label": "Babbles 'ba', 'da'", "when": "6 months"}, {"label": "Stranger anxiety; 'mama' without meaning", "when": "9 months"}, {"label": "Points to ask; one or two real words", "when": "12 months"}, {"label": "Points to show; pretend play begins", "when": "18 months"}, {"label": "Two-word phrases", "when": "2 years"}, {"label": "Short sentences that strangers understand", "when": "3 years"}], "why": "No babbling or pointing by 12 months, no single words by 16 months, no two-word phrases by 2 years, or any loss of language or social skills at any age, should lead to an assessment, including hearing and autism screening."}
+:::
+
 ### Red flags that need assessment
 - No social smile by about three months.
 - No babbling by nine months, no words by about sixteen months, no two-word phrases by two years.
@@ -207,6 +215,10 @@ Some children have mainly the first group, some mainly the second, and many have
 {"title": "Brain networks linked with ADHD", "focus": ["prefrontal", "basal-ganglia", "cerebellum"], "notes": {"prefrontal": "Planning, holding goals in mind and stopping impulses. On average this area matures a little later in children with ADHD.", "basal-ganglia": "Selecting actions and processing reward. Dopamine signalling here is involved in motivation and the pull of immediate rewards.", "cerebellum": "Timing and coordination, including timing of attention. Differences here are found in some studies."}, "caption": "Tap each area. These are group averages from research, not a test: brain scans cannot diagnose ADHD in a single child."}
 :::
 
+:::widget compare
+{"title": "A lively child, or ADHD?", "a": {"label": "A lively, energetic child", "points": ["Active in the playground, settles in class", "Can focus on things that interest them and on things that don't, with effort", "Behaviour fits the age", "Teachers and parents are not worried", "Friends and marks are fine"], "summary": "Lively: high energy that the child can control when the setting needs it."}, "b": {"label": "ADHD", "points": ["Restless and inattentive at home, at school and with friends", "Problems began before age 12", "Far more than other children of the same age", "Loses things, forgets, cannot wait a turn", "Marks fall below ability; often punished or left out"], "summary": "ADHD: persistent, in two or more settings, out of line with age, and causing real harm."}, "caption": "Information from both parents and teachers is needed. A child who is only restless at home, or only in one class, points to something other than ADHD."}
+:::
+
 ### Why it matters
 Untreated ADHD is not harmless. Children with ADHD are more likely to fail exams, be punished, lose friends, have accidents and injuries, and, as teenagers, to use drugs and drive dangerously. Many feel stupid or bad. With the right help at home and at school, and sometimes medicine, most do far better.
 
@@ -268,6 +280,10 @@ Q: Which feature is needed before ADHD can be diagnosed?
 
 :::widget sort
 {"prompt": "Social communication or restricted and repetitive behaviour? Place each sign.", "buckets": ["Social communication", "Restricted or repetitive behaviour and senses"], "items": [{"text": "Does not point to show his mother an aeroplane", "bucket": 0}, {"text": "Lines up shoes in a perfect row every evening", "bucket": 1}, {"text": "Talks at length about bus routes but does not notice others are bored", "bucket": 0, "why": "Talking at people rather than with them is a reciprocity difficulty. The narrow interest itself would go in the other group."}, {"text": "Screams when the mixer grinder is switched on", "bucket": 1, "why": "Unusual sensitivity to sound is part of the second group in current criteria."}, {"text": "Does not bring toys to show or share", "bucket": 0}, {"text": "Must take exactly the same road to school every day", "bucket": 1}, {"text": "Repeats lines from a cartoon over and over", "bucket": 1}, {"text": "Rarely looks at faces, uses few gestures", "bucket": 0}]}
+:::
+
+:::widget compare
+{"title": "A shy child or an autistic child?", "a": {"label": "Shy child", "points": ["Quiet with strangers, warms up with time", "Points, shares and checks your face as a toddler", "Understands jokes and others' feelings", "Plays pretend games", "Comfortable and chatty with family"], "summary": "Shyness: social skills are there; the child is cautious with new people."}, "b": {"label": "Autistic child", "points": ["Social difference shows even with family", "May not point to show or share interest", "Finds others' feelings and unwritten social rules hard to read", "Repetitive play, strong routines, intense interests", "Unusual reactions to sounds, textures or lights"], "summary": "Autism: differences in social communication plus restricted, repetitive patterns, present from early childhood."}, "caption": "Shyness is about comfort; autism is about how social information is understood and how the child processes the world."}
 :::
 
 ### Myths that do harm

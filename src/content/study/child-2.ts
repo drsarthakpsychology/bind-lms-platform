@@ -31,6 +31,10 @@ Severity is judged mainly by **how much support the person needs in daily life**
 {"kind": "normal", "title": "IQ scores across the population", "caption": "Move the slider along the bell curve. The average is 100 and each standard deviation is 15 points. Two standard deviations below the mean (about 70) marks the zone where intellectual disability is considered, but only if adaptive functioning is also clearly impaired. Notice how few people score below 70: about 2 in 100."}
 :::
 
+:::widget layers
+{"title": "Levels of intellectual disability", "shape": "stack", "layers": [{"label": "Mild", "detail": "The largest group, about 85 percent. Learns to read and write to a basic level, can live and work with some support. Often noticed only at school."}, {"label": "Moderate", "detail": "Speaks simply, manages self-care with training, needs support with money and travel. Usually noticed in the preschool years."}, {"label": "Severe", "detail": "Very limited speech, needs help with most daily tasks, often has physical conditions as well."}, {"label": "Profound", "detail": "Needs care in all areas, often with sensory and physical disabilities, and very limited understanding of speech."}], "caption": "DSM-5-TR grades severity by adaptive functioning (what the person can do in daily life), not by IQ alone."}
+:::
+
 ### Global developmental delay
 In children **under five**, reliable IQ testing is often not possible. When a young child is clearly behind in two or more areas of development, the diagnosis is **global developmental delay**. It is reassessed later; some children catch up, others are later diagnosed with intellectual disability.
 
@@ -207,6 +211,10 @@ In the Starting level you met the two groups of ADHD symptoms. Now we apply the 
 - **Adolescence**: restlessness becomes an inner feeling; disorganisation, missed deadlines, risk-taking, road accidents, early substance use, conflict at home.
 - **Adults**: chaotic time management, job changes, forgotten bills, relationship strain, emotional quick temper. Many have been called "lazy" all their lives.
 
+:::widget timeline
+{"prompt": "How does ADHD tend to change as a person grows? Order the pictures.", "events": [{"label": "Preschool: constantly on the go, many accidents"}, {"label": "Primary school: cannot sit still in class, marks below ability, often punished"}, {"label": "Adolescence: restlessness becomes inner, deadlines missed, risk-taking"}, {"label": "Adulthood: chaotic time, forgotten bills, frequent job changes"}], "why": "Hyperactivity often fades with age, while inattention and disorganisation more often persist. Many adults with ADHD were never diagnosed and grew up being called lazy."}
+:::
+
 ### Things that look like ADHD
 | Look-alike | What gives it away |
 |---|---|
@@ -307,6 +315,10 @@ Key facts:
 ### What comes with tics
 In Tourette's, **ADHD** (about half) and **obsessive-compulsive symptoms** (about a third) are common and often cause more trouble than the tics themselves. Anxiety, rage attacks and learning problems also occur.
 
+:::widget guess
+{"prompt": "In a class of 40 school children, about how many are likely to have a specific learning disorder in reading, writing or maths?", "min": 0, "max": 20, "unit": "children", "answer": [2, 6], "reveal": "Usually somewhere from 2 to 6 children: between about 5 and 15 percent of school-age children across languages and cultures. Many in Indian classrooms are never identified and are labelled careless or weak."}
+:::
+
 ### Communication disorders
 - **Language disorder**: difficulty with vocabulary, grammar and putting sentences together, in understanding and/or speaking.
 - **Speech sound disorder**: difficulty making speech sounds clearly beyond the expected age.
@@ -370,6 +382,10 @@ Anxiety and depression are among the commonest mental health problems in childre
 
 ### Normal fears change with age
 Babies fear strangers and separation; preschoolers fear the dark, animals and monsters; school children fear injury, illness and failure; teenagers fear social judgement and the future. Anxiety becomes a disorder when it is **far beyond what is expected for age**, lasts, and **stops the child doing ordinary things**.
+
+:::widget timeline
+{"prompt": "Normal fears change as children grow. Order them by the age they usually peak.", "events": [{"label": "Fear of strangers and of separation from parents"}, {"label": "Fear of the dark, animals and monsters"}, {"label": "Fear of injury, illness and failing at school"}, {"label": "Fear of social judgement and of the future"}], "why": "Each fear fits the child's stage of development: babies need their carers, preschoolers live with imagination, school children meet real dangers and tests, and teenagers care most about peers. Fear is a problem only when it is far beyond the age norm, lasting, and stops ordinary life."}
+:::
 
 ### The main childhood anxiety problems
 - **Separation anxiety disorder**: excessive fear of being apart from parents, worry that something will happen to them, refusing to sleep alone or go to school, stomach aches on school mornings.
@@ -477,6 +493,10 @@ A child with DMDD has **severe, frequent temper outbursts** far out of proportio
 {"title": "The coercive cycle between parent and child", "layout": "cycle", "nodes": [{"id": "a", "label": "Parent gives an instruction", "detail": "Often vague or shouted from another room."}, {"id": "b", "label": "Child refuses or whines", "detail": "Defiance escalates."}, {"id": "c", "label": "Parent gives in, or explodes", "detail": "Giving in rewards the child's defiance; exploding teaches that shouting wins and models aggression."}, {"id": "d", "label": "Both learn", "detail": "The child learns defiance works; the parent learns that giving in or exploding ends the noise. Next time both escalate faster."}], "caption": "Press Play. Parent training breaks the cycle with clear calm instructions, praise for cooperation, and consistent non-violent consequences."}
 :::
 
+:::widget compare
+{"title": "ODD or conduct disorder?", "a": {"label": "Oppositional defiant disorder", "points": ["Angry, irritable mood", "Arguing and defying adults", "Spiteful, annoys people on purpose", "Mostly at home, with people the child knows", "Rules are resisted, not seriously broken"], "summary": "ODD: defiance and anger, directed at authority figures."}, "b": {"label": "Conduct disorder", "points": ["Aggression to people or animals", "Destroying property, setting fires", "Lying, theft, breaking in", "Running away, truancy, staying out at night", "Others' basic rights are violated"], "summary": "Conduct disorder: serious rule-breaking and harm to others. Childhood onset has the worst outlook."}, "caption": "ODD can come before conduct disorder, but most children with ODD never develop it."}
+:::
+
 ### What causes disruptive behaviour?
 Disruptive behaviour grows from a mix of **child factors** (difficult temperament, ADHD, language delay, low intelligence, callous traits) and **environment** (harsh, inconsistent or neglectful parenting, family conflict and violence, parental substance use or mental illness, poverty, deviant peers, abuse). A common cycle is the **coercive cycle**: the child whines or defies; the parent gives in, which rewards the defiance; or the parent explodes, which teaches the child that shouting wins. Both escalate.
 
@@ -497,6 +517,10 @@ Disruptive behaviour grows from a mix of **child factors** (difficult temperamen
 - **Medicines for severe aggression** only alongside psychosocial work: risperidone (start 0.25 to 0.5 mg, usual 0.5 to 1.5 mg; best evidence), with metabolic monitoring and a plan to taper. Avoid long-term use without review.
 - **Callous-unemotional traits**: respond better to reward-based approaches than punishment; warmth in parenting predicts reduction.
 - **Legal**: in India, the Juvenile Justice (Care and Protection of Children) Act 2015 governs children in conflict with the law; children aged 16 to 18 accused of heinous offences may be assessed by the Juvenile Justice Board for trial as adults, after a preliminary assessment of mental and physical capacity, which mental health professionals may be asked to support.
+:::
+
+:::widget conditioning
+{"kind": "operant", "title": "How tantrums are taught by accident", "caption": "Swap the lever for a tantrum and the food for the sweet the mother finally hands over. The child learns that screaming works, so tantrums grow (positive reinforcement). The mother learns that giving in stops the noise (negative reinforcement for her). When parents stop giving in, expect an extinction burst: things get louder before they get better. Parent training teaches praise for good behaviour and calm, consistent limits."}
 :::
 
 :::recall
@@ -652,6 +676,10 @@ Most children are dry by day around three, and dry at night somewhat later. Bedw
 - **Imipramine** (Depsonil): 25 mg at bedtime (up to 50 mg in children over about 9 years, 75 mg in adolescents), only when others have failed; ECG if cardiac history; lock it away.
 - **Oxybutynin** or another anticholinergic for daytime overactive bladder, combined with desmopressin in resistant cases.
 - **Encopresis**: disimpaction with polyethylene glycol (PEG 3350) at higher doses for a few days, then maintenance (about 0.4 to 0.8 g/kg/day) for many months, lactulose as an alternative; scheduled toileting after meals for 5 to 10 minutes; behavioural programme. Red flags for Hirschsprung disease: delayed passage of meconium beyond 48 hours, failure to thrive, explosive stools.
+:::
+
+:::widget conditioning
+{"kind": "classical", "title": "How the bedwetting alarm teaches the brain", "caption": "The bell rings at the first drops of urine and wakes the child. Night after night, the feeling of a full bladder is paired with the alarm and with waking. In time the full bladder alone wakes the child, or the child learns to hold on, before any wetting starts. This is conditioning at work, which is why the alarm needs patience and is less likely than medicine to be followed by relapse."}
 :::
 
 :::recall
