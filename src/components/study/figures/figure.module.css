@@ -1,0 +1,47 @@
+/* Figure palette, built only from the design tokens so every drawing reads in
+   light and dark. Art uses these through fill="var(--f-...)" and stroke="var(--f-...)".
+     ink    outlines and text (foreground)
+     paper  white matter, empty space (card)
+     t1..t4 tissue greys, light to dark (ink mixed into the card colour)
+     hi     lime highlight for a tapped part (fill only, always with an ink outline)
+     blue   brand blue for vessels, pathways and second accents
+     line   a highlighted line: blue in light, lime in dark (the link token) */
+.fig {
+  --f-ink: var(--foreground);
+  --f-paper: var(--card);
+  --f-t1: color-mix(in oklab, var(--foreground) 6%, var(--card));
+  --f-t2: color-mix(in oklab, var(--foreground) 12%, var(--card));
+  --f-t3: color-mix(in oklab, var(--foreground) 22%, var(--card));
+  --f-t4: color-mix(in oklab, var(--foreground) 36%, var(--card));
+  --f-hi: var(--primary);
+  --f-hi-soft: color-mix(in oklab, var(--primary) 45%, var(--card));
+  --f-blue: var(--brand);
+  --f-blue-soft: color-mix(in oklab, var(--brand) 22%, var(--card));
+  --f-blue-mid: color-mix(in oklab, var(--brand) 50%, var(--card));
+  --f-line: var(--link);
+  --f-shade: var(--foreground);
+}
+
+:global(.dark) .fig {
+  --f-t1: color-mix(in oklab, var(--foreground) 10%, var(--card));
+  --f-t2: color-mix(in oklab, var(--foreground) 18%, var(--card));
+  --f-t3: color-mix(in oklab, var(--foreground) 28%, var(--card));
+  --f-t4: color-mix(in oklab, var(--foreground) 42%, var(--card));
+  --f-blue: #6f8cff;
+  --f-blue-soft: color-mix(in oklab, #6f8cff 26%, var(--card));
+  --f-blue-mid: color-mix(in oklab, #6f8cff 55%, var(--card));
+  --f-shade: #000000;
+}
+
+.scroller {
+  overflow: auto;
+  overscroll-behavior: contain;
+  touch-action: pan-x pan-y;
+  -webkit-overflow-scrolling: touch;
+}
+
+.part {
+  transition:
+    fill var(--duration-base) var(--ease-snappy),
+    stroke var(--duration-base) var(--ease-snappy);
+}
