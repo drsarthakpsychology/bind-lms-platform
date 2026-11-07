@@ -60,7 +60,7 @@ export const PART: PrepQuestion[] = [
       "Open-ended sessions over several years",
       "Structured, time-limited sessions with homework",
       "Interpretation of dreams and transference",
-      "A silent therapist who avoids giving guidance",
+      "A largely silent therapist who avoids giving guidance",
     ],
     answer: 1,
     explanation:
@@ -149,7 +149,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "Family therapy differs from individual therapy mainly in that it:",
-    options: ["Treats each member separately and never meets them together", "Always involves prescribing medication for the whole family", "Sees problems as part of family patterns, not only in one person", "Focuses only on the oldest member as head of the family"],
+    options: ["Treats each member separately and never meets them together as a group", "Always involves prescribing medication for the whole family", "Sees problems as part of family patterns, not only in one person", "Focuses only on the oldest member as head of the family"],
     answer: 2,
     explanation:
       "Systemic family therapy sees a person's symptoms in the context of family relationships, communication and roles, so change in the pattern can help everyone. Family members are usually seen together. Medication is not part of family therapy, and the focus is on the whole system, not on any single member.",
@@ -263,7 +263,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "A counsellor says to a client who smokes, 'You enjoy smoking with your friends, and at the same time you're worried about your cough.' This is a:",
-    options: ["Closed question", "Confrontation", "Double-sided reflection", "Summary of homework"],
+    options: ["Closed question", "Confrontation", "Double-sided reflection", "Summary of the week's homework"],
     answer: 2,
     explanation:
       "A double-sided reflection captures both sides of the client's ambivalence, often joined with 'and' rather than 'but', which tends to invite change talk. It is not a question, it does not confront or argue, and it is not about homework.",
@@ -310,7 +310,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "A distress tolerance skill in DBT is used mainly to:",
-    options: ["Get through a crisis without making it worse", "Win an argument with a partner or parent", "Interpret painful memories from childhood", "Increase anxiety on purpose to test beliefs"],
+    options: ["Get through a crisis without making it worse", "Win an argument with a partner or parent", "Interpret painful memories from childhood", "Increase anxiety on purpose to test catastrophic beliefs"],
     answer: 0,
     explanation:
       "Distress tolerance skills, such as TIPP, distraction (ACCEPTS), self-soothing and radical acceptance, help people survive intense emotional crises without self-harm, substance use or other actions that make things worse. They are not for winning arguments (DEAR MAN aims at fair requests), interpreting memories, or raising anxiety.",
@@ -355,7 +355,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "In ACT, 'values' are best described as:",
-    options: ["Goals that can be completed and then ticked off", "Rules that have been imposed by one's parents", "Chosen life directions, like heading west on a compass", "Moral judgements that one makes about other people"],
+    options: ["Goals that can be completed and then ticked off", "Rules that have been imposed by one's parents", "Chosen life directions, like heading west on a compass", "Moral judgements that one habitually makes about other people"],
     answer: 2,
     explanation:
       "ACT describes values as freely chosen life directions (such as being a caring parent) that are never 'finished', unlike goals, which can be achieved (such as visiting a child this week). Values guide committed action. They are not imposed rules or judgements of others.",

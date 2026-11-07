@@ -63,7 +63,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "For severe OCD that has not responded to weekly outpatient ERP, which option has evidence of benefit?",
-    options: ["Stopping ERP and relying on family reassurance instead", "Intensive ERP, for example daily sessions over 1 to 3 weeks", "Long-term non-directive counselling once a week", "Thought stopping and distraction training at home"],
+    options: ["Stopping ERP and relying on family reassurance and accommodation instead", "Intensive ERP, for example daily sessions over 1 to 3 weeks", "Long-term non-directive counselling once a week", "Thought stopping and distraction training at home"],
     answer: 1,
     explanation:
       "Intensive formats, such as the Bergen 4-day treatment or daily ERP over a few weeks, show large effects in studies, including for people who have not improved in standard treatment. Home-based sessions help when rituals are tied to the home. Family reassurance is a form of accommodation that maintains OCD. Non-directive counselling and thought stopping lack evidence for OCD.",
@@ -189,7 +189,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 4,
     type: "mcq",
     stem: "In a 'dismantling' (component analysis) study of a therapy, researchers:",
-    options: ["Compare the full therapy with the same therapy minus one part", "Compare the therapy with a waiting-list control group only", "Interview therapists about what they believe helps clients", "Test the therapy in a single case followed over many years"],
+    options: ["Compare the full therapy with the same therapy minus one part", "Compare the whole therapy with a waiting-list control group only", "Interview therapists about what they believe helps clients", "Test the therapy in a single case followed over many years"],
     answer: 0,
     explanation:
       "Dismantling designs remove one component (for example, the cognitive part of CBT, or the eye movements in EMDR) and compare outcomes with the full package. If outcomes are equal, that component may not be necessary. Jacobson's study of behavioural activation versus full CT is a classic example. Waiting-list comparisons test overall efficacy, interviews give opinions, and single cases cannot isolate components across a group.",
@@ -202,7 +202,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "Dugas's CBT for GAD, based on the intolerance of uncertainty model, includes which distinctive component?",
-    options: ["Dream interpretation of the main worry themes", "Flooding with images of every feared catastrophe at once", "Experiments in uncertainty, such as deciding without checking", "Teaching the person to seek reassurance more often"],
+    options: ["Dream interpretation of the main worry themes", "Flooding with vivid images of every feared catastrophe all at once", "Experiments in uncertainty, such as deciding without checking", "Teaching the person to seek reassurance more often"],
     answer: 2,
     explanation:
       "The model holds that GAD worry is driven by an inability to tolerate uncertainty. Treatment includes awareness of uncertainty, behavioural experiments with uncertainty (trying a new restaurant without reading reviews, sending an email without re-reading it), challenging beliefs about the usefulness of worry, problem-solving training and imaginal exposure to core fears. Dream work and flooding with all fears are not part of it, and reassurance-seeking is reduced, not increased.",
@@ -314,7 +314,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "Meta-analyses of culturally adapted psychotherapies show that:",
-    options: ["Cultural adaptation generally reduces the effectiveness of therapy", "Adapted treatments are moderately more effective than unadapted ones", "Culture has no detectable influence on therapy outcomes at all", "Only medication, not psychotherapy, needs cultural adaptation"],
+    options: ["Cultural adaptation generally reduces the overall effectiveness of therapy", "Adapted treatments are moderately more effective than unadapted ones", "Culture has no detectable influence on therapy outcomes at all", "Only medication, not psychotherapy, needs cultural adaptation"],
     answer: 1,
     explanation:
       "Pooled studies find culturally adapted treatments, which adjust language, metaphors, family involvement, explanatory models and goals, produce better outcomes than unadapted versions. Examples include adapted CBT in South Asia and Pakistan's Thinking Healthy Programme for perinatal depression delivered by health workers. Adaptation keeps the active ingredients while improving fit.",
@@ -387,7 +387,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "In India, who is legally recognised to practise as a clinical psychologist?",
-    options: ["Anyone who holds a BA or MA degree in psychology", "Anyone who has completed an online counselling course", "A person with an RCI-recognised clinical qualification", "Anyone employed in a hospital psychology department"],
+    options: ["Anyone who holds a BA or MA degree in psychology", "Anyone who has completed an online counselling certificate course", "A person with an RCI-recognised clinical qualification", "Anyone employed in a hospital psychology department"],
     answer: 2,
     explanation:
       "Under the RCI Act 1992 and the Mental Healthcare Act 2017, a clinical psychologist must hold an RCI-recognised professional qualification, such as the M.Phil in Clinical Psychology (now being renamed as a professional master's), and be registered in the Central Rehabilitation Register. A BA, short online course or hospital job does not qualify a person to practise as a clinical psychologist.",
@@ -415,7 +415,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Which adaptation is recommended when delivering CBT to older adults with mild cognitive impairment?",
-    options: ["A faster pace with more abstract discussion of beliefs", "Avoiding all homework so as not to overload the patient", "Slower pace, written summaries, memory aids and repetition", "Using only psychoanalytic interpretation of the material"],
+    options: ["A faster pace with more abstract discussion of beliefs", "Avoiding all homework so as not to overload the patient", "Slower pace, written summaries, memory aids and repetition", "Using only psychoanalytic interpretation of the session material"],
     answer: 2,
     explanation:
       "Adapted CBT for older adults uses a slower pace, frequent summaries, written and visual aids, repetition and practical homework, and may involve carers. Such adaptations allow older adults to benefit as much as younger adults from CBT for depression and anxiety. Faster abstract work, no homework or interpretation-only approaches would not fit their needs.",

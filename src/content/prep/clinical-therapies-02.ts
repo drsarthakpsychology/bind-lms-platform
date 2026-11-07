@@ -97,7 +97,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Which is the best example of a Socratic question in CBT?",
-    options: ["'Your thought is irrational, isn't it? Surely you can see that?'", "'You should stop thinking that way and focus on the positives.'", "'Why do you always think so negatively about everything?'", "'What is the evidence for and against the idea that they think so?'"],
+    options: ["'Your thought is irrational, isn't it? Surely you can see that by now?'", "'You should stop thinking that way and focus on the positives.'", "'Why do you always think so negatively about everything?'", "'What is the evidence for and against the idea that they think so?'"],
     answer: 3,
     explanation:
       "Socratic questioning uses open, curious questions that help patients examine evidence and reach their own conclusions (guided discovery; Padesky's 'guided discovery rather than changing minds'). Leading questions ('isn't it?'), directives ('you should') and blaming 'why always' questions are not Socratic and tend to provoke defensiveness.",
@@ -178,7 +178,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "In early CBT for severe depression, activity scheduling with 'mastery' and 'pleasure' ratings is used mainly because:",
-    options: ["It reveals unconscious conflicts behind the patient's inactivity", "It removes the need for any cognitive work later in therapy", "It is used only after core beliefs have been modified", "Activity counters withdrawal, lifts mood and tests hopeless beliefs"],
+    options: ["It reveals unconscious conflicts that lie behind the patient's inactivity", "It removes the need for any cognitive work later in therapy", "It is used only after core beliefs have been modified", "Activity counters withdrawal, lifts mood and tests hopeless beliefs"],
     answer: 3,
     explanation:
       "Beck recommended behavioural techniques first in severe depression, where concentration is poor. Activity monitoring and scheduling with mastery and pleasure ratings counter withdrawal, increase reinforcement and test hopeless predictions. They do not uncover unconscious conflict. In standard CT they are combined with cognitive work, although Jacobson's component analysis suggested BA alone may be as effective.",
@@ -214,7 +214,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "In Beck's cognitive model of anxiety, anxiety is held to result from:",
-    options: ["Unconscious sexual or aggressive impulses", "Low dopamine in the reward pathways", "An accurate perception of real danger", "Overestimated threat and underestimated coping"],
+    options: ["Unconscious sexual or aggressive impulses from the id", "Low dopamine in the reward pathways", "An accurate perception of real danger", "Overestimated threat and underestimated coping"],
     answer: 3,
     explanation:
       "Beck's model treats anxiety as arising from biased threat appraisal (overestimating the probability and severity of danger) relative to perceived coping and rescue resources. Unconscious impulses are Freud's signal anxiety theory. Dopamine is not central. Realistic danger produces adaptive fear, not disorder.",
@@ -228,7 +228,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "DeRubeis, Hollon and colleagues compared cognitive therapy with paroxetine in moderate to severe depression. A key finding of the follow-up was:",
-    options: ["CT was ineffective in more severe depression", "Paroxetine gave lower relapse after stopping than CT", "Neither treatment did better than placebo", "Similar acute response, but less relapse after CT ended"],
+    options: ["CT was ineffective in more severe depression", "Paroxetine gave lower relapse rates after stopping than CT did", "Neither treatment did better than placebo", "Similar acute response, but less relapse after CT ended"],
     answer: 3,
     explanation:
       "Acute response to CT by experienced therapists was comparable to paroxetine, even in more severe depression, challenging the NIMH TDCRP conclusion. After treatment ended, prior CT showed an enduring effect, with relapse similar to continued medication and lower than medication withdrawal. Placebo was beaten at 8 weeks.",
@@ -275,7 +275,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 4,
     type: "mcq",
     stem: "The Cognitive Therapy Scale-Revised (CTS-R) is used to:",
-    options: ["Measure the severity of depression in trials", "Diagnose personality disorders in research", "Assess patients' insight into their illness", "Rate a therapist's competence in delivering CBT"],
+    options: ["Measure the severity of depression in clinical trials", "Diagnose personality disorders in research", "Assess patients' insight into their illness", "Rate a therapist's competence in delivering CBT"],
     answer: 3,
     explanation:
       "The CTS-R, developed from Young and Beck's CTS, rates therapist competence on 12 items, including agenda setting, feedback, collaboration, pacing, interpersonal effectiveness, eliciting key cognitions, guided discovery, conceptual integration and homework, using a 0 to 6 scale. It is used in training and trials to check fidelity. It does not measure patient symptoms or diagnoses.",
@@ -303,7 +303,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "The Dysfunctional Attitude Scale measures:",
-    options: ["The severity of current depressive symptoms", "The presence and severity of psychotic symptoms", "Traits of the DSM personality disorders", "Conditional assumptions that may cause vulnerability"],
+    options: ["The severity of current depressive symptoms", "The presence and severity of positive and negative psychotic symptoms", "Traits of the DSM personality disorders", "Conditional assumptions that may cause vulnerability"],
     answer: 3,
     explanation:
       "The DAS assesses dysfunctional attitudes (intermediate beliefs), such as 'If I fail partly, it is as bad as being a complete failure', hypothesised as cognitive vulnerabilities. The BDI-II measures current symptom severity. Psychotic symptoms and PD traits are measured with other instruments.",
@@ -333,7 +333,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Beck developed cognitive therapy after observing in his research on depression that:",
-    options: ["Dreams showed more hostility, confirming 'anger turned inward'", "Depression always followed a bereavement in his sample", "Patients responded best to free association alone", "Dreams showed loss and defeat, and conscious thoughts were negative"],
+    options: ["Dreams showed more hostility, confirming Freud's 'anger turned inward'", "Depression always followed a bereavement in his sample", "Patients responded best to free association alone", "Dreams showed loss and defeat, and conscious thoughts were negative"],
     answer: 3,
     explanation:
       "Beck set out to test the psychoanalytic 'anger turned inward' theory but found dreams themed on loss, failure and defeat rather than hostility, and noticed rapid, negative 'automatic thoughts' that patients could report. This led him to a cognitive theory. The anger-inward hypothesis was not confirmed. He did not find depression always followed bereavement or that free association worked best.",
