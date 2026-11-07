@@ -201,6 +201,10 @@ The first four are **antecedent-focused** (they act before the emotion is fully 
 }
 :::
 
+:::widget thoughtrecord
+{"situation": "My cousin's wedding photos are full of my old school friends, and I was not invited to the sangeet.", "thought": "Nobody wants me around. I will always be left out.", "emotion": "hurt", "traps": [{"label": "Overgeneralisation", "right": true, "why": "One missed invitation has become 'nobody' and 'always'."}, {"label": "Mind reading", "right": true, "why": "You are assuming what everyone feels about you without asking."}, {"label": "Catastrophising", "why": "Close, but the thought is about others' feelings and a pattern, not a coming disaster."}, {"label": "Should statements", "why": "No 'should' or 'must' rule is being applied here."}], "forEvidence": ["I was not invited to this one event."], "againstEvidence": ["The sangeet was only for the bride's side and close family.", "Two of those friends messaged me last week.", "I was invited to the reception."], "balanced": "Missing one event hurts, but it does not show that nobody wants me. I can ask my cousin, and meet my friends at the reception."}
+:::
+
 :::trap Suppression is not always harmful
 Western studies link suppression with poorer wellbeing. But **Butler, Lee and Gross** (2007) found that the social costs of suppression were smaller for people with Asian bicultural values, where hiding strong emotion in company is expected and valued. In many Indian families, not showing anger to an elder is a sign of respect, not a symptom. Ask what the strategy means and costs in the person's world.
 :::

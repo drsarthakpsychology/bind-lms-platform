@@ -315,6 +315,10 @@ Elizabeth Loftus and John Palmer (1974) showed students films of car accidents a
 }
 :::
 
+:::widget experiment
+{"title": "Loftus and Palmer: one verb, five speeds", "question": "Everyone saw the same film of a car crash. Predict the average speed estimate for each verb in the question 'How fast were the cars going when they ___ each other?'", "unit": "mph", "max": 50, "conditions": [{"label": "smashed", "value": 40.8}, {"label": "collided", "value": 39.3}, {"label": "bumped", "value": 38.1}, {"label": "hit", "value": 34.0}, {"label": "contacted", "value": 31.8}], "why": "The more violent the verb, the faster the remembered speed. One word in a question changed what people reported, and in the follow-up study it changed what they later 'remembered' seeing."}
+:::
+
 The **misinformation effect**: information given after an event becomes part of the memory of it. Factors that affect eyewitness accuracy:
 - **Weapon focus**: a visible weapon draws attention from the face (Loftus, Loftus and Messo, 1987).
 - **Stress**: very high stress generally impairs face identification, though some central details can be well remembered.
@@ -516,6 +520,10 @@ Shepard Siegel proposed that drug cues (the room, the syringe, the ritual) come 
  "title": "Medicines that change the reward signal in addiction",
  "caption": "Try each ligand. A full agonist (heroin, morphine) gives the full signal, the strongest reinforcer. A partial agonist (buprenorphine) gives a capped signal that reduces craving and withdrawal with less euphoria. An antagonist (naltrexone) blocks the receptor, so using the drug brings no reward and the learned link between using and reward can extinguish."
 }
+:::
+
+:::widget release
+{"transmitter": "dopamine", "caption": "Step through a dopamine synapse, then pick amphetamine: it pushes dopamine out and blocks its reuptake. Drug cues come to trigger this reward signal, which is why craving is so strongly conditioned."}
 :::
 
 ### Exposure as inhibitory learning

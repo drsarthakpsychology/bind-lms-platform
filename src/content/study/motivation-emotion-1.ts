@@ -1013,6 +1013,10 @@ Q: Leptin is best described as:
 }
 :::
 
+:::widget release
+{"transmitter": "dopamine", "caption": "Watch dopamine cross the synapse in the nucleus accumbens. Amphetamine floods the gap with dopamine, which boosts wanting far more than liking."}
+:::
+
 ## 2.5 Cognition and emotion: Schachter-Singer, Lazarus and the debate [core][beginner]
 ### Schachter and Singer's two-factor theory (1962)
 **Stanley Schachter and Jerome Singer** argued that emotion needs **two factors**: **physiological arousal** and a **cognitive label** that explains it. Arousal tells you how strongly you feel; the label, taken from the situation, tells you which emotion it is.
