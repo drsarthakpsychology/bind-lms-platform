@@ -98,10 +98,10 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "The 'all-or-none law' states that:",
     options: [
-      "A neuron releases all of its transmitter vesicles or none of them",
+      "A neuron releases all of its transmitter vesicles or none of them with each spike",
       "All neurons fire at the same time or none fire",
-      "Once threshold is reached, an action potential of fixed size is generated regardless of stimulus strength",
-      "Postsynaptic potentials either reach the axon or decay completely",
+      "Once threshold is reached, the action potential has a fixed size whatever the stimulus strength",
+      "Postsynaptic potentials either reach the axon hillock at full size or decay completely",
     ],
     answer: 2,
     explanation:
@@ -441,9 +441,9 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Myasthenia gravis is caused by:",
     options: [
-      "Antibodies against presynaptic voltage-gated Ca²⁺ channels",
+      "Antibodies against presynaptic voltage-gated Ca²⁺ channels at the neuromuscular junction",
       "Loss of dopamine neurons in the substantia nigra",
-      "Antibodies against postsynaptic nicotinic acetylcholine receptors at the neuromuscular junction",
+      "Antibodies against postsynaptic nicotinic ACh receptors at the neuromuscular junction",
       "Demyelination of peripheral motor nerves",
     ],
     answer: 2,
@@ -459,7 +459,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Reserpine, used in the 1950s for hypertension, often caused depression. It acts by:",
     options: [
-      "Blocking the serotonin reuptake transporter",
+      "Blocking the serotonin reuptake transporter, depleting stored serotonin",
       "Inhibiting monoamine oxidase",
       "Blocking presynaptic α2 autoreceptors",
       "Blocking the vesicular monoamine transporter (VMAT), depleting stored monoamines",
@@ -498,7 +498,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "An autoreceptor is a receptor that:",
     options: [
       "Responds to transmitters from a different neuron and increases their release",
-      "Is located on a neuron and responds to the neuron's own transmitter, usually reducing further release or firing",
+      "Responds to the neuron's own transmitter, usually reducing further release or firing",
       "Is found only on glial cells",
       "Binds hormones circulating in the blood",
     ],
@@ -515,8 +515,8 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Cocaine and amphetamine both increase synaptic dopamine. The key difference is that amphetamine also:",
     options: [
-      "Blocks D2 receptors",
-      "Acts only on serotonin transporters",
+      "Blocks D2 autoreceptors, so dopamine neurons fire faster",
+      "Acts only on serotonin transporters, releasing serotonin instead of dopamine",
       "Inhibits tyrosine hydroxylase",
       "Reverses the dopamine transporter and releases dopamine from vesicles via VMAT2",
     ],
@@ -568,8 +568,8 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Electrical synapses differ from chemical synapses in that electrical synapses:",
     options: [
-      "Pass current through gap-junction channels made of connexins, with almost no delay and often in both directions",
-      "Can amplify a signal and convert excitation into inhibition",
+      "Pass current through connexin gap junctions, with almost no delay and often in both directions",
+      "Can amplify a signal and convert excitation into inhibition at the same contact",
       "Have a longer synaptic delay",
       "Are absent from the mammalian brain",
     ],
@@ -668,7 +668,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "If extracellular K⁺ is raised from 5 mM to 15 mM (as in severe hyperkalaemia), the immediate effect on a neuron's resting potential and excitability is best described as:",
     options: [
       "Hyperpolarisation, making the neuron harder to fire",
-      "Depolarisation that first raises excitability, and with sustained depolarisation, inactivates Na⁺ channels and reduces excitability",
+      "Depolarisation that first raises excitability, then, if sustained, inactivates Na⁺ channels and lowers it",
       "No change, because the Na⁺/K⁺ pump compensates instantly",
       "Depolarisation that permanently increases firing because Na⁺ channels can no longer inactivate",
     ],
@@ -723,7 +723,7 @@ export const QUESTIONS: PrepQuestion[] = [
       "Inhibits glutamate reuptake by astrocytes",
       "Blocks GABA-B receptors in the cortex",
       "Stimulates nicotinic receptors at the neuromuscular junction",
-      "Blocks glycine receptors in the spinal cord, removing inhibition of motor neurons",
+      "Blocks spinal glycine receptors, removing inhibition of motor neurons",
     ],
     answer: 3,
     explanation:
@@ -758,7 +758,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Benzodiazepines and barbiturates both enhance GABA-A receptor function. Which statement about their difference is correct?",
     options: [
       "Benzodiazepines bind the GABA site itself, while barbiturates bind an allosteric site",
-      "Benzodiazepines increase the frequency of channel opening; barbiturates increase the duration of opening and, at high doses, can open the channel without GABA",
+      "Benzodiazepines raise opening frequency; barbiturates prolong opening and, at high doses, open it without GABA",
       "Barbiturates increase opening frequency; benzodiazepines increase opening duration",
       "Both act only on GABA-B receptors",
     ],
@@ -829,7 +829,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Excitotoxicity, which contributes to neuronal death after stroke, is chiefly due to:",
     options: [
-      "Excess GABA release causing prolonged hyperpolarisation",
+      "Excess GABA release causing prolonged hyperpolarisation and energy failure",
       "Depletion of dopamine in the striatum",
       "Excess glutamate overstimulating NMDA and AMPA receptors, causing Ca²⁺ overload",
       "Blockade of acetylcholinesterase",
@@ -848,7 +848,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "The arrival of an action potential at a presynaptic terminal triggers transmitter release mainly by:",
     options: [
       "Closing K⁺ leak channels",
-      "Opening ligand-gated Na⁺ channels on the vesicles",
+      "Opening ligand-gated Na⁺ channels on the vesicles, letting Na⁺ trigger fusion",
       "Activating reuptake transporters",
       "Opening voltage-gated Ca²⁺ channels, letting Ca²⁺ in to trigger vesicle fusion",
     ],

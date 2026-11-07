@@ -155,7 +155,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Phineas Gage, whose personality changed after an iron rod passed through his head in 1848, mainly suffered damage to the:",
     options: [
       "Occipital cortex",
-      "Primary motor cortex",
+      "Primary motor cortex and corticospinal tract",
       "Hippocampus",
       "Ventromedial and orbitofrontal prefrontal cortex",
     ],
@@ -272,8 +272,8 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "In correct order, the Papez circuit runs:",
     options: [
-      "Hippocampus → fornix → mammillary bodies → anterior thalamic nucleus → cingulate gyrus → parahippocampal/entorhinal cortex → hippocampus",
-      "Amygdala → stria terminalis → hypothalamus → cingulate gyrus → amygdala",
+      "Hippocampus → fornix → mammillary bodies → anterior thalamus → cingulate gyrus → entorhinal cortex → hippocampus",
+      "Amygdala → stria terminalis → hypothalamus → anterior thalamus → cingulate gyrus → amygdala",
       "Hippocampus → mammillary bodies → fornix → cingulate gyrus → anterior thalamus → hippocampus",
       "Cingulate gyrus → fornix → amygdala → thalamus → hippocampus",
     ],
@@ -319,8 +319,8 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Patient H.M. (Henry Molaison) underwent bilateral medial temporal lobe resection in 1953. Which pattern did he show?",
     options: [
-      "Severe anterograde amnesia for new facts and events, with intact learning of motor skills such as mirror drawing",
-      "Loss of all memories from his whole life, with normal new learning",
+      "Severe anterograde amnesia for facts and events, with intact motor skill learning such as mirror drawing",
+      "Loss of all memories from his whole life, with normal learning of new facts and events",
       "Loss of procedural memory, with normal declarative memory",
       "Loss of short-term memory span, with normal long-term memory",
     ],
@@ -337,7 +337,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Korsakoff syndrome, caused by thiamine deficiency, is most consistently associated with damage to the:",
     options: [
       "Caudate nucleus",
-      "Hippocampal CA1 field only",
+      "Hippocampal CA1 field only, sparing the thalamus",
       "Mammillary bodies and medial dorsal thalamus",
       "Primary visual cortex",
     ],
@@ -370,9 +370,9 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Patient S.M., who has bilateral amygdala damage from Urbach-Wiethe disease, is best known for:",
     options: [
       "Inability to produce speech",
-      "Loss of the ability to recognise any faces",
+      "Loss of the ability to recognise any faces, including familiar ones",
       "Severe anterograde amnesia",
-      "Inability to recognise fear in facial expressions and an absence of experienced fear",
+      "Inability to recognise fear in faces, and an absence of experienced fear",
     ],
     answer: 3,
     explanation:
@@ -539,10 +539,10 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Chronic alcohol use most commonly damages the anterior superior cerebellar vermis. The resulting sign is mainly:",
     options: [
-      "Severe intention tremor of both arms",
+      "Severe intention tremor of both arms, with a steady gait",
       "Wide-based gait and truncal ataxia, with relatively spared arm coordination",
       "Contralateral hemiplegia",
-      "Nystagmus with complete sparing of gait",
+      "Nystagmus and slurred speech, with complete sparing of gait",
     ],
     answer: 1,
     explanation:
@@ -593,7 +593,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Moruzzi and Magoun showed that electrical stimulation of the brainstem reticular formation in sleeping cats:",
     options: [
-      "Produced seizures in the temporal lobe",
+      "Produced seizures spreading from the temporal lobe",
       "Produced immediate REM sleep",
       "Produced cortical EEG desynchronisation and behavioural arousal",
       "Had no effect on the EEG",
@@ -703,8 +703,8 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Fine finger movement",
       "Primary processing of pitch",
-      "Storage of long-term semantic memory",
-      "Detecting response conflict and errors, as in the incongruent Stroop condition",
+      "Storage of long-term semantic memory, such as word meanings",
+      "Detecting response conflict and errors, as in incongruent Stroop trials",
     ],
     answer: 3,
     explanation:
@@ -757,8 +757,8 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Brodmann divided the cerebral cortex into about 52 areas on the basis of:",
     options: [
       "Functional imaging activation",
-      "Differences in cytoarchitecture (cell types and layering)",
-      "Blood supply territories",
+      "Cytoarchitecture (cell types and layering)",
+      "Blood supply territories of the cerebral arteries",
       "Patterns of skull shape",
     ],
     answer: 1,
@@ -865,10 +865,10 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "In Parkinson's disease, deep brain stimulation is most commonly targeted at the subthalamic nucleus or the internal globus pallidus. The rationale is that in Parkinson's disease these structures are:",
     options: [
-      "Pathologically overactive or abnormally synchronised, so high-frequency stimulation disrupts their excessive inhibitory output to the thalamus",
-      "Underactive, so stimulation boosts their output to the thalamus",
+      "Overactive or abnormally synchronised, so stimulation disrupts their excess inhibitory output to the thalamus",
+      "Underactive after dopamine loss, so stimulation boosts their output to the thalamus",
       "Producing too much dopamine",
-      "Disconnected from the striatum, so stimulation reconnects them",
+      "Disconnected from the striatum, so stimulation restores the lost pathway between them",
     ],
     answer: 0,
     explanation:
@@ -899,10 +899,10 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Anterograde amnesia after an anoxic episode, with damage confined to the CA1 field of both hippocampi (patient R.B., studied by Zola-Morgan, Squire and Amaral), showed that:",
     options: [
-      "Damage restricted to the hippocampus itself is enough to produce clinically significant anterograde amnesia",
+      "Damage limited to the hippocampus is enough to cause clinically significant anterograde amnesia",
       "The amygdala is necessary for declarative memory",
       "Procedural memory depends on CA1",
-      "Retrograde amnesia is always more severe than anterograde amnesia",
+      "Retrograde amnesia is always more severe than anterograde amnesia after hippocampal damage",
     ],
     answer: 0,
     explanation:
@@ -949,8 +949,8 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "The 'triune brain' model proposed that the human brain consists of reptilian, paleomammalian (limbic) and neomammalian layers. Its proposer and current status are:",
     options: [
-      "Paul MacLean; now regarded by neuroscientists as an oversimplification not supported by comparative anatomy",
-      "James Papez; still the accepted evolutionary model",
+      "Paul MacLean; now seen as an oversimplification not supported by comparative anatomy",
+      "James Papez; still the accepted evolutionary model of how the forebrain developed",
       "Roger Sperry; now proven by split-brain research",
       "Karl Lashley; supported by equipotentiality",
     ],
@@ -989,7 +989,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Thompson's work on classical eyeblink conditioning in rabbits located an essential part of the memory trace in the:",
     options: [
-      "Prefrontal cortex",
+      "Prefrontal cortex, which times the blink",
       "Lateral interpositus nucleus of the cerebellum",
       "Amygdala",
       "Primary auditory cortex",

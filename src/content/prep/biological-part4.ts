@@ -110,7 +110,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Across a typical night in a young adult, which pattern is seen?",
     options: [
       "REM is concentrated in the first cycle, and N3 grows toward morning",
-      "N3 is concentrated in the first third of the night, and REM periods grow longer toward morning",
+      "N3 is concentrated early in the night, and REM periods grow longer toward morning",
       "All stages are evenly distributed across the night",
       "REM occurs only once, just before waking",
     ],
@@ -145,8 +145,8 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Borbély's two-process model of sleep regulation proposes that sleep timing depends on:",
     options: [
       "Melatonin alone",
-      "Alternating REM-on and REM-off neurons in the pons",
-      "A homeostatic sleep pressure (Process S) that builds during waking and a circadian rhythm (Process C) from the suprachiasmatic nucleus",
+      "Alternating REM-on and REM-off neurons in the pons that set when sleep begins",
+      "A homeostatic sleep pressure (Process S) and a circadian rhythm (Process C) from the SCN",
       "Random activation of the cortex by brainstem PGO waves",
     ],
     answer: 2,
@@ -228,8 +228,8 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Rehearsal of threatening situations to improve survival",
       "Disguised fulfilment of repressed wishes",
-      "The forebrain's attempt to make sense of random activation from pontine brainstem circuits (including PGO waves) during REM",
-      "Direct replay of the day's memories by the hippocampus",
+      "The forebrain making sense of random activation from pontine circuits during REM",
+      "Direct replay of the day's memories by the hippocampus during REM",
     ],
     answer: 2,
     explanation:
@@ -266,7 +266,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Free-run with a period slightly different from 24 hours",
       "Stop entirely",
-      "Stay at exactly 24 hours",
+      "Stay at exactly 24 hours, set by the internal clock",
       "Shift to a 12-hour cycle",
     ],
     answer: 0,
@@ -423,8 +423,8 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "fMRI and PET",
       "Only EEG",
-      "Only heart rate and breathing",
-      "EEG, electro-oculogram (EOG) and chin electromyogram (EMG)",
+      "Only heart rate, breathing and oxygen saturation",
+      "EEG, eye movements (EOG) and chin muscle tone (EMG)",
     ],
     answer: 3,
     explanation:
@@ -439,8 +439,8 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Ageing is most consistently associated with which change in sleep?",
     options: [
-      "Reduced slow-wave sleep, more frequent awakenings and an earlier (advanced) circadian phase",
-      "Increased slow-wave sleep and later bedtimes",
+      "Less slow-wave sleep, more awakenings and an earlier (advanced) circadian phase",
+      "More slow-wave sleep, fewer awakenings and a later (delayed) circadian phase",
       "Complete loss of REM sleep",
       "A sharp rise in total sleep need",
     ],
@@ -478,13 +478,13 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "In the reciprocal interaction model, REM sleep begins when:",
     options: [
       "Orexin neurons fire at their highest rate",
-      "Serotonergic raphe neurons fire at their maximal rate",
-      "Cholinergic 'REM-on' neurons in the pons (LDT/PPT) are released from inhibition as noradrenergic and serotonergic 'REM-off' neurons fall silent",
+      "Serotonergic raphe and noradrenergic locus coeruleus neurons fire at their maximal rate",
+      "Pontine cholinergic 'REM-on' neurons are released as noradrenergic and serotonergic 'REM-off' cells fall silent",
       "The VLPO stops firing and the cortex wakes up",
     ],
     answer: 2,
     explanation:
-      "Locus coeruleus and raphe neurons are most active in waking, slow in NREM, and nearly silent in REM; their silence disinhibits pontine cholinergic neurons (laterodorsal and pedunculopontine tegmental) that drive REM. This is why many antidepressants that raise serotonin or noradrenaline suppress REM. Maximal raphe firing is a waking pattern. Orexin firing peaks in active waking. VLPO silence leads to waking, not REM.",
+      "Locus coeruleus and raphe neurons are most active in waking, slow in NREM, and nearly silent in REM; their silence disinhibits pontine cholinergic neurons (laterodorsal and pedunculopontine tegmental) that drive REM. This is why many antidepressants that raise serotonin or noradrenaline suppress REM. Maximal raphe and locus coeruleus firing is a waking pattern. Orexin firing peaks in active waking. VLPO silence leads to waking, not REM.",
     ref: "McCarley & Hobson 1975, Science; Pace-Schott & Hobson 2002",
   }),
   b({
@@ -533,8 +533,8 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "The BOLD signal in functional MRI depends mainly on:",
     options: [
       "Direct detection of neuronal action potentials",
-      "Changes in the ratio of oxygenated to deoxygenated haemoglobin, because deoxyhaemoglobin is paramagnetic",
-      "Emission of positrons from a radioactive tracer",
+      "The ratio of oxygenated to deoxygenated haemoglobin, since deoxyhaemoglobin is paramagnetic",
+      "Emission of positrons from a radioactive tracer bound to active neurons",
       "X-ray absorption by grey and white matter",
     ],
     answer: 1,
@@ -594,10 +594,10 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Transcranial magnetic stimulation (TMS) is especially valuable to cognitive neuroscientists because it:",
     options: [
-      "Records action potentials from single neurons in humans",
+      "Records action potentials from single neurons in awake humans without surgery",
       "Gives a detailed structural image of the brain",
       "Measures glucose metabolism",
-      "Can temporarily disrupt activity in a region ('virtual lesion'), allowing causal rather than merely correlational inferences",
+      "Can briefly disrupt a region (a 'virtual lesion'), so causal inferences can be drawn",
     ],
     answer: 3,
     explanation:
@@ -654,14 +654,14 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "The 'default mode network', described by Raichle and colleagues, is a set of regions that:",
     options: [
-      "Consist of primary motor and sensory cortex",
+      "Consist of primary motor and sensory cortex, which stay active even at rest",
       "Are active only during visual tasks",
-      "Are more active during rest and self-referential thought than during externally focused tasks; they include medial prefrontal cortex, posterior cingulate/precuneus and angular gyrus",
+      "Are more active at rest and in self-referential thought than in externally focused tasks",
       "Are active only during deep sleep",
     ],
     answer: 2,
     explanation:
-      "Raichle's group noticed regions that consistently 'deactivate' during demanding external tasks and are active during rest, mind-wandering, autobiographical memory and thinking about others. Core nodes are medial prefrontal cortex, posterior cingulate and precuneus, and lateral parietal (angular) cortex, plus medial temporal regions. The other options describe task-positive sensory or motor areas, or misplace the network in sleep (it is present but altered in sleep).",
+      "Raichle's group noticed regions that consistently 'deactivate' during demanding external tasks and are active during rest, mind-wandering, autobiographical memory and thinking about others. Core nodes are medial prefrontal cortex, posterior cingulate and precuneus, and lateral parietal (angular) cortex, plus medial temporal regions. Primary motor and sensory cortex are task-driven areas, not this network; the network is not tied to visual tasks, which in fact suppress it; and it is not confined to deep sleep (it is present but altered in sleep).",
     ref: "Raichle et al. 2001, PNAS; Buckner et al. 2008",
   }),
   b({
@@ -673,9 +673,9 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "PET studies with [¹¹C]raclopride are used in psychopharmacology to measure:",
     options: [
       "Amyloid plaque load",
-      "Serotonin transporter density in the raphe",
+      "Serotonin transporter density in the raphe and its blockade by SSRIs",
       "Glucose metabolism in the cortex",
-      "Occupancy of striatal D2/D3 receptors by antipsychotics, and changes in endogenous dopamine release",
+      "Striatal D2/D3 receptor occupancy by antipsychotics, and endogenous dopamine release",
     ],
     answer: 3,
     explanation:
@@ -710,10 +710,10 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Optogenetics, developed by Deisseroth, Boyden and colleagues around 2005, allows researchers to:",
     options: [
-      "Turn genetically defined neurons on or off with light using light-sensitive ion channels such as channelrhodopsin",
+      "Switch genetically chosen neurons on or off with light via channels such as channelrhodopsin",
       "Image the whole human brain without radiation",
       "Read human thoughts from EEG",
-      "Measure blood flow with infrared light through the skull",
+      "Measure blood flow with infrared light shone through the skull of awake animals",
     ],
     answer: 0,
     explanation:
@@ -773,13 +773,13 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "The 'subtraction method' in early PET and fMRI studies (developed by Posner, Petersen and Raichle) involves:",
     options: [
       "Subtracting the EEG of one hemisphere from the other",
-      "Removing a brain region surgically and measuring the change in behaviour",
+      "Removing a brain region surgically and measuring the change in behaviour on the task",
       "Subtracting the subject's age from the response time",
-      "Comparing activity during a task with activity during a control task that differs in only one process, and attributing the difference to that process",
+      "Comparing a task with a control task differing in only one process, and attributing the difference to it",
     ],
     answer: 3,
     explanation:
-      "Following Donders' subtractive logic, Petersen and colleagues compared conditions such as reading words aloud versus generating verbs, attributing the extra activation to the added process. A key assumption is 'pure insertion', that adding a process does not change the others, which is often questioned and led to factorial and parametric designs. Surgical removal is the lesion method. The other options are not imaging methods.",
+      "Following Donders' subtractive logic, Petersen and colleagues compared conditions such as reading words aloud versus generating verbs, attributing the extra activation to the added process. A key assumption is 'pure insertion', that adding a process does not change the others, which is often questioned and led to factorial and parametric designs. Surgical removal is the lesion method. Subtracting one hemisphere's EEG from the other, or age from response time, are not imaging procedures at all.",
     ref: "Petersen et al. 1988, Nature",
   }),
   b({
@@ -866,8 +866,8 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Reduced fractional anisotropy (FA) on diffusion tensor imaging in a white-matter tract is usually interpreted as indicating:",
     options: [
-      "Reduced white-matter integrity or coherence, for example from demyelination, axonal loss or crossing fibres",
-      "Increased cortical thickness",
+      "Reduced white-matter integrity or coherence, for example from demyelination or axonal loss",
+      "Increased cortical thickness next to the tract, from added grey matter",
       "Increased glucose metabolism",
       "Higher BOLD signal",
     ],
@@ -884,8 +884,8 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Functional near-infrared spectroscopy (fNIRS) is particularly suited to studies of infants because it:",
     options: [
-      "Gives whole-brain images including deep structures",
-      "Measures changes in cortical blood oxygenation with light, is quiet and tolerates some movement",
+      "Gives whole-brain images including deep structures, while staying quiet",
+      "Measures cortical blood oxygenation with light, is quiet and tolerates some movement",
       "Has better spatial resolution than fMRI",
       "Measures single-neuron firing",
     ],
@@ -945,8 +945,8 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "No structural differences",
       "Smaller amygdalae",
-      "Larger primary visual cortex",
-      "Larger posterior hippocampi, with volume correlating with years of driving experience",
+      "Larger primary visual cortex, from years of scanning busy streets",
+      "Larger posterior hippocampi, with volume rising with years of driving",
     ],
     answer: 3,
     explanation:

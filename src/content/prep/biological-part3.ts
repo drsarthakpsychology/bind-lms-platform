@@ -45,9 +45,9 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "A split-brain patient fixates a central dot while the word 'KEY' is flashed briefly in the left visual field. What is the most likely result?",
     options: [
-      "She says 'key' and picks out a key with her right hand",
+      "She says 'key' and picks out a key by touch with her right hand",
       "She says she saw nothing but can pick out a key by touch with her left hand",
-      "She says 'key' but cannot pick it out with either hand",
+      "She says 'key' but cannot pick it out by touch with either hand",
       "She cannot respond in any way",
     ],
     answer: 1,
@@ -82,8 +82,8 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Measuring the size of the planum temporale on MRI",
       "Recording EEG during sleep",
-      "Presenting different words to each ear at the same time",
-      "Injecting sodium amobarbital into one internal carotid artery to anaesthetise one hemisphere briefly",
+      "Presenting different words to each ear at the same time and noting which ear wins",
+      "Injecting amobarbital into one internal carotid artery to anaesthetise one hemisphere briefly",
     ],
     answer: 3,
     explanation:
@@ -118,8 +118,8 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "No ear advantage",
       "A left-ear advantage, because the right hemisphere processes speech",
-      "A right-ear advantage, because the contralateral pathway from the right ear to the left hemisphere is stronger",
-      "A right-ear advantage, because the right ear has better hearing thresholds",
+      "A right-ear advantage, because the crossed pathway from the right ear to the left hemisphere is stronger",
+      "A right-ear advantage, because the right ear usually has better hearing thresholds",
     ],
     answer: 2,
     explanation:
@@ -137,7 +137,7 @@ export const QUESTIONS: PrepQuestion[] = [
       "Loss of all consciousness in the right hemisphere",
       "Right-hemisphere dominance for speech",
       "Complete transfer of visual information through the anterior commissure",
-      "A left-hemisphere 'interpreter' that constructs explanations for behaviour it did not initiate",
+      "A left-hemisphere 'interpreter' that explains behaviour it did not initiate",
     ],
     answer: 3,
     explanation:
@@ -234,7 +234,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "After callosotomy, a patient's left hand sometimes unbuttons a shirt that the right hand has just buttoned. This is best described as:",
     options: [
-      "Ideomotor apraxia",
+      "Ideomotor apraxia of the left hand",
       "Intermanual conflict (a form of alien hand)",
       "Hemiballismus",
       "Utilisation behaviour",
@@ -428,9 +428,9 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "In the dexamethasone suppression test, a significant proportion of patients with melancholic depression show:",
     options: [
-      "Failure to suppress cortisol the next day after a night-time dose of dexamethasone",
+      "Failure to suppress cortisol the morning after a night-time dose",
       "Exaggerated suppression of cortisol",
-      "Low baseline ACTH with normal suppression",
+      "Low baseline ACTH with normal suppression the next morning",
       "Absence of cortisol secretion",
     ],
     answer: 0,
@@ -505,7 +505,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "The concept of 'allostatic load', introduced by McEwen and Stellar, refers to:",
     options: [
-      "The cumulative wear and tear on the body from repeated or prolonged activation of stress-response systems",
+      "The cumulative wear and tear from repeated or prolonged activation of stress systems",
       "The maximum amount of stress a person can tolerate before illness",
       "The return of all physiological variables to a single fixed set point",
       "The number of stressful life events in the past year",
@@ -544,13 +544,13 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Oxytocin and vasopressin are synthesised in the ____ and released from the ____.",
     options: [
       "Pineal gland; anterior pituitary",
-      "Anterior pituitary; adrenal cortex",
+      "Arcuate nucleus of the hypothalamus; anterior pituitary via portal blood",
       "Paraventricular and supraoptic nuclei of the hypothalamus; posterior pituitary",
       "Posterior pituitary; hypothalamus",
     ],
     answer: 2,
     explanation:
-      "Magnocellular neurons of the PVN and supraoptic nucleus make oxytocin and vasopressin, transport them down their axons and release them from terminals in the posterior pituitary (neurohypophysis). The anterior pituitary makes its own hormones under hypothalamic releasing hormones, and the adrenal cortex makes steroids. The pineal makes melatonin. 'Posterior pituitary; hypothalamus' reverses the synthesis and release sites.",
+      "Magnocellular neurons of the PVN and supraoptic nucleus make oxytocin and vasopressin, transport them down their axons and release them from terminals in the posterior pituitary (neurohypophysis). The arcuate nucleus sends releasing hormones through portal blood to the anterior pituitary, which then makes its own hormones; that route does not carry oxytocin or vasopressin. The pineal makes melatonin. 'Posterior pituitary; hypothalamus' reverses the synthesis and release sites.",
     ref: "Kalat, ch. 11",
   }),
   b({
@@ -561,14 +561,14 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Studies of prairie voles (monogamous) and montane voles (promiscuous) showed that partner preference formation depends strongly on:",
     options: [
-      "Melatonin secretion at night",
+      "Melatonin secretion at night, which sets the timing of mating and pairing",
       "Thyroid hormone levels",
-      "The size of the adrenal medulla",
-      "The distribution of oxytocin and vasopressin receptors in reward areas such as the nucleus accumbens and ventral pallidum",
+      "The size of the adrenal medulla and how much adrenaline it releases during mating",
+      "The distribution of oxytocin and vasopressin receptors in reward areas such as the nucleus accumbens",
     ],
     answer: 3,
     explanation:
-      "Insel, Young and colleagues found that prairie voles have dense oxytocin receptors in the nucleus accumbens and V1a vasopressin receptors in the ventral pallidum; blocking these prevents pair bonds, and increasing V1a expression in promiscuous male meadow voles produced partner preference. Thyroid, adrenal medulla and melatonin differences were not the explanation.",
+      "Insel, Young and colleagues found that prairie voles have dense oxytocin receptors in the nucleus accumbens and V1a vasopressin receptors in the ventral pallidum; blocking these prevents pair bonds, and increasing V1a expression in promiscuous male meadow voles produced partner preference. Thyroid levels, adrenal medulla size and night-time melatonin did not differ in ways that explained bonding.",
     ref: "Young & Wang 2004, Nat Neurosci; Lim et al. 2004, Nature",
   }),
   b({
@@ -607,7 +607,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "The distinction between 'organisational' and 'activational' effects of sex hormones means that:",
     options: [
       "Hormones in adulthood permanently reorganise the brain, while early hormones have only temporary effects",
-      "Hormones early in development permanently shape neural structures, while hormones in adulthood temporarily activate behaviours in already-organised systems",
+      "Early hormones permanently shape neural structures, while adult hormones temporarily activate already-organised systems",
       "Testosterone organises behaviour and oestrogen activates it",
       "Only peptide hormones have organisational effects",
     ],
@@ -684,8 +684,8 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Taylor and colleagues' 'tend-and-befriend' model proposes that under stress:",
     options: [
-      "Males and females respond identically with fight or flight",
-      "Females in particular often respond by protecting offspring and seeking social affiliation, a response linked to oxytocin and endogenous opioids",
+      "Males and females respond identically with fight or flight, driven by adrenaline",
+      "Females in particular often protect offspring and seek social support, a response linked to oxytocin",
       "Stress always suppresses social behaviour",
       "Testosterone is the main hormone of affiliation",
     ],
@@ -720,8 +720,8 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Which statement best distinguishes steroid hormones from peptide hormones?",
     options: [
       "Peptide hormones cross the membrane freely and bind nuclear receptors",
-      "Steroid hormones are made of amino acid chains and act only on membrane receptors",
-      "Steroid hormones are lipid-soluble, cross cell membranes and mainly act on intracellular receptors that regulate gene expression",
+      "Steroid hormones are made of amino acid chains and act only on membrane receptors via second messengers",
+      "Steroid hormones are lipid-soluble, cross membranes and mainly act on intracellular receptors that regulate genes",
       "Both act only through cAMP",
     ],
     answer: 2,
@@ -738,9 +738,9 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "The Trier Social Stress Test reliably raises cortisol mainly because it combines:",
     options: [
       "Exercise and caffeine",
-      "Physical pain and cold exposure",
+      "Physical pain and cold exposure (keeping a hand in ice water while being timed)",
       "Sleep deprivation and fasting",
-      "Uncontrollability and social-evaluative threat (a public speech and mental arithmetic in front of an unresponsive panel)",
+      "Uncontrollability and social-evaluative threat (a speech and arithmetic before a stern panel)",
     ],
     answer: 3,
     explanation:
@@ -874,8 +874,8 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Meaney's work on rat mothers that lick and groom their pups a great deal showed that these offspring, as adults, have:",
     options: [
-      "Fewer hippocampal glucocorticoid receptors and exaggerated stress responses",
-      "More hippocampal glucocorticoid receptors, stronger HPA negative feedback and smaller stress responses, linked to reduced methylation of the GR gene promoter",
+      "Fewer hippocampal glucocorticoid receptors and exaggerated stress responses, from more GR methylation",
+      "More hippocampal glucocorticoid receptors and smaller stress responses, linked to less GR gene methylation",
       "No differences once genetic relatedness is controlled by cross-fostering",
       "Higher adrenaline but identical cortisol responses",
     ],
@@ -932,8 +932,8 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Melatonin secretion is most strongly suppressed by light that is:",
     options: [
-      "Short-wavelength (blue, about 460 to 480 nm), detected by melanopsin-containing retinal ganglion cells",
-      "Long-wavelength (red), detected by rods",
+      "Short-wavelength (blue), detected by melanopsin-containing retinal ganglion cells",
+      "Long-wavelength (red), detected by rods in the peripheral retina",
       "Ultraviolet, detected by the skin",
       "Any colour equally, detected by cones",
     ],
@@ -967,8 +967,8 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Addison's disease is caused by:",
     options: [
-      "Excess cortisol from a pituitary tumour",
-      "Insufficient secretion of adrenal cortical hormones (cortisol and aldosterone)",
+      "Excess cortisol from an ACTH-secreting pituitary tumour",
+      "Too little cortisol and aldosterone from the adrenal cortex",
       "Excess thyroid hormone",
       "Excess growth hormone in adults",
     ],
