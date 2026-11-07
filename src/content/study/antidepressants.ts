@@ -480,6 +480,15 @@ Q: The receptor that first brakes serotonin firing when an SSRI is started is:
 ## 2.1 SSRIs [core][beginner]
 SSRIs are first-line for depression and most anxiety disorders: effective, reasonably well tolerated, once daily, and **much safer in overdose** than tricyclics.
 
+
+:::widget release
+{
+ "transmitter": "serotonin",
+ "title": "What an SSRI changes at the synapse",
+ "caption": "Play one signal with No drug, then pick SSRI. Release and binding look the same; the difference is at the recycling pump, which is blocked, so serotonin stays in the gap and the message lasts longer. Every SSRI side effect comes from that extra serotonin reaching receptors in the gut, the spinal cord and elsewhere, not just the mood circuits."
+}
+:::
+
 ### Side effects, and the receptor behind each
 | Side effect | Why (receptor level) | Practical point |
 |---|---|---|
@@ -490,6 +499,36 @@ SSRIs are first-line for depression and most anxiety disorders: effective, reaso
 | Sweating, yawning | Central serotonin effects | |
 | Bleeding | Platelets need SERT to take up serotonin for clotting | With NSAIDs, aspirin, anticoagulants |
 | Low sodium | Excess antidiuretic hormone (SIADH) | Older adults, diuretics |
+
+
+:::widget compare
+{
+ "title": "Two SSRIs at opposite ends",
+ "a": {
+  "label": "Fluoxetine",
+  "points": [
+   "Very long half-life, plus a long-lived active metabolite",
+   "Missed doses barely matter; almost tapers itself",
+   "Strong CYP2D6 inhibitor: raises many other medicines",
+   "Long washout before an MAOI",
+   "Can feel activating early on"
+  ],
+  "summary": "Forgiving to stop, awkward to combine."
+ },
+ "b": {
+  "label": "Paroxetine",
+  "points": [
+   "Short half-life, and it slows its own breakdown",
+   "Levels collapse when stopped: worst discontinuation",
+   "Also a strong CYP2D6 inhibitor",
+   "The most anticholinergic SSRI: dry mouth, constipation",
+   "More weight gain; avoided in pregnancy"
+  ],
+  "summary": "Effective, but hard to come off."
+ },
+ "caption": "Both block the same serotonin pump. Slide between them: nearly every practical difference comes from how long they stay in the body and which extra targets they touch."
+}
+:::
 
 ### Telling the SSRIs apart
 | SSRI | What makes it different |
@@ -583,6 +622,15 @@ Q: Why do SSRIs increase bleeding risk?
 - Main risk: **seizures**, dose-related. Avoid in epilepsy, eating disorders (bulimia, anorexia), alcohol or benzodiazepine withdrawal, and head injury.
 - Can worsen anxiety and insomnia; no use on its own for anxiety disorders.
 - Strong CYP2D6 inhibitor.
+
+
+:::widget release
+{
+ "transmitter": "dopamine",
+ "title": "Bupropion and amphetamine: blocking the pump or reversing it",
+ "caption": "Pick SSRI to stand in for bupropion here: it blocks the dopamine and noradrenaline pumps, so released dopamine lingers, but only when the neuron fires. Now pick Amphetamine: the pump runs backwards and pushes dopamine out even without a signal. That is why bupropion is a mild, slow antidepressant and amphetamine is a strong stimulant with misuse potential."
+}
+:::
 
 ### Mirtazapine: the sleepy, hungry one
 - Blocks **alpha-2** autoreceptors (taking the brake off noradrenaline and serotonin release), and blocks **5-HT2A, 5-HT2C and 5-HT3** receptors (less anxiety, insomnia, nausea and sexual dysfunction).
@@ -720,6 +768,15 @@ Q: A young man on amitriptyline for back pain swallows his month's supply. The m
 - Dangerous interactions: other antidepressants, tramadol, pethidine, dextromethorphan (cough syrups), linezolid, methylene blue, decongestants and stimulants.
 - **Moclobemide** is reversible and MAO-A selective, with much lower tyramine risk at usual doses.
 - **Selegiline** (MAO-B at low doses) is used in Parkinson's disease; a skin patch form is used for depression in some countries.
+
+
+:::widget release
+{
+ "transmitter": "serotonin",
+ "title": "An MAOI: the enzyme switched off",
+ "caption": "Pick MAOI and play the signal. The pump still works, but the enzyme that breaks down recycled serotonin is blocked, so the stores fill and each signal releases more. In the gut the same enzyme normally destroys tyramine from food, which is why diet matters on the older, irreversible MAOIs."
+}
+:::
 
 :::widget guess
 {"prompt": "After stopping fluoxetine, how many weeks should pass before starting an irreversible MAOI?", "min": 0, "max": 10, "unit": "weeks", "answer": [5, 6], "reveal": "At least 5 weeks, because fluoxetine and norfluoxetine linger. After most other SSRIs and SNRIs the gap is about 1 to 2 weeks. After stopping an irreversible MAOI, wait 2 weeks before starting another antidepressant, because the body must make new enzyme.", "clinician": "Washouts: fluoxetine to MAOI at least 5 weeks; other SSRIs and venlafaxine to MAOI at least 1 week (2 weeks for sertraline per some labels); irreversible MAOI to any serotonergic drug 2 weeks; moclobemide 24 hours."}
@@ -914,6 +971,15 @@ Stopping an antidepressant suddenly, or missing doses, can cause **discontinuati
 - If symptoms are troublesome, return to the previous dose and taper more slowly.
 - For paroxetine or venlafaxine that cannot be tapered, a cross-over to fluoxetine (which then tapers itself) is an option.
 - Distinguish discontinuation (soon after, physical symptoms, settles fast on reinstatement) from relapse (later, gradual, mood symptoms).
+:::
+
+
+:::widget curve
+{
+ "kind": "half-life",
+ "title": "Why a short half-life makes stopping harder",
+ "caption": "Set a short half-life (paroxetine, venlafaxine) and stop the doses: the level falls off a cliff within a few days, and the brain, adapted to high serotonin, feels the drop. Now set a very long half-life (fluoxetine): the level glides down on its own, a built-in taper."
+}
 :::
 
 :::widget reveal
@@ -1168,6 +1234,15 @@ Every antidepressant has a **binding profile**: the list of targets it attaches 
 | **5-HT3 block** | Less nausea | Mirtazapine, vortioxetine |
 | **Cardiac sodium channel block** | Slowed conduction, wide QRS, arrhythmia in overdose | Tricyclics, high-dose venlafaxine (less) |
 
+
+:::widget receptor
+{
+ "receptor": "histamine H1",
+ "title": "Why some antidepressants make you sleepy and hungry",
+ "caption": "Histamine keeps the brain awake and curbs appetite through H1 receptors. Pick Antagonist (strictly, most of these drugs are inverse agonists): the waking signal falls. Mirtazapine, trazodone at low doses and the tricyclics block H1 strongly, so they sedate and add weight; most SSRIs barely touch it."
+}
+:::
+
 ### Who binds what (simplified)
 Strength: +++ strong, ++ moderate, + weak, 0 negligible at usual doses.
 
@@ -1298,6 +1373,21 @@ People inherit different versions of CYP genes. The version you carry decides ho
 - **CYP2D6**: paroxetine, fluoxetine, vortioxetine, venlafaxine (to desvenlafaxine), tricyclics (hydroxylation), and many antipsychotics and beta-blockers.
 - **CYP2C19**: citalopram, escitalopram, sertraline (partly), and the conversion of tertiary tricyclics (amitriptyline to nortriptyline, clomipramine).
 
+
+:::widget journey
+{
+ "drug": "Escitalopram",
+ "target": "the serotonin pump",
+ "route": "oral",
+ "notes": {
+  "liver": "Cleared mainly by CYP2C19. A poor metaboliser clears it slowly, so a normal dose gives high blood levels and more side effects; an ultrarapid metaboliser clears it so fast that the usual dose may do too little.",
+  "blood": "Blood levels for the same dose can differ several-fold between people, largely because of the liver step.",
+  "target": "Blocks the serotonin pump. Occupancy, not the dose on the label, is what the brain responds to."
+ },
+ "caption": "Follow the tablet and stop at the liver. The gene result does not change what escitalopram does in the brain; it changes how much arrives there."
+}
+:::
+
 :::clinician
 ### How guidelines use results (international pharmacogenetic consensus, outline)
 | Result | Medicine | Suggested action |
@@ -1376,6 +1466,15 @@ Dextromethorphan (the cough suppressant) is an NMDA antagonist and sigma-1 agoni
 
 ### Antipsychotics as add-on treatments
 Several second-generation antipsychotics are approved in the US as add-ons to an antidepressant: aripiprazole, quetiapine extended release, brexpiprazole and, from November 2025, lumateperone. Their benefit is real but modest, and they bring akathisia, weight and metabolic risks, so they are chosen after weighing those costs.
+
+
+:::widget receptor
+{
+ "receptor": "dopamine D2",
+ "title": "Aripiprazole as an add-on: a partial agonist",
+ "caption": "Compare Full agonist (dopamine itself), Antagonist and Partial agonist. Aripiprazole sits in the middle: where dopamine is low it nudges the signal up, where it is high it holds it down. At the low doses used as an add-on in depression, that partial action, together with its serotonin effects, is thought to explain the modest extra benefit; restlessness (akathisia) is the common cost."
+}
+:::
 
 ### Neurosteroids: brexanolone and zuranolone
 - **Allopregnanolone** is a natural metabolite of progesterone. It is a **positive allosteric modulator of GABA-A receptors**, including the extrasynaptic receptors that give a steady, tonic calming current. Levels fall sharply after childbirth, one proposed contributor to postpartum depression.
