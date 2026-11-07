@@ -128,13 +128,13 @@ export const QUESTIONS_4: PrepQuestion[] = [
     type: "assertion-reason",
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
-      "In Schachter and Singer's study, participants correctly informed about adrenaline's effects showed little euphoria.",
-      "They already had an appropriate, non-emotional explanation for their arousal, so they did not attribute it to the situation.",
+      "In Schachter and Singer's study, participants correctly informed about adrenaline's effects showed the most euphoria.",
+      "Informed participants already had an appropriate, non-emotional explanation for their arousal, so they did not attribute it to the situation.",
     ],
     options: AR,
-    answer: 0,
+    answer: 3,
     explanation:
-      "Both true; R explains A. The informed group attributed their pounding heart to the injection, so the confederate's behaviour did not become the label for their state. This comparison is the key evidence that the labelling, not arousal alone, determines the emotion.",
+      "A is false, R is true. The informed group attributed their pounding heart to the injection, so the euphoric confederate did not become the label for their state, and they showed little euphoria. The misinformed and uninformed groups showed more. This comparison is the key evidence that labelling, not arousal alone, shapes the emotion.",
     module: M,
     ref: "Schachter & Singer 1962",
   },
@@ -872,12 +872,12 @@ export const QUESTIONS_4: PrepQuestion[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "Months after their win, lottery winners were not much happier than comparison participants.",
-      "People adapt to stable changes in their circumstances, so their happiness tends to return towards a baseline.",
+      "In the same study, Brickman and colleagues also interviewed people who had been paralysed in accidents.",
     ],
     options: AR,
-    answer: 0,
+    answer: 1,
     explanation:
-      "Both true; R explains A. Brickman and colleagues found winners rated present happiness about the same as controls and enjoyed ordinary pleasures less, which they explained through adaptation and contrast with the peak experience of winning.",
+      "Both true, but R does not explain A. R describes another group in the study, not the reason for the finding. Winners were not much happier because people adapt to stable changes in their circumstances, so happiness tends to return towards a baseline; the winners also enjoyed ordinary pleasures less by contrast with the peak of winning.",
     module: M,
     ref: "Brickman, Coates & Janoff-Bulman 1978",
   },
