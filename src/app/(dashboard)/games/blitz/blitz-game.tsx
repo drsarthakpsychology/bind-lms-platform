@@ -13,7 +13,7 @@ import { CountUp } from "@/lib/games/ui/count-up";
 import { btnPrimary, btnSecondary, card, chip } from "@/lib/games/ui/styles";
 import fx from "@/lib/games/ui/fx.module.css";
 import { answerBlitz, finishBlitz, startBlitz } from "./actions";
-import { recordBlitzRound, type LearnState } from "@/lib/learn/engine";
+import { creditPlay, istToday, recordBlitzRound, type LearnState } from "@/lib/learn/engine";
 import { getLearnState, initLearnStore, setLearnState } from "@/lib/learn/store";
 
 type Phase = "ready" | "countdown" | "run" | "finishing" | "done";
@@ -78,7 +78,7 @@ export function BlitzGame({ bests, serverState, save }: { bests: Bests; serverSt
       setShown(res.bests);
       const ls = getLearnState();
       if (ls) {
-        const next = recordBlitzRound(ls, res.state.correct);
+        const next = recordBlitzRound(creditPlay(ls, res.xpSaved ? res.xp : 0, istToday()), res.state.correct);
         if (next !== ls) setLearnState(next);
       }
       haptic(res.newBest ? "success" : "tap");

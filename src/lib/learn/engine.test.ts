@@ -7,6 +7,7 @@ import {
   emptyState,
   finishLesson,
   recordBlitzRound,
+  creditPlay,
   levelFor,
   liveStreak,
   normalise,
@@ -116,5 +117,19 @@ describe("recordBlitzRound", () => {
     expect(b.blitzBest).toBe(15);
     expect(b.badges).toContain("blitz_15");
     expect(recordBlitzRound(b, 4)).toBe(b);
+  });
+});
+
+describe("creditPlay", () => {
+  it("moves the goal and streak without adding the server XP again", () => {
+    const s = emptyState();
+    const a = creditPlay(s, 5, "2026-11-07");
+    expect(a.xp).toBe(s.xp);
+    expect(a.daily.xp).toBe(5);
+    expect(a.streak.count).toBe(1);
+    const b = creditPlay(a, 500, "2026-11-07");
+    expect(b.daily.goalHit).toBe(true);
+    expect(b.xp).toBeGreaterThan(a.xp);
+    expect(b.xp - a.xp).toBeLessThan(500);
   });
 });

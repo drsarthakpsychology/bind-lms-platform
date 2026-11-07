@@ -31,6 +31,7 @@ import { TEAM_LIMITS } from "@/lib/games-sims/teams";
 import { Btn, buzz, Eyebrow, Kbd, motionCss as m, Panel, Pill, readLocal, Stat, useHotkeys, writeLocal, type Tone } from "@/lib/games-sims/ui/kit";
 import { JoinBox, Members, TeamCode, usePoll } from "@/lib/games-sims/ui/team";
 import type { WardTeamView } from "./actions";
+import { creditServerPlay } from "@/lib/learn/credit-play";
 
 type Actions = {
   finishWardSolo: (x: { campaign: string; choices: string[]; run: string }) => Promise<{ ok: boolean; score: number; xp: number }>;
@@ -269,7 +270,10 @@ function SoloPlay({ solo, finish, onExit, onAgain }: { solo: Solo; finish: Actio
     if (next.done) {
       writeLocal(SOLO_KEY, null);
       void finish({ campaign: c.id, choices: list, run: solo.run })
-        .then((r) => setResult({ xp: r.ok ? r.xp : 0, saved: r.ok }))
+        .then((r) => {
+          setResult({ xp: r.ok ? r.xp : 0, saved: r.ok });
+          if (r.ok) creditServerPlay(r.xp);
+        })
         .catch(() => setResult({ xp: 0, saved: false }));
     }
   }

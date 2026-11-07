@@ -10,6 +10,7 @@ import { TEAM_LIMITS } from "@/lib/games-sims/teams";
 import { Btn, buzz, Eyebrow, Kbd, motionCss as m, Panel, Pill, Stat, useHotkeys } from "@/lib/games-sims/ui/kit";
 import { JoinBox, Members, TeamCode, usePoll } from "@/lib/games-sims/ui/team";
 import type { EscapeView } from "./actions";
+import { creditServerPlay } from "@/lib/learn/credit-play";
 
 type Actions = {
   createEscapeTeam: (room: string) => Promise<{ ok: true; teamId: string } | { ok: false; reason: string }>;
@@ -396,7 +397,10 @@ function Practice({ room, run, startedAt, actions, onExit, onAgain }: { room: Ro
         setFinishedAt(end);
         void actions
           .finishEscapePractice({ room: room.id, run, answers: list, wrong: res.state.wrong, ms: end - startedAt })
-          .then((r) => setXp(r.ok ? r.xp : 0))
+          .then((r) => {
+            setXp(r.ok ? r.xp : 0);
+            if (r.ok) creditServerPlay(r.xp);
+          })
           .catch(() => setXp(0));
       }
     }

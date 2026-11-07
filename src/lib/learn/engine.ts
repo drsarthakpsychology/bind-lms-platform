@@ -576,6 +576,29 @@ export const LAB_XP = { firstRun: 20, rerun: 5, checkPerRight: 3, reflect: 5 } a
  * A finished Blitz round (XP is paid on the server, so none here): keeps the
  * best count of right answers and awards the Quick thinker badge at 15.
  */
+/**
+ * A game whose XP was already paid on the server. Counts towards today's
+ * goal and keeps the streak alive, without adding that XP again here. Only
+ * the daily-goal bonus, earned in the browser, is added to XP and history.
+ */
+export function creditPlay(s: LearnState, serverXp: number, today: string): LearnState {
+  const amount = Math.max(0, Math.round(serverXp));
+  const daily = s.daily.day === today ? { ...s.daily } : { day: today, xp: 0, goalHit: false };
+  daily.xp += amount;
+  let bonus = 0;
+  if (!daily.goalHit && daily.xp >= s.dailyGoal) {
+    daily.goalHit = true;
+    bonus = XP.goal;
+  }
+  return {
+    ...s,
+    xp: s.xp + bonus,
+    daily,
+    streak: touchStreak(s.streak, today).streak,
+    history: bonus ? trimHistory({ ...s.history, [today]: (s.history[today] ?? 0) + bonus }, today) : s.history,
+  };
+}
+
 export function recordBlitzRound(s: LearnState, right: number): LearnState {
   const n = Math.max(0, Math.floor(right));
   const badges = s.badges.includes("blitz_15") || n < 15 ? s.badges : [...s.badges, "blitz_15"];

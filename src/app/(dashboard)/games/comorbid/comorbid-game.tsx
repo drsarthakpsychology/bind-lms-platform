@@ -8,6 +8,7 @@ import { CLEAR, dxById, ruleById, symptomById } from "@/lib/games-sims/comorbid/
 import { apply, botMove, newGame, progress, RULES, runBots, type Card, type Event, type Game, type Level, type Move, type Seat, type Setup } from "@/lib/games-sims/comorbid/game";
 import { AccuracyBoard, type AccuracyBoardData } from "@/lib/games-sims/ui/board";
 import { Btn, buzz, Eyebrow, Kbd, motionCss as m, Panel, Pill, Stat, useHotkeys } from "@/lib/games-sims/ui/kit";
+import { creditServerPlay } from "@/lib/learn/credit-play";
 
 type Finish = (x: { seed: string; mode: Setup["mode"]; level: Level; moves: Move[] }) => Promise<{ ok: boolean; xp: number }>;
 
@@ -41,7 +42,10 @@ export function ComorbidGame({ board, finish }: { board: AccuracyBoardData; fini
       xp={xp}
       onDone={(p) => {
         void finish({ seed: p.setup.seed, mode: p.setup.mode, level: p.setup.level, moves: p.moves })
-          .then((r) => setXp(r.ok ? r.xp : 0))
+          .then((r) => {
+            setXp(r.ok ? r.xp : 0);
+            if (r.ok) creditServerPlay(r.xp);
+          })
           .catch(() => setXp(0))
           .finally(() => router.refresh());
       }}

@@ -10,6 +10,7 @@ import { buildRun, costsLife, grade, LIVES, nextStreak, pointsFor, rxXp, STEPS, 
 import { AccuracyBoard, type AccuracyBoardData } from "@/lib/games-sims/ui/board";
 import { Btn, buzz, Eyebrow, Kbd, motionCss as m, Panel, Pill, Stat, toneFor, useHotkeys, verdictWord } from "@/lib/games-sims/ui/kit";
 import { Journey, Receptor } from "@/components/study/animations";
+import { creditServerPlay } from "@/lib/learn/credit-play";
 
 type Grade = (a: Answer) => Promise<{ ok: boolean }>;
 type Finish = (x: { run: string; answers: Answer[] }) => Promise<{ ok: boolean; xp: number }>;
@@ -38,7 +39,10 @@ export function RxDetective({ board, grade: gradeOnServer, finish }: { board: Ac
     setRun(null);
     setDone({ run: r, xp: null });
     void finish({ run: r.run, answers: r.answers })
-      .then((x) => setDone({ run: r, xp: x.ok ? x.xp : 0 }))
+      .then((x) => {
+        setDone({ run: r, xp: x.ok ? x.xp : 0 });
+        if (x.ok) creditServerPlay(x.xp);
+      })
       .catch(() => setDone({ run: r, xp: 0 }))
       .finally(() => router.refresh());
   }
