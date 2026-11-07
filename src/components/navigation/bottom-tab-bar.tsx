@@ -2,13 +2,14 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 import { Activity, Bell, BookOpen, Home, Mail, Menu, Pill, Play, Stethoscope, Target, Users, MessageCircleQuestion, type LucideIcon } from "lucide-react";
 import { motion, useReducedMotion } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 import { blockedBy } from "@/lib/access/features";
 import { isImmersiveSessionPath } from "./sidebar-gate";
 import { openNavDrawer } from "./sidebar-state";
+import { activeNavHref } from "./sections";
 
 interface Tab {
   href: string;
@@ -75,14 +76,16 @@ export function BottomTabBar({
   blocked?: string[];
 }) {
   const pathname = usePathname() ?? "";
+  const from = useSearchParams()?.get("from");
   const reduce = useReducedMotion();
   const base =
     mode === "admin" ? ADMIN_TABS : scope === "lectures_only" ? LECTURE_ONLY_TABS : showStudy ? STUDENT_TABS : STUDENT_TABS_NO_STUDY;
   const tabs = mode === "admin" ? base : base.filter((t) => !blockedBy(t.href, blocked));
 
   const focusedPath =
-    isImmersiveSessionPath(pathname) || /^\/courses\/[^/]+\/(?:lessons|materials)\//.test(pathname) || /^\/games\/(?:play|coach|detective|scenarios|terms|lab\/)/.test(pathname) || /^\/study\/(?!notes\/)[^/]+\/[^/]+/.test(pathname) || /^\/prep\/mock\/(?!result\/)[^/]+$/.test(pathname);
+    isImmersiveSessionPath(pathname) || /^\/courses\/[^/]+\/(?:lessons|materials)\//.test(pathname) || /^\/games\/(?:play|coach|lab\/)|^\/practice\/(?:detective|scenarios|terms)(?:\/|$)/.test(pathname) || /^\/study\/(?!notes\/)[^/]+\/[^/]+/.test(pathname) || /^\/prep\/mock\/(?!result\/)[^/]+$/.test(pathname);
   if (focusedPath) return null;
+  const activeHref = activeNavHref(tabs, pathname, from);
 
   const cell =
     "group/tab flex min-h-16 flex-1 flex-col items-center justify-center gap-1 px-1 pt-2 pb-1.5 text-[0.7rem] font-bold leading-none outline-none focus-visible:ring-[3px] focus-visible:ring-inset focus-visible:ring-ring/60";
@@ -98,10 +101,7 @@ export function BottomTabBar({
       <div className="mx-auto flex max-w-xl items-stretch">
         {tabs.map((t) => {
           const Icon = t.icon;
-          const under = (h: string) => pathname === h || pathname.startsWith(h + "/");
-          // A deeper tab (/practice/medicines) wins over its parent (/practice).
-          const deeper = tabs.some((o) => o.href !== t.href && o.href.startsWith(`${t.href}/`) && under(o.href));
-          const active = t.exact ? pathname === t.href : (under(t.href) && !deeper) || (t.match ?? []).some(under);
+          const active = t.href === activeHref;
           return (
             <Link
               key={t.href}

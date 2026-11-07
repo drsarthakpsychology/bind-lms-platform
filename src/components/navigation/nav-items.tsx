@@ -2,9 +2,10 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 import { Home, Play, LayoutDashboard, Users, BookOpen, Inbox, Mail, Wrench, Pill, Stethoscope, Mic, NotebookPen, MessageSquare, Gauge, HeartPulse, ClipboardCheck, ClipboardList, Radar, IdCard, Languages, ToggleLeft, Target, Layers, Flag, ShieldCheck, FileCheck, ListFilter, Activity, Copyright, Sparkles, Sun, Gamepad2, Trophy, Route, MessageCircleQuestion, KeyRound, Award, BarChart3, type LucideIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { activeNavHref } from "./sections";
 
 /**
  * Icon name → component map. Icon components are functions, so they can't be
@@ -82,7 +83,10 @@ export function NavItems({
   onNavigate?: () => void;
   className?: string;
 }) {
-  const pathname = usePathname();
+  const pathname = usePathname() ?? "";
+  const from = useSearchParams()?.get("from");
+  // One item lights up: the section that owns this page (navigation/sections.ts).
+  const activeHref = activeNavHref(items, pathname, from);
 
   // An item opens a section when it carries a `section` different from the
   // item before it. Pure, so the render stays deterministic.
@@ -94,12 +98,7 @@ export function NavItems({
   return (
     <nav aria-label="Primary" className={cn("flex flex-col gap-1", className)}>
       {rows.map(({ item, showHeader }) => {
-        const under = (h: string) => pathname === h || pathname.startsWith(`${h}/`);
-        // A deeper item (e.g. /practice/medicines) wins over its parent (/practice).
-        const deeper = items.some((o) => o.href !== item.href && o.href.startsWith(`${item.href}/`) && under(o.href));
-        const active = item.exact
-          ? pathname === item.href
-          : (under(item.href) && !deeper) || (item.match ?? []).some(under);
+        const active = item.href === activeHref;
         const Icon = NAV_ICONS[item.icon] ?? LayoutDashboard;
         return (
           <React.Fragment key={item.href}>

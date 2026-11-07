@@ -585,7 +585,7 @@ function Result({ game, gain, streak, onNextPractice, pending }: { game: Game; g
   function text(channel: "whatsapp" | "instagram", url?: string) {
     return shareText({ grid: v.grid, solved, clue: v.cluesOpen, score: v.score, dayLabel: dayLabel(meta.day), streak, url, channel });
   }
-  const shareUrl = () => `${window.location.origin}/games/daily`;
+  const shareUrl = () => `${window.location.origin}/practice/daily`;
   async function copy(channel: "whatsapp" | "instagram") {
     const ok = await copyText(text(channel, shareUrl()));
     setCopied(ok ? channel : null);

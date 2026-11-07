@@ -51,9 +51,15 @@ const nextConfig: NextConfig = {
       // Learning moved out of Practice: Notes live at /study, games at /games.
       // Old links keep working (query strings such as ?domain= are kept).
       { source: "/study/activities", destination: "/games", permanent: false },
-      { source: "/study/:game(coach|play|detective|scenarios|terms|progress)", destination: "/games/:game", permanent: false },
+      { source: "/study/:game(coach|play|progress)", destination: "/games/:game", permanent: false },
       { source: "/practice/learn", destination: "/games", permanent: false },
-      { source: "/practice/learn/:game(coach|play|detective|scenarios|terms|progress)", destination: "/games/:game", permanent: false },
+      { source: "/practice/learn/:game(coach|play|progress)", destination: "/games/:game", permanent: false },
+      // Clinical tools belong to Practice (plan section 8), not Games. Their old
+      // /games addresses (and the older /study and /practice/learn ones) land
+      // straight on the Practice address, one hop, query string kept.
+      { source: "/games/:tool(daily|detective|scenarios|terms)", destination: "/practice/:tool", permanent: false },
+      { source: "/study/:tool(detective|scenarios|terms)", destination: "/practice/:tool", permanent: false },
+      { source: "/practice/learn/:tool(detective|scenarios|terms)", destination: "/practice/:tool", permanent: false },
       { source: "/practice/notes", destination: "/study/notes", permanent: false },
       { source: "/practice/notes/:id", destination: "/study/notes/:id", permanent: false },
     ];

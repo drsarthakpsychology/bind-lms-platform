@@ -34,16 +34,16 @@ type Tone = "lime" | "blue" | "ink" | "plain";
 export type HubTool = { href: string; title: string; text: string; icon: LucideIcon; flag: FeatureKey; tone: Tone };
 
 export const MAIN_TOOLS: HubTool[] = [
-  { href: "/games/daily", title: "Daily case", text: "One new patient a day. Name it in as few clues as you can.", icon: ClipboardList, flag: "learn", tone: "lime" },
+  { href: "/practice/daily", title: "Daily case", text: "One new patient a day. Name it in as few clues as you can.", icon: ClipboardList, flag: "learn", tone: "lime" },
   { href: "/practice/consulting-room", title: "AI patient interview", text: "Talk to a patient in the Consulting Room. The debrief shows what you missed.", icon: Stethoscope, flag: "consulting_room", tone: "ink" },
   { href: "/practice/mse", title: "MSE", text: "Describe what you see before you label it.", icon: Brain, flag: "mse", tone: "blue" },
   { href: "/practice/formulation", title: "Formulation", text: "Sort the 5Ps and write the story of the case.", icon: Wand2, flag: "formulation", tone: "lime" },
 ];
 
 export const THINK_TOOLS: HubTool[] = [
-  { href: "/games/detective", title: "Clinic detective", text: "Name the disorder or medicine from clues.", icon: Search, flag: "learn", tone: "plain" },
-  { href: "/games/scenarios", title: "What would you do", text: "Tricky patient moments, real consequences.", icon: MessagesSquare, flag: "learn", tone: "plain" },
-  { href: "/games/terms", title: "Say it clinically", text: "Everyday words into case-sheet words.", icon: Languages, flag: "learn", tone: "plain" },
+  { href: "/practice/detective", title: "Clinic detective", text: "Name the disorder or medicine from clues.", icon: Search, flag: "learn", tone: "plain" },
+  { href: "/practice/scenarios", title: "What would you do", text: "Tricky patient moments, real consequences.", icon: MessagesSquare, flag: "learn", tone: "plain" },
+  { href: "/practice/terms", title: "Say it clinically", text: "Everyday words into case-sheet words.", icon: Languages, flag: "learn", tone: "plain" },
   { href: "/practice/judgment", title: "Judgment", text: "New facts change the odds. 2 minutes.", icon: Gauge, flag: "judgment", tone: "plain" },
   { href: "/practice/two-minute-clinic", title: "Two-minute clinic", text: "One-liner, differential, next question.", icon: Zap, flag: "two_minute_clinic", tone: "plain" },
   { href: "/practice/ethics", title: "Ethics, law & referral", text: "What to do, then the law behind it.", icon: Scale, flag: "ethics", tone: "plain" },

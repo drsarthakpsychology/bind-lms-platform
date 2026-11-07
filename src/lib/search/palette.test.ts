@@ -26,6 +26,14 @@ describe("command palette search", () => {
     expect(searchPalette(STATIC_ENTRIES, "add people")[0].href).toBe("?add=people");
   });
 
+  it("Practice tools open in Practice, games open in Games", () => {
+    const href = (id: string) => STATIC_ENTRIES.find((e) => e.id === id)?.href;
+    for (const id of ["daily", "cr", "mse", "formulation", "detective", "scenarios", "terms", "judgment", "clinic", "osce", "ethics", "library"]) {
+      expect(href(id), id).toMatch(/^\/practice\//);
+    }
+    expect(STATIC_ENTRIES.filter((e) => e.group === "Tools" && e.href.startsWith("/games/")).map((e) => e.id)).toEqual([]);
+  });
+
   it("empty query returns nothing", () => {
     expect(searchPalette(STATIC_ENTRIES, "")).toEqual([]);
   });
