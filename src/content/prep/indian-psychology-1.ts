@@ -386,7 +386,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
       "Past, present, future and timeless",
       "Body, feelings, mind and mental objects (dhammas)",
     ], 3,
-    "The four satipatthanas are kaya (body), vedana (feeling tone), citta (mind states) and dhammas (phenomena such as the hindrances, aggregates and so on). Breath and posture are practices within body mindfulness. The other options are invented.",
+    "The four satipatthanas are kaya (body), vedana (feeling tone), citta (mind states) and dhammas (phenomena such as the hindrances, aggregates and so on). Breath and posture are practices within body mindfulness. Self, others, nature and the divine, and past, present, future and timeless are invented lists, while breath, posture, food and sleep mixes body practices with daily activities.",
     { ref: "Majjhima Nikaya 10" }),
   st("ip-047", "buddhist", 3,
     "Which of the following are among the five hindrances (nivaranas) to meditation in Buddhism?",

@@ -122,7 +122,7 @@ export const PART: PrepQuestion[] = [
     options: ["Longer DUP has no consistent relation to outcome", "Shorter DUP is linked to a worse response to treatment", "Longer DUP predicts poorer outcome, supporting early intervention", "DUP is measured from the first prodromal sign to recovery"],
     answer: 2,
     explanation:
-      "Meta-analyses link longer DUP to poorer remission, more negative symptoms and worse functioning, which underpins early intervention in psychosis services. DUP is measured from onset of frank psychotic symptoms to first adequate treatment. The other options misstate the association or the definition.",
+      "Meta-analyses link longer DUP to poorer remission, more negative symptoms and worse functioning, which underpins early intervention in psychosis services. DUP is measured from onset of frank psychotic symptoms to first adequate treatment. Longer DUP does have a consistent link to outcome, shorter DUP predicts a better, not worse, response, and DUP runs from the onset of frank psychosis to the start of adequate treatment, not from the first prodromal sign to recovery.",
     module: "psychosis",
     ref: "Marshall et al. 2005; Perkins et al. 2005",
   }),

@@ -258,7 +258,7 @@ export const PART: PrepQuestion[] = [
     options: ["Depressive retardation; encourage oral fluids and food by mouth", "Catatonia with autonomic signs; urgent work-up, fluids, lorazepam", "Dissociative stupor; reassure the family and observe on the ward", "Conversion paralysis; start physiotherapy and give reassurance"],
     answer: 1,
     explanation:
-      "Staring, mutism, catalepsy (posture maintained) and ambitendency (offering and withdrawing the hand) are catatonic signs. Autonomic instability (fever, tachycardia) with food refusal suggests malignant catatonia, which can be fatal, or NMS if he is on antipsychotics. Investigations (CK, electrolytes, renal function), fluids, lorazepam and early ECT are indicated. The other options ignore both the catatonic signs and the danger.",
+      "Staring, mutism, catalepsy (posture maintained) and ambitendency (offering and withdrawing the hand) are catatonic signs. Autonomic instability (fever, tachycardia) with food refusal suggests malignant catatonia, which can be fatal, or NMS if he is on antipsychotics. Investigations (CK, electrolytes, renal function), fluids, lorazepam and early ECT are indicated. Calling it depressive retardation and pushing oral intake, dissociative stupor with observation, or conversion paralysis with physiotherapy each ignores both the catatonic signs and the danger from the autonomic instability.",
     module: "psychosis",
     ref: "Fish (ambitendency, fish.txt ~4941); Fink & Taylor",
   }),

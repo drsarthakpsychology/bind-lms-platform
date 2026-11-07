@@ -126,7 +126,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "Parents' approval followed truth value ('That's right, it is a dog') more than grammar, so explicit negative evidence was scarce, a point used against reinforcement accounts. Later work showed parents do give implicit feedback through recasts and expansions, but not systematic correction. The other options misstate the finding.",
+      "Parents' approval followed truth value ('That's right, it is a dog') more than grammar, so explicit negative evidence was scarce, a point used against reinforcement accounts. Later work showed parents do give implicit feedback through recasts and expansions, but not systematic correction. Parents did not correct nearly all grammatical errors, did not reward ungrammatical speech more, and did respond to children's speech.",
     ref: "Brown & Hanlon 1970",
   }),
   d({
@@ -462,7 +462,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "Extrapolating from monthly hour-long recordings of 42 families, Hart and Risley estimated a '30-million-word gap' by age 4 and found that input predicted vocabulary growth. Later studies questioned the size of the gap and the neglect of overheard speech and other caregivers, but the reported finding is the large gap in words heard per hour and its link to later vocabulary. The other options contradict it.",
+      "Extrapolating from monthly hour-long recordings of 42 families, Hart and Risley estimated a '30-million-word gap' by age 4 and found that input predicted vocabulary growth. Later studies questioned the size of the gap and the neglect of overheard speech and other caregivers, but the reported finding is the large gap in words heard per hour and its link to later vocabulary. Low-income children heard fewer words, not more; families differed greatly in talk; and input did predict later vocabulary.",
     ref: "Hart & Risley 1995; Sperry et al. 2019, Child Dev",
   }),
   // ── Developmental research designs and infant methods ─────────────────────
@@ -759,7 +759,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "Of 36 infants tested, 27 moved off the centre board; all of these crawled onto the shallow side at least once, but only 3 crept onto the deep side, suggesting depth perception by the time of crawling. Campos and colleagues later showed that crawling experience increases wariness of heights and that younger, pre-crawling infants show heart-rate deceleration (interest, not fear) over the deep side. The other options misstate the result.",
+      "Of 36 infants tested, 27 moved off the centre board; all of these crawled onto the shallow side at least once, but only 3 crept onto the deep side, suggesting depth perception by the time of crawling. Campos and colleagues later showed that crawling experience increases wariness of heights and that younger, pre-crawling infants show heart-rate deceleration (interest, not fear) over the deep side. Infants clearly saw the pattern, most would not crawl over the deep side, and their wariness was of the deep, not the shallow, side.",
     ref: "Gibson & Walk 1960, Sci Am; Campos et al. 1992",
   }),
   d({
@@ -832,7 +832,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: AR,
     answer: 1,
     explanation:
-      "Both are true, but R does not explain A. Comprehension runs ahead because understanding a word needs only recognition and mapping to meaning, whereas production also needs recall of the word and control of articulation. A typical child may understand around 50 words before saying 10. R correctly gives the usual age of first words, but a milestone date does not explain the gap between understanding and speaking. So 'R explains A' is wrong, and since both are true the remaining options are also wrong.",
+      "Both are true, but R does not explain A. Comprehension runs ahead because understanding a word needs only recognition and mapping to meaning, whereas production also needs recall of the word and control of articulation. A typical child may understand around 50 words before saying 10. R correctly gives the usual age of first words, but a milestone date does not explain the gap between understanding and speaking. So 'R explains A' is wrong, and since both statements are true, neither 'A is true, but R is false' nor 'A is false, but R is true' applies.",
     ref: "Fenson et al. 1994; Berk, ch. 9",
   }),
   d({

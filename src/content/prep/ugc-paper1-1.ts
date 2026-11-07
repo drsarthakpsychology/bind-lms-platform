@@ -588,7 +588,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
       "Communication is always written",
       "There is no non-verbal communication",
     ], 1,
-    "Hall described high-context cultures (for example India, Japan, Arab countries) as relying on implicit, shared context, and low-context cultures (for example the USA, Germany) as relying on explicit verbal messages. The other options misstate the idea.",
+    "Hall described high-context cultures (for example India, Japan, Arab countries) as relying on implicit, shared context, and low-context cultures (for example the USA, Germany) as relying on explicit verbal messages. In high-context cultures meaning is not all stated in words, communication is not always written, and non-verbal cues matter more, not less.",
     { ref: "Hall, 1976" }),
   ps("p1-086", "classroom-communication", 3,
     "During an online class, a teacher speaks continuously for 50 minutes with slides full of text, keeps cameras off, and never checks understanding. Students later report confusion.",

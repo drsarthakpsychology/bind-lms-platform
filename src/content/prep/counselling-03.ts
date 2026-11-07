@@ -130,7 +130,7 @@ export const PART: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "QPR teaches teachers, wardens and peers to Question the person directly about suicide, Persuade them to get help, and Refer them to a professional. Asking directly does not 'plant the idea'. The other options are invented. Gatekeeper programmes increase knowledge and confidence, though evidence that they reduce suicide deaths on their own is limited.",
+      "QPR teaches teachers, wardens and peers to Question the person directly about suicide, Persuade them to get help, and Refer them to a professional. Asking directly does not 'plant the idea'. Quiet, Patient, Reassure, Quick Psychiatric Review, and Qualify, Prescribe, Return are invented; a gatekeeper does not prescribe, and passive reassurance skips asking directly about suicide. Gatekeeper programmes increase knowledge and confidence, though evidence that they reduce suicide deaths on their own is limited.",
     ref: "Quinnett; Isaac et al. 2009",
   }),
   Q({

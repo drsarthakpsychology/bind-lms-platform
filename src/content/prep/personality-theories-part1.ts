@@ -504,7 +504,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: AR,
     answer: 1,
     explanation:
-      "Both are true, but R does not explain A. Jung could detect complexes this way because long reaction times, unusual or repeated responses, and physiological changes to certain stimulus words showed that those words had touched an emotionally charged cluster of ideas. R is correct: he did this research at the Burghölzli, where Bleuler supported it. The setting tells us where the work was done, not why the test reveals complexes. So 'R explains A' is wrong, and since both statements are true the other options are wrong too.",
+      "Both are true, but R does not explain A. Jung could detect complexes this way because long reaction times, unusual or repeated responses, and physiological changes to certain stimulus words showed that those words had touched an emotionally charged cluster of ideas. R is correct: he did this research at the Burghölzli, where Bleuler supported it. The setting tells us where the work was done, not why the test reveals complexes. So 'R explains A' is wrong, and since both statements are true, neither 'A is true, but R is false' nor 'A is false, but R is true' applies.",
     ref: "Jung 1906; Feist & Feist, ch. 4",
   }),
   p({

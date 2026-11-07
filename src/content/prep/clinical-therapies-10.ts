@@ -75,7 +75,7 @@ export const PART: PrepQuestion[] = [
     options: ["Empathy, warmth and genuineness", "Id, ego and superego in balance", "Agreement on goals and tasks, plus the bond", "Assessment, formulation and treatment"],
     answer: 2,
     explanation:
-      "Bordin described the alliance as agreement on the goals of therapy, agreement on the tasks used to reach them, and the bond of trust and attachment between client and therapist. This 'pan-theoretical' model is measured by the Working Alliance Inventory. Empathy, warmth and genuineness are Rogers's conditions. The other options are unrelated.",
+      "Bordin described the alliance as agreement on the goals of therapy, agreement on the tasks used to reach them, and the bond of trust and attachment between client and therapist. This 'pan-theoretical' model is measured by the Working Alliance Inventory. Empathy, warmth and genuineness are Rogers's conditions. Empathy, warmth and genuineness are Rogers's core conditions, id, ego and superego are Freud's structures, and assessment, formulation and treatment are stages of clinical work.",
     ref: "Bordin 1979",
   }),
   Q({

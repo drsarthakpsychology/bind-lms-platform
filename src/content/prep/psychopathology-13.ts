@@ -338,7 +338,7 @@ export const PART: PrepQuestion[] = [
     options: ["Young adults make up a large share, and India's female rate is high", "Suicide is concentrated mainly in people over 80 years of age", "Women account for almost no suicides recorded in India", "Suicide rates are roughly the same across every Indian state"],
     answer: 0,
     explanation:
-      "Indian data show a large share of suicide deaths among young adults, and India's female suicide rate is well above the global average, with family problems, marital issues and illness commonly recorded as causes. State rates vary widely (higher in southern states such as Kerala, Tamil Nadu and Karnataka, and Sikkim). The other options are wrong. The National Suicide Prevention Strategy aims to reduce suicide mortality by 10% by 2030.",
+      "Indian data show a large share of suicide deaths among young adults, and India's female suicide rate is well above the global average, with family problems, marital issues and illness commonly recorded as causes. State rates vary widely (higher in southern states such as Kerala, Tamil Nadu and Karnataka, and Sikkim). Suicide is not concentrated in people over 80 (most deaths are in young and middle-aged adults), women account for a large share rather than almost none, and rates vary widely between states, being highest in states such as Sikkim and Kerala and in southern India generally. The National Suicide Prevention Strategy aims to reduce suicide mortality by 10% by 2030.",
     module: "suicide",
     ref: "NCRB ADSI; Dandona et al. Lancet Public Health 2018",
   }),

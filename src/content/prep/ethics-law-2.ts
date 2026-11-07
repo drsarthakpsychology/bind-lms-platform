@@ -519,7 +519,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
       "Family members can always consent for competent adults",
       "Oral consent is never valid",
     ], 1,
-    "A patient consented to diagnostic laparoscopy, and the surgeon removed her uterus and ovaries without further consent. The Court held that consent for one procedure does not extend to another non-emergency procedure, and set an Indian standard of 'real' or adequate consent. The other options misstate the judgment.",
+    "A patient consented to diagnostic laparoscopy, and the surgeon removed her uterus and ovaries without further consent. The Court held that consent for one procedure does not extend to another non-emergency procedure, and set an Indian standard of 'real' or adequate consent. The court did not say doctors need not disclose risks, did not let family members consent for competent adults, and did not hold that oral consent is never valid.",
     { ref: "Samira Kohli v Prabha Manchanda, (2008) 2 SCC 1" }),
   mt("el-161", "case-law", 4,
     "Match the case (List I) with its principle (List II).",

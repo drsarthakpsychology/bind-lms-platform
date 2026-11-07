@@ -132,7 +132,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "Fromm, writing after the rise of Nazism, argued that as people gained freedom from traditional ties they also lost security and belonging. Some escape by submitting to or dominating others (authoritarianism), by destroying what threatens them (destructiveness), or by becoming what everyone else expects (automaton conformity). The healthy alternative is positive freedom through love and productive work. The other options are not part of his argument.",
+      "Fromm, writing after the rise of Nazism, argued that as people gained freedom from traditional ties they also lost security and belonging. Some escape by submitting to or dominating others (authoritarianism), by destroying what threatens them (destructiveness), or by becoming what everyone else expects (automaton conformity). The healthy alternative is positive freedom through love and productive work. The collective unconscious is Jung's idea, social interest is Adler's, and Fromm saw freedom as bringing isolation and anxiety, not too much pleasure.",
     ref: "Fromm 1941; Feist & Feist, ch. 7",
   }),
   p({

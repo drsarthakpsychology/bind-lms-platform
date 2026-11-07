@@ -70,3 +70,18 @@ describe("explanations name options by content", () => {
     expect(offenders).toEqual([]);
   });
 });
+
+/** Dismissals that give no reason, such as "the other options are unrelated". Each wrong option needs its own brief reason. */
+const VAGUE_DISMISSAL = [
+  /\b(other|remaining) (options|choices|answers|distractors|alternatives|codes|combinations|three|two)( options| names)? (are|is) (all |also )?(unrelated|incorrect|wrong|irrelevant|invented|untrue|made up|not (part of|in|mentioned|correct))\b/i,
+  /\bthe rest (are|is) (unrelated|wrong|incorrect|irrelevant)\b/i,
+  /\b(other|remaining) (options|codes|combinations) (do not (match|fit)|contradict|misstate|misread|misdescribe)( (the|this|these|his|it|its))?( reported)? ?(finding|findings|result|results|effect|pattern|idea|theory|judgment|argument|account|concept|canon|evidence|procedure|passage|design|body of work|it)?\s*[.;]/i,
+  /\bthe results contradict the other options\b/i,
+];
+
+describe("explanations give a reason for each distractor", () => {
+  it("no explanation dismisses the distractors without saying why", () => {
+    const offenders = ALL_QUESTIONS.filter((q) => VAGUE_DISMISSAL.some((re) => re.test(q.explanation))).map((q) => q.id);
+    expect(offenders).toEqual([]);
+  });
+});

@@ -54,7 +54,7 @@ export const PART: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "Byrne and Long found that most consultations were doctor-centred, with doctors asking closed questions and focusing on the physical problem, and that each doctor tended to keep one style regardless of the patient. Patient-centred communication, which explores the patient's concerns, ideas and expectations, is linked to greater satisfaction and adherence. The other options do not match the findings.",
+      "Byrne and Long found that most consultations were doctor-centred, with doctors asking closed questions and focusing on the physical problem, and that each doctor tended to keep one style regardless of the patient. Patient-centred communication, which explores the patient's concerns, ideas and expectations, is linked to greater satisfaction and adherence. Most consultations were not patient-centred, doctors were not silent, and styles were not evenly divided, since each doctor tended to stick to a doctor-centred style.",
     ref: "Byrne & Long 1976",
   }),
   Q({
@@ -218,7 +218,7 @@ export const PART: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "Unrestrained eaters ate less after a milkshake, as fullness would predict. Restrained eaters ate more, the 'what-the-hell' or counter-regulation effect: once the diet was 'broken', they abandoned restraint. Restraint theory suggests dieting can increase the risk of overeating, which links to binge eating. The other options are the opposite of, or ignore, the main finding.",
+      "Unrestrained eaters ate less after a milkshake, as fullness would predict. Restrained eaters ate more, the 'what-the-hell' or counter-regulation effect: once the diet was 'broken', they abandoned restraint. Restraint theory suggests dieting can increase the risk of overeating, which links to binge eating. Restrained eaters did not eat much less than unrestrained eaters, did not eat the same with or without the preload, and did not stop eating because they felt full.",
     module: "more-disorders",
     ref: "Herman & Mack 1975; Herman & Polivy 1980",
   }),

@@ -176,7 +176,7 @@ export const PART: PrepQuestion[] = [
     options: ["Late-onset OCD after age 60 that follows a stroke in the basal ganglia region", "OCD-like symptoms that appear after sudden withdrawal of an SSRI medicine", "Sudden-onset OCD or eating restriction in children, linked to infection", "A form of hoarding and ritual seen in early frontotemporal dementia"],
     answer: 2,
     explanation:
-      "Paediatric autoimmune neuropsychiatric disorders associated with streptococcal infections (PANDAS) and the broader PANS describe sudden-onset OCD symptoms (or severe food restriction) in children with other neuropsychiatric symptoms. They are postulated to involve antibodies cross-reacting with basal ganglia, analogous to Sydenham's chorea. The concept remains controversial. The other options describe unrelated phenomena.",
+      "Paediatric autoimmune neuropsychiatric disorders associated with streptococcal infections (PANDAS) and the broader PANS describe sudden-onset OCD symptoms (or severe food restriction) in children with other neuropsychiatric symptoms. They are postulated to involve antibodies cross-reacting with basal ganglia, analogous to Sydenham's chorea. The concept remains controversial. Late-onset OCD after a basal ganglia stroke is a secondary, organic OCD; symptoms after stopping an SSRI are a discontinuation effect; and hoarding and rituals in frontotemporal dementia are part of that dementia, so none of these is PANDAS or PANS.",
     module: "child",
     ref: "DSM-5-TR OCD risk factors; Swedo et al.",
   }),

@@ -34,7 +34,7 @@ export const PART: PrepQuestion[] = [
     options: ["Observe, Assess, Refer and then Support the client", "Open questions, Affirmations, Reflections, Summaries", "Orientation, Agenda-setting, Review and a Summary", "Options, Advice, Reassurance and practical Solutions"],
     answer: 1,
     explanation:
-      "OARS stands for open questions, affirmations (recognising strengths and efforts), reflective listening and summaries. Reflections are the main tool, and skilled MI practitioners use more reflections than questions. The other options are invented or describe other kinds of sessions.",
+      "OARS stands for open questions, affirmations (recognising strengths and efforts), reflective listening and summaries. Reflections are the main tool, and skilled MI practitioners use more reflections than questions. Observe, Assess, Refer and Support, Orientation, Agenda-setting, Review and Summary, and Options, Advice, Reassurance and Solutions are invented expansions; the last one also describes advice-giving, which MI tries to avoid.",
     module: "substance",
     ref: "Miller & Rollnick 2013",
   }),

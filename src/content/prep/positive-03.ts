@@ -38,7 +38,7 @@ export const PART: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "Brown and Ryan developed the scale to measure open, receptive attention to the present. Items describe mindlessness and are reverse scored. Higher scores were linked to greater well-being, more positive affect and autonomy, and less anxiety and depression, and scores rose after mindfulness training in cancer patients. The other options state the opposite of these findings.",
+      "Brown and Ryan developed the scale to measure open, receptive attention to the present. Items describe mindlessness and are reverse scored. Higher scores were linked to greater well-being, more positive affect and autonomy, and less anxiety and depression, and scores rose after mindfulness training in cancer patients. Higher mindfulness was linked with higher well-being, not lower, it was clearly related to well-being, and it reflects better, not poorer, everyday attention.",
     ref: "Brown & Ryan 2003",
   }),
   Q({

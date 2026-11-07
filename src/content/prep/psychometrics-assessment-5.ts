@@ -609,7 +609,7 @@ export const QUESTIONS_5: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "Sacks and Levy organised the SSCT into family, sex, interpersonal relationships and self-concept, with attitude areas such as attitude towards father, fears and guilt feelings. The other options are invented groupings or other theories' terms; the structural model is Freud's, not the SSCT's.",
+      "Sacks and Levy organised the SSCT into family, sex, interpersonal relationships and self-concept, with attitude areas such as attitude towards father, fears and guilt feelings. Work, play, love and money is an invented grouping; cognition, emotion, behaviour and physiology is a CBT-style model; and id, ego, superego and reality comes from Freud's structural model, not the SSCT.",
     module: M,
     ref: "Sacks & Levy 1950",
   },

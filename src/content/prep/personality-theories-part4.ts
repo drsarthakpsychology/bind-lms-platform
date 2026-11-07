@@ -185,7 +185,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "Meta-analyses by Norcross, Wampold, Elliott and others show that the alliance, empathy and positive regard predict outcome moderately across therapies, including CBT. This supports the importance of Rogers' conditions, though most researchers think specific techniques also matter for some problems, so the conditions may be necessary or helpful rather than sufficient. The other options contradict the evidence.",
+      "Meta-analyses by Norcross, Wampold, Elliott and others show that the alliance, empathy and positive regard predict outcome moderately across therapies, including CBT. This supports the importance of Rogers' conditions, though most researchers think specific techniques also matter for some problems, so the conditions may be necessary or helpful rather than sufficient. The relationship matters across therapies, not only in psychoanalysis, it is related to outcome, and it is helpful rather than harmful.",
     ref: "Elliott et al. 2018; Norcross & Lambert 2019",
   }),
   p({

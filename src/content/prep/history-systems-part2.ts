@@ -523,7 +523,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "Lewin had noticed that waiters remembered unpaid orders well but forgot them once the bill was paid. Zeigarnik showed that interrupted tasks were recalled about twice as often as completed ones, which Lewin explained as unresolved tension in the life space. This became known as the Zeigarnik effect. The other options contradict the finding.",
+      "Lewin had noticed that waiters remembered unpaid orders well but forgot them once the bill was paid. Zeigarnik showed that interrupted tasks were recalled about twice as often as completed ones, which Lewin explained as unresolved tension in the life space. This became known as the Zeigarnik effect. Completed tasks were not remembered better, unfinished tasks were not forgotten at once, and completion did affect memory.",
     ref: "Zeigarnik 1927; Hergenhahn, ch. 14",
   }),
   h({
@@ -609,7 +609,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "If the chickens had learned only to peck at a particular grey, they would have chosen the original card. Most chose the new darker card, which suggested they had learned a relation between stimuli, in line with Gestalt views. Spence later offered a behaviourist explanation based on generalisation gradients, so the issue became a classic debate. The other options contradict the results.",
+      "If the chickens had learned only to peck at a particular grey, they would have chosen the original card. Most chose the new darker card, which suggested they had learned a relation between stimuli, in line with Gestalt views. Spence later offered a behaviourist explanation based on generalisation gradients, so the issue became a classic debate. Choosing the new darker card shows the chickens did not learn absolute values only, they clearly could learn the discrimination, and the study did not test or rule out insight.",
     ref: "Köhler 1918; Spence 1937",
   }),
   h({
@@ -936,7 +936,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: AR,
     answer: 1,
     explanation:
-      "Both are true, but R does not explain A. Skinner's proposals for designing cultures, as in his utopian novel and his later social writing, followed from his view that behaviour is shaped by its consequences and that free will is an illusion; so changing contingencies is the way to change behaviour. R is a correct fact about the apparatus he built for laboratory research, but inventing a piece of equipment does not explain his social programme. So 'R explains A' is wrong, and since both are true the other options are wrong.",
+      "Both are true, but R does not explain A. Skinner's proposals for designing cultures, as in his utopian novel and his later social writing, followed from his view that behaviour is shaped by its consequences and that free will is an illusion; so changing contingencies is the way to change behaviour. R is a correct fact about the apparatus he built for laboratory research, but inventing a piece of equipment does not explain his social programme. So 'R explains A' is wrong, and since both statements are true, neither 'A is true, but R is false' nor 'A is false, but R is true' applies.",
     ref: "Skinner 1948, 1971",
   }),
   h({
@@ -971,7 +971,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "Tolman's latent learning, Chomsky's critique of the behaviourist account of language, work on attention and memory, and findings such as Garcia's taste aversion and the Brelands' instinctive drift showed limits of S-R explanations, while computers offered a new model of the mind. Behaviourism had many practical successes, was strongly experimental, and rejected introspection, so the other options are wrong.",
+      "Tolman's latent learning, Chomsky's critique of the behaviourist account of language, work on attention and memory, and findings such as Garcia's taste aversion and the Brelands' instinctive drift showed limits of S-R explanations, while computers offered a new model of the mind. Behaviourism had many practical successes, was strongly experimental and rejected introspection, so claims of no applications, no experiments or reliance on introspection are all wrong.",
     ref: "Baars 1986; Hergenhahn, ch. 18",
   }),
 ];

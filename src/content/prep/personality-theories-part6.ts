@@ -482,7 +482,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "Across more than 200 studies, treatments (especially for anxiety and depression) were followed by a reduction in neuroticism of about half a standard deviation, and some increase in extraversion, often within about 24 weeks, with changes largely maintained. This suggests traits are more open to change than once thought, though it is debated how far this reflects real trait change or symptom relief. The other options contradict the findings.",
+      "Across more than 200 studies, treatments (especially for anxiety and depression) were followed by a reduction in neuroticism of about half a standard deviation, and some increase in extraversion, often within about 24 weeks, with changes largely maintained. This suggests traits are more open to change than once thought, though it is debated how far this reflects real trait change or symptom relief. Therapy was linked to decreases, not large increases, in neuroticism; traits did change; and the changes were in personality, not intelligence.",
     ref: "Roberts et al. 2017, Psychol Bull",
   }),
   p({

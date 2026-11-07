@@ -300,7 +300,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
   mcq("ip-118", "indian-psychologists", 3,
     "Janak Pandey is known for his research on ingratiation and for editing:",
     ["The Mental Healthcare Act", "The NIMHANS neuropsychology battery", "The third and fourth ICSSR surveys of psychological research in India", "A commentary on the Bhagavad Gita"], 2,
-    "Pandey edited the ICSSR's third survey (1988) and the three-volume fourth survey (2000 to 2004), and studied ingratiation as a social influence strategy in India. The other options are unrelated.",
+    "Pandey edited the ICSSR's third survey (1988) and the three-volume fourth survey (2000 to 2004), and studied ingratiation as a social influence strategy in India. Pandey did not edit the Mental Healthcare Act (a law passed by Parliament), the NIMHANS neuropsychology battery or a commentary on the Gita.",
     { ...NET, ref: "Pandey (ed.), 2000 to 2004" }),
   ar("ip-119", "indian-psychologists", 2,
     "Girishwar Misra has been a leading voice for culturally grounded psychology in India.",
