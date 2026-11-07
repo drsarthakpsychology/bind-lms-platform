@@ -1,56 +1,43 @@
 "use client";
 
 import * as React from "react";
-import { BackPill } from "./back";
-import { TipButton, TipPanel, useFirstTimeTip } from "@/components/help/first-time-tip";
+import { BackPill, useBack } from "./back";
 
 /**
- * Every activity (games, Coach, quizzes, Detective, clinical words) sits in
- * this frame: one top row with Back, the activity name and a small help
- * button, then the activity itself.
- *
- * The how-to (`purpose` plus `how`) shows once, the first time a student opens
- * the activity. After "Got it" it folds into the help button in the top row.
+ * Every activity (Coach, quizzes, Detective, cases, clinical words) sits in
+ * this frame so it never looks like a phone screen floating on a big monitor:
+ * - phones: a top row with a labelled Back and the activity name;
+ * - desktop: the activity on the left, a side panel on the right with Back,
+ *   what this activity is for, and how to use it.
  */
-export function ActivityFrame({
-  title,
-  purpose,
-  how,
-  fallback,
-  tipId,
-  tipLabel = "How to play",
-  children,
-}: {
-  title: string;
-  /** One line on what the activity is. Shown in the first-time tip only. */
-  purpose?: string;
-  how: readonly string[];
-  fallback?: string;
-  /** Defaults to the title, lowercased with hyphens. */
-  tipId?: string;
-  tipLabel?: string;
-  children: React.ReactNode;
-}) {
-  const tip = useFirstTimeTip(tipId ?? slug(title));
+export function ActivityFrame({ title, purpose, how, fallback, children }: { title: string; purpose: string; how: string[]; fallback?: string; children: React.ReactNode }) {
+  const back = useBack(fallback);
   return (
-    <div className="mx-auto w-full max-w-4xl lg:px-8 lg:py-4">
-      <div className="flex items-center gap-2 border-b-2 border-foreground/10 px-4 py-2 lg:border-0 lg:px-0">
+    <div className="mx-auto w-full max-w-6xl lg:grid lg:grid-cols-[minmax(0,1fr)_19rem] lg:gap-8 lg:px-8 lg:py-6">
+      <div className="flex items-center gap-3 border-b-2 border-foreground/10 px-4 py-3 lg:hidden">
         <BackPill fallback={fallback} />
-        <h1 className="min-w-0 flex-1 truncate font-bold">{title}</h1>
-        <TipButton tip={tip} label={tipLabel} className="shrink-0" />
+        <p className="truncate font-bold">{title}</p>
       </div>
-      <TipPanel tip={tip} title={tipLabel} intro={purpose} steps={how} className="mx-4 mt-3 lg:mx-0 lg:mt-0 lg:mb-4" />
       <div className="min-w-0 lg:rounded-3xl lg:border-2 lg:border-foreground lg:bg-card lg:py-2">{children}</div>
+      <aside className="hidden lg:block" aria-label="About this activity">
+        <div className="sticky top-[calc(var(--top-h)+1rem)] space-y-4">
+          <BackPill fallback={fallback} className="h-11 w-full justify-center text-base" />
+          <section className="rounded-3xl border-2 border-foreground bg-foreground p-5 text-background">
+            <p className="text-xs font-semibold tracking-wide text-primary uppercase">You&apos;re in</p>
+            <h2 className="mt-1 text-2xl font-bold leading-tight">{title}</h2>
+            <p className="mt-2 text-sm leading-relaxed opacity-90">{purpose}</p>
+          </section>
+          <section className="rounded-3xl border-2 border-foreground bg-card p-5">
+            <h3 className="font-bold">How to use it</h3>
+            <ol className="mt-2 list-decimal space-y-1.5 pl-5 text-sm leading-snug">
+              {how.map((h) => (
+                <li key={h}>{h}</li>
+              ))}
+            </ol>
+            <p className="mt-3 text-xs text-muted-foreground">When you finish, {back.label.toLowerCase().replace(/^back to /, "you'll go back to ")}.</p>
+          </section>
+        </div>
+      </aside>
     </div>
-  );
-}
-
-export function slug(s: string): string {
-  return (
-    s
-      .toLowerCase()
-      .replace(/[^a-z0-9]+/g, "-")
-      .replace(/^-+|-+$/g, "")
-      .slice(0, 64) || "activity"
   );
 }

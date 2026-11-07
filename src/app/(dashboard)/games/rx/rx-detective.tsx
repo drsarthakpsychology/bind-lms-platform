@@ -4,11 +4,12 @@ import * as React from "react";
 import { useRouter } from "next/navigation";
 import { ArrowRight, Check, Flame, FlaskConical, Heart, HeartCrack, Pill as PillIcon, Plus, Search, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { LearnLink } from "@/lib/games/ui/learn-link";
 import { DOSE_NOTE, hashString, makeRng, pct } from "@/lib/games-sims/common";
-import { drugById, effectById, MYSTERIES, outcomeById, PUZZLES, type Drug } from "@/lib/games-sims/rx/content";
+import { DRUGS, drugById, effectById, MYSTERIES, outcomeById, PUZZLES, type Drug } from "@/lib/games-sims/rx/content";
 import { buildRun, costsLife, grade, LIVES, nextStreak, pointsFor, rxXp, STEPS, type Answer, type Mode, type Question } from "@/lib/games-sims/rx/game";
 import { AccuracyBoard, type AccuracyBoardData } from "@/lib/games-sims/ui/board";
-import { Btn, buzz, Eyebrow, Kbd, motionCss as m, Panel, Pill, Stat, toneFor, useHotkeys, verdictWord } from "@/lib/games-sims/ui/kit";
+import { Btn, buzz, Kbd, motionCss as m, Panel, Pill, Stat, toneFor, useHotkeys, verdictWord } from "@/lib/games-sims/ui/kit";
 import { Journey, Receptor } from "@/components/study/animations";
 import { creditServerPlay } from "@/lib/learn/credit-play";
 
@@ -25,7 +26,7 @@ const MODES: { id: Mode; label: string; line: string; Icon: typeof PillIcon }[] 
 
 type Run = { run: string; mode: Mode; qs: Question[]; idx: number; answers: Answer[]; picks: string[]; revealed: boolean; lives: number; streak: number; best: number; points: number; gained: number; lostLife: boolean };
 
-export function RxDetective({ board, grade: gradeOnServer, finish }: { board: AccuracyBoardData; grade: Grade; finish: Finish }) {
+export function RxDetective({ board, grade: gradeOnServer, finish, medIds = [] }: { board: AccuracyBoardData; grade: Grade; finish: Finish; medIds?: readonly string[] }) {
   const router = useRouter();
   const [run, setRun] = React.useState<Run | null>(null);
   const [done, setDone] = React.useState<{ run: Run; xp: number | null } | null>(null);
@@ -49,7 +50,7 @@ export function RxDetective({ board, grade: gradeOnServer, finish }: { board: Ac
 
   if (done) return <Summary r={done.run} xp={done.xp} board={board} onAgain={() => start(done.run.mode)} onModes={() => setDone(null)} />;
   if (!run) return <Intro board={board} onStart={start} />;
-  return <Round r={run} setR={setRun} onAnswered={(a) => void gradeOnServer(a).catch(() => undefined)} onEnd={end} />;
+  return <Round r={run} setR={setRun} onAnswered={(a) => void gradeOnServer(a).catch(() => undefined)} onEnd={end} medIds={medIds} />;
 }
 
 function Intro({ board, onStart }: { board: AccuracyBoardData; onStart: (m: Mode) => void }) {
@@ -74,7 +75,7 @@ function Intro({ board, onStart }: { board: AccuracyBoardData; onStart: (m: Mode
 }
 
 /* ----------------------------------------------------------------- round */
-function Round({ r, setR, onAnswered, onEnd }: { r: Run; setR: (r: Run) => void; onAnswered: (a: Answer) => void; onEnd: (r: Run) => void }) {
+function Round({ r, setR, onAnswered, onEnd, medIds }: { r: Run; setR: (r: Run) => void; onAnswered: (a: Answer) => void; onEnd: (r: Run) => void; medIds: readonly string[] }) {
   const q = r.qs[r.idx];
   const needed = q.kind === "chain" ? STEPS.length : 1;
   const complete = r.picks.length >= needed;
@@ -157,6 +158,7 @@ function Round({ r, setR, onAnswered, onEnd }: { r: Run; setR: (r: Run) => void;
             ) : null}
           </div>
           <RevealBody q={q} />
+          <RxLearn q={q} medIds={medIds} />
           <Btn variant="primary" size="lg" className="w-full" onClick={next} autoFocus>
             {last ? "See results" : "Next case"} <ArrowRight aria-hidden /> <Kbd>Enter</Kbd>
           </Btn>
@@ -342,6 +344,25 @@ const drugByName = (name: string) => {
 };
 
 /* ---------------------------------------------------------------- reveal */
+/** "Learn this" for the medicine in the case: its Medicines page, or its Study module. */
+function RxLearn({ q, medIds }: { q: Question; medIds: readonly string[] }) {
+  const p = q.kind === "puzzle" ? PUZZLES.find((x) => x.id === q.id) : undefined;
+  const keys = q.kind === "chain" ? [q.id] : q.kind === "mystery" ? [MYSTERIES.find((x) => x.id === q.id)?.drug ?? ""] : [p?.a ?? "", p?.b ?? ""];
+  const items = keys.filter(Boolean).map((k) => {
+    const d = drugById(k) ?? DRUGS.find((x) => x.name.toLowerCase() === k.toLowerCase());
+    const id = d?.id ?? k.toLowerCase();
+    return { name: d?.name ?? k, href: medIds.includes(id) ? `/practice/medicines/${id}` : d ? `/study/${d.topic}` : undefined };
+  });
+  if (!items.length) return null;
+  return (
+    <div className="flex flex-wrap gap-x-4">
+      {items.map((x) => (
+        <LearnLink key={x.name} topic={x.name} show={items.length > 1} href={x.href} newTab />
+      ))}
+    </div>
+  );
+}
+
 function RevealBody({ q }: { q: Question }) {
   if (q.kind === "chain") {
     const d = drugById(q.id)!;
@@ -429,7 +450,7 @@ function Summary({ r, xp, board, onAgain, onModes }: { r: Run; xp: number | null
   const acc = scores.length ? scores.reduce((a, s) => a + s, 0) / scores.length : 0;
   return (
     <div className={cn("mx-auto max-w-2xl space-y-5 px-4 py-6", m.rise)}>
-      <Eyebrow index="02">{r.lives > 0 ? "Run complete" : "Out of lives"}</Eyebrow>
+      {r.lives > 0 ? null : <p className="text-eyebrow text-link">Out of lives</p>}
       <h1 className="text-h1">{acc >= 0.85 ? "Sharp detective." : acc >= 0.6 ? "Good work." : "The receptors will click with practice."}</h1>
       <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
         <Stat label="Accuracy" value={`${pct(acc)}%`} />

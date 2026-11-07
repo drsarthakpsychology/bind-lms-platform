@@ -4,10 +4,11 @@ import * as React from "react";
 import { useRouter } from "next/navigation";
 import { Ban, Bot, Check, FlaskConical, Layers, RefreshCw, Shield, ShieldOff, Stethoscope, Users, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { LearnLink } from "@/lib/games/ui/learn-link";
 import { CLEAR, dxById, ruleById, symptomById } from "@/lib/games-sims/comorbid/cards";
 import { apply, botMove, newGame, progress, runBots, type Card, type Event, type Game, type Level, type Move, type Seat, type Setup } from "@/lib/games-sims/comorbid/game";
 import { AccuracyBoard, type AccuracyBoardData } from "@/lib/games-sims/ui/board";
-import { Btn, buzz, Eyebrow, Kbd, motionCss as m, Panel, Pill, Stat, useHotkeys } from "@/lib/games-sims/ui/kit";
+import { Btn, buzz, Kbd, motionCss as m, Panel, Pill, Stat, useHotkeys } from "@/lib/games-sims/ui/kit";
 import { creditServerPlay } from "@/lib/learn/credit-play";
 
 type Finish = (x: { seed: string; mode: Setup["mode"]; level: Level; moves: Move[] }) => Promise<{ ok: boolean; xp: number }>;
@@ -345,7 +346,6 @@ function End({ play, xp, onAgain, onExit, board }: { play: Play; xp: number | nu
   const title = g.winner === "draw" ? "A draw." : pass ? `${g.seats[g.winner as 0 | 1].name} wins.` : g.winner === 0 ? "You win." : `${g.seats[1].name} wins.`;
   return (
     <div className={cn("mx-auto max-w-3xl space-y-5 px-4 py-6", m.rise)}>
-      <Eyebrow index="02">Game over</Eyebrow>
       <div className="flex flex-wrap items-end gap-3">
         <h1 className="text-h1">{title}</h1>
         <Pill tone={g.winner === 0 ? "good" : g.winner === "draw" ? "part" : "bad"} className={m.stamp}>
@@ -356,10 +356,14 @@ function End({ play, xp, onAgain, onExit, board }: { play: Play; xp: number | nu
         <DxPanel seat={g.seats[0]} label={g.seats[0].name} />
         <DxPanel seat={g.seats[1]} label={g.seats[1].name} rival />
       </div>
-      <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
+      <div className="flex flex-wrap gap-x-4">
+        {[...new Set([g.seats[0].dx, g.seats[1].dx])].map((id) => {
+          const dx = dxById(id);
+          return dx ? <LearnLink key={id} topic={dx.name} show href={`/study/${dx.topic}`} /> : null;
+        })}
+      </div>
+      <div className="grid grid-cols-2 gap-2">
         <Stat label="Cards that fit" value={`${right}/${mine.length}`} />
-        <Stat label="Bounced" value={mine.length - right} />
-        <Stat label="Moves" value={g.moves} />
         <Stat label="XP earned" value={xp === null ? "…" : `+${xp}`} />
       </div>
       {mine.some((e) => !e.ok) ? (

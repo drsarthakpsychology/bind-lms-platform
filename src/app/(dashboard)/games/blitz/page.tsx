@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import { ActivityFrame } from "@/components/study/activity-frame";
+import { ActivityTip } from "@/components/help/activity-tip";
 import { requireFeature } from "@/lib/flags";
 import { currentPlayer } from "@/lib/games/server";
 import { loadBests } from "@/lib/games/blitz/server";
@@ -19,10 +20,11 @@ export default async function BlitzPage() {
   return (
     <ActivityFrame
       title="Blitz"
-      purpose="60 seconds of fast facts."
-      how={["Answer as many as you can before the clock runs out.", "3 right in a row doubles your points, 6 triples them, 10 gives four times.", "A wrong answer resets the combo.", "Keys: 1 to 4 to answer, T or F for true or false."]}
+      purpose="60 seconds of fast facts. Right answers in a row build a combo that multiplies your points."
+      how={["Answer as many as you can in 60 seconds.", "3 right in a row: double points. 6: triple. 10: four times.", "A wrong answer resets the combo.", "Keys: 1 to 4 to answer, T or F for true or false.", "After the round, read what you missed."]}
       fallback="/games"
     >
+      <ActivityTip id="blitz" intro="60 seconds of fast facts." steps={["Answer as many as you can before the clock runs out.", "3 right in a row doubles your points, 6 triples them, 10 gives four times.", "A wrong answer resets the combo.", "Keys: 1 to 4 to answer, T or F for true or false."]} />
       <BlitzGame bests={bests} serverState={serverState} save={saveLearnState} />
     </ActivityFrame>
   );

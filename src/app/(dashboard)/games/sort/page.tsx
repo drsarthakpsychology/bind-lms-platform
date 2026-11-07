@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ActivityFrame } from "@/components/study/activity-frame";
+import { ActivityTip } from "@/components/help/activity-tip";
 import { requireFeature } from "@/lib/flags";
 import { loadLearnState, saveLearnState } from "../../study/actions";
 import { loadSort } from "./actions";
@@ -14,10 +15,11 @@ export default async function CriteriaSortPage() {
   return (
     <ActivityFrame
       title="Criteria sort"
-      purpose="Four look-alike disorders, sixteen criteria."
-      how={["Tap a tile, then tap the disorder it belongs to.", "Fill all four groups, then check. You have four tries.", "Right groups lock. One away means three of four are right.", "Advanced: also pick each disorder's time rule."]}
+      purpose="Four disorders that look alike, sixteen criteria. Knowing which criterion belongs where is what tells them apart."
+      how={["Tap a tile, then tap the disorder it belongs to.", "Fill all four groups, then check.", "Right groups lock. 'One away' means three of four are right.", "You have four tries.", "Advanced: also pick each disorder's time rule."]}
       fallback="/games"
     >
+      <ActivityTip id="criteria-sort" intro="Four look-alike disorders, sixteen criteria." steps={["Tap a tile, then tap the disorder it belongs to.", "Fill all four groups, then check. You have four tries.", "Right groups lock. One away means three of four are right.", "Advanced: also pick each disorder's time rule."]} />
       <SortGame serverState={serverState} save={saveLearnState} initial={initial} />
     </ActivityFrame>
   );

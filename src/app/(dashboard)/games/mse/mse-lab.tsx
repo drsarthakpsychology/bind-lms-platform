@@ -5,12 +5,13 @@ import { useRouter } from "next/navigation";
 import { ArrowRight, Eye, Flame, ScanEye, Undo2 } from "lucide-react";
 import type { LearnState } from "@/lib/learn/engine";
 import { cn } from "@/lib/utils";
+import { LearnLink } from "@/lib/games/ui/learn-link";
 import { hashString, makeRng, pct } from "@/lib/games-sims/common";
 import { excerptById, type Excerpt } from "@/lib/games-sims/mse/excerpts";
 import { gradeTag, nextLevel, nextStreak, optionsFor, pickExcerpt, pointsFor, ROUND_SIZE, segments, whyNot, type Level, type Tag, type TagResult } from "@/lib/games-sims/mse/grade";
 import { DOMAINS, TERMS, domainLabel, termById, type Domain } from "@/lib/games-sims/mse/terms";
 import { AccuracyBoard, type AccuracyBoardData } from "@/lib/games-sims/ui/board";
-import { Btn, buzz, Eyebrow, Kbd, motionCss as m, Panel, Pill, readLocal, Stat, toneFor, useGameXp, useHotkeys, verdictWord, writeLocal } from "@/lib/games-sims/ui/kit";
+import { Btn, buzz, Kbd, motionCss as m, Panel, Pill, readLocal, Stat, toneFor, useGameXp, useHotkeys, verdictWord, writeLocal } from "@/lib/games-sims/ui/kit";
 
 const LEVELS: { id: Level; label: string; line: string }[] = [
   { id: 1, label: "Starting", line: "Clear findings, one per part." },
@@ -268,6 +269,7 @@ function Round({ play, setPlay, onExcerptDone, onFinish }: { play: Play; setPlay
             </ul>
             <p className="text-body">{f.why}</p>
             {!result.termOk && tag.term && termById(tag.term) ? <p className="rounded-md border-2 border-foreground/20 bg-card p-2 text-small">{whyNot(tag.term, f)}</p> : null}
+            <LearnLink topic={TERMS[f.a].label} href="/study/mse-deep" newTab />
             <Btn variant="primary" size="lg" className="w-full" onClick={next} autoFocus>
               {!lastFinding ? "Next finding" : lastExcerpt ? "See results" : "Next excerpt"} <ArrowRight aria-hidden />
               <Kbd>Enter</Kbd>
@@ -311,7 +313,6 @@ function Summary({ p, bestEver, board, onAgain }: { p: Play; bestEver: number; b
   const xp = Math.round(p.tagsScore * 5) + 10;
   return (
     <div className={cn("mx-auto max-w-2xl space-y-5 px-4 py-6", m.rise)}>
-      <Eyebrow index="02">Round over</Eyebrow>
       <h1 className="text-h1">{acc >= 0.85 ? "Sharp eye." : acc >= 0.6 ? "Good tagging." : "Keep practising the look-alikes."}</h1>
       <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
         <Stat label="Accuracy" value={`${pct(acc)}%`} />

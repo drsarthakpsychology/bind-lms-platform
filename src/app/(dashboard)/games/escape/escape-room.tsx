@@ -3,11 +3,12 @@
 import * as React from "react";
 import { ArrowDown, ArrowRight, ArrowUp, Check, DoorOpen, FileText, Flag, Lightbulb, Lock, LockOpen, MapPin, Play, Timer, Trophy, Users, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { LearnLink } from "@/lib/games/ui/learn-link";
 import { clock } from "@/lib/games-sims/common";
 import { answer as applyAnswer, escapeXp, HINT_AFTER, PENALTY_S, shownOrder, startEscape, teamTime, type EscState, type RaceRow } from "@/lib/games-sims/escape/engine";
 import { ROOMS, roomById, STAGE_LABEL, type Puzzle, type Room } from "@/lib/games-sims/escape/rooms";
 import { TEAM_LIMITS } from "@/lib/games-sims/teams";
-import { Btn, buzz, Eyebrow, Kbd, motionCss as m, Panel, Pill, Stat, useHotkeys } from "@/lib/games-sims/ui/kit";
+import { Btn, buzz, Kbd, motionCss as m, Panel, Pill, Stat, useHotkeys } from "@/lib/games-sims/ui/kit";
 import { JoinBox, Members, TeamCode, usePoll } from "@/lib/games-sims/ui/team";
 import type { EscapeView } from "./actions";
 import { creditServerPlay } from "@/lib/learn/credit-play";
@@ -341,6 +342,7 @@ function OpenedCard({ p, by, onNext, nextLabel }: { p: Puzzle; by?: string; onNe
         </span>
         {p.unlock}
       </p>
+      {p.skill ? <LearnLink topic={STAGE_LABEL[p.stage]} href={`/study/${p.skill.split(":")[0]}`} newTab /> : null}
       <Btn variant="primary" size="lg" className="w-full" onClick={onNext} autoFocus>
         {nextLabel} <ArrowRight aria-hidden /> <Kbd>Enter</Kbd>
       </Btn>
@@ -610,7 +612,6 @@ function Escaped({ room, ms, wrong, xp, onExit, onAgain, race, teamLine }: { roo
   const n = room.puzzles.length;
   return (
     <div className={cn("mx-auto max-w-3xl space-y-5 px-4 py-6", m.rise)}>
-      <Eyebrow index="02">Escaped</Eyebrow>
       <div className="flex flex-wrap items-end gap-3">
         <h1 className="text-h1">The doors open.</h1>
         <Pill tone="good" className={m.stamp}>
