@@ -2,8 +2,9 @@
 
 import * as React from "react";
 import { useRouter } from "next/navigation";
-import { Info, Lock } from "lucide-react";
+import { Check, ClipboardCheck, Info, Lock, MessageCircle } from "lucide-react";
 import { haptic } from "@/lib/haptics";
+import { cn } from "@/lib/utils";
 import { StatusPill } from "@/components/mobile/status-pill";
 import { MobileBottomSheet } from "@/components/mobile/mobile-bottom-sheet";
 
@@ -59,6 +60,7 @@ export function CasePicker({ cases }: { cases: CaseCard[] }) {
   const router = useRouter();
   const [starting, setStarting] = React.useState<string | null>(null);
   const [error, setError] = React.useState<string | null>(null);
+  const [graded, setGraded] = React.useState(false);
 
   async function start(c: CaseCard) {
     if (starting) return;
@@ -80,7 +82,7 @@ export function CasePicker({ cases }: { cases: CaseCard[] }) {
       }
       const j = (await res.json()) as { sessionId: string };
       haptic("success");
-      router.push(`/practice/consulting-room/session/${j.sessionId}`);
+      router.push(`/practice/consulting-room/session/${j.sessionId}${graded ? "?mode=graded" : ""}`);
     } catch {
       setError("Network error. Please try again.");
     } finally {
@@ -100,6 +102,7 @@ export function CasePicker({ cases }: { cases: CaseCard[] }) {
 
   return (
     <div className="space-y-8">
+      <ModePicker graded={graded} onChange={setGraded} />
       {error ? (
         <div
           className="rounded-md border border-status-alert-fg/40 bg-status-alert-bg p-3 text-small text-status-alert-fg"
@@ -259,5 +262,43 @@ export function SafetyFirstSheet() {
         </ul>
       </MobileBottomSheet>
     </>
+  );
+}
+
+/** Practice (free talk + debrief) or a graded interview (hand in MSE, risk and formulation). */
+function ModePicker({ graded, onChange }: { graded: boolean; onChange: (g: boolean) => void }) {
+  const opts = [
+    { g: false, label: "Practice", note: "Talk, then get a debrief.", Icon: MessageCircle },
+    { g: true, label: "Graded interview", note: "Take a history, then hand in the MSE, a risk assessment and a short formulation for a score.", Icon: ClipboardCheck },
+  ];
+  return (
+    <fieldset>
+      <legend className="text-eyebrow text-muted-foreground">How do you want to practise?</legend>
+      <div className="mt-2 grid gap-3 sm:grid-cols-2">
+        {opts.map(({ g, label, note, Icon }) => {
+          const on = graded === g;
+          return (
+            <label
+              key={label}
+              className={cn(
+                "flex min-h-11 cursor-pointer items-start gap-3 rounded-md border-2 p-3 transition-[transform,box-shadow] has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-ring",
+                on ? "border-foreground bg-card hard-shadow-sm" : "border-border bg-background hover:-translate-y-0.5",
+              )}
+            >
+              <input type="radio" name="sim-mode" checked={on} onChange={() => onChange(g)} className="sr-only" />
+              <span className={cn("grid size-6 shrink-0 place-items-center rounded-md border-2 border-foreground", on ? "bg-primary text-primary-foreground" : "bg-background")} aria-hidden>
+                {on ? <Check className="size-4" /> : null}
+              </span>
+              <span className="min-w-0">
+                <span className="flex items-center gap-1.5 text-body-strong">
+                  <Icon className="size-4 shrink-0" aria-hidden /> {label}
+                </span>
+                <span className="mt-0.5 block text-caption text-muted-foreground">{note}</span>
+              </span>
+            </label>
+          );
+        })}
+      </div>
+    </fieldset>
   );
 }

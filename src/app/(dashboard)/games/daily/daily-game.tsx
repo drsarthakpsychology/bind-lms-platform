@@ -18,7 +18,9 @@ import {
   LoaderCircle,
   MessageCircle,
   Search,
+  Send,
   Shuffle,
+  Sparkles,
   Users,
   X,
 } from "lucide-react";
@@ -37,12 +39,16 @@ import { awardXp } from "@/lib/games/ui/xp";
 import { copyText, readLocal, useLocalJson, writeLocal, writeLocalShared } from "@/lib/games/ui/copy";
 import { btnInk, btnPrimary, btnSecondary, card, chip } from "@/lib/games/ui/styles";
 import fx from "@/lib/games/ui/fx.module.css";
-import { dailyMove, nextPractice, type DailyMeta, type MoveResult } from "./actions";
+import { AI_CASE_LABEL, AI_CASE_NOTE } from "@/lib/ai-cases/types";
+import { AI_TOPICS } from "@/lib/ai-cases/criteria";
+import { dailyMove, flagAiCaseAction, nextAiCase, nextPractice, type DailyMeta, type MoveResult } from "./actions";
 
 const EMPTY = emptyState();
 type Save = (s: LearnState) => Promise<unknown>;
 type Game = { view: CaseView; meta: DailyMeta; log: Action[] };
 type Ok = Extract<MoveResult, { ok: true }>;
+type Tab = "daily" | "practice" | "ai";
+type AiChoice = { topic: string; setting: "mix" | "indian" | "global" };
 
 const KIND_ICON: Record<InvestigationKind, typeof Brain> = { mse: Brain, collateral: Users, scale: ClipboardList, lab: FlaskConical };
 const KIND_WORD: Record<InvestigationKind, string> = { mse: "Mental state", collateral: "Collateral", scale: "Rating scale", lab: "Test" };
@@ -50,6 +56,7 @@ const KIND_WORD: Record<InvestigationKind, string> = { mse: "Mental state", coll
 const LOCAL_LOG = (mode: string, day: string, id: string) => `vibha-daily-log:${mode}:${day}:${id}`;
 const LOCAL_DAYS = "vibha-daily-days";
 const LOCAL_PRACTICE = "vibha-daily-practice";
+const LOCAL_AI_SEEN = "vibha-ai-cases-seen";
 const NO_DAYS: string[] = [];
 
 function dayLabel(day: string) {
@@ -63,9 +70,12 @@ function worth(v: CaseView) {
 export function DailyGame({ serverState, save, initial }: { serverState: LearnState | null; save: Save; initial: MoveResult }) {
   initLearnStore(serverState, save);
   const state = useLearnState(serverState ?? EMPTY);
-  const [tab, setTab] = React.useState<"daily" | "practice">("daily");
+  const [tab, setTab] = React.useState<Tab>("daily");
   const [daily, setDaily] = React.useState<Game | null>(initial.ok ? { view: initial.view, meta: initial.meta, log: initial.log } : null);
   const [practice, setPractice] = React.useState<Game | null>(null);
+  const [aiGame, setAiGame] = React.useState<Game | null>(null);
+  const [aiChoice, setAiChoice] = React.useState<AiChoice>({ topic: "", setting: "mix" });
+  const [making, setMaking] = React.useState(false);
   const [error, setError] = React.useState<string | null>(initial.ok ? null : initial.error);
   const [pending, startTransition] = React.useTransition();
   const [shake, setShake] = React.useState(0);
@@ -85,12 +95,14 @@ export function DailyGame({ serverState, save, initial }: { serverState: LearnSt
     });
   }, [initial]);
 
-  const game = tab === "daily" ? daily : practice;
+  const game = tab === "daily" ? daily : tab === "practice" ? practice : aiGame;
 
-  function after(mode: "daily" | "practice", res: Ok, action?: Action) {
+  function after(t: Tab, res: Ok, action?: Action) {
+    const mode = t === "daily" ? "daily" : "practice";
     const g = { view: res.view, meta: res.meta, log: res.log };
-    if (mode === "daily") setDaily(g);
-    else setPractice(g);
+    if (t === "daily") setDaily(g);
+    else if (t === "practice") setPractice(g);
+    else setAiGame(g);
     if (!res.meta.stored) writeLocal(LOCAL_LOG(mode, res.meta.day, res.view.caseId), res.log);
     if (action?.t === "guess") {
       const last = res.view.guesses[res.view.guesses.length - 1];
@@ -120,17 +132,42 @@ export function DailyGame({ serverState, save, initial }: { serverState: LearnSt
   }
 
   function move(action?: Action) {
-    const mode = tab;
-    const cur = mode === "daily" ? daily : practice;
+    const t = tab;
+    const cur = t === "daily" ? daily : t === "practice" ? practice : aiGame;
     if (!cur) return;
     setError(null);
     startTransition(async () => {
-      const res = await dailyMove({ mode, caseId: cur.view.caseId, log: cur.log, action });
+      const res = await dailyMove({ mode: t === "daily" ? "daily" : "practice", caseId: cur.view.caseId, log: cur.log, action });
       if (!res.ok) {
         setError(res.error);
         return;
       }
-      after(mode, res, action);
+      after(t, res, action);
+    });
+  }
+
+  function newAi(choice: AiChoice = aiChoice) {
+    setError(null);
+    setTab("ai");
+    setMaking(true);
+    startTransition(async () => {
+      try {
+        const seen = readLocal<string[]>(LOCAL_AI_SEEN, []);
+        const pick = await nextAiCase({ topic: choice.topic || null, setting: choice.setting === "mix" ? null : choice.setting, exclude: seen });
+        if (!pick.ok) {
+          setError(pick.error);
+          return;
+        }
+        writeLocal(LOCAL_AI_SEEN, [...seen.filter((x) => x !== pick.caseId), pick.caseId].slice(-100));
+        const res = await dailyMove({ mode: "practice", caseId: pick.caseId, log: readLocal<Action[]>(LOCAL_LOG("practice", daily?.meta.day ?? "", pick.caseId), []) });
+        if (!res.ok) {
+          setError(res.error);
+          return;
+        }
+        after("ai", res);
+      } finally {
+        setMaking(false);
+      }
     });
   }
 
@@ -152,7 +189,7 @@ export function DailyGame({ serverState, save, initial }: { serverState: LearnSt
     });
   }
 
-  function openTab(t: "daily" | "practice") {
+  function openTab(t: Tab) {
     setTab(t);
     if (t === "practice" && !practice) newPractice();
   }
@@ -161,12 +198,13 @@ export function DailyGame({ serverState, save, initial }: { serverState: LearnSt
 
   return (
     <div className="mx-auto w-full max-w-2xl space-y-4 px-4 py-5 sm:px-6">
-      <div className="flex items-center justify-between gap-3">
+      <div className="flex flex-wrap items-center justify-between gap-3">
         <div role="tablist" aria-label="Case type" className="inline-flex rounded-md border-2 border-foreground bg-card p-1">
           {(
             [
               ["daily", "Today's case"],
               ["practice", "Practice"],
+              ["ai", AI_CASE_LABEL],
             ] as const
           ).map(([t, label]) => (
             <button
@@ -194,12 +232,23 @@ export function DailyGame({ serverState, save, initial }: { serverState: LearnSt
         </p>
       )}
 
-      {!game ? (
+      {tab === "ai" && (making || !aiGame) ? (
+        <AiStart choice={aiChoice} onChoice={setAiChoice} making={making} onStart={() => newAi()} />
+      ) : !game ? (
         <div className={cn(card, "flex min-h-40 items-center justify-center gap-2 p-6 text-muted-foreground")}>
           <LoaderCircle className="size-5 animate-spin" aria-hidden /> Finding a case at your level…
         </div>
       ) : (
-        <CaseBoard key={`${game.view.mode}:${game.view.caseId}`} game={game} pending={pending} shake={shake} gain={gain} onMove={move} onNextPractice={newPractice} streak={streak} />
+        <CaseBoard
+          key={`${tab}:${game.view.caseId}`}
+          game={game}
+          pending={pending}
+          shake={shake}
+          gain={gain}
+          onMove={move}
+          onNextPractice={tab === "ai" ? () => newAi() : newPractice}
+          streak={streak}
+        />
       )}
     </div>
   );
@@ -237,11 +286,12 @@ function CaseBoard({
     <div className="space-y-4">
       <header className={cn(card, "p-4 hard-shadow-sm")}>
         <div className="flex flex-wrap items-center justify-between gap-2">
-          <p className="text-eyebrow text-link">{v.mode === "daily" ? `Daily case #${meta.number} · ${dayLabel(meta.day)}` : "Practice case"}</p>
+          <p className="text-eyebrow text-link">{v.mode === "daily" ? `Daily case #${meta.number} · ${dayLabel(meta.day)}` : v.ai ? "Practice" : "Practice case"}</p>
           <span className="text-sm font-semibold text-muted-foreground">
             Level {v.difficulty} of 3
           </span>
         </div>
+        {v.ai && <AiBadge />}
         <p className="mt-1 text-sm text-muted-foreground">{v.setting}</p>
         <ClueMeter shown={v.cluesOpen} status={v.status} />
         {playing && (
@@ -377,6 +427,8 @@ function CaseBoard({
       ) : (
         <Result game={game} gain={gain} streak={streak} onNextPractice={onNextPractice} pending={pending} />
       )}
+
+      {v.ai && <AiFlag caseId={v.caseId} />}
 
       {v.guesses.filter((g) => !g.ok).length > (playing ? 1 : 0) && (
         <details className={cn(card, "p-3")} open={!playing}>
@@ -624,7 +676,7 @@ function Result({ game, gain, streak, onNextPractice, pending }: { game: Game; g
           <BookOpen className="size-4" aria-hidden /> Study this topic
         </Link>
         <button type="button" className={btnSecondary} onClick={onNextPractice} disabled={pending}>
-          <Shuffle className="size-4" aria-hidden /> {v.mode === "daily" ? "Practise another case" : "Next practice case"}
+          <Shuffle className="size-4" aria-hidden /> {v.mode === "daily" ? "Practise another case" : v.ai ? "Next AI case" : "Next practice case"}
         </button>
       </div>
 
@@ -639,5 +691,141 @@ function Result({ game, gain, streak, onNextPractice, pending }: { game: Game; g
         </details>
       )}
     </section>
+  );
+}
+
+/** The "AI case" label. Icon + words, never colour alone. */
+function AiBadge() {
+  return (
+    <div className="mt-2 flex flex-wrap items-center gap-2">
+      <span className={cn(chip, "bg-status-info-bg text-status-info-fg")}>
+        <Sparkles className="size-4" aria-hidden /> {AI_CASE_LABEL}
+      </span>
+      <span className="text-sm text-muted-foreground">{AI_CASE_NOTE}</span>
+    </div>
+  );
+}
+
+function AiStart({ choice, onChoice, making, onStart }: { choice: AiChoice; onChoice: (c: AiChoice) => void; making: boolean; onStart: () => void }) {
+  const settings: [AiChoice["setting"], string][] = [
+    ["mix", "Mix"],
+    ["indian", "India"],
+    ["global", "Other countries"],
+  ];
+  return (
+    <section className={cn(card, "space-y-4 p-4 hard-shadow-sm")} aria-label="Make an AI case">
+      <div>
+        <span className={cn(chip, "bg-status-info-bg text-status-info-fg")}>
+          <Sparkles className="size-4" aria-hidden /> {AI_CASE_LABEL}
+        </span>
+        <p className="mt-2 text-sm text-muted-foreground">{AI_CASE_NOTE}.</p>
+      </div>
+      <div className="grid gap-4 sm:grid-cols-2">
+        <label className="block">
+          <span className="font-bold">Topic</span>
+          <select
+            value={choice.topic}
+            disabled={making}
+            onChange={(e) => onChoice({ ...choice, topic: e.target.value })}
+            className="mt-1 h-11 w-full rounded-md border-2 border-foreground bg-background px-3 text-base outline-none focus-visible:ring-2 focus-visible:ring-ring"
+          >
+            <option value="">Any topic</option>
+            {AI_TOPICS.map((t) => (
+              <option key={t.id} value={t.id}>
+                {t.title}
+              </option>
+            ))}
+          </select>
+        </label>
+        <fieldset>
+          <legend className="font-bold">Where</legend>
+          <div className="mt-1 flex flex-wrap gap-2">
+            {settings.map(([id, label]) => (
+              <label
+                key={id}
+                className={cn(
+                  "inline-flex min-h-11 cursor-pointer items-center gap-2 rounded-md border-2 border-foreground px-3 text-sm font-bold has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-ring",
+                  choice.setting === id ? "bg-foreground text-background" : "bg-card hover:bg-accent",
+                )}
+              >
+                <input type="radio" name="ai-setting" value={id} checked={choice.setting === id} disabled={making} onChange={() => onChoice({ ...choice, setting: id })} className="sr-only" />
+                {choice.setting === id && <Check className="size-4" aria-hidden />}
+                {label}
+              </label>
+            ))}
+          </div>
+        </fieldset>
+      </div>
+      <button type="button" className={cn(btnPrimary, "w-full sm:w-auto")} disabled={making} onClick={onStart}>
+        {making ? <LoaderCircle className="size-4 animate-spin" aria-hidden /> : <Sparkles className="size-4" aria-hidden />}
+        {making ? "Making your case…" : "Get an AI case"}
+      </button>
+      {making && (
+        <p className="text-sm text-muted-foreground" aria-live="polite">
+          A new case is written, then checked against the criteria. This can take up to 30 seconds.
+        </p>
+      )}
+    </section>
+  );
+}
+
+/** "This case looks wrong": the case leaves practice until an admin checks it. */
+function AiFlag({ caseId }: { caseId: string }) {
+  const [open, setOpen] = React.useState(false);
+  const [reason, setReason] = React.useState("");
+  const [msg, setMsg] = React.useState<{ ok: boolean; text: string } | null>(null);
+  const [sending, startSending] = React.useTransition();
+  if (msg?.ok) {
+    return (
+      <p className="flex items-center gap-2 rounded-md border-2 border-foreground bg-status-success-bg px-3 py-2 text-sm font-semibold text-status-success-fg" role="status">
+        <Check className="size-4" aria-hidden /> {msg.text}
+      </p>
+    );
+  }
+  return (
+    <div className={cn(card, "p-3")}>
+      {!open ? (
+        <button type="button" className={cn(btnSecondary, "w-full sm:w-auto")} onClick={() => setOpen(true)}>
+          <Flag className="size-4" aria-hidden /> Something wrong with this case?
+        </button>
+      ) : (
+        <form
+          className="space-y-2"
+          onSubmit={(e) => {
+            e.preventDefault();
+            startSending(async () => {
+              const r = await flagAiCaseAction({ caseId, reason });
+              setMsg({ ok: r.ok, text: r.message });
+            });
+          }}
+        >
+          <label htmlFor={`flag-${caseId}`} className="font-bold">
+            What looks wrong?
+          </label>
+          <textarea
+            id={`flag-${caseId}`}
+            value={reason}
+            onChange={(e) => setReason(e.target.value)}
+            maxLength={500}
+            rows={3}
+            placeholder="e.g. the answer doesn't fit clue 4"
+            className="w-full rounded-md border-2 border-foreground bg-background p-3 text-base outline-none focus-visible:ring-2 focus-visible:ring-ring"
+          />
+          <div className="flex flex-wrap gap-2">
+            <button type="submit" className={btnInk} disabled={sending}>
+              {sending ? <LoaderCircle className="size-4 animate-spin" aria-hidden /> : <Send className="size-4" aria-hidden />} Send report
+            </button>
+            <button type="button" className={btnSecondary} disabled={sending} onClick={() => setOpen(false)}>
+              Cancel
+            </button>
+          </div>
+          {msg && !msg.ok && (
+            <p role="alert" className="text-sm font-semibold text-status-alert-fg">
+              {msg.text}
+            </p>
+          )}
+        </form>
+      )}
+    </div>
   );
 }

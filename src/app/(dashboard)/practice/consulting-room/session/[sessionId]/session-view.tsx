@@ -16,6 +16,8 @@ import { ChatList } from "@/components/sim/chat-list";
 import { NotesSheet } from "@/components/sim/notes-sheet";
 import { HintSheet } from "@/components/sim/hint-sheet";
 import { DebriefView } from "./debrief-view";
+import { GradedForm, GradedResult } from "./graded-view";
+import type { InterviewGrade } from "@/lib/interview-grade/types";
 
 // The voice screens pull in livekit-client (~557KB). Lazy-load them so that
 // chunk never enters the student's eager bundle — it only fetches when voice
@@ -77,7 +79,12 @@ export function SimSessionView({
   branchInfo,
   provisionalDims,
   startedAt,
+  graded = false,
+  initialGrade = null,
 }: {
+  /** Graded interview: finishing opens the MSE, risk and formulation hand-in. */
+  graded?: boolean;
+  initialGrade?: InterviewGrade | null;
   sessionId: string;
   patientName: string;
   patientAge?: number;
@@ -113,6 +120,8 @@ export function SimSessionView({
     startedAt ? Math.max(0, Math.floor((Date.now() - new Date(startedAt).getTime()) / 1000)) : 0,
   );
   const [debrief, setDebrief] = React.useState<DebriefData | null>(null);
+  const [grade, setGrade] = React.useState<InterviewGrade | null>(initialGrade);
+  const [wrapUp, setWrapUp] = React.useState(false);
   const [ending, setEnding] = React.useState(false);
   const [voiceMode, setVoiceMode] = React.useState(false);
   const [patientAffect, setPatientAffect] = React.useState<Affect | null>(null);
@@ -151,6 +160,7 @@ export function SimSessionView({
 
   const didAutoFinish = React.useRef(false);
   React.useEffect(() => {
+    if (graded) return; // the time-up hand-in is derived in render below
     if (seconds >= SESSION_LIMIT_S && !didAutoFinish.current && !debrief) {
       didAutoFinish.current = true;
       void finishAndDebrief();
@@ -303,6 +313,22 @@ export function SimSessionView({
     return { rate: v.rate, pitch: v.pitch, lang: voicePrefs?.lang ?? "en-IN", gender: voicePrefs?.gender };
   }, [patientAffect, patientFatigue, voicePrefs]);
 
+  const timeUp = seconds >= SESSION_LIMIT_S;
+  if (graded && grade) {
+    return <GradedResult grade={grade} onExit={() => router.push("/practice/consulting-room")} />;
+  }
+  if (graded && (wrapUp || timeUp)) {
+    return (
+      <GradedForm
+        sessionId={sessionId}
+        patientName={patientName}
+        notes={[mseNotesDraft.value, hypothesesDraft.value].filter((x) => x.trim()).join("\n\n")}
+        onBack={timeUp ? null : () => setWrapUp(false)}
+        onGraded={setGrade}
+      />
+    );
+  }
+
   if (debrief) {
     return (
       <DebriefView
@@ -380,7 +406,7 @@ export function SimSessionView({
             className="flex w-full items-center justify-center gap-2 rounded-md border-2 border-border bg-card px-3 py-2.5 text-small font-semibold text-foreground transition-transform active:translate-y-px"
           >
             <Flag className="size-4" aria-hidden />
-            Finish &amp; debrief
+            {graded ? "Finish and hand in" : <>Finish &amp; debrief</>}
           </button>
         </div>
       ) : null}
@@ -452,7 +478,7 @@ export function SimSessionView({
         open={confirmFinish}
         onOpenChange={setConfirmFinish}
         title={`End the session with ${patientName}?`}
-        description="You'll go to the debrief and won't be able to continue this conversation."
+        description={graded ? "Next you write up the MSE, risk and a short formulation, then get your grade." : "You'll go to the debrief and won't be able to continue this conversation."}
         footer={
           <div className="flex gap-2">
             <button
@@ -465,7 +491,14 @@ export function SimSessionView({
             </button>
             <button
               type="button"
-              onClick={() => void finishAndDebrief()}
+              onClick={() => {
+                if (graded) {
+                  setConfirmFinish(false);
+                  setWrapUp(true);
+                  return;
+                }
+                void finishAndDebrief();
+              }}
               disabled={ending}
               className="flex-1 rounded-md border-2 border-foreground bg-primary px-3 py-2.5 text-small font-semibold text-primary-foreground active:translate-y-px disabled:opacity-40"
             >
