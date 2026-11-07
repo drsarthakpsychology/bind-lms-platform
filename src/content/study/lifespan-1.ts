@@ -455,6 +455,10 @@ Some reflexes are **permanent**: blinking, coughing, sneezing, gagging, yawning.
 }
 :::
 
+:::widget figure
+{"id": "visual-cliff"}
+:::
+
 ### Motor milestones
 **Gross motor** skills use large muscles (holding the head up, sitting, crawling, standing, walking). **Fine motor** skills use small muscles (reaching, the pincer grasp between thumb and finger, scribbling). The **sequence** is similar for almost all children; the **timing** varies widely.
 
@@ -606,6 +610,14 @@ Q: In the visual cliff study, most crawling babies:
 
 ## 2.1 Piaget's theory of cognitive development [core][beginner]
 Jean Piaget (1896 to 1980), a Swiss biologist turned psychologist, watched his own three children closely and interviewed thousands more. He saw children as **little scientists** who actively build their understanding.
+
+:::widget figure
+{"id": "conservation-liquid"}
+:::
+
+:::widget figure
+{"id": "three-mountains"}
+:::
 
 ### The building blocks
 - **Schemes (schemas)**: organised patterns of action or thought (a baby's "sucking scheme", a child's concept of "dog").
@@ -909,6 +921,10 @@ Q: In Erikson's theory, a school-age child who keeps failing at tasks valued by 
 ## 2.4 Attachment and temperament [core][beginner]
 Attachment is the deep, lasting emotional bond a child forms with the people who care for them. This section gives the developmental picture; **Psychodynamics in depth** covers the Adult Attachment Interview and clinical work in more detail.
 
+:::widget figure
+{"id": "harlow-mothers"}
+:::
+
 ### Where the bond comes from
 - **Psychoanalytic and learning theories** said babies love whoever **feeds** them (cupboard love).
 - **Konrad Lorenz** showed imprinting in birds happens without feeding.
@@ -972,6 +988,10 @@ Mary Ainsworth's laboratory procedure for children of about 12 to 18 months has 
 :::
 
 Long-term studies (for example, the Minnesota longitudinal study led by Alan Sroufe) link secure attachment with better emotion regulation, peer relationships and lower rates of later problems, while disorganised attachment is the strongest attachment predictor of later psychopathology. Adult attachment styles, as described by Cindy Hazan and Phillip Shaver, apply similar ideas to romantic relationships.
+
+:::widget figure
+{"id": "strange-situation-room"}
+:::
 
 ### Temperament
 **Temperament** is a baby's inborn style of reacting and regulating: how active, intense, moody or adaptable they are. It is the early, biologically based core of later personality.

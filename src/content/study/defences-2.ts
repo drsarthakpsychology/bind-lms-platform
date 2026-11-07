@@ -158,6 +158,10 @@ The starting picture of attachment (Bowlby's secure base, Ainsworth's Strange Si
 }
 :::
 
+:::widget figure
+{"id": "harlow-mothers"}
+:::
+
 ### A quick reminder of the four infant patterns
 - **Secure**: upset at separation, comforted at reunion, returns to play.
 - **Avoidant**: little visible distress; ignores the parent on return.

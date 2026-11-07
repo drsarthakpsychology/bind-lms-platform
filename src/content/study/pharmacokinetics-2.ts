@@ -23,6 +23,10 @@ Occupancy at equilibrium follows a hyperbola: occupancy = C ÷ (C + Kd). At C eq
 {"kind": "dose-response", "title": "Read potency, efficacy and partial agonism off the curve", "caption": "Slide potency and efficacy separately. Then picture a partial agonist's curve: it plateaus lower however high the dose. Now add a full agonist on top: the partial agonist pulls the full agonist's effect down towards its own ceiling, which is how aripiprazole lowers excessive dopamine signalling."}
 :::
 
+:::widget figure
+{"id": "partial-agonist", "quiz": true}
+:::
+
 ### Spare receptors and why efficacy depends on the tissue
 In some tissues a full agonist produces its maximum effect while occupying only a small fraction of receptors: the rest are **spare receptors** (receptor reserve). Consequences:
 - EC50 can be much lower than Kd.
@@ -104,6 +108,10 @@ Q: In a tissue with a large receptor reserve, a partial agonist is most likely t
 }
 :::
 
+:::widget figure
+{"id": "gpcr-scene"}
+:::
+
 ### Adaptation: desensitisation, down-regulation and up-regulation
 | Process | What happens | Timescale | Example |
 |---|---|---|---|
@@ -136,6 +144,10 @@ Examples of saturable or self-limiting elimination: alcohol, phenytoin, high-dos
 
 :::widget compare
 {"title": "Linear and saturated elimination", "a": {"label": "First-order (linear)", "points": ["A fixed fraction removed each hour", "Constant half-life", "Double the dose, double the level", "Steady state after 4 to 5 half-lives", "Most medicines at usual doses"], "summary": "Predictable: dose changes give proportional level changes."}, "b": {"label": "Zero-order or saturable", "points": ["A fixed amount removed each hour", "Half-life grows as levels rise", "A small dose rise can cause a big level rise", "Steady state may take much longer or never settle", "Alcohol, phenytoin; partly paroxetine, fluoxetine and high-level clozapine"], "summary": "Unpredictable at higher doses: change slowly and measure levels where possible."}, "caption": "Slide between the two. Which pattern explains why one extra drink at the end of an evening raises blood alcohol so much?"}
+:::
+
+:::widget figure
+{"id": "pk-single-dose"}
 :::
 
 ### One or two compartments: why diazepam wears off before its half-life says it should

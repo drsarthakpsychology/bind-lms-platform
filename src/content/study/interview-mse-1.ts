@@ -922,6 +922,10 @@ In the Indian proforma, **treatment history** is its own heading: treatment in p
 2. **Family history of illness.** Psychiatric illness, major medical illness, alcohol or drug dependence, suicide or attempts.
 3. **Current social situation.** Home circumstances, per capita income, socioeconomic status, the leader of the family (nominal and functional are often different people), and the family's attitude to the illness. Also communication patterns, cultural and religious values, and social support.
 
+:::widget figure
+{"id": "genogram-symbols"}
+:::
+
 ### 9 · Personal and social history
 The longest section of the proforma and the one students most often under-prepare. It reviews life stage by stage and often reveals current stressors as a by-product.
 - **Individualise**: not every question for every patient. Younger patients give far more early-life detail; parents or older siblings fill gaps.

@@ -67,6 +67,10 @@ Q: Which of these is the best example of learning rather than maturation?
 ## 1.2 Classical conditioning: learning what predicts what [core][starting]
 Ivan Pavlov, a Russian physiologist, won the Nobel Prize in 1904 for work on digestion. While measuring dogs' saliva, he noticed that they began to salivate **before** food arrived: at the sight of the assistant, or at footsteps. He turned this "psychic secretion" into a method.
 
+:::widget figure
+{"id": "pavlov-apparatus"}
+:::
+
 ### The terms
 | Term | Meaning | Pavlov's example |
 |---|---|---|
@@ -175,6 +179,10 @@ Q: After a dog bite, a child fears all dogs, including small puppies. This is:
 > The conditioned fear spreads to stimuli similar to the original CS.
 :::
 
+:::widget figure
+{"id": "little-albert"}
+:::
+
 ## 1.3 Operant conditioning: learning from consequences [core][starting]
 Around 1898, **Edward Thorndike** put hungry cats in **puzzle boxes** that opened when the cat pulled a loop or pressed a lever. Over trials, the cats escaped faster, not by sudden understanding but gradually, as useless moves dropped out. His **law of effect**: responses followed by satisfying consequences become more likely; those followed by discomfort become less likely.
 
@@ -182,6 +190,10 @@ Around 1898, **Edward Thorndike** put hungry cats in **puzzle boxes** that opene
 
 :::widget conditioning
 {"kind": "operant", "title": "Watch a rat learn from consequences", "caption": "Press Play. Watch how the pressing rate climbs when presses pay off, and what happens to it when food stops."}
+:::
+
+:::widget figure
+{"id": "skinner-box"}
 :::
 
 ### Reinforcement and punishment

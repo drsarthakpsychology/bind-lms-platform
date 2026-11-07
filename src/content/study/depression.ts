@@ -1465,6 +1465,10 @@ Q: A new mother in a village is depressed after childbirth. There is no psycholo
 {"title": "One ECT session, step by step", "layout": "chain", "nodes": [{"id": "a", "label": "Consent and checks", "detail": "Informed consent (or the legal process if capacity is lacking), fasting, a physical check, and any medicines that raise seizure threshold reviewed."}, {"id": "b", "label": "Anaesthesia", "detail": "A short general anaesthetic: the person is fully asleep."}, {"id": "c", "label": "Muscle relaxant", "detail": "Succinylcholine relaxes the muscles so the body hardly moves. Oxygen is given."}, {"id": "d", "label": "Brief stimulus", "detail": "A short electrical pulse through electrodes, placed on both sides or on the right side only."}, {"id": "e", "label": "Controlled seizure", "detail": "A seizure of about 25 seconds or more on the EEG. Heart and oxygen are monitored throughout."}, {"id": "f", "label": "Recovery", "detail": "Waking within minutes; some confusion and headache for a while. The next session is usually two or three days later."}], "caption": "The Mental Healthcare Act 2017 forbids ECT without anaesthesia and a muscle relaxant."}
 :::
 
+:::widget figure
+{"id": "ect-placements"}
+:::
+
 ### Other brain stimulation
 | Method | What it is | Use |
 |---|---|---|
@@ -1677,6 +1681,10 @@ Early side effects come from serotonin reaching **other receptors** before the s
 {"title": "Where the monoamine pathways run", "focus": ["brainstem", "prefrontal", "hippocampus", "basal-ganglia", "hypothalamus"], "notes": {"brainstem": "The raphe nuclei (serotonin) and locus coeruleus (noradrenaline) sit here and send fibres across the whole brain. The SSRI story begins with raphe autoreceptors.", "prefrontal": "Receives serotonin, noradrenaline and dopamine. Few dopamine transporters here, so NET also clears dopamine; blocking NET raises prefrontal dopamine.", "hippocampus": "Serotonin and noradrenaline support neurogenesis and plasticity here; chronic stress and cortisol work against them.", "basal-ganglia": "The ventral striatum (nucleus accumbens) receives dopamine from the ventral tegmental area. Blunted reward responses here fit anhedonia.", "hypothalamus": "Serotonin and noradrenaline tune sleep, appetite and the HPA axis, the body symptoms of depression."}, "caption": "Tap each region. Antidepressant side effects and benefits both depend on which pathway a drug touches."}
 :::
 
+:::widget figure
+{"id": "ssri-synapse", "quiz": true}
+:::
+
 ### The others, receptor by receptor
 | Drug | Key actions | What follows clinically |
 |---|---|---|
@@ -1724,6 +1732,10 @@ Q: A man on phenelzine eats aged cheese at a wedding and develops a severe heada
 - Anticholinergic toxicity
 - Lithium toxicity
 > MAO-A in the gut normally breaks down dietary tyramine.
+:::
+
+:::widget figure
+{"id": "tca-synapse"}
 :::
 
 ## 5.2 Circuits, stress and plasticity [core][advanced]
@@ -1784,6 +1796,10 @@ Q: Rumination in depression is most linked to overconnectivity of which network?
 > The default mode network supports self-referential thought.
 :::
 
+:::widget figure
+{"id": "hypnogram"}
+:::
+
 ## 5.3 Fast-acting treatments: ketamine, esketamine and neurosteroids [core][advanced]
 ### Ketamine and esketamine
 - **Mechanism**: ketamine blocks **NMDA** glutamate receptors. A leading model: it blocks NMDA receptors on inhibitory interneurons more than on main neurons, so the interneurons quieten and main neurons release a **burst of glutamate**. Glutamate acts on **AMPA** receptors, releasing BDNF and switching on **mTOR**, which rapidly grows new synaptic spines. Other proposals include direct effects of metabolites and blocking NMDA receptors that are active at rest.
@@ -1808,6 +1824,10 @@ Q: Rumination in depression is most linked to overconnectivity of which network?
 
 :::widget flow
 {"title": "Ketamine: the glutamate burst model", "layout": "chain", "nodes": [{"id": "a", "label": "NMDA block on interneurons", "detail": "Ketamine blocks NMDA receptors, especially on fast-firing inhibitory interneurons."}, {"id": "b", "label": "Disinhibition", "detail": "With the interneurons quietened, the main pyramidal neurons are released from their brake."}, {"id": "c", "label": "Glutamate burst", "detail": "Pyramidal neurons release a surge of glutamate."}, {"id": "d", "label": "AMPA activation", "detail": "The glutamate acts on AMPA receptors, which is needed for the antidepressant effect in animal studies."}, {"id": "e", "label": "BDNF and mTOR", "detail": "BDNF is released and the mTOR pathway switches on protein synthesis."}, {"id": "f", "label": "New spines in hours", "detail": "Synaptic spines regrow quickly in the prefrontal cortex. The effect often fades within days unless repeated."}], "caption": "A leading model, not the only one. Other ideas involve ketamine's metabolites and NMDA receptors active at rest."}
+:::
+
+:::widget figure
+{"id": "nmda-receptor"}
 :::
 
 ### Neurosteroids: a new target for postpartum depression

@@ -705,6 +705,10 @@ At the Starting level you met six messengers. Now look at **where** each comes f
 }
 :::
 
+:::widget figure
+{"id": "receptor-families"}
+:::
+
 ### Side effects you can predict from receptors
 If you know what a medicine blocks, you can predict much of how it will feel to the patient:
 - **H1 block**: sleepiness, weight gain.
@@ -819,6 +823,10 @@ Dopamine neurons are few, perhaps a few hundred thousand, but they send long bra
  "system": "dopamine",
  "caption": "Switch on a D2 blocker and watch all four roads change at once: fewer delusions (mesolimbic), more apathy (mesocortical), stiffness (nigrostriatal) and raised prolactin (tuberoinfundibular). Then add serotonin 2A block, as with second-generation drugs, and see which side effects ease."
 }
+:::
+
+:::widget figure
+{"id": "d2-occupancy"}
 :::
 
 ### Extrapyramidal side effects in time order
@@ -1276,6 +1284,10 @@ Sleep comes in cycles of about 90 minutes, four or five times a night.
 }
 :::
 
+:::widget figure
+{"id": "hypnogram"}
+:::
+
 ### The body clock
 A small cluster of cells in the hypothalamus, the **suprachiasmatic nucleus (SCN)**, is the master clock. It is set mainly by **morning light** through the eyes. In the evening it tells the **pineal gland** to release **melatonin**, which signals "night". Shift work, late-night screens and jet lag put the clock out of step with life.
 
@@ -1318,6 +1330,10 @@ Q: A 68-year-old man punches and kicks in his sleep while dreaming of being chas
 > REM sleep behaviour disorder is an early marker of synucleinopathies.
 :::
 
+:::widget figure
+{"id": "two-process-sleep"}
+:::
+
 `;
 
 export const b2Meds = String.raw`
@@ -1355,6 +1371,10 @@ Two questions describe every medicine:
  "title": "Full agonist, partial agonist, antagonist",
  "caption": "Compare the curves. A full agonist reaches the top; a partial agonist like aripiprazole or buprenorphine levels off lower however high the dose (a ceiling), and in the presence of a full agonist it pulls the response down. Potency shifts a curve left or right; efficacy sets its height."
 }
+:::
+
+:::widget figure
+{"id": "partial-agonist"}
 :::
 
 ### The body's handling of a medicine
@@ -1404,6 +1424,10 @@ The **half-life** is the time for the blood level to fall by half. It decides ho
  "title": "Repeated doses build to a steady level",
  "caption": "Move the sliders for half-life and dosing interval. Count how many half-lives it takes for the peaks and troughs to level off (about four to five), then see why a long half-life medicine takes so long to wash out."
 }
+:::
+
+:::widget figure
+{"id": "pk-steady-state"}
 :::
 
 ### Enzymes: inducers and inhibitors

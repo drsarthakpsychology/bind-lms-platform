@@ -35,6 +35,10 @@ Gray's model separates **fear** (FFFS: getting away from a clear threat) from **
 }
 :::
 
+:::widget figure
+{"id": "eysenck-circle", "quiz": true}
+:::
+
 ### Robert Cloninger's psychobiological model
 Cloninger's **Temperament and Character Inventory (TCI)** has four inherited **temperaments**, each originally tied to a neurotransmitter, and three learnt **character** dimensions:
 | Temperament | Description | Proposed transmitter |

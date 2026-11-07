@@ -6,6 +6,10 @@ export const advanced = String.raw`
 ## 5.1 How lithium works: from a simple ion to body-clock genes [core][advanced]
 Lithium binds no receptor. It is a small ion that competes with sodium and, more importantly, with **magnesium** at the active sites of several enzymes. Its effects build over weeks, which fits a mechanism that works through signalling cascades and gene expression rather than through a single receptor.
 
+:::widget figure
+{"id": "lithium-neuron", "quiz": true}
+:::
+
 ### The main targets
 | Target | What lithium does | Proposed consequence |
 |---|---|---|
@@ -78,6 +82,10 @@ Q: A colleague suggests gabapentin for acute mania "because all anticonvulsants 
 :::
 
 ## 5.3 Kinetics and interactions in depth [core][advanced]
+
+:::widget figure
+{"id": "liver-cell-cyp"}
+:::
 ### Lithium and the kidney
 - About 80% of filtered lithium is reabsorbed in the **proximal tubule**, alongside sodium. Anything that makes the proximal tubule hold on to sodium (salt depletion, dehydration, thiazides acting downstream) raises lithium.
 - **Thiazides** typically raise lithium levels by about a quarter to two-fifths; **NSAIDs** and **ACE inhibitors** or ARBs by variable amounts through reduced kidney blood flow. **Loop diuretics** have smaller, less predictable effects; **caffeine** and theophylline lower levels slightly.
@@ -239,6 +247,10 @@ GABA-A receptors are built from five subunits around a chloride channel, most of
 
 :::widget receptor
 {"receptor": "GABA-A", "title": "Full, partial and inverse at the benzodiazepine site", "caption": "Pick Full agonist (diazepam): GABA's effect is boosted strongly. Pick Partial agonist: a smaller boost, which researchers hoped would calm anxiety with less sedation and dependence. Pick Inverse agonist: GABA's effect is reduced, producing anxiety and even seizures. Flumazenil, the antagonist, simply blocks the site, which is why it can trigger withdrawal seizures in someone dependent."}
+:::
+
+:::widget figure
+{"id": "benzo-gabaa"}
 :::
 
 ### How tolerance and dependence develop

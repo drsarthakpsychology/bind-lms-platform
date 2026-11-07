@@ -340,6 +340,10 @@ Q: In Eysenck's arousal theory, introverts avoid noisy parties mainly because:
 > Introverts start at higher arousal; extra stimulation overshoots their comfort zone.
 :::
 
+:::widget figure
+{"id": "eysenck-circle"}
+:::
+
 ## 1.4 The Big Five and HEXACO [core][starting]
 By the 1980s, two separate routes converged on **five broad factors**:
 - The **lexical route**: factor analyses of trait words in ordinary language (Tupes and Christal in the 1960s for the US Air Force, then Warren Norman, then Lewis Goldberg, who named them the "Big Five").
@@ -791,6 +795,10 @@ Q: Which of Rogers's six conditions concerns the client rather than the therapis
 ## 2.3 Abraham Maslow: needs and self-actualisation [core][beginner]
 Abraham Maslow (1908 to 1970) studied healthy, exceptional people rather than patients, and asked what motivates human beings at their best.
 
+:::widget figure
+{"id": "maslow-pyramid"}
+:::
+
 ### The hierarchy of needs (1943, 1954)
 From the most basic to the highest:
 1. **Physiological**: food, water, air, sleep, warmth.
@@ -1136,6 +1144,10 @@ Social-cognitive theories keep the behaviourists' rigour but add what happens **
 :::
 
 **Self-regulation**: people set standards, monitor their behaviour, and reward or criticise themselves. **Moral disengagement** explains how people do harm while feeling moral, through eight mechanisms: moral justification, euphemistic labelling, advantageous comparison, displacement and diffusion of responsibility, distorting the consequences, dehumanisation and blaming the victim. **Collective efficacy** is a group's shared belief in its ability to act together.
+
+:::widget figure
+{"id": "bobo-doll"}
+:::
 
 ### Julian Rotter (1916 to 2014)
 Rotter's **social learning theory** (1954) predicts behaviour with a formula:

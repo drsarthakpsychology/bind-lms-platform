@@ -1024,6 +1024,10 @@ The MHCA prefers that people are treated in the **community** and, if admitted, 
 }
 :::
 
+:::widget figure
+{"id": "mhca-time-limits"}
+:::
+
 ### During supported admission
 - The **nominated representative** may give temporary consent to the treatment plan if the person needs near-total support.
 - **Capacity is reviewed** at least every seven days; when it returns, the person decides.
@@ -1080,6 +1084,10 @@ Q: Which is NOT a criterion for supported admission under section 89?
 - Recent inability to care for oneself with risk of harm
 - *Disagreement with the family's choice of marriage partner
 > Social disagreement is never a criterion.
+:::
+
+:::widget figure
+{"id": "mhca-time-limits", "quiz": true}
 :::
 
 ## 2.4 Prohibited and regulated treatments, restraint, research and suicide [core][beginner]

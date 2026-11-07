@@ -520,6 +520,10 @@ Because hypothetical questions such as "What would you do if you found a stamped
 "Judgement impaired: has spent two lakh rupees of family savings in four days on a car booking and plans to resign tomorrow." A reader immediately sees the risk.
 :::
 
+:::widget figure
+{"id": "copy-and-clock", "quiz": true}
+:::
+
 ## 5.3 Q&A bank · Advanced [advanced]
 These questions expect postgraduate depth: phenomenology, risk reasoning, reliability and medico-legal practice.
 

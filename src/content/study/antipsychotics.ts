@@ -95,6 +95,10 @@ Normally dopamine is a highlighter pen that marks only what truly matters. In ps
 {"title": "How too much dopamine can turn into a delusion", "layout": "chain", "nodes": [{"id": "d1", "label": "Stress, genes, cannabis, early life", "detail": "Many risk factors together make the dopamine system over-sensitive. No single cause."}, {"id": "d2", "label": "Too much dopamine released", "detail": "Brain scans show more dopamine is made and released in the striatum of people with psychosis, especially before a first episode."}, {"id": "d3", "label": "Random things feel important", "detail": "A look, a sound or a coincidence is tagged as deeply significant. This is aberrant salience."}, {"id": "d4", "label": "The mind seeks an explanation", "detail": "Feeling that something is going on, the person looks for a reason. Culture, fears and past experiences shape the story."}, {"id": "d5", "label": "A delusion forms", "detail": "'The neighbours are watching me' explains the strange feeling. Once formed, it bends new evidence to fit."}], "caption": "Press Play. Antipsychotics act at step 2 to 3: they quieten the dopamine signal, so new things stop feeling so charged. Old beliefs then fade slowly, often with help from therapy."}
 :::
 
+:::widget figure
+{"id": "antipsychotic-d2"}
+:::
+
 ### What an antipsychotic does, in one sentence
 Almost every antipsychotic **blocks dopamine D2 receptors**, the locks that dopamine fits into. With the locks partly blocked, the over-loud dopamine signal is turned down.
 
@@ -334,6 +338,10 @@ Dopamine travels along four main pathways. An antipsychotic blocks D2 receptors 
 
 :::widget pathways
 {"system": "dopamine", "title": "Block D2 and watch all four pathways change", "caption": "First pick each pathway with nothing added. Then press 'Add a D2 blocker' (a first-generation drug such as haloperidol) and tap each pathway again. Finally add serotonin 2A block (a second-generation drug) and see which pathways are rescued."}
+:::
+
+:::widget figure
+{"id": "d2-occupancy"}
 :::
 
 ### Why second-generation drugs differ
