@@ -210,7 +210,7 @@ export const PART: PrepQuestion[] = [
     stem: "Leader-member exchange (LMX) theory differs from earlier leadership theories mainly because it:",
     options: [
       "Focuses only on the traits of the leader",
-      "Assumes the leader treats all subordinates in the same way",
+      "Assumes the leader treats all subordinates in exactly the same way",
       "Ignores relationships and focuses on task structure",
       "Focuses on the quality of each leader-follower relationship",
     ],
@@ -341,7 +341,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "Authentic leadership, as measured by the Authentic Leadership Questionnaire, includes four components. Which list is correct?",
-    options: ["Self-awareness, transparency, balanced processing, moral perspective", "Charisma, vision, personal power and tight control of followers", "Telling, selling, participating and delegating to followers", "Directive, supportive, participative and achievement-oriented"],
+    options: ["Self-awareness, transparency, balanced processing, moral perspective", "Charisma, vision, personal power and tight, centralised control of followers", "Telling, selling, participating and delegating to followers", "Directive, supportive, participative and achievement-oriented"],
     answer: 0,
     explanation:
       "Authentic leaders know their strengths and weaknesses (self-awareness), share their real thoughts and feelings appropriately (relational transparency), consider information and other views fairly before deciding (balanced processing), and act on internal moral standards (internalised moral perspective). Telling to delegating are Hersey and Blanchard's styles, and directive to achievement-oriented are path-goal behaviours.",
@@ -429,7 +429,7 @@ export const PART: PrepQuestion[] = [
     options: [
       "No leadership attribute was valued in more than one culture",
       "Autocratic leadership was universally seen as most effective",
-      "Leadership styles are identical everywhere, so culture is irrelevant",
+      "Leadership styles are identical everywhere, so national culture is irrelevant",
       "Charismatic, value-based leadership was endorsed in nearly all cultures",
     ],
     answer: 3,
