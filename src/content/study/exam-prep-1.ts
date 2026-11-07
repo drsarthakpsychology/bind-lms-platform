@@ -443,6 +443,48 @@ Not every topic is equally likely. These areas come up again and again (based on
 }
 :::
 
+
+:::widget timeline
+{
+ "prompt": "Arrange in sequence: put these milestones in the history of psychology in order.",
+ "events": [
+  {
+   "label": "Wundt opens the first psychology laboratory in Leipzig",
+   "when": "1879"
+  },
+  {
+   "label": "Binet and Simon publish the first practical intelligence scale",
+   "when": "1905"
+  },
+  {
+   "label": "Watson calls for psychology as the science of behaviour",
+   "when": "1913"
+  },
+  {
+   "label": "Rorschach introduces the inkblot test",
+   "when": "1921"
+  },
+  {
+   "label": "Skinner describes operant conditioning",
+   "when": "1938"
+  },
+  {
+   "label": "Rogers sets out client-centred therapy",
+   "when": "1951"
+  },
+  {
+   "label": "The cognitive revolution: memory and mind return to centre stage",
+   "when": "1956"
+  },
+  {
+   "label": "Beck develops cognitive therapy for depression",
+   "when": "1960s"
+  }
+ ],
+ "why": "Anchor the ends first: Wundt is always earliest, and cognitive therapy comes after the cognitive revolution. Then place the middle by school: testing and behaviourism early in the century, humanistic and cognitive ideas after the Second World War."
+}
+:::
+
 :::student
 Use this module with the others. For psychopathology, the disorder modules; for interviewing, Module 1 and the MSE in depth; for therapies, the therapies module; for assessment, the assessment module. Here you practise **in exam style**.
 :::
@@ -515,6 +557,50 @@ Read the high-yield summary and do the activity here. The exam-style questions f
     { "q": "A researcher compares anxiety scores (interval) of the same 30 students before and after a mindfulness course. Data are normally distributed. Which test?", "a": "A paired (related samples) t-test." },
     { "q": "She compares the number of men and women (counts) who choose counselling, face-to-face therapy or no help. Which test?", "a": "Chi-square test of independence." }
   ]
+}
+:::
+
+
+:::widget sort
+{
+ "prompt": "Name the design. Sort each study.",
+ "buckets": [
+  "True experiment",
+  "Quasi-experiment",
+  "Correlational",
+  "Case study"
+ ],
+ "items": [
+  {
+   "text": "Students are randomly assigned to sleep 4 or 8 hours before a memory test",
+   "bucket": 0,
+   "why": "The researcher manipulates sleep and assigns people at random."
+  },
+  {
+   "text": "Exam scores are compared between two existing colleges, one of which adopted a new teaching method",
+   "bucket": 1,
+   "why": "There is a manipulation, but no random assignment: the groups already existed."
+  },
+  {
+   "text": "Hours of phone use and loneliness scores are measured in 500 adolescents in Pune",
+   "bucket": 2,
+   "why": "Nothing is manipulated; two variables are measured and related."
+  },
+  {
+   "text": "A detailed study of one man who lost the ability to form new memories after surgery",
+   "bucket": 3,
+   "why": "One person studied in depth."
+  },
+  {
+   "text": "Depression scores are compared before and after a flood in one district, with no control group",
+   "bucket": 1,
+   "why": "A naturally occurring event, no random assignment."
+  },
+  {
+   "text": "Patients are randomly given CBT or a waiting list, and anxiety is rated blind",
+   "bucket": 0
+  }
+ ]
 }
 :::
 
@@ -672,6 +758,81 @@ Read the high-yield summary and do the activity here. The exam-style questions f
   ]
 }
 :::
+
+:::widget experiment
+{
+ "title": "Leading questions and memory",
+ "question": "People watched a film of a car crash, then were asked how fast the cars were going when they '___' each other. Average estimate, by the verb used?",
+ "unit": "mph",
+ "max": 50,
+ "conditions": [
+  {
+   "label": "smashed",
+   "value": 41
+  },
+  {
+   "label": "collided",
+   "value": 39
+  },
+  {
+   "label": "bumped",
+   "value": 38
+  },
+  {
+   "label": "hit",
+   "value": 34
+  },
+  {
+   "label": "contacted",
+   "value": 32
+  }
+ ],
+ "why": "One word shifted the estimate by about 9 mph. A week later, more of the 'smashed' group falsely remembered broken glass. Exams ask this as evidence that memory is reconstructive and that leading questions matter in eyewitness testimony."
+}
+:::
+
+
+:::widget timeline
+{
+ "prompt": "Arrange Erikson's psychosocial stages in order, from infancy to old age.",
+ "events": [
+  {
+   "label": "Trust or mistrust",
+   "when": "infancy"
+  },
+  {
+   "label": "Autonomy or shame and doubt",
+   "when": "toddler"
+  },
+  {
+   "label": "Initiative or guilt",
+   "when": "preschool"
+  },
+  {
+   "label": "Industry or inferiority",
+   "when": "school age"
+  },
+  {
+   "label": "Identity or role confusion",
+   "when": "adolescence"
+  },
+  {
+   "label": "Intimacy or isolation",
+   "when": "young adulthood"
+  },
+  {
+   "label": "Generativity or stagnation",
+   "when": "middle adulthood"
+  },
+  {
+   "label": "Integrity or despair",
+   "when": "late adulthood"
+  }
+ ],
+ "why": "A quick check: the first four match Freud's oral, anal, phallic and latency periods; identity sits at adolescence; the last three cover adult life, which Freud's scheme did not."
+}
+:::
+
 :::mcq
 Q: Weber's law states that the just-noticeable difference is:
 - A fixed amount for all stimuli
@@ -804,6 +965,69 @@ Read the high-yield summary and do the activity here. The exam-style questions f
   ]
 }
 :::
+
+:::widget experiment
+{
+ "title": "Asch: how big must a majority be?",
+ "question": "Participants judged which line matched a standard, after others (all actors) gave a clearly wrong answer. On what share of these trials did people go along with the wrong answer?",
+ "unit": "%",
+ "conditions": [
+  {
+   "label": "Alone, no group (control)",
+   "value": 1,
+   "note": "Errors under 1%: the task is easy."
+  },
+  {
+   "label": "One actor giving the wrong answer",
+   "value": 4
+  },
+  {
+   "label": "Two actors",
+   "value": 14
+  },
+  {
+   "label": "Three actors",
+   "value": 32
+  },
+  {
+   "label": "A unanimous group of seven to nine",
+   "value": 37,
+   "note": "The famous figure: about a third of trials."
+  },
+  {
+   "label": "Same group, but one partner gives the right answer",
+   "value": 6,
+   "note": "One ally breaks the pressure."
+  }
+ ],
+ "why": "Conformity rises steeply up to three people, then levels off, and collapses when unanimity is broken. Most participants conformed at least once, but most answers overall were still correct."
+}
+:::
+
+
+:::widget experiment
+{
+ "title": "Darley and Latane: the bystander effect",
+ "question": "Students in separate booths heard another student apparently having a seizure over an intercom. What share went for help before the seizure ended?",
+ "unit": "%",
+ "conditions": [
+  {
+   "label": "Believed they were the only listener",
+   "value": 85
+  },
+  {
+   "label": "Believed one other person could hear",
+   "value": 62
+  },
+  {
+   "label": "Believed four others could hear",
+   "value": 31
+  }
+ ],
+ "why": "The more bystanders a person believes are present, the less likely and slower they are to help: diffusion of responsibility. Those who did not help were not callous; most were visibly anxious and conflicted."
+}
+:::
+
 :::mcq
 Q: The Big Five factor that describes organised, dependable and goal-directed behaviour is:
 - Openness

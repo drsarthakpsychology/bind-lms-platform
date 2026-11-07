@@ -41,6 +41,36 @@ You met the idea of reuptake at the Starting level. Here each medicine gets its 
 {"scene": "Mrs Pillai, 79, from Thrissur, recently started escitalopram 20 mg for depression. She also takes a thiazide diuretic for blood pressure. Her daughter says she has become confused, unsteady and nauseated over the past few days.", "ask": "What is the most important first step?", "choices": [{"label": "Increase escitalopram because the depression is not yet better", "verdict": "harm", "outcome": "She has a seizure that night. Her sodium is found to be 118 mmol/L.", "why": "Confusion, unsteadiness and nausea in an older woman on an SSRI and a thiazide suggest hyponatraemia from SIADH. The dose is also above the usual maximum for her age."}, {"label": "Check her sodium urgently, stop or reduce the SSRI depending on the result, review the diuretic, and remember that 10 mg is the usual maximum for escitalopram over 65", "verdict": "best", "outcome": "Her sodium is 122 mmol/L. With fluid restriction, stopping escitalopram and changing her diuretic, she recovers. Mirtazapine is later chosen for her depression.", "why": "SSRI-related hyponatraemia is most common in older women, in the first weeks, and with diuretics. Check sodium before and within the first month in at-risk people."}, {"label": "Add a sleeping tablet for her confusion", "verdict": "harm", "outcome": "She falls and fractures her wrist.", "why": "Sedatives worsen confusion and falls; the cause must be found."}]}
 :::
 
+
+:::widget compare
+{
+ "title": "Sertraline and duloxetine: one pump or two",
+ "a": {
+  "label": "Sertraline (SSRI)",
+  "points": [
+   "Blocks the serotonin pump only",
+   "Early nausea and loose stools are common",
+   "Safe after a heart attack; few effects on blood pressure",
+   "Few interactions at usual doses",
+   "Widely used in pregnancy and breastfeeding"
+  ],
+  "summary": "A safe, flexible first choice."
+ },
+ "b": {
+  "label": "Duloxetine (SNRI)",
+  "points": [
+   "Blocks the serotonin and noradrenaline pumps",
+   "Also helps nerve pain and some chronic pain",
+   "Nausea, sweating, a small rise in blood pressure",
+   "Avoided in liver disease and heavy alcohol use",
+   "Discontinuation symptoms if stopped suddenly"
+  ],
+  "summary": "Useful when pain and depression come together."
+ },
+ "caption": "Slide between the two. The extra noradrenaline action brings pain relief, and also the blood pressure and sweating."
+}
+:::
+
 :::clinician
 ### Profiles in depth
 - **Sertraline** (Serta, Daxid): 50 mg start (25 mg in panic and older adults), 50 to 200 mg. Half-life about 26 hours; weak CYP2D6 inhibition above 150 mg. Studied after myocardial infarction and in acute coronary syndromes (no excess cardiac events); low infant serum levels in breastfeeding.
@@ -106,6 +136,15 @@ Not every antidepressant works by blocking reuptake. Several act on receptors, w
 {"scene": "Mr Shah, 45, from Surat, is on phenelzine (an MAOI) for resistant depression, prescribed by a specialist. He has a cold and asks a chemist for a 'strong cough syrup'. The chemist gives him a syrup containing dextromethorphan and a decongestant.", "ask": "What is the danger, and what should have happened?", "choices": [{"label": "No danger; cough syrups are safe with antidepressants", "verdict": "harm", "outcome": "Within hours he becomes agitated, sweaty, feverish, with jerking muscles and a very high blood pressure. He is admitted to intensive care.", "why": "Dextromethorphan (serotonergic) with an MAOI can cause serotonin toxicity, and decongestants (sympathomimetics) can cause a hypertensive crisis."}, {"label": "He should have carried an MAOI warning card, checked every new medicine with a pharmacist or doctor, and used safe alternatives such as steam, saline and paracetamol", "verdict": "best", "outcome": "With the card, the chemist recognises the risk and offers safe symptomatic care.", "why": "People on MAOIs need written lists of forbidden foods and medicines (including many cough and cold remedies, tramadol, pethidine, triptans, other antidepressants and stimulants)."}, {"label": "Halve the cough syrup dose", "verdict": "harm", "outcome": "The reaction still occurs.", "why": "The combination is contraindicated, not dose-dependent in a safe way."}]}
 :::
 
+
+:::widget release
+{
+ "transmitter": "noradrenaline",
+ "title": "Noradrenaline: three ways in",
+ "caption": "Pick SSRI (blocks reuptake) and picture it on a noradrenaline nerve: this is the pump block of a tricyclic such as nortriptyline, of reboxetine, and part of bupropion's action. Pick MAOI: the stores fill, which is how the older MAOIs raise noradrenaline too. Pick Amphetamine to see why stimulants are different: they push noradrenaline out even with no signal."
+}
+:::
+
 :::clinician
 ### Dosing and depth (Indian brands as examples)
 | Medicine | Dose | Receptor point | Watch |
@@ -157,6 +196,15 @@ Antipsychotics all block, or partly stimulate, **dopamine D2 receptors**. The br
 
 :::widget pathways
 {"system": "dopamine", "title": "What D2 blockade does in each pathway, and what 5-HT2A blockade adds", "caption": "Turn on the D2 blocker and see the effect in each of the four pathways. Then add serotonin 2A blockade, as most second-generation drugs do, and watch which unwanted effects ease."}
+:::
+
+
+:::widget release
+{
+ "transmitter": "dopamine",
+ "title": "One synapse, the whole idea of an antipsychotic",
+ "caption": "Play a normal signal, then pick Receptor blocker (antagonist). Dopamine is still made and released, but the receptor is covered, so the message is muffled. In the overactive pathway that eases psychosis; in the movement pathway and at the pituitary it causes stiffness and raised prolactin. The pathway map above shows where."
+}
 :::
 
 ### First-generation and second-generation
@@ -259,6 +307,15 @@ Clozapine is the only antipsychotic proven to work when two others have failed (
 {"scene": "Mrs Dsouza, 36, in Mangaluru, has treatment-resistant schizophrenia. In the third week of clozapine titration she develops a fever of 38.4 degrees, a pulse of 128 and mild chest discomfort. Her neutrophil count is normal.", "ask": "What do you do?", "choices": [{"label": "Assume it is the common benign clozapine fever and continue titration", "verdict": "harm", "outcome": "Two days later she is breathless and hypotensive with heart failure from myocarditis.", "why": "Fever is common early on, but fever with tachycardia and chest symptoms in the first weeks must be treated as possible myocarditis until proven otherwise."}, {"label": "Pause clozapine, check troponin, CRP and ECG urgently, and get a medical or cardiology opinion; restart only if myocarditis is excluded", "verdict": "best", "outcome": "Her troponin and CRP are raised. Clozapine is stopped and she recovers with cardiology care. A careful later rechallenge is discussed in a specialist setting.", "why": "Early recognition of clozapine myocarditis saves lives. Baseline and weekly troponin and CRP in the first month help detect it."}, {"label": "Add paracetamol and increase clozapine faster to finish titration", "verdict": "harm", "outcome": "Her condition worsens.", "why": "Faster titration increases myocarditis risk."}]}
 :::
 
+
+:::widget curve
+{
+ "kind": "dose-response",
+ "title": "Clozapine: why the blood level matters",
+ "caption": "Move the sliders. Response becomes more likely once the blood level is around 350 nanograms per millilitre, while the risk of seizures and other side effects keeps climbing at higher levels, especially above about 1000. Measuring the level helps you know whether a poor response means too little drug or the wrong drug."
+}
+:::
+
 :::clinician
 ### Clozapine pharmacology and practice
 - **Receptor profile**: low D2 occupancy (about 40% to 60%) with fast dissociation, high 5-HT2A, H1, M1 and alpha-1 antagonism, M4 agonism (hypersalivation), 5-HT2C antagonism, and actions of its metabolite norclozapine (M1 agonism). No single receptor explains its superior efficacy.
@@ -329,6 +386,36 @@ Best for **preventing bipolar depression**; little effect on mania. Weight-neutr
 
 :::widget curve
 {"kind": "half-life", "title": "Repeated doses build towards a steady state", "caption": "Change the half-life and the dosing interval. Each dose adds to what is left of the last, until intake and elimination balance after about four to five half-lives. This is why lithium levels are checked about five days after a dose change, and why long half-life drugs take longer to settle and to clear."}
+:::
+
+
+:::widget compare
+{
+ "title": "Lithium and lamotrigine for long-term care",
+ "a": {
+  "label": "Lithium",
+  "points": [
+   "Best at preventing mania, and also helps depression",
+   "Lowers suicide risk",
+   "Needs blood levels, kidney and thyroid checks",
+   "Narrow safe range; dehydration and some painkillers raise levels",
+   "Tremor, thirst, weight gain"
+  ],
+  "summary": "The strongest protector, with the most monitoring."
+ },
+ "b": {
+  "label": "Lamotrigine",
+  "points": [
+   "Best at preventing bipolar depression, weak against mania",
+   "No routine blood levels",
+   "Slow start to avoid a dangerous rash",
+   "Weight-neutral and usually well tolerated",
+   "Dose halved with valproate, raised with the pill"
+  ],
+  "summary": "Easy to live with, aimed at the depressive pole."
+ },
+ "caption": "Slide between the two. The choice often follows the person's pattern: mostly manic relapses, or mostly depressive ones."
+}
 :::
 
 :::clinician
@@ -409,6 +496,15 @@ They enhance **GABA**, the brain's main calming messenger, by making the GABA-A 
 
 :::widget sort
 {"prompt": "Good use or poor use? Place each prescription.", "buckets": ["Good use", "Poor use"], "items": [{"text": "Lorazepam IM for a man with catatonia", "bucket": 0}, {"text": "Alprazolam nightly for two years for mild insomnia in a 75-year-old", "bucket": 1}, {"text": "Trihexyphenidyl automatically added for everyone starting risperidone", "bucket": 1, "why": "Use anticholinergics only when movement side effects occur."}, {"text": "Propranolol for akathisia in a man with no asthma", "bucket": 0}, {"text": "Diazepam reducing course for alcohol withdrawal", "bucket": 0}, {"text": "Pregabalin and a benzodiazepine for a man on methadone who also drinks", "bucket": 1, "why": "Combining sedatives with opioids and alcohol risks fatal breathing suppression."}, {"text": "Metformin for a young man who gained weight on olanzapine", "bucket": 0}]}
+:::
+
+
+:::widget receptor
+{
+ "receptor": "muscarinic M1",
+ "title": "Trihexyphenidyl: balancing the movement circuit",
+ "caption": "In the striatum, dopamine and acetylcholine pull in opposite directions. Block dopamine with an antipsychotic and acetylcholine wins: stiffness and dystonia. Pick Antagonist: that is trihexyphenidyl blocking M1 receptors, restoring the balance. It helps dystonia and parkinsonism, not restlessness, can worsen tardive dyskinesia, and brings confusion, constipation and misuse risk, so it is not given routinely."
+}
 :::
 
 :::clinician

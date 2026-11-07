@@ -122,6 +122,15 @@ For seventy years every antipsychotic has worked mainly by turning down D2 signa
 :::widget timeline
 {"prompt": "Put these moments in antipsychotic history in order.", "events": [{"label": "Chlorpromazine is first used to calm psychosis in Paris", "when": "1952"}, {"label": "Haloperidol is made in Belgium", "when": "1958"}, {"label": "Clozapine is withdrawn in several countries after deaths from agranulocytosis, then later brought back with blood monitoring", "when": "1970s to 1989"}, {"label": "Risperidone is approved in the US", "when": "1993"}, {"label": "Aripiprazole, the first D2 partial agonist, is approved in the US", "when": "2002"}, {"label": "Xanomeline with trospium, the first non-D2 antipsychotic, is approved in the US", "when": "September 2024"}, {"label": "A once-monthly olanzapine injection under the skin is approved in the US", "when": "October 2026"}], "why": "Seventy years of drugs that block D2 in different ways, and only recently a different mechanism."}
 :::
+
+:::widget receptor
+{
+ "receptor": "muscarinic M4",
+ "title": "Xanomeline: an agonist, not a blocker",
+ "caption": "Pick Full agonist. Xanomeline stimulates M1 and M4 receptors in the brain; M4 receptors on dopamine and other neurons reduce dopamine release in the striatum, so psychosis eases without any D2 block. Trospium, the partner drug, is an antagonist that cannot cross into the brain, so it soaks up the gut and bladder side effects of xanomeline outside it."
+}
+:::
+
 ### Other routes being tried
 | Approach | Example | Where it stands (late 2026) |
 |---|---|---|
@@ -182,6 +191,21 @@ After an oral dose, absorption is fast and elimination sets the half-life. After
 1. Steady state takes months, so loading doses or oral cover are needed at the start.
 2. Dose changes take months to show their full effect; do not keep increasing a depot because the first months look partial.
 3. After the last injection, drug (and side effects) remain for months.
+
+
+:::widget journey
+{
+ "drug": "Clozapine",
+ "target": "many receptors at once: D4, 5-HT2A, a loose hold on D2, and others",
+ "route": "oral",
+ "notes": {
+  "liver": "Broken down mainly by CYP1A2, with help from CYP3A4 and CYP2C19. Tobacco smoke (the tar, not the nicotine) speeds CYP1A2 up; fluvoxamine and ciprofloxacin slow it down.",
+  "blood": "Stopping smoking, say on admission to a smoke-free ward, can raise the blood level by about half within a week or two: risk of sedation and seizures. Starting to smoke again can drop it.",
+  "out": "Cleared as norclozapine and other metabolites. The clozapine to norclozapine ratio helps judge whether tablets are being taken and how fast the liver is working."
+ },
+ "caption": "Stop at the liver and the blood. Most clozapine level surprises in practice come from smoking, infection or another medicine changing CYP1A2."
+}
+:::
 
 ### Therapeutic drug monitoring
 | Drug | When levels help | Useful range (approximate) |
@@ -273,6 +297,15 @@ Q: Which clozapine-related problem is most often fatal in some long-term case se
 | Less activity, more sleep | Sedation | Many |
 
 Weight gain is fastest in the first months and greatest in young, drug-naive people. Diabetes can appear within weeks, sometimes as diabetic ketoacidosis, even before much weight is gained. Countermeasures include choosing a lower-risk drug, lifestyle work from day one, metformin, and adding aripiprazole. In the US, a combination of olanzapine with samidorphan (an opioid blocker that reduces appetite gain) was approved in 2021. GLP-1 medicines are under study.
+
+
+:::widget pathways
+{
+ "system": "dopamine",
+ "title": "Years of blockade in the movement pathway",
+ "caption": "Add the D2 blocker and stay on the movement (nigrostriatal) pathway. Over months to years the striatum responds by building more, and more sensitive, D2 receptors. When the drug level dips, those extra receptors over-respond: that is one leading idea behind tardive dyskinesia and supersensitivity psychosis."
+}
+:::
 
 ### Tardive dyskinesia
 - Develops after months to years of D2 block; roughly 5% a year in the early years with older drugs, and less with second-generation drugs.

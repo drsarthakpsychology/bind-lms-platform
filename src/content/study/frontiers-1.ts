@@ -96,6 +96,15 @@ A trial can be "statistically significant" and still show a **tiny** difference.
 - **Standardised effect size** (Cohen's d): about 0.2 is small, 0.5 medium, 0.8 large. Most antidepressants versus placebo are around 0.3.
 - **Number needed to treat (NNT)**: how many people must be treated for one extra person to benefit.
 
+
+:::widget curve
+{
+ "kind": "normal",
+ "title": "What an effect size of 0.3 looks like",
+ "caption": "Move the two bell curves apart until the gap is about 0.3 of a standard deviation, the size of a typical antidepressant against placebo. The curves still overlap almost completely: many people on placebo do better than many on the drug. Then try 0.8, a large effect, and see how rare that is for any treatment in psychiatry."
+}
+:::
+
 ### 2. Placebo response is large in psychiatry
 In depression trials, many people on placebo improve substantially, through hope, attention, natural recovery and regression to the mean. A new drug must beat that.
 
@@ -445,6 +454,15 @@ Q: Why must patients be observed after an esketamine dose?
   - In **August 2026**, Resilient **resubmitted** its application to the FDA, relying on the same completed trials rather than a new phase 3 trial. No FDA decision had been announced as of November 2026.
   - **As of November 2026, MDMA-assisted therapy is not approved in the USA.** Australia has allowed specially authorised psychiatrists to prescribe it for PTSD since July 2023.
 
+
+:::widget release
+{
+ "transmitter": "serotonin",
+ "title": "How MDMA floods the synapse",
+ "caption": "Pick Amphetamine (pushes it out). MDMA is an amphetamine relative that acts mostly on the serotonin pump: it enters the nerve ending, empties the vesicles and runs the pump backwards, so a large burst of serotonin floods the gap without any signal, along with some noradrenaline and dopamine. The days of low mood some users feel afterwards fit with those stores having been emptied."
+}
+:::
+
 ### Psilocybin for treatment-resistant depression
 - **Psilocybin** comes from "magic mushrooms" and acts mainly on the **serotonin 2A receptor**.
 
@@ -586,11 +604,59 @@ What it does and does not do:
 A rival muscarinic drug, emraclidine, **failed** two phase 2 trials in November 2024. New mechanisms are exciting, but a mechanism is not a guarantee.
 :::
 
+
+:::widget release
+{
+ "transmitter": "dopamine",
+ "title": "Calming dopamine without blocking it",
+ "caption": "Pick Receptor blocker (antagonist): this is how every antipsychotic for seventy years has worked, covering D2 receptors everywhere, including in the movement pathway and at the pituitary. Xanomeline works one step earlier. Stimulating M4 receptors on the circuits that drive dopamine neurons means less dopamine is released in the first place, mainly in the striatum, while the receptors themselves stay free."
+}
+:::
+
+
+:::widget compare
+{
+ "title": "A D2 blocker and xanomeline-trospium",
+ "a": {
+  "label": "A typical D2-blocking antipsychotic",
+  "points": [
+   "Blocks D2 receptors directly, in every pathway",
+   "Can cause stiffness, restlessness and tardive dyskinesia",
+   "Raises prolactin (most of them)",
+   "Weight gain and metabolic harm with many",
+   "Once daily; food rarely matters"
+  ],
+  "summary": "Proven over decades, with movement and metabolic costs."
+ },
+ "b": {
+  "label": "Xanomeline-trospium",
+  "points": [
+   "Stimulates M1 and M4 receptors; no direct D2 block",
+   "Few movement side effects, no prolactin rise in trials",
+   "Little weight gain in trials",
+   "Nausea, vomiting, constipation, dry mouth, faster heart",
+   "Twice daily, away from food; less long-term experience"
+  ],
+  "summary": "A new route with a different side-effect profile, still being tested over time."
+ },
+ "caption": "Slide between the two. The mechanism changes which side effects you trade for benefit; it does not yet tell us whether the benefit is larger."
+}
+:::
+
 ### Zuranolone for postpartum depression
 - **Zuranolone** is a **neuroactive steroid** that boosts GABA-A receptors (the brain's main "calming" system), related to the hormone allopregnanolone, which falls sharply after childbirth.
 - It is taken as a **short course of tablets**, not daily for months.
 - **FDA approved in August 2023 for postpartum depression.** The FDA **did not approve** it for general major depression, where the effect was smaller and less consistent.
 - It carries a warning about **driving impairment** and sleepiness: patients must not drive for some hours after each dose and should take it in the evening.
+
+
+:::widget receptor
+{
+ "receptor": "GABA-A",
+ "title": "Zuranolone: turning up the brain's brake",
+ "caption": "Pick Full agonist and imagine GABA itself opening the channel. Zuranolone is not a key in this lock: it binds a separate neurosteroid site and makes GABA's effect stronger, including at the receptors outside synapses that give a steady background calm. After childbirth, levels of the body's own neurosteroid allopregnanolone fall sharply; zuranolone briefly replaces that support."
+}
+:::
 
 :::widget guess
 {
@@ -658,6 +724,22 @@ Q: Zuranolone works mainly by:
     "amygdala": "Emotion and stress circuits have GLP-1 receptors too, one reason researchers study effects on mood and anxiety."
   },
   "caption": "Tap each region. The same receptors that reduce appetite may reduce cravings, which is why psychiatry is interested."
+}
+:::
+
+
+:::widget journey
+{
+ "drug": "Semaglutide",
+ "target": "GLP-1 receptors in the gut, pancreas, hypothalamus and brainstem",
+ "route": "oral",
+ "notes": {
+  "gut": "Most people take it as a weekly injection under the skin. The tablet form needs an empty stomach and a little water, because food blocks absorption.",
+  "blood": "It is built to resist breakdown and to bind albumin, so it lasts about a week in the blood.",
+  "bbb": "It is a large molecule and crosses poorly, but reaches parts of the hypothalamus and brainstem where the barrier is naturally leaky.",
+  "target": "Signals fullness and slows the stomach. In reward circuits it may dampen craving, which is what the addiction trials test."
+ },
+ "caption": "Follow it to the barrier. Its brain effects come mostly through the areas it can reach, and through signals from the gut and the vagus nerve."
 }
 :::
 

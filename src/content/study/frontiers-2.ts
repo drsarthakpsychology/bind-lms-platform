@@ -306,6 +306,14 @@ Computational psychiatry uses **mathematical models of how the brain learns and 
 Smartphones and wearables record **sleep, movement, typing, phone use and voice**. Researchers try to detect **early warning signs** (for example a drop in movement and social contact before a depressive relapse, or reduced sleep before mania).
 **Status: research only to early clinical pilots.** Problems: privacy and consent, data that differ between phones, people who stop wearing devices, and models that work in one group but not another.
 
+
+:::widget hypnogram
+{
+ "title": "The night a wearable tries to measure",
+ "caption": "Drag through a real night of stages, then switch on depression to see REM come earlier and deep sleep shrink. A wrist wearable cannot see these stages directly; it guesses them from movement and heart rate, so it is fair at total sleep and poor at stages. Shortened sleep over several nights, though, is one of the more useful early signs of a coming manic relapse."
+}
+:::
+
 ### Prediction models and the generalisation problem
 Machine-learning models can "predict" who will respond to a treatment in one dataset, then **fail completely** in the next. A large 2024 analysis found that models predicting outcomes in schizophrenia trials worked within the trial they were trained on but **not across other trials**. Always ask: **was it tested on new, independent data?**
 

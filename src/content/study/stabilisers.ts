@@ -359,8 +359,32 @@ Q: A man stable on lithium is started on ibuprofen for back pain by his GP. The 
 Valproate is highly teratogenic: **neural tube defects** (spina bifida) and other malformations in about 1 in 10 exposed babies, and **lower IQ, autism and ADHD** in up to 3 or 4 in 10 children exposed in the womb. It must not be used in girls and women who could become pregnant unless there is no alternative and a pregnancy prevention plan is in place.
 :::
 
+
+:::widget curve
+{
+ "kind": "dose-response",
+ "title": "Lithium: a narrow road between too little and too much",
+ "caption": "Move the sliders and watch how close the side-effect curve sits to the benefit curve. With lithium the gap is small: a level that protects mood is not far below one that causes tremor, confusion and kidney harm. That is why small changes, such as a fever, a hot day or a new painkiller, can push a stable person into toxicity."
+}
+:::
+
 :::widget decide
 {"scene": "Pooja, 19, a college student in Jaipur, has had two manic episodes. In the emergency department she was started on valproate (Encorate Chrono) by a junior doctor. She has a boyfriend, does not use contraception, and her family wants her married soon. She comes for follow-up.", "ask": "What is the best plan?", "choices": [{"label": "Continue valproate; she is not planning a pregnancy now", "verdict": "harm", "outcome": "Eight months later she is pregnant, in the first trimester. The baby is born with spina bifida and later has learning difficulties.", "why": "Half of pregnancies are unplanned. Valproate's harm happens in the first weeks, often before a woman knows she is pregnant."}, {"label": "Explain the risks clearly and kindly; switch to an alternative such as an antipsychotic with evidence in mania (for example aripiprazole or quetiapine), or lithium with contraception advice, and plan long-term prevention with her", "verdict": "best", "outcome": "She chooses aripiprazole, stays well, and knows to talk to the team before trying for a baby.", "why": "Valproate should be avoided in girls and women who could become pregnant when other effective options exist. Shared decisions respect her future."}, {"label": "Continue valproate and tell her to take folic acid", "verdict": "harm", "outcome": "Folic acid does not prevent valproate's effects on brain development.", "why": "Folic acid lowers neural tube risk a little but does not make valproate safe."}]}
+:::
+
+
+:::widget journey
+{
+ "drug": "Valproate",
+ "target": "sodium channels, GABA levels and gene-switching enzymes inside neurons",
+ "route": "oral",
+ "notes": {
+  "blood": "Most of it rides on albumin in the blood; only the free part acts. When albumin is low, as in liver disease, old age or pregnancy, the free part rises even if the measured level looks normal.",
+  "liver": "Broken down by the liver in several ways. It also slows the breakdown of other medicines, so lamotrigine levels roughly double when valproate is added.",
+  "target": "Calms overactive firing by blocking sodium channels, raising GABA and changing which genes are switched on."
+ },
+ "caption": "Follow valproate and stop at the blood and the liver: that is where most of its interactions, and its liver and ammonia problems, begin."
+}
 :::
 
 :::student
@@ -412,6 +436,36 @@ Q: A 22-year-old woman with bipolar disorder who may want children asks for valp
 
 :::widget sort
 {"prompt": "Carbamazepine is a strong enzyme inducer. Which medicines will it lower?", "buckets": ["Level falls with carbamazepine", "Not much affected"], "items": [{"text": "The combined contraceptive pill", "bucket": 0, "why": "Contraceptive failure is a real risk; use another method."}, {"text": "Quetiapine", "bucket": 0}, {"text": "Lithium", "bucket": 1, "why": "Lithium is not metabolised by liver enzymes, though the two together can add neurotoxicity."}, {"text": "Haloperidol", "bucket": 0}, {"text": "Carbamazepine itself, after a few weeks", "bucket": 0, "why": "Auto-induction: the dose often needs raising after the first weeks."}, {"text": "Paliperidone", "bucket": 1, "why": "Mostly removed unchanged by the kidneys, but some drug transport effects can still lower it a little."}, {"text": "Warfarin", "bucket": 0}]}
+:::
+
+
+:::widget compare
+{
+ "title": "Carbamazepine and oxcarbazepine: close cousins",
+ "a": {
+  "label": "Carbamazepine",
+  "points": [
+   "Strong enzyme inducer: lowers the pill, antipsychotics and itself",
+   "Auto-induction: dose often needs raising after a few weeks",
+   "Toxic epoxide metabolite: dizziness, double vision",
+   "Rare blood disorders; blood counts needed",
+   "Better evidence in mania"
+  ],
+  "summary": "Effective, but the interactions travel with it."
+ },
+ "b": {
+  "label": "Oxcarbazepine",
+  "points": [
+   "Weaker induction, fewer interactions",
+   "No epoxide metabolite",
+   "Low sodium is more common: check it, especially in older adults",
+   "Still lowers the contraceptive pill at higher doses",
+   "Weaker evidence in mania"
+  ],
+  "summary": "Easier to combine, watch the sodium."
+ },
+ "caption": "Slide between them. Both carry the skin-reaction risk linked to HLA-B*15:02 in South and East Asian people, so testing applies to both."
+}
 :::
 
 :::clinician
@@ -530,6 +584,15 @@ Q: Which patient is most likely to respond well to lithium?
 :::
 
 ## 1.6 Choosing a mood stabiliser [core][beginner]
+
+:::widget release
+{
+ "transmitter": "dopamine",
+ "title": "Why antipsychotics calm mania quickly",
+ "caption": "In mania, dopamine signalling runs high, much as it does when you pick Amphetamine here. Now pick Antagonist: the receptors are covered, so the overactive signal cannot get through. This acts within days, faster than lithium or valproate, which is why antipsychotics are often the first step in acute mania."
+}
+:::
+
 ### Antipsychotics as mood stabilisers
 | Medicine | Mania | Bipolar depression | Maintenance |
 |---|---|---|---|
@@ -717,6 +780,36 @@ Difficulty starting or keeping sleep, or waking early, on at least **3 nights a 
 
 Look for causes: depression, anxiety, pain, sleep apnoea (snoring, daytime sleepiness), restless legs, shift work, caffeine, alcohol, medicines.
 
+
+:::widget compare
+{
+ "title": "A sleeping tablet or CBT for insomnia?",
+ "a": {
+  "label": "A sleeping tablet",
+  "points": [
+   "Works from the first night",
+   "Benefit fades as tolerance builds",
+   "Morning hangover, falls and memory gaps, worse in older adults",
+   "Rebound insomnia and dependence after regular use",
+   "Nothing changes in the habits that keep insomnia going"
+  ],
+  "summary": "Fast relief, short-lived benefit."
+ },
+ "b": {
+  "label": "CBT for insomnia",
+  "points": [
+   "Slower start; the first nights of sleep restriction feel worse",
+   "Gains grow and last after treatment ends",
+   "No hangover, no dependence",
+   "Treats the perpetuating habits and worry directly",
+   "Works in older adults and alongside depression or pain"
+  ],
+  "summary": "Harder at first, better for the long run."
+ },
+ "caption": "Slide between the two. Tablets can bridge a crisis for a few nights; CBT for insomnia is the treatment that changes the course."
+}
+:::
+
 :::recall
 1. Define insomnia disorder. || At least 3 nights a week for at least 3 months, with daytime impairment.
 2. Name the five parts of CBT-I. || Stimulus control, sleep restriction, sleep hygiene, cognitive work, relaxation.
@@ -751,6 +844,15 @@ Q: A woman sleeps badly for 6 months, lies in bed for 10 hours awake, and naps i
 
 :::widget worked
 {"title": "Converting alprazolam to diazepam", "steps": [{"q": "Ravi takes alprazolam 0.5 mg three times a day (1.5 mg a day). Using the table, what is his diazepam-equivalent dose?", "a": "0.5 mg alprazolam is about 10 mg diazepam, so 1.5 mg is about **30 mg diazepam** a day."}, {"q": "Do you switch all at once?", "a": "No. Swap one dose at a time over about a week, for example the night dose first (0.5 mg alprazolam to 10 mg diazepam), then the morning, then the afternoon."}, {"q": "How do you then reduce 30 mg diazepam?", "a": "By about 2 to 3 mg at a time at first, then 1 mg steps below about 10 mg, holding each step until he settles and pausing if withdrawal is hard."}, {"q": "Roughly how long might this take?", "a": "Several months. A slow, steady taper the person controls is more successful than a fast one."}], "yourTurn": [{"q": "A woman takes clonazepam 1 mg at night. What is the diazepam equivalent?", "a": "About 20 mg diazepam (0.5 mg clonazepam is about 10 mg). Clonazepam is already long-acting, so many people simply taper the clonazepam itself in small steps."}]}
+:::
+
+
+:::widget curve
+{
+ "kind": "half-life",
+ "title": "Why switch alprazolam to diazepam before tapering",
+ "caption": "Set a short half-life (alprazolam): between doses the level dips and the person feels anxious and craves the next one. Now set a long half-life (diazepam, with its long-lived active metabolite): the level stays smooth, and each small cut lowers it gently over days instead of hours."
+}
 :::
 
 ### Benzodiazepine misuse in India

@@ -139,6 +139,14 @@ Freud separated the **manifest content** (the dream you remember) from the **lat
 **C**ondensation, **D**isplacement, **S**ymbolisation, **S**econdary revision.
 :::
 
+
+:::widget hypnogram
+{
+ "title": "Where vivid dreams happen",
+ "caption": "Drag through the night. Long, story-like dreams come mostly from REM sleep, and the REM periods grow longer towards morning, which is why the dream you remember is usually the last one. Modern research ties REM dreaming to memory and emotion processing; it does not settle whether a hidden wish is being disguised, so treat Freud's dream work as a clinical method, not a proven sleep mechanism."
+}
+:::
+
 ### The structural model: conflict is normal
 In the structural model the **ego** has three demanding masters: the **id** (wishes), the **superego** (conscience and ideals) and **reality**. When they clash, the ego feels anxiety and uses defences. A symptom is often a **compromise formation**: it partly expresses the wish, partly punishes it, and partly keeps it hidden.
 
@@ -294,6 +302,14 @@ Ainsworth watched mothers and babies at home in **Uganda** and then in **Baltimo
 }
 :::
 
+
+:::widget strange
+{
+ "title": "Watch the reunions",
+ "caption": "Step through the eight episodes, then switch between the four patterns. The secure baby protests, then is soothed and returns to play; the avoidant baby looks away; the ambivalent baby clings and resists at once; the disorganised baby freezes or approaches backwards. Notice that the leaving matters far less than the coming back."
+}
+:::
+
 :::trap Crying is not the test
 Exams try to trick you: a baby who does not cry when the mother leaves is not "secure and confident". Classification depends on **what happens at the reunion**. An avoidant infant often has a raised heart rate while looking calm.
 :::
@@ -438,6 +454,48 @@ Q: An inner expectation such as "people come when I need them" is called:
 ## 2.1 Ego psychology: defences as adaptation [core][beginner]
 Ego psychology moved the spotlight from the wild id to the **ego as the organ of adaptation**. Its question is not only "what is the conflict?" but "**how well is this person coping, and with what tools?**"
 
+
+:::widget timeline
+{
+ "prompt": "Put the main psychodynamic ideas in the order they appeared.",
+ "events": [
+  {
+   "label": "Freud's topographic model: conscious, preconscious and unconscious",
+   "when": "1900"
+  },
+  {
+   "label": "Freud's structural model: id, ego and superego",
+   "when": "1923"
+  },
+  {
+   "label": "Anna Freud sets out the defences of the ego",
+   "when": "1936"
+  },
+  {
+   "label": "Klein describes the paranoid-schizoid position",
+   "when": "1946"
+  },
+  {
+   "label": "Bowlby's first account of the child's tie to the mother",
+   "when": "1958"
+  },
+  {
+   "label": "Kernberg describes borderline personality organisation",
+   "when": "1967"
+  },
+  {
+   "label": "Kohut's self psychology of narcissism",
+   "when": "1971"
+  },
+  {
+   "label": "Mentalisation-based treatment for borderline personality disorder",
+   "when": "1990s to 2000s"
+  }
+ ],
+ "why": "Each school answered a gap in the one before: from drives and conflict, to the ego's coping, to relationships inside the mind, to the self, to the capacity to understand minds."
+}
+:::
+
 ### The key contributors
 - **Anna Freud** systematised the defences in 1936 and described defences such as identification with the aggressor and altruistic surrender.
 - **Heinz Hartmann** argued that much of the ego works without conflict (the **conflict-free sphere**: perception, memory, language, motor skill) and develops in an **average expectable environment**.
@@ -455,6 +513,16 @@ Clinicians assess ego strength across functions. A practical list:
 | **Defensive functioning** | Which defences, how flexible, how mature? |
 | **Mastery and competence** | Can they get things done? |
 | **Synthetic function** | Can they hold contradictions together into a whole sense of self? |
+
+
+:::widget dissonance
+{
+ "belief": "I am a fair and honest manager.",
+ "behaviour": "I gave the promotion to my nephew over a stronger candidate.",
+ "title": "Rationalisation seen from two traditions",
+ "caption": "Watch the tension rise, then pick a way to reduce it. Social psychology calls the easy route, 'He will be more loyal, and the other one would have left anyway', dissonance reduction. Ego psychology calls the same move rationalisation, a disavowal-level defence. The difference is mainly about awareness: dissonance research shows it in ordinary people in the lab, while the defence idea adds that the motive is kept out of awareness."
+}
+:::
 
 ### Defensive functioning: going deeper than Module 3
 Module 3 gave you four maturity levels. Researchers use a finer seven-level ladder from the DSM-IV appendix's Defensive Functioning Scale. The point is not to memorise every name: it is to see that **defences cluster**, and the overall level predicts how a person copes.
@@ -908,6 +976,49 @@ How resistance shows:
 - Intellectualising: "I know it's from my childhood" with no feeling.
 - **Flight into health**: sudden "cure" just as something painful approaches.
 - Agreeing with everything the therapist says.
+
+
+:::widget thoughtrecord
+{
+ "situation": "In a team meeting in Pune, a senior engineer points out an error in Arjun's code in front of everyone.",
+ "thought": "They all think I'm a fraud. I'll never be good enough here.",
+ "emotion": "ashamed",
+ "traps": [
+  {
+   "label": "Mind reading",
+   "right": true,
+   "why": "He is sure he knows what everyone thinks, without asking anyone."
+  },
+  {
+   "label": "Overgeneralising",
+   "right": true,
+   "why": "One error becomes 'never good enough here'."
+  },
+  {
+   "label": "Catastrophising",
+   "why": "Close, but he is not predicting a disaster such as being fired; he is judging himself."
+  },
+  {
+   "label": "Should statements",
+   "why": "There is no 'I should' or 'I must' in this thought."
+  }
+ ],
+ "forEvidence": [
+  "The error was real and was pointed out publicly.",
+  "Nobody spoke up for him in the meeting."
+ ],
+ "againstEvidence": [
+  "Two colleagues asked for his help the same week.",
+  "The senior also corrected other people's code that day.",
+  "His last review called his work reliable."
+ ],
+ "balanced": "I made an error, as everyone here does. One public correction does not mean people think I'm a fraud. I can fix it and ask the senior to look at my next change early."
+}
+:::
+
+:::note The same moment, read psychodynamically
+The thought record tests whether Arjun's thought is accurate, and it often brings quick relief. A psychodynamic therapist asks a different question: why does one correction carry so much force? Arjun's father praised him only when he came first and went silent when he did not. The senior engineer now stands in for that father, and the shame belongs partly to the old relationship. The work is to notice the pattern as it repeats at work, at home and with the therapist, and to feel and understand it rather than only dispute it. The two readings are not rivals: one works on the present thought, the other on why that thought keeps returning.
+:::
 
 ### Techniques: from surface to depth
 | Technique | What you do | Example line |
