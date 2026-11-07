@@ -478,7 +478,7 @@ const D: Draft[] = [
     stem: "A researcher needs to average annual growth rates of 10%, 20% and 50% in clinic attendance (growth factors 1.10, 1.20 and 1.50) over three years. The appropriate average growth factor is the:",
     options: [
       "Median, 1.20",
-      "Arithmetic mean, 1.267 (26.7% a year)",
+      "Arithmetic mean, about 1.267 (26.7% a year)",
       "Harmonic mean, about 1.25",
       "Geometric mean, about 1.258 (25.8% a year)",
     ],
@@ -774,10 +774,10 @@ const D: Draft[] = [
     type: "mcq",
     stem: "Normal curve equivalents (NCEs), used in educational testing, have a mean of 50 and an SD of about 21.06. This SD was chosen so that:",
     options: [
-      "NCEs and stanines are interchangeable",
-      "NCEs equal T-scores at every point",
-      "NCEs have no negative values",
-      "NCEs of 1, 50 and 99 coincide with percentile ranks of 1, 50 and 99, while NCEs remain equal-interval",
+      "NCEs and stanines can be converted into each other without any loss of information",
+      "NCEs equal T-scores at every point, so the two can be averaged together",
+      "NCEs have no negative values and never exceed 100",
+      "NCEs of 1, 50 and 99 match percentile ranks of 1, 50 and 99, while staying equal-interval",
     ],
     answer: 3,
     explanation:

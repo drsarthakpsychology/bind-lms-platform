@@ -30,7 +30,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Gilbert Wrenn used the term 'culturally encapsulated counsellor' to describe a counsellor who:",
-    options: ["Works only with clients who share one cultural background", "Refuses to see clients from minority or migrant groups", "Treats their own cultural values as if they were universal", "Speaks several regional languages fluently in sessions"],
+    options: ["Works only with clients who share one particular cultural background", "Refuses to see clients from minority or migrant groups", "Treats their own cultural values as if they were universal", "Speaks several regional languages fluently in sessions"],
     answer: 2,
     explanation:
       "Wrenn warned that counsellors can be wrapped in a 'cocoon' of their own culture, treating their norms as universal truths and judging clients by them. Working mostly with one group, refusing minority clients and speaking many languages are different matters. The remedy is self-awareness and learning about clients' world views.",
@@ -202,7 +202,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Which factor is most often cited as a barrier to seeking counselling in India?",
-    options: ["Far too many counsellors competing in every village", "A general dislike of talking to anyone about problems", "Counselling being illegal in most Indian states", "Stigma and fear of harm to the family's izzat (honour)"],
+    options: ["Far too many counsellors competing in every village", "A general dislike of talking to anyone at all about problems", "Counselling being illegal in most Indian states", "Stigma and fear of harm to the family's izzat (honour)"],
     answer: 3,
     explanation:
       "Stigma, worries about marriage prospects and family reputation, preference for traditional or religious healers, cost and a shortage of trained professionals all reduce help-seeking in India. There are far too few counsellors, not too many. People do talk to family and friends, and counselling is legal.",
@@ -215,7 +215,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Feminist counselling approaches emphasise that:",
-    options: ["Women's psychological problems are mainly caused by their biology", "Counselling should avoid discussing the client's social context", "Distress links to gender and power, in an egalitarian relationship", "Only women counsellors are able to practise feminist counselling"],
+    options: ["Women's psychological problems are mainly caused by their biology and hormones", "Counselling should avoid discussing the client's social context", "Distress links to gender and power, in an egalitarian relationship", "Only women counsellors are able to practise feminist counselling"],
     answer: 2,
     explanation:
       "Feminist therapy looks at how gender roles, discrimination, violence and power inequalities shape distress, aims for an egalitarian relationship and may encourage social action. It does not reduce problems to biology, avoid context or exclude male counsellors. Examples in India include work on domestic violence and dowry-related stress.",
@@ -259,7 +259,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "A client says prayer and visiting the gurudwara help him cope with his illness. What is the most appropriate counselling response?",
-    options: ["Explore respectfully how his faith helps, and include it as a strength", "Explain that religion is unscientific and is best set aside", "Avoid the topic, since religion is not a counselling matter", "Encourage him to consider a faith that the counsellor finds helpful"],
+    options: ["Explore respectfully how his faith helps, and include it as a strength", "Explain that religion is unscientific and is best set aside", "Avoid the topic, since religion is not a counselling matter", "Encourage him to consider a different faith that the counsellor finds helpful"],
     answer: 0,
     explanation:
       "Religious and spiritual coping is common in India and is often linked to better adjustment. Respectfully exploring its meaning and including it as a resource, if the client wants this, is culturally responsive. Dismissing or ignoring it can harm the alliance, and influencing someone's faith is unethical.",
@@ -272,7 +272,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "'Intersectionality', a term introduced by Kimberlé Crenshaw, means that:",
-    options: ["Overlapping identities combine to shape privilege or disadvantage", "Only one identity, such as gender, matters at any one time", "Counsellors should treat every client in exactly the same way", "Cultural differences are not relevant to counselling outcomes"],
+    options: ["Overlapping identities combine to shape privilege or disadvantage", "Only one identity, such as gender, matters at any one time", "Counsellors should treat every client in exactly the same way, whatever their background", "Cultural differences are not relevant to counselling outcomes"],
     answer: 0,
     explanation:
       "Intersectionality highlights that, for example, a Dalit woman with a disability faces forms of discrimination that are not just the sum of gender, caste and disability separately. Counsellors therefore consider multiple, interacting identities. The other options ignore this complexity or deny cultural relevance.",
@@ -285,7 +285,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "Which adaptation of counselling is often recommended for many clients in Indian settings?",
-    options: ["Never involving family members, to protect the client's autonomy", "Avoiding any directive advice, in line with non-directive practice", "Involving family flexibly, adding some structure, and valuing faith", "Using Western psychological tests without adaptation or new norms"],
+    options: ["Never involving family members, to protect the client's autonomy", "Avoiding any directive advice, in line with non-directive practice", "Involving family flexibly, adding some structure, and valuing faith", "Using Western psychological tests without any adaptation or new local norms"],
     answer: 2,
     explanation:
       "Indian studies suggest that many clients value family involvement, expect a more active helper, and draw on faith and community. Good practice keeps client autonomy and confidentiality while adapting to these expectations, and uses tests that have been adapted and normed for Indian populations. Excluding families, refusing all guidance or using unadapted tests can reduce effectiveness.",
@@ -312,7 +312,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 4,
     type: "mcq",
     stem: "Research on 'cultural humility' in therapy suggests that:",
-    options: ["Client-rated humility is linked to a stronger alliance and better outcomes", "Cultural humility means pretending to know nothing about the client", "Only therapists from minority groups are able to show cultural humility", "Cultural humility shows no relationship with alliance or outcome"],
+    options: ["Client-rated humility is linked to a stronger alliance and better outcomes", "Cultural humility means pretending to know nothing about the client", "Only therapists from minority groups are really able to show cultural humility", "Cultural humility shows no relationship with alliance or outcome"],
     answer: 0,
     explanation:
       "Cultural humility is an other-oriented stance: openness, curiosity and respect about the client's cultural identities, and awareness of the limits of one's own knowledge. Studies (Hook, Owen and colleagues) found that clients' perceptions of therapist humility, and fewer missed cultural opportunities, predicted better alliance and outcomes. It is not pretending ignorance, and any therapist can develop it.",
@@ -403,7 +403,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "Meta-analyses on matching clients and therapists by ethnicity have found that:",
-    options: ["Matching strongly improves treatment outcomes for every client", "Matching has no effect on preferences or on outcomes at all", "Clients often prefer a match, but the effect on outcome is very small", "Matching tends to worsen outcomes by creating over-identification"],
+    options: ["Matching strongly improves treatment outcomes for every client", "Matching has no effect on preferences or on outcomes at all", "Clients often prefer a match, but the effect on outcome is very small", "Matching tends to worsen outcomes by creating over-identification with the client"],
     answer: 2,
     explanation:
       "Cabral and Smith found moderate preferences for ethnically similar therapists and slightly more positive perceptions, but almost no difference in outcomes. This suggests that cultural competence and humility matter more than demographic matching itself. Strong benefit, no effect at all, or harm are not supported.",

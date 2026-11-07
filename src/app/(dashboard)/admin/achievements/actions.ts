@@ -12,6 +12,7 @@ import { notifyCredential } from "@/lib/achievements/notify";
 import { getObjectBufferR2 } from "@/lib/media/r2";
 import { displayName } from "@/lib/learn/leaderboard";
 import { REQUIREMENT_KINDS, type AchievementRequirement } from "@/lib/achievements/rules";
+import { certificateStatus } from "@/lib/achievements/certificate-server";
 
 const slugify = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 60);
 
@@ -240,8 +241,18 @@ export async function issueCertificate(credentialId: string): Promise<{ error: s
   if (!cred) return { error: "Credential not found." };
   if (cred.status !== "draft" && cred.status !== "approved") return { error: `Cannot issue a ${cred.status} credential.` };
 
-  const { data: ach } = await admin.from("achievements").select("title, signature_asset_path, signature_label").eq("id", cred.achievement_id).maybeSingle();
+  const { data: ach } = await admin.from("achievements").select("title, requirements, signature_asset_path, signature_label").eq("id", cred.achievement_id).maybeSingle();
   if (!ach?.signature_asset_path) return { error: "Set an authorised signature asset on this certificate first." };
+
+  // Check the rule again at the moment of issue, so a draft can never be issued early.
+  const req = (ach.requirements ?? {}) as AchievementRequirement;
+  if (req.kind === "module_tests_passed") {
+    const cert = await certificateStatus(cred.user_id as string, admin);
+    if (!cert.eligible) return { error: `Not eligible yet: ${cert.passed.length} of ${cert.total} module tests passed.` };
+  } else if (req.kind && (REQUIREMENT_KINDS as readonly string[]).includes(req.kind)) {
+    const r = evaluate(req, await loadEvalCtx(admin, cred.user_id as string));
+    if (!r.ok) return { error: `Not eligible yet: ${r.reason}` };
+  }
 
   // Fetch the signature asset from R2 (never expose the key to the browser).
   let signaturePng: Buffer | null = null;

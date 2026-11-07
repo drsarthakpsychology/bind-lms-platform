@@ -113,8 +113,8 @@ const D: Draft[] = [
     stem: "In a data file, a missing answer to an age question has been coded 99. If 99 is not declared as a missing value in the software, the main consequence is that:",
     options: [
       "The data file will not open",
-      "The software will automatically ignore it",
-      "The median will become 99",
+      "The software will automatically ignore it as an outlier",
+      "The median will become 99, but the mean and SD will be unaffected",
       "99 will be treated as a real age, distorting the mean and SD",
     ],
     answer: 3,
@@ -164,7 +164,7 @@ const D: Draft[] = [
     type: "mcq",
     stem: "A correlation matrix of five questionnaires shows different N values in different cells (for example 188, 192, 195). This happens because the analysis used:",
     options: [
-      "Listwise deletion, which uses only cases with complete data on all five variables",
+      "Listwise deletion, which uses only the cases with complete data on every one of the five variables",
       "Pairwise deletion, which uses every case that has data on both variables of each pair",
       "Mean substitution for missing values",
       "Multiple imputation",

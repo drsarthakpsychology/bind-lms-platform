@@ -44,7 +44,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Allport's concept of 'functional autonomy' states that:",
     options: [
       "All adult behaviour is driven by childhood conflicts",
-      "Adult motives can become independent of the original reasons for which a behaviour began",
+      "Adult motives can become independent of the reasons a behaviour first began",
       "Traits are fixed at birth",
       "Behaviour is controlled entirely by rewards in the present",
     ],
@@ -77,8 +77,8 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Allport and Odbert's 1936 search of an unabridged English dictionary is important for trait psychology because it:",
     options: [
       "Produced the first projective test",
-      "Showed that personality cannot be described in words",
-      "Found about 18,000 words describing people, of which about 4,500 described stable traits, starting the lexical approach that led to the Big Five",
+      "Showed that personality cannot be described in words because meanings vary too much",
+      "Found about 18,000 person-describing words, starting the lexical approach that led to the Big Five",
       "Proved that there are exactly three personality traits",
     ],
     answer: 2,
@@ -120,8 +120,8 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Allport used the term 'proprium' to refer to:",
     options: [
       "The collective unconscious",
-      "The aspects of personality that a person experiences as central and 'their own', including bodily sense, self-identity, self-esteem and striving",
-      "A cluster of surface traits",
+      "The parts of personality a person feels are central and 'their own', such as identity and self-esteem",
+      "A cluster of surface traits that tend to appear together in everyday behaviour",
       "The id",
     ],
     answer: 1,
@@ -138,8 +138,8 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Raymond Cattell distinguished 'surface traits' from 'source traits'. Source traits are:",
     options: [
       "Traits found only in children",
-      "Behaviours that are easy to observe directly",
-      "Underlying factors, found through factor analysis, that explain why certain surface behaviours go together",
+      "Behaviours that are easy to observe directly and that tend to cluster together",
+      "Underlying factors, found by factor analysis, that explain why surface behaviours go together",
       "Traits measured only by projective tests",
     ],
     answer: 2,
@@ -202,9 +202,9 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Cattell's P-technique of factor analysis differs from the usual R-technique in that it:",
     options: [
-      "Correlates people with each other rather than variables",
+      "Correlates people with each other rather than variables, to sort them into types",
       "Correlates many people on many variables at one time",
-      "Measures one person on many variables across many occasions and factor analyses the correlations over time, revealing that individual's own trait structure",
+      "Measures one person on many variables across many occasions to reveal that person's own trait structure",
       "Uses only projective tests",
     ],
     answer: 2,
@@ -285,12 +285,12 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Levels of thyroid hormone",
       "The size of the frontal lobes",
-      "The reactivity of the limbic system ('visceral brain') and the autonomic nervous system",
-      "The number of neurons in the cerebellum",
+      "The reactivity of the limbic system and the autonomic nervous system",
+      "The number of neurons in the cerebellum and in the brainstem's arousal nuclei",
     ],
     answer: 2,
     explanation:
-      "Eysenck proposed that people high in neuroticism have a limbic system and sympathetic nervous system that react strongly and recover slowly from stress, so they experience more intense and lasting negative emotion. Extraversion he linked to the reticular activating system and cortical arousal. The other structures and hormones were not part of his model.",
+      "Eysenck proposed that people high in neuroticism have a limbic system and sympathetic nervous system that react strongly and recover slowly from stress, so they experience more intense and lasting negative emotion. Extraversion he linked to the reticular activating system and cortical arousal. Thyroid hormone, frontal lobe size and cerebellar neuron counts were not part of his model.",
     ref: "Eysenck 1967, 1990",
   }),
   p({
@@ -325,7 +325,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Jeffrey Gray's reinforcement sensitivity theory reinterpreted Eysenck's dimensions in terms of two brain systems. The behavioural inhibition system (BIS) is linked to:",
     options: [
-      "Sensitivity to reward and approach behaviour",
+      "Sensitivity to reward signals and approach behaviour, and to impulsivity",
       "Sensitivity to signals of punishment and non-reward, and to anxiety",
       "Physical strength",
       "Intelligence",
@@ -344,8 +344,8 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "The 'Lie' (L) scale in Eysenck's questionnaires was included to:",
     options: [
       "Diagnose psychopathy",
-      "Measure the trait of honesty directly",
-      "Detect a tendency to give socially desirable answers, such as denying common small faults",
+      "Measure the trait of honesty directly in everyday dealings",
+      "Detect socially desirable answering, such as denying common small faults",
       "Measure intelligence",
     ],
     answer: 2,
@@ -365,7 +365,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Organisation, creativity, energy, assertiveness and nervousness",
       "Optimism, courage, empathy, ambition and nurturance",
-      "Obedience, control, emotionality, anxiety and narcissism",
+      "Openness, competitiveness, emotional stability, assertiveness and narcissism",
       "Openness, conscientiousness, extraversion, agreeableness and neuroticism",
     ],
     answer: 3,
@@ -545,8 +545,8 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "The lexical hypothesis, on which much Big Five research is built, states that:",
     options: [
-      "Personality is determined by the language a person speaks",
-      "The most important individual differences in personality are encoded as single words in natural languages",
+      "Personality is shaped by the language a person speaks and its trait words",
+      "The most important personality differences are encoded as single words in natural languages",
       "Only verbal intelligence matters for personality",
       "Personality tests must use only one word per item",
     ],
@@ -582,7 +582,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "The HEXACO model, developed by Ashton and Lee, adds a sixth factor to the Big Five. This factor is:",
     options: [
       "Hostility",
-      "Happiness-Hope",
+      "Happiness-Hopefulness",
       "Honesty-Humility",
       "Hypnotisability",
     ],
@@ -650,8 +650,8 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Walter Mischel's 1968 critique of trait psychology argued that:",
     options: [
-      "Traits perfectly predict behaviour in every situation",
-      "Correlations between trait measures and behaviour in a single situation rarely exceeded about 0.30, so traits were weak predictors of specific behaviour",
+      "Traits predict behaviour well in every situation once measurement error is removed",
+      "Trait-behaviour correlations in a single situation rarely exceeded about 0.30, so traits predicted poorly",
       "Personality does not exist",
       "Only biological traits matter",
     ],
@@ -705,14 +705,14 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "The 'interactionist' position that emerged from the person-situation debate holds that:",
     options: [
-      "Personality and situation are unrelated to behaviour",
+      "Personality and situation are both unrelated to behaviour, which is essentially random",
       "Only the situation determines behaviour",
       "Only traits determine behaviour",
-      "Behaviour results from the interaction of personal dispositions and features of the situation",
+      "Behaviour results from the interaction of dispositions and situation features",
     ],
     answer: 3,
     explanation:
-      "Most researchers now agree that both persons and situations matter, and that their combination is important: a highly anxious person may be fine at home but struggle in exams, and people also choose and change their situations. Strong situations (with clear rules) reduce individual differences, while weak situations let personality show more. The other options take extreme positions that the debate rejected.",
+      "Most researchers now agree that both persons and situations matter, and that their combination is important: a highly anxious person may be fine at home but struggle in exams, and people also choose and change their situations. Strong situations (with clear rules) reduce individual differences, while weak situations let personality show more. Saying only traits or only situations matter, or that neither does, are extreme positions the debate rejected.",
     ref: "Endler & Magnusson 1976; Funder 2006",
   }),
   // ── Early type and body-type theories ─────────────────────────────────────
@@ -788,7 +788,7 @@ export const QUESTIONS: PrepQuestion[] = [
       "High extraversion with high openness",
       "High hostility with time urgency",
       "High negative affectivity with high social inhibition",
-      "Low neuroticism with high conscientiousness",
+      "Low neuroticism with high conscientiousness and warmth",
     ],
     answer: 2,
     explanation:
@@ -826,7 +826,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Research on the stability of personality traits across adulthood (for example by Roberts and DelVecchio) found that rank-order stability:",
     options: [
       "Increases with age, reaching a plateau around age 50 or later",
-      "Is highest in childhood and declines steadily in adulthood",
+      "Is highest in childhood and then declines steadily throughout adulthood",
       "Is zero at all ages",
       "Is perfect after age 18",
     ],
@@ -843,8 +843,8 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Trait approaches to personality differ from psychoanalytic approaches mainly in that trait approaches:",
     options: [
       "Rely mainly on dream interpretation",
-      "Describe and measure stable individual differences, often with questionnaires and factor analysis, rather than explaining personality through unconscious conflict",
-      "Focus on the meaning of early childhood memories",
+      "Describe and measure stable individual differences rather than explaining personality through unconscious conflict",
+      "Focus on the meaning of early childhood memories recovered through free association in therapy",
       "Deny that people differ from each other",
     ],
     answer: 1,
@@ -900,8 +900,8 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Have stronger superegos",
       "Have higher intelligence",
-      "Are more anxious about punishment",
-      "Condition poorly, so they acquire conscience-based fears of punishment less readily, and they also react strongly to emotional stimulation",
+      "Are more anxious about punishment, and that anxiety makes them act out on impulse",
+      "Condition poorly, so they acquire fears of punishment less readily, and react strongly to emotion",
     ],
     answer: 3,
     explanation:
@@ -951,8 +951,8 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Allport's 'common traits' differ from his 'personal dispositions' in that common traits:",
     options: [
-      "Are unique to one individual",
-      "Are shared by many people in a culture and allow comparisons between individuals",
+      "Are unique to one individual, so they cannot be compared across different people",
+      "Are shared by many people in a culture and allow comparisons between people",
       "Are found only in animals",
       "Are always unconscious",
     ],
@@ -987,7 +987,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "According to the idea of 'strong' and 'weak' situations, personality traits will best predict behaviour in:",
     options: [
       "All situations equally",
-      "Strong situations, such as a funeral or a red traffic light, where everyone behaves alike",
+      "Strong situations, such as a funeral or a red traffic light, where everyone is expected to behave alike",
       "Weak situations, such as an informal party, where there are few clear rules about how to behave",
       "No situations",
     ],
@@ -1050,13 +1050,13 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Research using 'thin slices' and studies of acquaintances (for example by Funder and Vazire) shows that other people's ratings of a person's personality:",
     options: [
       "Are always less accurate than self-reports",
-      "Can predict behaviour as well as, or better than, self-reports for some traits, such as observable traits like extraversion and evaluative traits like intelligence",
-      "Are completely unrelated to the person's behaviour",
+      "Can predict behaviour as well as or better than self-reports for visible traits such as extraversion",
+      "Are completely unrelated to the person's actual behaviour in everyday life outside the research laboratory",
       "Are accurate only for close family members",
     ],
     answer: 1,
     explanation:
-      "Vazire's self-other knowledge asymmetry model suggests that people know their own inner states, such as anxiety, best, while others are often better at judging visible and evaluative traits where self-views are biased. Funder's realistic accuracy model describes how accurate judgement depends on relevant cues being available and used. Even strangers can be surprisingly accurate about extraversion. The other options overstate or understate observer accuracy.",
+      "Vazire's self-other knowledge asymmetry model suggests that people know their own inner states, such as anxiety, best, while others are often better at judging visible and evaluative traits where self-views are biased. Funder's realistic accuracy model describes how accurate judgement depends on relevant cues being available and used. Even strangers can be surprisingly accurate about extraversion. Saying observers are always less accurate than self-reports, unrelated to behaviour, or accurate only within families understates their accuracy.",
     ref: "Funder 1995; Vazire 2010",
   }),
   p({
@@ -1091,10 +1091,10 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "The Myers-Briggs Type Indicator is widely used in organisations, but personality researchers criticise it mainly because:",
     options: [
-      "It was designed as a projective test",
+      "It was designed as a projective test, with ambiguous pictures for people to interpret",
       "It has no relation to Jung's theory",
       "It measures only intelligence",
-      "It sorts people into types on dimensions that are really continuous, and many people get a different type when retested",
+      "It forces continuous dimensions into types, and many people get a new type on retest",
     ],
     answer: 3,
     explanation:
@@ -1144,7 +1144,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Which theorist is most associated with factor analysis and the 16 Personality Factor Questionnaire?",
     options: [
-      "Gordon Allport",
+      "Gordon W. Allport",
       "Raymond Cattell",
       "Carl Rogers",
       "Albert Bandura",

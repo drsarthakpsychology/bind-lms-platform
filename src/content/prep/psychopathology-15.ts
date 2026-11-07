@@ -63,7 +63,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "Which feature most reliably distinguishes PTSD flashbacks from psychotic hallucinations?",
-    options: ["Flashbacks occur only at night, during sleep or on waking", "Flashbacks are never visual and are always purely auditory", "Flashbacks replay elements of the real trauma, usually cued", "Psychotic hallucinations always involve the sense of smell"],
+    options: ["Flashbacks occur only at night, during sleep or on waking", "Flashbacks are never visual and are always purely auditory", "Flashbacks replay elements of the real trauma, usually cued", "Psychotic hallucinations always involve the sense of smell or taste"],
     answer: 2,
     explanation:
       "Flashbacks are dissociative re-experiencing of sensory elements of the real trauma, usually triggered by reminders and accompanied by the emotions of the event. Psychotic hallucinations are typically novel, may comment or command, and have themes that are not limited to trauma memories. Flashbacks occur at any time and are commonly visual. Hallucinations are mostly auditory in schizophrenia. Note that PTSD with psychotic features and trauma-related psychosis do occur, so careful assessment is needed.",
@@ -296,7 +296,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "Which pattern best distinguishes an illness anxiety disorder patient from one with somatic symptom disorder?",
-    options: ["Illness anxiety involves prominent, distressing physical symptoms", "Somatic symptom disorder involves no somatic symptoms at all", "Illness anxiety centres on the idea of illness; SSD on the symptoms", "The two disorders cannot be distinguished clinically"],
+    options: ["Illness anxiety involves prominent, distressing and persistent physical symptoms", "Somatic symptom disorder involves no somatic symptoms at all", "Illness anxiety centres on the idea of illness; SSD on the symptoms", "The two disorders cannot be distinguished clinically"],
     answer: 2,
     explanation:
       "DSM-5 split DSM-IV hypochondriasis: those with significant somatic symptoms plus excessive concern go to SSD (about 75%), while those with little or no symptoms but high health anxiety go to illness anxiety disorder. Prominent distressing physical symptoms point to somatic symptom disorder, not illness anxiety; SSD by definition involves somatic symptoms; and the two can be told apart clinically by this very distinction.",
@@ -377,7 +377,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "A 28-year-old man with ADHD has episodes of irritability lasting hours, and a sustained 6-day period of reduced need for sleep, grandiose business plans, rapid speech and risky driving. The 6-day period is best regarded as:",
-    options: ["Part of his long-standing ADHD hyperactivity and impulsivity", "A hypomanic episode: a distinct 4-day change with three symptoms", "A manic episode, simply because it lasted longer than 4 days", "Borderline affective instability under interpersonal stress"],
+    options: ["Part of his long-standing ADHD hyperactivity and impulsivity", "A hypomanic episode: a distinct 4-day change with three symptoms", "A manic episode, simply because it lasted longer than 4 consecutive days", "Borderline affective instability under interpersonal stress"],
     answer: 1,
     explanation:
       "ADHD symptoms are trait-like and continuous; a distinct episode of change with decreased sleep need, grandiosity and pressured speech lasting at least 4 days qualifies as hypomania if it lacks marked impairment, psychosis or hospitalisation. Mania requires 1 week (or hospitalisation) or marked impairment; risky driving alone without marked impairment does not make it mania. Brief reactive irritability fits BPD or ADHD, but a 6-day distinct episode does not.",
@@ -406,7 +406,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "Which pattern best differentiates bipolar depression from unipolar depression, on clinical grounds, in a patient with no prior mania?",
-    options: ["Later age at onset and a gradual, insidious onset of symptoms", "Early, abrupt onset, atypical or psychotic features, family history", "No family history of any mood disorder in first-degree relatives", "Prominent anxiety, middle insomnia and somatic complaints"],
+    options: ["Later age at onset and a gradual, insidious onset of symptoms", "Early, abrupt onset, atypical or psychotic features, family history", "No family history of any mood disorder in parents, siblings or children", "Prominent anxiety, middle insomnia and somatic complaints"],
     answer: 1,
     explanation:
       "Features suggesting a bipolar diathesis in a first depression include onset before about 25, abrupt onset, atypical features, psychotic features, postpartum onset, multiple brief recurrences, family history of bipolar disorder and hypomania on antidepressants (Mitchell and colleagues' probabilistic approach). Later, gradual onset with anxiety and insomnia leans unipolar. Absence of family history does not suggest bipolarity.",

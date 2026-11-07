@@ -63,7 +63,7 @@ export function PlacementRunner({ questions, previous, saving }: { questions: QV
         <div className="space-y-3 rounded-md border-2 border-foreground bg-card p-5 hard-shadow-md">
           <ul className="space-y-2">
             <li className="flex gap-2">
-              <Compass className="mt-0.5 size-5 shrink-0" aria-hidden /> {questions.length} questions across every topic, about 8 minutes.
+              <Compass className="mt-0.5 size-5 shrink-0" aria-hidden /> {questions.length} questions across every topic.
             </li>
             <li className="flex gap-2">
               <BadgeCheck className="mt-0.5 size-5 shrink-0" aria-hidden /> No marks and no rank. It only sets your starting level.

@@ -214,7 +214,7 @@ export const PART: PrepQuestion[] = [
       "Much less ice cream than unrestrained eaters",
       "More ice cream than when they had no milkshake",
       "Exactly as much as when they had no milkshake",
-      "Nothing, because they felt too full to taste",
+      "Nothing at all, because they felt too full to taste",
     ],
     answer: 1,
     explanation:
@@ -367,7 +367,7 @@ export const PART: PrepQuestion[] = [
       "Illness uncertainty",
       "Secondary gain",
       "Learned optimism",
-      "Repressive coping",
+      "Repressive coping style",
     ],
     answer: 0,
     explanation:

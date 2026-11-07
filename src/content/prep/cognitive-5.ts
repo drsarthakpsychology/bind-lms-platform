@@ -25,10 +25,10 @@ export const QUESTIONS_5: PrepQuestion[] = [
     type: "mcq",
     stem: "In Eleanor Rosch's account of categories, a 'prototype' is",
     options: [
-      "a list of necessary and sufficient features",
-      "the first member of a category a child learns",
-      "the least typical member of a category",
-      "the most typical or representative member, or an abstract average of the category",
+      "a list of necessary and sufficient defining features",
+      "the first member of a category that a child learns",
+      "the least typical member, which marks the category boundary",
+      "the most typical member of a category, or an abstract average of its members",
     ],
     answer: 3,
     explanation:
@@ -139,10 +139,10 @@ export const QUESTIONS_5: PrepQuestion[] = [
     type: "mcq",
     stem: "Seeing a man jump fully clothed into a swimming pool at a party, people readily classify him as 'drunk', though he resembles few drunk people they have seen. Murphy and Medin used such cases to argue that",
     options: [
-      "categorisation depends only on perceptual similarity",
+      "categorisation depends only on perceptual similarity to stored examples",
       "concepts are defined by necessary and sufficient features",
       "categorisation is guided by background theories that explain why features go together",
-      "people never use prototypes",
+      "people never use prototypes when judging behaviour",
     ],
     answer: 2,
     explanation:
@@ -177,9 +177,9 @@ export const QUESTIONS_5: PrepQuestion[] = [
     stem: "In Clark Hull's early concept-learning study, participants learnt nonsense names for Chinese characters that shared common parts (radicals). He found that",
     options: [
       "no learning took place",
-      "participants learnt only by memorising each character",
-      "participants could always state the rule before using it",
-      "participants came to name new characters correctly from the shared radical, often without being able to say what it was",
+      "participants learnt only by memorising each character separately",
+      "participants could always state the rule aloud before they used it correctly",
+      "they named new characters correctly, often unable to describe the radical",
     ],
     answer: 3,
     explanation:
@@ -211,8 +211,8 @@ export const QUESTIONS_5: PrepQuestion[] = [
     type: "mcq",
     stem: "'Things to take out of a burning house' is an ad hoc category, made up on the spot. Barsalou found that such categories",
     options: [
-      "show graded typicality organised around ideals (such as value to the owner) rather than around average features",
-      "have no internal structure at all",
+      "show graded typicality organised around ideals, such as value to the owner",
+      "have no internal structure, as all members are equally good",
       "are defined by necessary and sufficient features",
       "cannot be formed by adults",
     ],
@@ -231,7 +231,7 @@ export const QUESTIONS_5: PrepQuestion[] = [
     type: "mcq",
     stem: "In concept-learning experiments, a rule such as 'red OR circle' (an item qualifies if it has either feature) is",
     options: [
-      "a conjunctive concept, usually the easiest to learn",
+      "a conjunctive concept, usually the easiest kind for people to learn",
       "a relational concept",
       "a disjunctive concept, which people find harder to learn than conjunctive ones",
       "not a concept at all",
@@ -346,10 +346,10 @@ export const QUESTIONS_5: PrepQuestion[] = [
     type: "mcq",
     stem: "Judgements of learning (JOLs) predict later recall far better when they are made a minute or so after studying a pair than immediately after it. The best explanation of this 'delayed-JOL effect' is that",
     options: [
-      "a delay makes people more motivated",
-      "delayed JOLs are based on an attempt to retrieve the item from long-term memory, which is the same process needed at test",
+      "a delay makes people more motivated to judge carefully and honestly",
+      "delayed JOLs draw on a retrieval attempt from long-term memory, as the test does",
       "immediate JOLs are always too low",
-      "a delay improves memory itself",
+      "a delay improves memory itself, through consolidation of the pairs",
     ],
     answer: 1,
     explanation:
@@ -406,9 +406,9 @@ export const QUESTIONS_5: PrepQuestion[] = [
     stem: "Over several study-test cycles of the same word pairs, learners' judgements of learning tend to become lower than their actual recall. Koriat called this the 'underconfidence-with-practice' effect. In his cue-utilisation approach, it arises because",
     options: [
       "practice damages memory",
-      "learners stop paying attention",
+      "learners stop paying attention after the first cycle, so their judgements drift",
       "people always underestimate easy items",
-      "later JOLs rely heavily on memory of the previous test result, so items failed earlier stay rated low even after they have been learnt",
+      "later JOLs lean on memory of the last test result, so items failed earlier stay rated low",
     ],
     answer: 3,
     explanation:
@@ -471,9 +471,9 @@ export const QUESTIONS_5: PrepQuestion[] = [
     type: "mcq",
     stem: "Metcalfe's 'region of proximal learning' model predicts that, with limited study time, learners will tend to",
     options: [
-      "always study the hardest items first",
+      "always study the hardest items first, as discrepancy reduction predicts",
       "study items in random order",
-      "focus on items that are not yet learnt but are close to being learnt, moving to harder items as these are mastered",
+      "focus on items almost but not yet learnt, then move on to harder ones",
       "study only the items they already know",
     ],
     answer: 2,
@@ -512,10 +512,10 @@ export const QUESTIONS_5: PrepQuestion[] = [
     type: "mcq",
     stem: "Which of the following is the clearest example of metacognition?",
     options: [
-      "Remembering your friend's phone number",
+      "Remembering your friend's phone number when you need to call",
       "Recognising a face in a crowd",
       "Feeling hungry before lunch",
-      "Realising you have not understood a paragraph and deciding to reread it slowly",
+      "Realising you have not understood a paragraph and deciding to reread it",
     ],
     answer: 3,
     explanation:
@@ -661,10 +661,10 @@ export const QUESTIONS_5: PrepQuestion[] = [
     type: "mcq",
     stem: "Teresa Amabile's componential model of creativity names three components within the individual. Which set is correct?",
     options: [
-      "Fluency, flexibility and originality",
-      "Preparation, incubation and illumination",
+      "Fluency, flexibility and originality in divergent thinking",
+      "Preparation, incubation and illumination as stages of the creative process",
       "Person, process and product",
-      "Domain-relevant skills, creativity-relevant processes and intrinsic task motivation",
+      "Domain skills, creativity-relevant processes and intrinsic motivation",
     ],
     answer: 3,
     explanation:
@@ -681,14 +681,14 @@ export const QUESTIONS_5: PrepQuestion[] = [
     type: "mcq",
     stem: "Mihaly Csikszentmihalyi's systems model holds that creativity arises from the interaction of three parts. Which are they?",
     options: [
-      "The individual, the domain (a body of knowledge and rules) and the field (the experts who judge new work)",
+      "The individual, the domain of knowledge and the field of expert judges",
       "Fluency, flexibility and originality",
       "Id, ego and superego",
-      "Planning, attention and simultaneous processing",
+      "Planning, attention and simultaneous and successive processing",
     ],
     answer: 0,
     explanation:
-      "In the systems model, an individual changes a domain, and the field of gatekeepers decides whether the change is accepted and passed on; creativity is not only inside the person. Fluency, flexibility and originality are test scores. Id, ego and superego are Freud's structures. Planning, attention and simultaneous processing are parts of PASS theory.",
+      "In the systems model, an individual changes a domain (a body of knowledge and rules), and the field of gatekeepers who judge new work decides whether the change is accepted and passed on; creativity is not only inside the person. Fluency, flexibility and originality are test scores. Id, ego and superego are Freud's structures. Planning, attention and simultaneous and successive processing make up PASS theory of intelligence.",
     module: M,
     ref: "Csikszentmihalyi 1996",
   },
@@ -701,7 +701,7 @@ export const QUESTIONS_5: PrepQuestion[] = [
     type: "mcq",
     stem: "Mel Rhodes grouped approaches to creativity into 'four Ps'. These are",
     options: [
-      "preparation, planning, practice and performance",
+      "preparation, planning, practice and public performance",
       "power, pressure, play and purpose",
       "person, process, press (environment) and product",
       "perception, problem, proof and persistence",
@@ -721,10 +721,10 @@ export const QUESTIONS_5: PrepQuestion[] = [
     type: "mcq",
     stem: "Shepard and Metzler showed pairs of drawings of 3-D block figures and asked whether they were the same object rotated. They found that reaction time",
     options: [
-      "was the same for all angles",
+      "was the same for all angles of rotation tested",
       "increased linearly with the angle of rotation between the two figures",
-      "decreased as the angle increased",
-      "depended only on the colour of the figures",
+      "decreased as the angle between the figures increased",
+      "depended only on the colour and shading of the figures",
     ],
     answer: 1,
     explanation:
@@ -756,14 +756,14 @@ export const QUESTIONS_5: PrepQuestion[] = [
     type: "mcq",
     stem: "Kosslyn had people memorise a map of an island and then mentally 'scan' from one landmark to another. Scanning time increased with the distance between landmarks. Kosslyn took this to show that",
     options: [
-      "images are stored only as verbal descriptions",
+      "images are stored only as verbal descriptions, which list the landmarks in order",
       "people cannot form mental images",
       "scanning is unrelated to imagery",
-      "mental images preserve spatial properties such as distance, so they are depictive representations",
+      "mental images preserve spatial properties such as distance",
     ],
     answer: 3,
     explanation:
-      "If images keep the spatial layout of what they represent, moving across a longer distance should take longer, which is what happened. Purely verbal (propositional) codes do not obviously contain distance, so 'stored only as verbal descriptions' conflicts with his interpretation. People clearly formed images. The task was designed to study imagery directly.",
+      "If images keep the spatial layout of what they represent, moving across a longer distance should take longer, which is what happened, so Kosslyn called images depictive. A verbal list of landmarks would not obviously contain distance, so 'stored only as verbal descriptions' conflicts with his interpretation. People clearly formed images. The task was designed to study imagery directly.",
     module: M,
     ref: "Kosslyn, Ball & Reiser 1978",
   },
@@ -796,9 +796,9 @@ export const QUESTIONS_5: PrepQuestion[] = [
     stem: "According to Allan Paivio's dual coding theory, concrete words such as 'elephant' are remembered better than abstract words such as 'justice' because",
     options: [
       "concrete words can be stored in both a verbal code and an imagery code",
-      "concrete words are always shorter",
-      "abstract words cannot be stored in memory",
-      "concrete words are learnt later in life",
+      "concrete words are always shorter and so easier to rehearse",
+      "abstract words cannot be stored in memory at all",
+      "concrete words are learnt later in life, so they are fresher",
     ],
     answer: 0,
     explanation:
@@ -859,7 +859,12 @@ export const QUESTIONS_5: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "Which method has the best temporal resolution (in milliseconds) for tracking brain activity during a cognitive task?",
-    options: ["fMRI", "EEG and event-related potentials", "PET", "Structural MRI"],
+    options: [
+      "fMRI of the BOLD signal",
+      "EEG and event-related potentials",
+      "PET with a short-lived radioactive tracer",
+      "Structural MRI scanning",
+    ],
     answer: 1,
     explanation:
       "EEG records electrical activity directly, so event-related potentials can track processing millisecond by millisecond. fMRI measures a slow blood-oxygen response that takes seconds. PET is slower still. Structural MRI shows anatomy, not activity over time.",
@@ -960,10 +965,10 @@ export const QUESTIONS_5: PrepQuestion[] = [
     type: "mcq",
     stem: "Tulving's HERA model (hemispheric encoding/retrieval asymmetry) proposes that, in episodic memory,",
     options: [
-      "the left hemisphere handles both encoding and retrieval",
+      "the left hemisphere handles both encoding and retrieval of all episodes",
       "the hippocampus is not involved",
       "encoding and retrieval show no differences in brain activity",
-      "the left prefrontal cortex is relatively more active during encoding and the right prefrontal cortex during retrieval",
+      "left prefrontal cortex is more active during encoding, right prefrontal during retrieval",
     ],
     answer: 3,
     explanation:
@@ -980,8 +985,8 @@ export const QUESTIONS_5: PrepQuestion[] = [
     type: "mcq",
     stem: "The 'default mode network' (including medial prefrontal cortex, posterior cingulate cortex and angular gyrus) is best described as a network that",
     options: [
-      "is most active during demanding visual search",
-      "is more active during rest, mind-wandering, recalling one's past and imagining the future, and is usually suppressed during demanding external tasks",
+      "is most active during demanding visual search and other externally focused, effortful tasks",
+      "is more active at rest, in mind-wandering, recalling the past and imagining the future",
       "controls only motor movements",
       "is found only in people with schizophrenia",
     ],

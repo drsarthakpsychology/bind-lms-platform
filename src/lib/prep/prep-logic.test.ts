@@ -67,7 +67,7 @@ describe("one shared course (exam tracks off)", () => {
   });
   it("names the section and the three exams, without dashes", () => {
     expect(PREP_TITLE).toBe("Psychology Entrance & Competitive Exam Preparation");
-    expect(PREP_EXAMS.join(" · ")).toBe("CUET-PG · UGC-NET · Clinical Psychology Entrances (M.Clin.Psy) · MD Psychiatry");
+    expect(PREP_EXAMS.join(" · ")).toBe("CUET PG · UGC NET · Clinical Psychology Entrances · MD Psychiatry");
     expect(PREP_TITLE + PREP_EXAMS.join("")).not.toMatch(/[\u2013\u2014]/);
   });
   it("weights every subject, averaged over the exams, summing to 1", () => {
@@ -206,7 +206,7 @@ describe("sampling", () => {
     const mean = picked.reduce((a, p) => a + p.p, 0) / picked.length;
     expect(mean).toBeGreaterThan(0.3);
   });
-  it("practice prefers questions near the 70–85 % band for a strong student", () => {
+  it("practice prefers questions near the 70 to 85 % band for a strong student", () => {
     const picked = pickPractice(SAMPLE_QUESTIONS, "statistics", { theta: 2.5, b: () => undefined, due: () => false }, makeRng(6), new Map(), 2);
     // At theta 2.5: easy (b -1) → 0.97, medium (b 0) → 0.92, hard (b 1) → 0.82 (core), very hard (b 1.8) → 0.67.
     expect(picked.map((p) => p.id)).toContain("st-3");

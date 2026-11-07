@@ -165,7 +165,7 @@ export const PART: PrepQuestion[] = [
     options: [
       "Rumination, magnification and helplessness",
       "Sensory, affective and evaluative pain",
-      "Intensity, frequency and duration of pain",
+      "Intensity, frequency and duration of the pain",
       "Acceptance, values and committed action",
     ],
     answer: 0,
@@ -413,7 +413,7 @@ export const PART: PrepQuestion[] = [
     stem: "Which statement about depression after a heart attack is best supported by evidence?",
     options: [
       "It is rare, affecting fewer than 2 percent of patients",
-      "It has no effect on survival once heart damage is known",
+      "It has no effect on survival once the extent of heart damage is known",
       "It is common and linked to higher later cardiac mortality",
       "It always resolves on its own within two weeks",
     ],

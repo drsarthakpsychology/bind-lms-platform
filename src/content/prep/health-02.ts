@@ -15,7 +15,7 @@ export const PART: PrepQuestion[] = [
     options: [
       "How brain injury changes personality and judgement",
       "How the mind, nervous system and immune system interact",
-      "How infections in childhood affect later intelligence",
+      "How infections in early childhood affect later intelligence",
       "How psychiatric drugs are broken down by the liver",
     ],
     answer: 1,
@@ -54,7 +54,7 @@ export const PART: PrepQuestion[] = [
     stem: "In Kiecolt-Glaser's studies, women caring for a husband or mother with dementia received a small standard skin wound. Compared with matched non-caregivers, their wounds:",
     options: [
       "Healed faster, because stress boosts inflammation",
-      "Healed at the same rate, since wound repair is purely local",
+      "Healed at the same rate, since wound repair is a purely local process",
       "Took significantly longer to heal, by over a week on average",
       "Became infected in nearly every case within a few days",
     ],
@@ -73,7 +73,7 @@ export const PART: PrepQuestion[] = [
     stem: "Cohen's viral challenge studies gave healthy volunteers nasal drops containing cold viruses and then kept them in quarantine. Which finding came from this work?",
     options: [
       "People with more diverse social ties were less likely to develop a cold",
-      "Stress raised infection only in volunteers who already smoked heavily",
+      "Stress raised infection only in volunteers who already smoked heavily every day",
       "Acute stress lasting under a day carried the highest risk of a cold",
       "Social ties had no effect once the dose of virus had been controlled",
     ],
@@ -262,7 +262,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "In Ajzen's Theory of Planned Behaviour, the three factors that predict a person's intention are:",
-    options: ["Attitude, subjective norm and perceived behavioural control", "Perceived susceptibility, severity and cues to action", "Precontemplation, contemplation and preparation for action", "Response efficacy, self-efficacy and response costs"],
+    options: ["Attitude, subjective norm and perceived behavioural control", "Perceived susceptibility, perceived severity and cues to action", "Precontemplation, contemplation and preparation for action", "Response efficacy, self-efficacy and response costs"],
     answer: 0,
     explanation:
       "Attitude is how positive or negative the behaviour seems, subjective norm is perceived social pressure from important others, and perceived behavioural control is how easy or difficult the behaviour seems. These shape intention, which then predicts behaviour; perceived control can also predict behaviour directly. Susceptibility, severity and cues come from the Health Belief Model. The stages come from the Transtheoretical Model. Response efficacy, self-efficacy and response costs make up coping appraisal in Protection Motivation Theory.",
@@ -292,7 +292,7 @@ export const PART: PrepQuestion[] = [
     type: "mcq",
     stem: "Meta-analyses of the Theory of Planned Behaviour report that, on average, its variables explain:",
     options: [
-      "Almost all of the variance in intention and in behaviour",
+      "Almost all of the variance in intention and in later behaviour",
       "About 39 percent of intention and 27 percent of behaviour",
       "None of the variance once past behaviour is controlled",
       "More of behaviour than of intention, by a wide margin",
@@ -381,7 +381,7 @@ export const PART: PrepQuestion[] = [
     stem: "In the Transtheoretical Model, which process of change is most suited to moving a person from precontemplation to contemplation?",
     options: [
       "Stimulus control, such as removing ashtrays from the house",
-      "Reinforcement management, such as rewarding smoke-free days",
+      "Reinforcement management, such as rewarding each smoke-free day",
       "Counterconditioning, such as chewing gum instead of smoking",
       "Consciousness raising, such as learning the facts about risk",
     ],

@@ -29,6 +29,7 @@ const KIND_LABEL: Record<AchievementRequirement["kind"], string> = {
   xp: "Earn N XP",
   watch_seconds: "Watch N minutes",
   course_complete: "Complete a course",
+  module_tests_passed: "Course certificate: pass every module test at 80%",
 };
 
 function badgeTone(tone: string) {
@@ -100,6 +101,8 @@ export function AchievementsAdmin({
         return { kind, min: minMin * 60 };
       case "course_complete":
         return { kind, course_id: course };
+      case "module_tests_passed":
+        return { kind };
     }
   }
 

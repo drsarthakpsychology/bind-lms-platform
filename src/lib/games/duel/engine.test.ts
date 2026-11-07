@@ -195,3 +195,23 @@ describe("rating", () => {
     expect(tierFor(2000)).toBe("Mind");
   });
 });
+
+describe("view", () => {
+  it("shows the opponent's pick only after the round closes", async () => {
+    const { buildDuelView } = await import("./view");
+    const { duelItem } = await import("./items");
+    const m = match();
+    const r0 = right(m.seed, 0);
+    const start = T0 + COUNTDOWN_MS;
+    const answers: AnswerRec[] = [{ userId: "b", round: 0, dx: r0.dx, feature: r0.feature, at: start + 2000 }];
+    const extras = { names: { you: "You", opp: "B" }, ratings: { you: null, opp: null } };
+    const open = buildDuelView(m, answers, start + 3000, "a", duelItem, extras);
+    expect(open.phase).toBe("round");
+    expect(open.oppAnswered).toBe(true);
+    expect(open.closed).toHaveLength(0);
+    const closed = buildDuelView(m, answers, start + ROUND_MS + 10, "a", duelItem, extras);
+    expect(closed.closed[0].opp.dx).toBe(closed.closed[0].correctDx);
+    expect(closed.closed[0].opp.points).toBe(150);
+    expect(closed.closed[0].you.dx).toBeNull();
+  });
+});

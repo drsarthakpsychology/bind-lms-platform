@@ -131,6 +131,14 @@ export async function loadSeen(userId: string): Promise<Map<string, number>> {
   return out;
 }
 
+/** The question this student saw last (any mode), for resuming before prep_answers exists. */
+export async function loadLastSeen(userId: string): Promise<string | null> {
+  const db = admin();
+  if (!db || !userId) return null;
+  const r = (await rows(db.from("prep_seen").select("item").eq("user_id", userId).order("last_at", { ascending: false }).limit(1)))[0];
+  return r ? String(r.item) : null;
+}
+
 async function markSeen(db: Admin, userId: string, ids: string[], now: Date) {
   const list = [...new Set(ids)].slice(0, 300);
   if (!list.length) return;

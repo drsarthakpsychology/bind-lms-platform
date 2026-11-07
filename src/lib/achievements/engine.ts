@@ -1,5 +1,6 @@
 import type { StudyProgress } from "@/lib/learn/engine";
 import { MASTERY_TEST_PCT, type AnyRequirement, type ModuleFacet } from "./rules";
+import { CERTIFICATE_PASS_PCT, certificateFromStudy } from "./certificate";
 
 /**
  * Pure completion engine. Evaluates one configurable requirement against the
@@ -130,6 +131,16 @@ function evaluateRaw(req: AnyRequirement, ctx: EvalCtx): EvalResult {
       const need = Math.max(1, req.count ?? 1);
       const done = ctx.modules.filter((m) => isMastered(ctx, m)).length;
       return { ok: done >= need, reason: `${done}/${need} modules mastered` };
+    }
+    case "module_tests_passed": {
+      // The course certificate: every module test at 80% or more, any order, best score counts.
+      const c = certificateFromStudy(ctx.study);
+      return {
+        ok: c.eligible,
+        reason: c.eligible
+          ? `Passed all ${c.total} module tests at ${CERTIFICATE_PASS_PCT}% or more`
+          : `${c.passed.length} of ${c.total} module tests passed at ${CERTIFICATE_PASS_PCT}% or more`,
+      };
     }
     case "xp_total": {
       const total = n(ctx.xp) + n(ctx.ledgerXp);

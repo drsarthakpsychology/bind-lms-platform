@@ -202,7 +202,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Repeated, effortless regurgitation of recently eaten food, which is re-chewed, re-swallowed or spat out, for at least 1 month, without nausea or a gastrointestinal cause, is:",
-    options: ["Rumination disorder", "Bulimia nervosa", "ARFID", "Pica"],
+    options: ["Rumination disorder", "Bulimia nervosa", "Avoidant/restrictive food intake disorder", "Pica"],
     answer: 0,
     explanation:
       "Rumination disorder involves repeated regurgitation that is not due to a GI or medical condition and does not occur only during another eating disorder. Diaphragmatic breathing training is an effective intervention. Bulimia involves self-induced vomiting to compensate for binges. ARFID involves avoidance or restriction. Pica involves eating non-food substances.",
@@ -236,10 +236,10 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Which pharmacological agent for tobacco cessation is a partial agonist at α4β2 nicotinic acetylcholine receptors?",
-    options: ["Varenicline", "Bupropion", "Naltrexone", "Disulfiram"],
+    options: ["Varenicline", "Bupropion SR", "Naltrexone", "Disulfiram"],
     answer: 0,
     explanation:
-      "Varenicline is an α4β2 nicotinic partial agonist that reduces craving and the rewarding effect of smoking; in EAGLES it was the most effective monotherapy without excess neuropsychiatric events. Bupropion is a noradrenaline-dopamine reuptake inhibitor and nicotinic antagonist. Naltrexone is an opioid antagonist used for alcohol and opioid use disorders. Disulfiram inhibits aldehyde dehydrogenase for alcohol use disorder.",
+      "Varenicline is an α4β2 nicotinic partial agonist that reduces craving and the rewarding effect of smoking; in EAGLES it was the most effective monotherapy without excess neuropsychiatric events. Bupropion (sustained release) is a noradrenaline-dopamine reuptake inhibitor and nicotinic antagonist. Naltrexone is an opioid antagonist used for alcohol and opioid use disorders. Disulfiram inhibits aldehyde dehydrogenase for alcohol use disorder.",
     module: "substance",
     ref: "Anthenelli et al. 2016 EAGLES; Stahl",
   }),
@@ -269,7 +269,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "In DSM-5-TR, 'uncomplicated bereavement', 'relational problems' and 'nonadherence to medical treatment' are classified as:",
-    options: ["Other conditions that may be a focus of clinical attention (Z codes)", "Mental disorders listed in the trauma- and stressor-related chapter", "Personality disorders in the cluster C group", "Section III conditions proposed for further study"],
+    options: ["Other conditions that may be a focus of clinical attention (Z codes)", "Mental disorders listed in the trauma- and stressor-related disorders chapter", "Personality disorders in the cluster C group", "Section III conditions proposed for further study"],
     answer: 0,
     explanation:
       "These are 'other conditions that may be a focus of clinical attention', using ICD-10-CM Z codes (previously V codes). They allow clinicians to record relevant issues (e.g., parent-child relational problems, academic problems, housing problems) without implying a mental disorder. They are not trauma-chapter diagnoses, personality disorders or Section III proposals.",
@@ -317,7 +317,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "In DSM-5-TR, the 'with anxious distress' specifier severity is rated 'moderate' when how many of its five symptoms are present?",
-    options: ["Three", "Two", "Four", "Five"],
+    options: ["3", "2", "4", "5"],
     answer: 0,
     explanation:
       "Anxious distress severity is mild with two symptoms, moderate with three, moderate-severe with four or five, and severe with four or five plus motor agitation. Anxious distress is linked to higher suicide risk, longer illness and poorer treatment response, so DSM-5-TR encourages its assessment.",
@@ -369,7 +369,7 @@ export const PART: PrepQuestion[] = [
     stem: "A mother repeatedly brings her 3-year-old to different hospitals with 'seizures' that no one witnesses; the child is well when separated from her, and toxicology later shows sedatives. Under DSM-5-TR, the diagnosis is given to:",
     options: [
       "The mother: factitious disorder imposed on another",
-      "The child: factitious disorder imposed on self",
+      "The child: factitious disorder imposed on the self",
       "The child: conversion disorder",
       "Neither, as this is malingering",
     ],
@@ -408,7 +408,7 @@ export const PART: PrepQuestion[] = [
       "Bipolar I and bipolar II disorder",
       "Single-episode MDD",
       "Generalised anxiety disorder",
-      "Persistent depressive disorder",
+      "Persistent depressive disorder (dysthymia)",
     ],
     answer: 0,
     explanation:
@@ -423,7 +423,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "A 48-year-old former boxer has progressive memory decline, irritability and impulsivity after years of repeated head impacts. Which DSM-5-TR neurocognitive disorder subtype is most relevant?",
-    options: ["NCD due to traumatic brain injury", "NCD due to prion disease", "NCD due to HIV infection", "Substance/medication-induced NCD"],
+    options: ["NCD due to traumatic brain injury", "NCD due to prion disease", "NCD due to HIV infection", "Substance/medication-induced major or mild NCD"],
     answer: 0,
     explanation:
       "DSM-5-TR includes NCD due to traumatic brain injury, which requires evidence of TBI (loss of consciousness, post-traumatic amnesia, disorientation or neurological signs) with cognitive impairment immediately after injury or after recovery of consciousness. Chronic traumatic encephalopathy is a related neuropathological entity after repeated head impacts. Prion, HIV and substance-induced NCDs are separate subtypes with different causes.",

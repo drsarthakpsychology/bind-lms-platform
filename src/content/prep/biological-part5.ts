@@ -25,8 +25,8 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Heritability is best defined as:",
     options: [
-      "The percentage of a person's trait that comes from their genes",
-      "The proportion of variation in a trait within a particular population that is attributable to genetic differences among its members",
+      "The percentage of an individual person's trait that comes from their genes rather than upbringing",
+      "The proportion of variation in a trait within a population that is due to genetic differences",
       "The probability that a parent will pass a trait to a child",
       "The number of genes that influence a trait",
     ],
@@ -100,7 +100,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "All children in a family share the same environment",
       "Twins and non-twins have identical environments",
-      "MZ twins reared apart have identical environments",
+      "MZ twins reared apart have environments just as similar as MZ twins reared together",
       "MZ and DZ twins experience trait-relevant environments that are equally similar",
     ],
     answer: 3,
@@ -195,9 +195,9 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Phenylketonuria (PKU) is often cited in behaviour genetics because:",
     options: [
       "It is caused by an extra chromosome",
-      "It is a single-gene recessive disorder whose harmful effects on the brain can be prevented by an environmental change, a low-phenylalanine diet",
+      "It is a single-gene recessive disorder whose brain effects can be prevented by a low-phenylalanine diet",
       "It is entirely environmental",
-      "It is untreatable once diagnosed at birth",
+      "It is untreatable once diagnosed at birth, despite being caused by a single gene",
     ],
     answer: 1,
     explanation:
@@ -213,8 +213,8 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "A deletion on chromosome 7",
       "Trisomy of the X chromosome",
-      "Expansion of a CGG trinucleotide repeat in the FMR1 gene on the X chromosome, which silences the gene through methylation",
-      "A dominant mutation in the MECP2 gene",
+      "Expansion of a CGG repeat in the X-linked FMR1 gene, silencing it through methylation",
+      "A dominant mutation in the X-linked MECP2 gene that disrupts its protein",
     ],
     answer: 2,
     explanation:
@@ -297,9 +297,9 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Turkheimer and colleagues found that in a US sample of 7-year-olds, the heritability of IQ was:",
     options: [
-      "Higher in poor families than in affluent ones",
+      "Higher in poor families than in affluent ones, where shared environment dominated",
       "The same at all socioeconomic levels",
-      "Near zero in very poor families and much higher in affluent families, with shared environment explaining most variance in the poorest families",
+      "Near zero in very poor families and much higher in affluent ones",
       "Zero in all families",
     ],
     answer: 2,
@@ -315,13 +315,13 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "The heritability of general cognitive ability tends to:",
     options: [
       "Be highest in infancy",
-      "Decrease steadily from childhood to old age",
+      "Decrease steadily from childhood to old age as experience accumulates",
       "Stay constant at 50% across life",
-      "Increase from childhood to adulthood (about 40% in childhood to about 60 to 70% in adulthood)",
+      "Increase from childhood (about 40%) to adulthood (about 60 to 70%)",
     ],
     answer: 3,
     explanation:
-      "Twin data show heritability of about 41% at age 9, 55% at 12 and 66% at 17, rising further in adulthood (sometimes called the Wilson effect), while shared-environment effects decline. A likely reason is active gene-environment correlation: people increasingly choose environments that fit their dispositions. The other options are the reverse of this pattern.",
+      "Twin data show heritability of about 41% at age 9, 55% at 12 and 66% at 17, rising further in adulthood (sometimes called the Wilson effect), while shared-environment effects decline. A likely reason is active gene-environment correlation: people increasingly choose environments that fit their dispositions. It is lowest, not highest, in infancy; it rises rather than falls with age; and it does not stay fixed at 50%.",
     ref: "Haworth et al. 2010, Mol Psychiatry; Plomin & Deary 2015",
   }),
   b({
@@ -355,9 +355,9 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "In behaviour genetics, the 'non-shared environment' refers to:",
     options: [
       "The family's socioeconomic status",
-      "Environmental influences that make children in the same family different from one another",
+      "Influences that make children in the same family different from one another",
       "Genes that siblings do not share",
-      "The prenatal environment shared by twins",
+      "The prenatal environment that twins share inside the same womb",
     ],
     answer: 1,
     explanation:
@@ -399,8 +399,8 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "The strain difference was due to differences in vision",
       "Environmental conditions had no effect on the strains",
-      "Maze-bright rats were generally more intelligent on all tasks",
-      "Rearing in an enriched environment improved the dull rats so that the strain difference largely disappeared, while an impoverished environment made the bright rats perform poorly",
+      "Maze-bright rats were generally more intelligent on all tasks, whatever their rearing",
+      "Enriched rearing largely erased the strain difference, and restricted rearing made bright rats perform poorly",
     ],
     answer: 3,
     explanation:
@@ -430,8 +430,8 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "In epigenetics, DNA methylation at a gene's promoter usually:",
     options: [
-      "Reduces (silences) transcription of the gene without changing the DNA sequence",
-      "Changes the base sequence of the gene",
+      "Silences transcription of the gene without changing the DNA sequence",
+      "Changes the base sequence of the gene's promoter region",
       "Always increases gene expression",
       "Occurs only in germ cells",
     ],
@@ -448,7 +448,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Heijmans and colleagues studied people who had been conceived during the Dutch Hunger Winter of 1944 to 45. Six decades later these individuals showed:",
     options: [
       "Changes in the base sequence of IGF2",
-      "Less DNA methylation of the imprinted IGF2 gene than their same-sex siblings conceived at other times",
+      "Less DNA methylation of the imprinted IGF2 gene than their same-sex siblings",
       "No epigenetic differences from their siblings",
       "Increased methylation only in people exposed in late pregnancy",
     ],
@@ -465,7 +465,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Identical (monozygotic) twins develop from:",
     options: [
       "One egg fertilised by two sperm",
-      "Two eggs fertilised by two sperm",
+      "Two eggs released together and fertilised by two sperm",
       "A single fertilised egg that splits into two embryos",
       "Two eggs fertilised by one sperm",
     ],
@@ -525,8 +525,8 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Sir Francis Galton is associated with which of the following?",
     options: [
       "Discovering the structure of DNA",
-      "Studying eminence in families, coining 'nature and nurture', and early use of twins and of correlation",
-      "The laws of dominant and recessive inheritance in pea plants",
+      "Studying eminence in families, coining 'nature and nurture', and early use of twins and correlation",
+      "The laws of dominant and recessive inheritance worked out from crossing pea plants",
       "The first adoption study of schizophrenia",
     ],
     answer: 1,
@@ -562,8 +562,8 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Reaction time is inherited",
       "Genes determine behaviour completely",
-      "Environment can produce any phenotype regardless of genotype",
-      "A genotype sets upper and lower limits within which environment determines where the phenotype falls",
+      "Environment can produce any phenotype regardless of genotype, given enough enrichment",
+      "A genotype sets upper and lower limits within which environment decides the phenotype",
     ],
     answer: 3,
     explanation:
@@ -652,8 +652,8 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Adoption removes all environmental influence",
       "Adopted children share neither genes nor environment with anyone",
-      "Adoptive parents are chosen to be genetically similar to the child",
-      "Adopted children share genes with their biological parents and environment with their adoptive parents",
+      "Adoptive parents are deliberately chosen to be genetically similar to the child they are placed with",
+      "Adoptees share genes with their biological parents and environment with their adoptive parents",
     ],
     answer: 3,
     explanation:
@@ -667,8 +667,8 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Belsky and Pluess's 'differential susceptibility' hypothesis differs from the diathesis-stress model in proposing that:",
     options: [
-      "Some individuals are more sensitive to environments in both directions, doing worse in adverse and better in supportive conditions",
-      "Vulnerable individuals are affected only by adverse environments",
+      "Some people are more sensitive to environments in both directions, doing worse in bad and better in good ones",
+      "Vulnerable individuals are affected only by adverse environments, and are no better in good ones",
       "Genes have no role in sensitivity to environments",
       "Environment matters only in childhood",
     ],
@@ -783,8 +783,8 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "In psychiatric genetics, an 'endophenotype' is:",
     options: [
-      "The outward symptoms of the disorder itself",
-      "A measurable, heritable trait (for example smooth-pursuit eye-movement dysfunction or P50 gating) that lies between genes and a disorder and is found in unaffected relatives more often than in the general population",
+      "The outward symptoms of the disorder itself, as rated on a standard clinical scale",
+      "A measurable, heritable trait between genes and a disorder, also found more often in unaffected relatives",
       "A gene that directly causes the disorder",
       "A personality trait unrelated to illness",
     ],
@@ -800,7 +800,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Increasing expression of the NR2B subunit of the NMDA receptor in mouse forebrain ('Doogie' mice, created by Tang and colleagues) produced:",
     options: [
-      "Seizures without behavioural change",
+      "Seizures from excess NMDA activity, without any behavioural change",
       "Complete loss of memory",
       "Enhanced long-term potentiation and better learning and memory on several tasks",
       "Loss of dopamine neurons",
@@ -818,9 +818,9 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "A concordance rate in a twin study refers to:",
     options: [
       "The heritability of a trait",
-      "The correlation between twins on a continuous measure",
+      "The correlation between twins on a continuous measure such as IQ or height",
       "The percentage of twins in the population",
-      "The percentage of twin pairs in which, if one twin has a condition, the other also has it",
+      "The percentage of twin pairs in which, if one twin has a condition, the other has it too",
     ],
     answer: 3,
     explanation:

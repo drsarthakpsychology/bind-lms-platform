@@ -20,7 +20,7 @@ export async function TodaySuggestion({ className }: { className?: string }) {
   if (!s.placed && !s.weak) rows.push({ href: "/study/placement", icon: Compass, title: "Take the placement quiz", sub: "18 questions to set your level" });
   if (s.due) rows.push({ href: "/study/map/practice", icon: Repeat2, title: `${s.due} ${s.due === 1 ? "review" : "reviews"} due`, sub: "A mixed round brings them back" });
   if (s.weak) rows.push({ href: s.weak.practiceHref, icon: Zap, title: `Fix: ${s.weak.label}`, sub: "A short quiz on your weakest spot" });
-  rows.push({ href: "/games/coach", icon: Gamepad2, title: "Play Coach", sub: "Learn the words you mix up" });
+  rows.push({ href: "/prep/smart", icon: Gamepad2, title: "Smart practice", sub: "10 questions from your weak topics" });
 
   return (
     <section aria-labelledby="today-suggestion" className={className}>

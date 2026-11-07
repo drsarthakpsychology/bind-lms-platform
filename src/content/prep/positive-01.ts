@@ -303,7 +303,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "The Satisfaction With Life Scale, developed by Ed Diener's group, is best described as:",
-    options: ["A 5-item measure of global life satisfaction", "A 60-item inventory of the Big Five traits", "A projective test using pictures of people", "A clinician-rated interview for depression"],
+    options: ["A 5-item measure of global life satisfaction", "A 60-item inventory of the Big Five traits", "A projective test using pictures of people", "A clinician-rated structured interview for depression"],
     answer: 0,
     explanation:
       "The SWLS has five statements, such as 'In most ways my life is close to my ideal', rated from 1 (strongly disagree) to 7 (strongly agree), giving scores from 5 to 35 with 20 as the neutral point. It measures the cognitive part of subjective well-being and is used worldwide, including in India. It is not a personality inventory, a projective test or a diagnostic interview.",
@@ -463,7 +463,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 4,
     type: "mcq",
     stem: "Kahneman and Deaton reported that day-to-day emotional well-being stopped rising above a certain income, while life evaluation kept rising. A later 'adversarial collaboration' with Killingsworth, who had found no plateau, concluded that:",
-    options: ["Income has no link with either emotional well-being or life evaluation", "The original plateau held for everyone, so the later data were wrong", "For most, feelings keep rising with income; only the least happy plateau", "Life evaluation falls at high incomes because of stress and long hours"],
+    options: ["Income has no link with either emotional well-being or life evaluation", "The original plateau held for everyone, so the later data were wrong", "For most, feelings keep rising with income; only the least happy plateau", "Life evaluation falls at high incomes because of work stress and long hours"],
     answer: 2,
     explanation:
       "The joint reanalysis found that for most people emotional well-being keeps rising with log income, but among the least happy group (roughly the bottom fifth) it rises up to a moderate income and then levels off, because more money does not relieve their particular sources of misery. This reconciled the two findings. Income is linked to both outcomes, neither original result was simply wrong, and life evaluation does not fall at high income.",
@@ -514,7 +514,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "The World Happiness Report ranks countries mainly using the 'Cantril ladder', which asks people to:",
-    options: ["Count how many times they smiled the day before", "List their character strengths in order of strength", "Report their monthly income, savings and debts", "Rate their life from worst possible (0) to best (10)"],
+    options: ["Count how many times they smiled the day before", "List their 24 character strengths in order of strength", "Report their monthly income, savings and debts", "Rate their life from worst possible (0) to best (10)"],
     answer: 3,
     explanation:
       "The Cantril ladder is a life evaluation item: imagine a ladder from 0 (worst possible life) to 10 (best possible life) and say where you stand now. It reflects the cognitive part of subjective well-being. National rankings also examine factors such as income, social support, healthy life expectancy, freedom, generosity and perceived corruption. The ladder does not count smiles, rank character strengths or ask about income and debts; those would measure affect, traits or objective circumstances rather than life evaluation.",

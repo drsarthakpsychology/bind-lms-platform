@@ -12,7 +12,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "Carl Rogers's three 'core conditions' offered by the counsellor are:",
-    options: ["Advice, reassurance and accurate interpretation", "Assessment, diagnosis and treatment planning", "Confrontation, homework and positive reinforcement", "Empathy, unconditional positive regard and congruence"],
+    options: ["Advice, reassurance and accurate interpretation", "Assessment, diagnosis and treatment planning", "Confrontation, homework and systematic positive reinforcement", "Empathy, unconditional positive regard and congruence"],
     answer: 3,
     explanation:
       "Rogers held that change happens when the counsellor offers accurate empathic understanding, unconditional positive regard (warm acceptance without conditions) and congruence (being genuine, not hiding behind a professional front). Advice and interpretation, a medical sequence, or confrontation and homework do not describe his core conditions.",
@@ -45,7 +45,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "In Rogers's theory, 'conditions of worth' develop when:",
-    options: ["A child learns that love and approval depend on being a certain way", "A child is given love and approval without any conditions at all", "A child reaches the formal operational stage of thinking", "A child is punished at school for every mistake made"],
+    options: ["A child learns that love and approval depend on being a certain way", "A child is given love and approval without any conditions attached at all", "A child reaches the formal operational stage of thinking", "A child is punished at school for every mistake made"],
     answer: 0,
     explanation:
       "When significant others value the child only under certain conditions ('I love you when you are quiet and get good marks'), the child takes in these conditions and disowns experiences that do not fit. This creates incongruence between self-concept and experience. Unconditional love prevents conditions of worth. Formal operations is Piaget's stage, and school punishment is not the specific mechanism Rogers described.",
@@ -102,7 +102,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Unconditional positive regard means that the counsellor:",
-    options: ["Agrees with and approves of everything the client does", "Accepts the client's worth, even when not approving of acts", "Never shows any feeling or reaction during sessions", "Praises the client warmly at the end of every session"],
+    options: ["Agrees with and approves of everything the client says and does", "Accepts the client's worth, even when not approving of acts", "Never shows any feeling or reaction during sessions", "Praises the client warmly at the end of every session"],
     answer: 1,
     explanation:
       "Unconditional positive regard is warm acceptance of the person's worth, regardless of what they say or do, which allows them to explore without fear of judgement. It does not mean approving of all behaviour, being emotionally blank, or giving routine praise, which can itself feel conditional.",
@@ -390,7 +390,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "A client lists many problems: low marks, money worries, poor sleep, a broken phone and conflict with his father. In Egan's terms, helping him choose 'a problem with leverage' means choosing:",
-    options: ["One that would make a real difference and ease others too", "The problem he happened to mention last in the session", "The problem the counsellor finds most interesting", "All of them at once, with equal time for each"],
+    options: ["One that would make a real difference and ease others too", "The problem he happened to mention last in the first session", "The problem the counsellor finds most interesting", "All of them at once, with equal time for each"],
     answer: 0,
     explanation:
       "Egan's principle of leverage asks which problem, if handled, would make the biggest difference, is within the client's control, and might ease other problems. Choosing by order, counsellor interest, or trying everything at once tends to scatter effort and reduce progress.",
@@ -416,7 +416,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "Empathy differs from sympathy mainly in that empathy:",
-    options: ["Means feeling sorry for the client and their situation", "Means agreeing with the client's opinions and choices", "Means sharing similar personal stories with the client", "Means sensing the client's world 'as if' it were one's own"],
+    options: ["Means feeling sorry for the client and their situation", "Means agreeing with the client's opinions and choices", "Means sharing similar personal stories of one's own with the client", "Means sensing the client's world 'as if' it were one's own"],
     answer: 3,
     explanation:
       "Rogers described empathy as sensing the client's world 'as if' it were one's own, without losing the 'as if' quality. Sympathy is feeling sorry for someone, which can create distance or pity. Empathy is not agreement, and sharing personal stories is self-disclosure.",
@@ -450,7 +450,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "Indian writers have pointed out that a purely non-directive person-centred approach may fit some Indian clients less well because:",
-    options: ["Indian clients rarely experience strong emotions", "Empathy is not valued in Indian culture", "Many expect a more guiding helper and decide with family", "Person-centred counselling is not permitted in India"],
+    options: ["Indian clients rarely experience strong emotions", "Empathy is not valued in Indian culture", "Many expect a more guiding helper and decide with family", "Person-centred counselling is not legally permitted in most of India"],
     answer: 2,
     explanation:
       "Writers such as Neki and later Indian counselling researchers note that many clients expect a respected helper to offer guidance, and that family and community play a big part in decisions. Counsellors can keep the core conditions while being more structured or including family when appropriate. Emotions and empathy are certainly valued in India, and the approach is not banned.",
@@ -479,7 +479,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "Which non-verbal behaviour by a counsellor usually helps a client feel listened to?",
-    options: ["Glancing at the phone now and then while the client speaks", "Crossing arms tightly and leaning back in the chair", "A relaxed posture, suitable eye contact and occasional nods", "Writing notes steadily without looking up at the client"],
+    options: ["Glancing at the phone now and then while the client is speaking", "Crossing arms tightly and leaning back in the chair", "A relaxed posture, suitable eye contact and occasional nods", "Writing notes steadily without looking up at the client"],
     answer: 2,
     explanation:
       "Attending behaviour, including relaxed posture, culturally appropriate eye contact, a warm voice and nods, shows interest and encourages the client to keep talking. Using a phone, a closed posture or constant note-taking signal disinterest or distance.",

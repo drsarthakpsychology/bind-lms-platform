@@ -163,7 +163,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "Which statement about the course of borderline personality disorder is best supported by longitudinal studies (e.g., McLean Study of Adult Development, CLPS)?",
-    options: ["Most patients stay fully symptomatic throughout their adult life", "Remission of diagnostic criteria is uncommon within the first 10 years", "Most remit symptomatically by 10 years; full functional recovery is rarer", "Impulsive symptoms such as self-harm are the most persistent features"],
+    options: ["Most patients stay fully symptomatic throughout their adult life", "Remission of diagnostic criteria is uncommon within the first 10 years of follow-up", "Most remit symptomatically by 10 years; full functional recovery is rarer", "Impulsive symptoms such as self-harm are the most persistent features"],
     answer: 2,
     explanation:
       "Zanarini's McLean study found that about 85 to 90% remitted symptomatically over 10 to 16 years, with low recurrence, but fewer achieved full recovery of social and vocational functioning. Impulsive and self-harm symptoms resolve fastest, while affective symptoms (emptiness, abandonment fears, dysphoria) persist longest, which is the reverse of the claim that impulsive symptoms are the most persistent. This challenges the old view that PD is lifelong and unchangeable.",
@@ -176,7 +176,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "The DSM-5-TR general criteria for personality disorder require that the enduring pattern is manifested in at least two of which areas?",
-    options: ["Memory, attention, language and visual perception", "Mood, sleep, appetite and daily energy levels", "Cognition, affectivity, relating and impulse control", "Occupation, education, housing and personal finance"],
+    options: ["Memory, attention, language and visuospatial perception", "Mood, sleep, appetite and daily energy levels", "Cognition, affectivity, relating and impulse control", "Occupation, education, housing and personal finance"],
     answer: 2,
     explanation:
       "General Criterion A requires a pattern of inner experience and behaviour that deviates markedly from cultural expectations in at least two of: cognition (ways of perceiving self, others and events), affectivity, interpersonal functioning and impulse control. It must be inflexible, pervasive, stable, and traceable to adolescence or early adulthood. The other options list cognitive domains, depressive symptoms or social circumstances.",
@@ -302,10 +302,10 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Which instrument is a semi-structured interview developed for diagnosing DSM personality disorders?",
-    options: ["MMPI-2", "NEO-PI-R", "16PF", "SCID-5-PD"],
+    options: ["MMPI-2-RF", "NEO-PI-R", "16PF", "SCID-5-PD"],
     answer: 3,
     explanation:
-      "The SCID-5-PD (Structured Clinical Interview for DSM-5 Personality Disorders) is a clinician-administered semi-structured interview for the ten DSM-5 PDs; the IPDE (WHO) is another. The MMPI-2 is a self-report inventory of psychopathology. The NEO-PI-R measures the Big Five. The 16PF (Cattell) measures normal personality factors.",
+      "The SCID-5-PD (Structured Clinical Interview for DSM-5 Personality Disorders) is a clinician-administered semi-structured interview for the ten DSM-5 PDs; the IPDE (WHO) is another. The MMPI-2-RF is a self-report inventory of psychopathology. The NEO-PI-R measures the Big Five. The 16PF (Cattell) measures normal personality factors.",
     module: "assessment",
     ref: "First et al. SCID-5-PD",
   }),

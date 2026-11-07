@@ -1,12 +1,9 @@
 import { redirect } from "next/navigation";
 
 /**
- * /today is retired as the front door (the "main light" is gone). Students land
- * on /dashboard, where each part carries its own small resume affordance (the
- * course's "Continue/Start" row, the practice hub's "Recommended for you"
- * card). This route now just forwards anyone with an old bookmark to /dashboard
- * instead of 404ing.
+ * /today ("Today's practice") folded into Smart practice in Exam Prep
+ * (plan section 8). Old bookmarks and links land there instead of a 404.
  */
 export default function TodayRedirectPage() {
-  redirect("/dashboard");
+  redirect("/prep/smart");
 }

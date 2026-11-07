@@ -27,6 +27,7 @@ import type { DailyCase } from "@/lib/games/daily/types";
 import { flagAiCase, getAiPracticeCase, loadAiCase } from "@/lib/ai-cases";
 import { AI_TOPICS } from "@/lib/ai-cases/criteria";
 import { rateLimit } from "@/lib/rate-limit";
+import { availableProviders, isEnabled, PROVIDER_PRIORITY, PROVIDERS } from "@/lib/ai/router";
 
 export type DailyMeta = {
   day: string;
@@ -261,9 +262,19 @@ export async function nextAiCase(input: { topic?: string | null; setting?: "indi
   const avg = history.length ? history.reduce((a, r) => a + r.score, 0) / history.length : 50;
   const difficulty = avg >= 70 ? 3 : avg >= 40 ? 2 : 1;
   const got = await getAiPracticeCase({ userId: me.id, topic, setting, difficulty, exclude });
-  if (!got) return { ok: false, error: "No AI case is ready right now. Try again in a minute, or play a practice case." };
+  if (!got) {
+    // No stored case and no case could be made. When no AI provider key is
+    // set on this site, say so to admins (students get the calm line only).
+    const off = !isEnabled() ? "AI is switched off on this site (AI_ENABLED is false)." : availableProviders().length === 0 ? `No AI key is set on this site. Add one of: ${AI_KEY_NAMES}.` : null;
+    if (off) console.warn(`[ai-cases] AI case cannot run: ${off}`);
+    if (off && me.admin) return { ok: false, error: `AI cases are off. ${off}` };
+    return { ok: false, error: "AI cases are not available right now." };
+  }
   return { ok: true, caseId: got.case.id };
 }
+
+/** The env var names of the AI providers that can write a case, in the order they are tried. */
+const AI_KEY_NAMES = PROVIDER_PRIORITY.json.map((id) => PROVIDERS.find((p) => p.id === id)?.apiKeyEnv).filter(Boolean).join(", ");
 
 /** A student says an AI case looks wrong. It leaves practice until an admin checks it. */
 export async function flagAiCaseAction(input: { caseId: string; reason: string }): Promise<{ ok: boolean; message: string }> {

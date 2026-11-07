@@ -12,7 +12,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "In classical psychoanalysis, the 'fundamental rule' asks the patient to:",
-    options: ["Complete written homework between sessions", "Keep a daily diary of automatic thoughts", "Relax deeply before beginning to speak", "Say whatever comes to mind, without censoring"],
+    options: ["Complete structured written homework between sessions", "Keep a daily diary of automatic thoughts", "Relax deeply before beginning to speak", "Say whatever comes to mind, without censoring"],
     answer: 3,
     explanation:
       "Freud's fundamental rule is free association: the patient reports thoughts, feelings and images as they arise, even if they seem trivial, embarrassing or irrelevant. The places where associations stop or swerve point to resistance and unconscious conflict. Homework and thought diaries belong to CBT, and deep relaxation belongs to behaviour therapy and hypnosis, which Freud gave up.",
