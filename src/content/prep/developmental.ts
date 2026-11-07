@@ -5,6 +5,10 @@ import { QUESTIONS as part3 } from "./developmental-part3";
 import { QUESTIONS as part4 } from "./developmental-part4";
 import { QUESTIONS as part5 } from "./developmental-part5";
 import { QUESTIONS as part6 } from "./developmental-part6";
+import { QUESTIONS_X01 } from "./developmental-x01";
+import { QUESTIONS_X02 } from "./developmental-x02";
+import { QUESTIONS_X03 } from "./developmental-x03";
+import { QUESTIONS_X04 } from "./developmental-x04";
 
 /**
  * Foundations first: topics keep their order, and within each topic easier
@@ -17,4 +21,4 @@ function byLevel(qs: PrepQuestion[]): PrepQuestion[] {
 }
 
 /** Question bank · developmental. Parts are split by topic; ids are stable. */
-export const QUESTIONS: PrepQuestion[] = byLevel([...part1, ...part2, ...part3, ...part4, ...part5, ...part6]);
+export const QUESTIONS: PrepQuestion[] = byLevel([...part1, ...part2, ...part3, ...part4, ...part5, ...part6, ...QUESTIONS_X01, ...QUESTIONS_X02, ...QUESTIONS_X03, ...QUESTIONS_X04]);
