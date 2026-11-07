@@ -21,7 +21,7 @@ export function toPoints(text: string | undefined | null, max = 12): string[] {
     .replace(/\s*\n\s*/g, (m, off, str) => (/[A-Z(]/.test(str[off + m.length] ?? "") ? "\n" : " "));
   const parts = clean
     .split(/\n|•|;\s+|(?<=[a-z0-9)%])\.\s+(?=[A-Z])|(?<=\))\s+(?=[A-Z][a-z])/)
-    .map((p) => p.replace(/\s+/g, " ").replace(/^[-–—*\s]+/, "").replace(/[.\s]+$/, "").trim())
+    .map((p) => p.replace(/\s+/g, " ").replace(/^[-\u2013\u2014*\s]+/, "").replace(/[.\s]+$/, "").trim())
     .filter((p) => p.length > 1);
   return parts.slice(0, max);
 }

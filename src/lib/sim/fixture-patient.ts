@@ -111,7 +111,13 @@ export function runFixtureTurn(
   // thread the patient left dangling is an EARNED disclosure. Only a
   // genuinely justified state (irritation or guardedness high) may deflect.
   const lastPatientLine = [...recentTurns].reverse().find((t) => t.role === "patient")?.content ?? "";
-  const trailedOff = /(\.\.\.|\u2014|…)\s*$/.test(lastPatientLine.trim()) || /\b(we|it|they|he|she)\.\.\.\s*$/.test(lastPatientLine.trim());
+  const lastLine = lastPatientLine.trim();
+  const trailedOff =
+    /(\.\.\.|\u2014|…)\s*$/.test(lastLine) ||
+    /\b(we|it|they|he|she)\.\.\.\s*$/.test(lastLine) ||
+    // A broken-off clause followed by a stage direction ("Two years ago we… (pauses) it's just this.")
+    // also leaves the thread hanging, whatever filler follows it.
+    /(\.\.\.|\u2014|…)\s*\((?:pauses?|trails off|stops|looks away|goes quiet)[^)]*\)/i.test(lastLine);
   const threadPicked = trailedOff && studentTurn.trim().length > 15;
   const earnedDisclosure = threadPicked && s.irritation < 7 && s.guardedness < 8;
 

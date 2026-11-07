@@ -151,7 +151,7 @@ The Mental Healthcare Act 2017 (MHCA) replaced the Mental Health Act 1987. It is
 2. **Workforce**: too few psychiatrists, clinical psychologists, psychiatric nurses and social workers to deliver the right to care.
 3. **Families**: Indian care relies heavily on families; critics argue the Act underplays their role in decision-making, while others welcome protection from family coercion.
 4. **Advance directives**: low awareness and practical difficulty in emergencies.
-5. **Section 115 and the Indian Penal Code**: the relationship with the older penal provision on attempted suicide created confusion; the presumption of stress protects most people but the drafting was criticised. (Check how the new criminal codes treat this when you write your exam.)
+5. **Section 115 and the Indian Penal Code**: the relationship with the older penal provision on attempted suicide created confusion; the presumption of stress protects most people but the drafting was criticised. The new criminal code (BNS, in force from 1 July 2024) dropped the general offence of attempted suicide and keeps only attempting suicide to compel or restrain a public servant (BNS section 226).
 6. **Homeless and rural populations** remain hard to reach.
 
 ### Conclusion

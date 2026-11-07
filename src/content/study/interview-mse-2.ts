@@ -244,6 +244,10 @@ Mood is sustained, internal and subjective, so record it in the patient's own wo
 | Exaltation | Severe: intense elation with delusions of grandeur | Mania, stage III |
 | Ecstasy | Very severe: intense rapture | Delirious or stuporous mania |
 
+:::widget layers
+{"title": "The ladder of elevated mood", "shape": "stack", "layers": [{"label": "Ecstasy", "detail": "Very severe: intense rapture. Seen in delirious or stuporous mania."}, {"label": "Exaltation", "detail": "Severe: intense elation with delusions of grandeur. Mania, stage III."}, {"label": "Elation", "detail": "Moderate: confidence, enjoyment and increased activity. Mania, stage II."}, {"label": "Euphoria", "detail": "Mild: a sense of well-being out of keeping with events. Hypomania."}, {"label": "Euthymia", "detail": "Normal mood, neither depressed nor elevated."}], "caption": "Tap each rung from the bottom up. Each step adds intensity, and from exaltation upwards, psychotic features."}
+:::
+
 ### Terms of affect
 | Term | Definition |
 |---|---|
@@ -295,6 +299,10 @@ Mood is sustained, internal and subjective, so record it in the patient's own wo
 - **Depression versus negative symptoms.** Both reduce expression. Depressed affect is sad and painful; blunted affect in schizophrenia is often indifferent. Ask about subjective distress.
 - **Pseudobulbar affect** (after stroke, MS, ALS): sudden crying or laughing out of proportion to feeling. The patient often says, "I'm not as sad as I look."
 - **Culture.** Some communities express emotion with restraint before strangers. Judge against what is usual for the person, ideally with an informant.
+:::
+
+:::widget compare
+{"title": "Mood and affect", "a": {"label": "Mood", "points": ["Sustained: lasts for some time", "Internal and subjective", "Recorded in the patient's own words, in quotation marks", "Like the climate"], "summary": "Mood: 'I feel empty all the time', written as the patient says it."}, "b": {"label": "Affect", "points": ["Moment to moment", "External and observed", "Recorded in your words, as a clinical description", "Like the weather"], "summary": "Affect: 'Restricted range, tearful at times, congruent with mood', written as you observe it."}, "caption": "When the two do not match, say so: a patient who reports feeling fine while crying shows incongruent affect."}
 :::
 
 :::recall
@@ -399,6 +407,10 @@ A thought process characterised by a series of ideas **without apparent logical 
 | Verbigeration | Senseless repetition of the same words or phrases over and over |
 | Concrete thinking | Loss of the abstract attitude: the literal aspect of a symbol is used instead of its meaning, though vocabulary is retained |
 | Poverty of content of speech | Enough speech, but it conveys little information. (Poverty of speech = the amount itself is reduced) |
+
+:::widget flow
+{"title": "From a detour to word salad", "layout": "chain", "nodes": [{"id": "c", "label": "Circumstantiality", "detail": "Many needless details, but the speaker gets back to the point in the end."}, {"id": "t", "label": "Tangentiality", "detail": "Drifts off on a side track and never returns to the question."}, {"id": "d", "label": "Derailment", "detail": "Ideas slip from one track to an unrelated one, with no logical link between them."}, {"id": "i", "label": "Incoherence", "detail": "Even within a sentence the words do not connect sensibly."}, {"id": "w", "label": "Word salad", "detail": "A jumble of words with no apparent meaning: the extreme end."}], "caption": "Play the chain: each step loses more of the link between ideas. Circumstantiality is not formal thought disorder; from derailment onwards, it is."}
+:::
 
 ### Depth for a distinction: the classical descriptions [extra]
 - **Bleuler**: schizophrenia as a disorder of associations: condensation (two ideas blended into one false concept), displacement (one idea used for an associated idea), misuse of symbols (concrete thinking).
@@ -519,6 +531,10 @@ Normally we experience our thinking as our own and under our control. In some il
 | Thought broadcasting | Thoughts escape the self and are experienced by others around |
 | Thought echo | Voices speak the patient's thoughts aloud |
 
+:::widget compare
+{"title": "Overvalued idea or delusion?", "a": {"label": "Overvalued idea", "points": ["An understandable belief, often shared to some degree by others", "Held with great importance and emotion, but not absolute certainty", "Dominates the person's life", "Example: a firm belief that one is too fat, in anorexia"], "summary": "Overvalued idea: understandable and intensely held, but not fully fixed."}, "b": {"label": "Delusion", "points": ["A false belief not shared by the person's culture", "Held with absolute certainty", "Not changed by clear evidence", "Example: 'The government has put a chip in my teeth'"], "summary": "Delusion: fixed, false and out of keeping with culture."}, "caption": "Ask: is it understandable given the person's background, and could any evidence shift it a little? Both answers 'no' point towards a delusion."}
+:::
+
 ### Schneider's first-rank symptoms: where each is recorded
 | Symptom | Recorded under |
 |---|---|
@@ -599,6 +615,10 @@ What distinguishes a hallucination from true perception is that it comes from wi
 
 :::word Follow-up once a hallucination is elicited
 What was heard? How many voices? Male or female? What time of day? How does the patient interpret it? Second or third person? Any commands? During wakefulness, or hypnagogic or hypnopompic?
+:::
+
+:::widget flow
+{"title": "Disorders of perception", "layout": "tree", "nodes": [{"id": "r", "label": "Disorders of perception", "detail": "Two big families."}, {"id": "dist", "label": "Sensory distortions", "detail": "A real object is perceived, but changed.", "parent": "r"}, {"id": "dec", "label": "Sensory deceptions", "detail": "A new perception arises.", "parent": "r"}, {"id": "d1", "label": "Changes in intensity or quality", "detail": "Sounds seem very loud in anxiety or mania; colours look dull in depression.", "parent": "dist"}, {"id": "d2", "label": "Changes in size or shape", "detail": "Objects look smaller (micropsia) or larger (macropsia), as in some epilepsy and migraine.", "parent": "dist"}, {"id": "il", "label": "Illusion", "detail": "A real stimulus is misperceived: a coat on a hook seen as a man in the dark room.", "parent": "dec"}, {"id": "ha", "label": "Hallucination", "detail": "A perception with no external stimulus, felt as real and in outer space.", "parent": "dec"}, {"id": "ps", "label": "Pseudohallucination", "detail": "Vivid, but experienced in inner space or recognised as not real.", "parent": "dec"}], "caption": "First ask: is there a real object? If yes, it is a distortion or an illusion; if no, it is a hallucination or pseudohallucination."}
 :::
 
 ### Causes of hallucinations [extra]
@@ -766,6 +786,10 @@ Note any amnesia (anterograde or retrograde) and **confabulation**: a false memo
 The ability to think logically, act rationally and deal effectively with the environment.
 :::
 Assess with general knowledge questions matched to education and background (current prime minister, capital of the country, states), reading, writing, and simple sums: “Something costs ₹3.75 and you pay ₹5; how much change?” “A dozen oranges cost ₹48; what do three cost?”
+
+:::widget memoryflow
+{"title": "What the memory tests in the MSE examine", "caption": "Digit span tests attention and working memory: the middle box. Three-word recall after five minutes tests whether new information is encoded into long-term memory and retrieved: recent memory. Asking about childhood, or a famous event years ago, tests remote memory that was stored long ago. In delirium the first step fails; in early Alzheimer's disease, encoding of new memories fails while old ones remain."}
+:::
 
 ### 7 · Abstract thinking
 Abstract thinking is the ability to (a) assume a mental set voluntarily; (b) shift from one aspect of a situation to another; (c) keep several aspects in mind at once; (d) grasp the essentials of a whole; (e) break a whole into parts.

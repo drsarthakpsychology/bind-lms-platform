@@ -20,8 +20,16 @@ Psychology tries to:
 3. **Predict**: when will it happen? (Which students are most likely to develop severe anxiety?)
 4. **Control or change**: can we influence it for the better? (Does a school-based relaxation programme reduce it?)
 
+:::widget flow
+{"title": "The four goals of psychology, one problem", "layout": "chain", "nodes": [{"id": "d", "label": "Describe", "detail": "What happens, and how often? A survey finds that many Class 12 students report severe exam anxiety."}, {"id": "e", "label": "Explain", "detail": "Why? Studies link it to perfectionism, parental pressure and poor sleep."}, {"id": "p", "label": "Predict", "detail": "Who is most at risk? Students high in perfectionism who sleep under six hours can be flagged early."}, {"id": "c", "label": "Control or change", "detail": "Can we help? A school relaxation and sleep programme is tested to see whether it lowers anxiety."}], "edgeLabels": {"d>e": "then ask why", "e>p": "use the cause", "p>c": "step in"}, "caption": "Each goal builds on the one before. You cannot change what you cannot explain, and you cannot explain what you have not described."}
+:::
+
 ### Basic and applied
 **Basic research** seeks knowledge for its own sake (how memory is organised). **Applied research** solves practical problems (how to help older adults remember to take their medicines). The line is blurry: basic memory research led to better ways of studying.
+
+:::widget compare
+{"title": "Basic or applied research?", "a": {"label": "Basic", "points": ["Asks how something works", "Knowledge for its own sake", "How is memory organised?", "May find uses only years later"], "summary": "Basic research builds the theory that applied work stands on."}, "b": {"label": "Applied", "points": ["Asks how to solve a practical problem", "Knowledge for use now", "How can older adults remember their tablets?", "Often leads to new basic questions"], "summary": "Applied research turns theory into help. The line is blurry: memory theory led straight to better study methods."}}
+:::
 
 ### Levels and perspectives
 A single behaviour can be studied at several **levels of analysis**: **biological** (genes, brain, hormones), **psychological** (thoughts, emotions, learning) and **social-cultural** (family, community, culture). Together these make the **biopsychosocial** approach.
@@ -149,6 +157,10 @@ An in-depth study of one person, group or event. **Phineas Gage** (frontal lobe 
 ### Correlational research
 A **correlation** measures how strongly two variables move together, from −1 through 0 to +1. A correlation of +0.6 between hours of sleep and exam marks means more sleep tends to go with higher marks.
 
+:::widget compare
+{"title": "A correlational study or an experiment?", "a": {"label": "Correlational", "points": ["Measures two variables as they are", "Sleep hours and exam marks in 300 students", "Shows whether and how strongly they move together", "Cannot show which causes which, or rule out a third factor"], "summary": "Use it when you cannot or should not manipulate the variable, such as smoking or poverty."}, "b": {"label": "Experiment", "points": ["Manipulates one variable, measures another", "Students randomly assigned to 8 or 5 hours of sleep before a test", "Holds everything else constant", "Can show cause and effect"], "summary": "Only an experiment with random assignment can show that one thing causes another."}}
+:::
+
 :::trap Correlation is not causation
 If sleep and marks are correlated, sleep might improve marks, good marks might reduce worry and improve sleep (**reverse causation**), or a third factor such as a calm home environment might improve both (**third-variable problem**). Only an experiment can test cause directly.
 :::
@@ -160,6 +172,10 @@ An **experiment** is the only method that can establish **cause and effect**. Th
 3. Uses **random assignment** so that groups are equal on average before the manipulation.
 4. Keeps everything else constant to avoid **confounding variables**.
 5. Compares an **experimental group** with a **control group**.
+
+:::widget sort
+{"prompt": "A study in Pune: students are randomly assigned to learn a word list with music playing or in silence, then their recall is counted. Everyone studies for 10 minutes, in the same room, at the same time of day. Label each part.", "buckets": ["Independent variable", "Dependent variable", "Controlled variable", "Balanced by random assignment"], "items": [{"text": "Music or silence while studying", "bucket": 0, "why": "This is what the researcher changes on purpose."}, {"text": "Number of words recalled", "bucket": 1, "why": "This is what is measured to see the effect."}, {"text": "Ten minutes of study for everyone", "bucket": 2, "why": "Kept the same so it cannot explain a difference."}, {"text": "The same room and the same time of day", "bucket": 2, "why": "Held constant by design."}, {"text": "How well each student slept the night before", "bucket": 3, "why": "It cannot be held constant, but random assignment spreads good and poor sleepers evenly across both groups."}, {"text": "Each student's natural memory ability", "bucket": 3, "why": "Random assignment makes the groups equal on average."}]}
+:::
 
 :::widget decide
 {
@@ -201,6 +217,10 @@ An **experiment** is the only method that can establish **cause and effect**. Th
 ### Ethics
 Modern research follows ethical codes (APA; in India, the ICMR's national ethical guidelines for biomedical and health research). Core principles: **informed consent**, **right to withdraw**, **confidentiality**, **minimising harm**, and **debriefing** after any deception. Studies such as Milgram's obedience experiments and the Stanford prison study pushed these rules into place.
 
+:::widget decide
+{"scene": "Ritika, an MA student in Jaipur, plans a study of exam anxiety in Class 9. Her plan: hand out a questionnaire in class, ask for names so she can match scores to marks, and not tell parents because 'it is only a questionnaire'. Some items ask about thoughts of self-harm.", "ask": "What should her supervisor tell her?", "choices": [{"label": "Go ahead: questionnaires carry no risk", "verdict": "harm", "outcome": "Minors take part without parental consent, names link sensitive answers, and a student who reports self-harm thoughts gets no help.", "why": "Children cannot give full consent alone, and self-harm items create a duty to act. This breaks consent, confidentiality and minimising harm."}, {"label": "Get the principal's written permission, then proceed as planned", "verdict": "ok", "outcome": "The school is informed, but parents and students are not asked, and the safety gap remains.", "why": "Institutional permission is needed but does not replace parental consent and the child's own assent."}, {"label": "Get ethics approval, school permission, parental consent and each student's assent; use codes instead of names; explain the right to withdraw; and set up a referral path to the school counsellor for any student who reports self-harm thoughts", "verdict": "best", "outcome": "The study runs safely, and a few at-risk students are connected to help.", "why": "This covers informed consent and assent, confidentiality, the right to withdraw and minimising harm, which are the core principles of research ethics with children."}]}
+:::
+
 :::clinician
 Two methodological issues dominate PG discussions. First, **WEIRD samples**: Henrich, Heine and Norenzayan (2010) showed that most published participants are Western, Educated, Industrialised, Rich and Democratic, yet are often the least typical humans on visual illusions, fairness, self-concept and moral reasoning. Indian samples are under-represented and often urban, English-speaking and student-based, which limits generalisation even within India. Second, the **replication crisis**: a large collaborative project in 2015 repeated 100 studies from leading psychology journals; about 97% of originals had significant results versus about 36% of replications, with effect sizes roughly halved. Responses include pre-registration, registered reports, larger samples and open data. Detailed design, sampling and statistics are taught in the research methods and statistics modules; here the aim is to place the methods in the history of the discipline.
 :::
@@ -238,6 +258,10 @@ Psychology became a separate science in the late 1800s, but its questions are an
 - **René Descartes** (1600s): **mind-body dualism**: mind and body are different substances that interact (he suggested the pineal gland as the meeting point); the body works like a machine through **reflexes**. "I think, therefore I am."
 - **British empiricists**: **John Locke** said the mind at birth is a **tabula rasa** (blank slate) written on by experience; **Berkeley**, **Hume**, **Hartley** and **James Mill** developed **associationism**, the idea that complex ideas are built from simple ones by association. **John Stuart Mill** added **mental chemistry**: combined ideas can produce something new, as water differs from hydrogen and oxygen.
 - **Immanuel Kant**: the mind brings built-in categories (space, time, causality) to experience; he also doubted that the mind could ever be measured.
+
+:::widget compare
+{"title": "Where does knowledge come from?", "a": {"label": "Rationalism and nativism", "points": ["Plato, Descartes, Kant", "Some knowledge is inborn or built into the mind", "Reason is the main route to truth", "The mind brings categories such as space, time and cause"], "summary": "The sheet comes pre-printed. Modern echoes: Chomsky's universal grammar and infant core knowledge."}, "b": {"label": "Empiricism and associationism", "points": ["Aristotle, Locke, Hume, the Mills", "The mind starts as a blank slate", "Knowledge comes through the senses", "Complex ideas are built by association"], "summary": "Experience writes on the sheet. Modern echoes: learning theory and behaviourism."}, "caption": "This is the start of the nature-nurture debate. Today's answer is that both matter, and they interact."}
+:::
 
 :::analogy The great debate in one image
 Locke: the mind is a blank sheet that experience writes on. Plato and Kant: the sheet comes pre-printed with lines and margins. The **nature-nurture** debate starts here, and modern psychology's answer is that both matter and interact.
@@ -296,6 +320,10 @@ Locke: the mind is a blank sheet that experience writes on. Plato and Kant: the 
 - **Voluntarism**: the mind actively organises experience (apperception).
 - The **tridimensional theory of feeling**: pleasant-unpleasant, tension-relaxation, excitement-calm.
 - **Völkerpsychologie** (folk or cultural psychology, in ten volumes): higher mental processes such as language, myth and custom must be studied through cultural products, not laboratory introspection.
+
+:::widget timeline
+{"prompt": "Order the steps that turned psychology from philosophy into a laboratory science.", "events": [{"label": "Weber shows the just noticeable difference is a fixed fraction", "when": "1834"}, {"label": "Helmholtz measures the speed of the nerve impulse", "when": "1850"}, {"label": "Fechner founds psychophysics", "when": "1860"}, {"label": "Wundt opens the first psychology laboratory at Leipzig", "when": "1879"}, {"label": "Ebbinghaus publishes the first experiments on memory", "when": "1885"}, {"label": "William James publishes his great textbook of psychology", "when": "1890"}], "why": "Physiology and psychophysics showed that mental events could be timed and measured. Wundt then gave psychology its own laboratory, and the new science spread quickly."}
+:::
 
 Around him:
 - **Hermann Ebbinghaus** (1885) studied memory on himself with **nonsense syllables** and drew the **forgetting curve**: rapid loss soon after learning, then a slower decline.
@@ -378,6 +406,10 @@ India did not have "psychology departments" until the twentieth century, but it 
 | Self | A construct: self-concept, identity | Layers of self; a deeper self (atman) behind the changing ego |
 | Method | Third-person observation and experiment | Also **first-person**, trained contemplation (meditation, self-inquiry) |
 | Good life | Wellbeing, adjustment | Equanimity, non-attachment, wisdom, service |
+
+:::widget compare
+{"title": "Two traditions, two emphases", "a": {"label": "Western academic psychology", "points": ["Goal: explain and predict behaviour", "Consciousness: a product of the brain", "Self: a construct such as self-concept", "Method: third-person observation and experiment", "Good life: wellbeing and adjustment"], "summary": "Strong on measurement, testing and replication."}, "b": {"label": "Indian traditions", "points": ["Goal: understand and transform the self", "Consciousness: fundamental, the central topic", "Self: layers, with a deeper atman behind the ego", "Method: also trained first-person contemplation", "Good life: equanimity, non-attachment, wisdom"], "summary": "Strong on inner experience and on practices for changing it."}, "caption": "The two are not rivals. Mindfulness research is one place where they have already met."}
+:::
 
 ### Two ideas you will meet everywhere
 **The three gunas (triguna)**, from Samkhya: everything in nature, including the mind, is a mix of three qualities:
@@ -598,6 +630,10 @@ In its first decades psychology was a set of competing **schools**, each with it
 
 Each element has attributes such as quality, intensity, duration and clearness. His method was strict **introspection** by trained observers, who had to avoid the **stimulus error**: describing the object ("a book") instead of the raw experience ("a patch of red, rectangular, bright").
 
+:::widget compare
+{"title": "Structuralism or functionalism?", "a": {"label": "Structuralism", "points": ["Titchener, at Cornell", "What is consciousness made of?", "Sensations, images and affections", "Trained introspection, avoiding the stimulus error", "Adult human minds only"], "summary": "Structuralism broke the mind into elements, and died with Titchener largely because introspection could not settle disputes."}, "b": {"label": "Functionalism", "points": ["James, Dewey, Angell and Carr", "What is consciousness for?", "A continuous stream that helps us adapt", "Many methods, including tests and observation", "Animals, children, individual differences, education"], "summary": "Functionalism, shaped by Darwin, widened psychology and gave rise to applied psychology."}}
+:::
+
 Structuralism faded after Titchener's death in 1927. Its legacy: it made psychology an experimental science and gave the other schools something to rebel against.
 
 :::trap Wundt is not a structuralist
@@ -760,6 +796,10 @@ In the 1950s and 1960s **Abraham Maslow** and **Carl Rogers** described a **"thi
 - The **self-concept**, **unconditional positive regard**, **empathy** and **congruence** (Rogers' person-centred therapy),
 - The **whole person** and subjective experience, studied through phenomenological methods.
 
+:::widget flow
+{"title": "The three forces in psychology", "layout": "tree", "nodes": [{"id": "q", "label": "What drives human behaviour?", "detail": "By the middle of the twentieth century, three big answers competed."}, {"id": "p", "label": "First force: psychoanalysis", "parent": "q", "detail": "Freud: unconscious drives and early conflicts. People are pushed by forces they do not see."}, {"id": "b", "label": "Second force: behaviourism", "parent": "q", "detail": "Watson and Skinner: behaviour is shaped by the environment through conditioning. Study only what can be observed."}, {"id": "h", "label": "Third force: humanism", "parent": "q", "detail": "Maslow and Rogers: free will, the self and growth towards self-actualisation. Study the whole person and their experience."}], "caption": "Humanism called itself the third force because it rejected both the 'dark forces' of psychoanalysis and the 'machine' of behaviourism."}
+:::
+
 **Existential psychology** (Rollo May, Viktor Frankl's logotherapy) shares this concern with meaning, freedom, anxiety and death. **Transpersonal psychology** (Maslow later, Stanislav Grof, Ken Wilber) studies experiences beyond the individual ego: peak, mystical and meditative states, and was called the **fourth force**. It draws openly on Indian and Buddhist traditions.
 
 ### The cognitive revolution
@@ -769,6 +809,10 @@ By the 1950s behaviourism could not explain language, problem solving or memory 
 - **Noam Chomsky**'s **review of Skinner's book on language** (1959): children produce sentences they have never heard, so language cannot be learned by reinforcement alone.
 - **Newell and Simon**'s computer programs that solved problems, and the **computer metaphor** of the mind as an information processor.
 - **Ulric Neisser**'s 1967 textbook gave the new field its name: **cognitive psychology**.
+
+:::widget timeline
+{"prompt": "Put the founding moments of the big schools of psychology in order.", "events": [{"label": "Wundt's Leipzig laboratory; Titchener later builds structuralism on it", "when": "1879"}, {"label": "James describes the stream of consciousness, the root of functionalism", "when": "1890"}, {"label": "Freud publishes his first major book, on dreams and the unconscious", "when": "1900"}, {"label": "Wertheimer's phi phenomenon starts Gestalt psychology", "when": "1912"}, {"label": "Watson's behaviourist manifesto", "when": "1913"}, {"label": "Maslow and Rogers launch humanistic psychology, the third force", "when": "1950s"}, {"label": "Neisser names cognitive psychology", "when": "1967"}], "why": "Psychoanalysis, Gestalt and behaviourism all appeared within about 15 years of each other. Humanism and the cognitive revolution were reactions, mostly against behaviourism."}
+:::
 
 ### Multiculturalism and beyond
 From the 1980s, **multicultural and cross-cultural psychology** argued that most theories were built on narrow samples and that culture shapes the mind (sometimes called a "fourth force" too). Indian indigenous psychology belongs partly to this movement.
@@ -855,6 +899,10 @@ The idea of a **witness (sakshi)** that observes thoughts without being them has
 }
 :::
 
+:::widget hypnogram
+{"caption": "Modern sleep science maps a night in stages. Drag through it: dreaming (svapna) is most vivid in REM, and deep dreamless sleep (sushupti) is closest to N3. Then switch on depression to see how the night changes."}
+:::
+
 ### The inner instrument (antahkarana)
 Vedanta describes the mind as a fourfold **inner instrument**:
 | Part | Function | Modern parallel |
@@ -863,6 +911,10 @@ Vedanta describes the mind as a fourfold **inner instrument**:
 | **Buddhi** | Decides, discerns, judges | Executive function, judgement |
 | **Ahamkara** | The "I-maker": owns experience as "mine" | Ego, self-concept |
 | **Chitta** | Storehouse of impressions and memories | Long-term memory, implicit memory |
+
+:::widget layers
+{"title": "The fourfold inner instrument (antahkarana)", "shape": "stack", "layers": [{"label": "Manas", "detail": "Receives sense data, deliberates and doubts. Modern parallel: sensory processing and working memory."}, {"label": "Buddhi", "detail": "Decides, discerns and judges. Modern parallel: executive function and judgement."}, {"label": "Ahamkara", "detail": "The 'I-maker' that owns experience as 'mine'. Modern parallel: ego and self-concept."}, {"label": "Chitta", "detail": "The storehouse of impressions (samskaras) and memories. Modern parallel: long-term and implicit memory."}], "caption": "Tap each part. Vedanta sees all four as instruments of a deeper self, not the self itself."}
+:::
 
 ### The Bhagavad Gita
 The **Gita** (700 verses in 18 chapters, within the Mahabharata) opens with **Arjuna's despair** (vishada) on the battlefield: trembling, a dry mouth, confusion and a wish to give up. Krishna's teaching that follows is often read as one of the oldest recorded counselling dialogues. Its key psychological ideas:
@@ -965,6 +1017,10 @@ The **Yoga Sutras** of **Patanjali** (dates are uncertain, often placed between 
 3. **Vikalpa**: verbal construction or imagination with no real object.
 4. **Nidra**: sleep.
 5. **Smriti**: memory.
+
+:::widget sort
+{"prompt": "Which of Patanjali's five vrittis (fluctuations of the mind) is each?", "buckets": ["Pramana", "Viparyaya", "Vikalpa", "Nidra", "Smriti"], "items": [{"text": "Seeing smoke on the hill and correctly inferring a fire", "bucket": 0, "why": "Correct knowledge, here by inference."}, {"text": "Seeing a coiled rope at dusk as a snake", "bucket": 1, "why": "Error: false knowledge of a real object."}, {"text": "Thinking about 'the horns of a hare'", "bucket": 2, "why": "A verbal idea with no real object behind it."}, {"text": "Deep dreamless sleep", "bucket": 3, "why": "Nidra is itself counted as a fluctuation."}, {"text": "Recalling your grandmother's kitchen", "bucket": 4, "why": "Bringing back a past impression."}]}
+:::
 
 **Two means** (1.12): **abhyasa** (steady practice) and **vairagya** (non-attachment).
 
@@ -1092,6 +1148,10 @@ The UGC NET syllabus lists these three by name, along with the Gita.
 | 2. **Samudaya** | Cause | Suffering arises from **craving (tanha)** |
 | 3. **Nirodha** | Prognosis | Suffering can end (nirvana) |
 | 4. **Magga** | Treatment | The **Noble Eightfold Path** |
+
+:::widget flow
+{"title": "The Four Noble Truths as a medical model", "layout": "chain", "nodes": [{"id": "a", "label": "Dukkha: the diagnosis", "detail": "Life involves suffering and dissatisfaction, including the subtle unease of change and loss."}, {"id": "b", "label": "Samudaya: the cause", "detail": "Suffering arises from craving (tanha): clinging to what is pleasant and pushing away what is not."}, {"id": "c", "label": "Nirodha: the prognosis", "detail": "Suffering can end. The end of craving is nirvana."}, {"id": "d", "label": "Magga: the treatment", "detail": "The Noble Eightfold Path: right view, intention, speech, action, livelihood, effort, mindfulness and concentration."}], "edgeLabels": {"a>b": "why?", "b>c": "can it end?", "c>d": "how?"}, "caption": "Diagnosis, cause, prognosis, treatment: the same order a clinician follows. Mindfulness-based therapies borrow from the last step."}
+:::
 
 **The Eightfold Path** in three groups:
 - **Wisdom (panna)**: right view, right intention.

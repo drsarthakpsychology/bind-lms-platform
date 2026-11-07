@@ -1,5 +1,5 @@
 /**
- * Enriched antidepressant content — structured, student-safe, quote-first.
+ * Enriched antidepressant content: structured, student-safe, quote-first.
  *
  * One entry per drug: a student plain-language summary (what it is, what it is
  * for, the one thing to remember) plus a clinical summary (mechanism, common
@@ -481,12 +481,12 @@ export const ENRICHED_ANTIDEPRESSANTS: EnrichedAntidepressant[] = [
     generic_name: "Doxepin",
     drug_class: "Tricyclic antidepressant (TCA)",
     plain_language:
-      "A very sedating TCA used for depression/anxiety and, at very low doses (3–6 mg), for insomnia. A topical form treats itching. Remember: low-dose doxepin is essentially an antihistamine sleep aid, not an antidepressant dose.",
+      "A very sedating TCA used for depression/anxiety and, at very low doses (3 to 6 mg), for insomnia. A topical form treats itching. Remember: low-dose doxepin is essentially an antihistamine sleep aid, not an antidepressant dose.",
     mechanism:
-      "At antidepressant doses blocks SERT and NET; at low (3–6 mg) doses potently blocks H1 histamine receptors to promote sleep.",
+      "At antidepressant doses blocks SERT and NET; at low (3 to 6 mg) doses potently blocks H1 histamine receptors to promote sleep.",
     common_uses: [
       "Major depressive disorder and anxiety",
-      "Insomnia (3–6 mg at bedtime, Silenor)",
+      "Insomnia (3 to 6 mg at bedtime, Silenor)",
       "Pruritus/dermatitis (topical)",
       "Neuropathic/chronic pain",
     ],
@@ -535,7 +535,7 @@ export const ENRICHED_ANTIDEPRESSANTS: EnrichedAntidepressant[] = [
     generic_name: "Protriptyline",
     drug_class: "Tricyclic antidepressant (TCA)",
     plain_language:
-      "A TCA for depression that is the most activating (least sedating) of the TCAs. It is dosed at unusually low and frequent amounts (15–40 mg/day in 3–4 doses). Remember: it can be very anticholinergic and cause insomnia and activation.",
+      "A TCA for depression that is the most activating (least sedating) of the TCAs. It is dosed at unusually low and frequent amounts (15 to 40 mg/day in 3 to 4 doses). Remember: it can be very anticholinergic and cause insomnia and activation.",
     mechanism:
       "Blocks NET (norepinephrine > serotonin), boosting noradrenergic transmission.",
     common_uses: [
@@ -588,7 +588,7 @@ export const ENRICHED_ANTIDEPRESSANTS: EnrichedAntidepressant[] = [
     generic_name: "Lofepramine",
     drug_class: "Tricyclic antidepressant (TCA)",
     plain_language:
-      "A TCA used for depression (available in the UK, not the US). It is less sedating and less cardiotoxic than older TCAs. Remember: its dose (140–210 mg/day) is unusual compared with most TCAs.",
+      "A TCA used for depression (available in the UK, not the US). It is less sedating and less cardiotoxic than older TCAs. Remember: its dose (140 to 210 mg/day) is unusual compared with most TCAs.",
     mechanism:
       "Blocks NET (norepinephrine > serotonin), boosting noradrenergic transmission.",
     common_uses: [
@@ -663,7 +663,7 @@ export const ENRICHED_ANTIDEPRESSANTS: EnrichedAntidepressant[] = [
       "Hypertensive crisis with tyramine",
     ],
     monitoring: [
-      "Blood pressure (before and 45–60 min after dose)",
+      "Blood pressure (before and 45 to 60 min after dose)",
       "Hepatic function (high dose/long-term)",
       "Weight/BMI",
       "Tyramine diet adherence",
@@ -691,7 +691,7 @@ export const ENRICHED_ANTIDEPRESSANTS: EnrichedAntidepressant[] = [
       "Hypertensive crisis with tyramine",
     ],
     monitoring: [
-      "Blood pressure (before and 45–60 min after dose)",
+      "Blood pressure (before and 45 to 60 min after dose)",
       "Hepatic function (high dose/long-term)",
       "Tyramine diet adherence",
     ],
@@ -718,7 +718,7 @@ export const ENRICHED_ANTIDEPRESSANTS: EnrichedAntidepressant[] = [
       "Hypertensive crisis with tyramine",
     ],
     monitoring: [
-      "Blood pressure (before and 45–60 min after dose)",
+      "Blood pressure (before and 45 to 60 min after dose)",
       "Hepatic function (high dose/long-term)",
       "Tyramine diet adherence",
     ],
@@ -986,7 +986,7 @@ export const ENRICHED_ANTIDEPRESSANTS: EnrichedAntidepressant[] = [
     generic_name: "Agomelatine",
     drug_class: "Melatonergic antidepressant",
     plain_language:
-      "An antidepressant (not US-marketed) that acts on melatonin receptors to resynchronize the sleep–wake rhythm, plus blocks 5HT2C receptors. It does not raise serotonin. Remember: it can raise liver enzymes, so liver tests are required before and during treatment.",
+      "An antidepressant (not US-marketed) that acts on melatonin receptors to resynchronize the sleep-wake rhythm, plus blocks 5HT2C receptors. It does not raise serotonin. Remember: it can raise liver enzymes, so liver tests are required before and during treatment.",
     mechanism:
       "Agonist at melatonin MT1/MT2 receptors and antagonist at 5HT2C, increasing prefrontal dopamine/norepinephrine and resynchronizing circadian rhythm.",
     common_uses: [

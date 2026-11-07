@@ -126,7 +126,7 @@ export function typingIn(e: KeyboardEvent): boolean {
   return t.isContentEditable || t.tagName === "INPUT" || t.tagName === "TEXTAREA" || t.tagName === "SELECT";
 }
 
-/** Desktop shortcuts: 1–4 pick, N next, M mark. Ignored while typing or with modifier keys. */
+/** Desktop shortcuts: 1 to 4 pick, N next, M mark. Ignored while typing or with modifier keys. */
 export function useShortcuts(handlers: { pick?: (i: number) => void; next?: () => void; mark?: () => void }) {
   const ref = React.useRef(handlers);
   React.useEffect(() => {

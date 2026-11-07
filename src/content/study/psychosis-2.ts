@@ -21,6 +21,10 @@ Schizophrenia arises from **many small influences** adding up over development: 
 - **Urban upbringing**, **migration** and **minority status** (with discrimination and social defeat), and **childhood adversity**.
 - Stress acts on a vulnerable brain (the **stress-vulnerability model**, Zubin and Spring).
 
+:::widget guess
+{"prompt": "Compared with people who never use cannabis, how many times more likely is psychosis in those who use high-potency cannabis every day?", "min": 1, "max": 20, "step": 0.5, "unit": "times", "answer": [4, 6], "reveal": "About five times. Risk rises with how often, how strong and how young. Most cannabis users never become psychotic, but at a population level cannabis accounts for a real share of new cases where strong cannabis is common."}
+:::
+
 ### Brain chemistry (in outline)
 - **Dopamine**: excess dopamine release in the striatum is linked to positive symptoms; all current approved antipsychotics except one new class act on dopamine D2 receptors.
 - **Glutamate**: reduced NMDA receptor function (ketamine and PCP produce positive, negative and cognitive symptoms in healthy people) may sit upstream of the dopamine changes.
@@ -168,6 +172,10 @@ History (including collateral), MSE, risk (to self, from others, to others, of n
 | Cardiac | QT prolongation, orthostatic hypotension, tachycardia |
 | Other | Sedation, anticholinergic effects, seizures (clozapine) |
 
+:::widget compare
+{"title": "First and second generation antipsychotics", "a": {"label": "First generation (haloperidol, chlorpromazine)", "points": ["Strong D2 block", "More stiffness, tremor, restlessness and tardive dyskinesia", "More prolactin rise (also with risperidone)", "Cheaper; long-acting injections widely available"], "summary": "Older drugs: more movement side effects."}, "b": {"label": "Second generation (olanzapine, risperidone, aripiprazole)", "points": ["D2 block plus serotonin 2A block", "Fewer movement side effects overall", "More weight gain, diabetes and lipid problems, especially olanzapine and clozapine", "Aripiprazole is a partial agonist with less weight gain and low prolactin"], "summary": "Newer drugs: fewer movement problems, more metabolic risk. They differ a lot among themselves."}, "caption": "The real choice is drug by drug, not generation by generation. Match the side-effect profile to the person."}
+:::
+
 ### How long to continue
 After a first episode, continuing medicine for at least **1 to 2 years** after remission is usually advised. In trials, about **27%** relapsed within a year on maintenance antipsychotics versus about **64%** on placebo.
 
@@ -218,6 +226,10 @@ Assessed with the **CAARMS** or **SIPS**.
 {"prompt": "In early studies of young people meeting clinical high-risk criteria, roughly what percentage developed psychosis within about 2 to 3 years?", "min": 0, "max": 100, "unit": "%", "answer": [20, 30], "reveal": "Roughly 20 to 30% in early studies, lower (often 15 to 20%) in more recent cohorts. So most do not develop psychosis, though many have ongoing depression, anxiety or poor functioning and need help regardless.", "clinician": "A 2012 meta-analysis reported transition of about 22% at 1 year, 29% at 2 years and 36% after 3 years; later cohorts show lower rates, possibly from earlier referral and dilution of samples."}
 :::
 
+:::widget compare
+{"title": "At-risk mental state or first-episode psychosis?", "a": {"label": "Clinical high risk", "points": ["Odd ideas held with some doubt: 'Maybe it is my mind'", "Fleeting voices or shadows", "Brief psychotic spells that settle by themselves in days", "Falling marks and pulling away from friends"], "summary": "At risk: symptoms below full psychotic strength, with insight partly kept. Most never become psychotic."}, "b": {"label": "First-episode psychosis", "points": ["Beliefs held with full conviction", "Clear, persistent hallucinations", "Symptoms that do not settle on their own", "Acts on the beliefs"], "summary": "Psychosis: conviction is full and symptoms persist. Needs prompt treatment, usually with an antipsychotic."}, "caption": "Antipsychotics are not first line for the at-risk state. Psychological help, treating depression or anxiety, and close follow-up come first."}
+:::
+
 ### Management of clinical high risk
 - Monitoring, support, treatment of depression, anxiety and substance use, and **CBT**.
 - **Antipsychotics are not routinely recommended** for prevention.
@@ -249,6 +261,10 @@ Q: Which statement about clinical high-risk states is correct?
 - Reduces distress from voices by changing beliefs about their power and intent ("The voice says it will kill my family if I don't obey" becomes "It has said that for years and never acted").
 - Reduces safety behaviours and avoidance; builds coping strategies.
 - Effects on symptoms are modest but meaningful; it can help people who decline medicine and those with persistent symptoms.
+
+:::widget flow
+{"title": "What keeps a frightening voice powerful", "layout": "cycle", "nodes": [{"id": "v", "label": "The voice", "detail": "'Do it, or your mother will die.'"}, {"id": "b", "label": "Belief about the voice", "detail": "'It is all-powerful and knows everything about me.'"}, {"id": "f", "label": "Fear and distress", "detail": "Terror, low mood and shame."}, {"id": "s", "label": "Safety behaviours", "detail": "Obeying in small ways, staying at home, shouting back."}, {"id": "n", "label": "No chance to disconfirm", "detail": "Nothing bad happens, and he credits the obeying. The belief in the voice's power grows."}], "caption": "CBT for psychosis targets the beliefs about the voice, not only the voice itself. Testing whether it can really carry out its threats often reduces fear and obedience."}
+:::
 
 ### Other approaches
 | Approach | What it involves |
@@ -285,6 +301,10 @@ Persistent significant symptoms despite **at least two** antipsychotics, each gi
 :::
 
 **Clozapine** is the only antipsychotic with clear superiority in treatment-resistant schizophrenia. Around 40% of people who did not respond to other drugs respond to clozapine. It also reduces suicidal behaviour in schizophrenia. Yet it is under-used, often started years too late.
+
+:::widget guess
+{"prompt": "Of 100 people with treatment-resistant schizophrenia who take clozapine at a good level, about how many improve meaningfully?", "min": 0, "max": 100, "unit": "people", "answer": [30, 60], "reveal": "Roughly 30 to 60. That is far more than any other antipsychotic achieves in this group, which is why clozapine is offered after two failed antipsychotics.", "clinician": "In the classic trial about 30 percent responded at 6 weeks versus 4 percent on chlorpromazine; with longer trials (6 to 12 months) and adequate plasma levels (often above about 350 micrograms per litre) the figure rises to around 60 percent."}
+:::
 
 ### Starting and monitoring
 - Start low (12.5 mg once or twice on day 1) and increase gradually by 25 to 50 mg a day, as tolerated, towards about 300 mg over 2 to 3 weeks. Usual range 300 to 450 mg; adjust by response and plasma levels (a level of about 350 ng/mL or more is a common target).
@@ -357,6 +377,10 @@ DSM-5-TR uses it as a specifier ("with catatonia") for other mental disorders, a
 - **Bush-Francis Catatonia Rating Scale**: 23 items; the first 14 form a screening instrument.
 - Search for causes: infections, encephalitis (including anti-NMDA receptor), non-convulsive status epilepticus, metabolic disorders, drug withdrawal (benzodiazepines, clozapine), neuroleptic malignant syndrome.
 - Check hydration, nutrition, clots, pressure areas, CK, renal function.
+
+:::widget compare
+{"title": "Catatonia or neuroleptic malignant syndrome?", "a": {"label": "Catatonia", "points": ["Stupor, mutism, posturing, negativism, echo phenomena", "Temperature usually normal", "Can arise in depression, mania, schizophrenia or medical illness", "Lorazepam test dose often helps within hours"], "summary": "Catatonia: a motor syndrome that responds to benzodiazepines and ECT."}, "b": {"label": "Neuroleptic malignant syndrome", "points": ["After starting or raising an antipsychotic", "High fever and severe 'lead-pipe' rigidity", "Unstable pulse and blood pressure, sweating, confusion", "Very high CK and raised white cells"], "summary": "NMS: a medical emergency. Stop the antipsychotic, cool, rehydrate and transfer to medical care."}, "caption": "They overlap, and malignant catatonia can look identical. This is why antipsychotics are avoided until NMS is excluded."}
+:::
 
 ### Treatment
 1. **Lorazepam**: a test dose (for example 1 to 2 mg) often produces striking improvement within hours, which supports the diagnosis. Many respond to standard doses (up to about 4 mg a day); some need higher doses (8 to 24 mg a day).

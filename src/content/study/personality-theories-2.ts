@@ -14,6 +14,10 @@ Gray, Eysenck's student, rotated Eysenck's E and N by about 30 degrees and propo
 | **Fight-flight-freeze system, FFFS** | Punishment and clear threat | High FFFS: fear, active avoidance, panic (amygdala, periaqueductal grey) |
 Gray's model separates **fear** (FFFS: getting away from a clear threat) from **anxiety** (BIS: approaching a threat with caution), which maps onto the difference between panic or phobia and generalised worry. Carver and White's **BIS/BAS scales** (1994) measure the systems.
 
+:::widget compare
+{"title": "Gray's approach and inhibition systems", "a": {"label": "BAS: approach", "points": ["Tuned to signals of reward", "Dopamine pathways", "High BAS: impulsive, reward-seeking, upbeat", "Linked to mania and addiction when extreme"], "summary": "The 'go' system pulls you towards rewards."}, "b": {"label": "BIS: inhibition", "points": ["Tuned to conflict between approach and avoidance", "Septo-hippocampal system", "High BIS: anxious, watchful, ruminating", "Linked to generalised anxiety"], "summary": "The 'stop and check' system makes you cautious. Fear of a clear threat belongs to the separate fight-flight-freeze system."}}
+:::
+
 :::widget brainmap
 {
  "title": "Where Gray's three systems are thought to live",
@@ -40,6 +44,10 @@ Cloninger's **Temperament and Character Inventory (TCI)** has four inherited **t
 | **Reward dependence** | Sentimental, warm, sensitive to social approval | Noradrenaline |
 | **Persistence** | Industrious, determined despite frustration | (Partial reinforcement) |
 **Character**: **self-directedness** (responsibility, purpose), **cooperativeness** (empathy, helpfulness) and **self-transcendence** (spiritual acceptance, feeling part of a larger whole). Low self-directedness and low cooperativeness together are a good marker of personality disorder.
+
+:::widget flow
+{"title": "Cloninger's seven dimensions", "layout": "tree", "nodes": [{"id": "p", "label": "Personality", "detail": "Cloninger split personality into inherited temperament and learnt character."}, {"id": "t", "label": "Temperament: inherited", "parent": "p", "detail": "Early, emotional, automatic responses."}, {"id": "c", "label": "Character: learnt", "parent": "p", "detail": "Self-concepts and values that mature through life."}, {"id": "ns", "label": "Novelty seeking", "parent": "t", "detail": "Exploratory and impulsive. Originally tied to dopamine."}, {"id": "ha", "label": "Harm avoidance", "parent": "t", "detail": "Worrying and shy. Originally tied to serotonin."}, {"id": "rd", "label": "Reward dependence", "parent": "t", "detail": "Warm and sensitive to approval. Originally tied to noradrenaline."}, {"id": "pe", "label": "Persistence", "parent": "t", "detail": "Keeps going despite frustration."}, {"id": "sd", "label": "Self-directedness", "parent": "c", "detail": "Responsibility and purpose."}, {"id": "co", "label": "Cooperativeness", "parent": "c", "detail": "Empathy and helpfulness."}, {"id": "st", "label": "Self-transcendence", "parent": "c", "detail": "Feeling part of a larger whole."}], "caption": "Low self-directedness and low cooperativeness together point to a personality disorder. The one-transmitter-per-temperament links have not held up well."}
+:::
 
 ### Sensation seeking and behavioural inhibition
 - **Marvin Zuckerman's sensation seeking**: the need for varied, novel, complex and intense experience, with four subscales: **thrill and adventure seeking**, **experience seeking**, **disinhibition** and **boredom susceptibility**. It predicts risky driving, substance use and extreme sports.
@@ -438,6 +446,10 @@ Higgins later added **regulatory focus**: a **promotion** focus (towards ideals,
 ### Culture and the self
 Hazel Markus and Shinobu Kitayama (1991) contrasted the **independent self** (unique, separate, defined by personal traits; common in North America and western Europe) with the **interdependent self** (defined by relationships, roles and group membership; common in East and South Asia). In interdependent cultures, self-criticism and fitting in may be valued over self-enhancement. Indian research complicates the neat contrast: **Sinha and Tripathi** showed Indians hold both orientations and switch between them by context, and in large Indian cities the two sit side by side in the same person.
 
+:::widget compare
+{"title": "Independent and interdependent selves", "a": {"label": "Independent self", "points": ["'I am honest, ambitious and funny'", "Defined by personal traits", "Goal: stand out, express yourself", "Self-esteem from personal success"], "summary": "Common in North America and western Europe."}, "b": {"label": "Interdependent self", "points": ["'I am a daughter, a teacher, a member of my community'", "Defined by relationships and roles", "Goal: fit in, meet obligations, keep harmony", "Self-worth from fulfilling roles well"], "summary": "Common in India, East Asia and much of the world. Most people, and most Indian urban youth, combine both."}}
+:::
+
 :::clinician
 Self-esteem and depression: prospective meta-analyses support a vulnerability model in which low self-esteem predicts later depression more than depression predicts later low self-esteem, while for anxiety the effects are more balanced. Self-discrepancy has clinical support: actual-ideal discrepancies are relatively specific to dysphoria and actual-ought to anxiety, though the specificity is weaker in later studies. Compassion-focused approaches (Gilbert) and self-compassion (Neff) offer an alternative to boosting self-esteem: self-compassion predicts resilience without the contingency and comparison costs of high self-esteem. The self-enhancement debate: some researchers argued that Japanese culture shows little self-enhancement; others argued that people in all cultures self-enhance on the traits their culture values (individualists on agentic traits, collectivists on communal ones). In India, both patterns appear depending on domain.
 :::
@@ -500,6 +512,10 @@ The **hopelessness theory** of Lyn Abramson and her colleagues narrowed this: a 
     { "q": "Priya's marriage proposal is rejected. She says: “It's because I'm dark-skinned; nobody will ever want me.” Score it, and say what makes it particularly painful.", "a": "Internal, stable and global. It is also tied to a social prejudice (colourism), so a good response validates the real unfairness while challenging the 'nobody ever' generalisation; it is not only a thinking error." }
   ]
 }
+:::
+
+:::widget thoughtrecord
+{"situation": "I failed my driving test because I stalled on the hill start.", "thought": "I am useless. I fail at everything I try, and I will never be able to drive.", "emotion": "hopeless", "traps": [{"label": "Overgeneralisation", "right": true, "why": "One failed test has become 'I fail at everything'. That is a global explanation."}, {"label": "Fortune telling", "right": true, "why": "'I will never be able to drive' predicts a permanent future from one event: a stable explanation."}, {"label": "Mind reading", "why": "The thought is about yourself and the future, not about what others think."}, {"label": "Personalisation", "why": "Close, since it is internal, but the main errors are making it global and permanent."}], "forEvidence": ["I did stall on the hill start."], "againstEvidence": ["I passed the theory test first time.", "Most people stall on hills while learning.", "I can practise hill starts and retake the test."], "balanced": "I failed one part of one test. Hill starts are a skill I can practise, and many people pass on the second try."}
 :::
 
 :::widget flow
@@ -649,8 +665,16 @@ Richard Shweder, Manamohan Mahapatra and Joan Miller (1987) interviewed children
 - **Divinity**: purity, sanctity and the sacred order.
 **Miller and Bersoff** (1992) similarly found Indians treated interpersonal obligations (helping a friend in need) as **moral duties**, while Americans treated them more as personal choices.
 
+:::widget sort
+{"prompt": "Which of Shweder's three ethics is each moral judgement mainly using?", "buckets": ["Autonomy", "Community", "Divinity"], "items": [{"text": "'He must not cheat his customers. They have a right to fair treatment.'", "bucket": 0, "why": "Harm, rights and justice."}, {"text": "'A son should look after his parents in their old age. It is his duty.'", "bucket": 1, "why": "Duty and loyalty to the family."}, {"text": "'You must not enter the temple kitchen without bathing first.'", "bucket": 2, "why": "Purity and the sacred."}, {"text": "'Everyone should be free to choose whom they marry.'", "bucket": 0, "why": "Individual choice and rights."}, {"text": "'A student should not argue with the guru in front of others.'", "bucket": 1, "why": "Respect for hierarchy and roles."}, {"text": "'Treat the body as a temple; do not pollute it.'", "bucket": 2, "why": "Sanctity and degradation."}]}
+:::
+
 ### Moral intuitions
 Jonathan Haidt's **social intuitionist model** (2001) argues that most moral judgments come from fast **intuitions**, with reasoning often a lawyer arguing for a verdict already reached. In **moral dumbfounding** studies, people insist that a harmless taboo act is wrong but cannot say why. **Moral foundations theory** (Haidt and Graham) lists foundations such as **care, fairness, loyalty, authority, sanctity** and **liberty**, which map onto Shweder's three ethics.
+
+:::widget flow
+{"title": "Haidt's social intuitionist model", "layout": "chain", "nodes": [{"id": "e", "label": "An event", "detail": "You hear that a brother and sister had a secret, consensual relationship with no harm done."}, {"id": "i", "label": "Fast intuition", "detail": "An instant gut feeling: 'That is wrong.'"}, {"id": "j", "label": "Judgement", "detail": "The verdict is reached before any reasoning starts."}, {"id": "r", "label": "Reasoning afterwards", "detail": "Reasons are searched for to justify the verdict, like a lawyer, not a judge. If they are knocked down, the verdict often stays: moral dumbfounding."}, {"id": "s", "label": "Others' intuitions", "detail": "Your reasons may in turn change other people's intuitions. Reasoning mostly works socially."}], "caption": "Kohlberg put reasoning first; Haidt puts intuition first. Most researchers now think both play a part."}
+:::
 
 :::widget decide
 {

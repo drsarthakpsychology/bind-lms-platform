@@ -20,6 +20,10 @@ Medically assisted withdrawal ("detox") is a starting point, not a treatment on 
 {"prompt": "Community withdrawal reasonable, or hospital advised? Place each patient.", "buckets": ["Community withdrawal reasonable", "Hospital advised"], "items": [{"text": "Drinks 8 standard drinks a day, no past fits, lives with a supportive wife, can attend daily", "bucket": 0}, {"text": "Had delirium tremens two years ago during a previous attempt", "bucket": 1}, {"text": "Drinks heavily and also takes alprazolam 4 mg daily", "bucket": 1}, {"text": "Pregnant woman with alcohol dependence", "bucket": 1}, {"text": "Moderate drinker with mild morning tremor, works from home, partner present", "bucket": 0}, {"text": "Lives alone, has cirrhosis with jaundice, and drinks a full bottle a day", "bucket": 1}]}
 :::
 
+:::widget curve
+{"kind": "half-life", "title": "Why a long-acting benzodiazepine is used for alcohol withdrawal", "caption": "Chlordiazepoxide and diazepam, with their active metabolites, have long half-lives, so levels fall slowly and the dose almost tapers itself, smoothing withdrawal and lowering seizure risk. In severe liver disease or in older people, a shorter-acting drug such as lorazepam, which does not build up, is often chosen instead. Compare short and long half-lives on the slider."}
+:::
+
 ### Rating scales guide the dose
 Rather than guessing, clinicians use **rating scales** to measure withdrawal severity and adjust treatment:
 - **CIWA-Ar** for alcohol: ten items, rated by a nurse or doctor.
@@ -93,6 +97,10 @@ Withdrawal gets the substance out; relapse prevention keeps life moving forward.
 
 :::widget receptor
 {"receptor": "mu opioid", "title": "Why buprenorphine is safer, and why timing its first dose matters", "caption": "Set the receptor to full agonist (heroin, methadone), then switch to partial agonist (buprenorphine). Buprenorphine binds more tightly but signals less, so it caps respiratory depression and blocks extra heroin. If it is given while heroin is still on the receptors, the signal drops suddenly: precipitated withdrawal. That is why the first dose waits until withdrawal is visible."}
+:::
+
+:::widget compare
+{"title": "Naltrexone or disulfiram?", "a": {"label": "Naltrexone", "points": ["Blocks opioid receptors, so drinking feels less rewarding", "Reduces heavy drinking and helps abstinence", "No reaction if the person drinks", "Cannot be used with opioid painkillers or in opioid users", "Check liver tests"], "summary": "Naltrexone: takes the shine off drinking. Good for cutting down as well as stopping."}, "b": {"label": "Disulfiram", "points": ["Blocks the breakdown of alcohol, so a toxic chemical builds up", "Drinking causes flushing, pounding heart, vomiting and low blood pressure", "Works only if taken, ideally supervised by a family member", "Dangerous in heart disease", "Hidden alcohol in medicines and foods can trigger a reaction"], "summary": "Disulfiram: a deterrent. It works when someone fully committed to abstinence takes it daily under supervision."}, "caption": "Acamprosate is the third main choice, for abstinence, and is safe in liver disease."}
 :::
 
 ### Opioids
@@ -200,6 +208,10 @@ Listen for **change talk** (the person's own statements in favour of change) and
 {"title": "The stages of change", "layout": "cycle", "nodes": [{"id": "a", "label": "Precontemplation", "detail": "Not considering change. Raise doubt gently; give information without pressure."}, {"id": "b", "label": "Contemplation", "detail": "Thinking about it, ambivalent. Explore both sides; strengthen change talk."}, {"id": "c", "label": "Preparation", "detail": "Planning. Help set a date, a goal and a plan."}, {"id": "d", "label": "Action", "detail": "Making changes. Support skills, medicines, coping with craving."}, {"id": "e", "label": "Maintenance", "detail": "Keeping changes. Prevent relapse; build a life that does not need the substance."}, {"id": "f", "label": "Relapse", "detail": "Common. Learn from it and re-enter the cycle, often at contemplation or preparation."}], "caption": "Press Play. People go round the cycle several times; matching your approach to the stage helps."}
 :::
 
+:::widget compare
+{"title": "The righting reflex and the spirit of MI", "a": {"label": "Righting reflex", "points": ["'You must stop drinking, it is killing your liver.'", "The clinician argues for change", "The patient defends drinking: 'It's not that bad'", "Feels like a lecture"], "summary": "Pushing for change makes the patient push back, and sustain talk grows."}, "b": {"label": "Motivational interviewing", "points": ["'What worries you most about your drinking, if anything?'", "The patient voices their own reasons for change", "The clinician reflects and summarises the change talk", "Feels like a partnership"], "summary": "Evoking the patient's own reasons makes change talk grow. People believe what they hear themselves say."}, "caption": "Ambivalence is normal. MI works by drawing out the side of the person that already wants to change."}
+:::
+
 ### The stages of change
 Prochaska and DiClemente described stages people move through, often more than once:
 1. **Precontemplation**: not considering change ("I don't have a problem").
@@ -280,6 +292,10 @@ Key principles:
 - **Pregnancy**: no safe level of alcohol; opioid maintenance is safer than withdrawal; tobacco cessation helps mother and baby.
 - **Older adults**: alcohol and benzodiazepine problems are easily missed, causing falls, confusion and drug interactions.
 - **People in prison**: high rates of addiction; overdose risk soars after release.
+
+:::widget sort
+{"prompt": "Dual diagnosis: which approach is more likely to help?", "buckets": ["More likely to help", "Less likely to help"], "items": [{"text": "One team treating both the psychosis and the cannabis use together", "bucket": 0}, {"text": "'Come back once you have stopped drinking, then we will treat your depression.'", "bucket": 1, "why": "Sequential care leaves people bouncing between services and dropping out."}, {"text": "Motivational work paced to the person's readiness", "bucket": 0}, {"text": "Discharging a patient for a single relapse", "bucket": 1}, {"text": "Choosing medicines with low misuse risk", "bucket": 0}, {"text": "Regular benzodiazepines for anxiety in someone with alcohol dependence", "bucket": 1, "why": "Cross-dependence with alcohol, and dangerous in combination."}]}
+:::
 
 ### The Indian system
 - **Law**: the **Narcotic Drugs and Psychotropic Substances (NDPS) Act 1985** makes possession and use of illicit drugs an offence, but **Section 64A** gives immunity from prosecution to a person charged with consumption of a small quantity who volunteers for treatment, and **Section 71** allows government to set up treatment centres. A 2014 amendment eased access to "essential narcotic drugs" such as morphine and methadone for medical use.

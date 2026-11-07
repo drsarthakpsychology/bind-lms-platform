@@ -254,6 +254,14 @@ Say it as a shopkeeper's day: **make** the sweets, **store** them in boxes, **re
 {"drug": "none", "caption": "This is a serotonin synapse at rest. Follow one dot: released from the sending neuron, some reach the receptors below, and the recycling pump on the right pulls the rest back. Almost every medicine in psychiatry acts on one of these steps."}
 :::
 
+
+:::widget release
+{
+ "transmitter": "dopamine",
+ "caption": "Step through one signal: the spike arrives, calcium enters, vesicles release dopamine, it binds, then the pump recycles it and MAO breaks some down. Now try amphetamine (it pushes dopamine out) and a receptor blocker (an antipsychotic). Which step does each change?"
+}
+:::
+
 ### Excitation and inhibition
 Some transmitters make the receiving neuron **more** likely to fire (excitatory). Others make it **less** likely (inhibitory). A neuron receives thousands of inputs and adds them up. Health depends on balance: too much excitation and you get seizures; too much inhibition and you get sedation, slowed breathing and coma.
 
@@ -336,6 +344,14 @@ Think of the brain in layers, from the oldest at the bottom to the newest at the
   "hypothalamus": "Hunger, thirst, temperature, sleep, hormones."
  },
  "caption": "Tap each region and say one symptom you would expect if it were damaged."
+}
+:::
+
+
+:::widget illusion
+{
+ "kind": "ponzo",
+ "caption": "Judge which line is longer, then measure. The visual cortex uses depth cues and 'corrects' for distance, so perception is a construction, not a camera. Damage to visual areas can change what is constructed."
 }
 :::
 
@@ -992,6 +1008,13 @@ Q: Which test is most sensitive to dorsolateral frontal dysfunction?
   - **Procedural**: skills such as cycling or typing. Basal ganglia and cerebellum.
   - **Priming** and **conditioning**: learning without awareness. Cortex and amygdala.
 
+
+:::widget attention
+{
+ "caption": "Working memory starts with attention. Attend to one ear, then hear your name in the other. Which theory of selective attention explains that?"
+}
+:::
+
 :::example Henry Molaison, the man who could not make new memories
 In 1953 Henry Molaison (known for decades as "H.M.") had both medial temporal lobes removed to treat severe epilepsy. His seizures improved, but he could no longer form new long-term memories of events or facts. He could still learn new skills, such as tracing a star in a mirror, getting better each day while insisting he had never done it. His case proved that memory has separate systems and that the hippocampus is needed to form new explicit memories.
 :::
@@ -1212,6 +1235,13 @@ Sleep comes in cycles of about 90 minutes, four or five times a night.
   "answer": [20, 25],
   "reveal": "About 20 to 25 per cent. Newborns spend about half their sleep in REM. Older adults have less deep (N3) sleep, which is why their sleep feels lighter.",
   "clinician": "In depression, REM latency (time from sleep onset to the first REM period) is shortened, REM density is increased and slow-wave sleep reduced. Most antidepressants (except agomelatine, bupropion and mirtazapine to varying degrees) suppress REM; abrupt withdrawal can give REM rebound with vivid dreams. REM sleep behaviour disorder (acting out dreams because muscle atonia is lost) in older men is a strong early marker of synucleinopathies such as Parkinson's disease and Lewy body dementia."
+}
+:::
+
+
+:::widget hypnogram
+{
+ "caption": "Drag through a night: deep N3 sleep comes early, REM periods lengthen towards morning. Then switch on depression and watch REM arrive sooner, deep sleep shrink and early waking appear."
 }
 :::
 

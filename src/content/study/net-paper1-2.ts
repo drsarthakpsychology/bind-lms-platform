@@ -39,6 +39,10 @@ ICT questions mix fixed basics (which never change) with digital initiatives (wh
 - **Malware:** **virus** (attaches to files, needs a host), **worm** (spreads itself across networks), **Trojan horse** (looks useful, hides harm), **ransomware** (locks files for payment), **spyware**, **adware**.
 - Protection: antivirus, **firewall**, updates, strong passwords, **two-factor authentication**, **encryption**, backups. India's national agency for cyber incidents is **CERT-In**; the main law is the **Information Technology Act, 2000**.
 
+:::widget sort
+{"prompt": "Name the threat.", "buckets": ["Virus", "Worm", "Trojan horse", "Ransomware", "Phishing"], "items": [{"text": "Attaches itself to a file and spreads when the file is opened", "bucket": 0}, {"text": "Copies itself across a network without anyone opening anything", "bucket": 1}, {"text": "A free 'exam result checker' app that secretly steals your contacts", "bucket": 2}, {"text": "Locks a hospital's files and demands payment in cryptocurrency", "bucket": 3}, {"text": "An email that looks like it is from your bank, asking you to 'verify' your password", "bucket": 4, "why": "Phishing tricks a person rather than infecting a machine; two-factor authentication limits the damage."}]}
+:::
+
 ### Digital initiatives in higher education (as of November 2026)
 | Initiative | What it is |
 |---|---|
@@ -149,6 +153,10 @@ Q: Shodhganga is maintained by:
 | Biological Diversity Act | 2002 |
 | National Green Tribunal Act | 2010 |
 
+:::widget timeline
+{"prompt": "Put India's main environmental laws in the order they were passed.", "events": [{"label": "Wildlife (Protection) Act", "when": "1972"}, {"label": "Water (Prevention and Control of Pollution) Act", "when": "1974"}, {"label": "Forest (Conservation) Act", "when": "1980"}, {"label": "Air (Prevention and Control of Pollution) Act", "when": "1981"}, {"label": "Environment (Protection) Act, after the Bhopal gas disaster", "when": "1986"}, {"label": "Biological Diversity Act", "when": "2002"}, {"label": "National Green Tribunal Act", "when": "2010"}], "why": "Water came before air, and the umbrella Environment (Protection) Act followed Bhopal. A hook: Wildlife, Water, Forest, Air, Environment, Biodiversity, Tribunal."}
+:::
+
 The **Constitution** places duties on the state (**Article 48A**: protect and improve the environment) and on citizens (**Article 51A(g)**). Courts read the right to a clean environment into **Article 21** (right to life).
 
 :::widget flow
@@ -171,6 +179,10 @@ The **Constitution** places duties on the state (**Article 48A**: protect and im
 | Minamata Convention | 2013 | Mercury |
 | **Paris Agreement** | **2015** (in force 2016) | Hold warming well below 2°C and pursue 1.5°C; every country submits **nationally determined contributions (NDCs)**; a global stocktake every five years (the first concluded at COP28, Dubai, 2023) |
 | Kunming-Montreal Global Biodiversity Framework | 2022 | Including protecting 30% of land and sea by 2030 |
+
+:::widget timeline
+{"prompt": "Put these international environmental agreements in order.", "events": [{"label": "Ramsar Convention on wetlands", "when": "1971"}, {"label": "Stockholm Conference creates UNEP", "when": "1972"}, {"label": "Montreal Protocol on the ozone layer", "when": "1987"}, {"label": "Rio Earth Summit: UNFCCC and the biodiversity convention", "when": "1992"}, {"label": "Kyoto Protocol: binding cuts for developed countries", "when": "1997"}, {"label": "Minamata Convention on mercury", "when": "2013"}, {"label": "Paris Agreement: nationally determined contributions", "when": "2015"}, {"label": "Kunming-Montreal biodiversity framework", "when": "2022"}], "why": "Ramsar is the oldest of these. Stockholm began global environmental diplomacy; Rio produced the climate convention that Kyoto and Paris build on."}
+:::
 
 :::widget sort
 {"prompt": "Which goal does each agreement or law mainly serve?", "buckets": ["Climate", "Ozone", "Nature and biodiversity"], "items": [{"text": "Paris Agreement", "bucket": 0}, {"text": "Kigali Amendment", "bucket": 1, "why": "It phases down HFCs under the ozone treaty, which also helps the climate."}, {"text": "Ramsar Convention", "bucket": 2}, {"text": "National Action Plan on Climate Change", "bucket": 0}, {"text": "Vienna Convention", "bucket": 1}, {"text": "Biological Diversity Act, 2002", "bucket": 2}]}
@@ -237,6 +249,10 @@ Q: Which constitutional article directs the state to protect and improve the env
 
 Medieval India had **maktabs** (elementary) and **madrasas** (higher learning) alongside **pathshalas**, **tols** and **gurukuls**.
 
+:::widget timeline
+{"prompt": "Put these centres of learning in the order they were founded or flourished.", "events": [{"label": "Takshashila, linked by tradition with Panini and Chanakya", "when": "Earliest"}, {"label": "Nalanda, founded under Kumaragupta I", "when": "5th c. CE"}, {"label": "Valabhi, under the Maitrakas", "when": "6th c. CE"}, {"label": "Vikramashila, founded by Dharmapala", "when": "Late 8th c."}, {"label": "Jagaddala, founded by Ramapala", "when": "11th to 12th c."}], "why": "Takshashila had no single campus and is the oldest. Nalanda was Gupta; Vikramashila and Jagaddala were Pala foundations."}
+:::
+
 :::widget flow
 {"title": "Ancient centres of learning", "layout": "chain", "nodes": [{"id": "n0", "label": "Takshashila", "detail": "Oldest; teachers taught independently"}, {"id": "n1", "label": "Nalanda", "detail": "Gupta period, Kumaragupta I; Xuanzang studied here"}, {"id": "n2", "label": "Valabhi", "detail": "Gujarat, Maitraka rulers"}, {"id": "n3", "label": "Vikramashila", "detail": "Pala king Dharmapala; Atisha"}, {"id": "n4", "label": "Odantapuri and Jagaddala", "detail": "Later Pala foundations"}]}
 :::
@@ -253,6 +269,10 @@ Medieval India had **maktabs** (elementary) and **madrasas** (higher learning) a
 | 1917-19 | **Sadler Commission** (Calcutta University Commission) | Recommended a 12-year school stage before university, and an intermediate stage |
 | 1929 | Hartog Committee | Quality over expansion |
 | 1944 | **Sargent Plan** | A 40-year post-war plan for education |
+
+:::widget timeline
+{"prompt": "Put these colonial landmarks in Indian education in order.", "events": [{"label": "Charter Act: first funds for education", "when": "1813"}, {"label": "Macaulay's Minute favours English education", "when": "1835"}, {"label": "Wood's Despatch, the 'Magna Carta' of English education", "when": "1854"}, {"label": "Universities of Calcutta, Bombay and Madras", "when": "1857"}, {"label": "Hunter Commission on primary and secondary education", "when": "1882"}, {"label": "Indian Universities Act under Curzon", "when": "1904"}, {"label": "Sadler Commission on Calcutta University", "when": "1917"}, {"label": "Sargent Plan for post-war education", "when": "1944"}], "why": "Wood's Despatch proposed the universities, which opened three years later. Hook: Charter, Macaulay, Wood, Universities, Hunter, Curzon, Sadler, Sargent."}
+:::
 
 :::widget flow
 {"title": "Colonial landmarks", "layout": "chain", "nodes": [{"id": "n0", "label": "1835 Macaulay", "detail": "English-medium education"}, {"id": "n1", "label": "1854 Wood's Despatch", "detail": "Magna Carta of English education"}, {"id": "n2", "label": "1857 Universities", "detail": "Calcutta, Bombay, Madras"}, {"id": "n3", "label": "1882 Hunter", "detail": "Primary and secondary"}, {"id": "n4", "label": "1902 Raleigh", "detail": "Then the 1904 Universities Act"}, {"id": "n5", "label": "1917 Sadler", "detail": "Calcutta University"}, {"id": "n6", "label": "1944 Sargent", "detail": "Post-war plan"}]}
@@ -274,6 +294,10 @@ Medieval India had **maktabs** (elementary) and **madrasas** (higher learning) a
 | 2009 | Yash Pal Committee | Renovation and rejuvenation of higher education; proposed an overarching regulator |
 | 2013 | **RUSA** (Rashtriya Uchchatar Shiksha Abhiyan) | Central funding for state universities |
 | **2020** | **National Education Policy 2020** | See 3.4 |
+
+:::widget timeline
+{"prompt": "Put these milestones in Indian higher education since independence in order.", "events": [{"label": "Radhakrishnan's University Education Commission", "when": "1948"}, {"label": "UGC becomes a statutory body", "when": "1956"}, {"label": "Kothari Commission: 10 + 2 + 3", "when": "1964"}, {"label": "First National Policy on Education", "when": "1968"}, {"label": "42nd Amendment puts education on the Concurrent List", "when": "1976"}, {"label": "National Policy on Education with open universities and NAAC", "when": "1986"}, {"label": "86th Amendment: Article 21A, right to education", "when": "2002"}, {"label": "National Education Policy 2020", "when": "2020"}], "why": "Commissions came first and policies followed them: Kothari led to the 1968 policy. The 1976 amendment made education a shared Centre and State subject."}
+:::
 
 :::widget flow
 {"title": "After independence", "layout": "chain", "nodes": [{"id": "n0", "label": "1948 Radhakrishnan", "detail": "Recommends a UGC"}, {"id": "n1", "label": "1953 UGC", "detail": "Statutory in 1956"}, {"id": "n2", "label": "1964 Kothari", "detail": "10 + 2 + 3"}, {"id": "n3", "label": "1968 and 1986 NPE", "detail": "National policies"}, {"id": "n4", "label": "1976", "detail": "Education to the Concurrent List"}, {"id": "n5", "label": "2002", "detail": "Article 21A"}, {"id": "n6", "label": "2020 NEP", "detail": "5 + 3 + 3 + 4; 50% GER by 2035"}]}

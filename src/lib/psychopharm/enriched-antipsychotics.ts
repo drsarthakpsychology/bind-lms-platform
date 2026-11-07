@@ -2,7 +2,7 @@
  * Enriched student + clinical content for antipsychotics (atypical + typical)
  * and mood stabilizers / anticonvulsants.
  *
- * Schema is intentionally lighter than DrugDraft — plain-language summaries
+ * Schema is intentionally lighter than DrugDraft: plain-language summaries
  * for students alongside concise clinical bullets (mechanism, common uses,
  * key side effects, monitoring). Every fact is cross-referenced against
  * Stahl's Prescriber's Guide (7th ed.) monograph extraction
@@ -32,15 +32,15 @@ export const ENRICHED_ANTIPSYCHOTICS: EnrichedDrug[] = [
     generic_name: "Aripiprazole",
     drug_class: "Atypical antipsychotic (D2 partial agonist)",
     plain_language:
-      "A 'balancer' antipsychotic — it dials dopamine down where it's too high (helping psychosis) and up where it's too low (helping mood and motivation). Used for schizophrenia, bipolar disorder, and added onto antidepressants for depression.",
+      "A 'balancer' antipsychotic: it dials dopamine down where it's too high (helping psychosis) and up where it's too low (helping mood and motivation). Used for schizophrenia, bipolar disorder, and added onto antidepressants for depression.",
     mechanism:
       "Dopamine D2 partial agonist plus 5-HT1A partial agonist and 5-HT2A antagonist; modulates dopamine signaling rather than fully blocking it. Available oral, IM, and long-acting injectable (Maintena, Aristada).",
     common_uses: [
       "Schizophrenia (oral + long-acting injectable)",
       "Bipolar mania and maintenance",
       "Adjunct to antidepressants in major depression",
-      "Autism-related irritability (ages 6–17)",
-      "Tourette disorder (ages 6–18)",
+      "Autism-related irritability (ages 6 to 17)",
+      "Tourette disorder (ages 6 to 18)",
       "Acute agitation (IM)",
     ],
     side_effects: [
@@ -48,7 +48,7 @@ export const ENRICHED_ANTIPSYCHOTICS: EnrichedDrug[] = [
       "Insomnia / activation",
       "Nausea",
       "Headache",
-      "Impulse-control problems (gambling, binge eating) — rare but important",
+      "Impulse-control problems (gambling, binge eating), rare but important",
       "Lower weight/metabolic risk than most atypicals",
     ],
     monitoring: [
@@ -128,7 +128,7 @@ export const ENRICHED_ANTIPSYCHOTICS: EnrichedDrug[] = [
     common_uses: [
       "Schizophrenia (oral; LAI Consta / Perseris)",
       "Bipolar mania and maintenance",
-      "Autism-related irritability (ages 5–16)",
+      "Autism-related irritability (ages 5 to 16)",
       "Adjunct in depression (low dose)",
     ],
     side_effects: [
@@ -565,7 +565,7 @@ export const ENRICHED_ANTIPSYCHOTICS: EnrichedDrug[] = [
     drug_class: "Typical (first-generation) antipsychotic (not US-approved)",
     plain_language:
       "A first-generation antipsychotic used in Europe; the acetate injection calms acute agitation quickly, and the decanoate injection is a long-acting maintenance form.",
-    mechanism: "D2 antagonist (thioxanthene); oral, acetate (acute, 2–3 day duration), decanoate (2–4 week LAI).",
+    mechanism: "D2 antagonist (thioxanthene); oral, acetate (acute, 2 to 3 day duration), decanoate (2 to 4 week LAI).",
     common_uses: [
       "Schizophrenia (acute + maintenance)",
       "Aggression",
@@ -775,9 +775,9 @@ export const ENRICHED_ANTIPSYCHOTICS: EnrichedDrug[] = [
     generic_name: "Lithium",
     drug_class: "Mood stabilizer",
     plain_language:
-      "The gold-standard mood stabilizer for bipolar disorder, especially mania and preventing suicide. Needs regular blood tests to keep the level safe — too low does not work, too high is toxic.",
+      "The gold-standard mood stabilizer for bipolar disorder, especially mania and preventing suicide. Needs regular blood tests to keep the level safe: too low does not work, too high is toxic.",
     mechanism:
-      "Multiple actions — inhibits inositol monophosphatase and glycogen synthase kinase-3, modulates intracellular signaling; narrow therapeutic index requiring serum-level monitoring.",
+      "Multiple actions: inhibits inositol monophosphatase and glycogen synthase kinase-3, modulates intracellular signaling; narrow therapeutic index requiring serum-level monitoring.",
     common_uses: [
       "Bipolar mania and maintenance",
       "Bipolar depression",
@@ -828,7 +828,7 @@ export const ENRICHED_ANTIPSYCHOTICS: EnrichedDrug[] = [
       "Induces its own metabolism",
     ],
     monitoring: [
-      "CBC (every 2–4 wk for 2 months, then every 3–6 mo)",
+      "CBC (every 2 to 4 wk for 2 months, then every 3 to 6 mo)",
       "LFTs, renal, thyroid",
       "Sodium (hyponatremia)",
       "Serum level",
@@ -862,7 +862,7 @@ export const ENRICHED_ANTIPSYCHOTICS: EnrichedDrug[] = [
     plain_language:
       "A mood stabilizer and seizure drug, very effective for mania and migraine prevention. Avoid in women who could become pregnant (birth defect risk), and watch liver and platelets with blood tests.",
     mechanism:
-      "Multiple actions — blocks voltage-gated sodium channels and increases GABA; inhibits CYP2C9 and UGT (raises lamotrigine levels).",
+      "Multiple actions: blocks voltage-gated sodium channels and increases GABA; inhibits CYP2C9 and UGT (raises lamotrigine levels).",
     common_uses: [
       "Bipolar mania / mixed",
       "Bipolar maintenance (off-label)",
@@ -876,7 +876,7 @@ export const ENRICHED_ANTIPSYCHOTICS: EnrichedDrug[] = [
       "Weight gain",
       "Alopecia",
       "Thrombocytopenia",
-      "Hepatotoxicity (rare, severe — esp. children <2 y)",
+      "Hepatotoxicity (rare, severe, esp. children <2 y)",
       "Pancreatitis (rare)",
       "Teratogenic (neural tube defects)",
     ],

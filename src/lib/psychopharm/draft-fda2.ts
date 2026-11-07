@@ -1,5 +1,5 @@
 /**
- * FDA-label dose ladders (batch 2) — sleep agents, anticonvulsants, and the
+ * FDA-label dose ladders (batch 2): sleep agents, anticonvulsants, and the
  * dementia agents. Quote-first from the fetched DailyMed labels.
  */
 import { DrugDraft } from "./draft";
@@ -7,7 +7,7 @@ import { DrugDraft } from "./draft";
 const FDA = "fda_label";
 
 export const DRAFT_FDA_2: DrugDraft[] = [
-  // ZOLPIDEM — 10 mg adult, 5 mg elderly/hepatic.
+  // ZOLPIDEM: 10 mg adult, 5 mg elderly/hepatic.
   {
     generic_name: "Zolpidem",
     drug_class: "Sedative-hypnotic (non-benzodiazepine Z-drug)",
@@ -28,7 +28,7 @@ export const DRAFT_FDA_2: DrugDraft[] = [
     ],
   },
 
-  // ESZOPICLONE — start 1 mg, up to 3 mg.
+  // ESZOPICLONE: start 1 mg, up to 3 mg.
   {
     generic_name: "Eszopiclone",
     drug_class: "Sedative-hypnotic (non-benzodiazepine Z-drug)",
@@ -45,11 +45,11 @@ export const DRAFT_FDA_2: DrugDraft[] = [
         source_ref: { value: "initial 1 mg at bedtime; up to 3 mg", source_id: FDA, page_ref: "FDA label", snippet: "Recommended initial dose is 1 mg, immediately before bedtime", agreement: "single" }, side_effects: [], observation_prompts: [] },
       { band_order: 2, band_type: "therapeutic", range_low: 1, range_high: 3, unit: "mg", band_label: "Dose range",
         frequency: "at bedtime", primary_purpose: "Insomnia", secondary_purposes: [], is_typical_starting: false, is_standard_maintenance: true,
-        source_ref: { value: "1–3 mg; use lowest effective dose", source_id: FDA, page_ref: "FDA label", snippet: "Use the lowest dose effective for the patient", agreement: "single" }, side_effects: [], observation_prompts: [] },
+        source_ref: { value: "1 to 3 mg; use lowest effective dose", source_id: FDA, page_ref: "FDA label", snippet: "Use the lowest dose effective for the patient", agreement: "single" }, side_effects: [], observation_prompts: [] },
     ],
   },
 
-  // LEVETIRACETAM — 1000 → 3000.
+  // LEVETIRACETAM: 1000 → 3000.
   {
     generic_name: "Levetiracetam",
     drug_class: "Anticonvulsant",
@@ -70,7 +70,7 @@ export const DRAFT_FDA_2: DrugDraft[] = [
     ],
   },
 
-  // MEMANTINE — 5–28 mg (NMDA antagonist for dementia).
+  // MEMANTINE: 5 to 28 mg (NMDA antagonist for dementia).
   {
     generic_name: "Memantine",
     drug_class: "NMDA receptor antagonist",

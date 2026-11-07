@@ -52,12 +52,12 @@ export const QUESTIONS: PrepQuestion[] = [
       ],
     },
     options: [
-      "A-ii, B-iii, C-iv, D-i",
-      "A-iv, B-ii, C-iii, D-i",
       "A-ii, B-iv, C-iii, D-i",
+      "A-iv, B-ii, C-iii, D-i",
+      "A-ii, B-iii, C-iv, D-i",
       "A-ii, B-iv, C-i, D-iii",
     ],
-    answer: 2,
+    answer: 0,
     explanation:
       "Thurstone's method of equal-appearing intervals uses judges to give each statement a scale value, and a person's score is the median value of the statements they endorse (ii). Likert's method of summated ratings adds up agreement ratings on each item (iv). Guttman's scalogram is cumulative: items form a ladder, so a person who agrees with a strong item also agrees with all milder ones (iii). Osgood's semantic differential rates a concept on bipolar adjectives, which load on evaluation, potency and activity (i). The other codes swap Thurstone with Likert, Likert with Guttman, or Guttman with the semantic differential.",
     ref: "Thurstone 1928; Likert 1932; Guttman 1944; Osgood, Suci & Tannenbaum 1957",
@@ -134,7 +134,7 @@ export const QUESTIONS: PrepQuestion[] = [
   s({
     id: "soc-att-0052",
     exams: [N, M, S],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "The Implicit Association Test (IAT) measures the strength of automatic associations by:",
     options: [
@@ -177,7 +177,7 @@ export const QUESTIONS: PrepQuestion[] = [
   s({
     id: "soc-att-0054",
     exams: [N, M, S],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "The 'bogus pipeline' technique tries to get more honest answers about sensitive attitudes by:",
     options: [
@@ -228,7 +228,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "MODE stands for Motivation and Opportunity as DEterminants. When people are motivated (for example, the decision matters or they fear being wrong) and have the opportunity (enough time and attention), they weigh information deliberately, as in the theory of planned behaviour. When either is missing, behaviour is driven by attitudes that are activated automatically, so strong accessible attitudes matter most. Options 1 to 4 describe the conditions under which the spontaneous, automatic route takes over.",
+      "MODE stands for Motivation and Opportunity as DEterminants. When people are motivated (for example, the decision matters or they fear being wrong) and have the opportunity (enough time and attention), they weigh information deliberately, as in the theory of planned behaviour. When either is missing, behaviour is driven by attitudes that are activated automatically, so strong accessible attitudes matter most. The other options (no motivation or opportunity, no time, only an implicit attitude) describe the conditions under which the spontaneous, automatic route takes over.",
     ref: "Fazio 1990; Fazio & Towles-Schwen 1999",
   }),
   // ── Cognitive dissonance and self-perception ──────────────────────────────
@@ -289,7 +289,7 @@ export const QUESTIONS: PrepQuestion[] = [
     id: "soc-att-0060",
     topic: "cognitive-dissonance",
     exams: [N, M, S],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "After choosing between two appliances they had rated as almost equally attractive, Brehm's participants rated the chosen appliance higher and the rejected one lower than before. This 'spreading of alternatives' is an example of:",
     options: [
@@ -332,11 +332,11 @@ export const QUESTIONS: PrepQuestion[] = [
       "Students write an essay against their own view under high choice or low choice. All take a pill described as a harmless placebo. One group is told the pill will make them feel tense, another that it will make them relaxed, and a third is told nothing. In the high-choice condition, attitude change towards the essay's position is large when students are told nothing, almost absent when they are told the pill makes them tense, and even larger when they are told the pill relaxes them.",
     options: [
       "Choice has no role in dissonance",
-      "Dissonance involves no arousal at all, as self-perception theory proposes",
-      "The pill directly changed students' attitudes",
       "Dissonance involves real arousal that people try to explain; if they can blame the arousal on the pill, they no longer need to change their attitude",
+      "The pill directly changed students' attitudes",
+      "Dissonance involves no arousal at all, as self-perception theory proposes",
     ],
-    answer: 3,
+    answer: 1,
     explanation:
       "In Zanna and Cooper's misattribution study, students who could blame their discomfort on the pill showed little attitude change, while those who expected to feel relaxed, and so could not blame the pill, changed most. This supports the claim that dissonance is an arousing state, which self-perception theory (which says people simply infer attitudes from behaviour without any arousal) cannot explain. The pill was inert, so it could not change attitudes directly. Effects appeared mainly with high choice, so choice clearly mattered.",
     ref: "Zanna & Cooper 1974",
@@ -356,7 +356,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "Bem argued that a person who lied for only $1 simply looks at their own behaviour and reasons, 'I said it was interesting for a tiny reward, so I must have found it interesting.' No uncomfortable arousal is needed. Evidence suggests both theories are right in different areas: self-perception applies best when attitudes are weak or unclear, and dissonance applies when behaviour clearly contradicts a clear, important attitude. Option 3 describes dissonance theory. Options 1 and 4 are not part of either theory.",
+      "Bem argued that a person who lied for only $1 simply looks at their own behaviour and reasons, 'I said it was interesting for a tiny reward, so I must have found it interesting.' No uncomfortable arousal is needed. Evidence suggests both theories are right in different areas: self-perception applies best when attitudes are weak or unclear, and dissonance applies when behaviour clearly contradicts a clear, important attitude. Feeling tension whenever one acts against one's beliefs describes dissonance theory. Attitudes always coming first, and attitudes being purely genetic, are not part of either theory.",
     ref: "Bem 1967, 1972; Fazio, Zanna & Cooper 1977",
   }),
   s({
@@ -487,12 +487,12 @@ export const QUESTIONS: PrepQuestion[] = [
       "D. The listener has time and enough knowledge to understand the arguments.",
     ],
     options: [
-      "A, B and D only",
       "A and C only",
+      "A, B and D only",
       "B and C only",
       "A, B, C and D",
     ],
-    answer: 0,
+    answer: 1,
     explanation:
       "Central processing needs both motivation and ability. Personal relevance (A) and enjoying effortful thinking, called need for cognition (B), raise motivation. Time and knowledge (D) raise ability. Distraction (C) reduces the ability to think about the arguments, which pushes people towards peripheral cues; with strong arguments, distraction makes persuasion weaker, and with weak arguments it can make persuasion stronger, because people cannot spot the flaws.",
     ref: "Petty & Cacioppo 1986; Cacioppo & Petty 1982",
@@ -514,7 +514,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "In Petty, Cacioppo and Goldman's study, students for whom the exam was personally relevant followed the central route: strong arguments persuaded them and weak ones did not, whatever the source. Students for whom it was distant followed the peripheral route: the expert source persuaded them more, whatever the arguments. Option 1 reverses the pattern. Both factors mattered, but under different conditions. Strong arguments had a much bigger effect under high relevance.",
+      "In Petty, Cacioppo and Goldman's study, students for whom the exam was personally relevant followed the central route: strong arguments persuaded them and weak ones did not, whatever the source. Students for whom it was distant followed the peripheral route: the expert source persuaded them more, whatever the arguments. Saying expertise matters most under high relevance reverses the pattern. Both factors mattered, but under different conditions. Strong arguments had a much bigger effect under high relevance.",
     ref: "Petty, Cacioppo & Goldman 1981",
   }),
   s({
@@ -553,10 +553,10 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "A-iv, B-i, C-ii, D-iii",
       "A-ii, B-iv, C-i, D-iii",
-      "A-iv, B-ii, C-i, D-iii",
       "A-iv, B-ii, C-iii, D-i",
+      "A-iv, B-ii, C-i, D-iii",
     ],
-    answer: 2,
+    answer: 3,
     explanation:
       "Foot-in-the-door starts with a small request and builds to a larger one; Freedman and Fraser found that people who first agreed to a small 'drive carefully' request were far more likely to accept a big sign later (iv). Door-in-the-face starts with an extreme request that is refused, so the smaller follow-up looks like a concession that should be returned (ii). Low-ball gets a commitment and then changes the terms (i). That's-not-all improves the deal before the person answers (iii). The other codes swap these.",
     ref: "Freedman & Fraser 1966; Cialdini et al. 1975, 1978; Burger 1986",
@@ -565,7 +565,7 @@ export const QUESTIONS: PrepQuestion[] = [
     id: "soc-pers-0074",
     topic: "persuasion",
     exams: [N, M, S],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "The door-in-the-face technique works mainly because of:",
     options: [
@@ -583,7 +583,7 @@ export const QUESTIONS: PrepQuestion[] = [
     id: "soc-pers-0075",
     topic: "persuasion",
     exams: [N, M],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "Hovland and Weiss found that a message from a low-credibility source became more persuasive several weeks later, while a high-credibility message became less persuasive. This delayed increase is called the:",
     options: [
@@ -601,7 +601,7 @@ export const QUESTIONS: PrepQuestion[] = [
     id: "soc-pers-0076",
     topic: "persuasion",
     exams: [N, M, S],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "McGuire's inoculation theory proposes that people can be made more resistant to persuasion by:",
     options: [
@@ -799,7 +799,7 @@ export const QUESTIONS: PrepQuestion[] = [
     id: "soc-pers-0086",
     topic: "persuasion",
     exams: [N, M, S],
-    difficulty: 2,
+    difficulty: 1,
     type: "mcq",
     stem: "Need for cognition, measured by Cacioppo and Petty's scale, refers to:",
     options: [
@@ -822,18 +822,18 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "A: When students were distracted while hearing a message with weak arguments, they were more persuaded than students who were not distracted.",
-      "R: Distraction reduces people's ability to generate counter-arguments to a message.",
+      "R: Distraction makes people process the arguments more carefully, so that weak arguments appear stronger.",
     ],
     options: AR,
-    answer: 0,
+    answer: 2,
     explanation:
-      "Both are true and R explains A. Petty, Wells and Brock found that distraction increased persuasion by weak messages, because listeners could not think of the obvious counter-arguments, but decreased persuasion by strong messages, because listeners could not appreciate the good arguments. This crossover supports the idea that distraction works by blocking elaboration, not just by making people agree.",
+      "A is true and R is false. In Petty, Wells and Brock's study, distraction raised agreement with a weak message but lowered agreement with a strong one. The explanation is the opposite of R: distraction reduces the ability to think carefully about a message, so people produce fewer counter-arguments to weak claims and also miss the merits of strong ones. It does not make processing more careful. Since R is false, the options in which R is true are wrong.",
     ref: "Petty, Wells & Brock 1976",
   }),
   s({
     id: "soc-att-0088",
     exams: [N, M, S],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "In Staats and Staats' study, national names (such as 'Dutch' or 'Swedish') were repeatedly paired with positive or negative words. Participants later rated the names paired with positive words more favourably. This shows that attitudes can be formed through:",
     options: [
@@ -917,10 +917,10 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Peripheral-route persuasion by the professor's attractiveness",
       "The sleeper effect",
-      "Social facilitation",
       "Dissonance from freely chosen counter-attitudinal behaviour with insufficient external justification",
+      "Social facilitation",
     ],
-    answer: 3,
+    answer: 2,
     explanation:
       "Ankit freely chose to argue against his own view, and the reason he had (staying on good terms) was weak, so he experienced dissonance and reduced it by moving his attitude towards the essay. Neha had a strong external justification (it was required to pass), so she felt no dissonance and did not change. This is the induced-compliance paradigm. The sleeper effect concerns discounted messages gaining influence over time. Social facilitation concerns performance in front of others. Nothing suggests the professor's appearance played a role.",
     ref: "Linder, Cooper & Jones 1967",

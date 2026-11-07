@@ -94,6 +94,10 @@ Then one open question, and **silence**: “What brings you here today?” Let t
 Ask about suicide directly, in every interview. Asking does not put the idea in someone's head; not asking can miss the most important fact of the day.
 :::
 
+:::widget timeline
+{"prompt": "Put the main steps of the history in the order used here.", "events": [{"label": "Identification and informants"}, {"label": "Chief complaints, with duration"}, {"label": "Present illness"}, {"label": "Risk: self-harm, suicide, harm to others"}, {"label": "Past psychiatric and medical history"}, {"label": "Family history"}, {"label": "Personal history"}, {"label": "Premorbid personality"}], "why": "The story starts with who is telling it and why they came, then follows the present illness, checks risk early, and widens out to the past, the family and the person's life. Different schools vary the order a little; what matters is that nothing is missed and risk is never skipped."}
+:::
+
 ### Moving between topics
 Signal every change so it never feels like an interrogation: “Thank you, that helps. Now I would like to ask about your family.” If they drift, steer kindly: “That is important, and we will come back to it. First, tell me more about the sleep.”
 
@@ -178,6 +182,10 @@ Neither snapshot is a diagnosis by itself. Each is a careful record of **what wa
 The MMSE (Mini-Mental State Examination) is a short memory and thinking test that can be used inside one part of the MSE (cognition). The MSE is the whole examination. Mixing them up is the most common error in this topic.
 :::
 
+:::widget timeline
+{"prompt": "Order the eight areas of the MSE, from what you see first to what you judge last.", "events": [{"label": "Appearance and behaviour"}, {"label": "Speech"}, {"label": "Mood and affect"}, {"label": "Thought"}, {"label": "Perception"}, {"label": "Cognition"}, {"label": "Insight"}, {"label": "Judgement"}], "why": "The MSE moves from the outside in: what you can see and hear, then what the person feels and thinks, then how well their mind is working, and finally how they understand their illness and make decisions."}
+:::
+
 :::recall
 1. What does the MSE describe? || How the person's mind is working right now, in the interview.
 2. How is the MSE different from the history? || The history is the story over time (often reported); the MSE is today's snapshot (observed and elicited).
@@ -209,6 +217,10 @@ Both are useful. Start each topic open, then close down to the details. Closed q
 3. **Reflecting the feeling.** “It sounds like you have been very alone with this.” This shows you heard the emotion, not just the facts.
 4. **Checking the meaning.** “When you say ‘tension’, do you mean worry in your mind, or something in your body?”
 5. **Summarising.** “Let me check I have this right…” It shows you listened and lets them correct you.
+
+:::widget compare
+{"title": "Closed and open questions", "a": {"label": "Closed questions", "points": ["'Do you sleep well?'", "'Is your mood low?'", "Get a yes or no", "Useful to check a fact or rate a symptom", "Too many too early, and the patient stops telling the story"], "summary": "Closed: quick and precise, but they narrow the answer to what you thought to ask."}, "b": {"label": "Open questions", "points": ["'Tell me about your sleep.'", "'How have you been feeling in yourself?'", "Invite the person's own words", "Bring out things you did not know to ask", "Best at the start of each new topic"], "summary": "Open: slower, but they let the patient lead you to what matters."}, "caption": "A good interview is a funnel: open first, then narrowing, then closed questions to pin down details."}
+:::
 
 ### Words people use for distress
 In Indian clinics many people describe distress in everyday words or through the body. These need a gentle follow-up, not a quick label.
@@ -572,6 +584,10 @@ A classic viva question and a real clinical hazard.
 Raised eyebrows, leaning towards the patient, putting your pen down, a nod, a brief “I see.” Verbal empathy is short and specific: “That must have been very difficult for you.” If you are not sure what the patient experienced, do not guess. Encourage them to continue; a wrong guess costs more than silence.
 :::
 
+:::widget compare
+{"title": "Sympathy and empathy", "a": {"label": "Sympathy", "points": ["'Oh, poor you, how terrible.'", "Feeling sorry for the person, from outside", "Can sound like pity", "Focus moves to the helper's feelings"], "summary": "Sympathy: kind, but it keeps a distance and can feel like pity."}, "b": {"label": "Empathy", "points": ["'It sounds as though you have felt completely alone with this.'", "Understanding the experience as the person feels it", "Checked with them: 'Have I got that right?'", "Focus stays on the patient"], "summary": "Empathy: understanding from the inside, put into words and checked. It is the base of rapport."}, "caption": "Empathy is a skill you can practise: notice the feeling, name it, and check you have understood."}
+:::
+
 ### What actually builds the alliance
 - **Respect and consideration.** The patient is often in pain, vulnerable and, because of stigma, frightened of seeing you. Much of a first interview's success depends on reducing excessive anxiety.
 - **A non-judgemental attitude.** Many patients have met criticism, belittlement or anger in response to their symptoms. Being heard without judgement is itself therapeutic.
@@ -791,6 +807,10 @@ Record important negative findings, for example the absence of alcohol or drug u
 A graphical display of the course of illness over time. In one picture it shows the sequence of episodes, polarity, severity, frequency, relation to stressors and response to treatment.
 :::
 For recurrent and bipolar disorders it conveys in one glance what three paragraphs cannot. Draw time along the bottom, mania above the line and depression below; bar height shows severity, bar width shows duration, and a triangle marks each stressor (for example bereavement, job loss, stopping medicines). Add a treatment row underneath (for example “lithium, adherent” then “stopped”). Draw one for every patient with a recurrent disorder.
+
+:::widget timeline
+{"prompt": "Ramesh's family tell his story in a jumble. Put the events of his present illness in order.", "events": [{"label": "Last completely well: working and cheerful at his cousin's wedding"}, {"label": "Lost his job when the factory closed"}, {"label": "Began sleeping badly and stopped meeting friends"}, {"label": "Stopped eating properly and lost weight"}, {"label": "Said he was a burden and that the family would be better off without him"}, {"label": "Brought to the clinic by his wife"}], "why": "A present illness is written as a story in time: when the person was last well, what set things off, how symptoms developed, and what led to the visit today. Getting the order right shows how the illness grew, and here it shows rising risk."}
+:::
 
 ### The psychiatric review of systems
 Run it alongside the present illness, to rule diagnoses in or out with pertinent positives and negatives.

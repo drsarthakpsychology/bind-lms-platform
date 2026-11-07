@@ -69,12 +69,12 @@ export const QUESTIONS: PrepQuestion[] = [
       ],
     },
     options: [
-      "A-iv, B-ii, C-i, D-iii",
       "A-ii, B-iv, C-i, D-iii",
+      "A-iv, B-ii, C-i, D-iii",
       "A-ii, B-iv, C-iii, D-i",
       "A-ii, B-i, C-iv, D-iii",
     ],
-    answer: 1,
+    answer: 0,
     explanation:
       "Primary circular reactions (about 1 to 4 months) centre on the infant's own body (ii). Secondary circular reactions (4 to 8 months) repeat actions with interesting external effects (iv). Coordination of secondary schemes (8 to 12 months) brings intentional means-end behaviour and the A-not-B error (i). Tertiary circular reactions (12 to 18 months) involve active experimentation with variations (iii). The other codes swap primary and secondary, or the last two substages.",
     ref: "Berk, Child Development, ch. 6",
@@ -104,12 +104,12 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "A: Baillargeon's 'drawbridge' studies suggested that infants of 3½ to 5 months have some understanding of object permanence.",
-      "R: Infants looked longer at an 'impossible' event in which a screen appeared to pass through a hidden box than at a possible event.",
+      "R: Piaget based his account of object permanence mainly on infants' manual search for hidden objects.",
     ],
     options: AR,
-    answer: 0,
+    answer: 1,
     explanation:
-      "Both are true and R explains A. Using the violation-of-expectation method (longer looking at surprising events), Baillargeon, Spelke and Wasserman and Baillargeon inferred that young infants represent hidden objects, months earlier than Piaget's manual-search tasks implied. Critics argue that looking-time effects may reflect perceptual novelty rather than knowledge, but the finding is the standard challenge to Piaget's timeline.",
+      "Both are true, but R does not explain A. A is true because infants looked longer at an 'impossible' event, in which a screen seemed to rotate through a hidden box, than at a possible one, which suggests they expected the box to go on existing. R is also true: Piaget judged object permanence by whether infants reached for and uncovered hidden toys. R helps explain why Piaget dated the ability later, since search demands motor planning, but it does not explain Baillargeon's finding itself. So 'R explains A' is wrong, and the options calling one statement false are wrong too.",
     ref: "Baillargeon 1987, Dev Psychol",
   }),
   d({
@@ -122,10 +122,10 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "A, B, C, D and E",
       "A, B and D only",
-      "C, D and E only",
       "A, B, C and E only",
+      "C, D and E only",
     ],
-    answer: 3,
+    answer: 2,
     explanation:
       "Preoperational children centre on one salient feature (centration), cannot mentally reverse actions (irreversibility), struggle to take others' viewpoints (egocentrism) and attribute life to objects (animism). Hypothetico-deductive reasoning is a hallmark of formal operations, so D does not belong.",
     ref: "Santrock, ch. 6",
@@ -269,12 +269,12 @@ export const QUESTIONS: PrepQuestion[] = [
       "D. He claimed children are passive recipients of knowledge from adults.",
     ],
     options: [
-      "A, B and C only",
-      "A and D only",
       "B, C and D only",
+      "A and D only",
+      "A, B and C only",
       "A, B, C and D",
     ],
-    answer: 0,
+    answer: 2,
     explanation:
       "A: violation-of-expectation and simplified tasks show earlier competence. B: cross-cultural work (for example the work of Dasen) and adult studies show formal operations are far from universal and are tied to schooling and expertise. C: neo-Piagetian and information-processing accounts emphasise domain-specific, uneven progress. D is wrong as a criticism because it misstates the theory: Piaget saw children as active constructors of knowledge ('little scientists'); the opposite charge, neglect of social and cultural influence, came from Vygotskians.",
     ref: "Berk, ch. 6; Santrock, ch. 6",
@@ -506,7 +506,7 @@ export const QUESTIONS: PrepQuestion[] = [
     id: "dev-vyg-0027",
     topic: "vygotsky",
     exams: [C, N, M, S],
-    difficulty: 2,
+    difficulty: 1,
     type: "mcq",
     stem: "The term 'scaffolding' for adjustable, temporary support in tutoring was introduced by:",
     options: [
@@ -688,7 +688,7 @@ export const QUESTIONS: PrepQuestion[] = [
     id: "dev-ip-0036",
     topic: "information-processing",
     exams: [N, M, S],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "Flavell, Beach and Chinsky found that young children did not spontaneously rehearse to-be-remembered pictures but could do so and remembered better when told to. This is called a:",
     options: [
@@ -726,7 +726,7 @@ export const QUESTIONS: PrepQuestion[] = [
     id: "dev-ip-0038",
     topic: "information-processing",
     exams: [N, M, S],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "Siegler's 'overlapping waves' model proposes that:",
     options: [
@@ -756,7 +756,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "About 80% of the children with autism failed, pointing to where the marble actually was, although they answered memory and reality control questions correctly; most typically developing children and those with Down syndrome passed. This was taken as evidence of a theory-of-mind deficit in autism. Option 2 is the correct answer most comparison children gave. The children did answer, and they remembered the marble's location.",
+      "About 80% of the children with autism failed, pointing to where the marble actually was, although they answered memory and reality control questions correctly; most typically developing children and those with Down syndrome passed. This was taken as evidence of a theory-of-mind deficit in autism. Saying Sally would look in her own basket is the correct answer most comparison children gave. The children did answer, and they remembered the marble's location.",
     module: "child",
     ref: "Baron-Cohen, Leslie & Frith 1985, Cognition",
   }),
@@ -932,7 +932,7 @@ export const QUESTIONS: PrepQuestion[] = [
     id: "dev-ip-0048",
     topic: "information-processing",
     exams: [C, N, S],
-    difficulty: 2,
+    difficulty: 1,
     type: "mcq",
     stem: "Metacognition refers to:",
     options: [
@@ -970,7 +970,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 3,
     explanation:
-      "Transductive reasoning links two particular events as cause and effect without logic (iv). Artificialism is believing natural features were made by people (i). Reversibility is mentally undoing an action (ii). Decentration is attending to more than one dimension at a time, as in compensating height with width (iii). Option 2 swaps transductive reasoning and artificialism; option 3 swaps reversibility and decentration; option 1 misplaces artificialism and reversibility.",
+      "Transductive reasoning links two particular events as cause and effect without logic (iv). Artificialism is believing natural features were made by people (i). Reversibility is mentally undoing an action (ii). Decentration is attending to more than one dimension at a time, as in compensating height with width (iii). The code A-i, B-iv, C-ii, D-iii swaps transductive reasoning and artificialism; A-iv, B-i, C-iii, D-ii swaps reversibility and decentration; A-iv, B-ii, C-i, D-iii misplaces artificialism and reversibility.",
     ref: "Berk, ch. 6",
   }),
   d({
@@ -1124,10 +1124,10 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "A-iii, B-iv, C-ii, D-i",
       "A-ii, B-iii, C-iv, D-i",
-      "A-iii, B-ii, C-iv, D-i",
       "A-iii, B-ii, C-i, D-iv",
+      "A-iii, B-ii, C-iv, D-i",
     ],
-    answer: 2,
+    answer: 3,
     explanation:
       "Case proposed central conceptual structures and growth in executive processing space (iii). Pascual-Leone proposed M-capacity growing in steps (ii). Kail documented a common exponential speed curve (iv). Karmiloff-Smith proposed representational redescription (i). The other codes swap Case and Pascual-Leone, Pascual-Leone and Kail, or Kail and Karmiloff-Smith.",
     module: undefined,
@@ -1215,7 +1215,7 @@ export const QUESTIONS: PrepQuestion[] = [
   d({
     id: "dev-piaget-0062",
     exams: [C, N, S],
-    difficulty: 2,
+    difficulty: 1,
     type: "mcq",
     stem: "A child aged about 7 to 11 can reason logically about real objects but struggles with purely hypothetical problems. Piaget would place the child in the:",
     options: [
@@ -1269,7 +1269,7 @@ export const QUESTIONS: PrepQuestion[] = [
   d({
     id: "dev-piaget-0065",
     exams: [N, M, S],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "In Piaget's theory, the main force that drives a child from one stage to the next is:",
     options: [

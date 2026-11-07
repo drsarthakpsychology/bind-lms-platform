@@ -106,6 +106,10 @@ The paradox that "a stimulant calms a hyperactive child" is not really a paradox
 {"kind": "inverted-u", "title": "Arousal, dopamine and performance", "caption": "Move the slider. Too little prefrontal dopamine and noradrenaline (bored, under-aroused) and too much (overdosed, anxious) both worsen performance; the best focus sits in the middle. Stimulants at the right dose move many people with ADHD towards the peak, which is why the dose is titrated, not pushed as high as possible."}
 :::
 
+:::widget pathways
+{"system": "dopamine", "title": "Where stimulants act", "caption": "Stimulants raise dopamine and noradrenaline. The benefit in ADHD comes mainly through the mesocortical pathway to the prefrontal cortex, which supports attention and control. Too much in the mesolimbic pathway brings euphoria and misuse risk, which is why slow-release forms are preferred. Turn on D2 block to compare: antipsychotics act in the opposite direction."}
+:::
+
 ### Adult ADHD
 
 :::widget journey
@@ -246,6 +250,10 @@ Treating a child means treating a system: the child, the parents, the school, an
 
 :::widget flow
 {"title": "Choosing the first treatment for a young person", "layout": "tree", "nodes": [{"id": "r", "label": "Diagnosis made, severity rated", "detail": "Always include psychoeducation, family and school work."}, {"id": "psy", "label": "Psychological treatment first", "detail": "Mild to moderate anxiety and depression, ODD, early conduct problems, eating disorders (family-based), mild tics, school refusal.", "parent": "r"}, {"id": "both", "label": "Combine early", "detail": "Moderate to severe depression or anxiety, OCD: CBT plus an SSRI often gives the best results.", "parent": "r"}, {"id": "med", "label": "Medicine needed early", "detail": "Severe impairing ADHD in school-age children, psychosis, mania, severe tics, catatonia.", "parent": "r"}], "caption": "Tap each branch. A prescription is never the whole plan."}
+:::
+
+:::widget compare
+{"title": "Medicines in adults and in children", "a": {"label": "Adults", "points": ["Most trials are done in adults", "Doses are well known", "Many antidepressants work in depression", "Weight and metabolism are stable"], "summary": "The evidence base is larger, and doses are established."}, "b": {"label": "Children and teenagers", "points": ["Fewer trials; many medicines are used off-label", "Faster metabolism, so doses do not simply scale down", "In depression, fluoxetine has the best evidence; most others did not beat placebo", "Antidepressants carry a warning about suicidal thinking early on, so close review is needed", "Growth, weight and school function must be tracked"], "summary": "Start low, go slow, monitor closely, and always pair medicine with psychological help."}, "caption": "Psychological treatments come first for most childhood problems. Medicine is added for clear reasons, such as ADHD or severe depression."}
 :::
 
 ### The special rules for medicines in children

@@ -104,7 +104,7 @@ export const QUESTIONS: PrepQuestion[] = [
     id: "dev-life-0211",
     topic: "adolescence",
     exams: [N, M, S],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "Steinberg's 'dual systems' model explains heightened adolescent risk-taking by:",
     options: [
@@ -364,12 +364,12 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "A: Older adults often show a 'positivity effect', attending to and remembering positive information more than negative information compared with younger adults.",
-      "R: According to socioemotional selectivity theory, when time is perceived as limited, people prioritise emotion regulation and emotionally satisfying goals.",
+      "R: Older adults typically have smaller social networks than younger adults.",
     ],
     options: AR,
-    answer: 0,
+    answer: 1,
     explanation:
-      "Both are true and R explains A. Carstensen, Mather and colleagues found older adults look less at negative faces and remember relatively more positive images; socioemotional selectivity theory attributes this to motivational shifts when time horizons shorten. Younger people with limited time (for example those with serious illness) show similar preferences, supporting the time-perspective explanation over a purely age-based one.",
+      "Both are true, but R does not explain A. Socioemotional selectivity theory explains both facts: when people see their time as limited, they prioritise emotionally meaningful goals. This leads them to keep close relationships and drop peripheral ones, and also to direct attention toward positive information. The smaller network and the positivity effect are therefore two results of the same cause; one does not cause the other. So 'R explains A' is wrong, and since both statements are true, the options saying either is false are also wrong.",
     ref: "Mather & Carstensen 2005, TICS",
   }),
   d({
@@ -964,13 +964,13 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "assertion-reason",
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
-      "A: Peer influence is especially strong in early to middle adolescence.",
+      "A: Susceptibility to peer influence peaks in early childhood and declines steadily from about age 7.",
       "R: Adolescents spend more time with peers and are more sensitive to peer acceptance and social evaluation than children or adults.",
     ],
     options: AR,
-    answer: 0,
+    answer: 3,
     explanation:
-      "Both are true and R explains A. Conformity to peers, especially for antisocial behaviour, peaks around 14 (as shown in studies by Berndt and by Steinberg and Monahan), as time with peers increases and social-evaluative sensitivity rises with puberty-linked changes in social brain networks.",
+      "A is false and R is true. Studies such as Steinberg's show that resistance to peer influence is lowest in early to middle adolescence, around 13 to 15, and grows through late adolescence into adulthood. Peer influence therefore peaks in the teens, not in early childhood. R correctly describes why adolescence is the high point: more time with peers and greater sensitivity to their approval, linked to changes in reward and social brain systems. Because A is false, the options that treat A as true are wrong.",
     ref: "Steinberg & Monahan 2007, Dev Psychol",
   }),
   d({

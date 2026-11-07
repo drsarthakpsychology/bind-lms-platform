@@ -13,6 +13,10 @@ export const part2 = String.raw`
 - **Crowding**: **density** is the number of people per space; **crowding** is the **unpleasant feeling** that there are too many people (Daniel Stokols's distinction). High density is not always felt as crowding: a packed wedding hall feels festive, a packed hospital corridor feels oppressive. Control, purpose, culture and relationships change the experience. Indian researchers (notably Uday Jain) studied crowding in Indian homes and found that household density affected wellbeing and children's development, but family cohesion and cultural expectations moderated the effect.
 - **Heat and air pollution**: heat raises irritability and aggression and lowers performance; air pollution is linked with poorer cognition and higher rates of depression. Both are major issues in Indian cities, where heatwaves and winter smog are now regular events.
 
+:::widget compare
+{"title": "Glass and Singer's noise studies", "a": {"label": "Unpredictable, no control", "points": ["Loud bursts at random times", "No way to stop them", "Later: gives up sooner on unsolvable puzzles", "More errors on a proofreading task"], "summary": "The harm shows up after the noise ends, as lower frustration tolerance."}, "b": {"label": "Predictable, or with a stop button", "points": ["Same loudness, at regular times", "Or a button that could stop the noise, even if never pressed", "Later: persists much longer on puzzles", "Fewer errors"], "summary": "Predictability and perceived control protect against the after-effects. The belief that you could act is enough."}}
+:::
+
 :::widget guess
 {
   "prompt": "Hall's proxemics divides space around a person into zones. In his scheme, roughly where does the 'personal' zone (for friends and family conversation) end?",
@@ -50,6 +54,10 @@ export const part2 = String.raw`
 - **Roger Ulrich's** study of patients recovering from gall bladder surgery found that those whose windows looked onto **trees** had shorter hospital stays, needed fewer strong painkillers and received fewer negative nurse notes than matched patients facing a brick wall (**stress recovery theory**).
 - **Attention restoration theory**, from a husband-and-wife team of American environmental psychologists: nature restores **directed attention** that tires with effort. Restorative settings have four qualities: **being away**, **extent** (a whole other world), **soft fascination** and **compatibility** with what you want to do.
 - **Biophilia** (E. O. Wilson): humans have an inborn affinity for living things.
+
+:::widget compare
+{"title": "Why does nature help?", "a": {"label": "Attention restoration", "points": ["Effortful focus tires directed attention", "Nature holds attention gently ('soft fascination')", "Needs being away, extent, fascination and compatibility", "Benefit: better concentration"], "summary": "Nature rests the mental muscle used for focus."}, "b": {"label": "Stress reduction", "points": ["Ulrich's view, from his hospital window study", "Natural scenes quickly calm the body", "A fast emotional response, inherited from our past", "Benefit: lower arousal, better mood, faster recovery"], "summary": "Nature lowers stress before we even think about it. The two theories are compatible."}}
+:::
 
 :::widget sort
 {
@@ -154,6 +162,14 @@ Memory is **reconstructive**, not a recording.
 - **False confessions** happen. Saul Kassin described three types: **voluntary** (offered freely, often for attention or to protect someone), **compliant** (to escape pressure, knowing one is innocent) and **internalised** (the suspect comes to believe they did it). Long, isolating, accusatory interrogations, presenting false evidence, and vulnerable suspects (young, intellectually disabled, highly suggestible) raise the risk. **Gisli Gudjonsson** developed suggestibility scales to measure how easily people yield to leading questions.
 - The **Reid technique** (accusatory, confrontational) has been criticised for producing false confessions. The UK's **PEACE model** (Preparation and planning, Engage and explain, Account, Closure, Evaluate) is an information-gathering approach now used in many countries.
 
+:::widget compare
+{"title": "Two ways to question a suspect", "a": {"label": "Accusatory (Reid)", "points": ["Assumes guilt from the start", "Confronts and rejects denials", "Offers excuses to make confessing easier", "Goal: a confession"], "summary": "Raises the risk of false confessions, especially in young, tired or vulnerable suspects."}, "b": {"label": "Information-gathering (PEACE)", "points": ["Preparation and planning", "Engage and explain", "Account, then challenge inconsistencies", "Closure, then evaluate"], "summary": "Goal: accurate information. Fewer false confessions, and no loss of true ones."}}
+:::
+
+:::widget sort
+{"prompt": "Which of Kassin's three types of false confession is each?", "buckets": ["Voluntary", "Compliant", "Internalised"], "items": [{"text": "After a famous murder, a man walks into a police station and confesses to get on television", "bucket": 0, "why": "Offered freely, without pressure."}, {"text": "After 20 hours of questioning, a 17-year-old signs a confession so he can go home, knowing he is innocent", "bucket": 1, "why": "Confessing to escape pressure."}, {"text": "Told falsely that his fingerprints were found, an exhausted suspect comes to believe he did it during a blackout", "bucket": 2, "why": "He now believes his own false confession."}, {"text": "A father confesses to a hit-and-run to protect his son", "bucket": 0, "why": "Voluntary, to protect someone else."}]}
+:::
+
 ### Detecting deception
 - People, including police officers, detect lies only a little better than chance.
 - The **polygraph** measures heart rate, blood pressure, breathing and skin conductance. It detects **arousal**, not lies: anxious truth-tellers can fail and practised liars can pass. The **concealed information test** (does the person react to crime details only the culprit would know?) has better scientific support than the common control-question test.
@@ -176,6 +192,10 @@ Memory is **reconstructive**, not a recording.
 - Courts distinguish **legal insanity** (this narrow test) from **medical insanity** (having a mental illness). Many people with serious mental illness do not meet the legal test.
 - **Fitness (competence) to stand trial** is a separate question about the **present**: can the accused understand the proceedings and help in their defence?
 - Psychologists contribute through careful assessment, history, collateral information and testing, but the **court decides** the legal question.
+
+:::widget compare
+{"title": "Two separate legal questions", "a": {"label": "Criminal responsibility", "points": ["About the time of the offence", "Could the person know the nature of the act, or that it was wrong or against the law, because of unsoundness of mind?", "Based on the M'Naghten rules, now BNS section 22", "A narrow legal test, not a diagnosis"], "summary": "Legal insanity looks backwards to the moment of the act."}, "b": {"label": "Fitness to stand trial", "points": ["About the present", "Can the person understand the charges and the proceedings?", "Can they instruct a lawyer and take part in their defence?", "Can change with treatment"], "summary": "Fitness looks at now. A person may be unfit today and later fit, and the court, not the psychologist, decides both questions."}}
+:::
 
 ### Risk assessment
 Three approaches to predicting violence or reoffending:
@@ -251,6 +271,10 @@ In 1898 **Norman Triplett** noticed that cyclists rode faster when racing agains
 | **Multidimensional anxiety theory** | **Cognitive anxiety** (worry) harms performance steadily; **somatic anxiety** (bodily arousal) follows an inverted U; **self-confidence** helps. Measured with the CSAI-2 |
 | **Catastrophe model** (Lew Hardy) | When cognitive anxiety is high, rising arousal can cause a sudden, large **collapse** in performance rather than a gentle decline; recovery needs a big drop in arousal |
 | **Reversal theory** | The same arousal can be felt as excitement or as anxiety, and people can switch between them |
+
+:::widget compare
+{"title": "Inverted-U or catastrophe?", "a": {"label": "Inverted-U", "points": ["Performance rises with arousal up to a point", "Past the peak, it declines gradually", "Lowering arousal a little restores performance", "Ignores worry"], "summary": "A smooth curve: too little and too much arousal both hurt."}, "b": {"label": "Catastrophe model", "points": ["With low worry, arousal acts like an inverted U", "With high worry, past the peak performance collapses suddenly", "Recovery needs a big drop in arousal, not a small one", "Worry and arousal interact"], "summary": "Hardy's model explains the sudden collapse of a batsman or a shooter under pressure."}}
+:::
 
 ### Choking under pressure
 **Choking** is a drop in performance under pressure despite skill and motivation. Two explanations:
@@ -367,6 +391,10 @@ Q: A coach who praises effort and improvement rather than ranking players create
 - **Solipsistic introjection**: you imagine the other person's voice in your head.
 - **Dissociative imagination**: "it's just a game".
 - **Minimised authority**: status cues disappear.
+
+:::widget sort
+{"prompt": "Which of Suler's disinhibition factors is most at work?", "buckets": ["Dissociative anonymity", "Invisibility", "Asynchronicity", "Dissociative imagination", "Minimised authority"], "items": [{"text": "'Nobody knows this account is mine, so I can say anything.'", "bucket": 0}, {"text": "'I can't see her face when she reads it, so it doesn't feel cruel.'", "bucket": 1}, {"text": "'I'll post it and log off. I won't see the replies until tomorrow.'", "bucket": 2}, {"text": "'It's just the game world. It isn't real.'", "bucket": 3}, {"text": "'Online, a professor's comment counts no more than mine.'", "bucket": 4}]}
+:::
 
 It can be **benign** (opening up about a problem, seeking help) or **toxic** (trolling, harassment, hate speech).
 

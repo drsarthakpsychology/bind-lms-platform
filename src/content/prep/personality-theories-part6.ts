@@ -39,7 +39,7 @@ export const QUESTIONS: PrepQuestion[] = [
   p({
     id: "per-bio-0239",
     exams: [N, M, S],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "Jerome Kagan's research on 'behavioural inhibition' found that infants who were highly reactive to unfamiliar stimuli at 4 months (crying and thrashing):",
     options: [
@@ -259,7 +259,7 @@ export const QUESTIONS: PrepQuestion[] = [
     topic: "personality-assessment",
     module: "assessment",
     exams: [N, M, S],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "On the MMPI-2, the F (infrequency) scale is mainly used to detect:",
     options: [
@@ -282,13 +282,13 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "assertion-reason",
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
-      "A: People tend to rate vague, general personality descriptions such as 'You have a need for others to like you' as highly accurate descriptions of themselves.",
-      "R: The statements apply to almost everyone, and people focus on the parts that fit them.",
+      "A: People tend to rate vague, general personality descriptions as poor descriptions of themselves, because they notice the statements could fit anyone.",
+      "R: Such statements apply to almost everyone, and people focus on the parts that fit them.",
     ],
     options: AR,
-    answer: 0,
+    answer: 3,
     explanation:
-      "Both are true and R explains A. In Forer's classroom demonstration, students rated an identical, generic 'personality profile' as very accurate. This 'Barnum effect' (or Forer effect) explains the appeal of horoscopes and of poorly validated tests, and it reminds clinicians to check that test feedback says more than what is true of everyone.",
+      "A is false and R is true. Forer's classroom demonstration showed the opposite: students rated an identical, generic sketch ('You have a need for other people to like you') as highly accurate, around 4.3 on a 5-point scale. This Barnum or Forer effect explains why horoscopes and some unvalidated tests seem convincing. R gives the reason correctly: the statements fit nearly everyone, and people attend selectively to the parts that apply to them. Since A is false, options in which A is true are wrong.",
     ref: "Forer 1949; Dickson & Kelly 1985",
   }),
   p({
@@ -388,7 +388,7 @@ export const QUESTIONS: PrepQuestion[] = [
     topic: "personality-assessment",
     module: "assessment",
     exams: [N, M, S],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "Which pairing of personality theory and assessment method is correct?",
     options: [

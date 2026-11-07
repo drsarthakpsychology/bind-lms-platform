@@ -38,6 +38,10 @@ Gregory (1966, 1970), building on Hermann von Helmholtz's idea of **unconscious 
 
 Many writers reconcile them with Milner and Goodale's distinction: the **dorsal stream** does fast, direct "vision for action" (Gibson-like), while the **ventral stream** does knowledge-based "vision for recognition" (Gregory-like). Notably, some studies have found that grasping is less affected by size illusions than verbal judgments of size.
 
+:::widget timeline
+{"prompt": "Put these big ideas about perception in the order they appeared.", "events": [{"label": "Helmholtz: perception is unconscious inference from sensations", "when": "1860s"}, {"label": "Wertheimer's phi phenomenon launches Gestalt psychology", "when": "1912"}, {"label": "Gibson: the light reaching the eye is rich enough for direct perception", "when": "1950 on"}, {"label": "Gregory: perception is hypothesis testing", "when": "1970"}, {"label": "Neisser's perceptual cycle joins the two", "when": "1976"}, {"label": "Marr: vision as computation in stages", "when": "1982"}, {"label": "The predictive brain: perception as controlled prediction", "when": "2000s"}], "why": "The debate swung between 'perception is built by inference' and 'perception is picked up directly', and modern predictive accounts are, in a way, Helmholtz's idea in mathematical form."}
+:::
+
 :::widget sort
 {
   "prompt": "Gibson or Gregory? Sort each claim.",
@@ -118,6 +122,10 @@ He also separated three **levels of explanation** for any information-processing
 ### The modern synthesis: the predictive brain
 Current theories (**predictive processing**, the "Bayesian brain") treat the brain as constantly **predicting** its sensory input from a model of the world, and passing forward only the **prediction error**, the part that was not expected. Perception is the brain's best explanation of the input, weighing prior beliefs against how reliable the evidence is. This is Helmholtz and Gregory made mathematical, but it also takes Gibson's point that the moving observer constantly samples the world.
 
+:::widget flow
+{"title": "The predictive brain loop", "layout": "cycle", "nodes": [{"id": "m", "label": "Model of the world", "detail": "From past experience, the brain holds a best guess about what is out there."}, {"id": "p", "label": "Prediction sent down", "detail": "Higher areas predict what the senses should be receiving right now."}, {"id": "e", "label": "Compare with input", "detail": "Only the mismatch, the prediction error, is passed upwards. Each error is weighted by how reliable it seems (its precision)."}, {"id": "u", "label": "Update the model", "detail": "Large, reliable errors change the model. Small or noisy ones are ignored. Perception is the model that best explains the input."}], "edgeLabels": {"m>p": "predict", "p>e": "meets the senses", "e>u": "prediction error", "u>m": "learn"}, "caption": "In one account of psychosis, errors are given too much weight, so trivial events feel important and demand an explanation."}
+:::
+
 :::clinician
 Predictive processing offers testable accounts of psychopathology. In psychosis, one account proposes aberrant precision-weighting: prediction errors are given too much weight, so trivial events feel significant (Shitij Kapur's idea of aberrant salience) and new beliefs (delusions) form to explain them; hallucinations may reflect overly strong priors in some people. Consistent with weaker top-down influence, people with schizophrenia are less susceptible to the hollow-face illusion and to some context-driven illusions (for example Ebbinghaus), yet their performance can be "better" than controls on such tasks. In autism, "weak priors" or inflexible precision accounts aim to explain sensory overload and reduced susceptibility to some illusions. These are frameworks under active test, not established mechanisms.
 :::
@@ -153,6 +161,10 @@ If perception were purely bottom-up, it would be the same in every culture and e
 - **The carpentered-world hypothesis**: Marshall Segall, Donald Campbell and Melville Herskovits (1966) tested over 1,800 people in 14 non-Western and 3 Western samples. People living in rectangular, "carpentered" environments (cities with corners and straight walls) were more susceptible to the Müller-Lyer illusion than people in rural African communities with round huts and few right angles. Experience with corners seems to teach the depth reading that the illusion exploits.
 - **The horizontal-vertical illusion** showed the reverse pattern: people from open, flat landscapes, who often see long receding horizontal stretches, were more susceptible.
 - **Critiques**: differences in schooling, in the pigmentation of the eye (which affects contrast sensitivity) and in familiarity with pictures may explain part of the effect.
+
+:::widget compare
+{"title": "The carpentered-world hypothesis", "a": {"label": "Carpentered settings", "points": ["Rectangular rooms, straight walls, square corners", "Corners are seen everywhere as cues to depth", "Strongly fooled by the Müller-Lyer illusion"], "summary": "People raised among right angles learn to read angled lines as corners in depth, and the habit makes the Müller-Lyer lines look unequal."}, "b": {"label": "Rounded, open settings", "points": ["Round huts, curved shapes, few right angles", "Less practice reading angles as depth", "Less fooled by the Müller-Lyer illusion"], "summary": "With less experience of carpentered corners, the illusion is weaker. Schooling, picture experience and eye pigmentation may explain part of the difference."}, "caption": "The horizontal-vertical illusion showed the reverse: people from flat, open land were more susceptible."}
+:::
 
 ### Culture and pictures
 - **Hudson (1960)** showed South African participants drawings with an elephant, an antelope and a hunter, using only relative size and overlap as depth cues. Many unschooled participants said the hunter was aiming at the (tiny, distant) elephant: they saw the picture as **flat** (two-dimensional). Schooling and exposure to pictures increased "3D" readings.
@@ -379,6 +391,10 @@ In the mental status examination, an **illusion** is a misperception of a real s
 - **Signal detection** gives a useful lens: hallucination-prone people show a more liberal bias to "detect" voices in noise, not better or worse hearing (Bentall and Slade, 1985). In Indian clinics, culturally shaped experiences (hearing a deceased relative's voice in grief, or experiences framed as spirit or deity possession) must be understood in context before being labelled.
 - **Charles Bonnet syndrome**: vivid, often silent visual hallucinations (patterns, small people, faces) in people with significant visual loss, such as untreated cataract, glaucoma or macular degeneration, with **insight preserved**. It is common in older adults and frequently goes unreported for fear of being called "mad". Ask about it, explain it, and treat the eyes.
 - **Delirium** produces illusions and visual hallucinations, worse at night, with fluctuating attention: inattention is a core feature of delirium.
+
+:::widget sort
+{"prompt": "Illusion or hallucination?", "buckets": ["Illusion", "Hallucination"], "items": [{"text": "In a dim ward at night, a coat on a hook is seen as a man standing there", "bucket": 0, "why": "A real stimulus is misperceived."}, {"text": "A man hears two voices discussing him when nobody is present", "bucket": 1, "why": "A perception without any stimulus, here a third-person auditory hallucination."}, {"text": "A delirious patient sees the flowers on the curtain as crawling insects", "bucket": 0, "why": "The curtain pattern is real; it is misread. Illusions are common in delirium."}, {"text": "A woman of 80 with macular degeneration sees small people in bright clothes on her table, and knows they are not real", "bucket": 1, "why": "No stimulus is there. This is Charles Bonnet syndrome, a hallucination with preserved insight."}, {"text": "A healthy student hears her name called just as she is falling asleep", "bucket": 1, "why": "A hypnagogic hallucination: a true hallucination, but a normal one at sleep onset."}, {"text": "Seeing a face in the pattern of a tiled floor while looking straight at it", "bucket": 0, "why": "Pareidolia: an illusion that persists even when you attend to it."}]}
+:::
 
 ### Attention in psychiatric disorders
 | Condition | Attentional finding |

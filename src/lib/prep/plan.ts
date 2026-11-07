@@ -1,5 +1,5 @@
 /**
- * The personal plan and the "next 1–3 things to do" (owner rule: one
+ * The personal plan and the "next 1 to 3 things to do" (owner rule: one
  * pathway, never more than three actions at once). Pure.
  */
 import { decayedTheta, prob } from "@/lib/learn/model/elo";

@@ -27,11 +27,11 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "John Locke described the mind at birth as a 'tabula rasa'. This means that:",
     options: [
       "People are born with innate ideas",
-      "The mind starts as a blank slate and all knowledge comes from experience",
-      "The mind and body are completely separate substances",
       "Behaviour is controlled by instincts",
+      "The mind and body are completely separate substances",
+      "The mind starts as a blank slate and all knowledge comes from experience",
     ],
-    answer: 1,
+    answer: 3,
     explanation:
       "Locke, a British empiricist, argued that ideas come from sensation (experience of the outside world) and reflection (experience of our own mental operations), and that simple ideas combine into complex ones. This empiricism fed into associationism and later behaviourism. Innate ideas were defended by rationalists such as Descartes. Mind-body separation is Cartesian dualism. Instinct theories came later and are not Locke's view.",
     ref: "Hergenhahn, History of Psychology, ch. 5",
@@ -52,12 +52,12 @@ export const QUESTIONS: PrepQuestion[] = [
       ],
     },
     options: [
-      "A-ii, B-iii, C-i, D-iv",
+      "A-ii, B-iii, C-iv, D-i",
       "A-iii, B-ii, C-iv, D-i",
       "A-ii, B-iv, C-iii, D-i",
-      "A-ii, B-iii, C-iv, D-i",
+      "A-ii, B-iii, C-i, D-iv",
     ],
-    answer: 3,
+    answer: 0,
     explanation:
       "Descartes proposed that an immaterial mind and a mechanical body interact, through the pineal gland (ii). Berkeley, an idealist empiricist, held that physical objects exist only as perceived (iii). Kant argued that the mind contributes a priori categories that organise experience (iv), an idea that later influenced Gestalt psychology. J. S. Mill proposed mental chemistry, against his father's simple 'mental mechanics' (i), which anticipated Wundt's creative synthesis. The other codes swap these.",
     ref: "Hergenhahn, chs. 4 to 6",
@@ -111,12 +111,12 @@ export const QUESTIONS: PrepQuestion[] = [
       ],
     },
     options: [
-      "A-iii, B-iv, C-ii, D-i",
+      "A-iii, B-iv, C-i, D-ii",
       "A-iv, B-iii, C-i, D-ii",
       "A-iii, B-i, C-iv, D-ii",
-      "A-iii, B-iv, C-i, D-ii",
+      "A-iii, B-iv, C-ii, D-i",
     ],
-    answer: 3,
+    answer: 0,
     explanation:
       "Gall's phrenology wrongly linked skull shape to faculties but promoted the idea of localisation (iii). Flourens removed parts of animal brains and found the cerebellum coordinates movement but argued the cortex acts as a unit (iv). Broca's 1861 report on his patient Leborgne ('Tan') located expressive language (i). Fritsch and Hitzig's 1870 stimulation studies revealed the motor cortex (ii). The other codes swap these.",
     ref: "Hergenhahn, ch. 8; Finger 1994",
@@ -190,10 +190,10 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Thinking, feeling and willing",
       "Evaluation, potency and activity",
-      "Pleasure and displeasure, tension and relaxation, excitement and calm",
       "Id, ego and superego",
+      "Pleasure and displeasure, tension and relaxation, excitement and calm",
     ],
-    answer: 2,
+    answer: 3,
     explanation:
       "Wundt arrived at these dimensions through introspection, for example while listening to a metronome, noticing that some rhythms were more pleasant, others built tension and others were exciting. Evaluation, potency and activity are the dimensions of Osgood's semantic differential, which came much later. Thinking, feeling and willing are older faculty-psychology categories. Id, ego and superego are Freud's.",
     ref: "Hergenhahn, ch. 9",
@@ -237,7 +237,7 @@ export const QUESTIONS: PrepQuestion[] = [
     id: "his-struct-0012",
     topic: "structuralism",
     exams: [C, N, M, S],
-    difficulty: 2,
+    difficulty: 1,
     type: "mcq",
     stem: "Edward Titchener's structuralism aimed to:",
     options: [
@@ -306,7 +306,7 @@ export const QUESTIONS: PrepQuestion[] = [
     id: "his-struct-0015",
     topic: "structuralism",
     exams: [N, M],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "The Würzburg school, led by Oswald Külpe, is best known for:",
     options: [
@@ -376,10 +376,10 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "A-ii, B-i, C-iii, D-iv",
       "A-i, B-ii, C-iv, D-iii",
-      "A-ii, B-iv, C-i, D-iii",
       "A-ii, B-i, C-iv, D-iii",
+      "A-ii, B-iv, C-i, D-iii",
     ],
-    answer: 3,
+    answer: 2,
     explanation:
       "James described the stream of consciousness and, with Lange, the theory that emotion follows bodily change (ii). Dewey's 1896 critique of the reflex arc is often seen as the founding statement of functionalism (i). Angell developed functionalism at Chicago and outlined it in his APA address (iv). Woodworth at Columbia introduced the S-O-R idea and a dynamic psychology of motivation (iii). The other codes swap these.",
     ref: "Hergenhahn, ch. 11",
@@ -405,7 +405,7 @@ export const QUESTIONS: PrepQuestion[] = [
     id: "his-func-0020",
     topic: "functionalism",
     exams: [N, M, S],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "Which statement best describes the influence of Darwin's theory of evolution on early psychology?",
     options: [
@@ -423,7 +423,7 @@ export const QUESTIONS: PrepQuestion[] = [
     id: "his-func-0021",
     topic: "functionalism",
     exams: [N, M],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "Lloyd Morgan's 'canon' advises that:",
     options: [
@@ -473,12 +473,12 @@ export const QUESTIONS: PrepQuestion[] = [
       ],
     },
     options: [
-      "A-iii, B-iv, C-ii, D-i",
+      "A-iii, B-iv, C-i, D-ii",
       "A-iv, B-iii, C-i, D-ii",
       "A-iii, B-i, C-iv, D-ii",
-      "A-iii, B-iv, C-i, D-ii",
+      "A-iii, B-iv, C-ii, D-i",
     ],
-    answer: 3,
+    answer: 0,
     explanation:
       "Hall founded a laboratory at Johns Hopkins and organised the APA in 1892, serving as its first president (iii). Cattell coined 'mental test' in 1890 and promoted the study of individual differences (iv). Witmer opened the first psychological clinic in 1896 and coined 'clinical psychology' (i). Calkins became the first woman APA president in 1905, though Harvard refused her a degree she had earned (ii). The other codes swap these.",
     ref: "Hergenhahn, ch. 11; Schultz & Schultz",
@@ -534,12 +534,12 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "A: Ebbinghaus said that 'psychology has a long past, but only a short history'.",
-      "R: He meant that questions about the mind had been discussed by philosophers since ancient times, while psychology as a separate experimental science was only a few decades old.",
+      "R: Ebbinghaus used nonsense syllables in his experiments on memory.",
     ],
     options: AR,
-    answer: 0,
+    answer: 1,
     explanation:
-      "Both are true and R explains A. Ebbinghaus wrote this in the early twentieth century, contrasting the long tradition of philosophical, religious and medical thinking about the mind, including Greek, Indian and Islamic thought, with the recent founding of experimental laboratories. The quotation is often used to introduce the history of psychology.",
+      "Both are true, but R does not explain A. The remark means that philosophers had discussed the mind since ancient times, while psychology as a separate experimental science was only a few decades old when he wrote in the early 1900s. R is a correct fact about his memory method, which he invented to control for prior associations, but it has nothing to do with the meaning of his remark about history. So 'R explains A' is wrong, and since both statements are true, the options calling either false are wrong as well.",
     ref: "Ebbinghaus 1908; Hergenhahn, ch. 1",
   }),
   h({
@@ -580,10 +580,10 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "A-ii, B-iii, C-i, D-iv",
       "A-iii, B-ii, C-iv, D-i",
-      "A-ii, B-iv, C-iii, D-i",
       "A-ii, B-iii, C-iv, D-i",
+      "A-ii, B-iv, C-iii, D-i",
     ],
-    answer: 3,
+    answer: 2,
     explanation:
       "Washburn received her PhD in 1894 and later became the second woman APA president (ii). Calkins developed the paired-associate technique and a psychology of the self (iii). Ladd-Franklin proposed a theory of how colour vision evolved, though she was denied a degree for decades (iv). Hollingworth's research countered the 'variability hypothesis' and myths about menstruation, and she pioneered the study of gifted children (i). The other codes swap these.",
     ref: "Scarborough & Furumoto 1987; Hergenhahn, ch. 11",
@@ -668,13 +668,13 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "assertion-reason",
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
-      "A: Descartes is often seen as an important forerunner of physiological psychology.",
+      "A: Descartes is generally regarded as an early opponent of mechanistic explanations of the body.",
       "R: Descartes proposed that the body works like a machine and explained many actions as reflexes, with 'animal spirits' flowing through nerves.",
     ],
     options: AR,
-    answer: 0,
+    answer: 3,
     explanation:
-      "Both are true and R explains A. Inspired by moving statues in the royal gardens, Descartes described bodily actions, such as pulling a foot away from fire, as mechanical reflexes, leaving only rational thought to the immaterial mind. This mechanistic view of the body encouraged physiological research on reflexes and the nervous system, even though his particular physiology was wrong.",
+      "A is false and R is true. Descartes was a leading champion of mechanism: inspired by moving statues in French royal gardens, he described the body as a machine and explained many actions through reflex-like flows of animal spirits. Only the rational soul, which he linked with the pineal gland, stood outside this mechanism. This is why he is seen as a forerunner of physiological psychology and reflex theory. R describes his view correctly, so the options in which A is true are wrong.",
     ref: "Hergenhahn, ch. 5",
   }),
   h({
@@ -715,12 +715,12 @@ export const QUESTIONS: PrepQuestion[] = [
       "D. Charles Spearman, who later proposed g, studied with Wundt.",
     ],
     options: [
-      "A and B only",
       "A, B, C and D",
+      "A and B only",
       "C and D only",
       "A, B and C only",
     ],
-    answer: 1,
+    answer: 0,
     explanation:
       "All four are correct. Cattell, Wundt's first assistant, was interested in differences between people, which Wundt saw as error variance. Kraepelin used experimental methods to study the effects of fatigue and drugs and distinguished dementia praecox from manic-depressive illness. Münsterberg, recruited to Harvard by James, wrote on eyewitness testimony and industrial efficiency. Spearman earned his doctorate in Leipzig. Wundt's students spread psychology across the world, including to India through teachers trained in the new methods.",
     ref: "Hergenhahn, chs. 9 and 19",
@@ -760,12 +760,12 @@ export const QUESTIONS: PrepQuestion[] = [
       ],
     },
     options: [
-      "A-iii, B-ii, C-i, D-iv",
+      "A-iii, B-ii, C-iv, D-i",
       "A-ii, B-iii, C-iv, D-i",
       "A-iii, B-iv, C-ii, D-i",
-      "A-iii, B-ii, C-iv, D-i",
+      "A-iii, B-ii, C-i, D-iv",
     ],
-    answer: 3,
+    answer: 0,
     explanation:
       "Wundt developed voluntarism and folk psychology (iii). Titchener developed structuralism in the USA (ii). Külpe's Würzburg school used systematic introspection and reported imageless thought (iv). Brentano's act psychology emphasised intentional mental acts (i). Historians now stress that Titchener's structuralism was not the same as Wundt's voluntarism, though textbooks often merged them. The other codes swap these.",
     ref: "Hergenhahn, chs. 9 and 10; Leahey 1981",
@@ -858,10 +858,10 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "A-ii, B-i, C-iii, D-iv",
       "A-i, B-ii, C-iv, D-iii",
-      "A-ii, B-iv, C-i, D-iii",
       "A-ii, B-i, C-iv, D-iii",
+      "A-ii, B-iv, C-i, D-iii",
     ],
-    answer: 3,
+    answer: 2,
     explanation:
       "Structuralism asked about the elements of mind (ii). Functionalism asked about purpose and adaptation (i). Brentano's act psychology asked about intentional mental acts (iv). The Würzburg school studied thought processes and set (iii). The other codes swap these questions.",
     ref: "Hergenhahn, chs. 9 to 11",
@@ -976,7 +976,7 @@ export const QUESTIONS: PrepQuestion[] = [
     id: "his-func-0049",
     topic: "functionalism",
     exams: [N, M, S],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "Edward Thorndike's work is often placed between functionalism and behaviourism because he:",
     options: [

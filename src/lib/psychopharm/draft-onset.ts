@@ -1,13 +1,13 @@
 /**
- * Curated onset_time values — student register, quote-first.
+ * Curated onset_time values: student register, quote-first.
  *
  * Each `onset_time` is a reviewed, plain-language sentence written AGAINST the
  * verbatim source snippet (Stahl Prescriber's Guide 7th ed., "How Long Until
  * It Works" section). Non-prescriber register: describes what is observed,
  * never what anyone should do.
  *
- * The three curated drugs with no exact Stahl monograph key — Methylphenidate,
- * Cyproheptadine, Melatonin — are handled by hand below from their nearest
+ * The three curated drugs with no exact Stahl monograph key (Methylphenidate,
+ * Cyproheptadine, Melatonin) are handled by hand below from their nearest
  * monograph (Methylphenidate (D)/(D,L)); where the source gives nothing
  * usable, `onset_time` is left undefined rather than fabricated.
  */
@@ -22,10 +22,10 @@ export const ONSET_PATCHES: OnsetPatch[] = [
     generic_name: "Aripiprazole",
     onset_time: {
       value:
-        "Some easing of psychosis or mania can appear within the first week, but the full effect builds over several weeks; the sources suggest allowing 4–6 weeks, and sometimes longer, to judge how well it is working.",
+        "Some easing of psychosis or mania can appear within the first week, but the full effect builds over several weeks; the sources suggest allowing 4 to 6 weeks, and sometimes longer, to judge how well it is working.",
       source_id: S,
       page_ref: "p176",
-      snippet: "Psychotic and manic symptoms can improve within 1 week, but it may take several weeks for full effect ... Classically recommended to wait at least 4–6 weeks to determine efficacy",
+      snippet: "Psychotic and manic symptoms can improve within 1 week, but it may take several weeks for full effect ... Classically recommended to wait at least 4 to 6 weeks to determine efficacy",
       agreement: "single",
     },
   },
@@ -33,10 +33,10 @@ export const ONSET_PATCHES: OnsetPatch[] = [
     generic_name: "Quetiapine",
     onset_time: {
       value:
-        "Psychosis or mania may improve within the first week, but the full effect on mood and behaviour takes several weeks; the sources suggest allowing 4–6 weeks to judge the response.",
+        "Psychosis or mania may improve within the first week, but the full effect on mood and behaviour takes several weeks; the sources suggest allowing 4 to 6 weeks to judge the response.",
       source_id: S,
       page_ref: "p1925",
-      snippet: "Psychotic and manic symptoms can improve within 1 week, but it may take several weeks for full effect ... wait at least 4–6 weeks to determine efficacy",
+      snippet: "Psychotic and manic symptoms can improve within 1 week, but it may take several weeks for full effect ... wait at least 4 to 6 weeks to determine efficacy",
       agreement: "single",
     },
   },
@@ -44,10 +44,10 @@ export const ONSET_PATCHES: OnsetPatch[] = [
     generic_name: "Risperidone",
     onset_time: {
       value:
-        "Psychotic and manic symptoms can improve within the first week, but the full effect takes several weeks; the sources suggest allowing 4–6 weeks, sometimes longer, to judge the response.",
+        "Psychotic and manic symptoms can improve within the first week, but the full effect takes several weeks; the sources suggest allowing 4 to 6 weeks, sometimes longer, to judge the response.",
       source_id: S,
       page_ref: "p1978",
-      snippet: "Psychotic and manic symptoms can improve within 1 week, but it may take several weeks for full effect ... wait at least 4–6 weeks",
+      snippet: "Psychotic and manic symptoms can improve within 1 week, but it may take several weeks for full effect ... wait at least 4 to 6 weeks",
       agreement: "single",
     },
   },
@@ -55,10 +55,10 @@ export const ONSET_PATCHES: OnsetPatch[] = [
     generic_name: "Fluoxetine",
     onset_time: {
       value:
-        "Some people feel more energy or activation early on; the fuller antidepressant effect usually takes 2–4 weeks, and the sources suggest allowing 6–8 weeks to judge whether it is helping.",
+        "Some people feel more energy or activation early on; the fuller antidepressant effect usually takes 2 to 4 weeks, and the sources suggest allowing 6 to 8 weeks to judge whether it is helping.",
       source_id: S,
       page_ref: "p885",
-      snippet: "Some patients may experience increased energy or activation early after initiation ... Onset of therapeutic actions usually not immediate, but often delayed 2–4 weeks",
+      snippet: "Some patients may experience increased energy or activation early after initiation ... Onset of therapeutic actions usually not immediate, but often delayed 2 to 4 weeks",
       agreement: "single",
     },
   },
@@ -66,20 +66,20 @@ export const ONSET_PATCHES: OnsetPatch[] = [
     generic_name: "Venlafaxine",
     onset_time: {
       value:
-        "The antidepressant effect usually takes 2–4 weeks to appear. For generalised anxiety, improvement can keep building past 8 weeks and up to around 6 months.",
+        "The antidepressant effect usually takes 2 to 4 weeks to appear. For generalised anxiety, improvement can keep building past 8 weeks and up to around 6 months.",
       source_id: S,
       page_ref: "p2400",
-      snippet: "Onset of therapeutic actions usually not immediate, but often delayed 2–4 weeks ... for generalized anxiety, onset of response ... may still occur after 8 weeks, and for up to 6 months",
+      snippet: "Onset of therapeutic actions usually not immediate, but often delayed 2 to 4 weeks ... for generalized anxiety, onset of response ... may still occur after 8 weeks, and for up to 6 months",
       agreement: "single",
     },
   },
   {
     generic_name: "Lithium",
     onset_time: {
-      value: "Effects on an acute high can appear in about 1–3 weeks.",
+      value: "Effects on an acute high can appear in about 1 to 3 weeks.",
       source_id: S,
       page_ref: "p1210",
-      snippet: "1–3 weeks",
+      snippet: "1 to 3 weeks",
       agreement: "single",
     },
   },
@@ -87,10 +87,10 @@ export const ONSET_PATCHES: OnsetPatch[] = [
     generic_name: "Paroxetine",
     onset_time: {
       value:
-        "Some relief of sleep or anxiety can appear in the first days. The fuller antidepressant effect usually takes 2–4 weeks. For generalised anxiety, improvement can keep building after 8 weeks and up to around 6 months.",
+        "Some relief of sleep or anxiety can appear in the first days. The fuller antidepressant effect usually takes 2 to 4 weeks. For generalised anxiety, improvement can keep building after 8 weeks and up to around 6 months.",
       source_id: S,
       page_ref: "p1709",
-      snippet: "Some patients may experience relief of insomnia or anxiety early after initiation ... often delayed 2–4 weeks ... for generalized anxiety ... up to 6 months after initiating dosing",
+      snippet: "Some patients may experience relief of insomnia or anxiety early after initiation ... often delayed 2 to 4 weeks ... for generalized anxiety ... up to 6 months after initiating dosing",
       agreement: "single",
     },
   },
@@ -109,10 +109,10 @@ export const ONSET_PATCHES: OnsetPatch[] = [
     generic_name: "Amisulpride",
     onset_time: {
       value:
-        "Psychotic symptoms can improve within the first week, but the full effect takes several weeks; the sources suggest allowing 4–6 weeks, sometimes longer.",
+        "Psychotic symptoms can improve within the first week, but the full effect takes several weeks; the sources suggest allowing 4 to 6 weeks, sometimes longer.",
       source_id: S,
       page_ref: "p68",
-      snippet: "Psychotic symptoms can improve within 1 week, but it may take several weeks for full effect ... wait at least 4–6 weeks",
+      snippet: "Psychotic symptoms can improve within 1 week, but it may take several weeks for full effect ... wait at least 4 to 6 weeks",
       agreement: "single",
     },
   },
@@ -197,10 +197,10 @@ export const ONSET_PATCHES: OnsetPatch[] = [
     generic_name: "Duloxetine",
     onset_time: {
       value:
-        "The antidepressant effect usually takes 2–4 weeks. Neuropathic pain can ease within a week, though sometimes longer. Hot flushes in perimenopausal women can improve within about a week.",
+        "The antidepressant effect usually takes 2 to 4 weeks. Neuropathic pain can ease within a week, though sometimes longer. Hot flushes in perimenopausal women can improve within about a week.",
       source_id: S,
       page_ref: "p769",
-      snippet: "often delayed 2–4 weeks for depression ... Can reduce neuropathic pain within a week ... Vasomotor symptoms ... may improve within 1 week",
+      snippet: "often delayed 2 to 4 weeks for depression ... Can reduce neuropathic pain within a week ... Vasomotor symptoms ... may improve within 1 week",
       agreement: "single",
     },
   },
@@ -218,10 +218,10 @@ export const ONSET_PATCHES: OnsetPatch[] = [
   {
     generic_name: "Hydroxyzine",
     onset_time: {
-      value: "Taken by mouth, it can work within about 15–20 minutes.",
+      value: "Taken by mouth, it can work within about 15 to 20 minutes.",
       source_id: S,
       page_ref: "p1049",
-      snippet: "15–20 minutes (oral administration)",
+      snippet: "15 to 20 minutes (oral administration)",
       agreement: "single",
     },
   },
@@ -229,10 +229,10 @@ export const ONSET_PATCHES: OnsetPatch[] = [
     generic_name: "Cariprazine",
     onset_time: {
       value:
-        "Psychotic, manic and depressive symptoms can improve within the first week, but the full effect takes several weeks; the sources suggest allowing 4–6 weeks, sometimes longer.",
+        "Psychotic, manic and depressive symptoms can improve within the first week, but the full effect takes several weeks; the sources suggest allowing 4 to 6 weeks, sometimes longer.",
       source_id: S,
       page_ref: "p412",
-      snippet: "Psychotic, and manic and depressive symptoms can improve within 1 week ... wait at least 4–6 weeks to determine full antipsychotic and antidepressant efficacy",
+      snippet: "Psychotic, and manic and depressive symptoms can improve within 1 week ... wait at least 4 to 6 weeks to determine full antipsychotic and antidepressant efficacy",
       agreement: "single",
     },
   },
@@ -240,10 +240,10 @@ export const ONSET_PATCHES: OnsetPatch[] = [
     generic_name: "Brexpiprazole",
     onset_time: {
       value:
-        "For psychosis, improvement can begin within the first week but the full effect takes several weeks (4–6 weeks or longer). For depression as an add-on, the effect usually takes 2–4 weeks.",
+        "For psychosis, improvement can begin within the first week but the full effect takes several weeks (4 to 6 weeks or longer). For depression as an add-on, the effect usually takes 2 to 4 weeks.",
       source_id: S,
       page_ref: "p313",
-      snippet: "Psychotic symptoms can improve within 1 week ... wait at least 4–6 weeks ... For depression, onset of therapeutic actions usually not immediate, but often delayed 2–4 weeks",
+      snippet: "Psychotic symptoms can improve within 1 week ... wait at least 4 to 6 weeks ... For depression, onset of therapeutic actions usually not immediate, but often delayed 2 to 4 weeks",
       agreement: "single",
     },
   },
@@ -251,7 +251,7 @@ export const ONSET_PATCHES: OnsetPatch[] = [
     generic_name: "Perphenazine",
     onset_time: {
       value:
-        "Psychotic symptoms can improve within the first week, with the full effect over several weeks. An injection can work within 10 minutes, peaking at 1–2 hours. Nausea and vomiting respond quickly.",
+        "Psychotic symptoms can improve within the first week, with the full effect over several weeks. An injection can work within 10 minutes, peaking at 1 to 2 hours. Nausea and vomiting respond quickly.",
       source_id: S,
       page_ref: "p1747",
       snippet: "Psychotic symptoms can improve within 1 week, but may take several weeks for full effect on behavior. Injection: initial effect after 10 minutes ... Actions on nausea and vomiting are immediate",
@@ -294,10 +294,10 @@ export const ONSET_PATCHES: OnsetPatch[] = [
     generic_name: "Sertraline",
     onset_time: {
       value:
-        "Some people feel more energy or activation early on; the fuller antidepressant effect usually takes 2–4 weeks, and the sources suggest allowing 6–8 weeks to judge whether it is helping.",
+        "Some people feel more energy or activation early on; the fuller antidepressant effect usually takes 2 to 4 weeks, and the sources suggest allowing 6 to 8 weeks to judge whether it is helping.",
       source_id: S,
       page_ref: "p2066",
-      snippet: "Some patients may experience increased energy or activation early ... often delayed 2–4 weeks",
+      snippet: "Some patients may experience increased energy or activation early ... often delayed 2 to 4 weeks",
       agreement: "single",
     },
   },
@@ -305,10 +305,10 @@ export const ONSET_PATCHES: OnsetPatch[] = [
     generic_name: "Escitalopram",
     onset_time: {
       value:
-        "The antidepressant effect usually takes 2–4 weeks, and the sources suggest allowing 6–8 weeks to judge whether it is helping.",
+        "The antidepressant effect usually takes 2 to 4 weeks, and the sources suggest allowing 6 to 8 weeks to judge whether it is helping.",
       source_id: S,
       page_ref: "p790",
-      snippet: "Onset of therapeutic actions usually not immediate, but often delayed 2–4 weeks",
+      snippet: "Onset of therapeutic actions usually not immediate, but often delayed 2 to 4 weeks",
       agreement: "single",
     },
   },
@@ -316,10 +316,10 @@ export const ONSET_PATCHES: OnsetPatch[] = [
     generic_name: "Citalopram",
     onset_time: {
       value:
-        "The antidepressant effect usually takes 2–4 weeks, and the sources suggest allowing 6–8 weeks to judge whether it is helping.",
+        "The antidepressant effect usually takes 2 to 4 weeks, and the sources suggest allowing 6 to 8 weeks to judge whether it is helping.",
       source_id: S,
       page_ref: "p469",
-      snippet: "Onset of therapeutic actions usually not immediate, but often delayed 2–4 weeks",
+      snippet: "Onset of therapeutic actions usually not immediate, but often delayed 2 to 4 weeks",
       agreement: "single",
     },
   },
@@ -327,10 +327,10 @@ export const ONSET_PATCHES: OnsetPatch[] = [
     generic_name: "Mirtazapine",
     onset_time: {
       value:
-        "Effects on sleep and anxiety can start soon after the first doses. The fuller antidepressant effect usually takes 2–4 weeks.",
+        "Effects on sleep and anxiety can start soon after the first doses. The fuller antidepressant effect usually takes 2 to 4 weeks.",
       source_id: S,
       page_ref: "p1485",
-      snippet: "Actions on insomnia and anxiety can start shortly after initiation ... depression ... often delayed 2–4 weeks",
+      snippet: "Actions on insomnia and anxiety can start shortly after initiation ... depression ... often delayed 2 to 4 weeks",
       agreement: "single",
     },
   },
@@ -338,10 +338,10 @@ export const ONSET_PATCHES: OnsetPatch[] = [
     generic_name: "Olanzapine",
     onset_time: {
       value:
-        "Psychosis or mania can improve within the first week, but the full effect takes several weeks; the sources suggest allowing 4–6 weeks, sometimes longer. An injection can ease agitation within 15–30 minutes.",
+        "Psychosis or mania can improve within the first week, but the full effect takes several weeks; the sources suggest allowing 4 to 6 weeks, sometimes longer. An injection can ease agitation within 15 to 30 minutes.",
       source_id: S,
       page_ref: "p1618",
-      snippet: "Psychotic and manic symptoms can improve within 1 week ... wait at least 4–6 weeks ... IM formulation can reduce agitation in 15–30 minutes",
+      snippet: "Psychotic and manic symptoms can improve within 1 week ... wait at least 4 to 6 weeks ... IM formulation can reduce agitation in 15 to 30 minutes",
       agreement: "single",
     },
   },
@@ -360,10 +360,10 @@ export const ONSET_PATCHES: OnsetPatch[] = [
     generic_name: "Bupropion",
     onset_time: {
       value:
-        "The antidepressant effect usually takes 2–4 weeks, and the sources suggest allowing 6–8 weeks to judge whether it is helping.",
+        "The antidepressant effect usually takes 2 to 4 weeks, and the sources suggest allowing 6 to 8 weeks to judge whether it is helping.",
       source_id: S,
       page_ref: "p352",
-      snippet: "Onset of therapeutic actions usually not immediate, but often delayed 2–4 weeks",
+      snippet: "Onset of therapeutic actions usually not immediate, but often delayed 2 to 4 weeks",
       agreement: "single",
     },
   },
@@ -371,10 +371,10 @@ export const ONSET_PATCHES: OnsetPatch[] = [
     generic_name: "Lurasidone",
     onset_time: {
       value:
-        "For psychosis, improvement can begin within the first week but the full effect takes several weeks. For bipolar depression, the effect usually takes 2–4 weeks.",
+        "For psychosis, improvement can begin within the first week but the full effect takes several weeks. For bipolar depression, the effect usually takes 2 to 4 weeks.",
       source_id: S,
       page_ref: "p1332",
-      snippet: "Psychotic symptoms can improve within 1 week ... wait at least 4–6 weeks ... For bipolar depression, onset of therapeutic acti[on] ... 2–4 weeks",
+      snippet: "Psychotic symptoms can improve within 1 week ... wait at least 4 to 6 weeks ... For bipolar depression, onset of therapeutic acti[on] ... 2 to 4 weeks",
       agreement: "single",
     },
   },
@@ -415,10 +415,10 @@ export const ONSET_PATCHES: OnsetPatch[] = [
     generic_name: "Trazodone",
     onset_time: {
       value:
-        "Effects on sleep can be immediate when the dose suits. The antidepressant effect usually takes 2–4 weeks.",
+        "Effects on sleep can be immediate when the dose suits. The antidepressant effect usually takes 2 to 4 weeks.",
       source_id: S,
       page_ref: "p2267",
-      snippet: "Onset of therapeutic actions in insomnia are immediate if dosing is correct ... depression ... often delayed 2–4 weeks",
+      snippet: "Onset of therapeutic actions in insomnia are immediate if dosing is correct ... depression ... often delayed 2 to 4 weeks",
       agreement: "single",
     },
   },
@@ -426,10 +426,10 @@ export const ONSET_PATCHES: OnsetPatch[] = [
     generic_name: "Vortioxetine",
     onset_time: {
       value:
-        "The antidepressant effect usually takes 2–4 weeks, and the sources suggest allowing 6–8 weeks to judge whether it is helping.",
+        "The antidepressant effect usually takes 2 to 4 weeks, and the sources suggest allowing 6 to 8 weeks to judge whether it is helping.",
       source_id: S,
       page_ref: "p2440",
-      snippet: "Onset of therapeutic actions is usually not immediate, but often delayed 2–4 weeks",
+      snippet: "Onset of therapeutic actions is usually not immediate, but often delayed 2 to 4 weeks",
       agreement: "single",
     },
   },
@@ -437,10 +437,10 @@ export const ONSET_PATCHES: OnsetPatch[] = [
     generic_name: "Desvenlafaxine",
     onset_time: {
       value:
-        "The antidepressant effect usually takes 2–4 weeks. Hot flushes in perimenopausal women can improve within about a week.",
+        "The antidepressant effect usually takes 2 to 4 weeks. Hot flushes in perimenopausal women can improve within about a week.",
       source_id: S,
       page_ref: "p630",
-      snippet: "often delayed 2–4 weeks ... Vasomotor symptoms ... may improve within 1 week",
+      snippet: "often delayed 2 to 4 weeks ... Vasomotor symptoms ... may improve within 1 week",
       agreement: "single",
     },
   },
@@ -448,10 +448,10 @@ export const ONSET_PATCHES: OnsetPatch[] = [
     generic_name: "Fluvoxamine",
     onset_time: {
       value:
-        "Some relief of sleep or anxiety can appear in the first days. The fuller effect usually takes 2–4 weeks.",
+        "Some relief of sleep or anxiety can appear in the first days. The fuller effect usually takes 2 to 4 weeks.",
       source_id: S,
       page_ref: "p957",
-      snippet: "Some patients may experience relief of insomnia or anxiety early ... often delayed 2–4 weeks",
+      snippet: "Some patients may experience relief of insomnia or anxiety early ... often delayed 2 to 4 weeks",
       agreement: "single",
     },
   },
@@ -481,10 +481,10 @@ export const ONSET_PATCHES: OnsetPatch[] = [
     generic_name: "Atomoxetine",
     onset_time: {
       value:
-        "Effects on attention can begin as early as the first day, and can keep improving over 8–12 weeks.",
+        "Effects on attention can begin as early as the first day, and can keep improving over 8 to 12 weeks.",
       source_id: S,
       page_ref: "p246",
-      snippet: "Onset of therapeutic actions in ADHD can be seen as early as the first day ... may continue to improve for 8–12 weeks",
+      snippet: "Onset of therapeutic actions in ADHD can be seen as early as the first day ... may continue to improve for 8 to 12 weeks",
       agreement: "single",
     },
   },
@@ -528,18 +528,18 @@ export const ONSET_PATCHES: OnsetPatch[] = [
   {
     generic_name: "Phenelzine",
     onset_time: {
-      value: "The antidepressant effect usually takes 2–4 weeks once the dose is adequate, and the sources suggest allowing 6–8 weeks to judge the response.",
+      value: "The antidepressant effect usually takes 2 to 4 weeks once the dose is adequate, and the sources suggest allowing 6 to 8 weeks to judge the response.",
       source_id: S, page_ref: "p1765",
-      snippet: "Onset of therapeutic actions usually not immediate, but often delayed 2–4 weeks following adequate dosing",
+      snippet: "Onset of therapeutic actions usually not immediate, but often delayed 2 to 4 weeks following adequate dosing",
       agreement: "single",
     },
   },
   {
     generic_name: "Tranylcypromine",
     onset_time: {
-      value: "Some people notice stimulant-like effects early; the fuller antidepressant effect usually takes 2–4 weeks once the dose is adequate.",
+      value: "Some people notice stimulant-like effects early; the fuller antidepressant effect usually takes 2 to 4 weeks once the dose is adequate.",
       source_id: S, page_ref: "p2249",
-      snippet: "Some patients may experience stimulant-like actions early in dosing ... often delayed 2–4 weeks following adequate dosing",
+      snippet: "Some patients may experience stimulant-like actions early in dosing ... often delayed 2 to 4 weeks following adequate dosing",
       agreement: "single",
     },
   },
@@ -573,7 +573,7 @@ export const ONSET_PATCHES: OnsetPatch[] = [
   {
     generic_name: "Acamprosate",
     onset_time: {
-      value: "The studies supporting it ran for 13–52 weeks, so its benefit is judged over months rather than days.",
+      value: "The studies supporting it ran for 13 to 52 weeks, so its benefit is judged over months rather than days.",
       source_id: S, page_ref: "p25",
       snippet: "Has demonstrated efficacy in trials lasting between 13 and 52 weeks",
       agreement: "single",
@@ -582,7 +582,7 @@ export const ONSET_PATCHES: OnsetPatch[] = [
   {
     generic_name: "Disulfiram",
     onset_time: {
-      value: "Its effect is immediate — the reaction to alcohol begins quickly once the medicine is in the body.",
+      value: "Its effect is immediate: the reaction to alcohol begins quickly once the medicine is in the body.",
       source_id: S, page_ref: "p700",
       snippet: "Disulfiram's effects are immediate",
       agreement: "single",
@@ -622,9 +622,9 @@ export const ONSET_PATCHES: OnsetPatch[] = [
   {
     generic_name: "Paliperidone",
     onset_time: {
-      value: "Psychotic symptoms can improve within the first week, but the full effect takes several weeks; the sources suggest allowing 4–6 weeks, sometimes longer.",
+      value: "Psychotic symptoms can improve within the first week, but the full effect takes several weeks; the sources suggest allowing 4 to 6 weeks, sometimes longer.",
       source_id: S, page_ref: "p1679",
-      snippet: "Psychotic symptoms can improve within 1 week ... wait at least 4–6 weeks ... up to 16–20 weeks",
+      snippet: "Psychotic symptoms can improve within 1 week ... wait at least 4 to 6 weeks ... up to 16 to 20 weeks",
       agreement: "single",
     },
   },
@@ -655,7 +655,7 @@ export const ONSET_PATCHES: OnsetPatch[] = [
       agreement: "single",
     },
   },
-  // Methylphenidate — nearest monograph is (D)/(D,L); Stahl gives no onset
+  // Methylphenidate: nearest monograph is (D)/(D,L); Stahl gives no onset
   // section for the plain name, so we leave onset_time undefined rather than
   // fabricate. Same for Cyproheptadine and Melatonin.
 ];

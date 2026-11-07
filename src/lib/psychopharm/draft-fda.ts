@@ -12,7 +12,7 @@ import { DrugDraft } from "./draft";
 const FDA = "fda_label"; // resolved to the actual source row at seed time
 
 export const DRAFT_FDA: DrugDraft[] = [
-  // VORTIOXETINE — start 10 → 20, 5 for poor tolerators / CYP2D6 PM.
+  // VORTIOXETINE: start 10 → 20, 5 for poor tolerators / CYP2D6 PM.
   {
     generic_name: "Vortioxetine",
     drug_class: "Serotonin modulator",
@@ -22,7 +22,7 @@ export const DRAFT_FDA: DrugDraft[] = [
     receptor_targets: [ { value: "5-HT1A/1B/1D/3/7 modulation, SERT inhibition", source_id: FDA, page_ref: "FDA label", snippet: "5-HT receptor modulation", agreement: "single" } ],
     common_uses: [ { value: "Major depressive disorder.", source_id: FDA, page_ref: "FDA label", snippet: "indicated for the treatment of adults with MDD", agreement: "single" } ],
     equivalences: [], links: [], clinical_presentations: [],
-    student: { plain_language: { text: "Vortioxetine lifts mood by tuning several serotonin switches at once; the dose usually lands at 10–20 mg.", kb_parent_field: "mechanism", source: { value: "as above", source_id: FDA, page_ref: "FDA label", snippet: "5-HT modulation", agreement: "single" } } },
+    student: { plain_language: { text: "Vortioxetine lifts mood by tuning several serotonin switches at once; the dose usually lands at 10 to 20 mg.", kb_parent_field: "mechanism", source: { value: "as above", source_id: FDA, page_ref: "FDA label", snippet: "5-HT modulation", agreement: "single" } } },
     bands: [
       { band_order: 1, band_type: "starting", range_low: 10, range_high: 10, unit: "mg", band_label: "Starting dose",
         primary_purpose: "MDD start", secondary_purposes: [], is_typical_starting: true, is_standard_maintenance: false,
@@ -37,16 +37,16 @@ export const DRAFT_FDA: DrugDraft[] = [
     ],
   },
 
-  // DESVENLAFAXINE — 50 mg fixed; 25 for renal/taper; max 100 hepatic.
+  // DESVENLAFAXINE: 50 mg fixed; 25 for renal/taper; max 100 hepatic.
   {
     generic_name: "Desvenlafaxine",
-    drug_class: "SNRI", subclass: "Serotonin–norepinephrine reuptake inhibitor",
+    drug_class: "SNRI", subclass: "Serotonin-norepinephrine reuptake inhibitor",
     brand_names: ["Pristiq"], aliases: [],
     mechanism: [ { value: "Blocks serotonin and norepinephrine reuptake; the active metabolite of venlafaxine.", source_id: FDA, page_ref: "FDA label", snippet: "SNRI", agreement: "single" } ],
     receptor_targets: [ { value: "SERT + NET inhibition", source_id: FDA, page_ref: "FDA label", snippet: "SNRI", agreement: "single" } ],
     common_uses: [ { value: "Major depressive disorder.", source_id: FDA, page_ref: "FDA label", snippet: "MDD", agreement: "single" } ],
     equivalences: [], links: [], clinical_presentations: [],
-    student: { plain_language: { text: "Desvenlafaxine is a fixed-dose SNRI — for most people 50 mg once a day, with no extra benefit proven above that.", kb_parent_field: "mechanism", source: { value: "as above", source_id: FDA, page_ref: "FDA label", snippet: "50 mg once daily", agreement: "single" } } },
+    student: { plain_language: { text: "Desvenlafaxine is a fixed-dose SNRI: for most people 50 mg once a day, with no extra benefit proven above that.", kb_parent_field: "mechanism", source: { value: "as above", source_id: FDA, page_ref: "FDA label", snippet: "50 mg once daily", agreement: "single" } } },
     bands: [
       { band_order: 1, band_type: "therapeutic", range_low: 50, range_high: 50, unit: "mg", band_label: "Recommended dose",
         primary_purpose: "MDD", secondary_purposes: [], is_typical_starting: true, is_standard_maintenance: true,
@@ -58,7 +58,7 @@ export const DRAFT_FDA: DrugDraft[] = [
     ],
   },
 
-  // FLUVOXAMINE — start 100, titrate 50/wk, max 300.
+  // FLUVOXAMINE: start 100, titrate 50/wk, max 300.
   {
     generic_name: "Fluvoxamine",
     drug_class: "SSRI", subclass: "Selective serotonin reuptake inhibitor",
@@ -78,7 +78,7 @@ export const DRAFT_FDA: DrugDraft[] = [
     ],
   },
 
-  // DONEPEZIL — 5 mg, then 10 mg after 4–6 weeks.
+  // DONEPEZIL: 5 mg, then 10 mg after 4 to 6 weeks.
   {
     generic_name: "Donepezil",
     drug_class: "Cholinesterase inhibitor", subclass: "Acetylcholinesterase inhibitor",
@@ -91,14 +91,14 @@ export const DRAFT_FDA: DrugDraft[] = [
     bands: [
       { band_order: 1, band_type: "starting", range_low: 5, range_high: 5, unit: "mg", band_label: "Starting dose",
         frequency: "once daily at bedtime", primary_purpose: "Initial dosing", secondary_purposes: [], is_typical_starting: true, is_standard_maintenance: false,
-        source_ref: { value: "5 mg once daily, 4–6 weeks before considering 10 mg", source_id: FDA, page_ref: "FDA label", snippet: "treatment with a dose of 10 mg should not be contemplated until patients have been on a daily dose of 5 mg for 4 to 6 weeks", agreement: "single" }, side_effects: [], observation_prompts: [] },
+        source_ref: { value: "5 mg once daily, 4 to 6 weeks before considering 10 mg", source_id: FDA, page_ref: "FDA label", snippet: "treatment with a dose of 10 mg should not be contemplated until patients have been on a daily dose of 5 mg for 4 to 6 weeks", agreement: "single" }, side_effects: [], observation_prompts: [] },
       { band_order: 2, band_type: "maintenance", range_low: 10, range_high: 10, unit: "mg", band_label: "Higher maintenance",
         frequency: "once daily", primary_purpose: "Additional benefit for some patients", secondary_purposes: [], is_typical_starting: false, is_standard_maintenance: true,
         source_ref: { value: "10 mg once daily may add benefit for some", source_id: FDA, page_ref: "FDA label", snippet: "daily dose of 10 mg of ARICEPT might provide additional benefit for some patients", agreement: "single" }, side_effects: [], observation_prompts: [] },
     ],
   },
 
-  // CLOZAPINE — start 12.5, target 150–225, max 450; blood-level based.
+  // CLOZAPINE: start 12.5, target 150 to 225, max 450; blood-level based.
   {
     generic_name: "Clozapine",
     drug_class: "Atypical antipsychotic", subclass: "D2/5-HT2 antagonist with broad receptor profile",
@@ -114,8 +114,8 @@ export const DRAFT_FDA: DrugDraft[] = [
         source_ref: { value: "start 12.5 mg once or twice daily", source_id: FDA, page_ref: "FDA label", snippet: "Recommended starting oral dosage is 12.5 mg once daily or twice daily", agreement: "single" }, side_effects: [], observation_prompts: [] },
       { band_order: 2, band_type: "therapeutic", range_low: 150, range_high: 300, unit: "mg", band_label: "Target daily range",
         frequency: "divided", primary_purpose: "Target maintenance dosage", secondary_purposes: [], is_typical_starting: false, is_standard_maintenance: true,
-        why_this_dose: "Increase 25–50 mg/day toward a target reached within 2 weeks; may then rise by up to 100 mg once or twice weekly.",
-        source_ref: { value: "target reached within ~2 weeks; ~150–300 mg/day toward maintenance levels", source_id: FDA, page_ref: "FDA label", snippet: "increase the total daily dosage ... to achieve a target dosage ... dose-titrated; clozapine is plasma-level guided (Stahl: trough response threshold ~350 ng/mL)", agreement: "single" }, side_effects: [], observation_prompts: [] },
+        why_this_dose: "Increase 25 to 50 mg/day toward a target reached within 2 weeks; may then rise by up to 100 mg once or twice weekly.",
+        source_ref: { value: "target reached within ~2 weeks; ~150 to 300 mg/day toward maintenance levels", source_id: FDA, page_ref: "FDA label", snippet: "increase the total daily dosage ... to achieve a target dosage ... dose-titrated; clozapine is plasma-level guided (Stahl: trough response threshold ~350 ng/mL)", agreement: "single" }, side_effects: [], observation_prompts: [] },
       { band_order: 3, band_type: "maximum", range_low: 450, range_high: 900, unit: "mg", band_label: "Maximum daily range",
         frequency: "divided, up to several times daily", primary_purpose: "Upper limit", secondary_purposes: [], is_typical_starting: false, is_standard_maintenance: false,
         why_this_dose: "Maximum 450 mg per dose; can reach ~900 mg/day total in divided doses in resistant cases.",
@@ -123,7 +123,7 @@ export const DRAFT_FDA: DrugDraft[] = [
     ],
   },
 
-  // ATOMOXETINE — weight-based initial/target/max (paediatric) and adult.
+  // ATOMOXETINE: weight-based initial/target/max (paediatric) and adult.
   {
     generic_name: "Atomoxetine",
     drug_class: "Non-stimulant ADHD agent", subclass: "Selective norepinephrine reuptake inhibitor",
@@ -143,7 +143,7 @@ export const DRAFT_FDA: DrugDraft[] = [
     ],
   },
 
-  // OXcarbazepine — adjunct 600→1200, monotherapy up to 2400.
+  // OXcarbazepine: adjunct 600→1200, monotherapy up to 2400.
   {
     generic_name: "Oxcarbazepine",
     drug_class: "Anticonvulsant / mood stabilizer", subclass: "Dibenzazepine (triketone)",

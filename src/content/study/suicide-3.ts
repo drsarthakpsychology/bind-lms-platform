@@ -16,6 +16,10 @@ Suicide is, statistically, a rare event even in high-risk groups. When an outcom
 - Guidelines (for example NICE's 2022 guideline on self-harm) advise against using risk scales or global risk categories to predict suicide or to decide who receives care.
 - The alternative is a **needs-based, formulation-driven approach**: understand the person's current state, drivers and protective factors; respond to what they need; plan for safety with them; and treat everyone who presents with suicidal thoughts or self-harm with care and follow-up.
 
+:::widget moodline
+{"prompt": "Here is Arjun's suicidal thinking (lower is more severe) over a year. What does it show?", "series": [0, -0.5, -1, -2.8, -1, 0, 0, -0.4, -2.6, -0.8, 0, 0], "labels": ["Jan", "Jun", "Dec"], "options": ["Steady risk that never changes", "Brief, sharp crises separated by calmer periods", "Gradual, steady decline", "No suicidal thinking at all"], "answer": 1, "why": "Risk is a state that rises and falls, often fast, around triggers such as a break-up or an exam result. One assessment captures one moment. This is why safety plans, follow-up and re-assessment matter more than a one-time risk label."}
+:::
+
 ### State, not trait
 Suicidal risk **fluctuates**. Rudd's fluid vulnerability theory separates **baseline** risk (relatively stable: history, temperament) from **acute** risk (rapid changes with stressors, intoxication, sleep loss and agitation). Assessment is therefore a repeated process, not a one-time verdict.
 
@@ -55,6 +59,10 @@ Q: The main reason "low-risk" labels are dangerous is that:
 - **Attentional bias to suicide-related cues** and a **"suicidal mode"** (Rudd, Beck): a network of thoughts, emotions, physiology and urges that activates quickly once primed.
 - **Entrapment** (internal: trapped by one's own thoughts; external: by circumstances) is one of the strongest proximal predictors of ideation.
 - **Capability for suicide**: habituation to pain and fear through repeated self-harm or exposure to violence.
+
+:::widget stress
+{"title": "The stress system in suicidal behaviour", "caption": "Watch the last step. A stress system that fails to switch off has been linked to suicide: in older studies, people whose cortisol was not suppressed by dexamethasone had higher later suicide rates. Early adversity may set this system to over-react for life."}
+:::
 
 ### Social and structural
 Economic shocks, debt, unemployment, discrimination, gender-based violence, and access to lethal means shape population suicide rates. Interventions at this level (means restriction, debt relief, school programmes, alcohol policy) often prevent more deaths than individual treatment alone.
@@ -113,6 +121,10 @@ Q: Which finding suggests that suicidal behaviour is not simply a consequence of
 - Avoid tricyclics as first-line in people at risk; take care with lithium supply and levels.
 - Address insomnia and agitation promptly; they are modifiable acute risk factors.
 - Treat alcohol use; consider naltrexone or acamprosate.
+:::
+
+:::widget journey
+{"drug": "ketamine", "target": "NMDA glutamate receptors, triggering a burst of glutamate and new synapse growth", "routes": ["iv", "nasal"], "notes": {"vein": "Given as a slow infusion under medical supervision, reaching the brain within minutes.", "nose": "Esketamine, one form of ketamine, is sprayed into the nose and absorbed through the lining, partly bypassing the liver.", "target": "Blocks NMDA receptors on inhibitory neurons, releasing a glutamate surge that switches on growth signals (BDNF, mTOR).", "out": "Broken down within hours, but mood effects can last days. Effects on suicidal thinking often fade within days."}, "caption": "Fast relief has made ketamine an important research tool for suicidal crises. It is not yet a standard treatment for suicidality itself."}
 :::
 
 ### Systems approaches

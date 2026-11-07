@@ -106,6 +106,10 @@ Herbart's **five formal steps** of teaching: preparation, presentation, comparis
 |---|---|
 | Lecture, demonstration, storytelling, tutorial led by the teacher | Discussion, seminar, project method (Kilpatrick), problem-solving, case study, heuristic method (Armstrong: learner as discoverer), Socratic questioning, brainstorming, role play, cooperative learning, flipped classroom |
 
+:::widget compare
+{"title": "Teacher-centred or learner-centred?", "a": {"label": "Teacher-centred", "points": ["Lecture, demonstration, storytelling", "Teacher decides content and pace", "Students listen and take notes", "Efficient for large classes and new facts"], "summary": "The teacher is the main source of knowledge."}, "b": {"label": "Learner-centred", "points": ["Discussion, seminar, project, case study", "Students explore, question and discover", "Teacher guides and facilitates", "Builds thinking, application and independence"], "summary": "The learner is an active discoverer. Most good teaching mixes both."}}
+:::
+
 Other names worth knowing:
 - **Programmed instruction** (B. F. Skinner): small steps, active response, immediate feedback, self-pacing. **Linear** (Skinner) versus **branching** (Crowder).
 - **Personalised System of Instruction** (Keller Plan): mastery before moving on.
@@ -135,6 +139,10 @@ Other names worth knowing:
 - **Continuous and Comprehensive Evaluation (CCE):** regular assessment of scholastic and co-scholastic areas.
 - **Choice Based Credit System (CBCS):** introduced by UGC in 2015; credits, semesters, a 10-point grading scale, SGPA and CGPA.
 - **Computer-based testing** and online proctoring; **open-book** examinations; **rubrics**.
+
+:::widget compare
+{"title": "Formative or summative evaluation?", "a": {"label": "Formative", "points": ["During learning", "To improve learning", "Quizzes, feedback on drafts, questions in class", "Low stakes"], "summary": "Formative evaluation is a check-up: it tells teacher and student what to fix next."}, "b": {"label": "Summative", "points": ["At the end of a course or unit", "To grade or certify", "Final exams, board results", "High stakes"], "summary": "Summative evaluation is a post-mortem: it judges what was learnt. Both terms come from Scriven."}}
+:::
 
 :::widget sort
 {"prompt": "Which level of Bloom's revised cognitive domain does each task target?", "buckets": ["Remember or understand", "Apply or analyse", "Evaluate or create"], "items": [{"text": "List the stages of Piaget's theory", "bucket": 0}, {"text": "Explain in your own words what conservation means", "bucket": 0}, {"text": "Use the stages to predict how a 5-year-old will answer a water-jar task", "bucket": 1}, {"text": "Compare Piaget and Vygotsky on the role of language", "bucket": 1, "why": "Breaking ideas into parts and relating them: analyse."}, {"text": "Judge whether Piaget underestimated children, using evidence", "bucket": 2}, {"text": "Design a new classroom activity based on the zone of proximal development", "bucket": 2, "why": "Producing something new: create."}]}
@@ -203,6 +211,10 @@ This unit overlaps with the **Research methods** module (40). Here is what Paper
 6. Analyse data.
 7. Test hypotheses and interpret.
 8. Generalise and report.
+
+:::widget timeline
+{"prompt": "Put the steps of research in their correct order for a Paper 1 question.", "events": [{"label": "Identify and define the problem"}, {"label": "Review the literature"}, {"label": "Formulate hypotheses"}, {"label": "Prepare the research design"}, {"label": "Collect data"}, {"label": "Analyse data"}, {"label": "Test hypotheses and interpret"}, {"label": "Generalise and report"}], "why": "A common trap puts hypotheses before the literature review. You need to know what is already known before you can predict sensibly."}
+:::
 
 :::widget flow
 {"title": "Steps of research", "layout": "chain", "nodes": [{"id": "n0", "label": "Problem", "detail": "Identify and define it"}, {"id": "n1", "label": "Review", "detail": "Survey the literature"}, {"id": "n2", "label": "Hypotheses", "detail": "State testable predictions"}, {"id": "n3", "label": "Design", "detail": "Plan sampling and tools"}, {"id": "n4", "label": "Collect", "detail": "Gather data"}, {"id": "n5", "label": "Analyse", "detail": "Process the data"}, {"id": "n6", "label": "Test and interpret", "detail": "Accept or reject hypotheses"}, {"id": "n7", "label": "Report", "detail": "Generalise and write up"}]}
@@ -343,6 +355,10 @@ Q: The phrase "thinking has material to work with" implies that:
 | **Berlo's SMCR** | 1960 | **S**ource, **M**essage, **C**hannel, **R**eceiver, each shaped by skills, attitudes, knowledge, social system and culture |
 | **Dance's helical model** | 1967 | Communication grows and builds over time, like a spiral |
 | **Barnlund's transactional model** | 1970 | Sending and receiving happen at the same time, shaped by context |
+
+:::widget timeline
+{"prompt": "Put these models of communication in the order they were proposed.", "events": [{"label": "Aristotle: speaker, speech, audience; ethos, pathos, logos", "when": "Ancient"}, {"label": "Lasswell: who says what in which channel to whom with what effect", "when": "1948"}, {"label": "Shannon and Weaver: source, encoder, channel, noise, decoder", "when": "1949"}, {"label": "Osgood and Schramm: circular, with feedback", "when": "1954"}, {"label": "Berlo's SMCR", "when": "1960"}, {"label": "Dance's helical model", "when": "1967"}, {"label": "Barnlund's transactional model", "when": "1970"}], "why": "Models moved from one-way and linear, to circular with feedback, to transactional, where both people send and receive at the same time."}
+:::
 
 :::widget flow
 {"title": "Shannon and Weaver's model", "layout": "chain", "nodes": [{"id": "n0", "label": "Information source", "detail": "Creates the message"}, {"id": "n1", "label": "Transmitter", "detail": "Encodes it into a signal"}, {"id": "n2", "label": "Channel", "detail": "Carries the signal; noise enters here"}, {"id": "n3", "label": "Receiver", "detail": "Decodes the signal"}, {"id": "n4", "label": "Destination", "detail": "The message reaches the mind"}], "caption": "Linear and one-way. Later models add feedback."}
@@ -571,6 +587,10 @@ Paper 1 numericals are school-level maths done quickly and accurately. Learn the
 {"prompt": "You go to college at 40 km/h and come back the same way at 60 km/h. What is your average speed?", "min": 40, "max": 60, "unit": "km/h", "answer": [48, 48], "reveal": "48 km/h, not 50. You spend longer at the slower speed, so the average is pulled toward 40: 2 × 40 × 60 ÷ 100."}
 :::
 
+:::widget guess
+{"prompt": "A train 200 metres long, running at 72 km/h, crosses a platform 300 metres long. How many seconds does it take?", "min": 0, "max": 60, "step": 1, "unit": "seconds", "answer": [25, 25], "reveal": "25 seconds. Convert speed: 72 km/h times 5 over 18 is 20 metres per second. The train must cover its own length plus the platform: 200 plus 300 is 500 metres. 500 divided by 20 is 25.", "clinician": "The two traps are forgetting to convert km/h to m/s (multiply by 5/18) and forgetting to add the train's own length."}
+:::
+
 ### Series, codes and relationships
 - **Number series:** look at differences (and differences of differences), ratios, squares and cubes, alternating patterns, primes.
 - **Letter series:** convert letters to positions (A = 1 … Z = 26; reverse: Z = 1). A useful anchor: **EJOTY** marks 5, 10, 15, 20, 25.
@@ -637,6 +657,10 @@ An **argument** is a set of statements in which some (**premises**) are offered 
 | **I** | Some S are P | Particular affirmative | No | No |
 | **O** | Some S are not P | Particular negative | No | Yes |
 
+:::widget sort
+{"prompt": "Which type of categorical proposition is each?", "buckets": ["A: All S are P", "E: No S is P", "I: Some S are P", "O: Some S are not P"], "items": [{"text": "All teachers are learners.", "bucket": 0}, {"text": "No reptiles are warm-blooded.", "bucket": 1}, {"text": "Some students are athletes.", "bucket": 2}, {"text": "Some politicians are not honest.", "bucket": 3}, {"text": "Every doctor is a graduate.", "bucket": 0, "why": "'Every' means the same as 'all'."}, {"text": "Not a single river in the region is clean.", "bucket": 1, "why": "Means 'No river in the region is clean'."}, {"text": "Not all scholars are rich.", "bucket": 3, "why": "Means 'Some scholars are not rich'."}]}
+:::
+
 A term is **distributed** when the statement refers to **all** members of its class. Memory hook: universals distribute the **subject**; negatives distribute the **predicate**.
 
 :::widget flow
@@ -695,6 +719,10 @@ Draw three overlapping circles for the three terms. Shade empty areas for univer
 | **Red herring** | An irrelevant point that distracts |
 | **Appeal to ignorance** | "No one has disproved it, so it is true" |
 | **Tu quoque** | "You do it too", so the criticism is dismissed |
+
+:::widget sort
+{"prompt": "Name the informal fallacy.", "buckets": ["Ad hominem", "Straw man", "False dilemma", "Slippery slope", "Post hoc", "Bandwagon"], "items": [{"text": "'Don't listen to his views on the budget. He failed his school exams.'", "bucket": 0}, {"text": "'She wants fewer exams, so she thinks students should never be tested at all.'", "bucket": 1}, {"text": "'Either we ban all phones in college, or students will never learn anything.'", "bucket": 2}, {"text": "'If we allow one late submission, soon nobody will submit on time and degrees will mean nothing.'", "bucket": 3}, {"text": "'I wore my lucky shirt and passed, so the shirt made me pass.'", "bucket": 4}, {"text": "'Millions of people use this remedy, so it must work.'", "bucket": 5}]}
+:::
 
 :::recall
 1. Which terms are distributed by A, E, I and O propositions? || A: subject. E: subject and predicate. I: neither. O: predicate.
@@ -886,6 +914,10 @@ Data interpretation (DI) sets give a table or chart and several questions. They 
 - India's data sources: **Census** (the next one has a reference date of 1 March 2027, and is India's first digital census), **National Sample Survey**, **National Family Health Survey (NFHS)**, **AISHE** (All India Survey on Higher Education), **NCRB** reports.
 - **Open data:** the **National Data Sharing and Accessibility Policy (2012)** and the national open-data portal of the Government of India.
 - **Privacy:** the **Digital Personal Data Protection Act, 2023** governs how personal data are collected and processed. **Right to Information Act, 2005** gives citizens access to public information.
+
+:::widget guess
+{"prompt": "In a made-up data set, enrolment in a state's colleges rose from 3.4 lakh to 4.3 lakh. What is the percentage increase, to the nearest whole number?", "min": 0, "max": 60, "step": 1, "unit": "percent", "answer": [26, 27], "reveal": "About 26 percent. The increase is 0.9 lakh; divide by the starting value, 3.4 lakh, to get about 0.265. A common error is to divide by the new value (0.9 over 4.3 is about 21 percent), which gives the percentage decrease if you went backwards."}
+:::
 
 :::widget worked
 {"title": "A table data set", "steps": [{"q": "Enrolment (in thousands) in a state's colleges. BA: 120 (2022), 130 (2023), 150 (2024). BSc: 80, 90, 95. BCom: 100, 105, 100. BTech: 60, 75, 90. Find the total enrolment each year.", "a": "2022: 120 + 80 + 100 + 60 = 360. 2023: 130 + 90 + 105 + 75 = 400. 2024: 150 + 95 + 100 + 90 = 435 (thousand)."}, {"q": "Which programme grew fastest from 2022 to 2024, in percentage terms?", "a": "BA: 30 ÷ 120 = 25%. BSc: 15 ÷ 80 = 18.75%. BCom: 0%. BTech: 30 ÷ 60 = 50%. BTech grew fastest."}, {"q": "What share of total 2024 enrolment was in BA?", "a": "150 ÷ 435 × 100 = 34.5%."}, {"q": "Find the average BSc enrolment over the three years, and the ratio of BA to BCom in 2023.", "a": "Average = (80 + 90 + 95) ÷ 3 = 265 ÷ 3 = 88.3 thousand. Ratio 130 : 105 = 26 : 21."}, {"q": "By what percentage did total enrolment rise from 2022 to 2023, and from 2023 to 2024?", "a": "40 ÷ 360 = 11.1%; 35 ÷ 400 = 8.75%. Enrolment rose in both years, but more slowly in the second."}]}

@@ -136,7 +136,7 @@ export const QUESTIONS: PrepQuestion[] = [
   d({
     id: "dev-erik-0072",
     exams: [C, N, S],
-    difficulty: 2,
+    difficulty: 1,
     type: "mcq",
     stem: "A 45-year-old mentors younger colleagues and volunteers to improve her community's schools. Erikson would say she is achieving:",
     options: [
@@ -188,7 +188,7 @@ export const QUESTIONS: PrepQuestion[] = [
   d({
     id: "dev-erik-0075",
     exams: [N, M, S],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "A key difference between Erikson's and Freud's stage theories is that Erikson:",
     options: [
@@ -224,7 +224,7 @@ export const QUESTIONS: PrepQuestion[] = [
   d({
     id: "dev-erik-0077",
     exams: [C, N, S],
-    difficulty: 2,
+    difficulty: 1,
     type: "mcq",
     stem: "In Erikson's theory, the crisis of young adulthood (about 20 to 40) is:",
     options: [
@@ -376,7 +376,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "Fixation results from too much frustration or too much indulgence at a stage, leaving libido tied to that stage's mode of gratification, which shows in adult character traits and in regression under stress. It is the opposite of moving forward. The other two options use the everyday or cognitive sense of the word, not Freud's.",
+      "Fixation results from too much frustration or too much indulgence at a stage, leaving libido tied to that stage's mode of gratification, which shows in adult character traits and in regression under stress. It is the opposite of moving forward. A visual focus and memory consolidation use the everyday or cognitive sense of the word, not Freud's.",
     ref: "Freud 1916–17, Introductory Lectures",
   }),
   d({
@@ -627,7 +627,7 @@ export const QUESTIONS: PrepQuestion[] = [
     id: "dev-moral-0097",
     topic: "kohlberg",
     exams: [N, M, S],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "Turiel's social domain theory proposes that even young children distinguish:",
     options: [
@@ -968,12 +968,12 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "A: Haidt's social intuitionist model holds that moral judgements are usually driven by fast intuitions, with reasoning often constructed afterwards to justify them.",
-      "R: Fast, automatic affective intuitions usually arise before slower, deliberate reasoning about a case can be completed.",
+      "R: Haidt found that people can almost always give clear, coherent reasons for their moral judgements and change them when those reasons are refuted.",
     ],
     options: AR,
-    answer: 0,
+    answer: 2,
     explanation:
-      "Both are true and R explains A. Haidt challenged rationalist models such as Kohlberg's: because intuitions (quick gut feelings of approval or disgust) arrive first, the judgement is usually already made, and reasoning then works like a lawyer defending it. His evidence included 'moral dumbfounding', in which people condemned harmless taboo acts even after every reason they offered was removed. Haidt later developed moral foundations theory (care, fairness, loyalty, authority, sanctity, liberty).",
+      "A is true and R is false. Haidt's key evidence was 'moral dumbfounding': in stories such as harmless consensual incest, people insisted the act was wrong even after every reason they offered was answered, and ended up saying things like 'I just know it's wrong'. That is the opposite of what R claims. A describes the model correctly: intuition comes first and reasoning often acts like a lawyer defending a verdict already reached. Since R is false, the options in which R is true are wrong.",
     ref: "Haidt 2001, Psychol Rev",
   }),
   d({

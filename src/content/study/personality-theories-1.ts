@@ -39,6 +39,10 @@ Two research strategies run through the field:
 | **Cognitive (personal construct)** | How does each person interpret the world? | Kelly |
 | **Indian** | How do the gunas and the layered self shape a person? | Samkhya and the Bhagavad Gita, Upanishadic thought; modern Indian psychologists |
 
+:::widget timeline
+{"prompt": "Put these big ideas about personality in the order they appeared, oldest first.", "events": [{"label": "Galen's four temperaments, from the humours", "when": "Ancient"}, {"label": "Freud's psychoanalytic theory of the unconscious", "when": "1900s"}, {"label": "Allport founds trait psychology", "when": "1937"}, {"label": "Eysenck's superfactors E and N", "when": "1947"}, {"label": "Cattell's 16 factor questionnaire", "when": "1949"}, {"label": "Rogers' self theory and conditions of worth", "when": "1950s"}, {"label": "Mischel's critique starts the person-situation debate", "when": "1968"}, {"label": "The Big Five becomes the consensus trait model", "when": "1980s to 90s"}, {"label": "HEXACO adds honesty-humility as a sixth factor", "when": "2000s"}], "why": "Types came first, then the unconscious, then traits measured by factor analysis. Humanism and social-cognitive theory challenged both, and trait research came back stronger with the Big Five."}
+:::
+
 :::widget sort
 {
   "prompt": "Place each theorist in the right approach.",
@@ -84,6 +88,10 @@ Q: A theory that explains almost any behaviour after the fact, but makes no pred
 
 ## 1.2 Types and early traits: from humours to Allport [core][starting]
 A **type** is a category: you are in it or not. A **trait** is a dimension: everyone has some amount. Modern research strongly favours traits, because when you measure most characteristics, scores fall on a continuous curve, not into separate boxes.
+
+:::widget compare
+{"title": "Types or traits?", "a": {"label": "Types", "points": ["Categories: you are in or out", "Introvert or extravert", "Few groups, easy to remember", "Most people near the middle get forced into a box"], "summary": "Types are simple, but most real scores do not split into separate groups."}, "b": {"label": "Traits", "points": ["Dimensions: everyone has some amount", "A score anywhere from very introverted to very extraverted", "Most people near the middle, a few at the ends", "Small differences are kept, not lost"], "summary": "Traits match the data: personality scores fall on a continuous curve. This is why the MBTI's types are a poor basis for decisions."}}
+:::
 
 :::widget curve
 {
@@ -219,6 +227,10 @@ Eysenck combined factor analysis with **hypothesis testing** and **biology**. He
 - **Psychoticism** (P): aggressive, cold, impulsive, antisocial, tough-minded, creative. Versus impulse control.
 - **Extraversion** (E): sociable, lively, active, assertive, sensation-seeking. Versus introversion.
 - **Neuroticism** (N): anxious, moody, tense, guilt-prone, low self-esteem. Versus emotional stability.
+
+:::widget compare
+{"title": "Cattell and Eysenck", "a": {"label": "Cattell", "points": ["About 16 source traits (the 16PF)", "Correlated (oblique) factors", "Three kinds of data: life records, questionnaires, objective tests", "Close to the data, fine-grained"], "summary": "Cattell built many narrow factors, like a periodic table of personality."}, "b": {"label": "Eysenck", "points": ["Three superfactors: P, E and N", "Independent (orthogonal) factors", "Factor analysis plus testable biological hypotheses", "Broad and theory-driven"], "summary": "Eysenck kept few broad factors and linked them to arousal and the nervous system. Cattell's 16 factors, analysed further, collapse into something close to the Big Five."}}
+:::
 
 **A hierarchy**: specific responses at the bottom, then habitual responses, then traits, then **types** (superfactors) at the top.
 
@@ -423,6 +435,10 @@ Brent Roberts and his team (2007) reviewed long-term studies and found that pers
 - **Agreeableness**: relationship quality, low antisocial behaviour.
 - **Openness**: creativity, liberal political attitudes, educational attainment.
 
+:::widget sort
+{"prompt": "Which Big Five trait best predicts each outcome?", "buckets": ["Openness", "Conscientiousness", "Extraversion", "Agreeableness", "Neuroticism"], "items": [{"text": "Doing well in a job, across almost every kind of job", "bucket": 1, "why": "Conscientiousness is the most consistent predictor of job performance."}, {"text": "Living longer", "bucket": 1, "why": "Partly through health behaviours: fewer risks, more check-ups, keeping to treatment."}, {"text": "Developing depression or an anxiety disorder", "bucket": 4, "why": "Neuroticism is a broad risk factor for common mental disorders."}, {"text": "Emerging as a leader in a new group", "bucket": 2, "why": "Extraverts speak up and are noticed."}, {"text": "Warm, stable close relationships", "bucket": 3, "why": "Agreeableness goes with trust, cooperation and fewer conflicts."}, {"text": "Creative achievement in the arts", "bucket": 0, "why": "Openness to experience goes with imagination and curiosity."}]}
+:::
+
 :::clinician
 Correlations are modest at the individual level (typically r of 0.1 to 0.3) but consequential at scale, as Brent Roberts and his team argued in 2007. The DSM-5 alternative model of personality disorders (Section III) and ICD-11's trait qualifiers both draw on maladaptive versions of the five-factor space: negative affectivity (neuroticism), detachment (low extraversion), antagonism or dissociality (low agreeableness), disinhibition (low conscientiousness), and psychoticism (DSM-5) or anankastia (ICD-11; extreme conscientiousness), which is why trait psychology is now part of diagnosis. In India, the NEO-PI-R, NEO-FFI and the Big Five Inventory have been translated and normed in several languages (Hindi, Marathi, Tamil, Bengali and others), with broadly similar structure but generally lower internal consistencies for openness and agreeableness in some samples; use local norms where available. The Big Five do not capture everything: religiosity, honesty-humility, values, attractiveness and abilities are partly outside the five.
 :::
@@ -570,6 +586,10 @@ If traits are real, people should behave consistently. Do they?
 ### The person-situation debate
 In a famous 1968 critique, Walter Mischel argued that the correlation between a trait score and behaviour in any single situation rarely exceeds about 0.30, a ceiling he called the **personality coefficient**. A child who is honest in one test (not cheating on an exam) may not be honest in another (not stealing coins), as Hartshorne and May had found in the 1920s. Mischel concluded that behaviour depends heavily on the situation.
 
+:::widget compare
+{"title": "The person-situation debate", "a": {"label": "Trait view", "points": ["People have stable traits", "Traits explain behaviour across settings", "A punctual student is punctual everywhere", "Personality tests predict behaviour"], "summary": "Before 1968, consistency was taken for granted."}, "b": {"label": "Mischel's challenge", "points": ["Trait scores predict a single behaviour poorly, rarely above 0.30", "Behaviour depends heavily on the situation", "Honest in one setting, dishonest in another", "Situations, not traits, explain more"], "summary": "The debate ended in a draw: aggregate many behaviours and traits predict well; strong situations override traits; and each person has a stable if-then pattern."}}
+:::
+
 :::widget guess
 {
   "prompt": "Mischel said a trait score rarely correlates with behaviour in one situation above a certain value. What is that 'personality coefficient' (as a correlation from 0 to 1)?",
@@ -594,6 +614,10 @@ In a famous 1968 critique, Walter Mischel argued that the correlation between a 
 - **Rank-order stability** (do you keep your position compared with others?) rises with age: about 0.3 in childhood, about 0.5 in college years, about 0.6 at 30, and peaks around 0.7 to 0.75 between 50 and 70. Personality is never "set like plaster", in William James's phrase, but it does become more consistent.
 - **Mean-level change**: people on average become **more conscientious, more agreeable and less neurotic** from adolescence into middle age: the **maturity principle**. Social roles (work, partnership, parenting) are thought to drive some of this (social investment theory).
 - **Therapy changes traits**: a 2017 meta-analysis found that psychological interventions produced noticeable decreases in neuroticism over a few months, with gains that lasted.
+
+:::widget compare
+{"title": "Two kinds of stability", "a": {"label": "Rank-order stability", "points": ["Do you keep your place compared with others?", "About 0.3 in childhood", "About 0.6 at 30", "Peaks around 0.7 between 50 and 70"], "summary": "The most anxious student in the class is still likely to be among the more anxious in middle age."}, "b": {"label": "Mean-level change", "points": ["Does the average change with age?", "More conscientious", "More agreeable", "Less neurotic"], "summary": "Everyone tends to mature, so the whole group shifts together. This is the maturity principle, linked to work, partnership and parenting roles."}}
+:::
 
 :::widget decide
 {
@@ -637,6 +661,10 @@ Humanistic psychology, the "third force" after psychoanalysis and behaviourism, 
 - **The phenomenal field**: each person's private world of experience. To understand behaviour, understand how the person sees the situation.
 - **The self-concept**: the organised picture of "who I am", built from experience and from how others treat us. The **ideal self** is who I think I should be.
 - **The need for positive regard**: everyone needs warmth, acceptance and love from others, and later develops a need for **positive self-regard**.
+
+:::widget compare
+{"title": "Congruence and incongruence", "a": {"label": "Congruence", "points": ["Self-concept matches experience", "'I am a person who sometimes feels angry, and that is all right'", "Feelings are allowed into awareness", "Open, flexible, growing"], "summary": "When self and experience fit, the person can trust their own experience. This is Rogers' picture of health."}, "b": {"label": "Incongruence", "points": ["Self-concept clashes with experience", "'A good daughter never feels angry with her parents'", "Anger is denied or distorted", "Anxious, defensive, rigid"], "summary": "Conditions of worth teach people to deny parts of themselves. The gap produces anxiety, and therapy works by closing it."}}
+:::
 
 ### How the problem starts: conditions of worth
 When love and approval are given **only when** the child behaves in certain ways ("We love you when you come first in class", "Good boys don't cry"), the child learns **conditions of worth**. To keep the love, the child starts to value experiences by others' standards instead of their own organismic valuing. They **disown** feelings and wishes that don't fit.
@@ -956,6 +984,10 @@ In 1980, Irvin Yalom organised the field around four **ultimate concerns**, each
 | **Isolation** | Existential aloneness versus the wish for contact and to be part of a larger whole |
 | **Meaninglessness** | A universe without given meaning versus the need for meaning |
 
+:::widget layers
+{"title": "Yalom's four givens of existence", "shape": "stack", "layers": [{"label": "Death", "detail": "We know we will die, and wish to go on living. Clinically: death anxiety behind health worries and restless overwork."}, {"label": "Freedom", "detail": "We author our own lives, with no given structure. Clinically: avoiding decisions, waiting for someone else to choose."}, {"label": "Isolation", "detail": "However close we get, no one can fully share our experience. Clinically: clinging relationships or fear of being alone."}, {"label": "Meaninglessness", "detail": "The universe does not hand us meaning, yet we need it. Clinically: emptiness and apathy; Frankl's 'existential vacuum'."}], "caption": "Existential therapy helps people face these givens directly instead of defending against them."}
+:::
+
 :::widget sort
 {
   "prompt": "Which of May's three modes of world is the person struggling with most?",
@@ -1112,6 +1144,10 @@ Rotter's **social learning theory** (1954) predicts behaviour with a formula:
 - **Expectancy**: how likely the person thinks it is that the behaviour will lead to the reinforcement.
 - **Reinforcement value**: how much the person wants that reinforcement.
 - **The psychological situation**: the situation as the person perceives it.
+
+:::widget compare
+{"title": "Internal or external locus of control", "a": {"label": "Internal", "points": ["'What happens to me depends on what I do'", "More effort after failure", "More health-protective behaviour", "Seeks information and solutions"], "summary": "Generally linked with better coping and achievement, when real control exists."}, "b": {"label": "External", "points": ["'It depends on luck, fate or powerful others'", "Less effort after failure", "Less likely to follow health advice", "More helplessness and depression"], "summary": "Can be realistic when control really is limited, such as for many people facing poverty or discrimination. Rotter's scale measures a general expectancy, not a fixed trait."}}
+:::
 
 From many experiences, people form **generalised expectancies**, the best known being **locus of control**, introduced by Rotter in 1966:
 - **Internal locus**: "What happens to me depends on what I do."

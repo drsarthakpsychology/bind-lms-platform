@@ -29,6 +29,10 @@ Think of the brain as a radio tuned to the world. In psychosis, the radio picks 
 {"prompt": "Myth or fact? Place each card.", "buckets": ["Myth", "Fact"], "items": [{"text": "Schizophrenia means having a split personality", "bucket": 0}, {"text": "People with psychosis are more often victims of violence than perpetrators", "bucket": 1}, {"text": "Cannabis use can trigger psychosis in some people", "bucket": 1}, {"text": "Psychosis is always caused by schizophrenia", "bucket": 0, "why": "Drugs, delirium, brain disease, mania and severe depression can all cause psychosis."}, {"text": "Most people with schizophrenia can be helped by treatment", "bucket": 1}, {"text": "Hearing a voice once means you have schizophrenia", "bucket": 0}]}
 :::
 
+:::widget compare
+{"title": "An odd experience or psychosis?", "a": {"label": "Common odd experience", "points": ["Hearing your name called once as you fall asleep", "Feeling a dead parent is near, in the months after the death", "Wondering briefly if people on the bus are talking about you", "You can step back and say 'that was strange'"], "summary": "Brief, explainable and doubted by the person: very common and not psychosis."}, "b": {"label": "Psychosis", "points": ["Voices talking about you, day after day", "Certainty that neighbours are poisoning the water", "Ordinary events carry special messages meant only for you", "Daily life, sleep and work fall apart"], "summary": "Persistent, held with conviction and disabling: a loss of contact with shared reality."}, "caption": "Unusual experiences lie on a continuum. What makes it psychosis is persistence, conviction and the effect on life."}
+:::
+
 :::recall
 1. Define psychosis in plain words. || A state of losing touch with shared reality, with hallucinations, delusions, jumbled thinking or very odd behaviour.
 2. Name four causes of psychosis besides schizophrenia. || Mania, severe depression, drugs (cannabis, stimulants), alcohol withdrawal, delirium, brain infection, epilepsy, dementia, some medicines.
@@ -79,6 +83,10 @@ Common types:
 
 :::widget flow
 {"title": "How a delusion can take hold", "layout": "chain", "nodes": [{"id": "odd", "label": "Something feels strange", "detail": "A vague sense that things are changed or significant."}, {"id": "notice", "label": "Ordinary events seem special", "detail": "A song, a look, a car colour feels meant for you."}, {"id": "explain", "label": "An explanation forms", "detail": "\"They are watching me.\""}, {"id": "fixed", "label": "The belief becomes fixed", "detail": "New events are read as proof; doubts are explained away."}, {"id": "act", "label": "It shapes behaviour", "detail": "Avoiding food, staying indoors."}]}
+:::
+
+:::widget compare
+{"title": "A strong belief or a delusion?", "a": {"label": "Strong belief", "points": ["Shared by the person's family, faith or community", "Can be discussed calmly, even if not changed", "Has grown over years in a cultural setting", "Does not take over daily life"], "summary": "A strong belief: firmly held, but shared and understandable in its setting."}, "b": {"label": "Delusion", "points": ["Not shared, even by people of the same faith or village", "Unshakeable, despite clear evidence against it", "Often appears fairly suddenly, with a change in the person", "Drives behaviour: refuses food, hides, confronts strangers"], "summary": "A delusion: fixed, false and out of keeping with the person's background."}, "caption": "Belief in black magic is common in many Indian communities and is not a delusion in itself. It may be delusional when the belief is bizarre, unshared even by the family, and comes with a clear change in the person."}
 :::
 
 :::recall
@@ -180,6 +188,10 @@ Recovery is possible. Many people with schizophrenia work, marry, raise families
 
 :::widget decide
 {"scene": "Your cousin Priti, 25, tells you quietly at a family function that the voices say the guests are planning to poison her, and she will not eat anything.", "ask": "How do you respond?", "choices": [{"label": "'Don't be silly, nobody wants to poison you. Eat!'", "verdict": "harm", "outcome": "She feels you are part of the plot and leaves the function in tears.", "why": "Arguing with a delusion increases fear and breaks trust."}, {"label": "'That sounds really scary. I'm here with you. Would you like to step outside with me? Shall we get something sealed to eat, like a packet of biscuits?'", "verdict": "best", "outcome": "She calms a little, eats a sealed snack, and later agrees to see a doctor with you.", "why": "You acknowledged her fear without arguing or agreeing, kept her safe and found a practical way forward."}, {"label": "'You're right, I'll watch them for you.'", "verdict": "harm", "outcome": "Her certainty grows; she accuses an aunt publicly.", "why": "Colluding strengthens the delusion and can cause real conflict."}]}
+:::
+
+:::widget sort
+{"prompt": "Talking with someone who hears voices: helpful or unhelpful?", "buckets": ["Helpful", "Unhelpful"], "items": [{"text": "'That sounds frightening. What are the voices saying?'", "bucket": 0}, {"text": "'There are no voices. You are imagining it.'", "bucket": 1, "why": "Arguing about whether the voice is real damages trust and does not reduce it."}, {"text": "'I don't hear them, but I believe they are real for you.'", "bucket": 0}, {"text": "Agreeing that the neighbours really are spying", "bucket": 1, "why": "Colluding with a delusion can strengthen it. Stay neutral and focus on feelings."}, {"text": "Speaking calmly and simply, in a quiet place", "bucket": 0}, {"text": "Laughing it off in front of others", "bucket": 1}, {"text": "Asking whether the voices tell them to harm anyone", "bucket": 0, "why": "Command voices raise risk, so asking gently matters."}]}
 :::
 
 :::recall
@@ -320,6 +332,10 @@ Q: Which statement about recovery is true?
 | Disorganised or abnormal motor behaviour | Childlike silliness, unpredictable agitation, catatonia |
 | Negative symptoms | **Diminished emotional expression** and **avolition** are most prominent; also alogia, anhedonia, asociality |
 
+:::widget compare
+{"title": "Positive and negative symptoms", "a": {"label": "Positive symptoms", "points": ["Something added to normal experience", "Hallucinations and delusions", "Disorganised speech and behaviour", "Often dramatic and noticed first", "Usually respond well to antipsychotics"], "summary": "Positive: too much. Easier to see and easier to treat."}, "b": {"label": "Negative symptoms", "points": ["Something taken away", "Flat expression, little speech", "Loss of drive and of pleasure", "Withdrawal from people", "Respond poorly to antipsychotics; drive long-term disability"], "summary": "Negative: too little. Quieter, often missed, and a bigger cause of long-term disability."}, "caption": "Families often see negative symptoms as laziness. Explaining them as part of the illness reduces blame and conflict at home."}
+:::
+
 ### Negative symptoms: primary or secondary?
 Negative symptoms may be **primary** (part of the illness) or **secondary** to depression, antipsychotic side effects (parkinsonism, sedation), positive symptoms (withdrawing because of paranoia), social deprivation or substance use. Treat the secondary causes first.
 
@@ -364,6 +380,10 @@ Course specifiers after 1 year (first episode, multiple episodes, continuous; ac
 ### First-rank symptoms
 Schneider's first-rank symptoms (thought echo, third-person discussing voices, running commentary, thought insertion, withdrawal and broadcasting, delusional perception, passivity of feelings, impulses and actions, somatic passivity) are characteristic, but they are **not** diagnostic on their own: they occur in mania and other psychoses and are absent in many people with schizophrenia. DSM-5 removed their special weight. (See the evidence in the interview and MSE module.)
 
+:::widget flow
+{"title": "Schneider's first-rank symptoms", "layout": "tree", "nodes": [{"id": "r", "label": "First-rank symptoms", "detail": "Once held to strongly suggest schizophrenia when no organic cause is present. Now known to occur in mania and other psychoses too."}, {"id": "h", "label": "Auditory hallucinations", "detail": "Three special kinds of voice.", "parent": "r"}, {"id": "p", "label": "Passivity of thought", "detail": "Thoughts no longer feel private or one's own.", "parent": "r"}, {"id": "a", "label": "Passivity of action and feeling", "detail": "Acts, feelings, impulses or bodily sensations are imposed from outside.", "parent": "r"}, {"id": "d", "label": "Delusional perception", "detail": "A normal perception gains a sudden, private delusional meaning: 'The traffic light turned red, so I knew I was chosen.'", "parent": "r"}, {"id": "h1", "label": "Thought echo", "detail": "Hearing one's own thoughts spoken aloud.", "parent": "h"}, {"id": "h2", "label": "Voices arguing or discussing the person", "detail": "Two or more voices talking about the person in the third person.", "parent": "h"}, {"id": "h3", "label": "Running commentary", "detail": "A voice describing what the person is doing as they do it.", "parent": "h"}, {"id": "p1", "label": "Thought insertion, withdrawal, broadcasting", "detail": "Thoughts put in, taken out, or spread to others.", "parent": "p"}, {"id": "a1", "label": "Made acts, feelings, impulses; somatic passivity", "detail": "'My arm is moved by a machine.'", "parent": "a"}], "caption": "Tap each branch. Exams ask for them; good clinicians remember that none is specific to schizophrenia."}
+:::
+
 ### Suicide
 About **5 to 6%** of people with schizophrenia die by suicide and about 20% attempt it, especially early in the illness, after discharge, with depression, insight into loss, substance use, or command hallucinations. Assess risk at every contact.
 
@@ -402,6 +422,11 @@ The key question: **is there psychosis outside mood episodes?** In bipolar or de
 :::
 
 :::clinician
+
+:::widget compare
+{"title": "Schizoaffective disorder or a mood disorder with psychosis?", "a": {"label": "Mood disorder with psychotic features", "points": ["Psychosis appears only during mood episodes", "When mood returns to normal, the psychosis goes too", "Delusions often match the mood: guilt and ruin in depression, greatness in mania", "Treated mainly as the mood disorder"], "summary": "Mood comes first: psychosis rides on the mood episode."}, "b": {"label": "Schizoaffective disorder", "points": ["Major mood episodes for most of the illness", "Plus a sustained period of delusions or hallucinations with no mood episode at all", "Psychosis persists between mood episodes", "Treated with an antipsychotic plus mood treatment"], "summary": "Both run side by side, and psychosis stands on its own for a time."}, "caption": "The deciding question: has there been psychosis with completely normal mood? If never, think mood disorder with psychotic features."}
+:::
+
 ### ICD-11 differences
 - **Schizophrenia**: symptoms for at least **1 month** (no 6-month rule); core symptoms include persistent delusions, persistent hallucinations, disorganised thinking, experiences of influence, passivity or control, negative symptoms, grossly disorganised behaviour and psychomotor disturbances; at least two, one from the first four. Subtypes removed; **symptom specifiers** rate positive, negative, depressive, manic, psychomotor and cognitive symptoms.
 - **Acute and transient psychotic disorder**: sudden onset (within 2 weeks), rapidly changing, polymorphic symptoms, full remission usually within 3 months. This is common in India and Africa and has a generally good prognosis.

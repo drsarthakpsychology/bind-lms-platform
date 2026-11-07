@@ -54,6 +54,10 @@ Weber's law holds well in the middle range of intensities and breaks down near t
 | Heaviness | about 1.45 | Grows faster than the stimulus (expansive) |
 | Electric shock | about 3.5 | Explodes: a small increase hurts far more |
 
+:::widget flow
+{"title": "Three laws of psychophysics, side by side", "layout": "tree", "nodes": [{"id": "q", "label": "How does felt intensity relate to physical intensity?", "detail": "Psychophysics asked this question for every sense, and three answers became laws."}, {"id": "w", "label": "Weber's law", "parent": "q", "detail": "The just noticeable difference is a fixed fraction of the starting intensity. Holding 2 kg, you notice about 40 g more; holding 20 kg, you need about 400 g more."}, {"id": "f", "label": "Fechner's law", "parent": "q", "detail": "Sensation grows with the logarithm of intensity. Each doubling of the stimulus adds the same step to experience, so experience grows ever more slowly."}, {"id": "s", "label": "Stevens' power law", "parent": "q", "detail": "Sensation equals intensity raised to a power. When the power is below 1 (brightness, loudness), sensation grows slowly. When it is above 1 (electric shock), sensation grows faster than the stimulus."}], "caption": "Weber describes the smallest noticeable change, Fechner builds a scale from it, and Stevens measured sensation directly by asking people for numbers."}
+:::
+
 :::widget guess
 {
   "prompt": "In Stevens' experiments, by roughly how many times did the felt intensity of an electric shock grow when the current was doubled?",
@@ -122,6 +126,10 @@ Background **noise** (random activity in the nervous system and the environment)
 
 - **d prime (d′)** measures sensitivity: the distance between the centres of the two curves, in standard-deviation units. It is calculated as the z-score of the hit rate minus the z-score of the false-alarm rate. Zero means chance; larger means better discrimination.
 - **The criterion (c or beta)** measures bias. A **liberal** observer says "yes" readily: more hits but more false alarms. A **conservative** observer says "yes" rarely: fewer false alarms but more misses.
+
+:::widget compare
+{"title": "Same eyes, different criterion", "a": {"label": "Liberal observer", "points": ["Says 'yes, it is there' readily", "More hits", "More false alarms", "Few misses"], "summary": "Liberal: right when missing a case is costly, such as screening for tuberculosis or a suicide risk question."}, "b": {"label": "Conservative observer", "points": ["Says 'yes' only when very sure", "Fewer hits", "Few false alarms", "More misses"], "summary": "Conservative: right when a false alarm is costly, such as a test that leads to surgery or a jury deciding guilt."}, "caption": "Moving the criterion changes the balance of errors, not sensitivity. Only better input or a better observer raises d prime."}
+:::
 
 :::widget sort
 {
@@ -220,6 +228,10 @@ Light enters through the **cornea**, passes the **pupil** (sized by the iris), i
 
 The **blind spot** is where the optic nerve leaves the eye: no receptors at all. You never notice it because the other eye covers it and the brain fills in.
 
+:::widget compare
+{"title": "Rods and cones", "a": {"label": "Rods", "points": ["About 120 million in each eye", "Mostly in the periphery, none in the fovea", "Work in very dim light", "No colour, low detail"], "summary": "Rods: night vision. This is why a faint star is easier to see when you look slightly to one side of it."}, "b": {"label": "Cones", "points": ["About 6 million in each eye", "Packed into the fovea", "Need bright light", "Three types give colour and fine detail"], "summary": "Cones: day vision, colour and sharp detail for reading and faces."}}
+:::
+
 :::widget neuron
 {
  "title": "Rate coding: how a neuron signals 'brighter'",
@@ -293,6 +305,10 @@ David Hubel and Torsten Wiesel (Nobel Prize 1981) recorded single cells in cat a
 - **Trichromatic theory** (Young, 1802; Helmholtz, 1850s): three kinds of cone, most sensitive to short (about 420 nm, "blue"), medium (about 530 nm, "green") and long (about 560 nm, "red") wavelengths. Every colour is a pattern across the three. This explains colour matching with three primaries and most colour deficiency.
 - **Opponent-process theory** (Hering, 1878): colour is coded in opposing pairs, **red versus green**, **blue versus yellow** and **black versus white**. This explains **negative afterimages** (stare at red, then a white wall looks green), why nobody sees a "reddish green", and some patterns of colour deficiency.
 - **Dual-process theory** (Hurvich and Jameson, 1957): trichromatic coding at the cones, opponent coding in ganglion cells and the thalamus.
+
+:::widget flow
+{"title": "Colour coding in two stages", "layout": "chain", "nodes": [{"id": "l", "label": "Light of mixed wavelengths", "detail": "A ripe mango reflects mostly long and medium wavelengths."}, {"id": "c", "label": "Three cone types", "detail": "Short, medium and long wavelength cones each respond by a different amount. This is the trichromatic stage."}, {"id": "o", "label": "Opponent channels", "detail": "Ganglion cells and the thalamus compare the cone signals: red against green, blue against yellow, light against dark. This is the opponent stage, and it explains afterimages."}, {"id": "v", "label": "Colour areas of the cortex", "detail": "Higher visual areas combine these signals with context to give stable colour, such as a yellow banana under both tube light and sunset."}], "edgeLabels": {"l>c": "absorbed", "c>o": "compared", "o>v": "interpreted"}, "caption": "Both old theories were right, but about different stages of the visual system."}
+:::
 
 :::widget reveal
 {
@@ -387,6 +403,10 @@ The outer ear funnels sound to the **eardrum**; three tiny bones of the middle e
 
 Modern view: all three work together. Low tones use timing, high tones use place, and the middle range uses both.
 
+:::widget sort
+{"prompt": "Which account of pitch does most of the work for each sound?", "buckets": ["Frequency (timing)", "Volley principle", "Place"], "items": [{"text": "A deep 100 Hz hum from a ceiling fan motor", "bucket": 0, "why": "Low tones: nerve fibres can fire in step with each wave."}, {"text": "A 3,000 Hz tone in a hearing test", "bucket": 1, "why": "Too fast for one fibre, so groups of fibres take turns; place coding also helps in this range."}, {"text": "A 12,000 Hz mosquito whine", "bucket": 2, "why": "High tones are coded by the place on the basilar membrane that vibrates most, near the base."}, {"text": "The lowest note on a harmonium", "bucket": 0, "why": "Low frequency: timing of firing carries pitch."}, {"text": "A shrill whistle that first fades in noise-induced hearing loss", "bucket": 2, "why": "Damage starts at the high-frequency end near the base of the cochlea, which is coded by place."}]}
+:::
+
 ### Locating sound
 The brain compares the two ears. A sound on your right reaches the right ear **slightly earlier** (interaural time difference, best for low frequencies) and **louder**, because the head casts a "sound shadow" (interaural level difference, best for high frequencies). Sounds directly ahead or behind are hardest to place, which is why we tilt or turn our heads.
 
@@ -428,6 +448,10 @@ The brain compares the two ears. A sound on your right reaches the right ear **s
 
 ### Pain and the gate
 Ronald Melzack and Patrick Wall's **gate control theory** (1965) proposed a "gate" in the dorsal horn of the spinal cord. Signals in thin pain fibres open it; signals in thick touch fibres (rubbing a bumped elbow) partly close it; and messages descending from the brain (attention, mood, expectation) can open or close it too. This explained why soldiers sometimes feel little pain from serious wounds and why anxiety worsens pain. **Phantom limb pain**, felt in a limb that has been removed, shows that pain lives in the brain's body map. V. S. Ramachandran's **mirror box**, which shows the person a reflection of the intact limb in place of the missing one, relieved phantom pain in some patients.
+
+:::widget flow
+{"title": "The pain gate", "layout": "chain", "nodes": [{"id": "i", "label": "Injury", "detail": "You knock your elbow on a door frame."}, {"id": "t", "label": "Thin pain fibres fire", "detail": "Small, slow fibres carry the injury signal and tend to open the gate in the dorsal horn of the spinal cord."}, {"id": "g", "label": "The gate in the spinal cord", "detail": "Thick touch fibres, fired when you rub the elbow, tend to close it. Signals coming down from the brain, such as calm, distraction or fear, can also close or open it."}, {"id": "b", "label": "Pain felt in the brain", "detail": "How much pain you feel depends on how much passes the gate, not only on the size of the injury."}], "edgeLabels": {"i>t": "signal", "t>g": "opens", "g>b": "what passes"}, "caption": "This is why rubbing a bump helps, and why attention, mood and meaning change pain."}
+:::
 
 :::recall
 1. What are the physical bases of pitch, loudness and timbre? || Frequency, amplitude and the mix of frequencies.
@@ -573,6 +597,10 @@ J. A. Deutsch and Diana Deutsch argued that **all** inputs are analysed for mean
 }
 :::
 
+:::widget attention
+{"caption": "Attend to one ear, then say the student's name in the ignored ear. Which of the three models can explain hearing it?"}
+:::
+
 ### Flexible selection and perceptual load
 Johnston and Heinz (1978) argued that selection can be **early or late, as the task demands**: later selection is possible but costs more capacity. Nilli Lavie's **load theory** (1995) gave a modern answer: when the main task is **perceptually demanding** (high load), there is no spare capacity, so distractors are not processed (early selection). When the task is easy (low load), spare capacity spills over to distractors (late selection). A student copying a dense table is not distracted by the TV; one copying a single line is.
 
@@ -608,12 +636,20 @@ Q: In Treisman's model, why does your own name break through from an unattended 
 ### Kahneman's capacity model (1973)
 Daniel Kahneman described attention as a single pool of **mental effort** that can be shared among tasks. How much is available depends on **arousal**; how it is spent depends on an **allocation policy** shaped by enduring dispositions (sudden movement and your name grab attention), momentary intentions (the task you chose) and an evaluation of demands. Two tasks interfere when together they demand more than the pool holds.
 
+:::widget curve
+{"kind": "inverted-u", "title": "Arousal, effort and performance", "caption": "Kahneman tied available capacity to arousal. Slide arousal and task difficulty: too little or too much arousal both hurt, and the peak comes earlier for hard tasks."}
+:::
+
 Christopher Wickens' **multiple resource theory** refined this: there are partly separate pools for **visual and auditory input**, for **spatial and verbal codes**, and for **manual and vocal responses**. Listening to a podcast while walking interferes little; reading a message while driving (both visual-spatial) interferes a lot.
 
 ### Automatic and controlled processing
 Walter Schneider and Richard Shiffrin (1977) separated:
 - **Controlled processing**: slow, effortful, serial, limited by capacity, flexible. A new driver changing gear.
 - **Automatic processing**: fast, effortless, parallel, hard to stop, built by long consistent practice. An experienced driver changing gear while talking.
+
+:::widget compare
+{"title": "Controlled and automatic processing", "a": {"label": "Controlled", "points": ["Slow and effortful", "One step at a time", "Limited by capacity", "Easy to stop or change", "A learner driver changing gear"], "summary": "Controlled processing is flexible but costly. It is what new or changing tasks need."}, "b": {"label": "Automatic", "points": ["Fast and effortless", "Many things in parallel", "Barely uses capacity", "Hard to stop, as in the Stroop effect", "An experienced driver changing gear while talking"], "summary": "Automatic processing is built by long, consistent practice. It frees capacity but resists change."}}
+:::
 
 The **Stroop effect** (J. R. Stroop, 1935) shows that reading is automatic: naming the ink colour of the word RED printed in green is slower and more error-prone than naming the ink of a row of XXXX.
 
@@ -856,6 +892,10 @@ Eleanor Gibson and Richard Walk (1960) built the **visual cliff**: a glass table
 - **Induced motion**: the moon seems to race when clouds drift past it; your stationary train seems to move when the train beside it pulls out.
 - **Motion aftereffect** (the waterfall illusion): after staring at a waterfall, the rocks beside it seem to drift upwards.
 
+:::widget sort
+{"prompt": "Name the kind of seen movement.", "buckets": ["Phi phenomenon", "Autokinetic effect", "Induced motion", "Motion aftereffect"], "items": [{"text": "Diwali chaser lights seem to run round the balcony", "bucket": 0, "why": "Lights flashing in sequence look like one moving light."}, {"text": "A single glowing dot in a pitch-dark room seems to drift", "bucket": 1, "why": "With no frame of reference, a still light seems to wander."}, {"text": "Your parked train seems to move when the one beside it pulls out", "bucket": 2, "why": "Movement of the surroundings is seen as your own movement."}, {"text": "After watching a river flow, the bank seems to drift the other way", "bucket": 3, "why": "Motion detectors for one direction tire, so the opposite direction wins for a moment."}, {"text": "The moon seems to race behind passing clouds", "bucket": 2, "why": "The moving clouds induce motion in the still moon."}]}
+:::
+
 ### Constancies
 | Constancy | What stays the same | Despite |
 |---|---|---|
@@ -866,6 +906,10 @@ Eleanor Gibson and Richard Walk (1960) built the **visual cliff**: a glass table
 
 Size constancy depends on judging distance. **Emmert's law**: an afterimage looks larger when you look at a far wall than at your hand, because the same retinal image is "scaled" by the perceived distance.
 
+:::widget compare
+{"title": "The Ames room: what you see and what is there", "a": {"label": "What you see", "points": ["An ordinary rectangular room through a peephole", "A child in one corner looks like a giant", "An adult in the other corner looks tiny", "People seem to grow or shrink as they cross the room"], "summary": "Your brain assumes the room is rectangular, so it reads the different image sizes as different body sizes."}, "b": {"label": "What is really there", "points": ["A trapezoidal room", "One back corner is much farther away than the other", "The walls and windows are slanted to look normal from the peephole", "The people are their normal sizes"], "summary": "Size constancy needs correct distance. When distance cues are faked, the brain's usual rule produces an illusion."}}
+:::
+
 ### Illusions worth knowing
 - **Müller-Lyer** (1889): equal lines with outward fins look longer than with inward fins.
 - **Ponzo**: two equal bars between converging lines; the upper one (seen as farther) looks bigger.
@@ -874,6 +918,10 @@ Size constancy depends on judging distance. **Emmert's law**: an afterimage look
 - **Moon illusion**: the moon looks bigger near the horizon than high in the sky, though its image is the same. One explanation: the horizon moon seems farther (the terrain gives distance cues), so size constancy enlarges it.
 - **Ambiguous figures** (Necker cube, Rubin's vase, the old woman and young woman): one stimulus, two perceptions that flip.
 - **Impossible figures** (the Penrose triangle): locally sensible, globally impossible.
+
+:::widget illusion
+{"kind": "ebbinghaus", "caption": "Two equal circles, one among big circles and one among small ones. Size is judged relative to the surroundings."}
+:::
 
 :::recall
 1. Name five monocular depth cues. || Interposition, relative size, linear perspective, texture gradient, aerial perspective (also relative height, shading, motion parallax).

@@ -120,12 +120,12 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "A: In Ringelmann's rope-pulling studies, part of the drop in each person's pull in larger groups was due to coordination loss.",
-      "R: When people pull together, their efforts do not peak at exactly the same moment or in exactly the same direction.",
+      "R: Later studies with pseudo-groups showed that coordination loss fully explains the drop, with no role for reduced motivation.",
     ],
     options: AR,
-    answer: 0,
+    answer: 2,
     explanation:
-      "Both are true and R explains A. Steiner called this 'process loss' and split it into coordination loss and motivation loss. Later research by Ingham and colleagues blindfolded participants and told them others were pulling with them when they were actually alone; they still pulled less, which showed that motivation loss (true loafing) also plays a part, not only poor coordination.",
+      "A is true and R is false. When people pull together, their efforts do not peak at the same moment or in the same direction, so some force is lost. Ingham and colleagues later blindfolded participants and told them others were pulling with them when they were actually alone. Their effort still fell as the supposed group size grew, which shows a loss of motivation, later called social loafing, in addition to coordination loss. So R reverses the pseudo-group finding, and the options in which R is true are wrong.",
     ref: "Steiner 1972; Ingham et al. 1974",
   }),
   s({
@@ -234,7 +234,7 @@ export const QUESTIONS: PrepQuestion[] = [
     id: "soc-grp-0152",
     topic: "group-decisions",
     exams: [N, M, S],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "Group polarisation refers to the finding that group discussion tends to:",
     options: [
@@ -316,7 +316,7 @@ export const QUESTIONS: PrepQuestion[] = [
     id: "soc-grp-0156",
     topic: "group-decisions",
     exams: [C, N, S],
-    difficulty: 2,
+    difficulty: 1,
     type: "mcq",
     stem: "Tuckman's model of group development lists the stages in which order?",
     options: [
@@ -438,7 +438,7 @@ export const QUESTIONS: PrepQuestion[] = [
     id: "soc-prej-0162",
     topic: "prejudice",
     exams: [N, M, S],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "In Tajfel's minimal group studies, boys were split into groups on a trivial basis (for example, preferring paintings by Klee or Kandinsky) and then allocated points to anonymous others. They often chose allocations that:",
     options: [
@@ -486,20 +486,20 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "assertion-reason",
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
-      "A: Social identity theory holds that people favour their own group partly to maintain or enhance self-esteem.",
+      "A: Social identity theory holds that ingroup favouritism appears only when groups compete for scarce resources.",
       "R: According to the theory, part of a person's self-concept comes from the groups they belong to.",
     ],
     options: AR,
-    answer: 0,
+    answer: 3,
     explanation:
-      "Both are true and R explains A. Because group memberships form part of who we are, our self-esteem depends partly on how our groups compare with others. Seeing our group as better (positive distinctiveness) therefore boosts our self-image, which motivates ingroup favouritism. Evidence on the 'self-esteem hypothesis' is mixed, but this is the theory's core claim.",
+      "A is false and R is true. A describes realistic conflict theory, as in the Robbers Cave study, not social identity theory. Tajfel's minimal group experiments showed that boys assigned to groups on a trivial basis, such as preferring Klee or Kandinsky, favoured their own group even with no competition, no history and no personal gain. R gives the core idea of social identity theory: membership becomes part of the self, so favouring the ingroup supports self-esteem. Since A is false, options treating A as true are wrong.",
     ref: "Tajfel & Turner 1979; Rubin & Hewstone 1998",
   }),
   s({
     id: "soc-prej-0165",
     topic: "prejudice",
     exams: [C, N, S],
-    difficulty: 2,
+    difficulty: 1,
     type: "mcq",
     stem: "The tendency to see members of other groups as 'all alike' while seeing one's own group as varied is called:",
     options: [
@@ -557,7 +557,7 @@ export const QUESTIONS: PrepQuestion[] = [
     id: "soc-prej-0168",
     topic: "prejudice",
     exams: [N, M, S],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "Aronson's 'jigsaw classroom' reduces prejudice among schoolchildren by:",
     options: [
@@ -599,7 +599,7 @@ export const QUESTIONS: PrepQuestion[] = [
     id: "soc-prej-0170",
     topic: "prejudice",
     exams: [C, N, S],
-    difficulty: 2,
+    difficulty: 1,
     type: "mcq",
     stem: "Realistic conflict theory explains prejudice mainly in terms of:",
     options: [
@@ -925,7 +925,7 @@ export const QUESTIONS: PrepQuestion[] = [
     id: "soc-prej-0187",
     topic: "prejudice",
     exams: [C, N, S],
-    difficulty: 2,
+    difficulty: 1,
     type: "mcq",
     stem: "Ingroup favouritism means:",
     options: [
@@ -993,12 +993,12 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "A: People high in social dominance orientation tend to support hierarchies between groups and policies that keep them in place.",
-      "R: Social dominance orientation measures a general preference for inequality between social groups.",
+      "R: Social dominance orientation and right-wing authoritarianism are only moderately correlated and predict prejudice partly independently.",
     ],
     options: AR,
-    answer: 0,
+    answer: 1,
     explanation:
-      "Both are true and R explains A. Pratto, Sidanius and colleagues developed the SDO scale to measure how much people want their group to dominate and accept group-based inequality. High scorers endorse 'hierarchy-enhancing' ideas such as some forms of racism, sexism and nationalism, and oppose 'hierarchy-attenuating' policies such as affirmative action. SDO and right-wing authoritarianism together predict much of the variation in generalised prejudice.",
+      "Both are true, but R does not explain A. A holds because SDO measures a general preference for inequality between groups, so people high in SDO favour hierarchy-enhancing beliefs and policies. R is also true: research by Altemeyer, Duckitt and others shows that SDO and RWA are distinct, with RWA linked to threat and conformity and SDO linked to competitiveness, and each adds to the prediction of prejudice. That is a point about how SDO relates to another measure, not a reason why SDO predicts support for hierarchy. So 'R explains A' is wrong, and the options calling either false are wrong.",
     ref: "Pratto et al. 1994; Sidanius & Pratto 1999",
   }),
   s({

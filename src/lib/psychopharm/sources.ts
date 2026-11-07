@@ -1,5 +1,5 @@
 /**
- * Source registry — every source id used in extraction, with the metadata the
+ * Source registry: every source id used in extraction, with the metadata the
  * students see and the reviewer needs. Mirrors the planned psych_sources rows.
  * Only named, verified textbooks + ICD/DSM are sources. No Tier-2 web material.
  */
@@ -90,7 +90,7 @@ export const SOURCES: Record<string, SourceMeta> = {
   },
   fish_psychopath: {
     id: "fish_psychopath",
-    title: "Fish's Clinical Psychopathology — Signs and Symptoms in Psychiatry",
+    title: "Fish's Clinical Psychopathology: Signs and Symptoms in Psychiatry",
     authors: "Patricia Casey, Brendan Kelly",
     edition: "3rd",
     year: 2007,

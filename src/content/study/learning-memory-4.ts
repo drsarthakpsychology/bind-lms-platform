@@ -11,6 +11,10 @@ Robert Rescorla gave rats tone-shock pairings. For one group, shock came **only*
 ### Blocking (Kamin, 1969)
 Leon Kamin first conditioned rats to fear a noise (noise followed by shock). Then he presented noise **plus** a light together, followed by the same shock. When the light was later tested alone, it produced little fear, compared with rats that had the compound trials without the earlier noise training. The noise already predicted the shock perfectly, so the light added nothing: learning to it was **blocked**. Learning happens when an outcome is **surprising**.
 
+:::widget flow
+{"title": "Kamin's blocking experiment", "layout": "chain", "nodes": [{"id": "a", "label": "Phase 1: noise, then shock", "detail": "Rats learn that the noise predicts shock. The noise now carries the full prediction."}, {"id": "b", "label": "Phase 2: noise plus light, then the same shock", "detail": "The light is added, but the shock is already fully predicted by the noise. Nothing about the shock is surprising."}, {"id": "c", "label": "Test: light alone", "detail": "The light produces very little fear, compared with rats that only ever had the noise-plus-light training."}, {"id": "d", "label": "Conclusion", "detail": "Pairing alone is not enough. A cue is learned about only when it adds new predictive information, that is, when there is a prediction error to reduce."}], "edgeLabels": {"a>b": "add a second cue", "b>c": "remove the noise", "c>d": "what it means"}, "caption": "Blocking was a key reason the Rescorla-Wagner model was built around surprise."}
+:::
+
 Related effects:
 - **Overshadowing**: of two CSs presented together, the more salient one gets most of the learning.
 - **Latent inhibition** (Lubow and Moore, 1959): a stimulus presented many times on its own before conditioning is later harder to condition. Familiar, "irrelevant" stimuli are learned about slowly.
@@ -239,6 +243,10 @@ Tim Bliss and Terje Lømo (1973) stimulated a pathway into the rabbit hippocampu
 ### Dopamine and prediction error
 Wolfram Schultz recorded dopamine neurons in monkeys (Schultz, Dayan and Montague, 1997). Before learning, they fired when juice arrived **unexpectedly**. After a light reliably predicted juice, they fired to the **light** and **not** to the juice. If the predicted juice was then **withheld**, their firing **dipped** below baseline at the moment it should have come. Dopamine signals **reward prediction error**, the λ − ΣV of the Rescorla-Wagner model, written in neurons.
 
+:::widget compare
+{"title": "Dopamine neurons before and after learning", "a": {"label": "Before learning", "points": ["Light appears: no change in firing", "Juice arrives unexpectedly: a burst of firing", "The juice is better than expected"], "summary": "Dopamine bursts at the reward, because the reward was a surprise."}, "b": {"label": "After learning", "points": ["Light appears: a burst of firing", "Juice arrives as predicted: no change", "Juice withheld: firing dips below baseline at the expected time"], "summary": "The burst moves to the earliest reliable predictor. Dopamine signals reward prediction error, not reward itself."}, "caption": "This is the same surprise term as in the Rescorla-Wagner model, found in single cells."}
+:::
+
 :::widget guess
 {
   "prompt": "After training, a light reliably predicts juice. On a test trial, the light appears but the juice is withheld. What happens to dopamine neuron firing at the moment the juice was expected, as a percentage of normal baseline?",
@@ -287,6 +295,10 @@ Frederic Bartlett, in work published in 1932, asked Cambridge students to read a
 - **Familiarised**: canoes became boats; seal hunting became fishing.
 - **Reorganised** around a central idea, with a moral sometimes added.
 
+:::widget compare
+{"title": "What retelling does to a story", "a": {"label": "The original tale", "points": ["Unfamiliar names and places", "Canoes and seal hunting", "Puzzling ghosts and an unexplained death", "No clear moral"], "summary": "A story built on a culture the listeners did not know."}, "b": {"label": "After many retellings", "points": ["Shorter, with odd details dropped", "Canoes become boats, seal hunting becomes fishing", "Supernatural parts explained or left out", "Reorganised around one idea, sometimes with a moral"], "summary": "The story has been rebuilt to fit the listeners' own schemas. Memory stores a gist and fills in the rest."}}
+:::
+
 He concluded that memory is **reconstructive**: we store a gist and rebuild details using **schemas**, organised knowledge structures shaped by culture. Later research added **scripts** (schemas for events: what happens at a restaurant, or at a Hindu wedding) and showed that schemas both help (organising) and distort (filling gaps with the typical).
 
 ### Eyewitness testimony
@@ -301,6 +313,10 @@ Elizabeth Loftus and John Palmer (1974) showed students films of car accidents a
   "answer": [38, 44],
   "reveal": "About 41 mph. A week later, in a second experiment, 32 percent of the 'smashed' group said they had seen broken glass, compared with 14 percent of the 'hit' group and 12 percent of controls. There was no broken glass. The question did not just bias the answer; it seemed to change the memory."
 }
+:::
+
+:::widget experiment
+{"title": "Loftus and Palmer: one verb, five speeds", "question": "Everyone saw the same film of a car crash. Predict the average speed estimate for each verb in the question 'How fast were the cars going when they ___ each other?'", "unit": "mph", "max": 50, "conditions": [{"label": "smashed", "value": 40.8}, {"label": "collided", "value": 39.3}, {"label": "bumped", "value": 38.1}, {"label": "hit", "value": 34.0}, {"label": "contacted", "value": 31.8}], "why": "The more violent the verb, the faster the remembered speed. One word in a question changed what people reported, and in the follow-up study it changed what they later 'remembered' seeing."}
 :::
 
 The **misinformation effect**: information given after an event becomes part of the memory of it. Factors that affect eyewitness accuracy:
@@ -372,6 +388,10 @@ In 1953, William Scoville removed most of the medial temporal lobes on both side
 - **Intact procedural learning**: in **mirror drawing** (Milner, 1962), he improved over days while having no memory of having practised. Priming was also preserved.
 H. M. showed that the hippocampus and nearby cortex are needed to **form** lasting declarative memories, but not to store old ones or to learn skills.
 
+:::widget timeline
+{"prompt": "Order the key moments in the case of H. M., Henry Molaison.", "events": [{"label": "Severe epilepsy begins and medicines fail to control it", "when": "Childhood"}, {"label": "Both medial temporal lobes are removed to stop the seizures", "when": "1953"}, {"label": "Scoville and Milner report his dense anterograde amnesia", "when": "1957"}, {"label": "Milner shows he improves at mirror drawing without remembering practising", "when": "1962"}, {"label": "He dies, and his brain is sliced and studied in fine detail", "when": "2008"}], "why": "Surgery first, then the discovery of amnesia, then the finding that skill learning was spared. That last finding split memory into declarative and procedural systems."}
+:::
+
 :::widget brainmap
 {
  "title": "Where damage causes amnesia",
@@ -395,6 +415,10 @@ H. M. showed that the hippocampus and nearby cortex are needed to **form** lasti
 - **Systems consolidation**: over months to years, memories become less dependent on the hippocampus and more on the neocortex (the standard model), which explains temporally graded retrograde amnesia. **Multiple trace theory** (Nadel and Moscovitch) argues that vivid episodic detail always needs the hippocampus.
 - **Sleep**: slow-wave sleep supports the replay and transfer of declarative memories; REM sleep has been linked to procedural and emotional memory.
 - **Reconsolidation** (Nader, Schafe and LeDoux, 2000): when a consolidated memory is **reactivated**, it becomes briefly unstable and must be stored again, so it can be weakened or updated in that window. Trials have tested propranolol with reactivation for PTSD, with mixed results.
+
+:::widget flow
+{"title": "The reconsolidation loop", "layout": "cycle", "nodes": [{"id": "a", "label": "Consolidated, stable memory", "detail": "After learning, protein synthesis and, over longer periods, hippocampus to cortex transfer make the memory resistant to disruption. Before that, a head injury, a seizure, ECT or alcohol can wipe it."}, {"id": "b", "label": "Reactivated by a reminder", "detail": "Recalling the memory, or meeting a strong cue, brings it back into an active state."}, {"id": "c", "label": "Unstable for a short window", "detail": "In this window the memory can be updated, strengthened or weakened, for example by new safety learning, or by propranolol in research trials."}, {"id": "d", "label": "Stored again, perhaps changed", "detail": "The memory is re-saved, including whatever happened during the window. It is now the updated version that will be recalled next time."}], "edgeLabels": {"a>b": "retrieval", "b>c": "becomes labile", "c>d": "reconsolidation", "d>a": "stable again"}, "caption": "Each time we recall a memory, we may store a slightly changed version of it. This is one reason memory is reconstructive."}
+:::
 
 ### The amnesias
 | Condition | Cause | Pattern |
@@ -498,12 +522,20 @@ Shepard Siegel proposed that drug cues (the room, the syringe, the ritual) come 
 }
 :::
 
+:::widget release
+{"transmitter": "dopamine", "caption": "Step through a dopamine synapse, then pick amphetamine: it pushes dopamine out and blocks its reuptake. Drug cues come to trigger this reward signal, which is why craving is so strongly conditioned."}
+:::
+
 ### Exposure as inhibitory learning
 Michelle Craske and colleagues reframed exposure therapy using extinction research: exposure does not erase fear; it builds a **new, competing "safe" memory** that must win retrieval. To strengthen it:
 - **Expectancy violation**: design exposures to test a specific feared prediction ("If I stay in the lift for 10 minutes, I will faint") and let it be disconfirmed.
 - **Remove safety behaviours** (carrying a water bottle, holding a rail), which stop the person from learning that they are safe.
 - **Vary contexts and stimuli** to reduce renewal.
 - **Occasional reinforced extinction** and **retrieval cues** (a small reminder from therapy) for relapse prevention.
+
+:::widget compare
+{"title": "Two ways of thinking about exposure", "a": {"label": "Habituation view", "points": ["Aim: make fear fall within each session", "Stay until anxiety drops by half", "Safety behaviours tolerated if they help", "One setting, one feared object"], "summary": "Older view: exposure works by wearing the fear down."}, "b": {"label": "Inhibitory learning view", "points": ["Aim: break a specific feared prediction", "Length set by what needs to be tested", "Safety behaviours removed", "Many settings, many versions of the feared object"], "summary": "Current view: exposure builds a new safety memory that must compete with the fear memory, so make it strong and general."}, "caption": "Fear falling during a session predicts long-term outcome less well than people once thought."}
+:::
 
 ### Memory in psychiatric disorders
 - **Depression**: **mood-congruent** recall; **overgeneral autobiographical memory** (Mark Williams), in which people asked for a specific memory to a cue ("happy") give general summaries ("I used to be happy at college") rather than specific events. It predicts a poorer course and is targeted by **memory specificity training**. Concentration and memory complaints in older depressed adults can mimic dementia ("depressive pseudodementia"); improvement with treatment helps tell them apart, but such patients carry a higher later risk of dementia.

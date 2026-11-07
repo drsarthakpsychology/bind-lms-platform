@@ -47,6 +47,10 @@ A silent patient still has a full mental state. Your observation becomes the who
 - Do the MSE from observation; postpone sensitive questions.
 - Record exact words of threats.
 
+:::widget timeline
+{"prompt": "A patient in the ward is getting angry and loud. Order the steps you take.", "events": [{"label": "Notice early signs: raised voice, clenched fists, pacing"}, {"label": "Keep yourself safe: stay near the open door, with a colleague nearby"}, {"label": "Lower your voice, sit or stand at an angle, and name the feeling"}, {"label": "Listen and offer real choices: 'Would you like to talk here or outside?'"}, {"label": "If danger continues, call for help and follow the ward protocol"}, {"label": "Afterwards, record exact words and behaviour, and review with the team"}], "why": "De-escalation starts early and with words. Medicine or restraint is a last resort, used only under the hospital's protocol when talking has failed and someone is in danger."}
+:::
+
 ### Through an interpreter
 - Use a **trained interpreter**, not a family member, when possible: relatives may soften or edit symptoms, especially about abuse, sex or suicide.
 - Ask the interpreter to translate **exactly**, including odd words, and to tell you when speech does not make sense in the original language. Thought disorder can vanish in translation.
@@ -104,6 +108,10 @@ Risk is not a separate exam. It runs through every heading. Good notes show **wh
 
 :::widget flow
 {"title": "Command hallucinations: weighing the risk", "layout": "chain", "nodes": [{"id": "a", "label": "What does it say?", "detail": "Exact words. Harm to self, harm to others, or something minor?"}, {"id": "b", "label": "Who is it?", "detail": "A powerful, known or feared voice is harder to resist."}, {"id": "c", "label": "Have you obeyed before?", "detail": "Past compliance is the strongest clue to future compliance."}, {"id": "d", "label": "Can you resist?", "detail": "How do they cope? Are they fighting it, and for how long?"}, {"id": "e", "label": "Do the beliefs fit?", "detail": "Delusions that support the command (for example 'God wants this') raise risk."}, {"id": "f", "label": "Plan and means", "detail": "Then ask as you would about any suicidal or violent plan."}], "caption": "A command voice is a finding to explore, not a risk level in itself."}
+:::
+
+:::widget compare
+{"title": "The same patient, two MSEs", "a": {"label": "Monday", "points": ["Tearful but engaged", "'I feel low, but my daughter's wedding keeps me going'", "No plan; would tell staff if thoughts grew", "Accepts the treatment plan"], "summary": "Ongoing risk, with clear protective factors and engagement."}, "b": {"label": "Thursday", "points": ["Calm, distant, smiles little", "'It doesn't matter any more; it's all sorted'", "Has been asking how many tablets are in the ward stock", "Refuses the family meeting"], "summary": "A sudden calm, hopelessness, interest in means and withdrawal from help: risk has risen sharply. Act today."}, "caption": "Risk is a state that can change in days. Each MSE is a new snapshot, and the change between snapshots is itself a clue."}
 :::
 
 ### Asking about suicide clearly

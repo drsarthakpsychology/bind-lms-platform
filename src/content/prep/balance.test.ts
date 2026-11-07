@@ -1,21 +1,31 @@
 import { describe, expect, it } from "vitest";
-import { ALL_QUESTIONS } from "@/content/prep";
-import type { Subject } from "@/lib/prep/types";
+import { ALL_QUESTIONS } from "./index";
+import type { PrepQuestion } from "@/lib/prep/types";
 
 /**
- * Answer-key balance guard. A student should not be able to score well by always
- * picking the same option. For every subject:type pair with at least MIN_ITEMS
- * questions, no single option index may hold more than MAX_SHARE of the answers.
- * Add a subject here once its bank has been rebalanced.
+ * Answer-key balance: within a subject, no question type with 12 or more
+ * items may have more than 40 percent of its correct answers on one option.
+ * Add subjects to BALANCED_SUBJECTS as their banks are rebalanced.
  */
-export const BALANCED_SUBJECTS: Subject[] = ["learning-motivation-emotion", "perception-attention", "cognitive", "ugc-paper1", "ethics-law", "indian-psychology"];
-
+const BALANCED_SUBJECTS: PrepQuestion["subject"][] = [
+  "biological",
+  "developmental",
+  "social",
+  "personality-theories",
+  "history-systems",
+  "learning-motivation-emotion",
+  "perception-attention",
+  "cognitive",
+  "ugc-paper1",
+  "ethics-law",
+  "indian-psychology",
+];
 const MIN_ITEMS = 12;
 const MAX_SHARE = 0.4;
 
-describe("prep answer-key balance", () => {
+describe("answer-key balance", () => {
   for (const subject of BALANCED_SUBJECTS) {
-    it(`${subject}: no option holds more than ${MAX_SHARE * 100}% of answers in any question type`, () => {
+    it(`${subject}: no type has more than 40% of answers on one option`, () => {
       const byType = new Map<string, number[]>();
       for (const q of ALL_QUESTIONS) {
         if (q.subject !== subject) continue;
@@ -23,11 +33,12 @@ describe("prep answer-key balance", () => {
         counts[q.answer]++;
         byType.set(q.type, counts);
       }
+      expect(byType.size, subject).toBeGreaterThan(0);
       for (const [type, counts] of byType) {
         const total = counts.reduce((a, b) => a + b, 0);
         if (total < MIN_ITEMS) continue;
-        const top = Math.max(...counts);
-        expect(top / total, `${subject}:${type} answers per option ${JSON.stringify(counts)}`).toBeLessThanOrEqual(MAX_SHARE);
+        const share = Math.max(...counts) / total;
+        expect(share, `${subject}:${type} answer counts ${counts.join("/")}`).toBeLessThanOrEqual(MAX_SHARE);
       }
     });
   }

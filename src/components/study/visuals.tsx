@@ -198,7 +198,7 @@ export function Flow({ d }: { d: FlowData }) {
 
 /* ---------------------------------------------------------------- curves */
 const erf = (x: number) => {
-  // Abramowitz–Stegun 7.1.26
+  // Abramowitz-Stegun 7.1.26
   const s = Math.sign(x);
   const a = Math.abs(x);
   const t = 1 / (1 + 0.3275911 * a);

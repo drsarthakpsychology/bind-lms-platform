@@ -72,7 +72,7 @@ export const QUESTIONS: PrepQuestion[] = [
   p({
     id: "per-trait-0101",
     exams: [N, M, S],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "Allport and Odbert's 1936 search of an unabridged English dictionary is important for trait psychology because it:",
     options: [
@@ -266,20 +266,20 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "assertion-reason",
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
-      "A: Eysenck predicted that introverts would avoid strong stimulation such as loud parties.",
-      "R: Eysenck proposed that introverts have a higher resting level of cortical arousal, linked to the ascending reticular activating system, so extra stimulation pushes them above their comfortable level.",
+      "A: Eysenck predicted that introverts would tend to avoid strong stimulation such as loud parties.",
+      "R: Eysenck proposed that introverts have a lower resting level of cortical arousal than extraverts.",
     ],
     options: AR,
-    answer: 0,
+    answer: 2,
     explanation:
-      "Both are true and R explains A. Eysenck's arousal theory says introverts are already near their optimal arousal, so they prefer quiet settings, while extraverts are under-aroused and seek stimulation. Evidence includes the 'lemon juice test', in which introverts salivate more to lemon juice on the tongue, and findings that introverts prefer lower noise levels when studying. Later research found the support for chronic arousal differences to be mixed, but the theory and prediction are as stated.",
+      "A is true and R is false. In Eysenck's arousal theory it is introverts who have the higher resting level of cortical arousal, linked to the ascending reticular activating system. Extra stimulation pushes them above their comfortable level, so they avoid it, while extraverts, starting from lower arousal, seek stimulation to reach their best level. R reverses this. Since R is false, the options in which R is true are wrong.",
     ref: "Eysenck 1967; Geen 1984",
   }),
   p({
     id: "per-trait-0111",
     topic: "eysenck",
     exams: [N, M, S],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "In Eysenck's biological theory, neuroticism was linked to:",
     options: [
@@ -321,7 +321,7 @@ export const QUESTIONS: PrepQuestion[] = [
     id: "per-trait-0113",
     topic: "eysenck",
     exams: [N, M],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "Jeffrey Gray's reinforcement sensitivity theory reinterpreted Eysenck's dimensions in terms of two brain systems. The behavioural inhibition system (BIS) is linked to:",
     options: [
@@ -399,7 +399,7 @@ export const QUESTIONS: PrepQuestion[] = [
     id: "per-big5-0117",
     topic: "big-five",
     exams: [N, M, S],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "Meta-analyses of personality and job performance (for example by Barrick and Mount) have found that the Big Five trait most consistently related to performance across many kinds of jobs is:",
     options: [
@@ -476,7 +476,7 @@ export const QUESTIONS: PrepQuestion[] = [
     id: "per-big5-0121",
     topic: "big-five",
     exams: [C, N, S],
-    difficulty: 2,
+    difficulty: 1,
     type: "mcq",
     stem: "A person who is curious, imaginative, enjoys new ideas and has wide artistic interests would score high on:",
     options: [
@@ -527,12 +527,12 @@ export const QUESTIONS: PrepQuestion[] = [
     passage:
       "A researcher measures the Big Five in 2,000 identical and fraternal twins. Correlations for identical twins are about 0.45 for each trait, and for fraternal twins about 0.20. Twins reared apart are almost as similar as twins reared together. Adoptive siblings raised in the same home correlate close to zero.",
     options: [
-      "Each trait shows substantial genetic influence (roughly 40 to 50%), shared family environment has little effect, and much of the remaining variance is due to non-shared environment and measurement error",
       "Shared family environment is the main cause of personality differences",
+      "Each trait shows substantial genetic influence (roughly 40 to 50%), shared family environment has little effect, and much of the remaining variance is due to non-shared environment and measurement error",
       "Personality is entirely genetic",
       "Twin data cannot tell us anything about personality",
     ],
-    answer: 0,
+    answer: 1,
     explanation:
       "Identical twins being much more similar than fraternal twins points to genetic influence; doubling the difference gives about 0.50. Twins reared apart being as similar as those reared together, and adoptive siblings being almost uncorrelated, show that the shared home matters little. Since identical twins correlate only about 0.45, more than half the variance is non-shared environment and error, so personality is not entirely genetic. Twin designs are informative, though they have assumptions.",
     ref: "Bouchard & Loehlin 2001; Vukasović & Bratko 2015",
@@ -646,7 +646,7 @@ export const QUESTIONS: PrepQuestion[] = [
     id: "per-trait-0129",
     topic: "person-situation",
     exams: [N, M, S],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "Walter Mischel's 1968 critique of trait psychology argued that:",
     options: [
@@ -669,12 +669,12 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "A: Epstein showed that traits predict behaviour much better when behaviour is averaged across many occasions.",
-      "R: A single behaviour is affected by many chance situational factors, which tend to cancel out when many observations are combined.",
+      "R: Epstein found that single behaviours on single occasions correlate very highly with trait scores, often above 0.80.",
     ],
     options: AR,
-    answer: 0,
+    answer: 2,
     explanation:
-      "Both are true and R explains A. Like the reliability of a test, which rises with more items, the reliability of a behavioural measure rises with more occasions. Epstein found that aggregated behaviour, for example sociability over two weeks, correlated much more strongly with trait scores than single-day behaviour did. This aggregation principle helped resolve the person-situation debate in favour of traits as predictors of general tendencies.",
+      "A is true and R is false. Epstein's point was that single acts correlate only weakly with traits, typically around 0.30, which is close to Mischel's 'personality coefficient'. When behaviour is aggregated over many days, chance situational influences cancel out and correlations rise sharply. If single acts already correlated above 0.80, aggregation would hardly be needed. Since R is false, the options treating it as true are wrong.",
     ref: "Epstein 1979, J Pers Soc Psychol",
   }),
   p({
@@ -746,7 +746,7 @@ export const QUESTIONS: PrepQuestion[] = [
     id: "per-trait-0134",
     topic: "type-theories",
     exams: [N, M, S],
-    difficulty: 2,
+    difficulty: 1,
     type: "mcq",
     stem: "The Type A behaviour pattern, described by cardiologists Friedman and Rosenman, includes:",
     options: [
@@ -769,19 +769,19 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "A: Many psychologists prefer to describe personality with continuous dimensions rather than distinct types.",
-      "R: Most personality traits are distributed roughly normally in the population, with most people near the middle rather than falling into separate groups.",
+      "R: Jung's theory of psychological types introduced the terms introversion and extraversion.",
     ],
     options: AR,
-    answer: 0,
+    answer: 1,
     explanation:
-      "Both are true and R explains A. Taxometric studies find that most personality variables are dimensional: there are no natural gaps that would separate 'introverts' from 'extraverts', so typologies such as the MBTI throw away information and can misclassify people near the cut-off. This is why trait psychology and the DSM-5-TR alternative model for personality disorders use dimensions.",
+      "Both are true, but R does not explain A. Dimensions are preferred because most traits are distributed roughly normally, with most people near the middle, so sorting people into two boxes throws away information and splits similar people near the cut-off. R is a correct historical fact about Jung, and Eysenck later turned his types into a dimension, but the fact that the terms came from a type theory gives no reason to prefer dimensions. So 'R explains A' is wrong, and since both are true the other options are wrong.",
     ref: "Haslam, Holland & Kuppens 2012; Pittenger 2005",
   }),
   p({
     id: "per-trait-0136",
     topic: "type-theories",
     exams: [N, M, S],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "Denollet's 'Type D' (distressed) personality combines:",
     options: [
@@ -923,7 +923,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 0,
     explanation:
-      "Option 1 lists the six conscientiousness facets. Option 2 lists the extraversion facets. Option 3 lists the agreeableness facets. Option 4 lists the neuroticism facets. The openness facets are fantasy, aesthetics, feelings, actions, ideas and values. Facet-level scores often predict specific outcomes better than broad domain scores.",
+      "Competence through deliberation are the six conscientiousness facets. Warmth through positive emotions are the extraversion facets. Trust through tender-mindedness are the agreeableness facets. Anxiety through vulnerability are the neuroticism facets. The openness facets are fantasy, aesthetics, feelings, actions, ideas and values. Facet-level scores often predict specific outcomes better than broad domain scores.",
     ref: "Costa & McCrae 1992",
   }),
   p({
@@ -970,19 +970,19 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "A: People high in Machiavellianism, narcissism and psychopathy tend to score low on HEXACO Honesty-Humility.",
-      "R: The Dark Triad traits all involve exploiting or manipulating others and a lack of sincerity and modesty.",
+      "R: Honesty-Humility is one of the original Big Five dimensions.",
     ],
     options: AR,
-    answer: 0,
+    answer: 2,
     explanation:
-      "Both are true and R explains A. Honesty-Humility captures sincerity, fairness, greed avoidance and modesty, which are the opposite of the shared core of the Dark Triad. Studies find strong negative correlations, and some researchers argue that low Honesty-Humility is the common 'dark core' of these traits.",
+      "A is true and R is false. The Dark Triad traits all involve manipulating others and a lack of sincerity, fairness and modesty, so they correlate strongly and negatively with Honesty-Humility. But Honesty-Humility is the sixth factor that Ashton and Lee added in the HEXACO model on the basis of lexical studies in many languages. It is not part of the Big Five, which covers openness, conscientiousness, extraversion, agreeableness and neuroticism. Since R is false, the options in which R is true are wrong.",
     ref: "Lee & Ashton 2005; Moshagen, Hilbig & Zettler 2018",
   }),
   p({
     id: "per-trait-0147",
     topic: "person-situation",
     exams: [N, M, S],
-    difficulty: 3,
+    difficulty: 2,
     type: "mcq",
     stem: "According to the idea of 'strong' and 'weak' situations, personality traits will best predict behaviour in:",
     options: [
@@ -1129,12 +1129,12 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Read the Assertion (A) and Reason (R) and choose the correct option.",
     statements: [
       "A: Neuroticism predicts many different mental disorders, not just one.",
-      "R: Neuroticism reflects a general tendency to experience negative emotions intensely and to react strongly to stress.",
+      "R: Neuroticism appears as a major dimension in both Eysenck's model and the Big Five.",
     ],
     options: AR,
-    answer: 0,
+    answer: 1,
     explanation:
-      "Both are true and R explains A. High neuroticism is a risk factor for depression, anxiety disorders, eating disorders and substance problems, as shown in meta-analyses such as Kotov and colleagues'. Because it reflects broad stress reactivity and negative emotionality, it acts as a general vulnerability rather than a cause of one specific disorder, which is why it is central to transdiagnostic models of psychopathology.",
+      "Both are true, but R does not explain A. Neuroticism predicts anxiety disorders, depression, substance problems, eating disorders and more because it reflects a general tendency to experience negative emotion intensely and to react strongly to stress, a vulnerability shared across many disorders. R is correct, and it shows the trait is robust across models, but appearing in two models is not a reason it predicts many disorders. So 'R explains A' is wrong, and the options calling either statement false are wrong too.",
     ref: "Kotov et al. 2010, Psychol Bull; Lahey 2009",
   }),
   p({

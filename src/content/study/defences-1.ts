@@ -1250,6 +1250,14 @@ Jean Piaget (1896 to 1980) watched children, including his own, and saw that the
 }
 :::
 
+
+:::widget conservation
+{
+ "kind": "liquid",
+ "caption": "Pour the juice into the tall glass and compare a preoperational and a concrete operational child. Tap the reasons the older child gives: identity, reversibility, compensation."
+}
+:::
+
 ### Vygotsky: learning happens between people
 Lev Vygotsky (1896 to 1934) argued that thinking develops through **social interaction** and **culture**, especially language.
 - **Zone of proximal development (ZPD)**: the gap between what a child can do alone and what they can do with help.

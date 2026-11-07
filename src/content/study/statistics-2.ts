@@ -173,6 +173,10 @@ Q: A researcher measures anxiety, depression and stress after three intervention
 | Nominal data, related (two times) | No parametric test | **McNemar** test; Cochran's Q for three or more |
 | Fit to a distribution | No parametric test | Chi-square goodness of fit; **Kolmogorov-Smirnov**; Shapiro-Wilk (normality) |
 
+:::widget sort
+{"prompt": "The data break the assumptions of the parametric test. Which non-parametric test should replace it?", "buckets": ["Mann-Whitney U", "Wilcoxon signed-rank", "Kruskal-Wallis", "Friedman", "Spearman's rho"], "items": [{"text": "Independent t: pain ratings in a yoga group and a control group", "bucket": 0}, {"text": "Paired t: the same patients' sleep ratings before and after treatment", "bucket": 1}, {"text": "One-way ANOVA: satisfaction ranks in three separate clinics", "bucket": 2}, {"text": "Repeated-measures ANOVA: the same students rated at three time points", "bucket": 3}, {"text": "Pearson r: merit rank and rank in a sports trial", "bucket": 4}]}
+:::
+
 :::widget worked
 {"title": "Mann-Whitney U by hand", "steps": [{"q": "Ten children rate enjoyment (0 to 25) after a lesson: new storytelling method 12, 15, 18, 20, 22; usual method 8, 10, 11, 14, 16. Rank all ten together (1 = lowest).", "a": "8 (1), 10 (2), 11 (3), 12 (4), 14 (5), 15 (6), 16 (7), 18 (8), 20 (9), 22 (10)."}, {"q": "Sum the ranks in each group.", "a": "New method: 4 + 6 + 8 + 9 + 10 = 37. Usual: 1 + 2 + 3 + 5 + 7 = 18. Check: the total must be N(N + 1) ÷ 2 = 55. It is."}, {"q": "Compute U for each group: U1 = n1n2 + n1(n1 + 1) ÷ 2 − R1.", "a": "U new = 25 + 15 − 37 = 3. U usual = 25 + 15 − 18 = 22. Check: U1 + U2 = n1n2 = 25."}, {"q": "U is the smaller value. Critical U for n1 = n2 = 5, two-tailed .05, is 2. Decide.", "a": "U = 3. For Mann-Whitney, the result is significant only if U is at or below the critical value. 3 is above 2, so it is not significant (exact p = .056). Unlike t or F, a smaller U means a bigger difference."}], "yourTurn": [{"q": "In a Mann-Whitney test, what would U = 0 mean?", "a": "Complete separation: every score in one group is higher than every score in the other."}]}
 :::
@@ -230,6 +234,10 @@ A p value tells you whether an effect is likely to be more than chance. An **eff
 | **Odds ratio** | Two-by-two outcomes, logistic regression | 1.5 | 2.5 | 4 (rough) |
 
 Cohen himself said these labels are rough defaults for when nothing better is known. A d of 0.3 for a cheap school programme reaching millions may matter more than a d of 1.0 in a lab.
+
+:::widget sort
+{"prompt": "Using Cohen's rough labels, is each effect small, medium or large?", "buckets": ["Small", "Medium", "Large"], "items": [{"text": "Cohen's d of 0.2", "bucket": 0}, {"text": "Cohen's d of 0.5", "bucket": 1}, {"text": "Cohen's d of 0.85", "bucket": 2}, {"text": "A correlation of .12", "bucket": 0}, {"text": "A correlation of .30", "bucket": 1}, {"text": "A correlation of .55", "bucket": 2}, {"text": "Eta squared of .15", "bucket": 2, "why": "For ANOVA, .01 is small, .06 medium and .14 large."}]}
+:::
 
 ### Useful conversions
 - d from an independent t: d = t × √(1/n1 + 1/n2).
@@ -455,6 +463,10 @@ Used when you **do not** yet know how many factors there are.
 - **Fit indices** (widely used guides from Hu and Bentler's simulation work): **χ²** (should be non-significant, but is almost always significant in large samples); **CFI** and **TLI** about .95 or higher; **RMSEA** about .06 or lower (up to .08 acceptable); **SRMR** about .08 or lower.
 - **Measurement invariance** testing (configural, metric, scalar) asks whether a scale measures the same thing in different groups: men and women, Hindi and Tamil versions. Without it, group comparisons on the scale can mislead.
 - **Structural equation modelling (SEM)** combines a **measurement model** (CFA: latent variables measured by items) with a **structural model** (paths between latent variables, like a regression among them). **Path analysis** is SEM with observed variables only. SEM is used to test mediation models, theories with several outcomes, and longitudinal models. It needs large samples (often 200 or more) and should be driven by theory, not by chasing modification indices.
+
+:::widget compare
+{"title": "Exploratory or confirmatory factor analysis?", "a": {"label": "Exploratory (EFA)", "points": ["No structure assumed in advance", "Every item may load on every factor", "Decide the number of factors from eigenvalues and the scree plot", "Used when building a new scale"], "summary": "EFA asks: what structure is in these data?"}, "b": {"label": "Confirmatory (CFA)", "points": ["The structure is stated in advance", "Each item is set to load on chosen factors only", "Judged by fit indices such as CFI and RMSEA", "Used to test a translated or adapted scale"], "summary": "CFA asks: does this structure fit? Good practice is EFA in one sample and CFA in a fresh one."}}
+:::
 
 :::recall
 1. EFA versus CFA. || EFA explores how many factors and which items load where; CFA tests a structure specified in advance.

@@ -243,7 +243,7 @@ const G: Record<string, GlossaryEntry> = {
   },
   phq9: {
     term: "PHQ-9",
-    means: "A 9-question self-report scale for depression, scored 0–27.",
+    means: "A 9-question self-report scale for depression, scored 0 to 27.",
     why: "Quick to screen and to track change. It does not diagnose on its own.",
   },
   hamd: {

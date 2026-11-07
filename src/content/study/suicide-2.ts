@@ -59,6 +59,10 @@ Q: Which question is best?
 | Past attempts | Number, circumstances, expected lethality, chance of rescue, reaction afterwards (regret or regret at surviving) |
 | Reasons for living | Children, family, faith, goals, fear of dying, hope |
 
+:::widget sort
+{"prompt": "Sort each statement by how far the suicidal thinking has gone.", "buckets": ["Passive wish", "Active thoughts, no plan", "A plan", "Preparation or rehearsal"], "items": [{"text": "'I wish I could sleep and not wake up.'", "bucket": 0}, {"text": "'I think about killing myself, but I don't know how.'", "bucket": 1}, {"text": "'I've thought I would do it at night, when everyone is asleep.'", "bucket": 2}, {"text": "'I have been collecting my tablets for a month.'", "bucket": 3}, {"text": "'Sometimes I think everyone would be better off without me.'", "bucket": 0, "why": "Perceived burdensomeness, without an active intent to act."}, {"text": "'I wrote a note and went up to the terrace.'", "bucket": 3, "why": "Writing a note and going to the place are preparation and rehearsal: the highest concern."}]}
+:::
+
 ### The context
 - **Current mental state**: depression, hopelessness, agitation, anxiety, insomnia, psychosis (especially command hallucinations or nihilistic and guilt delusions), intoxication, impulsivity.
 - **Current stressors and why now**: losses, conflict, debt, shame, abuse, legal trouble.
@@ -157,8 +161,16 @@ Adding **reasons for living** at the top is common.
 Asking a person to sign a promise not to harm themselves is **not** recommended. It has no evidence of benefit, can make people hide their thoughts, and gives clinicians false reassurance. Safety plans are different: they are practical, collaborative tools for what to do when a crisis comes.
 :::
 
+:::widget timeline
+{"prompt": "Order the stages of a suicidal crisis, and where help can step in.", "events": [{"label": "Background strain: debt, conflict, illness, loneliness"}, {"label": "A trigger: a humiliation, a loss, an exam result"}, {"label": "Feeling trapped, with no way out; thoughts of suicide grow"}, {"label": "The peak: intense, often lasting minutes to hours"}, {"label": "The urge eases if the person is kept safe and connected"}, {"label": "Follow-up care and a safety plan for next time"}], "why": "The peak of a crisis is often short. Help at each step matters, but the peak is where distance from means and another person's presence save lives. If you are worried about someone right now, stay with them and contact emergency services or Tele-MANAS on 14416."}
+:::
+
 ### Means safety
 Reducing access to lethal means is one of the most effective suicide prevention strategies at both individual and population levels, because many suicidal crises are brief and the method available often decides whether a person survives. Discuss it openly and collaboratively, involve family with consent, and arrange safe storage or removal. At population level, examples include regulating highly hazardous pesticides and making public places safer.
+
+:::widget guess
+{"prompt": "Of 100 people who survive a suicide attempt, about how many eventually die by suicide over the rest of their lives?", "min": 0, "max": 100, "unit": "people", "answer": [5, 10], "reveal": "About 7. That is far higher than in the general population, so an attempt always matters. But it also means that more than 9 in 10 survivors do not die by suicide. Crises pass, which is why keeping someone safe through the crisis, including putting distance between them and the means, saves lives."}
+:::
 
 ### Level of care
 | Option | When |
@@ -285,6 +297,10 @@ Q: Which factor most increases violence risk in a person with psychosis?
 
 :::widget journey
 {"drug": "lithium", "target": "intracellular signalling in mood and impulse-control circuits", "routes": ["oral"], "notes": {"liver": "Lithium is not broken down by the liver at all.", "out": "It leaves through the kidneys, so dehydration, kidney disease and some medicines (NSAIDs, ACE inhibitors, thiazides) raise levels; levels are monitored."}, "caption": "Why lithium needs blood levels, and why supply is managed carefully for people at risk."}
+:::
+
+:::widget sort
+{"prompt": "Does each have good evidence for lowering suicidal behaviour?", "buckets": ["Good evidence", "Little or no evidence"], "items": [{"text": "Lithium in mood disorders", "bucket": 0}, {"text": "Clozapine in schizophrenia", "bucket": 0}, {"text": "Dialectical behaviour therapy for repeated self-harm", "bucket": 0}, {"text": "A 'no-suicide contract' signed by the patient", "bucket": 1, "why": "No evidence of benefit, and it can give staff false reassurance."}, {"text": "Safety planning with follow-up contact", "bucket": 0}, {"text": "Restricting access to highly toxic pesticides", "bucket": 0, "why": "Bans on the most toxic pesticides have lowered national suicide rates in Sri Lanka and elsewhere."}, {"text": "Benzodiazepines given to take home", "bucket": 1, "why": "They can increase disinhibition and are dangerous in overdose with alcohol."}]}
 :::
 
 :::recall
