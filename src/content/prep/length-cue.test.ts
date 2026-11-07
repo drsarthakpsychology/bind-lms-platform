@@ -53,6 +53,12 @@ const RANK_CHECKED_SUBJECTS: PrepQuestion["subject"][] = [
   "psychometrics-assessment",
   "cognitive",
   "perception-attention",
+  "psychopathology",
+  "clinical-therapies",
+  "counselling",
+  "health",
+  "positive",
+  "organisational",
 ];
 const MAX_RANK_SHARE = 0.35;
 const RATIO = 1.3;
