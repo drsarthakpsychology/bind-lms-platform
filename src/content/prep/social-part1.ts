@@ -25,10 +25,10 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Fritz Heider, the founder of attribution theory, distinguished between explaining behaviour by:",
     options: [
-      "Classical and operant conditioning",
+      "Classical and operant conditioning of responses",
       "Conscious and unconscious causes",
       "Genetic and environmental causes",
-      "Internal (dispositional) and external (situational) causes",
+      "Internal (dispositional) and external causes",
     ],
     answer: 3,
     explanation:
@@ -85,9 +85,9 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Jones and Davis's correspondent inference theory predicts that we are most likely to infer that an act reflects a person's true disposition when the act is:",
     options: [
       "Performed by a group rather than an individual",
-      "Forced by circumstances and socially expected",
+      "Forced by circumstances and socially expected of anyone in that particular role",
       "Common to all available choices",
-      "Freely chosen, has distinctive (non-common) effects and is low in social desirability",
+      "Freely chosen, has non-common effects and is low in social desirability",
     ],
     answer: 3,
     explanation:
@@ -101,7 +101,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "In Jones and Harris's study, participants read essays for or against Fidel Castro. Even when told the writer had been assigned the position, participants:",
     options: [
-      "Still inferred that the writer's attitude matched the essay, showing the correspondence bias (fundamental attribution error)",
+      "Still inferred that the writer held the essay's view, showing the correspondence bias",
       "Correctly concluded that the essay revealed nothing about the writer",
       "Inferred the opposite attitude from the essay",
       "Refused to make any judgement",
@@ -194,14 +194,14 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Storms showed participants videotapes of a conversation from either their own or their partner's visual perspective. Reversing the viewpoint:",
     options: [
-      "Made everyone more situational",
+      "Made everyone more situational in their explanations, whichever of the two views they watched",
       "Had no effect on attributions",
-      "Reversed the actor-observer difference: actors who saw themselves made more dispositional attributions about their own behaviour",
+      "Reversed the actor-observer difference: actors who saw themselves became more dispositional",
       "Eliminated the self-serving bias",
     ],
     answer: 2,
     explanation:
-      "Storms argued that the actor-observer difference arises partly from visual focus: actors see the situation, observers see the actor. When actors watched themselves on video, they attributed more to their own dispositions, and observers who saw the actor's view attributed more to the situation. The effect was clear, not null, and it changed perspective-specific attributions rather than the self-serving bias. (Malle's meta-analysis later found the actor-observer asymmetry itself to be small.)",
+      "Storms argued that the actor-observer difference arises partly from visual focus: actors see the situation, observers see the actor. When actors watched themselves on video, they attributed more to their own dispositions, and observers who saw the actor's view attributed more to the situation. The effect was clear, not null; it depended on which viewpoint people watched rather than making everyone more situational; and it concerned perspective, not the self-serving bias. (Malle's meta-analysis later found the actor-observer asymmetry itself to be small.)",
     ref: "Storms 1973, J Pers Soc Psychol; Malle 2006, Psychol Bull",
   }),
   s({
@@ -231,7 +231,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Joan Miller's study comparing Hindu Indian and American participants of different ages found that:",
     options: [
       "Indian and American children differed greatly, but adults did not",
-      "With age, Americans increasingly used dispositional explanations while Indians increasingly used situational and contextual explanations",
+      "With age, Americans used more dispositional explanations and Indians more situational ones",
       "Both groups made only dispositional attributions at all ages",
       "Indian participants used more dispositional explanations than Americans",
     ],
@@ -385,9 +385,9 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Lerner's 'belief in a just world' can lead people to:",
     options: [
       "Reject all stereotypes",
-      "Help victims more in every situation",
+      "Help victims more in every situation, to restore fairness",
       "Attribute all events to luck",
-      "Blame victims of misfortune, assuming they must have deserved it",
+      "Blame victims of misfortune, assuming they deserved it",
     ],
     answer: 3,
     explanation:
@@ -401,8 +401,8 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Malle's meta-analysis of the actor-observer asymmetry in attribution concluded that:",
     options: [
-      "The classic asymmetry (actors situational, observers dispositional) was very small overall and appeared mainly under specific conditions",
-      "The asymmetry is one of the largest effects in social psychology",
+      "The classic asymmetry was very small overall and appeared only under specific conditions",
+      "The asymmetry is one of the largest and most reliable effects found in all of social psychology",
       "Actors always make more dispositional attributions than observers",
       "The asymmetry is found only in collectivist cultures",
     ],
@@ -438,8 +438,8 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "The halo effect refers to:",
     options: [
       "Underestimating situational influences",
-      "The tendency to remember the first item in a list",
-      "The tendency for a positive impression in one area (for example attractiveness) to influence judgements of unrelated traits",
+      "The tendency to remember the first item in a list better than later ones",
+      "A positive impression in one area (such as looks) colouring judgements of unrelated traits",
       "Blaming victims",
     ],
     answer: 2,
@@ -537,8 +537,8 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Dutton and Aron's 'shaky bridge' study, in which men interviewed by an attractive woman on a fear-arousing suspension bridge were more likely to call her later, is best explained by:",
     options: [
       "The matching hypothesis",
-      "The mere exposure effect",
-      "Misattribution of arousal: physiological arousal from fear was attributed to attraction to the woman",
+      "The mere exposure effect from meeting the woman on the bridge",
+      "Misattribution of arousal: fear-driven arousal was attributed to attraction",
       "Reactance",
     ],
     answer: 2,
@@ -554,9 +554,9 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "The primacy effect in impression formation means that:",
     options: [
       "Impressions are formed only after long acquaintance",
-      "The most recent information always dominates",
+      "The most recent information always dominates, because it is freshest in a perceiver's memory",
       "Negative information is ignored",
-      "Information presented early has a stronger influence on overall impressions than information presented later",
+      "Early information has a stronger influence on overall impressions than later information",
     ],
     answer: 3,
     explanation:
@@ -595,7 +595,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Situational attribution",
       "Dispositional attribution",
-      "Self-serving attribution",
+      "Self-serving attribution bias",
       "Defensive attribution",
     ],
     answer: 1,
@@ -627,9 +627,9 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "In Pettigrew's 'ultimate attribution error', a prejudiced person who sees an outgroup member succeed is likely to attribute the success to:",
     options: [
       "The person's hard work",
-      "The person's high ability",
-      "Luck, special advantage or exceptional circumstances rather than ability",
-      "The person's good character",
+      "The person's high ability, natural talent and intelligence",
+      "Luck, special advantage or exceptional circumstances",
+      "The person's good character and integrity",
     ],
     answer: 2,
     explanation:
@@ -666,8 +666,8 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "An 'implicit personality theory' is:",
     options: [
-      "A person's set of assumptions about which traits tend to go together (for example, that warm people are also generous)",
-      "A formal theory of personality published by a psychologist",
+      "A person's assumptions about which traits go together (such as warm people being generous)",
+      "A formal theory of personality traits published by a psychologist, such as Cattell's model",
       "An unconscious defence mechanism",
       "A projective personality test",
     ],
@@ -684,7 +684,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Ambady and Rosenthal's 'thin slices' research showed that:",
     options: [
       "Impressions require several weeks of interaction to be accurate",
-      "Ratings of teachers made from silent 30-second (and even 6-second) video clips predicted end-of-term student evaluations",
+      "Ratings of teachers from silent clips of 30 seconds or less predicted end-of-term evaluations",
       "Brief exposures produce random impressions unrelated to later judgements",
       "Only verbal content predicts evaluations",
     ],
@@ -744,8 +744,8 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Refused to continue the conversation",
       "Behaved no differently",
-      "Became colder and less friendly",
-      "Came across as warmer and more sociable to independent judges, showing a behavioural self-fulfilling prophecy",
+      "Became colder and less friendly, resenting being judged on looks",
+      "Came across as warmer and more sociable to judges, showing behavioural confirmation",
     ],
     answer: 3,
     explanation:
@@ -811,9 +811,9 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "The 'hindsight bias' refers to:",
     options: [
-      "Believing that one's own group is more varied than outgroups",
+      "Believing that one's own group is more varied than outgroups, whose members all seem much alike",
       "Underestimating the time needed to complete a task",
-      "The tendency, after learning an outcome, to believe one could have predicted it ('I knew it all along')",
+      "After learning an outcome, believing one could have predicted it ('I knew it all along')",
       "Overestimating how much others notice our appearance",
     ],
     answer: 2,

@@ -32,6 +32,13 @@ export function testSection(m: StudyModule): Section | undefined {
   return m.sections.find((s) => s.isTest);
 }
 
+const LEVEL_WORD = { starting: "Starting", beginner: "Beginner", advanced: "Advanced" } as const;
+
+/** The title students see. Level checks are optional self-tests: "Check yourself: Starting". */
+export function sectionTitle(s: Pick<Section, "title" | "levelCheck">): string {
+  return s.levelCheck ? `Check yourself: ${LEVEL_WORD[s.levelCheck]}` : s.title;
+}
+
 export function sectionHref(m: StudyModule, s: Section): string {
   return `/study/${m.id}/${s.id}`;
 }

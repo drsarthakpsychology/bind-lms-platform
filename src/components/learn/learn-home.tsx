@@ -2,11 +2,10 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, BarChart3, ClipboardList, DoorOpen, Hospital, Layers, Pill, ScanEye, Flame, FlaskConical, GraduationCap, LayoutGrid, ListChecks, Lock, MessagesSquare, RotateCcw, Route, Search, Star, Swords, Timer, Trophy, Zap } from "lucide-react";
-import { BADGES, DAILY_GOALS, dueItems, emptyState, istToday, levelFor, liveStreak, type LearnState } from "@/lib/learn/engine";
+import { ArrowLeft, ArrowRight, DoorOpen, FlaskConical, Hospital, Layers, LayoutGrid, Lock, Pill, ScanEye, Star, Swords, Timer, Trophy, Zap, type LucideIcon } from "lucide-react";
+import { BADGES, DAILY_GOALS, emptyState, type LearnState } from "@/lib/learn/engine";
 import { initLearnStore, setLearnState, useLearnState } from "@/lib/learn/store";
 import type { Unit } from "@/lib/learn/types";
-import { buildRevisionPlan, type ReviseModule } from "@/lib/revise/plan";
 import { cn } from "@/lib/utils";
 import { BOARDS } from "@/lib/standing/boards";
 import { Chai } from "./chai";
@@ -22,175 +21,106 @@ function nextLesson(units: Unit[], st: LearnState) {
   return null;
 }
 
-/** The one game to play right now: due reviews first, then the next quiz, then Coach. */
-function playNow(units: Unit[], st: LearnState, due: number) {
-  if (due > 0) return { href: "/games/play?mode=review", title: `Review ${due} question${due === 1 ? "" : "s"}`, why: "These are about to slip. Reviewing now is the fastest way to keep them.", icon: RotateCcw };
-  const up = nextLesson(units, st);
-  if (up) return { href: `/games/play?lesson=${up.lesson.id}`, title: `Quiz: ${up.lesson.title}`, why: `Next on your quiz path (${up.unit.title}).`, icon: Zap };
-  return { href: "/games/coach", title: "Coach: mixed round", why: "Chai brings back what you mix up until it sticks.", icon: GraduationCap };
-}
+type Tone = "lime" | "blue" | "ink";
+type Game = { href: string; title: string; text: string; tag: string; icon: LucideIcon; tone: Tone };
 
-const GAMES = [
-  { href: "/games/daily", title: "Daily case", text: "One new patient a day. Name it in as few clues as you can.", icon: ClipboardList, tone: "lime" },
-  { href: "/games/duel", title: "Differential duel", text: "Live, ranked 1v1 on look-alike diagnoses.", icon: Swords, tone: "ink" },
-  { href: "/games/sort", title: "Criteria sort", text: "Sort 16 criteria into 4 look-alike disorders.", icon: LayoutGrid, tone: "blue" },
-  { href: "/games/blitz", title: "Blitz", text: "60 seconds of fast facts. Build a combo.", icon: Timer, tone: "lime" },
-  { href: "/games/coach", title: "Coach", text: "Chai teaches, asks, and repeats what you mix up.", icon: GraduationCap, tone: "ink" },
-  { href: "/games/quizzes", title: "Quiz path", text: "Short quizzes by topic. Earn stars.", icon: Route, tone: "white" },
-  { href: "/games/detective", title: "Clinic detective", text: "Name the medicine or disorder from clues.", icon: Search, tone: "blue" },
-  { href: "/games/scenarios", title: "What would you do?", text: "Tricky patient moments, real consequences.", icon: MessagesSquare, tone: "white" },
-  { href: "/games/mse", title: "MSE Lab", text: "Read a short interview. Tag every finding with the exact word.", icon: ScanEye, tone: "blue" },
-  { href: "/games/ward", title: "Ward Week", text: "Follow one patient through five sessions. Your choices change the ending.", icon: Hospital, tone: "lime" },
-  { href: "/games/rx", title: "Rx Detective", text: "Medicines, receptors, side effects and dangerous mixes. Three lives.", icon: Pill, tone: "ink" },
-  { href: "/games/escape", title: "Team Escape Room", text: "Race other teams through linked clues to discharge the patient.", icon: DoorOpen, tone: "blue" },
-  { href: "/games/comorbid", title: "Comorbid", text: "A card duel. Build a diagnosis; block your rival with rule-outs.", icon: Layers, tone: "white" },
-  { href: "/games/terms", title: "Say it clinically", text: "Everyday words into case-sheet language.", icon: Star, tone: "white" },
-] as const;
+/**
+ * Only real games (plan section 8): timed, competitive or animated. Each has
+ * one line that says what it is and when to play it, a tag and its own
+ * colour, so the hub reads at a glance. Daily case lives in Practice; Coach
+ * and the quiz path live in Smart practice (Exam Prep).
+ */
+const SOLO: Game[] = [
+  { href: "/games/blitz", title: "Blitz", text: "60 seconds of fast facts. For a spare minute.", tag: "60 sec", icon: Timer, tone: "lime" },
+  { href: "/games/sort", title: "Criteria sort", text: "Sort criteria into look-alike disorders. After a Study topic.", tag: "16 cards", icon: LayoutGrid, tone: "blue" },
+  { href: "/games/mse", title: "MSE Lab", text: "Tag every finding in a short interview. Before an MSE.", tag: "Tag it", icon: ScanEye, tone: "ink" },
+  { href: "/games/ward", title: "Ward Week", text: "One patient, five sessions. Your choices change the ending.", tag: "5 days", icon: Hospital, tone: "lime" },
+  { href: "/games/rx", title: "Rx Detective", text: "Medicines, receptors and risky mixes. Before a pharmacology test.", tag: "3 lives", icon: Pill, tone: "blue" },
+];
 
-const TONE: Record<string, string> = {
+const WITH_OTHERS: Game[] = [
+  { href: "/games/duel", title: "Differential duel", text: "Ranked 1v1 on look-alike diagnoses. Live or against the bot.", tag: "1v1", icon: Swords, tone: "ink" },
+  { href: "/games/escape", title: "Team Escape Room", text: "Race other teams through linked clues to discharge the patient.", tag: "Teams", icon: DoorOpen, tone: "blue" },
+  { href: "/games/comorbid", title: "Comorbid", text: "A card duel. Build a diagnosis; block your rival with rule-outs.", tag: "Cards", icon: Layers, tone: "lime" },
+];
+
+const TONE: Record<Tone, string> = {
   ink: "bg-foreground text-background",
   blue: "bg-brand text-brand-foreground",
   lime: "bg-primary text-primary-foreground",
-  plain: "bg-background text-foreground",
-  white: "bg-card text-foreground",
 };
 
-function Stats({ st }: { st: LearnState }) {
-  const today = istToday();
-  const streak = liveStreak(st.streak, today);
-  const lvl = levelFor(st.xp);
-  const dayXp = st.daily.day === today ? st.daily.xp : 0;
-  const goalPct = Math.min(100, Math.round((dayXp / st.dailyGoal) * 100));
+function GameTile({ g }: { g: Game }) {
+  const Icon = g.icon;
   return (
-    <div className="grid grid-cols-3 gap-2 sm:gap-3">
-      <div className="rounded-2xl border-2 border-foreground bg-card p-3">
-        <p className="flex items-center gap-1.5 text-xl font-bold tabular-nums sm:text-2xl">
-          <Flame className={cn("size-5", streak > 0 && s.flame)} aria-hidden /> {streak}
-        </p>
-        <p className="text-xs text-muted-foreground">day streak</p>
-      </div>
-      <div className="rounded-2xl border-2 border-foreground bg-card p-3">
-        <p className="text-xl font-bold tabular-nums sm:text-2xl">Lv {lvl.level}</p>
-        <p className="truncate text-xs text-muted-foreground">{st.xp} XP · {lvl.title}</p>
-      </div>
-      <div className="relative overflow-hidden rounded-2xl border-2 border-foreground bg-card p-3">
-        <div className="absolute inset-x-0 bottom-0 bg-primary transition-[height] duration-700" style={{ height: `${goalPct}%` }} aria-hidden />
-        <div className="relative">
-          <p className="text-xl font-bold tabular-nums sm:text-2xl">
-            {dayXp}
-            <span className="text-sm font-medium">/{st.dailyGoal}</span>
-          </p>
-          <p className="text-xs">today&apos;s goal</p>
-        </div>
-      </div>
-    </div>
+    <li className="min-w-0">
+      <Link
+        href={g.href}
+        className="group/game flex h-full min-w-0 overflow-hidden rounded-2xl border-2 border-foreground bg-card outline-none transition-[transform,box-shadow] duration-fast ease-snappy hover:-translate-y-0.5 hover:hard-shadow-md focus-visible:ring-[3px] focus-visible:ring-ring/60 active:translate-y-px active:shadow-none sm:flex-col"
+      >
+        {/* The game's mark: its colour, its icon and its tag. */}
+        <span aria-hidden className={cn("relative flex w-24 shrink-0 items-center justify-center border-r-2 border-foreground sm:h-28 sm:w-full sm:border-r-0 sm:border-b-2", TONE[g.tone])}>
+          <span className="absolute inset-0 opacity-15 [background-image:radial-gradient(currentColor_1px,transparent_1.5px)] [background-size:12px_12px]" />
+          <Icon className="relative size-9 transition-transform duration-fast ease-snappy motion-safe:group-hover/game:-rotate-6 motion-safe:group-hover/game:scale-110 sm:size-11" />
+          <span className="absolute bottom-1.5 left-1.5 -rotate-3 whitespace-nowrap rounded-md border-2 border-foreground bg-card px-1.5 py-1 font-pix text-[0.6rem] uppercase leading-none text-foreground sm:bottom-auto sm:top-2 sm:left-2">
+            {g.tag}
+          </span>
+        </span>
+        <span className="flex min-w-0 flex-1 flex-col gap-1 p-3 sm:p-4">
+          <span className="flex items-center justify-between gap-2">
+            <span className="min-w-0 text-lg font-bold leading-tight [overflow-wrap:anywhere]">{g.title}</span>
+            <ArrowRight className="size-4 shrink-0 text-muted-foreground transition-transform duration-fast group-hover/game:translate-x-0.5" aria-hidden />
+          </span>
+          <span className="text-sm leading-snug text-muted-foreground [overflow-wrap:anywhere]">{g.text}</span>
+        </span>
+      </Link>
+    </li>
   );
 }
 
-/** /games: one thing to play now, then the full set of games. */
-export function LearnHome({ units, serverState, save, showLab = false, reviseModules = [] }: { units: Unit[]; serverState: LearnState | null; save: Save; showLab?: boolean; reviseModules?: ReviseModule[] }) {
-  initLearnStore(serverState, save);
-  const st = useLearnState(serverState ?? EMPTY);
-  const due = dueItems(st, istToday()).length;
-  const now = playNow(units, st, due);
-  const revise = buildRevisionPlan(st, istToday(), reviseModules, { lab: showLab });
-  const NowIcon = now.icon;
-
+function GameGroup({ id, title, games }: { id: string; title: string; games: Game[] }) {
   return (
-    <div className={cn("mx-auto max-w-4xl space-y-8 px-4 py-6 sm:px-6 lg:py-10", s.texture)}>
+    <section aria-labelledby={id} className="space-y-3">
+      <h2 id={id} className="text-h3">
+        {title}
+      </h2>
+      <ul className="grid grid-cols-[minmax(0,1fr)] gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        {games.map((g) => (
+          <GameTile key={g.href} g={g} />
+        ))}
+      </ul>
+    </section>
+  );
+}
+
+/** /games: the real games, solo and with others. Nothing else competes. */
+export function LearnHome({ showLab = false }: { showLab?: boolean }) {
+  return (
+    <div className={cn("mx-auto max-w-5xl space-y-8 px-4 py-6 sm:px-6 lg:py-10", s.texture)}>
       <header className="flex items-center gap-4">
-        <Chai mood="happy" size={72} className="shrink-0" />
+        <Chai mood="happy" size={64} className="shrink-0" />
         <div className="min-w-0">
           <p className="text-eyebrow text-link">Games</p>
-          <h1 className="text-h1">Practise what you studied</h1>
-          <p className="text-sm text-muted-foreground">Short rounds that make it stick. Five minutes counts.</p>
+          <h1 className="text-h1">Play it to remember it</h1>
         </div>
       </header>
 
-      <Stats st={st} />
+      <GameGroup id="solo" title="Solo" games={SOLO} />
+      <GameGroup id="with-others" title="With others" games={WITH_OTHERS} />
 
-      <Link href={now.href} className="btn-sweep flex items-center gap-4 rounded-3xl border-2 border-foreground bg-primary p-5 text-primary-foreground hard-shadow-md transition-transform active:translate-y-0.5">
-        <span className="grid size-12 shrink-0 place-items-center rounded-2xl border-2 border-foreground bg-card text-foreground">
-          <NowIcon className="size-6" aria-hidden />
-        </span>
-        <span className="min-w-0 flex-1">
-          <span className="block text-xs font-semibold uppercase tracking-wide opacity-80">Play now</span>
-          <span className="block text-xl font-bold leading-tight">{now.title}</span>
-          <span className="block text-sm opacity-85">{now.why}</span>
-        </span>
-        <ArrowRight className="size-6 shrink-0" aria-hidden />
-      </Link>
-
-      {revise.today.length > 0 && (
-        <Link href="/games/revise" className="flex items-center gap-3 rounded-2xl border-2 border-foreground bg-card p-4 transition-transform hover:-translate-y-0.5 active:translate-y-0.5">
-          <ListChecks className="size-5 shrink-0" aria-hidden />
-          <span className="min-w-0 flex-1">
-            <span className="block font-bold">Revise today</span>
-            <span className="text-sm text-muted-foreground">
-              {revise.today.length} {revise.today.length === 1 ? "thing" : "things"}, about {revise.minutes} min
-            </span>
-          </span>
-          <ArrowRight className="size-5 shrink-0" aria-hidden />
+      <nav aria-label="More from Games" className="flex flex-wrap gap-x-5 gap-y-1 border-t-2 border-foreground/15 pt-4 text-sm">
+        <Link href={BOARDS.quiz.href} className="inline-flex min-h-11 items-center gap-1.5 font-bold text-link underline-offset-4 hover:underline">
+          <Trophy className="size-4" aria-hidden /> {BOARDS.quiz.label}
         </Link>
-      )}
-
-      <section aria-labelledby="all-games">
-        <h2 id="all-games" className="text-lg font-bold">
-          All games
-        </h2>
-        <ul className="mt-3 grid grid-cols-[minmax(0,1fr)] gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {GAMES.map((g) => {
-            const Icon = g.icon;
-            return (
-              <li key={g.href}>
-                {/* Calm white cards; the colour lives in the icon chip, so the one lime "Play now" card stays the clear first action. */}
-                <Link href={g.href} className="group flex h-full items-start gap-3 rounded-2xl border-2 border-foreground bg-card p-4 transition-transform hover:-translate-y-0.5 active:translate-y-0.5">
-                  <span className={cn("grid size-10 shrink-0 place-items-center rounded-xl border-2 border-foreground", TONE[g.tone === "white" ? "plain" : g.tone])}>
-                    <Icon className="size-5" aria-hidden />
-                  </span>
-                  <span className="min-w-0">
-                    <span className="block font-bold leading-tight">{g.title}</span>
-                    <span className="mt-0.5 block text-sm leading-snug text-muted-foreground">{g.text}</span>
-                  </span>
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
-      </section>
-
-      {showLab && (
-        <Link href="/games/lab" className="group flex items-center gap-4 rounded-2xl border-2 border-foreground bg-card p-4 transition-transform hover:-translate-y-0.5 hover:hard-shadow-sm active:translate-y-0.5">
-          <span className="grid size-12 shrink-0 place-items-center rounded-xl border-2 border-foreground bg-foreground text-background">
-            <FlaskConical className="size-6" aria-hidden />
-          </span>
-          <span className="min-w-0 flex-1">
-            <span className="block text-xs font-semibold uppercase tracking-wide text-link">New · Psychology Lab</span>
-            <span className="block font-bold leading-tight">Run classic experiments on yourself</span>
-            <span className="block text-sm text-muted-foreground">Memory, attention, perception, learning and clinical thinking traps.</span>
-          </span>
-          <ArrowRight className="size-5 shrink-0" aria-hidden />
+        <Link href="/prep/smart" className="inline-flex min-h-11 items-center gap-1.5 font-bold text-link underline-offset-4 hover:underline">
+          <Zap className="size-4" aria-hidden /> Coach and quizzes are in Smart practice
         </Link>
-      )}
-
-      <div className="grid gap-3 sm:grid-cols-2">
-        <Link href="/games/progress" className="flex items-center gap-3 rounded-2xl border-2 border-dashed border-foreground p-4">
-          <BarChart3 className="size-5 shrink-0" aria-hidden />
-          <span className="min-w-0 flex-1">
-            <span className="block font-bold">My progress</span>
-            <span className="text-sm text-muted-foreground">Mastery by topic, mix-ups, badges</span>
-          </span>
-          <ArrowRight className="size-5 shrink-0" aria-hidden />
-        </Link>
-        <Link href={BOARDS.quiz.href} className="flex items-center gap-3 rounded-2xl border-2 border-dashed border-foreground p-4">
-          <Trophy className="size-5 shrink-0" aria-hidden />
-          <span className="min-w-0 flex-1">
-            <span className="block font-bold">{BOARDS.quiz.label}</span>
-            <span className="text-sm text-muted-foreground">{BOARDS.quiz.explainer} This week.</span>
-          </span>
-          <ArrowRight className="size-5 shrink-0" aria-hidden />
-        </Link>
-      </div>
+        {showLab ? (
+          <Link href="/games/lab" className="inline-flex min-h-11 items-center gap-1.5 font-bold text-link underline-offset-4 hover:underline">
+            <FlaskConical className="size-4" aria-hidden /> Psychology Lab
+          </Link>
+        ) : null}
+      </nav>
     </div>
   );
 }

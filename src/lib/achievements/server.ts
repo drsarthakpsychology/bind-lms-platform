@@ -63,8 +63,10 @@ export async function loadEvalCtx(admin: SupabaseClient, userId: string): Promis
   };
 }
 
+export const COURSE_CERTIFICATE_SLUG = "course-certificate";
+
 /**
- * Add any missing milestone and module badges to the achievements table.
+ * Add any missing milestone and module badges (and the course certificate) to the achievements table.
  * Idempotent (matched by slug, and a module that already has a "complete a
  * module" badge gets no second one). Safe to call from the weekly job.
  */
@@ -88,6 +90,22 @@ export async function ensureBadgeCatalog(admin: SupabaseClient): Promise<{ added
     const slug = `module-${f.id}`;
     if (slugs.has(slug) || moduleBadges.has(f.id)) continue;
     rows.push({ slug, type: "badge", title: `Completed ${f.title}`, description: `Finished every part of ${f.title}.`, module_id: f.id, icon: "✓", tone: "lime", requirements: { kind: "module_complete", module: f.id }, enabled: true });
+  }
+  // The course certificate (owner rule, 7 Nov 2026). Issued by the Super
+  // Admin from Achievements; the rule is checked when the draft is made and
+  // again when it is issued, so it cannot go out early.
+  const hasCourseCert = (data ?? []).some((a) => (a.requirements as { kind?: string } | null)?.kind === "module_tests_passed");
+  if (!slugs.has(COURSE_CERTIFICATE_SLUG) && !hasCourseCert) {
+    rows.push({
+      slug: COURSE_CERTIFICATE_SLUG,
+      type: "certificate",
+      title: "Course certificate",
+      description: "Passed every module test with 80% or more.",
+      icon: "🎓",
+      tone: "gold",
+      requirements: { kind: "module_tests_passed" },
+      enabled: true,
+    });
   }
   if (!rows.length) return { added: 0, error: null };
   const ins = await admin.from("achievements").upsert(rows, { onConflict: "slug", ignoreDuplicates: true });

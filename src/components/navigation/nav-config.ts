@@ -8,21 +8,23 @@ import type { NavItem } from "@/components/navigation/nav-items";
  * across that boundary.
  */
 export const STUDENT_ITEMS: NavItem[] = [
+  // The approved student menu (plan section 8, 7 Nov 2026). One place per job.
   { href: "/dashboard", label: "Home", icon: "home", exact: true },
+  { href: "/study", label: "Study", icon: "bookOpen" },
   { href: "/courses", label: "Lectures", icon: "play" },
-  { href: "/study", label: "Notes", icon: "bookOpen" },
-  { href: "/games", label: "Games", icon: "gamepad" },
-  { href: "/practice", label: "Practice", icon: "stethoscope" },
-  // Psychology Entrance & Competitive Exam Preparation (CUET-PG, UGC-NET, clinical entrances): one shared course.
-  // Short label here; the page title carries the full name.
+  // Medicines sits next to Exam Prep (both are "look it up and revise").
+  { href: "/practice/medicines", label: "Medicines", icon: "pill" },
+  // Psychology Entrance & Competitive Exam Preparation: short label here; the page title carries the full name.
   { href: "/prep", label: "Exam Prep", icon: "target" },
+  { href: "/practice", label: "Practice", icon: "stethoscope" },
+  { href: "/games", label: "Games", icon: "gamepad" },
+  { href: "/progress", label: "Progress", icon: "chart", section: "More" },
   { href: "/doubts", label: "Doubts", icon: "doubt", section: "More" },
-  { href: "/leaderboard", label: "Leaderboard", icon: "trophy", section: "More" },
-  { href: "/achievements", label: "Achievements", icon: "award", section: "More" },
-  { href: "/journey", label: "My journey", icon: "route", section: "More" },
-  { href: "/practice/medicines", label: "Medicines", icon: "pill", section: "More" },
+  { href: "/achievements", label: "Achievements", short: "Badges", icon: "award", section: "More" },
+  { href: "/leaderboard", label: "Leaderboard", short: "Ranks", icon: "trophy", section: "More" },
   { href: "/reflect", label: "Journal", icon: "notebook", section: "More" },
   { href: "/wall", label: "Wall", icon: "wall", section: "More" },
+  { href: "/journey", label: "My journey", short: "Journey", icon: "route", section: "More" },
 ];
 
 /**
@@ -71,7 +73,7 @@ export const ADMIN_SECTIONS: AdminSection[] = [
     tabs: [
       { href: "/admin/students", label: "All students" },
       { href: "/admin/access", label: "Access for many" },
-      { href: "/admin/roster", label: "Logins", hidden: true },
+      { href: "/admin/students/logins", label: "Logins" },
     ],
   },
   {
@@ -125,6 +127,7 @@ export const ADMIN_SECTIONS: AdminSection[] = [
     // Messages has its own folder rail (Inbox / Compose / Notifications / Sent / Failed).
     tabs: [{ href: "/admin/emails", label: "Messages", hidden: true }],
   },
+  { key: "forms", label: "Forms", icon: "clipboardCheck", href: "/admin/forms", group: "Communicate", tabs: [{ href: "/admin/forms", label: "Forms", hidden: true }] },
   {
     key: "content",
     label: "Content",
@@ -213,7 +216,9 @@ export function adminSectionFor(pathname: string): AdminSection | null {
 /** Sidebar items for admin: one per section; active across all its tabs. */
 export const ADMIN_SIDEBAR: NavItem[] = ADMIN_ITEMS;
 
-/** Notes, Games and Prep only appear in the nav once Learn is unlocked (no links to locked screens). */
+/** Study-side places that only appear once Study is unlocked (no links to locked screens). */
+const STUDY_ONLY = ["/study", "/games", "/prep", "/progress"];
+
 export function withStudy(items: NavItem[], showStudy: boolean): NavItem[] {
-  return showStudy ? items : items.filter((i) => i.href !== "/study" && i.href !== "/games" && i.href !== "/prep");
+  return showStudy ? items : items.filter((i) => !STUDY_ONLY.includes(i.href));
 }

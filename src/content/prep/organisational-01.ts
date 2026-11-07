@@ -113,7 +113,7 @@ export const PART: PrepQuestion[] = [
     options: [
       "Very easy tasks that guarantee success every time",
       "Tasks of moderate risk with clear feedback on results",
-      "Extremely risky tasks where success depends on luck",
+      "Extremely risky tasks where success depends mainly on luck",
       "Tasks with no feedback, so they cannot be judged",
     ],
     answer: 1,
@@ -216,7 +216,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "According to Adams's equity theory, an employee feels fairly treated when:",
-    options: ["Her outcome-to-input ratio matches a comparison person's", "Her pay is the highest of anyone in the whole company", "She works fewer hours than anyone else in her team", "Her manager praises her work every single day"],
+    options: ["Her outcome-to-input ratio matches a comparison person's", "Her pay is higher than that of anyone else in the whole company", "She works fewer hours than anyone else in her team", "Her manager praises her work every single day"],
     answer: 0,
     explanation:
       "Equity theory says people compare their own outcomes (pay, recognition) relative to inputs (effort, skills, experience) with the same ratio for a referent other. Equity exists when the ratios are about equal, not when one simply earns the most or works the least. Praise is one possible outcome, but fairness depends on the comparison.",
@@ -290,7 +290,7 @@ export const PART: PrepQuestion[] = [
     options: [
       "Vague, such as 'do your best'",
       "Very easy, so everyone succeeds",
-      "Set only after the task is over",
+      "Set only after the task is already over",
       "Specific and difficult but accepted",
     ],
     answer: 3,

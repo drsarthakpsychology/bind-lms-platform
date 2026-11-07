@@ -3,7 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Home, Play, LayoutDashboard, Users, BookOpen, Inbox, Mail, Wrench, Pill, Stethoscope, Mic, NotebookPen, MessageSquare, Gauge, HeartPulse, ClipboardCheck, ClipboardList, Radar, IdCard, Languages, ToggleLeft, Target, Layers, Flag, ShieldCheck, FileCheck, ListFilter, Activity, Copyright, Sparkles, Sun, Gamepad2, Trophy, Route, MessageCircleQuestion, KeyRound, Award, type LucideIcon } from "lucide-react";
+import { Home, Play, LayoutDashboard, Users, BookOpen, Inbox, Mail, Wrench, Pill, Stethoscope, Mic, NotebookPen, MessageSquare, Gauge, HeartPulse, ClipboardCheck, ClipboardList, Radar, IdCard, Languages, ToggleLeft, Target, Layers, Flag, ShieldCheck, FileCheck, ListFilter, Activity, Copyright, Sparkles, Sun, Gamepad2, Trophy, Route, MessageCircleQuestion, KeyRound, Award, BarChart3, type LucideIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 /**
@@ -50,6 +50,7 @@ export const NAV_ICONS: Record<string, LucideIcon> = {
   doubt: MessageCircleQuestion,
   key: KeyRound,
   award: Award,
+  chart: BarChart3,
 };
 
 export type NavItem = {
@@ -62,6 +63,8 @@ export type NavItem = {
   section?: string;
   /** Extra path prefixes that also make this item active (admin sections). */
   match?: string[];
+  /** Shorter label for the slim icon rail, where long words would split. */
+  short?: string;
 };
 
 /**
@@ -109,6 +112,7 @@ export function NavItems({
               href={item.href}
               onClick={onNavigate}
               aria-current={active ? "page" : undefined}
+              aria-label={item.short ? item.label : undefined}
               title={item.label}
               className={cn(
                 "nav-link group/nav flex min-h-11 cursor-pointer items-center gap-3 rounded-xl border-2 px-3 py-2 text-sm font-bold transition-[color,background-color,box-shadow,transform] duration-fast ease-snappy",
@@ -121,7 +125,17 @@ export function NavItems({
                 className="nav-icon size-5 shrink-0 transition-transform duration-fast ease-snappy group-hover/nav:-rotate-6 group-hover/nav:scale-110"
                 aria-hidden
               />
-              <span className="nav-label min-w-0 truncate">{item.label}</span>
+              {item.short ? (
+                <>
+                  {/* The slim rail (data-size mini, or auto under 1280px) shows the short word. */}
+                  <span className="nav-label min-w-0 truncate in-data-[size=mini]:hidden max-xl:in-data-[size=auto]:hidden">{item.label}</span>
+                  <span aria-hidden className="nav-label hidden min-w-0 in-data-[size=mini]:inline max-xl:in-data-[size=auto]:inline">
+                    {item.short}
+                  </span>
+                </>
+              ) : (
+                <span className="nav-label min-w-0 truncate">{item.label}</span>
+              )}
             </Link>
           </React.Fragment>
         );

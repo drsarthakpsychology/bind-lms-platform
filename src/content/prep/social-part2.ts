@@ -69,7 +69,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "In the 1930s, Richard LaPiere travelled across the USA with a young Chinese couple. They were refused service only once in over 250 hotels and restaurants, yet when the same places were later asked by letter whether they would serve Chinese guests, over 90% of those that replied said no. This study is usually cited to show:",
     options: [
-      "That letters are more honest than face-to-face behaviour",
+      "That letters are a more honest guide to attitudes than face-to-face behaviour",
       "That attitudes always predict behaviour accurately",
       "That prejudice did not exist in the 1930s",
       "That stated attitudes do not always predict actual behaviour",
@@ -140,8 +140,8 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Asking people to describe ambiguous pictures",
       "Asking people to rate their prejudice on a questionnaire",
-      "Measuring skin conductance while people read statements",
-      "Comparing how fast people sort words or pictures when two concepts share a response key in one pairing versus the opposite pairing",
+      "Measuring skin conductance while people read statements about social groups",
+      "Comparing sorting speed when two concepts share a response key in one pairing versus the reverse",
     ],
     answer: 3,
     explanation:
@@ -182,8 +182,8 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "The 'bogus pipeline' technique tries to get more honest answers about sensitive attitudes by:",
     options: [
       "Using only anonymous online surveys",
-      "Giving participants a drug that lowers inhibition",
-      "Convincing participants that a machine can detect their true attitudes, so lying seems pointless",
+      "Giving participants a mild drug that lowers inhibition before questioning",
+      "Convincing participants that a machine can detect their true attitudes",
       "Asking the same question many times",
     ],
     answer: 2,
@@ -222,8 +222,8 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Fazio's MODE model proposes that attitudes guide behaviour through deliberate reasoning mainly when people have:",
     options: [
       "Neither motivation nor opportunity",
-      "Both the motivation and the opportunity (time and mental resources) to think carefully",
-      "Strong automatic attitudes but no time",
+      "Both the motivation and the opportunity (time and resources) to think",
+      "Strong, easily activated attitudes but very little time to reflect before acting",
       "Only an implicit attitude",
     ],
     answer: 1,
@@ -241,8 +241,8 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "According to Festinger, cognitive dissonance is:",
     options: [
       "A memory disorder",
-      "A pleasant feeling of agreement with others",
-      "An unpleasant state of tension that arises when a person holds two inconsistent beliefs, or acts against a belief",
+      "A pleasant feeling of agreement that comes from sharing other people's beliefs",
+      "An unpleasant tension that arises from holding inconsistent beliefs or acting against a belief",
       "A type of perceptual illusion",
     ],
     answer: 2,
@@ -296,7 +296,7 @@ export const QUESTIONS: PrepQuestion[] = [
       "The sleeper effect",
       "Post-decision dissonance reduction",
       "Reactance",
-      "The mere exposure effect",
+      "The mere exposure effect from handling it",
     ],
     answer: 1,
     explanation:
@@ -312,13 +312,13 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "In Aronson and Carlsmith's 'forbidden toy' study, children told not to play with an attractive toy under a mild threat later liked the toy less than children told the same thing under a severe threat. The best explanation is that:",
     options: [
       "The children in the mild-threat group had played with the toy more",
-      "The severe threat made the toy less attractive",
-      "The mild threat gave too little external justification, so the children convinced themselves the toy was not very attractive",
+      "The severe threat made the toy less attractive by linking it firmly with punishment",
+      "The mild threat gave too little outside justification, so they convinced themselves the toy was dull",
       "Both groups changed their liking equally",
     ],
     answer: 2,
     explanation:
-      "Children under a severe threat had a strong outside reason for not playing ('I would get into trouble'), so no dissonance arose. Children under a mild threat lacked such a reason, so they reduced dissonance internally by deciding the toy was less fun. Neither group played with the toy, so playing time does not explain the result. The groups differed, which is the point of the study. A related lesson for parenting is that milder pressure can produce more lasting internalised change.",
+      "Children under a severe threat had a strong outside reason for not playing ('I would get into trouble'), so no dissonance arose and they kept liking the toy. Children under a mild threat lacked such a reason, so they reduced dissonance internally by deciding the toy was less fun. Neither group played with the toy, so playing time does not explain the result. The groups differed, which is the point of the study. A related lesson for parenting is that milder pressure can produce more lasting internalised change.",
     ref: "Aronson & Carlsmith 1963; Freedman 1965",
   }),
   s({
@@ -350,8 +350,8 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Bem's self-perception theory offers an alternative to dissonance theory by proposing that:",
     options: [
       "Attitudes always come before behaviour",
-      "When internal cues are weak, people infer their own attitudes from their behaviour and its circumstances, just as an outside observer would",
-      "People feel tension whenever they act against their beliefs",
+      "When inner cues are weak, people infer their attitudes from their own behaviour, as an observer would",
+      "People feel tension whenever they act against their beliefs, and they change their attitudes to end it",
       "Attitudes are purely genetic",
     ],
     answer: 1,
@@ -368,7 +368,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Preschool children who liked drawing were promised and given a certificate for drawing with magic markers. Later, in free play, they spent less time drawing than children who received no reward or an unexpected one. This is called:",
     options: [
       "The foot-in-the-door effect",
-      "Effort justification",
+      "Effort justification after hard work",
       "The overjustification effect",
       "Learned helplessness",
     ],
@@ -409,8 +409,8 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "In 'hypocrisy induction' studies, students who made a public speech urging others to use condoms and were then reminded of times they had failed to use them themselves:",
     options: [
-      "Became less likely to use condoms",
-      "Bought more condoms afterwards, changing their behaviour to match what they preached",
+      "Became less likely to use condoms, out of resentment at being called hypocrites",
+      "Bought more condoms afterwards, acting on what they had preached",
       "Showed no change at all",
       "Forgot the speech",
     ],
@@ -445,8 +445,8 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Festinger and his colleagues joined a small group who believed a flood would end the world on a particular date and that they would be rescued by a flying saucer. When the prophecy failed, the most committed members:",
     options: [
       "Showed no change in behaviour",
-      "Immediately gave up all their beliefs",
-      "Became more eager to spread their beliefs, claiming their faith had saved the world",
+      "Immediately gave up all their beliefs and returned to their old jobs",
+      "Became more eager to spread their beliefs, saying their faith had saved the world",
       "Blamed Festinger's researchers",
     ],
     answer: 2,
@@ -570,9 +570,9 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "The door-in-the-face technique works mainly because of:",
     options: [
       "Obedience to authority",
-      "Self-perception: agreeing to a small request changes how people see themselves",
+      "Self-perception: agreeing to a small request first changes how people come to see themselves",
       "Scarcity: the offer appears limited",
-      "The norm of reciprocity: the requester appears to make a concession, and the target feels obliged to concede in return",
+      "The norm of reciprocity: the requester seems to concede, so the target concedes in return",
     ],
     answer: 3,
     explanation:
@@ -605,8 +605,8 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "McGuire's inoculation theory proposes that people can be made more resistant to persuasion by:",
     options: [
-      "Keeping them completely away from opposing views",
-      "Exposing them to weak forms of the counter-arguments, together with refutations, before they meet the full attack",
+      "Keeping them completely away from opposing views until their own beliefs have become firm",
+      "Exposing them to weakened counter-arguments, with refutations, before the full attack",
       "Repeating only supportive arguments",
       "Distracting them during the persuasive message",
     ],
@@ -668,8 +668,8 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "According to Rogers' protection motivation theory and Witte's extended parallel process model, a fear appeal is most likely to change health behaviour when:",
     options: [
-      "It makes the threat seem serious and personally likely, and also convinces people that a recommended action works and that they can do it",
-      "It is as frightening as possible, with no advice given",
+      "It makes the threat seem serious and likely, and shows that a recommended action works and is doable",
+      "It is as frightening as possible, using graphic images, with no advice on what to do",
       "It produces very low fear",
       "It tells people that nothing can be done",
     ],
@@ -706,7 +706,7 @@ export const QUESTIONS: PrepQuestion[] = [
       "Attractiveness and wealth",
       "Expertise and trustworthiness",
       "Age and gender",
-      "Speed of speech and loudness",
+      "Speed of speech and loudness of voice",
     ],
     answer: 1,
     explanation:
@@ -748,7 +748,7 @@ export const QUESTIONS: PrepQuestion[] = [
       "Have exactly the same effect as a message in the latitude of acceptance",
       "Produce the greatest attitude change",
       "Be assimilated towards the person's own view",
-      "Be seen as further from the person's own view than it really is (contrast) and produce little change, or even a boomerang",
+      "Be seen as further from the person's view than it is (contrast) and produce little change",
     ],
     answer: 3,
     explanation:
@@ -763,10 +763,10 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Freedman and Fraser asked homeowners to put a large, ugly 'Drive Carefully' sign in their front gardens. Those who had earlier agreed to a small request to display a tiny sign or sign a petition were far more likely to agree. The best explanation is:",
     options: [
-      "Agreeing to the first request changed how people saw themselves (as someone who supports such causes), and they then acted consistently with that self-image",
+      "Agreeing to the small request changed their self-image, and they then acted consistently with it",
       "The norm of reciprocity",
       "The scarcity principle",
-      "The contrast between a huge and a small request",
+      "The contrast between a huge and a small request, which made the sign seem modest",
     ],
     answer: 0,
     explanation:
@@ -806,7 +806,7 @@ export const QUESTIONS: PrepQuestion[] = [
       "A learning disability",
       "A need for approval from others",
       "A stable tendency to enjoy and engage in effortful thinking",
-      "A tendency to agree with all statements",
+      "A tendency to agree with all statements, whatever they actually say",
     ],
     answer: 2,
     explanation:
@@ -839,7 +839,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Social facilitation",
       "Operant extinction",
-      "Cognitive dissonance",
+      "Cognitive dissonance reduction",
       "Classical conditioning",
     ],
     answer: 3,
@@ -896,9 +896,9 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "In the 'low-ball' technique, compliance is obtained by:",
     options: [
-      "Adding an extra bonus before the person decides",
+      "Adding an extra bonus or discount to the offer just before the person decides",
       "Making an extreme first request",
-      "Getting a person to commit to a decision on attractive terms, then making the terms worse",
+      "Getting a commitment on attractive terms, then making the terms worse",
       "Appealing to the person's fear",
     ],
     answer: 2,

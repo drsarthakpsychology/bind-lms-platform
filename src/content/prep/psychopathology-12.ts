@@ -110,7 +110,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "A patient with schizophrenia says, 'Yes, I have a mental illness and the tablets help, but the voices are real; they really are the CBI.' The most accurate rating of insight is:",
-    options: ["Complete insight, since he accepts both the illness and its treatment", "Absent insight, since he still firmly believes the voices are real", "Partial insight: accepts illness and treatment, but cannot relabel the voices", "Intellectual insight combined with full emotional insight into the voices"],
+    options: ["Complete insight, since he accepts both the illness and its treatment", "Absent insight, since he still firmly believes the voices are real", "Partial insight: accepts illness and treatment, but cannot relabel the voices", "Intellectual insight combined with full emotional insight into the voices and their origin"],
     answer: 2,
     explanation:
       "In David's three dimensions, he recognises illness and accepts treatment but cannot relabel his hallucinations and delusional attribution as symptoms, so insight is partial. Complete insight would include relabelling. Absent insight would mean denying illness altogether. Intellectual versus emotional insight describes a different distinction, and his denial of the voices' pathological nature contradicts full insight.",
@@ -209,7 +209,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "A patient after a left frontal stroke speaks slowly and effortfully in short, telegraphic phrases, understands questions well and is frustrated by his errors. This is:",
-    options: ["Wernicke's (fluent, receptive) aphasia", "Broca's (expressive, non-fluent) aphasia", "Conduction aphasia (poor repetition)", "Schizophasia (psychotic word salad)"],
+    options: ["Wernicke's (fluent, receptive, sensory) aphasia", "Broca's (expressive, non-fluent) aphasia", "Conduction aphasia (poor repetition)", "Schizophasia (psychotic word salad)"],
     answer: 1,
     explanation:
       "Broca's aphasia (left inferior frontal) produces non-fluent, effortful, agrammatic or telegraphic speech with relatively preserved comprehension and insight (frustration). Wernicke's aphasia (left posterior superior temporal) is fluent but meaningless with poor comprehension and little awareness; it can be mistaken for schizophrenic word salad. Conduction aphasia mainly impairs repetition. Schizophasia is psychotic thought disorder, not a focal language lesion.",
@@ -316,7 +316,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "In organic confusional states, orientation is usually lost in which order?",
-    options: ["Person first, then place, then time last", "Place first, then person, then time last", "Time first, then place, with person kept longest", "All three are lost together at the same time"],
+    options: ["Person first, then place, then time last", "Place first, then person, then time last", "Time first, then place, with person kept longest", "All three are lost together at exactly the same time"],
     answer: 2,
     explanation:
       "Disorientation in delirium and dementia typically affects time first, then place, with personal identity usually preserved until very late. Loss of personal identity with intact orientation to time and place should raise suspicion of a dissociative disorder. The other orders are not the usual organic pattern.",
@@ -350,7 +350,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "A depressed patient's speech is slow, with long pauses before answering and a soft, monotonous voice. This is recorded as:",
-    options: ["Increased response latency with reduced prosody", "Pressure of speech with loud, rapid delivery", "Echolalia, repeating the examiner's words", "Neologisms and idiosyncratic word use"],
+    options: ["Increased response latency with reduced prosody", "Pressure of speech with a loud, rapid, unstoppable delivery", "Echolalia, repeating the examiner's words", "Neologisms and idiosyncratic word use"],
     answer: 0,
     explanation:
       "Long pauses before answering (increased response latency), slow rate, soft volume and monotony (reduced prosody) are typical of psychomotor retardation in depression, and also occur with parkinsonism or negative symptoms. Pressure of speech is the opposite. Echolalia is repeating the examiner. Neologisms are new words.",

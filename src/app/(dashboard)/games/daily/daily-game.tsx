@@ -7,9 +7,11 @@ import {
   ArrowRight,
   BookOpen,
   Brain,
+  CalendarDays,
   Camera,
   Check,
   ClipboardList,
+  CloudOff,
   Copy,
   Flag,
   Flame,
@@ -17,6 +19,7 @@ import {
   Lightbulb,
   LoaderCircle,
   MessageCircle,
+  RotateCw,
   Search,
   Send,
   Shuffle,
@@ -49,7 +52,7 @@ type Save = (s: LearnState) => Promise<unknown>;
 type Game = { view: CaseView; meta: DailyMeta; log: Action[] };
 type Ok = Extract<MoveResult, { ok: true }>;
 type Tab = "daily" | "practice" | "ai";
-type AiChoice = { topic: string; setting: "mix" | "indian" | "global" };
+type AiChoice = { topic: string };
 
 const KIND_ICON: Record<InvestigationKind, typeof Brain> = { mse: Brain, collateral: Users, scale: ClipboardList, lab: FlaskConical };
 const KIND_WORD: Record<InvestigationKind, string> = { mse: "Mental state", collateral: "Collateral", scale: "Rating scale", lab: "Test" };
@@ -59,6 +62,8 @@ const LOCAL_DAYS = "vibha-daily-days";
 const LOCAL_PRACTICE = "vibha-daily-practice";
 const LOCAL_AI_SEEN = "vibha-ai-cases-seen";
 const NO_DAYS: string[] = [];
+const AI_DOWN = "AI cases are not available right now.";
+const LOAD_FAIL = "That didn't load.";
 
 function dayLabel(day: string) {
   return new Date(`${day}T00:00:00Z`).toLocaleDateString("en-IN", { day: "numeric", month: "short", timeZone: "UTC" });
@@ -75,9 +80,9 @@ export function DailyGame({ serverState, save, initial }: { serverState: LearnSt
   const [daily, setDaily] = React.useState<Game | null>(initial.ok ? { view: initial.view, meta: initial.meta, log: initial.log } : null);
   const [practice, setPractice] = React.useState<Game | null>(null);
   const [aiGame, setAiGame] = React.useState<Game | null>(null);
-  const [aiChoice, setAiChoice] = React.useState<AiChoice>({ topic: "", setting: "mix" });
+  const [aiChoice, setAiChoice] = React.useState<AiChoice>({ topic: "" });
   const [making, setMaking] = React.useState(false);
-  const [error, setError] = React.useState<string | null>(initial.ok ? null : initial.error);
+  const [error, setErrorRaw] = React.useState<{ tab: Tab; text: string } | null>(initial.ok ? null : { tab: "daily", text: initial.error });
   const [pending, startTransition] = React.useTransition();
   const [shake, setShake] = React.useState(0);
   const [gain, setGain] = React.useState<{ xp: number; key: number } | null>(null);
@@ -97,6 +102,9 @@ export function DailyGame({ serverState, save, initial }: { serverState: LearnSt
   }, [initial]);
 
   const game = tab === "daily" ? daily : tab === "practice" ? practice : aiGame;
+  /** Errors belong to the tab they happened on, so switching tabs never shows a stale one. */
+  const setError = (text: string | null, on: Tab = tab) => setErrorRaw(text ? { tab: on, text } : null);
+  const shownError = error && error.tab === tab ? error.text : null;
 
   function after(t: Tab, res: Ok, action?: Action) {
     const mode = t === "daily" ? "daily" : "practice";
@@ -141,7 +149,7 @@ export function DailyGame({ serverState, save, initial }: { serverState: LearnSt
     startTransition(async () => {
       const res = await dailyMove({ mode: t === "daily" ? "daily" : "practice", caseId: cur.view.caseId, log: cur.log, action });
       if (!res.ok) {
-        setError(res.error);
+        setError(res.error, t);
         return;
       }
       after(t, res, action);
@@ -149,21 +157,22 @@ export function DailyGame({ serverState, save, initial }: { serverState: LearnSt
   }
 
   function newAi(choice: AiChoice = aiChoice) {
-    setError(null);
+    setError(null, "ai");
     setTab("ai");
+    setAiGame(null);
     setMaking(true);
     startTransition(async () => {
       try {
         const seen = readLocal<string[]>(LOCAL_AI_SEEN, []);
-        const pick = await nextAiCase({ topic: choice.topic || null, setting: choice.setting === "mix" ? null : choice.setting, exclude: seen });
+        const pick = await nextAiCase({ topic: choice.topic || null, setting: null, exclude: seen }).catch(() => ({ ok: false as const, error: AI_DOWN }));
         if (!pick.ok) {
-          setError(pick.error);
+          setError(pick.error || AI_DOWN, "ai");
           return;
         }
         writeLocal(LOCAL_AI_SEEN, [...seen.filter((x) => x !== pick.caseId), pick.caseId].slice(-100));
-        const res = await dailyMove({ mode: "practice", caseId: pick.caseId, log: readLocal<Action[]>(LOCAL_LOG("practice", daily?.meta.day ?? "", pick.caseId), []) });
+        const res = await dailyMove({ mode: "practice", caseId: pick.caseId, log: readLocal<Action[]>(LOCAL_LOG("practice", daily?.meta.day ?? "", pick.caseId), []) }).catch(() => ({ ok: false as const, error: AI_DOWN }));
         if (!res.ok) {
-          setError(res.error);
+          setError(res.error || AI_DOWN, "ai");
           return;
         }
         after("ai", res);
@@ -174,75 +183,58 @@ export function DailyGame({ serverState, save, initial }: { serverState: LearnSt
   }
 
   function newPractice() {
-    setError(null);
+    setError(null, "practice");
     setTab("practice");
+    setPractice(null);
     startTransition(async () => {
-      const pick = await nextPractice(readLocal<PracticeRecord[]>(LOCAL_PRACTICE, []));
+      const pick = await nextPractice(readLocal<PracticeRecord[]>(LOCAL_PRACTICE, [])).catch(() => ({ ok: false as const, error: LOAD_FAIL }));
       if (!pick.ok) {
-        setError(pick.error);
+        setError(pick.error, "practice");
         return;
       }
-      const res = await dailyMove({ mode: "practice", caseId: pick.caseId, log: readLocal<Action[]>(LOCAL_LOG("practice", daily?.meta.day ?? "", pick.caseId), []) });
+      const res = await dailyMove({ mode: "practice", caseId: pick.caseId, log: readLocal<Action[]>(LOCAL_LOG("practice", daily?.meta.day ?? "", pick.caseId), []) }).catch(() => ({ ok: false as const, error: LOAD_FAIL }));
       if (!res.ok) {
-        setError(res.error);
+        setError(res.error, "practice");
         return;
       }
       after("practice", res);
     });
   }
 
+  function reloadDaily() {
+    setError(null, "daily");
+    startTransition(async () => {
+      const res = await dailyMove({ mode: "daily" }).catch(() => ({ ok: false as const, error: LOAD_FAIL }));
+      if (!res.ok) setError(res.error, "daily");
+      else after("daily", res);
+    });
+  }
+
   function openTab(t: Tab) {
     setTab(t);
-    if (t === "practice" && !practice) newPractice();
+    if (t === "practice" && !practice && !pending) newPractice();
   }
 
   const streak = daily ? Math.max(daily.meta.streak, daily.meta.stored ? 0 : dailyStreak(localDays, daily.meta.day)) : 0;
 
   return (
     <div className="mx-auto w-full max-w-2xl space-y-4 px-4 py-5 sm:px-6">
-      <div className="flex flex-wrap items-center justify-between gap-3">
-        <div role="tablist" aria-label="Case type" className="inline-flex rounded-md border-2 border-foreground bg-card p-1">
-          {(
-            [
-              ["daily", "Today's case"],
-              ["practice", "Practice"],
-              ["ai", AI_CASE_LABEL],
-            ] as const
-          ).map(([t, label]) => (
-            <button
-              key={t}
-              role="tab"
-              type="button"
-              aria-selected={tab === t}
-              onClick={() => openTab(t)}
-              className={cn("min-h-10 rounded-[6px] px-3 text-sm font-bold transition-colors", tab === t ? "bg-foreground text-background" : "text-foreground hover:bg-accent")}
-            >
-              {label}
-            </button>
-          ))}
-        </div>
-        {streak > 0 && (
-          <span className={cn(chip, "bg-card")} title="Days in a row you've played the daily case">
-            <Flame className="size-4" aria-hidden /> {streak}-day streak
-          </span>
-        )}
-      </div>
-
-      {error && (
-        <p role="alert" className="rounded-md border-2 border-foreground bg-status-alert-bg px-3 py-2 text-sm font-semibold text-status-alert-fg">
-          {error}
-        </p>
-      )}
+      <ModeSwitch tab={tab} onPick={openTab} />
 
       {tab === "ai" && (making || !aiGame) ? (
-        <AiStart choice={aiChoice} onChoice={setAiChoice} making={making} onStart={() => newAi()} />
+        <AiStart choice={aiChoice} onChoice={setAiChoice} making={making} error={shownError} onStart={() => newAi()} />
       ) : !game ? (
-        <div className={cn(card, "flex min-h-40 items-center justify-center gap-2 p-6 text-muted-foreground")}>
-          <LoaderCircle className="size-5 animate-spin" aria-hidden /> Finding a case at your level…
-        </div>
+        shownError ? (
+          <CalmLine text={shownError} onRetry={tab === "daily" ? reloadDaily : newPractice} busy={pending} />
+        ) : (
+          <div className={cn(card, "flex min-h-40 items-center justify-center gap-2 p-6 text-muted-foreground")}>
+            <LoaderCircle className="size-5 animate-spin" aria-hidden /> Finding a case…
+          </div>
+        )
       ) : (
         <CaseBoard
           key={`${tab}:${game.view.caseId}`}
+          error={shownError}
           game={game}
           pending={pending}
           shake={shake}
@@ -257,6 +249,7 @@ export function DailyGame({ serverState, save, initial }: { serverState: LearnSt
 }
 
 function CaseBoard({
+  error,
   game,
   pending,
   shake,
@@ -265,6 +258,7 @@ function CaseBoard({
   onNextPractice,
   streak,
 }: {
+  error: string | null;
   game: Game;
   pending: boolean;
   shake: number;
@@ -288,9 +282,14 @@ function CaseBoard({
     <div className="space-y-4">
       <header className={cn(card, "p-4 hard-shadow-sm")}>
         <div className="flex flex-wrap items-center justify-between gap-2">
-          <p className="text-eyebrow text-link">{v.mode === "daily" ? `Daily case #${meta.number} · ${dayLabel(meta.day)}` : v.ai ? "Practice" : "Practice case"}</p>
-          <span className="text-sm font-semibold text-muted-foreground">
-            Level {v.difficulty} of 3
+          <p className="text-eyebrow text-link">{v.mode === "daily" ? `Case #${meta.number} · ${dayLabel(meta.day)}` : v.ai ? AI_CASE_LABEL : "Practice case"}</p>
+          <span className="flex flex-wrap items-center gap-2 text-sm font-semibold text-muted-foreground">
+            {v.mode === "daily" && streak > 0 && (
+              <span className={cn(chip, "bg-card text-foreground")} title="Days in a row">
+                <Flame className="size-4" aria-hidden /> {streak}
+              </span>
+            )}
+            Level {v.difficulty}/3
           </span>
         </div>
         {v.ai && <AiBadge />}
@@ -298,10 +297,12 @@ function CaseBoard({
         <ClueMeter shown={v.cluesOpen} status={v.status} />
         {playing && (
           <p className="mt-2 text-sm">
-            Solve now for <strong className="tabular-nums">{worth(v)} points</strong>. Each extra clue or test costs 15.
+            Worth <strong className="tabular-nums">{worth(v)} points</strong> now. Each clue or test: minus 15.
           </p>
         )}
       </header>
+
+      {error && <CalmLine text={error} />}
 
       <ol className="space-y-2" aria-label="Clues">
         {v.clues.map((c, i) => {
@@ -682,9 +683,9 @@ function Result({ game, gain, streak, onNextPractice, pending }: { game: Game; g
         </button>
       </div>
 
-      {r.refs && (
-        <details className="rounded-md border-2 border-dashed border-foreground p-3 text-sm">
-          <summary className="cursor-pointer font-bold">Sources (admins only)</summary>
+      {r.refs && r.refs.length > 0 && (
+        <details className="rounded-md border-2 border-dashed border-foreground/40 p-3 text-sm text-muted-foreground">
+          <summary className="cursor-pointer font-semibold">Sources</summary>
           <ul className="mt-2 list-disc pl-5">
             {r.refs.map((x) => (
               <li key={x}>{x}</li>
@@ -696,39 +697,25 @@ function Result({ game, gain, streak, onNextPractice, pending }: { game: Game; g
   );
 }
 
-/** The "AI case" label. Icon + words, never colour alone. */
+/** The AI case note under the header: icon + words, never colour alone. */
 function AiBadge() {
   return (
-    <div className="mt-2 flex flex-wrap items-center gap-2">
-      <span className={cn(chip, "bg-status-info-bg text-status-info-fg")}>
-        <Sparkles className="size-4" aria-hidden /> {AI_CASE_LABEL}
-      </span>
-      <span className="text-sm text-muted-foreground">{AI_CASE_NOTE}</span>
-    </div>
+    <p className="mt-2 flex items-center gap-1.5 text-sm text-muted-foreground">
+      <Sparkles className="size-4 shrink-0" aria-hidden /> {AI_CASE_NOTE}
+    </p>
   );
 }
 
-function AiStart({ choice, onChoice, making, onStart }: { choice: AiChoice; onChoice: (c: AiChoice) => void; making: boolean; onStart: () => void }) {
-  const settings: [AiChoice["setting"], string][] = [
-    ["mix", "Mix"],
-    ["indian", "India"],
-    ["global", "Other countries"],
-  ];
+function AiStart({ choice, onChoice, making, error, onStart }: { choice: AiChoice; onChoice: (c: AiChoice) => void; making: boolean; error: string | null; onStart: () => void }) {
   return (
-    <section className={cn(card, "space-y-4 p-4 hard-shadow-sm")} aria-label="Make an AI case">
-      <div>
-        <span className={cn(chip, "bg-status-info-bg text-status-info-fg")}>
-          <Sparkles className="size-4" aria-hidden /> {AI_CASE_LABEL}
-        </span>
-        <p className="mt-2 text-sm text-muted-foreground">{AI_CASE_NOTE}.</p>
-      </div>
-      <div className="grid gap-4 sm:grid-cols-2">
-        <label className="block">
-          <span className="font-bold">Topic</span>
+    <section className={cn(card, "space-y-3 p-4 hard-shadow-sm")} aria-label={AI_CASE_LABEL}>
+      <div className="flex flex-col gap-2 sm:flex-row sm:items-end">
+        <label className="block min-w-0 flex-1">
+          <span className="text-sm font-bold">Topic</span>
           <select
             value={choice.topic}
             disabled={making}
-            onChange={(e) => onChoice({ ...choice, topic: e.target.value })}
+            onChange={(e) => onChoice({ topic: e.target.value })}
             className="mt-1 h-11 w-full rounded-md border-2 border-foreground bg-background px-3 text-base outline-none focus-visible:ring-2 focus-visible:ring-ring"
           >
             <option value="">Any topic</option>
@@ -739,35 +726,64 @@ function AiStart({ choice, onChoice, making, onStart }: { choice: AiChoice; onCh
             ))}
           </select>
         </label>
-        <fieldset>
-          <legend className="font-bold">Where</legend>
-          <div className="mt-1 flex flex-wrap gap-2">
-            {settings.map(([id, label]) => (
-              <label
-                key={id}
-                className={cn(
-                  "inline-flex min-h-11 cursor-pointer items-center gap-2 rounded-md border-2 border-foreground px-3 text-sm font-bold has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-ring",
-                  choice.setting === id ? "bg-foreground text-background" : "bg-card hover:bg-accent",
-                )}
-              >
-                <input type="radio" name="ai-setting" value={id} checked={choice.setting === id} disabled={making} onChange={() => onChoice({ ...choice, setting: id })} className="sr-only" />
-                {choice.setting === id && <Check className="size-4" aria-hidden />}
-                {label}
-              </label>
-            ))}
-          </div>
-        </fieldset>
+        <button type="button" className={cn(btnPrimary, "min-h-11 sm:w-auto")} disabled={making} onClick={onStart}>
+          {making ? <LoaderCircle className="size-4 animate-spin" aria-hidden /> : <Sparkles className="size-4" aria-hidden />}
+          {making ? "Making your case…" : error ? "Try again" : "Start"}
+        </button>
       </div>
-      <button type="button" className={cn(btnPrimary, "w-full sm:w-auto")} disabled={making} onClick={onStart}>
-        {making ? <LoaderCircle className="size-4 animate-spin" aria-hidden /> : <Sparkles className="size-4" aria-hidden />}
-        {making ? "Making your case…" : "Get an AI case"}
-      </button>
-      {making && (
-        <p className="text-sm text-muted-foreground" aria-live="polite">
-          A new case is written, then checked against the criteria. This can take up to 30 seconds.
+      {error && !making ? (
+        <p className="flex items-start gap-2 text-sm" role="status">
+          <CloudOff className="mt-0.5 size-4 shrink-0" aria-hidden /> <span className="min-w-0">{error}</span>
         </p>
+      ) : (
+        <p className="text-sm text-muted-foreground">{AI_CASE_NOTE}.</p>
       )}
     </section>
+  );
+}
+
+/** The three ways to play, as one obvious switch. */
+function ModeSwitch({ tab, onPick }: { tab: Tab; onPick: (t: Tab) => void }) {
+  const modes: [Tab, string, typeof Brain][] = [
+    ["daily", "Today's case", CalendarDays],
+    ["practice", "Practice", Shuffle],
+    ["ai", AI_CASE_LABEL, Sparkles],
+  ];
+  return (
+    <div role="tablist" aria-label="Case type" className="grid grid-cols-3 gap-1 rounded-lg border-2 border-foreground bg-card p-1">
+      {modes.map(([t, label, Icon]) => (
+        <button
+          key={t}
+          role="tab"
+          type="button"
+          aria-selected={tab === t}
+          onClick={() => onPick(t)}
+          className={cn(
+            "flex min-h-11 min-w-0 items-center justify-center gap-1.5 rounded-md px-2 text-sm font-bold transition-colors duration-200",
+            tab === t ? "bg-foreground text-background" : "text-foreground hover:bg-accent",
+          )}
+        >
+          <Icon className="size-4 shrink-0" aria-hidden />
+          <span className="truncate">{label}</span>
+        </button>
+      ))}
+    </div>
+  );
+}
+
+/** One quiet line when something can't load, with a retry when there is one. */
+function CalmLine({ text, onRetry, busy = false }: { text: string; onRetry?: () => void; busy?: boolean }) {
+  return (
+    <div className={cn(card, "flex flex-wrap items-center gap-x-3 gap-y-2 p-3")} role="status">
+      <p className="flex min-w-0 flex-1 items-start gap-2 text-sm font-semibold">
+        <CloudOff className="mt-0.5 size-4 shrink-0" aria-hidden /> <span className="min-w-0">{text}</span>
+      </p>
+      {onRetry && (
+        <button type="button" className={cn(btnSecondary, "min-h-10")} disabled={busy} onClick={onRetry}>
+          {busy ? <LoaderCircle className="size-4 animate-spin" aria-hidden /> : <RotateCw className="size-4" aria-hidden />} Try again
+        </button>
+      )}
+    </div>
   );
 }
 

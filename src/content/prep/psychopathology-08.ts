@@ -12,7 +12,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "In DSM-5-TR, the severity of intellectual developmental disorder (mild, moderate, severe, profound) is determined by:",
-    options: ["IQ score bands, as measured on a standard intelligence test", "Mental age compared with the person's chronological age", "Age at onset together with the presumed underlying cause", "Adaptive functioning in conceptual, social and practical areas"],
+    options: ["IQ score bands, as measured on a standard intelligence test such as the WAIS", "Mental age compared with the person's chronological age", "Age at onset together with the presumed underlying cause", "Adaptive functioning in conceptual, social and practical areas"],
     answer: 3,
     explanation:
       "DSM-5 moved severity from IQ bands (as in DSM-IV: 50 to 70 mild, etc.) to adaptive functioning across conceptual, social and practical domains, because adaptive functioning decides the level of support needed. IQ still informs diagnosis (about 2 SD below the mean, roughly 65 to 75 allowing for measurement error). Mental age and age at onset are not severity criteria. DSM-5-TR adopted the term 'intellectual developmental disorder', in line with ICD-11's 'disorders of intellectual development'.",
@@ -45,10 +45,10 @@ export const PART: PrepQuestion[] = [
     type: "mcq",
     stem: "For DSM-5-TR ADHD in an individual aged 17 or older, how many symptoms of inattention (or hyperactivity-impulsivity) are required, and by what age must several symptoms have been present?",
     options: [
-      "Six symptoms; before age 7",
-      "Five symptoms; before age 7",
-      "Six symptoms; before age 12",
-      "Five symptoms; before age 12",
+      "6 symptoms; before age 7",
+      "5 symptoms; before age 7",
+      "6 symptoms; before age 12",
+      "5 symptoms; before age 12",
     ],
     answer: 3,
     explanation:
@@ -81,7 +81,7 @@ export const PART: PrepQuestion[] = [
     options: [
       "It requires an IQ-achievement discrepancy of at least 2 SD",
       "Reading, writing and mathematics disorders are separate diagnoses",
-      "It can be diagnosed when intellectual disability fully explains the difficulties",
+      "It can be diagnosed even when intellectual disability fully explains the difficulties",
       "Difficulties must have persisted for at least 6 months despite targeted intervention",
     ],
     answer: 3,
@@ -96,7 +96,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Tourette's disorder in DSM-5-TR requires:",
-    options: ["Only vocal tics, present for more than 1 year since their onset", "Coprolalia, with or without motor tics, for at least 1 year", "Multiple motor tics and a vocal tic, beginning after the age of 18", "Multiple motor tics and a vocal tic for over a year, starting before 18"],
+    options: ["Only vocal tics, present for more than 1 year since their onset", "Coprolalia, with or without motor tics, for at least 1 year", "Multiple motor tics and at least one vocal tic, beginning after the age of 18", "Multiple motor tics and a vocal tic for over a year, starting before 18"],
     answer: 3,
     explanation:
       "Tourette's needs multiple motor tics and one or more vocal tics (not necessarily at the same time), persisting more than a year since onset, with onset before 18. Coprolalia occurs in only about 10 to 15% and is not required. Only one tic type for over a year is persistent (chronic) motor or vocal tic disorder. Tics present for less than a year are provisional tic disorder.",
@@ -154,7 +154,7 @@ export const PART: PrepQuestion[] = [
     options: [
       "Lack of remorse or guilt",
       "Callous lack of empathy",
-      "Unconcerned about performance",
+      "Unconcerned about performance at school",
       "Childhood onset before 10 years",
     ],
     answer: 3,

@@ -3,7 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Activity, Bell, BookOpen, Gamepad2, Home, Mail, Menu, MessageSquare, Play, Stethoscope, Users, MessageCircleQuestion, type LucideIcon } from "lucide-react";
+import { Activity, Bell, BookOpen, Home, Mail, Menu, Pill, Play, Stethoscope, Target, Users, MessageCircleQuestion, type LucideIcon } from "lucide-react";
 import { motion, useReducedMotion } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 import { blockedBy } from "@/lib/access/features";
@@ -20,15 +20,24 @@ interface Tab {
   match?: string[];
 }
 
+/**
+ * Students, Study unlocked: the four most used places of the approved menu.
+ * Everything else (Medicines, Practice, Games, Progress...) is one tap away in More.
+ */
 const STUDENT_TABS: Tab[] = [
   { href: "/dashboard", label: "Home", icon: Home, exact: true },
+  { href: "/study", label: "Study", icon: BookOpen },
   { href: "/courses", label: "Lectures", icon: Play },
-  { href: "/practice", label: "Practice", icon: Stethoscope },
-  { href: "/wall", label: "Wall", icon: MessageSquare },
+  { href: "/prep", label: "Exam Prep", icon: Target },
 ];
 
-const STUDY_TAB: Tab = { href: "/study", label: "Notes", icon: BookOpen };
-const GAMES_TAB: Tab = { href: "/games", label: "Games", icon: Gamepad2 };
+/** Students before Study opens: no links to locked screens. */
+const STUDENT_TABS_NO_STUDY: Tab[] = [
+  { href: "/dashboard", label: "Home", icon: Home, exact: true },
+  { href: "/courses", label: "Lectures", icon: Play },
+  { href: "/practice/medicines", label: "Medicines", icon: Pill },
+  { href: "/practice", label: "Practice", icon: Stethoscope },
+];
 
 /** Admin: the 4 highest-frequency destinations; everything else is in More. */
 const ADMIN_TABS: Tab[] = [
@@ -67,11 +76,9 @@ export function BottomTabBar({
 }) {
   const pathname = usePathname() ?? "";
   const reduce = useReducedMotion();
-  const base = mode === "admin" ? ADMIN_TABS : scope === "lectures_only" ? LECTURE_ONLY_TABS : STUDENT_TABS;
-  // When learning is unlocked the phone tabs are Home, Lectures, Notes, Games
-  // (four destinations plus More): Practice, Wall and Alerts move into More.
-  const wanted = mode !== "admin" && showStudy && scope !== "lectures_only" ? [base[0], base[1], STUDY_TAB, GAMES_TAB] : base;
-  const tabs = mode === "admin" ? wanted : wanted.filter((t) => !blockedBy(t.href, blocked));
+  const base =
+    mode === "admin" ? ADMIN_TABS : scope === "lectures_only" ? LECTURE_ONLY_TABS : showStudy ? STUDENT_TABS : STUDENT_TABS_NO_STUDY;
+  const tabs = mode === "admin" ? base : base.filter((t) => !blockedBy(t.href, blocked));
 
   const focusedPath =
     isImmersiveSessionPath(pathname) || /^\/courses\/[^/]+\/(?:lessons|materials)\//.test(pathname) || /^\/games\/(?:play|coach|detective|scenarios|terms|lab\/)/.test(pathname) || /^\/study\/(?!notes\/)[^/]+\/[^/]+/.test(pathname) || /^\/prep\/mock\/(?!result\/)[^/]+$/.test(pathname);
@@ -92,7 +99,9 @@ export function BottomTabBar({
         {tabs.map((t) => {
           const Icon = t.icon;
           const under = (h: string) => pathname === h || pathname.startsWith(h + "/");
-          const active = t.exact ? pathname === t.href : under(t.href) || (t.match ?? []).some(under);
+          // A deeper tab (/practice/medicines) wins over its parent (/practice).
+          const deeper = tabs.some((o) => o.href !== t.href && o.href.startsWith(`${t.href}/`) && under(o.href));
+          const active = t.exact ? pathname === t.href : (under(t.href) && !deeper) || (t.match ?? []).some(under);
           return (
             <Link
               key={t.href}
@@ -111,7 +120,7 @@ export function BottomTabBar({
                 )}
                 <Icon className={cn("relative z-10 size-5", active && "text-primary-foreground")} aria-hidden />
               </span>
-              <span>{t.label}</span>
+              <span className="max-w-full whitespace-nowrap">{t.label}</span>
             </Link>
           );
         })}
@@ -119,7 +128,7 @@ export function BottomTabBar({
           <span className={cn(pill, "border-transparent")}>
             <Menu className="relative z-10 size-5" aria-hidden />
           </span>
-          <span>More</span>
+          <span className="whitespace-nowrap">More</span>
         </button>
       </div>
     </nav>

@@ -10,15 +10,19 @@ import { readingSections, testSection } from "@/lib/study/plan";
  *   - xp              : a minimum total Learn XP.
  *   - watch_seconds   : a minimum total recorded video playback.
  *   - course_complete : every lesson in a course finished.
+ *   - module_tests_passed : the course certificate rule: every module test
+ *     passed at CERTIFICATE_PASS_PCT or more, any order, best score counts
+ *     (src/lib/achievements/certificate.ts).
  */
 export type AchievementRequirement =
   | { kind: "module_complete"; module: string }
   | { kind: "sections_read"; module: string; count: number }
   | { kind: "xp"; min: number }
   | { kind: "watch_seconds"; min: number }
-  | { kind: "course_complete"; course_id: string };
+  | { kind: "course_complete"; course_id: string }
+  | { kind: "module_tests_passed" };
 
-export const REQUIREMENT_KINDS = ["module_complete", "sections_read", "xp", "watch_seconds", "course_complete"] as const;
+export const REQUIREMENT_KINDS = ["module_complete", "sections_read", "xp", "watch_seconds", "course_complete", "module_tests_passed"] as const;
 
 /**
  * Milestone requirements (src/lib/achievements/milestones.ts), checked from

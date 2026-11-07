@@ -200,7 +200,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "In D'Zurilla and Nezu's problem-solving therapy, which step directly follows 'problem definition and formulation'?",
-    options: ["Generation of alternative solutions (brainstorming)", "Implementation of the chosen solution in real life", "Verification of the outcome against the goal", "Termination of therapy and relapse prevention"],
+    options: ["Generation of alternative solutions (brainstorming)", "Implementation of the chosen solution in real-life situations", "Verification of the outcome against the goal", "Termination of therapy and relapse prevention"],
     answer: 0,
     explanation:
       "Rational problem solving involves problem definition and formulation, generation of alternatives (brainstorming with deferment of judgement), decision making (weighing pros and cons), then solution implementation and verification. A positive problem orientation underpins these steps. PST has evidence for depression, especially in older adults and primary care.",
@@ -288,7 +288,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "In REBT, 'unconditional self-acceptance' means:",
-    options: ["Accepting oneself as fallible, whatever one achieves", "Believing oneself to be better than other people", "Never trying to change any of one's behaviour", "Accepting oneself only when one is successful"],
+    options: ["Accepting oneself as fallible, whatever one achieves", "Believing oneself to be better than most other people", "Never trying to change any of one's behaviour", "Accepting oneself only when one is successful"],
     answer: 0,
     explanation:
       "Ellis argued against global self-rating altogether: people can rate their acts and traits, but not their total worth. USA means accepting oneself as fallible and worthwhile simply by existing, which removes the basis for self-downing and shame while allowing behaviour change. Feeling superior is another global rating. USA does not mean avoiding change. Conditional acceptance is what REBT challenges.",
@@ -334,7 +334,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "Assertiveness training typically teaches clients to:",
-    options: ["Express needs and feelings directly and respectfully", "Always agree with others to avoid conflict", "Take control of conversations and win arguments", "Suppress negative emotions in front of others"],
+    options: ["Express needs and feelings directly and respectfully", "Always agree with others to avoid conflict", "Take firm control of conversations and win every argument", "Suppress negative emotions in front of others"],
     answer: 0,
     explanation:
       "Assertiveness training (Wolpe, Lazarus; Alberti and Emmons) teaches direct, honest and respectful expression of needs and feelings through modelling and role-play, using techniques such as 'I' statements, broken record and fogging. Always agreeing is passive. Dominating is aggressive. Suppressing feelings is not the goal.",

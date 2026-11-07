@@ -105,7 +105,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 4,
     type: "mcq",
     stem: "Which statement about the course of bipolar I disorder is best supported by longitudinal studies (e.g., Judd and colleagues, NIMH Collaborative Depression Study)?",
-    options: ["Patients are symptomatic mostly with manic symptoms", "Patients are fully well between episodes for over 95% of follow-up", "Patients are symptomatic in nearly half of weeks, mostly depressive", "Episodes become less frequent with each recurrence"],
+    options: ["Patients are symptomatic mostly with manic symptoms", "Patients are fully well between episodes for over 95% of the follow-up", "Patients are symptomatic in nearly half of weeks, mostly depressive", "Episodes become less frequent with each recurrence"],
     answer: 2,
     explanation:
       "Judd and colleagues found bipolar I patients were symptomatic in about 47% of weeks over a mean of 13 years, with depressive symptoms about three times as frequent as manic or hypomanic symptoms; bipolar II patients were symptomatic in about 54% of weeks, with depression dominating even more. Mania-predominant course and near-complete inter-episode euthymia are contradicted by these data; residual symptoms are common, and episodes often become more, not less, frequent (consistent with kindling).",
@@ -154,7 +154,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 4,
     type: "mcq",
     stem: "A 26-year-old presents with severe abdominal pain, cyclical vomiting and compulsive hot showers that relieve symptoms. He has used high-potency cannabis daily for 4 years. Investigations are normal. The most likely diagnosis and definitive treatment are:",
-    options: ["Cannabis withdrawal; resume cannabis", "Bulimia nervosa; start CBT-E", "Cannabinoid hyperemesis; stop cannabis", "Acute porphyria; give haem arginate"],
+    options: ["Cannabis withdrawal; resume cannabis use", "Bulimia nervosa; start CBT-E", "Cannabinoid hyperemesis; stop cannabis", "Acute porphyria; give haem arginate"],
     answer: 2,
     explanation:
       "Cannabinoid hyperemesis syndrome affects chronic heavy users, with cyclical nausea, vomiting and abdominal pain characteristically relieved by hot showers or baths. Only sustained cessation cures it; acute options include topical capsaicin, haloperidol or droperidol, while standard antiemetics work poorly. Withdrawal does not produce this pattern, and resuming cannabis perpetuates it. Bulimia involves self-induced vomiting after binges. Porphyria lacks the hot-shower relief and the cannabis link.",
@@ -313,7 +313,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Which is a 'B criterion' symptom of a manic episode?",
-    options: ["Hypersomnia, sleeping much longer than usual", "Feelings of worthlessness or excessive guilt", "Decreased need for sleep without feeling tired", "Psychomotor retardation observable by others"],
+    options: ["Hypersomnia, sleeping much longer than usual", "Feelings of worthlessness or excessive guilt", "Decreased need for sleep without feeling tired", "Psychomotor retardation that is observable by others"],
     answer: 2,
     explanation:
       "Manic B criteria include inflated self-esteem, decreased need for sleep, pressured speech, flight of ideas, distractibility, increased goal-directed activity or psychomotor agitation, and excessive risky activities. Hypersomnia, worthlessness and retardation are depressive symptoms. Decreased need for sleep (not fatigued) differs from insomnia (wanting sleep but unable to).",
@@ -416,7 +416,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "Which drug class is approved for symptomatic treatment of mild to moderate Alzheimer's disease?",
-    options: ["Typical antipsychotics such as haloperidol", "SSRIs such as sertraline and citalopram", "Cholinesterase inhibitors such as donepezil", "Benzodiazepines such as lorazepam"],
+    options: ["Typical antipsychotics such as haloperidol and chlorpromazine", "SSRIs such as sertraline and citalopram", "Cholinesterase inhibitors such as donepezil", "Benzodiazepines such as lorazepam"],
     answer: 2,
     explanation:
       "Cholinesterase inhibitors give modest symptomatic benefit in mild to moderate AD, and memantine (an NMDA antagonist) is used in moderate to severe AD. Anti-amyloid monoclonal antibodies (lecanemab, donanemab) are newer disease-modifying options in early AD in some countries. Antipsychotics increase mortality in dementia. SSRIs treat comorbid depression. Benzodiazepines worsen cognition and falls.",
@@ -431,7 +431,7 @@ export const PART: PrepQuestion[] = [
     type: "mcq",
     stem: "Which psychotherapy has the strongest evidence base for reducing self-harm in borderline personality disorder?",
     options: [
-      "Classical psychoanalysis",
+      "Classical Freudian psychoanalysis",
       "Systematic desensitisation",
       "Dialectical behaviour therapy",
       "Token economy",

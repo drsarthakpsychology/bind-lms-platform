@@ -26,7 +26,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "John B. Watson's behaviourism held that psychology should:",
     options: [
-      "Study the elements of consciousness by trained introspection in the laboratory",
+      "Study the elements of consciousness by trained introspection in a laboratory setting",
       "Study only observable behaviour, to predict and control it, without introspection",
       "Study unconscious wishes through dreams and free association",
       "Study the self-actualising tendency",
@@ -45,7 +45,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Showed that infants are born afraid of rats and other furry animals",
       "Conditioned an infant to fear a white rat by pairing it with a loud noise",
-      "Cured an infant's fear of rabbits by gradual exposure while he ate",
+      "Cured a small boy's fear of rabbits by gradual exposure while he was eating",
       "Showed that fear cannot be learned",
     ],
     answer: 1,
@@ -220,7 +220,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "The humanistic belief in free will",
       "Strong genetic determinism: abilities are largely fixed at birth",
-      "The importance of unconscious drives in shaping adult personality",
+      "The importance of unconscious drives and early conflicts in shaping adult personality",
       "Extreme environmentalism: behaviour is shaped almost entirely by learning",
     ],
     answer: 3,
@@ -498,7 +498,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Kurt Lewin's field theory proposed that behaviour is a function of the person and the environment, written as B = f(P, E). The 'life space' refers to:",
     options: [
-      "The objective physical surroundings in which a person happens to live",
+      "The objective physical surroundings in which the person happens to be living now",
       "The person and their psychological environment as experienced at that moment",
       "The whole span of a person's life history, from birth to the present",
       "The inherited, shared layer of the unconscious common to all humans",
@@ -517,7 +517,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Bluma Zeigarnik, working in Lewin's laboratory, found that:",
     options: [
       "Completed tasks are remembered better because they feel rewarding",
-      "People forget unfinished tasks immediately once they are interrupted",
+      "People forget unfinished tasks immediately once they are interrupted or abandoned",
       "People remember interrupted, unfinished tasks better than completed tasks",
       "Memory is unaffected by task completion",
     ],
@@ -640,7 +640,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "The figure and ground of a scene are fixed and never reverse",
       "We perceive the separate elements of a stimulus before the whole",
-      "Perception depends mainly on past learning about familiar objects",
+      "Perception depends mainly on past learning about the familiar objects in a scene",
       "Perception tends to be organised as simply and regularly as conditions allow",
     ],
     answer: 3,
@@ -733,7 +733,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Which of the following best describes the period when behaviourism dominated American psychology?",
     options: [
       "Only in the 1880s",
-      "From about 1850 to 1880",
+      "From about 1850 to 1880, the era of psychophysics",
       "From about 1990 to 2010",
       "From about the 1920s to the 1950s",
     ],
@@ -796,7 +796,7 @@ export const QUESTIONS: PrepQuestion[] = [
       "The activity of the collective unconscious",
       "A purely mental process that cannot be observed",
       "Implicit, subvocal speech: tiny movements of the larynx and tongue",
-      "Insight produced by restructuring of the perceptual field",
+      "Insight produced by a sudden restructuring of the whole perceptual field",
     ],
     answer: 2,
     explanation:
@@ -871,7 +871,7 @@ export const QUESTIONS: PrepQuestion[] = [
       "Perception is the sum of sensations",
       "The whole is different from the sum of its parts",
       "Perception is entirely learned",
-      "Perception is unconscious wish fulfilment",
+      "Perception is shaped mainly by unconscious wish fulfilment",
     ],
     answer: 1,
     explanation:

@@ -12,7 +12,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "Frank Parsons, often called the father of vocational guidance, proposed that a wise career choice needs:",
-    options: ["Knowing oneself, knowing jobs, and reasoning about the fit", "A dream analysis of childhood wishes about future work", "Choosing whichever job offers the highest salary", "Following the family occupation, as tradition expects"],
+    options: ["Knowing oneself, knowing jobs, and reasoning about the fit", "A dream analysis of childhood wishes and fantasies about future work", "Choosing whichever job offers the highest salary", "Following the family occupation, as tradition expects"],
     answer: 0,
     explanation:
       "Parsons's three-step model (self-understanding, knowledge of occupations, and matching the two) became the basis of the trait-and-factor approach, later developed by Williamson. It is a matching model, not psychodynamic, and it does not reduce choice to salary or family tradition.",
@@ -124,7 +124,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "Super's 'life-career rainbow' illustrates that:",
-    options: ["Career choice happens once in late adolescence and then stays fixed", "Only the worker role really matters for overall life satisfaction", "Several life roles overlap and change in importance over the life span", "Career choices are best made by matching jobs to favourite colours"],
+    options: ["Career choice happens once in late adolescence and then stays fixed", "Only the worker role really matters for overall life satisfaction", "Several life roles overlap and change in importance over the life span", "Career choices are best made by matching jobs to the client's favourite colours"],
     answer: 2,
     explanation:
       "The rainbow's arcs show the life span, and its bands show roles that overlap and change in salience over time; this is the 'life-space' part of Super's life-span, life-space theory. It directly opposes the idea of a one-time choice or of work as the only meaningful role. It has nothing to do with colour preferences.",
@@ -280,7 +280,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "Gideon Arulmani's 'cultural preparedness' approach to career guidance in India stresses that:",
-    options: ["Individual interests should always override what the family wants", "Western career theories can be used in India without any change", "Career beliefs reflect community history, so guidance must fit context", "Guidance is unnecessary, since parents usually choose careers anyway"],
+    options: ["Individual interests should always override what the family wants", "Western career theories can be used in India without any change", "Career beliefs reflect community history, so guidance must fit context", "Guidance is unnecessary, since parents usually choose their children's careers anyway"],
     answer: 2,
     explanation:
       "Arulmani argues that each community has been 'prepared' by its history and economy to view work in certain ways (for example, valuing secure government jobs or engineering and medicine), and that guidance should work with these beliefs and with families rather than imposing individualistic Western models. It does not dismiss individual interests, nor does it say guidance is unnecessary.",
@@ -324,7 +324,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "In career counselling, an 'aptitude' refers to:",
-    options: ["What a person most enjoys doing in free time", "A person's potential to learn a skill with training", "A person's moral and religious values about work", "A person's present salary and job grade"],
+    options: ["What a person most enjoys doing in free time", "A person's potential to learn a skill with training", "A person's moral and religious values about work and duty", "A person's present salary and job grade"],
     answer: 1,
     explanation:
       "Aptitude is the capacity to acquire a skill with training, such as mechanical or numerical aptitude. Interest is what a person enjoys, and values are what they consider important. A good career plan considers aptitudes, interests and values together. Salary is not a psychological attribute.",

@@ -188,7 +188,7 @@ export const PART: PrepQuestion[] = [
       "Alogia and anhedonia",
       "Diminished emotional expression and avolition",
       "Asociality and attentional impairment",
-      "Flat affect and poverty of thought content",
+      "Flat affect and poverty of the content of thought",
     ],
     answer: 1,
     explanation:
@@ -202,7 +202,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "How many of the 12 listed features are needed for DSM-5-TR catatonia associated with another mental disorder?",
-    options: ["Two", "Three", "Four", "Five"],
+    options: ["2", "3", "4", "5"],
     answer: 1,
     explanation:
       "DSM-5-TR catatonia needs three or more of 12 features (stupor, catalepsy, waxy flexibility, mutism, negativism, posturing, mannerism, stereotypy, agitation not influenced by external stimuli, grimacing, echolalia, echopraxia). Two is too few. Four and five are wrong thresholds; the Bush-Francis screening uses two of its first 14 items, which causes confusion.",
@@ -264,7 +264,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "Which finding is the strongest support for the glutamate (NMDA receptor hypofunction) model of schizophrenia?",
-    options: ["Amphetamine produces a paranoid psychosis in healthy volunteers", "PCP and ketamine produce positive, negative and cognitive symptoms", "Clozapine has high affinity for 5-HT2A as well as D4 receptors", "L-dopa produces visual hallucinations in Parkinson's disease"],
+    options: ["Amphetamine produces a paranoid psychosis in otherwise healthy volunteers", "PCP and ketamine produce positive, negative and cognitive symptoms", "Clozapine has high affinity for 5-HT2A as well as D4 receptors", "L-dopa produces visual hallucinations in Parkinson's disease"],
     answer: 1,
     explanation:
       "NMDA antagonists such as PCP and ketamine reproduce the whole schizophrenia picture, including negative and cognitive symptoms, which dopamine agonists do not. This is the central evidence for NMDA hypofunction, often linked to downstream dopamine dysregulation. Amphetamine and L-dopa psychosis support the dopamine hypothesis and mainly produce positive symptoms. Clozapine's 5-HT2A affinity supports serotonin-dopamine models.",
@@ -309,7 +309,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "The WHO International Pilot Study of Schizophrenia and the later Determinants of Outcome of Severe Mental Disorders (DOSMD) study, which included centres at Agra and Chandigarh, reported that:",
-    options: ["Schizophrenia was much rarer in developing countries than in developed ones", "Average outcome was better in developing-country centres than in developed ones", "First-rank symptoms were almost absent in the Indian centres", "Indian patients needed higher antipsychotic doses to reach remission"],
+    options: ["Schizophrenia was much rarer in developing countries than in developed countries", "Average outcome was better in developing-country centres than in developed ones", "First-rank symptoms were almost absent in the Indian centres", "Indian patients needed higher antipsychotic doses to reach remission"],
     answer: 1,
     explanation:
       "Both WHO studies found broadly similar incidence of narrowly defined schizophrenia across centres but a more favourable course and outcome in developing-country centres such as Agra and Chandigarh. Reasons proposed include family involvement, lower EE and acute onset, though the finding is now debated. Incidence was not markedly lower, first-rank symptoms were present in all centres, and the studies did not address dose requirements.",
@@ -337,7 +337,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "Where is attenuated psychosis syndrome placed in DSM-5-TR?",
-    options: ["As a full diagnosis within the schizophrenia spectrum chapter", "In Section III, with 'other specified' coding for clinical use", "As a specifier of schizotypal personality disorder", "Only in ICD-11, with no mention anywhere in DSM-5-TR"],
+    options: ["As a full, codable diagnosis within the schizophrenia spectrum chapter", "In Section III, with 'other specified' coding for clinical use", "As a specifier of schizotypal personality disorder", "Only in ICD-11, with no mention anywhere in DSM-5-TR"],
     answer: 1,
     explanation:
       "Attenuated psychosis syndrome is in Section III (Conditions for Further Study) because of concerns about stigma, false positives and conversion rates (about 20 to 35% to psychosis over a few years). Clinically it can be recorded as 'other specified schizophrenia spectrum and other psychotic disorder'. It is not an official diagnosis, not a schizotypal specifier, and there is no 'ICD-11 appendix' in DSM.",

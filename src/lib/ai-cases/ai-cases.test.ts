@@ -202,9 +202,11 @@ describe("toDailyCase", () => {
     const view = buildView(c, p, "practice", false);
     expect(view.reveal?.answer).toBe(DX_NAMES.mdd);
     expect(view.reveal?.refs).toBeNull();
+    // Admins don't get a "sources" block on AI cases either.
+    expect(buildView(c, p, "practice", true, { ai: true }).reveal?.refs).toBeNull();
     expect(c.refs[0]).toContain(AI_CASE_LABEL);
   });
   it("carries the exact student note", () => {
-    expect(AI_CASE_NOTE).toBe("Made by AI and checked by rules, not yet by a clinician");
+    expect(AI_CASE_NOTE).toBe("Made by AI, not yet checked by a clinician");
   });
 });

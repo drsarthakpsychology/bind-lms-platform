@@ -74,10 +74,10 @@ export const QUESTIONS_2: PrepQuestion[] = [
     type: "mcq",
     stem: "Why are the upper and lower 27% of scorers commonly used to compute the item discrimination index?",
     options: [
-      "With a normal distribution, 27% balances maximising the difference between the groups against keeping the groups large enough for stable estimates",
-      "Because 27% of any group are always above the median",
-      "Because it removes the effect of guessing",
-      "Because the middle 46% always answer at chance",
+      "In a normal distribution it best balances group contrast against stable estimates",
+      "Because 27% of any group always score above the median",
+      "Because it removes the effect of guessing on difficult items",
+      "Because the middle 46% of examinees always answer the items at about chance level",
     ],
     answer: 0,
     explanation:
@@ -114,10 +114,10 @@ export const QUESTIONS_2: PrepQuestion[] = [
     type: "mcq",
     stem: "Why do test developers prefer the 'corrected' item-total correlation, which removes the item from the total score?",
     options: [
-      "It corrects for guessing",
-      "Including the item in the total inflates the correlation, especially in short scales",
+      "It corrects the correlation for guessing on difficult items",
+      "Including the item in the total inflates r, most of all in short scales",
       "It converts the correlation into a difficulty index",
-      "It makes the correlation independent of the sample",
+      "It makes the correlation independent of the sample tested",
     ],
     answer: 1,
     explanation:
@@ -149,10 +149,10 @@ export const QUESTIONS_2: PrepQuestion[] = [
     type: "mcq",
     stem: "In the two-parameter logistic (2PL) IRT model, the 'a' parameter represents",
     options: [
-      "item difficulty, the ability at which P = .50",
-      "the lower asymptote due to guessing",
-      "item discrimination, proportional to the slope of the item characteristic curve at its steepest point",
-      "the examinee's ability",
+      "item difficulty, the ability level at which P = .50",
+      "the lower asymptote, reflecting the chance that low-ability examinees guess the answer",
+      "item discrimination, shown by how steep the item characteristic curve is at its centre",
+      "the examinee's ability on the latent trait",
     ],
     answer: 2,
     explanation:
@@ -169,8 +169,8 @@ export const QUESTIONS_2: PrepQuestion[] = [
     type: "mcq",
     stem: "Which statement correctly describes the Rasch (one-parameter) model?",
     options: [
-      "Items differ in difficulty and discrimination, but not in guessing",
-      "Items differ only in difficulty; discrimination is assumed equal and there is no guessing parameter",
+      "Items differ in difficulty and in discrimination, but there is no guessing parameter",
+      "Items differ only in difficulty; all share one discrimination and there is no guessing parameter",
       "Items differ only in guessing",
       "It assumes that item responses are correlated after ability is held constant",
     ],
@@ -315,10 +315,10 @@ export const QUESTIONS_2: PrepQuestion[] = [
     type: "mcq",
     stem: "In Guttman's scalogram analysis, a coefficient of reproducibility of about .90 or higher indicates that",
     options: [
-      "the items have equal-appearing intervals",
-      "items form a cumulative scale, so a person's total score largely predicts which items they endorsed",
-      "the items have high test-retest reliability",
-      "the scale is multidimensional",
+      "the items have equal-appearing intervals between their scale values, as in Thurstone scales",
+      "items form a cumulative scale, so a total score predicts the items endorsed",
+      "the items have high test-retest reliability over a short interval",
+      "the scale is multidimensional, with several clusters of items",
     ],
     answer: 1,
     explanation:
@@ -359,8 +359,8 @@ export const QUESTIONS_2: PrepQuestion[] = [
     type: "mcq",
     stem: "In constructing a Thurstone equal-appearing-interval scale, statements with a large Q value are usually discarded because",
     options: [
-      "they have extreme scale values",
-      "too many respondents agree with them",
+      "they have extreme scale values at either end of the continuum",
+      "too many respondents agree with them when the scale is used",
       "they correlate highly with the total score",
       "judges disagreed widely about where they belong, so they are ambiguous",
     ],
@@ -409,10 +409,10 @@ export const QUESTIONS_2: PrepQuestion[] = [
     type: "mcq",
     stem: "Face validity refers to",
     options: [
-      "the correlation of the test with a later criterion",
+      "the correlation of the test with a criterion measured some months later",
       "the degree to which the test's items represent the content domain",
-      "evidence from factor analysis",
-      "whether the test appears, to test-takers and lay observers, to measure what it is meant to measure",
+      "evidence from factor analysis of the test items",
+      "whether the test looks, to test-takers and lay people, as if it measures what it should",
     ],
     answer: 3,
     explanation:
@@ -508,7 +508,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
       "validity is a fixed property of a test, established once by the publisher",
       "content, criterion and construct validity are three separate and equal kinds of validity",
       "validity is the correlation between the test and the best available criterion",
-      "validity is an integrated evaluative judgement of how well evidence and theory support the interpretations and uses of scores, including their social consequences",
+      "an overall judgement of how far evidence and theory support score interpretations, uses and consequences",
     ],
     answer: 3,
     explanation:
@@ -661,9 +661,9 @@ export const QUESTIONS_2: PrepQuestion[] = [
     type: "mcq",
     stem: "A regression equation built from 12 predictors in a sample of 80 yields R = .58. When applied to a fresh sample, R drops to .41. This drop is called shrinkage. What is its main cause?",
     options: [
-      "Regression weights capitalise on chance features of the derivation sample, so the fit is over-estimated",
-      "The new sample was more reliable",
-      "The criterion was contaminated in the second sample",
+      "Regression weights capitalise on chance features of the first sample, overstating the fit",
+      "The new sample was more reliable than the first one",
+      "The criterion was contaminated by knowledge of test scores in the second sample",
       "Multiple R is always lower than the largest single validity",
     ],
     answer: 0,
@@ -700,10 +700,10 @@ export const QUESTIONS_2: PrepQuestion[] = [
     type: "mcq",
     stem: "Under Cleary's regression model, a test is biased against a subgroup when",
     options: [
-      "the subgroup's mean test score is lower than the majority's",
-      "the common regression line systematically under-predicts the subgroup's criterion performance",
-      "the subgroup has lower reliability",
-      "the items were written by members of the majority group",
+      "the subgroup's mean test score is lower than the majority group's mean",
+      "the common regression line systematically under-predicts the subgroup's criterion scores",
+      "the subgroup has lower reliability on the test than other groups",
+      "the items were written by members of the majority group only",
     ],
     answer: 1,
     explanation:
@@ -719,7 +719,12 @@ export const QUESTIONS_2: PrepQuestion[] = [
     difficulty: 2,
     type: "mcq",
     stem: "A new depression scale is shown to give much higher scores in inpatients with major depression than in matched healthy adults. This approach to validation is called",
-    options: ["the method of contrasted (known) groups", "split-half validation", "content validation", "cross-validation"],
+    options: [
+      "the method of contrasted (known) groups",
+      "split-half validation of the scale",
+      "content validation by a panel of expert judges",
+      "cross-validation in a second sample",
+    ],
     answer: 0,
     explanation:
       "Comparing groups known to differ on the construct is the contrasted-groups (known-groups) method, a form of criterion- or construct-related evidence. Split-half is a reliability method. Content validation examines item coverage. Cross-validation checks a prediction equation in a new sample.",
@@ -750,8 +755,8 @@ export const QUESTIONS_2: PrepQuestion[] = [
     type: "mcq",
     stem: "Schmidt and Hunter's validity generalisation research showed that",
     options: [
-      "validity coefficients of cognitive ability tests are specific to each job and must be re-established locally",
-      "after correcting for sampling error, range restriction and criterion unreliability, much of the variation in validity across settings disappears",
+      "validity coefficients of cognitive ability tests are specific to each job and so must be re-established locally",
+      "after correcting for sampling error, range restriction and unreliability, most cross-setting variation vanished",
       "personality tests are always more valid than ability tests",
       "validity coefficients above .30 are statistical artefacts",
     ],
@@ -806,10 +811,10 @@ export const QUESTIONS_2: PrepQuestion[] = [
     type: "mcq",
     stem: "In psychological testing, validity most directly refers to",
     options: [
-      "the consistency of scores over repeated testing",
-      "the agreement between two scorers",
+      "the consistency of scores over repeated testing of the same people",
+      "the agreement between two scorers marking the same answers",
       "the speed with which a test can be administered",
-      "the degree to which evidence supports the intended interpretation of test scores",
+      "the degree to which evidence supports the intended interpretation of scores",
     ],
     answer: 3,
     explanation:
@@ -826,10 +831,10 @@ export const QUESTIONS_2: PrepQuestion[] = [
     type: "mcq",
     stem: "A receiver operating characteristic (ROC) curve for a screening test plots",
     options: [
-      "positive predictive value against prevalence",
+      "positive predictive value against the base rate (prevalence) of the disorder",
       "reliability against test length",
       "sensitivity against 1 − specificity across possible cut-off scores",
-      "the test score against the criterion score",
+      "the test score against the criterion score for each person",
     ],
     answer: 2,
     explanation:
@@ -888,10 +893,10 @@ export const QUESTIONS_2: PrepQuestion[] = [
     type: "mcq",
     stem: "The item discrimination index shows",
     options: [
-      "the proportion of examinees who answer the item correctly",
+      "the proportion of all examinees who answer the item correctly",
       "how well the item separates high scorers from low scorers on the whole test",
-      "how long examinees take to answer the item",
-      "whether the item is biased against a group",
+      "how long examinees take to answer the item on average",
+      "whether the item is biased against a group of examinees",
     ],
     answer: 1,
     explanation:
@@ -923,10 +928,10 @@ export const QUESTIONS_2: PrepQuestion[] = [
     type: "mcq",
     stem: "In the three-parameter logistic model, estimated c ('pseudo-guessing') values for four-option items are often below .25. Why?",
     options: [
-      "Because c is the probability of a correct response at average ability",
-      "Because low-ability examinees are often drawn to attractive distractors rather than guessing at random",
+      "Because c is the chance of a correct answer at average ability, not at the lowest ability levels",
+      "Because weak examinees are drawn to attractive distractors instead of guessing at random",
       "Because c is always fixed at 1 divided by the number of options",
-      "Because c measures discrimination, which is usually low",
+      "Because c measures discrimination, which is usually low for such items",
     ],
     answer: 1,
     explanation:

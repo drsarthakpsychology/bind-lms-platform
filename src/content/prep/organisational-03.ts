@@ -13,7 +13,7 @@ export const PART: PrepQuestion[] = [
     type: "mcq",
     stem: "Edwin Locke's widely used definition describes job satisfaction as:",
     options: [
-      "The amount of salary a person earns compared with the market",
+      "The amount of salary a person earns compared with the market rate",
       "The number of days a person is present at work each year",
       "A pleasurable emotional state from the appraisal of one's job",
       "A person's level of skill at the tasks in their job",
@@ -216,7 +216,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 3,
     type: "mcq",
     stem: "Williams and Anderson grouped citizenship behaviours by their target. Which pairing is correct?",
-    options: ["OCB-I: helping a colleague; OCB-O: protecting company resources", "OCB-I: following company rules; OCB-O: helping a colleague", "OCB-I: stealing office supplies; OCB-O: insulting a co-worker", "OCB-I: required core tasks; OCB-O: meeting performance targets"],
+    options: ["OCB-I: helping a colleague; OCB-O: protecting company resources", "OCB-I: following company rules; OCB-O: helping a colleague", "OCB-I: stealing office supplies; OCB-O: insulting a co-worker", "OCB-I: required core job tasks; OCB-O: meeting performance targets"],
     answer: 0,
     explanation:
       "OCB-I benefits specific individuals and so indirectly the organisation, such as helping someone with a heavy workload. OCB-O benefits the organisation as a whole, such as conserving resources or giving advance notice of absence. Pairing rule-following with OCB-I and helping with OCB-O reverses the two. Stealing and insulting are counterproductive behaviours, and core tasks and targets are in-role performance.",
@@ -385,7 +385,7 @@ export const PART: PrepQuestion[] = [
     options: [
       "A single personality questionnaire scored by computer",
       "A medical examination of physical fitness for the job",
-      "A one-to-one unstructured interview with the hiring manager",
+      "A one-to-one unstructured interview with the hiring line manager",
       "Several exercises, rated on set dimensions by trained assessors",
     ],
     answer: 3,

@@ -26,8 +26,8 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Temperament is usually defined as:",
     options: [
-      "A set of values learned in adulthood",
-      "Early-appearing, biologically based differences in emotional reactivity, activity and self-regulation that form a foundation for later personality",
+      "A set of values, beliefs and attitudes learned in adulthood from one's family and culture",
+      "Early, biologically based differences in emotional reactivity and self-regulation",
       "A person's moral character",
       "A personality disorder",
     ],
@@ -44,8 +44,8 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Jerome Kagan's research on 'behavioural inhibition' found that infants who were highly reactive to unfamiliar stimuli at 4 months (crying and thrashing):",
     options: [
       "Showed no differences from other children later",
-      "Always became highly extraverted adults",
-      "Were more likely to be shy and cautious with strangers as toddlers and children, though many became less inhibited over time",
+      "Always became highly extraverted adults who sought out novelty and risk",
+      "Were more likely to be shy and cautious as children, though many became less inhibited",
       "Were all diagnosed with anxiety disorders",
     ],
     answer: 2,
@@ -137,8 +137,8 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Evolutionary personality psychologists such as David Buss explain individual differences in traits partly by proposing that:",
     options: [
-      "All personality differences are random noise with no function",
-      "Different levels of a trait can be adaptive in different environments, so variation is maintained by natural selection (balancing selection)",
+      "All personality differences are random noise with no function, left over from harmful genetic mutations",
+      "Different levels of a trait can be adaptive in different environments, so selection keeps variation",
       "Only one level of each trait is ever adaptive",
       "Personality is unrelated to survival or reproduction",
     ],
@@ -180,14 +180,14 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "Brain imaging studies of personality have most consistently linked extraversion to:",
     options: [
-      "Absence of the amygdala",
+      "A smaller amygdala and weaker responses to threatening faces and sounds",
       "A smaller cerebellum",
       "Damage to Broca's area",
-      "Greater responsiveness of reward-related regions such as the ventral striatum and medial orbitofrontal cortex to rewarding stimuli",
+      "Greater responsiveness of reward regions such as the ventral striatum to rewarding stimuli",
     ],
     answer: 3,
     explanation:
-      "DeYoung and others have found that extraversion relates to the volume of medial orbitofrontal cortex and to striatal responses to reward, consistent with the view that extraversion reflects sensitivity to reward, linked to dopamine. Neuroticism has been linked to regions involved in threat and self-evaluation. The other options are not established correlates of extraversion.",
+      "DeYoung and others have found that extraversion relates to the volume of medial orbitofrontal cortex and to striatal responses to reward, consistent with the view that extraversion reflects sensitivity to reward, linked to dopamine. Neuroticism has been linked to regions involved in threat and self-evaluation. A smaller amygdala with weaker threat responses, a smaller cerebellum and damage to Broca's area are not established correlates of extraversion; amygdala and threat findings relate more to neuroticism.",
     ref: "DeYoung et al. 2010; Canli et al. 2001",
   }),
   p({
@@ -216,8 +216,8 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "A projective test of personality is one in which:",
     options: [
-      "The person responds to ambiguous stimuli, such as inkblots or pictures, and is assumed to project their inner needs and conflicts onto them",
-      "The person answers true or false to clear statements",
+      "The person responds to ambiguous stimuli and is assumed to project inner needs onto them",
+      "The person answers true or false to clear statements about their behaviour",
       "The person's reaction time is measured",
       "The person's brain activity is recorded",
     ],
@@ -264,7 +264,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "On the MMPI-2, the F (infrequency) scale is mainly used to detect:",
     options: [
       "Depression",
-      "Defensiveness and under-reporting",
+      "Defensiveness and under-reporting of real problems ('faking good')",
       "Random responding or over-reporting of symptoms ('faking bad')",
       "Masculinity-femininity",
     ],
@@ -395,11 +395,11 @@ export const QUESTIONS: PrepQuestion[] = [
       "Rogers: repertory grid; Kelly: TAT; Murray: Q-sort; Cattell: MMPI",
       "Rogers: Rorschach; Kelly: MMPI; Murray: 16PF; Cattell: TAT",
       "Rogers: EPQ; Kelly: Q-sort; Murray: repertory grid; Cattell: NEO",
-      "Rogers: Q-sort of self and ideal self; Kelly: repertory grid; Murray: TAT; Cattell: 16PF",
+      "Rogers: Q-sort; Kelly: repertory grid; Murray: TAT; Cattell: 16PF",
     ],
     answer: 3,
     explanation:
-      "Each theory led to a method that fitted its ideas: Rogers' focus on self-ideal congruence fitted the Q-sort, Kelly's constructs were measured by the repertory grid, Murray's needs by the TAT, and Cattell's source traits by the 16PF. The other options mismatch theorists and methods.",
+      "Each theory led to a method that fitted its ideas: Rogers' focus on self-ideal congruence fitted the Q-sort, Kelly's constructs were measured by the repertory grid, Murray's needs by the TAT, and Cattell's source traits by the 16PF. Pairings that give Kelly the TAT, MMPI or Q-sort, or give Cattell the MMPI, TAT or NEO, swap each theorist's method.",
     ref: "Feist & Feist; Anastasi & Urbina",
   }),
   p({
@@ -475,9 +475,9 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "A meta-analysis by Roberts and colleagues of intervention studies found that clinical interventions such as psychotherapy were associated with:",
     options: [
-      "Large increases in neuroticism",
+      "Large increases in neuroticism as clients confronted painful material during therapy sessions",
       "No change in any trait",
-      "Meaningful decreases in neuroticism and smaller increases in extraversion over a few weeks, which largely lasted at follow-up",
+      "Meaningful decreases in neuroticism and smaller increases in extraversion that largely lasted",
       "Changes only in intelligence",
     ],
     answer: 2,

@@ -12,7 +12,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "Dialectical behaviour therapy (DBT) was developed by Marsha Linehan originally for:",
-    options: ["Children and adolescents with ADHD", "Chronically suicidal women with borderline PD", "Older adults with dementia and agitation", "Couples with sexual difficulties"],
+    options: ["Children and adolescents with ADHD", "Chronically suicidal women with borderline PD", "Older adults with dementia and behavioural agitation", "Couples with sexual difficulties"],
     answer: 1,
     explanation:
       "Linehan built DBT for chronically suicidal, self-harming women, most of whom met criteria for borderline personality disorder. Standard CBT asked them to change too quickly and they dropped out, so she added acceptance and validation, balanced against change. DBT has since been adapted for adolescents, eating disorders and substance use, but it was not designed for ADHD, dementia or sexual problems.",
@@ -54,7 +54,7 @@ export const PART: PrepQuestion[] = [
       "Id and superego",
       "Acceptance and change",
       "Thinking and feeling",
-      "Past and present",
+      "Past and present experience",
     ],
     answer: 1,
     explanation:
@@ -181,7 +181,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 1,
     type: "mcq",
     stem: "In DBT, 'wise mind' is described as:",
-    options: ["Purely logical thinking, with feelings set aside", "The integration of reasonable mind and emotion mind", "Acting on whatever one feels most strongly", "An unconscious part of the psyche, as in Jung"],
+    options: ["Purely logical thinking, with all feelings set aside", "The integration of reasonable mind and emotion mind", "Acting on whatever one feels most strongly", "An unconscious part of the psyche, as in Jung"],
     answer: 1,
     explanation:
       "DBT describes three states of mind: reasonable mind (cool, logical), emotion mind (driven by current feelings) and wise mind, their integration, which feels like a quiet, intuitive knowing. Mindfulness practice is meant to help people reach wise mind. Pure logic is reasonable mind; acting on strong feeling alone is emotion mind; it is not a psychoanalytic structure.",
@@ -230,7 +230,7 @@ export const PART: PrepQuestion[] = [
     stem: "In Linehan's six levels of validation, the therapist says: 'Given what happened to you as a child, it makes complete sense that you expect people to leave you.' This is which level?",
     options: [
       "Level 1: staying awake and listening",
-      "Level 5: validating in terms of present context or normal functioning",
+      "Level 5: validating in terms of present context or of normal functioning",
       "Level 4: validating in terms of past learning or biological dysfunction",
       "Level 6: radical genuineness",
     ],
@@ -341,7 +341,7 @@ export const PART: PrepQuestion[] = [
     difficulty: 4,
     type: "mcq",
     stem: "In Linehan's stage model, Stage 2 of DBT focuses mainly on:",
-    options: ["Gaining control over severe behaviours such as self-harm", "Moving from quiet desperation, often by treating past trauma", "Orientation and commitment before treatment starts", "Building capacity for lasting joy and freedom"],
+    options: ["Gaining control over severe behaviours such as self-harm and suicide attempts", "Moving from quiet desperation, often by treating past trauma", "Orientation and commitment before treatment starts", "Building capacity for lasting joy and freedom"],
     answer: 1,
     explanation:
       "Pre-treatment covers orientation and commitment. Stage 1 targets severe behavioural dyscontrol. Stage 2 moves from quiet desperation to emotional experiencing, which often means treating PTSD, now done with the DBT prolonged exposure protocol (Harned). Stage 3 deals with ordinary problems in living and self-respect. Stage 4 aims at a sense of completeness, freedom and joy.",

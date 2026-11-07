@@ -177,7 +177,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "Free association, in which the patient says whatever comes to mind without censoring it",
       "Systematic introspection by trained observers reporting sensations",
-      "Electrical stimulation of the nerves, as practised by neurologists of the time",
+      "Electrical stimulation of the nerves and muscles, as practised by neurologists of the time",
       "Structured questionnaires scored against norms",
     ],
     answer: 0,
@@ -670,7 +670,7 @@ export const QUESTIONS: PrepQuestion[] = [
     type: "mcq",
     stem: "In his 1956 paper on models for the description of language, Noam Chomsky argued that one kind of model could not, in principle, generate all and only the grammatical sentences of English. Which kind?",
     options: [
-      "Transformational grammars with deep and surface structure",
+      "Transformational grammars that relate deep structure to surface structure",
       "Phrase-structure grammars with rewrite rules",
       "Finite-state (Markov) models that build sentences word by word",
       "Universal grammar shared by all human languages",
@@ -689,7 +689,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "The information-processing approach that guided early cognitive psychology compared the human mind to:",
     options: [
       "A computer that takes in, encodes, stores, retrieves and outputs information",
-      "A hydraulic system driven by the build-up and release of instinctual energy",
+      "A hydraulic system driven by the build-up and discharge of instinctual energy",
       "A telephone switchboard that only connects stimuli to responses",
       "A blank slate that passively records experience",
     ],
@@ -773,7 +773,7 @@ export const QUESTIONS: PrepQuestion[] = [
     options: [
       "A shifting balance among contrasting 'prescriptions', such as nomothetic versus idiographic",
       "A sequence of three paradigms: structuralism, behaviourism and cognitivism",
-      "Steady accumulation of facts within one agreed framework, with no basic disagreements",
+      "Steady accumulation of facts within one agreed framework, with no basic disagreements at all",
       "A single Zeitgeist that has stayed the same since Aristotle's account of the soul",
     ],
     answer: 0,
@@ -943,7 +943,7 @@ export const QUESTIONS: PrepQuestion[] = [
     stem: "Girindrasekhar Bose is remembered in the history of psychology in India mainly for:",
     options: [
       "Founding the Indian Psychoanalytical Society in 1922 and corresponding with Freud",
-      "Developing the first Indian adaptation of the Binet intelligence scale at Mysore",
+      "Developing the first Indian adaptation of the Binet intelligence scale at Mysore University",
       "Introducing behaviour therapy in Indian mental hospitals in the 1960s",
       "Describing the nurturant-task style of leadership",
     ],
