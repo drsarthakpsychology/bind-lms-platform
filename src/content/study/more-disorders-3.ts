@@ -16,6 +16,10 @@ Eating disorders need a team: a psychiatrist or psychologist, a physician or pae
 - The CBT model targets the **cycle**: strict dieting leads to hunger and loss of control, which leads to a binge, then shame and compensation, then more strict dieting.
 - **Regular eating** (three meals and two or three snacks a day) is the first behavioural step: it breaks the cycle of starvation and bingeing.
 
+:::widget flow
+{"title": "What keeps an eating disorder going", "layout": "cycle", "nodes": [{"id": "o", "label": "Over-valuing shape and weight", "detail": "Self-worth is judged almost only by weight, shape and control of eating."}, {"id": "r", "label": "Strict dieting", "detail": "Rigid rules: skip breakfast and lunch, no sweets ever."}, {"id": "b", "label": "Binge", "detail": "Hunger and a broken rule lead to loss of control."}, {"id": "c", "label": "Compensation", "detail": "Vomiting, laxatives or more fasting."}, {"id": "s", "label": "Shame", "detail": "Feeling disgusting and weak sharpens the focus on shape and weight again."}], "edgeLabels": {"r>b": "rule broken", "c>s": "brief relief, then"}, "caption": "Enhanced CBT targets every link, starting with regular eating to break the diet and binge pair."}
+:::
+
 :::widget worked
 {"title": "The binge-purge cycle in CBT", "steps": [{"q": "Pooja, 21, binges on sweets most evenings, then vomits. She skips breakfast and lunch to 'make up for it'. What is the first link in her cycle?", "a": "Strict dietary restraint: skipping meals leaves her very hungry and physiologically primed to binge by evening."}, {"q": "What happens after the binge?", "a": "Shame and fear of weight gain lead to vomiting, which brings brief relief but teaches her that bingeing can be 'undone', weakening restraint next time."}, {"q": "Then what?", "a": "Next morning she feels fat and disgusted and skips breakfast again, restarting the cycle."}, {"q": "Where does CBT-E start?", "a": "With regular eating (three meals and two to three planned snacks), self-monitoring, weekly in-session weighing, and education about why vomiting and laxatives do not prevent absorption of most calories. Later it addresses overvaluation of shape and weight, mood intolerance and triggers."}], "yourTurn": [{"q": "Ravi, 34, binges on large amounts of food at night after long work days and feels disgusted, but does not vomit or fast. Which part of the cycle differs, and what would CBT target first?", "a": "There is no compensatory step (binge-eating disorder). CBT would still start with regular eating and self-monitoring, then address triggers such as stress, low mood and long gaps without food."}]}
 :::
@@ -89,6 +93,14 @@ Medicines can help **short-term** insomnia, but tolerance, dependence, falls, me
 
 :::widget journey
 {"drug": "zolpidem", "target": "GABA-A receptors containing alpha-1 subunits, which promote sleep", "routes": ["oral"], "notes": {"gut": "Absorbed quickly; acts within about 30 minutes, so it is taken in bed.", "liver": "Broken down mainly by CYP3A4. Women clear it more slowly, which is why lower doses are used.", "out": "A short half-life of a few hours, but next-morning impairment can still occur, especially in older people."}, "caption": "Follow a dose of zolpidem. Its speed explains why it helps falling asleep, and why taking it and staying up can cause complex sleep behaviours."}
+:::
+
+:::widget curve
+{"kind": "half-life", "title": "Why some sleeping tablets cause a morning hangover", "caption": "A short half-life drug such as zolpidem is mostly gone by morning. A long half-life benzodiazepine such as nitrazepam or diazepam lingers, and repeated nightly doses build up: daytime drowsiness, falls and slowed driving, especially in older people. Move the half-life slider to see the build-up."}
+:::
+
+:::widget receptor
+{"receptor": "orexin", "title": "Orexin blockers: switching off the wake signal", "caption": "Orexin (also called hypocretin) is a wake-promoting signal from the hypothalamus. Medicines such as suvorexant, lemborexant and daridorexant are antagonists at orexin receptors: they turn the wake signal down rather than sedating the whole brain. In narcolepsy, the orexin cells themselves are lost, which is why sleep intrudes into the day."}
 :::
 
 ### Narcolepsy and sleep apnoea

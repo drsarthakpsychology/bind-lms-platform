@@ -25,6 +25,10 @@ Eating disorders are serious mental illnesses in which a person's eating, and th
 - **"They just need to eat."** Eating disorders are driven by powerful fears and thoughts that need specialist treatment.
 - **"It's a phase."** Without treatment, eating disorders can last years and cause lasting damage to the heart, bones, fertility and teeth.
 
+:::widget compare
+{"title": "Ordinary dieting or anorexia nervosa?", "a": {"label": "Ordinary dieting", "points": ["Wants to lose a few kilos for a wedding", "Stops when the goal is reached, or gives up", "Weight stays in the healthy range", "Self-worth rests on many things", "Eats normally with family on festival days"], "summary": "Dieting: a choice the person can set aside."}, "b": {"label": "Anorexia nervosa", "points": ["Keeps restricting even when underweight", "Intense fear of gaining weight, which grows as weight falls", "Sees herself as fat despite being thin", "Self-worth depends almost entirely on weight and shape", "Hides food, avoids family meals, over-exercises"], "summary": "Anorexia: a serious illness in which the drive to lose weight takes over."}, "caption": "Anorexia has one of the highest death rates of any mental disorder. Early help makes recovery more likely."}
+:::
+
 ### Why this matters in India
 Eating disorders are under-recognised in India. Rising rates are reported among urban adolescents and young adults, influenced by social media, fitness culture and pressure about appearance, including for marriage. Some Indian patients with anorexia do not describe fear of fatness; they may explain not eating as stomach discomfort, fasting, or "no appetite". Clinicians must look past the explanation to the pattern.
 
@@ -90,6 +94,10 @@ Imagine two dials. One is sleep pressure, which fills up the longer you are awak
 
 :::widget guess
 {"prompt": "How many hours of sleep do most adults need each night to feel and function well?", "min": 3, "max": 12, "unit": "hours", "answer": [7, 9], "reveal": "Most adults need about 7 to 9 hours. Teenagers need more, about 8 to 10, and their body clocks naturally shift later, which collides with early school and coaching timings. Older adults sleep more lightly but still need about 7 to 8 hours.", "clinician": "American Academy of Sleep Medicine and Sleep Research Society consensus: 7 or more hours for adults 18 to 60; National Sleep Foundation: 8 to 10 hours for 14 to 17-year-olds, 9 to 12 for 6 to 13-year-olds. Chronic short sleep is associated with obesity, diabetes, hypertension, depression, accidents and impaired learning."}
+:::
+
+:::widget timeline
+{"prompt": "Order the stages of a healthy first sleep cycle, from lying down to the first dream.", "events": [{"label": "Awake, drowsy, eyes closed"}, {"label": "N1: drifting off, easily woken"}, {"label": "N2: settled light sleep"}, {"label": "N3: deep, slow-wave sleep"}, {"label": "Back up to lighter N2"}, {"label": "REM sleep: the first, short dream period"}], "why": "A cycle lasts about 90 minutes and repeats four or five times. Early cycles hold more deep sleep; later ones hold longer REM periods, which is why vivid dreams come towards morning."}
 :::
 
 ### Common sleep problems
@@ -173,6 +181,10 @@ In a stroke, part of the brain's "hardware" is damaged, and scans show it. In fu
 
 :::widget decide
 {"scene": "Mrs Yadav, 38, from Lucknow, has visited five doctors in a year for headaches, burning feet and tiredness. Every test, including an MRI, has been normal. The last doctor told her, 'Nothing is wrong with you, it's just tension.' She is upset and asks you for 'one more scan to find the real problem'.", "ask": "What is the most helpful approach?", "choices": [{"label": "Order another MRI to reassure her", "verdict": "ok", "outcome": "The scan is normal. She feels relieved for a week, then the worry returns and she asks for another test.", "why": "Repeated tests give short-lived reassurance and can reinforce the belief that something is being missed."}, {"label": "Take her symptoms seriously, explain that they are real and can come from how the nervous system and stress interact, ask about mood, worries and life stresses, agree on regular scheduled visits rather than new tests, and offer treatment for any anxiety or depression", "verdict": "best", "outcome": "She talks about her husband's drinking and money worries. With regular visits, an antidepressant for her low mood and pain, and counselling, her symptoms ease and doctor visits fall.", "why": "Acknowledging real symptoms, explaining them positively, exploring psychosocial factors and offering a steady relationship with one clinician help most."}, {"label": "Tell her she is wasting doctors' time", "verdict": "harm", "outcome": "She goes to another doctor who orders unnecessary invasive tests.", "why": "Dismissal increases distress and drives repeated, sometimes harmful, investigations."}]}
+:::
+
+:::widget compare
+{"title": "Functional symptoms or faking?", "a": {"label": "Functional and somatic symptoms", "points": ["The symptom is real and not under conscious control", "A weak leg or seizure-like attacks without a structural cause", "The person is genuinely distressed and disabled", "Treatment explains the diagnosis and builds recovery"], "summary": "Functional: a genuine problem in how the nervous system works, not a pretence."}, "b": {"label": "Factitious disorder and malingering", "points": ["Symptoms are produced or exaggerated deliberately", "Factitious: to take on the sick role, without an obvious outside gain", "Malingering: for an outside reward, such as money or avoiding duty", "Malingering is not a mental disorder"], "summary": "Intentional: the person knowingly creates or exaggerates the symptom."}, "caption": "Most people with unexplained physical symptoms are not faking. Calling them liars damages trust and delays help."}
 :::
 
 :::clinician
