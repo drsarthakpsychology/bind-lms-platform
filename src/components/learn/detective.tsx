@@ -14,6 +14,9 @@ import { Chai, ChaiSays } from "./chai";
 import { Summary } from "./player";
 import { useExplainView } from "./view-toggle";
 import s from "./learn.module.css";
+import { HintBar, useHintStatus } from "@/components/hints/hint-chip";
+import { askHint } from "@/lib/hints/actions";
+import { clueOpens, hintedPoints } from "@/lib/hints/rules";
 
 const EMPTY = emptyState();
 const ROUNDS = 8;
@@ -49,9 +52,15 @@ export function Detective({ serverState, save }: { serverState: LearnState | nul
   const [answers, setAnswers] = React.useState<{ id: string; correct: boolean }[]>([]);
   const [result, setResult] = React.useState<Payout | null>(null);
   const [family, setFamily] = React.useState<"drug" | "disorder" | "mixed">("mixed");
+  const [run, setRun] = React.useState("");
+  /** This round's hint: the options it ruled out (null = not used). */
+  const [ruledOut, setRuledOut] = React.useState<string[] | null>(null);
+  const [hints, setHints] = useHintStatus();
 
   function start(f = family) {
     setFamily(f);
+    setRun(`${Date.now().toString(36)}${Math.floor(roll() * 1e6).toString(36)}`);
+    setRuledOut(null);
     setRounds(deal(f));
     setR(0);
     setClues(1);
@@ -96,11 +105,12 @@ export function Detective({ serverState, save }: { serverState: LearnState | nul
   function guess(id: string) {
     if (solved) return;
     if (id === round.c.answer) {
-      const gained = Math.max(0, POINTS[clues - 1] - wrong.length * WRONG_PENALTY);
+      // A hint halves this case's points.
+      const gained = hintedPoints(Math.max(0, POINTS[clues - 1] - wrong.length * WRONG_PENALTY), ruledOut ? 1 : 0);
       haptic("success");
       setScore((x) => x + gained);
       setSolved({ gained, correct: true });
-      setAnswers((a) => [...a, { id: round.c.answer, correct: wrong.length === 0 }]);
+      setAnswers((a) => [...a, { id: round.c.answer, correct: wrong.length === 0 && !ruledOut }]);
     } else {
       haptic("warning");
       const w = [...wrong, id];
@@ -119,6 +129,7 @@ export function Detective({ serverState, save }: { serverState: LearnState | nul
       setClues(1);
       setWrong([]);
       setSolved(null);
+      setRuledOut(null);
       return;
     }
     const { state: done, payout } = finishLesson(state, { lessonId: "detective", kind: "detective", answers, maxCombo: 0, bonusXp: score }, istToday(), roll());
@@ -152,20 +163,29 @@ export function Detective({ serverState, save }: { serverState: LearnState | nul
 
       {!solved ? (
         <>
-          <p className="text-eyebrow text-link">Your guess ({POINTS[clues - 1] - wrong.length * WRONG_PENALTY > 0 ? POINTS[clues - 1] - wrong.length * WRONG_PENALTY : 0} points now)</p>
+          <p className="text-eyebrow text-link">Your guess ({hintedPoints(Math.max(0, POINTS[clues - 1] - wrong.length * WRONG_PENALTY), ruledOut ? 1 : 0)} points now)</p>
+          <HintBar
+            status={hints}
+            onStatus={setHints}
+            used={ruledOut !== null}
+            ask={() => askHint({ game: "detective", run, round: r, answer: round.c.answer, options: round.options })}
+            onGive={(g) => setRuledOut(g.remove)}
+          />
           <div className="grid grid-cols-2 gap-2.5">
             {round.options.map((id) => {
               const o = conceptById(id)!;
               const isWrong = wrong.includes(id);
+              const gone = ruledOut?.includes(id) ?? false;
               return (
                 <button
                   key={id}
                   type="button"
-                  disabled={isWrong}
+                  disabled={isWrong || gone}
+                  aria-label={gone ? `${o.term} (ruled out)` : undefined}
                   onClick={() => guess(id)}
                   className={cn(
                     "min-h-16 min-w-0 rounded-2xl border-2 border-foreground px-3 py-2 text-left text-sm font-semibold leading-tight [overflow-wrap:anywhere] hard-shadow-sm transition-transform active:translate-y-0.5 sm:text-base",
-                    isWrong ? cn("bg-foreground text-background line-through opacity-60", s.shake) : "bg-card",
+                    isWrong ? cn("bg-foreground text-background line-through opacity-60", s.shake) : gone ? "border-dashed bg-card text-muted-foreground line-through opacity-60 shadow-none" : "bg-card",
                   )}
                 >
                   {o.term}
@@ -173,10 +193,12 @@ export function Detective({ serverState, save }: { serverState: LearnState | nul
               );
             })}
           </div>
-          {clues < 4 ? (
+          {clues < 4 && clueOpens(clues + 1, false) ? (
             <button type="button" onClick={() => setClues(clues + 1)} className="w-full rounded-2xl border-2 border-dashed border-foreground/50 py-3 text-sm font-bold">
               Show next clue (minus 10 points)
             </button>
+          ) : clues < 4 ? (
+            <p className="text-center text-sm text-muted-foreground">Make a guess to open clue {clues + 1}.</p>
           ) : null}
         </>
       ) : (
