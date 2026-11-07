@@ -12,6 +12,10 @@ Cognitive tests help you **detect**, **describe** and **track** cognitive proble
 | **MoCA** (Montreal Cognitive Assessment) | 30 | About 10 to 15 minutes | Visuospatial and executive (trail, cube, clock), naming, attention, language, abstraction, delayed recall, orientation | More sensitive for mild impairment and executive problems; harder for people with little schooling; one point added for limited education |
 | **ACE-III** (Addenbrooke's Cognitive Examination) | 100 | About 15 to 20 minutes | Attention, memory, verbal fluency, language, visuospatial | Detailed domain profile; helps tell Alzheimer's from frontotemporal patterns; validated in several Indian languages |
 
+:::widget curve
+{"kind": "normal", "title": "Test scores, norms and cut-offs", "caption": "Move the slider along the curve. A score's meaning depends on the reference group: the same raw score can be normal for someone with little schooling and low for a graduate. Cut-offs trade sensitivity against specificity, so a score near the cut-off needs clinical judgement and an informant history."}
+:::
+
 ### Rough interpretation
 - **MMSE**: 25 to 30 usually normal (education-dependent), about 18 to 24 mild impairment, 10 to 17 moderate, below 10 severe.
 - **MoCA**: 26 or more is usually taken as normal; lower scores need careful interpretation, especially in people with little schooling, where cut-offs are lower.
@@ -69,6 +73,10 @@ Q: On ACE-III, low verbal fluency and language with preserved memory and visuosp
 
 ## 3.2 Medicines for dementia [core][advanced]
 No medicine yet cures dementia. Current medicines fall into three groups: those that **ease symptoms** for a time, those that **slow** early Alzheimer's disease modestly by removing amyloid, and those used for **distressing behavioural symptoms**.
+
+:::widget journey
+{"drug": "donepezil", "target": "acetylcholinesterase at cholinergic synapses in the cortex and hippocampus", "routes": ["oral"], "notes": {"liver": "Broken down by CYP2D6 and CYP3A4; strong inhibitors can raise levels and side effects.", "target": "By blocking the enzyme that breaks down acetylcholine, donepezil boosts the signal from the surviving cholinergic neurons. It does not stop the disease.", "out": "A very long half-life (about three days) allows once-daily dosing; it takes a couple of weeks to reach a steady level."}, "caption": "Follow donepezil to its target. The same extra acetylcholine in the gut and heart explains nausea, diarrhoea and a slow pulse."}
+:::
 
 ### Symptomatic medicines for Alzheimer's disease
 - **Cholinesterase inhibitors**: **donepezil**, **rivastigmine** and **galantamine**. They slow the breakdown of acetylcholine. On average they give a **modest** benefit in thinking and daily function, equivalent to a delay of several months in decline, in mild to moderate Alzheimer's disease. Some people benefit clearly; others not at all. They are also used in **Lewy body dementia** and **Parkinson's disease dementia**, where they can reduce hallucinations.
@@ -137,6 +145,10 @@ Q: In CLARITY-AD, lecanemab slowed decline on CDR-Sum of Boxes by about:
 
 ## 3.3 Behaviour, carers, capacity and the end of life [core][advanced]
 Most people with dementia develop **behavioural and psychological symptoms** at some point: agitation, aggression, wandering, apathy, depression, anxiety, suspicion, hallucinations, delusions (often of theft), disinhibition, sleep disturbance and calling out. These symptoms are often more distressing for families than memory loss, and are the main reason for moving to residential care.
+
+:::widget flow
+{"title": "The DICE approach to behaviour in dementia", "layout": "cycle", "nodes": [{"id": "d", "label": "Describe", "detail": "What happens, when, where, with whom, what came before and after."}, {"id": "i", "label": "Investigate", "detail": "Pain, infection, constipation, medicines, hunger, toileting, boredom, noise, fear, carer approach."}, {"id": "c", "label": "Create", "detail": "A plan with the family: remove triggers, add meaningful activity, change approach, treat causes."}, {"id": "e", "label": "Evaluate", "detail": "Did it work? Keep a simple diary; adjust and repeat."}], "caption": "Press Play. Go round the cycle before reaching for an antipsychotic."}
+:::
 
 ### Understanding behaviour as communication
 Behaviour in dementia often has a **reason**: pain, hunger, thirst, needing the toilet, constipation, infection, being too hot or cold, boredom, noise, fear, a change of carer, or a misunderstanding. The **DICE** approach structures a response:
@@ -214,6 +226,10 @@ No single mechanism explains all delirium. Leading ideas:
 - **Network breakdown**: brain networks that keep attention steady fail to coordinate.
 - **Low brain reserve**: an older, damaged or dementing brain has less capacity to cope with these stresses.
 
+:::widget brainmap
+{"title": "Brain systems disturbed in delirium", "focus": ["prefrontal", "thalamus", "brainstem", "hippocampus"], "notes": {"prefrontal": "Sustained attention and executive control fail first, the core of delirium.", "thalamus": "The relay that filters sensory information; disruption contributes to misperceptions and hallucinations.", "brainstem": "Arousal systems (including cholinergic and noradrenergic nuclei) set alertness; disturbance causes drowsiness or hyperalertness and sleep-wake reversal.", "hippocampus": "Memory formation is disrupted, so people often remember little of the episode."}, "caption": "Tap each area. Delirium is a whole-brain network failure rather than damage in one spot."}
+:::
+
 ### Special settings
 - **Intensive care**: delirium is very common in ventilated patients, often hypoactive. Lighter sedation, avoiding benzodiazepines, early mobility and family involvement reduce it.
 - **After surgery**: especially hip fracture and heart surgery in older people. Good pain control without excessive opioids, avoiding anticholinergic premedication, early mobilisation and orientation help.
@@ -276,6 +292,10 @@ In India, low education, high blood pressure, diabetes, hearing loss and air pol
 
 :::widget sort
 {"prompt": "Modifiable risk factor for dementia, or not? Place each.", "buckets": ["Modifiable risk factor", "Not modifiable"], "items": [{"text": "Untreated hearing loss in mid-life", "bucket": 0}, {"text": "Age", "bucket": 1}, {"text": "High blood pressure in mid-life", "bucket": 0}, {"text": "Carrying APOE e4", "bucket": 1}, {"text": "Living with heavy air pollution", "bucket": 0}, {"text": "Social isolation in later life", "bucket": 0}, {"text": "Having Down syndrome", "bucket": 1}, {"text": "Physical inactivity", "bucket": 0}]}
+:::
+
+:::widget layers
+{"title": "Dementia risk across the life course", "shape": "stack", "layers": [{"label": "Later life", "detail": "Social isolation, air pollution, untreated vision loss."}, {"label": "Mid-life", "detail": "Hearing loss, high LDL cholesterol, depression, head injury, inactivity, diabetes, smoking, high blood pressure, obesity, excess alcohol."}, {"label": "Early life", "detail": "Less education, the foundation of cognitive reserve."}], "caption": "Tap each stage. About 45 in 100 cases worldwide are linked to these fourteen factors, so prevention starts in childhood and continues for life."}
 :::
 
 ### Biomarkers: seeing the disease before symptoms
@@ -379,7 +399,10 @@ Dementia prevalence in older Indians? :: About 7.4% of people aged 60 and over (
 2. Give five differences between delirium and dementia. || Onset, course, attention, consciousness, reversibility (also hallucinations and causes).
 :::
 
-## 4.2 Module test [core]
+`;
+
+export const test = String.raw`
+## 4.5 Module test [core]
 :::mcq
 Q: Which cognitive domain includes planning and judgement?
 - Language

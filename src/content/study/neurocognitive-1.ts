@@ -14,6 +14,10 @@ Clinicians look at six areas (called **cognitive domains**):
 5. **Perceptual-motor skills**: judging space and distance, copying shapes, using tools, finding your way.
 6. **Social cognition**: reading emotions, understanding others' points of view, behaving appropriately.
 
+:::widget brainmap
+{"title": "Where the six thinking skills live", "focus": ["prefrontal", "hippocampus", "temporal", "parietal", "broca", "amygdala"], "notes": {"prefrontal": "Attention and executive function: planning, switching, judgement and stopping impulses.", "hippocampus": "Learning and memory: laying down new memories. Damaged early in Alzheimer's disease.", "temporal": "Meaning of words and facts; recognising faces and objects.", "parietal": "Perceptual-motor skills: judging space, copying shapes, finding the way, calculation.", "broca": "Language output: producing fluent, grammatical speech.", "amygdala": "Social cognition with frontal areas: reading emotions and responding appropriately."}, "caption": "Tap each area. The pattern of lost skills points to which part of the brain is affected, and so to the likely type of dementia."}
+:::
+
 ### What normal ageing does
 As we age, the brain becomes **slower** but not necessarily **worse**:
 - Thinking speed slows; it takes longer to learn new things.
@@ -109,6 +113,10 @@ Almost anything that stresses the body can cause delirium, especially in older p
 - **Low oxygen** (heart failure, lung disease), stroke, head injury, seizures.
 - **Being in an unfamiliar place**: a hospital ward, no glasses or hearing aid, no clock, no family, bright lights at night.
 
+:::widget flow
+{"title": "Vulnerability meets trigger: how delirium happens", "layout": "chain", "nodes": [{"id": "a", "label": "A vulnerable brain", "detail": "Older age, dementia, frailty, poor vision or hearing, many medicines."}, {"id": "b", "label": "A trigger", "detail": "Infection, surgery, a new drug, dehydration, pain, constipation, alcohol withdrawal."}, {"id": "c", "label": "Brain chemistry shifts", "detail": "Less acetylcholine, more dopamine, inflammatory signals reach the brain."}, {"id": "d", "label": "Attention fails", "detail": "Networks that hold attention steady stop working together."}, {"id": "e", "label": "Delirium", "detail": "Confusion, fluctuation, altered alertness, hallucinations."}], "caption": "Press Play. The more vulnerable the brain, the smaller the trigger needed."}
+:::
+
 :::mnemonic PINCH ME
 A common bedside checklist for causes of delirium: **P**ain, **I**nfection, **N**utrition, **C**onstipation, **H**ydration, **M**edication, **E**nvironment. Add alcohol withdrawal, low oxygen and metabolic causes.
 :::
@@ -164,6 +172,10 @@ Q: Which presentation of delirium is most often missed?
 
 :::widget sort
 {"prompt": "Which type of dementia fits best? Place each person.", "buckets": ["Alzheimer's", "Vascular", "Lewy body", "Frontotemporal"], "items": [{"text": "A 78-year-old who keeps asking when her son is visiting, though he came yesterday, and has started getting lost in her colony", "bucket": 0}, {"text": "A 58-year-old bank manager who has become rude, eats sweets constantly and makes inappropriate jokes, but remembers events well", "bucket": 3}, {"text": "A 74-year-old with a tremor and stiffness who sees children playing in the room who are not there, and is alert one day and muddled the next", "bucket": 2}, {"text": "A 70-year-old with diabetes and high blood pressure whose thinking got suddenly worse after a small stroke, then levelled off, then worsened again", "bucket": 1}, {"text": "A 66-year-old whose speech has become halting and effortful, while daily skills are preserved", "bucket": 3, "why": "Frontotemporal dementia can begin with language (progressive aphasia)."}, {"text": "An 81-year-old whose husband says she shouts and kicks in her sleep as if fighting, years before her memory problems began", "bucket": 2, "why": "REM sleep behaviour disorder often precedes Lewy body disease."}]}
+:::
+
+:::widget layers
+{"title": "The stages of dementia", "shape": "stack", "layers": [{"label": "Late (severe)", "detail": "Needs help with everything; little speech; walking and swallowing problems; incontinence; infections."}, {"label": "Middle (moderate)", "detail": "Needs help with daily tasks; gets lost; may not recognise people; behaviour changes; sleep disturbance."}, {"label": "Early (mild)", "detail": "Forgets recent events; difficulty with money and complex tasks; still largely independent with reminders."}, {"label": "Mild cognitive impairment", "detail": "Noticeable decline on testing, but independent; not dementia; some stay stable or improve."}, {"label": "Silent stage", "detail": "Brain changes (for example amyloid) build up for years before any symptoms."}], "caption": "Tap each stage, from bottom to top. Planning and support needs change at every step."}
 :::
 
 ### Stages: how dementia usually progresses
@@ -232,6 +244,10 @@ In India, most people with dementia are cared for at home, usually by a wife, da
 
 :::widget decide
 {"scene": "Mr Iyer, 79, with moderate Alzheimer's disease, lives with his son's family in Chennai. Every evening he insists he must 'go to the office', puts on his shoes and tries to leave, though he retired twenty years ago. His son shouts, 'You don't have an office, Appa! You're retired!' and Mr Iyer becomes angry and tearful.", "ask": "What advice do you give the son?", "choices": [{"label": "Keep correcting him firmly until he accepts the facts", "verdict": "harm", "outcome": "The arguments get worse every evening, and Mr Iyer pushes his son.", "why": "A person with moderate dementia cannot hold on to the correction. Repeated correction feels like humiliation and causes distress."}, {"label": "Respond to the feeling and the need behind it: acknowledge that work mattered to him, invite him to help with a 'job' at home (sorting papers, a short walk together at that time), and keep evenings calm and predictable", "verdict": "best", "outcome": "Mr Iyer enjoys 'checking the accounts' with his grandson each evening. The attempts to leave become less frequent.", "why": "Evening restlessness often reflects a need for purpose and a lifelong routine. Meeting the need, rather than arguing, reduces distress."}, {"label": "Lock him in his room every evening", "verdict": "harm", "outcome": "He becomes frightened, bangs on the door and falls while trying to climb out of the window.", "why": "Restraint and isolation increase fear and injury, and can be a form of abuse."}]}
+:::
+
+:::widget flow
+{"title": "Carer strain can become a cycle", "layout": "cycle", "nodes": [{"id": "a", "label": "Demands rise", "detail": "More help with daily tasks, night waking, behavioural symptoms."}, {"id": "b", "label": "Carer exhaustion", "detail": "Little sleep, no rest, guilt, isolation."}, {"id": "c", "label": "Less patience", "detail": "Arguments, rushing, correcting facts."}, {"id": "d", "label": "More distress in the person", "detail": "Agitation and resistance increase, which raises demands again."}], "caption": "Press Play. Breaking the cycle means support for the carer: information, skills, respite and sharing the load."}
 :::
 
 ### Caring for the carer
@@ -412,6 +428,10 @@ Delirium is diagnosed when:
 {"title": "Using the CAM", "steps": [{"q": "Mrs Rao, 77, two days after a knee replacement, is quieter than usual. Her son says she 'was sharp before the operation'. What is feature 1, and is it present?", "a": "Acute onset and fluctuating course. Yes: a clear change from before surgery, and nurses say she was better this morning than now."}, {"q": "You ask her to say the months of the year backwards. She stops at October and says 'June?'. Is feature 2 present?", "a": "Inattention: yes. Failing a simple attention task is the key feature."}, {"q": "Her speech wanders from her grandson to the ward fan to her old school, without a clear thread. Is feature 3 present?", "a": "Disorganised thinking: yes."}, {"q": "She is drowsy but rousable. Is feature 4 present, and what is the CAM result?", "a": "Altered level of consciousness: yes (lethargic). CAM is positive: features 1 and 2 plus 3 and 4. This is delirium, probably hypoactive or mixed. Look for causes: pain, opioids, urinary retention, infection, low sodium, constipation."}], "yourTurn": [{"q": "Mr Gill, 80, has had slowly worsening memory for three years. Today he is alert, can say the months backwards correctly, but cannot recall three words after five minutes. Is CAM positive?", "a": "No. There is no acute onset or fluctuation, and attention is intact. This fits his dementia, not delirium. Still, recheck if anything changes."}]}
 :::
 
+:::widget flow
+{"title": "The CAM decision tree", "layout": "tree", "nodes": [{"id": "r", "label": "Feature 1: acute onset and fluctuating course", "detail": "A change from baseline that comes and goes. If absent, CAM is negative."}, {"id": "f2", "label": "Feature 2: inattention", "detail": "Required, together with feature 1. Test with months backwards.", "parent": "r"}, {"id": "f3", "label": "Feature 3: disorganised thinking", "detail": "Rambling, illogical, switching topics. Either this or feature 4 completes the CAM.", "parent": "f2"}, {"id": "f4", "label": "Feature 4: altered level of consciousness", "detail": "Hyperalert, drowsy, stuporous. Either this or feature 3 completes the CAM.", "parent": "f2"}], "caption": "Tap each box. CAM positive = 1 and 2, plus 3 or 4."}
+:::
+
 ### Who is at risk?
 Delirium happens when **vulnerability** meets a **trigger**. A frail 90-year-old with dementia may become delirious from mild constipation; a healthy 40-year-old may need severe sepsis. Risk factors include older age, dementia, frailty, poor vision or hearing, many medicines, previous delirium, severe illness, and surgery (especially hip fracture).
 
@@ -457,6 +477,10 @@ Q: A 4AT score of 6 in an older inpatient suggests:
 1. **Find and treat the causes.** There are often several. Treat infection, correct fluids and salts, relieve pain, constipation and urine retention, stop or reduce harmful medicines, give oxygen, and treat withdrawal.
 2. **Support the brain and the person** with non-drug care (below). This is the most important part of everyday management.
 3. **Use medicines only if needed**, and in the smallest doses for the shortest time, when the person is very distressed or at risk of harming themselves or others and other measures have not worked.
+
+:::widget flow
+{"title": "Managing delirium in three steps", "layout": "chain", "nodes": [{"id": "a", "label": "Find and treat causes", "detail": "Infection, fluids and salts, pain, constipation, retention, oxygen, medicines, withdrawal. Often several."}, {"id": "b", "label": "Support the person", "detail": "Orientation, glasses and hearing aids, family, sleep, mobility, food and drink, consistent staff."}, {"id": "c", "label": "Medicine only if needed", "detail": "For severe distress or danger, the smallest dose for the shortest time; avoid in Parkinson's and Lewy body disease; benzodiazepines only for withdrawal."}], "caption": "Press Play. Most of the work happens in the first two steps."}
+:::
 
 ### Non-drug care
 - **Orientation**: clocks, calendars, windows, simple explanations of where they are and what is happening.
@@ -573,6 +597,10 @@ Q: Which activity is usually lost earliest in dementia?
 :::
 
 ## 2.4 Alzheimer's disease [core][beginner]
+:::widget flow
+{"title": "The amyloid cascade, simplified", "layout": "chain", "nodes": [{"id": "a", "label": "Amyloid builds up", "detail": "Amyloid-beta fragments clump outside neurons into plaques, starting decades before symptoms."}, {"id": "b", "label": "Tau spreads", "detail": "Tau protein twists into tangles inside neurons, spreading from the medial temporal lobe outwards."}, {"id": "c", "label": "Inflammation", "detail": "Microglia react; inflammation adds to damage."}, {"id": "d", "label": "Synapses and neurons lost", "detail": "Connections fail, then cells die; acetylcholine falls."}, {"id": "e", "label": "Symptoms", "detail": "Memory first, then language, visuospatial skills, behaviour and daily function."}], "caption": "Press Play. Anti-amyloid antibodies act at the first step; tau and inflammation are newer targets. The model is useful but debated: amyloid alone does not explain everything."}
+:::
+
 ### What happens in the brain
 Two abnormal proteins build up:
 - **Amyloid**, which clumps outside nerve cells into **plaques**.
@@ -590,6 +618,10 @@ Nerve cells and their connections are lost, starting in the **hippocampus** and 
 1. **Early**: forgetting recent events and conversations, repeating questions, misplacing objects, trouble with planning and money, mild word-finding difficulty.
 2. **Middle**: getting lost, difficulty recognising people, problems with dressing and cooking (**apraxia**: losing learned movements), failing to recognise objects (**agnosia**), language problems (**aphasia**), and behavioural and psychological symptoms: suspicion, hallucinations, agitation, wandering, sleep disturbance.
 3. **Late**: little speech, loss of walking, swallowing problems, incontinence, frequent infections.
+
+:::widget brainmap
+{"title": "How Alzheimer's disease spreads through the brain", "focus": ["hippocampus", "temporal", "parietal", "frontal"], "notes": {"hippocampus": "First affected (with the entorhinal cortex): new memories cannot be stored, so recent events vanish.", "temporal": "Next: word-finding and naming problems, losing the meaning of facts.", "parietal": "Then: getting lost, difficulty dressing and using objects (apraxia), trouble with numbers.", "frontal": "Later: judgement, planning, behaviour and personality change."}, "caption": "Tap each area in order. The spread of tau tangles matches the order in which skills are lost."}
+:::
 
 :::mnemonic The four As of cortical dementia
 **Amnesia** (memory loss), **Aphasia** (language), **Apraxia** (skilled movement), **Agnosia** (recognition). Classic in Alzheimer's disease as it advances.
@@ -661,6 +693,10 @@ Damage to the frontal and temporal lobes, often starting in the **50s or 60s**.
 - **Language variants** (primary progressive aphasia): losing the meaning of words (semantic variant) or effortful, broken speech (non-fluent variant).
 - Often **misdiagnosed** as depression, mania, a personality disorder or a mid-life crisis.
 
+:::widget flow
+{"title": "A dementia type decision tree", "layout": "tree", "nodes": [{"id": "r", "label": "Progressive cognitive decline", "detail": "First rule out delirium, depression and reversible causes."}, {"id": "ad", "label": "Memory first, gradual", "detail": "Probable Alzheimer's disease.", "parent": "r"}, {"id": "vd", "label": "Stepwise, strokes, slowed thinking", "detail": "Vascular dementia (often mixed with Alzheimer's).", "parent": "r"}, {"id": "lb", "label": "Fluctuation, visions, parkinsonism, dream enactment", "detail": "Dementia with Lewy bodies, or Parkinson's disease dementia if parkinsonism came over a year earlier.", "parent": "r"}, {"id": "ft", "label": "Behaviour or language first, often under 65", "detail": "Frontotemporal dementia.", "parent": "r"}, {"id": "rp", "label": "Very rapid, with jerks", "detail": "Creutzfeldt-Jakob disease; also consider autoimmune encephalitis.", "parent": "r"}, {"id": "nph", "label": "Walking problems first, then incontinence", "detail": "Normal pressure hydrocephalus.", "parent": "r"}], "caption": "Tap each branch."}
+:::
+
 ### Other causes to know
 - **Alcohol-related brain damage**, including Korsakoff's syndrome.
 - **HIV-associated neurocognitive disorder**.
@@ -730,6 +766,10 @@ Some causes of cognitive decline can be **treated**, and some can be **reversed*
 - **Metabolic**: kidney or liver failure, high calcium, low sodium, low sugar episodes.
 - **Sleep apnoea**.
 - **Hearing and vision loss**, which reduce input and can mimic or worsen cognitive decline.
+
+:::widget flow
+{"title": "The memory work-up, step by step", "layout": "chain", "nodes": [{"id": "a", "label": "History from patient and informant", "detail": "Onset, course, daily function, mood, medicines, alcohol, falls."}, {"id": "b", "label": "Examination", "detail": "Neurological signs, gait, hearing and vision, general health."}, {"id": "c", "label": "Cognitive test", "detail": "MMSE or HMSE, MoCA or ACE-III, chosen for education and language."}, {"id": "d", "label": "Blood tests", "detail": "Blood count, kidney and liver, sodium, calcium, sugar, thyroid, B12, folate; syphilis and HIV if risk."}, {"id": "e", "label": "Brain scan", "detail": "CT or MRI, especially if young, rapid, focal signs or a fall."}, {"id": "f", "label": "Diagnosis and plan", "detail": "Type and stage, treatment of reversible causes, medicines, support, planning."}], "caption": "Press Play. Every step can uncover something treatable."}
+:::
 
 ### The basic work-up
 1. **History from the person and an informant**: how it started, how it has changed, daily function, mood, medicines, alcohol, falls.

@@ -1,7 +1,8 @@
 import { act } from "@/lib/study/activities";
 import type { ModuleMeta } from "@/lib/study/types";
 import { part1 } from "./neurocognitive-1";
-import { part2 } from "./neurocognitive-2";
+import { part2, test } from "./neurocognitive-2";
+import { qa } from "./neurocognitive-qa";
 
 export const meta: ModuleMeta = {
   id: "neurocognitive",
@@ -28,4 +29,4 @@ export const meta: ModuleMeta = {
   noteId: "dementia",
 };
 
-export const text = part1 + part2;
+export const text = part1 + part2 + qa + test;
