@@ -89,6 +89,26 @@ const one = (count: number, subjects: Subject[], title = "Psychology") => [{ tit
 
 export const EXAM_SPECS: PrepSpec[] = [
   {
+    id: "md-psychiatry-practice",
+    exam: "md-psychiatry",
+    title: "MD Psychiatry practice paper",
+    short: "MD Psychiatry",
+    cycle: "VIBHA practice format",
+    minutes: 120,
+    marksPerRight: 1,
+    marksPerWrong: -0.25,
+    sections: [
+      { title: "Psychopharmacology", count: 30, subjects: ["psychopharmacology"] },
+      { title: "Clinical psychiatry", count: 30, subjects: ["clinical-psychiatry"] },
+      { title: "Psychopathology", count: 20, subjects: ["psychopathology"] },
+      { title: "Neuroscience", count: 15, subjects: ["biological"] },
+      { title: "Law and ethics", count: 5, subjects: ["ethics-law"] },
+    ],
+    verified: false,
+    source: "VIBHA practice format at the depth of MD Psychiatry theory papers and viva; not an official exam pattern",
+    notes: ["Single best answer, mixed difficulty, mostly hard.", "Practice marking: +1 right, -0.25 wrong."],
+  },
+  {
     id: "cuet-pg-huqp20",
     exam: "cuet-pg",
     title: "CUET PG Psychology (HUQP20)",
@@ -240,6 +260,7 @@ export const SUBJECT_GROUPS: { id: string; title: string; subjects: Subject[] }[
   { id: "mind-brain", title: "Mind and brain", subjects: ["biological", "perception-attention", "learning-motivation-emotion", "cognitive"] },
   { id: "person-society", title: "Person, development and society", subjects: ["personality-theories", "developmental", "social"] },
   { id: "clinical-applied", title: "Clinical, counselling and applied", subjects: ["psychopathology", "clinical-therapies", "counselling", "health", "positive", "organisational", "ethics-law"] },
+  { id: "psychiatry", title: "Psychiatry and medicines", subjects: ["clinical-psychiatry", "psychopharmacology"] },
   { id: "net-paper1", title: "Teaching and reasoning (NET Paper 1)", subjects: ["ugc-paper1"] },
 ];
 
@@ -250,7 +271,7 @@ export const PRACTICE_MARKING = { right: 1, wrong: -0.25 } as const;
  * Part sizes of the full mock: each group's share of the shared course's
  * weights (src/lib/prep/catalog.ts unifiedWeights, 6 Nov 2026), rounded to 100.
  */
-const FULL_PARTS: Record<string, number> = { "foundations-research": 28, "mind-brain": 23, "person-society": 20, "clinical-applied": 21, "net-paper1": 8 };
+const FULL_PARTS: Record<string, number> = { "foundations-research": 25, "mind-brain": 21, "person-society": 19, "clinical-applied": 20, psychiatry: 7, "net-paper1": 8 };
 
 /**
  * The mocks students see while exam tracks are off: one full-length mixed
