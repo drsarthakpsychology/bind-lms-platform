@@ -85,3 +85,8 @@ create policy "games2_votes_own_select" on public.games2_votes
 
 -- No insert/update/delete policies: the server (service role) writes.
 revoke insert, update, delete on public.games2_results, public.games2_teams, public.games2_team_members, public.games2_votes from anon, authenticated;
+
+-- 5. XP. These games pay XP on the server into public.xp_ledger (created by
+--    2026_11_leagues.sql) with sources 'games2:<game>' and a per-run ref, so
+--    each run pays once. No extra table is needed here; without the ledger
+--    the games still work and simply pay nothing.
