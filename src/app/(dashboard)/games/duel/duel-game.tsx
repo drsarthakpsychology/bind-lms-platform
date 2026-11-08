@@ -773,7 +773,7 @@ function Final({ v, onBack, onAgain }: { v: DuelView; onBack: () => void; onAgai
           <Swords className="size-4" aria-hidden /> {v.bot ? "Play again" : "Next ranked match"}
         </button>
         <button type="button" className={btnSecondary} onClick={onBack}>
-          <ArrowLeft className="size-4" aria-hidden /> Back
+          <ArrowLeft className="size-4" aria-hidden /> Back to Duel
         </button>
         <Link href="/study" className={btnSecondary}>
           Study the look-alikes

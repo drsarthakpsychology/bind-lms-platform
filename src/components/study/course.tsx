@@ -84,7 +84,7 @@ export function StudyHome({ modules, serverState, save, owner = "" }: { modules:
     <div className="mx-auto max-w-5xl space-y-8">
       <PageHeader
         title="Study"
-        description={`${modules.length} ${modules.length === 1 ? "module" : "modules"}, all open. ${progress.pct}% complete.`}
+        description={`${progress.pct}% complete`}
         className="pb-0"
       />
 
@@ -209,7 +209,7 @@ export function ModuleView({
   return (
     <div className="mx-auto max-w-4xl space-y-7">
       <Link href="/study" className={backLinkClass}>
-        <ArrowLeft className="size-4" aria-hidden /> All modules
+        <ArrowLeft className="size-4" aria-hidden /> Back to Study
       </Link>
 
       <header className="relative overflow-hidden rounded-3xl border-2 border-foreground bg-brand p-5 text-brand-foreground sm:p-7">
@@ -218,9 +218,6 @@ export function ModuleView({
         </p>
         <h1 className="mt-2 break-words text-display">{m.title}</h1>
         <p className="mt-2 max-w-2xl font-semibold opacity-90">{m.tagline}</p>
-        <div className="mt-4 flex flex-wrap gap-2 text-sm font-bold">
-          <span className="rounded-full border-2 border-brand-foreground px-3 py-1">{reading.length} sections</span>
-        </div>
         <div className="mt-4 max-w-md">
           <Bar pct={prog.pct} tone="primary" />
           <p className="mt-1 text-xs font-bold">{prog.pct}% complete</p>

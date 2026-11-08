@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { BookOpen, Clock, Flame, GraduationCap, PlayCircle, Sparkles, Target, Trophy } from "lucide-react";
+import { ArrowLeft, BookOpen, Clock, Flame, GraduationCap, PlayCircle, Sparkles, Target, Trophy } from "lucide-react";
 import { getSession } from "@/lib/auth/session";
 import { createAdminClient } from "@/lib/supabase/server";
 import { loadMyBoard } from "@/lib/standing/board";
@@ -9,6 +9,7 @@ import { istToday } from "@/lib/practice/streaks";
 import { hoursOf } from "@/lib/standing/score";
 import { BOARDS } from "@/lib/standing/boards";
 import { PageHeader } from "@/components/design-system/page-header";
+import { backLinkClass } from "@/components/design-system/back-link";
 
 export const metadata: Metadata = { title: "My journey" };
 export const dynamic = "force-dynamic";
@@ -64,6 +65,12 @@ export default async function JourneyPage() {
 
   return (
     <div className="mx-auto max-w-5xl space-y-6">
+      {/* Full accounts open My journey from Progress; lecture-only accounts have it in their menu. */}
+      {session.profile.scope !== "lectures_only" ? (
+        <Link href="/progress" className={backLinkClass}>
+          <ArrowLeft className="size-4" aria-hidden /> Back to Progress
+        </Link>
+      ) : null}
       <PageHeader eyebrow="My journey" title="How far you've come" description="Everything you've done on VIBHA, in one place." className="pb-0" />
 
       {/* Level banner */}

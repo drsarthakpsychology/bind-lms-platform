@@ -65,7 +65,7 @@ export function NoteView({
     <article className="mx-auto max-w-3xl space-y-5">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <Link href="/study/notes" className={backLinkClass}>
-          <ArrowLeft className="size-4" aria-hidden /> All summaries
+          <ArrowLeft className="size-4" aria-hidden /> Back to summaries
         </Link>
         <ViewToggle />
       </div>

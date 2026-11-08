@@ -24,6 +24,11 @@ const OWNERS: Owner[] = [
   { prefix: "/practice/medicines", section: "/practice/medicines", back: "/practice/medicines" },
   { prefix: "/tools/psychopharm", section: "/practice/medicines", back: "/practice/medicines" },
   { prefix: "/practice/leaderboard", section: "/leaderboard", back: "/leaderboard" },
+  // Your map, My journey: part of Progress (linked from it, not menu places).
+  { prefix: "/study/map", section: "/progress", back: "/progress" },
+  { prefix: "/journey", section: "/progress", back: "/progress" },
+  // The batch Wall sits with Doubts (asking and talking to your batch).
+  { prefix: "/wall", section: "/doubts", back: "/doubts" },
 ];
 
 const under = (path: string, prefix: string) => path === prefix || path.startsWith(`${prefix}/`);
@@ -100,6 +105,8 @@ function backLabel(href: string): string {
   if (href.startsWith("/games")) return "Back to Games";
   if (href.startsWith("/courses")) return "Back to Lectures";
   if (href.startsWith("/progress")) return "Back to Progress";
+  if (href.startsWith("/doubts")) return "Back to Doubts";
+  if (href.startsWith("/leaderboard")) return "Back to Leaderboard";
   return "Back";
 }
 

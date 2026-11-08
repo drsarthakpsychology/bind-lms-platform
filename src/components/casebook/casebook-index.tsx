@@ -57,7 +57,7 @@ export function CasebookIndex({ moduleTitles, serverState, save }: { moduleTitle
   return (
     <div className="mx-auto w-full min-w-0 max-w-4xl space-y-6">
       <Link href="/games/lab" className={backLinkClass}>
-        <ArrowLeft className="size-4" aria-hidden /> Lab
+        <ArrowLeft className="size-4" aria-hidden /> Back to the Lab
       </Link>
       <header>
         <p className="text-eyebrow text-link">Casebook</p>

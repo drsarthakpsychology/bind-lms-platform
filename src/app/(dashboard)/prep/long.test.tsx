@@ -82,4 +82,10 @@ describe("LongPractice", () => {
     expect(screen.getByRole("status")).toHaveTextContent("You covered 1 of 3");
     spy.mockRestore();
   });
+
+  it("the topic's last answer ends with one way on: back to the topic", () => {
+    render(<LongPractice {...props} next={null} done={{ href: "/prep/psychopathology/long/m-depression", label: "Back to Depression" }} />);
+    expect(screen.getByRole("link", { name: /Back to Depression/ })).toHaveAttribute("href", "/prep/psychopathology/long/m-depression");
+    expect(screen.queryByRole("link", { name: /^Next/ })).toBeNull();
+  });
 });

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { redirect } from "next/navigation";
-import { ArrowRight, Check, ShieldCheck } from "lucide-react";
+import { ArrowRight, Check, Route, ShieldCheck } from "lucide-react";
 import { requireSession } from "@/lib/auth/guards";
 import { requireFeature } from "@/lib/flags";
 import { MODULES } from "@/lib/study";
@@ -82,6 +82,10 @@ export default async function ProgressPage() {
           </ol>
         </div>
       </details>
+
+      <Link href="/journey" className="inline-flex min-h-11 items-center gap-1.5 text-sm font-bold text-link underline-offset-4 hover:underline">
+        <Route className="size-4" aria-hidden /> My journey: hours, lectures and level <ArrowRight className="size-4" aria-hidden />
+      </Link>
     </div>
   );
 }

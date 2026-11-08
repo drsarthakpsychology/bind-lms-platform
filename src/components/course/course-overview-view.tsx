@@ -44,7 +44,8 @@ export type OverviewModel = {
   totalLessons: number;
   started: boolean;
   backHref: string | null;
-  next: { title: string; href: string; week: number; kind: "lesson" | "assignment"; number: number | null } | null;
+  /** `midway`: the student started this lecture and stopped part-way. */
+  next: { title: string; href: string; week: number; kind: "lesson" | "assignment"; number: number | null; midway?: boolean } | null;
   weeks: OverviewWeek[];
   empty: boolean;
   /** The student's own cohorts (never anyone else's). */

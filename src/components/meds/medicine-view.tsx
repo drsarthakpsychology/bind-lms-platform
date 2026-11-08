@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { AlertTriangle, ArrowLeft, Check, ClipboardCheck, MessageCircle, Microscope, Pill, Shuffle, Users } from "lucide-react";
+import { AlertTriangle, ArrowLeft, ArrowRight, BookOpen, Check, ClipboardCheck, MessageCircle, Microscope, Pill, Shuffle, Users } from "lucide-react";
 import type { Med } from "@/lib/meds/types";
 import type { Mechanism } from "@/lib/meds/mechanisms";
 import type { MedVisual } from "@/lib/meds/visuals";
@@ -43,7 +43,8 @@ function saveView(v: View) {
  * One medicine: pick a dose chip to see what happens at that dose; switch
  * between plain student words and clinician detail at any time.
  */
-export function MedicineView({ med, related, mech, visuals = [] }: { med: Med; related: { id: string; name: string; cls: string }[]; mech?: Mechanism; visuals?: MedVisual[] }) {
+/** `study`: the Study module that teaches this medicine (only when Study is open for this student). */
+export function MedicineView({ med, related, mech, visuals = [], study = null }: { med: Med; related: { id: string; name: string; cls: string }[]; mech?: Mechanism; visuals?: MedVisual[]; study?: { href: string; title: string } | null }) {
   const view = React.useSyncExternalStore(subscribe, readView, () => "student" as View);
   const [i, setI] = React.useState(med.defaultDose);
   const dose = med.doses[i];
@@ -52,7 +53,7 @@ export function MedicineView({ med, related, mech, visuals = [] }: { med: Med; r
   return (
     <div className="mx-auto max-w-4xl space-y-6">
       <Link href="/practice/medicines" className={backLinkClass}>
-        <ArrowLeft className="size-4" aria-hidden /> All medicines
+        <ArrowLeft className="size-4" aria-hidden /> Back to Medicines
       </Link>
 
       <header className="rounded-3xl border-2 border-foreground bg-brand p-5 text-brand-foreground sm:p-6">
@@ -238,6 +239,12 @@ export function MedicineView({ med, related, mech, visuals = [] }: { med: Med; r
             ))}
           </div>
         </section>
+      ) : null}
+
+      {study ? (
+        <Link href={study.href} className="inline-flex min-h-11 items-center gap-1.5 text-sm font-bold text-link underline-offset-4 hover:underline [overflow-wrap:anywhere]">
+          <BookOpen className="size-4 shrink-0" aria-hidden /> Learn it in Study: {study.title} <ArrowRight className="size-4 shrink-0" aria-hidden />
+        </Link>
       ) : null}
 
       <p className="text-caption text-muted-foreground">

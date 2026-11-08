@@ -15,7 +15,7 @@ export default async function LoginsPage() {
   return (
     <div className="space-y-6">
       <Link href="/admin/students" className="inline-flex items-center gap-1.5 text-sm font-bold">
-        <ArrowLeft className="size-4" aria-hidden /> Students
+        <ArrowLeft className="size-4" aria-hidden /> Back to Students
       </Link>
       <PageHeader
         eyebrow="Students"

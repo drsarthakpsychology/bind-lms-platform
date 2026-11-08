@@ -1,5 +1,6 @@
 import { OutOfDepthDrill } from "./out-of-depth-drill";
 import { requireFeature } from "@/lib/flags";
+import { BackPill } from "@/components/study/back";
 
 export const dynamic = "force-dynamic";
 
@@ -12,12 +13,10 @@ export default async function OutOfDepthPage() {
   await requireFeature("ethics");
   return (
     <div className="mx-auto max-w-3xl">
+      <BackPill className="mb-4" />
       <p className="text-eyebrow text-muted-foreground">Out of depth</p>
       <h1 className="mt-1 text-h1">Know when to refer</h1>
-      <p className="mt-1 text-small text-muted-foreground">
-        Failing to refer is dangerous. Referring everything is also a harm. This drill
-        teaches both directions: the consequence unfolds, then the reasoning.
-      </p>
+      <p className="mt-1 text-small text-muted-foreground">Failing to refer is dangerous. Referring everything is also a harm.</p>
 
       <div className="mt-6">
         <OutOfDepthDrill />

@@ -124,7 +124,7 @@ export function ReviseView({ plan }: { plan: RevisionPlan }) {
   return (
     <div className="mx-auto max-w-3xl space-y-6">
       <Link href="/prep/smart" className={backLinkClass}>
-        <ArrowLeft className="size-4" aria-hidden /> Smart practice
+        <ArrowLeft className="size-4" aria-hidden /> Back to Smart practice
       </Link>
 
       <header>

@@ -24,7 +24,7 @@ export default async function DoubtPage({ params }: { params: Promise<{ id: stri
   return (
     <div className="mx-auto max-w-3xl space-y-5">
       <Link href="/doubts" className={backLinkClass}>
-        <ArrowLeft className="size-4" aria-hidden /> All doubts
+        <ArrowLeft className="size-4" aria-hidden /> Back to Doubts
       </Link>
       <DoubtThreadView thread={thread} cohortId={cohorts[0]?.id ?? null} />
     </div>

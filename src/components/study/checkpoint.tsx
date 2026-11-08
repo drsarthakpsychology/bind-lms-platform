@@ -16,7 +16,6 @@ import { backLinkClass } from "@/components/design-system/back-link";
  */
 export function CheckpointView({
   moduleId,
-  moduleNum,
   moduleTitle,
   n,
   cpKey,
@@ -66,7 +65,7 @@ export function CheckpointView({
   return (
     <div className="mx-auto max-w-2xl space-y-6">
       <Link href={`/study/${moduleId}`} className={backLinkClass}>
-        <ArrowLeft className="size-4" aria-hidden /> Module {moduleNum}
+        <ArrowLeft className="size-4" aria-hidden /> Back to the module
       </Link>
       <header>
         <p className="text-sm font-semibold text-link">

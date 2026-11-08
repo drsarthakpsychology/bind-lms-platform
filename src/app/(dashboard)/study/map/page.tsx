@@ -34,10 +34,10 @@ export default async function MapPage() {
 
   return (
     <div className="mx-auto max-w-6xl space-y-8">
-      <Link href="/study" className={backLinkClass}>
-        <ArrowLeft className="size-4" aria-hidden /> Study
+      <Link href="/progress" className={backLinkClass}>
+        <ArrowLeft className="size-4" aria-hidden /> Back to Progress
       </Link>
-      <PageHeader eyebrow="Study" title="What you know, and what to fix" className="pb-0" />
+      <PageHeader eyebrow="Progress" title="What you know, and what to fix" className="pb-0" />
 
       {!isLearner ? <p className="rounded-md border-2 border-foreground bg-status-pending-bg p-3 text-sm font-semibold">Preview: staff accounts have no map of their own.</p> : null}
 

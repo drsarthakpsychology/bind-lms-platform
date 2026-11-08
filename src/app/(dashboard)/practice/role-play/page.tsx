@@ -5,6 +5,7 @@ import { analyzeWeakSpots, type WeakSpot } from "@/lib/practice/weak-spots";
 import { RolePlayLobby } from "./role-play-lobby";
 import { RolePlayRoom } from "./role-play-room";
 import { requireFeature } from "@/lib/flags";
+import { BackPill } from "@/components/study/back";
 
 export const dynamic = "force-dynamic";
 
@@ -99,6 +100,7 @@ export default async function RolePlayPage(props: {
 
   return (
     <div className="mx-auto max-w-3xl">
+      <BackPill className="mb-4" />
       <ToolHeader title="Practise with a classmate" tip={{ id: "role-play", steps: ["One of you plays the patient, the other the clinician."] }} />
 
       <div className="mt-6">

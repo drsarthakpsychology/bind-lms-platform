@@ -411,7 +411,7 @@ function End({ play, xp, onAgain, onExit, board }: { play: Play; xp: number | nu
       ) : null}
       <div className="grid gap-2 sm:grid-cols-2">
         <Btn variant="primary" size="lg" onClick={onAgain}>
-          Deal again <Kbd>Enter</Kbd>
+          Play again <Kbd>Enter</Kbd>
         </Btn>
         <Btn size="lg" onClick={onExit}>
           Change opponent

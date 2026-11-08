@@ -204,7 +204,7 @@ export default async function ReferenceEntryPage({ params }: Params) {
   return (
     <div className="mx-auto max-w-3xl space-y-4">
       <Link href={REFERENCE_BASE} className={backLinkClass}>
-        <ArrowLeft className="size-4" aria-hidden /> Quick Reference
+        <ArrowLeft className="size-4" aria-hidden /> Back to Quick Reference
       </Link>
       <header className="space-y-2">
         <KindTag kind={e.kind} />

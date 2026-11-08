@@ -23,7 +23,7 @@ export default async function ReferencePage({ searchParams }: { searchParams: Pr
   return (
     <div className="mx-auto max-w-3xl space-y-6">
       <Link href="/study" className={backLinkClass}>
-        <ArrowLeft className="size-4" aria-hidden /> Study
+        <ArrowLeft className="size-4" aria-hidden /> Back to Study
       </Link>
       <header className="space-y-1">
         <p className="text-eyebrow text-link">Quick Reference</p>

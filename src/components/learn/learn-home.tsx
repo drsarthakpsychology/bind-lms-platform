@@ -36,7 +36,7 @@ const SOLO: Game[] = [
   { href: "/games/blitz", title: "Blitz", text: "Fast facts against the clock.", tag: "500+ questions", icon: Timer, tone: "lime" },
   { href: "/games/sort", title: "Criteria sort", text: "Sort criteria into look-alike disorders.", tag: "500+ criteria", icon: LayoutGrid, tone: "blue" },
   { href: "/games/mse", title: "MSE Lab", text: "Tag every finding in an interview.", tag: "500+ excerpts", icon: ScanEye, tone: "ink" },
-  { href: "/games/ward", title: "Ward Week", text: "One patient. Your choices change the ending.", tag: "20+ patients", icon: Hospital, tone: "lime" },
+  { href: "/games/ward", title: "Ward Week", text: "One patient. Your choices change the ending.", tag: "Story", icon: Hospital, tone: "lime" },
   { href: "/games/rx", title: "Rx Detective", text: "Medicines, receptors and risky mixes.", tag: "270+ cases", icon: Pill, tone: "blue" },
 ];
 
@@ -128,7 +128,7 @@ export function QuizPath({ units, serverState, save }: { units: Unit[]; serverSt
   return (
     <div className="mx-auto max-w-4xl space-y-8">
       <Link href="/prep/smart" className={backLinkClass}>
-        <ArrowLeft className="size-4" aria-hidden /> Smart practice
+        <ArrowLeft className="size-4" aria-hidden /> Back to Smart practice
       </Link>
       <div className="flex flex-wrap items-end justify-between gap-3">
         <div>

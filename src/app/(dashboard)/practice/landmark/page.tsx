@@ -3,6 +3,7 @@ import { LANDMARK_CASES } from "@/lib/landmark/cases";
 import { LandmarkReader } from "./landmark-reader";
 import { requireFeature } from "@/lib/flags";
 import { orderForViewer } from "@/lib/history/viewer";
+import { BackPill } from "@/components/study/back";
 
 export const dynamic = "force-dynamic";
 
@@ -18,6 +19,7 @@ export default async function LandmarkPage() {
   const cases = ids.flatMap((id) => LANDMARK_CASES.filter((c) => c.id === id).slice(0, 1));
   return (
     <div className="mx-auto max-w-3xl">
+      <BackPill className="mb-4" />
       <ToolHeader title="Landmark cases" tip={{ id: "landmark", steps: ["Read what was believed, then what held up."] }} />
 
       <div className="mt-6">

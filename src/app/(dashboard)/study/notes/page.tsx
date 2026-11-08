@@ -28,7 +28,7 @@ export default async function NotesPage() {
   return (
     <div className="mx-auto max-w-5xl space-y-8">
       <Link href="/study" className={backLinkClass}>
-        <ArrowLeft className="size-4" aria-hidden /> Study
+        <ArrowLeft className="size-4" aria-hidden /> Back to Study
       </Link>
       <PageHeader eyebrow="Study" title="One-page summaries" className="pb-0" />
       <NotesIndex blocks={blocks} serverState={serverState} save={saveLearnState} />

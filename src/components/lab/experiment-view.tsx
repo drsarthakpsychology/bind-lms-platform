@@ -89,7 +89,7 @@ export function ExperimentView({ exp, moduleTitles, serverState, save, recheck, 
   return (
     <div className="mx-auto w-full min-w-0 max-w-3xl space-y-6">
       <Link href="/games/lab" className={backLinkClass}>
-        <ArrowLeft className="size-4" aria-hidden /> Lab
+        <ArrowLeft className="size-4" aria-hidden /> Back to the Lab
       </Link>
 
       <header className="space-y-2">

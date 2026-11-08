@@ -5,7 +5,7 @@ import { PageHeader } from "@/components/design-system/page-header";
 
 export const metadata: Metadata = { title: "Medicines" };
 
-/** Practice → Medicines: instant search across every medicine profile. */
+/** /practice/medicines: Medicines in the menu. Instant search across every medicine profile. */
 export default function MedicinesPage() {
   return (
     <div className="mx-auto max-w-5xl space-y-6">

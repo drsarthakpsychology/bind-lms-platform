@@ -8,6 +8,7 @@ import { order } from "@/lib/history/server";
 import { viewerId } from "@/lib/history/viewer";
 import { requireFeature } from "@/lib/flags";
 import { cleanDeep, cleanStudentText } from "@/lib/ai/student-text";
+import { BackPill } from "@/components/study/back";
 
 export const dynamic = "force-dynamic";
 
@@ -91,6 +92,7 @@ export default async function MsePage() {
 
   return (
     <div className="mx-auto max-w-3xl">
+      <BackPill className="mb-4" />
       <ToolHeader title="Mental state exam" tip={{ id: "mse-trainer", steps: ["Write what you can see and hear, not what you conclude."] }} />
       <div className="mt-6">
         <MseLadder content={content} />

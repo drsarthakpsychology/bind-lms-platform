@@ -186,11 +186,11 @@ export function MockResult({ view }: { view: MockResultView }) {
       </section>
 
       <div className="grid gap-2.5 sm:grid-cols-2">
-        <Link href="/prep" className={btnPrimary}>
-          Back to Exam Prep <ArrowRight className="size-4" aria-hidden />
+        <Link href="/prep/mock" className={btnPrimary}>
+          Take another mock <ArrowRight className="size-4" aria-hidden />
         </Link>
-        <Link href="/prep/mock" className={btnPlain}>
-          <ArrowLeft className="size-4" aria-hidden /> All mocks
+        <Link href="/prep" className={btnPlain}>
+          <ArrowLeft className="size-4" aria-hidden /> Back to Exam Prep
         </Link>
       </div>
     </div>

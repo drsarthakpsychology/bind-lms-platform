@@ -35,7 +35,7 @@ export default async function PlacementPage() {
   return (
     <div className="mx-auto max-w-2xl space-y-6">
       <Link href="/study" className={backLinkClass}>
-        <ArrowLeft className="size-4" aria-hidden /> Study
+        <ArrowLeft className="size-4" aria-hidden /> Back to Study
       </Link>
       <PlacementRunner questions={questions} previous={previous} saving={isLearner} />
     </div>

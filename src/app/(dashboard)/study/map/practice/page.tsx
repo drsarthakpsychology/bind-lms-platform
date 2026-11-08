@@ -38,7 +38,7 @@ export default async function PracticePage({ searchParams }: { searchParams: Pro
   return (
     <div className="mx-auto max-w-2xl space-y-6">
       <Link href="/study/map" className={backLinkClass}>
-        <ArrowLeft className="size-4" aria-hidden /> Your map
+        <ArrowLeft className="size-4" aria-hidden /> Back to your map
       </Link>
       <header className="space-y-1">
         <p className="text-eyebrow text-link">Practice</p>

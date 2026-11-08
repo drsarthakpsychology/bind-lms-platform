@@ -459,7 +459,7 @@ function Result({ done, run, misses, bests, error, pending, onAgain }: { done: D
           <RotateCcw className="size-4" aria-hidden /> Play again <span className="hidden text-sm font-normal lg:inline">(Enter)</span>
         </button>
         <Link href="/games" className={btnSecondary}>
-          <ArrowLeft className="size-4" aria-hidden /> All games
+          <ArrowLeft className="size-4" aria-hidden /> Back to Games
         </Link>
       </div>
     </div>

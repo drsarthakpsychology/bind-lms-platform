@@ -67,7 +67,7 @@ export function LabHome({ serverState, save }: { serverState: LearnState | null;
   return (
     <div className="mx-auto w-full min-w-0 max-w-4xl space-y-8">
       <Link href="/games" className={backLinkClass}>
-        <ArrowLeft className="size-4" aria-hidden /> Games
+        <ArrowLeft className="size-4" aria-hidden /> Back to Games
       </Link>
 
       <header className="flex items-start gap-4">

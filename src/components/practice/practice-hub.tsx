@@ -35,7 +35,7 @@ export type HubTool = { href: string; title: string; text: string; icon: LucideI
 export const MAIN_TOOLS: HubTool[] = [
   { href: "/practice/daily", title: "Daily case", text: "One new patient a day. Name it in as few clues as you can.", icon: ClipboardList, flag: "learn", tone: "lime" },
   { href: "/practice/consulting-room", title: "AI patient interview", text: "Talk to a patient. Then see what you missed.", icon: Stethoscope, flag: "consulting_room", tone: "ink" },
-  { href: "/practice/mse", title: "MSE", text: "Describe what you see before you label it.", icon: Brain, flag: "mse", tone: "blue" },
+  { href: "/practice/mse", title: "Mental state exam", text: "Describe what you see before you label it.", icon: Brain, flag: "mse", tone: "blue" },
   { href: "/practice/formulation", title: "Formulation", text: "Sort the 5Ps and write the story of the case.", icon: Wand2, flag: "formulation", tone: "lime" },
 ];
 
@@ -48,13 +48,13 @@ export const THINK_TOOLS: HubTool[] = [
   { href: "/practice/detective", title: "Clinic detective", text: "Name the disorder or medicine from clues.", icon: Search, flag: "learn", tone: "plain" },
   { href: "/practice/scenarios", title: "What would you do", text: "Tricky patient moments, real consequences.", icon: MessagesSquare, flag: "learn", tone: "plain" },
   { href: "/practice/terms", title: "Say it clinically", text: "Everyday words into case-sheet words.", icon: Languages, flag: "learn", tone: "plain" },
-  { href: "/practice/judgment", title: "Judgment", text: "New facts change the odds.", icon: Gauge, flag: "judgment", tone: "plain" },
+  { href: "/practice/judgment", title: "Judgment calls", text: "New facts change the odds.", icon: Gauge, flag: "judgment", tone: "plain" },
   { href: "/practice/ethics", title: "Ethics, law & referral", text: "What to do, then the law behind it.", icon: Scale, flag: "ethics", tone: "plain" },
 ];
 
 export const MORE_TOOLS: HubTool[] = [
   { href: "/practice/osce", title: "OSCE stations", text: "One task, out loud, against the clock.", icon: Timer, flag: "osce", tone: "plain" },
-  { href: "/practice/role-play", title: "Peer role-play", text: "One of you is the patient.", icon: Users, flag: "peer_roleplay", tone: "plain" },
+  { href: "/practice/role-play", title: "Practise with a classmate", text: "One of you is the patient.", icon: Users, flag: "peer_roleplay", tone: "plain" },
   { href: "/practice/landmark", title: "Landmark cases", text: "Famous cases: what was believed, and what held up.", icon: GraduationCap, flag: "landmark", tone: "plain" },
 ];
 
