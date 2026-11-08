@@ -76,6 +76,11 @@ Q: In a tissue with a large receptor reserve, a partial agonist is most likely t
 :::
 
 ## 5.2 Targets and signalling: from receptor to gene [core][advanced]
+
+:::widget figure
+{"id": "synapse", "quiz": true, "caption": "Name each numbered part in your head first, then tap to check."}
+:::
+
 | Target family | How it signals | Speed | Psychiatric examples |
 |---|---|---|---|
 | Ligand-gated ion channels | Opens a pore | Milliseconds | GABA-A (benzodiazepines), NMDA (ketamine), 5-HT3 (ondansetron), nicotinic |

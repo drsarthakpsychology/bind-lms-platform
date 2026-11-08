@@ -173,6 +173,10 @@ Most side effects are not random. They come from a medicine acting on receptors 
 {"id": "tca-synapse", "quiz": true}
 :::
 
+:::widget figure
+{"id": "autonomic"}
+:::
+
 ### The side-effect map
 | If a medicine blocks... | Expect... |
 |---|---|

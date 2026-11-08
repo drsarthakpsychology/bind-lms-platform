@@ -16,6 +16,7 @@ export const NOTES_B: Note[] = [
       { title: "Emergencies", style: "alert", points: [["Serotonin syndrome: fever, sweating, jerky muscles (e.g., when combined with tramadol)", "Serotonin toxicity: clonus, hyperthermia, autonomic instability"], ["Stopping suddenly: 'brain zaps', dizziness (worst with paroxetine)", "Discontinuation syndrome (FINISH)"]] },
     ],
     terms: [["Brain zaps after stopping", "Discontinuation symptoms"], ["Feels jittery after starting", "Activation / akathisia"]],
+    figures: [{id: "synapse", focus: ["transporter", "mito"]}],
     quiz: { lessonId: "ad-1" },
   },
   {
@@ -33,6 +34,7 @@ export const NOTES_B: Note[] = [
       { title: "Emergency", style: "alert", points: [["NMS: very high fever, rigid muscles, confusion", "Neuroleptic malignant syndrome: hyperthermia, lead-pipe rigidity, autonomic instability,upCK"]] },
     ],
     terms: [["Can't sit still", "Akathisia"], ["Neck suddenly twisted", "Acute dystonia"], ["Lip-smacking movements", "Tardive dyskinesia"], ["Periods stopped on medicine", "Hyperprolactinaemia"]],
+    figures: [{id: "dopamine-pathways", quiz: true}, {id: "basal-ganglia-circuit"}],
     quiz: { lessonId: "ap-1" },
   },
   {
@@ -47,6 +49,7 @@ export const NOTES_B: Note[] = [
       { title: "Others", tone: "blue", points: [["Valproate: avoid in women who could become pregnant", "Major teratogen; hepatotoxicity, pancreatitis"], ["Lamotrigine: start slowly to avoid a serious rash", "Slow titration (SJS); halve with valproate"], ["Carbamazepine: speeds up other drugs' breakdown", "CYP3A4 inducer; hyponatraemia; HLA-B*1502"]] },
       { title: "Benzodiazepines", tone: "ink", points: ["Fast relief, short-term only (2 to 4 weeks)", "Dependence and withdrawal seizures", "Dangerous with alcohol or opioids", "Used in alcohol withdrawal and catatonia"] },
     ],
+    figures: [{id: "endocrine", focus: ["thyroid", "parathyroid"]}],
     quiz: { lessonId: "ms-1" },
   },
   {
@@ -91,6 +94,7 @@ export const NOTES_B: Note[] = [
       { title: "Help them change", tone: "ink", points: ["Motivational interviewing (OARS)", "Naltrexone/acamprosate/disulfiram for alcohol", "Buprenorphine/methadone for opioids"] },
     ],
     terms: [["Shaking in the morning", "Withdrawal tremor"], ["Drinks in the morning to steady", "Eye-opener"], ["Needs more for the same effect", "Tolerance"]],
+    figures: [{id: "dopamine-pathways", focus: ["mesolimbic", "accumbens"]}],
     quiz: { lessonId: "ls-3" },
   },
   {
@@ -105,6 +109,7 @@ export const NOTES_B: Note[] = [
       { title: "Dementia types", tone: "blue", points: ["Alzheimer's: memory first", "Vascular: step-wise after strokes", ["Lewy body: hallucinations, fluctuations, parkinsonism", "DLB: severe antipsychotic sensitivity"], "Frontotemporal: personality/behaviour change"] },
       { title: "Delirium: what to do", tone: "ink", points: ["Find the cause: infection, medicines, sodium, retention, pain", "Reorient, glasses/hearing aids, family, sleep", "Antipsychotics only for severe distress/risk"] },
     ],
+    figures: [{id: "hippocampus"}, {id: "cholinergic-projections", focus: ["nbm"]}],
     quiz: { lessonId: "ls-2" },
   },
   {
@@ -135,6 +140,7 @@ export const NOTES_B: Note[] = [
       { title: "Trauma-informed care", style: "alert", points: ["Safety and choice first", "Don't force details in the first session", "Watch your own reactions"] },
     ],
     terms: [["Sees it happening again", "Flashback"], ["Always on guard", "Hypervigilance"], ["Jumps at sounds", "Exaggerated startle"]],
+    figures: [{id: "amygdala-fear", focus: ["vmpfc", "hippocampus"]}],
     quiz: { lessonId: "anx-2" },
   },
   {

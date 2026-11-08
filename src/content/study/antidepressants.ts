@@ -34,6 +34,10 @@ const p1 = String.raw`
 ## 0.1 Nerve cells, messengers and receptors [core][starting]
 Your brain is made of about 86 billion nerve cells, called **neurons**. A neuron is a long, thin cell that carries a tiny electrical signal from one end to the other. But neurons do not touch each other. Between one neuron and the next there is a microscopic gap. To get a message across that gap, the first neuron releases a chemical. That chemical is a **neurotransmitter**: a chemical messenger.
 
+:::widget figure
+{"id": "neuron"}
+:::
+
 On the far side of the gap, the next neuron has special proteins sitting in its surface, like little docking stations. These are **receptors**. When the right messenger fits into a receptor, the receiving neuron changes: it may become more likely to fire, less likely to fire, or switch on genes inside the cell.
 
 :::analogy Lock and key
@@ -104,6 +108,10 @@ Q: Why can one antidepressant both help mood and cause nausea?
 ## 0.2 The synapse: release, the recycling pump and the enzyme [core][starting]
 The gap between two neurons, together with the two cell surfaces on either side, is called a **synapse**. Every antidepressant works somewhere in this tiny space, so it is worth knowing its parts well.
 
+:::widget figure
+{"id": "synapse", "focus": ["transporter", "mito"]}
+:::
+
 ### What happens at a serotonin synapse
 1. The sending neuron stores serotonin in little bags (vesicles).
 2. An electrical signal arrives. The bags empty into the gap.
@@ -152,6 +160,10 @@ Q: A medicine stops monoamine oxidase working. What happens to serotonin?
 
 ## 0.3 How a tablet reaches the brain: the plain basics [core][starting]
 A tablet swallowed in Chennai has a long journey before it reaches a receptor in the brain. **Pharmacokinetics** is the study of that journey: what the body does to the medicine. (Its partner word, **pharmacodynamics**, is what the medicine does to the body. You will meet both again in the Advanced level and in their own module.)
+
+:::widget figure
+{"id": "glia", "focus": ["endfeet", "capillary"]}
+:::
 
 ### The four stages
 1. **Absorption.** The tablet dissolves, and the medicine passes through the gut wall into the blood. Some medicines need food to be absorbed well; others are slowed by it.
@@ -500,6 +512,10 @@ Q: The receptor that first brakes serotonin firing when an SSRI is started is:
 ## 2.1 SSRIs [core][beginner]
 SSRIs are first-line for depression and most anxiety disorders: effective, reasonably well tolerated, once daily, and **much safer in overdose** than tricyclics.
 
+:::widget figure
+{"id": "serotonin-projections", "quiz": true, "caption": "Name each numbered part in your head first, then tap to check."}
+:::
+
 
 :::widget release
 {
@@ -629,6 +645,11 @@ Q: Why do SSRIs increase bleeding risk?
 :::
 
 ## 2.2 SNRIs, bupropion and mirtazapine [core][beginner]
+
+:::widget figure
+{"id": "noradrenaline-projections"}
+:::
+
 ### SNRIs: a second pump
 :::widget synapse
 {"drug": "snri", "caption": "An SNRI blocks the serotonin pump and, increasingly at higher doses, the noradrenaline pump. Noradrenaline adds energy and pain relief, and also sweating, raised blood pressure and a faster pulse."}
@@ -881,6 +902,11 @@ Q: A man on trazodone for sleep has a painful erection that has lasted 4 hours. 
 :::
 
 ## 2.6 Side effects that matter in practice [core][beginner]
+
+:::widget figure
+{"id": "autonomic", "focus": ["saliva", "bladder", "gut"]}
+:::
+
 | Side effect | Who is at risk | What to do |
 |---|---|---|
 | **Low sodium** (SIADH) | Older adults, women, diuretics, low body weight, also with SNRIs | Check sodium at baseline and early on in those at risk; warning signs are confusion, falls, headache, nausea; mirtazapine and bupropion carry lower risk |

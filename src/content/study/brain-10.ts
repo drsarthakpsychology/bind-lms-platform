@@ -5,6 +5,11 @@ export const advTheories = String.raw`
 Exams ask you to "discuss the biological basis of schizophrenia" in 15 marks. A strong answer moves through the hypotheses in historical order, gives the key evidence for each with a name and a number, states the limits, and ends by showing how they fit together. This section gives you that structure; imaging (6.4), development (5.4) and genetics (5.6) supply the details.
 
 ### The dopamine hypothesis in three versions
+
+:::widget figure
+{"id": "dopamine-pathways", "quiz": true, "caption": "Name each numbered part in your head first, then tap to check."}
+:::
+
 | Version | Claim | Key evidence |
 |---|---|---|
 | **I: dopamine excess** (1960s to 1970s) | Too much dopamine activity causes psychosis | Arvid Carlsson showed antipsychotics increased dopamine turnover (he shared the 2000 Nobel Prize); **Philip Seeman** and **Ian Creese, David Burt and Solomon Snyder** (1975 to 1976) found that antipsychotics' clinical potency correlates with their **D2 binding affinity**; amphetamine and levodopa can cause psychosis |
@@ -304,6 +309,11 @@ Q: Maier and Seligman's later neuroscience of learned helplessness concluded tha
 These disorders share the fear and threat circuits of 5.2, but each has its own signature: panic's body alarm, OCD's looping circuit, PTSD's memory that will not settle.
 
 ### Anxiety and panic
+
+:::widget figure
+{"id": "amygdala-fear", "quiz": true, "caption": "Name each numbered part in your head first, then tap to check."}
+:::
+
 | Theory | Core idea and evidence |
 |---|---|
 | **Noradrenergic (locus coeruleus)** | Eugene Redmond showed that stimulating the locus coeruleus in monkeys produced fear and that lesions reduced it; **yohimbine** (an alpha-2 blocker that raises noradrenaline) provokes panic in panic disorder; clonidine damps it |
@@ -329,6 +339,11 @@ These disorders share the fear and threat circuits of 5.2, but each has its own 
 :::
 
 ### OCD
+
+:::widget figure
+{"id": "prefrontal", "focus": ["mofc", "lofc", "acc"]}
+:::
+
 - **Cortico-striato-thalamo-cortical (CSTC) loop**: overactivity of the **orbitofrontal cortex, caudate and anterior cingulate** with the thalamus, a loop that keeps signalling "not done" (5.2, 6.4). The direct pathway is thought to dominate the indirect pathway in this loop.
 - **Serotonin**: the key clue was that **clomipramine**, a strongly serotonergic tricyclic, works in OCD while the noradrenergic desipramine does not; SSRIs need higher doses and longer trials than in depression; the serotonin agonist mCPP can worsen symptoms.
 - **Dopamine**: low-dose antipsychotic augmentation helps, especially with **tics**; OCD and Tourette syndrome run together.
@@ -360,6 +375,10 @@ Only a minority of people exposed to trauma develop PTSD (roughly 1 in 10 to 1 i
 - **Structure**: small hippocampus, partly **pre-existing** (Gilbertson's twins, 6.4).
 - **Genes and epigenetics**: heritability about 30 to 40 per cent; FKBP5 variants interacting with childhood trauma (5.6).
 - **Dissociative subtype**: excess prefrontal inhibition of limbic areas ("overmodulation"), opposite to the usual undermodulation.
+
+:::widget figure
+{"id": "hippocampus", "focus": ["dg", "ammon"]}
+:::
 
 :::widget flow
 {
@@ -426,6 +445,10 @@ Two very different groups, one theme: in addiction, normal learning machinery is
 ### Addiction: one final common pathway, many doors
 In 1988 Gaetano Di Chiara and Assunta Imperato showed that most drugs misused by humans **raise dopamine in the nucleus accumbens**, more than natural rewards. Each drug opens a different door to the same room.
 
+:::widget figure
+{"id": "dopamine-pathways", "focus": ["vta", "accumbens"]}
+:::
+
 | Drug | How it raises accumbens dopamine |
 |---|---|
 | **Cocaine** | Blocks the dopamine transporter (DAT) |
@@ -476,6 +499,11 @@ In 1988 Gaetano Di Chiara and Assunta Imperato showed that most drugs misused by
 Addictions are about **50 per cent heritable**. Some variants **protect**: the **ALDH2** variant common in East Asian populations causes flushing and nausea after alcohol and strongly lowers the risk of alcohol use disorder; **disulfiram** mimics this by blocking the same enzyme.
 
 ### Dementia: Alzheimer's disease
+
+:::widget figure
+{"id": "cholinergic-projections", "focus": ["nbm"]}
+:::
+
 - **Amyloid cascade hypothesis** (John Hardy and Gerald Higgins, 1992): the amyloid precursor protein is cut by **beta-secretase** and **gamma-secretase** (whose core is **presenilin**) into **amyloid-beta 42**, which aggregates into plaques, triggering tau pathology, inflammation, synapse loss and dementia.
 - **Supporting evidence**: every known gene causing early-onset familial Alzheimer's (APP, PSEN1, PSEN2) increases amyloid-beta 42; people with **Down syndrome** (three copies of APP) develop Alzheimer's pathology by about 40; a protective APP variant (found in Iceland) reduces amyloid production.
 - **Tau**: hyperphosphorylated tau forms **neurofibrillary tangles** that spread in a predictable order (Heiko Braak's stages: transentorhinal, then limbic, then neocortex), and tangle burden matches cognitive decline **better** than plaque burden.

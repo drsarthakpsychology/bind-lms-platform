@@ -9,6 +9,11 @@ The endocrine table in 4.2 listed the glands. Exams go further and ask how each 
 :::
 
 ### How the hypothalamus talks to the pituitary
+
+:::widget figure
+{"id": "pituitary"}
+:::
+
 - To the **anterior pituitary**: hypothalamic neurons release hormones into a tiny private blood supply, the **hypophyseal portal system**, at the median eminence.
 - To the **posterior pituitary**: the neurons themselves (in the supraoptic and paraventricular nuclei) run their axons down the stalk and release **oxytocin** and **vasopressin** straight into the blood. The posterior pituitary is really brain tissue.
 
@@ -25,6 +30,11 @@ The endocrine table in 4.2 listed the glands. Exams go further and ask how each 
 :::
 
 ### The HPA axis and the adrenal gland
+
+:::widget figure
+{"id": "hpa-axis", "quiz": true, "caption": "Name each numbered part in your head first, then tap to check."}
+:::
+
 - **Rhythm**: cortisol peaks around waking (rising further in the half hour after waking, the "cortisol awakening response") and falls to its lowest around midnight. A test result means little without the time it was taken.
 - **Feedback**: cortisol acts on two receptors. **Mineralocorticoid receptors** bind it tightly and are filled even at low levels (rich in the hippocampus); **glucocorticoid receptors** bind it loosely and fill at peaks and in stress, switching the axis off at the hypothalamus, pituitary and hippocampus.
 - **Fast and slow arms**: the **sympathetic-adrenal-medullary (SAM)** system releases adrenaline in seconds; the HPA axis raises cortisol over 15 to 30 minutes.
@@ -217,6 +227,10 @@ In 4.1 you met the sleep stages, the 90-minute cycle and the body clock. Now lea
 ### Recording the brain's electricity
 Hans Berger, a German psychiatrist, recorded the first human **electroencephalogram (EEG)** in 1929; the alpha rhythm was first called the "Berger rhythm". Electrodes are placed by the international **10-20 system** (spaced at 10 and 20 per cent of the distances across the skull). The EEG records the summed slow currents of millions of cortical pyramidal cells lined up side by side, not single spikes.
 
+:::widget figure
+{"id": "eeg-1020", "quiz": true, "caption": "Name each numbered part in your head first, then tap to check."}
+:::
+
 | Rhythm | Frequency | Typical state |
 |---|---|---|
 | **Delta** | 0.5 to 4 per second | Deep N3 sleep; in an awake adult, a sign of disease (delirium, a lesion, encephalitis) |
@@ -297,6 +311,11 @@ Hans Berger, a German psychiatrist, recorded the first human **electroencephalog
 :::
 
 ### What switches sleep on and off
+
+:::widget figure
+{"id": "sleep-centres", "quiz": true, "caption": "Name each numbered part in your head first, then tap to check."}
+:::
+
 - **Borbély's two-process model** (1982): sleep timing depends on **Process S**, a homeostatic **sleep pressure** that builds the longer you are awake (carried partly by **adenosine**) and drains during sleep, and **Process C**, the **circadian** alerting signal from the SCN. You fall asleep easily when S is high and C has dropped.
 - **The flip-flop switch** (Clifford Saper): the **ventrolateral preoptic nucleus (VLPO)** uses GABA to switch off the arousal centres (locus coeruleus, raphe, tuberomammillary nucleus), and they in turn inhibit the VLPO. Like a light switch, the brain snaps between sleep and waking instead of drifting. **Orexin** holds the switch steady on the waking side.
 - **The reciprocal interaction model** of REM (Robert McCarley and Allan Hobson, 1975): **REM-on** cholinergic neurons in the pons (pedunculopontine and laterodorsal tegmental nuclei) and **REM-off** noradrenaline and serotonin neurons (locus coeruleus and raphe) inhibit each other. REM begins when the aminergic neurons fall silent and the cholinergic ones fire.

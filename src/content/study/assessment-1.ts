@@ -1348,6 +1348,14 @@ Q: Which is a clinician-rated mania scale?
 ## 2.6 Neuropsychological assessment and the Indian batteries [core][beginner]
 Neuropsychological tests measure thinking skills that depend on particular brain systems. They help answer: Is there a cognitive problem? What kind? How severe? How does it affect daily life? Has it changed over time?
 
+:::widget figure
+{"id": "brodmann"}
+:::
+
+:::widget figure
+{"id": "prefrontal"}
+:::
+
 ### Bedside screening tests
 | Test | What it is | Note |
 |---|---|---|

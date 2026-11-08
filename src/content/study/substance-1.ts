@@ -75,6 +75,10 @@ Q: Which statement about addiction is most accurate?
 ## 1.2 Reward, tolerance and withdrawal [core][starting]
 Why do substances become so hard to put down? Three ideas explain most of it.
 
+:::widget figure
+{"id": "dopamine-pathways", "focus": ["mesolimbic", "accumbens"]}
+:::
+
 ### 1. Reward
 The brain has a **reward system** that makes us repeat things that help us survive: eating, drinking water, being with people we love, sex. A key chemical in this system is **dopamine**, released in a deep brain area (the nucleus accumbens) when something is better than expected. Dopamine does not so much create pleasure as **mark things as important**: "Do that again."
 

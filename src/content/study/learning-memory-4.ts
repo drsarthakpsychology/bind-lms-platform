@@ -130,6 +130,11 @@ Q: Pre-exposing a tone many times on its own slows later conditioning to it. Thi
 :::
 
 ## 4.2 Learning theorists and the biology of learning [core][advanced]
+
+:::widget figure
+{"id": "hippocampus", "focus": ["schaffer"]}
+:::
+
 ### Four classic theorists
 | Theorist | Big idea | Key terms | Lasting influence |
 |---|---|---|---|
@@ -380,6 +385,15 @@ Q: A witness confidently identifies a suspect, but only after police said "Good,
 :::
 
 ## 4.4 The biology of memory and the amnesias [core][advanced]
+
+:::widget figure
+{"id": "limbic-system"}
+:::
+
+:::widget figure
+{"id": "hippocampus", "quiz": true, "caption": "Name each numbered part in your head first, then tap to check."}
+:::
+
 ### H. M.: the case that changed memory science
 In 1953, William Scoville removed most of the medial temporal lobes on both sides (including much of the hippocampus and amygdala) of Henry Molaison, 27, to stop severe epilepsy. Seizures improved, but H. M. was left with:
 - Dense **anterograde amnesia**: he could not form new **declarative** memories. He read the same magazine as if new; he met Brenda Milner, who tested him for decades, as a stranger each time.

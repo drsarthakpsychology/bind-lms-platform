@@ -113,6 +113,14 @@ For seventy years every antipsychotic has worked mainly by turning down D2 signa
 {"id": "gpcr-scene"}
 :::
 
+:::widget figure
+{"id": "serotonin-projections", "focus": ["cortex"]}
+:::
+
+:::widget figure
+{"id": "cholinergic-projections"}
+:::
+
 ### How the muscarinic approach works
 - **Xanomeline** is an agonist at muscarinic **M1 and M4** receptors in the brain. M4 receptors sit on neurons in the striatum and on the inputs to the dopamine cell bodies; switching them on reduces dopamine release in the striatum from upstream. M1 action in the cortex may help thinking.
 - On its own, xanomeline also activates muscarinic receptors in the gut, sweat glands and heart: vomiting, sweating, diarrhoea. Early trials stopped for this reason.

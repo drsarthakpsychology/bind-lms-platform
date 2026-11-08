@@ -209,6 +209,11 @@ Q: Expert racetrack handicappers used complex reasoning unrelated to their IQ. T
 :::
 
 ## 4.3 Thinking and language in the clinic [core][advanced]
+
+:::widget figure
+{"id": "language-areas", "quiz": true, "caption": "Name each numbered part in your head first, then tap to check."}
+:::
+
 ### Reasoning biases in psychosis
 - **Jumping to conclusions**: in the **beads task**, people see beads drawn one by one from one of two jars (for example, 85 black and 15 white, or the reverse) and decide which jar they come from. People with delusions often decide after only **one or two beads**, much sooner than controls, with high confidence. About half of people with delusions show this "hasty decision" style.
 - **Bias against disconfirmatory evidence**: once a belief is formed, contrary evidence is discounted.

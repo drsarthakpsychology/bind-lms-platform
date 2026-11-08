@@ -690,6 +690,14 @@ Q: Three months after her son's death, Mrs Iyer has waves of crying with reminde
 ## 2.1 The biology at a glance [core][beginner]
 No single cause explains depression. Think **vulnerability plus stress**: genes and early experience set the risk; life events and the body pull the trigger. The Advanced level goes deeper into each piece.
 
+:::widget figure
+{"id": "serotonin-projections"}
+:::
+
+:::widget figure
+{"id": "hpa-axis"}
+:::
+
 ### Genes
 - First-degree relatives of a person with depression have about 2 to 3 times the risk.
 - Twin studies put heritability at roughly a third to a half. Environment matters at least as much.
@@ -1412,6 +1420,15 @@ Q: A new mother in a village is depressed after childbirth. There is no psycholo
 :::
 
 ## 4.5 When the first treatment fails, and ECT [core][beginner]
+
+:::widget figure
+{"id": "ect-placements"}
+:::
+
+:::widget figure
+{"id": "tms"}
+:::
+
 :::widget guess
 {"prompt": "Out of every 100 people starting their first antidepressant, about how many do not respond to it?", "min": 0, "max": 100, "step": 5, "unit": "in 100", "answer": [25, 40], "reveal": "About a third. That is why a clear plan for 'what next' matters from day one. The large STAR*D study showed that each further step helps some more people, but with smaller gains, and no single next step clearly beat the others.", "clinician": "Roughly a third do not respond to the first antidepressant. In STAR*D, remission rates fell with each successive step; later re-analyses suggest the cumulative remission figure originally reported was optimistic. No switching or augmentation strategy was clearly superior."}
 :::
@@ -1658,6 +1675,10 @@ Q: The main relative contraindication to ECT is:
 ## 5.1 Inside the synapse: receptor-level pharmacology [core][advanced]
 This level assumes you know the Beginner material. Here we look at what each medicine does at the receptor, because that predicts both benefit and side effects.
 
+:::widget figure
+{"id": "synapse", "quiz": true, "caption": "Name each numbered part in your head first, then tap to check."}
+:::
+
 ### SSRIs: why the delay, and why early side effects
 1. The SSRI blocks **SERT**, the serotonin transporter, on the sending neuron. Serotonin rises first not at the nerve terminal but around the cell body in the **raphe nuclei**, where **5HT1A somatodendritic autoreceptors** sense it.
 2. Those autoreceptors act as a brake: more serotonin there **reduces** firing. So at first, the net change at the terminals in the cortex is modest.
@@ -1739,6 +1760,15 @@ Q: A man on phenelzine eats aged cheese at a wedding and develops a severe heada
 :::
 
 ## 5.2 Circuits, stress and plasticity [core][advanced]
+
+:::widget figure
+{"id": "prefrontal", "focus": ["sgacc", "dlpfc"]}
+:::
+
+:::widget figure
+{"id": "hippocampus", "focus": ["dg"]}
+:::
+
 ### The stress system in detail
 - You met the CRH, ACTH and cortisol chain in 2.1. The switch-off depends on two receptor types: high-affinity **mineralocorticoid receptors**, which set the resting tone, and lower-affinity **glucocorticoid receptors** in the hippocampus, hypothalamus and pituitary, which are occupied when cortisol is high and do most of the braking (negative feedback).
 - In many people with severe, melancholic or psychotic depression, feedback is weak: cortisol stays high and fails to fall after **dexamethasone** (the dexamethasone suppression test, now a research tool, not a diagnostic test).
@@ -1917,6 +1947,11 @@ Q: Which statement about psychedelic medicine is accurate as of late 2026?
 :::
 
 ## 6.2 Inflammation, metabolism and GLP-1 medicines [core][advanced]
+
+:::widget figure
+{"id": "gut-brain"}
+:::
+
 ### Inflammation
 - About a quarter of people with depression show **low-grade inflammation** (for example CRP above 3 mg/L). Rates are higher with obesity, childhood adversity and treatment resistance.
 - **Cytokines** (IL-6, TNF-alpha) reach the brain and shift tryptophan away from serotonin towards the **kynurenine pathway** (via the enzyme IDO), producing quinolinic acid, which stimulates NMDA receptors. They also dampen dopamine in reward circuits, which fits with anhedonia and fatigue.

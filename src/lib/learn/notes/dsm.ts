@@ -22,6 +22,7 @@ export const DSM_NOTES: Note[] = [
       { title: "Stress and the body", tone: "ink", points: [["Stress, then brain signal, then hormone chain, then cortisol", "HPA axis: CRH → ACTH → cortisol"], ["Long-term stress affects sleep, memory and mood", "Chronic HPA activation linked to depression"]] },
       { title: "Why therapy works too", style: "alert", points: ["The brain rewires with practice (neuroplasticity)", "Therapy and medicines both change brain activity", "Sleep, exercise and connection protect the brain"] },
     ],
+    figures: [{id: "brain-lateral"}, {id: "brain-medial"}, {id: "neuron"}, {id: "synapse"}, {id: "hpa-axis"}],
     quiz: { domain: "neuroscience" },
   },
   {
@@ -68,6 +69,7 @@ export const DSM_NOTES: Note[] = [
       { title: "How it sounds", style: "chips", points: ["“They are watching me through the TV”", "“The voices discuss me”", "“My thoughts are being taken out”", "(Says nothing, stares, holds one position)"] },
       { title: "Watch out", style: "alert", points: ["Rule out drugs and medical causes first", "Command voices to harm = urgent", "Say 'person with schizophrenia'"] },
     ],
+    figures: [{id: "dopamine-pathways", quiz: true}],
     quiz: { lessonId: "psy-1" },
   },
   {
@@ -195,6 +197,7 @@ export const DSM_NOTES: Note[] = [
       { title: "Sleep-wake", tone: "lime", points: [["Insomnia: trouble falling or staying asleep, 3 or more nights a week for 3 or more months", "With daytime impairment despite adequate opportunity"], "Hypersomnolence: excessive sleepiness despite enough sleep", ["Narcolepsy: sudden sleep attacks, sometimes collapse with laughter", "Cataplexy and/or hypocretin deficiency"], ["Obstructive sleep apnoea: snoring, breathing pauses, daytime sleepiness", "Diagnosed by sleep study"], "Circadian rhythm disorders (e.g., shift work, delayed sleep phase)", ["Parasomnias: sleepwalking, night terrors, nightmares, acting out dreams", "NREM arousal disorders, nightmare disorder, REM sleep behaviour disorder"], "Restless legs syndrome: urge to move legs at night"] },
       { title: "Watch out", style: "alert", points: ["Poor sleep is a common early sign of mania and depression", "REM sleep behaviour disorder can precede Parkinson's or Lewy body dementia"] },
     ],
+    figures: [{id: "sleep-centres"}],
     quiz: { domain: "disorders" },
   },
   {
@@ -238,6 +241,7 @@ export const DSM_NOTES: Note[] = [
       { title: "Behavioural addiction", tone: "blue", points: [["Gambling disorder: 4 or more signs in 12 months", "At least 4 of 9 criteria in 12 months"], "Internet gaming disorder: listed for further study"] },
       { title: "How it sounds", style: "chips", points: ["“I can stop whenever I want”", "“I drink in the morning to steady my hands”", "“Just one more round and I'll win it back”"] },
     ],
+    figures: [{id: "dopamine-pathways", focus: ["vta", "accumbens"]}],
     quiz: { lessonId: "ls-3" },
   },
   {
@@ -252,6 +256,7 @@ export const DSM_NOTES: Note[] = [
       { title: "Causes (subtypes)", style: "chips", points: ["Alzheimer's", "Vascular", "Lewy body", "Frontotemporal", "Traumatic brain injury", "Parkinson's", "Substance/medication", "HIV", "Huntington's", "Prion"] },
       { title: "How it sounds", style: "chips", points: ["“Maa keeps asking the same question”", "“He was fine yesterday, now he's confused”", "“She sees children in the room”"] },
     ],
+    figures: [{id: "limbic-system"}],
     quiz: { lessonId: "ls-2" },
   },
   {

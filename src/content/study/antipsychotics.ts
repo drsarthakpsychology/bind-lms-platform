@@ -75,6 +75,10 @@ Q: A young man has stopped bathing, no longer meets friends and shows little emo
 ## 0.2 Dopamine: the brain's "this matters" signal [core][starting]
 **Dopamine** is a messenger made by small groups of cells deep in the midbrain. It does several jobs, depending on where its fibres go: movement, motivation, reward, and a job called **salience**: marking things as important and worth attention.
 
+:::widget figure
+{"id": "dopamine-pathways"}
+:::
+
 
 :::widget release
 {
@@ -329,6 +333,14 @@ Q: The best first response when a client says side effects made them stop their 
 ## 1.1 Dopamine pathways [core][beginner]
 Dopamine travels along four main pathways. An antipsychotic blocks D2 receptors in all of them at once, but we only want the effect in one. That single fact explains most of the benefit and many of the side effects.
 
+:::widget figure
+{"id": "dopamine-pathways", "quiz": true, "caption": "Name each numbered part in your head first, then tap to check."}
+:::
+
+:::widget figure
+{"id": "basal-ganglia-circuit", "focus": ["indirect", "da"]}
+:::
+
 | Pathway | Runs from and to | Normal role | Effect of D2 blockade |
 |---|---|---|---|
 | **Mesolimbic** | Ventral tegmental area (VTA) to the nucleus accumbens and limbic areas | Reward, salience | **Reduces positive symptoms** (intended); may dull pleasure and motivation |
@@ -575,6 +587,11 @@ Q: An 82-year-old with Lewy body dementia is distressed by visual hallucinations
 # Part II · Side effects
 
 ## 2.1 Extrapyramidal side effects [core][beginner]
+
+:::widget figure
+{"id": "basal-ganglia"}
+:::
+
 | Effect | When it appears | What you see | Treatment |
 |---|---|---|---|
 | **Acute dystonia** | Hours to days after starting or raising the dose | Painful sustained spasms: neck twisting (torticollis), eyes rolling up (**oculogyric crisis**), jaw, tongue; frightening; young men most at risk | **Anticholinergic IM or IV** (procyclidine, benztropine, or promethazine); relief within minutes; then oral cover for a few days |
@@ -675,6 +692,11 @@ Q: Five days after a haloperidol increase, a man has high fever, rigid limbs, co
 :::
 
 ## 2.3 Metabolic, cardiac and other effects [core][beginner]
+
+:::widget figure
+{"id": "pituitary", "focus": ["anterior"]}
+:::
+
 | Effect | High-risk drugs | What to do |
 |---|---|---|
 | Weight gain, diabetes, raised lipids | Olanzapine, clozapine, quetiapine, chlorpromazine | Diet and exercise advice from day one; metformin may help; switch to aripiprazole, lurasidone or ziprasidone |

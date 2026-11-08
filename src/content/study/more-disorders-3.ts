@@ -65,6 +65,15 @@ Q: The most effective first-line psychological treatment for bulimia nervosa is:
 :::
 
 ## 3.2 Sleep medicine in depth [core][advanced]
+
+:::widget figure
+{"id": "sleep-centres", "quiz": true, "caption": "Name each numbered part in your head first, then tap to check."}
+:::
+
+:::widget figure
+{"id": "eeg-1020"}
+:::
+
 ### CBT for insomnia (CBT-I)
 CBT-I is the **first-line treatment** for chronic insomnia in adults, including older adults and people with depression, anxiety and chronic pain. It usually takes **four to eight sessions**, can be delivered in groups or digitally, and its benefits **last**, unlike sleeping pills.
 

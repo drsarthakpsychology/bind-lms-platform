@@ -194,6 +194,10 @@ Q: Which antidepressant is most suitable for an underweight older adult with ins
 ## 2.3 Antipsychotics: pathways and profiles [core][beginner]
 Antipsychotics all block, or partly stimulate, **dopamine D2 receptors**. The brain has several dopamine pathways, and what happens in each explains both the benefits and the side effects.
 
+:::widget figure
+{"id": "dopamine-pathways"}
+:::
+
 :::widget brainmap
 {"title": "Four dopamine pathways and what D2 blockade does in each", "focus": ["basal-ganglia", "prefrontal", "hypothalamus", "amygdala"], "notes": {"amygdala": "Mesolimbic pathway (from the midbrain to the nucleus accumbens and limbic areas): overactivity is linked with hallucinations and delusions. Blocking D2 here treats positive symptoms, and can flatten reward and motivation.", "prefrontal": "Mesocortical pathway: dopamine here is thought to be low in schizophrenia, linked with negative and cognitive symptoms. Blocking D2 here may worsen them; 5-HT2A blockade may release some dopamine.", "basal-ganglia": "Nigrostriatal pathway (substantia nigra to striatum): controls movement. Blocking D2 here causes stiffness, tremor, akathisia, dystonia and, long term, tardive dyskinesia.", "hypothalamus": "Tuberoinfundibular pathway (hypothalamus to pituitary): dopamine normally stops prolactin release. Blocking D2 raises prolactin: breast changes, stopped periods, sexual problems, bone loss."}, "caption": "Tap each highlighted area. One action, D2 blockade, gives very different effects depending on where it happens."}
 :::
@@ -472,6 +476,11 @@ Q: Lamotrigine must be titrated slowly mainly to reduce the risk of:
 :::
 
 ## 2.6 Calming, sleep and side-effect medicines [core][beginner]
+
+:::widget figure
+{"id": "sleep-centres", "focus": ["tmn", "vlpo"]}
+:::
+
 ### Benzodiazepines
 
 :::widget receptor

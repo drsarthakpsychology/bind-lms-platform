@@ -82,6 +82,7 @@ export const NOTES_A: Note[] = [
       { title: "Never skip", style: "alert", points: ["Ask about suicide directly", "Hopelessness = higher risk", "Watch the first weeks of antidepressants in under-25s"] },
     ],
     terms: [["Lost interest in everything", "Anhedonia"], ["Feels slowed down", "Psychomotor retardation"], ["Wakes at 4 am, can't sleep again", "Early morning awakening"], ["Feels worthless", "Worthlessness / excessive guilt"], ["Mood worse in the morning", "Diurnal variation"]],
+    figures: [{id: "serotonin-projections"}, {id: "hpa-axis"}],
     quiz: { lessonId: "mood-1" },
   },
   {
@@ -100,6 +101,7 @@ export const NOTES_A: Note[] = [
       { title: "Red flags", style: "alert", points: ["Not sleeping for days", "Spending or risky sex putting them in danger", "Psychotic symptoms", "Mixed features: high energy and despair = high suicide risk"] },
     ],
     terms: [["Doesn't need sleep", "Decreased need for sleep"], ["Ideas racing", "Flight of ideas"], ["Thinks they're special", "Grandiosity"], ["Can't stop talking", "Pressure of speech"], ["Easily side-tracked", "Distractibility"]],
+    figures: [{id: "sleep-centres", focus: ["scn"]}],
     quiz: { lessonId: "mood-2" },
   },
   {
@@ -119,6 +121,7 @@ export const NOTES_A: Note[] = [
       { title: "Language", style: "alert", points: ["Say 'person with schizophrenia', never 'a schizophrenic'", "Psychosis does not mean violent; people with schizophrenia are more often victims"] },
     ],
     terms: [["Hears voices nobody else hears", "Auditory hallucinations"], ["Believes neighbours are spying", "Persecutory delusion"], ["Talk doesn't connect", "Loosening of associations"], ["No motivation", "Avolition"], ["Thoughts being put in his head", "Thought insertion"]],
+    figures: [{id: "dopamine-pathways"}],
     quiz: { lessonId: "psy-1" },
   },
   {
@@ -135,6 +138,7 @@ export const NOTES_A: Note[] = [
       { title: "Treatment", tone: "ink", points: [["CBT with exposure: face fears step by step", "CBT with graded exposure (first line)"], ["SSRIs/SNRIs if needed", "SSRIs/SNRIs first-line pharmacotherapy"], ["Benzos only short term", "Avoid long-term benzodiazepines (dependence)"]] },
     ],
     terms: [["Worries about everything", "Generalised, excessive worry"], ["Avoids buses and crowds", "Agoraphobic avoidance"], ["Sudden fear attack", "Panic attack"], ["Fear of being judged", "Fear of negative evaluation"]],
+    figures: [{id: "amygdala-fear"}],
     quiz: { lessonId: "anx-1" },
   },
   {
@@ -151,6 +155,7 @@ export const NOTES_A: Note[] = [
       { title: "Treatment", tone: "ink", points: [["ERP: face the fear, skip the ritual", "Exposure and response prevention"], ["SSRIs, often at higher doses; or clomipramine", "Higher-dose SSRIs; clomipramine"], "Reassurance keeps OCD going: help families stop giving it"] },
     ],
     terms: [["Can't stop washing", "Washing compulsion"], ["Keeps checking the lock", "Checking compulsion"], ["Unwanted thought keeps coming", "Intrusive obsession"], ["Knows it's excessive", "Good insight"]],
+    figures: [{id: "prefrontal", focus: ["mofc", "acc"]}],
     quiz: { lessonId: "anx-2" },
   },
   {

@@ -74,6 +74,10 @@ Q: Which statement is true?
 ## 1.2 Sleep in plain words [core][starting]
 Sleep is not just "switching off". During sleep the brain sorts memories, clears waste, balances hormones and resets emotions. Poor sleep worsens almost every mental and physical illness, and many mental illnesses disturb sleep.
 
+:::widget figure
+{"id": "sleep-centres"}
+:::
+
 ### How sleep is built
 Sleep comes in cycles of about **90 minutes**, repeated four or five times a night:
 - **Light sleep** (stages N1 and N2): drifting off and settling.

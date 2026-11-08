@@ -174,6 +174,10 @@ Inside nearly every cell, and most tightly in the SCN, a **transcription-transla
 3. PER and CRY are slowly degraded (timed by kinases such as casein kinase 1 and GSK-3), releasing the brake, and the cycle restarts.
 4. Light reaches the SCN through melanopsin cells and resets the loop by inducing PER.
 
+:::widget figure
+{"id": "sleep-centres", "focus": ["scn", "pineal"]}
+:::
+
 Jeffrey Hall, Michael Rosbash and Michael Young shared the 2017 Nobel Prize for discovering this loop in fruit flies.
 
 :::widget flow
@@ -374,6 +378,11 @@ The **subtraction method** (Michael Posner, Steven Petersen and Marcus Raichle) 
 - **Psychophysiology**: impaired **smooth pursuit eye movements** (first described in 1908 and revived by Philip Holzman), seen in about half to most patients and many unaffected relatives; more **antisaccade** errors; reduced **prepulse inhibition** of startle (David Braff); reduced P50 gating, mismatch negativity and P300; about half are skin-conductance "non-responders".
 
 ### Mood disorders
+
+:::widget figure
+{"id": "prefrontal", "focus": ["sgacc", "dlpfc"]}
+:::
+
 - **Depression**: smaller **hippocampus**, especially with recurrent and early-onset illness (large ENIGMA consortium data); reduced grey matter and altered metabolism in the **subgenual anterior cingulate**; **amygdala** over-reacts to negative faces; reduced dorsolateral prefrontal activity with increased ventral limbic activity (Helen Mayberg's limbic-cortical dysregulation model), which normalises with response to medicines, CBT or stimulation; reduced striatal response to reward in anhedonia; raised brain MAO-A binding; white matter hyperintensities in late-life depression.
 - **Bipolar disorder**: more **deep white matter hyperintensities**, enlarged ventricles, thinner frontal and temporal cortex; **lithium-treated** patients have larger hippocampal and grey matter volumes than those not on lithium; MRS suggests mitochondrial energy problems.
 
@@ -571,6 +580,10 @@ The gut talks to the brain in four ways:
 | **Immune** | A leaky gut barrier lets bacterial products (lipopolysaccharide) into the blood, raising cytokines | Raised antibodies to gut bacteria in some people with depression |
 | **Endocrine and HPA** | Gut cells make serotonin and gut hormones (GLP-1, ghrelin, PYY); microbes shape stress responses | **Germ-free mice** had exaggerated HPA responses to restraint, corrected by colonisation with Bifidobacterium only if done early in life |
 | **Microbial metabolites** | Short-chain fatty acids (butyrate), tryptophan metabolites, GABA made by some bacteria | Faecal microbes from depressed people transferred to germ-free rodents induced depression-like behaviour |
+
+:::widget figure
+{"id": "gut-brain", "quiz": true, "caption": "Name each numbered part in your head first, then tap to check."}
+:::
 
 :::widget decide
 {

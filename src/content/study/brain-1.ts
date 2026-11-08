@@ -72,6 +72,11 @@ Q: A mother asks, "Is my son's depression in his mind or in his brain?" The most
 The brain has around 86 billion **neurons** (nerve cells) and at least as many supporting **glial cells**. A neuron does one main job: it collects signals, decides whether to pass a signal on, and sends it quickly to other cells.
 
 ### The parts of a neuron
+
+:::widget figure
+{"id": "neuron"}
+:::
+
 | Part | What it does | Picture it as |
 |---|---|---|
 | **Dendrites** | Branches that receive signals from other neurons | The ears |
@@ -81,6 +86,11 @@ The brain has around 86 billion **neurons** (nerve cells) and at least as many s
 | **Axon terminals** | Endings that release chemical messengers | The loudspeaker |
 
 ### Glial cells: not just glue
+
+:::widget figure
+{"id": "glia"}
+:::
+
 - **Astrocytes** feed neurons, mop up excess chemical messengers and help form the blood-brain barrier.
 - **Oligodendrocytes** make myelin in the brain and spinal cord (**Schwann cells** do this in peripheral nerves).
 - **Microglia** are the brain's immune cells. They clear debris and prune unused connections.
@@ -126,6 +136,10 @@ The brain has around 86 billion **neurons** (nerve cells) and at least as many s
 
 ### How a neuron fires
 At rest, the inside of a neuron is slightly negative compared with the outside, about minus 70 millivolts. This is the **resting potential**. It is kept up by pumps that push sodium out and pull potassium in.
+
+:::widget figure
+{"id": "myelin", "focus": ["node", "saltatory"]}
+:::
 
 When enough excitatory signals arrive, the voltage rises to a **threshold** (about minus 55 millivolts). Then sodium channels snap open, sodium rushes in, and the inside briefly turns positive. This spike is the **action potential**. Potassium then flows out and the cell resets. For a brief moment afterwards (the **refractory period**) it cannot fire again.
 
@@ -193,6 +207,11 @@ Q: Which cells make myelin inside the brain?
 Neurons do not touch. Between the end of one and the start of the next is a tiny gap, the **synaptic cleft**. The electrical spike cannot jump it. Instead, the sending neuron releases a chemical messenger, a **neurotransmitter**, which crosses the gap and acts on the receiving neuron.
 
 ### Five steps of chemical transmission
+
+:::widget figure
+{"id": "synapse"}
+:::
+
 1. **Make**: the neuron builds the transmitter from food building blocks (for example, serotonin from the amino acid tryptophan).
 2. **Store**: the transmitter is packed into small bubbles called **vesicles**.
 3. **Release**: the action potential reaches the terminal, calcium flows in, and vesicles empty into the gap.
@@ -264,6 +283,11 @@ Q: Which statement about "chemical imbalance" is most accurate?
 Think of the brain in layers, from the oldest at the bottom to the newest at the top.
 
 ### From the bottom up
+
+:::widget figure
+{"id": "brain-medial"}
+:::
+
 - **Brainstem** (medulla, pons, midbrain): breathing, heart rate, wakefulness. Damage here can be fatal.
 - **Cerebellum**: balance, smooth movement, timing; also some thinking and emotion. Alcohol upsets it first, which is why drunk people sway.
 - **Thalamus**: the relay station; almost every sense passes through it to the cortex.
@@ -309,6 +333,11 @@ Think of the brain in layers, from the oldest at the bottom to the newest at the
 :::
 
 ### The four lobes
+
+:::widget figure
+{"id": "brain-lateral", "focus": ["frontal", "parietal", "temporal", "occipital"]}
+:::
+
 | Lobe | Main jobs | If damaged |
 |---|---|---|
 | **Frontal** | Planning, judgement, self-control, movement, speech production (left) | Personality change, poor planning, disinhibition, weakness |
@@ -415,6 +444,10 @@ No mood is "one chemical". Each messenger is a section of the orchestra. Depress
 
 ### Hormones are messengers too
 Neurotransmitters act across a tiny gap in milliseconds. **Hormones** travel in the blood and act over minutes to days. **Cortisol** (stress), **thyroid hormone** (energy, mood), **melatonin** (sleep timing), **oxytocin** (bonding) and **oestrogen** and **testosterone** all shape mood and behaviour.
+
+:::widget figure
+{"id": "endocrine"}
+:::
 
 :::widget sort
 {
@@ -663,6 +696,10 @@ export const b2Overview = String.raw`
 ## 2.3 Neurotransmitters and receptors in depth [core][beginner]
 At the Starting level you met six messengers. Now look at **where** each comes from, **what receptors** it acts on and **which medicines** change it. This table is the backbone of psychopharmacology.
 
+:::widget figure
+{"id": "synapse", "quiz": true, "caption": "Name each numbered part in your head first, then tap to check."}
+:::
+
 | Transmitter | Made from, made where | Key receptors | Medicines and drugs that act on it |
 |---|---|---|---|
 | **Glutamate** | Glutamine; everywhere in the cortex | NMDA, AMPA, kainate (ion channels); mGluR (slow) | Ketamine and memantine block NMDA; lamotrigine reduces release |
@@ -781,6 +818,10 @@ Q: Benzodiazepines mainly act at:
 export const b2Dopamine = String.raw`
 ## 2.6 Dopamine pathways and what blocking them does [core][beginner]
 Dopamine neurons are few, perhaps a few hundred thousand, but they send long branches across the brain along four main roads. One medicine that blocks D2 receptors blocks them on **all four roads** at once. That is why antipsychotics help some symptoms and cause others.
+
+:::widget figure
+{"id": "dopamine-pathways"}
+:::
 
 | Pathway | From, to | Normal job | Too much dopamine | Blocking D2 here |
 |---|---|---|---|---|
@@ -915,6 +956,11 @@ When you meet a patient whose personality has changed, whose speech is odd or wh
 :::
 
 ### Three frontal syndromes
+
+:::widget figure
+{"id": "prefrontal", "focus": ["dlpfc", "lofc", "acc"]}
+:::
+
 | Syndrome | Area | What you see | A quick bedside test |
 |---|---|---|---|
 | **Dorsolateral (dysexecutive)** | Side of the frontal lobe | Poor planning, rigid thinking, perseveration (stuck on one answer), poor working memory | Verbal fluency (words starting with one letter in a minute); trail making; Luria hand sequence |
@@ -947,6 +993,10 @@ Frontal problems hide well in a short interview. The person may chat politely an
 
 ### Language: the aphasias
 **Aphasia** is a problem with language itself, not with moving the mouth (that is **dysarthria**). Most aphasias come from left-hemisphere damage.
+
+:::widget figure
+{"id": "language-areas"}
+:::
 
 | Aphasia | Speech | Understanding | Repetition | Lesion |
 |---|---|---|---|---|
@@ -1036,6 +1086,11 @@ export const b3Memory = String.raw`
 :::
 
 ### The main systems
+
+:::widget figure
+{"id": "limbic-system"}
+:::
+
 - **Working memory**: holding something in mind for seconds while using it (a phone number while you dial). Frontal and parietal cortex.
 - **Explicit (declarative) memory**: what you can consciously recall.
   - **Episodic**: events from your life (your cousin's wedding). Hippocampus and medial temporal lobe.
@@ -1113,6 +1168,11 @@ In 1953 Henry Molaison (known for decades as "H.M.") had both medial temporal lo
 :::
 
 ### Two kinds of amnesia
+
+:::widget figure
+{"id": "hippocampus"}
+:::
+
 - **Anterograde**: cannot form new memories after the injury.
 - **Retrograde**: loses memories from before. Usually the most recent memories go first and the oldest survive (**Ribot's law**).
 
@@ -1200,6 +1260,10 @@ When you face a threat, two systems switch on:
 1. **Fast**: the sympathetic nerves and the adrenal glands release adrenaline in seconds.
 2. **Slower**: the **HPA axis**. The **hypothalamus** releases CRH, which tells the **pituitary** to release ACTH, which tells the **adrenal** glands to release **cortisol**. Cortisol raises blood sugar, sharpens attention and damps inflammation. It then switches off its own production (negative feedback).
 
+:::widget figure
+{"id": "hpa-axis"}
+:::
+
 
 :::widget flow
 {
@@ -1265,6 +1329,10 @@ Sleep comes in cycles of about 90 minutes, four or five times a night.
 - **NREM stage N3**: deep, slow-wave sleep; body repair, growth hormone. Mostly in the first half of the night. Sleepwalking and night terrors come from here.
 - **REM sleep**: rapid eye movements, vivid dreams, muscles paralysed. More in the second half of the night. Nightmares come from here.
 
+:::widget figure
+{"id": "sleep-centres"}
+:::
+
 :::widget guess
 {
   "prompt": "In a healthy adult, what share of total sleep time is REM sleep?",
@@ -1290,6 +1358,10 @@ Sleep comes in cycles of about 90 minutes, four or five times a night.
 
 ### The body clock
 A small cluster of cells in the hypothalamus, the **suprachiasmatic nucleus (SCN)**, is the master clock. It is set mainly by **morning light** through the eyes. In the evening it tells the **pineal gland** to release **melatonin**, which signals "night". Shift work, late-night screens and jet lag put the clock out of step with life.
+
+:::widget figure
+{"id": "hypothalamus", "focus": ["scn"]}
+:::
 
 :::widget decide
 {
@@ -1487,6 +1559,10 @@ export const b4Hormones = String.raw`
 ### The endocrine system
 Glands release **hormones** into the blood. Most are controlled from the brain through the **hypothalamus** and the **pituitary**, and most switch themselves off by **negative feedback** (like a thermostat).
 
+:::widget figure
+{"id": "endocrine", "quiz": true, "caption": "Name each numbered part in your head first, then tap to check."}
+:::
+
 | Gland | Main hormones | What they do | Link to mental health |
 |---|---|---|---|
 | **Hypothalamus** | Releasing hormones (CRH, TRH, GnRH), dopamine | Commands the pituitary | Stress, appetite, sleep, sex drive |
@@ -1551,6 +1627,10 @@ Older textbooks describe two "centres": damage to the **lateral hypothalamus** m
 - **Hunger signals**: **ghrelin** from the empty stomach (short-term), low blood sugar, and hunger neurons using neuropeptide Y.
 - **Fullness signals**: stretch of the stomach, gut hormones (**CCK**, **PYY**, **GLP-1**) after a meal, **insulin**, and **leptin** from fat cells (long-term: "we have enough stored").
 - **Reward**: the dopamine system makes tasty food attractive even when we are full ("hedonic" eating).
+
+:::widget figure
+{"id": "hypothalamus", "focus": ["vmn", "lateral", "arcuate"]}
+:::
 
 :::example From a hormone to a medicine
 GLP-1 is a fullness hormone from the gut. Medicines that copy it (semaglutide, liraglutide, tirzepatide) reduce appetite and cause large weight loss. Psychiatrists now study them for antipsychotic weight gain and, in research, for alcohol and other cravings (see the Frontiers module).
@@ -1678,6 +1758,10 @@ export const b4Hemispheres = String.raw`
 
 ### The split brain
 The two cerebral hemispheres are joined by the **corpus callosum**, a thick band of about 200 million nerve fibres. In a few people with severe epilepsy, surgeons cut it to stop seizures spreading (a **corpus callosotomy**). **Roger Sperry** and **Michael Gazzaniga** studied these "split-brain" patients.
+
+:::widget figure
+{"id": "brain-medial", "focus": ["cc"]}
+:::
 
 Two facts make the experiments work:
 - Each hemisphere sees the **opposite half of the visual field** and controls the **opposite hand**.

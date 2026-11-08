@@ -5,11 +5,21 @@ export const begAnatomyLow = String.raw`
 Exams in India love this part of anatomy because it has crisp, testable facts: which tract crosses where, which cranial nerve does what, which nucleus makes which transmitter. It is also clinically real: a psychiatrist who misses a brainstem sign can miss a stroke, a tumour or Wernicke's encephalopathy.
 
 ### The spinal cord in cross-section
+
+:::widget figure
+{"id": "spinal-cord"}
+:::
+
 - **Grey matter** (an H or butterfly shape) holds cell bodies: the **dorsal horn** receives sensation, the **ventral horn** holds motor neurons, and the **lateral horn** (from the first thoracic to the second lumbar segment) holds sympathetic neurons.
 - **White matter** around it holds the long tracts.
 - The **Bell-Magendie law** (Charles Bell and François Magendie, early 1800s): **dorsal roots are sensory, ventral roots are motor**.
 
 ### Three long tracts that exams ask
+
+:::widget figure
+{"id": "spinal-cord", "quiz": true, "caption": "Name each numbered part in your head first, then tap to check."}
+:::
+
 | Tract | Carries | Where it crosses | Lesion of one half of the cord |
 |---|---|---|---|
 | **Dorsal columns (medial lemniscus)** | Fine touch, vibration, position sense | In the **medulla** | Loss on the **same** side below the lesion |
@@ -42,6 +52,11 @@ Half-cutting the cord (for example a stab wound) therefore gives the **Brown-Sé
 | Example | Stroke, MS | Polio, peripheral nerve injury, motor neuron disease (both kinds) |
 
 ### The autonomic nervous system in detail
+
+:::widget figure
+{"id": "autonomic"}
+:::
+
 | | Sympathetic | Parasympathetic |
 |---|---|---|
 | Outflow | **Thoracolumbar** (T1 to L2) | **Craniosacral** (cranial nerves III, VII, IX, X and sacral S2 to S4) |
@@ -71,6 +86,19 @@ The gut also has its own **enteric nervous system**, a few hundred million neuro
 :::
 
 ### The brainstem, level by level
+
+:::widget figure
+{"id": "midbrain-section"}
+:::
+
+:::widget figure
+{"id": "pons-section"}
+:::
+
+:::widget figure
+{"id": "medulla-section"}
+:::
+
 | Level | Key structures | Why they matter |
 |---|---|---|
 | **Midbrain** | Superior colliculi (visual reflexes), inferior colliculi (hearing), **substantia nigra** and **ventral tegmental area** (dopamine), **periaqueductal grey** (pain control, defensive behaviour), red nucleus, nuclei of cranial nerves III and IV | Parkinson's disease, reward, opioid pain relief |
@@ -94,6 +122,11 @@ Running through all three is the **reticular formation**. In 1949 Giuseppe Moruz
 :::
 
 ### Cranial nerves for exams
+
+:::widget figure
+{"id": "brain-inferior", "quiz": true, "caption": "Name each numbered part in your head first, then tap to check."}
+:::
+
 | Nerve | Type | Brainstem level | Exam favourite |
 |---|---|---|---|
 | I Olfactory | Sensory | Forebrain (not brainstem) | Lost early in Parkinson's and Alzheimer's; absent with low sex hormones in Kallmann syndrome |
@@ -126,6 +159,11 @@ Running through all three is the **reticular formation**. In 1949 Giuseppe Moruz
 :::
 
 ### Three states that look alike
+
+:::widget figure
+{"id": "ras"}
+:::
+
 | State | Conscious? | Can move? | Lesion |
 |---|---|---|---|
 | **Locked-in syndrome** | Yes, fully | Only vertical eye movements and blinking | Front (ventral) pons, usually a basilar artery stroke |
@@ -188,6 +226,11 @@ Q: A woman after a basilar artery stroke is fully aware but can only blink and m
 Neither the cerebellum nor the basal ganglia sends commands straight to the muscles. Both are **advisers** to the cortex, working through the thalamus. The cerebellum asks "is the movement accurate and well timed?"; the basal ganglia ask "which movement, if any, should go ahead?". Both also advise on thinking and emotion, which is why they appear in psychiatry.
 
 ### The cerebellum
+
+:::widget figure
+{"id": "cerebellum"}
+:::
+
 - It is about a tenth of the brain's volume but holds **most of its neurons**: tiny **granule cells** make up the majority of all neurons in the brain.
 - Its cortex has **three layers**: molecular (outer), **Purkinje cell** layer, granular (inner).
 - **Purkinje cells** are the **only output** of the cerebellar cortex, and they are **inhibitory** (GABA). They inhibit the **deep cerebellar nuclei** (dentate, interposed and fastigial), which send the final output to the thalamus and brainstem.
@@ -222,6 +265,15 @@ Neither the cerebellum nor the basal ganglia sends commands straight to the musc
 - The cerebellum is studied in autism (fewer Purkinje cells in post-mortem studies) and in schizophrenia ("cognitive dysmetria": poorly timed, poorly coordinated thought).
 
 ### The basal ganglia: what is in them
+
+:::widget figure
+{"id": "basal-ganglia"}
+:::
+
+:::widget figure
+{"id": "coronal-section", "focus": ["caudate", "putamen", "pallidus"]}
+:::
+
 - **Striatum**: the **caudate nucleus** and **putamen** (together with the ventral striatum, including the **nucleus accumbens**).
 - **Globus pallidus**: an external part (GPe) and an internal part (GPi). Putamen plus globus pallidus is called the **lentiform nucleus**.
 - **Subthalamic nucleus (STN)**.
@@ -230,6 +282,10 @@ Neither the cerebellum nor the basal ganglia sends commands straight to the musc
 
 ### Direct and indirect pathways
 The output nuclei (GPi and substantia nigra pars reticulata) constantly **inhibit** the thalamus, holding movement back like a hand on the brake. The striatum decides when to lift or press the brake.
+
+:::widget figure
+{"id": "basal-ganglia-circuit"}
+:::
 
 :::widget flow
 {
@@ -345,6 +401,10 @@ These deep structures sit around the third ventricle like rooms around a courtya
 ### The thalamus: more than a relay
 Almost every input to the cortex, except smell, passes through a thalamic nucleus, and each nucleus talks back and forth with its own patch of cortex.
 
+:::widget figure
+{"id": "horizontal-section", "focus": ["thalamus"]}
+:::
+
 | Nucleus | Input | Output | Clinical link |
 |---|---|---|---|
 | **Lateral geniculate (LGN)** | Retina | Primary visual cortex | Vision ("lateral for light") |
@@ -373,6 +433,10 @@ Almost every input to the cortex, except smell, passes through a thalamic nucleu
 
 ### The hypothalamus: the body's control room
 It weighs only about 4 grams, yet it controls the pituitary, the autonomic system, temperature, hunger, thirst, sleep, sexual behaviour and aggression.
+
+:::widget figure
+{"id": "hypothalamus"}
+:::
 
 | Nucleus or area | Main function | Effect of damage (classic animal studies) |
 |---|---|---|
@@ -408,6 +472,11 @@ It weighs only about 4 grams, yet it controls the pituitary, the autonomic syste
 :::
 
 ### The limbic system and Papez's circuit
+
+:::widget figure
+{"id": "limbic-system", "quiz": true, "caption": "Name each numbered part in your head first, then tap to check."}
+:::
+
 - In 1878 Paul Broca described a "limbic lobe" (from the Latin for border) around the brainstem.
 - In **1937 James Papez** proposed a circuit for emotion: **hippocampus, fornix, mammillary bodies, mammillothalamic tract, anterior thalamic nucleus, cingulate gyrus, cingulum, parahippocampal (entorhinal) cortex, and back to the hippocampus**. We now know this loop serves **memory** more than emotion.
 - In **1952 Paul MacLean** popularised the term **limbic system**, adding the amygdala, septum and orbitofrontal cortex; he also proposed the "triune brain", now regarded as a teaching cartoon.
@@ -429,6 +498,11 @@ It weighs only about 4 grams, yet it controls the pituitary, the autonomic syste
 :::
 
 ### The amygdala
+
+:::widget figure
+{"id": "amygdala-fear"}
+:::
+
 - It receives senses through a **fast, rough route** from the thalamus and a **slow, detailed route** through the cortex (Joseph LeDoux's "low road" and "high road"), so you can jump at a rope before you know it is not a snake.
 - Its **central nucleus** sends out fear responses: to the hypothalamus (stress hormones, heart rate), the periaqueductal grey (freezing) and the brainstem (startle).
 - **Klüver-Bucy syndrome**: Heinrich Klüver and Paul Bucy removed both temporal lobes in monkeys in the late 1930s. The monkeys became **tame and fearless**, put everything in their mouths (**hyperorality**), could see objects but not recognise what they meant (**psychic blindness**), explored compulsively, and showed **hypersexuality** and dietary change. In people it can follow herpes simplex encephalitis or advanced frontotemporal dementia.
@@ -516,6 +590,10 @@ Most of the cortex (the **neocortex**) has six layers, numbered from the surface
 ### Brodmann's map
 In 1909 Korbinian Brodmann divided the cortex into about **52 areas** by looking at how cells were arranged under the microscope (**cytoarchitecture**). His numbers are still used.
 
+:::widget figure
+{"id": "brodmann"}
+:::
+
 | Brodmann area | Region | Function |
 |---|---|---|
 | **4** | Precentral gyrus | **Primary motor** cortex |
@@ -562,10 +640,18 @@ In 1909 Korbinian Brodmann divided the cortex into about **52 areas** by looking
 ### Maps of the body
 Wilder Penfield, operating on awake epilepsy patients in Montreal, stimulated the cortex and drew the **homunculus**: a distorted body map in the motor and sensory strips, with huge hands, lips and tongue and a small trunk, because area depends on precision, not size. The legs and feet are on the **inner (medial) surface**, the face low on the side. A seizure that starts in the hand and spreads up the arm and to the face follows this map (the **Jacksonian march**).
 
+:::widget figure
+{"id": "homunculus"}
+:::
+
 ### Two visual streams
 From the primary visual cortex, information flows along two routes (Leslie Ungerleider and Mortimer Mishkin, 1982):
 - the **ventral "what" stream** to the **inferior temporal lobe**: recognising objects, faces and words;
 - the **dorsal "where" (or "how") stream** to the **posterior parietal lobe**: location, motion and guiding action. David Milner and Melvyn Goodale reframed it as vision for action, after patient D.F., who could not recognise the orientation of a slot yet posted a card through it accurately.
+
+:::widget figure
+{"id": "visual-pathway"}
+:::
 
 :::widget compare
 {
@@ -665,6 +751,15 @@ export const begVessels = String.raw`
 At the Starting level you learned that four arteries feed the brain and that CSF fills the ventricles. Now map each artery to the symptoms of its stroke, and follow CSF through the ventricles, because several "psychiatric" presentations are really vascular or hydrocephalic.
 
 ### The arteries and their territories
+
+:::widget figure
+{"id": "arterial-territories"}
+:::
+
+:::widget figure
+{"id": "circle-of-willis", "quiz": true, "caption": "Name each numbered part in your head first, then tap to check."}
+:::
+
 | Artery | Supplies | Stroke gives | Psychiatric picture |
 |---|---|---|---|
 | **Anterior cerebral (ACA)** | Inner surface of frontal and parietal lobes | Weakness and numbness of the opposite **leg** more than arm; urinary incontinence | **Abulia** and apathy; akinetic mutism if both sides; disinhibition |
@@ -714,6 +809,11 @@ The carotid arteries feed the ACA and MCA (the **anterior circulation**); the ve
 :::
 
 ### The ventricles and the flow of CSF
+
+:::widget figure
+{"id": "ventricles", "quiz": true, "caption": "Name each numbered part in your head first, then tap to check."}
+:::
+
 :::widget flow
 {
  "title": "The path of cerebrospinal fluid",

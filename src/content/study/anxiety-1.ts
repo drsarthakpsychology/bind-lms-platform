@@ -376,6 +376,10 @@ Q: A 58-year-old with no past anxiety develops daily panic attacks and tremor ov
 ## 1.2 Why anxiety happens [core][beginner]
 Like most mental disorders, anxiety disorders come from vulnerability meeting stress.
 
+:::widget figure
+{"id": "amygdala-fear"}
+:::
+
 :::widget hpaloop
 {"title":"Stress, coping and avoidance","caption":"Play the day twice: once avoiding every problem, once facing them. Avoidance brings quick relief but keeps the stress system running, which is exactly how avoidance keeps anxiety going."}
 :::
@@ -545,6 +549,14 @@ Q: Which feature is required for GAD in DSM-5-TR?
 
 ## 2.2 Panic attacks and panic disorder [core][beginner]
 A **panic attack** is an abrupt surge of intense fear or discomfort that **peaks within minutes**. It can arise from calm or from an anxious state. Panic attacks are common: many people have one at some point. **Panic disorder** is when attacks come **out of the blue** and the person then lives in fear of the next one.
+
+:::widget figure
+{"id": "noradrenaline-projections", "focus": ["lc"]}
+:::
+
+:::widget figure
+{"id": "autonomic", "focus": ["heart", "airways"]}
+:::
 
 ### The 13 symptoms (four or more needed)
 | Body | Mind |

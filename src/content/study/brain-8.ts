@@ -5,6 +5,11 @@ export const advDevelopment = String.raw`
 You know the outline: tube, neurons, connections, pruning, myelin. At this level each step becomes a mechanism, each mechanism has a disease, and together they support one of the most influential ideas in psychiatry: that schizophrenia and several other disorders begin long before their first symptoms.
 
 ### Six processes, in overlapping order
+
+:::widget figure
+{"id": "brain-vesicles", "quiz": true, "caption": "Name each numbered part in your head first, then tap to check."}
+:::
+
 | Process | Mechanism | When it fails |
 |---|---|---|
 | **Neurogenesis** | Progenitor cells in the **ventricular zone**, many of them **radial glia**, divide; at the peak, mid-gestation, the fetal brain adds hundreds of thousands of neurons a minute | **Microcephaly** (genetic, or after Zika virus infection) |
@@ -161,6 +166,11 @@ export const advPlasticity = String.raw`
 In 5.3 you saw LTP in four steps. Here are the molecular stages, its opposite (LTD), the timing rule that decides between them, the sea slug that earned a Nobel Prize, and the honest state of evidence on adult neurogenesis and BDNF in psychiatry.
 
 ### From Hebb to Bliss and Lømo
+
+:::widget figure
+{"id": "hippocampus", "focus": ["schaffer", "ammon"]}
+:::
+
 - **Donald Hebb** (1949) proposed that when one cell repeatedly helps fire another, the connection between them strengthens: "cells that fire together wire together".
 - **Timothy Bliss and Terje Lømo** (1973) found it: brief high-frequency stimulation of the pathway into the rabbit hippocampus (the perforant path to the dentate gyrus) made responses stronger for hours to days. They called it **long-term potentiation**.
 
@@ -246,6 +256,11 @@ Kandel chose the sea slug **Aplysia**, with about 20,000 large, identifiable neu
 :::
 
 ### Structural plasticity and new neurons
+
+:::widget figure
+{"id": "hippocampus", "focus": ["dg"]}
+:::
+
 - **Enriched environments**: Mark Rosenzweig and colleagues found that rats raised with toys, companions and changing cages developed a heavier, thicker cortex with more synapses than rats housed alone; William Greenough's group counted more dendritic spines.
 - **Learning in humans**: three months of learning to juggle increased grey matter in a motion-processing area of the temporal cortex, which shrank back after practice stopped; string players have a larger cortical representation of the fingers of the left hand.
 - **Adult neurogenesis**: new neurons are born in the dentate gyrus of the hippocampus (and, in rodents, the walls of the lateral ventricles feeding the olfactory bulb). In humans the scale is **contested**: one carbon-dating study estimated about 700 new neurons a day in each hippocampus, while other post-mortem studies found almost none in adults.

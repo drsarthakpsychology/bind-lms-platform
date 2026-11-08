@@ -11,6 +11,10 @@ You have met the neuron and the big areas. Now step back and see the whole syste
 ### From a flat sheet to a brain
 Every brain begins as a flat sheet of cells on the back of a tiny embryo, about two weeks after conception. The sheet folds up into a groove, then closes into a hollow **neural tube** by about day 28. The front end of the tube swells into three bulges that become the **forebrain**, **midbrain** and **hindbrain**; the rest becomes the **spinal cord**. Cells that pinch off the edges of the folds, the **neural crest**, wander away and build most of the peripheral nerves.
 
+:::widget figure
+{"id": "brain-vesicles"}
+:::
+
 - The hollow inside the tube stays hollow for life: it becomes the **ventricles** of the brain and the thin central canal of the spinal cord.
 - Most neurons are made before birth. After birth the brain grows mainly by making **connections** and **myelin**, not by adding neurons.
 - At birth the brain weighs about a quarter of its adult weight; an adult brain weighs about 1.3 to 1.4 kilograms.
@@ -39,6 +43,10 @@ The spinal cord runs inside the backbone, from the base of the skull to about th
 - the **back (dorsal) root** carries **sensation in** (touch, pain, position);
 - the **front (ventral) root** carries **commands out** to the muscles.
 
+:::widget figure
+{"id": "reflex-arc"}
+:::
+
 The cord is not only a cable. It can act on its own in a **reflex**: touch a hot pan and your hand jerks away before the pain reaches awareness. The message goes in by the back root, crosses a relay neuron in the cord and goes straight out by the front root.
 
 :::widget flow
@@ -58,6 +66,10 @@ The cord is not only a cable. It can act on its own in a **reflex**: touch a hot
 
 ### The twelve cranial nerves at a glance
 Twelve pairs of nerves leave the brain itself, mostly from the brainstem. They are numbered with Roman numerals from front to back. At this level, know what each one does in everyday words.
+
+:::widget figure
+{"id": "brain-inferior"}
+:::
 
 | Number and name | What it does in plain words |
 |---|---|
@@ -99,6 +111,10 @@ The brain is soft, about as firm as set curd. It is protected in four ways:
 3. **Cerebrospinal fluid (CSF)**: a clear, watery fluid in the space under the arachnoid and inside the ventricles. The brain floats in it, so its working weight drops to a few tens of grams.
 4. **The blood-brain barrier**: tightly sealed blood vessel walls that keep many substances out.
 
+:::widget figure
+{"id": "ventricles"}
+:::
+
 :::widget layers
 {
  "title": "From the skin to the brain",
@@ -130,6 +146,10 @@ The brain is soft, about as firm as set curd. It is protected in four ways:
 
 ### Fed by blood
 The brain is about 2 per cent of body weight but uses about a fifth of the body's oxygen and glucose. It cannot store fuel. Four arteries feed it: two **carotid arteries** at the front of the neck and two **vertebral arteries** at the back, which join in a ring under the brain called the **circle of Willis**. If blood stops for a few minutes, neurons begin to die.
+
+:::widget figure
+{"id": "circle-of-willis"}
+:::
 
 A **stroke** is sudden loss of brain function from a blood vessel problem:
 - **Ischaemic stroke** (about 85 per cent): a vessel is blocked by a clot.
@@ -208,6 +228,11 @@ Q: An older man who drinks heavily has fluctuating confusion since a fall a fort
 How do scientists know that the left side handles speech, or that a part of the brain stores new memories? Five kinds of evidence, each with strengths and weak spots. Then one big idea that runs through this whole module: the brain changes with experience.
 
 ### Five ways of knowing
+
+:::widget figure
+{"id": "eeg-1020"}
+:::
+
 | Method | What it does in plain words | A famous example | Weak spot |
 |---|---|---|---|
 | **Studying damage (lesions)** | See what a person cannot do after injury to one area | In 1861 Paul Broca's patient "Tan" could say only one word; after his death Broca found damage in the left frontal lobe | Damage is rarely neat; the brain also reorganises |

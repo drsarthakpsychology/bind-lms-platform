@@ -8,6 +8,10 @@ export const part1 = String.raw`
 - **Direction**: which goal you choose among many.
 - **Intensity and persistence**: how much effort you put in, and for how long.
 
+:::widget figure
+{"id": "hypothalamus"}
+:::
+
 A motive is never seen directly. We **infer** it from behaviour, the way a doctor infers fever from a thermometer. That is why every theory of motivation is really a theory about what explains the pattern of behaviour we can see.
 
 ### Push and pull
@@ -247,6 +251,10 @@ An **emotion** is a short-lived, organised response to something that matters to
 | **Feeling** | The inner experience | Fear |
 | **Action tendency** | The urge to act | Step back, run |
 
+:::widget figure
+{"id": "autonomic"}
+:::
+
 :::widget flow
 {"title": "One emotion, five parts", "layout": "chain", "nodes": [{"id": "e", "label": "A dog barks suddenly", "detail": "The event that starts it all."}, {"id": "a", "label": "Appraisal", "detail": "'That could bite me.' A fast judgement of what the event means for you."}, {"id": "b", "label": "Body changes", "detail": "The heart pounds, breathing speeds up, muscles tense."}, {"id": "x", "label": "Expression", "detail": "Wide eyes, raised eyebrows, a gasp."}, {"id": "f", "label": "Feeling", "detail": "The inner experience you would call fear."}, {"id": "t", "label": "Action tendency", "detail": "The urge to step back or run."}], "caption": "The parts usually move together, but the theories that follow argue about their order and about which part causes which."}
 :::
@@ -366,6 +374,10 @@ In everyday speech "stress" means both the cause and the effect. Psychologists s
 - A **stressor** is the demand: an exam, a debt, a noisy neighbour, a flood.
 - The **stress response** is what happens in body and mind: arousal, worry, tension.
 - **Stress** in the modern sense is the **mismatch** a person feels between demands and their resources.
+
+:::widget figure
+{"id": "hpa-axis"}
+:::
 
 Stress is not always harmful. **Hans Selye** called helpful, motivating stress **eustress** (a wedding, a promotion, a challenging project) and harmful stress **distress**.
 
@@ -909,6 +921,14 @@ Q: Which subscale of Zuckerman's scale is tapped by "I like to travel to unusual
 
 ## 2.4 The biology of wanting: hunger, thirst, sex and reward [core][beginner]
 Biological motives are where homeostasis works best, but even here learning, culture and reward matter.
+
+:::widget figure
+{"id": "hypothalamus", "quiz": true, "caption": "Name each numbered part in your head first, then tap to check."}
+:::
+
+:::widget figure
+{"id": "dopamine-pathways", "focus": ["mesolimbic"]}
+:::
 
 ### Hunger
 The older **dual-centre model** came from lesion studies in rats:

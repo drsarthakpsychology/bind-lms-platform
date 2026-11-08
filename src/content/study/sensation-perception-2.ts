@@ -225,6 +225,14 @@ Q: An observer with a hit rate of 0.50 and a false-alarm rate of 0.50 has:
 ## 2.3 Vision and colour [core][beginner]
 Light enters through the **cornea**, passes the **pupil** (sized by the iris), is focused by the **lens** (whose changing shape is **accommodation**) and lands on the **retina**. The image is inverted; the brain does not "turn it back", it simply uses the map.
 
+:::widget figure
+{"id": "eye", "quiz": true, "caption": "Name each numbered part in your head first, then tap to check."}
+:::
+
+:::widget figure
+{"id": "visual-pathway"}
+:::
+
 ### Rods and cones
 | | Rods | Cones |
 |---|---|---|
@@ -357,6 +365,23 @@ Q: A patient recovering from a stroke can see objects but cannot reach accuratel
 :::
 
 ## 2.4 Hearing and the other senses [core][beginner]
+
+:::widget figure
+{"id": "ear"}
+:::
+
+:::widget figure
+{"id": "auditory-pathway"}
+:::
+
+:::widget figure
+{"id": "olfaction"}
+:::
+
+:::widget figure
+{"id": "taste"}
+:::
+
 ### Sound and the ear
 Sound is a pressure wave. Its **frequency** (cycles per second, hertz) is heard as **pitch**; its **amplitude** (measured in decibels, a logarithmic scale) as **loudness**; its mix of frequencies as **timbre**, which is why a sitar and a guitar playing the same note sound different. Young humans hear about **20 to 20,000 Hz**; the upper limit falls with age (presbycusis).
 
@@ -759,6 +784,10 @@ Q: Listening to music while jogging interferes less than texting while driving. 
 
 ## 2.7 Recognising patterns, objects and faces [core][beginner]
 You recognise the letter A in hundreds of fonts and handwriting styles, and your friend's face in any light. How?
+
+:::widget figure
+{"id": "brodmann", "focus": ["ba37", "ba19"]}
+:::
 
 ### Four theories of pattern recognition
 | Theory | Claim | Problem or evidence |

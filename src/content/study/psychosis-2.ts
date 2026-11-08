@@ -5,6 +5,10 @@ export const part2 = String.raw`
 ## 2.1 Causes [core][beginner]
 Schizophrenia arises from **many small influences** adding up over development: genes, early brain development and later environmental hits.
 
+:::widget figure
+{"id": "dopamine-pathways"}
+:::
+
 ### Genes
 - Heritability in twin studies is about **80%**, among the highest in psychiatry. Yet most people with schizophrenia have no affected parent.
 - Risk for relatives rises with closeness: roughly 1% general population, about 10% for a child of one affected parent or a sibling, about 40 to 50% for a child of two affected parents or an identical co-twin.

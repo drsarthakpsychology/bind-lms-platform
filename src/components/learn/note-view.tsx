@@ -129,6 +129,15 @@ export function NoteView({
         </React.Fragment>
       ))}
 
+      {note.figures?.length ? (
+        <section className={n.reveal} aria-label="Pictures">
+          <h2 className="text-h2">See it</h2>
+          {note.figures.map((f, k) => (
+            <Figure key={`${f.id}-${k}`} d={f} />
+          ))}
+        </section>
+      ) : null}
+
       {note.terms?.length ? (
         <section className={n.reveal}>
           <h2 className="text-h2">Say it clinically</h2>

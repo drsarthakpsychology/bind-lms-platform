@@ -169,6 +169,11 @@ Modern psychiatry increasingly thinks in **circuits**, groups of brain areas tha
 :::
 
 ### Five circuits worth knowing
+
+:::widget figure
+{"id": "prefrontal", "quiz": true, "caption": "Name each numbered part in your head first, then tap to check."}
+:::
+
 | Circuit | Key parts | When it misfires |
 |---|---|---|
 | **Fear and safety** | Amygdala (threat), ventromedial prefrontal cortex (safety, "it's over now"), hippocampus (context) | Anxiety disorders and PTSD: a strong amygdala alarm with weak prefrontal and hippocampal braking |
@@ -207,6 +212,10 @@ When a fear is "extinguished", the original fear memory is not deleted. A new sa
 - **Renewal**: the fear returns in a new place (a phobia treated in the clinic returns at home).
 - **Reinstatement**: a fresh shock or stress brings the old fear back.
 
+:::widget figure
+{"id": "amygdala-fear", "focus": ["vmpfc", "brake"]}
+:::
+
 :::widget decide
 {
   "scene": "Farah, 31, from Srinagar, had a car accident and now panics in cars. After six sessions of graded exposure in the clinic car park, she can sit in a car calmly. She plans to stop therapy.",
@@ -225,6 +234,10 @@ Drugs raise dopamine in the nucleus accumbens far more, and more reliably, than 
 - Control shifts from goal-directed choice to **habit** (from ventral to dorsal striatum).
 - The prefrontal "brake" weakens, so stopping feels impossible even when the person sincerely wants to.
 - Baseline reward drops, so ordinary life feels flat without the drug.
+
+:::widget figure
+{"id": "dopamine-pathways", "focus": ["mesolimbic", "accumbens"]}
+:::
 
 
 :::widget flow
@@ -510,6 +523,15 @@ Most people with a typical presentation do not need one. Red flags that justify 
 :::
 
 ### Stimulating the brain
+
+:::widget figure
+{"id": "tms"}
+:::
+
+:::widget figure
+{"id": "ect-placements"}
+:::
+
 - **Electroconvulsive therapy (ECT)**: a brief, controlled seizure under anaesthesia and muscle relaxant. The most effective acute treatment for severe depression, catatonia and some treatment-resistant states. In India, the Mental Healthcare Act 2017 bans ECT without anaesthesia and muscle relaxant (see the Ethics and law module).
 - **Repetitive transcranial magnetic stimulation (rTMS)**: magnetic pulses over the scalp, usually over the left dorsolateral prefrontal cortex for depression. No anaesthesia; awake outpatient sessions. Widely offered in Indian cities.
 - **Accelerated, imaging-guided TMS** (for example the Stanford "SAINT" protocol): many sessions per day over five days, targeted with MRI. Cleared in the United States in 2022 for treatment-resistant depression.
@@ -606,6 +628,10 @@ Treatment is immunotherapy (steroids, immunoglobulin, plasma exchange) and tumou
 
 ### The gut-brain axis
 The gut has its own nervous system, and gut microbes produce substances that affect immunity and possibly mood. Animal studies are striking; human evidence is still early. As of Nov 2026, probiotics ("psychobiotics") do not have reliable evidence as a treatment for depression or anxiety. Diet quality does relate to mood, and a Mediterranean-style diet trial gave promising but small results.
+
+:::widget figure
+{"id": "gut-brain"}
+:::
 
 
 :::widget journey

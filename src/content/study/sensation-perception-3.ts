@@ -252,6 +252,11 @@ Q: Participants primed with animal pictures see an ambiguous figure as a rat; th
 :::
 
 ## 3.3 Modern attention science: networks, blinks and limits [core][advanced]
+
+:::widget figure
+{"id": "ras"}
+:::
+
 ### Three attention networks
 Michael Posner and Steven Petersen (1990) proposed that attention is not one thing but three networks, each with its own anatomy and chemistry:
 | Network | Job | Key regions | Main chemical |
@@ -344,6 +349,10 @@ Q: The finding that a second target is often missed 300 ms after a first, but ca
 
 ## 3.4 Perception and attention in the clinic [core][advanced]
 Disorders of perception and attention are where this module meets the ward. Some arise from brain lesions; others are part of psychiatric illness.
+
+:::widget figure
+{"id": "visual-pathway", "quiz": true, "caption": "Name each numbered part in your head first, then tap to check."}
+:::
 
 ### Neglect, agnosia and blindsight
 - **Hemispatial neglect**: failure to attend to one side of space, usually the **left**, after damage to the **right** parietal lobe or temporoparietal junction. The person eats from the right half of the plate, shaves half the face, and on a **line bisection** test marks the centre far to the right. **Cancellation tests** (cross out every star) show left-sided omissions. Neglect is not blindness: visual fields may be intact. Patients often deny the problem (**anosognosia**).
