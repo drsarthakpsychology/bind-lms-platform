@@ -17,6 +17,8 @@ import { COGNITIVE_L05 } from "./cognitive-l05";
 import { PERCEPTION_ATTENTION_L01 } from "./perception-attention-l01";
 import { PERCEPTION_ATTENTION_L02 } from "./perception-attention-l02";
 import { PERCEPTION_ATTENTION_L03 } from "./perception-attention-l03";
+import { PERCEPTION_ATTENTION_L04 } from "./perception-attention-l04";
+import { PERCEPTION_ATTENTION_L05 } from "./perception-attention-l05";
 
 /** Every hand-written long answer. Writers add part files and spread them in here. */
 export const LONG_QA: LongQA[] = [
@@ -38,4 +40,6 @@ export const LONG_QA: LongQA[] = [
   ...PERCEPTION_ATTENTION_L01,
   ...PERCEPTION_ATTENTION_L02,
   ...PERCEPTION_ATTENTION_L03,
+  ...PERCEPTION_ATTENTION_L04,
+  ...PERCEPTION_ATTENTION_L05,
 ];
