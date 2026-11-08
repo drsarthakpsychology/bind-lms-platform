@@ -4,6 +4,10 @@
  * agree with the psychiatrist. Risk content is for learning.
  */
 import type { Campaign, Quality, Vars, WardOption } from "./engine";
+import { CAMPAIGNS_B } from "./campaigns-b";
+import { CAMPAIGNS_C } from "./campaigns-c";
+import { tags } from "./kit";
+import { hashString, makeRng, shuffle } from "../common";
 
 const o = (id: string, q: Quality, text: string, why: string, fx: Partial<Vars> = {}, set: string[] = []): WardOption => ({ id, q, text, why, fx, set });
 
@@ -519,7 +523,21 @@ const london: Campaign = {
   ],
 };
 
-export const CAMPAIGNS: Campaign[] = [pune, chennai, london];
+pune.tags = tags("First-episode psychosis", "psychosis", "Assess and engage a young man with first-episode psychosis and cannabis use, with his family.");
+chennai.tags = tags("Postnatal depression and intrusive thoughts", "depression", "Tell intrusive thoughts from psychosis after birth and treat postnatal depression safely.");
+london.tags = tags("Bipolar disorder at university", "bipolar", "Manage a mixed bipolar episode, lithium and suicide risk in a student.");
+
+/**
+ * Options are written best-first for easy checking; the screen shows them in
+ * the order stored here, so each decision gets a fixed, seeded order. Ids
+ * (what saves, votes and hints use) never change.
+ */
+function spread(c: Campaign): Campaign {
+  for (const ch of c.chapters) for (const d of ch.decisions) d.options = shuffle(d.options, makeRng(hashString(`ward:${c.id}:${d.id}`)));
+  return c;
+}
+
+export const CAMPAIGNS: Campaign[] = [pune, chennai, london, ...CAMPAIGNS_B, ...CAMPAIGNS_C].map(spread);
 
 export function campaignById(id: string): Campaign | undefined {
   return CAMPAIGNS.find((c) => c.id === id);

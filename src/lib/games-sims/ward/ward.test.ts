@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import { CAMPAIGNS, campaignById } from "./campaigns";
 import { choose, currentDecision, endingFor, holds, outcomeScore, startState, visibleBeats, type WardState } from "./engine";
 import { TOPICS } from "@/lib/learn/model/topics";
+import { tagProblems } from "../item-tags";
 
 function playAll(id: string, pick: (opts: { id: string; q: string }[]) => string): WardState {
   const c = campaignById(id)!;
@@ -14,8 +15,10 @@ function playAll(id: string, pick: (opts: { id: string; q: string }[]) => string
 }
 
 describe("Ward Week content", () => {
-  it("has three campaigns of 4 to 5 chapters with every decision kind", () => {
-    expect(CAMPAIGNS.map((c) => c.id)).toEqual(["pune", "chennai", "london"]);
+  it("has at least 30 campaigns of 4 to 5 chapters with every decision kind", () => {
+    expect(CAMPAIGNS.length).toBeGreaterThanOrEqual(13);
+    expect(CAMPAIGNS.slice(0, 3).map((c) => c.id)).toEqual(["pune", "chennai", "london"]);
+    expect(new Set(CAMPAIGNS.map((c) => c.id)).size).toBe(CAMPAIGNS.length);
     const kinds = new Set<string>();
     const topics = new Set(TOPICS.map((t) => t.id));
     for (const c of CAMPAIGNS) {
@@ -25,7 +28,8 @@ describe("Ward Week content", () => {
         for (const d of ch.decisions) {
           kinds.add(d.kind);
           expect(topics.has(d.skill.split(":")[0]), d.skill).toBe(true);
-          expect(d.options.some((o) => o.q === "best")).toBe(true);
+          expect(d.options.filter((o) => o.q === "best").length, `${c.id} ${d.id}`).toBe(1);
+          expect(d.options.length, `${c.id} ${d.id}`).toBeGreaterThanOrEqual(2);
           expect(new Set(d.options.map((o) => o.id)).size).toBe(d.options.length);
         }
     }
@@ -35,6 +39,32 @@ describe("Ward Week content", () => {
     const text = JSON.stringify(CAMPAIGNS);
     expect(/\b\d+\s*weeks?\b/i.test(text)).toBe(false);
     expect(/\b(one|two|three|four|six|eight|twelve)\s+weeks?\b/i.test(text)).toBe(false);
+  });
+});
+
+describe("Ward Week library tags", () => {
+  it("every campaign is tagged and its decision ids are unique", () => {
+    const topics = new Set(TOPICS.map((t) => t.id));
+    const items = CAMPAIGNS.map((c) => ({ id: c.id, tags: c.tags, text: JSON.stringify(c) }));
+    expect(tagProblems(items, topics)).toEqual([]);
+    for (const c of CAMPAIGNS) {
+      const ids = c.chapters.flatMap((ch) => ch.decisions.map((d) => d.id));
+      expect(new Set(ids).size, c.id).toBe(ids.length);
+      expect(c.endings.map((e) => e.min).sort((a, b) => a - b), c.id).toEqual([0, 50, 72]);
+    }
+  });
+  it("spreads the best option across positions", () => {
+    const pos = [0, 0, 0];
+    let n = 0;
+    for (const c of CAMPAIGNS)
+      for (const ch of c.chapters)
+        for (const d of ch.decisions) {
+          if (d.options.length < 3) continue;
+          const i = d.options.findIndex((o) => o.q === "best");
+          if (i < 3) pos[i] += 1;
+          n += 1;
+        }
+    for (const k of pos) expect(k / n).toBeGreaterThan(0.18);
   });
 });
 

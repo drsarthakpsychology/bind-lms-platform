@@ -26,6 +26,15 @@ describe("Comorbid cards", () => {
     expect(/[–—]/.test(JSON.stringify([SYMPTOMS, DIAGNOSES, RULEOUTS, RULES]))).toBe(false);
     expect(/\bweeks?\b/i.test(JSON.stringify([SYMPTOMS, DIAGNOSES, RULEOUTS]))).toBe(false);
   });
+  it("has enough diagnoses for many different match-ups", () => {
+    expect(DIAGNOSES.length).toBeGreaterThanOrEqual(14);
+    expect(new Set(DIAGNOSES.map((d) => d.id)).size).toBe(DIAGNOSES.length);
+    expect(new Set(SYMPTOMS.map((d) => d.id)).size).toBe(SYMPTOMS.length);
+    expect(new Set(RULEOUTS.map((d) => d.id)).size).toBe(RULEOUTS.length);
+    // Rounds pair two diagnoses that need a similar number of cards.
+    const pairs = DIAGNOSES.flatMap((a, i) => DIAGNOSES.slice(i + 1).filter((b) => Math.abs(a.need - b.need) <= 1));
+    expect(pairs.length).toBeGreaterThanOrEqual(30);
+  });
   it("shares symptoms across diagnoses (the comorbidity point)", () => {
     const count = new Map<string, number>();
     for (const d of DIAGNOSES) for (const s of d.symptoms) count.set(s, (count.get(s) ?? 0) + 1);
