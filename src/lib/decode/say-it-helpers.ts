@@ -41,6 +41,10 @@ const MODULE: [RegExp, string][] = [
   [/child|adolescent|school/i, "child"],
   [/side effect|medicine/i, "antipsychotics"],
   [/language|respect|stigma/i, "case-sheet/1-3"],
+  [/personality/i, "personality"],
+  [/eating|sexual|dissociat/i, "more-disorders"],
+  [/law|consent/i, "ethics-law"],
+  [/speech|thought form|perception|appearance|behaviour|insight|affect|orientation|attention/i, "interview-mse"],
 ];
 
 function moduleFor(topic: string): string {
