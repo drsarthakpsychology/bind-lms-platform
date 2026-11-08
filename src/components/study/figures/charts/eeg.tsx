@@ -284,7 +284,7 @@ const ectLabels = [
   L("eeg", "EEG leads", 160, 226, "Two forehead EEG leads record the seizure, which should last at least about 15 to 25 seconds; a cuffed arm shows the motor seizure despite the muscle relaxant."),
 ];
 const ect: FigureDef = {
-  id: "ect-placements",
+  id: "ect-from-above",
   title: "ECT electrode placements, seen from above",
   viewBox: "0 0 420 250",
   summary: "The three ECT electrode placements: bitemporal on both temples, bifrontal on the forehead, and right unilateral on the right temple and near the top of the head.",

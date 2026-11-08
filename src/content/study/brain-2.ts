@@ -583,7 +583,7 @@ Q: Alpha rhythm is best seen:
 :::
 
 :::widget figure
-{"id": "ect-placements"}
+{"id": "ect-from-above"}
 :::
 
 `;

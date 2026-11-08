@@ -1483,7 +1483,7 @@ Q: A new mother in a village is depressed after childbirth. There is no psycholo
 :::
 
 :::widget figure
-{"id": "ect-placements"}
+{"id": "ect-from-above"}
 :::
 
 ### Other brain stimulation
