@@ -1,0 +1,273 @@
+/** Landmark library: United States court decisions on commitment, treatment refusal, fitness, insanity and the death penalty. */
+import type { LandmarkCase } from "./cases";
+
+export const LANDMARK_LEGAL_C: LandmarkCase[] = [
+  {
+    id: "landmark-rogers-rennie", title: "Rogers v. Okin and Rennie v. Klein: the right to refuse antipsychotics", domain: "legal",
+    story: "In 1975 patients at Boston State Hospital brought a class action against forced medication, seclusion and restraint. In 1979 a federal judge held that committed patients are presumed competent and that forcing antipsychotics on them outside an emergency violated their privacy and dignity. The appeals court agreed that mental illness alone does not mean incompetence. In 1983 the highest court of Massachusetts said a judge must decide, after a full hearing, by substituted judgment: what the patient would choose if competent. In New Jersey, Rennie v. Klein (1978) gave a former pilot held at Ancora hospital a similar qualified right to refuse.",
+    believedThen: "That once a person was committed, doctors could give any treatment they chose, because commitment itself meant the person could not decide.",
+    understandNow: "Being detained and being unable to decide are two separate questions. A detained person can still have capacity to refuse a medicine, and overriding a refusal outside an emergency needs its own justification and process. India's Mental Healthcare Act 2017 builds on the same idea: capacity is judged for each decision, and treatment without consent is allowed only in defined situations.",
+    contested: "Psychiatrists argued that court hearings delay treatment while patients stay ill and detained, and some said the rulings left people 'rotting with their rights on'.",
+    quiz: [
+      { question: "What principle did the Rogers litigation establish about committed patients?", options: ["Commitment does not by itself make a person incompetent to refuse medicine", "Committed patients lose every treatment choice from the day the commitment order is signed", "Antipsychotics may only be given by a judge personally", "Any patient may be medicated if a nurse agrees"], correct: 0, rationale: "The courts separated commitment from competence. Commitment does not strip all choice, judges authorise but do not give medicines, and a nurse's agreement is not a legal basis for forced treatment." },
+      { question: "In a non-emergency, how did the Massachusetts court say a decision for an incompetent patient should be made?", options: ["By whichever relative visits the patient most often during the admission", "By the hospital superintendent alone", "By substituted judgment: what the patient would choose if competent", "By a vote of the other patients on the ward"], correct: 2, rationale: "The court asked what the person would want if able to decide. Frequent visitors, the superintendent alone or fellow patients have no such legal role, and the hospital's own view was exactly what the court wanted checked." },
+    ],
+    tags: { topic: "consent", difficulty: 3, objective: "Separate detention from capacity to refuse treatment", exams: ["ugc-net", "md-psychiatry", "mcp-entrance"], module: "ethics-law" },
+  },
+  {
+    id: "landmark-youngberg", title: "Youngberg v. Romeo: rights inside an institution", domain: "legal",
+    story: "Nicholas Romeo, a young man with profound intellectual disability, was committed to Pennhurst State School in Pennsylvania. While there he was injured many times and was kept in restraints for long periods. His mother sued. In 1982 the US Supreme Court held that people committed to state institutions have rights to reasonably safe conditions, to freedom from unreasonable bodily restraint, and to the minimal training needed to secure those rights.",
+    believedThen: "That a person placed in an institution had no enforceable rights there beyond food and shelter.",
+    understandNow: "Commitment does not end basic rights. The Court also set the 'professional judgment' standard: courts should defer to decisions made by qualified professionals, but only if professional judgment was actually exercised. In practice this means restraint must be clinically justified and recorded, not used for staff convenience.",
+    quiz: [
+      { question: "Which right did Youngberg v. Romeo recognise for people in state institutions?", options: ["A right to choose any hospital in the country, paid for by the state", "A right to freedom from unreasonable bodily restraint", "A right to be released after one year", "A right to refuse food"], correct: 1, rationale: "The Court recognised safety, freedom from unreasonable restraint and minimal training. It did not create a right to choose any hospital, a fixed release date, or anything about refusing food." },
+      { question: "Under the 'professional judgment' standard, when will a court accept a decision to restrain a resident?", options: ["Whenever staff are short-handed on a busy shift and cannot watch everyone", "Only if the resident's family signs a form first", "Never, because restraint is always unlawful", "When a qualified professional actually exercised professional judgment"], correct: 3, rationale: "Courts defer to genuine professional judgment. Staff shortage is not a clinical reason, family signatures are not the test, and the Court did not ban restraint outright." },
+    ],
+    tags: { topic: "disability-rights", difficulty: 3, objective: "State the rights of people living in institutions", exams: ["ugc-net", "md-psychiatry"], module: "ethics-law" },
+  },
+  {
+    id: "landmark-hendricks", title: "Kansas v. Hendricks: detention after the prison term ends", domain: "legal",
+    story: "Leroy Hendricks had a long history of sexually abusing children. As he neared release from prison, Kansas used its new Sexually Violent Predator Act to seek his civil commitment, and a jury found him to be a sexually violent predator. In 1997 the US Supreme Court, by five votes to four, upheld the law. It reasoned that confining people who have a 'mental abnormality' that makes them unable to control dangerous behaviour is civil, not punishment.",
+    believedThen: "That a person who has served a sentence must be released, and that civil commitment is only for people with a recognised mental illness who need treatment.",
+    understandNow: "Hendricks allowed a new category of civil detention based on a legal term, 'mental abnormality', rather than a clinical diagnosis. Many psychiatrists objected that it uses mental health law to extend punishment. A later case, Kansas v. Crane (2002), added that the state must show serious difficulty in controlling behaviour.",
+    contested: "Critics argue that these programmes release almost no one, so they work as life sentences under a medical label.",
+    quiz: [
+      { question: "Why did the majority say Hendricks's continued detention was not double punishment?", options: ["Because Hendricks agreed to it", "Because he had not finished his sentence", "Because it treated the confinement as civil, not criminal", "Because a psychiatrist had written to the governor asking for it"], correct: 2, rationale: "The majority called the confinement civil, so double jeopardy did not apply. Hendricks did not agree, he had finished his sentence, and no letter to the governor was the basis." },
+      { question: "What is the main objection psychiatrists raised to this kind of law?", options: ["It uses mental health detention to extend punishment under a medical label", "It cost too little to run", "It applied only to women", "It required doctors to prescribe hormone treatment to every detained man"], correct: 0, rationale: "The concern is that 'mental abnormality' is a legal label that turns hospitals into prisons. Cost, sex and hormones are not the core objection." },
+    ],
+    tags: { topic: "forensic", difficulty: 4, objective: "Explain civil detention of sex offenders and why it is criticised", exams: ["ugc-net", "md-psychiatry"], module: "ethics-law" },
+  },
+  {
+    id: "landmark-foucha", title: "Foucha v. Louisiana: no illness, no hospital detention", domain: "legal",
+    story: "Terry Foucha was found not guilty by reason of insanity of burglary and firearm charges and sent to a Louisiana hospital. Doctors later said his drug-induced psychosis had cleared and that he now had antisocial personality disorder, which they did not regard as a mental illness. Louisiana kept him because he might still be dangerous. In 1992 the US Supreme Court held that dangerousness alone cannot justify keeping an insanity acquittee in hospital once he is no longer mentally ill.",
+    believedThen: "That anyone found insane could be held for as long as he seemed dangerous, whatever his current mental state.",
+    understandNow: "Hospital detention needs both a mental illness and a reason to detain. Once the illness is gone, the state must release the person or use the ordinary criminal law. The case also shows how much legal weight rests on whether a condition, such as a personality disorder, is called a mental illness.",
+    quiz: [
+      { question: "What did Foucha v. Louisiana decide?", options: ["Insanity acquittees must always be released at once, whatever their current state", "Antisocial personality disorder is a psychosis", "States may never hold insanity acquittees", "Dangerousness alone cannot justify hospital detention once mental illness has gone"], correct: 3, rationale: "The holding is that dangerousness without mental illness is not enough. It did not require immediate release in every case, did not call antisocial personality a psychosis, and did not ban holding acquittees who are still ill." },
+      { question: "Why did Foucha's diagnosis of antisocial personality disorder matter?", options: ["It meant he had a drug problem only", "The state's own doctors did not treat it as a mental illness", "It proved he had never been insane, so the original verdict was wrong", "It qualified him for a pension"], correct: 1, rationale: "Because it was not regarded as a mental illness, the basis for hospital detention fell away. It was not just a drug problem, did not prove past sanity, and had nothing to do with pensions." },
+    ],
+    tags: { topic: "forensic", difficulty: 4, objective: "Explain why detention needs current mental illness, not only risk", exams: ["md-psychiatry", "ugc-net"], module: "ethics-law" },
+  },
+  {
+    id: "landmark-riggins", title: "Riggins v. Nevada: medicated through his own trial", domain: "legal",
+    story: "David Riggins, charged with murder in Nevada, was given high doses of the antipsychotic thioridazine (Mellaril) in jail. He used an insanity defence and asked to stop the drug during trial so the jury could see his real, unmedicated state. The court refused. In 1992 the US Supreme Court held that forcing the drug on him violated his right to a fair trial, because the state had not shown it was medically appropriate or that less intrusive options had been considered.",
+    believedThen: "That a court could keep a defendant on any medication that made him calm in the courtroom.",
+    understandNow: "Medication changes how a person looks and behaves, and that can affect a jury and the defendant's ability to help his lawyers. Forced medication during trial needs a clear medical reason and a check that nothing less intrusive would do. This line of reasoning led to Sell v. United States (2003).",
+    quiz: [
+      { question: "Why did Riggins want his antipsychotic stopped during trial?", options: ["He wanted the jury to see his real mental state for his insanity defence", "He was allergic to all medicines", "He wanted to be found fit to plead", "He had been offered a newer and better drug by a hospital in another state"], correct: 0, rationale: "His defence relied on his mental state, which the drug masked. Allergy, fitness and another drug were not his reasons." },
+      { question: "What did the Supreme Court require before a defendant is medicated against his will at trial?", options: ["That the jury votes for it", "Written permission from the victim's family", "A medical reason and consideration of less intrusive options", "Nothing, because the trial judge has full discretion over a defendant's medicines"], correct: 2, rationale: "The state must show medical appropriateness and consider alternatives. Juries and victims' families do not decide medication, and the Court rejected unlimited discretion." },
+    ],
+    tags: { topic: "consent", difficulty: 4, objective: "Explain limits on forced medication during a criminal trial", exams: ["md-psychiatry", "ugc-net"], module: "ethics-law" },
+  },
+  {
+    id: "landmark-indiana-edwards", title: "Indiana v. Edwards: fit for trial, not fit to be his own lawyer", domain: "legal",
+    story: "Ahmad Edwards, who has schizophrenia, tried to steal shoes from a department store, fired a gun at a guard and wounded a bystander. He was eventually found competent to stand trial, but the judge refused his repeated requests to represent himself. In 2008 the US Supreme Court held that a state may insist on a lawyer for a defendant who is competent to stand trial but too impaired by severe mental illness to conduct his own defence.",
+    believedThen: "That a person fit to stand trial is automatically fit to do anything else in the case, including acting as his own lawyer.",
+    understandNow: "Competence is specific to the task. Following a trial with a lawyer's help is different from running one alone, which needs organised thinking, communication and stamina. The idea that capacity depends on the decision or task is the same one used in consent to treatment.",
+    quiz: [
+      { question: "What did Indiana v. Edwards allow?", options: ["Trying defendants who are not competent", "Denying self-representation to a defendant competent for trial but severely impaired", "Forcing medication on all defendants", "Removing the right to a lawyer for anyone with a psychiatric diagnosis on record"], correct: 1, rationale: "A state may require a lawyer for a defendant who can stand trial but cannot run his own defence. The ruling did not allow trying incompetent people, forced medication or removing the right to counsel." },
+      { question: "Which general principle does this case illustrate?", options: ["Competence is all or nothing", "Only judges can have mental illness", "Self-representation is always forbidden", "Competence depends on the specific task"], correct: 3, rationale: "Being able to stand trial with help is a different task from conducting a defence. Competence is not all or nothing, the other two options are false." },
+    ],
+    tags: { topic: "forensic", difficulty: 3, objective: "Show that competence is specific to each legal task", exams: ["md-psychiatry", "ugc-net"], module: "ethics-law" },
+  },
+  {
+    id: "landmark-panetti", title: "Panetti v. Quarterman: rational understanding before execution", domain: "legal",
+    story: "Scott Panetti, who had schizophrenia and long-standing delusions, shot his wife's parents in 1992 and was sentenced to death in Texas. He knew the state said it would execute him for the murders, but believed the real reason was a plot to stop him preaching. In 2007 the US Supreme Court, by five to four, held that knowing the state's stated reason is not enough: a prisoner must have a rational understanding of why he is being executed.",
+    believedThen: "That a prisoner could be executed as long as he could repeat the reason he had been given.",
+    understandNow: "Panetti builds on Ford v. Wainwright. Assessment for 'competence to be executed' must look beyond factual awareness to whether delusions distort the person's grasp of the link between crime and punishment. It is one reason forensic psychiatrists distinguish knowing a fact from understanding it rationally.",
+    quiz: [
+      { question: "What standard did Panetti set for competence to be executed?", options: ["The prisoner must be able to recite the charge and the date set for the execution", "The prisoner must have an IQ above 70", "The prisoner must have a rational understanding of the reason for execution", "The prisoner must have no diagnosis"], correct: 2, rationale: "Rational understanding, not just recitation, is required. IQ concerns intellectual disability cases, and having a diagnosis does not by itself decide competence." },
+      { question: "Panetti knew the state's reason but believed a plot was behind it. Why did this matter?", options: ["Delusions distorted his understanding of why he would be executed", "It showed he was lying", "It showed his lawyer had coached him to give a convincing account of a plot", "It proved he was competent"], correct: 0, rationale: "His delusion broke the rational link between crime and punishment. It did not show lying or competence, and his lawyer's skill was not the issue." },
+    ],
+    tags: { topic: "death-penalty", difficulty: 4, objective: "Explain rational understanding in competence to be executed", exams: ["md-psychiatry", "ugc-net"], module: "ethics-law" },
+  },
+  {
+    id: "landmark-madison", title: "Madison v. Alabama: dementia on death row", domain: "legal",
+    story: "Vernon Madison was sentenced to death for killing a police officer in 1985. Decades later, a series of strokes left him with vascular dementia and no memory of the crime. In 2019 the US Supreme Court held that forgetting the crime does not by itself bar execution, but that a prisoner who cannot rationally understand why he is being punished, whether because of psychosis or dementia, cannot be executed.",
+    believedThen: "That only psychotic delusions, not dementia, could make a prisoner incompetent to be executed.",
+    understandNow: "What matters is the prisoner's understanding, not the type of disorder. As prisoners age on death row, dementia assessments are becoming part of forensic work. The case also shows the value of careful cognitive testing rather than assumptions based on a diagnosis.",
+    quiz: [
+      { question: "What did the Court say about Madison's memory loss?", options: ["Any memory loss bars execution", "Only delusions count, not dementia", "Dementia must always be proven by a brain scan before any court will consider it", "Memory loss alone does not bar execution, but lack of rational understanding does"], correct: 3, rationale: "The test is rational understanding of the punishment. Forgetting alone is not enough, dementia can count as much as psychosis, and no scan is required." },
+      { question: "Which condition caused Madison's impairment?", options: ["Schizophrenia", "Vascular dementia after strokes", "Bipolar disorder", "Intellectual disability from birth"], correct: 1, rationale: "His strokes caused vascular dementia. He was not described as having schizophrenia, bipolar disorder or intellectual disability." },
+    ],
+    tags: { topic: "death-penalty", difficulty: 3, objective: "Apply competence to be executed to dementia", exams: ["md-psychiatry", "ugc-net"], module: "neurocognitive" },
+  },
+  {
+    id: "landmark-kahler", title: "Kahler v. Kansas: a state without a moral insanity test", domain: "legal",
+    story: "James Kahler killed four members of his family and was sentenced to death. Kansas law, since 1995, did not allow a defendant to argue that mental illness stopped him knowing his act was wrong. He could only argue that illness stopped him forming the intent to kill. In 2020 the US Supreme Court, by six votes to three, held that the Constitution does not require states to offer a moral-wrongness insanity defence.",
+    believedThen: "That every fair legal system must excuse someone who, because of mental illness, cannot tell right from wrong.",
+    understandNow: "In the United States, states are free to design their own insanity rules, and a few have almost abolished the defence. Kansas still lets mental illness be raised at sentencing. The case is a reminder that insanity law is a policy choice that differs by place, unlike India, where the unsound-mind defence is written into the criminal code.",
+    contested: "Dissenting judges said that excusing people who cannot know right from wrong is so old and basic that it is part of due process.",
+    quiz: [
+      { question: "What did Kahler v. Kansas decide?", options: ["States are not required to offer a moral-wrongness insanity defence", "Insanity must be abolished in every state", "States must use the M'Naghten test", "Mental illness can never be raised in court at any stage of a criminal case"], correct: 0, rationale: "The Court said the Constitution does not demand a moral-incapacity test. It did not order abolition everywhere, did not impose M'Naghten, and Kansas still allows mental illness to be raised on intent and at sentencing." },
+      { question: "Under Kansas law at the time, how could mental illness still help a defendant?", options: ["Only at the appeal stage, never at the trial itself or at sentencing", "By showing he felt sorry afterwards", "By showing it stopped him forming the required intent", "By showing he had seen a doctor once"], correct: 2, rationale: "Kansas allowed illness to negate intent. Remorse and a single doctor's visit are not defences, and the intent argument was available at trial, not only on appeal." },
+    ],
+    tags: { topic: "forensic", difficulty: 4, objective: "Compare insanity rules across legal systems", exams: ["ugc-net", "md-psychiatry"], module: "ethics-law" },
+  },
+  {
+    id: "landmark-clark-arizona", title: "Clark v. Arizona: aliens, a traffic stop and the limits of evidence", domain: "legal",
+    story: "In 2000 Eric Clark, aged seventeen and with paranoid schizophrenia, shot dead a police officer during a traffic stop in Flagstaff. He believed aliens had taken over his town and that officers were aliens in disguise. Arizona's insanity test asked only whether he knew the act was wrong, and its courts did not let psychiatric evidence be used to argue that he lacked intent. In 2006 the US Supreme Court, by five to four, upheld both rules.",
+    believedThen: "That evidence of psychosis should be usable for any question in a murder trial.",
+    understandNow: "States may narrow insanity tests and may channel psychiatric evidence into the insanity question only. Clark is taught alongside Kahler as part of the trend to restrict mental illness defences in the United States. Clinically, it illustrates how a delusional belief can shape a violent act that the person still partly understands.",
+    quiz: [
+      { question: "What did Clark believe when he shot the officer?", options: ["That the officer had stolen his car", "That aliens had taken over his town", "That he was dreaming", "That the gun was a toy"], correct: 1, rationale: "His delusion was that aliens had taken over. Theft, dreaming and a toy gun were not his beliefs." },
+      { question: "Which rule did the Supreme Court uphold in Clark?", options: ["That psychiatric evidence must be allowed on every issue the defence wishes to raise", "That juveniles cannot be tried for murder", "That schizophrenia is always a complete defence", "That a state may limit psychiatric evidence to the insanity question"], correct: 3, rationale: "Arizona could confine such evidence to insanity. The Court did not require it on every issue, did not bar trying juveniles, and did not make schizophrenia an automatic defence." },
+    ],
+    tags: { topic: "forensic", difficulty: 5, objective: "Analyse how psychiatric evidence is limited in insanity trials", exams: ["md-psychiatry", "ugc-net"], module: "psychosis" },
+  },
+  {
+    id: "landmark-estelle-smith", title: "Estelle v. Smith: warnings before a forensic interview", domain: "legal",
+    story: "Ernest Smith was charged with murder in Texas. A psychiatrist, James Grigson, examined him before trial, supposedly only to check fitness. At the sentencing stage, Grigson used what Smith had said to testify that he would be dangerous in future, helping secure a death sentence. In 1981 the US Supreme Court held that Smith's rights were violated: he had not been warned that his words could be used against him, and his lawyers had not been told the interview would cover dangerousness.",
+    believedThen: "That a psychiatric interview was a medical conversation, not part of the legal process.",
+    understandNow: "A forensic interview is not therapy. The person must be told who the assessor works for, what the report will be used for, and that what they say is not confidential. This is now basic ethics in forensic psychology and psychiatry everywhere, including in Indian court-ordered assessments.",
+    quiz: [
+      { question: "What went wrong in Grigson's interview of Smith?", options: ["Grigson charged too much", "The interview was too short", "Smith was not warned his words could be used against him at sentencing", "Smith was interviewed in a language he did not speak, without any interpreter"], correct: 2, rationale: "The violation was the lack of warning and of notice to counsel. Fees, length and language were not the issue." },
+      { question: "What should a forensic assessor tell the person at the start?", options: ["Who the assessor works for and how the report will be used", "That everything said is fully confidential and will never be shared with anyone", "That the assessor is their therapist", "Nothing, so that answers are natural"], correct: 0, rationale: "The person must know the purpose and limits of confidentiality. Promising confidentiality or posing as a therapist is misleading, and saying nothing is the error the Court condemned." },
+    ],
+    tags: { topic: "forensic", difficulty: 3, objective: "State the warnings owed before a forensic interview", exams: ["md-psychiatry", "ugc-net", "mcp-entrance"], module: "ethics-law" },
+  },
+  {
+    id: "landmark-ake", title: "Ake v. Oklahoma: a psychiatrist for the defence", domain: "legal",
+    story: "Glen Burton Ake was charged in 1979 with murdering a couple and wounding their two children. His behaviour in court was so strange that he was sent for evaluation, found unfit, and later treated until fit. His lawyer asked for a state-funded psychiatrist to examine his sanity at the time of the crime. The request was refused, and Ake was sentenced to death. In 1985 the US Supreme Court held that when a poor defendant's sanity is likely to be a significant factor, the state must provide access to a psychiatrist.",
+    believedThen: "That a poor defendant had to rely on whatever the prosecution's experts said about his mental state.",
+    understandNow: "Fair trials need expert help on both sides when mental state is central. Ake is the basis for funding defence mental health experts in the United States. In India, the parallel concern is that many accused people with mental illness never get a proper assessment at all.",
+    quiz: [
+      { question: "What did Ake v. Oklahoma require?", options: ["That every defendant gets a psychiatrist", "That psychiatrists who examine a defendant must always testify for the prosecution", "That insanity pleas be banned", "That poor defendants get psychiatric help when sanity is a significant issue"], correct: 3, rationale: "The right applies to indigent defendants when sanity is likely to be significant, not to everyone. It did not bind psychiatrists to the prosecution or ban insanity pleas." },
+      { question: "Why was the ruling important for fairness?", options: ["It reduced the number of trials", "It stopped the outcome depending only on the prosecution's experts", "It allowed judges to skip the evidence stage when the accused had a diagnosis", "It made trials shorter"], correct: 1, rationale: "Without its own expert, the defence cannot test the prosecution's view of the defendant's mind. The ruling did not aim to cut trials, skip evidence or shorten hearings." },
+    ],
+    tags: { topic: "forensic", difficulty: 3, objective: "Explain why the defence needs its own mental health expert", exams: ["md-psychiatry", "ugc-net"], module: "ethics-law" },
+  },
+  {
+    id: "landmark-hall-florida", title: "Hall v. Florida: an IQ score is not a cliff edge", domain: "legal",
+    story: "Freddie Lee Hall was sentenced to death for a 1978 murder. After Atkins v. Virginia barred executing people with intellectual disability, Hall claimed protection, but one of his IQ scores was 71 and Florida used a strict cut-off of 70. In 2014 the US Supreme Court, by five to four, held the rigid cut-off unconstitutional, because every IQ test has a measurement error and other evidence of disability must be considered.",
+    believedThen: "That a single IQ number above 70 settled the question of intellectual disability.",
+    understandNow: "Diagnosis needs deficits in intellectual and adaptive functioning beginning in the developmental period, judged clinically. A score is a range, not a point: the standard error of measurement means a 71 could reflect a true score of about 66 to 76. This is exactly how psychologists are taught to report IQ.",
+    quiz: [
+      { question: "Why did the Court strike down Florida's strict IQ cut-off?", options: ["Because IQ scores have measurement error and adaptive functioning also matters", "Because IQ tests are illegal", "Because Hall had never taken a test", "Because Florida had used the wrong test publisher for the scores it relied on"], correct: 0, rationale: "The ruling rested on measurement error and the need to consider wider evidence. IQ testing is not illegal, Hall had been tested, and the publisher was not the issue." },
+      { question: "A report says 'IQ 71'. What is the best way for a psychologist to interpret this?", options: ["Ignore adaptive functioning", "Proof that there is no intellectual disability, so no further assessment is needed", "As a range around 71, weighed with adaptive functioning", "Proof of severe intellectual disability"], correct: 2, rationale: "Scores are ranges and must be read with adaptive functioning. A 71 neither rules out disability nor proves severe disability, and adaptive functioning is essential to the diagnosis." },
+    ],
+    tags: { topic: "intellectual-disability", difficulty: 3, objective: "Interpret IQ scores with measurement error in legal settings", exams: ["ugc-net", "md-psychiatry", "mcp-entrance"], module: "assessment" },
+  },
+  {
+    id: "landmark-moore-texas", title: "Moore v. Texas: clinical standards, not stereotypes", domain: "legal",
+    story: "Bobby James Moore was sentenced to death in 1980 for killing a store clerk during a robbery in Houston. Texas courts rejected his claim of intellectual disability using their own 'Briseno factors', which asked lay questions such as whether he could lie well or whether people who knew him thought he was slow. In 2017 the US Supreme Court held that courts may not ignore current medical standards and must not rely on such stereotypes.",
+    believedThen: "That a judge's common-sense impression of whether someone 'seemed' disabled was good enough.",
+    understandNow: "Intellectual disability is a clinical diagnosis with defined criteria, and people with it can have strengths, such as some practical skills, alongside real deficits. Lay stereotypes, like 'he can't be disabled because he can lie or play pool', are poor evidence. Psychologists giving evidence should anchor their opinions in current diagnostic standards.",
+    quiz: [
+      { question: "What was wrong with the Briseno factors?", options: ["They were too strict about IQ", "They were based on lay stereotypes, not medical standards", "They were written in Latin", "They ignored the facts of the crime and looked only at school records"], correct: 1, rationale: "The Court objected that they relied on stereotypes. Their fault was not IQ strictness, language or ignoring the crime." },
+      { question: "A witness says, 'He can't be disabled, he held a job for a while.' What does Moore teach about this?", options: ["It settles the question", "It proves he is malingering", "It means a formal IQ test is unnecessary, because work history says enough", "Strengths can coexist with deficits, so it does not rule out disability"], correct: 3, rationale: "People with intellectual disability often have some strengths. A job does not settle the matter, prove malingering or replace testing." },
+    ],
+    tags: { topic: "intellectual-disability", difficulty: 4, objective: "Tell clinical criteria apart from lay stereotypes of disability", exams: ["ugc-net", "md-psychiatry"], module: "assessment" },
+  },
+  {
+    id: "landmark-miller-graham", title: "Graham v. Florida and Miller v. Alabama: young people and life sentences", domain: "legal",
+    story: "In Graham v. Florida (2010) the US Supreme Court barred life without parole for juveniles convicted of crimes other than murder. In Miller v. Alabama (2012) it went further, striking down mandatory life without parole for anyone under eighteen. Miller combined two cases of fourteen-year-olds: Evan Miller, who took part in a fatal robbery and arson in Alabama, and Kuntrell Jackson, who waited outside an Arkansas video shop during a robbery in which a clerk was killed.",
+    believedThen: "That a young person who commits a grave crime should be judged exactly like an adult.",
+    understandNow: "Following Roper v. Simmons, the Court relied on evidence that adolescents are more impulsive, more swayed by peers and more capable of change than adults. Sentencers must consider youth and its features. The same developmental science informs India's Juvenile Justice Act, which treats under-eighteens separately and allows only a preliminary assessment for trying older teens as adults for heinous offences.",
+    quiz: [
+      { question: "What did Miller v. Alabama strike down?", options: ["All prison sentences for juveniles", "Trials of juveniles in adult courts for any offence, however serious", "Mandatory life without parole for under-eighteens", "The death penalty for adults"], correct: 2, rationale: "Miller struck down mandatory life without parole for juveniles. It did not end all sentences, adult trials or the adult death penalty." },
+      { question: "Which developmental finding supported these rulings?", options: ["Adolescents are more impulsive, more swayed by peers and more able to change", "Teenagers have fully mature judgement", "Brain development is complete by about age ten, so teenagers think like adults", "Peer pressure does not affect teenagers"], correct: 0, rationale: "The Court relied on adolescent immaturity and capacity for change. The other options contradict the evidence." },
+    ],
+    tags: { topic: "juvenile-justice", difficulty: 2, objective: "Link adolescent development to sentencing law", exams: ["ugc-net", "ma-semester", "md-psychiatry"], module: "child" },
+  },
+  {
+    id: "landmark-cruzan", title: "Cruzan v. Missouri: proving what a patient would have wanted", domain: "legal",
+    story: "In 1983 Nancy Cruzan was left in a persistent vegetative state after a car accident. Years later her parents asked for her feeding tube to be removed, saying she would not have wanted to live like that. Missouri required clear and convincing evidence of her wishes. In 1990 the US Supreme Court, by five to four, upheld that requirement. Later, friends came forward with more evidence of her wishes, a state court allowed removal, and she died in December 1990.",
+    believedThen: "That families could always make end-of-life decisions for an unconscious relative without proof of the patient's own wishes.",
+    understandNow: "Cruzan pushed people to write down their wishes. The US Patient Self-Determination Act of 1990 made hospitals tell patients about advance directives. India's Common Cause rulings and the advance directive provisions of the Mental Healthcare Act 2017 reflect the same lesson: a person's own earlier wishes carry great weight.",
+    quiz: [
+      { question: "What did the Supreme Court allow Missouri to require in Cruzan?", options: ["Approval from a religious leader chosen by the patient's family", "A vote of the hospital staff", "That feeding tubes can never be removed", "Clear and convincing evidence of the patient's own wishes"], correct: 3, rationale: "Missouri could demand clear and convincing evidence of Nancy's wishes. Religious approval and staff votes were not the test, and the Court did not ban removal outright." },
+      { question: "What practical lesson did Cruzan spread?", options: ["Avoid car travel", "Write down treatment wishes in advance", "Families should never be consulted", "Only courts may decide medical care for anyone who cannot speak"], correct: 1, rationale: "The case led to wider use of advance directives. Travel advice is irrelevant, families are still consulted, and most decisions are not made by courts." },
+    ],
+    tags: { topic: "end-of-life", difficulty: 2, objective: "Explain why advance directives matter", exams: ["ugc-net", "md-psychiatry", "ma-semester"], module: "ethics-law" },
+  },
+  {
+    id: "landmark-glucksberg", title: "Washington v. Glucksberg and Vacco v. Quill: no constitutional right to assisted suicide", domain: "legal",
+    story: "Doctors and terminally ill patients challenged laws in Washington and New York that made assisting suicide a crime. In 1997 the US Supreme Court unanimously held, in Washington v. Glucksberg, that the Constitution does not protect a right to assisted suicide, because such a right is not deeply rooted in the nation's history and traditions. In the companion case, Vacco v. Quill, it held that a state may allow patients to refuse life-saving treatment while still banning assisted suicide.",
+    believedThen: "Campaigners hoped the Court would treat the choice of the time and manner of death as a protected liberty.",
+    understandNow: "The decisions left the issue to individual states, several of which have since passed laws allowing physician-assisted dying for terminal illness. For clinicians, the key distinction the Court drew remains useful: refusing treatment is legally different from being helped to die. Requests to die always call for careful assessment of depression and unmet needs.",
+    quiz: [
+      { question: "What did Glucksberg decide?", options: ["The Constitution does not protect a right to assisted suicide", "Every state must allow assisted suicide", "Doctors must report every suicidal patient to the police within a day", "Refusing treatment is a crime"], correct: 0, rationale: "The Court found no constitutional right to assisted suicide. It did not require states to allow it, did not create a police reporting duty, and refusing treatment remains lawful." },
+      { question: "What distinction did Vacco v. Quill accept?", options: ["Between young and old patients", "Between treatment given in public hospitals and in private hospitals", "Between refusing life-saving treatment and being helped to die", "Between doctors and nurses"], correct: 2, rationale: "The Court accepted that refusing treatment differs from assisted suicide. Age, hospital type and profession were not the distinction." },
+    ],
+    tags: { topic: "end-of-life", difficulty: 3, objective: "Distinguish refusing treatment from assisted dying", exams: ["ugc-net", "md-psychiatry"], module: "suicide" },
+  },
+  {
+    id: "landmark-quinlan", title: "Karen Ann Quinlan: the ventilator case that created ethics committees", domain: "legal",
+    story: "In April 1975 Karen Ann Quinlan, aged twenty-one, collapsed after taking a sedative and alcohol while on a crash diet, and fell into a coma. Her parents asked for her ventilator to be removed. On 31 March 1976 the New Jersey Supreme Court allowed it, relying on her right to privacy exercised through her family. She was taken off the ventilator in May 1976, kept breathing on her own, and lived for about nine more years.",
+    believedThen: "That doctors must use every available machine to keep a patient alive for as long as possible.",
+    understandNow: "Quinlan began modern law on withdrawing life support. It also encouraged hospitals to set up ethics committees to help families and doctors with hard decisions. The fact that she lived for years after removal is a reminder that predictions near the end of life are uncertain.",
+    quiz: [
+      { question: "What lasting institution did the Quinlan case help create?", options: ["Suicide helplines", "Hospital ethics committees", "Organ donation registers", "Medical malpractice insurance"], correct: 1, rationale: "The case encouraged hospital ethics committees. Helplines, donor registers and malpractice insurance have other origins." },
+      { question: "What happened after Karen's ventilator was removed?", options: ["She died within minutes", "She woke up fully", "She was moved to another country where the law allowed her to be kept alive", "She breathed on her own and lived about nine more years"], correct: 3, rationale: "She kept breathing and lived about nine years. She neither died at once nor recovered, and was not moved abroad." },
+    ],
+    tags: { topic: "end-of-life", difficulty: 2, objective: "Describe the origin of decisions to withdraw life support", exams: ["ugc-net", "ma-semester"], module: "ethics-law" },
+  },
+  {
+    id: "landmark-jones-us", title: "Jones v. United States: a stolen jacket and an open-ended stay", domain: "legal",
+    story: "In 1975 Michael Jones was charged with trying to steal a jacket from a shop in Washington, D.C., an offence with a maximum sentence of one year. He pleaded not guilty by reason of insanity and was committed to hospital. His stay went on beyond a year, and he argued he should be released. In 1983 the US Supreme Court held that an insanity acquittee's hospital stay is not limited to the maximum prison sentence for the offence.",
+    believedThen: "That a person found insane could not be held longer than he would have served in prison.",
+    understandNow: "The Court said commitment serves treatment and protection, not punishment, so the prison maximum does not apply. Critics note that this can lead to people being held far longer for minor offences than if they had been convicted, a pattern also seen in India, where under-trial prisoners with mental illness have sometimes spent decades in custody.",
+    contested: "Dissenting judges argued that the length of detention should bear some relation to the seriousness of the offence.",
+    quiz: [
+      { question: "What did Jones v. United States hold?", options: ["Insanity acquittees must be freed after one year, as that was the maximum sentence", "Shoplifting cannot lead to an insanity plea", "Hospital stays are not capped at the maximum prison sentence", "Jones was guilty"], correct: 2, rationale: "The Court held that commitment is not limited by the prison maximum. It did not set a one-year limit, did not bar insanity pleas for minor crimes, and Jones was acquitted, not convicted." },
+      { question: "What is the main concern about this ruling?", options: ["People may be held much longer for minor offences than a prison term", "It makes hospitals too small", "It forces hospital doctors to work longer hours to assess every acquittee", "It bans all insanity defences"], correct: 0, rationale: "The worry is disproportionate detention. Hospital size, doctors' hours and abolition of the defence are not the concern." },
+    ],
+    tags: { topic: "forensic", difficulty: 3, objective: "Explain detention after an insanity acquittal", exams: ["md-psychiatry", "ugc-net"], module: "ethics-law" },
+  },
+  {
+    id: "landmark-godinez", title: "Godinez v. Moran: one standard for pleading guilty", domain: "legal",
+    story: "Richard Moran killed three people in Nevada in 1984 and then attempted suicide. Found competent to stand trial, he later chose to dismiss his lawyers and plead guilty, and he was sentenced to death. He argued that a higher level of competence should be needed to give up a lawyer and plead guilty. In 1993 the US Supreme Court, by seven to two, held that the standard is the same as for standing trial.",
+    believedThen: "Some courts had required a higher level of mental competence for waiving counsel or pleading guilty than for standing trial.",
+    understandNow: "Godinez kept one standard, based on Dusky, for these decisions, while requiring that any waiver be knowing and voluntary. Fifteen years later Indiana v. Edwards carved out an exception for self-representation at trial by severely ill defendants. Read together, they show courts still debating how task-specific competence should be.",
+    quiz: [
+      { question: "What did Godinez decide about competence to plead guilty?", options: ["A higher standard of competence is needed than for standing trial", "No competence is needed", "Only a psychiatrist can decide", "It is the same standard as competence to stand trial"], correct: 3, rationale: "The Court used one standard for both. It rejected a higher standard, did not abolish the requirement, and the decision is legal, not purely psychiatric." },
+      { question: "Which later case created an exception for self-representation by severely ill defendants?", options: ["Roper v. Simmons, the juvenile death penalty case", "Indiana v. Edwards", "Tarasoff", "Cruzan"], correct: 1, rationale: "Indiana v. Edwards (2008) let states deny self-representation in such cases. Roper concerns juvenile execution, Tarasoff the duty to protect, and Cruzan end-of-life care." },
+    ],
+    tags: { topic: "forensic", difficulty: 4, objective: "Compare standards for different legal competences", exams: ["md-psychiatry"], module: "ethics-law" },
+  },
+  {
+    id: "landmark-vitek", title: "Vitek v. Jones: moving a prisoner to a mental hospital", domain: "legal",
+    story: "Larry Jones, a prisoner in Nebraska serving a sentence for robbery, was moved against his will to a state mental hospital. Nebraska allowed such transfers on a doctor's finding alone. In 1980 the US Supreme Court held that before a prisoner is involuntarily transferred to a mental hospital, he is entitled to notice, a hearing and help from an adviser, because the move adds the stigma of mental illness and compulsory treatment to his sentence.",
+    believedThen: "That a prisoner had already lost his liberty, so moving him to a hospital needed no extra process.",
+    understandNow: "Prison and psychiatric hospital are different kinds of confinement, with different consequences. Transfer for treatment needs its own safeguards. In India, the Mental Healthcare Act 2017 likewise requires prisoners with mental illness to be treated in proper facilities and gives them the same rights as other patients.",
+    quiz: [
+      { question: "What did Vitek v. Jones require before transferring a prisoner to a mental hospital?", options: ["Notice and a hearing", "Nothing, because he is already a prisoner", "The prisoner's family's consent", "A jury trial"], correct: 0, rationale: "Due process needs notice and a hearing. The Court rejected 'nothing', and did not require family consent or a jury." },
+      { question: "Why did the Court treat the transfer as a new loss of liberty?", options: ["Because hospitals are more expensive", "Because the prisoner would earn less from prison work while in the hospital", "Because it adds stigma and compulsory treatment", "Because hospitals are further from courts"], correct: 2, rationale: "The added stigma and treatment made it a fresh deprivation. Cost, earnings and distance were not the reasoning." },
+    ],
+    tags: { topic: "forensic", difficulty: 3, objective: "Explain safeguards for transferring prisoners for treatment", exams: ["md-psychiatry", "ugc-net"], module: "ethics-law" },
+  },
+  {
+    id: "landmark-pennhurst", title: "Pennhurst: from television exposé to closure", domain: "legal",
+    story: "Pennhurst State School and Hospital in Pennsylvania housed thousands of people with intellectual and developmental disabilities. In 1968 a television reporter, Bill Baldini, broadcast 'Suffer the Little Children', showing neglect and overcrowding. In 1974 the family of a resident, Terri Lee Halderman, joined a class action after she was found with unexplained injuries. Federal courts found conditions unsanitary, inhumane and dangerous. After long litigation, including Supreme Court rulings in 1981 and 1984, the institution closed in 1987.",
+    believedThen: "That people with intellectual disability were best kept in large institutions away from society.",
+    understandNow: "Pennhurst became a symbol of why large institutions fail and helped drive the move to community living. Residents who moved out generally did better in small community homes. Its story parallels Indian public interest cases on mental hospitals and the push in the Rights of Persons with Disabilities Act 2016 for community inclusion.",
+    quiz: [
+      { question: "What first brought Pennhurst's conditions to wide public attention?", options: ["A novel by a former patient", "A 1968 television report", "A government census", "A film star's visit"], correct: 1, rationale: "Bill Baldini's 1968 broadcast exposed the conditions. The other options are not how the exposé began." },
+      { question: "What broader change does the Pennhurst story represent?", options: ["Building bigger institutions", "Ending all disability services", "Handing every state institution over to private companies to run", "Moving from large institutions to community living"], correct: 3, rationale: "Pennhurst became a symbol of deinstitutionalisation in favour of community living. It did not lead to bigger or private institutions or an end to services." },
+    ],
+    tags: { topic: "disability-rights", difficulty: 2, objective: "Describe how exposés and litigation closed institutions", exams: ["ugc-net", "ma-semester"], module: "foundations" },
+  },
+  {
+    id: "landmark-cleburne", title: "City of Cleburne v. Cleburne Living Center: a group home and irrational fear", domain: "legal",
+    story: "In 1980 the Cleburne Living Center planned a group home for people with intellectual disability in Cleburne, Texas. The city required a special permit for a 'hospital for the feebleminded' and refused it, citing neighbours' fears, a nearby school and the site being on a flood plain. In 1985 the US Supreme Court held that the refusal violated equal protection, because it rested on irrational prejudice rather than any real difference from other permitted housing.",
+    believedThen: "That a town could keep people with disabilities out of a neighbourhood simply because residents felt uneasy.",
+    understandNow: "Neighbours' fears and stereotypes are not a lawful reason to exclude people. The case is a lesson in how stigma shapes where people with disabilities may live. Similar resistance to halfway homes and rehabilitation centres is common in Indian cities, and the Rights of Persons with Disabilities Act 2016 forbids discrimination of this kind.",
+    quiz: [
+      { question: "Why did the Court rule against the city?", options: ["The building was unsafe", "The home was too expensive", "The refusal rested on irrational prejudice", "The planned residents were not from Texas and had no local family"], correct: 2, rationale: "The Court found no rational basis beyond prejudice. Safety, cost and residence were not what decided it." },
+      { question: "Which modern problem does Cleburne speak to most directly?", options: ["Neighbourhood resistance to group homes and halfway houses", "The quality of food served in state hospitals and nursing homes", "Doctors' fees", "Exam marking"], correct: 0, rationale: "It is about stigma blocking community housing. The other options are unrelated." },
+    ],
+    tags: { topic: "stigma", difficulty: 2, objective: "Recognise stigma in decisions about community housing", exams: ["ugc-net", "ma-semester"], module: "social" },
+  },
+  {
+    id: "landmark-gault", title: "In re Gault: a phone call and the rights of children in court", domain: "legal",
+    story: "In 1964 Gerald Gault, aged fifteen, was taken into custody in Arizona after a neighbour complained of an obscene phone call. His parents were not told, there was no lawyer, no sworn witness and no record. He was committed to a state industrial school until age twenty-one. An adult would have faced at most a small fine or a short jail term. In 1967 the US Supreme Court held that children in delinquency hearings have due process rights: notice of the charges, a lawyer, the right to confront witnesses, and protection against self-incrimination.",
+    believedThen: "That juvenile courts acted as kindly parents, so children needed no legal protections.",
+    understandNow: "Good intentions do not replace fair procedures. Gault is a foundation of juvenile justice rights worldwide. India's Juvenile Justice Act 2015 likewise gives children in conflict with the law rights to legal aid and to be heard, and emphasises rehabilitation rather than punishment.",
+    quiz: [
+      { question: "What did In re Gault give children in delinquency hearings?", options: ["The right to vote", "The right to choose which judge hears their case", "Automatic release", "Due process rights such as notice and a lawyer"], correct: 3, rationale: "Gault granted procedural rights like notice, counsel and confrontation. It did not give voting rights, choice of judge or automatic release." },
+      { question: "What assumption did the case overturn?", options: ["That children cannot make phone calls", "That a kindly juvenile court needed no legal safeguards", "That all children are guilty", "That parents must attend school meetings before a child can be charged"], correct: 1, rationale: "The Court rejected the idea that the court's parental role made safeguards unnecessary. The other options are not what the case was about." },
+    ],
+    tags: { topic: "juvenile-justice", difficulty: 2, objective: "Explain due process rights of children in court", exams: ["ugc-net", "ma-semester"], module: "child" },
+  },
+];
