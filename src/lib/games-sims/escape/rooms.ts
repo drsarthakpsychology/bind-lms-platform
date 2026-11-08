@@ -7,6 +7,7 @@ import { CLINIC_EXAMS, DX_EXAMS, PHARM_EXAMS, type ItemTags, type Level } from "
 import { ROOMS_A } from "./rooms-a";
 import { ROOMS_B } from "./rooms-b";
 import { ROOMS_C } from "./rooms-c";
+import { ROOMS_D } from "./rooms-d";
 
 export type Stage = "mse" | "diagnosis" | "differential" | "risk" | "course" | "plan" | "medicine" | "criteria";
 
@@ -348,6 +349,6 @@ function withTags(r: Room): Room {
   };
 }
 
-export const ROOMS: Room[] = [nightShift, stillRoom, nightBus, ...ROOMS_A, ...ROOMS_B, ...ROOMS_C].map(withTags);
+export const ROOMS: Room[] = [nightShift, stillRoom, nightBus, ...ROOMS_A, ...ROOMS_B, ...ROOMS_C, ...ROOMS_D].map(withTags);
 
 export const roomById = (id: string) => ROOMS.find((r) => r.id === id);
