@@ -15,6 +15,8 @@ import { noteAnswer } from "@/lib/history/client";
 import { setLearnState, useLearnState, initLearnStore } from "@/lib/learn/store";
 import { useExplainView, ViewToggle } from "./view-toggle";
 import s from "./learn.module.css";
+import { useReaction, useReactionsOn } from "@/components/reactions/use-reaction";
+import { EndReaction, StreakMeter } from "@/components/reactions/graphics";
 
 const RIGHT = ["Nice!", "Spot on.", "Exactly.", "You've got it.", "Clinician brain!", "Sharp.", "Yes!", "Perfect."];
 const COMBO = ["On a roll!", "Combo!", "Can't stop you.", "Hot streak!"];
@@ -73,6 +75,7 @@ function LessonRun({ mode, state, order }: { mode: Exclude<Mode, { kind: "blitz"
   const [retried, setRetried] = React.useState<string[]>([]);
   const [result, setResult] = React.useState<Payout | null>(null);
   const [confetti, setConfetti] = React.useState<{ x: number; d: number; c: string }[]>([]);
+  const reaction = useReaction();
 
   if (!queue.length) {
     return (
@@ -95,6 +98,7 @@ function LessonRun({ mode, state, order }: { mode: Exclude<Mode, { kind: "blitz"
 
   function onDone(correct: boolean, answer: string) {
     setLocked(true);
+    reaction.onAnswer(correct);
     if (!isRetry) {
       setAnswers((a) => [...a, { id: item.id, correct }]);
       noteAnswer("learn", item.id, correct);
@@ -160,9 +164,7 @@ function LessonRun({ mode, state, order }: { mode: Exclude<Mode, { kind: "blitz"
         <div className="h-4 flex-1 overflow-hidden rounded-full border-2 border-foreground bg-muted" role="progressbar" aria-valuenow={progress} aria-valuemin={0} aria-valuemax={100}>
           <div className="h-full rounded-full bg-primary transition-[width] duration-500" style={{ width: `${progress}%` }} />
         </div>
-        <span className={cn("flex items-center gap-1 rounded-full border-2 border-foreground px-2.5 py-1 text-sm font-semibold", combo >= 3 ? "bg-foreground text-primary" : "bg-card")} aria-label={`Combo ${combo}`}>
-          <Flame className={cn("size-4", combo >= 3 && s.flame)} aria-hidden /> {combo}
-        </span>
+        <StreakMeter streak={combo} />
       </div>
 
       <div className="mt-3 flex items-center justify-between gap-3">
@@ -231,6 +233,8 @@ export function Summary({
   onAgain: () => void;
 }) {
   const [chestOpen, setChestOpen] = React.useState(!result.chest);
+  const [funny] = useReactionsOn();
+  const endMood = result.stars >= 3 ? "streak" : result.stars === 2 ? "right" : result.stars === 1 ? "near" : "wrong";
   const lvl = levelFor(state.xp);
   const shown = chestOpen ? result.lines : result.lines.filter((l) => !l.label.toLowerCase().includes("chest"));
   const sum = shown.reduce((a, l) => a + l.xp, 0);
@@ -243,7 +247,11 @@ export function Summary({
           ))}
         </div>
       ) : null}
-      <Chai mood={result.stars >= 2 || result.levelUp ? "cheer" : result.stars === 0 ? "sad" : "happy"} size={150} />
+      {funny ? (
+        <EndReaction mood={endMood} seed={title} className="mx-auto w-fit max-w-full justify-center" />
+      ) : (
+        <Chai mood={result.stars >= 2 || result.levelUp ? "cheer" : result.stars === 0 ? "sad" : "happy"} size={150} />
+      )}
       <div>
         <p className="text-eyebrow text-link">{title} complete</p>
         <p className="mt-2 text-4xl tracking-widest" aria-label={`${result.stars} of 3 stars`}>
@@ -354,6 +362,7 @@ function Blitz({ state }: { state: LearnState }) {
   const answersRef = React.useRef<{ id: string; correct: boolean }[]>([]);
   const comboRef = React.useRef(0);
   const [bestBefore, setBestBefore] = React.useState(0);
+  const reaction = useReaction();
 
   const finish = React.useCallback(() => {
     setPhase("done");
@@ -392,6 +401,8 @@ function Blitz({ state }: { state: LearnState }) {
   }
 
   function answer(correct: boolean) {
+    // The clock is running: counted, but no pop-up until the end.
+    reaction.onAnswer(correct, { timed: true });
     const item = deck[i];
     answersRef.current = [...answersRef.current, { id: item.id, correct }];
     setAnswers(answersRef.current);
@@ -428,7 +439,7 @@ function Blitz({ state }: { state: LearnState }) {
     const missed = answers.filter((a) => !a.correct).map((a) => findItem(a.id)).filter(Boolean) as Item[];
     return (
       <div className="mx-auto max-w-xl space-y-6 py-8 text-center">
-        <Chai mood={right >= 10 ? "cheer" : "happy"} size={130} />
+        <EndReaction mood={right >= 15 ? "streak" : right >= 8 ? "right" : right >= 4 ? "near" : "wrong"} seed={answers.length} className="mx-auto w-fit max-w-full justify-center" />
         <p className="font-pix text-6xl">{right}</p>
         <p className="text-lg font-bold">correct in 60 seconds{right > bestBefore ? " · New best!" : ""}</p>
         {payout ? <p className="font-pix">+{payout.xp} XP</p> : null}

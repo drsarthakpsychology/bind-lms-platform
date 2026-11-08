@@ -16,6 +16,8 @@ import { creditServerPlay } from "@/lib/learn/credit-play";
 import { HintBar, useHintStatus } from "@/components/hints/hint-chip";
 import { askHint } from "@/lib/hints/actions";
 import { hintedPoints } from "@/lib/hints/rules";
+import { useReaction } from "@/components/reactions/use-reaction";
+import { EndReaction } from "@/components/reactions/graphics";
 
 type Grade = (a: Answer & { run?: string }) => Promise<{ ok: boolean }>;
 type Finish = (x: { run: string; answers: Answer[] }) => Promise<{ ok: boolean; xp: number }>;
@@ -90,6 +92,7 @@ function Round({ r, setR, onAnswered, onEnd, medIds }: { r: Run; setR: (r: Run) 
   const needed = q.kind === "chain" ? STEPS.length : 1;
   const complete = r.picks.length >= needed;
   const [hints, setHints] = useHintStatus();
+  const reaction = useReaction();
   const at = Math.min(r.picks.length, STEPS.length - 1);
   const hintKey = q.kind === "chain" ? `${q.id}.${at}` : q.id;
   const gone = r.ruled[hintKey] ?? [];
@@ -107,6 +110,7 @@ function Round({ r, setR, onAnswered, onEnd, medIds }: { r: Run; setR: (r: Run) 
     const a: Answer = { kind: q.kind, id: q.id, picks };
     const g = grade(a)!;
     buzz(g.score >= 1);
+    reaction.onAnswer(g.score >= 1, { partial: (g.score > 0 && g.score < 1) || (g.score >= 1 && hintedHere) });
     // The server records it too (gradeRxAnswer); this is the browser copy.
     noteAnswer("rx", rxItem(q.kind, q.id), g.score >= 1, { server: false });
     onAnswered(a);
@@ -520,6 +524,7 @@ function Summary({ r, xp, board, onAgain, onModes }: { r: Run; xp: number | null
     <div className={cn("mx-auto max-w-2xl space-y-5", m.rise)}>
       {r.lives > 0 ? null : <p className="text-eyebrow text-link">Out of lives</p>}
       <h1 className="text-h1">{acc >= 0.85 ? "Sharp detective." : acc >= 0.6 ? "Good work." : "The receptors will click with practice."}</h1>
+      <EndReaction right={Math.round(acc * 100)} total={100} seed={r.run} />
       <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
         <Stat label="Accuracy" value={`${pct(acc)}%`} />
         <Stat label="Points" value={r.points} />

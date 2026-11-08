@@ -14,6 +14,8 @@ import { Btn, buzz, Kbd, motionCss as m, Panel, Pill, Stat, useHotkeys } from "@
 import { creditServerPlay } from "@/lib/learn/credit-play";
 import { HintBar, useHintStatus } from "@/components/hints/hint-chip";
 import { askHint } from "@/lib/hints/actions";
+import { useReaction } from "@/components/reactions/use-reaction";
+import { EndReaction } from "@/components/reactions/graphics";
 
 type Finish = (x: { seed: string; mode: Setup["mode"]; level: Level; moves: Move[]; prefer?: string }) => Promise<{ ok: boolean; xp: number }>;
 
@@ -105,6 +107,7 @@ function Table({ play, setPlay, xp, onDone, onAgain, onExit, board }: { play: Pl
   const [hints, setHints] = useHintStatus();
   /** Hints are for you against the bot only: turn number → what the hint said. */
   const [hinted, setHinted] = React.useState<Record<number, string>>({});
+  const reaction = useReaction();
 
   const botTurn = g.winner === null && !!g.seats[g.turn].bot;
   React.useEffect(() => {
@@ -122,7 +125,10 @@ function Table({ play, setPlay, xp, onDone, onAgain, onExit, board }: { play: Pl
     const next = apply(g, mv);
     if (next === g) return;
     const ev = next.log[next.log.length - 1];
-    if (ev.action === "play") buzz(ev.ok);
+    if (ev.action === "play") {
+      buzz(ev.ok);
+      reaction.onAnswer(ev.ok);
+    }
     setSel(null);
     setPlay({ ...play, game: next, moves: [...play.moves, mv], handoff: pass && next.winner === null });
   }
@@ -380,6 +386,11 @@ function End({ play, xp, onAgain, onExit, board }: { play: Play; xp: number | nu
           {g.winner === "draw" ? "Even" : g.winner === 0 ? (pass ? "Player 1" : "Diagnosis complete") : pass ? "Player 2" : "Rival complete"}
         </Pill>
       </div>
+      {pass ? (
+        <EndReaction right={right} total={mine.length} seed={play.moves.length} />
+      ) : (
+        <EndReaction mood={g.winner === 0 ? "streak" : g.winner === "draw" ? "near" : "wrong"} seed={play.moves.length} />
+      )}
       <div className="grid gap-3 sm:grid-cols-2">
         <DxPanel seat={g.seats[0]} label={g.seats[0].name} />
         <DxPanel seat={g.seats[1]} label={g.seats[1].name} rival />

@@ -15,6 +15,8 @@ import fx from "@/lib/games/ui/fx.module.css";
 import { answerBlitz, finishBlitz, startBlitz } from "./actions";
 import { creditPlay, istToday, recordBlitzRound, type LearnState } from "@/lib/learn/engine";
 import { getLearnState, initLearnStore, setLearnState } from "@/lib/learn/store";
+import { useReaction } from "@/components/reactions/use-reaction";
+import { EndReaction } from "@/components/reactions/graphics";
 
 type Phase = "ready" | "countdown" | "run" | "finishing" | "done";
 type Miss = { prompt: string; answer: string; why: string; learn: { label: string; href: string } };
@@ -46,6 +48,7 @@ export function BlitzGame({ bests, serverState, save }: { bests: Bests; serverSt
   const [busy, setBusy] = React.useState(false);
   const [done, setDone] = React.useState<Done | null>(null);
   const [shown, setShown] = React.useState(bests);
+  const reaction = useReaction();
 
   const token = React.useRef<string | null>(null);
   const endAt = React.useRef(0);
@@ -166,6 +169,8 @@ export function BlitzGame({ bests, serverState, save }: { bests: Bests; serverSt
         if (Math.abs(serverEnd - endAt.current) > 400) endAt.current = serverEnd;
         setRun(res.state);
         setReveal({ picked: choice, answer: res.answer, right: res.right });
+        // The clock runs: counted, never a pop-up. The end screen gets the reaction.
+        reaction.onAnswer(res.right, { timed: true });
         if (res.right) {
           haptic("tap");
           setGain((g) => ({ n: res.gained, key: (g?.key ?? 0) + 1 }));
@@ -189,7 +194,7 @@ export function BlitzGame({ bests, serverState, save }: { bests: Bests; serverSt
       });
       inflight.current = p;
     },
-    [phase, q, busy, reveal, finish, later],
+    [phase, q, busy, reveal, finish, later, reaction],
   );
 
   // Desktop keys: 1 to 4 answer, T/F for true or false, Enter or Space starts.
@@ -412,6 +417,7 @@ function Result({ done, run, misses, bests, error, pending, onAgain }: { done: D
             <p className="mt-1 text-sm font-semibold">
               {run.correct} right of {run.answered} · best combo {run.best}
             </p>
+            <EndReaction right={run.correct} total={Math.max(run.answered, 1)} seed={run.score} className="mx-auto mt-4 w-fit max-w-full justify-center" />
             <div className="mt-3 flex flex-wrap justify-center gap-2">
               {done?.newBest && (
                 <span className={cn(chip, "bg-primary text-primary-foreground", anim(fx.pop))}>
