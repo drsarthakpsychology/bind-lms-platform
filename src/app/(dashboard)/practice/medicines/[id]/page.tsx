@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { MEDS, medById } from "@/lib/meds";
 import { MedicineView } from "@/components/meds/medicine-view";
 import { mechanismOf } from "@/lib/meds/mechanisms";
-import { medVisuals } from "@/lib/meds/visuals";
+import { halfLifeOf, medVisuals } from "@/lib/meds/visuals";
 import { studyModuleFor } from "@/lib/meds/study-link";
 import { moduleById } from "@/lib/study";
 import { readFlags } from "@/lib/flags";
@@ -33,11 +33,11 @@ async function studyLink(med: Parameters<typeof studyModuleFor>[0]): Promise<{ h
   return blockedBy(`/study/${m.id}`, blocked) ? null : { href: `/study/${m.id}`, title: m.title };
 }
 
-/** One medicine: dose chips, student or clinician view, and where it is taught in Study. */
+/** One medicine: practical facts first, "How it works" last (#how-it-works). */
 export default async function MedicinePage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const med = medById(id);
   if (!med) notFound();
   const related = med.related.map(medById).filter((m): m is NonNullable<typeof m> => Boolean(m)).map((m) => ({ id: m.id, name: m.name, cls: m.cls }));
-  return <MedicineView med={med} related={related} mech={mechanismOf(med.id)} visuals={medVisuals(med.id)} study={await studyLink(med)} />;
+  return <MedicineView med={med} related={related} mech={mechanismOf(med.id)} visuals={medVisuals(med.id)} half={halfLifeOf(med.id)} study={await studyLink(med)} />;
 }

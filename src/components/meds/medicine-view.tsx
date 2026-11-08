@@ -2,12 +2,12 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { AlertTriangle, ArrowLeft, ArrowRight, BookOpen, Check, ClipboardCheck, MessageCircle, Microscope, Pill, Shuffle, Users } from "lucide-react";
+import { AlertTriangle, ArrowDown, ArrowLeft, ArrowRight, BookOpen, Check, CircleStop, ClipboardCheck, Microscope, Pill, Shuffle, Syringe, Users } from "lucide-react";
 import type { Med } from "@/lib/meds/types";
 import type { Mechanism } from "@/lib/meds/mechanisms";
 import type { MedVisual } from "@/lib/meds/visuals";
-import { MedicineVisual } from "./medicine-visuals";
-import { Journey, Receptor } from "@/components/study/animations";
+import { HOW_IT_WORKS, splitTell, type SectionId } from "@/lib/meds/sections";
+import { MedicineSketches } from "./medicine-visuals";
 import { cn } from "@/lib/utils";
 import { backLinkClass } from "@/components/design-system/back-link";
 
@@ -40,15 +40,19 @@ function saveView(v: View) {
 }
 
 /**
- * One medicine: pick a dose chip to see what happens at that dose; switch
- * between plain student words and clinician detail at any time.
+ * One medicine, practical facts first: what it is used for, doses and how to
+ * take it, side effects, monitoring, interactions, warnings, special groups,
+ * switching and stopping, and last "How it works" (anchor #how-it-works) with
+ * the mechanism and every picture. Student or clinician words at any time.
+ * `study`: the Study module that teaches this medicine (only when Study is open for this student).
  */
-/** `study`: the Study module that teaches this medicine (only when Study is open for this student). */
-export function MedicineView({ med, related, mech, visuals = [], study = null }: { med: Med; related: { id: string; name: string; cls: string }[]; mech?: Mechanism; visuals?: MedVisual[]; study?: { href: string; title: string } | null }) {
+export function MedicineView({ med, related, mech, visuals = [], half = null, study = null }: { med: Med; related: { id: string; name: string; cls: string }[]; mech?: Mechanism; visuals?: MedVisual[]; half?: { hl: string; meaning: string } | null; study?: { href: string; title: string } | null }) {
   const view = React.useSyncExternalStore(subscribe, readView, () => "student" as View);
   const [i, setI] = React.useState(med.defaultDose);
   const dose = med.doses[i];
   const pick = saveView;
+  const tell = splitTell(med);
+  const hasHow = Boolean(mech) || visuals.length > 0;
 
   return (
     <div className="mx-auto max-w-4xl space-y-6">
@@ -61,8 +65,11 @@ export function MedicineView({ med, related, mech, visuals = [], study = null }:
           {med.group} · {med.cls}
         </p>
         <h1 className="mt-1 break-words text-display">{med.name}</h1>
-        {med.brands.length ? <p className="mt-1 text-sm font-semibold opacity-90">Indian brands: {med.brands.join(", ")}</p> : null}
-        <p className="mt-1 text-sm opacity-90">{med.forms}</p>
+        {hasHow ? (
+          <a href={`#${HOW_IT_WORKS}`} className="mt-2 inline-flex min-h-11 items-center gap-1.5 text-sm font-bold underline underline-offset-4">
+            How it works <ArrowDown className="size-4" aria-hidden />
+          </a>
+        ) : null}
       </header>
 
       {/* View switch: sticks to the top while scrolling on phones */}
@@ -88,7 +95,18 @@ export function MedicineView({ med, related, mech, visuals = [], study = null }:
         </div>
       </div>
 
-      <section aria-label="What it is" className="space-y-3">
+      {/* 1. What it is used for */}
+      <section id="uses" data-section="uses" aria-labelledby="uses-h" className="space-y-3 scroll-mt-20">
+        <h2 id="uses-h" className="flex items-center gap-2 text-lg font-bold">
+          <Pill className="size-5 text-link" aria-hidden /> Used for
+        </h2>
+        <ul className="flex flex-wrap gap-1.5">
+          {med.uses.map((u) => (
+            <li key={u} className="rounded-full border-2 border-foreground bg-card px-3 py-1 text-sm font-semibold">
+              {u}
+            </li>
+          ))}
+        </ul>
         <p className="text-[1.0625rem] leading-relaxed">{view === "student" ? med.student : med.clinician}</p>
         <ul className="grid gap-2 sm:grid-cols-3">
           {med.standout.map((s) => (
@@ -99,49 +117,12 @@ export function MedicineView({ med, related, mech, visuals = [], study = null }:
         </ul>
       </section>
 
-      {mech ? (
-        <section aria-labelledby="how" className="space-y-4 rounded-3xl border-2 border-foreground bg-card p-4 hard-shadow-sm sm:p-5">
-          <h2 id="how" className="flex items-center gap-2 text-lg font-bold">
-            <Microscope className="size-5 text-link" aria-hidden /> How it works
-          </h2>
-          <p className="text-[1.0625rem] leading-relaxed">{mech.plain}</p>
-          <div className="-mx-1 overflow-x-auto">
-            <table className="w-full min-w-[32rem] border-collapse text-left text-sm">
-              <thead>
-                <tr className="border-b-2 border-foreground">
-                  <th scope="col" className="py-2 pr-3 font-bold">Target</th>
-                  {view === "clinician" ? <th scope="col" className="py-2 pr-3 font-bold">Action</th> : null}
-                  <th scope="col" className="py-2 font-bold">What it means</th>
-                </tr>
-              </thead>
-              <tbody>
-                {mech.targets.map((t) => (
-                  <tr key={t.target} className="border-b border-foreground/15 align-top">
-                    <td className="py-2 pr-3 font-semibold">{t.target}</td>
-                    {view === "clinician" ? <td className="py-2 pr-3">{t.action}</td> : null}
-                    <td className="py-2 text-muted-foreground">{t.effect}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-          <div className="grid gap-4 lg:grid-cols-2">
-            <Receptor d={{ receptor: mech.receptor.name, title: `${med.name} at the ${mech.receptor.name} receptor`, caption: `Press ${mech.receptor.pick}. ${mech.receptor.note}` }} />
-            <Journey d={{ drug: med.name.toLowerCase(), target: mech.site, routes: mech.routes, notes: mech.notes }} />
-            {visuals.map((v, k) => (
-              <MedicineVisual key={`${v.kind}-${k}`} v={v} />
-            ))}
-          </div>
-        </section>
-      ) : null}
-
-      {/* Dose chips */}
-      <section aria-labelledby="doses" className="rounded-3xl border-2 border-foreground bg-card p-4 hard-shadow-sm sm:p-5">
-        <h2 id="doses" className="text-lg font-bold">
-          Tap a dose
+      {/* 2. Doses, how to take it, forms, Indian brands */}
+      <section id="doses" data-section="doses" aria-labelledby="doses-h" className="space-y-4 rounded-3xl border-2 border-foreground bg-card p-4 hard-shadow-sm scroll-mt-20 sm:p-5">
+        <h2 id="doses-h" className="flex items-center gap-2 text-lg font-bold">
+          <Syringe className="size-5 text-link" aria-hidden /> Doses
         </h2>
-        <p className="text-sm text-muted-foreground">What it is used for and what to expect at each dose.</p>
-        <div className="-mx-4 mt-3 flex gap-2 overflow-x-auto px-4 pb-1 sm:mx-0 sm:flex-wrap sm:px-0" role="tablist" aria-label="Doses">
+        <div className="-mx-4 flex gap-2 overflow-x-auto px-4 pb-1 sm:mx-0 sm:flex-wrap sm:px-0" role="tablist" aria-label="Doses">
           {med.doses.map((d, k) => (
             <button
               key={d.amount}
@@ -160,7 +141,7 @@ export function MedicineView({ med, related, mech, visuals = [], study = null }:
           ))}
         </div>
 
-        <div key={i} role="tabpanel" className="mt-4 space-y-3">
+        <div key={i} role="tabpanel" className="space-y-3">
           <p className="text-sm font-semibold text-link">Used for: {dose.use}</p>
           <p className="text-[1.0625rem] leading-relaxed">{view === "student" ? dose.student : dose.clinician}</p>
           {view === "student" ? (
@@ -181,7 +162,7 @@ export function MedicineView({ med, related, mech, visuals = [], study = null }:
               </ul>
             </div>
           ) : null}
-          <div className="flex justify-between gap-2 pt-1">
+          <div className="flex justify-between gap-2">
             <button type="button" disabled={i === 0} onClick={() => setI(i - 1)} className="h-10 rounded-full border-2 border-foreground px-4 text-sm font-semibold disabled:opacity-30">
               ← Lower dose
             </button>
@@ -190,27 +171,51 @@ export function MedicineView({ med, related, mech, visuals = [], study = null }:
             </button>
           </div>
         </div>
+
+        <dl className="grid gap-3 border-t-2 border-foreground/15 pt-4 text-[0.95rem] leading-relaxed sm:grid-cols-2">
+          {tell.take.length ? (
+            <div className="sm:col-span-2">
+              <dt className="text-sm font-bold uppercase tracking-wide">How to take it</dt>
+              <dd>
+                <ul className="mt-1 list-disc space-y-1 pl-5">{tell.take.map((u) => <li key={u}>{u}</li>)}</ul>
+              </dd>
+            </div>
+          ) : null}
+          <div>
+            <dt className="text-sm font-bold uppercase tracking-wide">Forms</dt>
+            <dd className="mt-1">{med.forms}</dd>
+          </div>
+          <div>
+            <dt className="text-sm font-bold uppercase tracking-wide">Indian brands</dt>
+            <dd className="mt-1">{med.brands.join(", ")}</dd>
+          </div>
+        </dl>
+        <p className="text-caption text-muted-foreground">
+          Typical adult doses, for learning. The prescriber chooses the dose for each patient; always check the current label and local guidance.
+        </p>
       </section>
 
       <div className="grid gap-4 md:grid-cols-2">
-        <Box icon={<Pill className="size-4" aria-hidden />} title="Used for">
-          <ul className="space-y-1">{med.uses.map((u) => <li key={u}>{u}</li>)}</ul>
-        </Box>
-        <Box icon={<ClipboardCheck className="size-4" aria-hidden />} title="What to check">
-          <ul className="list-disc space-y-1 pl-5">{med.checks.map((u) => <li key={u}>{u}</li>)}</ul>
-        </Box>
-        <Box icon={<Pill className="size-4" aria-hidden />} title="Common side effects">
+        {/* 3. Side effects */}
+        <Box id="side-effects" icon={<Pill className="size-4" aria-hidden />} title="Side effects">
           <ul className="list-disc space-y-1 pl-5">{med.common.map((u) => <li key={u}>{u}</li>)}</ul>
         </Box>
-        <Box icon={<AlertTriangle className="size-4" aria-hidden />} title="Serious: act the same day" danger>
-          <ul className="list-disc space-y-1 pl-5">{med.serious.map((u) => <li key={u}>{u}</li>)}</ul>
+        {/* 4. Monitoring */}
+        <Box id="monitoring" icon={<ClipboardCheck className="size-4" aria-hidden />} title="What to check">
+          <ul className="list-disc space-y-1 pl-5">{med.checks.map((u) => <li key={u}>{u}</li>)}</ul>
         </Box>
-        {view === "clinician" || med.interactions.length ? (
-          <Box icon={<Shuffle className="size-4" aria-hidden />} title="Interactions">
+        {/* 5. Interactions */}
+        {med.interactions.length ? (
+          <Box id="interactions" icon={<Shuffle className="size-4" aria-hidden />} title="Interactions">
             <ul className="list-disc space-y-1 pl-5">{med.interactions.map((u) => <li key={u}>{u}</li>)}</ul>
           </Box>
         ) : null}
-        <Box icon={<Users className="size-4" aria-hidden />} title="Special groups">
+        {/* 6. Warnings */}
+        <Box id="warnings" icon={<AlertTriangle className="size-4" aria-hidden />} title="Serious: act the same day" danger>
+          <ul className="list-disc space-y-1 pl-5">{[...med.serious, ...tell.warn].map((u) => <li key={u}>{u}</li>)}</ul>
+        </Box>
+        {/* 7. Special groups */}
+        <Box id="groups" icon={<Users className="size-4" aria-hidden />} title="Special groups">
           <dl className="space-y-2">
             {med.groups.map((g) => (
               <div key={g.label}>
@@ -220,44 +225,81 @@ export function MedicineView({ med, related, mech, visuals = [], study = null }:
             ))}
           </dl>
         </Box>
+        {/* 8. Switching and stopping */}
+        {tell.stopping.length || half ? (
+          <Box id="stopping" icon={<CircleStop className="size-4" aria-hidden />} title="Switching and stopping">
+            <ul className="list-disc space-y-1 pl-5">
+              {tell.stopping.map((u) => <li key={u}>{u}</li>)}
+              {half ? <li>Half-life {half.hl}. After the last dose, levels take about 4 to 5 half-lives to wash out.</li> : null}
+            </ul>
+          </Box>
+        ) : null}
       </div>
 
-      <Box icon={<MessageCircle className="size-4" aria-hidden />} title="What to tell the patient">
-        <ul className="list-disc space-y-1 pl-5">{med.tell.map((u) => <li key={u}>{u}</li>)}</ul>
-      </Box>
+      {related.length || study ? (
+        <nav aria-label="Related" className="space-y-2">
+          {related.length ? (
+            <>
+              <h2 className="text-lg font-bold">Compare with</h2>
+              <div className="flex flex-wrap gap-2">
+                {related.map((r) => (
+                  <Link key={r.id} href={`/practice/medicines/${r.id}`} className="rounded-full border-2 border-foreground bg-card px-3.5 py-1.5 text-sm font-semibold hover:bg-primary">
+                    {r.name} <span className="font-normal text-muted-foreground">· {r.cls}</span>
+                  </Link>
+                ))}
+              </div>
+            </>
+          ) : null}
+          {study ? (
+            <Link href={study.href} className="inline-flex min-h-11 items-center gap-1.5 text-sm font-bold text-link underline-offset-4 hover:underline [overflow-wrap:anywhere]">
+              <BookOpen className="size-4 shrink-0" aria-hidden /> Learn it in Study: {study.title} <ArrowRight className="size-4 shrink-0" aria-hidden />
+            </Link>
+          ) : null}
+        </nav>
+      ) : null}
 
-      {related.length ? (
-        <section aria-labelledby="related">
-          <h2 id="related" className="text-lg font-bold">
-            Compare with
+      {/* 9. How it works: last, linkable as #how-it-works */}
+      {hasHow ? (
+        <section id={HOW_IT_WORKS} data-section={HOW_IT_WORKS} aria-labelledby="how-h" className="space-y-4 rounded-3xl border-2 border-foreground bg-card p-4 hard-shadow-sm scroll-mt-20 sm:p-5">
+          <h2 id="how-h" className="flex items-center gap-2 text-lg font-bold">
+            <Microscope className="size-5 text-link" aria-hidden /> How it works
           </h2>
-          <div className="mt-2 flex flex-wrap gap-2">
-            {related.map((r) => (
-              <Link key={r.id} href={`/practice/medicines/${r.id}`} className="rounded-full border-2 border-foreground bg-card px-3.5 py-1.5 text-sm font-semibold hover:bg-primary">
-                {r.name} <span className="font-normal text-muted-foreground">· {r.cls}</span>
-              </Link>
-            ))}
-          </div>
+          {mech ? (
+            <>
+              <p className="text-[1.0625rem] leading-relaxed">{mech.plain}</p>
+              <div className="-mx-1 overflow-x-auto">
+                <table className="w-full min-w-[32rem] border-collapse text-left text-sm">
+                  <thead>
+                    <tr className="border-b-2 border-foreground">
+                      <th scope="col" className="py-2 pr-3 font-bold">Target</th>
+                      {view === "clinician" ? <th scope="col" className="py-2 pr-3 font-bold">Action</th> : null}
+                      <th scope="col" className="py-2 font-bold">What it means</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {mech.targets.map((t) => (
+                      <tr key={t.target} className="border-b border-foreground/15 align-top">
+                        <td className="py-2 pr-3 font-semibold">{t.target}</td>
+                        {view === "clinician" ? <td className="py-2 pr-3">{t.action}</td> : null}
+                        <td className="py-2 text-muted-foreground">{t.effect}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </>
+          ) : null}
+          <MedicineSketches med={med} mech={mech} visuals={visuals} />
         </section>
       ) : null}
-
-      {study ? (
-        <Link href={study.href} className="inline-flex min-h-11 items-center gap-1.5 text-sm font-bold text-link underline-offset-4 hover:underline [overflow-wrap:anywhere]">
-          <BookOpen className="size-4 shrink-0" aria-hidden /> Learn it in Study: {study.title} <ArrowRight className="size-4 shrink-0" aria-hidden />
-        </Link>
-      ) : null}
-
-      <p className="text-caption text-muted-foreground">
-        Typical adult doses, for learning. The prescriber chooses the dose for each patient; always check the current label and local guidance.
-      </p>
     </div>
   );
 }
 
-function Box({ icon, title, children, danger }: { icon: React.ReactNode; title: string; children: React.ReactNode; danger?: boolean }) {
+function Box({ id, icon, title, children, danger }: { id: SectionId; icon: React.ReactNode; title: string; children: React.ReactNode; danger?: boolean }) {
   return (
-    <section className={cn("rounded-2xl border-2 p-4 text-[0.95rem] leading-relaxed", danger ? "border-status-alert-fg bg-status-alert-bg text-status-alert-fg" : "border-foreground bg-card")}>
-      <h2 className="mb-2 flex items-center gap-2 text-sm font-bold uppercase tracking-wide">
+    <section id={id} data-section={id} aria-labelledby={`${id}-h`} className={cn("scroll-mt-20 rounded-2xl border-2 p-4 text-[0.95rem] leading-relaxed", danger ? "border-status-alert-fg bg-status-alert-bg text-status-alert-fg" : "border-foreground bg-card")}>
+      <h2 id={`${id}-h`} className="mb-2 flex items-center gap-2 text-sm font-bold uppercase tracking-wide">
         {icon} {title}
       </h2>
       {children}

@@ -1,8 +1,10 @@
 "use client";
 
+import type { Med } from "@/lib/meds/types";
+import type { Mechanism } from "@/lib/meds/mechanisms";
 import type { MedVisual } from "@/lib/meds/visuals";
 import { BrainMap, Curve } from "@/components/study/visuals";
-import { Neuron, Pathways } from "@/components/study/animations";
+import { Journey, Neuron, Pathways, Receptor } from "@/components/study/animations";
 import { Compare } from "@/components/study/animations2";
 import { Hypnogram, Release } from "@/components/study/animations4";
 import { NervousSystem } from "@/components/study/scenes/nervous-system";
@@ -30,4 +32,17 @@ export function MedicineVisual({ v }: { v: MedVisual }) {
     case "hypnogram":
       return <Hypnogram d={v.data} />;
   }
+}
+
+/** Every "how it works" picture for one medicine: the receptor, the journey through the body, then its own pictures. */
+export function MedicineSketches({ med, mech, visuals }: { med: Med; mech?: Mechanism; visuals: MedVisual[] }) {
+  return (
+    <div className="grid gap-4 lg:grid-cols-2">
+      {mech ? <Receptor d={{ receptor: mech.receptor.name, title: `${med.name} at the ${mech.receptor.name} receptor`, caption: mech.receptor.note }} /> : null}
+      {mech ? <Journey d={{ drug: med.name.toLowerCase(), target: mech.site, routes: mech.routes, notes: mech.notes }} /> : null}
+      {visuals.map((v, k) => (
+        <MedicineVisual key={`${v.kind}-${k}`} v={v} />
+      ))}
+    </div>
+  );
 }
