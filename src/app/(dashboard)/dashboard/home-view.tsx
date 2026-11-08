@@ -9,6 +9,7 @@ import type { ContinueKind, ContinueStep } from "./next-step";
 import type { QuestCard } from "@/lib/hints/server";
 import { QUEST_XP } from "@/lib/hints/quests";
 import { PageHeader } from "@/components/design-system/page-header";
+import { EmptyState } from "@/components/design-system/empty-state";
 
 /**
  * Home, three blocks and nothing else (plan section 8): one Continue card,
@@ -153,9 +154,7 @@ function TopicRow({ t, weak }: { t: TopicScore; weak: boolean }) {
 export function TopicsCard({ data }: { data: StrengthsWeaknesses }) {
   if (!data.hasData) {
     return (
-      <p className="rounded-2xl border-2 border-dashed border-foreground/30 p-4 text-sm font-semibold text-muted-foreground">
-        Your strongest and weakest topics show up here after a few quizzes.
-      </p>
+      <EmptyState row icon={<TrendingUp className="size-5" />} title="Your strongest and weakest topics show up here after a few quizzes." />
     );
   }
   return (

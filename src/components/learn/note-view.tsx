@@ -13,6 +13,7 @@ import { cn } from "@/lib/utils";
 import { useExplainView, ViewToggle } from "./view-toggle";
 import n from "./notes.module.css";
 import l from "./learn.module.css";
+import { backLinkClass } from "@/components/design-system/back-link";
 
 const TONE: Record<string, string> = {
   lime: "bg-primary text-primary-foreground",
@@ -64,7 +65,7 @@ export function NoteView({
   return (
     <article className={cn("mx-auto max-w-3xl space-y-5", l.texture)}>
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <Link href="/study/notes" className="inline-flex items-center gap-1 rounded-full border-2 border-foreground bg-card px-3 py-1.5 text-sm font-bold">
+        <Link href="/study/notes" className={backLinkClass}>
           <ArrowLeft className="size-4" aria-hidden /> All summaries
         </Link>
         <ViewToggle />

@@ -16,6 +16,7 @@ import { PavlovRunner } from "./runners/conditioning";
 import { CorrelationRunner, DesignStudyRunner } from "./runners/methods";
 import { ConservationRunner } from "./runners/development";
 import { AttributionRunner } from "./runners/social";
+import { backLinkClass } from "@/components/design-system/back-link";
 
 const RUNNERS: Record<string, React.ComponentType<{ onDone: (r: LabResult) => void }>> = {
   "digit-span": DigitSpanRunner,
@@ -87,7 +88,7 @@ export function ExperimentView({ exp, moduleTitles, serverState, save, recheck, 
 
   return (
     <div className="mx-auto w-full min-w-0 max-w-3xl space-y-6">
-      <Link href="/games/lab" className="inline-flex min-h-11 items-center gap-1 rounded-full border-2 border-foreground bg-card px-3 py-1.5 text-sm font-bold">
+      <Link href="/games/lab" className={backLinkClass}>
         <ArrowLeft className="size-4" aria-hidden /> Lab
       </Link>
 

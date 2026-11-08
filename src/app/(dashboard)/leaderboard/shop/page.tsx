@@ -10,6 +10,7 @@ import { leagueWeek } from "@/lib/leagues/week";
 import { canRepair, isLookId, type LookId } from "@/lib/leagues/shop";
 import { loadLearnState, saveLearnState } from "../../study/actions";
 import { ShopClient } from "./shop-client";
+import { backLinkClass } from "@/components/design-system/back-link";
 
 export const metadata: Metadata = { title: "XP shop" };
 export const dynamic = "force-dynamic";
@@ -34,7 +35,7 @@ export default async function ShopPage() {
 
   return (
     <div className="mx-auto max-w-3xl space-y-6">
-      <Link href="/leaderboard" className="inline-flex min-h-11 items-center gap-1 rounded-md border-2 border-foreground bg-card px-3 text-sm font-bold">
+      <Link href="/leaderboard" className={backLinkClass}>
         <ArrowLeft className="size-4" aria-hidden /> League
       </Link>
       <header>

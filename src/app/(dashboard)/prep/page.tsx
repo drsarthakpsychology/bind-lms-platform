@@ -5,9 +5,9 @@ import { requireFeature } from "@/lib/flags";
 import { PREP_EXAMS, PREP_ONBOARDING_ENABLED, PREP_TITLE } from "@/lib/prep/catalog";
 import { loadHome } from "@/lib/prep/path";
 import { longCount } from "@/lib/prep/long-server";
-import { cn } from "@/lib/utils";
-import { ListRow, PrepFrame, PrepHero, bigCount, card, pctText } from "./ui";
+import { ListRow, PrepFrame, PrepHero, bigCount, pctText } from "./ui";
 import { prepViewer } from "./viewer";
+import { EmptyState } from "@/components/design-system/empty-state";
 
 export const metadata: Metadata = { title: PREP_TITLE, description: `A question bank with answers and explanations for ${PREP_EXAMS.join(", ")}.` };
 
@@ -74,7 +74,7 @@ export default async function PrepPage() {
             ))}
           </ul>
         ) : (
-          <p className={cn(card, "text-muted-foreground")}>Questions are being added.</p>
+          <EmptyState row icon={<Clock className="size-5" />} title="Questions are being added." />
         )}
         {optional.length ? (
           <ul className="grid gap-2 border-t-2 border-dashed border-foreground/40 pt-3 lg:grid-cols-2">

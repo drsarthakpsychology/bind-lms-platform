@@ -4,6 +4,7 @@ import { ArrowLeft } from "lucide-react";
 import { requireFeature } from "@/lib/flags";
 import { referenceIndex } from "@/lib/reference/data";
 import { ReferenceLibrary, type RefKind } from "@/components/reference/reference-library";
+import { backLinkClass } from "@/components/design-system/back-link";
 
 export const metadata: Metadata = { title: "Quick Reference A to Z" };
 
@@ -21,7 +22,7 @@ export default async function ReferencePage({ searchParams }: { searchParams: Pr
   const kind = KINDS.has(sp.kind ?? "") ? (sp.kind as RefKind) : "all";
   return (
     <div className="mx-auto max-w-3xl space-y-6">
-      <Link href="/study" className="inline-flex min-h-11 items-center gap-1 rounded-md border-2 border-foreground bg-card px-3 text-sm font-semibold">
+      <Link href="/study" className={backLinkClass}>
         <ArrowLeft className="size-4" aria-hidden /> Study
       </Link>
       <header className="space-y-1">

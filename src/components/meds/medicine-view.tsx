@@ -9,6 +9,7 @@ import type { MedVisual } from "@/lib/meds/visuals";
 import { MedicineVisual } from "./medicine-visuals";
 import { Journey, Receptor } from "@/components/study/animations";
 import { cn } from "@/lib/utils";
+import { backLinkClass } from "@/components/design-system/back-link";
 
 type View = "student" | "clinician";
 const KEY = "vibha-med-view";
@@ -50,7 +51,7 @@ export function MedicineView({ med, related, mech, visuals = [] }: { med: Med; r
 
   return (
     <div className="mx-auto max-w-4xl space-y-6">
-      <Link href="/practice/medicines" className="inline-flex items-center gap-1 rounded-full border-2 border-foreground bg-card px-3 py-1.5 text-sm font-semibold">
+      <Link href="/practice/medicines" className={backLinkClass}>
         <ArrowLeft className="size-4" aria-hidden /> All medicines
       </Link>
 

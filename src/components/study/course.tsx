@@ -12,6 +12,7 @@ import type { StudyModule } from "@/lib/study/types";
 import { cn } from "@/lib/utils";
 import { MarksList, RelatedLab, useSectionMarks, type LabLink } from "./marks";
 import { PageHeader } from "@/components/design-system/page-header";
+import { backLinkClass } from "@/components/design-system/back-link";
 
 const EMPTY = emptyState();
 type Save = (s: LearnState) => Promise<unknown>;
@@ -207,7 +208,7 @@ export function ModuleView({
 
   return (
     <div className="mx-auto max-w-4xl space-y-7">
-      <Link href="/study" className="inline-flex min-h-11 items-center gap-1 rounded-md border-2 border-foreground bg-card px-3 py-1.5 text-sm font-bold">
+      <Link href="/study" className={backLinkClass}>
         <ArrowLeft className="size-4" aria-hidden /> All modules
       </Link>
 

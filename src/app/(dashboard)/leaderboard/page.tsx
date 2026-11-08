@@ -101,7 +101,7 @@ function TierLadder({ tier }: { tier: number }) {
         return (
           <li key={t.tier} aria-current={on ? "true" : undefined} className={cn("rounded-md border-2 px-1 py-2 text-center", on ? "border-foreground bg-brand text-brand-foreground hard-shadow-xs" : t.tier < tier ? "border-foreground/40 bg-card" : "border-dashed border-foreground/40 bg-background text-muted-foreground")}>
             <span className="block font-mono text-caption">{t.tier}</span>
-            <span className="block truncate text-xs font-bold sm:text-sm">{t.name}</span>
+            <span className="block text-caption font-bold [overflow-wrap:anywhere] sm:text-sm">{t.name}</span>
             {on ? <span className="sr-only"> (your league)</span> : null}
           </li>
         );

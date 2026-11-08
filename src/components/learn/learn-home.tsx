@@ -11,6 +11,7 @@ import { BOARDS } from "@/lib/standing/boards";
 import { ViewToggle } from "./view-toggle";
 import s from "./learn.module.css";
 import { PageHeader } from "@/components/design-system/page-header";
+import { backLinkClass } from "@/components/design-system/back-link";
 
 const EMPTY = emptyState();
 type Save = (s: LearnState) => Promise<unknown>;
@@ -126,7 +127,7 @@ export function QuizPath({ units, serverState, save }: { units: Unit[]; serverSt
 
   return (
     <div className={cn("mx-auto max-w-4xl space-y-8", s.texture)}>
-      <Link href="/prep/smart" className="inline-flex min-h-11 items-center gap-1 rounded-full border-2 border-foreground bg-card px-3 py-1.5 text-sm font-bold">
+      <Link href="/prep/smart" className={backLinkClass}>
         <ArrowLeft className="size-4" aria-hidden /> Smart practice
       </Link>
       <div className="flex flex-wrap items-end justify-between gap-3">

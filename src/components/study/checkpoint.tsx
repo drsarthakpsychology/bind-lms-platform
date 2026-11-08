@@ -8,6 +8,7 @@ import { getLearnState, initLearnStore, setLearnState, useLearnState } from "@/l
 import type { Card, Mcq } from "@/lib/study/types";
 import { CardDeck, TestRunner, mcqKey } from "./interactive";
 import { orderFor, useHistoryPrefetch } from "@/lib/history/client";
+import { backLinkClass } from "@/components/design-system/back-link";
 
 /**
  * A checkpoint: case questions first (scored), then "say it out loud" cards.
@@ -64,7 +65,7 @@ export function CheckpointView({
 
   return (
     <div className="mx-auto max-w-2xl space-y-6">
-      <Link href={`/study/${moduleId}`} className="inline-flex min-h-11 items-center gap-1 rounded-md border-2 border-foreground bg-card px-3 py-1.5 text-sm font-semibold">
+      <Link href={`/study/${moduleId}`} className={backLinkClass}>
         <ArrowLeft className="size-4" aria-hidden /> Module {moduleNum}
       </Link>
       <header>

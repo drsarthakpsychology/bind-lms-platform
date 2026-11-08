@@ -21,6 +21,7 @@ import type { FeatureKey, FlagStatus } from "@/lib/flags";
 import type { SurfaceState } from "@/lib/practice/practice-state";
 import { cn } from "@/lib/utils";
 import { PageHeader } from "@/components/design-system/page-header";
+import { EmptyState } from "@/components/design-system/empty-state";
 
 /**
  * The Practice hub (plan section 8): clinical skills on real cases.
@@ -225,7 +226,7 @@ export function PracticeHubView({
       <ToolSection id="more" title="More practice" tools={more} />
 
       {!main.length && !think.length && !more.length ? (
-        <p className="rounded-2xl border-2 border-dashed border-foreground/30 p-6 text-center text-sm text-muted-foreground">Nothing here yet. Your faculty will switch tools on soon.</p>
+        <EmptyState compact icon={<Stethoscope className="size-6" />} title="Nothing here yet." description="Your faculty will switch tools on soon." />
       ) : null}
 
       {record.passport || record.record ? (

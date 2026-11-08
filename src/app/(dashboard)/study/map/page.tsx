@@ -14,6 +14,8 @@ import { PREP_ONBOARDING_ENABLED } from "@/lib/prep/catalog";
 import { cn } from "@/lib/utils";
 import { STATE_ICON, StateTag, btnPlain, btnPrimary, stateTone } from "./ui";
 import { PageHeader } from "@/components/design-system/page-header";
+import { backLinkClass } from "@/components/design-system/back-link";
+import { EmptyState } from "@/components/design-system/empty-state";
 
 export const metadata: Metadata = { title: "Your map" };
 
@@ -32,7 +34,7 @@ export default async function MapPage() {
 
   return (
     <div className="mx-auto max-w-6xl space-y-8">
-      <Link href="/study" className="inline-flex min-h-11 items-center gap-1.5 text-sm font-bold text-link hover:underline">
+      <Link href="/study" className={backLinkClass}>
         <ArrowLeft className="size-4" aria-hidden /> Study
       </Link>
       <PageHeader eyebrow="Study" title="What you know, and what to fix" className="pb-0" />
@@ -102,7 +104,7 @@ export default async function MapPage() {
               ))}
             </ul>
           ) : (
-            <p className="rounded-lg border-2 border-dashed border-foreground/50 bg-card p-4 text-muted-foreground">Nothing to fix yet.</p>
+            <EmptyState row icon={<Compass className="size-5" />} title="Nothing to fix yet." />
           )}
         </section>
 
@@ -138,7 +140,7 @@ export default async function MapPage() {
               })}
             </ol>
           ) : (
-            <p className="rounded-lg border-2 border-dashed border-foreground/50 bg-card p-4 text-muted-foreground">No mix-ups yet.</p>
+            <EmptyState row icon={<Shuffle className="size-5" />} title="No mix-ups yet." />
           )}
         </section>
       </div>

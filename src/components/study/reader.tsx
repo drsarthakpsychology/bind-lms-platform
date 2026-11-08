@@ -12,6 +12,7 @@ import { getLearnState, initLearnStore, setLearnState, useLearnState } from "@/l
 import { cn } from "@/lib/utils";
 import { SectionMarks } from "./marks";
 import s from "./study.module.css";
+import { backLinkClass } from "@/components/design-system/back-link";
 
 export type TocItem = { id: string; num: string; title: string; part?: string; isTest: boolean; href: string };
 
@@ -228,7 +229,7 @@ export function SectionReader({
       <article className="min-w-0 pb-36 md:pb-0">
         <div ref={topRef} className="scroll-mt-shell" />
         <div className="mb-4 flex items-center justify-between gap-2 md:hidden">
-          <Link href={`/study/${moduleId}`} className="inline-flex min-h-11 shrink-0 items-center gap-1 rounded-md border-2 border-foreground bg-card px-3 py-1.5 text-sm font-semibold">
+          <Link href={`/study/${moduleId}`} className={backLinkClass}>
             <ArrowLeft className="size-4" aria-hidden /> Module {moduleNum}
           </Link>
           <button type="button" onClick={() => setTocOpen(!tocOpen)} aria-expanded={tocOpen} className="inline-flex min-h-11 min-w-0 items-center gap-1.5 rounded-md border-2 border-foreground bg-card px-3 py-1.5 text-sm font-semibold">

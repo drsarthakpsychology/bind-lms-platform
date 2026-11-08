@@ -8,6 +8,7 @@ import { referenceLabel, resolveReference, type MedicineRef, type TermRef } from
 import { REFERENCE_BASE } from "@/lib/reference/href";
 import type { DisorderRef } from "@/lib/reference/disorders";
 import { KindTag } from "@/components/reference/reference-library";
+import { backLinkClass } from "@/components/design-system/back-link";
 
 type Params = { params: Promise<{ slug: string }> };
 
@@ -202,7 +203,7 @@ export default async function ReferenceEntryPage({ params }: Params) {
 
   return (
     <div className="mx-auto max-w-3xl space-y-4">
-      <Link href={REFERENCE_BASE} className="inline-flex min-h-11 items-center gap-1 rounded-md border-2 border-foreground bg-card px-3 text-sm font-semibold">
+      <Link href={REFERENCE_BASE} className={backLinkClass}>
         <ArrowLeft className="size-4" aria-hidden /> Quick Reference
       </Link>
       <header className="space-y-2">

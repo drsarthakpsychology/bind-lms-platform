@@ -4,13 +4,14 @@ import { PREP_EXAMS, PREP_SHORT, PREP_TITLE } from "@/lib/prep/catalog";
 import type { Stats } from "@/lib/prep/progress";
 import { cn } from "@/lib/utils";
 import { ToolHeader } from "@/components/help/tool-header";
+import { backLinkClass } from "@/components/design-system/back-link";
 
 export { btn, btnInk, btnPlain, btnPrimary } from "@/app/(dashboard)/study/map/ui";
 
 /** "← Exam Prep" back link, 44 px tall. */
 export function BackToPrep({ href = "/prep", label = PREP_SHORT }: { href?: string; label?: string }) {
   return (
-    <Link href={href} className="inline-flex min-h-11 items-center gap-1.5 text-sm font-bold text-link hover:underline">
+    <Link href={href} className={backLinkClass}>
       <ArrowLeft className="size-4 shrink-0" aria-hidden /> <span className="min-w-0 truncate">{label}</span>
     </Link>
   );

@@ -10,6 +10,7 @@ import { nextTier, TIER_LABEL, type Tier } from "@/lib/casebook/rounds";
 import { caseKey } from "@/content/casebook";
 import { Bars, LabButton, Panel } from "@/components/lab/lab-ui";
 import { CasePlayer } from "./case-player";
+import { backLinkClass } from "@/components/design-system/back-link";
 
 const EMPTY = emptyState();
 
@@ -34,7 +35,7 @@ export function CaseView({ activity: a, moduleTitle, serverState, save, isAdmin 
 
   return (
     <div className="mx-auto w-full min-w-0 max-w-3xl space-y-6">
-      <Link href="/games/lab" className="inline-flex min-h-11 items-center gap-1 rounded-full border-2 border-foreground bg-card px-3 py-1.5 text-sm font-bold">
+      <Link href="/games/lab" className={backLinkClass}>
         <ArrowLeft className="size-4" aria-hidden /> Lab
       </Link>
       <header className="space-y-2">

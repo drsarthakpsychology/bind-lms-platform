@@ -7,6 +7,7 @@ import { initLearnStore, useLearnState } from "@/lib/learn/store";
 import { buildRevisionPlan, type ReviseItem, type ReviseKind, type ReviseModule, type RevisionPlan } from "@/lib/revise/plan";
 import { Chai } from "@/components/learn/chai";
 import { cn } from "@/lib/utils";
+import { backLinkClass } from "@/components/design-system/back-link";
 
 const EMPTY = emptyState();
 type Save = (s: LearnState) => Promise<unknown>;
@@ -122,7 +123,7 @@ export function ReviseView({ plan }: { plan: RevisionPlan }) {
   const n = plan.today.length;
   return (
     <div className="mx-auto max-w-3xl space-y-6">
-      <Link href="/prep/smart" className="inline-flex min-h-11 items-center gap-1 rounded-full border-2 border-foreground bg-card px-3 py-1.5 text-sm font-bold">
+      <Link href="/prep/smart" className={backLinkClass}>
         <ArrowLeft className="size-4" aria-hidden /> Smart practice
       </Link>
 

@@ -6,6 +6,7 @@ import { NOTES, WEEK_BLOCKS } from "@/lib/learn/notes";
 import { NotesIndex, type NoteBlock } from "@/components/learn/notes-index";
 import { loadLearnState, saveLearnState } from "../actions";
 import { PageHeader } from "@/components/design-system/page-header";
+import { backLinkClass } from "@/components/design-system/back-link";
 
 export const metadata: Metadata = { title: "One-page summaries" };
 
@@ -26,7 +27,7 @@ export default async function NotesPage() {
   })).filter((b) => b.notes.length);
   return (
     <div className="mx-auto max-w-5xl space-y-8">
-      <Link href="/study" className="inline-flex min-h-11 items-center gap-1 rounded-full border-2 border-foreground bg-card px-3 py-1.5 text-sm font-semibold">
+      <Link href="/study" className={backLinkClass}>
         <ArrowLeft className="size-4" aria-hidden /> Study
       </Link>
       <PageHeader eyebrow="Study" title="One-page summaries" className="pb-0" />
