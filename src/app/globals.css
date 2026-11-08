@@ -353,9 +353,10 @@
    before first paint, so nothing jumps after load.
    -------------------------------------------------------------------------- */
 .app-side {
-  width: 15.5rem;
+  --side-w: 15.5rem;
+  width: var(--side-w);
   container: side / inline-size;
-  transition: width 200ms cubic-bezier(0.2, 0, 0, 1);
+  transition: width 200ms cubic-bezier(0.2, 0, 0, 1), margin 200ms cubic-bezier(0.2, 0, 0, 1), box-shadow 200ms;
 }
 @media (prefers-reduced-motion: reduce) {
   .app-side {
@@ -365,28 +366,53 @@
 /* Tablets: always the slim rail (the ☰ opens the full menu drawer). */
 @media (max-width: 1023px) {
   .app-side {
-    width: 6rem;
+    --side-w: 6rem;
   }
 }
 /* Laptops: the slim rail unless the student chose full. */
 @media (min-width: 1024px) and (max-width: 1279px) {
   :root:not([data-sidebar="full"]) .app-side {
-    width: 6rem;
+    --side-w: 6rem;
   }
 }
 /* Wide screens: full unless the student chose the rail. */
 @media (min-width: 1280px) {
   :root[data-sidebar="mini"] .app-side {
-    width: 6rem;
+    --side-w: 6rem;
   }
 }
 /* Focus pages on laptops and up: icons only, until the student opens it. */
 @media (min-width: 1024px) {
   :root .app-side[data-focus] {
-    width: 4.5rem;
+    --side-w: 4.5rem;
   }
   :root[data-sidebar-focus="full"] .app-side[data-focus] {
+    --side-w: 15.5rem;
+  }
+}
+
+/* Mouse and trackpad: a folded sidebar opens while the cursor rests on it,
+   drawn over the page (the negative margin keeps the page from moving), and
+   folds back when the cursor leaves. A short delay stops it flickering open
+   when the cursor only passes by. Keyboard users get the same while focus is
+   inside it. Touch screens keep the tap control. */
+@media (hover: hover) and (pointer: fine) and (min-width: 1024px) {
+  .app-side {
+    position: relative;
+  }
+  .app-side:hover,
+  .app-side:focus-within {
+    z-index: 40;
     width: 15.5rem;
+    margin-right: calc(var(--side-w) - 15.5rem);
+    transition-delay: 120ms;
+  }
+  .app-side:not(:hover):not(:focus-within) {
+    transition-delay: 0ms;
+  }
+  :root:not([data-sidebar="full"]) .app-side:hover,
+  .app-side[data-focus]:hover {
+    box-shadow: 6px 0 0 0 var(--foreground);
   }
 }
 

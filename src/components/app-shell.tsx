@@ -101,7 +101,7 @@ export function AppShell({
       <div className="md:flex">
         <SidebarGate role={gateRole} fallback={null}>
           <div className="hidden shrink-0 md:block">
-            <div className="sticky top-[var(--top-h)] h-[calc(100dvh-var(--top-h))]">
+            <div className="sticky top-[var(--top-h)] z-30 h-[calc(100dvh-var(--top-h))]">
               <AppSidebar items={items} studentSide={!isAdminView} adminPreview={role === "admin" && mode === "student"} />
             </div>
           </div>

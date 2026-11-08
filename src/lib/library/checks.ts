@@ -2,7 +2,7 @@
  * Shared checks for the hand-written practice libraries (Clinic detective,
  * What would you do, Ethics dilemmas). Used by their validator tests.
  */
-export const DASH = /[–—]/;
+export const DASH = /[\u2013\u2014]/;
 
 /** Formal references are not allowed in student text (owner rule 2026-11-06). */
 export const CITATION = [

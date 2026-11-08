@@ -253,7 +253,7 @@ export async function nextAiCase(input: { topic?: string | null; setting?: "indi
     const off = !isEnabled() ? "AI is switched off on this site (AI_ENABLED is false)." : availableProviders().length === 0 ? `No AI key is set on this site. Add one of: ${AI_KEY_NAMES}.` : null;
     if (off) console.warn(`[ai-cases] AI case cannot run: ${off}`);
     if (off && me.admin) return { ok: false, error: `AI cases are off. ${off}` };
-    return { ok: false, error: "AI cases are not available right now." };
+    return { ok: false, error: "AI cases are coming soon. They will start working here once the AI service is switched on. Today's case and Practice work now." };
   }
   return { ok: true, caseId: got.case.id };
 }
