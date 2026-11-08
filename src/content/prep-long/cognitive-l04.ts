@@ -82,7 +82,7 @@ Confirmation bias is the tendency to search for, interpret, favour and remember 
     keyPoints: ["Definition", "Biased search with Wason", "Biased interpretation with Lord, Ross and Lepper", "Clinical example", "Debiasing strategies"],
     module: "thinking-language/2-4",
     visuals: [
-      { kind: "reveal", data: { prompt: "A clinician thinks a patient has anxiety and asks only about worry and palpitations. What might be missed?", answer: "Signs of another cause, such as thyroid disease, substance use or depression. Asking questions that could disconfirm the first idea guards against confirmation bias." } },
+      { kind: "reveal", caption: "Examples", data: { prompt: "A clinician thinks a patient has anxiety and asks only about worry and palpitations. What might be missed?", answer: "Signs of another cause, such as thyroid disease, substance use or depression. Asking questions that could disconfirm the first idea guards against confirmation bias." } },
     ],
     ref: "Nickerson 1998 Review of General Psychology; Lord, Ross and Lepper 1979; Wason 1960; Croskerry 2003 on diagnostic error",
   },
@@ -141,8 +141,8 @@ Language is a rule-governed, generative system organised at several levels. Chom
     keyPoints: ["Definition of language", "Hockett's design features including generativity and displacement", "Five levels with examples", "Chomsky's critique of Skinner with overregularisation", "Competence and performance", "Deep and surface structure", "LAD, universal grammar and poverty of the stimulus", "Criticisms including usage-based and statistical learning"],
     module: "thinking-language/2-6",
     visuals: [
-      { kind: "layers", data: { title: "Levels of language", shape: "stack", layers: [{ label: "Pragmatics", detail: "Meaning in context: 'Can you pass the salt?' is a request." }, { label: "Semantics", detail: "The meaning of words and sentences." }, { label: "Syntax", detail: "Rules for word order and sentence structure." }, { label: "Morphology", detail: "Morphemes: un + happy + ness." }, { label: "Phonology", detail: "Phonemes: pin versus bin." }] } },
-      { kind: "compare", data: { title: "How children learn grammar", a: { label: "Skinner", points: ["Imitation and reinforcement", "Parents shape correct speech", "Language is verbal behaviour"], summary: "Learned from the environment." }, b: { label: "Chomsky", points: ["Innate language acquisition device", "Children apply rules: 'I goed'", "Input too poor to explain grammar"], summary: "Built into the mind." } } },
+      { kind: "layers", caption: "Levels of structure", data: { title: "Levels of language", shape: "stack", layers: [{ label: "Pragmatics", detail: "Meaning in context: 'Can you pass the salt?' is a request." }, { label: "Semantics", detail: "The meaning of words and sentences." }, { label: "Syntax", detail: "Rules for word order and sentence structure." }, { label: "Morphology", detail: "Morphemes: un + happy + ness." }, { label: "Phonology", detail: "Phonemes: pin versus bin." }] } },
+      { kind: "compare", caption: "Chomsky's contribution", data: { title: "How children learn grammar", a: { label: "Skinner", points: ["Imitation and reinforcement", "Parents shape correct speech", "Language is verbal behaviour"], summary: "Learned from the environment." }, b: { label: "Chomsky", points: ["Innate language acquisition device", "Children apply rules: 'I goed'", "Input too poor to explain grammar"], summary: "Built into the mind." } } },
     ],
     ref: "Chomsky 1957 Syntactic Structures, 1959 review of Skinner, 1965; Hockett 1960; Saffran, Aslin and Newport 1996; Tomasello 2003; Atkinson and Hilgard ch 9",
   },
@@ -251,9 +251,9 @@ The classic aphasias and the Wernicke Geschwind model laid the foundation for un
     pitfalls: ["Saying Broca's patients have perfect comprehension", "Confusing Wernicke's aphasia with psychosis without noting the link"],
     module: "thinking-language/2-6",
     visuals: [
-      { kind: "brainmap", data: { title: "The classic language areas", focus: ["broca", "wernicke", "temporal", "motor"], notes: { broca: "Planning speech and complex grammar.", wernicke: "Understanding the meaning of speech.", temporal: "Auditory processing and word meanings.", motor: "Moving the lips, tongue and larynx." } } },
-      { kind: "flow", data: { title: "Repeating a heard word: Wernicke Geschwind model", layout: "chain", nodes: [{ id: "a", label: "Auditory cortex", detail: "Hears the sound." }, { id: "w", label: "Wernicke's area", detail: "Recognises the word and its meaning." }, { id: "af", label: "Arcuate fasciculus", detail: "Carries it forward; damage causes conduction aphasia." }, { id: "b", label: "Broca's area", detail: "Plans the articulation." }, { id: "m", label: "Motor cortex", detail: "Moves the speech muscles." }] } },
-      { kind: "sort", data: { prompt: "Which aphasia fits each patient?", buckets: ["Broca's", "Wernicke's", "Conduction"], items: [{ text: "Fluent nonsense, unaware of errors, cannot follow commands", bucket: 1 }, { text: "Halting, telegraphic speech, knows what he wants to say", bucket: 0 }, { text: "Speaks and understands well but cannot repeat a sentence", bucket: 2 }] } },
+      { kind: "brainmap", caption: "The Wernicke Geschwind model", data: { title: "The classic language areas", focus: ["broca", "wernicke", "temporal", "motor"], notes: { broca: "Planning speech and complex grammar.", wernicke: "Understanding the meaning of speech.", temporal: "Auditory processing and word meanings.", motor: "Moving the lips, tongue and larynx." } } },
+      { kind: "flow", caption: "Limitations", data: { title: "Repeating a heard word: Wernicke Geschwind model", layout: "chain", nodes: [{ id: "a", label: "Auditory cortex", detail: "Hears the sound." }, { id: "w", label: "Wernicke's area", detail: "Recognises the word and its meaning." }, { id: "af", label: "Arcuate fasciculus", detail: "Carries it forward; damage causes conduction aphasia." }, { id: "b", label: "Broca's area", detail: "Plans the articulation." }, { id: "m", label: "Motor cortex", detail: "Moves the speech muscles." }] } },
+      { kind: "sort", caption: "Other aphasias", data: { prompt: "Which aphasia fits each patient?", buckets: ["Broca's", "Wernicke's", "Conduction"], items: [{ text: "Fluent nonsense, unaware of errors, cannot follow commands", bucket: 1 }, { text: "Halting, telegraphic speech, knows what he wants to say", bucket: 0 }, { text: "Speaks and understands well but cannot repeat a sentence", bucket: 2 }] } },
     ],
     ref: "Geschwind 1970 Science; Dronkers et al 2007 Brain on Leborgne; Hickok and Poeppel 2007 Nature Reviews Neuroscience; Bear, Connors and Paradiso ch 20; Atkinson and Hilgard ch 9",
   },
@@ -304,7 +304,7 @@ The dual route model explains how readers handle both regular and irregular word
     keyPoints: ["Lexical and non-lexical routes", "Irregular words and non-words as diagnostic", "Regularity and frequency effects", "Surface dyslexia with regularisation", "Phonological dyslexia with non-word failure", "Deep dyslexia with semantic errors", "Developmental dyslexia and phonological deficit", "Connectionist alternative and Indian scripts"],
     module: "thinking-language/2-6",
     visuals: [
-      { kind: "flow", data: { title: "Two routes from print to speech", layout: "tree", nodes: [{ id: "p", label: "Printed word" }, { id: "l", label: "Lexical route", parent: "p", detail: "Recognise the whole word: needed for 'yacht'." }, { id: "n", label: "Non-lexical route", parent: "p", detail: "Letter to sound rules: needed for 'blint'." }, { id: "ls", label: "Damage: surface dyslexia", parent: "l", detail: "Reads 'pint' to rhyme with 'mint'." }, { id: "ns", label: "Damage: phonological dyslexia", parent: "n", detail: "Cannot read non-words." }] } },
+      { kind: "flow", caption: "Acquired dyslexias", data: { title: "Two routes from print to speech", layout: "tree", nodes: [{ id: "p", label: "Printed word" }, { id: "l", label: "Lexical route", parent: "p", detail: "Recognise the whole word: needed for 'yacht'." }, { id: "n", label: "Non-lexical route", parent: "p", detail: "Letter to sound rules: needed for 'blint'." }, { id: "ls", label: "Damage: surface dyslexia", parent: "l", detail: "Reads 'pint' to rhyme with 'mint'." }, { id: "ns", label: "Damage: phonological dyslexia", parent: "n", detail: "Cannot read non-words." }] } },
     ],
     ref: "Coltheart et al 2001 DRC model; Marshall and Newcombe 1973; Snowling 2000; Seidenberg and McClelland 1989; Plaut et al 1996",
   },
@@ -333,7 +333,7 @@ Harry McGurk and John MacDonald in 1976 showed a video of a person saying "ga" d
     keyPoints: ["Segmentation and invariance problems", "Categorical perception with voice onset time", "Infant loss of non-native contrasts", "McGurk effect described", "Theories such as motor theory and phonemic restoration"],
     module: "thinking-language/2-6",
     visuals: [
-      { kind: "reveal", data: { prompt: "You see lips saying 'ga' while hearing 'ba'. What do you hear?", answer: "Most people hear 'da', a fusion of what the eyes and ears report. Close your eyes and it becomes 'ba' again. This is the McGurk effect." } },
+      { kind: "reveal", caption: "The McGurk effect", data: { prompt: "You see lips saying 'ga' while hearing 'ba'. What do you hear?", answer: "Most people hear 'da', a fusion of what the eyes and ears report. Close your eyes and it becomes 'ba' again. This is the McGurk effect." } },
     ],
     ref: "Liberman et al 1957 and 1967; McGurk and MacDonald 1976 Nature; Werker and Tees 1984; Warren 1970",
   },
@@ -425,7 +425,7 @@ Metacognition is the mind's ability to monitor and control itself. Its accuracy 
     keyPoints: ["Definition with Flavell", "Knowledge and regulation", "Nelson and Narens monitoring and control", "JOLs and delayed JOL effect", "Fluency as a misleading cue and desirable difficulties", "Feeling of knowing and tip of the tongue", "Educational and clinical applications including metacognitive therapy"],
     module: "thinking-language/2-5",
     visuals: [
-      { kind: "flow", data: { title: "Nelson and Narens model", layout: "cycle", nodes: [{ id: "o", label: "Object level", detail: "The learning or remembering itself." }, { id: "m", label: "Monitoring", detail: "How well do I know this?" }, { id: "meta", label: "Meta level", detail: "A model of one's own learning." }, { id: "c", label: "Control", detail: "Restudy, test myself, or move on." }] } },
+      { kind: "flow", caption: "Monitoring and control", data: { title: "Nelson and Narens model", layout: "cycle", nodes: [{ id: "o", label: "Object level", detail: "The learning or remembering itself." }, { id: "m", label: "Monitoring", detail: "How well do I know this?" }, { id: "meta", label: "Meta level", detail: "A model of one's own learning." }, { id: "c", label: "Control", detail: "Restudy, test myself, or move on." }] } },
     ],
     ref: "Flavell 1979; Nelson and Narens 1990; Nelson and Dunlosky 1991 delayed JOL; Hart 1965; Brown and McNeill 1966; Bjork 1994; Wells 2009 Metacognitive Therapy; Kruger and Dunning 1999",
   },
@@ -500,8 +500,8 @@ Creativity combines novelty with usefulness and draws on cognition (divergent th
     pitfalls: ["Equating creativity with divergent thinking alone", "Claiming a strong link between genius and madness"],
     module: "thinking-language/3-4",
     visuals: [
-      { kind: "flow", data: { title: "Guilford's divergent thinking scores", layout: "tree", nodes: [{ id: "d", label: "Divergent thinking" }, { id: "f", label: "Fluency", parent: "d", detail: "How many ideas?" }, { id: "fl", label: "Flexibility", parent: "d", detail: "How many kinds of idea?" }, { id: "o", label: "Originality", parent: "d", detail: "How rare are the ideas?" }, { id: "e", label: "Elaboration", parent: "d", detail: "How much detail?" }] } },
-      { kind: "compare", data: { title: "Convergent versus divergent thinking", a: { label: "Convergent", points: ["One correct answer", "Logic and accuracy", "Typical of IQ tests"], summary: "Narrowing down." }, b: { label: "Divergent", points: ["Many possible answers", "Fluency and originality", "Uses of a brick"], summary: "Opening out." } } },
+      { kind: "flow", caption: "Process theories", data: { title: "Guilford's divergent thinking scores", layout: "tree", nodes: [{ id: "d", label: "Divergent thinking" }, { id: "f", label: "Fluency", parent: "d", detail: "How many ideas?" }, { id: "fl", label: "Flexibility", parent: "d", detail: "How many kinds of idea?" }, { id: "o", label: "Originality", parent: "d", detail: "How rare are the ideas?" }, { id: "e", label: "Elaboration", parent: "d", detail: "How much detail?" }] } },
+      { kind: "compare", caption: "Measurement", data: { title: "Convergent versus divergent thinking", a: { label: "Convergent", points: ["One correct answer", "Logic and accuracy", "Typical of IQ tests"], summary: "Narrowing down." }, b: { label: "Divergent", points: ["Many possible answers", "Fluency and originality", "Uses of a brick"], summary: "Opening out." } } },
     ],
     ref: "Guilford 1950; Wallas 1926; Mednick 1962; Amabile 1983 and 1996; Sternberg and Lubart 1995; Csikszentmihalyi 1996; Kaufman and Beghetto 2009; Kim 2005 meta-analysis IQ creativity r about 0.17; Kyaga et al 2013; Beaty et al 2016; Mehdi 1973",
   },

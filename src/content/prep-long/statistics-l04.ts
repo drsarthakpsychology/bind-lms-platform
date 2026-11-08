@@ -61,8 +61,8 @@ Each reliability method estimates a different source of error: time (test-retest
     pitfalls: ["Forgetting the Spearman Brown correction", "Treating high alpha as proof of unidimensionality"],
     module: "statistics/3-6",
     visuals: [
-      { kind: "worked", data: { title: "Two reliability calculations", steps: [{ q: "Halves correlate 0.60. Full-test reliability?", a: "2 x 0.60 / 1.60 = 0.75" }, { q: "Alpha with k = 4, item variances summing to 7.23, total variance 25.37?", a: "(4 / 3) x (1 minus 0.285) = 0.95" }], yourTurn: [{ q: "A test with reliability 0.60 is tripled in length. New reliability?", a: "3 x 0.60 / (1 + 2 x 0.60) = 1.80 / 2.20 = 0.82" }] } },
-      { kind: "flow", data: { title: "Which error does each method capture?", layout: "tree", nodes: [{ id: "r", label: "Reliability" }, { id: "t", label: "Test-retest", parent: "r", detail: "Error from time." }, { id: "p", label: "Parallel forms", parent: "r", detail: "Error from content sampling and time." }, { id: "i", label: "Split-half and alpha", parent: "r", detail: "Error from content sampling within one test." }, { id: "s", label: "Inter-rater", parent: "r", detail: "Error from scorers." }] } },
+      { kind: "worked", caption: "Split-half reliability", data: { title: "Two reliability calculations", steps: [{ q: "Halves correlate 0.60. Full-test reliability?", a: "2 x 0.60 / 1.60 = 0.75" }, { q: "Alpha with k = 4, item variances summing to 7.23, total variance 25.37?", a: "(4 / 3) x (1 minus 0.285) = 0.95" }], yourTurn: [{ q: "A test with reliability 0.60 is tripled in length. New reliability?", a: "3 x 0.60 / (1 + 2 x 0.60) = 1.80 / 2.20 = 0.82" }] } },
+      { kind: "flow", caption: "Parallel (alternate) forms reliability", data: { title: "Which error does each method capture?", layout: "tree", nodes: [{ id: "r", label: "Reliability" }, { id: "t", label: "Test-retest", parent: "r", detail: "Error from time." }, { id: "p", label: "Parallel forms", parent: "r", detail: "Error from content sampling and time." }, { id: "i", label: "Split-half and alpha", parent: "r", detail: "Error from content sampling within one test." }, { id: "s", label: "Inter-rater", parent: "r", detail: "Error from scorers." }] } },
     ],
     ref: "Anastasi and Urbina ch 4; Nunnally and Bernstein ch 6 and 7; Cronbach 1951. numpy item data: alpha 0.953, item var sum 7.233, total var 25.367; 1.8/2.2 = 0.818.",
   },
@@ -221,8 +221,8 @@ Factor analysis has shaped psychology's major theories of intelligence and perso
     pitfalls: ["Equating PCA with factor analysis without comment", "Relying only on eigenvalues above 1", "Choosing varimax without considering correlated factors"],
     module: "statistics/3-7",
     visuals: [
-      { kind: "timeline", data: { prompt: "Put the steps of exploratory factor analysis in order.", events: [{ label: "Collect an adequate sample" }, { label: "Check KMO and Bartlett's test" }, { label: "Extract factors" }, { label: "Decide how many factors to keep" }, { label: "Rotate to simple structure" }, { label: "Interpret and name the factors" }, { label: "Confirm in a new sample with CFA" }] } },
-      { kind: "compare", data: { title: "Exploratory versus confirmatory", a: { label: "EFA", points: ["Finds structure from the data", "Every item can load on every factor", "Eigenvalues and scree plot"], summary: "Discovery." }, b: { label: "CFA", points: ["Model set before analysis", "Loadings fixed by theory", "Fit indices such as CFI and RMSEA"], summary: "Testing." } } },
+      { kind: "timeline", caption: "Steps of exploratory factor analysis", data: { prompt: "Put the steps of exploratory factor analysis in order.", events: [{ label: "Collect an adequate sample" }, { label: "Check KMO and Bartlett's test" }, { label: "Extract factors" }, { label: "Decide how many factors to keep" }, { label: "Rotate to simple structure" }, { label: "Interpret and name the factors" }, { label: "Confirm in a new sample with CFA" }] } },
+      { kind: "compare", caption: "EFA versus CFA", data: { title: "Exploratory versus confirmatory", a: { label: "EFA", points: ["Finds structure from the data", "Every item can load on every factor", "Eigenvalues and scree plot"], summary: "Discovery." }, b: { label: "CFA", points: ["Model set before analysis", "Loadings fixed by theory", "Fit indices such as CFI and RMSEA"], summary: "Testing." } } },
     ],
     ref: "Tabachnick and Fidell ch 13; Field ch 18; Spearman 1904; Thurstone 1938; Hu and Bentler 1999 fit cut-offs; Horn 1965 parallel analysis; Gould 1981",
   },
@@ -262,7 +262,7 @@ PCA is a mathematical summary of total variance; factor analysis is a statistica
     keyPoints: ["Definition of PCA as data reduction", "Definition of common factor model", "Total versus common variance", "Diagonal 1s versus communalities", "Causal direction difference", "Illustration and when results differ"],
     module: "statistics/3-7",
     visuals: [
-      { kind: "compare", data: { title: "PCA versus factor analysis", a: { label: "PCA", points: ["Analyses total variance", "Components built from variables", "Higher loadings"], summary: "Summary of the data." }, b: { label: "Factor analysis", points: ["Analyses shared variance", "Factors cause the variables", "Unique variance kept apart"], summary: "Model of latent constructs." } } },
+      { kind: "compare", caption: "Common factor analysis", data: { title: "PCA versus factor analysis", a: { label: "PCA", points: ["Analyses total variance", "Components built from variables", "Higher loadings"], summary: "Summary of the data." }, b: { label: "Factor analysis", points: ["Analyses shared variance", "Factors cause the variables", "Unique variance kept apart"], summary: "Model of latent constructs." } } },
     ],
     ref: "Fabrigar et al 1999 Psychological Methods; Tabachnick and Fidell ch 13; Costello and Osborne 2005",
   },
@@ -329,7 +329,7 @@ SEM is a powerful way to test theoretical models with latent variables and measu
     keyPoints: ["Definition combining factor and path analysis", "Latent versus observed variables and diagram conventions", "Measurement versus structural model", "Steps from specification to modification", "Identification explained", "Fit indices with cut-offs", "Worked example with mediation", "Equivalent models and causal limits"],
     module: "statistics/3-7",
     visuals: [
-      { kind: "flow", data: { title: "A structural model", layout: "chain", nodes: [{ id: "s", label: "Academic stress", detail: "Latent, measured by four items." }, { id: "sl", label: "Poor sleep", detail: "Latent mediator." }, { id: "d", label: "Depressive symptoms", detail: "Latent outcome, R squared 0.38." }], edgeLabels: { "s>sl": "path a", "sl>d": "path b" }, caption: "The indirect effect a x b is tested with bootstrapped confidence intervals." } },
+      { kind: "flow", caption: "Example", data: { title: "A structural model", layout: "chain", nodes: [{ id: "s", label: "Academic stress", detail: "Latent, measured by four items." }, { id: "sl", label: "Poor sleep", detail: "Latent mediator." }, { id: "d", label: "Depressive symptoms", detail: "Latent outcome, R squared 0.38." }], edgeLabels: { "s>sl": "path a", "sl>d": "path b" }, caption: "The indirect effect a x b is tested with bootstrapped confidence intervals." } },
     ],
     ref: "Kline, Principles and Practice of SEM 4th ed; Hu and Bentler 1999; MacCallum et al 1993 equivalent models",
   },
@@ -378,7 +378,7 @@ Mediators reveal mechanisms; moderators reveal boundary conditions. Both are cen
     module: "statistics/3-5",
     visuals: [
       { kind: "flow", data: { title: "Mediation", layout: "chain", nodes: [{ id: "x", label: "Childhood adversity" }, { id: "m", label: "Negative core beliefs" }, { id: "y", label: "Adult depression" }], edgeLabels: { "x>m": "a", "m>y": "b" }, caption: "The indirect effect is a x b." } },
-      { kind: "compare", data: { title: "Mediator versus moderator", a: { label: "Mediator", points: ["Answers how or why", "Lies between X and Y", "Test the indirect effect"], summary: "Mechanism." }, b: { label: "Moderator", points: ["Answers when or for whom", "Changes the X to Y link", "Test the interaction term"], summary: "Condition." } } },
+      { kind: "compare", caption: "Comparison", data: { title: "Mediator versus moderator", a: { label: "Mediator", points: ["Answers how or why", "Lies between X and Y", "Test the indirect effect"], summary: "Mechanism." }, b: { label: "Moderator", points: ["Answers when or for whom", "Changes the X to Y link", "Test the interaction term"], summary: "Condition." } } },
     ],
     ref: "Baron and Kenny 1986; Hayes 2018 Introduction to Mediation, Moderation and Conditional Process Analysis; Cohen and Wills 1985 buffering",
   },
@@ -424,7 +424,7 @@ The output shows a significant, medium to large difference in exam stress, with 
     pitfalls: ["Treating Levene's p as the main result", "Worrying about the negative sign of t"],
     module: "statistics/3-8",
     visuals: [
-      { kind: "decide", data: { scene: "Levene's test gives F = 6.10, p = .02 for a t-test comparing two groups.", ask: "Which row of the t-test output should you read?", choices: [{ label: "Equal variances assumed", verdict: "harm", outcome: "You use a pooled variance that the data do not support.", why: "A significant Levene's test means the variances differ." }, { label: "Equal variances not assumed", verdict: "best", outcome: "You report Welch's t with adjusted df.", why: "Welch's test does not assume equal variances." }, { label: "Report Levene's p as the answer", verdict: "harm", outcome: "You confuse the assumption check with the main test.", why: "Levene's test is only about variances, not means." }] } },
+      { kind: "decide", caption: "Levene's test", data: { scene: "Levene's test gives F = 6.10, p = .02 for a t-test comparing two groups.", ask: "Which row of the t-test output should you read?", choices: [{ label: "Equal variances assumed", verdict: "harm", outcome: "You use a pooled variance that the data do not support.", why: "A significant Levene's test means the variances differ." }, { label: "Equal variances not assumed", verdict: "best", outcome: "You report Welch's t with adjusted df.", why: "Welch's test does not assume equal variances." }, { label: "Report Levene's p as the answer", verdict: "harm", outcome: "You confuse the assumption check with the main test.", why: "Levene's test is only about variances, not means." }] } },
     ],
     ref: "Field ch 10; Pallant SPSS Survival Manual ch 17. Python check: pooled SD 5.508, SE 1.422, t -2.531, p 0.0141, d 0.654, CI -6.45 to -0.75.",
   },
@@ -486,8 +486,8 @@ A sound choice of test flows from the aim, the type of data, the number of varia
     keyPoints: ["Key questions about aim, data level, design and assumptions", "Accurate decision table", "Assumption checks named", "Five vignettes correctly matched", "Effect sizes or follow-up tests mentioned", "Common errors listed"],
     module: "statistics/3-8",
     visuals: [
-      { kind: "flow", data: { title: "Comparing groups: a decision tree", layout: "tree", nodes: [{ id: "q", label: "Comparing groups on a score" }, { id: "two", label: "Two groups", parent: "q" }, { id: "more", label: "Three or more groups", parent: "q" }, { id: "ti", label: "Independent: t-test or Mann Whitney", parent: "two" }, { id: "tr", label: "Related: paired t or Wilcoxon", parent: "two" }, { id: "mi", label: "Independent: ANOVA or Kruskal Wallis", parent: "more" }, { id: "mr", label: "Related: repeated measures ANOVA or Friedman", parent: "more" }] } },
-      { kind: "sort", data: { prompt: "Pick the test.", buckets: ["Chi-square", "Paired t-test", "Pearson r", "One-way ANOVA"], items: [{ text: "Smoker or not, by urban or rural", bucket: 0 }, { text: "Anxiety before and after therapy in 40 patients", bucket: 1 }, { text: "Link between IQ and marks in 200 students", bucket: 2 }, { text: "Memory scores under three diets", bucket: 3 }] } },
+      { kind: "flow", caption: "Decision guide", data: { title: "Comparing groups: a decision tree", layout: "tree", nodes: [{ id: "q", label: "Comparing groups on a score" }, { id: "two", label: "Two groups", parent: "q" }, { id: "more", label: "Three or more groups", parent: "q" }, { id: "ti", label: "Independent: t-test or Mann Whitney", parent: "two" }, { id: "tr", label: "Related: paired t or Wilcoxon", parent: "two" }, { id: "mi", label: "Independent: ANOVA or Kruskal Wallis", parent: "more" }, { id: "mr", label: "Related: repeated measures ANOVA or Friedman", parent: "more" }] } },
+      { kind: "sort", caption: "Applying the guide", data: { prompt: "Pick the test.", buckets: ["Chi-square", "Paired t-test", "Pearson r", "One-way ANOVA"], items: [{ text: "Smoker or not, by urban or rural", bucket: 0 }, { text: "Anxiety before and after therapy in 40 patients", bucket: 1 }, { text: "Link between IQ and marks in 200 students", bucket: 2 }, { text: "Memory scores under three diets", bucket: 3 }] } },
     ],
     ref: "Field ch 1 and appendix decision chart; Pallant ch 10; Gravetter and Wallnau ch 20",
   },
@@ -520,7 +520,7 @@ Anxiety is most closely linked to low self-esteem and shorter sleep, while marks
     keyPoints: ["Correct df and critical r about 0.20", "Each coefficient interpreted for direction, size and significance", "Shared variance r squared", "Overall pattern", "Causation and multiple testing cautions"],
     module: "statistics/3-8",
     visuals: [
-      { kind: "reveal", data: { prompt: "Would r = minus 0.15 be significant with 400 students instead of 100?", answer: "Yes. With df = 398 the critical r at 0.05 is about 0.098, so minus 0.15 would be significant, though it would still explain only about 2 percent of the variance." } },
+      { kind: "reveal", caption: "Interpretation", data: { prompt: "Would r = minus 0.15 be significant with 400 students instead of 100?", answer: "Yes. With df = 398 the critical r at 0.05 is about 0.098, so minus 0.15 would be significant, though it would still explain only about 2 percent of the variance." } },
     ],
     ref: "Garrett table of critical r. Python: r crit df 98 = 0.1966 (.05), df 398 = 0.098.",
   },

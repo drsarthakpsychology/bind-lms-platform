@@ -72,8 +72,8 @@ No single view explains all concepts. The classical view fits some well-defined 
     pitfalls: ["Treating prototype and exemplar views as identical", "Ignoring the theory-based view"],
     module: "thinking-language/2-1",
     visuals: [
-      { kind: "compare", data: { title: "Prototype versus exemplar", a: { label: "Prototype", points: ["One average summary of the category", "Classify by distance to the summary", "Loses variability"], summary: "An abstract ideal bird." }, b: { label: "Exemplar", points: ["Many stored individual members", "Classify by similarity to stored cases", "Keeps variability and odd members"], summary: "All the birds you have met." } } },
-      { kind: "flow", data: { title: "Levels of categories", layout: "tree", nodes: [{ id: "s", label: "Furniture", detail: "Superordinate: few shared features." }, { id: "b", label: "Chair", parent: "s", detail: "Basic level: named first, shared shape." }, { id: "t", label: "Table", parent: "s" }, { id: "o", label: "Office chair", parent: "b", detail: "Subordinate: more detail, little extra information." }, { id: "r", label: "Rocking chair", parent: "b" }] } },
+      { kind: "compare", caption: "The prototype view", data: { title: "Prototype versus exemplar", a: { label: "Prototype", points: ["One average summary of the category", "Classify by distance to the summary", "Loses variability"], summary: "An abstract ideal bird." }, b: { label: "Exemplar", points: ["Many stored individual members", "Classify by similarity to stored cases", "Keeps variability and odd members"], summary: "All the birds you have met." } } },
+      { kind: "flow", caption: "Basic level categories", data: { title: "Levels of categories", layout: "tree", nodes: [{ id: "s", label: "Furniture", detail: "Superordinate: few shared features." }, { id: "b", label: "Chair", parent: "s", detail: "Basic level: named first, shared shape." }, { id: "t", label: "Table", parent: "s" }, { id: "o", label: "Office chair", parent: "b", detail: "Subordinate: more detail, little extra information." }, { id: "r", label: "Rocking chair", parent: "b" }] } },
     ],
     ref: "Rosch 1975 and 1978; Rosch and Mervis 1975; Posner and Keele 1968; Medin and Schaffer 1978; Nosofsky 1986; Murphy and Medin 1985; Keil 1989; McCloskey and Glucksberg 1978",
   },
@@ -150,7 +150,7 @@ Combining words with pictures and diagrams in teaching, the keyword method for v
     keyPoints: ["Two coding systems", "Concrete versus abstract words", "Picture superiority and concreteness evidence", "Educational applications", "Criticisms including context availability"],
     module: "thinking-language/2-1",
     visuals: [
-      { kind: "sort", data: { prompt: "Which words can be coded twice (in words and images)?", buckets: ["Dual coded (concrete)", "Mainly verbal (abstract)"], items: [{ text: "Elephant", bucket: 0 }, { text: "Justice", bucket: 1 }, { text: "Mango", bucket: 0 }, { text: "Idea", bucket: 1 }] } },
+      { kind: "sort", caption: "The theory", data: { prompt: "Which words can be coded twice (in words and images)?", buckets: ["Dual coded (concrete)", "Mainly verbal (abstract)"], items: [{ text: "Elephant", bucket: 0 }, { text: "Justice", bucket: 1 }, { text: "Mango", bucket: 0 }, { text: "Idea", bucket: 1 }] } },
     ],
     ref: "Paivio 1971 and 1986; Schwanenflugel 1991 context availability; Mayer 2009",
   },
@@ -220,7 +220,7 @@ Problem solving can be understood as a search through a problem space guided by 
     module: "thinking-language/2-2",
     visuals: [
       { kind: "compare", data: { title: "Two obstacles to problem solving", a: { label: "Functional fixedness", points: ["Seeing an object only in its usual use", "Duncker's candle: the box is just a container", "Removing pins from the box helps"], summary: "Fixed on what objects are for." }, b: { label: "Mental set", points: ["Repeating a method that worked before", "Luchins's water jars: B minus A minus 2C", "Misses the simpler A minus C"], summary: "Fixed on how problems are solved." } } },
-      { kind: "flow", data: { title: "Wallas's stages of creative problem solving", layout: "chain", nodes: [{ id: "p", label: "Preparation", detail: "Study the problem and gather information." }, { id: "i", label: "Incubation", detail: "Set it aside; misleading paths fade." }, { id: "il", label: "Illumination", detail: "The solution comes suddenly: insight." }, { id: "v", label: "Verification", detail: "Check and refine the solution." }] } },
+      { kind: "flow", caption: "The Gestalt view and insight", data: { title: "Wallas's stages of creative problem solving", layout: "chain", nodes: [{ id: "p", label: "Preparation", detail: "Study the problem and gather information." }, { id: "i", label: "Incubation", detail: "Set it aside; misleading paths fade." }, { id: "il", label: "Illumination", detail: "The solution comes suddenly: insight." }, { id: "v", label: "Verification", detail: "Check and refine the solution." }] } },
     ],
     ref: "Newell and Simon 1972; Kohler 1925; Duncker 1945; Luchins 1942; Metcalfe and Wiebe 1987; Kounios and Beeman 2009; Chi, Feltovich and Glaser 1981; Atkinson and Hilgard ch 9",
   },
@@ -269,7 +269,7 @@ Analogy is a powerful problem-solving tool, but people often fail to notice rele
     keyPoints: ["Definition and stages of analogical reasoning", "Duncker's radiation problem and solution", "Gick and Holyoak's results with and without hint", "Noticing as the main barrier", "Surface versus structural similarity", "Multiple examples and schema abstraction", "Practical methods to improve transfer"],
     module: "thinking-language/2-2",
     visuals: [
-      { kind: "experiment", data: { title: "Gick and Holyoak: does the fortress story help?", question: "What share solved Duncker's radiation problem in each condition?", unit: "%", conditions: [{ label: "No story", value: 10 }, { label: "Fortress story, no hint", value: 30 }, { label: "Fortress story with a hint to use it", value: 75 }], why: "People could apply the analogy but rarely noticed it on their own. Values approximate." } },
+      { kind: "experiment", caption: "Gick and Holyoak's studies", data: { title: "Gick and Holyoak: does the fortress story help?", question: "What share solved Duncker's radiation problem in each condition?", unit: "%", conditions: [{ label: "No story", value: 10 }, { label: "Fortress story, no hint", value: 30 }, { label: "Fortress story with a hint to use it", value: 75 }], why: "People could apply the analogy but rarely noticed it on their own. Values approximate." } },
     ],
     ref: "Duncker 1945; Gick and Holyoak 1980 and 1983; Gentner 1983; Dunbar 1995; Atkinson and Hilgard ch 9",
   },
@@ -314,7 +314,7 @@ Expertise rests on large stores of organised domain knowledge, especially recogn
     keyPoints: ["Domain-specific definition", "De Groot's think-aloud findings", "Chase and Simon random board control", "Chunking and template theories", "Other expert differences such as deep representation", "Deliberate practice with Ericsson's violinists", "Macnamara meta-analysis and genetic critiques"],
     module: "thinking-language/2-3",
     visuals: [
-      { kind: "experiment", data: { title: "Chase and Simon: memory for chess positions", question: "How many pieces were correctly placed after a 5-second look?", unit: " pieces", max: 25, conditions: [{ label: "Master, real game position", value: 16 }, { label: "Beginner, real game position", value: 4 }, { label: "Master, random position", value: 3 }, { label: "Beginner, random position", value: 3 }], why: "Masters recognise meaningful chunks; with random boards their advantage vanishes. Values approximate from the first trial." } },
+      { kind: "experiment", caption: "Chess research", data: { title: "Chase and Simon: memory for chess positions", question: "How many pieces were correctly placed after a 5-second look?", unit: " pieces", max: 25, conditions: [{ label: "Master, real game position", value: 16 }, { label: "Beginner, real game position", value: 4 }, { label: "Master, random position", value: 3 }, { label: "Beginner, random position", value: 3 }], why: "Masters recognise meaningful chunks; with random boards their advantage vanishes. Values approximate from the first trial." } },
     ],
     ref: "de Groot 1965; Chase and Simon 1973; Gobet and Simon 1996; Ericsson, Krampe and Tesch-Romer 1993; Macnamara, Hambrick and Oswald 2014 Psychological Science; Chi et al 1981",
   },
@@ -373,8 +373,8 @@ Human deductive reasoning is far from perfectly logical: people are swayed by be
     pitfalls: ["Choosing the 4 card as correct", "Confusing validity with truth of conclusion"],
     module: "thinking-language/2-2",
     visuals: [
-      { kind: "decide", data: { scene: "Cards show E, K, 4 and 7. Rule: if a card has a vowel on one side, it has an even number on the other.", ask: "Which cards must you turn to test the rule?", choices: [{ label: "E and 4", verdict: "harm", outcome: "The 4 cannot break the rule whatever is on its back.", why: "This is confirmation or matching bias." }, { label: "E only", verdict: "ok", outcome: "You check one way the rule could fail, but miss the other.", why: "A vowel behind the 7 would also break the rule." }, { label: "E and 7", verdict: "best", outcome: "These are the only cards that could falsify the rule.", why: "Modus ponens (E) and modus tollens (7)." }] } },
-      { kind: "experiment", data: { title: "Belief bias in syllogisms", question: "What share accepted each type of conclusion?", unit: "%", conditions: [{ label: "Valid, believable", value: 89 }, { label: "Valid, unbelievable", value: 56 }, { label: "Invalid, believable", value: 71 }, { label: "Invalid, unbelievable", value: 10 }], why: "Belief in the conclusion strongly sways judgements of logical validity." } },
+      { kind: "decide", caption: "The Wason selection task", data: { scene: "Cards show E, K, 4 and 7. Rule: if a card has a vowel on one side, it has an even number on the other.", ask: "Which cards must you turn to test the rule?", choices: [{ label: "E and 4", verdict: "harm", outcome: "The 4 cannot break the rule whatever is on its back.", why: "This is confirmation or matching bias." }, { label: "E only", verdict: "ok", outcome: "You check one way the rule could fail, but miss the other.", why: "A vowel behind the 7 would also break the rule." }, { label: "E and 7", verdict: "best", outcome: "These are the only cards that could falsify the rule.", why: "Modus ponens (E) and modus tollens (7)." }] } },
+      { kind: "experiment", caption: "Syllogistic reasoning", data: { title: "Belief bias in syllogisms", question: "What share accepted each type of conclusion?", unit: "%", conditions: [{ label: "Valid, believable", value: 89 }, { label: "Valid, unbelievable", value: 56 }, { label: "Invalid, believable", value: 71 }, { label: "Invalid, unbelievable", value: 10 }], why: "Belief in the conclusion strongly sways judgements of logical validity." } },
     ],
     ref: "Wason 1966; Griggs and Cox 1982; Evans, Barston and Pollard 1983; Johnson-Laird 1983; Cosmides 1989; Cheng and Holyoak 1985; Goel and Dolan 2003; Oaksford and Chater 1994; Luria 1976",
   },
@@ -408,7 +408,7 @@ Science forms hypotheses by induction and tests them by deduction. Clinicians us
     keyPoints: ["Definition and probabilistic nature", "Contrast with deduction", "At least three types", "Wason 2-4-6 task", "Common errors such as illusory correlation", "Role in science and clinical work"],
     module: "thinking-language/2-2",
     visuals: [
-      { kind: "reveal", data: { prompt: "In Wason's 2-4-6 task, the rule was simply 'any three increasing numbers'. Why did most people fail to find it?", answer: "They guessed a narrower rule such as 'add 2' and only tried triples like 8-10-12 that fitted it. Every test said yes, so they never discovered their rule was wrong. Trying 1-5-20 would have helped." } },
+      { kind: "reveal", caption: "Types", data: { prompt: "In Wason's 2-4-6 task, the rule was simply 'any three increasing numbers'. Why did most people fail to find it?", answer: "They guessed a narrower rule such as 'add 2' and only tried triples like 8-10-12 that fitted it. Every test said yes, so they never discovered their rule was wrong. Trying 1-5-20 would have helped." } },
     ],
     ref: "Hume 1748; Wason 1960; Osherson et al 1990; Chapman and Chapman 1969",
   },
@@ -468,8 +468,8 @@ Kahneman and Tversky transformed the study of judgement by showing that people u
     pitfalls: ["Calling heuristics always irrational", "Mixing up availability and representativeness"],
     module: "thinking-language/2-4",
     visuals: [
-      { kind: "experiment", data: { title: "Anchoring with a wheel of fortune", question: "What percentage of African countries did people estimate were in the UN?", unit: "%", conditions: [{ label: "Wheel stopped at 10", value: 25 }, { label: "Wheel stopped at 65", value: 45 }], why: "An obviously random number pulled estimates towards it." } },
-      { kind: "sort", data: { prompt: "Which heuristic is at work?", buckets: ["Representativeness", "Availability", "Anchoring"], items: [{ text: "After news of a plane crash, flying feels very dangerous", bucket: 1 }, { text: "A quiet, tidy student must be a librarian, not a salesperson", bucket: 0 }, { text: "A seller's opening price shapes what you think is fair", bucket: 2 }, { text: "After five heads in a row, tails feels due", bucket: 0 }] } },
+      { kind: "experiment", caption: "Anchoring and adjustment", data: { title: "Anchoring with a wheel of fortune", question: "What percentage of African countries did people estimate were in the UN?", unit: "%", conditions: [{ label: "Wheel stopped at 10", value: 25 }, { label: "Wheel stopped at 65", value: 45 }], why: "An obviously random number pulled estimates towards it." } },
+      { kind: "sort", caption: "Availability heuristic", data: { prompt: "Which heuristic is at work?", buckets: ["Representativeness", "Availability", "Anchoring"], items: [{ text: "After news of a plane crash, flying feels very dangerous", bucket: 1 }, { text: "A quiet, tidy student must be a librarian, not a salesperson", bucket: 0 }, { text: "A seller's opening price shapes what you think is fair", bucket: 2 }, { text: "After five heads in a row, tails feels due", bucket: 0 }] } },
     ],
     ref: "Tversky and Kahneman 1974 Science; Kahneman and Tversky 1973; Tversky and Kahneman 1983 conjunction fallacy; Lichtenstein et al 1978; Kahneman 2011 Thinking, Fast and Slow; Gigerenzer and Hoffrage 1995",
   },
@@ -520,8 +520,8 @@ Prospect theory shows that people evaluate outcomes relative to a reference poin
     keyPoints: ["Expected utility and invariance", "Reference point and S-shaped value function", "Loss aversion about twice", "Probability weighting and certainty effect", "Asian disease figures 72 and 78 percent", "Endowment effect", "Specific challenges to expected utility", "Applications"],
     module: "thinking-language/2-4",
     visuals: [
-      { kind: "experiment", data: { title: "The Asian disease problem", question: "What share chose the safe option in each frame?", unit: "%", conditions: [{ label: "Gain frame: 200 saved for sure", value: 72 }, { label: "Loss frame: 400 die for sure", value: 22 }], why: "Identical outcomes, opposite choices: people avoid risk for gains and seek risk to avoid losses." } },
-      { kind: "compare", data: { title: "Gains versus losses", a: { label: "Gains", points: ["Concave value curve", "Prefer a sure gain", "Each extra rupee matters less"], summary: "Risk averse." }, b: { label: "Losses", points: ["Steeper, convex curve", "Gamble to avoid a sure loss", "Losses hurt about twice as much"], summary: "Risk seeking." } } },
+      { kind: "experiment", caption: "Framing effects", data: { title: "The Asian disease problem", question: "What share chose the safe option in each frame?", unit: "%", conditions: [{ label: "Gain frame: 200 saved for sure", value: 72 }, { label: "Loss frame: 400 die for sure", value: 22 }], why: "Identical outcomes, opposite choices: people avoid risk for gains and seek risk to avoid losses." } },
+      { kind: "compare", caption: "Prospect theory", data: { title: "Gains versus losses", a: { label: "Gains", points: ["Concave value curve", "Prefer a sure gain", "Each extra rupee matters less"], summary: "Risk averse." }, b: { label: "Losses", points: ["Steeper, convex curve", "Gamble to avoid a sure loss", "Losses hurt about twice as much"], summary: "Risk seeking." } } },
     ],
     ref: "Kahneman and Tversky 1979 Econometrica; Tversky and Kahneman 1981 Science framing; Kahneman, Knetsch and Thaler 1990; McNeil et al 1982 medical framing; Thaler and Sunstein 2008",
   },

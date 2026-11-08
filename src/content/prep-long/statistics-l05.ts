@@ -51,7 +51,7 @@ Screening protects the validity of statistical conclusions. A researcher should 
     keyPoints: ["Purpose of screening", "Checks for entry errors", "MCAR, MAR and MNAR", "Multiple imputation preferred over mean substitution", "Univariate and multivariate outlier detection", "Decisions about outliers", "Normality checks and transformations", "Transparent reporting"],
     module: "statistics/1-3",
     visuals: [
-      { kind: "sort", data: { prompt: "What type of missing data is each?", buckets: ["Completely at random", "At random", "Not at random"], items: [{ text: "A data file is corrupted for 20 random participants", bucket: 0 }, { text: "Older people skip the online module more often, and age is recorded", bucket: 1 }, { text: "Heavy drinkers skip the question on alcohol use", bucket: 2 }] } },
+      { kind: "sort", caption: "Missing data", data: { prompt: "What type of missing data is each?", buckets: ["Completely at random", "At random", "Not at random"], items: [{ text: "A data file is corrupted for 20 random participants", bucket: 0 }, { text: "Older people skip the online module more often, and age is recorded", bucket: 1 }, { text: "Heavy drinkers skip the question on alcohol use", bucket: 2 }] } },
     ],
     ref: "Tabachnick and Fidell ch 4; Rubin 1976; Field ch 6",
   },
@@ -83,7 +83,7 @@ The theorem applies to means and sums, not to individual scores; a large sample 
     keyPoints: ["Three parts of the theorem", "SE formula", "Example with a skewed variable", "Justification for parametric tests", "Applies to means, not raw scores"],
     module: "statistics/2-2",
     visuals: [
-      { kind: "reveal", data: { prompt: "Population SD is 20. What sample size halves the standard error obtained with N = 25?", answer: "With N = 25, SE = 20 / 5 = 4. To get 2 you need square root of N = 10, so N = 100. Halving the error needs four times the sample." } },
+      { kind: "reveal", caption: "Statement", data: { prompt: "Population SD is 20. What sample size halves the standard error obtained with N = 25?", answer: "With N = 25, SE = 20 / 5 = 4. To get 2 you need square root of N = 10, so N = 100. Halving the error needs four times the sample." } },
     ],
     ref: "Gravetter and Wallnau ch 7. 100/sqrt(50) = 14.14.",
   },
@@ -131,7 +131,7 @@ Confidence intervals add what p values lack: the size and precision of an effect
     keyPoints: ["Point versus interval estimation", "Limits of p values", "Correct SE 1.34", "Correct CI 1.33 to 6.67", "t and d calculated", "Link between CI excluding zero and significance", "Clinical importance and precision"],
     module: "statistics/2-2",
     visuals: [
-      { kind: "worked", data: { title: "CI for a mean difference", steps: [{ q: "SE of the difference?", a: "Square root of (0.9 + 0.9) = 1.34" }, { q: "Margin of error?", a: "1.99 x 1.34 = 2.67" }, { q: "95 percent CI?", a: "4 plus or minus 2.67: 1.33 to 6.67" }, { q: "Does it include zero?", a: "No, so p < .05 (here p = .004)." }] } },
+      { kind: "worked", caption: "Worked example", data: { title: "CI for a mean difference", steps: [{ q: "SE of the difference?", a: "Square root of (0.9 + 0.9) = 1.34" }, { q: "Margin of error?", a: "1.99 x 1.34 = 2.67" }, { q: "95 percent CI?", a: "4 plus or minus 2.67: 1.33 to 6.67" }, { q: "Does it include zero?", a: "No, so p < .05 (here p = .004)." }] } },
     ],
     ref: "Cumming 2014 Psychological Science New Statistics; APA Manual 7th ed. Python: SE 1.3416, t crit 1.9908, CI 1.329 to 6.671, t 2.981, p 0.0038.",
   },
@@ -188,7 +188,7 @@ The completed table gives F(3, 36) = 4.00, which is significant at 0.05 with a l
     keyPoints: ["Correct df 3, 36, 39", "MS 40 and 10, F = 4.00", "Critical F 2.87 and decision", "Eta squared 0.25 and omega squared 0.18", "Meaning of F explained", "Post hoc tests and assumption checks", "Limitations and APA report"],
     module: "statistics/3-1",
     visuals: [
-      { kind: "worked", data: { title: "Filling an ANOVA table", steps: [{ q: "df between and within?", a: "4 minus 1 = 3; 40 minus 4 = 36" }, { q: "Mean squares?", a: "120 / 3 = 40; 360 / 36 = 10" }, { q: "F?", a: "40 / 10 = 4.00" }, { q: "Effect size?", a: "120 / 480 = 0.25" }], yourTurn: [{ q: "If SS within were 720, what would F be?", a: "MS within = 20, so F = 40 / 20 = 2.00, not significant." }] } },
+      { kind: "worked", caption: "Effect size", data: { title: "Filling an ANOVA table", steps: [{ q: "df between and within?", a: "4 minus 1 = 3; 40 minus 4 = 36" }, { q: "Mean squares?", a: "120 / 3 = 40; 360 / 36 = 10" }, { q: "F?", a: "40 / 10 = 4.00" }, { q: "Effect size?", a: "120 / 480 = 0.25" }], yourTurn: [{ q: "If SS within were 720, what would F be?", a: "MS within = 20, so F = 40 / 20 = 2.00, not significant." }] } },
     ],
     ref: "Gravetter and Wallnau ch 12. Python: F 4.0, p 0.0148, F crit(3,36) .05 = 2.866, .01 = 4.38; omega2 = 90/490 = 0.184.",
   },
@@ -224,7 +224,7 @@ Percentiles are ordinal: equal differences in percentile do not mean equal diffe
     keyPoints: ["Percentile versus percentile rank", "Quartiles and deciles", "Correct PR = 75", "Practical uses", "Ordinal nature and unequal spacing"],
     module: "statistics/1-4",
     visuals: [
-      { kind: "curve", data: { kind: "normal", caption: "Move from z = 0 to z = 0.25: about 10 percentile points. From z = 1.28 to z = 2.33: only 9 more." } },
+      { kind: "curve", caption: "Limitation", data: { kind: "normal", caption: "Move from z = 0 to z = 0.25: about 10 percentile points. From z = 1.28 to z = 2.33: only 9 more." } },
     ],
     ref: "Garrett ch 4. norm.ppf(.6)=0.253, ppf(.9)=1.2816, ppf(.99)=2.326.",
   },
@@ -275,7 +275,7 @@ Choosing the right coefficient depends on the scale of each variable and whether
     keyPoints: ["True versus artificial dichotomy", "Point biserial with example and link to t", "Biserial assumptions", "Phi with formula", "Tetrachoric and polychoric", "Contingency coefficient and Cramer's V", "Summary table", "Use in item analysis"],
     module: "statistics/2-4",
     visuals: [
-      { kind: "sort", data: { prompt: "Choose the coefficient.", buckets: ["Point biserial", "Phi", "Tetrachoric", "Cramer's V"], items: [{ text: "Gender and depression score", bucket: 0 }, { text: "Smoker or not and drinker or not", bucket: 1 }, { text: "Two test items scored right or wrong", bucket: 2 }, { text: "State of residence and preferred healer", bucket: 3 }] } },
+      { kind: "sort", caption: "Tetrachoric correlation", data: { prompt: "Choose the coefficient.", buckets: ["Point biserial", "Phi", "Tetrachoric", "Cramer's V"], items: [{ text: "Gender and depression score", bucket: 0 }, { text: "Smoker or not and drinker or not", bucket: 1 }, { text: "Two test items scored right or wrong", bucket: 2 }, { text: "State of residence and preferred healer", bucket: 3 }] } },
     ],
     ref: "Garrett ch 14; Guilford and Fruchter Fundamental Statistics ch 14",
   },
@@ -335,7 +335,7 @@ The more tests run, the more false positives appear by chance. Corrections diffe
     pitfalls: ["Applying Holm thresholds without stopping at the first failure", "Confusing familywise error with false discovery rate"],
     module: "statistics/2-3",
     visuals: [
-      { kind: "experiment", data: { title: "How many of five results survive?", question: "Five p values: .001, .012, .020, .035, .30. How many are significant under each method?", unit: " of 5", max: 5, conditions: [{ label: "No correction", value: 4 }, { label: "Bonferroni", value: 1 }, { label: "Holm", value: 2 }, { label: "Benjamini Hochberg", value: 4 }], why: "Stricter control of false positives costs power." } },
+      { kind: "experiment", caption: "Benjamini Hochberg false discovery rate", data: { title: "How many of five results survive?", question: "Five p values: .001, .012, .020, .035, .30. How many are significant under each method?", unit: " of 5", max: 5, conditions: [{ label: "No correction", value: 4 }, { label: "Bonferroni", value: 1 }, { label: "Holm", value: 2 }, { label: "Benjamini Hochberg", value: 4 }], why: "Stricter control of false positives costs power." } },
     ],
     ref: "Holm 1979; Benjamini and Hochberg 1995; Field ch 2. Checked by hand: 1-0.95^5 = 0.226.",
   },
@@ -403,8 +403,8 @@ The quotation captures a real danger: statistics used to support conclusions rea
     pitfalls: ["Writing only a list of misuses without evaluation", "Rejecting statistics altogether"],
     module: "statistics/2-3",
     visuals: [
-      { kind: "compare", data: { title: "Support versus illumination", a: { label: "Statistics as support", points: ["p below .05 as the goal", "Analyses chosen after seeing data", "Effect sizes ignored", "Small samples, selective reporting"], summary: "Confirms what the researcher wanted." }, b: { label: "Statistics as illumination", points: ["Preregistered questions and analyses", "Effect sizes with confidence intervals", "Adequate power", "Open data and full reporting"], summary: "Shows what the data say." } } },
-      { kind: "experiment", data: { title: "How flexible analysis inflates false positives", question: "If there is no real effect, how often does a study find p < .05?", unit: "%", conditions: [{ label: "One planned test", value: 5 }, { label: "With several flexible choices combined", value: 61 }], why: "Choosing among outcomes, covariates, exclusions and stopping rules after seeing the data multiplies chances for a false positive." } },
+      { kind: "compare", caption: "Common misuses", data: { title: "Support versus illumination", a: { label: "Statistics as support", points: ["p below .05 as the goal", "Analyses chosen after seeing data", "Effect sizes ignored", "Small samples, selective reporting"], summary: "Confirms what the researcher wanted." }, b: { label: "Statistics as illumination", points: ["Preregistered questions and analyses", "Effect sizes with confidence intervals", "Adequate power", "Open data and full reporting"], summary: "Shows what the data say." } } },
+      { kind: "experiment", caption: "Why statistics are essential", data: { title: "How flexible analysis inflates false positives", question: "If there is no real effect, how often does a study find p < .05?", unit: "%", conditions: [{ label: "One planned test", value: 5 }, { label: "With several flexible choices combined", value: 61 }], why: "Choosing among outcomes, covariates, exclusions and stopping rules after seeing the data multiplies chances for a false positive." } },
     ],
     ref: "Gigerenzer 2004 Mindless statistics; Simmons, Nelson and Simonsohn 2011 (60.7 percent with combined flexibility); Open Science Collaboration 2015; Molenaar 2004; Smith and Glass 1977",
   },
@@ -455,8 +455,8 @@ A strong answer separates statistical significance (p), size of effect (d) and c
     pitfalls: ["Saying p = .03 means a 97 percent chance the treatment works", "Using jargon with the family"],
     module: "statistics/3-4",
     visuals: [
-      { kind: "experiment", data: { title: "Response to treatment", question: "Out of 10 patients, how many improved in each group?", unit: " of 10", max: 10, conditions: [{ label: "Usual care", value: 4 }, { label: "Group CBT", value: 6 }], why: "Two extra people in every ten improve with CBT, so about five must be treated for one extra success." } },
-      { kind: "decide", data: { scene: "A family member asks: does p = .03 mean there is a 97 percent chance CBT works?", ask: "What do you say?", choices: [{ label: "Yes, that is right", verdict: "harm", outcome: "They leave with a false certainty.", why: "p is about the data assuming no effect, not the chance the treatment works." }, { label: "If CBT made no difference, a gap this large would appear by chance about 3 times in 100", verdict: "best", outcome: "Accurate and understandable.", why: "This is what a p value means." }, { label: "It means the result is 3 percent important", verdict: "harm", outcome: "Confuses significance with size.", why: "Importance is judged by the effect size and NNT." }] } },
+      { kind: "experiment", caption: "Explaining to a family member", data: { title: "Response to treatment", question: "Out of 10 patients, how many improved in each group?", unit: " of 10", max: 10, conditions: [{ label: "Usual care", value: 4 }, { label: "Group CBT", value: 6 }], why: "Two extra people in every ten improve with CBT, so about five must be treated for one extra success." } },
+      { kind: "decide", caption: "Explaining to the panel", data: { scene: "A family member asks: does p = .03 mean there is a 97 percent chance CBT works?", ask: "What do you say?", choices: [{ label: "Yes, that is right", verdict: "harm", outcome: "They leave with a false certainty.", why: "p is about the data assuming no effect, not the chance the treatment works." }, { label: "If CBT made no difference, a gap this large would appear by chance about 3 times in 100", verdict: "best", outcome: "Accurate and understandable.", why: "This is what a p value means." }, { label: "It means the result is 3 percent important", verdict: "harm", outcome: "Confuses significance with size.", why: "Importance is judged by the effect size and NNT." }] } },
     ],
     ref: "Gigerenzer 2002 Reckoning with Risk (natural frequencies); Cuijpers et al meta-analyses of psychotherapy for depression (g about 0.6 to 0.7 vs control). n per group for d=0.5 p=.03: t approx 2.2 implies n about 39.",
   },
@@ -492,7 +492,7 @@ Bayesian methods are used in clinical diagnosis (updating the probability of a d
     keyPoints: ["Bayes' theorem in words", "Prior, likelihood, posterior", "Credible interval interpretation", "Bayes factor and evidence for H0", "Comparison with frequentist approach", "Uses and criticisms"],
     module: "statistics/2-2",
     visuals: [
-      { kind: "flow", data: { title: "Bayesian updating", layout: "cycle", nodes: [{ id: "p", label: "Prior belief" }, { id: "d", label: "New data", detail: "How likely the data are under each hypothesis." }, { id: "q", label: "Posterior belief", detail: "Becomes the prior for the next study." }] } },
+      { kind: "flow", caption: "Key ideas", data: { title: "Bayesian updating", layout: "cycle", nodes: [{ id: "p", label: "Prior belief" }, { id: "d", label: "New data", detail: "How likely the data are under each hypothesis." }, { id: "q", label: "Posterior belief", detail: "Becomes the prior for the next study." }] } },
     ],
     ref: "Dienes 2011 Perspectives on Psychological Science; Wagenmakers et al 2018 JASP",
   },

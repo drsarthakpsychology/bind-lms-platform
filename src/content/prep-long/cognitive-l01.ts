@@ -52,8 +52,8 @@ The multi-store model offers a clear, testable framework with strong support for
     pitfalls: ["Describing without evaluating", "Getting the durations wrong", "Using K.F. as support without noting it also challenges the model"],
     module: "learning-memory/3-1",
     visuals: [
-      { kind: "memoryflow", data: { caption: "Follow an item from the senses to long-term memory. What happens if you stop rehearsing it?" } },
-      { kind: "experiment", data: { title: "Glanzer and Cunitz: delay and the recency effect", question: "How well are the last few words of a list recalled with and without a 30-second distracting delay?", unit: "%", conditions: [{ label: "Last items, immediate recall", value: 70 }, { label: "Last items, after 30 s delay", value: 25 }], why: "The delay empties the short-term store, so recency disappears while primacy remains. Values are approximate." } },
+      { kind: "memoryflow", caption: "Criticisms", data: { caption: "Follow an item from the senses to long-term memory. What happens if you stop rehearsing it?" } },
+      { kind: "experiment", caption: "Supporting evidence", data: { title: "Glanzer and Cunitz: delay and the recency effect", question: "How well are the last few words of a list recalled with and without a 30-second distracting delay?", unit: "%", conditions: [{ label: "Last items, immediate recall", value: 70 }, { label: "Last items, after 30 s delay", value: 25 }], why: "The delay empties the short-term store, so recency disappears while primacy remains. Values are approximate." } },
     ],
     ref: "Atkinson and Shiffrin 1968; Atkinson and Hilgard ch 8; Peterson and Peterson 1959; Glanzer and Cunitz 1966; Baddeley 1966; Shallice and Warrington 1970",
   },
@@ -94,7 +94,7 @@ Sperling's partial report method showed that visual sensory memory is large but 
     keyPoints: ["Definition and function of sensory memory", "Whole versus partial report procedures", "Correct results: about 4 to 5 versus about 9 of 12", "Decay within about one second with delayed cue", "Pre-categorical nature and masking", "Echoic memory duration and evidence", "Significance and criticism"],
     module: "learning-memory/3-1",
     visuals: [
-      { kind: "experiment", data: { title: "Sperling's partial report", question: "Of 12 letters flashed for 50 ms, how many were available to the participant?", unit: " letters", max: 12, conditions: [{ label: "Whole report", value: 4.5 }, { label: "Partial report, immediate tone", value: 9 }, { label: "Partial report, tone after 1 s", value: 4.5 }], why: "The image holds most letters but fades within a second, faster than they can be named." } },
+      { kind: "experiment", caption: "Sperling's experiments", data: { title: "Sperling's partial report", question: "Of 12 letters flashed for 50 ms, how many were available to the participant?", unit: " letters", max: 12, conditions: [{ label: "Whole report", value: 4.5 }, { label: "Partial report, immediate tone", value: 9 }, { label: "Partial report, tone after 1 s", value: 4.5 }], why: "The image holds most letters but fades within a second, faster than they can be named." } },
     ],
     ref: "Sperling 1960 Psychological Monographs; Atkinson and Hilgard ch 8 (partial-report experiment); Darwin, Turvey and Crowder 1972; Neisser 1967",
   },
@@ -121,7 +121,7 @@ Instructions, phone numbers and complex sentences that exceed this capacity are 
     keyPoints: ["Miller's seven plus or minus two", "Chunking with example", "Cowan's about four", "Brown Peterson finding", "Interference explanation and release from PI"],
     module: "learning-memory/3-1",
     visuals: [
-      { kind: "reveal", data: { prompt: "Try to hold this string: 1 9 4 7 2 0 2 6 1 5 0 8. How could chunking help?", answer: "Group it as meaningful dates: 1947 (Independence), 2026, 1508. Twelve digits become three chunks, within the limit of short-term memory." } },
+      { kind: "reveal", caption: "Capacity", data: { prompt: "Try to hold this string: 1 9 4 7 2 0 2 6 1 5 0 8. How could chunking help?", answer: "Group it as meaningful dates: 1947 (Independence), 2026, 1508. Twelve digits become three chunks, within the limit of short-term memory." } },
     ],
     ref: "Miller 1956; Cowan 2001; Peterson and Peterson 1959; Keppel and Underwood 1962; Wickens 1972",
   },
@@ -192,9 +192,9 @@ Baddeley and Hitch transformed short-term memory from a passive store into an ac
     pitfalls: ["Listing components without evidence", "Forgetting the episodic buffer", "Calling the central executive a store"],
     module: "learning-memory/3-2",
     visuals: [
-      { kind: "flow", data: { title: "Working memory components", layout: "tree", nodes: [{ id: "ce", label: "Central executive", detail: "Attention control, no storage of its own." }, { id: "pl", label: "Phonological loop", parent: "ce", detail: "Inner voice and inner ear for speech sounds." }, { id: "vs", label: "Visuospatial sketchpad", parent: "ce", detail: "Inner eye for shapes, colours and locations." }, { id: "eb", label: "Episodic buffer", parent: "ce", detail: "Binds information into episodes, links to long-term memory." }] } },
-      { kind: "compare", data: { title: "Word length effect", a: { label: "Short words", points: ["wit, sum, harm, bond", "Can be rehearsed quickly", "About 5 to 6 recalled"], summary: "Larger span." }, b: { label: "Long words", points: ["university, opportunity, aluminium", "Take longer to rehearse", "About 3 to 4 recalled"], summary: "Smaller span, unless articulation is suppressed for both." } } },
-      { kind: "brainmap", data: { title: "Where working memory lives", focus: ["prefrontal", "broca", "parietal"], notes: { prefrontal: "Central executive: dorsolateral prefrontal cortex.", broca: "Articulatory rehearsal.", parietal: "Phonological store (left) and spatial storage (right)." } } },
+      { kind: "flow", caption: "The episodic buffer", data: { title: "Working memory components", layout: "tree", nodes: [{ id: "ce", label: "Central executive", detail: "Attention control, no storage of its own." }, { id: "pl", label: "Phonological loop", parent: "ce", detail: "Inner voice and inner ear for speech sounds." }, { id: "vs", label: "Visuospatial sketchpad", parent: "ce", detail: "Inner eye for shapes, colours and locations." }, { id: "eb", label: "Episodic buffer", parent: "ce", detail: "Binds information into episodes, links to long-term memory." }] } },
+      { kind: "compare", caption: "The phonological loop", data: { title: "Word length effect", a: { label: "Short words", points: ["wit, sum, harm, bond", "Can be rehearsed quickly", "About 5 to 6 recalled"], summary: "Larger span." }, b: { label: "Long words", points: ["university, opportunity, aluminium", "Take longer to rehearse", "About 3 to 4 recalled"], summary: "Smaller span, unless articulation is suppressed for both." } } },
+      { kind: "brainmap", caption: "Neural basis", data: { title: "Where working memory lives", focus: ["prefrontal", "broca", "parietal"], notes: { prefrontal: "Central executive: dorsolateral prefrontal cortex.", broca: "Articulatory rehearsal.", parietal: "Phonological store (left) and spatial storage (right)." } } },
     ],
     ref: "Baddeley and Hitch 1974; Baddeley 2000 episodic buffer; Baddeley, Thomson and Buchanan 1975 word length; Brooks 1968; Gathercole and Alloway 2008; Miyake et al 2000; Cowan 1999",
   },
@@ -240,7 +240,7 @@ The levels of processing framework shifted attention from memory structures to e
     keyPoints: ["Statement of the framework", "Three levels with examples", "Maintenance versus elaborative rehearsal", "Craik and Tulving findings", "Hyde and Jenkins incidental learning", "Self-reference effect", "Circularity criticism", "Transfer-appropriate processing"],
     module: "learning-memory/3-2",
     visuals: [
-      { kind: "experiment", data: { title: "Craik and Tulving", question: "What share of words were later recognised after each type of question?", unit: "%", conditions: [{ label: "Structural: capitals?", value: 18 }, { label: "Phonemic: rhymes with?", value: 50 }, { label: "Semantic: fits the sentence?", value: 80 }], why: "Deeper, meaning-based processing produced better memory. Values are approximate." } },
+      { kind: "experiment", caption: "Evidence", data: { title: "Craik and Tulving", question: "What share of words were later recognised after each type of question?", unit: "%", conditions: [{ label: "Structural: capitals?", value: 18 }, { label: "Phonemic: rhymes with?", value: 50 }, { label: "Semantic: fits the sentence?", value: 80 }], why: "Deeper, meaning-based processing produced better memory. Values are approximate." } },
     ],
     ref: "Craik and Lockhart 1972; Craik and Tulving 1975; Hyde and Jenkins 1973; Rogers, Kuiper and Kirker 1977; Morris, Bransford and Franks 1977",
   },
@@ -283,7 +283,7 @@ The serial position curve shows two separable effects: primacy from rehearsal an
     keyPoints: ["Free recall task and U-shaped curve", "Primacy explained by rehearsal with Rundus", "Recency explained by short-term memory", "Glanzer and Cunitz delay finding", "Presentation rate dissociation", "Amnesia evidence", "Long-term recency as an alternative account", "Applications"],
     module: "learning-memory/3-1",
     visuals: [
-      { kind: "experiment", data: { title: "The serial position curve", question: "Roughly what share of words are recalled at each part of a 20-word list?", unit: "%", conditions: [{ label: "First words", value: 65 }, { label: "Middle words", value: 25 }, { label: "Last words, immediate recall", value: 75 }, { label: "Last words, after 30 s counting", value: 25 }], why: "Counting backwards empties short-term memory, removing recency but not primacy. Values are approximate." } },
+      { kind: "experiment", caption: "Evidence for separate mechanisms", data: { title: "The serial position curve", question: "Roughly what share of words are recalled at each part of a 20-word list?", unit: "%", conditions: [{ label: "First words", value: 65 }, { label: "Middle words", value: 25 }, { label: "Last words, immediate recall", value: 75 }, { label: "Last words, after 30 s counting", value: 25 }], why: "Counting backwards empties short-term memory, removing recency but not primacy. Values are approximate." } },
     ],
     ref: "Murdock 1962; Rundus 1971; Glanzer and Cunitz 1966; Baddeley and Hitch 1977 on long-term recency; Atkinson and Hilgard ch 8",
   },
@@ -313,7 +313,7 @@ Internal physiological states act as cues. Information learned after drinking al
     keyPoints: ["Statement of encoding specificity", "Tulving and Thomson example", "Godden and Baddeley findings", "State and mood-dependent memory", "Applications such as cognitive interview"],
     module: "learning-memory/3-3",
     visuals: [
-      { kind: "experiment", data: { title: "Godden and Baddeley's divers", question: "How many of 36 words did divers recall in each condition?", unit: " words", max: 15, conditions: [{ label: "Learn on land, recall on land", value: 13.5 }, { label: "Learn on land, recall under water", value: 8.6 }, { label: "Learn under water, recall under water", value: 11.4 }, { label: "Learn under water, recall on land", value: 8.4 }], why: "Recall was best when the environment at recall matched the environment at learning. Values approximate." } },
+      { kind: "experiment", caption: "Context-dependent memory", data: { title: "Godden and Baddeley's divers", question: "How many of 36 words did divers recall in each condition?", unit: " words", max: 15, conditions: [{ label: "Learn on land, recall on land", value: 13.5 }, { label: "Learn on land, recall under water", value: 8.6 }, { label: "Learn under water, recall under water", value: 11.4 }, { label: "Learn under water, recall on land", value: 8.4 }], why: "Recall was best when the environment at recall matched the environment at learning. Values approximate." } },
     ],
     ref: "Tulving and Thomson 1973; Godden and Baddeley 1975 British Journal of Psychology (values approx from original Table 1); Smith 1979; Bower 1981",
   },
@@ -369,8 +369,8 @@ Long-term memory comprises several systems that differ in what they store, wheth
     keyPoints: ["Declarative versus non-declarative", "Episodic versus semantic with Tulving", "Procedural memory and priming", "Neural bases table", "H.M. mirror drawing evidence", "Basal ganglia double dissociation", "Semantic dementia and developmental amnesia", "Debates and clinical application"],
     module: "learning-memory/3-3",
     visuals: [
-      { kind: "flow", data: { title: "Squire's taxonomy of long-term memory", layout: "tree", nodes: [{ id: "l", label: "Long-term memory" }, { id: "d", label: "Declarative (explicit)", parent: "l" }, { id: "n", label: "Non-declarative (implicit)", parent: "l" }, { id: "e", label: "Episodic: events", parent: "d", detail: "Hippocampus and prefrontal cortex." }, { id: "s", label: "Semantic: facts", parent: "d", detail: "Anterior temporal lobes and neocortex." }, { id: "p", label: "Procedural: skills", parent: "n", detail: "Basal ganglia and cerebellum." }, { id: "pr", label: "Priming", parent: "n", detail: "Neocortex." }, { id: "c", label: "Conditioning", parent: "n", detail: "Amygdala and cerebellum." }] } },
-      { kind: "brainmap", data: { title: "Different systems, different structures", focus: ["hippocampus", "basal-ganglia", "cerebellum", "amygdala"], notes: { hippocampus: "Forming new declarative memories.", "basal-ganglia": "Habits and skills.", cerebellum: "Motor skills and eyeblink conditioning.", amygdala: "Emotional conditioning." } } },
+      { kind: "flow", caption: "Neural bases", data: { title: "Squire's taxonomy of long-term memory", layout: "tree", nodes: [{ id: "l", label: "Long-term memory" }, { id: "d", label: "Declarative (explicit)", parent: "l" }, { id: "n", label: "Non-declarative (implicit)", parent: "l" }, { id: "e", label: "Episodic: events", parent: "d", detail: "Hippocampus and prefrontal cortex." }, { id: "s", label: "Semantic: facts", parent: "d", detail: "Anterior temporal lobes and neocortex." }, { id: "p", label: "Procedural: skills", parent: "n", detail: "Basal ganglia and cerebellum." }, { id: "pr", label: "Priming", parent: "n", detail: "Neocortex." }, { id: "c", label: "Conditioning", parent: "n", detail: "Amygdala and cerebellum." }] } },
+      { kind: "brainmap", caption: "Evidence for multiple systems", data: { title: "Different systems, different structures", focus: ["hippocampus", "basal-ganglia", "cerebellum", "amygdala"], notes: { hippocampus: "Forming new declarative memories.", "basal-ganglia": "Habits and skills.", cerebellum: "Motor skills and eyeblink conditioning.", amygdala: "Emotional conditioning." } } },
     ],
     ref: "Squire 2004; Tulving 1972 and 1985; Milner 1962 on H.M.; Knowlton, Mangels and Squire 1996; Vargha-Khadem et al 1997; Bear, Connors and Paradiso ch 24",
   },
@@ -420,7 +420,7 @@ Implicit memory shows that the past influences behaviour without awareness. Diss
     keyPoints: ["Definition and contrast with explicit memory", "Types of priming and tasks", "Warrington and Weiskrantz findings", "Graf, Squire and Mandler instruction effect", "Dissociations in normal participants", "Systems versus processing accounts", "Applications"],
     module: "learning-memory/3-3",
     visuals: [
-      { kind: "compare", data: { title: "Explicit versus implicit memory in amnesia", a: { label: "Explicit test", points: ["Recall the words you studied", "Amnesic patients perform very poorly", "Depends on the hippocampus"], summary: "Impaired." }, b: { label: "Implicit test", points: ["Complete 'com___' with the first word", "Amnesic patients show normal priming", "Depends on neocortex"], summary: "Spared." } } },
+      { kind: "compare", caption: "Evidence from amnesia", data: { title: "Explicit versus implicit memory in amnesia", a: { label: "Explicit test", points: ["Recall the words you studied", "Amnesic patients perform very poorly", "Depends on the hippocampus"], summary: "Impaired." }, b: { label: "Implicit test", points: ["Complete 'com___' with the first word", "Amnesic patients show normal priming", "Depends on neocortex"], summary: "Spared." } } },
     ],
     ref: "Schacter 1987; Warrington and Weiskrantz 1970; Graf, Squire and Mandler 1984; Roediger 1990; Atkinson and Hilgard ch 8",
   },
@@ -451,7 +451,7 @@ Successful prospective memory needs forming the intention, retaining it, noticin
     keyPoints: ["Definition contrasted with retrospective memory", "Event versus time-based", "Multiprocess framework", "Clinical groups affected", "Implementation intentions and aids"],
     module: "learning-memory/3-4",
     visuals: [
-      { kind: "sort", data: { prompt: "Event-based or time-based?", buckets: ["Event-based", "Time-based"], items: [{ text: "Give a message to Priya when you see her", bucket: 0 }, { text: "Join the online class at 4 pm", bucket: 1 }, { text: "Switch off the gas after 15 minutes", bucket: 1 }, { text: "Buy milk when you pass the dairy", bucket: 0 }] } },
+      { kind: "sort", caption: "Types", data: { prompt: "Event-based or time-based?", buckets: ["Event-based", "Time-based"], items: [{ text: "Give a message to Priya when you see her", bucket: 0 }, { text: "Join the online class at 4 pm", bucket: 1 }, { text: "Switch off the gas after 15 minutes", bucket: 1 }, { text: "Buy milk when you pass the dairy", bucket: 0 }] } },
     ],
     ref: "Einstein and McDaniel 1990 and 2005 multiprocess; Gollwitzer 1999",
   },

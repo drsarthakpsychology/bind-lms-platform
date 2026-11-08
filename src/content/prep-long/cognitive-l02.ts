@@ -59,8 +59,8 @@ No single theory explains all forgetting. Interference and retrieval failure are
     pitfalls: ["Mixing up proactive and retroactive interference", "Presenting repression as well established"],
     module: "learning-memory/3-4",
     visuals: [
-      { kind: "compare", data: { title: "Two kinds of interference", a: { label: "Proactive", points: ["Old learning blocks new", "Writing last year's date in January", "Grows with number of earlier lists"], summary: "Forward in time." }, b: { label: "Retroactive", points: ["New learning blocks old", "Forgetting an old password after setting a new one", "Worse when new material is similar"], summary: "Backward in time." } } },
-      { kind: "curve", data: { kind: "forgetting", title: "Ebbinghaus forgetting curve", caption: "Add a review a day later and see how the curve flattens." } },
+      { kind: "compare", caption: "Interference theory", data: { title: "Two kinds of interference", a: { label: "Proactive", points: ["Old learning blocks new", "Writing last year's date in January", "Grows with number of earlier lists"], summary: "Forward in time." }, b: { label: "Retroactive", points: ["New learning blocks old", "Forgetting an old password after setting a new one", "Worse when new material is similar"], summary: "Backward in time." } } },
+      { kind: "curve", caption: "Motivated forgetting", data: { kind: "forgetting", title: "Ebbinghaus forgetting curve", caption: "Add a review a day later and see how the curve flattens." } },
     ],
     ref: "Ebbinghaus 1885; Jenkins and Dallenbach 1924; Underwood 1957; Tulving and Pearlstone 1966; Brown and McNeill 1966; Anderson and Green 2001 think/no-think; Atkinson and Hilgard ch 8",
   },
@@ -113,8 +113,8 @@ Ebbinghaus founded the experimental study of memory and described the forgetting
     keyPoints: ["Nonsense syllables and savings method", "Forgetting curve with approximate figures", "Negatively accelerated shape and residual savings", "Spacing effect and explanations", "Testing effect with Roediger and Karpicke", "Practical study strategies", "Critique including Bartlett"],
     module: "learning-memory/3-4",
     visuals: [
-      { kind: "curve", data: { kind: "forgetting", title: "Flatten the curve with spaced reviews", caption: "Add reviews at 1, 3 and 7 days. Compare with one long session." } },
-      { kind: "experiment", data: { title: "Roediger and Karpicke: testing versus restudy", question: "What share of a passage was recalled one week later?", unit: "%", conditions: [{ label: "Study four times", value: 40 }, { label: "Study once, test three times", value: 61 }], why: "Retrieval practice strengthens memory more than rereading, though rereading feels more effective. Values approximate." } },
+      { kind: "curve", caption: "The forgetting curve", data: { kind: "forgetting", title: "Flatten the curve with spaced reviews", caption: "Add reviews at 1, 3 and 7 days. Compare with one long session." } },
+      { kind: "experiment", caption: "The testing effect", data: { title: "Roediger and Karpicke: testing versus restudy", question: "What share of a passage was recalled one week later?", unit: "%", conditions: [{ label: "Study four times", value: 40 }, { label: "Study once, test three times", value: 61 }], why: "Retrieval practice strengthens memory more than rereading, though rereading feels more effective. Values approximate." } },
     ],
     ref: "Ebbinghaus 1885/1913 translation; Murre and Dros 2015 PLoS One; Roediger and Karpicke 2006 Psychological Science; Cepeda et al 2006 spacing meta-analysis",
   },
@@ -169,8 +169,8 @@ Research by Loftus and others shows that memory is malleable and that confident 
     pitfalls: ["Concluding that all eyewitnesses are unreliable", "Misreporting the Loftus and Palmer numbers"],
     module: "learning-memory/3-4",
     visuals: [
-      { kind: "experiment", data: { title: "Loftus and Palmer: one word changes the memory", question: "A week later, what share said they saw broken glass (there was none)?", unit: "%", conditions: [{ label: "Asked with 'smashed'", value: 32 }, { label: "Asked with 'hit'", value: 14 }, { label: "No speed question", value: 12 }], why: "The leading verb changed how the accident was reconstructed in memory." } },
-      { kind: "reveal", data: { prompt: "Listen: bed, rest, awake, tired, dream, snooze, blanket, doze, slumber, snore, nap, yawn. Without looking back, was 'sleep' on the list?", answer: "No. Most people confidently remember it because every word activates the idea of sleep. This is the DRM false memory effect." } },
+      { kind: "experiment", caption: "Leading questions and the misinformation effect", data: { title: "Loftus and Palmer: one word changes the memory", question: "A week later, what share said they saw broken glass (there was none)?", unit: "%", conditions: [{ label: "Asked with 'smashed'", value: 32 }, { label: "Asked with 'hit'", value: 14 }, { label: "No speed question", value: 12 }], why: "The leading verb changed how the accident was reconstructed in memory." } },
+      { kind: "reveal", caption: "Implanted false memories", data: { prompt: "Listen: bed, rest, awake, tired, dream, snooze, blanket, doze, slumber, snore, nap, yawn. Without looking back, was 'sleep' on the list?", answer: "No. Most people confidently remember it because every word activates the idea of sleep. This is the DRM false memory effect." } },
     ],
     ref: "Loftus and Palmer 1974; Loftus and Pickrell 1995; Roediger and McDermott 1995; Fisher and Geiselman 1992; Innocence Project data; Wells et al 2020 lineup recommendations; Atkinson and Hilgard ch 8",
   },
@@ -225,7 +225,7 @@ Bartlett showed that remembering is reconstruction guided by schemas. His insigh
     keyPoints: ["Effort after meaning versus Ebbinghaus", "War of the Ghosts method", "At least four types of change", "Schema and script defined", "Bransford and Johnson or Brewer and Treyens", "Methodological critique", "Clinical and educational applications"],
     module: "learning-memory/3-4",
     visuals: [
-      { kind: "flow", data: { title: "How a schema reshapes a story", layout: "chain", nodes: [{ id: "a", label: "Unfamiliar story", detail: "Ghosts, canoes, seal hunting." }, { id: "b", label: "Encoding through schema", detail: "Familiar parts fit; odd parts do not." }, { id: "c", label: "Gaps and puzzles", detail: "Unfamiliar details fade." }, { id: "d", label: "Reconstruction at recall", detail: "Canoes become boats; events are rationalised." }, { id: "e", label: "Shorter, more familiar story" }] } },
+      { kind: "flow", caption: "The War of the Ghosts", data: { title: "How a schema reshapes a story", layout: "chain", nodes: [{ id: "a", label: "Unfamiliar story", detail: "Ghosts, canoes, seal hunting." }, { id: "b", label: "Encoding through schema", detail: "Familiar parts fit; odd parts do not." }, { id: "c", label: "Gaps and puzzles", detail: "Unfamiliar details fade." }, { id: "d", label: "Reconstruction at recall", detail: "Canoes become boats; events are rationalised." }, { id: "e", label: "Shorter, more familiar story" }] } },
     ],
     ref: "Bartlett 1932; Bransford and Johnson 1972; Brewer and Treyens 1981; Bower, Black and Turner 1979; Gauld and Stephenson 1967",
   },
@@ -293,8 +293,8 @@ Amnesic patients have been natural experiments that revealed the architecture of
     pitfalls: ["Describing H.M. as having no memory at all", "Confusing dissociative and organic amnesia patterns"],
     module: "learning-memory/3-4",
     visuals: [
-      { kind: "brainexplorer", data: { title: "Where amnesia comes from", focus: ["hippocampus", "thalamus", "amygdala", "frontal"], caption: "Switch on damage for the hippocampus. Which kinds of memory are lost, and which stay?" } },
-      { kind: "compare", data: { title: "What H.M. lost and kept", a: { label: "Lost", points: ["New facts and events", "About 11 years before surgery", "Recognising people met after 1953"], summary: "New declarative memory." }, b: { label: "Kept", points: ["Normal digit span", "Childhood memories", "Mirror drawing skill and priming"], summary: "Short-term memory and implicit learning." } } },
+      { kind: "brainexplorer", caption: "Lessons for the organisation of memory", data: { title: "Where amnesia comes from", focus: ["hippocampus", "thalamus", "amygdala", "frontal"], caption: "Switch on damage for the hippocampus. Which kinds of memory are lost, and which stay?" } },
+      { kind: "compare", caption: "The case of H.M.", data: { title: "What H.M. lost and kept", a: { label: "Lost", points: ["New facts and events", "About 11 years before surgery", "Recognising people met after 1953"], summary: "New declarative memory." }, b: { label: "Kept", points: ["Normal digit span", "Childhood memories", "Mirror drawing skill and priming"], summary: "Short-term memory and implicit learning." } } },
     ],
     ref: "Scoville and Milner 1957; Corkin 2002; Kopelman 2002 on Korsakoff; Wilson and Wearing 1995; Tulving 1985 on K.C.; Bear, Connors and Paradiso ch 24; Kaplan and Sadock ch on neurocognitive disorders",
   },
@@ -326,7 +326,7 @@ Reconsolidation research suggests ways to weaken traumatic memories in PTSD and 
     keyPoints: ["Synaptic versus systems consolidation", "LTP", "Ribot's law and sleep evidence", "Reconsolidation with Nader's study", "Clinical uses and caution"],
     module: "learning-memory/3-3",
     visuals: [
-      { kind: "flow", data: { title: "Memory over time", layout: "cycle", nodes: [{ id: "e", label: "Encoding", detail: "A fragile new trace." }, { id: "c", label: "Consolidation", detail: "Protein synthesis, sleep replay, transfer to cortex." }, { id: "r", label: "Retrieval", detail: "The memory becomes unstable again." }, { id: "rc", label: "Reconsolidation", detail: "Restabilised, possibly updated." }] } },
+      { kind: "flow", caption: "Reconsolidation", data: { title: "Memory over time", layout: "cycle", nodes: [{ id: "e", label: "Encoding", detail: "A fragile new trace." }, { id: "c", label: "Consolidation", detail: "Protein synthesis, sleep replay, transfer to cortex." }, { id: "r", label: "Retrieval", detail: "The memory becomes unstable again." }, { id: "rc", label: "Reconsolidation", detail: "Restabilised, possibly updated." }] } },
     ],
     ref: "Bliss and Lomo 1973; McGaugh 2000; Nader, Schafe and LeDoux 2000 Nature; Bear, Connors and Paradiso ch 25",
   },
@@ -375,7 +375,7 @@ Autobiographical memory is the memory of the self. Its patterns across the lifes
     keyPoints: ["Definition with episodic and personal semantic components", "Methods such as cue word technique", "Childhood amnesia with at least three explanations", "Reminiscence bump with explanations", "Self-memory system", "Overgeneral memory in depression", "Cultural differences"],
     module: "learning-memory/3-4",
     visuals: [
-      { kind: "timeline", data: { prompt: "Order these features of lifetime memory from earliest to latest.", events: [{ label: "Childhood amnesia", when: "Birth to about 3 or 4" }, { label: "Sparse childhood memories", when: "About 4 to 10" }, { label: "Reminiscence bump", when: "About 10 to 30" }, { label: "Gradual forgetting of middle years", when: "About 30 to the recent past" }, { label: "Recency: many recent memories", when: "Last few years" }] } },
+      { kind: "timeline", caption: "The reminiscence bump", data: { prompt: "Order these features of lifetime memory from earliest to latest.", events: [{ label: "Childhood amnesia", when: "Birth to about 3 or 4" }, { label: "Sparse childhood memories", when: "About 4 to 10" }, { label: "Reminiscence bump", when: "About 10 to 30" }, { label: "Gradual forgetting of middle years", when: "About 30 to the recent past" }, { label: "Recency: many recent memories", when: "Last few years" }] } },
     ],
     ref: "Rubin, Wetzler and Nebes 1986; Howe and Courage 1993; Wang 2001; Conway and Pleydell-Pearce 2000; Williams et al 2007 overgeneral memory",
   },
@@ -429,7 +429,7 @@ The hierarchical model was elegant and testable but failed to explain typicality
     keyPoints: ["Hierarchical structure and cognitive economy", "Prediction about verification times", "Supporting evidence", "Typicality and familiarity challenges", "Spreading activation principles", "Semantic priming evidence", "Weakness of flexibility", "Later connectionist models"],
     module: "thinking-language/2-1",
     visuals: [
-      { kind: "flow", data: { title: "Collins and Quillian's hierarchy", layout: "tree", nodes: [{ id: "a", label: "Animal", detail: "Has skin, can move, eats." }, { id: "b", label: "Bird", parent: "a", detail: "Has wings, can fly, has feathers." }, { id: "f", label: "Fish", parent: "a", detail: "Has fins, can swim." }, { id: "c", label: "Canary", parent: "b", detail: "Can sing, is yellow." }, { id: "o", label: "Ostrich", parent: "b", detail: "Has long legs, cannot fly." }, { id: "s", label: "Shark", parent: "f", detail: "Can bite, is dangerous." }] } },
+      { kind: "flow", caption: "The hierarchical network model", data: { title: "Collins and Quillian's hierarchy", layout: "tree", nodes: [{ id: "a", label: "Animal", detail: "Has skin, can move, eats." }, { id: "b", label: "Bird", parent: "a", detail: "Has wings, can fly, has feathers." }, { id: "f", label: "Fish", parent: "a", detail: "Has fins, can swim." }, { id: "c", label: "Canary", parent: "b", detail: "Can sing, is yellow." }, { id: "o", label: "Ostrich", parent: "b", detail: "Has long legs, cannot fly." }, { id: "s", label: "Shark", parent: "f", detail: "Can bite, is dangerous." }] } },
     ],
     ref: "Collins and Quillian 1969; Collins and Loftus 1975; Meyer and Schvaneveldt 1971; Conrad 1972; Rosch 1975; Smith, Shoben and Rips 1974",
   },
@@ -465,7 +465,7 @@ Mnemonics suit lists and arbitrary associations better than understanding of con
     keyPoints: ["Definition and principle", "Method of loci and pegword", "Keyword method", "Verbal mnemonics", "Why they work", "Limits"],
     module: "learning-memory/3-3",
     visuals: [
-      { kind: "reveal", data: { prompt: "Use the method of loci to remember: milk, stamps, battery, book.", answer: "Picture milk spilling at your front door, stamps stuck on the sofa, a battery fizzing in the kitchen sink and a book open on your bed. Walk the route to recall them." } },
+      { kind: "reveal", caption: "Imagery-based methods", data: { prompt: "Use the method of loci to remember: milk, stamps, battery, book.", answer: "Picture milk spilling at your front door, stamps stuck on the sofa, a battery fizzing in the kitchen sink and a book open on your bed. Walk the route to recall them." } },
     ],
     ref: "Paivio 1971; Bower 1970; Atkinson 1975 keyword method; Dresler et al 2017 Neuron memory athletes",
   },
@@ -510,7 +510,7 @@ The student's problem is not a poor memory but a mismatch between how they study
     keyPoints: ["Illusion of knowing from familiarity", "Shallow encoding and massed study", "Encoding specificity and recall versus recognition", "Anxiety and working memory", "Retrieval practice and spacing advice", "Deep processing and organisation", "Sleep and anxiety management including referral"],
     module: "learning-memory/3-3",
     visuals: [
-      { kind: "decide", data: { scene: "Two weeks before exams, a student has four chapters to learn.", ask: "Which plan follows memory research best?", choices: [{ label: "Reread all four chapters on the last two nights", verdict: "harm", outcome: "Feels fluent, forgets fast, little recall practice.", why: "Massed rereading gives an illusion of knowing." }, { label: "One chapter at a time, highlighting key lines", verdict: "ok", outcome: "Some benefit, but still mostly recognition.", why: "Highlighting is shallow and not retrieval." }, { label: "Spread sessions over two weeks, test yourself on each chapter and revisit it after one and three days", verdict: "best", outcome: "Strong, durable recall in the exam.", why: "Spacing plus retrieval practice is the best supported strategy." }] } },
+      { kind: "decide", caption: "Retrieval problems", data: { scene: "Two weeks before exams, a student has four chapters to learn.", ask: "Which plan follows memory research best?", choices: [{ label: "Reread all four chapters on the last two nights", verdict: "harm", outcome: "Feels fluent, forgets fast, little recall practice.", why: "Massed rereading gives an illusion of knowing." }, { label: "One chapter at a time, highlighting key lines", verdict: "ok", outcome: "Some benefit, but still mostly recognition.", why: "Highlighting is shallow and not retrieval." }, { label: "Spread sessions over two weeks, test yourself on each chapter and revisit it after one and three days", verdict: "best", outcome: "Strong, durable recall in the exam.", why: "Spacing plus retrieval practice is the best supported strategy." }] } },
     ],
     ref: "Roediger and Karpicke 2006; Dunlosky et al 2013 study techniques review; Eysenck et al 2007 attentional control theory; Ramirez and Beilock 2011 Science",
   },

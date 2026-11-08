@@ -32,6 +32,7 @@ Every variable must be given an operational definition, a statement of exactly h
     visuals: [
       {
         kind: "sort",
+        caption: "Main types",
         data: {
           prompt: "A study tests whether music while studying changes recall. Sort each variable.",
           buckets: ["Independent variable", "Dependent variable", "Extraneous or confounding"],
@@ -92,6 +93,7 @@ The hypothesis links theory to data. A good one is precise, falsifiable and grou
     visuals: [
       {
         kind: "flow",
+        caption: "Types of hypothesis",
         data: {
           title: "From theory to a tested hypothesis",
           layout: "chain",
@@ -159,6 +161,7 @@ Probability sampling supports statistical generalisation; non-probability sampli
     visuals: [
       {
         kind: "flow",
+        caption: "Probability sampling",
         data: {
           title: "Sampling methods",
           layout: "tree",
@@ -179,6 +182,7 @@ Probability sampling supports statistical generalisation; non-probability sampli
       },
       {
         kind: "compare",
+        caption: "Non-probability sampling",
         data: {
           title: "Stratified versus quota sampling",
           a: { label: "Stratified", points: ["Population split into strata", "Random selection within each stratum", "Sampling error can be estimated"], summary: "Representative of each subgroup by chance." },
@@ -257,6 +261,7 @@ Knowing the level of measurement prevents absurd conclusions, such as averaging 
     visuals: [
       {
         kind: "layers",
+        caption: "The four scales",
         data: {
           title: "Each level adds a property",
           shape: "stack",
@@ -270,6 +275,7 @@ Knowing the level of measurement prevents absurd conclusions, such as averaging 
       },
       {
         kind: "sort",
+        caption: "The rating scale debate",
         data: {
           prompt: "Place each measure on its scale.",
           buckets: ["Nominal", "Ordinal", "Interval", "Ratio"],
@@ -340,6 +346,7 @@ Observation gives rich, real-world data, and its scientific value rests on clear
     visuals: [
       {
         kind: "worked",
+        caption: "Inter-observer reliability",
         data: {
           title: "Cohen's kappa step by step",
           steps: [
@@ -428,6 +435,7 @@ The experiment remains the strongest method for causal questions because random 
       },
       {
         kind: "compare",
+        caption: "Types of experiment",
         data: {
           title: "Laboratory versus field experiment",
           a: { label: "Laboratory", points: ["Tight control of extraneous variables", "Easy to replicate", "Risk of demand characteristics and artificial tasks"], summary: "High internal validity." },
@@ -499,6 +507,7 @@ Validity is not a property of a method in general but of a particular conclusion
     visuals: [
       {
         kind: "sort",
+        caption: "Threats to internal validity",
         data: {
           prompt: "A counselling study finds improvement from pre to post-test without a control group. Which threat is each explanation?",
           buckets: ["History", "Maturation", "Regression to the mean", "Attrition"],
@@ -588,6 +597,7 @@ Within-subjects designs are more economical and powerful; between-subjects desig
     visuals: [
       {
         kind: "compare",
+        caption: "Counterbalancing",
         data: {
           title: "Two ways to compare conditions",
           a: { label: "Between-subjects", points: ["Different people in each condition", "No order effects", "Needs more people"], summary: "Cleaner, less powerful." },

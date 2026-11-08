@@ -37,7 +37,7 @@ In a normal distribution the three coincide. In a positively skewed distribution
     keyPoints: ["Definition", "Properties of each measure", "Correct worked values", "Effect of an outlier on the mean", "Choice by level of measurement and skew"],
     module: "statistics/1-3",
     visuals: [
-      { kind: "worked", data: { title: "Mean versus median with an outlier", steps: [{ q: "Mean of 4, 6, 6, 7, 8, 9, 30?", a: "70 / 7 = 10" }, { q: "Median?", a: "Fourth score in order = 7" }, { q: "Which is more typical?", a: "The median: six of seven students are below the mean." }], yourTurn: [{ q: "Drop the 30. What are the new mean and median?", a: "Mean 40 / 6 = 6.67; median (6 + 7) / 2 = 6.5. They are now close." }] } },
+      { kind: "worked", caption: "Worked example", data: { title: "Mean versus median with an outlier", steps: [{ q: "Mean of 4, 6, 6, 7, 8, 9, 30?", a: "70 / 7 = 10" }, { q: "Median?", a: "Fourth score in order = 7" }, { q: "Which is more typical?", a: "The median: six of seven students are below the mean." }], yourTurn: [{ q: "Drop the 30. What are the new mean and median?", a: "Mean 40 / 6 = 6.67; median (6 + 7) / 2 = 6.5. They are now close." }] } },
     ],
     ref: "Garrett, Statistics in Psychology and Education ch 3; Gravetter and Wallnau ch 3. Values checked in Python.",
   },
@@ -87,7 +87,7 @@ The SD and variance are the most useful measures of variability because they use
     pitfalls: ["Forgetting to square deviations", "Mixing N and N minus 1 without saying which"],
     module: "statistics/1-4",
     visuals: [
-      { kind: "worked", data: { title: "Standard deviation step by step", steps: [{ q: "Mean?", a: "40 / 8 = 5" }, { q: "Sum of squared deviations?", a: "9 + 1 + 1 + 1 + 0 + 0 + 4 + 16 = 32" }, { q: "Population SD?", a: "Square root of 32 / 8 = 2" }, { q: "Sample SD?", a: "Square root of 32 / 7 = 2.14" }], yourTurn: [{ q: "Add 10 to every score. What happens to the mean and SD?", a: "Mean becomes 15; SD stays 2." }] } },
+      { kind: "worked", caption: "Worked example", data: { title: "Standard deviation step by step", steps: [{ q: "Mean?", a: "40 / 8 = 5" }, { q: "Sum of squared deviations?", a: "9 + 1 + 1 + 1 + 0 + 0 + 4 + 16 = 32" }, { q: "Population SD?", a: "Square root of 32 / 8 = 2" }, { q: "Sample SD?", a: "Square root of 32 / 7 = 2.14" }], yourTurn: [{ q: "Add 10 to every score. What happens to the mean and SD?", a: "Mean becomes 15; SD stays 2." }] } },
     ],
     ref: "Garrett ch 4; Gravetter and Wallnau ch 4. Computed with numpy: var 4.0, sample var 4.571, sample SD 2.138.",
   },
@@ -155,8 +155,8 @@ The normal curve is a mathematical ideal that real data only approximate, but it
     pitfalls: ["Saying the tails touch the baseline", "Mixing up the direction of skew"],
     module: "statistics/2-1",
     visuals: [
-      { kind: "curve", data: { kind: "normal", title: "The normal curve and IQ", caption: "Set z to 2. What percentile is an IQ of 130?" } },
-      { kind: "compare", data: { title: "Two kinds of skew", a: { label: "Positive skew", points: ["Tail to the right", "Mean above median", "Very hard test, floor effect"], summary: "Most scores low." }, b: { label: "Negative skew", points: ["Tail to the left", "Mean below median", "Very easy test, ceiling effect"], summary: "Most scores high." } } },
+      { kind: "curve", caption: "Areas under the curve", data: { kind: "normal", title: "The normal curve and IQ", caption: "Set z to 2. What percentile is an IQ of 130?" } },
+      { kind: "compare", caption: "Departures from normality", data: { title: "Two kinds of skew", a: { label: "Positive skew", points: ["Tail to the right", "Mean above median", "Very hard test, floor effect"], summary: "Most scores low." }, b: { label: "Negative skew", points: ["Tail to the left", "Mean below median", "Very easy test, ceiling effect"], summary: "Most scores high." } } },
     ],
     ref: "Garrett ch 5 and 6; Gravetter and Wallnau ch 6. Areas from scipy.stats.norm: cdf(2) = 0.97725; P(-1<z<1) = 0.6827.",
   },
@@ -186,7 +186,7 @@ Parametric tests assume approximate normality. Marked skew or heavy tails can di
     keyPoints: ["Definition of skewness", "Positive and negative with examples", "Mean and median relation", "Kurtosis types", "Practical importance for tests and analysis"],
     module: "statistics/2-1",
     visuals: [
-      { kind: "sort", data: { prompt: "Which way is each distribution skewed?", buckets: ["Positive skew", "Negative skew"], items: [{ text: "Monthly income in a city", bucket: 0 }, { text: "Marks on a very easy quiz", bucket: 1 }, { text: "Reaction times in milliseconds", bucket: 0 }, { text: "Age at death in Japan", bucket: 1 }] } },
+      { kind: "sort", caption: "Skewness", data: { prompt: "Which way is each distribution skewed?", buckets: ["Positive skew", "Negative skew"], items: [{ text: "Monthly income in a city", bucket: 0 }, { text: "Marks on a very easy quiz", bucket: 1 }, { text: "Reaction times in milliseconds", bucket: 0 }, { text: "Age at death in Japan", bucket: 1 }] } },
     ],
     ref: "Garrett ch 5; Gravetter and Wallnau ch 3",
   },
@@ -235,8 +235,8 @@ Riya did better in mathematics (z = 2.0, about the 98th percentile) than in Engl
     keyPoints: ["Explains why raw scores cannot be compared", "Correct z scores of 2.0 and 0.5", "Correct percentiles", "T score and IQ conversions", "z keeps distribution shape", "Normality assumption for percentiles", "Clear final answer"],
     module: "statistics/2-1",
     visuals: [
-      { kind: "worked", data: { title: "Comparing scores across tests", steps: [{ q: "Maths z?", a: "(70 minus 60) / 5 = 2.0" }, { q: "English z?", a: "(80 minus 75) / 10 = 0.5" }, { q: "Percentiles?", a: "About 97.7 and 69.1" }, { q: "T scores?", a: "50 + 10 x 2 = 70; 50 + 10 x 0.5 = 55" }], yourTurn: [{ q: "An IQ of 85: z and percentile?", a: "z = minus 1.0, about the 16th percentile." }] } },
-      { kind: "curve", data: { kind: "normal", caption: "Compare z = 0.5 with z = 2.0." } },
+      { kind: "worked", caption: "z scores", data: { title: "Comparing scores across tests", steps: [{ q: "Maths z?", a: "(70 minus 60) / 5 = 2.0" }, { q: "English z?", a: "(80 minus 75) / 10 = 0.5" }, { q: "Percentiles?", a: "About 97.7 and 69.1" }, { q: "T scores?", a: "50 + 10 x 2 = 70; 50 + 10 x 0.5 = 55" }], yourTurn: [{ q: "An IQ of 85: z and percentile?", a: "z = minus 1.0, about the 16th percentile." }] } },
+      { kind: "curve", caption: "Assumptions and cautions", data: { kind: "normal", caption: "Compare z = 0.5 with z = 2.0." } },
     ],
     ref: "Garrett ch 6; Anastasi ch 3 on standard scores. scipy: cdf(2)=0.9772, cdf(0.5)=0.6915, cdf(-1)=0.1587.",
   },
@@ -285,8 +285,8 @@ The rules of probability show that a test's accuracy depends not only on sensiti
     pitfalls: ["Confusing sensitivity with PPV", "Applying the multiplication rule to dependent events"],
     module: "statistics/2-2",
     visuals: [
-      { kind: "guess", data: { prompt: "A person tests positive. What is the chance they are actually depressed?", min: 0, max: 100, step: 1, unit: "%", answer: [33, 34], reveal: "Only about 33 percent: 90 true positives out of 270 positives. The 900 non-depressed people produce 180 false positives." } },
-      { kind: "worked", data: { title: "From sensitivity to predictive value", steps: [{ q: "True positives?", a: "10 percent of 1,000 = 100 depressed; 90 percent of 100 = 90." }, { q: "False positives?", a: "900 not depressed; 20 percent of 900 = 180." }, { q: "PPV?", a: "90 / (90 + 180) = 0.33" }], yourTurn: [{ q: "In a clinic where 50 percent are depressed, what is the PPV?", a: "Of 1,000: 450 true positives, 100 false positives; PPV = 450 / 550 = 0.82." }] } },
+      { kind: "guess", caption: "The screening example", data: { prompt: "A person tests positive. What is the chance they are actually depressed?", min: 0, max: 100, step: 1, unit: "%", answer: [33, 34], reveal: "Only about 33 percent: 90 true positives out of 270 positives. The 900 non-depressed people produce 180 false positives." } },
+      { kind: "worked", caption: "Predictive values", data: { title: "From sensitivity to predictive value", steps: [{ q: "True positives?", a: "10 percent of 1,000 = 100 depressed; 90 percent of 100 = 90." }, { q: "False positives?", a: "900 not depressed; 20 percent of 900 = 180." }, { q: "PPV?", a: "90 / (90 + 180) = 0.33" }], yourTurn: [{ q: "In a clinic where 50 percent are depressed, what is the PPV?", a: "Of 1,000: 450 true positives, 100 false positives; PPV = 450 / 550 = 0.82." }] } },
     ],
     ref: "Gravetter and Wallnau ch 6; Kahneman and Tversky 1973. PPV 90/270 = 0.333, NPV 720/730 = 0.986; clinic: 450/550 = 0.818.",
   },
@@ -319,7 +319,7 @@ Confidence intervals show both the estimate and its precision, which is why repo
     keyPoints: ["Definition of SE", "SE = 2", "CI 46.08 to 53.92", "Correct frequentist interpretation", "Effect of N and confidence level", "Notes t versus z"],
     module: "statistics/2-2",
     visuals: [
-      { kind: "worked", data: { title: "Confidence interval for a mean", steps: [{ q: "SE?", a: "12 / 6 = 2" }, { q: "Margin at 95 percent?", a: "1.96 x 2 = 3.92" }, { q: "Interval?", a: "46.08 to 53.92" }], yourTurn: [{ q: "Same mean and SD, N = 144. New 95 percent CI?", a: "SE = 1, so 48.04 to 51.96." }] } },
+      { kind: "worked", caption: "Interpretation", data: { title: "Confidence interval for a mean", steps: [{ q: "SE?", a: "12 / 6 = 2" }, { q: "Margin at 95 percent?", a: "1.96 x 2 = 3.92" }, { q: "Interval?", a: "46.08 to 53.92" }], yourTurn: [{ q: "Same mean and SD, N = 144. New 95 percent CI?", a: "SE = 1, so 48.04 to 51.96." }] } },
     ],
     ref: "Gravetter and Wallnau ch 7 and 9; Cumming 2014 New Statistics. t(35) crit = 2.030.",
   },
@@ -374,7 +374,7 @@ Type I and Type II errors are the two ways of being wrong in hypothesis testing.
     module: "statistics/2-3",
     visuals: [
       { kind: "experiment", data: { title: "Power of a trial with a moderate effect", question: "A therapy has a true effect of d = 0.5. How often will a trial detect it at alpha 0.05?", unit: "%", conditions: [{ label: "20 patients per group", value: 34 }, { label: "64 patients per group", value: 80 }, { label: "100 patients per group", value: 94 }], why: "Power rises with sample size; small trials usually miss real moderate effects." } },
-      { kind: "curve", data: { kind: "sdt", title: "The same trade-off in signal detection", caption: "Move the criterion: fewer false alarms means more misses, just as lower alpha means more Type II errors." } },
+      { kind: "curve", caption: "The trade-off", data: { kind: "sdt", title: "The same trade-off in signal detection", caption: "Move the criterion: fewer false alarms means more misses, just as lower alpha means more Type II errors." } },
     ],
     ref: "Cohen 1988 Statistical Power Analysis; Gravetter and Wallnau ch 8. Power by noncentral t: n=20 0.338, n=64 0.801, n=100 0.940; familywise 1-0.95^20 = 0.642.",
   },
@@ -425,7 +425,7 @@ The level of significance sets the risk of a Type I error, and the tails of the 
     keyPoints: ["Definition of alpha and critical region", "Two-tailed with plus or minus 1.96 and 2.58", "One-tailed with 1.645 and 2.33", "Power difference", "Conditions justifying a one-tailed test", "Worked example where conclusions differ"],
     module: "statistics/2-3",
     visuals: [
-      { kind: "curve", data: { kind: "normal", title: "Where the 5 percent goes", caption: "Two-tailed: beyond plus or minus 1.96. One-tailed: beyond 1.645 on one side only." } },
+      { kind: "curve", caption: "Comparison", data: { kind: "normal", title: "Where the 5 percent goes", caption: "Two-tailed: beyond plus or minus 1.96. One-tailed: beyond 1.645 on one side only." } },
     ],
     ref: "Garrett ch 9; Gravetter and Wallnau ch 8. z crit: 1.96, 2.576, 1.645, 2.326.",
   },
@@ -499,8 +499,8 @@ Pearson's r is a compact index of linear relationship. A full interpretation rep
     pitfalls: ["Arithmetic errors in sums", "Calling a strong r automatically significant", "Inferring causation"],
     module: "statistics/2-4",
     visuals: [
-      { kind: "worked", data: { title: "Pearson r by the computational formula", steps: [{ q: "Sums?", a: "Sum X 30, sum Y 306, sum X squared 220, sum Y squared 18924, sum XY 1912." }, { q: "Numerator?", a: "5 x 1912 minus 30 x 306 = 380" }, { q: "Denominator?", a: "Square root of (200 x 984) = 443.6" }, { q: "r?", a: "380 / 443.6 = 0.857" }, { q: "Significant with N = 5?", a: "t = 2.88 with df 3; critical 3.18, so no." }] } },
-      { kind: "curve", data: { kind: "inverted-u", title: "Why r can miss a strong relationship", caption: "Arousal strongly affects performance, but the curve is not a line, so r is near zero." } },
+      { kind: "worked", caption: "Worked calculation", data: { title: "Pearson r by the computational formula", steps: [{ q: "Sums?", a: "Sum X 30, sum Y 306, sum X squared 220, sum Y squared 18924, sum XY 1912." }, { q: "Numerator?", a: "5 x 1912 minus 30 x 306 = 380" }, { q: "Denominator?", a: "Square root of (200 x 984) = 443.6" }, { q: "r?", a: "380 / 443.6 = 0.857" }, { q: "Significant with N = 5?", a: "t = 2.88 with df 3; critical 3.18, so no." }] } },
+      { kind: "curve", caption: "Factors that affect the size of r", data: { kind: "inverted-u", title: "Why r can miss a strong relationship", caption: "Arousal strongly affects performance, but the curve is not a line, so r is near zero." } },
     ],
     ref: "Garrett ch 6 and 7; Gravetter and Wallnau ch 15. scipy pearsonr: r = 0.8566, p = 0.0638; t = 2.875; t crit df 3 = 3.182.",
   },

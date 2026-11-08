@@ -36,6 +36,7 @@ No single operational definition captures a rich construct completely; intellige
     visuals: [
       {
         kind: "reveal",
+        caption: "Examples",
         data: { prompt: "Write an operational definition of exam stress for a study of Class 12 students.", answer: "For example: the total score on a standard perceived stress scale completed one week before the board exams, or salivary cortisol measured on waking on the day of the first exam." },
       },
     ],
@@ -76,6 +77,7 @@ Each step depends on the one before: a vague problem leads to vague hypotheses, 
     visuals: [
       {
         kind: "flow",
+        caption: "The cycle",
         data: {
           title: "The research cycle",
           layout: "cycle",
@@ -136,6 +138,7 @@ Reliability and validity are the two pillars of good measurement. A researcher m
     visuals: [
       {
         kind: "compare",
+        caption: "Relationship",
         data: {
           title: "Reliability versus validity",
           a: { label: "Reliable but not valid", points: ["Shots tightly grouped", "Grouped away from the bullseye", "Consistent error"], summary: "Consistent, wrong." },
@@ -200,6 +203,7 @@ The interview is one of psychology's most versatile methods. The choice of struc
     visuals: [
       {
         kind: "sort",
+        caption: "Types",
         data: {
           prompt: "Which interview format fits each study?",
           buckets: ["Structured", "Semi-structured", "Focus group"],
@@ -248,7 +252,7 @@ A case study differs from a single-case experimental design, which manipulates a
     keyPoints: ["Definition with multiple data sources", "At least two famous cases", "Strengths including rare conditions", "Limitations including generalisation", "Distinction from single-case experiments"],
     module: "research-methods/3-1",
     visuals: [
-      { kind: "brainmap", data: { title: "What two famous cases taught us", focus: ["prefrontal", "hippocampus"], notes: { prefrontal: "Phineas Gage: damage changed personality and social judgement.", hippocampus: "H.M.: removal of the medial temporal lobes stopped new long-term memories forming." } } },
+      { kind: "brainmap", caption: "Famous examples", data: { title: "What two famous cases taught us", focus: ["prefrontal", "hippocampus"], notes: { prefrontal: "Phineas Gage: damage changed personality and social judgement.", hippocampus: "H.M.: removal of the medial temporal lobes stopped new long-term memories forming." } } },
     ],
     ref: "Yin, Case Study Research; Corkin 2002 on H.M.; Atkinson and Hilgard ch 8",
   },
@@ -296,6 +300,7 @@ The three types trade control against realism. Laboratory work shows what can ca
     visuals: [
       {
         kind: "experiment",
+        caption: "Laboratory experiment",
         data: {
           title: "Darley and Latane's seizure study",
           question: "What share of students went for help before the seizure ended?",
@@ -362,6 +367,7 @@ The statement is largely correct. For causal questions the experiment is unmatch
     visuals: [
       {
         kind: "compare",
+        caption: "The case for the experiment",
         data: {
           title: "Power of the experiment versus reach of life",
           a: { label: "What experiments do best", points: ["Show cause and effect", "Precise measurement", "Test theory predictions", "Replicable procedures"], summary: "Unmatched for causal questions." },
@@ -397,7 +403,7 @@ Placebo use requires informed consent explaining that one may receive an inactiv
     keyPoints: ["Placebo and placebo effect defined", "Logic of a placebo control group", "Single, double and triple blind", "Blinding failure", "Ethical concerns"],
     module: "research-methods/2-3",
     visuals: [
-      { kind: "reveal", data: { prompt: "A drug group improves by 12 points and a placebo group by 8 points. What is the specific drug effect?", answer: "About 4 points. The 8 points shared by both groups come from expectation, attention, natural recovery and regression to the mean." } },
+      { kind: "reveal", caption: "Placebo control", data: { prompt: "A drug group improves by 12 points and a placebo group by 8 points. What is the specific drug effect?", answer: "About 4 points. The 8 points shared by both groups come from expectation, attention, natural recovery and regression to the mean." } },
     ],
     ref: "Beecher 1955 JAMA; Kirsch 2010 on placebo in depression trials",
   },
@@ -510,6 +516,7 @@ The newspaper confuses correlation with causation. The finding is consistent wit
     visuals: [
       {
         kind: "flow",
+        caption: "A better study",
         data: {
           title: "Three explanations for one correlation",
           layout: "tree",
@@ -523,6 +530,7 @@ The newspaper confuses correlation with causation. The finding is consistent wit
       },
       {
         kind: "guess",
+        caption: "What the finding shows",
         data: { prompt: "With r = 0.30, what percentage of the variation in depressive symptoms is shared with social media use?", min: 0, max: 50, step: 1, unit: "%", answer: [9, 9], reveal: "r squared = 0.30 x 0.30 = 0.09, so 9 percent." },
       },
     ],

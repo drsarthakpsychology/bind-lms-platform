@@ -54,7 +54,7 @@ Spearman's rho is a simple, robust measure of association for ranked or non-norm
     keyPoints: ["Definition and monotonic relationship", "Correct formula", "Sum of D squared = 6", "rho = 0.829", "Interpretation as agreement", "Small-sample significance with exact critical value", "Handling ties", "When to prefer rho, and Kendall's tau"],
     module: "statistics/2-4",
     visuals: [
-      { kind: "worked", data: { title: "Spearman's rho", steps: [{ q: "Sum of D squared?", a: "Six differences of 1, so 6." }, { q: "Denominator N (N squared minus 1)?", a: "6 x 35 = 210" }, { q: "rho?", a: "1 minus 36 / 210 = 0.829" }], yourTurn: [{ q: "If Judge B reversed every rank (6, 5, 4, 3, 2, 1), what is rho?", a: "Sum of D squared = 70, rho = 1 minus 420 / 210 = minus 1." }] } },
+      { kind: "worked", caption: "Worked calculation", data: { title: "Spearman's rho", steps: [{ q: "Sum of D squared?", a: "Six differences of 1, so 6." }, { q: "Denominator N (N squared minus 1)?", a: "6 x 35 = 210" }, { q: "rho?", a: "1 minus 36 / 210 = 0.829" }], yourTurn: [{ q: "If Judge B reversed every rank (6, 5, 4, 3, 2, 1), what is rho?", a: "Sum of D squared = 70, rho = 1 minus 420 / 210 = minus 1." }] } },
     ],
     ref: "Garrett ch 7; Siegel and Castellan Nonparametric Statistics. scipy spearmanr rho = 0.8286 (t-approx p = 0.042); exact critical value n=6 alpha .05 two-tailed = 0.886 (Zar table).",
   },
@@ -151,8 +151,8 @@ The t-test is the standard way to compare two means. A full answer chooses the r
     pitfalls: ["Using N instead of N minus 2 for df", "Omitting the effect size", "Using a paired test for independent groups"],
     module: "statistics/2-5",
     visuals: [
-      { kind: "worked", data: { title: "Independent samples t-test", steps: [{ q: "Means?", a: "CBT 13, wait-list 17" }, { q: "Pooled variance?", a: "(10 + 10) / 8 = 2.5" }, { q: "SE of the difference?", a: "Square root of 2.5 x 0.4 = 1.0" }, { q: "t and decision?", a: "t(8) = minus 4.0; beyond 2.306, so reject H0." }, { q: "Effect size?", a: "d = 4 / 1.58 = 2.53" }] } },
-      { kind: "flow", data: { title: "Which t-test?", layout: "tree", nodes: [{ id: "q", label: "Comparing means" }, { id: "o", label: "One sample against a known value", parent: "q", detail: "One-sample t" }, { id: "t", label: "Two sets of scores", parent: "q" }, { id: "i", label: "Different people", parent: "t", detail: "Independent t, or Welch if variances differ" }, { id: "p", label: "Same or matched people", parent: "t", detail: "Paired t" }] } },
+      { kind: "worked", caption: "Worked independent t-test", data: { title: "Independent samples t-test", steps: [{ q: "Means?", a: "CBT 13, wait-list 17" }, { q: "Pooled variance?", a: "(10 + 10) / 8 = 2.5" }, { q: "SE of the difference?", a: "Square root of 2.5 x 0.4 = 1.0" }, { q: "t and decision?", a: "t(8) = minus 4.0; beyond 2.306, so reject H0." }, { q: "Effect size?", a: "d = 4 / 1.58 = 2.53" }] } },
+      { kind: "flow", caption: "Types of t-test", data: { title: "Which t-test?", layout: "tree", nodes: [{ id: "q", label: "Comparing means" }, { id: "o", label: "One sample against a known value", parent: "q", detail: "One-sample t" }, { id: "t", label: "Two sets of scores", parent: "q" }, { id: "i", label: "Different people", parent: "t", detail: "Independent t, or Welch if variances differ" }, { id: "p", label: "Same or matched people", parent: "t", detail: "Paired t" }] } },
     ],
     ref: "Garrett ch 10; Gravetter and Wallnau ch 10. scipy ttest_ind: t = -4.0, p = 0.00395; t crit df 8 = 2.306; d = 2.53.",
   },
@@ -201,7 +201,7 @@ The paired t-test is the right choice for before and after data on the same peop
     keyPoints: ["Correct choice of paired t-test with reason", "Hypotheses stated", "Mean D = 5 and SD of D = 2.45", "t(5) = 5.0", "Critical values and decision", "Effect size", "Limits of a pre and post design without control"],
     module: "statistics/2-5",
     visuals: [
-      { kind: "worked", data: { title: "Paired t-test", steps: [{ q: "Mean difference?", a: "30 / 6 = 5" }, { q: "SD of differences?", a: "Square root of 30 / 5 = 2.45" }, { q: "SE?", a: "2.45 / 2.45 = 1.0" }, { q: "t?", a: "5 / 1 = 5.0 with df 5; critical 2.571, so significant." }] } },
+      { kind: "worked", caption: "Calculation", data: { title: "Paired t-test", steps: [{ q: "Mean difference?", a: "30 / 6 = 5" }, { q: "SD of differences?", a: "Square root of 30 / 5 = 2.45" }, { q: "SE?", a: "2.45 / 2.45 = 1.0" }, { q: "t?", a: "5 / 1 = 5.0 with df 5; critical 2.571, so significant." }] } },
     ],
     ref: "Gravetter and Wallnau ch 11. scipy ttest_rel: t = 5.0, p = 0.0041; t crit df 5 = 2.571 (two-tailed), 2.015 (one-tailed).",
   },
@@ -234,7 +234,7 @@ The shape of the t, chi-square and F distributions depends on df. With fewer df,
     keyPoints: ["Definition", "Worked illustration with a fixed mean", "Link to N minus 1 in variance", "Table of df for common tests", "Effect on critical values"],
     module: "statistics/2-5",
     visuals: [
-      { kind: "reveal", data: { prompt: "A 3 x 4 contingency table: how many degrees of freedom for the chi-square test?", answer: "(3 minus 1) x (4 minus 1) = 6." } },
+      { kind: "reveal", caption: "df in common tests", data: { prompt: "A 3 x 4 contingency table: how many degrees of freedom for the chi-square test?", answer: "(3 minus 1) x (4 minus 1) = 6." } },
     ],
     ref: "Garrett ch 9; Gravetter and Wallnau ch 9",
   },
@@ -298,8 +298,8 @@ Chi-square is the main test for categorical data. Correct use requires frequenci
     pitfalls: ["Using percentages instead of counts", "Wrong df", "Claiming causation"],
     module: "statistics/2-6",
     visuals: [
-      { kind: "worked", data: { title: "Chi-square for a 2 x 2 table", steps: [{ q: "Expected for men who sought help?", a: "100 x 60 / 200 = 30" }, { q: "Contributions?", a: "3.33 + 1.43 + 3.33 + 1.43" }, { q: "Chi-square and df?", a: "9.52 with df 1" }, { q: "Decision?", a: "Above 3.84, reject H0. Phi = 0.22." }] } },
-      { kind: "experiment", data: { title: "Who sought help?", question: "What share of each group had sought help for emotional problems?", unit: "%", conditions: [{ label: "Men", value: 20 }, { label: "Women", value: 40 }], why: "The difference is too large to be chance in 200 students: chi-square = 9.52, p = .002." } },
+      { kind: "worked", caption: "Worked example", data: { title: "Chi-square for a 2 x 2 table", steps: [{ q: "Expected for men who sought help?", a: "100 x 60 / 200 = 30" }, { q: "Contributions?", a: "3.33 + 1.43 + 3.33 + 1.43" }, { q: "Chi-square and df?", a: "9.52 with df 1" }, { q: "Decision?", a: "Above 3.84, reject H0. Phi = 0.22." }] } },
+      { kind: "experiment", caption: "Interpretation", data: { title: "Who sought help?", question: "What share of each group had sought help for emotional problems?", unit: "%", conditions: [{ label: "Men", value: 20 }, { label: "Women", value: 40 }], why: "The difference is too large to be chance in 200 students: chi-square = 9.52, p = .002." } },
     ],
     ref: "Garrett ch 11; Gravetter and Wallnau ch 17. scipy chi2_contingency: 9.524 (no correction), p = 0.0020; Yates 8.595; phi 0.218; OR 2.67.",
   },
@@ -353,7 +353,7 @@ The goodness of fit test compares observed counts with any theoretically expecte
     keyPoints: ["Purpose of goodness of fit", "Expected frequencies of 20", "Chi-square = 8.4 with df 2", "Comparison with 5.99", "Cell-by-cell interpretation", "Effect size w", "Assumptions"],
     module: "statistics/2-6",
     visuals: [
-      { kind: "worked", data: { title: "Goodness of fit", steps: [{ q: "Expected for each form?", a: "60 / 3 = 20" }, { q: "Chi-square?", a: "5.0 + 0.2 + 3.2 = 8.4" }, { q: "df and critical value?", a: "df 2; 5.99 at 0.05" }, { q: "Decision?", a: "8.4 > 5.99, so the forms are not equally preferred." }] } },
+      { kind: "worked", caption: "Decision", data: { title: "Goodness of fit", steps: [{ q: "Expected for each form?", a: "60 / 3 = 20" }, { q: "Chi-square?", a: "5.0 + 0.2 + 3.2 = 8.4" }, { q: "df and critical value?", a: "df 2; 5.99 at 0.05" }, { q: "Decision?", a: "8.4 > 5.99, so the forms are not equally preferred." }] } },
     ],
     ref: "Gravetter and Wallnau ch 17. scipy chisquare: 8.4, p = 0.0150; chi2 crit df2 = 5.991; w = 0.374.",
   },
@@ -424,8 +424,8 @@ ANOVA tests differences among several means at once by comparing systematic and 
     pitfalls: ["Stopping after a significant F without post hoc tests", "Wrong df within", "Using ANOVA terms without explaining the logic"],
     module: "statistics/3-1",
     visuals: [
-      { kind: "worked", data: { title: "One-way ANOVA", steps: [{ q: "Group means and grand mean?", a: "4, 6, 9; grand mean 6.33" }, { q: "SS between?", a: "4 x (5.44 + 0.11 + 7.11) = 50.67" }, { q: "SS within?", a: "2 + 2 + 2 = 6" }, { q: "MS and F?", a: "25.33 / 0.667 = 38.0 with df 2 and 9" }, { q: "Effect size?", a: "Eta squared = 50.67 / 56.67 = 0.89" }] } },
-      { kind: "flow", data: { title: "Partitioning the variance", layout: "tree", nodes: [{ id: "t", label: "Total variability, SS 56.67" }, { id: "b", label: "Between groups, SS 50.67", parent: "t", detail: "Treatment effect plus error." }, { id: "w", label: "Within groups, SS 6", parent: "t", detail: "Error only." }] } },
+      { kind: "worked", caption: "Worked example", data: { title: "One-way ANOVA", steps: [{ q: "Group means and grand mean?", a: "4, 6, 9; grand mean 6.33" }, { q: "SS between?", a: "4 x (5.44 + 0.11 + 7.11) = 50.67" }, { q: "SS within?", a: "2 + 2 + 2 = 6" }, { q: "MS and F?", a: "25.33 / 0.667 = 38.0 with df 2 and 9" }, { q: "Effect size?", a: "Eta squared = 50.67 / 56.67 = 0.89" }] } },
+      { kind: "flow", caption: "The logic", data: { title: "Partitioning the variance", layout: "tree", nodes: [{ id: "t", label: "Total variability, SS 56.67" }, { id: "b", label: "Between groups, SS 50.67", parent: "t", detail: "Treatment effect plus error." }, { id: "w", label: "Within groups, SS 6", parent: "t", detail: "Error only." }] } },
     ],
     ref: "Garrett ch 12; Gravetter and Wallnau ch 12. scipy f_oneway F = 38.0, p = 4.1e-05; F crit (2,9) = 4.256; tukey_hsd p: A-B 0.018, A-C <0.001, B-C 0.001.",
   },
@@ -477,7 +477,7 @@ The completed table shows a significant therapy main effect, a non-significant s
     pitfalls: ["Using N minus 1 for df within", "Interpreting main effects as if there were no interaction"],
     module: "statistics/3-1",
     visuals: [
-      { kind: "worked", data: { title: "Completing a two-way ANOVA table", steps: [{ q: "df within?", a: "40 minus 4 cells = 36" }, { q: "MS within?", a: "720 / 36 = 20" }, { q: "F for therapy, severity, interaction?", a: "90 / 20 = 4.5; 40 / 20 = 2.0; 160 / 20 = 8.0" }, { q: "Which are significant at 0.05?", a: "Therapy and the interaction (critical F about 4.11)." }] } },
+      { kind: "worked", caption: "Completing the table", data: { title: "Completing a two-way ANOVA table", steps: [{ q: "df within?", a: "40 minus 4 cells = 36" }, { q: "MS within?", a: "720 / 36 = 20" }, { q: "F for therapy, severity, interaction?", a: "90 / 20 = 4.5; 40 / 20 = 2.0; 160 / 20 = 8.0" }, { q: "Which are significant at 0.05?", a: "Therapy and the interaction (critical F about 4.11)." }] } },
     ],
     ref: "Gravetter and Wallnau ch 14; Field ch 14. scipy f.sf: 4.5 p = 0.0408; 2.0 p = 0.166; 8.0 p = 0.0076; F crit(1,36) = 4.113.",
   },
@@ -510,7 +510,7 @@ Use planned contrasts when hypotheses are specific; Tukey for all pairs; Dunnett
     keyPoints: ["Reason for follow-up tests", "Familywise error", "Planned comparisons and their power", "At least four post hoc tests with uses", "Guidance on choice"],
     module: "statistics/3-1",
     visuals: [
-      { kind: "sort", data: { prompt: "Pick the follow-up test.", buckets: ["Tukey HSD", "Dunnett", "Games Howell"], items: [{ text: "Compare all pairs of four equal groups", bucket: 0 }, { text: "Compare three new drugs only with placebo", bucket: 1 }, { text: "All pairs, but group variances are very unequal", bucket: 2 }] } },
+      { kind: "sort", caption: "Post hoc (a posteriori) tests", data: { prompt: "Pick the follow-up test.", buckets: ["Tukey HSD", "Dunnett", "Games Howell"], items: [{ text: "Compare all pairs of four equal groups", bucket: 0 }, { text: "Compare three new drugs only with placebo", bucket: 1 }, { text: "All pairs, but group variances are very unequal", bucket: 2 }] } },
     ],
     ref: "Field ch 12; Howell Statistical Methods for Psychology ch 12",
   },

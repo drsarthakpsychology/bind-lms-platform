@@ -51,7 +51,7 @@ Repeated measures ANOVA is efficient and powerful because it removes individual 
     keyPoints: ["Definition and example", "Partition including SS subjects and why power is higher", "Correct df for conditions and error", "Definition of sphericity", "Mauchly's test and its limits", "Greenhouse Geisser and Huynh Feldt corrections", "Mixed models alternative"],
     module: "statistics/3-1",
     visuals: [
-      { kind: "flow", data: { title: "Partitioning in repeated measures ANOVA", layout: "tree", nodes: [{ id: "t", label: "Total variability" }, { id: "c", label: "Between conditions", parent: "t", detail: "Effect of time or treatment." }, { id: "w", label: "Within conditions", parent: "t" }, { id: "s", label: "Between subjects", parent: "w", detail: "Stable individual differences, removed." }, { id: "e", label: "Error", parent: "w", detail: "Condition by subject interaction: the F denominator." }] } },
+      { kind: "flow", caption: "Partitioning variance", data: { title: "Partitioning in repeated measures ANOVA", layout: "tree", nodes: [{ id: "t", label: "Total variability" }, { id: "c", label: "Between conditions", parent: "t", detail: "Effect of time or treatment." }, { id: "w", label: "Within conditions", parent: "t" }, { id: "s", label: "Between subjects", parent: "w", detail: "Stable individual differences, removed." }, { id: "e", label: "Error", parent: "w", detail: "Condition by subject interaction: the F denominator." }] } },
     ],
     ref: "Field ch 15; Howell ch 14; Greenhouse and Geisser 1959; Huynh and Feldt 1976",
   },
@@ -128,8 +128,8 @@ Parametric tests are powerful and flexible but depend on assumptions about the d
     pitfalls: ["Saying non-parametric tests have no assumptions at all", "Calling non-parametric tests always weaker"],
     module: "statistics/3-3",
     visuals: [
-      { kind: "sort", data: { prompt: "Pick the non-parametric partner of each test.", buckets: ["Mann Whitney U", "Wilcoxon signed rank", "Kruskal Wallis", "Friedman"], items: [{ text: "Independent t-test", bucket: 0 }, { text: "Paired t-test", bucket: 1 }, { text: "One-way ANOVA", bucket: 2 }, { text: "Repeated measures ANOVA", bucket: 3 }] } },
-      { kind: "compare", data: { title: "Parametric versus non-parametric", a: { label: "Parametric", points: ["Assumes normality and equal variances", "Interval or ratio data", "More power when assumptions hold"], summary: "Powerful and flexible." }, b: { label: "Non-parametric", points: ["Few distribution assumptions", "Ranks or frequencies", "Robust to outliers and skew"], summary: "Safe with awkward data." } } },
+      { kind: "sort", caption: "Equivalents", data: { prompt: "Pick the non-parametric partner of each test.", buckets: ["Mann Whitney U", "Wilcoxon signed rank", "Kruskal Wallis", "Friedman"], items: [{ text: "Independent t-test", bucket: 0 }, { text: "Paired t-test", bucket: 1 }, { text: "One-way ANOVA", bucket: 2 }, { text: "Repeated measures ANOVA", bucket: 3 }] } },
+      { kind: "compare", caption: "Advantages of non-parametric tests", data: { title: "Parametric versus non-parametric", a: { label: "Parametric", points: ["Assumes normality and equal variances", "Interval or ratio data", "More power when assumptions hold"], summary: "Powerful and flexible." }, b: { label: "Non-parametric", points: ["Few distribution assumptions", "Ranks or frequencies", "Robust to outliers and skew"], summary: "Safe with awkward data." } } },
     ],
     ref: "Siegel and Castellan 1988; Garrett ch 11; Field ch 7. ARE of Mann-Whitney vs t under normality = 3/pi = 0.955.",
   },
@@ -184,7 +184,7 @@ The Mann Whitney U test compares two independent groups using ranks. Here it sho
     pitfalls: ["Ranking groups separately", "Rejecting H0 when U is above the critical value"],
     module: "statistics/3-3",
     visuals: [
-      { kind: "worked", data: { title: "Mann Whitney U", steps: [{ q: "Rank sums?", a: "Usual care 16, music 39" }, { q: "U for each group?", a: "16 minus 15 = 1; 39 minus 15 = 24" }, { q: "Decision?", a: "U = 1 is at or below the critical 2, so reject H0." }] } },
+      { kind: "worked", caption: "Step 1: rank all scores together", data: { title: "Mann Whitney U", steps: [{ q: "Rank sums?", a: "Usual care 16, music 39" }, { q: "U for each group?", a: "16 minus 15 = 1; 39 minus 15 = 24" }, { q: "Decision?", a: "U = 1 is at or below the critical 2, so reject H0." }] } },
     ],
     ref: "Siegel and Castellan ch 6; Gravetter and Wallnau ch 18. scipy mannwhitneyu U = 1, p = 0.0159; critical U(5,5) two-tailed .05 = 2.",
   },
@@ -218,7 +218,7 @@ The sign test counts only how many differences are positive or negative, ignorin
     keyPoints: ["Purpose and parametric equivalent", "Steps including dropping zeros and signed ranks", "Correct T = 0 in example", "Decision rule", "Advantage over the sign test"],
     module: "statistics/3-3",
     visuals: [
-      { kind: "reveal", data: { prompt: "If one patient's anxiety had risen by 1 point and all others fell, what would T be?", answer: "The rise of 1 is the smallest absolute difference, rank 1, so the sum of negative ranks would be 1 and T = 1." } },
+      { kind: "reveal", caption: "Example", data: { prompt: "If one patient's anxiety had risen by 1 point and all others fell, what would T be?", answer: "The rise of 1 is the smallest absolute difference, rank 1, so the sum of negative ranks would be 1 and T = 1." } },
     ],
     ref: "Siegel and Castellan ch 5. scipy wilcoxon statistic 0, p = 0.03125 (exact).",
   },
@@ -327,8 +327,8 @@ Effect sizes turn "is there an effect?" into "how large is the effect, and does 
     pitfalls: ["Treating Cohen's benchmarks as fixed rules", "Confusing odds ratio and risk ratio"],
     module: "statistics/3-4",
     visuals: [
-      { kind: "worked", data: { title: "Three effect sizes from one trial", steps: [{ q: "d for means 20 and 25, SD 10?", a: "5 / 10 = 0.5" }, { q: "NNT for response 60 versus 40 percent?", a: "1 / 0.20 = 5" }, { q: "Odds ratio?", a: "1.5 / 0.667 = 2.25" }], yourTurn: [{ q: "Response 50 versus 25 percent: NNT?", a: "1 / 0.25 = 4" }] } },
-      { kind: "guess", data: { prompt: "With d = 0.5, what percentage of the control group does the average treated person score better than?", min: 50, max: 100, step: 1, unit: "%", answer: [69, 69], reveal: "About 69 percent, the area below z = 0.5." } },
+      { kind: "worked", caption: "Measures for categorical outcomes", data: { title: "Three effect sizes from one trial", steps: [{ q: "d for means 20 and 25, SD 10?", a: "5 / 10 = 0.5" }, { q: "NNT for response 60 versus 40 percent?", a: "1 / 0.20 = 5" }, { q: "Odds ratio?", a: "1.5 / 0.667 = 2.25" }], yourTurn: [{ q: "Response 50 versus 25 percent: NNT?", a: "1 / 0.25 = 4" }] } },
+      { kind: "guess", caption: "Standardised mean difference", data: { prompt: "With d = 0.5, what percentage of the control group does the average treated person score better than?", min: 50, max: 100, step: 1, unit: "%", answer: [69, 69], reveal: "About 69 percent, the area below z = 0.5." } },
     ],
     ref: "Cohen 1988; APA Manual 7th ed; Lakens 2013 effect sizes. norm.cdf(0.5) = 0.691; d to r 0.2425; OR 2.25.",
   },
@@ -383,7 +383,7 @@ Power analysis ensures that a study is large enough to answer its question. For 
     keyPoints: ["Definition of power and power analysis", "Four linked quantities", "Correct formula", "Sample sizes about 394, 64 and 26 per group", "Choosing the effect size", "Factors affecting the sample", "Ethical and practical importance"],
     module: "statistics/3-4",
     visuals: [
-      { kind: "experiment", data: { title: "Participants needed per group for 80 percent power", question: "How many people per group to detect each effect size?", unit: " per group", max: 400, conditions: [{ label: "Large, d = 0.8", value: 26 }, { label: "Medium, d = 0.5", value: 64 }, { label: "Small, d = 0.2", value: 394 }], why: "Halving the effect roughly quadruples the sample needed." } },
+      { kind: "experiment", caption: "Worked estimates", data: { title: "Participants needed per group for 80 percent power", question: "How many people per group to detect each effect size?", unit: " per group", max: 400, conditions: [{ label: "Large, d = 0.8", value: 26 }, { label: "Medium, d = 0.5", value: 64 }, { label: "Small, d = 0.2", value: 394 }], why: "Halving the effect roughly quadruples the sample needed." } },
     ],
     ref: "Cohen 1988 Table 2.4.1; Faul et al 2007 G*Power. Python: normal approx 392.4, 62.8, 24.5; noncentral t power at n=394 (0.2), 64 (0.5), 26 (0.8) each about 0.80.",
   },
@@ -458,7 +458,7 @@ Regression turns a correlation into a prediction rule and, in its multiple form,
     pitfalls: ["Swapping slope and intercept", "Extrapolating far outside the data", "Inferring cause from a regression coefficient"],
     module: "statistics/3-5",
     visuals: [
-      { kind: "worked", data: { title: "Fitting the regression line", steps: [{ q: "Slope?", a: "SP / SSx = 76 / 40 = 1.9" }, { q: "Intercept?", a: "61.2 minus 1.9 x 6 = 49.8" }, { q: "Predict 7 hours?", a: "49.8 + 13.3 = 63.1" }, { q: "Standard error of estimate?", a: "Square root of 52.4 / 3 = 4.18" }], yourTurn: [{ q: "Predict the score for 5 hours.", a: "49.8 + 9.5 = 59.3" }] } },
+      { kind: "worked", caption: "Worked example", data: { title: "Fitting the regression line", steps: [{ q: "Slope?", a: "SP / SSx = 76 / 40 = 1.9" }, { q: "Intercept?", a: "61.2 minus 1.9 x 6 = 49.8" }, { q: "Predict 7 hours?", a: "49.8 + 13.3 = 63.1" }, { q: "Standard error of estimate?", a: "Square root of 52.4 / 3 = 4.18" }], yourTurn: [{ q: "Predict the score for 5 hours.", a: "49.8 + 9.5 = 59.3" }] } },
     ],
     ref: "Garrett ch 7; Field ch 9; Tabachnick and Fidell ch 5. scipy linregress slope 1.9, intercept 49.8, r2 0.7337, SSres 52.4, SEest 4.179, slope SE 0.661, t 2.875.",
   },
@@ -514,7 +514,7 @@ Multicollinearity blurs the contribution of individual predictors and should be 
     keyPoints: ["Definition and effects of multicollinearity", "Tolerance and VIF with thresholds", "At least three remedies", "Hierarchical regression with R squared change example", "Problems of stepwise regression", "Comparison table"],
     module: "statistics/3-5",
     visuals: [
-      { kind: "compare", data: { title: "Two ways to enter predictors", a: { label: "Hierarchical", points: ["Order set by theory", "Tests change in R squared", "More replicable"], summary: "Hypothesis testing." }, b: { label: "Stepwise", points: ["Order set by the computer", "Capitalises on chance", "Often fails to replicate"], summary: "Exploratory at best." } } },
+      { kind: "compare", caption: "Hierarchical regression", data: { title: "Two ways to enter predictors", a: { label: "Hierarchical", points: ["Order set by theory", "Tests change in R squared", "More replicable"], summary: "Hypothesis testing." }, b: { label: "Stepwise", points: ["Order set by the computer", "Capitalises on chance", "Often fails to replicate"], summary: "Exploratory at best." } } },
     ],
     ref: "Tabachnick and Fidell ch 5; Field ch 9; Thompson 1995 on stepwise",
   },
@@ -545,7 +545,7 @@ Multinomial and ordinal logistic regression handle outcomes with more than two c
     keyPoints: ["Binary outcome use case", "Why linear regression fails", "Logit and maximum likelihood", "Odds ratio interpretation with example", "Fit indices and assumptions"],
     module: "statistics/3-5",
     visuals: [
-      { kind: "reveal", data: { prompt: "Exp(B) for daily cannabis use predicting psychosis is 2.5. What does this mean?", answer: "Daily users have 2.5 times the odds of psychosis compared with non-users, holding the other predictors constant. It is an association, not proof of cause." } },
+      { kind: "reveal", caption: "Interpreting odds ratios", data: { prompt: "Exp(B) for daily cannabis use predicting psychosis is 2.5. What does this mean?", answer: "Daily users have 2.5 times the odds of psychosis compared with non-users, holding the other predictors constant. It is an association, not proof of cause." } },
     ],
     ref: "Field ch 20; Tabachnick and Fidell ch 10; Peduzzi et al 1996 events per variable",
   },

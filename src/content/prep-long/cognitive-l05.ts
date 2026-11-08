@@ -33,7 +33,7 @@ TOT states increase with normal ageing, particularly for names, and are not a si
     keyPoints: ["Definition", "Brown and McNeill method", "Partial information such as first letter and syllables", "Transmission deficit and blocking explanations", "Age and bilingual effects"],
     module: "thinking-language/2-5",
     visuals: [
-      { kind: "reveal", data: { prompt: "Name the instrument used to measure earthquakes. If it is on the tip of your tongue, what can you say about it?", answer: "Seismograph. Many people in a tip-of-the-tongue state can say it starts with 's' and has three syllables before the word itself arrives." } },
+      { kind: "reveal", caption: "Brown and McNeill's study", data: { prompt: "Name the instrument used to measure earthquakes. If it is on the tip of your tongue, what can you say about it?", answer: "Seismograph. Many people in a tip-of-the-tongue state can say it starts with 's' and has three syllables before the word itself arrives." } },
     ],
     ref: "Brown and McNeill 1966; Burke et al 1991 transmission deficit; Schwartz 2002",
   },
@@ -81,8 +81,8 @@ No single method is enough. Measurement methods show what the brain does during 
     keyPoints: ["Definition of cognitive neuroscience", "Lesion method and double dissociation", "EEG and ERPs with examples", "PET uses and limits", "fMRI and BOLD with limitations", "TMS as virtual lesion", "Comparison of spatial and temporal resolution", "Converging methods"],
     module: "brain/3-4",
     visuals: [
-      { kind: "sort", data: { prompt: "Which method fits each question?", buckets: ["EEG or ERP", "fMRI", "TMS"], items: [{ text: "How many milliseconds after a word does the brain detect it is anomalous?", bucket: 0 }, { text: "Which region is most active when people recall faces?", bucket: 1 }, { text: "Is the left prefrontal cortex necessary for this memory task?", bucket: 2 }, { text: "Which networks are connected at rest in depression?", bucket: 1 }] } },
-      { kind: "brainslicer", data: { title: "Imaging and stimulating the brain", start: "tms", caption: "Fire the coil over the left prefrontal cortex. Which deeper circuits does it reach?" } },
+      { kind: "sort", caption: "Brain stimulation", data: { prompt: "Which method fits each question?", buckets: ["EEG or ERP", "fMRI", "TMS"], items: [{ text: "How many milliseconds after a word does the brain detect it is anomalous?", bucket: 0 }, { text: "Which region is most active when people recall faces?", bucket: 1 }, { text: "Is the left prefrontal cortex necessary for this memory task?", bucket: 2 }, { text: "Which networks are connected at rest in depression?", bucket: 1 }] } },
+      { kind: "brainslicer", caption: "fMRI", data: { title: "Imaging and stimulating the brain", start: "tms", caption: "Fire the coil over the left prefrontal cortex. Which deeper circuits does it reach?" } },
     ],
     ref: "Gazzaniga, Ivry and Mangun Cognitive Neuroscience ch 3; Bear, Connors and Paradiso ch 7; Walsh and Cowey 2000 TMS",
   },
@@ -146,8 +146,8 @@ Memory depends on interacting systems: the hippocampus binds new declarative mem
     keyPoints: ["Distributed memory systems and Lashley", "Hippocampus in binding and consolidation", "Place and grid cells or taxi driver study", "Prefrontal cortex in working memory and source memory", "Amygdala and emotional enhancement with McGaugh or Cahill", "Basal ganglia and cerebellum roles", "LTP mechanism with NMDA receptors", "Clinical links"],
     module: "brain/3-4",
     visuals: [
-      { kind: "brainexplorer", data: { title: "Memory systems in the brain", focus: ["hippocampus", "prefrontal", "amygdala", "basal-ganglia", "cerebellum"], caption: "Tap the hippocampus, then the amygdala. How does each help an exam-day memory last?" } },
-      { kind: "flow", data: { title: "How LTP strengthens a synapse", layout: "chain", nodes: [{ id: "a", label: "Strong, repeated input", detail: "Glutamate released many times." }, { id: "b", label: "Postsynaptic cell depolarised", detail: "AMPA receptors open first." }, { id: "c", label: "NMDA receptor unblocked", detail: "Magnesium leaves; calcium enters." }, { id: "d", label: "More AMPA receptors inserted", detail: "The synapse responds more strongly." }, { id: "e", label: "Protein synthesis and new spines", detail: "Late LTP: lasting change." }] } },
+      { kind: "brainexplorer", caption: "Prefrontal cortex", data: { title: "Memory systems in the brain", focus: ["hippocampus", "prefrontal", "amygdala", "basal-ganglia", "cerebellum"], caption: "Tap the hippocampus, then the amygdala. How does each help an exam-day memory last?" } },
+      { kind: "flow", caption: "Long-term potentiation", data: { title: "How LTP strengthens a synapse", layout: "chain", nodes: [{ id: "a", label: "Strong, repeated input", detail: "Glutamate released many times." }, { id: "b", label: "Postsynaptic cell depolarised", detail: "AMPA receptors open first." }, { id: "c", label: "NMDA receptor unblocked", detail: "Magnesium leaves; calcium enters." }, { id: "d", label: "More AMPA receptors inserted", detail: "The synapse responds more strongly." }, { id: "e", label: "Protein synthesis and new spines", detail: "Late LTP: lasting change." }] } },
     ],
     ref: "Bear, Connors and Paradiso ch 24 and 25; Bliss and Lomo 1973; Hebb 1949; Morris et al 1986; Goldman-Rakic 1995; McGaugh 2004; Cahill et al 1994; Maguire et al 2000; Thompson 1986; Kandel 2001",
   },
@@ -193,7 +193,7 @@ Knowledge is represented at several levels: propositions capture meaning, schema
     keyPoints: ["The representation question", "Propositions with Sachs or Kintsch evidence", "Schemas with Anderson and Pichert", "Scripts with Bower, Black and Turner", "Mental models", "Connectionist and embodied alternatives", "Clinical application"],
     module: "thinking-language/2-1",
     visuals: [
-      { kind: "timeline", data: { prompt: "Put the restaurant script in its usual order.", events: [{ label: "Enter and be seated" }, { label: "Read the menu and order" }, { label: "Eat the food" }, { label: "Ask for the bill and pay" }, { label: "Leave" }], why: "Scripts store the typical order of routine events, so people recall stories in script order." } },
+      { kind: "timeline", caption: "Scripts", data: { prompt: "Put the restaurant script in its usual order.", events: [{ label: "Enter and be seated" }, { label: "Read the menu and order" }, { label: "Eat the food" }, { label: "Ask for the bill and pay" }, { label: "Leave" }], why: "Scripts store the typical order of routine events, so people recall stories in script order." } },
     ],
     ref: "Sachs 1967; Kintsch 1974; Anderson and Pichert 1978; Schank and Abelson 1977; Bower, Black and Turner 1979; Johnson-Laird 1983; Barsalou 2008",
   },
@@ -230,7 +230,7 @@ Connectionism, or parallel distributed processing (PDP), models cognition as the
     keyPoints: ["Founders and core idea", "Units, layers and weights", "Learning by weight change", "Graceful degradation and content addressability", "Past tense model", "Criticisms"],
     module: "thinking-language/2-1",
     visuals: [
-      { kind: "flow", data: { title: "A simple network", layout: "chain", nodes: [{ id: "i", label: "Input units", detail: "Features of a word or picture." }, { id: "h", label: "Hidden units", detail: "Learned internal patterns." }, { id: "o", label: "Output units", detail: "Name, meaning or response." }], caption: "Learning changes the connection weights, not stored rules." } },
+      { kind: "flow", caption: "Units, weights and learning", data: { title: "A simple network", layout: "chain", nodes: [{ id: "i", label: "Input units", detail: "Features of a word or picture." }, { id: "h", label: "Hidden units", detail: "Learned internal patterns." }, { id: "o", label: "Output units", detail: "Name, meaning or response." }], caption: "Learning changes the connection weights, not stored rules." } },
     ],
     ref: "Rumelhart, McClelland and PDP Group 1986; Pinker and Prince 1988; McCloskey and Cohen 1989",
   },
@@ -277,7 +277,7 @@ Working memory capacity is a key individual difference that predicts learning, r
     keyPoints: ["Definition as individual difference", "Simple versus complex span tasks with reading span", "Predictions including intelligence and comprehension", "Conway's cocktail party finding", "Executive attention view", "Near versus far transfer in training", "Practical recommendations"],
     module: "learning-memory/3-2",
     visuals: [
-      { kind: "experiment", data: { title: "Hearing your name in the ignored ear", question: "What share of people noticed their own name in the unattended message?", unit: "%", conditions: [{ label: "Low working memory capacity", value: 65 }, { label: "High working memory capacity", value: 20 }], why: "High-capacity people were better at blocking out the irrelevant channel." } },
+      { kind: "experiment", caption: "What WMC predicts", data: { title: "Hearing your name in the ignored ear", question: "What share of people noticed their own name in the unattended message?", unit: "%", conditions: [{ label: "Low working memory capacity", value: 65 }, { label: "High working memory capacity", value: 20 }], why: "High-capacity people were better at blocking out the irrelevant channel." } },
     ],
     ref: "Daneman and Carpenter 1980; Engle 2002; Conway, Cowan and Bunting 2001; Kane and Engle 2003; Melby-Lervag and Hulme 2013 and 2016; Gathercole and Alloway 2008",
   },
@@ -337,8 +337,8 @@ Memory research shows that false memories of childhood events can be created thr
     pitfalls: ["Taking an extreme position either way", "Ignoring evidence that genuine abuse memories can return"],
     module: "learning-memory/3-4",
     visuals: [
-      { kind: "compare", data: { title: "Two routes to a recovered memory", a: { label: "Spontaneous recall outside therapy", points: ["Triggered by a reminder", "Often surprising to the person", "Corroborated about as often as continuous memories"], summary: "More likely to be accurate." }, b: { label: "Recovered through suggestive therapy", points: ["Hypnosis, imagery, repeated probing", "Therapist expects abuse", "Rarely corroborated"], summary: "Higher risk of false memory." } } },
-      { kind: "decide", data: { scene: "A client with depression asks whether her symptoms mean she must have been abused as a child, although she has no memory of it.", ask: "What is the best response?", choices: [{ label: "Yes, your symptoms fit; let us use hypnosis to uncover the memories", verdict: "harm", outcome: "Raises the risk of creating false memories.", why: "Symptoms do not prove abuse, and hypnosis increases confidence more than accuracy." }, { label: "Many things can cause depression; we cannot know about the past from symptoms, but we can work on how you feel now, and talk about anything you do remember", verdict: "best", outcome: "Respectful, honest and non-suggestive.", why: "Neutral stance, focus on present functioning." }, { label: "That is impossible, you would remember", verdict: "harm", outcome: "Dismissive and inaccurate.", why: "Some genuine memories are forgotten and later recalled." }] } },
+      { kind: "compare", caption: "Evidence for genuine forgetting and later recall", data: { title: "Two routes to a recovered memory", a: { label: "Spontaneous recall outside therapy", points: ["Triggered by a reminder", "Often surprising to the person", "Corroborated about as often as continuous memories"], summary: "More likely to be accurate." }, b: { label: "Recovered through suggestive therapy", points: ["Hypnosis, imagery, repeated probing", "Therapist expects abuse", "Rarely corroborated"], summary: "Higher risk of false memory." } } },
+      { kind: "decide", caption: "Implications for clinical practice", data: { scene: "A client with depression asks whether her symptoms mean she must have been abused as a child, although she has no memory of it.", ask: "What is the best response?", choices: [{ label: "Yes, your symptoms fit; let us use hypnosis to uncover the memories", verdict: "harm", outcome: "Raises the risk of creating false memories.", why: "Symptoms do not prove abuse, and hypnosis increases confidence more than accuracy." }, { label: "Many things can cause depression; we cannot know about the past from symptoms, but we can work on how you feel now, and talk about anything you do remember", verdict: "best", outcome: "Respectful, honest and non-suggestive.", why: "Neutral stance, focus on present functioning." }, { label: "That is impossible, you would remember", verdict: "harm", outcome: "Dismissive and inaccurate.", why: "Some genuine memories are forgotten and later recalled." }] } },
     ],
     ref: "Loftus and Pickrell 1995; Hyman, Husband and Billings 1995; Wade et al 2002; Shaw and Porter 2015 (and critiques); Williams 1994; Schooler 2001; Geraerts et al 2007 Psychological Science; BPS 2010 Guidelines on Memory and the Law",
   },
@@ -386,7 +386,7 @@ Pat Croskerry applied dual process theory to medicine: Type 1 pattern recognitio
     keyPoints: ["Recognises clinicians use heuristics", "At least five named biases with clinical examples", "Diagnostic overshadowing", "Dual process model of clinical reasoning", "Concrete, personal debiasing strategies", "Supervision and follow-up", "Clear closing"],
     module: "thinking-language/2-4",
     visuals: [
-      { kind: "sort", data: { prompt: "Name the bias.", buckets: ["Anchoring", "Diagnostic overshadowing", "Availability"], items: [{ text: "Chest pain in a man with panic disorder is assumed to be anxiety", bucket: 1 }, { text: "After a striking case of NMS, every fever on antipsychotics is called NMS", bucket: 2 }, { text: "The first label in the referral letter sticks despite new findings", bucket: 0 }] } },
+      { kind: "sort", caption: "Biases with clinical examples", data: { prompt: "Name the bias.", buckets: ["Anchoring", "Diagnostic overshadowing", "Availability"], items: [{ text: "Chest pain in a man with panic disorder is assumed to be anxiety", bucket: 1 }, { text: "After a striking case of NMS, every fever on antipsychotics is called NMS", bucket: 2 }, { text: "The first label in the referral letter sticks despite new findings", bucket: 0 }] } },
     ],
     ref: "Croskerry 2003 and 2009; Graber, Franklin and Gordon 2005 diagnostic error; Jones et al 2008 diagnostic overshadowing; Kahneman 2011",
   },
@@ -449,8 +449,8 @@ The information-processing approach launched cognitive psychology and remains it
     pitfalls: ["Describing the approach without evaluating it", "Ignoring how the approach has evolved"],
     module: "thinking-language/2-1",
     visuals: [
-      { kind: "timeline", data: { prompt: "Put these milestones of cognitive psychology in order.", events: [{ label: "Donders's subtraction method", when: "1868" }, { label: "MIT symposium on information theory", when: "1956" }, { label: "Chomsky reviews Skinner", when: "1959" }, { label: "Neisser's 'Cognitive Psychology'", when: "1967" }, { label: "Neisser's 'Cognition and Reality' critique", when: "1976" }, { label: "Parallel distributed processing volumes", when: "1986" }], why: "The field moved from early reaction time methods to information processing, then to its own critique and to network models." } },
-      { kind: "compare", data: { title: "Classic versus embodied cognition", a: { label: "Information processing", points: ["Mind as symbol processor", "Serial stages and stores", "Cognition in the head"], summary: "Brain as computer." }, b: { label: "Embodied and situated", points: ["Concepts grounded in action and senses", "Cognition spreads into body, tools and others", "Context shapes thinking"], summary: "Mind in a body in a world." } } },
+      { kind: "timeline", caption: "The cognitive revolution", data: { prompt: "Put these milestones of cognitive psychology in order.", events: [{ label: "Donders's subtraction method", when: "1868" }, { label: "MIT symposium on information theory", when: "1956" }, { label: "Chomsky reviews Skinner", when: "1959" }, { label: "Neisser's 'Cognitive Psychology'", when: "1967" }, { label: "Neisser's 'Cognition and Reality' critique", when: "1976" }, { label: "Parallel distributed processing volumes", when: "1986" }], why: "The field moved from early reaction time methods to information processing, then to its own critique and to network models." } },
+      { kind: "compare", caption: "Alternatives and extensions", data: { title: "Classic versus embodied cognition", a: { label: "Information processing", points: ["Mind as symbol processor", "Serial stages and stores", "Cognition in the head"], summary: "Brain as computer." }, b: { label: "Embodied and situated", points: ["Concepts grounded in action and senses", "Cognition spreads into body, tools and others", "Context shapes thinking"], summary: "Mind in a body in a world." } } },
     ],
     ref: "Neisser 1967 and 1976; Miller 2003 cognitive revolution retrospective; Marr 1982; Searle 1980; Gibson 1979; Clark and Chalmers 1998; Hutchins 1995; Clark 2013 predictive processing; Nisbett et al 2001",
   },
@@ -479,7 +479,7 @@ Flashbulb memories are not special, permanent recordings. Emotion increases atte
     keyPoints: ["Definition", "Brown and Kulik's Now Print mechanism", "Neisser and Harsch findings", "Talarico and Rubin comparison", "Confidence versus accuracy conclusion"],
     module: "learning-memory/3-4",
     visuals: [
-      { kind: "compare", data: { title: "Flashbulb versus everyday memories over a year", a: { label: "Flashbulb memory", points: ["Details change over time", "Vividness stays high", "Confidence stays high"], summary: "Feels like a photograph." }, b: { label: "Everyday memory", points: ["Details change at a similar rate", "Vividness fades", "Confidence fades"], summary: "Feels ordinary." } } },
+      { kind: "compare", caption: "Evidence on accuracy", data: { title: "Flashbulb versus everyday memories over a year", a: { label: "Flashbulb memory", points: ["Details change over time", "Vividness stays high", "Confidence stays high"], summary: "Feels like a photograph." }, b: { label: "Everyday memory", points: ["Details change at a similar rate", "Vividness fades", "Confidence fades"], summary: "Feels ordinary." } } },
     ],
     ref: "Brown and Kulik 1977; Neisser and Harsch 1992; Talarico and Rubin 2003 Psychological Science; Hirst et al 2009 and 2015",
   },

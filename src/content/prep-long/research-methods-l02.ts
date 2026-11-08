@@ -64,6 +64,7 @@ Quasi-experiments let psychologists evaluate real programmes, such as school men
     visuals: [
       {
         kind: "compare",
+        caption: "Interrupted time series design",
         data: {
           title: "One pretest versus a time series",
           a: { label: "One-group pretest and post-test", points: ["A single measure before and after", "Cannot see the normal trend", "Maturation and regression look like an effect"], summary: "Weak design." },
@@ -117,6 +118,7 @@ Single-case designs bridge practice and research. They let a clinician in an Ind
     visuals: [
       {
         kind: "flow",
+        caption: "ABAB (reversal or withdrawal) design",
         data: {
           title: "ABAB design",
           layout: "chain",
@@ -176,6 +178,7 @@ Cross-sectional studies describe age differences quickly, longitudinal studies r
     visuals: [
       {
         kind: "compare",
+        caption: "Cross-sectional design",
         data: {
           title: "Two snapshots of ageing",
           a: { label: "Cross-sectional", points: ["Many ages, one time", "Fast and cheap", "Age confounded with cohort"], summary: "Shows age differences." },
@@ -256,6 +259,7 @@ Correlational research is indispensable for studying real-life variables and for
     visuals: [
       {
         kind: "flow",
+        caption: "Why correlation is not causation",
         data: {
           title: "The third-variable problem",
           layout: "tree",
@@ -331,6 +335,7 @@ A survey is only as good as its sample and its questions. Careful construction, 
     visuals: [
       {
         kind: "sort",
+        caption: "Rules for writing items",
         data: {
           prompt: "What is wrong with each item?",
           buckets: ["Double-barrelled", "Leading", "Assumes behaviour"],
@@ -414,6 +419,7 @@ Qualitative research complements quantitative work: one explains "how much" and 
     visuals: [
       {
         kind: "compare",
+        caption: "Contrast with quantitative research",
         data: {
           title: "Two ways of knowing",
           a: { label: "Quantitative", points: ["Numbers and measurement", "Large random samples", "Tests hypotheses"], summary: "How much, how often, whether." },
@@ -422,6 +428,7 @@ Qualitative research complements quantitative work: one explains "how much" and 
       },
       {
         kind: "sort",
+        caption: "Major approaches",
         data: {
           prompt: "Match each study aim to the best approach.",
           buckets: ["IPA", "Grounded theory", "Discourse analysis", "Ethnography"],
@@ -483,6 +490,7 @@ Thematic analysis turns raw talk into an organised account of shared meaning. Do
     visuals: [
       {
         kind: "timeline",
+        caption: "The six phases, with an example",
         data: {
           prompt: "Put the six phases of thematic analysis in order.",
           events: [
@@ -575,6 +583,7 @@ Mixed methods treat quantitative and qualitative research as partners. The key t
     visuals: [
       {
         kind: "compare",
+        caption: "Main designs",
         data: {
           title: "Two sequential designs",
           a: { label: "Explanatory sequential", points: ["Numbers first", "Interviews then explain surprising results", "QUAN then qual"], summary: "Explains a result." },

@@ -46,6 +46,7 @@ Sampling in India demands attention to diversity, language and social structure.
     visuals: [
       {
         kind: "flow",
+        caption: "Example: the National Mental Health Survey",
         data: {
           title: "Multistage sampling in a national survey",
           layout: "chain",
@@ -98,7 +99,7 @@ Respondent-driven sampling, developed by Douglas Heckathorn, gives each particip
     keyPoints: ["Definition and seeds", "Steps", "Hidden populations with examples", "Representativeness and homogeneity limits", "Respondent-driven sampling"],
     module: "research-methods/2-1",
     visuals: [
-      { kind: "flow", data: { title: "How a snowball grows", layout: "tree", nodes: [{ id: "s", label: "Seed participant" }, { id: "a", label: "Referral A", parent: "s" }, { id: "b", label: "Referral B", parent: "s" }, { id: "a1", label: "A's referral", parent: "a" }, { id: "b1", label: "B's referral", parent: "b" }] } },
+      { kind: "flow", caption: "Improvement", data: { title: "How a snowball grows", layout: "tree", nodes: [{ id: "s", label: "Seed participant" }, { id: "a", label: "Referral A", parent: "s" }, { id: "b", label: "Referral B", parent: "s" }, { id: "a1", label: "A's referral", parent: "a" }, { id: "b1", label: "B's referral", parent: "b" }] } },
     ],
     ref: "Heckathorn 1997 Social Problems; Biernacki and Waldorf 1981",
   },
@@ -155,7 +156,7 @@ NHST is a useful but limited tool. Used carefully, with adequate power, effect s
     pitfalls: ["Defining p as the probability H0 is true", "Treating non-significance as proof of no effect"],
     module: "research-methods/1-3",
     visuals: [
-      { kind: "curve", data: { kind: "normal", title: "Where a result falls if H0 is true", caption: "Move z: beyond plus or minus 1.96, a two-tailed p drops below 0.05." } },
+      { kind: "curve", caption: "What a p value is not", data: { kind: "normal", title: "Where a result falls if H0 is true", caption: "Move z: beyond plus or minus 1.96, a two-tailed p drops below 0.05." } },
     ],
     ref: "Cohen 1994 American Psychologist; Wasserstein and Lazar 2016 ASA statement; Benjamin et al 2018 redefine significance",
   },
@@ -188,7 +189,7 @@ A pilot is not meant to test the hypothesis, because the sample is too small and
     keyPoints: ["Definition", "At least four purposes", "Example", "Not for testing hypotheses"],
     module: "research-methods/2-3",
     visuals: [
-      { kind: "reveal", data: { prompt: "A pilot of 20 students shows a large effect, d = 1.2. Should the main study use this to plan its sample size?", answer: "Not on its own. Effect sizes from tiny pilots are very unstable and often too large, which would make the main study underpowered. Use the pilot for feasibility and variance, and base the effect size on the literature or the smallest effect that would matter." } },
+      { kind: "reveal", caption: "What a pilot is not for", data: { prompt: "A pilot of 20 students shows a large effect, d = 1.2. Should the main study use this to plan its sample size?", answer: "Not on its own. Effect sizes from tiny pilots are very unstable and often too large, which would make the main study underpowered. Use the pilot for feasibility and variance, and base the effect size on the literature or the smallest effect that would matter." } },
     ],
     ref: "Leon, Davis and Kraemer 2011 on pilot studies; van Teijlingen and Hundley 2001",
   },
@@ -323,7 +324,7 @@ Content analysis lets psychologists study how society talks about people and pro
     keyPoints: ["Definition and unobtrusive nature", "Examples of materials", "Ordered steps including unit of analysis and coding scheme", "Inter-coder reliability", "Quantitative versus qualitative contrast", "Strengths and limits"],
     module: "research-methods/3-1",
     visuals: [
-      { kind: "compare", data: { title: "Two kinds of content analysis", a: { label: "Quantitative", points: ["Counts visible features", "Fixed categories", "Statistics"], summary: "How often." }, b: { label: "Qualitative", points: ["Interprets meaning", "Categories emerge", "Themes"], summary: "What it means." } } },
+      { kind: "compare", caption: "Quantitative versus qualitative content analysis", data: { title: "Two kinds of content analysis", a: { label: "Quantitative", points: ["Counts visible features", "Fixed categories", "Statistics"], summary: "How often." }, b: { label: "Qualitative", points: ["Interprets meaning", "Categories emerge", "Themes"], summary: "What it means." } } },
     ],
     ref: "Berelson 1952; Krippendorff, Content Analysis; Armstrong et al 2018 on Indian press suicide reporting",
   },
@@ -358,7 +359,7 @@ Researchers try to match groups on relevant variables, use statistical control, 
     keyPoints: ["Meaning after the fact", "Kerlinger's definition", "Example", "Reasons for use", "Self-selection and causal limits", "Recall bias"],
     module: "research-methods/2-6",
     visuals: [
-      { kind: "reveal", data: { prompt: "Is a study comparing smokers and non-smokers on anxiety an experiment or ex post facto research?", answer: "Ex post facto. The researcher did not assign people to smoke, so smokers may differ in many other ways, and anxiety could even lead to smoking." } },
+      { kind: "reveal", caption: "Limitations", data: { prompt: "Is a study comparing smokers and non-smokers on anxiety an experiment or ex post facto research?", answer: "Ex post facto. The researcher did not assign people to smoke, so smokers may differ in many other ways, and anxiety could even lead to smoking." } },
     ],
     ref: "Kerlinger ch 23",
   },
@@ -412,7 +413,7 @@ A strong answer is specific, feasible, relevant to Indian practice, and shows aw
     pitfalls: ["Vague topics", "Designs that cannot answer the question"],
     module: "research-methods/3-4",
     visuals: [
-      { kind: "flow", data: { title: "A two-minute research pitch", layout: "chain", nodes: [{ id: "p", label: "Problem and relevance" }, { id: "g", label: "Gap" }, { id: "q", label: "Question and hypothesis" }, { id: "d", label: "Design, sample, measures" }, { id: "e", label: "Ethics and analysis" }, { id: "c", label: "Contribution" }] } },
+      { kind: "flow", caption: "A good structure", data: { title: "A two-minute research pitch", layout: "chain", nodes: [{ id: "p", label: "Problem and relevance" }, { id: "g", label: "Gap" }, { id: "q", label: "Question and hypothesis" }, { id: "d", label: "Design, sample, measures" }, { id: "e", label: "Ethics and analysis" }, { id: "c", label: "Contribution" }] } },
     ],
     ref: "Brown, Birley and Wing 1972; Leff and Vaughn 1985 expressed emotion; Indian studies of caregiver burden (Chakrabarti 2011 IJP review)",
   },
@@ -482,6 +483,7 @@ Randomisation solves selection bias but not every problem. Psychotherapy trials 
     visuals: [
       {
         kind: "sort",
+        caption: "Bias in selecting reported results",
         data: {
           prompt: "Which remedy fixes each threat?",
           buckets: ["Allocation concealment", "Intention to treat", "Blind assessors", "Trial registration"],
@@ -495,6 +497,7 @@ Randomisation solves selection bias but not every problem. Psychotherapy trials 
       },
       {
         kind: "compare",
+        caption: "External validity",
         data: {
           title: "Efficacy versus effectiveness",
           a: { label: "Efficacy trial", points: ["Ideal conditions", "Strict inclusion", "Expert therapists"], summary: "Can it work?" },
@@ -572,6 +575,7 @@ Grounded theory and IPA share qualitative values but differ in purpose, philosop
       },
       {
         kind: "flow",
+        caption: "Comparison",
         data: {
           title: "Coding in grounded theory",
           layout: "chain",

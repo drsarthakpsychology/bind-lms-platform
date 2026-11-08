@@ -65,6 +65,7 @@ const CHECK: Record<string, (d: D) => boolean> = {
   amesroom: titled,
   hpaloop: (d) => titled(d) && (d.start === undefined || ["day", "chronic"].includes(d.start)),
   brainexplorer: (d) => titled(d) && (d.focus === undefined || strs(d.focus)),
+  brainslicer: (d) => titled(d) && (d.start === undefined || ["slice", "tms", "ect"].includes(d.start)),
 };
 
 describe("long answers", () => {

@@ -67,6 +67,7 @@ Meta-analysis replaced impressionistic reviews with quantitative synthesis and n
     visuals: [
       {
         kind: "timeline",
+        caption: "Steps",
         data: {
           prompt: "Put the steps of a systematic review and meta-analysis in order.",
           events: [
@@ -82,6 +83,7 @@ Meta-analysis replaced impressionistic reviews with quantitative synthesis and n
       },
       {
         kind: "compare",
+        caption: "Publication bias",
         data: {
           title: "Reading a funnel plot",
           a: { label: "Symmetrical funnel", points: ["Small studies scatter evenly on both sides", "Large studies cluster near the pooled effect"], summary: "No sign of publication bias." },
@@ -167,6 +169,7 @@ The crisis is better seen as a credibility revolution: psychology examined its o
     visuals: [
       {
         kind: "experiment",
+        caption: "Key evidence",
         data: {
           title: "The Reproducibility Project",
           question: "Of 100 published psychology studies, what share were significant originally, and what share when repeated?",
@@ -229,6 +232,7 @@ Ethical research balances the search for knowledge with respect for participants
     visuals: [
       {
         kind: "timeline",
+        caption: "History",
         data: {
           prompt: "Put these landmarks in research ethics in order.",
           events: [
@@ -244,6 +248,7 @@ Ethical research balances the search for knowledge with respect for participants
       },
       {
         kind: "flow",
+        caption: "APA ethical principles",
         data: {
           title: "Belmont principles and how they are applied",
           layout: "tree",
@@ -388,6 +393,7 @@ The APA format turns a study into a transparent argument: why it was done, how, 
     visuals: [
       {
         kind: "timeline",
+        caption: "References and appendices",
         data: {
           prompt: "Put the sections of an APA report in order.",
           events: [{ label: "Title page" }, { label: "Abstract" }, { label: "Introduction" }, { label: "Method" }, { label: "Results" }, { label: "Discussion" }, { label: "References" }, { label: "Appendices" }],
@@ -508,6 +514,7 @@ A cluster randomised trial with an active control, blind assessment, adequate po
     visuals: [
       {
         kind: "flow",
+        caption: "Design",
         data: {
           title: "Trial flow",
           layout: "chain",
@@ -571,6 +578,7 @@ Factorial designs show not only whether variables matter but how they combine. I
     visuals: [
       {
         kind: "worked",
+        caption: "Interaction",
         data: {
           title: "Reading a 2 x 2 table",
           steps: [
@@ -581,7 +589,7 @@ Factorial designs show not only whether variables matter but how they combine. I
           yourTurn: [{ q: "If the cells were 4, 10, 6 and 12, would there be an interaction?", a: "No. Caffeine adds 2 errors on both tasks, so the lines are parallel." }],
         },
       },
-      { kind: "curve", data: { kind: "inverted-u", title: "Arousal and task difficulty", caption: "Raise arousal: the easy task keeps improving, the hard task gets worse sooner." } },
+      { kind: "curve", caption: "Example", data: { kind: "inverted-u", title: "Arousal and task difficulty", caption: "Raise arousal: the easy task keeps improving, the hard task gets worse sooner." } },
     ],
     ref: "Shaughnessy ch 8 complex designs; Howell Statistical Methods ch 13. Means checked by hand.",
   },
