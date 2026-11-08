@@ -141,6 +141,7 @@ export type ChunkView = { title: string; node: React.ReactNode };
  */
 export function SectionReader({
   moduleId,
+  moduleNum,
   moduleTitle,
   section,
   toc,
@@ -263,8 +264,9 @@ export function SectionReader({
       <article className="min-w-0 pb-36 md:pb-0">
         <div ref={topRef} className="scroll-mt-24" />
         <div className="mb-4 flex items-center justify-between gap-2 md:hidden">
-          <Link href={`/study/${moduleId}`} className="inline-flex min-h-11 shrink-0 items-center gap-1 rounded-md border-2 border-foreground bg-card px-3 py-1.5 text-sm font-semibold">
-            <ArrowLeft className="size-4" aria-hidden /> Back to the module
+          {/* Phones: the short name, so the contents button keeps its words. */}
+          <Link href={`/study/${moduleId}`} aria-label="Back to the module" className="inline-flex min-h-11 shrink-0 items-center gap-1 rounded-md border-2 border-foreground bg-card px-3 py-1.5 text-sm font-semibold">
+            <ArrowLeft className="size-4" aria-hidden /> Module {moduleNum}
           </Link>
           <button type="button" onClick={() => setTocOpen(!tocOpen)} aria-expanded={tocOpen} className="inline-flex min-h-11 min-w-0 items-center gap-1.5 rounded-md border-2 border-foreground bg-card px-3 py-1.5 text-sm font-semibold">
             <ListOrdered className="size-4 shrink-0" aria-hidden /> <span className="truncate">Section {index + 1} of {toc.length}</span>
