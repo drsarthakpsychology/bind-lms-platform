@@ -7,6 +7,13 @@ import { diffNarratives, FIVE_P, scoreSort, SEED_FORMULATION, type FiveP, type F
 import { buildFormulationAttemptPayload } from "@/lib/practice/formulation-attempt";
 import { FORMULATION_COMPETENCY_KEYS, recordCompetencyEvent } from "@/lib/practice/competency-client";
 import { OnceHint } from "@/components/help/once-hint";
+import { showEndReaction } from "@/components/reactions/store";
+import { moodForScore } from "@/lib/reactions/stickers";
+
+/** The finish sticker for a word diff: happy when most of the model's words are there. */
+function diffMood(d: { missing: string[]; present: string[] }) {
+  return moodForScore(d.present.length, d.present.length + d.missing.length);
+}
 
 /** In-flight snapshot: a refresh mid-sort or mid-narrative restores the work
  *  instead of dropping it (T46/T47). */
@@ -214,7 +221,13 @@ export function FormulationForge({ seed = SEED_FORMULATION }: { seed?: ForgeSeed
           />
           <button
             type="button"
-            onClick={() => { setDiff(diffNarratives(narrative, seed.modelNarrative)); setStage(3); haptic("tap"); }}
+            onClick={() => {
+              setDiff(diffNarratives(narrative, seed.modelNarrative));
+              setStage(3);
+              haptic("tap");
+              // The finish sticker: happy or sad by the sort score.
+              showEndReaction(moodForScore(Math.round(score * 100), 100));
+            }}
             disabled={narrative.trim().length < 40}
             className="w-full rounded-md border-2 border-border bg-primary px-4 py-2 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px active:hard-shadow-none disabled:opacity-50"
           >
@@ -329,6 +342,7 @@ function OwnTranscriptForge() {
   function diffIt() {
     const d = diffNarratives(narrative, modelNarrative || SEED_FORMULATION.modelNarrative);
     setDiff(d);
+    showEndReaction(diffMood(d));
     // Credit the formulation competencies into the Skills Passport.
     void recordCompetencyEvent("formulation", FORMULATION_COMPETENCY_KEYS, narrative.trim().length >= 120 ? 4 : 3, "Formulation from own transcript").catch(() => {});
     // Persist this own-transcript attempt (session-based; no formulation case).

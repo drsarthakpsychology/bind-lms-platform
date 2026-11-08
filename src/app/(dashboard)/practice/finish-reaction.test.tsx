@@ -85,4 +85,35 @@ describe("finish sticker in the Practice tools", () => {
     });
     expect(showEndReaction).toHaveBeenCalledWith("wrong");
   });
+
+  it("Formulation: a right sort is happy, a wrong one is sad", () => {
+    const seed: ForgeSeed = {
+      id: "t-forge",
+      title: "Test case",
+      prompt: "Sort these.",
+      modelNarrative: "A model formulation.",
+      factors: [
+        { id: "a", text: "Low mood for two months", bucket: "presenting" },
+        { id: "b", text: "Lost a job last week", bucket: "precipitating" },
+      ],
+    };
+    const play = (a: string, b: string) => {
+      render(<FormulationForge seed={seed} />);
+      fireEvent.click(screen.getByRole("button", { name: /^Low mood/ }));
+      fireEvent.click(screen.getByRole("button", { name: new RegExp(`^${a}`, "i") }));
+      fireEvent.click(screen.getByRole("button", { name: /^Lost a job/ }));
+      fireEvent.click(screen.getByRole("button", { name: new RegExp(`^${b}`, "i") }));
+      fireEvent.click(screen.getByRole("button", { name: /Write the narrative/ }));
+      fireEvent.change(screen.getByRole("textbox"), { target: { value: "Ravi has low mood after losing his job, and it has lasted two months now." } });
+      fireEvent.click(screen.getByRole("button", { name: /Compare with the answer/ }));
+      expect(screen.getByText("Your formulation vs the model")).toBeTruthy();
+    };
+    play("presenting", "precipitating");
+    expect(showEndReaction).toHaveBeenCalledWith("streak");
+    cleanup();
+    localStorage.clear();
+    showEndReaction.mockClear();
+    play("protective", "perpetuating");
+    expect(showEndReaction).toHaveBeenCalledWith("wrong");
+  });
 });
