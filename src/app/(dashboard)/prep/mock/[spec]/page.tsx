@@ -26,7 +26,7 @@ export default async function MockPage({ params }: { params: Promise<{ spec: str
   return (
     <PrepFrame wide>
       <div className="mx-auto max-w-2xl lg:mx-0">
-        <BackToPrep href="/prep/mock" label="Mocks" />
+        <BackToPrep href="/prep/mock" label="Mock tests" />
       </div>
       <MockExam
         specId={spec.id}

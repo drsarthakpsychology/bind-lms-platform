@@ -11,7 +11,7 @@ export { btn, btnInk, btnPlain, btnPrimary } from "@/app/(dashboard)/study/map/u
 export function BackToPrep({ href = "/prep", label = PREP_SHORT }: { href?: string; label?: string }) {
   return (
     <Link href={href} className="inline-flex min-h-11 items-center gap-1.5 text-sm font-bold text-link hover:underline">
-      <ArrowLeft className="size-4 shrink-0" aria-hidden /> <span className="min-w-0 truncate">{label}</span>
+      <ArrowLeft className="size-4 shrink-0" aria-hidden /> <span className="min-w-0 truncate">Back to {label}</span>
     </Link>
   );
 }

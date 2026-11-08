@@ -117,7 +117,6 @@ export type ChunkView = { title: string; node: React.ReactNode };
  */
 export function SectionReader({
   moduleId,
-  moduleNum,
   moduleTitle,
   section,
   toc,
@@ -214,7 +213,7 @@ export function SectionReader({
       <aside className="hidden md:block" aria-label="Module contents">
         <div className="sticky top-[calc(var(--top-h)+1rem)] max-h-[calc(100dvh-var(--top-h)-2rem)] overflow-y-auto overscroll-contain rounded-3xl border-2 border-foreground bg-card p-3">
           <Link href={`/study/${moduleId}`} className="flex min-h-10 items-center gap-1.5 rounded-md px-2 py-1.5 text-sm font-semibold hover:bg-muted pointer-coarse:min-h-11">
-            <ArrowLeft className="size-4" aria-hidden /> Module {moduleNum} overview
+            <ArrowLeft className="size-4" aria-hidden /> Back to the module
           </Link>
           <p className="px-2 pt-1 text-xs text-muted-foreground">
             {readCount} of {readTotal} sections read
@@ -229,7 +228,7 @@ export function SectionReader({
         <div ref={topRef} className="scroll-mt-24" />
         <div className="mb-4 flex items-center justify-between gap-2 md:hidden">
           <Link href={`/study/${moduleId}`} className="inline-flex min-h-11 shrink-0 items-center gap-1 rounded-md border-2 border-foreground bg-card px-3 py-1.5 text-sm font-semibold">
-            <ArrowLeft className="size-4" aria-hidden /> Module {moduleNum}
+            <ArrowLeft className="size-4" aria-hidden /> Back to the module
           </Link>
           <button type="button" onClick={() => setTocOpen(!tocOpen)} aria-expanded={tocOpen} className="inline-flex min-h-11 min-w-0 items-center gap-1.5 rounded-md border-2 border-foreground bg-card px-3 py-1.5 text-sm font-semibold">
             <ListOrdered className="size-4 shrink-0" aria-hidden /> <span className="truncate">Section {index + 1} of {toc.length}</span>

@@ -15,7 +15,6 @@ import { orderFor, useHistoryPrefetch } from "@/lib/history/client";
  */
 export function CheckpointView({
   moduleId,
-  moduleNum,
   moduleTitle,
   n,
   cpKey,
@@ -65,7 +64,7 @@ export function CheckpointView({
   return (
     <div className="mx-auto max-w-2xl space-y-6">
       <Link href={`/study/${moduleId}`} className="inline-flex min-h-11 items-center gap-1 rounded-md border-2 border-foreground bg-card px-3 py-1.5 text-sm font-semibold">
-        <ArrowLeft className="size-4" aria-hidden /> Module {moduleNum}
+        <ArrowLeft className="size-4" aria-hidden /> Back to the module
       </Link>
       <header>
         <p className="text-sm font-semibold text-link">

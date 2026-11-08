@@ -123,7 +123,7 @@ export function ReviseView({ plan }: { plan: RevisionPlan }) {
   return (
     <div className="mx-auto max-w-3xl space-y-6 px-4 py-6 sm:px-6 lg:py-10">
       <Link href="/prep/smart" className="inline-flex min-h-11 items-center gap-1 rounded-full border-2 border-foreground bg-card px-3 py-1.5 text-sm font-bold">
-        <ArrowLeft className="size-4" aria-hidden /> Smart practice
+        <ArrowLeft className="size-4" aria-hidden /> Back to Smart practice
       </Link>
 
       <header>

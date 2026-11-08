@@ -4,7 +4,10 @@ import { loadMyCohorts } from "@/lib/cohorts/access";
 import { doubtsReady, loadDoubts } from "@/lib/doubts/data";
 import { DoubtsBoard } from "./doubts-ui";
 import Link from "next/link";
+import { ArrowRight, MessagesSquare } from "lucide-react";
 import { ToolHeader } from "@/components/help/tool-header";
+import { loadMyBlocks } from "@/lib/access/blocks";
+import { blockedBy } from "@/lib/access/features";
 
 export const metadata: Metadata = { title: "Doubts" };
 export const dynamic = "force-dynamic";
@@ -29,12 +32,14 @@ export default async function DoubtsPage({ searchParams }: { searchParams: Promi
 
   const cohorts = await loadMyCohorts(session.profile.id);
   const items = await loadDoubts({ userId: session.profile.id, isAdmin, cohortIds: cohorts.map((c) => c.id), cohortFilter: isAdmin ? sp.cohort ?? null : null });
+  // The Wall link shows only where the Wall opens: full accounts, not switched off for this student.
+  const showWall = !isAdmin && session.profile.scope !== "lectures_only" && !blockedBy("/wall", session.profile.role === "student" ? await loadMyBlocks(session.profile.id) : []);
   const group = cohorts.length ? cohorts.map((c) => c.name).join(" & ") : "your batch";
 
   return (
     <div className="mx-auto max-w-3xl space-y-6 px-4 py-6 sm:px-6 lg:py-8">
       <ToolHeader
-        title={isAdmin ? "Doubts board" : "Ask your batch"}
+        title="Doubts"
         tip={{
           id: "doubts",
           steps: [`${group[0].toUpperCase()}${group.slice(1)} sees what you post here. Anyone can answer.`, "A concern about the course or your account goes privately to the VIBHA team instead."],
@@ -46,6 +51,12 @@ export default async function DoubtsPage({ searchParams }: { searchParams: Promi
         </p>
       ) : null}
       <DoubtsBoard items={items} canAskCohort={cohorts[0]?.id ?? null} canAsk={!isAdmin} />
+      {/* The batch Wall is not a menu place of its own: it opens from here. */}
+      {showWall ? (
+        <Link href="/wall" className="inline-flex min-h-11 items-center gap-1.5 text-sm font-bold text-link underline-offset-4 hover:underline">
+          <MessagesSquare className="size-4" aria-hidden /> Wall: posts from your batch <ArrowRight className="size-4" aria-hidden />
+        </Link>
+      ) : null}
     </div>
   );
 }

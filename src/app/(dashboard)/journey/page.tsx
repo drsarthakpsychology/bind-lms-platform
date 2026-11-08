@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { BookOpen, Clock, Flame, GraduationCap, PlayCircle, Sparkles, Target, Trophy } from "lucide-react";
+import { ArrowLeft, BookOpen, Clock, Flame, GraduationCap, PlayCircle, Sparkles, Target, Trophy } from "lucide-react";
 import { getSession } from "@/lib/auth/session";
 import { createAdminClient } from "@/lib/supabase/server";
 import { loadMyBoard } from "@/lib/standing/board";
@@ -63,10 +63,16 @@ export default async function JourneyPage() {
 
   return (
     <div className="mx-auto max-w-4xl space-y-6 px-4 py-6 sm:px-6 lg:py-8">
+      {/* Full accounts open My journey from Progress; lecture-only accounts have it in their menu. */}
+      {session.profile.scope !== "lectures_only" ? (
+        <Link href="/progress" className="inline-flex min-h-11 items-center gap-1.5 text-sm font-bold text-link hover:underline">
+          <ArrowLeft className="size-4" aria-hidden /> Back to Progress
+        </Link>
+      ) : null}
       <header>
         <p className="text-eyebrow text-link">My journey</p>
         <h1 className="text-h1">How far you&apos;ve come</h1>
-        <p className="mt-1 text-sm text-muted-foreground">Everything you&apos;ve done on VIBHA, in one place. The more you learn, the more this fills up.</p>
+        <p className="mt-1 text-sm text-muted-foreground">Everything you&apos;ve done on VIBHA, in one place.</p>
       </header>
 
       {/* Level banner */}

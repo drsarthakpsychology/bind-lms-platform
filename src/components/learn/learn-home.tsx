@@ -132,7 +132,7 @@ export function QuizPath({ units, serverState, save }: { units: Unit[]; serverSt
   return (
     <div className={cn("mx-auto max-w-4xl space-y-8 px-4 py-6 sm:px-6 lg:py-10", s.texture)}>
       <Link href="/prep/smart" className="inline-flex min-h-11 items-center gap-1 rounded-full border-2 border-foreground bg-card px-3 py-1.5 text-sm font-bold">
-        <ArrowLeft className="size-4" aria-hidden /> Smart practice
+        <ArrowLeft className="size-4" aria-hidden /> Back to Smart practice
       </Link>
       <div className="flex flex-wrap items-end justify-between gap-3">
         <div>

@@ -35,7 +35,7 @@ export default async function ShopPage() {
   return (
     <div className="mx-auto max-w-3xl space-y-6 px-4 py-6 sm:px-6">
       <Link href="/leaderboard" className="inline-flex min-h-11 items-center gap-1 rounded-md border-2 border-foreground bg-card px-3 text-sm font-bold">
-        <ArrowLeft className="size-4" aria-hidden /> League
+        <ArrowLeft className="size-4" aria-hidden /> Back to Leaderboard
       </Link>
       <header>
         <p className="text-eyebrow text-link">Spend what you earn</p>

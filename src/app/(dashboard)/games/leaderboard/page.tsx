@@ -28,7 +28,7 @@ export default async function QuizLeaderboardPage() {
     <div className="mx-auto max-w-3xl space-y-6 px-4 py-6 sm:px-6">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <Link href="/games" className="inline-flex items-center gap-1 rounded-full border-2 border-foreground bg-card px-3 py-1.5 text-sm font-semibold">
-          <ArrowLeft className="size-4" aria-hidden /> Games
+          <ArrowLeft className="size-4" aria-hidden /> Back to Games
         </Link>
         <BoardSwitch active="quiz" />
       </div>

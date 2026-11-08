@@ -190,7 +190,7 @@ export function MockResult({ view }: { view: MockResultView }) {
           Back to Exam Prep <ArrowRight className="size-4" aria-hidden />
         </Link>
         <Link href="/prep/mock" className={btnPlain}>
-          <ArrowLeft className="size-4" aria-hidden /> All mocks
+          <ArrowLeft className="size-4" aria-hidden /> Back to Mock tests
         </Link>
       </div>
     </div>

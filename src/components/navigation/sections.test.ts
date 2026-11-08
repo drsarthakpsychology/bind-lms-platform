@@ -190,3 +190,34 @@ describe("menu hides switched-off places", () => {
     expect(hrefs({})).toContain("/practice");
   });
 });
+
+describe("the approved student menu (Nov 2026)", () => {
+  it("is exactly Home, Study, Lectures, Medicines, Exam Prep, Practice, Games, then More", () => {
+    const main = STUDENT_ITEMS.filter((i) => !i.section).map((i) => i.label);
+    const more = STUDENT_ITEMS.filter((i) => i.section === "More").map((i) => i.label);
+    expect(main).toEqual(["Home", "Study", "Lectures", "Medicines", "Exam Prep", "Practice", "Games"]);
+    expect(more).toEqual(["Progress", "Doubts", "Achievements", "Leaderboard", "Journal"]);
+  });
+
+  it("each place appears once", () => {
+    const hrefs = STUDENT_ITEMS.map((i) => i.href);
+    expect(new Set(hrefs).size).toBe(hrefs.length);
+  });
+
+  it("pages opened from a More place light it and go back to it", () => {
+    expect(lit("/study/map")).toBe("/progress");
+    expect(lit("/study/map/practice")).toBe("/progress");
+    expect(lit("/journey")).toBe("/progress");
+    expect(lit("/wall")).toBe("/doubts");
+    expect(backTarget("/study/map/practice", null)).toEqual({ href: "/progress", label: "Back to Progress" });
+    expect(backTarget("/journey", null)).toEqual({ href: "/progress", label: "Back to Progress" });
+    expect(backTarget("/wall", null)).toEqual({ href: "/doubts", label: "Back to Doubts" });
+  });
+
+  it("lecture-only accounts keep My journey in their own menu", () => {
+    const items = studentItems({ scope: "lectures_only" });
+    expect(items.map((i) => i.href)).toContain("/journey");
+    expect(activeNavHref(items, "/journey")).toBe("/journey");
+  });
+});
+

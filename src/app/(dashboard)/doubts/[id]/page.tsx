@@ -23,7 +23,7 @@ export default async function DoubtPage({ params }: { params: Promise<{ id: stri
   return (
     <div className="mx-auto max-w-3xl space-y-5 px-4 py-6 sm:px-6 lg:py-8">
       <Link href="/doubts" className="inline-flex items-center gap-1 rounded-full border-2 border-foreground bg-card px-3 py-1.5 text-sm font-semibold">
-        <ArrowLeft className="size-4" aria-hidden /> All doubts
+        <ArrowLeft className="size-4" aria-hidden /> Back to Doubts
       </Link>
       <DoubtThreadView thread={thread} cohortId={cohorts[0]?.id ?? null} />
     </div>

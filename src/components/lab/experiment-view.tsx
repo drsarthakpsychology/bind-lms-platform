@@ -88,7 +88,7 @@ export function ExperimentView({ exp, moduleTitles, serverState, save, recheck, 
   return (
     <div className="mx-auto w-full min-w-0 max-w-3xl space-y-6 px-4 py-6 sm:px-6 lg:py-10">
       <Link href="/games/lab" className="inline-flex min-h-11 items-center gap-1 rounded-full border-2 border-foreground bg-card px-3 py-1.5 text-sm font-bold">
-        <ArrowLeft className="size-4" aria-hidden /> Lab
+        <ArrowLeft className="size-4" aria-hidden /> Back to the Lab
       </Link>
 
       <header className="space-y-2">

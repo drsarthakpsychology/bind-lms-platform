@@ -208,7 +208,7 @@ export function ModuleView({
   return (
     <div className="mx-auto max-w-4xl space-y-7">
       <Link href="/study" className="inline-flex min-h-11 items-center gap-1 rounded-md border-2 border-foreground bg-card px-3 py-1.5 text-sm font-bold">
-        <ArrowLeft className="size-4" aria-hidden /> All modules
+        <ArrowLeft className="size-4" aria-hidden /> Back to Study
       </Link>
 
       <header className="relative overflow-hidden rounded-3xl border-2 border-foreground bg-brand p-5 text-brand-foreground sm:p-7">
