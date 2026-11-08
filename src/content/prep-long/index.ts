@@ -11,6 +11,10 @@ import { CLINICAL_THERAPIES_L01 } from "./clinical-therapies-l01";
 import { CLINICAL_THERAPIES_L02 } from "./clinical-therapies-l02";
 import { CLINICAL_THERAPIES_L03 } from "./clinical-therapies-l03";
 import { CLINICAL_THERAPIES_L04 } from "./clinical-therapies-l04";
+import { CLINICAL_THERAPIES_L05 } from "./clinical-therapies-l05";
+import { CLINICAL_THERAPIES_L06 } from "./clinical-therapies-l06";
+import { CLINICAL_THERAPIES_L07 } from "./clinical-therapies-l07";
+import { CLINICAL_THERAPIES_L08 } from "./clinical-therapies-l08";
 import { PSYCHOPATHOLOGY_L01 } from "./psychopathology-l01";
 import { PSYCHOPATHOLOGY_L02 } from "./psychopathology-l02";
 import { PSYCHOPATHOLOGY_L03 } from "./psychopathology-l03";
@@ -42,6 +46,10 @@ export const LONG_QA: LongQA[] = [
   ...CLINICAL_THERAPIES_L02,
   ...CLINICAL_THERAPIES_L03,
   ...CLINICAL_THERAPIES_L04,
+  ...CLINICAL_THERAPIES_L05,
+  ...CLINICAL_THERAPIES_L06,
+  ...CLINICAL_THERAPIES_L07,
+  ...CLINICAL_THERAPIES_L08,
   ...PSYCHOPATHOLOGY_L01,
   ...PSYCHOPATHOLOGY_L02,
   ...PSYCHOPATHOLOGY_L03,
