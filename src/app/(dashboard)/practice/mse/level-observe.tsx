@@ -130,7 +130,7 @@ export function ObserveLevel({
           </p>
           {stimulus.why ? (
             <p className="text-small">
-              <span className="font-semibold">A model description: </span>
+              <span className="font-semibold">A good description: </span>
               {stimulus.why}
             </p>
           ) : null}

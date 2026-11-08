@@ -234,7 +234,7 @@ function Pick({
           ) : null}
         </Panel>
       ) : (
-        <p className="text-small text-muted-foreground">Team mode isn&apos;t switched on yet. Solo play still counts towards your progress.</p>
+        <p className="text-small text-muted-foreground">Team mode is not open yet. Play solo for now.</p>
       )}
     </div>
   );
@@ -534,7 +534,7 @@ function EndScreen({ c, st, xp, onAgain, onExit, teamLine }: { c: Campaign; st: 
           <span className="absolute inset-y-0 border-l-2 border-dashed border-foreground" style={{ left: "50%" }} aria-hidden />
           <span className="absolute inset-y-0 border-l-2 border-dashed border-foreground" style={{ left: "72%" }} aria-hidden />
         </div>
-        <p className="text-caption text-muted-foreground">Dashed lines: 50 steady, 72 a good outcome. Sixty per cent of the score is where the dials ended; forty per cent is how sound each call was.</p>
+        <p className="text-caption text-muted-foreground">Dashed lines: 50 steady, 72 a good outcome.</p>
       </Panel>
 
       <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
@@ -607,7 +607,7 @@ function TeamPlay({ teamId, actions, onExit }: { teamId: string; actions: Action
     return (
       <div className="mx-auto max-w-xl space-y-4 px-4 py-8">
         <h1 className="text-h2">Team not found</h1>
-        <p className="text-body">You may not be in this team, or team play isn&apos;t switched on yet.</p>
+        <p className="text-body">You may not be in this team, or team play is not open yet.</p>
         <Btn variant="primary" onClick={onExit}>
           Back to Ward Week
         </Btn>

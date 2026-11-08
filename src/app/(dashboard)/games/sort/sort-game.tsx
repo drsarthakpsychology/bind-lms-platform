@@ -255,7 +255,7 @@ export function SortGame({ serverState, save, initial }: { serverState: LearnSta
                         ))}
                         {Array.from({ length: Math.max(0, 4 - here.length) }, (_, k) => (
                           <li key={`e${k}`} className="flex min-h-11 items-center rounded-md border-2 border-dashed border-foreground/40 px-2.5 text-xs text-muted-foreground">
-                            {k === 0 && selected !== null ? "Tap the name above to place here" : "Empty"}
+                            Empty
                           </li>
                         ))}
                       </ul>
@@ -267,7 +267,7 @@ export function SortGame({ serverState, save, initial }: { serverState: LearnSta
               {selected !== null && (
                 <div className="sticky bottom-[calc(var(--nav-h)+0.5rem)] z-10 flex flex-wrap items-center gap-2 rounded-md border-2 border-foreground bg-foreground p-3 text-background hard-shadow-sm lg:bottom-4">
                   <span className="min-w-0 flex-1 text-sm">
-                    <strong>Selected:</strong> {v.tiles[selected]} <span className="hidden opacity-80 lg:inline">· press 1 to 4 to place</span>
+                    <strong>Selected:</strong> {v.tiles[selected]}
                   </span>
                   {p.placement[selected] !== null && (
                     <button type="button" onClick={() => unplace(selected)} className="inline-flex min-h-11 items-center gap-1 rounded-md border-2 border-background px-3 text-sm font-bold">

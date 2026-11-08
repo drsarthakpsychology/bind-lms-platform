@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { requireFeature } from "@/lib/flags";
-import { longCount, longSubjects } from "@/lib/prep/long-server";
+import { longSubjects } from "@/lib/prep/long-server";
 import { BackToPrep, ListRow, PrepFrame, bigCount, card } from "../ui";
 import { LongLists } from "./lists";
 
@@ -15,7 +15,7 @@ export default async function LongHomePage() {
       <BackToPrep />
       <header className="space-y-1">
         <h1 className="text-h1">Long answers</h1>
-        <p className="text-muted-foreground">{longCount()} answers. Plan, write, then check against a model answer.</p>
+        <p className="text-muted-foreground">Write it out, then check it.</p>
       </header>
       <LongLists />
       <section aria-labelledby="long-subjects" className="space-y-2">

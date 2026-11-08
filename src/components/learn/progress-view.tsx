@@ -81,7 +81,7 @@ export function ProgressView({
 
       {/* Mastery by topic */}
       <section>
-        <h2 className="text-h2">Mastery by topic</h2>
+        <h2 className="text-h2">How well you know each topic</h2>
         <ul className="mt-3 grid gap-2 sm:grid-cols-2">
           {[...domains].sort((a, b) => b.m.pct - a.m.pct).map((d) => (
             <li key={d.id}>
