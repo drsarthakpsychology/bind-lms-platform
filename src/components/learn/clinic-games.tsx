@@ -7,6 +7,8 @@ import { SCENARIOS, WORDS, type Choice, type Scenario } from "@/lib/learn/scenar
 import { ALL_TERMS } from "@/lib/learn/notes";
 import { initLearnStore, setLearnState, useLearnState } from "@/lib/learn/store";
 import { haptic } from "@/lib/haptics";
+import { historyFor, noteAnswer, pickRoundFor, useHistoryPrefetch } from "@/lib/history/client";
+import { leadWithUnseen } from "@/lib/history/order";
 import { cn } from "@/lib/utils";
 import { Chai, ChaiSays } from "./chai";
 import { Summary } from "./player";
@@ -36,10 +38,12 @@ export function ScenarioGame({ serverState, save, noteId }: { serverState: Learn
   const [picked, setPicked] = React.useState<Choice | null>(null);
   const [answers, setAnswers] = React.useState<{ id: string; correct: boolean }[]>([]);
   const [result, setResult] = React.useState<Payout | null>(null);
+  useHistoryPrefetch("wwyd");
 
   function start() {
     const pool = noteId ? SCENARIOS.filter((x) => x.noteId === noteId) : SCENARIOS;
-    setDeck(shuffle(pool).slice(0, 5));
+    // Answer history (src/lib/history): scenarios not played yet first, missed ones spaced out.
+    setDeck(pickRoundFor("wwyd", pool, (x) => x.id, 5, roll));
     setSi(0);
     setBi(0);
     setPicked(null);
@@ -73,6 +77,9 @@ export function ScenarioGame({ serverState, save, noteId }: { serverState: Learn
   function next() {
     setPicked(null);
     if (bi + 1 < sc.beats.length) return setBi(bi + 1);
+    // A scenario counts as right when every step took the best response.
+    const mine = [...answers.filter((a) => a.id.startsWith(`${sc.id}-`))];
+    noteAnswer("wwyd", sc.id, mine.length > 0 && mine.every((a) => a.correct));
     if (si + 1 < deck!.length) {
       setSi(si + 1);
       setBi(0);
@@ -141,19 +148,23 @@ function Options({ beat, options, picked, onChoose }: { beat: Scenario["beats"][
 /* ============================================================ Say it clinically */
 type Q = { prompt: string; answer: string; options: string[]; why: string; kind: "term" | "words" };
 
+/** Call from event handlers only (reads the answer history). */
 function buildRound(): Q[] {
-  const terms = shuffle(ALL_TERMS).slice(0, 8).map((t) => {
+  // Answer history (src/lib/history): terms and wordings not seen yet first, missed ones next.
+  const history = historyFor("say-it");
+  const terms = pickRoundFor("say-it", ALL_TERMS, (t) => `term-${t.term}`, 8, roll).map((t) => {
     const others = shuffle(ALL_TERMS.filter((x) => x.term !== t.term)).slice(0, 3).map((x) => x.term);
     return { prompt: `They say: “${t.lay}”. You write:`, answer: t.term, options: shuffle([t.term, ...others]), why: `${t.topic}: “${t.lay}” → ${t.term}`, kind: "term" as const };
   });
-  const words = shuffle(WORDS).slice(0, 4).map((w) => ({ prompt: "Which is the better way to say it?", answer: w.better, options: shuffle([w.better, w.worse]), why: w.why, kind: "words" as const }));
-  return shuffle([...terms, ...words]);
+  const words = pickRoundFor("say-it", WORDS, (w) => `words-${w.better}`, 4, roll).map((w) => ({ prompt: "Which is the better way to say it?", answer: w.better, options: shuffle([w.better, w.worse]), why: w.why, kind: "words" as const }));
+  return leadWithUnseen(shuffle([...terms, ...words]), (q) => `${q.kind}-${q.answer}`, history, Date.now());
 }
 
 export function TermsGame({ serverState, save }: { serverState: LearnState | null; save: (s: LearnState) => Promise<unknown> }) {
   initLearnStore(serverState, save);
   const state = useLearnState(serverState ?? EMPTY);
   const [round, setRound] = React.useState<Q[] | null>(null);
+  useHistoryPrefetch("say-it");
   const [i, setI] = React.useState(0);
   const [pick, setPick] = React.useState<string | null>(null);
   const [answers, setAnswers] = React.useState<{ id: string; correct: boolean }[]>([]);
@@ -189,6 +200,7 @@ export function TermsGame({ serverState, save }: { serverState: LearnState | nul
               setPick(o);
               haptic(o === q.answer ? "success" : "warning");
               setAnswers((a) => [...a, { id: `${q.kind}-${q.answer}`, correct: o === q.answer }]);
+              noteAnswer("say-it", `${q.kind}-${q.answer}`, o === q.answer);
             }}
             className={cn(
               "rounded-2xl border-2 border-foreground px-4 py-3 text-left font-bold hard-shadow-sm",
