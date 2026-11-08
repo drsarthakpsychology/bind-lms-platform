@@ -1,4 +1,6 @@
 import { SEED_FORMULATION, type FormulationFactor } from "./formulation";
+import type { FormulationTags } from "./formulation-library/types";
+import { FORMULATION_LIBRARY } from "./formulation-library";
 
 export type FormulationCase = {
   id: string;
@@ -8,6 +10,8 @@ export type FormulationCase = {
   hint: string;
   factors: FormulationFactor[];
   modelNarrative: string;
+  /** library tags: topic, difficulty 1 to 5, objective, exams, Study module */
+  tags?: FormulationTags;
 };
 
 const PROMPT = "Sort the factors into the 5P grid. Leave distractors out.";
@@ -18,7 +22,7 @@ const PROMPT = "Sort the factors into the 5P grid. Leave distractors out.";
  * teaching cases, set in Indian practice.
  */
 export const FORMULATION_CASES: FormulationCase[] = [
-  { ...SEED_FORMULATION, hint: "Somatic depression in a man who won't talk about feelings" },
+  { ...SEED_FORMULATION, hint: "Somatic depression in a man who won't talk about feelings", tags: { topic: "depression", difficulty: 2, objective: "Link a somatic presentation of depression to its 5 Ps", exams: ["mcp-entrance", "ma-semester", "md-psychiatry"], module: "depression", diagnosis: "Moderate depressive episode with somatic presentation" } },
   {
     id: "form-2",
     title: "Meera: the exam that never ends (panic disorder)",
@@ -40,6 +44,7 @@ export const FORMULATION_CASES: FormulationCase[] = [
     ],
     modelNarrative:
       "Meera, 19, presents with panic disorder with growing agoraphobic avoidance: frequent surges of palpitations, breathlessness and fear of dying, and she now avoids the coaching centre. An anxious, perfectionistic temperament and a mother who models health vigilance (predisposing) set the stage; the first attack came in the exam hall during a high-stakes repeat attempt (precipitating). The cycle is kept going by repeated reassurance-seeking through normal cardiac tests, safety behaviours that stop her learning the attacks are harmless, and night-time symptom searching (perpetuating). Her own help-seeking, intelligence and a supportive friend are strengths to build exposure work on (protective).",
+    tags: { topic: "anxiety", difficulty: 2, objective: "Show how safety behaviours and reassurance keep panic going", exams: ["mcp-entrance", "ma-semester", "cuet-pg"], module: "anxiety", diagnosis: "Panic disorder with early agoraphobic avoidance" },
   },
   {
     id: "form-3",
@@ -62,6 +67,7 @@ export const FORMULATION_CASES: FormulationCase[] = [
     ],
     modelNarrative:
       "Arjun, 21, presents with a first episode of psychosis: auditory hallucinations in the third person, a persecutory delusion about a chip in his laptop, and four months of withdrawal, poor sleep and dropping out. A family history of schizophrenia and regular adolescent cannabis use (predisposing) raised his vulnerability; moving away from home, academic failure and heavier cannabis use after the results (precipitating) came just before onset. The duration of untreated psychosis was lengthened by the faith-healer route, and continuing cannabis, irregular sleep and his belief that medicine is for 'mad people' (perpetuating) risk relapse. Engaged parents and a good premorbid level of functioning (protective) predict a better outcome and make early family work possible.",
+    tags: { topic: "psychosis", difficulty: 3, objective: "Separate vulnerability, triggers and relapse drivers in first-episode psychosis", exams: ["md-psychiatry", "mcp-entrance", "ma-semester"], module: "psychosis", diagnosis: "First-episode psychosis (schizophreniform picture)" },
   },
   {
     id: "form-4",
@@ -83,6 +89,7 @@ export const FORMULATION_CASES: FormulationCase[] = [
     ],
     modelNarrative:
       "Sunita, 27, presents ten weeks postpartum with a moderate depressive episode: low mood, tearfulness, poor appetite, loss of interest in caring for her baby and thoughts that the baby would be better off with others, which need a careful risk assessment. A previous untreated depressive episode (predisposing) left her vulnerable; a traumatic emergency caesarean with a NICU stay and criticism over the baby's sex (precipitating) came just before onset. Severe sleep loss with no one to share night feeds and guilt-driven concealment of her distress (perpetuating) keep it going. Her mother's daily support and the fact that feeding and the baby's growth are going well (protective) are footholds for treatment and for practical help at night.",
+    tags: { topic: "perinatal", difficulty: 3, objective: "Formulate postpartum depression with risk to self and baby in view", exams: ["md-psychiatry", "mcp-entrance", "ma-semester"], module: "depression", diagnosis: "Moderate depressive episode, postpartum onset" },
   },
   {
     id: "form-5",
@@ -104,6 +111,7 @@ export const FORMULATION_CASES: FormulationCase[] = [
     ],
     modelNarrative:
       "Mr Khan, 45, presents with alcohol dependence with physiological withdrawal, shown by morning tremor relieved by drinking and a recent withdrawal seizure. A father who drank heavily and an early learned habit of drinking to unwind (predisposing) built the pattern; the loss of his shop two years ago (precipitating) doubled his intake. Drinking to relieve withdrawal, an evening routine centred on a drinking circle, and minimisation of the problem (perpetuating) maintain it. The fright of the seizure has opened a window of motivation, and a wife and son who are involved (protective) give a base for supervised detoxification, relapse-prevention medicine and family work.",
+    tags: { topic: "substance", difficulty: 2, objective: "Place withdrawal relief and social cues as perpetuating factors", exams: ["md-psychiatry", "mcp-entrance", "ma-semester"], module: "substance", diagnosis: "Alcohol dependence with withdrawal seizure" },
   },
   {
     id: "form-6",
@@ -125,7 +133,9 @@ export const FORMULATION_CASES: FormulationCase[] = [
     ],
     modelNarrative:
       "Riya, 16, presents with obsessive-compulsive disorder with good insight: contamination obsessions and fears of harming her family, with washing compulsions that take four hours a day and have damaged her skin. An anxious, rule-bound temperament and a household with strong cleanliness rules (predisposing) form the background; her grandfather's serious infection (precipitating) gave the fears their content. The cycle is maintained because each wash brings brief relief that strengthens the urge, the family's reassurance and re-washing accommodate the rituals, and avoiding school prevents her ever testing her fears (perpetuating). Good insight, her wish to stop and a trusted teacher (protective) make her a strong candidate for exposure and response prevention, with the family taught to step back from reassurance.",
+    tags: { topic: "ocd", difficulty: 2, objective: "Show how family accommodation maintains compulsions", exams: ["mcp-entrance", "ma-semester", "cuet-pg"], module: "ocd", diagnosis: "Obsessive-compulsive disorder with good insight" },
   },
+  ...FORMULATION_LIBRARY,
 ];
 
 export function formulationCase(id: string | undefined): FormulationCase {
