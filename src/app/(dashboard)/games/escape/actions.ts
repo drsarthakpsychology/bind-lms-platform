@@ -1,5 +1,6 @@
 "use server";
 
+import { record } from "@/lib/history/server";
 import { z } from "zod";
 import { answer, escapeXp, isRight, raceBoard, startEscape, teamTime, type EscState, type RaceRow } from "@/lib/games-sims/escape/engine";
 import { roomById } from "@/lib/games-sims/escape/rooms";
@@ -131,7 +132,11 @@ export async function gradeEscapePractice(input: { room: string; stage: number; 
   const p = r && parsed.success ? r.puzzles[parsed.data.stage] : undefined;
   if (!parsed.success || !user || !r || !p) return { ok: false };
   const ok = isRight(p, parsed.data.answer);
-  await gradeAnswers(user, [{ skill: p.skill, item: `escape:${r.id}:${p.id}`, outcome: ok ? 1 : 0, first: parsed.data.first }]);
+  await Promise.all([
+    gradeAnswers(user, [{ skill: p.skill, item: `escape:${r.id}:${p.id}`, outcome: ok ? 1 : 0, first: parsed.data.first }]),
+    // Answer history: the first try at each lock counts.
+    parsed.data.first ? record(user.id, "escape", `${r.id}:${p.id}`, ok) : null,
+  ]);
   return { ok };
 }
 

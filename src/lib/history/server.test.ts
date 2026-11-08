@@ -3,7 +3,7 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 vi.mock("server-only", () => ({}));
 
 type Rows = Record<string, unknown>[];
-const state: { rows: Rows; fail: boolean; throws: boolean; upserts: Rows[] } = { rows: [], fail: false, throws: false, upserts: [] };
+const state: { rows: Rows; fail: boolean; throws: boolean; upserts: Rows } = { rows: [], fail: false, throws: false, upserts: [] };
 
 function query() {
   const q: Record<string, unknown> = {};

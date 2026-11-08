@@ -85,8 +85,12 @@ export function historyFor(tool: HistoryTool): History {
   return mergeHistory(server.get(tool) ?? new Map(), readLocal(tool).map);
 }
 
-/** Remember answers in this browser and on the server. */
-export function noteAnswers(tool: HistoryTool, answers: readonly { item: string; correct: boolean | null }[], now = Date.now()) {
+/**
+ * Remember answers in this browser and on the server. Pass `server: false`
+ * when the tool's own server action already records them.
+ */
+export function noteAnswers(tool: HistoryTool, answers: readonly { item: string; correct: boolean | null }[], opts: { server?: boolean; now?: number } = {}) {
+  const now = opts.now ?? Date.now();
   const list = answers.filter((a) => cleanItem(a.item));
   if (!list.length) return;
   const local = readLocal(tool);
@@ -98,13 +102,14 @@ export function noteAnswers(tool: HistoryTool, answers: readonly { item: string;
     cache?.set(a.item, row);
   }
   writeLocal(tool, local.owner, local.map);
+  if (opts.server === false) return;
   void import("./actions")
     .then(({ recordMyAnswers }) => recordMyAnswers(tool, list.map((a) => ({ item: a.item, correct: a.correct }))))
     .catch(() => {});
 }
 
-export function noteAnswer(tool: HistoryTool, item: string, correct: boolean | null) {
-  noteAnswers(tool, [{ item, correct }]);
+export function noteAnswer(tool: HistoryTool, item: string, correct: boolean | null, opts: { server?: boolean } = {}) {
+  noteAnswers(tool, [{ item, correct }], opts);
 }
 
 /** A round of `size` from the candidates, in history order (see order.ts). */

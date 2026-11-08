@@ -1,5 +1,6 @@
 "use server";
 
+import { recordHistory } from "@/lib/history/server";
 import { z } from "zod";
 import { majority } from "@/lib/games-sims/common";
 import { campaignById } from "@/lib/games-sims/ward/campaigns";
@@ -38,7 +39,8 @@ export async function finishWardSolo(input: { campaign: string; choices: string[
     st = choose(c, st, choice);
   }
   if (!st.done) return { ok: false, score: 0, xp: 0 };
-  await gradeAnswers(user, attempts);
+  // Answer history: each decision, right when the best option was taken.
+  await Promise.all([gradeAnswers(user, attempts), recordHistory(user.id, "ward", attempts.map((a) => ({ item: a.item, correct: a.outcome >= 1 })))]);
   const score = outcomeScore(st);
   const [, xp] = await Promise.all([
     saveResult(user.id, { game: "ward", item: c.id, score: score / 100, right: attempts.filter((a) => a.outcome === 1).length, total: attempts.length, meta: { mode: "solo" } }),

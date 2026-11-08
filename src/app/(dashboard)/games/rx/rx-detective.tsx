@@ -7,7 +7,8 @@ import { cn } from "@/lib/utils";
 import { LearnLink } from "@/lib/games/ui/learn-link";
 import { DOSE_NOTE, hashString, makeRng, pct } from "@/lib/games-sims/common";
 import { DRUGS, drugById, effectById, MYSTERIES, outcomeById, PUZZLES, reviewById, type Drug } from "@/lib/games-sims/rx/content";
-import { buildRun, costsLife, grade, LIVES, nextStreak, pointsFor, rxXp, STEPS, type Answer, type Mode, type Question } from "@/lib/games-sims/rx/game";
+import { historyFor, noteAnswer, useHistoryPrefetch } from "@/lib/history/client";
+import { buildRun, costsLife, grade, rxItem, LIVES, nextStreak, pointsFor, rxXp, STEPS, type Answer, type Mode, type Question } from "@/lib/games-sims/rx/game";
 import { AccuracyBoard, type AccuracyBoardData } from "@/lib/games-sims/ui/board";
 import { Btn, buzz, Kbd, motionCss as m, Panel, Pill, Stat, toneFor, useHotkeys, verdictWord } from "@/lib/games-sims/ui/kit";
 import { Journey, Receptor } from "@/components/study/animations";
@@ -37,11 +38,13 @@ export function RxDetective({ board, grade: gradeOnServer, finish, medIds = [] }
   const router = useRouter();
   const [run, setRun] = React.useState<Run | null>(null);
   const [done, setDone] = React.useState<{ run: Run; xp: number | null } | null>(null);
+  useHistoryPrefetch("rx");
 
   function start(mode: Mode) {
     const id = `${Date.now().toString(36)}${Math.floor(Math.random() * 1e6).toString(36)}`;
     setDone(null);
-    setRun({ run: id, mode, qs: buildRun(mode, makeRng(hashString(id))), idx: 0, answers: [], picks: [], revealed: false, lives: LIVES, streak: 0, best: 0, points: 0, gained: 0, lostLife: false, ruled: {} });
+    // Answer history: questions not seen yet first, then missed ones (src/lib/history).
+    setRun({ run: id, mode, qs: buildRun(mode, makeRng(hashString(id)), undefined, historyFor("rx"), Date.now()), idx: 0, answers: [], picks: [], revealed: false, lives: LIVES, streak: 0, best: 0, points: 0, gained: 0, lostLife: false, ruled: {} });
   }
   function end(r: Run) {
     setRun(null);
@@ -104,6 +107,8 @@ function Round({ r, setR, onAnswered, onEnd, medIds }: { r: Run; setR: (r: Run) 
     const a: Answer = { kind: q.kind, id: q.id, picks };
     const g = grade(a)!;
     buzz(g.score >= 1);
+    // The server records it too (gradeRxAnswer); this is the browser copy.
+    noteAnswer("rx", rxItem(q.kind, q.id), g.score >= 1, { server: false });
     onAnswered(a);
     const lost = costsLife(g.score);
     // A hint halves this question's points.
