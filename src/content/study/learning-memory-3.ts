@@ -39,6 +39,10 @@ Richard Atkinson and Richard Shiffrin (1968) described memory as a flow through 
 }
 :::
 
+:::widget figure
+{"id": "multi-store-model"}
+:::
+
 ### Sensory memory
 George Sperling (1960) flashed a grid of 12 letters (three rows of four) for 50 milliseconds.
 - In **whole report** ("say all you saw"), people reported only about 4 or 5 letters, yet insisted they had seen more that faded as they spoke.
@@ -91,6 +95,10 @@ Read a list of 20 words once and recall them in any order. Recall is best for th
     { "text": "Asking people to recall the last items first", "bucket": 1 }
   ]
 }
+:::
+
+:::widget figure
+{"id": "serial-position"}
 :::
 
 ### Evidence for separate stores from patients
@@ -261,6 +269,10 @@ Q: Which finding most directly challenges a strict levels-of-processing account?
 - Elaborative rehearsal helps more than maintenance rehearsal
 - Deep processing takes longer
 > Transfer-appropriate processing shows the match between study and test matters.
+:::
+
+:::widget figure
+{"id": "working-memory-model"}
 :::
 
 ## 3.3 Long-term memory: kinds, encoding and retrieval [core][beginner]
@@ -472,6 +484,10 @@ Forgetting is not one process. Psychologists have proposed five main explanation
  ],
  "caption": "Tap each branch, then read the evidence for each below."
 }
+:::
+
+:::widget figure
+{"id": "forgetting-curve"}
 :::
 
 ### 1. Trace decay

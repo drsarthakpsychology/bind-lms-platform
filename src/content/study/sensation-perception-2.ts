@@ -116,6 +116,10 @@ Classical thresholds assume a fixed line between "detected" and "not detected". 
 1. **Sensitivity**: how well the person can tell signal from noise. It depends on the senses and the stimulus.
 2. **Response bias**, or **criterion**: how willing the person is to say "yes". It depends on expectations and on rewards and costs.
 
+:::widget figure
+{"id": "signal-detection"}
+:::
+
 ### The four outcomes
 | | Says "Yes, present" | Says "No, absent" |
 |---|---|---|
@@ -212,6 +216,10 @@ Q: An observer with a hit rate of 0.50 and a false-alarm rate of 0.50 has:
 - A conservative criterion
 - A d′ of 1
 > Equal hit and false-alarm rates mean the observer cannot tell signal from noise.
+:::
+
+:::widget figure
+{"id": "roc-curve"}
 :::
 
 ## 2.3 Vision and colour [core][beginner]
@@ -665,6 +673,10 @@ The **Stroop effect** (J. R. Stroop, 1935) shows that reading is automatic: nami
 }
 :::
 
+:::widget figure
+{"id": "stroop-card"}
+:::
+
 ### Orienting: the spotlight moves
 Michael Posner's **cueing paradigm** (1980) asked people to respond to a target on the left or right after a cue. A **valid cue** (pointing to where the target appears) speeds responses; an **invalid cue** slows them. Attention can be moved:
 - **Exogenously** (reflexively), by a sudden flash or sound at a location: fast, automatic.
@@ -885,6 +897,10 @@ Eleanor Gibson and Richard Walk (1960) built the **visual cliff**: a glass table
 }
 :::
 
+:::widget figure
+{"id": "visual-cliff", "quiz": true}
+:::
+
 ### Seeing movement
 - **Real motion** is detected by specialised cells, especially in area **MT (V5)**. Damage there causes **akinetopsia**: the world appears as a series of still frames (patient L. M., Zihl and colleagues, 1983).
 - **Stroboscopic motion** and the **phi phenomenon** (Wertheimer, 1912): lights flashing on and off in sequence look like one light moving. This founded Gestalt psychology. Diwali chaser lights, LED scrolling boards and film itself rely on it.
@@ -945,6 +961,14 @@ Q: Muzafer Sherif's classic study of group norm formation used which perceptual 
 - Induced motion
 - The motion aftereffect
 > A still light in the dark appears to move, and groups converged on shared estimates.
+:::
+
+:::widget figure
+{"id": "ames-room"}
+:::
+
+:::widget figure
+{"id": "ponzo", "quiz": true}
 :::
 
 ## 2.9 Level check · Beginner [core][beginner]

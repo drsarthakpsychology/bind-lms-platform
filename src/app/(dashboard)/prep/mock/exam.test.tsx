@@ -69,7 +69,9 @@ describe("MockExam", () => {
     fireEvent.click(screen.getByRole("button", { name: /^Submit$/ }));
     expect(screen.getByText("Submit your paper?")).toBeInTheDocument();
     fireEvent.click(screen.getByRole("button", { name: /Submit now/ }));
-    await screen.findByText(/You're the first VIBHA student/, {}, { timeout: 5_000 });
+    // The result shows; rank among students is switched off (PREP_ONBOARDING_ENABLED).
+    await screen.findByRole("heading", { name: "Time" }, { timeout: 5_000 });
+    expect(screen.queryByText(/VIBHA student|Rank \d/)).toBeNull();
     const sent = submit.mock.calls[0][0];
     expect(sent.answers).toEqual({ [views[0].id]: 1 });
     expect(sent.marked).toEqual([views[0].id]);
@@ -83,7 +85,7 @@ describe("MockExam", () => {
     fireEvent.click(screen.getByRole("button", { name: /Start the mock/ }));
     await screen.findByText(/Question 1 of 4/);
     await waitFor(() => expect(submit).toHaveBeenCalledTimes(1), { timeout: 4_000 });
-    await screen.findByText(/You're the first VIBHA student/);
+    await screen.findByRole("heading", { name: "Time" });
     await new Promise((r) => setTimeout(r, 1_200));
     expect(submit).toHaveBeenCalledTimes(1);
   });
@@ -98,6 +100,6 @@ describe("MockExam", () => {
     fireEvent.click(screen.getByRole("button", { name: /Submit now/ }));
     await screen.findByRole("alert");
     fireEvent.click(screen.getByRole("button", { name: /Try again/ }));
-    await screen.findByText(/You're the first VIBHA student/);
+    await screen.findByRole("heading", { name: "Time" });
   });
 });

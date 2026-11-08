@@ -1011,6 +1011,10 @@ Use **shapes and lines**, never colour alone, so that the tree is readable when 
 {"title":"Draw and read Ms N's family","condition":"a psychotic illness","caption":"Explore Ms N's family and run the pattern finder. Then press Start blank and draw a patient you have seen: three generations, every symbol, the diagnosis written beside each shaded shape."}
 :::
 
+:::widget figure
+{"id": "genogram-symbols"}
+:::
+
 ### What to write beside the tree
 - For each relative with illness: relationship, illness (as described and, if known, diagnosis), treatment, outcome.
 - **Family atmosphere**: warmth, conflict, criticism, over-involvement, violence, who the patient is closest to.

@@ -243,6 +243,10 @@ When the body clock is out of step with the timing a person needs:
 {"title": "How light sets the body clock", "layout": "chain", "nodes": [{"id": "l", "label": "Morning light enters the eye", "detail": "Special light-sensitive cells in the retina respond most to bright, blue-rich light."}, {"id": "s", "label": "The master clock", "detail": "The suprachiasmatic nucleus in the hypothalamus is reset each day by this signal."}, {"id": "p", "label": "The pineal gland", "detail": "As darkness falls, the clock signals the pineal gland to release melatonin."}, {"id": "m", "label": "Melatonin rises", "detail": "Opens the 'sleep gate' in the evening and peaks in the middle of the night."}, {"id": "b", "label": "Late screens and late light", "detail": "Bright light at night delays melatonin and pushes the clock later, as in delayed sleep phase in teenagers."}], "caption": "Treatment for body-clock problems uses this chain: bright light in the morning, dim light at night, and well-timed low-dose melatonin."}
 :::
 
+:::widget figure
+{"id": "two-process-sleep", "quiz": true}
+:::
+
 ### Parasomnias: unusual events in sleep
 **NREM parasomnias** (from deep sleep, usually in the **first third of the night**, more in children):
 - **Sleepwalking**: getting up and walking, with blank face, hard to wake, little or no memory.
@@ -256,6 +260,10 @@ When the body clock is out of step with the timing a person needs:
 
 :::widget brainmap
 {"title": "Brain areas behind narcolepsy and parasomnias", "focus": ["hypothalamus", "brainstem", "thalamus"], "notes": {"hypothalamus": "Orexin neurons here keep us awake and stabilise the switch between sleep and wake. Their loss causes narcolepsy type 1.", "brainstem": "Generates REM sleep and its muscle paralysis. Damage to the paralysis circuit causes REM sleep behaviour disorder.", "thalamus": "Gates sensory input during sleep; partial arousal from deep sleep, with the cortex half-awake, underlies sleepwalking and sleep terrors."}, "caption": "Tap each area."}
+:::
+
+:::widget figure
+{"id": "hypnogram", "quiz": true}
 :::
 
 ### Restless legs syndrome

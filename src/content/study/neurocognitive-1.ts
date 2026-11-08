@@ -102,6 +102,10 @@ Q: Which statement is correct?
 - **Perception changes**: seeing things that are not there, often frightening; misreading shadows as people.
 - **Sleep turned upside down**: awake at night, sleepy in the day.
 
+:::widget figure
+{"id": "eeg-rhythms"}
+:::
+
 ### Two faces of delirium
 - **Hyperactive**: restless, agitated, pulling at drips, trying to get out of bed, shouting. Easy to notice.
 - **Hypoactive**: quiet, drowsy, withdrawn, sleeping a lot, eating little. **Easily missed**, often mistaken for depression or tiredness, and has a worse outlook.

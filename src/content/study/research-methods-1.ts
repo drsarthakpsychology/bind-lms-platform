@@ -720,6 +720,10 @@ Q: Each participant learns word lists in silence, with music and with traffic no
 > A Latin square balances position across conditions.
 :::
 
+:::widget figure
+{"id": "factorial-interaction"}
+:::
+
 ## 2.4 Validity and its threats [core][beginner]
 **Validity** in research means how far you can trust the conclusions. Thomas Cook and Donald Campbell named four kinds. Learn them as four questions.
 
@@ -858,6 +862,14 @@ Single-case data are judged mainly by **visual analysis** of graphs: changes in 
 
 :::widget flow
 {"title": "An ABAB reversal design", "layout": "chain", "nodes": [{"id": "n0", "label": "A: baseline", "detail": "Measure the behaviour until stable"}, {"id": "n1", "label": "B: treatment", "detail": "Behaviour should change"}, {"id": "n2", "label": "A: withdraw", "detail": "Behaviour should return toward baseline"}, {"id": "n3", "label": "B: reinstate", "detail": "Behaviour should change again"}], "caption": "Two demonstrations of control. If withdrawal is unsafe, use a multiple baseline instead."}
+:::
+
+:::widget figure
+{"id": "abab-design"}
+:::
+
+:::widget figure
+{"id": "multiple-baseline"}
 :::
 
 ### Developmental designs

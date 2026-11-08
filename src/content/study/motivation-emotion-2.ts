@@ -340,6 +340,10 @@ The details of psychoneuroimmunology and chronic illness are taught in the appli
 }
 :::
 
+:::widget figure
+{"id": "stress-vulnerability"}
+:::
+
 ### Burnout
 **Burnout** (Christina Maslach) is a response to chronic work stress with three parts: **exhaustion**, **cynicism or depersonalisation** (a cold, detached attitude to clients or work) and **reduced professional efficacy**. It is common among doctors, nurses, teachers and IT workers. **ICD-11** lists burnout as an **occupational phenomenon** (code QD85) in the chapter on factors influencing health status, **not** as a medical condition, and only for the work context.
 

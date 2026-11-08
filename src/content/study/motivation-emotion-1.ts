@@ -133,6 +133,10 @@ Deepa has revised thoroughly and the paper is mostly recall; a bit of nervous en
 }
 :::
 
+:::widget figure
+{"id": "yerkes-dodson"}
+:::
+
 ### Incentive theory: the pull of the goal
 Incentive theory says behaviour is pulled by **expected rewards** in the environment: money, praise, grades, food that looks good. An incentive's power depends on its **value** to the person and how **likely** they think it is. A cash prize means more to a struggling student than to a rich one.
 
@@ -227,6 +231,10 @@ Q: A worker who is repeatedly denied promotion starts demanding much higher pay.
 - Drive reduction
 - Optimal arousal
 > Blocked growth needs lead to renewed focus on existence needs.
+:::
+
+:::widget figure
+{"id": "maslow-pyramid"}
 :::
 
 ## 1.3 What an emotion is, and the first two theories [core][starting]

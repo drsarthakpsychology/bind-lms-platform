@@ -10,6 +10,7 @@ import { MASTERY_LABEL, MASTERY_STATES } from "@/lib/learn/model/mastery";
 import { COMPETENCY_LABEL, topicById } from "@/lib/learn/model/topics";
 import { COMPETENCIES } from "@/lib/learn/model/skills";
 import type { TopicLevel } from "@/lib/learn/model/placement";
+import { PREP_ONBOARDING_ENABLED } from "@/lib/prep/catalog";
 import { cn } from "@/lib/utils";
 import { STATE_ICON, StateTag, btnPlain, btnPrimary, stateTone } from "./ui";
 
@@ -24,9 +25,9 @@ export default async function MapPage() {
   const isLearner = session.status === "ok" && (session.profile.role === "student" || session.profile.role === "alumni");
   const titles = Object.fromEntries(MODULES.map((m) => [m.id, m.title]));
   const data = await loadStudentMap(isLearner && session.status === "ok" ? session.profile.id : "", titles);
-  const placed = new Map((data.placement?.topics ?? []).map((t) => [t.topic, t.level]));
+  const placed = new Map(PREP_ONBOARDING_ENABLED ? (data.placement?.topics ?? []).map((t) => [t.topic, t.level]) : []);
   const left = answersToCalibrate(data.graded);
-  const fresh = data.graded === 0 && !data.placement;
+  const fresh = PREP_ONBOARDING_ENABLED && data.graded === 0 && !data.placement;
 
   return (
     <div className="mx-auto max-w-6xl space-y-8 px-4 py-6 sm:px-6 lg:py-10">

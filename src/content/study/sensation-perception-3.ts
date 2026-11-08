@@ -27,6 +27,10 @@ Gregory (1966, 1970), building on Hermann von Helmholtz's idea of **unconscious 
 }
 :::
 
+:::widget figure
+{"id": "ames-room", "quiz": true}
+:::
+
 ### Comparing the two
 | | Gibson | Gregory |
 |---|---|---|
@@ -164,6 +168,10 @@ If perception were purely bottom-up, it would be the same in every culture and e
 
 :::widget compare
 {"title": "The carpentered-world hypothesis", "a": {"label": "Carpentered settings", "points": ["Rectangular rooms, straight walls, square corners", "Corners are seen everywhere as cues to depth", "Strongly fooled by the Müller-Lyer illusion"], "summary": "People raised among right angles learn to read angled lines as corners in depth, and the habit makes the Müller-Lyer lines look unequal."}, "b": {"label": "Rounded, open settings", "points": ["Round huts, curved shapes, few right angles", "Less practice reading angles as depth", "Less fooled by the Müller-Lyer illusion"], "summary": "With less experience of carpentered corners, the illusion is weaker. Schooling, picture experience and eye pigmentation may explain part of the difference."}, "caption": "The horizontal-vertical illusion showed the reverse: people from flat, open land were more susceptible."}
+:::
+
+:::widget figure
+{"id": "muller-lyer", "quiz": true}
 :::
 
 ### Culture and pictures

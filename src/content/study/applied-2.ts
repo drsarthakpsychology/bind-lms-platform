@@ -276,6 +276,10 @@ In 1898 **Norman Triplett** noticed that cyclists rode faster when racing agains
 {"title": "Inverted-U or catastrophe?", "a": {"label": "Inverted-U", "points": ["Performance rises with arousal up to a point", "Past the peak, it declines gradually", "Lowering arousal a little restores performance", "Ignores worry"], "summary": "A smooth curve: too little and too much arousal both hurt."}, "b": {"label": "Catastrophe model", "points": ["With low worry, arousal acts like an inverted U", "With high worry, past the peak performance collapses suddenly", "Recovery needs a big drop in arousal, not a small one", "Worry and arousal interact"], "summary": "Hardy's model explains the sudden collapse of a batsman or a shooter under pressure."}}
 :::
 
+:::widget figure
+{"id": "yerkes-dodson", "quiz": true}
+:::
+
 ### Choking under pressure
 **Choking** is a drop in performance under pressure despite skill and motivation. Two explanations:
 - **Explicit monitoring (self-focus)**: under pressure, experts start paying conscious attention to automatic skills ("how exactly do I swing?"), which breaks them down. This is also called **reinvestment**.

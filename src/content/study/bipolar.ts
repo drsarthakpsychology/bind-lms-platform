@@ -866,6 +866,10 @@ Lithium is the **gold standard** for long-term bipolar treatment. It prevents bo
 {"drug": "lithium", "target": "enzymes inside neurons (inositol monophosphatase and GSK-3) and the signalling pathways they control", "routes": ["oral"], "notes": {"gut": "Lithium is a simple salt, absorbed almost completely from the gut. Slow-release tablets smooth the peaks.", "liver": "Unusually, the liver does not break lithium down at all. There is no first pass and no CYP interactions. Everything depends on the kidneys.", "blood": "Lithium is not bound to proteins and spreads through body water. Its half-life is about a day in young adults and longer in older people, so steady state comes about 5 to 7 days after a change.", "bbb": "Lithium crosses into the brain slowly, so brain levels lag behind blood levels.", "out": "Removed almost entirely by the kidneys, which handle it like sodium. Dehydration, low salt, NSAIDs, ACE inhibitors and thiazides make the kidneys hold on to it, so levels rise."}, "caption": "Follow the tablet. Because only the kidneys clear lithium, anything that changes kidney handling of salt and water changes the level."}
 :::
 
+:::widget figure
+{"id": "lithium-neuron"}
+:::
+
 ### Target levels
 - Most adults: about **0.6 to 0.8 mmol/L** for maintenance.
 - If relapse occurs at that level and lithium is tolerated: up to **0.8 to 1.0 mmol/L**.
@@ -1253,6 +1257,10 @@ Q: A relapse signature is:
 {"title": "The social zeitgeber model", "layout": "chain", "nodes": [{"id": "a", "label": "Life event", "detail": "A new baby, a night-shift job, long-distance travel, a wedding season."}, {"id": "b", "label": "Social rhythms break", "detail": "Bedtime, mealtimes, work and social contact lose their regular timing."}, {"id": "c", "label": "Body clock destabilises", "detail": "The time cues (zeitgebers) that set the circadian clock are lost; sleep and hormone rhythms drift."}, {"id": "d", "label": "Body symptoms", "detail": "Sleep loss and disturbed energy and appetite."}, {"id": "e", "label": "Episode", "detail": "In a vulnerable person, mania or depression follows."}], "caption": "This is the basis of interpersonal and social rhythm therapy (IPSRT): keep the rhythms, protect the clock."}
 :::
 
+:::widget figure
+{"id": "two-process-sleep"}
+:::
+
 ### Kindling and progression
 - 2.2 introduced kindling. The term comes from epilepsy research, where repeated sub-threshold stimulation of the brain eventually produces seizures on its own. It was applied to mood disorders alongside **behavioural sensitisation**, in which repeated stimulant doses produce ever larger responses.
 - Some long-term studies show more frequent episodes and more cognitive problems after many episodes, which is one argument for **early, sustained treatment**. The evidence is mixed; not everyone progresses.
@@ -1310,6 +1318,10 @@ Q: Which finding supports a circadian model of bipolar disorder?
 
 :::widget flow
 {"title": "Why lithium makes people thirsty", "layout": "chain", "nodes": [{"id": "a", "label": "Lithium enters the collecting duct", "detail": "It passes into kidney collecting duct cells through epithelial sodium channels (ENaC)."}, {"id": "b", "label": "GSK-3 and signalling change", "detail": "Inside the cell, lithium disturbs the signalling that responds to antidiuretic hormone (ADH)."}, {"id": "c", "label": "Fewer water channels", "detail": "Less aquaporin-2 reaches the cell surface."}, {"id": "d", "label": "ADH ignored", "detail": "The kidney cannot concentrate urine: nephrogenic diabetes insipidus."}, {"id": "e", "label": "Dilute urine, thirst", "detail": "Large volumes of dilute urine and drinking to keep up. Amiloride, which blocks ENaC, can help by keeping lithium out."}], "caption": "Knowing the mechanism explains the treatment: block the entry channel."}
+:::
+
+:::widget figure
+{"id": "lithium-neuron", "quiz": true}
 :::
 
 ### Valproate, lamotrigine and carbamazepine

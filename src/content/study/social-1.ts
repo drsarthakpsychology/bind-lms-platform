@@ -814,6 +814,10 @@ Solomon Asch (1951, 1956) asked a different question: would people conform when 
 }
 :::
 
+:::widget figure
+{"id": "asch-cards"}
+:::
+
 ### What changes the amount of conformity
 | Factor | Effect |
 |---|---|
@@ -976,6 +980,10 @@ Before the study, Milgram asked 40 psychiatrists to predict the results. They ex
   "reveal": "**65%** (26 of 40) gave the full 450 volts. **Every** participant went to at least 300 volts. Many sweated, trembled, laughed nervously and argued, but continued.",
   "clinician": "The original report appeared in 1963. Across his full programme, described in 1974, Milgram ran about 20 variations with around 780 participants; obedience across them averaged well below the headline figure. The 65% figure comes from the remote, voice-feedback-free baseline; with voice feedback (the 'new baseline') it was 62.5%."
 }
+:::
+
+:::widget figure
+{"id": "milgram-setup"}
 :::
 
 ### What changed obedience

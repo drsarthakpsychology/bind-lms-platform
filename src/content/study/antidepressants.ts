@@ -40,6 +40,10 @@ On the far side of the gap, the next neuron has special proteins sitting in its 
 A neurotransmitter is a key. A receptor is a lock. Only the right key fits the right lock, and when it turns, a door opens inside the receiving cell. Medicines are often **copied keys** (they turn the lock themselves) or **broken keys** (they sit in the lock and stop the real key getting in).
 :::
 
+:::widget figure
+{"id": "receptor-families"}
+:::
+
 ### The messengers that matter for mood
 | Messenger | What it helps with, in plain words | Where you will meet it |
 |---|---|---|
@@ -60,6 +64,10 @@ One messenger can have many receptor types. Serotonin alone has more than a doze
 
 :::widget receptor
 {"receptor": "5-HT1A", "title": "Try each kind of key in a serotonin lock", "caption": "Tap each option and watch the signal bar. Serotonin itself is the full agonist. Buspirone, and the extra action of vilazodone and vortioxetine, are partial agonists here. Keep the inverse agonist in mind: it pushes a receptor below its resting level, which a plain blocker cannot do."}
+:::
+
+:::widget figure
+{"id": "partial-agonist"}
 :::
 
 ### Where serotonin comes from
@@ -109,6 +117,10 @@ Noradrenaline and dopamine synapses work the same way, each with its own pump (N
 
 :::widget synapse
 {"drug": "none", "caption": "No medicine yet. Watch the cycle: release into the gap, some molecules reach receptors, and the pump on the sending neuron recycles the rest."}
+:::
+
+:::widget figure
+{"id": "ssri-synapse"}
 :::
 
 ### Two ways to raise a messenger
@@ -175,6 +187,10 @@ Half-life tells you three practical things:
 {"title": "Halving a dose in your head", "steps": [{"q": "A patient has 80 units of a medicine in the blood. Its half-life is 1 day. How much is left after 1 day?", "a": "Half of 80: **40 units**."}, {"q": "And after 3 days?", "a": "40, then 20, then **10 units**. Each half-life halves what is left."}, {"q": "Roughly when is it almost all gone?", "a": "After about 5 half-lives (here, about 5 days) only about 3% remains. That is the usual rule for 'washed out'."}], "yourTurn": [{"q": "A medicine with a half-life of 2 days is stopped. Roughly how long until it has washed out?", "a": "About 5 half-lives: around 10 days."}]}
 :::
 
+:::widget figure
+{"id": "pk-steady-state"}
+:::
+
 ### CYP enzymes and why other medicines matter
 Because the liver's CYP enzymes clear many medicines, two medicines can collide:
 - An **inhibitor** slows a CYP enzyme. The other medicine is cleared more slowly, so its level **rises** (risk of side effects or toxicity).
@@ -196,6 +212,10 @@ Q: Medicine A has a half-life of 6 hours; medicine B has a half-life of 4 days. 
 - Both reach steady state after the first dose
 - Half-life does not affect dosing
 > Steady state and washout both take about 4 to 5 half-lives, so the long half-life medicine is slower both ways.
+:::
+
+:::widget figure
+{"id": "liver-cell-cyp"}
 :::
 
 ## 0.4 What antidepressants are, and what they are not [core][starting]
@@ -489,6 +509,10 @@ SSRIs are first-line for depression and most anxiety disorders: effective, reaso
 }
 :::
 
+:::widget figure
+{"id": "ssri-synapse", "quiz": true}
+:::
+
 ### Side effects, and the receptor behind each
 | Side effect | Why (receptor level) | Practical point |
 |---|---|---|
@@ -758,6 +782,10 @@ Q: A young man on amitriptyline for back pain swallows his month's supply. The m
 > Sodium-channel block drives the lethality.
 :::
 
+:::widget figure
+{"id": "tca-synapse"}
+:::
+
 ## 2.4 MAOIs [extra][beginner]
 :::widget synapse
 {"drug": "maoi", "caption": "An MAOI does not touch the pump. It stops the enzyme that destroys serotonin, noradrenaline and dopamine, so more is stored and released. The same enzyme in the gut normally destroys tyramine from food."}
@@ -795,6 +823,10 @@ Q: A patient on phenelzine eats aged cheese and develops a sudden severe headach
 - NMS
 - Migraine
 > Dietary rules prevent it.
+:::
+
+:::widget figure
+{"id": "maoi-synapse"}
 :::
 
 ## 2.5 The others [extra][beginner]
@@ -1305,6 +1337,10 @@ Q: Agomelatine's 5-HT2C antagonism is thought to help mood mainly by:
 
 A patient's poor response can be a PK problem (the drug never reaches enough of the target) or a PD problem (the target is reached but blocking it does not help this person). The fixes differ.
 
+:::widget figure
+{"id": "pk-single-dose"}
+:::
+
 ### Occupancy and the flat dose-response curve
 Positron emission tomography (PET) studies show that the usual starting doses of SSRIs already occupy about **80% of SERT**. Occupancy follows a **hyperbolic** curve: each extra milligram adds less occupancy than the one before. So:
 - For depression, the dose-response curve for SSRIs is fairly **flat** above the starting dose. Raising the dose helps some people, but adds side effects more than benefit on average.
@@ -1364,6 +1400,10 @@ People inherit different versions of CYP genes. The version you carry decides ho
 | Intermediate metaboliser (IM) | Reduced | Somewhat higher levels |
 | Normal metaboliser (NM) | Usual | Standard dosing |
 | Ultrarapid metaboliser (UM) | Increased (extra gene copies for CYP2D6; the *17 allele for CYP2C19) | Low levels: may not work at normal doses |
+
+:::widget figure
+{"id": "liver-cell-cyp", "quiz": true}
+:::
 
 ### Who carries what
 - **CYP2D6** poor metabolisers: about 3 to 5% of people of European origin; less common in South and East Asians, who more often carry reduced-function variants (intermediate). Ultrarapid metabolisers are more common in parts of North Africa and the Middle East.
@@ -1460,6 +1500,10 @@ Classic antidepressants all work through monoamines. Since 2019, medicines that 
 
 :::widget timeline
 {"prompt": "Put these moments in antidepressant history in order.", "events": [{"label": "Iproniazid, a tuberculosis drug, is noticed to lift mood: the first MAOI", "when": "1950s"}, {"label": "Imipramine, the first tricyclic, is found to treat depression", "when": "late 1950s"}, {"label": "Fluoxetine, the first widely used SSRI, is approved in the US", "when": "1987"}, {"label": "Esketamine nasal spray is approved in the US for treatment-resistant depression", "when": "2019"}, {"label": "Zuranolone becomes the first oral medicine approved for postpartum depression in the US", "when": "2023"}, {"label": "Lumateperone is approved in the US as an add-on in major depression", "when": "2025"}], "why": "Each step widened the targets: from enzymes, to pumps, to glutamate and GABA-A receptors. Several early discoveries were accidents noticed by careful clinicians."}
+:::
+
+:::widget figure
+{"id": "nmda-receptor"}
 :::
 ### Dextromethorphan with bupropion: kinetics used on purpose
 Dextromethorphan (the cough suppressant) is an NMDA antagonist and sigma-1 agonist, but it is cleared so fast by CYP2D6 that it barely acts. Combining it with **bupropion**, a strong CYP2D6 inhibitor, keeps its levels high. This combination was approved in the US on 18 August 2022 for major depressive disorder. It is a neat example of a pharmacokinetic interaction turned into a treatment. It carries bupropion's seizure risk and dextromethorphan's serotonergic risk. In April 2026 the same combination was also approved in the US for agitation in Alzheimer's dementia.

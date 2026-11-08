@@ -386,6 +386,10 @@ Like most mental disorders, anxiety disorders come from vulnerability meeting st
 - **Brain.** The amygdala detects threat; the prefrontal cortex calms it; the hippocampus judges context. In anxiety disorders the amygdala tends to over-respond and the calming circuits to under-act (detail in the Advanced level).
 - **Body sensitivity.** People with panic disorder react more strongly to carbon dioxide and to body sensations.
 
+:::widget figure
+{"id": "stress-vulnerability"}
+:::
+
 ### Psychological factors
 - **Learning.** Fear can be learned by direct frightening experience (conditioning), by watching others (a parent afraid of dogs), or by being told (warnings).
 - **Avoidance** keeps fear alive (Mowrer's two-factor idea: fear is learned by conditioning, and maintained by the relief of avoidance).

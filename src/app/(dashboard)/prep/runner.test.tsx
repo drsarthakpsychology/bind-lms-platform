@@ -7,10 +7,19 @@ import type { PrepQuestion } from "@/lib/prep/types";
 
 vi.mock("next/navigation", () => ({ useRouter: () => ({ refresh: vi.fn(), push: vi.fn() }) }));
 const { toggleSaved } = vi.hoisted(() => ({ toggleSaved: vi.fn(async (x: { id: string; saved: boolean }) => ({ ok: !!x })) }));
+const { VISUALS } = vi.hoisted(() => ({ VISUALS: {} as Record<string, unknown> }));
 vi.mock("./actions", () => ({
-  checkAnswer: vi.fn(async ({ id, choice }: { id: string; choice: number }) => ({ id, answer: 1, explanation: "Because two.", learnHref: "/study/statistics/2-5", correct: choice === 1 })),
+  checkAnswer: vi.fn(async ({ id, choice }: { id: string; choice: number }) => ({ id, answer: 1, explanation: "Because two.", learnHref: "/study/statistics/2-5", correct: choice === 1, ...(VISUALS[id] ? { visual: VISUALS[id] } : {}) })),
   revealAnswer: vi.fn(async (id: string) => ({ id, answer: 1, explanation: "Because two.", learnHref: "/study/statistics/2-5" })),
   toggleSaved: (x: { id: string; saved: boolean }) => toggleSaved(x),
+}));
+
+// The real widgets are heavy; this stand-in draws a label, and throws for data { boom: true }.
+vi.mock("@/components/study/widgets", () => ({
+  Widget: ({ kind, data }: { kind: string; data: { boom?: boolean; title?: string } }) => {
+    if (data.boom) throw new Error("bad widget data");
+    return <p>{`Diagram: ${kind} ${data.title ?? ""}`}</p>;
+  },
 }));
 
 import { QuestionRunner } from "./runner";
@@ -87,5 +96,37 @@ describe("QuestionRunner", () => {
     render(<QuestionRunner {...props} />);
     fireEvent.click(screen.getByRole("button", { name: /Show the answer/ }));
     expect(await screen.findByText("The answer")).toBeInTheDocument();
+  });
+
+  it("shows a question's diagram after answering, not before", async () => {
+    VISUALS.s1 = { kind: "flow", data: { title: "Steps" }, caption: "How it flows" };
+    render(<QuestionRunner {...props} />);
+    expect(screen.queryByText(/Diagram:/)).toBeNull();
+    fireEvent.click(screen.getByRole("radio", { name: /2 and 3 only/ }));
+    fireEvent.click(screen.getByRole("button", { name: "Check answer" }));
+    expect(await screen.findByText("Diagram: flow Steps", {}, { timeout: 8000 })).toBeInTheDocument();
+    expect(screen.getByText("How it flows")).toBeInTheDocument();
+    delete VISUALS.s1;
+  });
+
+  it("a broken or unknown diagram is skipped and the page still works", async () => {
+    const spy = vi.spyOn(console, "error").mockImplementation(() => {});
+    VISUALS.s1 = { kind: "flow", data: { boom: true }, caption: "Never shown" };
+    const { unmount } = render(<QuestionRunner {...props} />);
+    fireEvent.click(screen.getByRole("radio", { name: /2 and 3 only/ }));
+    fireEvent.click(screen.getByRole("button", { name: "Check answer" }));
+    expect(await screen.findByText("Right", {}, { timeout: 8000 })).toBeInTheDocument();
+    await new Promise((r) => setTimeout(r, 50));
+    expect(screen.queryByText("Never shown")).toBeNull();
+    expect(screen.getByRole("button", { name: /See your score/ })).toBeInTheDocument();
+    unmount();
+    VISUALS.s1 = { kind: "not-a-widget", data: {} };
+    render(<QuestionRunner {...props} />);
+    fireEvent.click(screen.getByRole("radio", { name: /2 and 3 only/ }));
+    fireEvent.click(screen.getByRole("button", { name: "Check answer" }));
+    expect(await screen.findByText("Right", {}, { timeout: 8000 })).toBeInTheDocument();
+    expect(screen.queryByText(/Diagram:/)).toBeNull();
+    delete VISUALS.s1;
+    spy.mockRestore();
   });
 });

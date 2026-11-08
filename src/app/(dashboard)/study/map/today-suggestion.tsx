@@ -3,6 +3,7 @@ import { ArrowRight, Compass, Gamepad2, Repeat2, Zap, type LucideIcon } from "lu
 import { getSession } from "@/lib/auth/session";
 import { getFeatureStatus } from "@/lib/flags";
 import { loadTodaySuggestion } from "@/lib/learn/model/server";
+import { PREP_ONBOARDING_ENABLED } from "@/lib/prep/catalog";
 
 /**
  * TodaySuggestion: an optional "what to do today" card (owner decision 43).
@@ -17,7 +18,7 @@ export async function TodaySuggestion({ className }: { className?: string }) {
   const s = await loadTodaySuggestion(session.profile.id);
 
   const rows: { href: string; icon: LucideIcon; title: string; sub: string }[] = [];
-  if (!s.placed && !s.weak) rows.push({ href: "/study/placement", icon: Compass, title: "Take the placement quiz", sub: "18 questions to set your level" });
+  if (PREP_ONBOARDING_ENABLED && !s.placed && !s.weak) rows.push({ href: "/study/placement", icon: Compass, title: "Take the placement quiz", sub: "18 questions to set your level" });
   if (s.due) rows.push({ href: "/study/map/practice", icon: Repeat2, title: `${s.due} ${s.due === 1 ? "review" : "reviews"} due`, sub: "A mixed round brings them back" });
   if (s.weak) rows.push({ href: s.weak.practiceHref, icon: Zap, title: `Fix: ${s.weak.label}`, sub: "A short quiz on your weakest spot" });
   rows.push({ href: "/prep/smart", icon: Gamepad2, title: "Smart practice", sub: "10 questions from your weak topics" });

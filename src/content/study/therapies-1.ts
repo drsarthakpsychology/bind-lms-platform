@@ -683,6 +683,10 @@ Q: Who proposed the core conditions of empathy, positive regard and congruence?
 ## 2.1 Behaviour therapy in practice [core][beginner]
 Behaviour therapy uses learning principles (classical and operant conditioning, modelling) to change behaviour directly. The theory is in **Mind, development and defence mechanisms**, Section 2.6; here is how it is used.
 
+:::widget figure
+{"id": "little-albert"}
+:::
+
 ### Exposure: facing fear until it fades
 Avoidance keeps fear alive (negative reinforcement). **Exposure** reverses this: the person approaches the feared thing, **stays** with it without escape or safety behaviours, and learns that the feared outcome does not happen and the fear falls.
 
@@ -725,6 +729,10 @@ Avoidance keeps fear alive (negative reinforcement). **Exposure** reverses this:
  "title": "Arousal, performance and why exposure is graded",
  "caption": "Performance is best at moderate arousal, and the peak comes at lower arousal for complex tasks. Exposure steps are chosen to be challenging but manageable (moderate distress), so new learning can happen."
 }
+:::
+
+:::widget figure
+{"id": "pavlov-apparatus", "quiz": true}
 :::
 
 ### Other behavioural methods
@@ -1369,6 +1377,10 @@ Systemic therapists see a problem not just "inside" one person but in the **patt
  ],
  "caption": "IPT is time-limited, usually 12 to 16 sessions."
 }
+:::
+
+:::widget figure
+{"id": "genogram-symbols", "quiz": true}
 :::
 
 ### Key ideas

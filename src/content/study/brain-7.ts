@@ -240,6 +240,14 @@ Hans Berger, a German psychiatrist, recorded the first human **electroencephalog
 | **Low-voltage fast activity** | Alcohol or benzodiazepine withdrawal, and benzodiazepine use |
 | **Continuous seizure activity in a patient who just looks confused or catatonic** | Non-convulsive status epilepticus |
 
+:::widget figure
+{"id": "eeg-rhythms"}
+:::
+
+:::widget figure
+{"id": "spike-wave"}
+:::
+
 ### A night in the sleep laboratory
 **Polysomnography** records at least three signals to score sleep: **EEG** (brain waves), **EOG** (eye movements) and **chin EMG** (muscle tone). A full study adds breathing airflow and effort, blood oxygen, ECG and leg movements.
 
@@ -255,6 +263,10 @@ Hans Berger, a German psychiatrist, recorded the first human **electroencephalog
 {
  "caption": "Drag through the night and name the waves at each stage: theta in N1, spindles and K-complexes in N2, delta in N3, sawtooth in REM. Note when growth hormone would be released (the first N3) and when most dreams occur (REM, growing towards morning)."
 }
+:::
+
+:::widget figure
+{"id": "sleep-stage-eeg"}
 :::
 
 ### What REM sleep is like
@@ -278,6 +290,10 @@ Hans Berger, a German psychiatrist, recorded the first human **electroencephalog
   { "text": "The largest pulse of growth hormone", "bucket": 2 }
  ]
 }
+:::
+
+:::widget figure
+{"id": "hypnogram", "quiz": true}
 :::
 
 ### What switches sleep on and off

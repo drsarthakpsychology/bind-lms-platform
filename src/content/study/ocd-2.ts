@@ -367,6 +367,10 @@ Q: Which finding supports the idea that CBT and medicines act on a common circui
 :::
 
 ## 3.2 Medicines at depth, and the resistant patient [core][advanced]
+
+:::widget figure
+{"id": "ssri-synapse"}
+:::
 ### Why higher doses and more time?
 Animal work suggests that in the **orbitofrontal cortex**, serotonin terminal autoreceptors desensitise only after longer exposure to higher doses than in other regions. That may explain the slow response and dose-response relationship of SSRIs in OCD. Clomipramine's benefit comes from the parent drug's strong serotonin reuptake block; its metabolite, desmethylclomipramine, mainly blocks noradrenaline reuptake.
 

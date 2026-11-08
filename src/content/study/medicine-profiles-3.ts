@@ -33,6 +33,10 @@ The relationship between dose and occupancy is **hyperbolic**: early dose increm
 ### Serotonin 2A and the atypical idea
 Most second-generation drugs block **5-HT2A** more strongly than D2. 5-HT2A receptors on cortical neurons and on nigrostriatal dopamine terminals act as a brake on dopamine release. Blocking them releases some dopamine in the striatum and prefrontal cortex, which may offset D2 blockade where it is unwanted (movement, cognition). Pimavanserin, a selective 5-HT2A inverse agonist with no D2 action, treats Parkinson's disease psychosis, showing that 5-HT2A alone can have antipsychotic effects in some conditions.
 
+:::widget figure
+{"id": "antipsychotic-d2"}
+:::
+
 ### Beyond dopamine: muscarinic antipsychotics
 A new class works without blocking D2 at all. **Xanomeline**, an agonist at M1 and M4 muscarinic receptors in the brain, reduces dopamine release in the striatum through M4 receptors on cholinergic interneurons and dopamine terminals, and may improve cognition through M1. Its peripheral cholinergic side effects (nausea, vomiting, sweating) are blocked by **trospium**, a muscarinic antagonist that does not enter the brain. The combination, xanomeline-trospium, was approved in the US in 2024 for schizophrenia, the first new antipsychotic mechanism in decades.
 
@@ -342,6 +346,10 @@ Psychopharmacology is moving beyond the monoamine model. At the Advanced level y
 :::
 
 **Esketamine** (the S-enantiomer of ketamine), given as a **nasal spray** in a clinic, produces antidepressant effects within hours to days in some people with treatment-resistant depression. It blocks NMDA receptors on inhibitory interneurons, leading to a burst of glutamate, activation of AMPA receptors, release of brain-derived neurotrophic factor and rapid growth of synaptic connections. Side effects during the session: **dissociation**, dizziness, nausea, raised blood pressure. It has abuse potential and needs observation for about two hours after each dose. **Intravenous ketamine** is used off-label in some centres, including in India.
+
+:::widget figure
+{"id": "nmda-receptor"}
+:::
 
 ### Neurosteroids
 **Brexanolone** (an intravenous infusion over about 60 hours) and **zuranolone** (an oral 14-day course) are synthetic analogues of allopregnanolone, a natural neurosteroid that falls sharply after childbirth. They act on GABA-A receptors, including extrasynaptic ones, and treat **postpartum depression** rapidly.

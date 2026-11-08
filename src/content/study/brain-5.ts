@@ -404,6 +404,10 @@ The table in 2.3 gave you the whole family in one view. Now take each system in 
 - **G-protein receptors**: eight **metabotropic** receptors (mGluR1 to 8) in three groups; group I excites the receiving cell, groups II and III mostly brake release.
 - **When it goes wrong**: too much glutamate floods neurons with calcium and kills them (**excitotoxicity**) in stroke, prolonged seizures, head injury and possibly in Huntington's disease and ALS.
 
+:::widget figure
+{"id": "nmda-receptor"}
+:::
+
 ### GABA: the main brake
 - **Made** from glutamate by **glutamic acid decarboxylase (GAD)**, which needs vitamin B6. Broken down by **GABA transaminase**. Taken back by **GABA transporters**.
 - **Where**: local inhibitory interneurons everywhere; the main output neurons of the striatum and of the cerebellar cortex (Purkinje cells) are also GABA neurons.
@@ -431,6 +435,10 @@ The table in 2.3 gave you the whole family in one view. Now take each system in 
  ],
  "caption": "Different subunits do different jobs: alpha-1 is linked to sedation and amnesia, alpha-2 and alpha-3 to calming anxiety and muscle relaxation, alpha-5 to memory."
 }
+:::
+
+:::widget figure
+{"id": "benzo-gabaa"}
 :::
 
 ### Glycine: the spinal brake

@@ -193,6 +193,10 @@ Jeffrey Hall, Michael Rosbash and Michael Young shared the 2017 Nobel Prize for 
 
 **Clinical genetics of the clock**: a PER2 mutation causes **familial advanced sleep phase** (sleeping at 7 pm, waking at 3 am); a CRY1 variant is linked to delayed sleep phase. Mice with a mutated CLOCK gene are hyperactive, sleep less and show mania-like reward seeking, reversed by **lithium**.
 
+:::widget figure
+{"id": "two-process-sleep"}
+:::
+
 ### Sleep in depression
 :::widget hypnogram
 {
@@ -210,6 +214,10 @@ Jeffrey Hall, Michael Rosbash and Michael Young shared the 2017 Nobel Prize for 
 | Insomnia as a cause | Persistent insomnia roughly **doubles** the risk of a later depressive episode; treating it with CBT-I also reduces depressive symptoms |
 
 Short REM latency is **not specific**: it also occurs in schizophrenia, OCD, eating disorders, alcohol withdrawal and, most strikingly, narcolepsy.
+
+:::widget figure
+{"id": "hypnogram"}
+:::
 
 ### Chronotherapy: sleep, light and timing as treatments
 - **Total sleep deprivation** ("wake therapy"): keeping a depressed patient awake for one night lifts mood the next day in roughly half, within hours, faster than any medicine except ketamine. Most relapse after the next sleep, so it is combined with **sleep phase advance** (sleeping early for a few nights) and **morning bright light**, and with **lithium** in bipolar depression, a package called **triple chronotherapy**. Risk: a switch into mania in bipolar disorder.

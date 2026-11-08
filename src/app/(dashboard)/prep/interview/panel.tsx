@@ -236,7 +236,7 @@ export function InterviewPanel({ questions: initial, saving }: { questions: Pane
         </ol>
         <div className="grid gap-2.5 sm:grid-cols-2">
           <Link href="/prep" className={btnPrimary}>
-            Back to your plan <ArrowRight className="size-4" aria-hidden />
+            Back to Exam Prep <ArrowRight className="size-4" aria-hidden />
           </Link>
           <button type="button" className={btnPlain} disabled={refreshing} onClick={() => startRefresh(() => router.refresh())}>
             <RotateCcw className="size-4" aria-hidden /> {refreshing ? "Finding questions…" : "Another panel"}

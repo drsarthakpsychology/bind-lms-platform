@@ -16,6 +16,10 @@ Cognitive tests help you **detect**, **describe** and **track** cognitive proble
 {"kind": "normal", "title": "Test scores, norms and cut-offs", "caption": "Move the slider along the curve. A score's meaning depends on the reference group: the same raw score can be normal for someone with little schooling and low for a graduate. Cut-offs trade sensitivity against specificity, so a score near the cut-off needs clinical judgement and an informant history."}
 :::
 
+:::widget figure
+{"id": "copy-and-clock", "quiz": true}
+:::
+
 ### Rough interpretation
 - **MMSE**: 25 to 30 usually normal (education-dependent), about 18 to 24 mild impairment, 10 to 17 moderate, below 10 severe.
 - **MoCA**: 26 or more is usually taken as normal; lower scores need careful interpretation, especially in people with little schooling, where cut-offs are lower.

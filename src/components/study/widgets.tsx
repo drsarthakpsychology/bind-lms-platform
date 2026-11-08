@@ -21,6 +21,8 @@ import { trackLearn } from "@/lib/learn/track";
 import { BrainMap, Curve, Flow, Layers } from "./visuals";
 import { Journey, Neuron, Pathways, Receptor } from "./animations";
 import { Compare, Conditioning, MemoryFlow, StressResponse, Timeline } from "./animations2";
+import { Figure } from "./figures/figure";
+import type { FigureData } from "@/lib/study/types";
 import { Attention, Conservation, Dissonance, Experiment, Illusion } from "./animations3";
 import { Hypnogram, Release, Strange, ThoughtRecord } from "./animations4";
 import { NervousSystem } from "./scenes/nervous-system";
@@ -607,6 +609,8 @@ export function Widget({ kind, data }: { kind: WidgetKind; data: WidgetData }) {
       return <BrainSlicer d={data as BrainSlicerData} />;
     case "amesroom":
       return <AmesRoom d={data as AmesRoomData} />;
+    case "figure":
+      return <Figure d={data as FigureData} />;
   }
 }
 
