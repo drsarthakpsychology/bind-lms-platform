@@ -33,6 +33,11 @@ import { PERCEPTION_ATTENTION_L02 } from "./perception-attention-l02";
 import { PERCEPTION_ATTENTION_L03 } from "./perception-attention-l03";
 import { PERCEPTION_ATTENTION_L04 } from "./perception-attention-l04";
 import { PERCEPTION_ATTENTION_L05 } from "./perception-attention-l05";
+import { PSYCHOMETRICS_ASSESSMENT_L01 } from "./psychometrics-assessment-l01";
+import { PSYCHOMETRICS_ASSESSMENT_L02 } from "./psychometrics-assessment-l02";
+import { PSYCHOMETRICS_ASSESSMENT_L03 } from "./psychometrics-assessment-l03";
+import { PSYCHOMETRICS_ASSESSMENT_L04 } from "./psychometrics-assessment-l04";
+import { PSYCHOMETRICS_ASSESSMENT_L05 } from "./psychometrics-assessment-l05";
 import { PSYCHOPATHOLOGY_L01 } from "./psychopathology-l01";
 import { PSYCHOPATHOLOGY_L02 } from "./psychopathology-l02";
 import { PSYCHOPATHOLOGY_L03 } from "./psychopathology-l03";
@@ -96,6 +101,11 @@ export const LONG_QA: LongQA[] = [
   ...PERCEPTION_ATTENTION_L03,
   ...PERCEPTION_ATTENTION_L04,
   ...PERCEPTION_ATTENTION_L05,
+  ...PSYCHOMETRICS_ASSESSMENT_L01,
+  ...PSYCHOMETRICS_ASSESSMENT_L02,
+  ...PSYCHOMETRICS_ASSESSMENT_L03,
+  ...PSYCHOMETRICS_ASSESSMENT_L04,
+  ...PSYCHOMETRICS_ASSESSMENT_L05,
   ...PSYCHOPATHOLOGY_L01,
   ...PSYCHOPATHOLOGY_L02,
   ...PSYCHOPATHOLOGY_L03,
