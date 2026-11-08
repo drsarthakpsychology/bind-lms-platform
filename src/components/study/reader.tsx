@@ -104,6 +104,30 @@ function scrollBehavior(): ScrollBehavior {
   }
 }
 
+/**
+ * The part of a section the student was on, kept in this browser so Home's
+ * Continue (and coming back to a section) opens on that part, not part 1.
+ * A per-device convenience: nothing breaks when storage is blocked.
+ */
+const partKey = (moduleId: string, sectionId: string) => `vibha-study-part:${moduleId}/${sectionId}`;
+function readPart(key: string): number | null {
+  try {
+    const n = Number(window.localStorage.getItem(key));
+    return Number.isInteger(n) && n > 0 ? n : null;
+  } catch {
+    return null;
+  }
+}
+function writePart(key: string, step: number) {
+  try {
+    if (step > 0) window.localStorage.setItem(key, String(step));
+    else window.localStorage.removeItem(key);
+  } catch {
+    /* storage blocked: the section simply opens on part 1 next time */
+  }
+}
+const noSubscribe = () => () => {};
+
 export type ChunkView = { title: string; node: React.ReactNode };
 
 /**
@@ -156,7 +180,12 @@ export function SectionReader({
   const [tocOpen, setTocOpen] = React.useState(false);
   const done = Boolean(st.study.done[studyKey(moduleId, section.id)]);
   // step = index of the current part; chunks.length = the "check yourself / finish" screen.
-  const [step, setStep] = React.useState(() => (done ? chunks.length : 0));
+  // Until the student moves, a finished section opens on its end screen and an
+  // unfinished one on the part they were last reading in this browser.
+  const key = partKey(moduleId, section.id);
+  const savedPart = React.useSyncExternalStore(noSubscribe, () => readPart(key), () => null);
+  const [picked, setPicked] = React.useState<number | null>(null);
+  const step = picked ?? (done ? chunks.length : Math.max(0, Math.min(savedPart ?? 0, chunks.length - 1)));
   const partRefs = React.useRef<(HTMLDivElement | null)[]>([]);
   const topRef = React.useRef<HTMLDivElement>(null);
   useStudyTimer(moduleId);
@@ -175,8 +204,15 @@ export function SectionReader({
   void recall;
   const hasCheck = viva.length > 0;
 
+  // Opened on a saved part (wide screens show every part up to it): bring that part into view.
+  const resumedAt = picked === null && !done ? savedPart : null;
+  React.useEffect(() => {
+    if (resumedAt && wide) partRefs.current[resumedAt]?.scrollIntoView({ block: "start" });
+  }, [resumedAt, wide]);
+
   function go(to: number) {
-    setStep(to);
+    setPicked(to);
+    if (!section.isTest) writePart(key, to < chunks.length ? to : 0);
     const behavior = scrollBehavior();
     requestAnimationFrame(() => {
       if (wide && to < chunks.length) partRefs.current[to]?.scrollIntoView({ behavior, block: "start" });

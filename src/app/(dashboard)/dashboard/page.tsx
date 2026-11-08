@@ -36,8 +36,12 @@ export default async function DashboardPage() {
   const viewingAsStudent = cookieStore.get(VIEW_MODE_COOKIE)?.value === "student";
   if (profile.role === "admin" && !viewingAsStudent) redirect("/admin");
 
-  // An admin previewing the student side sees what the lectures_only roster sees.
-  const effectiveScope = profile.role === "admin" && viewingAsStudent ? "lectures_only" : profile.scope;
+  // An admin previewing the student side sees a full student's Home (the
+  // roster is full, and the shell shows the full menu), and every published
+  // course, like the Lectures page shows them.
+  const preview = profile.role === "admin" && viewingAsStudent;
+  const effectiveScope = preview ? "full" : profile.scope;
+  const courseScope = preview ? "lectures_only" : profile.scope;
 
   const supabase = await createClient();
   const [{ data: courses }, { data: enrollments }, flags, blocked] = await Promise.all([
@@ -50,7 +54,7 @@ export default async function DashboardPage() {
   // A student sees published courses they are enrolled in (a lectures_only
   // roster student sees every published course), plus their cohort's courses.
   const enrolledIds = new Set((enrollments ?? []).map((e) => e.course_id));
-  const legacy = effectiveScope === "lectures_only" ? (courses ?? []) : (courses ?? []).filter((c) => enrolledIds.has(c.id));
+  const legacy = courseScope === "lectures_only" ? (courses ?? []) : (courses ?? []).filter((c) => enrolledIds.has(c.id));
   const visible = new Set(
     await visibleCourseIds(profile.id, profile.role === "admin", (courses ?? []).map((c) => c.id), legacy.map((c) => c.id)),
   );
