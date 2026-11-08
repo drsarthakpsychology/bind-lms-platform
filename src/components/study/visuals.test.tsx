@@ -33,10 +33,13 @@ describe("visual widgets", () => {
       unmount();
     }
   });
-  it("layers and brain map respond to taps", () => {
-    render(<Layers d={{ shape: "pyramid", layers: [{ label: "Self-actualisation", detail: "Becoming who you can be" }, { label: "Needs", detail: "Food" }] }} />);
-    fireEvent.click(screen.getAllByRole("button", { name: "Self-actualisation" })[0]);
+  it("layers show every layer and its meaning at once, with no buttons; brain map responds to taps", () => {
+    const { unmount } = render(<Layers d={{ shape: "pyramid", layers: [{ label: "Self-actualisation", detail: "Becoming who you can be" }, { label: "Needs", detail: "Food" }] }} />);
     expect(screen.getByText("Becoming who you can be")).toBeInTheDocument();
+    expect(screen.getByText("Food")).toBeInTheDocument();
+    expect(screen.queryAllByRole("button")).toHaveLength(0);
+    expect(screen.queryByText(/Tap a layer/)).toBeNull();
+    unmount();
     render(<BrainMap d={{ focus: ["amygdala"], notes: { amygdala: "Threat detection" } }} />);
     expect(screen.getByText("Threat detection")).toBeInTheDocument();
   });
@@ -44,12 +47,15 @@ describe("visual widgets", () => {
 
 import { Journey, Neuron, Pathways, Receptor } from "./animations";
 describe("animated explainers", () => {
-  it("journey steps through stages and switches route", () => {
+  it("journey lists every stage with its words, tapping one moves the picture, and it switches route", () => {
     render(<Journey d={{ drug: "sertraline", target: "serotonin transporters", routes: ["oral", "iv"] }} />);
+    expect(screen.getAllByText(/first-pass/).length).toBeGreaterThan(0);
+    expect(screen.queryByRole("button", { name: /^(Back|Next|Play)/ })).toBeNull();
     fireEvent.click(screen.getByRole("button", { name: /Liver/ }));
-    expect(screen.getAllByRole("status").at(-1)).toHaveTextContent(/first-pass/);
+    expect(screen.getByRole("button", { name: /Liver/ })).toHaveAttribute("aria-pressed", "true");
+    expect(screen.getAllByRole("status").at(-1)).toHaveTextContent(/Liver/);
     fireEvent.click(screen.getByRole("button", { name: "Into a vein" }));
-    expect(screen.getAllByRole("status").at(-1)).toHaveTextContent(/no first-pass/);
+    expect(screen.getAllByText(/no first-pass/).length).toBeGreaterThan(0);
   });
   it("neuron is all or none", () => {
     render(<Neuron d={{}} />);
@@ -71,23 +77,24 @@ describe("animated explainers", () => {
 });
 
 describe("process animations", () => {
-  it("classical conditioning steps to extinction", () => {
+  it("classical conditioning shows every step at once; tapping one moves the picture", () => {
     render(<Conditioning d={{ kind: "classical" }} />);
-    fireEvent.click(screen.getByRole("button", { name: /Extinction$/ }));
-    expect(screen.getAllByRole("status").at(-1)).toHaveTextContent(/spontaneous recovery/);
+    expect(screen.getByText(/spontaneous recovery/)).toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: /^(Back|Next|Play)/ })).toBeNull();
+    fireEvent.click(screen.getByRole("button", { name: /^Extinction/ }));
+    expect(screen.getAllByRole("status").at(-1)).toHaveTextContent("Showing 5: Extinction");
   });
   it("operant conditioning explains variable ratio", () => {
     render(<Conditioning d={{ kind: "operant" }} />);
-    fireEvent.click(screen.getByRole("button", { name: /Not every time/ }));
-    expect(screen.getAllByRole("status").at(-1)).toHaveTextContent(/variable ratio/);
+    expect(screen.getByText(/variable ratio/)).toBeInTheDocument();
   });
-  it("memory flow and stress response step through", () => {
+  it("memory flow and stress response show every step", () => {
     render(<MemoryFlow d={{}} />);
+    expect(screen.getByText(/encodes it into long-term memory/)).toBeInTheDocument();
     fireEvent.click(screen.getByRole("button", { name: /Making it stick/ }));
-    expect(screen.getAllByRole("status").at(-1)).toHaveTextContent(/encodes/);
+    expect(screen.getAllByRole("status").at(-1)).toHaveTextContent(/Making it stick/);
     render(<StressResponse d={{}} />);
-    fireEvent.click(screen.getByRole("button", { name: /Switching off/ }));
-    expect(screen.getAllByRole("status").at(-1)).toHaveTextContent(/Cortisol/);
+    expect(screen.getByText(/Cortisol feeds back/)).toBeInTheDocument();
   });
   it("timeline scores the order", () => {
     render(<Timeline d={{ prompt: "Order Piaget's stages", events: [{ label: "Sensorimotor" }, { label: "Preoperational" }, { label: "Concrete operational" }] }} />);
@@ -98,12 +105,10 @@ describe("process animations", () => {
     fireEvent.click(screen.getByRole("button", { name: "Check the order" }));
     expect(screen.getByRole("status")).toHaveTextContent("3 of 3 in the right place");
   });
-  it("compare slider switches summary", () => {
+  it("compare shows both sides and both summaries at once, with no slider", () => {
     render(<Compare d={{ a: { label: "Novice", points: ["Slow"], summary: "Effortful" }, b: { label: "Expert", points: ["Fast"], summary: "Automatic" } }} />);
-    fireEvent.change(screen.getByRole("slider"), { target: { value: "10" } });
-    expect(screen.getByRole("status")).toHaveTextContent("Effortful");
-    fireEvent.change(screen.getByRole("slider"), { target: { value: "90" } });
-    expect(screen.getByRole("status")).toHaveTextContent("Automatic");
+    for (const t of ["Novice", "Slow", "Effortful", "Expert", "Fast", "Automatic"]) expect(screen.getByText(t)).toBeInTheDocument();
+    expect(screen.queryByRole("slider")).toBeNull();
   });
 });
 

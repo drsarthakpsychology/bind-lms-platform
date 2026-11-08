@@ -14,7 +14,7 @@ const SYN_CHALLENGE: ChallengeQ[] = [
   { q: "An antagonist at the receptor...", options: ["binds and switches the receptor on", "speeds up reuptake", "binds but does not switch it on, and keeps the transmitter out"], answer: 2, why: "An antagonist fits the receptor without activating it. Antipsychotics work partly this way, blocking dopamine D2 receptors." },
   { q: "Botulinum toxin stops which step?", options: ["Release from the vesicles", "Binding to receptors", "Breakdown in the gap"], answer: 0, why: "It cuts the proteins that let vesicles fuse, so no acetylcholine is released and the muscle is never told to contract." },
 ];
-import { JourneyBar, Missions, Scene3DSlot, SceneCard, ViewSwitch, btn, chip, statusCls, useInView, useJourney, useMissions, useSceneView, useThemeColors, type V3 } from "./kit";
+import { Scene3DSlot, SceneCard, ViewSwitch, btn, chip, statusCls, useInView, useJourney, useSceneView, useThemeColors, type V3 } from "./kit";
 
 /**
  * A synapse in 3D: fire the nerve ending and watch calcium flood in,
@@ -158,13 +158,10 @@ export function SynapseScene({ d }: { d: Synapse3dData }) {
   const [drug, setDrug] = React.useState<SynDrug>("none");
   const [fireAt, setFireAt] = React.useState<number | null>(null);
   const journey = useJourney();
-  const ms = useMissions(["fire", "reuptake", "blocker", "botox"] as const);
   const fire = () => {
     setFireAt(performance.now());
     sfx("zap");
     journey.start(`fire-${drug}`, STAGES.map((s) => ({ path: s.id, ms: s.ms, say: s.name, tone: "info" as const })));
-    if (drug === "none") ms.mark("fire");
-    if (drug !== "none") ms.mark(drug);
     trackLearn({ type: "widget", kind: "synapse3d", item: drug });
   };
   const stage = journey.cur ? journey.leg : journey.done ? STAGES.length - 1 : -1;
@@ -172,17 +169,20 @@ export function SynapseScene({ d }: { d: Synapse3dData }) {
   const resp = stage < 0 ? 0 : response(Math.max(0, e), drug);
   const dr = DRUGS.find((x) => x.id === drug)!;
   return (
-    <SceneCard title={d.title ?? `A ${tx} synapse, up close`} goal="Fire the nerve ending and follow one message across the gap, then add a drug and find the step it changes." caption={d.caption} tools={<ViewSwitch v={v} />} sound>
+    <SceneCard title={d.title ?? `A ${tx} synapse, up close`} caption={d.caption} tools={<ViewSwitch v={v} />} sound>
       <div ref={box} className="relative mt-3 h-[18rem] overflow-hidden rounded-xl border-2 border-foreground bg-background sm:h-[22rem]">
         {v.use3D ? (
           <Scene3DSlot flat={<SynapseFlat e={e} drug={drug} />} render={(onReady) => <View3D fireAt={fireAt} stage={stage} running={journey.active} reduce={v.reduce} drug={drug} inView={inView} colors={colors} onReady={onReady} />} />
         ) : <SynapseFlat e={e} drug={drug} />}
-        {v.use3D ? <p className="pointer-events-none absolute bottom-1.5 left-2 rounded bg-background/80 px-1.5 text-xs text-muted-foreground">Drag to turn, pinch to zoom</p> : null}
       </div>
-      <ol className="mt-3 grid grid-cols-5 gap-1" aria-label="Steps">
+      <ol className="mt-3 grid gap-1.5" aria-label="Steps">
         {STAGES.map((s, k) => (
-          <li key={s.id} aria-current={k === stage ? "step" : undefined} className={cn("rounded-md border-2 px-1 py-1.5 text-center text-[0.7rem] font-semibold leading-tight sm:text-xs", k === stage ? "border-foreground bg-foreground text-background" : k < stage ? "border-foreground bg-card" : "border-foreground/25 text-muted-foreground")}>
-            {k + 1}. {s.name}
+          <li key={s.id} aria-current={k === stage ? "step" : undefined} className={cn("flex items-start gap-2.5 rounded-md border-2 px-3 py-2 transition-colors duration-fast", k === stage ? "border-foreground bg-muted" : "border-foreground/25 bg-card")}>
+            <span aria-hidden className={cn("mt-0.5 inline-flex size-6 shrink-0 items-center justify-center rounded-full border-2 border-foreground text-xs font-bold", k === stage ? "bg-primary text-primary-foreground" : "bg-card")}>{k + 1}</span>
+            <span className="min-w-0 [overflow-wrap:anywhere]">
+              <span className="block font-semibold leading-snug">{s.name}</span>
+              <span className="mt-0.5 block text-[0.92rem] leading-relaxed text-foreground/80">{stageText(s.id, drug, tx)}</span>
+            </span>
           </li>
         ))}
       </ol>
@@ -190,7 +190,6 @@ export function SynapseScene({ d }: { d: Synapse3dData }) {
         <button type="button" className={cn(btn, "min-h-12 bg-primary px-5 text-primary-foreground hover:-translate-y-0.5")} onClick={fire}>
           {journey.done ? <RotateCcw className="size-4" aria-hidden /> : <Zap className="size-4" aria-hidden />} {journey.done ? "Fire again" : "Fire the nerve ending"}
         </button>
-        <JourneyBar journey={journey} kind="synapse3d" />
         <div className="flex min-w-40 flex-1 basis-full items-center gap-2 text-sm font-semibold sm:basis-auto">
           <span>Message received</span>
           <div className="h-3 flex-1 overflow-hidden rounded-full border-2 border-foreground bg-background" role="meter" aria-valuemin={0} aria-valuemax={100} aria-valuenow={Math.round(resp * 100)} aria-label="Message received by the next cell">
@@ -205,25 +204,14 @@ export function SynapseScene({ d }: { d: Synapse3dData }) {
         ))}
       </div>
       <div className={statusCls} role="status" aria-live="polite">
-        {stage < 0 ? (
-          <>Press <span className="font-semibold">Fire the nerve ending</span> to send one message across the synapse.{drug !== "none" ? ` Drug added: ${dr.name}.` : ""}</>
-        ) : (
+        {stage < 0 ? null : (
           <>
-            <span className="font-semibold">Step {stage + 1} of {STAGES.length}, {STAGES[stage].name}: </span>{stageText(STAGES[stage].id, drug, tx)}
-            <span className="mt-1 block">The receiving cell is getting {resp > 0.7 ? "a strong message" : resp > 0.1 ? "a weak message" : "no message"} ({Math.round(resp * 100)} percent).</span>
+            <span className="font-semibold">{STAGES[stage].name}. </span>
+            The receiving cell is getting {resp > 0.7 ? "a strong message" : resp > 0.1 ? "a weak message" : "no message"} ({Math.round(resp * 100)} percent).
           </>
         )}
         {drug !== "none" ? <span className="mt-2 block"><span className="font-semibold">{dr.name}: </span>{dr.text}</span> : null}
       </div>
-      <Missions
-        doneText="All missions done: you have seen release, binding and reuptake, and three ways a drug or toxin changes them."
-        items={[
-          { id: "fire", label: "Send one message with no drug", done: ms.done("fire") },
-          { id: "reuptake", label: "Block reuptake: the message lasts", done: ms.done("reuptake") },
-          { id: "blocker", label: "Block the receptors: no message", done: ms.done("blocker") },
-          { id: "botox", label: "Stop release with botulinum toxin", done: ms.done("botox") },
-        ]}
-      />
       <QuickChallenge title="Drugs at the synapse" kind="synapse3d" items={SYN_CHALLENGE} />
     </SceneCard>
   );

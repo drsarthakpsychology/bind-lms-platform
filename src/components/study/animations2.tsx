@@ -6,13 +6,14 @@ import type { CompareData, ConditioningData, MemoryFlowData, StressData, Timelin
 import { cn } from "@/lib/utils";
 import { Rich } from "./rich";
 import { trackLearn } from "@/lib/learn/track";
-import { PlayBar, useStepPlayer } from "./pacing";
+import { StepPicker } from "./pacing";
 
 /**
  * Animated explainers for core psychology processes: classical and operant
- * conditioning, the memory stores, the stress response, a draggable
- * timeline, and a before/after compare slider. Transform and opacity only,
- * stops under reduce-motion, and every state is written in words.
+ * conditioning, the memory stores and the stress response (every step is
+ * listed with its words; tapping one moves the picture), an order-the-events
+ * task, and a side-by-side compare. Transform and opacity only, stops under
+ * reduce-motion, and every state is written in words.
  */
 
 const card = "rounded-2xl border-2 border-foreground bg-card p-4 sm:p-5 shadow-[var(--shadow-hard-sm)]";
@@ -39,24 +40,24 @@ const OPERANT = [
 export function Conditioning({ d }: { d: ConditioningData }) {
   const classical = d.kind === "classical";
   const steps = classical ? CLASSICAL : OPERANT;
-  const st = useStepPlayer(steps.length, (k) => `${steps[k]?.name ?? ""} ${steps[k]?.text ?? ""}`);
-  const cur = steps[Math.min(st.i, steps.length - 1)];
-  const drool = classical ? [0, 0.15, 0.5, 1, 0.2][st.i] : 0;
-  const pressRate = classical ? 0 : [0.1, 0.3, 0.7, 1, 0.25][st.i];
+  const [i, setI] = React.useState(0);
+  const cur = steps[i];
+  const drool = classical ? [0, 0.15, 0.5, 1, 0.2][i] : 0;
+  const pressRate = classical ? 0 : [0.1, 0.3, 0.7, 1, 0.25][i];
   return (
     <figure className={card}>
-      <p className={label}>{d.title ? <Rich text={d.title} /> : classical ? "Watch classical conditioning happen" : "Watch operant conditioning happen"}</p>
+      <p className={label}>{d.title ? <Rich text={d.title} /> : classical ? "Classical conditioning" : "Operant conditioning"}</p>
       <svg viewBox="0 0 320 170" className="mt-3 w-full rounded-xl border-2 border-foreground bg-background" role="img" aria-label={`${cur.name}: ${cur.text}`}>
         {classical ? (
           <>
             {/* bell */}
-            <g style={{ transformOrigin: "60px 30px" }} className={cn(st.i >= 1 && st.i <= 4 && st.playing ? "vibha-swing" : "")}>
-              <path d="M48 52 Q 60 10 72 52 Z" className={cn("stroke-foreground", st.i >= 1 ? "fill-[var(--primary)]" : "fill-card")} strokeWidth="2" />
+            <g key={i} style={{ transformOrigin: "60px 30px", animationIterationCount: 2 }} className={cn(i >= 1 && i <= 4 ? "vibha-swing" : "")}>
+              <path d="M48 52 Q 60 10 72 52 Z" className={cn("stroke-foreground", i >= 1 ? "fill-[var(--primary)]" : "fill-card")} strokeWidth="2" />
               <circle cx="60" cy="54" r="4" className="fill-foreground" />
             </g>
             <text x="60" y="72" textAnchor="middle" className="fill-foreground text-[8px] font-semibold">bell</text>
             {/* food */}
-            <g style={{ transform: `translateY(${st.i >= 1 && st.i <= 3 ? 0 : -40}px)`, opacity: st.i >= 1 && st.i <= 3 ? 1 : 0, transition: "transform 700ms var(--ease-out-expo), opacity 500ms" }}>
+            <g style={{ transform: `translateY(${i >= 1 && i <= 3 ? 0 : -40}px)`, opacity: i >= 1 && i <= 3 ? 1 : 0, transition: "transform 700ms var(--ease-out-expo), opacity 500ms" }}>
               <ellipse cx="150" cy="54" rx="22" ry="9" className="fill-[var(--status-alert-bg)] stroke-foreground" strokeWidth="2" />
               <text x="150" y="72" textAnchor="middle" className="fill-foreground text-[8px] font-semibold">food</text>
             </g>
@@ -75,13 +76,13 @@ export function Conditioning({ d }: { d: ConditioningData }) {
           <>
             {/* box */}
             <rect x="40" y="30" width="240" height="120" rx="8" className="fill-[var(--muted)] stroke-foreground" strokeWidth="2" />
-            <rect x="60" y="80" width="30" height="8" className="fill-foreground" style={{ transform: `rotate(${st.playing && pressRate > 0.2 ? -8 : 0}deg)`, transformOrigin: "60px 84px", transition: "transform 300ms" }} />
+            <rect x="60" y="80" width="30" height="8" className="fill-foreground" style={{ transform: `rotate(${pressRate > 0.2 ? -8 : 0}deg)`, transformOrigin: "60px 84px", transition: "transform 300ms" }} />
             <text x="75" y="104" textAnchor="middle" className="fill-foreground text-[8px]">lever</text>
             <rect x="60" y="120" width="30" height="18" className="fill-card stroke-foreground" strokeWidth="1.5" />
-            <circle cx="75" cy="129" r="4" className="fill-[var(--status-alert-fg)]" style={{ opacity: st.i === 1 || st.i === 2 || (st.i === 3 && st.playing) ? 1 : 0, transition: "opacity 400ms" }} />
+            <circle cx="75" cy="129" r="4" className="fill-[var(--status-alert-fg)]" style={{ opacity: i >= 1 && i <= 3 ? 1 : 0, transition: "opacity 400ms" }} />
             <text x="75" y="148" textAnchor="middle" className="fill-foreground text-[7px]">food tray</text>
             {/* rat */}
-            <g style={{ transform: `translateX(${st.i === 0 ? 100 : 20}px)`, transition: "transform 900ms var(--ease-out-expo)" }}>
+            <g style={{ transform: `translateX(${i === 0 ? 100 : 20}px)`, transition: "transform 900ms var(--ease-out-expo)" }}>
               <ellipse cx="110" cy="100" rx="22" ry="12" className="fill-card stroke-foreground" strokeWidth="2" />
               <circle cx="92" cy="96" r="8" className="fill-card stroke-foreground" strokeWidth="2" />
               <circle cx="89" cy="94" r="1.5" className="fill-foreground" />
@@ -95,19 +96,7 @@ export function Conditioning({ d }: { d: ConditioningData }) {
           </>
         )}
       </svg>
-      <ol className="mt-3 flex flex-wrap gap-1.5" aria-label="Steps">
-        {steps.map((s, k) => (
-          <li key={s.id}>
-            <button type="button" onClick={() => st.setI(k)} aria-current={k === st.i ? "step" : undefined} className={cn("min-h-10 rounded-md border-2 px-2.5 text-xs font-semibold sm:text-sm", k === st.i ? "border-foreground bg-foreground text-background" : k < st.i ? "border-foreground bg-card" : "border-foreground/25 bg-card text-muted-foreground")}>
-              {k + 1}. {s.name}
-            </button>
-          </li>
-        ))}
-      </ol>
-      <PlayBar st={st} kind="conditioning" />
-      <p className="vibha-pop mt-3 rounded-xl bg-muted p-3 text-[0.95rem] leading-relaxed" key={cur.id} role="status" aria-live="polite">
-        <span className="font-semibold">{cur.name}: </span>{cur.text}
-      </p>
+      <StepPicker steps={steps} i={i} onPick={setI} kind="conditioning" />
       {d.caption ? <figcaption className="mt-2 text-sm text-muted-foreground"><Rich text={d.caption} /></figcaption> : null}
     </figure>
   );
@@ -123,17 +112,17 @@ const MEM_STEPS = [
 ];
 
 export function MemoryFlow({ d }: { d: MemoryFlowData }) {
-  const st = useStepPlayer(MEM_STEPS.length, (k) => `${MEM_STEPS[k]?.name ?? ""} ${MEM_STEPS[k]?.text ?? ""}`);
-  const cur = MEM_STEPS[Math.min(st.i, MEM_STEPS.length - 1)];
-  const pos = [20, 118, 118, 230, 118][st.i];
+  const [i, setI] = React.useState(0);
+  const cur = MEM_STEPS[i];
+  const pos = [20, 118, 118, 230, 118][i];
   const boxes = [
-    { x: 8, w: 72, name: "Sensory register", sub: "under 1 to 4 s", on: st.i === 0 },
-    { x: 100, w: 90, name: "Working memory", sub: "about 4 chunks, 15 to 30 s", on: st.i === 1 || st.i === 2 || st.i === 4 },
-    { x: 210, w: 102, name: "Long-term memory", sub: "no known limit", on: st.i === 3 },
+    { x: 8, w: 72, name: "Sensory register", sub: "under 1 to 4 s", on: i === 0 },
+    { x: 100, w: 90, name: "Working memory", sub: "about 4 chunks, 15 to 30 s", on: i === 1 || i === 2 || i === 4 },
+    { x: 210, w: 102, name: "Long-term memory", sub: "no known limit", on: i === 3 },
   ];
   return (
     <figure className={card}>
-      <p className={label}>{d.title ? <Rich text={d.title} /> : "Follow one memory through the stores"}</p>
+      <p className={label}>{d.title ? <Rich text={d.title} /> : "How a memory is stored"}</p>
       <svg viewBox="0 0 320 130" className="mt-3 w-full rounded-xl border-2 border-foreground bg-background" role="img" aria-label={`${cur.name}: ${cur.text}`}>
         {boxes.map((b) => (
           <g key={b.name}>
@@ -148,13 +137,13 @@ export function MemoryFlow({ d }: { d: MemoryFlowData }) {
         <text x="200" y="48" textAnchor="middle" className="fill-foreground text-[6px]">encoding</text>
         <path d="M210 70 L 190 70" className="stroke-foreground" strokeWidth="2" markerEnd="url(#mem-arrow)" />
         <text x="200" y="82" textAnchor="middle" className="fill-foreground text-[6px]">retrieval</text>
-        <path d="M120 90 q 25 20 50 0" fill="none" className={cn("stroke-foreground", st.i === 2 ? "vibha-dash" : "")} strokeWidth="1.5" strokeDasharray="3 3" />
+        <path d="M120 90 q 25 20 50 0" fill="none" className={cn("stroke-foreground", i === 2 ? "vibha-dash" : "")} strokeWidth="1.5" strokeDasharray="3 3" />
         <text x="145" y="112" textAnchor="middle" className="fill-foreground text-[6px]">rehearsal keeps it alive</text>
         {/* fading items in the sensory register */}
         {[0, 1, 2].map((k) => (
-          <circle key={k} cx={22 + k * 18} cy={100 + k * 6} r="3" className="fill-foreground/40" style={{ opacity: st.i === 0 ? 1 - k * 0.3 : 0, transition: "opacity 700ms" }} />
+          <circle key={k} cx={22 + k * 18} cy={100 + k * 6} r="3" className="fill-foreground/40" style={{ opacity: i === 0 ? 1 - k * 0.3 : 0, transition: "opacity 700ms" }} />
         ))}
-        <text x="44" y="122" textAnchor="middle" className="fill-muted-foreground text-[6px]" style={{ opacity: st.i === 0 ? 1 : 0 }}>unattended items fade</text>
+        <text x="44" y="122" textAnchor="middle" className="fill-muted-foreground text-[6px]" style={{ opacity: i === 0 ? 1 : 0 }}>unattended items fade</text>
         {/* the memory */}
         <g style={{ transform: `translate(${pos}px, 20px)`, transition: "transform 900ms var(--ease-out-expo)" }}>
           <rect x="14" y="-14" width="36" height="16" rx="4" className="fill-[var(--primary)] stroke-foreground" strokeWidth="2" />
@@ -166,19 +155,7 @@ export function MemoryFlow({ d }: { d: MemoryFlowData }) {
           </marker>
         </defs>
       </svg>
-      <ol className="mt-3 flex flex-wrap gap-1.5" aria-label="Steps">
-        {MEM_STEPS.map((s, k) => (
-          <li key={s.id}>
-            <button type="button" onClick={() => st.setI(k)} aria-current={k === st.i ? "step" : undefined} className={cn("min-h-10 rounded-md border-2 px-2.5 text-xs font-semibold sm:text-sm", k === st.i ? "border-foreground bg-foreground text-background" : k < st.i ? "border-foreground bg-card" : "border-foreground/25 bg-card text-muted-foreground")}>
-              {k + 1}. {s.name}
-            </button>
-          </li>
-        ))}
-      </ol>
-      <PlayBar st={st} kind="memoryflow" />
-      <p className="vibha-pop mt-3 rounded-xl bg-muted p-3 text-[0.95rem] leading-relaxed" key={cur.id} role="status" aria-live="polite">
-        <span className="font-semibold">{cur.name}: </span>{cur.text}
-      </p>
+      <StepPicker steps={MEM_STEPS} i={i} onPick={setI} kind="memoryflow" />
       {d.caption ? <figcaption className="mt-2 text-sm text-muted-foreground"><Rich text={d.caption} /></figcaption> : null}
     </figure>
   );
@@ -194,10 +171,10 @@ const STRESS_STEPS = [
 ];
 
 export function StressResponse({ d }: { d: StressData }) {
-  const st = useStepPlayer(STRESS_STEPS.length, (k) => `${STRESS_STEPS[k]?.name ?? ""} ${STRESS_STEPS[k]?.text ?? ""}`);
-  const cur = STRESS_STEPS[Math.min(st.i, STRESS_STEPS.length - 1)];
-  const hr = [72, 125, 110, 80, 95][st.i];
-  const cortisol = [0.1, 0.15, 0.8, 0.3, 0.9][st.i];
+  const [i, setI] = React.useState(0);
+  const cur = STRESS_STEPS[i];
+  const hr = [72, 125, 110, 80, 95][i];
+  const cortisol = [0.1, 0.15, 0.8, 0.3, 0.9][i];
   const node = (x: number, y: number, name: string, on: boolean) => (
     <g key={name}>
       <circle cx={x} cy={y} r="16" className={cn("stroke-foreground transition-colors duration-slow", on ? "fill-[var(--primary)]" : "fill-card")} strokeWidth="2" />
@@ -209,23 +186,23 @@ export function StressResponse({ d }: { d: StressData }) {
       <p className={label}>{d.title ? <Rich text={d.title} /> : "What stress does inside you"}</p>
       <svg viewBox="0 0 320 170" className="mt-3 w-full rounded-xl border-2 border-foreground bg-background" role="img" aria-label={`${cur.name}: ${cur.text}`}>
         {/* chain */}
-        <path d="M60 40 L 110 40" className={cn("stroke-foreground", st.i >= 1 ? "vibha-dash" : "")} strokeWidth="2" strokeDasharray="4 3" />
-        <path d="M110 56 L 110 84" className={cn("stroke-foreground", st.i >= 2 ? "vibha-dash" : "")} strokeWidth="2" strokeDasharray="4 3" />
-        <path d="M110 116 L 110 140" className={cn("stroke-foreground", st.i >= 2 ? "vibha-dash" : "")} strokeWidth="2" strokeDasharray="4 3" />
-        <path d="M126 40 L 190 40" className={cn("stroke-[var(--destructive)]", st.i === 1 ? "vibha-dash" : "")} strokeWidth="2" strokeDasharray="4 3" />
+        <path d="M60 40 L 110 40" className={cn("stroke-foreground", i >= 1 ? "vibha-dash" : "")} strokeWidth="2" strokeDasharray="4 3" />
+        <path d="M110 56 L 110 84" className={cn("stroke-foreground", i >= 2 ? "vibha-dash" : "")} strokeWidth="2" strokeDasharray="4 3" />
+        <path d="M110 116 L 110 140" className={cn("stroke-foreground", i >= 2 ? "vibha-dash" : "")} strokeWidth="2" strokeDasharray="4 3" />
+        <path d="M126 40 L 190 40" className={cn("stroke-[var(--destructive)]", i === 1 ? "vibha-dash" : "")} strokeWidth="2" strokeDasharray="4 3" />
         {/* feedback arrow */}
-        <path d="M126 150 C 200 150, 200 70, 70 56" fill="none" className={cn("stroke-foreground/50", st.i === 3 ? "vibha-dash" : "")} strokeWidth="1.5" strokeDasharray="3 3" style={{ opacity: st.i >= 3 ? 1 : 0.25 }} />
+        <path d="M126 150 C 200 150, 200 70, 70 56" fill="none" className={cn("stroke-foreground/50", i === 3 ? "vibha-dash" : "")} strokeWidth="1.5" strokeDasharray="3 3" style={{ opacity: i >= 3 ? 1 : 0.25 }} />
         <text x="196" y="112" className="fill-muted-foreground text-[6px]">cortisol feeds back</text>
-        {node(44, 40, "amygdala", st.i >= 0)}
-        {node(110, 40, "hypothalamus", st.i >= 1)}
-        {node(110, 100, "pituitary", st.i >= 2)}
-        {node(110, 156, "adrenal", st.i >= 1)}
+        {node(44, 40, "amygdala", i >= 0)}
+        {node(110, 40, "hypothalamus", i >= 1)}
+        {node(110, 100, "pituitary", i >= 2)}
+        {node(110, 156, "adrenal", i >= 1)}
         <text x="56" y="30" className="fill-muted-foreground text-[6px]">CRH →</text>
         <text x="116" y="74" className="fill-muted-foreground text-[6px]">ACTH</text>
         <text x="116" y="132" className="fill-muted-foreground text-[6px]">cortisol</text>
         <text x="130" y="34" className="fill-[var(--destructive)] text-[6px]">sympathetic nerves, adrenaline</text>
         {/* heart */}
-        <g style={{ transformOrigin: "250px 60px" }} className={st.playing && hr > 90 ? "vibha-beat" : ""}>
+        <g key={i} style={{ transformOrigin: "250px 60px", animationIterationCount: 3 }} className={hr > 90 ? "vibha-beat" : ""}>
           <path d="M250 72 C 230 56, 236 40, 250 48 C 264 40, 270 56, 250 72 Z" className="fill-[var(--status-alert-bg)] stroke-foreground" strokeWidth="2" />
         </g>
         <text x="250" y="88" textAnchor="middle" className="fill-foreground text-[8px] font-semibold tabular-nums">{hr} beats/min</text>
@@ -234,19 +211,7 @@ export function StressResponse({ d }: { d: StressData }) {
         <rect x="238" y={152 - cortisol * 46} width="24" height={cortisol * 46} rx="3" className="fill-[var(--brand)] transition-all duration-slow" />
         <text x="250" y="164" textAnchor="middle" className="fill-foreground text-[7px]">cortisol</text>
       </svg>
-      <ol className="mt-3 flex flex-wrap gap-1.5" aria-label="Steps">
-        {STRESS_STEPS.map((s, k) => (
-          <li key={s.id}>
-            <button type="button" onClick={() => st.setI(k)} aria-current={k === st.i ? "step" : undefined} className={cn("min-h-10 rounded-md border-2 px-2.5 text-xs font-semibold sm:text-sm", k === st.i ? "border-foreground bg-foreground text-background" : k < st.i ? "border-foreground bg-card" : "border-foreground/25 bg-card text-muted-foreground")}>
-              {k + 1}. {s.name}
-            </button>
-          </li>
-        ))}
-      </ol>
-      <PlayBar st={st} kind="stress" />
-      <p className="vibha-pop mt-3 rounded-xl bg-muted p-3 text-[0.95rem] leading-relaxed" key={cur.id} role="status" aria-live="polite">
-        <span className="font-semibold">{cur.name}: </span>{cur.text}
-      </p>
+      <StepPicker steps={STRESS_STEPS} i={i} onPick={setI} kind="stress" />
       {d.caption ? <figcaption className="mt-2 text-sm text-muted-foreground"><Rich text={d.caption} /></figcaption> : null}
     </figure>
   );
@@ -259,7 +224,7 @@ export function shuffleOrder(n: number, seed: number): number[] {
   if (n > 1 && out.every((v, i) => v === i)) out.push(out.shift()!);
   return out;
 }
-/** Place events in order (tap a card, then tap a slot), then check. */
+/** Place events in order (tap a card, then tap a slot), then check. Sorting is the learning, so this one stays a task. */
 export function Timeline({ d }: { d: TimelineData }) {
   const seed = d.prompt.length;
   const order = React.useMemo(() => shuffleOrder(d.events.length, seed), [d.events.length, seed]);
@@ -281,7 +246,6 @@ export function Timeline({ d }: { d: TimelineData }) {
     <figure className={card}>
       <p className={label}>Put it in order</p>
       <p className="mt-2 font-semibold"><Rich text={d.prompt} /></p>
-      <p className="mt-1 text-sm text-muted-foreground">Tap a card, then tap where it belongs on the line.</p>
       <div className="mt-3 flex flex-wrap gap-2" aria-label="Cards">
         {order.filter((i) => !placed.has(i)).map((i) => (
           <button key={i} type="button" aria-pressed={held === i} onClick={() => setHeld(held === i ? null : i)} className={cn("min-h-11 rounded-md border-2 px-3 py-2 text-left text-[0.95rem] transition-transform duration-fast", held === i ? "-translate-y-0.5 border-foreground bg-primary text-primary-foreground shadow-[var(--shadow-hard-xs)]" : "border-foreground bg-card")}>
@@ -338,41 +302,26 @@ export function Timeline({ d }: { d: TimelineData }) {
 }
 
 /* -------------------------------------------------------------- compare */
-/** Two states side by side with a slider: healthy vs depressed brain, before vs after treatment, novice vs expert. */
+/** Two states side by side: healthy vs depressed brain, before vs after treatment, novice vs expert. */
 export function Compare({ d }: { d: CompareData }) {
-  const [v, setV] = React.useState(50);
-  const left = v < 50;
+  const side = (x: CompareData["a"], extra?: string) => (
+    <div className={cn("min-w-0 p-4", extra)}>
+      <p className="font-bold [overflow-wrap:anywhere]"><Rich text={x.label} /></p>
+      <ul className="mt-2 space-y-1 text-[0.95rem]">
+        {x.points.map((p, i) => (
+          <li key={i} className="flex gap-1.5"><span aria-hidden>•</span><span className="min-w-0 [overflow-wrap:anywhere]"><Rich text={p} /></span></li>
+        ))}
+      </ul>
+      {x.summary ? <p className="mt-3 rounded-md bg-muted p-2.5 text-[0.92rem] leading-relaxed"><Rich text={x.summary} /></p> : null}
+    </div>
+  );
   return (
     <figure className={card}>
-      <p className={label}>{d.title ? <Rich text={d.title} /> : "Slide to compare"}</p>
-      <div className="relative mt-3 overflow-hidden rounded-xl border-2 border-foreground bg-background">
-        <div className="grid grid-cols-2">
-          <div className="p-4" style={{ opacity: 0.35 + (1 - v / 100) * 0.65, transition: "opacity 200ms" }}>
-            <p className="text-sm font-bold"><Rich text={d.a.label} /></p>
-            <ul className="mt-2 space-y-1 text-[0.9rem]">
-              {d.a.points.map((p, i) => (
-                <li key={i} className="flex gap-1.5"><span aria-hidden>•</span><span><Rich text={p} /></span></li>
-              ))}
-            </ul>
-          </div>
-          <div className="border-l-2 border-foreground/20 p-4" style={{ opacity: 0.35 + (v / 100) * 0.65, transition: "opacity 200ms" }}>
-            <p className="text-sm font-bold"><Rich text={d.b.label} /></p>
-            <ul className="mt-2 space-y-1 text-[0.9rem]">
-              {d.b.points.map((p, i) => (
-                <li key={i} className="flex gap-1.5"><span aria-hidden>•</span><span><Rich text={p} /></span></li>
-              ))}
-            </ul>
-          </div>
-        </div>
-        <div aria-hidden className="pointer-events-none absolute inset-y-0 w-1 bg-foreground" style={{ left: `calc(${v}% - 2px)`, transition: "left 120ms" }} />
+      {d.title ? <p className={label}><Rich text={d.title} /></p> : null}
+      <div className={cn("grid overflow-hidden rounded-xl border-2 border-foreground bg-background sm:grid-cols-2", d.title && "mt-3")}>
+        {side(d.a)}
+        {side(d.b, "border-t-2 border-foreground/20 sm:border-t-0 sm:border-l-2")}
       </div>
-      <label className="mt-3 flex flex-col gap-1 text-sm font-semibold">
-        <span className="flex justify-between"><span><Rich text={d.a.label} /></span><span><Rich text={d.b.label} /></span></span>
-        <input type="range" min={0} max={100} value={v} onChange={(e) => setV(Number(e.target.value))} className="h-8 w-full accent-[var(--brand)]" aria-label="Compare slider" />
-      </label>
-      <p className="mt-2 rounded-xl bg-muted p-3 text-[0.95rem]" role="status" aria-live="polite">
-        <Rich text={left ? d.a.summary : d.b.summary} />
-      </p>
       {d.caption ? <figcaption className="mt-2 text-sm text-muted-foreground"><Rich text={d.caption} /></figcaption> : null}
     </figure>
   );

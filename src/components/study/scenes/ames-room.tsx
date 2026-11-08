@@ -14,7 +14,7 @@ const AMES_CHALLENGE: ChallengeQ[] = [
   { q: "What would break the illusion fastest?", options: ["Making the room brighter", "Looking with both eyes and moving your head", "Looking for longer"], answer: 1, why: "Two eyes give binocular disparity and a moving head gives motion parallax. Both reveal that one corner is much farther away." },
   { q: "Size constancy keeps a friend looking the same size as they walk away because...", options: ["the image on the retina stays the same size", "the brain takes their growing distance into account", "the eyes zoom in"], answer: 1, why: "The image shrinks as they walk away, but the brain scales it by the distance it perceives, so they still look the same height." },
 ];
-import { Missions, Scene3DSlot, SceneCard, ViewSwitch, btn, chip, statusCls, useInView, useMissions, useSceneView, useThemeColors, type V3 } from "./kit";
+import { Scene3DSlot, SceneCard, ViewSwitch, btn, chip, statusCls, useInView, useSceneView, useThemeColors, type V3 } from "./kit";
 
 /**
  * The Ames room. Through the peephole it looks like an ordinary
@@ -96,16 +96,9 @@ export function AmesRoom({ d }: { d: AmesRoomData }) {
   const colors = useThemeColors(box);
   const [stop, setStop] = React.useState<AmesStop>("peephole");
   const sw = useSwap(v.reduce);
-  const ms = useMissions(["peep", "swap", "side", "above"] as const);
-  React.useEffect(() => {
-    if (sw.t !== 1) return;
-    const t = setTimeout(() => ms.mark("swap"), 0);
-    return () => clearTimeout(t);
-  }, [sw.t, ms]);
   const go = (s: AmesStop) => {
     setStop(s);
     sfx("whoosh");
-    ms.mark(s === "peephole" ? "peep" : s);
     trackLearn({ type: "widget", kind: "amesroom", item: s });
   };
   const leftName = sw.target ? "Kabir" : "Meera";
@@ -113,10 +106,9 @@ export function AmesRoom({ d }: { d: AmesRoomData }) {
   const st = STOPS.find((x) => x.id === stop)!;
   const flat = <AmesFlat stop={stop} swapT={sw.t} />;
   return (
-    <SceneCard title={d.title ?? "The Ames room"} goal="Look through the peephole, swap the two people, then step aside and find out why your eyes were fooled." caption={d.caption} tools={<ViewSwitch v={v} />} sound>
+    <SceneCard title={d.title ?? "The Ames room"} caption={d.caption} tools={<ViewSwitch v={v} />} sound>
       <div ref={box} className="relative mt-3 h-[17rem] overflow-hidden rounded-xl border-2 border-foreground bg-background sm:h-[22rem]">
         {v.use3D ? <Scene3DSlot flat={flat} render={(onReady) => <View3D stop={stop} swapT={sw.t} swapping={sw.swapping} inView={inView} colors={colors} onReady={onReady} />} /> : flat}
-        {v.use3D && stop !== "peephole" ? <p className="pointer-events-none absolute bottom-1.5 left-2 rounded bg-background/80 px-1.5 text-xs text-muted-foreground">Drag to walk round the room, pinch to zoom</p> : null}
         {stop === "peephole" ? <div className="pointer-events-none absolute inset-0 rounded-xl shadow-[inset_0_0_0_9999px_rgba(0,0,0,0)]" style={{ background: "radial-gradient(circle at 50% 50%, transparent 58%, rgba(0,0,0,0.55) 72%)" }} aria-hidden /> : null}
       </div>
       <div className="mt-3 grid grid-cols-3 gap-1.5" role="group" aria-label="Where to look from">
@@ -128,7 +120,6 @@ export function AmesRoom({ d }: { d: AmesRoomData }) {
         <button type="button" className={cn(btn, "min-h-12 bg-primary px-5 text-primary-foreground hover:-translate-y-0.5")} onClick={() => {
             sw.swap();
             sfx("tap");
-            if (stop === "peephole") ms.mark("peep");
             trackLearn({ type: "widget", kind: "amesroom", item: "swap" });
           }}>
           <ArrowLeftRight className="size-4" aria-hidden /> {sw.swapping ? "Walking..." : "Swap places"}
@@ -142,20 +133,11 @@ export function AmesRoom({ d }: { d: AmesRoomData }) {
             : stop === "peephole"
               ? `${leftName}, in the left corner, looks only about ${pct(1 / RATIO)} percent as tall as ${rightName} in the right corner. Both are ${PERSON_H} metres tall.`
               : `${leftName} stands about ${distFromEye(real(SPOT_L)).toFixed(1)} metres from the peephole and ${rightName} about ${distFromEye(real(SPOT_R)).toFixed(1)} metres. Same height, about ${RATIO.toFixed(1)} times the distance.`}
-          {sw.swapping || ms.done("swap") ? " Through the peephole, the one walking left seems to shrink and the one walking right seems to grow, though neither changes at all." : ""}
+          {sw.swapping || sw.target ? " Through the peephole, the one walking left seems to shrink and the one walking right seems to grow, though neither changes at all." : ""}
         </p>
-        <p className="mt-2"><span className="font-semibold">Why it works: </span>Size constancy normally corrects for distance: a person twice as far away casts an image half the size, and you still see them as normal size because you judge the distance. Here the distance cues lie. The floor tiles, windows and corners are drawn so that, from the peephole, linear perspective and texture say both corners are equally far. One eye through a fixed hole removes the cues that would expose the trick: no binocular disparity and no motion parallax. So the brain keeps the assumption that rooms are rectangular, and has to conclude that the people are different sizes.</p>
+        <p className="mt-2"><span className="font-semibold">Why it fools you: </span>Size constancy normally corrects for distance: a person twice as far away casts an image half the size, and you still see them as normal size because you judge the distance. Here the distance cues lie. The floor tiles, windows and corners are drawn so that, from the peephole, linear perspective and texture say both corners are equally far. One eye through a fixed hole removes the cues that would expose the trick: no binocular disparity and no motion parallax. So the brain keeps the assumption that rooms are rectangular, and has to conclude that the people are different sizes.</p>
         <p className="mt-1 text-sm text-muted-foreground">The room was designed by Adelbert Ames Jr. in 1946. The assumption is so strong that familiar size loses: we would rather believe a person has shrunk than that a room is crooked.</p>
       </div>
-      <Missions
-        doneText="All missions done: you have seen size constancy fooled, and found the distance cue that fooled it."
-        items={[
-          { id: "peep", label: "Look through the peephole", done: ms.done("peep") },
-          { id: "swap", label: "Swap places and watch them change size", done: ms.done("swap") },
-          { id: "side", label: "Step to the side", done: ms.done("side") },
-          { id: "above", label: "See the real shape from above", done: ms.done("above") },
-        ]}
-      />
       <QuickChallenge title="Depth cues and size constancy" kind="amesroom" items={AMES_CHALLENGE} />
     </SceneCard>
   );

@@ -1,15 +1,14 @@
 "use client";
 
 import * as React from "react";
-import { PlayBar, readingMs, type StepPlayer } from "../pacing";
-import { Box, Check, Square, Target } from "lucide-react";
+import { readingMs } from "../pacing";
+import { Box, Square } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Rich } from "../rich";
 import { SoundToggle } from "./sfx";
 
 /**
- * Shared pieces for the explorable scenes: the card, mode tabs, missions,
- * live status, motion and WebGL detection, the 3D or flat view switch, and
+ * Shared pieces for the explorable scenes: the card, mode tabs, live status, motion and WebGL detection, the 3D or flat view switch, and
  * small geometry helpers that the 3D views and the flat fallbacks both use
  * (so a nerve drawn in 3D and its flat drawing follow the same points).
  *
@@ -20,7 +19,7 @@ import { SoundToggle } from "./sfx";
 export const card = "rounded-2xl border-2 border-foreground bg-card p-3 sm:p-5 shadow-[var(--shadow-hard-sm)]";
 export const label = "text-xs font-semibold tracking-wide uppercase text-link";
 export const btn = "inline-flex min-h-11 items-center justify-center gap-2 rounded-md border-2 border-foreground px-4 font-semibold transition-transform duration-fast active:translate-x-px active:translate-y-px";
-export const statusCls = "mt-3 rounded-xl bg-muted p-3 text-[0.95rem] leading-relaxed";
+export const statusCls = "mt-3 rounded-xl bg-muted p-3 text-[0.95rem] leading-relaxed empty:mt-0 empty:p-0";
 
 export function chip(on: boolean, extra?: string) {
   return cn(
@@ -120,16 +119,11 @@ export function ViewSwitch({ v }: { v: ReturnType<typeof useSceneView> }) {
 
 /* --------------------------------------------------------------- the card */
 
-export function SceneCard({ title, goal, children, caption, tools, sound = false }: { title: string; goal: string; children: React.ReactNode; caption?: string; tools?: React.ReactNode; sound?: boolean }) {
+export function SceneCard({ title, children, caption, tools, sound = false }: { title: string; children: React.ReactNode; caption?: string; tools?: React.ReactNode; sound?: boolean }) {
   return (
     <figure className={cn(card, "overflow-hidden")}>
-      <div className="flex flex-wrap items-start justify-between gap-2">
-        <div className="min-w-0 flex-1">
-          <p className={label}>{title}</p>
-          <p className="mt-1 flex items-start gap-1.5 text-[0.95rem] font-semibold leading-snug">
-            <Target className="mt-0.5 size-4 shrink-0" aria-hidden /> <span>{goal}</span>
-          </p>
-        </div>
+      <div className="flex flex-wrap items-center justify-between gap-2">
+        <p className={cn(label, "min-w-0 flex-1")}>{title}</p>
         {tools || sound ? (
           <div className={cn("flex flex-wrap items-center gap-1.5", sound ? "w-full sm:w-auto" : "")}>
             {sound ? <SoundToggle /> : null}
@@ -155,52 +149,16 @@ export function ModeTabs<T extends string>({ modes, value, onChange, name }: { m
   );
 }
 
-export type Mission = { id: string; label: string; done: boolean };
-export function Missions({ items, doneText }: { items: Mission[]; doneText: string }) {
-  const n = items.filter((m) => m.done).length;
-  const all = n === items.length;
-  return (
-    <div className="mt-3 rounded-xl border-2 border-foreground/25 p-3">
-      <p className="flex items-center justify-between text-sm font-bold">
-        <span>Missions</span>
-        <span className="tabular-nums" aria-label={`${n} of ${items.length} missions done`}>{n} of {items.length}</span>
-      </p>
-      <div className="mt-1.5 h-2 overflow-hidden rounded-full bg-muted" aria-hidden>
-        <div className="h-full origin-left rounded-full bg-[var(--brand)] transition-transform duration-slow" style={{ transform: `scaleX(${n / items.length})` }} />
-      </div>
-      <ul className="mt-2 grid gap-1 sm:grid-cols-2">
-        {items.map((m) => (
-          <li key={m.id} className={cn("flex items-start gap-1.5 text-sm", m.done ? "font-semibold" : "text-muted-foreground")}>
-            <span className={cn("mt-0.5 grid size-4 shrink-0 place-items-center rounded-sm border-2 border-foreground", m.done && "bg-primary")} aria-hidden>
-              {m.done ? <Check className="size-3 text-primary-foreground" strokeWidth={3} /> : null}
-            </span>
-            <span>{m.label}<span className="sr-only">{m.done ? ", done" : ", not done yet"}</span></span>
-          </li>
-        ))}
-      </ul>
-      {all ? <p className="vibha-pop mt-2 rounded-md bg-primary px-2 py-1.5 text-sm font-bold text-primary-foreground" role="status">{doneText}</p> : null}
-    </div>
-  );
-}
-
-/** Remember which missions are done. */
-export function useMissions<K extends string>(keys: readonly K[]) {
-  const [done, setDone] = React.useState<Record<string, boolean>>({});
-  const mark = React.useCallback((k: K) => setDone((d) => (d[k] ? d : { ...d, [k]: true })), []);
-  return { done: (k: K) => !!done[k], mark, count: keys.filter((k) => done[k]).length };
-}
-
 /* ---------------------------------------------------------------- journey */
 
 /** One stage of a signal's trip: the path it follows, how long it takes, and what is happening in words. */
 export type Leg = { path: string; ms: number; say: string; tone: "sense" | "motor" | "symp" | "para" | "info" };
 
 /**
- * A signal travelling leg by leg. Nothing moves on its own: start() shows
- * the first leg (its pulse animates once) and waits. The student steps with
- * Next and Back, or presses Play, which holds each leg for its animation or
- * its reading time, whichever is longer. The step after the last leg is the
- * result (done).
+ * A signal travelling leg by leg. Nothing moves until the student acts:
+ * start() runs the legs in order, holding each for its animation or its
+ * reading time, whichever is longer, then stops on the result (done). The
+ * legs reached so far stay listed (JourneySteps), so no words are lost.
  */
 type JourneyState = { legs: Leg[]; leg: number; run: number; key: string; playing: boolean; moving: boolean };
 /** Move to a leg: its pulse plays once (moving), then the view rests until the student acts. */
@@ -221,33 +179,27 @@ export function useJourney() {
     const t = setTimeout(() => setS((x) => (x.run === s.run ? { ...x, moving: false } : x)), legMs + 120);
     return () => clearTimeout(t);
   }, [s.moving, s.run, legMs]);
-  const start = React.useCallback((key: string, legs: Leg[]) => setS((x) => go({ ...x, legs, key }, 0, false)), []);
-  const next = React.useCallback(() => setS((x) => (x.leg >= 0 && x.leg < x.legs.length ? go(x, x.leg + 1, false) : x)), []);
-  const back = React.useCallback(() => setS((x) => (x.leg > 0 ? go(x, x.leg - 1, false) : x)), []);
-  const pause = React.useCallback(() => setS((x) => (x.playing ? { ...x, playing: false } : x)), []);
-  const play = React.useCallback(() => setS((x) => (!x.legs.length ? x : x.leg >= x.legs.length ? go(x, 0, true) : { ...x, playing: true })), []);
+  const start = React.useCallback((key: string, legs: Leg[]) => setS((x) => go({ ...x, legs, key }, 0, true)), []);
   const clear = React.useCallback(() => setS((x) => ({ legs: [], leg: -1, run: x.run + 1, key: "", playing: false, moving: false })), []);
   const done = s.leg >= s.legs.length && s.legs.length > 0;
-  // the same controls as every other step player: the legs, then the result
-  const player: StepPlayer = {
-    i: s.leg,
-    n: s.legs.length + 1,
-    playing: s.playing,
-    setI: (k) => setS((x) => go(x, Math.max(0, Math.min(x.legs.length, k)), false)),
-    next,
-    back,
-    play,
-    pause,
-    reset: () => setS((x) => go(x, 0, false)),
-  };
-  return { ...s, cur: curLeg, done, active: !!curLeg, start, next, back, play, pause, clear, player };
+  return { ...s, cur: curLeg, done, active: !!curLeg, start, clear };
 }
 export type Journey = ReturnType<typeof useJourney>;
 
-/** Back, Next and Play for a journey, once one has started. */
-export function JourneyBar({ journey, kind }: { journey: Journey; kind: string }) {
+/** The legs a journey has reached so far, in order, with the one playing now marked. */
+export function JourneySteps({ journey }: { journey: Journey }) {
   if (!journey.legs.length) return null;
-  return <PlayBar st={journey.player} kind={kind} hint="" count={false} nextLabel={journey.leg === journey.legs.length - 1 ? "Result" : "Next"} />;
+  const upTo = journey.done ? journey.legs.length : journey.leg + 1;
+  return (
+    <ol className="mt-2 space-y-1.5" aria-label="Signal path">
+      {journey.legs.slice(0, upTo).map((l, k) => (
+        <li key={`${journey.run}-${k}`} className={cn("vibha-pop flex gap-2 rounded-md border-l-4 pl-2 text-[0.95rem] leading-snug", k === journey.leg ? "border-[var(--brand)] font-semibold" : "border-foreground/25")}>
+          <span className="shrink-0 tabular-nums text-muted-foreground" aria-hidden>{k + 1}.</span>
+          <span className="min-w-0"><span className="sr-only">{TONE_NAME[l.tone]}: </span>{l.say}</span>
+        </li>
+      ))}
+    </ol>
+  );
 }
 
 /** Progress (0 to 1) through the journey's current leg, driven by animation frames. */

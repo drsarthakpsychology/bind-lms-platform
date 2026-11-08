@@ -1,18 +1,17 @@
 "use client";
 
 import * as React from "react";
-import { ChevronLeft, ChevronRight, Eye } from "lucide-react";
 import type { HypnogramData, ReleaseData, StrangeData, ThoughtRecordData } from "@/lib/study/types";
 import { cn } from "@/lib/utils";
 import { Rich } from "./rich";
 import { trackLearn } from "@/lib/learn/track";
-import { StepList, btn, card, choiceCls, label, statusCls } from "./animations3";
-import { PlayBar, useStepPlayer } from "./pacing";
+import { card, choiceCls, label, statusCls } from "./animations3";
+import { StepPicker } from "./pacing";
 
 /**
  * Third wave, part two: transmitter release with a drug picker, a CBT
- * thought record, a night of sleep with live EEG, and Ainsworth's Strange
- * Situation. Transform and opacity only, stops under reduce-motion, and
+ * thought record shown whole, a night of sleep with live EEG, and
+ * Ainsworth's Strange Situation. Transform and opacity only, stops under reduce-motion, and
  * every state is written in words.
  */
 
@@ -68,9 +67,8 @@ function molPos(m: number, step: number, drug: Drug): { x: number; y: number; o:
 /** Transmitter release, binding, reuptake and breakdown, with a drug picker. */
 export function Release({ d }: { d: ReleaseData }) {
   const tx = d.transmitter ?? "serotonin";
-  const st = useStepPlayer(REL_STEPS.length, (k) => `${REL_STEPS[k]?.name ?? ""} ${REL_STEPS[k]?.text(tx) ?? ""}`);
+  const [step, setStep] = React.useState(0);
   const [drug, setDrug] = React.useState<Drug>("none");
-  const step = Math.min(st.i, REL_STEPS.length - 1);
   const cur = REL_STEPS[step];
   const dr = DRUGS.find((x) => x.id === drug)!;
   const affected = dr.steps.includes(step);
@@ -139,18 +137,28 @@ export function Release({ d }: { d: ReleaseData }) {
           return <circle key={m} cx="0" cy="0" r="4" className="fill-[var(--primary)] stroke-foreground" strokeWidth="1" style={{ transform: `translate(${p.x}px, ${p.y}px) scale(${p.s})`, opacity: p.o, transition: `transform 900ms var(--ease-out-expo) ${m * 50}ms, opacity 500ms` }} />;
         })}
       </svg>
-      <StepList names={REL_STEPS.map((s) => s.name)} st={st} />
-      <PlayBar st={st} kind="release" />
+      <StepPicker
+        steps={REL_STEPS.map((s, k) => ({
+          id: s.id,
+          name: s.name,
+          text: (
+            <>
+              {s.text(tx)}
+              {dr.steps.includes(k) ? <span className="mt-1 block font-semibold text-foreground">Changed by {dr.name.split(" (")[0]}</span> : null}
+            </>
+          ),
+        }))}
+        i={step}
+        onPick={setStep}
+        kind="release"
+      />
       <div className="mt-3 flex flex-wrap gap-2" role="group" aria-label="Add a drug">
         {DRUGS.map((x) => (
           <button key={x.id} type="button" aria-pressed={drug === x.id} className={choiceCls(drug === x.id)} onClick={() => { setDrug(x.id); trackLearn({ type: "widget", kind: "release", item: x.id }); }}>{x.name}</button>
         ))}
       </div>
-      <p className={statusCls} key={`${cur.id}-${drug}`} role="status" aria-live="polite">
-        <span className="font-semibold">{cur.name}: </span>{cur.text(tx)}
-        {drug !== "none" ? (
-          <span className="mt-2 block"><span className="font-semibold">{affected ? `With ${dr.name}: ` : `${dr.name}: `}</span>{affected ? dr.text(tx) : `no change at this step. Step to ${REL_STEPS[dr.steps[0]].name.toLowerCase()} to see what it does.`}</span>
-        ) : null}
+      <p className={statusCls} key={drug} role="status" aria-live="polite">
+        {drug !== "none" ? <><span className="font-semibold">{dr.name}: </span>{dr.text(tx)}</> : null}
       </p>
       <Caption text={d.caption} />
     </figure>
@@ -160,130 +168,102 @@ export function Release({ d }: { d: ReleaseData }) {
 /* -------------------------------------------------------- thought record */
 const TR_STEPS = ["Situation", "Automatic thought", "Rate the feeling", "Thinking trap", "Evidence for", "Evidence against", "Balanced thought", "Rate again"];
 
-function EvidenceList({ items, n, setN, kind }: { items: string[]; n: number; setN: (k: number) => void; kind: "for" | "against" }) {
+function Part({ n, children }: { n: number; children: React.ReactNode }) {
   return (
-    <div className="mt-3">
-      <ul className="space-y-2">
-        {items.slice(0, n).map((e, k) => (
-          <li key={k} className={cn("vibha-pop rounded-xl border-2 border-foreground p-3 text-[0.95rem]", kind === "for" ? "bg-[var(--status-alert-bg)]" : "bg-[var(--status-success-bg)]")}>
-            <span className="font-semibold">{kind === "for" ? "For: " : "Against: "}</span><Rich text={e} />
-          </li>
-        ))}
-      </ul>
-      {n < items.length ? (
-        <button type="button" className={cn(btn, "mt-2 bg-card")} onClick={() => setN(n + 1)}><Eye className="size-4" aria-hidden /> Reveal {n === 0 ? "the first" : "the next"} ({n + 1} of {items.length})</button>
-      ) : null}
-    </div>
+    <li className="rounded-xl border-2 border-foreground bg-background p-3 sm:p-4">
+      <p className="text-xs font-bold tracking-wide uppercase">{n + 1}. {TR_STEPS[n]}</p>
+      {children}
+    </li>
   );
 }
 
-/** A CBT thought record, filled in step by step. */
+/** A CBT thought record, the whole record at once: rate, pick the trap, read both sides, rate again. */
 export function ThoughtRecord({ d }: { d: ThoughtRecordData }) {
-  const [step, setStep] = React.useState(0);
   const [before, setBefore] = React.useState(80);
   const [after, setAfter] = React.useState<number | null>(null);
   const [trap, setTrap] = React.useState<number | null>(null);
-  const [forN, setForN] = React.useState(0);
-  const [againstN, setAgainstN] = React.useState(0);
-  const last = TR_STEPS.length - 1;
   const aft = after ?? before;
-  const go = (k: number) => {
-    setStep(k);
-    if (k === last) trackLearn({ type: "widget", kind: "thoughtrecord", score: Math.max(0, before - aft) / 100 });
-  };
   const t = trap === null ? null : d.traps[trap];
   const drop = before - aft;
-  const status = (() => {
-    switch (step) {
-      case 0:
-        return <><span className="font-semibold">Situation: </span>Write down only the facts: where, when, who. No opinions yet.</>;
-      case 1:
-        return <><span className="font-semibold">Automatic thought: </span>This is the thought that popped up on its own. It feels true because it came so fast, but a thought is a guess, not a fact.</>;
-      case 2:
-        return <><span className="font-semibold">Rate the feeling: </span>How {d.emotion} do you feel when you believe this thought? You chose {before} out of 100.</>;
-      case 3:
-        return t ? <><span className="font-semibold">{t.right ? "Yes. " : "Not the best fit. "}</span><Rich text={t.why} /></> : <><span className="font-semibold">Thinking trap: </span>Which thinking trap fits this thought best? Pick one.</>;
-      case 4:
-        return <><span className="font-semibold">Evidence for: </span>{forN < d.forEvidence.length ? "Facts that support the thought. Be fair: there usually are some. Reveal each one." : "These are the facts on the thought's side. Now look at the other side."}</>;
-      case 5:
-        return <><span className="font-semibold">Evidence against: </span>{againstN < d.againstEvidence.length ? "Facts that do not fit the thought. Ask: what would I tell a friend? Reveal each one." : "Put both lists side by side. The thought explains only part of what happened."}</>;
-      case 6:
-        return <><span className="font-semibold">Balanced thought: </span>A balanced thought is not just positive thinking. It takes in the evidence on both sides and is something you can actually believe.</>;
-      default:
-        return after === null ? (
-          <><span className="font-semibold">Rate again: </span>Now hold the balanced thought in mind. How {d.emotion} do you feel? Move the slider.</>
-        ) : drop > 0 ? (
-          <><span className="font-semibold">From {before} to {aft}, down {drop} points. </span>The feeling rarely drops to zero, and it does not need to. A drop like this, from changing the thought and not the situation, is what CBT works on.</>
-        ) : (
-          <><span className="font-semibold">From {before} to {aft}. </span>The feeling has not dropped this time. That is common at first: look for more evidence against, or try a thought you believe a bit more.</>
-        );
-    }
-  })();
+  const quote = (cls?: string) => (
+    <p className={cn("mt-2 rounded-xl border-2 border-dashed border-foreground bg-card p-3 text-[1.05rem] font-semibold", cls)}>&ldquo;<Rich text={d.thought} />&rdquo;</p>
+  );
+  const evidence = (items: string[], kind: "for" | "against") => (
+    <ul className="mt-2 space-y-2">
+      {items.map((e, k) => (
+        <li key={k} className={cn("rounded-xl border-2 border-foreground p-3 text-[0.95rem]", kind === "for" ? "bg-[var(--status-alert-bg)]" : "bg-[var(--status-success-bg)]")}>
+          <Rich text={e} />
+        </li>
+      ))}
+    </ul>
+  );
   return (
     <figure className={card}>
-      <p className={label}>Fill in a thought record</p>
-      <ol className="mt-3 flex flex-wrap gap-1.5" aria-label="Steps">
-        {TR_STEPS.map((s, k) => (
-          <li key={s}>
-            <button type="button" onClick={() => go(k)} aria-current={k === step ? "step" : undefined} className={cn("min-h-11 rounded-md border-2 px-2.5 text-xs font-semibold sm:text-sm", k === step ? "border-foreground bg-foreground text-background" : k < step ? "border-foreground bg-card" : "border-foreground/25 bg-card text-muted-foreground")}>
-              {k + 1}. {s}
-            </button>
-          </li>
-        ))}
-      </ol>
-      <div className="mt-3 rounded-xl border-2 border-foreground bg-background p-3 sm:p-4" key={step}>
-        <p className="text-xs font-bold tracking-wide uppercase">{step + 1}. {TR_STEPS[step]}</p>
-        {step === 0 ? <p className="vibha-pop mt-2 text-[0.95rem]"><Rich text={d.situation} /></p> : null}
-        {step >= 1 && step <= 5 ? (
-          <p className={cn("vibha-pop mt-2 rounded-xl border-2 border-dashed border-foreground bg-card p-3 text-[1.05rem] font-semibold", step === 1 && "vibha-shake")}>&ldquo;<Rich text={d.thought} />&rdquo;</p>
-        ) : null}
-        {step === 2 ? (
-          <label className="mt-3 block text-sm font-semibold">
+      <p className={label}>Thought record</p>
+      <ol className="mt-3 space-y-2.5">
+        <Part n={0}><p className="mt-2 text-[0.95rem]"><Rich text={d.situation} /></p></Part>
+        <Part n={1}>{quote()}</Part>
+        <Part n={2}>
+          <label className="mt-2 block text-sm font-semibold">
             How {d.emotion}? {before} out of 100
             <input type="range" min={0} max={100} step={5} value={before} onChange={(e) => setBefore(Number(e.target.value))} className="mt-1 h-11 w-full accent-[var(--brand)]" aria-valuetext={`${before} out of 100`} />
           </label>
-        ) : null}
-        {step === 3 ? (
-          <div className="mt-3 grid gap-2 sm:grid-cols-2" role="group" aria-label="Thinking traps">
+        </Part>
+        <Part n={3}>
+          <div className="mt-2 grid gap-2 sm:grid-cols-2" role="group" aria-label="Thinking traps">
             {d.traps.map((x, k) => (
               <button key={k} type="button" aria-pressed={trap === k} className={cn(choiceCls(trap === k), trap === k && x.right && "bg-[var(--status-success-bg)] text-foreground", trap === k && !x.right && "bg-[var(--status-alert-bg)] text-foreground")} onClick={() => { setTrap(k); trackLearn({ type: "widget", kind: "thoughtrecord", ok: !!x.right, item: "trap" }); }}>
-                <Rich text={x.label} />{trap === k ? (x.right ? " (right)" : " (try again)") : null}
+                <Rich text={x.label} />{trap === k ? (x.right ? " (right)" : " (not this one)") : null}
               </button>
             ))}
           </div>
-        ) : null}
-        {step === 4 ? <EvidenceList items={d.forEvidence} n={forN} setN={setForN} kind="for" /> : null}
-        {step === 5 ? <EvidenceList items={d.againstEvidence} n={againstN} setN={setAgainstN} kind="against" /> : null}
-        {step === 6 ? (
-          <>
-            <p className="mt-2 text-[0.95rem] line-through opacity-60">&ldquo;<Rich text={d.thought} />&rdquo;</p>
-            <p className="vibha-pop mt-2 rounded-xl border-2 border-foreground bg-[var(--status-info-bg)] p-3 text-[1.05rem] font-semibold">&ldquo;<Rich text={d.balanced} />&rdquo;</p>
-          </>
-        ) : null}
-        {step === 7 ? (
-          <>
-            <label className="mt-2 block text-sm font-semibold">
-              How {d.emotion} now? {aft} out of 100
-              <input type="range" min={0} max={100} step={5} value={aft} onChange={(e) => setAfter(Number(e.target.value))} className="mt-1 h-11 w-full accent-[var(--brand)]" aria-valuetext={`${aft} out of 100`} />
-            </label>
-            <svg viewBox="0 0 320 64" className="mt-2 w-full" role="img" aria-label={`Before: ${before}. After: ${aft}.`}>
-              {[{ y: 8, v: before, n: "before" }, { y: 36, v: aft, n: "after" }].map((b) => (
-                <g key={b.n}>
-                  <text x="0" y={b.y + 13} className="fill-foreground text-[10px] font-semibold">{b.n}</text>
-                  <rect x="50" y={b.y} width="240" height="18" rx="4" className="fill-card stroke-foreground" strokeWidth="1.5" />
-                  <rect x="52" y={b.y + 2} width="236" height="14" rx="3" className={b.n === "before" ? "fill-[var(--destructive)]" : "fill-[var(--brand)]"} style={{ transform: `scaleX(${b.v / 100})`, transformBox: "fill-box", transformOrigin: "0 50%", transition: "transform 600ms var(--ease-out-expo)" }} />
-                  <text x="296" y={b.y + 13} className="fill-foreground text-[10px] font-bold tabular-nums">{b.v}</text>
-                </g>
-              ))}
-            </svg>
-          </>
-        ) : null}
-      </div>
-      <div className="mt-3 flex flex-wrap gap-2">
-        <button type="button" disabled={step === 0} className={cn(btn, "bg-card disabled:opacity-40")} onClick={() => go(step - 1)}><ChevronLeft className="size-4" aria-hidden /> Back</button>
-        <button type="button" disabled={step === last} className={cn(btn, "bg-foreground text-background disabled:opacity-40")} onClick={() => go(step + 1)}>Next <ChevronRight className="size-4" aria-hidden /></button>
-      </div>
-      <p className={statusCls} key={`${step}-${trap}-${forN}-${againstN}-${after === null}`} role="status" aria-live="polite">{status}</p>
+          <p className={statusCls} key={trap ?? "none"} role="status" aria-live="polite">
+            {t ? <><span className="font-semibold">{t.right ? "Yes. " : "Not the best fit. "}</span><Rich text={t.why} /></> : null}
+          </p>
+        </Part>
+        <Part n={4}>{evidence(d.forEvidence, "for")}</Part>
+        <Part n={5}>{evidence(d.againstEvidence, "against")}</Part>
+        <Part n={6}>
+          <p className="mt-2 text-[0.95rem] line-through opacity-60">&ldquo;<Rich text={d.thought} />&rdquo;</p>
+          <p className="mt-2 rounded-xl border-2 border-foreground bg-[var(--status-info-bg)] p-3 text-[1.05rem] font-semibold">&ldquo;<Rich text={d.balanced} />&rdquo;</p>
+        </Part>
+        <Part n={7}>
+          <label className="mt-2 block text-sm font-semibold">
+            How {d.emotion} now? {aft} out of 100
+            <input
+              type="range"
+              min={0}
+              max={100}
+              step={5}
+              value={aft}
+              onChange={(e) => {
+                const v = Number(e.target.value);
+                if (after === null) trackLearn({ type: "widget", kind: "thoughtrecord", score: Math.max(0, before - v) / 100 });
+                setAfter(v);
+              }}
+              className="mt-1 h-11 w-full accent-[var(--brand)]"
+              aria-valuetext={`${aft} out of 100`}
+            />
+          </label>
+          <svg viewBox="0 0 320 64" className="mt-2 w-full" role="img" aria-label={`Before: ${before}. After: ${aft}.`}>
+            {[{ y: 8, v: before, n: "before" }, { y: 36, v: aft, n: "after" }].map((b) => (
+              <g key={b.n}>
+                <text x="0" y={b.y + 13} className="fill-foreground text-[10px] font-semibold">{b.n}</text>
+                <rect x="50" y={b.y} width="240" height="18" rx="4" className="fill-card stroke-foreground" strokeWidth="1.5" />
+                <rect x="52" y={b.y + 2} width="236" height="14" rx="3" className={b.n === "before" ? "fill-[var(--destructive)]" : "fill-[var(--brand)]"} style={{ transform: `scaleX(${b.v / 100})`, transformBox: "fill-box", transformOrigin: "0 50%", transition: "transform 600ms var(--ease-out-expo)" }} />
+                <text x="296" y={b.y + 13} className="fill-foreground text-[10px] font-bold tabular-nums">{b.v}</text>
+              </g>
+            ))}
+          </svg>
+          <p className={statusCls} key={String(after === null)} role="status" aria-live="polite">
+            {after === null ? null : drop > 0 ? (
+              <><span className="font-semibold">From {before} to {aft}, down {drop} points. </span>The feeling rarely drops to zero, and it does not need to. Changing the thought, not the situation, is what CBT works on.</>
+            ) : (
+              <><span className="font-semibold">From {before} to {aft}. </span>No drop this time. That is common at first: look for more evidence against, or try a thought you believe a bit more.</>
+            )}
+          </p>
+        </Part>
+      </ol>
     </figure>
   );
 }
@@ -401,9 +381,13 @@ export function Hypnogram({ d }: { d: HypnogramData }) {
           </g>
         </svg>
       </div>
-      <button type="button" aria-pressed={dep} className={cn(choiceCls(dep), "mt-3")} onClick={() => { setDep((x) => !x); trackLearn({ type: "widget", kind: "hypnogram", item: dep ? "healthy" : "depression" }); }}>
-        {dep ? "In depression (tap for a typical night)" : "Typical night (tap for depression)"}
-      </button>
+      <div className="mt-3 flex flex-wrap gap-2" role="group" aria-label="Which night">
+        {[false, true].map((x) => (
+          <button key={String(x)} type="button" aria-pressed={dep === x} className={choiceCls(dep === x)} onClick={() => { if (dep !== x) trackLearn({ type: "widget", kind: "hypnogram", item: x ? "depression" : "healthy" }); setDep(x); }}>
+            {x ? "In depression" : "Typical night"}
+          </button>
+        ))}
+      </div>
       <dl className="mt-3 grid grid-cols-2 gap-2 text-sm sm:grid-cols-4">
         {[
           { k: "First REM after falling asleep", v: `${stats.latency} min` },
@@ -497,14 +481,10 @@ const STYLES: { id: Style; name: string; rate: string; why: string; x: number[];
   },
 ];
 
-/** Ainsworth's Strange Situation: step through the episodes, pick an attachment style. */
+/** Ainsworth's Strange Situation: every episode at once for the chosen attachment style. */
 export function Strange({ d }: { d: StrangeData }) {
   const [style, setStyle] = React.useState<Style>("secure");
-  const st = useStepPlayer(SS_STEPS.length, (k) => {
-    const y = STYLES.find((x) => x.id === style)!;
-    return `${SS_STEPS[k]?.name ?? ""} ${y.acts[k] ?? ""} ${y.rate} ${y.why}`;
-  });
-  const ep = Math.min(st.i, SS_STEPS.length - 1);
+  const [ep, setEp] = React.useState(0);
   const sty = STYLES.find((x) => x.id === style)!;
   const upset = sty.upset[ep];
   const care = ep !== 2;
@@ -535,7 +515,7 @@ export function Strange({ d }: { d: StrangeData }) {
         {person(260, "stranger", stranger, "fill-[var(--muted)]")}
         {/* infant */}
         <g style={{ transform: `translateX(${sty.x[ep]}px)`, transition: "transform 900ms var(--ease-out-expo)" }}>
-          <g className={upset >= 0.8 && st.playing ? "vibha-beat" : ""} style={{ "--beat": "700ms" } as React.CSSProperties}>
+          <g key={`${ep}-${style}`} className={upset >= 0.8 ? "vibha-beat" : ""} style={{ "--beat": "700ms", animationIterationCount: 3 } as React.CSSProperties}>
             <g style={{ transform: turned ? "scaleX(-1)" : "none", transition: "transform 400ms" }}>
               <circle cx="0" cy="98" r="10" className="fill-[var(--primary)] stroke-foreground" strokeWidth="2" />
               <circle cx="-4" cy="95" r="1.4" className="fill-foreground" />
@@ -552,16 +532,14 @@ export function Strange({ d }: { d: StrangeData }) {
         <rect x="132" y="144" width="176" height="6" rx="2" className="fill-[var(--destructive)]" style={{ transform: `scaleX(${upset})`, transformBox: "fill-box", transformOrigin: "0 50%", transition: "transform 700ms var(--ease-out-expo)" }} />
         <text x="310" y="164" textAnchor="end" className="fill-foreground text-[8px]">{mood}</text>
       </svg>
-      <StepList names={SS_STEPS.map((s) => s.name)} st={st} />
-      <PlayBar st={st} kind="strange" />
       <div className="mt-3 grid gap-2 sm:grid-cols-4" role="group" aria-label="Attachment style">
         {STYLES.map((x) => (
           <button key={x.id} type="button" aria-pressed={style === x.id} className={choiceCls(style === x.id)} onClick={() => { setStyle(x.id); trackLearn({ type: "widget", kind: "strange", item: x.id }); }}>{x.name}</button>
         ))}
       </div>
-      <p className={statusCls} key={`${ep}-${style}`} role="status" aria-live="polite">
-        <span className="font-semibold">{SS_STEPS[ep].name}, {sty.name.toLowerCase()} infant: </span>{sty.acts[ep]}
-        <span className="mt-2 block text-sm">{sty.rate} {sty.why} Rates differ a lot between countries. The real procedure runs eight short episodes in about 20 minutes, with two separations and two reunions; the reunions tell the most.</span>
+      <StepPicker steps={SS_STEPS.map((s, k) => ({ id: s.id, name: s.name, text: sty.acts[k] }))} i={ep} onPick={setEp} kind="strange" />
+      <p className={statusCls} key={style} role="status" aria-live="polite">
+        <span className="font-semibold">{sty.name}: </span>{sty.rate} {sty.why} Rates differ a lot between countries. The real procedure has eight short episodes, with two separations and two reunions; the reunions tell the most.
       </p>
       <Caption text={d.caption} />
     </figure>

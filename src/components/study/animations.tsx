@@ -6,7 +6,7 @@ import type { JourneyData, NeuronData, PathwaysData, ReceptorData } from "@/lib/
 import { cn } from "@/lib/utils";
 import { Rich } from "./rich";
 import { trackLearn } from "@/lib/learn/track";
-import { PlayBar, useStepPlayer } from "./pacing";
+import { StepPicker } from "./pacing";
 
 /**
  * Animated explainers: how a medicine travels from the mouth to a brain
@@ -60,17 +60,17 @@ const ROUTE_STAGES: Record<NonNullable<JourneyData["route"]>, Stage[]> = {
 export function Journey({ d }: { d: JourneyData }) {
   const [route, setRoute] = React.useState<NonNullable<JourneyData["route"]>>(d.route ?? "oral");
   const stages = ROUTE_STAGES[route].map((s) => ({ ...s, text: d.notes?.[s.id] ?? (s.id === "target" ? `At last it reaches its target: ${d.target}. There it acts on receptors, and this is where the effect (and many side effects) begins.` : s.text) }));
-  const st = useStepPlayer(stages.length, (k) => `${stages[k]?.name ?? ""} ${stages[k]?.text ?? ""}`);
-  const cur = stages[Math.min(st.i, stages.length - 1)];
-  const trail = stages.slice(0, st.i + 1);
+  const [i, setI] = React.useState(0);
+  const cur = stages[Math.min(i, stages.length - 1)];
+  const trail = stages.slice(0, i + 1);
   const routes = (d.routes ?? [route]) as NonNullable<JourneyData["route"]>[];
   return (
     <figure className={card}>
-      <p className={label}>{d.title ? <Rich text={d.title} /> : `Follow ${d.drug} through the body`}</p>
+      <p className={label}>{d.title ? <Rich text={d.title} /> : `${d.drug} through the body`}</p>
       {routes.length > 1 ? (
         <div className="mt-3 flex flex-wrap gap-1.5" role="group" aria-label="Route">
           {routes.map((r) => (
-            <button key={r} type="button" aria-pressed={route === r} onClick={() => { setRoute(r); st.setI(0); }} className={cn("min-h-10 rounded-md border-2 px-3 text-sm font-semibold", route === r ? "border-foreground bg-primary text-primary-foreground" : "border-foreground/30 bg-card")}>
+            <button key={r} type="button" aria-pressed={route === r} onClick={() => { setRoute(r); setI(0); }} className={cn("min-h-10 rounded-md border-2 px-3 text-sm font-semibold", route === r ? "border-foreground bg-primary text-primary-foreground" : "border-foreground/30 bg-card")}>
               {{ oral: "Tablet", iv: "Into a vein", nasal: "Nasal spray", depot: "Depot injection" }[r]}
             </button>
           ))}
@@ -92,7 +92,7 @@ export function Journey({ d }: { d: JourneyData }) {
         {/* trail */}
         <polyline points={trail.map((s) => `${s.x},${s.y}`).join(" ")} fill="none" className="stroke-[var(--brand)]" strokeWidth="2.5" strokeDasharray="5 4" />
         {stages.map((s, k) => (
-          <circle key={s.id} cx={s.x} cy={s.y} r={k <= st.i ? 4 : 3} className={k <= st.i ? "fill-foreground" : "fill-foreground/25"} />
+          <circle key={s.id} cx={s.x} cy={s.y} r={k <= i ? 4 : 3} className={k <= i ? "fill-foreground" : "fill-foreground/25"} />
         ))}
         {/* the medicine */}
         <g style={{ transform: `translate(${cur.x}px, ${cur.y}px)`, transition: "transform 900ms var(--ease-out-expo)" }}>
@@ -100,19 +100,7 @@ export function Journey({ d }: { d: JourneyData }) {
           <circle r="13" className="vibha-ping fill-none stroke-[var(--primary)]" strokeWidth="2" />
         </g>
       </svg>
-      <ol className="mt-3 flex flex-wrap gap-1.5" aria-label="Stages">
-        {stages.map((s, k) => (
-          <li key={s.id}>
-            <button type="button" onClick={() => st.setI(k)} aria-current={k === st.i ? "step" : undefined} className={cn("min-h-10 rounded-md border-2 px-2.5 text-xs font-semibold sm:text-sm", k === st.i ? "border-foreground bg-foreground text-background" : k < st.i ? "border-foreground bg-card" : "border-foreground/25 bg-card text-muted-foreground")}>
-              {k + 1}. {s.name}
-            </button>
-          </li>
-        ))}
-      </ol>
-      <PlayBar st={st} kind="journey" first="Play the journey" hint="or tap a stage" />
-      <p className="vibha-pop mt-3 rounded-xl bg-muted p-3 text-[0.95rem] leading-relaxed" key={`${route}-${cur.id}`} role="status" aria-live="polite">
-        <span className="font-semibold">{cur.name}: </span><Rich text={cur.text} />
-      </p>
+      <StepPicker steps={stages.map((s) => ({ id: s.id, name: s.name, text: <Rich text={s.text} /> }))} i={i} onPick={setI} kind="journey" label="Stages" />
       {d.caption ? <figcaption className="mt-2 text-sm text-muted-foreground"><Rich text={d.caption} /></figcaption> : null}
     </figure>
   );
@@ -131,7 +119,7 @@ export function Neuron({ d }: { d: NeuronData }) {
   const trace = fires ? AP_TRACE : ([[0, -70], [8, -70], [10, -62], [14, -68], [40, -70]] as [number, number][]);
   return (
     <figure className={card}>
-      <p className={label}>{d.title ? <Rich text={d.title} /> : "Make the neuron fire"}</p>
+      <p className={label}>{d.title ? <Rich text={d.title} /> : "How a neuron fires"}</p>
       <svg viewBox="0 0 320 120" className="mt-3 w-full rounded-xl border-2 border-foreground bg-background" role="img" aria-label={fires ? "The signal travels down the axon" : "Too weak: no signal"}>
         {/* dendrites + soma */}
         <path d="M10 40 L 34 52 M10 72 L 34 62 M18 30 L 38 50" className="stroke-foreground" strokeWidth="2" />
@@ -169,7 +157,7 @@ export function Neuron({ d }: { d: NeuronData }) {
         </svg>
         <p className="text-[0.95rem] leading-relaxed" role="status">
           {shot === 0
-            ? "Set the strength and press Fire."
+            ? ""
             : fires
               ? <>Threshold reached, so it is all or none: sodium rushes in (the spike up), then potassium flows out (the fall and a brief dip below resting). {myelin ? "With myelin the signal leaps from gap to gap, many times faster." : "Without myelin it travels slowly; this is part of what goes wrong in multiple sclerosis."} At the end, the terminal releases its messengers.</>
               : "Below threshold: a small blip that fades. No action potential, and nothing is released. A neuron never fires 'a little'; it fires fully or not at all."}
@@ -283,7 +271,7 @@ export function Receptor({ d }: { d: ReceptorData }) {
         ))}
       </div>
       <p className="vibha-pop mt-3 rounded-xl bg-muted p-3 text-[0.95rem] leading-relaxed" key={pick} role="status" aria-live="polite">
-        <span className="font-semibold">{L.name}: </span>{L.text} <span className="text-muted-foreground">(Dashed line = background level.)</span>
+        <span className="font-semibold">{L.name}: </span>{L.text} <span className="text-muted-foreground">Dashed line: background level.</span>
       </p>
       <button type="button" className={cn(btn, "mt-2 bg-card")} onClick={() => setPick("none")}><RotateCcw className="size-4" aria-hidden /> Empty the receptor</button>
       {d.caption ? <figcaption className="mt-2 text-sm text-muted-foreground"><Rich text={d.caption} /></figcaption> : null}

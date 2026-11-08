@@ -5,7 +5,7 @@ import { Moon, Play, RotateCcw, Sun } from "lucide-react";
 import type { HpaLoopData } from "@/lib/study/types";
 import { cn } from "@/lib/utils";
 import { trackLearn } from "@/lib/learn/track";
-import { Missions, SceneCard, btn, chip, statusCls, useMissions, useReducedMotion } from "./kit";
+import { SceneCard, btn, chip, statusCls, useReducedMotion } from "./kit";
 
 /**
  * A day of stress, played. Events arrive (an exam, an argument, a
@@ -121,7 +121,6 @@ export function HpaLoop({ d }: { d: HpaLoopData }) {
   const target = leg.to;
   const [last, setLast] = React.useState<Choice | null>(null);
   const [days, setDays] = React.useState(0); // chronic: days shown
-  const ms = useMissions(["day", "green", "avoid", "chronic", "broken"] as const);
   const state: DayState = { choices, feedback: 1, extraBase: 0 };
   const step = choices.length;
   const moving = now < target;
@@ -147,12 +146,9 @@ export function HpaLoop({ d }: { d: HpaLoopData }) {
     setChoices(next);
     setLast(c);
     setLeg({ from: EVENTS[next.length - 1].at + REACT, to: next.length < EVENTS.length ? EVENTS[next.length].at + REACT : DAY_END });
-    if (c === "avoid") ms.mark("avoid");
     trackLearn({ type: "widget", kind: "hpaloop", item: c });
     if (next.length === EVENTS.length) {
-      ms.mark("day");
       const load = stressLoad({ choices: next, feedback: 1, extraBase: 0 });
-      if (load < GREEN) ms.mark("green");
       trackLearn({ type: "widget", kind: "hpaloop", score: Math.max(0, 1 - load / 3) });
     }
   };
@@ -169,8 +165,6 @@ export function HpaLoop({ d }: { d: HpaLoopData }) {
   const nextDay = () => {
     const k = Math.min(5, days + 1);
     setDays(k);
-    ms.mark("chronic");
-    if (k >= 4) ms.mark("broken");
   };
 
   const h = hormones(now, state);
@@ -179,9 +173,9 @@ export function HpaLoop({ d }: { d: HpaLoopData }) {
   const fbChronic = days ? [1, 0.8, 0.6, 0.42, 0.3][days - 1] : 1;
   const status = (() => {
     if (mode === "chronic") {
-      return days === 0 ? "Chronic stress mode: the same hard day, five days running, with no recovery. Press Next day and watch the off switch." : CHRONIC[days - 1];
+      return days === 0 ? "Chronic stress: the same hard day, again and again, with no recovery." : CHRONIC[days - 1];
     }
-    if (waiting) return "7:00. Press Start the day: the clock runs to the first event, then waits for your choice.";
+    if (waiting) return "7:00. A normal day is about to start.";
     if (ended) return null;
     if (moving && now < 1) return null;
     if (atEvent && ev) return `${ev.title}: ${ev.scene} Adrenaline spikes within seconds through the sympathetic nerves; cortisol takes 20 to 30 minutes to peak, because it needs the slower chain: hypothalamus (CRH), pituitary (ACTH), adrenal cortex (cortisol). How do you cope?`;
@@ -190,7 +184,7 @@ export function HpaLoop({ d }: { d: HpaLoopData }) {
   const grade = load < GREEN ? "green: you recovered well between stressors" : load < AMBER ? "amber: recovery was partial" : "red: the stress kept piling up";
 
   return (
-    <SceneCard title={d.title ?? "A day of stress, played"} goal="Get through the day: pick how to cope after each event and keep your stress load in the green. Then run chronic stress and watch the loop fail." caption={d.caption}>
+    <SceneCard title={d.title ?? "A day of stress, played"} caption={d.caption}>
       <div className="mt-3 grid grid-cols-2 gap-1.5" role="group" aria-label="Mode">
         <button type="button" aria-pressed={mode === "day"} className={chip(mode === "day", "text-center")} onClick={() => setMode("day")}><Sun className="mr-1 inline size-4" aria-hidden />One day</button>
         <button type="button" aria-pressed={mode === "chronic"} className={chip(mode === "chronic", "text-center")} onClick={() => setMode("chronic")}><Moon className="mr-1 inline size-4" aria-hidden />Chronic stress</button>
@@ -246,7 +240,7 @@ export function HpaLoop({ d }: { d: HpaLoopData }) {
         </>
       ) : (
         <div className="mt-3 flex flex-wrap gap-2">
-          <button type="button" className={cn(btn, "bg-foreground text-background")} onClick={nextDay} disabled={days >= 5}><Play className="size-4" aria-hidden /> {days === 0 ? "Start day 1" : days >= 5 ? "Day 5 reached" : `Next day (${days + 1} of 5)`}</button>
+          <button type="button" className={cn(btn, "bg-foreground text-background")} onClick={nextDay} disabled={days >= 5}><Play className="size-4" aria-hidden /> {days === 0 ? "Start day 1" : days >= 5 ? "Last day reached" : `Next day (day ${days + 1})`}</button>
           <button type="button" className={cn(btn, "bg-card text-sm")} onClick={() => setDays(0)}><RotateCcw className="size-4" aria-hidden /> Start over</button>
         </div>
       )}
@@ -261,16 +255,6 @@ export function HpaLoop({ d }: { d: HpaLoopData }) {
           <p className="mt-1">Feedback strength: {Math.round(fbChronic * 100)} percent{days >= 4 ? " (failing)" : ""}.</p>
         )}
       </div>
-      <Missions
-        doneText="All missions done: you have seen a stress response switch off, and what happens when it cannot."
-        items={[
-          { id: "day", label: "Get through the whole day", done: ms.done("day") },
-          { id: "green", label: "Finish with the stress load in the green", done: ms.done("green") },
-          { id: "avoid", label: "Try avoidance and watch the problem come back", done: ms.done("avoid") },
-          { id: "chronic", label: "Run chronic stress mode", done: ms.done("chronic") },
-          { id: "broken", label: "Watch the feedback loop fail (day 4)", done: ms.done("broken") },
-        ]}
-      />
     </SceneCard>
   );
 }
@@ -347,7 +331,6 @@ function ChronicChart({ days }: { days: number }) {
       {lines.map((p, k) => <polyline key={k} points={p} fill="none" className="stroke-[var(--brand)]" strokeWidth={k === days - 1 ? 3 : 1.5} style={{ opacity: 0.25 + (k + 1) / (days + 1) * 0.75 }} />)}
       {lines.map((_, k) => (k === 0 || k === days - 1) && <text key={k} x="314" y={CY(hormones(DAY_END, { choices: ["avoid", "avoid", "avoid", "avoid"], feedback: fb[k], extraBase: k * 0.06 }).cort) + 3} textAnchor="end" className="fill-foreground text-[9px] font-bold">Day {k + 1}</text>)}
       <text x="34" y="12" className="fill-muted-foreground text-[10px]">cortisol through each day</text>
-      {days === 0 ? <text x="160" y="76" textAnchor="middle" className="fill-muted-foreground text-[11px]">Press Start day 1</text> : null}
     </svg>
   );
 }
