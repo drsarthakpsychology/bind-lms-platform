@@ -23,6 +23,9 @@ import { COGNITIVE_L05 } from "./cognitive-l05";
 import { DEVELOPMENTAL_L01 } from "./developmental-l01";
 import { DEVELOPMENTAL_L02 } from "./developmental-l02";
 import { DEVELOPMENTAL_L03 } from "./developmental-l03";
+import { HISTORY_SYSTEMS_L01 } from "./history-systems-l01";
+import { HISTORY_SYSTEMS_L02 } from "./history-systems-l02";
+import { HISTORY_SYSTEMS_L03 } from "./history-systems-l03";
 import { LEARNING_MOTIVATION_EMOTION_L01 } from "./learning-motivation-emotion-l01";
 import { LEARNING_MOTIVATION_EMOTION_L02 } from "./learning-motivation-emotion-l02";
 import { LEARNING_MOTIVATION_EMOTION_L03 } from "./learning-motivation-emotion-l03";
@@ -86,6 +89,9 @@ export const LONG_QA: LongQA[] = [
   ...DEVELOPMENTAL_L01,
   ...DEVELOPMENTAL_L02,
   ...DEVELOPMENTAL_L03,
+  ...HISTORY_SYSTEMS_L01,
+  ...HISTORY_SYSTEMS_L02,
+  ...HISTORY_SYSTEMS_L03,
   ...LEARNING_MOTIVATION_EMOTION_L01,
   ...LEARNING_MOTIVATION_EMOTION_L02,
   ...LEARNING_MOTIVATION_EMOTION_L03,

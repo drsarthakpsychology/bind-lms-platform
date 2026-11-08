@@ -136,6 +136,7 @@ export const TOPIC_GROUPS: Record<Subject, readonly TopicGroup[]> = {
     g("gestalt", "Gestalt", /^gestalt$/, "foundations/2-2"),
     g("later-schools", "Psychoanalysis, humanism and the cognitive revolution", /^(psychoanalytic-movement|humanistic-movement|cognitive-revolution)$/, "foundations/2-2"),
     g("india", "Psychology in India", /^india-history$/, "foundations/3-1"),
+    g("paradigms", "Paradigms and the crisis", /^(paradigms|crisis-in-psychology|replication-crisis)$/, "foundations/3-4"),
   ],
   psychopathology: [
     g("classification", "Classification and models", /^(abnormality|classification|dsm-|icd11$|dimensional|reliability-validity|models$|aetiology-(basics|general)|biopsychosocial|diathesis|stress-vulnerability|cognitive-models|learning-models|family-models|psychodynamic-models|sociocultural|evolutionary|labelling|other-conditions|specifiers$)/, "exam-prep/3-1"),
