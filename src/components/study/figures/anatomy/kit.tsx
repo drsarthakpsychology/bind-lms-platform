@@ -272,6 +272,10 @@ export const MED = {
   sfMinor: [sm([[110, 150], [130, 140], [150, 146], [168, 132]]), sm([[140, 230], [160, 220], [182, 226], [200, 216]]), sm([[456, 96], [470, 110], [484, 112]]), sm([[480, 250], [500, 258], [516, 254]]), sm([[456, 164], [472, 176], [494, 180]])],
 };
 
+const cbFold = folded([[386, 330], [392, 298], [420, 284], [470, 278], [520, 292], [550, 322], [542, 356], [500, 378], [440, 380], [404, 362], [386, 336]], { every: 30, depth: 16, thick: 6, side: -1 });
+/** The cerebellum on the midline view with its folia. */
+const MED_CB = poly(cbFold.outer, true);
+
 /** The midline brain, drawn. `children` go on top of the cortex and below the deep parts; `over` goes on top of everything. */
 export function MedialBrain({ u, children, over, deep = true, tones }: { u: FigureUid; children?: React.ReactNode; over?: React.ReactNode; deep?: boolean; tones?: Partial<Record<"cortex" | "cut" | "cc", string>> }) {
   const t = { cortex: C.t1, cut: C.t2, cc: C.paper, ...tones };
@@ -279,7 +283,7 @@ export function MedialBrain({ u, children, over, deep = true, tones }: { u: Figu
     <g>
       <Shade u={u} />
       <Solid d={MED.temporal} fill={C.t2} u={u} part="temporal-medial" />
-      <Solid d={MED.cerebellum} fill={C.t2} u={u} part="cerebellum" />
+      <path d={MED_CB} fill={C.t3} stroke={C.ink} strokeWidth={1.6} data-part="cerebellum" />
       <g pointerEvents="none">
         {MED.arbor.map((d) => (
           <path key={d} d={d} fill="none" stroke={C.paper} strokeWidth={4} strokeLinecap="round" />

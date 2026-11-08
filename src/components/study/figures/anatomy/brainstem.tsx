@@ -1,5 +1,5 @@
 import type { FigureDef } from "../types";
-import { C, Groove, MedialBrain, Mirror, Note, Shade, Solid, ell, sm, tube } from "./kit";
+import { C, Groove, MedialBrain, Mirror, Note, Shade, Solid, ell, folded, poly, sm, tube } from "./kit";
 
 /*
  * Brainstem cross-sections at three levels, the cerebellum, the spinal cord,
@@ -209,7 +209,7 @@ export const cerebellum: FigureDef = {
       <Shade u={u} />
       {/* A: midline cut */}
       <path d={tube([[150, 60], [160, 140], [170, 220], [176, 320]], [60, 70, 50, 34])} fill={C.t2} stroke={C.ink} strokeWidth={1.8} />
-      <path d={sm([[190, 180], [214, 120], [270, 80], [340, 76], [392, 110], [404, 170], [386, 232], [330, 270], [260, 272], [214, 244]], true)} fill={C.t3} stroke={C.ink} strokeWidth={2} data-part="vermis" />
+      <path d={poly(folded([[190, 182], [196, 150], [214, 120], [270, 80], [340, 76], [392, 110], [404, 170], [386, 232], [330, 270], [260, 272], [214, 244], [190, 186]], { every: 34, depth: 20, thick: 8, side: -1 }).outer, true)} fill={C.t3} stroke={C.ink} strokeWidth={2} data-part="vermis" />
       <path d="M196 182 L232 168 L210 204 Z" fill={C.blueSoft} stroke={C.ink} strokeWidth={1.4} />
       <g fill="none" strokeLinecap="round">
         {[
