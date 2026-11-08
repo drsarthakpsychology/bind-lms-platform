@@ -19,6 +19,9 @@ import { PERCEPTION_ATTENTION_L02 } from "./perception-attention-l02";
 import { PERCEPTION_ATTENTION_L03 } from "./perception-attention-l03";
 import { PERCEPTION_ATTENTION_L04 } from "./perception-attention-l04";
 import { PERCEPTION_ATTENTION_L05 } from "./perception-attention-l05";
+import { LEARNING_MOTIVATION_EMOTION_L01 } from "./learning-motivation-emotion-l01";
+import { LEARNING_MOTIVATION_EMOTION_L02 } from "./learning-motivation-emotion-l02";
+import { LEARNING_MOTIVATION_EMOTION_L03 } from "./learning-motivation-emotion-l03";
 
 /** Every hand-written long answer. Writers add part files and spread them in here. */
 export const LONG_QA: LongQA[] = [
@@ -42,4 +45,7 @@ export const LONG_QA: LongQA[] = [
   ...PERCEPTION_ATTENTION_L03,
   ...PERCEPTION_ATTENTION_L04,
   ...PERCEPTION_ATTENTION_L05,
+  ...LEARNING_MOTIVATION_EMOTION_L01,
+  ...LEARNING_MOTIVATION_EMOTION_L02,
+  ...LEARNING_MOTIVATION_EMOTION_L03,
 ];
