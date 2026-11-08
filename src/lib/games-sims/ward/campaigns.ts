@@ -8,6 +8,7 @@ import { CAMPAIGNS_B } from "./campaigns-b";
 import { CAMPAIGNS_C } from "./campaigns-c";
 import { CAMPAIGNS_D } from "./campaigns-d";
 import { CAMPAIGNS_E } from "./campaigns-e";
+import { CAMPAIGNS_F } from "./campaigns-f";
 import { tags } from "./kit";
 import { hashString, makeRng, shuffle } from "../common";
 
@@ -539,7 +540,7 @@ function spread(c: Campaign): Campaign {
   return c;
 }
 
-export const CAMPAIGNS: Campaign[] = [pune, chennai, london, ...CAMPAIGNS_B, ...CAMPAIGNS_C, ...CAMPAIGNS_D, ...CAMPAIGNS_E].map(spread);
+export const CAMPAIGNS: Campaign[] = [pune, chennai, london, ...CAMPAIGNS_B, ...CAMPAIGNS_C, ...CAMPAIGNS_D, ...CAMPAIGNS_E, ...CAMPAIGNS_F].map(spread);
 
 export function campaignById(id: string): Campaign | undefined {
   return CAMPAIGNS.find((c) => c.id === id);
