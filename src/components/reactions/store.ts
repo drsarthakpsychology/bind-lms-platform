@@ -13,6 +13,8 @@ export type Shown = Reaction & { key: number };
 let current: Shown | null = null;
 let lastAt = 0;
 let seq = 0;
+/** Bumped by a full dismiss, so a reaction still loading never lands afterwards. */
+let gen = 0;
 const subs = new Set<() => void>();
 
 function emit() {
@@ -40,6 +42,7 @@ export function showReaction(mood: Mood): void {
   lastAt = Date.now();
   const r = pickReaction(mood);
   const t0 = lastAt;
+  const mine = gen;
   const img = new Image();
   img.decoding = "async";
   img.src = stickerSrc(r.sticker.id);
@@ -47,7 +50,7 @@ export function showReaction(mood: Mood): void {
   void Promise.race([loaded, new Promise((res) => setTimeout(res, LOAD_CAP_MS))]).then(() => {
     setTimeout(
       () => {
-        if (!readReactionsOn()) return;
+        if (mine !== gen || !readReactionsOn()) return;
         current = { ...r, key: ++seq };
         emit();
       },
@@ -56,7 +59,9 @@ export function showReaction(mood: Mood): void {
   });
 }
 
+/** Close the reaction on screen. With no key, also cancel any still loading (an end screen took over). */
 export function dismissReaction(key?: number): void {
+  if (key === undefined) gen++;
   if (!current || (key !== undefined && current.key !== key)) return;
   current = null;
   emit();

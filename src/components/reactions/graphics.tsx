@@ -2,11 +2,12 @@
 
 import * as React from "react";
 import Image from "next/image";
-import { Check, Flame, X } from "lucide-react";
+import { BookOpen, Check, Flame, X } from "lucide-react";
 import { pickReaction, type Reaction } from "@/lib/reactions/pick";
 import { GOOD_MOODS, moodForScore, stickerById, stickerSrc, type Mood } from "@/lib/reactions/stickers";
 import { cn } from "@/lib/utils";
 import { useReactionsOn } from "./use-reaction";
+import { dismissReaction } from "./store";
 import s from "./reactions.module.css";
 
 /*
@@ -91,6 +92,10 @@ export function EndReaction({
     () => null,
   );
   const art = useStampIn<HTMLDivElement>(Boolean(r));
+  // An end screen has its own sticker: clear any pop-up still on screen.
+  React.useLayoutEffect(() => {
+    if (r) dismissReaction();
+  }, [r]);
   if (!r) return null;
   const good = GOOD_MOODS.has(mood);
   return (
@@ -194,7 +199,10 @@ export function StreakMeter({ streak, className }: { streak: number; className?:
         {[0, 1, 2, 3, 4].map((k) => (
           <span
             key={k < full ? `on-${k}` : `off-${k}`}
-            className={cn("block h-4 w-2 -skew-x-12 rounded-[2px] border-2", hot ? "border-background" : "border-foreground", k < full ? cn("bg-primary", k === full - 1 && s.fill) : "bg-transparent")}
+            className={cn(
+              "block h-3.5 w-2.5 -skew-x-12",
+              k < full ? cn("border-2 bg-primary", hot ? "border-background" : "border-foreground", k === full - 1 && s.fill) : hot ? "bg-background/25" : "bg-foreground/15",
+            )}
           />
         ))}
       </span>
@@ -233,13 +241,13 @@ export function EmptySticker({ sticker, title, children, className }: { sticker:
 }
 
 /* -------------------------------------------------------- section motif */
-/** A small stamp for a Study section opener: the section number on halftone paper. */
-export function SectionMotif({ label, className }: { label: string; className?: string }) {
+/** A small stamp for a Study section opener: an open book, rubber-stamped on halftone paper. No words. */
+export function SectionMotif({ className }: { className?: string }) {
   return (
     <span aria-hidden className={cn("pointer-events-none relative inline-grid size-16 shrink-0 place-items-center", className)}>
       <span className={cn("absolute inset-0 translate-x-1.5 translate-y-1.5 rounded-lg", s.halftoneDisc)} />
       <span className="relative grid size-14 rotate-[-6deg] place-items-center rounded-lg border-2 border-foreground bg-card shadow-[inset_0_0_0_3px_var(--card),inset_0_0_0_4.5px_var(--foreground)] hard-shadow-xs">
-        <span className="font-mono text-sm font-bold tracking-tight tabular-nums text-link">{label}</span>
+        <BookOpen className="size-6 text-link" strokeWidth={2.25} />
       </span>
     </span>
   );

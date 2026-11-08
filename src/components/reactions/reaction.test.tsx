@@ -5,7 +5,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { REACTIONS_KEY } from "@/lib/reactions/prefs";
 import { ReactionLayer, SHOW_MS } from "./reaction-layer";
 import { ReactionsToggle } from "./reactions-toggle";
-import { resetReactionStore } from "./store";
+import { dismissReaction, resetReactionStore } from "./store";
 import { useReaction, type ReactionApi } from "./use-reaction";
 
 let api: ReactionApi | null = null;
@@ -83,6 +83,14 @@ describe("funny reactions in the browser", () => {
       api!.onAnswer(true);
     });
     await act(() => vi.advanceTimersByTimeAsync(20_000));
+    expect(popup()).toBe(null);
+  });
+
+  it("an end screen taking over cancels a reaction that is still loading", async () => {
+    setup();
+    act(() => api!.onAnswer(true));
+    act(() => dismissReaction());
+    await act(() => vi.advanceTimersByTimeAsync(2000));
     expect(popup()).toBe(null);
   });
 

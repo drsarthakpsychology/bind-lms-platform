@@ -162,7 +162,7 @@ function Popup({ r }: { r: Shown }) {
           type="button"
           onClick={leave}
           className={cn(
-            "relative block max-w-[13.5rem] rounded-lg border-2 border-foreground px-3 py-2 text-left text-small leading-snug font-semibold text-foreground hard-shadow-sm outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60 md:max-w-[16rem] md:text-body",
+            "relative block max-w-[14rem] rounded-lg border-2 border-foreground py-2 pr-3 pl-5 text-left text-small leading-snug font-semibold text-foreground hard-shadow-sm outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60 md:max-w-[16rem] md:text-body",
             good ? "bg-status-success-bg" : "bg-card",
           )}
         >
@@ -179,9 +179,9 @@ function Popup({ r }: { r: Shown }) {
           }}
           aria-label="Turn off funny reactions"
           title="Turn off funny reactions"
-          className="absolute -top-3.5 -left-3 grid size-8 place-items-center rounded-full border-2 border-foreground bg-card text-foreground hard-shadow-xs transition-transform duration-fast hover:-translate-y-0.5 active:translate-y-px focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60 pointer-coarse:size-9"
+          className="absolute -top-3.5 -left-3.5 grid size-7 place-items-center rounded-full border-2 border-foreground bg-card text-foreground hard-shadow-xs transition-transform duration-fast hover:-translate-y-0.5 active:translate-y-px focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60 pointer-coarse:size-8"
         >
-          <MessageCircleOff className="size-4" aria-hidden />
+          <MessageCircleOff className="size-3.5" aria-hidden />
         </button>
       </div>
       {/* Tapping the sticker closes it too (the bubble is the keyboard way). */}

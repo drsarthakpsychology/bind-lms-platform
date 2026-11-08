@@ -13,6 +13,7 @@ import { cn } from "@/lib/utils";
 import { SectionMarks } from "./marks";
 import s from "./study.module.css";
 import { backLinkClass } from "@/components/design-system/back-link";
+import { SectionMotif } from "@/components/reactions/graphics";
 
 export type TocItem = { id: string; num: string; title: string; part?: string; isTest: boolean; href: string };
 
@@ -280,12 +281,13 @@ export function SectionReader({
           </div>
         ) : null}
 
-        <header className="mb-6 max-w-[68ch]">
-          <p className="text-eyebrow text-link">
+        <header className="relative mb-6 max-w-[68ch]">
+          {section.isTest ? null : <SectionMotif className="absolute top-0 right-0 hidden sm:inline-grid" />}
+          <p className="text-eyebrow text-link sm:pr-20">
             {moduleTitle}
             {section.part ? ` · ${section.part.replace(/^Part [IVX]+ · /, "")}` : ""}
           </p>
-          <h1 className="mt-1.5 break-words text-h1">
+          <h1 className="mt-1.5 break-words text-h1 sm:pr-20">
             {section.isTest ? "" : <span className="mr-2 text-link">{section.num}</span>}
             {section.title}
           </h1>
