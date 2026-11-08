@@ -185,7 +185,7 @@ describe("sampling", () => {
     expect(new Set(all).size).toBe(all.length);
     // The sample bank is small, so every question fits.
     expect(all.length).toBe(SAMPLE_QUESTIONS.length);
-    expect(paper.sections.find((s) => s.title.includes("NET Paper 1"))!.ids.every((id) => KEY.get(id)!.subject === "ugc-paper1")).toBe(true);
+    expect(paper.sections.find((s) => s.title.startsWith("General paper"))!.ids.every((id) => KEY.get(id)!.subject === "ugc-paper1")).toBe(true);
   });
   it("mixByDifficulty spreads levels instead of bunching one", () => {
     const qs = SAMPLE_QUESTIONS.filter((q) => q.subject === "statistics");
