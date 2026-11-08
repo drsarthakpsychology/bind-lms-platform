@@ -159,7 +159,7 @@ Illness anxiety disorder is excessive health fear with few symptoms; CBT targeti
 Factitious disorder is the deliberate falsification of physical or psychological signs or symptoms, or the induction of injury or disease, associated with identified deception, in order to take on the sick role. The deceptive behaviour is present even without obvious external rewards.
 
 ## Types
-- Factitious disorder imposed on self: the person presents himself or herself as ill, impaired or injured. The severe chronic form with travel between hospitals and dramatic stories was called Munchausen syndrome (Asher, 1951).
+- Factitious disorder imposed on self: the person presents himself or herself as ill, impaired or injured. The severe chronic form with travel between hospitals and dramatic stories was called Munchausen syndrome, a name Richard Asher gave it in 1951.
 - Factitious disorder imposed on another (previously Munchausen by proxy): a caregiver, usually a mother, falsifies or induces illness in a child or dependent. The perpetrator receives the diagnosis, and it is a form of child abuse requiring protection.
 
 ## Common presentations

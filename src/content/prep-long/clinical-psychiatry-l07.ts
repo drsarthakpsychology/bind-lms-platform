@@ -226,7 +226,7 @@ Capacity assessment under the MHCA is a structured, decision specific process ba
 Fitness to stand trial (competence to stand trial) is the accused's present ability to take part meaningfully in the trial. It protects fairness: a person who cannot understand the charges or instruct a lawyer cannot defend themselves.
 
 ## Abilities assessed
-Classic legal tests come from R v Pritchard (England, 1836) and Dusky v United States (USA, 1960), which asked whether the accused has sufficient present ability to consult with a lawyer with a reasonable degree of rational understanding, and a rational and factual understanding of the proceedings. Practically, the accused should be able to:
+Classic legal tests come from R v Pritchard, an English case from 1836, and Dusky v United States, a US case from 1960, which asked whether the accused has sufficient present ability to consult with a lawyer with a reasonable degree of rational understanding, and a rational and factual understanding of the proceedings. Practically, the accused should be able to:
 - Understand the charge and its possible consequences.
 - Understand the roles of judge, prosecutor, defence lawyer and witnesses.
 - Instruct a lawyer and follow the evidence.
@@ -284,7 +284,7 @@ In 1843 Daniel M'Naghten, who had persecutory delusions about the Tory party, sh
 
 ## Other tests
 - Irresistible impulse test: the accused knew the act was wrong but could not control the impulse because of mental disease; criticised because it is hard to separate an irresistible impulse from an impulse not resisted.
-- Durham rule (USA, 1954): the accused is not responsible if the act was the product of mental disease or defect; abandoned because it gave experts too much power.
+- Durham rule, USA 1954: the accused is not responsible if the act was the product of mental disease or defect; abandoned because it gave experts too much power.
 - American Law Institute test in 1962: lacking substantial capacity either to appreciate the criminality (wrongfulness) of the conduct or to conform conduct to the law; it adds a volitional limb.
 - After John Hinckley's acquittal for shooting President Reagan in 1981, the US federal Insanity Defense Reform Act 1984 removed the volitional limb and shifted the burden to the defence.
 - England has a separate partial defence of diminished responsibility for murder, which reduces it to manslaughter; Indian law has no such defence.
@@ -301,7 +301,7 @@ Key cases:
 - Dahyabhai Chhaganbhai Thakkar v State of Gujarat in 1964: the Supreme Court held that the accused must establish insanity on a balance of probabilities, but that if the evidence raises a reasonable doubt about mens rea, the accused is entitled to acquittal.
 - Surendra Mishra v State of Jharkhand in 2011: every person who is mentally ill is not exempt; the accused must show legal insanity at the time of the offence.
 - Courts look at conduct before, during and after the act (motive, planning, concealment, flight, statements) to infer knowledge of wrongfulness, and give weight to medical history close to the time of the act.
-Mental illness after conviction is a ground for commuting a death sentence (Shatrughan Chauhan v Union of India, 2014; Accused X v State of Maharashtra, 2019).
+Mental illness after conviction is a ground for commuting a death sentence (Shatrughan Chauhan v Union of India in 2014, and Accused X v State of Maharashtra in 2019).
 
 ## The psychiatrist's assessment
 - Retrospective reconstruction of the mental state at the time of the act: interviews with the accused and witnesses, police papers, statements, medical and prison records, previous psychiatric treatment.

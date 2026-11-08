@@ -16,7 +16,7 @@ export const CLINICAL_THERAPIES_L06: LongQA[] = anchored([
 - Empirically supported treatments (ESTs) are specific, manualised therapies shown to be effective for specific disorders in controlled research.
 
 ## Criteria for ESTs
-The APA Division 12 task force (Chambless and colleagues, 1990s) set criteria:
+The APA Division 12 task force, led by Dianne Chambless in the 1990s, set criteria:
 - Well established treatments: at least two good between group experiments by different investigators showing superiority to placebo or another treatment, or equivalence to an established treatment, or a large series of single case experiments; using treatment manuals and clearly specified samples.
 - Probably efficacious treatments: weaker but positive evidence, such as two trials better than a waiting list or trials from one research group.
 Examples: exposure based therapies for phobias, ERP for OCD, CBT for panic disorder, trauma focused CBT for PTSD, DBT for borderline personality disorder, family based treatment for adolescent anorexia.
@@ -43,7 +43,7 @@ Routine outcome monitoring (measuring progress session by session) links researc
 ## Conclusion
 Evidence based practice is broader than a list of approved treatments. Empirically supported treatments provide a strong starting point, but must be combined with clinical skill, cultural adaptation and the patient's own values.`,
     keyPoints: ["APA 2006 definition of EBPP", "EST definition", "Chambless criteria for well established and probably efficacious", "Examples of ESTs", "Hierarchy of evidence and efficacy versus effectiveness", "Critiques including external validity and culture", "Three circle model", "Routine outcome monitoring"],
-    visuals: [layers("Hierarchy of evidence", "pyramid", [["Systematic reviews and meta analyses", "Of randomised trials"], ["Randomised controlled trials", ""], ["Cohort and case control studies", ""], ["Case series and reports", ""], ["Expert opinion", ""]])],
+    visuals: [layers("Hierarchy of evidence", "pyramid", [["Systematic reviews and meta analyses", "Pool many randomised trials, so chance and single-study quirks matter least"], ["Randomised controlled trials", "Random allocation balances known and unknown differences between groups"], ["Cohort and case control studies", "Follow or compare groups as they are, so other differences can explain the result"], ["Case series and reports", "Describe what happened to a few patients, with no comparison group"], ["Expert opinion", "Experience and reasoning without systematic data: useful, but the weakest evidence"]])],
     module: "therapies",
     ref: "APA Presidential Task Force 2006; Chambless and Ollendick 2001; Chambless and Hollon 1998; Sackett 1996",
   },

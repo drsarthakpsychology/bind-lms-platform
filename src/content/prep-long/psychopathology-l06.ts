@@ -89,7 +89,7 @@ The cortico-striato-thalamo-cortical (CSTC) loop links the orbitofrontal cortex 
 Based on Mowrer's two factor theory:
 - Obsessions become anxiety provoking through conditioning.
 - Compulsions and avoidance reduce anxiety and are negatively reinforced, which strengthens them and prevents learning that the feared outcome would not happen.
-Rachman and Hodgson's work showed that anxiety falls naturally if the compulsion is delayed, which led to exposure and response prevention (Victor Meyer's work in the 1960s).
+Rachman and Hodgson's work showed that anxiety falls naturally if the compulsion is delayed, which led to exposure and response prevention, which grew from Victor Meyer's work in the 1960s.
 
 ## Cognitive models
 - Salkovskis: intrusive thoughts are almost universal (about 90 percent of people have them). OCD develops when a person appraises them as meaning he or she is responsible for harm. Inflated responsibility drives neutralising, which maintains the problem.
