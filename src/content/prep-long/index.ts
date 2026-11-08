@@ -3,6 +3,9 @@ import { CLINICAL_PSYCHIATRY_L01 } from "./clinical-psychiatry-l01";
 import { CLINICAL_PSYCHIATRY_L02 } from "./clinical-psychiatry-l02";
 import { CLINICAL_PSYCHIATRY_L03 } from "./clinical-psychiatry-l03";
 import { CLINICAL_PSYCHIATRY_L04 } from "./clinical-psychiatry-l04";
+import { CLINICAL_PSYCHIATRY_L05 } from "./clinical-psychiatry-l05";
+import { CLINICAL_PSYCHIATRY_L06 } from "./clinical-psychiatry-l06";
+import { CLINICAL_PSYCHIATRY_L07 } from "./clinical-psychiatry-l07";
 import { PSYCHOPATHOLOGY_L01 } from "./psychopathology-l01";
 import { PSYCHOPATHOLOGY_L02 } from "./psychopathology-l02";
 import { PSYCHOPATHOLOGY_L03 } from "./psychopathology-l03";
@@ -18,6 +21,9 @@ export const LONG_QA: LongQA[] = [
   ...CLINICAL_PSYCHIATRY_L02,
   ...CLINICAL_PSYCHIATRY_L03,
   ...CLINICAL_PSYCHIATRY_L04,
+  ...CLINICAL_PSYCHIATRY_L05,
+  ...CLINICAL_PSYCHIATRY_L06,
+  ...CLINICAL_PSYCHIATRY_L07,
   ...PSYCHOPATHOLOGY_L01,
   ...PSYCHOPATHOLOGY_L02,
   ...PSYCHOPATHOLOGY_L03,
