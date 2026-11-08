@@ -5,6 +5,7 @@ import { useRouter, usePathname, useSearchParams } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { formatBand } from "@/lib/psychopharm/format";
 import type { BandView } from "@/lib/psychopharm/store";
+import { OnceHint } from "@/components/help/once-hint";
 
 /**
  * The dose ladder: the single most important component in the tool (D3).
@@ -45,7 +46,7 @@ export function DoseLadder({ drug, bands }: { drug: string; bands: BandView[] })
 
   return (
     <div className="space-y-3">
-      <p className="text-eyebrow text-muted-foreground">Tap a dose to see what it does</p>
+      <OnceHint id="meds-dose-ladder" className="text-eyebrow text-muted-foreground">Tap a dose to see what it does</OnceHint>
       <div className="grid gap-2">
         {sorted.map((band) => {
           const originalOrder = bands.indexOf(band) + 1;
