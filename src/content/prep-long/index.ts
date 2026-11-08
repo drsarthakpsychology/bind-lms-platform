@@ -24,6 +24,8 @@ import { COGNITIVE_L04 } from "./cognitive-l04";
 import { COGNITIVE_L05 } from "./cognitive-l05";
 import { COUNSELLING_L01 } from "./counselling-l01";
 import { COUNSELLING_L02 } from "./counselling-l02";
+import { COUNSELLING_L03 } from "./counselling-l03";
+import { COUNSELLING_L04 } from "./counselling-l04";
 import { DEVELOPMENTAL_L01 } from "./developmental-l01";
 import { DEVELOPMENTAL_L02 } from "./developmental-l02";
 import { DEVELOPMENTAL_L03 } from "./developmental-l03";
@@ -106,6 +108,8 @@ export const LONG_QA: LongQA[] = [
   ...COGNITIVE_L05,
   ...COUNSELLING_L01,
   ...COUNSELLING_L02,
+  ...COUNSELLING_L03,
+  ...COUNSELLING_L04,
   ...DEVELOPMENTAL_L01,
   ...DEVELOPMENTAL_L02,
   ...DEVELOPMENTAL_L03,
