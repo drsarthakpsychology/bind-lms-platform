@@ -103,7 +103,7 @@ export function FullMseLevel({
       {/* Header: timer + progress */}
       <div className="flex items-center justify-between text-small">
         <span className="text-muted-foreground">
-          Level 4 · Full MSE · case {idx + 1}/{stimuli.length}
+          Level 4 · Full MSE · case {idx + 1}
         </span>
         {running && !submitted ? (
           <span className={cn("font-mono font-semibold", urgent && "text-destructive")}>

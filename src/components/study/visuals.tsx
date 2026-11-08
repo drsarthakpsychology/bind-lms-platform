@@ -368,7 +368,7 @@ export function Layers({ d }: { d: LayersData }) {
             return (
               <g key={k}>
                 <circle cx="100" cy="100" r={r} className={cn(tone(k), "stroke-foreground")} strokeWidth="2" />
-                <text x="100" y={100 - r + 12} textAnchor="middle" className="fill-foreground text-[8px] font-semibold">{String(ly.label).slice(0, 28)}</text>
+                <text x="100" y={k === 0 ? 103 : 100 - r + 12} textAnchor="middle" className="fill-foreground text-[8px] font-semibold">{String(ly.label).slice(0, k === 0 ? 14 : 28)}</text>
               </g>
             );
           })}

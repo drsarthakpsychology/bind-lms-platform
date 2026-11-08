@@ -75,7 +75,7 @@ export function WeakSpotsDrill({ items }: { items: DrillItem[] }) {
       <div className="flex items-center justify-between">
         <p className="flex items-center gap-1.5 text-caption font-semibold text-muted-foreground">
           <Target className="size-3.5" aria-hidden />
-          Your weak-spots drill · {idx + 1}/{items.length}
+          Your weak-spots drill · {idx + 1}
         </p>
         <span className="rounded-full bg-status-pending-bg px-2 py-0.5 text-caption font-medium text-status-pending-fg">
           {item.skill}

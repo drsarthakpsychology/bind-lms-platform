@@ -186,7 +186,7 @@ function Round({ play, setPlay, onExcerptDone, onFinish }: { play: Play; setPlay
     <div className="mx-auto max-w-2xl space-y-4 px-4 py-5">
       <div className="flex flex-wrap items-center gap-2">
         <span className="flex items-center gap-1.5 font-semibold">
-          <ScanEye className="size-5" aria-hidden /> Excerpt {play.seen.length}/{ROUND_SIZE}
+          <ScanEye className="size-5" aria-hidden /> Excerpt {play.seen.length}
         </span>
         <Pill tone="info">{levelLabel}</Pill>
         <span className="ml-auto flex gap-2">

@@ -103,7 +103,7 @@ export function ConfusableDrill({ onComplete }: { onComplete?: () => void } = {}
     return (
       <div className="space-y-4">
         <div className="flex items-center justify-between text-small text-muted-foreground">
-          <span>Pair {pairIdx + 1}/{pairs.length} · item {itemIdx + 1}/{pair.items.length}</span>
+          <span>Pair {pairIdx + 1} · item {itemIdx + 1}</span>
           <span className="text-caption">
             {pair.a} vs {pair.b}
           </span>
@@ -193,7 +193,7 @@ export function ConfusableDrill({ onComplete }: { onComplete?: () => void } = {}
   return (
     <div className="space-y-4">
       <div className="flex items-center justify-between text-small text-muted-foreground">
-        <span>Set {multiIdx + 1}/{drill.items.length} · {drill.id.replace(/-/g, " ")}</span>
+        <span>Set {multiIdx + 1} · {drill.id.replace(/-/g, " ")}</span>
         <span className="text-caption">{drill.terms.join(" / ")}</span>
       </div>
 

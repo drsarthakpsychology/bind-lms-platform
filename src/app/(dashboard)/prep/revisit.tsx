@@ -94,7 +94,7 @@ export async function RevisitPage({ kind, page }: { kind: "saved" | "wrong"; pag
             <span />
           )}
           <span className="text-sm font-semibold">
-            Page {list.page} of {list.pages}
+            Page {list.page}
           </span>
           {nextPage ? (
             <Link href={nextPage.href} className={btnPlain}>
