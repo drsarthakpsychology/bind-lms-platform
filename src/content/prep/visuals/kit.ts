@@ -17,6 +17,9 @@ export const R = (s: readonly Subject[], re: RegExp, t?: RegExp, not?: RegExp): 
 
 export const concept = (id: string, r: Rule, kind: WidgetKind, data: unknown): Concept => ({ id, r, v: { kind, data } });
 
+/** A real labelled drawing from the figure library: figure id, the labels to light up, and a line on what to look at. */
+export const fig = (id: string, r: Rule, figure: string, focus: string[], caption: string): Concept => concept(id, r, "figure", { id: figure, ...(focus.length ? { focus } : {}), caption });
+
 type Node = [label: string, detail?: string];
 
 const nodes = (list: Node[]) => list.map(([label, detail], k) => ({ id: `n${k + 1}`, label, ...(detail ? { detail } : {}) }));
