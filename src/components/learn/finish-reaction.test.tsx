@@ -1,6 +1,6 @@
 // @vitest-environment jsdom
 import * as React from "react";
-import { cleanup, fireEvent, render, screen } from "@testing-library/react";
+import { act, cleanup, fireEvent, render, screen } from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 /**
@@ -30,7 +30,10 @@ vi.mock("@/lib/history/client", () => ({
 }));
 
 import { ScenarioGame } from "./clinic-games";
+import { Detective } from "./detective";
 import { SCENARIOS } from "@/lib/learn/scenarios";
+import { CASES } from "@/lib/learn/detective";
+import { conceptById } from "@/lib/learn/concepts";
 import { resetHowTo } from "@/components/help/how-to";
 
 const save = vi.fn(async () => null);
@@ -68,5 +71,17 @@ describe("finish sticker in the Learn games", () => {
   it("What would you do: risky choices pop a sad sticker", () => {
     playScenarios("harm");
     expect(showEndReaction).toHaveBeenCalledWith("wrong");
+  });
+
+  it("Clinic detective: solving every case on the first clue pops a happy sticker", async () => {
+    render(<Detective serverState={null} save={save} />);
+    fireEvent.click(screen.getByRole("button", { name: "Mixed" }));
+    for (const c of CASES.slice(0, 8)) {
+      fireEvent.click(screen.getByRole("button", { name: conceptById(c.answer)!.term }));
+      fireEvent.click(screen.getByRole("button", { name: /Next case|See results/ }));
+    }
+    await act(async () => {});
+    expect(screen.getByText(/Detective · 320 points complete/)).toBeTruthy();
+    expect(showEndReaction).toHaveBeenCalledWith("streak");
   });
 });
