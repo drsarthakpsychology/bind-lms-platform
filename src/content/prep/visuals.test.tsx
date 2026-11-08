@@ -1,14 +1,15 @@
 // @vitest-environment jsdom
 /**
  * Every diagram attached to an Exam Prep question renders through the Study
- * widget without throwing, uses a real widget kind, names real brain parts,
- * and follows the student-text rules (no em or en dashes, no citations).
+ * widget without throwing, uses a real widget kind, names real brain parts
+ * and real figure labels, and follows the student-text rules (no em or en dashes, no citations).
  */
 import { cleanup, render } from "@testing-library/react";
 import { afterEach, beforeAll, describe, expect, it } from "vitest";
+import { FIGURES } from "@/components/study/figures/registry";
 import { Widget } from "@/components/study/widgets";
 import type { PrepVisual } from "@/lib/prep/types";
-import type { FlowData, WidgetData, WidgetKind } from "@/lib/study/types";
+import type { FigureData, FlowData, WidgetData, WidgetKind } from "@/lib/study/types";
 import { ALL_QUESTIONS } from "./index";
 import { ASSIGNED } from "./visuals/assigned";
 import { CONCEPTS } from "./visuals";
@@ -30,11 +31,17 @@ const attached = ALL_QUESTIONS.filter((q) => q.visual);
 const unique = [...new Set<PrepVisual>([...attached.map((q) => q.visual!), ...CONCEPTS.map((c) => c.v)])];
 
 describe("exam prep diagrams", () => {
-  it("cover at least 1,500 questions across every subject", () => {
+  it("cover at least 2,300 questions across every subject", () => {
     expect(allKinds).toBe(true);
-    expect(attached.length).toBeGreaterThanOrEqual(1500);
+    expect(attached.length).toBeGreaterThanOrEqual(2300);
     const subjects = new Set(attached.map((q) => q.subject));
     expect(subjects.size).toBeGreaterThanOrEqual(20);
+  });
+
+  it("show a real labelled figure under at least 800 explanations, and every figure has a concept", () => {
+    expect(attached.filter((q) => q.visual!.kind === "figure").length).toBeGreaterThanOrEqual(800);
+    const named = new Set(CONCEPTS.filter((c) => c.v.kind === "figure").map((c) => (c.v.data as FigureData).id));
+    expect(Object.keys(FIGURES).filter((id) => !named.has(id))).toEqual([]);
   });
 
   it("point at real questions and real concepts", () => {
@@ -66,6 +73,12 @@ describe("exam prep diagrams", () => {
         for (const c of d.conditions as { value: number }[]) if (c.value > max) problems.push(`${tag} value over max`);
       }
       if (v.kind === "timeline" && (d.events as unknown[]).length < 2) problems.push(`${tag} needs two events`);
+      if (v.kind === "figure") {
+        const f = FIGURES[(d as FigureData).id];
+        if (!f) problems.push(`${tag} unknown figure ${String(d.id)}`);
+        else for (const l of (d as FigureData).focus ?? []) if (!f.labels.some((x) => x.id === l)) problems.push(`${tag} ${f.id} has no label ${l}`);
+        if (!(d as FigureData).caption) problems.push(`${tag} figure needs a caption`);
+      }
       const text = JSON.stringify(v);
       if (/[–—]/.test(text)) problems.push(`${tag} has an em or en dash`);
       for (const re of BANNED) if (re.test(text)) problems.push(`${tag} cites ${re}`);

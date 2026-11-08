@@ -9,10 +9,18 @@
  * lists, passage or correct option. Harder questions are chosen first, and
  * each concept is capped so pictures spread across topics. Questions that
  * already carry their own `visual` are left alone.
+ *
+ * Real labelled drawings (kind "figure") are matched separately. Where a
+ * question's best diagram is a box-and-arrow kind (flow, compare, layers,
+ * timeline, worked) and a figure fits at least as well, the figure takes the
+ * slot; it also takes the slot from a schematic brain map it fits better, and
+ * from any other widget it fits clearly better.
+ * Then a second pass gives a figure to further questions it fits, hardest
+ * first, up to FIG_SHARE of each subject.
  */
 import { writeFileSync } from "node:fs";
 import { ALL_QUESTIONS } from "../src/content/prep/index";
-import { CONCEPTS } from "../src/content/prep/visuals/index";
+import { CONCEPTS, visualFor } from "../src/content/prep/visuals/index";
 import type { Concept } from "../src/content/prep/visuals/kit";
 import type { PrepQuestion, Subject } from "../src/lib/prep/types";
 
@@ -43,7 +51,37 @@ const SHARE: Partial<Record<Subject, number>> = {
 };
 /** At most this many questions share one concept: fewer for box-and-arrow kinds, so real pictures lead. */
 const BOXES = new Set(["flow", "compare", "layers", "timeline", "worked"]);
-const capOf = (c: Concept) => (BOXES.has(c.v.kind) ? 14 : 24);
+const capOf = (c: Concept) => (BOXES.has(c.v.kind) ? 14 : c.v.kind === "figure" ? 40 : 24);
+const isFig = (c: Concept) => c.v.kind === "figure";
+
+/** Extra share of each subject's questions that may get a figure in the second pass (on top of SHARE). */
+const FIG_SHARE: Partial<Record<Subject, number>> = {
+  biological: 0.42,
+  psychopharmacology: 0.2,
+  "clinical-psychiatry": 0.12,
+  psychopathology: 0.06,
+  statistics: 0.06,
+  "research-methods": 0.05,
+  "psychometrics-assessment": 0.12,
+  cognitive: 0.12,
+  "perception-attention": 0.25,
+  "learning-motivation-emotion": 0.18,
+  developmental: 0.1,
+  social: 0.06,
+  "personality-theories": 0.06,
+  "history-systems": 0.08,
+  "clinical-therapies": 0.04,
+  counselling: 0.03,
+  health: 0.1,
+  positive: 0.03,
+  organisational: 0.03,
+  "indian-psychology": 0.02,
+  "ethics-law": 0.08,
+  "ugc-paper1": 0.02,
+};
+
+/** A visual written on the question itself (not one this script attached earlier through assigned.ts). */
+const ownVisual = (q: PrepQuestion) => !!q.visual && q.visual !== visualFor(q.id);
 
 const primary = (q: PrepQuestion) => [q.stem, q.passage ?? "", ...(q.statements ?? []), ...(q.lists?.left ?? []), ...(q.lists?.right ?? []), q.options[q.answer]].join(" \n ");
 
@@ -62,16 +100,24 @@ function score(c: Concept, q: PrepQuestion, text: string): number {
   return (c.r.t ? 4 : 0) + Math.min(hits, 3) + inStem + inKey + inWhy + Math.min(longest, 30) / 10;
 }
 
-const best = new Map<string, { c: Concept; s: number }>();
+type Pick = { c: Concept; s: number };
+const best = new Map<string, Pick>();
+const bestFig = new Map<string, Pick>();
 for (const q of ALL_QUESTIONS) {
   const text = primary(q);
-  let top: { c: Concept; s: number } | null = null;
+  let top: Pick | null = null;
+  let fig: Pick | null = null;
   for (const c of CONCEPTS) {
     const s = score(c, q, text);
-    if (s > (top?.s ?? 0)) top = { c, s };
+    if (isFig(c)) {
+      if (s > (fig?.s ?? 0)) fig = { c, s };
+    } else if (s > (top?.s ?? 0)) top = { c, s };
   }
+  if (fig) bestFig.set(q.id, fig);
   if (top) best.set(q.id, top);
 }
+/** A figure replaces a box-and-arrow diagram it fits as well, and any other widget it fits clearly better. */
+const figBeats = (top: Pick, fig: Pick) => fig.s >= top.s + (BOXES.has(top.c.v.kind) ? 0 : top.c.v.kind === "brainmap" ? 1 : 2);
 
 const assigned: Record<string, string> = {};
 const perConcept = new Map<string, number>();
@@ -79,11 +125,38 @@ const bySubject = new Map<Subject, PrepQuestion[]>();
 for (const q of ALL_QUESTIONS) bySubject.set(q.subject, [...(bySubject.get(q.subject) ?? []), q]);
 for (const [subject, qs] of bySubject) {
   const quota = Math.round((SHARE[subject] ?? 0.05) * qs.length);
-  const cands = qs.filter((q) => best.has(q.id) && !q.visual).sort((a, b) => b.difficulty - a.difficulty || best.get(b.id)!.s - best.get(a.id)!.s || a.id.localeCompare(b.id));
+  const cands = qs.filter((q) => best.has(q.id) && !ownVisual(q)).sort((a, b) => b.difficulty - a.difficulty || best.get(b.id)!.s - best.get(a.id)!.s || a.id.localeCompare(b.id));
   let n = 0;
   for (const q of cands) {
     if (n >= quota) break;
     const { c } = best.get(q.id)!;
+    const k = perConcept.get(c.id) ?? 0;
+    if (k >= capOf(c)) continue;
+    perConcept.set(c.id, k + 1);
+    assigned[q.id] = c.id;
+    n++;
+  }
+}
+
+// Swap: where a figure shows the real thing better than the diagram chosen above, it takes that slot (hardest first).
+const order = (m: Map<string, Pick>) => (a: PrepQuestion, b: PrepQuestion) => b.difficulty - a.difficulty || m.get(b.id)!.s - m.get(a.id)!.s || a.id.localeCompare(b.id);
+for (const q of ALL_QUESTIONS.filter((x) => assigned[x.id] && bestFig.has(x.id)).sort(order(bestFig))) {
+  const top = best.get(q.id)!;
+  const f = bestFig.get(q.id)!;
+  if (!figBeats(top, f) || (perConcept.get(f.c.id) ?? 0) >= capOf(f.c)) continue;
+  perConcept.set(top.c.id, perConcept.get(top.c.id)! - 1);
+  perConcept.set(f.c.id, (perConcept.get(f.c.id) ?? 0) + 1);
+  assigned[q.id] = f.c.id;
+}
+
+// Second pass: a figure for further questions it fits, hardest first.
+for (const [subject, qs] of bySubject) {
+  const quota = Math.round((FIG_SHARE[subject] ?? 0) * qs.length);
+  const cands = qs.filter((q) => bestFig.has(q.id) && !ownVisual(q) && !assigned[q.id]).sort(order(bestFig));
+  let n = 0;
+  for (const q of cands) {
+    if (n >= quota) break;
+    const { c } = bestFig.get(q.id)!;
     const k = perConcept.get(c.id) ?? 0;
     if (k >= capOf(c)) continue;
     perConcept.set(c.id, k + 1);
