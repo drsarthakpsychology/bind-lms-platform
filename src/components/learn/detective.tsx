@@ -15,6 +15,7 @@ import { LearnLink } from "@/lib/games/ui/learn-link";
 import { Chai, ChaiSays } from "./chai";
 import { Summary } from "./player";
 import { useReaction } from "@/components/reactions/use-reaction";
+import { moodForScore } from "@/lib/reactions/stickers";
 import { useExplainView } from "./view-toggle";
 import s from "./learn.module.css";
 import { HintBar, useHintStatus } from "@/components/hints/hint-chip";
@@ -84,7 +85,7 @@ export function Detective({ serverState, save }: { serverState: LearnState | nul
     setResult(null);
   }
 
-  if (result) return <Summary result={result} state={state} confetti={[]} title={`Detective · ${score} points`} onAgain={() => start()} />;
+  if (result) return <Summary result={result} state={state} confetti={[]} title={`Detective · ${score} points`} mood={moodForScore(score, POINTS[0] * (rounds?.length || ROUNDS))} onAgain={() => start()} />;
 
   if (!rounds) {
     return (

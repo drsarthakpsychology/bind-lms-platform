@@ -8,6 +8,8 @@ import { MSE_DOMAIN_ORDER, summarizeMseScore, formatDomainKey } from "@/lib/mse/
 import { buildMseAttemptPayload } from "@/lib/practice/mse-attempt";
 import { noteAnswer } from "@/lib/history/client";
 import type { MseDomainKey } from "@/lib/mse/ladder";
+import { showEndReaction } from "@/components/reactions/store";
+import { moodForScore } from "@/lib/reactions/stickers";
 
 const TEN_MINUTES = 10 * 60;
 
@@ -69,6 +71,9 @@ export function FullMseLevel({
     setRunning(false);
     setSubmitted(true);
     haptic("success");
+    // The finish sticker: happy or sad by the domains matched (amber counts half).
+    const s = summarizeMseScore(scoreFullMse(stimulus, fields));
+    showEndReaction(moodForScore(s.score, s.max));
   }
 
   const scores = submitted ? scoreFullMse(stimulus, fields) : null;

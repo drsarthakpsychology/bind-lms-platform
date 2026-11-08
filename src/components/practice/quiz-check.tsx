@@ -8,6 +8,8 @@ import { scoreQuiz, type QuizItem } from "@/lib/quiz/quiz";
 import { hashSeed, identityOrder, seededShuffle } from "@/lib/quiz/shuffle";
 import { MobileCompletionState } from "@/components/mobile/mobile-completion-state";
 import { findReference } from "@/lib/ai/student-text";
+import { EndReaction } from "@/components/reactions/graphics";
+import { OnceHint } from "@/components/help/once-hint";
 
 /**
  * Student text carries no references (owner rule). The only source worth
@@ -92,19 +94,23 @@ export function QuizCheck({ items }: { items: QuizItem[] }) {
     // The same completion language as lessons/drills/debrief (T29): one
     // "you finished this" beat instead of a per-screen shrug.
     return (
-      <MobileCompletionState
-        title="Check complete"
-        description={
-          result.correct === result.total
-            ? `${result.correct} of ${result.total} correct. Clean sweep.`
-            : `${result.correct} of ${result.total} correct. A check, not a test: re-read the rationale on the ones you missed.`
-        }
-        icon={
-          <span className="text-numeric text-h2 font-bold text-foreground">
-            {result.correct}/{result.total}
-          </span>
-        }
-      />
+      <>
+        {/* The finish sticker: happy or sad by the score. */}
+        <EndReaction right={result.correct} total={result.total} seed={items[0]?.id} />
+        <MobileCompletionState
+          title="Check complete"
+          description={
+            result.correct === result.total
+              ? `${result.correct} of ${result.total} correct. Clean sweep.`
+              : `${result.correct} of ${result.total} correct. A check, not a test: re-read the rationale on the ones you missed.`
+          }
+          icon={
+            <span className="text-numeric text-h2 font-bold text-foreground">
+              {result.correct}/{result.total}
+            </span>
+          }
+        />
+      </>
     );
   }
 
@@ -194,7 +200,7 @@ export function QuizCheck({ items }: { items: QuizItem[] }) {
             <ArrowRight className="size-4" aria-hidden />
           </button>
         ) : (
-          <p className="text-caption text-muted-foreground">Choose an answer to continue.</p>
+          <OnceHint id="quiz-check-choose" className="text-caption text-muted-foreground">Choose an answer to continue.</OnceHint>
         )}
       </div>
     </div>

@@ -5,6 +5,8 @@ import { haptic } from "@/lib/haptics";
 import { cn } from "@/lib/utils";
 import { scoreMseCode, summarizeMseScore, formatDomainKey } from "@/lib/mse/ladder";
 import { buildMseAttemptPayload } from "@/lib/practice/mse-attempt";
+import { showEndReaction } from "@/components/reactions/store";
+import { moodForScore } from "@/lib/reactions/stickers";
 
 interface TurnLine {
   role: "student" | "patient";
@@ -120,7 +122,11 @@ export function LiveMseLevel({ onComplete }: { onComplete?: () => void }) {
     }
     const expert: Parameters<typeof scoreMseCode>[0] = {};
     for (const d of DOMAINS) expert[d] = selected.expert[d] ?? [];
-    setScored(scoreMseCode(expert, fields));
+    const scores = scoreMseCode(expert, fields);
+    setScored(scores);
+    // The finish sticker: happy or sad by the domains matched (amber counts half).
+    const s = summarizeMseScore(scores);
+    showEndReaction(moodForScore(s.score, s.max));
   }
 
   const turns = selected?.turns ?? [];
