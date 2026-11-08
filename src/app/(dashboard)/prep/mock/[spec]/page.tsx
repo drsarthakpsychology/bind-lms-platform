@@ -31,6 +31,7 @@ export default async function MockPage({ params }: { params: Promise<{ spec: str
       <MockExam
         specId={spec.id}
         title={spec.title}
+        rules={<PatternFacts spec={spec} />}
         intro={
           <div className="mx-auto max-w-2xl space-y-5 lg:mx-0">
             <h1 className="text-h1">{spec.title}</h1>

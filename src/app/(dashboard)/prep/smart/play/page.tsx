@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import type * as React from "react";
 import { ActivityFrame } from "@/components/study/activity-frame";
 import { ActivityTip } from "@/components/help/activity-tip";
+import { HowToStart } from "@/components/help/how-to";
 import { redirect } from "next/navigation";
 import { requireFeature } from "@/lib/flags";
 import { findLesson } from "@/lib/learn/content";
@@ -19,7 +20,7 @@ export default async function PlayPage({ searchParams }: { searchParams: Promise
   const frame = (title: string, node: React.ReactNode, tip?: { id: string; steps: string[] }) => (
     <ActivityFrame title={title}>
       {tip ? <ActivityTip id={tip.id} label="How it works" steps={tip.steps} /> : null}
-      {node}
+      {tip ? <HowToStart id={tip.id}>{node}</HowToStart> : node}
     </ActivityFrame>
   );
   // Blitz moved to its own server-scored game (the only timed one).

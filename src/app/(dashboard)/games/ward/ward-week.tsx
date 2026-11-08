@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { startHowTo } from "@/components/help/how-to";
 import { ArrowDown, ArrowRight, ArrowUp, BookOpen, Hospital, MapPin, Minus, Play, RotateCcw, Users, Vote } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { LearnLink } from "@/lib/games/ui/learn-link";
@@ -60,6 +61,7 @@ export function WardWeek({ teamsOn, openTeam, teams, actions }: { teamsOn: boole
   const [mode, setMode] = React.useState<Mode>(openTeam ? { kind: "team", teamId: openTeam } : { kind: "pick" });
 
   function goTeam(teamId: string) {
+    startHowTo("ward-week");
     try {
       window.history.replaceState(null, "", `/games/ward?team=${teamId}`);
     } catch {
@@ -82,8 +84,14 @@ export function WardWeek({ teamsOn, openTeam, teams, actions }: { teamsOn: boole
     <Pick
       teamsOn={teamsOn}
       teams={teams}
-      onSolo={(c) => setMode({ kind: "solo", solo: newSolo(c) })}
-      onResume={(s) => setMode({ kind: "solo", solo: s })}
+      onSolo={(c) => {
+        startHowTo("ward-week");
+        setMode({ kind: "solo", solo: newSolo(c) });
+      }}
+      onResume={(s) => {
+        startHowTo("ward-week");
+        setMode({ kind: "solo", solo: s });
+      }}
       onCreate={async (c) => {
         const r = await actions.createWardTeam(c);
         if (r.ok) goTeam(r.teamId);

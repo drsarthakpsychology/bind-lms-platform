@@ -2,6 +2,7 @@
 
 import { noteAnswer } from "@/lib/history/client";
 import * as React from "react";
+import { startHowTo, useHowTo } from "@/components/help/how-to";
 import { haptic } from "@/lib/haptics";
 import { CLINICS } from "@/lib/practice/clinic";
 import { useReaction } from "@/components/reactions/use-reaction";
@@ -39,10 +40,12 @@ export function TwoMinuteClinic({ start = 0, order }: { start?: number; order?: 
   const [differential, setDifferential] = React.useState("");
   const [nextQuestion, setNextQuestion] = React.useState("");
   const item = CLINICS[itemIdx];
+  // The clock stops while the how-to is open.
+  const { open: paused } = useHowTo("two-minute-clinic");
   const reaction = useReaction();
 
   React.useEffect(() => {
-    if (phase !== "type") return;
+    if (phase !== "type" || paused) return;
     const id = setInterval(() => {
       setSeconds((s) => {
         if (s <= 1) {
@@ -54,7 +57,7 @@ export function TwoMinuteClinic({ start = 0, order }: { start?: number; order?: 
       });
     }, 1000);
     return () => clearInterval(id);
-  }, [phase]);
+  }, [phase, paused]);
 
   return (
     <div className="space-y-4">
@@ -70,7 +73,7 @@ export function TwoMinuteClinic({ start = 0, order }: { start?: number; order?: 
         {phase === "read" ? (
           <button
             type="button"
-            onClick={() => { setPhase("type"); setSeconds(120); haptic("tap"); }}
+            onClick={() => { startHowTo("two-minute-clinic"); setPhase("type"); setSeconds(120); haptic("tap"); }}
             className="mt-4 rounded-md border-2 border-border bg-primary px-4 py-2 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px active:hard-shadow-none"
           >
             Start the clock

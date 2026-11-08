@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { startHowTo, useHowTo } from "@/components/help/how-to";
 import Link from "next/link";
 import { useReducedMotion } from "motion/react";
 import { ArrowDown, ArrowLeft, ArrowUp, Bot, Check, Crown, Flag, LoaderCircle, Search, Shield, Swords, Timer, User, Users, X } from "lucide-react";
@@ -49,6 +50,7 @@ export function DuelGame({ serverState, save, profile, offlineItems }: { serverS
   const [busy, setBusy] = React.useState(false);
 
   async function findMatch() {
+    startHowTo("differential-duel");
     setError(null);
     setBusy(true);
     const r = await api({ op: "join" });
@@ -60,6 +62,7 @@ export function DuelGame({ serverState, save, profile, offlineItems }: { serverS
   }
 
   async function playBot() {
+    startHowTo("differential-duel");
     setError(null);
     if (!prof.available && offlineItems) {
       setScreen({ kind: "local", items: offlineItems, seed: Math.floor(Math.random() * 2 ** 31) });
@@ -74,6 +77,7 @@ export function DuelGame({ serverState, save, profile, offlineItems }: { serverS
   }
 
   async function rejoin(id: string) {
+    startHowTo("differential-duel");
     const r = await api({ op: "poll", matchId: id });
     if (r.view) setScreen({ kind: "match", view: r.view });
   }
@@ -413,6 +417,8 @@ function Arena({ view: v, clock, err, onAnswer, onQuit, onBack, onAgain }: { vie
   const left = v.until ? Math.max(0, v.until - clock) : 0;
   const [confirmQuit, setConfirmQuit] = React.useState(false);
   const last = v.closed[v.closed.length - 1];
+  // Rounds run on the server clock and cannot pause: no how-to button until the match is over.
+  useHowTo("differential-duel", { hideWhile: v.phase !== "over" });
 
   return (
     <div className="mx-auto w-full max-w-3xl space-y-4">

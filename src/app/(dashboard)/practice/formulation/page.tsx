@@ -1,4 +1,5 @@
 import { ToolHeader } from "@/components/help/tool-header";
+import { HowToStart } from "@/components/help/how-to";
 import { createClient } from "@/lib/supabase/server";
 import Link from "next/link";
 import { FormulationForge } from "./forge";
@@ -76,7 +77,9 @@ export default async function FormulationPage({ searchParams }: { searchParams: 
       <p className="mt-2 text-sm font-semibold">{seed.title}</p>
 
       <div className="mt-4">
-        <FormulationForge key={seed.id} seed={seed} />
+        <HowToStart id="formulation">
+          <FormulationForge key={seed.id} seed={seed} />
+        </HowToStart>
       </div>
 
       <div className="mt-10">

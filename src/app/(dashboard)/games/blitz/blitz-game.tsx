@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { startHowTo, useHowTo } from "@/components/help/how-to";
 import Link from "next/link";
 import { useReducedMotion } from "motion/react";
 import { ArrowLeft, BookOpen, Check, Crown, Flame, LoaderCircle, RotateCcw, Timer, Trophy, Users, X, Zap } from "lucide-react";
@@ -48,6 +49,8 @@ export function BlitzGame({ bests, serverState, save }: { bests: Bests; serverSt
   const [busy, setBusy] = React.useState(false);
   const [done, setDone] = React.useState<Done | null>(null);
   const [shown, setShown] = React.useState(bests);
+  // The clock is kept on the server and cannot pause: no how-to button while it runs.
+  useHowTo("blitz", { hideWhile: phase === "countdown" || phase === "run" });
   const reaction = useReaction();
 
   const token = React.useRef<string | null>(null);
@@ -119,6 +122,7 @@ export function BlitzGame({ bests, serverState, save }: { bests: Bests; serverSt
   }, []);
 
   const start = React.useCallback(() => {
+    startHowTo("blitz");
     // Drop anything still scheduled from the last round.
     timers.current.forEach((t) => window.clearTimeout(t));
     timers.current = [];

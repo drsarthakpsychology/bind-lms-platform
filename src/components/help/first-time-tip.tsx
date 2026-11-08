@@ -1,15 +1,18 @@
 "use client";
 
 import * as React from "react";
-import { CircleHelp, X } from "lucide-react";
+import { X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTip, type TipStore } from "@/lib/tips/store";
 import { cn } from "@/lib/utils";
+import { HowToBody, HowToButton } from "./how-to";
 
 /**
  * A short how-to that shows the first time a student meets a feature.
- * "Got it" closes it for good (remembered per student, see lib/tips/store).
- * After that only a small "How to play" button is left, which opens it again.
+ * "Got it" closes it for good (remembered per student, see lib/tips/store),
+ * and so does starting the activity (startHowTo in ./how-to). After that only
+ * a small "How to play" button is left, which opens it again as a sheet over
+ * the activity (HowToButton), so a game in progress is never moved or reset.
  *
  * Until we know whether the student has seen it (server render, first paint),
  * the folded button shows, so returning students never see a flash of help.
@@ -33,41 +36,22 @@ export type TipControl = ReturnType<typeof useFirstTimeTip>;
 
 export function useFirstTimeTip(id: string, store?: TipStore) {
   const { seen, dismiss } = useTip(id, store);
-  const [reopened, setReopened] = React.useState(false);
   const panelId = React.useId();
-  // Move focus by id after the swap, so keyboard users land on what appeared.
-  const focus = (elId: string) => requestAnimationFrame(() => document.getElementById(elId)?.focus());
   const close = React.useCallback(() => {
     dismiss();
-    setReopened(false);
-    focus(`${panelId}-b`);
+    // Move focus to the button that replaces the panel, so keyboard users are not lost.
+    requestAnimationFrame(() => document.getElementById(`${panelId}-b`)?.focus());
   }, [dismiss, panelId]);
-  const reopen = React.useCallback(() => {
-    setReopened(true);
-    focus(`${panelId}-h`);
-  }, [panelId]);
-  return { id, open: reopened || seen === false, close, reopen, panelId };
+  return { id, open: seen === false, close, panelId };
 }
 
-/** `compact`: icon only on phones (the label stays for screen readers), so a long title keeps its room. */
-export function TipButton({ tip, label, className, compact = false }: { tip: TipControl; label: string; className?: string; compact?: boolean }) {
+/**
+ * The folded help button (icon only on phones). It opens the same how-to as a
+ * sheet, so pass it the same words as the panel.
+ */
+export function TipButton({ tip, label, className, ...content }: TipContent & { tip: TipControl; label: string; className?: string }) {
   if (tip.open) return null;
-  return (
-    <Button
-      id={`${tip.panelId}-b`}
-      type="button"
-      variant="ghost"
-      className={cn("h-11 px-3 text-sm", compact && "w-11 px-0 sm:w-auto sm:px-3", className)}
-      aria-expanded={false}
-      aria-controls={tip.panelId}
-      onClick={tip.reopen}
-      data-tip={tip.id}
-      data-tip-state="folded"
-    >
-      <CircleHelp aria-hidden className={cn(compact && "size-5 sm:size-4")} />
-      {compact ? <span className="sr-only sm:not-sr-only">{label}</span> : label}
-    </Button>
-  );
+  return <HowToButton id={tip.id} buttonId={`${tip.panelId}-b`} label={label} className={className} {...content} title={content.title ?? label} />;
 }
 
 export function TipPanel({ tip, title = "How it works", intro, steps, children, className }: TipContent & { tip: TipControl; className?: string }) {
@@ -83,15 +67,9 @@ export function TipPanel({ tip, title = "How it works", intro, steps, children, 
       <h2 id={`${tip.panelId}-h`} tabIndex={-1} className="font-bold outline-none">
         {title}
       </h2>
-      {intro ? <p className="mt-1 text-sm leading-snug text-muted-foreground">{intro}</p> : null}
-      {steps?.length ? (
-        <ol className="mt-2 list-decimal space-y-1 pl-5 text-sm leading-snug">
-          {steps.map((s) => (
-            <li key={s}>{s}</li>
-          ))}
-        </ol>
-      ) : null}
-      {children ? <div className="mt-2 space-y-1 text-sm leading-snug">{children}</div> : null}
+      <HowToBody intro={intro} steps={steps}>
+        {children}
+      </HowToBody>
       <Button type="button" className="mt-3 h-11" onClick={tip.close}>
         Got it
       </Button>
@@ -125,7 +103,9 @@ export function FirstTimeTip({
     </TipPanel>
   ) : (
     <div className={cn("flex", className)}>
-      <TipButton tip={tip} label={label ?? title} />
+      <TipButton tip={tip} label={label ?? title} title={title} intro={intro} steps={steps}>
+        {children}
+      </TipButton>
     </div>
   );
 }

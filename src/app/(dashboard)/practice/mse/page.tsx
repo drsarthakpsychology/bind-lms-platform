@@ -1,4 +1,5 @@
 import { ToolHeader } from "@/components/help/tool-header";
+import { HowToStart } from "@/components/help/how-to";
 import { createClient } from "@/lib/supabase/server";
 import { MseLadder, type MseLadderContent } from "./mse-ladder";
 import type { MseStimulus } from "@/lib/practice/mse";
@@ -95,7 +96,9 @@ export default async function MsePage() {
       <BackPill className="mb-4" />
       <ToolHeader title="Mental state exam" tip={{ id: "mse-trainer", steps: ["Write what you can see and hear, not what you conclude."] }} />
       <div className="mt-6">
-        <MseLadder content={content} />
+        <HowToStart id="mse-trainer">
+          <MseLadder content={content} />
+        </HowToStart>
       </div>
     </div>
   );

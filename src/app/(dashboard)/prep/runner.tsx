@@ -1,13 +1,14 @@
 "use client";
 
 import * as React from "react";
+import { startHowTo } from "@/components/help/how-to";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { ArrowLeft, ArrowRight, Bookmark, BookmarkCheck, BookOpen, Check, Eye, RotateCcw, TriangleAlert, X } from "lucide-react";
 import type { PrepQView, PrepReveal } from "@/lib/prep/view";
 import { cn } from "@/lib/utils";
 import { checkAnswer, revealAnswer, toggleSaved } from "./actions";
-import { KeysHint, Options, QuestionBody, useShortcuts } from "./question";
+import { KEYS, KeysHint, Options, QuestionBody, useShortcuts } from "./question";
 import { btnInk, btnPlain, btnPrimary, card } from "./ui";
 import { PrepVisualView } from "./visual";
 import { useReaction } from "@/components/reactions/use-reaction";
@@ -135,8 +136,14 @@ export function QuestionRunner({ questions, start = 0, prior = {}, saved: initia
     if (!r.ok) set(!on);
   }
 
+  // The first answer closes the Keys how-to (it folds into its button).
+  const pickOne = (i: number) => {
+    startHowTo(KEYS);
+    setPicked(i);
+  };
+
   useShortcuts({
-    pick: (i) => !done && !result && setPicked(i),
+    pick: (i) => !done && !result && pickOne(i),
     next: () => (result ? go(idx + 1) : void check()),
   });
 
@@ -221,7 +228,7 @@ export function QuestionRunner({ questions, start = 0, prior = {}, saved: initia
       </div>
 
       <QuestionBody key={q.id} q={q} headingRef={heading} />
-      <Options q={q} picked={result ? result.picked : picked} onPick={setPicked} answer={result?.answer} disabled={busy} />
+      <Options q={q} picked={result ? result.picked : picked} onPick={pickOne} answer={result?.answer} disabled={busy} />
 
       {failed ? (
         <p role="alert" className="flex items-center gap-2 rounded-md border-2 border-foreground bg-status-alert-bg p-3 text-sm font-semibold text-status-alert-fg">

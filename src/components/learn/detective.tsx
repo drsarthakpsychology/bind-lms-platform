@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { startHowTo } from "@/components/help/how-to";
 import { BackLink } from "@/components/study/back";
 import { Search } from "lucide-react";
 import { emptyState, finishLesson, istToday, type LearnState, type Payout } from "@/lib/learn/engine";
@@ -68,6 +69,7 @@ export function Detective({ serverState, save }: { serverState: LearnState | nul
   useHistoryPrefetch("detective");
 
   function start(f = family) {
+    startHowTo("clinic-detective");
     setFamily(f);
     reaction.reset();
     setRun(newRunId());

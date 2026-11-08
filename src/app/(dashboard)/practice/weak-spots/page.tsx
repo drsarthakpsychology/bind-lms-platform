@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { ToolHeader } from "@/components/help/tool-header";
+import { HowToStart } from "@/components/help/how-to";
 import { createClient } from "@/lib/supabase/server";
 import { analyzeWeakSpots, generateDrill } from "@/lib/practice/weak-spots";
 import { loadHistory } from "@/lib/history/server";
@@ -56,7 +57,9 @@ export default async function WeakSpotsPage() {
 
       {drill.length > 0 ? (
         <div className="mt-8">
-          <WeakSpotsDrill items={drill} />
+          <HowToStart id="weak-spots">
+            <WeakSpotsDrill items={drill} />
+          </HowToStart>
         </div>
       ) : null}
     </div>

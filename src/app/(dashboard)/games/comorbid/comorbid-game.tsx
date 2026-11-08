@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { startHowTo } from "@/components/help/how-to";
 import { useRouter } from "next/navigation";
 import { Ban, Bot, Check, FlaskConical, Layers, RefreshCw, Shield, ShieldOff, Stethoscope, Users, X } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -35,6 +36,7 @@ export function ComorbidGame({ board, finish }: { board: AccuracyBoardData; fini
   useHistoryPrefetch("comorbid");
 
   function start(mode: Setup["mode"], level: Level) {
+    startHowTo("comorbid");
     const seed = `${Date.now().toString(36)}${Math.floor(Math.random() * 1e6).toString(36)}`;
     // Answer history: a diagnosis not played yet, then one lost, then the one won longest ago.
     const prefer = orderFor("comorbid", DIAGNOSES, (d) => d.id)[0]?.id;
