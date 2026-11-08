@@ -26,7 +26,7 @@ Strategies:
 The approach drew on pilot community projects at Raipur Rani (Chandigarh) and Sakalwara (Bengaluru), which showed that primary care staff could identify and treat common conditions.
 
 ## District Mental Health Programme (DMHP)
-- Based on the Bellary model in Karnataka (1985), developed by NIMHANS, in which a district team trained primary care staff and supplied medicines.
+- Based on the Bellary model in Karnataka in 1985, developed by NIMHANS, in which a district team trained primary care staff and supplied medicines.
 - Launched in 1996 in four districts and expanded in phases; it now covers almost all districts under the National Health Mission.
 - Components:
 - A district team (psychiatrist, clinical psychologist, psychiatric social worker, psychiatric nurse, and support staff).
@@ -41,7 +41,7 @@ The approach drew on pilot community projects at Raipur Rani (Chandigarh) and Sa
 Later plan periods added manpower development (Centres of Excellence and new postgraduate departments in psychiatry, clinical psychology, psychiatric social work and psychiatric nursing), modernisation of government mental hospitals, and upgrading of psychiatric wings in medical colleges.
 
 ## Recent developments
-- The National Mental Health Policy (2014), India's first, built on rights, equity and recovery.
+- The National Mental Health Policy in 2014, India's first, built on rights, equity and recovery.
 - The Mental Healthcare Act 2017: a right to access mental health care (section 18), community living, and protection from cruel treatment; it obliges governments to provide services in every district.
 - Ayushman Bharat: mental health was added to the package of comprehensive primary care at health and wellness centres (now Ayushman Arogya Mandirs).
 - Tele MANAS (launched in October 2022): a national tele mental health service on 14416 in many languages, linked to district services.
