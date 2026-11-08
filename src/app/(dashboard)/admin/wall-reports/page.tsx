@@ -41,7 +41,7 @@ export default async function AdminWallReportsPage() {
   const contentByReply = new Map((replies ?? []).map((r) => [r.id, String(r.content)]));
 
   return (
-    <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
+    <div className="mx-auto max-w-3xl">
       <PageHeader
         title="Reported wall content"
         description="Students flagged these. Resolve each, or dismiss the report if the content stands."

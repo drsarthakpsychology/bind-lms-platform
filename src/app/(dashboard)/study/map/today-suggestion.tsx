@@ -33,7 +33,7 @@ export async function TodaySuggestion({ className }: { className?: string }) {
           <li key={r.href}>
             <Link
               href={r.href}
-              className="flex min-h-11 items-center gap-3 rounded-md border-2 border-foreground bg-card p-3 transition-transform hover:-translate-y-0.5 hover:hard-shadow-sm motion-reduce:transition-none motion-reduce:hover:translate-y-0"
+              className="flex min-h-11 items-center gap-3 rounded-lg border-2 border-foreground bg-card p-3 transition-transform hover:-translate-y-0.5 hover:hard-shadow-sm motion-reduce:transition-none motion-reduce:hover:translate-y-0"
             >
               <r.icon className="size-5 shrink-0" aria-hidden />
               <span className="min-w-0 flex-1">

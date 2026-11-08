@@ -65,7 +65,7 @@ function Pick({ teamsOn, teams, onPractice, onCreate, onJoin, onOpen }: { teamsO
   const [err, setErr] = React.useState<string | null>(null);
   const [busy, setBusy] = React.useState<string | null>(null);
   return (
-    <div className={cn("mx-auto max-w-3xl space-y-6 px-4 py-6", m.rise)}>
+    <div className={cn("mx-auto max-w-3xl space-y-6", m.rise)}>
       <h1 className="text-h2">Pick a room</h1>
       <ul className={cn("grid gap-4 md:grid-cols-3", m.stagger)}>
         {ROOMS.map((r, i) => (
@@ -405,7 +405,7 @@ function Practice({ room, run, startedAt, actions, onExit, onAgain }: { room: Ro
 
   const p = room.puzzles[opened ?? st.stage];
   return (
-    <div className="mx-auto max-w-3xl space-y-4 px-4 py-5">
+    <div className="mx-auto max-w-3xl space-y-4">
       <Header room={room} onExit={onExit} right={<Clock ms={ms} wrong={st.wrong} />} />
       <Doors room={room} st={st} feedback={feedback} />
       <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_16rem]">
@@ -457,7 +457,7 @@ function TeamRun({ teamId, actions, onExit }: { teamId: string; actions: Actions
 
   if (missing && !view)
     return (
-      <div className="mx-auto max-w-xl space-y-4 px-4 py-8">
+      <div className="mx-auto max-w-xl space-y-4">
         <h1 className="text-h2">Team not found</h1>
         <p className="text-body">You may not be in this team, or team play is not open yet.</p>
         <Btn variant="primary" onClick={onExit}>
@@ -481,7 +481,7 @@ function TeamRun({ teamId, actions, onExit }: { teamId: string; actions: Actions
   if (view.status === "lobby") {
     const enough = view.members.length >= TEAM_LIMITS.escape.min;
     return (
-      <div className="mx-auto max-w-3xl space-y-4 px-4 py-5">
+      <div className="mx-auto max-w-3xl space-y-4">
         <Header room={room} onExit={onExit} right={<Pill tone="part">Waiting to start</Pill>} />
         {header}
         <Panel className="space-y-3">
@@ -527,7 +527,7 @@ function TeamRun({ teamId, actions, onExit }: { teamId: string; actions: Actions
   }
 
   return (
-    <div className="mx-auto max-w-3xl space-y-4 px-4 py-5">
+    <div className="mx-auto max-w-3xl space-y-4">
       <Header room={room} onExit={onExit} right={<Clock ms={ms} wrong={st.wrong} />} />
       {header}
       <Doors room={room} st={st} feedback={feedback} />
@@ -611,7 +611,7 @@ function Escaped({ room, ms, wrong, xp, onExit, onAgain, race, teamLine }: { roo
   useHotkeys(onAgain ? { Enter: onAgain } : {});
   const n = room.puzzles.length;
   return (
-    <div className={cn("mx-auto max-w-3xl space-y-5 px-4 py-6", m.rise)}>
+    <div className={cn("mx-auto max-w-3xl space-y-5", m.rise)}>
       <div className="flex flex-wrap items-end gap-3">
         <h1 className="text-h1">The doors open.</h1>
         <Pill tone="good" className={m.stamp}>
@@ -631,7 +631,7 @@ function Escaped({ room, ms, wrong, xp, onExit, onAgain, race, teamLine }: { roo
         <h2 className="text-body-strong">The case, door by door</h2>
         <ol className={cn("space-y-2", m.stagger)}>
           {room.puzzles.map((p, i) => (
-            <li key={p.id} className={cn("rounded-md border-2 border-foreground/25 bg-card p-3", m.rise)} style={{ "--i": i } as React.CSSProperties}>
+            <li key={p.id} className={cn("rounded-lg border-2 border-foreground/25 bg-card p-3", m.rise)} style={{ "--i": i } as React.CSSProperties}>
               <p className="flex items-center gap-2 text-caption font-semibold uppercase">
                 <LockOpen className="size-3.5" aria-hidden /> {i + 1}. {STAGE_LABEL[p.stage]}
               </p>

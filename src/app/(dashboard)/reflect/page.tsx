@@ -26,7 +26,7 @@ export default async function ReflectPage() {
     .limit(50);
 
   return (
-    <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
+    <div className="mx-auto max-w-3xl">
       <Reveal delay={0.05}>
         <h1 className="text-h1">Your journal</h1>
         <p className="mt-1 text-small text-muted-foreground">Private to you unless you share an entry.</p>

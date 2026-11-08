@@ -165,7 +165,7 @@ export function OsceStationView() {
             key={s.id}
             type="button"
             onClick={() => { setStationIdx(i); setPhase("active"); start(); haptic("tap"); }}
-            className="w-full rounded-md border-2 border-border bg-card p-5 text-left hard-shadow-sm transition-transform active:translate-y-px active:hard-shadow-none"
+            className="w-full rounded-lg border-2 border-border bg-card p-5 text-left hard-shadow-sm transition-transform active:translate-y-px active:hard-shadow-none"
           >
             <span className="text-eyebrow text-muted-foreground">
               Station {SEED_OSCE_STATIONS.indexOf(s) + 1}
@@ -188,7 +188,7 @@ export function OsceStationView() {
             start();
             haptic("tap");
           }}
-          className="w-full rounded-md border-2 border-dashed border-border bg-card p-4 text-center text-small font-medium text-muted-foreground transition-transform active:translate-y-px active:hard-shadow-none"
+          className="w-full rounded-lg border-2 border-dashed border-border bg-card p-4 text-center text-small font-medium text-muted-foreground transition-transform active:translate-y-px active:hard-shadow-none"
         >
           🎲 Pick a random station
         </button>
@@ -199,7 +199,7 @@ export function OsceStationView() {
   if (phase === "active") {
     return (
       <div className="space-y-4">
-        <div className="rounded-md border-2 border-border bg-card p-5 hard-shadow-sm">
+        <div className="rounded-lg border-2 border-border bg-card p-5 hard-shadow-sm">
           <div className="flex items-center justify-between">
             <span className="text-eyebrow text-muted-foreground">Station {stationNumber} · {station.title}</span>
             <span className="text-numeric text-h3" aria-live="polite">{mm}:{ss}</span>
@@ -210,7 +210,7 @@ export function OsceStationView() {
           </p>
 
           {webSttSupported() ? (
-            <div className="mt-3 rounded-md border-2 border-border bg-background p-3">
+            <div className="mt-3 rounded-lg border-2 border-border bg-background p-3">
               <div className="flex items-center justify-between gap-3">
                 <span className="text-small font-medium text-foreground">
                   {recording ? (
@@ -258,7 +258,7 @@ export function OsceStationView() {
 
   // selfassess
   return (
-    <div className="space-y-4 rounded-md border-2 border-border bg-card p-5 hard-shadow-sm">
+    <div className="space-y-4 rounded-lg border-2 border-border bg-card p-5 hard-shadow-sm">
       <div className="flex items-center justify-between">
         <h2 className="text-base font-semibold">Self-assess the checklist</h2>
         <span className="text-numeric text-small">{mm}:{ss} used</span>
@@ -299,14 +299,14 @@ export function OsceStationView() {
       </div>
 
       <div className="grid grid-cols-3 gap-2">
-        <div className="rounded-md border-2 border-border bg-background p-3">
+        <div className="rounded-lg border-2 border-border bg-background p-3">
           <p className="text-caption text-muted-foreground">Checklist</p>
           <p className="mt-0.5 text-base font-semibold text-numeric">{Math.round(frac * 100)}%</p>
           <p className="mt-1 text-caption text-muted-foreground">
             {checklistWithDone.filter((c) => c.done).length} of {checklistWithDone.length} done
           </p>
         </div>
-        <div className="rounded-md border-2 border-border bg-background p-3">
+        <div className="rounded-lg border-2 border-border bg-background p-3">
           <p className="text-caption text-muted-foreground">Global rating</p>
           <p className="mt-0.5 text-base font-semibold text-numeric">
             {selfGlobal || "-"}{selfGlobal ? `/${station.global_rating.max}` : ""}
@@ -315,7 +315,7 @@ export function OsceStationView() {
             {selfGlobal ? "your overall call" : "pick above"}
           </p>
         </div>
-        <div className="rounded-md border-2 border-border bg-background p-3">
+        <div className="rounded-lg border-2 border-border bg-background p-3">
           <p className="text-caption text-muted-foreground">Overall</p>
           <p className="mt-0.5 text-base font-semibold text-numeric">
             {selfGlobal ? `${Math.round(composite * 100)}%` : "-"}

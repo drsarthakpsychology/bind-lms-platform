@@ -69,7 +69,7 @@ export default async function WallPage() {
   }
 
   return (
-    <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
+    <div className="mx-auto max-w-3xl">
       <Reveal delay={0.05}>
         <p className="text-eyebrow text-muted-foreground">Cohort wall</p>
         <h1 className="mt-1 text-h1">The wall</h1>

@@ -145,7 +145,7 @@ export function SortGame({ serverState, save, initial }: { serverState: LearnSta
   }, [selected, place, submit]);
 
   return (
-    <div className="mx-auto w-full max-w-5xl space-y-4 px-4 py-5 sm:px-6">
+    <div className="mx-auto w-full max-w-5xl space-y-4">
       <div className="flex flex-wrap items-center gap-2">
         <Segmented
           label="Board"

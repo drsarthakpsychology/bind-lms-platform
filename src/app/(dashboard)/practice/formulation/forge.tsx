@@ -143,7 +143,7 @@ export function FormulationForge({ seed = SEED_FORMULATION }: { seed?: ForgeSeed
                 key={p}
                 type="button"
                 onClick={() => placeSelected(p)}
-                className="min-h-[120px] rounded-md border-2 border-dashed border-border bg-card p-3 text-left transition-transform active:translate-y-px"
+                className="min-h-[120px] rounded-lg border-2 border-dashed border-border bg-card p-3 text-left transition-transform active:translate-y-px"
               >
                 <span className="text-caption font-semibold uppercase text-link">{p}</span>
                 <span className="mt-1 flex flex-col gap-1">
@@ -200,7 +200,7 @@ export function FormulationForge({ seed = SEED_FORMULATION }: { seed?: ForgeSeed
 
       {/* STAGE 2: narrative */}
       {stage === 2 ? (
-        <div className="space-y-3 rounded-md border-2 border-border bg-card p-5 hard-shadow-sm">
+        <div className="space-y-3 rounded-lg border-2 border-border bg-card p-5 hard-shadow-sm">
           <p className="text-small text-muted-foreground">
             Write a 3-6 sentence formulation linking the factors you sorted.
           </p>
@@ -224,7 +224,7 @@ export function FormulationForge({ seed = SEED_FORMULATION }: { seed?: ForgeSeed
 
       {/* STAGE 3: diff */}
       {stage === 3 && diff ? (
-        <div className="space-y-3 rounded-md border-2 border-border bg-card p-5 hard-shadow-sm">
+        <div className="space-y-3 rounded-lg border-2 border-border bg-card p-5 hard-shadow-sm">
           <h2 className="text-base font-semibold">Your formulation vs the model</h2>
           <div className="rounded-md border border-border bg-background p-3 text-small">
             <span className="font-semibold text-muted-foreground">The answer: </span>
@@ -301,7 +301,7 @@ function OwnTranscriptForge() {
   if (error) return <p className="text-small text-destructive">{error}</p>;
   if (!data || data.count === 0) {
     return (
-      <div className="rounded-md border-2 border-dashed border-border bg-card p-6 text-center">
+      <div className="rounded-lg border-2 border-dashed border-border bg-card p-6 text-center">
         <p className="text-base font-medium">No sessions to formulate from yet</p>
         <p className="mt-1 text-small text-muted-foreground">
           Run a Consulting Room session and finish its debrief, then come back here
@@ -352,7 +352,7 @@ function OwnTranscriptForge() {
   }
 
   return (
-    <div className="space-y-3 rounded-md border-2 border-border bg-card p-5 hard-shadow-sm">
+    <div className="space-y-3 rounded-lg border-2 border-border bg-card p-5 hard-shadow-sm">
       <h2 className="text-base font-semibold">Stage 4: formulate your own session</h2>
       <p className="text-small text-muted-foreground">
         Session: <span className="font-medium text-foreground">{data.full?.title ?? "Untitled"}</span> ({data.count} completed

@@ -38,7 +38,7 @@ export function ProgressView({
   const accuracy = st.answered ? Math.round((st.correct / st.answered) * 100) : null;
 
   return (
-    <div className={cn("mx-auto max-w-4xl space-y-6 px-4 py-6 sm:px-6")}>
+    <div className={"mx-auto max-w-5xl space-y-6"}>
       <h1 className="text-h1">My progress</h1>
 
       <div className="grid grid-cols-2 gap-2 sm:grid-cols-4 sm:gap-3">

@@ -33,12 +33,16 @@ export function PrepHero({ children }: { children?: React.ReactNode }) {
   );
 }
 
-/** Page frame shared by every prep screen. */
-export function PrepFrame({ children, wide = false }: { children: React.ReactNode; wide?: boolean }) {
-  return <div className={cn("mx-auto w-full min-w-0 space-y-6 px-4 py-6 sm:px-6 lg:py-10", wide ? "max-w-6xl" : "max-w-2xl")}>{children}</div>;
+/**
+ * Page frame shared by every prep screen. The Exam Prep home is a section
+ * home, so it takes the same 1024px column as Home, Study and Practice
+ * (`hub`); a question set or a list stays a narrow reading column.
+ */
+export function PrepFrame({ children, wide = false, hub = false }: { children: React.ReactNode; wide?: boolean; hub?: boolean }) {
+  return <div className={cn("mx-auto w-full min-w-0 space-y-6", hub ? "max-w-5xl" : wide ? "max-w-6xl" : "max-w-2xl")}>{children}</div>;
 }
 
-export const card = "rounded-md border-2 border-foreground bg-card p-5";
+export const card = "rounded-lg border-2 border-foreground bg-card p-5";
 
 /**
  * A bank size worth showing: "600+ questions" for a large bank, nothing for a
@@ -70,7 +74,7 @@ export function ListRow({ href, title, sub, side, tag, stats }: { href: string; 
   return (
     <Link
       href={href}
-      className="flex min-h-14 items-center gap-3 rounded-md border-2 border-foreground bg-card px-4 py-3 transition-transform duration-150 hover:-translate-y-0.5 hover:hard-shadow-sm active:translate-y-px motion-reduce:transition-none motion-reduce:hover:translate-y-0 focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60"
+      className="flex min-h-14 items-center gap-3 rounded-lg border-2 border-foreground bg-card px-4 py-3 transition-transform duration-150 hover:-translate-y-0.5 hover:hard-shadow-sm active:translate-y-px motion-reduce:transition-none motion-reduce:hover:translate-y-0 focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60"
     >
       <span className="min-w-0 flex-1">
         <span className="flex flex-wrap items-center gap-x-2 gap-y-1">

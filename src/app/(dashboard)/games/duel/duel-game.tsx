@@ -117,7 +117,7 @@ export function DuelGame({ serverState, save, profile, offlineItems }: { serverS
   // A first-timer (or anyone when ranked play is off) is pointed at the bot.
   const botFirst = !prof.available || prof.games === 0;
   return (
-    <div className="mx-auto w-full max-w-2xl space-y-4 px-4 py-5 sm:px-6">
+    <div className="mx-auto w-full max-w-2xl space-y-4">
       {error && (
         <p role="alert" className="rounded-md border-2 border-foreground bg-status-pending-bg px-3 py-2 text-sm font-semibold">
           {error}
@@ -246,7 +246,7 @@ function Queue({ matchId, since, rating, onMatch, onCancel, onBot }: { matchId: 
   }, [matchId]);
   const secs = Math.floor(waited / 1000);
   return (
-    <div className="mx-auto w-full max-w-md space-y-5 px-4 py-10 text-center">
+    <div className="mx-auto w-full max-w-md space-y-5 py-10 text-center">
       <div className={cn("mx-auto grid size-24 place-items-center rounded-lg border-2 border-foreground bg-primary text-primary-foreground hard-shadow-md", reduce === false && fx.pulse)}>
         <Search className="size-10" aria-hidden />
       </div>
@@ -414,7 +414,7 @@ function Arena({ view: v, clock, err, onAnswer, onQuit, onBack, onAgain }: { vie
   const last = v.closed[v.closed.length - 1];
 
   return (
-    <div className="mx-auto w-full max-w-3xl space-y-4 px-4 py-5 sm:px-6">
+    <div className="mx-auto w-full max-w-3xl space-y-4">
       <Scoreboard v={v} />
       {err && <p className="rounded-md border-2 border-foreground bg-status-pending-bg px-3 py-2 text-sm font-semibold">{err}</p>}
 

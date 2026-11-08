@@ -25,7 +25,7 @@ export default async function NotesPage() {
     })),
   })).filter((b) => b.notes.length);
   return (
-    <div className="mx-auto max-w-5xl space-y-8 px-4 py-6 sm:px-6">
+    <div className="mx-auto max-w-5xl space-y-8">
       <Link href="/study" className="inline-flex min-h-11 items-center gap-1 rounded-full border-2 border-foreground bg-card px-3 py-1.5 text-sm font-semibold">
         <ArrowLeft className="size-4" aria-hidden /> Study
       </Link>

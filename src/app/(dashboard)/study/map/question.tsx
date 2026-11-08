@@ -18,7 +18,7 @@ export type QView = {
 export type Pick = number | boolean | null;
 
 const option =
-  "flex min-h-12 w-full items-center gap-3 rounded-md border-2 border-foreground bg-card px-4 py-3 text-left text-base font-semibold transition-transform duration-150 motion-reduce:transition-none enabled:active:translate-y-px focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60 disabled:cursor-default";
+  "flex min-h-12 w-full items-center gap-3 rounded-lg border-2 border-foreground bg-card px-4 py-3 text-left text-base font-semibold transition-transform duration-150 motion-reduce:transition-none enabled:active:translate-y-px focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60 disabled:cursor-default";
 const key = "grid size-7 shrink-0 place-items-center rounded-md border-2 border-current text-xs font-bold";
 
 /**

@@ -195,7 +195,7 @@ function FieldCard({
     <section className="space-y-2">
       <h3 className="text-caption font-semibold uppercase text-muted-foreground">{label}</h3>
       {rows.map((r) => (
-        <div key={r.drug} className="rounded-md border-2 border-border bg-card p-3">
+        <div key={r.drug} className="rounded-lg border-2 border-border bg-card p-3">
           <p className="text-eyebrow text-link">{r.drug}</p>
           <p className="mt-1 text-small">
             {r[fieldKey] ?? <span className="text-muted-foreground">Not covered</span>}

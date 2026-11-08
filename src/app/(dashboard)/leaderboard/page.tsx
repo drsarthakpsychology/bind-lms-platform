@@ -28,7 +28,7 @@ export default async function LeaguePage() {
   const relegates = data.tier > 1;
 
   return (
-    <div className="mx-auto max-w-4xl space-y-6 px-4 py-6 sm:px-6">
+    <div className="mx-auto max-w-5xl space-y-6">
       <BoardSwitch active="league" />
 
       <header>

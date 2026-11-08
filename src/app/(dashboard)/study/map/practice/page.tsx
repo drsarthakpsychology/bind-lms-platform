@@ -35,7 +35,7 @@ export default async function PracticePage({ searchParams }: { searchParams: Pro
   const title = topic ? `Fix it: ${topicById(topic)!.title}` : "Mixed practice";
 
   return (
-    <div className="mx-auto max-w-2xl space-y-6 px-4 py-6 sm:px-6 lg:py-10">
+    <div className="mx-auto max-w-2xl space-y-6">
       <Link href="/study/map" className="inline-flex min-h-11 items-center gap-1.5 text-sm font-bold text-link hover:underline">
         <ArrowLeft className="size-4" aria-hidden /> Your map
       </Link>

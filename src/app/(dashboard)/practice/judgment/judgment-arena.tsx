@@ -122,7 +122,7 @@ export function JudgmentArena({ items }: { items: SctItem[] }) {
       </div>
 
       {/* the item */}
-      <div className="rounded-md border-2 border-border bg-card p-5 hard-shadow-sm">
+      <div className="rounded-lg border-2 border-border bg-card p-5 hard-shadow-sm">
         <p className="text-small">{item.vignette}</p>
         <p className="mt-3 rounded-md border border-border bg-secondary/60 p-3 text-small">
           <span className="font-semibold">Hypothesis: </span>{item.hypothesis}
@@ -150,7 +150,7 @@ export function JudgmentArena({ items }: { items: SctItem[] }) {
 
       {/* panel reveal */}
       {showPanel ? (
-        <div className="rounded-md border-2 border-border bg-card p-5 hard-shadow-sm">
+        <div className="rounded-lg border-2 border-border bg-card p-5 hard-shadow-sm">
           <h3 className="text-base font-semibold">The panel disagreed: that&apos;s the lesson</h3>
           <div className="mt-3 flex h-20 items-end gap-2">
             {dist.map((d) => (

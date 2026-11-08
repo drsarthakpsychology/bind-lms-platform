@@ -37,7 +37,7 @@ export function TwoMinuteClinic({ start = 0, order }: { start?: number; order?: 
 
   return (
     <div className="space-y-4">
-      <div className="rounded-md border-2 border-border bg-card p-5 hard-shadow-sm">
+      <div className="rounded-lg border-2 border-border bg-card p-5 hard-shadow-sm">
         <div className="flex items-center justify-between">
           <span className="text-eyebrow text-muted-foreground">One-liner {itemIdx + 1}</span>
           {phase === "type" ? (
@@ -58,7 +58,7 @@ export function TwoMinuteClinic({ start = 0, order }: { start?: number; order?: 
       </div>
 
       {phase === "type" ? (
-        <div className="space-y-3 rounded-md border-2 border-border bg-card p-5 hard-shadow-sm">
+        <div className="space-y-3 rounded-lg border-2 border-border bg-card p-5 hard-shadow-sm">
           <div>
             <label className="text-small font-medium" htmlFor="diff">Your differential (top 2-3)</label>
             <textarea enterKeyHint="enter"
@@ -97,7 +97,7 @@ export function TwoMinuteClinic({ start = 0, order }: { start?: number; order?: 
       ) : null}
 
       {phase === "compare" ? (
-        <div className="space-y-3 rounded-md border-2 border-border bg-card p-5 hard-shadow-sm">
+        <div className="space-y-3 rounded-lg border-2 border-border bg-card p-5 hard-shadow-sm">
           <h2 className="text-base font-semibold">Expert comparison</h2>
           <div>
             <p className="text-small font-medium text-muted-foreground">Your differential</p>

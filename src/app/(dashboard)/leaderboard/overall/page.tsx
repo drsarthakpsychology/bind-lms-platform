@@ -31,7 +31,7 @@ export default async function OverallLeaderboardPage() {
   const meBelow = me && rows.findIndex((r) => r.userId === userId) >= SHOWN ? me : null;
 
   return (
-    <div className="mx-auto max-w-4xl space-y-6 px-4 py-6 sm:px-6">
+    <div className="mx-auto max-w-5xl space-y-6">
       <BoardSwitch active="overall" />
       <BoardHeader board="overall" scope={scopeLine(cohorts.map((c) => c.name))} />
 

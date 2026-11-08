@@ -49,7 +49,7 @@ export function MedicineView({ med, related, mech, visuals = [] }: { med: Med; r
   const pick = saveView;
 
   return (
-    <div className="mx-auto max-w-4xl space-y-6 px-4 py-6 sm:px-6 lg:py-8">
+    <div className="mx-auto max-w-4xl space-y-6">
       <Link href="/practice/medicines" className="inline-flex items-center gap-1 rounded-full border-2 border-foreground bg-card px-3 py-1.5 text-sm font-semibold">
         <ArrowLeft className="size-4" aria-hidden /> All medicines
       </Link>
@@ -64,7 +64,7 @@ export function MedicineView({ med, related, mech, visuals = [] }: { med: Med; r
       </header>
 
       {/* View switch: sticks to the top while scrolling on phones */}
-      <div className="sticky top-14 z-20 -mx-4 bg-background/95 px-4 py-2 backdrop-blur sm:static sm:mx-0 sm:bg-transparent sm:p-0">
+      <div className="sticky top-0 z-20 -mx-4 bg-background/95 px-4 py-2 backdrop-blur sm:static sm:mx-0 sm:bg-transparent sm:p-0">
         <div className="grid grid-cols-2 gap-1 rounded-full border-2 border-foreground bg-card p-1 sm:inline-grid" role="radiogroup" aria-label="How much detail">
           {(
             [

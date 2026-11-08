@@ -127,7 +127,7 @@ export function LibraryList({
       </form>
 
       {docs.length === 0 ? (
-        <div className="rounded-md border-2 border-border bg-card p-6 text-center">
+        <div className="rounded-lg border-2 border-border bg-card p-6 text-center">
           <p className="text-base font-medium">No matches</p>
           <p className="mt-1 text-small text-muted-foreground">
             Try a condition, a symptom, or a drug name.

@@ -20,7 +20,7 @@ export default async function ReferencePage({ searchParams }: { searchParams: Pr
   const items = referenceIndex();
   const kind = KINDS.has(sp.kind ?? "") ? (sp.kind as RefKind) : "all";
   return (
-    <div className="mx-auto max-w-3xl space-y-6 px-4 py-6 sm:px-6">
+    <div className="mx-auto max-w-3xl space-y-6">
       <Link href="/study" className="inline-flex min-h-11 items-center gap-1 rounded-md border-2 border-foreground bg-card px-3 text-sm font-semibold">
         <ArrowLeft className="size-4" aria-hidden /> Study
       </Link>

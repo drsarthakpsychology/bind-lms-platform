@@ -60,7 +60,7 @@ export function PlacementRunner({ questions, previous, saving }: { questions: QV
           <p className="text-eyebrow text-link">Placement quiz</p>
           <h1 className="text-h1">Let&apos;s see where you are</h1>
         </header>
-        <div className="space-y-3 rounded-md border-2 border-foreground bg-card p-5 hard-shadow-md">
+        <div className="space-y-3 rounded-lg border-2 border-foreground bg-card p-5 hard-shadow-md">
           <ul className="space-y-2">
             <li className="flex gap-2">
               <Compass className="mt-0.5 size-5 shrink-0" aria-hidden /> Questions across every topic.
@@ -126,7 +126,7 @@ export function PlacementRunner({ questions, previous, saving }: { questions: QV
 function TopicRow({ t, tone }: { t: PlacementTopic; tone: "strong" | "okay" | "weak" }) {
   const Icon = tone === "strong" ? BadgeCheck : tone === "weak" ? TriangleAlert : Sprout;
   return (
-    <li className="flex flex-wrap items-center gap-3 rounded-md border-2 border-foreground bg-card p-3">
+    <li className="flex flex-wrap items-center gap-3 rounded-lg border-2 border-foreground bg-card p-3">
       <Icon className="size-5 shrink-0" aria-hidden />
       <span className="min-w-0 flex-1 font-bold">{t.title}</span>
       <span className="text-sm text-muted-foreground">

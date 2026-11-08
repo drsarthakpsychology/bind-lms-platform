@@ -75,7 +75,7 @@ export function ObserveLevel({
   }
 
   return (
-    <div className="space-y-4 rounded-md border-2 border-border bg-card p-5 hard-shadow-sm">
+    <div className="space-y-4 rounded-lg border-2 border-border bg-card p-5 hard-shadow-sm">
       <div className="flex items-center justify-between">
         <p className="text-eyebrow text-muted-foreground">
           Level 1 · Observe · stimulus {idx + 1}

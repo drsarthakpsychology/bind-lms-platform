@@ -226,7 +226,7 @@ export function SectionReader({
       </aside>
 
       <article className="min-w-0 pb-36 md:pb-0">
-        <div ref={topRef} className="scroll-mt-24" />
+        <div ref={topRef} className="scroll-mt-shell" />
         <div className="mb-4 flex items-center justify-between gap-2 md:hidden">
           <Link href={`/study/${moduleId}`} className="inline-flex min-h-11 shrink-0 items-center gap-1 rounded-md border-2 border-foreground bg-card px-3 py-1.5 text-sm font-semibold">
             <ArrowLeft className="size-4" aria-hidden /> Module {moduleNum}
@@ -283,7 +283,7 @@ export function SectionReader({
         ) : (
         <div className="max-w-[68ch] space-y-8">
           {shownParts.map((k) => (
-            <div key={k} ref={(el) => { partRefs.current[k] = el; }} className={cn("scroll-mt-24", k > 0 && wide && !section.isTest && "border-t-2 border-foreground/10 pt-8", s.reveal)}>
+            <div key={k} ref={(el) => { partRefs.current[k] = el; }} className={cn("scroll-mt-shell", k > 0 && wide && !section.isTest && "border-t-2 border-foreground/10 pt-8", s.reveal)}>
               {chunks[k].node}
             </div>
           ))}

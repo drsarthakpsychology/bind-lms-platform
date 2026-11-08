@@ -30,7 +30,7 @@ function parseDraft(raw: string): Submission {
   }
 }
 
-const input = "w-full rounded-md border-2 border-foreground bg-background p-3 text-base outline-none focus-visible:ring-2 focus-visible:ring-ring";
+const input = "w-full rounded-lg border-2 border-foreground bg-background p-3 text-base outline-none focus-visible:ring-2 focus-visible:ring-ring";
 
 function Eyebrow({ n, children }: { n: string; children: React.ReactNode }) {
   return (

@@ -62,7 +62,7 @@ export function NoteView({
   const quizHref = note.quiz.lessonId ? `/prep/smart/play?lesson=${note.quiz.lessonId}&${from}` : `/prep/smart/coach?domain=${note.quiz.domain}&${from}`;
 
   return (
-    <article className={cn("mx-auto max-w-3xl space-y-5 px-4 py-6 sm:px-6", l.texture)}>
+    <article className={cn("mx-auto max-w-3xl space-y-5", l.texture)}>
       <div className="flex flex-wrap items-center justify-between gap-3">
         <Link href="/study/notes" className="inline-flex items-center gap-1 rounded-full border-2 border-foreground bg-card px-3 py-1.5 text-sm font-bold">
           <ArrowLeft className="size-4" aria-hidden /> All summaries

@@ -317,7 +317,7 @@ export function JournalView({ initialEntries }: { initialEntries: JournalEntry[]
       {/* Desktop: inline composer (unchanged composition) */}
       <form
         onSubmit={save}
-        className="hidden space-y-3 rounded-md border-2 border-border bg-card p-5 hard-shadow-sm lg:block"
+        className="hidden space-y-3 rounded-lg border-2 border-border bg-card p-5 hard-shadow-sm lg:block"
       >
         {composeFields}
         <button
@@ -343,7 +343,7 @@ export function JournalView({ initialEntries }: { initialEntries: JournalEntry[]
         ) : (
           <ul className="mt-3 space-y-3">
             {entries.map((e) => (
-              <li key={e.id} className="rounded-md border-2 border-border bg-card p-4">
+              <li key={e.id} className="rounded-lg border-2 border-border bg-card p-4">
                 <div className="flex items-center justify-between gap-2">
                   <span className="text-caption text-muted-foreground">
                     {formatRelativeTime(e.createdAt)}

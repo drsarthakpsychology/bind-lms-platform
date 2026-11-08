@@ -224,7 +224,7 @@ export default async function MailPage({
   return (
     <div className="-mx-4 -my-6 pb-24 sm:-mx-6 lg:-mx-10 lg:-my-8 lg:pb-0">
       <MailKeys folder={folder === "compose" ? "inbox" : folder} />
-      <div className="grid min-h-[calc(100dvh-4rem)] grid-cols-[minmax(0,1fr)] grid-rows-[auto_1fr] lg:grid-cols-[13.5rem_minmax(0,1fr)] lg:grid-rows-1">
+      <div className="grid min-h-[calc(100dvh-var(--top-h)-4.5rem)] grid-cols-[minmax(0,1fr)] grid-rows-[auto_1fr] lg:grid-cols-[13.5rem_minmax(0,1fr)] lg:grid-rows-1">
         {/* Folder rail (a chip row on phones) */}
         <nav aria-label="Mail folders" className="border-b-2 border-foreground/10 bg-card p-3 lg:border-r-2 lg:border-b-0 lg:border-foreground lg:p-4">
           <Link

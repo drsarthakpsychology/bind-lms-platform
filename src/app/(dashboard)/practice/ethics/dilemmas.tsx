@@ -42,7 +42,7 @@ export function DilemmaFlow({ dilemmas }: { dilemmas: EthicDilemma[] }) {
 
   if (finished) {
     return (
-      <div className="rounded-md border-2 border-border bg-card p-6 hard-shadow-sm">
+      <div className="rounded-lg border-2 border-border bg-card p-6 hard-shadow-sm">
         <p className="flex items-center gap-2 text-base font-semibold">
           <CheckCircle2 className="size-4" aria-hidden /> All dilemmas done
         </p>
@@ -70,7 +70,7 @@ export function DilemmaFlow({ dilemmas }: { dilemmas: EthicDilemma[] }) {
         </span>
       </div>
 
-      <div className="rounded-md border-2 border-border bg-card p-5 hard-shadow-sm">
+      <div className="rounded-lg border-2 border-border bg-card p-5 hard-shadow-sm">
         <p className="text-eyebrow text-muted-foreground">{d.setting}</p>
         <h2 className="mt-1 text-base font-semibold">{d.vignette}</h2>
 
@@ -87,7 +87,7 @@ export function DilemmaFlow({ dilemmas }: { dilemmas: EthicDilemma[] }) {
       </div>
 
       {done ? (
-        <div className="rounded-md border-2 border-border bg-card p-5 hard-shadow-sm">
+        <div className="rounded-lg border-2 border-border bg-card p-5 hard-shadow-sm">
           <h3 className={cn("flex items-center gap-2 text-base font-semibold", correct ? "text-status-success-fg" : "text-destructive")}>
             <Scale className="size-4" aria-hidden />
             {correct ? "Right call" : "Consequence"}

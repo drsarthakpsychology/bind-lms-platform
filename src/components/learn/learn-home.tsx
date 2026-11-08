@@ -97,7 +97,7 @@ function GameGroup({ id, title, games }: { id: string; title: string; games: Gam
 /** /games: the real games, solo and with others. Nothing else competes. */
 export function LearnHome({ showLab = false }: { showLab?: boolean }) {
   return (
-    <div className={cn("mx-auto max-w-5xl space-y-8 px-4 py-6 sm:px-6 lg:py-10", s.texture)}>
+    <div className={cn("mx-auto max-w-5xl space-y-8", s.texture)}>
       <header className="flex items-center gap-4">
         <Chai mood="happy" size={64} className="shrink-0" />
         <div className="min-w-0">
@@ -130,7 +130,7 @@ export function QuizPath({ units, serverState, save }: { units: Unit[]; serverSt
   const shownBadges = Object.entries(BADGES);
 
   return (
-    <div className={cn("mx-auto max-w-4xl space-y-8 px-4 py-6 sm:px-6 lg:py-10", s.texture)}>
+    <div className={cn("mx-auto max-w-4xl space-y-8", s.texture)}>
       <Link href="/prep/smart" className="inline-flex min-h-11 items-center gap-1 rounded-full border-2 border-foreground bg-card px-3 py-1.5 text-sm font-bold">
         <ArrowLeft className="size-4" aria-hidden /> Smart practice
       </Link>

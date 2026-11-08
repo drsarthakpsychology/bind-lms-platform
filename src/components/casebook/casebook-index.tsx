@@ -54,7 +54,7 @@ export function CasebookIndex({ moduleTitles, serverState, save }: { moduleTitle
   const reset = () => setN(PAGE);
 
   return (
-    <div className="mx-auto w-full min-w-0 max-w-4xl space-y-6 px-4 py-6 sm:px-6 lg:py-10">
+    <div className="mx-auto w-full min-w-0 max-w-4xl space-y-6">
       <Link href="/games/lab" className="inline-flex min-h-11 items-center gap-1 rounded-full border-2 border-foreground bg-card px-3 py-1.5 text-sm font-bold">
         <ArrowLeft className="size-4" aria-hidden /> Lab
       </Link>

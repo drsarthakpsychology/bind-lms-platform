@@ -232,6 +232,11 @@
   --radius-md: var(--radius-input); /* 10px — controls (buttons, inputs) */
   --radius-lg: var(--radius); /* 14px — cards, dialogs */
   --radius-xl: 0.875rem; /* 14px */
+  /* Cards are 14px, always: the larger Tailwind radii resolve to the card
+     radius so a card never reads as a different object (shape grammar:
+     rectangle = do, pill = is, card = holds). */
+  --radius-2xl: var(--radius);
+  --radius-3xl: var(--radius);
 
   --shadow-hard-xs: var(--shadow-hard-xs);
   --shadow-hard-sm: var(--shadow-hard-sm);
@@ -339,6 +344,26 @@
 @media (min-width: 1024px) and (min-height: 720px) {
   :root {
     --top-h: 4rem;
+  }
+}
+
+/* -----------------------------------------------------------------------------
+   Layers. One order for the whole app, so nothing covers what it should not:
+     0-10  page content, cards, 3D scene controls
+     20    bars that stick inside a page (mock exam bar, week chips, filters)
+     30    the sidebar
+     40    the top bar, the phone bottom tab bar, the reader's Back/Next bar
+     50    overlays: dialogs, sheets, the search palette, menus, popovers
+     100   the first-login details form (above everything, once only)
+   A bar that sticks inside a page sits at top 0 on phones (the top bar scrolls
+   away there) and at top var(--top-h) from 768px, where the top bar sticks.
+   -------------------------------------------------------------------------- */
+
+/* Jumps to a heading or part stop below the sticky top bar, not under it. */
+@utility scroll-mt-shell {
+  scroll-margin-top: 1rem;
+  @media (min-width: 768px) {
+    scroll-margin-top: calc(var(--top-h) + 1rem);
   }
 }
 
@@ -827,6 +852,16 @@ html[data-cvd="on"] .bg-destructive {
 @layer base {
   * {
     border-color: var(--border);
+  }
+
+  /* In-page anchors (#steps, #letter-A...) land below the sticky top bar. */
+  [id] {
+    scroll-margin-top: 1rem;
+  }
+  @media (min-width: 768px) {
+    [id] {
+      scroll-margin-top: calc(var(--top-h) + 1rem);
+    }
   }
 
   html {

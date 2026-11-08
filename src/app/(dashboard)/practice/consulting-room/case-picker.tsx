@@ -175,7 +175,7 @@ function CaseCardItem({
 
   if (locked) {
     return (
-      <li className="rounded-md border-2 border-border bg-card p-4 opacity-70">
+      <li className="rounded-lg border-2 border-border bg-card p-4 opacity-70">
         <div className="flex items-center justify-between gap-3">
           <div className="min-w-0">
             <p className="text-eyebrow text-muted-foreground">{DIFFICULTY_LABEL[c.difficulty] ?? c.difficulty}</p>

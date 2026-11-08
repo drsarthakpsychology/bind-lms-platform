@@ -229,7 +229,7 @@ export function DailyGame({ serverState, save, initial }: { serverState: LearnSt
   const streak = daily ? Math.max(daily.meta.streak, daily.meta.stored ? 0 : dailyStreak(localDays, daily.meta.day)) : 0;
 
   return (
-    <div className="mx-auto w-full max-w-2xl space-y-4 px-4 py-5 sm:px-6">
+    <div className="mx-auto w-full max-w-2xl space-y-4">
       <ModeSwitch tab={tab} onPick={openTab} />
 
       {tab === "ai" && (making || !aiGame) ? (
@@ -658,7 +658,7 @@ function Result({ game, gain, streak, onNextPractice, pending }: { game: Game; g
       {v.mode === "daily" && (
         <div className={cn(card, "p-4")}>
           <p className="font-bold">Share your result (no spoilers)</p>
-          <pre className="mt-2 rounded-md border-2 border-dashed border-foreground bg-background p-3 font-sans text-sm whitespace-pre-wrap">{text("whatsapp")}</pre>
+          <pre className="mt-2 rounded-lg border-2 border-dashed border-foreground bg-background p-3 font-sans text-sm whitespace-pre-wrap">{text("whatsapp")}</pre>
           <div className="mt-3 grid gap-2 sm:grid-cols-3">
             <button type="button" className={btnSecondary} onClick={() => copy("whatsapp")}>
               {copied === "whatsapp" ? <Check className="size-4" aria-hidden /> : <Copy className="size-4" aria-hidden />} {copied === "whatsapp" ? "Copied" : "Copy for WhatsApp"}

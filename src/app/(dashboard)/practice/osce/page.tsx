@@ -14,7 +14,7 @@ export const dynamic = "force-dynamic";
 export default async function OscePage() {
   await requireFeature("osce");
   return (
-    <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
+    <div className="mx-auto max-w-3xl">
       <ToolHeader title="OSCE stations" tip={{ id: "osce", steps: ["One task against the clock, like the real exam.", "Voice works best."] }} />
 
       <div className="mt-6">

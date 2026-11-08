@@ -262,7 +262,7 @@ export function ModuleView({
         </ul>
       </details>
 
-      <section id="steps" aria-label="Steps" className="scroll-mt-24 space-y-6">
+      <section id="steps" aria-label="Steps" className="scroll-mt-shell space-y-6">
         {/* Step 1: Read */}
         <div className={cn("rounded-3xl border-2 border-foreground bg-card p-5", step === 1 && "hard-shadow-md")}>
           <StepHead n={1} title="Read the notes" done={s.readDone === s.readTotal} current={step === 1} sub={`${s.readDone} of ${s.readTotal} sections read`} />
@@ -297,7 +297,7 @@ export function ModuleView({
         </div>
 
         {/* Step 2: Write */}
-        <div id="write" className={cn("scroll-mt-24 rounded-3xl border-2 border-foreground bg-card p-5", step === 2 && "hard-shadow-md")}>
+        <div id="write" className={cn("scroll-mt-shell rounded-3xl border-2 border-foreground bg-card p-5", step === 2 && "hard-shadow-md")}>
           <StepHead n={2} title="Write it out" done={s.written} current={step === 2} sub="On paper, from memory." />
           <p className="mt-3 leading-relaxed">{m.writeTask}</p>
           {s.written ? (
