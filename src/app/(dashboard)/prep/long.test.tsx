@@ -50,7 +50,7 @@ describe("LongPractice", () => {
     render(<LongPractice {...props} />);
     expect(screen.queryByText("The full model answer.")).toBeNull();
     expect(screen.queryByLabelText(/Plan your answer/)).toBeNull();
-    fireEvent.click(screen.getByRole("button", { name: /Show model answer/ }));
+    fireEvent.click(screen.getByRole("button", { name: /Show answer/ }));
     expect(screen.getByText("The full model answer.")).toBeInTheDocument();
     expect(screen.queryByRole("region", { name: "The plan" })).toBeNull();
     expect(screen.getByText("Writing a list with no explanation")).toBeInTheDocument();
@@ -77,7 +77,7 @@ describe("LongPractice", () => {
       throw new Error("blocked");
     });
     render(<LongPractice {...props} id="lq-blocked" />);
-    fireEvent.click(screen.getByRole("button", { name: /Show model answer/ }));
+    fireEvent.click(screen.getByRole("button", { name: /Show answer/ }));
     fireEvent.click(screen.getByRole("checkbox", { name: "Defines depression" }));
     expect(screen.getByRole("status")).toHaveTextContent("You covered 1 of 3");
     spy.mockRestore();

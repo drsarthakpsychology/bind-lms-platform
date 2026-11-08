@@ -435,7 +435,7 @@ function Worked({ d }: { d: WorkedData }) {
               <p className="font-semibold"><Rich text={t.q} /></p>
               <textarea value={mine[i] ?? ""} onChange={(e) => setMine({ ...mine, [i]: e.target.value })} rows={2} className="mt-2 w-full rounded-md border-2 border-foreground/40 bg-background p-2 text-[0.95rem]" placeholder="Write your answer…" />
               {open[i] ? (
-                <p className="vibha-pop mt-2 rounded-md bg-muted p-2 text-[0.95rem]"><span className="font-semibold">Model answer: </span><Rich text={t.a} /></p>
+                <p className="vibha-pop mt-2 rounded-md bg-muted p-2 text-[0.95rem]"><span className="font-semibold">Answer: </span><Rich text={t.a} /></p>
               ) : (
                 <button type="button" disabled={!mine[i]?.trim()} onClick={() => { setOpen({ ...open, [i]: true }); trackLearn({ type: "widget", kind: "worked", ok: true, prompt: t.q }); }} className={cn(btn, "mt-2 min-h-10 bg-foreground text-sm text-background disabled:opacity-40")}>
                   Compare with model answer

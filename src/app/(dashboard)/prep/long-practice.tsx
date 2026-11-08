@@ -53,13 +53,13 @@ export function LongPractice({ id, keyPoints, pitfalls, answer, study, prev, nex
     <div className="min-w-0 space-y-5">
       {!shown ? (
         <button type="button" className={cn(btnPrimary, "w-full text-base")} onClick={reveal}>
-          <Eye className="size-4" aria-hidden /> Show model answer
+          <Eye className="size-4" aria-hidden /> Show answer
         </button>
       ) : (
         <div className="min-w-0 space-y-5">
           <section aria-labelledby="model-answer" className={cn(card, "min-w-0 space-y-3 p-4 sm:p-5")}>
             <h2 id="model-answer" ref={answerRef} tabIndex={-1} className="text-h3 outline-none">
-              Model answer
+              Answer
             </h2>
             {answer}
           </section>
@@ -67,7 +67,7 @@ export function LongPractice({ id, keyPoints, pitfalls, answer, study, prev, nex
           {pitfalls?.length ? (
             <section aria-labelledby="pitfalls" className="space-y-2 rounded-md border-2 border-status-alert-fg bg-status-alert-bg p-4 text-status-alert-fg">
               <h2 id="pitfalls" className="font-bold">
-                Where marks are lost
+                Common mistakes
               </h2>
               <ul className="list-disc space-y-1 pl-5 [overflow-wrap:anywhere]">
                 {pitfalls.map((p, i) => (
@@ -79,9 +79,9 @@ export function LongPractice({ id, keyPoints, pitfalls, answer, study, prev, nex
 
           {keyPoints.length ? (
             <fieldset className={cn(card, "min-w-0 space-y-2")}>
-              <legend className="sr-only">Mark yourself: tick what you covered</legend>
+              <legend className="sr-only">Tick what you covered</legend>
               <p className="text-h3" aria-hidden>
-                Mark yourself
+                Did you cover these?
               </p>
               <ul className="space-y-1.5">
                 {keyPoints.map((k, i) => (
