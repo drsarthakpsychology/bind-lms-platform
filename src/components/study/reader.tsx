@@ -272,7 +272,7 @@ export function SectionReader({
             </div>
           ) : null}
           {/* One toolbar row: explanation style, bookmark, my note. */}
-          {!section.isTest ? <SectionMarks key={section.id} owner={owner} moduleId={moduleId} sectionId={section.id} sectionLabel={`${section.num} ${section.title}`} lead={<ViewToggle />} /> : <div className="mt-3"><ViewToggle /></div>}
+          {!section.isTest ? <SectionMarks key={section.id} owner={owner} moduleId={moduleId} sectionId={section.id} sectionLabel={`${section.num} ${section.title}`} lead={<ViewToggle className="flex w-full sm:inline-flex sm:w-auto" />} /> : <div className="mt-3"><ViewToggle /></div>}
         </header>
 
         {section.levelCheck ? (

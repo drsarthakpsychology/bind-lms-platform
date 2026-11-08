@@ -52,10 +52,9 @@ export function ViewToggle({ className }: { className?: string }) {
           role="radio"
           aria-checked={view === v}
           onClick={() => setExplainView(v)}
-          className={segmentItem(view === v)}
+          className={segmentItem(view === v, "flex-1")}
         >
           {v === "student" ? "Student" : "Clinician"}
-          <span className="hidden sm:inline"> view</span>
         </button>
       ))}
     </div>
