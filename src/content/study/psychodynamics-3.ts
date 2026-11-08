@@ -3,7 +3,6 @@ export const part3 = String.raw`
 # Part V · Exam zone: Q&A bank
 
 ## 5.1 Q&A bank · Starting [core][starting]
-Think each question through, ideally on paper, before you open the answer. These questions use the ideas from Part I and take them one step further.
 
 :::qa Why would a person keep doing something that clearly hurts them? Give the psychodynamic answer in three parts. [starting]
 ### Short answer

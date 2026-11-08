@@ -52,7 +52,7 @@ export function MockResult({ view }: { view: MockResultView }) {
           { Icon: Circle, label: "Blank", value: view.blank },
           { Icon: Trophy, label: "Accuracy", value: view.accuracy === null ? "None" : `${Math.round(view.accuracy * 100)}%` },
         ].map(({ Icon, label, value }) => (
-          <div key={label} className="rounded-md border-2 border-foreground bg-card p-3">
+          <div key={label} className="rounded-lg border-2 border-foreground bg-card p-3">
             <p className="flex items-center gap-1.5 text-2xl font-bold tabular-nums">
               <Icon className="size-5" aria-hidden /> {value}
             </p>
@@ -100,7 +100,7 @@ export function MockResult({ view }: { view: MockResultView }) {
           </h2>
           <ul className="space-y-2">
             {view.sections.map((s) => (
-              <li key={s.title} className="rounded-md border-2 border-foreground bg-card p-3">
+              <li key={s.title} className="rounded-lg border-2 border-foreground bg-card p-3">
                 <div className="flex items-center justify-between gap-2">
                   <span className="font-semibold">{s.title}</span>
                   <span className="font-mono text-sm">
@@ -125,7 +125,7 @@ export function MockResult({ view }: { view: MockResultView }) {
         </h2>
         <ul className="space-y-2">
           {view.subjects.map((s) => (
-            <li key={s.subject} className="rounded-md border-2 border-foreground bg-card p-3">
+            <li key={s.subject} className="rounded-lg border-2 border-foreground bg-card p-3">
               <div className="flex flex-wrap items-center justify-between gap-2">
                 <span className="min-w-0 font-semibold">{s.title}</span>
                 <span className="font-mono text-sm">

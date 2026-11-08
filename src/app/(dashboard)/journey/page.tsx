@@ -8,6 +8,7 @@ import { normalise, levelFor, liveStreak } from "@/lib/learn/engine";
 import { istToday } from "@/lib/practice/streaks";
 import { hoursOf } from "@/lib/standing/score";
 import { BOARDS } from "@/lib/standing/boards";
+import { PageHeader } from "@/components/design-system/page-header";
 
 export const metadata: Metadata = { title: "My journey" };
 export const dynamic = "force-dynamic";
@@ -62,12 +63,8 @@ export default async function JourneyPage() {
   ];
 
   return (
-    <div className="mx-auto max-w-4xl space-y-6 px-4 py-6 sm:px-6 lg:py-8">
-      <header>
-        <p className="text-eyebrow text-link">My journey</p>
-        <h1 className="text-h1">How far you&apos;ve come</h1>
-        <p className="mt-1 text-sm text-muted-foreground">Everything you&apos;ve done on VIBHA, in one place. The more you learn, the more this fills up.</p>
-      </header>
+    <div className="mx-auto max-w-5xl space-y-6">
+      <PageHeader eyebrow="My journey" title="How far you've come" description="Everything you've done on VIBHA, in one place." className="pb-0" />
 
       {/* Level banner */}
       <section className="rounded-3xl border-2 border-foreground bg-brand p-5 text-brand-foreground sm:p-6">

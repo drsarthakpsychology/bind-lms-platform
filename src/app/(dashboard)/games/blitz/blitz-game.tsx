@@ -229,7 +229,7 @@ export function BlitzGame({ bests, serverState, save }: { bests: Bests; serverSt
   const step = nextStep(run.combo);
 
   return (
-    <div className="relative mx-auto w-full max-w-2xl space-y-4 px-4 py-5 sm:px-6">
+    <div className="relative mx-auto w-full max-w-2xl space-y-4">
       {/* Clock, score and combo */}
       <div className={cn(card, "space-y-3 p-3 hard-shadow-sm sm:p-4")}>
         <div className="flex items-center justify-between gap-3">
@@ -375,7 +375,7 @@ function BestLine({ bests }: { bests: Bests }) {
 
 function Ready({ bests, error, onStart }: { bests: Bests; error: string | null; onStart: () => void }) {
   return (
-    <div className="mx-auto w-full max-w-2xl space-y-4 px-4 py-6 sm:px-6">
+    <div className="mx-auto w-full max-w-2xl space-y-4">
       <BestLine bests={bests} />
       {!bests.stored && <p className="text-sm text-muted-foreground">Scores aren&apos;t being saved yet. You can still play.</p>}
       {error && (
@@ -394,7 +394,7 @@ function Result({ done, run, misses, bests, error, pending, onAgain }: { done: D
   const reduce = useReducedMotion();
   const anim = (cls: string) => (reduce === false ? cls : undefined);
   return (
-    <div className="mx-auto w-full max-w-2xl space-y-4 px-4 py-6 sm:px-6">
+    <div className="mx-auto w-full max-w-2xl space-y-4">
       <section className={cn(card, "relative overflow-hidden p-6 text-center hard-shadow-md", done?.newBest ? "bg-status-success-bg" : "bg-card", anim(fx.land))} aria-label="Round result">
         <p className={cn("mx-auto inline-flex items-center gap-2 rounded-md border-2 border-foreground bg-foreground px-3 py-1 font-pix text-lg uppercase text-background", anim(fx.stamp))}>
           <Timer className="size-5" aria-hidden /> Time

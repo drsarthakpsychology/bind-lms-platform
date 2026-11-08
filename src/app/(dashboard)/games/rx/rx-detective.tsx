@@ -66,7 +66,7 @@ export function RxDetective({ board, grade: gradeOnServer, finish, medIds = [] }
 function Intro({ board, onStart }: { board: AccuracyBoardData; onStart: (m: Mode) => void }) {
   useHotkeys({ "1": () => onStart("mixed"), "2": () => onStart("chain"), "3": () => onStart("mystery"), "4": () => onStart("puzzle"), "5": () => onStart("review") });
   return (
-    <div className={cn("mx-auto max-w-2xl space-y-6 px-4 py-6", m.rise)}>
+    <div className={cn("mx-auto max-w-2xl space-y-6", m.rise)}>
       <h1 className="text-h2">Pick a mode</h1>
       <div className={cn("grid gap-3 sm:grid-cols-2", m.stagger)}>
         {MODES.map((x, i) => (
@@ -138,7 +138,7 @@ function Round({ r, setR, onAnswered, onEnd, medIds }: { r: Run; setR: (r: Run) 
   const last = r.lives <= 0 || r.idx + 1 >= r.qs.length;
 
   return (
-    <div className="mx-auto max-w-2xl space-y-4 px-4 py-5">
+    <div className="mx-auto max-w-2xl space-y-4">
       <div className="flex flex-wrap items-center gap-2">
         <span className="font-semibold">
           Case {r.idx + 1}
@@ -476,7 +476,7 @@ function RevealBody({ q }: { q: Question }) {
 
 function DoseBox({ d }: { d: Drug }) {
   return (
-    <div className="rounded-md border-2 border-dashed border-foreground/50 bg-card p-3">
+    <div className="rounded-lg border-2 border-dashed border-foreground/50 bg-card p-3">
       <p className="text-caption font-semibold uppercase">Learning dose only</p>
       <p className="text-body-strong">{d.dose}</p>
       <p className="text-caption text-muted-foreground">Typical adult range. {DOSE_NOTE}</p>
@@ -517,7 +517,7 @@ function Summary({ r, xp, board, onAgain, onModes }: { r: Run; xp: number | null
   const scores = r.answers.map((a) => grade(a)?.score ?? 0);
   const acc = scores.length ? scores.reduce((a, s) => a + s, 0) / scores.length : 0;
   return (
-    <div className={cn("mx-auto max-w-2xl space-y-5 px-4 py-6", m.rise)}>
+    <div className={cn("mx-auto max-w-2xl space-y-5", m.rise)}>
       {r.lives > 0 ? null : <p className="text-eyebrow text-link">Out of lives</p>}
       <h1 className="text-h1">{acc >= 0.85 ? "Sharp detective." : acc >= 0.6 ? "Good work." : "The receptors will click with practice."}</h1>
       <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">

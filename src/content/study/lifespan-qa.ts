@@ -3,7 +3,6 @@ export const qa = String.raw`
 # Part IV · Exam zone
 
 ## 4.1 Q&A bank · Starting [starting]
-Think each question through before opening the answer. These answers model the depth examiners reward.
 
 :::qa Why can't a cross-sectional study tell us how people change as they age? [starting]
 ### Short answer

@@ -111,7 +111,7 @@ export function AccessManager({
       </div>
 
       {/* Bulk bar */}
-      <div className="sticky top-16 z-20 space-y-2 rounded-2xl border-2 border-foreground bg-brand p-3 text-brand-foreground hard-shadow-sm">
+      <div className="sticky top-0 z-20 space-y-2 md:top-[var(--top-h)] rounded-2xl border-2 border-foreground bg-brand p-3 text-brand-foreground hard-shadow-sm">
         <div className="flex flex-wrap items-center gap-2">
           <label className="flex items-center gap-2 text-sm font-bold">
             <input

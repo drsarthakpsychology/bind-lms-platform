@@ -20,6 +20,8 @@ import {
 import type { FeatureKey, FlagStatus } from "@/lib/flags";
 import type { SurfaceState } from "@/lib/practice/practice-state";
 import { cn } from "@/lib/utils";
+import { PageHeader } from "@/components/design-system/page-header";
+import { EmptyState } from "@/components/design-system/empty-state";
 
 /**
  * The Practice hub (plan section 8): clinical skills on real cases.
@@ -203,8 +205,7 @@ export function PracticeHubView({
   return (
     <div className="mx-auto max-w-5xl space-y-8">
       <header className="space-y-2">
-        <p className="text-eyebrow text-link">Practice</p>
-        <h1 className="text-h1">Clinical skills on real cases</h1>
+        <PageHeader eyebrow="Practice" title="Clinical skills on real cases" className="pb-0" />
         {resume ? (
           <Link href={resume.href} className="inline-flex min-h-11 max-w-full items-center gap-2 text-sm font-bold text-link underline-offset-4 hover:underline">
             <RotateCcw className="size-4 shrink-0" aria-hidden />
@@ -225,7 +226,7 @@ export function PracticeHubView({
       <ToolSection id="more" title="More practice" tools={more} />
 
       {!main.length && !think.length && !more.length ? (
-        <p className="rounded-2xl border-2 border-dashed border-foreground/30 p-6 text-center text-sm text-muted-foreground">Nothing here yet. Your faculty will switch tools on soon.</p>
+        <EmptyState compact icon={<Stethoscope className="size-6" />} title="Nothing here yet." description="Your faculty will switch tools on soon." />
       ) : null}
 
       {record.passport || record.record ? (

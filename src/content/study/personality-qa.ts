@@ -1,7 +1,6 @@
 /* Module · Personality disorders, Q&A banks. Original text written for VIBHA School of Psychology. */
 export const qa = String.raw`
 ## 4.2 Q&A bank · Starting [core][starting]
-Think each question through, ideally aloud or on paper, before you open the answer.
 
 :::qa How do you tell a strong personality trait from a personality disorder? Use an example. [starting]
 ### Short answer

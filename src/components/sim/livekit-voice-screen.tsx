@@ -91,7 +91,7 @@ export function LiveKitVoiceScreen({
       </div>
 
       <div className="w-full max-w-md">
-        <div className="max-h-44 overflow-y-auto rounded-md border-2 border-border bg-card p-3 text-small leading-relaxed">
+        <div className="max-h-44 overflow-y-auto rounded-lg border-2 border-border bg-card p-3 text-small leading-relaxed">
           {transcript ? (
             <div className="space-y-1.5 whitespace-pre-wrap">{transcript}</div>
           ) : (
@@ -103,7 +103,7 @@ export function LiveKitVoiceScreen({
           type="button"
           onClick={onEnd}
           disabled={busy}
-          className="mt-4 flex w-full items-center justify-center gap-2 rounded-md border-2 border-foreground bg-primary px-4 py-3 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px disabled:opacity-50"
+          className="mt-4 flex w-full items-center justify-center gap-2 rounded-lg border-2 border-foreground bg-primary px-4 py-3 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px disabled:opacity-50"
         >
           <Square className="size-4" aria-hidden />
           End conversation

@@ -77,7 +77,7 @@ export function RolePlayLobby({
         </div>
       ) : null}
 
-      <form onSubmit={create} className="space-y-3 rounded-md border-2 border-border bg-card p-5 hard-shadow-sm">
+      <form onSubmit={create} className="space-y-3 rounded-lg border-2 border-border bg-card p-5 hard-shadow-sm">
         <p className="text-base font-semibold">Start a session</p>
         <div>
           <label htmlFor="peer-email" className="text-caption font-medium text-muted-foreground">
@@ -125,7 +125,7 @@ export function RolePlayLobby({
               <li key={s.id}>
                 <Link
                   href={`/practice/role-play?session=${s.id}`}
-                  className="flex items-center justify-between rounded-md border-2 border-border bg-card px-4 py-3 transition-transform hover:-translate-y-px active:translate-y-px"
+                  className="flex items-center justify-between rounded-lg border-2 border-border bg-card px-4 py-3 transition-transform hover:-translate-y-px active:translate-y-px"
                 >
                   <div>
                     <p className="text-small font-medium">{s.peerEmail}</p>

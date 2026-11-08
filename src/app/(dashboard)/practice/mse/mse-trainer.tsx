@@ -112,7 +112,7 @@ export function MseTrainer() {
 
       {/* TAG MODE */}
       {mode === "tag" ? (
-        <div className="rounded-md border-2 border-border bg-card p-5 hard-shadow-sm">
+        <div className="rounded-lg border-2 border-border bg-card p-5 hard-shadow-sm">
           <p className="text-eyebrow text-muted-foreground">Domain: {stimulus.domain}</p>
           <p className="mt-2 text-base font-medium">{stimulus.content}</p>
           <div className="mt-4 flex flex-wrap gap-2">
@@ -170,7 +170,7 @@ export function MseTrainer() {
       {/* MOOD VS AFFECT */}
       {mode === "moodaffect" ? (
         moodIdx >= MOOD_AFFECT_ITEMS.length ? (
-          <div className="rounded-md border-2 border-border bg-card p-5 hard-shadow-sm">
+          <div className="rounded-lg border-2 border-border bg-card p-5 hard-shadow-sm">
             <p className="text-eyebrow text-muted-foreground">Mood vs affect · complete</p>
             <p className="mt-3 text-small text-muted-foreground">
               Drill complete. Mood is what they report; affect is what you observe. Repeat to
@@ -178,7 +178,7 @@ export function MseTrainer() {
             </p>
           </div>
         ) : (
-          <div className="rounded-md border-2 border-border bg-card p-5 hard-shadow-sm">
+          <div className="rounded-lg border-2 border-border bg-card p-5 hard-shadow-sm">
             <p className="text-eyebrow text-muted-foreground">Mood vs affect · {moodIdx + 1}</p>
             <p className="mt-3 text-lg font-medium">{MOOD_AFFECT_ITEMS[moodIdx].text}</p>
             <div className="mt-4 flex gap-2">
@@ -211,7 +211,7 @@ export function MseTrainer() {
 
       {/* DESCRIBE DON'T DIAGNOSE */}
       {mode === "describe" ? (
-        <div className="rounded-md border-2 border-border bg-card p-5 hard-shadow-sm">
+        <div className="rounded-lg border-2 border-border bg-card p-5 hard-shadow-sm">
           <p className="text-small text-muted-foreground">
             Describe what you see without using diagnostic words. Any diagnostic term gets
             flagged.

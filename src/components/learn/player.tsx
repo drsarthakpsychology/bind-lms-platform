@@ -76,7 +76,7 @@ function LessonRun({ mode, state, order }: { mode: Exclude<Mode, { kind: "blitz"
 
   if (!queue.length) {
     return (
-      <div className="mx-auto max-w-xl space-y-6 px-4 py-10 text-center">
+      <div className="mx-auto max-w-xl space-y-6 py-10 text-center">
         <Chai mood="sleep" size={140} />
         <h1 className="text-h1">{mode.kind === "review" ? "Nothing to review right now." : "Lesson not found."}</h1>
         <p className="text-muted-foreground">
@@ -154,7 +154,7 @@ function LessonRun({ mode, state, order }: { mode: Exclude<Mode, { kind: "blitz"
   const mood: ChaiMood = !last ? (combo >= 3 ? "happy" : "idle") : last.correct ? (combo >= 3 ? "cheer" : "happy") : "sad";
 
   return (
-    <div className="mx-auto flex min-h-[calc(100dvh-4rem)] max-w-2xl flex-col px-4 pt-4 pb-6">
+    <div className="mx-auto flex min-h-[calc(100dvh-var(--top-h)-4.5rem)] max-w-2xl flex-col">
       {/* Top: close, progress, combo */}
       <div className="flex items-center gap-3">
         <div className="h-4 flex-1 overflow-hidden rounded-full border-2 border-foreground bg-muted" role="progressbar" aria-valuenow={progress} aria-valuemin={0} aria-valuemax={100}>
@@ -235,7 +235,7 @@ export function Summary({
   const shown = chestOpen ? result.lines : result.lines.filter((l) => !l.label.toLowerCase().includes("chest"));
   const sum = shown.reduce((a, l) => a + l.xp, 0);
   return (
-    <div className="mx-auto max-w-xl space-y-6 px-4 py-8 text-center">
+    <div className="mx-auto max-w-xl space-y-6 py-8 text-center">
       {confetti.length ? (
         <div className={s.confetti} aria-hidden>
           {confetti.map((c, k) => (
@@ -408,7 +408,7 @@ function Blitz({ state }: { state: LearnState }) {
 
   if (phase === "ready") {
     return (
-      <div className="mx-auto max-w-xl space-y-6 px-4 py-10 text-center">
+      <div className="mx-auto max-w-xl space-y-6 py-10 text-center">
         <Chai mood="think" size={140} />
         <h1 className="text-h1">60-second blitz</h1>
         <p className="text-muted-foreground">As many right answers as you can in a minute. True/false and quick picks from everything you&apos;ve studied.</p>
@@ -427,7 +427,7 @@ function Blitz({ state }: { state: LearnState }) {
     const right = answers.filter((a) => a.correct).length;
     const missed = answers.filter((a) => !a.correct).map((a) => findItem(a.id)).filter(Boolean) as Item[];
     return (
-      <div className="mx-auto max-w-xl space-y-6 px-4 py-8 text-center">
+      <div className="mx-auto max-w-xl space-y-6 py-8 text-center">
         <Chai mood={right >= 10 ? "cheer" : "happy"} size={130} />
         <p className="font-pix text-6xl">{right}</p>
         <p className="text-lg font-bold">correct in 60 seconds{right > bestBefore ? " · New best!" : ""}</p>
@@ -458,7 +458,7 @@ function Blitz({ state }: { state: LearnState }) {
 
   const item = deck[i];
   return (
-    <div className={cn("mx-auto flex min-h-[calc(100dvh-4rem)] max-w-xl flex-col px-4 py-6 transition-colors", flash === "right" && "bg-primary/30", flash === "wrong" && "bg-foreground/15")}>
+    <div className={cn("mx-auto flex min-h-[calc(100dvh-var(--top-h)-4.5rem)] max-w-xl flex-col transition-colors", flash === "right" && "bg-primary/30", flash === "wrong" && "bg-foreground/15")}>
       <div className="flex items-center justify-between">
         <span className="font-pix text-3xl">{left}s</span>
         <span className="flex items-center gap-1 rounded-full border-2 border-foreground bg-card px-3 py-1 font-bold">

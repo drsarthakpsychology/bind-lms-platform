@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { cn } from "@/lib/utils";
+import { segmentGroup, segmentItem } from "@/components/design-system/segment";
 
 /**
  * Student / Clinician reading mode, shared by Learn and the medicines pages.
@@ -43,7 +44,7 @@ export function useExplainView(): ExplainView {
 export function ViewToggle({ className }: { className?: string }) {
   const view = useExplainView();
   return (
-    <div role="radiogroup" aria-label="Explanation style" className={cn("inline-flex rounded-full border-2 border-foreground bg-card p-0.5", className)}>
+    <div role="radiogroup" aria-label="Explanation style" className={cn(segmentGroup, className)}>
       {(["student", "clinician"] as const).map((v) => (
         <button
           key={v}
@@ -51,13 +52,9 @@ export function ViewToggle({ className }: { className?: string }) {
           role="radio"
           aria-checked={view === v}
           onClick={() => setExplainView(v)}
-          className={cn(
-            "rounded-full px-3 py-1 text-xs font-bold transition-colors",
-            view === v ? (v === "student" ? "bg-primary text-primary-foreground" : "bg-foreground text-background") : "text-foreground",
-          )}
+          className={segmentItem(view === v, "flex-1")}
         >
           {v === "student" ? "Student" : "Clinician"}
-          <span className="hidden sm:inline"> view</span>
         </button>
       ))}
     </div>

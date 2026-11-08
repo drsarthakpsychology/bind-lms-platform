@@ -232,6 +232,11 @@
   --radius-md: var(--radius-input); /* 10px — controls (buttons, inputs) */
   --radius-lg: var(--radius); /* 14px — cards, dialogs */
   --radius-xl: 0.875rem; /* 14px */
+  /* Cards are 14px, always: the larger Tailwind radii resolve to the card
+     radius so a card never reads as a different object (shape grammar:
+     rectangle = do, pill = is, card = holds). */
+  --radius-2xl: var(--radius);
+  --radius-3xl: var(--radius);
 
   --shadow-hard-xs: var(--shadow-hard-xs);
   --shadow-hard-sm: var(--shadow-hard-sm);
@@ -242,7 +247,8 @@
      Durations scale: 120ms micro (press) / 200ms default (hover, reveal) /
      400ms slow (section, modal) / 600ms slower (hero cascade reserve).
      Easings: `snappy` for touches & hovers, `out-expo` for entrances,
-     `springy` for playful lift. Reduced-motion users get everything flattened
+     `springy` ONLY for the rubber stamp landing (its overshoot is the
+     stamp hitting paper; nothing else bounces). Reduced-motion users get everything flattened
      by the global `prefers-reduced-motion` rule in @layer base. */
   --duration-fast: 120ms;
   --duration-base: 200ms;
@@ -339,6 +345,26 @@
 @media (min-width: 1024px) and (min-height: 720px) {
   :root {
     --top-h: 4rem;
+  }
+}
+
+/* -----------------------------------------------------------------------------
+   Layers. One order for the whole app, so nothing covers what it should not:
+     0-10  page content, cards, 3D scene controls
+     20    bars that stick inside a page (mock exam bar, week chips, filters)
+     30    the sidebar
+     40    the top bar, the phone bottom tab bar, the reader's Back/Next bar
+     50    overlays: dialogs, sheets, the search palette, menus, popovers
+     100   the first-login details form (above everything, once only)
+   A bar that sticks inside a page sits at top 0 on phones (the top bar scrolls
+   away there) and at top var(--top-h) from 768px, where the top bar sticks.
+   -------------------------------------------------------------------------- */
+
+/* Jumps to a heading or part stop below the sticky top bar, not under it. */
+@utility scroll-mt-shell {
+  scroll-margin-top: 1rem;
+  @media (min-width: 768px) {
+    scroll-margin-top: calc(var(--top-h) + 1rem);
   }
 }
 
@@ -829,6 +855,16 @@ html[data-cvd="on"] .bg-destructive {
     border-color: var(--border);
   }
 
+  /* In-page anchors (#steps, #letter-A...) land below the sticky top bar. */
+  [id] {
+    scroll-margin-top: 1rem;
+  }
+  @media (min-width: 768px) {
+    [id] {
+      scroll-margin-top: calc(var(--top-h) + 1rem);
+    }
+  }
+
   html {
     scroll-behavior: smooth;
     /* A soft peach flash on tap instead of the browser's grey box. */
@@ -936,13 +972,13 @@ html[data-cvd="on"] .bg-destructive {
 
 /* Voice waveform + typing indicator (moved from per-file styles to avoid
    Tailwind arbitrary-keyframes duplication). */
-@keyframes wave-bounce {
+@keyframes wave-level {
   0%, 100% { transform: scaleY(0.4); }
   50% { transform: scaleY(1); }
 }
 .animate-wave {
   transform-origin: bottom;
-  animation: wave-bounce 0.9s ease-in-out infinite;
+  animation: wave-level 0.9s ease-in-out infinite;
 }
 
 /* Decorative float (motion system §13) — a slow 8px rise-and-settle for

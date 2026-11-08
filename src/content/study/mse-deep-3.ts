@@ -4,7 +4,6 @@ export const part3 = String.raw`
 # Part V · Exam zone: Q&A bank
 
 ## 5.1 Q&A bank · Starting [starting]
-Say your answer out loud first, as if a senior asked you on a ward round. Then open the model.
 
 ### What the MSE is
 

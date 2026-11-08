@@ -12,7 +12,7 @@ import { toPoints } from "@/lib/psychopharm/points";
 import { cn } from "@/lib/utils";
 import { useExplainView, ViewToggle } from "./view-toggle";
 import n from "./notes.module.css";
-import l from "./learn.module.css";
+import { backLinkClass } from "@/components/design-system/back-link";
 
 const TONE: Record<string, string> = {
   lime: "bg-primary text-primary-foreground",
@@ -62,19 +62,19 @@ export function NoteView({
   const quizHref = note.quiz.lessonId ? `/prep/smart/play?lesson=${note.quiz.lessonId}&${from}` : `/prep/smart/coach?domain=${note.quiz.domain}&${from}`;
 
   return (
-    <article className={cn("mx-auto max-w-3xl space-y-5 px-4 py-6 sm:px-6", l.texture)}>
+    <article className="mx-auto max-w-3xl space-y-5">
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <Link href="/study/notes" className="inline-flex items-center gap-1 rounded-full border-2 border-foreground bg-card px-3 py-1.5 text-sm font-bold">
+        <Link href="/study/notes" className={backLinkClass}>
           <ArrowLeft className="size-4" aria-hidden /> All summaries
         </Link>
         <ViewToggle />
       </div>
 
       <header className={cn("relative overflow-hidden rounded-3xl border-2 border-foreground bg-brand p-5 text-brand-foreground sm:p-7", n.glow)}>
-        <p className="font-pix text-[0.65rem] uppercase opacity-90">
+        <p className="text-eyebrow opacity-90">
           {WEEK_BLOCKS[note.block]} · note {position.index + 1}
         </p>
-        <h1 className="mt-2 text-3xl font-black leading-[1.05] sm:text-5xl">
+        <h1 className="mt-2 break-words text-display">
           <span className="mr-2" aria-hidden>
             {note.emoji}
           </span>

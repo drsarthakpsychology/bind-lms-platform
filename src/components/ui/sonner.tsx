@@ -17,6 +17,10 @@ const Toaster = ({ ...props }: ToasterProps) => {
     <Sonner
       theme={theme as ToasterProps["theme"]}
       className="toaster group"
+      // Sit above the phone bottom tab bar (--nav-h is 0 when there is none,
+      // from 768px and on pages without it).
+      offset={{ bottom: "calc(var(--nav-h) + 24px)" }}
+      mobileOffset={{ bottom: "calc(var(--nav-h) + 16px)" }}
       icons={{
         success: <CircleCheckIcon className="size-4" />,
         info: <InfoIcon className="size-4" />,

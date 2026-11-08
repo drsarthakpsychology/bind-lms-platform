@@ -3,7 +3,6 @@ export const part3 = String.raw`
 # Part IV · Exam zone
 
 ## 4.1 Q&A bank · Starting [core][starting]
-Think each question through, ideally on paper, before you open the answer.
 
 :::qa What is the difference between a concept, a construct and a variable? Operationalise "loneliness" in three different ways. [starting]
 ### Short answer

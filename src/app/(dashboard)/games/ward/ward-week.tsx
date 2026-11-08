@@ -154,7 +154,7 @@ function Pick({
   useHotkeys(Object.fromEntries(CAMPAIGNS.slice(0, 9).map((c, k) => [String(k + 1), () => onSolo(c.id)])));
   const live = teams.filter((t) => t.status !== "done");
   return (
-    <div className={cn("mx-auto max-w-3xl space-y-6 px-4 py-6", m.rise)}>
+    <div className={cn("mx-auto max-w-3xl space-y-6", m.rise)}>
       <h1 className="text-h2">Pick a patient</h1>
 
       {saved ? (
@@ -353,7 +353,7 @@ function Stage({
   useHotkeys(keys);
 
   return (
-    <div className="mx-auto max-w-3xl space-y-4 px-4 py-5">
+    <div className="mx-auto max-w-3xl space-y-4">
       <div className="flex flex-wrap items-center gap-2">
         <span className="flex items-center gap-1.5 font-semibold">
           <Hospital className="size-5" aria-hidden /> {c.title}
@@ -493,7 +493,7 @@ function RevealCard({ r, onNext, nextLabel }: { r: Reveal & { teamLine?: string 
       <p className="text-body">{r.option.why}</p>
       {r.decision.skill ? <LearnLink topic={KIND_LABEL[r.decision.kind]} href={`/study/${r.decision.skill.split(":")[0]}`} newTab /> : null}
       {!good ? (
-        <div className={cn("rounded-md border-2 border-foreground/30 bg-card p-3", m.rise)}>
+        <div className={cn("rounded-lg border-2 border-foreground/30 bg-card p-3", m.rise)}>
           <p className="text-caption font-semibold uppercase">The strongest call</p>
           <p className="mt-1 text-small font-semibold">{best.text}</p>
           <p className="mt-1 text-small">{best.why}</p>
@@ -514,7 +514,7 @@ function EndScreen({ c, st, xp, onAgain, onExit, teamLine }: { c: Campaign; st: 
   const strong = st.log.filter((l) => l.q === "best").length;
   useHotkeys(onAgain ? { Enter: onAgain } : {});
   return (
-    <div className={cn("mx-auto max-w-3xl space-y-5 px-4 py-6", m.rise)}>
+    <div className={cn("mx-auto max-w-3xl space-y-5", m.rise)}>
       <div className="flex flex-wrap items-end gap-3">
         <h1 className="text-h1">{ending.title}</h1>
         <Pill tone={tone} className={m.stamp}>
@@ -553,7 +553,7 @@ function EndScreen({ c, st, xp, onAgain, onExit, teamLine }: { c: Campaign; st: 
             if (!f || !o) return null;
             const best = bestOption(f.decision);
             return (
-              <li key={i} className={cn("rounded-md border-2 border-foreground/25 bg-card p-3", m.rise)} style={{ "--i": i } as React.CSSProperties}>
+              <li key={i} className={cn("rounded-lg border-2 border-foreground/25 bg-card p-3", m.rise)} style={{ "--i": i } as React.CSSProperties}>
                 <div className="flex flex-wrap items-center gap-2">
                   <span className="font-mono text-caption">S{f.chapter + 1}</span>
                   <span className="text-caption text-muted-foreground">{KIND_LABEL[f.decision.kind]}</span>
@@ -605,7 +605,7 @@ function TeamPlay({ teamId, actions, onExit }: { teamId: string; actions: Action
 
   if (missing && !view)
     return (
-      <div className="mx-auto max-w-xl space-y-4 px-4 py-8">
+      <div className="mx-auto max-w-xl space-y-4">
         <h1 className="text-h2">Team not found</h1>
         <p className="text-body">You may not be in this team, or team play is not open yet.</p>
         <Btn variant="primary" onClick={onExit}>

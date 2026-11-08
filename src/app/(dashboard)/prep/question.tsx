@@ -9,7 +9,7 @@ import { TipButton, TipPanel, useFirstTimeTip } from "@/components/help/first-ti
 import { LETTERS as LETTER, ROMAN } from "@/lib/prep/labels";
 
 const option =
-  "flex min-h-12 w-full min-w-0 items-start gap-3 rounded-md border-2 border-foreground bg-card px-4 py-3 text-left text-base font-medium transition-transform duration-150 motion-reduce:transition-none enabled:active:translate-y-px focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60 disabled:cursor-default";
+  "flex min-h-12 w-full min-w-0 items-start gap-3 rounded-lg border-2 border-foreground bg-card px-4 py-3 text-left text-base font-medium transition-transform duration-150 motion-reduce:transition-none enabled:active:translate-y-px focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60 disabled:cursor-default";
 const keyBox = "mt-px grid size-7 shrink-0 place-items-center rounded-md border-2 border-current text-xs font-bold";
 
 /** The stem, passage, statements and lists of a question (exam style). */
@@ -28,7 +28,7 @@ export function QuestionBody({ q, headingRef, number }: { q: PrepQView; headingR
       </h2>
       {q.statements?.length ? (
         q.type === "assertion-reason" ? (
-          <dl className="space-y-2 rounded-md border-2 border-foreground bg-card p-3 text-base">
+          <dl className="space-y-2 rounded-lg border-2 border-foreground bg-card p-3 text-base">
             {q.statements.slice(0, 2).map((s, i) => (
               <div key={i} className="min-w-0">
                 <dt className="font-semibold">{i === 0 ? "Assertion (A)" : "Reason (R)"}</dt>
@@ -37,7 +37,7 @@ export function QuestionBody({ q, headingRef, number }: { q: PrepQView; headingR
             ))}
           </dl>
         ) : (
-          <ol className="space-y-1.5 rounded-md border-2 border-foreground bg-card p-3 text-base">
+          <ol className="space-y-1.5 rounded-lg border-2 border-foreground bg-card p-3 text-base">
             {q.statements.map((s, i) => (
               <li key={i} className="flex gap-2">
                 <span className="shrink-0 font-mono font-semibold">{i + 1}.</span>
@@ -48,7 +48,7 @@ export function QuestionBody({ q, headingRef, number }: { q: PrepQView; headingR
         )
       ) : null}
       {q.lists ? (
-        <div className="grid min-w-0 gap-3 rounded-md border-2 border-foreground bg-card p-3 text-sm sm:grid-cols-2 sm:text-base">
+        <div className="grid min-w-0 gap-3 rounded-lg border-2 border-foreground bg-card p-3 text-sm sm:grid-cols-2 sm:text-base">
           <div>
             <p className="font-semibold">List I</p>
             <ol className="mt-1 space-y-1">

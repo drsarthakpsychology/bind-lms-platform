@@ -50,7 +50,7 @@ function MaterialCard({
 
   if (material.kind === "link") {
     return (
-      <div className="flex items-center gap-3 rounded-md border-2 border-border bg-card p-4">
+      <div className="flex items-center gap-3 rounded-lg border-2 border-border bg-card p-4">
         <span className="flex size-9 shrink-0 items-center justify-center rounded-md border-2 border-border bg-accent text-foreground">
           <Link2 className="size-4" aria-hidden />
         </span>
@@ -69,7 +69,7 @@ function MaterialCard({
   }
 
   return (
-    <div className="space-y-2 rounded-md border-2 border-border bg-card p-4">
+    <div className="space-y-2 rounded-lg border-2 border-border bg-card p-4">
       <div className="flex items-center gap-3">
         <span className="flex size-9 shrink-0 items-center justify-center rounded-md border-2 border-border bg-accent text-foreground">
           <Icon className="size-4" aria-hidden />

@@ -109,7 +109,7 @@ export function ConfusableDrill({ onComplete }: { onComplete?: () => void } = {}
           </span>
         </div>
 
-        <div className="rounded-md border-2 border-border bg-card p-5 hard-shadow-sm">
+        <div className="rounded-lg border-2 border-border bg-card p-5 hard-shadow-sm">
           <p className="text-small">{item.prompt}</p>
           <p className="mt-3 text-caption font-semibold text-muted-foreground">Which is it?</p>
           <div className="mt-2 grid grid-cols-2 gap-2">
@@ -170,7 +170,7 @@ export function ConfusableDrill({ onComplete }: { onComplete?: () => void } = {}
     const allItems = MULTI_TERM_DRILLS.flatMap((d) => d.items);
     return (
       <div className="space-y-4">
-        <div className="rounded-md border-2 border-border bg-card p-5 hard-shadow-sm">
+        <div className="rounded-lg border-2 border-border bg-card p-5 hard-shadow-sm">
           <p className="text-base font-medium">
             Level 3 done: {scoreConfusable(pairs.flatMap((p) => p.items), answers)} /{" "}
             {pairs.flatMap((p) => p.items).length} pair items and{" "}
@@ -197,7 +197,7 @@ export function ConfusableDrill({ onComplete }: { onComplete?: () => void } = {}
         <span className="text-caption">{drill.terms.join(" / ")}</span>
       </div>
 
-      <div className="rounded-md border-2 border-border bg-card p-5 hard-shadow-sm">
+      <div className="rounded-lg border-2 border-border bg-card p-5 hard-shadow-sm">
         <p className="text-small">{drillItem.prompt}</p>
         <p className="mt-3 text-caption font-semibold text-muted-foreground">Which label fits?</p>
         <div className="mt-2 flex flex-wrap gap-2">

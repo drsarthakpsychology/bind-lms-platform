@@ -27,15 +27,17 @@ export function SectionMarks({ owner, moduleId, sectionId, sectionLabel, lead }:
 
   return (
     <div className="mt-3">
-      <div className="flex flex-wrap items-center gap-2">
-        {lead}
+      {/* Phones: the view switch takes its own row, Bookmark and My note
+          share the next one. From 640px all three sit in one row. */}
+      <div className="grid grid-cols-2 items-center gap-2 sm:flex sm:flex-wrap">
+        {lead ? <div className="col-span-2 sm:contents">{lead}</div> : null}
         <button
           type="button"
           onClick={() => update((m) => toggleBookmark(m, key, Date.now()))}
           aria-pressed={on}
           disabled={!hydrated}
           className={cn(
-            "inline-flex min-h-11 items-center gap-1.5 rounded-md border-2 border-foreground px-4 text-sm font-semibold transition-colors disabled:opacity-60",
+            "inline-flex min-h-11 min-w-0 items-center justify-center gap-1.5 rounded-md border-2 border-foreground px-4 text-sm font-semibold transition-colors disabled:opacity-60",
             on ? "bg-foreground text-background" : "bg-card hover:bg-muted",
           )}
         >
@@ -49,7 +51,7 @@ export function SectionMarks({ owner, moduleId, sectionId, sectionLabel, lead }:
           aria-controls={panelId}
           disabled={!hydrated}
           className={cn(
-            "inline-flex min-h-11 items-center gap-1.5 rounded-md border-2 border-foreground px-4 text-sm font-semibold transition-colors disabled:opacity-60",
+            "inline-flex min-h-11 min-w-0 items-center justify-center gap-1.5 rounded-md border-2 border-foreground px-4 text-sm font-semibold transition-colors disabled:opacity-60",
             open ? "bg-muted" : "bg-card hover:bg-muted",
           )}
         >

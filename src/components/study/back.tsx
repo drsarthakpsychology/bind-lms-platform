@@ -6,6 +6,7 @@ import { usePathname, useSearchParams } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 import { backTarget } from "@/components/navigation/sections";
 import { cn } from "@/lib/utils";
+import { backLinkClass } from "@/components/design-system/back-link";
 
 /**
  * Where "Back" goes from an activity: to `?from=` (a Study module, a note,
@@ -29,7 +30,7 @@ export function BackLink({ fallback, ...props }: Omit<React.ComponentProps<typeo
 export function BackPill({ fallback, className }: { fallback?: string; className?: string }) {
   const back = useBack(fallback);
   return (
-    <Link href={back.href} className={cn("inline-flex h-11 max-w-[60%] shrink-0 items-center gap-1 rounded-md border-2 border-foreground bg-card px-3 text-sm font-semibold", className)}>
+    <Link href={back.href} className={cn(backLinkClass, "max-w-[60%]", className)}>
       <ArrowLeft className="size-4 shrink-0" aria-hidden />
       <span className="min-w-0 truncate">{back.label}</span>
     </Link>

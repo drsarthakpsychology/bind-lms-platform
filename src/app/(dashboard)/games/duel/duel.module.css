@@ -34,7 +34,7 @@
 
 /* The opponent's card gives a small nod when they lock in. */
 .nod {
-  animation: nod 460ms var(--ease-springy) 1 both;
+  animation: nod 460ms cubic-bezier(0.16, 1, 0.3, 1) 1 both;
 }
 @keyframes nod {
   0% {

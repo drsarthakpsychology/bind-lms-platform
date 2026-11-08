@@ -10,6 +10,7 @@ import { placementItems } from "@/lib/learn/model/placement";
 import { topicById } from "@/lib/learn/model/topics";
 import type { QView } from "../map/question";
 import { PlacementRunner } from "./runner";
+import { backLinkClass } from "@/components/design-system/back-link";
 
 export const metadata: Metadata = { title: "Placement quiz" };
 
@@ -32,8 +33,8 @@ export default async function PlacementPage() {
   );
 
   return (
-    <div className="mx-auto max-w-2xl space-y-6 px-4 py-6 sm:px-6 lg:py-10">
-      <Link href="/study" className="inline-flex min-h-11 items-center gap-1.5 text-sm font-bold text-link hover:underline">
+    <div className="mx-auto max-w-2xl space-y-6">
+      <Link href="/study" className={backLinkClass}>
         <ArrowLeft className="size-4" aria-hidden /> Study
       </Link>
       <PlacementRunner questions={questions} previous={previous} saving={isLearner} />

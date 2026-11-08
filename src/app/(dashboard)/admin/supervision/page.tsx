@@ -30,7 +30,7 @@ export default async function AdminSupervisionPage() {
   const hidden = await loadHiddenIds();
 
   return (
-    <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6">
+    <div className="mx-auto max-w-4xl">
       <PageHeader
         title="Supervision sign-offs"
         description="Entries students have requested to be signed. Verify the contact hour, then sign or reject."

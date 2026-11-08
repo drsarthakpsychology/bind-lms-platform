@@ -54,7 +54,7 @@ export function ScenarioGame({ serverState, save, noteId }: { serverState: Learn
   if (result) return <Summary result={result} state={state} confetti={[]} title="What would you do?" onAgain={start} />;
   if (!deck) {
     return (
-      <div className="mx-auto max-w-xl space-y-6 px-4 py-8 text-center">
+      <div className="mx-auto max-w-xl space-y-6 py-8 text-center">
         <Chai mood="think" size={130} />
         <h1 className="text-h1">What would you do?</h1>
         <button type="button" onClick={start} className="btn-sweep h-14 w-full rounded-2xl border-2 border-foreground bg-primary text-lg font-bold text-primary-foreground hard-shadow-md">
@@ -91,7 +91,7 @@ export function ScenarioGame({ serverState, save, noteId }: { serverState: Learn
   }
 
   return (
-    <div className="mx-auto flex min-h-[calc(100dvh-4rem)] max-w-2xl flex-col gap-4 px-4 py-5">
+    <div className="mx-auto flex min-h-[calc(100dvh-var(--top-h)-4.5rem)] max-w-2xl flex-col gap-4">
       <div className="flex items-center gap-3">
         <p className="flex-1 font-bold">
           {sc.topic} · <span className="text-muted-foreground">{sc.who}</span>
@@ -212,7 +212,7 @@ export function TermsGame({ serverState, save }: { serverState: LearnState | nul
   if (result) return <Summary result={result} state={state} confetti={[]} title="Say it clinically" onAgain={() => { setRound(buildRound()); setI(0); setAnswers([]); setResult(null); }} />;
   if (!round) {
     return (
-      <div className="mx-auto max-w-xl space-y-6 px-4 py-8 text-center">
+      <div className="mx-auto max-w-xl space-y-6 py-8 text-center">
         <Chai mood="happy" size={130} />
         <h1 className="text-h1">Say it clinically</h1>
         <button type="button" onClick={() => setRound(buildRound())} className="btn-sweep h-14 w-full rounded-2xl border-2 border-foreground bg-primary text-lg font-bold text-primary-foreground hard-shadow-md">
@@ -223,7 +223,7 @@ export function TermsGame({ serverState, save }: { serverState: LearnState | nul
   }
   const q = round[i];
   return (
-    <div className="mx-auto max-w-xl space-y-4 px-4 py-6">
+    <div className="mx-auto max-w-xl space-y-4">
       <div className="h-3 overflow-hidden rounded-full border-2 border-foreground">
         <div className="h-full bg-primary transition-[width]" style={{ width: `${(i / round.length) * 100}%` }} />
       </div>

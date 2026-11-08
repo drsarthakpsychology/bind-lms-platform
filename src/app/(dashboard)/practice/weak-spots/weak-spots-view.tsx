@@ -12,7 +12,7 @@ import type { WeakSpot } from "@/lib/practice/weak-spots";
 export function WeakSpotsView({ spots, sessions }: { spots: WeakSpot[]; sessions: number }) {
   if (sessions === 0) {
     return (
-      <div className="rounded-md border-2 border-border bg-card p-6 text-center">
+      <div className="rounded-lg border-2 border-border bg-card p-6 text-center">
         <p className="text-base font-medium">No sessions scored yet</p>
         <p className="mt-1 text-small text-muted-foreground">
           Run the Consulting Room and finish a debrief: your weak spots surface here.
@@ -23,7 +23,7 @@ export function WeakSpotsView({ spots, sessions }: { spots: WeakSpot[]; sessions
 
   if (spots.length === 0) {
     return (
-      <div className="rounded-md border-2 border-border bg-card p-6 text-center">
+      <div className="rounded-lg border-2 border-border bg-card p-6 text-center">
         <CheckCircle2 className="mx-auto size-8 text-status-success-fg" aria-hidden />
         <p className="mt-2 text-base font-medium">No consistent weak spots</p>
         <p className="mt-1 text-small text-muted-foreground">
@@ -42,7 +42,7 @@ export function WeakSpotsView({ spots, sessions }: { spots: WeakSpot[]; sessions
         each skill was missed: practise the top one first.
       </p>
       {spots.map((s) => (
-        <div key={s.key} className="rounded-md border-2 border-border bg-card p-4 hard-shadow-sm">
+        <div key={s.key} className="rounded-lg border-2 border-border bg-card p-4 hard-shadow-sm">
           <div className="flex items-center justify-between gap-3">
             <p className="text-small font-semibold">{s.label}</p>
             <span className="flex items-center gap-2 text-caption text-muted-foreground">

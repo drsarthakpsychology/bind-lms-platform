@@ -6,6 +6,7 @@ import { getSession } from "@/lib/auth/session";
 import { loadPracticeSession } from "@/lib/learn/model/server";
 import { bankItem, skillLabel, topicById } from "@/lib/learn/model/topics";
 import { PracticeRunner, type PracticeQ } from "./runner";
+import { backLinkClass } from "@/components/design-system/back-link";
 
 export const metadata: Metadata = { title: "Practice" };
 
@@ -35,8 +36,8 @@ export default async function PracticePage({ searchParams }: { searchParams: Pro
   const title = topic ? `Fix it: ${topicById(topic)!.title}` : "Mixed practice";
 
   return (
-    <div className="mx-auto max-w-2xl space-y-6 px-4 py-6 sm:px-6 lg:py-10">
-      <Link href="/study/map" className="inline-flex min-h-11 items-center gap-1.5 text-sm font-bold text-link hover:underline">
+    <div className="mx-auto max-w-2xl space-y-6">
+      <Link href="/study/map" className={backLinkClass}>
         <ArrowLeft className="size-4" aria-hidden /> Your map
       </Link>
       <header className="space-y-1">

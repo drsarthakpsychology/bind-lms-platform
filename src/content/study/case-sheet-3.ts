@@ -3,7 +3,6 @@ export const part3 = String.raw`
 # Part V · Exam zone: Q&A bank
 
 ## 5.1 Q&A bank · Starting [starting]
-Think each question through, or jot an answer, before you open it.
 
 :::qa Rewrite this entry so it meets the standards of a good record: "Pt is attention-seeking, drama, family says mad." [starting]
 ### What is wrong

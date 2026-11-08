@@ -23,7 +23,7 @@ export default async function LibraryPage(props: {
   const filtered = tag ? filterLibraryByTag(searched, tag) : searched;
 
   return (
-    <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
+    <div className="mx-auto max-w-3xl">
       <ToolHeader title="Case library" tip={{ id: "case-library", steps: ["Search by title or opening words."] }} />
 
       <div className="mt-6">
