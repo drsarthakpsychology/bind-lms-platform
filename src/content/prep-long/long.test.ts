@@ -65,6 +65,11 @@ const CHECK: Record<string, (d: D) => boolean> = {
   amesroom: titled,
   hpaloop: (d) => titled(d) && (d.start === undefined || ["day", "chronic"].includes(d.start)),
   brainexplorer: (d) => titled(d) && (d.focus === undefined || strs(d.focus)),
+  nervoussystem: (d) => titled(d) && (d.start === undefined || ["signal", "auto", "map"].includes(d.start)),
+  actionpotential: (d) => titled(d) && (d.myelinated === undefined || typeof d.myelinated === "boolean"),
+  synapse3d: (d) => titled(d) && opt(d.transmitter),
+  release: (d) => titled(d) && opt(d.transmitter),
+  neuron: (d) => titled(d),
   brainslicer: (d) => titled(d) && (d.start === undefined || ["slice", "tms", "ect"].includes(d.start)),
 };
 
