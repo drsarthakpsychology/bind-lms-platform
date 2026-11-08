@@ -260,7 +260,7 @@ export function MedicineView({ med, related, mech, visuals = [], half = null, st
 
       {/* 9. How it works: last, linkable as #how-it-works */}
       {hasHow ? (
-        <section id={HOW_IT_WORKS} data-section={HOW_IT_WORKS} aria-labelledby="how-h" className="space-y-4 rounded-3xl border-2 border-foreground bg-card p-4 hard-shadow-sm scroll-mt-20 sm:p-5">
+        <section id={HOW_IT_WORKS} data-section={HOW_IT_WORKS} aria-labelledby="how-h" className="space-y-4 scroll-mt-20 sm:rounded-3xl sm:border-2 sm:border-foreground sm:bg-card sm:p-5 sm:hard-shadow-sm">
           <h2 id="how-h" className="flex items-center gap-2 text-lg font-bold">
             <Microscope className="size-5 text-link" aria-hidden /> How it works
           </h2>
