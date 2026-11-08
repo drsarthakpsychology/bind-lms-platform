@@ -47,7 +47,7 @@ At rest the membrane is about 25 to 40 times more permeable to potassium than to
 ### The action potential, phase by phase
 
 :::widget figure
-{"id": "neuron", "quiz": true, "caption": "Name each numbered part in your head first, then tap to check."}
+{"id": "neuron", "quiz": true}
 :::
 
 1. **Graded inputs** arrive on dendrites and the cell body as small **postsynaptic potentials** that spread and fade.
@@ -72,7 +72,7 @@ At rest the membrane is about 25 to 40 times more permeable to potassium than to
   { "id": "b", "label": "Back to rest", "detail": "Leak channels and the pump restore the resting state." }
  ],
  "edgeLabels": { "t>d": "Na+ in", "p>f": "K+ out" },
- "caption": "Press Play and say which ion is moving at each step. Exams love asking which channel causes which phase."
+ "caption": "Exams love asking which channel causes which phase."
 }
 :::
 
@@ -108,7 +108,7 @@ At rest the membrane is about 25 to 40 times more permeable to potassium than to
 ### What makes a signal travel faster
 
 :::widget figure
-{"id": "myelin", "quiz": true, "caption": "Name each numbered part in your head first, then tap to check."}
+{"id": "myelin", "quiz": true}
 :::
 
 - **Wider axons** conduct faster (less internal resistance). The squid giant axon, about half a millimetre wide, let Alan Hodgkin and Andrew Huxley work out the ionic basis of the spike in 1952 using the **voltage clamp**.
@@ -240,7 +240,7 @@ You know the five steps: make, store, release, bind, stop. Now look closely at t
 | Where | Most of the brain | Brainstem nuclei, some interneuron networks, heart muscle, retina |
 
 :::widget synapse3d
-{"title":"Fire a synapse, then break it","transmitter":"dopamine","caption":"Fire once with no drug and name each step. Then add each drug and say which step it changes."}
+{"title":"Fire a synapse, then break it","transmitter":"dopamine"}
 :::
 
 Charles Sherrington named the **synapse** in 1897. The argument over whether neurons are separate cells (Santiago Ramón y Cajal's **neuron doctrine**) or a continuous net (Camillo Golgi's reticular theory) was settled in Cajal's favour, though the two shared the 1906 Nobel Prize. In 1921 Otto Loewi showed chemical transmission: fluid from a frog heart whose vagus nerve he stimulated slowed a second heart. He called the substance "Vagusstoff"; it was **acetylcholine**.
@@ -280,7 +280,7 @@ Bernard Katz showed that transmitter is released in **quanta**: each vesicle rel
 :::widget release
 {
  "transmitter": "serotonin",
- "caption": "Step through one signal at a serotonin synapse. At the calcium step, picture synaptotagmin and the SNAREs zipping the vesicle open. Try botulinum toxin: which step does it break? Then try an SSRI and an MAO inhibitor and say which step each changes."
+ "caption": "At the calcium step, picture synaptotagmin and the SNAREs zipping the vesicle open."
 }
 :::
 
@@ -295,7 +295,7 @@ Bernard Katz showed that transmitter is released in **quanta**: each vesicle rel
   { "id": "x", "label": "Fuse and release", "detail": "Synaptotagmin senses calcium; SNAREs zip; transmitter pours out. Botulinum toxin cuts SNAREs." },
   { "id": "e", "label": "Retrieve and recycle", "detail": "The vesicle membrane is pulled back by endocytosis and refilled." }
  ],
- "caption": "Press Play. Each step is a target for a toxin or a medicine."
+ "caption": "Each step is a target for a toxin or a medicine."
 }
 :::
 
@@ -608,7 +608,7 @@ One chain makes dopamine, noradrenaline and adrenaline. Each neuron simply stops
   { "id": "ad", "label": "Adrenaline", "detail": "PNMT adds a methyl group, mainly in the adrenal medulla, boosted by cortisol." }
  ],
  "edgeLabels": { "ty>ld": "tyrosine hydroxylase", "ld>da": "decarboxylase", "da>na": "DBH", "na>ad": "PNMT" },
- "caption": "Press Play. Name the enzyme at each arrow and the breakdown product of each transmitter."
+ "caption": "Name the enzyme at each arrow and the breakdown product of each transmitter."
 }
 :::
 
@@ -665,7 +665,7 @@ Made from histidine by histidine decarboxylase, in one place only: the **tuberom
   "basal-ganglia": "Nucleus basalis of Meynert sits just below, sending acetylcholine to the whole cortex; striatal interneurons also use acetylcholine.",
   "frontal": "Receives all of them: this is why one antidepressant or antipsychotic can change attention, mood, sleep and appetite at once."
  },
- "caption": "Small clusters, huge reach. Tap each region and name its transmitter."
+ "caption": "Small clusters, huge reach."
 }
 :::
 

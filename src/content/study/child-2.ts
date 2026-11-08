@@ -32,7 +32,7 @@ Severity is judged mainly by **how much support the person needs in daily life**
 :::
 
 :::widget curve
-{"kind": "normal", "title": "IQ scores across the population", "caption": "Move the slider along the bell curve. The average is 100 and each standard deviation is 15 points. Two standard deviations below the mean (about 70) marks the zone where intellectual disability is considered, but only if adaptive functioning is also clearly impaired. Notice how few people score below 70: about 2 in 100."}
+{"kind": "normal", "title": "IQ scores across the population", "caption": "The average is 100 and each standard deviation is 15 points. Two standard deviations below the mean (about 70) marks the zone where intellectual disability is considered, but only if adaptive functioning is also clearly impaired. Notice how few people score below 70: about 2 in 100."}
 :::
 
 :::widget layers
@@ -210,7 +210,7 @@ In the Starting level you met the two groups of ADHD symptoms. Now we apply the 
 :::
 
 :::widget flow
-{"title": "Reaching an ADHD diagnosis step by step", "layout": "chain", "nodes": [{"id": "a", "label": "Enough symptoms", "detail": "Count inattentive and hyperactive-impulsive symptoms separately against the thresholds for age."}, {"id": "b", "label": "Beyond the expected for age", "detail": "Compare with other children of the same developmental level, not with the parents' hopes."}, {"id": "c", "label": "Childhood onset", "detail": "Several symptoms present before 12: school reports and parents' memories help."}, {"id": "d", "label": "Two or more settings", "detail": "Home and school at least; tuition, sport and family gatherings add evidence."}, {"id": "e", "label": "Clear impairment", "detail": "Learning, friendships, family life, safety."}, {"id": "f", "label": "Not better explained", "detail": "Rule out learning disorder, sensory problems, sleep, anxiety, depression, trauma, medical causes."}, {"id": "g", "label": "Name the presentation", "detail": "Combined, mainly inattentive, or mainly hyperactive-impulsive; then plan help."}], "caption": "Press Play. Every step must be satisfied; a rating scale alone is not a diagnosis."}
+{"title": "Reaching an ADHD diagnosis step by step", "layout": "chain", "nodes": [{"id": "a", "label": "Enough symptoms", "detail": "Count inattentive and hyperactive-impulsive symptoms separately against the thresholds for age."}, {"id": "b", "label": "Beyond the expected for age", "detail": "Compare with other children of the same developmental level, not with the parents' hopes."}, {"id": "c", "label": "Childhood onset", "detail": "Several symptoms present before 12: school reports and parents' memories help."}, {"id": "d", "label": "Two or more settings", "detail": "Home and school at least; tuition, sport and family gatherings add evidence."}, {"id": "e", "label": "Clear impairment", "detail": "Learning, friendships, family life, safety."}, {"id": "f", "label": "Not better explained", "detail": "Rule out learning disorder, sensory problems, sleep, anxiety, depression, trauma, medical causes."}, {"id": "g", "label": "Name the presentation", "detail": "Combined, mainly inattentive, or mainly hyperactive-impulsive; then plan help."}], "caption": "Every step must be satisfied; a rating scale alone is not a diagnosis."}
 :::
 
 ### ADHD across the life span
@@ -317,7 +317,7 @@ Key facts:
 :::
 
 :::widget flow
-{"title": "Why tics are hard to stop, and how habit reversal breaks the loop", "layout": "cycle", "nodes": [{"id": "a", "label": "Premonitory urge", "detail": "An itch, pressure or tension in a body part."}, {"id": "b", "label": "Tic", "detail": "The movement or sound happens."}, {"id": "c", "label": "Relief", "detail": "The urge fades for a while."}, {"id": "d", "label": "Learning", "detail": "Relief rewards the tic, strengthening the urge-tic link. In habit reversal the child learns to notice the urge and do a competing response until the urge passes, which weakens the loop."}], "caption": "Press Play to go round the cycle. Telling a child to stop does not break it; teaching awareness and a competing response can."}
+{"title": "Why tics are hard to stop, and how habit reversal breaks the loop", "layout": "cycle", "nodes": [{"id": "a", "label": "Premonitory urge", "detail": "An itch, pressure or tension in a body part."}, {"id": "b", "label": "Tic", "detail": "The movement or sound happens."}, {"id": "c", "label": "Relief", "detail": "The urge fades for a while."}, {"id": "d", "label": "Learning", "detail": "Relief rewards the tic, strengthening the urge-tic link. In habit reversal the child learns to notice the urge and do a competing response until the urge passes, which weakens the loop."}], "caption": "Telling a child to stop does not break it; teaching awareness and a competing response can."}
 :::
 
 ### What comes with tics
@@ -408,7 +408,7 @@ Rohit, 11, has missed most of the last month of school. Every morning he has a s
 :::
 
 :::widget flow
-{"title": "How school refusal keeps itself going", "layout": "cycle", "nodes": [{"id": "a", "label": "School morning", "detail": "Fear rises: of separation, of a teacher, of a test."}, {"id": "b", "label": "Body alarm", "detail": "Stomach ache, nausea, crying."}, {"id": "c", "label": "Allowed to stay home", "detail": "Fear drops at once: a powerful reward."}, {"id": "d", "label": "Next morning is harder", "detail": "Missed work and lost friendships add new worries, and the brain has learned that avoiding works."}], "caption": "Press Play. Breaking the cycle means small, steady steps back, with support, not a single forced return."}
+{"title": "How school refusal keeps itself going", "layout": "cycle", "nodes": [{"id": "a", "label": "School morning", "detail": "Fear rises: of separation, of a teacher, of a test."}, {"id": "b", "label": "Body alarm", "detail": "Stomach ache, nausea, crying."}, {"id": "c", "label": "Allowed to stay home", "detail": "Fear drops at once: a powerful reward."}, {"id": "d", "label": "Next morning is harder", "detail": "Missed work and lost friendships add new worries, and the brain has learned that avoiding works."}], "caption": "Breaking the cycle means small, steady steps back, with support, not a single forced return."}
 :::
 
 ### Depression in children and teenagers
@@ -498,7 +498,7 @@ A child with DMDD has **severe, frequent temper outbursts** far out of proportio
 :::
 
 :::widget flow
-{"title": "The coercive cycle between parent and child", "layout": "cycle", "nodes": [{"id": "a", "label": "Parent gives an instruction", "detail": "Often vague or shouted from another room."}, {"id": "b", "label": "Child refuses or whines", "detail": "Defiance escalates."}, {"id": "c", "label": "Parent gives in, or explodes", "detail": "Giving in rewards the child's defiance; exploding teaches that shouting wins and models aggression."}, {"id": "d", "label": "Both learn", "detail": "The child learns defiance works; the parent learns that giving in or exploding ends the noise. Next time both escalate faster."}], "caption": "Press Play. Parent training breaks the cycle with clear calm instructions, praise for cooperation, and consistent non-violent consequences."}
+{"title": "The coercive cycle between parent and child", "layout": "cycle", "nodes": [{"id": "a", "label": "Parent gives an instruction", "detail": "Often vague or shouted from another room."}, {"id": "b", "label": "Child refuses or whines", "detail": "Defiance escalates."}, {"id": "c", "label": "Parent gives in, or explodes", "detail": "Giving in rewards the child's defiance; exploding teaches that shouting wins and models aggression."}, {"id": "d", "label": "Both learn", "detail": "The child learns defiance works; the parent learns that giving in or exploding ends the noise. Next time both escalate faster."}], "caption": "Parent training breaks the cycle with clear calm instructions, praise for cooperation, and consistent non-violent consequences."}
 :::
 
 :::widget compare
@@ -528,7 +528,7 @@ Disruptive behaviour grows from a mix of **child factors** (difficult temperamen
 :::
 
 :::widget conditioning
-{"kind": "operant", "title": "How tantrums are taught by accident", "caption": "Swap the lever for a tantrum and the food for the sweet the mother finally hands over. The child learns that screaming works, so tantrums grow (positive reinforcement). The mother learns that giving in stops the noise (negative reinforcement for her). When parents stop giving in, expect an extinction burst: things get louder before they get better. Parent training teaches praise for good behaviour and calm, consistent limits."}
+{"kind": "operant", "title": "How tantrums are taught by accident", "caption": "The child learns that screaming works, so tantrums grow (positive reinforcement). The mother learns that giving in stops the noise (negative reinforcement for her). When parents stop giving in, expect an extinction burst: things get louder before they get better. Parent training teaches praise for good behaviour and calm, consistent limits."}
 :::
 
 :::recall
@@ -576,7 +576,7 @@ These diagnoses are often misused for any adopted child with behaviour problems.
 :::
 
 :::widget strange
-{"title": "How attachment is observed", "caption": "Watch the reunion step for each type. Securely attached toddlers seek the carer and settle. Avoidant toddlers ignore the return, ambivalent ones cling and resist, and disorganised ones freeze or approach and back away. Disorganised attachment is most common after maltreatment. Reactive attachment disorder is different again: after severe neglect, the child seeks no comfort from anyone."}
+{"title": "How attachment is observed", "caption": "Securely attached toddlers seek the carer and settle. Avoidant toddlers ignore the return, ambivalent ones cling and resist, and disorganised ones freeze or approach and back away. Disorganised attachment is most common after maltreatment. Reactive attachment disorder is different again: after severe neglect, the child seeks no comfort from anyone."}
 :::
 
 ### Child abuse: what to notice
@@ -592,7 +592,7 @@ The **Protection of Children from Sexual Offences Act** protects every person **
 :::
 
 :::widget flow
-{"title": "When a child discloses abuse", "layout": "chain", "nodes": [{"id": "a", "label": "Listen", "detail": "Stay calm. Let the child speak in their own words. No leading questions."}, {"id": "b", "label": "Believe and reassure", "detail": "'You did the right thing telling me. It is not your fault.'"}, {"id": "c", "label": "Do not promise secrecy", "detail": "Explain kindly that you must tell people who can keep them safe."}, {"id": "d", "label": "Record", "detail": "Write the child's exact words, date and time."}, {"id": "e", "label": "Report", "detail": "Tell your supervisor at once; make sure the report reaches the police or Special Juvenile Police Unit (POCSO Section 19)."}, {"id": "f", "label": "Protect", "detail": "Plan immediate safety and medical care; involve the Child Welfare Committee."}], "caption": "Press Play. Investigation is for trained officials; your job is to listen, record, report and protect."}
+{"title": "When a child discloses abuse", "layout": "chain", "nodes": [{"id": "a", "label": "Listen", "detail": "Stay calm. Let the child speak in their own words. No leading questions."}, {"id": "b", "label": "Believe and reassure", "detail": "'You did the right thing telling me. It is not your fault.'"}, {"id": "c", "label": "Do not promise secrecy", "detail": "Explain kindly that you must tell people who can keep them safe."}, {"id": "d", "label": "Record", "detail": "Write the child's exact words, date and time."}, {"id": "e", "label": "Report", "detail": "Tell your supervisor at once; make sure the report reaches the police or Special Juvenile Police Unit (POCSO Section 19)."}, {"id": "f", "label": "Protect", "detail": "Plan immediate safety and medical care; involve the Child Welfare Committee."}], "caption": "Investigation is for trained officials; your job is to listen, record, report and protect."}
 :::
 
 ### What you do if a child tells you
@@ -662,7 +662,7 @@ Most children are dry by day around three, and dry at night somewhat later. Bedw
 :::
 
 :::widget flow
-{"title": "A child who wets the bed: first decisions", "layout": "tree", "nodes": [{"id": "r", "label": "Bedwetting at age five or older", "detail": "Take a history and test the urine."}, {"id": "p", "label": "Never been dry (primary)", "detail": "Usually developmental and familial. Reassure, remove blame, simple measures, then an alarm.", "parent": "r"}, {"id": "s", "label": "Wetting again after a dry spell (secondary)", "detail": "Look for stress, abuse, urine infection, constipation, diabetes, new medicines.", "parent": "r"}, {"id": "d", "label": "Daytime symptoms too", "detail": "Urgency, frequency, holding: think bladder dysfunction or constipation; examine the spine.", "parent": "r"}, {"id": "q", "label": "Needs quick dryness", "detail": "Camp or sleepover: desmopressin with fluid restriction, short term.", "parent": "r"}], "caption": "Tap each branch."}
+{"title": "A child who wets the bed: first decisions", "layout": "tree", "nodes": [{"id": "r", "label": "Bedwetting at age five or older", "detail": "Take a history and test the urine."}, {"id": "p", "label": "Never been dry (primary)", "detail": "Usually developmental and familial. Reassure, remove blame, simple measures, then an alarm.", "parent": "r"}, {"id": "s", "label": "Wetting again after a dry spell (secondary)", "detail": "Look for stress, abuse, urine infection, constipation, diabetes, new medicines.", "parent": "r"}, {"id": "d", "label": "Daytime symptoms too", "detail": "Urgency, frequency, holding: think bladder dysfunction or constipation; examine the spine.", "parent": "r"}, {"id": "q", "label": "Needs quick dryness", "detail": "Camp or sleepover: desmopressin with fluid restriction, short term.", "parent": "r"}]}
 :::
 
 ### How they are treated

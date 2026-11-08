@@ -30,11 +30,11 @@ A full agonist turns a light fully on; an antagonist keeps it off; a partial ago
 
 ### The journey of a tablet
 :::widget flow
-{"title": "From swallowing a tablet to a change in the brain", "layout": "chain", "nodes": [{"id": "a", "label": "Swallowed", "detail": "The tablet dissolves in the stomach and small intestine. Food, acidity and gut speed affect how fast."}, {"id": "b", "label": "Absorbed", "detail": "The medicine crosses the gut wall into the blood that drains to the liver."}, {"id": "c", "label": "First pass through the liver", "detail": "Liver enzymes break down part of the dose before it reaches the rest of the body. Some medicines lose most of their dose here."}, {"id": "d", "label": "Carried in the blood", "detail": "Much of the medicine travels stuck to blood proteins; only the free part can act."}, {"id": "e", "label": "Crosses into the brain", "detail": "Fat-soluble medicines pass the blood-brain barrier. Some are pumped back out, which is why a few reach the brain poorly."}, {"id": "f", "label": "Binds its target", "detail": "Receptors, transporters, enzymes or ion channels. The chemical change starts here."}, {"id": "g", "label": "The brain adapts", "detail": "Over days to weeks, receptors and connections change. Many benefits, and some side effects, come from this stage."}, {"id": "h", "label": "Removed", "detail": "Broken down by the liver and removed by the kidneys or bile. The half-life tells you how fast."}], "caption": "Press Play to follow a dose step by step. Problems can arise at any step: poor absorption, enzyme interactions, kidney disease, or a brain that adapts slowly."}
+{"title": "From swallowing a tablet to a change in the brain", "layout": "chain", "nodes": [{"id": "a", "label": "Swallowed", "detail": "The tablet dissolves in the stomach and small intestine. Food, acidity and gut speed affect how fast."}, {"id": "b", "label": "Absorbed", "detail": "The medicine crosses the gut wall into the blood that drains to the liver."}, {"id": "c", "label": "First pass through the liver", "detail": "Liver enzymes break down part of the dose before it reaches the rest of the body. Some medicines lose most of their dose here."}, {"id": "d", "label": "Carried in the blood", "detail": "Much of the medicine travels stuck to blood proteins; only the free part can act."}, {"id": "e", "label": "Crosses into the brain", "detail": "Fat-soluble medicines pass the blood-brain barrier. Some are pumped back out, which is why a few reach the brain poorly."}, {"id": "f", "label": "Binds its target", "detail": "Receptors, transporters, enzymes or ion channels. The chemical change starts here."}, {"id": "g", "label": "The brain adapts", "detail": "Over days to weeks, receptors and connections change. Many benefits, and some side effects, come from this stage."}, {"id": "h", "label": "Removed", "detail": "Broken down by the liver and removed by the kidneys or bile. The half-life tells you how fast."}], "caption": "Problems can arise at any step: poor absorption, enzyme interactions, kidney disease, or a brain that adapts slowly."}
 :::
 
 :::widget receptor
-{"receptor": "D2", "title": "Four ways a medicine can sit in a receptor", "caption": "Choose each kind of drug and watch the signal bar. Haloperidol is an antagonist at D2, aripiprazole a partial agonist, dopamine itself the full agonist. Pimavanserin is an inverse agonist at a different receptor (5-HT2A), pushing the signal below baseline."}
+{"receptor": "D2", "title": "Four ways a medicine can sit in a receptor", "caption": "Haloperidol is an antagonist at D2, aripiprazole a partial agonist, dopamine itself the full agonist. Pimavanserin is an inverse agonist at a different receptor (5-HT2A), pushing the signal below baseline."}
 :::
 
 ### Dose matters
@@ -45,11 +45,11 @@ More medicine is not always better. As the dose rises, the effect rises, then **
 :::
 
 :::widget curve
-{"kind": "dose-response", "title": "Dose and effect: why more is not always better", "caption": "Slide the dose. The effect rises and then flattens (the plateau), while side effects can keep rising. Compare a full agonist with a partial agonist: the partial agonist has a ceiling, which is why buprenorphine is safer in overdose than methadone."}
+{"kind": "dose-response", "title": "Dose and effect: why more is not always better", "caption": "The effect rises and then flattens (the plateau), while side effects can keep rising. Compare a full agonist with a partial agonist: the partial agonist has a ceiling, which is why buprenorphine is safer in overdose than methadone."}
 :::
 
 :::widget neuron
-{"title": "Ion channels: the fourth kind of target", "myelinated": true, "caption": "Move the stimulus past threshold and the neuron fires all or none. Many medicines change this excitability: lamotrigine and carbamazepine block sodium channels, pregabalin acts on calcium channels, and benzodiazepines open chloride channels through GABA-A receptors, making firing harder. Switch myelin off to see how much slower conduction becomes."}
+{"title": "Ion channels: the fourth kind of target", "myelinated": true, "caption": "Many medicines change this excitability: lamotrigine and carbamazepine block sodium channels, pregabalin acts on calcium channels, and benzodiazepines open chloride channels through GABA-A receptors, making firing harder. Switch myelin off to see how much slower conduction becomes."}
 :::
 
 :::clinician
@@ -104,11 +104,11 @@ The **half-life** is the time it takes for the blood level to fall by half. It d
 :::
 
 :::widget curve
-{"kind": "half-life", "title": "Half-life and steady state", "caption": "Try a short half-life (several hours) with once-daily dosing: the level swings high and low. Then try a long half-life: the level climbs slowly and smoothly to a plateau after about four to five half-lives. This is why some medicines need slow-release forms and others are taken once a day."}
+{"kind": "half-life", "title": "Half-life and steady state", "caption": "This is why some medicines need slow-release forms and others are taken once a day."}
 :::
 
 :::widget journey
-{"drug": "sertraline", "target": "serotonin transporters in the raphe nuclei and their projections to cortex and limbic areas", "routes": ["oral"], "notes": {"liver": "Sertraline is broken down by several CYP enzymes, so few single drugs change its level much. That is one reason it is a safe first choice.", "out": "Half-life about a day, so once daily is enough and steady state comes in about five days."}, "caption": "Follow one dose of sertraline from tablet to target. Each stop is a place where an interaction or an illness can change what happens."}
+{"drug": "sertraline", "target": "serotonin transporters in the raphe nuclei and their projections to cortex and limbic areas", "routes": ["oral"], "notes": {"liver": "Sertraline is broken down by several CYP enzymes, so few single drugs change its level much. That is one reason it is a safe first choice.", "out": "Half-life about a day, so once daily is enough and steady state comes in about five days."}, "caption": "Each stop is a place where an interaction or an illness can change what happens."}
 :::
 
 :::widget figure
@@ -198,7 +198,7 @@ Most side effects are not random. They come from a medicine acting on receptors 
 :::
 
 :::widget brainmap
-{"title": "Where common side effects come from", "focus": ["hypothalamus", "basal-ganglia", "brainstem", "hippocampus"], "notes": {"hypothalamus": "Appetite and weight: H1 and 5-HT2C blockade here increase hunger. D2 blockade nearby, in the hypothalamus-pituitary pathway, raises prolactin.", "basal-ganglia": "Movement: D2 blockade in the striatum causes stiffness, tremor, restlessness and, long term, abnormal movements.", "brainstem": "Nausea and alertness: serotonin 5-HT3 receptors in the vomiting centre cause early SSRI nausea; histamine and noradrenaline neurons here set wakefulness.", "hippocampus": "Memory: muscarinic (acetylcholine) blockade and benzodiazepines impair forming new memories, most noticeably in older people."}, "caption": "Tap each highlighted area. The same receptor can have different effects depending on where it sits."}
+{"title": "Where common side effects come from", "focus": ["hypothalamus", "basal-ganglia", "brainstem", "hippocampus"], "notes": {"hypothalamus": "Appetite and weight: H1 and 5-HT2C blockade here increase hunger. D2 blockade nearby, in the hypothalamus-pituitary pathway, raises prolactin.", "basal-ganglia": "Movement: D2 blockade in the striatum causes stiffness, tremor, restlessness and, long term, abnormal movements.", "brainstem": "Nausea and alertness: serotonin 5-HT3 receptors in the vomiting centre cause early SSRI nausea; histamine and noradrenaline neurons here set wakefulness.", "hippocampus": "Memory: muscarinic (acetylcholine) blockade and benzodiazepines impair forming new memories, most noticeably in older people."}, "caption": "The same receptor can have different effects depending on where it sits."}
 :::
 
 ### Why this matters at the bedside

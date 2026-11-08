@@ -83,7 +83,7 @@ Ivan Pavlov, a Russian physiologist, won the Nobel Prize in 1904 for work on dig
 The CR is usually similar to the UCR but not identical: it is often weaker, and sometimes it is a preparation for the UCS rather than a copy of the response to it.
 
 :::widget conditioning
-{"kind": "classical", "title": "Watch Pavlov's dog learn", "caption": "Press Play. Notice the moment the bell alone starts the drooling, and what happens when the bell keeps ringing with no food."}
+{"kind": "classical", "title": "Watch Pavlov's dog learn", "caption": "Notice the moment the bell alone starts the drooling, and what happens when the bell keeps ringing with no food."}
 :::
 
 :::widget sort
@@ -124,8 +124,7 @@ The CR is usually similar to the UCR but not identical: it is often weaker, and 
    "label": "After: bell → salivation",
    "detail": "The bell is now a conditioned stimulus, and salivation to it is a conditioned response."
   }
- ],
- "caption": "Play it through, then try it with the pressure-cooker example below."
+ ]
 }
 :::
 
@@ -189,7 +188,7 @@ Around 1898, **Edward Thorndike** put hungry cats in **puzzle boxes** that opene
 **B. F. Skinner** (1938) built the **operant chamber** (the "Skinner box"), in which a rat presses a lever or a pigeon pecks a key, and a **cumulative recorder** draws the rate of responding over time. He called the behaviour an **operant**, because it operates on the environment.
 
 :::widget conditioning
-{"kind": "operant", "title": "Watch a rat learn from consequences", "caption": "Press Play. Watch how the pressing rate climbs when presses pay off, and what happens to it when food stops."}
+{"kind": "operant", "title": "Watch a rat learn from consequences"}
 :::
 
 :::widget figure
@@ -279,7 +278,7 @@ The best-known model (Atkinson and Shiffrin, 1968) has three stores:
 | **Long-term memory** | Minutes to a lifetime | Effectively unlimited | Meaningful encoding |
 
 :::widget memoryflow
-{"title": "Follow one phone number through memory", "caption": "Press Play. Information you do not attend to is lost in the first box. What you rehearse stays in working memory; what you encode with meaning reaches long-term memory, and comes back out when retrieved."}
+{"title": "Follow one phone number through memory", "caption": "Information you do not attend to is lost in the first box. What you rehearse stays in working memory; what you encode with meaning reaches long-term memory, and comes back out when retrieved."}
 :::
 
 ### Three ways to measure what is remembered
@@ -306,7 +305,7 @@ Hermann Ebbinghaus (1885) learned lists of **nonsense syllables** (like DAX, BUP
 {
  "kind": "forgetting",
  "title": "The forgetting curve, and what spaced reviews do",
- "caption": "Watch how fast memory falls after one study session. Then add reviews: each one lifts retention, and the curve after it falls more slowly. Spacing reviews further apart, as memory starts to fade, gives the flattest curve."
+ "caption": "Spacing reviews further apart, as memory starts to fade, gives the flattest curve."
 }
 :::
 

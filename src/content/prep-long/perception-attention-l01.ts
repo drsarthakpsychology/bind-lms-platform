@@ -480,7 +480,7 @@ The gate control theory showed that pain is not a direct measure of injury but i
     module: "sensation-perception/2-3",
     visuals: [
       { kind: "flow", caption: "Gate control theory", data: { title: "The pain gate", layout: "tree", nodes: [{ id: "g", label: "Gate in the spinal cord" }, { id: "o", label: "Opens the gate", parent: "g", detail: "Small pain fibres, anxiety, focusing on pain, catastrophising, inactivity." }, { id: "c", label: "Closes the gate", parent: "g", detail: "Rubbing (large fibres), distraction, relaxation, confidence, endorphins." }, { id: "b", label: "Brain", parent: "g", detail: "Sends descending messages that open or close the gate." }] } },
-      { kind: "nervoussystem", caption: "Earlier theories", data: { title: "Signals from the body to the brain", start: "signal", caption: "Send a signal from the hand. Where could thoughts and feelings change it on the way?" } },
+      { kind: "nervoussystem", caption: "Earlier theories", data: { title: "Signals from the body to the brain", start: "signal", caption: "Where could thoughts and feelings change it on the way?" } },
     ],
     ref: "Melzack and Wall 1965 Science; Melzack 1999 neuromatrix; Beecher 1946 and 1956; Reynolds 1969; Fordyce 1976; Vlaeyen and Linton 2000 fear-avoidance; IASP 2020 definition; Hoffman et al 2000",
   },

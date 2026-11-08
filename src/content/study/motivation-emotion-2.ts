@@ -34,7 +34,7 @@ In 1937 the neuroanatomist **James Papez** proposed a loop of structures for emo
     { "id": "cg", "label": "Cingulate cortex", "detail": "Papez thought this was where hypothalamic activity became conscious feeling." },
     { "id": "ph", "label": "Parahippocampal cortex", "detail": "Returns the loop to the hippocampus through the entorhinal cortex." }
   ],
-  "caption": "Press Play to trace the loop. Today it is seen mainly as a memory circuit; emotion depends more on the amygdala, insula and prefrontal cortex."
+  "caption": "Today it is seen mainly as a memory circuit; emotion depends more on the amygdala, insula and prefrontal cortex."
 }
 :::
 
@@ -113,7 +113,7 @@ In 1848 a tamping iron passed through the left frontal lobe of **Phineas Gage**,
     "thalamus": "Relay station; the start of LeDoux's low and high roads.",
     "prefrontal": "The ventromedial prefrontal cortex links emotion to decisions and calms the amygdala; damaged in Phineas Gage."
   },
-  "caption": "Tap each region. Emotions come from these regions working as networks, not from one centre."
+  "caption": "Emotions come from these regions working as networks, not from one centre."
 }
 :::
 
@@ -285,11 +285,11 @@ Q: Which measure of emotional intelligence is a performance test with scored ans
 ## 3.3 Stress, the body and illness [core][advanced]
 
 :::widget figure
-{"id": "autonomic", "quiz": true, "caption": "Name each numbered part in your head first, then tap to check."}
+{"id": "autonomic", "quiz": true}
 :::
 
 :::widget figure
-{"id": "hpa-axis", "quiz": true, "caption": "Name each numbered part in your head first, then tap to check."}
+{"id": "hpa-axis", "quiz": true}
 :::
 
 ### Two stress systems

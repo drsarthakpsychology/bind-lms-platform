@@ -292,8 +292,7 @@ Charles Ferster and B. F. Skinner (1957) spent years recording how the **pattern
    "parent": "in",
    "detail": "Moderate, steady rate."
   }
- ],
- "caption": "Tap each leaf for its response pattern."
+ ]
 }
 :::
 

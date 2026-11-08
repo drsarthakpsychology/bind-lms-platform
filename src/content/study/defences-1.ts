@@ -47,8 +47,7 @@ Defences are not signs of illness. Everyone uses them, many times a day, mostly 
  ],
  "edgeLabels": {
   "r>c": "if rigid or extreme"
- },
- "caption": "Press Play. Then pick a defence you used this week and walk it through the five steps."
+ }
 }
 :::
 
@@ -204,7 +203,7 @@ The **id** is a strong horse that wants to run to the food. The **ego** is the r
    "detail": "Present from birth, wholly unconscious, seeks pleasure now."
   }
  ],
- "caption": "Tap each layer. Exams often ask which parts can be conscious: only the ego and superego can."
+ "caption": "Exams often ask which parts can be conscious: only the ego and superego can."
 }
 :::
 
@@ -734,7 +733,7 @@ The psychiatrist **George Vaillant** grouped defences into four levels, from the
    "detail": "Delusional projection, psychotic denial, distortion. Reality itself is reshaped."
   }
  ],
- "caption": "The top of the pyramid is the healthiest. Tap each level and name one defence from your own week."
+ "caption": "The top of the pyramid is the healthiest."
 }
 :::
 
@@ -1121,7 +1120,7 @@ Erik Erikson (1902 to 1994) kept Freud's idea of stages but shifted the focus fr
    "detail": "Old age. Virtue: wisdom."
   }
  ],
- "caption": "Press Play to move through a life. Each crisis is a turning point, not a pass or fail; later stages can rework earlier ones."
+ "caption": "Each crisis is a turning point, not a pass or fail; later stages can rework earlier ones."
 }
 :::
 
@@ -1227,7 +1226,7 @@ Jean Piaget (1896 to 1980) watched children, including his own, and saw that the
    "detail": "Balance is restored, at a more advanced level, until the next surprise."
   }
  ],
- "caption": "Piaget's engine of development. Go round the loop with an example from a child you know."
+ "caption": "Piaget's engine of development."
 }
 :::
 
@@ -1262,7 +1261,7 @@ Jean Piaget (1896 to 1980) watched children, including his own, and saw that the
 :::widget conservation
 {
  "kind": "liquid",
- "caption": "Pour the juice into the tall glass and compare a preoperational and a concrete operational child. Tap the reasons the older child gives: identity, reversibility, compensation."
+ "caption": "Pour the juice into the tall glass and compare a preoperational and a concrete operational child."
 }
 :::
 
@@ -1352,16 +1351,14 @@ A neutral stimulus paired repeatedly with one that naturally causes a response c
    "label": "Extinction",
    "detail": "Bell repeatedly without food: the CR fades, though it can return (spontaneous recovery)."
   }
- ],
- "caption": "Swap in a clinical example: a lift (neutral) paired with a panic attack (UCS) becomes a feared cue."
+ ]
 }
 :::
 
 
 :::widget conditioning
 {
- "kind": "classical",
- "caption": "Play Pavlov's experiment step by step, then extinction. Swap in a lift and a panic attack to see how phobias can start."
+ "kind": "classical"
 }
 :::
 
@@ -1446,8 +1443,7 @@ Behaviour is shaped by its **consequences**.
 
 :::widget conditioning
 {
- "kind": "operant",
- "caption": "Watch how a variable ratio schedule keeps lever pressing high, and how removing reward first causes an extinction burst before behaviour fades."
+ "kind": "operant"
 }
 :::
 

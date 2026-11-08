@@ -138,7 +138,7 @@ A method is a set of rules for collecting evidence so that other people can chec
     { "id": "deep", "label": "What is it like, and what does it mean?", "parent": "q", "detail": "Case studies and qualitative interviews give depth and meaning, not generalisation." },
     { "id": "time", "label": "How does it change over time?", "parent": "q", "detail": "Longitudinal designs follow the same people; cross-sectional designs compare age groups at one time." }
   ],
-  "caption": "Tap each branch. Exam answers score higher when the method is justified by the question."
+  "caption": "Exam answers score higher when the method is justified by the question."
 }
 :::
 
@@ -283,7 +283,7 @@ Locke: the mind is a blank sheet that experience writes on. Plato and Kant: the 
 :::
 
 :::widget brainexplorer
-{"title":"What Broca and Wernicke found","focus":["broca","wernicke","motor","temporal","frontal"],"caption":"Tap Broca, then Wernicke, and switch on damage for each. Two small patches of cortex, two very different language problems: the first strong evidence that mental functions live in particular places."}
+{"title":"What Broca and Wernicke found","focus":["broca","wernicke","motor","temporal","frontal"],"caption":"Two small patches of cortex, two very different language problems: the first strong evidence that mental functions live in particular places."}
 :::
 
 ### Psychophysics: measuring the mind
@@ -315,7 +315,7 @@ Locke: the mind is a blank sheet that experience writes on. Plato and Kant: the 
     { "id": "j", "label": "1890: James", "detail": "His two-volume textbook: stream of consciousness, habit, self, emotion." },
     { "id": "a", "label": "1892: APA founded", "detail": "G. Stanley Hall founds the American Psychological Association." }
   ],
-  "caption": "Five dates that examiners love. Press Play to walk them in order."
+  "caption": "Five dates that examiners love."
 }
 :::
 
@@ -442,7 +442,7 @@ All three are always present; their balance shifts with food, habits, company an
     { "label": "Pranamaya kosha", "detail": "The vital layer: breath and energy." },
     { "label": "Annamaya kosha", "detail": "The physical body, 'made of food'. The outermost sheath." }
   ],
-  "caption": "From the Taittiriya Upanishad. Tap from the centre outwards. Yoga therapy plans care at every ring."
+  "caption": "From the Taittiriya Upanishad. Yoga therapy plans care at every ring."
 }
 :::
 
@@ -908,7 +908,7 @@ The idea of a **witness (sakshi)** that observes thoughts without being them has
 :::
 
 :::widget hypnogram
-{"caption": "Modern sleep science maps a night in stages. Drag through it: dreaming (svapna) is most vivid in REM, and deep dreamless sleep (sushupti) is closest to N3. Then switch on depression to see how the night changes."}
+{"caption": "Modern sleep science maps a night in stages."}
 :::
 
 ### The inner instrument (antahkarana)
@@ -921,7 +921,7 @@ Vedanta describes the mind as a fourfold **inner instrument**:
 | **Chitta** | Storehouse of impressions and memories | Long-term memory, implicit memory |
 
 :::widget layers
-{"title": "The fourfold inner instrument (antahkarana)", "shape": "stack", "layers": [{"label": "Manas", "detail": "Receives sense data, deliberates and doubts. Modern parallel: sensory processing and working memory."}, {"label": "Buddhi", "detail": "Decides, discerns and judges. Modern parallel: executive function and judgement."}, {"label": "Ahamkara", "detail": "The 'I-maker' that owns experience as 'mine'. Modern parallel: ego and self-concept."}, {"label": "Chitta", "detail": "The storehouse of impressions (samskaras) and memories. Modern parallel: long-term and implicit memory."}], "caption": "Tap each part. Vedanta sees all four as instruments of a deeper self, not the self itself."}
+{"title": "The fourfold inner instrument (antahkarana)", "shape": "stack", "layers": [{"label": "Manas", "detail": "Receives sense data, deliberates and doubts. Modern parallel: sensory processing and working memory."}, {"label": "Buddhi", "detail": "Decides, discerns and judges. Modern parallel: executive function and judgement."}, {"label": "Ahamkara", "detail": "The 'I-maker' that owns experience as 'mine'. Modern parallel: ego and self-concept."}, {"label": "Chitta", "detail": "The storehouse of impressions (samskaras) and memories. Modern parallel: long-term and implicit memory."}], "caption": "Vedanta sees all four as instruments of a deeper self, not the self itself."}
 :::
 
 ### The Bhagavad Gita

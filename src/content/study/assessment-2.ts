@@ -67,8 +67,7 @@ Every test you use was once a draft written by someone. Knowing how tests are bu
    "id": "10",
    "label": "Norms and manual"
   }
- ],
- "caption": "Press Play and say what could go wrong at each step if it were skipped."
+ ]
 }
 :::
 
@@ -229,8 +228,7 @@ Classical statistics depend on the sample: an item looks "easy" in a bright grou
    "parent": "i",
    "detail": "Needs large samples and model fit."
   }
- ],
- "caption": "Tap each branch; exam questions often ask for three differences."
+ ]
 }
 :::
 

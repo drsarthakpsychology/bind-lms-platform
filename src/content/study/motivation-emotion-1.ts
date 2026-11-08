@@ -62,7 +62,7 @@ Drive reduction works like an air-conditioner thermostat. When the room drifts a
     { "id": "learn", "label": "Learning", "detail": "The behaviour that reduced the drive is reinforced, so it is more likely next time." }
   ],
   "edgeLabels": { "need>drive": "creates", "drive>act": "energises", "act>reduce": "succeeds", "reduce>learn": "reinforces" },
-  "caption": "Press Play. The loop explains thirst and hunger well; it cannot explain why we seek excitement when no need is pressing."
+  "caption": "The loop explains thirst and hunger well; it cannot explain why we seek excitement when no need is pressing."
 }
 :::
 
@@ -133,7 +133,7 @@ Deepa has revised thoroughly and the paper is mostly recall; a bit of nervous en
 {
   "kind": "inverted-u",
   "title": "Arousal and performance: move the task-difficulty slider",
-  "caption": "Slide from a simple task to a complex one and watch the peak of the curve move left. The best arousal for a hard, unfamiliar task is lower than for a simple, practised one."
+  "caption": "The best arousal for a hard, unfamiliar task is lower than for a simple, practised one."
 }
 :::
 
@@ -189,7 +189,7 @@ Maslow called the lower four **deficiency needs (D-needs)**: their lack creates 
     { "label": "Safety", "detail": "Security, stability, freedom from fear, a predictable world." },
     { "label": "Physiological", "detail": "Food, water, sleep, warmth: the base that must usually be met first." }
   ],
-  "caption": "Tap each layer. The four lower layers are deficiency needs; the top is a growth need. Maslow treated the order as a general tendency, not a fixed rule."
+  "caption": "The four lower layers are deficiency needs; the top is a growth need. Maslow treated the order as a general tendency, not a fixed rule."
 }
 :::
 
@@ -421,7 +421,7 @@ Cannon described how threat triggers the **sympathetic nervous system** and the 
     { "id": "ex", "label": "Exhaustion", "detail": "If the stressor goes on, reserves run out. Selye's 'diseases of adaptation' appear: ulcers, high blood pressure, infections." }
   ],
   "edgeLabels": { "al>re": "stressor continues", "re>ex": "stressor still continues" },
-  "caption": "Press Play to walk the three stages. The model describes the body; it says nothing about how the person interprets the stressor, which is what Lazarus added."
+  "caption": "The model describes the body; it says nothing about how the person interprets the stressor, which is what Lazarus added."
 }
 :::
 
@@ -923,7 +923,7 @@ Q: Which subscale of Zuckerman's scale is tapped by "I like to travel to unusual
 Biological motives are where homeostasis works best, but even here learning, culture and reward matter.
 
 :::widget figure
-{"id": "hypothalamus", "quiz": true, "caption": "Name each numbered part in your head first, then tap to check."}
+{"id": "hypothalamus", "quiz": true}
 :::
 
 :::widget figure
@@ -959,7 +959,7 @@ Researchers in Pune (Yajnik and colleagues) showed that Indian newborns are ofte
     "hypothalamus": "The arcuate and paraventricular nuclei read leptin, ghrelin, insulin and gut signals. The old lateral (start) and ventromedial (stop) 'centres' are parts of this network.",
     "brainstem": "Receives vagus nerve signals of stomach stretch and gut hormones, and passes them up to the hypothalamus."
   },
-  "caption": "Tap a region. Hunger is a network reading many signals, not a single switch."
+  "caption": "Hunger is a network reading many signals, not a single switch."
 }
 :::
 
@@ -1042,12 +1042,12 @@ Q: Leptin is best described as:
 {
   "system": "dopamine",
   "title": "The four dopamine pathways, and which one carries 'wanting'",
-  "caption": "The mesolimbic pathway (from the ventral tegmental area to the nucleus accumbens) carries incentive salience, the 'wanting' signal. Toggle the D2 blocker to see why antipsychotic medicines can flatten motivation as a side effect."
+  "caption": "The mesolimbic pathway (from the ventral tegmental area to the nucleus accumbens) carries incentive salience, the 'wanting' signal."
 }
 :::
 
 :::widget release
-{"transmitter": "dopamine", "caption": "Watch dopamine cross the synapse in the nucleus accumbens. Amphetamine floods the gap with dopamine, which boosts wanting far more than liking."}
+{"transmitter": "dopamine", "caption": "Amphetamine floods the gap with dopamine, which boosts wanting far more than liking."}
 :::
 
 ## 2.5 Cognition and emotion: Schachter-Singer, Lazarus and the debate [core][beginner]
@@ -1216,7 +1216,7 @@ Rasa theory is strikingly modern: it separates the felt emotion from its express
     { "id": "vya", "label": "Vyabhichari bhava: passing states", "parent": "rasa", "detail": "Transient feelings layered on top: despair, remembering, weariness." },
     { "id": "sth", "label": "Sthayi bhava: the lasting emotion", "parent": "rasa", "detail": "Shoka (sorrow), the stable emotion that the whole scene builds and that becomes karuna rasa." }
   ],
-  "caption": "Tap each branch. The Natyashastra separates causes, expressions and passing states, much as modern emotion science separates triggers, expression and feeling."
+  "caption": "The Natyashastra separates causes, expressions and passing states, much as modern emotion science separates triggers, expression and feeling."
 }
 :::
 

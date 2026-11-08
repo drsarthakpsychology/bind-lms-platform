@@ -505,7 +505,7 @@ function Synapse({ d }: { d: SynapseData }) {
               ? "The receiving neuron adapts: it slowly reduces some receptors (downregulation). Side effects often fade around now."
               : "Later still, the brain rebuilds connections (neuroplasticity, helped by BDNF). This is when mood usually starts to lift, which is why the dose must be given time before judging it."}
       </p>
-      <p className="mt-2 text-sm text-muted-foreground"><Rich text={d.caption} /></p>
+      {d.caption ? <p className="mt-2 text-sm text-muted-foreground"><Rich text={d.caption} /></p> : null}
     </div>
   );
 }

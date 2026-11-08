@@ -53,7 +53,7 @@ Mood shows up in four places at once. This matters, because doctors look for cha
 - **Doing**: work, study, meeting people, looking after yourself.
 
 :::widget layers
-{"title": "Four places mood lives", "shape": "stack", "layers": [{"label": "Feeling", "detail": "What it is like inside: sad, empty, flat, irritable, or calm and content. This is the layer people usually mean by 'mood'."}, {"label": "Thinking", "detail": "How you see yourself, the world and the future. Low mood bends thoughts towards 'I'm useless', 'nothing works', 'it will never change'."}, {"label": "Body", "detail": "Sleep, appetite, energy and speed. In depression the body slows or becomes restless, and sleep and hunger change."}, {"label": "Doing", "detail": "Work, study, meeting people, looking after yourself. When mood stays low, this layer shrinks, and that shrinking keeps the low going."}], "caption": "Tap each layer. A passing bad mood touches one or two layers. Depression changes all four together, for a long time."}
+{"title": "Four places mood lives", "shape": "stack", "layers": [{"label": "Feeling", "detail": "What it is like inside: sad, empty, flat, irritable, or calm and content. This is the layer people usually mean by 'mood'."}, {"label": "Thinking", "detail": "How you see yourself, the world and the future. Low mood bends thoughts towards 'I'm useless', 'nothing works', 'it will never change'."}, {"label": "Body", "detail": "Sleep, appetite, energy and speed. In depression the body slows or becomes restless, and sleep and hunger change."}, {"label": "Doing", "detail": "Work, study, meeting people, looking after yourself. When mood stays low, this layer shrinks, and that shrinking keeps the low going."}], "caption": "A passing bad mood touches one or two layers. Depression changes all four together, for a long time."}
 :::
 
 When someone's mood drops for a long time, all four change together. They feel sad, they think "I'm useless", they sleep badly and lose appetite, and they stop going out. That cluster is what we will learn to recognise.
@@ -114,7 +114,7 @@ A trigger does not rule depression out. A job loss can start a real depressive i
 :::
 
 :::widget flow
-{"title": "Four questions, in order", "layout": "chain", "nodes": [{"id": "a", "label": "How long?", "detail": "Ordinary sadness passes in hours or days. Depression is there most of the day, nearly every day, for a long stretch."}, {"id": "b", "label": "How wide?", "detail": "Sadness is about one thing. In depression, everything turns grey, even things the person used to love."}, {"id": "c", "label": "How deep?", "detail": "Sadness stays in the feelings. Depression reaches the body: sleep, appetite, energy and speed of movement."}, {"id": "d", "label": "Does it stop life?", "detail": "Sad people still study, work and meet friends. In depression these start to fall apart."}, {"id": "e", "label": "Talk to a professional", "detail": "If the answers point to 'long, wide, deep and stopping life', the kind next step is a proper assessment, not a label from a friend."}], "edgeLabels": {"a>b": "then", "b>c": "then", "c>d": "then", "d>e": "if yes to most"}, "caption": "Press Play. Ask the questions in this order and you will rarely confuse a bad week with an illness."}
+{"title": "Four questions, in order", "layout": "chain", "nodes": [{"id": "a", "label": "How long?", "detail": "Ordinary sadness passes in hours or days. Depression is there most of the day, nearly every day, for a long stretch."}, {"id": "b", "label": "How wide?", "detail": "Sadness is about one thing. In depression, everything turns grey, even things the person used to love."}, {"id": "c", "label": "How deep?", "detail": "Sadness stays in the feelings. Depression reaches the body: sleep, appetite, energy and speed of movement."}, {"id": "d", "label": "Does it stop life?", "detail": "Sad people still study, work and meet friends. In depression these start to fall apart."}, {"id": "e", "label": "Talk to a professional", "detail": "If the answers point to 'long, wide, deep and stopping life', the kind next step is a proper assessment, not a label from a friend."}], "edgeLabels": {"a>b": "then", "b>c": "then", "c>d": "then", "d>e": "if yes to most"}, "caption": "Ask the questions in this order and you will rarely confuse a bad week with an illness."}
 :::
 
 :::recall
@@ -215,7 +215,7 @@ India's National Mental Health Survey found depression among the most common men
 Distress in India is often described through the body: aches, burning, weakness ("kamzori"), "gas", heaviness in the head. People may call it "tension". Families may blame stress, nazar (the evil eye), or the person's attitude. A good clinician listens to these words and then gently asks about mood, interest, sleep and hope.
 
 :::widget layers
-{"title": "Risk sits in rings around a person", "shape": "rings", "layers": [{"label": "The person", "detail": "Genes from a parent with depression, a long-term illness such as diabetes or pain, the months after childbirth."}, {"label": "Family and home", "detail": "Loss of a loved one, conflict, violence at home, long caring duties, no one to confide in."}, {"label": "Community", "detail": "Stigma ('pagal'), debt, exam pressure, unemployment, being new to a city."}, {"label": "Society", "detail": "Poverty, discrimination, and too few trained professionals, which keeps the treatment gap wide."}], "caption": "Tap from the centre outwards. Most people who become depressed have strain in more than one ring."}
+{"title": "Risk sits in rings around a person", "shape": "rings", "layers": [{"label": "The person", "detail": "Genes from a parent with depression, a long-term illness such as diabetes or pain, the months after childbirth."}, {"label": "Family and home", "detail": "Loss of a loved one, conflict, violence at home, long caring duties, no one to confide in."}, {"label": "Community", "detail": "Stigma ('pagal'), debt, exam pressure, unemployment, being new to a city."}, {"label": "Society", "detail": "Poverty, discrimination, and too few trained professionals, which keeps the treatment gap wide."}], "caption": "Most people who become depressed have strain in more than one ring."}
 :::
 
 ### Who is at higher risk
@@ -281,7 +281,7 @@ This platform teaches you about mental health. It is not a help service. If you 
 :::
 
 :::widget layers
-{"title": "What helps, from the ground up", "shape": "pyramid", "layers": [{"label": "Hospital care and specialist treatments", "detail": "For the most severe or unsafe situations. Few people need this level."}, {"label": "Medicines", "detail": "Most useful in moderate and severe depression, alongside talking help."}, {"label": "Talking therapies", "detail": "A trained therapist helps with harsh thoughts, daily activity, problems and relationships."}, {"label": "Daily life and people", "detail": "Sleep, meals, movement, sunlight and a person to talk to. Everyone needs this base, whatever else they receive."}], "caption": "Tap each level. The wide base is for everyone; each level above is added when it is needed."}
+{"title": "What helps, from the ground up", "shape": "pyramid", "layers": [{"label": "Hospital care and specialist treatments", "detail": "For the most severe or unsafe situations. Few people need this level."}, {"label": "Medicines", "detail": "Most useful in moderate and severe depression, alongside talking help."}, {"label": "Talking therapies", "detail": "A trained therapist helps with harsh thoughts, daily activity, problems and relationships."}, {"label": "Daily life and people", "detail": "Sleep, meals, movement, sunlight and a person to talk to. Everyone needs this base, whatever else they receive."}], "caption": "The wide base is for everyone; each level above is added when it is needed."}
 :::
 
 :::recall
@@ -712,11 +712,11 @@ No single cause explains depression. Think **vulnerability plus stress**: genes 
 :::
 
 :::widget layers
-{"title": "Vulnerability plus stress", "shape": "iceberg", "layers": [{"label": "What everyone sees", "detail": "The episode: low mood, poor sleep, withdrawal. It usually begins after a stressor, such as a loss or a humiliation."}, {"label": "Current pressures", "detail": "Debt, conflict, caring duties, illness, no confidant. These lower the threshold."}, {"label": "Early experience", "detail": "Loss of a parent, neglect, abuse or a critical upbringing shape beliefs and tune the stress system."}, {"label": "Genes and biology", "detail": "Many small genetic effects, the stress-hormone system and brain plasticity set how much load a person can carry before an episode starts."}], "caption": "Tap each layer, from the surface down. The trigger is only the visible tip; treatment works on the layers beneath as well."}
+{"title": "Vulnerability plus stress", "shape": "iceberg", "layers": [{"label": "What everyone sees", "detail": "The episode: low mood, poor sleep, withdrawal. It usually begins after a stressor, such as a loss or a humiliation."}, {"label": "Current pressures", "detail": "Debt, conflict, caring duties, illness, no confidant. These lower the threshold."}, {"label": "Early experience", "detail": "Loss of a parent, neglect, abuse or a critical upbringing shape beliefs and tune the stress system."}, {"label": "Genes and biology", "detail": "Many small genetic effects, the stress-hormone system and brain plasticity set how much load a person can carry before an episode starts."}], "caption": "The trigger is only the visible tip; treatment works on the layers beneath as well."}
 :::
 
 :::widget neuron
-{"title": "How a neuron fires", "myelinated": true, "caption": "Every idea in this module, from serotonin release to ketamine's glutamate burst, rests on this event. Slide the threshold: a neuron fires fully or not at all. Antidepressants do not make neurons fire 'more strongly'; they change how often they fire and how strongly the message is received."}
+{"title": "How a neuron fires", "myelinated": true, "caption": "Every idea in this module, from serotonin release to ketamine's glutamate burst, rests on this event. Antidepressants do not make neurons fire 'more strongly'; they change how often they fire and how strongly the message is received."}
 :::
 
 ### Plasticity, stress hormones and sleep
@@ -727,11 +727,11 @@ No single cause explains depression. Think **vulnerability plus stress**: genes 
 - **Circuits.** Brain imaging shows overactive alarm areas (amygdala), underactive "brake" areas in the front of the brain, and weaker reward responses (linked to loss of pleasure).
 
 :::widget flow
-{"title": "The stress hormone axis (HPA axis)", "layout": "chain", "nodes": [{"id": "a", "label": "Stress", "detail": "A threat, loss or long strain is noticed by the brain."}, {"id": "b", "label": "Hypothalamus: CRH", "detail": "The hypothalamus releases corticotropin-releasing hormone (CRH)."}, {"id": "c", "label": "Pituitary: ACTH", "detail": "CRH tells the pituitary gland to release ACTH into the blood."}, {"id": "d", "label": "Adrenal glands: cortisol", "detail": "ACTH makes the adrenal glands release cortisol, the main stress hormone. In the short term this helps: energy, alertness."}, {"id": "e", "label": "Feedback switch", "detail": "Normally cortisol acts on receptors in the hippocampus and hypothalamus to switch the system off again."}, {"id": "f", "label": "In depression", "detail": "In many depressed people the switch-off is weak. Cortisol stays high, sleep and appetite change, and over time high cortisol harms the hippocampus."}], "edgeLabels": {"a>b": "signals", "b>c": "CRH", "c>d": "ACTH", "d>e": "cortisol", "e>f": "weak brake"}, "caption": "Press Play. The Advanced level adds what this means for memory, plasticity and the dexamethasone test."}
+{"title": "The stress hormone axis (HPA axis)", "layout": "chain", "nodes": [{"id": "a", "label": "Stress", "detail": "A threat, loss or long strain is noticed by the brain."}, {"id": "b", "label": "Hypothalamus: CRH", "detail": "The hypothalamus releases corticotropin-releasing hormone (CRH)."}, {"id": "c", "label": "Pituitary: ACTH", "detail": "CRH tells the pituitary gland to release ACTH into the blood."}, {"id": "d", "label": "Adrenal glands: cortisol", "detail": "ACTH makes the adrenal glands release cortisol, the main stress hormone. In the short term this helps: energy, alertness."}, {"id": "e", "label": "Feedback switch", "detail": "Normally cortisol acts on receptors in the hippocampus and hypothalamus to switch the system off again."}, {"id": "f", "label": "In depression", "detail": "In many depressed people the switch-off is weak. Cortisol stays high, sleep and appetite change, and over time high cortisol harms the hippocampus."}], "edgeLabels": {"a>b": "signals", "b>c": "CRH", "c>d": "ACTH", "d>e": "cortisol", "e>f": "weak brake"}, "caption": "The Advanced level adds what this means for memory, plasticity and the dexamethasone test."}
 :::
 
 :::widget brainmap
-{"title": "Brain areas involved in mood", "focus": ["prefrontal", "amygdala", "hippocampus", "hypothalamus"], "notes": {"prefrontal": "The front of the brain acts like a brake and a planner. It is often underactive in depression, which fits poor concentration and difficulty stopping negative thoughts.", "amygdala": "The alarm centre. It reacts more strongly to sad or threatening faces and words in depression, feeding the negative bias.", "hippocampus": "A memory area that also helps switch off cortisol. It is smaller in people with long or repeated depression, possibly from stress hormones and lower BDNF.", "hypothalamus": "Controls sleep, appetite and the stress hormone axis. Changes here fit the body symptoms of depression."}, "caption": "Tap each highlighted area. No single area 'causes' depression; the trouble is in how they talk to each other."}
+{"title": "Brain areas involved in mood", "focus": ["prefrontal", "amygdala", "hippocampus", "hypothalamus"], "notes": {"prefrontal": "The front of the brain acts like a brake and a planner. It is often underactive in depression, which fits poor concentration and difficulty stopping negative thoughts.", "amygdala": "The alarm centre. It reacts more strongly to sad or threatening faces and words in depression, feeding the negative bias.", "hippocampus": "A memory area that also helps switch off cortisol. It is smaller in people with long or repeated depression, possibly from stress hormones and lower BDNF.", "hypothalamus": "Controls sleep, appetite and the stress hormone axis. Changes here fit the body symptoms of depression."}, "caption": "No single area 'causes' depression; the trouble is in how they talk to each other."}
 :::
 
 :::analogy The signals and the road
@@ -739,7 +739,7 @@ Monoamines are the traffic signals; neural connections are the road. Antidepress
 :::
 
 :::widget hypnogram
-{"title": "Healthy sleep and depressed sleep", "caption": "Drag through a healthy night first. Then switch on depression: REM arrives much sooner after falling asleep, deep N3 sleep shrinks, there are more awakenings, and the person wakes early and cannot get back to sleep. Early morning waking is a classic feature of melancholic depression."}
+{"title": "Healthy sleep and depressed sleep", "caption": "Early morning waking is a classic feature of melancholic depression."}
 :::
 
 :::recall
@@ -790,11 +790,11 @@ Negative views of the **self** ("I am a failure"), the **world** ("nothing works
 - **Learned helplessness** (Seligman): repeated uncontrollable bad events teach that action is pointless. Later reworked as a hopeless way of explaining events: internal ("it's me"), stable ("always"), global ("everything").
 
 :::widget flow
-{"title": "The depressive maintenance cycle", "layout": "cycle", "nodes": [{"id": "a", "label": "Negative thoughts (the triad)", "detail": "'I'm a failure, nothing works, it will always be like this.'"}, {"id": "b", "label": "Low mood", "detail": "The thoughts feel like facts, so mood drops further."}, {"id": "c", "label": "Rumination", "detail": "Going over 'why me, why did I fail' again and again. It feels like problem-solving but solves nothing and deepens the low."}, {"id": "d", "label": "Withdrawal and avoidance", "detail": "Staying in the room, not answering calls, skipping classes. This feels protective."}, {"id": "e", "label": "Fewer rewards, less evidence against", "detail": "No good moments, no chance to see that friends care. The beliefs go unchallenged and seem confirmed."}], "caption": "Press Play and watch each step feed the next. CBT challenges the thoughts, rumination-focused work interrupts the brooding, and behavioural activation breaks the withdrawal. Any break slows the whole wheel."}
+{"title": "The depressive maintenance cycle", "layout": "cycle", "nodes": [{"id": "a", "label": "Negative thoughts (the triad)", "detail": "'I'm a failure, nothing works, it will always be like this.'"}, {"id": "b", "label": "Low mood", "detail": "The thoughts feel like facts, so mood drops further."}, {"id": "c", "label": "Rumination", "detail": "Going over 'why me, why did I fail' again and again. It feels like problem-solving but solves nothing and deepens the low."}, {"id": "d", "label": "Withdrawal and avoidance", "detail": "Staying in the room, not answering calls, skipping classes. This feels protective."}, {"id": "e", "label": "Fewer rewards, less evidence against", "detail": "No good moments, no chance to see that friends care. The beliefs go unchallenged and seem confirmed."}], "caption": "CBT challenges the thoughts, rumination-focused work interrupts the brooding, and behavioural activation breaks the withdrawal. Any break slows the whole wheel."}
 :::
 
 :::widget conditioning
-{"kind": "operant", "title": "When the rewards dry up", "caption": "Watch the last step: when food stops, pressing fades. Lewinsohn's view of depression is similar. Low mood leads to withdrawal, withdrawal cuts off rewarding experiences, and with less reward, the behaviours that used to bring pleasure fade further. Behavioural activation puts the rewards back: plan small, valued activities first, and let mood follow."}
+{"kind": "operant", "title": "When the rewards dry up", "caption": "Lewinsohn's view of depression is similar. Low mood leads to withdrawal, withdrawal cuts off rewarding experiences, and with less reward, the behaviours that used to bring pleasure fade further. Behavioural activation puts the rewards back: plan small, valued activities first, and let mood follow."}
 :::
 
 ### Psychodynamic and attachment views [extra]
@@ -937,7 +937,7 @@ The first meeting decides whether the person comes back. Aim for **safety, trust
 | HADS | Patient | Medically ill; avoids body symptoms |
 
 :::widget curve
-{"kind": "sdt", "title": "Screening with a cut-off: the trade-off", "caption": "A screening tool such as the PHQ-9 uses a cut-off score (10 is common). Move the criterion: a lower cut-off catches more true cases (hits) but flags more people who are not depressed (false alarms). A higher cut-off misses more cases. A screen only says 'look closer'; the interview makes the diagnosis."}
+{"kind": "sdt", "title": "Screening with a cut-off: the trade-off", "caption": "A screening tool such as the PHQ-9 uses a cut-off score (10 is common). A higher cut-off misses more cases. A screen only says 'look closer'; the interview makes the diagnosis."}
 :::
 
 ### Investigations
@@ -1006,7 +1006,7 @@ In physical illness, tiredness, poor appetite and poor sleep may come from the i
 :::
 
 :::widget flow
-{"title": "Differential diagnosis tree", "layout": "tree", "nodes": [{"id": "root", "label": "A person presents with a depressive syndrome", "detail": "Work down the branches. More than one can be true at once."}, {"id": "bp", "parent": "root", "label": "Bipolar?", "detail": "Any past mania or hypomania, a bipolar family history, very early onset, atypical or psychotic features, onset after childbirth, or a 'too good' response to an antidepressant."}, {"id": "bp1", "parent": "bp", "label": "Yes: bipolar depression", "detail": "Avoid an antidepressant alone; use treatments for bipolar depression."}, {"id": "org", "parent": "root", "label": "Organic (a body cause)?", "detail": "Thyroid, anaemia, B12, stroke, Parkinson's disease, cancer, HIV, steroids, interferon, efavirenz. Look for body signs and order the basic tests."}, {"id": "org1", "parent": "org", "label": "Yes: depressive disorder due to another medical condition", "detail": "Treat the cause, and treat the mood too if it persists."}, {"id": "sub", "parent": "root", "label": "Substance?", "detail": "Did it start during heavy drinking, drug use or withdrawal? Does it improve after some weeks of abstinence?"}, {"id": "sub1", "parent": "sub", "label": "Yes: substance-induced depressive disorder", "detail": "Treat the substance use; reassess mood after abstinence."}, {"id": "oth", "parent": "root", "label": "Another psychiatric picture?", "detail": "Grief, adjustment disorder, persistent depressive disorder, negative symptoms of schizophrenia, dementia, anxiety disorders."}, {"id": "uni", "parent": "root", "label": "None of these: unipolar depression", "detail": "Major depressive disorder. Still recheck at every review, because highs and medical causes can appear later."}], "caption": "Tap any box. Bipolar, organic and substance causes are checked in every patient because each changes treatment."}
+{"title": "Differential diagnosis tree", "layout": "tree", "nodes": [{"id": "root", "label": "A person presents with a depressive syndrome", "detail": "Work down the branches. More than one can be true at once."}, {"id": "bp", "parent": "root", "label": "Bipolar?", "detail": "Any past mania or hypomania, a bipolar family history, very early onset, atypical or psychotic features, onset after childbirth, or a 'too good' response to an antidepressant."}, {"id": "bp1", "parent": "bp", "label": "Yes: bipolar depression", "detail": "Avoid an antidepressant alone; use treatments for bipolar depression."}, {"id": "org", "parent": "root", "label": "Organic (a body cause)?", "detail": "Thyroid, anaemia, B12, stroke, Parkinson's disease, cancer, HIV, steroids, interferon, efavirenz. Look for body signs and order the basic tests."}, {"id": "org1", "parent": "org", "label": "Yes: depressive disorder due to another medical condition", "detail": "Treat the cause, and treat the mood too if it persists."}, {"id": "sub", "parent": "root", "label": "Substance?", "detail": "Did it start during heavy drinking, drug use or withdrawal? Does it improve after some weeks of abstinence?"}, {"id": "sub1", "parent": "sub", "label": "Yes: substance-induced depressive disorder", "detail": "Treat the substance use; reassess mood after abstinence."}, {"id": "oth", "parent": "root", "label": "Another psychiatric picture?", "detail": "Grief, adjustment disorder, persistent depressive disorder, negative symptoms of schizophrenia, dementia, anxiety disorders."}, {"id": "uni", "parent": "root", "label": "None of these: unipolar depression", "detail": "Major depressive disorder. Still recheck at every review, because highs and medical causes can appear later."}], "caption": "Bipolar, organic and substance causes are checked in every patient because each changes treatment."}
 :::
 
 :::recall
@@ -1123,7 +1123,7 @@ Arrange the factors under **biological, psychological and social** headings, and
 :::
 
 :::widget layers
-{"title": "The biopsychosocial formulation, as rings", "shape": "rings", "layers": [{"label": "Biological", "detail": "Ananya: a grandmother with 'nervous breakdowns', broken sleep, skipped meals. These set the body's vulnerability and keep the episode going."}, {"label": "Psychological", "detail": "A belief that she must succeed to be accepted, rumination at night, the thought 'I am a failure'."}, {"label": "Social", "detail": "A failed placement interview, a father who says she has shamed the family, a supportive aunt and a choir that she has stopped attending."}], "caption": "Tap each ring. Run the 5 Ps through every ring and you get the full grid; the perpetuating factors in each ring become the treatment plan."}
+{"title": "The biopsychosocial formulation, as rings", "shape": "rings", "layers": [{"label": "Biological", "detail": "Ananya: a grandmother with 'nervous breakdowns', broken sleep, skipped meals. These set the body's vulnerability and keep the episode going."}, {"label": "Psychological", "detail": "A belief that she must succeed to be accepted, rumination at night, the thought 'I am a failure'."}, {"label": "Social", "detail": "A failed placement interview, a father who says she has shamed the family, a supportive aunt and a choir that she has stopped attending."}]}
 :::
 
 :::recall
@@ -1197,7 +1197,7 @@ Q: A woman with mild depression for a month, no risk, asks for "the strongest ta
 | MAOIs | Phenelzine, tranylcypromine, moclobemide | Stop the enzyme that breaks monoamines down; diet and drug interactions |
 
 :::widget synapse
-{"drug": "ssri", "caption": "Press 'Add SSRI', then let time pass. Watch what changes first (serotonin in the gap, early side effects) and what changes later (receptors, then rewiring)."}
+{"drug": "ssri"}
 :::
 
 :::widget guess
@@ -1205,7 +1205,7 @@ Q: A woman with mild depression for a month, no risk, asks for "the strongest ta
 :::
 
 :::widget journey
-{"drug": "sertraline", "target": "serotonin transporters (SERT) on serotonin neurons from the raphe nuclei, which project to the cortex and limbic system", "routes": ["oral"], "notes": {"gut": "Sertraline is absorbed slowly; taking it with food raises absorption a little and eases early nausea.", "liver": "Several CYP enzymes (including CYP2C19 and CYP2B6) share its breakdown, so single-gene differences and interactions matter less than with fluoxetine or paroxetine.", "blood": "Most of it is bound to blood proteins. Its half-life is about a day, so once-daily dosing works and steady state comes within about a week.", "out": "Broken down in the liver to a weaker metabolite, then removed in urine and faeces."}, "caption": "Press Play and follow one tablet. Blocking SERT happens within hours of reaching the brain; the slow adaptations that lift mood come later."}
+{"drug": "sertraline", "target": "serotonin transporters (SERT) on serotonin neurons from the raphe nuclei, which project to the cortex and limbic system", "routes": ["oral"], "notes": {"gut": "Sertraline is absorbed slowly; taking it with food raises absorption a little and eases early nausea.", "liver": "Several CYP enzymes (including CYP2C19 and CYP2B6) share its breakdown, so single-gene differences and interactions matter less than with fluoxetine or paroxetine.", "blood": "Most of it is bound to blood proteins. Its half-life is about a day, so once-daily dosing works and steady state comes within about a week.", "out": "Broken down in the liver to a weaker metabolite, then removed in urine and faeces."}, "caption": "Blocking SERT happens within hours of reaching the brain; the slow adaptations that lift mood come later."}
 :::
 
 ### Choosing a first antidepressant
@@ -1263,7 +1263,7 @@ Common Indian brand names are examples only; brands change.
 :::
 
 :::widget release
-{"transmitter": "serotonin", "title": "What antidepressants change at the serotonin synapse", "caption": "Play the normal signal first: release, binding, reuptake and breakdown by MAO. Then pick the SSRI: reuptake is blocked, so serotonin stays longer in the gap. Pick the MAOI: breakdown inside the nerve ending is blocked, so more is stored and released. The change in the synapse is fast; the change in mood is slower, because it depends on receptors and circuits adapting."}
+{"transmitter": "serotonin", "title": "What antidepressants change at the serotonin synapse", "caption": "With an MAOI, breakdown inside the nerve ending is blocked, so more is stored and released. The change in the synapse is fast; the change in mood is slower, because it depends on receptors and circuits adapting."}
 :::
 
 :::recall
@@ -1334,7 +1334,7 @@ Reduce gradually, in steps the patient can tolerate. Newer evidence suggests tha
 
 :::clinician
 :::widget synapse
-{"drug": "maoi", "caption": "An MAOI stops the enzyme that breaks down serotonin, noradrenaline and dopamine inside the nerve ending. Watch the levels rise. The same enzyme in the gut normally breaks down tyramine from foods, which is why aged cheese can cause a dangerous rise in blood pressure."}
+{"drug": "maoi", "caption": "An MAOI stops the enzyme that breaks down serotonin, noradrenaline and dopamine inside the nerve ending. The same enzyme in the gut normally breaks down tyramine from foods, which is why aged cheese can cause a dangerous rise in blood pressure."}
 :::
 
 ### Interactions worth memorising
@@ -1350,7 +1350,7 @@ Untreated depression also carries risks. Sertraline is often preferred; paroxeti
 :::
 
 :::widget curve
-{"kind": "half-life", "title": "Half-life and steady state", "caption": "Slide the half-life. Fluoxetine and its active metabolite last for days, so levels build slowly, take long to settle, and fade gently when it is stopped: few discontinuation symptoms. Paroxetine and venlafaxine have short half-lives: levels fall fast after a missed dose, which is why stopping them suddenly causes the worst discontinuation symptoms."}
+{"kind": "half-life", "title": "Half-life and steady state", "caption": "Fluoxetine and its active metabolite last for days, so levels build slowly, take long to settle, and fade gently when it is stopped: few discontinuation symptoms. Paroxetine and venlafaxine have short half-lives: levels fall fast after a missed dose, which is why stopping them suddenly causes the worst discontinuation symptoms."}
 :::
 
 :::recall
@@ -1461,7 +1461,7 @@ Q: A new mother in a village is depressed after childbirth. There is no psycholo
 :::
 
 :::widget pathways
-{"system": "dopamine", "caption": "Psychotic depression is treated with an antidepressant plus an antipsychotic (or with ECT). Turn on D2 block, then add serotonin 2A block, and see each pathway: easing of delusions in the mesolimbic pathway, and the side effects that come from the other three."}
+{"system": "dopamine", "caption": "Psychotic depression is treated with an antidepressant plus an antipsychotic (or with ECT)."}
 :::
 
 ### Electroconvulsive therapy (ECT)
@@ -1676,7 +1676,7 @@ Q: The main relative contraindication to ECT is:
 This level assumes you know the Beginner material. Here we look at what each medicine does at the receptor, because that predicts both benefit and side effects.
 
 :::widget figure
-{"id": "synapse", "quiz": true, "caption": "Name each numbered part in your head first, then tap to check."}
+{"id": "synapse", "quiz": true}
 :::
 
 ### SSRIs: why the delay, and why early side effects
@@ -1699,7 +1699,7 @@ Early side effects come from serotonin reaching **other receptors** before the s
 :::
 
 :::widget brainmap
-{"title": "Where the monoamine pathways run", "focus": ["brainstem", "prefrontal", "hippocampus", "basal-ganglia", "hypothalamus"], "notes": {"brainstem": "The raphe nuclei (serotonin) and locus coeruleus (noradrenaline) sit here and send fibres across the whole brain. The SSRI story begins with raphe autoreceptors.", "prefrontal": "Receives serotonin, noradrenaline and dopamine. Few dopamine transporters here, so NET also clears dopamine; blocking NET raises prefrontal dopamine.", "hippocampus": "Serotonin and noradrenaline support neurogenesis and plasticity here; chronic stress and cortisol work against them.", "basal-ganglia": "The ventral striatum (nucleus accumbens) receives dopamine from the ventral tegmental area. Blunted reward responses here fit anhedonia.", "hypothalamus": "Serotonin and noradrenaline tune sleep, appetite and the HPA axis, the body symptoms of depression."}, "caption": "Tap each region. Antidepressant side effects and benefits both depend on which pathway a drug touches."}
+{"title": "Where the monoamine pathways run", "focus": ["brainstem", "prefrontal", "hippocampus", "basal-ganglia", "hypothalamus"], "notes": {"brainstem": "The raphe nuclei (serotonin) and locus coeruleus (noradrenaline) sit here and send fibres across the whole brain. The SSRI story begins with raphe autoreceptors.", "prefrontal": "Receives serotonin, noradrenaline and dopamine. Few dopamine transporters here, so NET also clears dopamine; blocking NET raises prefrontal dopamine.", "hippocampus": "Serotonin and noradrenaline support neurogenesis and plasticity here; chronic stress and cortisol work against them.", "basal-ganglia": "The ventral striatum (nucleus accumbens) receives dopamine from the ventral tegmental area. Blunted reward responses here fit anhedonia.", "hypothalamus": "Serotonin and noradrenaline tune sleep, appetite and the HPA axis, the body symptoms of depression."}, "caption": "Antidepressant side effects and benefits both depend on which pathway a drug touches."}
 :::
 
 :::widget figure
@@ -1917,7 +1917,7 @@ Psychedelics are among the most talked-about ideas in psychiatry. This section s
 - **India**: psilocybin and MDMA are controlled under the NDPS Act, with no approved medical use.
 
 :::widget layers
-{"title": "The evidence ladder for a new treatment", "shape": "stack", "layers": [{"label": "Regulatory approval and real-world use", "detail": "Approved by an agency for a specific use, then watched for rare harms. No classic psychedelic has reached this step."}, {"label": "Phase 3 trials", "detail": "Large, controlled, often several sites. Psilocybin for TRD reported phase 3 results; a decision is pending."}, {"label": "Phase 2 randomised trials", "detail": "Dose-finding against placebo or a low dose. Blinding often fails with psychedelics."}, {"label": "Open-label studies", "detail": "Everyone knows they got the drug; expectancy is high."}, {"label": "Case reports and enthusiasm", "detail": "Stories and media coverage. Useful for ideas, useless as proof."}], "caption": "Tap from the bottom up. Each rung controls for more bias. Hype usually lives on the bottom two."}
+{"title": "The evidence ladder for a new treatment", "shape": "stack", "layers": [{"label": "Regulatory approval and real-world use", "detail": "Approved by an agency for a specific use, then watched for rare harms. No classic psychedelic has reached this step."}, {"label": "Phase 3 trials", "detail": "Large, controlled, often several sites. Psilocybin for TRD reported phase 3 results; a decision is pending."}, {"label": "Phase 2 randomised trials", "detail": "Dose-finding against placebo or a low dose. Blinding often fails with psychedelics."}, {"label": "Open-label studies", "detail": "Everyone knows they got the drug; expectancy is high."}, {"label": "Case reports and enthusiasm", "detail": "Stories and media coverage. Useful for ideas, useless as proof."}], "caption": "Each rung controls for more bias. Hype usually lives on the bottom two."}
 :::
 
 ### Why the evidence is hard to judge
@@ -2050,7 +2050,7 @@ DSM categories are reliable enough to share, but they are not natural kinds. Two
 - This explains why depression and anxiety co-occur so often: they share much of their underlying risk.
 
 :::widget layers
-{"title": "HiTOP: where depression sits", "shape": "pyramid", "layers": [{"label": "General factor (p)", "detail": "A broad liability to psychopathology shared by almost all disorders."}, {"label": "Spectra", "detail": "Internalising, thought disorder, disinhibited and antagonistic externalising, detachment, somatoform."}, {"label": "Subfactors", "detail": "Within internalising: distress (depression, GAD, PTSD) and fear (panic, phobias)."}, {"label": "Syndromes", "detail": "Clusters like major depression, built from symptoms that co-occur."}, {"label": "Symptoms and traits", "detail": "The base layer: low mood, anhedonia, worry, insomnia and so on, each a dimension."}], "caption": "Tap from the top down. Depression and GAD share the distress subfactor, which is why they co-occur so often."}
+{"title": "HiTOP: where depression sits", "shape": "pyramid", "layers": [{"label": "General factor (p)", "detail": "A broad liability to psychopathology shared by almost all disorders."}, {"label": "Spectra", "detail": "Internalising, thought disorder, disinhibited and antagonistic externalising, detachment, somatoform."}, {"label": "Subfactors", "detail": "Within internalising: distress (depression, GAD, PTSD) and fear (panic, phobias)."}, {"label": "Syndromes", "detail": "Clusters like major depression, built from symptoms that co-occur."}, {"label": "Symptoms and traits", "detail": "The base layer: low mood, anhedonia, worry, insomnia and so on, each a dimension."}], "caption": "Depression and GAD share the distress subfactor, which is why they co-occur so often."}
 :::
 
 ### Computational psychiatry
@@ -2064,7 +2064,7 @@ DSM categories are reliable enough to share, but they are not natural kinds. Two
 :::
 
 :::widget curve
-{"kind": "normal", "title": "Dimensions and cut-offs", "caption": "Depressive symptoms are spread continuously across people. A diagnosis draws a line on this curve. Move the line and watch how many people fall beyond it: a small shift in threshold changes prevalence a lot, which is one argument for dimensional models."}
+{"kind": "normal", "title": "Dimensions and cut-offs", "caption": "Depressive symptoms are spread continuously across people. A diagnosis draws a line on this curve."}
 :::
 
 :::recall

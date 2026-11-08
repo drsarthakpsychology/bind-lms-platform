@@ -60,7 +60,7 @@ No single theory explains all forgetting. Interference and retrieval failure are
     module: "learning-memory/3-4",
     visuals: [
       { kind: "compare", caption: "Interference theory", data: { title: "Two kinds of interference", a: { label: "Proactive", points: ["Old learning blocks new", "Writing last year's date in January", "Grows with number of earlier lists"], summary: "Forward in time." }, b: { label: "Retroactive", points: ["New learning blocks old", "Forgetting an old password after setting a new one", "Worse when new material is similar"], summary: "Backward in time." } } },
-      { kind: "curve", caption: "Motivated forgetting", data: { kind: "forgetting", title: "Ebbinghaus forgetting curve", caption: "Add a review a day later and see how the curve flattens." } },
+      { kind: "curve", caption: "Motivated forgetting", data: { kind: "forgetting", title: "Ebbinghaus forgetting curve" } },
     ],
     ref: "Ebbinghaus 1885; Jenkins and Dallenbach 1924; Underwood 1957; Tulving and Pearlstone 1966; Brown and McNeill 1966; Anderson and Green 2001 think/no-think; Atkinson and Hilgard ch 8",
   },
@@ -293,7 +293,7 @@ Amnesic patients have been natural experiments that revealed the architecture of
     pitfalls: ["Describing H.M. as having no memory at all", "Confusing dissociative and organic amnesia patterns"],
     module: "learning-memory/3-4",
     visuals: [
-      { kind: "brainexplorer", caption: "Lessons for the organisation of memory", data: { title: "Where amnesia comes from", focus: ["hippocampus", "thalamus", "amygdala", "frontal"], caption: "Switch on damage for the hippocampus. Which kinds of memory are lost, and which stay?" } },
+      { kind: "brainexplorer", caption: "Lessons for the organisation of memory", data: { title: "Where amnesia comes from", focus: ["hippocampus", "thalamus", "amygdala", "frontal"], caption: "Which kinds of memory are lost, and which stay?" } },
       { kind: "compare", caption: "The case of H.M.", data: { title: "What H.M. lost and kept", a: { label: "Lost", points: ["New facts and events", "About 11 years before surgery", "Recognising people met after 1953"], summary: "New declarative memory." }, b: { label: "Kept", points: ["Normal digit span", "Childhood memories", "Mirror drawing skill and priming"], summary: "Short-term memory and implicit learning." } } },
     ],
     ref: "Scoville and Milner 1957; Corkin 2002; Kopelman 2002 on Korsakoff; Wilson and Wearing 1995; Tulving 1985 on K.C.; Bear, Connors and Paradiso ch 24; Kaplan and Sadock ch on neurocognitive disorders",

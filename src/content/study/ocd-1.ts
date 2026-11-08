@@ -561,7 +561,7 @@ These ranges are for learning. They are not advice for anyone to take or change 
 :::
 
 :::widget journey
-{"drug": "fluvoxamine", "target": "serotonin transporters in orbitofrontal and striatal circuits", "routes": ["oral"], "notes": {"liver": "Fluvoxamine strongly inhibits the liver enzyme CYP1A2, raising levels of clozapine, caffeine and theophylline taken alongside it."}, "caption": "Follow the dose from tablet to target, and see why interactions happen in the liver."}
+{"drug": "fluvoxamine", "target": "serotonin transporters in orbitofrontal and striatal circuits", "routes": ["oral"], "notes": {"liver": "Fluvoxamine strongly inhibits the liver enzyme CYP1A2, raising levels of clozapine, caffeine and theophylline taken alongside it."}}
 :::
 
 :::recall

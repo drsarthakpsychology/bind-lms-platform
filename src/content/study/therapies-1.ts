@@ -79,8 +79,7 @@ In 1936, Saul Rosenzweig suggested that all therapies might work about equally, 
    "DBT skills for recurrent self-harm"
   ],
   "summary": "Matter most where a clear maintaining mechanism exists."
- },
- "caption": "Slide between them: good therapy delivers the right specific method through a strong relationship."
+ }
 }
 :::
 
@@ -150,8 +149,7 @@ Egan's **SOLER**: **S**it squarely facing the client (or at a slight angle), **O
    "Lets silence work"
   ],
   "summary": "The client feels understood and finds their own options."
- },
- "caption": "Slide between them and spot the microskill behind each difference."
+ }
 }
 :::
 
@@ -349,8 +347,7 @@ Q: Unconditional positive regard means:
    "parent": "t",
    "detail": "Supportive therapy, MI, art, music, drama, play."
   }
- ],
- "caption": "Tap each family and name one founder from the box below."
+ ]
 }
 :::
 
@@ -398,8 +395,7 @@ Q: Unconditional positive regard means:
    "Brief or long-term"
   ],
   "summary": "Understand patterns to change them."
- },
- "caption": "Slide across and decide which fits a client who wants practical tools quickly, and which fits a client stuck in repeating relationship patterns."
+ }
 }
 :::
 
@@ -769,7 +765,7 @@ Avoidance keeps fear alive (negative reinforcement). **Exposure** reverses this:
   ],
   "summary": "Fear fell because she stayed without the ritual."
  },
- "caption": "Slide to see what changed. Which change most predicts lasting recovery? (Dropping rituals and family accommodation.)"
+ "caption": "Which change most predicts lasting recovery? (Dropping rituals and family accommodation.)"
 }
 :::
 
@@ -1175,7 +1171,7 @@ The opposite is **sustain talk** ("I need a drink to sleep"). MI does not argue 
   ],
   "summary": "Reflect, affirm and invite more."
  },
- "caption": "Slide across. The ratio of change talk to sustain talk in a session predicts what happens next."
+ "caption": "The ratio of change talk to sustain talk in a session predicts what happens next."
 }
 :::
 

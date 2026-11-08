@@ -77,7 +77,7 @@ Serotonin neurons carry **5-HT1A autoreceptors** on their cell bodies. When an S
    "detail": "More serotonin at terminals, BDNF and new connections; mood improves."
   }
  ],
- "caption": "Press Play. This is one reason the first weeks need encouragement and side-effect support."
+ "caption": "This is one reason the first weeks need encouragement and side-effect support."
 }
 :::
 
@@ -163,15 +163,14 @@ Modern psychiatry increasingly thinks in **circuits**, groups of brain areas tha
   "basal-ganglia": "The nucleus accumbens for reward and craving; the caudate in OCD checking loops; the dorsal striatum for habits.",
   "thalamus": "Relays the cortico-striato-thalamo-cortical loop back to the cortex.",
   "hippocampus": "Context for fear memories."
- },
- "caption": "Tap each region and say which circuit, and which symptom, it belongs to."
+ }
 }
 :::
 
 ### Five circuits worth knowing
 
 :::widget figure
-{"id": "prefrontal", "quiz": true, "caption": "Name each numbered part in your head first, then tap to check."}
+{"id": "prefrontal", "quiz": true}
 :::
 
 | Circuit | Key parts | When it misfires |
@@ -517,8 +516,7 @@ Most people with a typical presentation do not need one. Red flags that justify 
   "basal-ganglia": "Deep brain stimulation for severe OCD targets the ventral capsule and ventral striatum; for Parkinson's disease, the subthalamic nucleus.",
   "thalamus": "A DBS target in tremor.",
   "brainstem": "Vagus nerve stimulation sends signals up through the brainstem."
- },
- "caption": "Tap each target and link it to the condition treated."
+ }
 }
 :::
 
@@ -540,7 +538,7 @@ Most people with a typical presentation do not need one. Red flags that justify 
 - **Transcranial direct current stimulation (tDCS)**: weak current via scalp electrodes; cheap and portable; evidence for depression is mixed.
 
 :::widget brainslicer
-{"title":"Slice the brain, then stimulate it","start":"slice","caption":"Scroll a coronal slice until the hippocampus appears, then switch to the rTMS coil and the ECT electrodes. Which treatment reaches deep structures directly, and which works through connections?"}
+{"title":"Slice the brain, then stimulate it","start":"slice","caption":"Which treatment reaches deep structures directly, and which works through connections?"}
 :::
 
 :::widget guess

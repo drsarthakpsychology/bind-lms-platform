@@ -99,8 +99,7 @@ Clinical care is a relay race. The case sheet is the baton. A smooth handover (c
    "Dated, timed, signed"
   ],
   "summary": "Accurate, attributed, defensible."
- },
- "caption": "Slide across and rewrite one of your own recent notes in the strong style."
+ }
 }
 :::
 
@@ -711,8 +710,7 @@ The HPI is the heart of the case sheet. It answers: **what happened, in what ord
    "label": "Help sought",
    "detail": "Doctors, medicines, healers, temples, and their effect."
   }
- ],
- "caption": "Press Play and narrate an HPI for a patient you have seen, one box at a time."
+ ]
 }
 :::
 
@@ -1008,7 +1006,7 @@ Use **shapes and lines**, never colour alone, so that the tree is readable when 
 
 
 :::widget genogram
-{"title":"Draw and read Ms N's family","condition":"a psychotic illness","caption":"Explore Ms N's family and run the pattern finder. Then press Start blank and draw a patient you have seen: three generations, every symbol, the diagnosis written beside each shaded shape."}
+{"title":"Draw and read Ms N's family","condition":"a psychotic illness","caption":"Explore Ms N's family and run the pattern finder."}
 :::
 
 :::widget figure

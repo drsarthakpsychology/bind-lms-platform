@@ -7,7 +7,7 @@ Exams ask you to "discuss the biological basis of schizophrenia" in 15 marks. A 
 ### The dopamine hypothesis in three versions
 
 :::widget figure
-{"id": "dopamine-pathways", "quiz": true, "caption": "Name each numbered part in your head first, then tap to check."}
+{"id": "dopamine-pathways", "quiz": true}
 :::
 
 | Version | Claim | Key evidence |
@@ -311,7 +311,7 @@ These disorders share the fear and threat circuits of 5.2, but each has its own 
 ### Anxiety and panic
 
 :::widget figure
-{"id": "amygdala-fear", "quiz": true, "caption": "Name each numbered part in your head first, then tap to check."}
+{"id": "amygdala-fear", "quiz": true}
 :::
 
 | Theory | Core idea and evidence |
@@ -524,7 +524,7 @@ Addictions are about **50 per cent heritable**. Some variants **protect**: the *
   { "id": "s", "label": "Synapse and neuron loss", "detail": "Hippocampal and temporoparietal atrophy; cholinergic loss." },
   { "id": "d", "label": "Dementia", "detail": "Episodic memory first, then language, visuospatial and executive skills." }
  ],
- "caption": "Press Play. At which step do anti-amyloid antibodies act, and why might they help only early? (At amyloid build-up; once tau and neuron loss are widespread, removing plaques changes less.)"
+ "caption": "At which step do anti-amyloid antibodies act, and why might they help only early? (At amyloid build-up; once tau and neuron loss are widespread, removing plaques changes less.)"
 }
 :::
 

@@ -82,7 +82,7 @@ No single method is enough. Measurement methods show what the brain does during 
     module: "brain/3-4",
     visuals: [
       { kind: "sort", caption: "Brain stimulation", data: { prompt: "Which method fits each question?", buckets: ["EEG or ERP", "fMRI", "TMS"], items: [{ text: "How many milliseconds after a word does the brain detect it is anomalous?", bucket: 0 }, { text: "Which region is most active when people recall faces?", bucket: 1 }, { text: "Is the left prefrontal cortex necessary for this memory task?", bucket: 2 }, { text: "Which networks are connected at rest in depression?", bucket: 1 }] } },
-      { kind: "brainslicer", caption: "fMRI", data: { title: "Imaging and stimulating the brain", start: "tms", caption: "Fire the coil over the left prefrontal cortex. Which deeper circuits does it reach?" } },
+      { kind: "brainslicer", caption: "fMRI", data: { title: "Imaging and stimulating the brain", start: "tms", caption: "Which deeper circuits does it reach?" } },
     ],
     ref: "Gazzaniga, Ivry and Mangun Cognitive Neuroscience ch 3; Bear, Connors and Paradiso ch 7; Walsh and Cowey 2000 TMS",
   },
@@ -146,7 +146,7 @@ Memory depends on interacting systems: the hippocampus binds new declarative mem
     keyPoints: ["Distributed memory systems and Lashley", "Hippocampus in binding and consolidation", "Place and grid cells or taxi driver study", "Prefrontal cortex in working memory and source memory", "Amygdala and emotional enhancement with McGaugh or Cahill", "Basal ganglia and cerebellum roles", "LTP mechanism with NMDA receptors", "Clinical links"],
     module: "brain/3-4",
     visuals: [
-      { kind: "brainexplorer", caption: "Prefrontal cortex", data: { title: "Memory systems in the brain", focus: ["hippocampus", "prefrontal", "amygdala", "basal-ganglia", "cerebellum"], caption: "Tap the hippocampus, then the amygdala. How does each help an exam-day memory last?" } },
+      { kind: "brainexplorer", caption: "Prefrontal cortex", data: { title: "Memory systems in the brain", focus: ["hippocampus", "prefrontal", "amygdala", "basal-ganglia", "cerebellum"], caption: "How does each help an exam-day memory last?" } },
       { kind: "flow", caption: "Long-term potentiation", data: { title: "How LTP strengthens a synapse", layout: "chain", nodes: [{ id: "a", label: "Strong, repeated input", detail: "Glutamate released many times." }, { id: "b", label: "Postsynaptic cell depolarised", detail: "AMPA receptors open first." }, { id: "c", label: "NMDA receptor unblocked", detail: "Magnesium leaves; calcium enters." }, { id: "d", label: "More AMPA receptors inserted", detail: "The synapse responds more strongly." }, { id: "e", label: "Protein synthesis and new spines", detail: "Late LTP: lasting change." }] } },
     ],
     ref: "Bear, Connors and Paradiso ch 24 and 25; Bliss and Lomo 1973; Hebb 1949; Morris et al 1986; Goldman-Rakic 1995; McGaugh 2004; Cahill et al 1994; Maguire et al 2000; Thompson 1986; Kandel 2001",

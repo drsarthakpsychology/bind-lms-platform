@@ -97,7 +97,7 @@ A **type** is a category: you are in it or not. A **trait** is a dimension: ever
 {
  "kind": "normal",
  "title": "Why traits beat types: scores fall on a curve",
- "caption": "Move the slider along a trait such as extraversion. Most people sit near the middle; very few are at the extremes. A type system cuts this curve in two, so two people a hair apart near the middle get opposite labels, which is why type tests are unstable on retest."
+ "caption": "Most people sit near the middle; very few are at the extremes. A type system cuts this curve in two, so two people a hair apart near the middle get opposite labels, which is why type tests are unstable on retest."
 }
 :::
 
@@ -285,7 +285,7 @@ Eysenck combined factor analysis with **hypothesis testing** and **biology**. He
 {
  "kind": "inverted-u",
  "title": "Eysenck's arousal idea as a curve",
- "caption": "Move the arousal slider. Everyone performs and feels best at a moderate level of arousal. Introverts, in Eysenck's theory, start further along the curve, so a noisy party pushes them past their peak; extraverts start lower and need extra stimulation to reach theirs."
+ "caption": "Everyone performs and feels best at a moderate level of arousal. Introverts, in Eysenck's theory, start further along the curve, so a noisy party pushes them past their peak; extraverts start lower and need extra stimulation to reach theirs."
 }
 :::
 

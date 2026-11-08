@@ -22,7 +22,7 @@ For a long time the brain was thought to be sealed off from the immune system. W
 :::widget stress
 {
   "title": "Stress, cortisol and inflammation",
-  "caption": "Play the stress response: amygdala, hypothalamus, pituitary, adrenal, then cortisol. Normally cortisol damps inflammation and switches the response off through feedback. Under chronic stress, immune cells become resistant to cortisol's calming signal, so inflammation can stay high: one route by which long-term stress and childhood adversity may raise the inflammatory markers seen in a subgroup of people with depression."
+  "caption": "Normally cortisol damps inflammation and switches the response off through feedback. Under chronic stress, immune cells become resistant to cortisol's calming signal, so inflammation can stay high: one route by which long-term stress and childhood adversity may raise the inflammatory markers seen in a subgroup of people with depression."
 }
 :::
 
@@ -43,7 +43,7 @@ For a long time the brain was thought to be sealed off from the immune system. W
     { "id": "kyn", "label": "Chemistry shifts", "detail": "Tryptophan is diverted from serotonin towards the kynurenine pathway, producing quinolinic acid, which acts on NMDA receptors. Dopamine signalling in reward circuits falls." },
     { "id": "sick", "label": "Sickness behaviour", "detail": "Fatigue, loss of pleasure, slowing, poor sleep and social withdrawal: overlapping with depression." }
   ],
-  "caption": "Press Play. Each link has support, mostly from animal and interferon studies; the whole chain is proven in only a subgroup of depressed people, if at all."
+  "caption": "Each link has support, mostly from animal and interferon studies; the whole chain is proven in only a subgroup of depressed people, if at all."
 }
 :::
 
@@ -209,7 +209,7 @@ The **Hierarchical Taxonomy of Psychopathology (HiTOP)** is built from statistic
     { "label": "Syndromes", "detail": "Clusters close to familiar diagnoses, such as major depression, but scored as dimensions." },
     { "label": "Components and symptoms", "detail": "The building blocks: low mood, anhedonia, worry, insomnia, checking. Two people with 'depression' may differ here." }
   ],
-  "caption": "Tap each level. A clinician can describe the same person at any level, from p down to single symptoms."
+  "caption": "A clinician can describe the same person at any level, from p down to single symptoms."
 }
 :::
 
@@ -291,7 +291,7 @@ Computational psychiatry uses **mathematical models of how the brain learns and 
     { "id": "prec", "label": "Precision weighting", "detail": "How much the error counts. In one theory of psychosis, dopamine gives too much weight to small errors, so random events feel significant." },
     { "id": "upd", "label": "Belief updated", "detail": "Ordinary updating is small. Over-weighted errors push towards new, odd explanations ('the glance was a signal'), which may harden into delusions." }
   ],
-  "caption": "Press Play. Psychosis, anxiety and autism have all been modelled as different settings of precision, which remains a research hypothesis."
+  "caption": "Psychosis, anxiety and autism have all been modelled as different settings of precision, which remains a research hypothesis."
 }
 :::
 
@@ -306,7 +306,7 @@ Computational psychiatry uses **mathematical models of how the brain learns and 
     "hippocampus": "Builds context and maps of possibilities; supports learning which situations are safe.",
     "thalamus": "Relays and filters sensory input; part of circuits proposed to set the precision of signals in psychosis models."
   },
-  "caption": "Tap each region. The models are precise and testable, but none is yet a clinical test."
+  "caption": "The models are precise and testable, but none is yet a clinical test."
 }
 :::
 
@@ -318,7 +318,7 @@ Smartphones and wearables record **sleep, movement, typing, phone use and voice*
 :::widget hypnogram
 {
  "title": "The night a wearable tries to measure",
- "caption": "Drag through a real night of stages, then switch on depression to see REM come earlier and deep sleep shrink. A wrist wearable cannot see these stages directly; it guesses them from movement and heart rate, so it is fair at total sleep and poor at stages. Shortened sleep over several nights, though, is one of the more useful early signs of a coming manic relapse."
+ "caption": "A wrist wearable cannot see these stages directly; it guesses them from movement and heart rate, so it is fair at total sleep and poor at stages. Shortened sleep over several nights, though, is one of the more useful early signs of a coming manic relapse."
 }
 :::
 

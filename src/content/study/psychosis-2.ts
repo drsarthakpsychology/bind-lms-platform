@@ -188,7 +188,7 @@ After a first episode, continuing medicine for at least **1 to 2 years** after r
 :::
 
 :::widget pathways
-{"system": "dopamine", "caption": "Turn on a D2 blocker: positive symptoms ease (mesolimbic), but EPS (nigrostriatal), raised prolactin (tuberoinfundibular) and worse negative and cognitive symptoms (mesocortical) can follow. Add serotonin 2A blockade to see why second-generation drugs cause fewer EPS."}
+{"system": "dopamine"}
 :::
 
 :::widget journey
