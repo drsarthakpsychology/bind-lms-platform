@@ -48,7 +48,7 @@ export function QuickChallenge({ title, items, kind, onWin }: { title: string; i
   if (!open) {
     return (
       <button type="button" className="mt-3 inline-flex min-h-11 items-center gap-2 rounded-md border-2 border-foreground bg-[var(--status-pending-bg)] px-3 text-sm font-semibold" onClick={() => setOpen(true)}>
-        <Trophy className="size-4" aria-hidden /> Quick challenge: {title} ({items.length} questions)
+        <Trophy className="size-4" aria-hidden /> Quick challenge: {title}
       </button>
     );
   }
@@ -56,7 +56,7 @@ export function QuickChallenge({ title, items, kind, onWin }: { title: string; i
     <section className="mt-3 rounded-xl border-2 border-foreground p-3" aria-label={`Quick challenge: ${title}`}>
       <div className="flex items-center justify-between gap-2 text-sm font-semibold">
         <span className="flex items-center gap-1.5"><Trophy className="size-4" aria-hidden /> {title}</span>
-        <span className="tabular-nums" aria-live="polite">Score {score} of {items.length}</span>
+        <span className="tabular-nums" aria-live="polite">Score {score}</span>
       </div>
       {finished ? (
         <div className="vibha-pop mt-2">
@@ -65,7 +65,7 @@ export function QuickChallenge({ title, items, kind, onWin }: { title: string; i
         </div>
       ) : (
         <div className="mt-2">
-          <p className="text-[0.95rem] font-semibold">Question {i + 1} of {items.length}. {it.q}</p>
+          <p className="text-[0.95rem] font-semibold">Question {i + 1}. {it.q}</p>
           <div className="mt-2 grid gap-1.5" role="group" aria-label="Answers">
             {it.options.map((o, k) => {
               const wrong = picked.includes(k) && k !== it.answer;

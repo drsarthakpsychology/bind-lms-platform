@@ -1,4 +1,5 @@
 import { BOARDS_MORE } from "./boards-more";
+import { BOARDS_THIRD } from "./boards-third";
 import { exams, type Exam, type ExamSet } from "../tags";
 
 /**
@@ -214,7 +215,7 @@ for (const b of BOARDS) {
   const t = LEGACY_TAGS[b.id];
   if (t && !b.objective) Object.assign(b, { objective: t[0], exams: exams(t[1]) });
 }
-BOARDS.push(...BOARDS_MORE);
+BOARDS.push(...BOARDS_MORE, ...BOARDS_THIRD);
 
 const BY_ID = new Map(BOARDS.map((b) => [b.id, b]));
 export function boardById(id: string): SortBoard | undefined {

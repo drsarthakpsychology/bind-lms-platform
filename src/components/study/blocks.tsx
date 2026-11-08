@@ -7,7 +7,7 @@ import { ViewOnly, Widget } from "./widgets";
 /** How each box looks and what its label says. Palette: blue, lime, ink, white; red only for traps and safety. */
 const BOX: Record<BoxKind, { label: string; cls: string; labelCls: string }> = {
   define: {
-    label: "Definition · learn it word for word",
+    label: "Definition",
     cls: "border-2 border-foreground border-l-[10px] border-l-brand bg-card",
     labelCls: "text-link",
   },
@@ -42,7 +42,7 @@ const BOX: Record<BoxKind, { label: string; cls: string; labelCls: string }> = {
     labelCls: "",
   },
   analogy: {
-    label: "The picture that makes it stick",
+    label: "Picture it",
     cls: "border-2 border-dashed border-foreground bg-card",
     labelCls: "text-link",
   },
@@ -209,7 +209,6 @@ export function Blocks({ blocks }: { blocks: Block[] }) {
                   <span aria-hidden className="mt-0.5 grid size-7 shrink-0 place-items-center rounded-md border-2 border-foreground bg-primary text-sm font-black text-primary-foreground">Q</span>
                   <span className="min-w-0 flex-1">
                     <span className="block font-semibold leading-snug"><Rich text={b.q} /></span>
-                    <span className="mt-1 block text-xs font-semibold text-muted-foreground group-open:hidden">Think it through, then open the answer</span>
                   </span>
                   {b.level ? <span className="shrink-0 rounded-full border-2 border-foreground px-2 py-0.5 text-[0.65rem] font-semibold uppercase">{b.level}</span> : null}
                 </summary>

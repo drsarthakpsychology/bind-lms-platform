@@ -5,6 +5,7 @@ import { haptic } from "@/lib/haptics";
 import { scoreObserve } from "@/lib/mse/ladder";
 import { buildMseAttemptPayload, scoreMseLevel1Attempt } from "@/lib/practice/mse-attempt";
 import { OBSERVE_STIMULI } from "@/lib/practice/mse-observe-stimuli";
+import { noteAnswer } from "@/lib/history/client";
 
 /**
  * MSE Level 1: Observe. The first rung of the ladder: describe what you can
@@ -54,6 +55,7 @@ export function ObserveLevel({
   /** Persist this Level 1 attempt (a check, not a test, silent on failure). */
   async function persist() {
     const completedAt = new Date();
+    noteAnswer("mse-trainer", stimulus.id, result.labels.length === 0 && wordCount >= 80);
     const payload = buildMseAttemptPayload(
       stimulus,
       "1",
@@ -76,7 +78,7 @@ export function ObserveLevel({
     <div className="space-y-4 rounded-md border-2 border-border bg-card p-5 hard-shadow-sm">
       <div className="flex items-center justify-between">
         <p className="text-eyebrow text-muted-foreground">
-          Level 1 · Observe · stimulus {idx + 1}/{stimuli.length}
+          Level 1 · Observe · stimulus {idx + 1}
         </p>
         <p className="text-caption text-muted-foreground">{wordCount} words · {result.score} score</p>
       </div>
@@ -130,7 +132,7 @@ export function ObserveLevel({
           </p>
           {stimulus.why ? (
             <p className="text-small">
-              <span className="font-semibold">A model description: </span>
+              <span className="font-semibold">A good description: </span>
               {stimulus.why}
             </p>
           ) : null}

@@ -28,7 +28,7 @@ export default async function SmartPage() {
       <BackToPrep />
       <header className="space-y-1">
         <h1 className="text-h1">Smart practice</h1>
-        <p className="text-muted-foreground">{smart.reviews ? `10 questions from your weak topics, including ${smart.reviews} you missed before.` : "10 questions from your weak topics."}</p>
+        <p className="text-muted-foreground">{smart.reviews ? `From your weak topics, including ${smart.reviews} you missed before.` : "From your weak topics."}</p>
       </header>
       <QuestionRunner
         key={smart.ids.join(",")}
@@ -38,7 +38,7 @@ export default async function SmartPage() {
         preview={!me.learner}
         label="Smart practice"
         again="refresh"
-        againLabel="Another 10"
+        againLabel="More questions"
         back={{ href: "/prep", label: "Exam Prep" }}
         empty={<p className="font-semibold">Questions are being added.</p>}
       />

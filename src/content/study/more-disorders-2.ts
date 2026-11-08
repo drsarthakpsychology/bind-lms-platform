@@ -40,7 +40,7 @@ Starvation affects nearly every organ:
 - **Gut**: slow emptying, constipation, bloating.
 
 :::widget flow
-{"title": "How refeeding syndrome happens", "layout": "chain", "nodes": [{"id": "a", "label": "Starvation", "detail": "The body runs on fat and protein; stores of phosphate, potassium and magnesium inside cells run low."}, {"id": "b", "label": "Feeding restarts", "detail": "Carbohydrate arrives and insulin rises."}, {"id": "c", "label": "Minerals rush into cells", "detail": "Insulin drives phosphate, potassium and magnesium from the blood into cells; thiamine is used up."}, {"id": "d", "label": "Blood levels crash", "detail": "Very low phosphate, potassium and magnesium."}, {"id": "e", "label": "Organ failure", "detail": "Heart failure, arrhythmia, breathing failure, confusion, seizures."}, {"id": "f", "label": "Prevention", "detail": "Monitored refeeding, daily bloods early on, phosphate and thiamine, careful but steady increases."}], "caption": "Press Play. The danger lies in refeeding without monitoring, not in refeeding itself."}
+{"title": "How refeeding syndrome happens", "layout": "chain", "nodes": [{"id": "a", "label": "Starvation", "detail": "The body runs on fat and protein; stores of phosphate, potassium and magnesium inside cells run low."}, {"id": "b", "label": "Feeding restarts", "detail": "Carbohydrate arrives and insulin rises."}, {"id": "c", "label": "Minerals rush into cells", "detail": "Insulin drives phosphate, potassium and magnesium from the blood into cells; thiamine is used up."}, {"id": "d", "label": "Blood levels crash", "detail": "Very low phosphate, potassium and magnesium."}, {"id": "e", "label": "Organ failure", "detail": "Heart failure, arrhythmia, breathing failure, confusion, seizures."}, {"id": "f", "label": "Prevention", "detail": "Monitored refeeding, daily bloods early on, phosphate and thiamine, careful but steady increases."}], "caption": "The danger lies in refeeding without monitoring, not in refeeding itself."}
 :::
 
 :::safety Refeeding syndrome
@@ -106,7 +106,7 @@ Q: An adult with anorexia has a BMI of 14.6. Severity is:
 Signs to look for: swollen salivary glands (puffy cheeks), dental erosion, calluses on the knuckles from inducing vomiting (**Russell's sign**), low potassium, and a high blood bicarbonate (metabolic alkalosis) from vomiting.
 
 :::widget flow
-{"title": "The binge-purge cycle", "layout": "cycle", "nodes": [{"id": "a", "label": "Strict dieting", "detail": "Skipping meals, food rules, long gaps."}, {"id": "b", "label": "Hunger and a trigger", "detail": "Physical hunger plus stress, boredom or low mood."}, {"id": "c", "label": "Binge", "detail": "Loss of control over eating."}, {"id": "d", "label": "Shame and fear of weight gain", "detail": "Disgust, guilt, panic."}, {"id": "e", "label": "Compensation", "detail": "Vomiting, laxatives, fasting or exercise; brief relief."}], "caption": "Press Play. CBT starts by breaking the dieting link with regular meals."}
+{"title": "The binge-purge cycle", "layout": "cycle", "nodes": [{"id": "a", "label": "Strict dieting", "detail": "Skipping meals, food rules, long gaps."}, {"id": "b", "label": "Hunger and a trigger", "detail": "Physical hunger plus stress, boredom or low mood."}, {"id": "c", "label": "Binge", "detail": "Loss of control over eating."}, {"id": "d", "label": "Shame and fear of weight gain", "detail": "Disgust, guilt, panic."}, {"id": "e", "label": "Compensation", "detail": "Vomiting, laxatives, fasting or exercise; brief relief."}], "caption": "CBT starts by breaking the dieting link with regular meals."}
 :::
 
 ### Binge-eating disorder
@@ -175,7 +175,7 @@ Insomnia often begins with a stressor, then **keeps going** because of habits an
 :::
 
 :::widget flow
-{"title": "Spielman's 3P model of insomnia", "layout": "chain", "nodes": [{"id": "a", "label": "Predisposing", "detail": "A tendency to worry, light sleep, hyperarousal, family history."}, {"id": "b", "label": "Precipitating", "detail": "A stressor: exams, illness, a new baby, bereavement, shift change."}, {"id": "c", "label": "Perpetuating", "detail": "Habits that keep it going: long time in bed awake, napping, clock-watching, worry about sleep, alcohol, sleeping pills."}, {"id": "d", "label": "Chronic insomnia", "detail": "Continues long after the stressor ends, maintained by the perpetuating factors."}], "caption": "Press Play. CBT-I targets the perpetuating factors, which is why it works even when the original stress has gone."}
+{"title": "Spielman's 3P model of insomnia", "layout": "chain", "nodes": [{"id": "a", "label": "Predisposing", "detail": "A tendency to worry, light sleep, hyperarousal, family history."}, {"id": "b", "label": "Precipitating", "detail": "A stressor: exams, illness, a new baby, bereavement, shift change."}, {"id": "c", "label": "Perpetuating", "detail": "Habits that keep it going: long time in bed awake, napping, clock-watching, worry about sleep, alcohol, sleeping pills."}, {"id": "d", "label": "Chronic insomnia", "detail": "Continues long after the stressor ends, maintained by the perpetuating factors."}], "caption": "CBT-I targets the perpetuating factors, which is why it works even when the original stress has gone."}
 :::
 
 :::widget conditioning
@@ -259,7 +259,7 @@ When the body clock is out of step with the timing a person needs:
 - **Sleep paralysis**: briefly unable to move on waking or falling asleep, often with a sense of a presence; common and usually harmless.
 
 :::widget brainmap
-{"title": "Brain areas behind narcolepsy and parasomnias", "focus": ["hypothalamus", "brainstem", "thalamus"], "notes": {"hypothalamus": "Orexin neurons here keep us awake and stabilise the switch between sleep and wake. Their loss causes narcolepsy type 1.", "brainstem": "Generates REM sleep and its muscle paralysis. Damage to the paralysis circuit causes REM sleep behaviour disorder.", "thalamus": "Gates sensory input during sleep; partial arousal from deep sleep, with the cortex half-awake, underlies sleepwalking and sleep terrors."}, "caption": "Tap each area."}
+{"title": "Brain areas behind narcolepsy and parasomnias", "focus": ["hypothalamus", "brainstem", "thalamus"], "notes": {"hypothalamus": "Orexin neurons here keep us awake and stabilise the switch between sleep and wake. Their loss causes narcolepsy type 1.", "brainstem": "Generates REM sleep and its muscle paralysis. Damage to the paralysis circuit causes REM sleep behaviour disorder.", "thalamus": "Gates sensory input during sleep; partial arousal from deep sleep, with the cortex half-awake, underlies sleepwalking and sleep terrors."}}
 :::
 
 :::widget figure
@@ -345,7 +345,7 @@ Positive signs include:
 :::
 
 :::widget flow
-{"title": "Body symptoms without a disease explanation: sorting the possibilities", "layout": "tree", "nodes": [{"id": "r", "label": "Distressing body symptoms", "detail": "First, a proper medical assessment. Then ask about intention and the person's response to the symptoms."}, {"id": "ssd", "label": "Real symptoms, excessive worry and effort", "detail": "Somatic symptom disorder.", "parent": "r"}, {"id": "ia", "label": "Few symptoms, intense fear of illness", "detail": "Illness anxiety disorder.", "parent": "r"}, {"id": "fnd", "label": "Neurological symptoms with positive signs", "detail": "Functional neurological disorder.", "parent": "r"}, {"id": "fd", "label": "Deliberately produced, no external reward", "detail": "Factitious disorder (imposed on self or another).", "parent": "r"}, {"id": "mal", "label": "Deliberately produced for gain", "detail": "Malingering: not a mental disorder.", "parent": "r"}, {"id": "dep", "label": "Part of depression or anxiety", "detail": "Treat the underlying disorder; common in Indian clinics.", "parent": "r"}], "caption": "Tap each branch."}
+{"title": "Body symptoms without a disease explanation: sorting the possibilities", "layout": "tree", "nodes": [{"id": "r", "label": "Distressing body symptoms", "detail": "First, a proper medical assessment. Then ask about intention and the person's response to the symptoms."}, {"id": "ssd", "label": "Real symptoms, excessive worry and effort", "detail": "Somatic symptom disorder.", "parent": "r"}, {"id": "ia", "label": "Few symptoms, intense fear of illness", "detail": "Illness anxiety disorder.", "parent": "r"}, {"id": "fnd", "label": "Neurological symptoms with positive signs", "detail": "Functional neurological disorder.", "parent": "r"}, {"id": "fd", "label": "Deliberately produced, no external reward", "detail": "Factitious disorder (imposed on self or another).", "parent": "r"}, {"id": "mal", "label": "Deliberately produced for gain", "detail": "Malingering: not a mental disorder.", "parent": "r"}, {"id": "dep", "label": "Part of depression or anxiety", "detail": "Treat the underlying disorder; common in Indian clinics.", "parent": "r"}]}
 :::
 
 :::widget compare
@@ -473,7 +473,7 @@ Sexual problems are common and often treatable. A dysfunction is diagnosed when 
 :::
 
 :::widget flow
-{"title": "Sexual problems: finding the cause", "layout": "tree", "nodes": [{"id": "r", "label": "A persistent sexual problem with distress", "detail": "Take a private, respectful history: lifelong or new, all situations or some."}, {"id": "m", "label": "Medical", "detail": "Diabetes, vascular disease, low testosterone, thyroid, pelvic problems. Gradual, constant problems suggest this.", "parent": "r"}, {"id": "d", "label": "Medicines and substances", "detail": "SSRIs, SNRIs, antipsychotics with prolactin rise, beta-blockers, alcohol, opioids.", "parent": "r"}, {"id": "p", "label": "Psychological", "detail": "Performance anxiety, depression, guilt, trauma, myths. Normal morning erections point here.", "parent": "r"}, {"id": "rel", "label": "Relationship", "detail": "Conflict, lack of privacy, pressure to conceive.", "parent": "r"}], "caption": "Tap each branch. Most problems have more than one cause."}
+{"title": "Sexual problems: finding the cause", "layout": "tree", "nodes": [{"id": "r", "label": "A persistent sexual problem with distress", "detail": "Take a private, respectful history: lifelong or new, all situations or some."}, {"id": "m", "label": "Medical", "detail": "Diabetes, vascular disease, low testosterone, thyroid, pelvic problems. Gradual, constant problems suggest this.", "parent": "r"}, {"id": "d", "label": "Medicines and substances", "detail": "SSRIs, SNRIs, antipsychotics with prolactin rise, beta-blockers, alcohol, opioids.", "parent": "r"}, {"id": "p", "label": "Psychological", "detail": "Performance anxiety, depression, guilt, trauma, myths. Normal morning erections point here.", "parent": "r"}, {"id": "rel", "label": "Relationship", "detail": "Conflict, lack of privacy, pressure to conceive.", "parent": "r"}], "caption": "Most problems have more than one cause."}
 :::
 
 ### Gender dysphoria
@@ -537,7 +537,7 @@ Related disorders placed elsewhere in DSM-5-TR:
 :::
 
 :::widget flow
-{"title": "The impulse control cycle", "layout": "cycle", "nodes": [{"id": "a", "label": "Rising tension", "detail": "An urge to steal, set a fire or explode."}, {"id": "b", "label": "The act", "detail": "Stealing, fire-setting, an outburst."}, {"id": "c", "label": "Relief or pleasure", "detail": "Tension drops, which rewards the act."}, {"id": "d", "label": "Regret and shame", "detail": "Often followed by guilt and secrecy, which add stress and the next urge."}], "caption": "Press Play. Treatment interrupts the cycle: noticing urges early, competing responses, CBT, and medicines such as naltrexone or fluoxetine for some disorders."}
+{"title": "The impulse control cycle", "layout": "cycle", "nodes": [{"id": "a", "label": "Rising tension", "detail": "An urge to steal, set a fire or explode."}, {"id": "b", "label": "The act", "detail": "Stealing, fire-setting, an outburst."}, {"id": "c", "label": "Relief or pleasure", "detail": "Tension drops, which rewards the act."}, {"id": "d", "label": "Regret and shame", "detail": "Often followed by guilt and secrecy, which add stress and the next urge."}], "caption": "Treatment interrupts the cycle: noticing urges early, competing responses, CBT, and medicines such as naltrexone or fluoxetine for some disorders."}
 :::
 
 ### Elimination disorders (recap and adults)

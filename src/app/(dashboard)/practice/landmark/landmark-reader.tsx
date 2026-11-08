@@ -1,5 +1,6 @@
 "use client";
 
+import { noteAnswer } from "@/lib/history/client";
 import * as React from "react";
 import { haptic } from "@/lib/haptics";
 import { AlertTriangle, GitCompare } from "lucide-react";
@@ -22,7 +23,7 @@ export function LandmarkReader({ cases }: { cases: LandmarkCase[] }) {
   return (
     <div className="space-y-4">
       <div className="flex items-center justify-between text-small text-muted-foreground">
-        <span>{c.domain.replace("_", " ")} · case {idx + 1} of {cases.length}</span>
+        <span>{c.domain.replace("_", " ")} · case {idx + 1}</span>
       </div>
 
       {/* the case */}
@@ -82,7 +83,7 @@ export function LandmarkReader({ cases }: { cases: LandmarkCase[] }) {
 
       <button
         type="button"
-        onClick={() => { setIdx((i) => Math.min(cases.length - 1, i + 1)); haptic("tap"); }}
+        onClick={() => { noteAnswer("landmark", c.id, null); setIdx((i) => Math.min(cases.length - 1, i + 1)); haptic("tap"); }}
         disabled={idx + 1 >= cases.length}
         className="w-full rounded-md border-2 border-border bg-primary px-4 py-2.5 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px disabled:opacity-50"
       >

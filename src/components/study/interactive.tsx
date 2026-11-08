@@ -5,6 +5,8 @@ import { ArrowLeft, ArrowRight, Check, Eye, Layers, RotateCcw, X } from "lucide-
 import { istToday, recordTest } from "@/lib/learn/engine";
 import { getLearnState, setLearnState } from "@/lib/learn/store";
 import type { Card, Mcq } from "@/lib/study/types";
+import { noteAnswers, orderFor, useHistoryPrefetch } from "@/lib/history/client";
+import type { HistoryTool } from "@/lib/history/order";
 import { cn } from "@/lib/utils";
 import { Rich } from "./rich";
 
@@ -102,7 +104,7 @@ export function CardDeck({
               <Rich text={c.a} />
             </p>
           ) : (
-            <p className="mt-3 text-sm text-muted-foreground">Check your answer against the notes above.</p>
+            <p className="mt-3 text-sm text-muted-foreground">The answer is in the notes above.</p>
           )}
           <div className="mt-4 grid grid-cols-2 gap-2">
             <button type="button" onClick={() => next(false)} className="h-11 rounded-xl border-2 border-foreground font-semibold">
@@ -123,13 +125,21 @@ export function CardDeck({
 }
 
 /** The module test: a start screen, one question at a time, then the score and a review. */
+/** A stable id for a study question in the answer history (its text, hashed). */
+export function mcqKey(moduleId: string, m: Mcq): string {
+  let h = 2166136261;
+  for (let i = 0; i < m.q.length; i++) h = Math.imul(h ^ m.q.charCodeAt(i), 16777619);
+  return `${moduleId.slice(0, 120)}:${(h >>> 0).toString(36)}`;
+}
+
 export function TestRunner({
-  items,
+  items: given,
   moduleId,
   label = "Module test",
   intro,
   onDone,
   autoStart = false,
+  historyTool = "module-test",
 }: {
   items: Mcq[];
   /** Where the score is saved (a module id, or a checkpoint key). */
@@ -138,7 +148,12 @@ export function TestRunner({
   intro?: string[];
   onDone?: (right: number, total: number) => void;
   autoStart?: boolean;
+  /** Where answers are remembered (src/lib/history): each start opens on questions not yet seen, then missed ones. */
+  historyTool?: HistoryTool;
 }) {
+  useHistoryPrefetch(historyTool);
+  const [items, setItems] = React.useState(given);
+  const reorder = () => setItems(orderFor(historyTool, given, (m) => mcqKey(moduleId, m)));
   const [i, setI] = React.useState(autoStart ? 0 : -1);
   const [picks, setPicks] = React.useState<Record<number, number>>({});
   const [done, setDone] = React.useState(false);
@@ -148,6 +163,7 @@ export function TestRunner({
 
   function submit() {
     setDone(true);
+    noteAnswers(historyTool, items.map((m, k) => ({ item: mcqKey(moduleId, m), correct: picks[k] === m.answer })));
     const s = getLearnState();
     if (s) setLearnState(recordTest(s, moduleId, right, items.length, istToday()));
     onDone?.(right, items.length);
@@ -157,14 +173,13 @@ export function TestRunner({
   if (i < 0 && !done) {
     return (
       <div ref={top} className="rounded-3xl border-2 border-foreground bg-card p-5 sm:p-6">
-        <p className="text-sm font-semibold text-link">{label}</p>
-        <p className="mt-1 text-2xl font-bold">{items.length} questions</p>
-        <ul className="mt-3 space-y-1.5 text-[0.95rem] text-muted-foreground">
-          {(intro ?? ["Pass with 80% or more. Retake any time: your best score counts."]).map((t) => (
+        <p className="text-2xl font-bold">{label}</p>
+        <ul className="mt-3 space-y-1.5 text-[0.95rem] text-muted-foreground empty:hidden">
+          {(intro ?? ["Pass mark: 80%. Your best score counts."]).map((t) => (
             <li key={t}>{t}</li>
           ))}
         </ul>
-        <button type="button" onClick={() => setI(0)} className="btn-sweep mt-5 inline-flex h-12 items-center gap-2 rounded-2xl border-2 border-foreground bg-primary px-6 font-bold text-primary-foreground hard-shadow-sm">
+        <button type="button" onClick={() => { reorder(); setI(0); }} className="btn-sweep mt-5 inline-flex h-12 items-center gap-2 rounded-2xl border-2 border-foreground bg-primary px-6 font-bold text-primary-foreground hard-shadow-sm">
           Start <ArrowRight className="size-5" aria-hidden />
         </button>
       </div>
@@ -180,7 +195,7 @@ export function TestRunner({
             {right} <span className="text-xl font-semibold">/ {items.length}</span>
           </p>
           <p className="mt-1 text-sm opacity-90">{right / items.length >= 0.8 ? "Strong. Look over the ones you missed, then move on." : "Go back to the sections behind the ones you missed, then re-test."}</p>
-          <button type="button" onClick={() => { setPicks({}); setDone(false); setI(0); toTop(); }} className="mt-3 inline-flex min-h-11 items-center gap-1.5 rounded-md border-2 border-primary px-3 py-1.5 text-sm font-semibold text-primary">
+          <button type="button" onClick={() => { reorder(); setPicks({}); setDone(false); setI(0); toTop(); }} className="mt-3 inline-flex min-h-11 items-center gap-1.5 rounded-md border-2 border-primary px-3 py-1.5 text-sm font-semibold text-primary">
             <RotateCcw className="size-4" aria-hidden /> Try again
           </button>
         </div>

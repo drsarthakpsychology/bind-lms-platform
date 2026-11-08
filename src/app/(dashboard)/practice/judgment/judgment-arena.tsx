@@ -117,7 +117,7 @@ export function JudgmentArena({ items }: { items: SctItem[] }) {
     <div className="space-y-4">
       {/* progress + timer */}
       <div className="flex items-center justify-between text-small text-muted-foreground">
-        <span>Judgment call {idx + 1} of {items.length}</span>
+        <span>Judgment call {idx + 1}</span>
         <span className="text-numeric">{mm}:{ss}</span>
       </div>
 

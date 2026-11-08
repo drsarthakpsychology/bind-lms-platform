@@ -5,8 +5,10 @@ import * as React from "react";
 import { emptyState, finishLesson, istToday, type LearnState, type Payout } from "@/lib/learn/engine";
 import { SCENARIOS, WORDS, type Choice, type Scenario } from "@/lib/learn/scenarios";
 import { ALL_TERMS } from "@/lib/learn/notes";
+import { SAY_IT, type SayIt } from "@/lib/decode/say-it";
 import { initLearnStore, setLearnState, useLearnState } from "@/lib/learn/store";
 import { haptic } from "@/lib/haptics";
+import { noteAnswer, pickRoundFor, useHistoryPrefetch } from "@/lib/history/client";
 import { cn } from "@/lib/utils";
 import { Chai, ChaiSays } from "./chai";
 import { Summary } from "./player";
@@ -36,10 +38,12 @@ export function ScenarioGame({ serverState, save, noteId }: { serverState: Learn
   const [picked, setPicked] = React.useState<Choice | null>(null);
   const [answers, setAnswers] = React.useState<{ id: string; correct: boolean }[]>([]);
   const [result, setResult] = React.useState<Payout | null>(null);
+  useHistoryPrefetch("wwyd");
 
   function start() {
     const pool = noteId ? SCENARIOS.filter((x) => x.noteId === noteId) : SCENARIOS;
-    setDeck(shuffle(pool).slice(0, 5));
+    // Answer history (src/lib/history): scenarios not played yet first, missed ones spaced out.
+    setDeck(pickRoundFor("wwyd", pool, (x) => x.id, 5, roll));
     setSi(0);
     setBi(0);
     setPicked(null);
@@ -73,6 +77,9 @@ export function ScenarioGame({ serverState, save, noteId }: { serverState: Learn
   function next() {
     setPicked(null);
     if (bi + 1 < sc.beats.length) return setBi(bi + 1);
+    // A scenario counts as right when every step took the best response.
+    const mine = [...answers.filter((a) => a.id.startsWith(`${sc.id}-`))];
+    noteAnswer("wwyd", sc.id, mine.length > 0 && mine.every((a) => a.correct));
     if (si + 1 < deck!.length) {
       setSi(si + 1);
       setBi(0);
@@ -90,7 +97,7 @@ export function ScenarioGame({ serverState, save, noteId }: { serverState: Learn
           {sc.topic} · <span className="text-muted-foreground">{sc.who}</span>
         </p>
         <span className="font-pix text-xs">
-          {si + 1}/{deck.length}
+          {si + 1}
         </span>
       </div>
       <Options key={`${sc.id}-${bi}`} beat={beat} options={options} picked={picked} onChoose={choose} />
@@ -139,21 +146,64 @@ function Options({ beat, options, picked, onChoose }: { beat: Scenario["beats"][
 }
 
 /* ============================================================ Say it clinically */
-type Q = { prompt: string; answer: string; options: string[]; why: string; kind: "term" | "words" };
+type Q = { id: string; prompt: string; language?: string; answer: string; options: string[]; why: string; meaning?: string; note?: string; kind: "term" | "words"; level: number };
 
+/** Lay phrase to clinical term cards: the hand-written phrase bank first, then the terms in the Study notes. */
+type Card = { id: string; phrase: string; language?: string; meaning?: string; term: string; wrong: string[]; why: string; note?: string; level: number };
+const NOTE_CARDS: Card[] = ALL_TERMS.map((t) => ({
+  id: `note-${t.noteId}-${t.term}`,
+  phrase: t.lay,
+  term: t.term,
+  wrong: [],
+  why: `${t.topic}: \u201c${t.lay}\u201d is written as ${t.term}.`,
+  level: 2,
+}));
+const SAY_CARDS: Card[] = SAY_IT.map((x: SayIt) => ({ id: x.id, phrase: x.phrase, language: x.language, meaning: x.meaning, term: x.term, wrong: x.wrong, why: x.why, note: x.note, level: x.difficulty }));
+const CARDS: Card[] = [...SAY_CARDS, ...NOTE_CARDS];
+const TERM_NAMES = [...new Set(CARDS.map((c) => c.term))];
+
+/** Cards seen lately on this device, so each round draws ones not yet shown. */
+const SEEN_KEY = "say-it-seen-v2";
+function seenIds(): string[] {
+  try {
+    const v = JSON.parse(localStorage.getItem(SEEN_KEY) ?? "[]");
+    return Array.isArray(v) ? v.filter((x) => typeof x === "string") : [];
+  } catch {
+    return [];
+  }
+}
+function remember(ids: string[]) {
+  try {
+    const keep = Math.max(0, CARDS.length - 24);
+    localStorage.setItem(SEEN_KEY, JSON.stringify([...seenIds().filter((x) => !ids.includes(x)), ...ids].slice(-keep)));
+  } catch {
+    /* private window: rounds are still random */
+  }
+}
+
+/** Call from event handlers only (reads the answer history). */
 function buildRound(): Q[] {
-  const terms = shuffle(ALL_TERMS).slice(0, 8).map((t) => {
-    const others = shuffle(ALL_TERMS.filter((x) => x.term !== t.term)).slice(0, 3).map((x) => x.term);
-    return { prompt: `They say: “${t.lay}”. You write:`, answer: t.term, options: shuffle([t.term, ...others]), why: `${t.topic}: “${t.lay}” → ${t.term}`, kind: "term" as const };
-  });
-  const words = shuffle(WORDS).slice(0, 4).map((w) => ({ prompt: "Which is the better way to say it?", answer: w.better, options: shuffle([w.better, w.worse]), why: w.why, kind: "words" as const }));
-  return shuffle([...terms, ...words]);
+  // Answer history (src/lib/history): phrases and wordings not seen yet first, missed ones next.
+  const picked = pickRoundFor("say-it", CARDS, (c) => c.id, 8, roll);
+  remember(picked.map((c) => c.id));
+  const terms = picked
+    .sort((a, b) => a.level - b.level)
+    .map((c) => {
+      const wrong = c.wrong.length >= 3 ? c.wrong.slice(0, 3) : shuffle(TERM_NAMES.filter((x) => x !== c.term)).slice(0, 3);
+      return { id: c.id, prompt: `They say: \u201c${c.phrase}\u201d. You write:`, language: c.language, answer: c.term, options: shuffle([c.term, ...wrong]), why: c.why, meaning: c.meaning, note: c.note, kind: "term" as const, level: c.level };
+    });
+  const words = pickRoundFor("say-it", WORDS, (w) => `words-${w.better}`, 4, roll).map((w) => ({ id: `words-${w.better}`, prompt: "Which is the better way to say it?", answer: w.better, options: shuffle([w.better, w.worse]), why: w.why, kind: "words" as const, level: 1 }));
+  // Phrase cards climb in difficulty; the four wording cards slot in between them.
+  const out: Q[] = [...terms];
+  for (const [k, w] of words.entries()) out.splice(Math.min(out.length, 2 + k * 3), 0, w);
+  return out;
 }
 
 export function TermsGame({ serverState, save }: { serverState: LearnState | null; save: (s: LearnState) => Promise<unknown> }) {
   initLearnStore(serverState, save);
   const state = useLearnState(serverState ?? EMPTY);
   const [round, setRound] = React.useState<Q[] | null>(null);
+  useHistoryPrefetch("say-it");
   const [i, setI] = React.useState(0);
   const [pick, setPick] = React.useState<string | null>(null);
   const [answers, setAnswers] = React.useState<{ id: string; correct: boolean }[]>([]);
@@ -166,7 +216,7 @@ export function TermsGame({ serverState, save }: { serverState: LearnState | nul
         <Chai mood="happy" size={130} />
         <h1 className="text-h1">Say it clinically</h1>
         <button type="button" onClick={() => setRound(buildRound())} className="btn-sweep h-14 w-full rounded-2xl border-2 border-foreground bg-primary text-lg font-bold text-primary-foreground hard-shadow-md">
-          Start (12 questions)
+          Start
         </button>
       </div>
     );
@@ -177,7 +227,10 @@ export function TermsGame({ serverState, save }: { serverState: LearnState | nul
       <div className="h-3 overflow-hidden rounded-full border-2 border-foreground">
         <div className="h-full bg-primary transition-[width]" style={{ width: `${(i / round.length) * 100}%` }} />
       </div>
-      <p className="text-eyebrow text-link">{q.kind === "words" ? "Words matter" : "Case-sheet language"}</p>
+      <p className="text-eyebrow text-link">
+        {q.kind === "words" ? "Words matter" : "Case-sheet language"}
+        {q.language ? <span className="text-muted-foreground"> · {q.language}</span> : null}
+      </p>
       <h2 className="text-xl font-bold leading-tight">{q.prompt}</h2>
       <div className="grid gap-2.5">
         {q.options.map((o) => (
@@ -188,7 +241,8 @@ export function TermsGame({ serverState, save }: { serverState: LearnState | nul
             onClick={() => {
               setPick(o);
               haptic(o === q.answer ? "success" : "warning");
-              setAnswers((a) => [...a, { id: `${q.kind}-${q.answer}`, correct: o === q.answer }]);
+              setAnswers((a) => [...a, { id: q.id, correct: o === q.answer }]);
+              noteAnswer("say-it", q.id, o === q.answer);
             }}
             className={cn(
               "rounded-2xl border-2 border-foreground px-4 py-3 text-left font-bold hard-shadow-sm",
@@ -202,7 +256,9 @@ export function TermsGame({ serverState, save }: { serverState: LearnState | nul
       {pick ? (
         <div className={s.rise}>
           <ChaiSays mood={pick === q.answer ? "cheer" : "sad"} size={56}>
+            {q.meaning ? <span className="block font-semibold">{q.meaning}</span> : null}
             {q.why}
+            {q.note ? <span className="mt-1 block text-sm">Also: {q.note}.</span> : null}
           </ChaiSays>
           <button
             type="button"

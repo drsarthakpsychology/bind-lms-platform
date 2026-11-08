@@ -2,7 +2,8 @@
 
 import { z } from "zod";
 import { excerptById } from "@/lib/games-sims/mse/excerpts";
-import { gradeExcerpt } from "@/lib/games-sims/mse/grade";
+import { EXCERPT_RIGHT, gradeExcerpt } from "@/lib/games-sims/mse/grade";
+import { record } from "@/lib/history/server";
 import { TERMS } from "@/lib/games-sims/mse/terms";
 import { currentUser, gradeAnswers, saveResult } from "@/lib/games-sims/server/results";
 import { hintedItems } from "@/lib/hints/server";
@@ -45,6 +46,10 @@ export async function submitMseExcerpt(input: z.infer<typeof schema>): Promise<{
   );
   const right = results.reduce((a, r, i) => a + (used(i) ? r.score * POINTS_KEPT[1] : r.score), 0);
   const score = right / Math.max(1, e.findings.length);
-  const ok = await saveResult(user.id, { game: "mse", item: e.id, score, right, total: e.findings.length, meta: { streak: parsed.data.streak, level: parsed.data.level } });
+  const [ok] = await Promise.all([
+    saveResult(user.id, { game: "mse", item: e.id, score, right, total: e.findings.length, meta: { streak: parsed.data.streak, level: parsed.data.level } }),
+    // Answer history: the excerpt, right at EXCERPT_RIGHT or above.
+    record(user.id, "mse-lab", e.id, score >= EXCERPT_RIGHT),
+  ]);
   return { ok };
 }

@@ -75,18 +75,21 @@ describe("third wave widgets", () => {
     fireEvent.change(sliders[0], { target: { value: "90" } });
     fireEvent.change(sliders[1], { target: { value: "60" } });
     fireEvent.change(sliders[2], { target: { value: "30" } });
-    fireEvent.click(screen.getByRole("button", { name: "Reveal the real result" }));
+    fireEvent.click(screen.getByRole("button", { name: "Show the result" }));
     expect(last()).toHaveTextContent(/You got the pattern right/);
     expect(last()).toHaveTextContent(/3% away/);
     expect(screen.getByText(/Real: 85%/)).toBeInTheDocument();
   });
 
-  it("release: SSRI blocks reuptake at the reuptake step", () => {
+  it("release: every step is listed; SSRI marks reuptake as changed", () => {
     render(<Release d={{}} />);
-    fireEvent.click(screen.getByRole("button", { name: /Reuptake$/ }));
-    expect(last()).toHaveTextContent(/Transporter pumps/);
+    expect(screen.getByText(/Transporter pumps/)).toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: /^(Back|Next|Play)/ })).toBeNull();
+    fireEvent.click(screen.getByRole("button", { name: /Reuptake/ }));
+    expect(screen.getAllByRole("status")[0]).toHaveTextContent("Showing 5: Reuptake");
     fireEvent.click(screen.getByRole("button", { name: /SSRI/ }));
     expect(last()).toHaveTextContent(/cannot be pulled back/);
+    expect(screen.getByRole("button", { name: /Reuptake/ })).toHaveTextContent(/Changed by SSRI/);
     fireEvent.click(screen.getByRole("button", { name: /Botulinum/ }));
     expect(last()).toHaveTextContent(/nothing is released/);
   });
@@ -108,13 +111,15 @@ describe("third wave widgets", () => {
         }}
       />,
     );
-    fireEvent.click(screen.getByRole("button", { name: /Thinking trap/ }));
+    // the whole record shows at once: no Back or Next
+    for (const t of ["She usually replies quickly.", "We laughed together yesterday.", "She is probably busy with exams. If something were wrong, I can ask her."]) expect(screen.getByText(new RegExp(t.slice(0, 20)))).toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: /^(Back|Next)/ })).toBeNull();
+    const trap = () => screen.getAllByRole("status")[0];
     fireEvent.click(screen.getByRole("button", { name: "Labelling" }));
-    expect(last()).toHaveTextContent(/Not the best fit/);
+    expect(trap()).toHaveTextContent(/Not the best fit/);
     fireEvent.click(screen.getByRole("button", { name: "Mind reading" }));
-    expect(last()).toHaveTextContent(/without evidence/);
-    fireEvent.click(screen.getByRole("button", { name: /Rate again/ }));
-    fireEvent.change(screen.getByRole("slider"), { target: { value: "40" } });
+    expect(trap()).toHaveTextContent(/without evidence/);
+    fireEvent.change(screen.getAllByRole("slider")[1], { target: { value: "40" } });
     expect(last()).toHaveTextContent(/From 80 to 40, down 40 points/);
   });
 
@@ -122,18 +127,18 @@ describe("third wave widgets", () => {
     render(<Hypnogram d={{}} />);
     fireEvent.change(screen.getByRole("slider"), { target: { value: "45" } });
     expect(last()).toHaveTextContent(/N3, deep sleep/);
-    fireEvent.click(screen.getByRole("button", { name: /tap for depression/ }));
+    fireEvent.click(screen.getByRole("button", { name: "In depression" }));
     expect(last()).toHaveTextContent(/REM comes early \(here 48 minutes/);
   });
 
-  it("strange situation: an avoidant infant ignores the caregiver at reunion", () => {
+  it("strange situation: every episode shows at once; an avoidant infant ignores the caregiver at reunion", () => {
     render(<Strange d={{}} />);
-    fireEvent.click(screen.getByRole("button", { name: /Reunion/ }));
-    expect(last()).toHaveTextContent(/hug/);
+    expect(screen.getByRole("button", { name: /Reunion/ })).toHaveTextContent(/hug/);
     fireEvent.click(screen.getByRole("button", { name: "Avoidant" }));
-    expect(last()).toHaveTextContent(/Ignores the caregiver/);
-    fireEvent.click(screen.getByRole("button", { name: /Caregiver leaves/ }));
-    expect(last()).toHaveTextContent(/heart rate/);
+    expect(screen.getByRole("button", { name: /Reunion/ })).toHaveTextContent(/Ignores the caregiver/);
+    expect(screen.getByRole("button", { name: /Caregiver leaves/ })).toHaveTextContent(/heart rate/);
+    fireEvent.click(screen.getByRole("button", { name: /Reunion/ }));
+    expect(screen.getByRole("button", { name: /Reunion/ })).toHaveAttribute("aria-pressed", "true");
   });
 
   it("illusion: judge, then measure shows the lines are equal", () => {
@@ -147,7 +152,7 @@ describe("third wave widgets", () => {
   it("illusion: every kind renders and figure-ground flips", () => {
     for (const kind of ["ponzo", "ebbinghaus"] as const) {
       const { unmount } = render(<Illusion d={{ kind }} />);
-      expect(last()).toHaveTextContent(/Trust your eyes/);
+      expect(screen.getByText(/Which .* (longer|bigger)\?/)).toBeInTheDocument();
       unmount();
     }
     render(<Illusion d={{ kind: "figure-ground" }} />);

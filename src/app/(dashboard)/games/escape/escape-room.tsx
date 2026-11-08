@@ -127,7 +127,7 @@ function Pick({ teamsOn, teams, onPractice, onCreate, onJoin, onOpen }: { teamsO
           ) : null}
         </Panel>
       ) : (
-        <p className="text-small text-muted-foreground">Team play isn&apos;t switched on yet. Practice runs still count towards your progress.</p>
+        <p className="text-small text-muted-foreground">Team play is not open yet. Practise alone for now.</p>
       )}
     </div>
   );
@@ -459,7 +459,7 @@ function TeamRun({ teamId, actions, onExit }: { teamId: string; actions: Actions
     return (
       <div className="mx-auto max-w-xl space-y-4 px-4 py-8">
         <h1 className="text-h2">Team not found</h1>
-        <p className="text-body">You may not be in this team, or team play isn&apos;t switched on yet.</p>
+        <p className="text-body">You may not be in this team, or team play is not open yet.</p>
         <Btn variant="primary" onClick={onExit}>
           Back to the rooms
         </Btn>

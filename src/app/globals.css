@@ -391,28 +391,19 @@
   }
 }
 
-/* Mouse and trackpad: a folded sidebar opens while the cursor rests on it,
-   drawn over the page (the negative margin keeps the page from moving), and
-   folds back when the cursor leaves. A short delay stops it flickering open
-   when the cursor only passes by. Keyboard users get the same while focus is
-   inside it. Touch screens keep the tap control. */
+/* Mouse and trackpad: a folded sidebar opens while the cursor rests on it and
+   folds back when the cursor leaves. It pushes the page aside rather than
+   covering it, so nothing on the page is ever hidden underneath. A short delay
+   stops it opening when the cursor only passes by. Keyboard users get the same
+   while focus is inside it. Touch screens keep the tap control. */
 @media (hover: hover) and (pointer: fine) and (min-width: 1024px) {
-  .app-side {
-    position: relative;
-  }
   .app-side:hover,
-  .app-side:focus-within {
-    z-index: 40;
+  .app-side:has(:focus-visible) {
     width: 15.5rem;
-    margin-right: calc(var(--side-w) - 15.5rem);
-    transition-delay: 120ms;
+    transition-delay: 180ms;
   }
-  .app-side:not(:hover):not(:focus-within) {
+  .app-side:not(:hover):not(:has(:focus-visible)) {
     transition-delay: 0ms;
-  }
-  :root:not([data-sidebar="full"]) .app-side:hover,
-  .app-side[data-focus]:hover {
-    box-shadow: 6px 0 0 0 var(--foreground);
   }
 }
 

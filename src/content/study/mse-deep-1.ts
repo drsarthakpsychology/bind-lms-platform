@@ -6,7 +6,7 @@ export const part1 = String.raw`
 The full list of MSE headings, definitions and the insight grades is in **Module 1, The psychiatric interview and MSE** (sections 2.0 to 2.13). This module does not repeat that list. It trains the **skill**: noticing, telling look-alike signs apart **while the patient is talking**, and writing it down so another clinician can see the patient through your words.
 
 :::widget flow
-{"title": "The MSE sequence", "layout": "chain", "nodes": [{"id": "a", "label": "Appearance", "detail": "Dress, grooming, build, scars, eye contact, expression. Starts at the door."}, {"id": "b", "label": "Behaviour", "detail": "Psychomotor activity, rapport, attitude, abnormal movements."}, {"id": "c", "label": "Speech", "detail": "Rate, volume, quantity, flow, articulation."}, {"id": "d", "label": "Mood", "detail": "What the patient tells you, in their words."}, {"id": "e", "label": "Affect", "detail": "What you see: quality, range, reactivity, congruence, appropriateness."}, {"id": "f", "label": "Thought form", "detail": "How ideas connect, judged from speech."}, {"id": "g", "label": "Thought content", "detail": "Preoccupations, delusions, obsessions, suicidal and homicidal ideas."}, {"id": "h", "label": "Perception", "detail": "Hallucinations, illusions, other perceptual changes."}, {"id": "i", "label": "Cognition", "detail": "Consciousness, orientation, attention, memory, abstraction."}, {"id": "j", "label": "Insight", "detail": "Awareness, attribution, treatment acceptance, relabelling."}, {"id": "k", "label": "Judgement", "detail": "What the person is actually doing about risks and responsibilities."}], "caption": "Press Play. The order moves from what anyone can see towards what you must infer. Use the same order every time so readers know where to look."}
+{"title": "The MSE sequence", "layout": "chain", "nodes": [{"id": "a", "label": "Appearance", "detail": "Dress, grooming, build, scars, eye contact, expression. Starts at the door."}, {"id": "b", "label": "Behaviour", "detail": "Psychomotor activity, rapport, attitude, abnormal movements."}, {"id": "c", "label": "Speech", "detail": "Rate, volume, quantity, flow, articulation."}, {"id": "d", "label": "Mood", "detail": "What the patient tells you, in their words."}, {"id": "e", "label": "Affect", "detail": "What you see: quality, range, reactivity, congruence, appropriateness."}, {"id": "f", "label": "Thought form", "detail": "How ideas connect, judged from speech."}, {"id": "g", "label": "Thought content", "detail": "Preoccupations, delusions, obsessions, suicidal and homicidal ideas."}, {"id": "h", "label": "Perception", "detail": "Hallucinations, illusions, other perceptual changes."}, {"id": "i", "label": "Cognition", "detail": "Consciousness, orientation, attention, memory, abstraction."}, {"id": "j", "label": "Insight", "detail": "Awareness, attribution, treatment acceptance, relabelling."}, {"id": "k", "label": "Judgement", "detail": "What the person is actually doing about risks and responsibilities."}], "caption": "The order moves from what anyone can see towards what you must infer. Use the same order every time so readers know where to look."}
 :::
 
 ### Three habits that make a good examiner
@@ -58,7 +58,7 @@ Reliability: inter-rater agreement for many MSE items is modest when unstructure
 :::
 
 :::widget layers
-{"title": "What you see and what you infer", "shape": "iceberg", "layers": [{"label": "Seen and heard directly", "detail": "Appearance, behaviour, speech, facial expression: anyone in the room could record these."}, {"label": "Told to you", "detail": "Mood, thoughts, perceptions: you depend on what the patient chooses to say."}, {"label": "Inferred carefully", "detail": "Thought form from how speech connects; hallucinations from glances and pauses; insight from how they explain things."}, {"label": "Hidden until asked", "detail": "Suicidal plans, shameful thoughts, abuse. These often stay below the surface unless you ask directly and privately."}], "caption": "Tap from the surface down. The deeper the layer, the more your note should show where the evidence came from."}
+{"title": "What you see and what you infer", "shape": "iceberg", "layers": [{"label": "Seen and heard directly", "detail": "Appearance, behaviour, speech, facial expression: anyone in the room could record these."}, {"label": "Told to you", "detail": "Mood, thoughts, perceptions: you depend on what the patient chooses to say."}, {"label": "Inferred carefully", "detail": "Thought form from how speech connects; hallucinations from glances and pauses; insight from how they explain things."}, {"label": "Hidden until asked", "detail": "Suicidal plans, shameful thoughts, abuse. These often stay below the surface unless you ask directly and privately."}], "caption": "The deeper the layer, the more your note should show where the evidence came from."}
 :::
 
 :::recall
@@ -110,7 +110,7 @@ Q: Which line is the best MSE entry for appearance?
 :::
 
 :::widget layers
-{"title": "The psychomotor spectrum", "shape": "stack", "layers": [{"label": "Excitement", "detail": "Purposeless, extreme overactivity, as in catatonic excitement or severe mania."}, {"label": "Agitation", "detail": "Restless, pacing, hand-wringing, driven by anxiety or mood."}, {"label": "Normal", "detail": "Movements fit the conversation."}, {"label": "Retardation", "detail": "Slow movements, long pauses, few gestures."}, {"label": "Stupor", "detail": "Mute and nearly motionless, often with eyes open and following you."}], "caption": "Tap each band from top to bottom. Akathisia sits apart from this scale: an inner urge to move, usually from a medicine."}
+{"title": "The psychomotor spectrum", "shape": "stack", "layers": [{"label": "Excitement", "detail": "Purposeless, extreme overactivity, as in catatonic excitement or severe mania."}, {"label": "Agitation", "detail": "Restless, pacing, hand-wringing, driven by anxiety or mood."}, {"label": "Normal", "detail": "Movements fit the conversation."}, {"label": "Retardation", "detail": "Slow movements, long pauses, few gestures."}, {"label": "Stupor", "detail": "Mute and nearly motionless, often with eyes open and following you."}], "caption": "Akathisia sits apart from this scale: an inner urge to move, usually from a medicine."}
 :::
 
 :::widget flow
@@ -210,7 +210,7 @@ Q: A man started on haloperidol injections three days ago now cannot stay seated
 :::
 
 :::widget layers
-{"title": "Five dimensions of affect", "shape": "stack", "layers": [{"label": "Quality", "detail": "Which feeling shows: sad, anxious, irritable, euphoric, perplexed."}, {"label": "Range", "detail": "How much it varies: full, restricted, blunted, flat."}, {"label": "Reactivity", "detail": "Does it move with the conversation, for example a brief smile at a joke?"}, {"label": "Congruence", "detail": "Does it match what they say and think? Laughing while saying 'I feel very low' is incongruent."}, {"label": "Appropriateness", "detail": "Does it fit the situation? Laughing while describing a funeral is inappropriate."}], "caption": "Tap each layer. Go through all five for every patient and your affect line writes itself."}
+{"title": "Five dimensions of affect", "shape": "stack", "layers": [{"label": "Quality", "detail": "Which feeling shows: sad, anxious, irritable, euphoric, perplexed."}, {"label": "Range", "detail": "How much it varies: full, restricted, blunted, flat."}, {"label": "Reactivity", "detail": "Does it move with the conversation, for example a brief smile at a joke?"}, {"label": "Congruence", "detail": "Does it match what they say and think? Laughing while saying 'I feel very low' is incongruent."}, {"label": "Appropriateness", "detail": "Does it fit the situation? Laughing while describing a funeral is inappropriate."}], "caption": "Go through all five for every patient and your affect line writes itself."}
 :::
 
 :::trap Blunted, flat, restricted, constricted
@@ -555,7 +555,7 @@ Q: A man says, "I know it's ridiculous, but I keep thinking my hands are contami
 :::
 
 :::widget curve
-{"kind": "sdt", "title": "Hearing a voice in the noise", "caption": "Signal detection helps explain voices. Imagine trying to hear a faint voice in background noise. Move the criterion to a very liberal setting: you 'hear' many voices that were never there (false alarms). People who hallucinate tend to have a more liberal criterion, especially when stressed, tired or primed to expect voices. It is a way of thinking about a mechanism, not a test."}
+{"kind": "sdt", "title": "Hearing a voice in the noise", "caption": "Signal detection helps explain voices. Imagine trying to hear a faint voice in background noise. People who hallucinate tend to have a more liberal criterion, especially when stressed, tired or primed to expect voices. It is a way of thinking about a mechanism, not a test."}
 :::
 
 :::trap "Pseudo" is not "fake"
@@ -615,7 +615,7 @@ Cognition is the part of the MSE most often done **badly**: rushed, or skipped b
 :::
 
 :::widget curve
-{"kind": "normal", "title": "Reading a score against the right norms", "caption": "A cognitive score means little until you know where it sits for people of the same age and education. Move the score: a result that is normal for someone with many years of schooling can be low for them, and a result that looks low may be average for someone who never went to school. Always record education and the language of testing."}
+{"kind": "normal", "title": "Reading a score against the right norms", "caption": "A cognitive score means little until you know where it sits for people of the same age and education. Always record education and the language of testing."}
 :::
 
 :::widget memoryflow
@@ -701,7 +701,7 @@ Many Indian patients and families explain illness through **sorcery (jaadu-tona)
 :::
 
 :::widget layers
-{"title": "Explanatory models around the patient", "shape": "rings", "layers": [{"label": "The patient", "detail": "Their own words for the problem: 'tension', 'kamzori', 'jaadu-tona', 'my mind is ill'."}, {"label": "The family", "detail": "Shared explanations, fears about marriage and reputation, who decides about treatment."}, {"label": "The community and healers", "detail": "Temple, dargah or church, a local healer, neighbours' views."}, {"label": "The clinic", "detail": "The medical model you bring. It works best alongside the others, not against them."}], "caption": "Tap from the centre outwards. Ask about each ring; challenge only practices that cause harm."}
+{"title": "Explanatory models around the patient", "shape": "rings", "layers": [{"label": "The patient", "detail": "Their own words for the problem: 'tension', 'kamzori', 'jaadu-tona', 'my mind is ill'."}, {"label": "The family", "detail": "Shared explanations, fears about marriage and reputation, who decides about treatment."}, {"label": "The community and healers", "detail": "Temple, dargah or church, a local healer, neighbours' views."}, {"label": "The clinic", "detail": "The medical model you bring. It works best alongside the others, not against them."}], "caption": "Ask about each ring; challenge only practices that cause harm."}
 :::
 
 ### Judgement, in real life

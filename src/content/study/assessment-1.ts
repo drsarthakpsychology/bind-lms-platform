@@ -413,8 +413,7 @@ Many human abilities form a **bell-shaped** curve: most people near the middle, 
 :::widget curve
 {
  "kind": "normal",
- "title": "The normal curve: z, percentile and IQ",
- "caption": "Drag the marker. Watch an IQ of 115 become z of plus 1 and about the 84th percentile, and an IQ of 70 become z of minus 2, about the 2nd percentile. Then find the IQ at the 50th percentile."
+ "title": "The normal curve: z, percentile and IQ"
 }
 :::
 
@@ -437,7 +436,7 @@ Many human abilities form a **bell-shaped** curve: most people near the middle, 
 {
  "kind": "normal",
  "title": "Find the IQ bands on the curve",
- "caption": "Drag to IQ 130, then 70. Each is two standard deviations from the mean, and each tail holds only about 2 per cent of people. Then find the borderline band (70 to 79) and see how many people sit there."
+ "caption": "Each is two standard deviations from the mean, and each tail holds only about 2 per cent of people."
 }
 :::
 
@@ -702,7 +701,7 @@ The **PPV depends on how common the condition is** in the group you are testing.
 {
  "kind": "sdt",
  "title": "Moving a cut-off: hits and false alarms",
- "caption": "The two humps are people without and with the condition. Slide the cut-off left: you catch more true cases (sensitivity up) but raise more false alarms (specificity down). Pull the humps apart (better discrimination) and both improve together."
+ "caption": "The two humps are people without and with the condition. Pull the humps apart (better discrimination) and both improve together."
 }
 :::
 
@@ -1127,8 +1126,7 @@ Projective tests give **unclear or open material** and ask people to make sense 
    "Reliability and validity vary by index"
   ],
   "summary": "Rich but use only well-supported indices."
- },
- "caption": "Slide between them and decide which you would use for a court report, and why."
+ }
 }
 :::
 

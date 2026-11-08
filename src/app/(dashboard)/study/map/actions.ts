@@ -3,6 +3,7 @@
 import { z } from "zod";
 import { getSession } from "@/lib/auth/session";
 import { logEvents, recordAttempt } from "@/lib/learn/model/server";
+import { record } from "@/lib/history/server";
 import { bankItem, gradeChoice } from "@/lib/learn/model/topics";
 
 const choice = z.union([z.number().int().min(0).max(10), z.boolean(), z.literal("skip")]);
@@ -30,6 +31,7 @@ export async function answerPractice(input: { item: string; choice: number | boo
   const mcq = b.item.kind === "mcq";
   await Promise.all([
     recordAttempt(userId, { skill: b.skill, item: b.item.id, outcome: g.ok ? 1 : 0, chosen: mcq ? g.chosen : null, correct: mcq ? g.correct : null }),
+    record(userId, "learn", b.item.id, g.ok),
     logEvents(userId, [
       {
         type: "game",

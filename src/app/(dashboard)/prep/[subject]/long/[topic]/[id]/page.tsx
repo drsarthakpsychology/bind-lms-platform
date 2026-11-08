@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { requireFeature } from "@/lib/flags";
+import { nextFreshForViewer } from "@/lib/history/viewer";
 import { isSubject } from "@/lib/prep/catalog";
 import { LONG_PAGE } from "@/lib/prep/long";
 import { longHref, longTopic } from "@/lib/prep/long-server";
@@ -35,16 +36,15 @@ export default async function LongAnswerPage({ params }: Params) {
   const page = Math.floor(i / LONG_PAGE) + 1;
   const back = `/prep/${item.subject}/long/${t.id}${page > 1 ? `?page=${page}` : ""}`;
   const prev = t.items[i - 1];
-  const next = t.items[i + 1];
+  // Answer history (src/lib/history): Next goes to an answer not opened yet (then a missed one), else the next in the list.
+  const freshId = await nextFreshForViewer("long", t.items.map((x) => x.id), item.id);
+  const next = (freshId ? t.items.find((x) => x.id === freshId) : undefined) ?? t.items[i + 1];
   const study = item.studyHref ? { href: item.studyHref, label: item.source === "study" && item.studyTitle ? `Open in Study: ${item.studyTitle}` : "Learn this in Study" } : null;
 
   return (
     <PrepFrame>
       <BackToPrep href={back} label={t.title} />
       <header className="space-y-3">
-        <p className="text-sm font-semibold text-muted-foreground">
-          {i + 1} of {t.items.length}
-        </p>
         <h1 className="text-h2 leading-snug text-balance [overflow-wrap:anywhere]">{item.question}</h1>
         <LongMeta item={item} />
       </header>

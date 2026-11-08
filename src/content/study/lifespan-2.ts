@@ -32,7 +32,7 @@ Adolescence begins in biology (puberty) and ends in culture (when a society trea
 - The **dual systems model** (Laurence Steinberg and others) says this gap explains why adolescents take more risks, especially when emotions run high ("hot" cognition) and **peers are watching**. In calm, unhurried situations ("cold" cognition), adolescents reason about risk almost as well as adults.
 
 :::widget brainexplorer
-{"title":"Two systems that mature at different speeds","focus":["frontal","basal-ganglia","amygdala","hippocampus"],"caption":"Tap the frontal lobe and watch its brake reach the amygdala; then switch on damage. In adolescence that brake is still being built, while the reward and alarm systems are already running at full power: the core of the dual systems model."}
+{"title":"Two systems that mature at different speeds","focus":["frontal","basal-ganglia","amygdala","hippocampus"],"caption":"In adolescence that brake is still being built, while the reward and alarm systems are already running at full power: the core of the dual systems model."}
 :::
 
 :::widget decide
@@ -571,7 +571,7 @@ Benjamin Bloom's group (1956) classified educational objectives in the cognitive
 {
   "kind": "forgetting",
   "title": "Why spaced revision beats cramming",
-  "caption": "Move the review points and watch how each review flattens the forgetting curve. Revising a topic a day later, then a few days later, then a week or more later, keeps far more than one long session the night before the exam. This module's re-tests are spaced for this reason."
+  "caption": "Revising a topic a day later, then a few days later, then a week or more later, keeps far more than one long session the night before the exam. This module's re-tests are spaced for this reason."
 }
 :::
 

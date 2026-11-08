@@ -8,6 +8,7 @@
  */
 import type { Attempt } from "@/lib/learn/model/student";
 import { shuffle, type Rng } from "../common";
+import { orderByHistory, type History } from "@/lib/history/order";
 import { DRUGS, EFFECTS, FAMILY, MYSTERIES, OUTCOMES, OVERLAP, PUZZLES, REVIEWS, drugById, effectById, outcomeById, reviewById, type Drug } from "./content";
 import { PROFILE, conceptsOf } from "./drugs";
 
@@ -91,23 +92,31 @@ export function buildQuestion(kind: Kind, id: string, rng: Rng): Question | null
 }
 
 /** A run: interleaved kinds (mixing them teaches the differences better than blocks). */
-export function buildRun(mode: Mode, rng: Rng, size = RUN_SIZE): Question[] {
+/** The answer history id of a question ("chain:lithium"). */
+export const rxItem = (kind: Kind, id: string) => `${kind}:${id}`;
+
+/**
+ * A run. With an answer history (src/lib/history), each kind's questions go
+ * never seen first, then missed ones, right ones last (oldest first).
+ */
+export function buildRun(mode: Mode, rng: Rng, size = RUN_SIZE, history?: History, now = 0): Question[] {
+  const rank = (kind: Kind, ids: string[]) => (history ? orderByHistory(ids, (id) => rxItem(kind, id), history, now, rng) : shuffle(ids, rng));
   const pools: Record<Kind, string[]> = {
-    chain: shuffle(
+    chain: rank(
+      "chain",
       DRUGS.map((d) => d.id),
-      rng,
     ),
-    mystery: shuffle(
+    mystery: rank(
+      "mystery",
       MYSTERIES.map((m) => m.id),
-      rng,
     ),
-    puzzle: shuffle(
+    puzzle: rank(
+      "puzzle",
       PUZZLES.map((p) => p.id),
-      rng,
     ),
-    review: shuffle(
+    review: rank(
+      "review",
       REVIEWS.map((r) => r.id),
-      rng,
     ),
   };
   const order: Kind[] = mode === "mixed" ? ["chain", "mystery", "puzzle", "review"] : [mode];

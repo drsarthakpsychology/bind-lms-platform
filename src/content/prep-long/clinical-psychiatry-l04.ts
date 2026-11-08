@@ -300,7 +300,7 @@ Online betting, fantasy sports and "real money" games grew rapidly in India, wit
 ## Conclusion
 Gambling disorder is an established addiction, and gaming disorder is recognised in ICD-11. Both rely on powerful reinforcement schedules and respond to CBT, motivational work, financial and access controls and family support.`,
     keyPoints: ["Concept and move to addictions chapter", "Nine gambling criteria with four needed", "Chasing losses", "ICD-11 gaming disorder three features", "DSM-5-TR further study status and debate", "Variable ratio reinforcement and near misses", "CBT, self exclusion and naltrexone", "Indian online gaming law and SHUT clinic"],
-    visuals: [vis("conditioning", { kind: "operant", caption: "Try the variable ratio schedule, then extinction: why does unpredictable reward keep people playing?" })],
+    visuals: [vis("conditioning", { kind: "operant" })],
     module: "substance",
     ref: "DSM-5-TR gambling disorder; ICD-11 6C51 gaming disorder; Potenza; Sharma NIMHANS SHUT clinic; Promotion and Regulation of Online Gaming Act 2025",
   },

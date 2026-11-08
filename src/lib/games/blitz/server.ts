@@ -4,7 +4,10 @@ import { awardXp, XP_SOURCES } from "@/lib/leagues/xp";
 import { admin, cohortPeers, isMissing, namesFor } from "../server";
 import { sign, secretSeed, verify } from "../token";
 import { BLITZ_MS, blitzXp, emptyRun, plausible, step, timing, type RunState } from "./engine";
-import { promptOf, questionAt, type BlitzPrompt } from "./questions";
+import { blitzDeck, promptOf, questionAt, type BlitzPrompt } from "./questions";
+import { loadHistory, record } from "@/lib/history/server";
+import { mulberry32 } from "../rng";
+import { after } from "next/server";
 import { referenceHref } from "@/lib/reference/href";
 
 /**
@@ -16,7 +19,17 @@ import { referenceHref } from "@/lib/reference/href";
 
 const TABLE = "blitz_results";
 
-type Token = { v: 1; run: string; uid: string; seed: number; start: number; last: number; s: RunState; stored: boolean };
+/** `deck`: bank indexes in answer-history order (absent on old tokens and when there is no history yet). */
+type Token = { v: 1; run: string; uid: string; seed: number; start: number; last: number; s: RunState; stored: boolean; deck?: number[] };
+
+/** Run after the response when possible (never delays an answer), else in the background. */
+function later(task: () => Promise<unknown>) {
+  try {
+    after(task);
+  } catch {
+    void task().catch(() => {});
+  }
+}
 
 export type Bests = {
   /** Your best score before this moment (0 if none). */
@@ -69,8 +82,11 @@ export async function startRun(uid: string): Promise<StartResult> {
   } catch {
     stored = false;
   }
-  const token: Token = { v: 1, run, uid, seed, start: now, last: now, s: emptyRun(), stored };
-  return { ok: true, token: sign(token), question: promptOf(questionAt(seed, 0), 0), msLeft: BLITZ_MS };
+  // Answer history: never-seen questions first, then missed ones, right ones last.
+  const history = await loadHistory(uid, "blitz");
+  const deck = history.ready && history.map.size ? blitzDeck(history.map, now, mulberry32(seed)) : undefined;
+  const token: Token = { v: 1, run, uid, seed, start: now, last: now, s: emptyRun(), stored, ...(deck ? { deck } : {}) };
+  return { ok: true, token: sign(token), question: promptOf(questionAt(seed, 0, undefined, deck), 0), msLeft: BLITZ_MS };
 }
 
 export async function answerRun(uid: string, raw: unknown, n: number, choice: number): Promise<AnswerResult> {
@@ -80,7 +96,7 @@ export async function answerRun(uid: string, raw: unknown, n: number, choice: nu
   const now = Date.now();
   const tm = timing(t.start, t.last, now);
   if (!tm.ok) return tm.reason === "over" ? { ok: false, error: "Time's up.", over: true } : { ok: false, error: "Too fast. Read the question first." };
-  const q = questionAt(t.seed, n);
+  const q = questionAt(t.seed, n, undefined, t.deck);
   if (!Number.isInteger(choice) || choice < 0 || choice >= q.options.length) return { ok: false, error: "Pick one of the answers." };
   const right = choice === q.answer;
   const { state, gained, levelUp } = step(t.s, right);
@@ -102,6 +118,7 @@ export async function answerRun(uid: string, raw: unknown, n: number, choice: nu
     }
   }
 
+  later(() => record(uid, "blitz", q.id, right));
   const next: Token = { ...t, last: now, s: state };
   const msLeft = Math.max(0, t.start + BLITZ_MS - now);
   return {
@@ -114,7 +131,7 @@ export async function answerRun(uid: string, raw: unknown, n: number, choice: nu
     gained,
     levelUp,
     state,
-    next: msLeft > 0 ? promptOf(questionAt(t.seed, state.answered), state.answered) : null,
+    next: msLeft > 0 ? promptOf(questionAt(t.seed, state.answered, undefined, t.deck), state.answered) : null,
     msLeft,
   };
 }

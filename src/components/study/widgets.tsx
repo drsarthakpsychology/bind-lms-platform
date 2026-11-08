@@ -40,10 +40,10 @@ import type { JourneyData, NeuronData, PathwaysData, ReceptorData } from "@/lib/
 import type { BrainMapData, CurveData, FlowData, LayersData } from "@/lib/study/types";
 
 /**
- * Interactive pieces inside module text. Every one makes the student commit
- * first (guess, choose, tick, sort) and only then shows why. That's
- * retrieval practice with explained feedback, not decoration. Colour is never
- * the only cue: every verdict has an icon and a word.
+ * Pieces inside module text. The tasks (guess, choose, tick, sort) make the
+ * student commit first and only then show why; plain facts (worked
+ * examples, short questions with their answers) are shown straight away.
+ * Colour is never the only cue: every verdict has an icon and a word.
  */
 
 const card = "rounded-2xl border-2 border-foreground bg-card p-4 sm:p-5 shadow-[var(--shadow-hard-sm)]";
@@ -125,7 +125,7 @@ function Guess({ d }: { d: GuessData }) {
               trackLearn({ type: "widget", kind: "guess", ok: inRange, prompt: d.prompt });
             }}
           >
-            Lock in my guess
+            Check my guess
           </button>
         </div>
       ) : (
@@ -177,7 +177,6 @@ function Decide({ d }: { d: DecideData }) {
         <Verdict kind={c.verdict === "best" ? "good" : c.verdict === "ok" ? "ok" : "bad"}>
           <p><span className="font-semibold">What happens: </span><Rich text={c.outcome} /></p>
           <p className="mt-1"><span className="font-semibold">Why: </span><Rich text={c.why} /></p>
-          {c.verdict !== "best" ? <p className="mt-1.5 text-sm text-muted-foreground">Try another option to see what changes.</p> : null}
         </Verdict>
       ) : null}
     </div>
@@ -203,7 +202,6 @@ function Sort({ d }: { d: SortData }) {
     <div className={card}>
       <p className={label}>Sort it</p>
       <p className="mt-2 font-semibold"><Rich text={d.prompt} /></p>
-      <p className="mt-1 text-sm text-muted-foreground">Tap a card, then tap where it belongs.</p>
       <div className="mt-3 flex flex-wrap gap-2" aria-label="Cards to sort">
         {order.filter((i) => placed[i] === undefined).map((i) => (
           <button
@@ -407,38 +405,32 @@ function Moodline({ d }: { d: MoodlineData }) {
 
 /* --------------------------------------------------------------- worked */
 function Worked({ d }: { d: WorkedData }) {
-  const [shown, setShown] = React.useState(0);
   const [mine, setMine] = React.useState<Record<number, string>>({});
   const [open, setOpen] = React.useState<Record<number, boolean>>({});
   return (
     <div className={card}>
-      <p className={label}>Worked example → your turn</p>
+      <p className={label}>Worked example</p>
       <p className="mt-2 text-lg font-semibold"><Rich text={d.title} /></p>
       <ol className="mt-3 space-y-2">
         {d.steps.map((s, i) => (
           <li key={i} className="rounded-xl border-2 border-foreground/20 p-3">
             <p className="font-semibold"><span className="mr-1.5 text-link tabular-nums">{i + 1}.</span><Rich text={s.q} /></p>
-            {i < shown ? <p className="vibha-pop mt-1.5 text-[0.95rem]"><Rich text={s.a} /></p> : null}
-            {i === shown ? (
-              <button type="button" onClick={() => setShown(shown + 1)} className={cn(btn, "mt-2 min-h-10 bg-card text-sm")}>
-                <Eye className="size-4" aria-hidden /> Think, then show
-              </button>
-            ) : null}
+            <p className="mt-1.5 text-[0.95rem]"><Rich text={s.a} /></p>
           </li>
         ))}
       </ol>
-      {shown >= d.steps.length && d.yourTurn?.length ? (
+      {d.yourTurn?.length ? (
         <div className="mt-4 space-y-3">
-          <p className="text-sm font-bold">Your turn: same steps, no help</p>
+          <p className="text-sm font-bold">Your turn</p>
           {d.yourTurn.map((t, i) => (
             <div key={i} className="rounded-xl border-2 border-foreground p-3">
               <p className="font-semibold"><Rich text={t.q} /></p>
-              <textarea value={mine[i] ?? ""} onChange={(e) => setMine({ ...mine, [i]: e.target.value })} rows={2} className="mt-2 w-full rounded-md border-2 border-foreground/40 bg-background p-2 text-[0.95rem]" placeholder="Write your answer…" />
+              <textarea value={mine[i] ?? ""} onChange={(e) => setMine({ ...mine, [i]: e.target.value })} rows={2} aria-label="Your answer" className="mt-2 w-full rounded-md border-2 border-foreground/40 bg-background p-2 text-[0.95rem]" placeholder="Your answer" />
               {open[i] ? (
                 <p className="vibha-pop mt-2 rounded-md bg-muted p-2 text-[0.95rem]"><span className="font-semibold">Answer: </span><Rich text={t.a} /></p>
               ) : (
-                <button type="button" disabled={!mine[i]?.trim()} onClick={() => { setOpen({ ...open, [i]: true }); trackLearn({ type: "widget", kind: "worked", ok: true, prompt: t.q }); }} className={cn(btn, "mt-2 min-h-10 bg-foreground text-sm text-background disabled:opacity-40")}>
-                  Compare with model answer
+                <button type="button" onClick={() => { setOpen({ ...open, [i]: true }); trackLearn({ type: "widget", kind: "worked", ok: true, prompt: t.q }); }} className={cn(btn, "mt-2 min-h-10 bg-foreground text-sm text-background")}>
+                  <Eye className="size-4" aria-hidden /> Show answer
                 </button>
               )}
             </div>
@@ -466,7 +458,7 @@ function Synapse({ d }: { d: SynapseData }) {
   const dots = Array.from({ length: inGap }, (_, i) => i);
   return (
     <div className={card}>
-      <p className={label}>See it move</p>
+      <p className={label}>Inside the synapse</p>
       <svg viewBox="0 0 320 190" className="mt-3 w-full rounded-xl border-2 border-foreground bg-background" role="img" aria-label={`Synapse: ${inGap} serotonin molecules in the gap, ${receptors} receptors on the receiving neuron${on ? `, ${drug.name} on` : ""}`}>
         <path d="M40 0 h240 v40 q-120 40 -240 0 z" className="fill-[var(--status-info-bg)] stroke-foreground" strokeWidth="2" />
         <text x="160" y="22" textAnchor="middle" className="fill-foreground text-[10px] font-semibold">sending neuron</text>
@@ -494,12 +486,16 @@ function Synapse({ d }: { d: SynapseData }) {
             {on ? `Remove ${drug.name}` : `Add ${drug.name}`}
           </button>
         ) : null}
-        {on ? (
-          <button type="button" onClick={() => setStage(Math.min(2, stage + 1))} disabled={stage >= 2} className={cn(btn, "bg-card disabled:opacity-40")}>
-            Let time pass →
-          </button>
-        ) : null}
       </div>
+      {on ? (
+        <div className="mt-2 flex flex-wrap gap-1.5" role="group" aria-label="Time on the medicine">
+          {["First hours", "First weeks", "Weeks later"].map((t, k) => (
+            <button key={t} type="button" aria-pressed={stage === k} onClick={() => setStage(k)} className={cn("min-h-11 rounded-md border-2 px-3 text-sm font-semibold", stage === k ? "border-foreground bg-foreground text-background" : "border-foreground/30 bg-card")}>
+              {t}
+            </button>
+          ))}
+        </div>
+      ) : null}
       <p className="mt-3 text-[0.95rem] leading-snug" role="status">
         {!on
           ? "Serotonin is released into the gap, some reaches receptors, and the pump recycles the rest."
@@ -509,24 +505,17 @@ function Synapse({ d }: { d: SynapseData }) {
               ? "The receiving neuron adapts: it slowly reduces some receptors (downregulation). Side effects often fade around now."
               : "Later still, the brain rebuilds connections (neuroplasticity, helped by BDNF). This is when mood usually starts to lift, which is why the dose must be given time before judging it."}
       </p>
-      <p className="mt-2 text-sm text-muted-foreground"><Rich text={d.caption} /></p>
+      {d.caption ? <p className="mt-2 text-sm text-muted-foreground"><Rich text={d.caption} /></p> : null}
     </div>
   );
 }
 
 /* --------------------------------------------------------------- reveal */
 function Reveal({ d }: { d: RevealData }) {
-  const [open, setOpen] = React.useState(false);
   return (
     <div className="rounded-2xl border-2 border-dashed border-foreground bg-card p-4">
       <p className="font-semibold"><Rich text={d.prompt} /></p>
-      {open ? (
-        <p className="vibha-pop mt-2 text-[0.95rem]"><Rich text={d.answer} /></p>
-      ) : (
-        <button type="button" onClick={() => setOpen(true)} className={cn(btn, "mt-2 min-h-10 bg-card text-sm")}>
-          <Eye className="size-4" aria-hidden /> Think first, then reveal
-        </button>
-      )}
+      <p className="mt-2 text-[0.95rem]"><Rich text={d.answer} /></p>
     </div>
   );
 }

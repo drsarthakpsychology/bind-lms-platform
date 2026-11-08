@@ -24,7 +24,7 @@ export default async function LibraryPage(props: {
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
-      <ToolHeader title="Case library" tip={{ id: "case-library", steps: ["Search by title or opening words.", "Read a case, then note the teaching point."] }} />
+      <ToolHeader title="Case library" tip={{ id: "case-library", steps: ["Search by title or opening words."] }} />
 
       <div className="mt-6">
         {/* Filter chips: one swipeable line so they never cost vertical space on a phone. */}

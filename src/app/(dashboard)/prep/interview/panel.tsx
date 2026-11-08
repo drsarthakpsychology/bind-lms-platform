@@ -201,12 +201,12 @@ export function InterviewPanel({ questions: initial, saving }: { questions: Pane
           title="Mock interview"
           tip={{
             id: "prep-interview",
-            steps: ["The panel asks a question, then a follow-up.", "Type your answer, or speak it if your browser allows.", "Then tick what you covered and read a model answer."],
+            steps: ["Answer the question and its follow-up, typed or spoken.", "Then tick what you covered and read the answer."],
           }}
         />
         <div className={cn(card, "space-y-4 hard-shadow-md")}>
           <p className="flex gap-2 font-semibold">
-            <Users className="mt-0.5 size-5 shrink-0" aria-hidden /> {questions.length} questions, each with a follow-up.
+            <Users className="mt-0.5 size-5 shrink-0" aria-hidden /> Each question has a follow-up.
           </p>
           <button type="button" className={cn(btnPrimary, "w-full text-base")} onClick={() => setIdx(0)}>
             Start <ArrowRight className="size-4" aria-hidden />
@@ -250,7 +250,7 @@ export function InterviewPanel({ questions: initial, saving }: { questions: Pane
     <div className="space-y-5">
       <div className="flex items-center justify-between gap-3 text-sm font-semibold">
         <span>
-          Question {idx + 1} of {questions.length}
+          Question {idx + 1}
         </span>
         <span className="text-muted-foreground">{q.category}</span>
       </div>

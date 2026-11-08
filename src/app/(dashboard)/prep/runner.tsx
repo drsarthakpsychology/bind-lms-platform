@@ -174,7 +174,7 @@ export function QuestionRunner({ questions, start = 0, prior = {}, saved: initia
     <div className="min-w-0 space-y-5">
       <div className="flex flex-wrap items-center justify-between gap-2">
         <p className="text-sm font-semibold">
-          <span className="sr-only">{label}: </span>Question {idx + 1} of {questions.length}
+          <span className="sr-only">{label}: </span>Question {idx + 1}
         </p>
         <div className="flex items-center gap-2">
           {idx > 0 ? (

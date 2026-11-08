@@ -6,7 +6,7 @@ export const part3 = String.raw`
 ## 4.1 Dopamine and glutamate in depth [core][advanced]
 
 :::widget figure
-{"id": "dopamine-pathways", "quiz": true, "caption": "Name each numbered part in your head first, then tap to check."}
+{"id": "dopamine-pathways", "quiz": true}
 :::
 
 :::widget figure
@@ -48,7 +48,7 @@ export const part3 = String.raw`
 :::
 
 :::widget pathways
-{"system": "dopamine", "caption": "The four pathways with dopamine flowing. Toggle D2 blockade and then 5-HT2A blockade, and match each change to a symptom or side effect."}
+{"system": "dopamine", "caption": "The four pathways with dopamine flowing."}
 :::
 
 :::widget neuron

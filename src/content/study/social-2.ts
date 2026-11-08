@@ -392,8 +392,7 @@ Bibb Latané and John Darley wondered whether the presence of others, rather tha
    "label": "Decide and act",
    "detail": "Blocked by audience inhibition and costs, such as fear of police and court hassles before India's Good Samaritan protections."
   }
- ],
- "caption": "Press Play: the presence of other people can block help at steps 1, 2, 3 and 5."
+ ]
 }
 :::
 

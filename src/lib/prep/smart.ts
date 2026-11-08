@@ -8,6 +8,7 @@
  */
 import { guessFloor, prob } from "@/lib/learn/model/elo";
 import { pickSession, type Candidate, type Picked } from "@/lib/learn/model/picker";
+import { leadWithUnseen, poolFor, type History } from "@/lib/history/order";
 import { PRIOR_B } from "./catalog";
 import { groupOf } from "./topics";
 import type { PrepQuestion, Subject } from "./types";
@@ -25,6 +26,13 @@ export type SmartState = {
   weakTopics: ReadonlySet<string>;
   /** Questions last answered right (held back while enough others remain). */
   gotRight: ReadonlySet<string>;
+  /**
+   * Answer history (src/lib/history). When set, the pool is: due reviews,
+   * plus never-seen questions first, then wrong ones, and right ones only
+   * when the rest run short; the round opens with a new question.
+   */
+  history?: History;
+  now?: number;
 };
 
 export const SMART_SIZE = 10;
@@ -32,8 +40,15 @@ export const SMART_SIZE = 10;
 export function pickSmart(bank: readonly PrepQuestion[], st: SmartState, rng: () => number, size = SMART_SIZE): Picked[] {
   const weak = new Set(st.weakSubjects);
   const pool = bank.filter((q) => st.due.has(q.id) || weak.has(q.subject) || st.weakTopics.has(`${q.subject}:${groupOf(q.subject, q.topic, q.module)}`));
-  const fresh = pool.filter((q) => st.due.has(q.id) || !st.gotRight.has(q.id));
-  const use = fresh.length >= size ? fresh : pool;
+  let use: readonly PrepQuestion[];
+  if (st.history) {
+    const byHistory = poolFor(pool, (q) => q.id, st.history, st.now ?? 0, rng, size);
+    const inPool = new Set(byHistory.map((q) => q.id));
+    use = [...pool.filter((q) => st.due.has(q.id) && !inPool.has(q.id)), ...byHistory];
+  } else {
+    const fresh = pool.filter((q) => st.due.has(q.id) || !st.gotRight.has(q.id));
+    use = fresh.length >= size ? fresh : pool;
+  }
   const candidates: Candidate[] = use.map((q) => ({
     id: q.id,
     topic: `${q.subject}:${groupOf(q.subject, q.topic, q.module)}`,
@@ -41,5 +56,6 @@ export function pickSmart(bank: readonly PrepQuestion[], st: SmartState, rng: ()
     p: prob(st.theta(q.subject), st.b(q.id) ?? PRIOR_B[q.difficulty], guessFloor(q.options.length)),
     due: st.due.has(q.id),
   }));
-  return pickSession(candidates, size, rng);
+  const picked = pickSession(candidates, size, rng);
+  return st.history ? leadWithUnseen(picked, (p) => p.id, st.history, st.now ?? 0) : picked;
 }

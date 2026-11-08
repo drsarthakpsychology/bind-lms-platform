@@ -184,7 +184,7 @@ Urie Bronfenbrenner (1979) pictured the child at the centre of nested systems:
     { "label": "Macrosystem", "detail": "Beliefs, laws and economy: gender norms about girls' education, the RTE Act, the exam-focused school culture." },
     { "label": "Chronosystem", "detail": "Change over time: the move from a village to the city, pandemic school closures, her parents' changing roles." }
   ],
-  "caption": "Tap each ring. The chronosystem wraps around all the others because every system changes over time."
+  "caption": "The chronosystem wraps around all the others because every system changes over time."
 }
 :::
 
@@ -682,7 +682,7 @@ Jean Piaget (1896 to 1980), a Swiss biologist turned psychologist, watched his o
 :::
 
 :::widget conservation
-{"kind": "liquid", "caption": "Pour the water, then switch between a preoperational and a concrete operational child. Tap each reason the older child gives."}
+{"kind": "liquid", "caption": "Pour the water, then switch between a preoperational and a concrete operational child."}
 :::
 
 :::widget sort
@@ -973,7 +973,7 @@ Mary Ainsworth's laboratory procedure for children of about 12 to 18 months has 
 | **Disorganised (D)** (added by Main and Solomon) | Contradictory, confused | Freezing, approaching with head turned away, fearful | Frightening or frightened caregiving, unresolved trauma, maltreatment |
 
 :::widget strange
-{"caption": "Step through the eight episodes, then switch between the four patterns. Watch the reunions: they tell you the most."}
+{}
 :::
 
 :::widget sort

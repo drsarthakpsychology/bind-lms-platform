@@ -280,7 +280,7 @@ export function Coach({ serverState, save, domain }: { serverState: LearnState |
               <p className="text-sm">{shownDef(c)}</p>
               {fb.correct ? (
                 <p className="mt-1 text-caption font-bold">
-                  Mastery {Math.min(5, (state.coach.concepts[c.id]?.lvl ?? 0))}/5
+                  Level {Math.min(5, (state.coach.concepts[c.id]?.lvl ?? 0))}/5
                 </p>
               ) : null}
             </div>
@@ -355,7 +355,7 @@ function CoachIntro({ domain, title, state, onStart }: { domain: Domain | "all";
       </div>
       <div className="rounded-2xl border-2 border-foreground bg-card p-4">
         <div className="flex items-baseline justify-between">
-          <p className="font-bold">Mastery</p>
+          <p className="font-bold">How well you know it</p>
           <p className="font-pix text-sm">{m.pct}%</p>
         </div>
         <div className="mt-2 h-3 overflow-hidden rounded-full border-2 border-foreground">

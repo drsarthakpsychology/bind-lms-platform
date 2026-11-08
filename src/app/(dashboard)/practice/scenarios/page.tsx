@@ -15,10 +15,8 @@ export default async function ScenariosPage({ searchParams }: { searchParams: Pr
     <ActivityFrame
       fallback="/practice"
       title="What would you do?"
-      purpose="Real clinic moments. A patient says something tricky; you choose a response and see what happens next."
-      how={["Read what the patient says.", "Pick your response.", "See the consequence, then the best choice and why.", "Some wrong answers sound kind: that's the point."]}
     >
-      <ActivityTip id="what-would-you-do" label="How it works" steps={["Read what the patient says, then pick your response.", "See what happens next, then the best choice and why.", "Some wrong answers sound kind. That is the point."]} />
+      <ActivityTip id="what-would-you-do" label="How it works" steps={["Read what the patient says, then pick your response."]} />
       <ScenarioGame key={note ?? "all"} serverState={serverState} save={saveLearnState} noteId={note} />
     </ActivityFrame>
   );

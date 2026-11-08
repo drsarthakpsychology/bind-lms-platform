@@ -28,7 +28,7 @@ Suicidal risk **fluctuates**. Rudd's fluid vulnerability theory separates **base
 :::
 
 :::widget curve
-{"kind": "sdt", "title": "Where should a 'high-risk' line be drawn?", "caption": "Move the criterion: a lower threshold catches more people who will act (hits) but labels many more who never will (false alarms). With a rare outcome, no threshold gives a useful positive predictive value, which is why care must not depend on the label."}
+{"kind": "sdt", "title": "Where should a 'high-risk' line be drawn?", "caption": "With a rare outcome, no threshold gives a useful positive predictive value, which is why care must not depend on the label."}
 :::
 
 :::recall
@@ -61,7 +61,7 @@ Q: The main reason "low-risk" labels are dangerous is that:
 - **Capability for suicide**: habituation to pain and fear through repeated self-harm or exposure to violence.
 
 :::widget stress
-{"title": "The stress system in suicidal behaviour", "caption": "Watch the last step. A stress system that fails to switch off has been linked to suicide: in older studies, people whose cortisol was not suppressed by dexamethasone had higher later suicide rates. Early adversity may set this system to over-react for life."}
+{"title": "The stress system in suicidal behaviour", "caption": "A stress system that fails to switch off has been linked to suicide: in older studies, people whose cortisol was not suppressed by dexamethasone had higher later suicide rates. Early adversity may set this system to over-react for life."}
 :::
 
 :::widget figure

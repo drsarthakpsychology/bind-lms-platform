@@ -194,7 +194,7 @@ Under the Mental Healthcare Act 2017 (section 4), a person has capacity for a de
    "detail": "Record the evidence; review it, since capacity changes."
   }
  ],
- "caption": "Capacity is decision-specific and time-specific. Tap each branch for what to check."
+ "caption": "Capacity is decision-specific and time-specific."
 }
 :::
 
@@ -754,8 +754,7 @@ The Mental Healthcare Act 2017 (MHCA) is a **rights-based** law. It came into fo
    "Review Boards and complaint routes"
   ],
   "summary": "A rights-based law."
- },
- "caption": "Slide across to see what changed when the 2017 Act came into force in 2018."
+ }
 }
 :::
 
@@ -1020,7 +1019,7 @@ The MHCA prefers that people are treated in the **community** and, if admitted, 
    "detail": "Section 94: emergency treatment up to 72 hours by any registered medical practitioner; no ECT."
   }
  ],
- "caption": "Tap each route for the key conditions. Independent admission is always preferred where possible."
+ "caption": "Independent admission is always preferred where possible."
 }
 :::
 

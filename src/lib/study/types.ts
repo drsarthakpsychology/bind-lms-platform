@@ -61,7 +61,7 @@ export type BuildData = {
 };
 export type MoodlineData = { prompt: Inline; series: number[]; labels?: string[]; options: Inline[]; answer: number; why: Inline };
 export type WorkedData = { title: Inline; steps: { q: Inline; a: Inline }[]; yourTurn?: { q: Inline; a: Inline }[] };
-export type SynapseData = { drug: "ssri" | "snri" | "maoi" | "none"; caption: Inline };
+export type SynapseData = { drug: "ssri" | "snri" | "maoi" | "none"; caption?: Inline };
 export type RevealData = { prompt: Inline; answer: Inline };
 /** Flowchart / process / cycle / hierarchy. chain = nodes in order; cycle = nodes round a loop; tree = nodes with `parent`. Tap a node for its detail; Play steps through. */
 export type FlowData = {

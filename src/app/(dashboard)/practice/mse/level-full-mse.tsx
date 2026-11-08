@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import { FULL_MSE_STIMULI, scoreFullMse, type MseAttemptFields, type FullMseStimulus } from "@/lib/mse/mse4-stimuli";
 import { MSE_DOMAIN_ORDER, summarizeMseScore, formatDomainKey } from "@/lib/mse/ladder";
 import { buildMseAttemptPayload } from "@/lib/practice/mse-attempt";
+import { noteAnswer } from "@/lib/history/client";
 import type { MseDomainKey } from "@/lib/mse/ladder";
 
 const TEN_MINUTES = 10 * 60;
@@ -77,6 +78,7 @@ export function FullMseLevel({
   /** Persist this Level 4 attempt (a check, not a test, silent on failure). */
   async function persist() {
     const completedAt = new Date();
+    noteAnswer("mse-trainer", stimulus.id, !!summary && summary.max > 0 && summary.score / summary.max >= 0.6);
     const payload = buildMseAttemptPayload(
       stimulus,
       "4",
@@ -101,7 +103,7 @@ export function FullMseLevel({
       {/* Header: timer + progress */}
       <div className="flex items-center justify-between text-small">
         <span className="text-muted-foreground">
-          Level 4 · Full MSE · case {idx + 1}/{stimuli.length}
+          Level 4 · Full MSE · case {idx + 1}
         </span>
         {running && !submitted ? (
           <span className={cn("font-mono font-semibold", urgent && "text-destructive")}>

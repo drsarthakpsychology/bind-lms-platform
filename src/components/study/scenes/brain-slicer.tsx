@@ -14,7 +14,7 @@ const SLICER_CHALLENGE: ChallengeQ[] = [
   { q: "Which ECT placement causes the fewest memory side effects?", options: ["Bitemporal", "Right unilateral", "All three are the same"], answer: 1, why: "Right unilateral ECT spares the language-dominant left side and causes fewer memory problems, but it needs a dose about six times the seizure threshold to work as well." },
   { q: "Does rTMS need an anaesthetic?", options: ["Yes, the same as ECT", "No: the patient stays awake, and memory is not affected", "Only for the first session"], answer: 1, why: "rTMS uses a magnetic field and does not aim for a seizure, so there is no anaesthetic. Scalp discomfort and headache are common; seizures are rare." },
 ];
-import { Missions, ModeTabs, Scene3DSlot, SceneCard, ViewSwitch, btn, chip, statusCls, useInView, useMissions, useSceneView, useThemeColors, type V3 } from "./kit";
+import { ModeTabs, Scene3DSlot, SceneCard, ViewSwitch, btn, chip, statusCls, useInView, useSceneView, useThemeColors, type V3 } from "./kit";
 import { PLANE_NAME, RANGE, partsSeen, type Plane } from "./brain-slice";
 import { SliceCanvas, getSlice } from "./slice-canvas";
 
@@ -100,20 +100,17 @@ export function BrainSlicer({ d }: { d: BrainSlicerData }) {
   const [placement, setPlacement] = React.useState<Placement>("bt");
   const [seenPl, setSeenPl] = React.useState<Placement[]>(["bt"]);
   const [firing, setFiring] = React.useState(0);
-  const ms = useMissions(["planes", "hippo", "tms", "ect"] as const);
   const [planesSeen, setPlanesSeen] = React.useState<Plane[]>(["coronal"]);
   const u = pos[plane];
   const sl = getSlice(plane, u, tint);
   const parts = partsSeen(sl);
   const moveTo = (x: number) => {
     setPos({ ...pos, [plane]: x });
-    if (plane === "coronal" && getSlice(plane, x, tint).counts.has("hippocampus")) ms.mark("hippo");
   };
   const pickPlane = (p: Plane) => {
     setPlane(p);
     const next = planesSeen.includes(p) ? planesSeen : [...planesSeen, p];
     setPlanesSeen(next);
-    if (next.length === 3) ms.mark("planes");
     trackLearn({ type: "widget", kind: "brainslicer", item: p });
   };
   const pickPlacement = (p: Placement) => {
@@ -121,27 +118,24 @@ export function BrainSlicer({ d }: { d: BrainSlicerData }) {
     sfx("zap");
     const next = seenPl.includes(p) ? seenPl : [...seenPl, p];
     setSeenPl(next);
-    if (next.length === 3) ms.mark("ect");
     trackLearn({ type: "widget", kind: "brainslicer", item: `ect-${p}` });
   };
   const fire = () => {
     setFiring((f) => f + 1);
     sfx("pulse");
-    ms.mark("tms");
     trackLearn({ type: "widget", kind: "brainslicer", item: "tms" });
   };
   const pl = PLACEMENTS.find((x) => x.id === placement)!;
   const flat = <SlicerFlat mode={mode} plane={plane} u={u} placement={placement} firing={firing} />;
 
   return (
-    <SceneCard title={d.title ?? "Slice the brain, then stimulate it"} goal="Scroll slices in all three planes and name what you see, then compare where rTMS and the three ECT placements act." caption={d.caption} tools={<ViewSwitch v={v} />} sound>
+    <SceneCard title={d.title ?? "Slice the brain, then stimulate it"} caption={d.caption} tools={<ViewSwitch v={v} />} sound>
       <ModeTabs<SlicerMode> name="Mode" value={mode} onChange={setMode} modes={[{ id: "slice", label: "Scan slices" }, { id: "tms", label: "rTMS coil" }, { id: "ect", label: "ECT electrodes" }]} />
       <div className={cn("mt-3 grid gap-3", mode === "slice" && "sm:grid-cols-2")}>
         <div ref={box} className="relative h-[15rem] overflow-hidden rounded-xl border-2 border-foreground bg-background sm:h-[19rem]">
           {v.use3D ? (
             <Scene3DSlot flat={flat} render={(onReady) => <View3D mode={mode} plane={plane} u={u} placement={placement} firing={firing} inView={inView} colors={colors} onReady={onReady} />} />
           ) : flat}
-          {v.use3D ? <p className="pointer-events-none absolute bottom-1.5 left-2 rounded bg-background/80 px-1.5 text-xs text-muted-foreground">Drag to turn, pinch to zoom</p> : null}
         </div>
         {mode === "slice" ? (
           <div className="flex h-[15rem] items-center justify-center rounded-xl border-2 border-foreground bg-black p-1.5 sm:h-[19rem]">
@@ -187,7 +181,7 @@ export function BrainSlicer({ d }: { d: BrainSlicerData }) {
         ) : mode === "tms" ? (
           <>
             <p><span className="font-semibold">Where: </span>{TMS_TEXT.where}</p>
-            <p className="mt-1"><span className="font-semibold">How it works: </span>{TMS_TEXT.how}</p>
+            <p className="mt-1"><span className="font-semibold">How it acts: </span>{TMS_TEXT.how}</p>
             <p className="mt-1"><span className="font-semibold">A course: </span>{TMS_TEXT.course}</p>
             <p className="mt-1"><span className="font-semibold">Safety: </span>{TMS_TEXT.safety}</p>
             {firing ? <p className="mt-1 font-semibold">Pulses fired: the cortex under the coil is stimulated, and the signal travels on to the deeper mood circuit.</p> : null}
@@ -202,15 +196,6 @@ export function BrainSlicer({ d }: { d: BrainSlicerData }) {
           </>
         )}
       </div>
-      <Missions
-        doneText="All missions done: you can read a slice in each plane and explain where rTMS and each ECT placement act."
-        items={[
-          { id: "planes", label: "Slice in all three planes", done: ms.done("planes") },
-          { id: "hippo", label: "Find the hippocampus on a coronal slice", done: ms.done("hippo") },
-          { id: "tms", label: "Fire the rTMS coil over the left DLPFC", done: ms.done("tms") },
-          { id: "ect", label: "Compare all three ECT placements", done: ms.done("ect") },
-        ]}
-      />
       <QuickChallenge title="Slices, rTMS and ECT" kind="brainslicer" items={SLICER_CHALLENGE} />
     </SceneCard>
   );

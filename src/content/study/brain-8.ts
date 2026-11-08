@@ -7,7 +7,7 @@ You know the outline: tube, neurons, connections, pruning, myelin. At this level
 ### Six processes, in overlapping order
 
 :::widget figure
-{"id": "brain-vesicles", "quiz": true, "caption": "Name each numbered part in your head first, then tap to check."}
+{"id": "brain-vesicles", "quiz": true}
 :::
 
 | Process | Mechanism | When it fails |
@@ -71,7 +71,7 @@ In 1987 Daniel Weinberger in the United States and Robin Murray and Shôn Lewis 
   { "id": "a", "label": "Adolescent second hit", "detail": "Normal pruning and dopamine maturation, plus cannabis, urban stress, migration, trauma." },
   { "id": "p", "label": "Prodrome, then psychosis", "detail": "Usually between the late teens and late twenties, earlier in men." }
  ],
- "caption": "Press Play. Which steps could prevention target? (Maternal nutrition and infection control, obstetric care, avoiding adolescent cannabis, early intervention in the prodrome.)"
+ "caption": "Which steps could prevention target? (Maternal nutrition and infection control, obstetric care, avoiding adolescent cannabis, early intervention in the prodrome.)"
 }
 :::
 
@@ -192,7 +192,7 @@ LTP has four properties that make it a good memory mechanism:
   { "id": "c", "label": "Signals reach the nucleus", "detail": "With repeated or strong stimulation, cAMP, protein kinase A and MAP kinase activate the transcription factor CREB." },
   { "id": "l", "label": "Late LTP (hours to months)", "detail": "New genes and proteins, BDNF, enlarged and new dendritic spines. Blocked by protein synthesis inhibitors." }
  ],
- "caption": "Press Play. Compare with memory: short-term memory does not need new proteins; long-term memory does."
+ "caption": "Compare with memory: short-term memory does not need new proteins; long-term memory does."
 }
 :::
 

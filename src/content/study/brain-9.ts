@@ -191,7 +191,7 @@ Jeffrey Hall, Michael Rosbash and Michael Young shared the 2017 Nobel Prize for 
   { "id": "d", "label": "PER and CRY are degraded", "detail": "Kinases (casein kinase 1, GSK-3) time the breakdown. Lithium inhibits GSK-3 and lengthens the period." },
   { "id": "e", "label": "The brake lifts", "detail": "About 24 hours after the start, the loop restarts. Morning light resets the phase." }
  ],
- "caption": "Press Play. Where might a mood stabiliser act on the clock? (GSK-3, at the degradation step.)"
+ "caption": "Where might a mood stabiliser act on the clock? (GSK-3, at the degradation step.)"
 }
 :::
 
@@ -203,9 +203,7 @@ Jeffrey Hall, Michael Rosbash and Michael Young shared the 2017 Nobel Prize for 
 
 ### Sleep in depression
 :::widget hypnogram
-{
- "caption": "Switch on depression and list each change: first REM period arrives early (short REM latency), it is longer and denser, deep N3 sleep is reduced especially in the first cycle, more waking after sleep onset, and early morning waking."
-}
+{}
 :::
 
 | Finding | Detail |
@@ -338,7 +336,7 @@ export const advImaging = String.raw`
 
 
 :::widget brainslicer
-{"title":"Read a scan in three planes","start":"slice","caption":"Scroll each plane and name the parts. Where would you look for an enlarged ventricle in schizophrenia, or a small hippocampus in depression or Alzheimer disease?"}
+{"title":"Read a scan in three planes","start":"slice","caption":"Where would you look for an enlarged ventricle in schizophrenia, or a small hippocampus in depression or Alzheimer disease?"}
 :::
 
 ### What each method measures
@@ -535,7 +533,7 @@ export const advImmune = String.raw`
   { "id": "h", "label": "HPA and plasticity changes", "detail": "Glucocorticoid resistance, less BDNF, less neurogenesis in animals." },
   { "id": "s", "label": "Symptoms", "detail": "Anhedonia, fatigue, psychomotor slowing, poor sleep and appetite, social withdrawal: sickness behaviour that can become depression." }
  ],
- "caption": "Press Play. Which symptoms of depression best fit this pathway? (Anhedonia, fatigue and slowing more than guilt.)"
+ "caption": "Which symptoms of depression best fit this pathway? (Anhedonia, fatigue and slowing more than guilt.)"
 }
 :::
 
@@ -582,7 +580,7 @@ The gut talks to the brain in four ways:
 | **Microbial metabolites** | Short-chain fatty acids (butyrate), tryptophan metabolites, GABA made by some bacteria | Faecal microbes from depressed people transferred to germ-free rodents induced depression-like behaviour |
 
 :::widget figure
-{"id": "gut-brain", "quiz": true, "caption": "Name each numbered part in your head first, then tap to check."}
+{"id": "gut-brain", "quiz": true}
 :::
 
 :::widget decide

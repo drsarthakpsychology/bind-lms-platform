@@ -6,40 +6,25 @@ import type { AttentionData, ConservationData, DissonanceData, ExperimentData, I
 import { cn } from "@/lib/utils";
 import { Rich } from "./rich";
 import { trackLearn } from "@/lib/learn/track";
-import type { StepPlayer } from "./pacing";
 
 /**
  * Third wave of animated explainers: selective attention, cognitive
  * dissonance, Piaget's conservation tasks, a classic study replay and
- * perception illusions. The shared pieces (card, buttons, step player) are
- * exported for animations4.tsx. Transform and opacity only, stops under
+ * perception illusions. The shared pieces (card, buttons) are exported for
+ * animations4.tsx. Transform and opacity only, stops under
  * reduce-motion, and every state is written in words.
  */
 
 export const card = "rounded-2xl border-2 border-foreground bg-card p-4 sm:p-5 shadow-[var(--shadow-hard-sm)]";
 export const label = "text-xs font-semibold tracking-wide uppercase text-link";
 export const btn = "inline-flex min-h-11 items-center justify-center gap-2 rounded-md border-2 border-foreground px-4 font-semibold";
-export const statusCls = "vibha-pop mt-3 rounded-xl bg-muted p-3 text-[0.95rem] leading-relaxed";
+export const statusCls = "vibha-pop mt-3 rounded-xl bg-muted p-3 text-[0.95rem] leading-relaxed empty:mt-0 empty:p-0";
 
 /** A choice button: pressed state is shown by fill and by aria-pressed. */
 export function choiceCls(on: boolean) {
   return cn(
     "min-h-11 rounded-md border-2 border-foreground px-3 py-2 text-left text-sm font-semibold transition-transform duration-fast active:translate-x-px active:translate-y-px",
     on ? "bg-foreground text-background" : "bg-card hover:-translate-y-0.5",
-  );
-}
-
-export function StepList({ names, st }: { names: string[]; st: StepPlayer }) {
-  return (
-    <ol className="mt-3 flex flex-wrap gap-1.5" aria-label="Steps">
-      {names.map((s, k) => (
-        <li key={s}>
-          <button type="button" onClick={() => st.setI(k)} aria-current={k === st.i ? "step" : undefined} className={cn("min-h-11 rounded-md border-2 px-2.5 text-xs font-semibold sm:text-sm", k === st.i ? "border-foreground bg-foreground text-background" : k < st.i ? "border-foreground bg-card" : "border-foreground/25 bg-card text-muted-foreground")}>
-            {k + 1}. {s}
-          </button>
-        </li>
-      ))}
-    </ol>
   );
 }
 
@@ -115,7 +100,7 @@ export function Attention({ d }: { d: AttentionData }) {
   const stop = model === "early" ? SX[1] : SX[3];
   return (
     <figure className={card}>
-      <p className={label}>{d.title ? <Rich text={d.title} /> : "The cocktail party: what gets through?"}</p>
+      <p className={label}>{d.title ? <Rich text={d.title} /> : "The cocktail party"}</p>
       <div className="mt-3 grid grid-cols-2 gap-2">
         {(["left", "right"] as const).map((side) => {
           const on = ear === side;
@@ -238,7 +223,7 @@ export function Dissonance({ d }: { d: DissonanceData }) {
   const exText = (fallback: string) => (custom ? fallback : w?.ex ?? fallback);
   return (
     <figure className={card}>
-      <p className={label}>{d.title ? <Rich text={d.title} /> : "Cognitive dissonance: feel the clash"}</p>
+      <p className={label}>{d.title ? <Rich text={d.title} /> : "Cognitive dissonance"}</p>
       <div className="mt-3 grid grid-cols-[1fr_4.5rem] items-center gap-3 sm:grid-cols-[1fr_5.5rem]">
         <div key={phase === 1 && !w ? "clash" : "calm"} className={cn("space-y-2", phase === 1 && !w ? "vibha-shake" : "")}>
           <div className="rounded-xl border-2 border-foreground bg-background p-3">
@@ -274,9 +259,9 @@ export function Dissonance({ d }: { d: DissonanceData }) {
       ) : null}
       <p className={statusCls} key={`${phase}-${way}`} role="status" aria-live="polite">
         {phase === 0 ? (
-          <><span className="font-semibold">Just the belief: </span>No clash yet, so no tension. Add the behaviour to see what happens.</>
+          <><span className="font-semibold">Just the belief: </span>No clash yet, so no tension.</>
         ) : !w ? (
-          <><span className="font-semibold">The clash: </span>What you do goes against what you believe. Holding both at once feels uncomfortable. Festinger called this cognitive dissonance, and people are driven to reduce it. Tension is high (85 of 100). Pick a way to reduce it.</>
+          <><span className="font-semibold">The clash: </span>What you do goes against what you believe. Holding both at once feels uncomfortable. Festinger called this cognitive dissonance, and people are driven to reduce it. Tension is high (85 of 100).</>
         ) : (
           <><span className="font-semibold">{w.name}: </span>{w.text} Tension falls to {w.level} of 100.</>
         )}
@@ -305,7 +290,7 @@ export function Dissonance({ d }: { d: DissonanceData }) {
           ))}
         </div>
         <p className={statusCls} key={paid ?? "none"} role="status" aria-live="polite">
-          {p ? <><span className="font-semibold">{p.name}: </span>{p.text}</> : "Tap a group to see how much they later said they enjoyed the task."}
+          {p ? <><span className="font-semibold">{p.name}: </span>{p.text}</> : null}
         </p>
       </div>
       <Caption text={d.caption} />
@@ -406,7 +391,6 @@ export function Conservation({ d }: { d: ConservationData }) {
       ) : null}
       <p className={statusCls} key={`${done}-${stage}-${reason}`} role="status" aria-live="polite">
         {answer}
-        {done && !r ? " Tap a reason to see the thinking." : null}
         {r ? <span className="mt-2 block">{r.text}</span> : null}
       </p>
       <Caption text={d.caption} />
@@ -432,7 +416,7 @@ export function Experiment({ d }: { d: ExperimentData }) {
     <figure className={card}>
       <p className={label}><Rich text={d.title} /></p>
       <p className="mt-2 font-semibold"><Rich text={d.question} /></p>
-      <p className="mt-1 text-sm text-muted-foreground">{shown ? "Your guess is the dashed line; the bar is what really happened." : "Drag each slider to your prediction, then reveal."}</p>
+      {shown ? <p className="mt-1 text-sm text-muted-foreground">Dashed line: your guess. Bar: the real result.</p> : null}
       <ul className="mt-3 space-y-3">
         {d.conditions.map((c, i) => (
           <li key={i} className="rounded-xl border-2 border-foreground bg-background p-3">
@@ -456,15 +440,13 @@ export function Experiment({ d }: { d: ExperimentData }) {
       </ul>
       <div className="mt-3 flex flex-wrap gap-2">
         {!shown ? (
-          <button type="button" className={cn(btn, "bg-foreground text-background")} onClick={reveal}>Reveal the real result</button>
+          <button type="button" className={cn(btn, "bg-foreground text-background")} onClick={reveal}>Show the result</button>
         ) : (
           <button type="button" className={cn(btn, "bg-card")} onClick={() => setShown(false)}><RotateCcw className="size-4" aria-hidden /> Guess again</button>
         )}
       </div>
       <p className={statusCls} key={String(shown)} role="status" aria-live="polite">
-        {!shown ? (
-          "Set a guess for every condition, then reveal what the study found."
-        ) : (
+        {!shown ? null : (
           <>
             <span className="font-semibold">{pattern ? "You got the pattern right. " : "The pattern was different from your guess. "}</span>
             On average you were {fmt(err)} away from the real result.{d.why ? <> <Rich text={d.why} /></> : null}
@@ -534,7 +516,7 @@ const VASE_PATH = (() => {
   return smooth(right) + " L" + smooth(left).slice(1) + " Z";
 })();
 
-/** Perception illusions with a judge, then measure, step. */
+/** Perception illusions: judge first, then measure. */
 export function Illusion({ d }: { d: IllusionData }) {
   const kind: IllusionKind = ILLUSIONS[d.kind] ? d.kind : "muller-lyer";
   const il = ILLUSIONS[kind];
@@ -549,16 +531,16 @@ export function Illusion({ d }: { d: IllusionData }) {
   const ruler = "fill-[var(--brand)]";
   const show = measured ? 1 : 0;
   const pickText = pick === null
-    ? `${il.ask} Trust your eyes and pick one.`
+    ? ""
     : fg
       ? pick === 2
-        ? "Most people find they cannot hold both at once: one pops out and the other becomes background. Try flipping it."
-        : `You saw ${pick === 0 ? "a vase" : "two faces"} first. Keep looking and it will flip.`
+        ? "Most people cannot hold both at once: one pops out and the other becomes background."
+        : `You saw ${pick === 0 ? "a vase" : "two faces"} first. Keep looking and it flips.`
       : pick === il.seen
-        ? `Most people see it the same way you did. Now measure.`
+        ? "Most people see it the same way you did."
         : pick === 2
-          ? "You said they are the same. Most people's eyes say otherwise, even when they know the trick. Now measure."
-          : "Most people see it the other way round. Now measure.";
+          ? "You said they are the same. Most people's eyes say otherwise, even when they know the trick."
+          : "Most people see it the other way round.";
   return (
     <figure className={card}>
       <p className={label}>{d.title ? <Rich text={d.title} /> : il.title}</p>

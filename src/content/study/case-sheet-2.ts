@@ -903,8 +903,7 @@ In a clinical exam you take a history and MSE in about 45 to 60 minutes, then pr
    "id": "8",
    "label": "Formulation, investigations, plan"
   }
- ],
- "caption": "Press Play and time yourself presenting a case you know, about a minute per box."
+ ]
 }
 :::
 

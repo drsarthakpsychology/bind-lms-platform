@@ -2,7 +2,8 @@
 /**
  * One interaction test per explorable scene. jsdom has no WebGL, so these
  * render the flat fallback, which shares every control and every written
- * state with the 3D view.
+ * state with the 3D view. No scene carries a goal line, a missions list, a
+ * drag hint or Back, Next and Play buttons.
  */
 import { act, cleanup, fireEvent, render, screen } from "@testing-library/react";
 import { afterEach, beforeAll, describe, expect, it, vi } from "vitest";
@@ -36,23 +37,22 @@ describe("explorable scenes", () => {
   it("nervoussystem: signals travel through the brain or the reflex shortcut, and the autonomic divisions switch", () => {
     vi.useFakeTimers();
     render(<NervousSystem d={{}} />);
-    expect(status()).toHaveTextContent(/Pick a route/);
-    click("Hand: touch a hot cup");
-    expect(status()).toHaveTextContent(/Step 1 of 5, sensory/);
+    expect(status()).not.toHaveTextContent(/Pick a route/);
     wait(20000); // nothing moves on its own
-    expect(status()).toHaveTextContent(/Step 1 of 5, sensory/);
-    click(/^Next$/);
-    expect(status()).toHaveTextContent(/Step 2 of 5.*thalamus/);
+    expect(screen.queryByRole("list", { name: "Signal path" })).toBeNull();
+    click("Hand: touch a hot cup");
+    // one tap runs the whole trip, each leg held for its reading time, and every leg stays written
+    expect(screen.getByRole("list", { name: "Signal path" }).children).toHaveLength(1);
+    expect(screen.queryByRole("button", { name: /^(Back|Next|Play|Pause)/ })).toBeNull();
+    wait(40000);
+    expect(status()).toHaveTextContent(/thalamus/);
+    expect(screen.getByRole("list", { name: "Signal path" }).children).toHaveLength(5);
     click("Reflex shortcut");
     click("Foot: step on a pin");
-    expect(status()).toHaveTextContent(/Step 1 of 4/);
-    click(/^Next$/);
-    expect(status()).toHaveTextContent(/interneuron/);
-    click(/^Play/);
-    expect(screen.getByRole("button", { name: "Pause" })).toBeInTheDocument();
     wait(40000);
-    expect(status()).toHaveTextContent(/Done\..*before you knew it hurt/);
-    expect(screen.getByLabelText("1 of 6 missions done")).toBeInTheDocument();
+    expect(status()).toHaveTextContent(/interneuron/);
+    expect(status()).toHaveTextContent(/before you knew it hurt/);
+    expect(screen.queryByText(/missions done/)).toBeNull();
     click("Organs on autopilot");
     click(/^Fight or flight$/);
     expect(status()).toHaveTextContent(/128 beats a minute/);
@@ -62,19 +62,17 @@ describe("explorable scenes", () => {
     click("Zoom the map");
     click(/Autonomic/);
     expect(status()).toHaveTextContent(/hypothalamus is its main controller/);
-    expect(screen.getByLabelText("4 of 6 missions done")).toBeInTheDocument();
   });
 
   it("brainexplorer: a region plays its job, damage shows a real case, and the challenge checks the answer", () => {
     vi.useFakeTimers();
     render(<BrainExplorer d={{}} />);
     expect(status()).toHaveTextContent(/outer layer, the cerebral cortex/);
+    expect(status()).not.toHaveTextContent(/Tap any part/);
     click(/^Broca/);
-    expect(status()).toHaveTextContent(/Step 1 of 4/);
-    wait(20000);
-    expect(status()).toHaveTextContent(/Step 1 of 4/);
-    click(/^Play/);
+    expect(screen.getByRole("list", { name: "Signal path" }).children).toHaveLength(1);
     wait(60000);
+    expect(screen.getByRole("list", { name: "Signal path" }).children).toHaveLength(4);
     expect(status()).toHaveTextContent(/What comes out: .I walked the dog in the park/);
     click("Damage off");
     expect(status()).toHaveTextContent(/Broca's aphasia/);
@@ -83,12 +81,12 @@ describe("explorable scenes", () => {
     expect(screen.getByRole("button", { name: "Peel the left side" })).toHaveAttribute("aria-pressed", "true");
     expect(status()).toHaveTextContent(/H\.M\. \(Henry Molaison\)/);
     click("Where is the damage?");
-    expect(screen.getByText(/Case 1 of 8/)).toBeInTheDocument();
+    expect(screen.getByText(/Case 1 · score 0/)).toBeInTheDocument();
     click(/^Hippocampus/);
     expect(status()).toHaveTextContent(/Not quite/);
     click(/^Broca/);
     expect(status()).toHaveTextContent(/Yes: Broca's area/);
-    expect(screen.getByText(/Case 2 of 8/)).toBeInTheDocument();
+    expect(screen.getByText(/Case 2 · score 0/)).toBeInTheDocument();
   });
 
   it("actionpotential: small pushes add up to threshold, the spike fires, and a too-early push is blocked", () => {
@@ -101,7 +99,6 @@ describe("explorable scenes", () => {
     expect(status()).toHaveTextContent(/Summation/);
     click("Stimulate");
     expect(status()).toHaveTextContent(/Blocked: .*absolute refractory period/);
-    expect(screen.getByLabelText("3 of 5 missions done")).toBeInTheDocument();
     click("Myelin on");
     expect(screen.getByRole("button", { name: "Myelin off" })).toHaveAttribute("aria-pressed", "false");
     click(/Challenge: 3 in 10 s/);
@@ -111,26 +108,25 @@ describe("explorable scenes", () => {
   it("synapse3d: one message crosses and binds, and a receptor blocker stops it", () => {
     vi.useFakeTimers();
     render(<SynapseScene d={{ transmitter: "dopamine" }} />);
-    expect(status()).toHaveTextContent(/Press Fire the nerve ending/);
-    click("Fire the nerve ending");
-    expect(status()).toHaveTextContent(/Step 1 of 5, Signal arrives/);
+    // every step and its words are listed before anything is fired
+    const steps = screen.getByRole("list", { name: "Steps" });
+    expect(steps).toHaveTextContent(/Calcium floods in/);
+    expect(steps).toHaveTextContent(/The dopamine drifts across the gap/);
     wait(20000);
-    expect(status()).toHaveTextContent(/Step 1 of 5, Signal arrives/);
-    click(/^Next$/);
-    expect(status()).toHaveTextContent(/Calcium floods in/);
-    click(/^Next$/);
-    click(/^Next$/);
-    wait(2000);
-    expect(status()).toHaveTextContent(/Step 4 of 5, Binding: The dopamine drifts across the gap/);
-    click("Receptor blocker (antagonist)");
+    expect(screen.getAllByRole("listitem").some((li) => li.getAttribute("aria-current") === "step")).toBe(false);
     click("Fire the nerve ending");
-    click(/^Next$/);
-    click(/^Next$/);
-    click(/^Next$/);
+    expect(screen.queryByRole("button", { name: /^(Back|Next|Play|Pause)/ })).toBeNull();
+    expect(status()).toHaveTextContent(/Signal arrives/);
+    for (let t = 0; t < 30000 && !/Binding/.test(status().textContent ?? ""); t += 250) wait(250);
     wait(2000);
-    expect(status()).toHaveTextContent(/blocker molecules already fill the receptors/);
+    expect(status()).toHaveTextContent(/Binding.*strong message/);
+    wait(40000);
+    expect(status()).toHaveTextContent(/Clearing up/);
+    click("Receptor blocker (antagonist)");
+    expect(screen.getByRole("list", { name: "Steps" })).toHaveTextContent(/blocker molecules already fill the receptors/);
+    click("Fire the nerve ending");
+    wait(40000);
     expect(status()).toHaveTextContent(/getting no message/);
-    expect(screen.getByLabelText("2 of 4 missions done")).toBeInTheDocument();
   });
 
   it("genogram: build three generations, mark the condition, and the pattern finder traces it", () => {
@@ -154,7 +150,6 @@ describe("explorable scenes", () => {
     wait(2800);
     expect(status()).toHaveTextContent(/Two blood relatives have depression, across two generations/);
     expect(status()).toHaveTextContent(/only through the father's family/);
-    expect(screen.getByLabelText("5 of 5 missions done")).toBeInTheDocument();
     click("Load the example");
     click("Find the pattern");
     wait(2800);
@@ -165,7 +160,7 @@ describe("explorable scenes", () => {
     vi.useFakeTimers();
     render(<HpaLoop d={{}} />);
     wait(20000);
-    expect(status()).toHaveTextContent(/7:00\. Press Start the day/);
+    expect(status()).toHaveTextContent(/7:00\. A normal day/);
     click("Start the day");
     wait(1500);
     expect(status()).toHaveTextContent(/9:00 · The exam: .*cortisol takes 20 to 30 minutes to peak/);
@@ -184,35 +179,20 @@ describe("explorable scenes", () => {
     click("Chronic stress");
     click("Start day 1");
     expect(status()).toHaveTextContent(/Day 1: the loop works/);
-    for (let k = 2; k <= 4; k++) click(new RegExp(`Next day \\(${k} of 5\\)`));
+    for (let k = 2; k <= 4; k++) click(new RegExp(`Next day \\(day ${k}\\)`));
     expect(status()).toHaveTextContent(/Day 4: the feedback loop is failing/);
     expect(status()).toHaveTextContent(/42 percent \(failing\)/);
-    expect(screen.getByLabelText("4 of 5 missions done")).toBeInTheDocument();
   });
 
-  it("brainexplorer: guided views and the tour always bring the student back to a textbook view", () => {
+  it("brainexplorer: the four textbook views, with no tour to step through", () => {
     vi.useFakeTimers();
     render(<BrainExplorer d={{}} />);
-    click("Take the tour");
-    expect(status()).toHaveTextContent(/Tour stop 1 of 4\. Side view \(lateral\)/);
-    wait(20000);
-    expect(status()).toHaveTextContent(/Tour stop 1 of 4\. Side view \(lateral\)/);
-    click(/^Next stop$/);
-    expect(status()).toHaveTextContent(/Tour stop 2 of 4\. Middle view \(medial\)/);
+    expect(screen.queryByRole("button", { name: /tour/i })).toBeNull();
+    click(/^Middle view/);
+    expect(status()).toHaveTextContent(/Middle view \(medial\)|medial/i);
     expect(screen.getByRole("button", { name: "Peel the left side" })).toHaveAttribute("aria-pressed", "true");
-    click(/^Back$/);
-    expect(status()).toHaveTextContent(/Tour stop 1 of 4/);
-    click(/^Play the tour/);
-    wait(2900); // held for at least its reading time
-    expect(status()).toHaveTextContent(/Tour stop 1 of 4/);
-    wait(40000);
-    expect(status()).toHaveTextContent(/From below \(inferior\)|Front cut/);
-    click(/^Pause$/);
-    click(/^Next stop$/);
-    click(/^Next stop$/);
-    expect(status()).toHaveTextContent(/Front cut \(coronal\).*basal ganglia/);
-    click("Finish the tour");
-    expect(screen.getByLabelText("1 of 6 missions done")).toBeInTheDocument();
+    click(/^Front cut/);
+    expect(status()).toHaveTextContent(/basal ganglia/);
     click("Side view");
     expect(status()).toHaveTextContent(/central sulcus separates frontal from parietal/);
   });
@@ -239,7 +219,6 @@ describe("explorable scenes", () => {
     expect(status()).toHaveTextContent(/about six times the seizure threshold/);
     click("Bifrontal");
     expect(status()).toHaveTextContent(/5 cm above the outer corner of each eye/);
-    expect(screen.getByLabelText("4 of 4 missions done")).toBeInTheDocument();
   });
 
   it("amesroom: the peephole fools size, the swap reverses it, and the side and plan views show the real shape", () => {
@@ -258,8 +237,6 @@ describe("explorable scenes", () => {
     click("From above");
     expect(status()).toHaveTextContent(/trapezoid/);
     expect(status()).toHaveTextContent(/Size constancy normally corrects for distance/);
-    wait(250);
-    expect(screen.getByLabelText("4 of 4 missions done")).toBeInTheDocument();
   });
 
   it("sound is off until switched on, and each quick challenge scores the first try", () => {
@@ -271,13 +248,13 @@ describe("explorable scenes", () => {
     click(/^Quick challenge: Reflexes and the two divisions/);
     click("You pull your hand away");
     expect(screen.getByText(/Right first time\./)).toBeInTheDocument();
-    expect(screen.getByText("Score 1 of 4")).toBeInTheDocument();
+    expect(screen.getByText("Score 1")).toBeInTheDocument();
     click("Next question");
     click("Parasympathetic");
     expect(screen.getByText(/Not quite, try another/)).toBeInTheDocument();
     click("Sympathetic");
     expect(screen.getByText(/readies the body for fight or flight/)).toBeInTheDocument();
-    expect(screen.getByText("Score 1 of 4")).toBeInTheDocument();
+    expect(screen.getByText("Score 1")).toBeInTheDocument();
     fireEvent.click(screen.getByRole("button", { name: "Sound on" }));
     expect(screen.getByRole("button", { name: "Sound off" })).toBeInTheDocument();
   });

@@ -52,7 +52,7 @@ export function DuelGame({ serverState, save, profile, offlineItems }: { serverS
     setBusy(true);
     const r = await api({ op: "join" });
     setBusy(false);
-    if (r.error === "unavailable") return setError("Ranked duels aren't switched on yet. Try a practice match.");
+    if (r.error === "unavailable") return setError("Ranked duels are not open yet. Play the bot.");
     if (r.error) return setError(r.error);
     if (r.kind === "match" && r.view) setScreen({ kind: "match", view: r.view });
     else if (r.kind === "queued" && r.matchId) setScreen({ kind: "queue", matchId: r.matchId, since: r.waitedMs ?? 0 });

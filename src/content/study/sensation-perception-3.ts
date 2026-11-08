@@ -278,7 +278,7 @@ Michael Posner and Steven Petersen (1990) proposed that attention is not one thi
   "parietal": "Orienting: superior parietal cortex and the temporoparietal junction move the spotlight, using acetylcholine.",
   "prefrontal": "Executive control: anterior cingulate and lateral prefrontal cortex resolve conflict, using dopamine."
  },
- "caption": "Tap each network. The right temporoparietal junction, part of orienting, is the region most linked to neglect."
+ "caption": "The right temporoparietal junction, part of orienting, is the region most linked to neglect."
 }
 :::
 
@@ -351,7 +351,7 @@ Q: The finding that a second target is often missed 300 ms after a first, but ca
 Disorders of perception and attention are where this module meets the ward. Some arise from brain lesions; others are part of psychiatric illness.
 
 :::widget figure
-{"id": "visual-pathway", "quiz": true, "caption": "Name each numbered part in your head first, then tap to check."}
+{"id": "visual-pathway", "quiz": true}
 :::
 
 ### Neglect, agnosia and blindsight
@@ -384,8 +384,7 @@ Disorders of perception and attention are where this module meets the ward. Some
   "parietal": "Right parietal lobe: hemispatial neglect. Both parieto-occipital regions: Balint's syndrome.",
   "temporal": "Fusiform region on the underside: prosopagnosia and associative agnosia. Area MT near the junction with the occipital lobe: akinetopsia.",
   "occipital": "Primary visual cortex: a blind half-field, sometimes with blindsight."
- },
- "caption": "Tap a lobe, then sort the problems below."
+ }
 }
 :::
 

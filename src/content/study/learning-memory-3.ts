@@ -35,7 +35,7 @@ Richard Atkinson and Richard Shiffrin (1968) described memory as a flow through 
   "sm>stm": "attention",
   "stm>ltm": "rehearsal"
  },
- "caption": "Tap each store for its duration, capacity and coding. The evidence and the critiques follow."
+ "caption": "The evidence and the critiques follow."
 }
 :::
 
@@ -218,8 +218,7 @@ Alan Baddeley and Graham Hitch replaced the single short-term store with a **wor
    "parent": "ce",
    "detail": "Added in 2000. Binds information from the other parts and from long-term memory into single episodes."
   }
- ],
- "caption": "Tap each part, then try the guess below."
+ ]
 }
 :::
 
@@ -378,8 +377,7 @@ Endel Tulving (1972) drew the **episodic-semantic** distinction; Larry Squire's 
   "cerebellum": "Timing of skilled movements and conditioned reflexes such as the eyeblink.",
   "amygdala": "Emotional learning and the boost that emotion gives to memory.",
   "temporal": "Long-term storage of facts and meanings in the lateral and front parts of the lobe."
- },
- "caption": "Tap each region to see its role."
+ }
 }
 :::
 
@@ -481,8 +479,7 @@ Forgetting is not one process. Psychologists have proposed five main explanation
    "parent": "f",
    "detail": "New traces disrupted before they stabilise: head injury, seizures, ECT, alcohol."
   }
- ],
- "caption": "Tap each branch, then read the evidence for each below."
+ ]
 }
 :::
 

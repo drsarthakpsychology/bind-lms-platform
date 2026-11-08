@@ -24,7 +24,7 @@ This module prepares you for four kinds of psychology exam in India:
     { "id": "uni", "label": "Pass your current course", "parent": "g", "detail": "University semester exams: mostly written answers." },
     { "id": "sem", "label": "Semester exams", "parent": "uni", "detail": "Short notes, long answers and case vignettes; structure and evaluation earn the marks." }
   ],
-  "caption": "Tap each branch. One curriculum prepares you for all of them; the exam changes the format, not the core content."
+  "caption": "One curriculum prepares you for all of them; the exam changes the format, not the core content."
 }
 :::
 
@@ -121,7 +121,7 @@ Most students prepare by **rereading** and **highlighting**. These feel producti
 {
   "kind": "forgetting",
   "title": "Why spacing beats cramming",
-  "caption": "Move the review points. Each spaced review lifts memory back up, and the curve falls more slowly after each one. Rereading the same night adds little; reviewing after a gap adds a lot."
+  "caption": "Each spaced review lifts memory back up, and the curve falls more slowly after each one. Rereading the same night adds little; reviewing after a gap adds a lot."
 }
 :::
 
@@ -206,7 +206,7 @@ Q: Which study method has the strongest research support for long-term retention
 {
   "kind": "inverted-u",
   "title": "Exam nerves: how much arousal helps?",
-  "caption": "Move the slider. Some arousal sharpens attention; too much narrows it and blocks recall, and the peak comes earlier for hard, complex questions. Slow breathing before the paper moves you back towards the top of the curve."
+  "caption": "Some arousal sharpens attention; too much narrows it and blocks recall, and the peak comes earlier for hard, complex questions. Slow breathing before the paper moves you back towards the top of the curve."
 }
 :::
 
@@ -259,7 +259,7 @@ With **4 options, +1 correct, minus 0.25 wrong** (NIMHANS pattern):
     { "id": "e1", "label": "Ruled out one", "parent": "yes", "detail": "Answer. Still positive: about +0.67 with +4 and minus 1." },
     { "id": "e0", "label": "Truly blind", "parent": "yes", "detail": "Small expected gain (+0.25 with +4 and minus 1; about +0.06 with +1 and minus 0.25). Guess if you are comfortable with risk; skipping is reasonable when the penalty is relatively large." }
   ],
-  "caption": "Tap each branch. Partial knowledge is where guessing pays; pure blind guesses add little."
+  "caption": "Partial knowledge is where guessing pays; pure blind guesses add little."
 }
 :::
 
@@ -416,7 +416,7 @@ Not every topic is equally likely. These areas come up again and again (based on
     { "label": "Steady marks", "detail": "Schools and history, biological basis, intelligence and creativity, Indian psychology and Indian contributors." },
     { "label": "Finish with", "detail": "Applied and emerging areas: positive, health, organisational, environmental and community psychology." }
   ],
-  "caption": "Tap each level. Order your Build phase from the top down, then mix all levels in practice sets."
+  "caption": "Order your Build phase from the top down, then mix all levels in practice sets."
 }
 :::
 
@@ -524,7 +524,7 @@ Read the high-yield summary and do the activity here. The exam-style questions f
 {
   "kind": "normal",
   "title": "The normal curve: z, percentile and p",
-  "caption": "Move z. Watch how 68, 95 and 99.7% of scores fall within one, two and three standard deviations, how a z of 1.96 cuts off 2.5% in each tail, and how IQ and T-scores map onto the same curve."
+  "caption": "68, 95 and 99.7% of scores fall within one, two and three standard deviations; a z of 1.96 cuts off 2.5% in each tail; IQ and T-scores map onto the same curve."
 }
 :::
 
@@ -540,7 +540,7 @@ Read the high-yield summary and do the activity here. The exam-style questions f
     { "id": "three", "label": "Three or more groups", "parent": "diff", "detail": "Independent: one-way ANOVA (or Kruskal-Wallis). Related: repeated-measures ANOVA (or Friedman). Two or more factors: factorial ANOVA." },
     { "id": "rel", "label": "Relationship", "parent": "r", "detail": "Two interval variables: Pearson's r. Ranks: Spearman's rho. Predicting one from others: regression." }
   ],
-  "caption": "Tap each branch. The non-parametric option, in brackets, is for ranked data or when assumptions such as normality fail."
+  "caption": "The non-parametric option, in brackets, is for ranked data or when assumptions such as normality fail."
 }
 :::
 
@@ -722,7 +722,7 @@ Read the high-yield summary and do the activity here. The exam-style questions f
     "hypothalamus": "Hunger, thirst, temperature, sleep timing (the suprachiasmatic nucleus) and the HPA stress axis.",
     "corpus-callosum": "Links the hemispheres. Split-brain studies showed left-hemisphere language dominance in most people."
   },
-  "caption": "Tap each region. Match-the-following questions often pair a region, a function and a classic case."
+  "caption": "Match-the-following questions often pair a region, a function and a classic case."
 }
 :::
 
@@ -949,7 +949,7 @@ Read the high-yield summary and do the activity here. The exam-style questions f
     { "label": "Safety", "detail": "Security, stability, freedom from fear." },
     { "label": "Physiological", "detail": "Food, water, sleep, warmth. The lower four are deficiency needs; the top is a growth need." }
   ],
-  "caption": "Tap each level. For evaluation marks: needs are broadly universal, but research does not support a strict order, and the ordering reflects individualistic values."
+  "caption": "For evaluation marks: needs are broadly universal, but research does not support a strict order, and the ordering reflects individualistic values."
 }
 :::
 

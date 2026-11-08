@@ -6,6 +6,8 @@ import { Ban, Bot, Check, FlaskConical, Layers, RefreshCw, Shield, ShieldOff, St
 import { cn } from "@/lib/utils";
 import { LearnLink } from "@/lib/games/ui/learn-link";
 import { CLEAR, dxById, ruleById, symptomById } from "@/lib/games-sims/comorbid/cards";
+import { DIAGNOSES } from "@/lib/games-sims/comorbid/cards";
+import { noteAnswer, orderFor, useHistoryPrefetch } from "@/lib/history/client";
 import { apply, botMove, newGame, progress, runBots, type Card, type Event, type Game, type Level, type Move, type Seat, type Setup } from "@/lib/games-sims/comorbid/game";
 import { AccuracyBoard, type AccuracyBoardData } from "@/lib/games-sims/ui/board";
 import { Btn, buzz, Kbd, motionCss as m, Panel, Pill, Stat, useHotkeys } from "@/lib/games-sims/ui/kit";
@@ -13,7 +15,7 @@ import { creditServerPlay } from "@/lib/learn/credit-play";
 import { HintBar, useHintStatus } from "@/components/hints/hint-chip";
 import { askHint } from "@/lib/hints/actions";
 
-type Finish = (x: { seed: string; mode: Setup["mode"]; level: Level; moves: Move[] }) => Promise<{ ok: boolean; xp: number }>;
+type Finish = (x: { seed: string; mode: Setup["mode"]; level: Level; moves: Move[]; prefer?: string }) => Promise<{ ok: boolean; xp: number }>;
 
 const LEVELS: { id: Level; label: string; line: string }[] = [
   { id: 1, label: "Intern", line: "Often plays the wrong card." },
@@ -28,10 +30,13 @@ export function ComorbidGame({ board, finish }: { board: AccuracyBoardData; fini
   const router = useRouter();
   const [play, setPlay] = React.useState<Play | null>(null);
   const [xp, setXp] = React.useState<number | null>(null);
+  useHistoryPrefetch("comorbid");
 
   function start(mode: Setup["mode"], level: Level) {
     const seed = `${Date.now().toString(36)}${Math.floor(Math.random() * 1e6).toString(36)}`;
-    const setup: Setup = { seed, mode, level, names: mode === "bot" ? ["You", LEVELS[level - 1].label] : ["Player 1", "Player 2"] };
+    // Answer history: a diagnosis not played yet, then one lost, then the one won longest ago.
+    const prefer = orderFor("comorbid", DIAGNOSES, (d) => d.id)[0]?.id;
+    const setup: Setup = { seed, mode, level, names: mode === "bot" ? ["You", LEVELS[level - 1].label] : ["Player 1", "Player 2"], ...(prefer ? { prefer } : {}) };
     setXp(null);
     setPlay({ setup, game: runBots(newGame(setup)), moves: [], handoff: false });
   }
@@ -44,7 +49,9 @@ export function ComorbidGame({ board, finish }: { board: AccuracyBoardData; fini
       setPlay={setPlay}
       xp={xp}
       onDone={(p) => {
-        void finish({ seed: p.setup.seed, mode: p.setup.mode, level: p.setup.level, moves: p.moves })
+        // Browser copy of the answer history (the server records it too).
+        noteAnswer("comorbid", p.game.seats[0].dx, p.game.winner === 0, { server: false });
+        void finish({ seed: p.setup.seed, mode: p.setup.mode, level: p.setup.level, moves: p.moves, ...(p.setup.prefer ? { prefer: p.setup.prefer } : {}) })
           .then((r) => {
             setXp(r.ok ? r.xp : 0);
             if (r.ok) creditServerPlay(r.xp);
@@ -185,7 +192,7 @@ function Table({ play, setPlay, xp, onDone, onAgain, onExit, board }: { play: Pl
               <Bot className="size-4" aria-hidden /> {g.seats[g.turn].name} is thinking…
             </p>
           ) : (
-            <p className="text-small font-semibold">Your turn. Tap a card.</p>
+            <p className="text-small font-semibold">Your turn.</p>
           )}
           <ul className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-5">
             {hand.map((c, i) => (
@@ -201,7 +208,7 @@ function Table({ play, setPlay, xp, onDone, onAgain, onExit, board }: { play: Pl
                 onStatus={setHints}
                 used={hinted[g.moves] !== undefined}
                 label="Show a card that fits"
-                ask={() => askHint({ game: "comorbid", run: play.setup.seed, level: play.setup.level, moves: play.moves })}
+                ask={() => askHint({ game: "comorbid", run: play.setup.seed, level: play.setup.level, moves: play.moves, ...(play.setup.prefer ? { prefer: play.setup.prefer } : {}) })}
                 onGive={(h) => {
                   setHinted((x) => ({ ...x, [g.moves]: h.text }));
                   if (h.pick) setSel(h.pick);

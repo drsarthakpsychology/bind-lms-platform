@@ -17,6 +17,7 @@
  * Pure functions; randomness comes from the `rng` argument.
  */
 import { addDays } from "./engine";
+import { spreadOut } from "@/lib/history/order";
 import { ALL_CONCEPTS, conceptById } from "./concepts";
 import type { Concept, Domain } from "./concepts/types";
 
@@ -144,15 +145,32 @@ export function buildSession(data: CoachData, domain: Domain | "all", today: str
   };
   add(relearn, 3);
   add(due, 4);
-  add(similar, 2);
-  // New concepts: a gentle random offset so students don't all see the same order.
-  const start = fresh.length ? Math.floor(rng() * Math.min(fresh.length, 6)) : 0;
-  add([...fresh.slice(start), ...fresh.slice(0, start)], size);
+  add(shuffleWith(similar, rng), 2);
+  // New concepts in a random order, so no two sessions open the same way.
+  add(shuffleWith(fresh, rng), size);
   add(due, size);
   add(relearn, size);
-  // Still short (everything mastered)? Revisit the weakest.
-  if (picked.length < size) add([...pool].sort((a, b) => (st(a.id)?.lvl ?? 0) - (st(b.id)?.lvl ?? 0)).map((c) => c.id), size);
-  return picked;
+  // Still short (everything mastered)? Revisit the weakest, then the one due longest ago.
+  if (picked.length < size)
+    add(
+      shuffleWith(pool, rng)
+        .sort((a, b) => (st(a.id)?.lvl ?? 0) - (st(b.id)?.lvl ?? 0) || (st(a.id)?.due ?? "").localeCompare(st(b.id)?.due ?? ""))
+        .map((c) => c.id),
+      size,
+    );
+  // Answer history order (src/lib/history): the session opens with a new
+  // concept, and the ones to relearn or review are spaced out between them.
+  const history = new Map(Object.entries(data.concepts).filter(([, c]) => c.seen > 0).map(([item, c]) => [item, { item, seen: c.seen, ok: c.teach ? false : true, at: 0, due: null }]));
+  return spreadOut(picked, (id) => id, history, 0);
+}
+
+function shuffleWith<T>(list: readonly T[], rng: () => number): T[] {
+  const a = [...list];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(rng() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
 }
 
 /** Why this concept is in the session (shown to the student). */

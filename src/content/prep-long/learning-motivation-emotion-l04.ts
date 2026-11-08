@@ -473,8 +473,8 @@ Emotion depends on a network: the amygdala detects significance and threat, the 
     keyPoints: ["Papez circuit and limbic system", "Kluver Bucy syndrome", "Amygdala in fear conditioning with LeDoux", "Patient S.M.", "Ventromedial PFC and somatic markers with Iowa gambling task", "Insula, cingulate, hypothalamus and striatum roles", "Sympathetic, parasympathetic and HPA responses", "Clinical links"],
     module: "motivation-emotion/3-1",
     visuals: [
-      { kind: "brainexplorer", caption: "The prefrontal cortex", data: { title: "The emotional brain", focus: ["amygdala", "prefrontal", "hypothalamus", "hippocampus"], caption: "Tap the amygdala and switch on damage. Then try the prefrontal cortex. How do the two change emotional life?" } },
-      { kind: "stress", caption: "The amygdala", data: { caption: "Follow the chain from amygdala to adrenal glands during a threat." } },
+      { kind: "brainexplorer", caption: "The prefrontal cortex", data: { title: "The emotional brain", focus: ["amygdala", "prefrontal", "hypothalamus", "hippocampus"], caption: "How do the amygdala and the prefrontal cortex each change emotional life?" } },
+      { kind: "stress", caption: "The amygdala", data: {} },
     ],
     ref: "Papez 1937; Kluver and Bucy 1939; LeDoux 1996 and 2000; Feinstein et al 2011 Current Biology; Damasio 1994; Bechara et al 1997; Davidson 1992; Bear, Connors and Paradiso ch 18",
   },

@@ -5,10 +5,9 @@ import { RotateCcw, Zap } from "lucide-react";
 import type { BrainExplorerData } from "@/lib/study/types";
 import { cn } from "@/lib/utils";
 import { trackLearn } from "@/lib/learn/track";
-import { PlayBar, useStepPlayer } from "../pacing";
 import { sfx } from "./sfx";
 import { SliceCanvas } from "./slice-canvas";
-import { JourneyBar, Missions, ModeTabs, Scene3DSlot, SceneCard, TONE_NAME, ViewSwitch, along, btn, chip, flatD, statusCls, useInView, useJourney, useLegProgress, useMissions, useSceneView, useThemeColors, type Journey, type V3 } from "./kit";
+import { JourneySteps, ModeTabs, Scene3DSlot, SceneCard, ViewSwitch, along, btn, chip, flatD, statusCls, useInView, useJourney, useLegProgress, useSceneView, useThemeColors, type Journey, type V3 } from "./kit";
 import { ALWAYS, BLOBS, BPATHS_FLAT, CEREBELLUM, CORTEX, DEEP, EAR, EYES, GUIDE, HEMI, LAYERS, NIGRA, PITUITARY, PONS, REGION, REGIONS, REGION_COLOR, TUBES, type GuideView, type RegionId } from "./brain-explorer-data";
 
 /**
@@ -27,7 +26,6 @@ const View3D = React.lazy(() => import("./brain-explorer-3d"));
 const called = (r: RegionId) => (REGION[r].name.includes("'s") ? REGION[r].name : `the ${REGION[r].name.charAt(0).toLowerCase()}${REGION[r].name.slice(1)}`);
 
 const CHALLENGE: RegionId[] = ["broca", "hippocampus", "amygdala", "occipital", "cerebellum", "frontal", "basal-ganglia", "parietal"];
-const MISSIONS = ["peel", "speech", "damage", "explore", "challenge", "tour"] as const;
 
 export function BrainExplorer({ d }: { d: BrainExplorerData }) {
   const v = useSceneView();
@@ -35,23 +33,8 @@ export function BrainExplorer({ d }: { d: BrainExplorerData }) {
   const inView = useInView(box);
   const colors = useThemeColors(box);
   const [mode, setMode] = React.useState<"explore" | "challenge">("explore");
-  const [freeLayer, setFreeLayer] = React.useState(0);
-  const [freeView, setFreeView] = React.useState<GuideView>("free");
-  // the guided tour is a step player: it waits on each stop until the student moves on (or presses Play)
-  const [touring, setTouring] = React.useState(false);
-  const tourSt = useStepPlayer(GUIDE.length, (k) => `${GUIDE[k]?.name ?? ""} ${GUIDE[k]?.say ?? ""}`);
-  const tour = touring ? Math.max(0, tourSt.i) : null;
-  const view = tour !== null ? GUIDE[tour].id : freeView;
-  const layer = tour !== null ? GUIDE[tour].layer : freeLayer;
-  // any other choice ends the tour
-  const setView = (g: GuideView) => {
-    setTouring(false);
-    setFreeView(g);
-  };
-  const setLayer = (k: number) => {
-    setTouring(false);
-    setFreeLayer(k);
-  };
+  const [layer, setLayer] = React.useState(0);
+  const [view, setView] = React.useState<GuideView>("free");
   const [sel, setSel] = React.useState<RegionId | null>(null);
   const [damage, setDamage] = React.useState(false);
   const [seen, setSeen] = React.useState<RegionId[]>([]);
@@ -60,7 +43,6 @@ export function BrainExplorer({ d }: { d: BrainExplorerData }) {
   const [score, setScore] = React.useState(0);
   const [feedback, setFeedback] = React.useState<{ ok: boolean; text: string } | null>(null);
   const journey = useJourney();
-  const ms = useMissions(MISSIONS);
   const focus = d.focus?.length && mode === "explore" ? REGIONS.filter((r) => (d.focus as string[]).includes(r.id)) : REGIONS;
 
   const play = (r: RegionId, hurt: boolean) => journey.start(`${r}-${hurt ? "hurt" : "ok"}`, hurt ? REGION[r].hurtAct : REGION[r].act);
@@ -73,14 +55,10 @@ export function BrainExplorer({ d }: { d: BrainExplorerData }) {
     if (DEEP.includes(r) && layer === 0 && view !== "coronal") {
       setView("free");
       setLayer(1);
-      ms.mark("peel");
     }
     play(r, hurt);
     const nextSeen = seen.includes(r) ? seen : [...seen, r];
     setSeen(nextSeen);
-    if (nextSeen.length >= 8) ms.mark("explore");
-    if ((r === "broca" || r === "wernicke") && !hurt) ms.mark("speech");
-    if (hurt) ms.mark("damage");
   };
   const pick = (r: RegionId) => {
     if (mode === "explore") {
@@ -104,12 +82,11 @@ export function BrainExplorer({ d }: { d: BrainExplorerData }) {
       play(r, true);
       setRound(round + 1);
       setTries(0);
-      if (nextScore >= 4) ms.mark("challenge");
       trackLearn({ type: "widget", kind: "brainexplorer", ok: first, item: want });
     } else {
       setTries(tries + 1);
       sfx("bad");
-      setFeedback({ ok: false, text: `Not quite. You picked ${called(r)}: ${REGION[r].does} Read the clue again and try another part.` });
+      setFeedback({ ok: false, text: `Not quite. You picked ${called(r)}: ${REGION[r].does} Read the clue again.` });
     }
   };
   const goView = (g: Exclude<GuideView, "free">) => {
@@ -117,31 +94,9 @@ export function BrainExplorer({ d }: { d: BrainExplorerData }) {
     setLayer(GUIDE.find((x) => x.id === g)!.layer);
     trackLearn({ type: "widget", kind: "brainexplorer", item: `view-${g}` });
   };
-  const startTour = () => {
-    tourSt.reset();
-    setTouring(true);
-    setSel(null);
-    journey.clear();
-    trackLearn({ type: "widget", kind: "brainexplorer", item: "tour" });
-  };
-  const leaveTour = () => {
-    if (tour === null) return;
-    setFreeView(GUIDE[tour].id);
-    setFreeLayer(GUIDE[tour].layer);
-    tourSt.pause();
-    setTouring(false);
-  };
-  // reaching the last stop completes the tour mission (in a timer callback, not render)
-  const lastStop = tour === GUIDE.length - 1;
-  React.useEffect(() => {
-    if (!lastStop) return;
-    const t = setTimeout(() => ms.mark("tour"), 0);
-    return () => clearTimeout(t);
-  }, [lastStop, ms]);
   const peel = (k: number) => {
     setLayer(k);
     setView("free");
-    if (k > 0) ms.mark("peel");
     if (sel && CORTEX.includes(sel) && k > 0) {
       setSel(null);
       journey.clear();
@@ -152,7 +107,6 @@ export function BrainExplorer({ d }: { d: BrainExplorerData }) {
     setDamage(nd);
     if (sel) {
       play(sel, nd);
-      if (nd) ms.mark("damage");
     }
   };
   const restart = () => {
@@ -168,7 +122,7 @@ export function BrainExplorer({ d }: { d: BrainExplorerData }) {
   const bubble = r?.bubble && (journey.done || journey.cur?.path === "bro-mouth") ? (damage ? r.bubble.hurt : r.bubble.ok) : null;
 
   return (
-    <SceneCard title={d.title ?? "Inside the brain"} goal="Peel the brain open, tap each part to watch it work, then switch on damage to see what an injury does." caption={d.caption} tools={<ViewSwitch v={v} />} sound>
+    <SceneCard title={d.title ?? "Inside the brain"} caption={d.caption} tools={<ViewSwitch v={v} />} sound>
       <ModeTabs name="Mode" value={mode} onChange={(m) => { setMode(m); setFeedback(null); journey.clear(); if (m === "challenge") { setDamage(true); setSel(null); } }} modes={[{ id: "explore", label: "Explore" }, { id: "challenge", label: "Where is the damage?" }]} />
       <div ref={box} className="relative mt-3 h-[20rem] overflow-hidden rounded-xl border-2 border-foreground bg-background sm:h-[26rem]">
         {v.use3D ? (
@@ -182,20 +136,13 @@ export function BrainExplorer({ d }: { d: BrainExplorerData }) {
             “{bubble}”
           </p>
         ) : null}
-        {v.use3D ? <p className="pointer-events-none absolute bottom-1.5 left-2 rounded bg-background/80 px-1.5 text-xs text-muted-foreground">Drag to turn, pinch to zoom, tap a part</p> : null}
       </div>
 
-      <div className="mt-3 grid grid-cols-2 gap-1.5 sm:grid-cols-5" role="group" aria-label="Guided views">
+      <div className="mt-3 grid grid-cols-2 gap-1.5 sm:grid-cols-4" role="group" aria-label="Views">
         {GUIDE.map((g) => (
           <button key={g.id} type="button" aria-pressed={view === g.id} className={chip(view === g.id, "px-2 text-center text-xs sm:text-sm")} onClick={() => goView(g.id)}>{g.name}</button>
         ))}
-        {tour === null ? (
-          <button type="button" className={cn(btn, "col-span-2 min-h-11 bg-foreground px-2 text-xs text-background sm:col-span-1 sm:text-sm")} onClick={startTour}>Take the tour</button>
-        ) : (
-          <button type="button" className={cn(btn, "col-span-2 min-h-11 bg-card px-2 text-xs sm:col-span-1 sm:text-sm")} onClick={leaveTour}>{lastStop ? "Finish the tour" : "Leave the tour"}</button>
-        )}
       </div>
-      {tour !== null ? <PlayBar st={tourSt} kind="brainexplorer" first="Play the tour" nextLabel="Next stop" hint="" /> : null}
       <div className="mt-1.5 grid grid-cols-3 gap-1.5" role="group" aria-label="Peel the layers">
         {LAYERS.map((l, k) => (
           <button key={l.name} type="button" aria-pressed={layer === k} className={chip(layer === k, "px-2 text-center text-xs sm:text-sm")} onClick={() => peel(k)}>{l.name}</button>
@@ -206,13 +153,13 @@ export function BrainExplorer({ d }: { d: BrainExplorerData }) {
         <div className="mt-3 rounded-xl border-2 border-foreground bg-[var(--status-pending-bg)] p-3">
           {round < CHALLENGE.length ? (
             <>
-              <p className="text-sm font-bold">Case {round + 1} of {CHALLENGE.length} · score {score}</p>
+              <p className="text-sm font-bold">Case {round + 1} · score {score}</p>
               <p className="mt-1 text-[0.95rem]">{REGION[CHALLENGE[round]].clue}</p>
-              <p className="mt-1 text-sm text-muted-foreground">Which part of the brain is damaged? Tap it on the brain or below.</p>
+              <p className="mt-1 text-sm font-semibold">Which part is damaged?</p>
             </>
           ) : (
             <>
-              <p className="text-sm font-bold">All {CHALLENGE.length} cases done: {score} right first time.</p>
+              <p className="text-sm font-bold">Done: {score} right first time.</p>
               <button type="button" className={cn(btn, "mt-2 bg-card text-sm")} onClick={restart}><RotateCcw className="size-4" aria-hidden /> Play again</button>
             </>
           )}
@@ -237,17 +184,15 @@ export function BrainExplorer({ d }: { d: BrainExplorerData }) {
           </button>
         ) : null}
         {sel && journey.done ? <button type="button" className={cn(btn, "bg-card text-sm")} onClick={() => play(sel, damage)}><RotateCcw className="size-4" aria-hidden /> Replay</button> : null}
-        <JourneyBar journey={journey} kind="brainexplorer" />
       </div>
 
       <div className={statusCls} role="status" aria-live="polite">
-        {view !== "free" ? <p className="mb-2">{tour !== null ? <span className="font-semibold">Tour stop {tour + 1} of {GUIDE.length}. </span> : null}{GUIDE.find((g) => g.id === view)!.say}</p> : null}
+        {view !== "free" ? <p className="mb-2">{GUIDE.find((g) => g.id === view)!.say}</p> : null}
         {feedback ? <p className={cn("mb-2 font-semibold", feedback.ok ? "" : "text-[var(--status-alert-fg)]")}>{feedback.ok ? "Right. " : ""}{feedback.text}</p> : null}
         {r ? (
           <>
             <span className="font-semibold">{r.name}: </span>{r.does}
-            {journey.cur ? <span className="mt-2 block"><span className="font-semibold">Step {journey.leg + 1} of {journey.legs.length} ({TONE_NAME[journey.cur.tone]}): </span>{journey.cur.say}</span> : null}
-            {journey.done ? <span className="mt-2 block"><span className="font-semibold">Result: </span>{journey.legs[journey.legs.length - 1].say}</span> : null}
+            <JourneySteps journey={journey} />
             {bubble ? <span className="mt-2 block"><span className="font-semibold">What comes out: </span>“{bubble}”</span> : null}
             {damage ? (
               <span className="mt-2 block rounded-lg border-2 border-[var(--status-alert-fg)] bg-[var(--status-alert-bg)] p-2">
@@ -257,20 +202,9 @@ export function BrainExplorer({ d }: { d: BrainExplorerData }) {
             ) : null}
           </>
         ) : (
-          view === "free" ? <>{LAYERS[layer].say} {mode === "explore" ? "Tap any part to see it work." : ""}</> : mode === "explore" ? <>Tap any part to see it work.</> : null
+          view === "free" ? <>{LAYERS[layer].say}</> : null
         )}
       </div>
-      <Missions
-        doneText="All missions done: you have taken the brain apart, watched it work and seen what happens when parts are lost."
-        items={[
-          { id: "peel", label: "Peel the cortex to reach the deep parts", done: ms.done("peel") },
-          { id: "speech", label: "Watch the speech loop (Broca or Wernicke)", done: ms.done("speech") },
-          { id: "damage", label: "Switch on damage and read a real case", done: ms.done("damage") },
-          { id: "explore", label: `Explore 8 parts (${Math.min(8, seen.length)} so far)`, done: ms.done("explore") },
-          { id: "challenge", label: "Find 4 injuries first time in the challenge", done: ms.done("challenge") },
-          { id: "tour", label: "Take the guided tour of the four views", done: ms.done("tour") },
-        ]}
-      />
     </SceneCard>
   );
 }

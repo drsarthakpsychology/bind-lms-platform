@@ -32,7 +32,7 @@ The endocrine table in 4.2 listed the glands. Exams go further and ask how each 
 ### The HPA axis and the adrenal gland
 
 :::widget figure
-{"id": "hpa-axis", "quiz": true, "caption": "Name each numbered part in your head first, then tap to check."}
+{"id": "hpa-axis", "quiz": true}
 :::
 
 - **Rhythm**: cortisol peaks around waking (rising further in the half hour after waking, the "cortisol awakening response") and falls to its lowest around midnight. A test result means little without the time it was taken.
@@ -48,7 +48,7 @@ The endocrine table in 4.2 listed the glands. Exams go further and ask how each 
 
 :::widget stress
 {
- "caption": "Trigger a stressor and name each step aloud: amygdala, hypothalamus (CRH), pituitary (ACTH), adrenal cortex (cortisol), with the sympathetic arm racing ahead. Then switch on chronic stress and say which receptor's feedback is failing (glucocorticoid receptors in the hippocampus and hypothalamus)."
+ "caption": "Trigger a stressor and name each step aloud: amygdala, hypothalamus (CRH), pituitary (ACTH), adrenal cortex (cortisol), with the sympathetic arm racing ahead."
 }
 :::
 
@@ -228,7 +228,7 @@ In 4.1 you met the sleep stages, the 90-minute cycle and the body clock. Now lea
 Hans Berger, a German psychiatrist, recorded the first human **electroencephalogram (EEG)** in 1929; the alpha rhythm was first called the "Berger rhythm". Electrodes are placed by the international **10-20 system** (spaced at 10 and 20 per cent of the distances across the skull). The EEG records the summed slow currents of millions of cortical pyramidal cells lined up side by side, not single spikes.
 
 :::widget figure
-{"id": "eeg-1020", "quiz": true, "caption": "Name each numbered part in your head first, then tap to check."}
+{"id": "eeg-1020", "quiz": true}
 :::
 
 | Rhythm | Frequency | Typical state |
@@ -275,7 +275,7 @@ Hans Berger, a German psychiatrist, recorded the first human **electroencephalog
 
 :::widget hypnogram
 {
- "caption": "Drag through the night and name the waves at each stage: theta in N1, spindles and K-complexes in N2, delta in N3, sawtooth in REM. Note when growth hormone would be released (the first N3) and when most dreams occur (REM, growing towards morning)."
+ "caption": "Note when growth hormone would be released (the first N3) and when most dreams occur (REM, growing towards morning)."
 }
 :::
 
@@ -313,7 +313,7 @@ Hans Berger, a German psychiatrist, recorded the first human **electroencephalog
 ### What switches sleep on and off
 
 :::widget figure
-{"id": "sleep-centres", "quiz": true, "caption": "Name each numbered part in your head first, then tap to check."}
+{"id": "sleep-centres", "quiz": true}
 :::
 
 - **Borbély's two-process model** (1982): sleep timing depends on **Process S**, a homeostatic **sleep pressure** that builds the longer you are awake (carried partly by **adenosine**) and drains during sleep, and **Process C**, the **circadian** alerting signal from the SCN. You fall asleep easily when S is high and C has dropped.
@@ -331,7 +331,7 @@ Hans Berger, a German psychiatrist, recorded the first human **electroencephalog
   { "id": "n", "label": "Night", "detail": "Melatonin rises, the circadian signal falls, and high pressure tips the VLPO switch to sleep." },
   { "id": "s", "label": "Sleep", "detail": "Pressure drains, fastest during deep N3 sleep early in the night." }
  ],
- "caption": "Press Play. Why does caffeine at 6 pm keep you awake? (It blocks adenosine, hiding Process S.)"
+ "caption": "Why does caffeine at 6 pm keep you awake? (It blocks adenosine, hiding Process S.)"
 }
 :::
 

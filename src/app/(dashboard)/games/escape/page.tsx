@@ -19,10 +19,8 @@ export default async function EscapePage({ searchParams }: { searchParams: Promi
   return (
     <ActivityFrame
       title="Team Escape Room"
-      purpose="A locked ward and one patient. Your team opens each door by solving the next step: mental state, diagnosis, differential, risk, plan and medicine."
-      how={["Start a team and share the code (2 to 5 players).", "Anyone can answer any door. Wrong answers add 20 seconds.", "Two misses on a door open its hint.", "Fastest team this week tops the race."]}
     >
-      <ActivityTip id="team-escape-room" intro="One patient, seven locked doors." steps={["Start a team and share the code (2 to 5 players), or practise alone.", "Anyone can answer any door. Wrong answers add 20 seconds.", "Two misses on a door open its hint.", "The fastest team this week tops the race."]} />
+      <ActivityTip id="team-escape-room" intro="One patient, locked doors." steps={["Start a team and share the code, or practise alone.", "Anyone can answer any door. Wrong answers add 20 seconds.", "Two misses on a door open its hint.", "The fastest team this week tops the race."]} />
       <LearnStoreInit serverState={learnState} save={saveLearnState} />
       <EscapeRoom
         teamsOn={ready}

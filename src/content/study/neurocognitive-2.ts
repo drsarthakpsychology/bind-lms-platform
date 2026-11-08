@@ -6,7 +6,7 @@ export const part2 = String.raw`
 Cognitive tests help you **detect**, **describe** and **track** cognitive problems. They do not diagnose on their own. A score must always be read alongside the history, daily function, education, language, culture, hearing, vision and mood.
 
 :::widget figure
-{"id": "brodmann", "quiz": true, "caption": "Name each numbered part in your head first, then tap to check."}
+{"id": "brodmann", "quiz": true}
 :::
 
 ### The three tests you will use most
@@ -17,7 +17,7 @@ Cognitive tests help you **detect**, **describe** and **track** cognitive proble
 | **ACE-III** (Addenbrooke's Cognitive Examination) | 100 | About 15 to 20 minutes | Attention, memory, verbal fluency, language, visuospatial | Detailed domain profile; helps tell Alzheimer's from frontotemporal patterns; validated in several Indian languages |
 
 :::widget curve
-{"kind": "normal", "title": "Test scores, norms and cut-offs", "caption": "Move the slider along the curve. A score's meaning depends on the reference group: the same raw score can be normal for someone with little schooling and low for a graduate. Cut-offs trade sensitivity against specificity, so a score near the cut-off needs clinical judgement and an informant history."}
+{"kind": "normal", "title": "Test scores, norms and cut-offs", "caption": "A score's meaning depends on the reference group: the same raw score can be normal for someone with little schooling and low for a graduate. Cut-offs trade sensitivity against specificity, so a score near the cut-off needs clinical judgement and an informant history."}
 :::
 
 :::widget figure
@@ -83,7 +83,7 @@ Q: On ACE-III, low verbal fluency and language with preserved memory and visuosp
 No medicine yet cures dementia. Current medicines fall into three groups: those that **ease symptoms** for a time, those that **slow** early Alzheimer's disease modestly by removing amyloid, and those used for **distressing behavioural symptoms**.
 
 :::widget figure
-{"id": "cholinergic-projections", "quiz": true, "caption": "Name each numbered part in your head first, then tap to check."}
+{"id": "cholinergic-projections", "quiz": true}
 :::
 
 :::widget journey
@@ -167,7 +167,7 @@ Q: In CLARITY-AD, lecanemab slowed decline on CDR-Sum of Boxes by about:
 Most people with dementia develop **behavioural and psychological symptoms** at some point: agitation, aggression, wandering, apathy, depression, anxiety, suspicion, hallucinations, delusions (often of theft), disinhibition, sleep disturbance and calling out. These symptoms are often more distressing for families than memory loss, and are the main reason for moving to residential care.
 
 :::widget flow
-{"title": "The DICE approach to behaviour in dementia", "layout": "cycle", "nodes": [{"id": "d", "label": "Describe", "detail": "What happens, when, where, with whom, what came before and after."}, {"id": "i", "label": "Investigate", "detail": "Pain, infection, constipation, medicines, hunger, toileting, boredom, noise, fear, carer approach."}, {"id": "c", "label": "Create", "detail": "A plan with the family: remove triggers, add meaningful activity, change approach, treat causes."}, {"id": "e", "label": "Evaluate", "detail": "Did it work? Keep a simple diary; adjust and repeat."}], "caption": "Press Play. Go round the cycle before reaching for an antipsychotic."}
+{"title": "The DICE approach to behaviour in dementia", "layout": "cycle", "nodes": [{"id": "d", "label": "Describe", "detail": "What happens, when, where, with whom, what came before and after."}, {"id": "i", "label": "Investigate", "detail": "Pain, infection, constipation, medicines, hunger, toileting, boredom, noise, fear, carer approach."}, {"id": "c", "label": "Create", "detail": "A plan with the family: remove triggers, add meaningful activity, change approach, treat causes."}, {"id": "e", "label": "Evaluate", "detail": "Did it work? Keep a simple diary; adjust and repeat."}]}
 :::
 
 ### Understanding behaviour as communication
@@ -244,7 +244,7 @@ Q: Antipsychotics in older people with dementia are associated with:
 ## 3.4 Delirium in depth [core][advanced]
 
 :::widget figure
-{"id": "ras", "quiz": true, "caption": "Name each numbered part in your head first, then tap to check."}
+{"id": "ras", "quiz": true}
 :::
 
 ### Why does delirium happen?
@@ -256,7 +256,7 @@ No single mechanism explains all delirium. Leading ideas:
 - **Low brain reserve**: an older, damaged or dementing brain has less capacity to cope with these stresses.
 
 :::widget brainmap
-{"title": "Brain systems disturbed in delirium", "focus": ["prefrontal", "thalamus", "brainstem", "hippocampus"], "notes": {"prefrontal": "Sustained attention and executive control fail first, the core of delirium.", "thalamus": "The relay that filters sensory information; disruption contributes to misperceptions and hallucinations.", "brainstem": "Arousal systems (including cholinergic and noradrenergic nuclei) set alertness; disturbance causes drowsiness or hyperalertness and sleep-wake reversal.", "hippocampus": "Memory formation is disrupted, so people often remember little of the episode."}, "caption": "Tap each area. Delirium is a whole-brain network failure rather than damage in one spot."}
+{"title": "Brain systems disturbed in delirium", "focus": ["prefrontal", "thalamus", "brainstem", "hippocampus"], "notes": {"prefrontal": "Sustained attention and executive control fail first, the core of delirium.", "thalamus": "The relay that filters sensory information; disruption contributes to misperceptions and hallucinations.", "brainstem": "Arousal systems (including cholinergic and noradrenergic nuclei) set alertness; disturbance causes drowsiness or hyperalertness and sleep-wake reversal.", "hippocampus": "Memory formation is disrupted, so people often remember little of the episode."}, "caption": "Delirium is a whole-brain network failure rather than damage in one spot."}
 :::
 
 :::widget guess
@@ -328,7 +328,7 @@ In India, low education, high blood pressure, diabetes, hearing loss and air pol
 :::
 
 :::widget layers
-{"title": "Dementia risk across the life course", "shape": "stack", "layers": [{"label": "Later life", "detail": "Social isolation, air pollution, untreated vision loss."}, {"label": "Mid-life", "detail": "Hearing loss, high LDL cholesterol, depression, head injury, inactivity, diabetes, smoking, high blood pressure, obesity, excess alcohol."}, {"label": "Early life", "detail": "Less education, the foundation of cognitive reserve."}], "caption": "Tap each stage. About 45 in 100 cases worldwide are linked to these fourteen factors, so prevention starts in childhood and continues for life."}
+{"title": "Dementia risk across the life course", "shape": "stack", "layers": [{"label": "Later life", "detail": "Social isolation, air pollution, untreated vision loss."}, {"label": "Mid-life", "detail": "Hearing loss, high LDL cholesterol, depression, head injury, inactivity, diabetes, smoking, high blood pressure, obesity, excess alcohol."}, {"label": "Early life", "detail": "Less education, the foundation of cognitive reserve."}], "caption": "About 45 in 100 cases worldwide are linked to these fourteen factors, so prevention starts in childhood and continues for life."}
 :::
 
 ### Biomarkers: seeing the disease before symptoms

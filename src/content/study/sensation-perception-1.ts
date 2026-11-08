@@ -54,7 +54,7 @@ Each sense has its own **receptors**, its own nerve route and its own patch of c
   "t>n": "nerve impulses",
   "n>c": "via the thalamus"
  },
- "caption": "Tap each step. Sensation covers the first five; perception is the meaning the brain adds."
+ "caption": "Sensation covers the first five; perception is the meaning the brain adds."
 }
 :::
 
@@ -65,7 +65,7 @@ Each sense has its own **receptors**, its own nerve route and its own patch of c
 Most perception is both at once. You read a doctor's scrawled prescription partly from the ink (bottom-up) and partly because you know which medicine names are likely (top-down). The pharmacist who knows the doctor reads it faster for the same reason.
 
 :::widget compare
-{"title": "Bottom-up or top-down?", "a": {"label": "Bottom-up", "points": ["Starts with the raw input", "Edges, then shapes, then objects", "Driven by the stimulus", "Wins when the input is clear and new"], "summary": "Bottom-up: the data on your senses build the percept from the ground up."}, "b": {"label": "Top-down", "points": ["Starts with knowledge and expectation", "Fills gaps and settles ambiguity", "Driven by context and experience", "Wins when the input is poor or unclear"], "summary": "Top-down: what you already know shapes what you see. The pharmacist reads the scrawl because she knows which names to expect."}, "caption": "Real perception runs both ways at once. Slide to see which one does more of the work in each situation."}
+{"title": "Bottom-up or top-down?", "a": {"label": "Bottom-up", "points": ["Starts with the raw input", "Edges, then shapes, then objects", "Driven by the stimulus", "Wins when the input is clear and new"], "summary": "Bottom-up: the data on your senses build the percept from the ground up."}, "b": {"label": "Top-down", "points": ["Starts with knowledge and expectation", "Fills gaps and settles ambiguity", "Driven by context and experience", "Wins when the input is poor or unclear"], "summary": "Top-down: what you already know shapes what you see. The pharmacist reads the scrawl because she knows which names to expect."}, "caption": "Real perception runs both ways at once."}
 :::
 
 :::widget sort
@@ -115,8 +115,7 @@ Receptors respond less to a stimulus that does not change. Walk into a fish mark
   "temporal": "Hearing: the auditory cortex on the upper surface of the temporal lobe. Smell and taste areas sit nearby, deeper in.",
   "sensory": "Touch, temperature, pain and body position: the somatosensory strip just behind the central groove.",
   "thalamus": "The relay station: every sense except smell passes through it on the way to the cortex."
- },
- "caption": "Tap a highlighted region to see which sense it receives."
+ }
 }
 :::
 

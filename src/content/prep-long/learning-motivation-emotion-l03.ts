@@ -124,7 +124,7 @@ The Yerkes Dodson law captures a widely observed principle: moderate arousal is 
     keyPoints: ["Definition and physiology of arousal", "Yerkes Dodson original study", "Inverted U and task difficulty", "Easterbrook's cue utilisation", "Zuckerman's sensation seeking with subscales", "Applications in exams, sport and clinical work", "Criticisms"],
     module: "motivation-emotion/1-1",
     visuals: [
-      { kind: "curve", caption: "The Yerkes Dodson law", data: { kind: "inverted-u", caption: "Try a simple task and a complex task: the complex task peaks at a lower arousal." } },
+      { kind: "curve", caption: "The Yerkes Dodson law", data: { kind: "inverted-u" } },
     ],
     ref: "Yerkes and Dodson 1908; Easterbrook 1959; Zuckerman 1979 and 1994; Brooks 2014 reappraisal; Hanin 2000; Teigen 1994 on the history of the law",
   },

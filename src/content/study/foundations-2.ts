@@ -66,7 +66,7 @@ The UGC NET syllabus follows a scheme built on the work of **Durganand Sinha** a
     { "id": "p5", "label": "1990s: paradigm debates", "detail": "Doubts about positivism; a disciplinary identity crisis." },
     { "id": "p6", "label": "2000s onward: Indian psychology", "detail": "The Pondicherry Manifesto, new courses, Indian Knowledge Systems after 2020." }
   ],
-  "caption": "Press Play. The phases overlap in reality, but this is the order the NET syllabus uses."
+  "caption": "The phases overlap in reality, but this is the order the NET syllabus uses."
 }
 :::
 

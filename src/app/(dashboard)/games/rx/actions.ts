@@ -1,7 +1,8 @@
 "use server";
 
 import { z } from "zod";
-import { attemptsFor, rxXp, runSummary, type Answer } from "@/lib/games-sims/rx/game";
+import { attemptsFor, grade, rxItem, rxXp, runSummary, type Answer } from "@/lib/games-sims/rx/game";
+import { record } from "@/lib/history/server";
 import { MYSTERIES } from "@/lib/games-sims/rx/content";
 import { currentUser, gradeAnswers, payXp, saveResult } from "@/lib/games-sims/server/results";
 import { hintedItems } from "@/lib/hints/server";
@@ -30,7 +31,8 @@ export async function gradeRxAnswer(input: Answer & { run?: string }): Promise<{
     const hinted = await hintedItems(user.id, itemKey("rx", run, "")).catch(() => new Map<string, number>());
     if (hintedIn(hinted, run, parsed.data.id)) attempts = attempts.map((a) => ({ ...a, outcome: cappedOutcome(a.outcome, 1) }));
   }
-  await gradeAnswers(user, attempts);
+  const g = grade(parsed.data);
+  await Promise.all([gradeAnswers(user, attempts), g ? record(user.id, "rx", rxItem(parsed.data.kind, parsed.data.id), g.score >= 1) : null]);
   return { ok: true };
 }
 

@@ -19,6 +19,7 @@
 import { CHAPTERS, diagnosisById, normaliseName } from "../diagnoses";
 import { CASE_SCORE_PER_HINT, clueOpens } from "@/lib/hints/rules";
 import type { DailyCase } from "./types";
+import { orderByHistory, tierOf, type HistoryRow } from "@/lib/history/order";
 
 export const MAX_CLUES = 6;
 export const MAX_HINTS = 2;
@@ -207,7 +208,7 @@ function gcd(a: number, b: number): number {
   return b ? gcd(b, a % b) : a;
 }
 
-export type PracticeRecord = { id: string; score: number; difficulty: number };
+export type PracticeRecord = { id: string; score: number; difficulty: number; solved?: boolean };
 
 /**
  * Adaptive practice: aim for the level where the player solves most cases but
@@ -229,7 +230,19 @@ export function pickPractice(cases: Pick<DailyCase, "id" | "difficulty">[], hist
   const pool = cases.filter((c) => c.id !== excludeId);
   if (!pool.length) return null;
   const unseen = pool.filter((c) => !seen.has(c.id));
-  const from = unseen.length ? unseen : pool;
+  let from = unseen;
+  if (!unseen.length) {
+    // Every case played (answer history order, src/lib/history): cases not
+    // solved come back first, then solved ones, the one played longest ago first.
+    const rows = new Map<string, HistoryRow>();
+    history.forEach((h, i) => rows.set(h.id, { item: h.id, seen: 1, ok: h.solved ?? h.score >= 50, at: i, due: null }));
+    const ordered = orderByHistory(pool, (c) => c.id, rows, history.length, () => roll);
+    const firstTier = tierOf(rows.get(ordered[0].id), history.length);
+    const best = ordered.filter((c) => tierOf(rows.get(c.id), history.length) === firstTier);
+    // Solved ones recycle strictly oldest first; missed ones keep the level aim.
+    if (firstTier === 4) return best[0].id;
+    from = best;
+  }
   for (const gap of [0, 1, 2]) {
     const tier = from.filter((c) => Math.abs(c.difficulty - target) === gap);
     if (tier.length) return tier[Math.min(tier.length - 1, Math.floor(roll * tier.length))].id;

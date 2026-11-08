@@ -205,7 +205,7 @@ Listen for **change talk** (the person's own statements in favour of change) and
 :::
 
 :::widget flow
-{"title": "The stages of change", "layout": "cycle", "nodes": [{"id": "a", "label": "Precontemplation", "detail": "Not considering change. Raise doubt gently; give information without pressure."}, {"id": "b", "label": "Contemplation", "detail": "Thinking about it, ambivalent. Explore both sides; strengthen change talk."}, {"id": "c", "label": "Preparation", "detail": "Planning. Help set a date, a goal and a plan."}, {"id": "d", "label": "Action", "detail": "Making changes. Support skills, medicines, coping with craving."}, {"id": "e", "label": "Maintenance", "detail": "Keeping changes. Prevent relapse; build a life that does not need the substance."}, {"id": "f", "label": "Relapse", "detail": "Common. Learn from it and re-enter the cycle, often at contemplation or preparation."}], "caption": "Press Play. People go round the cycle several times; matching your approach to the stage helps."}
+{"title": "The stages of change", "layout": "cycle", "nodes": [{"id": "a", "label": "Precontemplation", "detail": "Not considering change. Raise doubt gently; give information without pressure."}, {"id": "b", "label": "Contemplation", "detail": "Thinking about it, ambivalent. Explore both sides; strengthen change talk."}, {"id": "c", "label": "Preparation", "detail": "Planning. Help set a date, a goal and a plan."}, {"id": "d", "label": "Action", "detail": "Making changes. Support skills, medicines, coping with craving."}, {"id": "e", "label": "Maintenance", "detail": "Keeping changes. Prevent relapse; build a life that does not need the substance."}, {"id": "f", "label": "Relapse", "detail": "Common. Learn from it and re-enter the cycle, often at contemplation or preparation."}], "caption": "People go round the cycle several times; matching your approach to the stage helps."}
 :::
 
 :::widget compare
@@ -283,7 +283,7 @@ Key principles:
 :::
 
 :::widget flow
-{"title": "Dual diagnosis: why both conditions must be treated together", "layout": "cycle", "nodes": [{"id": "a", "label": "Mental illness symptoms", "detail": "Anxiety, low mood, voices, insomnia, mania."}, {"id": "b", "label": "Substance used to cope", "detail": "Alcohol to sleep, cannabis to calm down, stimulants for energy."}, {"id": "c", "label": "Short-term relief", "detail": "Symptoms ease for hours."}, {"id": "d", "label": "Longer-term worsening", "detail": "Withdrawal, rebound and direct effects worsen mood, anxiety and psychosis, and disrupt treatment."}], "caption": "Press Play. Treating only one side leaves the other to restart the cycle."}
+{"title": "Dual diagnosis: why both conditions must be treated together", "layout": "cycle", "nodes": [{"id": "a", "label": "Mental illness symptoms", "detail": "Anxiety, low mood, voices, insomnia, mania."}, {"id": "b", "label": "Substance used to cope", "detail": "Alcohol to sleep, cannabis to calm down, stimulants for energy."}, {"id": "c", "label": "Short-term relief", "detail": "Symptoms ease for hours."}, {"id": "d", "label": "Longer-term worsening", "detail": "Withdrawal, rebound and direct effects worsen mood, anxiety and psychosis, and disrupt treatment."}], "caption": "Treating only one side leaves the other to restart the cycle."}
 :::
 
 ### Special groups

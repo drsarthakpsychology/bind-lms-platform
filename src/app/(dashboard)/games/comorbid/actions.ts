@@ -1,6 +1,7 @@
 "use server";
 
 import { z } from "zod";
+import { record } from "@/lib/history/server";
 import { apply, attemptFor, comorbidXp, newGame, runBots, type Setup } from "@/lib/games-sims/comorbid/game";
 import { currentUser, gradeAnswers, payXp, saveResult } from "@/lib/games-sims/server/results";
 import { hintedItems } from "@/lib/hints/server";
@@ -10,6 +11,7 @@ const schema = z.object({
   seed: z.string().min(4).max(40),
   mode: z.enum(["bot", "pass"]),
   level: z.union([z.literal(1), z.literal(2), z.literal(3)]),
+  prefer: z.string().max(40).optional(),
   moves: z.array(z.object({ uid: z.string().max(8), action: z.enum(["play", "swap"]) })).min(1).max(80),
 });
 
@@ -23,7 +25,7 @@ export async function finishComorbid(input: z.infer<typeof schema>): Promise<{ o
   const parsed = schema.safeParse(input);
   const user = await currentUser();
   if (!parsed.success || !user) return { ok: false, xp: 0 };
-  const setup: Setup = { seed: parsed.data.seed, mode: parsed.data.mode, level: parsed.data.level, names: ["Player 1", "Player 2"] };
+  const setup: Setup = { seed: parsed.data.seed, mode: parsed.data.mode, level: parsed.data.level, names: ["Player 1", "Player 2"], ...(parsed.data.prefer ? { prefer: parsed.data.prefer } : {}) };
   const hinted = setup.mode === "bot" ? await hintedItems(user.id, itemKey("comorbid", setup.seed, "")).catch(() => new Map<string, number>()) : new Map<string, number>();
   // The same replay as replay() in the game rules, keeping the turn number of each play.
   let game = runBots(newGame(setup));
@@ -47,6 +49,8 @@ export async function finishComorbid(input: z.infer<typeof schema>): Promise<{ o
   await gradeAnswers(user, attempts);
   const right = mine.filter((p) => p.ev.ok && !p.helped).length;
   const won = game.winner === 0;
+  // Answer history: Player 1's diagnosis, right when the game was won.
+  await record(user.id, "comorbid", game.seats[0].dx, won);
   const [, xp] = await Promise.all([
     attempts.length ? saveResult(user.id, { game: "comorbid", item: `${game.seats[0].dx}-${game.seats[1].dx}`, score: right / attempts.length, right, total: attempts.length, meta: { mode: setup.mode, level: setup.level, won, streak: 0 } }) : Promise.resolve(false),
     payXp(user.id, "comorbid", comorbidXp(won, setup.level, setup.mode, right), parsed.data.seed),

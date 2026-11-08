@@ -19,7 +19,7 @@ export default async function JudgmentPage() {
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
-      <ToolHeader title="Judgment calls" tip={{ id: "judgment", steps: ["Each item adds new information.", "Say whether it makes the diagnosis more or less likely.", "Five items, 90 seconds."] }} />
+      <ToolHeader title="Judgment calls" tip={{ id: "judgment", steps: ["Say whether each new fact makes the diagnosis more or less likely."] }} />
 
       <div className="mt-6">
         <JudgmentArena items={items.slice(0, 5)} />

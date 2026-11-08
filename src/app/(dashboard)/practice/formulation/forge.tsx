@@ -1,5 +1,6 @@
 "use client";
 
+import { noteAnswer } from "@/lib/history/client";
 import * as React from "react";
 import { haptic } from "@/lib/haptics";
 import { diffNarratives, FIVE_P, scoreSort, SEED_FORMULATION, type FiveP, type FormulationFactor } from "@/lib/practice/formulation";
@@ -69,6 +70,7 @@ export function FormulationForge({ seed = SEED_FORMULATION }: { seed?: ForgeSeed
   async function persistSeedAttempt() {
     if (!diff) return;
     const completedAt = new Date();
+    noteAnswer("formulation", seed.id, score >= 0.6);
     const payload = buildFormulationAttemptPayload(
       {
         caseId: seed.id,
@@ -215,7 +217,7 @@ export function FormulationForge({ seed = SEED_FORMULATION }: { seed?: ForgeSeed
             disabled={narrative.trim().length < 40}
             className="w-full rounded-md border-2 border-border bg-primary px-4 py-2 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px active:hard-shadow-none disabled:opacity-50"
           >
-            Diff against the model →
+            Compare with the answer →
           </button>
         </div>
       ) : null}
@@ -225,14 +227,14 @@ export function FormulationForge({ seed = SEED_FORMULATION }: { seed?: ForgeSeed
         <div className="space-y-3 rounded-md border-2 border-border bg-card p-5 hard-shadow-sm">
           <h2 className="text-base font-semibold">Your formulation vs the model</h2>
           <div className="rounded-md border border-border bg-background p-3 text-small">
-            <span className="font-semibold text-muted-foreground">The model says: </span>
+            <span className="font-semibold text-muted-foreground">The answer: </span>
             <span className="italic">{seed.modelNarrative}</span>
           </div>
           <p className="text-small text-muted-foreground">
-            Words the model used that you missed: <span className="text-status-pending-fg">{diff.missing.join(", ") || "(none, excellent)"}</span>
+            Words you missed: <span className="text-status-pending-fg">{diff.missing.join(", ") || "(none, excellent)"}</span>
           </p>
           <p className="text-small text-muted-foreground">
-            Model words you captured: <span className="text-status-success-fg">{diff.present.join(", ") || "(none yet)"}</span>
+            Words you got: <span className="text-status-success-fg">{diff.present.join(", ") || "(none yet)"}</span>
           </p>
           <p className="text-small text-muted-foreground">
             This is a diff, not a grade. The structure is the skill.
@@ -380,7 +382,7 @@ function OwnTranscriptForge() {
         disabled={narrative.trim().length < 40}
         className="w-full rounded-md border-2 border-border bg-primary px-4 py-2 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px active:hard-shadow-none disabled:opacity-50"
       >
-        Diff against what the patient actually presented →
+        Compare with what the patient really said →
       </button>
       {diff ? (
         <div className="rounded-md border border-border bg-background p-3 text-small">
