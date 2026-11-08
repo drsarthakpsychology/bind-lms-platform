@@ -158,20 +158,29 @@ export function useShortcuts(handlers: { pick?: (i: number) => void; next?: () =
  * Keyboard keys, only where a keyboard is likely (wide screens). Shown once,
  * then folded into a small "Keys" button.
  */
+/** The Keys tips' ids. The first answer closes the panel (startHowTo). */
+export const KEYS = "prep-keys";
+export const KEYS_MOCK = "prep-keys-mock";
+
 export function KeysHint({ mark = false }: { mark?: boolean }) {
-  const tip = useFirstTimeTip(mark ? "prep-keys-mock" : "prep-keys");
+  const tip = useFirstTimeTip(mark ? KEYS_MOCK : KEYS);
+  const keys = (
+    <p>
+      <kbd className="font-mono">1</kbd> to <kbd className="font-mono">4</kbd> answer · <kbd className="font-mono">N</kbd> next
+      {mark ? (
+        <>
+          {" "}· <kbd className="font-mono">M</kbd> mark for review
+        </>
+      ) : null}
+    </p>
+  );
   return (
     <>
-      <TipButton tip={tip} label="Keys" className="hidden lg:inline-flex" />
+      <TipButton tip={tip} label="Keys" className="hidden lg:inline-flex">
+        {keys}
+      </TipButton>
       <TipPanel tip={tip} title="Keys" className="hidden lg:block lg:basis-full">
-        <p>
-          <kbd className="font-mono">1</kbd> to <kbd className="font-mono">4</kbd> answer · <kbd className="font-mono">N</kbd> next
-          {mark ? (
-            <>
-              {" "}· <kbd className="font-mono">M</kbd> mark for review
-            </>
-          ) : null}
-        </p>
+        {keys}
       </TipPanel>
     </>
   );

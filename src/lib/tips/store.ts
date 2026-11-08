@@ -118,3 +118,8 @@ export function useTip(id: string, s: TipStore = store()): { seen: boolean | nul
   const dismiss = React.useCallback(() => s.dismiss(id), [s, id]);
   return { seen: snap.ready ? snap.seen.has(id) : null, dismiss };
 }
+
+/** Close a tip for good from outside it, for example when a game starts. */
+export function dismissTip(id: string, s: TipStore = store()) {
+  s.dismiss(id);
+}
