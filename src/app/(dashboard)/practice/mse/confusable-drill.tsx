@@ -1,5 +1,6 @@
 "use client";
 
+import { noteAnswer, orderFor, useHistoryPrefetch } from "@/lib/history/client";
 import * as React from "react";
 import { haptic } from "@/lib/haptics";
 import { cn } from "@/lib/utils";
@@ -29,6 +30,10 @@ export function ConfusableDrill({ onComplete }: { onComplete?: () => void } = {}
   const [revealed, setRevealed] = React.useState(false);
   const [multiPicked, setMultiPicked] = React.useState<string | null>(null);
   const [multiDoneAll, setMultiDoneAll] = React.useState(false);
+  // Answer history (src/lib/history): pairs not done yet first, then missed ones, then the oldest right.
+  // This level mounts only after the student opens it, so the browser copy is safe to read here.
+  useHistoryPrefetch("mse-trainer");
+  const [pairs] = React.useState(() => orderFor("mse-trainer", CONFUSABLE_PAIRS, (p) => `pair:${p.id}`));
 
   // Focus management (brief §11.5): after advancing, move focus to the next
   // item's first answer button so keyboard users never lose their place.
@@ -38,10 +43,10 @@ export function ConfusableDrill({ onComplete }: { onComplete?: () => void } = {}
     if (!revealed) answerRef.current?.focus();
   }, [pairIdx, itemIdx, drillIdx, multiIdx, revealed, phase]);
 
-  const pair = CONFUSABLE_PAIRS[pairIdx];
+  const pair = pairs[pairIdx];
   const item = pair.items[itemIdx];
   const key = `${pair.id}:${itemIdx}`;
-  const pairDone = pairIdx >= CONFUSABLE_PAIRS.length - 1 && itemIdx >= pair.items.length - 1;
+  const pairDone = pairIdx >= pairs.length - 1 && itemIdx >= pair.items.length - 1;
 
   const drill = MULTI_TERM_DRILLS[drillIdx];
   const drillItem = drill.items[multiIdx];
@@ -58,9 +63,10 @@ export function ConfusableDrill({ onComplete }: { onComplete?: () => void } = {}
 
   function next() {
     setRevealed(false);
+    if (itemIdx + 1 >= pair.items.length) noteAnswer("mse-trainer", `pair:${pair.id}`, pair.items.every((it, i) => answers[`${pair.id}:${i}`] === it.correct));
     if (itemIdx + 1 < pair.items.length) {
       setItemIdx((i) => i + 1);
-    } else if (pairIdx + 1 < CONFUSABLE_PAIRS.length) {
+    } else if (pairIdx + 1 < pairs.length) {
       setPairIdx((p) => p + 1);
       setItemIdx(0);
     } else {
@@ -97,7 +103,7 @@ export function ConfusableDrill({ onComplete }: { onComplete?: () => void } = {}
     return (
       <div className="space-y-4">
         <div className="flex items-center justify-between text-small text-muted-foreground">
-          <span>Pair {pairIdx + 1}/{CONFUSABLE_PAIRS.length} · item {itemIdx + 1}/{pair.items.length}</span>
+          <span>Pair {pairIdx + 1}/{pairs.length} · item {itemIdx + 1}/{pair.items.length}</span>
           <span className="text-caption">
             {pair.a} vs {pair.b}
           </span>
@@ -166,8 +172,8 @@ export function ConfusableDrill({ onComplete }: { onComplete?: () => void } = {}
       <div className="space-y-4">
         <div className="rounded-md border-2 border-border bg-card p-5 hard-shadow-sm">
           <p className="text-base font-medium">
-            Level 3 done: {scoreConfusable(CONFUSABLE_PAIRS.flatMap((p) => p.items), answers)} /{" "}
-            {CONFUSABLE_PAIRS.flatMap((p) => p.items).length} pair items and{" "}
+            Level 3 done: {scoreConfusable(pairs.flatMap((p) => p.items), answers)} /{" "}
+            {pairs.flatMap((p) => p.items).length} pair items and{" "}
             {scoreMultiTerm(allItems, multiAnswers)} / {allItems.length} set items correct.
           </p>
           {onComplete ? (

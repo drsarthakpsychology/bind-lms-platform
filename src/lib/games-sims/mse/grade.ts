@@ -65,10 +65,10 @@ export const EXCERPT_RIGHT = 0.75;
  * back to neighbouring levels). With an answer history (src/lib/history): one
  * never seen first, then one missed, then the one right longest ago.
  */
-export function pickExcerpt(level: Level, seen: Set<string>, rng: Rng, history?: History, now = 0): Excerpt | null {
+export function pickExcerpt(level: Level, seen: Set<string>, rng: Rng, history?: History, now?: number): Excerpt | null {
   for (const l of [level, (level + 1) as Level, (level - 1) as Level]) {
     const pool = EXCERPTS.filter((e) => e.level === l && !seen.has(e.id));
-    if (pool.length) return history ? orderByHistory(pool, (e) => e.id, history, now, rng)[0] : pool[Math.floor(rng() * pool.length)];
+    if (pool.length) return history ? orderByHistory(pool, (e) => e.id, history, now ?? Date.now(), rng)[0] : pool[Math.floor(rng() * pool.length)];
   }
   return null;
 }

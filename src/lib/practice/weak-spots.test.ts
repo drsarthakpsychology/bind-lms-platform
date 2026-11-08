@@ -77,6 +77,22 @@ describe("weak-spots drill generation (v5 §4)", () => {
     expect(skills.has("Closed questions")).toBe(true);
   });
 
+  it("answer history: unseen drill items first, right ones held back, missed ones come back", () => {
+    const spots = analyzeWeakSpots([PREMATURE, CLOSED, CLOSED]);
+    const all = generateDrill(spots, 200);
+    const now = 1_000_000;
+    const right = all.slice(0, Math.max(0, all.length - 12));
+    const wrong = all.slice(-12, -9);
+    const h = new Map([...right.map((d) => ({ item: d.id, seen: 1, ok: true as boolean, at: now - 5, due: null })), ...wrong.map((d) => ({ item: d.id, seen: 1, ok: false as boolean, at: now - 5, due: now - 1 }))].map((r) => [r.item, r]));
+    const drill = generateDrill(spots, 10, h, now, () => 0.4);
+    expect(drill).toHaveLength(10);
+    expect(drill.some((d) => right.some((r) => r.id === d.id))).toBe(false);
+    expect(drill.filter((d) => wrong.some((w) => w.id === d.id))).toHaveLength(1);
+    expect(h.has(drill[0].id)).toBe(false);
+    // No history table: the plain drill.
+    expect(generateDrill(spots, 10, new Map(), now).length).toBe(10);
+  });
+
   it("returns empty for no weak spots", () => {
     expect(generateDrill([])).toEqual([]);
   });
