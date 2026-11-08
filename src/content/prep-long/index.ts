@@ -15,6 +15,24 @@ import { CLINICAL_THERAPIES_L05 } from "./clinical-therapies-l05";
 import { CLINICAL_THERAPIES_L06 } from "./clinical-therapies-l06";
 import { CLINICAL_THERAPIES_L07 } from "./clinical-therapies-l07";
 import { CLINICAL_THERAPIES_L08 } from "./clinical-therapies-l08";
+import { COGNITIVE_L01 } from "./cognitive-l01";
+import { COGNITIVE_L02 } from "./cognitive-l02";
+import { COGNITIVE_L03 } from "./cognitive-l03";
+import { COGNITIVE_L04 } from "./cognitive-l04";
+import { COGNITIVE_L05 } from "./cognitive-l05";
+import { DEVELOPMENTAL_L01 } from "./developmental-l01";
+import { DEVELOPMENTAL_L02 } from "./developmental-l02";
+import { DEVELOPMENTAL_L03 } from "./developmental-l03";
+import { LEARNING_MOTIVATION_EMOTION_L01 } from "./learning-motivation-emotion-l01";
+import { LEARNING_MOTIVATION_EMOTION_L02 } from "./learning-motivation-emotion-l02";
+import { LEARNING_MOTIVATION_EMOTION_L03 } from "./learning-motivation-emotion-l03";
+import { LEARNING_MOTIVATION_EMOTION_L04 } from "./learning-motivation-emotion-l04";
+import { LEARNING_MOTIVATION_EMOTION_L05 } from "./learning-motivation-emotion-l05";
+import { PERCEPTION_ATTENTION_L01 } from "./perception-attention-l01";
+import { PERCEPTION_ATTENTION_L02 } from "./perception-attention-l02";
+import { PERCEPTION_ATTENTION_L03 } from "./perception-attention-l03";
+import { PERCEPTION_ATTENTION_L04 } from "./perception-attention-l04";
+import { PERCEPTION_ATTENTION_L05 } from "./perception-attention-l05";
 import { PSYCHOPATHOLOGY_L01 } from "./psychopathology-l01";
 import { PSYCHOPATHOLOGY_L02 } from "./psychopathology-l02";
 import { PSYCHOPATHOLOGY_L03 } from "./psychopathology-l03";
@@ -31,6 +49,16 @@ import { PSYCHOPHARMACOLOGY_L05 } from "./psychopharmacology-l05";
 import { PSYCHOPHARMACOLOGY_L06 } from "./psychopharmacology-l06";
 import { PSYCHOPHARMACOLOGY_L07 } from "./psychopharmacology-l07";
 import { PSYCHOPHARMACOLOGY_L08 } from "./psychopharmacology-l08";
+import { RESEARCH_METHODS_L01 } from "./research-methods-l01";
+import { RESEARCH_METHODS_L02 } from "./research-methods-l02";
+import { RESEARCH_METHODS_L03 } from "./research-methods-l03";
+import { RESEARCH_METHODS_L04 } from "./research-methods-l04";
+import { RESEARCH_METHODS_L05 } from "./research-methods-l05";
+import { STATISTICS_L01 } from "./statistics-l01";
+import { STATISTICS_L02 } from "./statistics-l02";
+import { STATISTICS_L03 } from "./statistics-l03";
+import { STATISTICS_L04 } from "./statistics-l04";
+import { STATISTICS_L05 } from "./statistics-l05";
 
 /** Every hand-written long answer. Writers add part files and spread them in here. */
 export const LONG_QA: LongQA[] = [
@@ -50,6 +78,24 @@ export const LONG_QA: LongQA[] = [
   ...CLINICAL_THERAPIES_L06,
   ...CLINICAL_THERAPIES_L07,
   ...CLINICAL_THERAPIES_L08,
+  ...COGNITIVE_L01,
+  ...COGNITIVE_L02,
+  ...COGNITIVE_L03,
+  ...COGNITIVE_L04,
+  ...COGNITIVE_L05,
+  ...DEVELOPMENTAL_L01,
+  ...DEVELOPMENTAL_L02,
+  ...DEVELOPMENTAL_L03,
+  ...LEARNING_MOTIVATION_EMOTION_L01,
+  ...LEARNING_MOTIVATION_EMOTION_L02,
+  ...LEARNING_MOTIVATION_EMOTION_L03,
+  ...LEARNING_MOTIVATION_EMOTION_L04,
+  ...LEARNING_MOTIVATION_EMOTION_L05,
+  ...PERCEPTION_ATTENTION_L01,
+  ...PERCEPTION_ATTENTION_L02,
+  ...PERCEPTION_ATTENTION_L03,
+  ...PERCEPTION_ATTENTION_L04,
+  ...PERCEPTION_ATTENTION_L05,
   ...PSYCHOPATHOLOGY_L01,
   ...PSYCHOPATHOLOGY_L02,
   ...PSYCHOPATHOLOGY_L03,
@@ -66,4 +112,14 @@ export const LONG_QA: LongQA[] = [
   ...PSYCHOPHARMACOLOGY_L06,
   ...PSYCHOPHARMACOLOGY_L07,
   ...PSYCHOPHARMACOLOGY_L08,
+  ...RESEARCH_METHODS_L01,
+  ...RESEARCH_METHODS_L02,
+  ...RESEARCH_METHODS_L03,
+  ...RESEARCH_METHODS_L04,
+  ...RESEARCH_METHODS_L05,
+  ...STATISTICS_L01,
+  ...STATISTICS_L02,
+  ...STATISTICS_L03,
+  ...STATISTICS_L04,
+  ...STATISTICS_L05,
 ];
