@@ -17,11 +17,10 @@
 export const HISTORY_TOOLS = [
   "prep",
   "coach",
-  "quiz",
+  "learn",
   "study-check",
   "module-test",
   "placement",
-  "map-practice",
   "daily",
   "duel",
   "blitz",

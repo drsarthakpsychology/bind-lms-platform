@@ -127,6 +127,22 @@ describe("practice", () => {
     expect(s.filter((x) => x.topic === "bipolar").length).toBeGreaterThanOrEqual(7);
     expect(buildPractice(empty(), NOW, makeRng(2), 10, "not-a-topic")).toHaveLength(10);
   });
+  it("answer history: right answers stay out, new ones lead, wrong ones come back", () => {
+    const t = NOW.getTime();
+    const ids = BANK.map((b) => b.item.id);
+    const right = new Set(ids.slice(0, ids.length - 12));
+    const wrong = ids.slice(-12, -9);
+    const h = new Map([...[...right].map((item) => ({ item, seen: 1, ok: true, at: t - 1000, due: null })), ...wrong.map((item) => ({ item, seen: 1, ok: false as boolean, at: t - 9e6, due: t - 1 }))].map((r) => [r.item, r]));
+    for (let seed = 1; seed < 8; seed++) {
+      const s = buildPractice(empty(), NOW, makeRng(seed), 10, null, h);
+      expect(s).toHaveLength(10);
+      expect(s.some((x) => right.has(x.id))).toBe(false);
+      expect(h.has(s[0].id)).toBe(false);
+    }
+    // Everything seen and right: still a full round (oldest right first).
+    const all = new Map(ids.map((item, i) => [item, { item, seen: 1, ok: true, at: t - i, due: null }]));
+    expect(buildPractice(empty(), NOW, makeRng(1), 10, null, all)).toHaveLength(10);
+  });
 });
 
 describe("placement", () => {

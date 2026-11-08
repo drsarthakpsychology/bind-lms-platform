@@ -8,6 +8,7 @@ import { review, gradeFor, isDue, type Card } from "./fsrs";
 import { addCorrectDay, masteryOf, MASTERY_RANK, type Mastery } from "./mastery";
 import { bumpConfusion, isConfusion, cleanAnswer, type ConfusionRow } from "./confusions";
 import { interleave, pickSession, type Candidate, type Picked } from "./picker";
+import { leadWithUnseen, poolFor, type History } from "@/lib/history/order";
 import { BANK, COMPETENCY_LABEL, SKILLS_WITH_ITEMS, TOPICS, bankItem, splitSkill, skillLabel, topicById, topicSkills, type GradedItem } from "./topics";
 import type { PlacementResult } from "./placement";
 import { COMPETENCIES, skillKey, type Competency } from "./skills";
@@ -224,17 +225,26 @@ export function practiceCandidates(rows: Pick<ModelRows, "skills" | "items" | "c
  * With a topic ("Fix it"): about 70 % from that topic, the rest from its
  * look-alikes, interleaved.
  */
-export function buildPractice(rows: Pick<ModelRows, "skills" | "items" | "cards">, now: Date, rng: () => number, size = 10, topic?: string | null): Picked[] {
-  if (!topic || !topicById(topic)) return pickSession(practiceCandidates(rows, now), size, rng);
+export function buildPractice(rows: Pick<ModelRows, "skills" | "items" | "cards">, now: Date, rng: () => number, size = 10, topic?: string | null, history?: History): Picked[] {
+  // Answer history (src/lib/history): due reviews stay; otherwise never-seen
+  // questions first, then wrong ones, and right ones only when the rest run short.
+  const narrow = (list: Candidate[], n: number): Candidate[] => {
+    if (!history) return list;
+    const pool = poolFor(list, (c) => c.id, history, now.getTime(), rng, n);
+    const inPool = new Set(pool.map((c) => c.id));
+    return [...list.filter((c) => c.due && !inPool.has(c.id)), ...pool];
+  };
+  const lead = (list: Picked[]) => (history ? leadWithUnseen(list, (c) => c.id, history, now.getTime()) : list);
+  if (!topic || !topicById(topic)) return lead(pickSession(narrow(practiceCandidates(rows, now), size), size, rng));
   const all = practiceCandidates(rows, now, topic);
-  const own = all.filter((c) => c.topic === topic);
-  const near = all.filter((c) => c.topic !== topic);
+  const own = narrow(all.filter((c) => c.topic === topic), size);
+  const near = narrow(all.filter((c) => c.topic !== topic), size);
   const mine = pickSession(own, Math.min(own.length, Math.max(size - near.length, Math.round(size * 0.7))), rng);
   const rest = pickSession(near, size - mine.length, rng);
   const ordered = interleave([...mine, ...rest]);
   const warm = ordered.findIndex((x) => x.bucket === "confidence");
   if (warm > 0) ordered.unshift(...ordered.splice(warm, 1));
-  return ordered;
+  return lead(ordered);
 }
 
 /**
