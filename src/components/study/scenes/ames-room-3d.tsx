@@ -3,6 +3,7 @@
 import * as React from "react";
 import * as THREE from "three";
 import { useFrame } from "@react-three/fiber";
+import { Glow, IdleSway } from "./fx";
 import { CameraRig, Stage, segs, useQuality } from "./three-kit";
 import type { V3 } from "./kit";
 import { EYE, PERSON_H, ROOM, along, real, type AmesViewProps } from "./ames-room";
@@ -22,12 +23,12 @@ function AmesRoom3D(p: AmesViewProps) {
   };
   const v = views[p.stop];
   return (
-    <Stage className="h-full w-full" camera={EYE} inView={p.inView} active={p.swapping} wakeKey={p.stop} onReady={p.onReady} locked={p.stop === "peephole"} minDistance={3} maxDistance={28}>
+    <Stage className="h-full w-full" camera={EYE} inView={p.inView} active={p.swapping} wakeKey={p.stop} onReady={p.onReady} locked={p.stop === "peephole"} minDistance={3} maxDistance={28} fx={p.colors.brand}>
       <CameraRig flyKey={p.stop} pos={v.pos} target={v.target} ms={1200} fitAspect={p.stop === "peephole" ? 0 : 1.4} />
       <PeepholeLens on={p.stop === "peephole"} />
       <Room peephole={p.stop === "peephole"} />
-      <Person t={p.swapT} color={p.colors.brand} />
-      <Person t={1 - p.swapT} color={p.colors.danger} />
+      <Person t={p.swapT} color={p.colors.brand} idleKey={`${p.stop}-${p.swapping}`} phase={0} />
+      <Person t={1 - p.swapT} color={p.colors.danger} idleKey={`${p.stop}-${p.swapping}`} phase={1.7} />
       {p.stop !== "peephole" ? <SightLines t={p.swapT} /> : null}
     </Stage>
   );
@@ -112,17 +113,20 @@ function Room({ peephole }: { peephole: boolean }) {
         <torusGeometry args={[0.12, 0.04, 8, 20]} />
         <meshStandardMaterial color="#111111" />
       </mesh>
+      <Glow position={EYE} color="#ffd27a" size={0.9} opacity={0.8} visible={!peephole} />
     </group>
   );
 }
 
 /** A simple illustrated person, 1.6 m tall, standing on the real floor at an apparent spot along the back wall. */
-function Person({ t, color }: { t: number; color: string }) {
+function Person({ t, color, idleKey, phase }: { t: number; color: string; idleKey: string; phase: number }) {
   const q = useQuality();
   const foot = real(along(t));
   const sg = segs(14, q);
   return (
     <group position={foot}>
+      {/* while nobody touches, they shift their weight and look about a little */}
+      <IdleSway on stopKey={idleKey} amount={0.35} maxMs={12000} phase={phase}>
       {[-0.09, 0.09].map((x) => (
         <mesh key={x} position={[x, 0.42, 0]}>
           <capsuleGeometry args={[0.07, 0.7, 3, sg]} />
@@ -143,6 +147,7 @@ function Person({ t, color }: { t: number; color: string }) {
         <sphereGeometry args={[0.13, sg, sg]} />
         <meshStandardMaterial color="#e2b48f" roughness={0.6} />
       </mesh>
+      </IdleSway>
     </group>
   );
 }
@@ -161,7 +166,7 @@ function SightLines({ t }: { t: number }) {
   React.useEffect(() => () => geo.dispose(), [geo]);
   return (
     <lineSegments geometry={geo}>
-      <lineBasicMaterial color="#111111" transparent opacity={0.55} />
+      <lineBasicMaterial color="#d97706" transparent opacity={0.85} toneMapped={false} />
     </lineSegments>
   );
 }

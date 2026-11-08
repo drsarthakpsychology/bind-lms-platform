@@ -3,8 +3,9 @@
 import * as React from "react";
 import * as THREE from "three";
 import { useFrame, type ThreeEvent } from "@react-three/fiber";
+import { Glow, ParticleFlow } from "./fx";
 import { CameraRig, Pulse, Stage, Tube, segs, useLitPaths, useQuality } from "./three-kit";
-import { along, type V3 } from "./kit";
+import type { V3 } from "./kit";
 import { AUTO, BODY, CHAIN, LEVEL_VIEW, LIMBS, PARA, PARTS, PATHS, SOMATIC, SYMP, levelShows, type Part } from "./nervous-system-data";
 import type { NsViewProps } from "./nervous-system";
 
@@ -12,7 +13,7 @@ import type { NsViewProps } from "./nervous-system";
 export default React.memo(function NervousSystem3D(p: NsViewProps) {
   const view = p.mode === "map" ? LEVEL_VIEW[p.level] : p.mode === "auto" ? { pos: [1.0, 1.0, 3.7] as V3, target: [0, 0.8, 0] as V3 } : LEVEL_VIEW.all;
   return (
-    <Stage className="h-full w-full" camera={LEVEL_VIEW.all.pos} inView={p.inView} active={p.mode === "auto" || p.journey.active} wakeKey={`${p.mode}-${p.level}-${p.auto}-${p.journey.run}-${p.journey.leg}`} onReady={p.onReady} minDistance={1.2} maxDistance={9}>
+    <Stage className="h-full w-full" camera={LEVEL_VIEW.all.pos} inView={p.inView} active={p.mode === "auto" || p.journey.moving} wakeKey={`${p.mode}-${p.level}-${p.auto}-${p.journey.run}-${p.journey.leg}`} onReady={p.onReady} minDistance={1.2} maxDistance={9} sway fog={2.3} bg={p.colors.bg} fx={p.colors.brand}>
       <CameraRig flyKey={`${p.mode}-${p.mode === "map" ? p.level : ""}`} pos={view.pos} target={view.target} fitAspect={0.7} />
       <Scene {...p} />
     </Stage>
@@ -50,33 +51,14 @@ function Skin({ opacity = 0.28, children, ...rest }: { opacity?: number; childre
   );
 }
 
-/** Small glowing dots that stream along a set of paths (the autonomic outflow). */
+/** Glowing particles that stream along a set of paths (the autonomic outflow). */
 function Stream({ paths, color, speed, on }: { paths: string[]; color: string; speed: number; on: boolean }) {
-  const ref = React.useRef<THREE.InstancedMesh>(null);
-  const per = 4;
-  const n = paths.length * per;
-  const m = React.useMemo(() => new THREE.Matrix4(), []);
-  useFrame((s) => {
-    const mesh = ref.current;
-    if (!mesh) return;
-    mesh.visible = on;
-    if (!on) return;
-    const t = s.clock.elapsedTime * speed;
-    paths.forEach((k, i) => {
-      for (let j = 0; j < per; j++) {
-        const f = (t + j / per + i * 0.13) % 1;
-        const pt = along(PATHS[k], f);
-        m.makeTranslation(pt[0], pt[1], pt[2]);
-        mesh.setMatrixAt(i * per + j, m);
-      }
-    });
-    mesh.instanceMatrix.needsUpdate = true;
-  });
   return (
-    <instancedMesh ref={ref} args={[undefined, undefined, n]} frustumCulled={false}>
-      <sphereGeometry args={[0.022, 8, 6]} />
-      <meshBasicMaterial color={color} />
-    </instancedMesh>
+    <group>
+      {paths.map((k) => (
+        <ParticleFlow key={k} pts={PATHS[k]} color={color} count={7} size={0.075} speed={speed * 0.55} spread={0.006} active={on} />
+      ))}
+    </group>
   );
 }
 
@@ -206,6 +188,7 @@ function Scene({ mode, journey, auto, level, onPart, colors }: NsViewProps) {
       <Adrenaline on={mode === "auto" && a.adrenaline} color={colors.primary} />
 
       {/* organs */}
+      <Glow position={BODY.heart} color="#ff5a3c" size={0.5} opacity={mode === "auto" && auto === "fight" ? 0.7 : 0} visible={mode === "auto" && auto === "fight"} />
       <group ref={heart} position={BODY.heart}>
         <mesh scale={[0.085, 0.1, 0.08]} rotation={[0, 0, -0.5]}>
           <sphereGeometry args={[1, 18, 14]} />
@@ -252,10 +235,13 @@ function Scene({ mode, journey, auto, level, onPart, colors }: NsViewProps) {
       {/* tap targets */}
       <group ref={markers} visible={mode === "signal"}>
         {(Object.keys(PARTS) as Part[]).map((part) => (
-          <mesh key={part} position={PARTS[part]} onClick={mode === "signal" ? tap(() => onPart(part)) : undefined}>
-            <sphereGeometry args={[part === "eye" ? 0.07 : 0.12, 14, 10]} />
-            <meshBasicMaterial color={sense} transparent opacity={0.22} depthWrite={false} />
-          </mesh>
+          <group key={part}>
+            <mesh position={PARTS[part]} onClick={mode === "signal" ? tap(() => onPart(part)) : undefined}>
+              <sphereGeometry args={[part === "eye" ? 0.07 : 0.12, 14, 10]} />
+              <meshBasicMaterial color={sense} transparent opacity={0.22} depthWrite={false} />
+            </mesh>
+            <Glow position={PARTS[part]} color={sense} size={part === "eye" ? 0.28 : 0.42} opacity={0.55} />
+          </group>
         ))}
       </group>
 

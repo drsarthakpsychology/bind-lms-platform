@@ -115,7 +115,9 @@ export function HpaLoop({ d }: { d: HpaLoopData }) {
   const [mode, setMode] = React.useState<"day" | "chronic">(d.start ?? "day");
   const [choices, setChoices] = React.useState<Choice[]>([]);
   const [now, setNow] = React.useState(0);
-  const [leg, setLeg] = React.useState({ from: 0, to: EVENTS[0].at + REACT });
+  // the day waits at 7:00 until the student starts it
+  const [leg, setLeg] = React.useState({ from: 0, to: 0 });
+  const waiting = leg.to === 0;
   const target = leg.to;
   const [last, setLast] = React.useState<Choice | null>(null);
   const [days, setDays] = React.useState(0); // chronic: days shown
@@ -157,8 +159,12 @@ export function HpaLoop({ d }: { d: HpaLoopData }) {
   const restart = () => {
     setChoices([]);
     setNow(0);
-    setLeg({ from: 0, to: EVENTS[0].at + REACT });
+    setLeg({ from: 0, to: 0 });
     setLast(null);
+  };
+  const startDay = () => {
+    setLeg({ from: 0, to: EVENTS[0].at + REACT });
+    trackLearn({ type: "widget", kind: "hpaloop", item: "start" });
   };
   const nextDay = () => {
     const k = Math.min(5, days + 1);
@@ -175,6 +181,7 @@ export function HpaLoop({ d }: { d: HpaLoopData }) {
     if (mode === "chronic") {
       return days === 0 ? "Chronic stress mode: the same hard day, five days running, with no recovery. Press Next day and watch the off switch." : CHRONIC[days - 1];
     }
+    if (waiting) return "7:00. Press Start the day: the clock runs to the first event, then waits for your choice.";
     if (ended) return null;
     if (moving && now < 1) return null;
     if (atEvent && ev) return `${ev.title}: ${ev.scene} Adrenaline spikes within seconds through the sympathetic nerves; cortisol takes 20 to 30 minutes to peak, because it needs the slower chain: hypothalamus (CRH), pituitary (ACTH), adrenal cortex (cortisol). How do you cope?`;
@@ -207,6 +214,9 @@ export function HpaLoop({ d }: { d: HpaLoopData }) {
             <span className="font-semibold">Stress load: {load.toFixed(1)}</span>
             <span className="text-muted-foreground">(green below {GREEN})</span>
           </div>
+          {waiting ? (
+            <button type="button" className={cn(btn, "mt-3 min-h-12 bg-primary px-5 text-primary-foreground hover:-translate-y-0.5")} onClick={startDay}><Play className="size-4" aria-hidden /> Start the day</button>
+          ) : null}
           {atEvent && ev ? (
             <div className="vibha-pop mt-3 rounded-xl border-2 border-foreground bg-[var(--status-pending-bg)] p-3">
               <p className="font-bold">{ev.title}</p>
@@ -245,7 +255,7 @@ export function HpaLoop({ d }: { d: HpaLoopData }) {
         {mode === "day" ? (
           <p className={status ? "mt-1" : undefined}>
             Now: adrenaline {level(h.adr / 1.2)}, cortisol {level(h.cort / 1.4)}{h.cort - h.base > 0.08 ? ", above its normal level for this time of day" : ", near its normal daily rhythm"}.
-            {moving && now === 0 ? " The day starts at 7:00: cortisol is already rising, as it does every morning in the half hour after waking." : ""}
+            {now === 0 ? " The day starts at 7:00: cortisol is already rising, as it does every morning in the half hour after waking." : ""}
           </p>
         ) : (
           <p className="mt-1">Feedback strength: {Math.round(fbChronic * 100)} percent{days >= 4 ? " (failing)" : ""}.</p>

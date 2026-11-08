@@ -1,11 +1,20 @@
 "use client";
 
 import * as React from "react";
-import { ChevronRight, RotateCcw, Zap } from "lucide-react";
+import { RotateCcw, Zap } from "lucide-react";
 import type { Synapse3dData } from "@/lib/study/types";
 import { cn } from "@/lib/utils";
 import { trackLearn } from "@/lib/learn/track";
-import { Missions, Scene3DSlot, SceneCard, ViewSwitch, btn, chip, statusCls, useInView, useJourney, useMissions, useSceneView, useThemeColors, type V3 } from "./kit";
+import { QuickChallenge, type ChallengeQ } from "./challenge";
+import { sfx } from "./sfx";
+
+const SYN_CHALLENGE: ChallengeQ[] = [
+  { q: "What makes the vesicles fuse and release their transmitter?", options: ["Sodium leaving the cell", "Calcium flowing into the nerve ending", "The transmitter binding to receptors"], answer: 1, why: "When the impulse arrives, voltage-gated calcium channels open. Calcium flowing in triggers the vesicles to fuse with the membrane and empty into the gap." },
+  { q: "An SSRI blocks the serotonin transporter. What happens to the message?", options: ["It lasts longer", "It never starts", "It is blocked at the receptor"], answer: 0, why: "With reuptake blocked, serotonin stays in the gap longer and keeps reaching receptors, so the message lasts." },
+  { q: "An antagonist at the receptor...", options: ["binds and switches the receptor on", "speeds up reuptake", "binds but does not switch it on, and keeps the transmitter out"], answer: 2, why: "An antagonist fits the receptor without activating it. Antipsychotics work partly this way, blocking dopamine D2 receptors." },
+  { q: "Botulinum toxin stops which step?", options: ["Release from the vesicles", "Binding to receptors", "Breakdown in the gap"], answer: 0, why: "It cuts the proteins that let vesicles fuse, so no acetylcholine is released and the muscle is never told to contract." },
+];
+import { JourneyBar, Missions, Scene3DSlot, SceneCard, ViewSwitch, btn, chip, statusCls, useInView, useJourney, useMissions, useSceneView, useThemeColors, type V3 } from "./kit";
 
 /**
  * A synapse in 3D: fire the nerve ending and watch calcium flood in,
@@ -109,16 +118,30 @@ function stageText(id: (typeof STAGES)[number]["id"], drug: SynDrug, tx: string)
 const View3D = React.lazy(() => import("./synapse-scene-3d"));
 export type SynViewProps = { fireAt: number | null; stage: number; running: boolean; reduce: boolean; drug: SynDrug; inView: boolean; colors: ReturnType<typeof useThemeColors>; onReady?: () => void };
 
-/** Elapsed ms since the signal arrived; under reduced motion, the end of the current stage. */
+/** When a stage starts, in ms after the signal arrived. */
+export const stageStart = (stage: number) => STAGES.slice(0, Math.max(0, stage)).reduce((a, s) => a + s.ms, 0);
+/**
+ * Where the animation is within a stage that was entered `since` ms ago: it
+ * plays the stage once and then holds on its last frame until the student
+ * moves on (no running ahead of the words).
+ */
+export const stageElapsed = (stage: number, since: number, reduce: boolean) => {
+  const st = Math.max(0, stage);
+  const len = STAGES[Math.min(st, STAGES.length - 1)].ms - 1;
+  return stageStart(st) + (reduce ? len : Math.min(len, Math.max(0, since)));
+};
+
+/** Elapsed ms in the message's timeline for the current stage, driven by frames only while the stage plays. */
 export function useElapsed(fireAt: number | null, stage: number, reduce: boolean) {
   const [e, setE] = React.useState(-1);
   React.useEffect(() => {
     if (fireAt === null) return;
     let raf = 0;
+    const t0 = performance.now();
     const tick = () => {
-      const end = STAGES.slice(0, stage + 1).reduce((a, s) => a + s.ms, 0);
-      setE(reduce ? end - 1 : performance.now() - fireAt);
-      if (!reduce) raf = requestAnimationFrame(tick);
+      const since = performance.now() - t0;
+      setE(stageElapsed(stage, since, reduce));
+      if (!reduce && since < STAGES[Math.min(Math.max(0, stage), STAGES.length - 1)].ms) raf = requestAnimationFrame(tick);
     };
     raf = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(raf);
@@ -134,10 +157,11 @@ export function SynapseScene({ d }: { d: Synapse3dData }) {
   const tx = d.transmitter ?? "serotonin";
   const [drug, setDrug] = React.useState<SynDrug>("none");
   const [fireAt, setFireAt] = React.useState<number | null>(null);
-  const journey = useJourney(!v.reduce);
+  const journey = useJourney();
   const ms = useMissions(["fire", "reuptake", "blocker", "botox"] as const);
   const fire = () => {
     setFireAt(performance.now());
+    sfx("zap");
     journey.start(`fire-${drug}`, STAGES.map((s) => ({ path: s.id, ms: s.ms, say: s.name, tone: "info" as const })));
     if (drug === "none") ms.mark("fire");
     if (drug !== "none") ms.mark(drug);
@@ -145,10 +169,10 @@ export function SynapseScene({ d }: { d: Synapse3dData }) {
   };
   const stage = journey.cur ? journey.leg : journey.done ? STAGES.length - 1 : -1;
   const e = useElapsed(fireAt, Math.max(0, stage), v.reduce);
-  const resp = stage < 0 ? 0 : response(v.reduce ? STAGES.slice(0, stage + 1).reduce((a, s) => a + s.ms, 0) - 1 : e, drug);
+  const resp = stage < 0 ? 0 : response(Math.max(0, e), drug);
   const dr = DRUGS.find((x) => x.id === drug)!;
   return (
-    <SceneCard title={d.title ?? `A ${tx} synapse, up close`} goal="Fire the nerve ending and follow one message across the gap, then add a drug and find the step it changes." caption={d.caption} tools={<ViewSwitch v={v} />}>
+    <SceneCard title={d.title ?? `A ${tx} synapse, up close`} goal="Fire the nerve ending and follow one message across the gap, then add a drug and find the step it changes." caption={d.caption} tools={<ViewSwitch v={v} />} sound>
       <div ref={box} className="relative mt-3 h-[18rem] overflow-hidden rounded-xl border-2 border-foreground bg-background sm:h-[22rem]">
         {v.use3D ? (
           <Scene3DSlot flat={<SynapseFlat e={e} drug={drug} />} render={(onReady) => <View3D fireAt={fireAt} stage={stage} running={journey.active} reduce={v.reduce} drug={drug} inView={inView} colors={colors} onReady={onReady} />} />
@@ -166,7 +190,7 @@ export function SynapseScene({ d }: { d: Synapse3dData }) {
         <button type="button" className={cn(btn, "min-h-12 bg-primary px-5 text-primary-foreground hover:-translate-y-0.5")} onClick={fire}>
           {journey.done ? <RotateCcw className="size-4" aria-hidden /> : <Zap className="size-4" aria-hidden />} {journey.done ? "Fire again" : "Fire the nerve ending"}
         </button>
-        {v.reduce && journey.active ? <button type="button" className={cn(btn, "bg-foreground text-background")} onClick={journey.next}><ChevronRight className="size-4" aria-hidden /> Next step</button> : null}
+        <JourneyBar journey={journey} kind="synapse3d" />
         <div className="flex min-w-40 flex-1 basis-full items-center gap-2 text-sm font-semibold sm:basis-auto">
           <span>Message received</span>
           <div className="h-3 flex-1 overflow-hidden rounded-full border-2 border-foreground bg-background" role="meter" aria-valuemin={0} aria-valuemax={100} aria-valuenow={Math.round(resp * 100)} aria-label="Message received by the next cell">
@@ -177,7 +201,7 @@ export function SynapseScene({ d }: { d: Synapse3dData }) {
       </div>
       <div className="mt-3 grid grid-cols-2 gap-1.5 sm:grid-cols-4" role="group" aria-label="Add a drug">
         {DRUGS.map((x) => (
-          <button key={x.id} type="button" aria-pressed={drug === x.id} className={chip(drug === x.id, "text-xs sm:text-sm")} onClick={() => { setDrug(x.id); journey.clear(); setFireAt(null); }}>{x.name}</button>
+          <button key={x.id} type="button" aria-pressed={drug === x.id} className={chip(drug === x.id, "text-xs sm:text-sm")} onClick={() => { setDrug(x.id); journey.clear(); setFireAt(null); sfx("tap"); }}>{x.name}</button>
         ))}
       </div>
       <div className={statusCls} role="status" aria-live="polite">
@@ -200,6 +224,7 @@ export function SynapseScene({ d }: { d: Synapse3dData }) {
           { id: "botox", label: "Stop release with botulinum toxin", done: ms.done("botox") },
         ]}
       />
+      <QuickChallenge title="Drugs at the synapse" kind="synapse3d" items={SYN_CHALLENGE} />
     </SceneCard>
   );
 }

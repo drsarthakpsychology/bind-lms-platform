@@ -5,6 +5,15 @@ import { Zap } from "lucide-react";
 import type { BrainSlicerData } from "@/lib/study/types";
 import { cn } from "@/lib/utils";
 import { trackLearn } from "@/lib/learn/track";
+import { QuickChallenge, type ChallengeQ } from "./challenge";
+import { sfx } from "./sfx";
+
+const SLICER_CHALLENGE: ChallengeQ[] = [
+  { q: "Which slice runs from ear to ear, so you look at it from the front?", options: ["Axial", "Sagittal", "Coronal"], answer: 2, why: "A coronal slice runs ear to ear. Axial slices are horizontal, like looking down from above; sagittal slices divide left from right." },
+  { q: "For depression, where does the rTMS coil usually go?", options: ["Over the left dorsolateral prefrontal cortex", "Over the back of the head", "Over the right temple"], answer: 0, why: "High-frequency rTMS for depression targets the left DLPFC, found by the 5 cm rule, the F3 position or an MRI scan. Its effect reaches the deeper mood circuit through connections." },
+  { q: "Which ECT placement causes the fewest memory side effects?", options: ["Bitemporal", "Right unilateral", "All three are the same"], answer: 1, why: "Right unilateral ECT spares the language-dominant left side and causes fewer memory problems, but it needs a dose about six times the seizure threshold to work as well." },
+  { q: "Does rTMS need an anaesthetic?", options: ["Yes, the same as ECT", "No: the patient stays awake, and memory is not affected", "Only for the first session"], answer: 1, why: "rTMS uses a magnetic field and does not aim for a seizure, so there is no anaesthetic. Scalp discomfort and headache are common; seizures are rare." },
+];
 import { Missions, ModeTabs, Scene3DSlot, SceneCard, ViewSwitch, btn, chip, statusCls, useInView, useMissions, useSceneView, useThemeColors, type V3 } from "./kit";
 import { PLANE_NAME, RANGE, partsSeen, type Plane } from "./brain-slice";
 import { SliceCanvas, getSlice } from "./slice-canvas";
@@ -109,6 +118,7 @@ export function BrainSlicer({ d }: { d: BrainSlicerData }) {
   };
   const pickPlacement = (p: Placement) => {
     setPlacement(p);
+    sfx("zap");
     const next = seenPl.includes(p) ? seenPl : [...seenPl, p];
     setSeenPl(next);
     if (next.length === 3) ms.mark("ect");
@@ -116,6 +126,7 @@ export function BrainSlicer({ d }: { d: BrainSlicerData }) {
   };
   const fire = () => {
     setFiring((f) => f + 1);
+    sfx("pulse");
     ms.mark("tms");
     trackLearn({ type: "widget", kind: "brainslicer", item: "tms" });
   };
@@ -123,7 +134,7 @@ export function BrainSlicer({ d }: { d: BrainSlicerData }) {
   const flat = <SlicerFlat mode={mode} plane={plane} u={u} placement={placement} firing={firing} />;
 
   return (
-    <SceneCard title={d.title ?? "Slice the brain, then stimulate it"} goal="Scroll slices in all three planes and name what you see, then compare where rTMS and the three ECT placements act." caption={d.caption} tools={<ViewSwitch v={v} />}>
+    <SceneCard title={d.title ?? "Slice the brain, then stimulate it"} goal="Scroll slices in all three planes and name what you see, then compare where rTMS and the three ECT placements act." caption={d.caption} tools={<ViewSwitch v={v} />} sound>
       <ModeTabs<SlicerMode> name="Mode" value={mode} onChange={setMode} modes={[{ id: "slice", label: "Scan slices" }, { id: "tms", label: "rTMS coil" }, { id: "ect", label: "ECT electrodes" }]} />
       <div className={cn("mt-3 grid gap-3", mode === "slice" && "sm:grid-cols-2")}>
         <div ref={box} className="relative h-[15rem] overflow-hidden rounded-xl border-2 border-foreground bg-background sm:h-[19rem]">
@@ -200,6 +211,7 @@ export function BrainSlicer({ d }: { d: BrainSlicerData }) {
           { id: "ect", label: "Compare all three ECT placements", done: ms.done("ect") },
         ]}
       />
+      <QuickChallenge title="Slices, rTMS and ECT" kind="brainslicer" items={SLICER_CHALLENGE} />
     </SceneCard>
   );
 }

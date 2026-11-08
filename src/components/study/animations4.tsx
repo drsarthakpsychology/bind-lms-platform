@@ -6,7 +6,8 @@ import type { HypnogramData, ReleaseData, StrangeData, ThoughtRecordData } from 
 import { cn } from "@/lib/utils";
 import { Rich } from "./rich";
 import { trackLearn } from "@/lib/learn/track";
-import { PlayBar, StepList, btn, card, choiceCls, label, statusCls, useSteps } from "./animations3";
+import { StepList, btn, card, choiceCls, label, statusCls } from "./animations3";
+import { PlayBar, useStepPlayer } from "./pacing";
 
 /**
  * Third wave, part two: transmitter release with a drug picker, a CBT
@@ -67,7 +68,7 @@ function molPos(m: number, step: number, drug: Drug): { x: number; y: number; o:
 /** Transmitter release, binding, reuptake and breakdown, with a drug picker. */
 export function Release({ d }: { d: ReleaseData }) {
   const tx = d.transmitter ?? "serotonin";
-  const st = useSteps(REL_STEPS.length, 2600);
+  const st = useStepPlayer(REL_STEPS.length, (k) => `${REL_STEPS[k]?.name ?? ""} ${REL_STEPS[k]?.text(tx) ?? ""}`);
   const [drug, setDrug] = React.useState<Drug>("none");
   const step = Math.min(st.i, REL_STEPS.length - 1);
   const cur = REL_STEPS[step];
@@ -139,7 +140,7 @@ export function Release({ d }: { d: ReleaseData }) {
         })}
       </svg>
       <StepList names={REL_STEPS.map((s) => s.name)} st={st} />
-      <PlayBar st={st} n={REL_STEPS.length} kind="release" />
+      <PlayBar st={st} kind="release" />
       <div className="mt-3 flex flex-wrap gap-2" role="group" aria-label="Add a drug">
         {DRUGS.map((x) => (
           <button key={x.id} type="button" aria-pressed={drug === x.id} className={choiceCls(drug === x.id)} onClick={() => { setDrug(x.id); trackLearn({ type: "widget", kind: "release", item: x.id }); }}>{x.name}</button>
@@ -498,8 +499,11 @@ const STYLES: { id: Style; name: string; rate: string; why: string; x: number[];
 
 /** Ainsworth's Strange Situation: step through the episodes, pick an attachment style. */
 export function Strange({ d }: { d: StrangeData }) {
-  const st = useSteps(SS_STEPS.length, 3000);
   const [style, setStyle] = React.useState<Style>("secure");
+  const st = useStepPlayer(SS_STEPS.length, (k) => {
+    const y = STYLES.find((x) => x.id === style)!;
+    return `${SS_STEPS[k]?.name ?? ""} ${y.acts[k] ?? ""} ${y.rate} ${y.why}`;
+  });
   const ep = Math.min(st.i, SS_STEPS.length - 1);
   const sty = STYLES.find((x) => x.id === style)!;
   const upset = sty.upset[ep];
@@ -549,7 +553,7 @@ export function Strange({ d }: { d: StrangeData }) {
         <text x="310" y="164" textAnchor="end" className="fill-foreground text-[8px]">{mood}</text>
       </svg>
       <StepList names={SS_STEPS.map((s) => s.name)} st={st} />
-      <PlayBar st={st} n={SS_STEPS.length} kind="strange" />
+      <PlayBar st={st} kind="strange" />
       <div className="mt-3 grid gap-2 sm:grid-cols-4" role="group" aria-label="Attachment style">
         {STYLES.map((x) => (
           <button key={x.id} type="button" aria-pressed={style === x.id} className={choiceCls(style === x.id)} onClick={() => { setStyle(x.id); trackLearn({ type: "widget", kind: "strange", item: x.id }); }}>{x.name}</button>

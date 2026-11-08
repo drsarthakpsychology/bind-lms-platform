@@ -3,6 +3,7 @@
 import * as React from "react";
 import * as THREE from "three";
 import { useFrame, useThree } from "@react-three/fiber";
+import { Glow, ParticleFlow } from "./fx";
 import { CameraRig, Stage, Tube, segs, useQuality } from "./three-kit";
 import { sampleCurve, type V3 } from "./kit";
 import { BLOBS, CEREBELLUM, REGION_COLOR, TUBES, to3, type RegionId } from "./brain-explorer-data";
@@ -22,7 +23,7 @@ function BrainSlicer3D(p: SlicerViewProps) {
   };
   const v = cam[p.mode];
   return (
-    <Stage className="h-full w-full" camera={v.pos} inView={p.inView} active={false} wakeKey={`${p.mode}-${p.plane}-${p.u}-${p.placement}-${p.firing}`} onReady={p.onReady} minDistance={2.2} maxDistance={9}>
+    <Stage className="h-full w-full" camera={v.pos} inView={p.inView} active={false} wakeKey={`${p.mode}-${p.plane}-${p.u}-${p.placement}-${p.firing}`} onReady={p.onReady} minDistance={2.2} maxDistance={9} fog={1.9} bg={p.colors.bg} fx={p.colors.brand}>
       <CameraRig flyKey={p.mode} pos={v.pos} target={v.target} fitAspect={1.3} />
       <Scene {...p} />
     </Stage>
@@ -155,6 +156,10 @@ function Coil({ firing, color, glow }: { firing: number; color: string; glow: st
         <meshBasicMaterial ref={spot} color={glow} transparent opacity={0.25} depthWrite={false} />
       </mesh>
       <Tube pts={link} radius={0.02} color={glow} opacity={0.01} lit={firing ? 1 : 0} litColor={glow} xray />
+      {/* the pulse train reaches the deeper mood circuit through connections */}
+      <ParticleFlow pts={link} color={glow} count={18} size={0.12} speed={0.6} spread={0.015} active={firing > 0} forMs={4000} runKey={`${firing}`} xray />
+      <Glow position={to3(DLPFC)} color={glow} size={0.9} opacity={0.6} xray />
+      <Glow position={at} color={color} size={1.1} opacity={0.35} />
       <mesh position={to3(SGACC)}>
         <sphereGeometry args={[0.07, 12, 10]} />
         <meshBasicMaterial color={glow} />
@@ -184,6 +189,8 @@ function Electrodes({ placement, color }: { placement: SlicerViewProps["placemen
         );
       })}
       <Tube pts={path} radius={0.05} color={color} opacity={0.01} lit={1} litColor={color} xray />
+      <ParticleFlow pts={path} color={color} count={22} size={0.13} speed={0.5} spread={0.025} forMs={3200} runKey={placement} xray />
+      {[e0, e1].map((e, k) => <Glow key={`g${k}`} position={to3(onScalp(e, 1.04))} color={color} size={0.7} opacity={0.6} />)}
       <mesh position={to3(placement === "rul" ? [0.2, 0.4, -0.5] : placement === "bf" ? [1.2, 0.45, 0] : [0.6, 0, 0])} scale={1}>
         <sphereGeometry args={[placement === "rul" ? 0.45 : 0.55, 20, 14]} />
         <meshBasicMaterial color={color} transparent opacity={0.16} depthWrite={false} />

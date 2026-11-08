@@ -2,9 +2,10 @@
 
 import * as React from "react";
 import * as THREE from "three";
-import { useFrame } from "@react-three/fiber";
+import { useFrame, useThree } from "@react-three/fiber";
+import { Glow } from "./fx";
 import { CameraRig, Stage, segs, useQuality, type Quality } from "./three-kit";
-import { CA_CH, N_MOL, N_VES, RECEPTORS, STAGES, T, TRANSPORTER, moleculePos, response, rnd, vesiclePos, type SynViewProps } from "./synapse-scene";
+import { CA_CH, N_MOL, N_VES, RECEPTORS, STAGES, T, TRANSPORTER, moleculePos, response, rnd, stageElapsed, vesiclePos, type SynViewProps } from "./synapse-scene";
 
 /**
  * The synapse in 3D: a see-through nerve ending full of vesicles above a
@@ -13,7 +14,7 @@ import { CA_CH, N_MOL, N_VES, RECEPTORS, STAGES, T, TRANSPORTER, moleculePos, re
  */
 function Synapse3D(p: SynViewProps) {
   return (
-    <Stage className="h-full w-full" camera={[0.6, 0.9, 5.6]} inView={p.inView} active={p.running} wakeKey={`${p.drug}-${p.fireAt}-${p.stage}`} onReady={p.onReady} minDistance={2.2} maxDistance={9}>
+    <Stage className="h-full w-full" camera={[0.6, 0.9, 5.6]} inView={p.inView} active={false} wakeKey={`${p.drug}-${p.fireAt}-${p.stage}`} onReady={p.onReady} minDistance={2.2} maxDistance={9} sway fog={2.0} bg={p.colors.bg} fx={p.colors.brand}>
       <CameraRig flyKey="synapse" pos={[0.9, 1.3, 6.0]} target={[0, 0.7, 0]} fitAspect={1.4} />
       <Scene {...p} />
     </Stage>
@@ -45,6 +46,9 @@ function Scene({ fireAt, stage, reduce, drug, colors }: SynViewProps) {
   const recMats = React.useRef<(THREE.MeshStandardMaterial | null)[]>([]);
   const ap = React.useRef<THREE.Mesh>(null);
   const post = React.useRef<THREE.MeshStandardMaterial>(null);
+  const recGlow = React.useRef<(THREE.Sprite | null)[]>([]);
+  const apGlow = React.useRef<THREE.Sprite>(null);
+  const cleft = React.useRef<THREE.Sprite>(null);
   const m4 = React.useMemo(() => new THREE.Matrix4(), []);
   const q = React.useMemo(() => new THREE.Quaternion(), []);
   const sc = React.useMemo(() => new THREE.Vector3(), []);
@@ -60,9 +64,15 @@ function Scene({ fireAt, stage, reduce, drug, colors }: SynViewProps) {
     for (let i = 0; i < N_MOL; i++) m.setColorAt(i, freeC);
     if (m.instanceColor) m.instanceColor.needsUpdate = true;
   }, [freeC]);
+  const entered = React.useRef({ key: "", t0: 0 });
+  const invalidate = useThree((st) => st.invalidate);
   useFrame(() => {
-    const end = STAGES.slice(0, Math.max(0, stage) + 1).reduce((a, s) => a + s.ms, 0) - 1;
-    const e = fireAt === null ? -1 : reduce ? end : performance.now() - fireAt;
+    // each stage plays once from when it was entered, then holds until the student moves on
+    const key = `${fireAt}-${stage}`;
+    if (entered.current.key !== key) entered.current = { key, t0: performance.now() };
+    const since = performance.now() - entered.current.t0;
+    const e = fireAt === null ? -1 : stageElapsed(stage, since, reduce);
+    if (fireAt !== null && !reduce && since < STAGES[Math.min(Math.max(0, stage), STAGES.length - 1)].ms + 50) invalidate();
     const t = performance.now() / 1000;
     const ee = Math.max(0, e);
     if (ves.current) {
@@ -110,10 +120,25 @@ function Scene({ fireAt, stage, reduce, drug, colors }: SynViewProps) {
       mm.emissiveIntensity = r * 0.5;
     });
     if (post.current) post.current.emissiveIntensity = r * 0.25;
+    recGlow.current.forEach((g) => {
+      if (!g) return;
+      g.visible = r > 0.02;
+      (g.material as THREE.SpriteMaterial).opacity = r * 0.85;
+    });
+    if (cleft.current) {
+      // the cloud of transmitter in the gap glows while it is there
+      const c = e < T.dock ? 0 : e < T.bind ? (e - T.dock) / (T.bind - T.dock) : Math.max(0, 1 - (e - T.bind) / (T.end - T.bind));
+      cleft.current.visible = c > 0.02 && drug !== "botox";
+      (cleft.current.material as THREE.SpriteMaterial).opacity = 0.45 * c;
+    }
     if (ap.current) {
       const live = e >= 0 && e < T.ca;
       ap.current.visible = live;
       if (live) ap.current.position.y = 3.3 - (e / T.ca) * 2.0;
+      if (apGlow.current) {
+        apGlow.current.visible = live;
+        apGlow.current.position.y = ap.current.position.y;
+      }
     }
   });
   return (
@@ -126,6 +151,8 @@ function Scene({ fireAt, stage, reduce, drug, colors }: SynViewProps) {
         <torusGeometry args={[0.45, 0.07, 10, 28]} />
         <meshBasicMaterial color={colors.danger} />
       </mesh>
+      <Glow ref={apGlow} color={colors.danger} size={1.6} opacity={0.8} visible={false} />
+      <Glow ref={cleft} position={[0, 0.05, 0]} color="#ffd27a" size={3.2} opacity={0} visible={false} />
       {CA_CH.map((c, k) => (
         <mesh key={k} position={c}>
           <cylinderGeometry args={[0.1, 0.1, 0.2, 12]} />
@@ -148,7 +175,7 @@ function Scene({ fireAt, stage, reduce, drug, colors }: SynViewProps) {
       </instancedMesh>
       <instancedMesh ref={mol} args={[undefined, undefined, N_MOL]} frustumCulled={false}>
         <icosahedronGeometry args={[0.045, ql ? 1 : 0]} />
-        <meshStandardMaterial color="#ffffff" roughness={0.4} />
+        <meshStandardMaterial color="#ffffff" roughness={0.3} emissive="#ffb347" emissiveIntensity={0.25} />
       </instancedMesh>
       <instancedMesh ref={ca} args={[undefined, undefined, 16]} frustumCulled={false} visible={false}>
         <sphereGeometry args={[0.03, 8, 6]} />
@@ -169,6 +196,7 @@ function Scene({ fireAt, stage, reduce, drug, colors }: SynViewProps) {
             <cylinderGeometry args={[0.045, 0.05, 0.24, 8]} />
             <meshStandardMaterial color="#c9c3dd" />
           </mesh>
+          <Glow ref={(g) => { recGlow.current[k] = g; }} position={[0, 0.1, 0]} color={colors.brand} size={0.55} visible={false} />
           {drug === "blocker" ? (
             <mesh position={[0, 0.16, 0]}>
               <boxGeometry args={[0.13, 0.09, 0.13]} />

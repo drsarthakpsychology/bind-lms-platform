@@ -114,3 +114,36 @@ The test page lives in `.scene-harness/` (not committed). The measuring scripts 
 - Build the page: `npx vite build --config .scene-harness/vite.config.mts --outDir dist`.
 - Serve `dist` with gzip, then run the measuring script.
 - The page sets `window.__scenePerf = []` before loading. The stage then logs frame rate, draw calls, triangles, pixel ratio and quality once a second, and counts frames in `window.__sceneFrames`. Without that flag the probe does nothing.
+
+## Re-measure after the effects pass (8 November 2026)
+
+The six 3D scenes (`nervoussystem`, `brainexplorer`, `actionpotential`, `synapse3d`, `brainslicer`, `amesroom`) gained glow sprites, particle flows, tap ripples, an outline on the selected brain part, depth fog, a rim light, eased camera arcs, idle sway, sound and quick challenges. They were measured on the same profile as above: 390 × 844 at 2×, 4× slower CPU and Fast 3G, on SwiftShader. "Before" is the build just before the pass (commit bfafd58). "After" is commit a1de72e. Both builds were served side by side and measured in turns.
+
+**Caveat:** the machine was shared and much busier than in the first round, with a load average of 2.6 to 6 on 2 cores. The same build gave very different numbers on repeat runs; for example, the brain's animation ran at 14 fps in one run and 50 fps in the next. The tables give the range of 2 or 3 runs per build, and differences inside those ranges are noise.
+
+### Budgets
+
+| Target | After the effects pass |
+|---|---|
+| Under about 400 KB compressed extra JS for the first 3D scene | 243.8 KB gzip for the shared 3D chunk plus 2.1 to 6.1 KB per scene. The effects add about 3 KB. **Met.** |
+| Interactive within 3 s | Controls at 2.6 to 2.9 s; the 3D fades in at 5.1 to 6.2 s, the same as before. **Met.** |
+| 30 fps or better | While turning the model: 17 to 55 fps after against 11 to 52 fps before, at quality 0 to 1. Main-thread time per frame: 5.6 to 69 ms after against 4 to 29 ms before; the two ranges overlap run to run. **Met while turning. Animation frame rates overlap with before, within the noise.** |
+| Stop rendering when hidden or idle | 0 frames off screen in every scene. 0 frames a second when idle, except the brain: there the measuring script presses Play, and the journey is still playing at reading pace when idle is measured, as it was before. The idle sway stops for good after 14 s or the first touch. **Met.** |
+
+### Numbers (ranges over runs)
+
+| Scene | Turning fps before | Turning fps after | Animation fps before | Animation fps after | CPU ms per frame before | CPU ms per frame after | Quality at end, after |
+|---|---|---|---|---|---|---|---|
+| nervoussystem | 18 to 44 | 17 to 35 | 16 to 19 | 6 to 17 | 11 to 20 | 17 to 44 | 0 |
+| brainexplorer | 20 to 52 | 46 to 55 | 14 to 50 | 14 to 50 | 21 to 29 | 32 (one run at 168 while it stepped down) | 0 |
+| actionpotential | 47 | 43 | 30 | 24 | 13 | 15 | 0 |
+| synapse3d | 40 | 43 | 33 | 41 | 4 | 6 | 0 |
+| brainslicer | 11 to 43 | 28 to 39 | 9 to 13 | 4 to 12 | 21 to 29 | 27 to 69 | 0 |
+| amesroom (peephole is fixed, so no turning) | none | none | 18 to 49 | 5 to 38 | 6 to 12 | 7 to 55 | 0 to 2 |
+
+### Found and fixed while measuring
+
+1. **A soft studio environment map was removed.** It was a reflection map made with three.js `RoomEnvironment` and `PMREMGenerator`. Building it took seconds of main-thread time on the throttled CPU, right when the student first touched the scene. On SwiftShader it also cut frame rates sharply (Ames room 1 to 2 fps at full quality). The warm key light and cool rim light give most of the look for nothing.
+2. **Tap ripples no longer raycast during drags.** The first version put a pointer handler on the whole model, so every pointer move tested every triangle. On the brain slicer that cost up to 1.2 s of main-thread time per frame while turning. Ripples now use plain DOM events and one raycast per tap.
+3. **The quality governor missed very slow devices.** It treated any frame slower than 0.25 s as a pause, so at 1 to 3 fps it never stepped down. It now also steps down after 4 slow frames in a row (0.1 to 1 s each) once warmed up.
+4. **Glow and particles ask for frames only while they move.** Particle flows for the rTMS pulse train and the ECT current run for 4 s and 3.2 s, then stop. Ripples last 0.65 s. The outline pulses for 1.2 s and then holds.

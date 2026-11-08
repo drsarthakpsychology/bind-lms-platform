@@ -1,11 +1,12 @@
 "use client";
 
 import * as React from "react";
-import { Pause, Play, RotateCcw, Zap } from "lucide-react";
+import { RotateCcw, Zap } from "lucide-react";
 import type { JourneyData, NeuronData, PathwaysData, ReceptorData } from "@/lib/study/types";
 import { cn } from "@/lib/utils";
 import { Rich } from "./rich";
 import { trackLearn } from "@/lib/learn/track";
+import { PlayBar, useStepPlayer } from "./pacing";
 
 /**
  * Animated explainers: how a medicine travels from the mouth to a brain
@@ -18,26 +19,6 @@ import { trackLearn } from "@/lib/learn/track";
 const card = "rounded-2xl border-2 border-foreground bg-card p-4 sm:p-5 shadow-[var(--shadow-hard-sm)]";
 const label = "text-xs font-semibold tracking-wide uppercase text-link";
 const btn = "inline-flex min-h-11 items-center justify-center gap-2 rounded-md border-2 border-foreground px-4 font-semibold";
-
-/** Auto-advancing step index; state changes happen in the timer callback. */
-function useSteps(n: number, ms: number) {
-  const [i, setI] = React.useState(0);
-  const [playing, setPlaying] = React.useState(false);
-  React.useEffect(() => {
-    if (!playing) return;
-    const t = setTimeout(() => {
-      setI((x) => {
-        if (x + 1 >= n) {
-          setPlaying(false);
-          return x;
-        }
-        return x + 1;
-      });
-    }, ms);
-    return () => clearTimeout(t);
-  }, [playing, i, n, ms]);
-  return { i, playing, setI: (k: number) => (setPlaying(false), setI(k)), play: () => (i >= n - 1 && setI(0), setPlaying(true)), pause: () => setPlaying(false) };
-}
 
 /* ------------------------------------------------------------- journey */
 type Stage = { id: string; name: string; x: number; y: number; text: string };
@@ -79,7 +60,7 @@ const ROUTE_STAGES: Record<NonNullable<JourneyData["route"]>, Stage[]> = {
 export function Journey({ d }: { d: JourneyData }) {
   const [route, setRoute] = React.useState<NonNullable<JourneyData["route"]>>(d.route ?? "oral");
   const stages = ROUTE_STAGES[route].map((s) => ({ ...s, text: d.notes?.[s.id] ?? (s.id === "target" ? `At last it reaches its target: ${d.target}. There it acts on receptors, and this is where the effect (and many side effects) begins.` : s.text) }));
-  const st = useSteps(stages.length, 2300);
+  const st = useStepPlayer(stages.length, (k) => `${stages[k]?.name ?? ""} ${stages[k]?.text ?? ""}`);
   const cur = stages[Math.min(st.i, stages.length - 1)];
   const trail = stages.slice(0, st.i + 1);
   const routes = (d.routes ?? [route]) as NonNullable<JourneyData["route"]>[];
@@ -128,13 +109,7 @@ export function Journey({ d }: { d: JourneyData }) {
           </li>
         ))}
       </ol>
-      <div className="mt-3 flex flex-wrap gap-2">
-        {st.playing ? (
-          <button type="button" className={cn(btn, "bg-card")} onClick={st.pause}><Pause className="size-4" aria-hidden /> Pause</button>
-        ) : (
-          <button type="button" className={cn(btn, "bg-foreground text-background")} onClick={() => { st.play(); trackLearn({ type: "widget", kind: "journey", prompt: d.drug }); }}><Play className="size-4" aria-hidden /> {st.i >= stages.length - 1 ? "Watch again" : "Play the journey"}</button>
-        )}
-      </div>
+      <PlayBar st={st} kind="journey" first="Play the journey" hint="or tap a stage" />
       <p className="vibha-pop mt-3 rounded-xl bg-muted p-3 text-[0.95rem] leading-relaxed" key={`${route}-${cur.id}`} role="status" aria-live="polite">
         <span className="font-semibold">{cur.name}: </span><Rich text={cur.text} />
       </p>

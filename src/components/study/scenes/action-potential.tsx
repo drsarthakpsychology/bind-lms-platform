@@ -5,6 +5,7 @@ import { ChevronRight, Lock, RotateCcw, Timer, Zap } from "lucide-react";
 import type { ActionPotentialData } from "@/lib/study/types";
 import { cn } from "@/lib/utils";
 import { trackLearn } from "@/lib/learn/track";
+import { sfx } from "./sfx";
 import { Missions, Scene3DSlot, SceneCard, ViewSwitch, btn, chip, statusCls, useInView, useSceneView, useThemeColors } from "./kit";
 
 /**
@@ -152,7 +153,11 @@ export function ActionPotential({ d }: { d: ActionPotentialData }) {
   }, [v.reduce, inView]);
 
   const stim = React.useCallback(() => {
-    setSim((s) => stimulate(s, mv, myelin));
+    // work out the result from the latest state, so the sound matches what happens
+    const out = stimulate(simRef.current, mv, myelin);
+    setSim(out);
+    const kind = out.event?.kind;
+    sfx(kind === "fire" || kind === "sum" ? "zap" : kind === "blocked" ? "bad" : "tap");
     trackLearn({ type: "widget", kind: "actionpotential", item: "stimulate" });
   }, [mv, myelin]);
   const stepBy = (ms: number) => setSim((s) => {
@@ -173,6 +178,7 @@ export function ActionPotential({ d }: { d: ActionPotentialData }) {
   const lastFire = sim.fired[sim.fired.length - 1];
   const travel = lastFire ? (sim.t - lastFire.at) / travelMs(lastFire.myelin) : 2;
 
+  const PHASE_NAME: Record<Phase, string> = { rest: "back at rest", rising: "rising phase", falling: "falling phase", under: "undershoot" };
   const phaseText: Record<Phase, string> = {
     rest: "Resting at about minus 70 millivolts. The inside of the cell is negative. Sodium and potassium channels are closed; pumps keep sodium outside and potassium inside.",
     rising: "Rising phase: threshold reached, so voltage-gated sodium channels snap open. Sodium rushes in and the inside swings positive, up to about plus 30 millivolts. All or none: it always rises this far.",
@@ -191,7 +197,8 @@ export function ActionPotential({ d }: { d: ActionPotentialData }) {
           : ev.kind === "sum"
             ? "Summation: your pushes added up past threshold, and it fired."
             : "Threshold reached: it fired.";
-  const travelText = lastFire && travel < 1.4
+  // the travel note stays until the next stimulus, so it can be read
+  const travelText = lastFire
     ? travel < 1
       ? lastFire.myelin
         ? "The impulse jumps from node to node along the myelinated axon (saltatory conduction): fast."
@@ -208,7 +215,7 @@ export function ActionPotential({ d }: { d: ActionPotentialData }) {
   ];
 
   return (
-    <SceneCard title={d.title ?? "Make a neuron fire"} goal="Push the neuron past threshold, watch the impulse race down the axon, and fire 3 times in 10 seconds." caption={d.caption} tools={<ViewSwitch v={v} />}>
+    <SceneCard title={d.title ?? "Make a neuron fire"} goal="Push the neuron past threshold, watch the impulse race down the axon, and fire 3 times in 10 seconds." caption={d.caption} tools={<ViewSwitch v={v} />} sound>
       <div ref={box} className="relative mt-3 h-[13rem] overflow-hidden rounded-xl border-2 border-foreground bg-background sm:h-[16rem]">
         {v.use3D ? (
           <Scene3DSlot flat={<NeuronFlat sim={sim} myelin={myelin} />} render={(onReady) => <View3D simRef={simRef} myelin={myelin} active={!idle} inView={inView} colors={colors} onStim={stim} onReady={onReady} />} />
@@ -239,7 +246,15 @@ export function ActionPotential({ d }: { d: ActionPotentialData }) {
         <button type="button" className={cn(btn, "bg-card text-sm")} onClick={() => setSim((s) => ({ ...initial(), fired: s.fired, summed: s.summed, blocked: s.blocked, best: s.best }))}><RotateCcw className="size-4" aria-hidden /> Reset voltage</button>
       </div>
       <div className={statusCls} role="status" aria-live="polite">
-        <p><span className="font-semibold">Voltage: {Math.round(sim.v)} millivolts. </span>{phaseText[ph]}</p>
+        <p><span className="font-semibold">Voltage: {Math.round(sim.v)} millivolts. </span>{sim.fired.length ? `Now: ${PHASE_NAME[ph]}.` : phaseText.rest}</p>
+        {sim.fired.length ? (
+          // a spike is over in about a second, so its three phases stay written out here to read at your own pace
+          <ol className="mt-2 space-y-1" aria-label="The phases of an action potential">
+            {(["rising", "falling", "under"] as Phase[]).map((k) => (
+              <li key={k} aria-current={ph === k ? "step" : undefined} className={cn("rounded-md border-l-4 pl-2", ph === k ? "border-[var(--brand)] font-semibold" : "border-transparent")}>{phaseText[k]}</li>
+            ))}
+          </ol>
+        ) : null}
         <p className="mt-1">{evText}{travelText ? ` ${travelText}` : ""}</p>
         {sim.best !== null && !sim.challenge ? <p className="mt-1 font-semibold">{won ? `Challenge won: ${sim.best} action potentials in 10 seconds.` : `Challenge: ${sim.best} of 3. Tip: make each push big enough, and wait for the spike to finish before pushing again.`}</p> : null}
         <p className="mt-1 text-sm text-muted-foreground">Fired so far: {sim.fired.length}. Shown about a thousand times slower than real life: a real spike lasts about a millisecond. {myelin ? "Myelinated axons conduct at up to about 120 metres a second." : "Thin bare axons conduct at about 1 metre a second."}</p>

@@ -37,6 +37,11 @@ One or two sentences.
 - Write varied questions: conceptual, theoretical, technical, application, clinical and research. Answers must be fully developed. No filler questions.
 
 ## Visual widgets: `:::widget <kind>` + JSON + `:::`
+
+Pacing (owner, 2026-11-08): every widget that has steps (flows, journeys, conditioning, memory flow, stress, release, strange situation, the scene journeys and the brain tour) opens on its first step and waits. The student taps Next or Back. Play is a separate button: it holds each step for its reading time (about 250 ms a word, never under 3 s), always shows Pause, stops when the widget leaves the screen or the tab is hidden, and stops on the last step with the caption still showing. A test (`pacing.test.tsx`) renders one of every widget kind in the course and fails if anything changes in a minute without a press.
+
+The six 3D scenes (`nervoussystem`, `brainexplorer`, `actionpotential`, `synapse3d`, `brainslicer`, `amesroom`) also have a Sound switch (off by default; a sound plays only when the student does something) and a short quick challenge with a first-try score. The brain explorer's "Where is the damage?" and the neuron's "3 in 10 s" are their challenges.
+
 | Kind | Use it for | JSON |
 |---|---|---|
 | `flow` | processes, mechanisms, stage sequences (`chain`), vicious cycles and maintenance loops (`cycle`), classification and decision trees (`tree`). The student taps a box or presses Play to step through. | `{"title":"…","layout":"chain"\|"cycle"\|"tree","nodes":[{"id":"a","label":"…","detail":"…","parent":"(tree only)"}],"edgeLabels":{"a>b":"…"},"caption":"…"}` |
