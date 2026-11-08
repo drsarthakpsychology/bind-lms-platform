@@ -5,6 +5,7 @@ import * as React from "react";
 import { emptyState, finishLesson, istToday, type LearnState, type Payout } from "@/lib/learn/engine";
 import { SCENARIOS, WORDS, type Choice, type Scenario } from "@/lib/learn/scenarios";
 import { ALL_TERMS } from "@/lib/learn/notes";
+import { SAY_IT, type SayIt } from "@/lib/decode/say-it";
 import { initLearnStore, setLearnState, useLearnState } from "@/lib/learn/store";
 import { haptic } from "@/lib/haptics";
 import { cn } from "@/lib/utils";
@@ -139,15 +140,59 @@ function Options({ beat, options, picked, onChoose }: { beat: Scenario["beats"][
 }
 
 /* ============================================================ Say it clinically */
-type Q = { prompt: string; answer: string; options: string[]; why: string; kind: "term" | "words" };
+type Q = { id: string; prompt: string; language?: string; answer: string; options: string[]; why: string; meaning?: string; note?: string; kind: "term" | "words"; level: number };
+
+/** Lay phrase to clinical term cards: the hand-written phrase bank first, then the terms in the Study notes. */
+type Card = { id: string; phrase: string; language?: string; meaning?: string; term: string; wrong: string[]; why: string; note?: string; level: number };
+const NOTE_CARDS: Card[] = ALL_TERMS.map((t) => ({
+  id: `note-${t.noteId}-${t.term}`,
+  phrase: t.lay,
+  term: t.term,
+  wrong: [],
+  why: `${t.topic}: \u201c${t.lay}\u201d is written as ${t.term}.`,
+  level: 2,
+}));
+const SAY_CARDS: Card[] = SAY_IT.map((x: SayIt) => ({ id: x.id, phrase: x.phrase, language: x.language, meaning: x.meaning, term: x.term, wrong: x.wrong, why: x.why, note: x.note, level: x.difficulty }));
+const CARDS: Card[] = [...SAY_CARDS, ...NOTE_CARDS];
+const TERM_NAMES = [...new Set(CARDS.map((c) => c.term))];
+
+/** Cards seen lately on this device, so each round draws ones not yet shown. */
+const SEEN_KEY = "say-it-seen-v2";
+function seenIds(): string[] {
+  try {
+    const v = JSON.parse(localStorage.getItem(SEEN_KEY) ?? "[]");
+    return Array.isArray(v) ? v.filter((x) => typeof x === "string") : [];
+  } catch {
+    return [];
+  }
+}
+function remember(ids: string[]) {
+  try {
+    const keep = Math.max(0, CARDS.length - 24);
+    localStorage.setItem(SEEN_KEY, JSON.stringify([...seenIds().filter((x) => !ids.includes(x)), ...ids].slice(-keep)));
+  } catch {
+    /* private window: rounds are still random */
+  }
+}
 
 function buildRound(): Q[] {
-  const terms = shuffle(ALL_TERMS).slice(0, 8).map((t) => {
-    const others = shuffle(ALL_TERMS.filter((x) => x.term !== t.term)).slice(0, 3).map((x) => x.term);
-    return { prompt: `They say: “${t.lay}”. You write:`, answer: t.term, options: shuffle([t.term, ...others]), why: `${t.topic}: “${t.lay}” → ${t.term}`, kind: "term" as const };
-  });
-  const words = shuffle(WORDS).slice(0, 4).map((w) => ({ prompt: "Which is the better way to say it?", answer: w.better, options: shuffle([w.better, w.worse]), why: w.why, kind: "words" as const }));
-  return shuffle([...terms, ...words]);
+  const seen = new Set(seenIds());
+  const unseen = shuffle(CARDS.filter((c) => !seen.has(c.id)));
+  const picked = [...unseen, ...shuffle(CARDS.filter((c) => seen.has(c.id)))].slice(0, 8);
+  remember(picked.map((c) => c.id));
+  const terms = picked
+    .sort((a, b) => a.level - b.level)
+    .map((c) => {
+      const wrong = c.wrong.length >= 3 ? c.wrong.slice(0, 3) : shuffle(TERM_NAMES.filter((x) => x !== c.term)).slice(0, 3);
+      return { id: c.id, prompt: `They say: \u201c${c.phrase}\u201d. You write:`, language: c.language, answer: c.term, options: shuffle([c.term, ...wrong]), why: c.why, meaning: c.meaning, note: c.note, kind: "term" as const, level: c.level };
+    });
+  const words = shuffle(WORDS)
+    .slice(0, 4)
+    .map((w) => ({ id: `words-${w.better}`, prompt: "Which is the better way to say it?", answer: w.better, options: shuffle([w.better, w.worse]), why: w.why, kind: "words" as const, level: 1 }));
+  // Phrase cards climb in difficulty; the four wording cards slot in between them.
+  const out: Q[] = [...terms];
+  for (const [k, w] of words.entries()) out.splice(Math.min(out.length, 2 + k * 3), 0, w);
+  return out;
 }
 
 export function TermsGame({ serverState, save }: { serverState: LearnState | null; save: (s: LearnState) => Promise<unknown> }) {
@@ -177,7 +222,10 @@ export function TermsGame({ serverState, save }: { serverState: LearnState | nul
       <div className="h-3 overflow-hidden rounded-full border-2 border-foreground">
         <div className="h-full bg-primary transition-[width]" style={{ width: `${(i / round.length) * 100}%` }} />
       </div>
-      <p className="text-eyebrow text-link">{q.kind === "words" ? "Words matter" : "Case-sheet language"}</p>
+      <p className="text-eyebrow text-link">
+        {q.kind === "words" ? "Words matter" : "Case-sheet language"}
+        {q.language ? <span className="text-muted-foreground"> · {q.language}</span> : null}
+      </p>
       <h2 className="text-xl font-bold leading-tight">{q.prompt}</h2>
       <div className="grid gap-2.5">
         {q.options.map((o) => (
@@ -188,7 +236,7 @@ export function TermsGame({ serverState, save }: { serverState: LearnState | nul
             onClick={() => {
               setPick(o);
               haptic(o === q.answer ? "success" : "warning");
-              setAnswers((a) => [...a, { id: `${q.kind}-${q.answer}`, correct: o === q.answer }]);
+              setAnswers((a) => [...a, { id: q.id, correct: o === q.answer }]);
             }}
             className={cn(
               "rounded-2xl border-2 border-foreground px-4 py-3 text-left font-bold hard-shadow-sm",
@@ -202,7 +250,9 @@ export function TermsGame({ serverState, save }: { serverState: LearnState | nul
       {pick ? (
         <div className={s.rise}>
           <ChaiSays mood={pick === q.answer ? "cheer" : "sad"} size={56}>
+            {q.meaning ? <span className="block font-semibold">{q.meaning}</span> : null}
             {q.why}
+            {q.note ? <span className="mt-1 block text-sm">Also: {q.note}.</span> : null}
           </ChaiSays>
           <button
             type="button"
