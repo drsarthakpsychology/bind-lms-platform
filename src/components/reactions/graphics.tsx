@@ -28,7 +28,7 @@ function reducedMotion(): boolean {
 
 /**
  * The end of a round: pops the sticker pop-up (happy for a good result, sad
- * for a poor one) and it stays on screen until the student taps it. Give
+ * for a poor one). It stays 10 seconds, or until the student taps it. Give
  * `mood`, or `right`/`total` to pick the mood from the score. `seed` makes a
  * new round on the same screen pop again. Renders nothing itself.
  */

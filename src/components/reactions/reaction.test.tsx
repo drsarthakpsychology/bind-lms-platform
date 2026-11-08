@@ -41,7 +41,7 @@ afterEach(() => {
 });
 
 describe("funny reactions in the browser", () => {
-  it("pops a sticker and a line on the first right answer, announced politely, and stays until tapped", async () => {
+  it("pops a sticker and a line on the first right answer, stays 10 seconds, then leaves", async () => {
     setup();
     act(() => api!.onAnswer(true));
     await act(() => vi.advanceTimersByTimeAsync(1000));
@@ -50,8 +50,11 @@ describe("funny reactions in the browser", () => {
     const live = document.querySelector('[aria-live="polite"]');
     expect(live?.textContent).toMatch(/\./);
     expect(screen.getByRole("img").getAttribute("alt")).toBeTruthy();
-    await act(() => vi.advanceTimersByTimeAsync(SHOW_MS + 60_000));
+    expect(SHOW_MS).toBe(10_000);
+    await act(() => vi.advanceTimersByTimeAsync(8000));
     expect(popup()).not.toBe(null);
+    await act(() => vi.advanceTimersByTimeAsync(SHOW_MS));
+    expect(popup()).toBe(null);
   });
 
   it("is dismissed by a tap", async () => {
