@@ -6,6 +6,8 @@
  * lesson is the ethics failure. Teach the contestation.
  */
 
+import { LANDMARK_LIBRARY } from "./library";
+
 export interface LandmarkQuizItem {
   question: string;
   options: string[];
@@ -16,7 +18,7 @@ export interface LandmarkQuizItem {
 export interface LandmarkCase {
   id: string;
   title: string;
-  domain: "neuropsychology" | "development" | "psychoanalytic" | "dissociation" | "social" | "indian";
+  domain: "neuropsychology" | "development" | "psychoanalytic" | "dissociation" | "social" | "indian" | "legal" | "history" | "research" | "clinical";
   story: string;
   believedThen: string;
   understandNow: string;
@@ -25,9 +27,11 @@ export interface LandmarkCase {
   /** what's contested: "here's what you were told, here's what held up". */
   contested?: string;
   quiz: LandmarkQuizItem[];
+  /** library tags (topic, difficulty 1 to 5, objective, exams, Study module) */
+  tags?: { topic: string; difficulty: 1 | 2 | 3 | 4 | 5; objective: string; exams: Array<"cuet-pg" | "ugc-net" | "mcp-entrance" | "md-psychiatry" | "ma-semester">; module: string };
 }
 
-export const LANDMARK_CASES: LandmarkCase[] = [
+const CORE_CASES: LandmarkCase[] = [
   {
     id: "landmark-gage",
     title: "Phineas Gage",
@@ -319,3 +323,38 @@ export const LANDMARK_CASES: LandmarkCase[] = [
     ],
   },
 ];
+
+type Tags = NonNullable<LandmarkCase["tags"]>;
+const T = (topic: string, difficulty: Tags["difficulty"], objective: string, exams: Tags["exams"], module: string): Tags => ({ topic, difficulty, objective, exams, module });
+
+/** Tags for the first 25 cases (content unchanged). */
+const CORE_TAGS: Record<string, Tags> = {
+  "landmark-gage": T("brain", 1, "Link frontal lobe damage to changes in behaviour", ["cuet-pg", "ugc-net", "ma-semester"], "brain"),
+  "landmark-hm": T("memory", 1, "Explain the split between declarative and procedural memory", ["cuet-pg", "ugc-net", "ma-semester"], "learning-memory"),
+  "landmark-little-albert": T("learning", 1, "Describe conditioned fear and why the study broke research ethics", ["cuet-pg", "ugc-net", "ma-semester"], "learning-memory"),
+  "landmark-genie": T("development", 2, "Weigh the critical period evidence against the ethics failure", ["cuet-pg", "ugc-net", "ma-semester"], "lifespan"),
+  "landmark-roshdan": T("diagnosis", 3, "Read a famous study critically: what held up and what did not", ["ugc-net", "mcp-entrance", "ma-semester"], "research-methods"),
+  "landmark-stanford": T("social", 2, "Explain the claims and the reassessment of the prison study", ["cuet-pg", "ugc-net", "ma-semester"], "social"),
+  "landmark-erwadi": T("law", 2, "Link the Erwadi tragedy to protections in the Mental Healthcare Act 2017", ["mcp-entrance", "md-psychiatry", "ugc-net"], "ethics-law"),
+  "landmark-clive": T("memory", 2, "Describe dense amnesia with preserved skills and emotion", ["cuet-pg", "ugc-net", "ma-semester"], "learning-memory"),
+  "landmark-anna-o": T("psychoanalysis", 2, "Explain the talking cure and what later accounts revealed", ["ugc-net", "ma-semester"], "psychodynamics"),
+  "landmark-dora": T("psychoanalysis", 3, "Read a classic case critically for transference and power", ["ugc-net", "ma-semester"], "psychodynamics"),
+  "landmark-rat-man": T("psychoanalysis", 3, "Relate an early obsessional case to modern OCD", ["ugc-net", "ma-semester"], "psychodynamics"),
+  "landmark-schreber": T("psychoanalysis", 4, "Compare psychoanalytic and modern readings of a psychosis memoir", ["ugc-net", "md-psychiatry"], "psychodynamics"),
+  "landmark-sizemore": T("dissociation", 3, "Describe a famous dissociative identity case and its debates", ["ugc-net", "ma-semester"], "trauma"),
+  "landmark-saks": T("psychosis", 2, "Use a lived-experience account to challenge assumptions about schizophrenia", ["mcp-entrance", "ma-semester"], "psychosis"),
+  "landmark-milgram": T("social", 1, "Explain the obedience findings and their ethical problems", ["cuet-pg", "ugc-net", "ma-semester"], "social"),
+  "landmark-genovese": T("social", 2, "Explain the bystander effect and the myth around the case", ["cuet-pg", "ugc-net", "ma-semester"], "social"),
+  "landmark-reimer": T("development", 3, "Describe what the case showed about gender identity and consent", ["ugc-net", "ma-semester"], "lifespan"),
+  "landmark-little-albert-ethics": T("ethics", 2, "Name the ethics failures of the Little Albert study", ["cuet-pg", "ugc-net", "ma-semester"], "ethics-law"),
+  "landmark-hm-consent": T("ethics", 3, "Discuss consent in landmark neuroscience research", ["ugc-net", "ma-semester"], "ethics-law"),
+  "landmark-ranki": T("history", 2, "Place the Ranchi asylum in Indian psychiatric history", ["ugc-net", "mcp-entrance"], "foundations"),
+  "landmark-beri-beri": T("medical-mimics", 3, "Recognise nutritional causes of psychiatric symptoms", ["mcp-entrance", "md-psychiatry"], "neurocognitive"),
+  "landmark-morselli": T("history", 3, "Describe psychiatric effects of the 1918 pandemic", ["ugc-net", "mcp-entrance"], "foundations"),
+  "landmark-bhopal": T("trauma", 2, "Describe the mental health aftermath of a mass disaster", ["mcp-entrance", "ma-semester"], "trauma"),
+  "landmark-jallianwala": T("trauma", 2, "Discuss collective and historical trauma", ["ugc-net", "ma-semester"], "trauma"),
+  "landmark-partition": T("trauma", 3, "Explain intergenerational transmission of trauma", ["ugc-net", "ma-semester"], "trauma"),
+};
+
+
+export const LANDMARK_CASES: LandmarkCase[] = [...CORE_CASES.map((c) => ({ ...c, tags: CORE_TAGS[c.id] })), ...LANDMARK_LIBRARY];

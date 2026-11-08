@@ -13,7 +13,7 @@ import { rubricToCompetencyKeys } from "@/lib/practice/competency-map";
 /** Cases already live in sim_cases before the library (approved count). */
 const EXISTING_LIVE = 71;
 /** Raise as batches land; the section target is 500 including the existing cases. */
-const MIN_LIBRARY = 110;
+const MIN_LIBRARY = 132;
 
 const DASH = /[–—]/;
 const LABEL = /\b(schizophreni\w*|depressi\w*|bipolar|psychos[ie]s|psychotic|ocd|disorder|ptsd|delusion\w*|hallucinat\w*|diagnos\w*|mania|manic|dementia|autis\w*|adhd)\b/i;
