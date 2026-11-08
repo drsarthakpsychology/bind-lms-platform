@@ -24,6 +24,9 @@ import { LEARNING_MOTIVATION_EMOTION_L02 } from "./learning-motivation-emotion-l
 import { LEARNING_MOTIVATION_EMOTION_L03 } from "./learning-motivation-emotion-l03";
 import { LEARNING_MOTIVATION_EMOTION_L04 } from "./learning-motivation-emotion-l04";
 import { LEARNING_MOTIVATION_EMOTION_L05 } from "./learning-motivation-emotion-l05";
+import { DEVELOPMENTAL_L01 } from "./developmental-l01";
+import { DEVELOPMENTAL_L02 } from "./developmental-l02";
+import { DEVELOPMENTAL_L03 } from "./developmental-l03";
 
 /** Every hand-written long answer. Writers add part files and spread them in here. */
 export const LONG_QA: LongQA[] = [
@@ -52,4 +55,7 @@ export const LONG_QA: LongQA[] = [
   ...LEARNING_MOTIVATION_EMOTION_L03,
   ...LEARNING_MOTIVATION_EMOTION_L04,
   ...LEARNING_MOTIVATION_EMOTION_L05,
+  ...DEVELOPMENTAL_L01,
+  ...DEVELOPMENTAL_L02,
+  ...DEVELOPMENTAL_L03,
 ];
