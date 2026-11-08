@@ -644,7 +644,7 @@ function Escaped({ room, ms, wrong, xp, onExit, onAgain, race, teamLine }: { roo
       <div className="grid gap-2 sm:grid-cols-2">
         {onAgain ? (
           <Btn variant="primary" size="lg" onClick={onAgain}>
-            Run it again <Kbd>Enter</Kbd>
+            Play again <Kbd>Enter</Kbd>
           </Btn>
         ) : null}
         <Btn size="lg" onClick={onExit}>

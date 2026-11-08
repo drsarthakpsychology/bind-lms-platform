@@ -573,7 +573,7 @@ function EndScreen({ c, st, xp, onAgain, onExit, teamLine }: { c: Campaign; st: 
       <div className="grid gap-2 sm:grid-cols-2">
         {onAgain ? (
           <Btn variant="primary" size="lg" onClick={onAgain}>
-            <RotateCcw aria-hidden /> Play this patient again <Kbd>Enter</Kbd>
+            <RotateCcw aria-hidden /> Play again <Kbd>Enter</Kbd>
           </Btn>
         ) : null}
         <Btn size="lg" onClick={onExit}>

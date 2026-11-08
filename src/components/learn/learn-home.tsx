@@ -35,7 +35,7 @@ const SOLO: Game[] = [
   { href: "/games/blitz", title: "Blitz", text: "Fast facts against the clock.", tag: "500+ questions", icon: Timer, tone: "lime" },
   { href: "/games/sort", title: "Criteria sort", text: "Sort criteria into look-alike disorders.", tag: "500+ criteria", icon: LayoutGrid, tone: "blue" },
   { href: "/games/mse", title: "MSE Lab", text: "Tag every finding in an interview.", tag: "500+ excerpts", icon: ScanEye, tone: "ink" },
-  { href: "/games/ward", title: "Ward Week", text: "One patient. Your choices change the ending.", tag: "20+ patients", icon: Hospital, tone: "lime" },
+  { href: "/games/ward", title: "Ward Week", text: "One patient. Your choices change the ending.", tag: "Story", icon: Hospital, tone: "lime" },
   { href: "/games/rx", title: "Rx Detective", text: "Medicines, receptors and risky mixes.", tag: "270+ cases", icon: Pill, tone: "blue" },
 ];
 

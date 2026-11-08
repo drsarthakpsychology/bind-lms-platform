@@ -397,12 +397,12 @@ function Done({ p, gain, onPractice, onAdvanced }: { p: Play; gain: number; onPr
         ))}
       </div>
       <div className="grid gap-2 sm:grid-cols-3">
-        <Link href={`/study/${d.module}`} className={btnPrimary}>
+        <button type="button" className={btnPrimary} onClick={onPractice}>
+          <Shuffle className="size-4" aria-hidden /> Play again
+        </button>
+        <Link href={`/study/${d.module}`} className={btnSecondary}>
           <BookOpen className="size-4" aria-hidden /> Study this topic
         </Link>
-        <button type="button" className={btnSecondary} onClick={onPractice}>
-          <Shuffle className="size-4" aria-hidden /> Practice board
-        </button>
         {v.tier === "basic" && (
           <button type="button" className={btnSecondary} onClick={onAdvanced}>
             <LayoutGrid className="size-4" aria-hidden /> Try advanced
