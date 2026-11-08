@@ -147,7 +147,7 @@ export function DoseSketch({ title, shape, caption }: { title: string; shape: Do
             <Label x={(lv(0.6) + lv(1)) / 2} y={TOP - 8} size={14} anchor="middle">useful</Label>
             <Label x={(lv(1.5) + lv(2)) / 2} y={TOP - 8} size={14} anchor="middle" color={C.red}>toxic</Label>
             <Label x={lv(0.18)} y={84} size={14} color={C.blue}>benefit</Label>
-            <Label x={lv(1.24)} y={176} size={14} color={C.red}>harm</Label>
+            <Label x={lv(0.98)} y={190} size={14} color={C.red}>harm</Label>
             <Label x={X1} y={244} size={14} anchor="end">lithium blood level, mmol/L</Label>
           </>
         ) : null}
