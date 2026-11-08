@@ -1,4 +1,5 @@
 import { ToolHeader } from "@/components/help/tool-header";
+import { HowToStart } from "@/components/help/how-to";
 import { LANDMARK_CASES } from "@/lib/landmark/cases";
 import { LandmarkReader } from "./landmark-reader";
 import { requireFeature } from "@/lib/flags";
@@ -23,7 +24,9 @@ export default async function LandmarkPage() {
       <ToolHeader title="Landmark cases" tip={{ id: "landmark", steps: ["Read what was believed, then what held up."] }} />
 
       <div className="mt-6">
-        <LandmarkReader cases={cases.length ? cases : LANDMARK_CASES} />
+        <HowToStart id="landmark">
+          <LandmarkReader cases={cases.length ? cases : LANDMARK_CASES} />
+        </HowToStart>
       </div>
     </div>
   );

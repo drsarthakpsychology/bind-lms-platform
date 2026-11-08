@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { startHowTo } from "@/components/help/how-to";
 import { BackLink } from "@/components/study/back";
 import { ArrowRight, Flame, GraduationCap } from "lucide-react";
 import { emptyState, finishLesson, istToday, type LearnState, type Payout } from "@/lib/learn/engine";
@@ -58,6 +59,7 @@ export function Coach({ serverState, save, domain }: { serverState: LearnState |
   const title = domain === "all" ? "Mixed coaching" : DOMAINS.find((d) => d.id === domain)?.title ?? "Coach";
 
   function start() {
+    startHowTo("coach");
     const ids = buildSession(state.coach, domain, today, Math.random, 10);
     const levels: Record<string, number> = {};
     const list: Step[] = [];

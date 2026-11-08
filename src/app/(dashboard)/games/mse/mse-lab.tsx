@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { startHowTo } from "@/components/help/how-to";
 import { useRouter } from "next/navigation";
 import { ArrowRight, Eye, Flame, ScanEye, Undo2 } from "lucide-react";
 import type { LearnState } from "@/lib/learn/engine";
@@ -57,6 +58,7 @@ export function MseLab({ serverState, save, board, submit }: { serverState: Lear
   useHistoryPrefetch("mse-lab");
 
   function start(level: Level) {
+    startHowTo("mse-lab");
     const seed = `${Date.now()}`;
     const rng = makeRng(hashString(seed));
     // Answer history: an excerpt not seen yet first, then a missed one (src/lib/history).

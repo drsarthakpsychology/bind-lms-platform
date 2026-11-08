@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { startHowTo } from "@/components/help/how-to";
 import { ArrowDown, ArrowRight, ArrowUp, Check, DoorOpen, FileText, Flag, Lightbulb, Lock, LockOpen, MapPin, Play, Timer, Trophy, Users, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { LearnLink } from "@/lib/games/ui/learn-link";
@@ -30,6 +31,7 @@ const LETTERS = ["a", "b", "c", "d", "e", "f"];
 export function EscapeRoom({ teamsOn, openTeam, teams, actions }: { teamsOn: boolean; openTeam: string | null; teams: TeamItem[]; actions: Actions }) {
   const [mode, setMode] = React.useState<Mode>(openTeam ? { kind: "team", teamId: openTeam } : { kind: "pick" });
   function go(next: Mode) {
+    if (next.kind !== "pick") startHowTo("team-escape-room");
     try {
       window.history.replaceState(null, "", next.kind === "team" ? `/games/escape?team=${next.teamId}` : "/games/escape");
     } catch {

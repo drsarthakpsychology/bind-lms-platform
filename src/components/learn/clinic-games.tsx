@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { startHowTo } from "@/components/help/how-to";
 
 import { emptyState, finishLesson, istToday, type LearnState, type Payout } from "@/lib/learn/engine";
 import { SCENARIOS, WORDS, type Choice, type Scenario } from "@/lib/learn/scenarios";
@@ -41,6 +42,7 @@ export function ScenarioGame({ serverState, save, noteId }: { serverState: Learn
   useHistoryPrefetch("wwyd");
 
   function start() {
+    startHowTo("what-would-you-do");
     const pool = noteId ? SCENARIOS.filter((x) => x.noteId === noteId) : SCENARIOS;
     // Answer history (src/lib/history): scenarios not played yet first, missed ones spaced out.
     setDeck(pickRoundFor("wwyd", pool, (x) => x.id, 5, roll));
@@ -215,7 +217,13 @@ export function TermsGame({ serverState, save }: { serverState: LearnState | nul
       <div className="mx-auto max-w-xl space-y-6 py-8 text-center">
         <Chai mood="happy" size={130} />
         <h1 className="text-h1">Say it clinically</h1>
-        <button type="button" onClick={() => setRound(buildRound())} className="btn-sweep h-14 w-full rounded-2xl border-2 border-foreground bg-primary text-lg font-bold text-primary-foreground hard-shadow-md">
+        <button
+          type="button"
+          onClick={() => {
+            startHowTo("say-it-clinically");
+            setRound(buildRound());
+          }}
+          className="btn-sweep h-14 w-full rounded-2xl border-2 border-foreground bg-primary text-lg font-bold text-primary-foreground hard-shadow-md">
           Start
         </button>
       </div>

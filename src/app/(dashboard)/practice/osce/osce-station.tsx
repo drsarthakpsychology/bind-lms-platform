@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { startHowTo } from "@/components/help/how-to";
 import { Mic, Square, Timer } from "lucide-react";
 import { haptic } from "@/lib/haptics";
 import { SEED_OSCE_STATIONS, scoreOsce, seededRotate } from "@/lib/practice/osce";
@@ -135,6 +136,7 @@ export function OsceStationView() {
   }, [phase, station.duration_seconds]);
 
   function start() {
+    startHowTo("osce");
     setSeconds(0);
     setChecked({});
     setDone(false);

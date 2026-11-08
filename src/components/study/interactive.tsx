@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { HowToButton } from "@/components/help/how-to";
 import { ArrowLeft, ArrowRight, Check, Eye, Layers, RotateCcw, X } from "lucide-react";
 import { istToday, recordTest } from "@/lib/learn/engine";
 import { getLearnState, setLearnState } from "@/lib/learn/store";
@@ -132,6 +133,8 @@ export function mcqKey(moduleId: string, m: Mcq): string {
   return `${moduleId.slice(0, 120)}:${(h >>> 0).toString(36)}`;
 }
 
+const TEST_INTRO = ["Pass mark: 80%. Your best score counts."];
+
 export function TestRunner({
   items: given,
   moduleId,
@@ -175,7 +178,7 @@ export function TestRunner({
       <div ref={top} className="rounded-3xl border-2 border-foreground bg-card p-5 sm:p-6">
         <p className="text-2xl font-bold">{label}</p>
         <ul className="mt-3 space-y-1.5 text-[0.95rem] text-muted-foreground empty:hidden">
-          {(intro ?? ["Pass mark: 80%. Your best score counts."]).map((t) => (
+          {(intro ?? TEST_INTRO).map((t) => (
             <li key={t}>{t}</li>
           ))}
         </ul>
@@ -239,8 +242,12 @@ export function TestRunner({
     <div ref={top} className="rounded-3xl border-2 border-foreground bg-card p-4 sm:p-6" aria-live="polite">
       <div className="flex items-center justify-between text-sm text-muted-foreground">
         <span className="font-semibold text-link">{label}</span>
-        <span className="tabular-nums">
-          {i + 1} of {items.length}
+        <span className="flex items-center gap-1">
+          <span className="tabular-nums">
+            {i + 1} of {items.length}
+          </span>
+          {/* The start card's words, during the test. */}
+          {(intro ?? TEST_INTRO).length ? <HowToButton id="module-test" label="How it works" title={label} steps={intro ?? TEST_INTRO} className="-my-2 text-foreground" /> : null}
         </span>
       </div>
       <div className="mt-2">

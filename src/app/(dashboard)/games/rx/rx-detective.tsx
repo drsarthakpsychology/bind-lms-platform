@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { startHowTo } from "@/components/help/how-to";
 import { useRouter } from "next/navigation";
 import { ArrowRight, Check, ClipboardList, Flame, FlaskConical, Heart, HeartCrack, Pill as PillIcon, Plus, Search, X } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -41,6 +42,7 @@ export function RxDetective({ board, grade: gradeOnServer, finish, medIds = [] }
   useHistoryPrefetch("rx");
 
   function start(mode: Mode) {
+    startHowTo("rx-detective");
     const id = `${Date.now().toString(36)}${Math.floor(Math.random() * 1e6).toString(36)}`;
     setDone(null);
     // Answer history: questions not seen yet first, then missed ones (src/lib/history).
