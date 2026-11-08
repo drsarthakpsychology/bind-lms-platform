@@ -13,6 +13,7 @@ import { cn } from "@/lib/utils";
 import { useExplainView, ViewToggle } from "./view-toggle";
 import n from "./notes.module.css";
 import { backLinkClass } from "@/components/design-system/back-link";
+import { OnceHint } from "@/components/help/once-hint";
 
 const TONE: Record<string, string> = {
   lime: "bg-primary text-primary-foreground",
@@ -141,7 +142,7 @@ export function NoteView({
       {note.terms?.length ? (
         <section className={n.reveal}>
           <h2 className="text-h2">Say it clinically</h2>
-          <p className="text-caption text-muted-foreground">Tap a card to flip from everyday words to the clinical term.</p>
+          <OnceHint id="notes-flip" className="text-caption text-muted-foreground">Tap a card to flip from everyday words to the clinical term.</OnceHint>
           <ul className="mt-3 grid grid-cols-2 gap-2.5 sm:grid-cols-3">
             {note.terms.map(([lay, term], k) => {
               const on = flipped.includes(k);

@@ -6,6 +6,7 @@ import { haptic } from "@/lib/haptics";
 import { diffNarratives, FIVE_P, scoreSort, SEED_FORMULATION, type FiveP, type FormulationFactor } from "@/lib/practice/formulation";
 import { buildFormulationAttemptPayload } from "@/lib/practice/formulation-attempt";
 import { FORMULATION_COMPETENCY_KEYS, recordCompetencyEvent } from "@/lib/practice/competency-client";
+import { OnceHint } from "@/components/help/once-hint";
 
 /** In-flight snapshot: a refresh mid-sort or mid-narrative restores the work
  *  instead of dropping it (T46/T47). */
@@ -162,7 +163,7 @@ export function FormulationForge({ seed = SEED_FORMULATION }: { seed?: ForgeSeed
 
           {/* unplaced + distractor cards */}
           <div>
-            <p className="text-caption text-muted-foreground">Tap a card, then tap a bucket. Or drag.</p>
+            <OnceHint id="formulation-sort" className="text-caption text-muted-foreground">Tap a card, then tap a bucket. Or drag.</OnceHint>
             <div className="mt-2 flex flex-wrap gap-2">
               {seed.factors.map((f) => {
                 const placedIn = attempt.find((a) => a.factorId === f.id)?.bucket;
