@@ -18,10 +18,10 @@ export async function TodaySuggestion({ className }: { className?: string }) {
   const s = await loadTodaySuggestion(session.profile.id);
 
   const rows: { href: string; icon: LucideIcon; title: string; sub: string }[] = [];
-  if (PREP_ONBOARDING_ENABLED && !s.placed && !s.weak) rows.push({ href: "/study/placement", icon: Compass, title: "Take the placement quiz", sub: "18 questions to set your level" });
+  if (PREP_ONBOARDING_ENABLED && !s.placed && !s.weak) rows.push({ href: "/study/placement", icon: Compass, title: "Take the placement quiz", sub: "Set your level" });
   if (s.due) rows.push({ href: "/study/map/practice", icon: Repeat2, title: `${s.due} ${s.due === 1 ? "review" : "reviews"} due`, sub: "A mixed round brings them back" });
   if (s.weak) rows.push({ href: s.weak.practiceHref, icon: Zap, title: `Fix: ${s.weak.label}`, sub: "A short quiz on your weakest spot" });
-  rows.push({ href: "/prep/smart", icon: Gamepad2, title: "Smart practice", sub: "10 questions from your weak topics" });
+  rows.push({ href: "/prep/smart", icon: Gamepad2, title: "Smart practice", sub: "From your weak topics" });
 
   return (
     <section aria-labelledby="today-suggestion" className={className}>

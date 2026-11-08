@@ -45,9 +45,6 @@ export default async function LongAnswerPage({ params }: Params) {
     <PrepFrame>
       <BackToPrep href={back} label={t.title} />
       <header className="space-y-3">
-        <p className="text-sm font-semibold text-muted-foreground">
-          {i + 1} of {t.items.length}
-        </p>
         <h1 className="text-h2 leading-snug text-balance [overflow-wrap:anywhere]">{item.question}</h1>
         <LongMeta item={item} />
       </header>

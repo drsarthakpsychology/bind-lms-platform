@@ -37,7 +37,7 @@ export default async function MocksPage() {
         tip={{
           id: "prep-mock",
           intro: "Timed papers, mostly questions you have not seen.",
-          steps: [`Right: +${marksText(PRACTICE_MARKING.right)}. Wrong: minus ${marksText(-PRACTICE_MARKING.wrong)}. Blank: 0.`, "The same practice marking on every mock here, not any one exam's scheme.", "Guess only when you can rule out two options."],
+          steps: [`Right: +${marksText(PRACTICE_MARKING.right)}. Wrong: minus ${marksText(-PRACTICE_MARKING.wrong)}. Blank: 0.`, "Guess only when you can rule out two options."],
         }}
       />
 

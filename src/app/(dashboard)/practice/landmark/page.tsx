@@ -18,7 +18,7 @@ export default async function LandmarkPage() {
   const cases = ids.flatMap((id) => LANDMARK_CASES.filter((c) => c.id === id).slice(0, 1));
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
-      <ToolHeader title="Landmark cases" tip={{ id: "landmark", steps: ["Read what was believed, then what held up.", "In the cases that broke ethics, the ethics failure is the lesson."] }} />
+      <ToolHeader title="Landmark cases" tip={{ id: "landmark", steps: ["Read what was believed, then what held up."] }} />
 
       <div className="mt-6">
         <LandmarkReader cases={cases.length ? cases : LANDMARK_CASES} />

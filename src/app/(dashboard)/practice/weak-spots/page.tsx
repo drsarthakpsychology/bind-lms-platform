@@ -48,7 +48,7 @@ export default async function WeakSpotsPage() {
         <ArrowLeft className="size-4" aria-hidden />
         Consulting Room
       </Link>
-      <ToolHeader title="Weak spots" tip={{ id: "weak-spots", steps: ["The skills you miss most in your patient sessions, ranked.", "Run the 10-question drill made from them."] }} />
+      <ToolHeader title="Weak spots" tip={{ id: "weak-spots", steps: ["The skills you miss most, with a drill made from them."] }} />
 
       <div className="mt-6">
         <WeakSpotsView spots={spots} sessions={rubrics.length} />

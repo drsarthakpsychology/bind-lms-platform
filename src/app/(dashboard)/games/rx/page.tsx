@@ -19,10 +19,8 @@ export default async function RxPage() {
   return (
     <ActivityFrame
       title="Rx Detective"
-      purpose="Medicines from the receptor up: what each one is, how it works, the side effect to remember and what to check. Then side-effect mysteries and dangerous mixes."
-      how={["Pick a mode, or play mixed.", "Twelve cases a run. Three lives.", "A case scored under half costs a life.", "Every answer opens the why, with an animation."]}
     >
-      <ActivityTip id="rx-detective" intro="Medicines from the receptor up." steps={["Pick a mode, or play mixed.", "Twelve cases a run. Three lives. A case under half right costs a life.", "Every answer opens the why, with an animation.", "Doses are for learning only."]} />
+      <ActivityTip id="rx-detective" intro="Medicines from the receptor up." steps={["Pick a mode, or play mixed.", "A case under half right costs a life.", "Doses are for learning only."]} />
       <LearnStoreInit serverState={learnState} save={saveLearnState} />
       <RxDetective board={board} grade={gradeRxAnswer} finish={finishRxRun} medIds={MEDS.map((m) => m.id)} />
     </ActivityFrame>

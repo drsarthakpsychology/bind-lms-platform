@@ -43,7 +43,7 @@ export default async function MapPage() {
           <Compass className="size-10 shrink-0" aria-hidden />
           <div className="min-w-0 flex-1">
             <h2 className="text-h3">Start with the placement quiz</h2>
-            <p className="mt-1 opacity-90">18 quick questions. Practice then starts at your level.</p>
+            <p className="mt-1 opacity-90">Quick questions to set your level.</p>
           </div>
           <Link href="/study/placement" className={cn(btnPrimary, "shrink-0")}>
             Start the quiz <ArrowRight className="size-4" aria-hidden />
@@ -59,7 +59,7 @@ export default async function MapPage() {
           <Shuffle className="size-7 shrink-0" aria-hidden />
           <span className="min-w-0 flex-1">
             <span className="block text-lg font-bold">Mixed practice</span>
-            <span className="block text-sm font-semibold opacity-80">10 questions picked for you</span>
+            <span className="block text-sm font-semibold opacity-80">Picked for you</span>
           </span>
           <ArrowRight className="size-5 shrink-0" aria-hidden />
         </Link>
@@ -101,7 +101,7 @@ export default async function MapPage() {
               ))}
             </ul>
           ) : (
-            <p className="rounded-md border-2 border-dashed border-foreground/50 bg-card p-4 text-muted-foreground">Nothing to fix yet. A practice round will show where you stand.</p>
+            <p className="rounded-md border-2 border-dashed border-foreground/50 bg-card p-4 text-muted-foreground">Nothing to fix yet.</p>
           )}
         </section>
 
@@ -149,7 +149,7 @@ export default async function MapPage() {
           </h2>
           <p className="text-sm text-muted-foreground">
             {data.calibrated
-              ? "The % is your chance of getting a typical question right."
+              ? "Your chance of getting a typical question right."
               : `Scores show after ${CALIBRATION_ANSWERS} answers. ${left} to go.`}
           </p>
         </div>

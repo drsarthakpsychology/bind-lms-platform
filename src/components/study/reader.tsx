@@ -277,7 +277,7 @@ export function SectionReader({
         {section.levelCheck ? (
           <div className="max-w-[68ch] space-y-6">
             {chunks.map((c, k) => <div key={k}>{c.node}</div>)}
-            <TestRunner items={mcq} moduleId={`${moduleId}@${section.levelCheck}`} historyTool="study-check" label="Check yourself" intro={["Optional. Try it any time, as often as you like."]} />
+            <TestRunner items={mcq} moduleId={`${moduleId}@${section.levelCheck}`} historyTool="study-check" label="Check yourself" intro={[]} />
             {finishButton}
           </div>
         ) : (
@@ -350,7 +350,7 @@ export function SectionReader({
                 <span className="min-w-0">
                   <span className="block truncate text-base leading-tight">{step + 1 < chunks.length ? "Next" : hasCheck ? "Check yourself" : "Finish"}</span>
                   <span className="block text-caption font-semibold tabular-nums opacity-80">
-                    {step + 1 < chunks.length ? `Part ${step + 2} of ${chunks.length}` : "End of this section"}
+                    {step + 1 < chunks.length ? `Part ${step + 2}` : "End of this section"}
                   </span>
                 </span>
                 <ArrowRight className="size-5 shrink-0" aria-hidden />

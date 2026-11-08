@@ -192,7 +192,7 @@ function Table({ play, setPlay, xp, onDone, onAgain, onExit, board }: { play: Pl
               <Bot className="size-4" aria-hidden /> {g.seats[g.turn].name} is thinking…
             </p>
           ) : (
-            <p className="text-small font-semibold">Your turn. Tap a card.</p>
+            <p className="text-small font-semibold">Your turn.</p>
           )}
           <ul className="grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-5">
             {hand.map((c, i) => (

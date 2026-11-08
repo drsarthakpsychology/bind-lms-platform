@@ -7,27 +7,15 @@ import { cn } from "@/lib/utils";
 import { Rich } from "./rich";
 
 /**
- * Visual teaching pieces: flowcharts and cycles, interactive curves, layered
- * models and a brain map. Each one is something to explore (tap, play, drag a
- * slider), never a decoration. Motion is transform/opacity and stops under
+ * Visual teaching pieces: flowcharts and cycles and layered models (shown
+ * whole, like a textbook figure), curves to explore with a slider, and a
+ * brain map. Motion is transform/opacity and stops under
  * reduce-motion; every state is also written in words below the picture.
  */
 
 const card = "rounded-2xl border-2 border-foreground bg-card p-4 sm:p-5 shadow-[var(--shadow-hard-sm)]";
 const label = "text-xs font-semibold tracking-wide uppercase text-link";
 const btn = "inline-flex min-h-11 items-center justify-center gap-2 rounded-md border-2 border-foreground px-4 font-semibold";
-
-function useReducedMotion(): boolean {
-  return React.useSyncExternalStore(
-    (cb) => {
-      const m = window.matchMedia("(prefers-reduced-motion: reduce)");
-      m.addEventListener("change", cb);
-      return () => m.removeEventListener("change", cb);
-    },
-    () => window.matchMedia("(prefers-reduced-motion: reduce)").matches,
-    () => false,
-  );
-}
 
 /* ------------------------------------------------------------------ flow */
 /**
@@ -354,34 +342,33 @@ export function Curve({ d }: { d: CurveData }) {
   }[d.kind];
   return (
     <figure className={card}>
-      <p className={label}>{d.title ? <Rich text={d.title} /> : "Explore it"}</p>
-      <div className="mt-3">{body}</div>
+      {d.title ? <p className={label}><Rich text={d.title} /></p> : null}
+      <div className={d.title ? "mt-3" : undefined}>{body}</div>
       {d.caption ? <figcaption className="mt-2 text-sm text-muted-foreground"><Rich text={d.caption} /></figcaption> : null}
     </figure>
   );
 }
 
 /* ---------------------------------------------------------------- layers */
+/** A layered model (rings, pyramid, iceberg or stack): the picture, then every layer with its meaning. */
 export function Layers({ d }: { d: LayersData }) {
-  const [pick, setPick] = React.useState<number | null>(null);
-  const reduce = useReducedMotion();
   const n = d.layers.length;
-  const sel = pick === null ? null : d.layers[pick];
-  const toneFor = (k: number) => (pick === k ? "fill-[var(--primary)]" : k % 2 ? "fill-[var(--muted)]" : "fill-card");
+  const tone = (k: number) => (k % 2 ? "fill-[var(--muted)]" : "fill-card");
+  const names = d.layers.map((ly) => String(ly.label)).join(", ");
 
-  let art: React.ReactNode;
+  let art: React.ReactNode = null;
   if (d.shape === "rings") {
     art = (
-      <svg viewBox="0 0 200 200" className="mx-auto w-full max-w-[22rem]" role="group" aria-label="Rings model">
+      <svg viewBox="0 0 200 200" className="mx-auto w-full max-w-[22rem]" role="img" aria-label={`Rings, inside to outside: ${names}`}>
         {d.layers
           .map((ly, k) => ({ ly, k }))
           .reverse()
           .map(({ ly, k }) => {
             const r = 18 + (k * 80) / Math.max(1, n - 1);
             return (
-              <g key={k} role="button" tabIndex={0} aria-label={String(ly.label)} onClick={() => setPick(k)} onKeyDown={(e) => (e.key === "Enter" || e.key === " ") && setPick(k)} className="cursor-pointer outline-none">
-                <circle cx="100" cy="100" r={r} className={cn(toneFor(k), "stroke-foreground transition-colors")} strokeWidth="2" />
-                <text x="100" y={100 - r + 12} textAnchor="middle" className="pointer-events-none fill-foreground text-[8px] font-semibold">{String(ly.label).slice(0, 28)}</text>
+              <g key={k}>
+                <circle cx="100" cy="100" r={r} className={cn(tone(k), "stroke-foreground")} strokeWidth="2" />
+                <text x="100" y={100 - r + 12} textAnchor="middle" className="fill-foreground text-[8px] font-semibold">{String(ly.label).slice(0, 28)}</text>
               </g>
             );
           })}
@@ -389,16 +376,16 @@ export function Layers({ d }: { d: LayersData }) {
     );
   } else if (d.shape === "pyramid") {
     art = (
-      <svg viewBox="0 0 200 160" className="mx-auto w-full max-w-[22rem]" role="group" aria-label="Pyramid model">
+      <svg viewBox="0 0 200 160" className="mx-auto w-full max-w-[22rem]" role="img" aria-label={`Pyramid, top to bottom: ${names}`}>
         {d.layers.map((ly, k) => {
           const h = 150 / n;
           const y = 5 + k * h;
           const w0 = (k / n) * 180;
           const w1 = ((k + 1) / n) * 180;
           return (
-            <g key={k} role="button" tabIndex={0} aria-label={String(ly.label)} onClick={() => setPick(k)} onKeyDown={(e) => (e.key === "Enter" || e.key === " ") && setPick(k)} className="cursor-pointer outline-none">
-              <path d={`M${100 - w0 / 2} ${y} L${100 + w0 / 2} ${y} L${100 + w1 / 2} ${y + h} L${100 - w1 / 2} ${y + h} Z`} className={cn(toneFor(k), "stroke-foreground transition-colors")} strokeWidth="2" />
-              <text x="100" y={y + h / 2 + 3} textAnchor="middle" className="pointer-events-none fill-foreground text-[8px] font-semibold">{String(ly.label).slice(0, 30)}</text>
+            <g key={k}>
+              <path d={`M${100 - w0 / 2} ${y} L${100 + w0 / 2} ${y} L${100 + w1 / 2} ${y + h} L${100 - w1 / 2} ${y + h} Z`} className={cn(tone(k), "stroke-foreground")} strokeWidth="2" />
+              <text x="100" y={y + h / 2 + 3} textAnchor="middle" className="fill-foreground text-[8px] font-semibold">{String(ly.label).slice(0, 30)}</text>
             </g>
           );
         })}
@@ -406,7 +393,7 @@ export function Layers({ d }: { d: LayersData }) {
     );
   } else if (d.shape === "iceberg") {
     art = (
-      <svg viewBox="0 0 200 170" className="mx-auto w-full max-w-[22rem]" role="group" aria-label="Iceberg model">
+      <svg viewBox="0 0 200 170" className="mx-auto w-full max-w-[22rem]" role="img" aria-label={`Iceberg, top to bottom: ${names}`}>
         <rect x="0" y="40" width="200" height="130" className="fill-[var(--status-info-bg)]" />
         <line x1="0" x2="200" y1="40" y2="40" className="stroke-foreground" strokeWidth="1.5" strokeDasharray="4 3" />
         {d.layers.map((ly, k) => {
@@ -414,47 +401,28 @@ export function Layers({ d }: { d: LayersData }) {
           const y1 = k === 0 ? 40 : 40 + (k * 125) / Math.max(1, n - 1);
           const w = (y: number) => (y <= 40 ? 30 + (y - 8) * 1.4 : 75 + (y - 40) * 0.5);
           return (
-            <g key={k} role="button" tabIndex={0} aria-label={String(ly.label)} onClick={() => setPick(k)} onKeyDown={(e) => (e.key === "Enter" || e.key === " ") && setPick(k)} className="cursor-pointer outline-none">
-              <path d={`M${100 - w(y0)} ${y0} L${100 + w(y0)} ${y0} L${100 + w(y1)} ${y1} L${100 - w(y1)} ${y1} Z`} className={cn(pick === k ? "fill-[var(--primary)]" : "fill-card", "stroke-foreground transition-colors")} strokeWidth="2" />
-              <text x="100" y={(y0 + y1) / 2 + 3} textAnchor="middle" className="pointer-events-none fill-foreground text-[8px] font-semibold">{String(ly.label).slice(0, 28)}</text>
+            <g key={k}>
+              <path d={`M${100 - w(y0)} ${y0} L${100 + w(y0)} ${y0} L${100 + w(y1)} ${y1} L${100 - w(y1)} ${y1} Z`} className="fill-card stroke-foreground" strokeWidth="2" />
+              <text x="100" y={(y0 + y1) / 2 + 3} textAnchor="middle" className="fill-foreground text-[8px] font-semibold">{String(ly.label).slice(0, 28)}</text>
             </g>
           );
         })}
       </svg>
     );
-  } else {
-    art = (
-      <div className="flex flex-col gap-1.5">
-        {d.layers.map((ly, k) => (
-          <button key={k} type="button" onClick={() => setPick(k)} aria-pressed={pick === k} className={cn("min-h-11 rounded-md border-2 border-foreground px-3 py-2 text-left font-semibold transition-transform", pick === k ? "bg-primary text-primary-foreground" : "bg-card", !reduce && "hover:-translate-y-0.5")} style={{ marginInline: `${(k * 6) / Math.max(1, n)}%` }}>
-            <Rich text={ly.label} />
-          </button>
-        ))}
-      </div>
-    );
   }
 
   return (
     <figure className={card}>
-      <p className={label}>{d.title ? <Rich text={d.title} /> : "Explore the model"}</p>
-      <div className="mt-3">{art}</div>
-      {/* The same layers as buttons, so it works without the picture (screen readers, small screens). */}
-      {d.shape !== "stack" ? (
-        <div className="mt-3 flex flex-wrap gap-1.5">
-          {d.layers.map((ly, k) => (
-            <button key={k} type="button" onClick={() => setPick(k)} aria-pressed={pick === k} className={cn("min-h-10 rounded-md border-2 px-2.5 py-1 text-sm font-semibold", pick === k ? "border-foreground bg-primary text-primary-foreground" : "border-foreground/30 bg-card")}>
-              <Rich text={ly.label} />
-            </button>
-          ))}
-        </div>
-      ) : null}
-      <div className="mt-3 min-h-[3.5rem] rounded-xl bg-muted p-3 text-[0.95rem] leading-relaxed" role="status" aria-live="polite">
-        {sel ? (
-          <p className="vibha-pop" key={pick}><span className="font-semibold"><Rich text={sel.label} />: </span><Rich text={sel.detail} /></p>
-        ) : (
-          <p className="text-muted-foreground">Tap a layer to see what it means.</p>
-        )}
-      </div>
+      {d.title ? <p className={label}><Rich text={d.title} /></p> : null}
+      {art ? <div className={d.title ? "mt-3" : undefined}>{art}</div> : null}
+      <ol className={cn("flex flex-col gap-1.5", d.title || art ? "mt-3" : undefined)}>
+        {d.layers.map((ly, k) => (
+          <li key={k} className="min-w-0 rounded-md border-2 border-foreground bg-card px-3 py-2" style={d.shape === "stack" ? { marginInline: `${(k * 6) / Math.max(1, n)}%` } : undefined}>
+            <p className="font-semibold leading-snug [overflow-wrap:anywhere]"><Rich text={ly.label} /></p>
+            {ly.detail ? <p className="mt-0.5 text-[0.92rem] leading-relaxed text-foreground/80 [overflow-wrap:anywhere]"><Rich text={ly.detail} /></p> : null}
+          </li>
+        ))}
+      </ol>
       {d.caption ? <figcaption className="mt-2 text-sm text-muted-foreground"><Rich text={d.caption} /></figcaption> : null}
     </figure>
   );
@@ -488,7 +456,7 @@ export function BrainMap({ d }: { d: BrainMapData }) {
   const sel = REGIONS.find((r) => r.id === pick);
   return (
     <figure className={card}>
-      <p className={label}>{d.title ? <Rich text={d.title} /> : "Find it in the brain"}</p>
+      <p className={label}>{d.title ? <Rich text={d.title} /> : "The brain"}</p>
       <svg viewBox="15 15 175 150" className="mx-auto mt-3 w-full max-w-[26rem] rounded-xl border-2 border-foreground bg-background" role="group" aria-label="Side view of the brain, front on the left">
         {shown.map((r) => {
           const on = pick === r.id;
@@ -524,10 +492,8 @@ export function BrainMap({ d }: { d: BrainMapData }) {
       </div>
       <div className="mt-3 min-h-[3.5rem] rounded-xl bg-muted p-3 text-[0.95rem] leading-relaxed" role="status" aria-live="polite">
         {sel ? (
-          <p className="vibha-pop" key={sel.id}><span className="font-semibold">{sel.name}{sel.deep ? " (deep inside)" : ""}: </span>{d.notes?.[sel.id] ? <Rich text={d.notes[sel.id]} /> : "Tap a highlighted area."}</p>
-        ) : (
-          <p className="text-muted-foreground">Tap a highlighted area.</p>
-        )}
+          <p className="vibha-pop" key={sel.id}><span className="font-semibold">{sel.name}{sel.deep ? " (deep inside)" : ""}: </span>{d.notes?.[sel.id] ? <Rich text={d.notes[sel.id]} /> : null}</p>
+        ) : null}
       </div>
       {d.caption ? <figcaption className="mt-2 text-sm text-muted-foreground"><Rich text={d.caption} /></figcaption> : null}
     </figure>

@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   return { title: t ? `Long answers: ${t.title}` : "Long answers" };
 }
 
-/** /prep/<subject>/long/<topic>[?page=N]: one topic's long answers, 10 to a page, with marks and difficulty. */
+/** /prep/<subject>/long/<topic>[?page=N]: one topic's long answers, a page at a time, with marks and difficulty. */
 export default async function LongTopicPage({ params, searchParams }: Params) {
   await requireFeature("learn");
   const { subject, topic } = await params;
@@ -35,10 +35,6 @@ export default async function LongTopicPage({ params, searchParams }: Params) {
       <header className="space-y-1">
         <p className="text-eyebrow text-link">Long answers</p>
         <h1 className="text-h1 text-balance [overflow-wrap:anywhere]">{t.title}</h1>
-        <p className="text-muted-foreground">
-          {t.items.length} {t.items.length === 1 ? "answer" : "answers"}
-          {p.pages > 1 ? ` · Page ${p.page} of ${p.pages}` : ""}
-        </p>
       </header>
 
       <ol className="space-y-2" aria-label="Questions">
@@ -65,14 +61,14 @@ export default async function LongTopicPage({ params, searchParams }: Params) {
         <nav aria-label="Pages" className="grid grid-cols-2 gap-2.5">
           {p.page > 1 ? (
             <Link href={pageHref(p.page - 1)} className={btnPlain}>
-              <ArrowLeft className="size-4" aria-hidden /> Previous 10
+              <ArrowLeft className="size-4" aria-hidden /> Previous
             </Link>
           ) : (
             <span />
           )}
           {p.page < p.pages ? (
             <Link href={pageHref(p.page + 1)} className={btnInk}>
-              Next 10 <ArrowRight className="size-4" aria-hidden />
+              More <ArrowRight className="size-4" aria-hidden />
             </Link>
           ) : null}
         </nav>

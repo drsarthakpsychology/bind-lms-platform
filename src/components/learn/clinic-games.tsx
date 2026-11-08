@@ -177,7 +177,7 @@ export function TermsGame({ serverState, save }: { serverState: LearnState | nul
         <Chai mood="happy" size={130} />
         <h1 className="text-h1">Say it clinically</h1>
         <button type="button" onClick={() => setRound(buildRound())} className="btn-sweep h-14 w-full rounded-2xl border-2 border-foreground bg-primary text-lg font-bold text-primary-foreground hard-shadow-md">
-          Start (12 questions)
+          Start
         </button>
       </div>
     );

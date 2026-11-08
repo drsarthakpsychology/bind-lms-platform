@@ -5,7 +5,7 @@ import { Search, Trash2, UserPlus } from "lucide-react";
 import type { GenogramData } from "@/lib/study/types";
 import { cn } from "@/lib/utils";
 import { trackLearn } from "@/lib/learn/track";
-import { Missions, SceneCard, btn, chip, statusCls, useMissions, useReducedMotion } from "./kit";
+import { SceneCard, btn, chip, statusCls, useReducedMotion } from "./kit";
 
 /**
  * A genogram builder for case work. Tap a person to add parents, siblings,
@@ -145,7 +145,7 @@ const num = (n: number) => NUM[n] ?? String(n);
 
 function findPattern(g: Geno, cond: string) {
   const aff = g.people.filter((p) => p.cond);
-  if (!aff.length) return { text: `No one is marked yet. Tap a person, then "Has ${cond}", and run the finder again.`, gens: 0, aff };
+  if (!aff.length) return { text: `No one is marked with ${cond} yet.`, gens: 0, aff };
   const blood = aff.filter((p) => p.role !== "partner");
   if (!blood.length) return { text: "Only your partner is marked, and a partner is not a blood relative. Their condition matters for your children's risk, not for yours.", gens: 0, aff };
   const gens = new Set(blood.map((p) => GEN[p.role])).size;
@@ -167,7 +167,6 @@ function findPattern(g: Geno, cond: string) {
 }
 
 /* ---------------------------------------------------------------- scene */
-const MISSIONS = ["parents", "grand", "mark", "dead", "finder"] as const;
 
 export function Genogram({ d }: { d: GenogramData }) {
   const reduce = useReducedMotion();
@@ -177,7 +176,6 @@ export function Genogram({ d }: { d: GenogramData }) {
   const [newSex, setNewSex] = React.useState<Sex>("f");
   const [scan, setScan] = React.useState<{ run: number; done: boolean } | null>(null);
   const [said, setSaid] = React.useState("");
-  const ms = useMissions(MISSIONS);
   const L = layout(g);
   const by = (r: Role) => g.people.filter((p) => p.role === r);
   const has = (r: Role) => by(r).length > 0;
@@ -214,7 +212,7 @@ export function Genogram({ d }: { d: GenogramData }) {
     const nm = nameOf(selP, g.people);
     const sx = newSex === "m" ? "a brother" : newSex === "f" ? "a sister" : "a sibling";
     if (r === "index") {
-      if (!has("father")) actions.push({ label: "Add parents", run: () => { addPair("father", "mother", "Parents added: a square (father) and a circle (mother) joined by a partner line, with a line down to you."); ms.mark("parents"); } });
+      if (!has("father")) actions.push({ label: "Add parents", run: () => { addPair("father", "mother", "Parents added: a square (father) and a circle (mother) joined by a partner line, with a line down to you."); } });
       if (has("father")) {
         actions.push({ label: `Add older ${newSex === "m" ? "brother" : newSex === "f" ? "sister" : "sibling"}`, run: () => add("older", newSex, "Older sibling added on your left: in a genogram, brothers and sisters go from oldest on the left to youngest on the right."), disabled: by("older").length + by("younger").length >= 4 });
         actions.push({ label: `Add younger ${newSex === "m" ? "brother" : newSex === "f" ? "sister" : "sibling"}`, run: () => add("younger", newSex, "Younger sibling added on your right."), disabled: by("older").length + by("younger").length >= 4 });
@@ -225,15 +223,15 @@ export function Genogram({ d }: { d: GenogramData }) {
         else add("child", newSex, "Child added, hanging from the partner line, oldest on the left.");
       }, disabled: by("child").length >= 4 });
     }
-    if ((r === "father" || r === "mother") && !has(r === "father" ? "pgf" : "mgf")) actions.push({ label: `Add ${r === "father" ? "father's" : "mother's"} parents`, run: () => { addPair(r === "father" ? "pgf" : "mgf", r === "father" ? "pgm" : "mgm", `Grandparents added on the ${r}'s side: that is the third generation.`); ms.mark("grand"); } });
+    if ((r === "father" || r === "mother") && !has(r === "father" ? "pgf" : "mgf")) actions.push({ label: `Add ${r === "father" ? "father's" : "mother's"} parents`, run: () => { addPair(r === "father" ? "pgf" : "mgf", r === "father" ? "pgm" : "mgm", `Grandparents added on the ${r}'s side: that is the third generation.`); } });
     if (r === "father" || r === "mother") actions.push({ label: `Add ${r === "father" ? "father's" : "mother's"} ${sx.replace("a ", "")}`, run: () => add(r === "father" ? "paunt" : "maunt", newSex, `An aunt or uncle added beside the ${r}, sharing the line from the grandparents.`), disabled: by(r === "father" ? "paunt" : "maunt").length >= 3 });
     const divKey = r === "father" || r === "mother" ? "parents" : r === "pgf" || r === "pgm" ? "pg" : r === "mgf" || r === "mgm" ? "mg" : r === "partner" ? "partner" : null;
     if (divKey) {
       const on = g.div[divKey as keyof Geno["div"]];
       actions.push({ label: on ? "Not divorced" : "Mark this couple divorced", run: () => update((x) => ({ ...x, div: { ...x.div, [divKey]: !on } }), on ? "Divorce removed from the partner line." : "Divorce marked: two short slashes across the partner line (one slash would mean separated).") });
     }
-    actions.push({ label: selP.cond ? `Does not have ${cond}` : `Has ${cond}`, run: () => { edit(selP.id, { cond: !selP.cond }, selP.cond ? `${nm}: shading removed.` : `${nm}: shape shaded to show ${cond}. Always write the diagnosis beside it too.`); if (!selP.cond) ms.mark("mark"); } });
-    actions.push({ label: selP.dead ? "Alive" : "Has died", run: () => { edit(selP.id, { dead: !selP.dead }, selP.dead ? `${nm}: marked alive.` : `${nm}: a cross through the shape shows death. Write the age and cause beside it.`); if (!selP.dead) ms.mark("dead"); } });
+    actions.push({ label: selP.cond ? `Does not have ${cond}` : `Has ${cond}`, run: () => { edit(selP.id, { cond: !selP.cond }, selP.cond ? `${nm}: shading removed.` : `${nm}: shape shaded to show ${cond}. Always write the diagnosis beside it too.`); } });
+    actions.push({ label: selP.dead ? "Alive" : "Has died", run: () => { edit(selP.id, { dead: !selP.dead }, selP.dead ? `${nm}: marked alive.` : `${nm}: a cross through the shape shows death. Write the age and cause beside it.`); } });
     if (!["father", "mother", "pgf", "pgm", "mgf", "mgm", "index"].includes(r)) {
       actions.push({ label: `Make ${selP.sex === "m" ? "female" : "male"}`, run: () => edit(selP.id, { sex: selP.sex === "m" ? "f" : "m" }, "Shape changed: square for male, circle for female.") });
     }
@@ -243,7 +241,6 @@ export function Genogram({ d }: { d: GenogramData }) {
   const runFinder = () => {
     setScan({ run: (scan?.run ?? 0) + 1, done: false });
     setSaid("");
-    ms.mark("finder");
     trackLearn({ type: "widget", kind: "genogram", item: "finder", score: g.people.filter((p) => p.cond).length });
   };
   const affIds = new Set(finder ? finder.aff.map((p) => p.id) : []);
@@ -252,10 +249,10 @@ export function Genogram({ d }: { d: GenogramData }) {
   const H = ROW[Math.max(...gensUsed)] + 52 - top;
 
   return (
-    <SceneCard title={d.title ?? "Build the family tree"} goal={`Build three generations, mark who has ${cond}, then let the pattern finder trace it through the family.`} caption={d.caption}>
+    <SceneCard title={d.title ?? "Build the family tree"} caption={d.caption}>
       <div className="mt-3 flex flex-wrap gap-2">
-        <button type="button" className={cn(btn, "bg-card text-sm")} onClick={() => { setG(example()); setSel(null); setScan(null); setSaid("The example family is loaded: Ms N, 23, with a first episode of psychosis. Explore it, edit it, then run the pattern finder."); }}>Load the example</button>
-        <button type="button" className={cn(btn, "bg-card text-sm")} onClick={() => { setG(empty()); setSel(null); setScan(null); setSaid("A blank genogram: just you. Tap yourself to add parents."); }}>Start blank</button>
+        <button type="button" className={cn(btn, "bg-card text-sm")} onClick={() => { setG(example()); setSel(null); setScan(null); setSaid("Example family: Ms N, 23, with a first episode of psychosis."); }}>Load the example</button>
+        <button type="button" className={cn(btn, "bg-card text-sm")} onClick={() => { setG(empty()); setSel(null); setScan(null); setSaid("A blank genogram: just you."); }}>Start blank</button>
       </div>
       <div className="mt-3 overflow-hidden rounded-xl border-2 border-foreground bg-background">
         <svg viewBox={`${L.left} ${top} ${L.w} ${H}`} className="block h-auto max-h-[26rem] w-full" role="img" aria-label="The genogram drawing. Every person and line is also listed in words below.">
@@ -316,9 +313,7 @@ export function Genogram({ d }: { d: GenogramData }) {
             ) : null}
           </div>
         </div>
-      ) : (
-        <p className="mt-3 text-sm text-muted-foreground">Tap any person in the drawing (or in the list below) to add relatives or mark them.</p>
-      )}
+      ) : null}
 
       <div className="mt-3">
         <button type="button" className={cn(btn, "min-h-12 bg-primary px-5 text-primary-foreground hover:-translate-y-0.5")} onClick={runFinder}>
@@ -328,7 +323,7 @@ export function Genogram({ d }: { d: GenogramData }) {
       <div className={statusCls} role="status" aria-live="polite">
         {finder ? (
           scan?.done || reduce ? <><span className="font-semibold">Pattern finder: </span>{finder.text}</> : <>Scanning the family generation by generation…</>
-        ) : said ? said : `This family has ${g.people.length} ${g.people.length === 1 ? "person" : "people"} across ${new Set(g.people.map((p) => GEN[p.role])).size} ${new Set(g.people.map((p) => GEN[p.role])).size === 1 ? "generation" : "generations"}. Tap a person to change them.`}
+        ) : said ? said : `This family has ${g.people.length} ${g.people.length === 1 ? "person" : "people"} across ${new Set(g.people.map((p) => GEN[p.role])).size} ${new Set(g.people.map((p) => GEN[p.role])).size === 1 ? "generation" : "generations"}.`}
       </div>
       <details className="mt-3 rounded-xl border-2 border-foreground/25 p-3" open>
         <summary className="cursor-pointer text-sm font-bold">The family in words</summary>
@@ -348,16 +343,6 @@ export function Genogram({ d }: { d: GenogramData }) {
           {g.div.partner ? <li>You and your partner are divorced.</li> : null}
         </ul>
       </details>
-      <Missions
-        doneText="All missions done: a three generation genogram, with every symbol, and a pattern traced through it."
-        items={[
-          { id: "parents", label: "Add parents to a blank genogram", done: ms.done("parents") },
-          { id: "grand", label: "Reach three generations (add grandparents)", done: ms.done("grand") },
-          { id: "mark", label: `Mark someone with ${cond}`, done: ms.done("mark") },
-          { id: "dead", label: "Mark a death with a cross", done: ms.done("dead") },
-          { id: "finder", label: "Run the pattern finder", done: ms.done("finder") },
-        ]}
-      />
     </SceneCard>
   );
 }

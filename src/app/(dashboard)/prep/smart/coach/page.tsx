@@ -17,10 +17,8 @@ export default async function CoachPage({ searchParams }: { searchParams: Promis
   return (
     <ActivityFrame
       title="Coach"
-      purpose="Chai teaches a concept, then asks. When you mix two things up, it remembers and brings them back until you get them right."
-      how={["Read the teach card for a new concept.", "Answer: pick, true or false, or type it.", "Wrong answers come back later in the same session.", "The end report shows what you confuse most."]}
     >
-      <ActivityTip id="coach" label="How it works" steps={["Read the teach card, then answer.", "Mix-ups come back later in the same session.", "The end report shows what you confuse most."]} />
+      <ActivityTip id="coach" label="How it works" steps={["Read the card, then answer.", "Mix-ups come back later."]} />
       <Coach key={d} domain={d} serverState={serverState} save={saveLearnState} />
     </ActivityFrame>
   );

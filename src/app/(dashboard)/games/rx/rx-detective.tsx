@@ -442,13 +442,12 @@ function RevealBody({ q }: { q: Question }) {
     const mys = MYSTERIES.find((x) => x.id === q.id)!;
     const e = effectById(mys.answer)!;
     const d = drugById(mys.drug)!;
-    const verb = e.action === "partial" ? "Partial agonist" : e.action === "full" ? "Full agonist" : "Antagonist";
     return (
       <div className="space-y-3">
         <p className="text-body-strong">{e.label}</p>
         <p className="text-body">{mys.why}</p>
         {mys.not ? <p className="text-small text-muted-foreground">{mys.not}</p> : null}
-        <Receptor d={{ receptor: e.receptor, title: `${d.name}: what happens at ${e.receptor}`, caption: `Tap ${verb} to see what ${d.name.toLowerCase()} does to the signal here.` }} />
+        <Receptor d={{ receptor: e.receptor, title: `${d.name}: what happens at ${e.receptor}` }} />
       </div>
     );
   }

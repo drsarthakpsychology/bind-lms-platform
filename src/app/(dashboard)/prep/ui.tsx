@@ -24,7 +24,7 @@ export function PrepHero({ children }: { children?: React.ReactNode }) {
         title={PREP_TITLE}
         tip={{
           id: "prep",
-          steps: ["Pick a subject, then a topic. Questions come 10 at a time.", "Every answer shows a full explanation. Save any question to see it again.", "Mock tests are timed and marked."],
+          steps: ["Pick a subject, then a topic.", "Save any question to see it again."],
         }}
       />
       <p className="text-sm font-semibold text-muted-foreground">{PREP_EXAMS.join(" · ")}</p>
@@ -39,6 +39,16 @@ export function PrepFrame({ children, wide = false }: { children: React.ReactNod
 }
 
 export const card = "rounded-md border-2 border-foreground bg-card p-5";
+
+/**
+ * A bank size worth showing: "600+ questions" for a large bank, nothing for a
+ * small one, so a list never makes the bank look thin.
+ */
+export function bigCount(n: number, noun: string): string | undefined {
+  if (n < 100) return undefined;
+  const step = n >= 1000 ? 500 : 100;
+  return `${Math.floor(n / step) * step}+ ${noun}`;
+}
 
 /** "72% right" or "New", as words (never a bar alone). */
 export function pctText(s: Stats): string {

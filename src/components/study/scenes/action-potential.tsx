@@ -6,7 +6,7 @@ import type { ActionPotentialData } from "@/lib/study/types";
 import { cn } from "@/lib/utils";
 import { trackLearn } from "@/lib/learn/track";
 import { sfx } from "./sfx";
-import { Missions, Scene3DSlot, SceneCard, ViewSwitch, btn, chip, statusCls, useInView, useSceneView, useThemeColors } from "./kit";
+import { Scene3DSlot, SceneCard, ViewSwitch, btn, chip, statusCls, useInView, useSceneView, useThemeColors } from "./kit";
 
 /**
  * A playable neuron. Each tap of Stimulate nudges the membrane voltage up;
@@ -187,13 +187,13 @@ export function ActionPotential({ d }: { d: ActionPotentialData }) {
   };
   const ev = sim.event;
   const evText = !ev
-    ? "Press Stimulate to nudge the voltage up."
+    ? ""
     : ev.kind === "blocked"
       ? "Blocked: that stimulus arrived during the absolute refractory period. The sodium channels are locked shut, so nothing can fire yet. This is why impulses travel one way and cannot run together."
       : ev.kind === "relative"
         ? `Too soon: during the undershoot the threshold is raised (about ${Math.round(thresholdOf(sim))} millivolts now), and your push reached only ${Math.round(ev.v)}. Wait a moment, or push harder.`
         : ev.kind === "sub"
-          ? `Below threshold: the voltage rose to ${Math.round(ev.v)} millivolts, short of minus 55, and it is fading back. Tap again quickly so the pushes add up (summation).`
+          ? `Below threshold: the voltage rose to ${Math.round(ev.v)} millivolts, short of minus 55, and it is fading back. Push again quickly and the pushes add up (summation).`
           : ev.kind === "sum"
             ? "Summation: your pushes added up past threshold, and it fired."
             : "Threshold reached: it fired.";
@@ -206,21 +206,13 @@ export function ActionPotential({ d }: { d: ActionPotentialData }) {
       : "The impulse has reached the axon terminals, which release their transmitter into the synapse."
     : "";
 
-  const missions = [
-    { id: "fire", label: "Fire your first action potential", done: sim.fired.length > 0 },
-    { id: "sum", label: "Add up small pushes to reach threshold", done: sim.summed },
-    { id: "wall", label: "Hit the refractory wall", done: sim.blocked },
-    { id: "race", label: "Fire with myelin on and with it off", done: sim.fired.some((f) => f.myelin) && sim.fired.some((f) => !f.myelin) },
-    { id: "challenge", label: "Fire 3 in 10 seconds", done: won },
-  ];
 
   return (
-    <SceneCard title={d.title ?? "Make a neuron fire"} goal="Push the neuron past threshold, watch the impulse race down the axon, and fire 3 times in 10 seconds." caption={d.caption} tools={<ViewSwitch v={v} />} sound>
+    <SceneCard title={d.title ?? "Make a neuron fire"} caption={d.caption} tools={<ViewSwitch v={v} />} sound>
       <div ref={box} className="relative mt-3 h-[13rem] overflow-hidden rounded-xl border-2 border-foreground bg-background sm:h-[16rem]">
         {v.use3D ? (
           <Scene3DSlot flat={<NeuronFlat sim={sim} myelin={myelin} />} render={(onReady) => <View3D simRef={simRef} myelin={myelin} active={!idle} inView={inView} colors={colors} onStim={stim} onReady={onReady} />} />
         ) : <NeuronFlat sim={sim} myelin={myelin} />}
-        {v.use3D ? <p className="pointer-events-none absolute bottom-1.5 left-2 rounded bg-background/80 px-1.5 text-xs text-muted-foreground">Drag to turn, pinch to zoom, tap the cell body to stimulate</p> : null}
       </div>
       <div className="mt-3 grid gap-3 sm:grid-cols-[minmax(0,3fr)_minmax(0,2fr)]">
         <Trace sim={sim} th={th} />
@@ -259,7 +251,6 @@ export function ActionPotential({ d }: { d: ActionPotentialData }) {
         {sim.best !== null && !sim.challenge ? <p className="mt-1 font-semibold">{won ? `Challenge won: ${sim.best} action potentials in 10 seconds.` : `Challenge: ${sim.best} of 3. Tip: make each push big enough, and wait for the spike to finish before pushing again.`}</p> : null}
         <p className="mt-1 text-sm text-muted-foreground">Fired so far: {sim.fired.length}. Shown about a thousand times slower than real life: a real spike lasts about a millisecond. {myelin ? "Myelinated axons conduct at up to about 120 metres a second." : "Thin bare axons conduct at about 1 metre a second."}</p>
       </div>
-      <Missions items={missions} doneText="All missions done: threshold, summation, all or none, refractory period and myelin, in one neuron." />
     </SceneCard>
   );
 }

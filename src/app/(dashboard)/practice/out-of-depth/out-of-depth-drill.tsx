@@ -53,7 +53,7 @@ export function OutOfDepthDrill() {
     return (
       <div className="rounded-md border-2 border-border bg-card p-6 hard-shadow-sm">
         <p className="flex items-center gap-2 text-base font-semibold">
-          <CheckCircle2 className="size-4" aria-hidden /> {total} scenarios complete
+          <CheckCircle2 className="size-4" aria-hidden /> All scenarios done
         </p>
         <p className="mt-2 text-small text-muted-foreground">
           Over-referrals this session:{" "}
@@ -83,7 +83,7 @@ export function OutOfDepthDrill() {
   return (
     <div className="space-y-4">
       <div className="flex items-center justify-between text-small text-muted-foreground">
-        <span>Scenario {idx + 1} of {total}</span>
+        <span>Scenario {idx + 1}</span>
         <span className="text-caption">Over-referrals this session: {overReferrals}</span>
       </div>
 

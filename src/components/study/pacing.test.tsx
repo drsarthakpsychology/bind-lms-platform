@@ -1,26 +1,20 @@
 // @vitest-environment jsdom
 /**
- * Pacing rules for every player: nothing advances until the student presses
- * something, and Play holds each step for its reading time (about 250 ms a
- * word, at least 3 s), pauses when the tab is hidden, and never skips text.
+ * Step widgets show every step and its words at once (no Back, Next or Play),
+ * nothing moves on its own, and a played signal journey holds each leg for
+ * its reading time (about 250 ms a word, at least 3 s).
  */
 import { act, cleanup, fireEvent, render, screen } from "@testing-library/react";
 import { afterEach, beforeAll, describe, expect, it, vi } from "vitest";
 import { MODULES } from "@/lib/study";
-import type { Block, FlowData } from "@/lib/study/types";
+import type { Block } from "@/lib/study/types";
 import { Widget } from "./widgets";
-import { MIN_STEP_MS, PlayBar, WORD_MS, readingMs, useStepPlayer, wordCount } from "./pacing";
+import * as React from "react";
+import { MIN_STEP_MS, StepPicker, WORD_MS, readingMs, wordCount } from "./pacing";
 
-/** A minimal stepped player, built the way every step-by-step widget uses the shared player. */
-function Flow({ d }: { d: FlowData }) {
-  const st = useStepPlayer(d.nodes.length, (k) => `${d.nodes[k]?.label ?? ""} ${d.nodes[k]?.detail ?? ""}`, { start: -1 });
-  const active = st.i >= 0 ? d.nodes[st.i] : null;
-  return (
-    <div>
-      <PlayBar st={st} kind="flow" first="Play step by step" hint="or tap any box" />
-      <p role="status">{active ? `${active.label}: ${active.detail ?? ""}` : "Press Next to go one step at a time."}</p>
-    </div>
-  );
+function Picker() {
+  const [i, setI] = React.useState(0);
+  return <StepPicker steps={[{ id: "a", name: "First", text: "One." }, { id: "b", name: "Second", text: "Two." }, { id: "c", name: "Third", text: "Three." }]} i={i} onPick={setI} />;
 }
 
 vi.mock("@/lib/learn/track", () => ({ trackLearn: () => {} }));
@@ -56,40 +50,14 @@ describe("reading pace", () => {
     expect(readingMs("", 4200)).toBe(4200); // a longer animation raises the floor
   });
 
-  it("Play holds each step for its words, shows Pause, stops at the end with the caption still up, and pauses when the tab is hidden", () => {
-    vi.useFakeTimers();
-    const long = Array.from({ length: 39 }, (_, k) => `w${k}`).join(" ");
-    const d: FlowData = { layout: "chain", nodes: [{ id: "a", label: "First", detail: long }, { id: "b", label: "Second", detail: "Two words." }, { id: "c", label: "Third", detail: "Last one here." }] };
-    render(<Flow d={d} />);
-    const status = () => screen.getByRole("status");
-    expect(status()).toHaveTextContent(/Press Next/);
-    fireEvent.click(screen.getByRole("button", { name: /^Play step by step/ }));
-    expect(status()).toHaveTextContent(/^First/);
-    expect(screen.getByRole("button", { name: "Pause" })).toBeInTheDocument();
-    // "First" plus 39 words = 40 words = 10 s
-    pass(9750);
-    expect(status()).toHaveTextContent(/^First/);
-    pass(500);
-    expect(status()).toHaveTextContent(/^Second/);
-    // the tab is hidden: Play stops and the step stays
-    Object.defineProperty(document, "hidden", { configurable: true, get: () => true });
-    act(() => void document.dispatchEvent(new Event("visibilitychange")));
-    Object.defineProperty(document, "hidden", { configurable: true, get: () => false });
-    pass(20_000);
-    expect(status()).toHaveTextContent(/^Second/);
-    expect(screen.queryByRole("button", { name: "Pause" })).toBeNull();
-    // play on to the end: it stops on the last step and keeps its caption
-    fireEvent.click(screen.getByRole("button", { name: /^Play step by step/ }));
-    pass(3000);
-    expect(status()).toHaveTextContent(/^Third/);
-    pass(30_000);
-    expect(status()).toHaveTextContent(/^Third: Last one here\./);
-    expect(screen.queryByRole("button", { name: "Pause" })).toBeNull();
-    // Back and Next move one step at a time
-    fireEvent.click(screen.getByRole("button", { name: "Back" }));
-    expect(status()).toHaveTextContent(/^Second/);
-    fireEvent.click(screen.getByRole("button", { name: "Next" }));
-    expect(status()).toHaveTextContent(/^Third/);
+  it("a step list shows every step and its words at once, with no Back, Next or Play", () => {
+    render(<Picker />);
+    for (const t of ["First", "One.", "Second", "Two.", "Third", "Three."]) expect(screen.getByText(t)).toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: /^(Back|Next|Play)/ })).toBeNull();
+    expect(screen.getByRole("status")).toHaveTextContent("Showing 1: First");
+    fireEvent.click(screen.getByRole("button", { name: /Third/ }));
+    expect(screen.getByRole("button", { name: /Third/ })).toHaveAttribute("aria-pressed", "true");
+    expect(screen.getByRole("status")).toHaveTextContent("Showing 3: Third");
   });
 });
 

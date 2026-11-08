@@ -23,7 +23,7 @@ export function LandmarkReader({ cases }: { cases: LandmarkCase[] }) {
   return (
     <div className="space-y-4">
       <div className="flex items-center justify-between text-small text-muted-foreground">
-        <span>{c.domain.replace("_", " ")} · case {idx + 1} of {cases.length}</span>
+        <span>{c.domain.replace("_", " ")} · case {idx + 1}</span>
       </div>
 
       {/* the case */}
