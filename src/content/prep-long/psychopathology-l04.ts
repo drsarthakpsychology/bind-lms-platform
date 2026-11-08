@@ -1,7 +1,7 @@
 import type { LongQA } from "@/lib/prep/long-types";
-import { compare, cycle, timeline, tree, vis } from "./visual";
+import { anchored, compare, cycle, timeline, tree, vis } from "./visual";
 
-export const PSYCHOPATHOLOGY_L04: LongQA[] = [
+export const PSYCHOPATHOLOGY_L04: LongQA[] = anchored([
   {
     id: "psyp-l04-001",
     subject: "psychopathology",
@@ -488,4 +488,4 @@ Both specifiers describe meaningful subtypes with different biology and treatmen
     module: "depression",
     ref: "DSM-5-TR melancholic and atypical specifiers; Quitkin MAOI trials",
   },
-];
+]);

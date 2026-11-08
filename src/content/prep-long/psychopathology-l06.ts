@@ -1,7 +1,7 @@
 import type { LongQA } from "@/lib/prep/long-types";
-import { brain, chain, compare, cycle, tree } from "./visual";
+import { anchored, brain, chain, compare, cycle, tree } from "./visual";
 
-export const PSYCHOPATHOLOGY_L06: LongQA[] = [
+export const PSYCHOPATHOLOGY_L06: LongQA[] = anchored([
   {
     id: "psyp-l06-001",
     subject: "psychopathology",
@@ -444,4 +444,4 @@ Possession trance disorder is a culturally shaped dissociative response to distr
     module: "trauma",
     ref: "ICD-11 6B63; Chandrashekar et al NIMHANS on possession; Halliburton 2005",
   },
-];
+]);

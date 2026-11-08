@@ -1,7 +1,7 @@
 import type { LongQA } from "@/lib/prep/long-types";
-import { chain, compare, cycle, tree, vis } from "./visual";
+import { anchored, chain, compare, cycle, tree, vis } from "./visual";
 
-export const PSYCHOPATHOLOGY_L07: LongQA[] = [
+export const PSYCHOPATHOLOGY_L07: LongQA[] = anchored([
   {
     id: "psyp-l07-001",
     subject: "psychopathology",
@@ -470,4 +470,4 @@ Sexual dysfunctions are classified by phase of response, with time and frequency
     module: "more-disorders",
     ref: "DSM-5-TR sexual dysfunctions; ICD-11 chapter 17; Masters and Johnson 1966; Kaplan 1979; Basson 2000",
   },
-];
+]);

@@ -126,3 +126,49 @@ export function brain(title: string, notes: Partial<Record<Region, string>>, cap
 }
 
 export const curve = (kind: CurveData["kind"], title: string, caption?: string) => vis("curve", { kind, title }, caption);
+
+/* ------------------------------------------------ placing diagrams */
+
+const words = (s: string) => new Set(s.toLowerCase().replace(/[^a-z0-9]+/g, " ").split(" ").filter((w) => w.length > 3));
+
+/** The "## " headings of a hand-written answer. */
+export const headingsOf = (answer: string) => answer.split("\n").filter((l) => /^#{2,3} /.test(l)).map((l) => l.replace(/^#+ /, "").trim());
+
+/**
+ * Names each diagram's heading in its caption, so the long answer screen
+ * draws it right after that heading: the heading whose words best match the
+ * diagram's caption, title and labels, each heading used once, in order.
+ * A caption that already names a heading is kept as it is.
+ */
+export function anchored<T extends { answer: string; visuals?: PrepVisual[] }>(items: T[]): T[] {
+  return items.map((q) => {
+    if (!q.visuals?.length) return q;
+    const hs = headingsOf(q.answer);
+    const used = new Set<number>();
+    const norm = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+    const visuals = q.visuals.map((v) => {
+      const title = (v.data as { title?: unknown }).title;
+      const label = norm(`${v.caption ?? ""} ${typeof title === "string" ? title : ""}`);
+      const named = hs.findIndex((h, k) => !used.has(k) && norm(h).length > 2 && label.includes(norm(h)));
+      if (named >= 0) {
+        used.add(named);
+        return v;
+      }
+      const vw = words(JSON.stringify(v.data) + " " + (v.caption ?? ""));
+      let best = -1;
+      let score = -1;
+      hs.forEach((h, k) => {
+        if (used.has(k) || /^(introduction|conclusion)$/i.test(h)) return;
+        const s = [...words(h)].filter((w) => vw.has(w)).length;
+        if (s > score) {
+          score = s;
+          best = k;
+        }
+      });
+      if (best < 0) return v;
+      used.add(best);
+      return { ...v, caption: v.caption ? `${hs[best]}: ${v.caption}` : hs[best] };
+    });
+    return { ...q, visuals };
+  });
+}

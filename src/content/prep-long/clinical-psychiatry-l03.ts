@@ -1,7 +1,7 @@
 import type { LongQA } from "@/lib/prep/long-types";
-import { chain, compare, layers, tree } from "./visual";
+import { anchored, chain, compare, layers, tree } from "./visual";
 
-export const CLINICAL_PSYCHIATRY_L03: LongQA[] = [
+export const CLINICAL_PSYCHIATRY_L03: LongQA[] = anchored([
   {
     id: "cpsy-l03-001",
     subject: "clinical-psychiatry",
@@ -455,4 +455,4 @@ ODD and CD are common disruptive behaviour disorders with strong family and soci
     module: "child",
     ref: "DSM-5-TR disruptive behaviour disorders; Moffitt 1993; Patterson coercion theory; Henggeler MST; JJ Act 2015",
   },
-];
+]);

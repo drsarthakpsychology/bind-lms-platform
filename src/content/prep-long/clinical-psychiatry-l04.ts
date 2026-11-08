@@ -1,7 +1,7 @@
 import type { LongQA } from "@/lib/prep/long-types";
-import { brain, chain, compare, timeline, vis } from "./visual";
+import { anchored, brain, chain, compare, timeline, vis } from "./visual";
 
-export const CLINICAL_PSYCHIATRY_L04: LongQA[] = [
+export const CLINICAL_PSYCHIATRY_L04: LongQA[] = anchored([
   {
     id: "cpsy-l04-001",
     subject: "clinical-psychiatry",
@@ -452,4 +452,4 @@ Urine testing is a useful adjunct to clinical assessment when its methods, windo
     module: "substance",
     ref: "Moeller 2017 Mayo urine drug testing review; SAMHSA TIP; Maudsley drug screening",
   },
-];
+]);

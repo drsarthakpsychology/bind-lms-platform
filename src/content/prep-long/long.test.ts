@@ -2,6 +2,8 @@ import { describe, expect, it } from "vitest";
 import { LONG_QA } from "./index";
 import { SUBJECTS, type PrepExam } from "@/lib/prep/types";
 import { MODULES } from "@/lib/study";
+import { placeVisuals } from "@/lib/prep/visual";
+import { headingsOf } from "./visual";
 
 /**
  * Long answers: well formed, the right length for their marks, in the plain
@@ -57,13 +59,22 @@ describe("long answers", () => {
     expect(bad).toEqual([]);
   });
 
-  it("use only headings, bullets, table rows and paragraphs", () => {
+  it("use only headings, bullets, numbered steps, table rows and paragraphs", () => {
     const bad: string[] = [];
     for (const q of LONG_QA)
       for (const line of q.answer.split("\n")) {
-        if (/^#(?!# )/.test(line) || /^#{3,}/.test(line) || /^\s*[*+] /.test(line) || /^\s*\d+[.)] /.test(line) || /\*\*/.test(line) || /^\|[\s:|-]+\|$/.test(line))
+        if (/^#(?!# )/.test(line) || /^#{3,}/.test(line) || /^\s*[*+] /.test(line) || /\*\*/.test(line) || /^\|[\s:|-]+\|$/.test(line))
           bad.push(`${q.id}: ${line.slice(0, 60)}`);
       }
+    expect(bad).toEqual([]);
+  });
+
+  it("place every diagram after a heading it names", () => {
+    const bad: string[] = [];
+    for (const q of LONG_QA) {
+      const at = placeVisuals(headingsOf(q.answer), q.visuals ?? []);
+      at.forEach((i, k) => i < 0 && bad.push(`${q.id} visual ${k + 1}`));
+    }
     expect(bad).toEqual([]);
   });
 

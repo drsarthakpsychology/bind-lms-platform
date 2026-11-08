@@ -1,7 +1,7 @@
 import type { LongQA } from "@/lib/prep/long-types";
-import { chain, compare, timeline, tree } from "./visual";
+import { anchored, chain, compare, timeline, tree } from "./visual";
 
-export const CLINICAL_PSYCHIATRY_L07: LongQA[] = [
+export const CLINICAL_PSYCHIATRY_L07: LongQA[] = anchored([
   {
     id: "cpsy-l07-001",
     subject: "clinical-psychiatry",
@@ -461,4 +461,4 @@ An expert psychiatrist serves the court by giving an independent, reasoned and c
     module: "ethics-law",
     ref: "BSA 2023 s39; Royal College of Psychiatrists guidance on expert witnesses; Gunn and Taylor Forensic Psychiatry",
   },
-];
+]);

@@ -1,7 +1,7 @@
 import type { LongQA } from "@/lib/prep/long-types";
-import { brain, chain, compare, cycle, layers, timeline, tree } from "./visual";
+import { anchored, brain, chain, compare, cycle, layers, timeline, tree } from "./visual";
 
-export const PSYCHOPATHOLOGY_L02: LongQA[] = [
+export const PSYCHOPATHOLOGY_L02: LongQA[] = anchored([
   {
     id: "psyp-l02-001",
     subject: "psychopathology",
@@ -485,4 +485,4 @@ Illusions and sensory distortions both start from a real stimulus. Their presenc
     module: "mse-deep",
     ref: "Fish ch 3 sensory distortions and illusions",
   },
-];
+]);

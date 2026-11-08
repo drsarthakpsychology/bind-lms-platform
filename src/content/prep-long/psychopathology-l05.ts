@@ -1,7 +1,7 @@
 import type { LongQA } from "@/lib/prep/long-types";
-import { chain, cycle, vis } from "./visual";
+import { anchored, chain, cycle, vis } from "./visual";
 
-export const PSYCHOPATHOLOGY_L05: LongQA[] = [
+export const PSYCHOPATHOLOGY_L05: LongQA[] = anchored([
   {
     id: "psyp-l05-001",
     subject: "psychopathology",
@@ -479,4 +479,4 @@ Separation anxiety disorder is common and treatable; early help prevents school 
     module: "child",
     ref: "DSM-5-TR separation anxiety disorder",
   },
-];
+]);

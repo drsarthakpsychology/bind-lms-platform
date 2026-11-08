@@ -1,7 +1,7 @@
 import type { LongQA } from "@/lib/prep/long-types";
-import { chain, compare, layers, tree } from "./visual";
+import { anchored, chain, compare, layers, tree } from "./visual";
 
-export const PSYCHOPATHOLOGY_L01: LongQA[] = [
+export const PSYCHOPATHOLOGY_L01: LongQA[] = anchored([
   {
     id: "psyp-l01-001",
     subject: "psychopathology",
@@ -578,4 +578,4 @@ Catatonia is a common, treatable and often missed syndrome. It must be looked fo
     module: "mse-deep",
     ref: "DSM-5-TR catatonia; Bush et al 1996 BFCRS; Maudsley Prescribing Guidelines catatonia section; Fink and Taylor",
   },
-];
+]);

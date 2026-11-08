@@ -1,7 +1,7 @@
 import type { LongQA } from "@/lib/prep/long-types";
-import { brain, chain, compare, layers, tree } from "./visual";
+import { anchored, brain, chain, compare, layers, tree } from "./visual";
 
-export const PSYCHOPATHOLOGY_L08: LongQA[] = [
+export const PSYCHOPATHOLOGY_L08: LongQA[] = anchored([
   {
     id: "psyp-l08-001",
     subject: "psychopathology",
@@ -505,4 +505,4 @@ India carries a large share of the world's suicides, driven by both mental illne
     module: "suicide",
     ref: "NCRB ADSI 2022; Patel 2012 Million Death Study; National Suicide Prevention Strategy 2022; MHCA 2017 s115; WHO suicide fact sheet 2024; Joiner 2005; Gunnell Sri Lanka pesticides",
   },
-];
+]);

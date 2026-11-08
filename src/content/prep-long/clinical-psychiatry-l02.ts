@@ -1,7 +1,7 @@
 import type { LongQA } from "@/lib/prep/long-types";
-import { chain, compare, timeline, tree, vis } from "./visual";
+import { anchored, chain, compare, timeline, tree, vis } from "./visual";
 
-export const CLINICAL_PSYCHIATRY_L02: LongQA[] = [
+export const CLINICAL_PSYCHIATRY_L02: LongQA[] = anchored([
   {
     id: "cpsy-l02-001",
     subject: "clinical-psychiatry",
@@ -498,4 +498,4 @@ Clear definitions guide how long to treat: aim for remission, continue to preven
     module: "depression",
     ref: "Frank 1991 consensus definitions; Rush 2006 ACNP task force; NICE NG222",
   },
-];
+]);

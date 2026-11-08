@@ -1,7 +1,7 @@
 import type { LongQA } from "@/lib/prep/long-types";
-import { chain, compare, cycle, layers, vis } from "./visual";
+import { anchored, chain, compare, cycle, layers, vis } from "./visual";
 
-export const CLINICAL_PSYCHIATRY_L06: LongQA[] = [
+export const CLINICAL_PSYCHIATRY_L06: LongQA[] = anchored([
   {
     id: "cpsy-l06-001",
     subject: "clinical-psychiatry",
@@ -466,4 +466,4 @@ Repeated self harm in BPD needs compassionate emergency care, careful assessment
     module: "personality",
     ref: "NICE CG78 BPD; Gunderson good psychiatric management; Linehan DBT; NICE NG225 self-harm",
   },
-];
+]);

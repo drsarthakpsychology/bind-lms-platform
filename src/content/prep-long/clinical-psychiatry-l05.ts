@@ -1,7 +1,7 @@
 import type { LongQA } from "@/lib/prep/long-types";
-import { brain, chain, timeline, tree } from "./visual";
+import { anchored, brain, chain, timeline, tree } from "./visual";
 
-export const CLINICAL_PSYCHIATRY_L05: LongQA[] = [
+export const CLINICAL_PSYCHIATRY_L05: LongQA[] = anchored([
   {
     id: "cpsy-l05-001",
     subject: "clinical-psychiatry",
@@ -488,4 +488,4 @@ Steroid induced psychiatric disorders are common, dose related and mostly revers
     module: "neurocognitive",
     ref: "Boston Collaborative Drug Surveillance Program 1972; Warrington and Bostwick 2006 review; Maudsley steroid psychiatric effects",
   },
-];
+]);

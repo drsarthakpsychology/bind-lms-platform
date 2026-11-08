@@ -1,7 +1,7 @@
 import type { LongQA } from "@/lib/prep/long-types";
-import { chain, compare, timeline, vis } from "./visual";
+import { anchored, chain, compare, timeline, vis } from "./visual";
 
-export const PSYCHOPATHOLOGY_L03: LongQA[] = [
+export const PSYCHOPATHOLOGY_L03: LongQA[] = anchored([
   {
     id: "psyp-l03-001",
     subject: "psychopathology",
@@ -449,4 +449,4 @@ Schizophrenia is diagnosed by a pattern of positive, negative and disorganised s
     module: "psychosis",
     ref: "DSM-5-TR schizophrenia criteria; ICD-11 6A20; Kaplan schizophrenia chapter",
   },
-];
+]);

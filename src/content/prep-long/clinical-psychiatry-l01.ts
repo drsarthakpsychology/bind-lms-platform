@@ -1,7 +1,7 @@
 import type { LongQA } from "@/lib/prep/long-types";
-import { brain, chain, compare, tree, vis } from "./visual";
+import { anchored, brain, chain, compare, tree, vis } from "./visual";
 
-export const CLINICAL_PSYCHIATRY_L01: LongQA[] = [
+export const CLINICAL_PSYCHIATRY_L01: LongQA[] = anchored([
   {
     id: "cpsy-l01-001",
     subject: "clinical-psychiatry",
@@ -466,4 +466,4 @@ A focused set of baseline tests is needed in every new patient, while imaging, E
     module: "case-sheet",
     ref: "Maudsley physical health monitoring; NICE CG178; Kaplan laboratory testing in psychiatry; Graus 2016 autoimmune encephalitis criteria",
   },
-];
+]);
