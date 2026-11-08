@@ -3,11 +3,10 @@
 import * as React from "react";
 import Image from "next/image";
 import { BookOpen, Check, Flame, X } from "lucide-react";
-import { pickReaction, type Reaction } from "@/lib/reactions/pick";
-import { GOOD_MOODS, moodForScore, stickerById, stickerSrc, type Mood } from "@/lib/reactions/stickers";
+import { moodForScore, stickerById, stickerSrc, type Mood } from "@/lib/reactions/stickers";
 import { cn } from "@/lib/utils";
 import { useReactionsOn } from "./use-reaction";
-import { dismissReaction } from "./store";
+import { showEndReaction } from "./store";
 import s from "./reactions.module.css";
 
 /*
@@ -27,94 +26,36 @@ function reducedMotion(): boolean {
   }
 }
 
-/* ------------------------------------------------------------ end pick */
-// One pick per end screen, made once in the browser and kept (so a re-render
-// never swaps the joke). Server and first paint have none.
-const endPicks = new Map<string, Reaction>();
-const noop = () => () => {};
-function endPick(key: string, mood: Mood): Reaction {
-  let r = endPicks.get(key);
-  if (!r) {
-    r = pickReaction(mood);
-    endPicks.set(key, r);
-    if (endPicks.size > 60) endPicks.delete(endPicks.keys().next().value as string);
-  }
-  return r;
-}
-
-/** Tilt-and-stamp entrance (fade only for reduced motion), once on mount. */
-function useStampIn<T extends HTMLElement>(ready: boolean) {
-  const ref = React.useRef<T>(null);
-  React.useLayoutEffect(() => {
-    const el = ref.current;
-    if (!ready || !el || typeof el.animate !== "function") return;
-    if (reducedMotion()) el.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 200 });
-    else
-      el.animate(
-        [
-          { opacity: 0, transform: "translateY(-8px) rotate(-16deg) scale(1.25)" },
-          { opacity: 1, transform: "rotate(-4deg) scale(1)" },
-        ],
-        { duration: 420, delay: 160, easing: OUT_EXPO, fill: "backwards" },
-      );
-  }, [ready]);
-  return ref;
-}
-
 /**
- * A sticker and one line for an end screen. Give `mood`, or `right`/`total`
- * to pick the mood from the score. Renders nothing when funny reactions are
- * off. `seed` makes a fresh pick for a new round on the same screen.
+ * The end of a round: pops the sticker pop-up (happy for a good result, sad
+ * for a poor one) and it stays on screen until the student taps it. Give
+ * `mood`, or `right`/`total` to pick the mood from the score. `seed` makes a
+ * new round on the same screen pop again. Renders nothing itself.
  */
 export function EndReaction({
   mood: given,
   right,
   total,
   seed = "",
-  tone = "light",
-  className,
 }: {
   mood?: Mood;
   right?: number;
   total?: number;
   seed?: string | number;
-  /** "dark" for an ink panel. */
+  /** Kept for callers; the pop-up has its own look. */
   tone?: "light" | "dark";
   className?: string;
 }) {
   const [on] = useReactionsOn();
-  const id = React.useId();
   const mood = given ?? moodForScore(right ?? 0, total ?? 0);
-  const key = `${id}|${mood}|${seed}`;
-  const r = React.useSyncExternalStore(
-    noop,
-    () => (on ? endPick(key, mood) : null),
-    () => null,
-  );
-  const art = useStampIn<HTMLDivElement>(Boolean(r));
-  // An end screen has its own sticker: clear any pop-up still on screen.
-  React.useLayoutEffect(() => {
-    if (r) dismissReaction();
-  }, [r]);
-  if (!r) return null;
-  const good = GOOD_MOODS.has(mood);
-  return (
-    <div className={cn("flex items-center gap-3", className)}>
-      <div ref={art} className="shrink-0" style={{ transform: "rotate(-4deg)" }}>
-        <Image src={stickerSrc(r.sticker.id)} alt={r.sticker.alt} width={r.sticker.w} height={r.sticker.h} unoptimized loading="lazy" draggable={false} className="h-24 w-auto select-none sm:h-28" />
-      </div>
-      <p
-        className={cn(
-          "relative min-w-0 rounded-lg border-2 border-foreground px-3 py-2 text-left text-small leading-snug font-semibold text-foreground hard-shadow-sm sm:text-body",
-          good ? "bg-status-success-bg" : "bg-card",
-          tone === "dark" && "border-background",
-        )}
-      >
-        {r.line}
-        <span aria-hidden className={cn("absolute top-1/2 -left-[7px] size-3 -translate-y-1/2 rotate-45 border-b-2 border-l-2 bg-inherit", tone === "dark" ? "border-background" : "border-foreground")} />
-      </p>
-    </div>
-  );
+  const key = `${mood}|${seed}`;
+  const shown = React.useRef<string | null>(null);
+  React.useEffect(() => {
+    if (!on || shown.current === key) return;
+    shown.current = key;
+    showEndReaction(mood);
+  }, [on, key, mood]);
+  return null;
 }
 
 /* ----------------------------------------------------------- score dial */

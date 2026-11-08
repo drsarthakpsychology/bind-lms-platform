@@ -73,3 +73,9 @@ export function resetReactionStore(): void {
   lastAt = 0;
   emit();
 }
+
+/** A round has ended: always pop (no throttle), replacing any sticker on screen. */
+export function showEndReaction(mood: Mood): void {
+  lastAt = 0;
+  showReaction(mood);
+}
