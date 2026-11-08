@@ -10,6 +10,7 @@ import { OSCE_BATCH_07 } from "./batch-07";
 import { OSCE_BATCH_08 } from "./batch-08";
 import { OSCE_BATCH_09 } from "./batch-09";
 import { OSCE_BATCH_10 } from "./batch-10";
+import { OSCE_BATCH_11 } from "./batch-11";
 
 export const OSCE_LIBRARY_AUTHORED: LibStation[] = [
   ...OSCE_BATCH_01,
@@ -22,6 +23,7 @@ export const OSCE_LIBRARY_AUTHORED: LibStation[] = [
   ...OSCE_BATCH_08,
   ...OSCE_BATCH_09,
   ...OSCE_BATCH_10,
+  ...OSCE_BATCH_11,
 ];
 
 export const OSCE_LIBRARY = OSCE_LIBRARY_AUTHORED.map(buildStation);
