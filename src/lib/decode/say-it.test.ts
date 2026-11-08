@@ -8,7 +8,7 @@ const CITE = /\bet al\b|Kaplan|Sadock|Stahl|Maudsley|Ahuja|Lishman|DSM|ICD|\bp\.
 
 describe("Say it clinically phrase bank", () => {
   it("has at least 600 lay phrase to clinical term cards with unique ids and phrases", () => {
-    expect(SAY_IT.length).toBeGreaterThanOrEqual(525);
+    expect(SAY_IT.length).toBeGreaterThanOrEqual(600);
     expect(new Set(SAY_IT.map((x) => x.id)).size).toBe(SAY_IT.length);
     const phrases = SAY_IT.map((x) => x.phrase.toLowerCase());
     expect(phrases.filter((p, i) => phrases.indexOf(p) !== i)).toEqual([]);
