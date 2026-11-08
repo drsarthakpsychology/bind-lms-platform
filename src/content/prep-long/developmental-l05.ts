@@ -54,7 +54,7 @@ Each design trades cost against clarity. Sequential designs are the most informa
           { q: "You want to know whether shy toddlers become anxious teenagers.", a: "Longitudinal: only following the same children shows individual stability." },
           { q: "You want to know whether today's 70 year olds remember better than 70 year olds did 30 years ago.", a: "Time lag: same age, different times." },
         ],
-      }, "Choosing a design"),
+      }, "Choosing a design: Indian examples"),
     ],
     ref: "Schaie 1965 general developmental model and Seattle Longitudinal Study; Baltes 1968 sequential designs; Young Lives India; LASI; lifespan module 1.3",
   },
@@ -283,7 +283,10 @@ Basic or primary emotions, such as interest, distress, disgust, joy, anger, sadn
 Stranger anxiety, wariness of unfamiliar adults, appears at about 8 to 9 months, when infants can compare faces with familiar ones. Separation anxiety, distress when the attachment figure leaves, peaks at about 12 to 18 months. Both are normal signs of attachment and memory, and they are milder when the stranger approaches slowly and the caregiver is close.
 
 ## Social referencing
-From about 9 to 12 months, infants look at a caregiver's face to decide how to react to an uncertain situation. James Sorce and colleagues placed one year olds on a visual cliff set to a moderate, uncertain drop, with the mother on the far side. When she showed a happy face, about three quarters of the babies crossed; when she showed a fearful face, none crossed. Social referencing shows that infants read emotions and use them to guide behaviour, and it is one way parental anxiety passes to children.
+From about 9 to 12 months, infants look at a caregiver's face to decide how to react to an uncertain situation.
+
+## The visual cliff study
+James Sorce and colleagues placed one year olds on a visual cliff set to a moderate, uncertain drop, with the mother on the far side. When she showed a happy face, about three quarters of the babies crossed; when she showed a fearful face, none crossed. Social referencing shows that infants read emotions and use them to guide behaviour, and it is one way parental anxiety passes to children.
 
 ## Self recognition and self conscious emotions
 In the rouge test, a dab of red is put on a baby's nose; babies who touch their own nose rather than the mirror recognise themselves, mostly between 18 and 24 months. After this, self conscious emotions appear: embarrassment, then pride, shame and guilt in the third year, as children learn standards and evaluate themselves against them.
@@ -300,8 +303,8 @@ Emotional development moves from basic, caregiver regulated feelings to self con
     pitfalls: ["Giving emotions with no ages", "Describing the visual cliff only as depth perception and missing social referencing"],
     module: "lifespan/2-6",
     visuals: [
-      { kind: "figure", data: { id: "visual-cliff", caption: "The visual cliff used by Sorce to study social referencing" }, caption: "Social referencing: the visual cliff" },
-      vis("experiment", { title: "Social referencing on the visual cliff", question: "What share of one year olds crossed a moderate drop when the mother on the far side looked happy or fearful?", unit: "%", conditions: [{ label: "Mother looks happy", value: 74 }, { label: "Mother looks fearful", value: 0 }], why: "Infants used the mother's face to decide whether the uncertain drop was safe." }, "Self recognition and self conscious emotions follow"),
+      { kind: "figure", data: { id: "visual-cliff", caption: "The visual cliff used by Sorce to study social referencing" }, caption: "Social referencing" },
+      vis("experiment", { title: "Social referencing on the visual cliff", question: "What share of one year olds crossed a moderate drop when the mother on the far side looked happy or fearful?", unit: "%", conditions: [{ label: "Mother looks happy", value: 74 }, { label: "Mother looks fearful", value: 0 }], why: "Infants used the mother's face to decide whether the uncertain drop was safe." }, "The visual cliff study: the result"),
     ],
     ref: "Sorce, Emde, Campos and Klinnert 1985 (14 of 19 crossed to joy, 0 of 17 to fear); Lewis and Brooks-Gunn 1979 rouge test; Lewis self conscious emotions; Gottman 1997 emotion coaching; lifespan module 2.6",
   },
