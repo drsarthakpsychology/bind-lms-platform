@@ -36,7 +36,7 @@ Indian MA and MSc programmes teach these areas as core papers or **electives**. 
 | **Jamia Millia Islamia** | Organisational behaviour, leadership, media and society, trauma, political and peace psychology |
 | **Central University of Punjab** | Health psychology as a core paper |
 
-UGC NET Unit 10 ("Emerging Areas") lists: **gender, poverty, disability and migration** (bias, stigma, abuse, violence); **peace psychology and conflict resolution**; **wellbeing, character strengths, resilience and post-traumatic growth**; **health behaviour, lifestyle, chronic disease and psychoneuroimmunology**; and **digital learning, online behaviour and parental mediation of digital use**. All are covered in this module.
+The "Emerging Areas" unit of postgraduate psychology syllabi lists: **gender, poverty, disability and migration** (bias, stigma, abuse, violence); **peace psychology and conflict resolution**; **wellbeing, character strengths, resilience and post-traumatic growth**; **health behaviour, lifestyle, chronic disease and psychoneuroimmunology**; and **digital learning, online behaviour and parental mediation of digital use**. All are covered in this module.
 
 :::widget sort
 {
@@ -83,7 +83,7 @@ The applied fields are not just "clinical psychology elsewhere". Each has distin
 1. Define applied psychology. || The use of psychological theory, research and methods to solve practical problems.
 2. What did the Boulder conference (1949) agree? || Clinical psychologists should be trained as scientist-practitioners.
 3. What did the Vail conference (1973) lead to? || The practitioner-scholar model and the PsyD degree.
-4. Name the topic clusters in UGC NET Unit 10. || Gender, poverty, disability, migration; peace and conflict resolution; wellbeing, strengths, resilience, PTG; health behaviour and PNI; digital learning, online behaviour, parental mediation.
+4. Name the topic clusters in the "Emerging Areas" unit. || Gender, poverty, disability, migration; peace and conflict resolution; wellbeing, strengths, resilience, PTG; health behaviour and PNI; digital learning, online behaviour, parental mediation.
 5. Which body registers clinical psychologists in India? || The Rehabilitation Council of India.
 :::
 
@@ -1165,7 +1165,7 @@ Q: An immigrant who rejects both her heritage culture and the new culture is sho
 :::
 
 ## 2.5 Gender, poverty, disability and migration: stigma, violence and peace [core][beginner]
-These topics come together in UGC NET Unit 10 because they share a theme: **social position shapes mind and health, and prejudice and violence can be studied and reduced**.
+These topics come together in the "Emerging Areas" unit because they share a theme: **social position shapes mind and health, and prejudice and violence can be studied and reduced**.
 
 ### Gender
 - **Sex** refers to biological characteristics; **gender** to the social roles, expectations and identities a culture attaches to them.

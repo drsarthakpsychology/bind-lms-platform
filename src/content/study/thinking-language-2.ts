@@ -214,7 +214,7 @@ Why the social version is easier is debated: **pragmatic reasoning schemas** for
 In Wason's **2-4-6 task** (1960), people were told that "2, 4, 6" fits a rule and asked to discover it by proposing other triples. Most tested triples like 8-10-12, got "yes", and confidently announced "even numbers rising by two". The rule was simply "**any ascending numbers**". Few tried triples that could prove them wrong (1-7-50). This is **confirmation bias** in hypothesis testing.
 
 :::example Indian logic: the five-step inference
-The Nyaya school of Indian philosophy described **anumana** (inference) in five members, a structure taught for over two thousand years: (1) **pratijna**, the claim ("the hill has fire"); (2) **hetu**, the reason ("because it has smoke"); (3) **udaharana**, the example with the general rule ("wherever there is smoke there is fire, as in a kitchen"); (4) **upanaya**, application ("this hill has smoke of that kind"); (5) **nigamana**, the conclusion ("so the hill has fire"). It combines deduction with an inductive example, and it appears in NET Paper 1 logical reasoning.
+The Nyaya school of Indian philosophy described **anumana** (inference) in five members, a structure taught for over two thousand years: (1) **pratijna**, the claim ("the hill has fire"); (2) **hetu**, the reason ("because it has smoke"); (3) **udaharana**, the example with the general rule ("wherever there is smoke there is fire, as in a kitchen"); (4) **upanaya**, application ("this hill has smoke of that kind"); (5) **nigamana**, the conclusion ("so the hill has fire"). It combines deduction with an inductive example, and it appears in the logical reasoning part of general papers.
 :::
 
 :::recall
@@ -561,7 +561,7 @@ Rereading notes and highlighting make material feel **fluent** and familiar, so 
 
 :::widget decide
 {
-  "scene": "Pooja is preparing for UGC NET. She reads each chapter twice, highlights it, and rates herself 9 out of 10 on every topic. In her first mock she scores 41 percent and is shocked.",
+  "scene": "Pooja is preparing for a competitive psychology exam. She reads each chapter twice, highlights it, and rates herself 9 out of 10 on every topic. In her first mock she scores 41 percent and is shocked.",
   "ask": "What is the best metacognitive advice?",
   "choices": [
     { "label": "Read each chapter a third time with a different colour highlighter", "verdict": "harm", "outcome": "She feels even more confident and her next mock score barely moves.", "why": "Rereading builds fluency, which is mistaken for knowledge. Her confidence and accuracy are badly calibrated." },

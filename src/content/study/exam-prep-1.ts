@@ -4,9 +4,9 @@ export const part1 = String.raw`
 
 ## 1.1 The exams at a glance [core][starting]
 This module prepares you for four kinds of psychology exam in India:
-- **UGC NET Psychology** (for Assistant Professor, JRF and PhD admission eligibility),
-- **clinical psychology entrances** (NIMHANS, CIP Ranchi and other RCI-recognised institutes) for the professional clinical master's (the old MPhil route is being replaced) and PhD,
-- **CUET PG Psychology** for MA and MSc admission at central and many other universities,
+- **the national teaching eligibility exam in psychology** (for Assistant Professor, research fellowship and PhD admission eligibility),
+- **clinical psychology entrances** run by RCI-recognised institutes for the professional clinical master's (the old MPhil route is being replaced) and PhD,
+- **the national master's entrance in psychology** for MA and MSc admission at central and many other universities,
 - **university semester exams**, which are mostly descriptive (written answers).
 
 :::widget flow
@@ -15,12 +15,12 @@ This module prepares you for four kinds of psychology exam in India:
   "layout": "tree",
   "nodes": [
     { "id": "g", "label": "Your goal", "detail": "Start from what you want to do next, not from which exam friends are taking." },
-    { "id": "ma", "label": "MA or MSc admission", "parent": "g", "detail": "Central and many state universities admit through CUET PG; some universities run their own tests." },
-    { "id": "cuet", "label": "CUET PG Psychology", "parent": "ma", "detail": "Objective, negative marking. Undergraduate-level breadth." },
-    { "id": "teach", "label": "Teaching, JRF or PhD eligibility", "parent": "g", "detail": "Assistant Professor eligibility, a Junior Research Fellowship, or PhD admission eligibility." },
-    { "id": "net", "label": "UGC NET Psychology", "parent": "teach", "detail": "Paper 1 (teaching and research aptitude) plus Paper 2 (psychology), taken together." },
+    { "id": "ma", "label": "MA or MSc admission", "parent": "g", "detail": "Central and many state universities admit through one national master's entrance; some universities run their own tests." },
+    { "id": "cuet", "label": "National master's entrance", "parent": "ma", "detail": "Objective, negative marking. Undergraduate-level breadth." },
+    { "id": "teach", "label": "Teaching, research fellowship or PhD eligibility", "parent": "g", "detail": "Assistant Professor eligibility, a Junior Research Fellowship, or PhD admission eligibility." },
+    { "id": "net", "label": "National teaching eligibility exam", "parent": "teach", "detail": "A general paper (teaching and research aptitude) plus a psychology paper, taken together." },
     { "id": "clin", "label": "Clinical psychology training", "parent": "g", "detail": "The RCI-recognised professional route to practise as a clinical psychologist." },
-    { "id": "inst", "label": "NIMHANS, CIP and other institute entrances", "parent": "clin", "detail": "MCQ papers heavy on psychopathology, assessment and research methods, often followed by an interview." },
+    { "id": "inst", "label": "Clinical institute entrances", "parent": "clin", "detail": "MCQ papers heavy on psychopathology, assessment and research methods, often followed by an interview." },
     { "id": "uni", "label": "Pass your current course", "parent": "g", "detail": "University semester exams: mostly written answers." },
     { "id": "sem", "label": "Semester exams", "parent": "uni", "detail": "Short notes, long answers and case vignettes; structure and evaluation earn the marks." }
   ],
@@ -29,32 +29,32 @@ This module prepares you for four kinds of psychology exam in India:
 :::
 
 :::safety Always check the official notice
-Exam patterns change, sometimes from one year to the next. The figures below are **as reported for the 2025 and 2026 cycles** and were checked in November 2026. Before you plan, read the **current official information bulletin** from the conducting body (NTA for UGC NET and CUET PG, the institute itself for NIMHANS, CIP and others).
+Exam patterns change, sometimes from one year to the next. The figures below are **as reported for the 2025 and 2026 cycles** and were checked in November 2026. Before you plan, read the **current official information bulletin** from the conducting body (the national testing body for the national exams, the institute itself for institute entrances).
 :::
 
 | Exam | Who runs it | Format (as reported for recent cycles) | Negative marking |
 |---|---|---|---|
-| **UGC NET Psychology** (subject code 04) | NTA, twice a year (June and December sessions) | Computer-based. Paper 1 (general: teaching and research aptitude): 50 questions, 100 marks. Paper 2 (psychology): 100 questions, 200 marks. Both in one 3-hour sitting | **None** reported; 2 marks per correct answer |
-| **CUET PG Psychology** | NTA | Computer-based, 75 questions, 300 marks, 90 minutes | **Yes**: +4 correct, minus 1 wrong |
-| **NIMHANS** clinical psychology entrance (professional master's and PhD) | NIMHANS, Bengaluru | 100 multiple-choice questions in 90 minutes (2026 cycle). PhD adds an interview | **Yes**: +1 correct, minus 0.25 wrong |
-| **CIP Ranchi** clinical psychology entrance | Central Institute of Psychiatry | Computer-based, 100 questions (2025 cycle), plus an interview or practical component | Reported as **none** in 2025 |
-| **Other institutes** (for example AIIMS centres, IHBAS Delhi, LGBRIMH Tezpur, RINPAS Ranchi, PGIMER Chandigarh, university departments) | Each institute | Varies: written MCQ test, sometimes descriptive questions, often an interview | Varies |
+| **National teaching eligibility exam** (psychology) | The national testing body, twice a year (June and December sessions) | Computer-based. General paper (teaching and research aptitude): 50 questions, 100 marks. Psychology paper: 100 questions, 200 marks. Both in one 3-hour sitting | **None** reported; 2 marks per correct answer |
+| **National master's entrance** (psychology) | The national testing body | Computer-based, 75 questions, 300 marks, 90 minutes | **Yes**: +4 correct, minus 1 wrong |
+| **A large clinical institute's entrance** (professional master's and PhD) | The institute | 100 multiple-choice questions in 90 minutes (2026 cycle). PhD adds an interview | **Yes**: +1 correct, minus 0.25 wrong |
+| **Another clinical institute's entrance** | The institute | Computer-based, 100 questions (2025 cycle), plus an interview or practical component | Reported as **none** in 2025 |
+| **Other institutes and university departments** | Each institute | Varies: written MCQ test, sometimes descriptive questions, often an interview | Varies |
 | **University semester exams** | Your university | Mostly descriptive: short notes, long answers, case vignettes; some MCQ papers | Usually none |
 
 :::note The clinical training route is changing
-The Rehabilitation Council of India (RCI) is phasing out the **MPhil in Clinical Psychology** and moving to new professional programmes (a two-year professional master's in clinical psychology, and a professional doctorate). Entry rules (four-year undergraduate degree, or a bridge course after a three-year degree) are also changing. NIMHANS, for example, lists a **Master in Clinical Psychology** in place of its old MPhil for 2026. Check RCI's latest notices and each institute's prospectus.
+The Rehabilitation Council of India (RCI) is phasing out the **MPhil in Clinical Psychology** and moving to new professional programmes (a two-year professional master's in clinical psychology, and a professional doctorate). Entry rules (four-year undergraduate degree, or a bridge course after a three-year degree) are also changing. Some institutes, for example, list a **Master in Clinical Psychology** in place of their old MPhil for 2026. Check RCI's latest notices and each institute's prospectus.
 :::
 
 :::widget guess
 {
-  "prompt": "In UGC NET, Paper 2 (psychology) has how many questions?",
+  "prompt": "In the national teaching eligibility exam, the psychology paper has how many questions?",
   "min": 25,
   "max": 200,
   "step": 5,
   "unit": "questions",
   "answer": [100, 100],
-  "reveal": "One hundred questions, 200 marks, worth twice Paper 1. Paper 1 has 50. Both are taken together in three hours, so pace matters: roughly a minute per question.",
-  "clinician": "Qualifying for Assistant Professor or JRF depends on category-wise cut-offs and the aggregate of both papers; cut-offs and the PhD-only category rules are published per session by NTA. Check the bulletin for the current year."
+  "reveal": "One hundred questions, 200 marks, worth twice the general paper. The general paper has 50. Both are taken together in three hours, so pace matters: roughly a minute per question.",
+  "clinician": "Qualifying for Assistant Professor or a research fellowship depends on category-wise cut-offs and the aggregate of both papers; cut-offs and the PhD-only category rules are published per session by the conducting body. Check the bulletin for the current year."
 }
 :::
 
@@ -63,22 +63,22 @@ The Rehabilitation Council of India (RCI) is phasing out the **MPhil in Clinical
   "prompt": "From the table (as reported for recent cycles), which exams penalise wrong answers?",
   "buckets": ["Negative marking", "No negative marking reported"],
   "items": [
-    { "text": "CUET PG Psychology", "bucket": 0 },
-    { "text": "UGC NET Psychology", "bucket": 1 },
-    { "text": "NIMHANS clinical psychology entrance", "bucket": 0 },
-    { "text": "CIP Ranchi entrance (2025 cycle)", "bucket": 1 }
+    { "text": "National master's entrance", "bucket": 0 },
+    { "text": "National teaching eligibility exam", "bucket": 1 },
+    { "text": "The large clinical institute's entrance", "bucket": 0 },
+    { "text": "The other clinical institute's entrance (2025 cycle)", "bucket": 1 }
   ]
 }
 :::
 
 :::clinician
-UGC NET Paper 2 (Psychology) syllabus, as revised by UGC: ten units covering the emergence of psychology (including Indian psychology); research methodology and statistics; psychological testing; biological basis of behaviour; attention, perception, learning, memory and forgetting; thinking, intelligence and creativity; personality, motivation, emotion, stress and coping; social psychology; human development and interventions; and emerging areas (for example positive psychology, health psychology, environmental psychology, psychology and technology). Paper 1 covers teaching aptitude, research aptitude, comprehension, communication, mathematical reasoning, logical reasoning, data interpretation, ICT, people, development and environment, and the higher education system. Unit titles are sometimes paraphrased by coaching sites; use the UGC's own syllabus PDF.
+The psychology paper syllabus of the teaching eligibility exam, as last revised: ten units covering the emergence of psychology (including Indian psychology); research methodology and statistics; psychological testing; biological basis of behaviour; attention, perception, learning, memory and forgetting; thinking, intelligence and creativity; personality, motivation, emotion, stress and coping; social psychology; human development and interventions; and emerging areas (for example positive psychology, health psychology, environmental psychology, psychology and technology). The general paper covers teaching aptitude, research aptitude, comprehension, communication, mathematical reasoning, logical reasoning, data interpretation, ICT, people, development and environment, and the higher education system. Unit titles are sometimes paraphrased by coaching sites; use the official syllabus PDF.
 :::
 
 :::recall
-1. Which body conducts UGC NET and CUET PG? || The National Testing Agency (NTA).
-2. How many questions are there in UGC NET Paper 1 and Paper 2? || 50 and 100.
-3. What is the CUET PG marking scheme, as reported? || +4 for a correct answer, minus 1 for a wrong answer, 75 questions in 90 minutes.
+1. Where do you find the current pattern of any exam? || The current official information bulletin from the conducting body.
+2. How many questions are there in the teaching eligibility exam's general paper and psychology paper? || 50 and 100.
+3. What is the master's entrance marking scheme, as reported? || +4 for a correct answer, minus 1 for a wrong answer, 75 questions in 90 minutes.
 4. What is changing in clinical psychology training in India? || RCI is replacing the MPhil with new professional master's and doctoral programmes, with changed entry rules.
 :::
 
@@ -161,7 +161,7 @@ Every student's time is different, so plan in **phases** and move on when you me
 
 :::widget decide
 {
-  "scene": "Neha, a final-year BA student in Jaipur, has three months before CUET PG. Her plan: read all her semester notes twice, then attempt one mock test the week before the exam.",
+  "scene": "Neha, a final-year BA student in Jaipur, has three months before her master's entrance. Her plan: read all her semester notes twice, then attempt one mock test the week before the exam.",
   "ask": "What would most improve her plan?",
   "choices": [
     { "label": "Add a third reading of the notes to be safe", "verdict": "harm", "outcome": "She feels familiar with everything but freezes on applied questions in the mock.", "why": "Rereading builds a feeling of knowing, not the ability to retrieve and apply under time pressure." },
@@ -197,7 +197,7 @@ Q: Which study method has the strongest research support for long-term retention
 
 ## 1.3 Exam-day strategy and the maths of negative marking [core][starting]
 ### Pacing
-- Work out your **time per question** in advance (UGC NET about 1.2 minutes per question; CUET PG about 1.2 minutes; NIMHANS about 0.9 minutes).
+- Work out your **time per question** in advance (the teaching eligibility exam about 1.2 minutes per question; the master's entrance about 1.2 minutes; a 100-question, 90-minute institute paper about 0.9 minutes).
 - **First pass**: answer what you know quickly. **Mark** the rest for review.
 - **Second pass**: work through marked questions.
 - Never spend three minutes on one question in the first pass.
@@ -213,18 +213,18 @@ Q: Which study method has the strongest research support for long-term retention
 ### Should you guess when there is negative marking?
 Think in **expected marks**, the average result of a guess over many questions.
 
-With **4 options, +4 correct, minus 1 wrong** (CUET PG pattern):
+With **4 options, +4 correct, minus 1 wrong** (the master's entrance pattern):
 - A pure blind guess is right 1 time in 4. Expected marks = (1/4 × 4) minus (3/4 × 1) = 1 minus 0.75 = **+0.25**.
 - If you can **eliminate one option**, you choose from 3. Expected marks = (1/3 × 4) minus (2/3 × 1) = about **+0.67**.
 - If you can eliminate two, expected marks = (1/2 × 4) minus (1/2 × 1) = **+1.5**.
 
-With **4 options, +1 correct, minus 0.25 wrong** (NIMHANS pattern):
+With **4 options, +1 correct, minus 0.25 wrong** (a common clinical institute pattern):
 - A blind guess: (1/4 × 1) minus (3/4 × 0.25) = 0.25 minus 0.19 = about **+0.06**: tiny.
 - After eliminating two options: (1/2 × 1) minus (1/2 × 0.25) = **+0.375**.
 
 :::widget guess
 {
-  "prompt": "CUET PG pattern (+4 right, minus 1 wrong, 4 options). You can rule out two options and must pick between the last two. On average, how many marks does guessing earn you per question?",
+  "prompt": "The master's entrance pattern (+4 right, minus 1 wrong, 4 options). You can rule out two options and must pick between the last two. On average, how many marks does guessing earn you per question?",
   "min": -1,
   "max": 4,
   "step": 0.25,
@@ -237,7 +237,7 @@ With **4 options, +1 correct, minus 0.25 wrong** (NIMHANS pattern):
 
 :::widget decide
 {
-  "scene": "In the NIMHANS entrance (+1, minus 0.25), Sameer reaches a question on a test he has never heard of. All four options look equally possible. He has 15 such questions.",
+  "scene": "In a clinical institute entrance (+1, minus 0.25), Sameer reaches a question on a test he has never heard of. All four options look equally possible. He has 15 such questions.",
   "ask": "What is the most sensible approach?",
   "choices": [
     { "label": "Guess all 15 blindly to maximise marks", "verdict": "ok", "outcome": "On average he gains about one mark in total, but with real variation either way.", "why": "Blind guessing is very slightly positive here, so it is not wrong, but the gain is tiny and uncertain." },
@@ -287,32 +287,32 @@ Q: In an exam with +1 for correct and minus 0.25 for wrong, with four options, w
 Score 80% or more to open the Beginner level.
 
 :::mcq
-Q: UGC NET Psychology is conducted by:
-- UGC directly at each university
-- *The National Testing Agency
-- RCI
-- NIMHANS
-> NTA conducts UGC NET.
+Q: In the national teaching eligibility exam, the psychology paper has:
+- 50 questions
+- *100 questions
+- 150 questions
+- 200 questions
+> 100 questions for 200 marks; the general paper has 50.
 
-Q: In UGC NET, Paper 1 tests:
+Q: In the national teaching eligibility exam, the general paper tests:
 - Only psychology
 - *General teaching and research aptitude, reasoning and related areas
 - English grammar only
 - Clinical skills
-> Paper 1 is the general paper.
+> It is the general paper, taken with the psychology paper.
 
 Q: As reported for recent cycles, which exam awards +4 and deducts 1 per wrong answer?
-- UGC NET
-- *CUET PG
-- CIP Ranchi
+- The national teaching eligibility exam
+- *The national master's entrance
+- The other clinical institute's entrance (2025 cycle)
 - Semester exams
-> CUET PG.
+> The master's entrance: 75 questions, 300 marks.
 
 Q: Which body regulates professional training in clinical psychology in India?
-- NTA
+- The national testing body
 - *Rehabilitation Council of India (RCI)
 - National Medical Commission
-- UGC alone
+- Each university alone
 > RCI.
 
 Q: The best source for the current exam pattern is:
@@ -391,7 +391,7 @@ Q: All-night revision before an exam usually:
 ## 2.1 The high-yield map [core][beginner]
 Not every topic is equally likely. These areas come up again and again (based on the syllabus and the pattern of past papers).
 
-### UGC NET Paper 2 and CUET PG: high-yield topics
+### General psychology papers (teaching eligibility and master's entrance): high-yield topics
 | Area | Topics that come up most |
 |---|---|
 | Schools and history | Structuralism, functionalism, Gestalt, behaviourism, psychoanalysis, humanistic, cognitive; Indian psychology (yoga, Buddhist and Vedantic ideas of self and mind) |
@@ -426,7 +426,7 @@ Not every topic is equally likely. These areas come up again and again (based on
 - **Therapies**: behaviour therapy, CBT, REBT, third-wave therapies, psychodynamic, family and group.
 - **Research methods and statistics** (consistently heavy).
 - **Mental health law and ethics**: the Mental Healthcare Act 2017, the RCI Act 1992, the Rights of Persons with Disabilities Act 2016.
-- **General psychology** at UGC NET level.
+- **General psychology** at postgraduate level.
 
 :::widget sort
 {
@@ -490,12 +490,12 @@ Use this module with the others. For psychopathology, the disorder modules; for 
 :::
 
 :::recall
-1. Name five high-yield areas for UGC NET Paper 2. || Research methods and statistics, testing, cognitive processes, personality and motivation, social psychology (also schools, biological basis, intelligence, development).
+1. Name five high-yield areas for a general psychology paper. || Research methods and statistics, testing, cognitive processes, personality and motivation, social psychology (also schools, biological basis, intelligence, development).
 2. Name three laws often asked in clinical entrances. || Mental Healthcare Act 2017, RCI Act 1992, Rights of Persons with Disabilities Act 2016.
 :::
 
 :::mcq
-Q: Which area is consistently heavy in both UGC NET and clinical psychology entrances?
+Q: Which area is consistently heavy in both general psychology papers and clinical psychology entrances?
 - Industrial safety regulations
 - *Research methods and statistics
 - Astrology

@@ -962,7 +962,7 @@ A still point of light in a completely dark room seems to drift, because there i
 :::
 
 ## 4.3 Q&A bank · Advanced [advanced]
-These are the long, analytical questions asked in NET Paper 2, clinical entrance interviews and MA examinations.
+These are the long, analytical questions asked in competitive exams, clinical entrance interviews and MA examinations.
 
 :::qa Critically compare Gibson's direct theory and Gregory's constructivist theory of perception, and show how modern accounts reconcile them. [advanced]
 ### Short answer

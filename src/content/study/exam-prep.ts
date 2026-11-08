@@ -8,12 +8,12 @@ import { part4 } from "./exam-prep-4";
 export const meta: ModuleMeta = {
   id: "exam-prep",
   num: 33,
-  title: "Exam prep: UGC NET, clinical entrances, CUET PG and semester exams",
+  title: "Exam prep: entrance, competitive and semester exams",
   emoji: "🎯",
   tagline: "Know the pattern, study the way memory works, practise in exam style, and write answers that score",
   when: "Open to all levels",
   outcomes: [
-    "Describe the reported pattern of UGC NET Psychology, CUET PG, NIMHANS and CIP entrances, and know to confirm it in the official notice",
+    "Describe the reported pattern of the main national and institute psychology exams, and know to confirm it in the official notice",
     "Plan preparation in phases using practice testing, spacing, interleaving and an error log",
     "Decide when to guess under negative marking using expected marks",
     "Answer exam-style MCQs across research methods, cognitive, biological, developmental, personality, social, testing, psychopathology, therapies and law",

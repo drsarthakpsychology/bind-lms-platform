@@ -143,7 +143,7 @@ Q: Pre-exposing a tone many times on its own slows later conditioning to it. Thi
 | **William Estes** (1950) | **Stimulus sampling theory**: on each trial only a sample of stimulus elements is active, and they become connected to the response | Mathematical learning theory; probability of response equals proportion of conditioned elements | Explained gradual learning curves, spontaneous recovery (elements drift back) and founded mathematical psychology |
 | **Edward Tolman** (1932) | **Purposive behaviourism**: learning is of expectancies and **cognitive maps** | Latent learning, place learning, intervening variables | Bridged behaviourism and cognitive psychology |
 
-Add **Thorndike** (connectionism, trial and error), **Skinner** (radical behaviourism, operant analysis, no inner causes needed), **Pavlov** and **Watson** (behaviourism's manifesto, 1913), and you have the "learning theorists" questions in NET papers.
+Add **Thorndike** (connectionism, trial and error), **Skinner** (radical behaviourism, operant analysis, no inner causes needed), **Pavlov** and **Watson** (behaviourism's manifesto, 1913), and you have the "learning theorists" questions in competitive exams.
 
 :::widget sort
 {
@@ -1093,7 +1093,7 @@ Material learned after alcohol is recalled better after alcohol than sober. Mood
 :::
 
 ## 5.3 Q&A bank · Advanced [advanced]
-These are the long, analytical questions asked in NET Paper 2, clinical entrances and MA examinations.
+These are the long, analytical questions asked in competitive exams, clinical entrances and MA examinations.
 
 :::qa Explain the Rescorla-Wagner model. What does it explain, and where does it fail? [advanced]
 ### Short answer

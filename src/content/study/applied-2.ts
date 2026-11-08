@@ -385,7 +385,7 @@ Q: A coach who praises effort and improvement rather than ranking players create
 :::
 
 ## 3.4 Cyberpsychology: online behaviour and digital childhood [core][advanced]
-**Cyberpsychology** studies how people think, feel and behave with digital technology: the internet, smartphones, social media, games and AI. The UGC NET syllabus lists **digital learning, online behaviour and parental mediation of digital use**.
+**Cyberpsychology** studies how people think, feel and behave with digital technology: the internet, smartphones, social media, games and AI. Postgraduate syllabi list **digital learning, online behaviour and parental mediation of digital use**.
 
 ### The online disinhibition effect
 **John Suler** described why people say and do things online they would not do face to face. Factors include:
@@ -776,7 +776,7 @@ Frame: **definition, three or four key points, one example, one line of signific
 :::widget reveal
 {
   "prompt": "Short note: Parental mediation",
-  "answer": "Strategies parents use to shape children's media use: active or enabling (talk, explain, encourage safe use), restrictive (rules on time and content), co-use, technical controls, monitoring. Active mediation builds skills and reduces risk; restrictive mediation reduces risk and opportunity and may push use into secret; covert monitoring can harm trust. Best: active mediation plus age-appropriate rules. Significance: named in UGC NET Unit 10."
+  "answer": "Strategies parents use to shape children's media use: active or enabling (talk, explain, encourage safe use), restrictive (rules on time and content), co-use, technical controls, monitoring. Active mediation builds skills and reduces risk; restrictive mediation reduces risk and opportunity and may push use into secret; covert monitoring can harm trust. Best: active mediation plus age-appropriate rules. Significance: named in the "Emerging Areas" unit of postgraduate syllabi."
 }
 :::
 

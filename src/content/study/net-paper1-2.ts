@@ -356,7 +356,7 @@ Q: The Chinese pilgrim who studied at Nalanda in the 7th century was:
 - **M.Phil is discontinued.** (For clinical psychology, RCI has moved to a two-year M.A. in Clinical Psychology on a "4 + 2" model from 2025-26.)
 - A single overarching regulator, the **Higher Education Commission of India (HECI)**, with **four verticals**: **NHERC** (regulation), **NAC** (accreditation), **HEGC** (grants) and **GEC** (General Education Council, for learning outcomes and standards). Medical and legal education are kept outside it.
 - A **National Research Foundation** (now the **Anusandhan National Research Foundation**, set up under a 2023 Act).
-- Public spending on education to reach **6% of GDP**; the **National Testing Agency** to run common entrance tests (CUET); the **National Educational Technology Forum (NETF)**; **Indian Knowledge Systems** in the curriculum; internationalisation.
+- Public spending on education to reach **6% of GDP**; the **National Testing Agency** to run common entrance tests; the **National Educational Technology Forum (NETF)**; **Indian Knowledge Systems** in the curriculum; internationalisation.
 
 :::note The regulator bill (status as of November 2026)
 The **Viksit Bharat Shiksha Adhishthan Bill, 2025** was introduced in the Lok Sabha on **15 December 2025** to replace the UGC, AICTE and NCTE with one body and three councils (for regulation, accreditation and standards), as NEP 2020 proposed. It was referred to a **Joint Parliamentary Committee**, whose report had not been finalised as of November 2026. **The UGC, AICTE and NCTE continue to function.** Check the current status before your exam.
@@ -369,7 +369,7 @@ The **Viksit Bharat Shiksha Adhishthan Bill, 2025** was introduced in the Lok Sa
 ### Regulators and other bodies
 | Body | Set up | Role |
 |---|---|---|
-| **UGC** (University Grants Commission) | 1953 (statutory 1956) | Standards and grants for universities; conducts NET through NTA |
+| **UGC** (University Grants Commission) | 1953 (statutory 1956) | Standards and grants for universities |
 | **AICTE** | 1945 (statutory 1987) | Technical and management education |
 | **NCTE** | Statutory from 1995 | Teacher education |
 | **NMC** (National Medical Commission) | 2020, replacing the MCI | Medical education |
@@ -378,14 +378,14 @@ The **Viksit Bharat Shiksha Adhishthan Bill, 2025** was introduced in the Lok Sa
 | **NAAC** (National Assessment and Accreditation Council) | 1994, Bengaluru (autonomous body under UGC) | Accredits institutions; moving from letter grades to **binary accreditation** (accredited or not) with **maturity-based levels** |
 | **NBA** (National Board of Accreditation) | 1994; independent since 2010 | Accredits programmes, mainly technical |
 | **NIRF** (National Institutional Ranking Framework) | Launched 2015; first rankings 2016 | Ranks institutions on teaching, learning and resources; research and professional practice; graduation outcomes; outreach and inclusivity; and perception |
-| **NTA** (National Testing Agency) | 2017 | Conducts NET, CUET, NEET, JEE Main |
+| **NTA** (National Testing Agency) | 2017 | Conducts the national entrance and eligibility tests |
 | **INFLIBNET** | 1991, Gandhinagar | Library network; Shodhganga; ONOS |
 | **ICSSR** | 1969 | Social science research councils (also ICHR 1972, ICPR 1977) |
 | **IGNOU** | 1985 | Open and distance learning |
 | **NIOS** | 1989 | Open schooling |
 
 :::widget sort
-{"prompt": "Which body does each job?", "buckets": ["UGC", "NAAC", "RCI", "NTA"], "items": [{"text": "Accredits colleges and universities", "bucket": 1}, {"text": "Registers clinical psychologists", "bucket": 2}, {"text": "Conducts UGC NET and CUET", "bucket": 3}, {"text": "Gives grants and sets standards for universities", "bucket": 0}, {"text": "Maintains the Central Rehabilitation Register", "bucket": 2}, {"text": "Moving to binary accreditation with maturity levels", "bucket": 1}]}
+{"prompt": "Which body does each job?", "buckets": ["UGC", "NAAC", "RCI", "NTA"], "items": [{"text": "Accredits colleges and universities", "bucket": 1}, {"text": "Registers clinical psychologists", "bucket": 2}, {"text": "Conducts the national entrance and eligibility tests", "bucket": 3}, {"text": "Gives grants and sets standards for universities", "bucket": 0}, {"text": "Maintains the Central Rehabilitation Register", "bucket": 2}, {"text": "Moving to binary accreditation with maturity levels", "bucket": 1}]}
 :::
 
 ### Types of institutions and governance
@@ -395,7 +395,7 @@ The **Viksit Bharat Shiksha Adhishthan Bill, 2025** was introduced in the Lok Sa
 - **Value education** and **professional, technical and skill-based education** (the **National Council for Vocational Education and Training**, NCVET, 2018) are part of this unit.
 
 :::widget decide
-{"scene": "A Paper 1 question asks: 'Under NEP 2020, which is NOT one of the four verticals of the proposed Higher Education Commission of India?' The options are NHERC, NAC, HEGC and NAAC.", "ask": "Which do you choose?", "choices": [{"label": "NAC", "verdict": "harm", "outcome": "Wrong: the National Accreditation Council is one of the four verticals.", "why": "NAC is the proposed accreditation vertical."}, {"label": "NAAC", "verdict": "best", "outcome": "Correct. NAAC is the existing accreditation council; the NEP's proposed vertical is the NAC. The fourth vertical, missing from the options, is the General Education Council (GEC).", "why": "Exam setters use near-identical names: NAC (proposed) versus NAAC (existing)."}, {"label": "HEGC", "verdict": "harm", "outcome": "Wrong: the Higher Education Grants Council is the funding vertical.", "why": "NHERC, NAC, HEGC and GEC are the four verticals."}]}
+{"scene": "A general paper question asks: 'Under NEP 2020, which is NOT one of the four verticals of the proposed Higher Education Commission of India?' The options are NHERC, NAC, HEGC and NAAC.", "ask": "Which do you choose?", "choices": [{"label": "NAC", "verdict": "harm", "outcome": "Wrong: the National Accreditation Council is one of the four verticals.", "why": "NAC is the proposed accreditation vertical."}, {"label": "NAAC", "verdict": "best", "outcome": "Correct. NAAC is the existing accreditation council; the NEP's proposed vertical is the NAC. The fourth vertical, missing from the options, is the General Education Council (GEC).", "why": "Exam setters use near-identical names: NAC (proposed) versus NAAC (existing)."}, {"label": "HEGC", "verdict": "harm", "outcome": "Wrong: the Higher Education Grants Council is the funding vertical.", "why": "NHERC, NAC, HEGC and GEC are the four verticals."}]}
 :::
 
 :::recall
@@ -430,8 +430,8 @@ Q: The President of India is the Visitor of:
 > Governors usually head state universities as Chancellors.
 :::
 
-## 3.5 Paper 1 question styles: practice across units [core][advanced]
-NTA uses the same few formats across units. Recognising the format saves time.
+## 3.5 General paper question styles: practice across units [core][advanced]
+The paper uses the same few formats across units. Recognising the format saves time.
 
 :::widget flow
 {"title": "Tackling an assertion and reason item", "layout": "chain", "nodes": [{"id": "n0", "label": "Is A true?", "detail": "Judge it alone"}, {"id": "n1", "label": "Is R true?", "detail": "Judge it alone"}, {"id": "n2", "label": "Does R explain A?", "detail": "Only if both are true"}, {"id": "n3", "label": "Pick the code", "detail": "Match your three judgements to the options"}]}

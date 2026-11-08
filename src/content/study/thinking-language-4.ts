@@ -878,7 +878,7 @@ The total grew from 120 to 150 to 180 abilities.
 :::
 
 ## 5.3 Q&A bank · Advanced [advanced]
-These are the long, analytical questions asked in NET Paper 2, clinical entrances and MA examinations.
+These are the long, analytical questions asked in competitive exams, clinical entrances and MA examinations.
 
 :::qa Trace the development of intelligence theories from Spearman to the Cattell-Horn-Carroll model. Is there a consensus? [advanced]
 ### Short answer
