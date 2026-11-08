@@ -12,6 +12,8 @@ import { STATISTICS_L05 } from "./statistics-l05";
 import { COGNITIVE_L01 } from "./cognitive-l01";
 import { COGNITIVE_L02 } from "./cognitive-l02";
 import { COGNITIVE_L03 } from "./cognitive-l03";
+import { COGNITIVE_L04 } from "./cognitive-l04";
+import { COGNITIVE_L05 } from "./cognitive-l05";
 
 /** Every hand-written long answer. Writers add part files and spread them in here. */
 export const LONG_QA: LongQA[] = [
@@ -28,4 +30,6 @@ export const LONG_QA: LongQA[] = [
   ...COGNITIVE_L01,
   ...COGNITIVE_L02,
   ...COGNITIVE_L03,
+  ...COGNITIVE_L04,
+  ...COGNITIVE_L05,
 ];
