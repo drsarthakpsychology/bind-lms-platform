@@ -16,7 +16,7 @@ function playAll(id: string, pick: (opts: { id: string; q: string }[]) => string
 
 describe("Ward Week content", () => {
   it("has at least 30 campaigns of 4 to 5 chapters with every decision kind", () => {
-    expect(CAMPAIGNS.length).toBeGreaterThanOrEqual(13);
+    expect(CAMPAIGNS.length).toBeGreaterThanOrEqual(24);
     expect(CAMPAIGNS.slice(0, 3).map((c) => c.id)).toEqual(["pune", "chennai", "london"]);
     expect(new Set(CAMPAIGNS.map((c) => c.id)).size).toBe(CAMPAIGNS.length);
     const kinds = new Set<string>();
