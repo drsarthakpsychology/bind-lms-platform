@@ -776,7 +776,7 @@ Frame: **definition, three or four key points, one example, one line of signific
 :::widget reveal
 {
   "prompt": "Short note: Parental mediation",
-  "answer": "Strategies parents use to shape children's media use: active or enabling (talk, explain, encourage safe use), restrictive (rules on time and content), co-use, technical controls, monitoring. Active mediation builds skills and reduces risk; restrictive mediation reduces risk and opportunity and may push use into secret; covert monitoring can harm trust. Best: active mediation plus age-appropriate rules. Significance: named in the "Emerging Areas" unit of postgraduate syllabi."
+  "answer": "Strategies parents use to shape children's media use: active or enabling (talk, explain, encourage safe use), restrictive (rules on time and content), co-use, technical controls, monitoring. Active mediation builds skills and reduces risk; restrictive mediation reduces risk and opportunity and may push use into secret; covert monitoring can harm trust. Best: active mediation plus age-appropriate rules. Significance: named in the 'Emerging Areas' unit of postgraduate syllabi."
 }
 :::
 
