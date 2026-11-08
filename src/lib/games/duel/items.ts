@@ -6,6 +6,10 @@
  * Server code only.
  */
 
+import { exams, type Exam, type ExamSet, type Level } from "../tags";
+import { DUEL_MORE } from "./items-all";
+import { MODULE_OF } from "./items-more";
+
 export type DuelItem = {
   id: string;
   topic: string;
@@ -13,6 +17,12 @@ export type DuelItem = {
   options: [string, string, string, string];
   features: [string, string, string, string];
   why: string;
+  /** Tags (older rounds get them from LEGACY_TAGS below). */
+  level?: Level;
+  objective?: string;
+  exams?: Exam[];
+  /** Study module id (/study/<id>). */
+  module?: string;
 };
 
 const x = (id: string, topic: string, vignette: string, options: DuelItem["options"], features: DuelItem["features"], why: string): DuelItem => ({ id, topic, vignette, options, features, why });
@@ -51,6 +61,47 @@ export const DUEL_ITEMS: DuelItem[] = [
   x("du-31", "somatic", "A 35-year-old is sure he has a brain tumour despite two normal MRIs and no symptoms. He checks his pupils daily.", ["illness-anxiety", "somatic-symptom", "delusional", "ocd"], ["Health preoccupation with few or no symptoms", "Distressing symptoms with excessive worry", "A fixed false belief despite all evidence", "Intrusive thoughts unrelated to health"], "Illness anxiety disorder: preoccupation with serious illness when symptoms are absent or mild."),
   x("du-32", "dissociative", "A 24-year-old has felt for months like she is watching herself from outside and the world looks flat. She knows it isn't real.", ["dpdr", "schizophrenia", "panic", "did"], ["Unreality with reality testing intact", "Delusions or hallucinations", "Detachment only during brief attacks", "Distinct personality states"], "Depersonalization/derealization disorder: persistent unreality with reality testing intact."),
 ];
+
+const LEGACY_TAGS: Record<string, [Level, string, ExamSet]> = {
+  "du-01": [2, "Tell adjustment disorder from a depressive episode.", "all"],
+  "du-02": [2, "Use the 2-year rule for persistent depressive disorder.", "all"],
+  "du-03": [3, "Spot hypomania plus depression as bipolar II.", "core"],
+  "du-04": [1, "Recognise mania as bipolar I.", "all"],
+  "du-05": [1, "Recognise panic disorder.", "all"],
+  "du-06": [1, "Recognise generalised anxiety disorder.", "all"],
+  "du-07": [4, "Separate social anxiety from avoidant personality.", "core"],
+  "du-08": [3, "Separate OCD from OCPD by insight.", "all"],
+  "du-09": [4, "Recognise OCPD's ego-syntonic perfectionism.", "core"],
+  "du-10": [3, "Recognise body dysmorphic disorder.", "core"],
+  "du-11": [2, "Use the 1-month line between acute stress disorder and PTSD.", "core"],
+  "du-12": [2, "Map PTSD's four symptom clusters.", "all"],
+  "du-13": [3, "Recognise prolonged grief disorder.", "core"],
+  "du-14": [2, "Place a 4-month psychosis as schizophreniform.", "core"],
+  "du-15": [2, "Recognise brief psychotic disorder.", "core"],
+  "du-16": [3, "Recognise erotomanic delusional disorder.", "core"],
+  "du-17": [5, "Apply the schizoaffective 2-week rule.", "clin"],
+  "du-18": [3, "Link psychosis to cannabis use and recovery.", "core"],
+  "du-19": [4, "Tell alcohol withdrawal from delirium.", "clin"],
+  "du-20": [2, "Recognise opioid withdrawal signs.", "core"],
+  "du-21": [1, "Recognise delirium.", "all"],
+  "du-22": [4, "Spot Lewy body dementia's core features.", "clin"],
+  "du-23": [4, "Recognise behavioural frontotemporal dementia.", "clin"],
+  "du-24": [2, "Recognise bulimia at a normal weight.", "core"],
+  "du-25": [3, "Separate ARFID from anorexia.", "core"],
+  "du-26": [3, "Recognise narcolepsy by cataplexy.", "core"],
+  "du-27": [1, "Recognise ADHD across settings.", "all"],
+  "du-28": [4, "Separate DMDD from ODD and mania.", "core"],
+  "du-29": [3, "Separate borderline PD from bipolar II.", "all"],
+  "du-30": [3, "Apply the antisocial PD age and conduct rules.", "core"],
+  "du-31": [3, "Recognise illness anxiety disorder.", "core"],
+  "du-32": [3, "Recognise depersonalisation with intact reality testing.", "core"],
+};
+
+for (const it of DUEL_ITEMS) {
+  const t = LEGACY_TAGS[it.id];
+  if (t && it.level === undefined) Object.assign(it, { level: t[0], objective: t[1], exams: exams(t[2]), module: MODULE_OF[it.topic] ?? it.topic });
+}
+DUEL_ITEMS.push(...DUEL_MORE);
 
 const BY_ID = new Map(DUEL_ITEMS.map((i) => [i.id, i]));
 export function duelItem(id: string): DuelItem | undefined {

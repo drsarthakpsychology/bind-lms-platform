@@ -1,0 +1,67 @@
+import { exams, type ExamSet } from "../tags";
+import type { DailyCase } from "./types";
+
+/** Learning objective and exam tags for the first 55 cases (written before cases carried tags). */
+const T: Record<string, [string, ExamSet]> = {
+  "dc-001": ["Count symptoms and duration to confirm a major depressive episode, and screen for past highs.", "all"],
+  "dc-002": ["Use the 2-year rule to tell persistent depressive disorder from a major depressive episode.", "all"],
+  "dc-003": ["Recognise a manic episode and know one is enough for bipolar I.", "all"],
+  "dc-004": ["Ask about hypomania in recurrent depression to find bipolar II.", "core"],
+  "dc-005": ["Tell cyclothymia from bipolar II by the size of its highs and lows.", "core"],
+  "dc-006": ["Tie mood symptoms to the menstrual cycle to diagnose PMDD.", "core"],
+  "dc-007": ["Look for a medical cause before calling a depression primary.", "core"],
+  "dc-008": ["Recognise DMDD by constant irritability between severe outbursts.", "core"],
+  "dc-009": ["Diagnose panic disorder after a cardiac cause is ruled out.", "all"],
+  "dc-010": ["Recognise GAD by spread, duration and uncontrollability of worry.", "all"],
+  "dc-011": ["Separate social anxiety from shyness and avoidant personality.", "all"],
+  "dc-012": ["Recognise separation anxiety in a school-refusing child.", "core"],
+  "dc-013": ["Diagnose agoraphobia from fear of two or more situations.", "core"],
+  "dc-014": ["Identify obsessions and compulsions and their time cost.", "all"],
+  "dc-015": ["Recognise body dysmorphic disorder in a cosmetic setting.", "core"],
+  "dc-016": ["Tell hoarding from OCD and ordinary collecting.", "core"],
+  "dc-017": ["Map the four PTSD symptom clusters after a trauma.", "all"],
+  "dc-018": ["Use the 1-month line to separate acute stress disorder from PTSD.", "core"],
+  "dc-019": ["Diagnose adjustment disorder when a stressor gives sub-threshold distress.", "all"],
+  "dc-020": ["Tell prolonged grief from depression and normal grief.", "core"],
+  "dc-021": ["Recognise schizophrenia by symptoms, decline and 6-month course.", "all"],
+  "dc-022": ["Diagnose brief psychotic disorder by duration and full recovery.", "core"],
+  "dc-023": ["Apply the 2-week psychosis-without-mood rule for schizoaffective disorder.", "clin"],
+  "dc-024": ["Recognise delusional disorder with otherwise intact functioning.", "core"],
+  "dc-025": ["Place a 1 to 6 month psychosis as schizophreniform.", "core"],
+  "dc-026": ["Recognise borderline personality disorder after self-harm.", "all"],
+  "dc-027": ["Check age and childhood conduct disorder before diagnosing antisocial PD.", "core"],
+  "dc-028": ["Tell avoidant personality disorder from social anxiety.", "core"],
+  "dc-029": ["Separate OCPD's ego-syntonic perfectionism from OCD.", "core"],
+  "dc-030": ["Recognise alcohol withdrawal on a surgical ward and its timing.", "all"],
+  "dc-031": ["Recognise the signs of opioid withdrawal.", "core"],
+  "dc-032": ["Link psychosis onset to a substance and its clearing on stopping.", "core"],
+  "dc-033": ["Diagnose gambling disorder and rule out mania.", "core"],
+  "dc-034": ["Recognise Korsakoff syndrome and the role of thiamine.", "clin"],
+  "dc-035": ["Count alcohol use disorder criteria in a primary care setting.", "all"],
+  "dc-036": ["Recognise delirium by acute onset, fluctuation and inattention.", "all"],
+  "dc-037": ["Recognise Alzheimer's disease by insidious memory-first decline.", "all"],
+  "dc-038": ["Spot the core features of Lewy body dementia.", "clin"],
+  "dc-039": ["Recognise behavioural-variant frontotemporal dementia.", "clin"],
+  "dc-040": ["Recognise anorexia nervosa by low weight and fear of gaining.", "all"],
+  "dc-041": ["Diagnose bulimia nervosa at a normal weight.", "core"],
+  "dc-042": ["Tell ARFID from anorexia by the absence of body-image concern.", "core"],
+  "dc-043": ["Recognise narcolepsy by sleep attacks and cataplexy.", "core"],
+  "dc-044": ["Recognise obstructive sleep apnea from snoring and sleepiness.", "core"],
+  "dc-045": ["Recognise REM sleep behaviour disorder and its link to Lewy body disease.", "clin"],
+  "dc-046": ["Confirm ADHD across settings with onset before 12.", "all"],
+  "dc-047": ["Recognise autism by social and repetitive features from early childhood.", "all"],
+  "dc-048": ["Recognise selective mutism in a child who speaks at home.", "core"],
+  "dc-049": ["Count conduct disorder behaviours and onset type.", "core"],
+  "dc-050": ["Diagnose Tourette's disorder from motor and vocal tics over a year.", "core"],
+  "dc-051": ["Recognise functional neurological symptoms by positive signs.", "core"],
+  "dc-052": ["Recognise illness anxiety with few or no symptoms.", "core"],
+  "dc-053": ["Recognise factitious disorder by deception without outside reward.", "clin"],
+  "dc-054": ["Recognise depersonalisation with intact reality testing.", "core"],
+  "dc-055": ["Recognise dissociative amnesia and rule out organic causes.", "clin"],
+};
+
+export function withLegacyTags(c: DailyCase): DailyCase {
+  if (c.objective && c.exams) return c;
+  const t = T[c.id];
+  return t ? { ...c, objective: c.objective ?? t[0], exams: c.exams ?? exams(t[1]) } : c;
+}
