@@ -146,7 +146,7 @@ export function Detective({ serverState, save }: { serverState: LearnState | nul
     <div className={cn("mx-auto max-w-2xl space-y-5 px-4 py-5")}>
       <div className="flex items-center justify-between">
         <span className="flex items-center gap-2 font-bold">
-          <Search className="size-5" aria-hidden /> Case {r + 1}/{rounds.length}
+          <Search className="size-5" aria-hidden /> Case {r + 1}
         </span>
         <span className="rounded-full border-2 border-foreground bg-foreground px-3 py-1 font-pix text-sm text-primary">{score} pts</span>
       </div>

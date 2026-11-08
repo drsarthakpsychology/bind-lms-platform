@@ -63,7 +63,7 @@ Depression is a final common pathway of many routes. Biological theories explain
     pitfalls: ["Presenting depression as a chemical imbalance only", "Omitting social causes", "Listing theories without evidence"],
     visuals: [
       vis("stress", { caption: "Chronic stress keeps the HPA axis switched on; high cortisol damages hippocampal feedback." }),
-      vis("hypnogram", { caption: "" }),
+      vis("hypnogram", { caption: "In depression REM comes early, deep sleep shrinks and waking comes early." }),
       cycle("Lewinsohn's behavioural loop", [["Low mood", ""], ["Withdrawal", "Stops activities"], ["Fewer rewards", "Less positive reinforcement"], ["Lower mood", "Confirms the pattern"]]),
     ],
     module: "depression",

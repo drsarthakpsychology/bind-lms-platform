@@ -179,7 +179,7 @@ export function MseTrainer() {
           </div>
         ) : (
           <div className="rounded-md border-2 border-border bg-card p-5 hard-shadow-sm">
-            <p className="text-eyebrow text-muted-foreground">Mood vs affect · {moodIdx + 1}/{MOOD_AFFECT_ITEMS.length}</p>
+            <p className="text-eyebrow text-muted-foreground">Mood vs affect · {moodIdx + 1}</p>
             <p className="mt-3 text-lg font-medium">{MOOD_AFFECT_ITEMS[moodIdx].text}</p>
             <div className="mt-4 flex gap-2">
               <button

@@ -136,7 +136,7 @@ function Round({ r, setR, onAnswered, onEnd, medIds }: { r: Run; setR: (r: Run) 
     <div className="mx-auto max-w-2xl space-y-4 px-4 py-5">
       <div className="flex flex-wrap items-center gap-2">
         <span className="font-semibold">
-          Case {r.idx + 1}/{r.qs.length}
+          Case {r.idx + 1}
         </span>
         <Lives n={r.lives} lost={r.lostLife} />
         <span className="ml-auto flex gap-2">

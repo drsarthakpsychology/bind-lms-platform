@@ -90,7 +90,7 @@ export function ScenarioGame({ serverState, save, noteId }: { serverState: Learn
           {sc.topic} · <span className="text-muted-foreground">{sc.who}</span>
         </p>
         <span className="font-pix text-xs">
-          {si + 1}/{deck.length}
+          {si + 1}
         </span>
       </div>
       <Options key={`${sc.id}-${bi}`} beat={beat} options={options} picked={picked} onChoose={choose} />

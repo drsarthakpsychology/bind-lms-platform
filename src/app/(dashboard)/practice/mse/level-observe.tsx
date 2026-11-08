@@ -76,7 +76,7 @@ export function ObserveLevel({
     <div className="space-y-4 rounded-md border-2 border-border bg-card p-5 hard-shadow-sm">
       <div className="flex items-center justify-between">
         <p className="text-eyebrow text-muted-foreground">
-          Level 1 · Observe · stimulus {idx + 1}/{stimuli.length}
+          Level 1 · Observe · stimulus {idx + 1}
         </p>
         <p className="text-caption text-muted-foreground">{wordCount} words · {result.score} score</p>
       </div>
