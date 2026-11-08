@@ -19,6 +19,10 @@ import { PSYCHOPHARMACOLOGY_L01 } from "./psychopharmacology-l01";
 import { PSYCHOPHARMACOLOGY_L02 } from "./psychopharmacology-l02";
 import { PSYCHOPHARMACOLOGY_L03 } from "./psychopharmacology-l03";
 import { PSYCHOPHARMACOLOGY_L04 } from "./psychopharmacology-l04";
+import { PSYCHOPHARMACOLOGY_L05 } from "./psychopharmacology-l05";
+import { PSYCHOPHARMACOLOGY_L06 } from "./psychopharmacology-l06";
+import { PSYCHOPHARMACOLOGY_L07 } from "./psychopharmacology-l07";
+import { PSYCHOPHARMACOLOGY_L08 } from "./psychopharmacology-l08";
 
 /** Every hand-written long answer. Writers add part files and spread them in here. */
 export const LONG_QA: LongQA[] = [
@@ -42,4 +46,8 @@ export const LONG_QA: LongQA[] = [
   ...PSYCHOPHARMACOLOGY_L02,
   ...PSYCHOPHARMACOLOGY_L03,
   ...PSYCHOPHARMACOLOGY_L04,
+  ...PSYCHOPHARMACOLOGY_L05,
+  ...PSYCHOPHARMACOLOGY_L06,
+  ...PSYCHOPHARMACOLOGY_L07,
+  ...PSYCHOPHARMACOLOGY_L08,
 ];
