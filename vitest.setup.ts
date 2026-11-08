@@ -7,7 +7,7 @@ import "@testing-library/jest-dom/vitest";
 // afterEach cleanup (which depends on a global `afterEach`) never fires. Without
 // it, every render in a multi-test jsdom file leaks into the next test and
 // `screen.getByRole` finds stale duplicates. Import the hook explicitly.
-import { afterEach } from "vitest";
+import { afterEach, vi } from "vitest";
 import { cleanup } from "@testing-library/react";
 
 afterEach(() => {
@@ -38,3 +38,10 @@ if (typeof window !== "undefined" && !window.localStorage) {
     configurable: true,
   });
 }
+
+// next/font/google only works inside the Next compiler; tests get a stand-in
+// with the same shape (the hand-drawn medicine pictures load Kalam with it).
+vi.mock("next/font/google", () => {
+  const font = () => ({ className: "", variable: "", style: { fontFamily: "Kalam, cursive" } });
+  return { Kalam: font, Caveat: font, Geist: font, Geist_Mono: font, Source_Serif_4: font };
+});

@@ -23,7 +23,7 @@ const btn = "inline-flex min-h-11 items-center justify-center gap-2 rounded-md b
 /* ------------------------------------------------------------- journey */
 type Stage = { id: string; name: string; x: number; y: number; text: string };
 
-const ROUTE_STAGES: Record<NonNullable<JourneyData["route"]>, Stage[]> = {
+export const ROUTE_STAGES: Record<NonNullable<JourneyData["route"]>, Stage[]> = {
   oral: [
     { id: "mouth", name: "Swallowed", x: 160, y: 62, text: "The tablet is swallowed. Nothing works yet: the medicine first has to reach the blood." },
     { id: "gut", name: "Gut", x: 160, y: 170, text: "The tablet dissolves and the medicine is absorbed through the wall of the small intestine. Food, gut speed and the tablet's coating change how fast this happens." },
@@ -169,7 +169,7 @@ export function Neuron({ d }: { d: NeuronData }) {
 }
 
 /* ------------------------------------------------------------- pathways */
-const DA_PATHS = [
+export const DA_PATHS = [
   { id: "mesolimbic", name: "Mesolimbic", from: [150, 112], to: [118, 92], via: [136, 96], role: "reward and motivation; overactive in psychosis (hallucinations, delusions)", blocked: "Positive symptoms ease. This is the effect you want.", rescued: "Still blocked enough: positive symptoms stay controlled." },
   { id: "mesocortical", name: "Mesocortical", from: [150, 112], to: [70, 60], via: [110, 70], role: "thinking, planning and drive; underactive in negative and cognitive symptoms", blocked: "Can worsen apathy, flat mood and slowed thinking.", rescued: "Serotonin 2A block lets more dopamine through here: less worsening of negative symptoms." },
   { id: "nigrostriatal", name: "Nigrostriatal", from: [158, 108], to: [124, 74], via: [146, 86], role: "movement control", blocked: "Movement side effects: stiffness, tremor, restlessness (akathisia), and later tardive dyskinesia.", rescued: "Less blocked in practice: fewer movement side effects." },

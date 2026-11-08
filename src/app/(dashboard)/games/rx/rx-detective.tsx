@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { startHowTo } from "@/components/help/how-to";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { ArrowRight, Check, ClipboardList, Flame, FlaskConical, Heart, HeartCrack, Pill as PillIcon, Plus, Search, X } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -18,6 +19,8 @@ import { HintBar, useHintStatus } from "@/components/hints/hint-chip";
 import { askHint } from "@/lib/hints/actions";
 import { hintedPoints } from "@/lib/hints/rules";
 import { useReaction } from "@/components/reactions/use-reaction";
+import { rxItemPages } from "@/lib/games-sims/rx/med-pages";
+import { howItWorksHref } from "@/lib/meds/sections";
 import { EndReaction } from "@/components/reactions/graphics";
 
 type Grade = (a: Answer & { run?: string }) => Promise<{ ok: boolean }>;
@@ -141,6 +144,8 @@ function Round({ r, setR, onAnswered, onEnd, medIds }: { r: Run; setR: (r: Run) 
   useHotkeys(keys);
 
   const g = r.revealed ? grade(r.answers[r.answers.length - 1])! : null;
+  // The Medicines pages this case is about, for "How olanzapine works" after a wrong answer.
+  const pages = rxItemPages(q.kind, q.id);
   const last = r.lives <= 0 || r.idx + 1 >= r.qs.length;
 
   return (
@@ -193,7 +198,8 @@ function Round({ r, setR, onAnswered, onEnd, medIds }: { r: Run; setR: (r: Run) 
             ) : null}
           </div>
           <RevealBody q={q} />
-          <RxLearn q={q} medIds={medIds} />
+          {g.score < 1 ? <RxHowItWorks pages={pages} /> : null}
+          <RxLearn q={q} medIds={medIds} skip={g.score < 1 ? pages.map((x) => x.id) : []} />
           <Btn variant="primary" size="lg" className="w-full" onClick={next} autoFocus>
             {last ? "See results" : "Next case"} <ArrowRight aria-hidden /> <Kbd>Enter</Kbd>
           </Btn>
@@ -408,19 +414,43 @@ const drugByName = (name: string) => {
 
 /* ---------------------------------------------------------------- reveal */
 /** "Learn this" for the medicine in the case: its Medicines page, or its Study module. */
-function RxLearn({ q, medIds }: { q: Question; medIds: readonly string[] }) {
+function RxLearn({ q, medIds, skip = [] }: { q: Question; medIds: readonly string[]; skip?: readonly string[] }) {
   const p = q.kind === "puzzle" ? PUZZLES.find((x) => x.id === q.id) : undefined;
   const keys = q.kind === "chain" ? [q.id] : q.kind === "mystery" ? [MYSTERIES.find((x) => x.id === q.id)?.drug ?? ""] : q.kind === "review" ? (reviewById(q.id)?.drugs ?? []) : [p?.a ?? "", p?.b ?? ""];
   const items = keys.filter(Boolean).map((k) => {
     const d = drugById(k) ?? DRUGS.find((x) => x.name.toLowerCase() === k.toLowerCase());
     const id = d?.id ?? k.toLowerCase();
-    return { name: d?.name ?? k, href: medIds.includes(id) ? `/practice/medicines/${id}` : d ? `/study/${d.topic}` : undefined };
-  });
+    return { id, name: d?.name ?? k, href: medIds.includes(id) ? `/practice/medicines/${id}` : d ? `/study/${d.topic}` : undefined };
+  }).filter((x) => !skip.includes(x.id));
   if (!items.length) return null;
   return (
     <div className="flex flex-wrap gap-x-4">
       {items.map((x) => (
         <LearnLink key={x.name} topic={x.name} show={items.length > 1} href={x.href} newTab />
+      ))}
+    </div>
+  );
+}
+
+/**
+ * After a wrong answer: "How olanzapine works", straight to that medicine's
+ * How it works part. It opens in a new tab so the run in progress is kept.
+ */
+function RxHowItWorks({ pages }: { pages: { id: string; name: string }[] }) {
+  if (!pages.length) return null;
+  return (
+    <div className="flex flex-wrap gap-x-4">
+      {pages.map((p) => (
+        <Link
+          key={p.id}
+          href={howItWorksHref(p.id)}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex min-h-11 items-center gap-1.5 rounded-md text-sm font-bold text-link underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+        >
+          How {p.name.toLowerCase()} works <ArrowRight className="size-4 shrink-0" aria-hidden />
+          <span className="sr-only"> (opens in a new tab)</span>
+        </Link>
       ))}
     </div>
   );

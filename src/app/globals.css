@@ -1081,3 +1081,26 @@ html[data-cvd="on"] .bg-destructive {
     border: 1px solid #000 !important;
   }
 }
+
+/* Hand-drawn medicine pictures (src/components/meds/sketch): ink, brand blue
+   and lime on paper, re-inked for dark mode. */
+.sketch {
+  --sk-ink: #1a1a1a;
+  --sk-soft: #8a8a8a;
+  --sk-paper: #ffffff;
+  --sk-blue: #1d44d8;
+  --sk-lime: #cdf24b;
+  --sk-on-lime: #111111;
+  --sk-red: #c4271b;
+  --sk-wash: #e8edff;
+}
+.dark .sketch {
+  --sk-ink: #f2f2f2;
+  --sk-soft: #8f8f8f;
+  --sk-paper: #161616;
+  --sk-blue: #8fa6ff;
+  --sk-lime: #cdf24b;
+  --sk-on-lime: #111111;
+  --sk-red: #ff7b6e;
+  --sk-wash: #1d2547;
+}
