@@ -210,8 +210,8 @@ export async function nextPractice(localHistory: PracticeRecord[] = []): Promise
   const day = istToday();
   let history: PracticeRecord[] = Array.isArray(localHistory) ? localHistory.filter((h) => h && typeof h.id === "string").slice(-50) : [];
   try {
-    const { data, error } = await admin().from(TABLE).select("case_id, score, updated_at").eq("user_id", me.id).eq("mode", "practice").neq("status", "playing").order("updated_at", { ascending: true }).limit(500);
-    if (!error && data?.length) history = data.map((r) => ({ id: String(r.case_id), score: Number(r.score), difficulty: caseById(String(r.case_id))?.difficulty ?? 1 }));
+    const { data, error } = await admin().from(TABLE).select("case_id, score, status, updated_at").eq("user_id", me.id).eq("mode", "practice").neq("status", "playing").order("updated_at", { ascending: true }).limit(500);
+    if (!error && data?.length) history = data.map((r) => ({ id: String(r.case_id), score: Number(r.score), difficulty: caseById(String(r.case_id))?.difficulty ?? 1, solved: r.status === "solved" }));
   } catch {
     /* use the browser's history */
   }

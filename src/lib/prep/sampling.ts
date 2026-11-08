@@ -4,6 +4,7 @@
  */
 import { guessFloor, prob } from "@/lib/learn/model/elo";
 import { CORE_BAND, pickSession, shuffle, type Candidate, type Picked } from "@/lib/learn/model/picker";
+import { orderByHistory, spreadOut, tierOf, type History } from "@/lib/history/order";
 import type { PrepSpec } from "@/content/prep/specs";
 import { PRIOR_B, planWeights } from "./catalog";
 import type { Difficulty, PrepExam, PrepQuestion, Subject } from "./types";
@@ -138,18 +139,30 @@ export type Paper = { specId: string; sections: PaperSection[] };
  * at mixed difficulty (easy to very hard). No question appears twice in one
  * paper.
  */
-export function sampleMock(bank: PrepQuestion[], spec: PrepSpec, rng: Rng, seen: Seen = new Map()): Paper {
+export function sampleMock(bank: PrepQuestion[], spec: PrepSpec, rng: Rng, seen: Seen = new Map(), opts: { history?: History; now?: number } = {}): Paper {
   const used = new Set<string>();
+  const { history } = opts;
+  const now = opts.now ?? 0;
   const sections = spec.sections.map((sec): PaperSection => {
     const fits = (q: PrepQuestion) => sec.subjects.includes(q.subject) && (!sec.types || sec.types.includes(q.type));
     const groups = shuffle(sec.subjects, rng).map((s) => {
       const pool = bank.filter((q) => q.subject === s && fits(q));
+      // An exam pattern prefers questions tagged for its exam; a shared practice mock (exam null) takes any.
+      const exam = spec.exam;
+      if (history) {
+        // Answer history order (src/lib/history): never seen, then wrong, then
+        // seen without an answer, then right (oldest first). Each group keeps
+        // the difficulty mix and the exam tag preference.
+        const ordered = orderByHistory(pool, (q) => q.id, history, now, rng);
+        const group = (q: PrepQuestion) => [0, 1, 1, 2, 3][tierOf(history.get(q.id), now)];
+        // Right answers recycle oldest first, so they skip the difficulty mix.
+        const keep = (list: PrepQuestion[], mix: (l: PrepQuestion[]) => PrepQuestion[]) => (exam ? [...mix(list.filter((q) => q.exams.includes(exam))), ...mix(list.filter((q) => !q.exams.includes(exam)))] : mix(list));
+        return [0, 1, 2, 3].flatMap((g) => keep(ordered.filter((q) => group(q) === g), g === 3 ? (l) => l : mixByDifficulty));
+      }
       const order = (list: PrepQuestion[]) => freshFirst(list, seen, rng);
       // Seen questions only after every fresh one, whatever the exam tag.
       const fresh = pool.filter((q) => !seen.get(q.id));
       const old = pool.filter((q) => seen.get(q.id));
-      // An exam pattern prefers questions tagged for its exam; a shared practice mock (exam null) takes any.
-      const exam = spec.exam;
       const tagged = (list: PrepQuestion[]) => (exam ? [...mixByDifficulty(order(list.filter((q) => q.exams.includes(exam)))), ...mixByDifficulty(order(list.filter((q) => !q.exams.includes(exam))))] : mixByDifficulty(order(list)));
       return [...tagged(fresh), ...tagged(old)];
     });
@@ -165,7 +178,7 @@ export function sampleMock(bank: PrepQuestion[], spec: PrepSpec, rng: Rng, seen:
         }
       }
     }
-    return { title: sec.title, ids: shuffle(ids, rng), wanted: sec.count };
+    return { title: sec.title, ids: history ? spreadOut(shuffle(ids, rng), (x) => x, history, now) : shuffle(ids, rng), wanted: sec.count };
   });
   return { specId: spec.id, sections };
 }

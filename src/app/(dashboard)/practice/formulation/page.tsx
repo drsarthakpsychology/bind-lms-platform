@@ -5,6 +5,7 @@ import { FormulationForge } from "./forge";
 import { FORMULATION_CASES } from "@/lib/practice/formulation-cases";
 import { PeerWall } from "./peer-wall";
 import { requireFeature } from "@/lib/flags";
+import { orderForViewer } from "@/lib/history/viewer";
 import type { FormulationFactor } from "@/lib/practice/formulation";
 
 export const dynamic = "force-dynamic";
@@ -49,7 +50,9 @@ export default async function FormulationPage({ searchParams }: { searchParams: 
       modelNarrative: (r.model_answer as { narrative?: string } | null)?.narrative ?? "",
     }));
   const all = [...FORMULATION_CASES, ...fromDb];
-  const seed = all.find((c) => c.id === pick) ?? all[0];
+  // No case asked for: the first case not done yet, then a weak one, then the oldest (src/lib/history).
+  const firstId = pick && all.some((c) => c.id === pick) ? pick : (await orderForViewer("formulation", all.map((c) => c.id)))[0];
+  const seed = all.find((c) => c.id === firstId) ?? all[0];
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6">

@@ -5,6 +5,7 @@
  * these constantly. "Describe, don't diagnose": AI flags diagnostic terms.
  */
 
+import { orderByHistory, type History } from "@/lib/history/order";
 import type { PrepExam } from "@/lib/prep/types";
 import { MSE_STIMULUS_BANK, stimulusExams } from "./mse-stimuli-bank";
 
@@ -97,7 +98,11 @@ export const MSE_DOMAIN_MODULE: Record<MseDomain, string> = {
 };
 
 /** Up to `n` stimuli for one domain, in a stable shuffled order for this seed (a Level 2 round is a few per domain, not the whole bank). */
-export function domainRound(stimuli: MseStimulus[], domain: MseDomain, n: number, seed: number): MseStimulus[] {
+/**
+ * With an answer history (src/lib/history): stimuli never seen first, then
+ * missed ones, right ones last (oldest first).
+ */
+export function domainRound(stimuli: MseStimulus[], domain: MseDomain, n: number, seed: number, history?: History, now = 0): MseStimulus[] {
   const pool = stimuli.filter((s) => s.domain === domain);
   let h = seed >>> 0;
   const rnd = () => ((h = (Math.imul(h ^ (h >>> 15), 2246822507) + 0x9e3779b9) >>> 0) / 4294967296);
@@ -106,7 +111,7 @@ export function domainRound(stimuli: MseStimulus[], domain: MseDomain, n: number
     const j = Math.floor(rnd() * (i + 1));
     [a[i], a[j]] = [a[j], a[i]];
   }
-  return a.slice(0, n);
+  return (history ? orderByHistory(a, (x) => x.id, history, now, rnd) : a).slice(0, n);
 }
 
 const BASE_MSE_STIMULI: MseStimulus[] = [

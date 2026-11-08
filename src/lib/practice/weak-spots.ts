@@ -5,6 +5,7 @@
  * Input: the rubric JSONB from each sim_score. Output: a ranked list of
  * "weak spots" with a severity 0..1, plus the count of sessions it showed in.
  */
+import { orderByHistory, spreadOut, tierOf, type History } from "@/lib/history/order";
 
 export interface Rubric {
   open_closed_ratio?: number; // 0..5
@@ -161,7 +162,7 @@ const DRILL_TEMPLATES: Record<string, DrillItem[]> = {
  *  If the authored pool for the top skills is shorter than the target, the
  *  drill falls back to the next weak skills' templates until the count is
  *  met: a 10-item drill is the DONE MEANS, not a best-effort. */
-export function generateDrill(spots: WeakSpot[], count = 10): DrillItem[] {
+export function generateDrill(spots: WeakSpot[], count = 10, history?: History, at?: number, rng: () => number = Math.random): DrillItem[] {
   if (spots.length === 0) return [];
   const out: DrillItem[] = [];
   const keys = spots.map((s) => s.key as string); // all weak skills, in rank order
@@ -171,7 +172,18 @@ export function generateDrill(spots: WeakSpot[], count = 10): DrillItem[] {
     ks.flatMap((k) => DRILL_TEMPLATES[k] ?? []);
   const pool = tier(keys.slice(0, 3));
   const fillers = tier(keys.slice(3));
-  const all = [...pool, ...fillers];
+  let all = [...pool, ...fillers];
+  if (history) {
+    const now = at ?? Date.now();
+    // Answer history (src/lib/history): never seen, then missed, right ones
+    // last; the top-3 skills still come before the rest inside each group.
+    const filler = new Set(fillers.map((x) => x.id));
+    const rank = (x: DrillItem) => tierOf(history.get(x.id), now) * 2 + (filler.has(x.id) ? 1 : 0);
+    all = orderByHistory(all, (x) => x.id, history, now, rng).sort((a, b) => rank(a) - rank(b));
+    const picked: DrillItem[] = [];
+    for (const x of all) if (picked.length < count && !picked.some((p) => p.id === x.id)) picked.push(x);
+    return spreadOut(picked, (x) => x.id, history, now);
+  }
   let i = 0;
   while (out.length < count && all.length > 0) {
     const item = all[i % all.length];

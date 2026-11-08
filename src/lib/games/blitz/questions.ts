@@ -8,6 +8,7 @@
 import { ALL_LESSONS, BLITZ_ITEMS } from "@/lib/learn/content";
 import { DIAGNOSES, type Diagnosis } from "../diagnoses";
 import { hash32, mulberry32, permutation } from "../rng";
+import { orderByHistory, type History } from "@/lib/history/order";
 import type { Exam, Level } from "../tags";
 import { FACTS_1 } from "./facts-1";
 import { FACTS_2 } from "./facts-2";
@@ -95,13 +96,27 @@ export const BLITZ_QUESTIONS: BlitzQuestion[] = [...fromLearn(), ...fromDiagnose
  * Question `n` of a run: a seeded deck order, then the options shuffled per
  * question (true/false keeps True first so the keys stay the same).
  */
-export function questionAt(seed: number, n: number, bank: BlitzQuestion[] = BLITZ_QUESTIONS): BlitzQuestion {
-  const order = permutation(seed, bank.length);
-  const q = bank[order[n % bank.length]];
+export function questionAt(seed: number, n: number, bank: BlitzQuestion[] = BLITZ_QUESTIONS, deck?: readonly number[]): BlitzQuestion {
+  // `deck`: bank indexes in answer-history order (never seen first), when the run has one.
+  const valid = deck?.length && deck.every((k) => Number.isInteger(k) && k >= 0 && k < bank.length);
+  const q = valid && deck ? bank[deck[n % deck.length]] : bank[permutation(seed, bank.length)[n % bank.length]];
   if (q.kind === "tf") return q;
   const p = permutation((seed ^ Math.imul(n + 1, 0x9e3779b1)) >>> 0, q.options.length);
   return { ...q, options: p.map((k) => q.options[k]), answer: p.indexOf(q.answer) };
 }
+
+/**
+ * A run's deck: bank indexes in answer-history order (src/lib/history):
+ * never seen first, then missed ones, right ones last (oldest first).
+ */
+export function blitzDeck(history: History, now: number, rng: () => number, size = DECK_SIZE, bank: BlitzQuestion[] = BLITZ_QUESTIONS): number[] {
+  return orderByHistory(bank.map((q, k) => ({ id: q.id, k })), (x) => x.id, history, now, rng)
+    .slice(0, size)
+    .map((x) => x.k);
+}
+
+/** Enough for any one-minute run. */
+export const DECK_SIZE = 150;
 
 export function promptOf(q: BlitzQuestion, n: number): BlitzPrompt {
   return { n, kind: q.kind, prompt: q.prompt, options: q.options };

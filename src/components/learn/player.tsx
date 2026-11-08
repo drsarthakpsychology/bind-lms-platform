@@ -11,6 +11,7 @@ import { haptic } from "@/lib/haptics";
 import { cn } from "@/lib/utils";
 import { Chai, ChaiSays, type ChaiMood } from "./chai";
 import { ItemView, seeded } from "./items";
+import { noteAnswer } from "@/lib/history/client";
 import { setLearnState, useLearnState, initLearnStore } from "@/lib/learn/store";
 import { useExplainView, ViewToggle } from "./view-toggle";
 import s from "./learn.module.css";
@@ -30,22 +31,33 @@ const EMPTY = emptyState();
 
 type Mode = { kind: "lesson"; lessonId: string } | { kind: "review" } | { kind: "blitz" };
 
-export function Player({ mode, serverState, save }: { mode: Mode; serverState: LearnState | null; save: (s: LearnState) => Promise<unknown> }) {
+/**
+ * `order`: the lesson's item ids in answer-history order, picked on the
+ * server (src/lib/history): never-seen first, then wrong, right ones last.
+ */
+export function Player({ mode, serverState, save, order }: { mode: Mode; serverState: LearnState | null; save: (s: LearnState) => Promise<unknown>; order?: string[] }) {
   initLearnStore(serverState, save);
   const state = useLearnState(serverState ?? EMPTY);
   if (mode.kind === "blitz") return <Blitz state={state} />;
-  return <LessonRun mode={mode} state={state} />;
+  return <LessonRun mode={mode} state={state} order={order} />;
+}
+
+/** Lesson items in the given id order; ids not listed keep their place at the end. */
+function inOrder(items: Item[], order: string[] | undefined): Item[] {
+  if (!order?.length) return items;
+  const rank = new Map(order.map((id, i) => [id, i]));
+  return [...items].sort((a, b) => (rank.get(a.id) ?? order.length) - (rank.get(b.id) ?? order.length));
 }
 
 /* ================================================================ lesson */
-function LessonRun({ mode, state }: { mode: Exclude<Mode, { kind: "blitz" }>; state: LearnState }) {
+function LessonRun({ mode, state, order }: { mode: Exclude<Mode, { kind: "blitz" }>; state: LearnState; order?: string[] }) {
   const router = useRouter();
   const view = useExplainView();
   const found = mode.kind === "lesson" ? findLesson(mode.lessonId) : null;
 
   // The question list is fixed when the run starts.
   const [queue, setQueue] = React.useState<Item[]>(() => {
-    if (found) return found.lesson.items;
+    if (found) return inOrder(found.lesson.items, order);
     return dueItems(state, istToday())
       .map((id) => findItem(id))
       .filter((x): x is Item => Boolean(x))
@@ -83,7 +95,10 @@ function LessonRun({ mode, state }: { mode: Exclude<Mode, { kind: "blitz" }>; st
 
   function onDone(correct: boolean, answer: string) {
     setLocked(true);
-    if (!isRetry) setAnswers((a) => [...a, { id: item.id, correct }]);
+    if (!isRetry) {
+      setAnswers((a) => [...a, { id: item.id, correct }]);
+      noteAnswer("learn", item.id, correct);
+    }
     if (correct) {
       const c = combo + 1;
       setCombo(c);

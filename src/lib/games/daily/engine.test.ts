@@ -251,4 +251,20 @@ describe("daily rotation, streak, cohort, practice", () => {
     expect(pickPractice(cases, [], "x1", 0.99)).toBe("x3");
     expect(pickPractice([{ id: "x1", difficulty: 1 }], [], "x1", 0)).toBeNull();
   });
+  it("answer history: once every case is played, missed ones come back, then solved ones oldest first", () => {
+    const cases = [
+      { id: "x1", difficulty: 1 as const },
+      { id: "x2", difficulty: 1 as const },
+      { id: "x3", difficulty: 1 as const },
+    ];
+    const played = [
+      { id: "x1", score: 90, difficulty: 1, solved: true },
+      { id: "x2", score: 0, difficulty: 1, solved: false },
+      { id: "x3", score: 80, difficulty: 1, solved: true },
+    ];
+    for (const roll of [0, 0.5, 0.99]) expect(pickPractice(cases, played, "none", roll)).toBe("x2");
+    const allSolved = played.map((p) => ({ ...p, solved: true, score: 90 }));
+    expect(pickPractice(cases, allSolved, "none", 0.7)).toBe("x1");
+    expect(pickPractice(cases, [...allSolved, { id: "x1", score: 90, difficulty: 1, solved: true }], "none", 0.7)).toBe("x2");
+  });
 });

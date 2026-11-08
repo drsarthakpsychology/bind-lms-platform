@@ -6,7 +6,8 @@ import { ArrowLeft, ArrowRight, ListChecks } from "lucide-react";
 import { istToday, recordTest, type LearnState } from "@/lib/learn/engine";
 import { getLearnState, initLearnStore, setLearnState, useLearnState } from "@/lib/learn/store";
 import type { Card, Mcq } from "@/lib/study/types";
-import { CardDeck, TestRunner } from "./interactive";
+import { CardDeck, TestRunner, mcqKey } from "./interactive";
+import { orderFor, useHistoryPrefetch } from "@/lib/history/client";
 
 /**
  * A checkpoint: case questions first (scored), then "say it out loud" cards.
@@ -41,6 +42,13 @@ export function CheckpointView({
   const st = useLearnState(serverState ?? ({} as LearnState));
   const prev = st.study?.tests?.[cpKey];
   const [stage, setStage] = React.useState<"intro" | "mcq" | "cards" | "end">("intro");
+  // Answer history: each start opens on questions not yet seen, then missed ones (src/lib/history).
+  useHistoryPrefetch("study-check");
+  const [ordered, setOrdered] = React.useState(mcq);
+  const startMcq = () => {
+    setOrdered(orderFor("study-check", mcq, (m) => mcqKey(cpKey, m)));
+    setStage("mcq");
+  };
   const [score, setScore] = React.useState<{ right: number; total: number } | null>(null);
 
   const startCards = () => (recall.length ? setStage("cards") : setStage("end"));
@@ -81,7 +89,7 @@ export function CheckpointView({
           {prev ? <p className="mt-3 text-sm font-semibold">Your best so far: {prev.best} of {prev.total}</p> : null}
           <button
             type="button"
-            onClick={() => (mcq.length ? setStage("mcq") : startCards())}
+            onClick={() => (mcq.length ? startMcq() : startCards())}
             className="btn-sweep mt-5 inline-flex h-12 items-center gap-2 rounded-2xl border-2 border-foreground bg-primary px-6 font-bold text-primary-foreground hard-shadow-sm"
           >
             Start <ArrowRight className="size-5" aria-hidden />
@@ -91,8 +99,9 @@ export function CheckpointView({
 
       {stage === "mcq" ? (
         <TestRunner
-          items={mcq}
+          items={ordered}
           moduleId={cpKey}
+          historyTool="study-check"
           label={`Checkpoint ${n}`}
           autoStart
           onDone={(right, total) => setScore({ right, total })}

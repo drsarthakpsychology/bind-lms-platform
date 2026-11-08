@@ -15,8 +15,9 @@ import { resultView, type MockResultView } from "@/lib/prep/results";
 import { sampleMock, type Paper } from "@/lib/prep/sampling";
 import { cleanChoice, scoreMock } from "@/lib/prep/scoring";
 import { selfScore } from "@/lib/prep/interview";
-import { finishAttempt, loadAttempt, loadProfile, loadSeen, recordPrep, saveInterview, standingFor, startAttempt, type InterviewItem } from "@/lib/prep/server";
-import { saveAnswer, setSaved } from "@/lib/prep/answers";
+import { finishAttempt, loadAttempt, loadProfile, loadSeen, loadSeenRows, recordPrep, saveInterview, standingFor, startAttempt, type InterviewItem } from "@/lib/prep/server";
+import { loadAnswers, saveAnswer, saveAnswers, setSaved } from "@/lib/prep/answers";
+import { prepHistory } from "@/lib/prep/history";
 import { toView, type PrepQView, type PrepReveal } from "@/lib/prep/view";
 import type { PrepQuestion } from "@/lib/prep/types";
 
@@ -79,8 +80,10 @@ export async function startMock(specId: string): Promise<MockPaperView | { error
   const me = await who();
   if (!me) return { error: "Please sign in again." };
   const now = new Date();
-  const seen = me.learner ? await loadSeen(me.id) : new Map<string, number>();
-  const paper = sampleMock(BANK, spec, makeRng((now.getTime() ^ hash(me.id)) >>> 0), seen);
+  const [seen, seenRows, book] = me.learner ? await Promise.all([loadSeen(me.id), loadSeenRows(me.id), loadAnswers(me.id)]) : [new Map<string, number>(), new Map(), null];
+  // Answer history order: never seen first, then wrong, right ones last (oldest first).
+  const history = book ? prepHistory(book.map, seenRows) : undefined;
+  const paper = sampleMock(BANK, spec, makeRng((now.getTime() ^ hash(me.id)) >>> 0), seen, { history, now: now.getTime() });
   if (!paper.sections.some((s) => s.ids.length)) return { error: "Questions for this mock are still being added." };
   const stored = me.learner ? await startAttempt(me.id, paper, spec.minutes, now) : null;
   return {
@@ -136,12 +139,16 @@ export async function submitMock(input: z.input<typeof submitSchema>): Promise<M
   if (!stored) return resultView(spec, score, null, { saved: false, late: false, marked });
   const standing = await standingFor(me.id, spec.id, score.score);
   const saved = await finishAttempt(me.id, stored.id, { answers, marked, times, score, standing, late }, now);
-  // Answered questions feed the model (blanks are not evidence either way).
-  await recordPrep(
-    me.id,
-    score.items.filter((i) => i.chosen !== null).map((i) => ({ q: KEY.get(i.id)!, outcome: i.correct ? 1 : 0, ms: i.ms })),
-    now,
-  );
+  // Answered questions feed the model and the bank's record (blanks are not evidence either way).
+  const answeredItems = score.items.filter((i) => i.chosen !== null);
+  await Promise.all([
+    recordPrep(
+      me.id,
+      answeredItems.map((i) => ({ q: KEY.get(i.id)!, outcome: i.correct ? 1 : 0, ms: i.ms })),
+      now,
+    ),
+    saveAnswers(me.id, answeredItems.map((i) => ({ item: i.id, choice: i.chosen as number, ok: i.correct })), now),
+  ]);
   revalidatePath("/prep");
   return resultView(spec, score, standing, { saved, late, marked });
 }

@@ -23,7 +23,8 @@ export type Seat = { name: string; dx: string; hand: Card[]; built: string[]; bl
 export type Event = { seat: 0 | 1; card: Card; action: "play" | "swap"; ok: boolean; reason: string };
 export type Game = { seed: string; seats: [Seat, Seat]; deck: Card[]; turn: 0 | 1; moves: number; log: Event[]; winner: 0 | 1 | "draw" | null };
 export type Move = { uid: string; action: "play" | "swap" };
-export type Setup = { seed: string; mode: "bot" | "pass"; level: Level; names: [string, string] };
+/** `prefer`: Player 1's diagnosis, picked from the answer history (one not played yet). */
+export type Setup = { seed: string; mode: "bot" | "pass"; level: Level; names: [string, string]; prefer?: string };
 
 export const HAND = 5;
 export const MAX_MOVES = 60;
@@ -34,7 +35,10 @@ const rngFor = (seed: string, tag: string) => makeRng(hashString(`${seed}:${tag}
 export function newGame(s: Setup): Game {
   const rng = rngFor(s.seed, "deal");
   // Pair diagnoses that need a similar number of cards, so neither side starts far ahead.
-  const [a, ...rest] = shuffle(DIAGNOSES, rng);
+  const dealt = shuffle(DIAGNOSES, rng);
+  const wanted = s.prefer ? dealt.findIndex((d) => d.id === s.prefer) : -1;
+  if (wanted > 0) dealt.unshift(...dealt.splice(wanted, 1));
+  const [a, ...rest] = dealt;
   const b = rest.find((d) => Math.abs(d.need - a.need) <= 1) ?? rest[0];
   let n = 0;
   const card = (kind: CardKind, id: string): Card => ({ uid: `c${n++}`, kind, id });

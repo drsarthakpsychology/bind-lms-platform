@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { BLITZ_MS, blitzXp, emptyRun, GRACE_MS, MIN_ANSWER_MS, multiplier, plausible, step, timing } from "./engine";
-import { BLITZ_QUESTIONS, promptOf, questionAt } from "./questions";
+import { BLITZ_QUESTIONS, blitzDeck, promptOf, questionAt } from "./questions";
 
 describe("blitz scoring", () => {
   it("multiplier steps at 3, 6 and 10 in a row", () => {
@@ -70,6 +70,24 @@ describe("blitz questions", () => {
       expect(a.options[a.answer]).toBe(base.options[base.answer]);
     }
     expect(questionAt(1, 0).id === questionAt(2, 0).id && questionAt(1, 1).id === questionAt(2, 1).id).toBe(false);
+  });
+
+  it("answer history: a run's deck starts with unseen questions, right ones held back", () => {
+    const now = 1_000_000;
+    const right = BLITZ_QUESTIONS.slice(0, BLITZ_QUESTIONS.length - 200).map((q) => ({ item: q.id, seen: 1, ok: true as boolean, at: now - 5, due: null }));
+    const wrong = BLITZ_QUESTIONS.slice(-200, -195).map((q) => ({ item: q.id, seen: 1, ok: false as boolean, at: now - 5, due: now - 1 }));
+    const h = new Map([...right, ...wrong].map((r) => [r.item, r]));
+    const deck = blitzDeck(h, now, () => 0.3);
+    const ids = deck.map((k) => BLITZ_QUESTIONS[k].id);
+    expect(ids).toHaveLength(150);
+    expect(ids.every((id) => !h.has(id))).toBe(true);
+    // Fewer unseen than a deck: the missed ones follow, right ones never come first.
+    const small = blitzDeck(h, now, () => 0.3, 198).map((k) => BLITZ_QUESTIONS[k].id);
+    expect(small.slice(195).every((id) => h.get(id)?.ok === false)).toBe(true);
+    expect(questionAt(7, 0, undefined, deck).id).toBe(ids[0]);
+    expect(questionAt(7, 1, undefined, deck).id).toBe(ids[1]);
+    // A broken deck falls back to the seeded order.
+    expect(questionAt(7, 0, undefined, [-1]).id).toBe(questionAt(7, 0).id);
   });
 
   it("the browser's copy has no answer or explanation", () => {

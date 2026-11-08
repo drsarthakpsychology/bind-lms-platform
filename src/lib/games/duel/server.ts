@@ -3,6 +3,8 @@ import { admin, isMissing, namesFor } from "../server";
 import { awardXp, XP_SOURCES } from "@/lib/leagues/xp";
 import { BOT_AFTER_MS, WIN_XP, canAnswer, matchState, pickItems, scoreAnswer, type AnswerRec, type MatchRec, type MatchState } from "./engine";
 import { DUEL_ITEMS, duelItem, type DuelItem } from "./items";
+import { loadHistory, record } from "@/lib/history/server";
+import { mergeHistory, type HistoryRow } from "@/lib/history/order";
 import { canPair, decayed, START_RATING, START_RD, tierFor, update, type Rating } from "./rating";
 import { buildDuelView, type DuelView } from "./view";
 
@@ -74,6 +76,12 @@ export function shownRating(r: RatingRow, now: number): number {
   return Math.round(decayed(asRating(r), now));
 }
 
+/** One player's (or both players') duel history; empty when the table is missing. */
+async function duelHistory(...users: (string | null | undefined)[]) {
+  const books = await Promise.all(users.filter((u): u is string => !!u).map((u) => loadHistory(u, "duel")));
+  return books.reduce((a, b) => mergeHistory(a, b.map), new Map<string, HistoryRow>());
+}
+
 function newSeed() {
   return Math.floor(Math.random() * 2 ** 31);
 }
@@ -112,7 +120,7 @@ export async function join(me: string): Promise<QueueState> {
   const row = check(
     await db
       .from("matches")
-      .insert({ p1: me, status: "waiting", ranked: true, bot: false, items: pickItems(DUEL_ITEMS, seed), seed, p1_rating: myRating, p1_seen: iso(now) })
+      .insert({ p1: me, status: "waiting", ranked: true, bot: false, items: pickItems(DUEL_ITEMS, seed, undefined, await duelHistory(me), now), seed, p1_rating: myRating, p1_seen: iso(now) })
       .select("id")
       .single(),
   ) as { id: string };
@@ -138,10 +146,13 @@ async function claimOpponent(db: Db, me: string, myRating: number, now: number, 
   for (const r of rows) {
     const waited = now - Date.parse(r.created_at);
     if (!canPair(r.p1_rating ?? START_RATING, myRating, waited)) continue;
+    // Re-pick the rounds for both players: items neither has seen come first.
+    const both = await duelHistory(me, r.p1);
+    const items = both.size ? pickItems(DUEL_ITEMS, r.seed, undefined, both, now) : r.items;
     const got = check(
       await db
         .from("matches")
-        .update({ p2: me, status: "active", started_at: iso(now), p2_rating: myRating, p2_seen: iso(now), p1_seen: iso(now) })
+        .update({ p2: me, status: "active", started_at: iso(now), p2_rating: myRating, p2_seen: iso(now), p1_seen: iso(now), items })
         .eq("id", r.id)
         .eq("status", "waiting")
         .is("p2", null)
@@ -196,7 +207,7 @@ export async function startBot(me: string): Promise<DuelView> {
   const row = check(
     await db
       .from("matches")
-      .insert({ p1: me, bot: true, ranked: false, status: "active", items: pickItems(DUEL_ITEMS, seed), seed, p1_rating: shownRating(mine, now), started_at: iso(now), p1_seen: iso(now) })
+      .insert({ p1: me, bot: true, ranked: false, status: "active", items: pickItems(DUEL_ITEMS, seed, undefined, await duelHistory(me), now), seed, p1_rating: shownRating(mine, now), started_at: iso(now), p1_seen: iso(now) })
       .select(COLS)
       .single(),
   ) as MatchRow;
@@ -231,6 +242,8 @@ export async function answer(me: string, matchId: string, round: number, dx: num
   const sc = scoreAnswer(m.seed, round, dx, feature);
   const { error } = await db.from("match_answers").insert({ match_id: row.id, user_id: me, round, dx, feature, correct_dx: sc.dxOk, correct_feature: sc.featureOk, points: sc.points, ms: now - rt.start, answered_at: iso(now) });
   if (error && !/duplicate/i.test(error.message)) return { ok: false, view: null, error: "Couldn't save your answer." };
+  const itemId = m.items[round];
+  if (!error && itemId) await record(me, "duel", itemId, sc.dxOk);
   const col = row.p1 === me ? "p1_seen" : "p2_seen";
   await db.from("matches").update({ [col]: iso(now) }).eq("id", row.id).eq("status", "active");
   return { ok: true, view: await viewFor(db, { ...row, [col]: iso(now) }, me, now) };

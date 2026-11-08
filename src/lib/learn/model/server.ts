@@ -10,6 +10,7 @@ import "server-only";
  * for a learning signal (the next answer corrects it).
  */
 import { createAdminClient } from "@/lib/supabase/server";
+import { loadHistory } from "@/lib/history/server";
 import { topConfusions, type ConfusionPair, type ConfusionRow } from "./confusions";
 import { isCalibrated } from "./elo";
 import { MASTERY_STATES, type Mastery } from "./mastery";
@@ -246,8 +247,8 @@ export async function loadPracticeSession(userId: string, topic?: string | null,
   const empty: ModelRows = { skills: new Map(), items: new Map(), cards: new Map(), confusions: new Map() };
   if (!db || !userId) return { picked: buildPractice(empty, now, rng, size, topic), round };
   try {
-    const rows = await loadRows(db, userId);
-    return { picked: buildPractice(rows, now, rng, size, topic), round };
+    const [rows, history] = await Promise.all([loadRows(db, userId), loadHistory(userId, "learn")]);
+    return { picked: buildPractice(rows, now, rng, size, topic, history.ready ? history.map : undefined), round };
   } catch {
     return { picked: buildPractice(empty, now, rng, size, topic), round };
   }

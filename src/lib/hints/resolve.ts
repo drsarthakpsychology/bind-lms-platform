@@ -19,7 +19,7 @@ export type HintAsk =
   | { game: "rx"; run: string; kind: "chain" | "mystery" | "puzzle" | "review"; id: string; step: number; options: string[] }
   | { game: "mse"; run: string; excerpt: string; idx: number; options: string[] }
   | { game: "ward"; run: string; campaign: string; decision: string; options: string[] }
-  | { game: "comorbid"; run: string; level: 1 | 2 | 3; moves: Move[] };
+  | { game: "comorbid"; run: string; level: 1 | 2 | 3; moves: Move[]; prefer?: string };
 
 export type HintGive = { remove: string[]; pick: string | null; text: string };
 
@@ -72,7 +72,7 @@ export function resolveHint(a: HintAsk): Resolved {
     }
     case "comorbid": {
       if (![1, 2, 3].includes(a.level) || !Array.isArray(a.moves) || a.moves.length > 80) return null;
-      const setup: Setup = { seed: a.run, mode: "bot", level: a.level, names: ["Player 1", "Player 2"] };
+      const setup: Setup = { seed: a.run, mode: "bot", level: a.level, names: ["Player 1", "Player 2"], ...(typeof a.prefer === "string" && a.prefer.length <= 40 ? { prefer: a.prefer } : {}) };
       const { game } = replay(setup, a.moves.filter((m) => m && typeof m.uid === "string" && (m.action === "play" || m.action === "swap")));
       if (game.winner !== null || game.turn !== 0) return null;
       const fit = game.seats[0].hand.find((c) => check(game, 0, c).ok);

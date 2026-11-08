@@ -4,6 +4,7 @@ import * as React from "react";
 import { BackLink } from "@/components/study/back";
 import { Search } from "lucide-react";
 import { emptyState, finishLesson, istToday, type LearnState, type Payout } from "@/lib/learn/engine";
+import { noteAnswer, pickRoundFor, useHistoryPrefetch } from "@/lib/history/client";
 import { CASES, POINTS, WRONG_PENALTY, type Case } from "@/lib/learn/detective";
 import { conceptById } from "@/lib/learn/concepts";
 import { initLearnStore, setLearnState, useLearnState } from "@/lib/learn/store";
@@ -34,7 +35,8 @@ type Round = { c: Case; options: string[] };
 
 function deal(family: "drug" | "disorder" | "mixed"): Round[] {
   const pool = CASES.filter((c) => family === "mixed" || c.family === family);
-  const picked = [...pool].sort(() => roll() - 0.5).slice(0, ROUNDS);
+  // Answer history (src/lib/history): cases not seen yet first, missed ones spaced out, solved ones last.
+  const picked = pickRoundFor("detective", pool, (c) => c.answer, ROUNDS, roll);
   return picked.map((c) => {
     const others = CASES.filter((x) => x.family === c.family && x.answer !== c.answer)
       .sort(() => roll() - 0.5)
@@ -61,6 +63,7 @@ export function Detective({ serverState, save }: { serverState: LearnState | nul
   /** This round's hint: the options it ruled out (null = not used). */
   const [ruledOut, setRuledOut] = React.useState<string[] | null>(null);
   const [hints, setHints] = useHintStatus();
+  useHistoryPrefetch("detective");
 
   function start(f = family) {
     setFamily(f);
@@ -116,6 +119,7 @@ export function Detective({ serverState, save }: { serverState: LearnState | nul
       setScore((x) => x + gained);
       setSolved({ gained, correct: true });
       setAnswers((a) => [...a, { id: round.c.answer, correct: wrong.length === 0 && !ruledOut }]);
+      noteAnswer("detective", round.c.answer, wrong.length === 0 && !ruledOut);
     } else {
       haptic("warning");
       const w = [...wrong, id];
@@ -124,6 +128,7 @@ export function Detective({ serverState, save }: { serverState: LearnState | nul
       else {
         setSolved({ gained: 0, correct: false });
         setAnswers((a) => [...a, { id: round.c.answer, correct: false }]);
+        noteAnswer("detective", round.c.answer, false);
       }
     }
   }

@@ -4,7 +4,8 @@ import { ActivityFrame } from "@/components/study/activity-frame";
 import { ActivityTip } from "@/components/help/activity-tip";
 import { isFeatureEnabled, requireFeature } from "@/lib/flags";
 import { Detective } from "@/components/learn/detective";
-import { randomClinicStart } from "@/lib/practice/clinic";
+import { CLINICS, randomClinicStart } from "@/lib/practice/clinic";
+import { orderForViewer } from "@/lib/history/viewer";
 import { TwoMinuteClinic } from "../two-minute-clinic/clinic";
 import { loadLearnState, saveLearnState } from "../../study/actions";
 import { cn } from "@/lib/utils";
@@ -49,12 +50,14 @@ export default async function DetectivePage({ searchParams }: { searchParams: Pr
   if (clinic) {
     // A fresh starting line on each visit (the page is rendered per request).
     const start = randomClinicStart();
+    // Answer history (src/lib/history): one-liners not seen yet first.
+    const order = await orderForViewer("two-minute", CLINICS.map((c) => c.id));
     return (
       <ActivityFrame fallback="/practice" title="Two-minute clinic">
         {tabs}
         <ActivityTip id="two-minute-clinic" label="How it works" steps={["Read the line, then start the clock.", "Type your top two or three diagnoses and the one question you would ask next.", "Compare with the expert and read the lesson."]} />
         <div className="p-4 lg:p-6">
-          <TwoMinuteClinic start={start} />
+          <TwoMinuteClinic start={start} order={order} />
         </div>
       </ActivityFrame>
     );

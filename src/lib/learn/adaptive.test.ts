@@ -50,10 +50,12 @@ describe("adaptive engine", () => {
     expect(ds.every((x) => x.id !== "anhedonia")).toBe(true);
   });
 
-  it("builds sessions: relearn first, then similar new concepts", () => {
+  it("builds sessions: a new concept first, the missed one back in the session, similar new concepts", () => {
     const d = recordAnswer(empty, "anhedonia", false, today, "avolition");
     const s = buildSession(d, "psychopathology", today, rng, 8);
-    expect(s[0]).toBe("anhedonia");
+    expect(s[0]).not.toBe("anhedonia");
+    expect(s).toContain("anhedonia");
+    expect(buildSession(d, "psychopathology", today, () => 0.1, 8)[0]).not.toBe(buildSession(d, "psychopathology", today, () => 0.9, 8)[0]);
     expect(s).toHaveLength(8);
     expect(new Set(s).size).toBe(8);
     const similar = similarConcepts(conceptById("anhedonia")!).map((c) => c.id);
