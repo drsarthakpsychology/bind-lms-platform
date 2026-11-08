@@ -60,7 +60,7 @@ export function MseLab({ serverState, save, board, submit }: { serverState: Lear
     const seed = `${Date.now()}`;
     const rng = makeRng(hashString(seed));
     // Answer history: an excerpt not seen yet first, then a missed one (src/lib/history).
-    const e = pickExcerpt(level, new Set(), rng, historyFor("mse-lab"), Date.now())!;
+    const e = pickExcerpt(level, new Set(), rng, historyFor("mse-lab"))!;
     setBestEver(readLocal(BEST_KEY, 0));
     setDone(null);
     setPlay({ seed, level, seen: [e.id], excerpt: e.id, idx: 0, tags: [], results: [], pick: null, revealed: false, streak: 0, best: 0, points: 0, scores: [], tagsDone: 0, tagsScore: 0, gained: 0, ruled: {} });
@@ -160,7 +160,7 @@ function Round({ play, setPlay, onExcerptDone, onFinish }: { play: Play; setPlay
     }
     const level = nextLevel(play.level, scores);
     const rng = makeRng(hashString(`${play.seed}:${play.seen.length}`));
-    const nx = pickExcerpt(level, new Set(play.seen), rng, historyFor("mse-lab"), Date.now());
+    const nx = pickExcerpt(level, new Set(play.seen), rng, historyFor("mse-lab"));
     if (!nx) {
       onFinish(done);
       return;

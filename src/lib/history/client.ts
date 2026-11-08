@@ -19,6 +19,20 @@ const MAX_LOCAL = 2000;
 
 type Stored = { o: string | null; r: Record<string, [number, 0 | 1 | null, number, number | null]> };
 
+/** How the browser reaches the server (the server actions in ./actions; tests swap it). */
+type Transport = {
+  load: (tool: HistoryTool) => Promise<{ owner: string | null; rows: HistoryRow[] }>;
+  record: (tool: HistoryTool, answers: { item: string; correct: boolean | null }[]) => Promise<unknown>;
+};
+const viaActions: Transport = {
+  load: async (tool) => (await import("./actions")).loadMyHistory(tool),
+  record: async (tool, answers) => (await import("./actions")).recordMyAnswers(tool, answers),
+};
+let transport: Transport = viaActions;
+export function setHistoryTransport(t?: Transport) {
+  transport = t ?? viaActions;
+}
+
 const server = new Map<string, Map<string, HistoryRow>>();
 const fetching = new Map<string, Promise<void>>();
 
@@ -57,8 +71,7 @@ export function prefetchHistory(tool: HistoryTool): Promise<void> {
   if (had) return had;
   const p = (async () => {
     try {
-      const { loadMyHistory } = await import("./actions");
-      const res = await loadMyHistory(tool);
+      const res = await transport.load(tool);
       if (!res.owner) return;
       const local = readLocal(tool);
       // Another student used this browser: drop their copy.
@@ -103,9 +116,7 @@ export function noteAnswers(tool: HistoryTool, answers: readonly { item: string;
   }
   writeLocal(tool, local.owner, local.map);
   if (opts.server === false) return;
-  void import("./actions")
-    .then(({ recordMyAnswers }) => recordMyAnswers(tool, list.map((a) => ({ item: a.item, correct: a.correct }))))
-    .catch(() => {});
+  void transport.record(tool, list.map((a) => ({ item: a.item, correct: a.correct }))).catch(() => {});
 }
 
 export function noteAnswer(tool: HistoryTool, item: string, correct: boolean | null, opts: { server?: boolean } = {}) {
