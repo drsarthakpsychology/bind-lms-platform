@@ -16,6 +16,12 @@ import { Summary } from "./player";
 import s from "./learn.module.css";
 import { useReaction } from "@/components/reactions/use-reaction";
 import { AnswerStamp, HalftoneCorner } from "@/components/reactions/graphics";
+import { moodForScore } from "@/lib/reactions/stickers";
+
+/** The finish sticker: happy for a good round, sad for a poor one. */
+function roundMood(answers: { correct: boolean }[]) {
+  return moodForScore(answers.filter((a) => a.correct).length, answers.length);
+}
 
 const EMPTY = emptyState();
 function roll() {
@@ -57,7 +63,7 @@ export function ScenarioGame({ serverState, save, noteId }: { serverState: Learn
     setResult(null);
   }
 
-  if (result) return <Summary result={result} state={state} confetti={[]} title="What would you do?" onAgain={start} />;
+  if (result) return <Summary result={result} state={state} confetti={[]} title="What would you do?" mood={roundMood(answers)} onAgain={start} />;
   if (!deck) {
     return (
       <div className="mx-auto max-w-xl space-y-6 py-8 text-center">
@@ -221,7 +227,7 @@ export function TermsGame({ serverState, save }: { serverState: LearnState | nul
   const [result, setResult] = React.useState<Payout | null>(null);
   const reaction = useReaction();
 
-  if (result) return <Summary result={result} state={state} confetti={[]} title="Say it clinically" onAgain={() => { reaction.reset(); setRound(buildRound()); setI(0); setAnswers([]); setResult(null); }} />;
+  if (result) return <Summary result={result} state={state} confetti={[]} title="Say it clinically" mood={roundMood(answers)} onAgain={() => { reaction.reset(); setRound(buildRound()); setI(0); setAnswers([]); setResult(null); }} />;
   if (!round) {
     return (
       <div className="mx-auto max-w-xl space-y-6 py-8 text-center">
