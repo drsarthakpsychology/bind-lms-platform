@@ -79,6 +79,10 @@ A partial agonist binds the receptor and produces only part of the full response
 | Main side effect | Akathisia, nausea, insomnia | Less akathisia; mild weight gain | Akathisia; very long-lived metabolite |
 | Approved uses (US) | Schizophrenia, mania, add-on in depression, irritability in autism, Tourette's | Schizophrenia, add-on in depression, agitation in Alzheimer's dementia | Schizophrenia, mania, bipolar depression, add-on in depression |
 
+:::widget figure
+{"id": "partial-agonist"}
+:::
+
 ### Switching onto a partial agonist
 Moving from a strong blocker (such as olanzapine or haloperidol) to aripiprazole needs care. Months of D2 blockade can make D2 receptors more numerous and more sensitive. Replacing a full blocker with a drug that partly stimulates them can cause a rebound: restlessness, insomnia and occasionally a worsening of psychosis. A gradual cross-taper, sometimes over weeks, usually avoids this.
 
@@ -104,6 +108,10 @@ Q: A man on aripiprazole develops new urges to gamble. The best explanation is:
 
 ## 5.3 Beyond dopamine: serotonin, glutamate and muscarinic drugs [core][advanced]
 For seventy years every antipsychotic has worked mainly by turning down D2 signalling. That changed in September 2024, when the US approved **xanomeline with trospium**, the first schizophrenia medicine that does not block dopamine receptors directly.
+
+:::widget figure
+{"id": "gpcr-scene"}
+:::
 
 ### How the muscarinic approach works
 - **Xanomeline** is an agonist at muscarinic **M1 and M4** receptors in the brain. M4 receptors sit on neurons in the striatum and on the inputs to the dopamine cell bodies; switching them on reduces dopamine release in the striatum from upstream. M1 action in the cortex may help thinking.
@@ -171,6 +179,10 @@ Q: A drug company proposes an antipsychotic with no D2 action. Which side effect
 :::
 
 ## 5.4 Pharmacokinetics of antipsychotics [core][advanced]
+
+:::widget figure
+{"id": "liver-cell-cyp"}
+:::
 ### Which enzyme matters for which drug
 | Drug | Main route of clearance | What changes levels |
 |---|---|---|

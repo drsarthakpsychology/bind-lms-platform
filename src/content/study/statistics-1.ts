@@ -402,6 +402,10 @@ Many psychological measures, when collected from large groups, form a **normal (
 - Fixed areas: about **68.26%** of cases lie within 1 SD of the mean, **95.44%** within 2 SD, and **99.72%** within 3 SD. Also: 95% lie within **±1.96 SD** and 99% within **±2.58 SD**. The points of inflection are at ±1 SD.
 - Kurtosis is **mesokurtic**.
 
+:::widget figure
+{"id": "normal-curve-scales"}
+:::
+
 ### Skewness and kurtosis
 - **Skewness** is asymmetry. Pearson's coefficient: Sk = 3(M − Md) ÷ SD. Positive values mean a right tail; negative, a left tail; zero, symmetry.
 - **Kurtosis** is peakedness or tail weight. **Leptokurtic**: tall, narrow peak with heavy tails. **Platykurtic**: flat. **Mesokurtic**: normal. The percentile coefficient Ku = Q ÷ (P90 − P10) is about **0.263** for a normal curve: higher means platykurtic, lower means leptokurtic. (Software reports "excess kurtosis", where normal = 0.)
@@ -436,6 +440,10 @@ A **percentile rank** is the percentage of cases at or below a score. Percentile
 
 :::widget curve
 {"kind": "normal", "title": "Explore the normal curve", "caption": "Move the z slider: watch the shaded area, the percentile and the matching IQ score. Try z = 1 (84th percentile), z = 1.96 (top 2.5%) and z = −1.5."}
+:::
+
+:::widget figure
+{"id": "normal-curve-scales", "quiz": true}
 :::
 
 ### Reading a z table

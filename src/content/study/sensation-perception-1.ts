@@ -316,6 +316,10 @@ In Germany in the 1910s and 1920s, Max Wertheimer, Wolfgang Köhler and Kurt Kof
 {"kind": "figure-ground", "caption": "Is it a vase or two faces? Flip it. You can see either, but never both at the same moment: the brain picks one region as figure and treats the other as ground."}
 :::
 
+:::widget figure
+{"id": "kanizsa-triangle"}
+:::
+
 ### Seeing depth
 We judge distance from **cues**. Some need only one eye (**monocular cues**): nearer objects block farther ones, parallel railway lines seem to meet in the distance, far mountains look hazy and blue. Others need both eyes (**binocular cues**): each eye sees a slightly different view, and the brain uses the difference.
 
@@ -325,6 +329,10 @@ We judge distance from **cues**. Some need only one eye (**monocular cues**): ne
 
 :::widget illusion
 {"kind": "ponzo", "caption": "Two equal bars between converging lines. Linear perspective tells the brain the upper bar is farther away, so size constancy makes it look bigger."}
+:::
+
+:::widget figure
+{"id": "ponzo"}
 :::
 
 ### Constancy
@@ -362,6 +370,10 @@ Q: In Rubin's vase you see a vase, then two faces, but never both together. This
 - *Figure-ground organisation
 - Shape constancy across views
 > One region is figure and the other ground; they switch, but cannot both be figure at once.
+:::
+
+:::widget figure
+{"id": "muller-lyer"}
 :::
 
 ## 1.5 Level check · Starting [core][starting]

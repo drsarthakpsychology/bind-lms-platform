@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import { makeRng } from "@/lib/learn/model/picker";
 import { ALL_SPECS, EXAM_SPECS, PRACTICE_SPECS, SUBJECT_GROUPS, specById } from "@/content/prep/specs";
 import { SUBJECTS, type PrepQuestion } from "./types";
-import { EXAM_TRACKS_ENABLED, GOALS, PREP_EXAMS, PREP_TITLE, SUBJECT_MODULE, activeGoal, learnTarget, planWeights, prepSkill, specVisible, studyHref, subjectOfSkill, subjectWeights, topicModules, unifiedWeights } from "./catalog";
+import { EXAM_TRACKS_ENABLED, GOALS, PREP_ONBOARDING_ENABLED, PREP_EXAMS, PREP_TITLE, SUBJECT_MODULE, activeGoal, learnTarget, planWeights, prepSkill, specVisible, studyHref, subjectOfSkill, subjectWeights, topicModules, unifiedWeights } from "./catalog";
 import { allocate, diagnosticSize, mixByDifficulty, pickPractice, reviewQueue, sampleDiagnostic, sampleMock, stepUp } from "./sampling";
 import { bestPerUser, scoreDiagnostic, scoreMock, standing } from "./scoring";
 import { buildPlan, nextActions, statusOf, type PathState, type SkillSnap } from "./plan";
@@ -336,7 +336,18 @@ describe("plan", () => {
     learnHref: (s) => `/study/${s}`,
     now: NOW,
     tracks: true,
+    onboarding: true,
     ...over,
+  });
+  it("starting checks and track record are switched off for now", () => {
+    expect(PREP_ONBOARDING_ENABLED).toBe(false);
+  });
+  it("with onboarding off nothing is asked first: no exam picker, no starting check", () => {
+    const off = nextActions(base({ onboarding: false, goal: null, diagnosed: false }));
+    expect(off.some((x) => x.kind === "goal" || x.kind === "diagnostic")).toBe(false);
+    expect(off.length).toBeGreaterThan(0);
+    const dflt = nextActions(base({ onboarding: undefined, tracks: false, goal: null, diagnosed: false, plan: buildPlan(null, new Map(), NOW) }));
+    expect(dflt.some((x) => x.kind === "goal" || x.kind === "diagnostic" || ("href" in x && x.href === "/prep/diagnostic"))).toBe(false);
   });
   it("shows only one step before the goal and before the diagnostic (exam tracks)", () => {
     expect(nextActions(base({ goal: null }))).toEqual([expect.objectContaining({ kind: "goal" })]);

@@ -64,6 +64,10 @@ Q: The main reason "low-risk" labels are dangerous is that:
 {"title": "The stress system in suicidal behaviour", "caption": "Watch the last step. A stress system that fails to switch off has been linked to suicide: in older studies, people whose cortisol was not suppressed by dexamethasone had higher later suicide rates. Early adversity may set this system to over-react for life."}
 :::
 
+:::widget figure
+{"id": "stress-vulnerability"}
+:::
+
 ### Social and structural
 Economic shocks, debt, unemployment, discrimination, gender-based violence, and access to lethal means shape population suicide rates. Interventions at this level (means restriction, debt relief, school programmes, alcohol policy) often prevent more deaths than individual treatment alone.
 

@@ -28,9 +28,10 @@ import { INTERVIEWS as i_ethics } from "./interviews/ethics";
 import { INTERVIEWS as i_motivation } from "./interviews/motivation";
 import { INTERVIEWS as i_currentAffairs } from "./interviews/current-affairs";
 import { INTERVIEWS as i_assessment } from "./interviews/assessment";
+import { withVisuals } from "./visuals";
 
-/** Every prep question. Add questions in the subject files, not here. */
-export const ALL_QUESTIONS: PrepQuestion[] = [...q_researchMethods, ...q_statistics, ...q_psychometricsAssessment, ...q_cognitive, ...q_perceptionAttention, ...q_learningMotivationEmotion, ...q_biological, ...q_developmental, ...q_social, ...q_personalityTheories, ...q_historySystems, ...q_psychopathology, ...q_clinicalTherapies, ...q_counselling, ...q_health, ...q_positive, ...q_organisational, ...q_indianPsychology, ...q_ethicsLaw, ...q_psychopharmacology, ...q_clinicalPsychiatry, ...q_ugcPaper1];
+/** Every prep question, with its diagram attached (see ./visuals). Add questions in the subject files, not here. */
+export const ALL_QUESTIONS: PrepQuestion[] = withVisuals([...q_researchMethods, ...q_statistics, ...q_psychometricsAssessment, ...q_cognitive, ...q_perceptionAttention, ...q_learningMotivationEmotion, ...q_biological, ...q_developmental, ...q_social, ...q_personalityTheories, ...q_historySystems, ...q_psychopathology, ...q_clinicalTherapies, ...q_counselling, ...q_health, ...q_positive, ...q_organisational, ...q_indianPsychology, ...q_ethicsLaw, ...q_psychopharmacology, ...q_clinicalPsychiatry, ...q_ugcPaper1]);
 
 /** Every mock-interview question. */
 export const ALL_INTERVIEWS: InterviewQuestion[] = [...i_academic, ...i_clinicalVignette, ...i_research, ...i_ethics, ...i_motivation, ...i_currentAffairs, ...i_assessment];

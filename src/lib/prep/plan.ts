@@ -3,7 +3,7 @@
  * pathway, never more than three actions at once). Pure.
  */
 import { decayedTheta, prob } from "@/lib/learn/model/elo";
-import { EXAM_TRACKS_ENABLED, SUBJECT_TITLE, planWeights } from "./catalog";
+import { EXAM_TRACKS_ENABLED, PREP_ONBOARDING_ENABLED, SUBJECT_TITLE, planWeights } from "./catalog";
 import { diagnosticSize } from "./sampling";
 import type { PrepExam, Subject } from "./types";
 
@@ -66,6 +66,8 @@ export type PathState = {
   goal: PrepExam | null;
   /** Exam tracks on? Off: no goal step, interviews are for everyone. Defaults to EXAM_TRACKS_ENABLED. */
   tracks?: boolean;
+  /** Starting check and goal step on? Off: never asked, the steps start at once. Defaults to PREP_ONBOARDING_ENABLED. */
+  onboarding?: boolean;
   diagnosed: boolean;
   plan: PlanTopic[];
   /** Missed questions due for review. */
@@ -86,14 +88,16 @@ export const REVIEW_AFTER = 3;
 const WEEK = 7 * 86_400_000;
 
 /**
- * At most three next steps, most important first. Before the diagnostic (and,
- * with exam tracks on, before a goal) there is only ever one thing to do.
+ * At most three next steps, most important first. With onboarding on, before
+ * the diagnostic (and, with exam tracks on, before a goal) there is only ever
+ * one thing to do. With it off nothing is asked first.
  */
 export function nextActions(st: PathState, max = 3): NextAction[] {
   const tracks = st.tracks ?? EXAM_TRACKS_ENABLED;
+  const onboarding = st.onboarding ?? PREP_ONBOARDING_ENABLED;
   const goal = tracks ? st.goal : null;
-  if (tracks && !goal) return [{ kind: "goal", title: "Pick your exam", why: "So everything here fits it", href: "/prep" }];
-  if (!st.diagnosed) {
+  if (onboarding && tracks && !goal) return [{ kind: "goal", title: "Pick your exam", why: "So everything here fits it", href: "/prep" }];
+  if (onboarding && !st.diagnosed) {
     const n = diagnosticSize(goal);
     return [{ kind: "diagnostic", title: "Take the starting check", why: `${n} questions ${goal ? "across your syllabus" : "across every subject"}, about ${n} minutes. It builds your plan.`, href: "/prep/diagnostic" }];
   }

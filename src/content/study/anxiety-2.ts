@@ -169,6 +169,10 @@ Q: Propranolol before a performance mainly helps by:
 > It blocks peripheral beta-adrenergic effects; it does not treat generalised social anxiety.
 :::
 
+:::widget figure
+{"id": "benzo-gabaa"}
+:::
+
 ## 3.3 CBT step by step, stepped care and special groups [core][beginner]
 ### Stepped care
 Not everyone needs the most intensive treatment first.
@@ -404,11 +408,19 @@ Q: Which structure is most linked to the recall of extinction learning?
 ### SSRIs: why late, and why jittery at first
 Blocking the serotonin transporter raises serotonin first around the cell bodies in the raphe, where it acts on **5-HT1A autoreceptors** that slow firing. Over weeks these autoreceptors **desensitise**, firing recovers, and serotonin release in the forebrain rises. The delay in benefit tracks this adaptation. Early anxiety and agitation are thought to involve stimulation of **5-HT2C** (and 5-HT2A, 5-HT3) receptors before adaptation, which is why starting low helps.
 
+:::widget figure
+{"id": "ssri-synapse"}
+:::
+
 ### Benzodiazepines
 - The GABA-A receptor is a chloride channel built from five subunits, commonly two alpha, two beta and one gamma-2. Benzodiazepines bind between an **alpha** and the **gamma-2** subunit, as **positive allosteric modulators**: they increase the **frequency** of channel opening when GABA binds. (Barbiturates increase the **duration** of opening and, at high doses, open the channel directly, which is why they are far more dangerous in overdose.)
 - The alpha subunit shapes the effect: **alpha-1** sedation, amnesia and ataxia; **alpha-2 and alpha-3** anxiolysis and muscle relaxation; **alpha-5** learning and memory.
 - **Tolerance** involves changes in subunit composition and receptor uncoupling; withdrawal reflects a system that has adapted to constant enhancement.
 - Flumazenil is a benzodiazepine-site antagonist (it can precipitate seizures in dependent people).
+
+:::widget figure
+{"id": "benzo-gabaa", "quiz": true}
+:::
 
 ### Other anxiolytics
 | Drug | Mechanism |

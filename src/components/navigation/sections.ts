@@ -132,7 +132,8 @@ const PRACTICE_RUNS = /^\/practice\/(?:daily|detective|scenarios|terms|mse|judgm
  * bottom bar steps aside (the page's own Back row is the way out) and the
  * desktop sidebar folds to icons (UX audit, Nov 2026, section 4).
  * - Exam Prep: a topic set, a subject's practice set, Smart practice and its
- *   tools, Saved, Wrong, review, the diagnostic, interview, a mock in progress.
+ *   tools, Saved, Wrong, review, the diagnostic, interview, a mock in progress,
+ *   one long answer.
  * - Study: a section, a checkpoint, one note, one Quick Reference entry, weak
  *   topic practice.
  * - Every game (not the hubs) and the Practice tools that have their own
@@ -143,6 +144,7 @@ export function isRunPath(pathname: string): boolean {
   return (
     /^\/prep\/(?:smart|saved|wrong|review|diagnostic|interview)(?:\/.*)?$/.test(pathname) ||
     /^\/prep\/practice\/[^/]+$/.test(pathname) ||
+    /^\/prep\/[^/]+\/long\/[^/]+\/[^/]+$/.test(pathname) ||
     /^\/prep\/mock\/(?!result$)[^/]+$/.test(pathname) ||
     /^\/prep\/(?!practice\/|mock\/)[^/]+\/[^/]+$/.test(pathname) ||
     /^\/study\/(?!map\/|notes\/|reference\/)[^/]+\/.+/.test(pathname) ||

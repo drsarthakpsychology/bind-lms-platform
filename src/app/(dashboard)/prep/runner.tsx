@@ -9,6 +9,7 @@ import { cn } from "@/lib/utils";
 import { checkAnswer, revealAnswer, toggleSaved } from "./actions";
 import { KeysHint, Options, QuestionBody, useShortcuts } from "./question";
 import { btnInk, btnPlain, btnPrimary, card } from "./ui";
+import { PrepVisualView } from "./visual";
 
 /** A revealed question: `correct` is null when the student asked to see the answer without answering. */
 type Result = PrepReveal & { correct: boolean | null; picked: number | null };
@@ -240,6 +241,7 @@ export function QuestionRunner({ questions, start = 0, prior = {}, saved: initia
             Correct answer: {result.answer + 1}. {q.options[result.answer]}
           </p>
           <p className="whitespace-pre-line text-foreground">{result.explanation}</p>
+          {result.visual ? <PrepVisualView visual={result.visual} /> : null}
           <div className="grid gap-2 sm:grid-cols-2">
             <Link href={result.learnHref} className={cn(btnPlain, "text-foreground")}>
               <BookOpen className="size-4" aria-hidden /> Learn this

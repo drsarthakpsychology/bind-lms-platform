@@ -2,7 +2,7 @@
  * What the browser may see of a question before it is answered: everything
  * except the answer, the explanation and the admin-only source note.
  */
-import type { PrepQuestion, QuestionType, Subject } from "./types";
+import type { PrepQuestion, PrepVisual, QuestionType, Subject } from "./types";
 
 export type PrepQView = {
   id: string;
@@ -31,4 +31,4 @@ export function toView(q: PrepQuestion): PrepQView {
 }
 
 /** After answering: the answer and why (never `ref`). */
-export type PrepReveal = { id: string; answer: number; explanation: string; learnHref: string };
+export type PrepReveal = { id: string; answer: number; explanation: string; learnHref: string; visual?: PrepVisual };

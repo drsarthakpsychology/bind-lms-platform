@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Bookmark, Clock, MessagesSquare, Sparkles, type LucideIcon } from "lucide-react";
 import { requireFeature } from "@/lib/flags";
-import { PREP_EXAMS, PREP_TITLE } from "@/lib/prep/catalog";
+import { PREP_EXAMS, PREP_ONBOARDING_ENABLED, PREP_TITLE } from "@/lib/prep/catalog";
 import { loadHome } from "@/lib/prep/path";
+import { longCount } from "@/lib/prep/long-server";
 import { cn } from "@/lib/utils";
 import { ListRow, PrepFrame, PrepHero, card, pctText } from "./ui";
 import { prepViewer } from "./viewer";
@@ -40,7 +41,7 @@ export default async function PrepPage() {
             Pick up where you left off <ArrowRight className="size-4" aria-hidden />
           </span>
         </Link>
-      ) : (
+      ) : PREP_ONBOARDING_ENABLED ? (
         <Link href="/prep/smart" className="group block rounded-md border-2 border-foreground bg-primary p-4 text-primary-foreground hard-shadow-md transition-transform duration-150 hover:-translate-y-0.5 motion-reduce:transition-none motion-reduce:hover:translate-y-0 focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60 sm:p-5">
           <span className="text-eyebrow">Start here</span>
           <span className="mt-1 block text-xl font-bold leading-tight sm:text-2xl">10 questions to get going</span>
@@ -49,7 +50,7 @@ export default async function PrepPage() {
             Start <ArrowRight className="size-4" aria-hidden />
           </span>
         </Link>
-      )}
+      ) : null}
 
       <nav aria-label="Practice tools" className="grid grid-cols-1 gap-2.5 min-[420px]:grid-cols-2">
         <Tool href="/prep/smart" icon={Sparkles} title="Smart practice" text="10 from your weak topics and missed questions" />
@@ -57,6 +58,8 @@ export default async function PrepPage() {
         <Tool href="/prep/interview" icon={MessagesSquare} title="Mock interview" text="Practise for the panel" />
         <Tool href={home.saved || !home.wrong ? "/prep/saved" : "/prep/wrong"} icon={Bookmark} title="Saved and wrong" text={home.canSave ? `${home.saved} saved · ${home.wrong} wrong` : `${home.wrong} to look at again`} />
       </nav>
+
+      <ListRow href="/prep/long" title="Long answers" sub={`${longCount()} written answers with model answers`} />
 
       <section aria-labelledby="subjects" className="space-y-3">
         <h2 id="subjects" className="text-h2">

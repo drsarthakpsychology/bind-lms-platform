@@ -3,6 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, BookOpen, Check, Circle, Clock, Flag, Trophy, TriangleAlert, X } from "lucide-react";
+import { PREP_ONBOARDING_ENABLED } from "@/lib/prep/catalog";
 import { clock } from "@/lib/prep/exam";
 import type { MockResultView, ReviewRow } from "@/lib/prep/results";
 import { cn } from "@/lib/utils";
@@ -62,9 +63,10 @@ export function MockResult({ view }: { view: MockResultView }) {
 
       <section aria-labelledby="standing" className={cn(card, "space-y-2")}>
         <h2 id="standing" className="text-h3">
-          Among VIBHA students
+          {PREP_ONBOARDING_ENABLED ? "Among VIBHA students" : "Time"}
         </h2>
-        {!view.saved ? (
+        {/* Rank among students is the track record: shown only with PREP_ONBOARDING_ENABLED. */}
+        {!PREP_ONBOARDING_ENABLED ? null : !view.saved ? (
           <p className="text-muted-foreground">This attempt wasn&apos;t saved, so it has no rank.</p>
         ) : !st || st.percentile === null ? (
           <p>You&apos;re the first VIBHA student to finish this mock. Your rank appears as others take it.</p>
@@ -185,7 +187,7 @@ export function MockResult({ view }: { view: MockResultView }) {
 
       <div className="grid gap-2.5 sm:grid-cols-2">
         <Link href="/prep" className={btnPrimary}>
-          Back to your plan <ArrowRight className="size-4" aria-hidden />
+          Back to Exam Prep <ArrowRight className="size-4" aria-hidden />
         </Link>
         <Link href="/prep/mock" className={btnPlain}>
           <ArrowLeft className="size-4" aria-hidden /> All mocks

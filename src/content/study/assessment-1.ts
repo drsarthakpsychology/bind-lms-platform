@@ -418,6 +418,10 @@ Many human abilities form a **bell-shaped** curve: most people near the middle, 
 }
 :::
 
+:::widget figure
+{"id": "normal-curve-scales"}
+:::
+
 ### Kinds of standard scores
 | Score | Mean | SD | Where you meet it |
 |---|---|---|---|
@@ -435,6 +439,10 @@ Many human abilities form a **bell-shaped** curve: most people near the middle, 
  "title": "Find the IQ bands on the curve",
  "caption": "Drag to IQ 130, then 70. Each is two standard deviations from the mean, and each tail holds only about 2 per cent of people. Then find the borderline band (70 to 79) and see how many people sit there."
 }
+:::
+
+:::widget figure
+{"id": "normal-curve-scales", "quiz": true}
 :::
 
 ### IQ classification (as commonly used)
@@ -665,6 +673,10 @@ A highly **S**e**n**sitive test, when **N**egative, rules **out**. A highly **Sp
   }
  ]
 }
+:::
+
+:::widget figure
+{"id": "roc-curve"}
 :::
 
 ### Base rates change everything

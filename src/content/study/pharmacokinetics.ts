@@ -144,6 +144,10 @@ Q: Medicine A has a half-life of 6 hours, medicine B of 6 days. Which is TRUE?
 > 4 to 5 half-lives either way.
 :::
 
+:::widget figure
+{"id": "pk-single-dose"}
+:::
+
 ## 0.4 Receptors, doses and the shape of a response [core][starting]
 Most medicines act by fitting a **target**: a receptor, a pump (transporter), an enzyme or an ion channel. A receptor is a lock; the body's own messenger is the key.
 
@@ -177,6 +181,10 @@ Q: Drug X needs 2 mg and drug Y needs 200 mg for the same antipsychotic effect, 
 - Y is more potent
 - Y is more effective
 > Potency is about milligrams; efficacy is about the ceiling.
+:::
+
+:::widget figure
+{"id": "partial-agonist"}
 :::
 
 ## 0.5 Level check · Starting [starting]
@@ -310,6 +318,10 @@ Bioavailability is reduced by:
 
 :::widget journey
 {"drug": "ketamine and esketamine", "target": "NMDA receptors in the prefrontal cortex", "routes": ["oral", "nasal", "iv"], "notes": {"mouth": "Swallowed ketamine is cheap and easy, but watch what happens next.", "gut": "It is absorbed well from the gut.", "liver": "Then the first pass: the liver turns most of it into norketamine before it reaches the body. Only about a fifth arrives unchanged, which is why ketamine is not usually given as a tablet.", "nose": "Nasal esketamine is absorbed through the lining of the nose, skipping most of the first pass: about half the dose reaches the blood, within minutes.", "vein": "An IV infusion delivers the whole dose, and the rate can be controlled minute by minute.", "blood": "Levels peak quickly by the nasal and IV routes, which is why blood pressure and dissociation are monitored soon after a dose.", "out": "Cleared by the liver over hours."}, "caption": "Switch between Tablet, Nasal spray and Into a vein. Same molecule, three very different fractions reaching the brain: that fraction is bioavailability."}
+:::
+
+:::widget figure
+{"id": "liver-cell-cyp"}
 :::
 ### Food and formulation
 - **With food**: lurasidone (at least 350 kcal) and ziprasidone are absorbed much better with a meal; zuranolone needs fat-containing food.
@@ -460,7 +472,15 @@ Q: A woman on clozapine starts fluvoxamine for OCD. The most likely result is:
 > Fluvoxamine strongly inhibits CYP1A2.
 :::
 
+:::widget figure
+{"id": "liver-cell-cyp", "quiz": true}
+:::
+
 ## 1.4 Excretion, clearance and half-life maths [core][beginner]
+
+:::widget figure
+{"id": "pk-steady-state"}
+:::
 ### Clearance
 **Clearance** (CL) is the volume of blood cleared of drug per unit time. The kidneys clear water-soluble drugs and metabolites; the liver clears fat-soluble ones by metabolism and bile.
 
@@ -511,6 +531,10 @@ Examples: valproate loading (about 20 mg/kg) in acute mania; paliperidone palmit
 }
 :::
 
+:::widget figure
+{"id": "pk-steady-state", "quiz": true}
+:::
+
 ### Therapeutic drug monitoring (TDM)
 TDM means measuring a drug level to guide the dose. It is most useful when:
 - The therapeutic range is narrow (lithium).
@@ -544,6 +568,10 @@ Q: Why is a level drawn 2 hours after a dose misleading for most drugs?
 - It is always too low
 - Drugs are not absorbed in 2 hours
 > Ranges are set for trough samples.
+:::
+
+:::widget figure
+{"id": "pk-single-dose", "quiz": true}
 :::
 
 ## 1.6 Special populations [core][beginner]
