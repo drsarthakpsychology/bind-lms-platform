@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { CASES as DETECTIVE } from "@/lib/learn/detective";
 import { buildRun, STEPS } from "@/lib/games-sims/rx/game";
-import { drugById, MYSTERIES, PUZZLES } from "@/lib/games-sims/rx/content";
+import { drugById, MYSTERIES, PUZZLES, reviewById } from "@/lib/games-sims/rx/content";
 import { hashString, makeRng } from "@/lib/games-sims/common";
 import { EXCERPTS } from "@/lib/games-sims/mse/excerpts";
 import { optionsFor } from "@/lib/games-sims/mse/grade";
@@ -30,7 +30,7 @@ describe("what a hint shows (worked out on the server)", () => {
           expect(r.give.remove.length).toBeGreaterThan(0);
         });
       } else {
-        const right = q.kind === "mystery" ? MYSTERIES.find((m) => m.id === q.id)!.answer : PUZZLES.find((p) => p.id === q.id)!.answer;
+        const right = q.kind === "mystery" ? MYSTERIES.find((m) => m.id === q.id)!.answer : q.kind === "review" ? reviewById(q.id)!.answer : PUZZLES.find((p) => p.id === q.id)!.answer;
         const r = resolveHint({ game: "rx", run: "run1", kind: q.kind, id: q.id, step: 0, options: q.options })!;
         expect(r.give.remove).not.toContain(right);
       }

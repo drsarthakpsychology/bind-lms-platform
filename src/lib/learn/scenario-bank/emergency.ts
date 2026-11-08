@@ -94,7 +94,7 @@ export const EMERGENCY: Scenario[] = [
       ["o", "Ask him to lie down and rest for a while, and see whether it passes on its own", "Delay can be dangerous if the sugar keeps falling."],
     ]),
   ]),
-  s("wy-e014", "emergency", "Seizure in clinic", "brain", "brain", 2, "CUS", "Give seizure first aid", "Client, 25, starts having a fit", [
+  s("wy-e014", "emergency", "Seizure in clinic", "neuroscience", "brain", 2, "CUS", "Give seizure first aid", "Client, 25, starts having a fit", [
     b("He falls and starts jerking.", [
       ["o", "Hold him down firmly so he does not hurt himself, and call someone to help you", "Holding someone down can cause injury."],
       ["h", "Put something in his mouth so he does not bite his tongue", "Objects in the mouth cause injury and choking."],
@@ -115,7 +115,7 @@ export const EMERGENCY: Scenario[] = [
       ["h", "Tell the family it is exhaustion", "Missing it risks suicide or infanticide."],
     ]),
   ]),
-  s("wy-e017", "emergency", "Head injury with confusion", "brain", "brain", 3, "UMS", "Do not blame alcohol for everything", "Man, 40, drunk with a cut on his head", [
+  s("wy-e017", "emergency", "Head injury with confusion", "neuroscience", "brain", 3, "UMS", "Do not blame alcohol for everything", "Man, 40, drunk with a cut on his head", [
     b("He is getting drowsier over an hour.", [
       ["h", "Let him sleep it off", "Drowsiness after head injury may mean bleeding in the brain."],
       ["o", "Wake him every hour to check on him, and send him home if he answers questions", "Better, but worsening drowsiness needs a scan now."],
@@ -171,7 +171,7 @@ export const EMERGENCY: Scenario[] = [
       ["h", "Give him milk and wait", "A home remedy wastes vital time."],
     ]),
   ]),
-  s("wy-e025", "emergency", "Sudden severe headache", "brain", "brain", 4, "MDS", "Recognise a neurological emergency", "Client, 40, sudden 'worst headache of my life'", [
+  s("wy-e025", "emergency", "Sudden severe headache", "neuroscience", "brain", 4, "MDS", "Recognise a neurological emergency", "Client, 40, sudden 'worst headache of my life'", [
     b("She says it came on like a thunderclap during a stressful session.", [
       ["h", "Treat it as a tension headache from stress", "A thunderclap headache can be a brain bleed."],
       ["o", "Give her a painkiller and some water, and see how she feels in half an hour", "The headache eases a little, then she collapses. A thunderclap headache needs a scan at once; painkillers only delay it."],
@@ -367,7 +367,7 @@ export const EMERGENCY: Scenario[] = [
       ["b", "Explain what panic is, coach slow breathing, and arrange follow-up", "She calms and understands. She agrees to therapy."],
     ]),
   ]),
-  s("wy-e053", "emergency", "Disinhibition after head injury", "brain", "brain", 3, "UMS", "Get medical review for sudden behaviour change", "Man, 30, two days after a fall", [
+  s("wy-e053", "emergency", "Disinhibition after head injury", "neuroscience", "brain", 3, "UMS", "Get medical review for sudden behaviour change", "Man, 30, two days after a fall", [
     b("He is suddenly rude, confused and vomiting.", [
       ["b", "Ask for an urgent head scan", "He has a bleed. Behaviour change after injury may be medical."],
       ["o", "Assume it is stress after the fall and offer him counselling sessions", "He becomes unconscious the next day. New behaviour change after a fall may be a brain bleed."],

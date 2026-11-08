@@ -1,5 +1,6 @@
 import type { Scenario } from "../scenarios";
 import { ASSESSMENT } from "./assessment";
+import { CHILD_FAMILY } from "./child-family";
 import { CRISIS } from "./crisis";
 import { EMERGENCY } from "./emergency";
 import { LIAISON } from "./liaison";
@@ -7,4 +8,4 @@ import { RISK } from "./risk";
 import { TREATMENT } from "./treatment";
 
 /** Authored "What would you do?" scenarios, appended after the core set. */
-export const SCENARIO_BANK: Scenario[] = [...ASSESSMENT, ...RISK, ...EMERGENCY, ...CRISIS, ...TREATMENT, ...LIAISON];
+export const SCENARIO_BANK: Scenario[] = [...ASSESSMENT, ...RISK, ...EMERGENCY, ...CRISIS, ...TREATMENT, ...LIAISON, ...CHILD_FAMILY];
