@@ -2,8 +2,10 @@
 
 import * as React from "react";
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import { ArrowLeft, ArrowRight, Sparkles, Zap } from "lucide-react";
 import { pick, WEEK_BLOCKS, type Note } from "@/lib/learn/notes/types";
+import { NOTE_FIGURES } from "@/lib/learn/notes/figures";
 import { emptyState, istToday, markNoteRead, type LearnState } from "@/lib/learn/engine";
 import { getLearnState, initLearnStore, setLearnState, useLearnState } from "@/lib/learn/store";
 import { toPoints } from "@/lib/psychopharm/points";
@@ -20,6 +22,11 @@ const TONE: Record<string, string> = {
 };
 const TILTS = ["-2deg", "1.5deg", "-1deg", "2deg", "-1.5deg", "1deg"];
 const EMPTY = emptyState();
+// The figure library is large, so it loads only on notes that show a diagram.
+const Figure = dynamic(() => import("@/components/study/figures/figure").then((m) => m.Figure), {
+  ssr: false,
+  loading: () => <div className="my-4 h-64 animate-pulse rounded-2xl border-2 border-foreground bg-muted" aria-hidden />,
+});
 
 /** One aesthetic, point-by-point study note, with a Student / Clinician switch. */
 export function NoteView({
@@ -91,7 +98,8 @@ export function NoteView({
       </div>
 
       {note.sections.map((sec, si) => (
-        <section key={sec.title} className={cn("overflow-hidden rounded-3xl border-2 border-foreground", sec.style === "alert" ? "bg-status-alert-bg text-status-alert-fg" : TONE[sec.tone ?? "white"], n.reveal)}>
+        <React.Fragment key={sec.title}>
+        <section className={cn("overflow-hidden rounded-3xl border-2 border-foreground", sec.style === "alert" ? "bg-status-alert-bg text-status-alert-fg" : TONE[sec.tone ?? "white"], n.reveal)}>
           <h2 className="flex items-center gap-2 border-b-2 border-current/20 px-4 py-3 text-lg font-bold">
             {sec.style === "alert" ? "⚠️" : <Sparkles className="size-4" aria-hidden />} {sec.title}
           </h2>
@@ -113,6 +121,12 @@ export function NoteView({
             </ol>
           )}
         </section>
+        {(NOTE_FIGURES[note.id] ?? []).filter((f) => f.after === si).map((f) => (
+          <div key={f.id} className={n.reveal}>
+            <Figure d={{ id: f.id, quiz: f.quiz }} />
+          </div>
+        ))}
+        </React.Fragment>
       ))}
 
       {note.terms?.length ? (
