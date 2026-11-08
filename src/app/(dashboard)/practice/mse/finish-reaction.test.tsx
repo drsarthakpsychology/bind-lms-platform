@@ -84,7 +84,7 @@ describe("finish sticker in the MSE trainer", () => {
 
   it("Small things: finishing the drill is a win", () => {
     render(<SmallThingsDrill />);
-    for (const _ of SMALL_THINGS) {
+    for (let k = 0; k < SMALL_THINGS.length; k++) {
       fireEvent.click(screen.getByRole("button", { name: "Reveal the read" }));
       fireEvent.click(screen.getByRole("button", { name: "Next observation" }));
     }
