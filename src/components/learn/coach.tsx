@@ -13,6 +13,7 @@ import { cn } from "@/lib/utils";
 import { Chai, ChaiSays } from "./chai";
 import { CheckButton } from "./items";
 import { Summary } from "./player";
+import { moodForScore } from "@/lib/reactions/stickers";
 import { useExplainView, ViewToggle } from "./view-toggle";
 import s from "./learn.module.css";
 import { useReaction } from "@/components/reactions/use-reaction";
@@ -87,7 +88,7 @@ export function Coach({ serverState, save, domain }: { serverState: LearnState |
   if (result) {
     return (
       <div>
-        <Summary result={result} state={state} confetti={[]} title={title} onAgain={start} />
+        <Summary result={result} state={state} confetti={[]} title={title} onAgain={start} mood={moodForScore(firsts.filter((f) => f.correct).length, firsts.length)} />
         <CoachReport levels={startLevels} />
       </div>
     );

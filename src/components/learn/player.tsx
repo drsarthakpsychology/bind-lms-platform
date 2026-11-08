@@ -17,6 +17,7 @@ import { useExplainView, ViewToggle } from "./view-toggle";
 import s from "./learn.module.css";
 import { useReaction, useReactionsOn } from "@/components/reactions/use-reaction";
 import { EndReaction, StreakMeter } from "@/components/reactions/graphics";
+import type { Mood } from "@/lib/reactions/stickers";
 
 const RIGHT = ["Nice!", "Spot on.", "Exactly.", "You've got it.", "Clinician brain!", "Sharp.", "Yes!", "Perfect."];
 const COMBO = ["On a roll!", "Combo!", "Can't stop you.", "Hot streak!"];
@@ -225,16 +226,19 @@ export function Summary({
   confetti,
   title,
   onAgain,
+  mood,
 }: {
   result: Payout;
   state: LearnState;
   confetti: { x: number; d: number; c: string }[];
   title: string;
   onAgain: () => void;
+  /** The sticker for this round, when stars do not tell (games with no stars pass their score). */
+  mood?: Mood;
 }) {
   const [chestOpen, setChestOpen] = React.useState(!result.chest);
   const [funny] = useReactionsOn();
-  const endMood = result.stars >= 3 ? "streak" : result.stars === 2 ? "right" : result.stars === 1 ? "near" : "wrong";
+  const endMood = mood ?? (result.stars >= 3 ? "streak" : result.stars === 2 ? "right" : result.stars === 1 ? "near" : "wrong");
   const lvl = levelFor(state.xp);
   const shown = chestOpen ? result.lines : result.lines.filter((l) => !l.label.toLowerCase().includes("chest"));
   const sum = shown.reduce((a, l) => a + l.xp, 0);

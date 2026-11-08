@@ -2,6 +2,9 @@
 
 import * as React from "react";
 import { startHowTo } from "@/components/help/how-to";
+import { OnceHint } from "@/components/help/once-hint";
+import { showEndReaction } from "@/components/reactions/store";
+import { moodForScore } from "@/lib/reactions/stickers";
 import { Mic, Square, Timer } from "lucide-react";
 import { haptic } from "@/lib/haptics";
 import { SEED_OSCE_STATIONS, scoreOsce, seededRotate } from "@/lib/practice/osce";
@@ -207,9 +210,9 @@ export function OsceStationView() {
             <span className="text-numeric text-h3" aria-live="polite">{mm}:{ss}</span>
           </div>
           <p className="mt-3 text-base font-medium">{station.task}</p>
-          <p className="mt-2 flex items-center gap-1 text-caption text-muted-foreground">
+          <OnceHint id="osce-speak" className="mt-2 flex items-center gap-1 text-caption text-muted-foreground">
             <Mic className="size-3.5" aria-hidden /> Speak your station: delivery is what&apos;s being assessed.
-          </p>
+          </OnceHint>
 
           {webSttSupported() ? (
             <div className="mt-3 rounded-lg border-2 border-border bg-background p-3">
@@ -329,6 +332,8 @@ export function OsceStationView() {
         type="button"
         onClick={async () => {
           if (!done) {
+            // The finish sticker: happy or sad by the checklist score.
+            showEndReaction(moodForScore(checklistWithDone.filter((c) => c.done).length, checklistWithDone.length));
             noteAnswer("osce", station.id, composite >= 0.6);
             // Credit the station's competencies into the Skills Passport once.
             const keys = OSCE_COMPETENCY_KEYS[station.id] ?? ["clinical_interviewing"];

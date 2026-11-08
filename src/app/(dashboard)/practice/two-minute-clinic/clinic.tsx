@@ -5,7 +5,8 @@ import * as React from "react";
 import { startHowTo, useHowTo } from "@/components/help/how-to";
 import { haptic } from "@/lib/haptics";
 import { CLINICS } from "@/lib/practice/clinic";
-import { useReaction } from "@/components/reactions/use-reaction";
+import { EndReaction } from "@/components/reactions/graphics";
+import type { Mood } from "@/lib/reactions/stickers";
 
 const SKIP = new Set(["disorder", "disorders", "syndrome", "related", "induced", "other", "without", "major", "acute", "chronic", "primary", "secondary", "presentation", "features", "reconsider", "atypical", "early", "onset", "illness", "state"]);
 /** Word stems that name a diagnosis (first 6 letters of 5+ letter words, minus filler like "disorder"). */
@@ -27,6 +28,17 @@ export function differentialMatch(typed: string, expert: readonly string[]): "to
 }
 
 /**
+ * The finish sticker. Nothing is scored, so finishing is a win: happy when the
+ * differential names the expert's first diagnosis or any fair attempt, the
+ * crying thumbs up when it only names one lower on the list, sad when it is blank.
+ */
+export function clinicMood(typed: string, expert: readonly string[]): Mood {
+  if (!typed.trim()) return "wrong";
+  const m = differentialMatch(typed, expert);
+  return m === "top" ? "streak" : m === "listed" ? "near" : "right";
+}
+
+/**
  * `start` is picked on the server for each visit, so a returning student does
  * not open on the same one-liner every time (there are over 140).
  */
@@ -42,7 +54,6 @@ export function TwoMinuteClinic({ start = 0, order }: { start?: number; order?: 
   const item = CLINICS[itemIdx];
   // The clock stops while the how-to is open.
   const { open: paused } = useHowTo("two-minute-clinic");
-  const reaction = useReaction();
 
   React.useEffect(() => {
     if (phase !== "type" || paused) return;
@@ -110,8 +121,6 @@ export function TwoMinuteClinic({ start = 0, order }: { start?: number; order?: 
             onClick={() => {
               setPhase("compare");
               haptic("success");
-              const m = differentialMatch(differential, item.expertDifferential);
-              if (m !== "none") reaction.onAnswer(true, { partial: m === "listed" });
               // Retention loop: completing the daily drill keeps the streak alive.
               fetch("/api/practice/clinic/complete", { method: "POST" }).catch(() => {});
             }}
@@ -124,6 +133,7 @@ export function TwoMinuteClinic({ start = 0, order }: { start?: number; order?: 
 
       {phase === "compare" ? (
         <div className="space-y-3 rounded-lg border-2 border-border bg-card p-5 hard-shadow-sm">
+          <EndReaction mood={clinicMood(differential, item.expertDifferential)} seed={item.id} />
           <h2 className="text-base font-semibold">Expert comparison</h2>
           <div>
             <p className="text-small font-medium text-muted-foreground">Your differential</p>

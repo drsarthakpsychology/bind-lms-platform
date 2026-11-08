@@ -6,6 +6,8 @@ import { scoreObserve } from "@/lib/mse/ladder";
 import { buildMseAttemptPayload, scoreMseLevel1Attempt } from "@/lib/practice/mse-attempt";
 import { OBSERVE_STIMULI } from "@/lib/practice/mse-observe-stimuli";
 import { noteAnswer } from "@/lib/history/client";
+import { OnceHint } from "@/components/help/once-hint";
+import { showEndReaction } from "@/components/reactions/store";
 
 /**
  * MSE Level 1: Observe. The first rung of the ladder: describe what you can
@@ -43,6 +45,8 @@ export function ObserveLevel({
   function check() {
     setRoundDone(true);
     haptic(result.labels.length === 0 && wordCount >= 80 ? "success" : "warning");
+    // The finish sticker: happy for a clean, full description, sad when labels slipped in.
+    showEndReaction(result.labels.length > 0 ? "wrong" : wordCount >= 80 ? "streak" : "near");
   }
 
   function next() {
@@ -88,11 +92,11 @@ export function ObserveLevel({
       </div>
 
       <div>
-        <p className="text-small text-muted-foreground">
+        <OnceHint id="mse-observe" className="text-small text-muted-foreground">
           Now describe what you observed. Diagnostic words are conclusions: &quot;depressed&quot;,
           &quot;anxious&quot;, &quot;manipulative&quot;. Behaviour words are observations. Target:{" "}
           <span className="font-semibold">100 words with zero labels</span>.
-        </p>
+        </OnceHint>
         <textarea enterKeyHint="enter"
           ref={textareaRef}
           value={text}

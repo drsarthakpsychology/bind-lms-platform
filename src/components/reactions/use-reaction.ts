@@ -3,7 +3,7 @@
 import * as React from "react";
 import { readReactionsOn, serverReactionsOn, subscribeReactions, writeReactionsOn } from "@/lib/reactions/prefs";
 import { decide, newRun, type AnswerCtx, type Run } from "@/lib/reactions/trigger";
-import { lastShownAt, showReaction } from "./store";
+import { lastShownAt, showEndReaction, showReaction } from "./store";
 
 export type { AnswerCtx };
 
@@ -38,7 +38,7 @@ export function useReaction(): ReactionApi {
       },
       onFinish(outcome) {
         if (!readReactionsOn()) return;
-        showReaction(outcome === "won" ? "streak" : outcome === "lost" ? "wrong" : "near");
+        showEndReaction(outcome === "won" ? "streak" : outcome === "lost" ? "wrong" : "near");
       },
     }),
     [],
