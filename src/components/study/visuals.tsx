@@ -4,7 +4,6 @@ import * as React from "react";
 import { RotateCcw } from "lucide-react";
 import type { BrainMapData, CurveData, FlowData, LayersData } from "@/lib/study/types";
 import { cn } from "@/lib/utils";
-import { PlayBar, useStepPlayer } from "./pacing";
 import { Rich } from "./rich";
 
 /**
@@ -31,66 +30,39 @@ function useReducedMotion(): boolean {
 }
 
 /* ------------------------------------------------------------------ flow */
+/**
+ * A plain diagram: every step and what it means is on screen at once, so a
+ * student reads it like a textbook figure. No buttons, no stepping.
+ */
 export function Flow({ d }: { d: FlowData }) {
-  const st = useStepPlayer(d.nodes.length, (k) => `${d.nodes[k]?.label ?? ""} ${d.nodes[k]?.detail ?? ""}`, { start: -1 });
-  const active = st.i >= 0 ? d.nodes[st.i] : null;
-  const isOn = (k: number) => st.i === k;
-  const seen = (k: number) => st.i >= k;
-
-  const nodeBtn = (k: number, extra?: string) => {
+  const step = (k: number, extra?: string) => {
     const n = d.nodes[k];
     return (
-      <button
-        key={n.id}
-        type="button"
-        onClick={() => st.setI(k)}
-        aria-pressed={isOn(k)}
-        className={cn(
-          "min-h-11 rounded-md border-2 px-3 py-2 text-left text-[0.92rem] leading-snug font-semibold transition-[transform,background-color,opacity] duration-base",
-          isOn(k) ? "-translate-y-0.5 border-foreground bg-primary text-primary-foreground shadow-[var(--shadow-hard-xs)]" : seen(k) ? "border-foreground bg-card" : "border-foreground/40 bg-card",
-          extra,
-        )}
-      >
-        <Rich text={n.label} />
-      </button>
+      <div className={cn("min-w-0 rounded-md border-2 border-foreground bg-card px-3 py-2", extra)}>
+        <p className="flex items-baseline gap-2 font-semibold leading-snug">
+          <span className="inline-flex size-6 shrink-0 items-center justify-center rounded-full bg-foreground text-xs text-background" aria-hidden>
+            {k + 1}
+          </span>
+          <span className="min-w-0 [overflow-wrap:anywhere]"><Rich text={n.label} /></span>
+        </p>
+        {n.detail ? <p className="mt-1 pl-8 text-[0.92rem] leading-relaxed text-foreground/80 [overflow-wrap:anywhere]"><Rich text={n.detail} /></p> : null}
+      </div>
+    );
+  };
+  const arrow = (from: number) => {
+    const next = d.nodes[from + 1] ?? (d.layout === "cycle" ? d.nodes[0] : undefined);
+    if (!next) return null;
+    const el = d.edgeLabels?.[`${d.nodes[from].id}>${next.id}`];
+    return (
+      <div aria-hidden className="flex items-center gap-2 py-1 pl-4 text-sm text-muted-foreground">
+        <span className="text-base leading-none">↓</span>
+        {el ? <Rich text={el} /> : null}
+      </div>
     );
   };
 
   let body: React.ReactNode;
-  if (d.layout === "cycle") {
-    const n = d.nodes.length;
-    const R = 38; // percent radius
-    body = (
-      <div className="relative mx-auto aspect-square w-full max-w-[26rem]">
-        <svg viewBox="0 0 100 100" className="absolute inset-0 size-full" aria-hidden>
-          <circle cx="50" cy="50" r={R} fill="none" className="stroke-foreground/25" strokeWidth="0.8" strokeDasharray="2 2" />
-          {d.nodes.map((_, k) => {
-            const a1 = (k / n) * 2 * Math.PI - Math.PI / 2 + 0.32;
-            const a2 = ((k + 1) / n) * 2 * Math.PI - Math.PI / 2 - 0.32;
-            const p = (a: number) => [50 + R * Math.cos(a), 50 + R * Math.sin(a)];
-            const [x1, y1] = p(a1);
-            const [x2, y2] = p(a2);
-            return (
-              <path key={k} d={`M${x1} ${y1} A ${R} ${R} 0 0 1 ${x2} ${y2}`} fill="none" strokeWidth={st.i === k ? 2 : 1.2} className={cn("transition-all duration-base", st.i === k ? "stroke-[var(--brand)]" : "stroke-foreground/60")} markerEnd="url(#flow-arrow)" />
-            );
-          })}
-          <defs>
-            <marker id="flow-arrow" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse">
-              <path d="M0 0 L10 5 L0 10 z" className="fill-foreground" />
-            </marker>
-          </defs>
-        </svg>
-        {d.nodes.map((nd, k) => {
-          const a = (k / n) * 2 * Math.PI - Math.PI / 2;
-          return (
-            <div key={nd.id} className="absolute w-[34%] -translate-x-1/2 -translate-y-1/2" style={{ left: `${50 + R * Math.cos(a)}%`, top: `${50 + R * Math.sin(a)}%` }}>
-              {nodeBtn(k, "w-full text-center text-[0.8rem] sm:text-[0.88rem]")}
-            </div>
-          );
-        })}
-      </div>
-    );
-  } else if (d.layout === "tree") {
+  if (d.layout === "tree") {
     const kids = (pid?: string) => d.nodes.map((x, k) => ({ x, k })).filter(({ x }) => x.parent === pid);
     const branch = (pid?: string, depth = 0): React.ReactNode => {
       const list = kids(pid);
@@ -99,7 +71,7 @@ export function Flow({ d }: { d: FlowData }) {
         <ul className={cn("flex flex-col gap-2", depth > 0 && "mt-2 border-l-2 border-foreground/30 pl-3 sm:pl-4")}>
           {list.map(({ x, k }) => (
             <li key={x.id}>
-              {nodeBtn(k, "w-full")}
+              {step(k)}
               {branch(x.id, depth + 1)}
             </li>
           ))}
@@ -109,44 +81,23 @@ export function Flow({ d }: { d: FlowData }) {
     body = branch(undefined);
   } else {
     body = (
-      <ol className="flex flex-col items-stretch gap-1 sm:flex-row sm:flex-wrap sm:items-center">
-        {d.nodes.map((nd, k) => {
-          const next = d.nodes[k + 1];
-          const el = d.edgeLabels?.[`${nd.id}>${next?.id}`];
-          return (
-            <li key={nd.id} className="flex flex-col items-stretch sm:flex-row sm:items-center">
-              {nodeBtn(k, "sm:max-w-[13rem]")}
-              {next ? (
-                <span aria-hidden className={cn("flex items-center justify-center gap-1 px-2 py-1 text-xs text-muted-foreground transition-opacity", seen(k + 1) || st.i < 0 ? "opacity-100" : "opacity-40")}>
-                  <span className="sm:hidden">↓</span>
-                  <span className="hidden sm:inline">→</span>
-                  {el ? <Rich text={el} /> : null}
-                </span>
-              ) : null}
-            </li>
-          );
-        })}
+      <ol className="flex flex-col">
+        {d.nodes.map((nd, k) => (
+          <li key={nd.id}>
+            {step(k)}
+            {k < d.nodes.length - 1 || d.layout === "cycle" ? arrow(k) : null}
+          </li>
+        ))}
+        {d.layout === "cycle" ? <li className="pl-4 text-sm font-semibold text-muted-foreground">Then back to 1</li> : null}
       </ol>
     );
   }
 
   return (
     <figure className={card}>
-      {d.title ? <p className={label}><Rich text={d.title} /></p> : <p className={label}>See how it works</p>}
-      <div className="mt-3">{body}</div>
-      <PlayBar st={st} kind="flow" first="Play step by step" hint="or tap any box" />
-      {st.i >= 0 ? <button type="button" className={cn(btn, "mt-2 bg-card")} onClick={st.reset}><RotateCcw className="size-4" aria-hidden /> Start over</button> : null}
-      <div className="mt-3 min-h-[3.5rem] rounded-xl bg-muted p-3 text-[0.95rem] leading-relaxed" role="status" aria-live="polite">
-        {active ? (
-          <p className="vibha-pop" key={active.id}>
-            <span className="font-semibold"><Rich text={active.label} />{active.detail ? ": " : ""}</span>
-            {active.detail ? <Rich text={active.detail} /> : null}
-          </p>
-        ) : (
-          <p className="text-muted-foreground">Press Next to go one step at a time, or tap a box to see what happens at that step.</p>
-        )}
-      </div>
-      {d.caption ? <figcaption className="mt-2 text-sm text-muted-foreground"><Rich text={d.caption} /></figcaption> : null}
+      {d.title ? <p className={label}><Rich text={d.title} /></p> : null}
+      <div className={d.title ? "mt-3" : undefined}>{body}</div>
+      {d.caption ? <figcaption className="mt-3 text-sm text-muted-foreground"><Rich text={d.caption} /></figcaption> : null}
     </figure>
   );
 }

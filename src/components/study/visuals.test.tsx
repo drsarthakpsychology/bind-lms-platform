@@ -15,15 +15,16 @@ describe("visual widgets", () => {
     expect(phi(1.96)).toBeCloseTo(0.975, 3);
     expect(phi(-1)).toBeCloseTo(0.1587, 3);
   });
-  it("flow shows a node's detail when tapped", () => {
+  it("flow shows every step and its detail at once, with no buttons", () => {
     render(<Flow d={{ layout: "chain", nodes: [{ id: "a", label: "Trigger", detail: "Something happens" }, { id: "b", label: "Thought" }] }} />);
-    fireEvent.click(screen.getByRole("button", { name: "Trigger" }));
-    expect(screen.getByRole("status")).toHaveTextContent("Something happens");
+    expect(screen.getByText("Trigger")).toBeInTheDocument();
+    expect(screen.getByText("Something happens")).toBeInTheDocument();
+    expect(screen.queryAllByRole("button")).toHaveLength(0);
   });
   it("cycle and tree layouts render", () => {
     render(<Flow d={{ layout: "cycle", nodes: [{ id: "a", label: "A" }, { id: "b", label: "B" }, { id: "c", label: "C" }] }} />);
     render(<Flow d={{ layout: "tree", nodes: [{ id: "r", label: "Root" }, { id: "k", label: "Kid", parent: "r" }] }} />);
-    expect(screen.getByRole("button", { name: "Kid" })).toBeInTheDocument();
+    expect(screen.getByText("Kid")).toBeInTheDocument();
   });
   it("every curve kind renders a live status", () => {
     for (const kind of ["normal", "sdt", "forgetting", "inverted-u", "dose-response", "half-life"] as const) {

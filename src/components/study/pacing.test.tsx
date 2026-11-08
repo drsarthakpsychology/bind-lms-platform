@@ -9,8 +9,19 @@ import { afterEach, beforeAll, describe, expect, it, vi } from "vitest";
 import { MODULES } from "@/lib/study";
 import type { Block, FlowData } from "@/lib/study/types";
 import { Widget } from "./widgets";
-import { Flow } from "./visuals";
-import { MIN_STEP_MS, WORD_MS, readingMs, wordCount } from "./pacing";
+import { MIN_STEP_MS, PlayBar, WORD_MS, readingMs, useStepPlayer, wordCount } from "./pacing";
+
+/** A minimal stepped player, built the way every step-by-step widget uses the shared player. */
+function Flow({ d }: { d: FlowData }) {
+  const st = useStepPlayer(d.nodes.length, (k) => `${d.nodes[k]?.label ?? ""} ${d.nodes[k]?.detail ?? ""}`, { start: -1 });
+  const active = st.i >= 0 ? d.nodes[st.i] : null;
+  return (
+    <div>
+      <PlayBar st={st} kind="flow" first="Play step by step" hint="or tap any box" />
+      <p role="status">{active ? `${active.label}: ${active.detail ?? ""}` : "Press Next to go one step at a time."}</p>
+    </div>
+  );
+}
 
 vi.mock("@/lib/learn/track", () => ({ trackLearn: () => {} }));
 

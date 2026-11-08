@@ -1,5 +1,5 @@
 // @vitest-environment jsdom
-import { fireEvent, render, screen, within } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { parseLongAnswer } from "@/lib/prep/long";
 
@@ -46,14 +46,13 @@ describe("LongPractice", () => {
     next: "/prep/psychopathology/long/m-depression/next",
   };
 
-  it("hides the answer until asked, then shows plan, answer, pitfalls and the self-mark", () => {
+  it("hides the answer until asked, then shows the answer, pitfalls and the self-mark, with no plan box", () => {
     render(<LongPractice {...props} />);
     expect(screen.queryByText("The full model answer.")).toBeNull();
-    fireEvent.change(screen.getByLabelText(/Plan your answer/), { target: { value: "My headings" } });
-    expect(window.localStorage.getItem("vibha.prepLong.v1.draft.lq-test")).toBe("My headings");
+    expect(screen.queryByLabelText(/Plan your answer/)).toBeNull();
     fireEvent.click(screen.getByRole("button", { name: /Show model answer/ }));
     expect(screen.getByText("The full model answer.")).toBeInTheDocument();
-    expect(within(screen.getByRole("region", { name: "The plan" })).getAllByRole("listitem")).toHaveLength(2);
+    expect(screen.queryByRole("region", { name: "The plan" })).toBeNull();
     expect(screen.getByText("Writing a list with no explanation")).toBeInTheDocument();
     expect(screen.getByRole("status")).toHaveTextContent("You covered 0 of 3");
     fireEvent.click(screen.getByRole("checkbox", { name: "Defines depression" }));
@@ -63,10 +62,8 @@ describe("LongPractice", () => {
     expect(screen.getByRole("status")).toHaveTextContent("You covered 1 of 3");
   });
 
-  it("keeps the draft on this device and saves to the two lists", () => {
-    window.localStorage.setItem("vibha.prepLong.v1.draft.lq-test", "Earlier plan");
+  it("saves to the two lists", () => {
     render(<LongPractice {...props} />);
-    expect(screen.getByLabelText(/Plan your answer/)).toHaveValue("Earlier plan");
     fireEvent.click(screen.getByRole("button", { name: "Save for later" }));
     expect(screen.getByRole("button", { name: "Saved" })).toHaveAttribute("aria-pressed", "true");
     fireEvent.click(screen.getByRole("button", { name: "Practise again" }));
@@ -80,8 +77,9 @@ describe("LongPractice", () => {
       throw new Error("blocked");
     });
     render(<LongPractice {...props} id="lq-blocked" />);
-    fireEvent.change(screen.getByLabelText(/Plan your answer/), { target: { value: "Typed anyway" } });
-    expect(screen.getByLabelText(/Plan your answer/)).toHaveValue("Typed anyway");
+    fireEvent.click(screen.getByRole("button", { name: /Show model answer/ }));
+    fireEvent.click(screen.getByRole("checkbox", { name: "Defines depression" }));
+    expect(screen.getByRole("status")).toHaveTextContent("You covered 1 of 3");
     spy.mockRestore();
   });
 });

@@ -4,7 +4,7 @@ import * as React from "react";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, BookOpen, Bookmark, BookmarkCheck, Check, Eye, RotateCcw } from "lucide-react";
 import { selfMark } from "@/lib/prep/long";
-import { draftKey, parseList, setInList, ticksKey, useIdList, useStored, writeStored } from "@/lib/prep/long-store";
+import { parseList, setInList, ticksKey, useIdList, useStored, writeStored } from "@/lib/prep/long-store";
 import { cn } from "@/lib/utils";
 import { btnInk, btnPlain, btnPrimary, card } from "./ui";
 
@@ -24,12 +24,11 @@ const toggle =
   "inline-flex min-h-11 items-center gap-1.5 rounded-md border-2 border-foreground px-3 text-sm font-bold transition-transform duration-150 active:translate-y-px motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60";
 
 /**
- * One long answer: plan it (optional, kept on this device), then show the
- * model plan, the full answer and the key points to tick. No timer, no lock.
+ * One long answer: the question, then the model answer, where marks are lost
+ * and the key points to tick. No timer, no lock.
  */
-export function LongPractice({ id, plan, keyPoints, pitfalls, answer, study, prev, next }: LongPracticeProps) {
+export function LongPractice({ id, keyPoints, pitfalls, answer, study, prev, next }: LongPracticeProps) {
   const [shown, setShown] = React.useState(false);
-  const draft = useStored(draftKey(id)) ?? "";
   const ticksRaw = useStored(ticksKey(id));
   const ticks = React.useMemo(() => new Set(parseList<number>(ticksRaw, "number")), [ticksRaw]);
   const saved = useIdList("saved").includes(id);
@@ -52,41 +51,12 @@ export function LongPractice({ id, plan, keyPoints, pitfalls, answer, study, pre
 
   return (
     <div className="min-w-0 space-y-5">
-      <div className="space-y-2">
-        <label htmlFor={`plan-${id}`} className="block font-semibold">
-          Plan your answer <span className="font-normal text-muted-foreground">(optional)</span>
-        </label>
-        <textarea
-          id={`plan-${id}`}
-          value={draft}
-          onChange={(e) => writeStored(draftKey(id), e.target.value ? e.target.value : null)}
-          rows={5}
-          placeholder="Headings and points you would write. Kept on this device."
-          className="block min-h-32 w-full min-w-0 resize-y rounded-md border-2 border-foreground bg-card px-3 py-2 text-base leading-relaxed placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60"
-        />
-      </div>
-
       {!shown ? (
         <button type="button" className={cn(btnPrimary, "w-full text-base")} onClick={reveal}>
           <Eye className="size-4" aria-hidden /> Show model answer
         </button>
       ) : (
         <div className="min-w-0 space-y-5">
-          {plan.length ? (
-            <section aria-labelledby="model-plan" className={cn(card, "space-y-2")}>
-              <h2 id="model-plan" className="text-h3">
-                The plan
-              </h2>
-              <ol className="list-decimal space-y-1 pl-5 marker:font-semibold [overflow-wrap:anywhere]">
-                {plan.map((p, i) => (
-                  <li key={i} className="pl-1">
-                    {p}
-                  </li>
-                ))}
-              </ol>
-            </section>
-          ) : null}
-
           <section aria-labelledby="model-answer" className={cn(card, "min-w-0 space-y-3 p-4 sm:p-5")}>
             <h2 id="model-answer" ref={answerRef} tabIndex={-1} className="text-h3 outline-none">
               Model answer
