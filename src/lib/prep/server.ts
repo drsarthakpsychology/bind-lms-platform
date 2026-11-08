@@ -131,6 +131,15 @@ export async function loadSeen(userId: string): Promise<Map<string, number>> {
   return out;
 }
 
+/** How often and when each question was last seen (for the answer history order). */
+export async function loadSeenRows(userId: string): Promise<Map<string, { n: number; at: string | null }>> {
+  const out = new Map<string, { n: number; at: string | null }>();
+  const db = admin();
+  if (!db || !userId) return out;
+  for (const r of await rows(db.from("prep_seen").select("item, n, last_at").eq("user_id", userId).limit(10000))) out.set(String(r.item), { n: num(r.n, 1), at: str(r.last_at) });
+  return out;
+}
+
 /** The question this student saw last (any mode), for resuming before prep_answers exists. */
 export async function loadLastSeen(userId: string): Promise<string | null> {
   const db = admin();

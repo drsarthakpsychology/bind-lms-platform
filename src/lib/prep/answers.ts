@@ -77,6 +77,32 @@ export async function saveAnswer(userId: string, item: string, choice: number, o
   }
 }
 
+/**
+ * Store many answers at once (a submitted mock): one read, one upsert. A
+ * question listed twice keeps its last answer. Returns false when the table
+ * isn't there yet.
+ */
+export async function saveAnswers(userId: string, list: readonly { item: string; choice: number; ok: boolean }[], now = new Date()): Promise<boolean> {
+  const db = admin();
+  const last = new Map(list.filter((a) => a.item && Number.isInteger(a.choice) && a.choice >= 0 && a.choice <= 3).map((a) => [a.item, a]));
+  if (!db || !userId || !last.size) return false;
+  try {
+    const items = [...last.keys()].slice(0, 300);
+    const { data, error } = await db.from("prep_answers").select("item, right_n, wrong_n, saved").eq("user_id", userId).in("item", items);
+    if (error) return false;
+    const had = new Map((data ?? []).map((r) => [String(r.item), { right_n: Number(r.right_n) || 0, wrong_n: Number(r.wrong_n) || 0, saved: r.saved === true }]));
+    const rows = items.map((item) => {
+      const a = last.get(item)!;
+      const h = had.get(item);
+      return { user_id: userId, item, last_choice: a.choice, last_ok: a.ok, right_n: (h?.right_n ?? 0) + (a.ok ? 1 : 0), wrong_n: (h?.wrong_n ?? 0) + (a.ok ? 0 : 1), saved: h?.saved ?? false, last_at: now.toISOString() };
+    });
+    const { error: upErr } = await db.from("prep_answers").upsert(rows, { onConflict: "user_id,item" });
+    return !upErr;
+  } catch {
+    return false;
+  }
+}
+
 /** Save or unsave a question. A question saved before it is answered keeps no answer. */
 export async function setSaved(userId: string, item: string, saved: boolean, now = new Date()): Promise<boolean> {
   const db = admin();

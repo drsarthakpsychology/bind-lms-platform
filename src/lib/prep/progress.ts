@@ -28,17 +28,36 @@ const answered = (answers: Answers, id: string) => {
   return !!a && a.ok !== null;
 };
 
-/** The first unanswered question in a set (0 when every one is answered, to go round again). */
-export function startIndex(ids: readonly string[], answers: Answers): number {
-  const i = ids.findIndex((id) => !answered(answers, id));
-  return i < 0 ? 0 : i;
+/**
+ * Where a fully answered set goes round again: the first question last
+ * answered wrong, else the one answered longest ago (so a second pass never
+ * opens on the same question as the first).
+ */
+function againIndex(ids: readonly string[], answers: Answers): number {
+  const w = ids.findIndex((id) => answers.get(id)?.ok === false);
+  if (w >= 0) return w;
+  let best = 0;
+  let t = Infinity;
+  ids.forEach((id, i) => {
+    const at = Date.parse(answers.get(id)?.at ?? "");
+    if (Number.isFinite(at) && at < t) [best, t] = [i, at];
+  });
+  return best;
 }
 
-/** The set to open for a topic: the first one with an unanswered question, else the first. */
+/** The first unanswered question in a set; when every one is answered, the first wrong one (else the oldest answer). */
+export function startIndex(ids: readonly string[], answers: Answers): number {
+  const i = ids.findIndex((id) => !answered(answers, id));
+  return i < 0 ? againIndex(ids, answers) : i;
+}
+
+/** The set to open for a topic: the first one with an unanswered question, else the first with a wrong answer, else the first. */
 export function nextSet(ids: readonly string[], answers: Answers): number {
   const sets = setsOf(ids);
   const i = sets.findIndex((s) => s.some((id) => !answered(answers, id)));
-  return i < 0 ? 0 : i;
+  if (i >= 0) return i;
+  const w = sets.findIndex((s) => s.some((id) => answers.get(id)?.ok === false));
+  return w < 0 ? 0 : w;
 }
 
 export type Located = { subject: string; topic: string; ids: readonly string[] };
