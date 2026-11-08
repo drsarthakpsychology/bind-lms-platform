@@ -3,6 +3,7 @@ import { getLibraryDocs, filterLibrary, filterLibraryByTag, LIBRARY_FILTERS } fr
 import { LibraryList } from "./library-list";
 import Link from "next/link";
 import { requireFeature } from "@/lib/flags";
+import { BackPill } from "@/components/study/back";
 
 export const dynamic = "force-dynamic";
 
@@ -24,6 +25,7 @@ export default async function LibraryPage(props: {
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
+      <BackPill className="mb-4" />
       <ToolHeader title="Case library" tip={{ id: "case-library", steps: ["Search by title or opening words."] }} />
 
       <div className="mt-6">

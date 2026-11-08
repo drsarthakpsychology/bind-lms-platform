@@ -7,6 +7,7 @@ import { PeerWall } from "./peer-wall";
 import { requireFeature } from "@/lib/flags";
 import { orderForViewer } from "@/lib/history/viewer";
 import type { FormulationFactor } from "@/lib/practice/formulation";
+import { BackPill } from "@/components/study/back";
 
 export const dynamic = "force-dynamic";
 
@@ -56,6 +57,7 @@ export default async function FormulationPage({ searchParams }: { searchParams: 
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6">
+      <BackPill className="mb-4" />
       <ToolHeader title="Build the formulation" tip={{ id: "formulation", steps: ["Sort the factors into the 5 Ps.", "Write the story in your own words.", "Compare with the answer."] }} />
 
       <nav aria-label="Cases" className="mt-5 flex gap-2 overflow-x-auto pb-1 [scrollbar-width:none]">

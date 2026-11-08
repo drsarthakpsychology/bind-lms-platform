@@ -3,6 +3,7 @@ import { OsceStationView } from "./osce-station";
 import { QuizCheck } from "@/components/practice/quiz-check";
 import { QUIZ_BANK } from "@/lib/quiz/quiz-bank";
 import { requireFeature } from "@/lib/flags";
+import { BackPill } from "@/components/study/back";
 
 export const dynamic = "force-dynamic";
 
@@ -15,6 +16,7 @@ export default async function OscePage() {
   await requireFeature("osce");
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
+      <BackPill className="mb-4" />
       <ToolHeader title="OSCE stations" tip={{ id: "osce", steps: ["One task against the clock, like the real exam.", "Voice works best."] }} />
 
       <div className="mt-6">

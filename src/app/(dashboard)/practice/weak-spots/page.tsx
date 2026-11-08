@@ -46,7 +46,7 @@ export default async function WeakSpotsPage() {
     <div className="mx-auto max-w-2xl px-4 py-8 sm:px-6">
       <Link href="/practice/consulting-room" className="inline-flex min-h-11 items-center gap-1 text-sm font-semibold text-link hover:underline">
         <ArrowLeft className="size-4" aria-hidden />
-        Consulting Room
+        Back to AI patient interview
       </Link>
       <ToolHeader title="Weak spots" tip={{ id: "weak-spots", steps: ["The skills you miss most, with a drill made from them."] }} />
 
