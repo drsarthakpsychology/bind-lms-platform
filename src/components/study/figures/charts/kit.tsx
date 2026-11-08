@@ -148,23 +148,12 @@ export function polar(cx: number, cy: number, r: number, a: number): [number, nu
 export type Label = { id: string; name: string; x: number; y: number; about: string };
 export const L = (id: string, name: string, x: number, y: number, about: string): Label => ({ id, name, x, y, about });
 
-/** A callout: a thin leader from a part of the art to a label in a side lane. */
+/** A label given by the point on its part; the figure draws the leader line from the margin. */
 export type Callout = { id: string; name: string; about: string; at: [number, number] };
 
-/** Labels stacked in a lane at x = lx from y0 every dy, each joined to its part by a leader line. */
-export function callouts(list: Callout[], lx: number, y0: number, dy: number): { art: ReactNode; labels: Label[] } {
-  const labels = list.map((c, i) => L(c.id, c.name, lx, y0 + i * dy, c.about));
-  const art = (
-    <g>
-      {list.map((c, i) => (
-        <g key={c.id}>
-          <line x1={c.at[0]} y1={c.at[1]} x2={lx - 9} y2={y0 + i * dy} className="stroke-muted-foreground" strokeWidth={0.8} />
-          <circle cx={c.at[0]} cy={c.at[1]} r={2.2} className="fill-foreground" />
-        </g>
-      ))}
-    </g>
-  );
-  return { art, labels };
+/** Labels for a list of parts, each pointing at the part's own position. */
+export function callouts(list: Callout[]): { labels: Label[] } {
+  return { labels: list.map((c) => L(c.id, c.name, c.at[0], c.at[1], c.about)) };
 }
 
 /** The red diamond used for a drug molecule in every pharmacology figure. */

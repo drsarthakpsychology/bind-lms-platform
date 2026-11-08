@@ -34,7 +34,7 @@ const ROWS: [string, string, string, (string | number)[]][] = [
 const normal: FigureDef = {
   id: "normal-curve-scales",
   title: "The normal curve and the score scales built on it",
-  viewBox: "0 0 420 300",
+  viewBox: "70 0 345 300",
   summary: "A normal curve divided by standard deviations, with z scores, T scores, IQ scores, percentiles and Wechsler scaled scores lined up beneath it.",
   art: (
     <g>
@@ -59,9 +59,9 @@ const normal: FigureDef = {
     </g>
   ),
   labels: [
-    L("mean", "Mean, median, mode", 252, 22, "In a normal curve the three averages fall at the same central point, the peak."),
-    L("sd", "One SD band", 10, 60, "About 68 percent of scores fall within 1 SD of the mean, 95 percent within 2 SD and 99.7 percent within 3 SD."),
-    ...ROWS.map((r, i) => L(r[0], r[1], 10, 186 + i * 21, r[2])),
+    L("mean", "Mean, median, mode", NX(0), NY(1) + 4, "In a normal curve the three averages fall at the same central point, the peak."),
+    L("sd", "One SD band", NX(-0.5), 128, "About 68 percent of scores fall within 1 SD of the mean, 95 percent within 2 SD and 99.7 percent within 3 SD."),
+    ...ROWS.map((r, i) => L(r[0], r[1], i < 3 ? 86 : 410, 186 + i * 21, r[2])),
   ],
 };
 
@@ -78,7 +78,6 @@ const sdtA = callouts(
     { id: "dprime", name: "d prime (sensitivity)", at: [DX(0), 40], about: "The distance between the two peaks in SD units. Bigger d prime means the signal is easier to tell apart, whatever the person's bias." },
     { id: "crit", name: "Criterion (bias)", at: [DX(CRIT), 70], about: "The cut-off the person sets. Above it they say yes. A cautious radiologist moves it right; one afraid of missing cancer moves it left." },
   ],
-  20, 214, 22,
 );
 const sdtB = callouts(
   [
@@ -87,12 +86,11 @@ const sdtB = callouts(
     { id: "fa", name: "False alarms", at: [DX(0.7), 174], about: "No signal but the person said yes. Moving the criterion left raises hits and false alarms together." },
     { id: "cr", name: "Correct rejections", at: [DX(-1.2), 150], about: "No signal and the person said no." },
   ],
-  224, 214, 22,
 );
 const sdt: FigureDef = {
   id: "signal-detection",
   title: "Signal detection: two curves and a cut-off",
-  viewBox: "0 0 420 310",
+  viewBox: "0 0 420 206",
   summary: "Noise alone and signal plus noise form two overlapping curves; a criterion splits them into hits, misses, false alarms and correct rejections, and d prime is the distance between the peaks.",
   art: (
     <g>
@@ -109,8 +107,6 @@ const sdt: FigureDef = {
       <Line x1={DX(-1)} y1={44} x2={DX(-1)} y2={DY(1)} tone="grey" dash w={1} />
       <Line x1={DX(1)} y1={44} x2={DX(1)} y2={DY(1)} tone="grey" dash w={1} />
       <T x={210} y={198} size={9} muted>strength of the evidence</T>
-      {sdtA.art}
-      {sdtB.art}
     </g>
   ),
   labels: [...sdtA.labels, ...sdtB.labels],
@@ -132,12 +128,11 @@ const rocC = callouts(
     { id: "lax", name: "Lenient cut-off", at: [RX(0.6), RYY(roc(2)(0.6))], about: "A low cut-off: catches nearly every case (high sensitivity) at the price of many false positives. Screening tools such as the PHQ-9 choose a point in between." },
     { id: "auc", name: "Area under the curve", at: [RX(0.5), RYY(0.3)], about: "The shaded area: the chance that the test ranks a random true case above a random non-case." },
   ],
-  262, 40, 32,
 );
 const rocFig: FigureDef = {
   id: "roc-curve",
   title: "The ROC curve",
-  viewBox: "0 0 420 290",
+  viewBox: "0 0 262 290",
   summary: "Plotting hit rate against false alarm rate for every cut-off gives the ROC curve; better tests bow towards the top left corner.",
   art: (
     <g>
@@ -151,7 +146,6 @@ const rocFig: FigureDef = {
       <Axes x={40} y={250} w={210} h={210} xl="false alarm rate (1 minus specificity)" yl="hit rate (sensitivity)" />
       {[0, 0.5, 1].map((v) => <T key={v} x={RX(v)} y={262} size={9} muted>{v}</T>)}
       {[0.5, 1].map((v) => <T key={v} x={34} y={RYY(v) + 3} size={9} anchor="end" muted>{v}</T>)}
-      {rocC.art}
     </g>
   ),
   labels: rocC.labels,
@@ -183,11 +177,11 @@ const abab: FigureDef = {
     </g>
   ),
   labels: [
-    L("a1", "Baseline", 50, 120, "Phase A: measure the behaviour before any treatment until it is stable."),
-    L("b1", "Treatment", 132, 66, "Phase B: introduce the treatment, here praise for calm behaviour, and keep measuring. Tantrums fall."),
-    L("a2", "Withdrawal", 222, 150, "Remove the treatment. If tantrums return, the change was probably due to the treatment, not time. Withdrawing a helpful treatment can be unethical."),
-    L("b2", "Treatment again", 302, 66, "Reintroduce the treatment. A second drop replicates the effect within one person."),
-    L("line", "Phase change line", 118, 186, "Dashed lines mark when the condition changed. Judge level, trend and variability on each side."),
+    L("a1", "Baseline", BX(3), BY(13), "Phase A: measure the behaviour before any treatment until it is stable."),
+    L("b1", "Treatment", BX(8), BY(4), "Phase B: introduce the treatment, here praise for calm behaviour, and keep measuring. Tantrums fall."),
+    L("a2", "Withdrawal", BX(13), BY(12), "Remove the treatment. If tantrums return, the change was probably due to the treatment, not time. Withdrawing a helpful treatment can be unethical."),
+    L("b2", "Treatment again", BX(18), BY(3), "Reintroduce the treatment. A second drop replicates the effect within one person."),
+    L("line", "Phase change line", BX(5.5), 120, "Dashed lines mark when the condition changed. Judge level, trend and variability on each side."),
   ],
 };
 
@@ -224,10 +218,10 @@ const multiBase: FigureDef = {
     </g>
   ),
   labels: [
-    L("base", "Baseline, all three", 70, 30, "Everyone starts untreated. Longer baselines for later people show that time alone does not change the behaviour."),
-    L("step", "Stepped phase line", 240, 30, "Treatment begins at session 5, 8 and 11. The staggered start replaces the need to withdraw treatment."),
-    L("p1", "Change after start", 200, 112, "Person 1 improves straight after treatment begins, while persons 2 and 3, still in baseline, do not change. That rules out a shared outside event."),
-    L("p3", "Change repeats", 296, 210, "Each person changes only when the treatment reaches them: three replications."),
+    L("base", "Baseline, all three", MBX(2), 100 - 9 * 7, "Everyone starts untreated. Longer baselines for later people show that time alone does not change the behaviour."),
+    L("step", "Stepped phase line", MBX(7.5), 150, "Treatment begins at session 5, 8 and 11. The staggered start replaces the need to withdraw treatment."),
+    L("p1", "Change after start", MBX(8), 100 - mbData(5, 0)[7] * 7, "Person 1 improves straight after treatment begins, while persons 2 and 3, still in baseline, do not change. That rules out a shared outside event."),
+    L("p3", "Change repeats", MBX(13), 284 - mbData(11, 2)[12] * 7, "Each person changes only when the treatment reaches them: three replications."),
   ],
 };
 
@@ -256,11 +250,11 @@ const factorial: FigureDef = {
     </g>
   ),
   labels: [
-    L("cell", "Cell mean", 60, 40, "Each dot is the mean of one of the four groups, for example medicine plus CBT."),
-    L("mainA", "Main effect of medicine", 160, 140, "Averaged over CBT and no CBT, people on medicine improve more: the lines rise from left to right."),
-    L("mainB", "Main effect of CBT", 60, 80, "Averaged over both medicine groups, the CBT line sits higher."),
-    L("inter", "Interaction", 210, 64, "The lines are not parallel: CBT adds much more when combined with medicine. The effect of one factor depends on the level of the other."),
-    L("parallel", "Parallel = no interaction", 230, 190, "The dashed line shows what CBT plus medicine would look like if the two simply added up. Parallel lines mean no interaction."),
+    L("cell", "Cell mean", FX(1), FY(21), "Each dot is the mean of one of the four groups, for example medicine plus CBT."),
+    L("mainA", "Main effect of medicine", FX(0.5), FY(6), "Averaged over CBT and no CBT, people on medicine improve more: the lines rise from left to right."),
+    L("mainB", "Main effect of CBT", FX(0.15), FY(11.65), "Averaged over both medicine groups, the CBT line sits higher."),
+    L("inter", "Interaction", FX(0.8), FY(18.8), "The lines are not parallel: CBT adds much more when combined with medicine. The effect of one factor depends on the level of the other."),
+    L("parallel", "Parallel = no interaction", FX(0.6), FY(12.4), "The dashed line shows what CBT plus medicine would look like if the two simply added up. Parallel lines mean no interaction."),
   ],
 };
 
@@ -287,10 +281,10 @@ const serial: FigureDef = {
     </g>
   ),
   labels: [
-    L("primacy", "Primacy effect", 70, 50, "Early words get the most rehearsal and pass into long-term memory, so they are recalled well."),
-    L("middle", "Middle items", 140, 120, "Words in the middle get little rehearsal and are pushed out of short-term memory by later ones."),
-    L("recency", "Recency effect", 250, 30, "The last few words are still in short-term memory at the moment of recall."),
-    L("delay", "After a 30 s delay", 230, 168, "Counting backwards for 30 seconds before recall wipes out recency but leaves primacy. This supports separate short and long-term stores."),
+    L("primacy", "Primacy effect", PX(1), PY(72), "Early words get the most rehearsal and pass into long-term memory, so they are recalled well."),
+    L("middle", "Middle items", PX(10), PY(30), "Words in the middle get little rehearsal and are pushed out of short-term memory by later ones."),
+    L("recency", "Recency effect", PX(20), PY(88), "The last few words are still in short-term memory at the moment of recall."),
+    L("delay", "After a 30 s delay", PX(19), PY(34), "Counting backwards for 30 seconds before recall wipes out recency but leaves primacy. This supports separate short and long-term stores."),
   ],
 };
 
@@ -316,10 +310,10 @@ const forgetting: FigureDef = {
     </g>
   ),
   labels: [
-    L("steep", "Steep early loss", 70, 150, "Over half the savings are gone within an hour."),
-    L("flat", "Curve flattens", 210, 182, "After about a day, forgetting slows: what survives the first day tends to last."),
-    L("savings", "Savings measure", 60, 30, "Ebbinghaus measured how much less time it took to relearn a list: the savings method, more sensitive than recall."),
-    L("review", "Spaced reviews", 250, 30, "Each review restores memory and the next decline is slower. Spacing study over days beats cramming."),
+    L("steep", "Steep early loss", EX(0.6), EY(51), "Over half the savings are gone within an hour."),
+    L("flat", "Curve flattens", EX(144), EY(25), "After about a day, forgetting slows: what survives the first day tends to last."),
+    L("savings", "Savings measure", EX(0.0001), EY(100), "Ebbinghaus measured how much less time it took to relearn a list: the savings method, more sensitive than recall."),
+    L("review", "Spaced reviews", EX(24), EY(95), "Each review restores memory and the next decline is slower. Spacing study over days beats cramming."),
   ],
 };
 
@@ -345,11 +339,11 @@ const yerkes: FigureDef = {
     </g>
   ),
   labels: [
-    L("simple", "Simple task", 300, 48, "On easy or well practised tasks, such as running a sprint, performance peaks at fairly high arousal."),
-    L("complex", "Complex task", 60, 32, "On difficult tasks, such as an exam or a first therapy session, performance peaks at lower arousal and falls off sooner."),
-    L("opt", "Optimal arousal", 144, 186, "The best level of arousal. Moderate exam anxiety helps; severe anxiety hurts performance."),
-    L("low", "Too little arousal", 60, 160, "Bored or drowsy: performance suffers."),
-    L("high", "Too much arousal", 300, 160, "Panic and overwhelm: attention narrows and performance collapses."),
+    L("simple", "Simple task", YX(0.62), YY(1), "On easy or well practised tasks, such as running a sprint, performance peaks at fairly high arousal."),
+    L("complex", "Complex task", YX(0.38), YY(0.92), "On difficult tasks, such as an exam or a first therapy session, performance peaks at lower arousal and falls off sooner."),
+    L("opt", "Optimal arousal", YX(0.38), 200, "The best level of arousal. Moderate exam anxiety helps; severe anxiety hurts performance."),
+    L("low", "Too little arousal", YX(0.08), YY(gauss(0.62, 0.22)(0.08)), "Bored or drowsy: performance suffers."),
+    L("high", "Too much arousal", YX(0.92), YY(gauss(0.62, 0.22)(0.92)), "Panic and overwhelm: attention narrows and performance collapses."),
   ],
 };
 
@@ -377,11 +371,11 @@ const stressVuln: FigureDef = {
     </g>
   ),
   labels: [
-    L("thr", "Threshold", 150, 132, "The line above which an episode of illness starts. Its shape means stress and vulnerability trade off against each other."),
-    L("ill", "Episode zone", 210, 40, "Above the line: an episode of illness, such as a psychotic or depressive episode."),
-    L("well", "Coping zone", 300, 196, "Below the line the person stays well, even with real stress."),
-    L("hv", "Vulnerable, small stress", 250, 136, "A highly vulnerable person can relapse after a small stress, such as a family argument or stopping medicine."),
-    L("lv", "Robust, big stress", 72, 56, "Almost anyone can become unwell under extreme stress."),
+    L("thr", "Threshold", VX(0.3), VYY(thr(0.3)), "The line above which an episode of illness starts. Its shape means stress and vulnerability trade off against each other."),
+    L("ill", "Episode zone", VX(0.65), VYY(0.8), "Above the line: an episode of illness, such as a psychotic or depressive episode."),
+    L("well", "Coping zone", VX(0.5), VYY(0.08), "Below the line the person stays well, even with real stress."),
+    L("hv", "Vulnerable, small stress", VX(0.8), VYY(0.25), "A highly vulnerable person can relapse after a small stress, such as a family argument or stopping medicine."),
+    L("lv", "Robust, big stress", VX(0.15), VYY(0.8), "Almost anyone can become unwell under extreme stress."),
   ],
 };
 
@@ -408,6 +402,10 @@ function fi(): [number, number][] {
   for (let k = 0; k < 5; k++) for (let i = 0; i <= 10; i++) p.push([k * 20 + i * 2, k * 13 + 13 * (i / 10) ** 2.5]);
   return p;
 }
+/** Time and total responses of the record point nearest time t (for pointing a label at the curve). */
+const near = (pts: [number, number][], t: number) => pts.reduce((b, p) => (Math.abs(p[0] - t) < Math.abs(b[0] - t) ? p : b));
+const at = (pts: [number, number][], t: number) => near(pts, t)[0];
+const atR = (pts: [number, number][], t: number) => near(pts, t)[1];
 const line = (pts: [number, number][]) => pts.map(([t, r], i) => `${i ? "L" : "M"}${SCX(t)},${SCY(r)}`).join(" ");
 const schedules: FigureDef = {
   id: "reinforcement-schedules",
@@ -425,10 +423,10 @@ const schedules: FigureDef = {
     </g>
   ),
   labels: [
-    L("vr", "Variable ratio", 160, 30, "Reward after an unpredictable number of responses, like a slot machine. The highest, steadiest rate and the hardest to extinguish."),
-    L("fr", "Fixed ratio", 300, 84, "Reward after every set number of responses, like piece work. Fast bursts with a short pause after each reward."),
-    L("vi", "Variable interval", 230, 140, "The first response after an unpredictable time is rewarded, like checking for messages. Slow, steady responding."),
-    L("fi", "Fixed interval", 60, 176, "The first response after a set time is rewarded. Responding stops after each reward and speeds up as the time nears: the scallop."),
+    L("vr", "Variable ratio", SCX(80), SCY(89.6), "Reward after an unpredictable number of responses, like a slot machine. The highest, steadiest rate and the hardest to extinguish."),
+    L("fr", "Fixed ratio", SCX(at(fr(), 58)), SCY(atR(fr(), 58)), "Reward after every set number of responses, like piece work. Fast bursts with a short pause after each reward."),
+    L("vi", "Variable interval", SCX(90), SCY(46.8), "The first response after an unpredictable time is rewarded, like checking for messages. Slow, steady responding."),
+    L("fi", "Fixed interval", SCX(at(fi(), 58)), SCY(atR(fi(), 58)), "The first response after a set time is rewarded. Responding stops after each reward and speeds up as the time nears: the scallop."),
   ],
 };
 

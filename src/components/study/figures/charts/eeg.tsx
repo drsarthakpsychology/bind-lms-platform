@@ -37,10 +37,10 @@ const eegWaves: FigureDef = {
     </g>
   ),
   labels: [
-    L("beta", "Beta: 13 to 30 per second", 20, ROW[0] - 32, "Fast, low waves over the front of the head when alert, thinking or anxious. Benzodiazepines increase beta activity."),
-    L("alpha", "Alpha: 8 to 12 per second", 20, ROW[1] - 32, "The resting rhythm of a relaxed adult with eyes closed, best seen over the back of the head. It vanishes when the eyes open (alpha blocking)."),
-    L("theta", "Theta: 4 to 7 per second", 20, ROW[2] - 32, "Seen in drowsiness and stage N1 sleep and normal in children. Too much theta in an awake adult suggests brain dysfunction."),
-    L("delta", "Delta: below 4 per second", 20, ROW[3] - 38, "Slow, tall waves of deep N3 sleep. In an awake adult, delta suggests delirium, encephalopathy or a structural lesion."),
+    L("beta", "Beta: 13 to 30 per second", 230, ROW[0], "Fast, low waves over the front of the head when alert, thinking or anxious. Benzodiazepines increase beta activity."),
+    L("alpha", "Alpha: 8 to 12 per second", 230, ROW[1], "The resting rhythm of a relaxed adult with eyes closed, best seen over the back of the head. It vanishes when the eyes open (alpha blocking)."),
+    L("theta", "Theta: 4 to 7 per second", 230, ROW[2], "Seen in drowsiness and stage N1 sleep and normal in children. Too much theta in an awake adult suggests brain dysfunction."),
+    L("delta", "Delta: below 4 per second", 230, ROW[3], "Slow, tall waves of deep N3 sleep. In an awake adult, delta suggests delirium, encephalopathy or a structural lesion."),
   ],
 };
 
@@ -63,12 +63,11 @@ const sleepC = callouts(
     { id: "saw", name: "Sawtooth waves", at: [120, SR[4] - 8], about: "REM sleep: low, mixed, fast activity like waking, with sawtooth theta. Vivid dreams, rapid eye movements and loss of muscle tone." },
     { id: "eog", name: "Rapid eye movements", at: [230, SR[4] + 22], about: "The eye channel shows quick jerks in REM. Depression shortens the time to the first REM period; most antidepressants suppress REM." },
   ],
-  290, 26, 40,
 );
 const sleepTraces: FigureDef = {
   id: "sleep-stage-eeg",
   title: "What each sleep stage looks like on EEG",
-  viewBox: "0 0 420 300",
+  viewBox: "0 0 300 300",
   summary: "EEG through the night: alpha when drowsy, theta and vertex waves in N1, spindles and K complexes in N2, tall slow delta in N3, and low fast sawtooth waves with eye movements in REM.",
   art: (
     <g>
@@ -82,7 +81,6 @@ const sleepTraces: FigureDef = {
       <T x={S1 + 2} y={SR[4] + 26} size={8} anchor="start" muted>eye</T>
       <Line x1={S0} y1={292} x2={S0 + 74} y2={292} w={2} />
       <T x={S0 + 37} y={288} size={8} muted>1 s</T>
-      {sleepC.art}
     </g>
   ),
   labels: sleepC.labels,
@@ -106,17 +104,16 @@ const swC = callouts(
   [
     { id: "bg", name: "Normal background", at: [SW0 + 20, 36], about: "Before the attack the record is normal." },
     { id: "onset", name: "Sudden start", at: [SW0 + (SW1 - SW0) * 0.22, 28], about: "The discharge starts abruptly in every channel at once. The child stops, stares and does not respond." },
-    { id: "spike", name: "Spike", at: [SW0 + (SW1 - SW0) * 0.36, 16], about: "A sharp, fast spike from synchronised firing in loops between the thalamus and cortex." },
-    { id: "wave", name: "Slow wave", at: [SW0 + (SW1 - SW0) * 0.55, 56], about: "Each spike is followed by a rounded slow wave. Spike plus wave repeats about 3 times a second." },
+    { id: "spike", name: "Spike", at: [SW0 + (SW1 - SW0) * 0.312, 19], about: "A sharp, fast spike from synchronised firing in loops between the thalamus and cortex." },
+    { id: "wave", name: "Slow wave", at: [SW0 + (SW1 - SW0) * 0.619, 81], about: "Each spike is followed by a rounded slow wave. Spike plus wave repeats about 3 times a second." },
     { id: "gen", name: "Generalised", at: [SW0 + (SW1 - SW0) * 0.6, 196], about: "Both sides of the brain show it together, so it is a generalised seizure, not focal. Ethosuximide and valproate treat it; carbamazepine can worsen it." },
     { id: "end", name: "Sudden end", at: [SW0 + (SW1 - SW0) * 0.86, 140], about: "It stops as suddenly as it began, usually within 10 to 20 seconds, and the child carries on with no confusion afterwards." },
   ],
-  300, 30, 36,
 );
 const spikeWave: FigureDef = {
   id: "spike-wave",
   title: "Absence seizure: 3 per second spike and wave",
-  viewBox: "0 0 420 260",
+  viewBox: "0 0 300 260",
   summary: "During a typical absence seizure, every EEG channel suddenly shows spike and slow wave complexes at about 3 per second, then stops as suddenly.",
   art: (
     <g>
@@ -130,7 +127,6 @@ const spikeWave: FigureDef = {
       <Line x1={SW0 + (SW1 - SW0) * 0.86} y1={14} x2={SW0 + (SW1 - SW0) * 0.86} y2={222} tone="grey" dash w={1} />
       <Line x1={SW0} y1={246} x2={SW0 + (SW1 - SW0) * 0.64 / 2.5} y2={246} w={2} />
       <T x={SW0 + 30} y={240} size={8} anchor="start" muted>1 s</T>
-      {swC.art}
     </g>
   ),
   labels: swC.labels,
@@ -141,7 +137,7 @@ const spikeWave: FigureDef = {
 // REM periods lengthen towards morning; first REM about 70 to 100 minutes after sleep onset; N2 about half the night
 // (NCBI Bookshelf, StatPearls: Physiology, Sleep Stages).
 const HY: Record<string, number> = { W: 40, R: 70, N1: 100, N2: 130, N3: 160 };
-const HX = (h: number) => 54 + h * 42;
+const HX = (h: number) => 54 + h * 27;
 const NIGHT: [number, string][] = [
   [0, "W"], [0.15, "N1"], [0.3, "N2"], [0.55, "N3"], [1.1, "N2"], [1.3, "R"], [1.5, "N2"], [1.75, "N3"], [2.35, "N2"], [2.75, "R"], [3.05, "W"], [3.12, "N1"], [3.2, "N2"],
   [3.8, "N3"], [4.0, "N2"], [4.55, "R"], [5.0, "N2"], [5.85, "R"], [6.45, "N1"], [6.55, "N2"], [7.2, "R"], [7.85, "W"], [8, "W"],
@@ -153,7 +149,6 @@ const hypA = callouts(
     { id: "deep", name: "Deep N3 sleep early", at: [HX(0.8), HY.N3], about: "Most slow wave sleep comes in the first two cycles. It shrinks with age and is the first to rebound after sleep loss." },
     { id: "rem1", name: "First REM, about 90 min", at: [HX(1.4), HY.R], about: "The first REM period starts about 70 to 100 minutes after sleep onset and is short. In depression and narcolepsy it can start much sooner." },
   ],
-  20, 210, 22,
 );
 const hypB = callouts(
   [
@@ -161,12 +156,11 @@ const hypB = callouts(
     { id: "wake", name: "Brief awakening", at: [HX(3.08), HY.W], about: "Short awakenings are normal and usually not remembered." },
     { id: "remlate", name: "REM lengthens", at: [HX(7.5), HY.R], about: "REM periods get longer towards morning, so most dreaming and REM happen in the last third of the night. Overall REM is about 20 to 25 percent of sleep." },
   ],
-  220, 210, 22,
 );
 const hypnogram: FigureDef = {
   id: "hypnogram",
   title: "A night of sleep: the hypnogram",
-  viewBox: "0 0 420 280",
+  viewBox: "0 0 286 206",
   summary: "Across an 8 hour night the sleeper cycles between NREM and REM about every 90 minutes; deep N3 sleep fills the early cycles and REM periods grow longer towards morning.",
   art: (
     <g>
@@ -178,12 +172,10 @@ const hypnogram: FigureDef = {
       ))}
       <P d={hypPath} w={2} />
       {NIGHT.map(([h, s], i) => (s === "R" ? <rect key={i} x={HX(h)} y={HY.R - 4} width={HX(NIGHT[i + 1][0]) - HX(h)} height={8} className="fill-chart-1" /> : null))}
-      <Axes x={54} y={176} w={350} h={150} />
+      <Axes x={54} y={176} w={226} h={150} />
       {[0, 1, 2, 3, 4, 5, 6, 7, 8].map((h) => <T key={h} x={HX(h)} y={188} size={9} muted>{h}</T>)}
       <T x={HX(8)} y={200} size={9} anchor="end" muted>hours asleep</T>
       <Arrow x1={HX(0.3)} y1={184} x2={HX(1.75)} y2={184} both size={4} w={1} />
-      {hypA.art}
-      {hypB.art}
     </g>
   ),
   labels: [...hypA.labels, ...hypB.labels],
@@ -216,12 +208,11 @@ const tenC = callouts(
     { id: "spacing", name: "10 and 20 percent steps", at: [HC.x - 28, HC.y - 10], about: "Electrodes sit at 10 or 20 percent of the total distance front to back and ear to ear, so the map fits any head size." },
     { id: "ear", name: "Ear reference (A1, A2)", at: [HC.x + R + 14, HC.y], about: "Ear lobe electrodes are often used as a reference. A standard recording uses 19 scalp electrodes plus references." },
   ],
-  270, 26, 34,
 );
 const tenTwenty: FigureDef = {
   id: "eeg-10-20",
   title: "The 10-20 EEG electrode map",
-  viewBox: "0 0 420 320",
+  viewBox: "0 0 262 320",
   summary: "Seen from above with the nose at the top, 19 EEG electrodes are placed at 10 and 20 percent steps across the head and named by brain region and side.",
   art: (
     <g>
@@ -247,7 +238,6 @@ const tenTwenty: FigureDef = {
       <T x={HC.x} y={HC.y + R + 22} size={8} muted>inion (back)</T>
       <T x={20} y={20} size={8} anchor="start" muted>left</T>
       <T x={240} y={20} size={8} anchor="end" muted>right</T>
-      {tenC.art}
     </g>
   ),
   labels: tenC.labels,
@@ -277,16 +267,16 @@ const bf: [number, number][] = [polar(heads[1], 110, HR - 8, -28), polar(heads[1
 const rul: [number, number][] = [polar(heads[2], 110, HR - 6, 70), polar(heads[2], 110, 16, 70)];
 const eegLead: [number, number][] = [polar(heads[2], 110, HR - 6, -18), polar(heads[2], 110, HR - 6, 18)];
 const ectLabels = [
-  L("bt", "Bitemporal", 20, 196, "One electrode on each temple. Fastest and most reliable for very ill, suicidal or catatonic patients, but most memory side effects."),
-  L("bf", "Bifrontal", 160, 196, "About 5 cm above each outer eye corner. Similar effectiveness with less effect on verbal memory than bitemporal."),
-  L("rul", "Right unilateral", 300, 196, "One electrode on the right temple and one just right of the top of the head. Fewest memory effects; needs a dose about 6 times the seizure threshold to work well."),
-  L("vertex", "Vertex pad", 300, 226, "The second electrode in right unilateral placement sits just to the right of the vertex, keeping current away from the left (language) hemisphere."),
-  L("eeg", "EEG leads", 160, 226, "Two forehead EEG leads record the seizure, which should last at least about 15 to 25 seconds; a cuffed arm shows the motor seizure despite the muscle relaxant."),
+  L("bt", "Bitemporal", bt[0][0], bt[0][1], "One electrode on each temple. Fastest and most reliable for very ill, suicidal or catatonic patients, but most memory side effects."),
+  L("bf", "Bifrontal", bf[1][0], bf[1][1], "About 5 cm above each outer eye corner. Similar effectiveness with less effect on verbal memory than bitemporal."),
+  L("rul", "Right unilateral", rul[0][0], rul[0][1], "One electrode on the right temple and one just right of the top of the head. Fewest memory effects; needs a dose about 6 times the seizure threshold to work well."),
+  L("vertex", "Vertex pad", rul[1][0], rul[1][1], "The second electrode in right unilateral placement sits just to the right of the vertex, keeping current away from the left (language) hemisphere."),
+  L("eeg", "EEG leads", eegLead[0][0], eegLead[0][1], "Two forehead EEG leads record the seizure, which should last at least about 15 to 25 seconds; a cuffed arm shows the motor seizure despite the muscle relaxant."),
 ];
 const ect: FigureDef = {
   id: "ect-from-above",
   title: "ECT electrode placements, seen from above",
-  viewBox: "0 0 420 250",
+  viewBox: "0 0 420 186",
   summary: "The three ECT electrode placements: bitemporal on both temples, bifrontal on the forehead, and right unilateral on the right temple and near the top of the head.",
   art: (
     <g>
@@ -297,11 +287,6 @@ const ect: FigureDef = {
       {eegLead.map((p, i) => <circle key={`e${i}`} cx={p[0]} cy={p[1]} r={4} className="fill-foreground" />)}
       {heads.map((x) => <T key={x} x={x} y={36} size={8} muted>nose</T>)}
       <T x={heads[2] - 40} y={178} size={8} muted>left</T><T x={heads[2] + 40} y={178} size={8} muted>right</T>
-      <Line x1={bt[0][0]} y1={bt[0][1]} x2={30} y2={186} tone="grey" w={0.8} />
-      <Line x1={bf[1][0]} y1={bf[1][1]} x2={168} y2={186} tone="grey" w={0.8} />
-      <Line x1={rul[0][0]} y1={rul[0][1]} x2={310} y2={186} tone="grey" w={0.8} />
-      <Line x1={rul[1][0]} y1={rul[1][1]} x2={300} y2={217} tone="grey" w={0.8} />
-      <Line x1={eegLead[0][0]} y1={eegLead[0][1]} x2={168} y2={217} tone="grey" w={0.8} />
     </g>
   ),
   labels: ectLabels,
@@ -311,7 +296,7 @@ const ect: FigureDef = {
 // Reference checked: Borbely's two process model: homeostatic Process S rises during waking and falls in sleep; circadian
 // Process C from the suprachiasmatic nucleus; melatonin rises about 2 hours before habitual sleep; core temperature lowest
 // about 2 hours before waking (NCBI Bookshelf, StatPearls: Physiology, Circadian Rhythm; Sleep hygiene).
-const TT = (h: number) => 40 + ((h - 7 + 24) % 24) * 15; // 07:00 at left, 24 hours across 360 units
+const TT = (h: number) => 40 + ((h - 7 + 24) % 24) * 10; // 07:00 at left, 24 hours across 240 units
 const SS = (h: number) => {
   const t = (h - 7 + 24) % 24; // hours since waking
   return t <= 16 ? 1 - 0.8 * Math.exp(-t / 9) : (1 - 0.8 * Math.exp(-16 / 9)) * Math.exp(-(t - 16) / 3.2) + 0.08;
@@ -331,7 +316,6 @@ const twoA = callouts(
     { id: "mel", name: "Melatonin rises", at: [TT(21), 190], about: "Melatonin starts rising about 2 hours before usual bedtime in dim light. Bright screens delay it." },
     { id: "temp", name: "Temperature low point", at: [TT(4.5), 190], about: "Core body temperature is lowest about 2 hours before natural waking. Light after this point moves the clock earlier." },
   ],
-  20, 222, 22,
 );
 const twoB = callouts(
   [
@@ -341,24 +325,21 @@ const twoB = callouts(
     { id: "h4", name: "4 Wind-down routine", at: [TT(22.4), 196], about: "A calm, repeated routine, with worries written down earlier in the evening." },
     { id: "h5", name: "5 Bed only for sleep", at: [TT(23.2), 196], about: "Go to bed only when sleepy; if awake for about 20 minutes, get up and return when sleepy. This is stimulus control, the core of CBT for insomnia." },
   ],
-  224, 222, 22,
 );
 const twoProcess: FigureDef = {
   id: "two-process-sleep",
   title: "Why we sleep when we do, and five habits that help",
-  viewBox: "0 0 420 340",
+  viewBox: "0 0 300 214",
   summary: "Sleep pressure builds through the day while the body clock keeps us alert until evening; sleep comes when the two lines meet. Five habits line up with this daily cycle.",
   art: (
     <g>
-      <rect x={TT(23)} y={36} width={TT(7) + 360 - TT(23)} height={154} className={FILL.d} />
-      <T x={(TT(23) + 400) / 2} y={48} size={9} muted>asleep</T>
-      <P d={plot(SS, 7, 31, (h) => 40 + (h - 7) * 15, (v) => VY(v), 200)} tone="acc" w={2.5} />
-      <P d={plot(CC, 7, 31, (h) => 40 + (h - 7) * 15, (v) => VY(v), 200)} tone="red" w={2.5} dash />
-      <Axes x={40} y={190} w={366} h={160} />
-      {[7, 11, 15, 19, 23, 3, 7].map((h, i) => <T key={i} x={40 + i * 60} y={206} size={9} muted>{`${String(h).padStart(2, "0")}:00`}</T>)}
+      <rect x={TT(23)} y={36} width={TT(7) + 240 - TT(23)} height={154} className={FILL.d} />
+      <T x={(TT(23) + 280) / 2} y={48} size={9} muted>asleep</T>
+      <P d={plot(SS, 7, 31, (h) => 40 + (h - 7) * 10, (v) => VY(v), 200)} tone="acc" w={2.5} />
+      <P d={plot(CC, 7, 31, (h) => 40 + (h - 7) * 10, (v) => VY(v), 200)} tone="red" w={2.5} dash />
+      <Axes x={40} y={190} w={250} h={160} />
+      {[7, 11, 15, 19, 23, 3, 7].map((h, i) => <T key={i} x={40 + i * 40} y={206} size={8} muted>{`${String(h).padStart(2, "0")}:00`}</T>)}
       {[7.2, 14, 21.5, 22.4, 23.2].map((h) => <path key={h} d={`M${TT(h)},190 l-4,-8 l8,0 Z`} className="fill-foreground" />)}
-      {twoA.art}
-      {twoB.art}
     </g>
   ),
   labels: [...twoA.labels, ...twoB.labels],

@@ -69,7 +69,6 @@ const famIono = callouts(
     { id: "sub", name: "Channel subunits", at: [146, 92], about: "Several protein subunits (usually five, or four for glutamate receptors) ring a central pore. Binding twists them so the pore opens." },
     { id: "ions", name: "Ions flow through", at: [120, 128], about: "Ions such as sodium, calcium or chloride rush through the open pore. The cell changes voltage within a millisecond or two, so this is fast signalling." },
   ],
-  262, 40, 40,
 );
 const famG = callouts(
   [
@@ -79,12 +78,11 @@ const famG = callouts(
     { id: "msg", name: "Second messenger", at: [196, 300], about: "Small molecules made by the effector, such as cAMP, IP3 and DAG, spread the signal inside the cell and amplify it many times." },
     { id: "pk", name: "Protein kinase", at: [196, 336], about: "Kinases such as PKA and PKC add phosphate to channels and proteins and can reach the nucleus to change genes. Effects take hundreds of milliseconds to days." },
   ],
-  262, 205, 36,
 );
 const receptorFamilies: FigureDef = {
   id: "receptor-families",
   title: "Two families of receptor",
-  viewBox: "0 0 420 370",
+  viewBox: "0 0 252 370",
   summary: "An ion channel receptor opens a pore within milliseconds; a G protein coupled receptor works through a G protein, an enzyme and second messengers over much longer times.",
   art: (
     <g>
@@ -99,8 +97,7 @@ const receptorFamilies: FigureDef = {
       <T x={20} y={60} size={9} anchor="start" muted>outside</T>
       <T x={20} y={112} size={9} anchor="start" muted>inside</T>
       <T x={170} y={150} size={9} muted>about 1 millisecond</T>
-      {famIono.art}
-      <line x1={10} y1={170} x2={410} y2={170} className="stroke-line" strokeWidth={1} />
+      <line x1={10} y1={170} x2={244} y2={170} className="stroke-line" strokeWidth={1} />
       <T x={10} y={190} size={11} anchor="start" bold>B. Metabotropic: G protein coupled</T>
       <rect x={10} y={228} width={230} height={30} className={FILL.d} />
       <line x1={10} y1={228} x2={240} y2={228} className="stroke-foreground" strokeWidth={1.5} />
@@ -122,7 +119,6 @@ const receptorFamilies: FigureDef = {
       <Arrow x1={196} y1={310} x2={196} y2={326} />
       <rect x={176} y={328} width={40} height={18} rx={5} className={`${FILL.n} stroke-foreground`} strokeWidth={1.2} />
       <T x={60} y={356} size={9} muted>100 milliseconds to minutes</T>
-      {famG.art}
     </g>
   ),
   labels: [...famIono.labels, ...famG.labels],
@@ -138,12 +134,11 @@ const ssriC = callouts(
     { id: "cleft", name: "More serotonin in gap", at: [138, 162], about: "With reuptake blocked, serotonin stays longer in the gap and its level rises." },
     { id: "rec", name: "Postsynaptic receptor", at: [125, 192], about: "5-HT receptors on the receiving cell pass the message on and adapt over weeks. Stimulating 5-HT2 and 5-HT3 receptors explains early nausea, jitteriness and sexual side effects." },
   ],
-  262, 40, 42,
 );
 const ssri: FigureDef = {
   id: "ssri-synapse",
   title: "How an SSRI works at the synapse",
-  viewBox: "0 0 420 300",
+  viewBox: "0 0 252 300",
   summary: "An SSRI blocks the serotonin reuptake pump so serotonin builds up in the gap between neurons.",
   art: (
     <g>
@@ -153,7 +148,6 @@ const ssri: FigureDef = {
       <Cleft pts={MANY} />
       <Receptor x={70} bound="t" /><Receptor x={125} bound="t" /><Receptor x={180} bound="t" />
       <Arrow x1={212} y1={176} x2={198} y2={120} cx={222} cy={146} tone="grey" dash />
-      {ssriC.art}
     </g>
   ),
   labels: ssriC.labels,
@@ -169,12 +163,11 @@ const maoiC = callouts(
     { id: "free", name: "Free amine survives", at: [150, 116], about: "Transmitter taken back up is no longer destroyed, so the store grows." },
     { id: "rec", name: "Postsynaptic receptor", at: [125, 192], about: "More transmitter reaches the receiving cell. Aged cheese, cured meat or soy sauce while on an irreversible MAOI can cause a dangerous rise in blood pressure (the cheese reaction)." },
   ],
-  262, 40, 42,
 );
 const maoi: FigureDef = {
   id: "maoi-synapse",
   title: "How an MAOI works",
-  viewBox: "0 0 420 300",
+  viewBox: "0 0 252 300",
   summary: "An MAOI blocks the enzyme that breaks down monoamines inside the nerve terminal, so more transmitter is stored and released.",
   art: (
     <g>
@@ -187,7 +180,6 @@ const maoi: FigureDef = {
       <Pump x={190} />
       <Cleft pts={MANY.slice(0, 8)} />
       <Receptor x={70} bound="t" /><Receptor x={125} bound="t" /><Receptor x={180} bound="t" />
-      {maoiC.art}
     </g>
   ),
   labels: maoiC.labels,
@@ -203,12 +195,11 @@ const tcaC = callouts(
     { id: "a1", name: "Alpha-1 block", at: [146, 244], about: "Blocking alpha-1 receptors on blood vessels causes dizziness and falls on standing up." },
     { id: "na", name: "Sodium channel block", at: [196, 244], about: "In overdose, sodium channel block in the heart widens the QRS complex and causes arrhythmias and seizures. This is why tricyclics are dangerous in overdose." },
   ],
-  262, 40, 42,
 );
 const tca: FigureDef = {
   id: "tca-synapse",
   title: "Tricyclics: two pumps and many side doors",
-  viewBox: "0 0 420 300",
+  viewBox: "0 0 252 300",
   summary: "Tricyclic antidepressants block both serotonin and noradrenaline reuptake, and also block histamine, muscarinic, alpha-1 receptors and sodium channels, which explains their side effects.",
   art: (
     <g>
@@ -229,7 +220,6 @@ const tca: FigureDef = {
       <Drug x={196} y={236} s={5} />
       <T x={54} y={268} size={9}>H1</T><T x={100} y={268} size={9}>M1</T><T x={146} y={268} size={9}>α1</T><T x={196} y={268} size={9}>Na⁺</T>
       <T x={130} y={226} size={9} muted>off-target sites</T>
-      {tcaC.art}
     </g>
   ),
   labels: tcaC.labels,
@@ -244,12 +234,11 @@ const d2C = callouts(
     { id: "block", name: "Antipsychotic blocks D2", at: [70, 180], about: "The drug fills the receptor without switching it on. Haloperidol binds tightly; clozapine and quetiapine let go quickly, so they cause fewer movement side effects." },
     { id: "auto", name: "D2 autoreceptor", at: [205, 136], about: "D2 receptors on the sending terminal act as a brake. Blocking them briefly increases dopamine release at the start of treatment." },
   ],
-  262, 40, 50,
 );
 const d2: FigureDef = {
   id: "antipsychotic-d2",
   title: "How an antipsychotic blocks dopamine",
-  viewBox: "0 0 420 300",
+  viewBox: "0 0 252 300",
   summary: "Antipsychotics occupy dopamine D2 receptors so released dopamine cannot act; many also block 5-HT2A receptors.",
   art: (
     <g>
@@ -260,7 +249,6 @@ const d2: FigureDef = {
       <path d="M195,150 L195,134 L215,128 L216,144 Z" className={`${FILL.e} stroke-foreground`} strokeWidth={1.2} />
       <Cleft pts={FEW.concat([[120, 150], [160, 175]])} />
       <Receptor x={70} bound="drug" /><Receptor x={125} bound="drug" /><Receptor x={180} bound="t" />
-      {d2C.art}
     </g>
   ),
   labels: d2C.labels,
@@ -279,7 +267,6 @@ const occC = callouts(
     { id: "prl", name: "Prolactin rises", at: [OX(80), 210 - sig(76, 5)(80) * 140], about: "Blocking D2 in the tuberoinfundibular pathway removes dopamine's brake on prolactin, causing breast changes, missed periods and sexual problems." },
     { id: "eps", name: "Movement side effects", at: [OX(86), 210 - sig(86, 3)(86) * 150], about: "Above about 80 percent, blocking the nigrostriatal pathway causes parkinsonism, akathisia and dystonia." },
   ],
-  52, 52, 30,
 );
 const d2occ: FigureDef = {
   id: "d2-occupancy",
@@ -294,7 +281,6 @@ const d2occ: FigureDef = {
       <P d={plot(sig(58, 4), 0, 100, OX, OY)} tone="acc" w={2.5} />
       <P d={plot(sig(76, 5), 0, 100, OX, (v) => 210 - v * 140)} tone="grey" w={2} dash />
       <P d={plot(sig(86, 3), 0, 100, OX, (v) => 210 - v * 150)} tone="red" w={2.5} />
-      {occC.art}
     </g>
   ),
   labels: occC.labels,
@@ -312,12 +298,11 @@ const partC = callouts(
     { id: "low", name: "Low dopamine tone", at: [CX(1), RY(10)], about: "Where dopamine is low, as in the prefrontal cortex with negative symptoms, the partial agonist raises the signal to its ceiling." },
     { id: "ant", name: "Antagonist", at: [CX(3), RY(1.5)], about: "A pure blocker such as haloperidol fills the receptor and gives no signal at all, whatever the concentration." },
   ],
-  282, 40, 38,
 );
 const partial: FigureDef = {
   id: "partial-agonist",
   title: "Full agonist, partial agonist and antagonist",
-  viewBox: "0 0 420 250",
+  viewBox: "0 0 280 250",
   summary: "A partial agonist can switch a receptor on only part of the way, so it lowers signalling when transmitter is high and raises it when transmitter is low.",
   art: (
     <g>
@@ -330,7 +315,6 @@ const partial: FigureDef = {
       <P d={plot(() => 1.5, 0, 10, CX, RY)} tone="ink" w={2.5} dash />
       <Arrow x1={250} y1={RY(80) + 4} x2={250} y2={RY(35) - 6} tone="red" w={1.2} size={5} />
       <Arrow x1={258} y1={RY(10) - 4} x2={258} y2={RY(35) + 6} tone="red" w={1.2} size={5} />
-      {partC.art}
     </g>
   ),
   labels: partC.labels,
@@ -362,12 +346,11 @@ const benzoC = callouts(
     { id: "bz", name: "Benzodiazepine site", at: polar(GC.x, GC.y, 82, 324), about: "Benzodiazepines and Z-drugs bind at the alpha and gamma-2 interface. They do nothing alone but boost GABA. Flumazenil blocks this site and reverses an overdose." },
     { id: "pore", name: "Chloride pore", at: [GC.x + 8, GC.y + 8], about: "Chloride ions flow in, the neuron becomes more negative and is less likely to fire." },
   ],
-  252, 30, 30,
 );
 const benzo: FigureDef = {
   id: "benzo-gabaa",
   title: "Benzodiazepines at the GABA-A receptor",
-  viewBox: "0 0 420 400",
+  viewBox: "0 0 240 400",
   summary: "The GABA-A receptor is a ring of five subunits around a chloride pore; GABA binds between beta and alpha, and benzodiazepines bind between alpha and gamma-2, making the pore open more often.",
   art: (
     <g>
@@ -391,18 +374,17 @@ const benzo: FigureDef = {
         const [x, y] = polar(GC.x, GC.y, 82, 324);
         return <Drug x={x} y={y} s={7} />;
       })()}
-      <line x1={10} y1={232} x2={410} y2={232} className="stroke-line" />
+      <line x1={10} y1={232} x2={232} y2={232} className="stroke-line" />
       <T x={10} y={250} size={10} anchor="start" muted>chloride channel openings over time</T>
       <P d={pulse(30, 290, [[30, 44], [120, 132]])} w={1.5} />
       <P d={pulse(30, 330, [[18, 30], [52, 64], [90, 102], [128, 140], [166, 178]])} tone="acc" w={1.5} />
       <P d={pulse(30, 370, [[30, 120]])} tone="red" w={1.5} />
-      {benzoC.art}
     </g>
   ),
   labels: benzoC.labels.concat([
-    L("t-gaba", "GABA alone", 252, 284, "With GABA alone the channel opens now and then."),
-    L("t-bz", "Plus a benzodiazepine", 252, 324, "Benzodiazepines make openings more frequent, not longer, and have a ceiling, so they are safer alone in overdose."),
-    L("t-barb", "Plus a barbiturate", 252, 364, "Barbiturates and alcohol keep the channel open longer and can open it without GABA, so mixing them with benzodiazepines can stop breathing."),
+    L("t-gaba", "GABA alone", 67, 276, "With GABA alone the channel opens now and then."),
+    L("t-bz", "Plus a benzodiazepine", 88, 316, "Benzodiazepines make openings more frequent, not longer, and have a ceiling, so they are safer alone in overdose."),
+    L("t-barb", "Plus a barbiturate", 100, 356, "Barbiturates and alcohol keep the channel open longer and can open it without GABA, so mixing them with benzodiazepines can stop breathing."),
   ]),
 };
 
@@ -416,12 +398,11 @@ const stimC = callouts(
     { id: "rev", name: "DAT runs in reverse", at: [190, 146], about: "Inside, amphetamine makes the transporter pump dopamine out, even without nerve firing. This is why it is a stronger releaser." },
     { id: "cleft", name: "Dopamine in the gap", at: [138, 162], about: "Raised dopamine and noradrenaline in prefrontal cortex improve attention in ADHD; in the reward pathway, fast large rises carry abuse risk." },
   ],
-  262, 40, 42,
 );
 const stim: FigureDef = {
   id: "stimulant-synapse",
   title: "How stimulants raise dopamine",
-  viewBox: "0 0 420 300",
+  viewBox: "0 0 252 300",
   summary: "Methylphenidate blocks the dopamine transporter; amphetamine enters through it, empties vesicles and runs the transporter in reverse.",
   art: (
     <g>
@@ -434,7 +415,6 @@ const stim: FigureDef = {
       <Arrow x1={190} y1={124} x2={190} y2={170} tone="acc" w={2} size={6} />
       <Cleft pts={MANY} />
       <Receptor x={90} bound="t" /><Receptor x={160} bound="t" />
-      {stimC.art}
     </g>
   ),
   labels: stimC.labels,
@@ -458,12 +438,11 @@ const pkC = callouts(
     { id: "mec", name: "Effective threshold", at: [200, CY(0.3)], about: "The minimum effective level: below this line the drug is too low to work." },
     { id: "tmax", name: "Time to peak (Tmax)", at: [TX(2.15), 206], about: "How long after the dose the peak comes, often 1 to 4 hours for tablets. Food can delay it." },
   ],
-  282, 34, 27,
 );
 const pkSingle: FigureDef = {
   id: "pk-single-dose",
   title: "One dose: absorption, peak and half-life",
-  viewBox: "0 0 420 250",
+  viewBox: "0 0 290 250",
   summary: "After a tablet, blood level rises during absorption, peaks, then falls by half every half-life; the drug works while the level sits between the effective and toxic lines.",
   art: (
     <g>
@@ -477,7 +456,6 @@ const pkSingle: FigureDef = {
       <Line x1={TX(2.15)} y1={CY(1)} x2={TX(2.15)} y2={210} tone="ink" dash w={1} />
       <Line x1={TX(10)} y1={CY(conc(10))} x2={TX(16)} y2={CY(conc(10))} tone="ink" w={1} />
       <Line x1={TX(16)} y1={CY(conc(10))} x2={TX(16)} y2={CY(conc(16))} tone="ink" w={1} />
-      {pkC.art}
     </g>
   ),
   labels: pkC.labels,
@@ -503,12 +481,11 @@ const ssC = callouts(
     { id: "wash", name: "Stopping: washout", at: [SX2(7), SY2(multi(false)(7))], about: "After the last dose, the level halves each half-life and is about 97 percent gone after 5 half-lives. This guides how long to wait when switching drugs." },
     { id: "dose", name: "Each dose", at: [SX2(3), 204], about: "One dose is taken every half-life (the small triangles)." },
   ],
-  290, 40, 30,
 );
 const pkSteady: FigureDef = {
   id: "pk-steady-state",
   title: "Repeated doses, steady state and a loading dose",
-  viewBox: "0 0 420 250",
+  viewBox: "0 0 290 250",
   summary: "Taking a dose every half-life makes the level climb until intake equals removal, reached after about 4 to 5 half-lives; a loading dose gets there at once.",
   art: (
     <g>
@@ -518,7 +495,6 @@ const pkSteady: FigureDef = {
       <Axes x={40} y={210} w={240} h={190} xl="time, in half-lives" yl="blood level" />
       {[0, 1, 2, 3, 4, 5, 6, 7, 8].map((t) => <T key={t} x={SX2(t)} y={222} size={9} muted>{t}</T>)}
       {[0, 1, 2, 3, 4, 5].map((t) => <path key={t} d={`M${SX2(t)},200 l-4,8 l8,0 Z`} className="fill-foreground" />)}
-      {ssC.art}
     </g>
   ),
   labels: ssC.labels,
@@ -553,12 +529,11 @@ const gpcrC = callouts(
     { id: "ac", name: "Adenylyl cyclase", at: [222, 130], about: "Gs switches this enzyme on and Gi switches it off. It turns ATP into cyclic AMP." },
     { id: "camp", name: "cAMP (second messenger)", at: [222, 196], about: "cAMP spreads the message inside the cell and turns on protein kinase A, which tags channels and gene switches such as CREB." },
   ],
-  262, 30, 34,
 );
 const gpcr: FigureDef = {
   id: "gpcr-scene",
   title: "A G protein coupled receptor at work",
-  viewBox: "0 0 420 300",
+  viewBox: "0 0 256 300",
   summary: "A receptor chain crosses the membrane seven times; transmitter binding makes it activate a G protein, whose alpha unit turns on an enzyme that makes the second messenger cAMP.",
   art: (
     <g>
@@ -586,7 +561,6 @@ const gpcr: FigureDef = {
       <Arrow x1={140} y1={222} x2={206} y2={160} cx={190} cy={228} tone="acc" />
       <Arrow x1={222} y1={160} x2={222} y2={186} />
       {[[214, 196], [226, 202], [218, 210], [232, 192]].map(([x, y], i) => <Dot key={i} x={x} y={y} r={3} tone="acc" />)}
-      {gpcrC.art}
     </g>
   ),
   labels: gpcrC.labels,
@@ -603,12 +577,11 @@ const nmdaC = callouts(
     { id: "ket", name: "Ketamine in the pore", at: [112, 128], about: "Ketamine, PCP and memantine bind inside the open channel and block it. A single low dose of ketamine can lift depression within hours; esketamine is given as a nasal spray." },
     { id: "ca", name: "Calcium flows in", at: [112, 188], about: "When open, the channel lets calcium and sodium in. Calcium triggers the changes behind long-term potentiation; too much calcium kills cells (excitotoxicity)." },
   ],
-  262, 40, 44,
 );
 const nmda: FigureDef = {
   id: "nmda-receptor",
   title: "The NMDA receptor: two keys and a plug",
-  viewBox: "0 0 420 240",
+  viewBox: "0 0 240 240",
   summary: "The NMDA glutamate receptor opens only with both glutamate and glycine bound and the magnesium plug removed; ketamine blocks it from inside the pore.",
   art: (
     <g>
@@ -624,7 +597,6 @@ const nmda: FigureDef = {
       <T x={112} y={103} size={7} bold>Mg</T>
       <Drug x={112} y={128} s={7} />
       <Arrow x1={112} y1={150} x2={112} y2={200} tone="acc" w={2} dash />
-      {nmdaC.art}
     </g>
   ),
   labels: nmdaC.labels,
@@ -643,12 +615,11 @@ const lithC = callouts(
     { id: "nuc", name: "Protective genes", at: [140, 176], about: "Over weeks lithium raises protective proteins such as BDNF and bcl-2. People on long-term lithium have lower suicide rates." },
     { id: "axon", name: "Out to the kidney", at: [232, 236], about: "Lithium is never metabolised; the kidney clears it like sodium. Dehydration, NSAIDs, ACE inhibitors and thiazide diuretics raise levels." },
   ],
-  262, 24, 36,
 );
 const lithium: FigureDef = {
   id: "lithium-neuron",
   title: "Lithium inside a neuron",
-  viewBox: "0 0 420 270",
+  viewBox: "0 0 264 270",
   summary: "Lithium enters through sodium channels and inside the neuron blocks inositol recycling and the enzyme GSK-3 beta; it is cleared unchanged by the kidney.",
   art: (
     <g>
@@ -672,7 +643,6 @@ const lithium: FigureDef = {
       <path d="M118,176 q6,-10 12,0 t12,0 t12,0 t12,0" className="fill-none stroke-foreground" strokeWidth={1} />
       <path d="M118,188 q6,-10 12,0 t12,0 t12,0 t12,0" className="fill-none stroke-foreground" strokeWidth={1} />
       <path d="M220,236 C232,246 240,252 256,262" className="fill-none stroke-foreground" strokeWidth={6} strokeLinecap="round" />
-      {lithC.art}
     </g>
   ),
   labels: lithC.labels,
@@ -693,12 +663,11 @@ const liverC = callouts(
     { id: "nuc", name: "Nucleus: more enzyme", at: [178, 64], about: "Inducers such as tobacco smoke (1A2), carbamazepine and St John's wort (3A4) switch on the genes for more enzyme. It takes 1 to 2 weeks, and levels of other drugs fall." },
     { id: "bile", name: "Bile canaliculus", at: [244, 120], about: "Some tagged products leave into bile and the gut; most return to the blood and leave in urine." },
   ],
-  262, 24, 34,
 );
 const liver: FigureDef = {
   id: "liver-cell-cyp",
   title: "A liver cell clearing a medicine",
-  viewBox: "0 0 420 300",
+  viewBox: "0 0 258 300",
   summary: "Blood from the gut brings the drug to a liver cell; CYP enzymes in the smooth ER add oxygen, UGT adds a tag, and the product leaves for the kidney or bile.",
   art: (
     <g>
@@ -726,7 +695,6 @@ const liver: FigureDef = {
       <Arrow x1={162} y1={214} x2={236} y2={130} cx={220} cy={214} tone="grey" />
       <Arrow x1={128} y1={222} x2={50} y2={262} cx={96} cy={270} tone="grey" />
       <T x={30} y={296} size={8} muted>blood</T>
-      {liverC.art}
     </g>
   ),
   labels: liverC.labels,

@@ -47,7 +47,6 @@ const pavC = callouts(
     { id: "food", name: "Food (unconditioned)", at: [236, 196], about: "Meat powder makes the dog salivate with no learning: the unconditioned stimulus and response." },
     { id: "fist", name: "Cheek tube for saliva", at: [212, 138], about: "A small operation led a salivary duct to the outside of the cheek, so every drop could be collected." },
   ],
-  20, 262, 22,
 );
 const pavD = callouts(
   [
@@ -55,12 +54,11 @@ const pavD = callouts(
     { id: "screen", name: "Screen", at: [310, 100], about: "The experimenter worked from behind a wall so his movements could not act as cues." },
     { id: "obs", name: "Experimenter", at: [350, 110], about: "Pavlov's team recorded the amount of saliva on each trial: the conditioned response appeared after a few pairings." },
   ],
-  230, 262, 22,
 );
 const pavlov: FigureDef = {
   id: "pavlov-apparatus",
   title: "Pavlov's conditioning set-up",
-  viewBox: "0 0 420 340",
+  viewBox: "0 0 420 252",
   summary: "A dog stands in a harness; a tube from its cheek carries saliva to a measuring tube, food arrives in a bowl, a metronome sounds, and the experimenter watches from behind a screen.",
   art: (
     <g>
@@ -91,8 +89,6 @@ const pavlov: FigureDef = {
       <rect x={306} y={92} width={8} height={20} className="fill-chart-1" opacity={0.5} />
       <Person x={352} y={96} h={150} sit />
       <rect x={326} y={176} width={60} height={8} {...fillS("d", 1.2)} />
-      {pavC.art}
-      {pavD.art}
     </g>
   ),
   labels: [...pavC.labels, ...pavD.labels],
@@ -113,12 +109,11 @@ const skC = callouts(
     { id: "grid", name: "Grid floor", at: [70, 186], about: "Metal bars that can deliver a mild shock, used to study punishment and escape or avoidance learning." },
     { id: "rec", name: "Cumulative recorder", at: [150, 258], about: "A pen steps up with every response on paper moving at a steady speed, so the slope shows the response rate." },
   ],
-  262, 24, 32,
 );
 const skinner: FigureDef = {
   id: "skinner-box",
   title: "The Skinner box",
-  viewBox: "0 0 420 300",
+  viewBox: "0 0 250 300",
   summary: "An operant chamber: a rat presses a lever and food drops into a tray, with a light, a speaker and a grid floor inside, and a recorder outside counting every press.",
   art: (
     <g>
@@ -138,7 +133,6 @@ const skinner: FigureDef = {
       <path d="M193,127 C230,200 240,230 210,240" className="fill-none stroke-foreground" strokeWidth={1} strokeDasharray="3 2" />
       <rect x={20} y={216} width={190} height={70} rx={4} {...fillS("n", 1.5)} />
       <P d="M30,276 L50,276 L50,268 L64,268 L64,262 L80,262 L80,252 L96,252 L96,246 L120,246 L120,238 L134,238 L134,232 L150,232 L150,226 L190,226" w={1.5} tone="acc" />
-      {skC.art}
     </g>
   ),
   labels: skC.labels,
@@ -159,12 +153,11 @@ const ssC = callouts(
     { id: "door", name: "Door", at: [240, 180], about: "Mother and stranger come and go here. Reunion behaviour as the mother returns defines secure, avoidant, resistant and disorganised patterns." },
     { id: "grid", name: "Floor in 16 squares", at: [60, 200], about: "Lines on the floor let observers record how far and how much the baby explores." },
   ],
-  262, 22, 34,
 );
 const strange: FigureDef = {
   id: "strange-situation-room",
   title: "The Strange Situation room",
-  viewBox: "0 0 420 270",
+  viewBox: "0 0 246 270",
   summary: "Plan of the Strange Situation playroom: a square floor in 16 squares with toys at one end, chairs for the mother and the stranger at the other, a door, and observers behind a one-way mirror.",
   art: (
     <g>
@@ -186,7 +179,6 @@ const strange: FigureDef = {
       <line x1={240} y1={160} x2={240} y2={200} className="stroke-card" strokeWidth={4} />
       <path d="M240,160 A40,40 0 0 1 200,200" className="fill-none stroke-muted-foreground" strokeWidth={1} strokeDasharray="3 2" />
       <line x1={240} y1={160} x2={200} y2={160} className={INK} strokeWidth={2} />
-      {ssC.art}
     </g>
   ),
   labels: ssC.labels,
@@ -202,7 +194,6 @@ const vcA = callouts(
     { id: "shallow", name: "Shallow side", at: [80, 88], about: "The checkerboard lies just under the glass, so it looks like solid floor." },
     { id: "board", name: "Centre board", at: [210, 72], about: "The baby is placed on this raised plank between the two sides." },
   ],
-  20, 262, 22,
 );
 const vcB = callouts(
   [
@@ -210,12 +201,11 @@ const vcB = callouts(
     { id: "infant", name: "Crawling infant", at: [204, 52], about: "Most of 36 infants aged 6 to 14 months crawled to the mother over the shallow side but would not cross the deep side." },
     { id: "mother", name: "Mother calling", at: [392, 40], about: "The mother calls from the deep end, then from the shallow end. Later studies found babies also check the mother's face (social referencing)." },
   ],
-  230, 262, 22,
 );
 const cliff: FigureDef = {
   id: "visual-cliff",
   title: "The visual cliff",
-  viewBox: "0 0 420 340",
+  viewBox: "0 0 420 236",
   summary: "Side view of the visual cliff: a glass table with a checkerboard just under the glass on one side and far below on the other; a baby on the centre board will not crawl over the apparent drop.",
   art: (
     <g>
@@ -233,8 +223,6 @@ const cliff: FigureDef = {
       <ellipse cx={212} cy={60} rx={16} ry={8} {...fillS("b", 1.2)} />
       <circle cx={228} cy={54} r={7} {...fillS("b", 1.2)} />
       <Person x={392} y={22} h={58} />
-      {vcA.art}
-      {vcB.art}
     </g>
   ),
   labels: [...vcA.labels, ...vcB.labels],
@@ -250,7 +238,6 @@ const bbA = callouts(
     { id: "model", name: "Adult model", at: [350, 120], about: "In the aggressive condition the adult hit, kicked and threw the doll and said things like 'Pow!'. Other children saw a calm model or none." },
     { id: "mallet", name: "Mallet", at: [312, 82], about: "The mallet and specific phrases let the researchers spot exact copies of the model's acts." },
   ],
-  20, 262, 22,
 );
 const bbB = callouts(
   [
@@ -258,12 +245,11 @@ const bbB = callouts(
     { id: "copy", name: "Imitated aggression", at: [276, 236], about: "Children who saw the aggressive model copied the acts, boys more than girls, especially after a same-sex model: learning by observation without reward." },
     { id: "mirror", name: "One-way mirror", at: [14, 120], about: "In the test room, observers counted each child's acts for 20 minutes through a one-way mirror." },
   ],
-  230, 262, 22,
 );
 const bobo: FigureDef = {
   id: "bobo-doll",
   title: "Bandura's Bobo doll study",
-  viewBox: "0 0 420 340",
+  viewBox: "0 0 420 250",
   summary: "A child at a small table watches an adult hit a large inflatable Bobo doll with a mallet; later, alone with the doll, the child copies the same acts.",
   art: (
     <g>
@@ -284,8 +270,6 @@ const bobo: FigureDef = {
       <line x1={340} y1={130} x2={316} y2={92} className={INK} strokeWidth={5} strokeLinecap="round" />
       <rect x={300} y={74} width={26} height={14} rx={3} transform="rotate(-30 313 81)" {...fillS("d", 1.5)} />
       {[[180, 236], [196, 240], [188, 230]].map(([x, y], i) => <line key={i} x1={x} y1={y} x2={x + 14} y2={y - 6} className={INK} strokeWidth={2.5} strokeLinecap="round" />)}
-      {bbA.art}
-      {bbB.art}
     </g>
   ),
   labels: [...bbA.labels, ...bbB.labels],
@@ -304,7 +288,6 @@ const milA = callouts(
     { id: "exp", name: "Experimenter", at: [180, 108], about: "In a grey lab coat beside the teacher. When the teacher hesitated he used four set prods, ending with 'You have no other choice, you must go on'." },
     { id: "gen", name: "Shock generator", at: [120, 44], about: "A realistic but fake machine. The teacher was given a real 45 volt sample shock first, so it seemed genuine." },
   ],
-  20, 152, 22,
 );
 const milB = callouts(
   [
@@ -312,21 +295,19 @@ const milB = callouts(
     { id: "learner", name: "Learner (actor)", at: [330, 74], about: "A friendly 47 year old accountant, an actor. Strapped into a chair with an electrode on his wrist, he received no real shocks." },
     { id: "box", name: "Answer box", at: [376, 40], about: "The learner pressed one of four switches to answer the word pair test; wrong answers were planned." },
   ],
-  230, 152, 22,
 );
 const milC = callouts(
   [
-    { id: "s15", name: "15 V: slight shock", at: [SWX(0) + 4, 284], about: "The first switch. Each wrong answer moved the teacher up one switch, 15 volts at a time." },
-    { id: "s300", name: "300 V: intense", at: [SWX(19) + 4, 284], about: "Every one of the 40 men went at least to 300 volts." },
-    { id: "s450", name: "450 V: XXX", at: [SWX(29) + 4, 284], about: "26 of 40 men (65 percent) went to the last switch, far more than experts had predicted." },
+    { id: "s15", name: "15 V: slight shock", at: [SWX(0) + 4, 205], about: "The first switch. Each wrong answer moved the teacher up one switch, 15 volts at a time." },
+    { id: "s300", name: "300 V: intense", at: [SWX(19) + 4, 205], about: "Every one of the 40 men went at least to 300 volts." },
+    { id: "s450", name: "450 V: XXX", at: [SWX(29) + 4, 205], about: "26 of 40 men (65 percent) went to the last switch, far more than experts had predicted." },
   ],
-  20, 312, 0,
 );
-const milLabels = [...milA.labels, ...milB.labels, L("s15", milC.labels[0].name, 20, 312, milC.labels[0].about), L("s300", milC.labels[1].name, 156, 312, milC.labels[1].about), L("s450", milC.labels[2].name, 290, 312, milC.labels[2].about)];
+const milLabels = [...milA.labels, ...milB.labels, ...milC.labels];
 const milgram: FigureDef = {
   id: "milgram-setup",
   title: "Milgram's obedience study: the set-up",
-  viewBox: "0 0 420 330",
+  viewBox: "0 0 420 226",
   summary: "Plan of Milgram's study: the teacher sits at a 30-switch shock generator with the experimenter beside him, and the learner is strapped into a chair in the next room; below, the generator's switches from 15 to 450 volts.",
   art: (
     <g>
@@ -341,14 +322,11 @@ const milgram: FigureDef = {
       <rect x={366} y={30} width={20} height={20} rx={3} {...fillS("n", 1.2)} />
       <T x={210} y={28} size={8} muted>room 1</T>
       <T x={276} y={28} size={8} muted>room 2</T>
-      <rect x={20} y={230} width={384} height={60} rx={4} {...fillS("a", 1.5)} />
-      {Array.from({ length: 30 }, (_, i) => <rect key={i} x={SWX(i)} y={262} width={8} height={18} rx={1.5} {...fillS(i >= 28 ? "c" : "n", 1)} />)}
-      {[0, 4, 7].map((k) => <T key={k} x={SWX(k * 4) + (k === 7 ? 10 : 22)} y={248} size={9}>{GROUPS[k]}</T>)}
-      {[0, 9, 19, 29].map((i) => <T key={i} x={SWX(i) + 4} y={259} size={8} muted>{(i + 1) * 15}</T>)}
-      <T x={212} y={224} size={8} muted>the shock generator panel (volts)</T>
-      {milA.art}
-      {milB.art}
-      {milC.art}
+      <rect x={20} y={164} width={384} height={60} rx={4} {...fillS("a", 1.5)} />
+      {Array.from({ length: 30 }, (_, i) => <rect key={i} x={SWX(i)} y={196} width={8} height={18} rx={1.5} {...fillS(i >= 28 ? "c" : "n", 1)} />)}
+      {[0, 4, 7].map((k) => <T key={k} x={SWX(k * 4) + (k === 7 ? 10 : 22)} y={182} size={9}>{GROUPS[k]}</T>)}
+      {[0, 9, 19, 29].map((i) => <T key={i} x={SWX(i) + 4} y={193} size={8} muted>{(i + 1) * 15}</T>)}
+      <T x={212} y={158} size={8} muted>the shock generator panel (volts)</T>
     </g>
   ),
   labels: milLabels,
@@ -367,12 +345,11 @@ const aschC = callouts(
     { id: "part", name: "Real participant", at: [198, 226], about: "Seated near the end so he heard most answers first. About a third of his answers went with the group, and 75 percent conformed at least once." },
     { id: "ally", name: "One ally breaks it", at: [218, 226], about: "In a later variation, a single partner who gave the right answer cut conformity to about a quarter of its level." },
   ],
-  262, 40, 36,
 );
 const asch: FigureDef = {
   id: "asch-cards",
   title: "Asch's line judgement task",
-  viewBox: "0 0 420 260",
+  viewBox: "0 0 250 260",
   summary: "Asch's two cards, a standard line and three comparison lines, and the seating: seven confederates answer first and the real participant near the end.",
   art: (
     <g>
@@ -386,7 +363,6 @@ const asch: FigureDef = {
       <path d="M20,206 Q130,186 240,206" className="fill-none stroke-muted-foreground" strokeWidth={1} />
       {Array.from({ length: 8 }, (_, i) => <circle key={i} cx={30 + i * 28} cy={226} r={9} {...fillS(i === 6 ? "c" : "d", 1.3)} />)}
       <T x={130} y={252} size={8} muted>answer order: left to right</T>
-      {aschC.art}
     </g>
   ),
   labels: aschC.labels,
@@ -400,14 +376,13 @@ const mlC = callouts(
     { id: "short", name: "Arrowheads: shorter", at: [130, 60], about: "With arrowheads pointing outwards the line looks shorter, like the near outside corner of a building." },
     { id: "long", name: "Fins: longer", at: [130, 150], about: "With fins pointing outwards the line looks longer, like the far inside corner of a room, so the brain scales it up." },
     { id: "same", name: "Same length", at: [210, 105], about: "The dashed guides show both shafts are equal. Knowing this does not make the illusion go away." },
-    { id: "culture", name: "Carpentered world", at: [50, 180], about: "People raised among straight walls and corners tend to see the illusion more strongly than people from rounded, open environments." },
+    { id: "culture", name: "Carpentered world", at: [36, 140], about: "People raised among straight walls and corners tend to see the illusion more strongly than people from rounded, open environments." },
   ],
-  262, 50, 44,
 );
 const mullerLyer: FigureDef = {
   id: "muller-lyer",
   title: "The Müller-Lyer illusion",
-  viewBox: "0 0 420 220",
+  viewBox: "0 0 240 220",
   summary: "Two lines of the same length: the one with outward fins looks longer than the one with arrowheads.",
   art: (
     <g>
@@ -417,7 +392,6 @@ const mullerLyer: FigureDef = {
       <P d="M30,130 L50,150 L30,170 M230,130 L210,150 L230,170" w={3} />
       <Line x1={50} y1={30} x2={50} y2={190} tone="grey" dash w={1} />
       <Line x1={210} y1={30} x2={210} y2={190} tone="grey" dash w={1} />
-      {mlC.art}
     </g>
   ),
   labels: mlC.labels,
@@ -428,17 +402,16 @@ const mullerLyer: FigureDef = {
 // because linear perspective makes it seem farther away (OpenStax Psychology 2e, 5.6).
 const pzC = callouts(
   [
-    { id: "rails", name: "Converging lines", at: [96, 90], about: "Lines that meet in the distance are a strong depth cue: linear perspective." },
+    { id: "rails", name: "Converging lines", at: [89, 90], about: "Lines that meet in the distance are a strong depth cue: linear perspective." },
     { id: "far", name: "Upper bar: looks longer", at: [160, 70], about: "Because it seems farther away, the brain scales it up, so it looks longer." },
     { id: "near", name: "Lower bar: looks shorter", at: [160, 190], about: "It seems nearer, so it is not scaled up. Both bars are exactly the same length." },
     { id: "sleepers", name: "Sleepers get closer", at: [176, 140], about: "Texture gradient: evenly spaced objects look packed closer together with distance, adding to the depth." },
   ],
-  262, 50, 44,
 );
 const ponzo: FigureDef = {
   id: "ponzo",
   title: "The Ponzo illusion",
-  viewBox: "0 0 420 240",
+  viewBox: "0 0 236 240",
   summary: "Two equal bars placed between converging railway lines: the upper bar looks longer because it seems farther away.",
   art: (
     <g>
@@ -451,7 +424,6 @@ const ponzo: FigureDef = {
       <line x1={220} y1={230} x2={144} y2={14} className={INK} strokeWidth={3} />
       <rect x={100} y={64} width={60} height={10} className="fill-chart-5" />
       <rect x={100} y={184} width={60} height={10} className="fill-chart-5" />
-      {pzC.art}
     </g>
   ),
   labels: pzC.labels,
@@ -470,12 +442,11 @@ const amC = callouts(
     { id: "peep", name: "Peephole, one eye", at: [130, 266], about: "Viewing with one eye from a fixed point removes binocular and motion cues that would reveal the real shape." },
     { id: "view", name: "What the viewer sees", at: [100, 330], about: "The familiar shape of a room beats our knowledge that people do not change size: a failure of size constancy." },
   ],
-  262, 40, 50,
 );
 const ames: FigureDef = {
   id: "ames-room",
   title: "The Ames room from above, and through the peephole",
-  viewBox: "0 0 420 380",
+  viewBox: "0 0 246 380",
   summary: "Seen from above, the Ames room is a trapezoid with one back corner much farther away; through the peephole it looks rectangular, so a person in the far corner looks tiny and one in the near corner huge.",
   art: (
     <g>
@@ -492,7 +463,6 @@ const ames: FigureDef = {
       <path d="M20,372 L50,350 L210,350 L240,372" className="fill-none stroke-foreground" strokeWidth={1} />
       <rect x={70} y={330} width={12} height={20} rx={4} {...fillS("b", 1)} />
       <rect x={170} y={300} width={22} height={50} rx={6} {...fillS("b", 1)} />
-      {amC.art}
     </g>
   ),
   labels: amC.labels,
@@ -510,12 +480,11 @@ const hwC = callouts(
     { id: "infant", name: "Infant monkey", at: [226, 166], about: "When frightened by a noisy toy, infants ran to the cloth mother, then used her as a secure base to explore." },
     { id: "head", name: "Face and head", at: [190, 76], about: "Both had simple faces. Infants raised alone with surrogates still grew up with serious social and parenting problems." },
   ],
-  262, 40, 44,
 );
 const harlow: FigureDef = {
   id: "harlow-mothers",
   title: "Harlow's wire and cloth mothers",
-  viewBox: "0 0 420 270",
+  viewBox: "0 0 256 270",
   summary: "An infant monkey clings to a soft cloth surrogate mother rather than a bare wire one that holds the feeding bottle.",
   art: (
     <g>
@@ -536,7 +505,6 @@ const harlow: FigureDef = {
       <ellipse cx={222} cy={176} rx={14} ry={22} {...fillS("d", 1.5)} />
       <circle cx={226} cy={150} r={10} {...fillS("d", 1.5)} />
       <path d="M212,168 C204,166 202,160 206,156 M214,190 C204,194 204,200 210,202" className="fill-none stroke-foreground" strokeWidth={3} strokeLinecap="round" />
-      {hwC.art}
     </g>
   ),
   labels: hwC.labels,
@@ -552,20 +520,18 @@ const laA = callouts(
     { id: "rat", name: "White rat (CS)", at: [176, 196], about: "Neutral at first: Albert reached for it. After pairings it became the conditioned stimulus." },
     { id: "bar", name: "Steel bar and hammer (UCS)", at: [58, 70], about: "Struck behind Albert's head each time he touched the rat: a loud noise that made him startle and cry without learning." },
   ],
-  20, 262, 22,
 );
 const laB = callouts(
   [
     { id: "fear", name: "Fear: UCR then CR", at: [124, 128], about: "After 7 pairings Albert cried and crawled away at the sight of the rat alone: a conditioned emotional response." },
-    { id: "gen", name: "Generalised fear", at: [300, 210], about: "Days later he also feared a rabbit, a dog, a fur coat, cotton wool and a Santa Claus mask: stimulus generalisation." },
-    { id: "ethics", name: "Never undone", at: [356, 70], about: "Albert left before his fear could be extinguished. Today the study is a lesson in research ethics as much as in conditioning." },
+    { id: "gen", name: "Generalised fear", at: [278, 200], about: "Days later he also feared a rabbit, a dog, a fur coat, cotton wool and a Santa Claus mask: stimulus generalisation." },
+    { id: "ethics", name: "Never undone", at: [370, 196], about: "Albert left before his fear could be extinguished. Today the study is a lesson in research ethics as much as in conditioning." },
   ],
-  230, 262, 22,
 );
 const albert: FigureDef = {
   id: "little-albert",
   title: "The Little Albert study",
-  viewBox: "0 0 420 340",
+  viewBox: "0 0 420 252",
   summary: "Baby Albert sits on a mattress with a white rat in front of him while, behind him, an experimenter strikes a steel bar with a hammer; later Albert fears the rat and similar furry things.",
   art: (
     <g>
@@ -592,8 +558,6 @@ const albert: FigureDef = {
       <path d="M358,190 L370,170 L382,190" {...fillS("c", 1)} />
       <line x1={250} y1={174} x2={250} y2={222} className="stroke-muted-foreground" strokeDasharray="3 3" />
       <T x={330} y={236} size={8} muted>days later</T>
-      {laA.art}
-      {laB.art}
     </g>
   ),
   labels: [...laA.labels, ...laB.labels],
@@ -625,22 +589,20 @@ const vee = (a: number) => {
 const kzC = callouts(
   [
     { id: "pac", name: "Discs with a wedge cut", at: [KC.x, KC.y - KR - 18], about: "Three black discs, each with a slice missing, point their gaps inwards." },
-    { id: "angles", name: "Three angles", at: [KC.x - KR * 0.95 + 4, KC.y + 52], about: "Three open corners suggest an outlined triangle partly hidden behind the white one." },
+    { id: "angles", name: "Three angles", at: [63, 89], about: "Three open corners suggest an outlined triangle partly hidden behind the white one." },
     { id: "illusory", name: "Illusory triangle", at: [KC.x, KC.y + 8], about: "We see a bright white triangle with sharp edges lying on top, though none of its edges is drawn: illusory contours." },
     { id: "closure", name: "Closure", at: [KC.x + 40, KC.y - 24], about: "The Gestalt principle of closure: the brain fills gaps to see a complete, simple shape. The missing edges even activate early visual cortex." },
   ],
-  262, 50, 44,
 );
 const kanizsa: FigureDef = {
   id: "kanizsa-triangle",
   title: "The Kanizsa triangle",
-  viewBox: "0 0 420 250",
+  viewBox: "0 0 230 250",
   summary: "Three cut discs and three angles make us see a bright white triangle whose edges are not actually drawn.",
   art: (
     <g>
       {[0, 120, 240].map((a) => <path key={a} d={pac(a)} className="fill-foreground" />)}
       {[60, 180, 300].map((a) => <path key={a} d={vee(a)} className="fill-none stroke-foreground" strokeWidth={3} />)}
-      {kzC.art}
     </g>
   ),
   labels: kzC.labels,
@@ -657,7 +619,7 @@ const INC: [string, Hue][] = [["RED", "blue"], ["BLUE", "green"], ["GREEN", "pur
 const stroop: FigureDef = {
   id: "stroop-card",
   title: "The Stroop task",
-  viewBox: "0 0 420 250",
+  viewBox: "0 0 250 250",
   summary: "Two Stroop cards: on one each colour word is printed in its own colour, on the other in a different colour; naming the ink is much slower on the second.",
   art: (
     <g>
@@ -676,11 +638,11 @@ const stroop: FigureDef = {
     </g>
   ),
   labels: [
-    L("cong", "Matching card", 22, 22, "Each word is printed in the colour it names. Naming the ink colour is quick and easy."),
-    L("inc", "Clashing card", 142, 22, "Each word names a different colour from its ink. Say the ink colour aloud: blue, green, purple, red, red."),
-    L("auto", "Reading is automatic", 262, 80, "Skilled readers cannot help reading the word, and the word's meaning competes with the colour name."),
-    L("int", "Interference", 262, 124, "The clash slows people down and causes errors: the Stroop effect, a measure of selective attention."),
-    L("acc", "Frontal control", 262, 168, "The anterior cingulate and prefrontal cortex resolve the conflict. Slowing is greater in ADHD, frontal injury and dementia, so the test is used in neuropsychology."),
+    L("cong", "Matching card", 71, 108, "Each word is printed in the colour it names. Naming the ink colour is quick and easy."),
+    L("inc", "Clashing card", 191, 108, "Each word names a different colour from its ink. Say the ink colour aloud: blue, green, purple, red, red."),
+    L("auto", "Reading is automatic", 191, 70, "Skilled readers cannot help reading the word, and the word's meaning competes with the colour name."),
+    L("int", "Interference", 191, 166, "The clash slows people down and causes errors: the Stroop effect, a measure of selective attention."),
+    L("acc", "Frontal control", 191, 222, "The anterior cingulate and prefrontal cortex resolve the conflict. Slowing is greater in ADHD, frontal injury and dementia, so the test is used in neuropsychology."),
   ],
 };
 
@@ -696,12 +658,11 @@ const tmC = callouts(
     { id: "child", name: "Child's seat", at: [130, 224], about: "The child looks at the model from here and then picks, from pictures, what the doll would see." },
     { id: "doll", name: "Doll's position", at: [234, 150], about: "Moved round the table. Children under about 7 tend to pick their own view, not the doll's: egocentrism in the preoperational stage." },
   ],
-  262, 50, 40,
 );
 const mountains: FigureDef = {
   id: "three-mountains",
   title: "Piaget's three mountains task",
-  viewBox: "0 0 420 250",
+  viewBox: "0 0 256 250",
   summary: "A table model of three mountains, with snow, a hut and a red cross; the child sits at one side and must say what a doll at another side would see.",
   art: (
     <g>
@@ -715,7 +676,6 @@ const mountains: FigureDef = {
       <path d="M72,114 L72,128 M66,119 L78,119" className="stroke-chart-5" strokeWidth={3} />
       <circle cx={130} cy={224} r={10} {...fillS("b", 1.5)} />
       <Person x={234} y={128} h={36} tone="c" />
-      {tmC.art}
     </g>
   ),
   labels: tmC.labels,
@@ -733,12 +693,11 @@ const cvC = callouts(
     { id: "rev", name: "Reversibility", at: [140, 120], about: "A child of about 7 or more knows you could pour it back, so it must be the same: a concrete operation." },
     { id: "comp", name: "Compensation", at: [222, 200], about: "The older child also sees that taller is matched by thinner. Conservation of number comes first, then mass, then volume." },
   ],
-  262, 40, 42,
 );
 const conservation: FigureDef = {
   id: "conservation-liquid",
   title: "Conservation of liquid",
-  viewBox: "0 0 420 240",
+  viewBox: "0 0 254 240",
   summary: "Two identical glasses hold the same water; one is poured into a tall thin glass, and young children wrongly say it now holds more.",
   art: (
     <g>
@@ -755,7 +714,6 @@ const conservation: FigureDef = {
       <Arrow x1={150} y1={100} x2={204} y2={60} cx={176} cy={50} />
       <Line x1={20} y1={150} x2={248} y2={150} tone="grey" dash w={1} />
       <Line x1={200} y1={100} x2={248} y2={100} tone="grey" dash w={1} />
-      {cvC.art}
     </g>
   ),
   labels: cvC.labels,
