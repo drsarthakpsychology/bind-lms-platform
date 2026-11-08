@@ -22,6 +22,7 @@ import { readLocal, writeLocal } from "@/lib/games/ui/copy";
 import { btnPrimary, btnSecondary, card, chip } from "@/lib/games/ui/styles";
 import fx from "@/lib/games/ui/fx.module.css";
 import styles from "./duel.module.css";
+import { EndReaction } from "@/components/reactions/graphics";
 
 const EMPTY = emptyState();
 type Save = (s: LearnState) => Promise<unknown>;
@@ -737,6 +738,8 @@ function Final({ v, onBack, onAgain }: { v: DuelView; onBack: () => void; onAgai
           {word}
         </p>
         <p className="mt-2 font-semibold">{why}</p>
+        {/* Live play never pops up a reaction; the match end gets one. */}
+        <EndReaction mood={r.outcome === "win" ? "streak" : r.outcome === "draw" ? "near" : "wrong"} seed={v.round} tone={r.outcome === "loss" ? "dark" : "light"} className="mx-auto mt-4 w-fit max-w-full justify-center" />
         <div className="mt-3 flex flex-wrap justify-center gap-2">
           <span className={cn(chip, "border-current bg-transparent")}>
             Diagnosis right {dxRight}/{v.totalRounds}

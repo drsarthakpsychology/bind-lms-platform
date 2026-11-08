@@ -36,6 +36,8 @@ import type { WardTeamView } from "./actions";
 import { creditServerPlay } from "@/lib/learn/credit-play";
 import { HintBar, useHintStatus } from "@/components/hints/hint-chip";
 import { askHint } from "@/lib/hints/actions";
+import { useReaction } from "@/components/reactions/use-reaction";
+import { EndReaction } from "@/components/reactions/graphics";
 
 type Actions = {
   finishWardSolo: (x: { campaign: string; choices: string[]; run: string }) => Promise<{ ok: boolean; score: number; xp: number }>;
@@ -260,6 +262,7 @@ function SoloPlay({ solo, finish, onExit, onAgain }: { solo: Solo; finish: Actio
   const [hints, setHints] = useHintStatus();
   /** Hints used: decision id → options ruled out. */
   const [ruled, setRuled] = React.useState<Record<string, string[]>>({});
+  const reaction = useReaction();
   const current = reveal ? null : currentDecision(c, st);
 
   function pick(optionId: string) {
@@ -269,6 +272,8 @@ function SoloPlay({ solo, finish, onExit, onAgain }: { solo: Solo; finish: Actio
     if (!d || !o) return;
     const next = choose(c, st, optionId);
     buzz(o.q === "best");
+    // "Okay" is a near miss; poor and harmful choices are wrong.
+    reaction.onAnswer(o.q === "best", { partial: o.q === "ok" || (o.q === "best" && (ruled[d.id] ?? []).length > 0) });
     const list = [...choices, optionId];
     setChoices(list);
     setReveal({ decision: d, option: o, before: st.vars, flagsBefore: st.flags, after: next.vars, chapterBefore: st.chapter });
@@ -530,6 +535,7 @@ function EndScreen({ c, st, xp, onAgain, onExit, teamLine }: { c: Campaign; st: 
         </Pill>
       </div>
       {teamLine ? <p className="text-small font-semibold">{teamLine}</p> : null}
+      <EndReaction mood={tone === "good" ? (score >= 90 ? "streak" : "right") : tone === "part" ? "near" : "wrong"} seed={c.id} />
       <p className="text-body">{ending.text}</p>
 
       <Panel className="space-y-2">

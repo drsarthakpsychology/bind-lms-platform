@@ -17,6 +17,8 @@ import { Btn, buzz, Kbd, motionCss as m, Panel, Pill, readLocal, Stat, toneFor, 
 import { HintBar, useHintStatus } from "@/components/hints/hint-chip";
 import { askHint } from "@/lib/hints/actions";
 import { hintedPoints, POINTS_KEPT } from "@/lib/hints/rules";
+import { useReaction } from "@/components/reactions/use-reaction";
+import { EndReaction } from "@/components/reactions/graphics";
 
 const LEVELS: { id: Level; label: string; line: string }[] = [
   { id: 1, label: "Starting", line: "Clear findings, one per part." },
@@ -122,6 +124,7 @@ function Round({ play, setPlay, onExcerptDone, onFinish }: { play: Play; setPlay
   const options = allOptions.filter((t) => !gone.includes(t));
   const hinted = gone.length > 0;
   const [hints, setHints] = useHintStatus();
+  const reaction = useReaction();
   const result = play.revealed ? play.results[play.idx] : null;
   const tag = play.tags[play.idx];
   const lastFinding = play.idx === e.findings.length - 1;
@@ -136,6 +139,7 @@ function Round({ play, setPlay, onExcerptDone, onFinish }: { play: Play; setPlay
     const tg = { domain: play.pick, term: t };
     const r = gradeTag(f, tg);
     buzz(r.score >= 1);
+    reaction.onAnswer(r.score >= 1, { partial: (r.score > 0 && r.score < 1) || (r.score >= 1 && hinted) });
     const streak = nextStreak(play.streak, r);
     const tags = [...play.tags];
     tags[play.idx] = tg;
@@ -341,6 +345,7 @@ function Summary({ p, bestEver, board, onAgain }: { p: Play; bestEver: number; b
   return (
     <div className={cn("mx-auto max-w-2xl space-y-5", m.rise)}>
       <h1 className="text-h1">{acc >= 0.85 ? "Sharp eye." : acc >= 0.6 ? "Good tagging." : "Keep practising the look-alikes."}</h1>
+      <EndReaction right={Math.round(acc * 100)} total={100} seed={p.seed} />
       <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
         <Stat label="Accuracy" value={`${pct(acc)}%`} />
         <Stat label="Points" value={p.points} />

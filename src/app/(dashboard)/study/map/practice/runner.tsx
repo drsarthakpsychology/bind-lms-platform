@@ -9,6 +9,8 @@ import { cn } from "@/lib/utils";
 import { answerPractice } from "../actions";
 import { QuestionView, type Pick, type QView } from "../question";
 import { btnInk, btnPlain, btnPrimary } from "../ui";
+import { useReaction } from "@/components/reactions/use-reaction";
+import { EmptySticker, EndReaction, ScoreDial, StreakMeter } from "@/components/reactions/graphics";
 
 export type PracticeQ = QView & { answer: number | boolean; student: string; clinician: string; label: string };
 
@@ -21,6 +23,8 @@ export function PracticeRunner({ questions, title, saving }: { questions: Practi
   const [checked, setChecked] = React.useState(false);
   const [right, setRight] = React.useState(0);
   const [refreshing, startRefresh] = React.useTransition();
+  const [streak, setStreak] = React.useState(0);
+  const reaction = useReaction();
   const startedAt = React.useRef(0);
   const heading = React.useRef<HTMLHeadingElement>(null);
   const feedback = React.useRef<HTMLDivElement>(null);
@@ -42,7 +46,7 @@ export function PracticeRunner({ questions, title, saving }: { questions: Practi
   if (!questions.length) {
     return (
       <div className="rounded-lg border-2 border-foreground bg-card p-5">
-        <p className="font-bold">No questions for this yet.</p>
+        <EmptySticker sticker="praying-dog" title="No questions for this yet." />
         <Link href="/study/map" className={cn(btnPlain, "mt-4")}>
           <ArrowLeft className="size-4" aria-hidden /> Back to your map
         </Link>
@@ -55,7 +59,11 @@ export function PracticeRunner({ questions, title, saving }: { questions: Practi
     return (
       <div className="space-y-5 rounded-lg border-2 border-foreground bg-card p-5 hard-shadow-md sm:p-6">
         <p className="text-eyebrow text-link">Round done</p>
-        <p className="text-h2">
+        <div className="flex flex-wrap items-center gap-x-6 gap-y-4">
+          <ScoreDial right={right} total={questions.length} />
+          <EndReaction right={right} total={questions.length} className="min-w-0 flex-1 basis-56" />
+        </div>
+        <p className="sr-only">
           {right} of {questions.length} right
         </p>
         <p className="text-muted-foreground">
@@ -82,6 +90,8 @@ export function PracticeRunner({ questions, title, saving }: { questions: Practi
     setPicked(p);
     setChecked(true);
     if (isRight) setRight((r) => r + 1);
+    setStreak((n) => (isRight ? n + 1 : 0));
+    reaction.onAnswer(isRight);
     const ms = Math.max(0, Math.min(3_600_000, Date.now() - startedAt.current));
     void answerPractice({ item: q.id, choice: p, ms }).catch(() => undefined);
   }
@@ -98,7 +108,10 @@ export function PracticeRunner({ questions, title, saving }: { questions: Practi
         <p className="text-sm font-bold">
           <span className="sr-only">{title}: </span>Question {idx + 1}
         </p>
-        <ViewToggle />
+        <div className="flex items-center gap-2">
+          {streak > 0 ? <StreakMeter streak={streak} /> : null}
+          <ViewToggle />
+        </div>
       </div>
       <div className="h-2.5 overflow-hidden rounded-full border-2 border-foreground bg-card" aria-hidden>
         <div className="h-full origin-left bg-brand transition-transform duration-300 motion-reduce:transition-none" style={{ transform: `scaleX(${idx / questions.length})` }} />

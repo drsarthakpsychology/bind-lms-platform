@@ -12,6 +12,7 @@ import { PaletteHost } from "@/components/search/palette-host";
 import { InboxBadge } from "@/components/admin/inbox-badge";
 import { InboxLink } from "@/components/navigation/inbox-link";
 import { AddPeopleHost } from "@/components/admin/add-people-host";
+import { ReactionLayer } from "@/components/reactions/reaction-layer";
 
 /**
  * Application shell: the layout people already know from YouTube:
@@ -111,6 +112,9 @@ export function AppShell({
           <ShellContent>{children}</ShellContent>
         </main>
       </div>
+
+      {/* Funny reactions on quiz answers (students; one pop-up app wide). */}
+      {isAdminView ? null : <ReactionLayer />}
 
       <BottomTabBar mode={mode} scope={scope} showStudy={showStudy} blocked={blocked} />
       <MobileNav

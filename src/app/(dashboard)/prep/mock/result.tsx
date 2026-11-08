@@ -9,6 +9,7 @@ import type { MockResultView, ReviewRow } from "@/lib/prep/results";
 import { cn } from "@/lib/utils";
 import { Options, QuestionBody } from "../question";
 import { btnPlain, btnPrimary, card } from "../ui";
+import { EndReaction, ScoreDial } from "@/components/reactions/graphics";
 
 type Filter = "all" | "wrong" | "blank" | "marked";
 const FILTERS: { id: Filter; label: string; test: (r: ReviewRow) => boolean }[] = [
@@ -38,11 +39,18 @@ export function MockResult({ view }: { view: MockResultView }) {
 
   return (
     <div className="space-y-6">
-      <header className="space-y-1">
-        <p className="text-eyebrow text-link">Results · {view.title}</p>
-        <h1 className="text-h1">
-          {fmt(view.score)} <span className="text-muted-foreground">/ {fmt(view.max)}</span>
-        </h1>
+      <header className="space-y-4">
+        <div className="space-y-1">
+          <p className="text-eyebrow text-link">Results · {view.title}</p>
+          <h1 className="text-h1">
+            {fmt(view.score)} <span className="text-muted-foreground">/ {fmt(view.max)}</span>
+          </h1>
+        </div>
+        {/* The clock has stopped: this is where a timed paper gets its one reaction. */}
+        <div className="flex flex-wrap items-center gap-x-6 gap-y-4">
+          <ScoreDial right={view.right} total={view.rows.length} />
+          <EndReaction right={Math.max(0, view.score)} total={view.max} className="min-w-0 flex-1 basis-56" />
+        </div>
       </header>
 
       <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
@@ -222,7 +230,7 @@ function ReviewItem({ row, n }: { row: ReviewRow; n: number }) {
       </summary>
       <div className="space-y-3 border-t-2 border-foreground p-3">
         <QuestionBody q={row.q} />
-        <Options q={row.q} picked={row.chosen} onPick={() => undefined} answer={row.answer} />
+        <Options q={row.q} picked={row.chosen} onPick={() => undefined} answer={row.answer} stampMotion={false} />
         <div className="rounded-md border-2 border-dashed border-foreground/50 p-3">
           <p className="text-eyebrow text-muted-foreground">Why</p>
           <p className="mt-1 whitespace-pre-line">{row.explanation}</p>

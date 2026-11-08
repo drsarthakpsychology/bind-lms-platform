@@ -17,6 +17,8 @@ import { btnPrimary, btnSecondary, card, chip } from "@/lib/games/ui/styles";
 import fx from "@/lib/games/ui/fx.module.css";
 import { checkSort, loadSort, type SortReveal, type SortView } from "./actions";
 import { creditServerPlay } from "@/lib/learn/credit-play";
+import { useReaction } from "@/components/reactions/use-reaction";
+import { EndReaction } from "@/components/reactions/graphics";
 
 const EMPTY = emptyState();
 type Save = (s: LearnState) => Promise<unknown>;
@@ -46,6 +48,7 @@ export function SortGame({ serverState, save, initial }: { serverState: LearnSta
   const [pending, startTransition] = React.useTransition();
   const [shake, setShake] = React.useState(0);
   const [gain, setGain] = React.useState(0);
+  const reaction = useReaction();
   const reduce = useReducedMotion();
   const anim = (cls: string) => (reduce === false ? cls : undefined);
 
@@ -58,6 +61,7 @@ export function SortGame({ serverState, save, initial }: { serverState: LearnSta
       else {
         setPlay(fresh(r.view));
         setGain(0);
+        reaction.reset();
       }
     });
   }
@@ -112,6 +116,8 @@ export function SortGame({ serverState, save, initial }: { serverState: LearnSta
         message = `${bits.join(" ")} ${MAX_TRIES - r.triesUsed} ${MAX_TRIES - r.triesUsed === 1 ? "try" : "tries"} left.`;
         haptic(newlyDone ? "success" : "warning");
         if (!newlyDone) setShake((k) => k + 1);
+        // A group locked in (or one away) is progress on an unsolved board: partly right.
+        reaction.onAnswer(newlyDone > 0, { partial: newlyDone > 0 || r.oneAway.length > 0 });
       } else {
         haptic(r.done.solved ? "success" : "warning");
         for (let g = 0; g < 4; g++) trackLearn({ type: "game", kind: "criteria-sort", ok: r.groupsDone[g], skill: `${r.done.topic}:differentiate`, item: `${v.boardId}:${g}`, prompt: v.groups[g] });
@@ -123,7 +129,7 @@ export function SortGame({ serverState, save, initial }: { serverState: LearnSta
       }
       setPlay({ ...p, locked: r.groupsDone, oneAway: r.oneAway, thresholdWrong: r.thresholdWrong, tries: r.triesUsed, done: r.done, message, view: { ...v, cohort: r.cohort ?? v.cohort } });
     });
-  }, [p, v, allPlaced, picksDone, pending, state]);
+  }, [p, v, allPlaced, picksDone, pending, state, reaction]);
 
   // Desktop shortcuts: 1 to 4 place the selected tile, Enter checks.
   React.useEffect(() => {
@@ -370,6 +376,7 @@ function Done({ p, gain, onPractice, onAdvanced }: { p: Play; gain: number; onPr
           <CountUp value={d.score} duration={1} delay={0.3} className="font-pix text-5xl tabular-nums" /> <span className="text-sm font-bold">points</span>
           {gain > 0 && <span className={cn(chip, "ml-3 bg-primary text-primary-foreground", reduce === false && fx.pop)}>+{gain} XP</span>}
         </p>
+        <EndReaction mood={d.solved ? (p.tries <= 1 ? "streak" : "right") : "wrong"} seed={v.boardId} className="mx-auto mt-4 w-fit max-w-full justify-center" />
         {v.cohort && v.cohort.played > 0 && (
           <p className="mt-2 text-sm font-semibold">
             <Users className="mr-1 inline size-4" aria-hidden /> {v.cohort.solvedPct}% of {v.cohort.scope === "batch" ? "your batch" : "players today"} sorted this board ({v.cohort.played} played).

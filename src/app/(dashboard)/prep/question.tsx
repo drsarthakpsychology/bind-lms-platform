@@ -5,11 +5,12 @@ import { Check, X } from "lucide-react";
 import type { PrepQView } from "@/lib/prep/view";
 import { cn } from "@/lib/utils";
 import { TipButton, TipPanel, useFirstTimeTip } from "@/components/help/first-time-tip";
+import { AnswerStamp, HalftoneCorner } from "@/components/reactions/graphics";
 
 import { LETTERS as LETTER, ROMAN } from "@/lib/prep/labels";
 
 const option =
-  "flex min-h-12 w-full min-w-0 items-start gap-3 rounded-lg border-2 border-foreground bg-card px-4 py-3 text-left text-base font-medium transition-transform duration-150 motion-reduce:transition-none enabled:active:translate-y-px focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60 disabled:cursor-default";
+  "relative flex min-h-12 w-full min-w-0 items-start gap-3 rounded-lg border-2 border-foreground bg-card px-4 py-3 text-left text-base font-medium transition-transform duration-150 motion-reduce:transition-none enabled:active:translate-y-px focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60 disabled:cursor-default";
 const keyBox = "mt-px grid size-7 shrink-0 place-items-center rounded-md border-2 border-current text-xs font-bold";
 
 /** The stem, passage, statements and lists of a question (exam style). */
@@ -22,10 +23,13 @@ export function QuestionBody({ q, headingRef, number }: { q: PrepQView; headingR
           {q.passage}
         </div>
       ) : null}
-      <h2 ref={headingRef} tabIndex={-1} className="text-lg font-semibold leading-snug outline-none sm:text-xl">
-        {number ? <span className="mr-2 font-mono text-link">Q{number}.</span> : null}
-        <span className="whitespace-pre-line">{q.stem}</span>
-      </h2>
+      <div className="relative isolate">
+        <HalftoneCorner className="-top-3 size-24 sm:size-28" />
+        <h2 ref={headingRef} tabIndex={-1} className="relative text-lg font-semibold leading-snug outline-none sm:text-xl">
+          {number ? <span className="mr-2 font-mono text-link">Q{number}.</span> : null}
+          <span className="whitespace-pre-line">{q.stem}</span>
+        </h2>
+      </div>
       {q.statements?.length ? (
         q.type === "assertion-reason" ? (
           <dl className="space-y-2 rounded-lg border-2 border-foreground bg-card p-3 text-base">
@@ -81,7 +85,7 @@ export function QuestionBody({ q, headingRef, number }: { q: PrepQView; headingR
  * The four options. Keys 1 to 4 are shown on each. With `answer` set, picks lock
  * and right/wrong show with an icon and a word (never colour alone).
  */
-export function Options({ q, picked, onPick, answer, disabled }: { q: PrepQView; picked: number | null; onPick: (i: number) => void; answer?: number; disabled?: boolean }) {
+export function Options({ q, picked, onPick, answer, disabled, stampMotion = true }: { q: PrepQView; picked: number | null; onPick: (i: number) => void; answer?: number; disabled?: boolean; stampMotion?: boolean }) {
   const locked = answer !== undefined;
   return (
     <div role="radiogroup" aria-label="Answers" className="grid gap-2.5">
@@ -103,6 +107,7 @@ export function Options({ q, picked, onPick, answer, disabled }: { q: PrepQView;
               state === "wrong" && "bg-status-alert-bg text-status-alert-fg",
             )}
           >
+            {locked && isPicked ? <AnswerStamp ok={state === "right"} animate={stampMotion} /> : null}
             <span className={keyBox} aria-hidden>
               {state === "right" ? <Check className="size-4" /> : state === "wrong" ? <X className="size-4" /> : i + 1}
             </span>
