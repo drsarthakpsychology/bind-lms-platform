@@ -6,6 +6,7 @@ import type { BrainExplorerData } from "@/lib/study/types";
 import { cn } from "@/lib/utils";
 import { trackLearn } from "@/lib/learn/track";
 import { PlayBar, useStepPlayer } from "../pacing";
+import { sfx } from "./sfx";
 import { SliceCanvas } from "./slice-canvas";
 import { JourneyBar, Missions, ModeTabs, Scene3DSlot, SceneCard, TONE_NAME, ViewSwitch, along, btn, chip, flatD, statusCls, useInView, useJourney, useLegProgress, useMissions, useSceneView, useThemeColors, type Journey, type V3 } from "./kit";
 import { ALWAYS, BLOBS, BPATHS_FLAT, CEREBELLUM, CORTEX, DEEP, EAR, EYES, GUIDE, HEMI, LAYERS, NIGRA, PITUITARY, PONS, REGION, REGIONS, REGION_COLOR, TUBES, type GuideView, type RegionId } from "./brain-explorer-data";
@@ -83,6 +84,7 @@ export function BrainExplorer({ d }: { d: BrainExplorerData }) {
   };
   const pick = (r: RegionId) => {
     if (mode === "explore") {
+      sfx("tap");
       show(r);
       trackLearn({ type: "widget", kind: "brainexplorer", item: r });
       return;
@@ -94,6 +96,7 @@ export function BrainExplorer({ d }: { d: BrainExplorerData }) {
       const nextScore = score + (first ? 1 : 0);
       setScore(nextScore);
       setFeedback({ ok: true, text: `Yes: ${called(want)}. Watch what the injury does below.` });
+      sfx("good");
       setSel(r);
       setDamage(true);
       if (CORTEX.includes(r)) setLayer(0);
@@ -105,6 +108,7 @@ export function BrainExplorer({ d }: { d: BrainExplorerData }) {
       trackLearn({ type: "widget", kind: "brainexplorer", ok: first, item: want });
     } else {
       setTries(tries + 1);
+      sfx("bad");
       setFeedback({ ok: false, text: `Not quite. You picked ${called(r)}: ${REGION[r].does} Read the clue again and try another part.` });
     }
   };
@@ -164,7 +168,7 @@ export function BrainExplorer({ d }: { d: BrainExplorerData }) {
   const bubble = r?.bubble && (journey.done || journey.cur?.path === "bro-mouth") ? (damage ? r.bubble.hurt : r.bubble.ok) : null;
 
   return (
-    <SceneCard title={d.title ?? "Inside the brain"} goal="Peel the brain open, tap each part to watch it work, then switch on damage to see what an injury does." caption={d.caption} tools={<ViewSwitch v={v} />}>
+    <SceneCard title={d.title ?? "Inside the brain"} goal="Peel the brain open, tap each part to watch it work, then switch on damage to see what an injury does." caption={d.caption} tools={<ViewSwitch v={v} />} sound>
       <ModeTabs name="Mode" value={mode} onChange={(m) => { setMode(m); setFeedback(null); journey.clear(); if (m === "challenge") { setDamage(true); setSel(null); } }} modes={[{ id: "explore", label: "Explore" }, { id: "challenge", label: "Where is the damage?" }]} />
       <div ref={box} className="relative mt-3 h-[20rem] overflow-hidden rounded-xl border-2 border-foreground bg-background sm:h-[26rem]">
         {v.use3D ? (

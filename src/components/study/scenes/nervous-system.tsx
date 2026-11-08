@@ -5,6 +5,15 @@ import { RotateCcw } from "lucide-react";
 import type { NervousSystemData } from "@/lib/study/types";
 import { cn } from "@/lib/utils";
 import { trackLearn } from "@/lib/learn/track";
+import { QuickChallenge, type ChallengeQ } from "./challenge";
+import { sfx } from "./sfx";
+
+const NS_CHALLENGE: ChallengeQ[] = [
+  { q: "You touch a hot cup. Which happens first?", options: ["You feel the pain", "You pull your hand away", "Both at exactly the same moment"], answer: 1, why: "The reflex loops through the spinal cord only, so the hand starts to pull away before the pain message has reached the brain and been felt." },
+  { q: "Which division speeds up the heart and widens the pupils?", options: ["Parasympathetic", "Somatic", "Sympathetic"], answer: 2, why: "The sympathetic division readies the body for fight or flight: faster heart, wider pupils, airways open, digestion slowed. The parasympathetic does the opposite." },
+  { q: "Which nerve carries most of the rest-and-digest outflow to the heart and gut?", options: ["The vagus nerve", "The sciatic nerve", "The optic nerve"], answer: 0, why: "The vagus nerve (cranial nerve X) carries parasympathetic fibres to the heart, lungs and gut: it slows the heart and speeds digestion." },
+  { q: "The brain and the spinal cord together are the...", options: ["Peripheral nervous system", "Central nervous system", "Autonomic nervous system"], answer: 1, why: "Brain and spinal cord form the central nervous system. Everything outside them, the somatic and autonomic nerves, is the peripheral nervous system." },
+];
 import { JourneyBar, Missions, ModeTabs, Scene3DSlot, SceneCard, TONE_NAME, ViewSwitch, along, btn, chip, flatD, statusCls, useInView, useJourney, useLegProgress, useMissions, useSceneView, useThemeColors, type Journey } from "./kit";
 import { AUTO, BODY, LEVELS, LIMBS, PARA, PARTS, PART_NAME, PATHS, SOMATIC, SYMP, levelShows, routeLegs, type Auto, type Level, type Part, type Route } from "./nervous-system-data";
 
@@ -49,10 +58,12 @@ export function NervousSystem({ d }: { d: NervousSystemData }) {
   const send = (p: Part) => {
     if (mode !== "signal") setMode("signal");
     journey.start(`${p}-${route}`, routeLegs(p, route));
+    sfx("pulse");
     trackLearn({ type: "widget", kind: "nervoussystem", item: `${p}-${route}` });
   };
   const pickAuto = (a: Auto) => {
     setAuto(a);
+    sfx(a === "fight" ? "zap" : "whoosh");
     if (a === "fight") ms.mark("fight");
     if (a === "rest") ms.mark("rest");
     trackLearn({ type: "widget", kind: "nervoussystem", item: a });
@@ -95,7 +106,7 @@ export function NervousSystem({ d }: { d: NervousSystemData }) {
   })();
 
   return (
-    <SceneCard title={d.title ?? "The nervous system, live"} goal="Send signals through the body, flip it into fight or flight and back, and zoom into each division." caption={d.caption} tools={<ViewSwitch v={v} />}>
+    <SceneCard title={d.title ?? "The nervous system, live"} goal="Send signals through the body, flip it into fight or flight and back, and zoom into each division." caption={d.caption} tools={<ViewSwitch v={v} />} sound>
       <ModeTabs<NsMode> name="What to explore" value={mode} onChange={changeMode} modes={[{ id: "signal", label: "Send a signal" }, { id: "auto", label: "Organs on autopilot" }, { id: "map", label: "Zoom the map" }]} />
       <div ref={box} className="relative mt-3 h-[22rem] overflow-hidden rounded-xl border-2 border-foreground bg-background sm:h-[28rem]">
         {v.use3D ? (
@@ -156,6 +167,7 @@ export function NervousSystem({ d }: { d: NervousSystemData }) {
           { id: "somatic", label: "Find the somatic system", done: ms.done("somatic") },
         ]}
       />
+      <QuickChallenge title="Reflexes and the two divisions" kind="nervoussystem" items={NS_CHALLENGE} />
     </SceneCard>
   );
 }

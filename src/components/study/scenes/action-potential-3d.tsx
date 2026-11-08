@@ -3,6 +3,7 @@
 import * as React from "react";
 import * as THREE from "three";
 import { useFrame, type ThreeEvent } from "@react-three/fiber";
+import { Glow } from "./fx";
 import { CameraRig, Stage, curveOf } from "./three-kit";
 import { sampleCurve, type V3 } from "./kit";
 import { NODES, REST, travelMs, type ApViewProps } from "./action-potential";
@@ -16,7 +17,7 @@ import { NODES, REST, travelMs, type ApViewProps } from "./action-potential";
  */
 function ActionPotential3D(p: ApViewProps) {
   return (
-    <Stage className="h-full w-full" camera={[0.4, 1.4, 7.4]} inView={p.inView} active={p.active} wakeKey={`${p.myelin}`} onReady={p.onReady} minDistance={2.5} maxDistance={12}>
+    <Stage className="h-full w-full" camera={[0.4, 1.4, 7.4]} inView={p.inView} active={p.active} wakeKey={`${p.myelin}`} onReady={p.onReady} minDistance={2.5} maxDistance={12} sway fog={3.4} bg={p.colors.bg} fx={p.colors.primary}>
       <CameraRig flyKey="neuron" pos={[0.4, 1.3, 6.8]} target={[0.4, 0, 0]} fitAspect={2.2} />
       <Neuron {...p} />
     </Stage>
@@ -63,7 +64,9 @@ function Neuron({ simRef, myelin, colors, onStim }: ApViewProps) {
   const dend = React.useMemo(() => dendrites(), []);
   const soma = React.useRef<THREE.MeshStandardMaterial>(null);
   const ring = React.useRef<THREE.Mesh>(null);
-  const halo = React.useRef<THREE.Mesh>(null);
+  const halo = React.useRef<THREE.Sprite>(null);
+  const somaGlow = React.useRef<THREE.Sprite>(null);
+  const bulbGlow = React.useRef<(THREE.Sprite | null)[]>([]);
   const nodes = React.useRef<(THREE.MeshBasicMaterial | null)[]>([]);
   const bulbs = React.useRef<(THREE.MeshStandardMaterial | null)[]>([]);
   const ions = React.useRef<THREE.InstancedMesh>(null);
@@ -76,6 +79,11 @@ function Neuron({ simRef, myelin, colors, onStim }: ApViewProps) {
     const k = last ? (sim.t - last.at) / travelMs(last.myelin) : 2;
     const glow = Math.max(0, Math.min(1, (sim.v - REST) / 15));
     if (soma.current) soma.current.emissiveIntensity = 0.15 + glow * 1.1;
+    if (somaGlow.current) {
+      const sm = somaGlow.current.material as THREE.SpriteMaterial;
+      sm.opacity = 0.15 + glow * 0.75;
+      somaGlow.current.scale.setScalar(1.7 + glow * 0.9);
+    }
     const live = !!last && k < 1;
     let f = Math.min(1, k);
     if (last?.myelin && live) f = Math.round(f * NODES) / NODES;
@@ -88,13 +96,20 @@ function Neuron({ simRef, myelin, colors, onStim }: ApViewProps) {
     if (halo.current) {
       halo.current.visible = live;
       halo.current.position.x = x;
+      halo.current.scale.setScalar(1.3 + 0.2 * Math.sin(t * 25));
     }
     nodes.current.forEach((m, i) => {
       if (!m) return;
       const hit = live && last!.myelin && Math.abs(nodeX[i] - x) < 0.05;
       m.opacity = hit ? 1 : 0.25;
     });
-    bulbs.current.forEach((m) => m && (m.emissiveIntensity = k >= 1 && k < 1.5 ? 1.2 * (1.5 - k) * 2 : 0));
+    const rel = k >= 1 && k < 1.5 ? (1.5 - k) * 2 : 0;
+    bulbs.current.forEach((m) => m && (m.emissiveIntensity = 1.2 * rel));
+    bulbGlow.current.forEach((g) => {
+      if (!g) return;
+      g.visible = rel > 0;
+      (g.material as THREE.SpriteMaterial).opacity = rel;
+    });
     const im = ions.current;
     if (im) {
       im.visible = live;
@@ -123,6 +138,7 @@ function Neuron({ simRef, myelin, colors, onStim }: ApViewProps) {
         <sphereGeometry args={[0.55, 28, 20]} />
         <meshStandardMaterial ref={soma} color="#9fb8e8" emissive={colors.brand} emissiveIntensity={0.15} roughness={0.45} />
       </mesh>
+      <Glow ref={somaGlow} position={[-2.6, 0, 0]} color={colors.brand} size={1.7} opacity={0.15} />
       <mesh position={[-2.6, 0, 0.32]}>
         <sphereGeometry args={[0.18, 16, 12]} />
         <meshStandardMaterial color="#5b6fa8" roughness={0.5} />
@@ -159,6 +175,7 @@ function Neuron({ simRef, myelin, colors, onStim }: ApViewProps) {
             <sphereGeometry args={[0.14, 14, 10]} />
             <meshStandardMaterial ref={(m) => { bulbs.current[i] = m; }} color="#cfd9f2" emissive={colors.primary} emissiveIntensity={0} />
           </mesh>
+          <Glow ref={(g) => { bulbGlow.current[i] = g; }} position={pts[2]} color={colors.primary} size={0.8} visible={false} />
         </group>
       ))}
       {/* the impulse */}
@@ -166,13 +183,10 @@ function Neuron({ simRef, myelin, colors, onStim }: ApViewProps) {
         <torusGeometry args={[0.24, 0.06, 10, 28]} />
         <meshBasicMaterial color={colors.danger} />
       </mesh>
-      <mesh ref={halo} visible={false}>
-        <sphereGeometry args={[0.42, 16, 12]} />
-        <meshBasicMaterial color={colors.danger} transparent opacity={0.18} depthWrite={false} />
-      </mesh>
+      <Glow ref={halo} color={colors.danger} size={1.3} opacity={0.95} visible={false} />
       <instancedMesh ref={ions} args={[undefined, undefined, 16]} frustumCulled={false} visible={false}>
         <sphereGeometry args={[0.035, 8, 6]} />
-        <meshBasicMaterial color="#f2b84b" />
+        <meshBasicMaterial color="#ffc85a" transparent opacity={0.9} blending={THREE.AdditiveBlending} depthWrite={false} toneMapped={false} />
       </instancedMesh>
     </group>
   );

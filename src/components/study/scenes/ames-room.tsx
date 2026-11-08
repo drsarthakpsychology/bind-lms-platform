@@ -5,6 +5,15 @@ import { ArrowLeftRight } from "lucide-react";
 import type { AmesRoomData } from "@/lib/study/types";
 import { cn } from "@/lib/utils";
 import { trackLearn } from "@/lib/learn/track";
+import { QuickChallenge, type ChallengeQ } from "./challenge";
+import { sfx } from "./sfx";
+
+const AMES_CHALLENGE: ChallengeQ[] = [
+  { q: "Through the peephole, what tells your brain that both back corners are equally far away?", options: ["Binocular disparity", "Linear perspective and the texture of the floor tiles and windows", "Motion parallax"], answer: 1, why: "The room is built so its lines, tiles and windows project exactly like a rectangular room. Those cues lie. Disparity and parallax would give the trick away, which is why you look with one eye through a fixed hole." },
+  { q: "Why does the person in the far corner look tiny?", options: ["Their image is smaller, and the brain wrongly thinks they are no farther away", "They really are shorter", "That corner is darker"], answer: 0, why: "A person twice as far casts an image half the size. Size constancy would normally scale it up, but only if the brain knows the distance. Here it does not, so the smaller image is read as a smaller person." },
+  { q: "What would break the illusion fastest?", options: ["Making the room brighter", "Looking with both eyes and moving your head", "Looking for longer"], answer: 1, why: "Two eyes give binocular disparity and a moving head gives motion parallax. Both reveal that one corner is much farther away." },
+  { q: "Size constancy keeps a friend looking the same size as they walk away because...", options: ["the image on the retina stays the same size", "the brain takes their growing distance into account", "the eyes zoom in"], answer: 1, why: "The image shrinks as they walk away, but the brain scales it by the distance it perceives, so they still look the same height." },
+];
 import { Missions, Scene3DSlot, SceneCard, ViewSwitch, btn, chip, statusCls, useInView, useMissions, useSceneView, useThemeColors, type V3 } from "./kit";
 
 /**
@@ -95,6 +104,7 @@ export function AmesRoom({ d }: { d: AmesRoomData }) {
   }, [sw.t, ms]);
   const go = (s: AmesStop) => {
     setStop(s);
+    sfx("whoosh");
     ms.mark(s === "peephole" ? "peep" : s);
     trackLearn({ type: "widget", kind: "amesroom", item: s });
   };
@@ -103,7 +113,7 @@ export function AmesRoom({ d }: { d: AmesRoomData }) {
   const st = STOPS.find((x) => x.id === stop)!;
   const flat = <AmesFlat stop={stop} swapT={sw.t} />;
   return (
-    <SceneCard title={d.title ?? "The Ames room"} goal="Look through the peephole, swap the two people, then step aside and find out why your eyes were fooled." caption={d.caption} tools={<ViewSwitch v={v} />}>
+    <SceneCard title={d.title ?? "The Ames room"} goal="Look through the peephole, swap the two people, then step aside and find out why your eyes were fooled." caption={d.caption} tools={<ViewSwitch v={v} />} sound>
       <div ref={box} className="relative mt-3 h-[17rem] overflow-hidden rounded-xl border-2 border-foreground bg-background sm:h-[22rem]">
         {v.use3D ? <Scene3DSlot flat={flat} render={(onReady) => <View3D stop={stop} swapT={sw.t} swapping={sw.swapping} inView={inView} colors={colors} onReady={onReady} />} /> : flat}
         {v.use3D && stop !== "peephole" ? <p className="pointer-events-none absolute bottom-1.5 left-2 rounded bg-background/80 px-1.5 text-xs text-muted-foreground">Drag to walk round the room, pinch to zoom</p> : null}
@@ -117,6 +127,7 @@ export function AmesRoom({ d }: { d: AmesRoomData }) {
       <div className="mt-2">
         <button type="button" className={cn(btn, "min-h-12 bg-primary px-5 text-primary-foreground hover:-translate-y-0.5")} onClick={() => {
             sw.swap();
+            sfx("tap");
             if (stop === "peephole") ms.mark("peep");
             trackLearn({ type: "widget", kind: "amesroom", item: "swap" });
           }}>
@@ -145,6 +156,7 @@ export function AmesRoom({ d }: { d: AmesRoomData }) {
           { id: "above", label: "See the real shape from above", done: ms.done("above") },
         ]}
       />
+      <QuickChallenge title="Depth cues and size constancy" kind="amesroom" items={AMES_CHALLENGE} />
     </SceneCard>
   );
 }

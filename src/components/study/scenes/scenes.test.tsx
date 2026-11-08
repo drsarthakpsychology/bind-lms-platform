@@ -261,4 +261,24 @@ describe("explorable scenes", () => {
     wait(250);
     expect(screen.getByLabelText("4 of 4 missions done")).toBeInTheDocument();
   });
+
+  it("sound is off until switched on, and each quick challenge scores the first try", () => {
+    render(<NervousSystem d={{}} />);
+    const sound = screen.getByRole("button", { name: "Sound off" });
+    expect(sound).toHaveAttribute("aria-pressed", "false");
+    fireEvent.click(sound);
+    expect(screen.getByRole("button", { name: "Sound on" })).toHaveAttribute("aria-pressed", "true");
+    click(/^Quick challenge: Reflexes and the two divisions/);
+    click("You pull your hand away");
+    expect(screen.getByText(/Right first time\./)).toBeInTheDocument();
+    expect(screen.getByText("Score 1 of 4")).toBeInTheDocument();
+    click("Next question");
+    click("Parasympathetic");
+    expect(screen.getByText(/Not quite, try another/)).toBeInTheDocument();
+    click("Sympathetic");
+    expect(screen.getByText(/readies the body for fight or flight/)).toBeInTheDocument();
+    expect(screen.getByText("Score 1 of 4")).toBeInTheDocument();
+    fireEvent.click(screen.getByRole("button", { name: "Sound on" }));
+    expect(screen.getByRole("button", { name: "Sound off" })).toBeInTheDocument();
+  });
 });

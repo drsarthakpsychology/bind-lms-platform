@@ -3,6 +3,7 @@
 import * as React from "react";
 import * as THREE from "three";
 import { useFrame, type ThreeEvent } from "@react-three/fiber";
+import { Glow, Outline } from "./fx";
 import { CameraRig, Pulse, Stage, Tube, segs, useLitPaths, useQuality, type Quality } from "./three-kit";
 import type { V3 } from "./kit";
 import { BLOBS, BPATHS, CEREBELLUM, CORTEX, EAR, EYES, HEMI, NIGRA, PITUITARY, PONS, REGION_COLOR, TUBES, regionAt, to3, type RegionId } from "./brain-explorer-data";
@@ -27,7 +28,7 @@ export default function BrainExplorer3D(p: BrainViewProps) {
   };
   const v = p.view !== "free" ? guided[p.view] : views[p.layer] ?? views[0];
   return (
-    <Stage className="h-full w-full" camera={views[0].pos} inView={p.inView} active={p.journey.moving} wakeKey={`${p.view}-${p.layer}-${p.sel}-${p.damage}-${p.journey.run}`} onReady={p.onReady} minDistance={2.2} maxDistance={8}>
+    <Stage className="h-full w-full" camera={views[0].pos} inView={p.inView} active={p.journey.moving} wakeKey={`${p.view}-${p.layer}-${p.sel}-${p.damage}-${p.journey.run}`} onReady={p.onReady} minDistance={2.2} maxDistance={8} sway={p.view === "free"} fog={1.7} bg={p.colors.bg} fx={p.colors.brand}>
       <CameraRig flyKey={p.view !== "free" ? `view-${p.view}` : `layer-${p.layer}`} pos={v.pos} target={v.target} fitAspect={1.5} />
       <BrainScene {...p} />
     </Stage>
@@ -230,7 +231,9 @@ function BrainScene({ view, layer, sel, damage, journey, onPick, colors }: Brain
             <RegionMat id={id} sel={sel === id} damage={damage} opacity={leftOp} cut={cut} />
           </mesh>
         ))}
+        {sel && leftGeo.get(sel) && layer === 0 && !cut ? <Outline key={`oL-${sel}`} geometry={leftGeo.get(sel)!} color={damage ? motor : sense} width={0.022} /> : null}
       </group>
+      {sel && rightGeo.get(sel) && layer < 2 && layer > 0 && !cut && CORTEX.includes(sel) ? <Outline key={`oR-${sel}`} geometry={rightGeo.get(sel)!} color={damage ? motor : sense} width={0.022} /> : null}
       {[...rightGeo.entries()].map(([id, geo]) => (
         <mesh key={`R-${id}`} geometry={geo} onClick={pickHandler(() => layer < 2 && CORTEX.includes(id) && onPick(id))} renderOrder={layer === 2 ? 2 : 0}>
           <RegionMat id={id} sel={sel === id} damage={damage} opacity={rightOp} cut={cut} />
@@ -260,6 +263,7 @@ function BrainScene({ view, layer, sel, damage, journey, onPick, colors }: Brain
             <RegionMat id={t.id} sel={sel === t.id} damage={damage} opacity={1} />
           </TubeMesh>
         ))}
+        {sel && BLOBS[sel] ? BLOBS[sel]!.flatMap((b, k) => [1, ...(b.mirror ? [-1] : [])].map((m) => <Glow key={`g-${k}-${m}`} position={to3([b.c[0], b.c[1], b.c[2] * m])} color={damage ? motor : sense} size={Math.max(...b.r) * 4.5} opacity={0.75} xray />)) : null}
         <Ellipsoid c={to3(PITUITARY)} r={[0.06, 0.06, 0.06]}><meshStandardMaterial color="#f0a35e" /></Ellipsoid>
         {[1, -1].map((m) => <Ellipsoid key={m} c={to3([NIGRA[0], NIGRA[1], NIGRA[2] * m])} r={[0.07, 0.035, 0.05]}><meshStandardMaterial color="#222222" /></Ellipsoid>)}
       </group>

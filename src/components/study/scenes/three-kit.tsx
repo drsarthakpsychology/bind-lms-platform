@@ -5,6 +5,7 @@ import * as THREE from "three";
 import { Canvas, useFrame, useThree, type ThreeEvent } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import { along, type Journey, type Leg, type ThemeColors, type V3 } from "./kit";
+import { Glow, IdleSway, TapRipples, glowTexture } from "./fx";
 
 /**
  * Shared 3D pieces, loaded only with the 3D views: the stage (camera, light,
@@ -44,14 +45,25 @@ function startQuality(): Quality {
  * level are skipped, because shaders compile then.
  */
 function Governor({ level, onDrop }: { level: Quality; onDrop: () => void }) {
-  const acc = React.useRef({ warm: 0, time: 0, n: 0, bad: 0 });
+  const acc = React.useRef({ warm: 0, time: 0, n: 0, bad: 0, slow: 0 });
   useFrame((_, dt) => {
     const a = acc.current;
-    if (level === 0 || dt > 0.25) return; // a gap: frames were not back to back
+    if (level === 0) return;
+    // the first two seconds of drawing at a level are skipped: shaders compile then
     if (a.warm < 2) {
-      a.warm += dt;
+      if (dt <= 1) a.warm += Math.min(dt, 0.25);
       return;
     }
+    // very slow frames drawn back to back (a drag or an animation at a few
+    // frames a second) also count; a single late frame is only a gap after idling
+    if (dt > 0.1 && dt <= 1) a.slow++;
+    else a.slow = 0;
+    if (a.slow >= 4) {
+      acc.current = { warm: 0, time: 0, n: 0, bad: 0, slow: 0 };
+      onDrop();
+      return;
+    }
+    if (dt > 0.25) return; // a gap: frames were not back to back
     a.time += dt;
     a.n++;
     if (a.time >= 1) {
@@ -60,7 +72,7 @@ function Governor({ level, onDrop }: { level: Quality; onDrop: () => void }) {
       a.time = 0;
       a.n = 0;
       if (a.bad >= 2) {
-        acc.current = { warm: 0, time: 0, n: 0, bad: 0 };
+        acc.current = { warm: 0, time: 0, n: 0, bad: 0, slow: 0 };
         onDrop();
       }
     }
@@ -101,6 +113,10 @@ export function Stage({
   onMiss,
   onReady,
   locked = false,
+  fog,
+  bg = "#f5f5f5",
+  sway = false,
+  fx = "#1d44d8",
 }: {
   children: React.ReactNode;
   camera: V3;
@@ -114,6 +130,13 @@ export function Stage({
   onReady?: () => void;
   /** No turning or zooming (a fixed viewpoint, such as a peephole). */
   locked?: boolean;
+  /** Depth fog for a subject of about this radius: its near side stays crisp, its far side fades into `bg`, the colour behind the canvas. */
+  fog?: number;
+  bg?: string;
+  /** Gentle idle turning until the student touches or changes something. */
+  sway?: boolean;
+  /** Colour of tap ripples. */
+  fx?: string;
 }) {
   const [ready, setReady] = React.useState(false);
   const [level, setLevel] = React.useState<Quality>(startQuality);
@@ -137,11 +160,17 @@ export function Stage({
         style={{ touchAction: "none" }}
       >
         <QualityCtx.Provider value={level}>
-          <ambientLight intensity={0.75} />
-          <hemisphereLight args={["#ffffff", "#9aa3b5", 0.6]} />
-          <directionalLight position={[3, 6, 5]} intensity={1.2} />
-          <directionalLight position={[-4, 2, -3]} intensity={0.35} />
-          {children}
+          {fog ? <fog attach="fog" args={[bg, 10, 30]} /> : null}
+          {fog ? <FogTracker radius={fog} /> : null}
+          <ambientLight intensity={0.6} />
+          <hemisphereLight args={["#fff6ea", "#8f9bb8", 0.55]} />
+          {/* warm key from above the front, cool rim from behind for edge light, soft fill */}
+          <directionalLight position={[3, 6, 5]} intensity={1.15} color="#fff3e2" />
+          <directionalLight position={[-2, 3.5, -6]} intensity={level >= 1 ? 1.35 : 0.6} color="#b9d4ff" />
+          {level >= 2 ? <directionalLight position={[-4, 1, 3]} intensity={0.3} color="#ffffff" /> : null}
+          <IdleSway on={sway && inView} stopKey={wakeKey}>
+            <TapRipples color={fx}>{children}</TapRipples>
+          </IdleSway>
           <FirstFrame onReady={() => { setReady(true); onReady?.(); }} level={level} />
           <Governor level={level} onDrop={() => setLevel((l) => (l > 0 ? ((l - 1) as Quality) : l))} />
           <Waker wakeKey={`${wakeKey}|${level}`} />
@@ -150,6 +179,19 @@ export function Stage({
       </Canvas>
     </div>
   );
+}
+
+/** Keeps depth fog fitted to the camera's distance, so zooming never washes the subject out. */
+function FogTracker({ radius }: { radius: number }) {
+  useFrame((st) => {
+    const f = st.scene.fog as THREE.Fog | null;
+    if (!f) return;
+    const c = (st.controls as unknown as OrbitLike | null)?.target ?? new THREE.Vector3();
+    const d = st.camera.position.distanceTo(c);
+    f.near = Math.max(0.1, d - radius * 0.15);
+    f.far = d + radius * 2.6;
+  });
+  return null;
 }
 
 /**
@@ -182,7 +224,7 @@ function FirstFrame({ onReady, level }: { onReady: () => void; level: Quality })
 }
 
 /** Flies the camera to a new view whenever `flyKey` changes, then hands control back to the student. */
-export function CameraRig({ flyKey, pos: rawPos, target, ms = 900, fitAspect = 0 }: { flyKey: string; pos: V3; target: V3; ms?: number; fitAspect?: number }) {
+export function CameraRig({ flyKey, pos: rawPos, target, ms = 1300, fitAspect = 0 }: { flyKey: string; pos: V3; target: V3; ms?: number; fitAspect?: number }) {
   const { camera, controls, size, invalidate } = useThree() as unknown as { camera: THREE.PerspectiveCamera; controls: OrbitLike | null; size: { width: number; height: number }; invalidate: () => void };
   // on narrow screens, step back so a wide subject still fits
   const k = fitAspect ? Math.max(1, fitAspect / (size.width / Math.max(1, size.height))) : 1;
@@ -208,12 +250,22 @@ export function CameraRig({ flyKey, pos: rawPos, target, ms = 900, fitAspect = 0
     const f = (now - st.current.t0) / ms;
     if (f > 1 || f < 0) return;
     invalidate();
-    const e = f < 0.5 ? 2 * f * f : 1 - Math.pow(-2 * f + 2, 2) / 2;
-    camera.position.lerpVectors(st.current.from, new THREE.Vector3(...pos), e);
+    // cinematic move: ease in and out (cubic), and swing round the subject on
+    // an arc (direction and distance blended separately) instead of cutting
+    // straight through it
+    const e = f < 0.5 ? 4 * f * f * f : 1 - Math.pow(-2 * f + 2, 3) / 2;
+    const toT = new THREE.Vector3(...target);
+    const tgt = new THREE.Vector3().lerpVectors(st.current.fromT, toT, e);
+    const a = st.current.from.clone().sub(st.current.fromT);
+    const b = new THREE.Vector3(...pos).sub(toT);
+    const la = a.length(), lb = b.length();
+    const q = new THREE.Quaternion().setFromUnitVectors(a.clone().normalize(), b.clone().normalize());
+    const dir = a.clone().normalize().applyQuaternion(new THREE.Quaternion().slerp(q, e));
+    camera.position.copy(tgt).addScaledVector(dir, la + (lb - la) * e);
     if (controls) {
-      controls.target.lerpVectors(st.current.fromT, new THREE.Vector3(...target), e);
+      controls.target.copy(tgt);
       controls.update();
-    } else camera.lookAt(...target);
+    } else camera.lookAt(tgt);
   });
   return null;
 }
@@ -246,7 +298,7 @@ export function Tube({ pts, radius = 0.025, color, opacity = 1, lit = 0, litColo
       </mesh>
       {litGeo ? (
         <mesh geometry={litGeo} renderOrder={xray ? 10 : 0}>
-          <meshBasicMaterial color={litColor ?? color} transparent opacity={xray ? 0.8 : 0.55} depthWrite={false} depthTest={!xray} />
+          <meshBasicMaterial color={litColor ?? color} transparent opacity={xray ? 0.85 : 0.6} depthWrite={false} depthTest={!xray} toneMapped={false} />
         </mesh>
       ) : null}
     </group>
@@ -254,55 +306,65 @@ export function Tube({ pts, radius = 0.025, color, opacity = 1, lit = 0, litColo
 }
 
 /**
- * The travelling signal: a bright head with a short trail. It follows the
- * journey's current leg from the moment that leg begins. `onProgress` lets
- * a view light the nerve behind it.
+ * The travelling signal: a bright head inside a soft glow, with a comet tail
+ * of glowing particles. It follows the journey's current leg from the moment
+ * that leg begins. `onProgress` lets a view light the nerve behind it.
  */
+const TAIL = 18;
 export function Pulse({ journey, paths, colorOf, size = 0.07, onProgress, xray = false }: { xray?: boolean; journey: Journey; paths: Record<string, V3[]>; colorOf: (tone: Leg["tone"]) => string; size?: number; onProgress?: (path: string, t: number) => void }) {
   const head = React.useRef<THREE.Mesh>(null);
-  const trail = React.useRef<(THREE.Mesh | null)[]>([]);
-  const halo = React.useRef<THREE.Mesh>(null);
+  const halo = React.useRef<THREE.Sprite>(null);
+  const tail = React.useRef<THREE.Points>(null);
   const st = React.useRef({ id: "", t0: 0 });
   const cur = journey.cur;
   const id = cur ? `${journey.run}-${journey.leg}` : "";
+  const col = cur ? colorOf(cur.tone) : "#ffffff";
+  const tailGeo = React.useMemo(() => {
+    const g = new THREE.BufferGeometry();
+    g.setAttribute("position", new THREE.BufferAttribute(new Float32Array(TAIL * 3), 3));
+    g.setAttribute("color", new THREE.BufferAttribute(new Float32Array(TAIL * 3), 3));
+    return g;
+  }, []);
+  React.useEffect(() => () => tailGeo.dispose(), [tailGeo]);
+  const c3 = React.useMemo(() => new THREE.Color(col), [col]);
+  const map = React.useMemo(() => glowTexture(), []);
   useFrame(() => {
     const now = performance.now();
     if (st.current.id !== id) st.current = { id, t0: now };
     const show = !!cur && !!paths[cur.path];
     if (head.current) head.current.visible = show;
     if (halo.current) halo.current.visible = show;
-    trail.current.forEach((m) => m && (m.visible = show));
+    if (tail.current) tail.current.visible = show;
     if (!show || !cur) return;
     const pts = paths[cur.path];
     const t = Math.min(1, (now - st.current.t0) / (cur.ms * 0.92));
     const p = along(pts, t);
     head.current!.position.set(...p);
     halo.current!.position.set(...p);
-    const s = 1 + 0.25 * Math.sin(now / 70);
-    halo.current!.scale.setScalar(s);
-    trail.current.forEach((m, k) => {
-      if (!m) return;
-      m.position.set(...along(pts, Math.max(0, t - (k + 1) * 0.03)));
-    });
+    halo.current!.scale.setScalar(size * 7 * (1 + 0.18 * Math.sin(now / 90)));
+    const pos = tailGeo.getAttribute("position") as THREE.BufferAttribute;
+    const cc = tailGeo.getAttribute("color") as THREE.BufferAttribute;
+    for (let k = 0; k < TAIL; k++) {
+      const q = along(pts, Math.max(0, t - (k + 1) * 0.011));
+      const j = Math.sin(now / 120 + k * 1.9) * size * 0.25;
+      pos.setXYZ(k, q[0] + j, q[1] - j, q[2] + j * 0.5);
+      const f = (1 - k / TAIL) * (t > 0.02 ? 1 : 0);
+      cc.setXYZ(k, c3.r * f, c3.g * f, c3.b * f);
+    }
+    pos.needsUpdate = true;
+    cc.needsUpdate = true;
     onProgress?.(cur.path, t);
   });
-  const col = cur ? colorOf(cur.tone) : "#ffffff";
   return (
     <group>
-      <mesh ref={halo}>
-        <sphereGeometry args={[size * 1.9, 12, 10]} />
-        <meshBasicMaterial color={col} transparent opacity={0.28} depthWrite={false} depthTest={!xray} />
-      </mesh>
+      <Glow ref={halo} color={col} size={size * 7} opacity={0.9} xray={xray} />
       <mesh ref={head} renderOrder={xray ? 11 : 0}>
         <sphereGeometry args={[size, 14, 12]} />
-        <meshBasicMaterial color={col} depthTest={!xray} transparent={xray} />
+        <meshBasicMaterial color={col} depthTest={!xray} transparent={xray} toneMapped={false} />
       </mesh>
-      {[0, 1, 2, 3].map((k) => (
-        <mesh key={k} ref={(m) => { trail.current[k] = m; }}>
-          <sphereGeometry args={[size * (0.8 - k * 0.15), 8, 6]} />
-          <meshBasicMaterial color={col} transparent opacity={0.6 - k * 0.13} depthWrite={false} depthTest={!xray} />
-        </mesh>
-      ))}
+      <points ref={tail} geometry={tailGeo} frustumCulled={false} renderOrder={xray ? 12 : 2}>
+        <pointsMaterial map={map} size={size * 3.2} sizeAttenuation vertexColors transparent depthWrite={false} depthTest={!xray} blending={THREE.AdditiveBlending} toneMapped={false} />
+      </points>
     </group>
   );
 }

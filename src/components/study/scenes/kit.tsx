@@ -5,6 +5,7 @@ import { PlayBar, readingMs, type StepPlayer } from "../pacing";
 import { Box, Check, Square, Target } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Rich } from "../rich";
+import { SoundToggle } from "./sfx";
 
 /**
  * Shared pieces for the explorable scenes: the card, mode tabs, missions,
@@ -119,7 +120,7 @@ export function ViewSwitch({ v }: { v: ReturnType<typeof useSceneView> }) {
 
 /* --------------------------------------------------------------- the card */
 
-export function SceneCard({ title, goal, children, caption, tools }: { title: string; goal: string; children: React.ReactNode; caption?: string; tools?: React.ReactNode }) {
+export function SceneCard({ title, goal, children, caption, tools, sound = false }: { title: string; goal: string; children: React.ReactNode; caption?: string; tools?: React.ReactNode; sound?: boolean }) {
   return (
     <figure className={cn(card, "overflow-hidden")}>
       <div className="flex flex-wrap items-start justify-between gap-2">
@@ -129,7 +130,12 @@ export function SceneCard({ title, goal, children, caption, tools }: { title: st
             <Target className="mt-0.5 size-4 shrink-0" aria-hidden /> <span>{goal}</span>
           </p>
         </div>
-        {tools}
+        {tools || sound ? (
+          <div className={cn("flex flex-wrap items-center gap-1.5", sound ? "w-full sm:w-auto" : "")}>
+            {sound ? <SoundToggle /> : null}
+            {tools}
+          </div>
+        ) : null}
       </div>
       {children}
       {caption ? <figcaption className="mt-3 text-sm text-muted-foreground"><Rich text={caption} /></figcaption> : null}
