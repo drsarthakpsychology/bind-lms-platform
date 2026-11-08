@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ArrowLeft, ChevronRight } from "lucide-react";
-import { PREP_EXAMS, PREP_SHORT, PREP_TITLE } from "@/lib/prep/catalog";
+import { PREP_SHORT, PREP_TITLE } from "@/lib/prep/catalog";
 import type { Stats } from "@/lib/prep/progress";
 import { cn } from "@/lib/utils";
 import { ToolHeader } from "@/components/help/tool-header";
@@ -17,7 +17,7 @@ export function BackToPrep({ href = "/prep", label = PREP_SHORT }: { href?: stri
   );
 }
 
-/** The section's name with a help button, and the exams it prepares for as one plain line. */
+/** The section's name with a help button. Exam names are for staff, never shown to students. */
 export function PrepHero({ children }: { children?: React.ReactNode }) {
   return (
     <header className="space-y-3">
@@ -29,7 +29,6 @@ export function PrepHero({ children }: { children?: React.ReactNode }) {
           steps: ["Pick a subject, then a topic.", "Save any question to see it again."],
         }}
       />
-      <p className="max-w-2xl text-small text-muted-foreground">{PREP_EXAMS.join(" · ")}</p>
       {children}
     </header>
   );

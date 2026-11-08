@@ -30,7 +30,7 @@ export default async function SubjectPage({ params, searchParams }: { params: Pr
   const { topics, stats } = await loadSubject(me.id, subject);
   const long = longTopicsFor(subject);
   const longTotal = long.reduce((a, t) => a + t.items.length, 0);
-  const title = subject === "ugc-paper1" ? "UGC NET Paper 1: general paper" : SUBJECT_TITLE[subject];
+  const title = subject === "ugc-paper1" ? "General paper: teaching, research and reasoning" : SUBJECT_TITLE[subject];
 
   return (
     <PrepFrame>

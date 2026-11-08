@@ -42,7 +42,7 @@ export function longTopic(subject: Subject, topic: string): LongTopic | null {
 export function longSubjects(): { subject: Subject; title: string; count: number }[] {
   return BANK_SUBJECTS.flatMap((s) => {
     const n = longTopicsFor(s).reduce((a, t) => a + t.items.length, 0);
-    return n ? [{ subject: s, title: s === "ugc-paper1" ? "UGC NET Paper 1: general paper" : SUBJECT_TITLE[s], count: n }] : [];
+    return n ? [{ subject: s, title: s === "ugc-paper1" ? "General paper: teaching, research and reasoning" : SUBJECT_TITLE[s], count: n }] : [];
   });
 }
 

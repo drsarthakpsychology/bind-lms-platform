@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Bookmark, Clock, MessagesSquare, Sparkles, type LucideIcon } from "lucide-react";
 import { requireFeature } from "@/lib/flags";
-import { PREP_EXAMS, PREP_ONBOARDING_ENABLED, PREP_TITLE } from "@/lib/prep/catalog";
+import { PREP_ONBOARDING_ENABLED, PREP_TITLE } from "@/lib/prep/catalog";
 import { loadHome } from "@/lib/prep/path";
 import { longCount } from "@/lib/prep/long-server";
 import { ListRow, PrepFrame, PrepHero, bigCount, pctText } from "./ui";
 import { prepViewer } from "./viewer";
 import { EmptyState } from "@/components/design-system/empty-state";
 
-export const metadata: Metadata = { title: PREP_TITLE, description: `A question bank with answers and explanations for ${PREP_EXAMS.join(", ")}.` };
+export const metadata: Metadata = { title: PREP_TITLE, description: "A question bank with answers and explanations for psychology entrance and competitive exams." };
 
 /**
  * /prep: the question bank. One next step (pick up where you left off, or
@@ -80,7 +80,7 @@ export default async function PrepPage() {
           <ul className="grid gap-2 border-t-2 border-dashed border-foreground/40 pt-3 lg:grid-cols-2">
             {optional.map((s) => (
               <li key={s.subject}>
-                <ListRow href={`/prep/${s.subject}`} title="UGC NET Paper 1: general paper" tag="Optional" sub="Teaching, research and reasoning" side={pctText(s.stats)} stats={s.stats} />
+                <ListRow href={`/prep/${s.subject}`} title="General paper" tag="Optional" sub="Teaching, research and reasoning" side={pctText(s.stats)} stats={s.stats} />
               </li>
             ))}
           </ul>
