@@ -1,4 +1,6 @@
 import type { LongQA } from "@/lib/prep/long-types";
+import { BIOLOGICAL_L01 } from "./biological-l01";
+import { BIOLOGICAL_L02 } from "./biological-l02";
 import { CLINICAL_PSYCHIATRY_L01 } from "./clinical-psychiatry-l01";
 import { CLINICAL_PSYCHIATRY_L02 } from "./clinical-psychiatry-l02";
 import { CLINICAL_PSYCHIATRY_L03 } from "./clinical-psychiatry-l03";
@@ -71,6 +73,8 @@ import { STATISTICS_L05 } from "./statistics-l05";
 
 /** Every hand-written long answer. Writers add part files and spread them in here. */
 export const LONG_QA: LongQA[] = [
+  ...BIOLOGICAL_L01,
+  ...BIOLOGICAL_L02,
   ...CLINICAL_PSYCHIATRY_L01,
   ...CLINICAL_PSYCHIATRY_L02,
   ...CLINICAL_PSYCHIATRY_L03,
