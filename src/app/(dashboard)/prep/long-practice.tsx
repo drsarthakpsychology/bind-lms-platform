@@ -1,5 +1,6 @@
 "use client";
 
+import { noteAnswer } from "@/lib/history/client";
 import * as React from "react";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, BookOpen, Bookmark, BookmarkCheck, Check, Eye, RotateCcw } from "lucide-react";
@@ -38,6 +39,8 @@ export function LongPractice({ id, keyPoints, pitfalls, answer, study, prev, nex
 
   function reveal() {
     setShown(true);
+    // Answer history: opened (graded later from the ticks, when there are key points).
+    noteAnswer("long", id, null);
     // Move focus to the answer once it is on screen.
     requestAnimationFrame(() => answerRef.current?.focus());
   }
@@ -126,7 +129,7 @@ export function LongPractice({ id, keyPoints, pitfalls, answer, study, prev, nex
           <span />
         )}
         {next ? (
-          <Link href={next} className={btnInk}>
+          <Link href={next} className={btnInk} onClick={() => (shown && mark.total ? noteAnswer("long", id, mark.covered / mark.total >= 0.6) : undefined)}>
             Next <ArrowRight className="size-4" aria-hidden />
           </Link>
         ) : null}

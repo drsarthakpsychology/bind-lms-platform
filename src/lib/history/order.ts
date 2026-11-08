@@ -40,7 +40,6 @@ export const HISTORY_TOOLS = [
   "two-minute",
   "weak-spots",
   "long",
-  "judgment",
 ] as const;
 export type HistoryTool = (typeof HISTORY_TOOLS)[number];
 
@@ -172,6 +171,17 @@ export function leadWithUnseen<T>(list: readonly T[], idOf: (t: T) => string, hi
   const out = [...list];
   out.unshift(...out.splice(i, 1));
   return out;
+}
+
+/**
+ * For tools walked one item at a time (a list with Next): after `current`,
+ * in list order and wrapping round, the first item never seen, else the
+ * first one missed and due. Null when there is none (keep the plain next).
+ */
+export function nextFresh(ids: readonly string[], current: string, history: History, now: number): string | null {
+  const at = ids.indexOf(current);
+  const after = [...ids.slice(at + 1), ...ids.slice(0, Math.max(0, at))];
+  return after.find((id) => tierOf(history.get(id), now) === 0) ?? after.find((id) => tierOf(history.get(id), now) === 1) ?? null;
 }
 
 /** Two copies of a history (server and browser): per item the newer answer wins, the higher count stays. */
