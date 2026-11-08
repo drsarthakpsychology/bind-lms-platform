@@ -9,6 +9,7 @@
  */
 
 import { mulberry32, permutation } from "../rng";
+import { poolFor, type History } from "@/lib/history/order";
 
 export const ROUNDS = 5;
 export const COUNTDOWN_MS = 3500;
@@ -183,9 +184,14 @@ export function canAnswer(m: MatchRec, s: MatchState, userId: string, round: num
   return s.answers[side][round] === null;
 }
 
-/** Choose a match's rounds: no repeats, mixed topics where possible. */
-export function pickItems(ids: { id: string; topic: string }[], seed: number, n = ROUNDS): string[] {
-  const order = permutation(seed, ids.length).map((i) => ids[i]);
+/**
+ * Choose a match's rounds: no repeats, mixed topics where possible. With an
+ * answer history (src/lib/history), items never seen come first, then missed
+ * ones, and right ones only when the rest run short.
+ */
+export function pickItems(ids: { id: string; topic: string }[], seed: number, n = ROUNDS, history?: History, now = 0): string[] {
+  const base = permutation(seed, ids.length).map((i) => ids[i]);
+  const order = history?.size ? poolFor(base, (x) => x.id, history, now, mulberry32((seed ^ 0x5bd1e995) >>> 0), n) : base;
   const out: string[] = [];
   const topics = new Set<string>();
   for (const it of order) {
