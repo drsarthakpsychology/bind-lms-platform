@@ -9,6 +9,7 @@ import { cn } from "@/lib/utils";
 import { dismissReaction, getShown, getShownServer, subscribeShown, type Shown } from "./store";
 
 /** How long a reaction stays (entrance included). Hover or focus holds it. */
+/** Kept for tests: stickers no longer leave on a timer; a tap or Escape removes them. */
 export const SHOW_MS = 2800;
 
 const OUT_EXPO = "cubic-bezier(0.16, 1, 0.3, 1)";
@@ -90,14 +91,9 @@ function Popup({ r }: { r: Shown }) {
     a.onfinish = () => dismissReaction(r.key);
   }, [r.key]);
 
-  const hold = React.useCallback(() => {
-    if (timer.current) clearTimeout(timer.current);
-  }, []);
-  const release = React.useCallback(() => {
-    if (leaving.current) return;
-    if (timer.current) clearTimeout(timer.current);
-    timer.current = setTimeout(leave, 1200);
-  }, [leave]);
+  // The sticker stays until the student taps it (or presses Escape); a newer one replaces it.
+  const hold = React.useCallback(() => {}, []);
+  const release = React.useCallback(() => {}, []);
 
   React.useLayoutEffect(() => {
     const el = box.current;
@@ -125,7 +121,6 @@ function Popup({ r }: { r: Shown }) {
         );
       }
     }
-    timer.current = setTimeout(leave, SHOW_MS);
     let raf = 0;
     const again = () => {
       cancelAnimationFrame(raf);

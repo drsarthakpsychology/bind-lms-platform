@@ -12,6 +12,11 @@ export type ReactionApi = {
   onAnswer: (correct: boolean, ctx?: AnswerCtx) => void;
   /** A new session (play again): first-right and streaks start over. */
   reset: () => void;
+  /**
+   * A game or practice round has ended. Always shows a sticker (when reactions
+   * are on): "won" gets a happy one, "lost" a sad one, "mixed" the crying thumbs up.
+   */
+  onFinish: (outcome: "won" | "lost" | "mixed") => void;
 };
 
 /**
@@ -30,6 +35,10 @@ export function useReaction(): ReactionApi {
       },
       reset() {
         run.current = newRun();
+      },
+      onFinish(outcome) {
+        if (!readReactionsOn()) return;
+        showReaction(outcome === "won" ? "streak" : outcome === "lost" ? "wrong" : "near");
       },
     }),
     [],
