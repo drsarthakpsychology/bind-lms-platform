@@ -1199,7 +1199,7 @@ Specific, difficult goals produce higher performance than vague "do your best" g
 - Pressure to hit targets can encourage cheating and shortcuts.
 
 ### Example
-"Solve 20 past NET questions on research methods each evening and check errors" beats "study more".
+"Solve 20 past exam questions on research methods each evening and check errors" beats "study more".
 :::
 
 :::qa Describe Bandura's four sources of self-efficacy with examples from an Indian classroom. [beginner]

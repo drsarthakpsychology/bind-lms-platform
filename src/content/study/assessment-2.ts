@@ -3,7 +3,7 @@ export const part2 = String.raw`
 # Part III · Advanced: building, adapting, interpreting and reporting
 
 ## 3.1 Building a test, step by step [core][advanced]
-Every test you use was once a draft written by someone. Knowing how tests are built tells you what to trust and what to question, and prepares you for MPhil, PhD and NET questions on test construction.
+Every test you use was once a draft written by someone. Knowing how tests are built tells you what to trust and what to question, and prepares you for postgraduate, PhD and competitive exam questions on test construction.
 
 ### The ten steps
 1. **Define the construct** precisely: what exactly is "exam anxiety"? Which parts (worry, body symptoms, avoidance)? For whom (Indian college students)?
@@ -251,7 +251,7 @@ Classical statistics depend on the sample: an item looks "easy" in a bright grou
 :::
 
 :::clinician
-Classical test theory (CTT) and IRT compared: CTT statistics (p, D, alpha) are sample-dependent and assume one SEM for everyone; IRT parameters are, in principle, invariant across samples once the model fits, and measurement error varies with trait level (the test information function). Assumptions: unidimensionality (or a specified multidimensional model) and local independence. Polytomous models (Samejima's graded response model; partial credit and rating scale Rasch models) are used for Likert-type symptom items. Rasch analysis is common in Indian scale development theses; report fit statistics (infit and outfit mean squares), person and item separation, and DIF. PROMIS item banks (depression, anxiety, anger) show how IRT-based CAT can measure symptoms with four to eight items at precision equivalent to full legacy scales. NET and PhD entrance questions commonly ask for the meaning of the a, b and c parameters and the difference between CTT and IRT.
+Classical test theory (CTT) and IRT compared: CTT statistics (p, D, alpha) are sample-dependent and assume one SEM for everyone; IRT parameters are, in principle, invariant across samples once the model fits, and measurement error varies with trait level (the test information function). Assumptions: unidimensionality (or a specified multidimensional model) and local independence. Polytomous models (Samejima's graded response model; partial credit and rating scale Rasch models) are used for Likert-type symptom items. Rasch analysis is common in Indian scale development theses; report fit statistics (infit and outfit mean squares), person and item separation, and DIF. PROMIS item banks (depression, anxiety, anger) show how IRT-based CAT can measure symptoms with four to eight items at precision equivalent to full legacy scales. Competitive exam and PhD entrance questions commonly ask for the meaning of the a, b and c parameters and the difference between CTT and IRT.
 :::
 
 :::recall
@@ -976,7 +976,7 @@ In calculation-based questions, show every step and write the formula first. Exa
 :::
 
 :::clinician
-For NET, MPhil and PsyD entrance-style questions, expect: identification of reliability or validity types from scenarios; Spearman-Brown, SEM and z-to-T conversions; IRT parameter meanings; MMPI code types and validity configurations; Indian test authors (Kamat, Malin, Bhatia, Pershad, Verma, Wig, Chowdhury); and ethics of test use. Postgraduate long answers gain from naming the 2014 Standards, Messick's unified validity, the ITC adaptation guidelines and one meta-analytic finding (for example Mihura 2013 on Rorschach validity).
+For competitive exam, clinical master's and PsyD entrance-style questions, expect: identification of reliability or validity types from scenarios; Spearman-Brown, SEM and z-to-T conversions; IRT parameter meanings; MMPI code types and validity configurations; Indian test authors (Kamat, Malin, Bhatia, Pershad, Verma, Wig, Chowdhury); and ethics of test use. Postgraduate long answers gain from naming the 2014 Standards, Messick's unified validity, the ITC adaptation guidelines and one meta-analytic finding (for example Mihura 2013 on Rorschach validity).
 :::
 
 :::recall

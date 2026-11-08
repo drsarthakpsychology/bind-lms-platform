@@ -615,7 +615,7 @@ The triguna model adds a **change-oriented** and **ethical** dimension that West
 
 :::qa Using explanatory style and self-discrepancy theory, formulate a student's depression after failing an entrance exam. [advanced]
 ### The case
-Rohan, 19, failed NEET for the second time. He says: "I'm useless. I'll never be a doctor. My parents sacrificed everything; I've let them down." He sleeps most of the day.
+Rohan, 19, failed the medical entrance for the second time. He says: "I'm useless. I'll never be a doctor. My parents sacrificed everything; I've let them down." He sleeps most of the day.
 ### Explanatory style
 | Dimension | His explanation | Effect |
 |---|---|---|

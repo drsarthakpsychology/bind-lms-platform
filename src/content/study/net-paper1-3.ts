@@ -289,7 +289,7 @@ Reporting of suicide is a clear case: sensational coverage is linked to imitatio
 
 ## 4.2 Q&A bank · Beginner [core][beginner]
 
-:::qa Solve these four Paper 1 numericals step by step: an age problem, a mixture problem, a work-efficiency problem and a percentage-of-groups problem. [beginner]
+:::qa Solve these four general paper numericals step by step: an age problem, a mixture problem, a work-efficiency problem and a percentage-of-groups problem. [beginner]
 ### 1. Ages
 A is twice as old as B. Ten years ago, A was three times as old as B. Find their ages.
 1. Let B = x, so A = 2x.
@@ -413,10 +413,10 @@ Note: the **simple** average growth is 50% ÷ 2 = 25% a year, which overstates t
 ### Coefficient of variation
 1. Mean = (10 + 12 + 14 + 16 + 18) ÷ 5 = **14**
 2. Deviations: −4, −2, 0, 2, 4; squares 16, 4, 0, 4, 16; sum = 40
-3. SD (dividing by N, as Paper 1 usually expects) = √(40 ÷ 5) = √8 = **2.83**
+3. SD (dividing by N, as the general paper usually expects) = √(40 ÷ 5) = √8 = **2.83**
 4. CV = (SD ÷ mean) × 100 = 2.83 ÷ 14 × 100 = **20.2%**
 
-### When Paper 1 asks for CV
+### When the general paper asks for CV
 To compare **consistency**: the series with the lower CV is more consistent, even if its SD is larger in raw units.
 :::
 
@@ -586,7 +586,7 @@ n(tea or coffee) = n(tea) + n(coffee) − n(both) = 60 + 50 − 20 = **90**
 The 20 who drink both were counted once in tea and again in coffee. Removing them once avoids double counting. With three sets, the formula extends: A + B + C − (AB + BC + AC) + ABC.
 :::
 
-:::qa A coaching centre's NET qualifiers were 40 (2022), 50 (2023), 45 (2024) and 60 (2025). Answer: the average; the year-on-year percentage changes; the year with the largest rise; the percentage rise from 2022 to 2025. [beginner]
+:::qa A coaching centre's exam qualifiers were 40 (2022), 50 (2023), 45 (2024) and 60 (2025). Answer: the average; the year-on-year percentage changes; the year with the largest rise; the percentage rise from 2022 to 2025. [beginner]
 ### Average
 (40 + 50 + 45 + 60) ÷ 4 = 195 ÷ 4 = **48.75**
 
@@ -719,7 +719,7 @@ India argues for **common but differentiated responsibilities and respective cap
 | Loss of green space | Poorer mood and stress recovery |
 | Climate change awareness | Eco-anxiety, especially in the young |
 
-### Why Paper 1 cares
+### Why the general paper cares
 The unit is "People, development and environment": it asks you to see development, environment and human well-being as one system, not separate topics.
 :::
 
@@ -921,7 +921,7 @@ Many issues NEP 2020 addresses (the affiliation system, exam pressure, language 
 :::
 
 ## 4.4 Long answers, short notes and viva [core]
-Paper 1 is objective, but writing short explanatory answers is the fastest way to fix these units in memory, and the same topics come up in **interviews for teaching posts**, **PhD entrance interviews** and **university education papers**.
+The general paper is objective, but writing short explanatory answers is the fastest way to fix these units in memory, and the same topics come up in **interviews for teaching posts**, **PhD entrance interviews** and **university education papers**.
 
 ### Long answer skeletons
 **1. Discuss the levels of teaching and the factors that affect teaching.**
@@ -961,7 +961,7 @@ Paper 1 is objective, but writing short explanatory answers is the fastest way t
 - **NAAC and NIRF:** accreditation versus ranking; NIRF parameters; the binary shift.
 
 :::viva
-Why does Paper 1 test logic and data alongside teaching? :: Because a lecturer or researcher must reason clearly, read evidence and explain it to learners; the paper tests the general thinking a teacher-researcher needs, whatever the subject.
+Why does the general paper test logic and data alongside teaching? :: Because a lecturer or researcher must reason clearly, read evidence and explain it to learners; the paper tests the general thinking a teacher-researcher needs, whatever the subject.
 How is anupalabdhi different from inference? :: Anupalabdhi knows an absence directly, by the non-perception of something that would be perceived if present; inference reasons from a mark to something not perceived. Bhatta Mimamsa and Advaita treat it as a separate pramana; Nyaya folds it into perception or inference.
 What is the difference between NAAC and NIRF? :: NAAC accredits an institution's quality against standards (now moving to a binary decision with maturity levels); NIRF ranks institutions against one another on published parameters.
 Why is Mehrabian's 7-38-55 rule often misused? :: It came from experiments on single words expressing feelings, where tone and face conflicted with the word. It does not show that most of all communication is non-verbal.
@@ -972,10 +972,10 @@ What would you do to make a large lecture class more reflective-level? :: Pose r
 Thirty questions across all ten units. Aim for 24 or more.
 
 :::mcq
-Q: In UGC NET, Paper 1 and Paper 2 together last:
+Q: The general paper and the subject paper together last:
 - *3 hours with no break
 - 2 hours with a break
-- 3 hours, 1 hour for Paper 1
+- 3 hours, 1 hour for the general paper
 - 4 hours
 > One sitting covers both papers.
 

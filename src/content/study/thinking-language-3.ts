@@ -234,7 +234,7 @@ He later framed **successful intelligence** as the ability to achieve your goals
 :::
 
 ### PASS theory: Das, Naglieri and Kirby; Das, Kar and Parrila
-**J. P. Das**, born in Odisha and later a professor at the University of Alberta, built a theory of intelligence on the Russian neuropsychologist **A. R. Luria's** three **functional units** of the brain. The theory was set out by Das, Jack Naglieri and John Kirby (1994) and developed in Das, Kar and Parrila (1996), and it appears by name in the UGC NET syllabus.
+**J. P. Das**, born in Odisha and later a professor at the University of Alberta, built a theory of intelligence on the Russian neuropsychologist **A. R. Luria's** three **functional units** of the brain. The theory was set out by Das, Jack Naglieri and John Kirby (1994) and developed in Das, Kar and Parrila (1996), and it appears by name in postgraduate syllabi.
 | Process | What it does | Luria's unit and brain region |
 |---|---|---|
 | **Planning** | Deciding how to solve a problem, choosing strategies, monitoring and correcting | Third unit: **frontal lobes** |

@@ -708,7 +708,7 @@ Q: A doctor talks about her own father's death only in terms of medical statisti
 # Part II · Beginner: defences in depth, development and learning
 
 ## 2.1 Vaillant's four levels of defence [core][beginner]
-The psychiatrist **George Vaillant** grouped defences into four levels, from the most reality-distorting to the most healthy. This is the version most often asked in Indian university and NET exams.
+The psychiatrist **George Vaillant** grouped defences into four levels, from the most reality-distorting to the most healthy. This is the version most often asked in Indian university and competitive exams.
 
 
 :::widget layers
@@ -805,7 +805,7 @@ They allow feelings into awareness and use them well.
 :::
 
 :::clinician
-Vaillant's hierarchy was validated prospectively: in the Grant Study of Harvard men and the Glueck inner-city cohort, the maturity of defences rated from midlife interviews predicted later physical health, marital stability, occupational success and subjective well-being, independent of social class. The DSM-IV appendix Defensive Functioning Scale expanded this into seven levels, covered in the Psychodynamics in depth module (Section 2.1), together with the Defense Mechanism Rating Scales. For exams, know both: Vaillant's four levels for undergraduate and NET questions, the seven-level ladder for postgraduate depth. Note the overlap in some lists: several standard textbook tables put projection under "narcissistic" and also "immature"; examiners accept either if you explain the degree of reality distortion.
+Vaillant's hierarchy was validated prospectively: in the Grant Study of Harvard men and the Glueck inner-city cohort, the maturity of defences rated from midlife interviews predicted later physical health, marital stability, occupational success and subjective well-being, independent of social class. The DSM-IV appendix Defensive Functioning Scale expanded this into seven levels, covered in the Psychodynamics in depth module (Section 2.1), together with the Defense Mechanism Rating Scales. For exams, know both: Vaillant's four levels for undergraduate and competitive exam questions, the seven-level ladder for postgraduate depth. Note the overlap in some lists: several standard textbook tables put projection under "narcissistic" and also "immature"; examiners accept either if you explain the degree of reality distortion.
 :::
 
 :::recall

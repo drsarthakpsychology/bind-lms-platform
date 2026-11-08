@@ -192,7 +192,7 @@ Egan's **SOLER**: **S**it squarely facing the client (or at a slight angle), **O
     { "q": "Later, after listening, a summary that leads to joint planning.", "a": "'So the crop has failed twice, the loan agents are pressing, you've stopped sleeping, and you feel ashamed to tell your wife. Shall we look together at what can be done first, and also check how you are coping in yourself?' (This also opens a gentle risk check, which is essential here.)" }
   ],
   "yourTurn": [
-    { "q": "A 17-year-old says: 'Everyone in my class is cleverer than me. I'll never crack NEET.' Write a reflection of feeling and an open question.", "a": "Reflection: 'You sound really discouraged, maybe even a bit hopeless about it.' Open question: 'What makes you feel that way right now?' or 'What has the preparation been like for you?'" }
+    { "q": "A 17-year-old says: 'Everyone in my class is cleverer than me. I'll never crack the medical entrance.' Write a reflection of feeling and an open question.", "a": "Reflection: 'You sound really discouraged, maybe even a bit hopeless about it.' Open question: 'What makes you feel that way right now?' or 'What has the preparation been like for you?'" }
   ]
 }
 :::

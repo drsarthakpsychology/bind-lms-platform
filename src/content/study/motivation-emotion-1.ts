@@ -799,7 +799,7 @@ Q: A manager uses influence to help her team succeed rather than to boost her ow
 :::
 
 ## 2.3 Curiosity, sensation seeking, flow and self-control [core][beginner]
-These topics appear by name in the UGC NET syllabus. Each answers a question drive theory could not.
+These topics appear by name in postgraduate syllabi. Each answers a question drive theory could not.
 
 ### Curiosity
 **Daniel Berlyne** (1960) described two pairs of curiosity:
@@ -1238,7 +1238,7 @@ Not everyone thinks in discrete emotions:
 :::
 
 :::clinician
-The universality debate continues. Russell (1994) argued that Ekman's forced-choice method inflated agreement; free-labelling studies show lower consensus. Later field studies found that the Himba of Namibia sorted faces mainly by valence and arousal rather than into Western categories, and Jack and colleagues (2012) showed that East Asian observers rely more on the eyes and do not represent the six categories as distinctly. The current consensus is **minimal universality**: some facial movements reliably signal broad states such as positive versus negative and high versus low arousal across cultures, while specific categories, intensity and meaning are culturally shaped. The **Many Smiles Collaboration** (2022, 19 countries) found that voluntary smiling and facial mimicry produced small increases in happiness, while the pen-in-mouth task did not. Rasa theory has been used in contemporary research on emotion in music and dance (2000, showed that Americans and Indians could recognise rasa-based bhavas performed by an Indian dancer above chance), and it is a common NET short-note topic under Indian psychology.
+The universality debate continues. Russell (1994) argued that Ekman's forced-choice method inflated agreement; free-labelling studies show lower consensus. Later field studies found that the Himba of Namibia sorted faces mainly by valence and arousal rather than into Western categories, and Jack and colleagues (2012) showed that East Asian observers rely more on the eyes and do not represent the six categories as distinctly. The current consensus is **minimal universality**: some facial movements reliably signal broad states such as positive versus negative and high versus low arousal across cultures, while specific categories, intensity and meaning are culturally shaped. The **Many Smiles Collaboration** (2022, 19 countries) found that voluntary smiling and facial mimicry produced small increases in happiness, while the pen-in-mouth task did not. Rasa theory has been used in contemporary research on emotion in music and dance (2000, showed that Americans and Indians could recognise rasa-based bhavas performed by an Indian dancer above chance), and it is a common short-note topic under Indian psychology.
 :::
 
 :::recall

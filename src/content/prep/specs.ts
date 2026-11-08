@@ -261,7 +261,7 @@ export const SUBJECT_GROUPS: { id: string; title: string; subjects: Subject[] }[
   { id: "person-society", title: "Person, development and society", subjects: ["personality-theories", "developmental", "social"] },
   { id: "clinical-applied", title: "Clinical, counselling and applied", subjects: ["psychopathology", "clinical-therapies", "counselling", "health", "positive", "organisational", "ethics-law"] },
   { id: "psychiatry", title: "Psychiatry and medicines", subjects: ["clinical-psychiatry", "psychopharmacology"] },
-  { id: "net-paper1", title: "Teaching and reasoning (NET Paper 1)", subjects: ["ugc-paper1"] },
+  { id: "net-paper1", title: "General paper: teaching and reasoning", subjects: ["ugc-paper1"] },
 ];
 
 /** VIBHA practice marking for the shared mocks: simple, and it still punishes blind guessing. */
@@ -290,7 +290,7 @@ export const PRACTICE_SPECS: PrepSpec[] = [
     marksPerWrong: PRACTICE_MARKING.wrong,
     sections: SUBJECT_GROUPS.map((g) => ({ title: g.title, count: FULL_PARTS[g.id], subjects: g.subjects })),
     verified: false,
-    source: "VIBHA practice format covering CUET PG, UGC NET and clinical entrance syllabi",
+    source: "VIBHA practice format covering every entrance and competitive exam syllabus",
     notes: ["Every subject, easy to very hard, mixed.", "Practice marking, the same for everyone: not any one exam's scheme."],
   },
   ...SUBJECT_GROUPS.map(

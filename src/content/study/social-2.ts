@@ -895,7 +895,7 @@ export const exam = String.raw`
 1. Define attribution; internal versus external (Heider's naive psychologist).
 2. Jones and Davis: correspondent inference (choice, non-common effects, social desirability, hedonic relevance, personalism).
 3. Kelley: covariation table (consensus, distinctiveness, consistency) with an example; causal schemas (discounting, augmenting).
-4. Weiner: locus, stability, controllability; emotions and expectations; a NEET failure example.
+4. Weiner: locus, stability, controllability; emotions and expectations; a medical entrance failure example.
 5. Biases: FAE (Jones and Harris), actor-observer (with Malle's meta-analysis), self-serving, just world, ultimate attribution error.
 6. Culture: Miller (1984) India-US, Morris and Peng (1994); conclusion on the FAE as partly cultural.
 
