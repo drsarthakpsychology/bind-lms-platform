@@ -151,7 +151,7 @@ function Pick({
   const saved = useSavedSolo();
   const [err, setErr] = React.useState<string | null>(null);
   const [busy, setBusy] = React.useState<string | null>(null);
-  useHotkeys({ "1": () => onSolo(CAMPAIGNS[0].id), "2": () => onSolo(CAMPAIGNS[1].id), "3": () => onSolo(CAMPAIGNS[2].id) });
+  useHotkeys(Object.fromEntries(CAMPAIGNS.slice(0, 9).map((c, k) => [String(k + 1), () => onSolo(c.id)])));
   const live = teams.filter((t) => t.status !== "done");
   return (
     <div className={cn("mx-auto max-w-3xl space-y-6 px-4 py-6", m.rise)}>
@@ -182,7 +182,7 @@ function Pick({
             <p className="mt-2 text-caption text-muted-foreground">{c.chapters.length} sessions</p>
             <div className="mt-3 grid gap-2">
               <Btn variant="primary" onClick={() => onSolo(c.id)}>
-                <Play aria-hidden /> Play solo <Kbd>{i + 1}</Kbd>
+                <Play aria-hidden /> Play solo {i < 9 ? <Kbd>{i + 1}</Kbd> : null}
               </Btn>
               {teamsOn ? (
                 <Btn
