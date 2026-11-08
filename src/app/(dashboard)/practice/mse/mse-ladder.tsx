@@ -21,7 +21,7 @@ import { QUIZ_BANK } from "@/lib/quiz/quiz-bank";
  *  1-4 complete locally when the student finishes a round; Level 5 depends on
  *  a completed Consulting Room session (checked live by the component). */
 export interface MseLadderContent {
-  observe?: Array<{ id: string; content: string }>;
+  observe?: Array<{ id: string; content: string; why?: string }>;
   domain?: MseStimulus[];
   fullMse?: FullMseStimulus[];
 }

@@ -19,7 +19,7 @@ export function ObserveLevel({
   stimuli = OBSERVE_STIMULI,
 }: {
   onComplete?: () => void;
-  stimuli?: Array<{ id: string; content: string }>;
+  stimuli?: Array<{ id: string; content: string; why?: string }>;
 }) {
   const [idx, setIdx] = React.useState(0);
   const [text, setText] = React.useState("");
@@ -128,6 +128,12 @@ export function ObserveLevel({
             <span className="font-semibold">{result.observations}</span> observation words ·{" "}
             <span className="font-semibold">{result.score}</span> score (observations − 2×labels).
           </p>
+          {stimulus.why ? (
+            <p className="text-small">
+              <span className="font-semibold">A model description: </span>
+              {stimulus.why}
+            </p>
+          ) : null}
           {wordCount < 80 ? (
             <p className="text-small text-status-pending-fg">
               {wordCount} words. You can see more than that. Write what the clothes, the hands,

@@ -7,6 +7,9 @@
  * `o` = wrong options shown with the answer; `close` = near-misses that earn
  * half the word credit; `also` = other domains that are fair to pick.
  */
+import type { PrepExam } from "@/lib/prep/types";
+import { examsFor, moduleFor, objectiveFor, type Difficulty } from "./bank-helpers";
+import { BANK } from "./bank";
 import type { Domain, TermId } from "./terms";
 
 export type Finding = { q: string; a: TermId; o: TermId[]; close?: TermId[]; also?: Domain[]; why: string };
@@ -19,12 +22,21 @@ export type Excerpt = {
   note: string;
   findings: Finding[];
   skill: string;
+  /** Library tags (every passage has them once EXCERPTS is built). */
+  topic?: string;
+  /** Five-rung ladder: 1 recognise, 2 recall, 3 apply, 4 tell look-alikes apart, 5 full case. */
+  difficulty?: Difficulty;
+  /** One short line: what this passage teaches. */
+  objective?: string;
+  exams?: PrepExam[];
+  /** Study module ("module/section") for "Learn this". */
+  module?: string;
 };
 
 const MSE = "interview-mse:mse";
 const DIFF = "interview-mse:differentiate";
 
-export const EXCERPTS: Excerpt[] = [
+const BASE: Excerpt[] = [
   /* ------------------------------------------------------------ Starting */
   {
     id: "m01",
@@ -639,6 +651,24 @@ export const EXCERPTS: Excerpt[] = [
     ],
   },
 ];
+
+/** Topic and rung for the first 34 passages (their ids and text are unchanged). */
+const BASE_TAGS: Record<string, [string, Difficulty]> = {
+  m01: ["Depression", 1], m02: ["Mania", 1], m03: ["Delirium", 1], m04: ["Schizophrenia", 1], m05: ["OCD", 1],
+  m06: ["Panic disorder", 2], m07: ["Alcohol withdrawal", 2], m08: ["Normal MSE", 2], m09: ["Catatonia", 2], m10: ["Grief", 2],
+  m11: ["Self-neglect", 3], m12: ["Thought form", 3], m13: ["Thought form", 3], m14: ["Mania", 3], m15: ["Schizophrenia", 3],
+  m16: ["Schizophrenia", 3], m17: ["Anxiety", 3], m18: ["Sleep and normal experience", 3], m19: ["Schizophrenia", 3], m20: ["Psychotic depression", 3],
+  m21: ["Alcohol-related brain damage", 3], m22: ["Depression", 4], m23: ["Grief", 4], m24: ["Suicide risk", 4], m25: ["Anorexia nervosa", 4],
+  m26: ["Dhat syndrome", 4], m27: ["Delusional jealousy", 4], m28: ["Schizophrenia", 4], m29: ["Schizophrenia", 4], m30: ["Schizophrenia", 4],
+  m31: ["Delirium", 5], m32: ["Depression", 5], m33: ["Bipolar disorder", 5], m34: ["Hypomania", 5],
+};
+
+function tagBase(e: Excerpt): Excerpt {
+  const [topic, d] = BASE_TAGS[e.id] ?? ["MSE", (e.level === 1 ? 1 : e.level === 2 ? 3 : 4) as Difficulty];
+  return { ...e, topic, difficulty: d, objective: objectiveFor(d, e.findings), exams: examsFor(d), module: moduleFor(e.findings) };
+}
+
+export const EXCERPTS: Excerpt[] = [...BASE.map(tagBase), ...BANK];
 
 export function excerptById(id: string): Excerpt | undefined {
   return EXCERPTS.find((e) => e.id === id);

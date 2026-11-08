@@ -19,16 +19,16 @@ interface MseStimuliRow {
 
 /** Shape a jsonb expert_coding row into the level-typed forms the ladder scores. */
 function shapeContent(rows: MseStimuliRow[]): MseLadderContent {
-  const observe: Array<{ id: string; content: string }> = [];
+  const observe: Array<{ id: string; content: string; why?: string }> = [];
   const domain: MseStimulus[] = [];
   const fullMse: FullMseStimulus[] = [];
 
   for (const raw of rows) {
     // Older stimuli rows still carry dashes; students never see them.
     const row = { ...raw, content: cleanStudentText(raw.content), title: raw.title ? cleanStudentText(raw.title) : raw.title, expert_coding: cleanDeep(raw.expert_coding) };
-    const coding = (row.expert_coding ?? {}) as { expertTags?: string[]; amberTags?: string[]; expert?: FullMseStimulus["expert"]; amber?: FullMseStimulus["amber"] };
+    const coding = (row.expert_coding ?? {}) as { expertTags?: string[]; amberTags?: string[]; why?: string; expert?: FullMseStimulus["expert"]; amber?: FullMseStimulus["amber"] };
     if (row.slug.startsWith("obs-")) {
-      observe.push({ id: row.slug, content: row.content });
+      observe.push({ id: row.slug, content: row.content, why: coding.why });
     } else if (row.slug.startsWith("mse-")) {
       domain.push({
         id: row.slug,
@@ -36,6 +36,7 @@ function shapeContent(rows: MseStimuliRow[]): MseLadderContent {
         domain: row.domain as MseStimulus["domain"],
         expertTags: coding.expertTags ?? [],
         amberTags: coding.amberTags ?? [],
+        why: coding.why,
       });
     } else if (row.slug.startsWith("mse4-")) {
       fullMse.push({

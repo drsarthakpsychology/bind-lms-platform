@@ -37,15 +37,15 @@ const level2: SeedRow[] = SEED_MSE_STIMULI.map((s) => ({
   id: s.id,
   content: s.content,
   domain: s.domain,
-  expert_coding: { expertTags: s.expertTags, amberTags: s.amberTags ?? [] },
+  expert_coding: { expertTags: s.expertTags, amberTags: s.amberTags ?? [], why: s.why },
 }));
 
-/** Level 1 observe vignettes (obs-1 .. obs-idiom-4). */
+/** Level 1 observe vignettes (obs-1 .. obs-idiom-4, obs-b01 ..). */
 const level1: SeedRow[] = OBSERVE_STIMULI.map((s) => ({
   id: s.id,
   content: s.content,
   domain: s.domain,
-  expert_coding: {},
+  expert_coding: s.why ? { why: s.why } : {},
 }));
 
 /** Level 4 full-MSE vignettes (mse4-*) — cover all 11 domains at once. */
