@@ -3,15 +3,25 @@
  * doors: MSE, then diagnosis, differential, risk, plan and medicine. Solving a
  * door adds a new page to the case file, which the next door needs.
  */
+import { CLINIC_EXAMS, DX_EXAMS, PHARM_EXAMS, type ItemTags, type Level } from "../item-tags";
+import { ROOMS_A } from "./rooms-a";
+import { ROOMS_B } from "./rooms-b";
+import { ROOMS_C } from "./rooms-c";
+
 export type Stage = "mse" | "diagnosis" | "differential" | "risk" | "course" | "plan" | "medicine" | "criteria";
 
-export type Puzzle =
+type DoorBase = { tags?: ItemTags };
+export type Puzzle = DoorBase &
+  (
   | { id: string; stage: Stage; kind: "pick"; prompt: string; options: string[]; answer: number; hint: string; why: string; unlock: string; skill: string }
   | { id: string; stage: Stage; kind: "multi"; prompt: string; options: string[]; answer: number[]; hint: string; why: string; unlock: string; skill: string }
   | { id: string; stage: Stage; kind: "order"; prompt: string; items: string[]; hint: string; why: string; unlock: string; skill: string }
-  | { id: string; stage: Stage; kind: "number"; prompt: string; min: number; max: number; answer: number[]; unit?: string; hint: string; why: string; unlock: string; skill: string };
+  | { id: string; stage: Stage; kind: "number"; prompt: string; min: number; max: number; answer: number[]; unit?: string; hint: string; why: string; unlock: string; skill: string }
+  );
 
-export type Room = { id: string; title: string; place: string; patient: string; intro: string; outro: string; puzzles: Puzzle[] };
+/** Wards a room belongs to (for grouping the library). */
+export type Ward = "acute" | "child" | "addiction" | "geriatric" | "liaison" | "forensic" | "perinatal" | "community";
+export type Room = { id: string; title: string; place: string; patient: string; intro: string; outro: string; puzzles: Puzzle[]; ward?: Ward };
 
 export const STAGE_LABEL: Record<Stage, string> = {
   mse: "Mental state",
@@ -310,6 +320,34 @@ const nightBus: Room = {
   ],
 };
 
-export const ROOMS: Room[] = [nightShift, stillRoom, nightBus];
+/** Default ladder level for a door by its stage (a room's last door is the full case). */
+export const STAGE_LEVEL: Record<Stage, Level> = { mse: 1, criteria: 2, diagnosis: 2, course: 2, differential: 4, risk: 3, plan: 3, medicine: 3 };
+
+/** Objectives for the first three rooms' doors. */
+const BASE_OBJECTIVE: Record<string, string> = {
+  k1: "Pick out the MSE signs of delirium.",
+  k2: "Recognise delirium tremens from timing and signs.",
+  k3: "Spot Wernicke's encephalopathy in a heavy drinker.",
+  k4: "Name the real dangers of severe alcohol withdrawal.",
+  k5: "Order the stages of alcohol withdrawal.",
+  k6: "Give thiamine before glucose.",
+  k7: "Choose a benzodiazepine for withdrawal in liver failure.",
+};
+
+function withTags(r: Room): Room {
+  return {
+    ...r,
+    puzzles: r.puzzles.map((p, i) => {
+      if (p.tags) return p;
+      const learn = p.skill.split(":")[0];
+      const level: Level = i === r.puzzles.length - 1 ? 5 : STAGE_LEVEL[p.stage];
+      const exams = p.stage === "medicine" ? PHARM_EXAMS : p.stage === "risk" || p.stage === "plan" ? CLINIC_EXAMS : DX_EXAMS;
+      const objective = BASE_OBJECTIVE[p.id] ?? `${STAGE_LABEL[p.stage]}: ${p.prompt.split(/[.?:]/)[0].slice(0, 80)}.`;
+      return { ...p, tags: { topic: `${r.title}: ${STAGE_LABEL[p.stage].toLowerCase()}`, level, objective, exams, learn } };
+    }),
+  };
+}
+
+export const ROOMS: Room[] = [nightShift, stillRoom, nightBus, ...ROOMS_A, ...ROOMS_B, ...ROOMS_C].map(withTags);
 
 export const roomById = (id: string) => ROOMS.find((r) => r.id === id);

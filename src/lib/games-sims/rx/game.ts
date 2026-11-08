@@ -2,15 +2,16 @@
  * Rx Detective rules (pure). A run mixes three kinds of question:
  * - chain: drug, then class, mechanism, key adverse effect, monitoring;
  * - mystery: a side effect, explained by the receptor behind it;
- * - puzzle: two medicines together, and what happens.
+ * - puzzle: two medicines together, and what happens;
+ * - review: a prescription for a described patient, and its one problem.
  * Three lives: a question scored under half costs one.
  */
 import type { Attempt } from "@/lib/learn/model/student";
 import { shuffle, type Rng } from "../common";
-import { DRUGS, EFFECTS, FAMILY, MYSTERIES, OUTCOMES, OVERLAP, PUZZLES, drugById, effectById, outcomeById, type Drug } from "./content";
+import { DRUGS, EFFECTS, FAMILY, MYSTERIES, OUTCOMES, OVERLAP, PUZZLES, REVIEWS, drugById, effectById, outcomeById, reviewById, type Drug } from "./content";
 import { PROFILE, conceptsOf } from "./drugs";
 
-export type Kind = "chain" | "mystery" | "puzzle";
+export type Kind = "chain" | "mystery" | "puzzle" | "review";
 export type StepKey = "cls" | "mech" | "ae" | "mon";
 export const STEPS: { key: StepKey; label: string; ask: string }[] = [
   { key: "cls", label: "Class", ask: "What kind of medicine is it?" },
@@ -19,7 +20,7 @@ export const STEPS: { key: StepKey; label: string; ask: string }[] = [
   { key: "mon", label: "Check", ask: "What do you monitor?" },
 ];
 
-export type Question = { kind: "chain"; id: string; steps: string[][] } | { kind: "mystery"; id: string; options: string[] } | { kind: "puzzle"; id: string; options: string[] };
+export type Question = { kind: "chain"; id: string; steps: string[][] } | { kind: "mystery"; id: string; options: string[] } | { kind: "puzzle"; id: string; options: string[] } | { kind: "review"; id: string; options: string[] };
 export type Mode = "mixed" | Kind;
 export type Answer = { kind: Kind; id: string; picks: string[] };
 export type Graded = { score: number; parts: { ok: boolean; chosen: string | null; correct: string }[] };
@@ -74,8 +75,14 @@ export function buildQuestion(kind: Kind, id: string, rng: Rng): Question | null
     const m = MYSTERIES.find((x) => x.id === id);
     return m ? { kind, id, options: shuffle(m.options, rng) } : null;
   }
+  if (kind === "review") {
+    const r = reviewById(id);
+    return r ? { kind, id, options: shuffle([r.answer, ...r.wrong], rng) } : null;
+  }
   const p = PUZZLES.find((x) => x.id === id);
   if (!p) return null;
+  // Fixed wrong outcomes are checked to be false for this pair; never draw at random.
+  if (p.options?.length) return { kind, id, options: shuffle([p.answer, ...p.options], rng) };
   const others = shuffle(
     OUTCOMES.map((o) => o.id).filter((o) => o !== p.answer),
     rng,
@@ -98,10 +105,14 @@ export function buildRun(mode: Mode, rng: Rng, size = RUN_SIZE): Question[] {
       PUZZLES.map((p) => p.id),
       rng,
     ),
+    review: shuffle(
+      REVIEWS.map((r) => r.id),
+      rng,
+    ),
   };
-  const order: Kind[] = mode === "mixed" ? ["chain", "mystery", "puzzle"] : [mode];
+  const order: Kind[] = mode === "mixed" ? ["chain", "mystery", "puzzle", "review"] : [mode];
   const out: Question[] = [];
-  const used: Record<Kind, number> = { chain: 0, mystery: 0, puzzle: 0 };
+  const used: Record<Kind, number> = { chain: 0, mystery: 0, puzzle: 0, review: 0 };
   for (let i = 0; out.length < size && i < size * 3; i++) {
     const k = order[i % order.length];
     const id = pools[k][used[k]++];
@@ -125,6 +136,12 @@ export function grade(a: Answer): Graded | null {
     const ok = a.picks[0] === m.answer;
     return { score: ok ? 1 : 0, parts: [{ ok, chosen: effectById(a.picks[0] ?? "")?.label ?? null, correct: effectById(m.answer)!.label }] };
   }
+  if (a.kind === "review") {
+    const r = reviewById(a.id);
+    if (!r) return null;
+    const ok = a.picks[0] === r.answer;
+    return { score: ok ? 1 : 0, parts: [{ ok, chosen: a.picks[0] ?? null, correct: r.answer }] };
+  }
   const p = PUZZLES.find((x) => x.id === a.id);
   if (!p) return null;
   const ok = a.picks[0] === p.answer;
@@ -134,6 +151,7 @@ export function grade(a: Answer): Graded | null {
 export function topicOf(a: Pick<Answer, "kind" | "id">): string | null {
   if (a.kind === "chain") return drugById(a.id)?.topic ?? null;
   if (a.kind === "mystery") return MYSTERIES.find((x) => x.id === a.id)?.topic ?? null;
+  if (a.kind === "review") return reviewById(a.id)?.topic ?? null;
   return PUZZLES.find((x) => x.id === a.id)?.topic ?? null;
 }
 
@@ -144,7 +162,7 @@ export function attemptsFor(a: Answer): Attempt[] {
   if (!g || !topic) return [];
   const skill = `${topic}:pharm`;
   if (a.kind === "chain") return g.parts.map((p, i) => ({ skill, item: `rx:chain:${a.id}:${STEPS[i].key}`, outcome: p.ok ? 1 : 0, chosen: p.chosen, correct: p.correct }));
-  return [{ skill, item: `rx:${a.kind === "mystery" ? "mys" : "int"}:${a.id}`, outcome: g.score, chosen: g.parts[0].chosen, correct: g.parts[0].correct }];
+  return [{ skill, item: `rx:${a.kind === "mystery" ? "mys" : a.kind === "review" ? "rev" : "int"}:${a.id}`, outcome: g.score, chosen: g.parts[0].chosen, correct: g.parts[0].correct }];
 }
 
 export const costsLife = (score: number) => score < 0.5;

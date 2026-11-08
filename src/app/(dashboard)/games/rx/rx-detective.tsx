@@ -2,11 +2,11 @@
 
 import * as React from "react";
 import { useRouter } from "next/navigation";
-import { ArrowRight, Check, Flame, FlaskConical, Heart, HeartCrack, Pill as PillIcon, Plus, Search, X } from "lucide-react";
+import { ArrowRight, Check, ClipboardList, Flame, FlaskConical, Heart, HeartCrack, Pill as PillIcon, Plus, Search, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { LearnLink } from "@/lib/games/ui/learn-link";
 import { DOSE_NOTE, hashString, makeRng, pct } from "@/lib/games-sims/common";
-import { DRUGS, drugById, effectById, MYSTERIES, outcomeById, PUZZLES, type Drug } from "@/lib/games-sims/rx/content";
+import { DRUGS, drugById, effectById, MYSTERIES, outcomeById, PUZZLES, reviewById, type Drug } from "@/lib/games-sims/rx/content";
 import { buildRun, costsLife, grade, LIVES, nextStreak, pointsFor, rxXp, STEPS, type Answer, type Mode, type Question } from "@/lib/games-sims/rx/game";
 import { AccuracyBoard, type AccuracyBoardData } from "@/lib/games-sims/ui/board";
 import { Btn, buzz, Kbd, motionCss as m, Panel, Pill, Stat, toneFor, useHotkeys, verdictWord } from "@/lib/games-sims/ui/kit";
@@ -25,6 +25,7 @@ const MODES: { id: Mode; label: string; line: string; Icon: typeof PillIcon }[] 
   { id: "chain", label: "Drug chains", line: "Class, how it works, side effect, checks.", Icon: PillIcon },
   { id: "mystery", label: "Side-effect mysteries", line: "Which receptor explains it?", Icon: FlaskConical },
   { id: "puzzle", label: "Dangerous mixes", line: "Two medicines together. What happens?", Icon: Plus },
+  { id: "review", label: "Prescription check", line: "Spot the problem on the prescription.", Icon: ClipboardList },
 ];
 
 type Run = { run: string; mode: Mode; qs: Question[]; idx: number; answers: Answer[]; picks: string[]; revealed: boolean; lives: number; streak: number; best: number; points: number; gained: number; lostLife: boolean;
@@ -60,7 +61,7 @@ export function RxDetective({ board, grade: gradeOnServer, finish, medIds = [] }
 }
 
 function Intro({ board, onStart }: { board: AccuracyBoardData; onStart: (m: Mode) => void }) {
-  useHotkeys({ "1": () => onStart("mixed"), "2": () => onStart("chain"), "3": () => onStart("mystery"), "4": () => onStart("puzzle") });
+  useHotkeys({ "1": () => onStart("mixed"), "2": () => onStart("chain"), "3": () => onStart("mystery"), "4": () => onStart("puzzle"), "5": () => onStart("review") });
   return (
     <div className={cn("mx-auto max-w-2xl space-y-6 px-4 py-6", m.rise)}>
       <h1 className="text-h2">Pick a mode</h1>
@@ -156,6 +157,7 @@ function Round({ r, setR, onAnswered, onEnd, medIds }: { r: Run; setR: (r: Run) 
         {q.kind === "chain" ? <ChainCase q={q} picks={r.picks} revealed={r.revealed} onPick={pick} gone={gone} /> : null}
         {q.kind === "mystery" ? <MysteryCase id={q.id} options={options} pickVal={r.picks[0] ?? null} revealed={r.revealed} onPick={pick} /> : null}
         {q.kind === "puzzle" ? <PuzzleCase id={q.id} options={options} pickVal={r.picks[0] ?? null} revealed={r.revealed} onPick={pick} /> : null}
+        {q.kind === "review" ? <ReviewCase id={q.id} options={options} pickVal={r.picks[0] ?? null} revealed={r.revealed} onPick={pick} /> : null}
       </div>
 
       {!r.revealed ? (
@@ -350,6 +352,34 @@ function PuzzleCase({ id, options, pickVal, revealed, onPick }: { id: string; op
   );
 }
 
+/* ---------------------------------------------------------------- review */
+function ReviewCase({ id, options, pickVal, revealed, onPick }: { id: string; options: string[]; pickVal: string | null; revealed: boolean; onPick: (v: string) => void }) {
+  const rv = reviewById(id)!;
+  return (
+    <div className="space-y-3">
+      <Panel className="space-y-2">
+        <p className="flex items-center gap-1.5 text-caption font-semibold uppercase">
+          <ClipboardList className="size-3.5" aria-hidden /> Prescription check
+        </p>
+        <p className="text-body-strong">{rv.who}</p>
+        <p className="text-body">{rv.story}</p>
+      </Panel>
+      <div className="rounded-xl border-2 border-foreground bg-card p-3 hard-shadow-sm">
+        <p className="font-mono text-caption font-semibold uppercase">Rx</p>
+        <ul className="mt-1 space-y-1 font-mono text-small" aria-label="Prescription">
+          {rv.rx.map((line) => (
+            <li key={line}>{line}</li>
+          ))}
+        </ul>
+      </div>
+      <Panel className="space-y-3 bg-muted/40">
+        <p className="text-body-strong">What is the problem?</p>
+        <Options options={options} label={(v) => v} chosen={pickVal} correct={rv.answer} revealed={revealed} onPick={onPick} />
+      </Panel>
+    </div>
+  );
+}
+
 function MixCard({ name, className }: { name: string; className?: string }) {
   const d = drugByName(name);
   return (
@@ -369,7 +399,7 @@ const drugByName = (name: string) => {
 /** "Learn this" for the medicine in the case: its Medicines page, or its Study module. */
 function RxLearn({ q, medIds }: { q: Question; medIds: readonly string[] }) {
   const p = q.kind === "puzzle" ? PUZZLES.find((x) => x.id === q.id) : undefined;
-  const keys = q.kind === "chain" ? [q.id] : q.kind === "mystery" ? [MYSTERIES.find((x) => x.id === q.id)?.drug ?? ""] : [p?.a ?? "", p?.b ?? ""];
+  const keys = q.kind === "chain" ? [q.id] : q.kind === "mystery" ? [MYSTERIES.find((x) => x.id === q.id)?.drug ?? ""] : q.kind === "review" ? (reviewById(q.id)?.drugs ?? []) : [p?.a ?? "", p?.b ?? ""];
   const items = keys.filter(Boolean).map((k) => {
     const d = drugById(k) ?? DRUGS.find((x) => x.name.toLowerCase() === k.toLowerCase());
     const id = d?.id ?? k.toLowerCase();
@@ -412,7 +442,18 @@ function RevealBody({ q }: { q: Question }) {
       <div className="space-y-3">
         <p className="text-body-strong">{e.label}</p>
         <p className="text-body">{mys.why}</p>
+        {mys.not ? <p className="text-small text-muted-foreground">{mys.not}</p> : null}
         <Receptor d={{ receptor: e.receptor, title: `${d.name}: what happens at ${e.receptor}`, caption: `Tap ${verb} to see what ${d.name.toLowerCase()} does to the signal here.` }} />
+      </div>
+    );
+  }
+  if (q.kind === "review") {
+    const rv = reviewById(q.id)!;
+    return (
+      <div className="space-y-3">
+        <p className="text-body-strong">{rv.answer}</p>
+        <p className="text-body">{rv.why}</p>
+        <p className="text-small text-muted-foreground">{rv.not}</p>
       </div>
     );
   }
@@ -421,6 +462,7 @@ function RevealBody({ q }: { q: Question }) {
     <div className="space-y-3">
       <p className="text-body-strong">{outcomeById(p.answer)!.label}</p>
       <p className="text-body">{p.why}</p>
+      {p.not ? <p className="text-small text-muted-foreground">{p.not}</p> : null}
       {p.journey ? <Journey d={{ ...p.journey, routes: ["oral"] }} /> : null}
       {p.receptor ? <Receptor d={{ receptor: p.receptor.receptor, caption: p.receptor.caption }} /> : null}
       {p.answer === "qt" ? <QtStrip /> : null}
@@ -507,6 +549,10 @@ function titleOf(a: Answer): string {
   if (a.kind === "mystery") {
     const x = MYSTERIES.find((y) => y.id === a.id);
     return `Mystery: ${x ? drugById(x.drug)?.name : a.id}`;
+  }
+  if (a.kind === "review") {
+    const rv = reviewById(a.id);
+    return rv ? `Prescription: ${rv.who}` : a.id;
   }
   const p = PUZZLES.find((y) => y.id === a.id);
   return p ? `Mix: ${p.a} + ${p.b}` : a.id;

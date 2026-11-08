@@ -7,7 +7,7 @@ import { currentUser, gradeAnswers, payXp, saveResult } from "@/lib/games-sims/s
 import { hintedItems } from "@/lib/hints/server";
 import { cappedOutcome, itemKey, POINTS_KEPT } from "@/lib/hints/rules";
 
-const answer = z.object({ kind: z.enum(["chain", "mystery", "puzzle"]), id: z.string().min(1).max(30), picks: z.array(z.string().max(200)).max(4) });
+const answer = z.object({ kind: z.enum(["chain", "mystery", "puzzle", "review"]), id: z.string().min(1).max(30), picks: z.array(z.string().max(200)).max(4) });
 const runId = z.string().min(4).max(40);
 
 /** Was a hint used on this question in this run? (Counted on the server.) */

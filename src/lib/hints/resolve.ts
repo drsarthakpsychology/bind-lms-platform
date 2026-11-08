@@ -6,7 +6,7 @@
  * "a card that fits". The answer itself is never shown by a hint.
  */
 import { CASES as DETECTIVE_CASES } from "@/lib/learn/detective";
-import { drugById, MYSTERIES, PUZZLES } from "@/lib/games-sims/rx/content";
+import { drugById, MYSTERIES, PUZZLES, reviewById } from "@/lib/games-sims/rx/content";
 import { STEPS } from "@/lib/games-sims/rx/game";
 import { excerptById } from "@/lib/games-sims/mse/excerpts";
 import { campaignById } from "@/lib/games-sims/ward/campaigns";
@@ -16,7 +16,7 @@ import { itemKey, ruleOut, type HintGame } from "./rules";
 
 export type HintAsk =
   | { game: "detective"; run: string; round: number; answer: string; options: string[] }
-  | { game: "rx"; run: string; kind: "chain" | "mystery" | "puzzle"; id: string; step: number; options: string[] }
+  | { game: "rx"; run: string; kind: "chain" | "mystery" | "puzzle" | "review"; id: string; step: number; options: string[] }
   | { game: "mse"; run: string; excerpt: string; idx: number; options: string[] }
   | { game: "ward"; run: string; campaign: string; decision: string; options: string[] }
   | { game: "comorbid"; run: string; level: 1 | 2 | 3; moves: Move[] };
@@ -47,6 +47,7 @@ export function resolveHint(a: HintAsk): Resolved {
         right = d && s ? d[s.key] : undefined;
       } else if (a.kind === "mystery") right = MYSTERIES.find((m) => m.id === a.id)?.answer;
       else if (a.kind === "puzzle") right = PUZZLES.find((p) => p.id === a.id)?.answer;
+      else if (a.kind === "review") right = reviewById(a.id)?.answer;
       if (!right || !o.includes(right)) return null;
       const local = a.kind === "chain" ? `${a.id}.${a.step}` : a.id;
       return { game: "rx", item: itemKey("rx", a.run, local), give: { remove: ruleOut(o, [right], hashString(`${a.run}:${local}`)), pick: null, text: RULE_OUT } };
