@@ -145,16 +145,12 @@ export function Figure({ d }: { d: FigureData }) {
           })}
         </svg>
       </div>
-      <p className="mt-2 min-h-11 text-sm" role="status" aria-live="polite">
+      <p className="mt-2 min-h-11 text-sm empty:min-h-0" role="status" aria-live="polite">
         {cur ? (
           <>
             <b>{cur.name}.</b> {cur.about}
           </>
-        ) : d.quiz ? (
-          "Name each numbered part in your head, then tap it to check."
-        ) : (
-          "Tap a part, a number or a name to see what it does."
-        )}
+        ) : null}
       </p>
       <ol className="mt-2 grid gap-1 text-sm sm:grid-cols-2">
         {f.labels.map((l, i) => (

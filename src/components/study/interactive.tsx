@@ -102,7 +102,7 @@ export function CardDeck({
               <Rich text={c.a} />
             </p>
           ) : (
-            <p className="mt-3 text-sm text-muted-foreground">Check your answer against the notes above.</p>
+            <p className="mt-3 text-sm text-muted-foreground">The answer is in the notes above.</p>
           )}
           <div className="mt-4 grid grid-cols-2 gap-2">
             <button type="button" onClick={() => next(false)} className="h-11 rounded-xl border-2 border-foreground font-semibold">
@@ -157,10 +157,9 @@ export function TestRunner({
   if (i < 0 && !done) {
     return (
       <div ref={top} className="rounded-3xl border-2 border-foreground bg-card p-5 sm:p-6">
-        <p className="text-sm font-semibold text-link">{label}</p>
-        <p className="mt-1 text-2xl font-bold">{items.length} questions</p>
-        <ul className="mt-3 space-y-1.5 text-[0.95rem] text-muted-foreground">
-          {(intro ?? ["Pass with 80% or more. Retake any time: your best score counts."]).map((t) => (
+        <p className="text-2xl font-bold">{label}</p>
+        <ul className="mt-3 space-y-1.5 text-[0.95rem] text-muted-foreground empty:hidden">
+          {(intro ?? ["Pass mark: 80%. Your best score counts."]).map((t) => (
             <li key={t}>{t}</li>
           ))}
         </ul>

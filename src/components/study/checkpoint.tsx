@@ -72,12 +72,12 @@ export function CheckpointView({
           <p className="flex items-center gap-2 text-2xl font-bold">
             <ListChecks className="size-6 shrink-0" aria-hidden />
             <span className="min-w-0">
-              {mcq.length ? `${mcq.length} case questions` : ""}
-              {mcq.length && recall.length ? " + " : ""}
-              {recall.length ? `${recall.length} say-it-aloud cards` : ""}
+              {mcq.length ? "Case questions" : ""}
+              {mcq.length && recall.length ? ", then " : ""}
+              {recall.length ? (mcq.length ? "say it aloud" : "Say it aloud") : ""}
             </span>
           </p>
-          <p className="mt-2 text-[0.95rem] text-muted-foreground">From memory, no notes. Answers at the end.</p>
+          <p className="mt-2 text-[0.95rem] text-muted-foreground">From memory, no notes.</p>
           {prev ? <p className="mt-3 text-sm font-semibold">Your best so far: {prev.best} of {prev.total}</p> : null}
           <button
             type="button"
@@ -115,7 +115,7 @@ export function CheckpointView({
             </p>
           ) : null}
           <p className="mt-1 text-sm opacity-90">
-            {score && score.right / Math.max(1, score.total) < 0.7 ? "Worth a second look at those sections later today. You can retake this any time." : "Good. On to new material."}
+            {score && score.right / Math.max(1, score.total) < 0.7 ? "Look at those sections again later today." : "Good. On to new material."}
           </p>
           <Link href={then} className="mt-4 inline-flex h-12 items-center gap-2 rounded-2xl border-2 border-primary bg-primary px-5 font-bold text-primary-foreground">
             Continue <ArrowRight className="size-5" aria-hidden />
