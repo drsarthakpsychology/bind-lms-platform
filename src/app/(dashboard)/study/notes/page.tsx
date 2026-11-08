@@ -21,7 +21,7 @@ export default async function NotesPage() {
       title: n.title,
       emoji: n.emoji,
       tagline: n.tagline,
-      meta: `${n.sections.length} sections${n.terms?.length ? ` · ${n.terms.length} terms` : ""} · quiz`,
+      meta: n.terms?.length ? "Summary, terms and quiz" : "Summary and quiz",
     })),
   })).filter((b) => b.notes.length);
   return (
@@ -32,11 +32,7 @@ export default async function NotesPage() {
       <header className="flex items-center gap-4">
         <Chai mood="happy" size={88} className="shrink-0" />
         <div>
-          <p className="text-eyebrow text-link">One-page summaries</p>
-          <h1 className="text-h1">Quick revision, one page per topic</h1>
-          <p className="text-sm text-muted-foreground">
-            {NOTES.length} summaries, for a quick refresh.
-          </p>
+          <h1 className="text-h1">One-page summaries</h1>
         </div>
       </header>
       <NotesIndex blocks={blocks} serverState={serverState} save={saveLearnState} />

@@ -26,21 +26,22 @@ type Game = { href: string; title: string; text: string; tag: string; icon: Luci
 
 /**
  * Only real games (plan section 8): timed, competitive or animated. Each has
- * one line that says what it is and when to play it, a tag and its own
- * colour, so the hub reads at a glance. Daily case lives in Practice; Coach
- * and the quiz path live in Smart practice (Exam Prep).
+ * one plain line that says what it is, a tag and its own colour. A tag never
+ * shows a small number (no "16 cards" or "60 sec"): only a large real total
+ * from the bank, or a word. Daily case lives in Practice; Coach and the quiz
+ * path live in Smart practice (Exam Prep).
  */
 const SOLO: Game[] = [
-  { href: "/games/blitz", title: "Blitz", text: "60 seconds of fast facts. For a spare minute.", tag: "60 sec", icon: Timer, tone: "lime" },
-  { href: "/games/sort", title: "Criteria sort", text: "Sort criteria into look-alike disorders. After a Study topic.", tag: "16 cards", icon: LayoutGrid, tone: "blue" },
-  { href: "/games/mse", title: "MSE Lab", text: "Tag every finding in a short interview. Before an MSE.", tag: "Tag it", icon: ScanEye, tone: "ink" },
-  { href: "/games/ward", title: "Ward Week", text: "One patient, five sessions. Your choices change the ending.", tag: "5 days", icon: Hospital, tone: "lime" },
-  { href: "/games/rx", title: "Rx Detective", text: "Medicines, receptors and risky mixes. Before a pharmacology test.", tag: "3 lives", icon: Pill, tone: "blue" },
+  { href: "/games/blitz", title: "Blitz", text: "Fast facts against the clock.", tag: "500+ questions", icon: Timer, tone: "lime" },
+  { href: "/games/sort", title: "Criteria sort", text: "Sort criteria into look-alike disorders.", tag: "500+ criteria", icon: LayoutGrid, tone: "blue" },
+  { href: "/games/mse", title: "MSE Lab", text: "Tag every finding in an interview.", tag: "500+ excerpts", icon: ScanEye, tone: "ink" },
+  { href: "/games/ward", title: "Ward Week", text: "One patient. Your choices change the ending.", tag: "Many endings", icon: Hospital, tone: "lime" },
+  { href: "/games/rx", title: "Rx Detective", text: "Medicines, receptors and risky mixes.", tag: "270+ cases", icon: Pill, tone: "blue" },
 ];
 
 const WITH_OTHERS: Game[] = [
-  { href: "/games/duel", title: "Differential duel", text: "Ranked 1v1 on look-alike diagnoses. Live or against the bot.", tag: "1v1", icon: Swords, tone: "ink" },
-  { href: "/games/escape", title: "Team Escape Room", text: "Race other teams through linked clues to discharge the patient.", tag: "Teams", icon: DoorOpen, tone: "blue" },
+  { href: "/games/duel", title: "Differential duel", text: "1v1 on look-alike diagnoses. Live or against the bot.", tag: "1v1", icon: Swords, tone: "ink" },
+  { href: "/games/escape", title: "Team Escape Room", text: "Race other teams through linked clues.", tag: "Teams", icon: DoorOpen, tone: "blue" },
   { href: "/games/comorbid", title: "Comorbid", text: "A card duel. Build a diagnosis; block your rival with rule-outs.", tag: "Cards", icon: Layers, tone: "lime" },
 ];
 
@@ -100,8 +101,7 @@ export function LearnHome({ showLab = false }: { showLab?: boolean }) {
       <header className="flex items-center gap-4">
         <Chai mood="happy" size={64} className="shrink-0" />
         <div className="min-w-0">
-          <p className="text-eyebrow text-link">Games</p>
-          <h1 className="text-h1">Play it to remember it</h1>
+          <h1 className="text-h1">Games</h1>
         </div>
       </header>
 
@@ -168,7 +168,6 @@ export function QuizPath({ units, serverState, save }: { units: Unit[]; serverSt
                       >
                         <span className="text-xs font-semibold text-link">Lesson {li + 1}</span>
                         <span className="font-bold leading-tight">{l.title}</span>
-                        <span className="text-xs text-muted-foreground">{l.items.length} questions</span>
                         <span className="mt-auto text-lg tracking-wider" aria-label={`${done?.stars ?? 0} of 3 stars`}>
                           {[0, 1, 2].map((k) => (
                             <span key={k} className={k < (done?.stars ?? 0) ? "" : "opacity-20"}>

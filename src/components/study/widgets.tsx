@@ -125,7 +125,7 @@ function Guess({ d }: { d: GuessData }) {
               trackLearn({ type: "widget", kind: "guess", ok: inRange, prompt: d.prompt });
             }}
           >
-            Lock in my guess
+            Check my guess
           </button>
         </div>
       ) : (

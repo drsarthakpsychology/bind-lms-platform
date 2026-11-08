@@ -53,7 +53,7 @@ export default async function FormulationPage({ searchParams }: { searchParams: 
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6">
-      <ToolHeader title="Build the formulation" tip={{ id: "formulation", steps: ["Sort the factors into the 5 Ps.", "Write the story in your own words.", "Compare with the model answer. It is a comparison, not a grade."] }} />
+      <ToolHeader title="Build the formulation" tip={{ id: "formulation", steps: ["Sort the factors into the 5 Ps.", "Write the story in your own words.", "Compare with the answer."] }} />
 
       <nav aria-label="Cases" className="mt-5 flex gap-2 overflow-x-auto pb-1 [scrollbar-width:none]">
         {all.map((c, i) => (

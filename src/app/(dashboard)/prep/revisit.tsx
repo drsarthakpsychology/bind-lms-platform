@@ -26,7 +26,7 @@ export async function RevisitPage({ kind, page }: { kind: "saved" | "wrong"; pag
   });
   const base = kind === "saved" ? "/prep/saved" : "/prep/wrong";
   const pageHref = (p: number) => (p > 1 ? `${base}?page=${p}` : base);
-  const nextPage = list.page < list.pages ? { href: pageHref(list.page + 1), label: `Next 10` } : null;
+  const nextPage = list.page < list.pages ? { href: pageHref(list.page + 1), label: "More" } : null;
 
   return (
     <PrepFrame>
@@ -51,7 +51,6 @@ export async function RevisitPage({ kind, page }: { kind: "saved" | "wrong"; pag
         {list.total ? (
           <p className="text-sm text-muted-foreground">
             {list.total} {list.total === 1 ? "question" : "questions"}
-            {list.pages > 1 ? ` · showing ${(list.page - 1) * 10 + 1} to ${Math.min(list.page * 10, list.total)}` : ""}
           </p>
         ) : null}
       </header>
@@ -71,7 +70,7 @@ export async function RevisitPage({ kind, page }: { kind: "saved" | "wrong"; pag
             list.canSave ? (
               <>
                 <p className="font-semibold">Nothing saved yet.</p>
-                <p className="mt-1 text-muted-foreground">Tap Save on any question to keep it here.</p>
+                <p className="mt-1 text-muted-foreground">Save any question to keep it here.</p>
               </>
             ) : (
               <p className="font-semibold">Saving questions is coming soon.</p>
@@ -99,7 +98,7 @@ export async function RevisitPage({ kind, page }: { kind: "saved" | "wrong"; pag
           </span>
           {nextPage ? (
             <Link href={nextPage.href} className={btnPlain}>
-              Next 10 <ArrowRight className="size-4" aria-hidden />
+              More <ArrowRight className="size-4" aria-hidden />
             </Link>
           ) : (
             <span />

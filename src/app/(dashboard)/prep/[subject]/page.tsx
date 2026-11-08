@@ -8,7 +8,7 @@ import { OPTIONAL_SUBJECTS, SUBJECT_TITLE, isSubject } from "@/lib/prep/catalog"
 import { loadSubject } from "@/lib/prep/path";
 import { longTopicsFor } from "@/lib/prep/long-server";
 import { SubjectTabs } from "../long-ui";
-import { BackToPrep, ListRow, PrepFrame, btnPlain, card, pctText } from "../ui";
+import { BackToPrep, ListRow, PrepFrame, bigCount, btnPlain, card, pctText } from "../ui";
 import { prepViewer } from "../viewer";
 
 export async function generateMetadata({ params }: { params: Promise<{ subject: string }> }): Promise<Metadata> {
@@ -40,10 +40,10 @@ export default async function SubjectPage({ params, searchParams }: { params: Pr
         <h1 className="text-h1 text-balance [overflow-wrap:anywhere]">{title}</h1>
         {tab === "bank" ? (
           <p className="text-muted-foreground">
-            {stats.total} questions{stats.answered ? ` · ${stats.answered} answered · ${pctText(stats)}` : ""}
+            {[bigCount(stats.total, "questions"), stats.answered ? `${stats.answered} answered` : "", stats.answered ? pctText(stats) : ""].filter(Boolean).join(" · ")}
           </p>
         ) : (
-          <p className="text-muted-foreground">Write it out, then check it against a model answer.</p>
+          <p className="text-muted-foreground">Write it out, then check it.</p>
         )}
       </header>
 
@@ -54,7 +54,7 @@ export default async function SubjectPage({ params, searchParams }: { params: Pr
           <ul className="space-y-2" aria-label="Long answer topics">
             {long.map((t) => (
               <li key={t.id}>
-                <ListRow href={`/prep/${subject}/long/${t.id}`} title={t.title} sub={`${t.items.length} ${t.items.length === 1 ? "answer" : "answers"}`} />
+                <ListRow href={`/prep/${subject}/long/${t.id}`} title={t.title} sub={bigCount(t.items.length, "answers")} />
               </li>
             ))}
           </ul>
@@ -65,7 +65,7 @@ export default async function SubjectPage({ params, searchParams }: { params: Pr
         <ul className="space-y-2" aria-label="Topics">
           {topics.map((t) => (
             <li key={t.id}>
-              <ListRow href={t.href} title={t.title} sub={`${t.stats.total} questions${t.stats.answered ? ` · ${t.stats.answered} answered` : ""}`} side={pctText(t.stats)} stats={t.stats} />
+              <ListRow href={t.href} title={t.title} sub={t.stats.answered ? `${t.stats.answered} answered` : bigCount(t.stats.total, "questions")} side={pctText(t.stats)} stats={t.stats} />
             </li>
           ))}
         </ul>

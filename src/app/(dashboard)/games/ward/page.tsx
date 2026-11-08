@@ -19,10 +19,8 @@ export default async function WardPage({ searchParams }: { searchParams: Promise
   return (
     <ActivityFrame
       title="Ward Week"
-      purpose="Follow one patient across five sessions. Every decision moves risk, trust, insight, family support and sticking with care, and changes what happens next."
-      how={["Pick a patient.", "Read the session, then make the call.", "See why it was strong or weak.", "Play solo, or with two classmates: majority vote wins."]}
     >
-      <ActivityTip id="ward-week" intro="One patient across five sessions. You are the trainee psychologist." steps={["Pick a patient.", "Read each session, then make the call. Every call moves five dials.", "See why it was strong or weak.", "Team mode: three classmates vote. Two matching votes move the story on."]} />
+      <ActivityTip id="ward-week" intro="One patient. You are the trainee psychologist." steps={["Read each session, then make the call.", "See why it was strong or weak.", "Team mode: classmates vote, and matching votes move the story on."]} />
       <LearnStoreInit serverState={learnState} save={saveLearnState} />
       <WardWeek
         teamsOn={ready}

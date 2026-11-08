@@ -31,10 +31,10 @@ export function SubjectTabs({ subject, active, counts }: { subject: string; acti
   return (
     <nav aria-label="Practice type" className="flex gap-1 rounded-md border-2 border-foreground bg-card p-1">
       <Link href={`/prep/${subject}`} aria-current={active === "bank" ? "page" : undefined} className={tab(active === "bank")}>
-        Questions <span className="font-mono text-xs opacity-80">{counts.bank}</span>
+        Questions{counts.bank >= 100 ? <span className="font-mono text-xs opacity-80">{Math.floor(counts.bank / 100) * 100}+</span> : null}
       </Link>
       <Link href={`/prep/${subject}?tab=long`} aria-current={active === "long" ? "page" : undefined} className={tab(active === "long")}>
-        Long answers <span className="font-mono text-xs opacity-80">{counts.long}</span>
+        Long answers{counts.long >= 100 ? <span className="font-mono text-xs opacity-80">{Math.floor(counts.long / 100) * 100}+</span> : null}
       </Link>
     </nav>
   );

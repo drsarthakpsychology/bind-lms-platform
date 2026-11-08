@@ -76,7 +76,7 @@ export default async function MsePage() {
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
-      <ToolHeader title="Mental state exam" tip={{ id: "mse-trainer", intro: "\"Patient was depressed\" is a conclusion. The MSE describes.", steps: ["Write what you can see and hear, not what you conclude.", "Five levels, in order."] }} />
+      <ToolHeader title="Mental state exam" tip={{ id: "mse-trainer", steps: ["Write what you can see and hear, not what you conclude."] }} />
       <div className="mt-6">
         <MseLadder content={content} />
       </div>

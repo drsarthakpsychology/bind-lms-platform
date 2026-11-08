@@ -52,7 +52,7 @@ export default async function DetectivePage({ searchParams }: { searchParams: Pr
     return (
       <ActivityFrame fallback="/practice" title="Two-minute clinic">
         {tabs}
-        <ActivityTip id="two-minute-clinic" label="How it works" steps={["Read the line, then start the clock.", "Type your top two or three diagnoses and the one question you would ask next.", "Compare with the expert and read the lesson."]} />
+        <ActivityTip id="two-minute-clinic" label="How it works" steps={["Read the line, then start the clock.", "Type your top diagnoses and the one question you would ask next."]} />
         <div className="p-4 lg:p-6">
           <TwoMinuteClinic start={start} />
         </div>
@@ -65,11 +65,9 @@ export default async function DetectivePage({ searchParams }: { searchParams: Pr
     <ActivityFrame
       fallback="/practice"
       title="Clinic detective"
-      purpose="Guess the medicine or disorder from clues that appear one at a time. The fewer clues you need, the more points."
-      how={["Read the first clue.", "Guess, or reveal another clue.", "Wrong guesses cost points.", "The answer card explains every clue."]}
     >
       {tabs}
-      <ActivityTip id="clinic-detective" label="How it works" steps={["Clues appear one at a time. Guess, or open another clue.", "Fewer clues, more points. Wrong guesses cost points.", "The answer card explains every clue."]} />
+      <ActivityTip id="clinic-detective" label="How it works" steps={["Guess, or open another clue.", "Fewer clues, more points. Wrong guesses cost points."]} />
       <Detective serverState={serverState} save={saveLearnState} />
     </ActivityFrame>
   );

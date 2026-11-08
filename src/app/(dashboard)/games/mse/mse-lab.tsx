@@ -217,7 +217,7 @@ function Round({ play, setPlay, onExcerptDone, onFinish }: { play: Play; setPlay
 
       <Panel className="space-y-3 bg-muted/40" aria-live="polite">
         <p className="text-caption font-semibold uppercase">
-          Finding {play.idx + 1} of {e.findings.length}
+          Finding {play.idx + 1}
         </p>
         <p className="border-l-4 border-primary pl-3 text-body-strong">“{f.q}”</p>
 
