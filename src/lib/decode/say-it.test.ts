@@ -8,7 +8,7 @@ const CITE = /\bet al\b|Kaplan|Sadock|Stahl|Maudsley|Ahuja|Lishman|DSM|ICD|\bp\.
 
 describe("Say it clinically phrase bank", () => {
   it("has at least 600 lay phrase to clinical term cards with unique ids and phrases", () => {
-    expect(SAY_IT.length).toBeGreaterThanOrEqual(355);
+    expect(SAY_IT.length).toBeGreaterThanOrEqual(440);
     expect(new Set(SAY_IT.map((x) => x.id)).size).toBe(SAY_IT.length);
     const phrases = SAY_IT.map((x) => x.phrase.toLowerCase());
     expect(phrases.filter((p, i) => phrases.indexOf(p) !== i)).toEqual([]);
@@ -34,7 +34,7 @@ describe("Say it clinically phrase bank", () => {
   });
   it("covers many languages and every difficulty", () => {
     const langs = new Set(SAY_IT.map((x) => x.language));
-    for (const l of ["Hindi", "Gujarati", "Marathi", "Bengali", "Tamil", "Telugu", "Kannada", "Malayalam", "Punjabi"]) expect(langs.has(l), l).toBe(true);
+    for (const l of ["Hindi", "Gujarati", "Marathi", "Bengali", "Tamil", "Telugu", "Kannada", "Malayalam", "Punjabi", "Indian English"]) expect(langs.has(l), l).toBe(true);
     for (const d of [1, 2, 3, 4, 5]) expect(SAY_IT.filter((x) => x.difficulty === d).length / SAY_IT.length, `level ${d}`).toBeGreaterThan(0.1);
   });
   it("the right term is not given away by length", () => {
