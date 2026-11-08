@@ -134,4 +134,22 @@ describe("finish sticker in the Practice tools", () => {
     play("Weak");
     expect(showEndReaction).toHaveBeenCalledWith("wrong");
   });
+
+  it("Quiz checks (Landmark cases, Ethics, Decode): the score picks the sticker", () => {
+    const items = [0, 1].map((n) => ({ id: `q${n}`, type: "best_response" as const, prompt: `Question ${n}?`, options: ["Right answer", "Wrong answer"], correct: 0, rationale: "Why." }));
+    const play = (name: string) => {
+      render(<QuizCheck items={items} />);
+      for (const _ of items) {
+        fireEvent.click(screen.getByRole("radio", { name }));
+        fireEvent.click(screen.getByRole("button", { name: /Next question|See results/ }));
+      }
+      expect(screen.getByText("Check complete")).toBeTruthy();
+    };
+    play("Right answer");
+    expect(showEndReaction).toHaveBeenCalledWith("streak");
+    cleanup();
+    showEndReaction.mockClear();
+    play("Wrong answer");
+    expect(showEndReaction).toHaveBeenCalledWith("wrong");
+  });
 });
