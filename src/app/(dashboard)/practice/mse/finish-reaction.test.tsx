@@ -60,4 +60,16 @@ describe("finish sticker in the MSE trainer", () => {
     fireEvent.click(screen.getByRole("button", { name: "Score my description" }));
     expect(showEndReaction).toHaveBeenCalledWith("wrong");
   });
+
+  it("Level 2: tagging every domain is a win", () => {
+    render(<DomainLevel />);
+    let guard = 0;
+    while (!screen.queryByText(/All 11 domains tagged/) && guard++ < MSE_DOMAIN_ORDER.length * 5) {
+      fireEvent.click(screen.getAllByRole("button", { pressed: false })[0]);
+      fireEvent.click(screen.getByRole("button", { name: "Check" }));
+      fireEvent.click(screen.getByRole("button", { name: /^Next in/ }));
+    }
+    expect(screen.getByText(/All 11 domains tagged/)).toBeTruthy();
+    expect(showEndReaction).toHaveBeenCalledWith("streak");
+  });
 });
