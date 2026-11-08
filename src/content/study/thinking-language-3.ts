@@ -135,7 +135,7 @@ John Carroll reanalysed more than 460 data sets collected over 60 years and foun
    "detail": "For example induction, vocabulary, memory span, spatial relations and perceptual speed."
   }
  ],
- "caption": "Tap each level. Modern tests report scores at all three."
+ "caption": "Modern tests report scores at all three."
 }
 :::
 
@@ -222,8 +222,7 @@ He later framed **successful intelligence** as the ability to achieve your goals
    "parent": "s",
    "detail": "Adapting to, shaping or selecting environments, using tacit knowledge."
   }
- ],
- "caption": "Tap each branch, then predict the Kenyan study below."
+ ]
 }
 :::
 
@@ -259,8 +258,7 @@ He later framed **successful intelligence** as the ability to achieve your goals
   "parietal": "Second unit: simultaneous processing, integrating parts into wholes.",
   "temporal": "Second unit: successive processing, keeping information in serial order (with frontal regions).",
   "prefrontal": "Third unit: planning, strategy and self-monitoring."
- },
- "caption": "Tap each region to link it to a PASS process."
+ }
 }
 :::
 

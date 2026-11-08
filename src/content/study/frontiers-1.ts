@@ -28,7 +28,7 @@ Every few months a headline announces a "breakthrough" for depression or schizop
     { "id": "p4", "label": "Phase 4", "detail": "After approval: real-world use, rare harms, who benefits most. Some drugs gain warnings here; a few are withdrawn." }
   ],
   "edgeLabels": { "p2>p3": "most fail here", "p3>rev": "file submitted" },
-  "caption": "Press Play. Each step answers a different question, and a headline can come from any of them."
+  "caption": "Each step answers a different question, and a headline can come from any of them."
 }
 :::
 
@@ -101,7 +101,7 @@ A trial can be "statistically significant" and still show a **tiny** difference.
 {
  "kind": "normal",
  "title": "What an effect size of 0.3 looks like",
- "caption": "Move the two bell curves apart until the gap is about 0.3 of a standard deviation, the size of a typical antidepressant against placebo. The curves still overlap almost completely: many people on placebo do better than many on the drug. Then try 0.8, a large effect, and see how rare that is for any treatment in psychiatry."
+ "caption": "The curves still overlap almost completely: many people on placebo do better than many on the drug."
 }
 :::
 
@@ -349,7 +349,7 @@ Almost every antidepressant works on serotonin or noradrenaline and takes a long
     { "id": "bdnf", "label": "BDNF and mTOR signalling", "detail": "Growth signals switch on inside the neuron." },
     { "id": "syn", "label": "New synapses within hours", "detail": "Dendritic spines and connections lost in chronic stress begin to regrow. This may be why mood can lift in hours, and why the effect fades unless repeated." }
   ],
-  "caption": "Press Play. This is the leading hypothesis, not settled fact; other routes (including the opioid system) have been proposed."
+  "caption": "This is the leading hypothesis, not settled fact; other routes (including the opioid system) have been proposed."
 }
 :::
 
@@ -357,7 +357,7 @@ Almost every antidepressant works on serotonin or noradrenaline and takes a long
 {
   "receptor": "NMDA",
   "title": "Ketamine at the NMDA receptor",
-  "caption": "Ketamine acts as an antagonist here: it blocks the channel so glutamate cannot switch it on. Try the antagonist, then compare with glutamate itself (full agonist)."
+  "caption": "Ketamine acts as an antagonist here: it blocks the channel so glutamate cannot switch it on."
 }
 :::
 
@@ -477,7 +477,7 @@ Q: Why must patients be observed after an esketamine dose?
     "bbb": "Psilocin is small and fat-soluble enough to cross into the brain quickly. Effects start within about half an hour.",
     "out": "Psilocin is cleared within hours, so the acute experience ends the same day. Any lasting benefit is thought to come from what changes in the brain and in the person afterwards."
   },
-  "caption": "Tap each stage. The drug is gone within a day; the open question is why some effects last months."
+  "caption": "The drug is gone within a day; the open question is why some effects last months."
 }
 :::
 
@@ -563,7 +563,7 @@ For seventy years, every antipsychotic worked mainly by **blocking dopamine D2 r
 {
   "system": "dopamine",
   "title": "Old route versus new route to the same pathways",
-  "caption": "Toggle the D2 blocker to see the usual trade-off: the mesolimbic pathway calms (fewer delusions and hallucinations) but nigrostriatal and tuberoinfundibular block cause movement problems and high prolactin. Xanomeline works upstream instead: by stimulating M4 receptors it reduces dopamine release in the overactive circuit, without blocking D2 in the movement and hormone pathways. That is why trials showed few movement side effects and no prolactin rise."
+  "caption": "Xanomeline works upstream instead: by stimulating M4 receptors it reduces dopamine release in the overactive circuit, without blocking D2 in the movement and hormone pathways. That is why trials showed few movement side effects and no prolactin rise."
 }
 :::
 
@@ -586,8 +586,7 @@ For seventy years, every antipsychotic worked mainly by **blocking dopamine D2 r
     "blood": "In the body, xanomeline alone would stimulate muscarinic receptors in the gut, sweat glands, heart and salivary glands. Trospium blocks these peripheral receptors.",
     "bbb": "Here the two part ways. Xanomeline crosses into the brain. Trospium is a charged molecule and cannot cross, so it does not block xanomeline's effect in the brain.",
     "out": "Trospium is cleared mainly by the kidneys, so doses are adjusted in kidney disease; xanomeline is broken down by the liver."
-  },
-  "caption": "Tap the blood-brain barrier stage: the whole design depends on one drug crossing and the other staying out."
+  }
 }
 :::
 
@@ -639,7 +638,7 @@ A rival muscarinic drug, emraclidine, **failed** two phase 2 trials in November 
   ],
   "summary": "A new route with a different side-effect profile, still being tested over time."
  },
- "caption": "Slide between the two. The mechanism changes which side effects you trade for benefit; it does not yet tell us whether the benefit is larger."
+ "caption": "The mechanism changes which side effects you trade for benefit; it does not yet tell us whether the benefit is larger."
 }
 :::
 
@@ -723,7 +722,7 @@ Q: Zuranolone works mainly by:
     "basal-ganglia": "Reward circuits (including the ventral striatum). In animals, GLP-1 agonists dampen the dopamine 'reward' from alcohol and drugs, the basis of the addiction trials.",
     "amygdala": "Emotion and stress circuits have GLP-1 receptors too, one reason researchers study effects on mood and anxiety."
   },
-  "caption": "Tap each region. The same receptors that reduce appetite may reduce cravings, which is why psychiatry is interested."
+  "caption": "The same receptors that reduce appetite may reduce cravings, which is why psychiatry is interested."
 }
 :::
 

@@ -374,7 +374,7 @@ Type I and Type II errors are the two ways of being wrong in hypothesis testing.
     module: "statistics/2-3",
     visuals: [
       { kind: "experiment", data: { title: "Power of a trial with a moderate effect", question: "A therapy has a true effect of d = 0.5. How often will a trial detect it at alpha 0.05?", unit: "%", conditions: [{ label: "20 patients per group", value: 34 }, { label: "64 patients per group", value: 80 }, { label: "100 patients per group", value: 94 }], why: "Power rises with sample size; small trials usually miss real moderate effects." } },
-      { kind: "curve", caption: "The trade-off", data: { kind: "sdt", title: "The same trade-off in signal detection", caption: "Move the criterion: fewer false alarms means more misses, just as lower alpha means more Type II errors." } },
+      { kind: "curve", caption: "The trade-off", data: { kind: "sdt", title: "The same trade-off in signal detection" } },
     ],
     ref: "Cohen 1988 Statistical Power Analysis; Gravetter and Wallnau ch 8. Power by noncentral t: n=20 0.338, n=64 0.801, n=100 0.940; familywise 1-0.95^20 = 0.642.",
   },

@@ -115,7 +115,7 @@ Neglect and Balint's syndrome show that attention is a spatially organised funct
     keyPoints: ["Definition and right parietal lesion", "Clinical signs and tests including line bisection", "Extinction", "Representational neglect with Bisiach", "Implicit processing with Marshall and Halligan", "Balint's triad", "Lessons about parietal attention", "Rehabilitation such as prism adaptation"],
     module: "sensation-perception/3-3",
     visuals: [
-      { kind: "brainexplorer", caption: "Hemispatial neglect", data: { title: "Parietal damage and attention", focus: ["parietal", "occipital", "frontal"], caption: "Switch on damage for the right parietal lobe. What happens to the left side of the world?" } },
+      { kind: "brainexplorer", caption: "Hemispatial neglect", data: { title: "Parietal damage and attention", focus: ["parietal", "occipital", "frontal"], caption: "What happens to the left side of the world?" } },
     ],
     ref: "Bisiach and Luzzatti 1978; Marshall and Halligan 1988 Nature; Friedman-Hill, Robertson and Treisman 1995; Posner et al 1984; Rossetti et al 1998 prism adaptation; Bear, Connors and Paradiso ch 21",
   },

@@ -439,7 +439,7 @@ A **percentile rank** is the percentage of cases at or below a score. Percentile
 :::
 
 :::widget curve
-{"kind": "normal", "title": "Explore the normal curve", "caption": "Move the z slider: watch the shaded area, the percentile and the matching IQ score. Try z = 1 (84th percentile), z = 1.96 (top 2.5%) and z = −1.5."}
+{"kind": "normal", "title": "Explore the normal curve"}
 :::
 
 :::widget figure
@@ -618,7 +618,7 @@ Think of a court. H0 = "the accused is innocent". **Type I** = convicting an inn
 :::
 
 :::widget curve
-{"kind": "sdt", "title": "Signal detection: the same trade-off as Type I and Type II errors", "caption": "Move the criterion. Saying 'yes, an effect' more readily raises hits (power) but also false alarms (Type I errors). Pulling the distributions apart (a bigger d′, like a bigger effect or a bigger sample) raises hits without extra false alarms."}
+{"kind": "sdt", "title": "Signal detection: the same trade-off as Type I and Type II errors", "caption": "Saying 'yes, an effect' more readily raises hits (power) but also false alarms (Type I errors). Pulling the distributions apart (a bigger d′, like a bigger effect or a bigger sample) raises hits without extra false alarms."}
 :::
 
 ### One-tailed and two-tailed tests

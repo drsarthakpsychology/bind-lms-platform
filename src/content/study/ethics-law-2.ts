@@ -492,7 +492,7 @@ Research ethics grew out of terrible abuses:
    "detail": "New Drugs and Clinical Trials Rules; the Digital Personal Data Protection Act."
   }
  ],
- "caption": "Each rule was written in response to a harm. Press Play and say which harm each one answers."
+ "caption": "Each rule was written in response to a harm."
 }
 :::
 
@@ -812,7 +812,7 @@ The **National Mental Health Survey of India** (2015 to 2016, led by NIMHANS) fo
    "detail": "A national tele-mental health service; a target of 10 per cent fewer suicide deaths by 2030."
   }
  ],
- "caption": "Press Play to walk the timeline. Exam questions often ask for years and one aim of each."
+ "caption": "Exam questions often ask for years and one aim of each."
 }
 :::
 

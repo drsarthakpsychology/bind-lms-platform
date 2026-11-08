@@ -6,6 +6,7 @@
  *   after two strong excerpts and down after two weak ones.
  */
 import { shuffle, type Rng } from "../common";
+import { orderByHistory, type History } from "@/lib/history/order";
 import { EXCERPTS, type Excerpt, type Finding } from "./excerpts";
 import { TERMS, termById, type Domain } from "./terms";
 
@@ -56,11 +57,18 @@ export function nextLevel(level: Level, recent: number[]): Level {
   return level;
 }
 
-/** Pick the next excerpt at this level that hasn't been seen this round (falls back to neighbouring levels). */
-export function pickExcerpt(level: Level, seen: Set<string>, rng: Rng): Excerpt | null {
+/** An excerpt counts as right in the answer history at this score or above. */
+export const EXCERPT_RIGHT = 0.75;
+
+/**
+ * Pick the next excerpt at this level that hasn't been seen this round (falls
+ * back to neighbouring levels). With an answer history (src/lib/history): one
+ * never seen first, then one missed, then the one right longest ago.
+ */
+export function pickExcerpt(level: Level, seen: Set<string>, rng: Rng, history?: History, now?: number): Excerpt | null {
   for (const l of [level, (level + 1) as Level, (level - 1) as Level]) {
     const pool = EXCERPTS.filter((e) => e.level === l && !seen.has(e.id));
-    if (pool.length) return pool[Math.floor(rng() * pool.length)];
+    if (pool.length) return history ? orderByHistory(pool, (e) => e.id, history, now ?? Date.now(), rng)[0] : pool[Math.floor(rng() * pool.length)];
   }
   return null;
 }

@@ -14,7 +14,7 @@ const NS_CHALLENGE: ChallengeQ[] = [
   { q: "Which nerve carries most of the rest-and-digest outflow to the heart and gut?", options: ["The vagus nerve", "The sciatic nerve", "The optic nerve"], answer: 0, why: "The vagus nerve (cranial nerve X) carries parasympathetic fibres to the heart, lungs and gut: it slows the heart and speeds digestion." },
   { q: "The brain and the spinal cord together are the...", options: ["Peripheral nervous system", "Central nervous system", "Autonomic nervous system"], answer: 1, why: "Brain and spinal cord form the central nervous system. Everything outside them, the somatic and autonomic nerves, is the peripheral nervous system." },
 ];
-import { JourneyBar, Missions, ModeTabs, Scene3DSlot, SceneCard, TONE_NAME, ViewSwitch, along, btn, chip, flatD, statusCls, useInView, useJourney, useLegProgress, useMissions, useSceneView, useThemeColors, type Journey } from "./kit";
+import { JourneySteps, ModeTabs, Scene3DSlot, SceneCard, ViewSwitch, along, btn, chip, flatD, statusCls, useInView, useJourney, useLegProgress, useSceneView, useThemeColors, type Journey } from "./kit";
 import { AUTO, BODY, LEVELS, LIMBS, PARA, PARTS, PART_NAME, PATHS, SOMATIC, SYMP, levelShows, routeLegs, type Auto, type Level, type Part, type Route } from "./nervous-system-data";
 
 /**
@@ -31,7 +31,6 @@ export type NsViewProps = { mode: NsMode; journey: Journey; auto: Auto; level: L
 /** Loaded only when the device can draw 3D: three.js lives in this lazy chunk. */
 const View3D = React.lazy(() => import("./nervous-system-3d"));
 
-const MISSIONS = ["brain", "reflex", "fight", "rest", "autonomic", "somatic"] as const;
 const PARTS_LIST: Part[] = ["hand", "foot", "knee", "eye"];
 
 export function NervousSystem({ d }: { d: NervousSystemData }) {
@@ -44,16 +43,6 @@ export function NervousSystem({ d }: { d: NervousSystemData }) {
   const [auto, setAuto] = React.useState<Auto>("everyday");
   const [level, setLevel] = React.useState<Level>("all");
   const journey = useJourney();
-  const ms = useMissions(MISSIONS);
-  const lastKey = React.useRef("");
-
-  // mark the signal missions when a trip finishes (a timer callback, not render)
-  React.useEffect(() => {
-    if (!journey.done || lastKey.current === `${journey.run}`) return;
-    lastKey.current = `${journey.run}`;
-    const t = setTimeout(() => ms.mark(journey.key.endsWith("reflex") ? "reflex" : "brain"), 0);
-    return () => clearTimeout(t);
-  }, [journey.done, journey.run, journey.key, ms]);
 
   const send = (p: Part) => {
     if (mode !== "signal") setMode("signal");
@@ -64,14 +53,10 @@ export function NervousSystem({ d }: { d: NervousSystemData }) {
   const pickAuto = (a: Auto) => {
     setAuto(a);
     sfx(a === "fight" ? "zap" : "whoosh");
-    if (a === "fight") ms.mark("fight");
-    if (a === "rest") ms.mark("rest");
     trackLearn({ type: "widget", kind: "nervoussystem", item: a });
   };
   const pickLevel = (l: Level) => {
     setLevel(l);
-    if (l === "autonomic" || l === "sympathetic" || l === "parasympathetic") ms.mark("autonomic");
-    if (l === "somatic") ms.mark("somatic");
   };
   const changeMode = (m: NsMode) => {
     setMode(m);
@@ -95,18 +80,12 @@ export function NervousSystem({ d }: { d: NervousSystemData }) {
       const l = LEVELS.find((x) => x.id === level)!;
       return <><span className="font-semibold">{l.name}: </span>{l.say}</>;
     }
-    if (journey.cur) {
-      return <><span className="font-semibold">Step {journey.leg + 1} of {journey.legs.length}, {TONE_NAME[journey.cur.tone]} signal: </span>{journey.cur.say}</>;
-    }
-    if (journey.done) {
-      const last = journey.legs[journey.legs.length - 1];
-      return <><span className="font-semibold">Done. </span>{last.say} Try another part, or switch to {route === "brain" ? "the reflex shortcut" : "through the brain"} and compare.</>;
-    }
-    return <>Pick a route, then tap a body part (on the body or with the buttons). A <span className="font-semibold">sensory</span> signal (round, blue) travels in; a <span className="font-semibold">motor</span> signal (square, red) travels out.</>;
+    if (journey.legs.length) return <JourneySteps journey={journey} />;
+    return <>A <span className="font-semibold">sensory</span> signal (round, blue) travels in; a <span className="font-semibold">motor</span> signal (square, red) travels out.</>;
   })();
 
   return (
-    <SceneCard title={d.title ?? "The nervous system, live"} goal="Send signals through the body, flip it into fight or flight and back, and zoom into each division." caption={d.caption} tools={<ViewSwitch v={v} />} sound>
+    <SceneCard title={d.title ?? "The nervous system, live"} caption={d.caption} tools={<ViewSwitch v={v} />} sound>
       <ModeTabs<NsMode> name="What to explore" value={mode} onChange={changeMode} modes={[{ id: "signal", label: "Send a signal" }, { id: "auto", label: "Organs on autopilot" }, { id: "map", label: "Zoom the map" }]} />
       <div ref={box} className="relative mt-3 h-[22rem] overflow-hidden rounded-xl border-2 border-foreground bg-background sm:h-[28rem]">
         {v.use3D ? (
@@ -117,7 +96,6 @@ export function NervousSystem({ d }: { d: NervousSystemData }) {
         ) : (
           <NervousFlat mode={mode} journey={journey} auto={auto} level={level} onPart={send} reduce={v.reduce} />
         )}
-        {v.use3D ? <p className="pointer-events-none absolute bottom-1.5 left-2 rounded bg-background/80 px-1.5 text-xs text-muted-foreground">Drag to turn, pinch to zoom, tap a hand, foot, knee or eye</p> : null}
       </div>
 
       {mode === "signal" ? (
@@ -131,7 +109,6 @@ export function NervousSystem({ d }: { d: NervousSystemData }) {
               <button key={p} type="button" className={cn(btn, "min-h-11 justify-start bg-card px-3 text-left text-sm hover:-translate-y-0.5")} onClick={() => send(p)}>{PART_NAME[p]}</button>
             ))}
           </div>
-          <JourneyBar journey={journey} kind="nervoussystem" />
         </div>
       ) : null}
       {mode === "auto" ? (
@@ -156,17 +133,6 @@ export function NervousSystem({ d }: { d: NervousSystemData }) {
           <button type="button" className={cn(btn, "bg-card text-sm")} onClick={() => journey.start(journey.key, journey.legs)}><RotateCcw className="size-4" aria-hidden /> Replay</button>
         ) : null}
       </div>
-      <Missions
-        doneText="All missions done. You have seen the two big routes (brain and reflex) and both autonomic divisions at work."
-        items={[
-          { id: "brain", label: "Send a touch to the brain and back", done: ms.done("brain") },
-          { id: "reflex", label: "Beat the brain with a reflex", done: ms.done("reflex") },
-          { id: "fight", label: "Switch on fight or flight", done: ms.done("fight") },
-          { id: "rest", label: "Calm the body: rest and digest", done: ms.done("rest") },
-          { id: "autonomic", label: "Zoom into the autonomic system", done: ms.done("autonomic") },
-          { id: "somatic", label: "Find the somatic system", done: ms.done("somatic") },
-        ]}
-      />
       <QuickChallenge title="Reflexes and the two divisions" kind="nervoussystem" items={NS_CHALLENGE} />
     </SceneCard>
   );

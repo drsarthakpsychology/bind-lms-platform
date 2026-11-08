@@ -28,7 +28,7 @@ export function SmallThingsDrill() {
       {!done ? (
         <div className="rounded-md border-2 border-border bg-background p-4">
           <p className="text-caption font-semibold text-muted-foreground">
-            The small things · {idx + 1}/{SMALL_THINGS.length} · {item.skill}
+            The small things · {idx + 1} · {item.skill}
           </p>
           <p className="mt-2 text-small leading-relaxed">
             &quot;{item.moment}&quot;

@@ -44,7 +44,7 @@ export function DilemmaFlow({ dilemmas }: { dilemmas: EthicDilemma[] }) {
     return (
       <div className="rounded-md border-2 border-border bg-card p-6 hard-shadow-sm">
         <p className="flex items-center gap-2 text-base font-semibold">
-          <CheckCircle2 className="size-4" aria-hidden /> {dilemmas.length} dilemmas complete
+          <CheckCircle2 className="size-4" aria-hidden /> All dilemmas done
         </p>
         <p className="mt-2 text-small text-muted-foreground">
           The law has teeth: every choice here maps to MHA 2017, POCSO, or RCI scope.
@@ -63,7 +63,7 @@ export function DilemmaFlow({ dilemmas }: { dilemmas: EthicDilemma[] }) {
   return (
     <div className="space-y-4">
       <div className="flex items-center justify-between text-small text-muted-foreground">
-        <span>Dilemma {idx + 1} of {dilemmas.length}</span>
+        <span>Dilemma {idx + 1}</span>
         <span className="flex items-center gap-1">
           <Gavel className="size-3.5" aria-hidden />
           <span className="rounded-full bg-secondary px-2 py-0.5 text-caption font-medium">{d.tag}</span>

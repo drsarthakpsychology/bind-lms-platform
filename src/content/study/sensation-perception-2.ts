@@ -169,7 +169,7 @@ Payoffs and expectations move the criterion. Tell a radiologist that this hospit
 {
  "kind": "sdt",
  "title": "Move the criterion, then change d′",
- "caption": "Slide the criterion left (liberal) and right (conservative): hits and false alarms rise and fall together. Then increase d′: the curves separate, and you can have more hits with fewer false alarms. Only sensitivity changes the trade-off itself."
+ "caption": "A bigger d′ separates the curves, and you can have more hits with fewer false alarms. Only sensitivity changes the trade-off itself."
 }
 :::
 
@@ -226,7 +226,7 @@ Q: An observer with a hit rate of 0.50 and a false-alarm rate of 0.50 has:
 Light enters through the **cornea**, passes the **pupil** (sized by the iris), is focused by the **lens** (whose changing shape is **accommodation**) and lands on the **retina**. The image is inverted; the brain does not "turn it back", it simply uses the map.
 
 :::widget figure
-{"id": "eye", "quiz": true, "caption": "Name each numbered part in your head first, then tap to check."}
+{"id": "eye", "quiz": true}
 :::
 
 :::widget figure
@@ -313,7 +313,7 @@ David Hubel and Torsten Wiesel (Nobel Prize 1981) recorded single cells in cat a
    "detail": "Ventral stream to the temporal lobe: what an object is. Dorsal stream to the parietal lobe: where it is and how to act on it."
   }
  ],
- "caption": "Play it through. A lesion at each step gives a different pattern of visual loss."
+ "caption": "A lesion at each step gives a different pattern of visual loss."
 }
 :::
 
@@ -422,8 +422,7 @@ The outer ear funnels sound to the **eardrum**; three tiny bones of the middle e
    "label": "Auditory cortex",
    "detail": "Via the brainstem and thalamus to the temporal lobe, where pitch maps are laid out in order."
   }
- ],
- "caption": "Tap each part to see its job."
+ ]
 }
 :::
 
@@ -670,7 +669,7 @@ Q: In Treisman's model, why does your own name break through from an unattended 
 Daniel Kahneman described attention as a single pool of **mental effort** that can be shared among tasks. How much is available depends on **arousal**; how it is spent depends on an **allocation policy** shaped by enduring dispositions (sudden movement and your name grab attention), momentary intentions (the task you chose) and an evaluation of demands. Two tasks interfere when together they demand more than the pool holds.
 
 :::widget curve
-{"kind": "inverted-u", "title": "Arousal, effort and performance", "caption": "Kahneman tied available capacity to arousal. Slide arousal and task difficulty: too little or too much arousal both hurt, and the peak comes earlier for hard tasks."}
+{"kind": "inverted-u", "title": "Arousal, effort and performance", "caption": "Kahneman tied available capacity to arousal."}
 :::
 
 Christopher Wickens' **multiple resource theory** refined this: there are partly separate pools for **visual and auditory input**, for **spatial and verbal codes**, and for **manual and vocal responses**. Listening to a podcast while walking interferes little; reading a message while driving (both visual-spatial) interferes a lot.
@@ -830,8 +829,7 @@ You recognise the letter A in hundreds of fonts and handwriting styles, and your
    "parent": "root",
    "detail": "Break objects into about 36 simple 3D parts called geons."
   }
- ],
- "caption": "Tap a branch for the claim and its main problem."
+ ]
 }
 :::
 

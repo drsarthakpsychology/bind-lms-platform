@@ -98,7 +98,7 @@ function NotePanel({ id, initial, label, onSave, onClose }: { id: string; initia
     timer.current = setTimeout(flush, 700);
   }
 
-  const status = state === "saving" ? "Saving…" : state === "failed" ? "Could not save. Your browser may be full or in private mode." : state === "saved" ? "Saved on this device" : "";
+  const status = state === "saving" ? "Saving…" : state === "failed" ? "Could not save. Your browser may be full or in private mode." : state === "saved" ? "Saved" : "";
 
   return (
     <div id={id} className="mt-3 rounded-2xl border-2 border-foreground bg-card p-3 hard-shadow-sm sm:p-4">
@@ -182,7 +182,6 @@ export function MarksList({ owner, modules }: { owner: string; modules: StudyMod
               </li>
             ))}
           </ul>
-        <p className="mt-2 text-xs text-muted-foreground">Saved on this device.</p>
       </div>
     </details>
   );

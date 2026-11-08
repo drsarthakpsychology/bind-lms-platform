@@ -1,5 +1,6 @@
 "use client";
 
+import { noteAnswer } from "@/lib/history/client";
 import * as React from "react";
 import { haptic } from "@/lib/haptics";
 import { CLINICS } from "@/lib/practice/clinic";
@@ -8,8 +9,11 @@ import { CLINICS } from "@/lib/practice/clinic";
  * `start` is picked on the server for each visit, so a returning student does
  * not open on the same one-liner every time (there are over 140).
  */
-export function TwoMinuteClinic({ start = 0 }: { start?: number }) {
-  const [itemIdx, setItemIdx] = React.useState(() => ((Math.floor(start) % CLINICS.length) + CLINICS.length) % CLINICS.length);
+/** `order`: one-liner ids in answer-history order (src/lib/history), picked on the server; Next walks it. */
+export function TwoMinuteClinic({ start = 0, order }: { start?: number; order?: string[] }) {
+  const [seq] = React.useState(() => (order ?? []).map((id) => CLINICS.findIndex((c) => c.id === id)).filter((i) => i >= 0));
+  const [itemIdx, setItemIdx] = React.useState(() => (seq.length ? seq[0] : ((Math.floor(start) % CLINICS.length) + CLINICS.length) % CLINICS.length));
+  const advance = (i: number) => (seq.length ? seq[(seq.indexOf(i) + 1) % seq.length] : (i + 1) % CLINICS.length);
   const [phase, setPhase] = React.useState<"read" | "type" | "compare">("read");
   const [seconds, setSeconds] = React.useState(120);
   const [differential, setDifferential] = React.useState("");
@@ -117,7 +121,9 @@ export function TwoMinuteClinic({ start = 0 }: { start?: number }) {
           <button
             type="button"
             onClick={() => {
-              setItemIdx((i) => (i + 1) % CLINICS.length);
+              // Seen (there is no right or wrong here): it goes behind the ones not seen yet.
+              noteAnswer("two-minute", item.id, null);
+              setItemIdx(advance);
               setPhase("read");
               setDifferential(""); setNextQuestion("");
               haptic("tap");

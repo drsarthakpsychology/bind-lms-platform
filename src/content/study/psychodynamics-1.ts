@@ -27,7 +27,7 @@ You already met Freud's maps of the mind and the list of defences in the module 
     { "id": "rel", "label": "Relational and intersubjective", "parent": "self", "detail": "Two minds in the room, co-creating what happens. The therapist is a participant, not only an observer." },
     { "id": "mbt", "label": "Mentalization-based work", "parent": "att", "detail": "Attachment research turned into a treatment for people whose feelings overwhelm their ability to think about minds." }
   ],
-  "caption": "Tap each school. They disagree about what drives people, yet all keep the five shared ideas above."
+  "caption": "They disagree about what drives people, yet all keep the five shared ideas above."
 }
 :::
 
@@ -107,7 +107,7 @@ Module 3 gave you the outline: conscious, preconscious, unconscious; id, ego, su
     { "label": "Preconscious", "detail": "Not in mind now but easy to bring up: your phone number, what you ate yesterday. Secondary process rules here, and a 'censor' at its border decides what may pass." },
     { "label": "Unconscious", "detail": "Wishes, fears and memories kept out of awareness because they cause anxiety. Primary process rules here. You see it only indirectly: in dreams, slips, symptoms and repeated patterns." }
   ],
-  "caption": "Tap each level. In the later structural model, the id lies wholly below the water, while the ego and superego stretch across all three levels."
+  "caption": "In the later structural model, the id lies wholly below the water, while the ego and superego stretch across all three levels."
 }
 :::
 
@@ -131,7 +131,7 @@ Freud separated the **manifest content** (the dream you remember) from the **lat
     { "id": "man", "label": "Manifest content", "detail": "The dream as told. Analysis works backwards, from this to the latent wish, through the dreamer's associations." }
   ],
   "edgeLabels": { "lat>con": "censored by", "rev>man": "remembered as" },
-  "caption": "Press Play. The dream work disguises the wish so that sleep can go on."
+  "caption": "The dream work disguises the wish so that sleep can go on."
 }
 :::
 
@@ -143,7 +143,7 @@ Freud separated the **manifest content** (the dream you remember) from the **lat
 :::widget hypnogram
 {
  "title": "Where vivid dreams happen",
- "caption": "Drag through the night. Long, story-like dreams come mostly from REM sleep, and the REM periods grow longer towards morning, which is why the dream you remember is usually the last one. Modern research ties REM dreaming to memory and emotion processing; it does not settle whether a hidden wish is being disguised, so treat Freud's dream work as a clinical method, not a proven sleep mechanism."
+ "caption": "Long, story-like dreams come mostly from REM sleep, and the REM periods grow longer towards morning, which is why the dream you remember is usually the last one. Modern research ties REM dreaming to memory and emotion processing; it does not settle whether a hidden wish is being disguised, so treat Freud's dream work as a clinical method, not a proven sleep mechanism."
 }
 :::
 
@@ -283,7 +283,7 @@ Attachment theory came from a psychoanalyst, **John Bowlby**, who looked at real
     { "id": "haven", "label": "Safe haven", "detail": "The child returns to the caregiver for comfort." },
     { "id": "soothed", "label": "Comforted", "detail": "A sensitive response calms the child. Calm switches the attachment system off, and exploring can start again." }
   ],
-  "caption": "Press Play. Each turn of the circle teaches the child what to expect of others and of itself."
+  "caption": "Each turn of the circle teaches the child what to expect of others and of itself."
 }
 :::
 
@@ -306,7 +306,7 @@ Ainsworth watched mothers and babies at home in **Uganda** and then in **Baltimo
 :::widget strange
 {
  "title": "Watch the reunions",
- "caption": "Step through the eight episodes, then switch between the four patterns. The secure baby protests, then is soothed and returns to play; the avoidant baby looks away; the ambivalent baby clings and resists at once; the disorganised baby freezes or approaches backwards. Notice that the leaving matters far less than the coming back."
+ "caption": "The secure baby protests, then is soothed and returns to play; the avoidant baby looks away; the ambivalent baby clings and resists at once; the disorganised baby freezes or approaches backwards. Notice that the leaving matters far less than the coming back."
 }
 :::
 
@@ -520,7 +520,7 @@ Clinicians assess ego strength across functions. A practical list:
  "belief": "I am a fair and honest manager.",
  "behaviour": "I gave the promotion to my nephew over a stronger candidate.",
  "title": "Rationalisation seen from two traditions",
- "caption": "Watch the tension rise, then pick a way to reduce it. Social psychology calls the easy route, 'He will be more loyal, and the other one would have left anyway', dissonance reduction. Ego psychology calls the same move rationalisation, a disavowal-level defence. The difference is mainly about awareness: dissonance research shows it in ordinary people in the lab, while the defence idea adds that the motive is kept out of awareness."
+ "caption": "Social psychology calls the easy route, 'He will be more loyal, and the other one would have left anyway', dissonance reduction. Ego psychology calls the same move rationalisation, a disavowal-level defence. The difference is mainly about awareness: dissonance research shows it in ordinary people in the lab, while the defence idea adds that the motive is kept out of awareness."
 }
 :::
 
@@ -539,7 +539,7 @@ Module 3 gave you four maturity levels. Researchers use a finer seven-level ladd
     { "label": "6 · Action", "detail": "Acting out, apathetic withdrawal, help-rejecting complaining, passive aggression. Stress is dealt with by doing or withdrawing, not by thinking and feeling." },
     { "label": "7 · Defensive dysregulation", "detail": "Delusional projection, psychotic denial, psychotic distortion. The defence breaks with shared reality." }
   ],
-  "caption": "Tap each rung. Read the overall level, not single defences: everyone uses lower rungs under enough stress."
+  "caption": "Read the overall level, not single defences: everyone uses lower rungs under enough stress."
 }
 :::
 
@@ -616,7 +616,7 @@ Klein called these **positions**, not stages, because adults move back and forth
     "points": ["The engine of the mind is the need for relationships", "Inner pictures of self and others, linked by feeling, make up the mind", "Conflict is between loving and hating the same person, and between split images", "Key developmental moments: the first years, splitting and integration", "The therapist's own feelings (countertransference) are central data"],
     "summary": "Symptoms come from the inner world of relationships we carry and repeat."
   },
-  "caption": "Slide between them. Most clinicians today use both: what a person wishes, and with whom they keep repeating it."
+  "caption": "Most clinicians today use both: what a person wishes, and with whom they keep repeating it."
 }
 :::
 
@@ -644,7 +644,7 @@ You wait for a friend who is late. In the paranoid-schizoid mood: "She doesn't c
     { "id": "back", "label": "Returned bearable", "detail": "A soothing voice, a named feeling: 'You're frightened because I went out of the room.'" },
     { "id": "own", "label": "Capacity taken in", "detail": "Over many rounds, the child takes in the ability to hold and think about its own feelings." }
   ],
-  "caption": "Press Play. When the carer cannot contain, the feeling comes back worse, as Bion put it, as 'nameless dread'."
+  "caption": "When the carer cannot contain, the feeling comes back worse, as Bion put it, as 'nameless dread'."
 }
 :::
 

@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import { DOMAIN_UNITS, MSE_DOMAIN_ORDER, formatDomainKey } from "@/lib/mse/ladder";
 import { MSE_VOCAB } from "@/lib/practice/mse";
 import { SEED_MSE_STIMULI, domainRound, type MseStimulus } from "@/lib/practice/mse";
+import { historyFor, noteAnswer, useHistoryPrefetch } from "@/lib/history/client";
 import { buildMseAttemptPayload, scoreMseLevel2Attempt } from "@/lib/practice/mse-attempt";
 
 /**
@@ -45,8 +46,10 @@ export function DomainLevel({
   const vocab = MSE_VOCAB[domain];
   // A few stimuli for this domain per round (the bank holds about 40 each),
   // in a stable shuffled order for this visit. Fall back to any remaining.
-  const [seed] = React.useState(() => Math.floor(Math.random() * 2 ** 31));
-  const domainStimuli = React.useMemo(() => domainRound(stimuli, domain, 3, seed), [stimuli, domain, seed]);
+  // Answer history (src/lib/history): stimuli not seen yet first, then missed ones.
+  useHistoryPrefetch("mse-trainer");
+  const [plan] = React.useState(() => ({ seed: Math.floor(Math.random() * 2 ** 31), history: historyFor("mse-trainer"), now: Date.now() }));
+  const domainStimuli = React.useMemo(() => domainRound(stimuli, domain, 3, plan.seed, plan.history, plan.now), [stimuli, domain, plan]);
   const stimulus = domainStimuli[stimulusIdx] ?? stimuli[stimulusIdx % stimuli.length];
 
   function toggleTag(tag: string) {
@@ -63,6 +66,7 @@ export function DomainLevel({
   /** Persist the just-scored stimulus attempt (a check, not a test, silent on failure). */
   async function persistStimulus() {
     const completedAt = new Date();
+    noteAnswer("mse-trainer", stimulus.id, scoreMseLevel2Attempt(picked, stimulus.expertTags, stimulus.amberTags ?? []) >= 0.6);
     const payload = buildMseAttemptPayload(
       stimulus,
       "2",

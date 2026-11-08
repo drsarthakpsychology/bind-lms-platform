@@ -17,7 +17,7 @@ Exams in India love this part of anatomy because it has crisp, testable facts: w
 ### Three long tracts that exams ask
 
 :::widget figure
-{"id": "spinal-cord", "quiz": true, "caption": "Name each numbered part in your head first, then tap to check."}
+{"id": "spinal-cord", "quiz": true}
 :::
 
 | Tract | Carries | Where it crosses | Lesion of one half of the cord |
@@ -117,14 +117,14 @@ Running through all three is the **reticular formation**. In 1949 Giuseppe Moruz
   "thalamus": "Receives the reticular activating system's wake-up signals and passes them to the cortex.",
   "hypothalamus": "Sends autonomic commands down to the brainstem and spinal cord."
  },
- "caption": "Tap the brainstem. Why does an opioid overdose stop breathing? (Mu receptors in the medullary breathing centres.)"
+ "caption": "Why does an opioid overdose stop breathing? (Mu receptors in the medullary breathing centres.)"
 }
 :::
 
 ### Cranial nerves for exams
 
 :::widget figure
-{"id": "brain-inferior", "quiz": true, "caption": "Name each numbered part in your head first, then tap to check."}
+{"id": "brain-inferior", "quiz": true}
 :::
 
 | Nerve | Type | Brainstem level | Exam favourite |
@@ -395,7 +395,7 @@ export const begAnatomyMid = String.raw`
 These deep structures sit around the third ventricle like rooms around a courtyard. The **thalamus** is the gateway to the cortex; the **hypothalamus** runs the body; the **limbic system** links memory, emotion and motivation. Psychiatry lives here.
 
 :::widget brainexplorer
-{"title":"Peel the brain to its core","focus":["thalamus","hypothalamus","amygdala","hippocampus","basal-ganglia","corpus-callosum","frontal","temporal","brainstem"],"caption":"Peel the left side away, then tap each deep part. Switch on damage for the amygdala and the hippocampus: which real patient goes with each?"}
+{"title":"Peel the brain to its core","focus":["thalamus","hypothalamus","amygdala","hippocampus","basal-ganglia","corpus-callosum","frontal","temporal","brainstem"]}
 :::
 
 ### The thalamus: more than a relay
@@ -466,15 +466,14 @@ It weighs only about 4 grams, yet it controls the pituitary, the autonomic syste
   "hypothalamus": "The mammillary bodies at its back are a station in Papez's circuit.",
   "thalamus": "The anterior nucleus passes the circuit on to the cingulate gyrus.",
   "prefrontal": "The orbitofrontal and anterior cingulate cortex are the 'thinking' members of the limbic network, regulating emotion."
- },
- "caption": "Tap each part and trace Papez's loop: hippocampus, fornix, mammillary bodies, anterior thalamus, cingulate gyrus, back to the hippocampus."
+ }
 }
 :::
 
 ### The limbic system and Papez's circuit
 
 :::widget figure
-{"id": "limbic-system", "quiz": true, "caption": "Name each numbered part in your head first, then tap to check."}
+{"id": "limbic-system", "quiz": true}
 :::
 
 - In 1878 Paul Broca described a "limbic lobe" (from the Latin for border) around the brainstem.
@@ -572,7 +571,7 @@ Q: A patient with bilateral amygdala destruction would most likely show:
 The cerebral cortex is a sheet about 2 to 4 millimetres thick, folded into ridges (**gyri**) and grooves (**sulci**) so that roughly two-thirds of it lies hidden in the folds. Exams test how it is built, how it is mapped, and what happens when particular patches fail.
 
 :::widget brainexplorer
-{"title":"Map the cortex by breaking it","focus":["frontal","motor","parietal","occipital","temporal","broca","wernicke","cerebellum"],"caption":"Tap each lobe, then switch on damage. Then play Where is the damage? and localise each case from the symptom alone."}
+{"title":"Map the cortex by breaking it","focus":["frontal","motor","parietal","occipital","temporal","broca","wernicke","cerebellum"],"caption":"Then play Where is the damage? and localise each case from the symptom alone."}
 :::
 
 ### Six layers
@@ -632,8 +631,7 @@ In 1909 Korbinian Brodmann divided the cortex into about **52 areas** by looking
   "broca": "Areas 44 and 45, left inferior frontal gyrus.",
   "wernicke": "Area 22, back of the left superior temporal gyrus.",
   "prefrontal": "Areas 9 and 46 (dorsolateral), 10 (frontal pole), 11 and 12 (orbitofrontal)."
- },
- "caption": "Tap each area and say its Brodmann number before you read the note."
+ }
 }
 :::
 
@@ -757,7 +755,7 @@ At the Starting level you learned that four arteries feed the brain and that CSF
 :::
 
 :::widget figure
-{"id": "circle-of-willis", "quiz": true, "caption": "Name each numbered part in your head first, then tap to check."}
+{"id": "circle-of-willis", "quiz": true}
 :::
 
 | Artery | Supplies | Stroke gives | Psychiatric picture |
@@ -811,7 +809,7 @@ The carotid arteries feed the ACA and MCA (the **anterior circulation**); the ve
 ### The ventricles and the flow of CSF
 
 :::widget figure
-{"id": "ventricles", "quiz": true, "caption": "Name each numbered part in your head first, then tap to check."}
+{"id": "ventricles", "quiz": true}
 :::
 
 :::widget flow
@@ -828,7 +826,7 @@ The carotid arteries feed the ACA and MCA (the **anterior circulation**); the ve
   { "id": "sa", "label": "Subarachnoid space", "detail": "Bathes the brain and spinal cord." },
   { "id": "ag", "label": "Arachnoid granulations", "detail": "Return CSF to the venous sinuses and the blood." }
  ],
- "caption": "Press Play and predict which ventricles swell if the aqueduct is blocked. (The lateral and third ventricles, not the fourth.)"
+ "caption": "(The lateral and third ventricles, not the fourth.)"
 }
 :::
 

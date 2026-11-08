@@ -9,6 +9,7 @@ import { check, cleanPicks, cleanPlacement, groupOf, MAX_TRIES, sortScore, sortX
 import { admin, cohortPeers, currentPlayer, isMissing } from "@/lib/games/server";
 import { secretSeed } from "@/lib/games/token";
 import { awardXp, XP_SOURCES } from "@/lib/leagues/xp";
+import { orderByHistory, type HistoryRow } from "@/lib/history/order";
 
 export type SortReveal = {
   solved: boolean;
@@ -103,6 +104,28 @@ async function cohortFor(userId: string, day: string, b: SortBoard, tier: Tier):
   }
 }
 
+/**
+ * Answer history for boards, from sort_results (daily and practice): boards
+ * never played first, then unsolved ones, solved ones last (oldest first).
+ * Empty when the table is missing, so the pick is plain random.
+ */
+async function boardHistory(userId: string): Promise<Map<string, HistoryRow>> {
+  const out = new Map<string, HistoryRow>();
+  try {
+    const { data, error } = await admin().from(TABLE).select("board_id, solved, tries, created_at").eq("user_id", userId).order("created_at", { ascending: true }).limit(2000);
+    if (error) return out;
+    for (const r of data ?? []) {
+      const at = Date.parse(String(r.created_at));
+      const id = String(r.board_id);
+      const done = r.solved === true || Number(r.tries) >= MAX_TRIES;
+      out.set(id, { item: id, seen: (out.get(id)?.seen ?? 0) + 1, ok: r.solved === true ? true : done ? false : null, at: Number.isFinite(at) ? at : 0, due: null });
+    }
+  } catch {
+    /* table missing: random */
+  }
+  return out;
+}
+
 function finished(r: Row | null) {
   return !!r && (r.solved || r.tries >= MAX_TRIES);
 }
@@ -134,7 +157,7 @@ export async function loadSort(input: { mode: "daily" | "practice"; tier: Tier; 
   let b: SortBoard | undefined = today;
   if (mode === "practice") {
     const pool = BOARDS.filter((x) => x.id !== today.id && (tier === "basic" || x.thresholds));
-    b = input.boardId ? boardById(input.boardId) : pool[Math.floor(Math.random() * pool.length)];
+    b = input.boardId ? boardById(input.boardId) : orderByHistory(pool, (x) => x.id, await boardHistory(me.id), Date.now(), Math.random)[0];
     if (!b || b.id === today.id || (tier === "advanced" && !b.thresholds)) return { ok: false, error: "That board isn't available." };
   }
   const { row, stored } = await loadRow(me.id, mode, day, b.id, tier);

@@ -96,7 +96,7 @@ export function PracticeRunner({ questions, title, saving }: { questions: Practi
     <div className="space-y-5">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <p className="text-sm font-bold">
-          <span className="sr-only">{title}: </span>Question {idx + 1} of {questions.length}
+          <span className="sr-only">{title}: </span>Question {idx + 1}
         </p>
         <ViewToggle />
       </div>

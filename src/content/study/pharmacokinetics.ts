@@ -38,7 +38,7 @@ Every medicine raises two separate questions.
 A short way to remember pharmacokinetics is **ADME**: Absorption, Distribution, Metabolism, Excretion.
 
 :::widget journey
-{"drug": "fluoxetine", "target": "serotonin transporters (SERT) on serotonin nerve endings and raphe cell bodies", "routes": ["oral"], "notes": {"mouth": "Absorption begins: a fluoxetine capsule is swallowed.", "gut": "The capsule dissolves and fluoxetine passes through the gut wall. Food slows this a little but does not reduce the total amount absorbed.", "liver": "Metabolism begins on the first pass. The liver enzyme CYP2D6 turns fluoxetine into norfluoxetine, which also blocks SERT and lasts even longer. Fluoxetine also blocks CYP2D6 itself, so it slows the clearance of other medicines.", "blood": "Distribution: fluoxetine is very fat-soluble and spreads widely into body tissues. Only a small part stays free in the blood.", "bbb": "It crosses the blood-brain barrier easily because it is small and fat-soluble.", "out": "Excretion: the kidneys remove the water-soluble leftovers. Because fluoxetine and norfluoxetine leave so slowly, a single missed dose barely matters and the drug lingers for weeks after stopping."}, "caption": "Press Play and name the ADME stage at each stop. Which stops explain why fluoxetine causes so few withdrawal symptoms?"}
+{"drug": "fluoxetine", "target": "serotonin transporters (SERT) on serotonin nerve endings and raphe cell bodies", "routes": ["oral"], "notes": {"mouth": "Absorption begins: a fluoxetine capsule is swallowed.", "gut": "The capsule dissolves and fluoxetine passes through the gut wall. Food slows this a little but does not reduce the total amount absorbed.", "liver": "Metabolism begins on the first pass. The liver enzyme CYP2D6 turns fluoxetine into norfluoxetine, which also blocks SERT and lasts even longer. Fluoxetine also blocks CYP2D6 itself, so it slows the clearance of other medicines.", "blood": "Distribution: fluoxetine is very fat-soluble and spreads widely into body tissues. Only a small part stays free in the blood.", "bbb": "It crosses the blood-brain barrier easily because it is small and fat-soluble.", "out": "Excretion: the kidneys remove the water-soluble leftovers. Because fluoxetine and norfluoxetine leave so slowly, a single missed dose barely matters and the drug lingers for weeks after stopping."}, "caption": "Which stops explain why fluoxetine causes so few withdrawal symptoms?"}
 :::
 
 | | Pharmacokinetics | Pharmacodynamics |
@@ -87,7 +87,7 @@ How a medicine is given changes how fast it acts, how much reaches the blood, an
 | Depot injection | Very slow and steady | Avoided | Paliperidone palmitate |
 
 :::widget compare
-{"title": "One medicine, two routes", "a": {"label": "Swallowed tablet", "points": ["Absorbed through the gut over hours", "Passes the liver first, losing part of the dose", "Peak level after some hours", "Easy to take at home", "Easy to stop if side effects appear"], "summary": "Slower and less complete, but simple and reversible."}, "b": {"label": "Injection into a vein", "points": ["Straight into the blood", "No first-pass loss: the whole dose arrives", "Peak level within minutes", "Needs trained staff and monitoring", "Cannot be taken back once given"], "summary": "Fast and complete, for emergencies, with closer watching."}, "caption": "Slide between the two routes. The medicine is the same; only the journey differs."}
+{"title": "One medicine, two routes", "a": {"label": "Swallowed tablet", "points": ["Absorbed through the gut over hours", "Passes the liver first, losing part of the dose", "Peak level after some hours", "Easy to take at home", "Easy to stop if side effects appear"], "summary": "Slower and less complete, but simple and reversible."}, "b": {"label": "Injection into a vein", "points": ["Straight into the blood", "No first-pass loss: the whole dose arrives", "Peak level within minutes", "Needs trained staff and monitoring", "Cannot be taken back once given"], "summary": "Fast and complete, for emergencies, with closer watching."}, "caption": "The medicine is the same; only the journey differs."}
 :::
 
 :::recall
@@ -109,7 +109,7 @@ Q: Why is esketamine given as a nasal spray rather than a tablet?
 The **half-life** is the time it takes for the amount of medicine in the blood to fall by half. It tells us how often to dose, how long until the level settles, and how long until the medicine leaves.
 
 :::widget curve
-{"kind": "half-life", "title": "Watch doses stack up to a steady level", "caption": "Slide the half-life. With a dose every day, the level climbs and settles after about 4 to 5 half-lives. A short half-life gives spiky levels; a long one gives smooth levels that take longer to settle and longer to leave."}
+{"kind": "half-life", "title": "Watch doses stack up to a steady level", "caption": "With a dose every day, the level climbs and settles after about 4 to 5 half-lives. A short half-life gives spiky levels; a long one gives smooth levels that take longer to settle and longer to leave."}
 :::
 
 :::widget guess
@@ -156,7 +156,7 @@ Most medicines act by fitting a **target**: a receptor, a pump (transporter), an
 :::
 
 :::widget receptor
-{"receptor": "a receptor", "title": "Four ways a medicine can sit in a lock", "caption": "Try each one. A full agonist turns the lock fully. A partial agonist turns it part way. An antagonist sits in the lock and turns nothing, but blocks the real key. An inverse agonist turns it backwards, below its resting activity. Every psychiatric medicine you will meet fits one of these, at one or more receptors."}
+{"receptor": "a receptor", "title": "Four ways a medicine can sit in a lock", "caption": "A full agonist turns the lock fully. A partial agonist turns it part way. An antagonist sits in the lock and turns nothing, but blocks the real key. An inverse agonist turns it backwards, below its resting activity. Every psychiatric medicine you will meet fits one of these, at one or more receptors."}
 :::
 
 ### Two words for "how good is this medicine"
@@ -164,7 +164,7 @@ Most medicines act by fitting a **target**: a receptor, a pump (transporter), an
 - **Efficacy**: the biggest effect the medicine can produce, however much you give. A partial agonist has lower efficacy than a full agonist, at any dose.
 
 :::widget curve
-{"kind": "dose-response", "title": "Potency moves the curve; efficacy sets its height", "caption": "Move the potency slider: the curve slides left or right, but its top stays the same. Move the efficacy slider: the top rises or falls. Two medicines can be equally effective but very different in milligrams."}
+{"kind": "dose-response", "title": "Potency moves the curve; efficacy sets its height", "caption": "Two medicines can be equally effective but very different in milligrams."}
 :::
 
 :::widget sort
@@ -393,7 +393,7 @@ Brain capillaries are sealed by tight junctions and lined with pumps. Drugs cros
 :::
 
 :::widget brainmap
-{"title": "Inside and outside the barrier", "focus": ["hypothalamus", "brainstem", "prefrontal", "basal-ganglia"], "notes": {"hypothalamus": "The pituitary below it sits outside the blood-brain barrier. Drugs that enter the brain poorly can still block dopamine here and raise prolactin.", "brainstem": "The area postrema (the vomiting centre) is also outside the barrier, so it 'tastes' the blood: many drugs cause early nausea through it.", "prefrontal": "Protected by the barrier. Only drugs that cross reach the targets for mood and thinking.", "basal-ganglia": "Protected too: movement side effects need the drug to have crossed the barrier."}, "caption": "Tap each region. The barrier is not everywhere, and those gaps explain some surprising side effects."}
+{"title": "Inside and outside the barrier", "focus": ["hypothalamus", "brainstem", "prefrontal", "basal-ganglia"], "notes": {"hypothalamus": "The pituitary below it sits outside the blood-brain barrier. Drugs that enter the brain poorly can still block dopamine here and raise prolactin.", "brainstem": "The area postrema (the vomiting centre) is also outside the barrier, so it 'tastes' the blood: many drugs cause early nausea through it.", "prefrontal": "Protected by the barrier. Only drugs that cross reach the targets for mood and thinking.", "basal-ganglia": "Protected too: movement side effects need the drug to have crossed the barrier."}, "caption": "The barrier is not everywhere, and those gaps explain some surprising side effects."}
 :::
 
 :::recall
@@ -441,7 +441,7 @@ The liver makes drugs easier to remove in two broad phases:
   ],
   "summary": "Slow on, slow off; the danger is too little."
  },
- "caption": "Slide between the two. The timing explains why an inhibitor problem shows up in days, while an inducer problem often appears, or reverses, weeks later."
+ "caption": "The timing explains why an inhibitor problem shows up in days, while an inducer problem often appears, or reverses, weeks later."
 }
 :::
 
@@ -617,7 +617,7 @@ Q: Why is a level drawn 2 hours after a dose misleading for most drugs?
   ],
   "summary": "Start low, go slow, review often."
  },
- "caption": "Slide from young to old. Each change on its own is modest, but together they explain why older adults need lower doses and fewer medicines."
+ "caption": "Each change on its own is modest, but together they explain why older adults need lower doses and fewer medicines."
 }
 :::
 

@@ -317,7 +317,7 @@ The **Taittiriya Upanishad** describes five sheaths (**pancha kosha**) around th
    "detail": "The physical body, 'made of food'."
   }
  ],
- "caption": "Tap from the outside in. Yoga-based therapies in India often use this model to organise practices from body to breath to mind."
+ "caption": "Yoga-based therapies in India often use this model to organise practices from body to breath to mind."
 }
 :::
 

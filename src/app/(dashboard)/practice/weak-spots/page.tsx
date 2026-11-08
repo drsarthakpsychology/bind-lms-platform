@@ -3,6 +3,7 @@ import { ArrowLeft } from "lucide-react";
 import { ToolHeader } from "@/components/help/tool-header";
 import { createClient } from "@/lib/supabase/server";
 import { analyzeWeakSpots, generateDrill } from "@/lib/practice/weak-spots";
+import { loadHistory } from "@/lib/history/server";
 import { WeakSpotsView } from "./weak-spots-view";
 import { WeakSpotsDrill } from "./weak-spots-drill";
 import { readFlags, requireFeature, type FeatureKey } from "@/lib/flags";
@@ -37,7 +38,9 @@ export default async function WeakSpotsPage() {
     const flag = REMEDY_FLAG[s.remedyHref];
     return flag && flags[flag] !== "unlocked" ? { ...s, remedyHref: "/practice/consulting-room", remedyLabel: "Consulting Room: practise this in your next interview" } : s;
   });
-  const drill = generateDrill(spots, 10);
+  // Answer history (src/lib/history): drill items not seen yet first, then missed ones.
+  const history = await loadHistory(user.id, "weak-spots");
+  const drill = generateDrill(spots, 10, history.map);
 
   return (
     <div className="mx-auto max-w-2xl px-4 py-8 sm:px-6">
@@ -45,7 +48,7 @@ export default async function WeakSpotsPage() {
         <ArrowLeft className="size-4" aria-hidden />
         Consulting Room
       </Link>
-      <ToolHeader title="Weak spots" tip={{ id: "weak-spots", steps: ["The skills you miss most in your patient sessions, ranked.", "Run the 10-question drill made from them."] }} />
+      <ToolHeader title="Weak spots" tip={{ id: "weak-spots", steps: ["The skills you miss most, with a drill made from them."] }} />
 
       <div className="mt-6">
         <WeakSpotsView spots={spots} sessions={rubrics.length} />

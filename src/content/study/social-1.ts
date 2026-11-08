@@ -281,7 +281,7 @@ Harold Kelley (1967) said that when we have seen a person many times, we look at
    "detail": "External: something about the stimulus. 'Everyone laughs at this comedian, and Arjun laughs only at him.'"
   }
  ],
- "caption": "Tap each branch. Mixed patterns (for example, low consensus with high distinctiveness) give mixed attributions."
+ "caption": "Mixed patterns (for example, low consensus with high distinctiveness) give mixed attributions."
 }
 :::
 
@@ -1109,7 +1109,7 @@ Zajonc even showed it in cockroaches (1969): they ran a simple runway faster wit
 {
  "kind": "inverted-u",
  "title": "Arousal, task difficulty and an audience",
- "caption": "Move the arousal and task sliders. An audience raises arousal. On an easy, well-learnt task the best performance comes at higher arousal, so an audience helps; on a hard or new task the peak comes at lower arousal, so the same audience pushes performance down the far side of the curve."
+ "caption": "An audience raises arousal. On an easy, well-learnt task the best performance comes at higher arousal, so an audience helps; on a hard or new task the peak comes at lower arousal, so the same audience pushes performance down the far side of the curve."
 }
 :::
 

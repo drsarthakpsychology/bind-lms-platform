@@ -43,6 +43,20 @@ describe("items", () => {
     const topics = new Set(ids.map((id) => DUEL_ITEMS.find((x) => x.id === id)!.topic));
     expect(topics.size).toBe(5);
   });
+
+  it("answer history: never-seen items first, right ones held back, missed ones before right ones", () => {
+    const now = 10_000;
+    const right = DUEL_ITEMS.slice(0, DUEL_ITEMS.length - 7).map((x) => ({ item: x.id, seen: 1, ok: true as boolean, at: now - 1, due: null }));
+    const wrong = DUEL_ITEMS.slice(-7, -4).map((x) => ({ item: x.id, seen: 1, ok: false as boolean, at: now - 1, due: now - 1 }));
+    const h = new Map([...right, ...wrong].map((r) => [r.item, r]));
+    const unseen = new Set(DUEL_ITEMS.slice(-4).map((x) => x.id));
+    for (let seed = 1; seed < 20; seed++) {
+      const ids = pickItems(DUEL_ITEMS, seed, 5, h, now);
+      expect(ids).toHaveLength(5);
+      expect(ids.filter((id) => unseen.has(id))).toHaveLength(4);
+      expect(ids.some((id) => h.get(id)?.ok === true)).toBe(false);
+    }
+  });
 });
 
 describe("scoring", () => {

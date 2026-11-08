@@ -245,7 +245,7 @@ Mood is sustained, internal and subjective, so record it in the patient's own wo
 | Ecstasy | Very severe: intense rapture | Delirious or stuporous mania |
 
 :::widget layers
-{"title": "The ladder of elevated mood", "shape": "stack", "layers": [{"label": "Ecstasy", "detail": "Very severe: intense rapture. Seen in delirious or stuporous mania."}, {"label": "Exaltation", "detail": "Severe: intense elation with delusions of grandeur. Mania, stage III."}, {"label": "Elation", "detail": "Moderate: confidence, enjoyment and increased activity. Mania, stage II."}, {"label": "Euphoria", "detail": "Mild: a sense of well-being out of keeping with events. Hypomania."}, {"label": "Euthymia", "detail": "Normal mood, neither depressed nor elevated."}], "caption": "Tap each rung from the bottom up. Each step adds intensity, and from exaltation upwards, psychotic features."}
+{"title": "The ladder of elevated mood", "shape": "stack", "layers": [{"label": "Ecstasy", "detail": "Very severe: intense rapture. Seen in delirious or stuporous mania."}, {"label": "Exaltation", "detail": "Severe: intense elation with delusions of grandeur. Mania, stage III."}, {"label": "Elation", "detail": "Moderate: confidence, enjoyment and increased activity. Mania, stage II."}, {"label": "Euphoria", "detail": "Mild: a sense of well-being out of keeping with events. Hypomania."}, {"label": "Euthymia", "detail": "Normal mood, neither depressed nor elevated."}], "caption": "Each step adds intensity, and from exaltation upwards, psychotic features."}
 :::
 
 ### Terms of affect
@@ -409,7 +409,7 @@ A thought process characterised by a series of ideas **without apparent logical 
 | Poverty of content of speech | Enough speech, but it conveys little information. (Poverty of speech = the amount itself is reduced) |
 
 :::widget flow
-{"title": "From a detour to word salad", "layout": "chain", "nodes": [{"id": "c", "label": "Circumstantiality", "detail": "Many needless details, but the speaker gets back to the point in the end."}, {"id": "t", "label": "Tangentiality", "detail": "Drifts off on a side track and never returns to the question."}, {"id": "d", "label": "Derailment", "detail": "Ideas slip from one track to an unrelated one, with no logical link between them."}, {"id": "i", "label": "Incoherence", "detail": "Even within a sentence the words do not connect sensibly."}, {"id": "w", "label": "Word salad", "detail": "A jumble of words with no apparent meaning: the extreme end."}], "caption": "Play the chain: each step loses more of the link between ideas. Circumstantiality is not formal thought disorder; from derailment onwards, it is."}
+{"title": "From a detour to word salad", "layout": "chain", "nodes": [{"id": "c", "label": "Circumstantiality", "detail": "Many needless details, but the speaker gets back to the point in the end."}, {"id": "t", "label": "Tangentiality", "detail": "Drifts off on a side track and never returns to the question."}, {"id": "d", "label": "Derailment", "detail": "Ideas slip from one track to an unrelated one, with no logical link between them."}, {"id": "i", "label": "Incoherence", "detail": "Even within a sentence the words do not connect sensibly."}, {"id": "w", "label": "Word salad", "detail": "A jumble of words with no apparent meaning: the extreme end."}], "caption": "Circumstantiality is not formal thought disorder; from derailment onwards, it is."}
 :::
 
 ### Depth for a distinction: the classical descriptions [extra]
@@ -838,7 +838,7 @@ Concrete answers may occur in schizophrenia, but **always interpret against educ
 :::
 
 :::widget curve
-{"kind": "normal", "title": "Reading a test score against the population", "caption": "IQ and many cognitive tests are scaled to a mean of 100 and a standard deviation of 15. Move the score to see its percentile; a low score must still be read against education and language."}
+{"kind": "normal", "title": "Reading a test score against the population", "caption": "IQ and many cognitive tests are scaled to a mean of 100 and a standard deviation of 15."}
 :::
 
 :::recall
@@ -978,7 +978,7 @@ The MMSE is often used for a systematic check of higher mental functions inside 
 :::
 
 :::widget curve
-{"kind": "sdt", "title": "Choosing a screening cut-off", "caption": "A higher cut-off catches more true impairment (hits) but flags more healthy, less educated people (false alarms). Move the criterion to see why cut-offs need local norms."}
+{"kind": "sdt", "title": "Choosing a screening cut-off", "caption": "A higher cut-off catches more true impairment (hits) but flags more healthy, less educated people (false alarms)."}
 :::
 
 :::recall

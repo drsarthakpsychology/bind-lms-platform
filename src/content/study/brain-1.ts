@@ -19,7 +19,7 @@ A raga is not "just" vibrating strings, and the strings are not "just" a raga. Y
 
 
 :::widget nervoussystem
-{"title":"Zoom through the nervous system","start":"map","caption":"Zoom from the whole system down to its divisions, then switch the organs to fight or flight. Where do anticholinergic side effects come from? (Blocking the parasympathetic branch.)"}
+{"title":"Zoom through the nervous system","start":"map","caption":"Where do anticholinergic side effects come from? (Blocking the parasympathetic branch.)"}
 :::
 
 :::student
@@ -147,7 +147,7 @@ When enough excitatory signals arrive, the voltage rises to a **threshold** (abo
 {
  "title": "Fire a neuron yourself",
  "myelinated": false,
- "caption": "Slide the input up slowly. Below threshold nothing travels; at threshold you get a full spike every time, never a half spike. Push harder and the spikes come more often. Then switch myelin on and watch the signal jump from node to node and arrive sooner."
+ "caption": "Below threshold nothing travels; at threshold you get a full spike every time, never a half spike. Push harder and the spikes come more often."
 }
 :::
 
@@ -223,14 +223,14 @@ Say it as a shopkeeper's day: **make** the sweets, **store** them in boxes, **re
 :::
 
 :::widget synapse
-{"drug": "none", "caption": "This is a serotonin synapse at rest. Follow one dot: released from the sending neuron, some reach the receptors below, and the recycling pump on the right pulls the rest back. Almost every medicine in psychiatry acts on one of these steps."}
+{"drug": "none", "caption": "This is a serotonin synapse at rest. Almost every medicine in psychiatry acts on one of these steps."}
 :::
 
 
 :::widget release
 {
  "transmitter": "dopamine",
- "caption": "Step through one signal: the spike arrives, calcium enters, vesicles release dopamine, it binds, then the pump recycles it and MAO breaks some down. Now try amphetamine (it pushes dopamine out) and a receptor blocker (an antipsychotic). Which step does each change?"
+ "caption": "Which step does each change?"
 }
 :::
 
@@ -319,8 +319,7 @@ Think of the brain in layers, from the oldest at the bottom to the newest at the
   "brainstem": "Breathing, heart rate, wakefulness.",
   "thalamus": "The relay station for the senses.",
   "hypothalamus": "Hunger, thirst, temperature, sleep, hormones."
- },
- "caption": "Tap each region and say one symptom you would expect if it were damaged."
+ }
 }
 :::
 
@@ -697,7 +696,7 @@ export const b2Overview = String.raw`
 At the Starting level you met six messengers. Now look at **where** each comes from, **what receptors** it acts on and **which medicines** change it. This table is the backbone of psychopharmacology.
 
 :::widget figure
-{"id": "synapse", "quiz": true, "caption": "Name each numbered part in your head first, then tap to check."}
+{"id": "synapse", "quiz": true}
 :::
 
 | Transmitter | Made from, made where | Key receptors | Medicines and drugs that act on it |
@@ -861,8 +860,7 @@ Dopamine neurons are few, perhaps a few hundred thousand, but they send long bra
 
 :::widget pathways
 {
- "system": "dopamine",
- "caption": "Switch on a D2 blocker and watch all four roads change at once: fewer delusions (mesolimbic), more apathy (mesocortical), stiffness (nigrostriatal) and raised prolactin (tuberoinfundibular). Then add serotonin 2A block, as with second-generation drugs, and see which side effects ease."
+ "system": "dopamine"
 }
 :::
 
@@ -891,8 +889,7 @@ Dopamine neurons are few, perhaps a few hundred thousand, but they send long bra
   "basal-ganglia": "The striatum: target of the nigrostriatal road (movement) and part of the mesolimbic road (nucleus accumbens, reward).",
   "prefrontal": "Target of the mesocortical road: motivation and thinking.",
   "hypothalamus": "Start of the tuberoinfundibular road to the pituitary: keeps prolactin low."
- },
- "caption": "Tap each region and name the side effect if D2 receptors there are blocked."
+ }
 }
 :::
 
@@ -950,8 +947,7 @@ When you meet a patient whose personality has changed, whose speech is odd or wh
   "motor": "Primary motor cortex: weakness of the opposite side if damaged.",
   "basal-ganglia": "Part of each frontal loop; caudate damage in Huntington's disease gives frontal-type changes.",
   "thalamus": "Closes the loop back to the cortex; thalamic strokes can cause apathy and memory problems."
- },
- "caption": "Tap each area and link it to one bedside sign: perseveration, disinhibition or apathy."
+ }
 }
 :::
 
@@ -987,7 +983,7 @@ Frontal problems hide well in a short interview. The person may chat politely an
   "temporal": "The arcuate fasciculus runs under the cortex from Wernicke's back to Broca's area; damage there spares understanding but ruins repetition (conduction aphasia).",
   "frontal": "Areas around Broca's area, if damaged while Broca's itself is spared, give transcortical motor aphasia with repetition preserved."
  },
- "caption": "Most people's language areas are on the left. Tap Broca's and Wernicke's areas and predict what each patient would sound like."
+ "caption": "Most people's language areas are on the left."
 }
 :::
 
@@ -1163,7 +1159,7 @@ In 1953 Henry Molaison (known for decades as "H.M.") had both medial temporal lo
    "detail": "Learned emotional and reflex responses; the amygdala for fear."
   }
  ],
- "caption": "Henry Molaison lost the left branch for new learning but kept the right one. Tap each box for the brain system behind it."
+ "caption": "Henry Molaison lost the left branch for new learning but kept the right one."
 }
 :::
 
@@ -1204,7 +1200,7 @@ In 1953 Henry Molaison (known for decades as "H.M.") had both medial temporal lo
   "temporal": "Stores facts and meanings (semantic memory), especially at the front of the lobe.",
   "prefrontal": "Working memory and strategies for learning and recall; frontal problems cause disorganised remembering."
  },
- "caption": "Damage at different points of the same circuit gives different memory problems. Tap the thalamus and connect it to thiamine deficiency."
+ "caption": "Damage at different points of the same circuit gives different memory problems."
 }
 :::
 
@@ -1301,7 +1297,7 @@ When you face a threat, two systems switch on:
   "p>a": "ACTH",
   "a>c": "cortisol"
  },
- "caption": "Press Play to go round the loop. Where does the dexamethasone suppression test check the brake? (At the feedback step: a synthetic steroid should switch cortisol off.)"
+ "caption": "Where does the dexamethasone suppression test check the brake? (At the feedback step: a synthetic steroid should switch cortisol off.)"
 }
 :::
 
@@ -1318,7 +1314,7 @@ Nikhil, 28, has a deadline every quarter: tense for a week, then recovers. Laksh
 
 :::widget stress
 {
- "caption": "Trigger a stressor and watch the chain: amygdala, hypothalamus, pituitary, adrenal. Heart rate jumps first (sympathetic nerves), cortisol rises more slowly, then feedback brings both down. Switch on chronic stress and see the brake fail."
+ "caption": "Trigger a stressor and watch the chain: amygdala, hypothalamus, pituitary, adrenal. Heart rate jumps first (sympathetic nerves), cortisol rises more slowly, then feedback brings both down."
 }
 :::
 
@@ -1347,9 +1343,7 @@ Sleep comes in cycles of about 90 minutes, four or five times a night.
 
 
 :::widget hypnogram
-{
- "caption": "Drag through a night: deep N3 sleep comes early, REM periods lengthen towards morning. Then switch on depression and watch REM arrive sooner, deep sleep shrink and early waking appear."
-}
+{}
 :::
 
 :::widget figure
@@ -1418,7 +1412,7 @@ Two questions describe every medicine:
 :::widget receptor
 {
  "receptor": "opioid",
- "caption": "Try each ligand at the same receptor. Morphine (full agonist) drives the signal to the top; buprenorphine (partial agonist) stops part-way and blocks morphine from doing more; naloxone (antagonist) sits in the lock with no signal; an inverse agonist pushes the background signal below zero."
+ "caption": "Morphine (full agonist) drives the signal to the top; buprenorphine (partial agonist) stops part-way and blocks morphine from doing more; naloxone (antagonist) sits in the lock with no signal; an inverse agonist pushes the background signal below zero."
 }
 :::
 
@@ -1433,7 +1427,7 @@ Two questions describe every medicine:
 | **Enzyme inhibitor** | Stops breakdown | MAO inhibitors, donepezil |
 
 :::widget synapse
-{"drug": "ssri", "caption": "Press 'Add SSRI' to block the recycling pump, then 'Let time pass'. The chemistry changes in hours; the receptors adapt and the brain rewires over the following weeks. That gap is why antidepressants are judged only after an adequate trial."}
+{"drug": "ssri", "caption": "The chemistry changes in hours; the receptors adapt and the brain rewires over the following weeks. That gap is why antidepressants are judged only after an adequate trial."}
 :::
 
 
@@ -1470,7 +1464,7 @@ Two questions describe every medicine:
   "brain": "Fat-soluble, so it crosses the blood-brain barrier and blocks the serotonin recycling pump.",
   "elimination": "Half-life about a day, so steady state takes around four to five days of regular doses."
  },
- "caption": "Follow one tablet from mouth to brain to exit. Ask at each stop: what could change the amount reaching the brain here? (Food, liver enzymes, other medicines, protein binding, kidney or liver disease.)"
+ "caption": "Ask at each stop: what could change the amount reaching the brain here? (Food, liver enzymes, other medicines, protein binding, kidney or liver disease.)"
 }
 :::
 
@@ -1494,7 +1488,7 @@ The **half-life** is the time for the blood level to fall by half. It decides ho
 {
  "kind": "half-life",
  "title": "Repeated doses build to a steady level",
- "caption": "Move the sliders for half-life and dosing interval. Count how many half-lives it takes for the peaks and troughs to level off (about four to five), then see why a long half-life medicine takes so long to wash out."
+ "caption": "Count how many half-lives it takes for the peaks and troughs to level off (about four to five), then see why a long half-life medicine takes so long to wash out."
 }
 :::
 
@@ -1560,7 +1554,7 @@ export const b4Hormones = String.raw`
 Glands release **hormones** into the blood. Most are controlled from the brain through the **hypothalamus** and the **pituitary**, and most switch themselves off by **negative feedback** (like a thermostat).
 
 :::widget figure
-{"id": "endocrine", "quiz": true, "caption": "Name each numbered part in your head first, then tap to check."}
+{"id": "endocrine", "quiz": true}
 :::
 
 | Gland | Main hormones | What they do | Link to mental health |
@@ -1590,7 +1584,7 @@ Glands release **hormones** into the blood. Most are controlled from the brain t
   "brainstem": "Receives gut and vagus nerve signals about stretch and nutrients.",
   "amygdala": "Adds emotional value to food and sex cues."
  },
- "caption": "The hypothalamus is small but runs the body's basic drives. Tap it and list four drives it controls."
+ "caption": "The hypothalamus is small but runs the body's basic drives."
 }
 :::
 
@@ -1862,8 +1856,7 @@ Families share both genes and homes, so "it runs in the family" does not prove g
    "label": "Check the assumption",
    "detail": "Equal environments: MZ twins should not be treated more alike for reasons that affect the trait."
   }
- ],
- "caption": "Press Play, then try the worked example below."
+ ]
 }
 :::
 

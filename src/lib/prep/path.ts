@@ -14,7 +14,8 @@ import { buildPlan } from "./plan";
 import { latestAnswered, nextSet, pageOf, resumePoint, savedIds, startIndex, statsOf, wrongIds, type Stats } from "./progress";
 import { pickSmart, SMART_SIZE } from "./smart";
 import { reviewQueue } from "./sampling";
-import { loadCards, loadItemB, loadLastSeen, loadSkills, type PrepCard } from "./server";
+import { loadCards, loadItemB, loadLastSeen, loadSeenRows, loadSkills, type PrepCard } from "./server";
+import { prepHistory } from "./history";
 import { setsOf } from "./topics";
 import type { Subject } from "./types";
 
@@ -105,7 +106,7 @@ export async function loadTopicSet(userId: string, subject: Subject, topic: stri
 const WEAK_SUBJECTS = 3;
 
 export async function loadSmart(userId: string, now = new Date()): Promise<{ ids: string[]; reviews: number; saved: string[]; canSave: boolean }> {
-  const [skills, cards, book] = await Promise.all([loadSkills(userId), loadCards(userId), loadAnswers(userId)]);
+  const [skills, cards, book, seenRows] = await Promise.all([loadSkills(userId), loadCards(userId), loadAnswers(userId), loadSeenRows(userId)]);
   const available = new Set(bankSubjects().filter((s) => !OPTIONAL_SUBJECTS.has(s) || skills.has(s)));
   const plan = buildPlan(null, skills, now, available);
   const weakSubjects = plan.filter((t) => t.status !== "strong").slice(0, WEAK_SUBJECTS).map((t) => t.subject);
@@ -125,7 +126,9 @@ export async function loadSmart(userId: string, now = new Date()): Promise<{ ids
     const k = skills.get(s);
     return k ? decayedTheta(k.theta, k.lastAt, now) : 0;
   };
-  const picked = pickSmart(BANK, { theta, b: (x) => b.get(x), due, weakSubjects, weakTopics, gotRight }, makeRng(requestSeed(userId, now)), SMART_SIZE);
+  // Answer history (prep_answers and prep_seen): new questions first, right ones held back.
+  const history = book.ready || seenRows.size ? prepHistory(book.map, seenRows) : undefined;
+  const picked = pickSmart(BANK, { theta, b: (x) => b.get(x), due, weakSubjects, weakTopics, gotRight, history, now: now.getTime() }, makeRng(requestSeed(userId, now)), SMART_SIZE);
   const ids = picked.map((p) => p.id);
   return { ids, reviews: picked.filter((p) => p.bucket === "review").length, saved: ids.filter((id) => book.map.get(id)?.saved), canSave: book.ready };
 }

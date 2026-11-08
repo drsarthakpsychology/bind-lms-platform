@@ -16,10 +16,8 @@ export default async function MseLabPage() {
   return (
     <ActivityFrame
       title="MSE Lab"
-      purpose="Read a short interview and the observation note, then tag each finding with the right part of the mental state examination and the exact word."
-      how={["Pick the part of the MSE for the highlighted phrase.", "Pick the exact word.", "Half marks for the right part, half for the word.", "Fully right tags in a row build your streak."]}
     >
-      <ActivityTip id="mse-lab" intro="Read a short interview, then tag what you see." steps={["For each highlighted phrase, pick the part of the MSE.", "Then pick the exact word.", "Half marks for the part, half for the word.", "Five excerpts a round. Fully right tags in a row build your streak."]} />
+      <ActivityTip id="mse-lab" intro="Tag what you see in an interview." steps={["For each highlighted phrase, pick the part of the MSE, then the exact word.", "Half marks for the part, half for the word.", "Fully right tags in a row build your streak."]} />
       <MseLab serverState={serverState} save={saveLearnState} board={board} submit={submitMseExcerpt} />
     </ActivityFrame>
   );

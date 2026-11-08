@@ -15,11 +15,9 @@ export default async function DailyCasePage() {
   return (
     <ActivityFrame
       title="Daily case"
-      purpose="One new patient a day. Name the diagnosis."
-      how={["Fewer clues, more points."]}
       fallback="/practice"
     >
-      <ActivityTip id="daily-case" steps={["One new patient a day. Name the diagnosis.", "Open clues or order tests if you need them. Fewer clues, more points."]} />
+      <ActivityTip id="daily-case" steps={["Name the diagnosis.", "Open clues or order tests if you need them. Fewer clues, more points."]} />
       <DailyGame serverState={serverState} save={saveLearnState} initial={initial} />
     </ActivityFrame>
   );

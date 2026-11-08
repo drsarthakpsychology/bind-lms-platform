@@ -67,7 +67,7 @@ A neurotransmitter is a key. A receptor is a lock. Only the right key fits the r
 One messenger can have many receptor types. Serotonin alone has more than a dozen (5-HT1A, 5-HT2A, 5-HT2C, 5-HT3 and others). Each sits in different places and does different jobs. This is why one medicine can help mood but upset the stomach: it is acting on serotonin receptors in both the brain and the gut.
 
 :::widget receptor
-{"receptor": "5-HT1A", "title": "Try each kind of key in a serotonin lock", "caption": "Tap each option and watch the signal bar. Serotonin itself is the full agonist. Buspirone, and the extra action of vilazodone and vortioxetine, are partial agonists here. Keep the inverse agonist in mind: it pushes a receptor below its resting level, which a plain blocker cannot do."}
+{"receptor": "5-HT1A", "title": "Try each kind of key in a serotonin lock", "caption": "Serotonin itself is the full agonist. Buspirone, and the extra action of vilazodone and vortioxetine, are partial agonists here. Keep the inverse agonist in mind: it pushes a receptor below its resting level, which a plain blocker cannot do."}
 :::
 
 :::widget figure
@@ -78,7 +78,7 @@ One messenger can have many receptor types. Serotonin alone has more than a doze
 Almost all the serotonin in the brain is made by a small cluster of cells in the **brainstem**, called the **raphe nuclei**. Their long fibres spread upwards like the branches of a tree to nearly every part of the brain. So a medicine that changes serotonin at the raphe changes it in mood, fear, sleep and appetite circuits all at once.
 
 :::widget brainmap
-{"title": "One small source, many destinations", "focus": ["brainstem", "prefrontal", "amygdala", "hippocampus", "hypothalamus", "basal-ganglia"], "notes": {"brainstem": "The raphe nuclei make the brain's serotonin; the locus coeruleus nearby makes its noradrenaline. Antidepressants act first on the cell bodies here.", "prefrontal": "Planning, mood control and how we judge ourselves. Serotonin and noradrenaline here shape concentration and negative thinking.", "amygdala": "The alarm centre. In depression and anxiety it over-reacts to sad or threatening faces; antidepressants calm this bias within days.", "hippocampus": "Memory and the stress brake. Long stress shrinks its connections; antidepressants raise growth factors that help them regrow.", "hypothalamus": "Sleep, appetite, body clock and stress hormones. Many early changes on antidepressants (sleep, appetite) start here.", "basal-ganglia": "Reward and drive, through dopamine. Serotonin can damp this down, which may explain emotional blunting on SSRIs."}, "caption": "Tap each region. Notice that the same messenger does different jobs in different places, which is why benefits and side effects arrive together."}
+{"title": "One small source, many destinations", "focus": ["brainstem", "prefrontal", "amygdala", "hippocampus", "hypothalamus", "basal-ganglia"], "notes": {"brainstem": "The raphe nuclei make the brain's serotonin; the locus coeruleus nearby makes its noradrenaline. Antidepressants act first on the cell bodies here.", "prefrontal": "Planning, mood control and how we judge ourselves. Serotonin and noradrenaline here shape concentration and negative thinking.", "amygdala": "The alarm centre. In depression and anxiety it over-reacts to sad or threatening faces; antidepressants calm this bias within days.", "hippocampus": "Memory and the stress brake. Long stress shrinks its connections; antidepressants raise growth factors that help them regrow.", "hypothalamus": "Sleep, appetite, body clock and stress hormones. Many early changes on antidepressants (sleep, appetite) start here.", "basal-ganglia": "Reward and drive, through dopamine. Serotonin can damp this down, which may explain emotional blunting on SSRIs."}, "caption": "Notice that the same messenger does different jobs in different places, which is why benefits and side effects arrive together."}
 :::
 
 :::widget sort
@@ -124,7 +124,7 @@ The gap between two neurons, together with the two cell surfaces on either side,
 Noradrenaline and dopamine synapses work the same way, each with its own pump (NET for noradrenaline, DAT for dopamine).
 
 :::widget synapse
-{"drug": "none", "caption": "No medicine yet. Watch the cycle: release into the gap, some molecules reach receptors, and the pump on the sending neuron recycles the rest."}
+{"drug": "none", "caption": "No medicine yet."}
 :::
 
 :::widget figure
@@ -176,7 +176,7 @@ Absorption is boarding the train. Distribution is travelling to every station, t
 :::
 
 :::widget journey
-{"drug": "sertraline", "target": "serotonin pumps (SERT) on serotonin nerve endings in the cortex and limbic system, and on the cell bodies in the raphe", "routes": ["oral"], "notes": {"mouth": "A 50 mg sertraline tablet is swallowed, ideally after breakfast or dinner. Food does not stop it working but makes nausea less likely.", "gut": "The tablet dissolves and sertraline passes slowly through the wall of the small intestine. Levels in the blood peak several hours later, not straight away.", "liver": "On its first pass, liver CYP enzymes (several of them share the work) turn part of the dose into a much weaker leftover. Because many enzymes share the job, one blocked enzyme rarely changes sertraline levels much.", "blood": "Most of the sertraline in the blood is stuck to proteins. Only the small free part can leave the blood. It also reaches platelets, where it blocks their serotonin pump too.", "bbb": "Sertraline is fat-soluble, so it slips through the tight wall of brain blood vessels easily.", "out": "Liver changes leave a product the kidneys can remove. Half the drug is gone in about a day, so one dose a day keeps levels steady."}, "caption": "Press Play and follow one dose from mouth to synapse. Then think: at which stops could another medicine, food or liver disease change how much arrives?"}
+{"drug": "sertraline", "target": "serotonin pumps (SERT) on serotonin nerve endings in the cortex and limbic system, and on the cell bodies in the raphe", "routes": ["oral"], "notes": {"mouth": "A 50 mg sertraline tablet is swallowed, ideally after breakfast or dinner. Food does not stop it working but makes nausea less likely.", "gut": "The tablet dissolves and sertraline passes slowly through the wall of the small intestine. Levels in the blood peak several hours later, not straight away.", "liver": "On its first pass, liver CYP enzymes (several of them share the work) turn part of the dose into a much weaker leftover. Because many enzymes share the job, one blocked enzyme rarely changes sertraline levels much.", "blood": "Most of the sertraline in the blood is stuck to proteins. Only the small free part can leave the blood. It also reaches platelets, where it blocks their serotonin pump too.", "bbb": "Sertraline is fat-soluble, so it slips through the tight wall of brain blood vessels easily.", "out": "Liver changes leave a product the kidneys can remove. Half the drug is gone in about a day, so one dose a day keeps levels steady."}, "caption": "Then think: at which stops could another medicine, food or liver disease change how much arrives?"}
 :::
 
 ### Half-life: the one number to understand
@@ -188,7 +188,7 @@ Half-life tells you three practical things:
 - **How long it takes to leave**, and how rough stopping may be. Short half-life medicines drop fast, and stopping them suddenly feels worse.
 
 :::widget curve
-{"kind": "half-life", "title": "Take a tablet every day and watch the level climb", "caption": "Slide the half-life. A short one (like venlafaxine) gives spiky levels that settle quickly and fall quickly. A long one (like fluoxetine) gives smooth levels that take a long time to settle and a long time to leave."}
+{"kind": "half-life", "title": "Take a tablet every day and watch the level climb", "caption": "A short one (like venlafaxine) gives spiky levels that settle quickly and fall quickly. A long one (like fluoxetine) gives smooth levels that take a long time to settle and a long time to leave."}
 :::
 
 :::widget guess
@@ -450,7 +450,7 @@ The autoreceptor is a thermostat. The medicine first fights the thermostat, whic
 :::
 
 :::widget flow
-{"title": "From the first tablet to a lifted mood", "layout": "chain", "nodes": [{"id": "a", "label": "SERT blocked", "detail": "Within hours of the first dose, the serotonin pump is mostly blocked, both at nerve endings and around the cell bodies in the raphe."}, {"id": "b", "label": "Serotonin rises at the raphe", "detail": "Extra serotonin builds up first around the cell bodies, where 5-HT1A autoreceptors sit."}, {"id": "c", "label": "The brake bites", "detail": "The 5-HT1A autoreceptors sense the rise and slow the neurons' firing. Release in the cortex barely changes at first. Side effects from gut and spinal receptors arrive now."}, {"id": "d", "label": "The brake wears out", "detail": "With constant stimulation the autoreceptors desensitise and are reduced in number. Firing returns to normal while the pump is still blocked."}, {"id": "e", "label": "More release where it matters", "detail": "Now serotonin release in the prefrontal cortex, hippocampus and amygdala rises properly."}, {"id": "f", "label": "Genes and growth", "detail": "Changed signalling switches on genes such as BDNF. New dendritic spines and synapses grow; the hippocampus recovers some of what stress took."}, {"id": "g", "label": "Mood lifts", "detail": "Biased attention to bad news fades first, then sleep, energy and interest return, and mood follows."}], "edgeLabels": {"a>b": "hours", "c>d": "days to weeks", "e>f": "slow"}, "caption": "Press Play. The early steps explain the early side effects; the later steps explain the delay in benefit."}
+{"title": "From the first tablet to a lifted mood", "layout": "chain", "nodes": [{"id": "a", "label": "SERT blocked", "detail": "Within hours of the first dose, the serotonin pump is mostly blocked, both at nerve endings and around the cell bodies in the raphe."}, {"id": "b", "label": "Serotonin rises at the raphe", "detail": "Extra serotonin builds up first around the cell bodies, where 5-HT1A autoreceptors sit."}, {"id": "c", "label": "The brake bites", "detail": "The 5-HT1A autoreceptors sense the rise and slow the neurons' firing. Release in the cortex barely changes at first. Side effects from gut and spinal receptors arrive now."}, {"id": "d", "label": "The brake wears out", "detail": "With constant stimulation the autoreceptors desensitise and are reduced in number. Firing returns to normal while the pump is still blocked."}, {"id": "e", "label": "More release where it matters", "detail": "Now serotonin release in the prefrontal cortex, hippocampus and amygdala rises properly."}, {"id": "f", "label": "Genes and growth", "detail": "Changed signalling switches on genes such as BDNF. New dendritic spines and synapses grow; the hippocampus recovers some of what stress took."}, {"id": "g", "label": "Mood lifts", "detail": "Biased attention to bad news fades first, then sleep, energy and interest return, and mood follows."}], "edgeLabels": {"a>b": "hours", "c>d": "days to weeks", "e>f": "slow"}, "caption": "The early steps explain the early side effects; the later steps explain the delay in benefit."}
 :::
 
 :::widget guess
@@ -513,7 +513,7 @@ Q: The receptor that first brakes serotonin firing when an SSRI is started is:
 SSRIs are first-line for depression and most anxiety disorders: effective, reasonably well tolerated, once daily, and **much safer in overdose** than tricyclics.
 
 :::widget figure
-{"id": "serotonin-projections", "quiz": true, "caption": "Name each numbered part in your head first, then tap to check."}
+{"id": "serotonin-projections", "quiz": true}
 :::
 
 
@@ -521,7 +521,7 @@ SSRIs are first-line for depression and most anxiety disorders: effective, reaso
 {
  "transmitter": "serotonin",
  "title": "What an SSRI changes at the synapse",
- "caption": "Play one signal with No drug, then pick SSRI. Release and binding look the same; the difference is at the recycling pump, which is blocked, so serotonin stays in the gap and the message lasts longer. Every SSRI side effect comes from that extra serotonin reaching receptors in the gut, the spinal cord and elsewhere, not just the mood circuits."
+ "caption": "Release and binding look the same; the difference is at the recycling pump, which is blocked, so serotonin stays in the gap and the message lasts longer. Every SSRI side effect comes from that extra serotonin reaching receptors in the gut, the spinal cord and elsewhere, not just the mood circuits."
 }
 :::
 
@@ -566,7 +566,7 @@ SSRIs are first-line for depression and most anxiety disorders: effective, reaso
   ],
   "summary": "Effective, but hard to come off."
  },
- "caption": "Both block the same serotonin pump. Slide between them: nearly every practical difference comes from how long they stay in the body and which extra targets they touch."
+ "caption": "Both block the same serotonin pump."
 }
 :::
 
@@ -684,7 +684,7 @@ Q: Why do SSRIs increase bleeding risk?
 - Rare low white cell count: report sore throat and fever.
 
 :::widget receptor
-{"receptor": "alpha-2", "title": "Mirtazapine at the brake receptor", "caption": "Noradrenaline normally acts as the full agonist at its own alpha-2 brake, telling the neuron to release less. Choose Antagonist: that is mirtazapine. The brake signal drops to background, so the neuron releases more noradrenaline, and more serotonin too, because alpha-2 brakes also sit on serotonin nerve endings."}
+{"receptor": "alpha-2", "title": "Mirtazapine at the brake receptor", "caption": "Noradrenaline normally acts as the full agonist at its own alpha-2 brake, telling the neuron to release less. The brake signal drops to background, so the neuron releases more noradrenaline, and more serotonin too, because alpha-2 brakes also sit on serotonin nerve endings."}
 :::
 
 :::student
@@ -758,7 +758,7 @@ A small number of days' supply can kill. Features: anticholinergic signs (dry fl
 - Dothiepin (dosulepin) has particularly high toxicity in overdose.
 
 :::widget compare
-{"title": "An SSRI and a tricyclic, side by side", "a": {"label": "Sertraline (SSRI)", "points": ["Blocks the serotonin pump, little else", "Early nausea, loose stools, sexual side effects", "Little sedation, no dry mouth", "Rarely dangerous in overdose on its own", "Usable after a heart attack and in older adults"], "summary": "First-line: as effective for most, easier to live with and far safer."}, "b": {"label": "Amitriptyline (tricyclic)", "points": ["Blocks serotonin and noradrenaline pumps plus muscarinic, H1, alpha-1 and sodium channels", "Dry mouth, constipation, sedation, weight gain, dizziness on standing", "Confusion and falls in older adults", "A few days' supply can be fatal in overdose", "Low doses still useful for pain and migraine"], "summary": "Second-line for depression; keep supplies small and avoid in heart disease and older adults."}, "caption": "Slide between the two. The benefit for mood is similar; almost every difference comes from the extra receptors the tricyclic blocks."}
+{"title": "An SSRI and a tricyclic, side by side", "a": {"label": "Sertraline (SSRI)", "points": ["Blocks the serotonin pump, little else", "Early nausea, loose stools, sexual side effects", "Little sedation, no dry mouth", "Rarely dangerous in overdose on its own", "Usable after a heart attack and in older adults"], "summary": "First-line: as effective for most, easier to live with and far safer."}, "b": {"label": "Amitriptyline (tricyclic)", "points": ["Blocks serotonin and noradrenaline pumps plus muscarinic, H1, alpha-1 and sodium channels", "Dry mouth, constipation, sedation, weight gain, dizziness on standing", "Confusion and falls in older adults", "A few days' supply can be fatal in overdose", "Low doses still useful for pain and migraine"], "summary": "Second-line for depression; keep supplies small and avoid in heart disease and older adults."}, "caption": "The benefit for mood is similar; almost every difference comes from the extra receptors the tricyclic blocks."}
 :::
 
 :::student
@@ -860,7 +860,7 @@ Q: A patient on phenelzine eats aged cheese and develops a sudden severe headach
 | Esketamine | NMDA receptor antagonist | Nasal spray for treatment-resistant depression: see the Advanced level |
 
 :::widget receptor
-{"receptor": "5-HT1A", "title": "Vilazodone and vortioxetine: a pump blocker with a partial key", "caption": "Pick Partial agonist: that is vilazodone at 5-HT1A. Then pick Full agonist, which is closer to vortioxetine's action there. Both medicines block SERT and also switch on 5-HT1A receptors directly. The idea is to turn the autoreceptor brake down sooner, so release rises without waiting so long. Whether this truly speeds recovery is still argued."}
+{"receptor": "5-HT1A", "title": "Vilazodone and vortioxetine: a pump blocker with a partial key", "caption": "Pick Partial agonist: that is vilazodone at 5-HT1A. Both medicines block SERT and also switch on 5-HT1A receptors directly. The idea is to turn the autoreceptor brake down sooner, so release rises without waiting so long. Whether this truly speeds recovery is still argued."}
 :::
 
 :::student
@@ -978,7 +978,7 @@ SSRIs or SNRIs with: MAOIs (the most dangerous), **tramadol**, pethidine, fentan
 | Treatment | Stop drugs, benzodiazepines, cyproheptadine | Stop antipsychotic, cooling, fluids, benzodiazepines, dantrolene or bromocriptine |
 
 :::widget flow
-{"title": "Hot, confused and on psychiatric medicines: sorting it out", "layout": "tree", "nodes": [{"id": "r", "label": "Fever, confusion and abnormal muscles on psychiatric medicines", "detail": "Treat as a medical emergency first: airway, temperature, fluids, bloods including CK, sodium and glucose. Then use the examination to sort the cause."}, {"id": "q1", "label": "Clonus and very brisk reflexes, came on over hours", "parent": "r", "detail": "Neuromuscular excitement, worse in the legs. Look for a new serotonergic drug or dose rise."}, {"id": "q2", "label": "Lead-pipe rigidity everywhere, came on over days", "parent": "r", "detail": "Slow, stiff, mute, sweating, blood pressure swinging. Look for a dopamine blocker or a stopped Parkinson's medicine."}, {"id": "q3", "label": "Hot, dry, flushed, big pupils, full bladder, quiet bowel", "parent": "r", "detail": "Muscles normal. Look for stacked anticholinergic medicines."}, {"id": "ss", "label": "Serotonin syndrome", "parent": "q1", "detail": "Stop serotonergic drugs, benzodiazepines, cooling, cyproheptadine if moderate; intensive care if severe."}, {"id": "nms", "label": "Neuroleptic malignant syndrome", "parent": "q2", "detail": "Stop the antipsychotic, cool, fluids, benzodiazepines; dantrolene or bromocriptine in severe cases; watch kidneys."}, {"id": "ach", "label": "Anticholinergic toxicity", "parent": "q3", "detail": "Stop the culprits, catheterise if retained, cool; specialist physostigmine only in selected cases."}], "caption": "Tap each branch. The muscles and the speed of onset sort most cases before any blood test comes back."}
+{"title": "Hot, confused and on psychiatric medicines: sorting it out", "layout": "tree", "nodes": [{"id": "r", "label": "Fever, confusion and abnormal muscles on psychiatric medicines", "detail": "Treat as a medical emergency first: airway, temperature, fluids, bloods including CK, sodium and glucose. Then use the examination to sort the cause."}, {"id": "q1", "label": "Clonus and very brisk reflexes, came on over hours", "parent": "r", "detail": "Neuromuscular excitement, worse in the legs. Look for a new serotonergic drug or dose rise."}, {"id": "q2", "label": "Lead-pipe rigidity everywhere, came on over days", "parent": "r", "detail": "Slow, stiff, mute, sweating, blood pressure swinging. Look for a dopamine blocker or a stopped Parkinson's medicine."}, {"id": "q3", "label": "Hot, dry, flushed, big pupils, full bladder, quiet bowel", "parent": "r", "detail": "Muscles normal. Look for stacked anticholinergic medicines."}, {"id": "ss", "label": "Serotonin syndrome", "parent": "q1", "detail": "Stop serotonergic drugs, benzodiazepines, cooling, cyproheptadine if moderate; intensive care if severe."}, {"id": "nms", "label": "Neuroleptic malignant syndrome", "parent": "q2", "detail": "Stop the antipsychotic, cool, fluids, benzodiazepines; dantrolene or bromocriptine in severe cases; watch kidneys."}, {"id": "ach", "label": "Anticholinergic toxicity", "parent": "q3", "detail": "Stop the culprits, catheterise if retained, cool; specialist physostigmine only in selected cases."}], "caption": "The muscles and the speed of onset sort most cases before any blood test comes back."}
 :::
 
 :::widget decide
@@ -1128,7 +1128,7 @@ Q: A 15-year-old girl has moderate depression that has not improved with psychol
 6. **ECT** for severe, psychotic, life-threatening or resistant depression; esketamine and rTMS where available (Advanced level).
 
 :::widget flow
-{"title": "Choosing how to switch", "layout": "tree", "nodes": [{"id": "s", "label": "Switching from one antidepressant to another", "detail": "First ask why: no response, side effects, or a new medical problem. The reason guides the next choice."}, {"id": "m", "label": "Is either drug an irreversible MAOI?", "parent": "s", "detail": "Phenelzine or tranylcypromine on either side changes every rule."}, {"id": "mw", "label": "Yes: full washout", "parent": "m", "detail": "Stop the first drug and wait. After fluoxetine the wait before an MAOI is long; after an irreversible MAOI, wait for the body to make new enzyme before any serotonergic drug."}, {"id": "f", "label": "No: is the old drug fluoxetine?", "parent": "s", "detail": "Its long-lived metabolite keeps working and keeps blocking CYP2D6 after the last dose."}, {"id": "fy", "label": "Yes: stop, short gap, start the new drug low", "parent": "f", "detail": "Fluoxetine tapers itself. Start the new drug at a low dose and watch for interactions and serotonin toxicity."}, {"id": "same", "label": "Same target (SSRI to SSRI, SSRI to SNRI)", "parent": "s", "detail": "Usually a direct switch or a short cross-taper: the new drug covers the old one, so discontinuation is mild."}, {"id": "diff", "label": "Different target (SSRI to mirtazapine, bupropion, agomelatine, a tricyclic)", "parent": "s", "detail": "Cross-taper: lower the old one in steps while the new one builds up. Watch for discontinuation as the old one falls, and for added side effects while both overlap."}], "caption": "Tap through the branches. Every switch has two dangers to watch: too much serotonin while both are on board, and discontinuation as the old drug leaves."}
+{"title": "Choosing how to switch", "layout": "tree", "nodes": [{"id": "s", "label": "Switching from one antidepressant to another", "detail": "First ask why: no response, side effects, or a new medical problem. The reason guides the next choice."}, {"id": "m", "label": "Is either drug an irreversible MAOI?", "parent": "s", "detail": "Phenelzine or tranylcypromine on either side changes every rule."}, {"id": "mw", "label": "Yes: full washout", "parent": "m", "detail": "Stop the first drug and wait. After fluoxetine the wait before an MAOI is long; after an irreversible MAOI, wait for the body to make new enzyme before any serotonergic drug."}, {"id": "f", "label": "No: is the old drug fluoxetine?", "parent": "s", "detail": "Its long-lived metabolite keeps working and keeps blocking CYP2D6 after the last dose."}, {"id": "fy", "label": "Yes: stop, short gap, start the new drug low", "parent": "f", "detail": "Fluoxetine tapers itself. Start the new drug at a low dose and watch for interactions and serotonin toxicity."}, {"id": "same", "label": "Same target (SSRI to SSRI, SSRI to SNRI)", "parent": "s", "detail": "Usually a direct switch or a short cross-taper: the new drug covers the old one, so discontinuation is mild."}, {"id": "diff", "label": "Different target (SSRI to mirtazapine, bupropion, agomelatine, a tricyclic)", "parent": "s", "detail": "Cross-taper: lower the old one in steps while the new one builds up. Watch for discontinuation as the old one falls, and for added side effects while both overlap."}], "caption": "Every switch has two dangers to watch: too much serotonin while both are on board, and discontinuation as the old drug leaves."}
 :::
 
 :::widget decide
@@ -1374,7 +1374,7 @@ Positron emission tomography (PET) studies show that the usual starting doses of
 - When **tapering**, the last few milligrams change occupancy the most, which is why final steps must be smallest.
 
 :::widget curve
-{"kind": "dose-response", "title": "Potency, efficacy and the plateau", "caption": "Move the sliders. Potency shifts the curve left or right (how many milligrams you need). Efficacy sets how high it can climb. For SSRIs in depression we start close to the top of the curve already, which is why doubling the dose often adds side effects more than benefit."}
+{"kind": "dose-response", "title": "Potency, efficacy and the plateau", "caption": "Potency shifts the curve left or right (how many milligrams you need). Efficacy sets how high it can climb. For SSRIs in depression we start close to the top of the curve already, which is why doubling the dose often adds side effects more than benefit."}
 :::
 
 :::widget worked
@@ -1450,7 +1450,7 @@ People inherit different versions of CYP genes. The version you carry decides ho
   "blood": "Blood levels for the same dose can differ several-fold between people, largely because of the liver step.",
   "target": "Blocks the serotonin pump. Occupancy, not the dose on the label, is what the brain responds to."
  },
- "caption": "Follow the tablet and stop at the liver. The gene result does not change what escitalopram does in the brain; it changes how much arrives there."
+ "caption": "The gene result does not change what escitalopram does in the brain; it changes how much arrives there."
 }
 :::
 
@@ -1505,7 +1505,7 @@ Classic antidepressants all work through monoamines. Since 2019, medicines that 
 - **Esketamine** is the S-enantiomer of ketamine, given as a **nasal spray** in a clinic.
 
 :::widget flow
-{"title": "Ketamine: from a blocked channel to new synapses", "layout": "chain", "nodes": [{"id": "k1", "label": "NMDA block on interneurons", "detail": "Ketamine plugs the NMDA channel. Tonically firing GABA interneurons are hit hardest, so their brake on pyramidal neurons weakens."}, {"id": "k2", "label": "Glutamate surge", "detail": "Released from the brake, pyramidal neurons fire a burst of glutamate in the prefrontal cortex."}, {"id": "k3", "label": "AMPA receptors switch on", "detail": "The glutamate acts on AMPA receptors (the NMDA ones are blocked). Blocking AMPA in animals removes the antidepressant effect."}, {"id": "k4", "label": "BDNF release and mTOR signalling", "detail": "Calcium entry releases BDNF, which activates the mTOR pathway and protein synthesis at synapses."}, {"id": "k5", "label": "New spines within hours", "detail": "Dendritic spines lost under chronic stress regrow in the prefrontal cortex within about a day in animal studies."}, {"id": "k6", "label": "Rapid relief that fades", "detail": "Mood and suicidal thinking can ease within hours, but the new connections are fragile; without repeated dosing or other treatment, benefit usually fades within days."}], "caption": "Press Play. Compare this with the slow SSRI chain earlier: here the growth step comes first and fast."}
+{"title": "Ketamine: from a blocked channel to new synapses", "layout": "chain", "nodes": [{"id": "k1", "label": "NMDA block on interneurons", "detail": "Ketamine plugs the NMDA channel. Tonically firing GABA interneurons are hit hardest, so their brake on pyramidal neurons weakens."}, {"id": "k2", "label": "Glutamate surge", "detail": "Released from the brake, pyramidal neurons fire a burst of glutamate in the prefrontal cortex."}, {"id": "k3", "label": "AMPA receptors switch on", "detail": "The glutamate acts on AMPA receptors (the NMDA ones are blocked). Blocking AMPA in animals removes the antidepressant effect."}, {"id": "k4", "label": "BDNF release and mTOR signalling", "detail": "Calcium entry releases BDNF, which activates the mTOR pathway and protein synthesis at synapses."}, {"id": "k5", "label": "New spines within hours", "detail": "Dendritic spines lost under chronic stress regrow in the prefrontal cortex within about a day in animal studies."}, {"id": "k6", "label": "Rapid relief that fades", "detail": "Mood and suicidal thinking can ease within hours, but the new connections are fragile; without repeated dosing or other treatment, benefit usually fades within days."}], "caption": "Compare this with the slow SSRI chain earlier: here the growth step comes first and fast."}
 :::
 
 :::widget journey
@@ -1594,7 +1594,7 @@ Depression that has not responded to **at least two adequate trials** of antidep
 :::
 
 :::widget flow
-{"title": "The treatment-resistant depression pathway", "layout": "tree", "nodes": [{"id": "t0", "label": "Not better after a fair trial", "detail": "Use a rating scale to be sure. Partial response and no response lead to different next steps."}, {"id": "t1", "label": "Check for pseudo-resistance", "parent": "t0", "detail": "Wrong diagnosis (bipolar, psychotic, medical), missed doses, too low a dose or too short a time, alcohol or other substances, interacting drugs, ongoing abuse or stress."}, {"id": "t2", "label": "Partial response", "parent": "t0", "detail": "Something is working. Raise the dose if possible, then augment or combine rather than throw it away."}, {"id": "t2a", "label": "Augment", "parent": "t2", "detail": "Aripiprazole, quetiapine, brexpiprazole or lithium; in the US, lumateperone was added to this list in November 2025."}, {"id": "t2b", "label": "Combine", "parent": "t2", "detail": "Add mirtazapine to an SSRI or SNRI; or bupropion to an SSRI."}, {"id": "t3", "label": "No response at all", "parent": "t0", "detail": "Switch, often to a different class."}, {"id": "t4", "label": "Two or more failures, or severe and urgent", "parent": "t0", "detail": "Treatment-resistant depression. Consider ECT, esketamine, rTMS, a specialist review, and lithium if not yet tried. Psychological therapy runs alongside at every step."}], "caption": "Tap each branch. The tree shows the order of thinking, not a fixed timetable: severity and risk can move a person straight to the last branch."}
+{"title": "The treatment-resistant depression pathway", "layout": "tree", "nodes": [{"id": "t0", "label": "Not better after a fair trial", "detail": "Use a rating scale to be sure. Partial response and no response lead to different next steps."}, {"id": "t1", "label": "Check for pseudo-resistance", "parent": "t0", "detail": "Wrong diagnosis (bipolar, psychotic, medical), missed doses, too low a dose or too short a time, alcohol or other substances, interacting drugs, ongoing abuse or stress."}, {"id": "t2", "label": "Partial response", "parent": "t0", "detail": "Something is working. Raise the dose if possible, then augment or combine rather than throw it away."}, {"id": "t2a", "label": "Augment", "parent": "t2", "detail": "Aripiprazole, quetiapine, brexpiprazole or lithium; in the US, lumateperone was added to this list in November 2025."}, {"id": "t2b", "label": "Combine", "parent": "t2", "detail": "Add mirtazapine to an SSRI or SNRI; or bupropion to an SSRI."}, {"id": "t3", "label": "No response at all", "parent": "t0", "detail": "Switch, often to a different class."}, {"id": "t4", "label": "Two or more failures, or severe and urgent", "parent": "t0", "detail": "Treatment-resistant depression. Consider ECT, esketamine, rTMS, a specialist review, and lithium if not yet tried. Psychological therapy runs alongside at every step."}], "caption": "The tree shows the order of thinking, not a fixed timetable: severity and risk can move a person straight to the last branch."}
 :::
 
 ### The large studies, honestly

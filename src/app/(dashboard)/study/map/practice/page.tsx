@@ -42,7 +42,7 @@ export default async function PracticePage({ searchParams }: { searchParams: Pro
       <header className="space-y-1">
         <p className="text-eyebrow text-link">Practice</p>
         <h1 className="text-h1">{title}</h1>
-        <p className="text-muted-foreground">10 questions picked for you.</p>
+        <p className="text-muted-foreground">Picked for you.</p>
       </header>
       <PracticeRunner key={round} questions={questions} title={title} saving={isLearner} />
     </div>

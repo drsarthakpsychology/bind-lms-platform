@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { requireFeature } from "@/lib/flags";
-import { longCount, longSubjects } from "@/lib/prep/long-server";
-import { BackToPrep, ListRow, PrepFrame, card } from "../ui";
+import { longSubjects } from "@/lib/prep/long-server";
+import { BackToPrep, ListRow, PrepFrame, bigCount, card } from "../ui";
 import { LongLists } from "./lists";
 
 export const metadata: Metadata = { title: "Long answers" };
@@ -15,7 +15,7 @@ export default async function LongHomePage() {
       <BackToPrep />
       <header className="space-y-1">
         <h1 className="text-h1">Long answers</h1>
-        <p className="text-muted-foreground">{longCount()} answers. Plan, write, then check against a model answer.</p>
+        <p className="text-muted-foreground">Write it out, then check it.</p>
       </header>
       <LongLists />
       <section aria-labelledby="long-subjects" className="space-y-2">
@@ -26,7 +26,7 @@ export default async function LongHomePage() {
           <ul className="space-y-2">
             {subjects.map((s) => (
               <li key={s.subject}>
-                <ListRow href={`/prep/${s.subject}?tab=long`} title={s.title} sub={`${s.count} ${s.count === 1 ? "answer" : "answers"}`} />
+                <ListRow href={`/prep/${s.subject}?tab=long`} title={s.title} sub={bigCount(s.count, "answers")} />
               </li>
             ))}
           </ul>

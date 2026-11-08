@@ -68,7 +68,7 @@ The central dialectic is that the therapist **fully accepts** the person as they
   ],
   "summary": "Feelings accepted, then change becomes possible."
  },
- "caption": "DBT balances validation with change. Slide across and rewrite one invalidating sentence you have heard."
+ "caption": "DBT balances validation with change."
 }
 :::
 
@@ -226,7 +226,7 @@ Steven Hayes developed ACT from **relational frame theory**, a behavioural accou
    "label": "Committed action"
   }
  ],
- "caption": "The six processes all point to one centre: psychological flexibility. Tap each and name its opposite."
+ "caption": "The six processes all point to one centre: psychological flexibility."
 }
 :::
 
@@ -459,7 +459,7 @@ Groups are not just a cheaper way to see many people. They offer things individu
   ],
   "summary": "Best for complex or private issues."
  },
- "caption": "Slide across. Many people benefit from both, at different times."
+ "caption": "Many people benefit from both, at different times."
 }
 :::
 
@@ -736,8 +736,7 @@ Q: Session-by-session outcome monitoring helps mainly by:
    "Sees a racing heart as harmless arousal"
   ],
   "summary": "Fear tolerated; life back."
- },
- "caption": "Slide across and link each change to a CBT technique: interoceptive exposure, in vivo exposure, dropping safety behaviours, cognitive restructuring."
+ }
 }
 :::
 

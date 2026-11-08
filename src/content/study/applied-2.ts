@@ -292,7 +292,7 @@ Remedies include pre-performance routines, an external focus of attention (on th
 {
   "kind": "inverted-u",
   "title": "Arousal and performance in sport",
-  "caption": "A shooter or archer (complex, fine motor task) peaks at lower arousal than a weightlifter (simple, strength task). Move the slider, then remember that IZOF says each athlete also has a personal zone."
+  "caption": "A shooter or archer (complex, fine motor task) peaks at lower arousal than a weightlifter (simple, strength task)."
 }
 :::
 

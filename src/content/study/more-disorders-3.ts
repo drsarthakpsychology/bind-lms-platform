@@ -67,7 +67,7 @@ Q: The most effective first-line psychological treatment for bulimia nervosa is:
 ## 3.2 Sleep medicine in depth [core][advanced]
 
 :::widget figure
-{"id": "sleep-centres", "quiz": true, "caption": "Name each numbered part in your head first, then tap to check."}
+{"id": "sleep-centres", "quiz": true}
 :::
 
 :::widget figure
@@ -88,7 +88,7 @@ Its main parts:
 :::
 
 :::widget flow
-{"title": "The four parts of CBT for insomnia", "layout": "tree", "nodes": [{"id": "r", "label": "CBT-I", "detail": "Four to eight sessions, in person, in groups or digital."}, {"id": "a", "label": "Sleep restriction", "detail": "Limit time in bed to the time actually slept, then extend as efficiency rises.", "parent": "r"}, {"id": "b", "label": "Stimulus control", "detail": "Bed only for sleep and sex; up if not sleeping; fixed wake time; no naps.", "parent": "r"}, {"id": "c", "label": "Cognitive therapy", "detail": "Challenge beliefs like 'I can't function without eight hours.'", "parent": "r"}, {"id": "d", "label": "Hygiene and relaxation", "detail": "Caffeine, alcohol, light, wind-down routine, breathing.", "parent": "r"}], "caption": "Tap each part. Sleep restriction and stimulus control do most of the work."}
+{"title": "The four parts of CBT for insomnia", "layout": "tree", "nodes": [{"id": "r", "label": "CBT-I", "detail": "Four to eight sessions, in person, in groups or digital."}, {"id": "a", "label": "Sleep restriction", "detail": "Limit time in bed to the time actually slept, then extend as efficiency rises.", "parent": "r"}, {"id": "b", "label": "Stimulus control", "detail": "Bed only for sleep and sex; up if not sleeping; fixed wake time; no naps.", "parent": "r"}, {"id": "c", "label": "Cognitive therapy", "detail": "Challenge beliefs like 'I can't function without eight hours.'", "parent": "r"}, {"id": "d", "label": "Hygiene and relaxation", "detail": "Caffeine, alcohol, light, wind-down routine, breathing.", "parent": "r"}], "caption": "Sleep restriction and stimulus control do most of the work."}
 :::
 
 ### Sleeping medicines
@@ -105,7 +105,7 @@ Medicines can help **short-term** insomnia, but tolerance, dependence, falls, me
 :::
 
 :::widget curve
-{"kind": "half-life", "title": "Why some sleeping tablets cause a morning hangover", "caption": "A short half-life drug such as zolpidem is mostly gone by morning. A long half-life benzodiazepine such as nitrazepam or diazepam lingers, and repeated nightly doses build up: daytime drowsiness, falls and slowed driving, especially in older people. Move the half-life slider to see the build-up."}
+{"kind": "half-life", "title": "Why some sleeping tablets cause a morning hangover", "caption": "A short half-life drug such as zolpidem is mostly gone by morning. A long half-life benzodiazepine such as nitrazepam or diazepam lingers, and repeated nightly doses build up: daytime drowsiness, falls and slowed driving, especially in older people."}
 :::
 
 :::widget receptor
@@ -183,7 +183,7 @@ How the diagnosis is explained often decides whether treatment works. A good exp
 6. **Explains the next step**: physiotherapy, psychological therapy, or both.
 
 :::widget flow
-{"title": "How functional symptoms are maintained", "layout": "cycle", "nodes": [{"id": "a", "label": "Trigger", "detail": "An injury, illness, panic attack or dissociative episode."}, {"id": "b", "label": "Strong prediction", "detail": "The brain expects weakness, pain or a seizure."}, {"id": "c", "label": "Attention to the body", "detail": "Focusing on the symptom strengthens the prediction."}, {"id": "d", "label": "Real symptom", "detail": "The prediction overrides normal signals: the limb really does not move."}, {"id": "e", "label": "Avoidance and worry", "detail": "Less use, more tests, more fear, which keep the prediction strong."}], "caption": "Press Play. Physiotherapy uses distraction and automatic movement; therapy reduces fear and avoidance."}
+{"title": "How functional symptoms are maintained", "layout": "cycle", "nodes": [{"id": "a", "label": "Trigger", "detail": "An injury, illness, panic attack or dissociative episode."}, {"id": "b", "label": "Strong prediction", "detail": "The brain expects weakness, pain or a seizure."}, {"id": "c", "label": "Attention to the body", "detail": "Focusing on the symptom strengthens the prediction."}, {"id": "d", "label": "Real symptom", "detail": "The prediction overrides normal signals: the limb really does not move."}, {"id": "e", "label": "Avoidance and worry", "detail": "Less use, more tests, more fear, which keep the prediction strong."}], "caption": "Physiotherapy uses distraction and automatic movement; therapy reduces fear and avoidance."}
 :::
 
 ### Treatments

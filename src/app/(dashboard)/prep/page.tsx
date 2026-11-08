@@ -6,7 +6,7 @@ import { PREP_EXAMS, PREP_ONBOARDING_ENABLED, PREP_TITLE } from "@/lib/prep/cata
 import { loadHome } from "@/lib/prep/path";
 import { longCount } from "@/lib/prep/long-server";
 import { cn } from "@/lib/utils";
-import { ListRow, PrepFrame, PrepHero, card, pctText } from "./ui";
+import { ListRow, PrepFrame, PrepHero, bigCount, card, pctText } from "./ui";
 import { prepViewer } from "./viewer";
 
 export const metadata: Metadata = { title: PREP_TITLE, description: `A question bank with answers and explanations for ${PREP_EXAMS.join(", ")}.` };
@@ -35,7 +35,7 @@ export default async function PrepPage() {
           <span className="text-eyebrow">Continue</span>
           <span className="mt-1 block text-xl font-bold leading-tight [overflow-wrap:anywhere] sm:text-2xl">{home.resume.topicTitle}</span>
           <span className="mt-1 block text-sm opacity-85 [overflow-wrap:anywhere]">
-            {home.resume.subjectTitle} · Set {home.resume.set + 1} of {home.resume.sets} · Question {home.resume.index + 1}
+            {home.resume.subjectTitle} · Question {home.resume.index + 1}
           </span>
           <span className="mt-3 inline-flex min-h-11 items-center gap-2 rounded-md border-2 border-foreground bg-foreground px-4 text-sm font-bold text-background">
             Pick up where you left off <ArrowRight className="size-4" aria-hidden />
@@ -44,7 +44,7 @@ export default async function PrepPage() {
       ) : PREP_ONBOARDING_ENABLED ? (
         <Link href="/prep/smart" className="group block rounded-md border-2 border-foreground bg-primary p-4 text-primary-foreground hard-shadow-md transition-transform duration-150 hover:-translate-y-0.5 motion-reduce:transition-none motion-reduce:hover:translate-y-0 focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60 sm:p-5">
           <span className="text-eyebrow">Start here</span>
-          <span className="mt-1 block text-xl font-bold leading-tight sm:text-2xl">10 questions to get going</span>
+          <span className="mt-1 block text-xl font-bold leading-tight sm:text-2xl">A quick first round</span>
           <span className="mt-1 block text-sm opacity-85">Or pick any subject below.</span>
           <span className="mt-3 inline-flex min-h-11 items-center gap-2 rounded-md border-2 border-foreground bg-foreground px-4 text-sm font-bold text-background">
             Start <ArrowRight className="size-4" aria-hidden />
@@ -53,13 +53,13 @@ export default async function PrepPage() {
       ) : null}
 
       <nav aria-label="Practice tools" className="grid grid-cols-1 gap-2.5 min-[420px]:grid-cols-2">
-        <Tool href="/prep/smart" icon={Sparkles} title="Smart practice" text="10 from your weak topics and missed questions" />
+        <Tool href="/prep/smart" icon={Sparkles} title="Smart practice" text="From your weak topics and missed questions" />
         <Tool href="/prep/mock" icon={Clock} title="Mock tests" text="Timed papers with marking" />
         <Tool href="/prep/interview" icon={MessagesSquare} title="Mock interview" text="Practise for the panel" />
         <Tool href={home.saved || !home.wrong ? "/prep/saved" : "/prep/wrong"} icon={Bookmark} title="Saved and wrong" text={home.canSave ? `${home.saved} saved · ${home.wrong} wrong` : `${home.wrong} to look at again`} />
       </nav>
 
-      <ListRow href="/prep/long" title="Long answers" sub={`${longCount()} written answers with model answers`} />
+      <ListRow href="/prep/long" title="Long answers" sub={bigCount(longCount(), "written answers") ?? "Written answers"} />
 
       <section aria-labelledby="subjects" className="space-y-3">
         <h2 id="subjects" className="text-h2">
@@ -69,7 +69,7 @@ export default async function PrepPage() {
           <ul className="space-y-2">
             {core.map((s) => (
               <li key={s.subject}>
-                <ListRow href={`/prep/${s.subject}`} title={s.title} sub={`${s.stats.total} questions`} side={pctText(s.stats)} stats={s.stats} />
+                <ListRow href={`/prep/${s.subject}`} title={s.title} sub={bigCount(s.stats.total, "questions")} side={pctText(s.stats)} stats={s.stats} />
               </li>
             ))}
           </ul>
@@ -80,7 +80,7 @@ export default async function PrepPage() {
           <ul className="space-y-2 border-t-2 border-dashed border-foreground/40 pt-3">
             {optional.map((s) => (
               <li key={s.subject}>
-                <ListRow href={`/prep/${s.subject}`} title="UGC NET Paper 1: general paper" tag="Optional" sub={`${s.stats.total} questions on teaching, research and reasoning`} side={pctText(s.stats)} stats={s.stats} />
+                <ListRow href={`/prep/${s.subject}`} title="UGC NET Paper 1: general paper" tag="Optional" sub="Teaching, research and reasoning" side={pctText(s.stats)} stats={s.stats} />
               </li>
             ))}
           </ul>

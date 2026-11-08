@@ -7,8 +7,8 @@ import { BackPill } from "./back";
  * Every activity (games, Practice tools, Smart practice tools) sits in this
  * frame: one slim row with Back and the activity's name, then the activity at
  * full width. Back returns to the section the student came from
- * (navigation/sections.ts). `purpose` and `how` are kept for the show-once
- * tip; the frame itself no longer prints them on every visit.
+ * (navigation/sections.ts). The how-to, when an activity needs one, is its
+ * show-once tip (components/help), never a line in the frame.
  */
 export function ActivityFrame({
   title,
@@ -16,10 +16,6 @@ export function ActivityFrame({
   children,
 }: {
   title: string;
-  /** One line on what this is for (for the show-once tip; not shown here). */
-  purpose?: string;
-  /** How to play (for the show-once tip; not shown here). */
-  how?: string[];
   fallback?: string;
   children: React.ReactNode;
 }) {

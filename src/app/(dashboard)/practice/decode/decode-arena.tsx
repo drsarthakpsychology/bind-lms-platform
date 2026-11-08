@@ -47,7 +47,7 @@ export function DecodeArena({ entries }: { entries: IdiomEntry[] }) {
   return (
     <div className="space-y-4">
       <div className="flex items-center justify-between text-small text-muted-foreground">
-        <span>Phrase {idx + 1} of {entries.length}</span>
+        <span>Phrase {idx + 1}</span>
         <span>Pick every meaning that could be true</span>
       </div>
 

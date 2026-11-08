@@ -84,7 +84,7 @@ For most people these reactions **fade gradually** as life returns to its rhythm
 :::
 
 :::widget curve
-{"kind": "inverted-u", "title": "The window of arousal", "caption": "Too little arousal leaves people numb and switched off; too much leaves them flooded and unable to think. Recovery after trauma means widening the middle zone where a person can feel, think and cope. Move the sliders to see how arousal and task difficulty interact."}
+{"kind": "inverted-u", "title": "The window of arousal", "caption": "Too little arousal leaves people numb and switched off; too much leaves them flooded and unable to think. Recovery after trauma means widening the middle zone where a person can feel, think and cope."}
 :::
 
 :::recall

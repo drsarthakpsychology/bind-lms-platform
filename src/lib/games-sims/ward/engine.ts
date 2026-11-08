@@ -5,6 +5,8 @@
  * The outcome score blends where the dials end up with how sound each
  * decision was.
  */
+import type { ItemTags } from "../item-tags";
+
 export type Vars = { risk: number; trust: number; insight: number; family: number; adherence: number };
 export type VarKey = keyof Vars;
 export type Cond = { flag?: string; notFlag?: string; v?: VarKey; gte?: number; lte?: number };
@@ -17,6 +19,8 @@ export type Beat = { text: string; when?: Cond };
 export type Chapter = { id: string; title: string; beats: Beat[]; decisions: Decision[] };
 export type Ending = { min: number; title: string; text: string };
 export type Campaign = {
+  /** Library tags (topic, level, objective, exams, Study module). */
+  tags?: ItemTags;
   id: string;
   title: string;
   patient: string;
