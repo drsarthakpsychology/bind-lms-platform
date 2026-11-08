@@ -1,5 +1,6 @@
 import * as React from "react";
-import { AlertTriangle, RotateCcw } from "lucide-react";
+import Link from "next/link";
+import { AlertTriangle, ArrowLeft, RotateCcw } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -9,14 +10,17 @@ import { cn } from "@/lib/utils";
  * trust-preserving: icon, title, short copy, a retry action, and an optional
  * error digest as a support reference. Boundary files pass their own wrapper
  * height: full viewport for public routes, inside-the-shell for /(dashboard).
+ * `homeHref` adds a way out when trying again does not help.
  */
 export function ErrorState({
   onRetry,
   digest,
+  homeHref,
   className,
 }: {
   onRetry: () => void;
   digest?: string;
+  homeHref?: string;
   className?: string;
 }) {
   return (
@@ -36,14 +40,23 @@ export function ErrorState({
         <div className="space-y-1.5">
           <h2 className="text-h2">Something went wrong</h2>
           <p className="mx-auto max-w-sm text-small text-muted-foreground">
-            This page hit an unexpected snag. Nothing you&apos;ve done is lost.
-            Try again, and if it keeps happening we&apos;ll get it sorted.
+            Nothing you&apos;ve done is lost.
           </p>
         </div>
-        <Button onClick={onRetry} variant="default">
-          <RotateCcw className="size-4" aria-hidden />
-          Try again
-        </Button>
+        <div className="flex flex-wrap items-center justify-center gap-2">
+          <Button onClick={onRetry} variant="default">
+            <RotateCcw className="size-4" aria-hidden />
+            Try again
+          </Button>
+          {homeHref ? (
+            <Button asChild variant="outline">
+              <Link href={homeHref}>
+                <ArrowLeft className="size-4" aria-hidden />
+                Back to Home
+              </Link>
+            </Button>
+          ) : null}
+        </div>
         {digest ? (
           <p className="text-caption text-muted-foreground">
             Reference <span className="font-mono">{digest}</span>
