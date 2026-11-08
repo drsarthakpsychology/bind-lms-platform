@@ -105,6 +105,14 @@ Q: A man on aripiprazole develops new urges to gamble. The best explanation is:
 ## 5.3 Beyond dopamine: serotonin, glutamate and muscarinic drugs [core][advanced]
 For seventy years every antipsychotic has worked mainly by turning down D2 signalling. That changed in September 2024, when the US approved **xanomeline with trospium**, the first schizophrenia medicine that does not block dopamine receptors directly.
 
+:::widget figure
+{"id": "serotonin-projections", "focus": ["cortex"]}
+:::
+
+:::widget figure
+{"id": "cholinergic-projections"}
+:::
+
 ### How the muscarinic approach works
 - **Xanomeline** is an agonist at muscarinic **M1 and M4** receptors in the brain. M4 receptors sit on neurons in the striatum and on the inputs to the dopamine cell bodies; switching them on reduces dopamine release in the striatum from upstream. M1 action in the cortex may help thinking.
 - On its own, xanomeline also activates muscarinic receptors in the gut, sweat glands and heart: vomiting, sweating, diarrhoea. Early trials stopped for this reason.

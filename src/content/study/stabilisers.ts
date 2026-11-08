@@ -71,6 +71,10 @@ Q: Which statement about mood stabilisers is TRUE?
 ## 0.2 GABA: the brain's brake, and medicines that press it [core][starting]
 The brain balances an accelerator and a brake. **Glutamate** is the main accelerator. **GABA** is the main brake. When GABA binds its receptor (the **GABA-A receptor**), a channel opens and lets chloride into the neuron, making it less likely to fire.
 
+:::widget figure
+{"id": "synapse", "focus": ["receptor"]}
+:::
+
 :::widget receptor
 {"receptor": "GABA-A (benzodiazepine site)", "title": "Four kinds of key at the benzodiazepine site", "caption": "The benzodiazepine site is a second lock on the GABA-A receptor. Diazepam acts like a full agonist there: it makes GABA work much harder. Flumazenil is an antagonist: it sits in the site and blocks benzodiazepines, which is why it reverses an overdose. Some experimental compounds are inverse agonists: they make GABA work less and cause anxiety and seizures. Partial agonists were tried as calming drugs with less dependence."}
 :::
@@ -539,6 +543,15 @@ Q: A patient on valproate is started on lamotrigine. The correct approach is:
 :::
 
 ## 1.5 Lithium in practice: who responds, starting, stopping, kidney and thyroid [core][beginner]
+
+:::widget figure
+{"id": "endocrine", "focus": ["thyroid", "parathyroid"]}
+:::
+
+:::widget figure
+{"id": "pituitary", "focus": ["posterior", "son"]}
+:::
+
 ### Who responds best
 | Better response | Poorer response |
 |---|---|

@@ -5,6 +5,10 @@ export const part1 = String.raw`
 ## 1.1 Thinking, memory and the ageing brain [core][starting]
 **Cognition** means the brain's thinking skills: paying attention, remembering, using language, planning and solving problems, finding your way, recognising faces and objects, and understanding other people. Problems with cognition are the core of this module.
 
+:::widget figure
+{"id": "brain-lateral"}
+:::
+
 ### The six areas of thinking
 Clinicians look at six areas (called **cognitive domains**):
 1. **Attention**: staying focused, doing two things at once, not being distracted.
@@ -613,6 +617,15 @@ Q: Which activity is usually lost earliest in dementia?
 :::
 
 ## 2.4 Alzheimer's disease [core][beginner]
+
+:::widget figure
+{"id": "hippocampus", "focus": ["parahip"]}
+:::
+
+:::widget figure
+{"id": "cholinergic-projections", "focus": ["nbm"]}
+:::
+
 :::widget flow
 {"title": "The amyloid cascade, simplified", "layout": "chain", "nodes": [{"id": "a", "label": "Amyloid builds up", "detail": "Amyloid-beta fragments clump outside neurons into plaques, starting decades before symptoms."}, {"id": "b", "label": "Tau spreads", "detail": "Tau protein twists into tangles inside neurons, spreading from the medial temporal lobe outwards."}, {"id": "c", "label": "Inflammation", "detail": "Microglia react; inflammation adds to damage."}, {"id": "d", "label": "Synapses and neurons lost", "detail": "Connections fail, then cells die; acetylcholine falls."}, {"id": "e", "label": "Symptoms", "detail": "Memory first, then language, visuospatial skills, behaviour and daily function."}], "caption": "Press Play. Anti-amyloid antibodies act at the first step; tau and inflammation are newer targets. The model is useful but debated: amyloid alone does not explain everything."}
 :::
@@ -690,6 +703,15 @@ Q: In early Alzheimer's disease, the most typical problem is:
 :::
 
 ## 2.5 The other dementias [core][beginner]
+
+:::widget figure
+{"id": "arterial-territories"}
+:::
+
+:::widget figure
+{"id": "basal-ganglia", "focus": ["nigra"]}
+:::
+
 ### Vascular dementia
 Caused by damage from **strokes** (large or many small ones) or by narrowing of the small blood vessels deep in the brain. Features:
 - **Slowed thinking**, poor planning and attention, more than memory loss.

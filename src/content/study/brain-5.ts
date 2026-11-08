@@ -45,6 +45,11 @@ At rest the membrane is about 25 to 40 times more permeable to potassium than to
 :::
 
 ### The action potential, phase by phase
+
+:::widget figure
+{"id": "neuron", "quiz": true, "caption": "Name each numbered part in your head first, then tap to check."}
+:::
+
 1. **Graded inputs** arrive on dendrites and the cell body as small **postsynaptic potentials** that spread and fade.
 2. They are summed at the **axon initial segment** (the **axon hillock** region), which has the highest density of voltage-gated sodium channels. This is where the spike usually starts.
 3. At **threshold** (about minus 55 mV), voltage-gated **sodium channels open** in a self-reinforcing burst: sodium enters, the cell depolarises further, more channels open. This is the **rising phase**.
@@ -101,6 +106,11 @@ At rest the membrane is about 25 to 40 times more permeable to potassium than to
 :::
 
 ### What makes a signal travel faster
+
+:::widget figure
+{"id": "myelin", "quiz": true, "caption": "Name each numbered part in your head first, then tap to check."}
+:::
+
 - **Wider axons** conduct faster (less internal resistance). The squid giant axon, about half a millimetre wide, let Alan Hodgkin and Andrew Huxley work out the ionic basis of the spike in 1952 using the **voltage clamp**.
 - **Myelin** insulates the axon so current jumps from one **node of Ranvier** to the next: **saltatory conduction**. Sodium channels cluster at the nodes. This is faster and uses far less energy.
 - Unmyelinated axons conduct **continuously**, slowly.
@@ -253,6 +263,11 @@ Charles Sherrington named the **synapse** in 1897. The argument over whether neu
 :::
 
 ### The vesicle cycle, step by step
+
+:::widget figure
+{"id": "synapse", "focus": ["vesicle", "fusion", "cachannel"]}
+:::
+
 1. **Synthesis**: small transmitters are made in the terminal; **neuropeptides** are made in the cell body and shipped down the axon.
 2. **Loading**: transporters pump transmitter into vesicles. **VMAT2** loads dopamine, noradrenaline, serotonin and histamine; others load acetylcholine, glutamate and GABA.
 3. **Docking and priming**: vesicles are tethered at **active zones** by **SNARE** proteins: one on the vesicle (**synaptobrevin**, also called VAMP) twists together with two on the membrane (**syntaxin** and **SNAP-25**).
@@ -285,6 +300,11 @@ Bernard Katz showed that transmitter is released in **quanta**: each vesicle rel
 :::
 
 ### Toxins and diseases that teach the steps
+
+:::widget figure
+{"id": "nmj"}
+:::
+
 | Agent or disease | Step affected | Result |
 |---|---|---|
 | **Botulinum toxin** | Cuts SNAREs at cholinergic terminals; no acetylcholine release | Floppy (flaccid) paralysis; used in tiny doses for dystonia, spasticity, migraine and cosmetic use |
@@ -395,6 +415,11 @@ export const begTransmitters = String.raw`
 The table in 2.3 gave you the whole family in one view. Now take each system in turn, as exams do: **how it is made, where it comes from, what it binds, how it is stopped, and what goes wrong**. Start with the fast amino acids and acetylcholine.
 
 ### Glutamate: the main accelerator
+
+:::widget figure
+{"id": "neuron-types", "focus": ["pyramidal"]}
+:::
+
 - **Made** from glutamine (by the enzyme glutaminase) in nerve terminals. Used glutamate is taken up by **astrocytes**, turned back into glutamine (by glutamine synthetase) and handed back to the neuron: the **glutamate-glutamine cycle**.
 - **Where**: almost every cortical pyramidal neuron and most long projections. Glutamate is the transmitter at most excitatory synapses in the brain.
 - **Ion-channel receptors**:
@@ -437,6 +462,11 @@ The table in 2.3 gave you the whole family in one view. Now take each system in 
 Glycine is the main inhibitory transmitter in the **spinal cord and brainstem**, acting at its own chloride channel. **Strychnine** blocks it. Glycine also has a second, opposite job in the brain as the **co-agonist at NMDA receptors**, which is why raising glycine or D-serine has been tried in schizophrenia.
 
 ### Acetylcholine: the first transmitter discovered
+
+:::widget figure
+{"id": "cholinergic-projections"}
+:::
+
 - **Made** from choline and acetyl-coenzyme A by **choline acetyltransferase (ChAT)**. The supply of choline, taken up by a high-affinity transporter, limits the rate.
 - **Stopped** by **acetylcholinesterase (AChE)** in the cleft, which splits it into choline and acetate within about a millisecond.
 - **Where**:
@@ -585,6 +615,11 @@ One chain makes dopamine, noradrenaline and adrenaline. Each neuron simply stops
 | Serotonin | 5-hydroxyindoleacetic acid (5-HIAA) |
 
 ### Serotonin (5-HT)
+
+:::widget figure
+{"id": "serotonin-projections"}
+:::
+
 - **Made** from the amino acid **tryptophan** by **tryptophan hydroxylase** (rate-limiting) to 5-HTP, then by the decarboxylase to serotonin. In the **pineal gland**, serotonin is turned into **melatonin** at night.
 - **Where**: the **raphe nuclei** along the midline of the brainstem. The upper (dorsal and median) raphe project to the whole forebrain; the lower raphe to the spinal cord.
 - **Most of the body's serotonin**, about 90 per cent, is made in the **gut**; platelets carry it in the blood. Serotonin does not cross the blood-brain barrier, so brain and body pools are separate.
@@ -600,6 +635,11 @@ One chain makes dopamine, noradrenaline and adrenaline. Each neuron simply stops
 | 5-HT4, 5-HT6, 5-HT7 | Gs | Gut movement, memory, body clock; vortioxetine and lurasidone act at 5-HT7 |
 
 ### Noradrenaline
+
+:::widget figure
+{"id": "noradrenaline-projections"}
+:::
+
 - **Where**: the **locus coeruleus** in the pons, only tens of thousands of neurons on each side but projecting to the whole brain and spinal cord; more in the lateral tegmental area.
 - **Receptors**: alpha-1 (Gq; blood vessels, arousal), alpha-2 (Gi; autoreceptor brake; clonidine, guanfacine, lofexidine are agonists, mirtazapine an antagonist), beta-1 (heart), beta-2 (lungs), all G-protein receptors.
 - **Clinical links**: arousal and attention (ADHD medicines raise it), panic and PTSD hyperarousal (prazosin, an alpha-1 blocker, is used for trauma nightmares), and opioid withdrawal, when an unbraked locus coeruleus causes sweating, gooseflesh and restlessness (clonidine and lofexidine calm it).
@@ -683,6 +723,10 @@ Orexin neurons sit in the **lateral hypothalamus**; two research groups discover
 - **Loss of orexin neurons** causes **narcolepsy type 1**: sudden sleep attacks, **cataplexy** (sudden loss of muscle tone triggered by laughter or surprise), sleep paralysis and vivid hallucinations at sleep onset. Orexin in the spinal fluid is very low.
 - **Orexin receptor blockers** (suvorexant, lemborexant, daridorexant) are a newer type of sleeping medicine.
 - Orexin also drives reward-seeking and is studied in addiction.
+
+:::widget figure
+{"id": "sleep-centres", "focus": ["orexin"]}
+:::
 
 ### Purines and gases
 - **Adenosine** builds up the longer you are awake and creates **sleep pressure**; **caffeine** works by blocking adenosine receptors. ATP is also released as a co-transmitter.

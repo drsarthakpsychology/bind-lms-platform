@@ -171,6 +171,10 @@ Q: A student uses a long formula to solve every statistics question, even when t
 - **Productivity** (generativity): a finite set of words and rules can make endless new sentences, including ones never heard before.
 - **Displacement**: we can talk about things not here and not now (last year's monsoon, an imaginary dragon).
 
+:::widget figure
+{"id": "language-areas"}
+:::
+
 ### The levels of language
 | Level | Unit | Example |
 |---|---|---|

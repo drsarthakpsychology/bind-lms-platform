@@ -435,6 +435,11 @@ Q: A man is completely convinced that if he does not wash 50 times his family wi
 :::
 
 ## 1.3 Causes and differential diagnosis [core][beginner]
+
+:::widget figure
+{"id": "prefrontal", "focus": ["mofc", "acc"]}
+:::
+
 ### Causes
 - **Genes**: OCD is familial; twin heritability is roughly 40 to 50%, higher for childhood onset. First-degree relatives also have more tics and related disorders.
 - **Brain circuits**: overactivity in loops linking the **orbitofrontal cortex** and **anterior cingulate** to the **striatum** (caudate) and **thalamus** (detail in the Advanced level). These normalise partly after successful SSRI or CBT treatment.

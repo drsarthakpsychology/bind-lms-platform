@@ -34,6 +34,10 @@ Psychology tries to:
 ### Levels and perspectives
 A single behaviour can be studied at several **levels of analysis**: **biological** (genes, brain, hormones), **psychological** (thoughts, emotions, learning) and **social-cultural** (family, community, culture). Together these make the **biopsychosocial** approach.
 
+:::widget figure
+{"id": "brain-lateral"}
+:::
+
 The main **perspectives** you will meet in this module and across the course:
 | Perspective | Main question | Example: a child who bullies others |
 |---|---|---|

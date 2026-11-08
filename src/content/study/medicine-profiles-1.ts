@@ -161,6 +161,10 @@ Q: Adding valproate to lamotrigine requires:
 ## 1.3 Side effects come from receptors [core][starting]
 Most side effects are not random. They come from a medicine acting on receptors **other than** the one it was meant for, or acting on the right receptor in the wrong part of the body. If you know a medicine's receptor profile, you can predict its side effects.
 
+:::widget figure
+{"id": "autonomic"}
+:::
+
 ### The side-effect map
 | If a medicine blocks... | Expect... |
 |---|---|

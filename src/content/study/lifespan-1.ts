@@ -400,6 +400,11 @@ Q: Which statement about alcohol in pregnancy is most accurate?
 :::
 
 ## 1.5 The newborn and infant: reflexes, senses and motor milestones [core][starting]
+
+:::widget figure
+{"id": "reflex-arc"}
+:::
+
 ### Reflexes
 A **reflex** is an automatic, inborn response to a stimulus. Some help survival; others are signs of a healthy nervous system. Most **primitive reflexes** disappear in the first months as the cortex matures; one that persists too long, or is absent, can be a sign of neurological problems.
 | Reflex | What you see | Roughly disappears by |
@@ -1107,6 +1112,11 @@ Q: A 5-year-old who falls off her bicycle says, "That happened because I told a 
 :::
 
 ## 2.6 Language, emotional and social development [core][beginner]
+
+:::widget figure
+{"id": "language-areas"}
+:::
+
 ### Language milestones
 | Approximate age | Milestone |
 |---|---|

@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 import type { FigureDef } from "../types";
-import { C, Groove, LAT, LateralBrain, Mirror, Note, Shade, ell, folded, poly, sm, tube } from "./kit";
+import { C, Groove, LateralBrain, Mirror, Note, Shade, ell, folded, poly, sm, tube } from "./kit";
 import type { FigureUid } from "../types";
 
 /*

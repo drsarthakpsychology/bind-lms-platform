@@ -3,6 +3,19 @@ export const part2 = String.raw`
 # Part III · Advanced: brain, regulation, body and practice
 
 ## 3.1 The emotional brain [core][advanced]
+
+:::widget figure
+{"id": "limbic-system"}
+:::
+
+:::widget figure
+{"id": "amygdala-fear"}
+:::
+
+:::widget figure
+{"id": "prefrontal", "focus": ["vmpfc", "acc", "mofc"]}
+:::
+
 ### From Papez to the limbic system
 In 1937 the neuroanatomist **James Papez** proposed a loop of structures for emotion, the **Papez circuit**: hippocampus → fornix → mammillary bodies → mammillothalamic tract → anterior thalamic nuclei → cingulate cortex → parahippocampal (entorhinal) cortex → back to the hippocampus. The idea was that the cingulate cortex turns hypothalamic activity into conscious feeling.
 
@@ -270,6 +283,15 @@ Q: Which measure of emotional intelligence is a performance test with scored ans
 :::
 
 ## 3.3 Stress, the body and illness [core][advanced]
+
+:::widget figure
+{"id": "autonomic", "quiz": true, "caption": "Name each numbered part in your head first, then tap to check."}
+:::
+
+:::widget figure
+{"id": "hpa-axis", "quiz": true, "caption": "Name each numbered part in your head first, then tap to check."}
+:::
+
 ### Two stress systems
 The stress response runs through two linked systems:
 1. **The SAM axis** (sympathetic-adrenal-medullary): within seconds, the sympathetic nerves and the adrenal medulla release **adrenaline and noradrenaline**. This is Cannon's fight or flight.

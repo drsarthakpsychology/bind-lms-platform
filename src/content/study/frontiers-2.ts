@@ -5,6 +5,14 @@ export const part2 = String.raw`
 ## 3.1 Neuroinflammation: the immune system and the mind [core][advanced]
 For a long time the brain was thought to be sealed off from the immune system. We now know immune signals reach the brain, and that **inflammation can change mood, energy and thinking**. Think of how you feel with a bad fever: tired, withdrawn, low, slow. That "**sickness behaviour**" looks a lot like depression.
 
+:::widget figure
+{"id": "glia", "focus": ["microglia"]}
+:::
+
+:::widget figure
+{"id": "gut-brain"}
+:::
+
 ### What is known
 - On average, groups of people with depression have **slightly higher** blood markers of inflammation (such as **CRP** and **interleukin-6**) than people without depression.
 - This is true for **a subgroup**, perhaps a quarter of depressed people, not for everyone.

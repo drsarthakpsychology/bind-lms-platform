@@ -328,6 +328,15 @@ Q: SSRIs for anxiety are started at a low dose because:
 # Part IV · Advanced: mechanisms
 
 ## 4.1 The fear circuit in detail [core][advanced]
+
+:::widget figure
+{"id": "amygdala-fear", "quiz": true, "caption": "Name each numbered part in your head first, then tap to check."}
+:::
+
+:::widget figure
+{"id": "limbic-system"}
+:::
+
 ### Two roads to the amygdala
 Sensory information reaches the **lateral amygdala** by two routes (LeDoux):
 - A fast, crude **"low road"** from the thalamus, which can trigger a response before you know what you saw.
@@ -401,6 +410,11 @@ Q: Which structure is most linked to the recall of extinction learning?
 :::
 
 ## 4.2 Anxiolytics at the receptor level [core][advanced]
+
+:::widget figure
+{"id": "synapse", "focus": ["receptor"]}
+:::
+
 ### SSRIs: why late, and why jittery at first
 Blocking the serotonin transporter raises serotonin first around the cell bodies in the raphe, where it acts on **5-HT1A autoreceptors** that slow firing. Over weeks these autoreceptors **desensitise**, firing recovers, and serotonin release in the forebrain rises. The delay in benefit tracks this adaptation. Early anxiety and agitation are thought to involve stimulation of **5-HT2C** (and 5-HT2A, 5-HT3) receptors before adaptation, which is why starting low helps.
 

@@ -155,6 +155,14 @@ Q: A man with long-standing heavy drinking accuses his wife of affairs with ever
 ## 2.3 Alcohol withdrawal, delirium tremens and Wernicke-Korsakoff [core][beginner]
 Alcohol withdrawal ranges from a mild morning shake to a life-threatening delirium. Knowing the timeline lets you predict and prevent the dangerous stages.
 
+:::widget figure
+{"id": "limbic-system", "focus": ["mammillary"]}
+:::
+
+:::widget figure
+{"id": "cerebellum", "focus": ["vermis"]}
+:::
+
 :::widget guess
 {"prompt": "After the last drink, within about how many hours do the first withdrawal symptoms (tremor, sweating, anxiety) usually begin in a dependent drinker?", "min": 0, "max": 72, "unit": "hours", "answer": [6, 12], "reveal": "Within about 6 to 12 hours, often while there is still some alcohol in the blood. That is why dependent drinkers shake in the morning and drink to steady themselves. Symptoms usually peak over the first two to three days.", "clinician": "Uncomplicated withdrawal: onset 6 to 12 hours (sometimes earlier), peak 24 to 72 hours, resolving by 5 to 7 days. Withdrawal seizures: usually 12 to 48 hours (peak about 24 hours), generalised tonic-clonic, often single or in a short cluster. Alcoholic hallucinosis: 12 to 48 hours, clear consciousness. Delirium tremens: 48 to 96 hours after the last drink, lasting about 3 days (up to a week)."}
 :::
@@ -241,6 +249,14 @@ Q: Only a minority of patients with Wernicke's encephalopathy show the full tria
 
 ## 2.4 Opioids: intoxication, overdose and withdrawal [core][beginner]
 Opioids include natural ones (morphine, codeine, opium), semi-synthetic ones (heroin, buprenorphine) and synthetic ones (methadone, tramadol, fentanyl). They act on **opioid receptors**, mainly the **mu** receptor, to relieve pain and produce a warm, drowsy euphoria.
+
+:::widget figure
+{"id": "medulla-section"}
+:::
+
+:::widget figure
+{"id": "pons-section", "focus": ["lc"]}
+:::
 
 ### Overdose: the deadly risk
 Opioid overdose kills by **stopping breathing**. Signs:

@@ -1,5 +1,5 @@
 import type { FigureDef } from "../types";
-import { Branches, C, Groove, Note, Shade, Solid, ell, sm, tree } from "./kit";
+import { Branches, C, Note, Shade, Solid, ell, sm, tree } from "./kit";
 
 /*
  * Nerve cells, myelin, glia and the synapse.

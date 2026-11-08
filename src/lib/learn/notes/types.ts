@@ -14,6 +14,8 @@ export type Note = {
   sections: Section[];
   /** Lay phrase → clinical term pairs for this topic ("Say it clinically"). */
   terms?: [string, string][];
+  /** Labelled anatomy figures (ids from the study figure library) shown after the sections. */
+  figures?: { id: string; focus?: string[]; quiz?: boolean; caption?: string }[];
   /** Where the quiz for this note lives. */
   quiz: { lessonId?: string; domain?: Domain };
 };

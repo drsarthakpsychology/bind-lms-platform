@@ -147,6 +147,10 @@ Q: Medicine A has a half-life of 6 hours, medicine B of 6 days. Which is TRUE?
 ## 0.4 Receptors, doses and the shape of a response [core][starting]
 Most medicines act by fitting a **target**: a receptor, a pump (transporter), an enzyme or an ion channel. A receptor is a lock; the body's own messenger is the key.
 
+:::widget figure
+{"id": "synapse", "focus": ["receptor"]}
+:::
+
 :::widget receptor
 {"receptor": "a receptor", "title": "Four ways a medicine can sit in a lock", "caption": "Try each one. A full agonist turns the lock fully. A partial agonist turns it part way. An antagonist sits in the lock and turns nothing, but blocks the real key. An inverse agonist turns it backwards, below its resting activity. Every psychiatric medicine you will meet fits one of these, at one or more receptors."}
 :::
@@ -338,6 +342,11 @@ Q: A man on lurasidone takes it at bedtime on an empty stomach and his psychosis
 :::
 
 ## 1.2 Distribution, protein binding and the blood-brain barrier [core][beginner]
+
+:::widget figure
+{"id": "glia", "focus": ["endfeet", "capillary"]}
+:::
+
 ### Volume of distribution
 The **volume of distribution** (Vd) is an imaginary volume that links the amount of drug in the body to its blood level. A drug that stays in the blood has a small Vd; a drug that spreads into fat and tissues has a large Vd, sometimes many times the body's real volume.
 

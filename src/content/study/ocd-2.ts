@@ -422,6 +422,14 @@ Q: Which statement about benzodiazepines in OCD is accurate?
 ## 3.3 Neuromodulation and neurosurgery [core][advanced]
 For a small group with severe, disabling OCD despite everything, brain-based treatments are options.
 
+:::widget figure
+{"id": "horizontal-section", "focus": ["alic"]}
+:::
+
+:::widget figure
+{"id": "tms"}
+:::
+
 | Treatment | What it is | Evidence and status |
 |---|---|---|
 | Deep TMS | Magnetic pulses through a special H-coil over the medial prefrontal cortex and ACC, often during symptom provocation | FDA-cleared for OCD in 2018 after a sham-controlled trial; modest benefit; widely available in Indian centres |

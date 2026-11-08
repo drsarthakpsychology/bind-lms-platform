@@ -9,6 +9,7 @@ import { getLearnState, initLearnStore, setLearnState, useLearnState } from "@/l
 import { toPoints } from "@/lib/psychopharm/points";
 import { cn } from "@/lib/utils";
 import { useExplainView, ViewToggle } from "./view-toggle";
+import { Figure } from "@/components/study/figures/figure";
 import n from "./notes.module.css";
 import l from "./learn.module.css";
 
@@ -114,6 +115,15 @@ export function NoteView({
           )}
         </section>
       ))}
+
+      {note.figures?.length ? (
+        <section className={n.reveal} aria-label="Pictures">
+          <h2 className="text-h2">See it</h2>
+          {note.figures.map((f, k) => (
+            <Figure key={`${f.id}-${k}`} d={f} />
+          ))}
+        </section>
+      ) : null}
 
       {note.terms?.length ? (
         <section className={n.reveal}>

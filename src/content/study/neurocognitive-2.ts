@@ -5,6 +5,10 @@ export const part2 = String.raw`
 ## 3.1 Cognitive testing in depth: MMSE, MoCA and ACE-III [core][advanced]
 Cognitive tests help you **detect**, **describe** and **track** cognitive problems. They do not diagnose on their own. A score must always be read alongside the history, daily function, education, language, culture, hearing, vision and mood.
 
+:::widget figure
+{"id": "brodmann", "quiz": true, "caption": "Name each numbered part in your head first, then tap to check."}
+:::
+
 ### The three tests you will use most
 | Test | Total | Time | What it covers | Strengths and weaknesses |
 |---|---|---|---|---|
@@ -73,6 +77,10 @@ Q: On ACE-III, low verbal fluency and language with preserved memory and visuosp
 
 ## 3.2 Medicines for dementia [core][advanced]
 No medicine yet cures dementia. Current medicines fall into three groups: those that **ease symptoms** for a time, those that **slow** early Alzheimer's disease modestly by removing amyloid, and those used for **distressing behavioural symptoms**.
+
+:::widget figure
+{"id": "cholinergic-projections", "quiz": true, "caption": "Name each numbered part in your head first, then tap to check."}
+:::
 
 :::widget journey
 {"drug": "donepezil", "target": "acetylcholinesterase at cholinergic synapses in the cortex and hippocampus", "routes": ["oral"], "notes": {"liver": "Broken down by CYP2D6 and CYP3A4; strong inhibitors can raise levels and side effects.", "target": "By blocking the enzyme that breaks down acetylcholine, donepezil boosts the signal from the surviving cholinergic neurons. It does not stop the disease.", "out": "A very long half-life (about three days) allows once-daily dosing; it takes a couple of weeks to reach a steady level."}, "caption": "Follow donepezil to its target. The same extra acetylcholine in the gut and heart explains nausea, diarrhoea and a slow pulse."}
@@ -230,6 +238,11 @@ Q: Antipsychotics in older people with dementia are associated with:
 :::
 
 ## 3.4 Delirium in depth [core][advanced]
+
+:::widget figure
+{"id": "ras", "quiz": true, "caption": "Name each numbered part in your head first, then tap to check."}
+:::
+
 ### Why does delirium happen?
 No single mechanism explains all delirium. Leading ideas:
 - **Neurotransmitter imbalance**: too little **acetylcholine** and too much **dopamine**. This is why anticholinergic medicines so often cause delirium, and why dopamine-blocking drugs can calm agitation.

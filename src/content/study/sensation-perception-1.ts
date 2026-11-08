@@ -5,6 +5,10 @@ export const part1 = String.raw`
 ## 1.1 From energy to experience [core][starting]
 Light, sound waves, molecules in the air and pressure on the skin are just **physical energy**. None of them is "red", "loud", "jasmine" or "soft" until a nervous system turns it into experience. Two steps do that work.
 
+:::widget figure
+{"id": "eye"}
+:::
+
 - **Sensation** is the first step: a sense organ picks up energy and turns it into nerve signals. This conversion is called **transduction**. Rods and cones in the eye turn light into signals; hair cells in the inner ear turn vibration into signals.
 - **Perception** is the second step: the brain organises and interprets those signals, so that a pattern of light becomes "my friend waving across the platform at Dadar station".
 

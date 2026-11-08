@@ -11,6 +11,10 @@ export const part2 = String.raw`
    - **Practical**: self-care, work, money management, travel, safety, schoolwork organisation.
 3. **Onset during the developmental period**, that is, in childhood or adolescence.
 
+:::widget figure
+{"id": "brain-vesicles"}
+:::
+
 The test score alone never makes the diagnosis. A child with an IQ of 68 who manages school, friends and self-care with little help does not have an intellectual disability. A child whose score is a little higher but who cannot manage daily life without a lot of support might.
 
 ### How severe?
@@ -184,6 +188,10 @@ Q: Which medicine has good evidence for severe irritability and aggression in au
 
 ## 2.3 ADHD [core][beginner]
 In the Starting level you met the two groups of ADHD symptoms. Now we apply the full rules, look at how ADHD changes with age, what looks like it, and how treatment is planned.
+
+:::widget figure
+{"id": "prefrontal", "focus": ["dlpfc"]}
+:::
 
 :::widget guess
 {"prompt": "Before what age must several ADHD symptoms have been present?", "min": 3, "max": 18, "unit": "years", "answer": [12, 12], "reveal": "Before 12 years. The person does not need a diagnosis by then, but several symptoms must have been there. If attention problems first appear in the teens or adulthood, think first of something else: depression, anxiety, substance use, sleep problems, or a medical cause.", "clinician": "DSM-5-TR criterion B: several inattentive or hyperactive-impulsive symptoms present prior to age 12 years (raised from age 7 in DSM-IV). Collateral history and old school reports are invaluable in adults."}

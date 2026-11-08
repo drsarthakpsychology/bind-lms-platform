@@ -4,6 +4,15 @@ export const part3 = String.raw`
 # Part IV · Advanced: mechanisms, new medicines and the global picture
 
 ## 4.1 Dopamine and glutamate in depth [core][advanced]
+
+:::widget figure
+{"id": "dopamine-pathways", "quiz": true, "caption": "Name each numbered part in your head first, then tap to check."}
+:::
+
+:::widget figure
+{"id": "coronal-section", "focus": ["ventricle", "hippocampus"]}
+:::
+
 ### Four dopamine pathways
 | Pathway | From and to | Relevance |
 |---|---|---|
@@ -131,6 +140,11 @@ Q: Which statement about xanomeline-trospium is correct as of late 2026?
 :::
 
 ## 4.3 Genes, development and immunity [core][advanced]
+
+:::widget figure
+{"id": "brain-vesicles", "focus": ["telen"]}
+:::
+
 ### What the genetics now shows
 - The largest genome-wide study (2022) identified **287 loci**, concentrated in genes expressed in neurons and involved in **synaptic function**. Common variants together explain only a modest share of risk in any one person.
 - Exome sequencing (SCHEMA) found ultra-rare damaging variants in about **10 genes** that each sharply raise risk, several involved in glutamate signalling (for example GRIN2A).

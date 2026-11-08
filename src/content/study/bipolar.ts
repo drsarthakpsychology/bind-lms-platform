@@ -555,6 +555,11 @@ Q: A woman has had recurrent depressions and one clear episode of hypomania, nev
 :::
 
 ## 2.2 Why it happens [core][beginner]
+
+:::widget figure
+{"id": "sleep-centres", "focus": ["scn"]}
+:::
+
 ### Genetics: the strongest of the common psychiatric disorders
 - Twin studies give heritability of about 60 to 85%, and up to about 90% in some.
 - Against the general lifetime risk of about 1 in 100 that you met in the Starting level, a first-degree relative carries about 5 to 10%.
@@ -1238,6 +1243,11 @@ Q: A relapse signature is:
 # Part IV · Advanced: mechanisms
 
 ## 4.1 The biology in depth [core][advanced]
+
+:::widget figure
+{"id": "endocrine", "focus": ["thyroid", "parathyroid"]}
+:::
+
 ### Dopamine: up in mania, down in depression
 - In 2.2 you met the link between dopamine and mania. The fuller **dopamine dysregulation** idea proposes raised signalling in mania and reduced signalling in bipolar depression, with a failure of the receptor adjustments that would normally restore balance between the two states.
 - PET studies suggest raised D2/D3 receptor availability and striatal dopamine function in mania, with the reverse pattern in depression. One idea is that the brain over-corrects, swinging between the two states.

@@ -79,6 +79,14 @@ Q: In a 4 Ps formulation, a parent who lets an anxious child stay home whenever 
 ## 3.2 ADHD medicines in depth, and adult ADHD [core][advanced]
 Medicines for ADHD are among the most effective in all of psychiatry, with effect sizes in children around 0.8 for stimulants. They are also controlled, misunderstood and feared. This section gives you what you need to discuss them accurately.
 
+:::widget figure
+{"id": "dopamine-pathways", "focus": ["mesocortical"]}
+:::
+
+:::widget figure
+{"id": "noradrenaline-projections", "focus": ["cortex"]}
+:::
+
 ### How stimulants work
 **Methylphenidate** blocks the **dopamine transporter** and the **noradrenaline transporter**, the pumps that take these chemicals back into the nerve ending. More dopamine and noradrenaline stay in the gap, especially in the **prefrontal cortex**, where they strengthen the "signal" of the task at hand over the "noise" of distractions. **Amphetamines** block the same pumps and also push dopamine out of the nerve ending.
 

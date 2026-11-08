@@ -474,6 +474,19 @@ Q: A disinhibited, overly familiar 3-year-old after institutional neglect most l
 # Part IV · Advanced: mechanisms and the evidence
 
 ## 4.1 The neurobiology of PTSD [core][advanced]
+
+:::widget figure
+{"id": "amygdala-fear"}
+:::
+
+:::widget figure
+{"id": "hippocampus"}
+:::
+
+:::widget figure
+{"id": "hpa-axis", "focus": ["feedback"]}
+:::
+
 ### A circuit that cannot switch off the alarm
 - **Amygdala**: hyperresponsive to threat cues, including masked faces the person is not aware of.
 - **Ventromedial prefrontal cortex and rostral anterior cingulate**: under-active, so extinction memories are poorly recalled and the amygdala is poorly inhibited.
