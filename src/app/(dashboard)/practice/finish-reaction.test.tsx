@@ -116,4 +116,22 @@ describe("finish sticker in the Practice tools", () => {
     play("protective", "perpetuating");
     expect(showEndReaction).toHaveBeenCalledWith("wrong");
   });
+
+  it("Weak-spots drill: picking the stronger line every time is happy, the weak one sad", () => {
+    const items: DrillItem[] = [1, 2].map((n) => ({ id: `w${n}`, skill: "Open questions", scenario: `Moment ${n}`, weakLine: `Weak ${n}`, strongLine: `Strong ${n}`, why: "Because." }));
+    const play = (which: "Weak" | "Strong") => {
+      render(<WeakSpotsDrill items={items} />);
+      for (const n of [1, 2]) {
+        fireEvent.click(screen.getByRole("button", { name: new RegExp(`${which} ${n}`) }));
+        fireEvent.click(screen.getByTestId("drill-next"));
+      }
+      expect(screen.getByText(/Drill complete/)).toBeTruthy();
+    };
+    play("Strong");
+    expect(showEndReaction).toHaveBeenCalledWith("streak");
+    cleanup();
+    showEndReaction.mockClear();
+    play("Weak");
+    expect(showEndReaction).toHaveBeenCalledWith("wrong");
+  });
 });
