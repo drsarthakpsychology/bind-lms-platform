@@ -72,4 +72,13 @@ describe("finish sticker in the MSE trainer", () => {
     expect(screen.getByText(/All 11 domains tagged/)).toBeTruthy();
     expect(showEndReaction).toHaveBeenCalledWith("streak");
   });
+
+  it("Level 4: a blank MSE is sad", async () => {
+    render(<FullMseLevel />);
+    await act(async () => {
+      fireEvent.click(screen.getByRole("button", { name: "Submit MSE" }));
+    });
+    expect(screen.getByText(/domains matched/)).toBeTruthy();
+    expect(showEndReaction).toHaveBeenCalledWith("wrong");
+  });
 });
