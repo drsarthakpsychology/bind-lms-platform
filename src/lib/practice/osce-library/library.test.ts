@@ -1,6 +1,7 @@
 /** OSCE library contract: count, unique ids, tags, briefs, checklists, model points, no dashes or citations. */
 import { describe, expect, it } from "vitest";
 import { SEED_OSCE_STATIONS } from "@/lib/practice/osce";
+import { MODULE_IDS, textProblems } from "@/lib/library/checks";
 
 /** Raise as batches land; the section target is 500. */
 const MIN_STATIONS = 112;
@@ -44,5 +45,23 @@ describe("OSCE library", () => {
       expect(CITATION.test(added), s.id).toBe(false);
     }
     for (const s of SEED_OSCE_STATIONS.slice(12)) expect(DASH.test(JSON.stringify(s)), s.id).toBe(false);
+  });
+
+  it("library stations pass the shared text checks and link to a real Study module", () => {
+    const problems = SEED_OSCE_STATIONS.slice(12).flatMap((s) => textProblems(s.id, s));
+    expect(problems).toEqual([]);
+    for (const s of SEED_OSCE_STATIONS) expect(MODULE_IDS.has(s.tags!.module), `${s.id} ${s.tags!.module}`).toBe(true);
+  });
+
+  it("checklists have no repeated items and difficulty is spread across the ladder", () => {
+    for (const s of SEED_OSCE_STATIONS) {
+      const items = s.checklist.map((c) => c.item.toLowerCase());
+      expect(new Set(items).size, s.id).toBe(items.length);
+    }
+    const n = SEED_OSCE_STATIONS.length;
+    for (const lv of [1, 2, 3, 4, 5]) {
+      const share = SEED_OSCE_STATIONS.filter((s) => s.tags!.difficulty === lv).length / n;
+      expect(share, `level ${lv}`).toBeGreaterThan(n >= 500 ? 0.12 : 0);
+    }
   });
 });
