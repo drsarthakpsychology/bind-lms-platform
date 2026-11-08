@@ -42,7 +42,7 @@ export default async function LongTopicPage({ params, searchParams }: Params) {
           <li key={x.id}>
             <Link
               href={longHref(x)}
-              className="flex min-h-14 items-center gap-3 rounded-md border-2 border-foreground bg-card px-4 py-3 transition-transform duration-150 hover:-translate-y-0.5 hover:hard-shadow-sm active:translate-y-px motion-reduce:transition-none motion-reduce:hover:translate-y-0 focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60"
+              className="flex min-h-14 items-center gap-3 rounded-lg border-2 border-foreground bg-card px-4 py-3 transition-transform duration-150 hover:-translate-y-0.5 hover:hard-shadow-sm active:translate-y-px motion-reduce:transition-none motion-reduce:hover:translate-y-0 focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60"
             >
               <span className="w-7 shrink-0 self-start pt-0.5 font-mono text-sm font-bold text-link" aria-hidden>
                 {(p.page - 1) * LONG_PAGE + i + 1}.

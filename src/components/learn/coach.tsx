@@ -139,7 +139,7 @@ export function Coach({ serverState, save, domain }: { serverState: LearnState |
   const shownDef = (x: Concept) => (view === "clinician" ? x.clinician : x.student);
 
   return (
-    <div className={cn("mx-auto flex min-h-[calc(100dvh-4rem)] max-w-2xl flex-col px-4 pt-4 pb-6")}>
+    <div className={cn("mx-auto flex min-h-[calc(100dvh-var(--top-h)-4.5rem)] max-w-2xl flex-col")}>
       <div className="flex items-center gap-3">
         <div className="h-4 flex-1 overflow-hidden rounded-full border-2 border-foreground bg-muted">
           <div className="h-full rounded-full bg-primary transition-[width] duration-500" style={{ width: `${progress}%` }} />
@@ -348,7 +348,7 @@ function CoachIntro({ domain, title, state, onStart }: { domain: Domain | "all";
   const m = domainMastery(state.coach, domain);
   const conf = topConfusions(state.coach, 3);
   return (
-    <div className="mx-auto max-w-xl space-y-6 px-4 py-8">
+    <div className="mx-auto max-w-xl space-y-6">
       <div className="text-center">
         <Chai mood="happy" size={130} />
         <h1 className="text-h1">{title}</h1>
@@ -395,7 +395,7 @@ function CoachReport({ levels }: { levels: Record<string, number> }) {
   const missed = rows.filter((r) => (state.coach.concepts[r.c.id]?.teach ?? false));
   const suggest = Array.from(new Map(missed.flatMap((r) => similarConcepts(r.c, 2)).map((x) => [x.id, x])).values()).slice(0, 4);
   return (
-    <div className="mx-auto max-w-xl space-y-4 px-4 pb-10">
+    <div className="mx-auto max-w-xl space-y-4 pb-10">
       <h2 className="text-h2">What changed</h2>
       <ul className="grid gap-2">
         {rows.map((r) => (

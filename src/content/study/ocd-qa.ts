@@ -1,7 +1,6 @@
 /* OCD and related disorders: Q&A bank (Starting, Beginner, Advanced). Original text written for VIBHA School of Psychology. */
 export const qa = String.raw`
 ## 4.3 Q&A bank · Starting [core][starting]
-Think each question through, then open the answer.
 
 :::qa Does having a horrible intrusive thought mean you secretly want it to happen? [starting]
 ### Short answer
@@ -136,7 +135,6 @@ Collecting is organised, themed and enjoyable, and rooms can still be used. Hoar
 :::
 
 ## 4.4 Q&A bank · Beginner [core][beginner]
-Think each question through, then open the answer.
 
 :::qa Explain the cognitive-behavioural model of OCD. [beginner]
 ### Short answer
@@ -353,7 +351,6 @@ The Brown Assessment of Beliefs Scale rates conviction, fixity and insight.
 :::
 
 ## 4.5 Q&A bank · Advanced [core][advanced]
-Think each question through, then open the answer.
 
 :::qa Why must SSRIs be given at higher doses and for longer in OCD? [advanced]
 ### Short answer

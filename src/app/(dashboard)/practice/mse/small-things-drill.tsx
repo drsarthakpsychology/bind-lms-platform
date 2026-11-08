@@ -26,7 +26,7 @@ export function SmallThingsDrill() {
   return (
     <div className="space-y-3">
       {!done ? (
-        <div className="rounded-md border-2 border-border bg-background p-4">
+        <div className="rounded-lg border-2 border-border bg-background p-4">
           <p className="text-caption font-semibold text-muted-foreground">
             The small things · {idx + 1} · {item.skill}
           </p>
@@ -71,7 +71,7 @@ export function SmallThingsDrill() {
           )}
         </div>
       ) : (
-        <div className="rounded-md border-2 border-border bg-background p-4 text-small text-muted-foreground">
+        <div className="rounded-lg border-2 border-border bg-background p-4 text-small text-muted-foreground">
           Every small thing you practice here is a real second-channel of the
           MSE. Module reviews love the ones nobody notices: the past tense, the
           pause, the look at the family member.

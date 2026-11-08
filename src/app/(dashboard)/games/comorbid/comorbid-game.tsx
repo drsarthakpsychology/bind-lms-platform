@@ -69,7 +69,7 @@ export function ComorbidGame({ board, finish }: { board: AccuracyBoardData; fini
 function Intro({ board, onStart }: { board: AccuracyBoardData; onStart: (mode: Setup["mode"], level: Level) => void }) {
   useHotkeys({ "1": () => onStart("bot", 1), "2": () => onStart("bot", 2), "3": () => onStart("bot", 3), p: () => onStart("pass", 2) });
   return (
-    <div className={cn("mx-auto max-w-2xl space-y-6 px-4 py-6", m.rise)}>
+    <div className={cn("mx-auto max-w-2xl space-y-6", m.rise)}>
       <section className="space-y-2">
         <h2 className="flex items-center gap-1.5 text-body-strong">
           <Bot className="size-4" aria-hidden /> Play the bot
@@ -152,7 +152,7 @@ function Table({ play, setPlay, xp, onDone, onAgain, onExit, board }: { play: Pl
   const selCard = hand.find((c) => c.uid === sel) ?? null;
 
   return (
-    <div className="mx-auto max-w-3xl space-y-4 px-4 py-5">
+    <div className="mx-auto max-w-3xl space-y-4">
       <div className="flex flex-wrap items-center gap-2">
         <span className="flex items-center gap-1.5 font-semibold">
           <Layers className="size-5" aria-hidden /> Comorbid
@@ -373,7 +373,7 @@ function End({ play, xp, onAgain, onExit, board }: { play: Play; xp: number | nu
   const right = mine.filter((e) => e.ok).length;
   const title = g.winner === "draw" ? "A draw." : pass ? `${g.seats[g.winner as 0 | 1].name} wins.` : g.winner === 0 ? "You win." : `${g.seats[1].name} wins.`;
   return (
-    <div className={cn("mx-auto max-w-3xl space-y-5 px-4 py-6", m.rise)}>
+    <div className={cn("mx-auto max-w-3xl space-y-5", m.rise)}>
       <div className="flex flex-wrap items-end gap-3">
         <h1 className="text-h1">{title}</h1>
         <Pill tone={g.winner === 0 ? "good" : g.winner === "draw" ? "part" : "bad"} className={m.stamp}>

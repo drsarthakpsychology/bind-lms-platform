@@ -3,7 +3,6 @@ export const part3 = String.raw`
 # Part V · Exam zone: Q&A bank
 
 ## 5.1 Q&A bank · Starting [starting]
-Think each question through, or jot an answer, before you open it.
 
 :::qa A patient with capacity refuses an antidepressant you strongly recommend. Which principles conflict, and what do you do? [starting]
 ### Principles in tension

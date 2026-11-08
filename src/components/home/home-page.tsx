@@ -194,7 +194,7 @@ function Ticker() {
 /* ========================================================= WHAT YOU GET */
 function WhatYouGet() {
   return (
-    <section id="programme" className={`${s.section} ${s.white} ${s.grid}`}>
+    <section id="programme" className={`${s.section} ${s.white}`}>
       <div className={s.wrap}>
         <div className={s.headWithArt}>
           <SectionHead tag="What you get" title="Everything you get" accent="in 16 weeks." />
@@ -312,7 +312,7 @@ function Different() {
 /* ======================================== EVERY DISORDER + THERAPY PLAN */
 function EveryDisorder() {
   return (
-    <section id="disorders" className={`${s.section} ${s.white} ${s.grid}`}>
+    <section id="disorders" className={`${s.section} ${s.white}`}>
       <div className={s.wrap}>
         <SectionHead
           tag="Every disorder, the whole plan"
@@ -437,7 +437,7 @@ const FREE_CALM = CALM_TOOLS.map((c) => ({ href: `/free/calm/${c.id}`, title: c.
 
 function FreeStrip() {
   return (
-    <section id="free" className={`${s.section} ${s.white} ${s.grid}`}>
+    <section id="free" className={`${s.section} ${s.white}`}>
       <div className={s.wrap}>
         <div className={s.headWithArt}>
           <SectionHead
@@ -498,7 +498,7 @@ function FreeStrip() {
 /* ============================================================= FACULTY */
 function Faculty() {
   return (
-    <section id="faculty" className={`${s.section} ${s.white} ${s.grid}`}>
+    <section id="faculty" className={`${s.section} ${s.white}`}>
       <div className={s.wrap}>
         <div className={s.headWithArt}>
           <SectionHead
@@ -874,7 +874,7 @@ function depthPanels() {
 /* ================================================================= FAQ */
 function Faq() {
   return (
-    <section id="faq" className={`${s.section} ${s.white} ${s.grid}`}>
+    <section id="faq" className={`${s.section} ${s.white}`}>
       <div className={s.wrap}>
         <div className={s.headWithArt}>
           <SectionHead tag="FAQ" title="Still wondering?" accent="Quick answers." />

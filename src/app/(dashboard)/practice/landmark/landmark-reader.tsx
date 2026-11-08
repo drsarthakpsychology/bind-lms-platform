@@ -27,7 +27,7 @@ export function LandmarkReader({ cases }: { cases: LandmarkCase[] }) {
       </div>
 
       {/* the case */}
-      <div className="rounded-md border-2 border-border bg-card p-5 hard-shadow-sm">
+      <div className="rounded-lg border-2 border-border bg-card p-5 hard-shadow-sm">
         <h2 className="text-base font-semibold">{c.title}</h2>
         <p className="mt-3 text-small">{c.story}</p>
         <div className="mt-3 grid gap-3 sm:grid-cols-2">
@@ -63,7 +63,7 @@ export function LandmarkReader({ cases }: { cases: LandmarkCase[] }) {
       </div>
 
       {/* quiz: one question at a time (keyed per case so state resets). */}
-      <div className="rounded-md border-2 border-border bg-card p-5">
+      <div className="rounded-lg border-2 border-border bg-card p-5">
         <h3 className="text-base font-semibold">Check yourself</h3>
         <div className="mt-3">
           <QuizCheck

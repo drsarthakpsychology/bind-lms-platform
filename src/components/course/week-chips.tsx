@@ -25,7 +25,7 @@ export function WeekChips({
   return (
     <nav
       aria-label="Jump to a week"
-      className="sticky top-0 z-20 -mx-4 border-b-2 border-transparent bg-background/95 px-4 py-2 backdrop-blur sm:-mx-6 sm:px-6 lg:top-16 lg:-mx-10 lg:px-10"
+      className="sticky top-0 z-20 -mx-4 border-b-2 border-transparent bg-background/95 px-4 py-2 backdrop-blur sm:-mx-6 sm:px-6 md:top-[var(--top-h)] lg:-mx-10 lg:px-10"
     >
       <ul className="flex gap-2 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
         {weeks.map((w) => (

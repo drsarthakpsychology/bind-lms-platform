@@ -56,7 +56,7 @@ export default async function FormulationPage({ searchParams }: { searchParams: 
   const seed = all.find((c) => c.id === firstId) ?? all[0];
 
   return (
-    <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6">
+    <div className="mx-auto max-w-4xl">
       <BackPill className="mb-4" />
       <ToolHeader title="Build the formulation" tip={{ id: "formulation", steps: ["Sort the factors into the 5 Ps.", "Write the story in your own words.", "Compare with the answer."] }} />
 

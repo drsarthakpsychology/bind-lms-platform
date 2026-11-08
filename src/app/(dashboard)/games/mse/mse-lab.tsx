@@ -94,7 +94,7 @@ export function MseLab({ serverState, save, board, submit }: { serverState: Lear
 function Intro({ board, onStart }: { board: AccuracyBoardData; onStart: (l: Level) => void }) {
   useHotkeys({ "1": () => onStart(1), "2": () => onStart(2), "3": () => onStart(3) });
   return (
-    <div className={cn("mx-auto max-w-2xl space-y-6 px-4 py-6", m.rise)}>
+    <div className={cn("mx-auto max-w-2xl space-y-6", m.rise)}>
       <h1 className="text-h2">Pick a level</h1>
       <div className="grid gap-3 sm:grid-cols-3">
         {LEVELS.map((l) => (
@@ -183,7 +183,7 @@ function Round({ play, setPlay, onExcerptDone, onFinish }: { play: Play; setPlay
   const levelLabel = LEVELS.find((l) => l.id === play.level)!.label;
 
   return (
-    <div className="mx-auto max-w-2xl space-y-4 px-4 py-5">
+    <div className="mx-auto max-w-2xl space-y-4">
       <div className="flex flex-wrap items-center gap-2">
         <span className="flex items-center gap-1.5 font-semibold">
           <ScanEye className="size-5" aria-hidden /> Excerpt {play.seen.length}
@@ -337,7 +337,7 @@ function Summary({ p, bestEver, board, onAgain }: { p: Play; bestEver: number; b
   const acc = p.tagsDone ? p.tagsScore / p.tagsDone : 0;
   const xp = Math.round(p.tagsScore * 5) + 10;
   return (
-    <div className={cn("mx-auto max-w-2xl space-y-5 px-4 py-6", m.rise)}>
+    <div className={cn("mx-auto max-w-2xl space-y-5", m.rise)}>
       <h1 className="text-h1">{acc >= 0.85 ? "Sharp eye." : acc >= 0.6 ? "Good tagging." : "Keep practising the look-alikes."}</h1>
       <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
         <Stat label="Accuracy" value={`${pct(acc)}%`} />

@@ -310,7 +310,7 @@ function ScoreStep({
       title="Your score"
       description={`Debrief · ${difficulty} patient`}
     >
-      <div className="rounded-md border-2 border-border bg-card p-6 text-center hard-shadow-sm">
+      <div className="rounded-lg border-2 border-border bg-card p-6 text-center hard-shadow-sm">
         <p className="text-h1 text-numeric">{overall.toFixed(1)}</p>
         <p className="mt-0.5 text-small text-muted-foreground">/ 5.0 overall</p>
         <StatusPill tone="neutral" label="AI-generated, not yet faculty reviewed" className="mt-3" />
@@ -382,7 +382,7 @@ function InsightStep({
       description="The headline insight from your session."
     >
       {premature > 0 ? (
-        <div className="rounded-md border-2 border-border bg-card p-4">
+        <div className="rounded-lg border-2 border-border bg-card p-4">
           <p className="flex items-center gap-2 text-small text-status-pending-fg">
             <AlertTriangle className="size-4" aria-hidden />
             You reassured the patient {premature} time{premature > 1 ? "s" : ""} before fully exploring
@@ -392,7 +392,7 @@ function InsightStep({
         </div>
       ) : null}
 
-      <div className="rounded-md border-2 border-border bg-card p-4">
+      <div className="rounded-lg border-2 border-border bg-card p-4">
         <p className={`flex items-center gap-2 text-small ${askedWhyToday ? "text-status-success-fg" : "text-status-pending-fg"}`}>
           {askedWhyToday ? (
             <><CircleCheck className="size-4" aria-hidden /> You asked why the patient came in TODAY: that question opens the whole frame.</>
@@ -436,7 +436,7 @@ function QuotesStep({
   if (quotes.length === 0) {
     return (
       <MobileSection title="Three moments, done better" description="No flagged moments this session.">
-        <div className="rounded-md border-2 border-border bg-card p-5 text-small text-muted-foreground">
+        <div className="rounded-lg border-2 border-border bg-card p-5 text-small text-muted-foreground">
           Every line landed. Nothing to rework here.
         </div>
       </MobileSection>
@@ -449,7 +449,7 @@ function QuotesStep({
       title={`Moment ${quoteIdx + 1} of ${quotes.length}`}
       description="A verbatim line from your transcript with a better alternative."
     >
-      <div className="rounded-md border-2 border-border bg-card p-4 hard-shadow-sm">
+      <div className="rounded-lg border-2 border-border bg-card p-4 hard-shadow-sm">
         <p className="text-small">
           <span className="font-semibold text-muted-foreground">You said: </span>
           <span className="italic">&ldquo;{q.quote}&rdquo;</span>
@@ -513,13 +513,13 @@ function MissedStep({
       }
     >
       {!revealMissed ? (
-        <div className="rounded-md border-2 border-border bg-card p-5 text-small text-muted-foreground">
+        <div className="rounded-lg border-2 border-border bg-card p-5 text-small text-muted-foreground">
           Ready to see them?
         </div>
       ) : (
         <ul className="space-y-2">
           {missed.length === 0 ? (
-            <li className="rounded-md border-2 border-border bg-card p-4 text-small text-muted-foreground">
+            <li className="rounded-lg border-2 border-border bg-card p-4 text-small text-muted-foreground">
               Nothing missed. You unlocked everything this patient was ready to share.
             </li>
           ) : (
@@ -607,7 +607,7 @@ function ProvisionalAwareStat({
 }) {
   if (provisional?.includes(dim)) {
     return (
-      <div className="rounded-md border-2 border-dashed border-border bg-background p-3">
+      <div className="rounded-lg border-2 border-dashed border-border bg-background p-3">
         <p className="text-caption text-muted-foreground">{label}</p>
         <p className="mt-0.5 text-base font-semibold">Not marked yet</p>
         <p className="mt-1 text-caption text-muted-foreground">{hint}</p>
@@ -634,7 +634,7 @@ function ComparisonStrip({ branch, currentOverall }: { branch: BranchInfo; curre
       : null;
 
   return (
-    <div className="rounded-md border-2 border-primary bg-card p-4 hard-shadow-sm">
+    <div className="rounded-lg border-2 border-primary bg-card p-4 hard-shadow-sm">
       <h2 className="text-base font-semibold">Same patient, same moment, two futures</h2>
       <p className="mt-1 text-small text-muted-foreground">
         You rewound to turn {branchedFromTurn} and tried again. Here&apos;s how the first
@@ -642,7 +642,7 @@ function ComparisonStrip({ branch, currentOverall }: { branch: BranchInfo; curre
       </p>
 
       <div className="mt-4 grid gap-3 sm:grid-cols-2">
-        <div className="rounded-md border-2 border-border bg-background p-4">
+        <div className="rounded-lg border-2 border-border bg-background p-4">
           <p className="text-caption font-semibold text-muted-foreground">Attempt 1 · turn {branchedFromTurn}</p>
           {attempt1Student ? (
             <p className="mt-2 text-small italic">

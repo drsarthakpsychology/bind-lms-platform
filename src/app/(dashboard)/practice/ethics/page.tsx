@@ -66,7 +66,7 @@ export default async function EthicsPage() {
   const dilemmas = todaysDilemmas(daySeed, 3);
 
   return (
-    <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
+    <div className="mx-auto max-w-3xl">
       <BackPill className="mb-4" />
       <ToolHeader title="Ethics, law & referral" tip={{ id: "ethics", steps: ["Read the dilemma and decide.", "Then see what happens and what the law says."] }} />
 

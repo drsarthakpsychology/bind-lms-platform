@@ -4,7 +4,6 @@ export const qaBank = String.raw`
 # Part VIII · Exam zone: Q&A bank
 
 ## 8.1 Q&A bank · Starting [starting]
-Read the question, think of your own answer first (say it out loud or jot three points), then open the model answer. These questions use only what you met in the Starting level.
 
 ### Ideas and words
 

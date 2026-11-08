@@ -11,6 +11,8 @@ import { courseProgress, moduleProgress } from "@/lib/study/progress";
 import type { StudyModule } from "@/lib/study/types";
 import { cn } from "@/lib/utils";
 import { MarksList, RelatedLab, useSectionMarks, type LabLink } from "./marks";
+import { PageHeader } from "@/components/design-system/page-header";
+import { backLinkClass } from "@/components/design-system/back-link";
 
 const EMPTY = emptyState();
 type Save = (s: LearnState) => Promise<unknown>;
@@ -46,7 +48,7 @@ function ContinueCard({ next, onGo }: { next: Next; onGo?: () => void }) {
         {next.kind === "read" ? <BookOpen className="size-7" aria-hidden /> : next.kind === "checkpoint" ? <ListChecks className="size-7" aria-hidden /> : next.kind === "write" ? <PenLine className="size-7" aria-hidden /> : next.kind === "practise" ? <Zap className="size-7" aria-hidden /> : <RotateCcw className="size-7" aria-hidden />}
       </span>
       <span className="min-w-0 flex-1">
-        <span className="block text-xs font-semibold uppercase tracking-wide opacity-80">{l.eyebrow}</span>
+        <span className="block text-eyebrow opacity-80">{l.eyebrow}</span>
         <span className="block text-xl font-bold leading-tight break-words sm:text-2xl">{l.title}</span>
         {l.sub ? <span className="mt-0.5 block text-sm font-semibold opacity-80">{l.sub}</span> : null}
       </span>
@@ -80,10 +82,11 @@ export function StudyHome({ modules, serverState, save, owner = "" }: { modules:
 
   return (
     <div className="mx-auto max-w-5xl space-y-8">
-      <header className="space-y-2">
-        <h1 className="text-h1">Study</h1>
-        <p className="max-w-2xl text-muted-foreground">{progress.pct}% complete</p>
-      </header>
+      <PageHeader
+        title="Study"
+        description={`${progress.pct}% complete`}
+        className="pb-0"
+      />
 
       <ContinueCard next={next} />
 
@@ -113,7 +116,7 @@ export function StudyHome({ modules, serverState, save, owner = "" }: { modules:
                     {s.complete ? <Check className="size-6 text-primary-foreground" aria-hidden /> : <span aria-hidden>{m.emoji}</span>}
                   </span>
                   <span className="min-w-0 flex-1">
-                    <span className="block text-xs font-bold uppercase opacity-80">
+                    <span className="block text-eyebrow opacity-80">
                       Module {m.num}
                     </span>
                     <span className="block text-lg font-bold leading-tight break-words">{m.title}</span>
@@ -205,15 +208,15 @@ export function ModuleView({
 
   return (
     <div className="mx-auto max-w-4xl space-y-7">
-      <Link href="/study" className="inline-flex min-h-11 items-center gap-1 rounded-md border-2 border-foreground bg-card px-3 py-1.5 text-sm font-bold">
+      <Link href="/study" className={backLinkClass}>
         <ArrowLeft className="size-4" aria-hidden /> Back to Study
       </Link>
 
       <header className="relative overflow-hidden rounded-3xl border-2 border-foreground bg-brand p-5 text-brand-foreground sm:p-7">
-        <p className="text-xs font-bold uppercase opacity-90">
+        <p className="text-eyebrow opacity-90">
           Module {m.num}
         </p>
-        <h1 className="mt-2 break-words text-3xl font-black leading-[1.05] tracking-tight sm:text-5xl short:lg:text-4xl">{m.title}</h1>
+        <h1 className="mt-2 break-words text-display">{m.title}</h1>
         <p className="mt-2 max-w-2xl font-semibold opacity-90">{m.tagline}</p>
         <div className="mt-4 max-w-md">
           <Bar pct={prog.pct} tone="primary" />
@@ -257,7 +260,7 @@ export function ModuleView({
         </ul>
       </details>
 
-      <section id="steps" aria-label="Steps" className="scroll-mt-24 space-y-6">
+      <section id="steps" aria-label="Steps" className="scroll-mt-shell space-y-6">
         {/* Step 1: Read */}
         <div className={cn("rounded-3xl border-2 border-foreground bg-card p-5", step === 1 && "hard-shadow-md")}>
           <StepHead n={1} title="Read the notes" done={s.readDone === s.readTotal} current={step === 1} sub={`${s.readDone} of ${s.readTotal} sections read`} />
@@ -268,7 +271,7 @@ export function ModuleView({
               const part = k === 0 || reading[k - 1].part !== sec.part ? sec.part : undefined;
               return (
                 <li key={sec.id}>
-                  {part ? <p className="mt-4 mb-1 text-xs font-bold tracking-wide text-muted-foreground uppercase">{part}</p> : null}
+                  {part ? <p className="mt-4 mb-1 text-eyebrow text-muted-foreground">{part}</p> : null}
                   <Link
                     href={sectionHref(m, sec)}
                     className={cn("flex items-center gap-3 rounded-2xl border-2 px-3 py-2.5 transition-colors", here ? "border-foreground bg-primary text-primary-foreground" : "border-transparent hover:border-foreground")}
@@ -292,7 +295,7 @@ export function ModuleView({
         </div>
 
         {/* Step 2: Write */}
-        <div id="write" className={cn("scroll-mt-24 rounded-3xl border-2 border-foreground bg-card p-5", step === 2 && "hard-shadow-md")}>
+        <div id="write" className={cn("scroll-mt-shell rounded-3xl border-2 border-foreground bg-card p-5", step === 2 && "hard-shadow-md")}>
           <StepHead n={2} title="Write it out" done={s.written} current={step === 2} sub="On paper, from memory." />
           <p className="mt-3 leading-relaxed">{m.writeTask}</p>
           {s.written ? (

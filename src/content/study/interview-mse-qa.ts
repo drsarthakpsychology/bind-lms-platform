@@ -1,7 +1,6 @@
 /* Module 1 · Interview and MSE: Q&A bank (Starting, Beginner, Advanced). Original text written for VIBHA School of Psychology. */
 export const qa = String.raw`
 ## 5.5 Q&A bank · Starting [core][starting]
-Think each question through, then open the answer.
 
 :::qa Why do clinicians spend so long just listening at the start of an interview? [starting]
 ### Short answer
@@ -132,7 +131,6 @@ Mood is the person's own description of how they have been feeling (their words,
 :::
 
 ## 5.6 Q&A bank · Beginner [core][beginner]
-Think each question through, then open the answer.
 
 :::qa Why is the psychiatric interview described as both the examination and the first treatment? [beginner]
 ### Short answer
@@ -335,7 +333,6 @@ Under thought content, record whether ideas of death or suicide are present, the
 :::
 
 ## 5.7 Q&A bank · Advanced [core][advanced]
-Think each question through, then open the answer.
 
 :::qa Explain Jaspers' distinction between understanding and explaining, and its clinical uses and limits. [advanced]
 ### Short answer

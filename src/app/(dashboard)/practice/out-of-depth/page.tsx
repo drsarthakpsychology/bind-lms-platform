@@ -12,7 +12,7 @@ export const dynamic = "force-dynamic";
 export default async function OutOfDepthPage() {
   await requireFeature("ethics");
   return (
-    <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
+    <div className="mx-auto max-w-3xl">
       <BackPill className="mb-4" />
       <p className="text-eyebrow text-muted-foreground">Out of depth</p>
       <h1 className="mt-1 text-h1">Know when to refer</h1>

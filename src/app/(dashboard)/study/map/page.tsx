@@ -13,6 +13,9 @@ import type { TopicLevel } from "@/lib/learn/model/placement";
 import { PREP_ONBOARDING_ENABLED } from "@/lib/prep/catalog";
 import { cn } from "@/lib/utils";
 import { STATE_ICON, StateTag, btnPlain, btnPrimary, stateTone } from "./ui";
+import { PageHeader } from "@/components/design-system/page-header";
+import { backLinkClass } from "@/components/design-system/back-link";
+import { EmptyState } from "@/components/design-system/empty-state";
 
 export const metadata: Metadata = { title: "Your map" };
 
@@ -30,16 +33,16 @@ export default async function MapPage() {
   const fresh = PREP_ONBOARDING_ENABLED && data.graded === 0 && !data.placement;
 
   return (
-    <div className="mx-auto max-w-6xl space-y-8 px-4 py-6 sm:px-6 lg:py-10">
-      <Link href="/progress" className="inline-flex min-h-11 items-center gap-1.5 text-sm font-bold text-link hover:underline">
+    <div className="mx-auto max-w-6xl space-y-8">
+      <Link href="/progress" className={backLinkClass}>
         <ArrowLeft className="size-4" aria-hidden /> Back to Progress
       </Link>
-      <h1 className="text-h1">What you know, and what to fix</h1>
+      <PageHeader eyebrow="Progress" title="What you know, and what to fix" className="pb-0" />
 
       {!isLearner ? <p className="rounded-md border-2 border-foreground bg-status-pending-bg p-3 text-sm font-semibold">Preview: staff accounts have no map of their own.</p> : null}
 
       {fresh ? (
-        <section className="flex flex-col gap-4 rounded-md border-2 border-foreground bg-brand p-5 text-brand-foreground hard-shadow-md sm:flex-row sm:items-center sm:p-6">
+        <section className="flex flex-col gap-4 rounded-lg border-2 border-foreground bg-brand p-5 text-brand-foreground hard-shadow-md sm:flex-row sm:items-center sm:p-6">
           <Compass className="size-10 shrink-0" aria-hidden />
           <div className="min-w-0 flex-1">
             <h2 className="text-h3">Start with the placement quiz</h2>
@@ -55,7 +58,7 @@ export default async function MapPage() {
         <h2 id="practise" className="sr-only">
           Practise
         </h2>
-        <Link href="/study/map/practice" className="flex items-center gap-4 rounded-md border-2 border-foreground bg-primary p-4 text-primary-foreground hard-shadow-sm transition-transform hover:-translate-y-0.5 motion-reduce:transition-none motion-reduce:hover:translate-y-0">
+        <Link href="/study/map/practice" className="flex items-center gap-4 rounded-lg border-2 border-foreground bg-primary p-4 text-primary-foreground hard-shadow-sm transition-transform hover:-translate-y-0.5 motion-reduce:transition-none motion-reduce:hover:translate-y-0">
           <Shuffle className="size-7 shrink-0" aria-hidden />
           <span className="min-w-0 flex-1">
             <span className="block text-lg font-bold">Mixed practice</span>
@@ -63,7 +66,7 @@ export default async function MapPage() {
           </span>
           <ArrowRight className="size-5 shrink-0" aria-hidden />
         </Link>
-        <div className="flex items-center gap-4 rounded-md border-2 border-foreground bg-card p-4">
+        <div className="flex items-center gap-4 rounded-lg border-2 border-foreground bg-card p-4">
           <Repeat2 className="size-7 shrink-0" aria-hidden />
           <span className="min-w-0 flex-1">
             <span className="block text-lg font-bold">
@@ -82,7 +85,7 @@ export default async function MapPage() {
           {data.weak.length ? (
             <ul className="space-y-3">
               {data.weak.map((w) => (
-                <li key={w.skill} className="space-y-3 rounded-md border-2 border-foreground bg-card p-4">
+                <li key={w.skill} className="space-y-3 rounded-lg border-2 border-foreground bg-card p-4">
                   <div className="flex flex-wrap items-center justify-between gap-2">
                     <p className="font-bold">{w.label}</p>
                     <StateTag state={w.state} />
@@ -101,7 +104,7 @@ export default async function MapPage() {
               ))}
             </ul>
           ) : (
-            <p className="rounded-md border-2 border-dashed border-foreground/50 bg-card p-4 text-muted-foreground">Nothing to fix yet.</p>
+            <EmptyState row icon={<Compass className="size-5" />} title="Nothing to fix yet." />
           )}
         </section>
 
@@ -114,7 +117,7 @@ export default async function MapPage() {
               {data.confusions.map((c, i) => {
                 const topic = c.skill ? c.skill.split(":")[0] : null;
                 return (
-                  <li key={`${c.a}|${c.b}`} className="flex gap-3 rounded-md border-2 border-foreground bg-card p-4">
+                  <li key={`${c.a}|${c.b}`} className="flex gap-3 rounded-lg border-2 border-foreground bg-card p-4">
                     <span className="grid size-8 shrink-0 place-items-center rounded-md border-2 border-foreground font-bold" aria-hidden>
                       {i + 1}
                     </span>
@@ -137,7 +140,7 @@ export default async function MapPage() {
               })}
             </ol>
           ) : (
-            <p className="rounded-md border-2 border-dashed border-foreground/50 bg-card p-4 text-muted-foreground">No mix-ups yet.</p>
+            <EmptyState row icon={<Shuffle className="size-5" />} title="No mix-ups yet." />
           )}
         </section>
       </div>
@@ -171,7 +174,7 @@ export default async function MapPage() {
           {data.topics.map((t) => {
             const level = placed.get(t.id);
             return (
-              <li key={t.id} className="grid grid-cols-2 gap-2 rounded-md border-2 border-foreground bg-card p-3 sm:grid-cols-4 lg:grid-cols-[minmax(9rem,1.3fr)_repeat(7,minmax(0,1fr))] lg:items-center">
+              <li key={t.id} className="grid grid-cols-2 gap-2 rounded-lg border-2 border-foreground bg-card p-3 sm:grid-cols-4 lg:grid-cols-[minmax(9rem,1.3fr)_repeat(7,minmax(0,1fr))] lg:items-center">
                 <div className="col-span-2 flex min-w-0 flex-wrap items-baseline justify-between gap-x-3 sm:col-span-4 lg:col-span-1 lg:block">
                   <Link href={t.href} className="font-bold underline-offset-4 hover:underline">
                     {t.title}

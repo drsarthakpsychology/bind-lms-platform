@@ -102,7 +102,7 @@ export function DomainLevel({
   const done = domainIdx >= MSE_DOMAIN_ORDER.length;
 
   return (
-    <div className="space-y-4 rounded-md border-2 border-border bg-card p-5 hard-shadow-sm">
+    <div className="space-y-4 rounded-lg border-2 border-border bg-card p-5 hard-shadow-sm">
       <div className="flex items-center justify-between text-small text-muted-foreground">
         <span>
           Level 2 · Domain {domainIdx + 1}/{MSE_DOMAIN_ORDER.length}

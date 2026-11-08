@@ -1,7 +1,6 @@
 /* Anxiety disorders: Q&A bank (Starting, Beginner, Advanced). Original text written for VIBHA School of Psychology. */
 export const qa = String.raw`
 ## 6.3 Q&A bank · Starting [core][starting]
-Think each question through, then open the answer.
 
 :::qa Why does the body react to an exam as if it were a physical danger? [starting]
 ### Short answer
@@ -146,7 +145,6 @@ Most do not. The main medicines, SSRIs, take several weeks to help and may cause
 :::
 
 ## 6.4 Q&A bank · Beginner [core][beginner]
-Think each question through, then open the answer.
 
 :::qa Explain how fear is learned and maintained, using learning theory. [beginner]
 ### Short answer
@@ -357,7 +355,6 @@ The aim is coping while staying in the situation, not avoiding the feelings.
 :::
 
 ## 6.5 Q&A bank · Advanced [core][advanced]
-Think each question through, then open the answer.
 
 :::qa Compare Clark's cognitive model of panic with Klein's suffocation alarm theory. [advanced]
 ### Short answer

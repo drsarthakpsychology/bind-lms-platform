@@ -19,7 +19,7 @@ export default async function JudgmentPage() {
   const items = ALL_SEED_SCT_ITEMS;
 
   return (
-    <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
+    <div className="mx-auto max-w-3xl">
       <BackPill className="mb-4" />
       <ToolHeader title="Judgment calls" tip={{ id: "judgment", steps: ["Say whether each new fact makes the diagnosis more or less likely."] }} />
 

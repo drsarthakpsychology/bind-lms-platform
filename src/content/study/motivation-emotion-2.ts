@@ -635,7 +635,7 @@ Use the scoring frame for every long answer: **definition → theory or model �
 :::
 
 ## 4.2 Short notes and viva [core]
-Short note frame: **definition, three or four key points, one example, one line of significance.** Try each, then reveal.
+Short note frame: **definition, three or four key points, one example, one line of significance.**
 
 :::widget reveal
 {
@@ -705,7 +705,6 @@ What did the 23-lab replication find for ego depletion? :: An effect close to ze
 :::
 
 ## 4.3 Q&A bank · Starting [starting]
-Try each question in your head or on paper first, then open the answer.
 
 :::qa How does drive-reduction theory differ from incentive theory, and why do most psychologists use both? [starting]
 ### Short answer

@@ -1,20 +1,15 @@
 import type { Metadata } from "next";
 import { GROUPS, medIndex } from "@/lib/meds";
 import { MedicineSearch } from "@/components/meds/medicine-search";
+import { PageHeader } from "@/components/design-system/page-header";
 
 export const metadata: Metadata = { title: "Medicines" };
 
 /** /practice/medicines: Medicines in the menu. Instant search across every medicine profile. */
 export default function MedicinesPage() {
   return (
-    <div className="mx-auto max-w-5xl space-y-6 px-4 py-6 sm:px-6 lg:py-8">
-      <header>
-        <p className="text-eyebrow text-link">Medicines</p>
-        <h1 className="text-h1">Find a medicine</h1>
-        <p className="mt-1 max-w-2xl text-sm text-muted-foreground">
-          Search by name, brand, group or condition.
-        </p>
-      </header>
+    <div className="mx-auto max-w-5xl space-y-6">
+      <PageHeader eyebrow="Medicines" title="Find a medicine" description="Search by name, brand, group or condition." className="pb-0" />
       <MedicineSearch rows={medIndex()} groups={GROUPS} />
     </div>
   );

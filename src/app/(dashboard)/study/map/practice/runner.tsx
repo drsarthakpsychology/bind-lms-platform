@@ -41,7 +41,7 @@ export function PracticeRunner({ questions, title, saving }: { questions: Practi
 
   if (!questions.length) {
     return (
-      <div className="rounded-md border-2 border-foreground bg-card p-5">
+      <div className="rounded-lg border-2 border-foreground bg-card p-5">
         <p className="font-bold">No questions for this yet.</p>
         <Link href="/study/map" className={cn(btnPlain, "mt-4")}>
           <ArrowLeft className="size-4" aria-hidden /> Back to your map
@@ -53,7 +53,7 @@ export function PracticeRunner({ questions, title, saving }: { questions: Practi
   const done = idx >= questions.length;
   if (done) {
     return (
-      <div className="space-y-5 rounded-md border-2 border-foreground bg-card p-5 hard-shadow-md sm:p-6">
+      <div className="space-y-5 rounded-lg border-2 border-foreground bg-card p-5 hard-shadow-md sm:p-6">
         <p className="text-eyebrow text-link">Round done</p>
         <p className="text-h2">
           {right} of {questions.length} right

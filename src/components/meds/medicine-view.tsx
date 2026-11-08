@@ -9,6 +9,7 @@ import type { MedVisual } from "@/lib/meds/visuals";
 import { MedicineVisual } from "./medicine-visuals";
 import { Journey, Receptor } from "@/components/study/animations";
 import { cn } from "@/lib/utils";
+import { backLinkClass } from "@/components/design-system/back-link";
 
 type View = "student" | "clinician";
 const KEY = "vibha-med-view";
@@ -50,22 +51,22 @@ export function MedicineView({ med, related, mech, visuals = [], study = null }:
   const pick = saveView;
 
   return (
-    <div className="mx-auto max-w-4xl space-y-6 px-4 py-6 sm:px-6 lg:py-8">
-      <Link href="/practice/medicines" className="inline-flex items-center gap-1 rounded-full border-2 border-foreground bg-card px-3 py-1.5 text-sm font-semibold">
+    <div className="mx-auto max-w-4xl space-y-6">
+      <Link href="/practice/medicines" className={backLinkClass}>
         <ArrowLeft className="size-4" aria-hidden /> Back to Medicines
       </Link>
 
       <header className="rounded-3xl border-2 border-foreground bg-brand p-5 text-brand-foreground sm:p-6">
-        <p className="text-xs font-semibold uppercase tracking-wide opacity-90">
+        <p className="text-eyebrow opacity-90">
           {med.group} · {med.cls}
         </p>
-        <h1 className="mt-1 text-[2rem] font-black leading-[1.05] tracking-tight sm:text-5xl">{med.name}</h1>
+        <h1 className="mt-1 break-words text-display">{med.name}</h1>
         {med.brands.length ? <p className="mt-1 text-sm font-semibold opacity-90">Indian brands: {med.brands.join(", ")}</p> : null}
         <p className="mt-1 text-sm opacity-90">{med.forms}</p>
       </header>
 
       {/* View switch: sticks to the top while scrolling on phones */}
-      <div className="sticky top-14 z-20 -mx-4 bg-background/95 px-4 py-2 backdrop-blur sm:static sm:mx-0 sm:bg-transparent sm:p-0">
+      <div className="sticky top-0 z-20 -mx-4 bg-background/95 px-4 py-2 backdrop-blur sm:static sm:mx-0 sm:bg-transparent sm:p-0">
         <div className="grid grid-cols-2 gap-1 rounded-full border-2 border-foreground bg-card p-1 sm:inline-grid" role="radiogroup" aria-label="How much detail">
           {(
             [
@@ -170,7 +171,7 @@ export function MedicineView({ med, related, mech, visuals = [], study = null }:
           ) : null}
           {dose.watch?.length ? (
             <div className="rounded-2xl border-2 border-foreground bg-muted p-3">
-              <p className="text-xs font-semibold uppercase tracking-wide">Watch for at this dose</p>
+              <p className="text-eyebrow">Watch for at this dose</p>
               <ul className="mt-1.5 flex flex-wrap gap-1.5">
                 {dose.watch.map((w) => (
                   <li key={w} className="rounded-full border-2 border-foreground bg-card px-2.5 py-0.5 text-sm font-medium">

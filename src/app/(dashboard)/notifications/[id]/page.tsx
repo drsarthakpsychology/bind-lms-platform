@@ -28,7 +28,7 @@ export default async function NotificationPage({ params }: { params: Promise<{ i
   const html = sanitizeRich((n.body_html as string | null) ?? textToHtml(String(n.body ?? "")));
 
   return (
-    <div className="mx-auto max-w-2xl px-4 py-6 sm:px-6">
+    <div className="mx-auto max-w-2xl">
       <article className="rounded-2xl border-2 border-foreground bg-card p-5 hard-shadow-sm sm:p-7">
         <header className="flex items-start gap-3">
           <span className="grid size-10 shrink-0 place-items-center rounded-full border-2 border-foreground bg-primary text-primary-foreground">

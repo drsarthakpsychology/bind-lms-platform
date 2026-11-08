@@ -51,7 +51,7 @@ export function OutOfDepthDrill() {
 
   if (done) {
     return (
-      <div className="rounded-md border-2 border-border bg-card p-6 hard-shadow-sm">
+      <div className="rounded-lg border-2 border-border bg-card p-6 hard-shadow-sm">
         <p className="flex items-center gap-2 text-base font-semibold">
           <CheckCircle2 className="size-4" aria-hidden /> All scenarios done
         </p>
@@ -87,7 +87,7 @@ export function OutOfDepthDrill() {
         <span className="text-caption">Over-referrals this session: {overReferrals}</span>
       </div>
 
-      <div className="rounded-md border-2 border-border bg-card p-5 hard-shadow-sm">
+      <div className="rounded-lg border-2 border-border bg-card p-5 hard-shadow-sm">
         <p className="text-eyebrow text-muted-foreground">Your client</p>
         <p className="mt-2 text-small">{s.vignette}</p>
       </div>
@@ -102,7 +102,7 @@ export function OutOfDepthDrill() {
       />
 
       {result ? (
-        <div className="rounded-md border-2 border-border bg-card p-5">
+        <div className="rounded-lg border-2 border-border bg-card p-5">
           <p className={cn("flex items-center gap-2 text-base font-semibold", result.correct ? "text-status-success-fg" : "text-destructive")}>
             {result.correct ? <CheckCircle2 className="size-4" aria-hidden /> : <AlertTriangle className="size-4" aria-hidden />}
             {result.correct ? "Right call" : result.overReferral ? "Over-referral: a real harm too" : "Missing the call"}

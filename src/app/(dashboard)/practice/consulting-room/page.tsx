@@ -106,9 +106,7 @@ export default async function ConsultingRoomPage() {
 
   return (
     <div className="mx-auto w-full max-w-5xl">
-      <div className="px-4 pt-4 sm:px-6">
-        <BackPill />
-      </div>
+      <BackPill className="mb-4" />
       <ConsultingRoomHeader badge={<SimulationBadge />}>
         {weakSpotsOn ? (
           <Link href="/practice/weak-spots" className="mt-2 inline-flex min-h-11 items-center gap-1 text-sm font-semibold text-link hover:underline">

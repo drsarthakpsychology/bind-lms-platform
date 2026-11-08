@@ -91,7 +91,7 @@ export default async function MsePage() {
   const content: MseLadderContent = { ...shaped, observe: byOrder(observe, obsOrder), fullMse: byOrder(fullMse, fullOrder) };
 
   return (
-    <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
+    <div className="mx-auto max-w-3xl">
       <BackPill className="mb-4" />
       <ToolHeader title="Mental state exam" tip={{ id: "mse-trainer", steps: ["Write what you can see and hear, not what you conclude."] }} />
       <div className="mt-6">

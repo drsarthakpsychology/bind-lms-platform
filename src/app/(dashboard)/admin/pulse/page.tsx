@@ -100,7 +100,7 @@ export default async function AdminPulsePage({ searchParams }: { searchParams: P
     recentWeeks[0].n < recentWeeks[1].n;
 
   return (
-    <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6">
+    <div className="mx-auto max-w-4xl">
       <PageHeader
         title="Cohort progress"
         description="Who's gone quiet, and a quick way to email them."

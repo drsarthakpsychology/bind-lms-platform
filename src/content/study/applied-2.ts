@@ -801,7 +801,6 @@ What is the SSB an example of? :: An assessment centre.
 :::
 
 ## 4.3 Q&A bank · Starting [starting]
-Try each question first, then open the answer.
 
 :::qa What is the biopsychosocial model, and why did Engel argue it was needed? [starting]
 ### Short answer

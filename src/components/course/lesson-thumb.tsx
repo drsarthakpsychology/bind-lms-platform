@@ -60,7 +60,7 @@ export function LessonThumb({
       ) : (
         <span
           className={cn(
-            "absolute flex items-center justify-center rounded-full border-2 border-foreground bg-primary text-primary-foreground transition-[opacity,transform] duration-base ease-springy",
+            "absolute flex items-center justify-center rounded-full border-2 border-foreground bg-primary text-primary-foreground transition-[opacity,transform] duration-base ease-out-expo",
             size === "lg" ? "size-16" : "size-11",
             state === "next" && size === "lg"
               ? "translate-y-0 opacity-100 group-hover/thumb:scale-110"

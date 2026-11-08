@@ -18,7 +18,7 @@ export default async function LandmarkPage() {
   const ids = await orderForViewer("landmark", LANDMARK_CASES.map((c) => c.id));
   const cases = ids.flatMap((id) => LANDMARK_CASES.filter((c) => c.id === id).slice(0, 1));
   return (
-    <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
+    <div className="mx-auto max-w-3xl">
       <BackPill className="mb-4" />
       <ToolHeader title="Landmark cases" tip={{ id: "landmark", steps: ["Read what was believed, then what held up."] }} />
 

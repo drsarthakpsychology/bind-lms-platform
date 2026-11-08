@@ -99,7 +99,7 @@ export default async function RolePlayPage(props: {
   }
 
   return (
-    <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
+    <div className="mx-auto max-w-3xl">
       <BackPill className="mb-4" />
       <ToolHeader title="Practise with a classmate" tip={{ id: "role-play", steps: ["One of you plays the patient, the other the clinician."] }} />
 

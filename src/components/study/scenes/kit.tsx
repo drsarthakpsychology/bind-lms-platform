@@ -193,7 +193,7 @@ export function JourneySteps({ journey }: { journey: Journey }) {
   return (
     <ol className="mt-2 space-y-1.5" aria-label="Signal path">
       {journey.legs.slice(0, upTo).map((l, k) => (
-        <li key={`${journey.run}-${k}`} className={cn("vibha-pop flex gap-2 rounded-md border-l-4 pl-2 text-[0.95rem] leading-snug", k === journey.leg ? "border-[var(--brand)] font-semibold" : "border-foreground/25")}>
+        <li key={`${journey.run}-${k}`} className={cn("vibha-pop flex gap-2 rounded-md border-2 px-2 py-0.5 text-[0.95rem] leading-snug", k === journey.leg ? "border-[var(--brand)] font-semibold" : "border-transparent")}>
           <span className="shrink-0 tabular-nums text-muted-foreground" aria-hidden>{k + 1}.</span>
           <span className="min-w-0"><span className="sr-only">{TONE_NAME[l.tone]}: </span>{l.say}</span>
         </li>

@@ -83,7 +83,7 @@ export function Detective({ serverState, save }: { serverState: LearnState | nul
 
   if (!rounds) {
     return (
-      <div className="mx-auto max-w-xl space-y-6 px-4 py-8 text-center">
+      <div className="mx-auto max-w-xl space-y-6 py-8 text-center">
         <Chai mood="think" size={130} />
         <h1 className="text-h1">Clinic detective</h1>
         {state.detectiveBest ? <p className="font-pix text-sm">Your best: {state.detectiveBest}</p> : null}
@@ -148,7 +148,7 @@ export function Detective({ serverState, save }: { serverState: LearnState | nul
   }
 
   return (
-    <div className={cn("mx-auto max-w-2xl space-y-5 px-4 py-5")}>
+    <div className={cn("mx-auto max-w-2xl space-y-5")}>
       <div className="flex items-center justify-between">
         <span className="flex items-center gap-2 font-bold">
           <Search className="size-5" aria-hidden /> Case {r + 1}

@@ -6,6 +6,7 @@ import type { Block } from "@/lib/study/types";
 import type { PrepVisual } from "@/lib/prep/types";
 import { cn } from "@/lib/utils";
 import { PrepVisualView } from "./visual";
+import { segmentGroup, segmentItem } from "@/components/design-system/segment";
 
 const chip = "inline-flex items-center rounded-full border-2 border-foreground/70 px-2 py-0.5 text-xs font-bold";
 
@@ -23,13 +24,9 @@ export function LongMeta({ item, className }: { item: Pick<LongItem, "marks" | "
 
 /** "Questions" and "Long answers" on a subject page: two links styled as tabs. */
 export function SubjectTabs({ subject, active, counts }: { subject: string; active: "bank" | "long"; counts: { bank: number; long: number } }) {
-  const tab = (on: boolean) =>
-    cn(
-      "flex min-h-11 min-w-0 flex-1 items-center justify-center gap-2 rounded-md px-3 text-sm font-bold focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60",
-      on ? "bg-foreground text-background" : "text-foreground hover:bg-secondary",
-    );
+  const tab = (on: boolean) => segmentItem(on, "flex-1 gap-2");
   return (
-    <nav aria-label="Practice type" className="flex gap-1 rounded-md border-2 border-foreground bg-card p-1">
+    <nav aria-label="Practice type" className={cn(segmentGroup, "flex w-full")}>
       <Link href={`/prep/${subject}`} aria-current={active === "bank" ? "page" : undefined} className={tab(active === "bank")}>
         Questions{counts.bank >= 100 ? <span className="font-mono text-xs opacity-80">{Math.floor(counts.bank / 100) * 100}+</span> : null}
       </Link>

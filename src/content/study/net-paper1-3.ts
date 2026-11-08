@@ -3,7 +3,6 @@ export const part3 = String.raw`
 # Part IV · Exam zone
 
 ## 4.1 Q&A bank · Starting [core][starting]
-Answer in your head or on paper first, then open the model answer.
 
 :::qa Compare the memory, understanding and reflective levels of teaching, and give a psychology classroom example of each. [starting]
 ### Comparison

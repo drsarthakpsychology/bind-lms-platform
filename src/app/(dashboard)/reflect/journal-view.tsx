@@ -4,12 +4,13 @@ import * as React from "react";
 import { haptic } from "@/lib/haptics";
 import { cn } from "@/lib/utils";
 import { formatRelativeTime } from "@/lib/format";
-import { Share2, Ban, MoreHorizontal, Plus } from "lucide-react";
+import { Share2, Ban, MoreHorizontal, NotebookPen, Plus } from "lucide-react";
 import { MobileBottomSheet } from "@/components/mobile/mobile-bottom-sheet";
 import { MobileInput, MobileTextarea } from "@/components/mobile/mobile-input";
 import { MobileErrorLine } from "@/components/mobile/mobile-error-line";
 import { StatusPill } from "@/components/mobile/status-pill";
 import { useOffline } from "@/lib/hooks/use-offline";
+import { EmptyState } from "@/components/design-system/empty-state";
 
 const DRAFT_KEY = "journal:draft";
 const MOODS = ["calm", "low", "anxious", "tired", "hopeful"] as const;
@@ -317,7 +318,7 @@ export function JournalView({ initialEntries }: { initialEntries: JournalEntry[]
       {/* Desktop: inline composer (unchanged composition) */}
       <form
         onSubmit={save}
-        className="hidden space-y-3 rounded-md border-2 border-border bg-card p-5 hard-shadow-sm lg:block"
+        className="hidden space-y-3 rounded-lg border-2 border-border bg-card p-5 hard-shadow-sm lg:block"
       >
         {composeFields}
         <button
@@ -337,13 +338,11 @@ export function JournalView({ initialEntries }: { initialEntries: JournalEntry[]
       <div>
         <h2 className="text-base font-semibold">Your entries</h2>
         {entries.length === 0 ? (
-          <p className="mt-2 text-small text-muted-foreground">
-            Nothing here yet.
-          </p>
+          <EmptyState row icon={<NotebookPen className="size-5" />} title="Nothing here yet." className="mt-2" />
         ) : (
           <ul className="mt-3 space-y-3">
             {entries.map((e) => (
-              <li key={e.id} className="rounded-md border-2 border-border bg-card p-4">
+              <li key={e.id} className="rounded-lg border-2 border-border bg-card p-4">
                 <div className="flex items-center justify-between gap-2">
                   <span className="text-caption text-muted-foreground">
                     {formatRelativeTime(e.createdAt)}

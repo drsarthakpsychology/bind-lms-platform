@@ -21,7 +21,7 @@ export default async function DoubtsPage({ searchParams }: { searchParams: Promi
 
   if (!(await doubtsReady())) {
     return (
-      <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
+      <div className="mx-auto max-w-3xl">
         <h1 className="text-h1">Doubts</h1>
         <p className="mt-2 rounded-2xl border-2 border-foreground bg-primary p-4 text-sm font-semibold text-primary-foreground">
           {isAdmin ? "The doubts board needs the database step 2026_11_access_doubts.sql." : "Doubts open soon."}
@@ -37,9 +37,10 @@ export default async function DoubtsPage({ searchParams }: { searchParams: Promi
   const group = cohorts.length ? cohorts.map((c) => c.name).join(" & ") : "your batch";
 
   return (
-    <div className="mx-auto max-w-3xl space-y-6 px-4 py-6 sm:px-6 lg:py-8">
+    <div className="mx-auto max-w-3xl space-y-6">
       <ToolHeader
-        title="Doubts"
+        eyebrow="Doubts"
+        title={isAdmin ? "Doubts board" : "Ask your batch"}
         tip={{
           id: "doubts",
           steps: [`${group[0].toUpperCase()}${group.slice(1)} sees what you post here. Anyone can answer.`, "A concern about the course or your account goes privately to the VIBHA team instead."],
