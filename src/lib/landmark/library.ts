@@ -12,5 +12,7 @@ import { LANDMARK_LEGAL_B } from "./library-legal-b";
 import { LANDMARK_HISTORY } from "./library-history";
 import { LANDMARK_STUDIES } from "./library-studies";
 import { LANDMARK_PATIENTS } from "./library-patients";
+import { LANDMARK_LEGAL_C } from "./library-legal-c";
+import { LANDMARK_LEGAL_D } from "./library-legal-d";
 
-export const LANDMARK_LIBRARY: LandmarkCase[] = [...LANDMARK_LEGAL, ...LANDMARK_LEGAL_B, ...LANDMARK_HISTORY, ...LANDMARK_STUDIES, ...LANDMARK_PATIENTS];
+export const LANDMARK_LIBRARY: LandmarkCase[] = [...LANDMARK_LEGAL, ...LANDMARK_LEGAL_B, ...LANDMARK_HISTORY, ...LANDMARK_STUDIES, ...LANDMARK_PATIENTS, ...LANDMARK_LEGAL_C, ...LANDMARK_LEGAL_D];
