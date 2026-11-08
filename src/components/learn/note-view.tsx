@@ -71,10 +71,10 @@ export function NoteView({
       </div>
 
       <header className={cn("relative overflow-hidden rounded-3xl border-2 border-foreground bg-brand p-5 text-brand-foreground sm:p-7", n.glow)}>
-        <p className="font-pix text-[0.65rem] uppercase opacity-90">
+        <p className="text-eyebrow opacity-90">
           {WEEK_BLOCKS[note.block]} · note {position.index + 1}
         </p>
-        <h1 className="mt-2 text-3xl font-black leading-[1.05] sm:text-5xl">
+        <h1 className="mt-2 break-words text-display">
           <span className="mr-2" aria-hidden>
             {note.emoji}
           </span>

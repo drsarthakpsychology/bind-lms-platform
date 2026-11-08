@@ -8,9 +8,9 @@ import { initLearnStore, setLearnState, useLearnState } from "@/lib/learn/store"
 import type { Unit } from "@/lib/learn/types";
 import { cn } from "@/lib/utils";
 import { BOARDS } from "@/lib/standing/boards";
-import { Chai } from "./chai";
 import { ViewToggle } from "./view-toggle";
 import s from "./learn.module.css";
+import { PageHeader } from "@/components/design-system/page-header";
 
 const EMPTY = emptyState();
 type Save = (s: LearnState) => Promise<unknown>;
@@ -98,12 +98,7 @@ function GameGroup({ id, title, games }: { id: string; title: string; games: Gam
 export function LearnHome({ showLab = false }: { showLab?: boolean }) {
   return (
     <div className={cn("mx-auto max-w-5xl space-y-8", s.texture)}>
-      <header className="flex items-center gap-4">
-        <Chai mood="happy" size={64} className="shrink-0" />
-        <div className="min-w-0">
-          <h1 className="text-h1">Games</h1>
-        </div>
-      </header>
+      <PageHeader title="Games" className="pb-0" />
 
       <GameGroup id="solo" title="Solo" games={SOLO} />
       <GameGroup id="with-others" title="With others" games={WITH_OTHERS} />
@@ -149,7 +144,7 @@ export function QuizPath({ units, serverState, save }: { units: Unit[]; serverSt
             <li key={u.id} className="overflow-hidden rounded-3xl border-2 border-foreground bg-card">
               <div className={cn("flex items-center justify-between gap-3 border-b-2 border-foreground px-4 py-3", u.tone === "lime" ? "bg-primary text-primary-foreground" : u.tone === "blue" ? "bg-brand text-brand-foreground" : "bg-foreground text-background")}>
                 <div className="min-w-0">
-                  <p className="text-xs font-semibold uppercase tracking-wide opacity-80">Unit {ui + 1}</p>
+                  <p className="text-eyebrow opacity-80">Unit {ui + 1}</p>
                   <h2 className="text-lg font-bold leading-tight break-words">{u.title}</h2>
                 </div>
                 <span className="flex shrink-0 items-center gap-1 rounded-full border-2 border-current px-2 py-0.5 text-sm font-semibold tabular-nums">

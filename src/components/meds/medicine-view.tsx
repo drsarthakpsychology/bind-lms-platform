@@ -55,10 +55,10 @@ export function MedicineView({ med, related, mech, visuals = [] }: { med: Med; r
       </Link>
 
       <header className="rounded-3xl border-2 border-foreground bg-brand p-5 text-brand-foreground sm:p-6">
-        <p className="text-xs font-semibold uppercase tracking-wide opacity-90">
+        <p className="text-eyebrow opacity-90">
           {med.group} · {med.cls}
         </p>
-        <h1 className="mt-1 text-[2rem] font-black leading-[1.05] tracking-tight sm:text-5xl">{med.name}</h1>
+        <h1 className="mt-1 break-words text-display">{med.name}</h1>
         {med.brands.length ? <p className="mt-1 text-sm font-semibold opacity-90">Indian brands: {med.brands.join(", ")}</p> : null}
         <p className="mt-1 text-sm opacity-90">{med.forms}</p>
       </header>
@@ -169,7 +169,7 @@ export function MedicineView({ med, related, mech, visuals = [] }: { med: Med; r
           ) : null}
           {dose.watch?.length ? (
             <div className="rounded-2xl border-2 border-foreground bg-muted p-3">
-              <p className="text-xs font-semibold uppercase tracking-wide">Watch for at this dose</p>
+              <p className="text-eyebrow">Watch for at this dose</p>
               <ul className="mt-1.5 flex flex-wrap gap-1.5">
                 {dose.watch.map((w) => (
                   <li key={w} className="rounded-full border-2 border-foreground bg-card px-2.5 py-0.5 text-sm font-medium">

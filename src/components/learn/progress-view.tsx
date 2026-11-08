@@ -11,6 +11,7 @@ import { BOARDS } from "@/lib/standing/boards";
 import { cn } from "@/lib/utils";
 import { ChaiSays } from "./chai";
 import s from "./learn.module.css";
+import { PageHeader } from "@/components/design-system/page-header";
 
 const EMPTY = emptyState();
 
@@ -39,7 +40,7 @@ export function ProgressView({
 
   return (
     <div className={"mx-auto max-w-5xl space-y-6"}>
-      <h1 className="text-h1">My progress</h1>
+      <PageHeader title="My progress" className="pb-0" />
 
       <div className="grid grid-cols-2 gap-2 sm:grid-cols-4 sm:gap-3">
         {[

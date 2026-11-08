@@ -51,7 +51,7 @@ export function NotesIndex({ blocks, serverState, save }: { blocks: NoteBlock[];
 
       {blocks.map((block, b) => (
         <section key={block.title}>
-          <h2 className="font-pix text-xs uppercase text-link">{block.title}</h2>
+          <h2 className="text-eyebrow text-link">{block.title}</h2>
           <ul className="mt-3 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {block.notes.map((n, k) => {
               const done = Boolean(st.notesRead[n.id]);

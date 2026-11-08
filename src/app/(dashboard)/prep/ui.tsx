@@ -21,13 +21,14 @@ export function PrepHero({ children }: { children?: React.ReactNode }) {
   return (
     <header className="space-y-3">
       <ToolHeader
+        eyebrow="Exam Prep"
         title={PREP_TITLE}
         tip={{
           id: "prep",
           steps: ["Pick a subject, then a topic.", "Save any question to see it again."],
         }}
       />
-      <p className="text-sm font-semibold text-muted-foreground">{PREP_EXAMS.join(" · ")}</p>
+      <p className="max-w-2xl text-small text-muted-foreground">{PREP_EXAMS.join(" · ")}</p>
       {children}
     </header>
   );

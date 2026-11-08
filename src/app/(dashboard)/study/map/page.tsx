@@ -13,6 +13,7 @@ import type { TopicLevel } from "@/lib/learn/model/placement";
 import { PREP_ONBOARDING_ENABLED } from "@/lib/prep/catalog";
 import { cn } from "@/lib/utils";
 import { STATE_ICON, StateTag, btnPlain, btnPrimary, stateTone } from "./ui";
+import { PageHeader } from "@/components/design-system/page-header";
 
 export const metadata: Metadata = { title: "Your map" };
 
@@ -34,7 +35,7 @@ export default async function MapPage() {
       <Link href="/study" className="inline-flex min-h-11 items-center gap-1.5 text-sm font-bold text-link hover:underline">
         <ArrowLeft className="size-4" aria-hidden /> Study
       </Link>
-      <h1 className="text-h1">What you know, and what to fix</h1>
+      <PageHeader eyebrow="Study" title="What you know, and what to fix" className="pb-0" />
 
       {!isLearner ? <p className="rounded-md border-2 border-foreground bg-status-pending-bg p-3 text-sm font-semibold">Preview: staff accounts have no map of their own.</p> : null}
 

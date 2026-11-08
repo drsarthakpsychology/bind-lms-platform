@@ -71,7 +71,7 @@ export function CheckpointView({
         <p className="text-sm font-semibold text-link">
           {moduleTitle} · Checkpoint {n}
         </p>
-        <h1 className="mt-1 text-[1.85rem] font-black leading-[1.1] tracking-tight sm:text-4xl">What stuck?</h1>
+        <h1 className="mt-1 text-h1">What stuck?</h1>
         <p className="mt-2 text-muted-foreground">Covers {covers.join(", ")}.</p>
       </header>
 

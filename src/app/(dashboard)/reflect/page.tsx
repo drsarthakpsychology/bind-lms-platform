@@ -2,6 +2,7 @@ import { createClient } from "@/lib/supabase/server";
 import { Reveal } from "@/components/motion/reveal";
 import { JournalView } from "./journal-view";
 import { requireFeature } from "@/lib/flags";
+import { PageHeader } from "@/components/design-system/page-header";
 
 export const dynamic = "force-dynamic";
 
@@ -28,8 +29,7 @@ export default async function ReflectPage() {
   return (
     <div className="mx-auto max-w-3xl">
       <Reveal delay={0.05}>
-        <h1 className="text-h1">Your journal</h1>
-        <p className="mt-1 text-small text-muted-foreground">Private to you unless you share an entry.</p>
+        <PageHeader title="Your journal" description="Private to you unless you share an entry." className="pb-0" />
       </Reveal>
 
       <Reveal delay={0.15} className="mt-6">

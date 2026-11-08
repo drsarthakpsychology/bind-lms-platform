@@ -34,6 +34,7 @@ export default async function DoubtsPage({ searchParams }: { searchParams: Promi
   return (
     <div className="mx-auto max-w-3xl space-y-6">
       <ToolHeader
+        eyebrow="Doubts"
         title={isAdmin ? "Doubts board" : "Ask your batch"}
         tip={{
           id: "doubts",

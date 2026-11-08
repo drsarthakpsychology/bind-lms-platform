@@ -20,6 +20,7 @@ import {
 import type { FeatureKey, FlagStatus } from "@/lib/flags";
 import type { SurfaceState } from "@/lib/practice/practice-state";
 import { cn } from "@/lib/utils";
+import { PageHeader } from "@/components/design-system/page-header";
 
 /**
  * The Practice hub (plan section 8): clinical skills on real cases.
@@ -203,8 +204,7 @@ export function PracticeHubView({
   return (
     <div className="mx-auto max-w-5xl space-y-8">
       <header className="space-y-2">
-        <p className="text-eyebrow text-link">Practice</p>
-        <h1 className="text-h1">Clinical skills on real cases</h1>
+        <PageHeader eyebrow="Practice" title="Clinical skills on real cases" className="pb-0" />
         {resume ? (
           <Link href={resume.href} className="inline-flex min-h-11 max-w-full items-center gap-2 text-sm font-bold text-link underline-offset-4 hover:underline">
             <RotateCcw className="size-4 shrink-0" aria-hidden />
