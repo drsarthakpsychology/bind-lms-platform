@@ -1,5 +1,6 @@
 "use client";
 
+import { noteAnswer } from "@/lib/history/client";
 import * as React from "react";
 import { haptic } from "@/lib/haptics";
 import { diffNarratives, FIVE_P, scoreSort, SEED_FORMULATION, type FiveP, type FormulationFactor } from "@/lib/practice/formulation";
@@ -69,6 +70,7 @@ export function FormulationForge({ seed = SEED_FORMULATION }: { seed?: ForgeSeed
   async function persistSeedAttempt() {
     if (!diff) return;
     const completedAt = new Date();
+    noteAnswer("formulation", seed.id, score >= 0.6);
     const payload = buildFormulationAttemptPayload(
       {
         caseId: seed.id,

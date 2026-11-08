@@ -41,7 +41,6 @@ export const HISTORY_TOOLS = [
   "weak-spots",
   "long",
   "judgment",
-  "quick-check",
 ] as const;
 export type HistoryTool = (typeof HISTORY_TOOLS)[number];
 
