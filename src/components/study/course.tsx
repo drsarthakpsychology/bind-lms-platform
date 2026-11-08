@@ -82,9 +82,7 @@ export function StudyHome({ modules, serverState, save, owner = "" }: { modules:
     <div className="mx-auto max-w-5xl space-y-8">
       <header className="space-y-2">
         <h1 className="text-h1">Study</h1>
-        <p className="max-w-2xl text-muted-foreground">
-          {modules.length} {modules.length === 1 ? "module" : "modules"}, all open. {progress.pct}% complete.
-        </p>
+        <p className="max-w-2xl text-muted-foreground">{progress.pct}% complete</p>
       </header>
 
       <ContinueCard next={next} />
@@ -217,9 +215,6 @@ export function ModuleView({
         </p>
         <h1 className="mt-2 break-words text-3xl font-black leading-[1.05] tracking-tight sm:text-5xl short:lg:text-4xl">{m.title}</h1>
         <p className="mt-2 max-w-2xl font-semibold opacity-90">{m.tagline}</p>
-        <div className="mt-4 flex flex-wrap gap-2 text-sm font-bold">
-          <span className="rounded-full border-2 border-brand-foreground px-3 py-1">{reading.length} sections</span>
-        </div>
         <div className="mt-4 max-w-md">
           <Bar pct={prog.pct} tone="primary" />
           <p className="mt-1 text-xs font-bold">{prog.pct}% complete</p>
