@@ -81,4 +81,13 @@ describe("finish sticker in the MSE trainer", () => {
     expect(screen.getByText(/domains matched/)).toBeTruthy();
     expect(showEndReaction).toHaveBeenCalledWith("wrong");
   });
+
+  it("Small things: finishing the drill is a win", () => {
+    render(<SmallThingsDrill />);
+    for (const _ of SMALL_THINGS) {
+      fireEvent.click(screen.getByRole("button", { name: "Reveal the read" }));
+      fireEvent.click(screen.getByRole("button", { name: "Next observation" }));
+    }
+    expect(showEndReaction).toHaveBeenCalledWith("streak");
+  });
 });

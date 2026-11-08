@@ -4,6 +4,8 @@ import * as React from "react";
 import { haptic } from "@/lib/haptics";
 import { cn } from "@/lib/utils";
 import { SMALL_THINGS } from "@/lib/mse/small-things";
+import { OnceHint } from "@/components/help/once-hint";
+import { EndReaction } from "@/components/reactions/graphics";
 
 /**
  * The small things checklist (v5 Part 2.2) as a drill: a moment in an
@@ -36,9 +38,9 @@ export function SmallThingsDrill() {
 
           {!revealed ? (
             <div className="mt-3">
-              <p className="text-caption text-muted-foreground">
+              <OnceHint id="mse-small-things" className="text-caption text-muted-foreground">
                 Take a beat: what did you actually just see?
-              </p>
+              </OnceHint>
               <button
                 type="button"
                 onClick={() => {
@@ -72,6 +74,8 @@ export function SmallThingsDrill() {
         </div>
       ) : (
         <div className="rounded-lg border-2 border-border bg-background p-4 text-small text-muted-foreground">
+          {/* The finish sticker: no score here, so finishing is a win. */}
+          <EndReaction mood="streak" seed="mse-small-things" />
           Every small thing you practice here is a real second-channel of the
           MSE. Module reviews love the ones nobody notices: the past tense, the
           pause, the look at the family member.
