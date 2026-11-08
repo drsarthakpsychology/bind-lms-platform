@@ -277,7 +277,7 @@ export function SectionReader({
         {section.levelCheck ? (
           <div className="max-w-[68ch] space-y-6">
             {chunks.map((c, k) => <div key={k}>{c.node}</div>)}
-            <TestRunner items={mcq} moduleId={`${moduleId}@${section.levelCheck}`} label="Check yourself" intro={["Optional. Try it any time, as often as you like."]} />
+            <TestRunner items={mcq} moduleId={`${moduleId}@${section.levelCheck}`} historyTool="study-check" label="Check yourself" intro={["Optional. Try it any time, as often as you like."]} />
             {finishButton}
           </div>
         ) : (
