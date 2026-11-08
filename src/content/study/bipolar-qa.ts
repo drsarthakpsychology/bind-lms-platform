@@ -4,7 +4,6 @@ export const qaBank = String.raw`
 # Part VII · Exam zone: Q&A bank
 
 ## 7.1 Q&A bank · Starting [starting]
-Think of your own answer first, then open the model. These questions use only the Starting level.
 
 ### Ideas and words
 

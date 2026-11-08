@@ -261,7 +261,7 @@ export function Genogram({ d }: { d: GenogramData }) {
             @keyframes gg-ring { 0% { transform: scale(0.6); opacity: 0 } 40% { opacity: 1 } 100% { transform: scale(1.6); opacity: 0 } }
             @keyframes gg-draw { from { stroke-dashoffset: 1 } to { stroke-dashoffset: 0 } }
             @keyframes gg-in { from { transform: scale(0.4); opacity: 0 } to { transform: scale(1); opacity: 1 } }
-            .gg-p { transform-box: fill-box; transform-origin: center; animation: gg-in 320ms var(--ease-springy) both; }
+            .gg-p { transform-box: fill-box; transform-origin: center; animation: gg-in 320ms cubic-bezier(0.16, 1, 0.3, 1) both; }
           `}</style>
           <defs>
             <pattern id="gg-hatch" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">

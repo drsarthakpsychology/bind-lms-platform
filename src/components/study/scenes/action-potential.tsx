@@ -243,7 +243,7 @@ export function ActionPotential({ d }: { d: ActionPotentialData }) {
           // a spike is over in about a second, so its three phases stay written out here to read at your own pace
           <ol className="mt-2 space-y-1" aria-label="The phases of an action potential">
             {(["rising", "falling", "under"] as Phase[]).map((k) => (
-              <li key={k} aria-current={ph === k ? "step" : undefined} className={cn("rounded-md border-l-4 pl-2", ph === k ? "border-[var(--brand)] font-semibold" : "border-transparent")}>{phaseText[k]}</li>
+              <li key={k} aria-current={ph === k ? "step" : undefined} className={cn("rounded-md border-2 px-2 py-0.5", ph === k ? "border-[var(--brand)] font-semibold" : "border-transparent")}>{phaseText[k]}</li>
             ))}
           </ol>
         ) : null}

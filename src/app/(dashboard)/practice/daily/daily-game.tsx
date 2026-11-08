@@ -751,7 +751,7 @@ function AiStart({ choice, onChoice, making, error, onStart }: { choice: AiChoic
       </div>
       <p className="flex items-center gap-2 text-sm font-bold">
         <span className="rounded-full border-2 border-foreground bg-primary px-2 py-0.5 text-xs text-primary-foreground">Coming soon</span>
-        <span className="text-muted-foreground">AI cases are being switched on. If one doesn't load yet, use Today&apos;s case or Practice.</span>
+        <span className="text-muted-foreground">AI cases are being switched on. If one doesn&apos;t load yet, use Today&apos;s case or Practice.</span>
       </p>
       {error && !making ? (
         <p className="flex items-start gap-2 text-sm" role="status">

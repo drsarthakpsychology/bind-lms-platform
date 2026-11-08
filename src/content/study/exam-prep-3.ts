@@ -3,7 +3,7 @@ export const part3 = String.raw`
 # Part V · Exam zone: Q&A bank
 
 ## 5.1 Q&A bank · Starting [core][starting]
-Two kinds of question here: how to prepare and answer, and **model short notes** on core topics, written the way an examiner wants them. Try writing each answer yourself first, then compare.
+Two kinds of question here: how to prepare and answer, and **model short notes** on core topics, written the way an examiner wants them.
 
 :::qa How do I turn the official syllabus into a study plan I can actually follow? [starting]
 ### Short answer

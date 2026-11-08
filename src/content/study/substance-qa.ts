@@ -1,7 +1,6 @@
 /* Module · Substance use and addictive disorders, Q&A banks. Original text written for VIBHA School of Psychology. */
 export const qa = String.raw`
 ## 4.2 Q&A bank · Starting [core][starting]
-Think each question through, ideally aloud or on paper, before you open the answer.
 
 :::qa Why do some people who drink or use drugs become addicted while most do not? [starting]
 ### Short answer

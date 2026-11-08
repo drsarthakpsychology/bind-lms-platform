@@ -632,7 +632,6 @@ What is the Pondicherry Manifesto? :: A 2002 statement calling for an Indian psy
 :::
 
 ## 4.3 Q&A bank · Starting [starting]
-Try each question first, then open the answer.
 
 :::qa Why is psychology called a science, and what makes it different from common sense? [starting]
 ### Short answer

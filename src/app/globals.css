@@ -247,7 +247,8 @@
      Durations scale: 120ms micro (press) / 200ms default (hover, reveal) /
      400ms slow (section, modal) / 600ms slower (hero cascade reserve).
      Easings: `snappy` for touches & hovers, `out-expo` for entrances,
-     `springy` for playful lift. Reduced-motion users get everything flattened
+     `springy` ONLY for the rubber stamp landing (its overshoot is the
+     stamp hitting paper; nothing else bounces). Reduced-motion users get everything flattened
      by the global `prefers-reduced-motion` rule in @layer base. */
   --duration-fast: 120ms;
   --duration-base: 200ms;
@@ -971,13 +972,13 @@ html[data-cvd="on"] .bg-destructive {
 
 /* Voice waveform + typing indicator (moved from per-file styles to avoid
    Tailwind arbitrary-keyframes duplication). */
-@keyframes wave-bounce {
+@keyframes wave-level {
   0%, 100% { transform: scaleY(0.4); }
   50% { transform: scaleY(1); }
 }
 .animate-wave {
   transform-origin: bottom;
-  animation: wave-bounce 0.9s ease-in-out infinite;
+  animation: wave-level 0.9s ease-in-out infinite;
 }
 
 /* Decorative float (motion system §13) — a slow 8px rise-and-settle for

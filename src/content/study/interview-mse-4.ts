@@ -88,7 +88,6 @@ A graphical display of the course of illness over time, showing sequence of epis
 :::
 
 ## 5.3 Viva rapid-fire [core]
-Tap each card to check yourself. Say the answer aloud first.
 
 :::viva
 Define the mental status examination. :: A standardised format in which the clinician records the psychiatric signs and symptoms present at the time of the interview.

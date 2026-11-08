@@ -150,12 +150,6 @@
   background-image: radial-gradient(var(--w10) 1.3px, transparent 1.4px);
   background-size: 22px 22px;
 }
-.grid {
-  background-image:
-    linear-gradient(var(--i06) 1px, transparent 1px),
-    linear-gradient(90deg, var(--i06) 1px, transparent 1px);
-  background-size: 32px 32px;
-}
 .halftone {
   background-image: radial-gradient(rgba(17, 17, 17, 0.13) 1.6px, transparent 1.7px);
   background-size: 14px 14px;
@@ -342,7 +336,7 @@
 }
 .btn > span[aria-hidden] {
   display: inline-block;
-  transition: transform 260ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition: transform 260ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 @media (hover: hover) {
   .btn:hover {
@@ -811,10 +805,6 @@
   position: relative;
   aspect-ratio: 16 / 11;
   background-color: var(--white);
-  background-image:
-    linear-gradient(var(--i06) 1px, transparent 1px),
-    linear-gradient(90deg, var(--i06) 1px, transparent 1px);
-  background-size: 24px 24px;
 }
 .windowFloor {
   position: absolute;
@@ -978,7 +968,7 @@
   transition-duration: 70ms;
 }
 .quickGo {
-  transition: transform 260ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition: transform 260ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 .quickCard:hover .quickGo {
   transform: translateX(5px);
@@ -2428,7 +2418,7 @@
   align-items: flex-start;
   gap: 12px;
   background: var(--ink);
-  border-left: 4px solid var(--lime);
+  border: 2px solid var(--lime);
   border-radius: 10px;
   padding: 12px 14px;
   line-height: 1.5;
@@ -3889,7 +3879,7 @@ details[open] > summary .chev {
   box-shadow: 5px 5px 0 var(--ink);
 }
 .faqItem > summary .chev {
-  transition: transform 260ms cubic-bezier(0.34, 1.56, 0.64, 1), background-color 160ms ease;
+  transition: transform 260ms cubic-bezier(0.16, 1, 0.3, 1), background-color 160ms ease;
 }
 .faqItem:hover > summary .chev {
   transform: scale(1.15);

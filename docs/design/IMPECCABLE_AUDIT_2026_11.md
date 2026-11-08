@@ -95,6 +95,26 @@ Study reader's contents panel).
 | D-4 | `font-family: Arial` in the achievement email. Email clients need a safe stack; kept, the detector rule does not apply to email HTML. | `lib/achievements/notify.ts:134` | (kept, reason noted) |
 | P-3 | **Instruction and meta lines in Study content**: about 70 lines that tell students how to approach the questions ("Think each question through, or jot an answer, before you open it.", "Try each question first, then open the answer."). Lines that state a rule ("Score 80% or more to open the Beginner level.") stay. | `src/content/study/*.ts` | polish |
 
+## Result after the six commands
+
+Detector: 8 anti-patterns and 25 advisories before; 4 and 3 after. What is
+left is kept on purpose:
+
+- `--ease-springy` (`globals.css`) and the two `stamp` landings
+  (`lib/games/ui/fx.module.css`, `lib/games-sims/ui/games2.module.css`):
+  `vibha-design` keeps the overshoot for the rubber stamp hitting paper, and
+  for nothing else.
+- Blockquote rules in a notification body and the admin editor
+  (`border-l-4`): a quote convention in rich text, not a card.
+- The divider between a bookmark and its remove button
+  (`components/study/marks.tsx`): a 2 px separator, not a side-tab card.
+- `font-family: Arial` in the achievement email (D-4): email clients need a
+  safe font stack.
+
+Screenshots before and after every command, at 390, 768, 1024, 1280 and
+1536 px, are kept with the harness outside the repo (scratchpad
+`uifix-shots/shots/before` and `uifix-shots/shots/after`).
+
 ## What is fine
 
 - No page scrolls sideways at 390, 768, 1024, 1280 or 1536 px.

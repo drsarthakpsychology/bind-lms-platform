@@ -98,7 +98,7 @@ function GameGroup({ id, title, games }: { id: string; title: string; games: Gam
 /** /games: the real games, solo and with others. Nothing else competes. */
 export function LearnHome({ showLab = false }: { showLab?: boolean }) {
   return (
-    <div className={cn("mx-auto max-w-5xl space-y-8", s.texture)}>
+    <div className="mx-auto max-w-5xl space-y-8">
       <PageHeader title="Games" className="pb-0" />
 
       <GameGroup id="solo" title="Solo" games={SOLO} />
@@ -126,7 +126,7 @@ export function QuizPath({ units, serverState, save }: { units: Unit[]; serverSt
   const shownBadges = Object.entries(BADGES);
 
   return (
-    <div className={cn("mx-auto max-w-4xl space-y-8", s.texture)}>
+    <div className="mx-auto max-w-4xl space-y-8">
       <Link href="/prep/smart" className={backLinkClass}>
         <ArrowLeft className="size-4" aria-hidden /> Smart practice
       </Link>

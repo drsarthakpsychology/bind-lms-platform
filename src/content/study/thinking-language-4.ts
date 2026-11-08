@@ -424,7 +424,6 @@ Q: Wallach and Kogan found creativity and intelligence nearly independent mainly
 # Part V · Exam zone
 
 ## 5.1 Q&A bank · Starting [starting]
-Think each question through, then open the answer and compare.
 
 :::qa What is the difference between an algorithm and a heuristic? When would you use each? [starting]
 ### Short answer
@@ -624,7 +623,6 @@ A tailor who designs a new blouse pattern needs skill with cloth, many ideas, ju
 :::
 
 ## 5.2 Q&A bank · Beginner [beginner]
-Answers here assume the Beginner sections. Write your own outline first.
 
 :::qa Explain the representativeness, availability and anchoring heuristics, with examples of the errors each produces. [beginner]
 ### Short answer

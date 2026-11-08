@@ -643,7 +643,6 @@ Q: A patient scores poorly on free recall of a word list, but recognises almost 
 # Part V · Exam zone
 
 ## 5.1 Q&A bank · Starting [starting]
-Think each question through, then open the answer and compare.
 
 :::qa What is the difference between classical and operant conditioning? [starting]
 ### Short answer
@@ -843,7 +842,6 @@ Even when nothing can be recalled or recognised, material is often relearnt fast
 :::
 
 ## 5.2 Q&A bank · Beginner [beginner]
-Answers here assume the Beginner sections. Write your own outline first.
 
 :::qa Explain the four basic schedules of reinforcement with their response patterns and examples. Why is the variable-ratio schedule so powerful? [beginner]
 ### Short answer

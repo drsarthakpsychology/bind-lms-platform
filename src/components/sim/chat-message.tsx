@@ -36,9 +36,9 @@ export const ChatMessage = React.memo(function ChatMessage({
     return (
       <div className="flex justify-start">
         <div className="flex items-center gap-1 rounded-2xl rounded-bl-md border border-border bg-card px-3.5 py-2.5">
-          <span className="size-1.5 animate-bounce rounded-full bg-muted-foreground" style={{ animationDelay: "0ms" }} aria-hidden />
-          <span className="size-1.5 animate-bounce rounded-full bg-muted-foreground" style={{ animationDelay: "120ms" }} aria-hidden />
-          <span className="size-1.5 animate-bounce rounded-full bg-muted-foreground" style={{ animationDelay: "240ms" }} aria-hidden />
+          <span className="size-1.5 animate-pulse rounded-full bg-muted-foreground" style={{ animationDelay: "0ms" }} aria-hidden />
+          <span className="size-1.5 animate-pulse rounded-full bg-muted-foreground" style={{ animationDelay: "120ms" }} aria-hidden />
+          <span className="size-1.5 animate-pulse rounded-full bg-muted-foreground" style={{ animationDelay: "240ms" }} aria-hidden />
           <span className="sr-only">Patient is answering</span>
         </div>
       </div>
