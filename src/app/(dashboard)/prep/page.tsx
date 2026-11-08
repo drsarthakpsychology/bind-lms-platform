@@ -56,7 +56,7 @@ export default async function PrepPage() {
         <Tool href="/prep/smart" icon={Sparkles} title="Smart practice" text="From your weak topics and missed questions" />
         <Tool href="/prep/mock" icon={Clock} title="Mock tests" text="Timed papers with marking" />
         <Tool href="/prep/interview" icon={MessagesSquare} title="Mock interview" text="Practise for the panel" />
-        <Tool href={home.saved || !home.wrong ? "/prep/saved" : "/prep/wrong"} icon={Bookmark} title="Saved and wrong" text={home.canSave ? `${home.saved} saved · ${home.wrong} wrong` : `${home.wrong} to look at again`} />
+        <Tool href={home.saved || !home.wrong ? "/prep/saved" : "/prep/wrong"} icon={Bookmark} title="Saved and wrong" text={home.saved || home.wrong ? (home.canSave ? `${home.saved} saved · ${home.wrong} wrong` : `${home.wrong} to look at again`) : "Questions to look at again"} />
       </nav>
 
       <ListRow href="/prep/long" title="Long answers" sub={bigCount(longCount(), "written answers") ?? "Written answers"} />

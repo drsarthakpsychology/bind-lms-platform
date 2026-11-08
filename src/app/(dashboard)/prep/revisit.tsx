@@ -64,7 +64,7 @@ export async function RevisitPage({ kind, page }: { kind: "saved" | "wrong"; pag
         label={kind === "saved" ? "Saved questions" : "Wrong answers"}
         next={nextPage}
         again="reset"
-        back={{ href: "/prep", label: "Exam Prep" }}
+        back={{ href: "/prep", label: "Back to Exam Prep" }}
         empty={
           kind === "saved" ? (
             list.canSave ? (
