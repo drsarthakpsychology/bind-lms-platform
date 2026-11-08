@@ -2,7 +2,10 @@ import { ToolHeader } from "@/components/help/tool-header";
 import { createClient } from "@/lib/supabase/server";
 import { MseLadder, type MseLadderContent } from "./mse-ladder";
 import type { MseStimulus } from "@/lib/practice/mse";
-import type { FullMseStimulus } from "@/lib/mse/mse4-stimuli";
+import { FULL_MSE_STIMULI, type FullMseStimulus } from "@/lib/mse/mse4-stimuli";
+import { OBSERVE_STIMULI } from "@/lib/practice/mse-observe-stimuli";
+import { order } from "@/lib/history/server";
+import { viewerId } from "@/lib/history/viewer";
 import { requireFeature } from "@/lib/flags";
 import { cleanDeep, cleanStudentText } from "@/lib/ai/student-text";
 
@@ -72,7 +75,19 @@ export default async function MsePage() {
     .select("id, slug, content, domain, expert_coding, title")
     .eq("status", "published");
 
-  const content = shapeContent((dbRows ?? []) as unknown as MseStimuliRow[]);
+  const shaped = shapeContent((dbRows ?? []) as unknown as MseStimuliRow[]);
+  // Answer history (src/lib/history): Levels 1 and 4 open on a case not seen
+  // yet, then missed ones, right ones last. Picked here so the first screen
+  // is the same on the server and in the browser.
+  const viewer = await viewerId();
+  const observe = shaped.observe ?? OBSERVE_STIMULI;
+  const fullMse = shaped.fullMse ?? FULL_MSE_STIMULI;
+  const [obsOrder, fullOrder] = await Promise.all([
+    order(viewer, "mse-trainer", observe.map((x) => x.id)),
+    order(viewer, "mse-trainer", fullMse.map((x) => x.id)),
+  ]);
+  const byOrder = <T extends { id: string }>(list: T[], ids: string[]) => ids.flatMap((id) => list.filter((x) => x.id === id).slice(0, 1));
+  const content: MseLadderContent = { ...shaped, observe: byOrder(observe, obsOrder), fullMse: byOrder(fullMse, fullOrder) };
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">

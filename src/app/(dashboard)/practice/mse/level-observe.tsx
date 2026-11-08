@@ -5,6 +5,7 @@ import { haptic } from "@/lib/haptics";
 import { scoreObserve } from "@/lib/mse/ladder";
 import { buildMseAttemptPayload, scoreMseLevel1Attempt } from "@/lib/practice/mse-attempt";
 import { OBSERVE_STIMULI } from "@/lib/practice/mse-observe-stimuli";
+import { noteAnswer } from "@/lib/history/client";
 
 /**
  * MSE Level 1: Observe. The first rung of the ladder: describe what you can
@@ -54,6 +55,7 @@ export function ObserveLevel({
   /** Persist this Level 1 attempt (a check, not a test, silent on failure). */
   async function persist() {
     const completedAt = new Date();
+    noteAnswer("mse-trainer", stimulus.id, result.labels.length === 0 && wordCount >= 80);
     const payload = buildMseAttemptPayload(
       stimulus,
       "1",

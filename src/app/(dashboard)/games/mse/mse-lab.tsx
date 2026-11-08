@@ -8,7 +8,8 @@ import { cn } from "@/lib/utils";
 import { LearnLink } from "@/lib/games/ui/learn-link";
 import { hashString, makeRng, pct } from "@/lib/games-sims/common";
 import { excerptById, type Excerpt } from "@/lib/games-sims/mse/excerpts";
-import { gradeTag, nextLevel, nextStreak, optionsFor, pickExcerpt, pointsFor, ROUND_SIZE, segments, whyNot, type Level, type Tag, type TagResult } from "@/lib/games-sims/mse/grade";
+import { historyFor, noteAnswer, useHistoryPrefetch } from "@/lib/history/client";
+import { EXCERPT_RIGHT, gradeExcerpt, gradeTag, nextLevel, nextStreak, optionsFor, pickExcerpt, pointsFor, ROUND_SIZE, segments, whyNot, type Level, type Tag, type TagResult } from "@/lib/games-sims/mse/grade";
 import { DOMAINS, TERMS, domainLabel, termById, type Domain } from "@/lib/games-sims/mse/terms";
 import { AccuracyBoard, type AccuracyBoardData } from "@/lib/games-sims/ui/board";
 import { Btn, buzz, Kbd, motionCss as m, Panel, Pill, readLocal, Stat, toneFor, useGameXp, useHotkeys, verdictWord, writeLocal } from "@/lib/games-sims/ui/kit";
@@ -53,11 +54,13 @@ export function MseLab({ serverState, save, board, submit }: { serverState: Lear
   const [play, setPlay] = React.useState<Play | null>(null);
   const [done, setDone] = React.useState<Play | null>(null);
   const [bestEver, setBestEver] = React.useState<number | null>(null);
+  useHistoryPrefetch("mse-lab");
 
   function start(level: Level) {
     const seed = `${Date.now()}`;
     const rng = makeRng(hashString(seed));
-    const e = pickExcerpt(level, new Set(), rng)!;
+    // Answer history: an excerpt not seen yet first, then a missed one (src/lib/history).
+    const e = pickExcerpt(level, new Set(), rng, historyFor("mse-lab"), Date.now())!;
     setBestEver(readLocal(BEST_KEY, 0));
     setDone(null);
     setPlay({ seed, level, seen: [e.id], excerpt: e.id, idx: 0, tags: [], results: [], pick: null, revealed: false, streak: 0, best: 0, points: 0, scores: [], tagsDone: 0, tagsScore: 0, gained: 0, ruled: {} });
@@ -70,6 +73,8 @@ export function MseLab({ serverState, save, board, submit }: { serverState: Lear
       play={play}
       setPlay={setPlay}
       onExcerptDone={(p, e) => {
+        // Browser copy of the answer history (the server records it too).
+        noteAnswer("mse-lab", e.id, gradeExcerpt(e, p.tags).score >= EXCERPT_RIGHT, { server: false });
         void submit({ id: e.id, tags: p.tags, streak: p.best, level: p.level, run: p.seed }).catch(() => undefined);
       }}
       onFinish={(p) => {
@@ -155,7 +160,7 @@ function Round({ play, setPlay, onExcerptDone, onFinish }: { play: Play; setPlay
     }
     const level = nextLevel(play.level, scores);
     const rng = makeRng(hashString(`${play.seed}:${play.seen.length}`));
-    const nx = pickExcerpt(level, new Set(play.seen), rng);
+    const nx = pickExcerpt(level, new Set(play.seen), rng, historyFor("mse-lab"), Date.now());
     if (!nx) {
       onFinish(done);
       return;
