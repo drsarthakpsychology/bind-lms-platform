@@ -211,7 +211,7 @@ Q: Expert racetrack handicappers used complex reasoning unrelated to their IQ. T
 ## 4.3 Thinking and language in the clinic [core][advanced]
 
 :::widget figure
-{"id": "language-areas", "quiz": true, "caption": "Name each numbered part in your head first, then tap to check."}
+{"id": "language-areas", "quiz": true}
 :::
 
 ### Reasoning biases in psychosis

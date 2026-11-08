@@ -436,7 +436,7 @@ Consciousness can be studied scientifically through contrasts between conscious 
     visuals: [
       { kind: "compare", data: { title: "Two leading theories", a: { label: "Global workspace", points: ["Many unconscious processors", "Conscious when broadcast widely", "Prefrontal and parietal ignition"], summary: "Consciousness as broadcast." }, b: { label: "Integrated information", points: ["Consciousness equals integrated information", "Measured as phi", "Posterior cortex central"], summary: "Consciousness as integration." } } },
       { kind: "layers", caption: "Indian perspectives", data: { title: "Mandukya Upanishad: four states", shape: "stack", layers: [{ label: "Turiya", detail: "The fourth: pure consciousness underlying all states." }, { label: "Sushupti", detail: "Deep dreamless sleep." }, { label: "Svapna", detail: "Dreaming, the inner world." }, { label: "Jagrat", detail: "Waking, the outer world." }] } },
-      { kind: "hypnogram", caption: "Altered states of consciousness", data: { caption: "Drag through a night of sleep: when does dreaming consciousness appear?" } },
+      { kind: "hypnogram", caption: "Altered states of consciousness", data: { caption: "" } },
     ],
     ref: "Chalmers 1995; Block 1995; Baars 1988; Dehaene and Changeux 2011; Tononi 2004 and 2016; Lamme 2006; Crick and Koch 2003; Owen et al 2006 Science; Libet et al 1983; Gazzaniga 2005; Mandukya Upanishad; Rao, Paranjpe and Dalal 2008 Handbook of Indian Psychology; Cogitate Consortium 2023",
   },

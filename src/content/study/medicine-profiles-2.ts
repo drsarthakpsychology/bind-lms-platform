@@ -6,7 +6,7 @@ export const part2 = String.raw`
 You met the idea of reuptake at the Starting level. Here each medicine gets its own profile: what makes it different from its neighbours, at the receptor level and at the bedside.
 
 :::widget synapse
-{"drug": "ssri", "caption": "An SSRI blocks the serotonin transporter (SERT). Serotonin stays longer in the synapse. Press 'time passes' to see why the mood benefit lags behind the chemical change: autoreceptors on the sending neuron gradually desensitise, so serotonin release rises, and downstream gene changes build up over the following weeks."}
+{"drug": "ssri", "caption": "An SSRI blocks the serotonin transporter (SERT). Serotonin stays longer in the synapse."}
 :::
 
 ### What all SSRIs share
@@ -34,7 +34,7 @@ You met the idea of reuptake at the Starting level. Here each medicine gets its 
 **Venlafaxine** blocks serotonin reuptake at low doses and adds noradrenaline reuptake as the dose rises. **Duloxetine** blocks both from the start. **Desvenlafaxine** is venlafaxine's active metabolite. The noradrenaline action helps some people with pain, fatigue and severe depression, and brings **sweating, raised blood pressure and pulse**, and (for venlafaxine) severe discontinuation symptoms.
 
 :::widget synapse
-{"drug": "snri", "caption": "An SNRI blocks both the serotonin and the noradrenaline transporters. In the prefrontal cortex, dopamine is also cleared by the noradrenaline transporter, so SNRIs raise prefrontal dopamine too. Watch blood pressure, especially with venlafaxine at higher doses."}
+{"drug": "snri", "caption": "An SNRI blocks both the serotonin and the noradrenaline transporters. In the prefrontal cortex, dopamine is also cleared by the noradrenaline transporter, so SNRIs raise prefrontal dopamine too."}
 :::
 
 :::widget sort
@@ -71,7 +71,7 @@ You met the idea of reuptake at the Starting level. Here each medicine gets its 
   ],
   "summary": "Useful when pain and depression come together."
  },
- "caption": "Slide between the two. The extra noradrenaline action brings pain relief, and also the blood pressure and sweating."
+ "caption": "The extra noradrenaline action brings pain relief, and also the blood pressure and sweating."
 }
 :::
 
@@ -116,7 +116,7 @@ Q: Which SSRI is the strongest CYP2D6 inhibitor along with fluoxetine?
 Not every antidepressant works by blocking reuptake. Several act on receptors, which gives them different side effects and makes them useful when SSRIs fail or do not suit.
 
 :::widget flow
-{"title": "How the antidepressant classes differ in their first action", "layout": "tree", "nodes": [{"id": "root", "label": "Antidepressants", "detail": "Grouped by their first action in the brain."}, {"id": "reup", "label": "Block reuptake", "detail": "Keep the messenger in the synapse longer.", "parent": "root"}, {"id": "ssri", "label": "SSRIs", "detail": "Serotonin transporter only: sertraline, escitalopram, fluoxetine, paroxetine, fluvoxamine.", "parent": "reup"}, {"id": "snri", "label": "SNRIs", "detail": "Serotonin and noradrenaline transporters: venlafaxine, duloxetine, desvenlafaxine.", "parent": "reup"}, {"id": "ndri", "label": "NDRI", "detail": "Noradrenaline and dopamine transporters: bupropion. No serotonin action, so no sexual side effects.", "parent": "reup"}, {"id": "tca", "label": "Tricyclics", "detail": "Serotonin and noradrenaline reuptake plus many receptor blocks (H1, M1, alpha-1) and sodium channel block: amitriptyline, imipramine, clomipramine, nortriptyline.", "parent": "reup"}, {"id": "rec", "label": "Act on receptors", "detail": "Block or stimulate receptors rather than pumps.", "parent": "root"}, {"id": "mirt", "label": "Mirtazapine", "detail": "Blocks alpha-2 brakes (more serotonin and noradrenaline released), and 5-HT2A, 5-HT2C, 5-HT3 and H1 receptors.", "parent": "rec"}, {"id": "traz", "label": "Trazodone", "detail": "Blocks 5-HT2A strongly, with weak reuptake block, H1 and alpha-1 blockade; sedating.", "parent": "rec"}, {"id": "ago", "label": "Agomelatine", "detail": "Stimulates melatonin MT1 and MT2 receptors and blocks 5-HT2C.", "parent": "rec"}, {"id": "vort", "label": "Vortioxetine", "detail": "Blocks SERT and acts on several serotonin receptors (multimodal).", "parent": "rec"}, {"id": "enz", "label": "Block an enzyme", "detail": "Stop monoamines being broken down.", "parent": "root"}, {"id": "maoi", "label": "MAOIs", "detail": "Monoamine oxidase inhibitors: phenelzine, tranylcypromine (irreversible), moclobemide (reversible, MAO-A).", "parent": "enz"}, {"id": "glu", "label": "Glutamate and GABA", "detail": "Fast-acting newer agents: esketamine (NMDA antagonist), zuranolone and brexanolone (GABA-A neurosteroids). See the Advanced level.", "parent": "root"}], "caption": "Tap each box. Classes that share a first action share most side effects."}
+{"title": "How the antidepressant classes differ in their first action", "layout": "tree", "nodes": [{"id": "root", "label": "Antidepressants", "detail": "Grouped by their first action in the brain."}, {"id": "reup", "label": "Block reuptake", "detail": "Keep the messenger in the synapse longer.", "parent": "root"}, {"id": "ssri", "label": "SSRIs", "detail": "Serotonin transporter only: sertraline, escitalopram, fluoxetine, paroxetine, fluvoxamine.", "parent": "reup"}, {"id": "snri", "label": "SNRIs", "detail": "Serotonin and noradrenaline transporters: venlafaxine, duloxetine, desvenlafaxine.", "parent": "reup"}, {"id": "ndri", "label": "NDRI", "detail": "Noradrenaline and dopamine transporters: bupropion. No serotonin action, so no sexual side effects.", "parent": "reup"}, {"id": "tca", "label": "Tricyclics", "detail": "Serotonin and noradrenaline reuptake plus many receptor blocks (H1, M1, alpha-1) and sodium channel block: amitriptyline, imipramine, clomipramine, nortriptyline.", "parent": "reup"}, {"id": "rec", "label": "Act on receptors", "detail": "Block or stimulate receptors rather than pumps.", "parent": "root"}, {"id": "mirt", "label": "Mirtazapine", "detail": "Blocks alpha-2 brakes (more serotonin and noradrenaline released), and 5-HT2A, 5-HT2C, 5-HT3 and H1 receptors.", "parent": "rec"}, {"id": "traz", "label": "Trazodone", "detail": "Blocks 5-HT2A strongly, with weak reuptake block, H1 and alpha-1 blockade; sedating.", "parent": "rec"}, {"id": "ago", "label": "Agomelatine", "detail": "Stimulates melatonin MT1 and MT2 receptors and blocks 5-HT2C.", "parent": "rec"}, {"id": "vort", "label": "Vortioxetine", "detail": "Blocks SERT and acts on several serotonin receptors (multimodal).", "parent": "rec"}, {"id": "enz", "label": "Block an enzyme", "detail": "Stop monoamines being broken down.", "parent": "root"}, {"id": "maoi", "label": "MAOIs", "detail": "Monoamine oxidase inhibitors: phenelzine, tranylcypromine (irreversible), moclobemide (reversible, MAO-A).", "parent": "enz"}, {"id": "glu", "label": "Glutamate and GABA", "detail": "Fast-acting newer agents: esketamine (NMDA antagonist), zuranolone and brexanolone (GABA-A neurosteroids). See the Advanced level.", "parent": "root"}], "caption": "Classes that share a first action share most side effects."}
 :::
 
 ### Profiles
@@ -199,11 +199,11 @@ Antipsychotics all block, or partly stimulate, **dopamine D2 receptors**. The br
 :::
 
 :::widget brainmap
-{"title": "Four dopamine pathways and what D2 blockade does in each", "focus": ["basal-ganglia", "prefrontal", "hypothalamus", "amygdala"], "notes": {"amygdala": "Mesolimbic pathway (from the midbrain to the nucleus accumbens and limbic areas): overactivity is linked with hallucinations and delusions. Blocking D2 here treats positive symptoms, and can flatten reward and motivation.", "prefrontal": "Mesocortical pathway: dopamine here is thought to be low in schizophrenia, linked with negative and cognitive symptoms. Blocking D2 here may worsen them; 5-HT2A blockade may release some dopamine.", "basal-ganglia": "Nigrostriatal pathway (substantia nigra to striatum): controls movement. Blocking D2 here causes stiffness, tremor, akathisia, dystonia and, long term, tardive dyskinesia.", "hypothalamus": "Tuberoinfundibular pathway (hypothalamus to pituitary): dopamine normally stops prolactin release. Blocking D2 raises prolactin: breast changes, stopped periods, sexual problems, bone loss."}, "caption": "Tap each highlighted area. One action, D2 blockade, gives very different effects depending on where it happens."}
+{"title": "Four dopamine pathways and what D2 blockade does in each", "focus": ["basal-ganglia", "prefrontal", "hypothalamus", "amygdala"], "notes": {"amygdala": "Mesolimbic pathway (from the midbrain to the nucleus accumbens and limbic areas): overactivity is linked with hallucinations and delusions. Blocking D2 here treats positive symptoms, and can flatten reward and motivation.", "prefrontal": "Mesocortical pathway: dopamine here is thought to be low in schizophrenia, linked with negative and cognitive symptoms. Blocking D2 here may worsen them; 5-HT2A blockade may release some dopamine.", "basal-ganglia": "Nigrostriatal pathway (substantia nigra to striatum): controls movement. Blocking D2 here causes stiffness, tremor, akathisia, dystonia and, long term, tardive dyskinesia.", "hypothalamus": "Tuberoinfundibular pathway (hypothalamus to pituitary): dopamine normally stops prolactin release. Blocking D2 raises prolactin: breast changes, stopped periods, sexual problems, bone loss."}, "caption": "One action, D2 blockade, gives very different effects depending on where it happens."}
 :::
 
 :::widget pathways
-{"system": "dopamine", "title": "What D2 blockade does in each pathway, and what 5-HT2A blockade adds", "caption": "Turn on the D2 blocker and see the effect in each of the four pathways. Then add serotonin 2A blockade, as most second-generation drugs do, and watch which unwanted effects ease."}
+{"system": "dopamine", "title": "What D2 blockade does in each pathway, and what 5-HT2A blockade adds"}
 :::
 
 
@@ -211,7 +211,7 @@ Antipsychotics all block, or partly stimulate, **dopamine D2 receptors**. The br
 {
  "transmitter": "dopamine",
  "title": "One synapse, the whole idea of an antipsychotic",
- "caption": "Play a normal signal, then pick Receptor blocker (antagonist). Dopamine is still made and released, but the receptor is covered, so the message is muffled. In the overactive pathway that eases psychosis; in the movement pathway and at the pituitary it causes stiffness and raised prolactin. The pathway map above shows where."
+ "caption": "Dopamine is still made and released, but the receptor is covered, so the message is muffled. In the overactive pathway that eases psychosis; in the movement pathway and at the pituitary it causes stiffness and raised prolactin. The pathway map above shows where."
 }
 :::
 
@@ -240,7 +240,7 @@ The labels hide large differences **within** each group. It is more useful to kn
 | Clozapine | The only proven medicine for treatment-resistant schizophrenia | Low white cells, myocarditis, seizures, constipation (section 2.4) |
 
 :::widget curve
-{"kind": "dose-response", "title": "Full agonist, partial agonist and antagonist at the same receptor", "caption": "Slide the dose. A full agonist rises to the top; a partial agonist plateaus partway (its ceiling); an antagonist produces no response on its own but shifts the agonist's curve to the right. Aripiprazole and buprenorphine are partial agonists: there is a built-in ceiling on how much they can stimulate."}
+{"kind": "dose-response", "title": "Full agonist, partial agonist and antagonist at the same receptor", "caption": "A full agonist rises to the top; a partial agonist plateaus partway (its ceiling); an antagonist produces no response on its own but shifts the agonist's curve to the right. Aripiprazole and buprenorphine are partial agonists: there is a built-in ceiling on how much they can stimulate."}
 :::
 
 :::widget sort
@@ -301,7 +301,7 @@ Q: A man on haloperidol cannot sit still, paces, and feels inner restlessness. T
 Clozapine is the only antipsychotic proven to work when two others have failed (**treatment-resistant schizophrenia**). It also reduces suicidal behaviour in schizophrenia and helps severe aggression. It is under-used, often because of fear of its side effects, which can be managed with careful monitoring.
 
 :::widget flow
-{"title": "Starting clozapine safely", "layout": "chain", "nodes": [{"id": "a", "label": "Confirm treatment resistance", "detail": "Two adequate trials of different antipsychotics (adequate dose, duration and adherence), with persisting symptoms."}, {"id": "b", "label": "Baseline checks", "detail": "Full blood count with neutrophils, weight, BMI, blood pressure, pulse, temperature, glucose or HbA1c, lipids, ECG; troponin and CRP baseline; bowel habit; smoking status."}, {"id": "c", "label": "Register and consent", "detail": "Register with the blood monitoring service; explain side effects, blood tests and what to report (fever, sore throat, chest pain, constipation)."}, {"id": "d", "label": "Titrate slowly", "detail": "Start with 12.5 mg once or twice on day 1, increase gradually towards a target, often 300 to 450 mg, watching pulse, blood pressure and temperature."}, {"id": "e", "label": "Monitor blood counts", "detail": "Weekly at first, then fortnightly, then monthly, according to the monitoring schedule."}, {"id": "f", "label": "Watch for myocarditis", "detail": "Mostly in the first four weeks: fever, chest pain, fast pulse, breathlessness, raised troponin or CRP. Stop and refer urgently."}, {"id": "g", "label": "Check the level", "detail": "Plasma level after a week at a steady dose if response is poor or side effects appear; usual target about 350 micrograms per litre or above."}, {"id": "h", "label": "Prevent constipation", "detail": "Ask at every visit; prescribe laxatives early. Clozapine-induced gut hypomotility can be fatal."}], "caption": "Press Play to step through. Most serious problems happen early, so the first weeks are the most closely watched."}
+{"title": "Starting clozapine safely", "layout": "chain", "nodes": [{"id": "a", "label": "Confirm treatment resistance", "detail": "Two adequate trials of different antipsychotics (adequate dose, duration and adherence), with persisting symptoms."}, {"id": "b", "label": "Baseline checks", "detail": "Full blood count with neutrophils, weight, BMI, blood pressure, pulse, temperature, glucose or HbA1c, lipids, ECG; troponin and CRP baseline; bowel habit; smoking status."}, {"id": "c", "label": "Register and consent", "detail": "Register with the blood monitoring service; explain side effects, blood tests and what to report (fever, sore throat, chest pain, constipation)."}, {"id": "d", "label": "Titrate slowly", "detail": "Start with 12.5 mg once or twice on day 1, increase gradually towards a target, often 300 to 450 mg, watching pulse, blood pressure and temperature."}, {"id": "e", "label": "Monitor blood counts", "detail": "Weekly at first, then fortnightly, then monthly, according to the monitoring schedule."}, {"id": "f", "label": "Watch for myocarditis", "detail": "Mostly in the first four weeks: fever, chest pain, fast pulse, breathlessness, raised troponin or CRP. Stop and refer urgently."}, {"id": "g", "label": "Check the level", "detail": "Plasma level after a week at a steady dose if response is poor or side effects appear; usual target about 350 micrograms per litre or above."}, {"id": "h", "label": "Prevent constipation", "detail": "Ask at every visit; prescribe laxatives early. Clozapine-induced gut hypomotility can be fatal."}], "caption": "Most serious problems happen early, so the first weeks are the most closely watched."}
 :::
 
 :::widget figure
@@ -324,7 +324,7 @@ Clozapine is the only antipsychotic proven to work when two others have failed (
 {
  "kind": "dose-response",
  "title": "Clozapine: why the blood level matters",
- "caption": "Move the sliders. Response becomes more likely once the blood level is around 350 nanograms per millilitre, while the risk of seizures and other side effects keeps climbing at higher levels, especially above about 1000. Measuring the level helps you know whether a poor response means too little drug or the wrong drug."
+ "caption": "Response becomes more likely once the blood level is around 350 nanograms per millilitre, while the risk of seizures and other side effects keeps climbing at higher levels, especially above about 1000. Measuring the level helps you know whether a poor response means too little drug or the wrong drug."
 }
 :::
 
@@ -380,7 +380,7 @@ Q: Clozapine levels are typically lower in:
 - **Toxicity** is pushed up by **dehydration, vomiting and diarrhoea, low-salt diets**, and medicines that reduce lithium excretion: **NSAIDs (ibuprofen, diclofenac), ACE inhibitors, angiotensin receptor blockers and thiazide diuretics**.
 
 :::widget flow
-{"title": "How lithium toxicity builds up", "layout": "chain", "nodes": [{"id": "a", "label": "A trigger", "detail": "Vomiting and diarrhoea, a heatwave or fever, a new NSAID painkiller, an ACE inhibitor or thiazide, or a crash diet."}, {"id": "b", "label": "Less lithium leaves the body", "detail": "The kidney handles lithium like sodium. When the body is short of salt or water, it holds on to both."}, {"id": "c", "label": "Level rises", "detail": "Even on an unchanged dose, the blood level climbs above the safe range."}, {"id": "d", "label": "Early signs", "detail": "Coarse tremor, nausea, vomiting, diarrhoea, unsteadiness, slurred speech."}, {"id": "e", "label": "Severe toxicity", "detail": "Confusion, muscle jerks, seizures, heart rhythm problems, kidney failure."}, {"id": "f", "label": "Act", "detail": "Stop lithium, check the level and kidneys urgently, give fluids, treat in hospital; dialysis for severe cases."}], "caption": "Press Play. Teach patients the triggers and the early signs, and to stop lithium and seek help if they become unwell."}
+{"title": "How lithium toxicity builds up", "layout": "chain", "nodes": [{"id": "a", "label": "A trigger", "detail": "Vomiting and diarrhoea, a heatwave or fever, a new NSAID painkiller, an ACE inhibitor or thiazide, or a crash diet."}, {"id": "b", "label": "Less lithium leaves the body", "detail": "The kidney handles lithium like sodium. When the body is short of salt or water, it holds on to both."}, {"id": "c", "label": "Level rises", "detail": "Even on an unchanged dose, the blood level climbs above the safe range."}, {"id": "d", "label": "Early signs", "detail": "Coarse tremor, nausea, vomiting, diarrhoea, unsteadiness, slurred speech."}, {"id": "e", "label": "Severe toxicity", "detail": "Confusion, muscle jerks, seizures, heart rhythm problems, kidney failure."}, {"id": "f", "label": "Act", "detail": "Stop lithium, check the level and kidneys urgently, give fluids, treat in hospital; dialysis for severe cases."}], "caption": "Teach patients the triggers and the early signs, and to stop lithium and seek help if they become unwell."}
 :::
 
 :::widget figure
@@ -430,7 +430,7 @@ Best for **preventing bipolar depression**; little effect on mania. Weight-neutr
   ],
   "summary": "Easy to live with, aimed at the depressive pole."
  },
- "caption": "Slide between the two. The choice often follows the person's pattern: mostly manic relapses, or mostly depressive ones."
+ "caption": "The choice often follows the person's pattern: mostly manic relapses, or mostly depressive ones."
 }
 :::
 
@@ -490,7 +490,7 @@ Q: Lamotrigine must be titrated slowly mainly to reduce the risk of:
 They enhance **GABA**, the brain's main calming messenger, by making the GABA-A receptor respond more strongly. They work fast for anxiety, agitation, insomnia, alcohol withdrawal, seizures and catatonia. The price: **sedation, unsteadiness, memory problems, falls**, **dependence** with regular use over more than a few weeks, **withdrawal** (including seizures) if stopped suddenly, and **dangerous breathing suppression** when combined with alcohol or opioids.
 
 :::widget flow
-{"title": "How regular benzodiazepine use becomes dependence", "layout": "cycle", "nodes": [{"id": "a", "label": "Anxiety or insomnia", "detail": "A real problem, often at a stressful time."}, {"id": "b", "label": "Benzodiazepine taken", "detail": "Quick relief; the person feels calm or sleeps."}, {"id": "c", "label": "Brain adapts", "detail": "GABA-A receptors adapt (tolerance). The same dose works less well."}, {"id": "d", "label": "Between-dose rebound", "detail": "As the dose wears off, anxiety and wakefulness return, sometimes worse than before."}, {"id": "e", "label": "Another dose, or a higher one", "detail": "Taken to relieve the rebound, which teaches the brain that the tablet is needed."}], "caption": "Press Play. The cycle explains why short courses are preferred, and why stopping must be slow."}
+{"title": "How regular benzodiazepine use becomes dependence", "layout": "cycle", "nodes": [{"id": "a", "label": "Anxiety or insomnia", "detail": "A real problem, often at a stressful time."}, {"id": "b", "label": "Benzodiazepine taken", "detail": "Quick relief; the person feels calm or sleeps."}, {"id": "c", "label": "Brain adapts", "detail": "GABA-A receptors adapt (tolerance). The same dose works less well."}, {"id": "d", "label": "Between-dose rebound", "detail": "As the dose wears off, anxiety and wakefulness return, sometimes worse than before."}, {"id": "e", "label": "Another dose, or a higher one", "detail": "Taken to relieve the rebound, which teaches the brain that the tablet is needed."}], "caption": "The cycle explains why short courses are preferred, and why stopping must be slow."}
 :::
 
 | Medicine | Speed and length | Typical use |

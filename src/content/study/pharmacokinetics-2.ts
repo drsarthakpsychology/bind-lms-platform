@@ -20,7 +20,7 @@ Occupancy at equilibrium follows a hyperbola: occupancy = C ÷ (C + Kd). At C eq
 | Therapeutic index | Toxic dose (or TD50) ÷ effective dose (ED50) | Distance between benefit and harm curves |
 
 :::widget curve
-{"kind": "dose-response", "title": "Read potency, efficacy and partial agonism off the curve", "caption": "Slide potency and efficacy separately. Then picture a partial agonist's curve: it plateaus lower however high the dose. Now add a full agonist on top: the partial agonist pulls the full agonist's effect down towards its own ceiling, which is how aripiprazole lowers excessive dopamine signalling."}
+{"kind": "dose-response", "title": "Read potency, efficacy and partial agonism off the curve", "caption": "A partial agonist's curve plateaus lower however high the dose. With a full agonist on top, the partial agonist pulls the full agonist's effect down towards its own ceiling, which is how aripiprazole lowers excessive dopamine signalling."}
 :::
 
 :::widget figure
@@ -48,7 +48,7 @@ An **allosteric** drug binds a site other than the messenger's site and changes 
 {
  "receptor": "GABA-A",
  "title": "Allosteric is not the same as agonist",
- "caption": "Try the four ligand types. All of them sit in the main lock. A benzodiazepine is different: it binds a separate site and only turns up the effect of GABA that is already there. With no GABA it does little, which is one reason benzodiazepines alone rarely stop breathing, while barbiturates, which can open the channel directly at high doses, can."
+ "caption": "All of them sit in the main lock. A benzodiazepine is different: it binds a separate site and only turns up the effect of GABA that is already there. With no GABA it does little, which is one reason benzodiazepines alone rarely stop breathing, while barbiturates, which can open the channel directly at high doses, can."
 }
 :::
 
@@ -78,7 +78,7 @@ Q: In a tissue with a large receptor reserve, a partial agonist is most likely t
 ## 5.2 Targets and signalling: from receptor to gene [core][advanced]
 
 :::widget figure
-{"id": "synapse", "quiz": true, "caption": "Name each numbered part in your head first, then tap to check."}
+{"id": "synapse", "quiz": true}
 :::
 
 | Target family | How it signals | Speed | Psychiatric examples |
@@ -101,7 +101,7 @@ Q: In a tissue with a large receptor reserve, a partial agonist is most likely t
 | Gq | Activates phospholipase C, IP3, calcium, DAG | 5-HT2A, 5-HT2C, alpha-1, H1, M1, M3 |
 
 :::widget flow
-{"title": "From a receptor at the surface to a change in the nucleus", "layout": "chain", "nodes": [{"id": "g1", "label": "Messenger binds a G protein-coupled receptor", "detail": "For example serotonin at 5-HT1A, or dopamine at D2."}, {"id": "g2", "label": "G protein switches on", "detail": "The receptor swaps GDP for GTP on the G protein, which splits and acts on enzymes or channels."}, {"id": "g3", "label": "Second messengers change", "detail": "Cyclic AMP, calcium, IP3 or DAG levels rise or fall."}, {"id": "g4", "label": "Kinases act", "detail": "Protein kinase A, C and others add phosphate groups to target proteins."}, {"id": "g5", "label": "Transcription factors move", "detail": "CREB and others enter the nucleus and switch genes on or off, such as BDNF."}, {"id": "g6", "label": "The neuron changes over days", "detail": "New receptors, new synapses, changed sensitivity: the slow adaptations behind many medicines' delayed effects and their withdrawal syndromes."}], "caption": "Press Play. The early steps take seconds; the last ones take days to weeks. That gap explains why many psychiatric medicines take time."}
+{"title": "From a receptor at the surface to a change in the nucleus", "layout": "chain", "nodes": [{"id": "g1", "label": "Messenger binds a G protein-coupled receptor", "detail": "For example serotonin at 5-HT1A, or dopamine at D2."}, {"id": "g2", "label": "G protein switches on", "detail": "The receptor swaps GDP for GTP on the G protein, which splits and acts on enzymes or channels."}, {"id": "g3", "label": "Second messengers change", "detail": "Cyclic AMP, calcium, IP3 or DAG levels rise or fall."}, {"id": "g4", "label": "Kinases act", "detail": "Protein kinase A, C and others add phosphate groups to target proteins."}, {"id": "g5", "label": "Transcription factors move", "detail": "CREB and others enter the nucleus and switch genes on or off, such as BDNF."}, {"id": "g6", "label": "The neuron changes over days", "detail": "New receptors, new synapses, changed sensitivity: the slow adaptations behind many medicines' delayed effects and their withdrawal syndromes."}], "caption": "The early steps take seconds; the last ones take days to weeks. That gap explains why many psychiatric medicines take time."}
 :::
 
 
@@ -148,7 +148,7 @@ Q: Ketamine acts faster than SSRIs partly because its target is:
 Examples of saturable or self-limiting elimination: alcohol, phenytoin, high-dose aspirin. Among psychiatric drugs, **paroxetine** and **fluoxetine** inhibit their own CYP2D6 metabolism, so levels rise more than proportionally with dose; **valproate**'s protein binding saturates, raising the free fraction at high doses; **clozapine** metabolism can saturate at high levels.
 
 :::widget compare
-{"title": "Linear and saturated elimination", "a": {"label": "First-order (linear)", "points": ["A fixed fraction removed each hour", "Constant half-life", "Double the dose, double the level", "Steady state after 4 to 5 half-lives", "Most medicines at usual doses"], "summary": "Predictable: dose changes give proportional level changes."}, "b": {"label": "Zero-order or saturable", "points": ["A fixed amount removed each hour", "Half-life grows as levels rise", "A small dose rise can cause a big level rise", "Steady state may take much longer or never settle", "Alcohol, phenytoin; partly paroxetine, fluoxetine and high-level clozapine"], "summary": "Unpredictable at higher doses: change slowly and measure levels where possible."}, "caption": "Slide between the two. Which pattern explains why one extra drink at the end of an evening raises blood alcohol so much?"}
+{"title": "Linear and saturated elimination", "a": {"label": "First-order (linear)", "points": ["A fixed fraction removed each hour", "Constant half-life", "Double the dose, double the level", "Steady state after 4 to 5 half-lives", "Most medicines at usual doses"], "summary": "Predictable: dose changes give proportional level changes."}, "b": {"label": "Zero-order or saturable", "points": ["A fixed amount removed each hour", "Half-life grows as levels rise", "A small dose rise can cause a big level rise", "Steady state may take much longer or never settle", "Alcohol, phenytoin; partly paroxetine, fluoxetine and high-level clozapine"], "summary": "Unpredictable at higher doses: change slowly and measure levels where possible."}, "caption": "Which pattern explains why one extra drink at the end of an evening raises blood alcohol so much?"}
 :::
 
 :::widget figure
@@ -175,7 +175,7 @@ When absorption is much slower than elimination (depot injections, some slow-rel
   "slow": "Because release is slower than elimination, the apparent half-life is the release half-life: flip-flop kinetics. Steady state takes months.",
   "liver": "Once in the blood it is cleared by CYP2D6 and CYP3A4 as usual, so strong inhibitors still mean a dose change."
  },
- "caption": "Follow the depot route and stop at the muscle. This is why oral cover is given at the start, and why a missed injection does not cause an immediate drop."
+ "caption": "This is why oral cover is given at the start, and why a missed injection does not cause an immediate drop."
 }
 :::
 
@@ -267,7 +267,7 @@ For **CYP2D6**, each inherited copy (allele) is given an activity value: 1 for n
 | HLA-A*31:01 | Carbamazepine | Consider avoiding |
 
 :::widget flow
-{"title": "Reading a pharmacogenomic report safely", "layout": "chain", "nodes": [{"id": "r1", "label": "Genotype", "detail": "The report lists the alleles found (for example CYP2C19 *2/*17)."}, {"id": "r2", "label": "Predicted phenotype", "detail": "Alleles are translated into a metaboliser type."}, {"id": "r3", "label": "Check current medicines", "detail": "Strong inhibitors (fluoxetine, paroxetine, bupropion, fluvoxamine, omeprazole) can change the real phenotype: phenoconversion."}, {"id": "r4", "label": "Check the person", "detail": "Age, liver and kidney function, smoking, pregnancy, inflammation."}, {"id": "r5", "label": "Decide the dose or drug", "detail": "Use the result to adjust starting dose and pace, or avoid a mismatched drug. It does not say which medicine will work best."}, {"id": "r6", "label": "Monitor anyway", "detail": "Side effects, response and, where useful, drug levels."}], "caption": "Press Play. A gene test is one input to a clinical decision, never the decision itself."}
+{"title": "Reading a pharmacogenomic report safely", "layout": "chain", "nodes": [{"id": "r1", "label": "Genotype", "detail": "The report lists the alleles found (for example CYP2C19 *2/*17)."}, {"id": "r2", "label": "Predicted phenotype", "detail": "Alleles are translated into a metaboliser type."}, {"id": "r3", "label": "Check current medicines", "detail": "Strong inhibitors (fluoxetine, paroxetine, bupropion, fluvoxamine, omeprazole) can change the real phenotype: phenoconversion."}, {"id": "r4", "label": "Check the person", "detail": "Age, liver and kidney function, smoking, pregnancy, inflammation."}, {"id": "r5", "label": "Decide the dose or drug", "detail": "Use the result to adjust starting dose and pace, or avoid a mismatched drug. It does not say which medicine will work best."}, {"id": "r6", "label": "Monitor anyway", "detail": "Side effects, response and, where useful, drug levels."}], "caption": "A gene test is one input to a clinical decision, never the decision itself."}
 :::
 
 :::widget decide

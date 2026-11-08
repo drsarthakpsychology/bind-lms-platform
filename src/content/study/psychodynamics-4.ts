@@ -44,7 +44,7 @@ Neuroscience gives **partial support** to several broad psychodynamic ideas (emo
     "hypothalamus": "Stress hormones (the HPA axis), shaped in animals by early maternal care: a biological route for early relationships to leave a mark.",
     "basal-ganglia": "Reward and 'seeking' circuits. Damage to forebrain dopamine pathways can stop dreaming, linking dreams to motivation."
   },
-  "caption": "Tap each region. These findings fit broad psychodynamic ideas; they do not prove specific ones."
+  "caption": "These findings fit broad psychodynamic ideas; they do not prove specific ones."
 }
 :::
 

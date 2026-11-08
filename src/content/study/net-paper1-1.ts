@@ -838,7 +838,7 @@ Gautama's three types of inference:
 Later (Navya-Nyaya) types, based on how vyapti is known: **kevalanvayi** (only by agreement), **kevala-vyatireki** (only by difference) and **anvaya-vyatireki** (by both).
 
 :::widget flow
-{"title": "The five-membered inference", "layout": "chain", "nodes": [{"id": "n0", "label": "Pratijna", "detail": "The hill has fire"}, {"id": "n1", "label": "Hetu", "detail": "Because it has smoke"}, {"id": "n2", "label": "Udaharana", "detail": "Wherever there is smoke there is fire, as in a kitchen"}, {"id": "n3", "label": "Upanaya", "detail": "The hill has smoke, always accompanied by fire"}, {"id": "n4", "label": "Nigamana", "detail": "Therefore the hill has fire"}], "caption": "Press Play to hear the argument unfold for a listener (pararthanumana)."}
+{"title": "The five-membered inference", "layout": "chain", "nodes": [{"id": "n0", "label": "Pratijna", "detail": "The hill has fire"}, {"id": "n1", "label": "Hetu", "detail": "Because it has smoke"}, {"id": "n2", "label": "Udaharana", "detail": "Wherever there is smoke there is fire, as in a kitchen"}, {"id": "n3", "label": "Upanaya", "detail": "The hill has smoke, always accompanied by fire"}, {"id": "n4", "label": "Nigamana", "detail": "Therefore the hill has fire"}]}
 :::
 
 ### Hetvabhasa: the five fallacies of the reason

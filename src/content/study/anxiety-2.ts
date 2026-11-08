@@ -334,7 +334,7 @@ Q: SSRIs for anxiety are started at a low dose because:
 ## 4.1 The fear circuit in detail [core][advanced]
 
 :::widget figure
-{"id": "amygdala-fear", "quiz": true, "caption": "Name each numbered part in your head first, then tap to check."}
+{"id": "amygdala-fear", "quiz": true}
 :::
 
 :::widget figure
@@ -390,7 +390,7 @@ Breathing air rich in carbon dioxide provokes panic attacks far more often in pe
 :::
 
 :::widget curve
-{"kind": "sdt", "title": "Anxiety as a liberal threat detector", "caption": "Signal detection theory separates sensitivity from bias. Anxious people tend to set a liberal criterion: they detect more real threats but also raise many false alarms. Move the criterion to see the trade-off between hits and false alarms."}
+{"kind": "sdt", "title": "Anxiety as a liberal threat detector", "caption": "Signal detection theory separates sensitivity from bias. Anxious people tend to set a liberal criterion: they detect more real threats but also raise many false alarms."}
 :::
 
 :::widget neuron
@@ -472,7 +472,7 @@ Blocking the serotonin transporter raises serotonin first around the cell bodies
 :::
 
 :::widget curve
-{"kind": "dose-response", "title": "Full and partial agonists: diazepam and buspirone", "caption": "Benzodiazepines boost GABA-A signalling strongly, so higher doses give ever more sedation. Buspirone is a partial agonist at serotonin 1A receptors: its effect rises and then levels off below a full agonist's ceiling. Toggle the partial agonist to see why buspirone is milder, slower and does not cause dependence."}
+{"kind": "dose-response", "title": "Full and partial agonists: diazepam and buspirone", "caption": "Benzodiazepines boost GABA-A signalling strongly, so higher doses give ever more sedation. Buspirone is a partial agonist at serotonin 1A receptors: its effect rises and then levels off below a full agonist's ceiling."}
 :::
 
 :::recall
@@ -526,7 +526,7 @@ Fear reduction within a session predicts later outcome less than expected; toler
 :::
 
 :::widget conditioning
-{"kind": "classical", "title": "Extinction does not erase the fear", "caption": "Watch the last step closely. The response fades because a new safety memory is learned on top of the old fear memory. Time passing (spontaneous recovery), a new place (renewal) or a fresh stress (reinstatement) can let the old memory win again. This is why exposure is varied, spaced and practised in many settings."}
+{"kind": "classical", "title": "Extinction does not erase the fear", "caption": "The response fades because a new safety memory is learned on top of the old fear memory. Time passing (spontaneous recovery), a new place (renewal) or a fresh stress (reinstatement) can let the old memory win again. This is why exposure is varied, spaced and practised in many settings."}
 :::
 
 :::recall

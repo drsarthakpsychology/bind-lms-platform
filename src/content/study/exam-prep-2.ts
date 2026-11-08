@@ -34,7 +34,7 @@ Read the high-yield summary and do the activity here. The exam-style questions f
     { "id": "scz", "label": "Longer duration, decline", "parent": "prim", "detail": "Schizophreniform or schizophrenia, by the DSM duration rules; ICD-11 uses a shorter duration for schizophrenia." },
     { "id": "del", "label": "Delusions only, functioning preserved", "parent": "prim", "detail": "Delusional disorder: non-bizarre or bizarre delusions without prominent hallucinations or decline." }
   ],
-  "caption": "Tap each branch. Entrance questions often test the duration rules and the difference between DSM-5-TR and ICD-11."
+  "caption": "Entrance questions often test the duration rules and the difference between DSM-5-TR and ICD-11."
 }
 :::
 
@@ -218,7 +218,7 @@ Read the high-yield summary and do the activity here. The exam-style questions f
     { "id": "ipt", "label": "Interpersonal and systemic", "parent": "t", "detail": "IPT (Klerman and Weissman), family and couple therapies (Minuchin, Bowen), group therapy (Yalom's therapeutic factors)." },
     { "id": "mi", "label": "Motivational interviewing", "parent": "t", "detail": "Miller and Rollnick: resolving ambivalence about change." }
   ],
-  "caption": "Tap each branch. Then cover the details and recall the founder for each."
+  "caption": "Cover the details and recall the founder for each."
 }
 :::
 
@@ -432,7 +432,7 @@ Definition, three or four key features, one example, one line on significance or
     { "id": "a", "label": "Assessment plan", "detail": "History, MSE, named tests or scales and why, investigations, risk assessment." },
     { "id": "m", "label": "Management", "detail": "Psychological, social and, if relevant, medical, with a risk and relapse plan." }
   ],
-  "caption": "Press Play. Examiners award marks for reasoning, so show why you rule things in and out."
+  "caption": "Examiners award marks for reasoning, so show why you rule things in and out."
 }
 :::
 
@@ -562,7 +562,7 @@ Q: In a 15-mark "discuss" answer, the section most often missing in weak scripts
     { "id": "log2", "label": "Logistics", "detail": "Admit card, ID, centre route, reporting time, the official instructions." },
     { "id": "rest", "label": "Rest", "detail": "Sleep, food, short breaks. Anxiety is normal; slow breathing before you start." }
   ],
-  "caption": "Press Play. The last phase is about consolidating what you know, not adding more."
+  "caption": "The last phase is about consolidating what you know, not adding more."
 }
 :::
 

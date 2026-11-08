@@ -258,7 +258,7 @@ Frontal lobe damage changes personality, judgement and executive control while m
     keyPoints: ["Executive functions of the prefrontal cortex", "Three syndromes with regions", "Phineas Gage", "Causes", "At least six bedside tests with what they assess", "Frontal release signs with caution", "Formal tests including WCST and Stroop", "Limitation of MMSE"],
     visuals: [
       brain("Three frontal syndromes", { prefrontal: "Dorsolateral: planning, flexibility; damage gives apathy and perseveration", frontal: "Orbitofrontal: social control; damage gives disinhibition", "basal-ganglia": "Frontal subcortical loops: lesions here mimic frontal damage" }),
-      vis("brainexplorer", { title: "Phineas Gage and the frontal lobe", focus: ["frontal", "prefrontal"], caption: "Tap the frontal lobe and switch on damage to see what changed in Gage." }),
+      vis("brainexplorer", { title: "Phineas Gage and the frontal lobe", focus: ["frontal", "prefrontal"] }),
     ],
     module: "neurocognitive",
     ref: "Kaplan neuropsychiatry frontal syndromes; Cummings frontal subcortical circuits 1993; Dubois 2000 FAB",

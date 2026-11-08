@@ -23,7 +23,7 @@ Perry, Cooper and Michels' classic scheme gives a good formulation five parts. T
     { "id": "tr", "label": "4 · Predicted transference", "parent": "f", "detail": "How the pattern will show with the therapist, and which resistances to expect." },
     { "id": "tx", "label": "5 · Treatment implications", "parent": "f", "detail": "Expressive or supportive, brief or long, the focus, and what to watch for." }
   ],
-  "caption": "Tap each branch. Part 4 makes the formulation testable: if the predicted transference never appears, revise it."
+  "caption": "Part 4 makes the formulation testable: if the predicted transference never appears, revise it."
 }
 :::
 
@@ -225,7 +225,7 @@ Long, open-ended therapy is not the only psychodynamic option. From the 1960s on
     { "id": "end", "label": "Ending as part of the work", "detail": "The known end date stirs feelings about loss and separation, which are worked with, not avoided." },
     { "id": "fu", "label": "Follow-up", "detail": "A review months later checks whether change has held and grown." }
   ],
-  "caption": "Press Play. Brief models keep the core ideas but add a focus, a limit and a more active therapist."
+  "caption": "Brief models keep the core ideas but add a focus, a limit and a more active therapist."
 }
 :::
 
@@ -255,7 +255,7 @@ Long, open-ended therapy is not the only psychodynamic option. From the 1960s on
   ],
   "summary": "Focused and time-limited, but needs careful selection."
  },
- "caption": "Slide between the two. Both rest on the same ideas about conflict, defence and transference; they differ in pace, focus and how active the therapist is."
+ "caption": "Both rest on the same ideas about conflict, defence and transference; they differ in pace, focus and how active the therapist is."
 }
 :::
 
@@ -356,7 +356,7 @@ Psychodynamic therapy is often called "unscientific". Others claim it is "as goo
     { "label": "Uncertain", "detail": "Long-term therapy is better than shorter therapy for complex, chronic problems. Meta-analyses disagree." },
     { "label": "Not supported", "detail": "Psychoanalysis is the only route to lasting change; every symptom has an Oedipal cause." }
   ],
-  "caption": "Tap each level. Confidence depends on the number, size and quality of trials, not on how persuasive the theory sounds."
+  "caption": "Confidence depends on the number, size and quality of trials, not on how persuasive the theory sounds."
 }
 :::
 

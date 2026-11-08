@@ -42,8 +42,7 @@ export const part1 = String.raw`
    "parent": "t",
    "detail": "Organised knowledge of situations and sequences: what happens at a bank, a clinic visit or a mehendi."
   }
- ],
- "caption": "Tap each block."
+ ]
 }
 :::
 
@@ -249,7 +248,7 @@ Q: A student uses a long formula to solve every statistics question, even when t
    "detail": "2 to 5 years: sentences grow, with rule errors like 'goed' and 'mouses'."
   }
  ],
- "caption": "Play it through. Ages vary a lot between children, and bilingual children reach these milestones on time."
+ "caption": "Ages vary a lot between children, and bilingual children reach these milestones on time."
 }
 :::
 
@@ -314,7 +313,7 @@ Definitions vary, but most experts agree that **intelligence** is the general me
 {
  "kind": "normal",
  "title": "Where an IQ score sits",
- "caption": "Drag along the curve. With a mean of 100 and a standard deviation of 15, about 68 percent score between 85 and 115 and about 95 percent between 70 and 130. A score of 130 is at roughly the 98th percentile."
+ "caption": "With a mean of 100 and a standard deviation of 15, about 68 percent score between 85 and 115 and about 95 percent between 70 and 130. A score of 130 is at roughly the 98th percentile."
 }
 :::
 

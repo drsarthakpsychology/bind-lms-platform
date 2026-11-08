@@ -166,7 +166,7 @@ Classical conditioning is learning in which a **neutral stimulus**, after repeat
 :::widget conditioning
 {
   "kind": "classical",
-  "caption": "Step through acquisition, then extinction. Write the UCS, UCR, CS and CR from the animation before you read on."
+  "caption": "Write the UCS, UCR, CS and CR from the animation before you read on."
 }
 :::
 
@@ -359,7 +359,7 @@ Classical and operant conditioning are the two basic forms of associative learni
 :::widget conditioning
 {
   "kind": "operant",
-  "caption": "Step through reinforcement, a variable-ratio schedule and extinction. Notice the extinction burst: responding rises before it falls, a favourite exam point."
+  "caption": "Notice the extinction burst: responding rises before it falls, a favourite exam point."
 }
 :::
 

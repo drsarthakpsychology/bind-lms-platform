@@ -153,9 +153,7 @@ The starting picture of attachment (Bowlby's secure base, Ainsworth's Strange Si
 
 
 :::widget strange
-{
- "caption": "Step through the episodes and switch between the four infants. Watch the reunions: that is where secure, avoidant, ambivalent and disorganised patterns show most clearly."
-}
+{}
 :::
 
 :::widget figure
@@ -400,8 +398,7 @@ Rituals give time, company and permission to grieve. But rituals can also hide g
    "Impairment well beyond cultural norms and time limits"
   ],
   "summary": "Stuck; grief-focused therapy helps."
- },
- "caption": "Slide between the two and list the features you would ask about in an interview."
+ }
 }
 :::
 
@@ -527,7 +524,7 @@ Mainstream psychology has rediscovered defences under new names:
 {
  "belief": "I am a caring, devoted son.",
  "behaviour": "I have not visited my ageing mother in the village for a year.",
- "caption": "Watch the tension rise, then pick a way to reduce it. Which choices look like rationalisation, and which actually change behaviour?"
+ "caption": "Which choices look like rationalisation, and which actually change behaviour?"
 }
 :::
 

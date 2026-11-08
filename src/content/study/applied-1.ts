@@ -66,7 +66,7 @@ UGC NET Unit 10 ("Emerging Areas") lists: **gender, poverty, disability and migr
     { "id": "e", "label": "Environments and performance", "parent": "ap", "detail": "Environmental, sports, military, traffic and aviation psychology." },
     { "id": "d", "label": "Digital life", "parent": "ap", "detail": "Cyberpsychology, digital learning and AI in psychology." }
   ],
-  "caption": "Tap each branch. Most university electives sit on one of these five branches."
+  "caption": "Most university electives sit on one of these five branches."
 }
 :::
 
@@ -160,7 +160,7 @@ Most deaths in India are now from **non-communicable diseases** (heart disease, 
     { "id": "eff", "label": "Self-efficacy", "parent": "act", "detail": "Can I actually do it?" },
     { "id": "cue", "label": "Cues to action", "parent": "act", "detail": "An SMS reminder, an ASHA visit, a relative's diagnosis." }
   ],
-  "caption": "Tap each branch. Interventions work best when they target the weakest branch for that community."
+  "caption": "Interventions work best when they target the weakest branch for that community."
 }
 :::
 
@@ -207,7 +207,7 @@ Relapse is expected and people often cycle through stages several times. Interve
     { "id": "m", "label": "Maintenance", "detail": "Keeping it up. Help: relapse prevention, coping with triggers." },
     { "id": "r", "label": "Relapse", "detail": "Common and expected. People usually re-enter at contemplation or preparation, wiser than before." }
   ],
-  "caption": "Press Play to go round. Most people cycle more than once before change lasts."
+  "caption": "Most people cycle more than once before change lasts."
 }
 :::
 
@@ -338,7 +338,7 @@ A person's top few are their **signature strengths**. Using them in new ways eac
     { "id": "t", "label": "Temperance", "parent": "v", "detail": "Forgiveness, humility, prudence, self-regulation." },
     { "id": "tr", "label": "Transcendence", "parent": "v", "detail": "Appreciation of beauty, gratitude, hope, humour, spirituality." }
   ],
-  "caption": "Tap a virtue to see its strengths. Your top few are your signature strengths."
+  "caption": "Your top few are your signature strengths."
 }
 :::
 
@@ -1119,7 +1119,7 @@ Integration usually goes with the best adjustment; marginalisation with the wors
     { "id": "a", "label": "Assimilation", "parent": "n", "detail": "Drops heritage and joins the new culture fully." },
     { "id": "m", "label": "Marginalisation", "parent": "n", "detail": "Neither culture. Usually the worst adjustment." }
   ],
-  "caption": "Tap through the tree. The receiving society's attitudes also limit which strategies are possible."
+  "caption": "The receiving society's attitudes also limit which strategies are possible."
 }
 :::
 

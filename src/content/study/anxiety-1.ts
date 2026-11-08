@@ -23,7 +23,7 @@ Anxiety works like a smoke alarm. A good alarm rings for real fires and stays qu
 :::
 
 :::widget nervoussystem
-{"title":"Watch the alarm go off","start":"auto","caption":"Switch on fight or flight: every symptom in the list above comes from this one system. In an anxiety disorder the system is normal; it simply fires for a lift, a crowd or a worry, and the body cannot tell the difference."}
+{"title":"Watch the alarm go off","start":"auto","caption":"In an anxiety disorder the system is normal; it simply fires for a lift, a crowd or a worry, and the body cannot tell the difference."}
 :::
 
 ### A little anxiety helps
@@ -38,7 +38,7 @@ Some anxiety improves performance: it sharpens attention before an exam or a mat
 :::
 
 :::widget curve
-{"kind": "inverted-u", "title": "Arousal and performance", "caption": "Performance rises with arousal up to a point, then falls. The peak comes earlier for hard, complex tasks (a viva) than for simple ones (running). Slide arousal and task difficulty to see the Yerkes-Dodson pattern."}
+{"kind": "inverted-u", "title": "Arousal and performance", "caption": "Performance rises with arousal up to a point, then falls. The peak comes earlier for hard, complex tasks (a viva) than for simple ones (running)."}
 :::
 
 :::recall
@@ -83,7 +83,7 @@ When something makes us anxious, staying away from it brings instant relief. Tha
 :::
 
 :::widget compare
-{"title": "Everyday fear and an anxiety disorder", "a": {"label": "Everyday fear", "points": ["Fits the size of the danger", "Settles once the danger passes", "Life carries on: you still take the exam or the bus", "Feels unpleasant but makes sense to you"], "summary": "Healthy fear: in proportion, short-lived and it does not run your life."}, "b": {"label": "Anxiety disorder", "points": ["Far bigger than the real danger, or with no danger at all", "Lasts for months or keeps coming back", "You start avoiding places, people or tasks", "Causes real distress or gets in the way of study, work or family"], "summary": "A disorder: out of proportion, persistent and impairing. All three together point to a disorder."}, "caption": "Slide across. Clinicians ask the same three questions: is it out of proportion, does it persist, and does it get in the way?"}
+{"title": "Everyday fear and an anxiety disorder", "a": {"label": "Everyday fear", "points": ["Fits the size of the danger", "Settles once the danger passes", "Life carries on: you still take the exam or the bus", "Feels unpleasant but makes sense to you"], "summary": "Healthy fear: in proportion, short-lived and it does not run your life."}, "b": {"label": "Anxiety disorder", "points": ["Far bigger than the real danger, or with no danger at all", "Lasts for months or keeps coming back", "You start avoiding places, people or tasks", "Causes real distress or gets in the way of study, work or family"], "summary": "A disorder: out of proportion, persistent and impairing. All three together point to a disorder."}, "caption": "Clinicians ask the same three questions: is it out of proportion, does it persist, and does it get in the way?"}
 :::
 
 :::recall
@@ -381,7 +381,7 @@ Like most mental disorders, anxiety disorders come from vulnerability meeting st
 :::
 
 :::widget hpaloop
-{"title":"Stress, coping and avoidance","caption":"Play the day twice: once avoiding every problem, once facing them. Avoidance brings quick relief but keeps the stress system running, which is exactly how avoidance keeps anxiety going."}
+{"title":"Stress, coping and avoidance","caption":"Avoidance brings quick relief but keeps the stress system running, which is exactly how avoidance keeps anxiety going."}
 :::
 
 ### Biological vulnerability
@@ -420,7 +420,7 @@ Childhood adversity, overprotective or highly critical parenting, bullying, pove
 :::
 
 :::widget conditioning
-{"kind": "classical", "title": "How a fear is learned", "caption": "Swap the bell for a dog and the food for a painful bite. After one bad bite, the sight of any dog (the conditioned stimulus) can bring a racing heart (the conditioned response). This is how many specific phobias start. Exposure is extinction in action: meeting dogs again and again with nothing bad happening."}
+{"kind": "classical", "title": "How a fear is learned", "caption": "After one bad bite, the sight of any dog (the conditioned stimulus) can bring a racing heart (the conditioned response). This is how many specific phobias start. Exposure is extinction in action: meeting dogs again and again with nothing bad happening."}
 :::
 
 :::recall

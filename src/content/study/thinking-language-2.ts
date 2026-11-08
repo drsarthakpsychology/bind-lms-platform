@@ -45,8 +45,7 @@ Concepts let us treat new things as instances of the familiar: once you know "fr
    "parent": "c",
    "detail": "Knowledge view: what makes something what it is 'inside'."
   }
- ],
- "caption": "Tap each view for its strength."
+ ]
 }
 :::
 
@@ -173,8 +172,7 @@ Q: People verify "A robin is a bird" faster than "An ostrich is a bird." This is
    "parent": "i",
    "detail": "P is false, so Q is false. Wrong: Q may happen anyway."
   }
- ],
- "caption": "Tap each form, then test yourself below."
+ ]
 }
 :::
 
@@ -293,7 +291,7 @@ Allen Newell and Herbert Simon (1972) modelled problem solving as **search** thr
    "detail": "Make the move and compare again, until no difference remains."
   }
  ],
- "caption": "Newell and Simon's General Problem Solver ran this loop. Try it on the Tower of Hanoi below."
+ "caption": "Newell and Simon's General Problem Solver ran this loop."
 }
 :::
 

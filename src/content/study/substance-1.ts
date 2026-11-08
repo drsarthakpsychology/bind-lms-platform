@@ -17,7 +17,7 @@ In ordinary use, the person is driving with working brakes: they can slow down o
 :::
 
 :::widget flow
-{"title": "How use can turn into addiction", "layout": "chain", "nodes": [{"id": "a", "label": "First use", "detail": "Curiosity, friends, a celebration, or to cope with stress or pain."}, {"id": "b", "label": "Repeated use", "detail": "The substance reliably changes feelings; the brain marks it as important."}, {"id": "c", "label": "Risky use", "detail": "Bigger amounts, more often, in riskier ways."}, {"id": "d", "label": "Harm", "detail": "Health, money, work and relationships begin to suffer."}, {"id": "e", "label": "Loss of control", "detail": "Craving, failed attempts to stop, use despite harm."}, {"id": "f", "label": "Dependence", "detail": "Tolerance and withdrawal; use to avoid feeling ill."}], "caption": "Press Play. Most people stop at the early steps. Help can begin at any step, and people can move back down the chain."}
+{"title": "How use can turn into addiction", "layout": "chain", "nodes": [{"id": "a", "label": "First use", "detail": "Curiosity, friends, a celebration, or to cope with stress or pain."}, {"id": "b", "label": "Repeated use", "detail": "The substance reliably changes feelings; the brain marks it as important."}, {"id": "c", "label": "Risky use", "detail": "Bigger amounts, more often, in riskier ways."}, {"id": "d", "label": "Harm", "detail": "Health, money, work and relationships begin to suffer."}, {"id": "e", "label": "Loss of control", "detail": "Craving, failed attempts to stop, use despite harm."}, {"id": "f", "label": "Dependence", "detail": "Tolerance and withdrawal; use to avoid feeling ill."}], "caption": "Most people stop at the early steps. Help can begin at any step, and people can move back down the chain."}
 :::
 
 ### Addiction is not a moral failure
@@ -85,7 +85,7 @@ The brain has a **reward system** that makes us repeat things that help us survi
 Every addictive substance raises dopamine in this system, often far more and far faster than natural rewards. The brain learns, powerfully, that this substance matters. Cues linked with the substance (a friend, a place, a time of day, the sound of a bottle opening) start to trigger dopamine and craving on their own.
 
 :::widget brainmap
-{"title": "The brain circuits addiction changes", "focus": ["basal-ganglia", "prefrontal", "amygdala", "hippocampus"], "notes": {"basal-ganglia": "Reward and habit. The nucleus accumbens marks substances as important; with repeated use, control shifts to habit circuits in the dorsal striatum.", "prefrontal": "Planning and stopping. Weaker control here makes it harder to resist urges, especially under stress.", "amygdala": "Stress and negative emotion. During withdrawal, stress systems here are overactive, so people use to stop feeling bad.", "hippocampus": "Memory of places, people and times linked with use, which become powerful triggers for craving."}, "caption": "Tap each area. Treatment aims at each circuit: medicines for reward and withdrawal, therapy for control and triggers."}
+{"title": "The brain circuits addiction changes", "focus": ["basal-ganglia", "prefrontal", "amygdala", "hippocampus"], "notes": {"basal-ganglia": "Reward and habit. The nucleus accumbens marks substances as important; with repeated use, control shifts to habit circuits in the dorsal striatum.", "prefrontal": "Planning and stopping. Weaker control here makes it harder to resist urges, especially under stress.", "amygdala": "Stress and negative emotion. During withdrawal, stress systems here are overactive, so people use to stop feeling bad.", "hippocampus": "Memory of places, people and times linked with use, which become powerful triggers for craving."}, "caption": "Treatment aims at each circuit: medicines for reward and withdrawal, therapy for control and triggers."}
 :::
 
 :::analogy The highlighter pen
@@ -93,14 +93,14 @@ Think of dopamine as a highlighter the brain uses on its to-do list. Food, frien
 :::
 
 :::widget pathways
-{"system": "dopamine", "title": "The reward pathway that drugs hijack", "caption": "Watch the mesolimbic pathway, from the midbrain to the nucleus accumbens. Every addictive drug, by different routes, raises dopamine here, far more than food or friendship do. The brain learns 'this matters, do it again'. Over time it turns down its own dopamine signalling, so ordinary pleasures feel flat."}
+{"system": "dopamine", "title": "The reward pathway that drugs hijack", "caption": "Every addictive drug, by different routes, raises dopamine here, far more than food or friendship do. The brain learns 'this matters, do it again'. Over time it turns down its own dopamine signalling, so ordinary pleasures feel flat."}
 :::
 
 ### 2. Tolerance
 With repeated use, the brain adapts to the substance. The same amount has **less effect**, so the person needs **more** to get the same effect. A man who once felt drunk after two drinks can now drink a bottle and walk straight.
 
 :::widget receptor
-{"receptor": "mu opioid", "title": "Agonist, partial agonist and antagonist at the opioid receptor", "caption": "Pick each kind of drug. Heroin and methadone are full agonists (maximum signal, so overdose can stop breathing). Buprenorphine is a partial agonist (a ceiling on its effect, safer in overdose, and it can push heroin off the receptor and cause withdrawal if given too early). Naloxone and naltrexone are antagonists (no signal; they block or reverse opioids)."}
+{"receptor": "mu opioid", "title": "Agonist, partial agonist and antagonist at the opioid receptor", "caption": "Heroin and methadone are full agonists (maximum signal, so overdose can stop breathing). Buprenorphine is a partial agonist (a ceiling on its effect, safer in overdose, and it can push heroin off the receptor and cause withdrawal if given too early). Naloxone and naltrexone are antagonists (no signal; they block or reverse opioids)."}
 :::
 
 ### 3. Withdrawal
@@ -111,7 +111,7 @@ When the substance is stopped or reduced, the adapted brain is suddenly out of b
 :::
 
 :::widget curve
-{"kind": "dose-response", "title": "Tolerance shifts the dose-response curve", "caption": "Move the curve to the right to model tolerance: the same dose now gives a smaller effect, so more is needed. After a period without use (prison, hospital, detox), the curve shifts back to the left, which is why the old dose can then cause a fatal overdose."}
+{"kind": "dose-response", "title": "Tolerance shifts the dose-response curve", "caption": "After a period without use (prison, hospital, detox), the curve shifts back to the left, which is why the old dose can then cause a fatal overdose."}
 :::
 
 :::widget conditioning

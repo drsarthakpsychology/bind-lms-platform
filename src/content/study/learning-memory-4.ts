@@ -240,8 +240,7 @@ Tim Bliss and Terje Lømo (1973) stimulated a pathway into the rabbit hippocampu
   "basal-ganglia": "Habits and stimulus-response learning.",
   "hippocampus": "Spatial learning, episodic memory and trace conditioning.",
   "brainstem": "The midbrain dopamine neurons (ventral tegmental area and substantia nigra) that signal reward prediction error."
- },
- "caption": "Tap each region."
+ }
 }
 :::
 
@@ -391,7 +390,7 @@ Q: A witness confidently identifies a suspect, but only after police said "Good,
 :::
 
 :::widget figure
-{"id": "hippocampus", "quiz": true, "caption": "Name each numbered part in your head first, then tap to check."}
+{"id": "hippocampus", "quiz": true}
 :::
 
 ### H. M.: the case that changed memory science
@@ -420,8 +419,7 @@ H. M. showed that the hippocampus and nearby cortex are needed to **form** lasti
   "thalamus": "Medial thalamus: damaged in Korsakoff syndrome and some strokes.",
   "hypothalamus": "The mammillary bodies on its underside: shrunken in Korsakoff syndrome.",
   "prefrontal": "Frontal damage adds confabulation, poor source memory and disorganised retrieval."
- },
- "caption": "Tap each region to link it to the amnesias in the table below."
+ }
 }
 :::
 
@@ -532,12 +530,12 @@ Shepard Siegel proposed that drug cues (the room, the syringe, the ritual) come 
 {
  "receptor": "mu-opioid",
  "title": "Medicines that change the reward signal in addiction",
- "caption": "Try each ligand. A full agonist (heroin, morphine) gives the full signal, the strongest reinforcer. A partial agonist (buprenorphine) gives a capped signal that reduces craving and withdrawal with less euphoria. An antagonist (naltrexone) blocks the receptor, so using the drug brings no reward and the learned link between using and reward can extinguish."
+ "caption": "A full agonist (heroin, morphine) gives the full signal, the strongest reinforcer. A partial agonist (buprenorphine) gives a capped signal that reduces craving and withdrawal with less euphoria. An antagonist (naltrexone) blocks the receptor, so using the drug brings no reward and the learned link between using and reward can extinguish."
 }
 :::
 
 :::widget release
-{"transmitter": "dopamine", "caption": "Step through a dopamine synapse, then pick amphetamine: it pushes dopamine out and blocks its reuptake. Drug cues come to trigger this reward signal, which is why craving is so strongly conditioned."}
+{"transmitter": "dopamine", "caption": "Drug cues come to trigger this reward signal, which is why craving is so strongly conditioned."}
 :::
 
 ### Exposure as inhibitory learning

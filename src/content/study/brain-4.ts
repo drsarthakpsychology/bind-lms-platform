@@ -60,7 +60,7 @@ The cord is not only a cable. It can act on its own in a **reflex**: touch a hot
   { "id": "m", "label": "Motor neuron", "detail": "Leaves by the front (ventral) root to the arm muscles." },
   { "id": "e", "label": "Muscle pulls the hand away", "detail": "All this before the brain has finished feeling the pain." }
  ],
- "caption": "Press Play. The knee jerk is even simpler: no relay neuron, one sensory neuron straight to one motor neuron."
+ "caption": "The knee jerk is even simpler: no relay neuron, one sensory neuron straight to one motor neuron."
 }
 :::
 

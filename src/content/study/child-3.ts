@@ -115,17 +115,17 @@ The paradox that "a stimulant calms a hyperactive child" is not really a paradox
 :::
 
 :::widget curve
-{"kind": "inverted-u", "title": "Arousal, dopamine and performance", "caption": "Move the slider. Too little prefrontal dopamine and noradrenaline (bored, under-aroused) and too much (overdosed, anxious) both worsen performance; the best focus sits in the middle. Stimulants at the right dose move many people with ADHD towards the peak, which is why the dose is titrated, not pushed as high as possible."}
+{"kind": "inverted-u", "title": "Arousal, dopamine and performance", "caption": "Too little prefrontal dopamine and noradrenaline (bored, under-aroused) and too much (overdosed, anxious) both worsen performance; the best focus sits in the middle. Stimulants at the right dose move many people with ADHD towards the peak, which is why the dose is titrated, not pushed as high as possible."}
 :::
 
 :::widget pathways
-{"system": "dopamine", "title": "Where stimulants act", "caption": "Stimulants raise dopamine and noradrenaline. The benefit in ADHD comes mainly through the mesocortical pathway to the prefrontal cortex, which supports attention and control. Too much in the mesolimbic pathway brings euphoria and misuse risk, which is why slow-release forms are preferred. Turn on D2 block to compare: antipsychotics act in the opposite direction."}
+{"system": "dopamine", "title": "Where stimulants act", "caption": "Stimulants raise dopamine and noradrenaline. The benefit in ADHD comes mainly through the mesocortical pathway to the prefrontal cortex, which supports attention and control. Too much in the mesolimbic pathway brings euphoria and misuse risk, which is why slow-release forms are preferred."}
 :::
 
 ### Adult ADHD
 
 :::widget journey
-{"drug": "methylphenidate", "target": "dopamine and noradrenaline transporters in the prefrontal cortex and striatum", "routes": ["oral"], "notes": {"gut": "Immediate-release tablets are absorbed within about an hour; slow-release and osmotic forms release the drug in stages so one morning dose covers the school day.", "liver": "Methylphenidate is broken down mainly by an esterase, not by CYP enzymes, so it has few enzyme interactions.", "out": "A short half-life of a few hours: effects wear off by evening, which helps sleep."}, "caption": "Follow one dose of methylphenidate. Its short action explains why timing matters for school and for sleep."}
+{"drug": "methylphenidate", "target": "dopamine and noradrenaline transporters in the prefrontal cortex and striatum", "routes": ["oral"], "notes": {"gut": "Immediate-release tablets are absorbed within about an hour; slow-release and osmotic forms release the drug in stages so one morning dose covers the school day.", "liver": "Methylphenidate is broken down mainly by an esterase, not by CYP enzymes, so it has few enzyme interactions.", "out": "A short half-life of a few hours: effects wear off by evening, which helps sleep."}, "caption": "Its short action explains why timing matters for school and for sleep."}
 :::
 
 ADHD in adults is real, common and under-diagnosed in India. Adults rarely bounce off walls. Instead they describe a restless mind, chronic lateness, unfinished projects, forgotten bills and appointments, impulsive spending, job-hopping, and quick temper. Many have depression, anxiety, substance use or a sleep problem as well, which can hide the ADHD.
@@ -193,7 +193,7 @@ Some genetic conditions come with a typical pattern of thinking, behaviour and m
 | **Fetal alcohol spectrum disorder** | Alcohol in pregnancy | Smooth groove above the lip, thin upper lip, short eye openings, small head | ADHD-like problems, poor judgement, learning problems; often with normal appearance |
 
 :::widget flow
-{"title": "Genomic imprinting at chromosome 15q11-q13", "layout": "tree", "nodes": [{"id": "r", "label": "The 15q11-q13 region", "detail": "Some genes here work only from the father's copy, one key gene (UBE3A in neurons) only from the mother's."}, {"id": "pw", "label": "Father's copy missing or silent", "detail": "Deletion on the paternal chromosome, or two maternal copies: Prader-Willi syndrome (hyperphagia, skin picking, compulsions; psychosis risk with maternal disomy).", "parent": "r"}, {"id": "an", "label": "Mother's copy missing or silent", "detail": "Deletion on the maternal chromosome, two paternal copies, or a UBE3A mutation: Angelman syndrome (happy demeanour, absent speech, seizures, ataxia).", "parent": "r"}], "caption": "Tap each branch. Same region, opposite parent, very different behavioural phenotypes."}
+{"title": "Genomic imprinting at chromosome 15q11-q13", "layout": "tree", "nodes": [{"id": "r", "label": "The 15q11-q13 region", "detail": "Some genes here work only from the father's copy, one key gene (UBE3A in neurons) only from the mother's."}, {"id": "pw", "label": "Father's copy missing or silent", "detail": "Deletion on the paternal chromosome, or two maternal copies: Prader-Willi syndrome (hyperphagia, skin picking, compulsions; psychosis risk with maternal disomy).", "parent": "r"}, {"id": "an", "label": "Mother's copy missing or silent", "detail": "Deletion on the maternal chromosome, two paternal copies, or a UBE3A mutation: Angelman syndrome (happy demeanour, absent speech, seizures, ataxia).", "parent": "r"}], "caption": "Same region, opposite parent, very different behavioural phenotypes."}
 :::
 
 :::analogy Same address, different parent
@@ -261,7 +261,7 @@ Treating a child means treating a system: the child, the parents, the school, an
 | Autism, ID | Parent-mediated early intervention, behavioural approaches, speech and occupational therapy |
 
 :::widget flow
-{"title": "Choosing the first treatment for a young person", "layout": "tree", "nodes": [{"id": "r", "label": "Diagnosis made, severity rated", "detail": "Always include psychoeducation, family and school work."}, {"id": "psy", "label": "Psychological treatment first", "detail": "Mild to moderate anxiety and depression, ODD, early conduct problems, eating disorders (family-based), mild tics, school refusal.", "parent": "r"}, {"id": "both", "label": "Combine early", "detail": "Moderate to severe depression or anxiety, OCD: CBT plus an SSRI often gives the best results.", "parent": "r"}, {"id": "med", "label": "Medicine needed early", "detail": "Severe impairing ADHD in school-age children, psychosis, mania, severe tics, catatonia.", "parent": "r"}], "caption": "Tap each branch. A prescription is never the whole plan."}
+{"title": "Choosing the first treatment for a young person", "layout": "tree", "nodes": [{"id": "r", "label": "Diagnosis made, severity rated", "detail": "Always include psychoeducation, family and school work."}, {"id": "psy", "label": "Psychological treatment first", "detail": "Mild to moderate anxiety and depression, ODD, early conduct problems, eating disorders (family-based), mild tics, school refusal.", "parent": "r"}, {"id": "both", "label": "Combine early", "detail": "Moderate to severe depression or anxiety, OCD: CBT plus an SSRI often gives the best results.", "parent": "r"}, {"id": "med", "label": "Medicine needed early", "detail": "Severe impairing ADHD in school-age children, psychosis, mania, severe tics, catatonia.", "parent": "r"}], "caption": "A prescription is never the whole plan."}
 :::
 
 :::widget compare
