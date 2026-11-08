@@ -4,6 +4,26 @@ import { noteAnswer } from "@/lib/history/client";
 import * as React from "react";
 import { haptic } from "@/lib/haptics";
 import { CLINICS } from "@/lib/practice/clinic";
+import { useReaction } from "@/components/reactions/use-reaction";
+
+const SKIP = new Set(["disorder", "disorders", "syndrome", "related", "induced", "other", "without", "major", "acute", "chronic", "primary", "secondary", "presentation", "features", "reconsider", "atypical", "early", "onset", "illness", "state"]);
+/** Word stems that name a diagnosis (first 6 letters of 5+ letter words, minus filler like "disorder"). */
+function keyWords(text: string): string[] {
+  return (text.toLowerCase().match(/[a-z]{5,}/g) ?? []).filter((w) => !SKIP.has(w)).map((w) => w.slice(0, 6));
+}
+
+/**
+ * A light check for the reaction only (nothing is scored here): did the typed
+ * differential name the expert's first diagnosis (right), another one on the
+ * list (partly right), or none (no reaction, since it may be a fair synonym)?
+ */
+export function differentialMatch(typed: string, expert: readonly string[]): "top" | "listed" | "none" {
+  const mine = new Set(keyWords(typed));
+  if (!mine.size) return "none";
+  const hit = (d: string) => keyWords(d).some((w) => mine.has(w));
+  if (expert[0] && hit(expert[0])) return "top";
+  return expert.some(hit) ? "listed" : "none";
+}
 
 /**
  * `start` is picked on the server for each visit, so a returning student does
@@ -19,6 +39,7 @@ export function TwoMinuteClinic({ start = 0, order }: { start?: number; order?: 
   const [differential, setDifferential] = React.useState("");
   const [nextQuestion, setNextQuestion] = React.useState("");
   const item = CLINICS[itemIdx];
+  const reaction = useReaction();
 
   React.useEffect(() => {
     if (phase !== "type") return;
@@ -86,6 +107,8 @@ export function TwoMinuteClinic({ start = 0, order }: { start?: number; order?: 
             onClick={() => {
               setPhase("compare");
               haptic("success");
+              const m = differentialMatch(differential, item.expertDifferential);
+              if (m !== "none") reaction.onAnswer(true, { partial: m === "listed" });
               // Retention loop: completing the daily drill keeps the streak alive.
               fetch("/api/practice/clinic/complete", { method: "POST" }).catch(() => {});
             }}

@@ -9,6 +9,7 @@ import type { Card, Mcq } from "@/lib/study/types";
 import { CardDeck, TestRunner, mcqKey } from "./interactive";
 import { orderFor, useHistoryPrefetch } from "@/lib/history/client";
 import { backLinkClass } from "@/components/design-system/back-link";
+import { EndReaction, ScoreDial } from "@/components/reactions/graphics";
 
 /**
  * A checkpoint: case questions first (scored), then "say it out loud" cards.
@@ -119,9 +120,15 @@ export function CheckpointView({
         <section className="rounded-3xl border-2 border-foreground bg-foreground p-5 text-background" role="status">
           <p className="text-sm font-semibold text-primary">Checkpoint {n} done</p>
           {score ? (
-            <p className="mt-1 text-3xl font-black tabular-nums">
-              {score.right} <span className="text-lg font-semibold">/ {score.total}</span>
-            </p>
+            <div className="mt-3 flex flex-wrap items-center gap-x-6 gap-y-4">
+              <div className="text-foreground">
+                <ScoreDial right={score.right} total={score.total} />
+              </div>
+              <EndReaction right={score.right} total={score.total} tone="dark" className="min-w-0 flex-1 basis-56" />
+              <p className="sr-only">
+                {score.right} / {score.total}
+              </p>
+            </div>
           ) : null}
           <p className="mt-1 text-sm opacity-90">
             {score && score.right / Math.max(1, score.total) < 0.7 ? "Look at those sections again later today." : "Good. On to new material."}

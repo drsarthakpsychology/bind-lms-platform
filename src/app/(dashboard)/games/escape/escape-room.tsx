@@ -12,6 +12,8 @@ import { Btn, buzz, Kbd, motionCss as m, Panel, Pill, Stat, useHotkeys } from "@
 import { JoinBox, Members, TeamCode, usePoll } from "@/lib/games-sims/ui/team";
 import type { EscapeView } from "./actions";
 import { creditServerPlay } from "@/lib/learn/credit-play";
+import { useReaction } from "@/components/reactions/use-reaction";
+import { EndReaction } from "@/components/reactions/graphics";
 
 type Actions = {
   createEscapeTeam: (room: string) => Promise<{ ok: true; teamId: string } | { ok: false; reason: string }>;
@@ -374,12 +376,15 @@ function Practice({ room, run, startedAt, actions, onExit, onAgain }: { room: Ro
   const [xp, setXp] = React.useState<number | null>(null);
   const now = useTicker(finishedAt === null);
   const ms = teamTime(new Date(startedAt).toISOString(), finishedAt ?? now ?? startedAt, st.wrong);
+  const reaction = useReaction();
 
   function submit(raw: string) {
     if (opened !== null || st.done) return;
     const first = (st.tries[st.stage] ?? 0) === 0;
     const res = applyAnswer(room, st, st.stage, raw, "You", new Date().toISOString());
     buzz(res.ok);
+    // The last door opens straight onto the escape screen, which has its own sticker.
+    if (!res.state.done) reaction.onAnswer(res.ok, { partial: res.ok && !first });
     void actions.gradeEscapePractice({ room: room.id, stage: st.stage, answer: raw, first }).catch(() => undefined);
     setFeedback({ stage: st.stage, ok: res.ok });
     if (res.ok) {
@@ -435,6 +440,7 @@ function TeamRun({ teamId, actions, onExit }: { teamId: string; actions: Actions
   const [feedback, setFeedback] = React.useState<Feedback>(null);
   const [seenStage, setSeenStage] = React.useState<number | null>(null);
   const [busy, setBusy] = React.useState(false);
+  const reaction = useReaction();
 
   function apply(v: EscapeView | null) {
     if (!v) {
@@ -519,6 +525,7 @@ function TeamRun({ teamId, actions, onExit }: { teamId: string; actions: Actions
     const r = await actions.answerEscape({ teamId, stage: view.state.stage, answer: raw }).catch(() => ({ view: null, ok: false }));
     setBusy(false);
     buzz(r.ok);
+    if (!r.view?.state.done) reaction.onAnswer(r.ok);
     setFeedback({ stage: view.state.stage, ok: r.ok, by: r.ok ? "You" : undefined });
     if (r.view) {
       setSkew(r.view.now - Date.now());
@@ -619,6 +626,7 @@ function Escaped({ room, ms, wrong, xp, onExit, onAgain, race, teamLine }: { roo
         </Pill>
       </div>
       {teamLine ? <p className="text-small font-semibold">{teamLine}</p> : null}
+      <EndReaction mood={wrong === 0 ? "streak" : wrong <= 2 ? "right" : "near"} seed={`${room.id}:${ms}`} />
       <p className="text-body">{room.outro}</p>
       <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
         <Stat label="Time" value={clock(ms)} />

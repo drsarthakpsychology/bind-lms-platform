@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 import { QuestionView, type Pick, type QView } from "../map/question";
 import { btnInk, btnPlain, btnPrimary } from "../map/ui";
 import { submitPlacement } from "./actions";
+import { EndReaction, ScoreDial } from "@/components/reactions/graphics";
 
 type Answer = { item: string; choice: number | boolean | "skip" };
 
@@ -157,6 +158,11 @@ function Results({ result, doneAt, saving, onRetake }: { result: PlacementResult
         <h1 className="text-h1">
           {result.right} of {result.answered} right
         </h1>
+        <div className="flex flex-wrap items-center gap-x-6 gap-y-4 pt-2">
+          <ScoreDial right={result.right} total={result.answered} />
+          {/* A level check is not a roast: the sticker cheers or shrugs, kindly. */}
+          {doneAt ? null : <EndReaction mood={result.answered && result.right / result.answered >= 0.6 ? "right" : "near"} className="min-w-0 flex-1 basis-56" />}
+        </div>
         <p className="text-muted-foreground">
           {doneAt ? `You took this on ${new Date(doneAt).toLocaleDateString("en-IN", { day: "numeric", month: "long", timeZone: "Asia/Kolkata" })}. ` : ""}
           {saving ? "Your map now starts from here, and practice is pitched at your level." : "Preview only: nothing was saved for this staff account."}

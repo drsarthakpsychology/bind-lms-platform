@@ -6,6 +6,7 @@ import type { Item, MatchItem, McqItem, OrderItem, SortItem, TfItem } from "@/li
 import { haptic } from "@/lib/haptics";
 import { cn } from "@/lib/utils";
 import s from "./learn.module.css";
+import { AnswerStamp, HalftoneCorner } from "@/components/reactions/graphics";
 
 /** Same order on server and phone, different for every question. */
 export function seeded<T>(list: readonly T[], seed: string): T[] {
@@ -23,7 +24,7 @@ export function seeded<T>(list: readonly T[], seed: string): T[] {
 export type Done = (correct: boolean, answerText: string) => void;
 
 const optionBase =
-  "flex w-full items-center gap-3 rounded-2xl border-2 border-foreground bg-card px-4 py-3 text-left text-base font-semibold hard-shadow-sm transition-transform duration-fast active:translate-y-0.5 disabled:cursor-default";
+  "relative flex w-full items-center gap-3 rounded-2xl border-2 border-foreground bg-card px-4 py-3 text-left text-base font-semibold hard-shadow-sm transition-transform duration-fast active:translate-y-0.5 disabled:cursor-default";
 const keyBox = "grid size-7 shrink-0 place-items-center rounded-lg border-2 border-current font-pix text-[0.7rem]";
 
 export function CheckButton({ disabled, onClick, label = "Check" }: { disabled?: boolean; onClick: () => void; label?: string }) {
@@ -46,7 +47,10 @@ function Mcq({ item, locked, onDone }: { item: McqItem; locked: boolean; onDone:
   return (
     <div className="space-y-4">
       {item.vignette ? <p className="rounded-2xl border-2 border-dashed border-foreground/40 bg-muted px-4 py-3 text-sm">{item.vignette}</p> : null}
-      <h2 className="text-xl font-bold leading-tight sm:text-2xl">{item.prompt}</h2>
+      <div className="relative isolate">
+        <HalftoneCorner className="-top-3 size-24" />
+        <h2 className="relative text-xl font-bold leading-tight sm:text-2xl">{item.prompt}</h2>
+      </div>
       <div role="radiogroup" className="grid gap-2.5">
         {order.map(({ o, i }, k) => {
           const isAnswer = i === item.answer;
@@ -69,6 +73,7 @@ function Mcq({ item, locked, onDone }: { item: McqItem; locked: boolean; onDone:
                 state === "wrong" && cn("bg-foreground text-background", s.shake),
               )}
             >
+              {locked && pick === i ? <AnswerStamp ok={isAnswer} /> : null}
               <span className={keyBox}>{state === "right" ? <Check className="size-4" /> : state === "wrong" ? <X className="size-4" /> : k + 1}</span>
               {o}
             </button>
@@ -85,8 +90,11 @@ function TrueFalse({ item, locked, onDone }: { item: TfItem; locked: boolean; on
   const [pick, setPick] = React.useState<boolean | null>(null);
   return (
     <div className="space-y-5">
-      <p className="text-eyebrow text-link">True or false?</p>
-      <h2 className="text-xl font-bold leading-tight sm:text-2xl">{item.statement}</h2>
+      <div className="relative isolate space-y-5">
+        <HalftoneCorner className="-top-3 size-24" />
+        <p className="relative text-eyebrow text-link">True or false?</p>
+        <h2 className="relative text-xl font-bold leading-tight sm:text-2xl">{item.statement}</h2>
+      </div>
       <div className="grid grid-cols-2 gap-3">
         {[true, false].map((v) => {
           const state = locked ? (v === item.answer ? "right" : pick === v ? "wrong" : "idle") : "idle";
@@ -100,10 +108,11 @@ function TrueFalse({ item, locked, onDone }: { item: TfItem; locked: boolean; on
                 onDone(v === item.answer, item.answer ? "True" : "False");
               }}
               className={cn(
-                "h-24 rounded-2xl border-2 border-foreground text-2xl font-bold hard-shadow-sm transition-transform active:translate-y-1",
+                "relative h-24 rounded-2xl border-2 border-foreground text-2xl font-bold hard-shadow-sm transition-transform active:translate-y-1",
                 state === "right" ? "bg-primary text-primary-foreground" : state === "wrong" ? cn("bg-foreground text-background", s.shake) : "bg-card",
               )}
             >
+              {locked && pick === v ? <AnswerStamp ok={v === item.answer} /> : null}
               {v ? "True" : "False"}
             </button>
           );

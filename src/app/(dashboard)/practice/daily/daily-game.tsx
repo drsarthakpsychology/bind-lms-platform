@@ -49,6 +49,8 @@ import { creditServerPlay } from "@/lib/learn/credit-play";
 import { HintChip } from "@/components/hints/hint-chip";
 import { CASE_SCORE_PER_HINT } from "@/lib/hints/rules";
 import type { HintStatus } from "@/lib/hints/engine";
+import { useReaction } from "@/components/reactions/use-reaction";
+import { EndReaction } from "@/components/reactions/graphics";
 
 const EMPTY = emptyState();
 type Save = (s: LearnState) => Promise<unknown>;
@@ -90,6 +92,7 @@ export function DailyGame({ serverState, save, initial }: { serverState: LearnSt
   const [shake, setShake] = React.useState(0);
   const [gain, setGain] = React.useState<{ xp: number; key: number } | null>(null);
   const localDays = useLocalJson<string[]>(LOCAL_DAYS, NO_DAYS);
+  const reaction = useReaction();
 
   // Results can't be saved on the server yet: restore today's game from this browser.
   const restored = React.useRef(false);
@@ -122,6 +125,8 @@ export function DailyGame({ serverState, save, initial }: { serverState: LearnSt
         haptic("warning");
         setShake((k) => k + 1);
       } else if (last?.ok) haptic("success");
+      // The guess that ends the case gets its reaction on the result card, not as a pop-up.
+      if (last && !res.justFinished) reaction.onAnswer(last.ok);
     }
     if (res.justFinished) {
       const reveal = res.view.reveal;
@@ -636,6 +641,7 @@ function Result({ game, gain, streak, onNextPractice, pending }: { game: Game; g
         <h2 className="text-h2 leading-tight">{r.answer}</h2>
         <p className="text-sm text-muted-foreground">{r.chapter}</p>
         <LearnLink topic={r.answer} className="mt-1" />
+        <EndReaction mood={solved ? (v.cluesOpen <= 2 ? "streak" : "right") : "wrong"} seed={v.caseId} className="mx-auto mt-4 w-fit max-w-full justify-center" />
         <div className="relative mt-4 flex items-end justify-center gap-4">
           <p>
             <CountUp value={v.score} duration={1} delay={0.3} className="font-pix text-5xl tabular-nums" />

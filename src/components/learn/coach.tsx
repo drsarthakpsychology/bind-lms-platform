@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { BackLink } from "@/components/study/back";
-import { ArrowRight, Flame, GraduationCap } from "lucide-react";
+import { ArrowRight, GraduationCap } from "lucide-react";
 import { emptyState, finishLesson, istToday, type LearnState, type Payout } from "@/lib/learn/engine";
 import { buildSession, distractors, domainMastery, formatFor, reasonFor, recordAnswer, similarConcepts, topConfusions, typedMatches, type Format } from "@/lib/learn/adaptive";
 import { ALL_CONCEPTS, conceptById, DOMAINS, type Concept, type Domain } from "@/lib/learn/concepts";
@@ -14,6 +14,8 @@ import { CheckButton } from "./items";
 import { Summary } from "./player";
 import { useExplainView, ViewToggle } from "./view-toggle";
 import s from "./learn.module.css";
+import { useReaction } from "@/components/reactions/use-reaction";
+import { AnswerStamp, HalftoneCorner, StreakMeter } from "@/components/reactions/graphics";
 
 const EMPTY = emptyState();
 const MAX_REPEATS = 2;
@@ -54,6 +56,7 @@ export function Coach({ serverState, save, domain }: { serverState: LearnState |
   const [maxCombo, setMaxCombo] = React.useState(0);
   const [startLevels, setStartLevels] = React.useState<Record<string, number>>({});
   const [result, setResult] = React.useState<Payout | null>(null);
+  const reaction = useReaction();
   const today = istToday();
   const title = domain === "all" ? "Mixed coaching" : DOMAINS.find((d) => d.id === domain)?.title ?? "Coach";
 
@@ -69,6 +72,7 @@ export function Coach({ serverState, save, domain }: { serverState: LearnState |
       if (!st || st.teach) list.push({ kind: "teach", id, reason });
       list.push(makeAsk(c, state, reason, 0, !st));
     }
+    reaction.reset();
     setStartLevels(levels);
     setSteps(list);
     setI(0);
@@ -97,6 +101,8 @@ export function Coach({ serverState, save, domain }: { serverState: LearnState |
     if (step.kind !== "ask") return;
     setLocked(true);
     setFb({ correct, picked });
+    // A second chance after a re-teach is right, but only partly.
+    reaction.onAnswer(correct, { partial: correct && step.repeat > 0 });
     const isFirst = !firsts.some((f) => f.id === step.id);
     if (isFirst) setFirsts((f) => [...f, { id: step.id, correct }]);
     const coach = recordAnswer(state.coach, step.id, correct, today, correct ? undefined : picked);
@@ -144,9 +150,7 @@ export function Coach({ serverState, save, domain }: { serverState: LearnState |
         <div className="h-4 flex-1 overflow-hidden rounded-full border-2 border-foreground bg-muted">
           <div className="h-full rounded-full bg-primary transition-[width] duration-500" style={{ width: `${progress}%` }} />
         </div>
-        <span className={cn("flex items-center gap-1 rounded-full border-2 border-foreground px-2.5 py-1 text-sm font-semibold", combo >= 3 ? "bg-foreground text-primary" : "bg-card")}>
-          <Flame className={cn("size-4", combo >= 3 && s.flame)} aria-hidden /> {combo}
-        </span>
+        <StreakMeter streak={combo} />
       </div>
       <div className="mt-3 flex items-center justify-between gap-3">
         <p className="text-eyebrow text-muted-foreground">{step.reason}</p>
@@ -157,7 +161,8 @@ export function Coach({ serverState, save, domain }: { serverState: LearnState |
         {step.kind === "teach" ? (
           <TeachCard concept={c} state={state} def={shownDef(c)} onNext={next} />
         ) : (
-          <div className="space-y-4">
+          <div className="relative isolate space-y-4">
+            <HalftoneCorner className="-top-3 size-24" />
             {step.format === "pick-term" ? (
               <>
                 <p className="text-eyebrow text-link">Which term is this?</p>
@@ -197,12 +202,13 @@ export function Coach({ serverState, save, domain }: { serverState: LearnState |
                         setPick(oid);
                       }}
                       className={cn(
-                        "flex w-full items-center gap-3 rounded-2xl border-2 border-foreground bg-card px-4 py-3 text-left font-semibold hard-shadow-sm transition-transform active:translate-y-0.5",
+                        "relative flex w-full items-center gap-3 rounded-2xl border-2 border-foreground bg-card px-4 py-3 text-left font-semibold hard-shadow-sm transition-transform active:translate-y-0.5",
                         st === "picked" && "bg-brand text-brand-foreground",
                         st === "right" && "bg-primary text-primary-foreground",
                         st === "wrong" && cn("bg-foreground text-background", s.shake),
                       )}
                     >
+                      {locked && pick === oid ? <AnswerStamp ok={oid === c.id} /> : null}
                       <span className="grid size-7 shrink-0 place-items-center rounded-lg border-2 border-current font-pix text-[0.7rem]">{k + 1}</span>
                       <span className={step.format === "pick-term" ? "text-base font-bold" : "text-sm"}>{step.format === "pick-term" ? o.term : o.student}</span>
                     </button>

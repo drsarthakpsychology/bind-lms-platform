@@ -5,6 +5,7 @@ import { loadList } from "@/lib/prep/path";
 import { toView } from "@/lib/prep/view";
 import { cn } from "@/lib/utils";
 import { QuestionRunner } from "./runner";
+import { EmptySticker } from "@/components/reactions/graphics";
 import { BackToPrep, PrepFrame, btnPlain } from "./ui";
 import { prepViewer } from "./viewer";
 
@@ -68,18 +69,16 @@ export async function RevisitPage({ kind, page }: { kind: "saved" | "wrong"; pag
         empty={
           kind === "saved" ? (
             list.canSave ? (
-              <>
-                <p className="font-semibold">Nothing saved yet.</p>
-                <p className="mt-1 text-muted-foreground">Save any question to keep it here.</p>
-              </>
+              <EmptySticker sticker="pointing-cat" title="Nothing saved yet.">
+                Save any question to keep it here.
+              </EmptySticker>
             ) : (
               <p className="font-semibold">Saving questions is coming soon.</p>
             )
           ) : (
-            <>
-              <p className="font-semibold">No wrong answers to look at.</p>
-              <p className="mt-1 text-muted-foreground">Questions you get wrong show up here.</p>
-            </>
+            <EmptySticker sticker="sunlit-dog" title="No wrong answers to look at.">
+              Questions you get wrong show up here.
+            </EmptySticker>
           )
         }
       />

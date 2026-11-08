@@ -13,6 +13,7 @@ import { cn } from "@/lib/utils";
 import { LearnLink } from "@/lib/games/ui/learn-link";
 import { Chai, ChaiSays } from "./chai";
 import { Summary } from "./player";
+import { useReaction } from "@/components/reactions/use-reaction";
 import { useExplainView } from "./view-toggle";
 import s from "./learn.module.css";
 import { HintBar, useHintStatus } from "@/components/hints/hint-chip";
@@ -58,6 +59,7 @@ export function Detective({ serverState, save }: { serverState: LearnState | nul
   const [score, setScore] = React.useState(0);
   const [answers, setAnswers] = React.useState<{ id: string; correct: boolean }[]>([]);
   const [result, setResult] = React.useState<Payout | null>(null);
+  const reaction = useReaction();
   const [family, setFamily] = React.useState<"drug" | "disorder" | "mixed">("mixed");
   const [run, setRun] = React.useState("");
   /** This round's hint: the options it ruled out (null = not used). */
@@ -67,6 +69,7 @@ export function Detective({ serverState, save }: { serverState: LearnState | nul
 
   function start(f = family) {
     setFamily(f);
+    reaction.reset();
     setRun(newRunId());
     setRuledOut(null);
     setRounds(deal(f));
@@ -120,6 +123,8 @@ export function Detective({ serverState, save }: { serverState: LearnState | nul
       setSolved({ gained, correct: true });
       setAnswers((a) => [...a, { id: round.c.answer, correct: wrong.length === 0 && !ruledOut }]);
       noteAnswer("detective", round.c.answer, wrong.length === 0 && !ruledOut);
+      // Solved after a wrong guess or a hint: right, but only partly.
+      reaction.onAnswer(true, { partial: wrong.length > 0 || Boolean(ruledOut) });
     } else {
       haptic("warning");
       const w = [...wrong, id];
@@ -129,6 +134,7 @@ export function Detective({ serverState, save }: { serverState: LearnState | nul
         setSolved({ gained: 0, correct: false });
         setAnswers((a) => [...a, { id: round.c.answer, correct: false }]);
         noteAnswer("detective", round.c.answer, false);
+        reaction.onAnswer(false);
       }
     }
   }

@@ -13,6 +13,8 @@ import { cn } from "@/lib/utils";
 import { Chai, ChaiSays } from "./chai";
 import { Summary } from "./player";
 import s from "./learn.module.css";
+import { useReaction } from "@/components/reactions/use-reaction";
+import { AnswerStamp, HalftoneCorner } from "@/components/reactions/graphics";
 
 const EMPTY = emptyState();
 function roll() {
@@ -38,12 +40,14 @@ export function ScenarioGame({ serverState, save, noteId }: { serverState: Learn
   const [picked, setPicked] = React.useState<Choice | null>(null);
   const [answers, setAnswers] = React.useState<{ id: string; correct: boolean }[]>([]);
   const [result, setResult] = React.useState<Payout | null>(null);
+  const reaction = useReaction();
   useHistoryPrefetch("wwyd");
 
   function start() {
     const pool = noteId ? SCENARIOS.filter((x) => x.noteId === noteId) : SCENARIOS;
     // Answer history (src/lib/history): scenarios not played yet first, missed ones spaced out.
     setDeck(pickRoundFor("wwyd", pool, (x) => x.id, 5, roll));
+    reaction.reset();
     setSi(0);
     setBi(0);
     setPicked(null);
@@ -73,6 +77,8 @@ export function ScenarioGame({ serverState, save, noteId }: { serverState: Learn
     setPicked(c);
     haptic(c.outcome === "best" ? "success" : "warning");
     setAnswers((a) => [...a, { id: `${sc.id}-${bi}`, correct: c.outcome === "best" }]);
+    // "Okay, but" is a near miss; a risky choice is wrong.
+    reaction.onAnswer(c.outcome === "best", { partial: c.outcome === "ok" });
   }
   function next() {
     setPicked(null);
@@ -125,7 +131,10 @@ function Options({ beat, options, picked, onChoose }: { beat: Scenario["beats"][
   return (
     <div className={cn("space-y-3", s.rise)}>
       {beat.context ? <p className="rounded-xl border-2 border-dashed border-foreground/40 px-3 py-2 text-sm">{beat.context}</p> : null}
-      <p className="rounded-3xl border-2 border-foreground bg-card p-4 text-lg font-bold leading-snug hard-shadow-sm">{beat.says}</p>
+      <p className="relative isolate overflow-hidden rounded-3xl border-2 border-foreground bg-card p-4 text-lg font-bold leading-snug hard-shadow-sm">
+        <HalftoneCorner />
+        {beat.says}
+      </p>
       <p className="text-eyebrow text-link">Your response</p>
       {order.map((c) => (
         <button
@@ -208,8 +217,9 @@ export function TermsGame({ serverState, save }: { serverState: LearnState | nul
   const [pick, setPick] = React.useState<string | null>(null);
   const [answers, setAnswers] = React.useState<{ id: string; correct: boolean }[]>([]);
   const [result, setResult] = React.useState<Payout | null>(null);
+  const reaction = useReaction();
 
-  if (result) return <Summary result={result} state={state} confetti={[]} title="Say it clinically" onAgain={() => { setRound(buildRound()); setI(0); setAnswers([]); setResult(null); }} />;
+  if (result) return <Summary result={result} state={state} confetti={[]} title="Say it clinically" onAgain={() => { reaction.reset(); setRound(buildRound()); setI(0); setAnswers([]); setResult(null); }} />;
   if (!round) {
     return (
       <div className="mx-auto max-w-xl space-y-6 py-8 text-center">
@@ -231,7 +241,10 @@ export function TermsGame({ serverState, save }: { serverState: LearnState | nul
         {q.kind === "words" ? "Words matter" : "Case-sheet language"}
         {q.language ? <span className="text-muted-foreground"> · {q.language}</span> : null}
       </p>
-      <h2 className="text-xl font-bold leading-tight">{q.prompt}</h2>
+      <div className="relative isolate">
+        <HalftoneCorner className="-top-3 size-24" />
+        <h2 className="text-xl font-bold leading-tight">{q.prompt}</h2>
+      </div>
       <div className="grid gap-2.5">
         {q.options.map((o) => (
           <button
@@ -243,12 +256,14 @@ export function TermsGame({ serverState, save }: { serverState: LearnState | nul
               haptic(o === q.answer ? "success" : "warning");
               setAnswers((a) => [...a, { id: q.id, correct: o === q.answer }]);
               noteAnswer("say-it", q.id, o === q.answer);
+              reaction.onAnswer(o === q.answer);
             }}
             className={cn(
-              "rounded-2xl border-2 border-foreground px-4 py-3 text-left font-bold hard-shadow-sm",
+              "relative rounded-2xl border-2 border-foreground px-4 py-3 text-left font-bold hard-shadow-sm",
               pick ? (o === q.answer ? "bg-primary text-primary-foreground" : o === pick ? cn("bg-foreground text-background", s.shake) : "bg-card opacity-60") : "bg-card",
             )}
           >
+            {pick === o ? <AnswerStamp ok={o === q.answer} /> : null}
             {o}
           </button>
         ))}

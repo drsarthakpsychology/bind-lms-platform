@@ -172,7 +172,8 @@ export function AnswerStamp({ ok, animate = true, className }: { ok: boolean; an
       style={animate ? undefined : { transform: "rotate(-7deg)" }}
     >
       {ok ? <Check className="size-3" strokeWidth={3} /> : <X className="size-3" strokeWidth={3} />}
-      {ok ? "Right" : "Wrong"}
+      {/* Drawn by CSS: decoration only, so it never doubles the option's own words. */}
+      <span data-label={ok ? "Right" : "Wrong"} className="after:content-[attr(data-label)]" />
     </span>
   );
 }
@@ -205,9 +206,12 @@ export function StreakMeter({ streak, className }: { streak: number; className?:
 }
 
 /* ------------------------------------------------------ halftone corner */
-/** Riso dots fading from the top-right corner of a card. The card must be `relative overflow-hidden` (or clip it itself). */
+/**
+ * Riso dots fading from the top-right corner of a card. The parent must be
+ * `relative isolate` so the dots sit behind its text, never on top of it.
+ */
 export function HalftoneCorner({ className }: { className?: string }) {
-  return <span aria-hidden className={cn("pointer-events-none absolute top-0 right-0 size-28 rounded-tr-[inherit] sm:size-36", s.halftone, className)} />;
+  return <span aria-hidden className={cn("pointer-events-none absolute top-0 right-0 -z-10 size-28 rounded-tr-[inherit] sm:size-36", s.halftone, className)} />;
 }
 
 /* ---------------------------------------------------------- empty state */
