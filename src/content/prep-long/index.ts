@@ -23,6 +23,8 @@ import { COGNITIVE_L05 } from "./cognitive-l05";
 import { DEVELOPMENTAL_L01 } from "./developmental-l01";
 import { DEVELOPMENTAL_L02 } from "./developmental-l02";
 import { DEVELOPMENTAL_L03 } from "./developmental-l03";
+import { DEVELOPMENTAL_L04 } from "./developmental-l04";
+import { DEVELOPMENTAL_L05 } from "./developmental-l05";
 import { LEARNING_MOTIVATION_EMOTION_L01 } from "./learning-motivation-emotion-l01";
 import { LEARNING_MOTIVATION_EMOTION_L02 } from "./learning-motivation-emotion-l02";
 import { LEARNING_MOTIVATION_EMOTION_L03 } from "./learning-motivation-emotion-l03";
@@ -59,6 +61,8 @@ import { RESEARCH_METHODS_L02 } from "./research-methods-l02";
 import { RESEARCH_METHODS_L03 } from "./research-methods-l03";
 import { RESEARCH_METHODS_L04 } from "./research-methods-l04";
 import { RESEARCH_METHODS_L05 } from "./research-methods-l05";
+import { SOCIAL_L01 } from "./social-l01";
+import { SOCIAL_L02 } from "./social-l02";
 import { STATISTICS_L01 } from "./statistics-l01";
 import { STATISTICS_L02 } from "./statistics-l02";
 import { STATISTICS_L03 } from "./statistics-l03";
@@ -91,6 +95,8 @@ export const LONG_QA: LongQA[] = [
   ...DEVELOPMENTAL_L01,
   ...DEVELOPMENTAL_L02,
   ...DEVELOPMENTAL_L03,
+  ...DEVELOPMENTAL_L04,
+  ...DEVELOPMENTAL_L05,
   ...LEARNING_MOTIVATION_EMOTION_L01,
   ...LEARNING_MOTIVATION_EMOTION_L02,
   ...LEARNING_MOTIVATION_EMOTION_L03,
@@ -127,6 +133,8 @@ export const LONG_QA: LongQA[] = [
   ...RESEARCH_METHODS_L03,
   ...RESEARCH_METHODS_L04,
   ...RESEARCH_METHODS_L05,
+  ...SOCIAL_L01,
+  ...SOCIAL_L02,
   ...STATISTICS_L01,
   ...STATISTICS_L02,
   ...STATISTICS_L03,
