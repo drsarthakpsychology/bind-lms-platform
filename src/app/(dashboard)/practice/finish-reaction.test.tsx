@@ -66,4 +66,23 @@ describe("finish sticker in the Practice tools", () => {
     fireEvent.click(screen.getByRole("button", { name: "Compare with the expert" }));
     expect(showEndReaction).toHaveBeenCalledWith("wrong");
   });
+
+  it("OSCE: a full checklist is happy, an empty one is sad", async () => {
+    render(<OsceStationView />);
+    fireEvent.click(screen.getAllByRole("button", { name: /Station/ })[0]);
+    fireEvent.click(screen.getByRole("button", { name: /self-assess/ }));
+    for (const box of screen.getAllByRole("checkbox")) fireEvent.click(box);
+    await act(async () => {
+      fireEvent.click(screen.getByRole("button", { name: /Save & pick another/ }));
+    });
+    expect(showEndReaction).toHaveBeenCalledWith("streak");
+
+    showEndReaction.mockClear();
+    fireEvent.click(screen.getAllByRole("button", { name: /Station/ })[0]);
+    fireEvent.click(screen.getByRole("button", { name: /self-assess/ }));
+    await act(async () => {
+      fireEvent.click(screen.getByRole("button", { name: /Save & pick another/ }));
+    });
+    expect(showEndReaction).toHaveBeenCalledWith("wrong");
+  });
 });
