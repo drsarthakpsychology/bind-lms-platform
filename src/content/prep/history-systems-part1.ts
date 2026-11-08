@@ -915,7 +915,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 1,
     explanation:
-      "Fechner's psychophysics came first, in 1860, followed by Wundt's laboratory in 1879, Hall's founding of the APA in 1892 and Watson's call in 1913 to make psychology the science of behaviour. Sequence questions like this are common in UGC NET and CUET PG. The other options put these events out of order.",
+      "Fechner's psychophysics came first, in 1860, followed by Wundt's laboratory in 1879, Hall's founding of the APA in 1892 and Watson's call in 1913 to make psychology the science of behaviour. Sequence questions like this are common in competitive and entrance exams. The other options put these events out of order.",
     ref: "Hergenhahn; Schultz & Schultz",
   }),
   h({
