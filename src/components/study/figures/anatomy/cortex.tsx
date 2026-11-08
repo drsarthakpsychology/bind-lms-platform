@@ -224,7 +224,7 @@ export const arterialTerritories: FigureDef = {
   },
   labels: [
     { id: "aca", name: "Anterior cerebral artery", x: MX + 260 * S, y: 80 * S, about: "Supplies the inner surface of the frontal and parietal lobes and a strip along the top. A stroke here weakens the opposite leg more than the arm and can cause apathy, mutism and incontinence." },
-    { id: "mca", name: "Middle cerebral artery", x: 300 * S, y: 200 * S, about: "Supplies most of the outer surface, the internal capsule and basal ganglia. A stroke here weakens the opposite face and arm more than the leg, with aphasia on the left or neglect on the right. It is the commonest stroke." },
+    { id: "mca", name: "Middle cerebral artery", x: 300 * S, y: 200 * S, about: "Supplies most of the outer surface, the internal capsule and basal ganglia. The commonest stroke: it weakens the opposite face and arm more than the leg, with aphasia on the left or neglect on the right." },
     { id: "pca", name: "Posterior cerebral artery", x: 520 * S, y: 220 * S, about: "Supplies the occipital lobe, the underside of the temporal lobe and the thalamus. A stroke here causes loss of half the visual field and sometimes memory loss." },
     { id: "watershed", name: "Border zones", x: 470 * S, y: 120 * S, about: "Where territories meet the supply is weakest; a sudden drop in blood pressure causes watershed infarcts here." },
   ],

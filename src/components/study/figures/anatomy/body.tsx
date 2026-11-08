@@ -235,7 +235,7 @@ export const endocrine: FigureDef = {
     { id: "hypo", name: "Hypothalamus", x: 200, y: 74, about: "Links the brain to the hormone system through the pituitary." },
     { id: "pineal", name: "Pineal gland", x: 214, y: 64, about: "Makes melatonin at night." },
     { id: "pit", name: "Pituitary gland", x: 200, y: 88, about: "The master gland. A prolactin-secreting tumour or antipsychotic-raised prolactin can stop periods and cause breast milk." },
-    { id: "thyroid", name: "Thyroid", x: 190, y: 150, about: "Sets the body's pace. Too little causes low mood, slowness and memory problems; too much causes anxiety and agitation. Lithium can make it underactive, so it is checked regularly." },
+    { id: "thyroid", name: "Thyroid", x: 190, y: 150, about: "Sets the body's pace: too little causes low mood, slowness and memory problems, too much causes anxiety and agitation. Lithium can make it underactive, so it is checked regularly." },
     { id: "parathyroid", name: "Parathyroids", x: 186, y: 157, about: "Four tiny glands controlling calcium; lithium can make them overactive, raising calcium and causing low mood and confusion." },
     { id: "thymus", name: "Thymus", x: 200, y: 182, about: "Trains immune T cells in childhood and shrinks after puberty." },
     { id: "adrenal", name: "Adrenal glands", x: 170, y: 320, about: "The cortex makes cortisol and aldosterone, the medulla adrenaline. Too much cortisol (Cushing's) can cause depression and psychosis; too little (Addison's) causes fatigue and low mood." },

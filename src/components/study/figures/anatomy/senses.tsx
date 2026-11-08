@@ -225,7 +225,7 @@ export const ear: FigureDef = {
     { id: "canal", name: "Ear canal", x: 190, y: 210, about: "Carries sound to the eardrum." },
     { id: "drum", name: "Eardrum", x: 266, y: 212, about: "Vibrates with sound and passes it to the ossicles." },
     { id: "malleus", name: "Malleus (hammer)", x: 284, y: 178, about: "The first ossicle, attached to the eardrum." },
-    { id: "incus", name: "Incus (anvil)", x: 308, y: 176, about: "The middle ossicle." },
+    { id: "incus", name: "Incus (anvil)", x: 308, y: 176, about: "The middle of the three ossicles, linking the hammer to the stirrup." },
     { id: "stapes", name: "Stapes (stirrup)", x: 322, y: 214, about: "The smallest bone in the body, pushing on the oval window of the inner ear. The ossicles amplify the sound about twenty times." },
     { id: "middle", name: "Middle ear", x: 316, y: 248, about: "An air-filled space; fluid here (glue ear) causes conductive hearing loss in children." },
     { id: "eustachian", name: "Eustachian tube", x: 350, y: 334, about: "Links the middle ear to the throat and equalises pressure." },

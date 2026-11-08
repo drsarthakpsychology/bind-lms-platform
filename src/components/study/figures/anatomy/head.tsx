@@ -242,7 +242,7 @@ export const brainVesicles: FigureDef = {
     { id: "dien", name: "Diencephalon", x: 400, y: 136, about: "Becomes the thalamus, hypothalamus, epithalamus with the pineal, and the posterior pituitary." },
     { id: "mes5", name: "Mesencephalon", x: 400, y: 192, about: "The midbrain, with the substantia nigra, ventral tegmental area and colliculi." },
     { id: "meten", name: "Metencephalon", x: 400, y: 252, about: "Becomes the pons and cerebellum." },
-    { id: "myel", name: "Myelencephalon", x: 400, y: 314, about: "Becomes the medulla." },
+    { id: "myel", name: "Myelencephalon", x: 400, y: 314, about: "Becomes the medulla oblongata, with its breathing and heart centres." },
     { id: "lumen", name: "Fluid space", x: 400, y: 380, about: "The hollow inside the tube becomes the ventricles: lateral ventricles in the hemispheres, third in the diencephalon, aqueduct in the midbrain, fourth in the hindbrain, and the central canal of the cord." },
   ],
 };
