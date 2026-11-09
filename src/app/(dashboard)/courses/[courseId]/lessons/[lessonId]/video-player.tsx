@@ -222,6 +222,15 @@ export function VideoPlayer({
   // effect no longer depends on the resume value, so it can't run with the old
   // lesson's value before the new token resolves.
   const resumeRef = useRef(0);
+  // Quiet recovery: when the source dies (an expired link on the native
+  // iPhone or single-file path, a network blip), re-mint and reload at the
+  // same second instead of showing "Video unavailable". Capped so a truly
+  // broken video still shows the error card.
+  const recoverRef = useRef<{ at: number; play: boolean } | null>(null);
+  const recoveriesRef = useRef(0);
+  // The student pressed play and has not pressed pause since. A play() that
+  // gets interrupted (AbortError) is retried only while this is true.
+  const wantPlayRef = useRef(false);
   // "Resumed at 12:30 · Start over" chip, shown for a few seconds.
   const [resumedAt, setResumedAt] = useState<number | null>(null);
   // "−10 s" / "+10 s" bubble after a skip.
@@ -275,7 +284,7 @@ export function VideoPlayer({
         // The server tells us the media shape (HLS master vs single MP4); the
         // player branches on that rather than guessing from the URL.
         url = `${data.streamUrl}?st=${encodeURIComponent(data.token)}`;
-        resume = data.resumeSeconds ?? 0;
+        resume = recoverRef.current ? recoverRef.current.at : (data.resumeSeconds ?? 0);
         mediaType = data.mediaType ?? "hls";
         mediaTypeRef.current = mediaType;
         // Record the current token + its expiry so the custom loaders and the
@@ -311,6 +320,7 @@ export function VideoPlayer({
               // refresh swaps tokenRef, the next segment/playlist request already
               // carries the fresh token: playback never restarts and currentTime
               // is preserved. No page reload, no source reload.
+              loader: makeTokenRotatingLoader<LoaderContext>(tokenRef),
               pLoader: makeTokenRotatingLoader<PlaylistLoaderContext>(tokenRef),
               fLoader: makeTokenRotatingLoader<FragmentLoaderContext>(tokenRef),
               fragLoadingMaxRetry: 3,
@@ -357,7 +367,7 @@ export function VideoPlayer({
                   if (networkRetries < 2) {
                     networkRetries++;
                     hls?.startLoad();
-                  } else if (!cancelled) {
+                  } else if (!cancelled && !recoverQuietly()) {
                     setPlayerState({
                       kind: "error",
                       message: "This video couldn't be loaded. Try again.",
@@ -482,6 +492,11 @@ export function VideoPlayer({
         /* storage unavailable: stay at 1× */
       }
       setPlayerState({ kind: "ready" });
+      if (recoverRef.current) {
+        const again = recoverRef.current.play;
+        recoverRef.current = null;
+        if (again) video.play().catch(() => undefined);
+      }
       // MP4 fallback: expose the single-file source resolution as a static chip
       // (HLS renders the quality menu instead, so this stays null there).
       if (mediaTypeRef.current === "mp4" && video.videoHeight > 0) {
@@ -489,6 +504,7 @@ export function VideoPlayer({
       }
     };
     const onPlaying = () => {
+      recoveriesRef.current = 0;
       setIsPaused(false);
       setEnded(false);
     };
@@ -515,6 +531,7 @@ export function VideoPlayer({
       pingProgress(lessonId, video.duration || 0, video.duration || 0);
     };
     const onError = () => {
+      if (recoverQuietly()) return;
       setPlayerState({
         kind: "error",
         message:
@@ -665,16 +682,42 @@ export function VideoPlayer({
     }
   }
 
+  // ---- Quiet recovery (see recoverRef) ----
+  function recoverQuietly(): boolean {
+    const video = videoRef.current;
+    if (!video || recoveriesRef.current >= 3) return false;
+    recoveriesRef.current += 1;
+    recoverRef.current = { at: video.currentTime || 0, play: !video.paused || wantPlayRef.current };
+    setLoadKey((k) => k + 1);
+    return true;
+  }
+
   // ---- Playback control handlers ----
   function togglePlay() {
     const video = videoRef.current;
     if (!video) return;
     if (video.paused) {
-      video.play().catch(() => setPlayerState({
-        kind: "error",
-        message: "Playback was blocked. Tap again to start.",
-      }));
+      wantPlayRef.current = true;
+      // play() rejects for harmless reasons: AbortError when it is interrupted
+      // by loading, a seek or a source refresh; NotAllowedError when the
+      // browser wants a fresh tap. Neither means the video is broken, so never
+      // show the error card for them. Real source failures arrive through the
+      // video "error" event, which recovers quietly first.
+      video.play().catch((err: unknown) => {
+        if ((err as { name?: string })?.name === "AbortError") {
+          video.addEventListener(
+            "canplay",
+            () => {
+              if (wantPlayRef.current && video.paused) video.play().catch(() => undefined);
+            },
+            { once: true },
+          );
+        }
+        setIsPaused(true);
+        setControlsVisible(true);
+      });
     } else {
+      wantPlayRef.current = false;
       video.pause();
     }
   }
@@ -1024,7 +1067,13 @@ export function VideoPlayer({
               <p className="mt-2 text-sm text-white/80">{playerState.message}</p>
               <button
                 type="button"
-                onClick={() => setLoadKey((k) => k + 1)}
+                onClick={() => {
+                  // Retry starts again where the student was, not at the saved spot.
+                  const v = videoRef.current;
+                  recoveriesRef.current = 0;
+                  if (v && v.currentTime > 0) recoverRef.current = { at: v.currentTime, play: true };
+                  setLoadKey((k) => k + 1);
+                }}
                 className="mt-4 inline-flex h-9 items-center gap-1.5 rounded-md border-2 border-white/40 bg-white/10 px-4 text-sm font-medium text-white transition-colors hover:bg-white/20"
               >
                 <RotateCcw className="size-4" aria-hidden />

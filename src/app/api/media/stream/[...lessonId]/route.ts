@@ -103,9 +103,9 @@ export async function GET(
   const { provider, bucket, key } = resolved;
   const rest = segments.slice(1).join("/");
 
-  // Per-session AES-128 key: the same bytes the __key__ endpoint hands the
-  // player. Bound to this token + lesson.
-  const sessionKey = deriveSessionKey(token, lessonId);
+  // AES-128 key: the same bytes the __key__ endpoint hands the player. Bound
+  // to this viewer + lesson, so it survives token rotation mid-lecture.
+  const sessionKey = deriveSessionKey(payload.uid, lessonId);
 
   // ---- Per-session key endpoint. ----
   if (rest === "__key__") {

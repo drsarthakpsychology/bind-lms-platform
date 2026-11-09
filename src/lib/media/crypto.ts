@@ -23,8 +23,18 @@ import { createCipheriv, createDecipheriv, createHmac, randomBytes } from "node:
  * in the browser. Without DRM (Widevine/FairPlay), this is the ceiling.
  */
 
-/** Derive a 16-byte AES key from the stream token, bound to a lesson. */
-export function deriveSessionKey(streamToken: string, lessonId: string): Buffer {
+/**
+ * Derive a 16-byte AES key bound to (viewer, lesson).
+ *
+ * It must NOT change when the 5-minute stream token rotates: hls.js fetches
+ * the key once and keeps decrypting with it, while the token-rotating loaders
+ * fetch later segments with a fresh token. A token-derived key made every
+ * segment after the first rotation undecryptable (the "Video unavailable"
+ * students hit about 5 minutes in, or after a long pause). Segments and the
+ * key endpoint still require a valid, unexpired token for this viewer, so the
+ * gate is unchanged; only the key's lifetime now spans the viewing session.
+ */
+export function deriveSessionKey(viewerId: string, lessonId: string): Buffer {
   // Fail closed: never derive from an empty/public value, which would make the
   // session key derivable by anyone. SESSION_SECRET is a dedicated signing
   // secret: deliberately NOT the service-role key, which bypasses RLS and
@@ -35,9 +45,9 @@ export function deriveSessionKey(streamToken: string, lessonId: string): Buffer 
       "No session-key secret configured. Set SESSION_SECRET.",
     );
   }
-  const hmac = createHmac("sha256", `plms-session-key-v1:${lessonId}`)
+  const hmac = createHmac("sha256", `plms-session-key-v2:${lessonId}`)
     .update(baseSecret)
-    .update(streamToken);
+    .update(viewerId);
   return hmac.digest().subarray(0, 16);
 }
 
