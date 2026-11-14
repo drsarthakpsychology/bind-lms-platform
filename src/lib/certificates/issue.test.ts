@@ -1,7 +1,7 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 const { put, send } = vi.hoisted(() => ({
-  put: vi.fn(async (key: string) => key),
+  put: vi.fn<(key: string, bytes: unknown, type: string) => Promise<string>>(async (key) => key),
   send: vi.fn<(...args: unknown[]) => Promise<{ ok: boolean; id?: string; error?: string }>>(async () => ({ ok: true, id: "re_1" })),
 }));
 

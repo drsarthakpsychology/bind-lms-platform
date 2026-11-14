@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Award, Copy, Download, ExternalLink, Lock, Share2, Clock, ShieldCheck, ShieldX } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { formatDateIST } from "@/lib/format";
+import { certStatus, istDay, statusLine } from "@/lib/certificates/kinds";
 import { downloadMyCertificate, type MyCredential, type MyProgress } from "./actions";
 
 const TONE: Record<string, string> = {
@@ -148,45 +149,46 @@ export function AchievementsClient({ earned, progress, rollNumber, siteUrl }: { 
       {/* Certificates */}
       <section aria-labelledby="certs" className="space-y-3">
         <h2 id="certs" className="flex items-center gap-2 text-lg font-bold">
-          <ShieldCheck className="size-5" aria-hidden /> Course certificates
+          <ShieldCheck className="size-5" aria-hidden /> Certificates
         </h2>
         {certificates.length ? (
           <ul className="space-y-3">
-            {certificates.map((c) => (
-              <li key={c.credential_id} className="flex flex-wrap items-center gap-3 rounded-2xl border-2 border-foreground bg-card p-4">
-                <div className="min-w-0 flex-1">
-                  <p className="font-bold break-words">{c.title}</p>
-                  <p className="text-xs text-muted-foreground">
-                    {c.issued_at ? `Issued ${formatDateIST(c.issued_at)}` : "Pending"}{c.revoked_at ? ` · Revoked ${formatDateIST(c.revoked_at)}` : ""}
-                  </p>
-                </div>
-                {c.status === "issued" ? (
-                  <span className="inline-flex items-center gap-1 rounded-full border-2 border-foreground bg-primary px-2.5 py-1 text-xs font-bold text-primary-foreground">
-                    <ShieldCheck className="size-3.5" aria-hidden /> Issued
+            {certificates.map((c) => {
+              // Worked out now, so a provisional certificate shows as expired once its date passes.
+              const live = certStatus({ status: c.status, revoked_at: c.revoked_at, expires_at: c.expires_at, kind: c.kind });
+              const line = live === "not_issued" ? STATUS_LABEL[c.status] : statusLine(live, { expiresOn: c.expires_at ? istDay(c.expires_at) : null, revokedOn: c.revoked_at ? istDay(c.revoked_at) : null });
+              const usable = live === "valid" || live === "provisional";
+              return (
+                <li key={c.credential_id} className="flex flex-wrap items-center gap-3 rounded-2xl border-2 border-foreground bg-card p-4">
+                  <div className="min-w-0 flex-1">
+                    <Link href={`/achievements/${encodeURIComponent(c.credential_id)}`} className="font-bold break-words underline-offset-4 hover:underline">
+                      {c.title}
+                    </Link>
+                    <p className="text-xs text-muted-foreground">{c.issued_at ? `Issued ${formatDateIST(c.issued_at)}` : "Pending"}</p>
+                  </div>
+                  <span className={cn("inline-flex items-center gap-1 rounded-full border-2 border-foreground px-2.5 py-1 text-xs font-bold", live === "valid" ? "bg-primary text-primary-foreground" : live === "provisional" ? "bg-brand text-brand-foreground" : "bg-card")}>
+                    {usable ? <ShieldCheck className="size-3.5" aria-hidden /> : live === "revoked" ? <ShieldX className="size-3.5" aria-hidden /> : <Clock className="size-3.5" aria-hidden />} {live === "valid" ? "Issued" : line}
                   </span>
-                ) : c.status === "revoked" ? (
-                  <span className="inline-flex items-center gap-1 rounded-full border-2 border-foreground bg-card px-2.5 py-1 text-xs font-bold">
-                    <ShieldX className="size-3.5" aria-hidden /> Revoked
-                  </span>
-                ) : (
-                  <span className="inline-flex items-center gap-1 rounded-full border-2 border-foreground bg-card px-2.5 py-1 text-xs font-bold">
-                    <Clock className="size-3.5" aria-hidden /> {STATUS_LABEL[c.status]}
-                  </span>
-                )}
-                {c.status === "issued" && (
-                  <button
-                    type="button"
-                    onClick={() => void download(c.credential_id)}
-                    disabled={downloading !== null}
-                    aria-busy={downloading === c.credential_id || undefined}
-                    className="inline-flex h-10 items-center gap-1.5 rounded-md border-2 border-foreground bg-card px-3 text-sm font-semibold hover:bg-muted disabled:opacity-60 pointer-coarse:h-11"
-                  >
-                    <Download className="size-3.5" aria-hidden /> {downloading === c.credential_id ? "Preparing…" : "PDF"}
-                  </button>
-                )}
-                {c.status === "issued" ? <ShareRow credentialId={c.credential_id} title={c.title} siteUrl={siteUrl} /> : null}
-              </li>
-            ))}
+                  {usable || live === "expired" ? (
+                    <Link href={`/achievements/${encodeURIComponent(c.credential_id)}`} className="inline-flex h-10 items-center gap-1.5 rounded-md border-2 border-foreground bg-card px-3 text-sm font-semibold hover:bg-muted pointer-coarse:h-11">
+                      View
+                    </Link>
+                  ) : null}
+                  {usable && (
+                    <button
+                      type="button"
+                      onClick={() => void download(c.credential_id)}
+                      disabled={downloading !== null}
+                      aria-busy={downloading === c.credential_id || undefined}
+                      className="inline-flex h-10 items-center gap-1.5 rounded-md border-2 border-foreground bg-card px-3 text-sm font-semibold hover:bg-muted disabled:opacity-60 pointer-coarse:h-11"
+                    >
+                      <Download className="size-3.5" aria-hidden /> {downloading === c.credential_id ? "Preparing…" : "PDF"}
+                    </button>
+                  )}
+                  {usable ? <ShareRow credentialId={c.credential_id} title={c.title} siteUrl={siteUrl} /> : null}
+                </li>
+              );
+            })}
           </ul>
         ) : (
           <p className="rounded-2xl border-2 border-dashed border-foreground/50 p-4 text-sm text-muted-foreground">No certificates yet.</p>

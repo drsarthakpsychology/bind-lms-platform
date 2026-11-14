@@ -65,7 +65,7 @@ const field = "h-11 w-full min-w-0 rounded-md border-2 border-input bg-card px-3
 function SectionTitle({ n, children, hint }: { n: number; children: React.ReactNode; hint?: React.ReactNode }) {
   return (
     <div className="mb-4 flex items-baseline justify-between gap-3">
-      <h2 className="text-h3">
+      <h2 className="text-h2 lg:text-h3">
         <span className="mr-2 hidden tabular-nums text-muted-foreground lg:inline">{n}</span>
         {children}
       </h2>
@@ -216,8 +216,8 @@ export function Studio({ canWrite, ready, today, siteUrl, students, cohorts, cou
         ) : null}
         {/* Phone: where you are in the five steps. */}
         <div className="mt-4 lg:hidden" aria-live="polite">
-          <p className="text-small font-semibold">
-            <span className="tabular-nums text-muted-foreground">{step + 1} of {STEPS.length}</span> <span className="ml-1">{STEPS[step]}</span>
+          <p className="text-small font-semibold tabular-nums text-muted-foreground">
+            Step {step + 1} of {STEPS.length}
           </p>
           <div className="mt-2 h-1 w-full bg-foreground/10" aria-hidden>
             <div className="h-1 bg-brand transition-[width] duration-300 motion-reduce:transition-none" style={{ width: `${((step + 1) / STEPS.length) * 100}%` }} />
@@ -230,7 +230,7 @@ export function Studio({ canWrite, ready, today, siteUrl, students, cohorts, cou
       ) : null}
 
       <div className="lg:grid lg:grid-cols-[minmax(0,27rem)_minmax(0,1fr)] lg:items-start lg:gap-14">
-        <div className="min-w-0 lg:divide-y lg:divide-foreground/10 lg:[&>section]:py-8 lg:[&>section:first-child]:pt-0">
+        <div className="min-w-0 lg:space-y-12">
           {/* 1. Type */}
           <section className={visible(0)} aria-labelledby="st-type">
             <SectionTitle n={1}><span id="st-type">Type</span></SectionTitle>
@@ -317,7 +317,7 @@ export function Studio({ canWrite, ready, today, siteUrl, students, cohorts, cou
                 <div className="mb-1 flex items-baseline justify-between gap-3">
                   <p className="text-small font-semibold">Name printed on each certificate</p>
                   {locked ? null : (
-                    <button type="button" className="text-small font-semibold text-link underline-offset-4 hover:underline" onClick={() => { setPicked([]); setCohortId(null); }}>Clear all</button>
+                    <button type="button" className="inline-flex min-h-11 items-center text-small font-semibold text-link underline-offset-4 hover:underline" onClick={() => { setPicked([]); setCohortId(null); }}>Clear all</button>
                   )}
                 </div>
                 <ul className="max-h-[22rem] divide-y divide-foreground/10 overflow-y-auto overscroll-contain border-y border-foreground/10">
@@ -466,7 +466,7 @@ export function Studio({ canWrite, ready, today, siteUrl, students, cohorts, cou
               </li>
               <li className="flex min-h-14 items-center gap-3 py-3">
                 <span className="min-w-0 flex-1">
-                  <Label htmlFor="st-email" className="block font-semibold">Email with the link</Label>
+                  <Label htmlFor="st-email" className="block text-base font-semibold">Email with the link</Label>
                   <span className="block text-small text-muted-foreground">
                     {!email.configured
                       ? "Email isn't set up on this site."
@@ -477,11 +477,11 @@ export function Studio({ canWrite, ready, today, siteUrl, students, cohorts, cou
                           : `${email.remaining} left today.`}
                   </span>
                 </span>
-                <Switch id="st-email" checked={alsoEmail && email.configured} disabled={!email.configured} onCheckedChange={setAlsoEmail} />
+                <Switch id="st-email" className="origin-right scale-150" checked={alsoEmail && email.configured} disabled={!email.configured} onCheckedChange={setAlsoEmail} />
               </li>
             </ul>
             {emailWait > 0 ? (
-              <p className="mt-3 max-w-[60ch] text-small text-muted-foreground">Waiting emails are kept. Send them from Issued certificates with "Send waiting emails".</p>
+              <p className="mt-3 max-w-[60ch] text-small text-muted-foreground">Waiting emails are kept. Send them later from Issued certificates, with the Send waiting emails button.</p>
             ) : null}
             {count && withEmail < count ? (
               <p className="mt-3 text-small text-muted-foreground">{count - withEmail} of them {count - withEmail === 1 ? "has" : "have"} no email on file.</p>

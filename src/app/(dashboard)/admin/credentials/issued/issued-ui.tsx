@@ -43,14 +43,14 @@ export function RowActions({ credentialId, name, status, canWrite, canCorrect }:
 
   return (
     <div className="flex items-center justify-end gap-1">
-      <Button asChild variant="outline" size="sm" className="pointer-coarse:h-11">
+      <Button asChild variant="outline" size="sm" className="max-md:h-11">
         <a href={`/api/certificates/${encodeURIComponent(credentialId)}/pdf`} aria-label={`Download the PDF for ${name}`}>
           <Download className="size-4" aria-hidden /> PDF
         </a>
       </Button>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <Button variant="ghost" size="icon" className="pointer-coarse:size-11" aria-label={`More for ${name}`}>
+          <Button variant="ghost" size="icon" className="max-md:size-11" aria-label={`More for ${name}`}>
             <MoreHorizontal className="size-4" aria-hidden />
           </Button>
         </DropdownMenuTrigger>
@@ -111,7 +111,7 @@ export function SendWaiting({ waiting, canWrite, emailOn }: { waiting: number; c
           type="button"
           variant="outline"
           size="sm"
-          className="pointer-coarse:h-11"
+          className="max-md:h-11"
           disabled={busy || !emailOn}
           onClick={async () => {
             setBusy(true);

@@ -15,6 +15,8 @@ export const dynamic = "force-dynamic";
 export const maxDuration = 300;
 
 const STATUSES: CertStatus[] = ["valid", "provisional", "expired", "revoked"];
+/** "31 December 2026" to "31 Dec 2026": the list is scanned, not read. */
+const short = (text: string) => text.replace(/\b(January|February|March|April|June|July|August|September|October|November|December)\b/g, (m) => m.slice(0, 3));
 const EMAIL_LABEL: Record<string, string> = { sent: "Emailed", queued: "Email waiting", failed: "Email failed", none: "App only" };
 const TONE: Record<CertStatus, string> = {
   valid: "text-foreground",
@@ -103,19 +105,19 @@ export default async function IssuedCertificatesPage({ searchParams }: { searchP
 
       {rows.length ? (
         <>
-          <div className="hidden grid-cols-[minmax(0,1.2fr)_minmax(0,1.5fr)_minmax(0,11rem)_7.5rem_auto] gap-4 border-b border-foreground/20 pb-2 text-caption font-semibold text-muted-foreground lg:grid" aria-hidden>
+          <div className="hidden grid-cols-[minmax(0,1.2fr)_minmax(0,1.5fr)_13rem_6.5rem_8.5rem] gap-4 border-b border-foreground/20 pb-2 text-caption font-semibold text-muted-foreground lg:grid" aria-hidden>
             <span>Name</span>
             <span>Certificate</span>
             <span>Status</span>
             <span>Issued</span>
-            <span className="w-[13.5rem]" />
+            <span />
           </div>
           <ul className="divide-y divide-foreground/10 border-b border-foreground/10">
             {rows.slice(0, 300).map((r) => {
               const st = liveStatus(r, now);
               const line = statusLine(st, { expiresOn: r.expiresAt ? istDay(r.expiresAt) : null, revokedOn: r.revokedAt ? istDay(r.revokedAt) : null });
               return (
-                <li key={r.credentialId} className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-x-4 gap-y-1 py-3 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1.5fr)_minmax(0,11rem)_7.5rem_auto]">
+                <li key={r.credentialId} className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-x-4 gap-y-1 py-3 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1.5fr)_13rem_6.5rem_8.5rem]">
                   <div className="min-w-0">
                     <p className="truncate font-semibold">{r.name}</p>
                     <p className="truncate font-mono text-caption text-muted-foreground">{r.credentialId.length > 24 ? `${r.credentialId.slice(0, 12)}...` : r.credentialId}</p>
@@ -128,10 +130,10 @@ export default async function IssuedCertificatesPage({ searchParams }: { searchP
                     </p>
                   </div>
                   <div className="col-start-1 min-w-0 lg:col-start-3">
-                    <p className={`text-small font-semibold ${TONE[st]}`}>{line}</p>
+                    <p className={`text-small font-semibold ${TONE[st]}`}>{short(line)}</p>
                     {st === "revoked" && r.revokeReason ? <p className="truncate text-caption text-muted-foreground" title={r.revokeReason}>{r.revokeReason}</p> : null}
                   </div>
-                  <p className="col-start-1 text-small tabular-nums text-muted-foreground lg:col-start-4">{r.issuedAt ? longDate(istDay(r.issuedAt)).replace(/^(\d+) (\w{3})\w* /, "$1 $2 ") : "Not issued"}</p>
+                  <p className="col-start-1 text-small tabular-nums text-muted-foreground lg:col-start-4">{r.issuedAt ? short(longDate(istDay(r.issuedAt))) : "Not issued"}</p>
                   <div className="col-start-2 row-span-4 row-start-1 self-start lg:col-start-5 lg:row-span-1 lg:self-center">
                     <RowActions credentialId={r.credentialId} name={r.name} status={st} canWrite={canWrite} canCorrect={Boolean(r.userId)} />
                   </div>

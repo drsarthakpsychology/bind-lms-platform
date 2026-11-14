@@ -184,6 +184,8 @@ export const ADMIN_SECTIONS: AdminSection[] = [
     href: "/admin/credentials",
     group: "Teach",
     tabs: [
+      { href: "/admin/credentials/studio", label: "Certificate studio" },
+      { href: "/admin/credentials/issued", label: "Issued certificates" },
       { href: "/admin/credentials", label: "Find & issue" },
       { href: "/admin/achievements", label: "Badges & certificate types" },
     ],

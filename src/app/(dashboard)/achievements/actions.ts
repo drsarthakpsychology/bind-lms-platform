@@ -19,6 +19,9 @@ export type MyCredential = {
   issued_at: string | null;
   revoked_at: string | null;
   revoke_reason: string | null;
+  /** Certificates: provisional and expiry (from the studio's database step; absent before it). */
+  kind?: string | null;
+  expires_at?: string | null;
 };
 
 export type MyProgress = {
@@ -43,9 +46,15 @@ export async function loadMyAchievements(): Promise<{ earned: MyCredential[]; pr
   if (!me) return { earned: [], progress: [] };
   const admin = createAdminClient();
 
+  const COLS = "credential_id, type, status, issued_at, revoked_at, revoke_reason, reason, achievements(title, description, icon, tone, requirements)";
+  // Their own, plus custom certificates sent to their email address. The studio
+  // columns (title, kind, expiry) are read when the database has them.
+  const ownCreds = async () => {
+    const full = await selectOwnedCredentials(admin, `${COLS}, kind, title, expires_at`, me.id, me.email);
+    return full.error ? selectOwnedCredentials(admin, COLS, me.id, me.email) : full;
+  };
   const [{ data: creds }, { data: achievements }, ctx] = await Promise.all([
-    // Their own, plus custom certificates sent to their email address.
-    selectOwnedCredentials(admin, "credential_id, type, status, issued_at, revoked_at, revoke_reason, reason, achievements(title, description, icon, tone)", me.id, me.email),
+    ownCreds(),
     admin.from("achievements").select("id, type, title, description, icon, tone, requirements, enabled").eq("enabled", true),
     loadEvalCtx(admin, me.id),
   ]);
@@ -56,7 +65,9 @@ export async function loadMyAchievements(): Promise<{ earned: MyCredential[]; pr
       credential_id: c.credential_id as string,
       type: c.type as MyCredential["type"],
       status: c.status as MyCredential["status"],
-      title: (a?.title as string) ?? "",
+      title: (c.title as string | null) || ((a?.title as string) ?? ""),
+      kind: (c.kind as string | null) ?? ((a?.requirements as { studio?: { kind?: string } } | null)?.studio?.kind ?? null),
+      expires_at: (c.expires_at as string | null) ?? null,
       description: (a?.description as string) ?? (c.type === "certificate" ? ((c.reason as string) ?? null) : null),
       icon: (a?.icon as string) ?? null,
       tone: (a?.tone as string) ?? "lime",
