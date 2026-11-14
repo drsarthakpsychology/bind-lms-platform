@@ -16,6 +16,7 @@ import {
 import { logout } from "@/lib/auth/actions";
 import { MiddleTruncate } from "@/components/ui/middle-truncate";
 import { useReactionsOn } from "@/components/reactions/use-reaction";
+import { MobileBottomSheet } from "@/components/mobile/mobile-bottom-sheet";
 
 /** Initial for the avatar: first letter of the email (no fake names). */
 export function initialOf(email: string | null | undefined) {
@@ -53,15 +54,61 @@ export function AccountMenu({
   const isDark = resolvedTheme === "dark";
   const formRef = React.useRef<HTMLFormElement>(null);
   const [funny, setFunny] = useReactionsOn();
+  const [sheet, setSheet] = React.useState(false);
+  const row =
+    "flex min-h-12 w-full items-center gap-3 rounded-md border-2 border-foreground bg-card px-3 text-left font-semibold active:translate-y-px focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60";
 
   return (
     <>
+      {/* Phones: the account opens as a bottom sheet with big rows, not a small menu in the corner. */}
+      <button
+        type="button"
+        aria-label="Your account"
+        aria-haspopup="dialog"
+        onClick={() => setSheet(true)}
+        className="grid size-11 shrink-0 place-items-center rounded-full outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60 active:scale-95 md:hidden"
+      >
+        <Avatar email={email} />
+      </button>
+      <MobileBottomSheet open={sheet} onOpenChange={setSheet} title="Your account">
+        <div className="flex items-center gap-3 pb-3">
+          <Avatar email={email} />
+          <span className="min-w-0">
+            <MiddleTruncate text={email ?? "Signed in"} className="text-sm font-bold" />
+            <span className="block text-caption capitalize text-muted-foreground">{role}</span>
+          </span>
+        </div>
+        <div className="grid gap-2">
+          <Link href="/notifications" className={row} onClick={() => setSheet(false)}>
+            <Bell className="size-5" aria-hidden /> Notifications
+          </Link>
+          {showSettings ? (
+            <Link href="/settings" className={row} onClick={() => setSheet(false)}>
+              <Settings className="size-5" aria-hidden /> Settings
+            </Link>
+          ) : null}
+          <button type="button" className={row} onClick={() => setTheme(isDark ? "light" : "dark")}>
+            {isDark ? <Sun className="size-5" aria-hidden /> : <Moon className="size-5" aria-hidden />}
+            {isDark ? "Light mode" : "Dark mode"}
+          </button>
+          {role === "student" ? (
+            <button type="button" role="switch" aria-checked={funny} className={row} onClick={() => setFunny(!funny)}>
+              <Smile className="size-5" aria-hidden />
+              <span className="flex-1">Funny reactions</span>
+              <span className="font-mono text-xs font-bold uppercase text-muted-foreground">{funny ? "On" : "Off"}</span>
+            </button>
+          ) : null}
+          <button type="button" className={row + " mt-2 text-destructive"} onClick={() => formRef.current?.requestSubmit()}>
+            <LogOut className="size-5" aria-hidden /> Log out
+          </button>
+        </div>
+      </MobileBottomSheet>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <button
             type="button"
             aria-label="Your account"
-            className="grid size-10 shrink-0 place-items-center rounded-full outline-none transition-transform duration-fast ease-snappy hover:-rotate-6 hover:scale-105 focus-visible:ring-[3px] focus-visible:ring-ring/60 active:scale-95 pointer-coarse:size-11"
+            className="hidden size-10 shrink-0 place-items-center rounded-full outline-none md:grid transition-transform duration-fast ease-snappy hover:-rotate-6 hover:scale-105 focus-visible:ring-[3px] focus-visible:ring-ring/60 active:scale-95 pointer-coarse:size-11"
           >
             <Avatar email={email} />
           </button>
