@@ -13,6 +13,7 @@ const { supabase, admin, upsertMock } = vi.hoisted(() => {
         single: vi.fn().mockResolvedValue({ data: { id: "item-uuid" } }),
       })),
       insert: vi.fn(() => ({ select: vi.fn(() => ({ single: vi.fn().mockResolvedValue({ data: { id: "item-uuid" } }) })) })),
+      upsert: upsertMock,
     })),
   };
   return { supabase, admin, upsertMock };
@@ -36,6 +37,7 @@ vi.mock("@/lib/rate-limit", () => ({
 }));
 
 import { POST } from "./route";
+import { scoreSctResponse, simulatedPanel } from "@/lib/practice/sct";
 
 const VALID_BODY = {
   item_id: "sct-1",
@@ -83,8 +85,24 @@ describe("POST /api/practice/sct/attempt", () => {
     expect(row.user_id).toBe("user-1");
     expect(row.item_id).toBe("item-uuid");
     expect(row.response).toBe(1);
-    expect(row.scored).toBe(0.75);
+    // Scored on the server from the panel, never the browser's 0.75.
+    expect(row.scored).toBe(scoreSctResponse(1, simulatedPanel("sct-1")));
+    expect(row.scored).not.toBe(0.75);
     expect(row.seconds_spent).toBe(42);
     expect(opts).toEqual({ onConflict: "item_id,user_id" });
+  });
+
+  it("refuses an item that is not one of the arena's seed items (no student-made items)", async () => {
+    const res = await POST(new Request("http://test/api/practice/sct/attempt", {
+      method: "POST",
+      body: JSON.stringify({ ...VALID_BODY, item_id: "sct-made-up", vignette: "Fake clinical advice" }),
+    }));
+    expect(res.status).toBe(404);
+    expect(upsertMock).not.toHaveBeenCalled();
+  });
+
+  it("writes with the server client, not the student's own", async () => {
+    await POST(new Request("http://test/api/practice/sct/attempt", { method: "POST", body: JSON.stringify(VALID_BODY) }));
+    expect(supabase.from).not.toHaveBeenCalled();
   });
 });

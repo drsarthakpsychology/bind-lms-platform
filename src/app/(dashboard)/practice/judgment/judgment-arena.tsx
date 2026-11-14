@@ -3,7 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { haptic } from "@/lib/haptics";
-import { panelDistribution, scoreSctResponse, type SctItem, type SctResponse } from "@/lib/practice/sct";
+import { panelDistribution, scoreSctResponse, simulatedPanel, type SctItem, type SctResponse } from "@/lib/practice/sct";
 import { buildSctAttemptPayload } from "@/lib/practice/sct-attempt";
 import { JUDGMENT_COMPETENCY_KEYS, recordCompetencyEvent } from "@/lib/practice/competency-client";
 import { MobileCompletionState } from "@/components/mobile/mobile-completion-state";
@@ -15,20 +15,6 @@ const RESPONSE_LABELS: Record<SctResponse, string> = {
   1: "More likely",
   2: "Much more likely",
 };
-
-/** Deterministic simulated panel responses for the seed items (admin flow wires real ones). */
-function simulatedPanel(id: string): SctResponse[] {
-  const h = id.split("").reduce((a, c) => a + c.charCodeAt(0), 0);
-  const base = (h % 5) - 2; // -2..2
-  // A distribution clustered around `base`.
-  return [
-    base as SctResponse,
-    base as SctResponse,
-    Math.max(-2, Math.min(2, base + 1)) as SctResponse,
-    Math.max(-2, Math.min(2, base - 1)) as SctResponse,
-    Math.max(-2, Math.min(2, base + (h % 2 === 0 ? 1 : -1))) as SctResponse,
-  ];
-}
 
 export function JudgmentArena({ items }: { items: SctItem[] }) {
   const [idx, setIdx] = React.useState(0);
