@@ -56,4 +56,48 @@ describe("learn store keys the browser copy per student", () => {
     expect(window.localStorage.getItem("vibha-learn-v1:u1")).toBeNull();
     vi.useRealTimers();
   });
+
+  it("sends the browser copy up on load when it holds work the server never got", async () => {
+    vi.useFakeTimers();
+    window.localStorage.setItem("vibha-learn-v1:u1", JSON.stringify(withXp(80)));
+    const sent: number[] = [];
+    const s = await freshStore();
+    s.initLearnStore(withXp(30), async (st) => {
+      sent.push(st.xp);
+      return { ok: true };
+    }, "u1");
+    await vi.advanceTimersByTimeAsync(700);
+    expect(sent).toEqual([80]);
+    vi.useRealTimers();
+  });
+
+  it("does not resend when the server copy is already up to date", async () => {
+    vi.useFakeTimers();
+    const sent: number[] = [];
+    const s = await freshStore();
+    s.initLearnStore(withXp(30), async (st) => {
+      sent.push(st.xp);
+      return { ok: true };
+    }, "u1");
+    await vi.advanceTimersByTimeAsync(700);
+    expect(sent).toEqual([]);
+    vi.useRealTimers();
+  });
+
+  it("queues the save in the outbox when the outbox is running", async () => {
+    vi.useFakeTimers();
+    const s = await freshStore();
+    const client = await import("@/lib/save/client");
+    const posted: string[] = [];
+    client.__saveForTests.reset({ transport: async (body) => (posted.push(body), new Response(JSON.stringify({ results: [] }), { status: 200 })) });
+    client.setSaveOwner("tag");
+    const direct = vi.fn(async () => ({ ok: true }));
+    s.initLearnStore(withXp(1), direct, "u1");
+    s.setLearnState(withXp(5));
+    await vi.advanceTimersByTimeAsync(700);
+    expect(direct).not.toHaveBeenCalled();
+    expect(posted.some((b) => b.includes('"kind":"learn"'))).toBe(true);
+    client.__saveForTests.reset();
+    vi.useRealTimers();
+  });
 });

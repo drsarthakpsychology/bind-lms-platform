@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { emptyState, normalise, type LearnState } from "./engine";
+import { onSaved, queueSave } from "@/lib/save/client";
 
 function maxMap(a: Record<string, number>, b: Record<string, number>): Record<string, number> {
   const out = { ...a };
@@ -96,6 +97,51 @@ export function initLearnStore(server: LearnState | null, save: (s: LearnState) 
   const other = win === a ? local : a;
   // Things that don't earn XP (notes read, study time) are merged from both copies.
   state = other ? mergeCopies(win, other) : win;
+  // The browser copy holds work the server never got (a save that failed, a
+  // tab closed before the save went out): send the merged copy up now instead
+  // of waiting for the student's next change.
+  if (a && JSON.stringify(state) !== JSON.stringify(a)) scheduleSave(state, key);
+}
+
+function dropLocal(k: string) {
+  try {
+    window.localStorage.removeItem(k);
+  } catch {
+    /* private mode */
+  }
+}
+
+const isClamped = (res: unknown) => Boolean(res && typeof res === "object" && (res as { clamped?: unknown }).clamped === true);
+
+let unsubscribeSaved: (() => void) | null = null;
+
+function send(next: LearnState, k: string) {
+  // The save outbox keeps the copy until the server has it, retries, and
+  // survives a new deployment. Before it runs, the Server Action is used.
+  if (typeof window !== "undefined" && queueSave("learn", k, { state: next })) {
+    unsubscribeSaved ??= onSaved("learn", (data, item) => {
+      // The server refused part of this copy: stop trusting the local one.
+      if (data?.clamped === true) dropLocal(item.key);
+    });
+    return;
+  }
+  saver?.(next).then(
+    (res) => {
+      if (isClamped(res)) dropLocal(k);
+      else if (res && typeof res === "object" && (res as { ok?: unknown }).ok === false) console.warn("Learn progress was not saved; it stays in this browser and is sent with the next change.");
+    },
+    () => {
+      /* offline: localStorage still has it, and the next load sends it up */
+    },
+  );
+}
+
+function scheduleSave(next: LearnState, k: string) {
+  if (saveTimer) clearTimeout(saveTimer);
+  saveTimer = setTimeout(() => {
+    saveTimer = null;
+    send(next, k);
+  }, 600);
 }
 
 export function setLearnState(next: LearnState) {
@@ -107,23 +153,7 @@ export function setLearnState(next: LearnState) {
     /* private mode */
   }
   listeners.forEach((l) => l());
-  if (saveTimer) clearTimeout(saveTimer);
-  saveTimer = setTimeout(() => {
-    saver?.(next)
-      .then((res) => {
-        // The server refused part of this copy: stop trusting the local one.
-        if (res && typeof res === "object" && (res as { clamped?: unknown }).clamped === true) {
-          try {
-            window.localStorage.removeItem(k);
-          } catch {
-            /* private mode */
-          }
-        }
-      })
-      .catch(() => {
-        /* offline: localStorage still has it */
-      });
-  }, 600);
+  scheduleSave(next, k);
 }
 
 export function useLearnState(serverCopy: LearnState): LearnState {
@@ -140,4 +170,15 @@ export function useLearnState(serverCopy: LearnState): LearnState {
 /** Current store value outside render (effects and handlers). */
 export function getLearnState(): LearnState | null {
   return state;
+}
+
+// Closing the tab inside the 600 ms wait: queue the save now so it is not lost
+// (the outbox sends it on the way out, or on the next page load).
+if (typeof window !== "undefined") {
+  window.addEventListener("pagehide", () => {
+    if (!saveTimer || !state) return;
+    clearTimeout(saveTimer);
+    saveTimer = null;
+    send(state, key);
+  });
 }

@@ -10,6 +10,7 @@ import "server-only";
  * its history is read from there (src/lib/prep/history.ts), not from here.
  */
 import { createAdminClient } from "@/lib/supabase/server";
+import { withRetry } from "@/lib/save/retry";
 import { cleanItem, isHistoryTool, nextRow, orderByHistory, seededRng, type History, type HistoryRow, type HistoryTool } from "./order";
 
 const TABLE = "answer_history";
@@ -85,8 +86,11 @@ export async function recordHistory(userId: string, tool: HistoryTool, answers: 
   const db = admin();
   if (!db) return false;
   try {
-    const { data, error } = await db.from(TABLE).select("item, seen_count, last_correct, last_seen_at, next_due").eq("user_id", userId).eq("tool", tool).in("item", list);
-    if (error) return false;
+    const { data, error } = await withRetry(() => db.from(TABLE).select("item, seen_count, last_correct, last_seen_at, next_due").eq("user_id", userId).eq("tool", tool).in("item", list));
+    if (error) {
+      console.error("recordHistory: answer_history read failed:", error.code, error.message);
+      return false;
+    }
     const had = new Map<string, HistoryRow>();
     for (const r of (data ?? []) as Record<string, unknown>[]) {
       const row = toHistoryRow(r);
@@ -97,9 +101,11 @@ export async function recordHistory(userId: string, tool: HistoryTool, answers: 
       const n = nextRow(had.get(item), item, last.get(item) ?? null, t);
       return { user_id: userId, tool, item, seen_count: n.seen, last_correct: n.ok, last_seen_at: new Date(n.at).toISOString(), next_due: n.due === null ? null : new Date(n.due).toISOString() };
     });
-    const { error: upErr } = await db.from(TABLE).upsert(rows, { onConflict: "user_id,tool,item" });
+    const { error: upErr } = await withRetry(() => db.from(TABLE).upsert(rows, { onConflict: "user_id,tool,item" }));
+    if (upErr) console.error("recordHistory: answer_history write failed:", upErr.code, upErr.message);
     return !upErr;
-  } catch {
+  } catch (e) {
+    console.error("recordHistory failed:", e instanceof Error ? e.message : e);
     return false;
   }
 }

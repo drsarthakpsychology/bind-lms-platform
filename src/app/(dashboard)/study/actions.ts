@@ -8,6 +8,7 @@ import { awardEligibleBadges } from "@/lib/achievements/server";
 import { newlyFinishedModules } from "@/lib/achievements/completion";
 import { moduleFacets } from "@/lib/achievements/rules";
 import { keepBestTests } from "@/lib/study/progress";
+import { withRetry } from "@/lib/save/retry";
 
 /** The stored state, plus the id of the student it belongs to (keys the browser copy). */
 export type OwnedLearnState = LearnState & { owner?: string };
@@ -45,22 +46,22 @@ export async function loadLearnState(): Promise<OwnedLearnState | null> {
  * `clamped: true` tells the browser store its local copy is not trustworthy,
  * so the server copy wins on the next load.
  */
-export async function saveLearnState(state: LearnState): Promise<{ ok: boolean; clamped?: boolean }> {
+export async function saveLearnState(state: LearnState): Promise<{ ok: boolean; clamped?: boolean; retry?: boolean }> {
   try {
     const supabase = await createClient();
     const {
       data: { user },
     } = await supabase.auth.getUser();
-    if (!user) return { ok: false };
+    if (!user) return { ok: false, retry: true };
     const next = normalise(state);
     // Size guard: a state is a few KB; refuse anything absurd.
-    if (JSON.stringify(next).length > 200_000) return { ok: false };
+    if (JSON.stringify(next).length > 200_000) return { ok: false, retry: false };
 
-    const { data: row, error: readErr } = await supabase.from("learn_progress").select("state, updated_at").eq("user_id", user.id).maybeSingle();
+    const { data: row, error: readErr } = await withRetry(() => supabase.from("learn_progress").select("state, updated_at").eq("user_id", user.id).maybeSingle());
     if (readErr) {
-      // Without the stored row we cannot clamp safely, so do not write.
-      console.warn("saveLearnState: learn_progress read failed:", readErr.message);
-      return { ok: false };
+      // Without the stored row we cannot clamp safely, so do not write (the browser tries again).
+      console.error("saveLearnState: learn_progress read failed:", readErr.code, readErr.message);
+      return { ok: false, retry: true };
     }
     const prev = row ? { state: normalise(row.state), updatedDay: row.updated_at ? istToday(new Date(row.updated_at as string)) : null } : null;
     const { state: clamp, clamped } = clampLearnSave(prev, next, istToday());
@@ -78,10 +79,10 @@ export async function saveLearnState(state: LearnState): Promise<{ ok: boolean; 
     } catch {
       writer = supabase;
     }
-    const { error } = await writer
-      .from("learn_progress")
-      .upsert({ user_id: user.id, state: clean, xp: clean.xp, updated_at: new Date().toISOString() }, { onConflict: "user_id" });
-    if (error) console.warn("saveLearnState: learn_progress write failed:", error.message);
+    const { error } = await withRetry(() =>
+      writer.from("learn_progress").upsert({ user_id: user.id, state: clean, xp: clean.xp, updated_at: new Date().toISOString() }, { onConflict: "user_id" }),
+    );
+    if (error) console.error("saveLearnState: learn_progress write failed:", error.code, error.message);
     // A module just finished: award its badge (and any mastery milestone) on
     // the server, after the response, so the save stays fast.
     if (!error) {
@@ -90,9 +91,9 @@ export async function saveLearnState(state: LearnState): Promise<{ ok: boolean; 
         after(() => awardEligibleBadges(createAdminClient(), user.id, null).then(() => undefined, (e) => console.warn("module badge award failed:", e instanceof Error ? e.message : e)));
       }
     }
-    return { ok: !error, clamped };
+    return error ? { ok: false, clamped, retry: true } : { ok: true, clamped };
   } catch (e) {
-    console.warn("saveLearnState failed:", e instanceof Error ? e.message : e);
-    return { ok: false };
+    console.error("saveLearnState failed:", e instanceof Error ? e.message : e);
+    return { ok: false, retry: true };
   }
 }
