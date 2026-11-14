@@ -11,6 +11,23 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 vi.mock("@/lib/tips/actions", () => ({ loadTips: vi.fn(async () => ({ owner: "u1", ids: [] })), saveTips: vi.fn(async () => true) }));
 vi.mock("next/navigation", () => ({ useRouter: () => ({ refresh: vi.fn(), push: vi.fn(), back: vi.fn() }), usePathname: () => "/", useSearchParams: () => new URLSearchParams() }));
+// Clinic detective is dealt on the server: this fake runs the same pure rules in memory.
+vi.mock("@/app/(dashboard)/practice/detective/actions", async () => {
+  const m = await import("@/lib/learn/detective-deal");
+  const mask = () => 0;
+  let tok: import("@/lib/learn/detective-deal").DealToken | null = null;
+  const at = (r: number) => m.caseAt(tok, "u", r, mask)!;
+  return {
+    dealDetective: async (f: "mixed" | "drug" | "disorder") => {
+      const d = m.deal("u", "run1", m.poolFor(f).map((c) => c.answer), mask, () => 0.5);
+      tok = d.payload;
+      return { ok: true, token: "t", run: "run1", rounds: d.rounds };
+    },
+    detectiveClue: async (_t: string, r: number, n: number) => ({ ok: true, clue: m.clueOf(at(r), n) }),
+    detectiveAllClues: async (_t: string, r: number) => ({ ok: true, clues: [...at(r).clues] }),
+    detectiveGuess: async (_t: string, r: number, g: string, f: boolean) => ({ ok: true, ...m.judge(at(r), g, f) }),
+  };
+});
 vi.mock("@/lib/hints/actions", () => ({ askHint: vi.fn(async () => ({ ok: false })), getHintStatus: vi.fn(async () => null), buyHintsAction: vi.fn() }));
 const startBlitz = vi.fn();
 vi.mock("@/app/(dashboard)/games/blitz/actions", () => ({ startBlitz: (...a: unknown[]) => startBlitz(...a), answerBlitz: vi.fn(), finishBlitz: vi.fn() }));
@@ -133,7 +150,8 @@ describe("how-to in real games", () => {
     );
     await flush();
     expect(screen.getByText("Guess, or open another clue.")).toBeInTheDocument();
-    fireEvent.click(screen.getByRole("button", { name: "Mixed" }));
+    await act(async () => void fireEvent.click(screen.getByRole("button", { name: "Mixed" })));
+    await flush();
     expect(screen.queryByText("Guess, or open another clue.")).not.toBeInTheDocument();
     const before = document.body.textContent;
     const sheet = openSheet();
