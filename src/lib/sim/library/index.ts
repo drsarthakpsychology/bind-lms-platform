@@ -8,7 +8,8 @@ import { BATCH_05 } from "./batch-05-substance";
 import { BATCH_06 } from "./batch-06-wider";
 import { BATCH_07 } from "./batch-07-mood-wide";
 import { BATCH_08 } from "./batch-08-anxiety-trauma";
+import { BATCH_09 } from "./batch-09-neuro";
 
-export const SIM_LIBRARY_AUTHORED: LibSim[] = [...BATCH_01, ...BATCH_02, ...BATCH_03, ...BATCH_04, ...BATCH_05, ...BATCH_06, ...BATCH_07, ...BATCH_08];
+export const SIM_LIBRARY_AUTHORED: LibSim[] = [...BATCH_01, ...BATCH_02, ...BATCH_03, ...BATCH_04, ...BATCH_05, ...BATCH_06, ...BATCH_07, ...BATCH_08, ...BATCH_09];
 
 export const SIM_LIBRARY: LibraryCase[] = SIM_LIBRARY_AUTHORED.map(buildLibraryCase);
