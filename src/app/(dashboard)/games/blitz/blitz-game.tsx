@@ -25,8 +25,9 @@ type Reveal = { picked: number; answer: number; right: boolean };
 type Done = Extract<FinishResult, { ok: true }>;
 
 /** How long the right answer stays on screen before the next question. */
-const HOLD_RIGHT_MS = 260;
-const HOLD_WRONG_MS = 750;
+// Long enough to see the answer land (and read the right one after a miss), short enough to keep the pace.
+const HOLD_RIGHT_MS = 420;
+const HOLD_WRONG_MS = 1100;
 
 function nextStep(combo: number): number | null {
   return COMBO_STEPS.find((s) => s > combo) ?? null;
@@ -388,18 +389,53 @@ function BestLine({ bests }: { bests: Bests }) {
 }
 
 function Ready({ bests, error, onStart }: { bests: Bests; error: string | null; onStart: () => void }) {
+  const cohort = bests.cohort;
   return (
-    <div className="mx-auto w-full max-w-2xl space-y-4">
-      <BestLine bests={bests} />
+    <div className="mx-auto w-full max-w-2xl space-y-3">
+      {/* One game card: the mark, the scores to beat, then Start inside it. */}
+      <section aria-labelledby="blitz-ready" className={cn(card, "overflow-hidden hard-shadow-md")}>
+        <div className="relative flex items-center gap-3 border-b-2 border-foreground bg-primary p-4 text-primary-foreground">
+          <span aria-hidden className="absolute inset-0 opacity-15 [background-image:radial-gradient(currentColor_1px,transparent_1.5px)] [background-size:12px_12px]" />
+          <span aria-hidden className="relative grid size-14 shrink-0 -rotate-6 place-items-center rounded-full border-2 border-foreground bg-card text-foreground hard-shadow-xs">
+            <Timer className="size-7" />
+          </span>
+          <h2 id="blitz-ready" className="relative text-h3 leading-tight">
+            Beat the clock
+          </h2>
+        </div>
+        <dl className="grid grid-cols-2 divide-x-2 divide-foreground">
+          <div className="min-w-0 p-4">
+            <dt className="flex items-center gap-1.5 text-caption font-bold text-muted-foreground">
+              <Trophy className="size-4" aria-hidden /> Your best
+            </dt>
+            <dd className={cn("mt-1 tabular-nums", bests.mine ? "font-pix text-3xl leading-none" : "text-body-strong")}>{bests.mine || "None yet"}</dd>
+          </div>
+          <div className="min-w-0 p-4">
+            <dt className="flex items-center gap-1.5 text-caption font-bold text-muted-foreground">
+              <Users className="size-4" aria-hidden /> {cohort?.scope === "everyone" ? "Best of everyone" : "Batch best"}
+            </dt>
+            {cohort ? (
+              <dd className="mt-1 min-w-0">
+                <span className="font-pix text-3xl leading-none tabular-nums">{cohort.score}</span>
+                <span className="block truncate text-small font-semibold">{cohort.you ? "You hold it" : cohort.name}</span>
+              </dd>
+            ) : (
+              <dd className="mt-1 text-body-strong">Be the first</dd>
+            )}
+          </div>
+        </dl>
+        <div className="border-t-2 border-foreground p-4">
+          <button type="button" className={cn(btnPrimary, "min-h-14 w-full text-lg")} onClick={onStart}>
+            <Zap className="size-5" aria-hidden /> Start the clock <span className="hidden text-sm font-normal lg:inline">(Enter)</span>
+          </button>
+        </div>
+      </section>
       {!bests.stored && <p className="text-sm text-muted-foreground">Scores aren&apos;t being saved yet. You can still play.</p>}
       {error && (
         <p role="alert" className="rounded-md border-2 border-foreground bg-status-alert-bg px-3 py-2 text-sm font-semibold text-status-alert-fg">
           {error}
         </p>
       )}
-      <button type="button" className={cn(btnPrimary, "min-h-14 w-full text-lg")} onClick={onStart}>
-        <Zap className="size-5" aria-hidden /> Start the clock <span className="hidden text-sm font-normal lg:inline">(Enter)</span>
-      </button>
     </div>
   );
 }
