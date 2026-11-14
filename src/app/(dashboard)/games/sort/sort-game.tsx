@@ -242,7 +242,7 @@ export function SortGame({ serverState, save, initial }: { serverState: LearnSta
                           </div>
                         </fieldset>
                       )}
-                      <ul className="mt-2 flex-1 space-y-1.5">
+                      <ul className="mt-2 flex-1 space-y-1.5 empty:hidden">
                         {here.map((i) => (
                           <li key={i}>
                             <button
@@ -259,12 +259,16 @@ export function SortGame({ serverState, save, initial }: { serverState: LearnSta
                             </button>
                           </li>
                         ))}
-                        {Array.from({ length: Math.max(0, 4 - here.length) }, (_, k) => (
-                          <li key={`e${k}`} className="flex min-h-11 items-center rounded-md border-2 border-dashed border-foreground/40 px-2.5 text-xs text-muted-foreground">
-                            Empty
-                          </li>
-                        ))}
                       </ul>
+                      {/* What is still empty, as four small slots (one row, not four tall boxes). */}
+                      {here.length < 4 ? (
+                        <p className="mt-2 flex items-center gap-1.5">
+                          {[0, 1, 2, 3].map((k) => (
+                            <span key={k} aria-hidden className={cn("h-3 flex-1 rounded-sm border-2", k < here.length ? "border-foreground bg-foreground" : "border-dashed border-foreground/40")} />
+                          ))}
+                          <span className="sr-only">{4 - here.length} empty</span>
+                        </p>
+                      ) : null}
                     </section>
                   );
                 })}
@@ -272,8 +276,18 @@ export function SortGame({ serverState, save, initial }: { serverState: LearnSta
 
               {selected !== null && (
                 <div className="sticky bottom-[calc(var(--nav-h)+0.5rem)] z-10 flex flex-wrap items-center gap-2 rounded-md border-2 border-foreground bg-foreground p-3 text-background hard-shadow-sm lg:bottom-4">
-                  <span className="min-w-0 flex-1 text-sm">
+                  <span className="min-w-0 flex-1 basis-full text-sm lg:basis-auto">
                     <strong>Selected:</strong> {v.tiles[selected]}
+                  </span>
+                  {/* Phones and tablets: put it in a group from here, without scrolling back up. */}
+                  <span className="grid basis-full grid-cols-2 gap-2 lg:hidden">
+                    {v.groups.map((name, g) =>
+                      p.locked[g] || p.placement[selected] === g ? null : (
+                        <button key={g} type="button" onClick={() => place(g)} className="min-h-12 rounded-md border-2 border-background bg-primary px-2.5 py-2 text-left text-sm leading-tight font-bold text-primary-foreground transition-transform duration-fast ease-snappy active:translate-y-px">
+                          {name}
+                        </button>
+                      ),
+                    )}
                   </span>
                   {p.placement[selected] !== null && (
                     <button type="button" onClick={() => unplace(selected)} className="inline-flex min-h-11 items-center gap-1 rounded-md border-2 border-background px-3 text-sm font-bold">
