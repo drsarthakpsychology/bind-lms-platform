@@ -25,8 +25,8 @@ function usePhone(): boolean {
  * bar when one is showing (`--nav-h`) and clear of the gesture bar
  * (`--free-inset`, the safe-area inset when no tab bar covers it). It is
  * rendered into <body>, so an animated card around it (a panel that pops in)
- * cannot pin it inside the card. A spacer of the same height stays in the
- * page so the last line of content can scroll above the bar.
+ * cannot pin it inside the card. The page's bottom padding grows by the
+ * bar's height (--thumb-h) so the last line of content scrolls above it.
  *
  * Tablets and up: the same buttons sit in the page, right where they were.
  *
@@ -61,11 +61,7 @@ export function ThumbBar({
       <div className={cn("mx-auto flex w-full max-w-xl items-stretch gap-3 md:max-w-none", inlineClassName)}>{children}</div>
     </div>
   );
-  return (
-    <>
-      {phone ? createPortal(bar, document.body) : bar}
-      {/* Room under the content for the bar (phones only). */}
-      <div aria-hidden className="thumb-bar-space md:hidden" />
-    </>
-  );
+  // The room under the page for the bar is ShellContent's bottom padding
+  // (--thumb-h, globals.css), so content after this component clears it too.
+  return phone ? createPortal(bar, document.body) : bar;
 }

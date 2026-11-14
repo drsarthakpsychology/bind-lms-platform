@@ -358,9 +358,12 @@
 @media (max-width: 767px) {
   :root:has(:is(input:not([type="checkbox"], [type="radio"], [type="range"], [type="button"], [type="submit"], [type="file"]), textarea, [contenteditable="true"]):focus) {
     --nav-h: 0px;
+    --thumb-h: 0px;
+    --sticky-h: 0px;
     --free-inset: env(safe-area-inset-bottom);
     & .bottom-tabs,
-    & .thumb-bar {
+    & .thumb-bar,
+    & .sticky-action {
       display: none;
     }
   }
@@ -374,8 +377,10 @@
     bottom: var(--nav-h, 0px);
     padding-bottom: max(0.75rem, var(--free-inset, 0px));
   }
-  .thumb-bar-space {
-    height: calc(4.75rem + var(--free-inset, 0px));
+  /* The page (ShellContent) pads its bottom by this, so the last line of a
+     page, even below the question, scrolls clear of the bar. */
+  :root:has(.thumb-bar) {
+    --thumb-h: calc(4.75rem + var(--free-inset, 0px));
   }
 }
 
