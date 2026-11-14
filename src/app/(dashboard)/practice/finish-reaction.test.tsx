@@ -37,6 +37,8 @@ import { QuizCheck } from "@/components/practice/quiz-check";
 import { CLINICS } from "@/lib/practice/clinic";
 import type { DrillItem } from "@/lib/practice/weak-spots";
 import { resetHowTo } from "@/components/help/how-to";
+import { JudgmentArena } from "./judgment/judgment-arena";
+import { panelDistribution, simulatedPanel, type SctItem } from "@/lib/practice/sct";
 
 beforeEach(() => {
   localStorage.clear();
@@ -150,6 +152,27 @@ describe("finish sticker in the Practice tools", () => {
     cleanup();
     showEndReaction.mockClear();
     play("Wrong answer");
+    expect(showEndReaction).toHaveBeenCalledWith("wrong");
+  });
+  it("Judgment calls: matching the panel every time is happy, missing it every time is sad", () => {
+    const items: SctItem[] = [1, 2].map((n) => ({ id: `sct-test-${n}`, vignette: `Case ${n}.`, hypothesis: "Depression", new_information: "New fact." }));
+    const LABEL: Record<number, string> = { [-2]: "Much less likely", [-1]: "Less likely", 0: "No change", 1: "More likely", 2: "Much more likely" };
+    const play = (best: boolean) => {
+      render(<JudgmentArena items={items} />);
+      for (const it of items) {
+        const dist = panelDistribution(simulatedPanel(it.id));
+        const sorted = [...dist].sort((a, b) => b.count - a.count);
+        const pick = best ? sorted[0] : sorted[sorted.length - 1];
+        fireEvent.click(screen.getByRole("button", { name: LABEL[pick.response] }));
+        fireEvent.click(screen.getByRole("button", { name: /Next judgment call|See today's summary/ }));
+      }
+      expect(screen.getByText("Done for today")).toBeTruthy();
+    };
+    play(true);
+    expect(showEndReaction).toHaveBeenCalledWith("streak");
+    cleanup();
+    showEndReaction.mockClear();
+    play(false);
     expect(showEndReaction).toHaveBeenCalledWith("wrong");
   });
 });
