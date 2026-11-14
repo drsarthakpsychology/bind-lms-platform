@@ -89,7 +89,7 @@ export function BottomTabBar({
   const activeHref = activeNavHref(tabs, pathname, from);
 
   const cell =
-    "group/tab flex min-h-16 flex-1 flex-col items-center justify-center gap-1 px-1 pt-2 pb-1.5 text-[0.7rem] font-bold leading-none outline-none focus-visible:ring-[3px] focus-visible:ring-inset focus-visible:ring-ring/60";
+    "group/tab flex min-h-16 flex-1 flex-col items-center justify-center gap-1 px-0.5 pt-2 pb-1.5 text-xs font-bold leading-none outline-none focus-visible:ring-[3px] focus-visible:ring-inset focus-visible:ring-ring/60";
   const pill =
     "relative flex h-8 w-14 items-center justify-center rounded-full border-2 transition-transform duration-fast ease-snappy group-active/tab:scale-90";
 
