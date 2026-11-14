@@ -7,7 +7,8 @@ import { cn } from "@/lib/utils";
 import { Rich } from "./rich";
 import { trackLearn } from "@/lib/learn/track";
 import { StepPicker } from "./pacing";
-import { Arrow, C, E, Head, L, Label, P, R, Sheet, wrap } from "@/components/sketch/ink";
+import { Arrow, C, E, HAND, Head, L, Label, P, R, Sheet, wrap } from "@/components/sketch/ink";
+import { BOX, SketchFrame } from "@/components/sketch/frame";
 
 /**
  * Animated explainers for core psychology processes: classical and operant
@@ -307,26 +308,30 @@ export function Timeline({ d }: { d: TimelineData }) {
 }
 
 /* -------------------------------------------------------------- compare */
-/** Two states side by side: healthy vs depressed brain, before vs after treatment, novice vs expert. */
+/** Two states side by side: healthy vs depressed brain, before vs after treatment, novice vs expert. Hand-drawn boxes round real text. */
 export function Compare({ d }: { d: CompareData }) {
-  const side = (x: CompareData["a"], extra?: string) => (
-    <div className={cn("min-w-0 p-4", extra)}>
-      <p className="font-bold [overflow-wrap:anywhere]"><Rich text={x.label} /></p>
+  const side = (x: CompareData["a"], id: string) => (
+    <div data-sk="box" data-sk-id={`cmp-${id}`} className={cn(BOX, "min-w-0 p-4")}>
+      <p className="font-bold [overflow-wrap:anywhere]">
+        <span data-sk="mark" data-sk-id={`cmp-mark-${id}`} data-sk-label="" className="text-[1.1rem] text-[var(--sk-ink)] group-data-drawn:text-[var(--sk-on-lime)]" style={{ fontFamily: HAND }}><Rich text={x.label} /></span>
+      </p>
       <ul className="mt-2 space-y-1 text-[0.95rem]">
         {x.points.map((p, i) => (
-          <li key={i} className="flex gap-1.5"><span aria-hidden>•</span><span className="min-w-0 [overflow-wrap:anywhere]"><Rich text={p} /></span></li>
+          <li key={i} className="flex gap-2"><span aria-hidden className="font-bold text-[var(--sk-blue)]" style={{ fontFamily: HAND }}>-</span><span className="min-w-0 [overflow-wrap:anywhere]"><Rich text={p} /></span></li>
         ))}
       </ul>
-      {x.summary ? <p className="mt-3 rounded-md bg-muted p-2.5 text-[0.92rem] leading-relaxed"><Rich text={x.summary} /></p> : null}
+      {x.summary ? <p data-sk="box" data-sk-id={`cmp-sum-${id}`} data-sk-tone="wash" className={cn(BOX, "mt-3 border-dashed p-2.5 text-[0.92rem] leading-relaxed")}><Rich text={x.summary} /></p> : null}
     </div>
   );
   return (
     <figure className={card}>
       {d.title ? <p className={label}><Rich text={d.title} /></p> : null}
-      <div className={cn("grid overflow-hidden rounded-xl border-2 border-foreground bg-background sm:grid-cols-2", d.title && "mt-3")}>
-        {side(d.a)}
-        {side(d.b, "border-t-2 border-foreground/20 sm:border-t-0 sm:border-l-2")}
-      </div>
+      <SketchFrame salt={`cmp-${d.a.label.slice(0, 12)}`} className={d.title ? "mt-3" : undefined}>
+        <div className="grid gap-3 sm:grid-cols-2">
+          {side(d.a, "a")}
+          {side(d.b, "b")}
+        </div>
+      </SketchFrame>
       {d.caption ? <figcaption className="mt-2 text-sm text-muted-foreground"><Rich text={d.caption} /></figcaption> : null}
     </figure>
   );
