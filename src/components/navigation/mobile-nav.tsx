@@ -46,11 +46,12 @@ export function MobileNav({
   // bottom (thumb reach); tablets open it from ☰ at the top left.
   const phone = React.useSyncExternalStore(
     (cb) => {
+      if (typeof window.matchMedia !== "function") return () => {};
       const m = window.matchMedia("(max-width: 767px)");
       m.addEventListener("change", cb);
       return () => m.removeEventListener("change", cb);
     },
-    () => window.matchMedia("(max-width: 767px)").matches,
+    () => typeof window.matchMedia === "function" && window.matchMedia("(max-width: 767px)").matches,
     () => false,
   );
   const row =
