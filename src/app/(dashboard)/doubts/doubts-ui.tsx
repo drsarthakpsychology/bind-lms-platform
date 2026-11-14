@@ -10,7 +10,7 @@ import type { DoubtListItem, DoubtThread } from "@/lib/doubts/data";
 import { cn } from "@/lib/utils";
 import { formatDateIST } from "@/lib/format";
 
-const ago = (iso: string) => {
+export const ago = (iso: string) => {
   const m = Math.floor((Date.now() - new Date(iso).getTime()) / 60000);
   if (m < 1) return "just now";
   if (m < 60) return `${m} min ago`;
@@ -20,7 +20,7 @@ const ago = (iso: string) => {
 };
 
 /** What the list says when a filter has nothing in it. */
-const EMPTY: Record<"all" | "open" | "mine" | "complaint", string> = {
+export const EMPTY: Record<"all" | "open" | "mine" | "complaint", string> = {
   all: "No doubts here yet. Be the first to ask: someone in your batch will help.",
   open: "Every doubt has an answer. Nothing is waiting.",
   mine: "You have not asked anything yet.",
