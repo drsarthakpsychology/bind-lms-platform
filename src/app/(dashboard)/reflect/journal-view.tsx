@@ -12,7 +12,17 @@ import { StatusPill } from "@/components/mobile/status-pill";
 import { useOffline } from "@/lib/hooks/use-offline";
 import { EmptyState } from "@/components/design-system/empty-state";
 
-const DRAFT_KEY = "journal:draft";
+/** Kept per student: on a shared phone one student's private draft must never open for the next. */
+const LEGACY_DRAFT_KEY = "journal:draft";
+const draftKey = (userId: string) => `journal:draft:${userId}`;
+
+/** Plain words for a failed save (the server sends short codes). */
+function saveError(status: number, code: string | undefined): string {
+  if (status === 401) return "You were signed out. Your entry is still here: sign in again in a new tab, then save.";
+  if (status === 429) return "That was a lot of saves at once. Wait a minute and try again.";
+  if (status === 403) return code ?? "The journal is not open for your account.";
+  return "Could not save. Please try again.";
+}
 const MOODS = ["calm", "low", "anxious", "tired", "hopeful"] as const;
 
 interface JournalEntry {
@@ -32,7 +42,8 @@ interface JournalEntry {
  * sheet behind a "New entry" action, and each entry's secondary actions
  * collapse into a single "…" sheet. Desktop keeps the inline composer.
  */
-export function JournalView({ initialEntries }: { initialEntries: JournalEntry[] }) {
+export function JournalView({ initialEntries, userId, initialShares = {} }: { initialEntries: JournalEntry[]; userId: string; initialShares?: Record<string, string> }) {
+  const DRAFT_KEY = draftKey(userId);
   const [entries, setEntries] = React.useState<JournalEntry[]>(initialEntries);
   const [content, setContent] = React.useState("");
   const [mood, setMood] = React.useState("");
@@ -46,7 +57,7 @@ export function JournalView({ initialEntries }: { initialEntries: JournalEntry[]
   const [sharing, setSharing] = React.useState<string | null>(null); // in-flight
   const [shareEmail, setShareEmail] = React.useState("");
   const [shareMsg, setShareMsg] = React.useState<Record<string, string>>({});
-  const [shareIds, setShareIds] = React.useState<Record<string, string>>({});
+  const [shareIds, setShareIds] = React.useState<Record<string, string>>(initialShares);
   const [draftSaved, setDraftSaved] = React.useState(false);
   const { offline, justReturned } = useOffline();
 
@@ -55,6 +66,12 @@ export function JournalView({ initialEntries }: { initialEntries: JournalEntry[]
   // now carries {content, mood} so a mood choice survives a refresh (T46).
   React.useEffect(() => {
     const id = window.setTimeout(() => {
+      try {
+        // The old shared-device key cannot be told apart by owner: drop it.
+        window.localStorage.removeItem(LEGACY_DRAFT_KEY);
+      } catch {
+        /* ignore */
+      }
       try {
         const raw = window.localStorage.getItem(DRAFT_KEY);
         if (!raw) return;
@@ -76,7 +93,7 @@ export function JournalView({ initialEntries }: { initialEntries: JournalEntry[]
       }
     }, 0);
     return () => window.clearTimeout(id);
-  }, []);
+  }, [DRAFT_KEY]);
 
   // Debounced autosave: a reflection is exactly the thing you don't want to lose.
   React.useEffect(() => {
@@ -94,7 +111,7 @@ export function JournalView({ initialEntries }: { initialEntries: JournalEntry[]
       }
     }, 800);
     return () => clearTimeout(t);
-  }, [content, mood]);
+  }, [content, mood, DRAFT_KEY]);
 
   async function save(e: React.FormEvent) {
     e.preventDefault();
@@ -124,7 +141,7 @@ export function JournalView({ initialEntries }: { initialEntries: JournalEntry[]
       });
       if (!res.ok) {
         const j = (await res.json().catch(() => null)) as { error?: string } | null;
-        setError(j?.error ?? "Could not save. Please try again.");
+        setError(saveError(res.status, j?.error));
       } else {
         const j = (await res.json()) as { id: string };
         // Entry is already visible, just swap the temp id for the real one.
@@ -171,7 +188,9 @@ export function JournalView({ initialEntries }: { initialEntries: JournalEntry[]
       });
       if (!res.ok) {
         const j = (await res.json().catch(() => null)) as { error?: string } | null;
-        setShareMsg((m) => ({ ...m, [entry.id]: j?.error ?? "Could not share." }));
+        const why =
+          res.status === 404 && toFaculty ? "No faculty account is set up yet." : res.status === 404 ? "No one on VIBHA has that email." : res.status === 401 ? "You were signed out. Sign in again and try." : "Could not share. Try again.";
+        setShareMsg((m) => ({ ...m, [entry.id]: why }));
         return;
       }
       const j = (await res.json()) as { shareId: string };
