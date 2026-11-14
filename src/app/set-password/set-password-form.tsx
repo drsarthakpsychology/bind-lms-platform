@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Alert, AlertDescription } from "@/components/ui/alert";
+import { checkNewPassword, MIN_PASSWORD_LENGTH } from "@/lib/auth/password-policy";
 
 type State = "loading" | "ready" | "error" | "success";
 
@@ -61,8 +62,10 @@ export function SetPasswordForm() {
 
   async function submit(e: React.FormEvent) {
     e.preventDefault();
-    if (password.length < 8) {
-      setError("Password must be at least 8 characters.");
+    // The same rule as the setup link (/setup).
+    const weak = checkNewPassword(password);
+    if (weak) {
+      setError(weak);
       return;
     }
     if (password !== confirm) {
@@ -78,7 +81,11 @@ export function SetPasswordForm() {
       return;
     }
     setState("success");
-    router.replace("/dashboard");
+    // This link signs the browser in without the app's own sign-in cookie, so
+    // /dashboard would bounce straight to the sign-in page with no word of
+    // why. Sign this link out and send them to sign in with the new password.
+    await supabase.auth.signOut().catch(() => undefined);
+    router.replace(`/login?setup=done&email=${encodeURIComponent(email)}`);
   }
 
   if (state === "loading") {
@@ -102,8 +109,8 @@ export function SetPasswordForm() {
 
   if (state === "success") {
     return (
-      <Alert variant="warning">
-        <AlertDescription>Password set: taking you to your lectures…</AlertDescription>
+      <Alert variant="success">
+        <AlertDescription>Password set. Taking you to sign in…</AlertDescription>
       </Alert>
     );
   }
@@ -121,9 +128,10 @@ export function SetPasswordForm() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
-          minLength={8}
+          minLength={MIN_PASSWORD_LENGTH}
           autoFocus
-          placeholder="At least 8 characters"
+          autoComplete="new-password"
+          placeholder={`At least ${MIN_PASSWORD_LENGTH} characters`}
         />
       </div>
       <div className="space-y-1.5">
@@ -134,7 +142,8 @@ export function SetPasswordForm() {
           value={confirm}
           onChange={(e) => setConfirm(e.target.value)}
           required
-          minLength={8}
+          minLength={MIN_PASSWORD_LENGTH}
+          autoComplete="new-password"
           placeholder="Same password again"
         />
       </div>

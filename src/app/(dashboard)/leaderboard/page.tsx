@@ -10,6 +10,7 @@ import { BoardSwitch } from "@/components/standing/board-switch";
 import { cn } from "@/lib/utils";
 import { AliasForm } from "./alias-form";
 import { Avatar, NameLine } from "./look";
+import { leaveWithoutSession } from "@/lib/auth/session-redirect";
 
 export const metadata: Metadata = { title: BOARDS.league.label };
 export const dynamic = "force-dynamic";
@@ -23,7 +24,7 @@ export const dynamic = "force-dynamic";
  */
 export default async function LeaguePage() {
   const session = await getSession();
-  if (session.status !== "ok") return null;
+  if (session.status !== "ok") return leaveWithoutSession(session);
   const data = await loadMyLeague(session.profile.id);
   const relegates = data.tier > 1;
 
@@ -38,7 +39,7 @@ export default async function LeaguePage() {
         <h1 className="text-h1">{data.tierName} league</h1>
         <p className="mt-1 text-sm">
           {data.league.cut
-            ? `Top ${data.league.cut} move up${relegates ? `, bottom ${data.league.cut} move down` : ""}. A week with 0 points drops you a tier${relegates ? "" : " (not from Neuron)"}.`
+            ? `Top ${data.league.cut} move up${relegates ? `, bottom ${data.league.cut} move down` : ""}.${relegates ? " A week with 0 points drops you a tier." : ""}`
             : "Your group fills up as more students play."}
         </p>
         <p className="text-caption text-muted-foreground">Resets Monday 00:00 IST. Both batches play together.</p>
@@ -50,7 +51,7 @@ export default async function LeaguePage() {
 
       <section aria-labelledby="league-h" className="rounded-xl border-2 border-foreground bg-card hard-shadow-sm">
         <h2 id="league-h" className="flex items-center gap-2 border-b-2 border-foreground px-4 py-3 font-bold">
-          <Trophy className="size-4" aria-hidden /> Your group <span className="font-normal text-muted-foreground">· {data.groupSize} players</span>
+          <Trophy className="size-4" aria-hidden /> Your group <span className="font-normal text-muted-foreground">· {data.groupSize} {data.groupSize === 1 ? "player" : "players"}</span>
         </h2>
         <ol className="divide-y-2 divide-foreground/10">
           {data.league.view.map((v, i) =>
@@ -181,7 +182,7 @@ function Board({ title, icon, note, entries, total }: { title: string; icon: Rea
           {icon} {title}
         </h2>
         <p className="text-caption text-muted-foreground">
-          {note} Top 10 and you · {total} students
+          {note} Top 10 and you · {total} {total === 1 ? "student" : "students"}
         </p>
       </header>
       <ol className="divide-y-2 divide-foreground/10">

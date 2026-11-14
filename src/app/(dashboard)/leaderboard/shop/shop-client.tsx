@@ -32,7 +32,8 @@ export function ShopClient(p: Props) {
 
   function buy(item: string, label: string) {
     start(async () => {
-      const r = await buyItem(item);
+      // A lost connection must not throw the page to the error screen. Nothing was bought.
+      const r: Awaited<ReturnType<typeof buyItem>> = await buyItem(item).catch(() => ({ error: "Not bought: the connection dropped. Your XP is unchanged. Try again." }));
       if (r.error) {
         setMsg({ ok: false, text: r.error });
         return;
@@ -53,7 +54,7 @@ export function ShopClient(p: Props) {
 
   function wear(kind: "frame" | "title", id: LookId | null) {
     start(async () => {
-      const r = await wearLook(kind, id);
+      const r: Awaited<ReturnType<typeof wearLook>> = await wearLook(kind, id).catch(() => ({ error: "That did not go through. Check your connection and try again." }));
       if (r.error) setMsg({ ok: false, text: r.error });
       else {
         setLook(r.look ?? null);

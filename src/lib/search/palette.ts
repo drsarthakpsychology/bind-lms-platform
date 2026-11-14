@@ -100,13 +100,22 @@ export const STATIC_ENTRIES: PaletteEntry[] = [...TOOLS, ...ADMIN];
  * "Not unlocked yet"), no section switched off for them, and admin screens
  * only for admins.
  */
-export function visibleEntries(entries: PaletteEntry[], { flags = {}, blocked = () => false, isAdmin = false }: { flags?: Record<string, string>; blocked?: (href: string) => boolean; isAdmin?: boolean }): PaletteEntry[] {
+export function visibleEntries(
+  entries: PaletteEntry[],
+  { flags = {}, blocked = () => false, isAdmin = false, allowed = () => true }: { flags?: Record<string, string>; blocked?: (href: string) => boolean; isAdmin?: boolean; /** The account's own reach (a lecture-only account: lectures, doubts, alerts). */ allowed?: (href: string) => boolean },
+): PaletteEntry[] {
   return entries.filter((e) => {
     if (e.group === "Admin" && !isAdmin) return false;
     if (e.flag && ![e.flag].flat().some((f) => flags[f] === "unlocked")) return false;
-    return !(e.href.startsWith("/") && blocked(e.href.split(/[?#]/)[0]));
+    const path = e.href.split(/[?#]/)[0];
+    if (e.href.startsWith("/") && !allowed(path)) return false;
+    return !(e.href.startsWith("/") && blocked(path));
   });
 }
+
+const escapeRe = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+/** `word` stands as a whole word (or words) inside `text`: "xp" is not in "experience". */
+const hasWord = (text: string, word: string) => new RegExp(`(^|[^a-z0-9])${escapeRe(word)}($|[^a-z0-9])`).test(text);
 
 /** Quick Reference entries (the index is built server-side in src/lib/reference/data.ts). */
 export function referencePaletteEntries(items: { slug: string; label: string; kind: string; aliases: string[] }[]): PaletteEntry[] {
@@ -147,7 +156,8 @@ export function scoreEntry(entry: PaletteEntry, query: string): number {
   if (label === q) return 100;
   if (label.startsWith(q)) return 80;
   if (label.includes(q)) return 60;
-  if (kws.some((k) => k.includes(q) || q.includes(k))) return 40;
+  // A keyword that starts with what was typed, or a whole keyword inside a longer query.
+  if (kws.some((k) => k.includes(q) || (k.length > 1 && hasWord(q, k)))) return 40;
   if (hint.includes(q)) return 20;
   return 0;
 }

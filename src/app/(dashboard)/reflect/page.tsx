@@ -19,12 +19,18 @@ export default async function ReflectPage() {
   } = await supabase.auth.getUser();
   if (!user) return null;
 
-  const { data: entries } = await supabase
-    .from("journal_entries")
-    .select("id, content, mood_tag, created_at")
-    .eq("user_id", user.id)
-    .order("created_at", { ascending: false })
-    .limit(50);
+  const [{ data: entries }, { data: shares }] = await Promise.all([
+    supabase
+      .from("journal_entries")
+      .select("id, content, mood_tag, created_at")
+      .eq("user_id", user.id)
+      .order("created_at", { ascending: false })
+      .limit(50),
+    // Live shares, so a share made before a reload can still be revoked.
+    supabase.from("journal_shares").select("id, entry_id").eq("shared_by", user.id).is("revoked_at", null),
+  ]);
+  const initialShares: Record<string, string> = {};
+  for (const sh of shares ?? []) initialShares[String(sh.entry_id)] = String(sh.id);
 
   return (
     <div className="mx-auto max-w-3xl">
@@ -34,6 +40,8 @@ export default async function ReflectPage() {
 
       <Reveal delay={0.15} className="mt-6">
         <JournalView
+          userId={user.id}
+          initialShares={initialShares}
           initialEntries={(entries ?? []).map((e) => ({
             id: e.id,
             content: String(e.content),

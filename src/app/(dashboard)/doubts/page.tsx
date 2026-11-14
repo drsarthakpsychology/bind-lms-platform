@@ -8,6 +8,7 @@ import { ArrowRight, MessagesSquare } from "lucide-react";
 import { ToolHeader } from "@/components/help/tool-header";
 import { loadMyBlocks } from "@/lib/access/blocks";
 import { blockedBy } from "@/lib/access/features";
+import { leaveWithoutSession } from "@/lib/auth/session-redirect";
 
 export const metadata: Metadata = { title: "Doubts" };
 export const dynamic = "force-dynamic";
@@ -15,7 +16,7 @@ export const dynamic = "force-dynamic";
 /** The cohort doubts board: students ask and answer each other; complaints go privately to the admin. */
 export default async function DoubtsPage({ searchParams }: { searchParams: Promise<{ cohort?: string }> }) {
   const session = await getSession();
-  if (session.status !== "ok") return null;
+  if (session.status !== "ok") return leaveWithoutSession(session);
   const isAdmin = session.profile.role === "admin" || session.profile.role === "view_admin";
   const sp = await searchParams;
 

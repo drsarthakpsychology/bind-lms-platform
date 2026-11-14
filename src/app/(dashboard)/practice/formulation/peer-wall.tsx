@@ -3,6 +3,7 @@
 import * as React from "react";
 import { haptic } from "@/lib/haptics";
 import { Eye, Send } from "lucide-react";
+import { formatDateIST } from "@/lib/format";
 
 interface WallPost {
   id: string;
@@ -108,7 +109,7 @@ export function PeerWall() {
             <li key={p.id} className="rounded-lg border-2 border-border bg-card p-4">
               <div className="flex items-center justify-between gap-2 text-caption text-muted-foreground">
                 <span className="min-w-0 break-words font-medium text-foreground">{p.caseTitle}</span>
-                <span className="shrink-0">Anonymous · {new Date(p.createdAt).toLocaleDateString()}</span>
+                <span className="shrink-0">Anonymous · {formatDateIST(p.createdAt)}</span>
               </div>
               <p className="mt-2 whitespace-pre-wrap break-words text-small">{p.narrative}</p>
             </li>

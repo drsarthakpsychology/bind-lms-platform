@@ -13,7 +13,8 @@ const checkinSchema = z.object({
   energy: z.number().int().min(1).max(5),
   preparedness: z.number().int().min(1).max(5),
   freeLine: z.string().max(500).optional(),
-  weekLabel: z.string().min(1).max(40),
+  /** Ignored: the week is the server's India week (a tab left open over Sunday midnight sent last week's). */
+  weekLabel: z.string().max(40).optional(),
 });
 
 /**
@@ -28,7 +29,7 @@ export async function POST(req: Request) {
   const user = profile;
 
   const allowed = await rateLimitWrite(`checkin:${user.id}`, 10);
-  if (!allowed) return NextResponse.json({ error: "slow down" }, { status: 429 });
+  if (!allowed) return NextResponse.json({ error: "Wait a minute and try again." }, { status: 429 });
 
   const body = await req.json().catch(() => null);
   const parsed = checkinSchema.safeParse(body);

@@ -4,6 +4,7 @@ import * as React from "react";
 import { BadgeCheck, Award, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { MobileBottomSheet } from "@/components/mobile/mobile-bottom-sheet";
+import { formatDateIST } from "@/lib/format";
 
 export interface PassportRow {
   key: string;
@@ -104,7 +105,7 @@ export function Passport({ rows }: { rows: PassportRow[] }) {
                         </span>
                         {hoursOf(e) > 0 ? `${hoursOf(e)}h` : null}
                       </span>
-                      <time dateTime={e.createdAt}>{new Date(e.createdAt).toLocaleDateString()}</time>
+                      <time dateTime={e.createdAt}>{formatDateIST(e.createdAt)}</time>
                     </li>
                   ))}
                   {r.events.length > 3 ? (
@@ -151,7 +152,7 @@ export function Passport({ rows }: { rows: PassportRow[] }) {
                   ) : null}
                 </span>
                 <time dateTime={e.createdAt} className="shrink-0 text-caption text-muted-foreground">
-                  {new Date(e.createdAt).toLocaleDateString()}
+                  {formatDateIST(e.createdAt)}
                 </time>
               </li>
             ))}

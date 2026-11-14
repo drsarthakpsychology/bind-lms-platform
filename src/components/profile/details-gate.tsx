@@ -46,7 +46,9 @@ export function DetailsGate({ initial }: { initial: Partial<Details> }) {
 
   const toReview = () =>
     start(async () => {
-      const r = await checkMyDetails(d);
+      // A dropped connection must not throw: this form sits over every page.
+      const r = await checkMyDetails(d).catch(() => ({ errors: undefined, value: undefined, failed: true as const }));
+      if ("failed" in r) return void setMsg("That did not go through. Check your connection and try again.");
       if (r.errors) {
         setErrors(r.errors);
         setMsg("Some details need fixing.");
@@ -60,7 +62,7 @@ export function DetailsGate({ initial }: { initial: Partial<Details> }) {
 
   const submit = () =>
     start(async () => {
-      const r = await submitMyDetails(d, confirmed);
+      const r = await submitMyDetails(d, confirmed).catch(() => ({ errors: undefined, error: "That did not go through. Check your connection and try again." }));
       if (r.errors) {
         setErrors(r.errors);
         setStep("form");

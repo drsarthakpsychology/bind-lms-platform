@@ -9,6 +9,7 @@ import { BOARDS, scopeLine } from "@/lib/standing/boards";
 import { BoardHeader, BoardSwitch } from "@/components/standing/board-switch";
 import { cn } from "@/lib/utils";
 import { backLinkClass } from "@/components/design-system/back-link";
+import { leaveWithoutSession } from "@/lib/auth/session-redirect";
 
 export const metadata: Metadata = { title: BOARDS.quiz.label };
 export const dynamic = "force-dynamic";
@@ -21,7 +22,7 @@ export const dynamic = "force-dynamic";
 export default async function QuizLeaderboardPage() {
   await requireFeature("learn");
   const session = await getSession();
-  if (session.status !== "ok") return null;
+  if (session.status !== "ok") return leaveWithoutSession(session);
   const userId = session.profile.id;
   const [{ rows, myRank, total }, cohorts] = await Promise.all([loadQuizBoard(userId), loadMyCohorts(userId).catch(() => [])]);
 
