@@ -35,7 +35,8 @@ export function MobileStickyAction({
   return (
     <div
       className={cn(
-        "fixed inset-x-0 bottom-0 z-40 border-t-2 border-border bg-background/95 backdrop-blur-sm",
+        // sticky-action: the page pads its bottom by --sticky-h (globals.css) so nothing hides under the bar.
+        "sticky-action fixed inset-x-0 bottom-0 z-40 border-t-2 border-border bg-background/95 backdrop-blur-sm",
         className,
       )}
       style={{
