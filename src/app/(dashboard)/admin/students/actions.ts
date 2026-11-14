@@ -5,6 +5,7 @@ import { revalidatePath } from "next/cache";
 import { requireSuperAdmin } from "@/lib/auth/guards";
 import { createAdminClient } from "@/lib/supabase/server";
 import { generateCredential, deriveName, issueSetupLink } from "@/lib/auth/roster";
+import { canResetToTestPassword } from "@/lib/auth/test-account";
 
 export type CreateStudentState = {
   error: string | null;
@@ -131,6 +132,11 @@ export async function resetStudentPassword(userId: string): Promise<{ error: str
   if (!(await requireSuperAdmin())) return { error: "Not authorized." };
 
   const admin = createAdminClient();
+  // The default test password is written in the repo and the docs, so it may
+  // only ever be set on a marked test account. A real person gets a new setup
+  // link instead.
+  const { data: target } = await admin.from("profiles").select("is_test, role").eq("id", userId).maybeSingle();
+  if (!canResetToTestPassword(target)) return { error: "Only test accounts can be reset here. Send a new login link instead." };
   const { error } = await admin.auth.admin.updateUserById(userId, { password: "K#test" });
   if (error) return { error: "Could not reset the password." };
 
