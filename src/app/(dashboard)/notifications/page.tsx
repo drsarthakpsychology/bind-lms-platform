@@ -10,6 +10,8 @@ import { EmptyState } from "@/components/design-system/empty-state";
 import { cn } from "@/lib/utils";
 import { markAllNotificationsRead } from "./actions";
 import { leaveWithoutSession } from "@/lib/auth/session-redirect";
+import { pageV2 } from "@/components/v2me/server";
+import { NotificationsV2, type NoteRow } from "./notifications-v2";
 
 /**
  * /notifications: derived wall feed (T42) plus persisted achievement and
@@ -70,6 +72,43 @@ export default async function NotificationsPage() {
   const hasNotes = (notes ?? []).length > 0;
   const hasStudent = replyItems.length > 0;
   const hasAdmin = reports.length > 0;
+
+  if (await pageV2(role)) {
+    // New design: one list, newest first (the same rows, not grouped by kind).
+    const rows: (NoteRow & { at: string })[] = [
+      ...(notes ?? []).map((n) => ({
+        key: `n${n.id}`,
+        href: (n.href as string | null) ?? `/notifications/${n.id}`,
+        from: n.type === "badge" ? "Badge" : n.type === "certificate" ? "Certificate" : "VIBHA team",
+        title: String(n.title),
+        body: n.body as string | null,
+        when: formatRelativeTime(n.created_at),
+        unread: !n.read_at,
+        at: String(n.created_at),
+      })),
+      ...replyItems.map((r) => ({
+        key: `r${r.id}`,
+        href: "/wall",
+        from: r.is_faculty ? "Faculty reply on the Wall" : "Reply on the Wall",
+        title: r.reply_content,
+        body: `On your post: ${r.post_content.slice(0, 80)}${r.post_content.length > 80 ? "…" : ""}`,
+        when: formatRelativeTime(r.created_at),
+        unread: false,
+        at: r.created_at,
+      })),
+      ...reports.map((r) => ({
+        key: `w${r.id}`,
+        href: "/admin/wall-reports",
+        from: "Report to review",
+        title: "A post was reported",
+        body: (r.reason as string | null) ?? "No reason given",
+        when: formatRelativeTime(r.created_at),
+        unread: false,
+        at: String(r.created_at),
+      })),
+    ].sort((a, b) => b.at.localeCompare(a.at));
+    return <NotificationsV2 rows={rows} unread={unread} markAll={markAllNotificationsRead} />;
+  }
 
   return (
     <MobilePage inset={false}>
