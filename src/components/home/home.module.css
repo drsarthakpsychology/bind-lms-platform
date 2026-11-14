@@ -605,18 +605,20 @@
   flex-direction: column;
   gap: 12px;
 }
-.ctaShort {
+/* `.btn > span[aria-hidden]` (the arrow nudge) is more specific than a bare
+   class, so these need the `.btn >` prefix or both labels show at once. */
+.btn > .ctaShort {
   display: none;
 }
 @media (max-width: 479px) {
   .navActions {
     gap: 8px;
   }
-  .ctaLong {
+  .btn > .ctaLong {
     display: none;
   }
-  .ctaShort {
-    display: inline;
+  .btn > .ctaShort {
+    display: inline-block;
   }
 }
 @media (min-width: 1140px) {
