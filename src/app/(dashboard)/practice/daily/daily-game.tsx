@@ -858,9 +858,17 @@ function ModeSwitch({ tab, onPick }: { tab: Tab; onPick: (t: Tab) => void }) {
             tab === t ? "bg-foreground text-background" : "text-foreground hover:bg-accent",
           )}
         >
-          <Icon className="size-4 shrink-0" aria-hidden />
-          <span className="truncate">{label}</span>
-          {t === "ai" ? <span className="shrink-0 rounded-full border border-current px-1.5 text-[10px] font-bold uppercase leading-4">Soon</span> : null}
+          {/* Narrow phones: words only, so the three names fit without being cut. */}
+          <Icon className="hidden size-4 shrink-0 min-[420px]:block" aria-hidden />
+          {t === "daily" ? (
+            <>
+              <span className="truncate min-[380px]:hidden">Today</span>
+              <span className="hidden truncate min-[380px]:inline">{label}</span>
+            </>
+          ) : (
+            <span className="truncate">{label}</span>
+          )}
+          {t === "ai" ? <span className="hidden shrink-0 rounded-full border border-current px-1.5 text-[10px] font-bold uppercase leading-4 min-[420px]:inline">Soon</span> : null}
         </button>
       ))}
     </div>
