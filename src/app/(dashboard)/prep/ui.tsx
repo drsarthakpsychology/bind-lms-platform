@@ -61,9 +61,12 @@ export function bigCount(n: number, noun: string): string | undefined {
   return `${Math.floor(n / step) * step}+ ${noun}`;
 }
 
-/** "72% right" or "New", as words (never a bar alone). */
-export function pctText(s: Stats): string {
-  return s.pct === null ? "New" : `${s.pct}% right`;
+/**
+ * "72% right" once something is answered; nothing before that. A "New" on
+ * every row of a fresh list says nothing and makes the list noisy.
+ */
+export function pctText(s: Stats): string | undefined {
+  return s.pct === null ? undefined : `${s.pct}% right`;
 }
 
 /** A thin meter for how much of a topic is done. Decorative: the numbers are in the text beside it. */

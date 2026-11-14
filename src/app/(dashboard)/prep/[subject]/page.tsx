@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { BookOpen } from "lucide-react";
+import { BookOpen, ListChecks, PenLine } from "lucide-react";
+import { EmptyState } from "@/components/design-system/empty-state";
 import { requireFeature } from "@/lib/flags";
 import { learnHrefFor } from "@/lib/prep/bank";
 import { OPTIONAL_SUBJECTS, SUBJECT_TITLE, isSubject } from "@/lib/prep/catalog";
 import { loadSubject } from "@/lib/prep/path";
 import { longTopicsFor } from "@/lib/prep/long-server";
 import { SubjectTabs } from "../long-ui";
-import { BackToPrep, ListRow, PrepFrame, bigCount, btnPlain, card, pctText } from "../ui";
+import { BackToPrep, ListRow, PrepFrame, bigCount, btnPlain, pctText } from "../ui";
 import { prepViewer } from "../viewer";
 
 export async function generateMetadata({ params }: { params: Promise<{ subject: string }> }): Promise<Metadata> {
@@ -59,7 +60,7 @@ export default async function SubjectPage({ params, searchParams }: { params: Pr
             ))}
           </ul>
         ) : (
-          <p className={card}>Long answers for this subject are being added.</p>
+          <EmptyState row icon={<PenLine className="size-5" />} title="Long answers for this subject are being added." />
         )
       ) : topics.length ? (
         <ul className="space-y-2" aria-label="Topics">
@@ -70,7 +71,7 @@ export default async function SubjectPage({ params, searchParams }: { params: Pr
           ))}
         </ul>
       ) : (
-        <p className={card}>Questions for this subject are being added.</p>
+        <EmptyState row icon={<ListChecks className="size-5" />} title="Questions for this subject are being added." />
       )}
 
       <Link href={learnHrefFor(subject)} className={btnPlain}>
