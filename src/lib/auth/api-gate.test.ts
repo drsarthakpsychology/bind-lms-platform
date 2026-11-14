@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { decideApiAccess, gateFailure, gatesNeedFlags, type ApiGate, type GateProfile } from "./api-gate";
+import { decideApiAccess, gateFailure, gatesNeedFlags, isCrossSiteRequest, type ApiGate, type GateProfile } from "./api-gate";
 
 const student = (over: Partial<GateProfile> = {}): GateProfile => ({ role: "student", scope: "full", status: "active", ...over });
 const MSE: ApiGate = { path: "/practice/mse", flag: "mse" };
@@ -81,5 +81,15 @@ describe("gateFailure / gatesNeedFlags", () => {
   it("knows when the flag table is needed", () => {
     expect(gatesNeedFlags([{ path: "/wall" }])).toBe(false);
     expect(gatesNeedFlags([{ path: "/wall" }, MSE])).toBe(true);
+  });
+});
+
+describe("isCrossSiteRequest (CSRF on route handlers)", () => {
+  it("refuses requests made by another site's page", () => {
+    expect(isCrossSiteRequest("cross-site")).toBe(true);
+    expect(isCrossSiteRequest("Cross-Site")).toBe(true);
+  });
+  it("allows the app itself, typed URLs and non-browser clients", () => {
+    for (const v of ["same-origin", "same-site", "none", null, undefined, ""]) expect(isCrossSiteRequest(v)).toBe(false);
   });
 });

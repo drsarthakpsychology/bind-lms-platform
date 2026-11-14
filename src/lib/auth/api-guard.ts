@@ -1,9 +1,10 @@
 import "server-only";
+import { headers } from "next/headers";
 import { NextResponse } from "next/server";
 import { getSession, type Profile } from "./session";
 import { readFlags } from "@/lib/flags";
 import { loadMyBlocks } from "@/lib/access/blocks";
-import { decideApiAccess, gatesNeedFlags, type ApiDecision, type ApiGate } from "./api-gate";
+import { decideApiAccess, gatesNeedFlags, isCrossSiteRequest, type ApiDecision, type ApiGate } from "./api-gate";
 
 export type { ApiGate } from "./api-gate";
 
@@ -51,6 +52,13 @@ async function evaluate(profile: Profile, gates: readonly ApiGate[]): Promise<Ap
  */
 export async function requireStudentApi(gates: ApiGate | readonly ApiGate[] = []): Promise<ApiGuardResult> {
   const list = Array.isArray(gates) ? (gates as readonly ApiGate[]) : [gates as ApiGate];
+  try {
+    if (isCrossSiteRequest((await headers()).get("sec-fetch-site"))) {
+      return { ok: false, response: NextResponse.json({ error: "Forbidden origin." }, { status: 403 }) };
+    }
+  } catch {
+    // No request scope (tests, scripts): nothing to check.
+  }
   const session = await getSession();
   if (session.status !== "ok") {
     const d = decideApiAccess({

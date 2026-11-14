@@ -81,3 +81,14 @@ export function decideApiAccess(input: {
 
 /** Whether evaluating these gates needs the flag table at all. */
 export const gatesNeedFlags = (gates: readonly ApiGate[]) => gates.some((g) => g.flag);
+
+/**
+ * Cross-site request guard for route handlers (defence in depth on top of
+ * SameSite=Lax cookies). Browsers send Sec-Fetch-Site on every request; a
+ * request another site's page made is "cross-site" and is refused. Same
+ * origin, same site, a typed URL ("none") and non-browser clients (no header,
+ * and no victim cookies either) pass.
+ */
+export function isCrossSiteRequest(secFetchSite: string | null | undefined): boolean {
+  return (secFetchSite ?? "").trim().toLowerCase() === "cross-site";
+}

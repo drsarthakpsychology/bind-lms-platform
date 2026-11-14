@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { canParticipate, canSeeDoubt, isUuid } from "./visibility";
+import { canMarkSolved, canParticipate, canSeeDoubt, isUuid } from "./visibility";
 
 const me = { id: "me", isAdmin: false, cohortIds: ["c1"] };
 const admin = { id: "adm", isAdmin: true, cohortIds: [] };
@@ -26,5 +26,20 @@ describe("doubt visibility", () => {
     expect(isUuid("11111111-1111-1111-1111-111111111111")).toBe(true);
     expect(isUuid("1; drop")).toBe(false);
     expect(isUuid(null)).toBe(false);
+  });
+});
+
+describe("canMarkSolved (a hidden doubt stays hidden)", () => {
+  const asker = { id: "u1", isAdmin: false };
+  it("lets the asker mark their open or solved doubt", () => {
+    expect(canMarkSolved({ user_id: "u1", status: "open" }, asker)).toBe(true);
+    expect(canMarkSolved({ user_id: "u1", status: "solved" }, asker)).toBe(true);
+  });
+  it("refuses another student and refuses reopening a doubt the admin hid", () => {
+    expect(canMarkSolved({ user_id: "u2", status: "open" }, asker)).toBe(false);
+    expect(canMarkSolved({ user_id: "u1", status: "hidden" }, asker)).toBe(false);
+  });
+  it("lets the Super Admin act on any doubt", () => {
+    expect(canMarkSolved({ user_id: "u2", status: "hidden" }, { id: "a", isAdmin: true })).toBe(true);
   });
 });
