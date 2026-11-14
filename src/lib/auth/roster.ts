@@ -2,6 +2,7 @@ import { parse } from "csv-parse/sync";
 import { createHash, randomBytes } from "node:crypto";
 import type { SupabaseClient } from "@supabase/supabase-js";
 import { createPacer } from "@/lib/email/pace";
+import { isSingleAddress, oneLineSubject } from "@/lib/email/headers";
 
 /**
  * Shared roster-provisioning logic. One source of truth for turning a list of
@@ -513,7 +514,9 @@ export function previewBlocks(to: string, env: Record<string, string | undefined
   return !allowed.includes(to.trim().toLowerCase());
 }
 
-async function sendResendOnce(to: string, subject: string, body: string, html?: string, attachments?: EmailAttachment[]): Promise<SendResult> {
+async function sendResendOnce(to: string, rawSubject: string, body: string, html?: string, attachments?: EmailAttachment[]): Promise<SendResult> {
+  if (!isSingleAddress(to)) return { ok: false, error: "Not a single email address." };
+  const subject = oneLineSubject(rawSubject);
   if (previewBlocks(to)) return { ok: false, error: PREVIEW_GATE };
   const key = process.env.RESEND_API_KEY;
   const from = process.env.RESEND_FROM_EMAIL ?? "VIBHA School of Psychology <noreply@vibhaschoolofpsychology.in>";
