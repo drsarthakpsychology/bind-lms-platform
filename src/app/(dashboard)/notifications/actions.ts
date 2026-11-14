@@ -13,5 +13,6 @@ export async function markAllNotificationsRead(): Promise<void> {
     .update({ read_at: new Date().toISOString() })
     .eq("user_id", me.id)
     .is("read_at", null);
-  revalidatePath("/notifications");
+  // "layout": the bell count lives in the shared layout, not on this page.
+  revalidatePath("/", "layout");
 }

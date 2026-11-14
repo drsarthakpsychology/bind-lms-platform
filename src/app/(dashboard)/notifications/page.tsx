@@ -16,7 +16,7 @@ import { markAllNotificationsRead } from "./actions";
  */
 
 type ReplyItem = { id: string; post_content: string; reply_content: string; is_faculty: boolean; created_at: string };
-type WallReplyRow = { id: string; content: string; is_faculty: boolean; created_at: string };
+type WallReplyRow = { id: string; author_id: string | null; content: string; is_faculty: boolean; created_at: string };
 
 export default async function NotificationsPage() {
   const session = await getSession();
@@ -36,7 +36,7 @@ export default async function NotificationsPage() {
 
   const { data: replies } = await supabase
     .from("wall_posts")
-    .select("content, wall_replies(id, content, is_faculty, created_at)")
+    .select("content, wall_replies(id, author_id, content, is_faculty, created_at)")
     .eq("author_id", userId)
     .eq("is_anonymous", false)
     .not("wall_replies", "is", "null")
@@ -45,7 +45,8 @@ export default async function NotificationsPage() {
 
   const replyItems: ReplyItem[] =
     (replies ?? []).flatMap((p) =>
-      ((p.wall_replies as WallReplyRow[] | null) ?? []).map((r) => ({
+      // A reply the student wrote on their own post is not news to them.
+      ((p.wall_replies as WallReplyRow[] | null) ?? []).filter((r) => r.author_id !== userId).map((r) => ({
         id: r.id,
         post_content: p.content,
         reply_content: r.content,
@@ -63,6 +64,8 @@ export default async function NotificationsPage() {
   // Messages from the VIBHA team (and nudges) vs achievements.
   const messages = (notes ?? []).filter((n) => n.type === "message" || n.type === "nudge");
   const achievements = (notes ?? []).filter((n) => n.type === "badge" || n.type === "certificate");
+  const newMessages = messages.filter((n) => !n.read_at).length;
+  const newAchievements = achievements.filter((n) => !n.read_at).length;
   const hasNotes = (notes ?? []).length > 0;
   const hasStudent = replyItems.length > 0;
   const hasAdmin = reports.length > 0;
@@ -92,7 +95,7 @@ export default async function NotificationsPage() {
         ) : (
           <>
             {messages.length ? (
-              <MobileSection title="From the VIBHA team" description={messages.some((n) => !n.read_at) ? `${messages.filter((n) => !n.read_at).length} new` : "Tap to open"}>
+              <MobileSection title="From the VIBHA team" description={newMessages ? `${newMessages} new` : "Tap to open"}>
                 {messages.map((n) => (
                   <MobileListItem
                     key={n.id}
@@ -121,13 +124,23 @@ export default async function NotificationsPage() {
             ) : null}
 
             {achievements.length ? (
-              <MobileSection title="Achievements" description={unread > 0 ? `${unread} new` : "Your earned credentials"}>
+              <MobileSection title="Achievements" description={newAchievements ? `${newAchievements} new` : "Your earned credentials"}>
                 {achievements.map((n) => (
                   <MobileListItem
                     key={n.id}
                     href={n.href}
                     leading={n.type === "badge" ? <Award className="size-4 text-foreground" aria-hidden /> : <ShieldCheck className="size-4 text-foreground" aria-hidden />}
-                    title={n.title}
+                    title={
+                      n.read_at ? (
+                        n.title
+                      ) : (
+                        <>
+                          <span aria-hidden>● </span>
+                          <span className="sr-only">New: </span>
+                          {n.title}
+                        </>
+                      )
+                    }
                     subtitle={n.body}
                     trailing={
                       <span className={cn("text-caption", n.read_at ? "text-muted-foreground" : "font-bold text-foreground")}>

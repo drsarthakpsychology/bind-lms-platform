@@ -5,6 +5,7 @@ import { getSession } from "@/lib/auth/session";
 import { createAdminClient } from "@/lib/supabase/server";
 import { sanitizeRich, textToHtml } from "@/lib/email/rich-html";
 import { formatRelativeTime } from "@/lib/format";
+import { RefreshShell } from "@/components/navigation/refresh-shell";
 
 export const dynamic = "force-dynamic";
 
@@ -20,7 +21,8 @@ export default async function NotificationPage({ params }: { params: Promise<{ i
   const { data: n } = await admin.from("notifications").select("*").eq("id", id).maybeSingle();
   if (!n || (n.user_id !== session.profile.id && session.profile.role !== "admin")) notFound();
 
-  if (n.user_id === session.profile.id && !n.read_at) {
+  const justRead = n.user_id === session.profile.id && !n.read_at;
+  if (justRead) {
     const now = new Date().toISOString();
     const r = await admin.from("notifications").update({ read_at: now, opened_at: now }).eq("id", id);
     if (r.error) await admin.from("notifications").update({ read_at: now }).eq("id", id);
@@ -29,6 +31,8 @@ export default async function NotificationPage({ params }: { params: Promise<{ i
 
   return (
     <div className="mx-auto max-w-2xl">
+      {/* The bell count is in the layout: redraw it now this one is read. */}
+      <RefreshShell when={justRead} />
       <article className="rounded-2xl border-2 border-foreground bg-card p-5 hard-shadow-sm sm:p-7">
         <header className="flex items-start gap-3">
           <span className="grid size-10 shrink-0 place-items-center rounded-full border-2 border-foreground bg-primary text-primary-foreground">
