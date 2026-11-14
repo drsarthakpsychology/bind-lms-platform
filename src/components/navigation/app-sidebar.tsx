@@ -24,8 +24,11 @@ export function AppSidebar({
   items,
   studentSide = true,
   adminPreview = false,
+  quiet = false,
   className,
 }: {
+  /** New design (ui_v2): hairline edge, no hard borders. */
+  quiet?: boolean;
   items: NavItem[];
   /** Student menu (focus pages fold it); admin view never folds. */
   studentSide?: boolean;
@@ -40,11 +43,11 @@ export function AppSidebar({
     <aside
       data-focus={focus ? "" : undefined}
       aria-label="Sections"
-      className={cn("app-side flex h-full shrink-0 flex-col border-r-2 border-foreground bg-card", className)}
+      className={cn("app-side flex h-full shrink-0 flex-col bg-card", quiet ? "border-r border-[var(--ds-hairline)]" : "border-r-2 border-foreground", className)}
     >
       {focus ? <FoldControl /> : null}
       <div className="side-scroll flex-1 overflow-x-hidden overflow-y-auto overscroll-contain px-3 py-4">
-        <NavItems items={items} />
+        <NavItems items={items} quiet={quiet} />
         {adminPreview ? (
           <p className="side-wide mt-5 flex items-start gap-2 rounded-xl border-2 border-dashed border-foreground px-3 py-2 text-caption font-semibold">
             <Eye className="mt-0.5 size-4 shrink-0" aria-hidden />

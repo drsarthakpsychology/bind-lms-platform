@@ -299,7 +299,7 @@ for (const theme of themes) {
       page.on("pageerror", (e) => errors.push(e.message));
       try {
         await page.goto(url, { waitUntil: "load", timeout: 120000 });
-        if (harness) await page.waitForFunction(() => window.__ready, null, { timeout: 20000 }).catch(() => {});
+        if (harness) await page.waitForFunction(() => window.__ready, null, { timeout: 20000 }).catch(() => errors.push("never finished rendering"));
         await page.evaluate(() => document.fonts?.ready);
         await page.waitForTimeout(400);
         if (theme === "dark" && !harness) await page.evaluate(() => document.documentElement.classList.add("dark"));
@@ -308,7 +308,7 @@ for (const theme of themes) {
         console.log(p, w, theme, "LOAD ERROR");
         continue;
       }
-      const crash = await page.evaluate(() => (document.body.innerText.startsWith("ERR ") ? document.body.innerText.slice(0, 200) : null));
+      const crash = errors.includes("never finished rendering") ? `never finished rendering: ${errors[0]}` : await page.evaluate(() => (document.body.innerText.startsWith("ERR ") ? document.body.innerText.slice(0, 200) : null));
       if (crash) {
         report.push({ page: p, width: w, theme, error: crash, defects: [] });
         console.log(p, w, theme, "RENDER ERROR", crash.slice(0, 80));

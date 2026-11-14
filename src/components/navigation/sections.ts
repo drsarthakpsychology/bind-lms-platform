@@ -48,7 +48,7 @@ export function sectionOf(path: string): string {
 }
 
 /** Sections a `?from=` may send the student back to. */
-const FROM_ROOTS = ["dashboard", "study", "courses", "practice", "games", "prep", "progress"];
+const FROM_ROOTS = ["dashboard", "study", "courses", "practice", "games", "prep", "progress", "learn", "practise", "me"];
 
 /**
  * A safe `?from=` value: an internal student path (letters, digits, dashes),
@@ -89,6 +89,9 @@ export function activeNavHref(items: NavMatchItem[], pathname: string, from?: st
 /** Plain names for Back, by destination. */
 function backLabel(href: string): string {
   if (href === "/dashboard") return "Back to Home";
+  if (href === "/learn") return "Back to Learn";
+  if (href === "/practise") return "Back to Practise";
+  if (href === "/me") return "Back to Me";
   if (href === "/study") return "Back to Study";
   if (href === "/study/notes") return "Back to notes";
   if (href === "/study/reference") return "Back to Quick Reference";

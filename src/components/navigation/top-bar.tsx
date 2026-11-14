@@ -36,7 +36,10 @@ export function TopBar({
   isAdminView,
   unread = 0,
   inboxSlot,
+  v2 = false,
 }: {
+  /** New design (ui_v2), student side: phones show logo, search and bell only. */
+  v2?: boolean;
   unread?: number;
   /** Admin view: the Inbox icon + count (a server island), shown next to the bell. */
   inboxSlot?: React.ReactNode;
@@ -57,7 +60,8 @@ export function TopBar({
   return (
     <header
       className={cn(
-        "z-40 border-b-2 border-foreground bg-card md:sticky md:top-0",
+        "z-40 bg-card md:sticky md:top-0",
+        v2 && !isAdminView ? "border-b border-[var(--ds-hairline)]" : "border-b-2 border-foreground",
         // Lesson and material pages are focus pages: below laptop width their
         // own back bar replaces the masthead.
         innerPage && "hidden lg:block",
@@ -116,7 +120,7 @@ export function TopBar({
               </span>
             ) : null}
           </Link>
-          <AccountMenu email={email} role={role} showSettings={showSettings} />
+          <AccountMenu email={email} role={role} showSettings={showSettings} phone={!(v2 && !isAdminView)} />
         </div>
       </div>
     </header>

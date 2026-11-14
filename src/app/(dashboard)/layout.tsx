@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 };
 import { AppShell } from "@/components/app-shell";
 import { readFlags } from "@/lib/flags";
+import { uiV2For } from "@/lib/ui/v2";
 import { ViewModeToggle } from "./view-mode-toggle";
 import { DetailsGate } from "@/components/profile/details-gate";
 import { VisitTracker } from "@/components/analytics/visit-tracker";
@@ -139,6 +140,7 @@ export default async function DashboardLayout({
     <AppShell
       unread={unread}
       flags={flags}
+      v2={uiV2For(flags, role)}
       role={shellRole}
       mode={mode}
       scope={effectiveScope}
