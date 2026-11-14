@@ -8,6 +8,7 @@ import { Target, Zap } from "lucide-react";
 import Link from "next/link";
 import type { DrillItem } from "@/lib/practice/weak-spots";
 import { EndReaction } from "@/components/reactions/graphics";
+import { ThumbBar } from "@/components/mobile/thumb-bar";
 
 /**
  * The weak-spots drill: 10 items generated on the spot from the student's
@@ -122,14 +123,17 @@ export function WeakSpotsDrill({ items }: { items: DrillItem[] }) {
               <span className="font-semibold text-muted-foreground">Why: </span>
               {item.why}
             </p>
-            <button
-              type="button"
-              onClick={next}
-              data-testid="drill-next"
-              className="mt-3 rounded-md border-2 border-border bg-primary px-4 py-2 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px"
-            >
-              {idx + 1 < items.length ? "Next" : "Finish"}
-            </button>
+            {/* Phones: Next sits low, in thumb reach. */}
+            <ThumbBar label="Next step" className="md:mt-3">
+              <button
+                type="button"
+                onClick={next}
+                data-testid="drill-next"
+                className="min-h-12 w-full text-base md:min-h-0 md:w-auto md:text-small rounded-md border-2 border-border bg-primary px-4 py-2 font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px"
+              >
+                {idx + 1 < items.length ? "Next" : "Finish"}
+              </button>
+            </ThumbBar>
           </>
         ) : null}
       </div>
