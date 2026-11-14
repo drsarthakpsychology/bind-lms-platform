@@ -30,3 +30,12 @@ export function lectureOnlyAllowed(pathname: string): boolean {
   if (pathname === "/notifications") return true;
   return false;
 }
+
+/**
+ * Games, practice games and the duel are Full-access features. Their server
+ * actions and routes are reachable without the page, so they check this too.
+ * Admins and alumni are never lectures-only.
+ */
+export function gamesAllowed(profile: ScopedProfile | null): boolean {
+  return Boolean(profile) && !isLecturesOnly(profile);
+}

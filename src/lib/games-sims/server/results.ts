@@ -5,6 +5,7 @@ import "server-only";
  * are missing, reads come back empty and writes are dropped.
  */
 import { getSession } from "@/lib/auth/session";
+import { gamesAllowed } from "@/lib/auth/scope";
 import { createAdminClient } from "@/lib/supabase/server";
 import { displayName } from "@/lib/learn/leaderboard";
 import { loadCohortMap } from "@/lib/standing/cohort-map";
@@ -14,6 +15,8 @@ import { addDays, istToday } from "@/lib/learn/engine";
 import { recordAttempts } from "@/lib/learn/model/server";
 import type { Attempt } from "@/lib/learn/model/student";
 import { awardXp } from "@/lib/leagues/xp";
+import { istMidnightUtc } from "@/lib/leagues/week";
+import { cappedGameXp } from "../xp-cap";
 import { accuracyBoard, type AccuracyRow, type ResultRow } from "../boards";
 
 export type Admin = ReturnType<typeof createAdminClient>;
@@ -30,7 +33,9 @@ export function adminDb(): Admin | null {
 export async function currentUser(): Promise<{ id: string; role: string } | null> {
   try {
     const s = await getSession();
-    return s.status === "ok" ? { id: s.profile.id, role: s.profile.role } : null;
+    // Games need Full access: a lectures-only account may not play or earn
+    // XP through these actions even though they are reachable directly.
+    return s.status === "ok" && gamesAllowed(s.profile) ? { id: s.profile.id, role: s.profile.role } : null;
   } catch {
     return null;
   }
@@ -53,9 +58,22 @@ export async function gradeAnswers(user: { id: string; role: string }, attempts:
  * These games do not also add browser XP, so nothing is counted twice.
  */
 export async function payXp(userId: string, game: string, amount: number, ref: string): Promise<number> {
-  const xp = Math.max(0, Math.min(200, Math.round(amount)));
+  let xp = Math.max(0, Math.min(200, Math.round(amount)));
   if (!xp) return 0;
   try {
+    // Daily ceiling per game (run ids come from the browser; see xp-cap.ts).
+    const db = adminDb();
+    if (!db) return 0;
+    const { data: today, error } = await db
+      .from("xp_ledger")
+      .select("amount")
+      .eq("user_id", userId)
+      .eq("source", `games2:${game}`)
+      .gte("created_at", istMidnightUtc(istToday()).toISOString())
+      .limit(1000);
+    if (error) return 0;
+    xp = cappedGameXp((today ?? []).reduce((a, r) => a + (Number(r.amount) || 0), 0), xp);
+    if (!xp) return 0;
     const r = await awardXp(userId, `games2:${game}`, xp, `${game}:${ref}`);
     return r.ok && !r.duplicate ? xp : 0;
   } catch {
