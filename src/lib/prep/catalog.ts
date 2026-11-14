@@ -74,7 +74,7 @@ export const SUBJECT_TITLE: Record<Subject, string> = {
   "ethics-law": "Ethics and law",
   psychopharmacology: "Psychopharmacology",
   "clinical-psychiatry": "Clinical psychiatry",
-  "ugc-paper1": "NET Paper 1: teaching and reasoning",
+  "ugc-paper1": "General paper: teaching and reasoning",
 };
 
 /**

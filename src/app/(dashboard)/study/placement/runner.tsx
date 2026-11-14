@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 import { QuestionView, type Pick, type QView } from "../map/question";
 import { btnInk, btnPlain, btnPrimary } from "../map/ui";
 import { submitPlacement } from "./actions";
+import { EndReaction, ScoreDial } from "@/components/reactions/graphics";
 
 type Answer = { item: string; choice: number | boolean | "skip" };
 
@@ -60,7 +61,7 @@ export function PlacementRunner({ questions, previous, saving }: { questions: QV
           <p className="text-eyebrow text-link">Placement quiz</p>
           <h1 className="text-h1">Let&apos;s see where you are</h1>
         </header>
-        <div className="space-y-3 rounded-md border-2 border-foreground bg-card p-5 hard-shadow-md">
+        <div className="space-y-3 rounded-lg border-2 border-foreground bg-card p-5 hard-shadow-md">
           <ul className="space-y-2">
             <li className="flex gap-2">
               <Compass className="mt-0.5 size-5 shrink-0" aria-hidden /> Questions across every topic.
@@ -126,7 +127,7 @@ export function PlacementRunner({ questions, previous, saving }: { questions: QV
 function TopicRow({ t, tone }: { t: PlacementTopic; tone: "strong" | "okay" | "weak" }) {
   const Icon = tone === "strong" ? BadgeCheck : tone === "weak" ? TriangleAlert : Sprout;
   return (
-    <li className="flex flex-wrap items-center gap-3 rounded-md border-2 border-foreground bg-card p-3">
+    <li className="flex flex-wrap items-center gap-3 rounded-lg border-2 border-foreground bg-card p-3">
       <Icon className="size-5 shrink-0" aria-hidden />
       <span className="min-w-0 flex-1 font-bold">{t.title}</span>
       <span className="text-sm text-muted-foreground">
@@ -157,6 +158,11 @@ function Results({ result, doneAt, saving, onRetake }: { result: PlacementResult
         <h1 className="text-h1">
           {result.right} of {result.answered} right
         </h1>
+        <div className="flex flex-wrap items-center gap-x-6 gap-y-4 pt-2">
+          <ScoreDial right={result.right} total={result.answered} />
+          {/* A level check is not a roast: the sticker cheers or shrugs, kindly. */}
+          {doneAt ? null : <EndReaction mood={result.answered && result.right / result.answered >= 0.6 ? "right" : "near"} className="min-w-0 flex-1 basis-56" />}
+        </div>
         <p className="text-muted-foreground">
           {doneAt ? `You took this on ${new Date(doneAt).toLocaleDateString("en-IN", { day: "numeric", month: "long", timeZone: "Asia/Kolkata" })}. ` : ""}
           {saving ? "Your map now starts from here, and practice is pitched at your level." : "Preview only: nothing was saved for this staff account."}

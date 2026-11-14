@@ -2,7 +2,7 @@
 
 export const advEndocrine = String.raw`
 ## 6.1 Neuroendocrine tests and hormones in psychiatry [core][advanced]
-From the 1970s to the 1990s, psychiatrists hoped that hormone "challenge tests" would become blood tests for depression. They did not, but the findings shaped biological theories, still appear in every MD and NET syllabus, and a few remain clinically useful. Learn each test as a protocol, a finding, and a reason it failed as a diagnostic tool.
+From the 1970s to the 1990s, psychiatrists hoped that hormone "challenge tests" would become blood tests for depression. They did not, but the findings shaped biological theories, still appear in every postgraduate psychiatry and psychology syllabus, and a few remain clinically useful. Learn each test as a protocol, a finding, and a reason it failed as a diagnostic tool.
 
 ### The dexamethasone suppression test (DST)
 **The logic**: dexamethasone is a potent synthetic steroid that acts on pituitary glucocorticoid receptors and should switch off ACTH and therefore cortisol for about a day. If cortisol "escapes", feedback is weak.

@@ -331,7 +331,7 @@ The big debate in intelligence is whether there is **one general ability** (Char
   "buckets": ["Convergent", "Divergent"],
   "items": [
     { "text": "Listing as many uses as you can for an empty plastic bottle", "bucket": 1 },
-    { "text": "Choosing the one correct answer in a CUET MCQ", "bucket": 0 },
+    { "text": "Choosing the one correct answer in an entrance MCQ", "bucket": 0 },
     { "text": "Thinking of ten possible titles for a short film", "bucket": 1 },
     { "text": "Solving for x in an equation", "bucket": 0 },
     { "text": "Imagining different endings for a folk tale", "bucket": 1 },

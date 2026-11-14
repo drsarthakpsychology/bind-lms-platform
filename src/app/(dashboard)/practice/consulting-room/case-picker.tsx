@@ -175,7 +175,7 @@ function CaseCardItem({
 
   if (locked) {
     return (
-      <li className="rounded-md border-2 border-border bg-card p-4 opacity-70">
+      <li className="rounded-lg border-2 border-border bg-card p-4 opacity-70">
         <div className="flex items-center justify-between gap-3">
           <div className="min-w-0">
             <p className="text-eyebrow text-muted-foreground">{DIFFICULTY_LABEL[c.difficulty] ?? c.difficulty}</p>
@@ -247,6 +247,13 @@ function CaseCardItem({
  */
 export function ConsultingRoomHeader({ badge, children }: { badge?: React.ReactNode; children?: React.ReactNode }) {
   const tip = useFirstTimeTip("consulting-room-safety");
+  const safety = (
+    <ul className="list-disc space-y-1 pl-5 text-muted-foreground">
+      <li>Everything here is a <strong className="text-foreground">simulation</strong>. The patient is not real.</li>
+      <li>If you&apos;re struggling yourself, this is not the place: reach out to your faculty or a helpline.</li>
+      <li>Your sessions are private to you and your faculty, and are used only for your debrief.</li>
+    </ul>
+  );
   return (
     <div className="mb-6 space-y-3">
       <div className="flex items-start justify-between gap-3">
@@ -256,15 +263,13 @@ export function ConsultingRoomHeader({ badge, children }: { badge?: React.ReactN
         </div>
         <div className="flex shrink-0 flex-col items-end gap-2">
           {badge}
-          <TipButton tip={tip} label="Safety first" />
+          <TipButton tip={tip} label="Safety first">
+            {safety}
+          </TipButton>
         </div>
       </div>
       <TipPanel tip={tip} title="Safety first">
-        <ul className="list-disc space-y-1 pl-5 text-muted-foreground">
-          <li>Everything here is a <strong className="text-foreground">simulation</strong>. The patient is not real.</li>
-          <li>If you&apos;re struggling yourself, this is not the place: reach out to your faculty or a helpline.</li>
-          <li>Your sessions are private to you and your faculty, and are used only for your debrief.</li>
-        </ul>
+        {safety}
       </TipPanel>
     </div>
   );

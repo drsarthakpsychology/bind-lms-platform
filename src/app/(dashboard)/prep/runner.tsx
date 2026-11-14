@@ -1,15 +1,18 @@
 "use client";
 
 import * as React from "react";
+import { startHowTo } from "@/components/help/how-to";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { ArrowLeft, ArrowRight, Bookmark, BookmarkCheck, BookOpen, Check, Eye, RotateCcw, TriangleAlert, X } from "lucide-react";
 import type { PrepQView, PrepReveal } from "@/lib/prep/view";
 import { cn } from "@/lib/utils";
 import { checkAnswer, revealAnswer, toggleSaved } from "./actions";
-import { KeysHint, Options, QuestionBody, useShortcuts } from "./question";
+import { KEYS, KeysHint, Options, QuestionBody, useShortcuts } from "./question";
 import { btnInk, btnPlain, btnPrimary, card } from "./ui";
 import { PrepVisualView } from "./visual";
+import { useReaction } from "@/components/reactions/use-reaction";
+import { EndReaction, ScoreDial, StreakMeter } from "@/components/reactions/graphics";
 
 /** A revealed question: `correct` is null when the student asked to see the answer without answering. */
 type Result = PrepReveal & { correct: boolean | null; picked: number | null };
@@ -51,6 +54,9 @@ export function QuestionRunner({ questions, start = 0, prior = {}, saved: initia
   const [busy, setBusy] = React.useState(false);
   const [failed, setFailed] = React.useState(false);
   const [refreshing, startRefresh] = React.useTransition();
+  const [streak, setStreak] = React.useState(0);
+  const [round, setRound] = React.useState(0);
+  const reaction = useReaction();
   const startedAt = React.useRef(0);
   const heading = React.useRef<HTMLHeadingElement>(null);
   const feedback = React.useRef<HTMLDivElement>(null);
@@ -81,6 +87,8 @@ export function QuestionRunner({ questions, start = 0, prior = {}, saved: initia
     try {
       const r = await checkAnswer({ id: q.id, choice: picked, ms });
       setResults((m) => ({ ...m, [q.id]: { ...r, picked } }));
+      setStreak((n) => (r.correct ? n + 1 : 0));
+      reaction.onAnswer(r.correct);
     } catch {
       setFailed(true);
     } finally {
@@ -103,6 +111,12 @@ export function QuestionRunner({ questions, start = 0, prior = {}, saved: initia
   }
 
   function go(to: number) {
+    if (to === 0 && idx >= questions.length) {
+      // Going round again: a new session for streaks and reactions.
+      reaction.reset();
+      setStreak(0);
+      setRound((n) => n + 1);
+    }
     setIdx(to);
     setPicked(null);
     setFailed(false);
@@ -122,8 +136,14 @@ export function QuestionRunner({ questions, start = 0, prior = {}, saved: initia
     if (!r.ok) set(!on);
   }
 
+  // The first answer closes the Keys how-to (it folds into its button).
+  const pickOne = (i: number) => {
+    startHowTo(KEYS);
+    setPicked(i);
+  };
+
   useShortcuts({
-    pick: (i) => !done && !result && setPicked(i),
+    pick: (i) => !done && !result && pickOne(i),
     next: () => (result ? go(idx + 1) : void check()),
   });
 
@@ -140,7 +160,11 @@ export function QuestionRunner({ questions, start = 0, prior = {}, saved: initia
     return (
       <div className={cn(card, "space-y-5 hard-shadow-md sm:p-6")} role="status">
         <p className="text-eyebrow text-link">Set done</p>
-        <p className="text-h2">
+        <div className="flex flex-wrap items-center gap-x-6 gap-y-4">
+          <ScoreDial right={right} total={questions.length} />
+          <EndReaction right={right} total={questions.length} seed={round} className="min-w-0 flex-1 basis-56" />
+        </div>
+        <p className="sr-only">
           {right} of {questions.length} right
         </p>
         {answered < questions.length ? <p className="text-muted-foreground">{questions.length - answered} not answered yet.</p> : null}
@@ -177,6 +201,7 @@ export function QuestionRunner({ questions, start = 0, prior = {}, saved: initia
           <span className="sr-only">{label}: </span>Question {idx + 1}
         </p>
         <div className="flex items-center gap-2">
+          {streak > 0 ? <StreakMeter streak={streak} /> : null}
           {idx > 0 ? (
             <button type="button" onClick={() => go(idx - 1)} className="inline-flex min-h-11 items-center gap-1 rounded-md px-2 text-sm font-bold text-link hover:underline focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60">
               <ArrowLeft className="size-4" aria-hidden /> Back
@@ -203,7 +228,7 @@ export function QuestionRunner({ questions, start = 0, prior = {}, saved: initia
       </div>
 
       <QuestionBody key={q.id} q={q} headingRef={heading} />
-      <Options q={q} picked={result ? result.picked : picked} onPick={setPicked} answer={result?.answer} disabled={busy} />
+      <Options q={q} picked={result ? result.picked : picked} onPick={pickOne} answer={result?.answer} disabled={busy} />
 
       {failed ? (
         <p role="alert" className="flex items-center gap-2 rounded-md border-2 border-foreground bg-status-alert-bg p-3 text-sm font-semibold text-status-alert-fg">

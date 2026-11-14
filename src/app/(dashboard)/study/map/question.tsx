@@ -4,6 +4,7 @@ import * as React from "react";
 import { Check, X } from "lucide-react";
 import { seeded } from "@/components/learn/items";
 import { cn } from "@/lib/utils";
+import { AnswerStamp, HalftoneCorner } from "@/components/reactions/graphics";
 
 /** What the browser needs to show a one-tap question. */
 export type QView = {
@@ -18,7 +19,7 @@ export type QView = {
 export type Pick = number | boolean | null;
 
 const option =
-  "flex min-h-12 w-full items-center gap-3 rounded-md border-2 border-foreground bg-card px-4 py-3 text-left text-base font-semibold transition-transform duration-150 motion-reduce:transition-none enabled:active:translate-y-px focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60 disabled:cursor-default";
+  "relative flex min-h-12 w-full items-center gap-3 rounded-lg border-2 border-foreground bg-card px-4 py-3 text-left text-base font-semibold transition-transform duration-150 motion-reduce:transition-none enabled:active:translate-y-px focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60 disabled:cursor-default";
 const key = "grid size-7 shrink-0 place-items-center rounded-md border-2 border-current text-xs font-bold";
 
 /**
@@ -46,9 +47,12 @@ export function QuestionView({
     <div className="space-y-4">
       {q.vignette ? <p className="rounded-md border-2 border-dashed border-foreground/40 bg-muted px-4 py-3 text-sm">{q.vignette}</p> : null}
       {q.kind === "tf" ? <p className="text-eyebrow text-link">True or false?</p> : null}
-      <h2 ref={headingRef} tabIndex={-1} className="text-xl font-bold leading-tight outline-none sm:text-2xl">
-        {q.text}
-      </h2>
+      <div className="relative isolate">
+        <HalftoneCorner className="-top-3 size-24" />
+        <h2 ref={headingRef} tabIndex={-1} className="text-xl font-bold leading-tight outline-none sm:text-2xl">
+          {q.text}
+        </h2>
+      </div>
       <div role="radiogroup" aria-label="Answers" className={cn("grid gap-2.5", q.kind === "tf" && "grid-cols-2")}>
         {choices.map((c, k) => {
           const isPicked = picked === c.value;
@@ -69,6 +73,7 @@ export function QuestionView({
                 state === "wrong" && "bg-foreground text-background",
               )}
             >
+              {locked && isPicked ? <AnswerStamp ok={c.value === answer} /> : null}
               {q.kind === "mcq" ? (
                 <span className={key} aria-hidden>
                   {state === "right" ? <Check className="size-4" /> : state === "wrong" ? <X className="size-4" /> : k + 1}

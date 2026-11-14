@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { startHowTo } from "@/components/help/how-to";
 import { BackLink } from "@/components/study/back";
 import { Search } from "lucide-react";
 import { emptyState, finishLesson, istToday, type LearnState, type Payout } from "@/lib/learn/engine";
@@ -13,6 +14,8 @@ import { cn } from "@/lib/utils";
 import { LearnLink } from "@/lib/games/ui/learn-link";
 import { Chai, ChaiSays } from "./chai";
 import { Summary } from "./player";
+import { useReaction } from "@/components/reactions/use-reaction";
+import { moodForScore } from "@/lib/reactions/stickers";
 import { useExplainView } from "./view-toggle";
 import s from "./learn.module.css";
 import { HintBar, useHintStatus } from "@/components/hints/hint-chip";
@@ -58,6 +61,7 @@ export function Detective({ serverState, save }: { serverState: LearnState | nul
   const [score, setScore] = React.useState(0);
   const [answers, setAnswers] = React.useState<{ id: string; correct: boolean }[]>([]);
   const [result, setResult] = React.useState<Payout | null>(null);
+  const reaction = useReaction();
   const [family, setFamily] = React.useState<"drug" | "disorder" | "mixed">("mixed");
   const [run, setRun] = React.useState("");
   /** This round's hint: the options it ruled out (null = not used). */
@@ -66,7 +70,9 @@ export function Detective({ serverState, save }: { serverState: LearnState | nul
   useHistoryPrefetch("detective");
 
   function start(f = family) {
+    startHowTo("clinic-detective");
     setFamily(f);
+    reaction.reset();
     setRun(newRunId());
     setRuledOut(null);
     setRounds(deal(f));
@@ -79,11 +85,11 @@ export function Detective({ serverState, save }: { serverState: LearnState | nul
     setResult(null);
   }
 
-  if (result) return <Summary result={result} state={state} confetti={[]} title={`Detective · ${score} points`} onAgain={() => start()} />;
+  if (result) return <Summary result={result} state={state} confetti={[]} title={`Detective · ${score} points`} mood={moodForScore(score, POINTS[0] * (rounds?.length || ROUNDS))} onAgain={() => start()} />;
 
   if (!rounds) {
     return (
-      <div className="mx-auto max-w-xl space-y-6 px-4 py-8 text-center">
+      <div className="mx-auto max-w-xl space-y-6 py-8 text-center">
         <Chai mood="think" size={130} />
         <h1 className="text-h1">Clinic detective</h1>
         {state.detectiveBest ? <p className="font-pix text-sm">Your best: {state.detectiveBest}</p> : null}
@@ -120,6 +126,8 @@ export function Detective({ serverState, save }: { serverState: LearnState | nul
       setSolved({ gained, correct: true });
       setAnswers((a) => [...a, { id: round.c.answer, correct: wrong.length === 0 && !ruledOut }]);
       noteAnswer("detective", round.c.answer, wrong.length === 0 && !ruledOut);
+      // Solved after a wrong guess or a hint: right, but only partly.
+      reaction.onAnswer(true, { partial: wrong.length > 0 || Boolean(ruledOut) });
     } else {
       haptic("warning");
       const w = [...wrong, id];
@@ -129,6 +137,7 @@ export function Detective({ serverState, save }: { serverState: LearnState | nul
         setSolved({ gained: 0, correct: false });
         setAnswers((a) => [...a, { id: round.c.answer, correct: false }]);
         noteAnswer("detective", round.c.answer, false);
+        reaction.onAnswer(false);
       }
     }
   }
@@ -148,7 +157,7 @@ export function Detective({ serverState, save }: { serverState: LearnState | nul
   }
 
   return (
-    <div className={cn("mx-auto max-w-2xl space-y-5 px-4 py-5")}>
+    <div className={cn("mx-auto max-w-2xl space-y-5")}>
       <div className="flex items-center justify-between">
         <span className="flex items-center gap-2 font-bold">
           <Search className="size-5" aria-hidden /> Case {r + 1}

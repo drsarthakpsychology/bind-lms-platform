@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { emptyState, finishSection, markActivity, markWritten, recordTest, normalise } from "@/lib/learn/engine";
+import { emptyState, finishSection, markActivity, markWritten, recordTest, normalise, visitSection } from "@/lib/learn/engine";
 import { MODULES } from "./index";
 import { parseBlocks, parseModule } from "./parse";
 import { splitSection } from "./chunk";
@@ -42,6 +42,29 @@ describe("parser", () => {
     expect(mcq.t === "mcq" && mcq.items[0].answer === 1 && mcq.items[0].why === "because").toBe(true);
     const secs = parseModule("# Part A\n## 1.1 One [core]\nText\n## 1.2 Two [extra]\nMore");
     expect(secs.map((s) => [s.id, s.tag, s.part])).toEqual([["1-1", "core", "Part A"], ["1-2", "extra", "Part A"]]);
+  });
+});
+
+describe("Continue resumes exactly where the student stopped", () => {
+  it("opens the section they were reading, even past the first unread one", () => {
+    const m = MODULES[0];
+    const [first, , third] = readingSections(m);
+    let s = emptyState();
+    s = visitSection(s, m.id, third.id);
+    const n = courseNext(MODULES, s.study, "2026-11-01");
+    expect(n.kind === "read" && n.module.id === m.id && n.section.id === third.id).toBe(true);
+    expect(n.href).toBe(`/study/${m.id}/${third.id}`);
+    // Once that section is finished, the module's own next step (the first unread) follows.
+    s = finishSection(s, m.id, third.id, "2026-11-01");
+    const after = courseNext(MODULES, s.study, "2026-11-01");
+    expect(after.kind === "read" && after.section.id === first.id).toBe(true);
+  });
+
+  it("a module in another place in the course wins over module one", () => {
+    const m = MODULES[MODULES.length - 1];
+    const sec = readingSections(m)[2];
+    const s = visitSection(emptyState(), m.id, sec.id);
+    expect(courseNext(MODULES, s.study, "2026-11-01").href).toBe(`/study/${m.id}/${sec.id}`);
   });
 });
 

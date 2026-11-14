@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { startHowTo, useHowTo } from "@/components/help/how-to";
 import Link from "next/link";
 import { useReducedMotion } from "motion/react";
 import { ArrowDown, ArrowLeft, ArrowUp, Bot, Check, Crown, Flag, LoaderCircle, Search, Shield, Swords, Timer, User, Users, X } from "lucide-react";
@@ -21,6 +22,7 @@ import { readLocal, writeLocal } from "@/lib/games/ui/copy";
 import { btnPrimary, btnSecondary, card, chip } from "@/lib/games/ui/styles";
 import fx from "@/lib/games/ui/fx.module.css";
 import styles from "./duel.module.css";
+import { EndReaction } from "@/components/reactions/graphics";
 
 const EMPTY = emptyState();
 type Save = (s: LearnState) => Promise<unknown>;
@@ -48,6 +50,7 @@ export function DuelGame({ serverState, save, profile, offlineItems }: { serverS
   const [busy, setBusy] = React.useState(false);
 
   async function findMatch() {
+    startHowTo("differential-duel");
     setError(null);
     setBusy(true);
     const r = await api({ op: "join" });
@@ -59,6 +62,7 @@ export function DuelGame({ serverState, save, profile, offlineItems }: { serverS
   }
 
   async function playBot() {
+    startHowTo("differential-duel");
     setError(null);
     if (!prof.available && offlineItems) {
       setScreen({ kind: "local", items: offlineItems, seed: Math.floor(Math.random() * 2 ** 31) });
@@ -73,6 +77,7 @@ export function DuelGame({ serverState, save, profile, offlineItems }: { serverS
   }
 
   async function rejoin(id: string) {
+    startHowTo("differential-duel");
     const r = await api({ op: "poll", matchId: id });
     if (r.view) setScreen({ kind: "match", view: r.view });
   }
@@ -117,7 +122,7 @@ export function DuelGame({ serverState, save, profile, offlineItems }: { serverS
   // A first-timer (or anyone when ranked play is off) is pointed at the bot.
   const botFirst = !prof.available || prof.games === 0;
   return (
-    <div className="mx-auto w-full max-w-2xl space-y-4 px-4 py-5 sm:px-6">
+    <div className="mx-auto w-full max-w-2xl space-y-4">
       {error && (
         <p role="alert" className="rounded-md border-2 border-foreground bg-status-pending-bg px-3 py-2 text-sm font-semibold">
           {error}
@@ -246,7 +251,7 @@ function Queue({ matchId, since, rating, onMatch, onCancel, onBot }: { matchId: 
   }, [matchId]);
   const secs = Math.floor(waited / 1000);
   return (
-    <div className="mx-auto w-full max-w-md space-y-5 px-4 py-10 text-center">
+    <div className="mx-auto w-full max-w-md space-y-5 py-10 text-center">
       <div className={cn("mx-auto grid size-24 place-items-center rounded-lg border-2 border-foreground bg-primary text-primary-foreground hard-shadow-md", reduce === false && fx.pulse)}>
         <Search className="size-10" aria-hidden />
       </div>
@@ -412,9 +417,11 @@ function Arena({ view: v, clock, err, onAnswer, onQuit, onBack, onAgain }: { vie
   const left = v.until ? Math.max(0, v.until - clock) : 0;
   const [confirmQuit, setConfirmQuit] = React.useState(false);
   const last = v.closed[v.closed.length - 1];
+  // Rounds run on the server clock and cannot pause: no how-to button until the match is over.
+  useHowTo("differential-duel", { hideWhile: v.phase !== "over" });
 
   return (
-    <div className="mx-auto w-full max-w-3xl space-y-4 px-4 py-5 sm:px-6">
+    <div className="mx-auto w-full max-w-3xl space-y-4">
       <Scoreboard v={v} />
       {err && <p className="rounded-md border-2 border-foreground bg-status-pending-bg px-3 py-2 text-sm font-semibold">{err}</p>}
 
@@ -731,6 +738,8 @@ function Final({ v, onBack, onAgain }: { v: DuelView; onBack: () => void; onAgai
           {word}
         </p>
         <p className="mt-2 font-semibold">{why}</p>
+        {/* Live play never pops up a reaction; the match end gets one. */}
+        <EndReaction mood={r.outcome === "win" ? "streak" : r.outcome === "draw" ? "near" : "wrong"} seed={v.round} tone={r.outcome === "loss" ? "dark" : "light"} className="mx-auto mt-4 w-fit max-w-full justify-center" />
         <div className="mt-3 flex flex-wrap justify-center gap-2">
           <span className={cn(chip, "border-current bg-transparent")}>
             Diagnosis right {dxRight}/{v.totalRounds}
@@ -773,7 +782,7 @@ function Final({ v, onBack, onAgain }: { v: DuelView; onBack: () => void; onAgai
           <Swords className="size-4" aria-hidden /> {v.bot ? "Play again" : "Next ranked match"}
         </button>
         <button type="button" className={btnSecondary} onClick={onBack}>
-          <ArrowLeft className="size-4" aria-hidden /> Back
+          <ArrowLeft className="size-4" aria-hidden /> Back to Duel
         </button>
         <Link href="/study" className={btnSecondary}>
           Study the look-alikes

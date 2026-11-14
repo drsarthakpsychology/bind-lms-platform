@@ -332,7 +332,7 @@ Modern academic psychology reached India through colonial universities that taug
 - 1992: the Rehabilitation Council of India Act made RCI a statutory body that registers clinical psychologists.
 - 2002: the Pondicherry conference issued the Manifesto of Indian Psychology.
 - 2017: the Mental Healthcare Act recognised clinical psychologists as mental health professionals.
-- 2020: the National Education Policy promoted Indian Knowledge Systems, now part of the UGC NET syllabus.
+- 2020: the National Education Policy promoted Indian Knowledge Systems, now part of competitive exam syllabi.
 - RCI has moved clinical psychology training to a two-year MA in Clinical Psychology from 2025 to 2026 as the M.Phil ends under NEP 2020.
 
 ## Evaluation
@@ -460,7 +460,7 @@ In 1962 the historian of science Thomas Kuhn argued that sciences do not grow by
 - The cognitive revolution kept behaviourism's experimental methods, so it was not a full Kuhnian break.
 
 ## The experimental-analytical paradigm
-The UGC NET syllabus refers to a crisis caused by strict adherence to the experimental-analytical paradigm, also called logical empiricism.
+Postgraduate syllabi refer to a crisis caused by strict adherence to the experimental-analytical paradigm, also called logical empiricism.
 - The Vienna Circle's logical positivism held that only statements verifiable by observation or logic are meaningful.
 - Operationism, from the physicist Percy Bridgman and taken into psychology by S. S. Stevens, defined every concept by its measurement operations, as in the remark that intelligence is what intelligence tests measure.
 - The ideal study was a controlled laboratory experiment that isolated variables and tested hypotheses statistically, with the researcher as a neutral observer.

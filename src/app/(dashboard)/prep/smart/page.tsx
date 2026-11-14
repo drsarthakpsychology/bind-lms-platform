@@ -39,7 +39,7 @@ export default async function SmartPage() {
         label="Smart practice"
         again="refresh"
         againLabel="More questions"
-        back={{ href: "/prep", label: "Exam Prep" }}
+        back={{ href: "/prep", label: "Back to Exam Prep" }}
         empty={<p className="font-semibold">Questions are being added.</p>}
       />
       <details className="border-t-2 border-dashed border-foreground/30 pt-2">

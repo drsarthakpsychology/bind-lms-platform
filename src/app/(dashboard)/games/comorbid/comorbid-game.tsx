@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { startHowTo } from "@/components/help/how-to";
 import { useRouter } from "next/navigation";
 import { Ban, Bot, Check, FlaskConical, Layers, RefreshCw, Shield, ShieldOff, Stethoscope, Users, X } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -14,6 +15,8 @@ import { Btn, buzz, Kbd, motionCss as m, Panel, Pill, Stat, useHotkeys } from "@
 import { creditServerPlay } from "@/lib/learn/credit-play";
 import { HintBar, useHintStatus } from "@/components/hints/hint-chip";
 import { askHint } from "@/lib/hints/actions";
+import { useReaction } from "@/components/reactions/use-reaction";
+import { EndReaction } from "@/components/reactions/graphics";
 
 type Finish = (x: { seed: string; mode: Setup["mode"]; level: Level; moves: Move[]; prefer?: string }) => Promise<{ ok: boolean; xp: number }>;
 
@@ -33,6 +36,7 @@ export function ComorbidGame({ board, finish }: { board: AccuracyBoardData; fini
   useHistoryPrefetch("comorbid");
 
   function start(mode: Setup["mode"], level: Level) {
+    startHowTo("comorbid");
     const seed = `${Date.now().toString(36)}${Math.floor(Math.random() * 1e6).toString(36)}`;
     // Answer history: a diagnosis not played yet, then one lost, then the one won longest ago.
     const prefer = orderFor("comorbid", DIAGNOSES, (d) => d.id)[0]?.id;
@@ -69,7 +73,7 @@ export function ComorbidGame({ board, finish }: { board: AccuracyBoardData; fini
 function Intro({ board, onStart }: { board: AccuracyBoardData; onStart: (mode: Setup["mode"], level: Level) => void }) {
   useHotkeys({ "1": () => onStart("bot", 1), "2": () => onStart("bot", 2), "3": () => onStart("bot", 3), p: () => onStart("pass", 2) });
   return (
-    <div className={cn("mx-auto max-w-2xl space-y-6 px-4 py-6", m.rise)}>
+    <div className={cn("mx-auto max-w-2xl space-y-6", m.rise)}>
       <section className="space-y-2">
         <h2 className="flex items-center gap-1.5 text-body-strong">
           <Bot className="size-4" aria-hidden /> Play the bot
@@ -105,6 +109,7 @@ function Table({ play, setPlay, xp, onDone, onAgain, onExit, board }: { play: Pl
   const [hints, setHints] = useHintStatus();
   /** Hints are for you against the bot only: turn number → what the hint said. */
   const [hinted, setHinted] = React.useState<Record<number, string>>({});
+  const reaction = useReaction();
 
   const botTurn = g.winner === null && !!g.seats[g.turn].bot;
   React.useEffect(() => {
@@ -122,7 +127,10 @@ function Table({ play, setPlay, xp, onDone, onAgain, onExit, board }: { play: Pl
     const next = apply(g, mv);
     if (next === g) return;
     const ev = next.log[next.log.length - 1];
-    if (ev.action === "play") buzz(ev.ok);
+    if (ev.action === "play") {
+      buzz(ev.ok);
+      reaction.onAnswer(ev.ok);
+    }
     setSel(null);
     setPlay({ ...play, game: next, moves: [...play.moves, mv], handoff: pass && next.winner === null });
   }
@@ -152,7 +160,7 @@ function Table({ play, setPlay, xp, onDone, onAgain, onExit, board }: { play: Pl
   const selCard = hand.find((c) => c.uid === sel) ?? null;
 
   return (
-    <div className="mx-auto max-w-3xl space-y-4 px-4 py-5">
+    <div className="mx-auto max-w-3xl space-y-4">
       <div className="flex flex-wrap items-center gap-2">
         <span className="flex items-center gap-1.5 font-semibold">
           <Layers className="size-5" aria-hidden /> Comorbid
@@ -373,13 +381,18 @@ function End({ play, xp, onAgain, onExit, board }: { play: Play; xp: number | nu
   const right = mine.filter((e) => e.ok).length;
   const title = g.winner === "draw" ? "A draw." : pass ? `${g.seats[g.winner as 0 | 1].name} wins.` : g.winner === 0 ? "You win." : `${g.seats[1].name} wins.`;
   return (
-    <div className={cn("mx-auto max-w-3xl space-y-5 px-4 py-6", m.rise)}>
+    <div className={cn("mx-auto max-w-3xl space-y-5", m.rise)}>
       <div className="flex flex-wrap items-end gap-3">
         <h1 className="text-h1">{title}</h1>
         <Pill tone={g.winner === 0 ? "good" : g.winner === "draw" ? "part" : "bad"} className={m.stamp}>
           {g.winner === "draw" ? "Even" : g.winner === 0 ? (pass ? "Player 1" : "Diagnosis complete") : pass ? "Player 2" : "Rival complete"}
         </Pill>
       </div>
+      {pass ? (
+        <EndReaction right={right} total={mine.length} seed={play.moves.length} />
+      ) : (
+        <EndReaction mood={g.winner === 0 ? "streak" : g.winner === "draw" ? "near" : "wrong"} seed={play.moves.length} />
+      )}
       <div className="grid gap-3 sm:grid-cols-2">
         <DxPanel seat={g.seats[0]} label={g.seats[0].name} />
         <DxPanel seat={g.seats[1]} label={g.seats[1].name} rival />
@@ -411,7 +424,7 @@ function End({ play, xp, onAgain, onExit, board }: { play: Play; xp: number | nu
       ) : null}
       <div className="grid gap-2 sm:grid-cols-2">
         <Btn variant="primary" size="lg" onClick={onAgain}>
-          Deal again <Kbd>Enter</Kbd>
+          Play again <Kbd>Enter</Kbd>
         </Btn>
         <Btn size="lg" onClick={onExit}>
           Change opponent

@@ -4,13 +4,13 @@ import * as React from "react";
 import { motion, useReducedMotion } from "@/lib/motion";
 
 import { cn } from "@/lib/utils";
+import { segmentGroup, segmentItem } from "@/components/design-system/segment";
 
 /**
- * Segmented control: a group of mutually exclusive options rendered as
- * equal-width segments welded together by a shared 2px ink border and a hard
- * offset shadow. Same geometry as Button; the active segment fills terracotta.
- * This is the app's only rectangular segment primitive (replaces the old
- * pill-shaped view switcher, and reused for the lesson tabs).
+ * Segmented control: a group of mutually exclusive options in one bordered
+ * 10px box; the active segment fills ink. Same look as every other tab or
+ * either-or switch in the app (segmentGroup / segmentItem in
+ * design-system/segment.ts).
  *
  * The active fill slides between segments via a layout-animated indicator.
  * Accessible as a group of toggle buttons (role="group" + aria-pressed per
@@ -35,10 +35,7 @@ export function SegmentedControl<T extends string>({
     <div
       role="group"
       aria-label={label}
-      className={cn(
-        "inline-flex items-stretch overflow-hidden rounded-full border-2 border-foreground bg-background hard-shadow-sm",
-        className
-      )}
+      className={cn(segmentGroup, className)}
     >
       {options.map((option) => {
         const isActive = option.value === value;
@@ -48,10 +45,7 @@ export function SegmentedControl<T extends string>({
             type="button"
             onClick={() => onValueChange(option.value)}
             aria-pressed={isActive}
-            className={cn(
-              "relative inline-flex h-11 items-center justify-center gap-1.5 px-3 text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60",
-              isActive ? "text-primary-foreground" : "text-muted-foreground hover:text-foreground"
-            )}
+            className={segmentItem(false, isActive ? "text-background hover:bg-transparent" : undefined)}
           >
             {/* Sliding active fill: same layoutId across the group, so it
                 animates to whichever segment is active. */}
@@ -59,7 +53,7 @@ export function SegmentedControl<T extends string>({
               <motion.span
                 layoutId={`segmented-${label}`}
                 aria-hidden
-                className="absolute inset-0 bg-primary"
+                className="absolute inset-0 rounded-sm bg-foreground"
                 transition={
                   reduce ? { duration: 0 } : { type: "spring", stiffness: 420, damping: 34 }
                 }

@@ -89,7 +89,7 @@ export default async function AdminTriagePage() {
   const auto = rows.filter((r) => !r.review);
 
   return (
-    <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6">
+    <div className="mx-auto max-w-4xl">
       <PageHeader
         title="Review triage"
         description="Only what needs your eyes. The queue never shows more than 10: the rest auto-releases with a label."

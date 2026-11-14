@@ -168,7 +168,7 @@ export function ReferenceLibrary({ items, initialQuery = "", initialKind = "all"
       </div>
 
       {!q ? (
-        <nav aria-label="Jump to letter" className="sticky top-0 z-10 -mx-4 border-y-2 border-foreground bg-background/95 px-4 py-1.5 backdrop-blur sm:mx-0 sm:rounded-md sm:border-2 lg:top-16">
+        <nav aria-label="Jump to letter" className="sticky top-0 z-10 -mx-4 border-y-2 border-foreground bg-background/95 px-4 py-1.5 backdrop-blur md:top-[var(--top-h)] sm:mx-0 sm:rounded-md sm:border-2 lg:top-16">
           <ul className="flex gap-1 overflow-x-auto [scrollbar-width:thin]">
             {LETTERS.map((l) => {
               const has = byLetter.has(l);

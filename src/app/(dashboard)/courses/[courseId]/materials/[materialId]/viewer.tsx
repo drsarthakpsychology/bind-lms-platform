@@ -115,7 +115,7 @@ export function MaterialViewer({
   if (error) {
     return (
       <div className="flex h-full items-center justify-center p-8">
-        <div className="max-w-md space-y-4 rounded-md border-2 border-border bg-card p-6 text-center">
+        <div className="max-w-md space-y-4 rounded-lg border-2 border-border bg-card p-6 text-center">
           <div>
             <p className="text-small font-semibold text-foreground">Couldn&apos;t open this material</p>
             <p className="mt-1 text-caption text-muted-foreground">
@@ -191,7 +191,7 @@ export function MaterialViewer({
     case "slides":
       return (
         <div className="flex h-full items-center justify-center p-8">
-          <div className="max-w-md rounded-md border-2 border-border bg-card p-6 text-center">
+          <div className="max-w-md rounded-lg border-2 border-border bg-card p-6 text-center">
             <p className="text-small font-semibold text-foreground">{title}</p>
             <p className="mt-1 text-caption text-muted-foreground">
               Slide decks can&apos;t be previewed in the browser. Ask your instructor for a PDF version of this deck.
@@ -202,7 +202,7 @@ export function MaterialViewer({
     case "link":
       return (
         <div className="flex h-full items-center justify-center p-8">
-          <div className="max-w-md rounded-md border-2 border-border bg-card p-6 text-center">
+          <div className="max-w-md rounded-lg border-2 border-border bg-card p-6 text-center">
             <p className="text-small font-semibold text-foreground">{title}</p>
             <a
               href={url ?? "#"}
@@ -396,7 +396,7 @@ function AudioViewer({ signedUrl, title, watermarkLabel }: { signedUrl: string; 
     <div className="relative flex h-full flex-col">
       <MaterialWatermark label={watermarkLabel} />
       <div className="flex flex-1 items-center justify-center p-6">
-        <div className="w-full max-w-xl space-y-4 rounded-md border-2 border-border bg-card p-5">
+        <div className="w-full max-w-xl space-y-4 rounded-lg border-2 border-border bg-card p-5">
           <audio
             ref={audioRef}
             src={signedUrl}

@@ -58,6 +58,7 @@ export default async function LongAnswerPage({ params }: Params) {
         study={study}
         prev={prev ? longHref(prev) : null}
         next={next ? longHref(next) : null}
+        done={{ href: back, label: `Back to ${t.title}` }}
       />
     </PrepFrame>
   );

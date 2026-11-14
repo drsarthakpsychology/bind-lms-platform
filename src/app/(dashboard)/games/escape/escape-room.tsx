@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { startHowTo } from "@/components/help/how-to";
 import { ArrowDown, ArrowRight, ArrowUp, Check, DoorOpen, FileText, Flag, Lightbulb, Lock, LockOpen, MapPin, Play, Timer, Trophy, Users, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { LearnLink } from "@/lib/games/ui/learn-link";
@@ -12,6 +13,8 @@ import { Btn, buzz, Kbd, motionCss as m, Panel, Pill, Stat, useHotkeys } from "@
 import { JoinBox, Members, TeamCode, usePoll } from "@/lib/games-sims/ui/team";
 import type { EscapeView } from "./actions";
 import { creditServerPlay } from "@/lib/learn/credit-play";
+import { useReaction } from "@/components/reactions/use-reaction";
+import { EndReaction } from "@/components/reactions/graphics";
 
 type Actions = {
   createEscapeTeam: (room: string) => Promise<{ ok: true; teamId: string } | { ok: false; reason: string }>;
@@ -30,6 +33,7 @@ const LETTERS = ["a", "b", "c", "d", "e", "f"];
 export function EscapeRoom({ teamsOn, openTeam, teams, actions }: { teamsOn: boolean; openTeam: string | null; teams: TeamItem[]; actions: Actions }) {
   const [mode, setMode] = React.useState<Mode>(openTeam ? { kind: "team", teamId: openTeam } : { kind: "pick" });
   function go(next: Mode) {
+    if (next.kind !== "pick") startHowTo("team-escape-room");
     try {
       window.history.replaceState(null, "", next.kind === "team" ? `/games/escape?team=${next.teamId}` : "/games/escape");
     } catch {
@@ -65,7 +69,7 @@ function Pick({ teamsOn, teams, onPractice, onCreate, onJoin, onOpen }: { teamsO
   const [err, setErr] = React.useState<string | null>(null);
   const [busy, setBusy] = React.useState<string | null>(null);
   return (
-    <div className={cn("mx-auto max-w-3xl space-y-6 px-4 py-6", m.rise)}>
+    <div className={cn("mx-auto max-w-3xl space-y-6", m.rise)}>
       <h1 className="text-h2">Pick a room</h1>
       <ul className={cn("grid gap-4 md:grid-cols-3", m.stagger)}>
         {ROOMS.map((r, i) => (
@@ -374,12 +378,15 @@ function Practice({ room, run, startedAt, actions, onExit, onAgain }: { room: Ro
   const [xp, setXp] = React.useState<number | null>(null);
   const now = useTicker(finishedAt === null);
   const ms = teamTime(new Date(startedAt).toISOString(), finishedAt ?? now ?? startedAt, st.wrong);
+  const reaction = useReaction();
 
   function submit(raw: string) {
     if (opened !== null || st.done) return;
     const first = (st.tries[st.stage] ?? 0) === 0;
     const res = applyAnswer(room, st, st.stage, raw, "You", new Date().toISOString());
     buzz(res.ok);
+    // The last door opens straight onto the escape screen, which has its own sticker.
+    if (!res.state.done) reaction.onAnswer(res.ok, { partial: res.ok && !first });
     void actions.gradeEscapePractice({ room: room.id, stage: st.stage, answer: raw, first }).catch(() => undefined);
     setFeedback({ stage: st.stage, ok: res.ok });
     if (res.ok) {
@@ -405,7 +412,7 @@ function Practice({ room, run, startedAt, actions, onExit, onAgain }: { room: Ro
 
   const p = room.puzzles[opened ?? st.stage];
   return (
-    <div className="mx-auto max-w-3xl space-y-4 px-4 py-5">
+    <div className="mx-auto max-w-3xl space-y-4">
       <Header room={room} onExit={onExit} right={<Clock ms={ms} wrong={st.wrong} />} />
       <Doors room={room} st={st} feedback={feedback} />
       <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_16rem]">
@@ -435,6 +442,7 @@ function TeamRun({ teamId, actions, onExit }: { teamId: string; actions: Actions
   const [feedback, setFeedback] = React.useState<Feedback>(null);
   const [seenStage, setSeenStage] = React.useState<number | null>(null);
   const [busy, setBusy] = React.useState(false);
+  const reaction = useReaction();
 
   function apply(v: EscapeView | null) {
     if (!v) {
@@ -457,7 +465,7 @@ function TeamRun({ teamId, actions, onExit }: { teamId: string; actions: Actions
 
   if (missing && !view)
     return (
-      <div className="mx-auto max-w-xl space-y-4 px-4 py-8">
+      <div className="mx-auto max-w-xl space-y-4">
         <h1 className="text-h2">Team not found</h1>
         <p className="text-body">You may not be in this team, or team play is not open yet.</p>
         <Btn variant="primary" onClick={onExit}>
@@ -481,7 +489,7 @@ function TeamRun({ teamId, actions, onExit }: { teamId: string; actions: Actions
   if (view.status === "lobby") {
     const enough = view.members.length >= TEAM_LIMITS.escape.min;
     return (
-      <div className="mx-auto max-w-3xl space-y-4 px-4 py-5">
+      <div className="mx-auto max-w-3xl space-y-4">
         <Header room={room} onExit={onExit} right={<Pill tone="part">Waiting to start</Pill>} />
         {header}
         <Panel className="space-y-3">
@@ -519,6 +527,7 @@ function TeamRun({ teamId, actions, onExit }: { teamId: string; actions: Actions
     const r = await actions.answerEscape({ teamId, stage: view.state.stage, answer: raw }).catch(() => ({ view: null, ok: false }));
     setBusy(false);
     buzz(r.ok);
+    if (!r.view?.state.done) reaction.onAnswer(r.ok);
     setFeedback({ stage: view.state.stage, ok: r.ok, by: r.ok ? "You" : undefined });
     if (r.view) {
       setSkew(r.view.now - Date.now());
@@ -527,7 +536,7 @@ function TeamRun({ teamId, actions, onExit }: { teamId: string; actions: Actions
   }
 
   return (
-    <div className="mx-auto max-w-3xl space-y-4 px-4 py-5">
+    <div className="mx-auto max-w-3xl space-y-4">
       <Header room={room} onExit={onExit} right={<Clock ms={ms} wrong={st.wrong} />} />
       {header}
       <Doors room={room} st={st} feedback={feedback} />
@@ -611,7 +620,7 @@ function Escaped({ room, ms, wrong, xp, onExit, onAgain, race, teamLine }: { roo
   useHotkeys(onAgain ? { Enter: onAgain } : {});
   const n = room.puzzles.length;
   return (
-    <div className={cn("mx-auto max-w-3xl space-y-5 px-4 py-6", m.rise)}>
+    <div className={cn("mx-auto max-w-3xl space-y-5", m.rise)}>
       <div className="flex flex-wrap items-end gap-3">
         <h1 className="text-h1">The doors open.</h1>
         <Pill tone="good" className={m.stamp}>
@@ -619,6 +628,7 @@ function Escaped({ room, ms, wrong, xp, onExit, onAgain, race, teamLine }: { roo
         </Pill>
       </div>
       {teamLine ? <p className="text-small font-semibold">{teamLine}</p> : null}
+      <EndReaction mood={wrong === 0 ? "streak" : wrong <= 2 ? "right" : "near"} seed={`${room.id}:${ms}`} />
       <p className="text-body">{room.outro}</p>
       <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
         <Stat label="Time" value={clock(ms)} />
@@ -631,7 +641,7 @@ function Escaped({ room, ms, wrong, xp, onExit, onAgain, race, teamLine }: { roo
         <h2 className="text-body-strong">The case, door by door</h2>
         <ol className={cn("space-y-2", m.stagger)}>
           {room.puzzles.map((p, i) => (
-            <li key={p.id} className={cn("rounded-md border-2 border-foreground/25 bg-card p-3", m.rise)} style={{ "--i": i } as React.CSSProperties}>
+            <li key={p.id} className={cn("rounded-lg border-2 border-foreground/25 bg-card p-3", m.rise)} style={{ "--i": i } as React.CSSProperties}>
               <p className="flex items-center gap-2 text-caption font-semibold uppercase">
                 <LockOpen className="size-3.5" aria-hidden /> {i + 1}. {STAGE_LABEL[p.stage]}
               </p>
@@ -644,7 +654,7 @@ function Escaped({ room, ms, wrong, xp, onExit, onAgain, race, teamLine }: { roo
       <div className="grid gap-2 sm:grid-cols-2">
         {onAgain ? (
           <Btn variant="primary" size="lg" onClick={onAgain}>
-            Run it again <Kbd>Enter</Kbd>
+            Play again <Kbd>Enter</Kbd>
           </Btn>
         ) : null}
         <Btn size="lg" onClick={onExit}>

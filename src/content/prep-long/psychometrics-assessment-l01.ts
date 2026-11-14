@@ -374,7 +374,7 @@ Rensis Likert in 1932: respondents rate agreement with each statement on a five 
 Levels of measurement guide appropriate statistics, and scaling methods, especially Likert scales, turn attitudes into numbers.`,
     visuals: [vis("sort", { prompt: "Sort each variable by its level of measurement.", buckets: ["Nominal", "Ordinal", "Interval", "Ratio"], items: [
       { text: "Diagnosis under ICD-11", bucket: 0, why: "Categories with no order." },
-      { text: "Rank in the CUET merit list", bucket: 1, why: "Order is known, but the gaps between ranks are not equal." },
+      { text: "Rank in an entrance merit list", bucket: 1, why: "Order is known, but the gaps between ranks are not equal." },
       { text: "Score on a Likert attitude scale", bucket: 1, why: "Strictly ordinal, though often treated as interval." },
       { text: "Temperature in Celsius", bucket: 2, why: "Equal intervals, but zero does not mean no heat." },
       { text: "Reaction time in milliseconds", bucket: 3, why: "Equal intervals and a true zero, so ratios make sense." },

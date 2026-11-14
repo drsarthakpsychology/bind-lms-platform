@@ -49,7 +49,6 @@ Xanomeline mechanism? :: M1 and M4 muscarinic agonism.
 :::
 
 ## 4.2 Q&A bank · Starting [core][starting]
-Think each question through, ideally aloud or on paper, before you open the answer.
 
 :::qa Why does an SSRI take weeks to lift mood when it blocks the serotonin pump within hours? [starting]
 ### Short answer

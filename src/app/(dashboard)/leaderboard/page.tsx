@@ -28,7 +28,7 @@ export default async function LeaguePage() {
   const relegates = data.tier > 1;
 
   return (
-    <div className="mx-auto max-w-4xl space-y-6 px-4 py-6 sm:px-6">
+    <div className="mx-auto max-w-5xl space-y-6">
       <BoardSwitch active="league" />
 
       <header>
@@ -101,7 +101,7 @@ function TierLadder({ tier }: { tier: number }) {
         return (
           <li key={t.tier} aria-current={on ? "true" : undefined} className={cn("rounded-md border-2 px-1 py-2 text-center", on ? "border-foreground bg-brand text-brand-foreground hard-shadow-xs" : t.tier < tier ? "border-foreground/40 bg-card" : "border-dashed border-foreground/40 bg-background text-muted-foreground")}>
             <span className="block font-mono text-caption">{t.tier}</span>
-            <span className="block truncate text-xs font-bold sm:text-sm">{t.name}</span>
+            <span className="block text-caption font-bold [overflow-wrap:anywhere] sm:text-sm">{t.name}</span>
             {on ? <span className="sr-only"> (your league)</span> : null}
           </li>
         );

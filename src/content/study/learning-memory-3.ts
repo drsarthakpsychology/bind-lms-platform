@@ -525,7 +525,7 @@ New memories are fragile for a time. A blow to the head, an epileptic seizure, E
 
 :::widget decide
 {
-  "scene": "Rahul, preparing for the NIMHANS entrance, studies cognitive psychology from 8 to 10 pm, then statistics until 1 am, then sleeps four hours. He keeps confusing similar terms and forgetting the evening's psychology.",
+  "scene": "Rahul, preparing for a clinical psychology entrance, studies cognitive psychology from 8 to 10 pm, then statistics until 1 am, then sleeps four hours. He keeps confusing similar terms and forgetting the evening's psychology.",
   "ask": "Which change would help most, based on forgetting research?",
   "choices": [
     { "label": "Study even longer at night so the material is fresh for the morning", "verdict": "harm", "outcome": "He is more tired and remembers less.", "why": "Sleep loss impairs consolidation and attention. Longer, later sessions add interference and fatigue." },

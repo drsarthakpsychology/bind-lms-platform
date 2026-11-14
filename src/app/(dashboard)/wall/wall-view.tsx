@@ -334,7 +334,7 @@ export function WallView({ initialPosts, isFacultyViewer = false }: { initialPos
       {/* Desktop: inline composer (unchanged composition) */}
       <form
         onSubmit={post}
-        className="hidden space-y-3 rounded-md border-2 border-border bg-card p-5 hard-shadow-sm lg:block"
+        className="hidden space-y-3 rounded-lg border-2 border-border bg-card p-5 hard-shadow-sm lg:block"
       >
         {composerFields}
         <button

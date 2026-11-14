@@ -2,8 +2,41 @@
 
 import { noteAnswer } from "@/lib/history/client";
 import * as React from "react";
+import { startHowTo, useHowTo } from "@/components/help/how-to";
 import { haptic } from "@/lib/haptics";
 import { CLINICS } from "@/lib/practice/clinic";
+import { EndReaction } from "@/components/reactions/graphics";
+import type { Mood } from "@/lib/reactions/stickers";
+
+const SKIP = new Set(["disorder", "disorders", "syndrome", "related", "induced", "other", "without", "major", "acute", "chronic", "primary", "secondary", "presentation", "features", "reconsider", "atypical", "early", "onset", "illness", "state"]);
+/** Word stems that name a diagnosis (first 6 letters of 5+ letter words, minus filler like "disorder"). */
+function keyWords(text: string): string[] {
+  return (text.toLowerCase().match(/[a-z]{5,}/g) ?? []).filter((w) => !SKIP.has(w)).map((w) => w.slice(0, 6));
+}
+
+/**
+ * A light check for the reaction only (nothing is scored here): did the typed
+ * differential name the expert's first diagnosis (right), another one on the
+ * list (partly right), or none (no reaction, since it may be a fair synonym)?
+ */
+export function differentialMatch(typed: string, expert: readonly string[]): "top" | "listed" | "none" {
+  const mine = new Set(keyWords(typed));
+  if (!mine.size) return "none";
+  const hit = (d: string) => keyWords(d).some((w) => mine.has(w));
+  if (expert[0] && hit(expert[0])) return "top";
+  return expert.some(hit) ? "listed" : "none";
+}
+
+/**
+ * The finish sticker. Nothing is scored, so finishing is a win: happy when the
+ * differential names the expert's first diagnosis or any fair attempt, the
+ * crying thumbs up when it only names one lower on the list, sad when it is blank.
+ */
+export function clinicMood(typed: string, expert: readonly string[]): Mood {
+  if (!typed.trim()) return "wrong";
+  const m = differentialMatch(typed, expert);
+  return m === "top" ? "streak" : m === "listed" ? "near" : "right";
+}
 
 /**
  * `start` is picked on the server for each visit, so a returning student does
@@ -19,9 +52,11 @@ export function TwoMinuteClinic({ start = 0, order }: { start?: number; order?: 
   const [differential, setDifferential] = React.useState("");
   const [nextQuestion, setNextQuestion] = React.useState("");
   const item = CLINICS[itemIdx];
+  // The clock stops while the how-to is open.
+  const { open: paused } = useHowTo("two-minute-clinic");
 
   React.useEffect(() => {
-    if (phase !== "type") return;
+    if (phase !== "type" || paused) return;
     const id = setInterval(() => {
       setSeconds((s) => {
         if (s <= 1) {
@@ -33,11 +68,11 @@ export function TwoMinuteClinic({ start = 0, order }: { start?: number; order?: 
       });
     }, 1000);
     return () => clearInterval(id);
-  }, [phase]);
+  }, [phase, paused]);
 
   return (
     <div className="space-y-4">
-      <div className="rounded-md border-2 border-border bg-card p-5 hard-shadow-sm">
+      <div className="rounded-lg border-2 border-border bg-card p-5 hard-shadow-sm">
         <div className="flex items-center justify-between">
           <span className="text-eyebrow text-muted-foreground">One-liner {itemIdx + 1}</span>
           {phase === "type" ? (
@@ -49,7 +84,7 @@ export function TwoMinuteClinic({ start = 0, order }: { start?: number; order?: 
         {phase === "read" ? (
           <button
             type="button"
-            onClick={() => { setPhase("type"); setSeconds(120); haptic("tap"); }}
+            onClick={() => { startHowTo("two-minute-clinic"); setPhase("type"); setSeconds(120); haptic("tap"); }}
             className="mt-4 rounded-md border-2 border-border bg-primary px-4 py-2 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px active:hard-shadow-none"
           >
             Start the clock
@@ -58,7 +93,7 @@ export function TwoMinuteClinic({ start = 0, order }: { start?: number; order?: 
       </div>
 
       {phase === "type" ? (
-        <div className="space-y-3 rounded-md border-2 border-border bg-card p-5 hard-shadow-sm">
+        <div className="space-y-3 rounded-lg border-2 border-border bg-card p-5 hard-shadow-sm">
           <div>
             <label className="text-small font-medium" htmlFor="diff">Your differential (top 2-3)</label>
             <textarea enterKeyHint="enter"
@@ -97,7 +132,8 @@ export function TwoMinuteClinic({ start = 0, order }: { start?: number; order?: 
       ) : null}
 
       {phase === "compare" ? (
-        <div className="space-y-3 rounded-md border-2 border-border bg-card p-5 hard-shadow-sm">
+        <div className="space-y-3 rounded-lg border-2 border-border bg-card p-5 hard-shadow-sm">
+          <EndReaction mood={clinicMood(differential, item.expertDifferential)} seed={item.id} />
           <h2 className="text-base font-semibold">Expert comparison</h2>
           <div>
             <p className="text-small font-medium text-muted-foreground">Your differential</p>

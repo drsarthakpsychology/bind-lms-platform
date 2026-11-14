@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { startHowTo } from "@/components/help/how-to";
 
 import { emptyState, finishLesson, istToday, type LearnState, type Payout } from "@/lib/learn/engine";
 import { SCENARIOS, WORDS, type Choice, type Scenario } from "@/lib/learn/scenarios";
@@ -13,6 +14,14 @@ import { cn } from "@/lib/utils";
 import { Chai, ChaiSays } from "./chai";
 import { Summary } from "./player";
 import s from "./learn.module.css";
+import { useReaction } from "@/components/reactions/use-reaction";
+import { AnswerStamp, HalftoneCorner } from "@/components/reactions/graphics";
+import { moodForScore } from "@/lib/reactions/stickers";
+
+/** The finish sticker: happy for a good round, sad for a poor one. */
+function roundMood(answers: { correct: boolean }[]) {
+  return moodForScore(answers.filter((a) => a.correct).length, answers.length);
+}
 
 const EMPTY = emptyState();
 function roll() {
@@ -38,12 +47,15 @@ export function ScenarioGame({ serverState, save, noteId }: { serverState: Learn
   const [picked, setPicked] = React.useState<Choice | null>(null);
   const [answers, setAnswers] = React.useState<{ id: string; correct: boolean }[]>([]);
   const [result, setResult] = React.useState<Payout | null>(null);
+  const reaction = useReaction();
   useHistoryPrefetch("wwyd");
 
   function start() {
+    startHowTo("what-would-you-do");
     const pool = noteId ? SCENARIOS.filter((x) => x.noteId === noteId) : SCENARIOS;
     // Answer history (src/lib/history): scenarios not played yet first, missed ones spaced out.
     setDeck(pickRoundFor("wwyd", pool, (x) => x.id, 5, roll));
+    reaction.reset();
     setSi(0);
     setBi(0);
     setPicked(null);
@@ -51,10 +63,10 @@ export function ScenarioGame({ serverState, save, noteId }: { serverState: Learn
     setResult(null);
   }
 
-  if (result) return <Summary result={result} state={state} confetti={[]} title="What would you do?" onAgain={start} />;
+  if (result) return <Summary result={result} state={state} confetti={[]} title="What would you do?" mood={roundMood(answers)} onAgain={start} />;
   if (!deck) {
     return (
-      <div className="mx-auto max-w-xl space-y-6 px-4 py-8 text-center">
+      <div className="mx-auto max-w-xl space-y-6 py-8 text-center">
         <Chai mood="think" size={130} />
         <h1 className="text-h1">What would you do?</h1>
         <button type="button" onClick={start} className="btn-sweep h-14 w-full rounded-2xl border-2 border-foreground bg-primary text-lg font-bold text-primary-foreground hard-shadow-md">
@@ -73,6 +85,8 @@ export function ScenarioGame({ serverState, save, noteId }: { serverState: Learn
     setPicked(c);
     haptic(c.outcome === "best" ? "success" : "warning");
     setAnswers((a) => [...a, { id: `${sc.id}-${bi}`, correct: c.outcome === "best" }]);
+    // "Okay, but" is a near miss; a risky choice is wrong.
+    reaction.onAnswer(c.outcome === "best", { partial: c.outcome === "ok" });
   }
   function next() {
     setPicked(null);
@@ -91,7 +105,7 @@ export function ScenarioGame({ serverState, save, noteId }: { serverState: Learn
   }
 
   return (
-    <div className="mx-auto flex min-h-[calc(100dvh-4rem)] max-w-2xl flex-col gap-4 px-4 py-5">
+    <div className="mx-auto flex min-h-[calc(100dvh-var(--top-h)-4.5rem)] max-w-2xl flex-col gap-4">
       <div className="flex items-center gap-3">
         <p className="flex-1 font-bold">
           {sc.topic} · <span className="text-muted-foreground">{sc.who}</span>
@@ -125,7 +139,10 @@ function Options({ beat, options, picked, onChoose }: { beat: Scenario["beats"][
   return (
     <div className={cn("space-y-3", s.rise)}>
       {beat.context ? <p className="rounded-xl border-2 border-dashed border-foreground/40 px-3 py-2 text-sm">{beat.context}</p> : null}
-      <p className="rounded-3xl border-2 border-foreground bg-card p-4 text-lg font-bold leading-snug hard-shadow-sm">{beat.says}</p>
+      <p className="relative isolate overflow-hidden rounded-3xl border-2 border-foreground bg-card p-4 text-lg font-bold leading-snug hard-shadow-sm">
+        <HalftoneCorner />
+        {beat.says}
+      </p>
       <p className="text-eyebrow text-link">Your response</p>
       {order.map((c) => (
         <button
@@ -208,14 +225,21 @@ export function TermsGame({ serverState, save }: { serverState: LearnState | nul
   const [pick, setPick] = React.useState<string | null>(null);
   const [answers, setAnswers] = React.useState<{ id: string; correct: boolean }[]>([]);
   const [result, setResult] = React.useState<Payout | null>(null);
+  const reaction = useReaction();
 
-  if (result) return <Summary result={result} state={state} confetti={[]} title="Say it clinically" onAgain={() => { setRound(buildRound()); setI(0); setAnswers([]); setResult(null); }} />;
+  if (result) return <Summary result={result} state={state} confetti={[]} title="Say it clinically" mood={roundMood(answers)} onAgain={() => { reaction.reset(); setRound(buildRound()); setI(0); setAnswers([]); setResult(null); }} />;
   if (!round) {
     return (
-      <div className="mx-auto max-w-xl space-y-6 px-4 py-8 text-center">
+      <div className="mx-auto max-w-xl space-y-6 py-8 text-center">
         <Chai mood="happy" size={130} />
         <h1 className="text-h1">Say it clinically</h1>
-        <button type="button" onClick={() => setRound(buildRound())} className="btn-sweep h-14 w-full rounded-2xl border-2 border-foreground bg-primary text-lg font-bold text-primary-foreground hard-shadow-md">
+        <button
+          type="button"
+          onClick={() => {
+            startHowTo("say-it-clinically");
+            setRound(buildRound());
+          }}
+          className="btn-sweep h-14 w-full rounded-2xl border-2 border-foreground bg-primary text-lg font-bold text-primary-foreground hard-shadow-md">
           Start
         </button>
       </div>
@@ -223,7 +247,7 @@ export function TermsGame({ serverState, save }: { serverState: LearnState | nul
   }
   const q = round[i];
   return (
-    <div className="mx-auto max-w-xl space-y-4 px-4 py-6">
+    <div className="mx-auto max-w-xl space-y-4">
       <div className="h-3 overflow-hidden rounded-full border-2 border-foreground">
         <div className="h-full bg-primary transition-[width]" style={{ width: `${(i / round.length) * 100}%` }} />
       </div>
@@ -231,7 +255,10 @@ export function TermsGame({ serverState, save }: { serverState: LearnState | nul
         {q.kind === "words" ? "Words matter" : "Case-sheet language"}
         {q.language ? <span className="text-muted-foreground"> · {q.language}</span> : null}
       </p>
-      <h2 className="text-xl font-bold leading-tight">{q.prompt}</h2>
+      <div className="relative isolate">
+        <HalftoneCorner className="-top-3 size-24" />
+        <h2 className="text-xl font-bold leading-tight">{q.prompt}</h2>
+      </div>
       <div className="grid gap-2.5">
         {q.options.map((o) => (
           <button
@@ -243,12 +270,14 @@ export function TermsGame({ serverState, save }: { serverState: LearnState | nul
               haptic(o === q.answer ? "success" : "warning");
               setAnswers((a) => [...a, { id: q.id, correct: o === q.answer }]);
               noteAnswer("say-it", q.id, o === q.answer);
+              reaction.onAnswer(o === q.answer);
             }}
             className={cn(
-              "rounded-2xl border-2 border-foreground px-4 py-3 text-left font-bold hard-shadow-sm",
+              "relative rounded-2xl border-2 border-foreground px-4 py-3 text-left font-bold hard-shadow-sm",
               pick ? (o === q.answer ? "bg-primary text-primary-foreground" : o === pick ? cn("bg-foreground text-background", s.shake) : "bg-card opacity-60") : "bg-card",
             )}
           >
+            {pick === o ? <AnswerStamp ok={o === q.answer} /> : null}
             {o}
           </button>
         ))}

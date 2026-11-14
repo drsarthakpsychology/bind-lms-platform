@@ -5,6 +5,7 @@ import { SimulationBadge } from "./simulation-badge";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { isFeatureEnabled, requireFeature } from "@/lib/flags";
+import { BackPill } from "@/components/study/back";
 
 export const dynamic = "force-dynamic";
 
@@ -105,6 +106,7 @@ export default async function ConsultingRoomPage() {
 
   return (
     <div className="mx-auto w-full max-w-5xl">
+      <BackPill className="mb-4" />
       <ConsultingRoomHeader badge={<SimulationBadge />}>
         {weakSpotsOn ? (
           <Link href="/practice/weak-spots" className="mt-2 inline-flex min-h-11 items-center gap-1 text-sm font-semibold text-link hover:underline">

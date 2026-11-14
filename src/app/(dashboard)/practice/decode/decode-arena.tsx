@@ -52,13 +52,13 @@ export function DecodeArena({ entries }: { entries: IdiomEntry[] }) {
       </div>
 
       {/* the phrase */}
-      <div className="rounded-md border-2 border-border bg-card p-5 hard-shadow-sm">
+      <div className="rounded-lg border-2 border-border bg-card p-5 hard-shadow-sm">
         <p className="text-eyebrow text-muted-foreground">The patient says</p>
         <p className="mt-1 text-h3">&ldquo;{entry.phrase}&rdquo;</p>
       </div>
 
       {/* multi-select meanings */}
-      <div className="rounded-md border-2 border-border bg-card p-5">
+      <div className="rounded-lg border-2 border-border bg-card p-5">
         <div className="mt-3 grid grid-cols-1 gap-2 sm:grid-cols-2">
           {meanings.map((m) => {
             const picked = selected.has(m);
@@ -96,7 +96,7 @@ export function DecodeArena({ entries }: { entries: IdiomEntry[] }) {
       {/* reveal */}
       {revealed && result ? (
         <div className="space-y-3">
-          <div className="rounded-md border-2 border-border bg-card p-5">
+          <div className="rounded-lg border-2 border-border bg-card p-5">
             <div className="flex items-center justify-between">
               <p className="text-base font-semibold">Score: {result.score}/{result.max}</p>
               <p className="text-caption text-muted-foreground">

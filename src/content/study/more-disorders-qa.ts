@@ -1,7 +1,6 @@
 /* Module · Eating, sleep, body, dissociative, sexual and impulse disorders, Q&A banks. Original text written for VIBHA School of Psychology. */
 export const qa = String.raw`
 ## 4.2 Q&A bank · Starting [core][starting]
-Think each question through, ideally aloud or on paper, before you open the answer.
 
 :::qa A parent says her daughter's anorexia is "just vanity, she wants to look like a film star". How would you respond? [starting]
 ### Short answer

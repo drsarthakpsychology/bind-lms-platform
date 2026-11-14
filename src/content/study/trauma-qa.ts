@@ -1,7 +1,6 @@
 /* Trauma and stressor-related disorders: Q&A bank (Starting, Beginner, Advanced). Original text written for VIBHA School of Psychology. */
 export const qa = String.raw`
 ## 5.3 Q&A bank · Starting [core][starting]
-Think each question through, then open the answer.
 
 :::qa Why do some people develop PTSD after a trauma while most recover? [starting]
 ### Short answer
@@ -133,7 +132,6 @@ It means recognising how common trauma is and working in ways that avoid re-trau
 :::
 
 ## 5.4 Q&A bank · Beginner [core][beginner]
-Think each question through, then open the answer.
 
 :::qa Apply the DSM-5-TR PTSD criteria step by step to a case. [beginner]
 ### Short answer
@@ -345,7 +343,6 @@ It is more likely to combine grief with trauma: intrusive images of the death, a
 :::
 
 ## 5.5 Q&A bank · Advanced [core][advanced]
-Think each question through, then open the answer.
 
 :::qa Explain the HPA axis findings in PTSD and why they are surprising. [advanced]
 ### Short answer

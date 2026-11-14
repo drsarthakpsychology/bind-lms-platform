@@ -111,18 +111,18 @@ export function SupervisionLog({
     <div className="space-y-6">
       {/* summary */}
       <div className="grid grid-cols-2 gap-3">
-        <div className="rounded-md border-2 border-border bg-card p-4">
+        <div className="rounded-lg border-2 border-border bg-card p-4">
           <p className="text-caption text-muted-foreground">Total logged</p>
           <p className="text-numeric text-h2 font-semibold">{totalHours.toFixed(1)}h</p>
         </div>
-        <div className="rounded-md border-2 border-border bg-card p-4">
+        <div className="rounded-lg border-2 border-border bg-card p-4">
           <p className="text-caption text-muted-foreground">Signed off</p>
           <p className="text-numeric text-h2 font-semibold">{signedHours.toFixed(1)}h</p>
         </div>
       </div>
 
       {/* log form */}
-      <form onSubmit={submit} className="space-y-3 rounded-md border-2 border-border bg-card p-5 hard-shadow-sm">
+      <form onSubmit={submit} className="space-y-3 rounded-lg border-2 border-border bg-card p-5 hard-shadow-sm">
         <p className="text-base font-semibold">Log a supervision contact hour</p>
         <div>
           <label htmlFor="sup-activity" className="text-caption font-medium text-muted-foreground">Activity</label>
@@ -225,7 +225,7 @@ export function SupervisionLog({
           {entries.map((e) => {
             const so = SIGN_OFF[e.signoffStatus];
             return (
-              <li key={e.id} className="flex items-center justify-between gap-3 rounded-md border-2 border-border bg-card px-4 py-3">
+              <li key={e.id} className="flex items-center justify-between gap-3 rounded-lg border-2 border-border bg-card px-4 py-3">
                 <div className="min-w-0">
                   <p className="truncate text-small font-medium">{e.activity}</p>
                   <p className="text-caption text-muted-foreground">

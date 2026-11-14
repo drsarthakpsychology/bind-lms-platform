@@ -102,4 +102,18 @@ describe("MockExam", () => {
     fireEvent.click(screen.getByRole("button", { name: /Try again/ }));
     await screen.findByRole("heading", { name: "Time" });
   });
+  it("the How it works button opens the rules during the paper and keeps the answers", async () => {
+    start.mockResolvedValue(paper());
+    render(<MockExam specId="x" title="Test mock" intro={<p>Intro</p>} rules={<p>Right: +4. Wrong: minus 1.</p>} />);
+    fireEvent.click(screen.getByRole("button", { name: /Start the mock/ }));
+    await screen.findByText(/Question 1 of 4/, {}, { timeout: 5_000 });
+    fireEvent.click(screen.getAllByRole("radio")[2]);
+    fireEvent.click(screen.getByRole("button", { name: "How it works" }));
+    const sheet = screen.getByRole("dialog");
+    expect(sheet).toHaveTextContent("Right: +4. Wrong: minus 1.");
+    fireEvent.keyDown(sheet, { key: "Escape" });
+    expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
+    expect(screen.getByText(/Question 1 of 4/)).toBeInTheDocument();
+    expect(screen.getAllByRole("radio")[2]).toHaveAttribute("aria-checked", "true");
+  });
 });

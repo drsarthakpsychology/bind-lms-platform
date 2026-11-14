@@ -324,7 +324,7 @@ The model is a layered, holistic view of health in Indian terms, comparable to t
     question: "Explain the Nyaya theory of pramanas. How many pramanas do the different Indian schools accept, and what is their relevance to psychological research?",
     plan: ["Basic terms: pramata, prameya, pramana, prama", "Nyaya's four pramanas with examples", "Arthapatti and anupalabdhi", "Schools and the number they accept", "The five-membered syllogism and fallacies", "Relevance to psychology"],
     answer: `## Introduction
-Indian philosophy asked carefully how we come to know anything. Nyaya, the school of logic founded on the Nyaya Sutras attributed to Gautama, answered with a theory of pramanas, the valid means of knowledge. This topic appears in both UGC NET Paper 1 and the psychology paper, so it rewards careful study.
+Indian philosophy asked carefully how we come to know anything. Nyaya, the school of logic founded on the Nyaya Sutras attributed to Gautama, answered with a theory of pramanas, the valid means of knowledge. This topic appears in both the general paper and the psychology paper of competitive exams, so it rewards careful study.
 
 ## Basic terms
 - Pramata: the knower.

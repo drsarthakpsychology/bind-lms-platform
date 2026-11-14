@@ -242,7 +242,7 @@ export const QUESTIONS_1: PrepQuestion[] = [
     "Karl Popper argued that a theory is scientific only if it can, in principle, be shown to be false.",
     "Popper held that no number of confirming observations can prove a universal theory true, whereas one well-established contrary observation can refute it.",
     0,
-    "Both are true and R explains A. Because verification of universal statements is logically impossible (the problem of induction), Popper made falsifiability the criterion separating science from non-science. This is the post-positivist position named in the Paper 1 syllabus.",
+    "Both are true and R explains A. Because verification of universal statements is logically impossible (the problem of induction), Popper made falsifiability the criterion separating science from non-science. This is the post-positivist position named in the general paper syllabus.",
     { ref: "Popper, The Logic of Scientific Discovery (1959)" }),
   mt("p1-036", "research-paradigms", 3,
     "Match the research paradigm (List I) with its typical stance (List II).",

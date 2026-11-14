@@ -27,15 +27,17 @@ export function SectionMarks({ owner, moduleId, sectionId, sectionLabel, lead }:
 
   return (
     <div className="mt-3">
-      <div className="flex flex-wrap items-center gap-2">
-        {lead}
+      {/* Phones: the view switch takes its own row, Bookmark and My note
+          share the next one. From 640px all three sit in one row. */}
+      <div className="grid grid-cols-2 items-center gap-2 sm:flex sm:flex-wrap">
+        {lead ? <div className="col-span-2 sm:contents">{lead}</div> : null}
         <button
           type="button"
           onClick={() => update((m) => toggleBookmark(m, key, Date.now()))}
           aria-pressed={on}
           disabled={!hydrated}
           className={cn(
-            "inline-flex min-h-11 items-center gap-1.5 rounded-md border-2 border-foreground px-4 text-sm font-semibold transition-colors disabled:opacity-60",
+            "inline-flex min-h-11 min-w-0 items-center justify-center gap-1.5 rounded-md border-2 border-foreground px-4 text-sm font-semibold transition-colors disabled:opacity-60",
             on ? "bg-foreground text-background" : "bg-card hover:bg-muted",
           )}
         >
@@ -49,7 +51,7 @@ export function SectionMarks({ owner, moduleId, sectionId, sectionLabel, lead }:
           aria-controls={panelId}
           disabled={!hydrated}
           className={cn(
-            "inline-flex min-h-11 items-center gap-1.5 rounded-md border-2 border-foreground px-4 text-sm font-semibold transition-colors disabled:opacity-60",
+            "inline-flex min-h-11 min-w-0 items-center justify-center gap-1.5 rounded-md border-2 border-foreground px-4 text-sm font-semibold transition-colors disabled:opacity-60",
             open ? "bg-muted" : "bg-card hover:bg-muted",
           )}
         >
@@ -132,9 +134,16 @@ function NotePanel({ id, initial, label, onSave, onClose }: { id: string; initia
 /* ------------------------------------------------------- /study: the list */
 
 /** Bookmarked sections and sections with a note, newest first. */
+const noSubscribe = () => () => {};
+
 export function MarksList({ owner, modules }: { owner: string; modules: StudyModule[] }) {
   const [marks, update] = useMarks(owner);
   const hydrated = useHydrated();
+  // Opened from search ("Bookmarks and notes", /study#marks): open the list and bring it into view.
+  const wanted = React.useSyncExternalStore(noSubscribe, () => window.location.hash === "#marks", () => false);
+  React.useEffect(() => {
+    if (hydrated && wanted) document.getElementById("marks")?.scrollIntoView({ block: "start" });
+  }, [hydrated, wanted]);
   if (!hydrated) return null;
 
   const byId = new Map(modules.map((m) => [m.id, m]));
@@ -147,7 +156,7 @@ export function MarksList({ owner, modules }: { owner: string; modules: StudyMod
   // Nothing saved yet: say nothing. The Bookmark and My note buttons are on every section.
   if (!items.length) return null;
   return (
-    <details className="group rounded-2xl border-2 border-foreground bg-card">
+    <details id="marks" open={wanted} className="group scroll-mt-24 rounded-2xl border-2 border-foreground bg-card">
       <summary className="flex min-h-12 cursor-pointer items-center px-4 font-bold">Bookmarks and notes ({items.length})</summary>
       <div className="px-3 pb-3">
           <ul className="mt-1 grid grid-cols-[minmax(0,1fr)] gap-2.5 md:grid-cols-2">

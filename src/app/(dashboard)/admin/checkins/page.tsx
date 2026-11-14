@@ -50,7 +50,7 @@ export default async function AdminCheckinsPage() {
   const concerning = aggregate.filter(isConcerningWeek);
 
   return (
-    <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6">
+    <div className="mx-auto max-w-4xl">
       <PageHeader
         title="Wellbeing check-ins"
         description="What this is: once a week students can answer three quick questions, how heavy the workload felt, their energy, and how prepared they feel. You only ever see the cohort's averages, never who said what. Use it to spot a week that was too heavy and ease the next one."

@@ -772,7 +772,7 @@ In a short note, aim for five crisp points with one example each, plus a line on
 :::
 
 :::clinician
-For postgraduate and NET-level answers, add one or two lines of current evidence with a named landmark study (for example Kapur's D2 occupancy data, Marek's brain-wide association work, the PGC 2022 schizophrenia GWAS, xanomeline-trospium approval in 2024), and show you know its limits. Examiners reward a balanced "what we know, what we do not" paragraph more than a long list.
+For postgraduate and competitive exam answers, add one or two lines of current evidence with a named landmark study (for example Kapur's D2 occupancy data, Marek's brain-wide association work, the PGC 2022 schizophrenia GWAS, xanomeline-trospium approval in 2024), and show you know its limits. Examiners reward a balanced "what we know, what we do not" paragraph more than a long list.
 :::
 
 :::recall

@@ -1,5 +1,7 @@
 import { describe, expect, it } from "vitest";
-import { searchPalette, STATIC_ENTRIES, scoreEntry, visibleEntries } from "./palette";
+import { medicinePaletteEntries, modulePaletteEntries, searchPalette, startEntries, STATIC_ENTRIES, scoreEntry, visibleEntries } from "./palette";
+import { MODULES } from "@/lib/study";
+import { MEDS } from "@/lib/meds";
 
 describe("command palette search", () => {
   it("exact label match ranks highest", () => {
@@ -73,3 +75,48 @@ describe("command palette search", () => {
     expect(STATIC_ENTRIES.find((e) => e.id === "clinic")?.href).toBe("/practice/detective?mode=clinic");
   });
 });
+
+describe("search keeps the top bar's promise: lectures, topics, medicines", () => {
+  const all = [...STATIC_ENTRIES, ...modulePaletteEntries(MODULES), ...medicinePaletteEntries(MEDS)];
+  const open = visibleEntries(all, { flags: { learn: "unlocked" } });
+
+  it("finds a Study module by its name and by a section inside it", () => {
+    expect(searchPalette(open, "antipsychotics").some((h) => h.href === "/study/antipsychotics")).toBe(true);
+    expect(searchPalette(open, "clozapine").some((h) => h.href === "/study/antipsychotics")).toBe(true);
+  });
+
+  it("finds a medicine by name and by brand", () => {
+    expect(searchPalette(open, "lithium").some((h) => h.href === "/practice/medicines/lithium")).toBe(true);
+    const brand = MEDS.find((m) => m.brands.length)!;
+    expect(searchPalette(open, brand.brands[0]).some((h) => h.href === `/practice/medicines/${brand.id}`)).toBe(true);
+  });
+
+  it("finds Lectures, saved questions and bookmarks again", () => {
+    expect(searchPalette(open, "lectures")[0].href).toBe("/courses");
+    expect(searchPalette(open, "bookmarks")[0].href).toBe("/study#marks");
+    expect(searchPalette(open, "saved questions")[0].href).toBe("/prep/saved");
+  });
+
+  it("Study modules hide with Study switched off or blocked", () => {
+    expect(visibleEntries(all, { flags: {} }).some((e) => e.group === "Study")).toBe(false);
+    expect(visibleEntries(all, { flags: { learn: "unlocked" }, blocked: (h) => h === "/study" || h.startsWith("/study/") }).some((e) => e.href.startsWith("/study"))).toBe(false);
+  });
+
+  it("before typing, it offers the menu's places in menu order", () => {
+    const first = startEntries(open).map((e) => e.label);
+    expect(first.slice(0, 7)).toEqual(["Home", "Study", "Lectures", "Medicines", "Exam Prep", "Practice", "Games"]);
+  });
+
+  it("labels match the Practice hub, with no small counts", () => {
+    const label = (id: string) => STATIC_ENTRIES.find((e) => e.id === id)?.label;
+    expect(label("cr")).toBe("AI patient interview");
+    expect(label("ethics")).toBe("Ethics, law & referral");
+    expect(label("osce")).toBe("OSCE stations");
+    for (const e of STATIC_ENTRIES) expect(`${e.label} ${e.hint ?? ""}`, e.id).not.toMatch(/\b\d{1,2} (questions|seconds|minutes|cards)\b/);
+  });
+
+  it("no fixed course link (each student sees their own courses in Lectures)", () => {
+    expect(STATIC_ENTRIES.some((e) => e.href.startsWith("/courses/"))).toBe(false);
+  });
+});
+

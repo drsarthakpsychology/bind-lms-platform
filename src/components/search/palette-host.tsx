@@ -1,4 +1,6 @@
-import { STATIC_ENTRIES, referencePaletteEntries, visibleEntries, type PaletteEntry } from "@/lib/search/palette";
+import { STATIC_ENTRIES, medicinePaletteEntries, modulePaletteEntries, referencePaletteEntries, visibleEntries, type PaletteEntry } from "@/lib/search/palette";
+import { MODULES } from "@/lib/study";
+import { MEDS } from "@/lib/meds";
 import { blockedBy } from "@/lib/access/features";
 import { referenceIndex } from "@/lib/reference/data";
 import { CommandPalette } from "./command-palette";
@@ -23,7 +25,9 @@ export async function PaletteHost({ isAdmin = false, flags = {}, blocked = [] }:
   }
 
   const reference = flags.learn === "unlocked" ? referenceEntries : [];
-  const entries = visibleEntries([...STATIC_ENTRIES, ...studentEntries, ...reference], { flags, isAdmin, blocked: (href) => Boolean(blockedBy(href, blocked)) });
+  // Study modules and medicines: what the top bar promises ("lectures, topics, medicines").
+  const topics = [...modulePaletteEntries(MODULES), ...medicinePaletteEntries(MEDS)];
+  const entries = visibleEntries([...STATIC_ENTRIES, ...topics, ...studentEntries, ...reference], { flags, isAdmin, blocked: (href) => Boolean(blockedBy(href, blocked)) });
   return <CommandPalette entries={entries} />;
 }
 

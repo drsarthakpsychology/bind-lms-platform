@@ -25,7 +25,7 @@ interface Tab {
  * Students, Study unlocked: the four most used places of the approved menu.
  * Everything else (Medicines, Practice, Games, Progress...) is one tap away in More.
  */
-const STUDENT_TABS: Tab[] = [
+export const STUDENT_TABS: Tab[] = [
   { href: "/dashboard", label: "Home", icon: Home, exact: true },
   { href: "/study", label: "Study", icon: BookOpen },
   { href: "/courses", label: "Lectures", icon: Play },
@@ -33,7 +33,7 @@ const STUDENT_TABS: Tab[] = [
 ];
 
 /** Students before Study opens: no links to locked screens. */
-const STUDENT_TABS_NO_STUDY: Tab[] = [
+export const STUDENT_TABS_NO_STUDY: Tab[] = [
   { href: "/dashboard", label: "Home", icon: Home, exact: true },
   { href: "/courses", label: "Lectures", icon: Play },
   { href: "/practice/medicines", label: "Medicines", icon: Pill },
@@ -41,7 +41,7 @@ const STUDENT_TABS_NO_STUDY: Tab[] = [
 ];
 
 /** Admin: the 4 highest-frequency destinations; everything else is in More. */
-const ADMIN_TABS: Tab[] = [
+export const ADMIN_TABS: Tab[] = [
   { href: "/admin", label: "Home", icon: Home, exact: true },
   // Phone tabs follow the 2026-11 admin menu: Students, Activity, Messages, and More for the rest.
   { href: "/admin/students", label: "Students", icon: Users, match: ["/admin/access", "/admin/roster", "/admin/cohorts"] },
@@ -50,7 +50,7 @@ const ADMIN_TABS: Tab[] = [
 ];
 
 /** Lecture roster: lectures, practice and alerts. */
-const LECTURE_ONLY_TABS: Tab[] = [
+export const LECTURE_ONLY_TABS: Tab[] = [
   { href: "/dashboard", label: "Home", icon: Home, exact: true },
   { href: "/courses", label: "Lectures", icon: Play },
   { href: "/doubts", label: "Doubts", icon: MessageCircleQuestion },

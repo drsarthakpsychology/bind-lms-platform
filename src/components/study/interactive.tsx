@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { HowToButton } from "@/components/help/how-to";
 import { ArrowLeft, ArrowRight, Check, Eye, Layers, RotateCcw, X } from "lucide-react";
 import { istToday, recordTest } from "@/lib/learn/engine";
 import { getLearnState, setLearnState } from "@/lib/learn/store";
@@ -9,6 +10,8 @@ import { noteAnswers, orderFor, useHistoryPrefetch } from "@/lib/history/client"
 import type { HistoryTool } from "@/lib/history/order";
 import { cn } from "@/lib/utils";
 import { Rich } from "./rich";
+import { useReaction } from "@/components/reactions/use-reaction";
+import { EndReaction, HalftoneCorner, ScoreDial } from "@/components/reactions/graphics";
 
 /**
  * Self-tests are never spread across the notes. Each one sits behind a small
@@ -40,6 +43,8 @@ export function CardDeck({
   const [i, setI] = React.useState(autoStart ? 0 : -1);
   const [shown, setShown] = React.useState(false);
   const [missed, setMissed] = React.useState<number[]>([]);
+  const [rounds, setRounds] = React.useState(0);
+  const reaction = useReaction();
   const label = title ?? (kind === "recall" ? "Check yourself" : "Viva rapid-fire");
 
   if (i < 0) {
@@ -61,10 +66,14 @@ export function CardDeck({
   if (i >= items.length) {
     return (
       <section className="rounded-2xl border-2 border-foreground bg-card p-5 text-center" role="status">
-        <p className="text-lg font-bold">Done: {items.length - missed.length} of {items.length} you knew</p>
+        <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-4">
+          <ScoreDial right={items.length - missed.length} total={items.length} label="known" />
+          <EndReaction right={items.length - missed.length} total={items.length} seed={rounds} className="min-w-0 basis-56" />
+        </div>
+        <p className="mt-4 text-lg font-bold">Done: {items.length - missed.length} of {items.length} you knew</p>
         <p className="mt-1 text-sm text-muted-foreground">{missed.length ? "Re-read the parts behind the ones you missed, then try again." : "Solid. Move on."}</p>
         <div className="mt-4 flex flex-wrap justify-center gap-2">
-          <button type="button" onClick={() => { setI(0); setShown(false); setMissed([]); }} className="inline-flex h-11 items-center gap-2 rounded-xl border-2 border-foreground px-4 font-semibold">
+          <button type="button" onClick={() => { reaction.reset(); setRounds((n) => n + 1); setI(0); setShown(false); setMissed([]); }} className="inline-flex h-11 items-center gap-2 rounded-xl border-2 border-foreground px-4 font-semibold">
             <RotateCcw className="size-4" aria-hidden /> Again
           </button>
           {onDone ? (
@@ -80,11 +89,13 @@ export function CardDeck({
   const c = items[i];
   const next = (knew: boolean) => {
     if (!knew) setMissed([...missed, i]);
+    reaction.onAnswer(knew);
     setShown(false);
     setI(i + 1);
   };
   return (
-    <section className="rounded-2xl border-2 border-foreground bg-card p-4 sm:p-5" aria-label={label} aria-live="polite">
+    <section className="relative isolate overflow-hidden rounded-2xl border-2 border-foreground bg-card p-4 sm:p-5" aria-label={label} aria-live="polite">
+      <HalftoneCorner />
       <div className="flex items-center justify-between gap-3 text-sm text-muted-foreground">
         <span className="font-semibold text-link">{label}</span>
         <span className="tabular-nums">
@@ -132,6 +143,8 @@ export function mcqKey(moduleId: string, m: Mcq): string {
   return `${moduleId.slice(0, 120)}:${(h >>> 0).toString(36)}`;
 }
 
+const TEST_INTRO = ["Pass mark: 80%. Your best score counts."];
+
 export function TestRunner({
   items: given,
   moduleId,
@@ -157,6 +170,7 @@ export function TestRunner({
   const [i, setI] = React.useState(autoStart ? 0 : -1);
   const [picks, setPicks] = React.useState<Record<number, number>>({});
   const [done, setDone] = React.useState(false);
+  const [attempt, setAttempt] = React.useState(0);
   const right = items.filter((m, k) => picks[k] === m.answer).length;
   const top = React.useRef<HTMLDivElement>(null);
   const toTop = () => requestAnimationFrame(() => top.current?.scrollIntoView({ behavior: "smooth", block: "start" }));
@@ -175,7 +189,7 @@ export function TestRunner({
       <div ref={top} className="rounded-3xl border-2 border-foreground bg-card p-5 sm:p-6">
         <p className="text-2xl font-bold">{label}</p>
         <ul className="mt-3 space-y-1.5 text-[0.95rem] text-muted-foreground empty:hidden">
-          {(intro ?? ["Pass mark: 80%. Your best score counts."]).map((t) => (
+          {(intro ?? TEST_INTRO).map((t) => (
             <li key={t}>{t}</li>
           ))}
         </ul>
@@ -191,11 +205,17 @@ export function TestRunner({
       <div ref={top} className="space-y-4">
         <div className="rounded-3xl border-2 border-foreground bg-foreground p-5 text-background" role="status">
           <p className="text-sm font-semibold text-primary">Your score</p>
-          <p className="mt-1 text-4xl font-black tabular-nums">
-            {right} <span className="text-xl font-semibold">/ {items.length}</span>
+          <div className="mt-3 flex flex-wrap items-center gap-x-6 gap-y-4">
+            <div className="text-foreground">
+              <ScoreDial right={right} total={items.length} />
+            </div>
+            <EndReaction right={right} total={items.length} seed={attempt} tone="dark" className="min-w-0 flex-1 basis-56" />
+          </div>
+          <p className="sr-only">
+            {right} / {items.length}
           </p>
           <p className="mt-1 text-sm opacity-90">{right / items.length >= 0.8 ? "Strong. Look over the ones you missed, then move on." : "Go back to the sections behind the ones you missed, then re-test."}</p>
-          <button type="button" onClick={() => { reorder(); setPicks({}); setDone(false); setI(0); toTop(); }} className="mt-3 inline-flex min-h-11 items-center gap-1.5 rounded-md border-2 border-primary px-3 py-1.5 text-sm font-semibold text-primary">
+          <button type="button" onClick={() => { reorder(); setAttempt((n) => n + 1); setPicks({}); setDone(false); setI(0); toTop(); }} className="mt-3 inline-flex min-h-11 items-center gap-1.5 rounded-md border-2 border-primary px-3 py-1.5 text-sm font-semibold text-primary">
             <RotateCcw className="size-4" aria-hidden /> Try again
           </button>
         </div>
@@ -236,11 +256,16 @@ export function TestRunner({
   const pick = picks[i];
   const last = i === items.length - 1;
   return (
-    <div ref={top} className="rounded-3xl border-2 border-foreground bg-card p-4 sm:p-6" aria-live="polite">
+    <div ref={top} className="relative isolate overflow-hidden rounded-3xl border-2 border-foreground bg-card p-4 sm:p-6" aria-live="polite">
+      <HalftoneCorner />
       <div className="flex items-center justify-between text-sm text-muted-foreground">
         <span className="font-semibold text-link">{label}</span>
-        <span className="tabular-nums">
-          {i + 1} of {items.length}
+        <span className="flex items-center gap-1">
+          <span className="tabular-nums">
+            {i + 1} of {items.length}
+          </span>
+          {/* The start card's words, during the test. */}
+          {(intro ?? TEST_INTRO).length ? <HowToButton id="module-test" label="How it works" title={label} steps={intro ?? TEST_INTRO} className="-my-2 text-foreground" /> : null}
         </span>
       </div>
       <div className="mt-2">

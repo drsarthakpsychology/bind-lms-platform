@@ -11,7 +11,9 @@ import { PatternFacts } from "../facts";
 
 export async function generateMetadata({ params }: { params: Promise<{ spec: string }> }): Promise<Metadata> {
   const { spec } = await params;
-  return { title: specById(spec)?.short ? `Mock: ${specById(spec)!.short}` : "Mock" };
+  const s = specById(spec);
+  // Exam-pattern names never reach a student's tab title while exam tracks are off.
+  return { title: s && specVisible(s) ? `Mock: ${s.short}` : "Mock" };
 }
 
 /** /prep/mock/<pattern>: the pattern, then the timed paper (sampled fresh on Start, scored on the server). */
@@ -26,11 +28,12 @@ export default async function MockPage({ params }: { params: Promise<{ spec: str
   return (
     <PrepFrame wide>
       <div className="mx-auto max-w-2xl lg:mx-0">
-        <BackToPrep href="/prep/mock" label="Mocks" />
+        <BackToPrep href="/prep/mock" label="Mock tests" />
       </div>
       <MockExam
         specId={spec.id}
         title={spec.title}
+        rules={<PatternFacts spec={spec} />}
         intro={
           <div className="mx-auto max-w-2xl space-y-5 lg:mx-0">
             <h1 className="text-h1">{spec.title}</h1>

@@ -3,7 +3,6 @@ export const qa = String.raw`
 # Part IV · Exam zone
 
 ## 4.1 Q&A bank · Starting [starting]
-Think each question through before opening the answer. These model the depth examiners reward.
 
 :::qa What is the difference between a type and a trait approach, and why has the field moved to traits? [starting]
 ### Short answer
@@ -616,7 +615,7 @@ The triguna model adds a **change-oriented** and **ethical** dimension that West
 
 :::qa Using explanatory style and self-discrepancy theory, formulate a student's depression after failing an entrance exam. [advanced]
 ### The case
-Rohan, 19, failed NEET for the second time. He says: "I'm useless. I'll never be a doctor. My parents sacrificed everything; I've let them down." He sleeps most of the day.
+Rohan, 19, failed the medical entrance for the second time. He says: "I'm useless. I'll never be a doctor. My parents sacrificed everything; I've let them down." He sleeps most of the day.
 ### Explanatory style
 | Dimension | His explanation | Effect |
 |---|---|---|

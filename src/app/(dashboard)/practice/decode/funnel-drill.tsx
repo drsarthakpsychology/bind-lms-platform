@@ -43,7 +43,7 @@ export function FunnelDrill({ entry }: { entry: IdiomEntry }) {
       </div>
 
       {/* the phrase */}
-      <div className="rounded-md border-2 border-border bg-card p-4">
+      <div className="rounded-lg border-2 border-border bg-card p-4">
         <p className="text-caption text-muted-foreground">The patient says</p>
         <p className="mt-1 text-base font-medium">&ldquo;{entry.phrase}&rdquo;</p>
       </div>
@@ -52,7 +52,7 @@ export function FunnelDrill({ entry }: { entry: IdiomEntry }) {
       {answers.length > 0 ? (
         <div className="space-y-2">
           {answers.map((a, i) => (
-            <div key={i} className="rounded-md border-2 border-border bg-card p-3">
+            <div key={i} className="rounded-lg border-2 border-border bg-card p-3">
               <div className="flex items-start justify-between gap-2">
                 <p className="text-small">{i + 1}. {a.question}</p>
                 <span className="shrink-0 text-caption font-medium text-muted-foreground">
@@ -92,7 +92,7 @@ export function FunnelDrill({ entry }: { entry: IdiomEntry }) {
 
       {/* commit to a reading */}
       {done ? (
-        <div className="rounded-md border-2 border-border bg-card p-4">
+        <div className="rounded-lg border-2 border-border bg-card p-4">
           <p className="flex items-center gap-1.5 text-base font-semibold">
             <Target className="size-4" aria-hidden /> Commit to a reading
           </p>

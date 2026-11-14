@@ -30,6 +30,7 @@ export default function Error({
     <ErrorState
       onRetry={unstable_retry}
       digest={error.digest}
+      homeHref="/go/home"
       className="min-h-screen"
     />
   );

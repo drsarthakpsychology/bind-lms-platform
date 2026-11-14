@@ -18,7 +18,7 @@ export default async function AdminManagementPage() {
   const admins = await listAdmins();
 
   return (
-    <div className="mx-auto w-full max-w-3xl space-y-6 px-4 py-6 sm:px-6 lg:py-10">
+    <div className="mx-auto w-full max-w-3xl space-y-6">
       <header>
         <p className="text-eyebrow text-link">Super Admin only</p>
         <h1 className="text-h1">Admin Management</h1>

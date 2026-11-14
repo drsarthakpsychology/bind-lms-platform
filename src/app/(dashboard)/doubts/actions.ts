@@ -6,6 +6,7 @@ import { createAdminClient } from "@/lib/supabase/server";
 import { loadMyCohorts } from "@/lib/cohorts/access";
 import { kindFor } from "@/lib/doubts/classify";
 import { rateLimit } from "@/lib/rate-limit";
+import { notifyAdminsOfDoubt, notifyAskerOfReply } from "@/lib/notify/doubts";
 import { canParticipate, isUuid, type DoubtRow } from "./visibility";
 
 type R = { error: string | null; id?: string };
@@ -59,6 +60,7 @@ export async function askDoubt(input: { title: string; body: string; topic?: str
     .select("id")
     .single();
   if (error || !data) return { error: error?.code === "42P01" ? "The doubts board isn't set up yet. Ask your admin to run the new database step." : "Couldn't post it. Try again." };
+  await notifyAdminsOfDoubt({ doubtId: data.id as string, title, body, kind, askerId: me.id });
   refresh();
   return { error: null, id: data.id as string };
 }
@@ -73,6 +75,7 @@ export async function replyToDoubt(doubtId: string, body: string): Promise<R> {
   if (!(await loadVisibleDoubt(doubtId, me))) return { error: "That doubt isn't open to you." };
   const { error } = await createAdminClient().from("doubt_replies").insert({ doubt_id: doubtId, user_id: me.id, body: text });
   if (error) return { error: "Couldn't post your answer. Try again." };
+  await notifyAskerOfReply({ doubtId, replierId: me.id, body: text });
   refresh(doubtId);
   return { error: null };
 }

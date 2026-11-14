@@ -533,7 +533,7 @@ export const VIGNETTE_2: InterviewQuestion[] = [
     { module: "depression" }),
 
   iv("iv-vig-056", 4,
-    "A 20-year-old NEET aspirant in a coaching hub failed the exam for the second time. She has stopped eating, told a roommate 'my parents' sacrifices were wasted', and gave away her books. What do you do?",
+    "A 20-year-old medical entrance aspirant in a coaching hub failed the exam for the second time. She has stopped eating, told a roommate 'my parents' sacrifices were wasted', and gave away her books. What do you do?",
     [
       "What warning signs of suicide are present?",
       "What did the Supreme Court require of coaching institutes in 2025?",

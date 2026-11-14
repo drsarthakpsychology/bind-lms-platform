@@ -128,7 +128,7 @@ export default async function StudentProfilePage({ params, searchParams }: { par
   return (
     <div className="space-y-5 sm:space-y-6">
       <Link href="/admin/students" className="inline-flex min-h-10 items-center gap-1 text-sm font-bold text-link hover:underline">
-        <ChevronLeft className="size-4" aria-hidden /> Students
+        <ChevronLeft className="size-4" aria-hidden /> Back to Students
       </Link>
 
       <PersonHeader

@@ -71,7 +71,7 @@ export function PeerWall() {
   return (
     <div className="space-y-4">
       {/* compose */}
-      <form onSubmit={post} className="space-y-2 rounded-md border-2 border-border bg-card p-4">
+      <form onSubmit={post} className="space-y-2 rounded-lg border-2 border-border bg-card p-4">
         <p className="flex items-center gap-1.5 text-caption font-semibold text-muted-foreground">
           <Eye className="size-3.5" aria-hidden /> Share your formulation anonymously: the cohort learns from each other&apos;s structure.
         </p>
@@ -99,13 +99,13 @@ export function PeerWall() {
 
       {/* wall */}
       {loaded && posts.length === 0 ? (
-        <p className="rounded-md border-2 border-dashed border-border bg-card p-6 text-center text-small text-muted-foreground">
+        <p className="rounded-lg border-2 border-dashed border-border bg-card p-6 text-center text-small text-muted-foreground">
           No formulations on the wall yet: be the first to share one.
         </p>
       ) : (
         <ul className="space-y-3">
           {posts.map((p) => (
-            <li key={p.id} className="rounded-md border-2 border-border bg-card p-4">
+            <li key={p.id} className="rounded-lg border-2 border-border bg-card p-4">
               <div className="flex items-center justify-between gap-2 text-caption text-muted-foreground">
                 <span className="min-w-0 break-words font-medium text-foreground">{p.caseTitle}</span>
                 <span className="shrink-0">Anonymous · {new Date(p.createdAt).toLocaleDateString()}</span>

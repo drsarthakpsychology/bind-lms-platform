@@ -1,12 +1,13 @@
 "use client";
 
 import * as React from "react";
+import { HowToButton, startHowTo } from "@/components/help/how-to";
 import { ArrowLeft, ArrowRight, Check, Circle, Clock, Eraser, Flag, LayoutGrid, Send, TriangleAlert, X } from "lucide-react";
 import { CELL_LABEL, WARN_MS, cellState, clock, clockWords, step, type CellState } from "@/lib/prep/exam";
 import type { MockResultView } from "@/lib/prep/results";
 import { cn } from "@/lib/utils";
 import { startMock, submitMock, type MockPaperView } from "../actions";
-import { KeysHint, Options, QuestionBody, useShortcuts } from "../question";
+import { KEYS_MOCK, KeysHint, Options, QuestionBody, useShortcuts } from "../question";
 import { btnInk, btnPlain, btnPrimary, card } from "../ui";
 import { MockResult } from "./result";
 
@@ -40,7 +41,7 @@ function CellIcon({ state, className }: { state: CellState; className?: string }
  * auto-submit at time-up) → results. Answers stay in the browser until
  * submit; scoring happens on the server.
  */
-export function MockExam({ specId, title, intro }: { specId: string; title: string; intro: React.ReactNode }) {
+export function MockExam({ specId, title, intro, rules }: { specId: string; title: string; intro: React.ReactNode; /** The pattern and marking, for the how-to button during the paper. */ rules?: React.ReactNode }) {
   const [phase, setPhase] = React.useState<Phase>("intro");
   const [paper, setPaper] = React.useState<MockPaperView | null>(null);
   const [sec, setSec] = React.useState(0);
@@ -116,6 +117,7 @@ export function MockExam({ specId, title, intro }: { specId: string; title: stri
   /* ---------------------------------------------------- start / end */
 
   async function begin() {
+    startHowTo("prep-mock");
     setPhase("starting");
     setError(null);
     try {
@@ -189,7 +191,10 @@ export function MockExam({ specId, title, intro }: { specId: string; title: stri
     const [s, p] = step(sizes, sec, pos, dir);
     go(s, p);
   };
-  const pick = (i: number) => q && setAnswers((a) => ({ ...a, [q.id]: i }));
+  const pick = (i: number) => {
+    startHowTo(KEYS_MOCK);
+    if (q) setAnswers((a) => ({ ...a, [q.id]: i }));
+  };
   const clear = () => q && setAnswers((a) => ({ ...a, [q.id]: null }));
   const toggleMark = () => q && setMarked((m) => ({ ...m, [q.id]: !m[q.id] }));
 
@@ -282,7 +287,7 @@ export function MockExam({ specId, title, intro }: { specId: string; title: stri
   return (
     <div className="space-y-4">
       {/* Top bar: title, clock, palette (phones), submit */}
-      <div className="sticky top-0 z-20 -mx-4 flex flex-wrap items-center gap-2 border-b-2 border-foreground bg-background px-4 py-2 sm:-mx-6 sm:px-6">
+      <div className="sticky top-0 z-20 -mx-4 flex flex-wrap items-center gap-2 border-b-2 border-foreground bg-background px-4 py-2 sm:-mx-6 sm:px-6 md:top-[var(--top-h)]">
         <p className="min-w-0 flex-1 truncate text-sm font-semibold">{title}</p>
         <p
           className={cn("inline-flex min-h-11 items-center gap-1.5 rounded-md border-2 border-foreground px-3 font-mono text-base font-bold tabular-nums", warn ? "bg-status-alert-bg text-status-alert-fg" : "bg-card")}
@@ -293,6 +298,11 @@ export function MockExam({ specId, title, intro }: { specId: string; title: stri
           {clock(left)}
           {warn ? <span className="font-sans text-xs font-semibold">left</span> : null}
         </p>
+        {rules ? (
+          <HowToButton id="prep-mock" label="How it works" intro="The clock keeps running.">
+            {rules}
+          </HowToButton>
+        ) : null}
         <button type="button" className={cn(btnPlain, "lg:hidden")} aria-expanded={paletteOpen} aria-controls="palette-phone" onClick={() => setPaletteOpen((o) => !o)}>
           <LayoutGrid className="size-4" aria-hidden /> All
         </button>

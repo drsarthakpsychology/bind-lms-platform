@@ -282,6 +282,7 @@ export async function loadCourseOverview(
           week: nextAction.week,
           kind: nextAction.type,
           number: nextAction.type === "lesson" ? (lectureNumber.get(nextAction.id) ?? null) : null,
+          midway: nextAction.type === "lesson" && watchedIds.has(nextAction.id) && !completedIds.has(nextAction.id),
         }
       : null,
     weeks,

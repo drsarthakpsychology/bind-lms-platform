@@ -48,7 +48,7 @@ export function SevenReadings({ entry }: { entry: IdiomEntry }) {
         You were taught one. Assign every reading that could apply.
       </p>
 
-      <div className="rounded-md border-2 border-border bg-card p-4">
+      <div className="rounded-lg border-2 border-border bg-card p-4">
         <p className="text-caption text-muted-foreground">In context, the patient says</p>
         <p className="mt-1 text-base font-medium">&ldquo;{entry.phrase}&rdquo;</p>
       </div>
@@ -90,7 +90,7 @@ export function SevenReadings({ entry }: { entry: IdiomEntry }) {
       ) : null}
 
       {revealed ? (
-        <div className="rounded-md border-2 border-border bg-card p-4">
+        <div className="rounded-lg border-2 border-border bg-card p-4">
           <p className="text-base font-semibold">
             {hits} right{misses > 0 ? `, ${misses} off the mark` : ""}
           </p>

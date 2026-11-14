@@ -125,7 +125,6 @@ Q: Which component of a psychodynamic formulation guards against explaining ever
 :::
 
 ## 3.2 Worked formulations: Indian and global cases [core][advanced]
-Each case shows the same steps. Try to answer each step before you reveal it.
 
 :::widget worked
 {

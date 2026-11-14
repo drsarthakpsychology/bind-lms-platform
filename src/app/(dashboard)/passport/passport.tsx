@@ -44,7 +44,7 @@ export function Passport({ rows }: { rows: PassportRow[] }) {
     <div className="space-y-6">
       {/* summary: one dominant metric (logged hours), the other two demoted to a strip */}
       <div className="space-y-3">
-        <div className="rounded-md border-2 border-border bg-card p-4 hard-shadow-sm">
+        <div className="rounded-lg border-2 border-border bg-card p-4 hard-shadow-sm">
           <p className="text-caption text-muted-foreground">Logged hours</p>
           <p className="mt-1 text-numeric text-h1 font-bold tracking-tight">{hours.toFixed(1)}h</p>
           <p className="mt-1 text-caption text-muted-foreground">
@@ -60,7 +60,7 @@ export function Passport({ rows }: { rows: PassportRow[] }) {
       {/* competency grid, with an honest empty state until the first evidence
           lands (T51: an invitation, not a report). */}
       {evid === 0 && rows.length > 0 ? (
-        <div className="rounded-md border-2 border-dashed border-border bg-card p-5 text-center">
+        <div className="rounded-lg border-2 border-dashed border-border bg-card p-5 text-center">
           <p className="text-base font-medium text-foreground">Your passport is a blank slate</p>
           <p className="mx-auto mt-1 max-w-[40ch] text-small text-muted-foreground">
             Every tagged supervision hour and practice session you finish lands
@@ -73,7 +73,7 @@ export function Passport({ rows }: { rows: PassportRow[] }) {
         {rows.map((r) => {
           const touched = r.events.length > 0;
           return (
-            <li key={r.key} className="rounded-md border-2 border-border bg-card p-4">
+            <li key={r.key} className="rounded-lg border-2 border-border bg-card p-4">
               <div className="flex items-center justify-between gap-3">
                 <div className="min-w-0">
                   <p className={cn("text-small font-semibold", touched && "text-link")}>
@@ -170,7 +170,7 @@ export function Passport({ rows }: { rows: PassportRow[] }) {
 
 function Stat({ label, value }: { label: string; value: string }) {
   return (
-    <div className="rounded-md border-2 border-border bg-card p-4">
+    <div className="rounded-lg border-2 border-border bg-card p-4">
       <p className="text-caption text-muted-foreground">{label}</p>
       <p className="text-numeric text-base font-semibold">{value}</p>
     </div>

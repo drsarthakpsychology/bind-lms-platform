@@ -94,7 +94,7 @@ A **psychiatrist** is a medical doctor (MBBS plus MD or DNB in psychiatry) who c
 :::
 
 :::clinician
-Definitional debates are not trivial. The behaviourist definition (1913) excluded consciousness as unscientific; the cognitive revolution readmitted mental processes as theoretical constructs inferred from behaviour (reaction times, error patterns), which is the methodological sense of "mental processes" in the modern definition. A frequent PG question asks whether psychology is a natural science (Naturwissenschaft) or a human science (Geisteswissenschaft); Wilhelm Dilthey's distinction between **explaining** (Erklären, causal laws) and **understanding** (Verstehen, grasping meaning from within) underlies this, and is why Dilthey appears among the "four founding paths" of academic psychology in the UGC NET syllabus (Wundt, Freud, James, Dilthey). Indian scholars (Paranjpe; Misra) argue that Indian traditions add a third aim, **self-knowledge and transformation**, which neither explanation nor understanding fully captures. You will return to this in the section on paradigms.
+Definitional debates are not trivial. The behaviourist definition (1913) excluded consciousness as unscientific; the cognitive revolution readmitted mental processes as theoretical constructs inferred from behaviour (reaction times, error patterns), which is the methodological sense of "mental processes" in the modern definition. A frequent PG question asks whether psychology is a natural science (Naturwissenschaft) or a human science (Geisteswissenschaft); Wilhelm Dilthey's distinction between **explaining** (Erklären, causal laws) and **understanding** (Verstehen, grasping meaning from within) underlies this, and is why Dilthey appears among the "four founding paths" of academic psychology in Indian postgraduate syllabi (Wundt, Freud, James, Dilthey). Indian scholars (Paranjpe; Misra) argue that Indian traditions add a third aim, **self-knowledge and transformation**, which neither explanation nor understanding fully captures. You will return to this in the section on paradigms.
 :::
 
 :::recall
@@ -781,7 +781,7 @@ A string of small lights flashing one after another along a balcony in Ahmedabad
 :::
 
 ### Psychoanalysis
-**Sigmund Freud**, a Viennese neurologist, developed psychoanalysis from his work with patients with "hysteria" (conversion symptoms). His great book on dreams appeared in 1900. Psychoanalysis differed from the academic schools: it came from the **clinic**, not the laboratory; it centred on the **unconscious**, conflict, sexuality and early childhood; and its method was **free association** and interpretation. The detailed theory is in the defences and psychodynamics modules. For this module, know its place: one of the **four founding paths** in the NET syllabus, a "first force", and the source of much of clinical psychology.
+**Sigmund Freud**, a Viennese neurologist, developed psychoanalysis from his work with patients with "hysteria" (conversion symptoms). His great book on dreams appeared in 1900. Psychoanalysis differed from the academic schools: it came from the **clinic**, not the laboratory; it centred on the **unconscious**, conflict, sexuality and early childhood; and its method was **free association** and interpretation. The detailed theory is in the defences and psychodynamics modules. For this module, know its place: one of the **four founding paths** in Indian postgraduate syllabi, a "first force", and the source of much of clinical psychology.
 
 
 :::widget layers
@@ -845,7 +845,7 @@ From the 1980s, **multicultural and cross-cultural psychology** argued that most
 :::
 
 :::clinician
-The NET syllabus's "four founding paths of academic psychology" are **Wundt, Freud, James and Dilthey**, framed in Indian syllabus writing as four distinct entry points: experimental-physiological psychology (Wundt), clinical-depth psychology (Freud), pragmatic-functional psychology (James) and interpretive human-science psychology (Dilthey's descriptive and analytic psychology, 1894, and his Verstehen tradition, later developed in phenomenological and hermeneutic psychology). The "cognitive revolution" narrative is itself debated: some historians argue there was no Kuhnian revolution but continuity with Tolman's neo-behaviourism, information theory and cybernetics; others stress the rupture over language (Chomsky). Gestalt's influence runs into perception research, Lewin's social psychology and group dynamics, Gestalt therapy (Perls, a separate tradition with the same name) and modern predictive-coding accounts of perceptual organisation. For long answers, a comparison table of schools on founder, subject matter, method, key concepts, contribution and criticism earns marks quickly.
+The "four founding paths of academic psychology" in Indian postgraduate syllabi are **Wundt, Freud, James and Dilthey**, framed in Indian syllabus writing as four distinct entry points: experimental-physiological psychology (Wundt), clinical-depth psychology (Freud), pragmatic-functional psychology (James) and interpretive human-science psychology (Dilthey's descriptive and analytic psychology, 1894, and his Verstehen tradition, later developed in phenomenological and hermeneutic psychology). The "cognitive revolution" narrative is itself debated: some historians argue there was no Kuhnian revolution but continuity with Tolman's neo-behaviourism, information theory and cybernetics; others stress the rupture over language (Chomsky). Gestalt's influence runs into perception research, Lewin's social psychology and group dynamics, Gestalt therapy (Perls, a separate tradition with the same name) and modern predictive-coding accounts of perceptual organisation. For long answers, a comparison table of schools on founder, subject matter, method, key concepts, contribution and criticism earns marks quickly.
 :::
 
 :::recall
@@ -1144,7 +1144,7 @@ Q: The fifth limb of yoga, withdrawing the senses from their objects, is:
 :::
 
 ## 2.5 Buddhism, Sufism and Integral Yoga [core][beginner]
-The UGC NET syllabus lists these three by name, along with the Gita.
+Postgraduate syllabi list these three by name, along with the Gita.
 
 ### Buddhism: suffering and its end
 **Siddhartha Gautama** (the Buddha, around the 5th century BCE, in what is now Bihar and Uttar Pradesh) taught a path to end suffering based on careful observation of the mind. Its psychology is so detailed that some scholars call it the first cognitive-behavioural system.
@@ -1304,7 +1304,7 @@ Q: In Sri Aurobindo's psychology, the evolving soul that guides the person from 
 :::
 
 ## 2.6 Nyaya and the ways of knowing [core][beginner]
-How do we know anything? **Nyaya**, the Indian school of logic and epistemology (founded on **Gautama's Nyaya Sutras**), answered with a theory of **pramanas**: valid **means of knowledge**. This topic appears in **both** NET Paper 2 (Indian psychology) and NET Paper 1 (logical reasoning), so learn it carefully.
+How do we know anything? **Nyaya**, the Indian school of logic and epistemology (founded on **Gautama's Nyaya Sutras**), answered with a theory of **pramanas**: valid **means of knowledge**. This topic appears in **both** the psychology paper (Indian psychology) and the general paper (logical reasoning) of competitive exams, so learn it carefully.
 
 ### Four terms
 - **Pramata**: the knower.
@@ -1391,7 +1391,7 @@ A reason that only looks like a reason is a **hetvabhasa**. Nyaya lists five kin
 :::
 
 :::clinician
-Nyaya epistemology is a realist, externalist theory: a cognition is valid (prama) if it corresponds to its object and arises from a reliable process (paratah pramanya, extrinsic validity, as against Mimamsa's svatah pramanya, intrinsic validity, where cognitions are presumed valid until defeated). This parallels the debate between reliabilism and evidentialism in contemporary epistemology. The nirvikalpaka and savikalpaka distinction anticipates modern work on pre-conceptual sensory registration versus categorical perception. In psychological research the pramanas map onto sources of evidence: perception (observation), inference (theory-guided reasoning from data), comparison (analogical reasoning and model-based learning) and testimony (literature and expert consensus), which makes a useful frame for NET answers linking Indian logic to research methods. NET Paper 1 questions commonly ask the number of pramanas per school, examples of each, the members of the syllogism and the hetvabhasa types.
+Nyaya epistemology is a realist, externalist theory: a cognition is valid (prama) if it corresponds to its object and arises from a reliable process (paratah pramanya, extrinsic validity, as against Mimamsa's svatah pramanya, intrinsic validity, where cognitions are presumed valid until defeated). This parallels the debate between reliabilism and evidentialism in contemporary epistemology. The nirvikalpaka and savikalpaka distinction anticipates modern work on pre-conceptual sensory registration versus categorical perception. In psychological research the pramanas map onto sources of evidence: perception (observation), inference (theory-guided reasoning from data), comparison (analogical reasoning and model-based learning) and testimony (literature and expert consensus), which makes a useful frame for exam answers linking Indian logic to research methods. General paper questions commonly ask the number of pramanas per school, examples of each, the members of the syllogism and the hetvabhasa types.
 :::
 
 :::recall
@@ -1451,12 +1451,12 @@ Q: Gestalt psychology began with Wertheimer's study of:
 - Nonsense syllables
 > Apparent motion (1912).
 
-Q: The NET syllabus names the four founding paths of academic psychology as:
+Q: Indian postgraduate syllabi name the four founding paths of academic psychology as:
 - Wundt, Titchener, Watson, Skinner
 - Plato, Aristotle, Descartes, Locke
 - Maslow, Rogers, May, Frankl
 - *Wundt, Freud, James, Dilthey
-> As listed in UGC NET Unit 1.
+> As listed in the first unit of postgraduate syllabi.
 
 Q: The book that named cognitive psychology in 1967 was written by:
 - George Miller

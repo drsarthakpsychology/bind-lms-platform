@@ -6,6 +6,14 @@ import { haptic } from "@/lib/haptics";
 import { diffNarratives, FIVE_P, scoreSort, SEED_FORMULATION, type FiveP, type FormulationFactor } from "@/lib/practice/formulation";
 import { buildFormulationAttemptPayload } from "@/lib/practice/formulation-attempt";
 import { FORMULATION_COMPETENCY_KEYS, recordCompetencyEvent } from "@/lib/practice/competency-client";
+import { OnceHint } from "@/components/help/once-hint";
+import { showEndReaction } from "@/components/reactions/store";
+import { moodForScore } from "@/lib/reactions/stickers";
+
+/** The finish sticker for a word diff: happy when most of the model's words are there. */
+function diffMood(d: { missing: string[]; present: string[] }) {
+  return moodForScore(d.present.length, d.present.length + d.missing.length);
+}
 
 /** In-flight snapshot: a refresh mid-sort or mid-narrative restores the work
  *  instead of dropping it (T46/T47). */
@@ -143,7 +151,7 @@ export function FormulationForge({ seed = SEED_FORMULATION }: { seed?: ForgeSeed
                 key={p}
                 type="button"
                 onClick={() => placeSelected(p)}
-                className="min-h-[120px] rounded-md border-2 border-dashed border-border bg-card p-3 text-left transition-transform active:translate-y-px"
+                className="min-h-[120px] rounded-lg border-2 border-dashed border-border bg-card p-3 text-left transition-transform active:translate-y-px"
               >
                 <span className="text-caption font-semibold uppercase text-link">{p}</span>
                 <span className="mt-1 flex flex-col gap-1">
@@ -162,7 +170,7 @@ export function FormulationForge({ seed = SEED_FORMULATION }: { seed?: ForgeSeed
 
           {/* unplaced + distractor cards */}
           <div>
-            <p className="text-caption text-muted-foreground">Tap a card, then tap a bucket. Or drag.</p>
+            <OnceHint id="formulation-sort" className="text-caption text-muted-foreground">Tap a card, then tap a bucket. Or drag.</OnceHint>
             <div className="mt-2 flex flex-wrap gap-2">
               {seed.factors.map((f) => {
                 const placedIn = attempt.find((a) => a.factorId === f.id)?.bucket;
@@ -200,7 +208,7 @@ export function FormulationForge({ seed = SEED_FORMULATION }: { seed?: ForgeSeed
 
       {/* STAGE 2: narrative */}
       {stage === 2 ? (
-        <div className="space-y-3 rounded-md border-2 border-border bg-card p-5 hard-shadow-sm">
+        <div className="space-y-3 rounded-lg border-2 border-border bg-card p-5 hard-shadow-sm">
           <p className="text-small text-muted-foreground">
             Write a 3-6 sentence formulation linking the factors you sorted.
           </p>
@@ -213,7 +221,13 @@ export function FormulationForge({ seed = SEED_FORMULATION }: { seed?: ForgeSeed
           />
           <button
             type="button"
-            onClick={() => { setDiff(diffNarratives(narrative, seed.modelNarrative)); setStage(3); haptic("tap"); }}
+            onClick={() => {
+              setDiff(diffNarratives(narrative, seed.modelNarrative));
+              setStage(3);
+              haptic("tap");
+              // The finish sticker: happy or sad by the sort score.
+              showEndReaction(moodForScore(Math.round(score * 100), 100));
+            }}
             disabled={narrative.trim().length < 40}
             className="w-full rounded-md border-2 border-border bg-primary px-4 py-2 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px active:hard-shadow-none disabled:opacity-50"
           >
@@ -224,7 +238,7 @@ export function FormulationForge({ seed = SEED_FORMULATION }: { seed?: ForgeSeed
 
       {/* STAGE 3: diff */}
       {stage === 3 && diff ? (
-        <div className="space-y-3 rounded-md border-2 border-border bg-card p-5 hard-shadow-sm">
+        <div className="space-y-3 rounded-lg border-2 border-border bg-card p-5 hard-shadow-sm">
           <h2 className="text-base font-semibold">Your formulation vs the model</h2>
           <div className="rounded-md border border-border bg-background p-3 text-small">
             <span className="font-semibold text-muted-foreground">The answer: </span>
@@ -301,7 +315,7 @@ function OwnTranscriptForge() {
   if (error) return <p className="text-small text-destructive">{error}</p>;
   if (!data || data.count === 0) {
     return (
-      <div className="rounded-md border-2 border-dashed border-border bg-card p-6 text-center">
+      <div className="rounded-lg border-2 border-dashed border-border bg-card p-6 text-center">
         <p className="text-base font-medium">No sessions to formulate from yet</p>
         <p className="mt-1 text-small text-muted-foreground">
           Run a Consulting Room session and finish its debrief, then come back here
@@ -328,6 +342,7 @@ function OwnTranscriptForge() {
   function diffIt() {
     const d = diffNarratives(narrative, modelNarrative || SEED_FORMULATION.modelNarrative);
     setDiff(d);
+    showEndReaction(diffMood(d));
     // Credit the formulation competencies into the Skills Passport.
     void recordCompetencyEvent("formulation", FORMULATION_COMPETENCY_KEYS, narrative.trim().length >= 120 ? 4 : 3, "Formulation from own transcript").catch(() => {});
     // Persist this own-transcript attempt (session-based; no formulation case).
@@ -352,7 +367,7 @@ function OwnTranscriptForge() {
   }
 
   return (
-    <div className="space-y-3 rounded-md border-2 border-border bg-card p-5 hard-shadow-sm">
+    <div className="space-y-3 rounded-lg border-2 border-border bg-card p-5 hard-shadow-sm">
       <h2 className="text-base font-semibold">Stage 4: formulate your own session</h2>
       <p className="text-small text-muted-foreground">
         Session: <span className="font-medium text-foreground">{data.full?.title ?? "Untitled"}</span> ({data.count} completed

@@ -962,7 +962,7 @@ In law answers, write the **section number with the idea** ("section 89, support
 :::
 
 :::clinician
-Postgraduate and NET answers gain from critique: the MHCA's resource demands (Boards, establishment registration) versus implementation; debates over whether supported admission complies with the CRPD; the tension between POCSO mandatory reporting and adolescent health care; RCI and NCAHP jurisdiction for psychologists; and the gap between the RPwD Act's limited guardianship and the National Trust Act. Cite one Indian judgment and one programme evaluation where relevant.
+Postgraduate and competitive exam answers gain from critique: the MHCA's resource demands (Boards, establishment registration) versus implementation; debates over whether supported admission complies with the CRPD; the tension between POCSO mandatory reporting and adolescent health care; RCI and NCAHP jurisdiction for psychologists; and the gap between the RPwD Act's limited guardianship and the National Trust Act. Cite one Indian judgment and one programme evaluation where relevant.
 :::
 
 :::recall

@@ -38,6 +38,10 @@ export default async function TopicPage({ params, searchParams }: Params) {
     return q ? [toView(q)] : [];
   });
   const nextChip = view.sets[view.set + 1];
+  // After the last set of a topic, the next step is the next topic of the subject.
+  const topics = bankTopics(subject);
+  const at = topics.findIndex((x) => x.id === topic);
+  const nextTopic = nextChip || at < 0 ? undefined : topics[at + 1];
 
   return (
     <PrepFrame>
@@ -85,9 +89,9 @@ export default async function TopicPage({ params, searchParams }: Params) {
         canSave={view.canSave && me.learner}
         preview={!me.learner}
         label={`${view.title}, set ${view.set + 1}`}
-        next={nextChip ? { href: nextChip.href, label: `Set ${nextChip.n}` } : null}
+        next={nextChip ? { href: nextChip.href, label: "Next set" } : nextTopic ? { href: `/prep/${subject}/${nextTopic.id}`, label: `Next topic: ${nextTopic.title}` } : null}
         again="reset"
-        back={{ href: `/prep/${subject}`, label: "All topics" }}
+        back={{ href: `/prep/${subject}`, label: `Back to ${SUBJECT_TITLE[subject]}` }}
         empty={<p className="font-semibold">Questions for this topic are being added.</p>}
       />
 
