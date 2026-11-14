@@ -24,6 +24,9 @@ type Verdict = {
   resolved: import("./proxy-client").ResolvedStream | null;
   /** Enrollment re-check passed. */
   authorized: boolean;
+  /** The browser session (plms_session) that passed the full check. Chunk
+   *  requests may skip the session lookup only when they carry this cookie. */
+  session?: string | null;
 };
 
 const cache = new Map<string, { v: Verdict; expiresAt: number }>();
