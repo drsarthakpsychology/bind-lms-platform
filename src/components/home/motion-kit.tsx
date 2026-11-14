@@ -82,6 +82,52 @@ export function Reveal({
   );
 }
 
+/* ------------------------------------------------------------ Stagger */
+/**
+ * A list whose items arrive one after another once the list is on screen,
+ * so a reader meets each person or card in turn instead of a block landing
+ * at once. One trigger for the whole list (not one per row), so rows lower
+ * on a phone are already in place by the time the reader scrolls to them.
+ * Timing: 560 ms per item, 110 ms apart, after a 150 ms beat for the heading
+ * above to settle: about 1.5 s for eight people, quick enough not to stall a
+ * fast scroller, slow enough that each name registers.
+ */
+export function Stagger({
+  items,
+  className,
+  itemClassName,
+  label,
+  step = 0.11,
+  lead = 0.15,
+}: {
+  items: { key: string; node: React.ReactNode; className?: string }[];
+  className?: string;
+  itemClassName?: string;
+  label?: string;
+  step?: number;
+  lead?: number;
+}) {
+  const ref = React.useRef<HTMLUListElement>(null);
+  const inView = useInView(ref, { once: true, margin: "0px 0px -15% 0px" });
+  const calm = useCalm();
+  return (
+    <ul ref={ref} className={className} aria-label={label}>
+      {items.map((it, i) => (
+        <motion.li
+          key={it.key}
+          data-reveal
+          className={[itemClassName, it.className].filter(Boolean).join(" ")}
+          initial={calm ? false : { opacity: 0, y: 18 }}
+          animate={inView || calm ? { opacity: 1, y: 0 } : undefined}
+          transition={{ duration: 0.56, delay: lead + i * step, ease: EASE }}
+        >
+          {it.node}
+        </motion.li>
+      ))}
+    </ul>
+  );
+}
+
 /* --------------------------------------------- Words rise into place */
 export function SplitWords({
   text,

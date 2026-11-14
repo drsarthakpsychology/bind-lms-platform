@@ -607,7 +607,7 @@
 }
 /* `.btn > span[aria-hidden]` (the arrow nudge) is more specific than a bare
    class, so these need the `.btn >` prefix or both labels show at once. */
-.btn > .ctaShort {
+.btn > span.ctaShort[aria-hidden] {
   display: none;
 }
 @media (max-width: 479px) {
@@ -617,7 +617,7 @@
   .btn > .ctaLong {
     display: none;
   }
-  .btn > .ctaShort {
+  .btn > span.ctaShort[aria-hidden] {
     display: inline-block;
   }
 }
@@ -2812,6 +2812,37 @@
   padding: 16px;
   box-shadow: var(--shadow-sm);
 }
+.facultyItem {
+  display: grid;
+}
+.facultyItem > .facultyCard {
+  height: 100%;
+}
+/* Phones: two people per row (a stacked list of eight full-width cards
+   was ~1,100px of scrolling for names alone). Avatar sits above the name. */
+@media (max-width: 559px) {
+  .faculty {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .facultyItem > .facultyCard {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 14px 12px;
+  }
+  .facultyItem > .facultyCard .avatar {
+    width: 44px;
+    height: 44px;
+    font-size: 0.8rem;
+  }
+  .facultyName {
+    font-size: 0.98rem;
+  }
+  .facultyNoteCard p {
+    font-size: 0.92rem;
+  }
+}
 .facultyName {
   font-weight: 900;
   font-size: 1.06rem;
@@ -3276,6 +3307,25 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
   gap: 12px;
+}
+.foldMore {
+  display: none;
+}
+@media (max-width: 559px) {
+  .modules[data-open="false"] > li:nth-child(n + 5) {
+    display: none;
+  }
+  .modules > .module {
+    grid-template-columns: 38px 1fr;
+    gap: 8px;
+  }
+  .foldMore {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: 14px;
+    min-height: 48px;
+  }
 }
 .module {
   display: grid;
@@ -4119,8 +4169,16 @@ details[open] > summary .chev {
 }
 .footGrid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 32px;
+  /* Two columns even on phones: Explore beside Legal, brand and contact
+     full width, so the footer is half as long to thumb through. */
+  grid-template-columns: 1fr 1fr;
+  gap: 32px 20px;
+}
+@media (max-width: 639px) {
+  .footGrid > :first-child,
+  .footGrid > :last-child {
+    grid-column: 1 / -1;
+  }
 }
 @media (min-width: 640px) {
   .footGrid {

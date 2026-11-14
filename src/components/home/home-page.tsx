@@ -40,9 +40,9 @@ import {
 import { archivo, pixel, pixelDigits } from "./fonts";
 import { INSTRUMENTS } from "@/lib/free/tests";
 import { CALM_TOOLS } from "@/lib/free/calm";
-import { Carousel, ClinicCallGame, DaySwitch, DefenceGame, DepthTabs, DisorderPicker, MemoryGame, TherapyMixer } from "./games";
+import { Carousel, ClinicCallGame, DaySwitch, DefenceGame, DepthTabs, DisorderPicker, FoldList, MemoryGame, TherapyMixer } from "./games";
 import { HomeNav } from "./home-nav";
-import { CountUp, Cursor, Magnetic, Marquee, Parallax, Reveal, ScrollProgress, SectionHead, Tilt } from "./motion-kit";
+import { CountUp, Cursor, Magnetic, Marquee, Parallax, Reveal, ScrollProgress, SectionHead, Stagger, Tilt } from "./motion-kit";
 import { CollegeVs, GroupScene, JourneyScene, ScenarioStack, ScrubText, Stickers, WeeksTimeline } from "./scenes";
 import s from "./home.module.css";
 
@@ -517,33 +517,49 @@ function Faculty() {
             <Person who="doctor3" className={s.headArtOnStar} />
           </div>
         </div>
-        <Tilt className={s.lead} max={3}>
-          <span className={`${s.avatar} ${s.avatarBig}`} aria-hidden>
-            {FACULTY_LEAD.initials}
-          </span>
-          <div>
-            <span className={s.pixLabelLime}>{FACULTY_LEAD.role}</span>
-            <h3 className={s.leadName}>{FACULTY_LEAD.name}</h3>
-            <p>{FACULTY_LEAD.text}</p>
-          </div>
-        </Tilt>
-        <ul className={s.faculty}>
-          {FACULTY.map((f) => (
-            <Tilt as="li" key={f.name} className={s.facultyCard} max={8}>
-              <span className={`${s.avatar} ${s[`av_${f.tone}`]}`} aria-hidden>
-                {f.initials}
-              </span>
-              <div>
-                <span className={s.pixLabel}>{f.role}</span>
-                <h3 className={s.facultyName}>{f.name}</h3>
-              </div>
-            </Tilt>
-          ))}
-          <li className={`${s.facultyCard} ${s.facultyNoteCard}`}>
-            <p>Every case discussion is led by the clinician who took the case.</p>
-          </li>
-        </ul>
-        <div className={s.runBy}>
+        <Reveal y={20}>
+          <Tilt className={s.lead} max={3}>
+            <span className={`${s.avatar} ${s.avatarBig}`} aria-hidden>
+              {FACULTY_LEAD.initials}
+            </span>
+            <div>
+              <span className={s.pixLabelLime}>{FACULTY_LEAD.role}</span>
+              <h3 className={s.leadName}>{FACULTY_LEAD.name}</h3>
+              <p>{FACULTY_LEAD.text}</p>
+            </div>
+          </Tilt>
+        </Reveal>
+        <Stagger
+          className={s.faculty}
+          itemClassName={s.facultyItem}
+          lead={0.3}
+          items={[
+            ...FACULTY.map((f) => ({
+              key: f.name,
+              node: (
+                <Tilt className={s.facultyCard} max={8}>
+                  <span className={`${s.avatar} ${s[`av_${f.tone}`]}`} aria-hidden>
+                    {f.initials}
+                  </span>
+                  <div>
+                    <span className={s.pixLabel}>{f.role}</span>
+                    <h3 className={s.facultyName}>{f.name}</h3>
+                  </div>
+                </Tilt>
+              ),
+            })),
+            {
+              key: "note",
+              className: s.facultyNoteItem,
+              node: (
+                <div className={`${s.facultyCard} ${s.facultyNoteCard}`}>
+                  <p>Every case discussion is led by the clinician who took the case.</p>
+                </div>
+              ),
+            },
+          ]}
+        />
+        <Reveal className={s.runBy} delay={0.1} y={16}>
           <span className={s.pixLabelLime}>Run by</span>
           {LEADERSHIP.map((l) => (
             <p key={l.name}>
@@ -551,7 +567,7 @@ function Faculty() {
               <span>{l.role}</span>
             </p>
           ))}
-        </div>
+        </Reveal>
       </div>
     </section>
   );
@@ -705,7 +721,7 @@ function Curriculum() {
           >
             {[
               <div key="all">
-                <ol className={s.modules}>
+                <FoldList className={s.modules} more={`Show all ${MODULES.length} modules`}>
             {MODULES.map((m) => (
               <li key={m.n} className={s.module}>
                 <span className={s.moduleNum}>{m.n}</span>
@@ -715,7 +731,7 @@ function Curriculum() {
                 </div>
               </li>
             ))}
-                </ol>
+                </FoldList>
               </div>,
               ...depthPanels(),
             ]}
