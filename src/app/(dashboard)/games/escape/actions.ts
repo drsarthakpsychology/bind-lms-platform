@@ -2,8 +2,11 @@
 
 import { record } from "@/lib/history/server";
 import { z } from "zod";
-import { answer, escapeXp, isRight, raceBoard, startEscape, teamTime, type EscState, type RaceRow } from "@/lib/games-sims/escape/engine";
+import { answer, escapeXp, raceBoard, startEscape, teamTime, type EscState, type RaceRow } from "@/lib/games-sims/escape/engine";
+import { canonical, practiceAnswer, practiceStart, practiceState, roomView, type PracticeToken } from "@/lib/games-sims/escape/deal";
 import { roomById } from "@/lib/games-sims/escape/rooms";
+import type { RoomView } from "@/lib/games-sims/escape/types";
+import { secretSeed, sign, verify } from "@/lib/games/token";
 import { currentUser, gradeAnswers, payXp, saveResult } from "@/lib/games-sims/server/results";
 import { createTeam, joinTeam, loadMyTeam, myName, rivalTeams, updateTeam, type TeamRow } from "@/lib/games-sims/server/teams";
 import { normaliseCode, TEAM_LIMITS } from "@/lib/games-sims/teams";
@@ -11,11 +14,16 @@ import { normaliseCode, TEAM_LIMITS } from "@/lib/games-sims/teams";
 const id = z.string().min(1).max(40);
 const raw = z.string().max(60);
 
+/** The secret seed that shuffles an order door for one team or run (the browser can't work it out). */
+const orderSeed = (key: string) => String(secretSeed("escape-order", key));
+
 export type EscapeView = {
   teamId: string;
   code: string;
   name: string;
   room: string;
+  /** What the team may see now: the current door without its answer, opened doors, the hint once open. */
+  view: RoomView;
   status: TeamRow["status"];
   state: EscState;
   members: { name: string; me: boolean }[];
@@ -46,11 +54,14 @@ export async function escapeView(teamId: string): Promise<EscapeView | null> {
   if (!t) return null;
   const now = Date.now();
   const st = t.team.state as unknown as EscState;
+  const r = roomById(t.team.scenario);
+  if (!r) return null;
   return {
     teamId,
     code: t.team.code,
     name: t.team.name,
     room: t.team.scenario,
+    view: roomView(r, st, orderSeed(t.team.id)),
     status: t.team.status,
     state: st,
     members: t.members.map((m) => ({ name: m.name, me: m.user_id === user.id })),
@@ -102,7 +113,8 @@ export async function answerEscape(input: { teamId: string; stage: number; answe
     const r = t ? roomById(t.team.scenario) : undefined;
     if (!t || !r || t.team.status !== "playing") return { view: await escapeView(parsed.data.teamId), ok: false };
     const st = t.team.state as unknown as EscState;
-    const res = answer(r, st, parsed.data.stage, parsed.data.answer, name, new Date().toISOString());
+    const door = r.puzzles[parsed.data.stage];
+    const res = door ? answer(r, st, parsed.data.stage, canonical(door, parsed.data.answer, orderSeed(t.team.id)), name, new Date().toISOString()) : { applied: false as const, ok: false, state: st };
     if (!res.applied) return { view: await escapeView(parsed.data.teamId), ok: false };
     const finished = res.state.done ? new Date().toISOString() : null;
     const saved = await updateTeam(t.team.id, t.team.version, { state: res.state as unknown as Record<string, unknown>, ...(finished ? { status: "done" as const, finished_at: finished } : {}) });
@@ -124,35 +136,58 @@ export async function answerEscape(input: { teamId: string; stage: number; answe
   return { view: await escapeView(parsed.data.teamId), ok: false };
 }
 
-/** Practice run (no team): each answer graded for the student model. */
-export async function gradeEscapePractice(input: { room: string; stage: number; answer: string; first: boolean }): Promise<{ ok: boolean }> {
-  const parsed = z.object({ room: id, stage: z.number().int().min(0).max(10), answer: raw, first: z.boolean() }).safeParse(input);
+export type PracticeResult =
+  | { ok: true; token: string; view: RoomView; state: EscState; now: number; right?: boolean; ms?: number; xp?: number }
+  | { ok: false; error: string };
+
+const FAIL = "That didn't load. Try again.";
+
+/** A practice run (no team), dealt on the server: the browser gets the first door, no answers. */
+export async function startEscapePractice(room: string): Promise<PracticeResult> {
   const user = await currentUser();
-  const r = parsed.success ? roomById(parsed.data.room) : undefined;
-  const p = r && parsed.success ? r.puzzles[parsed.data.stage] : undefined;
-  if (!parsed.success || !user || !r || !p) return { ok: false };
-  const ok = isRight(p, parsed.data.answer);
-  await Promise.all([
-    gradeAnswers(user, [{ skill: p.skill, item: `escape:${r.id}:${p.id}`, outcome: ok ? 1 : 0, first: parsed.data.first }]),
-    // Answer history: the first try at each lock counts.
-    parsed.data.first ? record(user.id, "escape", `${r.id}:${p.id}`, ok) : null,
-  ]);
-  return { ok };
+  const r = id.safeParse(room).success ? roomById(room) : undefined;
+  if (!user) return { ok: false, error: "Please sign in again." };
+  if (!r) return { ok: false, error: FAIL };
+  const now = Date.now();
+  const run = `${now.toString(36)}${Math.floor(Math.random() * 1e9).toString(36)}`;
+  const t = practiceStart(user.id, run, r, now);
+  const st = practiceState(t, user.id)!.st;
+  return { ok: true, token: sign(t), view: roomView(r, st, orderSeed(run)), state: st, now };
 }
 
-/** Practice run finished: every final answer is checked again before XP is paid. */
-export async function finishEscapePractice(input: { room: string; run: string; answers: string[]; wrong: number; ms: number }): Promise<{ ok: boolean; xp: number }> {
-  const parsed = z.object({ room: id, run: z.string().min(4).max(40), answers: z.array(raw).max(10), wrong: z.number().int().min(0).max(500), ms: z.number().int().min(0).max(864e5) }).safeParse(input);
+/**
+ * A practice answer, checked here. Wrong tries and time are counted on the
+ * server; the last door saves the result and pays XP once per run.
+ */
+export async function answerEscapePractice(input: { token: string; stage: number; answer: string }): Promise<PracticeResult> {
+  const parsed = z.object({ token: z.string().min(10).max(2000), stage: z.number().int().min(0).max(10), answer: raw }).safeParse(input);
   const user = await currentUser();
-  const r = parsed.success ? roomById(parsed.data.room) : undefined;
-  if (!parsed.success || !user || !r) return { ok: false, xp: 0 };
-  if (parsed.data.answers.length !== r.puzzles.length || !r.puzzles.every((p, i) => isRight(p, parsed.data.answers[i]))) return { ok: false, xp: 0 };
-  const n = r.puzzles.length;
-  // The browser's clock can't be checked, so practice never counts as faster than three minutes.
-  const ms = Math.max(180000, parsed.data.ms) + parsed.data.wrong * 20000;
-  const [, xp] = await Promise.all([
-    saveResult(user.id, { game: "escape", item: r.id, score: n / (n + parsed.data.wrong), right: n, total: n + parsed.data.wrong, meta: { mode: "practice", ms } }),
-    payXp(user.id, "escape", escapeXp(ms, parsed.data.wrong), `practice:${r.id}:${parsed.data.run}`),
+  if (!user) return { ok: false, error: "Please sign in again." };
+  if (!parsed.success) return { ok: false, error: FAIL };
+  const t = verify<PracticeToken>(parsed.data.token);
+  const cur = practiceState(t, user.id);
+  if (!t || !cur) return { ok: false, error: FAIL };
+  const seed = orderSeed(t.run);
+  const res = practiceAnswer(t, cur.room, cur.st, parsed.data.stage, parsed.data.answer, seed);
+  // Not the current door (already open, or the run is over): send the run as it stands.
+  if (!res) return { ok: true, token: parsed.data.token, view: roomView(cur.room, cur.st, seed), state: cur.st, now: Date.now() };
+  const r = cur.room;
+  const p = res.door;
+  await Promise.all([
+    gradeAnswers(user, [{ skill: p.skill, item: `escape:${r.id}:${p.id}`, outcome: res.ok ? 1 : 0, first: res.first }]),
+    // Answer history: the first try at each lock counts.
+    res.first ? record(user.id, "escape", `${r.id}:${p.id}`, res.ok) : null,
   ]);
-  return { ok: true, xp };
+  const now = Date.now();
+  const state = { ...res.state, log: [] };
+  const out = { ok: true as const, token: sign(res.next), view: roomView(r, state, seed), state, now, right: res.ok };
+  if (!res.state.done) return out;
+  const n = r.puzzles.length;
+  const wrong = res.state.wrong;
+  const ms = teamTime(new Date(t.t0).toISOString(), now, wrong);
+  const [, xp] = await Promise.all([
+    saveResult(user.id, { game: "escape", item: r.id, score: n / (n + wrong), right: n, total: n + wrong, meta: { mode: "practice", ms } }),
+    payXp(user.id, "escape", escapeXp(ms, wrong), `practice:${r.id}:${t.run}`),
+  ]);
+  return { ...out, ms, xp };
 }

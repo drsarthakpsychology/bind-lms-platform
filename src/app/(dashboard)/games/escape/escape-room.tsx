@@ -6,12 +6,12 @@ import { ArrowDown, ArrowRight, ArrowUp, Check, DoorOpen, FileText, Flag, Lightb
 import { cn } from "@/lib/utils";
 import { LearnLink } from "@/lib/games/ui/learn-link";
 import { clock } from "@/lib/games-sims/common";
-import { answer as applyAnswer, escapeXp, HINT_AFTER, PENALTY_S, shownOrder, startEscape, teamTime, type EscState, type RaceRow } from "@/lib/games-sims/escape/engine";
-import { ROOMS, roomById, STAGE_LABEL, type Puzzle, type Room } from "@/lib/games-sims/escape/rooms";
+import { escapeXp, HINT_AFTER, PENALTY_S, teamTime, type EscState, type RaceRow } from "@/lib/games-sims/escape/engine";
+import { STAGE_LABEL, type OpenedDoor, type PublicDoor, type RoomCard, type RoomView } from "@/lib/games-sims/escape/types";
 import { TEAM_LIMITS } from "@/lib/games-sims/teams";
 import { Btn, buzz, Kbd, motionCss as m, Panel, Pill, Stat, useHotkeys } from "@/lib/games-sims/ui/kit";
 import { JoinBox, Members, TeamCode, usePoll } from "@/lib/games-sims/ui/team";
-import type { EscapeView } from "./actions";
+import type { EscapeView, PracticeResult } from "./actions";
 import { creditServerPlay } from "@/lib/learn/credit-play";
 import { useReaction } from "@/components/reactions/use-reaction";
 import { EndReaction } from "@/components/reactions/graphics";
@@ -22,16 +22,20 @@ type Actions = {
   escapeView: (teamId: string) => Promise<EscapeView | null>;
   startEscapeTeam: (teamId: string) => Promise<EscapeView | null>;
   answerEscape: (x: { teamId: string; stage: number; answer: string }) => Promise<{ view: EscapeView | null; ok: boolean }>;
-  gradeEscapePractice: (x: { room: string; stage: number; answer: string; first: boolean }) => Promise<{ ok: boolean }>;
-  finishEscapePractice: (x: { room: string; run: string; answers: string[]; wrong: number; ms: number }) => Promise<{ ok: boolean; xp: number }>;
+  startEscapePractice: (room: string) => Promise<PracticeResult>;
+  answerEscapePractice: (x: { token: string; stage: number; answer: string }) => Promise<PracticeResult>;
 };
-type TeamItem = { id: string; name: string; room: string; status: string };
-type Mode = { kind: "pick" } | { kind: "practice"; room: string; run: string; startedAt: number } | { kind: "team"; teamId: string };
+type TeamItem = { id: string; name: string; room: string; title: string; status: string };
+type Started = Extract<PracticeResult, { ok: true }>;
+type Mode = { kind: "pick" } | { kind: "practice"; room: string; run: number; start: Started; startedAt: number } | { kind: "team"; teamId: string };
+
+const FAIL = "That didn't load. Try again.";
 
 const LETTERS = ["a", "b", "c", "d", "e", "f"];
 
-export function EscapeRoom({ teamsOn, openTeam, teams, actions }: { teamsOn: boolean; openTeam: string | null; teams: TeamItem[]; actions: Actions }) {
+export function EscapeRoom({ rooms, teamsOn, openTeam, teams, actions }: { rooms: RoomCard[]; teamsOn: boolean; openTeam: string | null; teams: TeamItem[]; actions: Actions }) {
   const [mode, setMode] = React.useState<Mode>(openTeam ? { kind: "team", teamId: openTeam } : { kind: "pick" });
+  const [startErr, setStartErr] = React.useState<string | null>(null);
   function go(next: Mode) {
     if (next.kind !== "pick") startHowTo("team-escape-room");
     try {
@@ -41,11 +45,35 @@ export function EscapeRoom({ teamsOn, openTeam, teams, actions }: { teamsOn: boo
     }
     setMode(next);
   }
-  const practice = (room: string) => go({ kind: "practice", room, run: `${Date.now().toString(36)}${Math.floor(Math.random() * 1e6).toString(36)}`, startedAt: Date.now() });
-  if (mode.kind === "practice") return <Practice key={mode.run} room={roomById(mode.room)!} run={mode.run} startedAt={mode.startedAt} actions={actions} onExit={() => go({ kind: "pick" })} onAgain={() => practice(mode.room)} />;
+  /** The server deals the run; the browser gets the first door only. */
+  async function practice(room: string): Promise<string | null> {
+    const r = await actions.startEscapePractice(room).catch(() => null);
+    if (!r || !r.ok) return r?.error ?? FAIL;
+    go({ kind: "practice", room, run: mode.kind === "practice" ? mode.run + 1 : 0, start: r, startedAt: Date.now() });
+    return null;
+  }
+  if (mode.kind === "practice")
+    return (
+      <Practice
+        key={mode.run}
+        start={mode.start}
+        startedAt={mode.startedAt}
+        actions={actions}
+        onExit={() => go({ kind: "pick" })}
+        onAgain={async () => {
+          const e = await practice(mode.room);
+          if (e) {
+            setStartErr(e);
+            go({ kind: "pick" });
+          }
+        }}
+      />
+    );
   if (mode.kind === "team") return <TeamRun teamId={mode.teamId} actions={actions} onExit={() => go({ kind: "pick" })} />;
   return (
     <Pick
+      rooms={rooms}
+      startErr={startErr}
       teamsOn={teamsOn}
       teams={teams}
       onPractice={practice}
@@ -65,14 +93,14 @@ export function EscapeRoom({ teamsOn, openTeam, teams, actions }: { teamsOn: boo
 }
 
 /* ------------------------------------------------------------------ pick */
-function Pick({ teamsOn, teams, onPractice, onCreate, onJoin, onOpen }: { teamsOn: boolean; teams: TeamItem[]; onPractice: (room: string) => void; onCreate: (room: string) => Promise<string | null>; onJoin: (code: string) => Promise<string | null>; onOpen: (id: string) => void }) {
-  const [err, setErr] = React.useState<string | null>(null);
+function Pick({ rooms, startErr, teamsOn, teams, onPractice, onCreate, onJoin, onOpen }: { rooms: RoomCard[]; startErr: string | null; teamsOn: boolean; teams: TeamItem[]; onPractice: (room: string) => Promise<string | null>; onCreate: (room: string) => Promise<string | null>; onJoin: (code: string) => Promise<string | null>; onOpen: (id: string) => void }) {
+  const [err, setErr] = React.useState<string | null>(startErr);
   const [busy, setBusy] = React.useState<string | null>(null);
   return (
     <div className={cn("mx-auto max-w-3xl space-y-6", m.rise)}>
       <h1 className="text-h2">Pick a room</h1>
       <ul className={cn("grid gap-4 md:grid-cols-3", m.stagger)}>
-        {ROOMS.map((r, i) => (
+        {rooms.map((r, i) => (
           <li key={r.id} className={cn("flex flex-col rounded-xl border-2 border-foreground bg-card p-4 hard-shadow-sm", m.rise)} style={{ "--i": i } as React.CSSProperties}>
             <p className="flex items-center gap-1.5 text-caption text-muted-foreground">
               <MapPin className="size-3.5" aria-hidden /> {r.place}
@@ -80,7 +108,7 @@ function Pick({ teamsOn, teams, onPractice, onCreate, onJoin, onOpen }: { teamsO
             <h2 className="mt-1 text-h3">{r.title}</h2>
             <p className="text-small font-semibold">{r.patient}</p>
             <p className="mt-2 flex-1 text-small">{r.intro}</p>
-            <p className="mt-2 text-caption text-muted-foreground">{r.puzzles.length} doors</p>
+            <p className="mt-2 text-caption text-muted-foreground">{r.doors} doors</p>
             <div className="mt-3 grid gap-2">
               {teamsOn ? (
                 <Btn
@@ -97,8 +125,18 @@ function Pick({ teamsOn, teams, onPractice, onCreate, onJoin, onOpen }: { teamsO
                   <Users aria-hidden /> {busy === r.id ? "Starting…" : "Start a team"}
                 </Btn>
               ) : null}
-              <Btn variant={teamsOn ? "outline" : "primary"} onClick={() => onPractice(r.id)}>
-                <Play aria-hidden /> Practice alone
+              <Btn
+                variant={teamsOn ? "outline" : "primary"}
+                disabled={busy !== null}
+                onClick={async () => {
+                  setBusy(`practice:${r.id}`);
+                  setErr(null);
+                  const e = await onPractice(r.id).catch(() => FAIL);
+                  setBusy(null);
+                  if (e) setErr(e);
+                }}
+              >
+                <Play aria-hidden /> {busy === `practice:${r.id}` ? "Starting…" : "Practice alone"}
               </Btn>
             </div>
           </li>
@@ -120,7 +158,7 @@ function Pick({ teamsOn, teams, onPractice, onCreate, onJoin, onOpen }: { teamsO
                   <li key={t.id}>
                     <Btn className="w-full justify-between" onClick={() => onOpen(t.id)}>
                       <span className="truncate">
-                        {t.name} · {roomById(t.room)?.title ?? t.room} · {t.status === "lobby" ? "waiting to start" : "inside"}
+                        {t.name} · {t.title} · {t.status === "lobby" ? "waiting to start" : "inside"}
                       </span>
                       <ArrowRight aria-hidden />
                     </Btn>
@@ -160,20 +198,20 @@ function Clock({ ms, wrong }: { ms: number; wrong: number }) {
 /* ------------------------------------------------------------- the room */
 type Feedback = { stage: number; ok: boolean; by?: string } | null;
 
-function Doors({ room, st, feedback }: { room: Room; st: EscState; feedback: Feedback }) {
-  const open = st.done ? room.puzzles.length : st.stage;
+function Doors({ room, st, feedback }: { room: RoomView; st: EscState; feedback: Feedback }) {
+  const open = st.done ? room.doors : st.stage;
   return (
     <ol className="grid grid-cols-7 gap-1.5 sm:gap-2" aria-label="Doors">
-      {room.puzzles.map((p, i) => {
+      {room.stages.map((stage, i) => {
         const isOpen = i < open;
         const now = !st.done && i === st.stage;
         const justOpened = feedback?.ok && feedback.stage === i;
         return (
-          <li key={p.id} className="min-w-0 text-center">
+          <li key={i} className="min-w-0 text-center">
             <div key={`${i}-${isOpen}`} className={cn("mx-auto grid size-9 place-items-center rounded-md border-2 border-foreground sm:size-11", isOpen ? "bg-foreground text-background" : now ? "bg-primary text-primary-foreground" : "bg-card text-muted-foreground", justOpened && m.unlock, now && feedback && !feedback.ok && feedback.stage === i && m.shake)}>
               {isOpen ? <LockOpen className="size-4 sm:size-5" aria-hidden /> : <Lock className="size-4 sm:size-5" aria-hidden />}
             </div>
-            <span className="mt-1 block truncate text-caption">{STAGE_LABEL[p.stage]}</span>
+            <span className="mt-1 block truncate text-caption">{STAGE_LABEL[stage]}</span>
             <span className="sr-only">{isOpen ? "open" : now ? "current" : "locked"}</span>
           </li>
         );
@@ -182,9 +220,8 @@ function Doors({ room, st, feedback }: { room: Room; st: EscState; feedback: Fee
   );
 }
 
-function CaseFile({ room, st }: { room: Room; st: EscState }) {
-  const open = st.done ? room.puzzles.length : st.stage;
-  const pages = [room.intro, ...room.puzzles.slice(0, open).map((p) => p.unlock)];
+function CaseFile({ room }: { room: RoomView }) {
+  const pages = [room.intro, ...room.opened.map((p) => p.unlock)];
   return (
     <Panel className="h-fit space-y-2 p-3 lg:sticky lg:top-[calc(var(--top-h)+1rem)]">
       <p className="flex items-center gap-1.5 text-caption font-semibold uppercase">
@@ -204,12 +241,11 @@ function CaseFile({ room, st }: { room: Room; st: EscState }) {
 }
 
 /** One door: the puzzle with tap controls for every kind; `locked` after a right answer while the next loads. */
-function Door({ p, seed, tries, feedback, disabled, onSubmit }: { p: Puzzle; seed: string; tries: number; feedback: Feedback; disabled: boolean; onSubmit: (raw: string) => void }) {
+function Door({ p, hint, tries, feedback, disabled, onSubmit }: { p: PublicDoor; hint: string | null; tries: number; feedback: Feedback; disabled: boolean; onSubmit: (raw: string) => void }) {
   const [picked, setPicked] = React.useState<number[]>([]);
-  const [order, setOrder] = React.useState<number[]>(() => shownOrder(p, seed));
+  // An order door's items arrive shuffled by the server; the answer is the shown positions in the chosen order.
+  const [order, setOrder] = React.useState<number[]>(() => (p.kind === "order" ? p.items.map((_, i) => i) : []));
   const [num, setNum] = React.useState<number>(() => (p.kind === "number" ? p.min : 0));
-  // Help after wrong answers is free, so it simply shows once it opens.
-  const hint = tries >= HINT_AFTER;
 
   const keys: Record<string, () => void> = {};
   if (p.kind === "pick" && !disabled) p.options.forEach((_, i) => (keys[LETTERS[i]] = () => onSubmit(String(i))));
@@ -237,7 +273,7 @@ function Door({ p, seed, tries, feedback, disabled, onSubmit }: { p: Puzzle; see
             {tries} wrong {tries === 1 ? "try" : "tries"}
           </span>
         ) : null}
-        {!hint ? (
+        {!hint && tries < HINT_AFTER ? (
           <span className="ml-auto inline-flex items-center gap-1 text-caption text-muted-foreground">
             <Lightbulb className="size-3.5" aria-hidden /> Hint after {HINT_AFTER} misses
           </span>
@@ -245,7 +281,7 @@ function Door({ p, seed, tries, feedback, disabled, onSubmit }: { p: Puzzle; see
       </div>
       {hint ? (
         <p className={cn("flex items-start gap-2 rounded-md border-2 border-foreground bg-status-pending-bg p-2 text-small text-status-pending-fg", m.rise)} role="status">
-          <Lightbulb className="mt-0.5 size-4 shrink-0" aria-hidden /> <span className="min-w-0">{p.hint}</span>
+          <Lightbulb className="mt-0.5 size-4 shrink-0" aria-hidden /> <span className="min-w-0">{hint}</span>
         </p>
       ) : null}
       <p className="text-body-strong">{p.prompt}</p>
@@ -331,7 +367,7 @@ function Door({ p, seed, tries, feedback, disabled, onSubmit }: { p: Puzzle; see
   );
 }
 
-function OpenedCard({ p, by, onNext, nextLabel }: { p: Puzzle; by?: string; onNext: () => void; nextLabel: string }) {
+function OpenedCard({ p, by, onNext, nextLabel }: { p: OpenedDoor; by?: string; onNext: () => void; nextLabel: string }) {
   useHotkeys({ Enter: onNext, " ": onNext });
   return (
     <Panel className={cn("space-y-3", m.pop)} aria-live="polite">
@@ -354,7 +390,7 @@ function OpenedCard({ p, by, onNext, nextLabel }: { p: Puzzle; by?: string; onNe
   );
 }
 
-function Header({ room, onExit, right }: { room: Room; onExit: () => void; right: React.ReactNode }) {
+function Header({ room, onExit, right }: { room: { title: string }; onExit: () => void; right: React.ReactNode }) {
   return (
     <div className="flex flex-wrap items-center gap-2">
       <span className="flex items-center gap-1.5 font-semibold">
@@ -369,66 +405,81 @@ function Header({ room, onExit, right }: { room: Room; onExit: () => void; right
 }
 
 /* -------------------------------------------------------------- practice */
-function Practice({ room, run, startedAt, actions, onExit, onAgain }: { room: Room; run: string; startedAt: number; actions: Actions; onExit: () => void; onAgain: () => void }) {
-  const [st, setSt] = React.useState<EscState>(() => startEscape(room));
-  const [answers, setAnswers] = React.useState<string[]>([]);
+function Practice({ start, startedAt, actions, onExit, onAgain }: { start: Started; startedAt: number; actions: Actions; onExit: () => void; onAgain: () => void }) {
+  const [token, setToken] = React.useState(start.token);
+  const [room, setRoom] = React.useState<RoomView>(start.view);
+  const [st, setSt] = React.useState<EscState>(start.state);
   const [feedback, setFeedback] = React.useState<Feedback>(null);
   const [opened, setOpened] = React.useState<number | null>(null);
   const [finishedAt, setFinishedAt] = React.useState<number | null>(null);
+  const [serverMs, setServerMs] = React.useState<number | null>(null);
   const [xp, setXp] = React.useState<number | null>(null);
+  const [busy, setBusy] = React.useState(false);
+  const [lost, setLost] = React.useState<string | null>(null);
+  /** One answer in flight at a time, so a double tap counts once. */
+  const inflight = React.useRef(false);
   const now = useTicker(finishedAt === null);
-  const ms = teamTime(new Date(startedAt).toISOString(), finishedAt ?? now ?? startedAt, st.wrong);
+  const ms = serverMs ?? teamTime(new Date(startedAt).toISOString(), finishedAt ?? now ?? startedAt, st.wrong);
   const reaction = useReaction();
 
-  function submit(raw: string) {
-    if (opened !== null || st.done) return;
-    const first = (st.tries[st.stage] ?? 0) === 0;
-    const res = applyAnswer(room, st, st.stage, raw, "You", new Date().toISOString());
-    buzz(res.ok);
+  async function submit(raw: string) {
+    if (inflight.current || opened !== null || st.done) return;
+    inflight.current = true;
+    setBusy(true);
+    const stage = st.stage;
+    const first = (st.tries[stage] ?? 0) === 0;
+    const r = await actions.answerEscapePractice({ token, stage, answer: raw }).catch(() => null);
+    inflight.current = false;
+    setBusy(false);
+    // No connection is not a wrong answer: no penalty shown, no "wrong" sticker.
+    setLost(!r ? "Connection lost. Your answer was not sent. Try again." : r.ok ? null : r.error);
+    if (!r || !r.ok) return;
+    setToken(r.token);
+    setRoom(r.view);
+    setSt(r.state);
+    if (r.right === undefined) return;
+    const ok = r.right;
+    buzz(ok);
     // The last door opens straight onto the escape screen, which has its own sticker.
-    if (!res.state.done) reaction.onAnswer(res.ok, { partial: res.ok && !first });
-    void actions.gradeEscapePractice({ room: room.id, stage: st.stage, answer: raw, first }).catch(() => undefined);
-    setFeedback({ stage: st.stage, ok: res.ok });
-    if (res.ok) {
-      const list = [...answers, raw];
-      setAnswers(list);
-      setOpened(st.stage);
-      if (res.state.done) {
-        const end = Date.now();
-        setFinishedAt(end);
-        void actions
-          .finishEscapePractice({ room: room.id, run, answers: list, wrong: res.state.wrong, ms: end - startedAt })
-          .then((r) => {
-            setXp(r.ok ? r.xp : 0);
-            if (r.ok) creditServerPlay(r.xp);
-          })
-          .catch(() => setXp(0));
+    if (!r.state.done) reaction.onAnswer(ok, { partial: ok && !first });
+    setFeedback({ stage, ok });
+    if (ok) {
+      setOpened(stage);
+      if (r.state.done) {
+        setFinishedAt(Date.now());
+        setServerMs(r.ms ?? null);
+        setXp(r.xp ?? 0);
+        if (r.xp) creditServerPlay(r.xp);
       }
     }
-    setSt(res.state);
   }
 
   if (st.done && opened === null) return <Escaped room={room} ms={ms} wrong={st.wrong} xp={xp} onExit={onExit} onAgain={onAgain} />;
 
-  const p = room.puzzles[opened ?? st.stage];
+  const shown = opened !== null ? room.opened[opened] : null;
+  const door = room.door;
   return (
     <div className="mx-auto max-w-3xl space-y-4">
       <Header room={room} onExit={onExit} right={<Clock ms={ms} wrong={st.wrong} />} />
       <Doors room={room} st={st} feedback={feedback} />
       <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_16rem]">
         <div className="min-w-0 space-y-4">
-          {opened !== null ? (
-            <OpenedCard p={p} onNext={() => setOpened(null)} nextLabel={st.done ? "Out!" : "Next door"} />
-          ) : (
-            <Door key={p.id} p={p} seed={run} tries={st.tries[st.stage] ?? 0} feedback={feedback?.stage === st.stage ? feedback : null} disabled={false} onSubmit={submit} />
-          )}
-          {feedback && !feedback.ok && opened === null ? (
+          {shown ? (
+            <OpenedCard p={shown} onNext={() => setOpened(null)} nextLabel={st.done ? "Out!" : "Next door"} />
+          ) : door ? (
+            <Door key={door.id} p={door} hint={room.hint} tries={st.tries[st.stage] ?? 0} feedback={feedback?.stage === st.stage ? feedback : null} disabled={busy} onSubmit={submit} />
+          ) : null}
+          {lost ? (
+            <p className="text-small font-semibold" role="status">
+              {lost}
+            </p>
+          ) : feedback && !feedback.ok && opened === null ? (
             <p className="flex items-center gap-1.5 text-small font-semibold" role="status">
               <X className="size-4" aria-hidden /> Not that. +{PENALTY_S} seconds. Try again.
             </p>
           ) : null}
         </div>
-        <CaseFile room={room} st={st} />
+        <CaseFile room={room} />
       </div>
     </div>
   );
@@ -475,8 +526,7 @@ function TeamRun({ teamId, actions, onExit }: { teamId: string; actions: Actions
       </div>
     );
   if (!view) return <p className="px-4 py-8 text-body text-muted-foreground">Loading your team…</p>;
-  const room = roomById(view.room);
-  if (!room) return null;
+  const room = view.view;
   const st = view.state;
   const ms = teamTime(view.startedAt, view.finishedAt ?? (now !== null ? now + skew : view.now), st.wrong);
 
@@ -516,11 +566,12 @@ function TeamRun({ teamId, actions, onExit }: { teamId: string; actions: Actions
     );
   }
 
-  const showOpened = feedback?.ok && feedback.stage < (st.done ? room.puzzles.length : st.stage);
+  const showOpened = feedback?.ok && feedback.stage < (st.done ? room.doors : st.stage);
   if (st.done && !showOpened) return <Escaped room={room} ms={ms} wrong={st.wrong} xp={view.xp} onExit={onExit} race={view.race} teamLine={`${view.name}: ${view.members.map((x) => x.name).join(", ")}`} />;
 
   const stage = showOpened ? feedback!.stage : st.stage;
-  const p = room.puzzles[stage];
+  const shown = showOpened ? room.opened[stage] : null;
+  const door = room.door;
 
   async function submit(raw: string) {
     if (busy || !view) return;
@@ -546,9 +597,9 @@ function TeamRun({ teamId, actions, onExit }: { teamId: string; actions: Actions
       <Doors room={room} st={st} feedback={feedback} />
       <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_16rem]">
         <div className="min-w-0 space-y-4">
-          {showOpened ? (
+          {shown ? (
             <OpenedCard
-              p={p}
+              p={shown}
               by={feedback!.by}
               onNext={() => {
                 setFeedback(null);
@@ -556,9 +607,9 @@ function TeamRun({ teamId, actions, onExit }: { teamId: string; actions: Actions
               }}
               nextLabel={st.done ? "Out!" : "Next door"}
             />
-          ) : (
-            <Door key={`${p.id}-${seenStage}`} p={p} seed={teamId} tries={st.tries[stage] ?? 0} feedback={feedback?.stage === stage ? feedback : null} disabled={busy} onSubmit={submit} />
-          )}
+          ) : door ? (
+            <Door key={`${door.id}-${seenStage}`} p={door} hint={room.hint} tries={st.tries[stage] ?? 0} feedback={feedback?.stage === stage ? feedback : null} disabled={busy} onSubmit={submit} />
+          ) : null}
           {lost ? (
             <p className="text-small font-semibold" role="status">
               Connection lost. Your answer was not sent. Try again.
@@ -571,7 +622,7 @@ function TeamRun({ teamId, actions, onExit }: { teamId: string; actions: Actions
           <RecentTries log={st.log} />
         </div>
         <div className="space-y-4">
-          <CaseFile room={room} st={st} />
+          <CaseFile room={room} />
           <RaceBoard rows={view.race} />
         </div>
       </div>
@@ -624,9 +675,9 @@ function RaceBoard({ rows }: { rows: RaceRow[] }) {
   );
 }
 
-function Escaped({ room, ms, wrong, xp, onExit, onAgain, race, teamLine }: { room: Room; ms: number; wrong: number; xp: number | null; onExit: () => void; onAgain?: () => void; race?: RaceRow[]; teamLine?: string }) {
+function Escaped({ room, ms, wrong, xp, onExit, onAgain, race, teamLine }: { room: RoomView; ms: number; wrong: number; xp: number | null; onExit: () => void; onAgain?: () => void; race?: RaceRow[]; teamLine?: string }) {
   useHotkeys(onAgain ? { Enter: onAgain } : {});
-  const n = room.puzzles.length;
+  const n = room.doors;
   return (
     <div className={cn("mx-auto max-w-3xl space-y-5", m.rise)}>
       <div className="flex flex-wrap items-end gap-3">
@@ -648,8 +699,8 @@ function Escaped({ room, ms, wrong, xp, onExit, onAgain, race, teamLine }: { roo
       <section className="space-y-2">
         <h2 className="text-body-strong">The case, door by door</h2>
         <ol className={cn("space-y-2", m.stagger)}>
-          {room.puzzles.map((p, i) => (
-            <li key={p.id} className={cn("rounded-lg border-2 border-foreground/25 bg-card p-3", m.rise)} style={{ "--i": i } as React.CSSProperties}>
+          {room.opened.map((p, i) => (
+            <li key={i} className={cn("rounded-lg border-2 border-foreground/25 bg-card p-3", m.rise)} style={{ "--i": i } as React.CSSProperties}>
               <p className="flex items-center gap-2 text-caption font-semibold uppercase">
                 <LockOpen className="size-3.5" aria-hidden /> {i + 1}. {STAGE_LABEL[p.stage]}
               </p>

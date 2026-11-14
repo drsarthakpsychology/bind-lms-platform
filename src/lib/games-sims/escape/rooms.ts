@@ -8,8 +8,9 @@ import { ROOMS_A } from "./rooms-a";
 import { ROOMS_B } from "./rooms-b";
 import { ROOMS_C } from "./rooms-c";
 import { ROOMS_D } from "./rooms-d";
+import { STAGE_LABEL, type Stage, type Ward } from "./types";
 
-export type Stage = "mse" | "diagnosis" | "differential" | "risk" | "course" | "plan" | "medicine" | "criteria";
+export { STAGE_LABEL, type Stage, type Ward };
 
 type DoorBase = { tags?: ItemTags };
 export type Puzzle = DoorBase &
@@ -20,20 +21,7 @@ export type Puzzle = DoorBase &
   | { id: string; stage: Stage; kind: "number"; prompt: string; min: number; max: number; answer: number[]; unit?: string; hint: string; why: string; unlock: string; skill: string }
   );
 
-/** Wards a room belongs to (for grouping the library). */
-export type Ward = "acute" | "child" | "addiction" | "geriatric" | "liaison" | "forensic" | "perinatal" | "community";
 export type Room = { id: string; title: string; place: string; patient: string; intro: string; outro: string; puzzles: Puzzle[]; ward?: Ward };
-
-export const STAGE_LABEL: Record<Stage, string> = {
-  mse: "Mental state",
-  diagnosis: "Diagnosis",
-  differential: "Differential",
-  risk: "Risk",
-  course: "Course",
-  plan: "Plan",
-  medicine: "Medicine",
-  criteria: "Criteria",
-};
 
 const nightShift: Room = {
   id: "kolkata",
