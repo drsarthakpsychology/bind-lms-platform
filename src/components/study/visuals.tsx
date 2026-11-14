@@ -5,7 +5,7 @@ import { RotateCcw } from "lucide-react";
 import type { BrainMapData, CurveData, FlowData, LayersData } from "@/lib/study/types";
 import { cn } from "@/lib/utils";
 import { Rich } from "./rich";
-import { HAND } from "@/components/sketch/ink";
+import { C, Callout, E, HAND, Label, P, Pg, R, Sheet, labelWidth, plain, wrap } from "@/components/sketch/ink";
 import { BOX, SketchFrame, type Link } from "@/components/sketch/frame";
 
 /**
@@ -362,79 +362,140 @@ export function Curve({ d }: { d: CurveData }) {
 }
 
 /* ---------------------------------------------------------------- layers */
-/** A layered model (rings, pyramid, iceberg or stack): the picture, then every layer with its meaning. */
+type Band = { k: number; cx: number; top: number; bottom: number; room: (yTop: number, yBot: number) => number };
+
+/** A layer's name inside its band when it fits (one or two lines), else its number. */
+function BandLabel({ b, text }: { b: Band; text: string }) {
+  const mid = (b.top + b.bottom) / 2;
+  for (const size of [15, 13]) {
+    for (const lines of [1, 2]) {
+      const words = wrap(text, 1e4, size);
+      const ls = lines === 1 ? words : wrap(text, Math.max(40, b.room(mid - size * 1.2, mid + size * 1.2) - 8), size);
+      if (ls.length !== lines) continue;
+      const h = (lines - 1) * size * 1.15;
+      const y0 = mid - h / 2 + size * 0.32;
+      const yt = y0 - size * 0.8;
+      const yb = y0 + h + size * 0.28;
+      if (yt < b.top + 2 || yb > b.bottom - 2) continue;
+      const w = Math.max(...ls.map((l) => labelWidth(l, size)));
+      if (w <= b.room(yt, yb) - 8) return <Label x={b.cx} y={y0} lines={ls} size={size} anchor="middle" />;
+    }
+  }
+  const n = String(b.k + 1);
+  return (
+    <>
+      <E k={`band-dot-${b.k}`} cx={b.cx} cy={mid} w={22} h={22} fill={C.lime} fillStyle="solid" sw={1.4} />
+      <Label x={b.cx} y={mid + 5} size={14} anchor="middle" color="var(--sk-on-lime)">{n}</Label>
+    </>
+  );
+}
+
+const tone = (k: number) => (k % 2 ? C.wash : C.paper);
+
+function PyramidArt({ labels }: { labels: string[] }) {
+  const n = labels.length;
+  const bh = n > 5 ? 40 : 50;
+  const H = 16 + n * bh;
+  const half = (y: number) => ((y - 8) / (n * bh)) * 172;
+  const bands: Band[] = labels.map((_, k) => ({ k, cx: 180, top: 8 + k * bh, bottom: 8 + (k + 1) * bh, room: (yt) => 2 * half(yt) }));
+  return (
+    <Sheet name="layers-pyramid" w={360} h={H} label={`Pyramid, top to bottom: ${labels.join(", ")}`} className="mx-auto max-w-[26rem]">
+      {bands.map((b) => (
+        <Pg key={b.k} k={`pyr-${b.k}`} pts={[[180 - half(b.top), b.top], [180 + half(b.top), b.top], [180 + half(b.bottom), b.bottom], [180 - half(b.bottom), b.bottom]]} fill={tone(b.k)} fillStyle="solid" sw={2} />
+      ))}
+      {bands.map((b) => <BandLabel key={b.k} b={b} text={labels[b.k]} />)}
+    </Sheet>
+  );
+}
+
+function IcebergArt({ labels }: { labels: string[] }) {
+  const n = labels.length;
+  const water = 74;
+  const H = n > 4 ? 300 : 260;
+  const below = (H - 10 - water) / Math.max(1, n - 1);
+  const half = (y: number) => (y <= water ? 34 + (y - 10) * 1.55 : Math.min(172, 133 + (y - water) * 0.22));
+  const bands: Band[] = labels.map((_, k) => {
+    const top = k === 0 ? 10 : water + (k - 1) * below;
+    const bottom = k === 0 ? water : water + k * below;
+    return { k, cx: 180, top, bottom, room: (yt, yb) => 2 * Math.min(half(Math.max(yt, top)), half(Math.min(yb, bottom))) };
+  });
+  return (
+    <Sheet name="layers-iceberg" w={360} h={H} label={`Iceberg, top to bottom: ${labels.join(", ")}`} className="mx-auto max-w-[26rem]">
+      <R k="sea" x={0} y={water} w={360} h={H - water} stroke="none" fill={C.blue} gap={9} fw={1} angle={-30} style={{ opacity: 0.35 }} />
+      {bands.map((b) => (
+        <Pg key={b.k} k={`ice-${b.k}`} pts={[[180 - half(b.top), b.top], [180 + half(b.top), b.top], [180 + half(b.bottom - 0.01), b.bottom], [180 - half(b.bottom - 0.01), b.bottom]]} fill={b.k === 0 ? C.paper : C.wash} fillStyle="solid" sw={2} />
+      ))}
+      <P k="waterline" d={`M0 ${water} q15 -5 30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0`} stroke={C.blue} sw={2} single rough={0.5} />
+      {bands.map((b) => <BandLabel key={b.k} b={b} text={labels[b.k]} />)}
+    </Sheet>
+  );
+}
+
+function RingsArt({ labels }: { labels: string[] }) {
+  const n = labels.length;
+  const cx = 112;
+  const r = (k: number) => (n === 1 ? 100 : 26 + (k * 78) / (n - 1));
+  // Names sit in a column on the right, outermost ring at the top, each with a leader into its own ring.
+  const rows = labels.map((t, k) => ({ k, lines: wrap(t, 120, 14).slice(0, 3) })).reverse();
+  const heights = rows.map((x) => x.lines.length * 16 + 10);
+  const total = heights.reduce((a, h) => a + h, 0);
+  const H = Math.max(270, total + 24);
+  let y = (H - total) / 2 + 14;
+  const placed = rows.map((x, i) => {
+    const at = y;
+    y += heights[i];
+    return { ...x, y: at };
+  });
+  const cyy = H / 2;
+  return (
+    <Sheet name="layers-rings" w={360} h={H} label={`Rings, inside to outside: ${labels.join(", ")}`} className="mx-auto max-w-[26rem]">
+      {[...labels.keys()].reverse().map((k) => (
+        <E key={k} k={`ring-${k}`} cx={cx} cy={cyy} w={r(k) * 2} h={r(k) * 2} fill={tone(k)} fillStyle="solid" sw={2} />
+      ))}
+      {placed.map((x) => {
+        const rm = x.k === 0 ? r(0) * 0.45 : (r(x.k) + r(x.k - 1)) / 2;
+        const mid = x.y - 5 + ((x.lines.length - 1) * 16) / 2;
+        const s = Math.max(-0.95, Math.min(0.95, (mid - cyy) / rm));
+        const to: [number, number] = [cx + rm * Math.sqrt(1 - s * s), cyy + rm * s];
+        return <Callout key={x.k} k={`ring-name-${x.k}`} x={228} y={x.y} lines={x.lines} size={14} to={to} />;
+      })}
+    </Sheet>
+  );
+}
+
+/** A layered model (rings, pyramid, iceberg or stack): the hand-drawn picture, then every layer with its meaning. */
 export function Layers({ d }: { d: LayersData }) {
   const n = d.layers.length;
-  const tone = (k: number) => (k % 2 ? "fill-[var(--muted)]" : "fill-card");
-  const names = d.layers.map((ly) => String(ly.label)).join(", ");
-
-  let art: React.ReactNode = null;
-  if (d.shape === "rings") {
-    art = (
-      <svg viewBox="0 0 200 200" className="mx-auto w-full max-w-[22rem]" role="img" aria-label={`Rings, inside to outside: ${names}`}>
-        {d.layers
-          .map((ly, k) => ({ ly, k }))
-          .reverse()
-          .map(({ ly, k }) => {
-            const r = 18 + (k * 80) / Math.max(1, n - 1);
-            return (
-              <g key={k}>
-                <circle cx="100" cy="100" r={r} className={cn(tone(k), "stroke-foreground")} strokeWidth="2" />
-                <text x="100" y={k === 0 ? 103 : 100 - r + 12} textAnchor="middle" className="fill-foreground text-[8px] font-semibold">{String(ly.label).slice(0, k === 0 ? 14 : 28)}</text>
-              </g>
-            );
-          })}
-      </svg>
-    );
-  } else if (d.shape === "pyramid") {
-    art = (
-      <svg viewBox="0 0 200 160" className="mx-auto w-full max-w-[22rem]" role="img" aria-label={`Pyramid, top to bottom: ${names}`}>
-        {d.layers.map((ly, k) => {
-          const h = 150 / n;
-          const y = 5 + k * h;
-          const w0 = (k / n) * 180;
-          const w1 = ((k + 1) / n) * 180;
-          return (
-            <g key={k}>
-              <path d={`M${100 - w0 / 2} ${y} L${100 + w0 / 2} ${y} L${100 + w1 / 2} ${y + h} L${100 - w1 / 2} ${y + h} Z`} className={cn(tone(k), "stroke-foreground")} strokeWidth="2" />
-              <text x="100" y={y + h / 2 + 3} textAnchor="middle" className="fill-foreground text-[8px] font-semibold">{String(ly.label).slice(0, 30)}</text>
-            </g>
-          );
-        })}
-      </svg>
-    );
-  } else if (d.shape === "iceberg") {
-    art = (
-      <svg viewBox="0 0 200 170" className="mx-auto w-full max-w-[22rem]" role="img" aria-label={`Iceberg, top to bottom: ${names}`}>
-        <rect x="0" y="40" width="200" height="130" className="fill-[var(--status-info-bg)]" />
-        <line x1="0" x2="200" y1="40" y2="40" className="stroke-foreground" strokeWidth="1.5" strokeDasharray="4 3" />
-        {d.layers.map((ly, k) => {
-          const y0 = k === 0 ? 8 : 40 + ((k - 1) * 125) / Math.max(1, n - 1);
-          const y1 = k === 0 ? 40 : 40 + (k * 125) / Math.max(1, n - 1);
-          const w = (y: number) => (y <= 40 ? 30 + (y - 8) * 1.4 : 75 + (y - 40) * 0.5);
-          return (
-            <g key={k}>
-              <path d={`M${100 - w(y0)} ${y0} L${100 + w(y0)} ${y0} L${100 + w(y1)} ${y1} L${100 - w(y1)} ${y1} Z`} className="fill-card stroke-foreground" strokeWidth="2" />
-              <text x="100" y={(y0 + y1) / 2 + 3} textAnchor="middle" className="fill-foreground text-[8px] font-semibold">{String(ly.label).slice(0, 28)}</text>
-            </g>
-          );
-        })}
-      </svg>
-    );
-  }
-
+  const labels = d.layers.map((ly) => plain(String(ly.label)));
+  const art = d.shape === "rings" ? <RingsArt labels={labels} /> : d.shape === "pyramid" ? <PyramidArt labels={labels} /> : d.shape === "iceberg" ? <IcebergArt labels={labels} /> : null;
+  const stack = d.shape === "stack";
+  const links: Link[] = stack ? [] : [];
   return (
     <figure className={card}>
       {d.title ? <p className={label}><Rich text={d.title} /></p> : null}
       {art ? <div className={d.title ? "mt-3" : undefined}>{art}</div> : null}
-      <ol className={cn("flex flex-col gap-1.5", d.title || art ? "mt-3" : undefined)}>
-        {d.layers.map((ly, k) => (
-          <li key={k} className="min-w-0 rounded-md border-2 border-foreground bg-card px-3 py-2" style={d.shape === "stack" ? { marginInline: `${(k * 6) / Math.max(1, n)}%` } : undefined}>
-            <p className="font-semibold leading-snug [overflow-wrap:anywhere]"><Rich text={ly.label} /></p>
-            {ly.detail ? <p className="mt-0.5 text-[0.92rem] leading-relaxed text-foreground/80 [overflow-wrap:anywhere]"><Rich text={ly.detail} /></p> : null}
-          </li>
-        ))}
-      </ol>
+      <SketchFrame links={links} salt={`layers-${labels[0] ?? ""}`} className={d.title || art ? "mt-3" : undefined}>
+        <ol className={cn("flex flex-col", stack ? "gap-0" : "gap-2")} aria-label={stack ? `Layers, top to bottom` : undefined}>
+          {d.layers.map((ly, k) => (
+            <li
+              key={k}
+              data-sk="box"
+              data-sk-id={`layer-${k}`}
+              data-sk-tone={stack ? (k % 2 ? "wash" : "paper") : "paper"}
+              className={cn(BOX, "min-w-0 px-3 py-2", stack && "-mt-0.5 first:mt-0")}
+              style={stack ? { marginInline: `${(k * 6) / Math.max(1, n)}%` } : undefined}
+            >
+              <p className="flex items-baseline gap-2.5 leading-snug">
+                <span data-sk="dot" data-sk-id={`layer-dot-${k}`} className="inline-flex size-6 shrink-0 items-center justify-center rounded-full bg-[var(--sk-lime)] text-sm font-bold text-[var(--sk-on-lime)] group-data-drawn:bg-transparent" style={{ fontFamily: HAND }} aria-hidden>
+                  {k + 1}
+                </span>
+                <span data-sk-label="" className="min-w-0 text-[1.05rem] font-bold [overflow-wrap:anywhere]" style={{ fontFamily: HAND }}><Rich text={ly.label} /></span>
+              </p>
+              {ly.detail ? <p className="mt-0.5 pl-[2.125rem] text-[0.92rem] leading-relaxed text-foreground/80 [overflow-wrap:anywhere]"><Rich text={ly.detail} /></p> : null}
+            </li>
+          ))}
+        </ol>
+      </SketchFrame>
       {d.caption ? <figcaption className="mt-2 text-sm text-muted-foreground"><Rich text={d.caption} /></figcaption> : null}
     </figure>
   );

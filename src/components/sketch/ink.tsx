@@ -226,6 +226,15 @@ export function wrap(text: string, max: number, size = LABEL, bold = true): stri
   return out.length ? out : [""];
 }
 
+/** The biggest of `sizes` at which `text` wraps into at most `maxLines` lines no wider than `max`; null when none fits. */
+export function fit(text: string, max: number, maxLines = 2, sizes = [15, 13]): { lines: string[]; size: number } | null {
+  for (const size of sizes) {
+    const lines = wrap(text, max, size);
+    if (lines.length <= maxLines && lines.every((l) => labelWidth(l, size) <= max)) return { lines, size };
+  }
+  return null;
+}
+
 /** A picture card: title, drawing, choices, and the plain explanation under it. */
 export function Figure({ title, children, wide = false }: { title: string; children: React.ReactNode; wide?: boolean }) {
   return (
