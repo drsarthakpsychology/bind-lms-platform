@@ -4273,6 +4273,27 @@ details[open] > summary .chev {
   }
 }
 
+/* Phones on their side (short and wide): the poster headline sized to the
+   width filled the whole screen and pushed the invitation button out of
+   view. Size it to the height instead and trim the top padding. */
+@media (orientation: landscape) and (max-height: 500px) {
+  .hero {
+    padding-top: 28px;
+  }
+  .h1 {
+    margin-top: 14px;
+  }
+  .h1b {
+    font-size: min(10.2cqi, 13vh);
+  }
+  .h1c {
+    font-size: min(5.4vw, 9vh);
+  }
+  .heroLede {
+    margin-top: 14px;
+  }
+}
+
 /* ===================================================== REDUCED MOTION */
 @media (prefers-reduced-motion: reduce) {
   .home *,
