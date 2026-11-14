@@ -7,6 +7,7 @@ import { getExtension, SUBMISSION_ATTACH_EXTENSIONS } from "@/lib/media/registry
 import { verifyObjectExists } from "@/lib/storage-verify";
 import { clampProgress } from "./progress-clamp";
 import { isOwnSubmissionPath } from "@/lib/media/submission-paths";
+import { isTransient, withRetry } from "@/lib/save/retry";
 
 export type PlaybackResult =
   | { ok: true; url: string; resumeSeconds: number }
@@ -27,10 +28,11 @@ export async function pingProgress(
   lessonId: string,
   watchedSeconds: number,
   durationSeconds: number,
-): Promise<{ ok: boolean }> {
+): Promise<{ ok: boolean; retry?: boolean }> {
   const profile = await requireSession();
-  if (!profile) return { ok: false };
-  if (typeof lessonId !== "string" || !UUID_RE.test(lessonId)) return { ok: false };
+  // Signed out (or signed in elsewhere): the browser keeps the save for later.
+  if (!profile) return { ok: false, retry: true };
+  if (typeof lessonId !== "string" || !UUID_RE.test(lessonId)) return { ok: false, retry: false };
 
   const supabase = await createClient();
 
@@ -66,12 +68,13 @@ export async function pingProgress(
     }
   };
 
-  const [{ data: lesson }, { hasUpdatedAt, prev }, serverDuration] = await Promise.all([
+  const [{ data: lesson, error: lessonErr }, { hasUpdatedAt, prev }, serverDuration] = await Promise.all([
     supabase.from("lessons").select("id").eq("id", lessonId).maybeSingle(),
     readPrev(),
     readDuration(),
   ]);
-  if (!lesson) return { ok: false };
+  // A failed lookup is worth retrying; a lesson this student cannot see is not.
+  if (!lesson) return { ok: false, retry: isTransient(lessonErr) };
 
   const next = clampProgress({
     watchedSeconds: Number(watchedSeconds),
@@ -81,19 +84,40 @@ export async function pingProgress(
     now: Date.now(),
   });
 
-  const { error } = await supabase.from("progress").upsert(
-    {
-      user_id: profile.id,
-      lesson_id: lessonId,
-      watched_seconds: next.watchedSeconds,
-      is_completed: next.isCompleted,
-      ...(hasUpdatedAt ? { updated_at: new Date().toISOString() } : {}),
-    },
-    { onConflict: "user_id,lesson_id" },
+  const { error } = await withRetry(() =>
+    supabase.from("progress").upsert(
+      {
+        user_id: profile.id,
+        lesson_id: lessonId,
+        watched_seconds: next.watchedSeconds,
+        is_completed: next.isCompleted,
+        ...(hasUpdatedAt ? { updated_at: new Date().toISOString() } : {}),
+      },
+      { onConflict: "user_id,lesson_id" },
+    ),
   );
-  if (error) console.warn("pingProgress: progress write failed:", error.message);
+  if (error) console.error("pingProgress: progress write failed:", error.code, error.message);
 
-  return { ok: !error };
+  return error ? { ok: false, retry: true } : { ok: true };
+}
+
+/**
+ * Mark a lecture complete (the "Next lesson" button, or a completion the
+ * browser queued while offline). Sticky like pingProgress; keeps the stored
+ * resume position.
+ */
+export async function markLessonComplete(lessonId: string): Promise<{ ok: boolean; retry?: boolean }> {
+  const profile = await requireSession();
+  if (!profile) return { ok: false, retry: true };
+  if (typeof lessonId !== "string" || !UUID_RE.test(lessonId)) return { ok: false, retry: false };
+  const supabase = await createClient();
+  const { data: lesson, error: lessonErr } = await supabase.from("lessons").select("id").eq("id", lessonId).maybeSingle();
+  if (!lesson) return { ok: false, retry: isTransient(lessonErr) };
+  const { error } = await withRetry(() =>
+    supabase.from("progress").upsert({ user_id: profile.id, lesson_id: lessonId, is_completed: true, updated_at: new Date().toISOString() }, { onConflict: "user_id,lesson_id" }),
+  );
+  if (error) console.error("markLessonComplete: progress write failed:", error.code, error.message);
+  return error ? { ok: false, retry: true } : { ok: true };
 }
 
 /**
@@ -106,7 +130,7 @@ export async function completeAndAdvance(
   lessonId: string,
   courseId: string,
   redirectTo: string,
-): Promise<void> {
+): Promise<{ error: string } | void> {
   const profile = await requireSession();
   if (!profile) redirect("/login");
 
@@ -144,10 +168,10 @@ export async function completeAndAdvance(
     }
   }
 
-  await supabase.from("progress").upsert(
-    { user_id: profile.id, lesson_id: lessonId, is_completed: true },
-    { onConflict: "user_id,lesson_id" },
-  );
+  // Previously the result was ignored and the student moved on even when the
+  // write failed, so the lecture silently stayed "not done".
+  const saved = await markLessonComplete(lessonId);
+  if (!saved.ok) return { error: "Couldn't save. Try again." };
   redirect(redirectTo);
 }
 

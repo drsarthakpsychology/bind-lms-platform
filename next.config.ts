@@ -4,6 +4,12 @@ import { withSentryConfig } from "@sentry/nextjs";
 const nextConfig: NextConfig = {
   // Don't advertise the framework (audit finding #8 — minor fingerprint leak).
   poweredByHeader: false,
+  // One id per deployment. A tab opened before a deploy then reloads on its
+  // next page change instead of calling Server Actions that no longer exist
+  // ("Failed to find Server Action", hundreds a week in the Vercel logs, most
+  // from lecture pages, each one a lost save). With Vercel Skew Protection on,
+  // Vercel sets NEXT_DEPLOYMENT_ID itself and old tabs keep working outright.
+  deploymentId: process.env.NEXT_DEPLOYMENT_ID || process.env.VERCEL_DEPLOYMENT_ID || undefined,
   // Hide the dev-mode "Activity" floating indicator. In dev it sits at the
   // bottom-left corner and intercepts pointer events over real UI (e.g. the
   // session composer's "Use voice" button) — dev-only, and a genuine
