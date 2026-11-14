@@ -102,10 +102,11 @@ describe("finish sticker in the Practice tools", () => {
     const play = (a: string, b: string) => {
       render(<FormulationForge seed={seed} />);
       fireEvent.click(screen.getByRole("button", { name: /^Low mood/ }));
-      fireEvent.click(screen.getByRole("button", { name: new RegExp(`^${a}`, "i") }));
+      // The bucket in the grid (phones also get the same buckets in the bottom bar).
+      fireEvent.click(screen.getAllByRole("button", { name: new RegExp(`^${a}`, "i") })[0]);
       fireEvent.click(screen.getByRole("button", { name: /^Lost a job/ }));
-      fireEvent.click(screen.getByRole("button", { name: new RegExp(`^${b}`, "i") }));
-      fireEvent.click(screen.getByRole("button", { name: /Write the narrative/ }));
+      fireEvent.click(screen.getAllByRole("button", { name: new RegExp(`^${b}`, "i") })[0]);
+      fireEvent.click(screen.getByRole("button", { name: /Write the story/ }));
       fireEvent.change(screen.getByRole("textbox"), { target: { value: "Ravi has low mood after losing his job, and it has lasted two months now." } });
       fireEvent.click(screen.getByRole("button", { name: /Compare with the answer/ }));
       expect(screen.getByText("Your formulation vs the model")).toBeTruthy();
