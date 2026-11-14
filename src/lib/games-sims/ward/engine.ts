@@ -6,12 +6,10 @@
  * decision was.
  */
 import type { ItemTags } from "../item-tags";
+import type { DecisionKind, Quality, VarKey, Vars } from "./rules";
 
-export type Vars = { risk: number; trust: number; insight: number; family: number; adherence: number };
-export type VarKey = keyof Vars;
+export { deltaSign, KIND_LABEL, LOWER_IS_BETTER, QUALITY_LABEL, VAR_LABEL, type DecisionKind, type Quality, type VarKey, type Vars } from "./rules";
 export type Cond = { flag?: string; notFlag?: string; v?: VarKey; gte?: number; lte?: number };
-export type Quality = "best" | "ok" | "poor" | "harm";
-export type DecisionKind = "assessment" | "risk" | "referral" | "psychoeducation" | "family" | "medicines";
 
 export type WardOption = { id: string; text: string; q: Quality; fx?: Partial<Vars>; set?: string[]; why: string };
 export type Decision = { id: string; kind: DecisionKind; prompt: string; when?: Cond; skill: string; options: WardOption[] };
@@ -35,20 +33,8 @@ export type Campaign = {
 export type LogEntry = { chapter: number; decision: string; option: string; q: Quality; voters?: number };
 export type WardState = { campaign: string; chapter: number; queue: string[]; vars: Vars; flags: string[]; log: LogEntry[]; done: boolean };
 
-export const KIND_LABEL: Record<DecisionKind, string> = {
-  assessment: "Assessment",
-  risk: "Risk",
-  referral: "Referral",
-  psychoeducation: "Explaining it",
-  family: "Family meeting",
-  medicines: "Medicines, with the psychiatrist",
-};
-
-export const VAR_LABEL: Record<VarKey, string> = { risk: "Risk", trust: "Trust", insight: "Insight", family: "Family support", adherence: "Sticking with care" };
-
 /** Grade for the student model. */
 export const QUALITY_OUTCOME: Record<Quality, number> = { best: 1, ok: 0.6, poor: 0.25, harm: 0 };
-export const QUALITY_LABEL: Record<Quality, string> = { best: "Strong choice", ok: "Reasonable", poor: "Weak choice", harm: "Harmful choice" };
 
 const clamp = (x: number) => Math.max(0, Math.min(100, Math.round(x)));
 
@@ -145,16 +131,6 @@ export function totalDecisions(c: Campaign, st: WardState): number {
 
 /** XP for a finished campaign: 10 for finishing, up to 20 more for the outcome. */
 export const wardXp = (score: number) => 10 + Math.round(clamp(score) / 5);
-
-/** Dials where a lower number is the better one. */
-export const LOWER_IS_BETTER: ReadonlySet<VarKey> = new Set<VarKey>(["risk"]);
-
-/** Did this change help? (+1 better, -1 worse, 0 no change.) */
-export function deltaSign(k: VarKey, delta: number): -1 | 0 | 1 {
-  if (!delta) return 0;
-  const up = delta > 0 ? 1 : -1;
-  return (LOWER_IS_BETTER.has(k) ? -up : up) as -1 | 1;
-}
 
 export function findDecision(c: Campaign, id: string): { chapter: number; decision: Decision } | null {
   for (let i = 0; i < c.chapters.length; i++) {

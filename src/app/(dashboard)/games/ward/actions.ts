@@ -4,7 +4,11 @@ import { recordHistory } from "@/lib/history/server";
 import { z } from "zod";
 import { majority } from "@/lib/games-sims/common";
 import { campaignById } from "@/lib/games-sims/ward/campaigns";
-import { choose, currentDecision, outcomeScore, QUALITY_OUTCOME, startState, stepOf, wardXp, type WardState } from "@/lib/games-sims/ward/engine";
+import { choose, currentDecision, outcomeScore, QUALITY_OUTCOME, startState, stepOf, wardXp, type Campaign, type WardState } from "@/lib/games-sims/ward/engine";
+import { endOf, replayChoices, revealOf, revealsOf, sceneOf, soloState, type WardToken } from "@/lib/games-sims/ward/deal";
+import type { Scene, WardEnd, WardReveal } from "@/lib/games-sims/ward/rules";
+import { sign, verify } from "@/lib/games/token";
+import { oncePerStep } from "@/lib/games-sims/server/run-steps";
 import { adminDb, currentUser, gradeAnswers, payXp, saveResult } from "@/lib/games-sims/server/results";
 import { createTeam, joinTeam, loadMyTeam, updateTeam } from "@/lib/games-sims/server/teams";
 import { normaliseCode, TEAM_LIMITS } from "@/lib/games-sims/teams";
@@ -13,23 +17,76 @@ import { cappedOutcome, itemKey, POINTS_KEPT } from "@/lib/hints/rules";
 
 const id = z.string().min(1).max(40);
 
-/**
- * Solo campaign finished: the server replays the choices through the engine
- * (so the score can't be invented), grades every decision for the student
- * model and stores the outcome. A decision made with a hint counts for less
- * in the model and pays half its share of the XP.
- */
-export async function finishWardSolo(input: { campaign: string; choices: string[]; run: string }): Promise<{ ok: boolean; score: number; xp: number }> {
-  const parsed = z.object({ campaign: id, choices: z.array(z.string().max(4)).max(40), run: z.string().min(4).max(40) }).safeParse(input);
+const FAIL = "That didn't load. Try again.";
+
+export type WardSolo = { ok: true; token: string; scene: Scene; reveal?: WardReveal; end?: WardEnd | null; xp?: number; saved?: boolean } | { ok: false; error: string };
+
+const newRun = () => `${Date.now().toString(36)}${Math.floor(Math.random() * 1e9).toString(36)}`;
+
+function soloOut(t: WardToken, c: Campaign, st: WardState): Extract<WardSolo, { ok: true }> {
+  return { ok: true, token: sign(t), scene: sceneOf(c, st) };
+}
+
+/** A new solo game: the first session and decision, no qualities or effects. */
+export async function startWardSolo(campaign: string): Promise<WardSolo> {
   const user = await currentUser();
+  const c = id.safeParse(campaign).success ? campaignById(campaign) : undefined;
+  if (!user) return { ok: false, error: "Please sign in again." };
+  if (!c) return { ok: false, error: FAIL };
+  return soloOut({ u: user.id, run: newRun(), c: c.id, ch: [] }, c, startState(c));
+}
+
+/**
+ * Carry on a saved solo game. A saved game is its signed token; a game
+ * saved before the token existed (campaign and choices) is replayed and
+ * given a fresh run.
+ */
+export async function resumeWardSolo(input: { token?: string; campaign?: string; choices?: string[] }): Promise<WardSolo> {
+  const user = await currentUser();
+  if (!user) return { ok: false, error: "Please sign in again." };
+  if (typeof input?.token === "string") {
+    const t = verify<WardToken>(input.token);
+    const s = soloState(t, user.id);
+    return t && s && !s.st.done ? soloOut(t, s.c, s.st) : { ok: false, error: FAIL };
+  }
+  const parsed = z.object({ campaign: id, choices: z.array(z.string().max(4)).min(1).max(40) }).safeParse(input);
   const c = parsed.success ? campaignById(parsed.data.campaign) : undefined;
-  if (!parsed.success || !user || !c) return { ok: false, score: 0, xp: 0 };
-  const run = parsed.data.run;
+  const s = c && parsed.success ? replayChoices(c, parsed.data.choices) : null;
+  if (!parsed.success || !s || s.st.done) return { ok: false, error: FAIL };
+  return soloOut({ u: user.id, run: newRun(), c: s.c.id, ch: parsed.data.choices }, s.c, s.st);
+}
+
+/**
+ * One solo decision, checked here: its quality, effect and explanation come
+ * back with the next scene. The last decision grades the whole game for
+ * the student model (a decision made with a hint counts for less and pays
+ * half its share of the XP), stores the outcome and pays XP once per run.
+ */
+export async function pickWardSolo(input: { token: string; option: string }): Promise<WardSolo> {
+  const parsed = z.object({ token: z.string().min(10).max(3000), option: z.string().min(1).max(4) }).safeParse(input);
+  const user = await currentUser();
+  if (!user) return { ok: false, error: "Please sign in again." };
+  const t = parsed.success ? verify<WardToken>(parsed.data.token) : null;
+  const s = soloState(t, user.id);
+  if (!parsed.success || !t || !s || s.st.done) return { ok: false, error: FAIL };
+  const r = revealOf(s.c, s.st, parsed.data.option);
+  if (!r) return { ok: false, error: FAIL };
+  const next: WardToken = { ...t, ch: [...t.ch, parsed.data.option] };
+  const { result } = await oncePerStep(user.id, "ward", t.run, String(t.ch.length), async (): Promise<WardSolo> => {
+    const out = { ...soloOut(next, s.c, r.after), reveal: r.reveal };
+    if (!r.after.done) return out;
+    const paid = await finishSolo(user, s.c, next.ch, t.run);
+    return { ...out, end: endOf(s.c, r.after), xp: paid.xp, saved: paid.ok };
+  });
+  return result;
+}
+
+async function finishSolo(user: { id: string; role: string }, c: Campaign, choices: string[], run: string): Promise<{ ok: boolean; xp: number }> {
   const hinted = await hintedItems(user.id, itemKey("ward", run, c.id, "")).catch(() => new Map<string, number>());
   let st = startState(c);
   const attempts = [];
   let hintedCount = 0;
-  for (const choice of parsed.data.choices) {
+  for (const choice of choices) {
     const d = currentDecision(c, st);
     const opt = d?.options.find((o) => o.id === choice);
     if (!d || !opt) break;
@@ -38,7 +95,7 @@ export async function finishWardSolo(input: { campaign: string; choices: string[
     attempts.push({ skill: d.skill, item: `ward:${c.id}:${d.id}`, outcome: cappedOutcome(QUALITY_OUTCOME[opt.q], used) });
     st = choose(c, st, choice);
   }
-  if (!st.done) return { ok: false, score: 0, xp: 0 };
+  if (!st.done) return { ok: false, xp: 0 };
   // Answer history: each decision, right when the best option was taken.
   await Promise.all([gradeAnswers(user, attempts), recordHistory(user.id, "ward", attempts.map((a) => ({ item: a.item, correct: a.outcome >= 1 })))]);
   const score = outcomeScore(st);
@@ -46,7 +103,7 @@ export async function finishWardSolo(input: { campaign: string; choices: string[
     saveResult(user.id, { game: "ward", item: c.id, score: score / 100, right: attempts.filter((a) => a.outcome === 1).length, total: attempts.length, meta: { mode: "solo" } }),
     payXp(user.id, "ward", wardXp(score) * (1 - (1 - POINTS_KEPT[1]) * (attempts.length ? hintedCount / attempts.length : 0)), `${c.id}:${run}`),
   ]);
-  return { ok: true, score, xp };
+  return { ok: true, xp };
 }
 
 export type WardTeamView = {
@@ -54,7 +111,11 @@ export type WardTeamView = {
   code: string;
   name: string;
   campaign: string;
-  state: WardState;
+  /** What the team may see now: the session and decision in play, no qualities or effects. */
+  scene: Scene;
+  /** Every decision already made, with its quality, effect and why. */
+  reveals: WardReveal[];
+  end: WardEnd | null;
   members: { name: string; me: boolean; voted: boolean }[];
   myVote: string | null;
   votes: number;
@@ -115,13 +176,17 @@ export async function wardTeamView(teamId: string): Promise<WardTeamView | null>
   const moved = await settle(t);
   if (moved) t.team = moved;
   const st = t.team.state as unknown as WardState;
+  const c = campaignById(t.team.scenario);
+  if (!c) return null;
   const votes = await votesFor(teamId, stepOf(st));
   return {
     teamId,
     code: t.team.code,
     name: t.team.name,
     campaign: t.team.scenario,
-    state: st,
+    scene: sceneOf(c, st),
+    reveals: revealsOf(c, st),
+    end: endOf(c, st),
     members: t.members.map((m) => ({ name: m.name, me: m.user_id === user.id, voted: votes.some((v) => v.user_id === m.user_id) })),
     myVote: votes.find((v) => v.user_id === user.id)?.choice ?? null,
     votes: votes.length,

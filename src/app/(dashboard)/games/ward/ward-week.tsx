@@ -5,34 +5,11 @@ import { startHowTo } from "@/components/help/how-to";
 import { ArrowDown, ArrowRight, ArrowUp, BookOpen, Hospital, MapPin, Minus, Play, RotateCcw, Users, Vote } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { LearnLink } from "@/lib/games/ui/learn-link";
-import { hashString } from "@/lib/games-sims/common";
-import { CAMPAIGNS, campaignById } from "@/lib/games-sims/ward/campaigns";
-import {
-  bestOption,
-  choose,
-  currentDecision,
-  deltaSign,
-  endingFor,
-  findDecision,
-  holds,
-  KIND_LABEL,
-  LOWER_IS_BETTER,
-  outcomeScore,
-  QUALITY_LABEL,
-  replay,
-  VAR_LABEL,
-  type Campaign,
-  type Decision,
-  type Quality,
-  type VarKey,
-  type Vars,
-  type WardOption,
-  type WardState,
-} from "@/lib/games-sims/ward/engine";
+import { deltaSign, KIND_LABEL, LOWER_IS_BETTER, QUALITY_LABEL, VAR_LABEL, type CampaignCard, type Quality, type Scene, type VarKey, type Vars, type WardEnd, type WardReveal } from "@/lib/games-sims/ward/rules";
 import { TEAM_LIMITS } from "@/lib/games-sims/teams";
 import { Btn, buzz, Kbd, motionCss as m, Panel, Pill, readLocal, Stat, useHotkeys, writeLocal, type Tone } from "@/lib/games-sims/ui/kit";
 import { JoinBox, Members, TeamCode, usePoll } from "@/lib/games-sims/ui/team";
-import type { WardTeamView } from "./actions";
+import type { WardSolo, WardTeamView } from "./actions";
 import { creditServerPlay } from "@/lib/learn/credit-play";
 import { HintBar, useHintStatus } from "@/components/hints/hint-chip";
 import { askHint } from "@/lib/hints/actions";
@@ -40,7 +17,9 @@ import { useReaction } from "@/components/reactions/use-reaction";
 import { EndReaction } from "@/components/reactions/graphics";
 
 type Actions = {
-  finishWardSolo: (x: { campaign: string; choices: string[]; run: string }) => Promise<{ ok: boolean; score: number; xp: number }>;
+  startWardSolo: (campaign: string) => Promise<WardSolo>;
+  resumeWardSolo: (x: { token?: string; campaign?: string; choices?: string[] }) => Promise<WardSolo>;
+  pickWardSolo: (x: { token: string; option: string }) => Promise<WardSolo>;
   createWardTeam: (campaign: string) => Promise<{ ok: true; teamId: string } | { ok: false; reason: string }>;
   joinWardTeam: (code: string) => Promise<{ ok: true; teamId: string } | { ok: false; reason: string }>;
   wardTeamView: (teamId: string) => Promise<WardTeamView | null>;
@@ -53,12 +32,17 @@ const VAR_ORDER: VarKey[] = ["risk", "trust", "insight", "family", "adherence"];
 const Q_TONE: Record<Quality, Tone> = { best: "good", ok: "part", poor: "bad", harm: "bad" };
 const SOLO_KEY = "vibha-ward-solo";
 
-type Solo = { campaign: string; choices: string[]; run: string };
-type Mode = { kind: "pick" } | { kind: "solo"; solo: Solo } | { kind: "team"; teamId: string };
+type Started = Extract<WardSolo, { ok: true }>;
+/** A solo game saved in this browser: its signed token (or, from before the token, its campaign and choices). */
+type Saved = { token?: string; campaign: string; title: string; choices?: string[] };
+type Mode = { kind: "pick" } | { kind: "solo"; campaign: string; title: string; start: Started; n: number } | { kind: "team"; teamId: string };
+const FAIL = "That didn't load. Try again.";
 
 /* ------------------------------------------------------------------ root */
-export function WardWeek({ teamsOn, openTeam, teams, actions }: { teamsOn: boolean; openTeam: string | null; teams: TeamListItem[]; actions: Actions }) {
+export function WardWeek({ campaigns, teamsOn, openTeam, teams, actions }: { campaigns: CampaignCard[]; teamsOn: boolean; openTeam: string | null; teams: TeamListItem[]; actions: Actions }) {
   const [mode, setMode] = React.useState<Mode>(openTeam ? { kind: "team", teamId: openTeam } : { kind: "pick" });
+  const [startErr, setStartErr] = React.useState<string | null>(null);
+  const titleOf = (id: string) => campaigns.find((c) => c.id === id)?.title ?? id;
 
   function goTeam(teamId: string) {
     startHowTo("ward-week");
@@ -77,20 +61,48 @@ export function WardWeek({ teamsOn, openTeam, teams, actions }: { teamsOn: boole
     }
     setMode({ kind: "pick" });
   }
+  /** The server deals the game; the browser gets the first session only. */
+  async function solo(campaign: string, ask: () => Promise<WardSolo>): Promise<string | null> {
+    const r = await ask().catch(() => null);
+    if (!r || !r.ok) return r?.error ?? FAIL;
+    startHowTo("ward-week");
+    const title = titleOf(campaign);
+    writeLocal(SOLO_KEY, { token: r.token, campaign, title } satisfies Saved);
+    setMode((m) => ({ kind: "solo", campaign, title, start: r, n: m.kind === "solo" ? m.n + 1 : 0 }));
+    return null;
+  }
 
-  if (mode.kind === "solo") return <SoloPlay solo={mode.solo} finish={actions.finishWardSolo} onExit={goPick} onAgain={(c) => setMode({ kind: "solo", solo: newSolo(c) })} />;
+  if (mode.kind === "solo")
+    return (
+      <SoloPlay
+        key={mode.n}
+        start={mode.start}
+        campaign={mode.campaign}
+        title={mode.title}
+        pick={actions.pickWardSolo}
+        onExit={goPick}
+        onAgain={async () => {
+          const e = await solo(mode.campaign, () => actions.startWardSolo(mode.campaign));
+          if (e) {
+            setStartErr(e);
+            goPick();
+          }
+        }}
+      />
+    );
   if (mode.kind === "team") return <TeamPlay teamId={mode.teamId} actions={actions} onExit={goPick} />;
   return (
     <Pick
+      campaigns={campaigns}
+      startErr={startErr}
       teamsOn={teamsOn}
       teams={teams}
-      onSolo={(c) => {
-        startHowTo("ward-week");
-        setMode({ kind: "solo", solo: newSolo(c) });
-      }}
-      onResume={(s) => {
-        startHowTo("ward-week");
-        setMode({ kind: "solo", solo: s });
+      onSolo={(c) => solo(c, () => actions.startWardSolo(c))}
+      onResume={async (s) => {
+        const e = await solo(s.campaign, () => actions.resumeWardSolo(s.token ? { token: s.token } : { campaign: s.campaign, choices: s.choices }));
+        // A saved game that can't be carried on (finished, or from another account) is cleared.
+        if (e) writeLocal(SOLO_KEY, null);
+        return e;
       }}
       onCreate={async (c) => {
         const r = await actions.createWardTeam(c);
@@ -103,19 +115,13 @@ export function WardWeek({ teamsOn, openTeam, teams, actions }: { teamsOn: boole
         return r.ok ? null : r.reason;
       }}
       onOpenTeam={goTeam}
+      titleOf={titleOf}
     />
   );
 }
 
-function newSolo(campaign: string): Solo {
-  const run = `${Date.now().toString(36)}${hashString(`${campaign}:${Date.now()}:${Math.random()}`).toString(36)}`;
-  const s = { campaign, choices: [], run };
-  writeLocal(SOLO_KEY, s);
-  return s;
-}
-
-/** A solo campaign left half-way (read from this browser without an effect). */
-function useSavedSolo(): Solo | null {
+/** A solo game left half-way (read from this browser without an effect). */
+function useSavedSolo(campaigns: CampaignCard[]): Saved | null {
   const raw = React.useSyncExternalStore(
     () => () => undefined,
     () => {
@@ -130,18 +136,22 @@ function useSavedSolo(): Solo | null {
   return React.useMemo(() => {
     if (!raw) return null;
     try {
-      const s = JSON.parse(raw) as Solo;
-      const c = campaignById(s.campaign);
-      if (!c || !Array.isArray(s.choices) || !s.choices.length) return null;
-      return replay(c, s.choices).done ? null : s;
+      const s = JSON.parse(raw) as Partial<Saved> & { choices?: unknown };
+      const c = campaigns.find((x) => x.id === s.campaign);
+      if (!c) return null;
+      if (typeof s.token === "string") return { token: s.token, campaign: c.id, title: c.title };
+      // Saved before the token: carried on if a choice was made.
+      return Array.isArray(s.choices) && s.choices.length && s.choices.every((x) => typeof x === "string") ? { campaign: c.id, title: c.title, choices: s.choices as string[] } : null;
     } catch {
       return null;
     }
-  }, [raw]);
+  }, [raw, campaigns]);
 }
 
 /* ------------------------------------------------------------------ pick */
 function Pick({
+  campaigns,
+  startErr,
   teamsOn,
   teams,
   onSolo,
@@ -149,19 +159,31 @@ function Pick({
   onCreate,
   onJoin,
   onOpenTeam,
+  titleOf,
 }: {
+  campaigns: CampaignCard[];
+  startErr: string | null;
   teamsOn: boolean;
   teams: TeamListItem[];
-  onSolo: (c: string) => void;
-  onResume: (s: Solo) => void;
+  onSolo: (c: string) => Promise<string | null>;
+  onResume: (s: Saved) => Promise<string | null>;
   onCreate: (c: string) => Promise<string | null>;
   onJoin: (code: string) => Promise<string | null>;
   onOpenTeam: (id: string) => void;
+  titleOf: (id: string) => string;
 }) {
-  const saved = useSavedSolo();
-  const [err, setErr] = React.useState<string | null>(null);
+  const saved = useSavedSolo(campaigns);
+  const [err, setErr] = React.useState<string | null>(startErr);
   const [busy, setBusy] = React.useState<string | null>(null);
-  useHotkeys(Object.fromEntries(CAMPAIGNS.slice(0, 9).map((c, k) => [String(k + 1), () => onSolo(c.id)])));
+  async function run(key: string, fn: () => Promise<string | null>) {
+    if (busy) return;
+    setBusy(key);
+    setErr(null);
+    const e = await fn().catch(() => FAIL);
+    setBusy(null);
+    if (e) setErr(e);
+  }
+  useHotkeys(Object.fromEntries(campaigns.slice(0, 9).map((c, k) => [String(k + 1), () => void run(`solo:${c.id}`, () => onSolo(c.id))])));
   const live = teams.filter((t) => t.status !== "done");
   return (
     <div className={cn("mx-auto max-w-3xl space-y-6", m.rise)}>
@@ -171,16 +193,16 @@ function Pick({
         <Panel className="flex flex-wrap items-center gap-3 bg-status-info-bg">
           <BookOpen className="size-5" aria-hidden />
           <p className="min-w-0 flex-1 text-body">
-            You left <span className="font-semibold">{campaignById(saved.campaign)!.title}</span> half-way.
+            You left <span className="font-semibold">{saved.title}</span> half-way.
           </p>
-          <Btn variant="ink" onClick={() => onResume(saved)}>
-            <Play aria-hidden /> Carry on
+          <Btn variant="ink" disabled={busy !== null} onClick={() => void run("resume", () => onResume(saved))}>
+            <Play aria-hidden /> {busy === "resume" ? "Opening…" : "Carry on"}
           </Btn>
         </Panel>
       ) : null}
 
       <ul className={cn("grid gap-4 md:grid-cols-3", m.stagger)}>
-        {CAMPAIGNS.map((c, i) => (
+        {campaigns.map((c, i) => (
           <li key={c.id} className={cn("flex flex-col rounded-xl border-2 border-foreground bg-card p-4 hard-shadow-sm", m.rise)} style={{ "--i": i } as React.CSSProperties}>
             <p className="flex items-center gap-1.5 text-caption text-muted-foreground">
               <MapPin className="size-3.5" aria-hidden />
@@ -189,22 +211,13 @@ function Pick({
             <h2 className="mt-1 text-h3">{c.title}</h2>
             <p className="text-small font-semibold">{c.patient}</p>
             <p className="mt-2 flex-1 text-small">{c.blurb}</p>
-            <p className="mt-2 text-caption text-muted-foreground">{c.chapters.length} sessions</p>
+            <p className="mt-2 text-caption text-muted-foreground">{c.sessions} sessions</p>
             <div className="mt-3 grid gap-2">
-              <Btn variant="primary" onClick={() => onSolo(c.id)}>
-                <Play aria-hidden /> Play solo {i < 9 ? <Kbd>{i + 1}</Kbd> : null}
+              <Btn variant="primary" disabled={busy !== null} onClick={() => void run(`solo:${c.id}`, () => onSolo(c.id))}>
+                <Play aria-hidden /> {busy === `solo:${c.id}` ? "Starting…" : "Play solo"} {i < 9 ? <Kbd>{i + 1}</Kbd> : null}
               </Btn>
               {teamsOn ? (
-                <Btn
-                  disabled={busy !== null}
-                  onClick={async () => {
-                    setBusy(c.id);
-                    setErr(null);
-                    const e = await onCreate(c.id).catch(() => "Couldn't start a team. Try again.");
-                    setBusy(null);
-                    if (e) setErr(e);
-                  }}
-                >
+                <Btn disabled={busy !== null} onClick={() => void run(c.id, () => onCreate(c.id).catch(() => "Couldn't start a team. Try again."))}>
                   <Users aria-hidden /> {busy === c.id ? "Starting…" : "Start a team of 3"}
                 </Btn>
               ) : null}
@@ -233,7 +246,7 @@ function Pick({
                   <li key={t.id}>
                     <Btn className="w-full justify-between" onClick={() => onOpenTeam(t.id)}>
                       <span className="truncate">
-                        {t.name} · {campaignById(t.campaign)?.title ?? t.campaign}
+                        {t.name} · {titleOf(t.campaign)}
                       </span>
                       <ArrowRight aria-hidden />
                     </Btn>
@@ -251,69 +264,70 @@ function Pick({
 }
 
 /* ------------------------------------------------------------------ solo */
-type Reveal = { decision: Decision; option: WardOption; before: Vars; flagsBefore: string[]; after: Vars; chapterBefore: number };
-
-function SoloPlay({ solo, finish, onExit, onAgain }: { solo: Solo; finish: Actions["finishWardSolo"]; onExit: () => void; onAgain: (c: string) => void }) {
-  const c = campaignById(solo.campaign)!;
-  const [choices, setChoices] = React.useState<string[]>(solo.choices);
-  const [reveal, setReveal] = React.useState<Reveal | null>(null);
+function SoloPlay({ start, campaign, title, pick: pickOnServer, onExit, onAgain }: { start: Started; campaign: string; title: string; pick: Actions["pickWardSolo"]; onExit: () => void; onAgain: () => void }) {
+  const [token, setToken] = React.useState(start.token);
+  const [scene, setScene] = React.useState<Scene>(start.scene);
+  const [reveal, setReveal] = React.useState<WardReveal | null>(null);
+  const [end, setEnd] = React.useState<WardEnd | null>(null);
   const [result, setResult] = React.useState<{ xp: number; saved: boolean } | null>(null);
-  const st = React.useMemo(() => replay(c, choices), [c, choices]);
+  const [busy, setBusy] = React.useState(false);
+  const [lost, setLost] = React.useState<string | null>(null);
   const [hints, setHints] = useHintStatus();
-  /** Hints used: decision id → options ruled out. */
-  const [ruled, setRuled] = React.useState<Record<string, string[]>>({});
+  /** Hints used: step → options ruled out. */
+  const [ruled, setRuled] = React.useState<Record<number, string[]>>({});
   const reaction = useReaction();
-  const current = reveal ? null : currentDecision(c, st);
+  /** One choice in flight at a time, so a double tap counts once. */
+  const inflight = React.useRef(false);
+  const current = reveal ? null : scene.decision;
 
-  function pick(optionId: string) {
-    if (reveal) return;
-    const d = currentDecision(c, st);
-    const o = d?.options.find((x) => x.id === optionId);
-    if (!d || !o) return;
-    const next = choose(c, st, optionId);
-    buzz(o.q === "best");
+  async function pick(optionId: string) {
+    if (reveal || inflight.current) return;
+    inflight.current = true;
+    setBusy(true);
+    const r = await pickOnServer({ token, option: optionId }).catch(() => null);
+    inflight.current = false;
+    setBusy(false);
+    // No connection is not a wrong answer: nothing counted, try again.
+    setLost(!r ? "Connection lost. Your answer was not sent. Try again." : r.ok ? null : r.error);
+    if (!r || !r.ok || !r.reveal) return;
+    const q = r.reveal.q;
+    buzz(q === "best");
     // "Okay" is a near miss; poor and harmful choices are wrong.
-    reaction.onAnswer(o.q === "best", { partial: o.q === "ok" || (o.q === "best" && (ruled[d.id] ?? []).length > 0) });
-    const list = [...choices, optionId];
-    setChoices(list);
-    setReveal({ decision: d, option: o, before: st.vars, flagsBefore: st.flags, after: next.vars, chapterBefore: st.chapter });
-    writeLocal(SOLO_KEY, { ...solo, choices: list });
-    if (next.done) {
+    reaction.onAnswer(q === "best", { partial: q === "ok" || (q === "best" && (ruled[scene.step] ?? []).length > 0) });
+    setToken(r.token);
+    setScene(r.scene);
+    setReveal(r.reveal);
+    if (r.scene.done) {
       writeLocal(SOLO_KEY, null);
-      void finish({ campaign: c.id, choices: list, run: solo.run })
-        .then((r) => {
-          setResult({ xp: r.ok ? r.xp : 0, saved: r.ok });
-          if (r.ok) creditServerPlay(r.xp);
-        })
-        .catch(() => setResult({ xp: 0, saved: false }));
-    }
+      setEnd(r.end ?? null);
+      setResult({ xp: r.saved ? (r.xp ?? 0) : 0, saved: !!r.saved });
+      if (r.saved && r.xp) creditServerPlay(r.xp);
+    } else writeLocal(SOLO_KEY, { token: r.token, campaign, title } satisfies Saved);
   }
 
-  const showEnd = st.done && !reveal;
-  if (showEnd) return <EndScreen c={c} st={st} xp={result ? result.xp : null} onAgain={() => onAgain(c.id)} onExit={onExit} />;
+  if (scene.done && !reveal && end) return <EndScreen title={scene.title} end={end} xp={result ? result.xp : null} onAgain={onAgain} onExit={onExit} />;
 
-  const shownChapter = reveal ? reveal.chapterBefore : st.chapter;
   return (
     <Stage
-      c={c}
-      st={st}
-      shownChapter={shownChapter}
+      scene={scene}
       reveal={reveal}
-      onPick={pick}
+      onPick={(o) => void pick(o)}
+      busy={busy}
+      lost={lost}
       onNext={() => setReveal(null)}
-      nextLabel={st.done ? "See the ending" : st.chapter !== shownChapter ? "Next session" : "Next call"}
+      nextLabel={scene.done ? "See the ending" : reveal && scene.chapter !== reveal.chapter ? "Next session" : "Next call"}
       onExit={onExit}
       hint={
         current
           ? {
-              gone: ruled[current.id] ?? [],
+              gone: ruled[scene.step] ?? [],
               bar: (
                 <HintBar
                   status={hints}
                   onStatus={setHints}
-                  used={(ruled[current.id] ?? []).length > 0}
-                  ask={() => askHint({ game: "ward", run: solo.run, campaign: c.id, decision: current.id, options: current.options.map((o) => o.id) })}
-                  onGive={(h) => setRuled((r) => ({ ...r, [current.id]: h.remove }))}
+                  used={(ruled[scene.step] ?? []).length > 0}
+                  ask={() => askHint({ game: "ward", run: "solo", token, options: current.options.map((o) => o.id) })}
+                  onGive={(h) => setRuled((r) => ({ ...r, [scene.step]: h.remove }))}
                 />
               ),
             }
@@ -325,22 +339,22 @@ function SoloPlay({ solo, finish, onExit, onAgain }: { solo: Solo; finish: Actio
 
 /* ----------------------------------------------------------------- stage */
 function Stage({
-  c,
-  st,
-  shownChapter,
+  scene,
   reveal,
   onPick,
+  busy = false,
+  lost = null,
   onNext,
   nextLabel,
   onExit,
   team,
   hint,
 }: {
-  c: Campaign;
-  st: WardState;
-  shownChapter: number;
-  reveal: (Reveal & { teamLine?: string }) | null;
+  scene: Scene;
+  reveal: (WardReveal & { teamLine?: string }) | null;
   onPick: (id: string) => void;
+  busy?: boolean;
+  lost?: string | null;
   onNext: () => void;
   nextLabel: string;
   onExit: () => void;
@@ -348,16 +362,16 @@ function Stage({
   /** Solo only: options a hint ruled out, and the hint chip and button. */
   hint?: { gone: string[]; bar: React.ReactNode };
 }) {
-  const d = reveal ? null : currentDecision(c, st);
+  const d = reveal ? null : scene.decision;
   const shown = d ? d.options.filter((o) => !(hint?.gone ?? []).includes(o.id)) : [];
-  const ch = c.chapters[shownChapter];
-  const beatState = reveal ? { vars: reveal.before, flags: reveal.flagsBefore } : st;
-  const beats = ch.beats.filter((b) => holds(b.when, beatState)).map((b) => b.text);
-  const dials = reveal ? reveal.after : st.vars;
+  const chapter = reveal ? reveal.chapter : scene.chapter;
+  const chapterTitle = reveal ? reveal.chapterTitle : scene.chapterTitle;
+  const beats = reveal ? reveal.beats : scene.beats;
+  const dials = reveal ? reveal.after : scene.vars;
   const voted = team?.myVote ?? null;
 
   const keys: Record<string, () => void> = {};
-  if (d && !voted) shown.forEach((o, i) => (keys[LETTERS[i]] = () => onPick(o.id)));
+  if (d && !voted && !busy) shown.forEach((o, i) => (keys[LETTERS[i]] = () => onPick(o.id)));
   if (reveal) {
     keys.Enter = onNext;
     keys[" "] = onNext;
@@ -368,20 +382,20 @@ function Stage({
     <div className="mx-auto max-w-3xl space-y-4">
       <div className="flex flex-wrap items-center gap-2">
         <span className="flex items-center gap-1.5 font-semibold">
-          <Hospital className="size-5" aria-hidden /> {c.title}
+          <Hospital className="size-5" aria-hidden /> {scene.title}
         </span>
-        <span className="text-small text-muted-foreground">{c.patient}</span>
+        <span className="text-small text-muted-foreground">{scene.patient}</span>
         <Btn variant="ghost" className="ml-auto" onClick={onExit}>
           Leave
         </Btn>
       </div>
       {team?.header}
-      <ChapterTrack c={c} at={shownChapter} done={st.done && !reveal} />
+      <ChapterTrack sessions={scene.sessions} at={chapter} done={scene.done && !reveal} />
 
       <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_15rem]">
         <div className="min-w-0 space-y-4">
-          <Panel key={ch.id} className={cn("space-y-3", m.slide)}>
-            <h2 className="text-h3">{ch.title}</h2>
+          <Panel key={chapter} className={cn("space-y-3", m.slide)}>
+            <h2 className="text-h3">{chapterTitle}</h2>
             <div className={cn("space-y-2", m.stagger)}>
               {beats.map((b, i) => (
                 <p key={i} className={cn("text-body", m.rise)} style={{ "--i": i } as React.CSSProperties}>
@@ -392,7 +406,7 @@ function Stage({
           </Panel>
 
           {d ? (
-            <Panel key={d.id} className={cn("space-y-3 bg-muted/40", m.rise)} aria-live="polite">
+            <Panel key={scene.step} className={cn("space-y-3 bg-muted/40", m.rise)} aria-live="polite">
               <div className="flex flex-wrap items-center gap-2">
                 <Pill tone="info">{KIND_LABEL[d.kind]}</Pill>
               </div>
@@ -404,7 +418,7 @@ function Stage({
                     return (
                       <Btn
                         key={o.id}
-                        disabled={!!voted}
+                        disabled={!!voted || busy}
                         aria-pressed={mine}
                         className={cn("h-auto justify-start py-2.5 text-left font-normal", mine && "border-foreground bg-primary text-primary-foreground disabled:opacity-100")}
                         onClick={() => onPick(o.id)}
@@ -419,6 +433,11 @@ function Stage({
                   })}
                 </div>
               </fieldset>
+              {lost ? (
+                <p className="text-small font-semibold" role="status">
+                  {lost}
+                </p>
+              ) : null}
               {hint?.bar}
               {team?.waiting}
             </Panel>
@@ -428,19 +447,19 @@ function Stage({
         </div>
         <Dials vars={dials} before={reveal?.before ?? null} />
       </div>
-      {c.note ? <p className="text-caption text-muted-foreground">{c.note}</p> : null}
+      {scene.note ? <p className="text-caption text-muted-foreground">{scene.note}</p> : null}
     </div>
   );
 }
 
-function ChapterTrack({ c, at, done }: { c: Campaign; at: number; done: boolean }) {
+function ChapterTrack({ sessions, at, done }: { sessions: number; at: number; done: boolean }) {
   return (
     <ol className="flex gap-1.5" aria-label="Sessions">
-      {c.chapters.map((ch, i) => {
+      {Array.from({ length: sessions }, (_, i) => {
         const past = done || i < at;
         const now = !done && i === at;
         return (
-          <li key={ch.id} className="min-w-0 flex-1">
+          <li key={i} className="min-w-0 flex-1">
             <div className={cn("h-2.5 rounded-full border-2 border-foreground", past ? "bg-foreground" : now ? "bg-primary" : "bg-card")} aria-hidden />
             <span className="sr-only">
               Session {i + 1}: {past ? "done" : now ? "now" : "to come"}
@@ -491,24 +510,23 @@ function Dials({ vars, before }: { vars: Vars; before: Vars | null }) {
   );
 }
 
-function RevealCard({ r, onNext, nextLabel }: { r: Reveal & { teamLine?: string }; onNext: () => void; nextLabel: string }) {
-  const best = bestOption(r.decision);
-  const good = r.option.q === "best";
+function RevealCard({ r, onNext, nextLabel }: { r: WardReveal & { teamLine?: string }; onNext: () => void; nextLabel: string }) {
+  const good = r.q === "best";
   return (
     <Panel className={cn("space-y-3", good ? m.pop : m.shake)} aria-live="polite">
       {r.teamLine ? <p className="text-small font-semibold">{r.teamLine}</p> : null}
       <div className="flex flex-wrap items-center gap-2">
-        <Pill tone={Q_TONE[r.option.q]}>{QUALITY_LABEL[r.option.q]}</Pill>
-        <span className="text-caption text-muted-foreground">{KIND_LABEL[r.decision.kind]}</span>
+        <Pill tone={Q_TONE[r.q]}>{QUALITY_LABEL[r.q]}</Pill>
+        <span className="text-caption text-muted-foreground">{KIND_LABEL[r.kind]}</span>
       </div>
-      <p className="border-l-4 border-primary pl-3 text-body-strong">{r.option.text}</p>
-      <p className="text-body">{r.option.why}</p>
-      {r.decision.skill ? <LearnLink topic={KIND_LABEL[r.decision.kind]} href={`/study/${r.decision.skill.split(":")[0]}`} newTab /> : null}
-      {!good ? (
+      <p className="border-l-4 border-primary pl-3 text-body-strong">{r.text}</p>
+      <p className="text-body">{r.why}</p>
+      {r.skill ? <LearnLink topic={KIND_LABEL[r.kind]} href={`/study/${r.skill.split(":")[0]}`} newTab /> : null}
+      {r.best ? (
         <div className={cn("rounded-lg border-2 border-foreground/30 bg-card p-3", m.rise)}>
           <p className="text-caption font-semibold uppercase">The strongest call</p>
-          <p className="mt-1 text-small font-semibold">{best.text}</p>
-          <p className="mt-1 text-small">{best.why}</p>
+          <p className="mt-1 text-small font-semibold">{r.best.text}</p>
+          <p className="mt-1 text-small">{r.best.why}</p>
         </div>
       ) : null}
       <Btn variant="primary" size="lg" className="w-full" onClick={onNext} autoFocus>
@@ -519,23 +537,22 @@ function RevealCard({ r, onNext, nextLabel }: { r: Reveal & { teamLine?: string 
 }
 
 /* ------------------------------------------------------------------- end */
-function EndScreen({ c, st, xp, onAgain, onExit, teamLine }: { c: Campaign; st: WardState; xp: number | null; onAgain?: () => void; onExit: () => void; teamLine?: string }) {
-  const score = outcomeScore(st);
-  const ending = endingFor(c, st);
+function EndScreen({ title, end, xp, onAgain, onExit, teamLine }: { title: string; end: WardEnd; xp: number | null; onAgain?: () => void; onExit: () => void; teamLine?: string }) {
+  const score = end.score;
   const tone: Tone = score >= 72 ? "good" : score >= 50 ? "part" : "bad";
-  const strong = st.log.filter((l) => l.q === "best").length;
+  const strong = end.log.filter((l) => l.q === "best").length;
   useHotkeys(onAgain ? { Enter: onAgain } : {});
   return (
     <div className={cn("mx-auto max-w-3xl space-y-5", m.rise)}>
       <div className="flex flex-wrap items-end gap-3">
-        <h1 className="text-h1">{ending.title}</h1>
+        <h1 className="text-h1">{end.title}</h1>
         <Pill tone={tone} className={m.stamp}>
           {tone === "good" ? "Good outcome" : tone === "part" ? "Mixed outcome" : "Poor outcome"}
         </Pill>
       </div>
       {teamLine ? <p className="text-small font-semibold">{teamLine}</p> : null}
-      <EndReaction mood={tone === "good" ? (score >= 90 ? "streak" : "right") : tone === "part" ? "near" : "wrong"} seed={c.id} />
-      <p className="text-body">{ending.text}</p>
+      <EndReaction mood={tone === "good" ? (score >= 90 ? "streak" : "right") : tone === "part" ? "near" : "wrong"} seed={title} />
+      <p className="text-body">{end.text}</p>
 
       <Panel className="space-y-2">
         <div className="flex items-baseline justify-between">
@@ -551,35 +568,29 @@ function EndScreen({ c, st, xp, onAgain, onExit, teamLine }: { c: Campaign; st: 
       </Panel>
 
       <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
-        <Stat label="Strong calls" value={`${strong}/${st.log.length}`} />
-        <Stat label="Risk at the end" value={st.vars.risk} />
-        <Stat label="Trust at the end" value={st.vars.trust} />
+        <Stat label="Strong calls" value={`${strong}/${end.log.length}`} />
+        <Stat label="Risk at the end" value={end.vars.risk} />
+        <Stat label="Trust at the end" value={end.vars.trust} />
         <Stat label="XP earned" value={xp === null ? "…" : `+${xp}`} />
       </div>
 
       <section className="space-y-2">
         <h2 className="text-body-strong">Your calls, looking back</h2>
         <ol className={cn("space-y-2", m.stagger)}>
-          {st.log.map((l, i) => {
-            const f = findDecision(c, l.decision);
-            const o = f?.decision.options.find((x) => x.id === l.option);
-            if (!f || !o) return null;
-            const best = bestOption(f.decision);
-            return (
-              <li key={i} className={cn("rounded-lg border-2 border-foreground/25 bg-card p-3", m.rise)} style={{ "--i": i } as React.CSSProperties}>
-                <div className="flex flex-wrap items-center gap-2">
-                  <span className="font-mono text-caption">S{f.chapter + 1}</span>
-                  <span className="text-caption text-muted-foreground">{KIND_LABEL[f.decision.kind]}</span>
-                  <Pill tone={Q_TONE[l.q]} className="ml-auto">
-                    {QUALITY_LABEL[l.q]}
-                  </Pill>
-                </div>
-                <p className="mt-1 text-small font-semibold">{f.decision.prompt}</p>
-                <p className="text-small">{o.text}</p>
-                {l.q !== "best" ? <p className="mt-1 text-small text-muted-foreground">Stronger: {best.text}</p> : null}
-              </li>
-            );
-          })}
+          {end.log.map((l, i) => (
+            <li key={i} className={cn("rounded-lg border-2 border-foreground/25 bg-card p-3", m.rise)} style={{ "--i": i } as React.CSSProperties}>
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="font-mono text-caption">S{l.chapter + 1}</span>
+                <span className="text-caption text-muted-foreground">{KIND_LABEL[l.kind]}</span>
+                <Pill tone={Q_TONE[l.q]} className="ml-auto">
+                  {QUALITY_LABEL[l.q]}
+                </Pill>
+              </div>
+              <p className="mt-1 text-small font-semibold">{l.prompt}</p>
+              <p className="text-small">{l.text}</p>
+              {l.best ? <p className="mt-1 text-small text-muted-foreground">Stronger: {l.best}</p> : null}
+            </li>
+          ))}
         </ol>
       </section>
 
@@ -612,9 +623,9 @@ function TeamPlay({ teamId, actions, onExit }: { teamId: string; actions: Action
     }
     setMissing(false);
     setView(v);
-    setSeen((s) => (s === null ? Math.min(readLocal(seenKey, v.state.log.length), v.state.log.length) : s));
+    setSeen((s) => (s === null ? Math.min(readLocal(seenKey, v.reveals.length), v.reveals.length) : s));
   }
-  usePoll(!view?.state.done, 4000, () => actions.wardTeamView(teamId), apply);
+  usePoll(!view?.scene.done, 4000, () => actions.wardTeamView(teamId), apply);
 
   if (missing && !view)
     return (
@@ -628,10 +639,8 @@ function TeamPlay({ teamId, actions, onExit }: { teamId: string; actions: Action
     );
   if (!view || seen === null) return <p className="px-4 py-8 text-body text-muted-foreground">Loading your team…</p>;
 
-  const c = campaignById(view.campaign);
-  if (!c) return null;
-  const st = view.state;
-  const pending = seen < st.log.length ? st.log[seen] : null;
+  const scene = view.scene;
+  const pending = seen < view.reveals.length ? view.reveals[seen] : null;
   const markSeen = () => {
     const n = seen + 1;
     setSeen(n);
@@ -639,28 +648,10 @@ function TeamPlay({ teamId, actions, onExit }: { teamId: string; actions: Action
   };
 
   const teamLine = `${view.name}: ${view.members.map((x) => x.name).join(", ")}`;
-  if (st.done && !pending) return <EndScreen c={c} st={st} xp={view.xp} onExit={onExit} teamLine={teamLine} />;
+  if (scene.done && !pending && view.end) return <EndScreen title={scene.title} end={view.end} xp={view.xp} onExit={onExit} teamLine={teamLine} />;
 
-  let reveal: (Reveal & { teamLine?: string }) | null = null;
-  if (pending) {
-    const before = replay(
-      c,
-      st.log.slice(0, seen).map((l) => l.option),
-    );
-    const after = choose(c, before, pending.option);
-    const f = findDecision(c, pending.decision)!;
-    reveal = {
-      decision: f.decision,
-      option: f.decision.options.find((o) => o.id === pending.option)!,
-      before: before.vars,
-      flagsBefore: before.flags,
-      after: after.vars,
-      chapterBefore: before.chapter,
-      teamLine: `The team chose ${LETTERS[f.decision.options.findIndex((o) => o.id === pending.option)].toUpperCase()}${pending.voters ? ` (${pending.voters} vote${pending.voters === 1 ? "" : "s"} in)` : ""}.`,
-    };
-  }
-  const shownState = pending ? replay(c, st.log.slice(0, seen + 1).map((l) => l.option)) : st;
-  const nextAfter = seen + 1 < st.log.length ? "Next result" : shownState.done ? "See the ending" : reveal && shownState.chapter !== reveal.chapterBefore ? "Next session" : "Next call";
+  const reveal: (WardReveal & { teamLine?: string }) | null = pending ? { ...pending, teamLine: `The team chose ${pending.letter}${pending.voters ? ` (${pending.voters} vote${pending.voters === 1 ? "" : "s"} in)` : ""}.` } : null;
+  const nextAfter = seen + 1 < view.reveals.length ? "Next result" : scene.done ? "See the ending" : reveal && scene.chapter !== reveal.chapter ? "Next session" : "Next call";
 
   const need = Math.floor(Math.max(TEAM_LIMITS.ward.min, view.members.length) / 2) + 1;
   const waiting = view.myVote ? (
@@ -674,15 +665,13 @@ function TeamPlay({ teamId, actions, onExit }: { teamId: string; actions: Action
 
   return (
     <Stage
-      c={c}
-      st={shownState}
-      shownChapter={reveal ? reveal.chapterBefore : st.chapter}
+      scene={scene}
       reveal={reveal}
       onPick={async (choice) => {
         if (busy || view.myVote) return;
         setBusy(true);
         buzz(true);
-        const v = await actions.castWardVote({ teamId, step: st.log.length, choice }).catch(() => null);
+        const v = await actions.castWardVote({ teamId, step: scene.step, choice }).catch(() => null);
         setBusy(false);
         if (v) apply(v);
       }}
@@ -694,7 +683,7 @@ function TeamPlay({ teamId, actions, onExit }: { teamId: string; actions: Action
         waiting,
         header: (
           <div className="space-y-2">
-            <TeamCode code={view.code} name={view.name} message={`Join my Ward Week team on VIBHA (${c.title}).`} />
+            <TeamCode code={view.code} name={view.name} message={`Join my Ward Week team on VIBHA (${scene.title}).`} />
             <Members members={view.members.map((x) => ({ name: x.name, me: x.me, done: x.voted, doneWord: "Voted", waitWord: "Not yet" }))} max={TEAM_LIMITS.ward.max} />
           </div>
         ),

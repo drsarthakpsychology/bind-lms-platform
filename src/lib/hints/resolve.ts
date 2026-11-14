@@ -18,7 +18,7 @@ export type HintAsk =
   | { game: "detective"; run: string; round: number; options: string[]; token?: string; answer?: string }
   | { game: "rx"; run: string; options: string[]; token?: string; kind?: "chain" | "mystery" | "puzzle" | "review"; id?: string; step?: number }
   | { game: "mse"; run: string; options: string[]; token?: string; excerpt?: string; idx?: number }
-  | { game: "ward"; run: string; campaign: string; decision: string; options: string[] }
+  | { game: "ward"; run: string; options: string[]; token?: string; campaign?: string; decision?: string }
   | { game: "comorbid"; run: string; level: 1 | 2 | 3; moves: Move[]; prefer?: string };
 
 export type HintGive = { remove: string[]; pick: string | null; text: string };
@@ -66,6 +66,8 @@ export function resolveHint(a: HintAsk): Resolved {
       return { game: "mse", item: itemKey("mse", a.run, a.excerpt, a.idx as number), give: { remove: ruleOut(o, [f.a, ...(f.close ?? [])], hashString(`${a.run}:${a.excerpt}:${a.idx}`)), pick: null, text: RULE_OUT } };
     }
     case "ward": {
+      // `campaign` and `decision` are filled on the server from the signed game (askHint), never taken from the browser.
+      if (typeof a.campaign !== "string" || typeof a.decision !== "string") return null;
       const d = campaignById(a.campaign)?.chapters.flatMap((ch) => ch.decisions).find((x) => x.id === a.decision);
       if (!d) return null;
       const weak = d.options.filter((o) => o.q === "harm" || o.q === "poor").map((o) => o.id);

@@ -17,6 +17,7 @@ const FORBIDDEN: { game: string; re: RegExp }[] = [
   { game: "Clinic detective", re: /^lib\/learn\/detective(-deal|-server)?\.ts$/ },
   { game: "Escape Room", re: /^lib\/games-sims\/escape\/(rooms(-[a-z]+)?|deal)\.ts$/ },
   { game: "MSE Lab", re: /^lib\/games-sims\/mse\/(excerpts|bank(-[a-z0-9]+)?|grade|deal|server)\.ts$/ },
+  { game: "Ward Week", re: /^lib\/games-sims\/ward\/(campaigns(-[a-z]+)?|deal|server)\.ts$/ },
   { game: "Rx Detective", re: /^lib\/games-sims\/rx\/(content|drugs|mysteries|puzzles(-[a-z]+)?|reviews(-[a-z]+)?|game|deal|server|med-pages)\.ts$/ },
 ];
 
