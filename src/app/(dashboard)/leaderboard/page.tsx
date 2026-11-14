@@ -50,7 +50,7 @@ export default async function LeaguePage() {
 
       <section aria-labelledby="league-h" className="rounded-xl border-2 border-foreground bg-card hard-shadow-sm">
         <h2 id="league-h" className="flex items-center gap-2 border-b-2 border-foreground px-4 py-3 font-bold">
-          <Trophy className="size-4" aria-hidden /> Your group <span className="font-normal text-muted-foreground">· {data.groupSize} players</span>
+          <Trophy className="size-4" aria-hidden /> Your group {data.groupSize > 1 ? <span className="font-normal text-muted-foreground">· {data.groupSize} players</span> : null}
         </h2>
         <ol className="divide-y-2 divide-foreground/10">
           {data.league.view.map((v, i) =>
@@ -65,7 +65,7 @@ export default async function LeaguePage() {
               </Fragment>
             ),
           )}
-          {!data.league.view.length ? <li className="px-4 py-6 text-sm text-muted-foreground">Earn points this week to join a league.</li> : null}
+          {!data.league.view.length ? <EmptyRow>Earn points this week to join a league.</EmptyRow> : null}
         </ol>
       </section>
 
@@ -147,6 +147,17 @@ function PrivateCard({ data }: { data: MyLeague }) {
   );
 }
 
+/** The quiet line a board shows before anyone has points: a dashed slot where the first row will land. */
+function EmptyRow({ children }: { children: React.ReactNode }) {
+  return (
+    <li className="p-3">
+      <span className="flex min-h-12 items-center gap-3 rounded-lg border-2 border-dashed border-foreground/30 px-3 text-sm text-muted-foreground">
+        <Trophy className="size-4 shrink-0" aria-hidden /> {children}
+      </span>
+    </li>
+  );
+}
+
 function Points({ e }: { e: BoardEntry }) {
   return <span className="shrink-0 text-right text-sm font-bold tabular-nums">{e.points} pts</span>;
 }
@@ -181,7 +192,7 @@ function Board({ title, icon, note, entries, total }: { title: string; icon: Rea
           {icon} {title}
         </h2>
         <p className="text-caption text-muted-foreground">
-          {note} Top 10 and you · {total} students
+          {note} Top 10 and you{total > 1 ? ` · ${total} students` : ""}
         </p>
       </header>
       <ol className="divide-y-2 divide-foreground/10">
@@ -199,7 +210,7 @@ function Board({ title, icon, note, entries, total }: { title: string; icon: Rea
             </div>
           </li>
         ))}
-        {!entries.length ? <li className="px-4 py-6 text-sm text-muted-foreground">Nobody has points yet this week.</li> : null}
+        {!entries.length ? <EmptyRow>Nobody has points yet this week.</EmptyRow> : null}
       </ol>
     </section>
   );
