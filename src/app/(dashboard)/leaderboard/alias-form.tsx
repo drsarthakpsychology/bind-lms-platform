@@ -16,7 +16,7 @@ export function AliasForm({ alias, fallback }: { alias: string | null; fallback:
   function submit(e: React.FormEvent) {
     e.preventDefault();
     start(async () => {
-      const r = await saveAlias(value);
+      const r = await saveAlias(value).catch(() => ({ error: "Not saved. Check your connection and try again.", alias: null }));
       setMsg(r.error ? { ok: false, text: r.error } : { ok: true, text: r.alias ? `Saved. Others see "${r.alias}".` : `Saved. Others see "${fallback}".` });
     });
   }
