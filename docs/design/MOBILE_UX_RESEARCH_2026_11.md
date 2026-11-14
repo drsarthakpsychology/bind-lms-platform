@@ -177,3 +177,38 @@ Common thread across the shots: one question per screen, answer tiles as
 full-width rows of 56 px or more, the primary button full width at the
 bottom, the streak as a small counter in the top corner, the reading screen
 with generous line height and a progress line at the top.
+
+## 9. Audit at 360, 390 and 412 px (what was found, what changed)
+
+Method: every student screen rendered in a fixture harness (the real page
+components, Supabase stubbed) and screenshot in Chromium with phone
+emulation at 360, 390 and 412 px; login and the public pages also against
+`next dev --webpack`. Each screenshot was also scanned for sideways scroll,
+clipped text, controls under 40 px and fixed bars. Screenshots: scratchpad
+`mobux-shots/shots/before` and `.../after`.
+
+| Screen | Found | Change |
+|---|---|---|
+| Exam Prep question set | A row of 13 set numbers above "Question 1" read as question numbers; Check and Next mid-page | "Set 1 of 13" opens a bottom sheet; Check / Next in the ThumbBar |
+| Mock paper | Palette pushed into the page; parts wrapped into several rows; top bar wrapped at 360 | Palette as a bottom sheet; parts scroll in one row; one-line top bar; Back, Mark, Next at the bottom |
+| Study tests, checkpoints, weak-topic practice | Back/Next below the options | ThumbBar |
+| Reader | Section list pushed a long list into the page; module line two lines | Bottom sheet, opens on the current section; one-line module line |
+| More, avatar menu | Left drawer opened from a bottom-right tab; 40 px corner menu; close X on top of the email | Bottom sheets on phones with 48 px rows |
+| Search | 14 px input (zoom on focus), 16 px close, keyboard hints on phones | 16 px input, 44 px close, hints only on wide screens |
+| Medicines | Four rows of filter chips before the list | One sideways row of 44 px chips |
+| Games and tools | Back row doubled the side margin; How to play on its own row; Next under long explanations | One header row; Next in the ThumbBar (MSE Lab, Rx Detective, Ward Week, Escape Room) |
+| Practice drills | Small Next under the feedback | ThumbBar, 48 px (Weak spots, Out of depth, Decode, Judgment, Ethics) |
+| Lecture | "Lectures 1 of 2" squeezed into a vertical stack at 390 | Fixed |
+| Exam Prep home | Three-line title | "Exam Prep" on phones |
+| Home | Quest links 20 px tall | 44 px rows |
+| Summaries | 41 tall cards | Compact rows on phones (about a quarter shorter) |
+| Note | Back a 20 px text link, Next a pill | 48 px rectangles |
+| Settings, Notifications | A second app bar under the top bar; 32 px side margins | Standard page header; shell margins |
+| Any text field | Tab bar sat on the keyboard | Tab bar and ThumbBar hide while typing |
+| Dialogs | No height cap | Capped at the screen, scroll inside |
+| Login | Eight dots as placeholder looked like a saved password | "Your password" and a Show password button |
+| Bottom tab bar | 11 px labels | 12 px |
+
+Left as is, on purpose: the hint UI in games (another agent owns it); the
+in-play layout of Blitz, Criteria sort, Comorbid and Duel (timed or
+card-driven, no Next button; another agent is editing those files).
