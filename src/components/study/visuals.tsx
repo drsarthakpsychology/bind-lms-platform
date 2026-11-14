@@ -5,7 +5,7 @@ import { RotateCcw } from "lucide-react";
 import type { BrainMapData, CurveData, FlowData, LayersData } from "@/lib/study/types";
 import { cn } from "@/lib/utils";
 import { Rich } from "./rich";
-import { C, Callout, E, HAND, Label, P, Pg, R, Sheet, labelWidth, plain, wrap } from "@/components/sketch/ink";
+import { C, Callout, Cv, E, HAND, L, Label, P, Pg, R, Sheet, labelWidth, plain, wrap } from "@/components/sketch/ink";
 import { BOX, SketchFrame, type Link } from "@/components/sketch/frame";
 
 /**
@@ -114,10 +114,28 @@ const erf = (x: number) => {
 export const phi = (z: number) => 0.5 * (1 + erf(z / Math.SQRT2));
 const pdf = (x: number, m = 0, s = 1) => Math.exp(-0.5 * ((x - m) / s) ** 2) / (s * Math.sqrt(2 * Math.PI));
 
-const W = 320;
-const H = 160;
+/* The hand-drawn chart every curve uses: 380 x 250, plot from GX0 to GX1 and GTOP to GY0. */
+const GX0 = 34;
+const GX1 = 366;
+const GY0 = 204;
+const GTOP = 36;
 function path(pts: [number, number][]) {
   return pts.map(([x, y], i) => `${i ? "L" : "M"}${x.toFixed(1)} ${y.toFixed(1)}`).join(" ");
+}
+
+function Chart({ name, label: aria, children }: { name: string; label: string; children: React.ReactNode }) {
+  return (
+    <Sheet name={`curve-${name}`} w={380} h={250} label={aria} className="mx-auto max-w-[32rem]">
+      <L k={`${name}-x`} x1={GX0 - 4} y1={GY0} x2={GX1 + 4} y2={GY0} sw={2} />
+      {children}
+    </Sheet>
+  );
+}
+
+/** A filled area under a curve, as a hatched polygon. */
+function Area({ k, pts, fill, base = GY0 }: { k: string; pts: [number, number][]; fill: string; base?: number }) {
+  if (pts.length < 2) return null;
+  return <Pg k={k} pts={[[pts[0][0], base], ...pts, [pts[pts.length - 1][0], base]]} stroke="none" fill={fill} gap={5} fw={1.4} />;
 }
 
 function Slider({ label: l, value, min, max, step, onChange, fmt }: { label: string; value: number; min: number; max: number; step: number; onChange: (v: number) => void; fmt?: (v: number) => string }) {
@@ -136,33 +154,30 @@ function Slider({ label: l, value, min, max, step, onChange, fmt }: { label: str
 function NormalCurve() {
   const [z, setZ] = React.useState(1);
   const [tails, setTails] = React.useState(false);
-  const X = (v: number) => ((v + 3.5) / 7) * W;
-  const Y = (p: number) => H - 10 - p * (H - 20) * 2.4;
+  const X = (v: number) => GX0 + ((v + 3.5) / 7) * (GX1 - GX0);
+  const Y = (p: number) => GY0 - (p / 0.4) * (GY0 - GTOP - 6);
   const pts: [number, number][] = Array.from({ length: 141 }, (_, i) => -3.5 + i * 0.05).map((v) => [X(v), Y(pdf(v))]);
-  const fill = (from: number, to: number) => {
-    const seg = pts.filter(([x]) => x >= X(from) && x <= X(to));
-    if (!seg.length) return "";
-    return `${path(seg)} L${seg.at(-1)![0]} ${H - 10} L${seg[0][0]} ${H - 10} Z`;
-  };
+  const fill = (from: number, to: number) => pts.filter(([x]) => x >= X(from) - 0.01 && x <= X(to) + 0.01);
   const left = phi(z);
   const twoTail = 2 * (1 - phi(Math.abs(z)));
   return (
     <>
-      <svg viewBox={`0 0 ${W} ${H}`} className="w-full rounded-xl border-2 border-foreground bg-background" role="img" aria-label={tails ? `Area beyond ±${Math.abs(z).toFixed(2)}: ${(twoTail * 100).toFixed(1)}%` : `Area below z = ${z.toFixed(2)}: ${(left * 100).toFixed(1)}%`}>
+      <Chart name="normal" label={tails ? `Area beyond ±${Math.abs(z).toFixed(2)}: ${(twoTail * 100).toFixed(1)}%` : `Area below z = ${z.toFixed(2)}: ${(left * 100).toFixed(1)}%`}>
         {tails ? (
           <>
-            <path d={fill(-3.5, -Math.abs(z))} className="fill-[var(--status-alert-bg)] stroke-none" />
-            <path d={fill(Math.abs(z), 3.5)} className="fill-[var(--status-alert-bg)] stroke-none" />
+            <Area k={`nl-${z}`} pts={fill(-3.5, -Math.abs(z))} fill={C.red} />
+            <Area k={`nr-${z}`} pts={fill(Math.abs(z), 3.5)} fill={C.red} />
           </>
         ) : (
-          <path d={fill(-3.5, z)} className="fill-[var(--status-info-bg)] stroke-none" />
+          <Area k={`na-${z}`} pts={fill(-3.5, z)} fill={C.blue} />
         )}
-        <path d={path(pts)} fill="none" strokeWidth="2.5" className="stroke-foreground" />
-        <line x1={X(z)} x2={X(z)} y1={12} y2={H - 10} className="stroke-[var(--brand)]" strokeWidth="2" />
+        <Cv k="normal" pts={pts.filter((_, i) => i % 4 === 0)} sw={2.4} single rough={0.4} />
+        <L k={`nz-${z}`} x1={X(z)} x2={X(z)} y1={GTOP - 4} y2={GY0} stroke={C.blue} sw={2.4} single rough={0.3} />
+        <Label x={Math.min(GX1 - 40, Math.max(GX0 + 40, X(z)))} y={GTOP - 12} size={16} anchor="middle" color={C.blue}>{`z = ${z.toFixed(2)}`}</Label>
         {[-3, -2, -1, 0, 1, 2, 3].map((v) => (
-          <text key={v} x={X(v)} y={H - 1} textAnchor="middle" className="fill-muted-foreground text-[9px]">{v}</text>
+          <Label key={v} x={X(v)} y={GY0 + 24} size={14} anchor="middle" bold={false}>{String(v)}</Label>
         ))}
-      </svg>
+      </Chart>
       <div className="mt-3 grid gap-3 sm:grid-cols-2">
         <Slider label="z-score" value={z} min={-3} max={3} step={0.05} onChange={setZ} fmt={(v) => v.toFixed(2)} />
         <label className="flex min-h-11 items-center gap-2 text-sm font-semibold">
@@ -185,22 +200,22 @@ function SdtCurve() {
   const [c, setC] = React.useState(0);
   const lo = -3.5;
   const hi = 5.5;
-  const X = (v: number) => ((v - lo) / (hi - lo)) * W;
-  const Y = (p: number) => H - 12 - p * (H - 24) * 2.4;
+  const X = (v: number) => GX0 + ((v - lo) / (hi - lo)) * (GX1 - GX0);
+  const Y = (p: number) => GY0 - (p / 0.4) * (GY0 - GTOP - 6);
   const xs = Array.from({ length: 181 }, (_, i) => lo + i * 0.05);
   const xc = dp / 2 + c;
   const hit = 1 - phi(xc - dp);
   const fa = 1 - phi(xc);
   return (
     <>
-      <svg viewBox={`0 0 ${W} ${H}`} className="w-full rounded-xl border-2 border-foreground bg-background" role="img" aria-label={`Hit rate ${(hit * 100).toFixed(0)}%, false alarms ${(fa * 100).toFixed(0)}%`}>
-        <path d={path(xs.map((v) => [X(v), Y(pdf(v))]))} fill="none" strokeWidth="2.5" className="stroke-foreground" strokeDasharray="5 3" />
-        <path d={path(xs.map((v) => [X(v), Y(pdf(v, dp))]))} fill="none" strokeWidth="2.5" className="stroke-[var(--brand)]" />
-        <line x1={X(xc)} x2={X(xc)} y1={10} y2={H - 12} className="stroke-[var(--destructive)]" strokeWidth="2" />
-        <text x={X(0)} y={22} textAnchor="middle" className="fill-foreground text-[9px] font-semibold">noise only</text>
-        <text x={X(dp)} y={34} textAnchor="middle" className="fill-[var(--brand)] text-[9px] font-semibold">signal + noise</text>
-        <text x={X(xc) + 3} y={H - 16} className="fill-foreground text-[9px]">say “yes” →</text>
-      </svg>
+      <Chart name="sdt" label={`Hit rate ${(hit * 100).toFixed(0)}%, false alarms ${(fa * 100).toFixed(0)}%`}>
+        <Cv k="noise" pts={xs.filter((_, i) => i % 4 === 0).map((v) => [X(v), Y(pdf(v))])} sw={2.2} single rough={0.4} dash="7 5" />
+        <Cv k={`signal-${dp}`} pts={xs.filter((_, i) => i % 4 === 0).map((v) => [X(v), Y(pdf(v, dp))])} stroke={C.blue} sw={2.6} single rough={0.4} />
+        <L k={`crit-${xc}`} x1={X(xc)} x2={X(xc)} y1={GTOP - 6} y2={GY0} stroke={C.red} sw={2.4} single rough={0.3} />
+        <Label x={X(0) - 6} y={GTOP - 12} size={16} anchor="end">noise only</Label>
+        <Label x={X(dp) + 6 + labelWidth("signal + noise", 16) > GX1 ? GX1 : X(dp) + 6} y={GTOP - 12} size={16} anchor={X(dp) + 6 + labelWidth("signal + noise", 16) > GX1 ? "end" : "start"} color={C.blue}>signal + noise</Label>
+        <Label x={Math.min(X(xc) + 6, GX1 - labelWidth("say \u201cyes\u201d \u2192", 16))} y={GY0 + 24} size={16} color={C.red}>{"say \u201cyes\u201d \u2192"}</Label>
+      </Chart>
       <div className="mt-3 grid gap-3 sm:grid-cols-2">
         <Slider label="Sensitivity d′ (how far apart)" value={dp} min={0} max={3.5} step={0.05} onChange={setDp} fmt={(v) => v.toFixed(2)} />
         <Slider label="Criterion c (how cautious)" value={c} min={-1.5} max={1.5} step={0.05} onChange={setC} fmt={(v) => (v > 0 ? "+" : "") + v.toFixed(2)} />
@@ -216,8 +231,8 @@ function SdtCurve() {
 function ForgettingCurve() {
   const [reviews, setReviews] = React.useState<number[]>([]);
   const days = 30;
-  const X = (t: number) => 14 + (t / days) * (W - 24);
-  const Y = (r: number) => 10 + (1 - r) * (H - 26);
+  const X = (t: number) => GX0 + (t / days) * (GX1 - GX0);
+  const Y = (r: number) => GTOP + (1 - r) * (GY0 - GTOP);
   // Each review resets recall to 100% and makes memory more stable (slower decay).
   const seg: [number, number][] = [];
   const stops = [0, ...reviews, days];
@@ -231,15 +246,16 @@ function ForgettingCurve() {
   const next = reviews.length ? Math.min(days - 1, reviews.at(-1)! + [2, 5, 10, 18][Math.min(reviews.length, 3)]) : 1;
   return (
     <>
-      <svg viewBox={`0 0 ${W} ${H}`} className="w-full rounded-xl border-2 border-foreground bg-background" role="img" aria-label={`Recall after 30 days ≈ ${(endRecall * 100).toFixed(0)}% with ${reviews.length} reviews`}>
-        <path d={path(seg)} fill="none" strokeWidth="2.5" className="vibha-draw stroke-[var(--brand)]" pathLength={1} key={reviews.join("-")} />
+      <Chart name="forgetting" label={`Recall after 30 days ≈ ${(endRecall * 100).toFixed(0)}% with ${reviews.length} reviews`}>
+        <L k="fy" x1={GX0} y1={GY0 + 4} x2={GX0} y2={GTOP - 6} sw={2} />
         {reviews.map((r) => (
-          <line key={r} x1={X(r)} x2={X(r)} y1={10} y2={H - 16} className="stroke-foreground/40" strokeDasharray="3 3" />
+          <L key={r} k={`rev-${r}`} x1={X(r)} x2={X(r)} y1={GTOP} y2={GY0} stroke={C.soft} sw={1.2} single dash="4 4" />
         ))}
-        <text x={X(0)} y={H - 3} className="fill-muted-foreground text-[9px]">day 0</text>
-        <text x={X(days) - 22} y={H - 3} className="fill-muted-foreground text-[9px]">day {days}</text>
-        <text x={4} y={16} className="fill-muted-foreground text-[9px]">100% recall</text>
-      </svg>
+        <P k={`forget-${reviews.join("-")}`} d={path(seg.filter((_, i) => i % 2 === 0))} stroke={C.blue} sw={2.6} single rough={0.4} />
+        <Label x={GX0 + 8} y={GTOP - 12} size={16}>100% recall</Label>
+        <Label x={GX0} y={GY0 + 24} size={14} bold={false}>day 0</Label>
+        <Label x={GX1} y={GY0 + 24} size={14} anchor="end" bold={false}>{`day ${days}`}</Label>
+      </Chart>
       <div className="mt-3 flex flex-wrap gap-2">
         <button type="button" className={cn(btn, "bg-primary text-primary-foreground")} disabled={reviews.length >= 4 || next >= days} onClick={() => setReviews((r) => [...r, next])}>
           Review on day {next}
@@ -255,23 +271,23 @@ function ForgettingCurve() {
 
 function InvertedU() {
   const [a, setA] = React.useState(50);
-  const X = (v: number) => 12 + (v / 100) * (W - 24);
-  const Y = (p: number) => H - 14 - p * (H - 28);
+  const X = (v: number) => GX0 + (v / 100) * (GX1 - GX0);
+  const Y = (p: number) => GY0 - p * (GY0 - GTOP - 4);
   const perf = (v: number, peak: number, width: number) => Math.exp(-(((v - peak) / width) ** 2));
   const xs = Array.from({ length: 101 }, (_, i) => i);
   const simple = perf(a, 68, 38);
   const complex = perf(a, 38, 26);
   return (
     <>
-      <svg viewBox={`0 0 ${W} ${H}`} className="w-full rounded-xl border-2 border-foreground bg-background" role="img" aria-label={`At arousal ${a}: simple task ${(simple * 100).toFixed(0)}%, complex task ${(complex * 100).toFixed(0)}%`}>
-        <path d={path(xs.map((v) => [X(v), Y(perf(v, 68, 38))]))} fill="none" strokeWidth="2.5" className="stroke-foreground" strokeDasharray="5 3" />
-        <path d={path(xs.map((v) => [X(v), Y(perf(v, 38, 26))]))} fill="none" strokeWidth="2.5" className="stroke-[var(--brand)]" />
-        <line x1={X(a)} x2={X(a)} y1={8} y2={H - 14} className="stroke-[var(--destructive)]" strokeWidth="2" />
-        <text x={X(70)} y={24} className="fill-foreground text-[9px] font-semibold">simple task</text>
-        <text x={X(16)} y={24} className="fill-[var(--brand)] text-[9px] font-semibold">complex task</text>
-        <text x={X(0)} y={H - 2} className="fill-muted-foreground text-[9px]">calm</text>
-        <text x={X(100) - 30} y={H - 2} className="fill-muted-foreground text-[9px]">very aroused</text>
-      </svg>
+      <Chart name="inverted-u" label={`At arousal ${a}: simple task ${(simple * 100).toFixed(0)}%, complex task ${(complex * 100).toFixed(0)}%`}>
+        <Cv k="simple" pts={xs.filter((v) => v % 4 === 0).map((v) => [X(v), Y(perf(v, 68, 38))])} sw={2.2} single rough={0.4} dash="7 5" />
+        <Cv k="complex" pts={xs.filter((v) => v % 4 === 0).map((v) => [X(v), Y(perf(v, 38, 26))])} stroke={C.blue} sw={2.6} single rough={0.4} />
+        <L k={`ar-${a}`} x1={X(a)} x2={X(a)} y1={GTOP - 6} y2={GY0} stroke={C.red} sw={2.4} single rough={0.3} />
+        <Label x={X(68) + 4} y={GTOP - 12} size={16}>simple task</Label>
+        <Label x={X(38) - 4} y={GTOP - 12} size={16} anchor="end" color={C.blue}>complex task</Label>
+        <Label x={GX0} y={GY0 + 24} size={14} bold={false}>calm</Label>
+        <Label x={GX1} y={GY0 + 24} size={14} anchor="end" bold={false}>very aroused</Label>
+      </Chart>
       <div className="mt-3"><Slider label="Arousal" value={a} min={0} max={100} step={1} onChange={setA} /></div>
       <p className="mt-2 text-[0.95rem]" role="status">
         Simple task: <strong className="tabular-nums">{(simple * 100).toFixed(0)}%</strong> of best · complex task: <strong className="tabular-nums">{(complex * 100).toFixed(0)}%</strong> of best. Complex tasks peak at lower arousal. This is an idealised picture; the real relationship varies by person and task.
@@ -285,18 +301,20 @@ function DoseResponse() {
   const [partial, setPartial] = React.useState(false);
   const lo = -3;
   const hi = 3;
-  const X = (v: number) => 14 + ((v - lo) / (hi - lo)) * (W - 24);
-  const Y = (r: number) => H - 14 - r * (H - 30);
+  const X = (v: number) => GX0 + ((v - lo) / (hi - lo)) * (GX1 - GX0);
+  const Y = (r: number) => GY0 - r * (GY0 - GTOP - 10);
   const resp = (logd: number, e50: number, emax: number) => emax / (1 + Math.exp(-2.2 * (logd - e50)));
   const xs = Array.from({ length: 121 }, (_, i) => lo + i * 0.05);
   return (
     <>
-      <svg viewBox={`0 0 ${W} ${H}`} className="w-full rounded-xl border-2 border-foreground bg-background" role="img" aria-label="Dose-response curves">
-        <path d={path(xs.map((v) => [X(v), Y(resp(v, 0, 1))]))} fill="none" strokeWidth="2.5" className="stroke-foreground" strokeDasharray="5 3" />
-        <path d={path(xs.map((v) => [X(v), Y(resp(v, ec, partial ? 0.45 : 1))]))} fill="none" strokeWidth="2.5" className="stroke-[var(--brand)]" />
-        <text x={X(-2.9)} y={Y(1) - 3} className="fill-muted-foreground text-[9px]">100% effect</text>
-        <text x={X(-2.9)} y={H - 2} className="fill-muted-foreground text-[9px]">low dose (log scale) →</text>
-      </svg>
+      <Chart name="dose-response" label="Dose-response curves">
+        <L k="dy" x1={GX0} y1={GY0 + 4} x2={GX0} y2={GTOP - 6} sw={2} />
+        <L k="full" x1={GX0} x2={GX1} y1={Y(1)} y2={Y(1)} stroke={C.soft} sw={1} single dash="3 5" />
+        <Cv k="ref" pts={xs.filter((_, i) => i % 4 === 0).map((v) => [X(v), Y(resp(v, 0, 1))])} sw={2.2} single rough={0.4} dash="7 5" />
+        <Cv k={`yours-${ec}-${partial}`} pts={xs.filter((_, i) => i % 4 === 0).map((v) => [X(v), Y(resp(v, ec, partial ? 0.45 : 1))])} stroke={C.blue} sw={2.6} single rough={0.4} />
+        <Label x={GX0 + 8} y={Y(1) - 8} size={16}>100% effect</Label>
+        <Label x={GX0} y={GY0 + 24} size={14} bold={false}>{"low dose (log scale) \u2192"}</Label>
+      </Chart>
       <div className="mt-3 grid gap-3 sm:grid-cols-2">
         <Slider label="Potency (shift the curve)" value={ec} min={-1.5} max={1.5} step={0.05} onChange={setEc} fmt={(v) => (v < -0.1 ? "more potent" : v > 0.1 ? "less potent" : "same")} />
         <label className="flex min-h-11 items-center gap-2 text-sm font-semibold">
@@ -316,25 +334,26 @@ function HalfLife() {
   const tau = 24;
   const hours = 24 * 8;
   const k = Math.LN2 / h;
-  const X = (t: number) => 14 + (t / hours) * (W - 24);
+  const X = (t: number) => GX0 + (t / hours) * (GX1 - GX0);
   const conc = (t: number) => {
     let c = 0;
     for (let d = 0; d <= t; d += tau) c += Math.exp(-k * (t - d));
     return c;
   };
   const css = 1 / (1 - Math.exp(-k * tau));
-  const Y = (c: number) => H - 14 - (c / (css * 1.15)) * (H - 28);
+  const Y = (c: number) => GY0 - (c / (css * 1.15)) * (GY0 - GTOP);
   const pts: [number, number][] = Array.from({ length: 193 }, (_, i) => i).map((t) => [X(t), Y(conc(t))]);
   const ssHours = 4.5 * h;
   return (
     <>
-      <svg viewBox={`0 0 ${W} ${H}`} className="w-full rounded-xl border-2 border-foreground bg-background" role="img" aria-label={`Half-life ${h} hours; steady state after about ${Math.round(ssHours)} hours`}>
-        <line x1={X(0)} x2={X(hours)} y1={Y(css)} y2={Y(css)} className="stroke-foreground/40" strokeDasharray="4 3" />
-        <text x={X(hours) - 64} y={Y(css) - 3} className="fill-muted-foreground text-[9px]">steady-state peak</text>
-        <path d={path(pts)} fill="none" strokeWidth="2.5" className="stroke-[var(--brand)]" />
-        {ssHours < hours ? <line x1={X(ssHours)} x2={X(ssHours)} y1={10} y2={H - 14} className="stroke-[var(--destructive)]" strokeWidth="1.5" /> : null}
-        <text x={X(0)} y={H - 2} className="fill-muted-foreground text-[9px]">one dose every 24 h →</text>
-      </svg>
+      <Chart name="half-life" label={`Half-life ${h} hours; steady state after about ${Math.round(ssHours)} hours`}>
+        <L k="hy" x1={GX0} y1={GY0 + 4} x2={GX0} y2={GTOP - 6} sw={2} />
+        <L k="ss" x1={X(0)} x2={X(hours)} y1={Y(css)} y2={Y(css)} stroke={C.soft} sw={1.2} single dash="6 5" />
+        <Label x={GX1} y={Y(css) - 8} size={16} anchor="end">steady-state peak</Label>
+        <P k={`hl-${h}`} d={path(pts.filter((_, i) => i % 2 === 0))} stroke={C.blue} sw={2.4} single rough={0.3} />
+        {ssHours < hours ? <L k={`ssl-${h}`} x1={X(ssHours)} x2={X(ssHours)} y1={GTOP + 30} y2={GY0} stroke={C.red} sw={2} single rough={0.3} /> : null}
+        <Label x={GX0} y={GY0 + 24} size={14} bold={false}>{"one dose every 24 h \u2192"}</Label>
+      </Chart>
       <div className="mt-3"><Slider label="Half-life" value={h} min={4} max={60} step={1} onChange={setH} fmt={(v) => `${v} h`} /></div>
       <p className="mt-2 text-[0.95rem]" role="status">
         Each dose stacks on what&rsquo;s left of the last. Levels settle (steady state) after about 4 to 5 half-lives: here about <strong className="tabular-nums">{Math.round(ssHours)} hours</strong> ({(ssHours / 24).toFixed(1)} days). Longer half-life → smoother levels, but a longer wait to settle and to wash out.
@@ -440,12 +459,8 @@ function RingsArt({ labels }: { labels: string[] }) {
   const heights = rows.map((x) => x.lines.length * 16 + 10);
   const total = heights.reduce((a, h) => a + h, 0);
   const H = Math.max(270, total + 24);
-  let y = (H - total) / 2 + 14;
-  const placed = rows.map((x, i) => {
-    const at = y;
-    y += heights[i];
-    return { ...x, y: at };
-  });
+  const start = (H - total) / 2 + 14;
+  const placed = rows.map((x, i) => ({ ...x, y: start + heights.slice(0, i).reduce((a, h) => a + h, 0) }));
   const cyy = H / 2;
   return (
     <Sheet name="layers-rings" w={360} h={H} label={`Rings, inside to outside: ${labels.join(", ")}`} className="mx-auto max-w-[26rem]">
