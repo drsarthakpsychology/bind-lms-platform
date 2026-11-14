@@ -149,11 +149,11 @@ describe("trySave", () => {
   });
 
   it("retries a server error answer but not a refusal", async () => {
-    const server = vi.fn().mockResolvedValueOnce(new Response("", { status: 503 })).mockResolvedValueOnce(new Response("", { status: 200 }));
+    const server = vi.fn<() => Promise<Response>>().mockResolvedValueOnce(new Response("", { status: 503 })).mockResolvedValueOnce(new Response("", { status: 200 }));
     const p = trySave(server, "test", [10]);
     await vi.advanceTimersByTimeAsync(20);
     expect((await p)?.status).toBe(200);
-    const refused = vi.fn().mockResolvedValue(new Response("", { status: 400 }));
+    const refused = vi.fn<() => Promise<Response>>().mockResolvedValue(new Response("", { status: 400 }));
     expect((await trySave(refused, "test", [10]))?.status).toBe(400);
     expect(refused).toHaveBeenCalledTimes(1);
   });
