@@ -19,6 +19,7 @@ import { askHint } from "@/lib/hints/actions";
 import { hintedPoints, POINTS_KEPT } from "@/lib/hints/rules";
 import { useReaction } from "@/components/reactions/use-reaction";
 import { EndReaction } from "@/components/reactions/graphics";
+import { trySave } from "@/lib/save/client";
 
 const LEVELS: { id: Level; label: string; line: string }[] = [
   { id: 1, label: "Starting", line: "Clear findings, one per part." },
@@ -79,7 +80,7 @@ export function MseLab({ serverState, save, board, submit }: { serverState: Lear
       onExcerptDone={(p, e) => {
         // Browser copy of the answer history (the server records it too).
         noteAnswer("mse-lab", e.id, gradeExcerpt(e, p.tags).score >= EXCERPT_RIGHT, { server: false });
-        void submit({ id: e.id, tags: p.tags, streak: p.best, level: p.level, run: p.seed }).catch(() => undefined);
+        void trySave(() => submit({ id: e.id, tags: p.tags, streak: p.best, level: p.level, run: p.seed }), "MSE answer");
       }}
       onFinish={(p) => {
         const xp = Math.round(p.tagsScore * 5) + 10;

@@ -7,6 +7,7 @@ import { haptic } from "@/lib/haptics";
 import { CLINICS } from "@/lib/practice/clinic";
 import { EndReaction } from "@/components/reactions/graphics";
 import type { Mood } from "@/lib/reactions/stickers";
+import { trySave } from "@/lib/save/client";
 
 const SKIP = new Set(["disorder", "disorders", "syndrome", "related", "induced", "other", "without", "major", "acute", "chronic", "primary", "secondary", "presentation", "features", "reconsider", "atypical", "early", "onset", "illness", "state"]);
 /** Word stems that name a diagnosis (first 6 letters of 5+ letter words, minus filler like "disorder"). */
@@ -122,7 +123,7 @@ export function TwoMinuteClinic({ start = 0, order }: { start?: number; order?: 
               setPhase("compare");
               haptic("success");
               // Retention loop: completing the daily drill keeps the streak alive.
-              fetch("/api/practice/clinic/complete", { method: "POST" }).catch(() => {});
+              void trySave(() => fetch("/api/practice/clinic/complete", { method: "POST" }), "Clinic streak");
             }}
             className="w-full rounded-md border-2 border-border bg-primary px-4 py-2 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px active:hard-shadow-none"
           >

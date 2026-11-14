@@ -9,6 +9,7 @@ import { FORMULATION_COMPETENCY_KEYS, recordCompetencyEvent } from "@/lib/practi
 import { OnceHint } from "@/components/help/once-hint";
 import { showEndReaction } from "@/components/reactions/store";
 import { moodForScore } from "@/lib/reactions/stickers";
+import { trySave } from "@/lib/save/client";
 
 /** The finish sticker for a word diff: happy when most of the model's words are there. */
 function diffMood(d: { missing: string[]; present: string[] }) {
@@ -344,7 +345,7 @@ function OwnTranscriptForge() {
     setDiff(d);
     showEndReaction(diffMood(d));
     // Credit the formulation competencies into the Skills Passport.
-    void recordCompetencyEvent("formulation", FORMULATION_COMPETENCY_KEYS, narrative.trim().length >= 120 ? 4 : 3, "Formulation from own transcript").catch(() => {});
+    void trySave(() => recordCompetencyEvent("formulation", FORMULATION_COMPETENCY_KEYS, narrative.trim().length >= 120 ? 4 : 3, "Formulation from own transcript"), "Skills Passport credit");
     // Persist this own-transcript attempt (session-based; no formulation case).
     const completedAt = new Date();
     const payload = buildFormulationAttemptPayload(
@@ -358,11 +359,15 @@ function OwnTranscriptForge() {
       startedAt,
       completedAt,
     );
-    void fetch("/api/practice/formulation/attempt", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload),
-    }).catch(() => {}); // silent; a check, not a test
+    void trySave(
+      () =>
+        fetch("/api/practice/formulation/attempt", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        }),
+      "Formulation attempt",
+    );
     haptic("tap");
   }
 

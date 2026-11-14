@@ -12,6 +12,7 @@ import { createWebStt, webSttSupported } from "@/lib/voice/stt";
 import { OSCE_COMPETENCY_KEYS, recordCompetencyEvent } from "@/lib/practice/competency-client";
 import { noteAnswer, orderFor, useHistoryPrefetch } from "@/lib/history/client";
 import { buildOsceAttemptPayload } from "@/lib/practice/osce-attempt";
+import { trySave } from "@/lib/save/client";
 
 /** In-flight snapshot key: a mid-station refresh/lock restores the station
  *  instead of dropping the transcript + checklist (T46/T47). */
@@ -337,17 +338,21 @@ export function OsceStationView() {
             noteAnswer("osce", station.id, composite >= 0.6);
             // Credit the station's competencies into the Skills Passport once.
             const keys = OSCE_COMPETENCY_KEYS[station.id] ?? ["clinical_interviewing"];
-            void recordCompetencyEvent("osce", keys, selfGlobal || Math.round(frac * 5), `OSCE: ${station.title}`).catch(() => {});
+            void trySave(() => recordCompetencyEvent("osce", keys, selfGlobal || Math.round(frac * 5), `OSCE: ${station.title}`), "Skills Passport credit");
             // Persist the attempt (checklist + global rating + composite) so
             // /admin/osce-review and weak-spots can read per-station history.
             if (startedAt) {
               const completedAt = new Date();
               const payload = buildOsceAttemptPayload(station, checked, selfGlobal || Math.round(frac * 5), startedAt, completedAt);
-              await fetch("/api/practice/osce/attempt", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(payload),
-              }).catch(() => {}); // silent; a check, not a test
+              await trySave(
+                () =>
+                  fetch("/api/practice/osce/attempt", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(payload),
+                  }),
+                "OSCE attempt",
+              );
             }
           }
           setDone(true);
