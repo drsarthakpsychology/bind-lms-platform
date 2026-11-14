@@ -10,6 +10,7 @@ import { escapeXp, HINT_AFTER, PENALTY_S, teamTime, type EscState, type RaceRow 
 import { STAGE_LABEL, type OpenedDoor, type PublicDoor, type RoomCard, type RoomView } from "@/lib/games-sims/escape/types";
 import { TEAM_LIMITS } from "@/lib/games-sims/teams";
 import { Btn, buzz, Kbd, motionCss as m, Panel, Pill, Stat, useHotkeys } from "@/lib/games-sims/ui/kit";
+import { ThumbBar } from "@/components/mobile/thumb-bar";
 import { JoinBox, Members, TeamCode, usePoll } from "@/lib/games-sims/ui/team";
 import type { EscapeView, PracticeResult } from "./actions";
 import { creditServerPlay } from "@/lib/learn/credit-play";
@@ -140,7 +141,7 @@ function Pick({ arranged, startErr, teamsOn, teams, onPractice, onCreate, onJoin
   }
   return (
     <div className={cn("mx-auto max-w-3xl space-y-6", m.rise)}>
-      <h1 className="text-h2">Pick a room</h1>
+      <h1 className="text-h3">Pick a room</h1>
       {resume.map((x) => (
         <Panel key={x.id} className="flex flex-wrap items-center gap-3 bg-status-info-bg">
           <DoorOpen className="size-5" aria-hidden />
@@ -429,9 +430,12 @@ function OpenedCard({ p, by, onNext, nextLabel }: { p: OpenedDoor; by?: string; 
         {p.unlock}
       </p>
       {p.skill ? <LearnLink topic={STAGE_LABEL[p.stage]} href={`/study/${p.skill.split(":")[0]}`} newTab /> : null}
-      <Btn variant="primary" size="lg" className="w-full" onClick={onNext} autoFocus>
-        {nextLabel} <ArrowRight aria-hidden /> <Kbd>Enter</Kbd>
-      </Btn>
+      {/* Phones: Next sits low, in thumb reach. */}
+      <ThumbBar label="Next step">
+        <Btn variant="primary" size="lg" className="w-full" onClick={onNext} autoFocus>
+          {nextLabel} <ArrowRight aria-hidden /> <Kbd>Enter</Kbd>
+        </Btn>
+      </ThumbBar>
     </Panel>
   );
 }

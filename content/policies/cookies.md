@@ -10,7 +10,7 @@ order: 7
 
 | Type | Purpose | Can you disable? |
 |---|---|---|
-| Strictly necessary | Login sessions, security, load balancing, remembering your cookie choices | No — the site will not function |
+| Strictly necessary | Login sessions, security, load balancing, remembering your cookie choices | No: the site will not function |
 | Functional | Remembering preferences such as language or display settings | Yes |
 | Analytics | Understanding which pages are used, in aggregate, to improve the site | Yes |
 | Marketing | Measuring campaign performance, where used | Yes |

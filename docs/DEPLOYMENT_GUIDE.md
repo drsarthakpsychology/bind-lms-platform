@@ -1,3 +1,5 @@
+> **SUPERSEDED on 2026-11-14.** Use docs/DEPLOYMENT.md instead. This file is kept for history and may be out of date. Index of current docs: docs/README.md.
+
 # Deploying VIBHA School of Psychology to the Internet (Vercel)
 
 This guide explains how the project gets published on the internet. It's

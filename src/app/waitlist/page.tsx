@@ -1,87 +1,85 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { BRAND } from "@/lib/brand";
-import { Reveal } from "@/components/motion/reveal";
-import { LandingNav } from "@/components/landing/landing-nav";
 import { SiteFooter } from "@/components/site/site-footer";
+import { SiteHeader, SiteHeaderLink } from "@/components/site/site-header";
+import { COHORT, CONTACT, JOIN_STEPS } from "@/components/home/content";
 import { WaitlistForm } from "./waitlist-form";
 
 export const metadata: Metadata = {
-  title: "Join the waitlist",
+  title: "Request an invitation",
   robots: { index: true, follow: true },
 };
 
 /**
- * /waitlist: the one honest public CTA. No signup exists (invite-only), so this
- * captures the lead and feeds the existing WhatsApp/Brevo enrolment workflow.
- * Two-column at lg: the invite pitch (sticky) beside the waitlist sheet. All
- * copy is existing words; nothing new is claimed.
+ * /waitlist: where every "Request an invitation" button lands. Invite-only,
+ * so this captures the request and feeds the WhatsApp/Brevo enrolment flow.
+ *
+ * Layout: laptops get the short pitch (sticky) beside the form; phones get
+ * the title, one line of facts, then the form straight away, with the three
+ * joining steps after it. Every fact comes from the homepage content file
+ * (cohort, dates, steps, phone), so this page can never disagree with it.
  */
-
-const STEPS = [
-  { num: "01", text: "Tell us who you are." },
-  { num: "02", text: "We reply personally." },
-  { num: "03", text: "A conversation, not a form." },
-] as const;
-
 export default function WaitlistPage() {
+  const starts = COHORT.starts.charAt(0).toLowerCase() + COHORT.starts.slice(1);
   return (
-    <div className="flex min-h-screen flex-col bg-background">
-      <LandingNav />
-      <main className="mx-auto w-full max-w-5xl flex-1 px-5 py-14 sm:px-6">
-        <Reveal>
-          <Link
-            href="/"
-            className="inline-flex text-caption font-medium text-muted-foreground transition-colors hover:text-foreground"
-          >
-            ← Back
-          </Link>
-        </Reveal>
+    <div className="flex min-h-dvh flex-col bg-background">
+      <SiteHeader>
+        <SiteHeaderLink href="/login">Sign in</SiteHeaderLink>
+      </SiteHeader>
 
-        <div className="mt-3 grid grid-cols-1 gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-          {/* The invite pitch: sticky on lg so it stays beside the sheet. */}
-          <div className="lg:sticky lg:top-24">
-            <Reveal delay={0.06}>
-              <p className="text-eyebrow text-muted-foreground">Cohort One · Invite-only</p>
-              <h1 className="mt-3 text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
-                Join the waitlist
-              </h1>
-            </Reveal>
-            <Reveal delay={0.12}>
-              <p className="mt-4 text-base text-muted-foreground">
-                Tell us who you are. {BRAND.name} is invite-only and admission to Cohort One
-                is a conversation, not a form.
-              </p>
-            </Reveal>
-            <Reveal delay={0.16}>
-              <ol className="mt-8 divide-y-2 divide-foreground border-y-2 border-foreground">
-                {STEPS.map((s) => (
-                  <li key={s.num} className="flex items-baseline gap-3 py-3">
-                    <span aria-hidden className="font-mono text-sm font-bold tracking-normal text-link">
-                      {s.num}
-                    </span>
-                    <span className="font-semibold text-foreground">{s.text}</span>
-                  </li>
-                ))}
-              </ol>
-            </Reveal>
+      <main className="rail w-full flex-1 py-8 sm:py-12 lg:py-16">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-14">
+          <div className="lg:sticky lg:top-10 lg:self-start">
+            <p className="flex items-center gap-2 text-eyebrow text-link">
+              <span aria-hidden className="size-2 rounded-full border border-foreground bg-primary" />
+              {COHORT.label} · by invitation
+            </p>
+            <h1 className="mt-3 text-display text-foreground">Request an invitation</h1>
+            <p className="mt-3 max-w-[46ch] text-body text-muted-foreground">
+              {COHORT.length} of supervised clinical training. Starts in the {starts}, {COHORT.where}.
+            </p>
+
+            {/* The joining steps: under the form on phones, beside it on laptops. */}
+            <ol className="mt-8 hidden space-y-0 border-y-2 border-foreground lg:block" aria-label="How joining works">
+              <Steps />
+            </ol>
           </div>
 
-          {/* The waitlist sheet. */}
-          <Reveal delay={0.2}>
-            <div className="rounded-md border-2 border-foreground bg-card p-6 hard-shadow-md sm:p-8">
+          <div>
+            <div className="rounded-xl border-2 border-foreground bg-card p-5 hard-shadow-md sm:p-8">
               <WaitlistForm />
             </div>
-          </Reveal>
+            <ol className="mt-8 border-y-2 border-foreground lg:hidden" aria-label="How joining works">
+              <Steps />
+            </ol>
+            <p className="mt-6 text-small text-muted-foreground">
+              Rather talk now? Call or WhatsApp{" "}
+              <a href={CONTACT.whatsappHref} className="font-semibold text-link underline underline-offset-4 hover:text-foreground">
+                {CONTACT.phone}
+              </a>
+              .
+            </p>
+          </div>
         </div>
-
-        <Reveal delay={0.24}>
-          <p className="mt-8 text-caption text-muted-foreground">
-            We&apos;ll reply personally. Your details go only to the admissions team.
-          </p>
-        </Reveal>
       </main>
       <SiteFooter />
     </div>
+  );
+}
+
+function Steps() {
+  return (
+    <>
+      {JOIN_STEPS.map((s, i) => (
+        <li key={s.title} className="flex gap-4 border-b-2 border-foreground/15 py-4 last:border-b-0">
+          <span aria-hidden className="pt-0.5 font-mono text-sm font-bold text-link">
+            {String(i + 1).padStart(2, "0")}
+          </span>
+          <span>
+            <span className="block font-semibold text-foreground">{s.title}</span>
+            <span className="mt-0.5 block text-small text-muted-foreground">{s.text}</span>
+          </span>
+        </li>
+      ))}
+    </>
   );
 }

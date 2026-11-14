@@ -12,7 +12,8 @@ import { pct } from "@/lib/games-sims/common";
 import { nextStreak, pointsFor, segments, type FindingReveal, type Level, type PublicExcerpt, type Tag } from "@/lib/games-sims/mse/rules";
 import { DOMAINS, TERMS, domainLabel, type Domain } from "@/lib/games-sims/mse/terms";
 import { AccuracyBoard, type AccuracyBoardData } from "@/lib/games-sims/ui/board";
-import { Btn, buzz, Kbd, motionCss as m, Panel, Pill, readLocal, Stat, toneFor, useGameXp, useHotkeys, verdictWord, writeLocal } from "@/lib/games-sims/ui/kit";
+import { Btn, buzz, ChoiceCard, Kbd, PickHeading, motionCss as m, Panel, Pill, readLocal, Stat, toneFor, useGameXp, useHotkeys, Verdict, verdictWord, writeLocal } from "@/lib/games-sims/ui/kit";
+import { ThumbBar } from "@/components/mobile/thumb-bar";
 import { HintBar, useHintStatus } from "@/components/hints/hint-chip";
 import { askHint } from "@/lib/hints/actions";
 import { hintedPoints, POINTS_KEPT } from "@/lib/hints/rules";
@@ -113,16 +114,10 @@ function Intro({ board, busy, error, onStart }: { board: AccuracyBoardData; busy
   useHotkeys({ "1": () => onStart(1), "2": () => onStart(2), "3": () => onStart(3) });
   return (
     <div className={cn("mx-auto max-w-2xl space-y-6", m.rise)}>
-      <h1 className="text-h2">Pick a level</h1>
-      <div className="grid gap-3 sm:grid-cols-3">
+      <PickHeading>Pick a level</PickHeading>
+      <div className="grid gap-3">
         {LEVELS.map((l) => (
-          <Btn key={l.id} variant={l.id === 1 ? "primary" : "outline"} size="lg" disabled={busy} className="h-auto flex-col items-start py-3 text-left" onClick={() => onStart(l.id)}>
-            <span className="text-body-strong">
-              {l.label}
-              <Kbd>{l.id}</Kbd>
-            </span>
-            <span className="text-small font-normal">{l.line}</span>
-          </Btn>
+          <ChoiceCard key={l.id} title={l.label} line={l.line} hotkey={String(l.id)} suggested={l.id === 1} disabled={busy} onClick={() => onStart(l.id)} />
         ))}
       </div>
       {error ? (
@@ -311,10 +306,7 @@ function Round({ play, setPlay, tagOnServer, onFinish }: { play: Play; setPlay: 
 
         {result && tag ? (
           <div className={cn("space-y-2", result.score >= 1 ? m.pop : m.shake)}>
-            <div className="flex flex-wrap items-center gap-2">
-              <Pill tone={toneFor(result.score)}>{verdictWord(result.score)}</Pill>
-              <span className="font-pix">+{play.gained}</span>
-            </div>
+            <Verdict score={result.score} points={play.gained} />
             <ul className="space-y-1 text-small">
               <li>
                 <Pill tone={result.domainOk ? "good" : "bad"} className="mr-1">
@@ -332,10 +324,13 @@ function Round({ play, setPlay, tagOnServer, onFinish }: { play: Play; setPlay: 
             <p className="text-body">{result.why}</p>
             {result.whyNot ? <p className="rounded-md border-2 border-foreground/20 bg-card p-2 text-small">{result.whyNot}</p> : null}
             <LearnLink topic={label(result.answer)} href="/study/mse-deep" newTab />
-            <Btn variant="primary" size="lg" className="w-full" onClick={next} autoFocus>
-              {!lastFinding ? "Next finding" : lastExcerpt ? "See results" : "Next excerpt"} <ArrowRight aria-hidden />
-              <Kbd>Enter</Kbd>
-            </Btn>
+            {/* Phones: Next sits low, in thumb reach. */}
+            <ThumbBar label="Next step">
+              <Btn variant="primary" size="lg" className="w-full" onClick={next} autoFocus>
+                {!lastFinding ? "Next finding" : lastExcerpt ? "See results" : "Next excerpt"} <ArrowRight aria-hidden />
+                <Kbd>Enter</Kbd>
+              </Btn>
+            </ThumbBar>
           </div>
         ) : null}
       </Panel>

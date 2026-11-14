@@ -1,3 +1,5 @@
+> **SUPERSEDED on 2026-11-14.** Use docs/SCALABILITY_30_TO_300.md (the AI request numbers here are still a useful input) instead. This file is kept for history and may be out of date. Index of current docs: docs/README.md.
+
 # VIBHA AI Capacity Model — 40–50 Daily Active Users
 
 Calculated 2026-08-14 against **verified live** provider limits (not

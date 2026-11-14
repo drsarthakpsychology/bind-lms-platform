@@ -1,42 +1,18 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { Hourglass } from "lucide-react";
-import { VibhaWordmark } from "@/components/brand/vibha-logo";
-import { Button } from "@/components/ui/button";
-import { SiteFooter } from "@/components/site/site-footer";
-
+import { AccountNotice } from "@/components/site/account-notice";
 
 export const metadata: Metadata = {
+  title: "Access ended",
   robots: { index: false, follow: false },
 };
 
 export default function ExpiredPage() {
   return (
-    <div className="flex min-h-screen flex-col bg-background px-5 py-8">
-      <div className="flex items-center justify-between">
-        <Link href="/go/home" aria-label="VIBHA home"><VibhaWordmark size={30} /></Link>
-      </div>
-
-      <div className="flex flex-1 items-center justify-center">
-        <div className="w-full max-w-sm space-y-6 text-center">
-          <div className="mx-auto flex size-14 items-center justify-center rounded-md border-2 border-border bg-status-pending-bg text-status-pending-fg">
-            <Hourglass className="size-6" aria-hidden />
-          </div>
-          <div className="space-y-2">
-            <h1 className="text-h1">Access has expired</h1>
-            <p className="mx-auto max-w-xs text-small leading-relaxed text-muted-foreground">
-              Your account&apos;s access window has ended. Contact your administrator if you
-              believe this is a mistake.
-            </p>
-          </div>
-          <div className="rounded-lg border-2 border-foreground bg-card p-6 hard-shadow-md">
-            <Button asChild variant="outline" className="w-full">
-              <Link href="/login">Back to sign in</Link>
-            </Button>
-          </div>
-        </div>
-      </div>
-      <SiteFooter />
-    </div>
+    <AccountNotice
+      icon={Hourglass}
+      title="Your access has ended"
+      text="Your access window is over. If you think that's a mistake, message us and we'll check."
+    />
   );
 }

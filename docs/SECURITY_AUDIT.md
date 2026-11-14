@@ -1,3 +1,5 @@
+> **SUPERSEDED on 2026-11-14.** Use docs/security/SECURITY_AUDIT_2026_11.md instead. This file is kept for history and may be out of date. Index of current docs: docs/README.md.
+
 # Security audit — 2026-08-14 (auditing-app-security skill)
 
 Method: static reading + empirical replay (anon-key REST, read-only). Scope:

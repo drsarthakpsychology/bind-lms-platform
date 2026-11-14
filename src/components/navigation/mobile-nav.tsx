@@ -12,6 +12,7 @@ import { ThemeToggle } from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
 import { logout } from "@/lib/auth/actions";
 import { MiddleTruncate } from "@/components/ui/middle-truncate";
+import { cn } from "@/lib/utils";
 
 /**
  * Phone "More" drawer: opened by the More tab in the bottom bar (the
@@ -41,13 +42,31 @@ export function MobileNav({
   }, []);
 
   const close = () => setOpen(false);
+  // Phones open it from the More tab at the bottom, so it rises from the
+  // bottom (thumb reach); tablets open it from ☰ at the top left.
+  const phone = React.useSyncExternalStore(
+    (cb) => {
+      if (typeof window.matchMedia !== "function") return () => {};
+      const m = window.matchMedia("(max-width: 767px)");
+      m.addEventListener("change", cb);
+      return () => m.removeEventListener("change", cb);
+    },
+    () => typeof window.matchMedia === "function" && window.matchMedia("(max-width: 767px)").matches,
+    () => false,
+  );
   const row =
     "flex min-h-12 items-center gap-3 rounded-xl border-2 border-transparent px-3 text-sm font-bold transition-colors hover:border-foreground hover:bg-card";
 
   return (
     <Sheet open={open} onOpenChange={setOpen}>
-      <SheetContent side="left" className="w-[min(20rem,88vw)] gap-0 border-r-2 border-foreground p-0">
-        <SheetHeader className="border-b-2 border-foreground bg-brand px-4 pb-4 pt-[max(1rem,env(safe-area-inset-top))] text-brand-foreground">
+      <SheetContent
+        side={phone ? "bottom" : "left"}
+        className={cn(
+          "gap-0 p-0",
+          phone ? "max-h-[88dvh] overflow-hidden rounded-t-lg border-t-2 border-foreground data-[state=closed]:duration-200 data-[state=open]:duration-300" : "w-[min(20rem,88vw)] border-r-2 border-foreground",
+        )}
+      >
+        <SheetHeader className={cn("border-b-2 border-foreground bg-brand px-4 pr-14 pb-4 text-brand-foreground", phone ? "pt-4" : "pt-[max(1rem,env(safe-area-inset-top))]")}>
           <SheetTitle className="flex items-center gap-3 text-brand-foreground">
             <Avatar email={email} />
             <span className="min-w-0">
@@ -57,7 +76,7 @@ export function MobileNav({
           </SheetTitle>
           <SheetDescription className="sr-only">Menu and account</SheetDescription>
         </SheetHeader>
-        <div className="flex flex-1 flex-col overflow-y-auto px-3 py-4">
+        <div className="flex min-h-0 flex-1 flex-col overflow-y-auto overscroll-contain px-3 py-4">
           <NavItems items={items} onNavigate={close} />
           <div className="my-4 h-0.5 bg-line" aria-hidden />
           <Link href="/notifications" onClick={close} className={row}>

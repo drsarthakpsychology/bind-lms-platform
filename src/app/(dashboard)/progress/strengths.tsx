@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, TrendingUp } from "lucide-react";
+import { EmptyState } from "@/components/design-system/empty-state";
 import { getStrengthsWeaknesses, pct, type TopicScore } from "@/lib/progress/strengths";
 
 /** Three strongest and three weakest topics, each with a way to work on it. */
@@ -16,7 +17,7 @@ export async function StrengthsPanel({ userId }: { userId: string }) {
           <TopicList title="Strengths" items={sw.strongest} />
         </div>
       ) : (
-        <p className="text-sm text-muted-foreground">Answer a few questions in Study or Exam Prep and they show here.</p>
+        <EmptyState row icon={<TrendingUp className="size-5" />} title="Answer a few questions in Study or Exam Prep and they show here." />
       )}
       <Link href="/study/map" className="inline-flex min-h-11 items-center gap-1.5 text-sm font-bold text-link underline-offset-4 hover:underline">
         See your full map <ArrowRight className="size-4" aria-hidden />

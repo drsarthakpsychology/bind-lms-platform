@@ -10,6 +10,7 @@ import { noteAnswers, orderFor, useHistoryPrefetch } from "@/lib/history/client"
 import type { HistoryTool } from "@/lib/history/order";
 import { cn } from "@/lib/utils";
 import { mcqKey } from "@/lib/study/test-grade";
+import { ThumbBar } from "@/components/mobile/thumb-bar";
 import { Rich } from "./rich";
 import { useReaction } from "@/components/reactions/use-reaction";
 import { EndReaction, HalftoneCorner, ScoreDial } from "@/components/reactions/graphics";
@@ -330,20 +331,21 @@ export function TestRunner({
           </button>
         ))}
       </div>
-      <div className="mt-5 flex items-center justify-between gap-2">
-        <button type="button" onClick={() => setI(i - 1)} disabled={i === 0} className="inline-flex h-11 items-center gap-1 rounded-xl border-2 border-foreground px-4 font-semibold disabled:opacity-40">
+      {/* Phones: Back and Next sit low, where the thumb is (ThumbBar). */}
+      <ThumbBar label="Move through the test" className="md:mt-5" inlineClassName="md:justify-between md:gap-2">
+        <button type="button" onClick={() => setI(i - 1)} disabled={i === 0} className="inline-flex h-12 shrink-0 items-center gap-1 rounded-xl border-2 border-foreground bg-card px-4 font-semibold disabled:opacity-40 md:h-11">
           <ArrowLeft className="size-4" aria-hidden /> Back
         </button>
         {last ? (
-          <button type="button" onClick={submit} disabled={Object.keys(picks).length < items.length} className="inline-flex h-11 items-center gap-1 rounded-xl border-2 border-foreground bg-primary px-5 font-bold text-primary-foreground disabled:opacity-50">
+          <button type="button" onClick={submit} disabled={Object.keys(picks).length < items.length} className="inline-flex h-12 min-w-0 flex-1 items-center justify-center gap-1 rounded-xl border-2 border-foreground bg-primary px-5 font-bold text-primary-foreground disabled:opacity-50 md:h-11 md:flex-none">
             {Object.keys(picks).length < items.length ? `${items.length - Object.keys(picks).length} unanswered` : "Submit"}
           </button>
         ) : (
-          <button type="button" onClick={() => setI(i + 1)} disabled={pick === undefined} className="inline-flex h-11 items-center gap-1 rounded-xl border-2 border-foreground bg-foreground px-5 font-semibold text-background disabled:opacity-40">
+          <button type="button" onClick={() => setI(i + 1)} disabled={pick === undefined} className="inline-flex h-12 min-w-0 flex-1 items-center justify-center gap-1 rounded-xl border-2 border-foreground bg-primary px-5 font-bold text-primary-foreground disabled:opacity-40 md:h-11 md:flex-none md:bg-foreground md:font-semibold md:text-background">
             Next <ArrowRight className="size-4" aria-hidden />
           </button>
         )}
-      </div>
+      </ThumbBar>
     </div>
   );
 }

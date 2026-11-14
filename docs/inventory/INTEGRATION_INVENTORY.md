@@ -1,3 +1,5 @@
+> **SUPERSEDED on 2026-11-14.** Use docs/architecture/INTEGRATIONS.md instead. This file is kept for history and may be out of date. Index of current docs: docs/README.md.
+
 # Integration Inventory
 > Verified against `main` @ `b2a9698`. Env var **names** only; values are never recorded.
 

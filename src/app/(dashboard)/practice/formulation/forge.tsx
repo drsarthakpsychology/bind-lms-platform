@@ -5,6 +5,7 @@ import Link from "next/link";
 import type { ProgressSnapshot } from "@/lib/cases/progress";
 import { clearCaseProgress, saveCaseProgress, useCaseProgress } from "@/lib/cases/progress-client";
 import * as React from "react";
+import fx from "@/lib/games/ui/fx.module.css";
 import { haptic } from "@/lib/haptics";
 import { diffNarratives, FIVE_P, scoreSort, SEED_FORMULATION, type FiveP, type FormulationFactor } from "@/lib/practice/formulation";
 import { buildFormulationAttemptPayload } from "@/lib/practice/formulation-attempt";
@@ -131,21 +132,26 @@ export function FormulationForge({ seed = SEED_FORMULATION, progress: server, ne
 
   return (
     <div className="space-y-4">
-      {/* stage indicator */}
-      <div className="flex gap-2">
+      {/* stage indicator: four numbered steps, the current one filled */}
+      <ol className="grid grid-cols-4 gap-1.5" aria-label="Steps">
         {[1, 2, 3, 4].map((s) => (
-          <button
-            key={s}
-            type="button"
-            onClick={() => setStage(s as 1 | 2 | 3 | 4)}
-            className={`rounded-md border-2 border-border px-3 py-1.5 text-caption font-medium transition-transform active:translate-y-px ${
-              stage === s ? "bg-primary text-primary-foreground" : "bg-card text-muted-foreground"
-            }`}
-          >
-            {s === 1 ? "1 · Sort" : s === 2 ? "2 · Narrative" : s === 3 ? "3 · Diff" : "4 · Your session"}
-          </button>
+          <li key={s} className="min-w-0">
+            <button
+              type="button"
+              onClick={() => setStage(s as 1 | 2 | 3 | 4)}
+              aria-current={stage === s ? "step" : undefined}
+              className={`flex min-h-14 w-full flex-col items-center justify-center gap-1 rounded-md border-2 border-foreground px-1 py-1.5 text-center text-caption leading-tight font-semibold transition-[transform,box-shadow] duration-fast ease-snappy active:translate-y-px ${
+                stage === s ? "bg-brand text-brand-foreground hard-shadow-xs" : "bg-card text-foreground"
+              }`}
+            >
+              <span aria-hidden className={`grid size-6 place-items-center rounded-full border-2 border-current font-mono text-[0.7rem] ${stage === s ? "bg-card text-foreground" : ""}`}>
+                {s}
+              </span>
+              {s === 1 ? "Sort" : s === 2 ? "Write" : s === 3 ? "Compare" : "Your session"}
+            </button>
+          </li>
         ))}
-      </div>
+      </ol>
 
       {/* STAGE 1: sort */}
       {stage === 1 ? (
@@ -159,14 +165,14 @@ export function FormulationForge({ seed = SEED_FORMULATION, progress: server, ne
                 key={p}
                 type="button"
                 onClick={() => placeSelected(p)}
-                className="min-h-[120px] rounded-lg border-2 border-dashed border-border bg-card p-3 text-left transition-transform active:translate-y-px"
+                className={`min-h-16 rounded-[10px] border-2 border-dashed p-3 text-left transition-[transform,background-color] duration-fast ease-snappy active:translate-y-px sm:min-h-[120px] ${selected ? "border-foreground bg-primary/30" : "border-foreground/40 bg-card"}`}
               >
                 <span className="text-caption font-semibold uppercase text-link">{p}</span>
                 <span className="mt-1 flex flex-col gap-1">
                   {placed(p).map((a) => {
                     const f = seed.factors.find((x) => x.id === a.factorId);
                     return (
-                      <span key={a.factorId} className="rounded border border-border bg-background px-2 py-1 text-caption">
+                      <span key={a.factorId} className="rounded-md border-2 border-foreground bg-background px-2 py-1 text-small leading-snug">
                         {f?.text}
                       </span>
                     );
@@ -189,19 +195,38 @@ export function FormulationForge({ seed = SEED_FORMULATION, progress: server, ne
                     type="button"
                     onClick={() => { setSelected(isSel ? null : f.id); haptic("tap"); }}
                     aria-pressed={isSel}
-                    className={`rounded-md border-2 border-border px-3 py-1.5 text-caption transition-transform active:translate-y-px ${
-                      isSel ? "bg-primary text-primary-foreground ring-2 ring-ring" : placedIn ? "bg-secondary text-muted-foreground" : "bg-background"
+                    className={`min-h-11 rounded-md border-2 border-foreground px-3 py-2 text-left text-small leading-snug transition-[transform,box-shadow] duration-fast ease-snappy active:translate-y-px ${
+                      isSel ? "-translate-y-0.5 bg-brand text-brand-foreground hard-shadow-xs" : placedIn ? "border-foreground/30 bg-secondary text-muted-foreground" : "bg-background hard-shadow-xs"
                     }`}
                   >
-                    {f.text.slice(0, 42)}…
+                    {f.text}
                   </button>
                 );
               })}
             </div>
             <p className="mt-2 text-caption text-muted-foreground">
-              Score so far: <span className="font-semibold text-numeric">{Math.round(score * 100)}%</span>: a comparison with the model, not a grade.
+              Score so far: <span className="font-semibold text-numeric">{Math.round(score * 100)}%</span>
             </p>
           </div>
+
+          {/* Phones and tablets: a picked card goes into a bucket from here, without scrolling up. */}
+          {selected ? (
+            <div className={`sticky bottom-[calc(var(--nav-h,0px)+0.5rem)] z-10 space-y-2 rounded-md border-2 border-foreground bg-foreground p-3 text-background hard-shadow-sm sm:hidden ${fx.rise}`}>
+              <p className="text-sm">
+                <strong>Picked:</strong> {seed.factors.find((x) => x.id === selected)?.text}
+              </p>
+              <div className="grid grid-cols-2 gap-2">
+                {FIVE_P.map((p) => (
+                  <button key={p} type="button" onClick={() => placeSelected(p)} className="min-h-12 rounded-md border-2 border-background bg-primary px-2.5 py-2 text-left text-sm font-bold capitalize text-primary-foreground active:translate-y-px">
+                    {p}
+                  </button>
+                ))}
+                <button type="button" onClick={() => setSelected(null)} className="min-h-12 rounded-md border-2 border-background px-2.5 py-2 text-sm font-bold">
+                  Cancel
+                </button>
+              </div>
+            </div>
+          ) : null}
 
           <button
             type="button"
@@ -209,7 +234,7 @@ export function FormulationForge({ seed = SEED_FORMULATION, progress: server, ne
             disabled={unplaced.length > 0}
             className="w-full rounded-md border-2 border-border bg-primary px-4 py-2 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px active:hard-shadow-none disabled:opacity-50"
           >
-            {unplaced.length ? `${unplaced.length} cards left to sort` : "Write the narrative →"}
+            {unplaced.length ? `${unplaced.length} cards left to sort` : "Write the story →"}
           </button>
         </div>
       ) : null}

@@ -10,7 +10,7 @@ Please read this policy carefully **before** making any payment. By paying cours
 
 ## 2.1 All fees are non-refundable
 
-**All fees paid to VIBHA School of Psychology — including registration fees, course fees, instalments, and part payments — are non-refundable and non-cancellable.**
+**All fees paid to VIBHA School of Psychology (including registration fees, course fees, instalments, and part payments) are non-refundable and non-cancellable.**
 
 This applies regardless of whether you attend sessions, complete the course, withdraw partway, lose interest, face a scheduling conflict, experience a change in personal or professional circumstances, or are unable to continue for any reason.
 

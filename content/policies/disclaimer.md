@@ -2,7 +2,7 @@
 title: Disclaimer
 slug: disclaimer
 lastUpdated: "[EFFECTIVE_DATE]"
-summary: What the courses are — and are not — and why nothing here is medical advice.
+summary: What the courses are and are not, and why nothing here is medical advice.
 order: 13
 ---
 
@@ -16,7 +16,7 @@ Nothing on this website or in our courses is a substitute for consultation with 
 
 ## 13.3 No practitioner relationship
 
-Enrolling as a learner, attending sessions, or communicating with our faculty does not create a therapist–client, doctor–patient, or professional advisory relationship between you and any member of our faculty or staff.
+Enrolling as a learner, attending sessions, or communicating with our faculty does not create a therapist-client, doctor-patient, or professional advisory relationship between you and any member of our faculty or staff.
 
 ## 13.4 No regulatory recognition
 

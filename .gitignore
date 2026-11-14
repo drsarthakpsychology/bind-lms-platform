@@ -8,6 +8,32 @@ next-env.d.ts
 .vercel
 .claude/worktrees/
 
+# Audit 2026-11: keep these out of git (local only)
+# Licensed book text extracts and the fine-tune dataset built from them (copyright)
+scripts/psychopharm/text/*.txt
+scripts/finetune/data/
+# Book PDFs, ebooks and scans, wherever they land
+/BOOKS/
+/books/
+*.pdf
+*.epub
+!public/**/*.pdf
+# Code archives made by the cleanup (uploaded to R2, never committed)
+/archive-out/
+*.tar.gz
+# Local database dumps and exports
+*.dump
+*.sql.gz
+*.backup
+dump*.sql
+# Env files of any name (keep only the template)
+.env.*
+!.env.example
+# Logs and editor or OS clutter
+*.log
+Thumbs.db
+coverage/
+
 # Corpus raw fetched data (regenerable via npm run corpus:*)
 scripts/corpus/raw/
 scripts/corpus/drafted-cases.json
@@ -52,3 +78,6 @@ __pycache__/
 
 # Transformation release package output
 /release/
+
+# Offline backups (scripts/make-offline-backup.sh)
+/backup-out/

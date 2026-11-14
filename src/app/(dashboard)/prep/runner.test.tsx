@@ -91,7 +91,7 @@ describe("QuestionRunner", () => {
     expect(screen.getByText("1 of 1 right")).toBeInTheDocument();
     fireEvent.click(screen.getByRole("button", { name: /Go through again/ }));
     expect(screen.queryByText(/Correct answer/)).toBeNull();
-    expect(screen.getByRole("button", { name: "Check answer" })).toBeDisabled();
+    expect(screen.getByRole("button", { name: "Pick an answer" })).toBeDisabled();
     fireEvent.click(screen.getByRole("radio", { name: /1 and 2 only/ }));
     fireEvent.click(screen.getByRole("button", { name: "Check answer" }));
     fireEvent.click(await screen.findByRole("button", { name: /See your score/ }));

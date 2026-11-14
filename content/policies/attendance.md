@@ -16,7 +16,7 @@ To be eligible for certification, a learner must:
 2. **complete every remaining session** by viewing the recording on the learning platform; **and**
 3. **complete and submit all assignments** by their stated deadlines.
 
-All three conditions must be met. Attending 50% of sessions alone is not sufficient — the remaining sessions must still be watched, and all assignments must still be completed. There is no partial pathway to certification.
+All three conditions must be met. Attending 50% of sessions alone is not sufficient: the remaining sessions must still be watched, and all assignments must still be completed. There is no partial pathway to certification.
 
 ## 11.2 Why it is structured this way
 

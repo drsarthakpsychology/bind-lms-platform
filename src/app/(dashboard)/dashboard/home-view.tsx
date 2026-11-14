@@ -27,26 +27,34 @@ const KIND_ICON: Record<ContinueKind, typeof Play> = {
   lectures: Play,
 };
 
-/** The one obvious next step: the only filled (action) card on Home. */
-export function ContinueCard({ step }: { step: ContinueStep }) {
+/**
+ * The one obvious next step: the only filled (action) card on Home. Phones:
+ * the button runs full width under the words, in thumb reach. Beside the goal
+ * card on wide screens (`stacked`) the words sit at the top and the button at
+ * the bottom, so the tall card has no empty middle.
+ */
+export function ContinueCard({ step, stacked = false }: { step: ContinueStep; stacked?: boolean }) {
   const Icon = KIND_ICON[step.kind];
   return (
     <Link
       href={step.href}
       prefetch
-      className="group/continue flex min-w-0 flex-col gap-4 rounded-2xl border-2 border-foreground bg-primary p-5 text-primary-foreground hard-shadow-md outline-none transition-[transform,box-shadow] duration-fast ease-snappy hover:-translate-y-0.5 hover:hard-shadow-lg focus-visible:ring-[3px] focus-visible:ring-ring/60 active:translate-y-px active:shadow-none sm:flex-row sm:items-center sm:p-6"
+      className={cn(
+        "group/continue flex min-w-0 flex-col gap-4 rounded-2xl border-2 border-foreground bg-primary p-5 text-primary-foreground hard-shadow-md outline-none transition-[transform,box-shadow] duration-fast ease-snappy hover:-translate-y-0.5 hover:hard-shadow-lg focus-visible:ring-[3px] focus-visible:ring-ring/60 active:translate-y-px active:shadow-none motion-reduce:hover:translate-y-0 sm:flex-row sm:items-center sm:p-6",
+        stacked && "lg:flex-col lg:items-stretch lg:justify-between lg:gap-6",
+      )}
     >
-      <span className="flex min-w-0 flex-1 items-start gap-4 sm:items-center">
+      <span className={cn("flex min-w-0 flex-1 items-start gap-4 sm:items-center", stacked && "lg:flex-none lg:items-start")}>
         <span aria-hidden className="grid size-11 shrink-0 place-items-center rounded-xl border-2 border-foreground bg-card text-foreground sm:size-14">
           <Icon className="size-6 sm:size-7" />
         </span>
         <span className="flex min-w-0 flex-1 flex-col gap-1">
           <span className="text-eyebrow opacity-80">{step.eyebrow}</span>
-          <span className="text-h2 line-clamp-3 [overflow-wrap:anywhere]">{step.title}</span>
+          <span className={cn("text-h2 line-clamp-3 [overflow-wrap:anywhere]", stacked && "lg:text-[1.6rem] lg:leading-[1.1]")}>{step.title}</span>
           {step.meta ? <span className="text-sm font-semibold opacity-80 [overflow-wrap:anywhere]">{step.meta}</span> : null}
         </span>
       </span>
-      <span className="inline-flex min-h-11 w-fit shrink-0 items-center gap-2 rounded-lg border-2 border-foreground bg-card px-5 text-sm font-bold text-foreground transition-transform duration-fast ease-snappy group-hover/continue:translate-x-0.5">
+      <span className="inline-flex min-h-12 w-full shrink-0 items-center justify-center gap-2 rounded-md border-2 border-foreground bg-foreground px-5 text-sm font-bold text-background transition-transform duration-fast ease-snappy group-hover/continue:translate-x-0.5 sm:min-h-11 sm:w-fit">
         {step.cta} <ArrowRight className="size-4" aria-hidden />
       </span>
     </Link>
@@ -62,14 +70,14 @@ export function QuestList({ data }: { data: QuestCard }) {
         <span>Today&apos;s quests</span>
         <span className="font-semibold text-muted-foreground tabular-nums">{data.done ? "All done" : `${3 - left}/3`}</span>
       </h3>
-      <ul className="mt-2 space-y-1.5">
+      <ul className="mt-1">
         {data.quests.map((q) => (
-          <li key={q.id} className="flex min-w-0 items-center gap-2 text-sm">
+          <li key={q.id} className="flex min-h-10 min-w-0 items-center gap-2 text-sm pointer-coarse:min-h-11">
             {q.done ? <Check className="size-4 shrink-0" aria-hidden /> : <Circle className="size-4 shrink-0 text-muted-foreground" aria-hidden />}
             {q.done ? (
               <span className="min-w-0 flex-1 text-muted-foreground line-through decoration-foreground/30">{q.label}</span>
             ) : (
-              <Link href={q.href} className="min-w-0 flex-1 font-semibold underline-offset-4 hover:underline">
+              <Link href={q.href} className="flex min-h-10 min-w-0 flex-1 items-center font-semibold underline-offset-4 hover:underline pointer-coarse:min-h-11">
                 {q.label}
               </Link>
             )}
@@ -226,7 +234,7 @@ export function HomeBody({
 
       {goal ? (
         <div className="grid min-w-0 gap-5 lg:grid-cols-[minmax(0,1.7fr)_minmax(0,1fr)]">
-          <ContinueCard step={step} />
+          <ContinueCard step={step} stacked />
           <GoalCard points={goal.points} goal={goal.goal} streak={goal.streak} quests={quests} />
         </div>
       ) : (

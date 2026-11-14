@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import { CheckCircle2 } from "lucide-react";
 import { getSession } from "@/lib/auth/session";
-import { BRAND } from "@/lib/brand";
+import { CONTACT } from "@/components/home/content";
 import { AuthShell } from "@/components/auth/auth-shell";
 import { LoginForm } from "./login-form";
 
@@ -27,7 +27,7 @@ export default async function LoginPage({
   return (
     <AuthShell
       title="Sign in"
-      subtitle={`${BRAND.tagline} Invite-only: use the email your programme added.`}
+      subtitle="Use the email you were invited with."
     >
       {setup === "done" ? (
         <p className="mb-4 flex items-center gap-2 rounded-xl border-2 border-foreground bg-primary px-3 py-2 text-sm font-bold text-primary-foreground">
@@ -40,8 +40,12 @@ export default async function LoginPage({
         </p>
       ) : null}
       <LoginForm defaultEmail={defaultEmail} />
-      <p className="mt-4 text-caption text-muted-foreground">
-        Forgot your password? Message us on WhatsApp and we&apos;ll send you a new setup link.
+      <p className="mt-5 border-t-2 border-foreground/10 pt-4 text-small text-muted-foreground">
+        Forgot your password?{" "}
+        <a href={CONTACT.whatsappHref} className="font-semibold text-link underline underline-offset-4 hover:text-foreground">
+          Message us on WhatsApp
+        </a>{" "}
+        for a new setup link.
       </p>
     </AuthShell>
   );

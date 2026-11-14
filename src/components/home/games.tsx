@@ -748,3 +748,42 @@ export function MemoryGame() {
     </div>
   );
 }
+
+/* ------------------------------ Long list that folds on phones only */
+/**
+ * Shows the whole list on tablets and laptops. On a phone the list folds
+ * after the first few items behind one "Show all" button, so 18 modules are
+ * not 3,500px of scrolling before the FAQ. Nothing is hidden from screen
+ * readers' reach: the button expands in place and focus stays on it.
+ */
+export function FoldList({
+  children,
+  className,
+  more,
+}: {
+  children: React.ReactNode;
+  className?: string;
+  more: string;
+}) {
+  const [open, setOpen] = React.useState(false);
+  const id = React.useId();
+  return (
+    <>
+      <ol id={id} className={className} data-open={open ? "true" : "false"}>
+        {children}
+      </ol>
+      {open ? null : (
+        <button
+          type="button"
+          className={`${s.btn} ${s.btnWhite} ${s.foldMore}`}
+          aria-controls={id}
+          aria-expanded={false}
+          onClick={() => setOpen(true)}
+        >
+          {more}
+        </button>
+      )}
+    </>
+  );
+}
+

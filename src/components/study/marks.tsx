@@ -27,36 +27,39 @@ export function SectionMarks({ owner, moduleId, sectionId, sectionLabel, lead }:
 
   return (
     <div className="mt-3">
-      {/* Phones: the view switch takes its own row, Bookmark and My note
-          share the next one. From 640px all three sit in one row. */}
-      <div className="grid grid-cols-2 items-center gap-2 sm:flex sm:flex-wrap">
-        {lead ? <div className="col-span-2 sm:contents">{lead}</div> : null}
+      {/* One row at every width: the view switch takes the room, Bookmark and
+          My note are square 44px buttons on phones (named for screen readers)
+          and get their words from 640px. Reading starts one row sooner. */}
+      <div className="flex items-center gap-2 sm:flex-wrap">
+        {lead ? <div className="min-w-0 flex-1 sm:flex-none">{lead}</div> : null}
         <button
           type="button"
           onClick={() => update((m) => toggleBookmark(m, key, Date.now()))}
           aria-pressed={on}
+          aria-label={on ? "Bookmarked" : "Bookmark"}
           disabled={!hydrated}
           className={cn(
-            "inline-flex min-h-11 min-w-0 items-center justify-center gap-1.5 rounded-md border-2 border-foreground px-4 text-sm font-semibold transition-colors disabled:opacity-60",
+            "inline-flex size-11 shrink-0 items-center justify-center gap-1.5 rounded-md border-2 border-foreground text-sm font-semibold transition-colors disabled:opacity-60 sm:w-auto sm:px-4",
             on ? "bg-foreground text-background" : "bg-card hover:bg-muted",
           )}
         >
           {on ? <BookmarkCheck className="size-4" aria-hidden /> : <Bookmark className="size-4" aria-hidden />}
-          {on ? "Bookmarked" : "Bookmark"}
+          <span className="hidden sm:inline">{on ? "Bookmarked" : "Bookmark"}</span>
         </button>
         <button
           type="button"
           onClick={() => setOpen(!open)}
           aria-expanded={open}
           aria-controls={panelId}
+          aria-label={saved.trim() && !open ? "My note (has a note)" : "My note"}
           disabled={!hydrated}
           className={cn(
-            "inline-flex min-h-11 min-w-0 items-center justify-center gap-1.5 rounded-md border-2 border-foreground px-4 text-sm font-semibold transition-colors disabled:opacity-60",
+            "relative inline-flex size-11 shrink-0 items-center justify-center gap-1.5 rounded-md border-2 border-foreground text-sm font-semibold transition-colors disabled:opacity-60 sm:w-auto sm:px-4",
             open ? "bg-muted" : "bg-card hover:bg-muted",
           )}
         >
-          <NotebookPen className="size-4" aria-hidden /> My note
-          {saved.trim() && !open ? <span className="size-2 rounded-full bg-brand" aria-label="(has a note)" /> : null}
+          <NotebookPen className="size-4" aria-hidden /> <span className="hidden sm:inline">My note</span>
+          {saved.trim() && !open ? <span className="absolute -top-1 -right-1 size-2.5 rounded-full bg-brand ring-2 ring-card sm:static sm:ring-0" aria-hidden /> : null}
         </button>
       </div>
       {open ? <NotePanel key={key} id={panelId} initial={saved} label={sectionLabel} onSave={(text) => update((m) => setNote(m, key, text, Date.now()))} onClose={() => setOpen(false)} /> : null}

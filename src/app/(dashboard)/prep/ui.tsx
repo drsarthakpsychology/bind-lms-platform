@@ -21,9 +21,15 @@ export function BackToPrep({ href = "/prep", label = PREP_SHORT }: { href?: stri
 export function PrepHero({ children }: { children?: React.ReactNode }) {
   return (
     <header className="space-y-3">
+      {/* Phones: the short name on one line (the tab bar's word); the full name from 640 px. */}
       <ToolHeader
-        eyebrow="Exam Prep"
-        title={PREP_TITLE}
+        eyebrow={<span className="hidden sm:inline">{PREP_SHORT}</span>}
+        title={
+          <>
+            <span className="sm:hidden">{PREP_SHORT}</span>
+            <span className="hidden sm:inline">{PREP_TITLE}</span>
+          </>
+        }
         tip={{
           id: "prep",
           steps: ["Pick a subject, then a topic.", "Save any question to see it again."],
@@ -55,9 +61,12 @@ export function bigCount(n: number, noun: string): string | undefined {
   return `${Math.floor(n / step) * step}+ ${noun}`;
 }
 
-/** "72% right" or "New", as words (never a bar alone). */
-export function pctText(s: Stats): string {
-  return s.pct === null ? "New" : `${s.pct}% right`;
+/**
+ * "72% right" once something is answered; nothing before that. A "New" on
+ * every row of a fresh list says nothing and makes the list noisy.
+ */
+export function pctText(s: Stats): string | undefined {
+  return s.pct === null ? undefined : `${s.pct}% right`;
 }
 
 /** A thin meter for how much of a topic is done. Decorative: the numbers are in the text beside it. */

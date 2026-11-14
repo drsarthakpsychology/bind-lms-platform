@@ -28,7 +28,7 @@ import {
   SCENARIOS,
   WEEKS_TIMELINE,
 } from "./content";
-import { useCalm } from "./motion-kit";
+import { useCalm, useFinePointer } from "./motion-kit";
 import s from "./home.module.css";
 
 /**
@@ -433,6 +433,10 @@ export function WeeksTimeline() {
 /* ============================================ Draggable hero stickers */
 export function Stickers({ items }: { items: readonly string[] }) {
   const calm = useCalm();
+  // Drag-to-fling is a mouse toy. On touch it would trap the thumb (the page
+  // could not scroll from a sticker), so phones get plain, swipeable chips.
+  const fine = useFinePointer();
+  const play = !calm && fine;
   return (
     <ul className={s.stickers} aria-label="What the programme covers">
       {items.map((t, i) => (
@@ -440,11 +444,12 @@ export function Stickers({ items }: { items: readonly string[] }) {
           key={t}
           className={`${s.sticker} ${s[`stk${i % 3}`]}`}
           style={{ rotate: [-3, 2, -1.5][i % 3] }}
-          drag={!calm}
+          drag={play}
+          data-drag={play ? "true" : undefined}
           dragSnapToOrigin
           dragElastic={0.5}
           whileDrag={{ scale: 1.12, rotate: 0, zIndex: 5 }}
-          whileHover={calm ? undefined : { scale: 1.06 }}
+          whileHover={play ? { scale: 1.06 } : undefined}
           data-cursor
         >
           {t}

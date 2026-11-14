@@ -1,11 +1,14 @@
 "use client";
 
 import * as React from "react";
+import { useReaction } from "@/components/reactions/use-reaction";
+import { EndReaction } from "@/components/reactions/graphics";
 import { haptic } from "@/lib/haptics";
 import { cn } from "@/lib/utils";
 import { AlertTriangle, Siren, CheckCircle2 } from "lucide-react";
 import { MobileChoiceList } from "@/components/mobile/mobile-choice-list";
 import { OUT_OF_DEPTH_SCENARIOS, scoreReferralDecision, type ReferralOption } from "@/lib/out-of-depth/scenarios";
+import { ThumbBar } from "@/components/mobile/thumb-bar";
 
 /**
  * Out of Depth (v5.1 A4): the refer/escalate drill.
@@ -17,6 +20,8 @@ export function OutOfDepthDrill() {
   const [chosen, setChosen] = React.useState<ReferralOption | null>(null);
   const [overReferrals, setOverReferrals] = React.useState(0);
   const [done, setDone] = React.useState(false);
+  const [right, setRight] = React.useState(0);
+  const reaction = useReaction();
 
   const total = OUT_OF_DEPTH_SCENARIOS.length;
   const isLast = idx + 1 >= total;
@@ -28,7 +33,11 @@ export function OutOfDepthDrill() {
     const result = scoreReferralDecision(s, o);
     setChosen(o);
     if (result.overReferral) setOverReferrals((n) => n + 1);
-    if (result.correct) haptic("success");
+    if (result.correct) {
+      haptic("success");
+      setRight((n) => n + 1);
+    }
+    reaction.onAnswer(result.correct);
   }
 
   function next() {
@@ -45,6 +54,8 @@ export function OutOfDepthDrill() {
     setIdx(0);
     setChosen(null);
     setOverReferrals(0);
+    setRight(0);
+    reaction.reset();
     setDone(false);
     haptic("tap");
   }
@@ -52,6 +63,7 @@ export function OutOfDepthDrill() {
   if (done) {
     return (
       <div className="rounded-lg border-2 border-border bg-card p-6 hard-shadow-sm">
+        <EndReaction right={right} total={total} />
         <p className="flex items-center gap-2 text-base font-semibold">
           <CheckCircle2 className="size-4" aria-hidden /> All scenarios done
         </p>
@@ -114,13 +126,16 @@ export function OutOfDepthDrill() {
               Anxious novices refer everything. Abandoning a client you can serve is also a failure.
             </p>
           ) : null}
-          <button
-            type="button"
-            onClick={next}
-            className="mt-4 rounded-md border-2 border-border bg-primary px-4 py-2 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px"
-          >
-            {isLast ? "Finish" : "Next scenario"}
-          </button>
+          {/* Phones: Next sits low, in thumb reach. */}
+          <ThumbBar label="Next step" className="md:mt-4">
+            <button
+              type="button"
+              onClick={next}
+              className="min-h-12 w-full text-base md:min-h-0 md:w-auto md:text-small rounded-md border-2 border-border bg-primary px-4 py-2 font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px"
+            >
+              {isLast ? "Finish" : "Next scenario"}
+            </button>
+          </ThumbBar>
         </div>
       ) : null}
     </div>

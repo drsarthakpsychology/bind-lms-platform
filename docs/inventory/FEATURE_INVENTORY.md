@@ -1,3 +1,5 @@
+> **SUPERSEDED on 2026-11-14.** Use docs/FEATURES_STATUS.md instead. This file is kept for history and may be out of date. Index of current docs: docs/README.md.
+
 # Feature Inventory
 > Verified against `main` @ `b2a9698`. **Class:** A fully implemented · B partial · C implemented, not reachable from UI · D implemented, apparently unused · E deprecated/replaced · F broken/possibly broken · G planned, not built · H needs verification.
 > "Present in code" ≠ "live for students": production flag values (`feature_flags`) are UNVERIFIED. Evidence = file paths; INFERRED items are marked.

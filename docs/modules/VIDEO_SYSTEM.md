@@ -1,3 +1,5 @@
+> **SUPERSEDED on 2026-11-14.** Use docs/architecture/VIDEO.md instead. This file is kept for history and may be out of date. Index of current docs: docs/README.md.
+
 # Module: Video system
 > Verified against `main` @ `b2a9698`. Pipeline walk-through: [VIDEO_PROCESSING](../workflows/VIDEO_PROCESSING.md).
 

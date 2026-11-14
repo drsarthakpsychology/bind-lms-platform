@@ -8,6 +8,7 @@ import { LearnLink } from "@/lib/games/ui/learn-link";
 import { deltaSign, KIND_LABEL, LOWER_IS_BETTER, QUALITY_LABEL, VAR_LABEL, type CampaignCard, type Quality, type Scene, type VarKey, type Vars, type WardEnd, type WardReveal } from "@/lib/games-sims/ward/rules";
 import { TEAM_LIMITS } from "@/lib/games-sims/teams";
 import { Btn, buzz, Kbd, motionCss as m, Panel, Pill, readLocal, Stat, useHotkeys, writeLocal, type Tone } from "@/lib/games-sims/ui/kit";
+import { ThumbBar } from "@/components/mobile/thumb-bar";
 import { JoinBox, Members, TeamCode, usePoll } from "@/lib/games-sims/ui/team";
 import type { WardSolo, WardTeamView } from "./actions";
 import { creditServerPlay } from "@/lib/learn/credit-play";
@@ -231,7 +232,7 @@ function Pick({
   const resume = list.filter((x) => x.mark === "started");
   return (
     <div className={cn("mx-auto max-w-3xl space-y-6", m.rise)}>
-      <h1 className="text-h2">Pick a patient</h1>
+      <h1 className="text-h3">Pick a patient</h1>
 
       {resume.map((x) => (
         <Panel key={x.id} className="flex flex-wrap items-center gap-3 bg-status-info-bg">
@@ -581,9 +582,12 @@ function RevealCard({ r, onNext, nextLabel }: { r: WardReveal & { teamLine?: str
           <p className="mt-1 text-small">{r.best.why}</p>
         </div>
       ) : null}
-      <Btn variant="primary" size="lg" className="w-full" onClick={onNext} autoFocus>
-        {nextLabel} <ArrowRight aria-hidden /> <Kbd>Enter</Kbd>
-      </Btn>
+      {/* Phones: Next sits low, in thumb reach. */}
+      <ThumbBar label="Next step">
+        <Btn variant="primary" size="lg" className="w-full" onClick={onNext} autoFocus>
+          {nextLabel} <ArrowRight aria-hidden /> <Kbd>Enter</Kbd>
+        </Btn>
+      </ThumbBar>
     </Panel>
   );
 }

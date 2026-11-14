@@ -78,7 +78,7 @@ export function TopBar({
 
         <Link
           href={homeHref}
-          className="group/logo flex shrink-0 items-center gap-2 rounded-full pr-1 outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60"
+          className="group/logo flex min-h-11 shrink-0 items-center gap-2 rounded-full pr-1 outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60"
           aria-label="VIBHA home"
         >
           <span className="leading-none">

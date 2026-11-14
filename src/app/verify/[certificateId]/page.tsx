@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { createAdminClient } from "@/lib/supabase/server";
 import { Card, CardContent } from "@/components/ui/card";
 import { SiteFooter } from "@/components/site/site-footer";
+import { SiteHeader } from "@/components/site/site-header";
 import { ShieldCheck, ShieldX, HelpCircle } from "lucide-react";
 
 // Public verification, never indexed, no auth required.
@@ -27,13 +28,14 @@ export default async function VerifyCertificatePage({ params }: { params: Promis
 
   if (!cred) {
     return (
-      <div className="flex min-h-screen flex-col bg-background px-5">
-        <main className="flex flex-1 items-center justify-center">
+      <div className="flex min-h-dvh flex-col bg-background">
+        <SiteHeader />
+        <main className="flex flex-1 items-center justify-center px-5 py-12">
           <Card className="w-full max-w-md hard-shadow-md">
             <CardContent className="p-6 text-center">
               <HelpCircle className="mx-auto size-10 text-muted-foreground" aria-hidden />
-              <p className="mt-3 text-h2">Invalid credential</p>
-              <p className="mt-2 text-small text-muted-foreground">This credential could not be verified. Check the link or contact the issuing institution.</p>
+              <h1 className="mt-3 text-h2">We can&apos;t find this certificate</h1>
+              <p className="mt-2 text-small text-muted-foreground">Check that the link was copied in full. If it was, the certificate was not issued by VIBHA School of Psychology.</p>
             </CardContent>
           </Card>
         </main>
@@ -51,8 +53,9 @@ export default async function VerifyCertificatePage({ params }: { params: Promis
   const fmt = (iso: string) => new Date(iso).toLocaleDateString("en-IN", { day: "numeric", month: "long", year: "numeric", timeZone: "Asia/Kolkata" });
 
   return (
-    <div className="flex min-h-screen flex-col bg-background px-5">
-      <main className="flex flex-1 items-center justify-center py-10">
+    <div className="flex min-h-dvh flex-col bg-background">
+      <SiteHeader />
+      <main className="flex flex-1 items-center justify-center px-5 py-12">
         <Card className="w-full max-w-md hard-shadow-md">
           <CardContent className="space-y-4 p-6 text-center">
             <p className="text-eyebrow text-link">VIBHA School of Psychology</p>
@@ -62,7 +65,7 @@ export default async function VerifyCertificatePage({ params }: { params: Promis
                   <ShieldCheck className="size-4" aria-hidden /> Verified
                 </span>
               ) : revoked ? (
-                <span className="inline-flex items-center gap-2 rounded-full border-2 border-foreground bg-card px-3 py-1 text-sm font-bold text-red-600">
+                <span className="inline-flex items-center gap-2 rounded-full border-2 border-foreground bg-card px-3 py-1 text-sm font-bold text-status-alert-fg">
                   <ShieldX className="size-4" aria-hidden /> Revoked
                 </span>
               ) : (
@@ -72,13 +75,13 @@ export default async function VerifyCertificatePage({ params }: { params: Promis
               )}
             </div>
             <p className="text-sm text-muted-foreground">This certifies that</p>
-            <p className="text-h2">{cred.student_name}</p>
+            <h1 className="text-h2">{cred.student_name}</h1>
             <p className="text-sm text-muted-foreground">earned</p>
             <p className="text-h3">{title}</p>
             {paragraph ? <p className="rounded-md border-2 border-foreground/15 bg-muted/40 p-3 text-left text-sm leading-relaxed">{paragraph}</p> : null}
             {verified && cred.issued_at ? <p className="text-caption text-muted-foreground">Issued {fmt(cred.issued_at)}</p> : null}
-            {revoked && cred.revoked_at ? <p className="text-caption text-red-600">Revoked {fmt(cred.revoked_at)}</p> : null}
-            <p className="break-all font-mono text-[0.65rem] text-muted-foreground">Credential ID {cred.credential_id}</p>
+            {revoked && cred.revoked_at ? <p className="text-caption font-semibold text-status-alert-fg">Revoked {fmt(cred.revoked_at)}</p> : null}
+            <p className="break-all border-t-2 border-foreground/10 pt-4 font-mono text-caption text-muted-foreground">Credential ID {cred.credential_id}</p>
           </CardContent>
         </Card>
       </main>

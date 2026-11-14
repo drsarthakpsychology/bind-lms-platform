@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { createAdminClient } from "@/lib/supabase/server";
 import { hashSetupToken } from "@/lib/auth/roster";
 import { AuthShell } from "@/components/auth/auth-shell";
+import { LinkProblem } from "@/components/auth/link-problem";
 import { SetupForm } from "./setup-form";
 import { nowMs } from "@/lib/crm/people";
 
@@ -36,16 +36,10 @@ export default async function SetupPage({ searchParams }: { searchParams: Promis
   return (
     <AuthShell
       title={problem ? "Link not working" : "Set your password"}
-      subtitle={problem ? "No problem: this is easy to fix." : `For ${email}. You'll use it every time you sign in.`}
+      subtitle={problem ? "Easy to fix." : `For ${email}. You'll use it every time you sign in.`}
     >
       {problem ? (
-        <div className="space-y-4">
-          <p className="text-sm font-semibold">{problem}</p>
-          <p className="text-sm text-muted-foreground">Message us on WhatsApp and we&apos;ll send you a fresh link in a minute.</p>
-          <Link href="/login" className="inline-flex h-10 items-center rounded-full border-2 border-foreground bg-primary px-5 text-sm font-bold text-primary-foreground">
-            Go to sign in
-          </Link>
-        </div>
+        <LinkProblem reason={problem} />
       ) : (
         <SetupForm token={token} email={email ?? ""} />
       )}

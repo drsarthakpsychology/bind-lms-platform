@@ -1,11 +1,14 @@
 "use client";
 
 import * as React from "react";
+import { useReaction } from "@/components/reactions/use-reaction";
+import { EndReaction } from "@/components/reactions/graphics";
 import { haptic } from "@/lib/haptics";
 import { cn } from "@/lib/utils";
 import { Gavel, Scale, CheckCircle2 } from "lucide-react";
 import { MobileChoiceList } from "@/components/mobile/mobile-choice-list";
 import type { EthicDilemma } from "@/lib/practice/ethics";
+import { ThumbBar } from "@/components/mobile/thumb-bar";
 
 /**
  * Dilemma flow: commit to an action BEFORE seeing the consequence.
@@ -15,6 +18,8 @@ export function DilemmaFlow({ dilemmas }: { dilemmas: EthicDilemma[] }) {
   const [idx, setIdx] = React.useState(0);
   const [chosen, setChosen] = React.useState<number | null>(null);
   const [finished, setFinished] = React.useState(false);
+  const [right, setRight] = React.useState(0);
+  const reaction = useReaction();
 
   const d = dilemmas[idx];
   if (!d) return null;
@@ -23,7 +28,12 @@ export function DilemmaFlow({ dilemmas }: { dilemmas: EthicDilemma[] }) {
     if (chosen !== null) return;
     haptic("tap");
     setChosen(optionIdx);
-    if (dilemmas[idx].options[optionIdx].correct) haptic("success");
+    const ok = dilemmas[idx].options[optionIdx].correct;
+    if (ok) {
+      haptic("success");
+      setRight((n) => n + 1);
+    }
+    reaction.onAnswer(ok);
   }
 
   function next() {
@@ -43,6 +53,7 @@ export function DilemmaFlow({ dilemmas }: { dilemmas: EthicDilemma[] }) {
   if (finished) {
     return (
       <div className="rounded-lg border-2 border-border bg-card p-6 hard-shadow-sm">
+        <EndReaction right={right} total={dilemmas.length} />
         <p className="flex items-center gap-2 text-base font-semibold">
           <CheckCircle2 className="size-4" aria-hidden /> All dilemmas done
         </p>
@@ -51,7 +62,7 @@ export function DilemmaFlow({ dilemmas }: { dilemmas: EthicDilemma[] }) {
         </p>
         <button
           type="button"
-          onClick={() => { setIdx(0); setChosen(null); setFinished(false); haptic("tap"); }}
+          onClick={() => { setIdx(0); setChosen(null); setRight(0); reaction.reset(); setFinished(false); haptic("tap"); }}
           className="mt-4 rounded-md border-2 border-border bg-primary px-4 py-2 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px"
         >
           Run the dilemmas again
@@ -97,13 +108,16 @@ export function DilemmaFlow({ dilemmas }: { dilemmas: EthicDilemma[] }) {
             <span className="font-semibold text-muted-foreground">The law: </span>
             {d.law}
           </p>
-          <button
-            type="button"
-            onClick={next}
-            className="mt-4 rounded-md border-2 border-border bg-primary px-4 py-2 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px active:hard-shadow-none"
-          >
-            {idx + 1 < dilemmas.length ? "Next dilemma" : "Finish"}
-          </button>
+          {/* Phones: Next sits low, in thumb reach. */}
+          <ThumbBar label="Next step" className="md:mt-4">
+            <button
+              type="button"
+              onClick={next}
+              className="min-h-12 w-full text-base md:min-h-0 md:w-auto md:text-small rounded-md border-2 border-border bg-primary px-4 py-2 font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px active:hard-shadow-none"
+            >
+              {idx + 1 < dilemmas.length ? "Next dilemma" : "Finish"}
+            </button>
+          </ThumbBar>
         </div>
       ) : null}
     </div>

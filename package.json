@@ -20,7 +20,10 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "knip": "knip",
+    "knip:files": "knip --include files --no-exit-code",
     "test:e2e": "playwright test",
+    "test:a11y": "playwright test e2e/a11y.spec.ts",
+    "analyze": "next analyze --output",
     "set-r2-cors": "tsx scripts/set-r2-cors.ts",
     "apply-migrations": "tsx scripts/apply-migrations.ts",
     "apply-pending": "tsx scripts/apply-pending.ts",
@@ -85,7 +88,6 @@
   "dependencies": {
     "@aws-sdk/client-s3": "^3.1101.0",
     "@aws-sdk/s3-request-presigner": "^3.1101.0",
-    "@hookform/resolvers": "^5.6.0",
     "@huggingface/transformers": "^4.2.0",
     "@livekit/agents": "^1.6.4",
     "@react-three/drei": "10.7.9",
@@ -116,7 +118,6 @@
     "radix-ui": "^1.6.7",
     "react": "19.2.4",
     "react-dom": "19.2.4",
-    "react-hook-form": "^7.84.0",
     "remark-gfm": "^4.0.1",
     "roughjs": "^4.6.6",
     "server-only": "^0.0.1",
@@ -128,8 +129,8 @@
     "zod": "^4.6.7"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
     "@playwright/test": "^1.62.1",
-    "@tailwindcss/forms": "^0.5.11",
     "@tailwindcss/postcss": "^4",
     "@testing-library/jest-dom": "^7.0.1",
     "@testing-library/react": "^16.3.2",

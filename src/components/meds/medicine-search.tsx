@@ -48,20 +48,20 @@ export function MedicineSearch({ rows, groups }: { rows: MedIndexRow[]; groups: 
           className="h-14 w-full rounded-2xl border-2 border-foreground bg-card pr-12 pl-12 text-lg font-medium hard-shadow-sm outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60"
         />
         {q ? (
-          <button type="button" onClick={() => setQ("")} aria-label="Clear search" className="absolute top-1/2 right-3 grid size-9 -translate-y-1/2 place-items-center rounded-full hover:bg-muted">
+          <button type="button" onClick={() => setQ("")} aria-label="Clear search" className="absolute top-1/2 right-2 grid size-11 -translate-y-1/2 place-items-center rounded-full hover:bg-muted">
             <X className="size-5" aria-hidden />
           </button>
         ) : null}
       </form>
 
-      <div className="flex flex-wrap gap-2" role="group" aria-label="Filter by group">
+      <div className="-mx-4 chip-scroller gap-2 px-4 pb-0.5 sm:mx-0 sm:flex-wrap sm:overflow-visible sm:px-0" role="group" aria-label="Filter by group">
         {(["All", ...groups] as const).map((g) => (
           <button
             key={g}
             type="button"
             onClick={() => setGroup(g)}
             aria-pressed={group === g}
-            className={cn("h-9 shrink-0 rounded-full border-2 border-foreground px-3.5 text-sm font-semibold", group === g ? "bg-foreground text-background" : "bg-card")}
+            className={cn("h-11 shrink-0 rounded-full border-2 border-foreground px-4 text-sm font-semibold sm:h-9 sm:px-3.5", group === g ? "bg-foreground text-background" : "bg-card")}
           >
             {g}
           </button>
