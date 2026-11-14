@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { ChevronDown } from "lucide-react";
+import { Check, ChevronDown, Lock } from "lucide-react";
 import { haptic } from "@/lib/haptics";
 import { cn } from "@/lib/utils";
 import { MSE_LEVEL_META, MSE_LEVELS, type MseLevel } from "@/lib/mse/ladder";
@@ -85,7 +85,8 @@ export function MseLadder({ content }: { content?: MseLadderContent }) {
   return (
     <div className="space-y-6">
       {/* Ladder header */}
-      <div className="flex flex-wrap gap-2">
+      {/* Phones: one row that scrolls sideways; wider screens wrap. */}
+      <div className="-mx-4 flex snap-x scroll-px-4 gap-2 overflow-x-auto px-4 pb-1 [scrollbar-width:none] sm:mx-0 sm:flex-wrap sm:overflow-visible sm:px-0">
         {ordered.map((lvl, i) => {
           const meta = MSE_LEVEL_META[lvl];
           const isActive = active === lvl;
@@ -100,16 +101,18 @@ export function MseLadder({ content }: { content?: MseLadderContent }) {
                 setActive(lvl);
               }}
               aria-pressed={isActive}
+              aria-disabled={!isUnlocked || undefined}
               className={cn(
-                "flex items-center gap-2 rounded-md border-2 border-border px-3 py-2 text-caption font-medium transition-transform active:translate-y-px",
-                isActive ? "bg-primary text-primary-foreground hard-shadow-sm" : "bg-card text-muted-foreground",
-                !isUnlocked && "opacity-40",
+                "relative flex min-h-11 shrink-0 snap-start items-center gap-2 rounded-md border-2 px-3 py-2 text-small font-semibold whitespace-nowrap transition-[transform,box-shadow] duration-fast ease-snappy",
+                isActive ? "border-foreground bg-brand text-brand-foreground hard-shadow-xs" : isUnlocked ? "border-foreground bg-card text-foreground active:translate-y-px" : "cursor-not-allowed border-dashed border-foreground/40 bg-transparent text-muted-foreground",
               )}
-              title={isUnlocked ? meta.title : "Complete the previous level to unlock"}
+              title={isUnlocked ? meta.title : "Finish the level before to open this one"}
             >
-              <span className="font-semibold">L{lvl}</span>
+              <span aria-hidden className={cn("grid size-6 place-items-center rounded-full border-2 border-current font-mono text-[0.7rem]", done[lvl] && "border-foreground bg-primary text-primary-foreground")}>
+                {done[lvl] ? <Check className="size-3.5" strokeWidth={3} /> : !isUnlocked ? <Lock className="size-3" /> : lvl}
+              </span>
               <span>{meta.title}</span>
-              {done[lvl] ? <span aria-label="done">✓</span> : null}
+              <span className="sr-only">{done[lvl] ? " (done)" : !isUnlocked ? " (locked)" : ""}</span>
             </button>
           );
         })}
