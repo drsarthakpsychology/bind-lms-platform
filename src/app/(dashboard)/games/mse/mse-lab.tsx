@@ -13,7 +13,7 @@ import { historyFor, noteAnswer, useHistoryPrefetch } from "@/lib/history/client
 import { EXCERPT_RIGHT, gradeExcerpt, gradeTag, nextLevel, nextStreak, optionsFor, pickExcerpt, pointsFor, ROUND_SIZE, segments, whyNot, type Level, type Tag, type TagResult } from "@/lib/games-sims/mse/grade";
 import { DOMAINS, TERMS, domainLabel, termById, type Domain } from "@/lib/games-sims/mse/terms";
 import { AccuracyBoard, type AccuracyBoardData } from "@/lib/games-sims/ui/board";
-import { Btn, buzz, ChoiceCard, Kbd, PickHeading, motionCss as m, Panel, Pill, readLocal, Stat, toneFor, useGameXp, useHotkeys, verdictWord, writeLocal } from "@/lib/games-sims/ui/kit";
+import { Btn, buzz, ChoiceCard, Kbd, PickHeading, motionCss as m, Panel, Pill, readLocal, Stat, toneFor, useGameXp, useHotkeys, Verdict, verdictWord, writeLocal } from "@/lib/games-sims/ui/kit";
 import { ThumbBar } from "@/components/mobile/thumb-bar";
 import { HintBar, useHintStatus } from "@/components/hints/hint-chip";
 import { askHint } from "@/lib/hints/actions";
@@ -277,10 +277,7 @@ function Round({ play, setPlay, onExcerptDone, onFinish }: { play: Play; setPlay
 
         {result && tag ? (
           <div className={cn("space-y-2", result.score >= 1 ? m.pop : m.shake)}>
-            <div className="flex flex-wrap items-center gap-2">
-              <Pill tone={toneFor(result.score)}>{verdictWord(result.score)}</Pill>
-              <span className="font-pix">+{play.gained}</span>
-            </div>
+            <Verdict score={result.score} points={play.gained} />
             <ul className="space-y-1 text-small">
               <li>
                 <Pill tone={result.domainOk ? "good" : "bad"} className="mr-1">

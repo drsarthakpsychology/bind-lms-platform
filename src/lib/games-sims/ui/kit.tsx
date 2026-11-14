@@ -129,6 +129,31 @@ export function Pill({ tone, children, className }: { tone: Tone; children: Reac
   );
 }
 
+/**
+ * The answer's verdict, the first thing read after an answer: a band in the
+ * verdict's colour with its icon in a disc, the word in large type and the
+ * points won. Words, icon and colour all say the same thing.
+ */
+export function Verdict({ score, points, children, className }: { score: number; points?: number; children?: React.ReactNode; className?: string }) {
+  const tone = toneFor(score);
+  const t = TONE[tone];
+  return (
+    <div role="status" className={cn("flex flex-wrap items-center gap-x-3 gap-y-2 rounded-md border-2 border-foreground px-3 py-2.5", t.cls, className)}>
+      <span aria-hidden className="grid size-10 shrink-0 place-items-center rounded-full border-2 border-foreground bg-card text-foreground">
+        <t.Icon className="size-5" strokeWidth={3} />
+      </span>
+      <span className="text-h3 leading-none">{verdictWord(score)}</span>
+      {points !== undefined ? (
+        <span className="rounded-md border-2 border-foreground bg-card px-2 py-0.5 font-pix text-body tabular-nums text-foreground">
+          +{points}
+          <span className="sr-only"> points</span>
+        </span>
+      ) : null}
+      {children ? <span className="ml-auto flex items-center gap-2 text-small font-semibold">{children}</span> : null}
+    </div>
+  );
+}
+
 export function toneFor(score: number): Tone {
   return score >= 0.999 ? "good" : score > 0 ? "part" : "bad";
 }
