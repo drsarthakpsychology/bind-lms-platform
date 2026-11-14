@@ -23,6 +23,8 @@ type SavedStation = { phase: "active" | "selfassess"; seconds: number; checked: 
 const OLD_KEY = "osce:in-flight";
 const PAGE = 20;
 const level = (s: OsceStation) => s.tags?.difficulty ?? 0;
+/** A moment `ms` from now (only called from event handlers). */
+const inMs = (ms: number) => Date.now() + ms;
 
 const NO_CASES: CaseContext = { student: "", history: [], progress: { owner: null, rows: [] }, now: 0 };
 
@@ -112,7 +114,7 @@ export function OsceStationView({ cases = NO_CASES }: { cases?: CaseContext }) {
     setSelfGlobal(0);
     setSpoken("");
     setStartedAt(new Date());
-    setDeadline(Date.now() + st.duration_seconds * 1000);
+    setDeadline(inMs(st.duration_seconds * 1000));
     setPhase("active");
     haptic("tap");
   }
@@ -130,7 +132,7 @@ export function OsceStationView({ cases = NO_CASES }: { cases?: CaseContext }) {
     setSpoken(typeof saved.spoken === "string" ? saved.spoken : "");
     setStartedAt(saved.startedAt ? new Date(saved.startedAt) : new Date());
     setDone(false);
-    setDeadline(Date.now() + Math.max(0, st.duration_seconds - (Number(saved.seconds) || 0)) * 1000);
+    setDeadline(inMs(Math.max(0, st.duration_seconds - (Number(saved.seconds) || 0)) * 1000));
     setPhase(saved.phase);
     haptic("tap");
   }
