@@ -59,22 +59,24 @@ function GameTile({ g }: { g: Game }) {
     <li className="min-w-0">
       <Link
         href={g.href}
-        className="group/game flex h-full min-w-0 overflow-hidden rounded-2xl border-2 border-foreground bg-card outline-none transition-[transform,box-shadow] duration-fast ease-snappy hover:-translate-y-0.5 hover:hard-shadow-md focus-visible:ring-[3px] focus-visible:ring-ring/60 active:translate-y-px active:shadow-none sm:flex-col"
+        className="group/game flex h-full min-h-24 min-w-0 overflow-hidden rounded-[10px] border-2 border-foreground bg-card outline-none hard-shadow-sm transition-[transform,box-shadow] duration-fast ease-snappy hover:-translate-y-0.5 hover:hard-shadow-md focus-visible:ring-[3px] focus-visible:ring-ring/60 active:translate-x-px active:translate-y-px active:shadow-none sm:flex-col"
       >
-        {/* The game's mark: its colour, its icon and its tag. */}
-        <span aria-hidden className={cn("relative flex w-24 shrink-0 items-center justify-center border-r-2 border-foreground sm:h-28 sm:w-full sm:border-r-0 sm:border-b-2", TONE[g.tone])}>
+        {/* The game's mark: its colour and its icon (and, from 640 px, its tag). */}
+        <span aria-hidden className={cn("relative flex w-20 shrink-0 items-center justify-center border-r-2 border-foreground sm:h-28 sm:w-full sm:border-r-0 sm:border-b-2", TONE[g.tone])}>
           <span className="absolute inset-0 opacity-15 [background-image:radial-gradient(currentColor_1px,transparent_1.5px)] [background-size:12px_12px]" />
-          <Icon className="relative size-9 transition-transform duration-fast ease-snappy motion-safe:group-hover/game:-rotate-6 motion-safe:group-hover/game:scale-110 sm:size-11" />
-          <span className="absolute bottom-1.5 left-1.5 -rotate-3 whitespace-nowrap rounded-md border-2 border-foreground bg-card px-1.5 py-1 font-pix text-[0.6rem] uppercase leading-none text-foreground sm:bottom-auto sm:top-2 sm:left-2">
+          <Icon className="relative size-9 transition-transform duration-base ease-snappy motion-safe:group-hover/game:-rotate-6 motion-safe:group-hover/game:scale-110 sm:size-11" />
+          <span className="absolute top-2 left-2 hidden -rotate-3 whitespace-nowrap rounded-md border-2 border-foreground bg-card px-1.5 py-1 font-mono text-[0.65rem] font-bold uppercase leading-none tracking-wider text-foreground sm:block">
             {g.tag}
           </span>
         </span>
-        <span className="flex min-w-0 flex-1 flex-col gap-1 p-3 sm:p-4">
+        <span className="flex min-w-0 flex-1 flex-col justify-center gap-1 p-3 sm:justify-start sm:p-4">
           <span className="flex items-center justify-between gap-2">
             <span className="min-w-0 text-lg font-bold leading-tight [overflow-wrap:anywhere]">{g.title}</span>
-            <ArrowRight className="size-4 shrink-0 text-muted-foreground transition-transform duration-fast group-hover/game:translate-x-0.5" aria-hidden />
+            <ArrowRight className="size-5 shrink-0 transition-transform duration-fast ease-snappy group-hover/game:translate-x-0.5" aria-hidden />
           </span>
           <span className="text-sm leading-snug text-muted-foreground [overflow-wrap:anywhere]">{g.text}</span>
+          {/* Phones: the tag sits with the words, clear of the icon. */}
+          <span className="mt-0.5 font-mono text-[0.7rem] font-bold uppercase tracking-wider text-link sm:hidden">{g.tag}</span>
         </span>
       </Link>
     </li>
@@ -87,7 +89,7 @@ function GameGroup({ id, title, games }: { id: string; title: string; games: Gam
       <h2 id={id} className="text-h3">
         {title}
       </h2>
-      <ul className="grid grid-cols-[minmax(0,1fr)] gap-3 sm:grid-cols-2 lg:grid-cols-3">
+      <ul className="grid grid-cols-[minmax(0,1fr)] gap-3.5 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3">
         {games.map((g) => (
           <GameTile key={g.href} g={g} />
         ))}

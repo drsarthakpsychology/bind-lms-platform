@@ -8,6 +8,10 @@ import { buildSctAttemptPayload } from "@/lib/practice/sct-attempt";
 import { JUDGMENT_COMPETENCY_KEYS, recordCompetencyEvent } from "@/lib/practice/competency-client";
 import { MobileCompletionState } from "@/components/mobile/mobile-completion-state";
 import { ThumbBar } from "@/components/mobile/thumb-bar";
+import { ChevronDown, ChevronsDown, ChevronsUp, ChevronUp, Minus, type LucideIcon } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { useReaction } from "@/components/reactions/use-reaction";
+import { EndReaction } from "@/components/reactions/graphics";
 
 const RESPONSE_LABELS: Record<SctResponse, string> = {
   [-2]: "Much less likely",
@@ -17,12 +21,22 @@ const RESPONSE_LABELS: Record<SctResponse, string> = {
   2: "Much more likely",
 };
 
+const RESPONSE_ICONS: Record<SctResponse, LucideIcon> = {
+  [-2]: ChevronsDown,
+  [-1]: ChevronDown,
+  0: Minus,
+  1: ChevronUp,
+  2: ChevronsUp,
+};
+const RESPONSES: SctResponse[] = [-2, -1, 0, 1, 2];
+
 export function JudgmentArena({ items }: { items: SctItem[] }) {
   const [idx, setIdx] = React.useState(0);
   const [answered, setAnswered] = React.useState<Array<{ response: SctResponse; score: number }>>([]);
   const [showPanel, setShowPanel] = React.useState(false);
   const [seconds, setSeconds] = React.useState(0);
   const creditedRef = React.useRef(false);
+  const reaction = useReaction();
 
   React.useEffect(() => {
     const id = setInterval(() => setSeconds((s) => s + 1), 1000);
@@ -46,6 +60,8 @@ export function JudgmentArena({ items }: { items: SctItem[] }) {
     const score = scoreSctResponse(r, panel);
     setAnswered((a) => [...a, { response: r, score }]);
     setShowPanel(true);
+    // Half or more of the panel's credit counts as a good call; anything in between is partly right.
+    reaction.onAnswer(score >= 0.5, { partial: score > 0 && score < 1 });
     // Persist this judgment call (a check, not a test, silent on failure).
     const payload = buildSctAttemptPayload(item.id, r, score, seconds);
     void fetch("/api/practice/sct/attempt", {
@@ -74,14 +90,14 @@ export function JudgmentArena({ items }: { items: SctItem[] }) {
     const total = answered.reduce((a, b) => a + b.score, 0);
     const avg = answered.length ? total / answered.length : 0;
     return (
+      <>
+      <EndReaction right={answered.filter((a) => a.score >= 0.5).length} total={answered.length} />
       <MobileCompletionState
         title="Done for today"
         description={
           <>
-            {answered.length} judgment calls in {mm}:{ss}. Panel-aligned score:{" "}
+            Done in {mm}:{ss}. You matched the panel{" "}
             <span className="font-semibold text-numeric">{(avg * 100).toFixed(0)}%</span>.
-            {" "}This is a trend over the cohort, not a grade: experts disagree, the
-            distribution is the lesson.
           </>
         }
         action={
@@ -93,6 +109,7 @@ export function JudgmentArena({ items }: { items: SctItem[] }) {
           </Link>
         }
       />
+      </>
     );
   }
 
@@ -109,58 +126,79 @@ export function JudgmentArena({ items }: { items: SctItem[] }) {
       </div>
 
       {/* the item */}
-      <div className="rounded-lg border-2 border-border bg-card p-5 hard-shadow-sm">
-        <p className="text-small">{item.vignette}</p>
-        <p className="mt-3 rounded-md border border-border bg-secondary/60 p-3 text-small">
+      <div className="rounded-[10px] border-2 border-foreground bg-card p-4 hard-shadow-sm sm:p-5">
+        <p className="text-body">{item.vignette}</p>
+        <p className="mt-3 rounded-md border-2 border-foreground/20 bg-secondary/60 p-3 text-body">
           <span className="font-semibold">Hypothesis: </span>{item.hypothesis}
         </p>
-        <p className="mt-3 text-small">
+        <p className="mt-3 text-body">
           <span className="font-semibold text-link">New information: </span>
           {item.new_information}
         </p>
-        <p className="mt-4 text-small font-medium">This becomes:</p>
-
-        <div className="mt-2 grid grid-cols-1 gap-2 sm:grid-cols-5">
-          {([-2, -1, 0, 1, 2] as SctResponse[]).map((r) => (
-            <button
-              key={r}
-              type="button"
-              onClick={() => answer(r)}
-              disabled={showPanel}
-              className="rounded-md border-2 border-border bg-background px-3 py-2 text-left text-caption font-medium transition-transform active:translate-y-px disabled:opacity-60 min-h-11"
-            >
-              {RESPONSE_LABELS[r]}
-            </button>
-          ))}
-        </div>
+        <fieldset className="mt-4">
+          <legend className="text-body-strong">This makes the hypothesis</legend>
+          <div className="mt-2 grid grid-cols-1 gap-2 sm:grid-cols-5">
+            {RESPONSES.map((r) => {
+              const Icon = RESPONSE_ICONS[r];
+              const mine = showPanel && answered[answered.length - 1]?.response === r;
+              return (
+                <button
+                  key={r}
+                  type="button"
+                  onClick={() => answer(r)}
+                  disabled={showPanel}
+                  aria-pressed={mine}
+                  className={cn(
+                    "flex min-h-12 items-center gap-3 rounded-md border-2 border-foreground px-3 py-2 text-left text-body font-semibold transition-[transform,box-shadow] duration-fast ease-snappy sm:flex-col sm:justify-center sm:gap-1 sm:px-2 sm:text-center sm:text-small",
+                    mine ? "bg-brand text-brand-foreground hard-shadow-xs" : "bg-background",
+                    !showPanel && "hover:-translate-y-0.5 hover:hard-shadow-xs active:translate-y-px active:shadow-none",
+                    showPanel && !mine && "opacity-50",
+                  )}
+                >
+                  <span aria-hidden className={cn("grid size-8 shrink-0 place-items-center rounded-full border-2 border-current", mine ? "bg-card text-foreground" : "bg-card")}>
+                    <Icon className="size-4" strokeWidth={2.5} />
+                  </span>
+                  {RESPONSE_LABELS[r]}
+                </button>
+              );
+            })}
+          </div>
+        </fieldset>
       </div>
 
       {/* panel reveal */}
       {showPanel ? (
-        <div className="rounded-lg border-2 border-border bg-card p-5 hard-shadow-sm">
-          <h3 className="text-base font-semibold">The panel disagreed: that&apos;s the lesson</h3>
-          <div className="mt-3 flex h-20 items-end gap-2">
-            {dist.map((d) => (
-              <div key={d.response} className="flex flex-1 flex-col items-center gap-1">
-                <span className="text-caption text-numeric">{d.count}</span>
-                <div
-                  className="w-full rounded-t-md border-2 border-b-0 border-border bg-primary"
-                  style={{ height: `${Math.max(8, (d.count / Math.max(1, ...dist.map((x) => x.count))) * 100)}%` }}
-                />
-                <span className="text-caption text-muted-foreground">{RESPONSE_LABELS[d.response as SctResponse].replace(/^(\w+).*$/, "$1")}</span>
-              </div>
-            ))}
+        <div role="status" className="rounded-[10px] border-2 border-foreground bg-card p-4 hard-shadow-sm sm:p-5">
+          <h3 className="text-body-strong">What the expert panel said</h3>
+          <div className="mt-3 flex h-28 items-end gap-2">
+            {dist.map((d) => {
+              const Icon = RESPONSE_ICONS[d.response as SctResponse];
+              const mine = answered[answered.length - 1]?.response === d.response;
+              return (
+                <div key={d.response} className="flex h-full flex-1 flex-col items-center justify-end gap-1">
+                  <span className="text-caption text-numeric">{d.count}</span>
+                  <div
+                    className={cn("w-full rounded-t-md border-2 border-b-0 border-foreground", mine ? "bg-brand" : "bg-primary")}
+                    style={{ height: `${Math.max(8, (d.count / Math.max(1, ...dist.map((x) => x.count))) * 100)}%` }}
+                  />
+                  <span className="flex items-center text-caption text-muted-foreground" title={RESPONSE_LABELS[d.response as SctResponse]}>
+                    <Icon className="size-4" aria-hidden />
+                    <span className="sr-only">{RESPONSE_LABELS[d.response as SctResponse]}</span>
+                    {mine ? <span className="ml-0.5 font-bold text-foreground">You</span> : null}
+                  </span>
+                </div>
+              );
+            })}
           </div>
-          <p className="mt-3 text-small text-muted-foreground">
-            Your call scored <span className="font-semibold text-numeric">{(answered[answered.length - 1]?.score * 100).toFixed(0)}%</span>{" "}
-            against the expert panel. Partial credit for reasonable disagreement is the whole point.
+          <p className="mt-3 text-body">
+            Your call matched the panel <span className="font-semibold text-numeric">{(answered[answered.length - 1]?.score * 100).toFixed(0)}%</span>.
           </p>
           {/* Phones: Next sits low, in thumb reach. */}
           <ThumbBar label="Next step" className="md:mt-3">
             <button
               type="button"
               onClick={next}
-              className="min-h-12 w-full text-base md:min-h-0 md:w-auto md:text-small rounded-md border-2 border-border bg-primary px-4 py-2 font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px active:hard-shadow-none"
+              className="min-h-12 w-full text-base md:min-h-11 md:w-auto md:text-small rounded-md border-2 border-foreground bg-primary px-4 py-2 font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px active:hard-shadow-none"
             >
               {idx + 1 < items.length ? "Next judgment call" : "See today's summary"}
             </button>

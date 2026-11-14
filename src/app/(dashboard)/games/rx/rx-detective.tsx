@@ -12,7 +12,7 @@ import { DRUGS, drugById, effectById, MYSTERIES, outcomeById, PUZZLES, reviewByI
 import { historyFor, noteAnswer, useHistoryPrefetch } from "@/lib/history/client";
 import { buildRun, costsLife, grade, rxItem, LIVES, nextStreak, pointsFor, rxXp, STEPS, type Answer, type Mode, type Question } from "@/lib/games-sims/rx/game";
 import { AccuracyBoard, type AccuracyBoardData } from "@/lib/games-sims/ui/board";
-import { Btn, buzz, Kbd, motionCss as m, Panel, Pill, Stat, toneFor, useHotkeys, verdictWord } from "@/lib/games-sims/ui/kit";
+import { Btn, buzz, ChoiceCard, Kbd, PickHeading, motionCss as m, Panel, Pill, Stat, toneFor, useHotkeys, Verdict } from "@/lib/games-sims/ui/kit";
 import { ThumbBar } from "@/components/mobile/thumb-bar";
 import { Journey, Receptor } from "@/components/study/animations";
 import { creditServerPlay } from "@/lib/learn/credit-play";
@@ -76,16 +76,10 @@ function Intro({ board, onStart }: { board: AccuracyBoardData; onStart: (m: Mode
   useHotkeys({ "1": () => onStart("mixed"), "2": () => onStart("chain"), "3": () => onStart("mystery"), "4": () => onStart("puzzle"), "5": () => onStart("review") });
   return (
     <div className={cn("mx-auto max-w-2xl space-y-6", m.rise)}>
-      <h1 className="text-h2">Pick a mode</h1>
+      <PickHeading>Pick a mode</PickHeading>
       <div className={cn("grid gap-3 sm:grid-cols-2", m.stagger)}>
         {MODES.map((x, i) => (
-          <Btn key={x.id} variant={i === 0 ? "primary" : "outline"} size="lg" className={cn("h-auto flex-col items-start py-3 text-left", m.rise)} style={{ "--i": i } as React.CSSProperties} onClick={() => onStart(x.id)}>
-            <span className="flex items-center gap-2 text-body-strong">
-              <x.Icon aria-hidden /> {x.label}
-              <Kbd>{i + 1}</Kbd>
-            </span>
-            <span className="text-small font-normal">{x.line}</span>
-          </Btn>
+          <ChoiceCard key={x.id} icon={x.Icon} title={x.label} line={x.line} hotkey={String(i + 1)} suggested={i === 0} className={m.rise} style={{ "--i": i } as React.CSSProperties} onClick={() => onStart(x.id)} />
         ))}
       </div>
       <AccuracyBoard data={board} unit="answers" />
@@ -195,15 +189,13 @@ function Round({ r, setR, onAnswered, onEnd, medIds }: { r: Run; setR: (r: Run) 
 
       {g ? (
         <Panel className={cn("space-y-3", g.score >= 1 ? m.pop : m.shake)} aria-live="polite">
-          <div className="flex flex-wrap items-center gap-2">
-            <Pill tone={toneFor(g.score)}>{verdictWord(g.score)}</Pill>
-            <span className="font-pix">+{r.gained}</span>
+          <Verdict score={g.score} points={r.gained}>
             {r.lostLife ? (
-              <span className="inline-flex items-center gap-1 text-small font-semibold">
+              <>
                 <HeartCrack className="size-4" aria-hidden /> Life lost
-              </span>
+              </>
             ) : null}
-          </div>
+          </Verdict>
           <RevealBody q={q} />
           {g.score < 1 ? <RxHowItWorks pages={pages} /> : null}
           <RxLearn q={q} medIds={medIds} skip={g.score < 1 ? pages.map((x) => x.id) : []} />
@@ -280,17 +272,27 @@ function ChainCase({ q, picks, revealed, onPick, gone = [] }: { q: Extract<Quest
   return (
     <div className="space-y-3">
       <DrugCard d={d} />
+      {/* The four steps as a progress track: a bar each, its name under it on one line. */}
       <ol className="grid grid-cols-4 gap-1.5" aria-label="Steps">
         {STEPS.map((s, i) => {
           const p = picks[i];
           const ok = p !== undefined && p === d[s.key];
+          const now = p === undefined && i === picks.length && !revealed;
           return (
-            <li key={s.key} className={cn("rounded-md border-2 px-1.5 py-1 text-center text-caption font-semibold", p === undefined ? (i === picks.length && !revealed ? "border-foreground bg-primary text-primary-foreground" : "border-foreground/30 bg-card") : ok ? "border-foreground bg-status-success-bg text-status-success-fg" : "border-foreground bg-status-alert-bg text-status-alert-fg", p !== undefined && m.flip)}>
-              <span className="flex items-center justify-center gap-0.5">
-                {p !== undefined ? ok ? <Check className="size-3.5" aria-hidden /> : <X className="size-3.5" aria-hidden /> : null}
-                {s.label}
+            <li key={s.key} className="min-w-0" aria-current={now ? "step" : undefined}>
+              <span
+                aria-hidden
+                className={cn(
+                  "block h-2.5 rounded-full border-2",
+                  p === undefined ? (now ? "border-foreground bg-brand" : "border-foreground/30 bg-card") : ok ? "border-foreground bg-primary" : "border-foreground bg-destructive",
+                  p !== undefined && m.flip,
+                )}
+              />
+              <span className={cn("mt-1 flex items-center justify-center gap-0.5 truncate text-[0.7rem] leading-tight font-semibold sm:text-caption", p === undefined && !now && "text-muted-foreground")}>
+                {p !== undefined ? ok ? <Check className="size-3 shrink-0" aria-hidden /> : <X className="size-3 shrink-0" aria-hidden /> : null}
+                <span className="truncate">{s.label}</span>
               </span>
-              <span className="sr-only">{p === undefined ? "to do" : ok ? "right" : "not right"}</span>
+              <span className="sr-only">{p === undefined ? (now ? "now" : "to do") : ok ? "right" : "not right"}</span>
             </li>
           );
         })}

@@ -100,7 +100,7 @@ function Pick({ teamsOn, teams, arranged, onPractice, onCreate, onJoin, onOpen }
   const resume = arranged.list.filter((x) => x.mark === "started");
   return (
     <div className={cn("mx-auto max-w-3xl space-y-6", m.rise)}>
-      <h1 className="text-h2">Pick a room</h1>
+      <h1 className="text-h3">Pick a room</h1>
       {resume.map((x) => (
         <Panel key={x.id} className="flex flex-wrap items-center gap-3 bg-status-info-bg">
           <DoorOpen className="size-5" aria-hidden />

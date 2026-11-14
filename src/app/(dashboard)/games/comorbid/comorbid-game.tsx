@@ -11,7 +11,7 @@ import { DIAGNOSES } from "@/lib/games-sims/comorbid/cards";
 import { noteAnswer, orderFor, useHistoryPrefetch } from "@/lib/history/client";
 import { apply, botMove, newGame, progress, runBots, type Card, type Event, type Game, type Level, type Move, type Seat, type Setup } from "@/lib/games-sims/comorbid/game";
 import { AccuracyBoard, type AccuracyBoardData } from "@/lib/games-sims/ui/board";
-import { Btn, buzz, Kbd, motionCss as m, Panel, Pill, Stat, useHotkeys } from "@/lib/games-sims/ui/kit";
+import { Btn, buzz, ChoiceCard, Kbd, PickHeading, motionCss as m, Panel, Pill, Stat, useHotkeys } from "@/lib/games-sims/ui/kit";
 import { creditServerPlay } from "@/lib/learn/credit-play";
 import { HintBar, useHintStatus } from "@/components/hints/hint-chip";
 import { askHint } from "@/lib/hints/actions";
@@ -75,24 +75,17 @@ function Intro({ board, onStart }: { board: AccuracyBoardData; onStart: (mode: S
   return (
     <div className={cn("mx-auto max-w-2xl space-y-6", m.rise)}>
       <section className="space-y-2">
-        <h2 className="flex items-center gap-1.5 text-body-strong">
-          <Bot className="size-4" aria-hidden /> Play the bot
-        </h2>
-        <div className={cn("grid gap-3 sm:grid-cols-3", m.stagger)}>
+        <PickHeading>Play the bot</PickHeading>
+        <div className={cn("grid gap-3", m.stagger)}>
           {LEVELS.map((l, i) => (
-            <Btn key={l.id} variant={l.id === 1 ? "primary" : "outline"} size="lg" className={cn("h-auto flex-col items-start py-3 text-left", m.rise)} style={{ "--i": i } as React.CSSProperties} onClick={() => onStart("bot", l.id)}>
-              <span className="text-body-strong">
-                {l.label}
-                <Kbd>{l.id}</Kbd>
-              </span>
-              <span className="text-small font-normal">{l.line}</span>
-            </Btn>
+            <ChoiceCard key={l.id} icon={Bot} title={l.label} line={l.line} hotkey={String(l.id)} suggested={l.id === 1} className={m.rise} style={{ "--i": i } as React.CSSProperties} onClick={() => onStart("bot", l.id)} />
           ))}
         </div>
       </section>
-      <Btn size="lg" className="w-full" onClick={() => onStart("pass", 2)}>
-        <Users aria-hidden /> Pass and play with a classmate <Kbd>P</Kbd>
-      </Btn>
+      <section className="space-y-2">
+        <PickHeading>Or play a classmate</PickHeading>
+        <ChoiceCard icon={Users} title="Pass and play" line="One phone, take turns." hotkey="P" onClick={() => onStart("pass", 2)} />
+      </section>
       <AccuracyBoard data={board} unit="cards" />
     </div>
   );

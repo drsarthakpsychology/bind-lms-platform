@@ -16,7 +16,7 @@ export function ActivityTip({ id, label = "How to play", intro, steps }: { id: s
       <div className="activity-help flex justify-end px-2 empty:hidden">
         <TipButton tip={tip} label={label} intro={intro} steps={steps} />
       </div>
-      <TipPanel tip={tip} title={label} intro={intro} steps={steps} className="mt-3 mb-1 lg:mx-4" />
+      <TipPanel tip={tip} title={label} intro={intro} steps={steps} className="mt-3 mb-6 lg:mx-4" />
     </>
   );
 }

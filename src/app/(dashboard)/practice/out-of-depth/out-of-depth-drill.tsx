@@ -1,6 +1,8 @@
 "use client";
 
 import * as React from "react";
+import { useReaction } from "@/components/reactions/use-reaction";
+import { EndReaction } from "@/components/reactions/graphics";
 import { haptic } from "@/lib/haptics";
 import { cn } from "@/lib/utils";
 import { AlertTriangle, Siren, CheckCircle2 } from "lucide-react";
@@ -18,6 +20,8 @@ export function OutOfDepthDrill() {
   const [chosen, setChosen] = React.useState<ReferralOption | null>(null);
   const [overReferrals, setOverReferrals] = React.useState(0);
   const [done, setDone] = React.useState(false);
+  const [right, setRight] = React.useState(0);
+  const reaction = useReaction();
 
   const total = OUT_OF_DEPTH_SCENARIOS.length;
   const isLast = idx + 1 >= total;
@@ -29,7 +33,11 @@ export function OutOfDepthDrill() {
     const result = scoreReferralDecision(s, o);
     setChosen(o);
     if (result.overReferral) setOverReferrals((n) => n + 1);
-    if (result.correct) haptic("success");
+    if (result.correct) {
+      haptic("success");
+      setRight((n) => n + 1);
+    }
+    reaction.onAnswer(result.correct);
   }
 
   function next() {
@@ -46,6 +54,8 @@ export function OutOfDepthDrill() {
     setIdx(0);
     setChosen(null);
     setOverReferrals(0);
+    setRight(0);
+    reaction.reset();
     setDone(false);
     haptic("tap");
   }
@@ -53,6 +63,7 @@ export function OutOfDepthDrill() {
   if (done) {
     return (
       <div className="rounded-lg border-2 border-border bg-card p-6 hard-shadow-sm">
+        <EndReaction right={right} total={total} />
         <p className="flex items-center gap-2 text-base font-semibold">
           <CheckCircle2 className="size-4" aria-hidden /> All scenarios done
         </p>
