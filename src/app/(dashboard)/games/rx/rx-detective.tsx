@@ -7,10 +7,8 @@ import { useRouter } from "next/navigation";
 import { ArrowRight, Check, ClipboardList, Flame, FlaskConical, Heart, HeartCrack, Pill as PillIcon, Plus, Search, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { LearnLink } from "@/lib/games/ui/learn-link";
-import { DOSE_NOTE, hashString, makeRng, pct } from "@/lib/games-sims/common";
-import { DRUGS, drugById, effectById, MYSTERIES, outcomeById, PUZZLES, reviewById, type Drug } from "@/lib/games-sims/rx/content";
-import { historyFor, noteAnswer, useHistoryPrefetch } from "@/lib/history/client";
-import { buildRun, costsLife, grade, rxItem, LIVES, nextStreak, pointsFor, rxXp, STEPS, type Answer, type Mode, type Question } from "@/lib/games-sims/rx/game";
+import { DOSE_NOTE, pct } from "@/lib/games-sims/common";
+import { costsLife, LIVES, nextStreak, pointsFor, rxXp, STEPS, type Answered, type LearnItem, type Mode, type Opt, type PublicCase, type Reveal } from "@/lib/games-sims/rx/rules";
 import { AccuracyBoard, type AccuracyBoardData } from "@/lib/games-sims/ui/board";
 import { Btn, buzz, Kbd, motionCss as m, Panel, Pill, Stat, toneFor, useHotkeys, verdictWord } from "@/lib/games-sims/ui/kit";
 import { Journey, Receptor } from "@/components/study/animations";
@@ -19,12 +17,17 @@ import { HintBar, useHintStatus } from "@/components/hints/hint-chip";
 import { askHint } from "@/lib/hints/actions";
 import { hintedPoints } from "@/lib/hints/rules";
 import { useReaction } from "@/components/reactions/use-reaction";
-import { rxItemPages } from "@/lib/games-sims/rx/med-pages";
 import { howItWorksHref } from "@/lib/meds/sections";
 import { EndReaction } from "@/components/reactions/graphics";
 
-type Grade = (a: Answer & { run?: string }) => Promise<{ ok: boolean }>;
-type Finish = (x: { run: string; answers: Answer[] }) => Promise<{ ok: boolean; xp: number }>;
+import type { RxDeal, RxPick } from "./actions";
+
+type Actions = {
+  deal: (mode: Mode) => Promise<RxDeal>;
+  pick: (x: { token: string; value: string }) => Promise<RxPick>;
+  finish: (token: string) => Promise<{ ok: boolean; xp: number }>;
+};
+const FAIL = "That didn't load. Try again.";
 
 const LETTERS = ["a", "b", "c", "d"];
 const MODES: { id: Mode; label: string; line: string; Icon: typeof PillIcon }[] = [
@@ -35,28 +38,57 @@ const MODES: { id: Mode; label: string; line: string; Icon: typeof PillIcon }[] 
   { id: "review", label: "Prescription check", line: "Spot the problem on the prescription.", Icon: ClipboardList },
 ];
 
-type Run = { run: string; mode: Mode; qs: Question[]; idx: number; answers: Answer[]; picks: string[]; revealed: boolean; lives: number; streak: number; best: number; points: number; gained: number; lostLife: boolean;
+type Run = {
+  /** The signed run from the server: the browser never holds a case's answer before it is picked. */
+  token: string;
+  run: string;
+  mode: Mode;
+  cases: PublicCase[];
+  idx: number;
+  picks: string[];
+  /** A chain's steps checked so far: right or not, and the right option. */
+  steps: { ok: boolean; correct: string }[];
+  /** The answer card, once the case is answered. */
+  revealed: Answered | null;
+  answers: { title: string; score: number }[];
+  lives: number;
+  streak: number;
+  best: number;
+  points: number;
+  gained: number;
+  lostLife: boolean;
   /** Hints used: question (or chain step) key → options ruled out. */
   ruled: Record<string, string[]>;
 };
 
-export function RxDetective({ board, grade: gradeOnServer, finish, medIds = [] }: { board: AccuracyBoardData; grade: Grade; finish: Finish; medIds?: readonly string[] }) {
+export function RxDetective({ board, actions }: { board: AccuracyBoardData; actions: Actions }) {
   const router = useRouter();
   const [run, setRun] = React.useState<Run | null>(null);
   const [done, setDone] = React.useState<{ run: Run; xp: number | null } | null>(null);
-  useHistoryPrefetch("rx");
+  const [busy, setBusy] = React.useState(false);
+  const [error, setError] = React.useState<string | null>(null);
 
-  function start(mode: Mode) {
+  async function start(mode: Mode) {
+    if (busy) return;
     startHowTo("rx-detective");
-    const id = `${Date.now().toString(36)}${Math.floor(Math.random() * 1e6).toString(36)}`;
+    setBusy(true);
+    setError(null);
+    // The server deals the run in answer history order (cases not seen yet first, then missed ones).
+    const d = await actions.deal(mode).catch(() => null);
+    setBusy(false);
+    if (!d || !d.ok) {
+      setDone(null);
+      setError(d && !d.ok ? d.error : FAIL);
+      return;
+    }
     setDone(null);
-    // Answer history: questions not seen yet first, then missed ones (src/lib/history).
-    setRun({ run: id, mode, qs: buildRun(mode, makeRng(hashString(id)), undefined, historyFor("rx"), Date.now()), idx: 0, answers: [], picks: [], revealed: false, lives: LIVES, streak: 0, best: 0, points: 0, gained: 0, lostLife: false, ruled: {} });
+    setRun({ token: d.token, run: d.run, mode, cases: d.cases, idx: 0, picks: [], steps: [], revealed: null, answers: [], lives: LIVES, streak: 0, best: 0, points: 0, gained: 0, lostLife: false, ruled: {} });
   }
   function end(r: Run) {
     setRun(null);
     setDone({ run: r, xp: null });
-    void finish({ run: r.run, answers: r.answers })
+    void actions
+      .finish(r.token)
       .then((x) => {
         setDone({ run: r, xp: x.ok ? x.xp : 0 });
         if (x.ok) creditServerPlay(x.xp);
@@ -65,19 +97,19 @@ export function RxDetective({ board, grade: gradeOnServer, finish, medIds = [] }
       .finally(() => router.refresh());
   }
 
-  if (done) return <Summary r={done.run} xp={done.xp} board={board} onAgain={() => start(done.run.mode)} onModes={() => setDone(null)} />;
-  if (!run) return <Intro board={board} onStart={start} />;
-  return <Round r={run} setR={setRun} onAnswered={(a) => void gradeOnServer({ ...a, run: run.run }).catch(() => undefined)} onEnd={end} medIds={medIds} />;
+  if (done) return <Summary r={done.run} xp={done.xp} board={board} onAgain={() => void start(done.run.mode)} onModes={() => setDone(null)} />;
+  if (!run) return <Intro board={board} busy={busy} error={error} onStart={(m) => void start(m)} />;
+  return <Round r={run} setR={setRun} pickOnServer={actions.pick} onEnd={end} />;
 }
 
-function Intro({ board, onStart }: { board: AccuracyBoardData; onStart: (m: Mode) => void }) {
+function Intro({ board, busy, error, onStart }: { board: AccuracyBoardData; busy: boolean; error: string | null; onStart: (m: Mode) => void }) {
   useHotkeys({ "1": () => onStart("mixed"), "2": () => onStart("chain"), "3": () => onStart("mystery"), "4": () => onStart("puzzle"), "5": () => onStart("review") });
   return (
     <div className={cn("mx-auto max-w-2xl space-y-6", m.rise)}>
       <h1 className="text-h2">Pick a mode</h1>
       <div className={cn("grid gap-3 sm:grid-cols-2", m.stagger)}>
         {MODES.map((x, i) => (
-          <Btn key={x.id} variant={i === 0 ? "primary" : "outline"} size="lg" className={cn("h-auto flex-col items-start py-3 text-left", m.rise)} style={{ "--i": i } as React.CSSProperties} onClick={() => onStart(x.id)}>
+          <Btn key={x.id} variant={i === 0 ? "primary" : "outline"} size="lg" disabled={busy} className={cn("h-auto flex-col items-start py-3 text-left", m.rise)} style={{ "--i": i } as React.CSSProperties} onClick={() => onStart(x.id)}>
             <span className="flex items-center gap-2 text-body-strong">
               <x.Icon aria-hidden /> {x.label}
               <Kbd>{i + 1}</Kbd>
@@ -86,72 +118,80 @@ function Intro({ board, onStart }: { board: AccuracyBoardData; onStart: (m: Mode
           </Btn>
         ))}
       </div>
+      {error ? (
+        <p className="text-small font-semibold" role="status">
+          {error}
+        </p>
+      ) : null}
       <AccuracyBoard data={board} unit="answers" />
     </div>
   );
 }
 
 /* ----------------------------------------------------------------- round */
-function Round({ r, setR, onAnswered, onEnd, medIds }: { r: Run; setR: (r: Run) => void; onAnswered: (a: Answer) => void; onEnd: (r: Run) => void; medIds: readonly string[] }) {
-  const q = r.qs[r.idx];
-  const needed = q.kind === "chain" ? STEPS.length : 1;
-  const complete = r.picks.length >= needed;
+function Round({ r, setR, pickOnServer, onEnd }: { r: Run; setR: React.Dispatch<React.SetStateAction<Run | null>>; pickOnServer: Actions["pick"]; onEnd: (r: Run) => void }) {
+  const q = r.cases[r.idx];
   const [hints, setHints] = useHintStatus();
   const reaction = useReaction();
+  const [busy, setBusy] = React.useState(false);
+  const [lost, setLost] = React.useState<string | null>(null);
   const at = Math.min(r.picks.length, STEPS.length - 1);
-  const hintKey = q.kind === "chain" ? `${q.id}.${at}` : q.id;
+  const hintKey = q.kind === "chain" ? `${r.idx}.${at}` : `${r.idx}`;
   const gone = r.ruled[hintKey] ?? [];
-  const hintedHere = Object.keys(r.ruled).some((k) => k === q.id || k.startsWith(`${q.id}.`));
+  const hintedHere = Object.keys(r.ruled).some((k) => k === `${r.idx}` || k.startsWith(`${r.idx}.`));
 
-  // A fast double tap must not send the same answer twice.
-  const sent = React.useRef("");
-  function pick(value: string) {
-    if (r.revealed || complete) return;
+  // One pick in flight at a time: a fast double tap must not send the same answer twice.
+  const inflight = React.useRef(false);
+  async function pick(value: string) {
+    if (r.revealed || inflight.current) return;
+    inflight.current = true;
+    setBusy(true);
+    const res = await pickOnServer({ token: r.token, value }).catch(() => null);
+    inflight.current = false;
+    setBusy(false);
+    // No connection is not a wrong answer: nothing counted, try again.
+    setLost(!res ? "Connection lost. Your answer was not sent. Try again." : res.ok ? null : res.error);
+    if (!res || !res.ok) return;
     const picks = [...r.picks, value];
-    const tap = `${r.run}:${r.idx}:${picks.length}`;
-    if (sent.current === tap) return;
-    sent.current = tap;
-    if (picks.length < needed) {
-      const d = drugById(q.id)!;
-      buzz(value === d[STEPS[picks.length - 1].key]);
-      setR({ ...r, picks });
+    if (res.step) {
+      const step = { ok: res.step.right, correct: res.step.correct };
+      buzz(step.ok);
+      setR((x) => x && { ...x, token: res.token, picks, steps: [...x.steps, step] });
       return;
     }
-    const a: Answer = { kind: q.kind, id: q.id, picks };
-    const g = grade(a)!;
+    const a = res.answered;
+    if (!a) return;
+    const g = a.graded;
     buzz(g.score >= 1);
     reaction.onAnswer(g.score >= 1, { partial: (g.score > 0 && g.score < 1) || (g.score >= 1 && hintedHere) });
-    // The server records it too (gradeRxAnswer); this is the browser copy.
-    noteAnswer("rx", rxItem(q.kind, q.id), g.score >= 1, { server: false });
-    onAnswered(a);
-    const lost = costsLife(g.score);
+    const lostLife = costsLife(g.score);
     // A hint halves this question's points.
     const gained = hintedPoints(pointsFor(g.score, r.streak), hintedHere ? 1 : 0);
     const streak = nextStreak(r.streak, g.score);
-    setR({ ...r, picks, revealed: true, answers: [...r.answers, a], lives: r.lives - (lost ? 1 : 0), streak, best: Math.max(r.best, streak), points: r.points + gained, gained, lostLife: lost });
+    setR((x) => x && { ...x, token: res.token, picks, revealed: a, answers: [...x.answers, { title: q.title, score: g.score }], lives: x.lives - (lostLife ? 1 : 0), streak, best: Math.max(x.best, streak), points: x.points + gained, gained, lostLife });
   }
   function next() {
     if (!r.revealed) return;
-    if (r.lives <= 0 || r.idx + 1 >= r.qs.length) {
+    if (r.lives <= 0 || r.idx + 1 >= r.cases.length) {
       onEnd(r);
       return;
     }
-    setR({ ...r, idx: r.idx + 1, picks: [], revealed: false, lostLife: false });
+    setR({ ...r, idx: r.idx + 1, picks: [], steps: [], revealed: null, lostLife: false });
   }
 
-  const options = (q.kind === "chain" ? (q.steps[at] ?? []) : q.options).filter((o) => !gone.includes(o));
+  const options = (q.kind === "chain" ? (q.steps[at] ?? []) : q.options.map((o) => o.id)).filter((o) => !gone.includes(o));
   const keys: Record<string, () => void> = {};
-  if (!r.revealed) options.forEach((o, i) => (keys[LETTERS[i]] = () => pick(o)));
+  if (!r.revealed) options.forEach((o, i) => (keys[LETTERS[i]] = () => void pick(o)));
   else {
     keys.Enter = next;
     keys[" "] = next;
   }
   useHotkeys(keys);
 
-  const g = r.revealed ? grade(r.answers[r.answers.length - 1])! : null;
-  // The Medicines pages this case is about, for "How olanzapine works" after a wrong answer.
-  const pages = rxItemPages(q.kind, q.id);
-  const last = r.lives <= 0 || r.idx + 1 >= r.qs.length;
+  const shown = r.revealed;
+  const g = shown?.graded ?? null;
+  const last = r.lives <= 0 || r.idx + 1 >= r.cases.length;
+  const onPick = (v: string) => void pick(v);
 
   return (
     <div className="mx-auto max-w-2xl space-y-4">
@@ -164,7 +204,7 @@ function Round({ r, setR, onAnswered, onEnd, medIds }: { r: Run; setR: (r: Run) 
           <Stat
             label="Streak"
             value={
-              <span key={r.streak} className={cn("inline-flex items-center gap-1", r.streak > 0 && r.revealed && m.bump)}>
+              <span key={r.streak} className={cn("inline-flex items-center gap-1", r.streak > 0 && !!r.revealed && m.bump)}>
                 <Flame className="size-4" aria-hidden />
                 {r.streak}
               </span>
@@ -175,23 +215,29 @@ function Round({ r, setR, onAnswered, onEnd, medIds }: { r: Run; setR: (r: Run) 
       </div>
 
       <div key={`${r.run}-${r.idx}`} className={m.slide}>
-        {q.kind === "chain" ? <ChainCase q={q} picks={r.picks} revealed={r.revealed} onPick={pick} gone={gone} /> : null}
-        {q.kind === "mystery" ? <MysteryCase id={q.id} options={options} pickVal={r.picks[0] ?? null} revealed={r.revealed} onPick={pick} /> : null}
-        {q.kind === "puzzle" ? <PuzzleCase id={q.id} options={options} pickVal={r.picks[0] ?? null} revealed={r.revealed} onPick={pick} /> : null}
-        {q.kind === "review" ? <ReviewCase id={q.id} options={options} pickVal={r.picks[0] ?? null} revealed={r.revealed} onPick={pick} /> : null}
+        {q.kind === "chain" ? <ChainCase q={q} picks={r.picks} steps={r.steps} graded={g} busy={busy} onPick={onPick} gone={gone} /> : null}
+        {q.kind === "mystery" ? <MysteryCase q={q} options={options} pickVal={r.picks[0] ?? null} answer={shown?.answer ?? ""} revealed={!!shown} busy={busy} onPick={onPick} /> : null}
+        {q.kind === "puzzle" ? <PuzzleCase q={q} options={options} pickVal={r.picks[0] ?? null} answer={shown?.answer ?? ""} revealed={!!shown} busy={busy} onPick={onPick} /> : null}
+        {q.kind === "review" ? <ReviewCase q={q} options={options} pickVal={r.picks[0] ?? null} answer={shown?.answer ?? ""} revealed={!!shown} busy={busy} onPick={onPick} /> : null}
       </div>
+
+      {lost ? (
+        <p className="text-small font-semibold" role="status">
+          {lost}
+        </p>
+      ) : null}
 
       {!r.revealed ? (
         <HintBar
           status={hints}
           onStatus={setHints}
           used={gone.length > 0}
-          ask={() => askHint({ game: "rx", run: r.run, kind: q.kind, id: q.id, step: at, options: q.kind === "chain" ? (q.steps[at] ?? []) : q.options })}
-          onGive={(h) => setR({ ...r, ruled: { ...r.ruled, [hintKey]: h.remove } })}
+          ask={() => askHint({ game: "rx", run: r.run, token: r.token, options: q.kind === "chain" ? (q.steps[at] ?? []) : q.options.map((o) => o.id) })}
+          onGive={(h) => setR((x) => x && { ...x, ruled: { ...x.ruled, [hintKey]: h.remove } })}
         />
       ) : null}
 
-      {g ? (
+      {g && shown ? (
         <Panel className={cn("space-y-3", g.score >= 1 ? m.pop : m.shake)} aria-live="polite">
           <div className="flex flex-wrap items-center gap-2">
             <Pill tone={toneFor(g.score)}>{verdictWord(g.score)}</Pill>
@@ -202,9 +248,9 @@ function Round({ r, setR, onAnswered, onEnd, medIds }: { r: Run; setR: (r: Run) 
               </span>
             ) : null}
           </div>
-          <RevealBody q={q} />
-          {g.score < 1 ? <RxHowItWorks pages={pages} /> : null}
-          <RxLearn q={q} medIds={medIds} skip={g.score < 1 ? pages.map((x) => x.id) : []} />
+          <RevealBody v={shown.reveal} />
+          {g.score < 1 ? <RxHowItWorks pages={shown.pages} /> : null}
+          <RxLearn items={shown.learn} skip={g.score < 1 ? shown.pages.map((x) => x.id) : []} />
           <Btn variant="primary" size="lg" className="w-full" onClick={next} autoFocus>
             {last ? "See results" : "Next case"} <ArrowRight aria-hidden /> <Kbd>Enter</Kbd>
           </Btn>
@@ -223,7 +269,7 @@ function Lives({ n, lost }: { n: number; lost: boolean }) {
   );
 }
 
-function Options({ options, label, chosen, correct, revealed, onPick }: { options: string[]; label: (v: string) => string; chosen: string | null; correct: string; revealed: boolean; onPick: (v: string) => void }) {
+function Options({ options, label, chosen, correct, revealed, busy = false, onPick }: { options: string[]; label: (v: string) => string; chosen: string | null; correct: string; revealed: boolean; busy?: boolean; onPick: (v: string) => void }) {
   return (
     <div className="grid gap-2">
       {options.map((o, i) => {
@@ -232,7 +278,7 @@ function Options({ options, label, chosen, correct, revealed, onPick }: { option
         return (
           <Btn
             key={o}
-            disabled={revealed}
+            disabled={revealed || busy}
             onClick={() => onPick(o)}
             className={cn("h-auto justify-start py-2.5 text-left font-normal disabled:opacity-100", isRight && "bg-status-success-bg text-status-success-fg", isWrong && "bg-status-alert-bg text-status-alert-fg", revealed && !isRight && !isWrong && "opacity-60")}
           >
@@ -257,7 +303,7 @@ function Options({ options, label, chosen, correct, revealed, onPick }: { option
   );
 }
 
-function DrugCard({ d, className, style }: { d: Drug; className?: string; style?: React.CSSProperties }) {
+function DrugCard({ d, className, style }: { d: { name: string; brands: string[] }; className?: string; style?: React.CSSProperties }) {
   return (
     <div className={cn("rounded-xl border-2 border-foreground bg-card p-3 hard-shadow-sm", className)} style={style}>
       <p className="flex items-center gap-1.5 text-h3">
@@ -269,16 +315,18 @@ function DrugCard({ d, className, style }: { d: Drug; className?: string; style?
 }
 
 /* ----------------------------------------------------------------- chain */
-function ChainCase({ q, picks, revealed, onPick, gone = [] }: { q: Extract<Question, { kind: "chain" }>; picks: string[]; revealed: boolean; onPick: (v: string) => void; gone?: string[] }) {
-  const d = drugById(q.id)!;
+type Q<K extends PublicCase["kind"]> = Extract<PublicCase, { kind: K }>;
+
+function ChainCase({ q, picks, steps, graded, busy, onPick, gone = [] }: { q: Q<"chain">; picks: string[]; steps: { ok: boolean; correct: string }[]; graded: Answered["graded"] | null; busy: boolean; onPick: (v: string) => void; gone?: string[] }) {
+  const revealed = !!graded;
   const at = Math.min(picks.length, STEPS.length - 1);
   return (
     <div className="space-y-3">
-      <DrugCard d={d} />
+      <DrugCard d={q} />
       <ol className="grid grid-cols-4 gap-1.5" aria-label="Steps">
         {STEPS.map((s, i) => {
           const p = picks[i];
-          const ok = p !== undefined && p === d[s.key];
+          const ok = p !== undefined && (graded ? graded.parts[i]?.ok : steps[i]?.ok) === true;
           return (
             <li key={s.key} className={cn("rounded-md border-2 px-1.5 py-1 text-center text-caption font-semibold", p === undefined ? (i === picks.length && !revealed ? "border-foreground bg-primary text-primary-foreground" : "border-foreground/30 bg-card") : ok ? "border-foreground bg-status-success-bg text-status-success-fg" : "border-foreground bg-status-alert-bg text-status-alert-fg", p !== undefined && m.flip)}>
               <span className="flex items-center justify-center gap-0.5">
@@ -293,15 +341,15 @@ function ChainCase({ q, picks, revealed, onPick, gone = [] }: { q: Extract<Quest
       {picks.length > 0 && !revealed ? (
         <ul className="space-y-1">
           {picks.map((p, i) => {
-            const ok = p === d[STEPS[i].key];
+            const step = steps[i];
             return (
               <li key={i} className={cn("rounded-md border-2 border-foreground/20 bg-card p-2 text-small", m.rise)}>
                 <span className="font-semibold">{STEPS[i].label}: </span>
-                {ok ? (
+                {!step || step.ok ? (
                   p
                 ) : (
                   <>
-                    <span className="line-through">{p}</span> <span className="font-semibold">It is: {d[STEPS[i].key]}</span>
+                    <span className="line-through">{p}</span> <span className="font-semibold">It is: {step.correct}</span>
                   </>
                 )}
               </li>
@@ -312,121 +360,110 @@ function ChainCase({ q, picks, revealed, onPick, gone = [] }: { q: Extract<Quest
       {!revealed ? (
         <Panel key={at} className={cn("space-y-3 bg-muted/40", m.rise)}>
           <p className="text-body-strong">{STEPS[at].ask}</p>
-          <Options options={q.steps[at].filter((o) => !gone.includes(o))} label={(v) => v} chosen={null} correct="" revealed={false} onPick={onPick} />
+          <Options options={q.steps[at].filter((o) => !gone.includes(o))} label={(v) => v} chosen={null} correct="" revealed={false} busy={busy} onPick={onPick} />
         </Panel>
       ) : null}
     </div>
   );
 }
 
+/** The label shown for an option id. */
+const labelOf = (opts: Opt[]) => (v: string) => opts.find((o) => o.id === v)?.label ?? v;
+
 /* --------------------------------------------------------------- mystery */
-function MysteryCase({ id, options, pickVal, revealed, onPick }: { id: string; options: string[]; pickVal: string | null; revealed: boolean; onPick: (v: string) => void }) {
-  const mys = MYSTERIES.find((x) => x.id === id)!;
-  const d = drugById(mys.drug)!;
+type CaseProps<K extends PublicCase["kind"]> = { q: Q<K>; options: string[]; pickVal: string | null; answer: string; revealed: boolean; busy: boolean; onPick: (v: string) => void };
+
+function MysteryCase({ q, options, pickVal, answer, revealed, busy, onPick }: CaseProps<"mystery">) {
   return (
     <div className="space-y-3">
       <Panel className="space-y-2">
         <p className="flex items-center gap-1.5 text-caption font-semibold uppercase">
           <FlaskConical className="size-3.5" aria-hidden /> Side-effect mystery
         </p>
-        <p className="text-body-strong">{mys.who}</p>
-        <p className="text-body">{mys.story}</p>
+        <p className="text-body-strong">{q.who}</p>
+        <p className="text-body">{q.story}</p>
         <ul className={cn("flex flex-wrap gap-1.5", m.stagger)} aria-label="Clues">
-          {mys.clues.map((c, i) => (
+          {q.clues.map((c, i) => (
             <li key={c} className={cn("rounded-full border-2 border-foreground bg-status-pending-bg px-2.5 py-0.5 text-caption font-semibold text-status-pending-fg", m.pop)} style={{ "--i": i } as React.CSSProperties}>
               {c}
             </li>
           ))}
         </ul>
         <p className="text-caption text-muted-foreground">
-          On {d.name} ({d.brands[0]}).
+          On {q.drug} ({q.brand}).
         </p>
       </Panel>
       <Panel className="space-y-3 bg-muted/40">
         <p className="text-body-strong">Which action explains it?</p>
-        <Options options={options} label={(v) => effectById(v)?.label ?? v} chosen={pickVal} correct={mys.answer} revealed={revealed} onPick={onPick} />
+        <Options options={options} label={labelOf(q.options)} chosen={pickVal} correct={answer} revealed={revealed} busy={busy} onPick={onPick} />
       </Panel>
     </div>
   );
 }
 
 /* ---------------------------------------------------------------- puzzle */
-function PuzzleCase({ id, options, pickVal, revealed, onPick }: { id: string; options: string[]; pickVal: string | null; revealed: boolean; onPick: (v: string) => void }) {
-  const p = PUZZLES.find((x) => x.id === id)!;
+function PuzzleCase({ q, options, pickVal, answer, revealed, busy, onPick }: CaseProps<"puzzle">) {
   return (
     <div className="space-y-3">
       <div className="grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-center gap-2">
-        <MixCard name={p.a} className={m.playUp} />
+        <MixCard name={q.a} brands={q.aBrands} className={m.playUp} />
         <span className={cn("grid size-11 place-items-center rounded-full border-2 border-foreground bg-primary text-primary-foreground", m.stamp)} aria-label="taken with">
           <Plus className="size-5" aria-hidden />
         </span>
-        <MixCard name={p.b} className={m.playDown} />
+        <MixCard name={q.b} brands={q.bBrands} className={m.playDown} />
       </div>
       <Panel className="space-y-1">
         <p className="text-caption font-semibold uppercase">Dangerous mix?</p>
-        <p className="text-body">{p.story}</p>
+        <p className="text-body">{q.story}</p>
       </Panel>
       <Panel className="space-y-3 bg-muted/40">
         <p className="text-body-strong">What is happening?</p>
-        <Options options={options} label={(v) => outcomeById(v)?.label ?? v} chosen={pickVal} correct={p.answer} revealed={revealed} onPick={onPick} />
+        <Options options={options} label={labelOf(q.options)} chosen={pickVal} correct={answer} revealed={revealed} busy={busy} onPick={onPick} />
       </Panel>
     </div>
   );
 }
 
 /* ---------------------------------------------------------------- review */
-function ReviewCase({ id, options, pickVal, revealed, onPick }: { id: string; options: string[]; pickVal: string | null; revealed: boolean; onPick: (v: string) => void }) {
-  const rv = reviewById(id)!;
+function ReviewCase({ q, options, pickVal, answer, revealed, busy, onPick }: CaseProps<"review">) {
   return (
     <div className="space-y-3">
       <Panel className="space-y-2">
         <p className="flex items-center gap-1.5 text-caption font-semibold uppercase">
           <ClipboardList className="size-3.5" aria-hidden /> Prescription check
         </p>
-        <p className="text-body-strong">{rv.who}</p>
-        <p className="text-body">{rv.story}</p>
+        <p className="text-body-strong">{q.who}</p>
+        <p className="text-body">{q.story}</p>
       </Panel>
       <div className="rounded-xl border-2 border-foreground bg-card p-3 hard-shadow-sm">
         <p className="font-mono text-caption font-semibold uppercase">Rx</p>
         <ul className="mt-1 space-y-1 font-mono text-small" aria-label="Prescription">
-          {rv.rx.map((line) => (
+          {q.rx.map((line) => (
             <li key={line}>{line}</li>
           ))}
         </ul>
       </div>
       <Panel className="space-y-3 bg-muted/40">
         <p className="text-body-strong">What is the problem?</p>
-        <Options options={options} label={(v) => v} chosen={pickVal} correct={rv.answer} revealed={revealed} onPick={onPick} />
+        <Options options={options} label={(v) => v} chosen={pickVal} correct={answer} revealed={revealed} busy={busy} onPick={onPick} />
       </Panel>
     </div>
   );
 }
 
-function MixCard({ name, className }: { name: string; className?: string }) {
-  const d = drugByName(name);
+function MixCard({ name, brands, className }: { name: string; brands: string[] | null; className?: string }) {
   return (
     <div className={cn("min-w-0 rounded-xl border-2 border-foreground bg-card p-3 text-center hard-shadow-sm", className)}>
       <p className="truncate text-body-strong">{name}</p>
-      {d ? <p className="truncate text-caption text-muted-foreground">{d.brands.join(", ")}</p> : null}
+      {brands ? <p className="truncate text-caption text-muted-foreground">{brands.join(", ")}</p> : null}
     </div>
   );
 }
 
-const drugByName = (name: string) => {
-  const n = name.toLowerCase();
-  return drugById(n) ?? drugById(n.replace("sodium ", ""));
-};
-
 /* ---------------------------------------------------------------- reveal */
 /** "Learn this" for the medicine in the case: its Medicines page, or its Study module. */
-function RxLearn({ q, medIds, skip = [] }: { q: Question; medIds: readonly string[]; skip?: readonly string[] }) {
-  const p = q.kind === "puzzle" ? PUZZLES.find((x) => x.id === q.id) : undefined;
-  const keys = q.kind === "chain" ? [q.id] : q.kind === "mystery" ? [MYSTERIES.find((x) => x.id === q.id)?.drug ?? ""] : q.kind === "review" ? (reviewById(q.id)?.drugs ?? []) : [p?.a ?? "", p?.b ?? ""];
-  const items = keys.filter(Boolean).map((k) => {
-    const d = drugById(k) ?? DRUGS.find((x) => x.name.toLowerCase() === k.toLowerCase());
-    const id = d?.id ?? k.toLowerCase();
-    return { id, name: d?.name ?? k, href: medIds.includes(id) ? `/practice/medicines/${id}` : d ? `/study/${d.topic}` : undefined };
-  }).filter((x) => !skip.includes(x.id));
+function RxLearn({ items: all, skip = [] }: { items: LearnItem[]; skip?: readonly string[] }) {
+  const items = all.filter((x) => !skip.includes(x.id));
   if (!items.length) return null;
   return (
     <div className="flex flex-wrap gap-x-4">
@@ -461,65 +498,59 @@ function RxHowItWorks({ pages }: { pages: { id: string; name: string }[] }) {
   );
 }
 
-function RevealBody({ q }: { q: Question }) {
-  if (q.kind === "chain") {
-    const d = drugById(q.id)!;
+function RevealBody({ v }: { v: Reveal }) {
+  if (v.kind === "chain") {
     return (
       <div className="space-y-3">
         <dl className="grid gap-1.5 text-small">
-          {STEPS.map((s) => (
+          {STEPS.map((s, i) => (
             <div key={s.key} className="grid grid-cols-[6.5rem_minmax(0,1fr)] gap-2">
               <dt className="font-semibold">{s.label}</dt>
-              <dd>{d[s.key]}</dd>
+              <dd>{v.values[i]}</dd>
             </div>
           ))}
         </dl>
-        <DoseBox d={d} />
-        <Receptor d={{ receptor: d.target.receptor, title: `${d.name} at ${d.target.receptor}`, caption: d.target.line }} />
+        <DoseBox dose={v.dose} />
+        <Receptor d={{ receptor: v.receptor, title: `${v.name} at ${v.receptor}`, caption: v.line }} />
       </div>
     );
   }
-  if (q.kind === "mystery") {
-    const mys = MYSTERIES.find((x) => x.id === q.id)!;
-    const e = effectById(mys.answer)!;
-    const d = drugById(mys.drug)!;
+  if (v.kind === "mystery") {
     return (
       <div className="space-y-3">
-        <p className="text-body-strong">{e.label}</p>
-        <p className="text-body">{mys.why}</p>
-        {mys.not ? <p className="text-small text-muted-foreground">{mys.not}</p> : null}
-        <Receptor d={{ receptor: e.receptor, title: `${d.name}: what happens at ${e.receptor}` }} />
+        <p className="text-body-strong">{v.label}</p>
+        <p className="text-body">{v.why}</p>
+        {v.not ? <p className="text-small text-muted-foreground">{v.not}</p> : null}
+        <Receptor d={{ receptor: v.receptor, title: `${v.drug}: what happens at ${v.receptor}` }} />
       </div>
     );
   }
-  if (q.kind === "review") {
-    const rv = reviewById(q.id)!;
+  if (v.kind === "review") {
     return (
       <div className="space-y-3">
-        <p className="text-body-strong">{rv.answer}</p>
-        <p className="text-body">{rv.why}</p>
-        <p className="text-small text-muted-foreground">{rv.not}</p>
+        <p className="text-body-strong">{v.answer}</p>
+        <p className="text-body">{v.why}</p>
+        <p className="text-small text-muted-foreground">{v.not}</p>
       </div>
     );
   }
-  const p = PUZZLES.find((x) => x.id === q.id)!;
   return (
     <div className="space-y-3">
-      <p className="text-body-strong">{outcomeById(p.answer)!.label}</p>
-      <p className="text-body">{p.why}</p>
-      {p.not ? <p className="text-small text-muted-foreground">{p.not}</p> : null}
-      {p.journey ? <Journey d={{ ...p.journey, routes: ["oral"] }} /> : null}
-      {p.receptor ? <Receptor d={{ receptor: p.receptor.receptor, caption: p.receptor.caption }} /> : null}
-      {p.answer === "qt" ? <QtStrip /> : null}
+      <p className="text-body-strong">{v.label}</p>
+      <p className="text-body">{v.why}</p>
+      {v.not ? <p className="text-small text-muted-foreground">{v.not}</p> : null}
+      {v.journey ? <Journey d={{ ...v.journey, routes: ["oral"] }} /> : null}
+      {v.receptor ? <Receptor d={{ receptor: v.receptor.receptor, caption: v.receptor.caption }} /> : null}
+      {v.qt ? <QtStrip /> : null}
     </div>
   );
 }
 
-function DoseBox({ d }: { d: Drug }) {
+function DoseBox({ dose }: { dose: string }) {
   return (
     <div className="rounded-lg border-2 border-dashed border-foreground/50 bg-card p-3">
       <p className="text-caption font-semibold uppercase">Learning dose only</p>
-      <p className="text-body-strong">{d.dose}</p>
+      <p className="text-body-strong">{dose}</p>
       <p className="text-caption text-muted-foreground">Typical adult range. {DOSE_NOTE}</p>
     </div>
   );
@@ -555,7 +586,7 @@ function QtStrip() {
 /* --------------------------------------------------------------- summary */
 function Summary({ r, xp, board, onAgain, onModes }: { r: Run; xp: number | null; board: AccuracyBoardData; onAgain: () => void; onModes: () => void }) {
   useHotkeys({ Enter: onAgain });
-  const scores = r.answers.map((a) => grade(a)?.score ?? 0);
+  const scores = r.answers.map((a) => a.score);
   const acc = scores.length ? scores.reduce((a, s) => a + s, 0) / scores.length : 0;
   return (
     <div className={cn("mx-auto max-w-2xl space-y-5", m.rise)}>
@@ -572,7 +603,7 @@ function Summary({ r, xp, board, onAgain, onModes }: { r: Run; xp: number | null
       <ol className={cn("space-y-1", m.stagger)}>
         {r.answers.map((a, i) => (
           <li key={i} className={cn("flex items-center justify-between gap-2 rounded-md border-2 border-foreground/20 px-3 py-2", m.rise)} style={{ "--i": i } as React.CSSProperties}>
-            <span className="min-w-0 truncate">{titleOf(a)}</span>
+            <span className="min-w-0 truncate">{a.title}</span>
             <Pill tone={toneFor(scores[i])}>{pct(scores[i])}%</Pill>
           </li>
         ))}
@@ -588,18 +619,4 @@ function Summary({ r, xp, board, onAgain, onModes }: { r: Run; xp: number | null
       <AccuracyBoard data={board} unit="answers" />
     </div>
   );
-}
-
-function titleOf(a: Answer): string {
-  if (a.kind === "chain") return `Chain: ${drugById(a.id)?.name ?? a.id}`;
-  if (a.kind === "mystery") {
-    const x = MYSTERIES.find((y) => y.id === a.id);
-    return `Mystery: ${x ? drugById(x.drug)?.name : a.id}`;
-  }
-  if (a.kind === "review") {
-    const rv = reviewById(a.id);
-    return rv ? `Prescription: ${rv.who}` : a.id;
-  }
-  const p = PUZZLES.find((y) => y.id === a.id);
-  return p ? `Mix: ${p.a} + ${p.b}` : a.id;
 }

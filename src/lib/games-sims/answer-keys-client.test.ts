@@ -16,6 +16,7 @@ const SRC = path.resolve(import.meta.dirname, "../..");
 const FORBIDDEN: { game: string; re: RegExp }[] = [
   { game: "Clinic detective", re: /^lib\/learn\/detective(-deal|-server)?\.ts$/ },
   { game: "Escape Room", re: /^lib\/games-sims\/escape\/(rooms(-[a-z]+)?|deal)\.ts$/ },
+  { game: "Rx Detective", re: /^lib\/games-sims\/rx\/(content|drugs|mysteries|puzzles(-[a-z]+)?|reviews(-[a-z]+)?|game|deal|server|med-pages)\.ts$/ },
 ];
 
 const EXT = ["", ".ts", ".tsx", "/index.ts", "/index.tsx"];

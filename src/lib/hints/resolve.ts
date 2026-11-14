@@ -16,7 +16,7 @@ import { itemKey, ruleOut, type HintGame } from "./rules";
 
 export type HintAsk =
   | { game: "detective"; run: string; round: number; options: string[]; token?: string; answer?: string }
-  | { game: "rx"; run: string; kind: "chain" | "mystery" | "puzzle" | "review"; id: string; step: number; options: string[] }
+  | { game: "rx"; run: string; options: string[]; token?: string; kind?: "chain" | "mystery" | "puzzle" | "review"; id?: string; step?: number }
   | { game: "mse"; run: string; excerpt: string; idx: number; options: string[] }
   | { game: "ward"; run: string; campaign: string; decision: string; options: string[] }
   | { game: "comorbid"; run: string; level: 1 | 2 | 3; moves: Move[]; prefer?: string };
@@ -40,17 +40,20 @@ export function resolveHint(a: HintAsk): Resolved {
       return { game: "detective", item: itemKey("detective", a.run, a.round), give: { remove: ruleOut(o, [c.answer], hashString(`${a.run}:${a.round}`)), pick: null, text: RULE_OUT } };
     }
     case "rx": {
+      // `kind`, `id` and `step` are filled on the server from the signed run (askHint), never taken from the browser.
+      if (!a.kind || typeof a.id !== "string" || !Number.isInteger(a.step)) return null;
+      const step = a.step as number;
       const o = opts(a.options);
       let right: string | undefined;
       if (a.kind === "chain") {
         const d = drugById(a.id);
-        const s = STEPS[a.step];
+        const s = STEPS[step];
         right = d && s ? d[s.key] : undefined;
       } else if (a.kind === "mystery") right = MYSTERIES.find((m) => m.id === a.id)?.answer;
       else if (a.kind === "puzzle") right = PUZZLES.find((p) => p.id === a.id)?.answer;
       else if (a.kind === "review") right = reviewById(a.id)?.answer;
       if (!right || !o.includes(right)) return null;
-      const local = a.kind === "chain" ? `${a.id}.${a.step}` : a.id;
+      const local = a.kind === "chain" ? `${a.id}.${step}` : a.id;
       return { game: "rx", item: itemKey("rx", a.run, local), give: { remove: ruleOut(o, [right], hashString(`${a.run}:${local}`)), pick: null, text: RULE_OUT } };
     }
     case "mse": {

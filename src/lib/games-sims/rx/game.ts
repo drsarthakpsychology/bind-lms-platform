@@ -11,23 +11,12 @@ import { shuffle, type Rng } from "../common";
 import { orderByHistory, type History } from "@/lib/history/order";
 import { DRUGS, EFFECTS, FAMILY, MYSTERIES, OUTCOMES, OVERLAP, PUZZLES, REVIEWS, drugById, effectById, outcomeById, reviewById, type Drug } from "./content";
 import { PROFILE, conceptsOf } from "./drugs";
+import { costsLife, LIVES, nextStreak, pointsFor, RUN_SIZE, rxItem, STEPS, type Graded, type Kind, type Mode, type StepKey } from "./rules";
 
-export type Kind = "chain" | "mystery" | "puzzle" | "review";
-export type StepKey = "cls" | "mech" | "ae" | "mon";
-export const STEPS: { key: StepKey; label: string; ask: string }[] = [
-  { key: "cls", label: "Class", ask: "What kind of medicine is it?" },
-  { key: "mech", label: "How it works", ask: "How does it work?" },
-  { key: "ae", label: "Watch for", ask: "Which side effect is the one to remember?" },
-  { key: "mon", label: "Check", ask: "What do you monitor?" },
-];
+export { costsLife, LIVES, nextStreak, pointsFor, RUN_SIZE, rxItem, rxXp, STEPS, type Graded, type Kind, type Mode, type StepKey } from "./rules";
 
 export type Question = { kind: "chain"; id: string; steps: string[][] } | { kind: "mystery"; id: string; options: string[] } | { kind: "puzzle"; id: string; options: string[] } | { kind: "review"; id: string; options: string[] };
-export type Mode = "mixed" | Kind;
 export type Answer = { kind: Kind; id: string; picks: string[] };
-export type Graded = { score: number; parts: { ok: boolean; chosen: string | null; correct: string }[] };
-
-export const LIVES = 3;
-export const RUN_SIZE = 12;
 
 /**
  * Can `x` supply a wrong option for drug `d` at this step? Never from the same
@@ -91,9 +80,6 @@ export function buildQuestion(kind: Kind, id: string, rng: Rng): Question | null
   return { kind, id, options: shuffle([p.answer, ...others], rng) };
 }
 
-/** A run: interleaved kinds (mixing them teaches the differences better than blocks). */
-/** The answer history id of a question ("chain:lithium"). */
-export const rxItem = (kind: Kind, id: string) => `${kind}:${id}`;
 
 /**
  * A run. With an answer history (src/lib/history), each kind's questions go
@@ -174,18 +160,7 @@ export function attemptsFor(a: Answer): Attempt[] {
   return [{ skill, item: `rx:${a.kind === "mystery" ? "mys" : a.kind === "review" ? "rev" : "int"}:${a.id}`, outcome: g.score, chosen: g.parts[0].chosen, correct: g.parts[0].correct }];
 }
 
-export const costsLife = (score: number) => score < 0.5;
 
-/** Points: 100 per fully right answer, part credit for chains, +10% per streak step (max +50%). */
-export function pointsFor(score: number, streak: number): number {
-  return Math.round(score * 100 * (1 + Math.min(5, streak) * 0.1));
-}
-export const nextStreak = (streak: number, score: number) => (score >= 0.999 ? streak + 1 : 0);
-
-/** XP: 5 for playing plus 2 per question's worth of right answers, at most 40. */
-export function rxXp(scores: number[]): number {
-  return Math.min(40, 5 + Math.round(scores.reduce((a, s) => a + s, 0) * 2));
-}
 
 /** Score a whole run (server and browser agree). */
 export function runSummary(answers: Answer[]) {
