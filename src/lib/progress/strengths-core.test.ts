@@ -72,3 +72,13 @@ describe("rankStrengths", () => {
     expect(low.weakest.map((x) => x.id)).toEqual(["b", "a"]);
   });
 });
+
+describe("Study checkpoints and level checks count for their module", () => {
+  it("adds m~cp1 and m@starting into module m", async () => {
+    const { scoreTopics } = await import("./strengths-core");
+    const look = { topicTitle: (id: string) => (id === "m" ? "Module M" : null), moduleExists: (id: string) => id === "m", hasBank: () => false, subjectTitle: () => null, subjectStudyHref: () => null };
+    const out = scoreTopics({ skills: [], tests: { "m~cp1": { best: 1, total: 2 }, "m@starting": { best: 2, total: 2 } }, profile: { sessions: 0, dims: [] } }, look, new Date("2026-11-14"));
+    expect(out).toHaveLength(1);
+    expect(out[0]).toMatchObject({ id: "m", n: 4, p: 0.75, studyHref: "/study/m" });
+  });
+});

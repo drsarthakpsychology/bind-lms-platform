@@ -96,8 +96,9 @@ export function scoreTopics(
     if (prep) add(acc, `prep-${prep[1]}`, "subject", p, r.n);
     else if (!r.skill.startsWith("prep:")) add(acc, r.skill.split(":")[0], "topic", p, r.n);
   }
-  for (const [module, t] of Object.entries(input.tests)) {
-    if (t && t.total > 0) add(acc, module, "topic", t.best / t.total, t.total);
+  for (const [key, t] of Object.entries(input.tests)) {
+    // Checkpoints ("module~cp2") and level checks ("module@starting") count for their module.
+    if (t && t.total > 0) add(acc, key.split(/[~@]/)[0], "topic", Math.min(t.best, t.total) / t.total, t.total);
   }
   // Consulting Room signals: each session is one piece of evidence.
   if (input.profile.sessions >= 2) {
