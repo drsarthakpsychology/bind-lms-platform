@@ -16,9 +16,9 @@ import { itemKey, ruleOut, type HintGame } from "./rules";
 
 export type HintAsk =
   | { game: "detective"; run: string; round: number; options: string[]; token?: string; answer?: string }
-  | { game: "rx"; run: string; kind: "chain" | "mystery" | "puzzle" | "review"; id: string; step: number; options: string[] }
-  | { game: "mse"; run: string; excerpt: string; idx: number; options: string[] }
-  | { game: "ward"; run: string; campaign: string; decision: string; options: string[] }
+  | { game: "rx"; run: string; options: string[]; token?: string; kind?: "chain" | "mystery" | "puzzle" | "review"; id?: string; step?: number }
+  | { game: "mse"; run: string; options: string[]; token?: string; excerpt?: string; idx?: number }
+  | { game: "ward"; run: string; options: string[]; token?: string; campaign?: string; decision?: string }
   | { game: "comorbid"; run: string; level: 1 | 2 | 3; moves: Move[]; prefer?: string };
 
 export type HintGive = { remove: string[]; pick: string | null; text: string };
@@ -40,27 +40,34 @@ export function resolveHint(a: HintAsk): Resolved {
       return { game: "detective", item: itemKey("detective", a.run, a.round), give: { remove: ruleOut(o, [c.answer], hashString(`${a.run}:${a.round}`)), pick: null, text: RULE_OUT } };
     }
     case "rx": {
+      // `kind`, `id` and `step` are filled on the server from the signed run (askHint), never taken from the browser.
+      if (!a.kind || typeof a.id !== "string" || !Number.isInteger(a.step)) return null;
+      const step = a.step as number;
       const o = opts(a.options);
       let right: string | undefined;
       if (a.kind === "chain") {
         const d = drugById(a.id);
-        const s = STEPS[a.step];
+        const s = STEPS[step];
         right = d && s ? d[s.key] : undefined;
       } else if (a.kind === "mystery") right = MYSTERIES.find((m) => m.id === a.id)?.answer;
       else if (a.kind === "puzzle") right = PUZZLES.find((p) => p.id === a.id)?.answer;
       else if (a.kind === "review") right = reviewById(a.id)?.answer;
       if (!right || !o.includes(right)) return null;
-      const local = a.kind === "chain" ? `${a.id}.${a.step}` : a.id;
+      const local = a.kind === "chain" ? `${a.id}.${step}` : a.id;
       return { game: "rx", item: itemKey("rx", a.run, local), give: { remove: ruleOut(o, [right], hashString(`${a.run}:${local}`)), pick: null, text: RULE_OUT } };
     }
     case "mse": {
-      const f = excerptById(a.excerpt)?.findings[a.idx];
+      // `excerpt` and `idx` are filled on the server from the signed round (askHint), never taken from the browser.
+      if (typeof a.excerpt !== "string" || !Number.isInteger(a.idx)) return null;
+      const f = excerptById(a.excerpt)?.findings[a.idx as number];
       const o = opts(a.options);
       if (!f || !o.includes(f.a)) return null;
       // Near misses stay: they teach the difference.
-      return { game: "mse", item: itemKey("mse", a.run, a.excerpt, a.idx), give: { remove: ruleOut(o, [f.a, ...(f.close ?? [])], hashString(`${a.run}:${a.excerpt}:${a.idx}`)), pick: null, text: RULE_OUT } };
+      return { game: "mse", item: itemKey("mse", a.run, a.excerpt, a.idx as number), give: { remove: ruleOut(o, [f.a, ...(f.close ?? [])], hashString(`${a.run}:${a.excerpt}:${a.idx}`)), pick: null, text: RULE_OUT } };
     }
     case "ward": {
+      // `campaign` and `decision` are filled on the server from the signed game (askHint), never taken from the browser.
+      if (typeof a.campaign !== "string" || typeof a.decision !== "string") return null;
       const d = campaignById(a.campaign)?.chapters.flatMap((ch) => ch.decisions).find((x) => x.id === a.decision);
       if (!d) return null;
       const weak = d.options.filter((o) => o.q === "harm" || o.q === "poor").map((o) => o.id);
