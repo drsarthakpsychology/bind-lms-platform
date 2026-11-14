@@ -280,7 +280,7 @@ export function SortGame({ serverState, save, initial }: { serverState: LearnSta
                     <strong>Selected:</strong> {v.tiles[selected]}
                   </span>
                   {/* Phones and tablets: put it in a group from here, without scrolling back up. */}
-                  <span className="grid basis-full grid-cols-2 gap-2 lg:hidden">
+                  <span className="grid basis-full grid-cols-2 gap-2 sm:grid-cols-4 lg:hidden">
                     {v.groups.map((name, g) =>
                       p.locked[g] || p.placement[selected] === g ? null : (
                         <button key={g} type="button" onClick={() => place(g)} className="min-h-12 rounded-md border-2 border-background bg-primary px-2.5 py-2 text-left text-sm leading-tight font-bold text-primary-foreground transition-transform duration-fast ease-snappy active:translate-y-px">
