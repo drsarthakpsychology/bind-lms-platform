@@ -6,4 +6,4 @@ import type { WidgetKind } from "@/lib/study/types";
  * docs/design/DIAGRAM_INVENTORY_2026_11.md for what each widget is and why
  * the others keep their own look.
  */
-export const SKETCHED: readonly WidgetKind[] = ["flow", "layers", "curve", "brainmap", "journey", "receptor", "pathways", "neuron", "conditioning", "memoryflow", "stress", "synapse", "release", "hypnogram", "strange", "attention", "dissonance", "conservation"];
+export const SKETCHED: readonly WidgetKind[] = ["flow", "layers", "curve", "brainmap", "journey", "receptor", "pathways", "neuron", "conditioning", "memoryflow", "stress", "synapse", "release", "hypnogram", "strange", "attention", "dissonance", "conservation", "compare", "synapse3d", "actionpotential", "hpaloop", "nervoussystem", "brainexplorer", "genogram", "brainslicer", "amesroom"];
