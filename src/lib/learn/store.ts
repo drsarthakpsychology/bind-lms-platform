@@ -3,32 +3,10 @@
 import * as React from "react";
 import { emptyState, normalise, type LearnState } from "./engine";
 import { onSaved, queueSave } from "@/lib/save/client";
+import { aheadOf, mergeCopies } from "./merge";
 
-function maxMap(a: Record<string, number>, b: Record<string, number>): Record<string, number> {
-  const out = { ...a };
-  for (const [k, v] of Object.entries(b)) out[k] = Math.max(out[k] ?? 0, v);
-  return out;
-}
-
-/** Keep the winner, but never lose reading ticks or study time recorded on the other copy. */
-export function mergeCopies(win: LearnState, other: LearnState): LearnState {
-  const acts = { ...other.study.acts };
-  for (const [m, v] of Object.entries(win.study.acts)) acts[m] = { ...(acts[m] ?? {}), ...v };
-  return {
-    ...win,
-    notesRead: { ...other.notesRead, ...win.notesRead },
-    lab: { ...other.lab, ...win.lab },
-    study: {
-      ...win.study,
-      done: { ...other.study.done, ...win.study.done },
-      written: { ...other.study.written, ...win.study.written },
-      secs: maxMap(win.study.secs, other.study.secs),
-      acts,
-      last: win.study.last ?? other.study.last,
-    },
-  };
-}
-
+// Joining copies lives in ./merge (shared with the server save).
+export { mergeCopies } from "./merge";
 /**
  * One Learn state per browser tab, shared by every Learn screen.
  * - Hydration-safe: React renders the server copy first, then this store.
@@ -100,7 +78,7 @@ export function initLearnStore(server: LearnState | null, save: (s: LearnState) 
   // The browser copy holds work the server never got (a save that failed, a
   // tab closed before the save went out): send the merged copy up now instead
   // of waiting for the student's next change.
-  if (a && JSON.stringify(state) !== JSON.stringify(a)) scheduleSave(state, key);
+  if (a && aheadOf(state, a)) scheduleSave(state, key);
 }
 
 function dropLocal(k: string) {
@@ -170,6 +148,25 @@ export function useLearnState(serverCopy: LearnState): LearnState {
 /** Current store value outside render (effects and handlers). */
 export function getLearnState(): LearnState | null {
   return state;
+}
+
+// Another tab of this student saved its copy: take in what it has, so this tab
+// never sends an older copy over a mark made there.
+if (typeof window !== "undefined") {
+  window.addEventListener("storage", (e) => {
+    if (!state || e.key !== key || !e.newValue) return;
+    let other: LearnState;
+    try {
+      other = normalise(JSON.parse(e.newValue));
+    } catch {
+      return;
+    }
+    const win = other.xp > state.xp ? other : state;
+    const next = mergeCopies(win, win === other ? state : other);
+    if (!aheadOf(next, state)) return;
+    state = next;
+    listeners.forEach((l) => l());
+  });
 }
 
 // Closing the tab inside the 600 ms wait: queue the save now so it is not lost

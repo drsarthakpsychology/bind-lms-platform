@@ -81,12 +81,14 @@ export async function POST(req: Request) {
       switch (item.kind) {
         case "progress": {
           const p = parsed.data as z.infer<typeof payloads.progress>;
-          results.push({ id: item.id, status: fromAction(await pingProgress(p.lessonId, p.watched, p.duration)) });
+          const r = await pingProgress(p.lessonId, p.watched, p.duration);
+          results.push({ id: item.id, status: fromAction(r), data: r.completed ? { completed: true } : undefined });
           break;
         }
         case "complete": {
           const p = parsed.data as z.infer<typeof payloads.complete>;
-          results.push({ id: item.id, status: fromAction(await markLessonComplete(p.lessonId)) });
+          const r = await markLessonComplete(p.lessonId);
+          results.push({ id: item.id, status: fromAction(r), data: r.completed ? { completed: true } : undefined });
           break;
         }
         case "learn": {

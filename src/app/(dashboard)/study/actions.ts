@@ -9,6 +9,7 @@ import { newlyFinishedModules } from "@/lib/achievements/completion";
 import { moduleFacets } from "@/lib/achievements/rules";
 import { keepBestTests } from "@/lib/study/progress";
 import { withRetry } from "@/lib/save/retry";
+import { mergeCopies } from "@/lib/learn/merge";
 
 /** The stored state, plus the id of the student it belongs to (keys the browser copy). */
 export type OwnedLearnState = LearnState & { owner?: string };
@@ -65,8 +66,13 @@ export async function saveLearnState(state: LearnState): Promise<{ ok: boolean; 
     }
     const prev = row ? { state: normalise(row.state), updatedDay: row.updated_at ? istToday(new Date(row.updated_at as string)) : null } : null;
     const { state: clamp, clamped } = clampLearnSave(prev, next, istToday());
-    // Best test scores never go down (the certificate counts the best score).
-    const clean = { ...clamp, study: { ...clamp.study, tests: keepBestTests(prev?.state.study.tests, clamp.study.tests) } };
+    // Marks never go backwards: sections done, notes read, practice and
+    // activity ticks, study time and best test scores from the stored row are
+    // kept even when this copy lacks them (an older tab or device saving over a
+    // newer mark used to wipe it). Best test scores never go down (the
+    // certificate counts the best score).
+    const joined = prev ? mergeCopies(clamp, prev.state) : clamp;
+    const clean = { ...joined, study: { ...joined.study, tests: keepBestTests(prev?.state.study.tests, joined.study.tests) } };
     if (clamped) console.warn(`saveLearnState: clamped an implausible Learn save for ${user.id} (sent xp ${next.xp}, kept ${clean.xp})`);
 
     // Write with the service role when it is configured, so student INSERT and

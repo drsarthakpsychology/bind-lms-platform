@@ -100,4 +100,12 @@ describe("learn store keys the browser copy per student", () => {
     client.__saveForTests.reset();
     vi.useRealTimers();
   });
+
+  it("takes in a mark made in another tab, so this tab never saves over it", async () => {
+    const s = await freshStore();
+    s.initLearnStore(withXp(10), save, "u1");
+    const other = { ...withXp(10), study: { ...emptyState().study, done: { "m1/s1": "2026-11-14" } } };
+    window.dispatchEvent(new StorageEvent("storage", { key: "vibha-learn-v1:u1", newValue: JSON.stringify(other) }));
+    expect(s.getLearnState()?.study.done["m1/s1"]).toBe("2026-11-14");
+  });
 });

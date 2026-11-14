@@ -28,7 +28,7 @@ export async function pingProgress(
   lessonId: string,
   watchedSeconds: number,
   durationSeconds: number,
-): Promise<{ ok: boolean; retry?: boolean }> {
+): Promise<{ ok: boolean; retry?: boolean; completed?: boolean }> {
   const profile = await requireSession();
   // Signed out (or signed in elsewhere): the browser keeps the save for later.
   if (!profile) return { ok: false, retry: true };
@@ -98,7 +98,9 @@ export async function pingProgress(
   );
   if (error) console.error("pingProgress: progress write failed:", error.code, error.message);
 
-  return error ? { ok: false, retry: true } : { ok: true };
+  if (error) return { ok: false, retry: true };
+  // Just crossed the line: the page refreshes so "Watched" and the ticks show at once.
+  return next.isCompleted && !prev?.isCompleted ? { ok: true, completed: true } : { ok: true };
 }
 
 /**
@@ -106,7 +108,7 @@ export async function pingProgress(
  * browser queued while offline). Sticky like pingProgress; keeps the stored
  * resume position.
  */
-export async function markLessonComplete(lessonId: string): Promise<{ ok: boolean; retry?: boolean }> {
+export async function markLessonComplete(lessonId: string): Promise<{ ok: boolean; retry?: boolean; completed?: boolean }> {
   const profile = await requireSession();
   if (!profile) return { ok: false, retry: true };
   if (typeof lessonId !== "string" || !UUID_RE.test(lessonId)) return { ok: false, retry: false };
@@ -117,7 +119,7 @@ export async function markLessonComplete(lessonId: string): Promise<{ ok: boolea
     supabase.from("progress").upsert({ user_id: profile.id, lesson_id: lessonId, is_completed: true, updated_at: new Date().toISOString() }, { onConflict: "user_id,lesson_id" }),
   );
   if (error) console.error("markLessonComplete: progress write failed:", error.code, error.message);
-  return error ? { ok: false, retry: true } : { ok: true };
+  return error ? { ok: false, retry: true } : { ok: true, completed: true };
 }
 
 /**

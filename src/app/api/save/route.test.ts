@@ -70,6 +70,26 @@ describe("POST /api/save", () => {
     ]);
   });
 
+  it("tells the browser when a lecture has just been completed (the page refreshes)", async () => {
+    h.ping.mockResolvedValueOnce({ ok: true, completed: true } as never);
+    h.complete.mockResolvedValueOnce({ ok: true, completed: true } as never);
+    const j = await (
+      await POST(
+        req({
+          owner: me(),
+          items: [
+            { id: "a", kind: "progress", payload: { lessonId: L, watched: 590, duration: 600 } },
+            { id: "b", kind: "complete", payload: { lessonId: L } },
+          ],
+        }),
+      )
+    ).json();
+    expect(j.results).toEqual([
+      { id: "a", status: "ok", data: { completed: true } },
+      { id: "b", status: "ok", data: { completed: true } },
+    ]);
+  });
+
   it("passes a clamped learn save back to the browser", async () => {
     h.learn.mockResolvedValueOnce({ ok: true, clamped: true });
     const j = await (await POST(req({ owner: me(), items: [{ id: "a", kind: "learn", payload: { state: {} } }] }))).json();
