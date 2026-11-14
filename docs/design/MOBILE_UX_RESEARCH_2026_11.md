@@ -212,3 +212,31 @@ clipped text, controls under 40 px and fixed bars. Screenshots: scratchpad
 Left as is, on purpose: the hint UI in games (another agent owns it); the
 in-play layout of Blitz, Criteria sort, Comorbid and Duel (timed or
 card-driven, no Next button; another agent is editing those files).
+
+## 10. References for the phone shell decisions
+
+Checked in the connected reference libraries (Mobbin's MCP needs a paid plan
+and returned nothing, so Screenrove and Made Good Designs were used).
+
+| Decision | Reference |
+|---|---|
+| Lesson Back / Next pinned to the bottom with a "1 of N" counter (our reader bar, ThumbBar) | Codecademy lesson, Screenrove `codecademy-lesson`, captured 2026-10-22, https://screenrove.com/codecademy/flows#codecademy-lesson |
+| One question per screen, word bank low, Check button full width at the bottom | UI by Made Good Designs, "Language lesson exercise", screen 38e82ffda622 (brutalist variant 6408359b050f), https://madegooddesigns.com/inspiration/ui/language-lesson-question-mobile-minimal-38e82ffda622 |
+| Back / Continue pair at the bottom of a step | UI by Made Good Designs, "Onboarding step", screen b0bcc75d6332, https://madegooddesigns.com/inspiration/ui/onboarding-step-mobile-minimal-b0bcc75d6332 |
+| A desktop side panel becomes a bottom sheet on phones, with a sticky footer | UI by Made Good Designs, "Side drawer over a data table" (brutalist), screen 99f0adc16462, https://madegooddesigns.com/inspiration/ui/side-drawer-mobile-brutalist-99f0adc16462 ; "Explore map" (brutalist), screen 0c4e516f7901, https://madegooddesigns.com/inspiration/ui/map-view-mobile-brutalist-0c4e516f7901 |
+| A "More" place that lists the rest of the app and the account | Leonardo.ai More menu, Screenrove `leonardo-product-more`, captured 2026-10-22, https://screenrove.com/leonardo/product/leonardo-product-more |
+| Placement step before a course ("where to start") | Duolingo, Screenrove `duolingo-placement`, captured 2026-09-24, https://screenrove.com/duolingo/flows#duolingo-placement |
+
+## 11. Bottom of the screen (owner report, Nov 2026)
+
+"I could not see some content on the bottom side of the phone." Measured in
+the harness at 360, 390 and 412 px: on Home, Study, Practice, Games, Exam
+Prep, Medicines and the other section pages the last 42 px stayed under the
+tab bar even when scrolled to the end. Cause: ShellContent's
+`pb-[calc(var(--nav-h)+2rem)]` was dropped by tailwind-merge because a
+`py-6` followed it. Fix: top padding only from the section rule; bottom
+padding = `--nav-h` (tab bar) + `--thumb-h` (Check/Next bar) + `--sticky-h`
+(lecture/medicine pinned action) + 2rem, each including the gesture-bar
+inset; all three drop to 0 while typing. After the fix, 60 screens and
+states at three widths (180 runs) pass the "last line fully above the
+bottom bars" check; `e2e/bottom-visible.spec.ts` keeps it that way.
