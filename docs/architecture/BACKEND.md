@@ -68,7 +68,7 @@ Live flag values are in `docs/FEATURES_STATUS.md`.
 | Monthly | Vercel Cron, 1st of month 00:30 | `GET /api/cron/monthly` | Monthly merit certificates (top 3 per cohort) and champion titles |
 | Doubt follow-up | Vercel Cron, daily 03:30 | `GET /api/cron/doubt-followup` | In-app notice for new doubt answers, one email after 48 hours unopened |
 | Keepalive | GitHub Actions `db-keepalive.yml`, Mon 03:22 | `GET /api/internal/cron?task=keepalive` | Stops the Free plan database from pausing |
-| Infra snapshot | `infra-check.yml`, daily 00:12 | `?task=infra-snapshot` | Writes `infra_snapshots` for `/admin/infra` and prunes old snapshots (`?task=prune-logs` prunes `ai_usage_log`) |
+| Infra snapshot | `infra-check.yml`, daily 00:12 | `?task=infra-snapshot` | Writes `infra_snapshots` for `/admin/infra` and prunes old snapshots (`?task=prune-logs` prunes `ai_usage_log`, but no workflow calls it) |
 | Alumni | `alumni-transition.yml`, daily 05:07 | `?task=alumni-transition` | Students of ended cohorts become alumni |
 | Reminders and releases | `reminders.yml`, daily 16:37 | `?task=send-reminders`, `?task=release-scheduled` | Reminders returns `not_configured` (not built). Release publishes scheduled modules |
 | Nightly backup | `backup.yml`, daily 03:17 | none (runs `pg_dump`) | Database dump to R2 `plms-backups`, prunes old dumps, emails on failure |
