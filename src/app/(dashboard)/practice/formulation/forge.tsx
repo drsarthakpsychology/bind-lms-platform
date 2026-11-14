@@ -2,6 +2,7 @@
 
 import { noteAnswer } from "@/lib/history/client";
 import * as React from "react";
+import fx from "@/lib/games/ui/fx.module.css";
 import { haptic } from "@/lib/haptics";
 import { diffNarratives, FIVE_P, scoreSort, SEED_FORMULATION, type FiveP, type FormulationFactor } from "@/lib/practice/formulation";
 import { buildFormulationAttemptPayload } from "@/lib/practice/formulation-attempt";
@@ -203,7 +204,7 @@ export function FormulationForge({ seed = SEED_FORMULATION }: { seed?: ForgeSeed
 
           {/* Phones and tablets: a picked card goes into a bucket from here, without scrolling up. */}
           {selected ? (
-            <div className="sticky bottom-[calc(var(--nav-h,0px)+0.5rem)] z-10 space-y-2 rounded-md border-2 border-foreground bg-foreground p-3 text-background hard-shadow-sm sm:hidden">
+            <div className={`sticky bottom-[calc(var(--nav-h,0px)+0.5rem)] z-10 space-y-2 rounded-md border-2 border-foreground bg-foreground p-3 text-background hard-shadow-sm sm:hidden ${fx.rise}`}>
               <p className="text-sm">
                 <strong>Picked:</strong> {seed.factors.find((x) => x.id === selected)?.text}
               </p>

@@ -275,7 +275,7 @@ export function SortGame({ serverState, save, initial }: { serverState: LearnSta
               </div>
 
               {selected !== null && (
-                <div className="sticky bottom-[calc(var(--nav-h)+0.5rem)] z-10 flex flex-wrap items-center gap-2 rounded-md border-2 border-foreground bg-foreground p-3 text-background hard-shadow-sm lg:bottom-4">
+                <div className={cn("sticky bottom-[calc(var(--nav-h)+0.5rem)] z-10 flex flex-wrap items-center gap-2 rounded-md border-2 border-foreground bg-foreground p-3 text-background hard-shadow-sm lg:bottom-4", anim(fx.rise))}>
                   <span className="min-w-0 flex-1 basis-full text-sm lg:basis-auto">
                     <strong>Selected:</strong> {v.tiles[selected]}
                   </span>
