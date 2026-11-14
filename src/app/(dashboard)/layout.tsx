@@ -14,6 +14,8 @@ import { readFlags } from "@/lib/flags";
 import { ViewModeToggle } from "./view-mode-toggle";
 import { DetailsGate } from "@/components/profile/details-gate";
 import { VisitTracker } from "@/components/analytics/visit-tracker";
+import { SaveStatus } from "@/components/save/save-status";
+import { ownerTag } from "@/lib/save/owner";
 import { loadMyBlocks } from "@/lib/access/blocks";
 import { blockedBy } from "@/lib/access/features";
 import { createClient } from "@/lib/supabase/server";
@@ -147,6 +149,8 @@ export default async function DashboardLayout({
     >
       {gate}
       {role === "student" ? <VisitTracker /> : null}
+      {/* Sends queued work to the server and says so when a save keeps failing. */}
+      <SaveStatus owner={ownerTag(session.profile.id)} />
       {children}
     </AppShell>
   );
