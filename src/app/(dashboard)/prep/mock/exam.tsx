@@ -10,6 +10,8 @@ import { startMock, submitMock, type MockPaperView } from "../actions";
 import { KEYS_MOCK, KeysHint, Options, QuestionBody, useShortcuts } from "../question";
 import { btnInk, btnPlain, btnPrimary, card } from "../ui";
 import { MockResult } from "./result";
+import { ThumbBar } from "@/components/mobile/thumb-bar";
+import { MobileBottomSheet } from "@/components/mobile/mobile-bottom-sheet";
 
 type Phase = "intro" | "starting" | "exam" | "confirm" | "submitting" | "result";
 
@@ -288,9 +290,9 @@ export function MockExam({ specId, title, intro, rules }: { specId: string; titl
     <div className="space-y-4">
       {/* Top bar: title, clock, palette (phones), submit */}
       <div className="sticky top-0 z-20 -mx-4 flex flex-wrap items-center gap-2 border-b-2 border-foreground bg-background px-4 py-2 sm:-mx-6 sm:px-6 md:top-[var(--top-h)]">
-        <p className="min-w-0 flex-1 truncate text-sm font-semibold">{title}</p>
+        <p className="hidden min-w-0 flex-1 truncate text-sm font-semibold sm:block">{title}</p>
         <p
-          className={cn("inline-flex min-h-11 items-center gap-1.5 rounded-md border-2 border-foreground px-3 font-mono text-base font-bold tabular-nums", warn ? "bg-status-alert-bg text-status-alert-fg" : "bg-card")}
+          className={cn("mr-auto inline-flex sm:mr-0 min-h-11 items-center gap-1.5 rounded-md border-2 border-foreground px-3 font-mono text-base font-bold tabular-nums", warn ? "bg-status-alert-bg text-status-alert-fg" : "bg-card")}
           role="timer"
           aria-label={clockWords(left)}
         >
@@ -314,14 +316,13 @@ export function MockExam({ specId, title, intro, rules }: { specId: string; titl
         {Math.ceil(left / 60000) === 5 ? "5 minutes left" : Math.ceil(left / 60000) === 1 ? "1 minute left" : ""}
       </p>
 
-      {paletteOpen ? (
-        <div id="palette-phone" className={cn(card, "lg:hidden")}>
-          {palette}
-        </div>
-      ) : null}
+      {/* Phones and tablets: every question in a bottom sheet, not pushed into the page. */}
+      <MobileBottomSheet open={paletteOpen} onOpenChange={setPaletteOpen} title="All questions" className="lg:hidden">
+        <div id="palette-phone">{palette}</div>
+      </MobileBottomSheet>
 
       {sections.length > 1 ? (
-        <div role="tablist" aria-label="Parts" className="flex flex-wrap gap-2">
+        <div role="tablist" aria-label="Parts" className="-mx-4 chip-scroller gap-2 px-4 sm:mx-0 sm:flex-wrap sm:overflow-visible sm:px-0">
           {sections.map((s, si) => {
             const done = s.questions.filter((x) => answers[x.id] != null).length;
             return (
@@ -393,20 +394,26 @@ export function MockExam({ specId, title, intro, rules }: { specId: string; titl
             </div>
             <QuestionBody key={q.id} q={q} number={num} headingRef={heading} />
             <Options q={q} picked={answers[q.id] ?? null} onPick={pick} />
-            <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
-              <button type="button" className={btnPlain} onClick={() => move(-1)}>
-                <ArrowLeft className="size-4" aria-hidden /> Back
+            {/* Phones: Clear sits under the answers; Back, Mark and Next sit low (ThumbBar). */}
+            {answers[q.id] != null ? (
+              <button type="button" className="inline-flex min-h-11 items-center gap-1.5 px-1 text-sm font-semibold text-muted-foreground hover:text-foreground hover:underline md:hidden" onClick={clear}>
+                <Eraser className="size-4" aria-hidden /> Clear my answer
               </button>
-              <button type="button" className={btnPlain} onClick={clear} disabled={answers[q.id] == null}>
+            ) : null}
+            <ThumbBar label="Move through the paper" inlineClassName="md:grid md:grid-cols-4 md:gap-2">
+              <button type="button" className={cn(btnPlain, "min-h-12 shrink-0 px-3")} onClick={() => move(-1)} aria-label="Back">
+                <ArrowLeft className="size-4" aria-hidden /> <span className="hidden md:inline">Back</span>
+              </button>
+              <button type="button" className={cn(btnPlain, "hidden md:inline-flex")} onClick={clear} disabled={answers[q.id] == null}>
                 <Eraser className="size-4" aria-hidden /> Clear
               </button>
-              <button type="button" className={cn(btnPlain, marked[q.id] && "bg-status-pending-bg text-status-pending-fg")} aria-pressed={!!marked[q.id]} onClick={toggleMark}>
+              <button type="button" className={cn(btnPlain, "min-h-12 shrink-0 px-3", marked[q.id] && "bg-status-pending-bg text-status-pending-fg")} aria-pressed={!!marked[q.id]} onClick={toggleMark}>
                 <Flag className="size-4" aria-hidden /> {marked[q.id] ? "Marked" : "Mark"}
               </button>
-              <button type="button" className={btnInk} onClick={() => move(1)}>
+              <button type="button" className={cn(btnPrimary, "min-h-12 min-w-0 flex-1 text-base md:text-sm")} onClick={() => move(1)}>
                 Next <ArrowRight className="size-4" aria-hidden />
               </button>
-            </div>
+            </ThumbBar>
           </div>
           <aside className={cn(card, "hidden self-start lg:sticky lg:top-20 lg:block lg:max-h-[calc(100vh-6rem)] lg:overflow-y-auto")}>{palette}</aside>
         </div>

@@ -118,7 +118,7 @@ export function MobileBottomSheet({
         ) : (
           <SheetTitle className="sr-only">Sheet</SheetTitle>
         )}
-        <div className="flex-1 overflow-y-auto px-4 pt-1 pb-4">{children}</div>
+        <div className={cn("flex-1 overflow-y-auto overscroll-contain px-4 pt-1", footer ? "pb-4" : "pb-[max(1rem,env(safe-area-inset-bottom))]")}>{children}</div>
         {footer ? (
           <div
             className="shrink-0 border-t-2 border-border px-4 py-3"

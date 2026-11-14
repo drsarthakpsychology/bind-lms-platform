@@ -341,6 +341,37 @@
     --free-inset: env(safe-area-inset-bottom);
   }
 }
+/* ThumbBar (components/mobile/thumb-bar.tsx): a question's or a game's next
+   step, pinned low on phones. It sits on the tab bar when one shows, else on
+   the gesture bar; the spacer keeps the last line of content above it. */
+@media (max-width: 767px) {
+  .thumb-bar {
+    bottom: var(--nav-h, 0px);
+    padding-bottom: max(0.75rem, var(--free-inset, 0px));
+  }
+  .thumb-bar-space {
+    height: calc(4.75rem + var(--free-inset, 0px));
+  }
+}
+
+/* A row of chips that scrolls sideways on phones: no scrollbar line under it,
+   and it stops on each chip. */
+@utility chip-scroller {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x proximity;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  & > * {
+    flex-shrink: 0;
+    scroll-snap-align: start;
+  }
+}
+
 /* Top bar: 56px, 64px on laptops that have the height for it. */
 @media (min-width: 1024px) and (min-height: 720px) {
   :root {
