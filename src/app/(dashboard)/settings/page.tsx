@@ -5,7 +5,7 @@ import { ReactionsToggle } from "@/components/reactions/reactions-toggle";
 import { getSession } from "@/lib/auth/session";
 import { logout } from "@/lib/auth/actions";
 import { MobilePage } from "@/components/mobile/mobile-page";
-import { MobileHeader } from "@/components/mobile/mobile-header";
+import { PageHeader } from "@/components/design-system/page-header";
 import { MobileSection } from "@/components/mobile/mobile-section";
 import { MobileListItem } from "@/components/mobile/mobile-list-item";
 import { StatusPill } from "@/components/mobile/status-pill";
@@ -33,8 +33,8 @@ export default async function SettingsPage() {
 
   return (
     <MobilePage inset={false}>
-      <MobileHeader title="Settings" inset={false} />
-      <div className="flex flex-col gap-6 px-4 py-4">
+      <PageHeader title="Settings" className="pb-0" />
+      <div className="flex flex-col gap-6 pt-4">
         {/* Identity: one honest block, not a fake name. */}
         <div className="flex items-center gap-3 rounded-lg border-2 border-foreground bg-card p-4 hard-shadow-sm">
           <div
@@ -51,7 +51,10 @@ export default async function SettingsPage() {
               {BRAND.shortName}
             </p>
           </div>
-          <StatusPill tone="neutral" label="Signed in" />
+          {/* Phones: the email gets the room. */}
+          <span className="hidden shrink-0 sm:block">
+            <StatusPill tone="neutral" label="Signed in" />
+          </span>
         </div>
 
         {/* Account: what the app actually knows. */}
