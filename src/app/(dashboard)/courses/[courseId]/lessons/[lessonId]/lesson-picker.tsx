@@ -46,7 +46,7 @@ export function LessonPicker({
         aria-haspopup="dialog"
         aria-expanded={open}
         aria-label={index >= 0 ? `Lectures, ${index + 1} of ${lessons.length}: open the list` : "Lectures: open the list"}
-        className="inline-flex h-11 shrink-0 items-center gap-1.5 rounded-md border-2 border-foreground bg-card px-3 text-sm font-bold text-foreground transition-[transform,box-shadow] hover:bg-accent active:translate-y-px"
+        className="inline-flex h-11 shrink-0 items-center gap-1.5 whitespace-nowrap rounded-md border-2 border-foreground bg-card px-3 text-sm font-bold text-foreground transition-[transform,box-shadow] hover:bg-accent active:translate-y-px"
       >
         {/* The course name is already on the Back link beside this. */}
         <span>Lectures</span>

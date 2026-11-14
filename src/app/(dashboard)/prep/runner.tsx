@@ -9,7 +9,8 @@ import type { PrepQView, PrepReveal } from "@/lib/prep/view";
 import { cn } from "@/lib/utils";
 import { checkAnswer, revealAnswer, toggleSaved } from "./actions";
 import { KEYS, KeysHint, Options, QuestionBody, useShortcuts } from "./question";
-import { btnInk, btnPlain, btnPrimary, card } from "./ui";
+import { btnPlain, btnPrimary, card } from "./ui";
+import { ThumbBar } from "@/components/mobile/thumb-bar";
 import { PrepVisualView } from "./visual";
 import { useReaction } from "@/components/reactions/use-reaction";
 import { EndReaction, ScoreDial, StreakMeter } from "@/components/reactions/graphics";
@@ -245,13 +246,17 @@ export function QuestionRunner({ questions, start = 0, prior = {}, saved: initia
 
       {!result ? (
         <div className="space-y-2">
-          <button type="button" className={cn(btnPrimary, "w-full text-base")} disabled={picked === null || busy} onClick={() => void check()}>
-            {busy ? "Checking…" : "Check answer"}
-          </button>
-          <div className="flex flex-wrap items-center justify-between gap-2">
-            <button type="button" onClick={() => void show()} disabled={busy} className="inline-flex min-h-11 items-center gap-1.5 rounded-md px-1 text-sm font-semibold text-muted-foreground hover:text-foreground hover:underline disabled:opacity-50 focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60">
-              <Eye className="size-4" aria-hidden /> Show the answer
+          {/* Phones: Check sits low, where the thumb is (ThumbBar). */}
+          {/* The quiet way out sits beside Check, as Duolingo's Skip does (Screenrove duolingo-first-exercise). */}
+          <ThumbBar label="Answer" inlineClassName="md:flex-col-reverse md:items-stretch md:gap-2">
+            <button type="button" onClick={() => void show()} disabled={busy} className="inline-flex min-h-12 shrink-0 items-center gap-1.5 rounded-md border-2 border-foreground/40 bg-card px-3 text-sm font-semibold text-muted-foreground hover:text-foreground disabled:opacity-50 focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60 md:min-h-11 md:self-start md:border-transparent md:bg-transparent md:px-1 md:hover:underline">
+              <Eye className="hidden size-4 sm:block" aria-hidden /> Show the answer
             </button>
+            <button type="button" className={cn(btnPrimary, "min-h-12 min-w-0 flex-1 text-base md:flex-none")} disabled={picked === null || busy} onClick={() => void check()}>
+              {busy ? "Checking…" : picked === null ? "Pick an answer" : "Check answer"}
+            </button>
+          </ThumbBar>
+          <div className="flex flex-wrap items-center justify-end gap-2 empty:hidden">
             <KeysHint />
           </div>
         </div>
@@ -261,7 +266,7 @@ export function QuestionRunner({ questions, start = 0, prior = {}, saved: initia
           tabIndex={-1}
           aria-live="polite"
           className={cn(
-            "min-w-0 space-y-3 rounded-md border-2 border-foreground p-4 outline-none [overflow-wrap:anywhere]",
+            "min-w-0 scroll-mb-28 space-y-3 rounded-md border-2 border-foreground p-4 outline-none [overflow-wrap:anywhere] md:scroll-mb-0",
             result.correct === true ? "bg-status-success-bg text-status-success-fg" : result.correct === false ? "bg-status-alert-bg text-status-alert-fg" : "bg-card",
           )}
         >
@@ -274,16 +279,18 @@ export function QuestionRunner({ questions, start = 0, prior = {}, saved: initia
           </p>
           <p className="whitespace-pre-line text-foreground">{result.explanation}</p>
           {result.visual ? <PrepVisualView visual={result.visual} /> : null}
-          <div className="grid gap-2 sm:grid-cols-2">
-            <Link href={result.learnHref} className={cn(btnPlain, "text-foreground")}>
-              <BookOpen className="size-4" aria-hidden /> Learn this
-            </Link>
-            <button type="button" className={btnInk} onClick={() => go(idx + 1)}>
-              {idx + 1 === questions.length ? "See your score" : "Next question"} <ArrowRight className="size-4" aria-hidden />
-            </button>
-          </div>
         </div>
       )}
+      {result ? (
+        <ThumbBar label="Next step" inlineClassName="md:grid md:grid-cols-2 md:gap-2">
+          <Link href={result.learnHref} className={cn(btnPlain, "min-h-12 shrink-0 text-foreground")}>
+            <BookOpen className="size-4" aria-hidden /> Learn this
+          </Link>
+          <button type="button" className={cn(btnPrimary, "min-h-12 min-w-0 flex-1 text-base")} onClick={() => go(idx + 1)}>
+            {idx + 1 === questions.length ? "See your score" : "Next question"} <ArrowRight className="size-4" aria-hidden />
+          </button>
+        </ThumbBar>
+      ) : null}
     </div>
   );
 }

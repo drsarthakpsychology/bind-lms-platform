@@ -13,6 +13,7 @@ import { historyFor, noteAnswer, useHistoryPrefetch } from "@/lib/history/client
 import { buildRun, costsLife, grade, rxItem, LIVES, nextStreak, pointsFor, rxXp, STEPS, type Answer, type Mode, type Question } from "@/lib/games-sims/rx/game";
 import { AccuracyBoard, type AccuracyBoardData } from "@/lib/games-sims/ui/board";
 import { Btn, buzz, Kbd, motionCss as m, Panel, Pill, Stat, toneFor, useHotkeys, verdictWord } from "@/lib/games-sims/ui/kit";
+import { ThumbBar } from "@/components/mobile/thumb-bar";
 import { Journey, Receptor } from "@/components/study/animations";
 import { creditServerPlay } from "@/lib/learn/credit-play";
 import { HintBar, useHintStatus } from "@/components/hints/hint-chip";
@@ -206,9 +207,12 @@ function Round({ r, setR, onAnswered, onEnd, medIds }: { r: Run; setR: (r: Run) 
           <RevealBody q={q} />
           {g.score < 1 ? <RxHowItWorks pages={pages} /> : null}
           <RxLearn q={q} medIds={medIds} skip={g.score < 1 ? pages.map((x) => x.id) : []} />
-          <Btn variant="primary" size="lg" className="w-full" onClick={next} autoFocus>
-            {last ? "See results" : "Next case"} <ArrowRight aria-hidden /> <Kbd>Enter</Kbd>
-          </Btn>
+          {/* Phones: Next sits low, in thumb reach. */}
+          <ThumbBar label="Next step">
+            <Btn variant="primary" size="lg" className="w-full" onClick={next} autoFocus>
+              {last ? "See results" : "Next case"} <ArrowRight aria-hidden /> <Kbd>Enter</Kbd>
+            </Btn>
+          </ThumbBar>
         </Panel>
       ) : null}
     </div>

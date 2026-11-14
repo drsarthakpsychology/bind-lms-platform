@@ -60,7 +60,7 @@ export function NotesIndex({ blocks, serverState, save }: { blocks: NoteBlock[];
                   <Link
                     href={`/study/notes/${n.id}`}
                     className={cn(
-                      "group relative flex h-full flex-col gap-2 rounded-3xl border-2 border-foreground p-4 hard-shadow-sm transition-transform hover:-translate-y-1 hover:rotate-[-0.6deg] active:translate-y-0.5",
+                      "group relative grid h-full grid-cols-[auto_minmax(0,1fr)] content-start gap-x-3 gap-y-1 rounded-3xl border-2 border-foreground p-4 hard-shadow-sm sm:flex sm:flex-col sm:gap-2 transition-transform hover:-translate-y-1 hover:rotate-[-0.6deg] active:translate-y-0.5",
                       TONES[(b + k) % TONES.length],
                     )}
                   >
@@ -69,10 +69,11 @@ export function NotesIndex({ blocks, serverState, save }: { blocks: NoteBlock[];
                         <Check className="size-3.5" aria-hidden /> Read
                       </span>
                     ) : null}
-                    <span className="text-3xl transition-transform group-hover:scale-110" aria-hidden>
+                    {/* Phones: a compact row (emoji beside the words), so a week fits on a screen. */}
+                    <span className="row-span-3 text-2xl transition-transform group-hover:scale-110 sm:text-3xl" aria-hidden>
                       {n.emoji}
                     </span>
-                    <span className="text-lg font-bold leading-tight">{n.title}</span>
+                    <span className={cn("text-lg font-bold leading-tight", done && "pr-16 sm:pr-0")}>{n.title}</span>
                     <span className="text-sm opacity-90">{n.tagline}</span>
                     <span className="mt-auto pt-1 text-xs font-bold opacity-80">{n.meta}</span>
                   </Link>

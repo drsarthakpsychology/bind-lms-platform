@@ -10,6 +10,7 @@ import { answer as applyAnswer, escapeXp, HINT_AFTER, PENALTY_S, shownOrder, sta
 import { ROOMS, roomById, STAGE_LABEL, type Puzzle, type Room } from "@/lib/games-sims/escape/rooms";
 import { TEAM_LIMITS } from "@/lib/games-sims/teams";
 import { Btn, buzz, Kbd, motionCss as m, Panel, Pill, Stat, useHotkeys } from "@/lib/games-sims/ui/kit";
+import { ThumbBar } from "@/components/mobile/thumb-bar";
 import { JoinBox, Members, TeamCode, usePoll } from "@/lib/games-sims/ui/team";
 import type { EscapeView } from "./actions";
 import { creditServerPlay } from "@/lib/learn/credit-play";
@@ -348,9 +349,12 @@ function OpenedCard({ p, by, onNext, nextLabel }: { p: Puzzle; by?: string; onNe
         {p.unlock}
       </p>
       {p.skill ? <LearnLink topic={STAGE_LABEL[p.stage]} href={`/study/${p.skill.split(":")[0]}`} newTab /> : null}
-      <Btn variant="primary" size="lg" className="w-full" onClick={onNext} autoFocus>
-        {nextLabel} <ArrowRight aria-hidden /> <Kbd>Enter</Kbd>
-      </Btn>
+      {/* Phones: Next sits low, in thumb reach. */}
+      <ThumbBar label="Next step">
+        <Btn variant="primary" size="lg" className="w-full" onClick={onNext} autoFocus>
+          {nextLabel} <ArrowRight aria-hidden /> <Kbd>Enter</Kbd>
+        </Btn>
+      </ThumbBar>
     </Panel>
   );
 }

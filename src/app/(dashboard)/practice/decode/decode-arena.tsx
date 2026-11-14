@@ -5,6 +5,7 @@ import { haptic } from "@/lib/haptics";
 import { cn } from "@/lib/utils";
 import { Check, ChevronDown, Eye, Lightbulb } from "lucide-react";
 import { scoreDecode, type IdiomEntry } from "@/lib/decode/idioms";
+import { ThumbBar } from "@/components/mobile/thumb-bar";
 
 /**
  * Mode 1: Decode. The phrase appears; the student picks EVERY plausible
@@ -130,14 +131,17 @@ export function DecodeArena({ entries }: { entries: IdiomEntry[] }) {
             </div>
           </details>
 
-          <button
-            type="button"
-            onClick={next}
-            disabled={idx + 1 >= entries.length}
-            className="w-full rounded-md border-2 border-border bg-primary px-4 py-2.5 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px disabled:opacity-50"
-          >
-            {idx + 1 < entries.length ? "Next phrase" : "Done for today"}
-          </button>
+          {/* Phones: Next sits low, in thumb reach. */}
+          <ThumbBar label="Next step">
+            <button
+              type="button"
+              onClick={next}
+              disabled={idx + 1 >= entries.length}
+              className="min-h-12 w-full text-base md:min-h-0 md:text-small rounded-md border-2 border-border bg-primary px-4 py-2.5 font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px disabled:opacity-50"
+            >
+              {idx + 1 < entries.length ? "Next phrase" : "Done for today"}
+            </button>
+          </ThumbBar>
         </div>
       ) : null}
     </div>

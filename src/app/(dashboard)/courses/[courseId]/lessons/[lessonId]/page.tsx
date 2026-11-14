@@ -213,7 +213,7 @@ export default async function LessonPage({
   const nextUp = pickerLessons;
 
   return (
-    <div className="pb-32 lg:grid lg:grid-cols-[minmax(0,1fr)_21rem] lg:gap-8 lg:pb-0 xl:grid-cols-[minmax(0,1fr)_24rem]">
+    <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_21rem] lg:gap-8 xl:grid-cols-[minmax(0,1fr)_24rem]">
       {/* The lecture just reached 90% (or was marked complete): show "Watched" and the tick at once. */}
       <RefreshOnSave kinds={["complete", "progress"]} />
       <div className="min-w-0 space-y-5">
@@ -229,7 +229,7 @@ export default async function LessonPage({
           <span className="truncate">{course?.title ?? "Course"}</span>
         </Link>
         {pickerLessons.length > 1 && (
-          <div className="lg:hidden">
+          <div className="shrink-0 lg:hidden">
             <LessonPicker
               courseId={courseId}
               courseTitle={course?.title ?? "Course"}

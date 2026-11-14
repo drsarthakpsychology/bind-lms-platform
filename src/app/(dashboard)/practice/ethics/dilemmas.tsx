@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import { Gavel, Scale, CheckCircle2 } from "lucide-react";
 import { MobileChoiceList } from "@/components/mobile/mobile-choice-list";
 import type { EthicDilemma } from "@/lib/practice/ethics";
+import { ThumbBar } from "@/components/mobile/thumb-bar";
 
 /**
  * Dilemma flow: commit to an action BEFORE seeing the consequence.
@@ -97,13 +98,16 @@ export function DilemmaFlow({ dilemmas }: { dilemmas: EthicDilemma[] }) {
             <span className="font-semibold text-muted-foreground">The law: </span>
             {d.law}
           </p>
-          <button
-            type="button"
-            onClick={next}
-            className="mt-4 rounded-md border-2 border-border bg-primary px-4 py-2 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px active:hard-shadow-none"
-          >
-            {idx + 1 < dilemmas.length ? "Next dilemma" : "Finish"}
-          </button>
+          {/* Phones: Next sits low, in thumb reach. */}
+          <ThumbBar label="Next step" className="md:mt-4">
+            <button
+              type="button"
+              onClick={next}
+              className="min-h-12 w-full text-base md:min-h-0 md:w-auto md:text-small rounded-md border-2 border-border bg-primary px-4 py-2 font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px active:hard-shadow-none"
+            >
+              {idx + 1 < dilemmas.length ? "Next dilemma" : "Finish"}
+            </button>
+          </ThumbBar>
         </div>
       ) : null}
     </div>

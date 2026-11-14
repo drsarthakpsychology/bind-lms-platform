@@ -20,12 +20,13 @@ export function ActivityFrame({
   children: React.ReactNode;
 }) {
   return (
-    <div className="mx-auto w-full max-w-4xl lg:px-4">
-      <div className="flex min-w-0 items-center gap-3 px-4 py-2 lg:px-0">
+    <div className="activity-frame mx-auto w-full max-w-4xl lg:px-4">
+      {/* Phones: the shell already gives the side margin, so the row adds none. */}
+      <div className="activity-head flex min-w-0 items-center gap-3 py-2">
         <BackPill fallback={fallback} />
         <p className="min-w-0 truncate font-bold">{title}</p>
       </div>
-      <div className="min-w-0 lg:rounded-3xl lg:border-2 lg:border-foreground lg:bg-card lg:py-2">{children}</div>
+      <div className="activity-body min-w-0 lg:rounded-3xl lg:border-2 lg:border-foreground lg:bg-card lg:py-2">{children}</div>
     </div>
   );
 }

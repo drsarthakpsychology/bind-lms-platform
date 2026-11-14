@@ -199,14 +199,15 @@ export function NoteView({
 
       <nav className="flex items-center justify-between gap-3 pt-2" aria-label="Other notes">
         {prev ? (
-          <Link href={`/study/notes/${prev.id}`} className="inline-flex min-w-0 items-center gap-1 text-sm font-bold">
-            <ArrowLeft className="size-4 shrink-0" aria-hidden /> <span className="truncate">{prev.title}</span>
+          <Link href={`/study/notes/${prev.id}`} aria-label={`Previous: ${prev.title}`} className="inline-flex min-h-12 min-w-0 shrink-0 items-center gap-1 rounded-md sm:shrink border-2 border-foreground bg-card px-3 text-sm font-bold">
+            <ArrowLeft className="size-4 shrink-0" aria-hidden /> <span className="sm:hidden">Back</span>
+            <span className="hidden truncate sm:inline">{prev.title}</span>
           </Link>
         ) : (
           <span />
         )}
         {next ? (
-          <Link href={`/study/notes/${next.id}`} className="inline-flex min-w-0 items-center gap-1 rounded-full border-2 border-foreground bg-foreground px-3 py-1.5 text-sm font-bold text-background">
+          <Link href={`/study/notes/${next.id}`} className="inline-flex min-h-12 min-w-0 flex-1 items-center justify-between gap-1 rounded-md border-2 border-foreground bg-primary px-3 text-sm font-bold text-primary-foreground hard-shadow-xs sm:flex-none">
             <span className="truncate">Next: {next.title}</span> <ArrowRight className="size-4 shrink-0" aria-hidden />
           </Link>
         ) : null}

@@ -7,6 +7,7 @@ import { panelDistribution, scoreSctResponse, simulatedPanel, type SctItem, type
 import { buildSctAttemptPayload } from "@/lib/practice/sct-attempt";
 import { JUDGMENT_COMPETENCY_KEYS, recordCompetencyEvent } from "@/lib/practice/competency-client";
 import { MobileCompletionState } from "@/components/mobile/mobile-completion-state";
+import { ThumbBar } from "@/components/mobile/thumb-bar";
 
 const RESPONSE_LABELS: Record<SctResponse, string> = {
   [-2]: "Much less likely",
@@ -154,13 +155,16 @@ export function JudgmentArena({ items }: { items: SctItem[] }) {
             Your call scored <span className="font-semibold text-numeric">{(answered[answered.length - 1]?.score * 100).toFixed(0)}%</span>{" "}
             against the expert panel. Partial credit for reasonable disagreement is the whole point.
           </p>
-          <button
-            type="button"
-            onClick={next}
-            className="mt-3 rounded-md border-2 border-border bg-primary px-4 py-2 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px active:hard-shadow-none"
-          >
-            {idx + 1 < items.length ? "Next judgment call" : "See today's summary"}
-          </button>
+          {/* Phones: Next sits low, in thumb reach. */}
+          <ThumbBar label="Next step" className="md:mt-3">
+            <button
+              type="button"
+              onClick={next}
+              className="min-h-12 w-full text-base md:min-h-0 md:w-auto md:text-small rounded-md border-2 border-border bg-primary px-4 py-2 font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px active:hard-shadow-none"
+            >
+              {idx + 1 < items.length ? "Next judgment call" : "See today's summary"}
+            </button>
+          </ThumbBar>
         </div>
       ) : null}
     </div>

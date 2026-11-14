@@ -124,7 +124,7 @@ export function CommandPalette({ entries }: { entries: PaletteEntry[] }) {
         onClick={(e) => e.stopPropagation()}
       >
         {/* input */}
-        <div className="flex items-center gap-2 border-b-2 border-border px-3 py-2.5">
+        <div className="flex items-center gap-2 border-b-2 border-border px-3 py-1.5 pt-[max(0.375rem,env(safe-area-inset-top))] lg:pt-1.5">
           <Search className="size-4 shrink-0 text-muted-foreground" aria-hidden />
           <input
             ref={inputRef}
@@ -133,16 +133,17 @@ export function CommandPalette({ entries }: { entries: PaletteEntry[] }) {
             onChange={onQuery}
             onKeyDown={onKeyDown}
             placeholder="Search lectures, topics, medicines…"
-            className="w-full bg-transparent text-small focus:outline-none"
+            enterKeyHint="search"
+            className="min-h-11 w-full bg-transparent text-base focus:outline-none lg:text-small"
             aria-label="Search"
           />
           <button
             type="button"
             onClick={() => setOpen(false)}
             aria-label="Close"
-            className="text-muted-foreground hover:text-foreground"
+            className="-mr-2 grid size-11 shrink-0 place-items-center rounded-md text-muted-foreground hover:text-foreground"
           >
-            <X className="size-4" aria-hidden />
+            <X className="size-5" aria-hidden />
           </button>
         </div>
 
@@ -187,7 +188,8 @@ export function CommandPalette({ entries }: { entries: PaletteEntry[] }) {
         </div>
 
         {/* footer */}
-        <div className="flex items-center gap-3 border-t-2 border-border px-3 py-1.5 text-caption text-muted-foreground">
+        {/* Keyboard keys: only where a keyboard is likely. */}
+        <div className="hidden items-center gap-3 border-t-2 border-border px-3 py-1.5 text-caption text-muted-foreground md:flex">
           <span className="flex items-center gap-1">
             <CornerDownLeft className="size-3" aria-hidden /> select
           </span>

@@ -12,10 +12,11 @@ export function ActivityTip({ id, label = "How to play", intro, steps }: { id: s
   const tip = useFirstTimeTip(id);
   return (
     <>
-      <div className="flex justify-end px-2 empty:hidden">
+      {/* Below 1024 px the button rises into the frame's Back row (globals.css, .activity-help). */}
+      <div className="activity-help flex justify-end px-2 empty:hidden">
         <TipButton tip={tip} label={label} intro={intro} steps={steps} />
       </div>
-      <TipPanel tip={tip} title={label} intro={intro} steps={steps} className="mx-4 mt-3 mb-1" />
+      <TipPanel tip={tip} title={label} intro={intro} steps={steps} className="mt-3 mb-1 lg:mx-4" />
     </>
   );
 }

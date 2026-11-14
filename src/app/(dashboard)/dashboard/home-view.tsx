@@ -62,14 +62,14 @@ export function QuestList({ data }: { data: QuestCard }) {
         <span>Today&apos;s quests</span>
         <span className="font-semibold text-muted-foreground tabular-nums">{data.done ? "All done" : `${3 - left}/3`}</span>
       </h3>
-      <ul className="mt-2 space-y-1.5">
+      <ul className="mt-1">
         {data.quests.map((q) => (
-          <li key={q.id} className="flex min-w-0 items-center gap-2 text-sm">
+          <li key={q.id} className="flex min-h-10 min-w-0 items-center gap-2 text-sm pointer-coarse:min-h-11">
             {q.done ? <Check className="size-4 shrink-0" aria-hidden /> : <Circle className="size-4 shrink-0 text-muted-foreground" aria-hidden />}
             {q.done ? (
               <span className="min-w-0 flex-1 text-muted-foreground line-through decoration-foreground/30">{q.label}</span>
             ) : (
-              <Link href={q.href} className="min-w-0 flex-1 font-semibold underline-offset-4 hover:underline">
+              <Link href={q.href} className="flex min-h-10 min-w-0 flex-1 items-center font-semibold underline-offset-4 hover:underline pointer-coarse:min-h-11">
                 {q.label}
               </Link>
             )}

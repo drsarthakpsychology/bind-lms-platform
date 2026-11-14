@@ -14,6 +14,7 @@ import { EXCERPT_RIGHT, gradeExcerpt, gradeTag, nextLevel, nextStreak, optionsFo
 import { DOMAINS, TERMS, domainLabel, termById, type Domain } from "@/lib/games-sims/mse/terms";
 import { AccuracyBoard, type AccuracyBoardData } from "@/lib/games-sims/ui/board";
 import { Btn, buzz, Kbd, motionCss as m, Panel, Pill, readLocal, Stat, toneFor, useGameXp, useHotkeys, verdictWord, writeLocal } from "@/lib/games-sims/ui/kit";
+import { ThumbBar } from "@/components/mobile/thumb-bar";
 import { HintBar, useHintStatus } from "@/components/hints/hint-chip";
 import { askHint } from "@/lib/hints/actions";
 import { hintedPoints, POINTS_KEPT } from "@/lib/hints/rules";
@@ -303,10 +304,13 @@ function Round({ play, setPlay, onExcerptDone, onFinish }: { play: Play; setPlay
             <p className="text-body">{f.why}</p>
             {!result.termOk && tag.term && termById(tag.term) ? <p className="rounded-md border-2 border-foreground/20 bg-card p-2 text-small">{whyNot(tag.term, f)}</p> : null}
             <LearnLink topic={TERMS[f.a].label} href="/study/mse-deep" newTab />
-            <Btn variant="primary" size="lg" className="w-full" onClick={next} autoFocus>
-              {!lastFinding ? "Next finding" : lastExcerpt ? "See results" : "Next excerpt"} <ArrowRight aria-hidden />
-              <Kbd>Enter</Kbd>
-            </Btn>
+            {/* Phones: Next sits low, in thumb reach. */}
+            <ThumbBar label="Next step">
+              <Btn variant="primary" size="lg" className="w-full" onClick={next} autoFocus>
+                {!lastFinding ? "Next finding" : lastExcerpt ? "See results" : "Next excerpt"} <ArrowRight aria-hidden />
+                <Kbd>Enter</Kbd>
+              </Btn>
+            </ThumbBar>
           </div>
         ) : null}
       </Panel>

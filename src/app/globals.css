@@ -328,6 +328,17 @@
 /* =============================================================================
    APP SHELL — collapsible sidebar (full ↔ slim icon rail, like YouTube)
    ============================================================================= */
+/* MobileStickyAction (one pinned action with a context line, below 1024 px).
+   The page's bottom padding grows by its height. */
+:root:has(.sticky-action) {
+  --sticky-h: calc(6.25rem + var(--free-inset, 0px));
+}
+@media (min-width: 1024px) {
+  :root:has(.sticky-action) {
+    --sticky-h: 0px;
+  }
+}
+
 /* Bottom tab bar (phones, <768px). Surfaces that pin a bar above it offset by
    --nav-h (MobileStickyAction). It includes the safe-area inset so the offset
    clears the whole bar on notched phones. */
@@ -341,6 +352,69 @@
     --free-inset: env(safe-area-inset-bottom);
   }
 }
+/* Typing on a phone: the keyboard already takes half the screen (the layout
+   viewport shrinks, interactiveWidget: resizes-content), so the bottom tab bar
+   and any thumb bar step aside while a text field has focus. */
+@media (max-width: 767px) {
+  :root:has(:is(input:not([type="checkbox"], [type="radio"], [type="range"], [type="button"], [type="submit"], [type="file"]), textarea, [contenteditable="true"]):focus) {
+    --nav-h: 0px;
+    --thumb-h: 0px;
+    --sticky-h: 0px;
+    --free-inset: env(safe-area-inset-bottom);
+    & .bottom-tabs,
+    & .thumb-bar,
+    & .sticky-action {
+      display: none;
+    }
+  }
+}
+
+/* ThumbBar (components/mobile/thumb-bar.tsx): a question's or a game's next
+   step, pinned low on phones. It sits on the tab bar when one shows, else on
+   the gesture bar; the spacer keeps the last line of content above it. */
+@media (max-width: 767px) {
+  .thumb-bar {
+    bottom: var(--nav-h, 0px);
+    padding-bottom: max(0.75rem, var(--free-inset, 0px));
+  }
+  /* The page (ShellContent) pads its bottom by this, so the last line of a
+     page, even below the question, scrolls clear of the bar. */
+  :root:has(.thumb-bar) {
+    --thumb-h: calc(4.75rem + var(--free-inset, 0px));
+  }
+}
+
+/* An activity's How to play button shares the Back row (one header line)
+   instead of taking a row of its own. Wide screens keep it inside the card. */
+@media (max-width: 1023px) {
+  .activity-frame:has(> .activity-body > .activity-help:first-child:not(:empty)) > .activity-head {
+    padding-right: 3.25rem;
+  }
+  .activity-body > .activity-help:first-child {
+    margin-top: -3.25rem;
+    margin-bottom: 0.5rem;
+    padding-inline: 0;
+  }
+}
+
+/* A row of chips that scrolls sideways on phones: no scrollbar line under it,
+   and it stops on each chip. */
+@utility chip-scroller {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x proximity;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  & > * {
+    flex-shrink: 0;
+    scroll-snap-align: start;
+  }
+}
+
 /* Top bar: 56px, 64px on laptops that have the height for it. */
 @media (min-width: 1024px) and (min-height: 720px) {
   :root {

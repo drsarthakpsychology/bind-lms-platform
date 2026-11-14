@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import { AlertTriangle, Siren, CheckCircle2 } from "lucide-react";
 import { MobileChoiceList } from "@/components/mobile/mobile-choice-list";
 import { OUT_OF_DEPTH_SCENARIOS, scoreReferralDecision, type ReferralOption } from "@/lib/out-of-depth/scenarios";
+import { ThumbBar } from "@/components/mobile/thumb-bar";
 
 /**
  * Out of Depth (v5.1 A4): the refer/escalate drill.
@@ -114,13 +115,16 @@ export function OutOfDepthDrill() {
               Anxious novices refer everything. Abandoning a client you can serve is also a failure.
             </p>
           ) : null}
-          <button
-            type="button"
-            onClick={next}
-            className="mt-4 rounded-md border-2 border-border bg-primary px-4 py-2 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px"
-          >
-            {isLast ? "Finish" : "Next scenario"}
-          </button>
+          {/* Phones: Next sits low, in thumb reach. */}
+          <ThumbBar label="Next step" className="md:mt-4">
+            <button
+              type="button"
+              onClick={next}
+              className="min-h-12 w-full text-base md:min-h-0 md:w-auto md:text-small rounded-md border-2 border-border bg-primary px-4 py-2 font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px"
+            >
+              {isLast ? "Finish" : "Next scenario"}
+            </button>
+          </ThumbBar>
         </div>
       ) : null}
     </div>

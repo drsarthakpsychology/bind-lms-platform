@@ -3,7 +3,7 @@ import { getSession } from "@/lib/auth/session";
 import { createClient } from "@/lib/supabase/server";
 import { formatRelativeTime } from "@/lib/format";
 import { MobilePage } from "@/components/mobile/mobile-page";
-import { MobileHeader } from "@/components/mobile/mobile-header";
+import { PageHeader } from "@/components/design-system/page-header";
 import { MobileSection } from "@/components/mobile/mobile-section";
 import { MobileListItem } from "@/components/mobile/mobile-list-item";
 import { EmptyState } from "@/components/design-system/empty-state";
@@ -69,9 +69,9 @@ export default async function NotificationsPage() {
 
   return (
     <MobilePage inset={false}>
-      <MobileHeader
+      <PageHeader
         title="Notifications"
-        inset={false}
+        className="flex-row items-center justify-between pb-0"
         actions={
           unread > 0 ? (
             <form action={markAllNotificationsRead}>
@@ -82,7 +82,7 @@ export default async function NotificationsPage() {
           ) : undefined
         }
       />
-      <div className="flex flex-col gap-6 px-4 py-4">
+      <div className="flex flex-col gap-6 pt-4">
         {!hasNotes && !hasStudent && !hasAdmin ? (
           <EmptyState
             icon={<Bell className="size-5" aria-hidden />}

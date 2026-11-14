@@ -175,8 +175,8 @@ export default async function MapPage() {
             const level = placed.get(t.id);
             return (
               <li key={t.id} className="grid grid-cols-2 gap-2 rounded-lg border-2 border-foreground bg-card p-3 sm:grid-cols-4 lg:grid-cols-[minmax(9rem,1.3fr)_repeat(7,minmax(0,1fr))] lg:items-center">
-                <div className="col-span-2 flex min-w-0 flex-wrap items-baseline justify-between gap-x-3 sm:col-span-4 lg:col-span-1 lg:block">
-                  <Link href={t.href} className="font-bold underline-offset-4 hover:underline">
+                <div className="col-span-2 flex min-w-0 flex-wrap items-center justify-between gap-x-3 sm:col-span-4 lg:col-span-1 lg:block">
+                  <Link href={t.href} className="inline-flex min-h-11 items-center font-bold underline-offset-4 hover:underline lg:min-h-0">
                     {t.title}
                   </Link>
                   {level ? <p className="text-caption text-muted-foreground">Placement: {LEVEL_WORD[level]}</p> : null}

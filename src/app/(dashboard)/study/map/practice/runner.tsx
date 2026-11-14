@@ -8,7 +8,8 @@ import { useExplainView, ViewToggle } from "@/components/learn/view-toggle";
 import { cn } from "@/lib/utils";
 import { answerPractice } from "../actions";
 import { QuestionView, type Pick, type QView } from "../question";
-import { btnInk, btnPlain, btnPrimary } from "../ui";
+import { btnPlain, btnPrimary } from "../ui";
+import { ThumbBar } from "@/components/mobile/thumb-bar";
 import { useReaction } from "@/components/reactions/use-reaction";
 import { EmptySticker, EndReaction, ScoreDial, StreakMeter } from "@/components/reactions/graphics";
 import { trySave } from "@/lib/save/client";
@@ -122,9 +123,11 @@ export function PracticeRunner({ questions, title, saving }: { questions: Practi
       <QuestionView key={q.id} q={q} picked={picked} answer={checked ? q.answer : undefined} headingRef={heading} onPick={(p) => (q.kind === "tf" ? check(p) : setPicked(p))} />
 
       {!checked && q.kind === "mcq" ? (
-        <button type="button" className={cn(btnPrimary, "w-full text-base")} disabled={picked === null} onClick={() => check()}>
-          Check
-        </button>
+        <ThumbBar label="Answer">
+          <button type="button" className={cn(btnPrimary, "min-h-12 w-full text-base")} disabled={picked === null} onClick={() => check()}>
+            {picked === null ? "Pick an answer" : "Check"}
+          </button>
+        </ThumbBar>
       ) : null}
 
       {checked ? (
@@ -132,17 +135,21 @@ export function PracticeRunner({ questions, title, saving }: { questions: Practi
           ref={feedback}
           tabIndex={-1}
           aria-live="polite"
-          className={cn("space-y-3 rounded-md border-2 border-foreground p-4 outline-none", ok ? "bg-status-success-bg text-status-success-fg" : "bg-status-alert-bg text-status-alert-fg")}
+          className={cn("scroll-mb-28 space-y-3 rounded-md border-2 border-foreground p-4 outline-none md:scroll-mb-0", ok ? "bg-status-success-bg text-status-success-fg" : "bg-status-alert-bg text-status-alert-fg")}
         >
           <p className="flex items-center gap-2 text-lg font-bold">
             {ok ? <Check className="size-5" aria-hidden /> : <X className="size-5" aria-hidden />}
             {ok ? "Right" : "Not quite"}
           </p>
           <p className="text-foreground">{view === "clinician" ? q.clinician : q.student}</p>
-          <button type="button" className={cn(btnInk, "w-full")} onClick={next}>
+        </div>
+      ) : null}
+      {checked ? (
+        <ThumbBar label="Next step">
+          <button type="button" className={cn(btnPrimary, "min-h-12 w-full text-base")} onClick={next}>
             {idx + 1 === questions.length ? "See how you did" : "Next"} <ArrowRight className="size-4" aria-hidden />
           </button>
-        </div>
+        </ThumbBar>
       ) : null}
     </div>
   );

@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { BookOpen, Check } from "lucide-react";
+import { BookOpen } from "lucide-react";
 import { requireFeature } from "@/lib/flags";
 import { KEY, bankTopics, learnHrefForTopic } from "@/lib/prep/bank";
 import { SUBJECT_TITLE, isSubject } from "@/lib/prep/catalog";
 import { loadTopicSet } from "@/lib/prep/path";
 import { toView } from "@/lib/prep/view";
-import { cn } from "@/lib/utils";
 import { QuestionRunner } from "../../runner";
 import { BackToPrep, PrepFrame } from "../../ui";
 import { prepViewer } from "../../viewer";
+import { SetPicker } from "../../set-picker";
 
 type Params = { params: Promise<{ subject: string; topic: string }>; searchParams: Promise<{ set?: string | string[] }> };
 
@@ -49,34 +49,7 @@ export default async function TopicPage({ params, searchParams }: Params) {
       <header className="space-y-3">
         <h1 className="text-h1 text-balance [overflow-wrap:anywhere]">{view.title}</h1>
         {view.sets.length > 1 ? (
-          <nav aria-label="Sets">
-            <ul className="flex flex-wrap gap-2">
-              {view.sets.map((s, i) => {
-                const all = s.stats.answered === s.stats.total;
-                return (
-                  <li key={s.n}>
-                    <Link
-                      href={s.href}
-                      aria-current={i === view.set ? "page" : undefined}
-                      className={cn(
-                        "inline-flex min-h-11 min-w-11 items-center justify-center gap-1 rounded-md border-2 border-foreground px-3 text-sm font-bold focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60",
-                        i === view.set ? "bg-foreground text-background" : "bg-card hover:hard-shadow-sm",
-                      )}
-                    >
-                      <span className="sr-only">Set </span>
-                      {s.n}
-                      {all ? (
-                        <>
-                          <Check className="size-3.5" aria-hidden />
-                          <span className="sr-only">, done</span>
-                        </>
-                      ) : null}
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
-          </nav>
+          <SetPicker sets={view.sets.map((x) => ({ n: x.n, href: x.href, done: x.stats.answered === x.stats.total }))} current={view.set} />
         ) : null}
       </header>
 
