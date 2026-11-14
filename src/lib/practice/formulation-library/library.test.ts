@@ -4,7 +4,7 @@ import { FIVE_P } from "@/lib/practice/formulation";
 import { FORMULATION_CASES } from "@/lib/practice/formulation-cases";
 
 /** Raise as batches land; the section target is 500. */
-const MIN_CASES = 106;
+const MIN_CASES = 400;
 const DASH = /[–—]/;
 const CITATION = /\b(et al\.|Kaplan|Stahl|Maudsley|Fish's|Ahuja|doi:|ISBN)\b/;
 const EXAMS = new Set(["cuet-pg", "ugc-net", "mcp-entrance", "md-psychiatry", "ma-semester"]);
