@@ -5,7 +5,11 @@ import { startHowTo } from "@/components/help/how-to";
 import { BackLink } from "@/components/study/back";
 import { LoaderCircle, Search } from "lucide-react";
 import { emptyState, finishLesson, istToday, type LearnState, type Payout } from "@/lib/learn/engine";
-import { noteAnswer, useHistoryPrefetch } from "@/lib/history/client";
+import { historyFor, noteAnswer, useHistoryPrefetch } from "@/lib/history/client";
+import type { CaseMark } from "@/lib/cases/fresh";
+import type { ProgressSnapshot } from "@/lib/cases/progress";
+import { clearCaseProgress, saveCaseProgress, useCaseProgress } from "@/lib/cases/progress-client";
+import { CaseMarkTag, RecycleNote } from "@/components/cases/case-mark";
 import { CLUES, POINTS, ROUNDS, WRONG_PENALTY, type DealtRound, type Family } from "@/lib/learn/detective-rules";
 import { dealDetective, detectiveAllClues, detectiveClue, detectiveGuess } from "@/app/(dashboard)/practice/detective/actions";
 import { conceptById } from "@/lib/learn/concepts";
@@ -30,9 +34,12 @@ function roll() {
   return Math.random();
 }
 
-type Deal = { token: string; run: string; rounds: DealtRound[] };
+type Deal = { token: string; run: string; rounds: DealtRound[]; marks?: CaseMark[]; recycled?: boolean };
+/** A run left half-way: the case and the clue reached (saved progress, src/lib/cases). */
+type SavedRun = { family: Family; game: Deal; r: number; opened: string[]; wrong: string[]; solved: null | { gained: number; correct: boolean; answer: string }; score: number; answers: { id: string; correct: boolean }[]; ruledOut: string[] | null };
+const RUN = "run";
 
-export function Detective({ serverState, save }: { serverState: LearnState | null; save: (s: LearnState) => Promise<unknown> }) {
+export function Detective({ serverState, save, progress: serverProgress }: { serverState: LearnState | null; save: (s: LearnState) => Promise<unknown>; progress?: ProgressSnapshot }) {
   initLearnStore(serverState, save);
   const state = useLearnState(serverState ?? EMPTY);
   const view = useExplainView();
@@ -55,6 +62,14 @@ export function Detective({ serverState, save }: { serverState: LearnState | nul
   const [busy, setBusy] = React.useState(false);
   const [hints, setHints] = useHintStatus();
   useHistoryPrefetch("detective");
+  const progress = useCaseProgress("detective", serverProgress);
+  const saved = progress.get<SavedRun>(RUN);
+  const resumable = saved && saved.game && Array.isArray(saved.game.rounds) && saved.game.rounds.length > 0 && Number.isInteger(saved.r) && saved.r < saved.game.rounds.length && Array.isArray(saved.opened) && saved.opened.length > 0 ? saved : null;
+  // Keep the run's place saved while it is open.
+  React.useEffect(() => {
+    if (!game || result) return;
+    saveCaseProgress("detective", RUN, { family, game, r, opened, wrong, solved, score, answers, ruledOut } satisfies SavedRun);
+  }, [game, result, family, r, opened, wrong, solved, score, answers, ruledOut]);
   /** One server call at a time, so a double tap can't count an answer twice. */
   const inflight = React.useRef(false);
 
@@ -77,11 +92,12 @@ export function Detective({ serverState, save }: { serverState: LearnState | nul
   async function start(f = family) {
     startHowTo("clinic-detective");
     setFamily(f);
-    const d = await call(() => dealDetective(f));
+    // This browser's copy of what was done goes with the request (it counts when the server has none).
+    const d = await call(() => dealDetective(f, [...historyFor("detective").keys()].slice(0, 200)));
     if (!d) return;
     if (!d.ok) return setError(d.error);
     reaction.reset();
-    setGame({ token: d.token, run: d.run, rounds: d.rounds });
+    setGame({ token: d.token, run: d.run, rounds: d.rounds, marks: d.marks, recycled: d.recycled });
     setR(0);
     setOpened([d.rounds[0].clue]);
     setWrong([]);
@@ -93,6 +109,23 @@ export function Detective({ serverState, save }: { serverState: LearnState | nul
     setResult(null);
   }
 
+  /** Carry on a run where it was left: the same case, the same clues open. */
+  function resume(s: SavedRun) {
+    startHowTo("clinic-detective");
+    reaction.reset();
+    setFamily(s.family);
+    setGame(s.game);
+    setR(s.r);
+    setOpened(s.opened);
+    setWrong(Array.isArray(s.wrong) ? s.wrong : []);
+    setSolved(s.solved ?? null);
+    setRuledOut(s.ruledOut ?? null);
+    setRest(null);
+    setScore(Number(s.score) || 0);
+    setAnswers(Array.isArray(s.answers) ? s.answers : []);
+    setResult(null);
+  }
+
   if (result) return <Summary result={result} state={state} confetti={[]} title={`Detective · ${score} points`} mood={moodForScore(score, POINTS[0] * (game?.rounds.length || ROUNDS))} onAgain={() => void start()} />;
 
   if (!game) {
@@ -101,6 +134,11 @@ export function Detective({ serverState, save }: { serverState: LearnState | nul
         <Chai mood="think" size={130} />
         <h1 className="text-h1">Clinic detective</h1>
         {state.detectiveBest ? <p className="font-pix text-sm">Your best: {state.detectiveBest}</p> : null}
+        {resumable ? (
+          <button type="button" disabled={busy} onClick={() => resume(resumable)} className="btn-sweep inline-flex h-14 w-full items-center justify-center gap-2 rounded-2xl border-2 border-foreground bg-foreground text-lg font-bold text-background hard-shadow-md disabled:opacity-60">
+            Carry on: case {resumable.r + 1}, clue {resumable.opened.length}
+          </button>
+        ) : null}
         <div className="grid gap-3 sm:grid-cols-3">
           {(
             [
@@ -194,13 +232,16 @@ export function Detective({ serverState, save }: { serverState: LearnState | nul
     const { state: done, payout } = finishLesson(state, { lessonId: "detective", kind: "detective", answers, maxCombo: 0, bonusXp: score }, istToday(), roll());
     setLearnState(done);
     setResult(payout);
+    clearCaseProgress("detective", RUN);
   }
 
   return (
     <div className={cn("mx-auto max-w-2xl space-y-5")}>
+      {deal.recycled && r === 0 && clues === 1 && !solved ? <RecycleNote /> : null}
       <div className="flex items-center justify-between">
         <span className="flex items-center gap-2 font-bold">
           <Search className="size-5" aria-hidden /> Case {r + 1}
+          {deal.marks?.[r] && deal.marks[r] !== "new" ? <CaseMarkTag mark={deal.marks[r]} /> : null}
         </span>
         <span className="rounded-full border-2 border-foreground bg-foreground px-3 py-1 font-pix text-sm text-primary">{score} pts</span>
       </div>

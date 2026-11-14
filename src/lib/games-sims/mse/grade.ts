@@ -66,6 +66,16 @@ export const EXCERPT_RIGHT = 0.75;
  * never seen first, then one missed, then the one right longest ago.
  */
 export function pickExcerpt(level: Level, seen: Set<string>, rng: Rng, history?: History, now?: number): Excerpt | null {
+  if (history) {
+    // Fresh cases (src/lib/cases): an excerpt never done comes first, at the
+    // level if there is one, else the nearest level. Done ones come back only
+    // once every excerpt is done.
+    const fresh = EXCERPTS.filter((e) => !seen.has(e.id) && !history.has(e.id));
+    for (const gap of [0, 1, 2, 3, 4]) {
+      const pool = fresh.filter((e) => Math.abs(e.level - level) === gap);
+      if (pool.length) return pool[Math.floor(rng() * pool.length)];
+    }
+  }
   for (const l of [level, (level + 1) as Level, (level - 1) as Level]) {
     const pool = EXCERPTS.filter((e) => e.level === l && !seen.has(e.id));
     if (pool.length) return history ? orderByHistory(pool, (e) => e.id, history, now ?? Date.now(), rng)[0] : pool[Math.floor(rng() * pool.length)];

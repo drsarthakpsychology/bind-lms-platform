@@ -43,6 +43,7 @@ import { btnInk, btnPrimary, btnSecondary, card, chip } from "@/lib/games/ui/sty
 import fx from "@/lib/games/ui/fx.module.css";
 import { AI_CASE_LABEL, AI_CASE_NOTE } from "@/lib/ai-cases/types";
 import { AI_TOPICS } from "@/lib/ai-cases/criteria";
+import { RecycleNote } from "@/components/cases/case-mark";
 import { dailyMove, dailyRest, flagAiCaseAction, nextAiCase, nextPractice, type DailyMeta, type MoveResult } from "./actions";
 import { creditServerPlay } from "@/lib/learn/credit-play";
 import { HintButton, type HintUse } from "@/components/hints/hint-chip";
@@ -83,6 +84,8 @@ export function DailyGame({ serverState, save, initial }: { serverState: LearnSt
   const [tab, setTab] = React.useState<Tab>("daily");
   const [daily, setDaily] = React.useState<Game | null>(initial.ok ? { view: initial.view, meta: initial.meta, log: initial.log } : null);
   const [practice, setPractice] = React.useState<Game | null>(null);
+  /** Every practice case is played: they come round again (fresh cases, src/lib/cases). */
+  const [recycled, setRecycled] = React.useState(false);
   const [aiGame, setAiGame] = React.useState<Game | null>(null);
   const [aiChoice, setAiChoice] = React.useState<AiChoice>({ topic: "" });
   const [making, setMaking] = React.useState(false);
@@ -217,13 +220,15 @@ export function DailyGame({ serverState, save, initial }: { serverState: LearnSt
   function newPractice() {
     setError(null, "practice");
     setTab("practice");
+    const current = practice?.view.caseId;
     setPractice(null);
     startTransition(async () => {
-      const pick = await nextPractice(readLocal<PracticeRecord[]>(LOCAL_PRACTICE, [])).catch(() => ({ ok: false as const, error: LOAD_FAIL }));
+      const pick = await nextPractice(readLocal<PracticeRecord[]>(LOCAL_PRACTICE, []), current).catch(() => ({ ok: false as const, error: LOAD_FAIL }));
       if (!pick.ok) {
         setError(pick.error, "practice");
         return;
       }
+      setRecycled(pick.recycled);
       const res = await dailyMove({ mode: "practice", caseId: pick.caseId, log: readLocal<Action[]>(LOCAL_LOG("practice", daily?.meta.day ?? "", pick.caseId), []) }).catch(() => ({ ok: false as const, error: LOAD_FAIL }));
       if (!res.ok) {
         setError(res.error, "practice");
@@ -264,6 +269,8 @@ export function DailyGame({ serverState, save, initial }: { serverState: LearnSt
           </div>
         )
       ) : (
+        <>
+        {tab === "practice" && recycled && game.view.status === "playing" ? <RecycleNote /> : null}
         <CaseBoard
           key={`${tab}:${game.view.caseId}`}
           error={shownError}
@@ -277,6 +284,7 @@ export function DailyGame({ serverState, save, initial }: { serverState: LearnSt
           onNextPractice={tab === "ai" ? () => newAi() : newPractice}
           streak={streak}
         />
+        </>
       )}
     </div>
   );
@@ -766,12 +774,18 @@ function Result({ game, gain, streak, onNextPractice, pending }: { game: Game; g
       </div>
 
       <div className="grid gap-2 sm:grid-cols-2">
-        <Link href={`/study/${r.module}`} className={btnPrimary}>
+        {/* Today's case is done: the way on is a new case, not the same one again. */}
+        {v.mode === "daily" ? (
+          <button type="button" className={btnPrimary} onClick={onNextPractice} disabled={pending}>
+            <Shuffle className="size-4" aria-hidden /> Next: a new practice case
+          </button>
+        ) : null}
+        <Link href={`/study/${r.module}`} className={v.mode === "daily" ? btnSecondary : btnPrimary}>
           <BookOpen className="size-4" aria-hidden /> Study this topic
         </Link>
-        <button type="button" className={btnSecondary} onClick={onNextPractice} disabled={pending}>
-          <Shuffle className="size-4" aria-hidden /> {v.mode === "daily" ? "Practise another case" : v.ai ? "Next AI case" : "Next practice case"}
-        </button>
+        {v.mode === "daily" ? null : <button type="button" className={btnSecondary} onClick={onNextPractice} disabled={pending}>
+          <Shuffle className="size-4" aria-hidden /> {v.ai ? "Next AI case" : "Next practice case"}
+        </button>}
       </div>
 
       {r.refs && r.refs.length > 0 && (

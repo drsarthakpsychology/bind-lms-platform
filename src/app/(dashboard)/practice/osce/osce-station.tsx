@@ -5,28 +5,44 @@ import { startHowTo } from "@/components/help/how-to";
 import { OnceHint } from "@/components/help/once-hint";
 import { showEndReaction } from "@/components/reactions/store";
 import { moodForScore } from "@/lib/reactions/stickers";
-import { Mic, Square, Timer } from "lucide-react";
+import { ArrowRight, Mic, Square, Timer } from "lucide-react";
 import { haptic } from "@/lib/haptics";
-import { SEED_OSCE_STATIONS, scoreOsce, seededRotate } from "@/lib/practice/osce";
+import { SEED_OSCE_STATIONS, scoreOsce, type OsceStation } from "@/lib/practice/osce";
 import { createWebStt, webSttSupported } from "@/lib/voice/stt";
 import { OSCE_COMPETENCY_KEYS, recordCompetencyEvent } from "@/lib/practice/competency-client";
-import { noteAnswer, orderFor, useHistoryPrefetch } from "@/lib/history/client";
+import { noteAnswer, useHistoryPrefetch, useToolHistory } from "@/lib/history/client";
+import { arrangeCases } from "@/lib/cases/fresh";
+import type { CaseContext } from "@/lib/cases/server";
+import { clearCaseProgress, saveCaseProgress, useCaseProgress } from "@/lib/cases/progress-client";
+import { CaseMarkTag, RecycleNote } from "@/components/cases/case-mark";
 import { buildOsceAttemptPayload } from "@/lib/practice/osce-attempt";
 import { trySave } from "@/lib/save/client";
 
-/** In-flight snapshot key: a mid-station refresh/lock restores the station
- *  instead of dropping the transcript + checklist (T46/T47). */
-const OSCE_KEY = "osce:in-flight";
+/** A station left half-way (saved progress, src/lib/cases): a refresh or another device opens it where it was. */
+type SavedStation = { phase: "active" | "selfassess"; seconds: number; checked: Record<string, boolean>; selfGlobal: number; startedAt: string | null; spoken: string };
+/** The old single-slot snapshot (cleared on sight). */
+const OLD_KEY = "osce:in-flight";
+const PAGE = 20;
+const level = (s: OsceStation) => s.tags?.difficulty ?? 0;
+/** A moment `ms` from now (only called from event handlers). */
+const inMs = (ms: number) => Date.now() + ms;
 
-export function OsceStationView() {
-  const [stationIdx, setStationIdx] = React.useState(0);
+const NO_CASES: CaseContext = { student: "", history: [], progress: { owner: null, rows: [] }, now: 0 };
+
+export function OsceStationView({ cases = NO_CASES }: { cases?: CaseContext }) {
+  const [stationId, setStationId] = React.useState<string>(SEED_OSCE_STATIONS[0].id);
   useHistoryPrefetch("osce");
+  const history = useToolHistory("osce", cases.history);
+  const progress = useCaseProgress("osce", cases.progress);
   const [phase, setPhase] = React.useState<"choose" | "active" | "selfassess">("choose");
   const [seconds, setSeconds] = React.useState(0);
+  /** When the station's time runs out (epoch ms), set when it starts or resumes. */
+  const [deadline, setDeadline] = React.useState<number | null>(null);
   const [done, setDone] = React.useState(false);
   const [checked, setChecked] = React.useState<Record<string, boolean>>({});
   const [selfGlobal, setSelfGlobal] = React.useState(0);
   const [startedAt, setStartedAt] = React.useState<Date | null>(null);
+  const [shown, setShown] = React.useState(PAGE);
   // Voice delivery (OSCE is voice-strongly-preferred): capture the spoken
   // response via web speech recognition, no storage, the transcript is the
   // record. Degrades silently when the browser has no speech recognition.
@@ -34,62 +50,22 @@ export function OsceStationView() {
   const [spoken, setSpoken] = React.useState("");
   const sttRef = React.useRef<ReturnType<typeof createWebStt>>(null);
 
-  // Restore the in-flight snapshot after first paint (deferred so it neither
-  // races hydration nor sets state synchronously inside the effect body).
-  React.useEffect(() => {
-    const id = window.setTimeout(() => {
-      try {
-        const raw = window.localStorage.getItem(OSCE_KEY);
-        if (!raw) return;
-        const s = JSON.parse(raw) as {
-          stationIdx?: number;
-          phase?: "choose" | "active" | "selfassess";
-          seconds?: number;
-          done?: boolean;
-          checked?: Record<string, boolean>;
-          selfGlobal?: number;
-          startedAt?: string;
-          spoken?: string;
-        };
-        if (typeof s.stationIdx === "number") setStationIdx(s.stationIdx);
-        if (s.phase) setPhase(s.phase);
-        if (typeof s.seconds === "number") setSeconds(s.seconds);
-        if (typeof s.done === "boolean") setDone(s.done);
-        if (s.checked) setChecked(s.checked);
-        if (typeof s.selfGlobal === "number") setSelfGlobal(s.selfGlobal);
-        if (s.startedAt) setStartedAt(new Date(s.startedAt));
-        if (s.spoken) setSpoken(s.spoken);
-      } catch {
-        /* ignore */
-      }
-    }, 0);
-    return () => window.clearTimeout(id);
-  }, []);
-
-  // Persist the snapshot on every change.
   React.useEffect(() => {
     try {
-      window.localStorage.setItem(
-        OSCE_KEY,
-        JSON.stringify({
-          stationIdx,
-          phase,
-          seconds,
-          done,
-          checked,
-          selfGlobal,
-          startedAt: startedAt ? startedAt.toISOString() : null,
-          spoken,
-        }),
-      );
+      window.localStorage.removeItem(OLD_KEY);
     } catch {
       /* ignore */
     }
-  }, [stationIdx, phase, seconds, done, checked, selfGlobal, startedAt, spoken]);
-
-  React.useEffect(() => {
     return () => sttRef.current?.abort();
   }, []);
+
+  // Keep the station's place saved while it is open (ten-second steps for the clock).
+  const tick = Math.floor(seconds / 10);
+  React.useEffect(() => {
+    if (phase === "choose" || done) return;
+    saveCaseProgress("osce", stationId, { phase, seconds, checked, selfGlobal, startedAt: startedAt ? startedAt.toISOString() : null, spoken } satisfies SavedStation);
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- the clock saves every ten seconds, not every second
+  }, [phase, done, stationId, checked, selfGlobal, startedAt, spoken, tick]);
 
   function toggleVoice() {
     if (recording) {
@@ -111,14 +87,9 @@ export function OsceStationView() {
     haptic("tap");
   }
 
-  // Daily rotation so the station order isn't fixed. Everyone still practises
-  // all stations, just not always #1 first. Seed is the day of month.
-  const ordered = React.useMemo(() => {
-    const day = new Date().getDate();
-    return seededRotate(SEED_OSCE_STATIONS, (day % SEED_OSCE_STATIONS.length) / SEED_OSCE_STATIONS.length);
-  }, []);
-
-  const station = ordered[stationIdx];
+  // Fresh-case order (src/lib/cases/fresh.ts): half done, new this week, new, done last.
+  const arranged = arrangeCases(SEED_OSCE_STATIONS, (x) => x.id, { history, now: cases.now, student: cases.student, started: progress.started, level });
+  const station = SEED_OSCE_STATIONS.find((x) => x.id === stationId) ?? SEED_OSCE_STATIONS[0];
   const stationNumber = SEED_OSCE_STATIONS.indexOf(station) + 1;
 
   React.useEffect(() => {
@@ -127,26 +98,43 @@ export function OsceStationView() {
     return () => clearInterval(id);
   }, [phase]);
 
-  // Auto-timeout at duration: schedule a timeout, don't setState in the effect.
-  const timeoutRef = React.useRef<ReturnType<typeof setTimeout> | null>(null);
+  // Auto-timeout at the deadline: schedule a timeout, don't setState in the effect.
   React.useEffect(() => {
-    if (phase !== "active") return;
-    timeoutRef.current = setTimeout(() => {
-      setPhase((p) => (p === "active" ? "selfassess" : p));
-    }, station.duration_seconds * 1000);
-    return () => {
-      if (timeoutRef.current) clearTimeout(timeoutRef.current);
-    };
-  }, [phase, station.duration_seconds]);
+    if (phase !== "active" || deadline === null) return;
+    const t = setTimeout(() => setPhase((p) => (p === "active" ? "selfassess" : p)), Math.max(0, deadline - Date.now()));
+    return () => clearTimeout(t);
+  }, [phase, deadline]);
 
-  function start() {
+  function start(id: string) {
     startHowTo("osce");
+    const st = SEED_OSCE_STATIONS.find((x) => x.id === id) ?? SEED_OSCE_STATIONS[0];
+    setStationId(st.id);
     setSeconds(0);
     setChecked({});
     setDone(false);
     setSelfGlobal(0);
+    setSpoken("");
     setStartedAt(new Date());
+    setDeadline(inMs(st.duration_seconds * 1000));
     setPhase("active");
+    haptic("tap");
+  }
+
+  /** Open a station: where it was left if it is half done, else from the start. */
+  function open(id: string) {
+    const saved = progress.get<SavedStation>(id);
+    const st = SEED_OSCE_STATIONS.find((x) => x.id === id);
+    if (!st || !saved || (saved.phase !== "active" && saved.phase !== "selfassess")) return start(id);
+    startHowTo("osce");
+    setStationId(st.id);
+    setSeconds(Math.max(0, Math.floor(saved.seconds) || 0));
+    setChecked(saved.checked && typeof saved.checked === "object" ? saved.checked : {});
+    setSelfGlobal(Number(saved.selfGlobal) || 0);
+    setSpoken(typeof saved.spoken === "string" ? saved.spoken : "");
+    setStartedAt(saved.startedAt ? new Date(saved.startedAt) : new Date());
+    setDone(false);
+    setDeadline(inMs(Math.max(0, st.duration_seconds - (Number(saved.seconds) || 0)) * 1000));
+    setPhase(saved.phase);
     haptic("tap");
   }
 
@@ -164,40 +152,49 @@ export function OsceStationView() {
   const composite = Math.round((frac * 0.6 + normalizedGlobal * 0.4) * 100) / 100;
 
   if (phase === "choose") {
+    const next = arranged.list.find((x) => x.mark !== "started") ?? arranged.list[0];
     return (
       <div className="space-y-3">
-        {ordered.map((s, i) => (
+        {arranged.recycled ? <RecycleNote /> : null}
+        {next ? (
           <button
-            key={s.id}
             type="button"
-            onClick={() => { setStationIdx(i); setPhase("active"); start(); haptic("tap"); }}
-            className="w-full rounded-lg border-2 border-border bg-card p-5 text-left hard-shadow-sm transition-transform active:translate-y-px active:hard-shadow-none"
+            onClick={() => open(next.id)}
+            className="flex min-h-11 w-full items-center justify-center gap-2 rounded-lg border-2 border-foreground bg-primary p-4 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px active:hard-shadow-none"
           >
-            <span className="text-eyebrow text-muted-foreground">
-              Station {SEED_OSCE_STATIONS.indexOf(s) + 1}
-              {i === 0 ? " · today's first" : ""}
-            </span>
-            <span className="block text-base font-semibold">{s.title}</span>
-            <span className="mt-1 block text-small text-muted-foreground">{s.task}</span>
-            <span className="mt-2 inline-flex items-center gap-1 text-caption text-muted-foreground">
-              <Timer className="size-3.5" aria-hidden /> {Math.round(s.duration_seconds / 60)} minutes
-            </span>
+            Next station: {next.item.title} <ArrowRight className="size-4" aria-hidden />
           </button>
-        ))}
-        <button
-          type="button"
-          onClick={() => {
-            // Answer history (src/lib/history): a station not done yet, then a weak one, then the oldest.
-            const i = Math.max(0, ordered.indexOf(orderFor("osce", ordered, (s) => s.id)[0]));
-            setStationIdx(i);
-            setPhase("active");
-            start();
-            haptic("tap");
-          }}
-          className="w-full rounded-lg border-2 border-dashed border-border bg-card p-4 text-center text-small font-medium text-muted-foreground transition-transform active:translate-y-px active:hard-shadow-none"
-        >
-          🎲 Pick a random station
-        </button>
+        ) : null}
+        <ul className="space-y-3">
+          {arranged.list.slice(0, shown).map(({ item: s, mark }) => (
+            <li key={s.id}>
+              <button
+                type="button"
+                onClick={() => open(s.id)}
+                className={`w-full rounded-lg border-2 bg-card p-5 text-left transition-transform active:translate-y-px active:hard-shadow-none ${mark === "done" && !arranged.recycled ? "border-border" : "border-border hard-shadow-sm"}`}
+              >
+                <span className="flex items-start justify-between gap-2">
+                  <span className="text-eyebrow text-muted-foreground">Station {SEED_OSCE_STATIONS.indexOf(s) + 1}</span>
+                  <CaseMarkTag mark={mark} />
+                </span>
+                <span className="block text-base font-semibold">{s.title}</span>
+                <span className="mt-1 block text-small text-muted-foreground">{s.task}</span>
+                <span className="mt-2 inline-flex items-center gap-1 text-caption text-muted-foreground">
+                  <Timer className="size-3.5" aria-hidden /> {mark === "started" ? "Carry on" : `${Math.round(s.duration_seconds / 60)} minutes`}
+                </span>
+              </button>
+            </li>
+          ))}
+        </ul>
+        {shown < arranged.list.length ? (
+          <button
+            type="button"
+            onClick={() => setShown((n) => n + PAGE)}
+            className="min-h-11 w-full rounded-lg border-2 border-dashed border-border bg-card p-3 text-center text-small font-semibold text-muted-foreground"
+          >
+            Show more stations
+          </button>
+        ) : null}
       </div>
     );
   }
@@ -357,11 +354,7 @@ export function OsceStationView() {
           }
           setDone(true);
           setPhase("choose");
-          try {
-            window.localStorage.removeItem(OSCE_KEY);
-          } catch {
-            /* ignore */
-          }
+          clearCaseProgress("osce", station.id);
           haptic("success");
         }}
         className="w-full rounded-md border-2 border-border bg-primary px-4 py-2 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px active:hard-shadow-none"

@@ -1,6 +1,8 @@
 "use server";
 
 import { istToday } from "@/lib/learn/engine";
+import { weeklyDrip } from "@/lib/cases/fresh";
+import { ownerTag } from "@/lib/cases/progress";
 import { CASES, caseById } from "@/lib/games/daily/cases";
 import {
   apply,
@@ -69,13 +71,21 @@ function todaysCase(day: string) {
 
 type Row = { log: unknown; hints: number; status: string };
 
-async function loadRow(userId: string, mode: string, day: string, caseId: string): Promise<{ row: Row | null; stored: boolean }> {
+/** `finished`: also take a finished practice row from an earlier day (for "Show the other clues"). */
+async function loadRow(userId: string, mode: string, day: string, caseId: string, finished = false): Promise<{ row: Row | null; stored: boolean; day: string }> {
   try {
     const { data, error } = await admin().from(TABLE).select("log, hints, status").eq("user_id", userId).eq("mode", mode).eq("day", day).eq("case_id", caseId).maybeSingle();
-    if (error) return { row: null, stored: !isMissing(error) };
-    return { row: (data as Row | null) ?? null, stored: true };
+    if (error) return { row: null, stored: !isMissing(error), day };
+    if (!data && mode === "practice") {
+      // A practice case left half way on an earlier day carries on where it was (the same row).
+      let q = admin().from(TABLE).select("log, hints, status, day").eq("user_id", userId).eq("mode", "practice").eq("case_id", caseId);
+      if (!finished) q = q.eq("status", "playing");
+      const { data: open } = await q.order("updated_at", { ascending: false }).limit(1).maybeSingle();
+      if (open) return { row: open as Row, stored: true, day: String((open as { day: string }).day) };
+    }
+    return { row: (data as Row | null) ?? null, stored: true, day };
   } catch {
-    return { row: null, stored: false };
+    return { row: null, stored: false, day };
   }
 }
 
@@ -134,7 +144,7 @@ export async function dailyRest(input: { mode: "daily" | "practice"; caseId?: st
   if (!me) return { ok: false, error: "Please sign in again." };
   const found = await findCase(input);
   if (!found.ok) return found;
-  const { row, stored } = await loadRow(me.id, found.mode, istToday(), found.c.id);
+  const { row, stored } = await loadRow(me.id, found.mode, istToday(), found.c.id, true);
   const rest = restOf(found.c, replay(found.c, stored ? cleanLog(row?.log ?? []) : cleanLog(input.log)).progress);
   return rest ? { ok: true, rest } : { ok: false, error: "Finish the case first." };
 }
@@ -151,9 +161,9 @@ export async function dailyMove(input: { mode: "daily" | "practice"; caseId?: st
   if (!found.ok) return found;
   const { c, mode, isAi } = found;
 
-  const { row, stored } = await loadRow(me.id, mode, day, c.id);
+  const { row, stored, day: rowDay } = await loadRow(me.id, mode, day, c.id);
   // Hints are charged per case by the hint counter; this is the case's key there.
-  const hintItem = itemKey("daily", mode, day, c.id);
+  const hintItem = itemKey("daily", mode, rowDay, c.id);
   let baseLog = stored ? cleanLog(row?.log ?? []) : cleanLog(input.log);
   if (!stored) {
     // The browser's log can't add hints the server never granted.
@@ -195,7 +205,7 @@ export async function dailyMove(input: { mode: "daily" | "practice"; caseId?: st
           {
             user_id: me.id,
             mode,
-            day,
+            day: rowDay,
             case_id: c.id,
             log,
             status: progress.status,
@@ -225,21 +235,41 @@ export async function dailyMove(input: { mode: "daily" | "practice"; caseId?: st
   return { ok: true, view: buildView(c, progress, mode, me.admin, { ai: isAi }), meta: m, log, justFinished, xp, xpSaved };
 }
 
-/** Pick the next practice case for this player (adapts to recent scores). */
-export async function nextPractice(localHistory: PracticeRecord[] = []): Promise<{ ok: true; caseId: string; target: number } | { ok: false; error: string }> {
+/**
+ * Pick the next practice case for this player (adapts to recent scores).
+ * Fresh cases (src/lib/cases): a case left half way comes first; then one
+ * never played (this week's new ones first, at the level aimed for); a
+ * played one only once every case is played (`recycled`). `current` is the
+ * case just finished, never picked again straight away.
+ */
+export async function nextPractice(localHistory: PracticeRecord[] = [], current?: string): Promise<{ ok: true; caseId: string; target: number; recycled: boolean } | { ok: false; error: string }> {
   const me = await currentPlayer();
   if (!me) return { ok: false, error: "Please sign in again." };
   const day = istToday();
+  const daily = todaysCase(day).id;
   let history: PracticeRecord[] = Array.isArray(localHistory) ? localHistory.filter((h) => h && typeof h.id === "string").slice(-50) : [];
+  let open: string | null = null;
   try {
-    const { data, error } = await admin().from(TABLE).select("case_id, score, status, updated_at").eq("user_id", me.id).eq("mode", "practice").neq("status", "playing").order("updated_at", { ascending: true }).limit(500);
+    const db = admin();
+    const [{ data, error }, { data: playing }] = await Promise.all([
+      db.from(TABLE).select("case_id, score, status, updated_at").eq("user_id", me.id).eq("mode", "practice").neq("status", "playing").order("updated_at", { ascending: true }).limit(500),
+      db.from(TABLE).select("case_id, updated_at").eq("user_id", me.id).eq("mode", "practice").eq("status", "playing").order("updated_at", { ascending: false }).limit(20),
+    ]);
     if (!error && data?.length) history = data.map((r) => ({ id: String(r.case_id), score: Number(r.score), difficulty: caseById(String(r.case_id))?.difficulty ?? 1, solved: r.status === "solved" }));
+    const done = new Set(history.map((h) => h.id));
+    open = (playing ?? []).map((r) => String(r.case_id)).find((id) => id !== daily && id !== current && !done.has(id) && caseById(id)) ?? null;
   } catch {
     /* use the browser's history */
   }
-  const id = pickPractice(CASES, history, todaysCase(day).id, Math.random());
+  const target = targetDifficulty(history);
+  if (open) return { ok: true, caseId: open, target, recycled: false };
+  const asRows = new Map(history.map((h, i) => [h.id, { item: h.id, seen: 1, ok: h.solved ?? h.score >= 50, at: i, due: null }]));
+  const week = weeklyDrip(CASES.map((c) => c.id), ownerTag(me.id), asRows, Date.now());
+  const pool = CASES.filter((c) => c.id !== current);
+  const id = pickPractice(pool.length ? pool : CASES, history, daily, Math.random(), week);
   if (!id) return { ok: false, error: "No practice cases left." };
-  return { ok: true, caseId: id, target: targetDifficulty(history) };
+  const played = new Set(history.map((h) => h.id));
+  return { ok: true, caseId: id, target, recycled: played.has(id) };
 }
 
 /**

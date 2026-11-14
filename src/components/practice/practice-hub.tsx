@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { NewCasesLine } from "@/components/cases/case-mark";
 import {
   ArrowRight,
   Brain,
@@ -193,12 +194,15 @@ export function PracticeHubView({
   think,
   more,
   resume,
+  newCases = null,
   record = { passport: false, record: false },
 }: {
   main: ShownTool[];
   think: ShownTool[];
   more: ShownTool[];
   resume: { href: string; title: string } | null;
+  /** "120+ new cases", only when large (src/lib/cases/hubs.ts). */
+  newCases?: string | null;
   /** Footer links, shown only when their switch is on. */
   record?: { passport: boolean; record: boolean };
 }) {
@@ -206,6 +210,7 @@ export function PracticeHubView({
     <div className="mx-auto max-w-5xl space-y-8">
       <header className="space-y-2">
         <PageHeader eyebrow="Practice" title="Clinical skills on real cases" className="pb-0" />
+        <NewCasesLine label={newCases} />
         {resume ? (
           <Link href={resume.href} className="inline-flex min-h-11 max-w-full items-center gap-2 text-sm font-bold text-link underline-offset-4 hover:underline">
             <RotateCcw className="size-4 shrink-0" aria-hidden />
