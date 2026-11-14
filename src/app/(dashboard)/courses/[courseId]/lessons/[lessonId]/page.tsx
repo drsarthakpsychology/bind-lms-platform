@@ -29,6 +29,7 @@ import { EmptyState } from "@/components/design-system/empty-state";
 import { QuizCheck } from "@/components/practice/quiz-check";
 import { QUIZ_BANK } from "@/lib/quiz/quiz-bank";
 import { MobileStickyAction } from "@/components/mobile/mobile-sticky-action";
+import { leaveWithoutSession } from "@/lib/auth/session-redirect";
 
 // "Check what stuck": the risk-assessment + reporting items are the most
 // universally relevant after any lesson (the order-steps spine).
@@ -50,7 +51,7 @@ export default async function LessonPage({
     notFound();
   }
   const session = await getSession();
-  if (session.status !== "ok") return null;
+  if (session.status !== "ok") return leaveWithoutSession(session);
   const { profile } = session;
 
   // View mode: an admin previewing as student (via the view-mode switch) is

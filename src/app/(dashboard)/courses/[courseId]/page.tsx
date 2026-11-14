@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 
 import { getSession } from "@/lib/auth/session";
 import CourseOverview from "@/components/course/course-overview";
+import { leaveWithoutSession } from "@/lib/auth/session-redirect";
 
 export default async function CourseOverviewPage({
   params,
@@ -16,7 +17,7 @@ export default async function CourseOverviewPage({
   }
 
   const session = await getSession();
-  if (session.status !== "ok") return null;
+  if (session.status !== "ok") return leaveWithoutSession(session);
 
   // Enrollment / published / existence gating lives in the course layout, which
   // 404s before this page renders. The shared component owns fetch + render so

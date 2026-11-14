@@ -10,6 +10,7 @@ import { BoardSwitch } from "@/components/standing/board-switch";
 import { cn } from "@/lib/utils";
 import { AliasForm } from "./alias-form";
 import { Avatar, NameLine } from "./look";
+import { leaveWithoutSession } from "@/lib/auth/session-redirect";
 
 export const metadata: Metadata = { title: BOARDS.league.label };
 export const dynamic = "force-dynamic";
@@ -23,7 +24,7 @@ export const dynamic = "force-dynamic";
  */
 export default async function LeaguePage() {
   const session = await getSession();
-  if (session.status !== "ok") return null;
+  if (session.status !== "ok") return leaveWithoutSession(session);
   const data = await loadMyLeague(session.profile.id);
   const relegates = data.tier > 1;
 

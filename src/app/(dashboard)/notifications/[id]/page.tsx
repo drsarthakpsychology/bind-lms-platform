@@ -6,6 +6,7 @@ import { createAdminClient } from "@/lib/supabase/server";
 import { sanitizeRich, textToHtml } from "@/lib/email/rich-html";
 import { formatRelativeTime } from "@/lib/format";
 import { RefreshShell } from "@/components/navigation/refresh-shell";
+import { leaveWithoutSession } from "@/lib/auth/session-redirect";
 
 export const dynamic = "force-dynamic";
 
@@ -15,7 +16,7 @@ export const dynamic = "force-dynamic";
  */
 export default async function NotificationPage({ params }: { params: Promise<{ id: string }> }) {
   const session = await getSession();
-  if (session.status !== "ok") return null;
+  if (session.status !== "ok") return leaveWithoutSession(session);
   const { id } = await params;
   const admin = createAdminClient();
   const { data: n } = await admin.from("notifications").select("*").eq("id", id).maybeSingle();

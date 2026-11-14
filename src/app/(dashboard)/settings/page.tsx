@@ -11,6 +11,7 @@ import { MobileListItem } from "@/components/mobile/mobile-list-item";
 import { StatusPill } from "@/components/mobile/status-pill";
 import { Button } from "@/components/ui/button";
 import { BRAND } from "@/lib/brand";
+import { leaveWithoutSession } from "@/lib/auth/session-redirect";
 
 /**
  * /settings: grouped progressive account screen (T41).
@@ -27,7 +28,7 @@ import { BRAND } from "@/lib/brand";
 
 export default async function SettingsPage() {
   const session = await getSession();
-  if (session.status !== "ok") return null; // shell already redirected
+  if (session.status !== "ok") return leaveWithoutSession(session);
 
   const { email, role } = session.profile;
 

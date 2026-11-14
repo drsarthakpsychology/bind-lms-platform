@@ -30,8 +30,12 @@ export default async function DashboardLayout({
     redirect("/expired");
   }
 
-  if (session.status === "unauthenticated" || session.status === "session_replaced") {
+  if (session.status === "unauthenticated") {
     redirect("/login");
+  }
+  // Signed in on another phone or laptop: say so, or it looks like a random logout.
+  if (session.status === "session_replaced") {
+    redirect("/login?why=elsewhere");
   }
 
   // Blocked is an unconditional override: the account is cut off on every

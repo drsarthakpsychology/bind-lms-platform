@@ -9,6 +9,7 @@ import { MobileListItem } from "@/components/mobile/mobile-list-item";
 import { EmptyState } from "@/components/design-system/empty-state";
 import { cn } from "@/lib/utils";
 import { markAllNotificationsRead } from "./actions";
+import { leaveWithoutSession } from "@/lib/auth/session-redirect";
 
 /**
  * /notifications: derived wall feed (T42) plus persisted achievement and
@@ -20,7 +21,7 @@ type WallReplyRow = { id: string; author_id: string | null; content: string; is_
 
 export default async function NotificationsPage() {
   const session = await getSession();
-  if (session.status !== "ok") return null;
+  if (session.status !== "ok") return leaveWithoutSession(session);
 
   const supabase = await createClient();
   const { id: userId, role } = session.profile;

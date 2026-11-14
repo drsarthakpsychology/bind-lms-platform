@@ -11,6 +11,7 @@ import { canRepair, isLookId, type LookId } from "@/lib/leagues/shop";
 import { loadLearnState, saveLearnState } from "../../study/actions";
 import { ShopClient } from "./shop-client";
 import { backLinkClass } from "@/components/design-system/back-link";
+import { leaveWithoutSession } from "@/lib/auth/session-redirect";
 
 export const metadata: Metadata = { title: "XP shop" };
 export const dynamic = "force-dynamic";
@@ -18,7 +19,7 @@ export const dynamic = "force-dynamic";
 /** /leaderboard/shop: spend earned XP. Spends never lower your level or league points. */
 export default async function ShopPage() {
   const session = await getSession();
-  if (session.status !== "ok") return null;
+  if (session.status !== "ok") return leaveWithoutSession(session);
   const userId = session.profile.id;
   const admin = createAdminClient();
   const today = istToday();

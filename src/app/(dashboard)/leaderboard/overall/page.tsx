@@ -10,6 +10,7 @@ import { BOARDS, scopeLine } from "@/lib/standing/boards";
 import { StandingCard } from "@/components/standing/standing-card";
 import { BoardHeader, BoardSwitch } from "@/components/standing/board-switch";
 import { cn } from "@/lib/utils";
+import { leaveWithoutSession } from "@/lib/auth/session-redirect";
 
 export const metadata: Metadata = { title: BOARDS.overall.label };
 export const dynamic = "force-dynamic";
@@ -24,7 +25,7 @@ const SHOWN = 100;
  */
 export default async function OverallLeaderboardPage() {
   const session = await getSession();
-  if (session.status !== "ok") return null;
+  if (session.status !== "ok") return leaveWithoutSession(session);
   const userId = session.profile.id;
   const [{ rows, me }, cohorts] = await Promise.all([loadMyBoard(userId), loadMyCohorts(userId)]);
   const podium = rows.slice(0, 3);
