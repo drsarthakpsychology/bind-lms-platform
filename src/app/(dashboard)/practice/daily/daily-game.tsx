@@ -16,7 +16,6 @@ import {
   Flag,
   Flame,
   FlaskConical,
-  Lightbulb,
   LoaderCircle,
   MessageCircle,
   RotateCw,
@@ -46,7 +45,7 @@ import { AI_CASE_LABEL, AI_CASE_NOTE } from "@/lib/ai-cases/types";
 import { AI_TOPICS } from "@/lib/ai-cases/criteria";
 import { dailyMove, dailyRest, flagAiCaseAction, nextAiCase, nextPractice, type DailyMeta, type MoveResult } from "./actions";
 import { creditServerPlay } from "@/lib/learn/credit-play";
-import { HintChip } from "@/components/hints/hint-chip";
+import { HintButton, type HintUse } from "@/components/hints/hint-chip";
 import { CASE_SCORE_PER_HINT } from "@/lib/hints/rules";
 import type { HintStatus } from "@/lib/hints/engine";
 import { useReaction } from "@/components/reactions/use-reaction";
@@ -164,6 +163,23 @@ export function DailyGame({ serverState, save, initial }: { serverState: LearnSt
     });
   }
 
+  /** One hint on the open case: the server charges it and sends the hint back in the view. */
+  function takeHint(): Promise<HintUse> {
+    const t = tab;
+    const cur = t === "daily" ? daily : t === "practice" ? practice : aiGame;
+    return new Promise((resolve) => {
+      if (!cur) return resolve({ ok: false, error: LOAD_FAIL });
+      setError(null);
+      startTransition(async () => {
+        const res = await dailyMove({ mode: t === "daily" ? "daily" : "practice", caseId: cur.view.caseId, log: cur.log, action: { t: "hint" } }).catch(() => null);
+        if (!res) return resolve({ ok: false, error: "Couldn't get a hint. Try again." });
+        if (!res.ok) return resolve({ ok: false, error: res.error });
+        after(t, res, { t: "hint" });
+        resolve({ ok: true, status: res.meta.hints });
+      });
+    });
+  }
+
   /** A hint purchase changes the count shown on every tab. */
   function setHints(h: HintStatus) {
     const upd = (g: Game | null) => (g ? { ...g, meta: { ...g.meta, hints: h } } : g);
@@ -256,6 +272,7 @@ export function DailyGame({ serverState, save, initial }: { serverState: LearnSt
           shake={shake}
           gain={gain}
           onMove={move}
+          onHint={takeHint}
           onHints={setHints}
           onNextPractice={tab === "ai" ? () => newAi() : newPractice}
           streak={streak}
@@ -272,6 +289,7 @@ function CaseBoard({
   shake,
   gain,
   onMove,
+  onHint,
   onHints,
   onNextPractice,
   streak,
@@ -282,6 +300,7 @@ function CaseBoard({
   shake: number;
   gain: { xp: number; key: number } | null;
   onMove: (a?: Action) => void;
+  onHint: () => Promise<HintUse>;
   onHints: (h: HintStatus) => void;
   onNextPractice: () => void;
   streak: number;
@@ -295,7 +314,6 @@ function CaseBoard({
   const [confirmQuit, setConfirmQuit] = React.useState(false);
   const ordered = v.investigations.filter((x) => x.ordered);
   const canHint = playing && v.hints.used < 2;
-  const outOfHints = meta.hints !== null && meta.hints.left === 0;
 
   return (
     <div className="space-y-4">
@@ -359,16 +377,6 @@ function CaseBoard({
         </section>
       )}
 
-      {(v.hints.chapter || v.hints.pointer) && playing && (
-        <div className="rounded-lg border-2 border-foreground bg-status-info-bg p-3 text-status-info-fg">
-          <p className="flex items-center gap-2 font-bold">
-            <Lightbulb className="size-4" aria-hidden /> Hint
-          </p>
-          {v.hints.chapter && <p className="mt-1 text-sm">Chapter: {v.hints.chapter}.</p>}
-          {v.hints.pointer && <p className="mt-1 text-sm">{v.hints.pointer}</p>}
-        </div>
-      )}
-
       {playing && last && !last.ok && (
         <div key={shake} className={cn("rounded-lg border-2 border-foreground p-3", last.sameChapter ? "bg-status-pending-bg" : "bg-status-alert-bg text-status-alert-fg", anim(fx.shake))} role="status">
           <p className="flex items-center gap-2 font-bold">
@@ -386,30 +394,39 @@ function CaseBoard({
       {playing ? (
         <section className={cn(card, "space-y-3 p-4")} aria-label="Your move">
           <GuessBox disabled={pending} guessed={v.guesses.map((g) => g.dx)} onGuess={(dx) => onMove({ t: "guess", dx })} />
-          <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
+          <HintButton
+            status={meta.hints}
+            onStatus={onHints}
+            onUse={onHint}
+            used={!canHint}
+            disabled={pending}
+            shown={
+              v.hints.chapter || v.hints.pointer ? (
+                <>
+                  {v.hints.chapter && <p>Chapter: {v.hints.chapter}.</p>}
+                  {v.hints.pointer && <p>{v.hints.pointer}</p>}
+                </>
+              ) : null
+            }
+          />
+          <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
             <button type="button" className={btnSecondary} disabled={pending || !v.canClue} onClick={() => onMove({ t: "clue" })}>
               <ArrowRight className="size-4" aria-hidden /> Next clue
             </button>
             <button type="button" className={btnSecondary} aria-expanded={showTests} disabled={pending || v.investigations.every((x) => x.ordered)} onClick={() => setShowTests((s) => !s)}>
               <FlaskConical className="size-4" aria-hidden /> Order a test
             </button>
-            <button type="button" className={btnSecondary} disabled={pending || !canHint || outOfHints} onClick={() => onMove({ t: "hint" })}>
-              <Lightbulb className="size-4" aria-hidden /> <span className="truncate">{canHint ? "Hint" : "No more hints"}</span>
-            </button>
             {confirmQuit ? (
-              <button type="button" className={cn(btnInk)} disabled={pending} onClick={() => onMove({ t: "giveup" })}>
+              <button type="button" className={cn(btnInk, "col-span-2 sm:col-span-1")} disabled={pending} onClick={() => onMove({ t: "giveup" })}>
                 <Flag className="size-4" aria-hidden /> Yes, show me
               </button>
             ) : (
-              <button type="button" className={btnSecondary} disabled={pending} onClick={() => setConfirmQuit(true)}>
+              <button type="button" className={cn(btnSecondary, "col-span-2 sm:col-span-1")} disabled={pending} onClick={() => setConfirmQuit(true)}>
                 <Flag className="size-4" aria-hidden /> Give up
               </button>
             )}
           </div>
-          <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
-            <HintChip status={meta.hints} onStatus={onHints} />
-            {!v.canClue && v.cluesOpen < MAX_CLUES ? <p className="text-sm text-muted-foreground">Make a guess to open clue {v.cluesOpen + 1}.</p> : null}
-          </div>
+          {!v.canClue && v.cluesOpen < MAX_CLUES ? <p className="text-sm text-muted-foreground">Make a guess to open clue {v.cluesOpen + 1}.</p> : null}
           {showTests && (
             <ul className="grid gap-2 sm:grid-cols-2" aria-label="Tests you can order (each costs one clue point)">
               {v.investigations

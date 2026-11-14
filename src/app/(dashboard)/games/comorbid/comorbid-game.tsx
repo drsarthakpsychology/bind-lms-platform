@@ -210,19 +210,17 @@ function Table({ play, setPlay, xp, onDone, onAgain, onExit, board }: { play: Pl
             ))}
           </ul>
           {!pass && !botTurn ? (
-            <div className="flex flex-wrap items-center gap-2">
+            <div>
               <HintBar
                 status={hints}
                 onStatus={setHints}
                 used={hinted[g.moves] !== undefined}
-                label="Show a card that fits"
                 ask={() => askHint({ game: "comorbid", run: play.setup.seed, level: play.setup.level, moves: play.moves, ...(play.setup.prefer ? { prefer: play.setup.prefer } : {}) })}
                 onGive={(h) => {
                   setHinted((x) => ({ ...x, [g.moves]: h.text }));
                   if (h.pick) setSel(h.pick);
                 }}
               />
-              {hinted[g.moves] ? <span className="text-small font-semibold">{hinted[g.moves]}</span> : null}
             </div>
           ) : null}
           <div className="grid gap-2 sm:grid-cols-2">

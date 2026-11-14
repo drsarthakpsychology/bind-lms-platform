@@ -312,7 +312,6 @@ function SoloPlay({ solo, finish, onExit, onAgain }: { solo: Solo; finish: Actio
                   status={hints}
                   onStatus={setHints}
                   used={(ruled[current.id] ?? []).length > 0}
-                  label="Rule out two weak ones"
                   ask={() => askHint({ game: "ward", run: solo.run, campaign: c.id, decision: current.id, options: current.options.map((o) => o.id) })}
                   onGive={(h) => setRuled((r) => ({ ...r, [current.id]: h.remove }))}
                 />
