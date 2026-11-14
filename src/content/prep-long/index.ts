@@ -32,6 +32,7 @@ import { DEVELOPMENTAL_L03 } from "./developmental-l03";
 import { DEVELOPMENTAL_L04 } from "./developmental-l04";
 import { DEVELOPMENTAL_L05 } from "./developmental-l05";
 import { ETHICS_LAW_L01 } from "./ethics-law-l01";
+import { ETHICS_LAW_L02 } from "./ethics-law-l02";
 import { HISTORY_SYSTEMS_L01 } from "./history-systems-l01";
 import { HISTORY_SYSTEMS_L02 } from "./history-systems-l02";
 import { HISTORY_SYSTEMS_L03 } from "./history-systems-l03";
@@ -117,6 +118,7 @@ export const LONG_QA: LongQA[] = [
   ...DEVELOPMENTAL_L04,
   ...DEVELOPMENTAL_L05,
   ...ETHICS_LAW_L01,
+  ...ETHICS_LAW_L02,
   ...HISTORY_SYSTEMS_L01,
   ...HISTORY_SYSTEMS_L02,
   ...HISTORY_SYSTEMS_L03,
