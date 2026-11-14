@@ -1,3 +1,6 @@
+import { Row, RowList } from "@/components/ds";
+import { GameFrame } from "@/components/play/game-frame";
+import { playV2 } from "@/components/play/v2";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -42,6 +45,33 @@ export default async function TopicPage({ params, searchParams }: Params) {
   const topics = bankTopics(subject);
   const at = topics.findIndex((x) => x.id === topic);
   const nextTopic = nextChip || at < 0 ? undefined : topics[at + 1];
+
+  if (await playV2()) {
+    return (
+      <GameFrame title={view.title} width="reading" back={{ href: `/prep/${subject}`, label: `Back to ${SUBJECT_TITLE[subject]}` }} aside={view.sets.length > 1 ? <SetPicker v2 sets={view.sets.map((x) => ({ n: x.n, href: x.href, done: x.stats.answered === x.stats.total }))} current={view.set} /> : undefined}>
+        <div className="flex min-w-0 flex-col gap-[var(--ds-section)]">
+          <QuestionRunner
+            v2
+            key={`${topic}:${view.set}`}
+            questions={questions}
+            start={view.start}
+            prior={view.prior}
+            saved={view.saved}
+            canSave={view.canSave && me.learner}
+            preview={!me.learner}
+            label={`${view.title}, set ${view.set + 1}`}
+            next={nextChip ? { href: nextChip.href, label: "Next set" } : nextTopic ? { href: `/prep/${subject}/${nextTopic.id}`, label: `Next topic: ${nextTopic.title}` } : null}
+            again="reset"
+            back={{ href: `/prep/${subject}`, label: `Back to ${SUBJECT_TITLE[subject]}` }}
+            empty={<p className="font-semibold">Questions for this topic are being added.</p>}
+          />
+          <RowList>
+            <Row href={learnHrefForTopic(subject, topic)} icon={<BookOpen />} title="Learn this topic in Study" />
+          </RowList>
+        </div>
+      </GameFrame>
+    );
+  }
 
   return (
     <PrepFrame>

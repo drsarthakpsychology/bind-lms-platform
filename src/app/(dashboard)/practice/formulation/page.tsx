@@ -1,3 +1,7 @@
+import { GameFrame } from "@/components/play/game-frame";
+import { playV2 } from "@/components/play/v2";
+import { PlayStack } from "@/components/play/parts";
+import { Section } from "@/components/ds";
 import { ToolHeader } from "@/components/help/tool-header";
 import { HowToStart } from "@/components/help/how-to";
 import { createClient } from "@/lib/supabase/server";
@@ -64,6 +68,43 @@ export default async function FormulationPage({ searchParams }: { searchParams: 
   const seed = all.find((c) => c.id === firstId) ?? all[0];
   const number = new Map(all.map((c, i) => [c.id, i + 1]));
   const next = arranged.list.find((x) => x.id !== seed.id && x.mark !== "done") ?? arranged.list.find((x) => x.id !== seed.id);
+
+  if (await playV2()) {
+    return (
+      <GameFrame title="Build the formulation" tip={{ id: "formulation", label: "How it works", steps: ["Sort the factors into the 5 Ps.", "Write the story in your own words.", "Compare with the answer."] }}>
+        <PlayStack>
+          <div className="flex min-w-0 flex-col gap-3">
+            {arranged.recycled ? <RecycleNote /> : null}
+            {/* The cases: one row of chips that scrolls sideways. */}
+            <nav aria-label="Cases" className="-mx-1 flex gap-2 overflow-x-auto px-1 pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+              {arranged.list.map(({ item: c, mark }) => (
+                <Link
+                  key={c.id}
+                  href={`/practice/formulation?case=${c.id}`}
+                  aria-current={c.id === seed.id ? "page" : undefined}
+                  title={c.hint || c.title}
+                  className={`inline-flex min-h-11 shrink-0 items-center gap-2 rounded-full border-[1.5px] px-4 type-small font-semibold whitespace-nowrap ${c.id === seed.id ? "border-foreground bg-foreground text-background" : mark === "done" ? "border-[var(--ds-card-line)] text-muted-foreground" : "border-[var(--ds-card-line)] hover:border-foreground"}`}
+                >
+                  {mark !== "done" || c.id === seed.id ? <CaseMarkTag mark={mark} /> : null}
+                  <span>
+                    Case {number.get(c.id)}: {c.title.split(":")[0]}
+                  </span>
+                  {mark === "done" && c.id !== seed.id ? <CaseMarkTag mark="done" /> : null}
+                </Link>
+              ))}
+            </nav>
+            <h2 className="type-h3 [overflow-wrap:anywhere]">{seed.title}</h2>
+            <HowToStart id="formulation">
+              <FormulationForge key={seed.id} seed={seed} progress={ctx.progress} nextHref={next ? `/practice/formulation?case=${next.id}` : null} />
+            </HowToStart>
+          </div>
+          <Section title="Shared by classmates, without names">
+            <PeerWall />
+          </Section>
+        </PlayStack>
+      </GameFrame>
+    );
+  }
 
   return (
     <div className="mx-auto max-w-4xl">

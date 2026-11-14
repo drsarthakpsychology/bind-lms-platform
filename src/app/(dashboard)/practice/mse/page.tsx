@@ -1,3 +1,5 @@
+import { GameFrame } from "@/components/play/game-frame";
+import { playV2 } from "@/components/play/v2";
 import { ToolHeader } from "@/components/help/tool-header";
 import { HowToStart } from "@/components/help/how-to";
 import { createClient } from "@/lib/supabase/server";
@@ -106,6 +108,16 @@ export default async function MsePage() {
     fullFresh: full.recycled ? 0 : full.fresh,
     small: { order: smallOrder, start: Math.max(0, at ? smallOrder.indexOf(at) : 0), fresh: small.recycled ? 0 : small.fresh },
   };
+
+  if (await playV2()) {
+    return (
+      <GameFrame title="Mental state exam" width="reading" tip={{ id: "mse-trainer", label: "How it works", steps: ["Write what you can see and hear, not what you conclude."] }}>
+        <HowToStart id="mse-trainer">
+          <MseLadder content={content} />
+        </HowToStart>
+      </GameFrame>
+    );
+  }
 
   return (
     <div className="mx-auto max-w-3xl">

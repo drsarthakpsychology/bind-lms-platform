@@ -1,3 +1,7 @@
+import { PageFrame, Row, RowList } from "@/components/ds";
+import { ListHead } from "@/components/play/parts";
+import { playV2 } from "@/components/play/v2";
+import { PREP_SHORT } from "@/lib/prep/catalog";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -32,6 +36,44 @@ export default async function SubjectPage({ params, searchParams }: { params: Pr
   const long = longTopicsFor(subject);
   const longTotal = long.reduce((a, t) => a + t.items.length, 0);
   const title = subject === "ugc-paper1" ? "General paper: teaching, research and reasoning" : SUBJECT_TITLE[subject];
+
+  if (await playV2()) {
+    return (
+      <PageFrame width="reading">
+        <ListHead
+          back={{ href: "/prep", label: PREP_SHORT }}
+          tag={OPTIONAL_SUBJECTS.has(subject) ? "Optional" : undefined}
+          title={title}
+          lead={tab === "bank" ? [bigCount(stats.total, "questions"), stats.answered ? `${stats.answered} answered` : "", stats.answered ? pctText(stats) : ""].filter(Boolean).join(" · ") || undefined : "Write it out, then check it."}
+        />
+        <div className="flex min-w-0 flex-col gap-4">
+          <SubjectTabs subject={subject} active={tab} counts={{ bank: stats.total, long: longTotal }} />
+          {tab === "long" ? (
+            long.length ? (
+              <RowList label="Long answer topics">
+                {long.map((t) => (
+                  <Row key={t.id} href={`/prep/${subject}/long/${t.id}`} title={t.title} meta={bigCount(t.items.length, "answers")} />
+                ))}
+              </RowList>
+            ) : (
+              <p className="type-body text-muted-foreground">Long answers for this subject are being added.</p>
+            )
+          ) : topics.length ? (
+            <RowList label="Topics">
+              {topics.map((t) => (
+                <Row key={t.id} href={t.href} title={t.title} meta={t.stats.answered ? `${t.stats.answered} answered` : bigCount(t.stats.total, "questions")} trailing={pctText(t.stats)} />
+              ))}
+            </RowList>
+          ) : (
+            <p className="type-body text-muted-foreground">Questions for this subject are being added.</p>
+          )}
+        </div>
+        <RowList>
+          <Row href={learnHrefFor(subject)} icon={<BookOpen />} title="Read the notes in Study" />
+        </RowList>
+      </PageFrame>
+    );
+  }
 
   return (
     <PrepFrame>

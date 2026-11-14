@@ -1,3 +1,6 @@
+import { GameFrame } from "@/components/play/game-frame";
+import { playV2 } from "@/components/play/v2";
+import { Fold, PlayStack } from "@/components/play/parts";
 import { ToolHeader } from "@/components/help/tool-header";
 import { OsceStationView } from "./osce-station";
 import { QuizCheck } from "@/components/practice/quiz-check";
@@ -17,6 +20,19 @@ export const dynamic = "force-dynamic";
 export default async function OscePage() {
   await requireFeature("osce");
   const cases = await caseContext("osce", SEED_OSCE_STATIONS.map((s) => s.id), "osce");
+  if (await playV2()) {
+    return (
+      <GameFrame title="OSCE stations" width="reading" tip={{ id: "osce", label: "How it works", steps: ["One task against the clock, like the real exam.", "Voice works best."] }}>
+        <PlayStack>
+          <OsceStationView cases={cases} />
+          <Fold title="Quick check">
+            <QuizCheck items={QUIZ_BANK.slice(6, 12)} />
+          </Fold>
+        </PlayStack>
+      </GameFrame>
+    );
+  }
+
   return (
     <div className="mx-auto max-w-3xl">
       <BackPill className="mb-4" />

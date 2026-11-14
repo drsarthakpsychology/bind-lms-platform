@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { redirect } from "next/navigation";
-import { ActivityFrame } from "@/components/study/activity-frame";
-import { ActivityTip } from "@/components/help/activity-tip";
+import { PlayFrame } from "@/components/play/play-frame";
+import { playV2 } from "@/components/play/v2";
 import { requireFeature } from "@/lib/flags";
 import { currentPlayer } from "@/lib/games/server";
 import { offlineRounds, profile } from "@/lib/games/duel/server";
@@ -20,12 +20,8 @@ export default async function DuelPage() {
   // Only when the duel tables are missing: five rounds for a practice match run in the browser.
   const offline = prof.available ? null : offlineRounds();
   return (
-    <ActivityFrame
-      title="Differential duel"
-      fallback="/games"
-    >
-      <ActivityTip id="differential-duel" intro="Beat the bot or a classmate on look-alike patients." steps={["Pick the diagnosis: +100.", "Then pick what tells it apart from its look-alike: +50.", "Same points? The faster player wins.", "The bot is practice. Matches with classmates move your rating."]} />
+    <PlayFrame v2={await playV2()} title="Differential duel" fallback="/games" tip={{ id: "differential-duel", intro: "Beat the bot or a classmate on look-alike patients.", steps: ["Pick the diagnosis: +100.", "Then pick what tells it apart from its look-alike: +50.", "Same points? The faster player wins.", "The bot is practice. Matches with classmates move your rating."] }}>
       <DuelGame serverState={serverState} save={saveLearnState} profile={prof} offlineItems={offline} />
-    </ActivityFrame>
+    </PlayFrame>
   );
 }

@@ -1,3 +1,6 @@
+import { PageFrame, Row, RowList } from "@/components/ds";
+import { ListHead } from "@/components/play/parts";
+import { playV2 } from "@/components/play/v2";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import Link from "next/link";
@@ -33,6 +36,72 @@ export default async function DrugPage({ params }: { params: Promise<{ drug: str
   // every student, so it's served from a shared cache (Part 11); an admin
   // publish revalidates the tag.
   const publishedDoc = await getPublishedMedicationDocument(generic);
+
+  if (await playV2()) {
+    // New design: an editorial page. The reference content below is the same components, unchanged.
+    return (
+      <PageFrame width="reading">
+        <ListHead back={{ href: "/practice/medicines", label: "Medicines" }} tag={[detail.class, !detail.verified ? "Being reviewed" : ""].filter(Boolean).join(" · ") || undefined} title={detail.generic} />
+        {detail.plain ? <Points text={detail.plain} className="max-w-2xl" max={4} /> : null}
+        {publishedDoc ? (
+          <DocumentView document={publishedDoc} />
+        ) : (
+          <>
+            <Suspense
+              fallback={
+                <div className="space-y-3" aria-label="Loading dose bands">
+                  <Skeleton className="h-4 w-48" />
+                  <Skeleton className="h-12 w-full" />
+                  <Skeleton className="h-12 w-full" />
+                  <Skeleton className="h-12 w-full" />
+                </div>
+              }
+            >
+              <DoseLadder drug={detail.generic} bands={detail.bands} />
+            </Suspense>
+            <Suspense
+              fallback={
+                <div className="space-y-6" aria-label="Loading drug details">
+                  <Skeleton className="h-40 w-full" />
+                  <Skeleton className="h-24 w-full" />
+                </div>
+              }
+            >
+              <DrugBandView
+                class={detail.class}
+                plain={detail.plain}
+                mechanism={detail.mechanism}
+                common_uses={detail.common_uses}
+                dose_range={detail.dose_range}
+                side_effects_common={detail.side_effects_common}
+                side_effects_serious={detail.side_effects_serious}
+                bands={detail.bands}
+                onsetTime={detail.onset_time}
+                onsetKb={detail.onset_kb}
+                onsetKbPage={detail.onset_kb_page}
+                halfLife={detail.half_life}
+                halfLifePage={detail.half_life_page}
+                sourceTitle={detail.source_title}
+                contraindications={detail.contraindications}
+                interactions={detail.interactions}
+                monitoring={detail.monitoring}
+                overdose={detail.overdose}
+                special_populations={detail.special_populations}
+                patient_counseling={detail.patient_counseling}
+              />
+            </Suspense>
+          </>
+        )}
+        <div className="flex min-w-0 flex-col gap-4">
+          <RowList>
+            <Row href={`/tools/psychopharm/compare?a=${drug}&b=`} title="Compare this drug" />
+            <Row href="/tools/psychopharm/learn" title="Browse by mechanism" />
+          </RowList>
+          <p className="max-w-[68ch] type-caption text-muted-foreground">{STANDING_NOTICE}</p>
+        </div>
+      </PageFrame>
+    );
+  }
 
   return (
     <div className="mx-auto max-w-3xl space-y-6 py-6 pb-24 lg:pb-6">

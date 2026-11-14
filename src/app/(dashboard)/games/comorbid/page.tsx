@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { ActivityFrame } from "@/components/study/activity-frame";
-import { ActivityTip } from "@/components/help/activity-tip";
+import { PlayFrame } from "@/components/play/play-frame";
+import { playV2 } from "@/components/play/v2";
 import { LearnStoreInit } from "@/components/learn/learn-store-init";
 import { loadLearnState, saveLearnState } from "../../study/actions";
 import { requireFeature } from "@/lib/flags";
@@ -17,10 +17,9 @@ export default async function ComorbidPage() {
   const user = await currentUser();
   const board = await loadAccuracyBoard("comorbid", user?.id ?? null);
   return (
-    <ActivityFrame title="Comorbid">
-      <ActivityTip id="comorbid" intro="A card duel about criteria and look-alikes." steps={RULES} />
+    <PlayFrame v2={await playV2()} title="Comorbid" titleAs="p" tip={{ id: "comorbid", intro: "A card duel about criteria and look-alikes.", steps: RULES }}>
       <LearnStoreInit serverState={learnState} save={saveLearnState} />
       <ComorbidGame board={board} finish={finishComorbid} />
-    </ActivityFrame>
+    </PlayFrame>
   );
 }
