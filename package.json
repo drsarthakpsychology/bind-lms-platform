@@ -20,7 +20,10 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "knip": "knip",
+    "knip:files": "knip --include files --no-exit-code",
     "test:e2e": "playwright test",
+    "test:a11y": "playwright test e2e/a11y.spec.ts",
+    "analyze": "next analyze --output",
     "set-r2-cors": "tsx scripts/set-r2-cors.ts",
     "apply-migrations": "tsx scripts/apply-migrations.ts",
     "apply-pending": "tsx scripts/apply-pending.ts",
@@ -126,6 +129,7 @@
     "zod": "^4.6.7"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
     "@playwright/test": "^1.62.1",
     "@tailwindcss/postcss": "^4",
     "@testing-library/jest-dom": "^7.0.1",
