@@ -54,6 +54,7 @@ import { PERCEPTION_ATTENTION_L05 } from "./perception-attention-l05";
 import { PERSONALITY_THEORIES_L01 } from "./personality-theories-l01";
 import { PERSONALITY_THEORIES_L02 } from "./personality-theories-l02";
 import { PERSONALITY_THEORIES_L03 } from "./personality-theories-l03";
+import { PERSONALITY_THEORIES_L04 } from "./personality-theories-l04";
 import { PSYCHOMETRICS_ASSESSMENT_L01 } from "./psychometrics-assessment-l01";
 import { PSYCHOMETRICS_ASSESSMENT_L02 } from "./psychometrics-assessment-l02";
 import { PSYCHOMETRICS_ASSESSMENT_L03 } from "./psychometrics-assessment-l03";
@@ -147,6 +148,7 @@ export const LONG_QA: LongQA[] = [
   ...PERSONALITY_THEORIES_L01,
   ...PERSONALITY_THEORIES_L02,
   ...PERSONALITY_THEORIES_L03,
+  ...PERSONALITY_THEORIES_L04,
   ...PSYCHOMETRICS_ASSESSMENT_L01,
   ...PSYCHOMETRICS_ASSESSMENT_L02,
   ...PSYCHOMETRICS_ASSESSMENT_L03,
