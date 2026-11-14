@@ -1,7 +1,6 @@
 /* Schizophrenia spectrum and catatonia: Q&A bank (Starting, Beginner, Advanced). Original text written for VIBHA School of Psychology. */
 export const qa = String.raw`
 ## 5.3 Q&A bank · Starting [core][starting]
-Think each question through, then open the answer.
 
 :::qa Does schizophrenia mean having a split personality? [starting]
 ### Short answer
@@ -131,7 +130,6 @@ Yes, the risk is higher in relatives, but most people with schizophrenia have no
 :::
 
 ## 5.4 Q&A bank · Beginner [core][beginner]
-Think each question through, then open the answer.
 
 :::qa Work through the differential diagnosis of a first episode of psychosis. [beginner]
 ### Short answer
@@ -347,7 +345,6 @@ Most people with schizophrenia in India live with families, who provide most car
 :::
 
 ## 5.5 Q&A bank · Advanced [core][advanced]
-Think each question through, then open the answer.
 
 :::qa Explain the dopamine hypothesis as it stands today. [advanced]
 ### Short answer

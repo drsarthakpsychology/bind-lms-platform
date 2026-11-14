@@ -5,6 +5,8 @@ import { haptic } from "@/lib/haptics";
 import { cn } from "@/lib/utils";
 import { scoreMseCode, summarizeMseScore, formatDomainKey } from "@/lib/mse/ladder";
 import { buildMseAttemptPayload } from "@/lib/practice/mse-attempt";
+import { showEndReaction } from "@/components/reactions/store";
+import { moodForScore } from "@/lib/reactions/stickers";
 
 interface TurnLine {
   role: "student" | "patient";
@@ -120,7 +122,11 @@ export function LiveMseLevel({ onComplete }: { onComplete?: () => void }) {
     }
     const expert: Parameters<typeof scoreMseCode>[0] = {};
     for (const d of DOMAINS) expert[d] = selected.expert[d] ?? [];
-    setScored(scoreMseCode(expert, fields));
+    const scores = scoreMseCode(expert, fields);
+    setScored(scores);
+    // The finish sticker: happy or sad by the domains matched (amber counts half).
+    const s = summarizeMseScore(scores);
+    showEndReaction(moodForScore(s.score, s.max));
   }
 
   const turns = selected?.turns ?? [];
@@ -151,7 +157,7 @@ export function LiveMseLevel({ onComplete }: { onComplete?: () => void }) {
   const summary = scored && !scored._uncoded ? summarizeMseScore(scored as Record<string, "green" | "amber" | "red">) : null;
 
   return (
-    <div className="space-y-4 rounded-md border-2 border-border bg-card p-5 hard-shadow-sm">
+    <div className="space-y-4 rounded-lg border-2 border-border bg-card p-5 hard-shadow-sm">
       <div className="flex items-center justify-between text-small text-muted-foreground">
         <span>Level 5 · MSE from your own interview</span>
         <span>{selected ? selected.title : "pick a session"}</span>

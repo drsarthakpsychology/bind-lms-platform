@@ -24,7 +24,7 @@ Modern academic psychology reached India through **colonial universities** that 
 | **1989** | The **National Academy of Psychology (NAoP)** was formed |
 | **1992** | The **RCI Act** made RCI a statutory body that registers clinical psychologists |
 | **2002** | The **Pondicherry conference** issued the **Manifesto of Indian Psychology** |
-| **2020** | The **National Education Policy** promoted **Indian Knowledge Systems**, now part of UGC NET Unit 1 and several MA syllabi |
+| **2020** | The **National Education Policy** promoted **Indian Knowledge Systems**, now part of competitive exam syllabi and several MA syllabi |
 
 :::widget timeline
 {"prompt": "Put these milestones in the history of psychology in India in the right order.", "events": [{"label": "Brajendranath Seal drafts an experimental psychology syllabus at Calcutta", "when": "1905"}, {"label": "The first psychology department in India opens at Calcutta", "when": "1916"}, {"label": "Girindrasekhar Bose founds the Indian Psychoanalytical Society", "when": "1922"}, {"label": "The All India Institute of Mental Health opens in Bangalore", "when": "1954"}, {"label": "The National Academy of Psychology is formed", "when": "1989"}, {"label": "The RCI Act makes registration of clinical psychologists statutory", "when": "1992"}, {"label": "The Manifesto of Indian Psychology is issued at Pondicherry", "when": "2002"}], "why": "Calcutta came first, in both experimental psychology and psychoanalysis. Clinical training followed at Bangalore, and professional regulation and the indigenous psychology movement came much later."}
@@ -43,7 +43,7 @@ Modern academic psychology reached India through **colonial universities** that 
 :::
 
 ### Phases of Indian academic psychology
-The UGC NET syllabus follows a scheme built on the work of **Durganand Sinha** and later **Girishwar Misra**:
+Postgraduate syllabi follow a scheme built on the work of **Durganand Sinha** and later **Girishwar Misra**:
 | Phase | What characterised it |
 |---|---|
 | **Pre-independence** | Implantation of Western experimental psychology and psychoanalysis; small, elite departments; Bose's original psychoanalysis is the striking exception |
@@ -66,7 +66,7 @@ The UGC NET syllabus follows a scheme built on the work of **Durganand Sinha** a
     { "id": "p5", "label": "1990s: paradigm debates", "detail": "Doubts about positivism; a disciplinary identity crisis." },
     { "id": "p6", "label": "2000s onward: Indian psychology", "detail": "The Pondicherry Manifesto, new courses, Indian Knowledge Systems after 2020." }
   ],
-  "caption": "The phases overlap in reality, but this is the order the NET syllabus uses."
+  "caption": "The phases overlap in reality, but this is the order postgraduate syllabi use."
 }
 :::
 
@@ -101,7 +101,7 @@ Historians stress that "phases" overlap and that the narrative of pure imitation
 2. Who was the first head of the Calcutta department? || N. N. Sengupta.
 3. When did the Indian Science Congress give psychology its own section? || 1923.
 4. Why was Gardner Murphy invited to India in 1950? || To study the roots of communal tension after Partition, with UNESCO support; his report appeared in 1953.
-5. Name the six phases of Indian academic psychology in the NET scheme. || Pre-independence, post-independence, 1970s social issues, 1980s indigenisation, 1990s paradigmatic concerns and identity crisis, 2000s Indian psychology in academia.
+5. Name the six phases of Indian academic psychology in the syllabus scheme. || Pre-independence, post-independence, 1970s social issues, 1980s indigenisation, 1990s paradigmatic concerns and identity crisis, 2000s Indian psychology in academia.
 6. Whose work analyses colonialism as a colonisation of minds? || Ashis Nandy's.
 :::
 
@@ -143,7 +143,7 @@ Exams ask for names, institutions, key works and ideas. Learn the people in clus
 - **Jai B. P. Sinha** (**Patna**): the **nurturant-task leader** (1980): an effective Indian manager is **task-focused but nurturant**, offering care, guidance and personal interest **contingent on** the subordinate's work, and gradually moving towards participation as the subordinate grows. He also wrote on Indian **work culture** and the Indian mindset.
 - **Udai Pareek** (IIM Ahmedabad and elsewhere): with **T. V. Rao** designed the **HRD system at Larsen and Toubro** (mid-1970s), among the first in the world; co-founded the **Indian Society for Applied Behavioural Science (ISABS)**; developed many instruments on roles, stress and organisational climate.
 - **D. M. Pestonjee** (IIM Ahmedabad): organisational stress and coping, and handbooks of Indian psychological instruments.
-- **J. P. Das** (Utkal, later Alberta): with Naglieri and Kirby developed the **PASS model of intelligence** (planning, attention, simultaneous and successive processing), taught in the UGC NET intelligence unit.
+- **J. P. Das** (Utkal, later Alberta): with Naglieri and Kirby developed the **PASS model of intelligence** (planning, attention, simultaneous and successive processing), taught in the intelligence unit of postgraduate syllabi.
 
 ### Clinical and cultural voices
 - **J. S. Neki** (PGIMER, Chandigarh): the **guru-chela relationship** as a model for therapy in India (1973): more directive, more dependent, with the therapist as a guide.
@@ -185,7 +185,7 @@ Exams ask for names, institutions, key works and ideas. Learn the people in clus
 :::
 
 :::clinician
-Bose's correspondence with Freud (1921 to 1937) has been studied by historians of psychoanalysis and by Ashis Nandy. Bose's opposite-wish theory treats wishes as pairs held in balance, with symptoms arising when the balance is disturbed; he also gave greater weight to identification with the mother and to the wish to be female in male development. Bose's 1938 Applied Psychology wing and the Lumbini Park hospital made Calcutta an early centre of clinical work. On J. B. P. Sinha: his model draws on the Indian preference for personalised, hierarchical relationships (sneha and shraddha: affection from the senior, deference from the junior) and was tested in public-sector and industrial organisations in Bihar and elsewhere; it is a standard NET and organisational psychology question, and is compared with the Ohio State and Michigan two-factor models. On the Kuppuswamy scale: it scores education and occupation of the head of family and monthly family income, with income bands that must be updated using the consumer price index, which many papers have done for recent years; always cite the update you use.
+Bose's correspondence with Freud (1921 to 1937) has been studied by historians of psychoanalysis and by Ashis Nandy. Bose's opposite-wish theory treats wishes as pairs held in balance, with symptoms arising when the balance is disturbed; he also gave greater weight to identification with the mother and to the wish to be female in male development. Bose's 1938 Applied Psychology wing and the Lumbini Park hospital made Calcutta an early centre of clinical work. On J. B. P. Sinha: his model draws on the Indian preference for personalised, hierarchical relationships (sneha and shraddha: affection from the senior, deference from the junior) and was tested in public-sector and industrial organisations in Bihar and elsewhere; it is a standard competitive exam and organisational psychology question, and is compared with the Ohio State and Michigan two-factor models. On the Kuppuswamy scale: it scores education and occupation of the head of family and monthly family income, with income bands that must be updated using the consumer price index, which many papers have done for recent years; always cite the update you use.
 :::
 
 :::recall
@@ -298,7 +298,7 @@ Indigenous and Indian psychology face serious criticisms, which a PG answer must
   "choices": [
     { "label": "Approve it: pride in Indian traditions is important", "verdict": "harm", "outcome": "The examiners fail the proposal: age is not evidence, and the claim cannot be tested.", "why": "An appeal to antiquity is a fallacy. A dissertation needs a testable question." },
     { "label": "Help her turn it into a testable question, for example whether a guna-based measure predicts wellbeing beyond the Big Five in Varanasi students, and to review critiques as well as sources", "verdict": "best", "outcome": "She designs a sound study, and the results add real evidence to the debate.", "why": "Indian concepts deserve rigorous testing, which is what indigenous psychology asks for." },
-    { "label": "Tell her Indian psychology is not a real field", "verdict": "ok", "outcome": "She loses interest in an area that is now in the UGC NET syllabus.", "why": "Dismissive and inaccurate; the field is legitimate when approached critically." }
+    { "label": "Tell her Indian psychology is not a real field", "verdict": "ok", "outcome": "She loses interest in an area that is now in postgraduate syllabi.", "why": "Dismissive and inaccurate; the field is legitimate when approached critically." }
   ]
 }
 :::
@@ -367,7 +367,7 @@ Guba and Lincoln's essays on these "**paradigmatic controversies**" are the stan
 :::
 
 ### The crisis in psychology
-The NET syllabus speaks of a **crisis in psychology due to strict adherence to the experimental-analytical paradigm (logical empiricism)**. In the early twentieth century the **Vienna Circle**'s **logical positivism** held that only statements that can be verified by observation or logic are meaningful. Psychology adopted **operationism** (Bridgman; S. S. Stevens): a concept means the operations used to measure it ("intelligence is what intelligence tests measure").
+Postgraduate syllabi speak of a **crisis in psychology due to strict adherence to the experimental-analytical paradigm (logical empiricism)**. In the early twentieth century the **Vienna Circle**'s **logical positivism** held that only statements that can be verified by observation or logic are meaningful. Psychology adopted **operationism** (Bridgman; S. S. Stevens): a concept means the operations used to measure it ("intelligence is what intelligence tests measure").
 
 Critics argued that this made psychology:
 - **Narrow**: meaning, purpose, values, culture and consciousness were pushed out because they were hard to measure.
@@ -404,7 +404,7 @@ Indian traditions add their own answers to the three questions:
 - **Epistemology**: valid knowledge comes through pramanas, including perception and inference, but also through **trained first-person insight**, which is held to be reliable when the mind is disciplined.
 - **Methodology**: practices such as meditation, self-inquiry and ethical discipline are means of knowing, and **knowledge should transform the knower**.
 
-**Avidya and vidya.** The **Isha Upanishad** speaks of both: avidya (here, worldly or lower knowledge) and vidya (knowledge of the self), and says one should know both. The **Mundaka Upanishad** distinguishes **apara vidya** (lower knowledge, including the sciences, grammar and even the Vedas as texts) from **para vidya** (higher knowledge, by which the imperishable is known). In this frame, science is valuable apara vidya and spiritual self-knowledge is para vidya; they are different, not enemies. Indian psychology scholars use this to argue that psychology needs both third-person science and first-person self-knowledge, the "**primacy of self-knowledge**" in the NET syllabus.
+**Avidya and vidya.** The **Isha Upanishad** speaks of both: avidya (here, worldly or lower knowledge) and vidya (knowledge of the self), and says one should know both. The **Mundaka Upanishad** distinguishes **apara vidya** (lower knowledge, including the sciences, grammar and even the Vedas as texts) from **para vidya** (higher knowledge, by which the imperishable is known). In this frame, science is valuable apara vidya and spiritual self-knowledge is para vidya; they are different, not enemies. Indian psychology scholars use this to argue that psychology needs both third-person science and first-person self-knowledge, the "**primacy of self-knowledge**" in postgraduate syllabi.
 
 :::widget reveal
 {
@@ -433,7 +433,7 @@ Q: A researcher who believes reality is constructed through language and studies
 - Logical empiricism
 > Knowledge and realities are constructed in discourse.
 
-Q: The "crisis" in the NET syllabus refers mainly to problems caused by:
+Q: The "crisis" in postgraduate syllabi refers mainly to problems caused by:
 - The rise of Indian psychology
 - Too much qualitative research
 - The decline of psychoanalysis
@@ -471,7 +471,7 @@ Indian ideas have shaped Western psychology more than most textbooks admit:
 5. **Report honestly**, including null results, and invite critique from inside and outside the tradition.
 
 ### Science and spirituality
-The NET syllabus pairs "science and spirituality" with "avidya and vidya". A balanced position:
+Postgraduate syllabi pair "science and spirituality" with "avidya and vidya". A balanced position:
 - **Science** (apara vidya) gives public, testable, cumulative knowledge about behaviour, the brain and the effects of practices.
 - **Spiritual traditions** (aiming at para vidya) offer models of the self, ethical frameworks and **practices** that change experience and behaviour.
 - The two meet where practices can be studied (meditation, yoga, compassion training), where traditions offer testable models (the kleshas as roots of distress; the gunas as personality dimensions), and where psychology needs meaning, values and wisdom.
@@ -580,7 +580,7 @@ Frame: **definition, three or four key points, one example, one line of signific
 :::widget reveal
 {
   "prompt": "Short note: Pramanas",
-  "answer": "Valid means of knowledge in Indian epistemology. Nyaya accepts four: perception, inference, comparison, testimony. Mimamsa and Advaita add postulation and non-perception. Charvaka accepts only perception; Buddhists and Vaisheshika two; Samkhya-Yoga three. Inference rests on vyapti and is presented as a five-membered syllogism. Significance: a systematic theory of evidence, tested in both NET papers."
+  "answer": "Valid means of knowledge in Indian epistemology. Nyaya accepts four: perception, inference, comparison, testimony. Mimamsa and Advaita add postulation and non-perception. Charvaka accepts only perception; Buddhists and Vaisheshika two; Samkhya-Yoga three. Inference rests on vyapti and is presented as a five-membered syllogism. Significance: a systematic theory of evidence, tested in both the general and the psychology papers."
 }
 :::
 
@@ -618,7 +618,7 @@ Who named structuralism? :: Titchener.
 What is the stimulus error? :: Describing the object instead of the raw experience.
 Who wrote the 1913 behaviourist manifesto? :: John B. Watson.
 What is the phi phenomenon? :: Apparent motion from lights flashed in sequence, studied by Wertheimer.
-Name the four founding paths in the NET syllabus. :: Wundt, Freud, James and Dilthey.
+Name the four founding paths in postgraduate syllabi. :: Wundt, Freud, James and Dilthey.
 What is Dilthey's distinction? :: Explaining (causal laws) versus understanding (grasping meaning from within).
 Name the four states of consciousness in the Mandukya. :: Waking, dreaming, deep sleep and turiya.
 What does Patanjali's sutra 1.2 say? :: Yoga is the stilling of the fluctuations of the mind.
@@ -632,7 +632,6 @@ What is the Pondicherry Manifesto? :: A 2002 statement calling for an Indian psy
 :::
 
 ## 4.3 Q&A bank · Starting [starting]
-Try each question first, then open the answer.
 
 :::qa Why is psychology called a science, and what makes it different from common sense? [starting]
 ### Short answer
@@ -1107,7 +1106,7 @@ Humanistic psychology sees people as **free, growth-oriented and best understood
 | Weak research base | Relied on case studies and self-report early on |
 :::
 
-:::qa What are the "four founding paths" of academic psychology in the UGC NET syllabus? [beginner]
+:::qa What are the "four founding paths" of academic psychology in postgraduate syllabi? [beginner]
 ### Short answer
 The syllabus names **Wundt, Freud, James and Dilthey**: four distinct routes into psychology, from the laboratory, the clinic, pragmatic philosophy and the human sciences.
 

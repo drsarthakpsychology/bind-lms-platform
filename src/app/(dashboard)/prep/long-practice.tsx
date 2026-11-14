@@ -19,6 +19,8 @@ export type LongPracticeProps = {
   study: { href: string; label: string } | null;
   prev: string | null;
   next: string | null;
+  /** The way on after the topic's last answer: back to the topic's list. */
+  done?: { href: string; label: string };
 };
 
 const toggle =
@@ -28,8 +30,9 @@ const toggle =
  * One long answer: the question, then the model answer, where marks are lost
  * and the key points to tick. No timer, no lock.
  */
-export function LongPractice({ id, keyPoints, pitfalls, answer, study, prev, next }: LongPracticeProps) {
+export function LongPractice({ id, keyPoints, pitfalls, answer, study, prev, next, done }: LongPracticeProps) {
   const [shown, setShown] = React.useState(false);
+  const onward = next ? { href: next, label: "Next" } : (done ?? null);
   const ticksRaw = useStored(ticksKey(id));
   const ticks = React.useMemo(() => new Set(parseList<number>(ticksRaw, "number")), [ticksRaw]);
   const saved = useIdList("saved").includes(id);
@@ -128,9 +131,9 @@ export function LongPractice({ id, keyPoints, pitfalls, answer, study, prev, nex
         ) : (
           <span />
         )}
-        {next ? (
-          <Link href={next} className={btnInk} onClick={() => (shown && mark.total ? noteAnswer("long", id, mark.covered / mark.total >= 0.6) : undefined)}>
-            Next <ArrowRight className="size-4" aria-hidden />
+        {onward ? (
+          <Link href={onward.href} className={btnInk} onClick={() => (shown && mark.total ? noteAnswer("long", id, mark.covered / mark.total >= 0.6) : undefined)}>
+            {onward.label} <ArrowRight className="size-4" aria-hidden />
           </Link>
         ) : null}
       </nav>

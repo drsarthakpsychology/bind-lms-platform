@@ -86,7 +86,7 @@ export default async function SimReviewPage() {
   }));
 
   return (
-    <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6">
+    <div className="mx-auto max-w-5xl">
       <PageHeader
         title="Practice sessions"
         description="AI-generated scores, always labelled. Faculty comment sits on top."

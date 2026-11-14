@@ -43,7 +43,7 @@ export function CfiDrill() {
         correcting the belief instead of understanding it.
       </p>
 
-      <div className="rounded-md border-2 border-border bg-card p-4 hard-shadow-sm">
+      <div className="rounded-lg border-2 border-border bg-card p-4 hard-shadow-sm">
         <p className="text-caption text-muted-foreground">The patient says</p>
         <p className="mt-1 text-base font-medium">&ldquo;{scenario.idiom}&rdquo;</p>
         <p className="mt-2 text-small text-muted-foreground">{scenario.setting}</p>
@@ -66,7 +66,7 @@ export function CfiDrill() {
           {questions.map((q, i) => {
             const s = scores[i];
             return (
-              <div key={i} className="rounded-md border-2 border-border bg-card p-3">
+              <div key={i} className="rounded-lg border-2 border-border bg-card p-3">
                 <div className="flex items-start justify-between gap-2">
                   <p className="text-small">{i + 1}. {q}</p>
                   <span className={cn("shrink-0 text-caption font-medium", s.dismissive ? "text-destructive" : s.eliciting ? "text-status-success-fg" : "text-muted-foreground")}>
@@ -99,7 +99,7 @@ export function CfiDrill() {
       ) : null}
 
       {questions.length >= 6 || done ? (
-        <div className="rounded-md border-2 border-border bg-card p-4">
+        <div className="rounded-lg border-2 border-border bg-card p-4">
           <p className="flex items-center gap-2 text-base font-semibold">
             <Scale className="size-4" aria-hidden />
             Did you understand without dismissing?

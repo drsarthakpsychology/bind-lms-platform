@@ -5,11 +5,12 @@ import { Check, X } from "lucide-react";
 import type { PrepQView } from "@/lib/prep/view";
 import { cn } from "@/lib/utils";
 import { TipButton, TipPanel, useFirstTimeTip } from "@/components/help/first-time-tip";
+import { AnswerStamp, HalftoneCorner } from "@/components/reactions/graphics";
 
 import { LETTERS as LETTER, ROMAN } from "@/lib/prep/labels";
 
 const option =
-  "flex min-h-12 w-full min-w-0 items-start gap-3 rounded-md border-2 border-foreground bg-card px-4 py-3 text-left text-base font-medium transition-transform duration-150 motion-reduce:transition-none enabled:active:translate-y-px focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60 disabled:cursor-default";
+  "relative flex min-h-12 w-full min-w-0 items-start gap-3 rounded-lg border-2 border-foreground bg-card px-4 py-3 text-left text-base font-medium transition-transform duration-150 motion-reduce:transition-none enabled:active:translate-y-px focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60 disabled:cursor-default";
 const keyBox = "mt-px grid size-7 shrink-0 place-items-center rounded-md border-2 border-current text-xs font-bold";
 
 /** The stem, passage, statements and lists of a question (exam style). */
@@ -22,13 +23,16 @@ export function QuestionBody({ q, headingRef, number }: { q: PrepQView; headingR
           {q.passage}
         </div>
       ) : null}
-      <h2 ref={headingRef} tabIndex={-1} className="text-lg font-semibold leading-snug outline-none sm:text-xl">
-        {number ? <span className="mr-2 font-mono text-link">Q{number}.</span> : null}
-        <span className="whitespace-pre-line">{q.stem}</span>
-      </h2>
+      <div className="relative isolate">
+        <HalftoneCorner className="-top-3 size-24 sm:size-28" />
+        <h2 ref={headingRef} tabIndex={-1} className="relative text-lg font-semibold leading-snug outline-none sm:text-xl">
+          {number ? <span className="mr-2 font-mono text-link">Q{number}.</span> : null}
+          <span className="whitespace-pre-line">{q.stem}</span>
+        </h2>
+      </div>
       {q.statements?.length ? (
         q.type === "assertion-reason" ? (
-          <dl className="space-y-2 rounded-md border-2 border-foreground bg-card p-3 text-base">
+          <dl className="space-y-2 rounded-lg border-2 border-foreground bg-card p-3 text-base">
             {q.statements.slice(0, 2).map((s, i) => (
               <div key={i} className="min-w-0">
                 <dt className="font-semibold">{i === 0 ? "Assertion (A)" : "Reason (R)"}</dt>
@@ -37,7 +41,7 @@ export function QuestionBody({ q, headingRef, number }: { q: PrepQView; headingR
             ))}
           </dl>
         ) : (
-          <ol className="space-y-1.5 rounded-md border-2 border-foreground bg-card p-3 text-base">
+          <ol className="space-y-1.5 rounded-lg border-2 border-foreground bg-card p-3 text-base">
             {q.statements.map((s, i) => (
               <li key={i} className="flex gap-2">
                 <span className="shrink-0 font-mono font-semibold">{i + 1}.</span>
@@ -48,7 +52,7 @@ export function QuestionBody({ q, headingRef, number }: { q: PrepQView; headingR
         )
       ) : null}
       {q.lists ? (
-        <div className="grid min-w-0 gap-3 rounded-md border-2 border-foreground bg-card p-3 text-sm sm:grid-cols-2 sm:text-base">
+        <div className="grid min-w-0 gap-3 rounded-lg border-2 border-foreground bg-card p-3 text-sm sm:grid-cols-2 sm:text-base">
           <div>
             <p className="font-semibold">List I</p>
             <ol className="mt-1 space-y-1">
@@ -81,7 +85,7 @@ export function QuestionBody({ q, headingRef, number }: { q: PrepQView; headingR
  * The four options. Keys 1 to 4 are shown on each. With `answer` set, picks lock
  * and right/wrong show with an icon and a word (never colour alone).
  */
-export function Options({ q, picked, onPick, answer, disabled }: { q: PrepQView; picked: number | null; onPick: (i: number) => void; answer?: number; disabled?: boolean }) {
+export function Options({ q, picked, onPick, answer, disabled, stampMotion = true }: { q: PrepQView; picked: number | null; onPick: (i: number) => void; answer?: number; disabled?: boolean; stampMotion?: boolean }) {
   const locked = answer !== undefined;
   return (
     <div role="radiogroup" aria-label="Answers" className="grid gap-2.5">
@@ -103,6 +107,7 @@ export function Options({ q, picked, onPick, answer, disabled }: { q: PrepQView;
               state === "wrong" && "bg-status-alert-bg text-status-alert-fg",
             )}
           >
+            {locked && isPicked ? <AnswerStamp ok={state === "right"} animate={stampMotion} /> : null}
             <span className={keyBox} aria-hidden>
               {state === "right" ? <Check className="size-4" /> : state === "wrong" ? <X className="size-4" /> : i + 1}
             </span>
@@ -158,20 +163,29 @@ export function useShortcuts(handlers: { pick?: (i: number) => void; next?: () =
  * Keyboard keys, only where a keyboard is likely (wide screens). Shown once,
  * then folded into a small "Keys" button.
  */
+/** The Keys tips' ids. The first answer closes the panel (startHowTo). */
+export const KEYS = "prep-keys";
+export const KEYS_MOCK = "prep-keys-mock";
+
 export function KeysHint({ mark = false }: { mark?: boolean }) {
-  const tip = useFirstTimeTip(mark ? "prep-keys-mock" : "prep-keys");
+  const tip = useFirstTimeTip(mark ? KEYS_MOCK : KEYS);
+  const keys = (
+    <p>
+      <kbd className="font-mono">1</kbd> to <kbd className="font-mono">4</kbd> answer · <kbd className="font-mono">N</kbd> next
+      {mark ? (
+        <>
+          {" "}· <kbd className="font-mono">M</kbd> mark for review
+        </>
+      ) : null}
+    </p>
+  );
   return (
     <>
-      <TipButton tip={tip} label="Keys" className="hidden lg:inline-flex" />
+      <TipButton tip={tip} label="Keys" className="hidden lg:inline-flex">
+        {keys}
+      </TipButton>
       <TipPanel tip={tip} title="Keys" className="hidden lg:block lg:basis-full">
-        <p>
-          <kbd className="font-mono">1</kbd> to <kbd className="font-mono">4</kbd> answer · <kbd className="font-mono">N</kbd> next
-          {mark ? (
-            <>
-              {" "}· <kbd className="font-mono">M</kbd> mark for review
-            </>
-          ) : null}
-        </p>
+        {keys}
       </TipPanel>
     </>
   );

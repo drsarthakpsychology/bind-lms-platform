@@ -40,7 +40,7 @@ export default async function LecturesIndexPage() {
   if (mine.length === 1) redirect(`/courses/${mine[0].id}`);
 
   return (
-    <div className="space-y-6">
+    <div className="mx-auto max-w-5xl space-y-6">
       <PageHeader eyebrow="Lectures" title="Your courses" description="Pick a course to see its lectures." />
       {mine.length === 0 ? (
         <EmptyState

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { ToolHeader } from "@/components/help/tool-header";
+import { HowToStart } from "@/components/help/how-to";
 import { createClient } from "@/lib/supabase/server";
 import { analyzeWeakSpots, generateDrill } from "@/lib/practice/weak-spots";
 import { loadHistory } from "@/lib/history/server";
@@ -43,10 +44,10 @@ export default async function WeakSpotsPage() {
   const drill = generateDrill(spots, 10, history.map);
 
   return (
-    <div className="mx-auto max-w-2xl px-4 py-8 sm:px-6">
+    <div className="mx-auto max-w-2xl">
       <Link href="/practice/consulting-room" className="inline-flex min-h-11 items-center gap-1 text-sm font-semibold text-link hover:underline">
         <ArrowLeft className="size-4" aria-hidden />
-        Consulting Room
+        Back to AI patient interview
       </Link>
       <ToolHeader title="Weak spots" tip={{ id: "weak-spots", steps: ["The skills you miss most, with a drill made from them."] }} />
 
@@ -56,7 +57,9 @@ export default async function WeakSpotsPage() {
 
       {drill.length > 0 ? (
         <div className="mt-8">
-          <WeakSpotsDrill items={drill} />
+          <HowToStart id="weak-spots">
+            <WeakSpotsDrill items={drill} />
+          </HowToStart>
         </div>
       ) : null}
     </div>

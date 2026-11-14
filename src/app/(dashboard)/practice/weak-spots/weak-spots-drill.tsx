@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import { Target, Zap } from "lucide-react";
 import Link from "next/link";
 import type { DrillItem } from "@/lib/practice/weak-spots";
+import { EndReaction } from "@/components/reactions/graphics";
 
 /**
  * The weak-spots drill: 10 items generated on the spot from the student's
@@ -48,7 +49,8 @@ export function WeakSpotsDrill({ items }: { items: DrillItem[] }) {
 
   if (done) {
     return (
-      <div className="rounded-md border-2 border-border bg-card p-6 hard-shadow-sm">
+      <div className="rounded-lg border-2 border-border bg-card p-6 hard-shadow-sm">
+        <EndReaction right={score} total={items.length} seed={items[0]?.id} />
         <p className="flex items-center gap-2 text-base font-semibold">
           <Zap className="size-4 text-link" aria-hidden />
           Drill complete: {score} / {items.length}
@@ -82,7 +84,7 @@ export function WeakSpotsDrill({ items }: { items: DrillItem[] }) {
         </span>
       </div>
 
-      <div className="rounded-md border-2 border-border bg-card p-5 hard-shadow-sm">
+      <div className="rounded-lg border-2 border-border bg-card p-5 hard-shadow-sm">
         <p className="text-small font-medium">{item.scenario}</p>
         <p className="mt-4 text-caption font-semibold text-muted-foreground">
           What do you say next?

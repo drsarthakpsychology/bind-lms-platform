@@ -3,7 +3,6 @@ export const part3 = String.raw`
 # Part V · Exam zone: Q&A bank
 
 ## 5.1 Q&A bank · Starting [core][starting]
-Think each question through before you open the answer. These questions build on Part I: how a new treatment becomes real and how to read the evidence.
 
 :::qa Why do so many new psychiatric medicines fail in trials, even when they looked promising in animals? [starting]
 ### Short answer

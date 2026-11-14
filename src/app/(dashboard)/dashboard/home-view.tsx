@@ -8,6 +8,8 @@ import { pct, type StrengthsWeaknesses, type TopicScore } from "@/lib/progress/s
 import type { ContinueKind, ContinueStep } from "./next-step";
 import type { QuestCard } from "@/lib/hints/server";
 import { QUEST_XP } from "@/lib/hints/quests";
+import { PageHeader } from "@/components/design-system/page-header";
+import { EmptyState } from "@/components/design-system/empty-state";
 
 /**
  * Home, three blocks and nothing else (plan section 8): one Continue card,
@@ -152,9 +154,7 @@ function TopicRow({ t, weak }: { t: TopicScore; weak: boolean }) {
 export function TopicsCard({ data }: { data: StrengthsWeaknesses }) {
   if (!data.hasData) {
     return (
-      <p className="rounded-2xl border-2 border-dashed border-foreground/30 p-4 text-sm font-semibold text-muted-foreground">
-        Your strongest and weakest topics show up here after a few quizzes.
-      </p>
+      <EmptyState row icon={<TrendingUp className="size-5" />} title="Your strongest and weakest topics show up here after a few quizzes." />
     );
   }
   return (
@@ -222,10 +222,7 @@ export function HomeBody({
         </Alert>
       ) : null}
 
-      <header>
-        <p className="text-eyebrow text-link">Home</p>
-        <h1 className="text-h1">{welcomeBack ? "Welcome back." : "Welcome to VIBHA."}</h1>
-      </header>
+      <PageHeader eyebrow="Home" title={welcomeBack ? "Welcome back." : "Welcome to VIBHA."} className="pb-0" />
 
       {goal ? (
         <div className="grid min-w-0 gap-5 lg:grid-cols-[minmax(0,1.7fr)_minmax(0,1fr)]">

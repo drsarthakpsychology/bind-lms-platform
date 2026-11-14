@@ -932,7 +932,7 @@ export const QUESTIONS: PrepQuestion[] = [
     ],
     answer: 2,
     explanation:
-      "Single-unit recording, ECoG (electrodes placed on the cortical surface, usually during epilepsy work-up) and stereotaxic lesions all require surgery. fNIRS uses light sensors placed on the scalp and is non-invasive. The UGC NET syllabus explicitly asks students to distinguish invasive and non-invasive methods.",
+      "Single-unit recording, ECoG (electrodes placed on the cortical surface, usually during epilepsy work-up) and stereotaxic lesions all require surgery. fNIRS uses light sensors placed on the scalp and is non-invasive. Postgraduate syllabi explicitly ask students to distinguish invasive and non-invasive methods.",
     ref: "Kolb & Whishaw, ch. 7; Pinel, ch. 5",
   }),
   b({

@@ -115,7 +115,7 @@ export function CheckinForm({ weekLabel, initial }: Props) {
 
 function Row({ label, hint, children }: { label: string; hint: string; children: React.ReactNode }) {
   return (
-    <div className="rounded-md border-2 border-border bg-card p-4">
+    <div className="rounded-lg border-2 border-border bg-card p-4">
       <p className="text-small font-medium">{label}</p>
       <p className="text-caption text-muted-foreground">{hint}</p>
       <div className="mt-2">{children}</div>

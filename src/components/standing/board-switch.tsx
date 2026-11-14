@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { BOARDS, type BoardKey } from "@/lib/standing/boards";
-import { cn } from "@/lib/utils";
+import { segmentGroup, segmentItem } from "@/components/design-system/segment";
 
 /**
  * "Quiz | Overall": the switch at the top of both leaderboards, so students
@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
  */
 export function BoardSwitch({ active }: { active: BoardKey }) {
   return (
-    <nav aria-label="Leaderboards" className="inline-flex rounded-full border-2 border-foreground bg-card p-1">
+    <nav aria-label="Leaderboards" className={segmentGroup}>
       {(Object.keys(BOARDS) as BoardKey[]).map((k) => {
         const b = BOARDS[k];
         const on = k === active;
@@ -17,10 +17,7 @@ export function BoardSwitch({ active }: { active: BoardKey }) {
             key={k}
             href={b.href}
             aria-current={on ? "page" : undefined}
-            className={cn(
-              "inline-flex min-h-10 items-center rounded-full px-5 text-sm font-bold transition-transform active:translate-y-px",
-              on ? "border-2 border-foreground bg-primary text-primary-foreground" : "border-2 border-transparent text-foreground hover:bg-muted",
-            )}
+            className={segmentItem(on, "px-5")}
           >
             {b.short}
           </Link>

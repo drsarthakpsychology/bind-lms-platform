@@ -27,7 +27,7 @@ export default async function NotAvailablePage({
 
   if (state === "live") {
     return (
-      <div className="mx-auto max-w-md px-4 py-16 text-center sm:px-6">
+      <div className="mx-auto max-w-md py-16 text-center">
         <span className="mx-auto inline-flex size-12 items-center justify-center rounded-md border-2 border-border bg-primary hard-shadow-sm">
           <Lock className="size-6 text-primary-foreground" aria-hidden />
         </span>
@@ -42,7 +42,7 @@ export default async function NotAvailablePage({
   }
 
   return (
-    <div className="mx-auto max-w-md px-4 py-16 text-center sm:px-6">
+    <div className="mx-auto max-w-md py-16 text-center">
       <Clock3 className="mx-auto size-10 text-muted-foreground" aria-hidden />
       <h1 className="mt-4 text-h1">Not unlocked yet</h1>
       <p className="mt-2 text-small text-muted-foreground">

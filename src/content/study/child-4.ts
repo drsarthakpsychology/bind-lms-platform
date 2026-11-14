@@ -1,7 +1,6 @@
 /* Module · Child and adolescent mental health, Q&A banks. Original text written for VIBHA School of Psychology. */
 export const qa = String.raw`
 ## 4.2 Q&A bank · Starting [core][starting]
-Think each question through, ideally aloud or on paper, before you open the answer.
 
 :::qa Why does a child assessment need several informants, and what do you do when they disagree? [starting]
 ### Short answer

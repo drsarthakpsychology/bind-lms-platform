@@ -1,7 +1,6 @@
 /* Suicide, self-harm and risk: Q&A bank (Starting, Beginner, Advanced). Original text written for VIBHA School of Psychology. */
 export const qa = String.raw`
 ## 5.3 Q&A bank · Starting [core][starting]
-Think each question through, then open the answer.
 
 :::qa Why do people who are thinking about suicide often not tell anyone? [starting]
 ### Short answer
@@ -117,7 +116,6 @@ Trouble sleeping, constant worry, guilt, feeling overwhelmed. Reach out to a cou
 :::
 
 ## 5.4 Q&A bank · Beginner [core][beginner]
-Think each question through, then open the answer.
 
 :::qa Why is a previous suicide attempt the strongest predictor of future suicide, yet a poor predictor for any single person? [beginner]
 ### Short answer
@@ -308,7 +306,6 @@ Record what was asked and answered in the person's words, the collateral, the fo
 :::
 
 ## 5.5 Q&A bank · Advanced [core][advanced]
-Think each question through, then open the answer.
 
 :::qa Compare the interpersonal theory and the integrated motivational-volitional model. [advanced]
 ### Short answer

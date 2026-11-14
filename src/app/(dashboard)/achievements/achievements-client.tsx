@@ -72,7 +72,7 @@ export function AchievementsClient({ earned, progress, rollNumber }: { earned: M
   const issued = earned.filter((e) => e.status === "issued").length;
 
   return (
-    <div className="mx-auto w-full max-w-4xl space-y-8">
+    <div className="mx-auto w-full max-w-5xl space-y-8">
       <header className="space-y-1">
         <p className="text-eyebrow text-link">Your credentials</p>
         <h1 className="text-h1">My Achievements</h1>

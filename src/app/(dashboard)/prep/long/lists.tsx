@@ -54,7 +54,7 @@ function List({ kind, title, ids, rows }: { kind: ListKind; title: string; ids: 
             <li key={r.id}>
               <Link
                 href={r.href}
-                className="flex min-h-14 items-center gap-3 rounded-md border-2 border-foreground bg-card px-4 py-3 transition-transform duration-150 hover:-translate-y-0.5 hover:hard-shadow-sm motion-reduce:transition-none motion-reduce:hover:translate-y-0 focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60"
+                className="flex min-h-14 items-center gap-3 rounded-lg border-2 border-foreground bg-card px-4 py-3 transition-transform duration-150 hover:-translate-y-0.5 hover:hard-shadow-sm motion-reduce:transition-none motion-reduce:hover:translate-y-0 focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60"
               >
                 <span className="min-w-0 flex-1">
                   <span className="block font-semibold leading-snug [overflow-wrap:anywhere]">{r.question}</span>

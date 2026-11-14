@@ -9,6 +9,7 @@ import { EXPERIMENTS, type LabExperiment } from "@/lib/lab/experiments";
 import { cn } from "@/lib/utils";
 import { labEntry } from "@/lib/lab/entries";
 import { CasebookShelf } from "@/components/casebook/casebook-shelf";
+import { backLinkClass } from "@/components/design-system/back-link";
 
 const EMPTY = emptyState();
 const AREA_ICON = { Memory: Brain, Attention: Eye, Perception: Eye, Learning: Sparkles, Thinking: Lightbulb, Methods: Microscope, Development: Baby, Social: Users } as const;
@@ -64,9 +65,9 @@ export function LabHome({ serverState, save }: { serverState: LearnState | null;
   const levels = ["Foundation", "Intermediate", "Advanced"] as const;
 
   return (
-    <div className="mx-auto w-full min-w-0 max-w-4xl space-y-8 px-4 py-6 sm:px-6 lg:py-10">
-      <Link href="/games" className="inline-flex min-h-11 items-center gap-1 rounded-full border-2 border-foreground bg-card px-3 py-1.5 text-sm font-bold">
-        <ArrowLeft className="size-4" aria-hidden /> Games
+    <div className="mx-auto w-full min-w-0 max-w-4xl space-y-8">
+      <Link href="/games" className={backLinkClass}>
+        <ArrowLeft className="size-4" aria-hidden /> Back to Games
       </Link>
 
       <header className="flex items-start gap-4">

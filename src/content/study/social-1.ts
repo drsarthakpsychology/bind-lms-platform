@@ -310,7 +310,7 @@ Bernard Weiner applied attribution to achievement. Causes vary on three dimensio
 | **Stability** | Stable or unstable | Expectation of future success |
 | **Controllability** | Controllable or uncontrollable | Guilt, shame, anger, pity from others |
 
-A student who fails NEET and says "I'm not intelligent" (internal, stable, uncontrollable) expects to fail again and feels shame. One who says "I didn't revise enough" (internal, unstable, controllable) feels guilt but can plan to change. Controllability also shapes how others respond: we help people whose problems seem uncontrollable and are angry with people whose problems seem self-made, which is one root of stigma towards addiction and mental illness.
+A student who fails the medical entrance and says "I'm not intelligent" (internal, stable, uncontrollable) expects to fail again and feels shame. One who says "I didn't revise enough" (internal, unstable, controllable) feels guilt but can plan to change. Controllability also shapes how others respond: we help people whose problems seem uncontrollable and are angry with people whose problems seem self-made, which is one root of stigma towards addiction and mental illness.
 
 :::widget sort
 {

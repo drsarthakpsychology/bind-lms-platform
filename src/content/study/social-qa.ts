@@ -3,7 +3,6 @@ export const qa = String.raw`
 # Part IV · Exam zone
 
 ## 4.1 Q&A bank · Starting [starting]
-Think each question through before opening the answer. These model the depth examiners reward.
 
 :::qa What makes social psychology different from personality psychology and sociology? [starting]
 ### Short answer

@@ -6,23 +6,22 @@ import { useRouter } from "next/navigation";
 import { Search, ArrowRight, CornerDownLeft, X } from "lucide-react";
 import { haptic } from "@/lib/haptics";
 import { cn } from "@/lib/utils";
-import { searchPalette, type PaletteEntry } from "@/lib/search/palette";
+import { searchPalette, startEntries, type PaletteEntry } from "@/lib/search/palette";
 
 const GROUP_LABEL: Record<PaletteEntry["group"], string> = {
-  Tools: "Practice tools",
-  Reference: "Quick Reference",
-  Courses: "Courses",
-  Cases: "Case library",
-  Competencies: "Competencies",
-  Admin: "Admin",
   Nav: "Go to",
+  Study: "Study",
+  Medicines: "Medicines",
+  Tools: "Tools",
+  Reference: "Quick Reference",
+  Admin: "Admin",
 };
 
 /**
- * Ask the Syllabus: ⌘K command palette.
- * Opens with ⌘K (mac) / Ctrl+K (elsewhere) or from the sidebar. Searches the
- * real content available in this install (tools, courses, case docs) and
- * navigates. Keyboard: ↑/↓ move, Enter selects, Esc closes.
+ * Search: opens from the top bar's search box, ⌘K (Ctrl+K) or "/". Before
+ * anything is typed it offers the menu's places; then it searches the
+ * menu, tools, Study modules, medicines and the Quick Reference, and opens
+ * the pick. Keyboard: ↑/↓ move, Enter opens, Esc closes.
  */
 export function CommandPalette({ entries }: { entries: PaletteEntry[] }) {
   const router = useRouter();
@@ -73,7 +72,7 @@ export function CommandPalette({ entries }: { entries: PaletteEntry[] }) {
     };
   }, []);
 
-  const results = searchPalette(entries, query);
+  const results = query.trim() ? searchPalette(entries, query) : startEntries(entries);
 
   function onQuery(e: React.ChangeEvent<HTMLInputElement>) {
     setQuery(e.target.value);
@@ -117,7 +116,7 @@ export function CommandPalette({ entries }: { entries: PaletteEntry[] }) {
       className="fixed inset-0 z-50 flex bg-black/40 lg:items-start lg:justify-center lg:p-4 lg:pt-[12vh]"
       role="dialog"
       aria-modal="true"
-      aria-label="Ask the Syllabus"
+      aria-label="Search"
       onClick={() => setOpen(false)}
     >
       <div
@@ -133,7 +132,7 @@ export function CommandPalette({ entries }: { entries: PaletteEntry[] }) {
             value={query}
             onChange={onQuery}
             onKeyDown={onKeyDown}
-            placeholder="Ask the syllabus… e.g. 'sim patient', 'ethics', 'MSE'"
+            placeholder="Search lectures, topics, medicines…"
             className="w-full bg-transparent text-small focus:outline-none"
             aria-label="Search"
           />
@@ -151,9 +150,7 @@ export function CommandPalette({ entries }: { entries: PaletteEntry[] }) {
         <div className="flex-1 overflow-y-auto p-1 lg:max-h-[50vh]">
           {flat.length === 0 ? (
             <p className="px-3 py-6 text-center text-small text-muted-foreground">
-              {query.trim()
-                ? "Nothing matches that yet: try a tool name, a condition, or 'ethics'."
-                : "Type to search the syllabus, tools, and case library."}
+              {query.trim() ? "Nothing matches. Try another word." : "Type a topic, a medicine or a tool."}
             </p>
           ) : (
             grouped.map((g) => (
@@ -196,7 +193,6 @@ export function CommandPalette({ entries }: { entries: PaletteEntry[] }) {
           </span>
           <span>↑↓ navigate</span>
           <span>esc close</span>
-          <span className="ml-auto">Searches your courses, tools, and case library</span>
         </div>
       </div>
     </div>

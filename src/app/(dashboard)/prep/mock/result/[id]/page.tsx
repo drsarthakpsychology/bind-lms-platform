@@ -23,7 +23,7 @@ export default async function MockResultPage({ params }: { params: Promise<{ id:
 
   return (
     <PrepFrame>
-      <BackToPrep href="/prep/mock" label="Mocks" />
+      <BackToPrep href="/prep/mock" label="Mock tests" />
       {attempt.result ? (
         <MockResult view={resultView(spec, attempt.result, standing ?? attempt.standing, { saved: true, late: attempt.late, marked: attempt.marked })} />
       ) : (

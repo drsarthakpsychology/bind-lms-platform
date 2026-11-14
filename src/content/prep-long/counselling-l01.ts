@@ -26,7 +26,7 @@ In 1957 Carl Rogers made one of the boldest claims in the history of counselling
 Conditions 3, 4 and 5 are called the core conditions. Condition 6 is often forgotten, yet it is the one that decides whether the others reach the client at all.
 
 ## Empathy
-Empathy is sensing the client's private world as if it were one's own, without ever losing the "as if" quality. It is not sympathy, which is feeling sorry for someone, and it is not agreement. A student says, "Everyone at home thinks I will clear NEET this time, and I just sit with the book and nothing goes in." An empathic reply is: "You are carrying the whole family's hope, and the pressure is so heavy that studying itself has frozen." The counsellor captures both the feeling and its meaning, and checks it with the client.
+Empathy is sensing the client's private world as if it were one's own, without ever losing the "as if" quality. It is not sympathy, which is feeling sorry for someone, and it is not agreement. A student says, "Everyone at home thinks I will clear the medical entrance this time, and I just sit with the book and nothing goes in." An empathic reply is: "You are carrying the whole family's hope, and the pressure is so heavy that studying itself has frozen." The counsellor captures both the feeling and its meaning, and checks it with the client.
 
 ## Unconditional positive regard
 This is a warm acceptance of the client as a person, without conditions such as "I will value you if you stop drinking". It does not mean approving every action. A counsellor can accept a man who has hit his wife as a person worth helping while being clear that the violence must stop. Rogers saw this as the direct antidote to the conditions of worth the client learned in childhood.

@@ -49,6 +49,8 @@ import { creditServerPlay } from "@/lib/learn/credit-play";
 import { HintChip } from "@/components/hints/hint-chip";
 import { CASE_SCORE_PER_HINT } from "@/lib/hints/rules";
 import type { HintStatus } from "@/lib/hints/engine";
+import { useReaction } from "@/components/reactions/use-reaction";
+import { EndReaction } from "@/components/reactions/graphics";
 
 const EMPTY = emptyState();
 type Save = (s: LearnState) => Promise<unknown>;
@@ -90,6 +92,7 @@ export function DailyGame({ serverState, save, initial }: { serverState: LearnSt
   const [shake, setShake] = React.useState(0);
   const [gain, setGain] = React.useState<{ xp: number; key: number } | null>(null);
   const localDays = useLocalJson<string[]>(LOCAL_DAYS, NO_DAYS);
+  const reaction = useReaction();
 
   // Results can't be saved on the server yet: restore today's game from this browser.
   const restored = React.useRef(false);
@@ -122,6 +125,8 @@ export function DailyGame({ serverState, save, initial }: { serverState: LearnSt
         haptic("warning");
         setShake((k) => k + 1);
       } else if (last?.ok) haptic("success");
+      // The guess that ends the case gets its reaction on the result card, not as a pop-up.
+      if (last && !res.justFinished) reaction.onAnswer(last.ok);
     }
     if (res.justFinished) {
       const reveal = res.view.reveal;
@@ -229,7 +234,7 @@ export function DailyGame({ serverState, save, initial }: { serverState: LearnSt
   const streak = daily ? Math.max(daily.meta.streak, daily.meta.stored ? 0 : dailyStreak(localDays, daily.meta.day)) : 0;
 
   return (
-    <div className="mx-auto w-full max-w-2xl space-y-4 px-4 py-5 sm:px-6">
+    <div className="mx-auto w-full max-w-2xl space-y-4">
       <ModeSwitch tab={tab} onPick={openTab} />
 
       {tab === "ai" && (making || !aiGame) ? (
@@ -636,6 +641,7 @@ function Result({ game, gain, streak, onNextPractice, pending }: { game: Game; g
         <h2 className="text-h2 leading-tight">{r.answer}</h2>
         <p className="text-sm text-muted-foreground">{r.chapter}</p>
         <LearnLink topic={r.answer} className="mt-1" />
+        <EndReaction mood={solved ? (v.cluesOpen <= 2 ? "streak" : "right") : "wrong"} seed={v.caseId} className="mx-auto mt-4 w-fit max-w-full justify-center" />
         <div className="relative mt-4 flex items-end justify-center gap-4">
           <p>
             <CountUp value={v.score} duration={1} delay={0.3} className="font-pix text-5xl tabular-nums" />
@@ -658,7 +664,7 @@ function Result({ game, gain, streak, onNextPractice, pending }: { game: Game; g
       {v.mode === "daily" && (
         <div className={cn(card, "p-4")}>
           <p className="font-bold">Share your result (no spoilers)</p>
-          <pre className="mt-2 rounded-md border-2 border-dashed border-foreground bg-background p-3 font-sans text-sm whitespace-pre-wrap">{text("whatsapp")}</pre>
+          <pre className="mt-2 rounded-lg border-2 border-dashed border-foreground bg-background p-3 font-sans text-sm whitespace-pre-wrap">{text("whatsapp")}</pre>
           <div className="mt-3 grid gap-2 sm:grid-cols-3">
             <button type="button" className={btnSecondary} onClick={() => copy("whatsapp")}>
               {copied === "whatsapp" ? <Check className="size-4" aria-hidden /> : <Copy className="size-4" aria-hidden />} {copied === "whatsapp" ? "Copied" : "Copy for WhatsApp"}
@@ -751,7 +757,7 @@ function AiStart({ choice, onChoice, making, error, onStart }: { choice: AiChoic
       </div>
       <p className="flex items-center gap-2 text-sm font-bold">
         <span className="rounded-full border-2 border-foreground bg-primary px-2 py-0.5 text-xs text-primary-foreground">Coming soon</span>
-        <span className="text-muted-foreground">AI cases are being switched on. If one doesn't load yet, use Today&apos;s case or Practice.</span>
+        <span className="text-muted-foreground">AI cases are being switched on. If one doesn&apos;t load yet, use Today&apos;s case or Practice.</span>
       </p>
       {error && !making ? (
         <p className="flex items-start gap-2 text-sm" role="status">

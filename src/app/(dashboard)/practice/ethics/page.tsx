@@ -5,6 +5,7 @@ import { DilemmaFlow } from "./dilemmas";
 import { QuizCheck } from "@/components/practice/quiz-check";
 import type { QuizItem } from "@/lib/quiz/quiz";
 import { requireFeature } from "@/lib/flags";
+import { BackPill } from "@/components/study/back";
 
 /** Quiz-after-ethics (v5 §4.1): checks, not tests. Every item sourced. */
 const ETHICS_QUIZ: QuizItem[] = [
@@ -65,8 +66,9 @@ export default async function EthicsPage() {
   const dilemmas = todaysDilemmas(daySeed, 3);
 
   return (
-    <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
-      <ToolHeader title="Ethics and law" tip={{ id: "ethics", steps: ["Read the dilemma and decide.", "Then see what happens and what the law says."] }} />
+    <div className="mx-auto max-w-3xl">
+      <BackPill className="mb-4" />
+      <ToolHeader title="Ethics, law & referral" tip={{ id: "ethics", steps: ["Read the dilemma and decide.", "Then see what happens and what the law says."] }} />
 
       <div className="mt-6">
         <DilemmaFlow dilemmas={dilemmas} />

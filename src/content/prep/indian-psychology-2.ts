@@ -165,10 +165,10 @@ export const QUESTIONS_2: PrepQuestion[] = [
     "'Indian psychology' in the sense used by K. Ramakrishna Rao is not the same as 'psychology in India'.",
     "Rao used 'Indian psychology' for a psychological system rooted in Indian thought and practice, while 'psychology in India' is the academic discipline, mostly Western in origin, as practised in Indian universities.",
     0,
-    "Both are true and R explains A. The two-term distinction is central to NET Unit 1's treatment of 'disciplinary identity': one can do Western-style psychology in India, or study psychology drawn from Indian traditions anywhere.",
+    "Both are true and R explains A. The two-term distinction is central to the first syllabus unit's treatment of 'disciplinary identity': one can do Western-style psychology in India, or study psychology drawn from Indian traditions anywhere.",
     { ...NET, ref: "Rao & Paranjpe, Psychology in the Indian Tradition (2016)" }),
   mcq("ip-102", "indian-psychology-movement", 2,
-    "A major 2008 handbook of Indian psychology, widely used for UGC NET Unit 1, was edited by:",
+    "A major 2008 handbook of Indian psychology, widely used for the first unit of postgraduate syllabi, was edited by:",
     ["K. Ramakrishna Rao, Anand C. Paranjpe and Ajit K. Dalal", "Sudhir Kakar, Ashis Nandy and Durganand Sinha", "Janak Pandey, Girishwar Misra and Udai Pareek", "J.P. Das, Jack A. Naglieri and John R. Kirby"], 0,
     "Rao, Paranjpe and Dalal edited this 2008 handbook, a key text for Indian psychology. Kakar and Nandy are psychoanalytically oriented writers, and Durganand Sinha traced the history of psychology in India. Pandey and Misra are known for psychology-in-India surveys, and Pareek for organisational work. Das and Naglieri developed the CAS, and Kirby worked with Das on PASS theory.",
     { ...NET, ref: "Handbook of Indian Psychology (2008)" }),
@@ -285,7 +285,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
       "The psychology of Indian childhood and the mother",
       "Caste and leadership in Indian organisations",
     ], 0,
-    "Nandy analysed how colonialism shaped selves and cultures, including the hyper-masculine British self and Indian responses, as well as Gandhi's alternative. It is central to NET Unit 1's theme of 'colonialism and disciplinary identity'. Indian childhood and the mother was Kakar's subject, and test construction and organisational leadership are not Nandy's field.",
+    "Nandy analysed how colonialism shaped selves and cultures, including the hyper-masculine British self and Indian responses, as well as Gandhi's alternative. It is central to the first syllabus unit's theme of 'colonialism and disciplinary identity'. Indian childhood and the mother was Kakar's subject, and test construction and organisational leadership are not Nandy's field.",
     { ...NET, ref: "Nandy, 1983" }),
   mcq("ip-117", "deprivation", 3,
     "The 'Allahabad school' of research led by Durganand Sinha, L.B. Tripathi and Girishwar Misra is especially known for studies of:",
@@ -514,7 +514,7 @@ export const QUESTIONS_2: PrepQuestion[] = [
 
   // ── Applied and mixed items ─────────────────────────────────────────────
   mcq("ip-144", "ugc-unit1", 1,
-    "UGC NET Psychology Paper 2, Unit 1, lists psychological thought in which major Indian traditions?",
+    "The first unit of the postgraduate psychology syllabus lists psychological thought in which major Indian traditions?",
     [
       "Only modern Indian psychologists",
       "Samkhya, Nyaya, Mimamsa and Vedanta",

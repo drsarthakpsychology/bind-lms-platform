@@ -45,7 +45,7 @@ export function Verified({ spec }: { spec: PrepSpec }) {
       <p className="flex items-start gap-2 rounded-md border-2 border-foreground bg-status-info-bg px-3 py-2 text-sm text-status-info-fg">
         <Info className="mt-0.5 size-4 shrink-0" aria-hidden />
         <span>
-          <strong className="font-semibold">VIBHA practice mock.</strong> Covers what CUET-PG, UGC-NET and clinical entrances ask. Practice marking, not any one exam&apos;s.
+          <strong className="font-semibold">VIBHA practice mock.</strong> Practice marking, not any one exam&apos;s.
         </span>
       </p>
     );

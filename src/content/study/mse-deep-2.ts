@@ -236,7 +236,6 @@ Q: Which is the best MSE entry for thought content in a man with no suicidal tho
 :::
 
 ## 3.4 Three full MSE reports, worked [core][advanced]
-Read the short vignette, think about each heading, then reveal the model entry.
 
 :::widget worked
 {

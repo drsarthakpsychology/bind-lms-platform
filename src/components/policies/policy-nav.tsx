@@ -35,7 +35,7 @@ export function PolicyNav({
             href={`/policies/${p.meta.slug}`}
             aria-current={active ? "page" : undefined}
             className={cn(
-              "flex min-h-11 items-center rounded-md border-l-2 px-3 text-small transition-colors",
+              "flex min-h-11 items-center rounded-md border-2 px-3 text-small transition-colors",
               active
                 ? "border-link bg-primary/10 font-medium text-link"
                 : "border-transparent text-muted-foreground hover:bg-surface-2 hover:text-foreground",

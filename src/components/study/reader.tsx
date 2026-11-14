@@ -12,6 +12,8 @@ import { getLearnState, initLearnStore, setLearnState, useLearnState } from "@/l
 import { cn } from "@/lib/utils";
 import { SectionMarks } from "./marks";
 import s from "./study.module.css";
+import { backLinkClass } from "@/components/design-system/back-link";
+import { SectionMotif } from "@/components/reactions/graphics";
 
 export type TocItem = { id: string; num: string; title: string; part?: string; isTest: boolean; href: string };
 
@@ -58,7 +60,7 @@ function Toc({ items, moduleId, current, done, onPick }: { items: TocItem[]; mod
         const part = i === 0 || items[i - 1].part !== t.part ? t.part : undefined;
         return (
           <li key={t.id}>
-            {part ? <p className="mt-3 mb-1 px-2 text-[0.65rem] font-semibold tracking-wide text-muted-foreground uppercase">{part}</p> : null}
+            {part ? <p className="mt-3 mb-1 px-2 text-eyebrow text-muted-foreground">{part}</p> : null}
             <Link
               href={t.href}
               onClick={onPick}
@@ -103,6 +105,30 @@ function scrollBehavior(): ScrollBehavior {
     return "auto";
   }
 }
+
+/**
+ * The part of a section the student was on, kept in this browser so Home's
+ * Continue (and coming back to a section) opens on that part, not part 1.
+ * A per-device convenience: nothing breaks when storage is blocked.
+ */
+const partKey = (moduleId: string, sectionId: string) => `vibha-study-part:${moduleId}/${sectionId}`;
+function readPart(key: string): number | null {
+  try {
+    const n = Number(window.localStorage.getItem(key));
+    return Number.isInteger(n) && n > 0 ? n : null;
+  } catch {
+    return null;
+  }
+}
+function writePart(key: string, step: number) {
+  try {
+    if (step > 0) window.localStorage.setItem(key, String(step));
+    else window.localStorage.removeItem(key);
+  } catch {
+    /* storage blocked: the section simply opens on part 1 next time */
+  }
+}
+const noSubscribe = () => () => {};
 
 export type ChunkView = { title: string; node: React.ReactNode };
 
@@ -157,7 +183,12 @@ export function SectionReader({
   const [tocOpen, setTocOpen] = React.useState(false);
   const done = Boolean(st.study.done[studyKey(moduleId, section.id)]);
   // step = index of the current part; chunks.length = the "check yourself / finish" screen.
-  const [step, setStep] = React.useState(() => (done ? chunks.length : 0));
+  // Until the student moves, a finished section opens on its end screen and an
+  // unfinished one on the part they were last reading in this browser.
+  const key = partKey(moduleId, section.id);
+  const savedPart = React.useSyncExternalStore(noSubscribe, () => readPart(key), () => null);
+  const [picked, setPicked] = React.useState<number | null>(null);
+  const step = picked ?? (done ? chunks.length : Math.max(0, Math.min(savedPart ?? 0, chunks.length - 1)));
   const partRefs = React.useRef<(HTMLDivElement | null)[]>([]);
   const topRef = React.useRef<HTMLDivElement>(null);
   useStudyTimer(moduleId);
@@ -176,8 +207,15 @@ export function SectionReader({
   void recall;
   const hasCheck = viva.length > 0;
 
+  // Opened on a saved part (wide screens show every part up to it): bring that part into view.
+  const resumedAt = picked === null && !done ? savedPart : null;
+  React.useEffect(() => {
+    if (resumedAt && wide) partRefs.current[resumedAt]?.scrollIntoView({ block: "start" });
+  }, [resumedAt, wide]);
+
   function go(to: number) {
-    setStep(to);
+    setPicked(to);
+    if (!section.isTest) writePart(key, to < chunks.length ? to : 0);
     const behavior = scrollBehavior();
     requestAnimationFrame(() => {
       if (wide && to < chunks.length) partRefs.current[to]?.scrollIntoView({ behavior, block: "start" });
@@ -202,7 +240,7 @@ export function SectionReader({
   const finishButton = (
     <button type="button" onClick={finish} className="btn-sweep flex min-h-14 w-full items-center justify-between gap-3 rounded-md border-2 border-foreground bg-primary px-5 py-3 text-left text-primary-foreground hard-shadow-md">
       <span>
-        <span className="block text-xs font-semibold uppercase tracking-wide opacity-80">{done ? "Next" : "Finish this section"}</span>
+        <span className="block text-eyebrow opacity-80">{done ? "Next" : "Finish this section"}</span>
         <span className="block text-lg font-bold leading-tight">{next.label}</span>
       </span>
       <ArrowRight className="size-6 shrink-0" aria-hidden />
@@ -214,7 +252,7 @@ export function SectionReader({
       <aside className="hidden md:block" aria-label="Module contents">
         <div className="sticky top-[calc(var(--top-h)+1rem)] max-h-[calc(100dvh-var(--top-h)-2rem)] overflow-y-auto overscroll-contain rounded-3xl border-2 border-foreground bg-card p-3">
           <Link href={`/study/${moduleId}`} className="flex min-h-10 items-center gap-1.5 rounded-md px-2 py-1.5 text-sm font-semibold hover:bg-muted pointer-coarse:min-h-11">
-            <ArrowLeft className="size-4" aria-hidden /> Module {moduleNum} overview
+            <ArrowLeft className="size-4" aria-hidden /> Back to the module
           </Link>
           <p className="px-2 pt-1 text-xs text-muted-foreground">
             {readCount} of {readTotal} sections read
@@ -226,9 +264,10 @@ export function SectionReader({
       </aside>
 
       <article className="min-w-0 pb-36 md:pb-0">
-        <div ref={topRef} className="scroll-mt-24" />
+        <div ref={topRef} className="scroll-mt-shell" />
         <div className="mb-4 flex items-center justify-between gap-2 md:hidden">
-          <Link href={`/study/${moduleId}`} className="inline-flex min-h-11 shrink-0 items-center gap-1 rounded-md border-2 border-foreground bg-card px-3 py-1.5 text-sm font-semibold">
+          {/* Phones: the short name, so the contents button keeps its words. */}
+          <Link href={`/study/${moduleId}`} aria-label="Back to the module" className={backLinkClass}>
             <ArrowLeft className="size-4" aria-hidden /> Module {moduleNum}
           </Link>
           <button type="button" onClick={() => setTocOpen(!tocOpen)} aria-expanded={tocOpen} className="inline-flex min-h-11 min-w-0 items-center gap-1.5 rounded-md border-2 border-foreground bg-card px-3 py-1.5 text-sm font-semibold">
@@ -242,12 +281,13 @@ export function SectionReader({
           </div>
         ) : null}
 
-        <header className="mb-6 max-w-[68ch]">
-          <p className="text-xs font-semibold uppercase tracking-wide text-link">
+        <header className="relative mb-6 max-w-[68ch]">
+          {section.isTest ? null : <SectionMotif className="absolute top-0 right-0 hidden sm:inline-grid" />}
+          <p className="text-eyebrow text-link sm:pr-20">
             {moduleTitle}
             {section.part ? ` · ${section.part.replace(/^Part [IVX]+ · /, "")}` : ""}
           </p>
-          <h1 className="mt-1.5 break-words text-[1.85rem] font-black leading-[1.1] tracking-tight sm:text-4xl short:lg:text-3xl">
+          <h1 className="mt-1.5 break-words text-h1 sm:pr-20">
             {section.isTest ? "" : <span className="mr-2 text-link">{section.num}</span>}
             {section.title}
           </h1>
@@ -271,7 +311,7 @@ export function SectionReader({
             </div>
           ) : null}
           {/* One toolbar row: explanation style, bookmark, my note. */}
-          {!section.isTest ? <SectionMarks key={section.id} owner={owner} moduleId={moduleId} sectionId={section.id} sectionLabel={`${section.num} ${section.title}`} lead={<ViewToggle />} /> : <div className="mt-3"><ViewToggle /></div>}
+          {!section.isTest ? <SectionMarks key={section.id} owner={owner} moduleId={moduleId} sectionId={section.id} sectionLabel={`${section.num} ${section.title}`} lead={<ViewToggle className="flex w-full sm:inline-flex sm:w-auto" />} /> : <div className="mt-3"><ViewToggle /></div>}
         </header>
 
         {section.levelCheck ? (
@@ -283,7 +323,7 @@ export function SectionReader({
         ) : (
         <div className="max-w-[68ch] space-y-8">
           {shownParts.map((k) => (
-            <div key={k} ref={(el) => { partRefs.current[k] = el; }} className={cn("scroll-mt-24", k > 0 && wide && !section.isTest && "border-t-2 border-foreground/10 pt-8", s.reveal)}>
+            <div key={k} ref={(el) => { partRefs.current[k] = el; }} className={cn("scroll-mt-shell", k > 0 && wide && !section.isTest && "border-t-2 border-foreground/10 pt-8", s.reveal)}>
               {chunks[k].node}
             </div>
           ))}
@@ -294,7 +334,7 @@ export function SectionReader({
           {wide && !section.isTest && !atEnd ? (
             <button type="button" onClick={() => go(step + 1)} className="group flex w-full items-center justify-between gap-3 rounded-md border-2 border-foreground bg-card px-5 py-4 text-left transition-colors hover:bg-muted">
               <span>
-                <span className="block text-xs font-semibold uppercase tracking-wide text-muted-foreground">{step + 1 < chunks.length ? `Continue · part ${step + 2} of ${chunks.length}` : "Continue"}</span>
+                <span className="block text-eyebrow text-muted-foreground">{step + 1 < chunks.length ? `Continue · part ${step + 2} of ${chunks.length}` : "Continue"}</span>
                 <span className="block text-lg font-bold leading-tight">{step + 1 < chunks.length ? chunks[step + 1].title : hasCheck ? "Check yourself" : "Finish the section"}</span>
               </span>
               <ArrowRight className="size-5 shrink-0 transition-transform group-hover:translate-x-1" aria-hidden />

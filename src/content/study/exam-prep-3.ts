@@ -3,7 +3,7 @@ export const part3 = String.raw`
 # Part V · Exam zone: Q&A bank
 
 ## 5.1 Q&A bank · Starting [core][starting]
-Two kinds of question here: how to prepare and answer, and **model short notes** on core topics, written the way an examiner wants them. Try writing each answer yourself first, then compare.
+Two kinds of question here: how to prepare and answer, and **model short notes** on core topics, written the way an examiner wants them.
 
 :::qa How do I turn the official syllabus into a study plan I can actually follow? [starting]
 ### Short answer
@@ -17,7 +17,7 @@ Break the syllabus into **units and sub-topics**, rate each one honestly, order 
 5. **Attach a test**: for each row, the question set you will use (a practice set, past-paper questions, or ten questions you write yourself).
 6. **Track**: a row is "done" only when you score well on its test after a gap of a few days.
 
-### A worked example (part of UGC NET Paper 2)
+### A worked example (part of a general psychology paper)
 | Sub-topic | Rating | Weight | Order | Test |
 |---|---|---|---|---|
 | Reliability and validity | 1 | High | 1 | 20 past-paper MCQs |
@@ -121,7 +121,7 @@ Example: arrange Piaget's stages. Sensorimotor must come first and formal operat
 - Not checking every pair in the final option: one wrong pair makes the whole option wrong.
 :::
 
-:::qa A student's CUET PG mock: 75 questions, 60 attempted, 42 correct, 18 wrong. Work out the score and say what she should change. [starting]
+:::qa A student's master's entrance mock (+4, minus 1): 75 questions, 60 attempted, 42 correct, 18 wrong. Work out the score and say what she should change. [starting]
 ### Step 1: score
 - Correct: 42 × 4 = **168**
 - Wrong: 18 × 1 = **18** deducted
@@ -337,7 +337,7 @@ Structuralism gave psychology its laboratory; functionalism gave it its practica
 :::
 
 ## 5.2 Q&A bank · Beginner [core][beginner]
-Model answers on high-yield Paper 2 and entrance topics. Note how each answer follows its command word.
+Model answers on high-yield psychology paper and entrance topics. Note how each answer follows its command word.
 
 :::qa Long answer (10 marks): Compare and contrast classical and operant conditioning. [beginner]
 ### Introduction
@@ -764,7 +764,7 @@ Memory is best understood as **interacting systems and processes**: active worki
 
 :::qa Model short note (5 marks): Concepts of self in Indian psychology. [beginner]
 ### Introduction
-Indian philosophical traditions offer rich accounts of the self that are part of the UGC NET syllabus under Indian psychology. They differ from Western views by emphasising **consciousness beyond the ego**, **self-regulation** and **liberation**.
+Indian philosophical traditions offer rich accounts of the self that are part of postgraduate syllabi under Indian psychology. They differ from Western views by emphasising **consciousness beyond the ego**, **self-regulation** and **liberation**.
 
 ### Main concepts
 | Tradition | View of the self | Key terms |
@@ -785,9 +785,9 @@ Indian philosophical traditions offer rich accounts of the self that are part of
 These are philosophical systems first; translating them into testable psychological constructs requires care to avoid both dismissal and uncritical acceptance.
 :::
 
-:::qa Paper 1 short note (5 marks): Levels of teaching and effective teaching methods. [beginner]
+:::qa General paper short note (5 marks): Levels of teaching and effective teaching methods. [beginner]
 ### Introduction
-Teaching aptitude is a core unit of UGC NET Paper 1. A common framework describes **three levels of teaching**, each with a different aim and teacher role.
+Teaching aptitude is a core unit of the general paper on teaching and research aptitude. A common framework describes **three levels of teaching**, each with a different aim and teacher role.
 
 ### The three levels
 | Level | Associated with | Aim | Teacher's role | Student's role |

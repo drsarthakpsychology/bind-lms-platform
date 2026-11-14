@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { startHowTo } from "@/components/help/how-to";
 import { useRouter } from "next/navigation";
 import { ArrowRight, Eye, Flame, ScanEye, Undo2 } from "lucide-react";
 import type { LearnState } from "@/lib/learn/engine";
@@ -16,6 +17,8 @@ import { Btn, buzz, Kbd, motionCss as m, Panel, Pill, readLocal, Stat, toneFor, 
 import { HintBar, useHintStatus } from "@/components/hints/hint-chip";
 import { askHint } from "@/lib/hints/actions";
 import { hintedPoints, POINTS_KEPT } from "@/lib/hints/rules";
+import { useReaction } from "@/components/reactions/use-reaction";
+import { EndReaction } from "@/components/reactions/graphics";
 
 const LEVELS: { id: Level; label: string; line: string }[] = [
   { id: 1, label: "Starting", line: "Clear findings, one per part." },
@@ -57,6 +60,7 @@ export function MseLab({ serverState, save, board, submit }: { serverState: Lear
   useHistoryPrefetch("mse-lab");
 
   function start(level: Level) {
+    startHowTo("mse-lab");
     const seed = `${Date.now()}`;
     const rng = makeRng(hashString(seed));
     // Answer history: an excerpt not seen yet first, then a missed one (src/lib/history).
@@ -94,7 +98,7 @@ export function MseLab({ serverState, save, board, submit }: { serverState: Lear
 function Intro({ board, onStart }: { board: AccuracyBoardData; onStart: (l: Level) => void }) {
   useHotkeys({ "1": () => onStart(1), "2": () => onStart(2), "3": () => onStart(3) });
   return (
-    <div className={cn("mx-auto max-w-2xl space-y-6 px-4 py-6", m.rise)}>
+    <div className={cn("mx-auto max-w-2xl space-y-6", m.rise)}>
       <h1 className="text-h2">Pick a level</h1>
       <div className="grid gap-3 sm:grid-cols-3">
         {LEVELS.map((l) => (
@@ -120,6 +124,7 @@ function Round({ play, setPlay, onExcerptDone, onFinish }: { play: Play; setPlay
   const options = allOptions.filter((t) => !gone.includes(t));
   const hinted = gone.length > 0;
   const [hints, setHints] = useHintStatus();
+  const reaction = useReaction();
   const result = play.revealed ? play.results[play.idx] : null;
   const tag = play.tags[play.idx];
   const lastFinding = play.idx === e.findings.length - 1;
@@ -134,6 +139,7 @@ function Round({ play, setPlay, onExcerptDone, onFinish }: { play: Play; setPlay
     const tg = { domain: play.pick, term: t };
     const r = gradeTag(f, tg);
     buzz(r.score >= 1);
+    reaction.onAnswer(r.score >= 1, { partial: (r.score > 0 && r.score < 1) || (r.score >= 1 && hinted) });
     const streak = nextStreak(play.streak, r);
     const tags = [...play.tags];
     tags[play.idx] = tg;
@@ -183,7 +189,7 @@ function Round({ play, setPlay, onExcerptDone, onFinish }: { play: Play; setPlay
   const levelLabel = LEVELS.find((l) => l.id === play.level)!.label;
 
   return (
-    <div className="mx-auto max-w-2xl space-y-4 px-4 py-5">
+    <div className="mx-auto max-w-2xl space-y-4">
       <div className="flex flex-wrap items-center gap-2">
         <span className="flex items-center gap-1.5 font-semibold">
           <ScanEye className="size-5" aria-hidden /> Excerpt {play.seen.length}
@@ -337,8 +343,9 @@ function Summary({ p, bestEver, board, onAgain }: { p: Play; bestEver: number; b
   const acc = p.tagsDone ? p.tagsScore / p.tagsDone : 0;
   const xp = Math.round(p.tagsScore * 5) + 10;
   return (
-    <div className={cn("mx-auto max-w-2xl space-y-5 px-4 py-6", m.rise)}>
+    <div className={cn("mx-auto max-w-2xl space-y-5", m.rise)}>
       <h1 className="text-h1">{acc >= 0.85 ? "Sharp eye." : acc >= 0.6 ? "Good tagging." : "Keep practising the look-alikes."}</h1>
+      <EndReaction right={Math.round(acc * 100)} total={100} seed={p.seed} />
       <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
         <Stat label="Accuracy" value={`${pct(acc)}%`} />
         <Stat label="Points" value={p.points} />

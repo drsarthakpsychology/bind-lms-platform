@@ -24,7 +24,7 @@ describe("medicine pictures", () => {
     for (const [id, list] of Object.entries(MED_VISUALS)) {
       for (const v of list) {
         try {
-          render(<MedicineVisual v={v} />).unmount();
+          render(<MedicineVisual v={v} med={MEDS.find((m) => m.id === id)!} />).unmount();
         } catch (e) {
           broken.push(`${id} ${v.kind}: ${(e as Error).message.slice(0, 120)}`);
         }

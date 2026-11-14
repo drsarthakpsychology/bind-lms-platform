@@ -3,7 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { useTheme } from "next-themes";
-import { Bell, LogOut, Moon, Settings, Sun } from "lucide-react";
+import { Bell, LogOut, Moon, Settings, Smile, Sun } from "lucide-react";
 
 import {
   DropdownMenu,
@@ -15,6 +15,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { logout } from "@/lib/auth/actions";
 import { MiddleTruncate } from "@/components/ui/middle-truncate";
+import { useReactionsOn } from "@/components/reactions/use-reaction";
 
 /** Initial for the avatar: first letter of the email (no fake names). */
 export function initialOf(email: string | null | undefined) {
@@ -51,6 +52,7 @@ export function AccountMenu({
   const { resolvedTheme, setTheme } = useTheme();
   const isDark = resolvedTheme === "dark";
   const formRef = React.useRef<HTMLFormElement>(null);
+  const [funny, setFunny] = useReactionsOn();
 
   return (
     <>
@@ -95,6 +97,21 @@ export function AccountMenu({
             {isDark ? <Sun className="size-4" aria-hidden /> : <Moon className="size-4" aria-hidden />}
             {isDark ? "Light mode" : "Dark mode"}
           </DropdownMenuItem>
+          {role === "student" ? (
+            <DropdownMenuItem
+              role="menuitemcheckbox"
+              aria-checked={funny}
+              className="min-h-10 cursor-pointer rounded-lg font-semibold"
+              onSelect={(e) => {
+                e.preventDefault();
+                setFunny(!funny);
+              }}
+            >
+              <Smile className="size-4" aria-hidden />
+              <span className="flex-1">Funny reactions</span>
+              <span className="font-mono text-xs font-bold uppercase text-muted-foreground">{funny ? "On" : "Off"}</span>
+            </DropdownMenuItem>
+          ) : null}
           <DropdownMenuSeparator />
           <DropdownMenuItem
             className="min-h-10 cursor-pointer rounded-lg font-semibold text-destructive focus:text-destructive"

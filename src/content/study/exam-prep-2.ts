@@ -774,7 +774,7 @@ Q: The Rehabilitation Council of India was set up under the:
 - Indian Medical Council Act
 > It regulates rehabilitation professionals, including clinical psychologists.
 
-Q: A student must choose between guessing and skipping in CUET PG (+4, minus 1, four options) after eliminating one option. The expected value of guessing is about:
+Q: A student must choose between guessing and skipping in the master's entrance (+4, minus 1, four options) after eliminating one option. The expected value of guessing is about:
 - Minus 0.5
 - Zero
 - *+0.67

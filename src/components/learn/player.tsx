@@ -15,6 +15,9 @@ import { noteAnswer } from "@/lib/history/client";
 import { setLearnState, useLearnState, initLearnStore } from "@/lib/learn/store";
 import { useExplainView, ViewToggle } from "./view-toggle";
 import s from "./learn.module.css";
+import { useReaction, useReactionsOn } from "@/components/reactions/use-reaction";
+import { EndReaction, StreakMeter } from "@/components/reactions/graphics";
+import type { Mood } from "@/lib/reactions/stickers";
 
 const RIGHT = ["Nice!", "Spot on.", "Exactly.", "You've got it.", "Clinician brain!", "Sharp.", "Yes!", "Perfect."];
 const COMBO = ["On a roll!", "Combo!", "Can't stop you.", "Hot streak!"];
@@ -73,10 +76,11 @@ function LessonRun({ mode, state, order }: { mode: Exclude<Mode, { kind: "blitz"
   const [retried, setRetried] = React.useState<string[]>([]);
   const [result, setResult] = React.useState<Payout | null>(null);
   const [confetti, setConfetti] = React.useState<{ x: number; d: number; c: string }[]>([]);
+  const reaction = useReaction();
 
   if (!queue.length) {
     return (
-      <div className="mx-auto max-w-xl space-y-6 px-4 py-10 text-center">
+      <div className="mx-auto max-w-xl space-y-6 py-10 text-center">
         <Chai mood="sleep" size={140} />
         <h1 className="text-h1">{mode.kind === "review" ? "Nothing to review right now." : "Lesson not found."}</h1>
         <p className="text-muted-foreground">
@@ -95,6 +99,7 @@ function LessonRun({ mode, state, order }: { mode: Exclude<Mode, { kind: "blitz"
 
   function onDone(correct: boolean, answer: string) {
     setLocked(true);
+    reaction.onAnswer(correct);
     if (!isRetry) {
       setAnswers((a) => [...a, { id: item.id, correct }]);
       noteAnswer("learn", item.id, correct);
@@ -154,15 +159,13 @@ function LessonRun({ mode, state, order }: { mode: Exclude<Mode, { kind: "blitz"
   const mood: ChaiMood = !last ? (combo >= 3 ? "happy" : "idle") : last.correct ? (combo >= 3 ? "cheer" : "happy") : "sad";
 
   return (
-    <div className="mx-auto flex min-h-[calc(100dvh-4rem)] max-w-2xl flex-col px-4 pt-4 pb-6">
+    <div className="mx-auto flex min-h-[calc(100dvh-var(--top-h)-4.5rem)] max-w-2xl flex-col">
       {/* Top: close, progress, combo */}
       <div className="flex items-center gap-3">
         <div className="h-4 flex-1 overflow-hidden rounded-full border-2 border-foreground bg-muted" role="progressbar" aria-valuenow={progress} aria-valuemin={0} aria-valuemax={100}>
           <div className="h-full rounded-full bg-primary transition-[width] duration-500" style={{ width: `${progress}%` }} />
         </div>
-        <span className={cn("flex items-center gap-1 rounded-full border-2 border-foreground px-2.5 py-1 text-sm font-semibold", combo >= 3 ? "bg-foreground text-primary" : "bg-card")} aria-label={`Combo ${combo}`}>
-          <Flame className={cn("size-4", combo >= 3 && s.flame)} aria-hidden /> {combo}
-        </span>
+        <StreakMeter streak={combo} />
       </div>
 
       <div className="mt-3 flex items-center justify-between gap-3">
@@ -223,19 +226,24 @@ export function Summary({
   confetti,
   title,
   onAgain,
+  mood,
 }: {
   result: Payout;
   state: LearnState;
   confetti: { x: number; d: number; c: string }[];
   title: string;
   onAgain: () => void;
+  /** The sticker for this round, when stars do not tell (games with no stars pass their score). */
+  mood?: Mood;
 }) {
   const [chestOpen, setChestOpen] = React.useState(!result.chest);
+  const [funny] = useReactionsOn();
+  const endMood = mood ?? (result.stars >= 3 ? "streak" : result.stars === 2 ? "right" : result.stars === 1 ? "near" : "wrong");
   const lvl = levelFor(state.xp);
   const shown = chestOpen ? result.lines : result.lines.filter((l) => !l.label.toLowerCase().includes("chest"));
   const sum = shown.reduce((a, l) => a + l.xp, 0);
   return (
-    <div className="mx-auto max-w-xl space-y-6 px-4 py-8 text-center">
+    <div className="mx-auto max-w-xl space-y-6 py-8 text-center">
       {confetti.length ? (
         <div className={s.confetti} aria-hidden>
           {confetti.map((c, k) => (
@@ -243,7 +251,11 @@ export function Summary({
           ))}
         </div>
       ) : null}
-      <Chai mood={result.stars >= 2 || result.levelUp ? "cheer" : result.stars === 0 ? "sad" : "happy"} size={150} />
+      {funny ? (
+        <EndReaction mood={endMood} seed={title} className="mx-auto w-fit max-w-full justify-center" />
+      ) : (
+        <Chai mood={result.stars >= 2 || result.levelUp ? "cheer" : result.stars === 0 ? "sad" : "happy"} size={150} />
+      )}
       <div>
         <p className="text-eyebrow text-link">{title} complete</p>
         <p className="mt-2 text-4xl tracking-widest" aria-label={`${result.stars} of 3 stars`}>
@@ -354,6 +366,7 @@ function Blitz({ state }: { state: LearnState }) {
   const answersRef = React.useRef<{ id: string; correct: boolean }[]>([]);
   const comboRef = React.useRef(0);
   const [bestBefore, setBestBefore] = React.useState(0);
+  const reaction = useReaction();
 
   const finish = React.useCallback(() => {
     setPhase("done");
@@ -392,6 +405,8 @@ function Blitz({ state }: { state: LearnState }) {
   }
 
   function answer(correct: boolean) {
+    // The clock is running: counted, but no pop-up until the end.
+    reaction.onAnswer(correct, { timed: true });
     const item = deck[i];
     answersRef.current = [...answersRef.current, { id: item.id, correct }];
     setAnswers(answersRef.current);
@@ -408,7 +423,7 @@ function Blitz({ state }: { state: LearnState }) {
 
   if (phase === "ready") {
     return (
-      <div className="mx-auto max-w-xl space-y-6 px-4 py-10 text-center">
+      <div className="mx-auto max-w-xl space-y-6 py-10 text-center">
         <Chai mood="think" size={140} />
         <h1 className="text-h1">60-second blitz</h1>
         <p className="text-muted-foreground">As many right answers as you can in a minute. True/false and quick picks from everything you&apos;ve studied.</p>
@@ -427,8 +442,8 @@ function Blitz({ state }: { state: LearnState }) {
     const right = answers.filter((a) => a.correct).length;
     const missed = answers.filter((a) => !a.correct).map((a) => findItem(a.id)).filter(Boolean) as Item[];
     return (
-      <div className="mx-auto max-w-xl space-y-6 px-4 py-8 text-center">
-        <Chai mood={right >= 10 ? "cheer" : "happy"} size={130} />
+      <div className="mx-auto max-w-xl space-y-6 py-8 text-center">
+        <EndReaction mood={right >= 15 ? "streak" : right >= 8 ? "right" : right >= 4 ? "near" : "wrong"} seed={answers.length} className="mx-auto w-fit max-w-full justify-center" />
         <p className="font-pix text-6xl">{right}</p>
         <p className="text-lg font-bold">correct in 60 seconds{right > bestBefore ? " · New best!" : ""}</p>
         {payout ? <p className="font-pix">+{payout.xp} XP</p> : null}
@@ -458,7 +473,7 @@ function Blitz({ state }: { state: LearnState }) {
 
   const item = deck[i];
   return (
-    <div className={cn("mx-auto flex min-h-[calc(100dvh-4rem)] max-w-xl flex-col px-4 py-6 transition-colors", flash === "right" && "bg-primary/30", flash === "wrong" && "bg-foreground/15")}>
+    <div className={cn("mx-auto flex min-h-[calc(100dvh-var(--top-h)-4.5rem)] max-w-xl flex-col transition-colors", flash === "right" && "bg-primary/30", flash === "wrong" && "bg-foreground/15")}>
       <div className="flex items-center justify-between">
         <span className="font-pix text-3xl">{left}s</span>
         <span className="flex items-center gap-1 rounded-full border-2 border-foreground bg-card px-3 py-1 font-bold">

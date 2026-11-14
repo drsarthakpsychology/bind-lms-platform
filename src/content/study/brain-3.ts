@@ -1,7 +1,6 @@
 /* Module · Brain and behaviour, Part V (Q&A bank). Original text written for VIBHA School of Psychology. */
 export const qaStarting = String.raw`
 ## 9.1 Q&A bank · Starting [starting]
-Think each question through, or jot an answer, before you open it.
 
 :::qa Why does a stronger stimulus not produce a bigger action potential, and how does the nervous system code intensity instead? [starting]
 ### Short answer

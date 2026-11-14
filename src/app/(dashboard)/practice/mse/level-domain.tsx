@@ -8,6 +8,8 @@ import { MSE_VOCAB } from "@/lib/practice/mse";
 import { SEED_MSE_STIMULI, domainRound, type MseStimulus } from "@/lib/practice/mse";
 import { historyFor, noteAnswer, useHistoryPrefetch } from "@/lib/history/client";
 import { buildMseAttemptPayload, scoreMseLevel2Attempt } from "@/lib/practice/mse-attempt";
+import { OnceHint } from "@/components/help/once-hint";
+import { EndReaction } from "@/components/reactions/graphics";
 
 /**
  * MSE Level 2: Domain by domain. One of the 11 domains at a time, in the
@@ -102,7 +104,7 @@ export function DomainLevel({
   const done = domainIdx >= MSE_DOMAIN_ORDER.length;
 
   return (
-    <div className="space-y-4 rounded-md border-2 border-border bg-card p-5 hard-shadow-sm">
+    <div className="space-y-4 rounded-lg border-2 border-border bg-card p-5 hard-shadow-sm">
       <div className="flex items-center justify-between text-small text-muted-foreground">
         <span>
           Level 2 · Domain {domainIdx + 1}/{MSE_DOMAIN_ORDER.length}
@@ -112,6 +114,8 @@ export function DomainLevel({
 
       {done ? (
         <div className="space-y-3">
+          {/* The finish sticker: every domain done is a win. */}
+          <EndReaction mood="streak" seed="mse-level-2" />
           <p className="text-small text-status-success-fg" role="status">
             All 11 domains tagged. You now hold the discipline: one domain at a
             time, controlled vocabulary, in order.
@@ -145,10 +149,10 @@ export function DomainLevel({
           </div>
 
           <div>
-            <p className="text-small text-muted-foreground">
+            <OnceHint id="mse-domain-tag" className="text-small text-muted-foreground">
               Tag the observations with the controlled vocabulary for{" "}
               <span className="font-semibold">{formatDomainKey(unit?.domain ?? "")}</span>.
-            </p>
+            </OnceHint>
             <div className="mt-2 flex flex-wrap gap-2">
               {vocab.map((tag) => (
                 <button

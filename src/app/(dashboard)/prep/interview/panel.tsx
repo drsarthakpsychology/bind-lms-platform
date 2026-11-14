@@ -227,7 +227,7 @@ export function InterviewPanel({ questions: initial, saving }: { questions: Pane
         </header>
         <ol className="space-y-2">
           {done.map((d, i) => (
-            <li key={d.id} className="flex items-center gap-3 rounded-md border-2 border-foreground bg-card p-3">
+            <li key={d.id} className="flex items-center gap-3 rounded-lg border-2 border-foreground bg-card p-3">
               <span className="font-mono text-sm text-link">{i + 1}</span>
               <span className="min-w-0 flex-1 text-sm">{questions[i].question}</span>
               <Band score={d.score} />
@@ -328,14 +328,14 @@ export function InterviewPanel({ questions: initial, saving }: { questions: Pane
             Your score for this one: {score.pct}% <Band score={score} />
           </p>
 
-          <div className="space-y-2 rounded-md border-2 border-foreground bg-secondary p-4">
+          <div className="space-y-2 rounded-lg border-2 border-foreground bg-secondary p-4">
             <p className="text-eyebrow">A strong answer</p>
             <p className="whitespace-pre-line">{rubric.modelAnswer}</p>
           </div>
 
           <div className="space-y-2">
             {feedback?.text ? (
-              <div className="space-y-1 rounded-md border-2 border-foreground bg-card p-4">
+              <div className="space-y-1 rounded-lg border-2 border-foreground bg-card p-4">
                 <p className="flex items-center gap-1.5 text-eyebrow">
                   <Sparkles className="size-4" aria-hidden /> AI feedback
                 </p>

@@ -1,6 +1,8 @@
 "use client";
 
 import * as React from "react";
+import { startHowTo } from "@/components/help/how-to";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { ArrowRight, Check, ClipboardList, Flame, FlaskConical, Heart, HeartCrack, Pill as PillIcon, Plus, Search, X } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -16,6 +18,10 @@ import { creditServerPlay } from "@/lib/learn/credit-play";
 import { HintBar, useHintStatus } from "@/components/hints/hint-chip";
 import { askHint } from "@/lib/hints/actions";
 import { hintedPoints } from "@/lib/hints/rules";
+import { useReaction } from "@/components/reactions/use-reaction";
+import { rxItemPages } from "@/lib/games-sims/rx/med-pages";
+import { howItWorksHref } from "@/lib/meds/sections";
+import { EndReaction } from "@/components/reactions/graphics";
 
 type Grade = (a: Answer & { run?: string }) => Promise<{ ok: boolean }>;
 type Finish = (x: { run: string; answers: Answer[] }) => Promise<{ ok: boolean; xp: number }>;
@@ -41,6 +47,7 @@ export function RxDetective({ board, grade: gradeOnServer, finish, medIds = [] }
   useHistoryPrefetch("rx");
 
   function start(mode: Mode) {
+    startHowTo("rx-detective");
     const id = `${Date.now().toString(36)}${Math.floor(Math.random() * 1e6).toString(36)}`;
     setDone(null);
     // Answer history: questions not seen yet first, then missed ones (src/lib/history).
@@ -66,7 +73,7 @@ export function RxDetective({ board, grade: gradeOnServer, finish, medIds = [] }
 function Intro({ board, onStart }: { board: AccuracyBoardData; onStart: (m: Mode) => void }) {
   useHotkeys({ "1": () => onStart("mixed"), "2": () => onStart("chain"), "3": () => onStart("mystery"), "4": () => onStart("puzzle"), "5": () => onStart("review") });
   return (
-    <div className={cn("mx-auto max-w-2xl space-y-6 px-4 py-6", m.rise)}>
+    <div className={cn("mx-auto max-w-2xl space-y-6", m.rise)}>
       <h1 className="text-h2">Pick a mode</h1>
       <div className={cn("grid gap-3 sm:grid-cols-2", m.stagger)}>
         {MODES.map((x, i) => (
@@ -90,6 +97,7 @@ function Round({ r, setR, onAnswered, onEnd, medIds }: { r: Run; setR: (r: Run) 
   const needed = q.kind === "chain" ? STEPS.length : 1;
   const complete = r.picks.length >= needed;
   const [hints, setHints] = useHintStatus();
+  const reaction = useReaction();
   const at = Math.min(r.picks.length, STEPS.length - 1);
   const hintKey = q.kind === "chain" ? `${q.id}.${at}` : q.id;
   const gone = r.ruled[hintKey] ?? [];
@@ -107,6 +115,7 @@ function Round({ r, setR, onAnswered, onEnd, medIds }: { r: Run; setR: (r: Run) 
     const a: Answer = { kind: q.kind, id: q.id, picks };
     const g = grade(a)!;
     buzz(g.score >= 1);
+    reaction.onAnswer(g.score >= 1, { partial: (g.score > 0 && g.score < 1) || (g.score >= 1 && hintedHere) });
     // The server records it too (gradeRxAnswer); this is the browser copy.
     noteAnswer("rx", rxItem(q.kind, q.id), g.score >= 1, { server: false });
     onAnswered(a);
@@ -135,10 +144,12 @@ function Round({ r, setR, onAnswered, onEnd, medIds }: { r: Run; setR: (r: Run) 
   useHotkeys(keys);
 
   const g = r.revealed ? grade(r.answers[r.answers.length - 1])! : null;
+  // The Medicines pages this case is about, for "How olanzapine works" after a wrong answer.
+  const pages = rxItemPages(q.kind, q.id);
   const last = r.lives <= 0 || r.idx + 1 >= r.qs.length;
 
   return (
-    <div className="mx-auto max-w-2xl space-y-4 px-4 py-5">
+    <div className="mx-auto max-w-2xl space-y-4">
       <div className="flex flex-wrap items-center gap-2">
         <span className="font-semibold">
           Case {r.idx + 1}
@@ -187,7 +198,8 @@ function Round({ r, setR, onAnswered, onEnd, medIds }: { r: Run; setR: (r: Run) 
             ) : null}
           </div>
           <RevealBody q={q} />
-          <RxLearn q={q} medIds={medIds} />
+          {g.score < 1 ? <RxHowItWorks pages={pages} /> : null}
+          <RxLearn q={q} medIds={medIds} skip={g.score < 1 ? pages.map((x) => x.id) : []} />
           <Btn variant="primary" size="lg" className="w-full" onClick={next} autoFocus>
             {last ? "See results" : "Next case"} <ArrowRight aria-hidden /> <Kbd>Enter</Kbd>
           </Btn>
@@ -402,19 +414,43 @@ const drugByName = (name: string) => {
 
 /* ---------------------------------------------------------------- reveal */
 /** "Learn this" for the medicine in the case: its Medicines page, or its Study module. */
-function RxLearn({ q, medIds }: { q: Question; medIds: readonly string[] }) {
+function RxLearn({ q, medIds, skip = [] }: { q: Question; medIds: readonly string[]; skip?: readonly string[] }) {
   const p = q.kind === "puzzle" ? PUZZLES.find((x) => x.id === q.id) : undefined;
   const keys = q.kind === "chain" ? [q.id] : q.kind === "mystery" ? [MYSTERIES.find((x) => x.id === q.id)?.drug ?? ""] : q.kind === "review" ? (reviewById(q.id)?.drugs ?? []) : [p?.a ?? "", p?.b ?? ""];
   const items = keys.filter(Boolean).map((k) => {
     const d = drugById(k) ?? DRUGS.find((x) => x.name.toLowerCase() === k.toLowerCase());
     const id = d?.id ?? k.toLowerCase();
-    return { name: d?.name ?? k, href: medIds.includes(id) ? `/practice/medicines/${id}` : d ? `/study/${d.topic}` : undefined };
-  });
+    return { id, name: d?.name ?? k, href: medIds.includes(id) ? `/practice/medicines/${id}` : d ? `/study/${d.topic}` : undefined };
+  }).filter((x) => !skip.includes(x.id));
   if (!items.length) return null;
   return (
     <div className="flex flex-wrap gap-x-4">
       {items.map((x) => (
         <LearnLink key={x.name} topic={x.name} show={items.length > 1} href={x.href} newTab />
+      ))}
+    </div>
+  );
+}
+
+/**
+ * After a wrong answer: "How olanzapine works", straight to that medicine's
+ * How it works part. It opens in a new tab so the run in progress is kept.
+ */
+function RxHowItWorks({ pages }: { pages: { id: string; name: string }[] }) {
+  if (!pages.length) return null;
+  return (
+    <div className="flex flex-wrap gap-x-4">
+      {pages.map((p) => (
+        <Link
+          key={p.id}
+          href={howItWorksHref(p.id)}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex min-h-11 items-center gap-1.5 rounded-md text-sm font-bold text-link underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+        >
+          How {p.name.toLowerCase()} works <ArrowRight className="size-4 shrink-0" aria-hidden />
+          <span className="sr-only"> (opens in a new tab)</span>
+        </Link>
       ))}
     </div>
   );
@@ -476,7 +512,7 @@ function RevealBody({ q }: { q: Question }) {
 
 function DoseBox({ d }: { d: Drug }) {
   return (
-    <div className="rounded-md border-2 border-dashed border-foreground/50 bg-card p-3">
+    <div className="rounded-lg border-2 border-dashed border-foreground/50 bg-card p-3">
       <p className="text-caption font-semibold uppercase">Learning dose only</p>
       <p className="text-body-strong">{d.dose}</p>
       <p className="text-caption text-muted-foreground">Typical adult range. {DOSE_NOTE}</p>
@@ -517,9 +553,10 @@ function Summary({ r, xp, board, onAgain, onModes }: { r: Run; xp: number | null
   const scores = r.answers.map((a) => grade(a)?.score ?? 0);
   const acc = scores.length ? scores.reduce((a, s) => a + s, 0) / scores.length : 0;
   return (
-    <div className={cn("mx-auto max-w-2xl space-y-5 px-4 py-6", m.rise)}>
+    <div className={cn("mx-auto max-w-2xl space-y-5", m.rise)}>
       {r.lives > 0 ? null : <p className="text-eyebrow text-link">Out of lives</p>}
       <h1 className="text-h1">{acc >= 0.85 ? "Sharp detective." : acc >= 0.6 ? "Good work." : "The receptors will click with practice."}</h1>
+      <EndReaction right={Math.round(acc * 100)} total={100} seed={r.run} />
       <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
         <Stat label="Accuracy" value={`${pct(acc)}%`} />
         <Stat label="Points" value={r.points} />

@@ -23,8 +23,8 @@ export const STUDENT_ITEMS: NavItem[] = [
   { href: "/achievements", label: "Achievements", short: "Badges", icon: "award", section: "More" },
   { href: "/leaderboard", label: "Leaderboard", short: "Ranks", icon: "trophy", section: "More" },
   { href: "/reflect", label: "Journal", icon: "notebook", section: "More", flag: "journal" },
-  { href: "/wall", label: "Wall", icon: "wall", section: "More" },
-  { href: "/journey", label: "My journey", short: "Journey", icon: "route", section: "More" },
+  // Not menu places of their own (owner-approved menu, Nov 2026): My journey
+  // opens from Progress, the batch Wall from Doubts (navigation/sections.ts).
 ];
 
 /**

@@ -1,6 +1,7 @@
 import { MiddleTruncate } from "@/components/ui/middle-truncate";
 import { Bell, LogOut, MessageSquare, Shield, User } from "lucide-react";
 import { ColourBlindToggle } from "@/components/settings/colour-blind-toggle";
+import { ReactionsToggle } from "@/components/reactions/reactions-toggle";
 import { getSession } from "@/lib/auth/session";
 import { logout } from "@/lib/auth/actions";
 import { MobilePage } from "@/components/mobile/mobile-page";
@@ -87,6 +88,13 @@ export default async function SettingsPage() {
             title="Cohort wall"
             subtitle="Posts, replies and reactions from your cohort."
           />
+        </MobileSection>
+
+        {/* Learning: the one study preference this device keeps. */}
+        <MobileSection title="Learning">
+          <div className="rounded-lg border-2 border-foreground bg-card px-4 hard-shadow-xs">
+            <ReactionsToggle />
+          </div>
         </MobileSection>
 
         {/* Accessibility: kept closed and quiet at the bottom on purpose. */}

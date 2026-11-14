@@ -1,4 +1,5 @@
 import { ToolHeader } from "@/components/help/tool-header";
+import { HowToStart } from "@/components/help/how-to";
 import { createClient } from "@/lib/supabase/server";
 import { MseLadder, type MseLadderContent } from "./mse-ladder";
 import type { MseStimulus } from "@/lib/practice/mse";
@@ -8,6 +9,7 @@ import { order } from "@/lib/history/server";
 import { viewerId } from "@/lib/history/viewer";
 import { requireFeature } from "@/lib/flags";
 import { cleanDeep, cleanStudentText } from "@/lib/ai/student-text";
+import { BackPill } from "@/components/study/back";
 
 export const dynamic = "force-dynamic";
 
@@ -90,10 +92,13 @@ export default async function MsePage() {
   const content: MseLadderContent = { ...shaped, observe: byOrder(observe, obsOrder), fullMse: byOrder(fullMse, fullOrder) };
 
   return (
-    <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
+    <div className="mx-auto max-w-3xl">
+      <BackPill className="mb-4" />
       <ToolHeader title="Mental state exam" tip={{ id: "mse-trainer", steps: ["Write what you can see and hear, not what you conclude."] }} />
       <div className="mt-6">
-        <MseLadder content={content} />
+        <HowToStart id="mse-trainer">
+          <MseLadder content={content} />
+        </HowToStart>
       </div>
     </div>
   );

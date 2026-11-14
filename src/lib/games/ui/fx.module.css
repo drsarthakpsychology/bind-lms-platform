@@ -10,12 +10,14 @@
   80% { transform: translateX(2px); }
 }
 .pop {
-  animation: pop 420ms var(--ease-springy) 1 both;
+  animation: pop 420ms cubic-bezier(0.16, 1, 0.3, 1) 1 both;
 }
 @keyframes pop {
   from { transform: scale(0.6); opacity: 0; }
   to { transform: scale(1); opacity: 1; }
 }
+/* The springy ease is kept only for a stamp landing (vibha-design: the
+   rubber stamp is the one overshoot in the motion language). */
 .stamp {
   animation: stamp 520ms var(--ease-springy) 1 both;
 }
@@ -48,7 +50,7 @@
 /* Blitz combo burst: a big stamp that lands, holds, then lifts away, with
    one ring that grows out behind it. */
 .combo {
-  animation: combo 950ms var(--ease-springy) 1 both;
+  animation: combo 950ms cubic-bezier(0.16, 1, 0.3, 1) 1 both;
   pointer-events: none;
 }
 @keyframes combo {
@@ -81,7 +83,7 @@
 }
 /* Solved: the result card drops in and settles. */
 .land {
-  animation: land 620ms var(--ease-springy) 1 both;
+  animation: land 620ms cubic-bezier(0.16, 1, 0.3, 1) 1 both;
 }
 @keyframes land {
   0% { transform: translateY(-14px) scale(0.96); opacity: 0; }
@@ -90,7 +92,7 @@
 }
 /* One square of the clue meter filling in. */
 .fill {
-  animation: fill 360ms var(--ease-springy) 1 both;
+  animation: fill 360ms cubic-bezier(0.16, 1, 0.3, 1) 1 both;
   animation-delay: calc(var(--i, 0) * 60ms);
   transform-origin: left center;
 }

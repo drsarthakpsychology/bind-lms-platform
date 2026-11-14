@@ -3,7 +3,6 @@ export const part3 = String.raw`
 # Part IV · Exam zone
 
 ## 4.1 Q&A bank · Starting [core][starting]
-Work each one on paper with a calculator before you open the answer.
 
 :::qa For the scores 6, 8, 10, 10, 16, compute the mean, median, mode, range, sample variance and sample SD. Which average best represents the data? [starting]
 ### Step 1: order and count

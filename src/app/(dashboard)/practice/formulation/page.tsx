@@ -1,4 +1,5 @@
 import { ToolHeader } from "@/components/help/tool-header";
+import { HowToStart } from "@/components/help/how-to";
 import { createClient } from "@/lib/supabase/server";
 import Link from "next/link";
 import { FormulationForge } from "./forge";
@@ -7,6 +8,7 @@ import { PeerWall } from "./peer-wall";
 import { requireFeature } from "@/lib/flags";
 import { orderForViewer } from "@/lib/history/viewer";
 import type { FormulationFactor } from "@/lib/practice/formulation";
+import { BackPill } from "@/components/study/back";
 
 export const dynamic = "force-dynamic";
 
@@ -55,7 +57,8 @@ export default async function FormulationPage({ searchParams }: { searchParams: 
   const seed = all.find((c) => c.id === firstId) ?? all[0];
 
   return (
-    <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6">
+    <div className="mx-auto max-w-4xl">
+      <BackPill className="mb-4" />
       <ToolHeader title="Build the formulation" tip={{ id: "formulation", steps: ["Sort the factors into the 5 Ps.", "Write the story in your own words.", "Compare with the answer."] }} />
 
       <nav aria-label="Cases" className="mt-5 flex gap-2 overflow-x-auto pb-1 [scrollbar-width:none]">
@@ -74,7 +77,9 @@ export default async function FormulationPage({ searchParams }: { searchParams: 
       <p className="mt-2 text-sm font-semibold">{seed.title}</p>
 
       <div className="mt-4">
-        <FormulationForge key={seed.id} seed={seed} />
+        <HowToStart id="formulation">
+          <FormulationForge key={seed.id} seed={seed} />
+        </HowToStart>
       </div>
 
       <div className="mt-10">

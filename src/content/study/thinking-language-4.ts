@@ -424,7 +424,6 @@ Q: Wallach and Kogan found creativity and intelligence nearly independent mainly
 # Part V · Exam zone
 
 ## 5.1 Q&A bank · Starting [starting]
-Think each question through, then open the answer and compare.
 
 :::qa What is the difference between an algorithm and a heuristic? When would you use each? [starting]
 ### Short answer
@@ -624,7 +623,6 @@ A tailor who designs a new blouse pattern needs skill with cloth, many ideas, ju
 :::
 
 ## 5.2 Q&A bank · Beginner [beginner]
-Answers here assume the Beginner sections. Write your own outline first.
 
 :::qa Explain the representativeness, availability and anchoring heuristics, with examples of the errors each produces. [beginner]
 ### Short answer
@@ -880,7 +878,7 @@ The total grew from 120 to 150 to 180 abilities.
 :::
 
 ## 5.3 Q&A bank · Advanced [advanced]
-These are the long, analytical questions asked in NET Paper 2, clinical entrances and MA examinations.
+These are the long, analytical questions asked in competitive exams, clinical entrances and MA examinations.
 
 :::qa Trace the development of intelligence theories from Spearman to the Cattell-Horn-Carroll model. Is there a consensus? [advanced]
 ### Short answer

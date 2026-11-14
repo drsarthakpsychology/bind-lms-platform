@@ -198,7 +198,7 @@ export function StudentTable({ rows, cohorts, canWrite, initialCohort = "", init
       </div>
 
       {/* Bulk bar */}
-      <div className="z-10 flex flex-wrap items-center gap-2 rounded-2xl border-2 border-foreground bg-background/95 p-2 backdrop-blur lg:sticky lg:top-16">
+      <div className="z-10 flex flex-wrap items-center gap-2 rounded-2xl border-2 border-foreground bg-background/95 p-2 backdrop-blur lg:sticky lg:top-[var(--top-h)]">
         <label className="flex h-9 items-center gap-2 px-2 text-sm font-semibold">
           <input
             type="checkbox"

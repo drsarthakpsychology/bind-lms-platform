@@ -9,6 +9,7 @@ import type { MockResultView, ReviewRow } from "@/lib/prep/results";
 import { cn } from "@/lib/utils";
 import { Options, QuestionBody } from "../question";
 import { btnPlain, btnPrimary, card } from "../ui";
+import { EndReaction, ScoreDial } from "@/components/reactions/graphics";
 
 type Filter = "all" | "wrong" | "blank" | "marked";
 const FILTERS: { id: Filter; label: string; test: (r: ReviewRow) => boolean }[] = [
@@ -38,11 +39,18 @@ export function MockResult({ view }: { view: MockResultView }) {
 
   return (
     <div className="space-y-6">
-      <header className="space-y-1">
-        <p className="text-eyebrow text-link">Results · {view.title}</p>
-        <h1 className="text-h1">
-          {fmt(view.score)} <span className="text-muted-foreground">/ {fmt(view.max)}</span>
-        </h1>
+      <header className="space-y-4">
+        <div className="space-y-1">
+          <p className="text-eyebrow text-link">Results · {view.title}</p>
+          <h1 className="text-h1">
+            {fmt(view.score)} <span className="text-muted-foreground">/ {fmt(view.max)}</span>
+          </h1>
+        </div>
+        {/* The clock has stopped: this is where a timed paper gets its one reaction. */}
+        <div className="flex flex-wrap items-center gap-x-6 gap-y-4">
+          <ScoreDial right={view.right} total={view.rows.length} />
+          <EndReaction right={Math.max(0, view.score)} total={view.max} className="min-w-0 flex-1 basis-56" />
+        </div>
       </header>
 
       <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
@@ -52,7 +60,7 @@ export function MockResult({ view }: { view: MockResultView }) {
           { Icon: Circle, label: "Blank", value: view.blank },
           { Icon: Trophy, label: "Accuracy", value: view.accuracy === null ? "None" : `${Math.round(view.accuracy * 100)}%` },
         ].map(({ Icon, label, value }) => (
-          <div key={label} className="rounded-md border-2 border-foreground bg-card p-3">
+          <div key={label} className="rounded-lg border-2 border-foreground bg-card p-3">
             <p className="flex items-center gap-1.5 text-2xl font-bold tabular-nums">
               <Icon className="size-5" aria-hidden /> {value}
             </p>
@@ -100,7 +108,7 @@ export function MockResult({ view }: { view: MockResultView }) {
           </h2>
           <ul className="space-y-2">
             {view.sections.map((s) => (
-              <li key={s.title} className="rounded-md border-2 border-foreground bg-card p-3">
+              <li key={s.title} className="rounded-lg border-2 border-foreground bg-card p-3">
                 <div className="flex items-center justify-between gap-2">
                   <span className="font-semibold">{s.title}</span>
                   <span className="font-mono text-sm">
@@ -125,7 +133,7 @@ export function MockResult({ view }: { view: MockResultView }) {
         </h2>
         <ul className="space-y-2">
           {view.subjects.map((s) => (
-            <li key={s.subject} className="rounded-md border-2 border-foreground bg-card p-3">
+            <li key={s.subject} className="rounded-lg border-2 border-foreground bg-card p-3">
               <div className="flex flex-wrap items-center justify-between gap-2">
                 <span className="min-w-0 font-semibold">{s.title}</span>
                 <span className="font-mono text-sm">
@@ -186,11 +194,11 @@ export function MockResult({ view }: { view: MockResultView }) {
       </section>
 
       <div className="grid gap-2.5 sm:grid-cols-2">
-        <Link href="/prep" className={btnPrimary}>
-          Back to Exam Prep <ArrowRight className="size-4" aria-hidden />
+        <Link href="/prep/mock" className={btnPrimary}>
+          Take another mock <ArrowRight className="size-4" aria-hidden />
         </Link>
-        <Link href="/prep/mock" className={btnPlain}>
-          <ArrowLeft className="size-4" aria-hidden /> All mocks
+        <Link href="/prep" className={btnPlain}>
+          <ArrowLeft className="size-4" aria-hidden /> Back to Exam Prep
         </Link>
       </div>
     </div>
@@ -222,7 +230,7 @@ function ReviewItem({ row, n }: { row: ReviewRow; n: number }) {
       </summary>
       <div className="space-y-3 border-t-2 border-foreground p-3">
         <QuestionBody q={row.q} />
-        <Options q={row.q} picked={row.chosen} onPick={() => undefined} answer={row.answer} />
+        <Options q={row.q} picked={row.chosen} onPick={() => undefined} answer={row.answer} stampMotion={false} />
         <div className="rounded-md border-2 border-dashed border-foreground/50 p-3">
           <p className="text-eyebrow text-muted-foreground">Why</p>
           <p className="mt-1 whitespace-pre-line">{row.explanation}</p>

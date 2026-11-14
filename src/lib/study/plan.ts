@@ -118,9 +118,15 @@ export function courseNext(mods: StudyModule[], p: StudyProgress, today: string)
     const test = testSection(m);
     if (due && test && due <= today) return { kind: "retest", module: m, section: test, label: `Re-test: ${m.title}`, href: sectionHref(m, test), due };
   }
-  // Resume a module the student has started but not finished, before opening a new one.
+  // Resume exactly where the student stopped: the section they were reading,
+  // if they left it unfinished (every module is open, so it need not be the
+  // first unread one). Then the rest of that module, before opening a new one.
   const last = p.last ? mods.find((m) => m.id === p.last!.module) : undefined;
   if (last) {
+    const sec = last.sections.find((x) => x.id === p.last!.section);
+    if (sec && !sec.isTest && !p.done[studyKey(last.id, sec.id)]) {
+      return { kind: "read", module: last, section: sec, label: `Read ${sec.num} ${sectionTitle(sec)}`, href: sectionHref(last, sec) };
+    }
     const n = moduleNext(last, p);
     if (n) return n;
   }

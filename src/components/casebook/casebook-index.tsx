@@ -9,6 +9,7 @@ import { CASEBOOK, caseKey } from "@/content/casebook";
 import { FORMAT_LABEL, LEVEL_ORDER, type CaseFormat } from "@/lib/casebook/types";
 import { cn } from "@/lib/utils";
 import { CaseCard } from "./casebook-shelf";
+import { backLinkClass } from "@/components/design-system/back-link";
 
 const EMPTY = emptyState();
 const PAGE = 12;
@@ -54,9 +55,9 @@ export function CasebookIndex({ moduleTitles, serverState, save }: { moduleTitle
   const reset = () => setN(PAGE);
 
   return (
-    <div className="mx-auto w-full min-w-0 max-w-4xl space-y-6 px-4 py-6 sm:px-6 lg:py-10">
-      <Link href="/games/lab" className="inline-flex min-h-11 items-center gap-1 rounded-full border-2 border-foreground bg-card px-3 py-1.5 text-sm font-bold">
-        <ArrowLeft className="size-4" aria-hidden /> Lab
+    <div className="mx-auto w-full min-w-0 max-w-4xl space-y-6">
+      <Link href="/games/lab" className={backLinkClass}>
+        <ArrowLeft className="size-4" aria-hidden /> Back to the Lab
       </Link>
       <header>
         <p className="text-eyebrow text-link">Casebook</p>

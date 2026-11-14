@@ -267,7 +267,7 @@ This tradition made psychology useful to schools, armies and employers, and it b
     question: "Critically examine the four founding paths of academic psychology: Wundt, Freud, James and Dilthey. What does each path contribute to psychology today?",
     plan: ["Explain why four paths, not one founder", "Wundt: experimental and physiological path", "Freud: clinical and depth path", "James: pragmatic and functional path", "Dilthey: interpretive human-science path", "Compare, then argue for an integrated view with Indian relevance"],
     answer: `## Introduction
-Textbooks often date psychology to Wundt's laboratory in 1879, as if the discipline had one founder. The UGC NET syllabus instead speaks of four founding paths, each beginning from a different question and method. Seeing all four explains why psychology today contains laboratories, clinics, applied settings and qualitative research under one name.
+Textbooks often date psychology to Wundt's laboratory in 1879, as if the discipline had one founder. Postgraduate syllabi instead speak of four founding paths, each beginning from a different question and method. Seeing all four explains why psychology today contains laboratories, clinics, applied settings and qualitative research under one name.
 
 ## Wundt: the experimental path
 - Question: what are the processes of immediate conscious experience, and how do they relate to the body?

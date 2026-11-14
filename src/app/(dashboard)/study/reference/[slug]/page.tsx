@@ -8,6 +8,7 @@ import { referenceLabel, resolveReference, type MedicineRef, type TermRef } from
 import { REFERENCE_BASE } from "@/lib/reference/href";
 import type { DisorderRef } from "@/lib/reference/disorders";
 import { KindTag } from "@/components/reference/reference-library";
+import { backLinkClass } from "@/components/design-system/back-link";
 
 type Params = { params: Promise<{ slug: string }> };
 
@@ -25,7 +26,7 @@ function Rich({ text }: { text: string }) {
 
 function Block({ title, icon, children }: { title: string; icon?: ReactNode; children: ReactNode }) {
   return (
-    <section className="rounded-md border-2 border-foreground bg-card p-4 sm:p-5">
+    <section className="rounded-lg border-2 border-foreground bg-card p-4 sm:p-5">
       <h2 className="mb-2 flex items-center gap-2 text-h3 font-bold">
         {icon}
         {title}
@@ -201,16 +202,16 @@ export default async function ReferenceEntryPage({ params }: Params) {
   const lead = e.kind === "disorder" ? e.data.core : e.kind === "medicine" ? (e.data.plain ?? e.data.cls) : e.data.means;
 
   return (
-    <div className="mx-auto max-w-3xl space-y-4 px-4 py-6 sm:px-6">
-      <Link href={REFERENCE_BASE} className="inline-flex min-h-11 items-center gap-1 rounded-md border-2 border-foreground bg-card px-3 text-sm font-semibold">
-        <ArrowLeft className="size-4" aria-hidden /> Quick Reference
+    <div className="mx-auto max-w-3xl space-y-4">
+      <Link href={REFERENCE_BASE} className={backLinkClass}>
+        <ArrowLeft className="size-4" aria-hidden /> Back to Quick Reference
       </Link>
       <header className="space-y-2">
         <KindTag kind={e.kind} />
         <h1 className="text-h1 break-words">{e.label}</h1>
         {sub ? <p className="text-sm text-muted-foreground">{sub}</p> : null}
       </header>
-      <section aria-label="In one line" className="rounded-md border-2 border-foreground bg-card p-4 text-base leading-relaxed hard-shadow-sm sm:p-5">
+      <section aria-label="In one line" className="rounded-lg border-2 border-foreground bg-card p-4 text-base leading-relaxed hard-shadow-sm sm:p-5">
         <Rich text={lead} />
       </section>
       {e.kind === "disorder" ? <Disorder d={e.data} /> : e.kind === "medicine" ? <Medicine m={e.data} /> : <Term t={e.data} />}

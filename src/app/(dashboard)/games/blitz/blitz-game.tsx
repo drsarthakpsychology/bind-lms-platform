@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { startHowTo, useHowTo } from "@/components/help/how-to";
 import Link from "next/link";
 import { useReducedMotion } from "motion/react";
 import { ArrowLeft, BookOpen, Check, Crown, Flame, LoaderCircle, RotateCcw, Timer, Trophy, Users, X, Zap } from "lucide-react";
@@ -15,6 +16,8 @@ import fx from "@/lib/games/ui/fx.module.css";
 import { answerBlitz, finishBlitz, startBlitz } from "./actions";
 import { creditPlay, istToday, recordBlitzRound, type LearnState } from "@/lib/learn/engine";
 import { getLearnState, initLearnStore, setLearnState } from "@/lib/learn/store";
+import { useReaction } from "@/components/reactions/use-reaction";
+import { EndReaction } from "@/components/reactions/graphics";
 
 type Phase = "ready" | "countdown" | "run" | "finishing" | "done";
 type Miss = { prompt: string; answer: string; why: string; learn: { label: string; href: string } };
@@ -46,6 +49,9 @@ export function BlitzGame({ bests, serverState, save }: { bests: Bests; serverSt
   const [busy, setBusy] = React.useState(false);
   const [done, setDone] = React.useState<Done | null>(null);
   const [shown, setShown] = React.useState(bests);
+  // The clock is kept on the server and cannot pause: no how-to button while it runs.
+  useHowTo("blitz", { hideWhile: phase === "countdown" || phase === "run" });
+  const reaction = useReaction();
 
   const token = React.useRef<string | null>(null);
   const endAt = React.useRef(0);
@@ -116,6 +122,7 @@ export function BlitzGame({ bests, serverState, save }: { bests: Bests; serverSt
   }, []);
 
   const start = React.useCallback(() => {
+    startHowTo("blitz");
     // Drop anything still scheduled from the last round.
     timers.current.forEach((t) => window.clearTimeout(t));
     timers.current = [];
@@ -166,6 +173,8 @@ export function BlitzGame({ bests, serverState, save }: { bests: Bests; serverSt
         if (Math.abs(serverEnd - endAt.current) > 400) endAt.current = serverEnd;
         setRun(res.state);
         setReveal({ picked: choice, answer: res.answer, right: res.right });
+        // The clock runs: counted, never a pop-up. The end screen gets the reaction.
+        reaction.onAnswer(res.right, { timed: true });
         if (res.right) {
           haptic("tap");
           setGain((g) => ({ n: res.gained, key: (g?.key ?? 0) + 1 }));
@@ -189,7 +198,7 @@ export function BlitzGame({ bests, serverState, save }: { bests: Bests; serverSt
       });
       inflight.current = p;
     },
-    [phase, q, busy, reveal, finish, later],
+    [phase, q, busy, reveal, finish, later, reaction],
   );
 
   // Desktop keys: 1 to 4 answer, T/F for true or false, Enter or Space starts.
@@ -229,7 +238,7 @@ export function BlitzGame({ bests, serverState, save }: { bests: Bests; serverSt
   const step = nextStep(run.combo);
 
   return (
-    <div className="relative mx-auto w-full max-w-2xl space-y-4 px-4 py-5 sm:px-6">
+    <div className="relative mx-auto w-full max-w-2xl space-y-4">
       {/* Clock, score and combo */}
       <div className={cn(card, "space-y-3 p-3 hard-shadow-sm sm:p-4")}>
         <div className="flex items-center justify-between gap-3">
@@ -375,7 +384,7 @@ function BestLine({ bests }: { bests: Bests }) {
 
 function Ready({ bests, error, onStart }: { bests: Bests; error: string | null; onStart: () => void }) {
   return (
-    <div className="mx-auto w-full max-w-2xl space-y-4 px-4 py-6 sm:px-6">
+    <div className="mx-auto w-full max-w-2xl space-y-4">
       <BestLine bests={bests} />
       {!bests.stored && <p className="text-sm text-muted-foreground">Scores aren&apos;t being saved yet. You can still play.</p>}
       {error && (
@@ -394,7 +403,7 @@ function Result({ done, run, misses, bests, error, pending, onAgain }: { done: D
   const reduce = useReducedMotion();
   const anim = (cls: string) => (reduce === false ? cls : undefined);
   return (
-    <div className="mx-auto w-full max-w-2xl space-y-4 px-4 py-6 sm:px-6">
+    <div className="mx-auto w-full max-w-2xl space-y-4">
       <section className={cn(card, "relative overflow-hidden p-6 text-center hard-shadow-md", done?.newBest ? "bg-status-success-bg" : "bg-card", anim(fx.land))} aria-label="Round result">
         <p className={cn("mx-auto inline-flex items-center gap-2 rounded-md border-2 border-foreground bg-foreground px-3 py-1 font-pix text-lg uppercase text-background", anim(fx.stamp))}>
           <Timer className="size-5" aria-hidden /> Time
@@ -412,6 +421,7 @@ function Result({ done, run, misses, bests, error, pending, onAgain }: { done: D
             <p className="mt-1 text-sm font-semibold">
               {run.correct} right of {run.answered} · best combo {run.best}
             </p>
+            <EndReaction right={run.correct} total={Math.max(run.answered, 1)} seed={run.score} className="mx-auto mt-4 w-fit max-w-full justify-center" />
             <div className="mt-3 flex flex-wrap justify-center gap-2">
               {done?.newBest && (
                 <span className={cn(chip, "bg-primary text-primary-foreground", anim(fx.pop))}>
@@ -459,7 +469,7 @@ function Result({ done, run, misses, bests, error, pending, onAgain }: { done: D
           <RotateCcw className="size-4" aria-hidden /> Play again <span className="hidden text-sm font-normal lg:inline">(Enter)</span>
         </button>
         <Link href="/games" className={btnSecondary}>
-          <ArrowLeft className="size-4" aria-hidden /> All games
+          <ArrowLeft className="size-4" aria-hidden /> Back to Games
         </Link>
       </div>
     </div>

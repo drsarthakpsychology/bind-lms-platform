@@ -49,7 +49,7 @@ export default async function PassportPage() {
   }));
 
   return (
-    <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
+    <div className="mx-auto max-w-3xl">
       <Reveal delay={0.05}>
         <p className="text-eyebrow text-muted-foreground">Skills passport</p>
         <h1 className="mt-1 text-h1">Your competencies, evidenced</h1>

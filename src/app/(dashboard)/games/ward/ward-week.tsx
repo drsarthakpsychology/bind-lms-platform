@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { startHowTo } from "@/components/help/how-to";
 import { ArrowDown, ArrowRight, ArrowUp, BookOpen, Hospital, MapPin, Minus, Play, RotateCcw, Users, Vote } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { LearnLink } from "@/lib/games/ui/learn-link";
@@ -35,6 +36,8 @@ import type { WardTeamView } from "./actions";
 import { creditServerPlay } from "@/lib/learn/credit-play";
 import { HintBar, useHintStatus } from "@/components/hints/hint-chip";
 import { askHint } from "@/lib/hints/actions";
+import { useReaction } from "@/components/reactions/use-reaction";
+import { EndReaction } from "@/components/reactions/graphics";
 
 type Actions = {
   finishWardSolo: (x: { campaign: string; choices: string[]; run: string }) => Promise<{ ok: boolean; score: number; xp: number }>;
@@ -58,6 +61,7 @@ export function WardWeek({ teamsOn, openTeam, teams, actions }: { teamsOn: boole
   const [mode, setMode] = React.useState<Mode>(openTeam ? { kind: "team", teamId: openTeam } : { kind: "pick" });
 
   function goTeam(teamId: string) {
+    startHowTo("ward-week");
     try {
       window.history.replaceState(null, "", `/games/ward?team=${teamId}`);
     } catch {
@@ -80,8 +84,14 @@ export function WardWeek({ teamsOn, openTeam, teams, actions }: { teamsOn: boole
     <Pick
       teamsOn={teamsOn}
       teams={teams}
-      onSolo={(c) => setMode({ kind: "solo", solo: newSolo(c) })}
-      onResume={(s) => setMode({ kind: "solo", solo: s })}
+      onSolo={(c) => {
+        startHowTo("ward-week");
+        setMode({ kind: "solo", solo: newSolo(c) });
+      }}
+      onResume={(s) => {
+        startHowTo("ward-week");
+        setMode({ kind: "solo", solo: s });
+      }}
       onCreate={async (c) => {
         const r = await actions.createWardTeam(c);
         if (r.ok) goTeam(r.teamId);
@@ -154,7 +164,7 @@ function Pick({
   useHotkeys(Object.fromEntries(CAMPAIGNS.slice(0, 9).map((c, k) => [String(k + 1), () => onSolo(c.id)])));
   const live = teams.filter((t) => t.status !== "done");
   return (
-    <div className={cn("mx-auto max-w-3xl space-y-6 px-4 py-6", m.rise)}>
+    <div className={cn("mx-auto max-w-3xl space-y-6", m.rise)}>
       <h1 className="text-h2">Pick a patient</h1>
 
       {saved ? (
@@ -252,6 +262,7 @@ function SoloPlay({ solo, finish, onExit, onAgain }: { solo: Solo; finish: Actio
   const [hints, setHints] = useHintStatus();
   /** Hints used: decision id → options ruled out. */
   const [ruled, setRuled] = React.useState<Record<string, string[]>>({});
+  const reaction = useReaction();
   const current = reveal ? null : currentDecision(c, st);
 
   function pick(optionId: string) {
@@ -261,6 +272,8 @@ function SoloPlay({ solo, finish, onExit, onAgain }: { solo: Solo; finish: Actio
     if (!d || !o) return;
     const next = choose(c, st, optionId);
     buzz(o.q === "best");
+    // "Okay" is a near miss; poor and harmful choices are wrong.
+    reaction.onAnswer(o.q === "best", { partial: o.q === "ok" || (o.q === "best" && (ruled[d.id] ?? []).length > 0) });
     const list = [...choices, optionId];
     setChoices(list);
     setReveal({ decision: d, option: o, before: st.vars, flagsBefore: st.flags, after: next.vars, chapterBefore: st.chapter });
@@ -353,7 +366,7 @@ function Stage({
   useHotkeys(keys);
 
   return (
-    <div className="mx-auto max-w-3xl space-y-4 px-4 py-5">
+    <div className="mx-auto max-w-3xl space-y-4">
       <div className="flex flex-wrap items-center gap-2">
         <span className="flex items-center gap-1.5 font-semibold">
           <Hospital className="size-5" aria-hidden /> {c.title}
@@ -493,7 +506,7 @@ function RevealCard({ r, onNext, nextLabel }: { r: Reveal & { teamLine?: string 
       <p className="text-body">{r.option.why}</p>
       {r.decision.skill ? <LearnLink topic={KIND_LABEL[r.decision.kind]} href={`/study/${r.decision.skill.split(":")[0]}`} newTab /> : null}
       {!good ? (
-        <div className={cn("rounded-md border-2 border-foreground/30 bg-card p-3", m.rise)}>
+        <div className={cn("rounded-lg border-2 border-foreground/30 bg-card p-3", m.rise)}>
           <p className="text-caption font-semibold uppercase">The strongest call</p>
           <p className="mt-1 text-small font-semibold">{best.text}</p>
           <p className="mt-1 text-small">{best.why}</p>
@@ -514,7 +527,7 @@ function EndScreen({ c, st, xp, onAgain, onExit, teamLine }: { c: Campaign; st: 
   const strong = st.log.filter((l) => l.q === "best").length;
   useHotkeys(onAgain ? { Enter: onAgain } : {});
   return (
-    <div className={cn("mx-auto max-w-3xl space-y-5 px-4 py-6", m.rise)}>
+    <div className={cn("mx-auto max-w-3xl space-y-5", m.rise)}>
       <div className="flex flex-wrap items-end gap-3">
         <h1 className="text-h1">{ending.title}</h1>
         <Pill tone={tone} className={m.stamp}>
@@ -522,6 +535,7 @@ function EndScreen({ c, st, xp, onAgain, onExit, teamLine }: { c: Campaign; st: 
         </Pill>
       </div>
       {teamLine ? <p className="text-small font-semibold">{teamLine}</p> : null}
+      <EndReaction mood={tone === "good" ? (score >= 90 ? "streak" : "right") : tone === "part" ? "near" : "wrong"} seed={c.id} />
       <p className="text-body">{ending.text}</p>
 
       <Panel className="space-y-2">
@@ -553,7 +567,7 @@ function EndScreen({ c, st, xp, onAgain, onExit, teamLine }: { c: Campaign; st: 
             if (!f || !o) return null;
             const best = bestOption(f.decision);
             return (
-              <li key={i} className={cn("rounded-md border-2 border-foreground/25 bg-card p-3", m.rise)} style={{ "--i": i } as React.CSSProperties}>
+              <li key={i} className={cn("rounded-lg border-2 border-foreground/25 bg-card p-3", m.rise)} style={{ "--i": i } as React.CSSProperties}>
                 <div className="flex flex-wrap items-center gap-2">
                   <span className="font-mono text-caption">S{f.chapter + 1}</span>
                   <span className="text-caption text-muted-foreground">{KIND_LABEL[f.decision.kind]}</span>
@@ -573,7 +587,7 @@ function EndScreen({ c, st, xp, onAgain, onExit, teamLine }: { c: Campaign; st: 
       <div className="grid gap-2 sm:grid-cols-2">
         {onAgain ? (
           <Btn variant="primary" size="lg" onClick={onAgain}>
-            <RotateCcw aria-hidden /> Play this patient again <Kbd>Enter</Kbd>
+            <RotateCcw aria-hidden /> Play again <Kbd>Enter</Kbd>
           </Btn>
         ) : null}
         <Btn size="lg" onClick={onExit}>
@@ -605,7 +619,7 @@ function TeamPlay({ teamId, actions, onExit }: { teamId: string; actions: Action
 
   if (missing && !view)
     return (
-      <div className="mx-auto max-w-xl space-y-4 px-4 py-8">
+      <div className="mx-auto max-w-xl space-y-4">
         <h1 className="text-h2">Team not found</h1>
         <p className="text-body">You may not be in this team, or team play is not open yet.</p>
         <Btn variant="primary" onClick={onExit}>

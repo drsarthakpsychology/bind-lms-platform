@@ -247,7 +247,7 @@ export function SubmissionForm({
   // Already submitted: show the submitted state + unsubmit.
   if (isSubmitted && !canSubmit) {
     return (
-      <div className="space-y-3 rounded-md border-2 border-border bg-card p-4">
+      <div className="space-y-3 rounded-lg border-2 border-border bg-card p-4">
         <div className="flex flex-wrap items-center justify-between gap-2">
           <div className="flex items-center gap-2">
             <Badge variant="pending">

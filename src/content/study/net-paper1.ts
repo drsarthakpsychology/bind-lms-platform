@@ -7,14 +7,14 @@ import { part3 } from "./net-paper1-3";
 export const meta: ModuleMeta = {
   id: "net-paper1",
   num: 51,
-  title: "UGC NET Paper 1",
+  title: "General paper: teaching and research aptitude",
   emoji: "🧭",
   tagline: "All ten units: teaching and research aptitude, comprehension, communication, maths and logic (with Indian logic), data, ICT, environment and higher education",
   when: "Open to all levels",
   outcomes: [
     "Explain levels, methods and evaluation in teaching, with Bloom's revised taxonomy and Indian online initiatives",
     "Answer research-aptitude, comprehension and communication items quickly, using models and elimination",
-    "Solve the standard Paper 1 numericals: percentages, ratios, averages, interest, work, speed, series, codes and relations",
+    "Solve the standard general paper numericals: percentages, ratios, averages, interest, work, speed, series, codes and relations",
     "Test syllogisms with Venn diagrams and the square of opposition, and explain the pramanas, the five-membered inference and the five hetvabhasas",
     "Read tables and charts to compute changes, shares and averages accurately under time pressure",
     "State current, dated facts on ICT, environment agreements and Indian laws, NEP 2020 and higher-education bodies, and know which ones to recheck",

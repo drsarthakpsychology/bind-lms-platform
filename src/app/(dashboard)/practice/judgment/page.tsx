@@ -2,6 +2,7 @@ import { ToolHeader } from "@/components/help/tool-header";
 import { ALL_SEED_SCT_ITEMS } from "@/lib/practice/sct";
 import { JudgmentArena } from "./judgment-arena";
 import { requireFeature } from "@/lib/flags";
+import { BackPill } from "@/components/study/back";
 
 export const dynamic = "force-dynamic";
 
@@ -18,7 +19,8 @@ export default async function JudgmentPage() {
   const items = ALL_SEED_SCT_ITEMS;
 
   return (
-    <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
+    <div className="mx-auto max-w-3xl">
+      <BackPill className="mb-4" />
       <ToolHeader title="Judgment calls" tip={{ id: "judgment", steps: ["Say whether each new fact makes the diagnosis more or less likely."] }} />
 
       <div className="mt-6">

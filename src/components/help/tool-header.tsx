@@ -10,11 +10,14 @@ import { cn } from "@/lib/utils";
  * "Got it". Use it in place of an eyebrow, title and long subtitle.
  */
 export function ToolHeader({
+  eyebrow,
   title,
   tip,
   className,
   children,
 }: {
+  /** The section name above the title, as in PageHeader. */
+  eyebrow?: React.ReactNode;
   title: React.ReactNode;
   tip: TipContent & { id: string };
   className?: string;
@@ -24,9 +27,12 @@ export function ToolHeader({
   const t = useFirstTimeTip(tip.id);
   return (
     <div className={cn("space-y-3", className)}>
+      {eyebrow ? <div className="-mb-1.5 text-eyebrow text-link">{eyebrow}</div> : null}
       <div className="flex items-center gap-2">
         <h1 className="min-w-0 flex-1 text-h1 text-balance">{title}</h1>
-        <TipButton tip={t} label={tip.label ?? "How it works"} className="shrink-0" compact />
+        <TipButton tip={t} label={tip.label ?? "How it works"} title={tip.title} intro={tip.intro} steps={tip.steps} className="shrink-0">
+          {tip.children}
+        </TipButton>
         {children}
       </div>
       <TipPanel tip={t} title={tip.title ?? tip.label ?? "How it works"} intro={tip.intro} steps={tip.steps}>

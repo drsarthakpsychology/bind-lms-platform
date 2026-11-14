@@ -1,15 +1,15 @@
 /* Module · UGC NET Paper 1, Parts I and II (Starting and Beginner levels). Original text written for VIBHA School of Psychology. Dated facts checked November 2026. */
 export const part1 = String.raw`
-# Part I · Starting: how Paper 1 works, teaching, research, reading and communication
+# Part I · Starting: how the general paper works, teaching, research, reading and communication
 
-## 1.1 How Paper 1 works, and how to score well [core][starting]
-Every UGC NET candidate, whatever the subject, sits **Paper 1** (General Paper on Teaching and Research Aptitude). For a psychology candidate it is a third of the total marks, and it is the paper where steady practice gives the quickest gains.
+## 1.1 How the general paper works, and how to score well [core][starting]
+In the national teaching eligibility exam, every candidate, whatever the subject, sits the **general paper** (teaching and research aptitude). For a psychology candidate it is a third of the total marks, and it is the paper where steady practice gives the quickest gains.
 
 ### The pattern (December 2026 cycle; always recheck the current bulletin)
 - **50 multiple-choice questions, 2 marks each: 100 marks.**
 - **No negative marking**, so never leave a question blank.
-- Paper 1 and Paper 2 (100 psychology questions, 200 marks) are taken in **one 3-hour computer-based sitting with no break**. You can move between the papers.
-- The qualifying rule uses the **aggregate of both papers**, not Paper 1 alone.
+- The general paper and the subject paper (100 psychology questions, 200 marks) are taken in **one 3-hour computer-based sitting with no break**. You can move between the papers.
+- The qualifying rule uses the **aggregate of both papers**, not the general paper alone.
 - The syllabus has **10 units**. Comprehension and data interpretation usually come as **sets**: one passage or table followed by several questions.
 
 ### The ten units
@@ -37,17 +37,17 @@ With 150 questions in 180 minutes, you have about 72 seconds per question across
 - Mark doubtful items, answer them anyway, and return if time allows.
 
 :::widget decide
-{"scene": "Kavita has 20 minutes left. She has answered all of Paper 2 but has eight Paper 1 questions untouched: a 5-question data set and three ICT questions. She is unsure of all three ICT answers.", "ask": "What is her best move?", "choices": [{"label": "Spend all 20 minutes on the data set and leave the ICT questions blank.", "verdict": "harm", "outcome": "She loses three chances of free marks.", "why": "With no negative marking, a blank is a guaranteed zero; a guess has a 25% chance or better."}, {"label": "Guess the three ICT questions in under a minute (eliminating any option she can), then spend the rest on the data set.", "verdict": "best", "outcome": "She secures every possible mark and has enough time for careful calculation.", "why": "Answer everything, eliminate where possible, and put time where calculation earns marks."}, {"label": "Start the data set, and if time is left, come back to ICT.", "verdict": "ok", "outcome": "She finishes the data set with 30 seconds left and rushes the guesses.", "why": "Not wrong, but it risks leaving questions blank. Bank the quick guesses first."}]}
+{"scene": "Kavita has 20 minutes left. She has answered all of the subject paper but has eight general paper questions untouched: a 5-question data set and three ICT questions. She is unsure of all three ICT answers.", "ask": "What is her best move?", "choices": [{"label": "Spend all 20 minutes on the data set and leave the ICT questions blank.", "verdict": "harm", "outcome": "She loses three chances of free marks.", "why": "With no negative marking, a blank is a guaranteed zero; a guess has a 25% chance or better."}, {"label": "Guess the three ICT questions in under a minute (eliminating any option she can), then spend the rest on the data set.", "verdict": "best", "outcome": "She secures every possible mark and has enough time for careful calculation.", "why": "Answer everything, eliminate where possible, and put time where calculation earns marks."}, {"label": "Start the data set, and if time is left, come back to ICT.", "verdict": "ok", "outcome": "She finishes the data set with 30 seconds left and rushes the guesses.", "why": "Not wrong, but it risks leaving questions blank. Bank the quick guesses first."}]}
 :::
 
 :::recall
-1. How many questions and marks are in Paper 1, and is there negative marking? || 50 questions, 100 marks, no negative marking.
-2. Are Papers 1 and 2 timed separately? || No: one 3-hour sitting with no break for both.
+1. How many questions and marks are in the general paper, and is there negative marking? || 50 questions, 100 marks, no negative marking.
+2. Are the general paper and the subject paper timed separately? || No: one 3-hour sitting with no break for both.
 3. Which units usually come as sets? || Comprehension and data interpretation.
 :::
 
 :::mcq
-Q: In UGC NET, a candidate unsure of an answer should:
+Q: In a paper with no negative marking, a candidate unsure of an answer should:
 - Leave it blank so that no marks can be lost at all
 - Mark the longest option, which is usually correct
 - *Always answer, as there is no negative marking
@@ -192,7 +192,7 @@ Q: Microteaching was first developed at:
 :::
 
 ## 1.3 Research aptitude [core][starting]
-This unit overlaps with the **Research methods** module (40). Here is what Paper 1 asks, in its own style.
+This unit overlaps with the **Research methods** module (40). Here is what the general paper asks, in its own style.
 
 ### Meaning and types
 - Research is a **systematic, objective search for new knowledge** (or new application of knowledge) using a scientific method.
@@ -213,7 +213,7 @@ This unit overlaps with the **Research methods** module (40). Here is what Paper
 8. Generalise and report.
 
 :::widget timeline
-{"prompt": "Put the steps of research in their correct order for a Paper 1 question.", "events": [{"label": "Identify and define the problem"}, {"label": "Review the literature"}, {"label": "Formulate hypotheses"}, {"label": "Prepare the research design"}, {"label": "Collect data"}, {"label": "Analyse data"}, {"label": "Test hypotheses and interpret"}, {"label": "Generalise and report"}], "why": "A common trap puts hypotheses before the literature review. You need to know what is already known before you can predict sensibly."}
+{"prompt": "Put the steps of research in their correct order for a general paper question.", "events": [{"label": "Identify and define the problem"}, {"label": "Review the literature"}, {"label": "Formulate hypotheses"}, {"label": "Prepare the research design"}, {"label": "Collect data"}, {"label": "Analyse data"}, {"label": "Test hypotheses and interpret"}, {"label": "Generalise and report"}], "why": "A common trap puts hypotheses before the literature review. You need to know what is already known before you can predict sensibly."}
 :::
 
 :::widget flow
@@ -230,7 +230,7 @@ This unit overlaps with the **Research methods** module (40). Here is what Paper
 ### ICT in research
 Reference managers (**Zotero**, **Mendeley**), statistical software (**SPSS**, **R**, **jamovi**), qualitative analysis software (**NVivo**, **ATLAS.ti**), online surveys, plagiarism checkers (UGC provides **Shodh Shuddhi** to universities), repositories (**Shodhganga** for theses, **Shodhgangotri** for synopses) and researcher identifiers (**ORCID**).
 
-### Research ethics in Paper 1
+### Research ethics in the general paper
 - Honesty, objectivity, integrity, openness, respect for intellectual property, confidentiality, responsible publication, legality, care for participants.
 - **Plagiarism** under the **UGC 2018 regulations**: similarity up to 10% is level 0; above 10 to 40% level 1; above 40 to 60% level 2; above 60% level 3.
 - **Fabrication, falsification and plagiarism** are research misconduct; so are duplicate publication and gift authorship.
@@ -272,7 +272,7 @@ Q: A list of all works consulted, whether cited or not, is a:
 :::
 
 ## 1.4 Comprehension [core][starting]
-Comprehension sets give a passage of about 250 to 400 words and several questions. They are often the easiest marks in Paper 1 if you use a method.
+Comprehension sets give a passage of about 250 to 400 words and several questions. They are often the easiest marks in the general paper if you use a method.
 
 ### A method that works
 1. **Read the questions first** (not the options), so you know what to look for.
@@ -446,7 +446,7 @@ Q: Communication from a principal to teachers is:
 Twelve or more right out of fifteen (80%) opens the Beginner level.
 
 :::mcq
-Q: Paper 1 of UGC NET carries:
+Q: The general paper carries:
 - 50 marks
 - 150 marks
 - 200 marks
@@ -555,7 +555,7 @@ Q: Agenda-setting theory was proposed by:
 # Part II · Beginner: numbers, logic and data
 
 ## 2.1 Mathematical reasoning [core][beginner]
-Paper 1 numericals are school-level maths done quickly and accurately. Learn the patterns, then practise.
+General paper numericals are school-level maths done quickly and accurately. Learn the patterns, then practise.
 
 ### Percentages, ratio and averages
 - **Percentage change** = (change ÷ original) × 100.
@@ -764,7 +764,7 @@ Q: "My grandfather smoked all his life and lived to 95, so smoking is harmless."
 :::
 
 ## 2.3 Indian logic: pramanas, inference and fallacies [core][beginner]
-Indian philosophy asked carefully how we **know**. The **Nyaya** school (founded on Gautama's, also called Akshapada's, *Nyaya Sutra*) built a theory of valid knowledge and argument that Paper 1 now tests directly.
+Indian philosophy asked carefully how we **know**. The **Nyaya** school (founded on Gautama's, also called Akshapada's, *Nyaya Sutra*) built a theory of valid knowledge and argument that the general paper now tests directly.
 
 ### The vocabulary of knowing
 - **Prama:** valid knowledge. **Aprama:** invalid knowledge (doubt, error).
