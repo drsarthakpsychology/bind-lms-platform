@@ -6,6 +6,7 @@ import { buyHints, hintStatus, spendHint, type HintStatus } from "./server";
 import { resolveHint, type HintAsk, type HintGive } from "./resolve";
 import { detectiveCase } from "@/lib/learn/detective-server";
 import { rxCurrent } from "@/lib/games-sims/rx/server";
+import { mseCurrent } from "@/lib/games-sims/mse/server";
 
 /** The signed-in student's hints left (null when signed out). */
 export async function getHintStatus(): Promise<HintStatus | null> {
@@ -34,13 +35,18 @@ export async function askHint(input: HintAsk): Promise<HintAnswer> {
   if (!me) return { ok: false, error: "Please sign in again.", status: null };
   // Clinic detective: the browser never knows the answer; it is read from the signed deal here.
   // Rx Detective: the case and step are read from the signed run here too.
-  const ask: HintAsk | null = input?.game === "detective" ? withDetectiveAnswer(me.id, input) : input?.game === "rx" ? withRxCase(me.id, input) : input;
+  const ask: HintAsk | null = input?.game === "detective" ? withDetectiveAnswer(me.id, input) : input?.game === "rx" ? withRxCase(me.id, input) : input?.game === "mse" ? withMseFinding(me.id, input) : input;
   const r = ask ? resolveHint(ask) : null;
   if (!r) return { ok: false, error: "That hint isn't available.", status: null };
   // One hint per item here, so asking again shows the same hint without charging.
   const spent = await spendHint(me.id, { game: r.game, item: r.item, step: 1 });
   if (!spent.ok) return { ok: false, error: spent.error, status: spent.status };
   return { ok: true, give: r.give, status: spent.status };
+}
+
+function withMseFinding(userId: string, input: Extract<HintAsk, { game: "mse" }>): HintAsk | null {
+  const c = mseCurrent(userId, input.token);
+  return c ? { game: "mse", run: c.run, options: c.token.o[c.idx] ?? [], excerpt: c.excerpt.id, idx: c.idx } : null;
 }
 
 function withRxCase(userId: string, input: Extract<HintAsk, { game: "rx" }>): HintAsk | null {

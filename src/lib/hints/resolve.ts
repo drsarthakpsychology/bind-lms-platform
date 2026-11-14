@@ -17,7 +17,7 @@ import { itemKey, ruleOut, type HintGame } from "./rules";
 export type HintAsk =
   | { game: "detective"; run: string; round: number; options: string[]; token?: string; answer?: string }
   | { game: "rx"; run: string; options: string[]; token?: string; kind?: "chain" | "mystery" | "puzzle" | "review"; id?: string; step?: number }
-  | { game: "mse"; run: string; excerpt: string; idx: number; options: string[] }
+  | { game: "mse"; run: string; options: string[]; token?: string; excerpt?: string; idx?: number }
   | { game: "ward"; run: string; campaign: string; decision: string; options: string[] }
   | { game: "comorbid"; run: string; level: 1 | 2 | 3; moves: Move[]; prefer?: string };
 
@@ -57,11 +57,13 @@ export function resolveHint(a: HintAsk): Resolved {
       return { game: "rx", item: itemKey("rx", a.run, local), give: { remove: ruleOut(o, [right], hashString(`${a.run}:${local}`)), pick: null, text: RULE_OUT } };
     }
     case "mse": {
-      const f = excerptById(a.excerpt)?.findings[a.idx];
+      // `excerpt` and `idx` are filled on the server from the signed round (askHint), never taken from the browser.
+      if (typeof a.excerpt !== "string" || !Number.isInteger(a.idx)) return null;
+      const f = excerptById(a.excerpt)?.findings[a.idx as number];
       const o = opts(a.options);
       if (!f || !o.includes(f.a)) return null;
       // Near misses stay: they teach the difference.
-      return { game: "mse", item: itemKey("mse", a.run, a.excerpt, a.idx), give: { remove: ruleOut(o, [f.a, ...(f.close ?? [])], hashString(`${a.run}:${a.excerpt}:${a.idx}`)), pick: null, text: RULE_OUT } };
+      return { game: "mse", item: itemKey("mse", a.run, a.excerpt, a.idx as number), give: { remove: ruleOut(o, [f.a, ...(f.close ?? [])], hashString(`${a.run}:${a.excerpt}:${a.idx}`)), pick: null, text: RULE_OUT } };
     }
     case "ward": {
       const d = campaignById(a.campaign)?.chapters.flatMap((ch) => ch.decisions).find((x) => x.id === a.decision);

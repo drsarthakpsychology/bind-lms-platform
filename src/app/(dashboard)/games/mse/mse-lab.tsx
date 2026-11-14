@@ -7,11 +7,9 @@ import { ArrowRight, Eye, Flame, ScanEye, Undo2 } from "lucide-react";
 import type { LearnState } from "@/lib/learn/engine";
 import { cn } from "@/lib/utils";
 import { LearnLink } from "@/lib/games/ui/learn-link";
-import { hashString, makeRng, pct } from "@/lib/games-sims/common";
-import { excerptById, type Excerpt } from "@/lib/games-sims/mse/excerpts";
-import { historyFor, noteAnswer, useHistoryPrefetch } from "@/lib/history/client";
-import { EXCERPT_RIGHT, gradeExcerpt, gradeTag, nextLevel, nextStreak, optionsFor, pickExcerpt, pointsFor, ROUND_SIZE, segments, whyNot, type Level, type Tag, type TagResult } from "@/lib/games-sims/mse/grade";
-import { DOMAINS, TERMS, domainLabel, termById, type Domain } from "@/lib/games-sims/mse/terms";
+import { pct } from "@/lib/games-sims/common";
+import { nextStreak, pointsFor, segments, type FindingReveal, type Level, type PublicExcerpt, type Tag } from "@/lib/games-sims/mse/rules";
+import { DOMAINS, TERMS, domainLabel, type Domain } from "@/lib/games-sims/mse/terms";
 import { AccuracyBoard, type AccuracyBoardData } from "@/lib/games-sims/ui/board";
 import { Btn, buzz, Kbd, motionCss as m, Panel, Pill, readLocal, Stat, toneFor, useGameXp, useHotkeys, verdictWord, writeLocal } from "@/lib/games-sims/ui/kit";
 import { HintBar, useHintStatus } from "@/components/hints/hint-chip";
@@ -27,15 +25,21 @@ const LEVELS: { id: Level; label: string; line: string }[] = [
 ];
 const LETTERS = ["a", "b", "c", "d", "e"];
 const BEST_KEY = "vibha-mse-best-streak";
+const FAIL = "That didn't load. Try again.";
 
 type Play = {
+  /** The signed round from the server: the browser never holds a finding's answer before it is tagged. */
+  token: string;
   seed: string;
   level: Level;
-  seen: string[];
-  excerpt: string;
+  /** Excerpts done this round: who, and the score. */
+  seen: { who: string; score: number }[];
+  excerpt: PublicExcerpt;
+  /** After an excerpt's last finding: the next excerpt (null: the round is over). */
+  next: PublicExcerpt | null | undefined;
   idx: number;
   tags: Tag[];
-  results: TagResult[];
+  results: FindingReveal[];
   pick: Domain | null;
   revealed: boolean;
   streak: number;
@@ -49,38 +53,47 @@ type Play = {
   ruled: Record<number, string[]>;
 };
 
-type Submit = (x: { id: string; tags: Tag[]; streak: number; level: number; run?: string }) => Promise<{ ok: boolean }>;
+import type { MseDeal, MseTag } from "./actions";
 
-export function MseLab({ serverState, save, board, submit }: { serverState: LearnState | null; save: (s: LearnState) => Promise<unknown>; board: AccuracyBoardData; submit: Submit }) {
+type Actions = {
+  deal: (level: Level) => Promise<MseDeal>;
+  tag: (x: { token: string; domain: string; term: string }) => Promise<MseTag>;
+};
+
+export function MseLab({ serverState, save, board, actions }: { serverState: LearnState | null; save: (s: LearnState) => Promise<unknown>; board: AccuracyBoardData; actions: Actions }) {
   const { award } = useGameXp(serverState, save);
   const router = useRouter();
   const [play, setPlay] = React.useState<Play | null>(null);
   const [done, setDone] = React.useState<Play | null>(null);
   const [bestEver, setBestEver] = React.useState<number | null>(null);
-  useHistoryPrefetch("mse-lab");
+  const [busy, setBusy] = React.useState(false);
+  const [error, setError] = React.useState<string | null>(null);
 
-  function start(level: Level) {
+  async function start(level: Level) {
+    if (busy) return;
     startHowTo("mse-lab");
-    const seed = `${Date.now()}`;
-    const rng = makeRng(hashString(seed));
-    // Answer history: an excerpt not seen yet first, then a missed one (src/lib/history).
-    const e = pickExcerpt(level, new Set(), rng, historyFor("mse-lab"))!;
+    setBusy(true);
+    setError(null);
+    // The server deals the round in answer history order (an excerpt not seen yet first, then a missed one).
+    const d = await actions.deal(level).catch(() => null);
+    setBusy(false);
+    if (!d || !d.ok) {
+      setDone(null);
+      setError(d && !d.ok ? d.error : FAIL);
+      return;
+    }
     setBestEver(readLocal(BEST_KEY, 0));
     setDone(null);
-    setPlay({ seed, level, seen: [e.id], excerpt: e.id, idx: 0, tags: [], results: [], pick: null, revealed: false, streak: 0, best: 0, points: 0, scores: [], tagsDone: 0, tagsScore: 0, gained: 0, ruled: {} });
+    setPlay({ token: d.token, seed: d.run, level: d.excerpt.level, seen: [], excerpt: d.excerpt, next: undefined, idx: 0, tags: [], results: [], pick: null, revealed: false, streak: 0, best: 0, points: 0, scores: [], tagsDone: 0, tagsScore: 0, gained: 0, ruled: {} });
   }
 
-  if (done) return <Summary p={done} bestEver={bestEver ?? 0} board={board} onAgain={() => start(done.level)} />;
-  if (!play) return <Intro board={board} onStart={start} />;
+  if (done) return <Summary p={done} bestEver={bestEver ?? 0} board={board} onAgain={() => void start(done.level)} />;
+  if (!play) return <Intro board={board} busy={busy} error={error} onStart={(l) => void start(l)} />;
   return (
     <Round
       play={play}
       setPlay={setPlay}
-      onExcerptDone={(p, e) => {
-        // Browser copy of the answer history (the server records it too).
-        noteAnswer("mse-lab", e.id, gradeExcerpt(e, p.tags).score >= EXCERPT_RIGHT, { server: false });
-        void submit({ id: e.id, tags: p.tags, streak: p.best, level: p.level, run: p.seed }).catch(() => undefined);
-      }}
+      tagOnServer={actions.tag}
       onFinish={(p) => {
         const xp = Math.round(p.tagsScore * 5) + 10;
         award(xp);
@@ -95,14 +108,14 @@ export function MseLab({ serverState, save, board, submit }: { serverState: Lear
   );
 }
 
-function Intro({ board, onStart }: { board: AccuracyBoardData; onStart: (l: Level) => void }) {
+function Intro({ board, busy, error, onStart }: { board: AccuracyBoardData; busy: boolean; error: string | null; onStart: (l: Level) => void }) {
   useHotkeys({ "1": () => onStart(1), "2": () => onStart(2), "3": () => onStart(3) });
   return (
     <div className={cn("mx-auto max-w-2xl space-y-6", m.rise)}>
       <h1 className="text-h2">Pick a level</h1>
       <div className="grid gap-3 sm:grid-cols-3">
         {LEVELS.map((l) => (
-          <Btn key={l.id} variant={l.id === 1 ? "primary" : "outline"} size="lg" className="h-auto flex-col items-start py-3 text-left" onClick={() => onStart(l.id)}>
+          <Btn key={l.id} variant={l.id === 1 ? "primary" : "outline"} size="lg" disabled={busy} className="h-auto flex-col items-start py-3 text-left" onClick={() => onStart(l.id)}>
             <span className="text-body-strong">
               {l.label}
               <Kbd>{l.id}</Kbd>
@@ -111,33 +124,50 @@ function Intro({ board, onStart }: { board: AccuracyBoardData; onStart: (l: Leve
           </Btn>
         ))}
       </div>
+      {error ? (
+        <p className="text-small font-semibold" role="status">
+          {error}
+        </p>
+      ) : null}
       <AccuracyBoard data={board} />
     </div>
   );
 }
 
-function Round({ play, setPlay, onExcerptDone, onFinish }: { play: Play; setPlay: (p: Play) => void; onExcerptDone: (p: Play, e: Excerpt) => void; onFinish: (p: Play) => void }) {
-  const e = excerptById(play.excerpt)!;
-  const f = e.findings[play.idx];
-  const allOptions = React.useMemo(() => optionsFor(f, makeRng(hashString(`${play.seed}:${e.id}:${play.idx}`))), [f, play.seed, e.id, play.idx]);
+function Round({ play, setPlay, tagOnServer, onFinish }: { play: Play; setPlay: React.Dispatch<React.SetStateAction<Play | null>>; tagOnServer: Actions["tag"]; onFinish: (p: Play) => void }) {
+  const e = play.excerpt;
+  const quote = e.quotes[play.idx];
+  const allOptions = e.options[play.idx] ?? [];
   const gone = play.ruled[play.idx] ?? [];
   const options = allOptions.filter((t) => !gone.includes(t));
   const hinted = gone.length > 0;
   const [hints, setHints] = useHintStatus();
   const reaction = useReaction();
+  const [busy, setBusy] = React.useState(false);
+  const [lost, setLost] = React.useState<string | null>(null);
   const result = play.revealed ? play.results[play.idx] : null;
   const tag = play.tags[play.idx];
-  const lastFinding = play.idx === e.findings.length - 1;
-  const lastExcerpt = play.seen.length >= ROUND_SIZE;
+  const lastFinding = play.idx === e.quotes.length - 1;
+  const lastExcerpt = lastFinding && play.next === null;
 
   function pickDomain(d: Domain) {
     if (play.revealed) return;
     setPlay({ ...play, pick: d });
   }
-  function pickTerm(t: string) {
-    if (play.revealed || !play.pick) return;
+  // One tag in flight at a time, so a double tap counts once.
+  const inflight = React.useRef(false);
+  async function pickTerm(t: string) {
+    if (play.revealed || !play.pick || inflight.current) return;
+    inflight.current = true;
+    setBusy(true);
     const tg = { domain: play.pick, term: t };
-    const r = gradeTag(f, tg);
+    const res = await tagOnServer({ token: play.token, domain: tg.domain, term: t }).catch(() => null);
+    inflight.current = false;
+    setBusy(false);
+    // No connection is not a wrong answer: nothing counted, try again.
+    setLost(!res ? "Connection lost. Your answer was not sent. Try again." : res.ok ? null : res.error);
+    if (!res || !res.ok) return;
+    const r = res.reveal;
     buzz(r.score >= 1);
     reaction.onAnswer(r.score >= 1, { partial: (r.score > 0 && r.score < 1) || (r.score >= 1 && hinted) });
     const streak = nextStreak(play.streak, r);
@@ -148,7 +178,7 @@ function Round({ play, setPlay, onExcerptDone, onFinish }: { play: Play; setPlay
     // A hint halves this finding's points (and its XP share).
     const gained = hintedPoints(pointsFor(r.score, play.streak), hinted ? 1 : 0);
     const counted = hinted ? r.score * POINTS_KEPT[1] : r.score;
-    setPlay({ ...play, tags, results, revealed: true, streak, gained, best: Math.max(play.best, streak), points: play.points + gained, tagsDone: play.tagsDone + 1, tagsScore: play.tagsScore + counted });
+    setPlay((p) => p && { ...p, token: res.token, next: res.next, tags, results, revealed: true, streak, gained, best: Math.max(p.best, streak), points: p.points + gained, tagsDone: p.tagsDone + 1, tagsScore: p.tagsScore + counted });
   }
   function next() {
     if (!play.revealed) return;
@@ -156,28 +186,20 @@ function Round({ play, setPlay, onExcerptDone, onFinish }: { play: Play; setPlay
       setPlay({ ...play, idx: play.idx + 1, pick: null, revealed: false });
       return;
     }
-    const score = play.results.reduce((a, r) => a + r.score, 0) / e.findings.length;
+    const score = play.results.reduce((a, r) => a + r.score, 0) / e.quotes.length;
     const scores = [...play.scores, score];
-    const done = { ...play, scores };
-    onExcerptDone(done, e);
-    if (lastExcerpt) {
+    const done = { ...play, scores, seen: [...play.seen, { who: e.who, score }] };
+    if (!play.next) {
       onFinish(done);
       return;
     }
-    const level = nextLevel(play.level, scores);
-    const rng = makeRng(hashString(`${play.seed}:${play.seen.length}`));
-    const nx = pickExcerpt(level, new Set(play.seen), rng, historyFor("mse-lab"));
-    if (!nx) {
-      onFinish(done);
-      return;
-    }
-    setPlay({ ...done, level, seen: [...play.seen, nx.id], excerpt: nx.id, idx: 0, tags: [], results: [], pick: null, revealed: false, ruled: {} });
+    setPlay({ ...done, level: play.next.level, excerpt: play.next, next: undefined, idx: 0, tags: [], results: [], pick: null, revealed: false, ruled: {} });
   }
 
   const keys: Record<string, () => void> = {};
   if (!play.revealed) {
     DOMAINS.forEach((d, i) => (keys[String(i + 1)] = () => pickDomain(d.id)));
-    if (play.pick) options.forEach((t, i) => (keys[LETTERS[i]] = () => pickTerm(t)));
+    if (play.pick) options.forEach((t, i) => (keys[LETTERS[i]] = () => void pickTerm(t)));
     keys.Backspace = () => setPlay({ ...play, pick: null });
   } else {
     keys.Enter = next;
@@ -185,14 +207,14 @@ function Round({ play, setPlay, onExcerptDone, onFinish }: { play: Play; setPlay
   }
   useHotkeys(keys);
 
-  const quotes = e.findings.map((x) => x.q);
+  const quotes = e.quotes;
   const levelLabel = LEVELS.find((l) => l.id === play.level)!.label;
 
   return (
     <div className="mx-auto max-w-2xl space-y-4">
       <div className="flex flex-wrap items-center gap-2">
         <span className="flex items-center gap-1.5 font-semibold">
-          <ScanEye className="size-5" aria-hidden /> Excerpt {play.seen.length}
+          <ScanEye className="size-5" aria-hidden /> Excerpt {play.seen.length + 1}
         </span>
         <Pill tone="info">{levelLabel}</Pill>
         <span className="ml-auto flex gap-2">
@@ -201,7 +223,7 @@ function Round({ play, setPlay, onExcerptDone, onFinish }: { play: Play; setPlay
         </span>
       </div>
 
-      <Panel className={cn("space-y-3", m.rise)} key={e.id}>
+      <Panel className={cn("space-y-3", m.rise)} key={play.seen.length}>
         <div>
           <p className="text-body-strong">{e.who}</p>
           <p className="text-caption text-muted-foreground">{e.place}</p>
@@ -230,7 +252,7 @@ function Round({ play, setPlay, onExcerptDone, onFinish }: { play: Play; setPlay
         <p className="text-caption font-semibold uppercase">
           Finding {play.idx + 1}
         </p>
-        <p className="border-l-4 border-primary pl-3 text-body-strong">“{f.q}”</p>
+        <p className="border-l-4 border-primary pl-3 text-body-strong">“{quote}”</p>
 
         {!play.revealed && !play.pick ? (
           <fieldset>
@@ -258,16 +280,16 @@ function Round({ play, setPlay, onExcerptDone, onFinish }: { play: Play; setPlay
               status={hints}
               onStatus={setHints}
               used={hinted}
-              ask={() => askHint({ game: "mse", run: play.seed, excerpt: e.id, idx: play.idx, options: allOptions })}
-              onGive={(h) => setPlay({ ...play, ruled: { ...play.ruled, [play.idx]: h.remove } })}
+              ask={() => askHint({ game: "mse", run: play.seed, token: play.token, options: allOptions })}
+              onGive={(h) => setPlay((p) => p && { ...p, ruled: { ...p.ruled, [p.idx]: h.remove } })}
             />
             <div className="grid gap-2 sm:grid-cols-2">
               {options.map((t, i) => (
-                <Btn key={t} className="justify-start text-left" onClick={() => pickTerm(t)}>
+                <Btn key={t} disabled={busy} className="justify-start text-left" onClick={() => void pickTerm(t)}>
                   <span className="font-mono text-caption uppercase opacity-70" aria-hidden>
                     {LETTERS[i]}
                   </span>
-                  {TERMS[t as keyof typeof TERMS].label}
+                  {label(t)}
                 </Btn>
               ))}
             </div>
@@ -277,6 +299,12 @@ function Round({ play, setPlay, onExcerptDone, onFinish }: { play: Play; setPlay
               </Btn>
             </div>
           </fieldset>
+        ) : null}
+
+        {lost ? (
+          <p className="text-small font-semibold" role="status">
+            {lost}
+          </p>
         ) : null}
 
         {result && tag ? (
@@ -290,18 +318,18 @@ function Round({ play, setPlay, onExcerptDone, onFinish }: { play: Play; setPlay
                 <Pill tone={result.domainOk ? "good" : "bad"} className="mr-1">
                   Part
                 </Pill>
-                {result.domainOk ? domainLabel(tag.domain!) : `You picked ${domainLabel(tag.domain!)}. It belongs under ${domainLabel(TERMS[f.a].domain)}.`}
+                {result.domainOk ? domainLabel(tag.domain!) : `You picked ${domainLabel(tag.domain!)}. It belongs under ${domainLabel(result.answerDomain)}.`}
               </li>
               <li>
                 <Pill tone={result.termOk ? "good" : result.close ? "part" : "bad"} className="mr-1">
                   Word
                 </Pill>
-                {result.termOk ? TERMS[f.a].label : `${result.close ? "Close. " : ""}The word is ${TERMS[f.a].label}.`}
+                {result.termOk ? label(result.answer) : `${result.close ? "Close. " : ""}The word is ${label(result.answer)}.`}
               </li>
             </ul>
-            <p className="text-body">{f.why}</p>
-            {!result.termOk && tag.term && termById(tag.term) ? <p className="rounded-md border-2 border-foreground/20 bg-card p-2 text-small">{whyNot(tag.term, f)}</p> : null}
-            <LearnLink topic={TERMS[f.a].label} href="/study/mse-deep" newTab />
+            <p className="text-body">{result.why}</p>
+            {result.whyNot ? <p className="rounded-md border-2 border-foreground/20 bg-card p-2 text-small">{result.whyNot}</p> : null}
+            <LearnLink topic={label(result.answer)} href="/study/mse-deep" newTab />
             <Btn variant="primary" size="lg" className="w-full" onClick={next} autoFocus>
               {!lastFinding ? "Next finding" : lastExcerpt ? "See results" : "Next excerpt"} <ArrowRight aria-hidden />
               <Kbd>Enter</Kbd>
@@ -312,6 +340,8 @@ function Round({ play, setPlay, onExcerptDone, onFinish }: { play: Play; setPlay
     </div>
   );
 }
+
+const label = (id: string) => (TERMS as Record<string, { label: string }>)[id]?.label ?? id;
 
 function Marked({ text, quotes, play }: { text: string; quotes: string[]; play: Play }) {
   return (
@@ -355,12 +385,11 @@ function Summary({ p, bestEver, board, onAgain }: { p: Play; bestEver: number; b
       </div>
       {p.best >= bestEver && p.best > 0 ? <p className={cn("inline-block rounded-md border-2 border-foreground bg-primary px-3 py-1 font-semibold text-primary-foreground", m.stamp)}>New best streak: {p.best}</p> : <p className="text-small">Your best streak: {bestEver}</p>}
       <ol className="space-y-1">
-        {p.seen.map((id, i) => {
-          const e = excerptById(id)!;
-          const s = p.scores[i] ?? 0;
+        {p.seen.map((x, i) => {
+          const s = x.score;
           return (
-            <li key={id} className="flex items-center justify-between gap-2 rounded-md border-2 border-foreground/20 px-3 py-2">
-              <span className="min-w-0 truncate">{e.who}</span>
+            <li key={i} className="flex items-center justify-between gap-2 rounded-md border-2 border-foreground/20 px-3 py-2">
+              <span className="min-w-0 truncate">{x.who}</span>
               <Pill tone={toneFor(s)}>{pct(s)}%</Pill>
             </li>
           );
