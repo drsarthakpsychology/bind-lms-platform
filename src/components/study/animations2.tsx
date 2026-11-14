@@ -7,6 +7,8 @@ import { cn } from "@/lib/utils";
 import { Rich } from "./rich";
 import { trackLearn } from "@/lib/learn/track";
 import { StepPicker } from "./pacing";
+import { Arrow, C, E, HAND, Head, L, Label, P, R, Sheet, wrap } from "@/components/sketch/ink";
+import { BOX, SketchFrame } from "@/components/sketch/frame";
 
 /**
  * Animated explainers for core psychology processes: classical and operant
@@ -47,55 +49,64 @@ export function Conditioning({ d }: { d: ConditioningData }) {
   return (
     <figure className={card}>
       <p className={label}>{d.title ? <Rich text={d.title} /> : classical ? "Classical conditioning" : "Operant conditioning"}</p>
-      <svg viewBox="0 0 320 170" className="mt-3 w-full rounded-xl border-2 border-foreground bg-background" role="img" aria-label={`${cur.name}: ${cur.text}`}>
+      <Sheet name={classical ? "conditioning-classical" : "conditioning-operant"} w={380} h={210} label={`${cur.name}: ${cur.text}`} className="mx-auto mt-3 max-w-[32rem]">
         {classical ? (
           <>
             {/* bell */}
-            <g key={i} style={{ transformOrigin: "60px 30px", animationIterationCount: 2 }} className={cn(i >= 1 && i <= 4 ? "vibha-swing" : "")}>
-              <path d="M48 52 Q 60 10 72 52 Z" className={cn("stroke-foreground", i >= 1 ? "fill-[var(--primary)]" : "fill-card")} strokeWidth="2" />
-              <circle cx="60" cy="54" r="4" className="fill-foreground" />
+            <g key={i} style={{ transformOrigin: "62px 36px", animationIterationCount: 2 }} className={i >= 1 && i <= 4 ? "vibha-swing" : undefined}>
+              <P k={`bell-${i >= 1}`} d="M44 74 C44 44 52 30 62 30 C72 30 80 44 80 74 Z" sw={2.2} fill={i >= 1 ? C.lime : C.paper} fillStyle={i >= 1 ? "hachure" : "solid"} gap={4} />
+              <L k="bell-rim" x1={38} y1={74} x2={86} y2={74} sw={2.4} />
+              <E k="bell-clapper" cx={62} cy={80} w={9} h={9} fill={C.ink} fillStyle="solid" sw={1} />
+              <L k="bell-hang" x1={62} y1={30} x2={62} y2={20} sw={2} />
             </g>
-            <text x="60" y="72" textAnchor="middle" className="fill-foreground text-[8px] font-semibold">bell</text>
+            <Label x={62} y={106} size={15} anchor="middle">bell</Label>
             {/* food */}
             <g style={{ transform: `translateY(${i >= 1 && i <= 3 ? 0 : -40}px)`, opacity: i >= 1 && i <= 3 ? 1 : 0, transition: "transform 700ms var(--ease-out-expo), opacity 500ms" }}>
-              <ellipse cx="150" cy="54" rx="22" ry="9" className="fill-[var(--status-alert-bg)] stroke-foreground" strokeWidth="2" />
-              <text x="150" y="72" textAnchor="middle" className="fill-foreground text-[8px] font-semibold">food</text>
+              <P k="bowl" d="M134 62 L190 62 C188 80 178 88 162 88 C146 88 136 80 134 62 Z" sw={2} fill={C.paper} fillStyle="solid" />
+              <E k="food" cx={162} cy={60} w={50} h={14} fill={C.red} gap={3.5} sw={1.6} />
             </g>
+            {i >= 1 && i <= 3 ? <Label x={162} y={108} size={15} anchor="middle">food</Label> : null}
             {/* dog */}
-            <ellipse cx="245" cy="110" rx="48" ry="30" className="fill-[var(--muted)] stroke-foreground" strokeWidth="2" />
-            <circle cx="210" cy="90" r="20" className="fill-[var(--muted)] stroke-foreground" strokeWidth="2" />
-            <circle cx="204" cy="86" r="2.5" className="fill-foreground" />
-            <path d="M196 72 l-8 -14 l14 6 Z" className="fill-[var(--muted)] stroke-foreground" strokeWidth="2" />
-            {/* drool drops */}
+            <E k="dog-body" cx={292} cy={140} w={118} h={62} sw={2.2} fill={C.wash} fillStyle="solid" />
+            <P k="dog-legs" d="M252 164 L250 192 M272 168 L272 194 M312 168 L314 194 M332 162 L336 190 M350 128 Q372 112 366 96" sw={2.2} single />
+            <E k="dog-head" cx={244} cy={110} w={50} h={46} sw={2.2} fill={C.wash} fillStyle="solid" />
+            <P k="dog-ear" d="M232 90 L222 66 L248 84" sw={2} fill={C.wash} fillStyle="solid" />
+            <P k="dog-snout" d="M222 116 Q208 120 212 128 Q220 132 230 128" sw={1.8} single />
+            <E k="dog-eye" cx={238} cy={104} w={5} h={5} fill={C.ink} fillStyle="solid" sw={1} />
             {[0, 1, 2].map((k) => (
-              <circle key={k} cx={200 + k * 6} cy={112 + k * 14} r={3} className="fill-[var(--status-info-fg)] transition-all duration-slow" style={{ opacity: drool > k / 3 ? 0.9 : 0, transform: `translateY(${drool > k / 3 ? 0 : -8}px)` }} />
+              <ellipse key={k} cx={216 + k * 4} cy={140 + k * 14} rx={3.5} ry={4.5} fill={C.blue} style={{ opacity: drool > k / 3 ? 0.9 : 0, transform: `translateY(${drool > k / 3 ? 0 : -8}px)`, transition: "opacity 500ms, transform 500ms" }} />
             ))}
-            <text x="245" y="156" textAnchor="middle" className="fill-foreground text-[8px]">salivation: {Math.round(drool * 100)}%</text>
+            <Label x={292} y={206} size={15} anchor="middle">{`salivation: ${Math.round(drool * 100)}%`}</Label>
           </>
         ) : (
           <>
-            {/* box */}
-            <rect x="40" y="30" width="240" height="120" rx="8" className="fill-[var(--muted)] stroke-foreground" strokeWidth="2" />
-            <rect x="60" y="80" width="30" height="8" className="fill-foreground" style={{ transform: `rotate(${pressRate > 0.2 ? -8 : 0}deg)`, transformOrigin: "60px 84px", transition: "transform 300ms" }} />
-            <text x="75" y="104" textAnchor="middle" className="fill-foreground text-[8px]">lever</text>
-            <rect x="60" y="120" width="30" height="18" className="fill-card stroke-foreground" strokeWidth="1.5" />
-            <circle cx="75" cy="129" r="4" className="fill-[var(--status-alert-fg)]" style={{ opacity: i >= 1 && i <= 3 ? 1 : 0, transition: "opacity 400ms" }} />
-            <text x="75" y="148" textAnchor="middle" className="fill-foreground text-[7px]">food tray</text>
-            {/* rat */}
-            <g style={{ transform: `translateX(${i === 0 ? 100 : 20}px)`, transition: "transform 900ms var(--ease-out-expo)" }}>
-              <ellipse cx="110" cy="100" rx="22" ry="12" className="fill-card stroke-foreground" strokeWidth="2" />
-              <circle cx="92" cy="96" r="8" className="fill-card stroke-foreground" strokeWidth="2" />
-              <circle cx="89" cy="94" r="1.5" className="fill-foreground" />
-              <path d="M132 100 q 20 -10 30 4" fill="none" className="stroke-foreground" strokeWidth="2" />
+            {/* the box */}
+            <R k="box" x={20} y={40} w={240} h={140} sw={2.2} fill={C.wash} fillStyle="solid" />
+            <g style={{ transform: `rotate(${pressRate > 0.2 ? -10 : 0}deg)`, transformOrigin: "40px 100px", transition: "transform 300ms" }}>
+              <R k="lever" x={40} y={96} w={40} h={9} sw={1.6} fill={C.ink} fillStyle="solid" />
             </g>
-            {/* rate bars */}
-            {Array.from({ length: 10 }, (_, k) => (
-              <rect key={k} x={180 + k * 9} y={70 - Math.min(1, pressRate * (1 + (k % 3) * 0.15)) * 30} width="6" height={Math.min(1, pressRate * (1 + (k % 3) * 0.15)) * 30} className="fill-[var(--brand)] transition-all duration-slow" style={{ opacity: k < pressRate * 10 + 1 ? 1 : 0.15 }} />
-            ))}
-            <text x="225" y="84" textAnchor="middle" className="fill-foreground text-[8px]">presses per minute</text>
+            <Label x={60} y={128} size={14} anchor="middle">lever</Label>
+            <R k="tray" x={40} y={146} w={44} h={22} sw={1.6} fill={C.paper} fillStyle="solid" />
+            <ellipse cx={62} cy={157} rx={5} ry={5} fill={C.red} style={{ opacity: i >= 1 && i <= 3 ? 1 : 0, transition: "opacity 400ms" }} />
+            <Label x={62} y={30} size={14} anchor="middle">food tray</Label>
+            <L k="tray-lead" x1={62} y1={34} x2={62} y2={144} stroke={C.soft} sw={1} single dash="2 4" />
+            {/* the rat */}
+            <g style={{ transform: `translateX(${i === 0 ? 100 : 20}px)`, transition: "transform 900ms var(--ease-out-expo)" }}>
+              <E k="rat-body" cx={120} cy={146} w={52} h={28} sw={2} fill={C.paper} fillStyle="solid" />
+              <E k="rat-head" cx={96} cy={140} w={22} h={18} sw={2} fill={C.paper} fillStyle="solid" />
+              <E k="rat-eye" cx={92} cy={137} w={3} h={3} fill={C.ink} fillStyle="solid" sw={1} />
+              <P k="rat-tail" d="M146 148 Q170 136 180 154" sw={1.8} single />
+            </g>
+            {/* presses per minute */}
+            {Array.from({ length: 10 }, (_, k) => {
+              const h = Math.min(1, pressRate * (1 + (k % 3) * 0.15)) * 70;
+              return <R key={`${k}-${i}`} k={`bar-${k}-${i}`} x={276 + k * 9.5} y={150 - h} w={7} h={Math.max(1, h)} stroke="none" fill={C.blue} gap={2.5} fw={1.6} style={{ opacity: k < pressRate * 10 + 1 ? 1 : 0.2 }} />;
+            })}
+            <L k="bars-base" x1={272} y1={150} x2={372} y2={150} sw={1.8} />
+            <Label x={322} y={174} size={14} anchor="middle" lines={["presses", "per minute"]} />
           </>
         )}
-      </svg>
+      </Sheet>
       <StepPicker steps={steps} i={i} onPick={setI} kind="conditioning" />
       {d.caption ? <figcaption className="mt-2 text-sm text-muted-foreground"><Rich text={d.caption} /></figcaption> : null}
     </figure>
@@ -114,47 +125,42 @@ const MEM_STEPS = [
 export function MemoryFlow({ d }: { d: MemoryFlowData }) {
   const [i, setI] = React.useState(0);
   const cur = MEM_STEPS[i];
-  const pos = [20, 118, 118, 230, 118][i];
+  const pos = [6, 150, 150, 300, 150][i];
   const boxes = [
-    { x: 8, w: 72, name: "Sensory register", sub: "under 1 to 4 s", on: i === 0 },
-    { x: 100, w: 90, name: "Working memory", sub: "about 4 chunks, 15 to 30 s", on: i === 1 || i === 2 || i === 4 },
-    { x: 210, w: 102, name: "Long-term memory", sub: "no known limit", on: i === 3 },
+    { x: 4, name: "Sensory register", sub: "under 1 to 4 s", on: i === 0 },
+    { x: 155, name: "Working memory", sub: "about 4 chunks, 15 to 30 s", on: i === 1 || i === 2 || i === 4 },
+    { x: 306, name: "Long-term memory", sub: "no known limit", on: i === 3 },
   ];
   return (
     <figure className={card}>
       <p className={label}>{d.title ? <Rich text={d.title} /> : "How a memory is stored"}</p>
-      <svg viewBox="0 0 320 130" className="mt-3 w-full rounded-xl border-2 border-foreground bg-background" role="img" aria-label={`${cur.name}: ${cur.text}`}>
-        {boxes.map((b) => (
+      <Sheet name="memoryflow" w={400} h={194} label={`${cur.name}: ${cur.text}`} className="mx-auto mt-3 max-w-[32rem]">
+        {boxes.map((b, k) => (
           <g key={b.name}>
-            <rect x={b.x} y="30" width={b.w} height="60" rx="8" className={cn("stroke-foreground transition-colors duration-slow", b.on ? "fill-[var(--status-info-bg)]" : "fill-card")} strokeWidth="2" />
-            <text x={b.x + b.w / 2} y="52" textAnchor="middle" className="fill-foreground text-[8px] font-semibold">{b.name}</text>
-            <text x={b.x + b.w / 2} y="66" textAnchor="middle" className="fill-muted-foreground text-[7px]">{b.sub}</text>
+            <R k={`mem-box-${k}-${b.on}`} x={b.x} y={40} w={90} h={96} sw={2} fill={b.on ? C.lime : C.paper} fillStyle="solid" />
+            <Label x={b.x + 45} y={62} size={15} anchor="middle" lines={wrap(b.name, 82, 15)} color={b.on ? "var(--sk-on-lime)" : C.ink} />
+            <Label x={b.x + 45} y={102} size={13} anchor="middle" bold={false} lines={wrap(b.sub, 82, 13, false)} color={b.on ? "var(--sk-on-lime)" : C.ink} />
           </g>
         ))}
-        <path d="M80 60 L 100 60" className="stroke-foreground" strokeWidth="2" markerEnd="url(#mem-arrow)" />
-        <text x="90" y="54" textAnchor="middle" className="fill-foreground text-[6px]">attention</text>
-        <path d="M190 54 L 210 54" className="stroke-foreground" strokeWidth="2" markerEnd="url(#mem-arrow)" />
-        <text x="200" y="48" textAnchor="middle" className="fill-foreground text-[6px]">encoding</text>
-        <path d="M210 70 L 190 70" className="stroke-foreground" strokeWidth="2" markerEnd="url(#mem-arrow)" />
-        <text x="200" y="82" textAnchor="middle" className="fill-foreground text-[6px]">retrieval</text>
-        <path d="M120 90 q 25 20 50 0" fill="none" className={cn("stroke-foreground", i === 2 ? "vibha-dash" : "")} strokeWidth="1.5" strokeDasharray="3 3" />
-        <text x="145" y="112" textAnchor="middle" className="fill-foreground text-[6px]">rehearsal keeps it alive</text>
-        {/* fading items in the sensory register */}
+        <Arrow k="m-att" from={[97, 92]} to={[152, 92]} />
+        <Label x={125} y={84} size={13} anchor="middle" bold={false}>attention</Label>
+        <Arrow k="m-enc" from={[248, 76]} to={[303, 76]} />
+        <Label x={276} y={68} size={13} anchor="middle" bold={false}>encoding</Label>
+        <Arrow k="m-ret" from={[303, 108]} to={[248, 108]} />
+        <Label x={276} y={124} size={13} anchor="middle" bold={false}>retrieval</Label>
+        <P k={`m-reh-${i === 2}`} d="M176 138 Q200 160 224 138" stroke={i === 2 ? C.blue : C.ink} sw={1.6} single dash="4 4" />
+        <Head k="m-reh-h" x={176} y={138} a={-2.4} stroke={i === 2 ? C.blue : C.ink} size={7} sw={1.6} />
+        <Label x={200} y={174} size={13} anchor="middle" bold={false}>rehearsal keeps it alive</Label>
         {[0, 1, 2].map((k) => (
-          <circle key={k} cx={22 + k * 18} cy={100 + k * 6} r="3" className="fill-foreground/40" style={{ opacity: i === 0 ? 1 - k * 0.3 : 0, transition: "opacity 700ms" }} />
+          <ellipse key={k} cx={26 + k * 18} cy={146 + k * 5} rx={3.5} ry={3.5} fill={C.soft} style={{ opacity: i === 0 ? 1 - k * 0.3 : 0, transition: "opacity 700ms" }} />
         ))}
-        <text x="44" y="122" textAnchor="middle" className="fill-muted-foreground text-[6px]" style={{ opacity: i === 0 ? 1 : 0 }}>unattended items fade</text>
+        {i === 0 ? <Label x={4} y={174} size={13} bold={false} color={C.soft} lines={["unattended", "items fade"]} /> : null}
         {/* the memory */}
-        <g style={{ transform: `translate(${pos}px, 20px)`, transition: "transform 900ms var(--ease-out-expo)" }}>
-          <rect x="14" y="-14" width="36" height="16" rx="4" className="fill-[var(--primary)] stroke-foreground" strokeWidth="2" />
-          <text x="32" y="-3" textAnchor="middle" className="fill-foreground text-[7px] font-bold">98210…</text>
+        <g style={{ transform: `translate(${pos}px, 0px)`, transition: "transform 900ms var(--ease-out-expo)" }}>
+          <R k="chip" x={14} y={8} w={52} h={22} sw={1.8} fill={C.lime} fillStyle="solid" />
+          <text x={40} y={24} fontSize={13} fontWeight={700} textAnchor="middle" fill="var(--sk-on-lime)">98210</text>
         </g>
-        <defs>
-          <marker id="mem-arrow" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse">
-            <path d="M0 0 L10 5 L0 10 z" className="fill-foreground" />
-          </marker>
-        </defs>
-      </svg>
+      </Sheet>
       <StepPicker steps={MEM_STEPS} i={i} onPick={setI} kind="memoryflow" />
       {d.caption ? <figcaption className="mt-2 text-sm text-muted-foreground"><Rich text={d.caption} /></figcaption> : null}
     </figure>
@@ -175,42 +181,42 @@ export function StressResponse({ d }: { d: StressData }) {
   const cur = STRESS_STEPS[i];
   const hr = [72, 125, 110, 80, 95][i];
   const cortisol = [0.1, 0.15, 0.8, 0.3, 0.9][i];
-  const node = (x: number, y: number, name: string, on: boolean) => (
+  const node = (name: string, x: number, y: number, w: number, on: boolean) => (
     <g key={name}>
-      <circle cx={x} cy={y} r="16" className={cn("stroke-foreground transition-colors duration-slow", on ? "fill-[var(--primary)]" : "fill-card")} strokeWidth="2" />
-      <text x={x} y={y + 3} textAnchor="middle" className="fill-foreground text-[6px] font-semibold">{name}</text>
+      <R k={`s-node-${name}-${on}`} x={x} y={y} w={w} h={42} sw={2} fill={on ? C.lime : C.paper} fillStyle="solid" />
+      <Label x={x + w / 2} y={y + 27} size={16} anchor="middle" color={on ? "var(--sk-on-lime)" : C.ink}>{name}</Label>
     </g>
   );
   return (
     <figure className={card}>
       <p className={label}>{d.title ? <Rich text={d.title} /> : "What stress does inside you"}</p>
-      <svg viewBox="0 0 320 170" className="mt-3 w-full rounded-xl border-2 border-foreground bg-background" role="img" aria-label={`${cur.name}: ${cur.text}`}>
-        {/* chain */}
-        <path d="M60 40 L 110 40" className={cn("stroke-foreground", i >= 1 ? "vibha-dash" : "")} strokeWidth="2" strokeDasharray="4 3" />
-        <path d="M110 56 L 110 84" className={cn("stroke-foreground", i >= 2 ? "vibha-dash" : "")} strokeWidth="2" strokeDasharray="4 3" />
-        <path d="M110 116 L 110 140" className={cn("stroke-foreground", i >= 2 ? "vibha-dash" : "")} strokeWidth="2" strokeDasharray="4 3" />
-        <path d="M126 40 L 190 40" className={cn("stroke-[var(--destructive)]", i === 1 ? "vibha-dash" : "")} strokeWidth="2" strokeDasharray="4 3" />
-        {/* feedback arrow */}
-        <path d="M126 150 C 200 150, 200 70, 70 56" fill="none" className={cn("stroke-foreground/50", i === 3 ? "vibha-dash" : "")} strokeWidth="1.5" strokeDasharray="3 3" style={{ opacity: i >= 3 ? 1 : 0.25 }} />
-        <text x="196" y="112" className="fill-muted-foreground text-[6px]">cortisol feeds back</text>
-        {node(44, 40, "amygdala", i >= 0)}
-        {node(110, 40, "hypothalamus", i >= 1)}
-        {node(110, 100, "pituitary", i >= 2)}
-        {node(110, 156, "adrenal", i >= 1)}
-        <text x="56" y="30" className="fill-muted-foreground text-[6px]">CRH →</text>
-        <text x="116" y="74" className="fill-muted-foreground text-[6px]">ACTH</text>
-        <text x="116" y="132" className="fill-muted-foreground text-[6px]">cortisol</text>
-        <text x="130" y="34" className="fill-[var(--destructive)] text-[6px]">sympathetic nerves, adrenaline</text>
+      <Sheet name="stress" w={380} h={262} label={`${cur.name}: ${cur.text}`} className="mx-auto mt-3 max-w-[32rem]">
+        {node("amygdala", 6, 14, 96, true)}
+        {node("hypothalamus", 126, 14, 124, i >= 1)}
+        {node("pituitary", 126, 108, 124, i >= 2)}
+        {node("adrenal glands", 126, 202, 124, i >= 1)}
+        <Arrow k={`s-a-h-${i >= 1}`} from={[104, 35]} to={[124, 35]} stroke={i >= 1 ? C.blue : C.ink} />
+        <Arrow k={`s-h-p-${i >= 2}`} from={[188, 58]} to={[188, 106]} stroke={i >= 2 ? C.blue : C.ink} />
+        <Label x={198} y={88} size={15}>CRH</Label>
+        <Arrow k={`s-p-a-${i >= 2}`} from={[188, 152]} to={[188, 200]} stroke={i >= 2 ? C.blue : C.ink} />
+        <Label x={198} y={182} size={15}>ACTH</Label>
+        {/* the fast route: nerves to the adrenal glands and the heart */}
+        <Arrow k={`s-symp-${i === 1}`} from={[252, 40]} to={[300, 62]} stroke={C.red} sw={i === 1 ? 2.4 : 1.6} dash="5 4" />
+        <Label x={374} y={20} size={14} anchor="end" color={C.red} bold={false}>adrenaline</Label>
+        {/* the brake */}
+        <P k={`s-fb-${i === 3}`} d="M124 224 C88 224 84 160 92 118 C96 92 104 70 124 52" stroke={i >= 3 ? C.blue : C.soft} sw={i === 3 ? 2.2 : 1.4} single dash="4 4" style={{ opacity: i >= 3 ? 1 : 0.6 }} />
+        <Head k="s-fb-h" x={124} y={52} a={-0.75} stroke={i >= 3 ? C.blue : C.soft} size={7} />
+        <Label x={6} y={132} size={14} bold={false} lines={["cortisol", "feeds", "back"]} color={i >= 3 ? C.blue : C.soft} />
         {/* heart */}
-        <g key={i} style={{ transformOrigin: "250px 60px", animationIterationCount: 3 }} className={hr > 90 ? "vibha-beat" : ""}>
-          <path d="M250 72 C 230 56, 236 40, 250 48 C 264 40, 270 56, 250 72 Z" className="fill-[var(--status-alert-bg)] stroke-foreground" strokeWidth="2" />
+        <g key={i} style={{ transformOrigin: "326px 80px", animationIterationCount: 3 }} className={hr > 90 ? "vibha-beat" : undefined}>
+          <P k="heart" d="M326 104 C292 82 300 50 326 64 C352 50 360 82 326 104 Z" sw={2} fill={C.red} gap={4} />
         </g>
-        <text x="250" y="88" textAnchor="middle" className="fill-foreground text-[8px] font-semibold tabular-nums">{hr} beats/min</text>
+        <Label x={326} y={128} size={15} anchor="middle">{`${hr} beats/min`}</Label>
         {/* cortisol gauge */}
-        <rect x="236" y="104" width="28" height="50" rx="4" className="fill-card stroke-foreground" strokeWidth="1.5" />
-        <rect x="238" y={152 - cortisol * 46} width="24" height={cortisol * 46} rx="3" className="fill-[var(--brand)] transition-all duration-slow" />
-        <text x="250" y="164" textAnchor="middle" className="fill-foreground text-[7px]">cortisol</text>
-      </svg>
+        <R k="gauge" x={306} y={146} w={40} h={80} sw={2} />
+        <R k={`gauge-fill-${i}`} x={309} y={224 - cortisol * 74} w={34} h={cortisol * 74} stroke="none" fill={C.blue} gap={3.5} fw={1.6} />
+        <Label x={326} y={250} size={15} anchor="middle">cortisol</Label>
+      </Sheet>
       <StepPicker steps={STRESS_STEPS} i={i} onPick={setI} kind="stress" />
       {d.caption ? <figcaption className="mt-2 text-sm text-muted-foreground"><Rich text={d.caption} /></figcaption> : null}
     </figure>
@@ -302,26 +308,30 @@ export function Timeline({ d }: { d: TimelineData }) {
 }
 
 /* -------------------------------------------------------------- compare */
-/** Two states side by side: healthy vs depressed brain, before vs after treatment, novice vs expert. */
+/** Two states side by side: healthy vs depressed brain, before vs after treatment, novice vs expert. Hand-drawn boxes round real text. */
 export function Compare({ d }: { d: CompareData }) {
-  const side = (x: CompareData["a"], extra?: string) => (
-    <div className={cn("min-w-0 p-4", extra)}>
-      <p className="font-bold [overflow-wrap:anywhere]"><Rich text={x.label} /></p>
+  const side = (x: CompareData["a"], id: string) => (
+    <div data-sk="box" data-sk-id={`cmp-${id}`} className={cn(BOX, "min-w-0 p-4")}>
+      <p className="font-bold [overflow-wrap:anywhere]">
+        <span data-sk="mark" data-sk-id={`cmp-mark-${id}`} data-sk-label="" className="text-[1.1rem] text-[var(--sk-ink)] group-data-drawn:text-[var(--sk-on-lime)]" style={{ fontFamily: HAND }}><Rich text={x.label} /></span>
+      </p>
       <ul className="mt-2 space-y-1 text-[0.95rem]">
         {x.points.map((p, i) => (
-          <li key={i} className="flex gap-1.5"><span aria-hidden>•</span><span className="min-w-0 [overflow-wrap:anywhere]"><Rich text={p} /></span></li>
+          <li key={i} className="flex gap-2"><span aria-hidden className="font-bold text-[var(--sk-blue)]" style={{ fontFamily: HAND }}>-</span><span className="min-w-0 [overflow-wrap:anywhere]"><Rich text={p} /></span></li>
         ))}
       </ul>
-      {x.summary ? <p className="mt-3 rounded-md bg-muted p-2.5 text-[0.92rem] leading-relaxed"><Rich text={x.summary} /></p> : null}
+      {x.summary ? <p data-sk="box" data-sk-id={`cmp-sum-${id}`} data-sk-tone="wash" className={cn(BOX, "mt-3 border-dashed p-2.5 text-[0.92rem] leading-relaxed")}><Rich text={x.summary} /></p> : null}
     </div>
   );
   return (
     <figure className={card}>
       {d.title ? <p className={label}><Rich text={d.title} /></p> : null}
-      <div className={cn("grid overflow-hidden rounded-xl border-2 border-foreground bg-background sm:grid-cols-2", d.title && "mt-3")}>
-        {side(d.a)}
-        {side(d.b, "border-t-2 border-foreground/20 sm:border-t-0 sm:border-l-2")}
-      </div>
+      <SketchFrame salt={`cmp-${d.a.label.slice(0, 12)}`} className={d.title ? "mt-3" : undefined}>
+        <div className="grid gap-3 sm:grid-cols-2">
+          {side(d.a, "a")}
+          {side(d.b, "b")}
+        </div>
+      </SketchFrame>
       {d.caption ? <figcaption className="mt-2 text-sm text-muted-foreground"><Rich text={d.caption} /></figcaption> : null}
     </figure>
   );

@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import { trackLearn } from "@/lib/learn/track";
 import { QuickChallenge, type ChallengeQ } from "./challenge";
 import { sfx } from "./sfx";
+import { C, L, Label, Pg, Sheet, labelWidth } from "@/components/sketch/ink";
 
 const AMES_CHALLENGE: ChallengeQ[] = [
   { q: "Through the peephole, what tells your brain that both back corners are equally far away?", options: ["Binocular disparity", "Linear perspective and the texture of the floor tiles and windows", "Motion parallax"], answer: 1, why: "The room is built so its lines, tiles and windows project exactly like a rectangular room. Those cues lie. Disparity and parallax would give the trick away, which is why you look with one eye through a fixed hole." },
@@ -160,7 +161,7 @@ export function AmesFlat({ stop, swapT }: { stop: AmesStop; swapT: number }) {
     const tiles: React.ReactNode[] = [];
     for (let i = 0; i < 8; i++) for (let j = 0; j < 8; j++) {
       const x0 = -2 + i * 0.5, z0 = j * 0.5;
-      tiles.push(<polygon key={`${i}-${j}`} points={quad([x0, 0, z0], [x0 + 0.5, 0, z0], [x0 + 0.5, 0, z0 + 0.5], [x0, 0, z0 + 0.5])} className={(i + j) % 2 ? "fill-foreground/70" : "fill-card"} />);
+      tiles.push(<polygon key={`${i}-${j}`} points={quad([x0, 0, z0], [x0 + 0.5, 0, z0], [x0 + 0.5, 0, z0 + 0.5], [x0, 0, z0 + 0.5])} fill={(i + j) % 2 ? C.ink : C.paper} />);
     }
     const person = (p: V3, label: string, tone: string) => {
       // apparent height = real height divided by how far the spot was really pushed
@@ -170,22 +171,22 @@ export function AmesFlat({ stop, swapT }: { stop: AmesStop; swapT: number }) {
       const hh = fy - hy;
       return (
         <g key={label}>
-          <rect x={fx - hh * 0.13} y={hy + hh * 0.2} width={hh * 0.26} height={hh * 0.8} rx={hh * 0.08} className={tone} />
-          <circle cx={fx} cy={hy + hh * 0.1} r={hh * 0.1} className="fill-[#e2b48f] stroke-foreground" strokeWidth="1" />
-          <text x={fx} y={fy + 14} textAnchor="middle" className="fill-foreground text-[11px] font-semibold">{label}</text>
+          <rect x={fx - hh * 0.13} y={hy + hh * 0.2} width={hh * 0.26} height={hh * 0.8} rx={hh * 0.08} fill={tone} stroke={C.ink} strokeWidth={1.5} />
+          <circle cx={fx} cy={hy + hh * 0.1} r={hh * 0.1} fill={C.wash} stroke={C.ink} strokeWidth={1.5} />
+          <Label x={fx} y={fy + 16} size={14} anchor="middle" mark>{label}</Label>
         </g>
       );
     };
     return (
-      <svg viewBox="0 0 320 270" className="block h-full w-full" role="img" aria-label="Through the peephole: a rectangular-looking room with two people of very different apparent size.">
-        <polygon points={quad([-2, 0, 0], [2, 0, 0], [2, 3, 0], [-2, 3, 0])} className="fill-[#f3e6d0] stroke-foreground" />
-        <polygon points={quad([-2, 0, 0], [-2, 0, 4], [-2, 3, 4], [-2, 3, 0])} className="fill-[#ead7bb] stroke-foreground" />
-        <polygon points={quad([2, 0, 0], [2, 0, 4], [2, 3, 4], [2, 3, 0])} className="fill-[#ead7bb] stroke-foreground" />
+      <Sheet bare name="ames-peephole" w={320} h={270} label="Through the peephole: a rectangular-looking room with two people of very different apparent size." className="h-full w-full">
+        <polygon points={quad([-2, 0, 0], [2, 0, 0], [2, 3, 0], [-2, 3, 0])} fill={C.wash} stroke={C.ink} strokeWidth={1.6} strokeLinejoin="round" />
+        <polygon points={quad([-2, 0, 0], [-2, 0, 4], [-2, 3, 4], [-2, 3, 0])} fill={C.paper} stroke={C.ink} strokeWidth={1.6} strokeLinejoin="round" />
+        <polygon points={quad([2, 0, 0], [2, 0, 4], [2, 3, 4], [2, 3, 0])} fill={C.paper} stroke={C.ink} strokeWidth={1.6} strokeLinejoin="round" />
         {tiles}
-        {[-1.2, 1.2].map((x) => <polygon key={x} points={quad([x - 0.45, 1.3, 0], [x + 0.45, 1.3, 0], [x + 0.45, 2.3, 0], [x - 0.45, 2.3, 0])} className="fill-[#b9d3ef] stroke-foreground" />)}
-        {person(meera, "Meera", "fill-[var(--brand)] stroke-foreground")}
-        {person(kabir, "Kabir", "fill-[var(--destructive)] stroke-foreground")}
-      </svg>
+        {[-1.2, 1.2].map((x) => <polygon key={x} points={quad([x - 0.45, 1.3, 0], [x + 0.45, 1.3, 0], [x + 0.45, 2.3, 0], [x - 0.45, 2.3, 0])} fill={C.blue} fillOpacity={0.35} stroke={C.ink} strokeWidth={1.4} />)}
+        {person(meera, "Meera", C.blue)}
+        {person(kabir, "Kabir", C.red)}
+      </Sheet>
     );
   }
   // floor plan from above: the eye at the bottom, the trapezoid room above it
@@ -197,20 +198,20 @@ export function AmesFlat({ stop, swapT }: { stop: AmesStop; swapT: number }) {
     const [x, y] = P(real(p));
     return (
       <g key={label}>
-        <line x1={e[0]} y1={e[1]} x2={x} y2={y} className="stroke-foreground/40" strokeDasharray="4 3" />
-        <circle cx={x} cy={y} r="9" className={cls} />
-        <text x={x} y={y - 13} textAnchor="middle" className="fill-foreground text-[11px] font-semibold">{label}</text>
+        <L k={`am-sight-${label}-${Math.round(x)}`} x1={e[0]} y1={e[1]} x2={x} y2={y} stroke={C.soft} sw={1.2} single dash="4 4" />
+        <circle cx={x} cy={y} r="9" fill={cls} stroke={C.ink} strokeWidth={1.6} />
+        <Label x={Math.max(4 + labelWidth(label, 14) / 2, Math.min(316 - labelWidth(label, 14) / 2, x))} y={Math.min(264, y - 13 < 16 ? y + 26 : y - 13)} size={14} anchor="middle">{label}</Label>
       </g>
     );
   };
   return (
-    <svg viewBox="0 0 320 270" className="block h-full w-full" role="img" aria-label="The room from above: a trapezoid. The left corner is much farther from the peephole than the right.">
-      <polygon points={corners.map((c) => c.join(",")).join(" ")} className="fill-[#f3e6d0] stroke-foreground" strokeWidth="2" />
-      {dot(meera, "Meera", "fill-[var(--brand)] stroke-foreground")}
-      {dot(kabir, "Kabir", "fill-[var(--destructive)] stroke-foreground")}
-      <circle cx={e[0]} cy={e[1]} r="6" className="fill-foreground" />
-      <text x={e[0]} y={e[1] + 16} textAnchor="middle" className="fill-foreground text-[11px] font-semibold">peephole</text>
-      <text x="12" y="16" className="fill-muted-foreground text-[11px]">seen from above</text>
-    </svg>
+    <Sheet bare name="ames-above" w={320} h={270} label="The room from above: a trapezoid. The left corner is much farther from the peephole than the right." className="h-full w-full">
+      <Pg k="am-plan" pts={corners as [number, number][]} sw={2} fill={C.wash} fillStyle="solid" />
+      {dot(meera, "Meera", C.blue)}
+      {dot(kabir, "Kabir", C.red)}
+      <circle cx={e[0]} cy={e[1]} r="6" fill={C.ink} />
+      <Label x={e[0]} y={e[1] + 17} size={14} anchor="middle">peephole</Label>
+      <Label x={12} y={18} size={13} bold={false} color={C.soft}>seen from above</Label>
+    </Sheet>
   );
 }

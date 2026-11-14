@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import { trackLearn } from "@/lib/learn/track";
 import { QuickChallenge, type ChallengeQ } from "./challenge";
 import { sfx } from "./sfx";
+import { C, Cv, E, Label, P, R, Sheet } from "@/components/sketch/ink";
 
 const NS_CHALLENGE: ChallengeQ[] = [
   { q: "You touch a hot cup. Which happens first?", options: ["You feel the pain", "You pull your hand away", "Both at exactly the same moment"], answer: 1, why: "The reflex loops through the spinal cord only, so the hand starts to pull away before the pain message has reached the brain and been felt." },
@@ -160,6 +161,33 @@ const fx = (p: number[]) => OX + p[0] * S;
 const fy = (p: number[]) => OY - p[1] * S;
 const D = (k: string) => flatD(PATHS[k], S, S, OX, OY);
 
+/** The body, brain, cord and somatic nerves: drawn once per view, not every frame. */
+const NervousBody = React.memo(function NervousBody({ brain, cord, somatic }: { brain: boolean; cord: boolean; somatic: boolean }) {
+  const dim = (on: boolean) => ({ opacity: on ? 1 : 0.18, transition: "opacity 400ms" });
+  return (
+    <>
+      {LIMBS.map((l) => (
+        <polyline key={l.id} points={l.pts.map((p) => `${fx(p)},${fy(p)}`).join(" ")} fill="none" stroke={C.wash} strokeWidth={l.r * S * 2} strokeLinecap="round" strokeLinejoin="round" />
+      ))}
+      {LIMBS.map((l) => (
+        <Cv key={`${l.id}-o`} k={`ns-limb-${l.id}`} pts={l.pts.map((p) => [fx(p), fy(p)] as [number, number])} stroke={C.soft} sw={1} single rough={0.5} />
+      ))}
+      <E k="ns-head" cx={fx(BODY.head.c)} cy={fy(BODY.head.c)} w={BODY.head.r[0] * S * 2} h={BODY.head.r[1] * S * 2} sw={1.6} fill={C.wash} fillStyle="solid" />
+      <R k="ns-neck" x={OX - 10} y={fy([0, 1.33])} w={20} h={20} sw={1.4} fill={C.wash} fillStyle="solid" />
+      <P k="ns-trunk" d={`M${OX - 50} ${fy([0, 1.12])} Q ${OX} ${fy([0, 1.24])} ${OX + 50} ${fy([0, 1.12])} L ${OX + 40} ${fy([0, 0.1])} Q ${OX} ${fy([0, -0.25])} ${OX - 40} ${fy([0, 0.1])} Z`} sw={1.6} fill={C.wash} fillStyle="solid" />
+      <g style={dim(brain)}>
+        <E k="ns-brain" cx={fx(BODY.brain.c)} cy={fy(BODY.brain.c)} w={BODY.brain.r[0] * S * 2} h={BODY.brain.r[1] * S * 2} sw={1.6} fill={C.lime} gap={3.5} />
+      </g>
+      <g style={dim(cord)}>
+        <P k="ns-cord" d={D("cord")} sw={4.4} single rough={0.4} />
+      </g>
+      <g style={dim(somatic)}>
+        {SOMATIC.map((k) => <P key={k} k={`ns-som-${k}`} d={D(k)} stroke={C.ink} sw={1.4} single rough={0.5} dash={k.endsWith("out") ? "4 3" : undefined} style={{ opacity: 0.6 }} />)}
+      </g>
+    </>
+  );
+});
+
 export function NervousFlat({ mode, journey, auto, level, onPart, reduce }: { mode: NsMode; journey: Journey; auto: Auto; level: Level; onPart: (p: Part) => void; reduce: boolean }) {
   const t = useLegProgress(journey, reduce);
   const a = AUTO[auto];
@@ -173,7 +201,7 @@ export function NervousFlat({ mode, journey, auto, level, onPart, reduce }: { mo
   const breath = 60 / a.breaths;
   const dim = (on: boolean) => ({ opacity: on ? 1 : 0.18, transition: "opacity 400ms" });
   return (
-    <svg viewBox="0 0 220 410" className="mx-auto block h-full w-auto max-w-full" role="img" aria-label="A body with the brain, spinal cord, nerves and organs. The written description below says what is happening.">
+    <Sheet bare name="nervous-flat" w={220} h={410} label="A body with the brain, spinal cord, nerves and organs. The written description below says what is happening." className="mx-auto h-full w-auto max-w-full">
       <style>{`
         @keyframes ns-beat { 0%,100% { transform: scale(1) } 15% { transform: scale(1.22) } 30% { transform: scale(0.96) } }
         @keyframes ns-breathe { 0%,100% { transform: scale(1) } 50% { transform: scale(1.12) } }
@@ -181,78 +209,57 @@ export function NervousFlat({ mode, journey, auto, level, onPart, reduce }: { mo
         @keyframes ns-flow { to { stroke-dashoffset: -20 } }
         .ns-o { transform-box: fill-box; transform-origin: center; }
       `}</style>
-      {/* body outline */}
-      <g className="fill-foreground/10 stroke-foreground/40" strokeWidth="1.5">
-        <ellipse cx={fx(BODY.head.c)} cy={fy(BODY.head.c)} rx={BODY.head.r[0] * S} ry={BODY.head.r[1] * S} />
-        <rect x={OX - 10} y={fy([0, 1.33])} width="20" height="20" />
-        <path d={`M${OX - 50} ${fy([0, 1.12])} Q ${OX} ${fy([0, 1.24])} ${OX + 50} ${fy([0, 1.12])} L ${OX + 40} ${fy([0, 0.1])} Q ${OX} ${fy([0, -0.25])} ${OX - 40} ${fy([0, 0.1])} Z`} />
-      </g>
-      {LIMBS.map((l) => (
-        <polyline key={l.id} points={l.pts.map((p) => `${fx(p)},${fy(p)}`).join(" ")} fill="none" className="stroke-foreground/10" strokeWidth={l.r * S * 2} strokeLinecap="round" strokeLinejoin="round" />
-      ))}
-      {LIMBS.map((l) => (
-        <polyline key={`${l.id}-o`} points={l.pts.map((p) => `${fx(p)},${fy(p)}`).join(" ")} fill="none" className="stroke-foreground/15" strokeWidth="1" />
-      ))}
-      {/* brain and cord */}
-      <g style={dim(show.brain)}>
-        <ellipse cx={fx(BODY.brain.c)} cy={fy(BODY.brain.c)} rx={BODY.brain.r[0] * S} ry={BODY.brain.r[1] * S} className="fill-[#f2c4c9] stroke-foreground" strokeWidth="1.5" />
-        <path d={`M${OX} ${fy([0, 1.86])} V ${fy([0, 1.55])}`} className="stroke-foreground/40" strokeWidth="1" />
-      </g>
-      <path d={D("cord")} fill="none" className="stroke-foreground" strokeWidth="5" strokeLinecap="round" style={dim(show.cord)} />
-      {/* somatic nerves */}
-      <g style={dim(show.somatic)}>
-        {SOMATIC.map((k) => <path key={k} d={D(k)} fill="none" className="stroke-foreground/45" strokeWidth="1.5" strokeDasharray={k.endsWith("out") ? "4 2" : undefined} />)}
-      </g>
+      <NervousBody brain={show.brain} cord={show.cord} somatic={show.somatic} />
       {/* organs */}
       <g style={dim(show.organs || mode === "auto")}>
         {BODY.lungs.map((p, k) => (
-          <ellipse key={k} cx={fx(p)} cy={fy(p)} rx={14 * a.airway} ry="24" className="ns-o fill-[#cfe3f7] stroke-foreground" strokeWidth="1.2" style={reduce ? undefined : { animation: `ns-breathe ${breath}s ease-in-out infinite` }} />
+          <ellipse key={k} cx={fx(p)} cy={fy(p)} rx={14 * a.airway} ry="24" className="ns-o" fill={C.wash} stroke={C.ink} strokeWidth={1.4} style={reduce ? undefined : { animation: `ns-breathe ${breath}s ease-in-out infinite` }} />
         ))}
         <g className="ns-o" style={reduce ? undefined : { animation: `ns-beat ${beat}s ease-in-out infinite` }}>
-          <path d={`M${fx(BODY.heart)} ${fy(BODY.heart) + 10} l -10 -10 a 5.5 5.5 0 0 1 10 -6 a 5.5 5.5 0 0 1 10 6 z`} className="fill-[var(--destructive)] stroke-foreground" strokeWidth="1.2" />
+          <path d={`M${fx(BODY.heart)} ${fy(BODY.heart) + 10} l -10 -10 a 5.5 5.5 0 0 1 10 -6 a 5.5 5.5 0 0 1 10 6 z`} fill={C.red} stroke={C.ink} strokeWidth={1.4} strokeLinejoin="round" />
         </g>
-        <path d={`M${fx(BODY.stomach) - 22} ${fy(BODY.stomach) + 4} q 8 -10 16 0 t 16 0 t 16 0 M${fx(BODY.stomach) - 26} ${fy(BODY.stomach) + 16} q 8 -10 16 0 t 16 0 t 16 0 t 12 0`} fill="none" className="stroke-[#c98a4b]" strokeWidth="4" strokeLinecap="round" strokeDasharray="6 2" style={reduce || a.gut === 0 ? undefined : { animation: `ns-gut ${2.4 - a.gut * 1.4}s linear infinite` }} />
-        <circle cx={fx(BODY.bladder)} cy={fy(BODY.bladder)} r={7 + a.bladder * 4} className="fill-[#f6e7a6] stroke-foreground" strokeWidth="1.2" style={{ transition: "r 600ms" }} />
-        {a.adrenaline ? <circle cx={fx(BODY.adrenal)} cy={fy(BODY.adrenal)} r="5" className="fill-[var(--primary)] stroke-foreground" strokeWidth="1" /> : null}
+        <path d={`M${fx(BODY.stomach) - 22} ${fy(BODY.stomach) + 4} q 8 -10 16 0 t 16 0 t 16 0 M${fx(BODY.stomach) - 26} ${fy(BODY.stomach) + 16} q 8 -10 16 0 t 16 0 t 16 0 t 12 0`} fill="none" stroke={C.soft} strokeWidth={4} strokeLinecap="round" strokeDasharray="6 2" style={reduce || a.gut === 0 ? undefined : { animation: `ns-gut ${2.4 - a.gut * 1.4}s linear infinite` }} />
+        <circle cx={fx(BODY.bladder)} cy={fy(BODY.bladder)} r={7 + a.bladder * 4} fill={C.lime} stroke={C.ink} strokeWidth={1.4} style={{ transition: "r 600ms" }} />
+        {a.adrenaline ? <circle cx={fx(BODY.adrenal)} cy={fy(BODY.adrenal)} r="5" fill={C.lime} stroke={C.ink} strokeWidth={1.2} /> : null}
       </g>
       {/* eyes and pupils */}
       {BODY.eyes.map((p, k) => (
         <g key={k}>
-          <circle cx={fx(p)} cy={fy(p)} r="6" className="fill-white stroke-foreground" strokeWidth="1.2" />
-          <circle cx={fx(p)} cy={fy(p)} r={1.4 + (cur?.path === "eye-back" || (journey.done && journey.key === "eye-reflex") ? 0.2 : a.pupil) * 3.6} className="fill-foreground" style={{ transition: "r 500ms" }} />
+          <circle cx={fx(p)} cy={fy(p)} r="6" fill={C.paper} stroke={C.ink} strokeWidth={1.4} />
+          <circle cx={fx(p)} cy={fy(p)} r={1.4 + (cur?.path === "eye-back" || (journey.done && journey.key === "eye-reflex") ? 0.2 : a.pupil) * 3.6} fill={C.ink} style={{ transition: "r 500ms" }} />
         </g>
       ))}
       {/* autonomic pathways */}
       <g style={{ opacity: mode === "map" ? (show.symp ? 1 : 0.1) : symOn ? 1 : 0.15, transition: "opacity 400ms" }}>
-        {SYMP.map((k) => <path key={k} d={D(k)} fill="none" className="stroke-[var(--destructive)]" strokeWidth="2" strokeDasharray="5 3" style={reduce || !symOn ? undefined : { animation: "ns-flow 0.8s linear infinite" }} />)}
+        {SYMP.map((k) => <path key={k} d={D(k)} fill="none" stroke={C.red} strokeWidth={2} strokeLinecap="round" strokeDasharray="5 3" style={reduce || !symOn ? undefined : { animation: "ns-flow 0.8s linear infinite" }} />)}
       </g>
       <g style={{ opacity: mode === "map" ? (show.para ? 1 : 0.1) : paraOn ? 1 : 0.15, transition: "opacity 400ms" }}>
-        {PARA.map((k) => <path key={k} d={D(k)} fill="none" className="stroke-[var(--brand)]" strokeWidth="2" strokeDasharray="1 3" strokeLinecap="round" style={reduce || !paraOn ? undefined : { animation: "ns-flow 1.4s linear infinite" }} />)}
+        {PARA.map((k) => <path key={k} d={D(k)} fill="none" stroke={C.blue} strokeWidth={2} strokeDasharray="1 3" strokeLinecap="round" style={reduce || !paraOn ? undefined : { animation: "ns-flow 1.4s linear infinite" }} />)}
       </g>
       {/* lit route */}
       {journey.legs.map((l, i) =>
         passed.has(l.path) || i === journey.leg ? (
-          <path key={`${l.path}-${i}`} d={D(l.path)} fill="none" pathLength={1} strokeDasharray="1 1" strokeDashoffset={i === journey.leg ? 1 - t : 0} className={l.tone === "motor" ? "stroke-[var(--destructive)]" : "stroke-[var(--brand)]"} strokeWidth="3.5" strokeLinecap="round" />
+          <path key={`${l.path}-${i}`} d={D(l.path)} fill="none" pathLength={1} strokeDasharray="1 1" strokeDashoffset={i === journey.leg ? 1 - t : 0} stroke={l.tone === "motor" ? C.red : C.blue} strokeWidth={3.5} strokeLinecap="round" />
         ) : null,
       )}
       {head && cur ? (
         cur.tone === "motor" ? (
-          <rect x={fx(head) - 6} y={fy(head) - 6} width="12" height="12" transform={`rotate(45 ${fx(head)} ${fy(head)})`} className="fill-[var(--destructive)] stroke-background" strokeWidth="1.5" />
+          <rect x={fx(head) - 6} y={fy(head) - 6} width="12" height="12" transform={`rotate(45 ${fx(head)} ${fy(head)})`} fill={C.red} stroke={C.paper} strokeWidth={1.5} />
         ) : (
-          <circle cx={fx(head)} cy={fy(head)} r="6.5" className="fill-[var(--brand)] stroke-background" strokeWidth="1.5" />
+          <circle cx={fx(head)} cy={fy(head)} r="6.5" fill={C.lime} stroke={C.ink} strokeWidth={1.5} />
         )
       ) : null}
       {/* tap targets */}
       {mode === "signal"
         ? (Object.keys(PARTS) as Part[]).map((p) => (
-            <circle key={p} cx={fx(PARTS[p])} cy={fy(PARTS[p])} r="16" className="cursor-pointer fill-transparent stroke-[var(--brand)]" strokeWidth="1.5" strokeDasharray="3 3" onClick={() => onPart(p)}>
+            <circle key={p} cx={fx(PARTS[p])} cy={fy(PARTS[p])} r="16" className="cursor-pointer" fill="transparent" stroke={C.blue} strokeWidth={1.5} strokeDasharray="3 3" onClick={() => onPart(p)}>
               <title>{PART_NAME[p]}</title>
             </circle>
           ))
         : null}
       {mode === "auto" ? (
-        <text x="6" y="402" className="fill-foreground text-[11px] font-bold">{a.bpm} beats a minute</text>
+        <Label x={6} y={402} size={14}>{`${a.bpm} beats a minute`}</Label>
       ) : null}
-    </svg>
+    </Sheet>
   );
 }

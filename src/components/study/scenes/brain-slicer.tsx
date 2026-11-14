@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import { trackLearn } from "@/lib/learn/track";
 import { QuickChallenge, type ChallengeQ } from "./challenge";
 import { sfx } from "./sfx";
+import { C, E, Ink, L, Label, P as P2, R, Sheet } from "@/components/sketch/ink";
 
 const SLICER_CHALLENGE: ChallengeQ[] = [
   { q: "Which slice runs from ear to ear, so you look at it from the front?", options: ["Axial", "Sagittal", "Coronal"], answer: 2, why: "A coronal slice runs ear to ear. Axial slices are horizontal, like looking down from above; sagittal slices divide left from right." },
@@ -212,28 +213,26 @@ export function SlicerFlat({ mode, plane, u, placement, firing }: { mode: Slicer
     const Y = (y: number) => 120 - y * 70;
     const Z = (z: number) => 120 - z * 70;
     return (
-      <svg viewBox="0 0 320 240" className="block h-full w-full" role="img" aria-label={`Where the slice is: ${PLANE_NAME[plane]}.`}>
+      <Sheet bare name="slicer" w={320} h={240} label={`Where the slice is: ${PLANE_NAME[plane]}.`} className="h-full w-full">
         {side ? (
           <>
-            <ellipse cx="160" cy="112" rx="112" ry="66" className="fill-[#f4b6a6] stroke-foreground" strokeWidth="2" />
-            <ellipse cx={X(-0.98)} cy={Y(-0.72)} rx="32" ry="22" className="fill-[#e8c39a] stroke-foreground" strokeWidth="1.5" />
-            <rect x={X(0.08)} y={Y(-0.3)} width="16" height="70" rx="8" className="fill-[#c9b8a6] stroke-foreground" strokeWidth="1.5" />
-            <text x="18" y="20" className="fill-muted-foreground text-[11px]">front</text>
-            <text x="300" y="20" textAnchor="end" className="fill-muted-foreground text-[11px]">back</text>
-            {plane === "axial" ? <line x1="30" x2="290" y1={Y(u)} y2={Y(u)} className="stroke-[var(--brand)]" strokeWidth="4" /> : <line x1={X(u)} x2={X(u)} y1="20" y2="220" className="stroke-[var(--brand)]" strokeWidth="4" />}
+            <E k="sl-brain" cx={160} cy={112} w={224} h={132} sw={2} fill={C.wash} fillStyle="solid" />
+            <E k="sl-cb" cx={X(-0.98)} cy={Y(-0.72)} w={64} h={44} sw={1.6} fill={C.paper} fillStyle="solid" />
+            <R k="sl-stem" x={X(0.08)} y={Y(-0.3)} w={16} h={70} sw={1.6} fill={C.paper} fillStyle="solid" />
+            {plane === "axial" ? <L k={`sl-cut-${u}`} x1={30} x2={290} y1={Y(u)} y2={Y(u)} stroke={C.blue} sw={3.6} single rough={0.4} /> : <L k={`sl-cut-${u}`} x1={X(u)} x2={X(u)} y1={20} y2={220} stroke={C.blue} sw={3.6} single rough={0.4} />}
           </>
         ) : (
           <>
-            {[1, -1].map((m) => <ellipse key={m} cx={160 + m * 0} cy={Z(m * 0.4)} rx="112" ry="26" className="fill-[#f4b6a6] stroke-foreground" strokeWidth="2" />)}
-            <text x="18" y="20" className="fill-muted-foreground text-[11px]">front</text>
-            <text x="300" y="20" textAnchor="end" className="fill-muted-foreground text-[11px]">back</text>
-            <text x="300" y={Z(0.4) + 4} textAnchor="end" className="fill-foreground text-[10px]">left</text>
-            <text x="300" y={Z(-0.4) + 4} textAnchor="end" className="fill-foreground text-[10px]">right</text>
-            <line x1="30" x2="290" y1={Z(u)} y2={Z(u)} className="stroke-[var(--brand)]" strokeWidth="4" />
+            {[1, -1].map((m) => <E key={m} k={`sl-h${m}`} cx={160} cy={Z(m * 0.4)} w={224} h={52} sw={2} fill={C.wash} fillStyle="solid" />)}
+            <Label x={300} y={Z(0.4) + 5} size={13} anchor="end">left</Label>
+            <Label x={300} y={Z(-0.4) + 5} size={13} anchor="end">right</Label>
+            <L k={`sl-cut-${u}`} x1={30} x2={290} y1={Z(u)} y2={Z(u)} stroke={C.blue} sw={3.6} single rough={0.4} />
           </>
         )}
-        <text x="160" y="234" textAnchor="middle" className="fill-foreground text-[11px] font-semibold">The blue line is the slice</text>
-      </svg>
+        <Label x={18} y={20} size={13} bold={false} color={C.soft}>front</Label>
+        <Label x={300} y={20} size={13} anchor="end" bold={false} color={C.soft}>back</Label>
+        <Label x={160} y={236} size={14} anchor="middle">The blue line is the slice</Label>
+      </Sheet>
     );
   }
   // the head from above, nose at the top; the patient's left is on the viewer's left in this view from above
@@ -241,35 +240,35 @@ export function SlicerFlat({ mode, plane, u, placement, firing }: { mode: Slicer
   const elec = ELECTRODES[placement];
   const [e0, e1] = elec.map(P);
   return (
-    <svg viewBox="0 0 320 250" className="block h-full w-full" role="img" aria-label={mode === "tms" ? "The head from above with the coil over the left front." : `The head from above with the ${PLACEMENTS.find((x) => x.id === placement)!.name.toLowerCase()} electrodes.`}>
-      <ellipse cx="160" cy="128" rx="100" ry="118" className="fill-[#efdcc9] stroke-foreground" strokeWidth="2" />
-      <path d="M150 12 L160 0 L170 12" className="fill-[#efdcc9] stroke-foreground" strokeWidth="2" />
-      <ellipse cx="58" cy="132" rx="8" ry="18" className="fill-[#efdcc9] stroke-foreground" strokeWidth="1.5" />
-      <ellipse cx="262" cy="132" rx="8" ry="18" className="fill-[#efdcc9] stroke-foreground" strokeWidth="1.5" />
-      <text x="40" y="236" className="fill-foreground text-[11px] font-bold">Left</text>
-      <text x="280" y="236" textAnchor="end" className="fill-foreground text-[11px] font-bold">Right</text>
-      <text x="160" y="24" textAnchor="middle" className="fill-muted-foreground text-[10px]">nose</text>
+    <Sheet bare name="slicer-head" w={320} h={254} label={mode === "tms" ? "The head from above with the coil over the left front." : `The head from above with the ${PLACEMENTS.find((x) => x.id === placement)!.name.toLowerCase()} electrodes.`} className="h-full w-full">
+      <E k="sh-head" cx={160} cy={128} w={200} h={236} sw={2} fill={C.wash} fillStyle="solid" />
+      <Ink k="sh-nose" shape={{ t: "path", d: "M150 12 L160 0 L170 12" }} o={{ sw: 2, fill: C.wash, fillStyle: "solid" }} />
+      <E k="sh-ear-l" cx={58} cy={132} w={16} h={36} sw={1.6} fill={C.wash} fillStyle="solid" />
+      <E k="sh-ear-r" cx={262} cy={132} w={16} h={36} sw={1.6} fill={C.wash} fillStyle="solid" />
+      <Label x={40} y={236} size={14}>Left</Label>
+      <Label x={280} y={236} size={14} anchor="end">Right</Label>
+      <Label x={160} y={28} size={13} anchor="middle" bold={false} color={C.soft}>nose</Label>
       {mode === "tms" ? (
         <g>
           {(() => {
             const [x, y] = P(DLPFC);
             return (
               <>
-                <circle cx={x - 13} cy={y} r="13" className="fill-none stroke-[var(--brand)]" strokeWidth="5" />
-                <circle cx={x + 13} cy={y} r="13" className="fill-none stroke-[var(--brand)]" strokeWidth="5" />
-                {firing ? <circle key={firing} cx={x} cy={y + 10} r="26" className="vibha-ping fill-[var(--primary)]/60" /> : null}
-                <text x={x} y={y + 34} textAnchor="middle" className="fill-foreground text-[10px] font-semibold">coil over left DLPFC</text>
+                <E k="sh-coil-l" cx={x - 13} cy={y} w={26} h={26} stroke={C.blue} sw={4} single />
+                <E k="sh-coil-r" cx={x + 13} cy={y} w={26} h={26} stroke={C.blue} sw={4} single />
+                {firing ? <circle key={firing} cx={x} cy={y + 10} r="26" fill={C.lime} className="vibha-ping" style={{ opacity: 0.6 }} /> : null}
+                <Label x={x} y={y + 36} size={13} anchor="middle">coil over left DLPFC</Label>
               </>
             );
           })()}
         </g>
       ) : (
         <g>
-          <path d={`M${e0[0]} ${e0[1]} Q 160 ${placement === "bf" ? 70 : 150} ${e1[0]} ${e1[1]}`} className="fill-none stroke-[var(--destructive)]" strokeWidth="4" strokeDasharray="8 5" />
-          {[e0, e1].map(([x, y], k) => <circle key={k} cx={x} cy={y} r="11" className="fill-[var(--destructive)] stroke-foreground" strokeWidth="2" />)}
-          <text x="160" y="248" textAnchor="middle" className="fill-foreground text-[10px]">dashed line: the main current path</text>
+          <P2 k={`sh-path-${placement}`} d={`M${e0[0]} ${e0[1]} Q 160 ${placement === "bf" ? 70 : 150} ${e1[0]} ${e1[1]}`} stroke={C.red} sw={3.4} single dash="8 5" />
+          {[e0, e1].map(([x, y], k) => <E key={k} k={`sh-el-${placement}-${k}`} cx={x} cy={y} w={22} h={22} sw={2} fill={C.red} fillStyle="solid" />)}
+          <Label x={160} y={249} size={12} anchor="middle" bold={false}>dashed line: the main current path</Label>
         </g>
       )}
-    </svg>
+    </Sheet>
   );
 }

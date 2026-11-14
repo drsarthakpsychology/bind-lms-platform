@@ -3,7 +3,7 @@
  * Every hand-drawn picture on every medicine page renders, and in every state
  * (each button under a picture) no two labels overlap and none runs off the
  * drawing. Label boxes are measured with the Kalam font's own widths
- * (sketch/metrics.ts); the screenshot check measures the same in a browser.
+ * (src/components/sketch/check.ts); the screenshot check measures the same in a browser.
  */
 import { fireEvent, render } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
@@ -11,44 +11,9 @@ import { MEDS } from "@/lib/meds";
 import { mechanismOf } from "@/lib/meds/mechanisms";
 import { medVisuals } from "@/lib/meds/visuals";
 import { MedicineSketches } from "./medicine-visuals";
-import { kalamWidth } from "./sketch/metrics";
+import { labelProblems } from "@/components/sketch/check";
 
 vi.mock("@/lib/tips/store", () => ({ useTip: () => ({ seen: true, dismiss: () => {} }), dismissTip: () => {} }));
-
-type Box = { t: string; left: number; right: number; top: number; bottom: number };
-
-function labelBoxes(svg: SVGSVGElement): Box[] {
-  return [...svg.querySelectorAll("text")]
-    .filter((t) => t.textContent?.trim())
-    .map((t) => {
-      const size = Number(t.getAttribute("font-size"));
-      const x = Number(t.getAttribute("x"));
-      const y = Number(t.getAttribute("y"));
-      const w = kalamWidth(t.textContent ?? "", t.getAttribute("font-weight") === "700") * size;
-      const anchor = t.getAttribute("text-anchor");
-      const left = anchor === "middle" ? x - w / 2 : anchor === "end" ? x - w : x;
-      return { t: t.textContent!.trim(), left, right: left + w, top: y - 0.78 * size, bottom: y + 0.26 * size };
-    });
-}
-
-/** Problems with the labels of one drawing: overlaps, labels cut off, labels inside a moved group (which this check could not measure). */
-function labelProblems(svg: SVGSVGElement): string[] {
-  const name = svg.getAttribute("data-sketch");
-  const [, , vw, vh] = (svg.getAttribute("viewBox") ?? "0 0 0 0").split(" ").map(Number);
-  const out: string[] = [];
-  for (const t of svg.querySelectorAll("text")) if (t.closest("[transform]")) out.push(`${name}: "${t.textContent}" sits in a moved group`);
-  const boxes = labelBoxes(svg);
-  for (const b of boxes) if (b.left < -0.5 || b.top < -0.5 || b.right > vw + 0.5 || b.bottom > vh + 0.5) out.push(`${name}: "${b.t}" is cut off`);
-  for (let i = 0; i < boxes.length; i++)
-    for (let j = i + 1; j < boxes.length; j++) {
-      const a = boxes[i];
-      const b = boxes[j];
-      const ix = Math.min(a.right, b.right) - Math.max(a.left, b.left);
-      const iy = Math.min(a.bottom, b.bottom) - Math.max(a.top, b.top);
-      if (ix > 0.5 && iy > 0.5) out.push(`${name}: "${a.t}" overlaps "${b.t}"`);
-    }
-  return out;
-}
 
 describe("medicine pictures", () => {
   it("every medicine shows its receptor (when it has one), its journey and each of its own pictures, all hand-drawn", () => {

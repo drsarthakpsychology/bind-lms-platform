@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import { trackLearn } from "@/lib/learn/track";
 import { QuickChallenge, type ChallengeQ } from "./challenge";
 import { sfx } from "./sfx";
+import { C, Label, P, R, Sheet } from "@/components/sketch/ink";
 
 const SYN_CHALLENGE: ChallengeQ[] = [
   { q: "What makes the vesicles fuse and release their transmitter?", options: ["Sodium leaving the cell", "Calcium flowing into the nerve ending", "The transmitter binding to receptors"], answer: 1, why: "When the impulse arrives, voltage-gated calcium channels open. Calcium flowing in triggers the vesicles to fuse with the membrane and empty into the gap." },
@@ -223,43 +224,48 @@ const S = 80, OX = 160;
 const fx = (p: V3) => OX + p[0] * S;
 const fy = (p: V3) => 140 - p[1] * 52;
 
-export function SynapseFlat({ e, drug }: { e: number; drug: SynDrug }) {
-  const caOn = e >= T.ca && e < T.dock + 400;
+/** The parts that only change with the drug or a step: drawn once per change, not every frame. */
+const SynapseStatic = React.memo(function SynapseStatic({ caOn, drug, recOn }: { caOn: boolean; drug: SynDrug; recOn: boolean }) {
   return (
-    <svg viewBox="0 0 320 220" className="block h-full w-full" role="img" aria-label="A synapse: the nerve ending above, the gap, and the receiving cell with receptors below.">
-      <path d={`M${OX - 20} 0 V 16 C ${OX - 20} 40 ${OX - 140} 36 ${OX - 140} ${fy([0, 1.1, 0])} Q ${OX - 140} ${fy([0, 0.36, 0])} ${OX - 100} ${fy([0, 0.36, 0])} H ${OX + 100} Q ${OX + 140} ${fy([0, 0.36, 0])} ${OX + 140} ${fy([0, 1.1, 0])} C ${OX + 140} 36 ${OX + 20} 40 ${OX + 20} 16 V 0`} className="fill-[var(--status-info-bg)] stroke-foreground" strokeWidth="2" />
-      <rect x="10" y={fy([0, -0.32, 0])} width="300" height="70" rx="12" className="fill-[var(--muted)] stroke-foreground" strokeWidth="2" />
-      <text x="16" y="16" className="fill-muted-foreground text-[10px]">nerve ending</text>
-      <text x="16" y="212" className="fill-muted-foreground text-[10px]">receiving cell</text>
-      {e >= 0 && e < T.ca ? <circle cx={OX} cy={6 + (e / T.ca) * 30} r="7" className="fill-[var(--destructive)]" /> : null}
+    <>
+      <P k="sf-term" d={`M${OX - 20} 0 V 16 C ${OX - 20} 40 ${OX - 140} 36 ${OX - 140} ${fy([0, 1.1, 0])} Q ${OX - 140} ${fy([0, 0.36, 0])} ${OX - 100} ${fy([0, 0.36, 0])} H ${OX + 100} Q ${OX + 140} ${fy([0, 0.36, 0])} ${OX + 140} ${fy([0, 1.1, 0])} C ${OX + 140} 36 ${OX + 20} 40 ${OX + 20} 16 V 0`} sw={2} fill={C.wash} fillStyle="solid" />
+      <R k="sf-recv" x={10} y={fy([0, -0.32, 0])} w={300} h={70} sw={2} fill={C.wash} fillStyle="solid" />
+      <Label x={14} y={18} size={14} color={C.soft}>nerve ending</Label>
+      <Label x={14} y={212} size={14} color={C.soft}>receiving cell</Label>
       {CA_CH.map((c, k) => (
+        <R key={k} k={`sf-ca-${k}-${caOn}`} x={fx(c) - 6} y={fy([0, 0.42, 0]) - 8} w={12} h={14} sw={1.5} fill={caOn ? C.lime : C.paper} fillStyle="solid" />
+      ))}
+      <R k="sf-pump" x={fx(TRANSPORTER) - 7} y={fy(TRANSPORTER) - 6} w={14} h={14} sw={1.5} fill={C.paper} fillStyle="solid" />
+      {drug === "reuptake" ? <P k="sf-pump-x" d={`M${fx(TRANSPORTER) - 6} ${fy(TRANSPORTER) - 5} l12 12 M${fx(TRANSPORTER) + 6} ${fy(TRANSPORTER) - 5} l-12 12`} stroke={C.red} sw={2.4} single /> : null}
+      <Label x={fx(TRANSPORTER)} y={fy(TRANSPORTER) + 24} size={13} anchor="middle">pump</Label>
+      {RECEPTORS.map((r, k) => (
         <g key={k}>
-          <rect x={fx(c) - 6} y={fy([0, 0.42, 0]) - 8} width="12" height="14" rx="3" className={cn("stroke-foreground", caOn ? "fill-[var(--primary)]" : "fill-card")} strokeWidth="1.5" />
-          {caOn ? [0, 1, 2].map((j) => <text key={j} x={fx(c) - 14 + j * 10} y={fy([0, 0.42, 0]) - 12 - ((e / 3 + j * 13) % 40)} className="fill-foreground text-[7px] font-bold">Ca</text>) : null}
+          <P k={`sf-rec-${k}-${recOn}`} d={`M${fx(r) - 9} ${fy(r) + 6} v -12 h 6 v 6 h 6 v -6 h 6 v 12`} sw={1.5} fill={recOn ? C.blue : C.paper} fillStyle="solid" />
+          {drug === "blocker" ? <rect x={fx(r) - 3} y={fy(r) - 8} width="6" height="7" fill={C.ink} /> : null}
         </g>
       ))}
-      <rect x={fx(TRANSPORTER) - 7} y={fy(TRANSPORTER) - 6} width="14" height="14" rx="3" className="fill-card stroke-foreground" strokeWidth="1.5" />
-      {drug === "reuptake" ? <text x={fx(TRANSPORTER)} y={fy(TRANSPORTER) + 5} textAnchor="middle" className="fill-[var(--destructive)] text-[11px] font-bold">✕</text> : null}
-      <text x={fx(TRANSPORTER) + 10} y={fy(TRANSPORTER) - 8} className="fill-muted-foreground text-[9px]">pump</text>
+    </>
+  );
+});
+
+export function SynapseFlat({ e, drug }: { e: number; drug: SynDrug }) {
+  const caOn = e >= T.ca && e < T.dock + 400;
+  const recOn = e >= T.bind && response(e, drug) > 0.5;
+  return (
+    <Sheet bare name="synapse-flat" w={320} h={220} label="A synapse: the nerve ending above, the gap, and the receiving cell with receptors below." className="h-full w-full">
+      <SynapseStatic caOn={caOn} drug={drug} recOn={recOn} />
+      {e >= 0 && e < T.ca ? <circle cx={OX} cy={6 + (e / T.ca) * 30} r="7" fill={C.red} /> : null}
+      {caOn ? CA_CH.map((c, k) => [0, 1, 2].map((j) => <text key={`${k}-${j}`} x={fx(c) - 14 + j * 10} y={fy([0, 0.42, 0]) - 12 - ((e / 3 + j * 13) % 40)} fontSize={8} fontWeight={700} fill={C.blue}>Ca</text>)) : null}
       {Array.from({ length: N_VES }, (_, k) => {
         const vp = vesiclePos(k, Math.max(0, e), drug);
-        return <circle key={k} cx={fx(vp.p)} cy={fy(vp.p)} r={11 * Math.max(0.05, vp.s)} className="fill-card stroke-foreground" strokeWidth="1.2" style={{ opacity: vp.s < 0.1 ? 0 : 1 }} />;
-      })}
-      {RECEPTORS.map((r, k) => {
-        const on = e >= T.bind && response(e, drug) > 0.5;
-        return (
-          <g key={k}>
-            <path d={`M${fx(r) - 9} ${fy(r) + 6} v -12 h 6 v 6 h 6 v -6 h 6 v 12`} className={cn("stroke-foreground", on ? "fill-[var(--brand)]" : "fill-card")} strokeWidth="1.5" />
-            {drug === "blocker" ? <rect x={fx(r) - 3} y={fy(r) - 8} width="6" height="7" className="fill-foreground" /> : null}
-          </g>
-        );
+        return <circle key={k} cx={fx(vp.p)} cy={fy(vp.p)} r={11 * Math.max(0.05, vp.s)} fill={C.paper} stroke={C.ink} strokeWidth={1.4} style={{ opacity: vp.s < 0.1 ? 0 : 1 }} />;
       })}
       {e >= 0
         ? Array.from({ length: N_MOL }, (_, i) => {
             const m = moleculePos(i, e, drug);
-            return m.s > 0.05 ? <circle key={i} cx={fx(m.p)} cy={fy(m.p)} r={3 * m.s} className={m.bound ? "fill-[var(--destructive)]" : "fill-[#f2b84b]"} /> : null;
+            return m.s > 0.05 ? <circle key={i} cx={fx(m.p)} cy={fy(m.p)} r={3 * m.s} fill={m.bound ? C.red : C.lime} stroke={C.ink} strokeWidth={0.6} /> : null;
           })
         : null}
-    </svg>
+    </Sheet>
   );
 }

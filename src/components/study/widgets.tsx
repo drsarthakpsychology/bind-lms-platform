@@ -17,6 +17,7 @@ import type {
 import { useExplainView } from "@/components/learn/view-toggle";
 import { cn } from "@/lib/utils";
 import { Rich } from "./rich";
+import { Arrow, C, L, Label, P, R, Sheet } from "@/components/sketch/ink";
 import { trackLearn } from "@/lib/learn/track";
 import { BrainMap, Curve, Flow, Layers } from "./visuals";
 import { Journey, Neuron, Pathways, Receptor } from "./animations";
@@ -456,30 +457,26 @@ function Synapse({ d }: { d: SynapseData }) {
   const inGap = on ? 9 : 4;
   const receptors = on && stage >= 1 ? 3 : 5;
   const dots = Array.from({ length: inGap }, (_, i) => i);
+  const pumpBlocked = on && d.drug !== "maoi";
   return (
     <div className={card}>
       <p className={label}>Inside the synapse</p>
-      <svg viewBox="0 0 320 190" className="mt-3 w-full rounded-xl border-2 border-foreground bg-background" role="img" aria-label={`Synapse: ${inGap} serotonin molecules in the gap, ${receptors} receptors on the receiving neuron${on ? `, ${drug.name} on` : ""}`}>
-        <path d="M40 0 h240 v40 q-120 40 -240 0 z" className="fill-[var(--status-info-bg)] stroke-foreground" strokeWidth="2" />
-        <text x="160" y="22" textAnchor="middle" className="fill-foreground text-[10px] font-semibold">sending neuron</text>
-        <rect x="236" y="34" width="26" height="16" rx="4" className={cn("stroke-foreground", on && d.drug !== "maoi" ? "fill-[var(--status-alert-bg)]" : "fill-card")} strokeWidth="2" />
-        <text x="249" y="60" textAnchor="middle" className="fill-foreground text-[8px]">{on && d.drug !== "maoi" ? "pump blocked" : "recycling pump"}</text>
-        {on && d.drug !== "maoi" ? <line x1="232" y1="32" x2="266" y2="52" className="stroke-foreground" strokeWidth="3" /> : null}
-        <path d="M20 190 v-50 q140 -30 280 0 v50 z" className="fill-[var(--muted)] stroke-foreground" strokeWidth="2" />
-        <text x="160" y="180" textAnchor="middle" className="fill-foreground text-[10px] font-semibold">receiving neuron</text>
+      <Sheet name="synapse" w={320} h={196} label={`Synapse: ${inGap} serotonin molecules in the gap, ${receptors} receptors on the receiving neuron${on ? `, ${drug.name} on` : ""}`} className="mx-auto mt-3 max-w-[30rem]">
+        <P k="syn-send" d="M40 2 L280 2 L280 40 Q160 80 40 40 Z" sw={2} fill={C.wash} fillStyle="solid" />
+        <Label x={150} y={26} size={14} anchor="middle">sending neuron</Label>
+        <R k={`syn-pump-${pumpBlocked}`} x={236} y={34} w={26} h={16} sw={1.8} fill={pumpBlocked ? C.red : C.paper} fillStyle={pumpBlocked ? "hachure" : "solid"} gap={3} />
+        <Label x={249} y={68} size={13} anchor="middle">{pumpBlocked ? "pump blocked" : "recycling pump"}</Label>
+        {pumpBlocked ? <L k="syn-block" x1={230} y1={30} x2={268} y2={54} stroke={C.red} sw={3} single /> : null}
+        <P k="syn-recv" d="M20 196 L20 146 Q160 116 300 146 L300 196 Z" sw={2} fill={C.wash} fillStyle="solid" />
+        <Label x={160} y={184} size={14} anchor="middle">receiving neuron</Label>
         {Array.from({ length: receptors }, (_, i) => (
-          <rect key={i} x={70 + i * (180 / Math.max(1, receptors - 1 || 1))} y={136 - (i % 2) * 2} width="14" height="10" rx="3" className="fill-[var(--brand)] stroke-foreground transition-all duration-slow" strokeWidth="1.5" />
+          <R key={`${receptors}-${i}`} k={`syn-rec-${receptors}-${i}`} x={70 + i * (180 / Math.max(1, receptors - 1 || 1))} y={136 - (i % 2) * 2} w={14} h={10} sw={1.4} fill={C.blue} fillStyle="solid" />
         ))}
         {dots.map((i) => (
-          <circle key={i} r="4.5" className="vibha-float-dot fill-foreground" style={{ ["--dx" as string]: `${60 + ((i * 37) % 200)}px`, ["--dl" as string]: `${(i * 0.37) % 2.4}s` }} cx="0" cy="0" />
+          <circle key={i} r="4.5" fill={C.lime} stroke={C.ink} strokeWidth={1.2} className="vibha-float-dot" style={{ ["--dx" as string]: `${60 + ((i * 37) % 200)}px`, ["--dl" as string]: `${(i * 0.37) % 2.4}s` }} cx="0" cy="0" />
         ))}
-        {!on || d.drug === "maoi" ? <path d="M150 95 q60 -30 95 -50" fill="none" className="vibha-dash stroke-foreground/60" strokeWidth="2" strokeDasharray="4 4" markerEnd="url(#arr)" /> : null}
-        <defs>
-          <marker id="arr" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
-            <path d="M0 0 L10 5 L0 10 z" className="fill-foreground" />
-          </marker>
-        </defs>
-      </svg>
+        {!pumpBlocked ? <Arrow k="syn-back" from={[150, 96]} to={[240, 54]} bend={0.15} stroke={C.soft} sw={1.6} dash="4 4" /> : null}
+      </Sheet>
       <div className="mt-3 flex flex-wrap gap-2">
         {d.drug !== "none" ? (
           <button type="button" onClick={() => { setOn(!on); setStage(0); }} aria-pressed={on} className={cn(btn, on ? "bg-foreground text-background" : "bg-primary text-primary-foreground")}>

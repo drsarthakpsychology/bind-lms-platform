@@ -1082,7 +1082,7 @@ html[data-cvd="on"] .bg-destructive {
   }
 }
 
-/* Hand-drawn medicine pictures (src/components/meds/sketch): ink, brand blue
+/* Hand-drawn diagrams (src/components/sketch): ink, brand blue
    and lime on paper, re-inked for dark mode. */
 .sketch {
   --sk-ink: #1a1a1a;

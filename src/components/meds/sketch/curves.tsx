@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { Arrow, C, Choice, Cv, Fact, Figure, L, Label, P, R, Say, Sheet } from "./ink";
+import { Arrow, C, Choice, Cv, Fact, Figure, L, Label, P, R, Say, Sheet } from "@/components/sketch/ink";
 
 /* -------------------------------------------------------------- shared axes */
 
