@@ -123,6 +123,7 @@ export function CheckpointView({
           moduleId={cpKey}
           historyTool="study-check"
           label={`Checkpoint ${n}`}
+          intro={[]}
           autoStart
           retry={round}
           scoreOf={scoreOf}
