@@ -354,6 +354,19 @@
   }
 }
 
+/* An activity's How to play button shares the Back row (one header line)
+   instead of taking a row of its own. Wide screens keep it inside the card. */
+@media (max-width: 1023px) {
+  .activity-frame:has(> .activity-body > .activity-help:first-child:not(:empty)) > .activity-head {
+    padding-right: 3.25rem;
+  }
+  .activity-body > .activity-help:first-child {
+    margin-top: -3.25rem;
+    margin-bottom: 0.5rem;
+    padding-inline: 0;
+  }
+}
+
 /* A row of chips that scrolls sideways on phones: no scrollbar line under it,
    and it stops on each chip. */
 @utility chip-scroller {
