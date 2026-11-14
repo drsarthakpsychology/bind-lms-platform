@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default async function LoginPage({
   searchParams,
 }: {
-  searchParams: Promise<{ email?: string; setup?: string }>;
+  searchParams: Promise<{ email?: string; setup?: string; why?: string }>;
 }) {
   const session = await getSession();
 
@@ -21,7 +21,7 @@ export default async function LoginPage({
     redirect("/dashboard");
   }
 
-  const { email, setup } = await searchParams;
+  const { email, setup, why } = await searchParams;
   const defaultEmail = typeof email === "string" && email.length < 200 ? email : undefined;
 
   return (
@@ -33,6 +33,10 @@ export default async function LoginPage({
         <p className="mb-4 flex items-center gap-2 rounded-xl border-2 border-foreground bg-primary px-3 py-2 text-sm font-bold text-primary-foreground">
           <CheckCircle2 className="size-4 shrink-0" aria-hidden />
           Password set. Sign in to start.
+        </p>
+      ) : why === "elsewhere" ? (
+        <p role="status" className="mb-4 rounded-xl border-2 border-foreground bg-card px-3 py-2 text-sm font-semibold">
+          You were signed out here because your account was opened on another device. Sign in again to carry on.
         </p>
       ) : null}
       <LoginForm defaultEmail={defaultEmail} />
