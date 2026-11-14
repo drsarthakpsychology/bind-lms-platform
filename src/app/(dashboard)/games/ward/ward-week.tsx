@@ -31,6 +31,7 @@ import {
 } from "@/lib/games-sims/ward/engine";
 import { TEAM_LIMITS } from "@/lib/games-sims/teams";
 import { Btn, buzz, Kbd, motionCss as m, Panel, Pill, readLocal, Stat, useHotkeys, writeLocal, type Tone } from "@/lib/games-sims/ui/kit";
+import { ThumbBar } from "@/components/mobile/thumb-bar";
 import { JoinBox, Members, TeamCode, usePoll } from "@/lib/games-sims/ui/team";
 import type { WardTeamView } from "./actions";
 import { creditServerPlay } from "@/lib/learn/credit-play";
@@ -512,9 +513,12 @@ function RevealCard({ r, onNext, nextLabel }: { r: Reveal & { teamLine?: string 
           <p className="mt-1 text-small">{best.why}</p>
         </div>
       ) : null}
-      <Btn variant="primary" size="lg" className="w-full" onClick={onNext} autoFocus>
-        {nextLabel} <ArrowRight aria-hidden /> <Kbd>Enter</Kbd>
-      </Btn>
+      {/* Phones: Next sits low, in thumb reach. */}
+      <ThumbBar label="Next step">
+        <Btn variant="primary" size="lg" className="w-full" onClick={onNext} autoFocus>
+          {nextLabel} <ArrowRight aria-hidden /> <Kbd>Enter</Kbd>
+        </Btn>
+      </ThumbBar>
     </Panel>
   );
 }
