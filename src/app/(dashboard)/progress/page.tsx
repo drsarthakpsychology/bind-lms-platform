@@ -11,6 +11,9 @@ import { certificateStatus } from "@/lib/achievements/certificate-server";
 import { emptyStudy } from "@/lib/learn/engine";
 import { loadLearnState } from "../study/actions";
 import { StrengthsPanel } from "./strengths";
+import { ProgressV2 } from "./progress-v2";
+import { pageV2 } from "@/components/v2me/server";
+import { getStrengthsWeaknesses } from "@/lib/progress/strengths";
 import { RefreshOnSave } from "@/components/save/refresh-on-save";
 
 export const metadata: Metadata = { title: "Progress" };
@@ -32,6 +35,29 @@ export default async function ProgressPage() {
 
   // Next step: the unpassed test with the most reading done (first in course order on a tie).
   const next = [...cert.remaining].sort((a, b) => (pctOf.get(b.id) ?? 0) - (pctOf.get(a.id) ?? 0))[0];
+
+  if (await pageV2(me.role)) {
+    // New design: the same numbers, and the topic lists that used to sit on Home.
+    const strengths = await getStrengthsWeaknesses(me.id);
+    return (
+      <>
+        <RefreshOnSave kinds={["learn"]} />
+        <ProgressV2
+          coursePct={course.pct}
+          passed={cert.passed.length}
+          total={cert.total}
+          passMark={CERTIFICATE_PASS_PCT}
+          eligible={cert.eligible}
+          next={next ? { num: next.num, title: next.title, href: next.testHref, pct: pctOf.get(next.id) ?? 0 } : null}
+          strengths={strengths}
+          modules={MODULES.map((m) => {
+            const r = results.get(m.id);
+            return { id: m.id, num: m.num, title: m.title, pct: pctOf.get(m.id) ?? 0, test: r ? { passed: Boolean(r.passed), pct: r.pct ?? null, href: r.testHref } : undefined };
+          })}
+        />
+      </>
+    );
+  }
 
   return (
     <div className="mx-auto max-w-3xl space-y-8">
