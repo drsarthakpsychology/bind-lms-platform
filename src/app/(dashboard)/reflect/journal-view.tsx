@@ -187,7 +187,6 @@ export function JournalView({ initialEntries, userId, initialShares = {} }: { in
         ),
       });
       if (!res.ok) {
-        const j = (await res.json().catch(() => null)) as { error?: string } | null;
         const why =
           res.status === 404 && toFaculty ? "No faculty account is set up yet." : res.status === 404 ? "No one on VIBHA has that email." : res.status === 401 ? "You were signed out. Sign in again and try." : "Could not share. Try again.";
         setShareMsg((m) => ({ ...m, [entry.id]: why }));
