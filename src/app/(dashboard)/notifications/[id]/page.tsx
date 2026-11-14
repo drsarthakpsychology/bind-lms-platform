@@ -28,6 +28,12 @@ export default async function NotificationPage({ params }: { params: Promise<{ i
     const r = await admin.from("notifications").update({ read_at: now, opened_at: now }).eq("id", id);
     if (r.error) await admin.from("notifications").update({ read_at: now }).eq("id", id);
   }
+  // Doubt answers come from batchmates, not the team: say who it is from.
+  let from = "From the VIBHA team";
+  if (n.sent_by && n.sent_by !== n.user_id) {
+    const { data: who } = await admin.from("profiles").select("role, name").eq("id", n.sent_by).maybeSingle();
+    if (who && who.role !== "admin" && who.role !== "view_admin") from = typeof who.name === "string" && who.name.trim() ? `From ${who.name.trim()}` : "From your batch";
+  }
   const html = sanitizeRich((n.body_html as string | null) ?? textToHtml(String(n.body ?? "")));
 
   return (
@@ -40,7 +46,7 @@ export default async function NotificationPage({ params }: { params: Promise<{ i
             <Bell className="size-5" aria-hidden />
           </span>
           <div className="min-w-0 flex-1">
-            <p className="text-caption text-muted-foreground">From the VIBHA team · {formatRelativeTime(String(n.created_at))}</p>
+            <p className="text-caption text-muted-foreground">{from} · {formatRelativeTime(String(n.created_at))}</p>
             <h1 className="text-h2 font-bold break-words">{String(n.title)}</h1>
           </div>
           <Link href="/notifications" aria-label="Close" className="grid size-10 shrink-0 place-items-center rounded-full border-2 border-foreground bg-background hover:bg-accent">

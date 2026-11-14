@@ -1,5 +1,5 @@
 import { MiddleTruncate } from "@/components/ui/middle-truncate";
-import { Bell, LogOut, MessageSquare, Shield, User } from "lucide-react";
+import { Bell, MessageSquare, Shield, User } from "lucide-react";
 import { ColourBlindToggle } from "@/components/settings/colour-blind-toggle";
 import { ReactionsToggle } from "@/components/reactions/reactions-toggle";
 import { getSession } from "@/lib/auth/session";
@@ -9,8 +9,12 @@ import { MobileHeader } from "@/components/mobile/mobile-header";
 import { MobileSection } from "@/components/mobile/mobile-section";
 import { MobileListItem } from "@/components/mobile/mobile-list-item";
 import { StatusPill } from "@/components/mobile/status-pill";
-import { Button } from "@/components/ui/button";
 import { BRAND } from "@/lib/brand";
+import { loadMyBlocks } from "@/lib/access/blocks";
+import { blockedBy } from "@/lib/access/features";
+import { LogoutButton } from "@/components/navigation/logout-button";
+
+const ROLE_LABEL: Record<string, string> = { admin: "Admin", view_admin: "Admin (view only)", student: "Student", alumni: "Alumni" };
 import { leaveWithoutSession } from "@/lib/auth/session-redirect";
 
 /**
@@ -31,6 +35,9 @@ export default async function SettingsPage() {
   if (session.status !== "ok") return leaveWithoutSession(session);
 
   const { email, role } = session.profile;
+  const roleLabel = ROLE_LABEL[role] ?? role;
+  // The Wall shortcut only where the Wall opens for this student.
+  const showWall = role !== "student" || !blockedBy("/wall", await loadMyBlocks(session.profile.id));
 
   return (
     <MobilePage inset={false}>
@@ -47,7 +54,7 @@ export default async function SettingsPage() {
           <div className="min-w-0 flex-1">
             <MiddleTruncate text={email ?? "Signed in"} className="text-small font-semibold text-foreground" />
             <p className="mt-0.5 flex items-center gap-1.5 text-caption text-muted-foreground">
-              <span className="capitalize">{role}</span>
+              <span>{roleLabel}</span>
               <span aria-hidden>·</span>
               {BRAND.shortName}
             </p>
@@ -65,7 +72,7 @@ export default async function SettingsPage() {
           <MobileListItem
             leading={<Shield className="size-4 text-foreground" aria-hidden />}
             title="Role"
-            subtitle={<span className="capitalize">{role}</span>}
+            subtitle={roleLabel}
           />
         </MobileSection>
 
@@ -74,21 +81,23 @@ export default async function SettingsPage() {
           <MobileListItem
             href="/courses"
             leading={<span className="font-mono text-xs font-bold text-link">01</span>}
-            title="Course modules"
-            subtitle="Browse the curriculum: locked ones say why."
+            title="Lectures"
+            subtitle="Your recorded classes."
           />
           <MobileListItem
             href="/notifications"
             leading={<Bell className="size-4 text-foreground" aria-hidden />}
             title="Notifications"
-            subtitle="Replies to your wall posts, and anything needing review."
+            subtitle="Messages from the VIBHA team, answers to your doubts and badges."
           />
-          <MobileListItem
-            href="/wall"
-            leading={<MessageSquare className="size-4 text-foreground" aria-hidden />}
-            title="Cohort wall"
-            subtitle="Posts, replies and reactions from your cohort."
-          />
+          {showWall ? (
+            <MobileListItem
+              href="/wall"
+              leading={<MessageSquare className="size-4 text-foreground" aria-hidden />}
+              title="Cohort wall"
+              subtitle="Posts, replies and reactions from your cohort."
+            />
+          ) : null}
         </MobileSection>
 
         {/* Learning: the one study preference this device keeps. */}
@@ -111,10 +120,7 @@ export default async function SettingsPage() {
 
         <div className="border-t-2 border-border pt-4">
           <form action={logout}>
-            <Button type="submit" variant="outline" size="lg" className="w-full">
-              <LogOut className="size-4" aria-hidden />
-              Log out
-            </Button>
+            <LogoutButton />
           </form>
           <p className="mt-2 text-center text-caption text-muted-foreground">
             Signing out keeps your progress, just sign back in.
