@@ -13,7 +13,7 @@ import { historyFor, noteAnswer, useHistoryPrefetch } from "@/lib/history/client
 import { EXCERPT_RIGHT, gradeExcerpt, gradeTag, nextLevel, nextStreak, optionsFor, pickExcerpt, pointsFor, ROUND_SIZE, segments, whyNot, type Level, type Tag, type TagResult } from "@/lib/games-sims/mse/grade";
 import { DOMAINS, TERMS, domainLabel, termById, type Domain } from "@/lib/games-sims/mse/terms";
 import { AccuracyBoard, type AccuracyBoardData } from "@/lib/games-sims/ui/board";
-import { Btn, buzz, Kbd, motionCss as m, Panel, Pill, readLocal, Stat, toneFor, useGameXp, useHotkeys, verdictWord, writeLocal } from "@/lib/games-sims/ui/kit";
+import { Btn, buzz, ChoiceCard, Kbd, PickHeading, motionCss as m, Panel, Pill, readLocal, Stat, toneFor, useGameXp, useHotkeys, verdictWord, writeLocal } from "@/lib/games-sims/ui/kit";
 import { ThumbBar } from "@/components/mobile/thumb-bar";
 import { HintBar, useHintStatus } from "@/components/hints/hint-chip";
 import { askHint } from "@/lib/hints/actions";
@@ -101,16 +101,10 @@ function Intro({ board, onStart }: { board: AccuracyBoardData; onStart: (l: Leve
   useHotkeys({ "1": () => onStart(1), "2": () => onStart(2), "3": () => onStart(3) });
   return (
     <div className={cn("mx-auto max-w-2xl space-y-6", m.rise)}>
-      <h1 className="text-h2">Pick a level</h1>
-      <div className="grid gap-3 sm:grid-cols-3">
+      <PickHeading>Pick a level</PickHeading>
+      <div className="grid gap-3">
         {LEVELS.map((l) => (
-          <Btn key={l.id} variant={l.id === 1 ? "primary" : "outline"} size="lg" className="h-auto flex-col items-start py-3 text-left" onClick={() => onStart(l.id)}>
-            <span className="text-body-strong">
-              {l.label}
-              <Kbd>{l.id}</Kbd>
-            </span>
-            <span className="text-small font-normal">{l.line}</span>
-          </Btn>
+          <ChoiceCard key={l.id} title={l.label} line={l.line} hotkey={String(l.id)} suggested={l.id === 1} onClick={() => onStart(l.id)} />
         ))}
       </div>
       <AccuracyBoard data={board} />

@@ -12,7 +12,7 @@ import { DRUGS, drugById, effectById, MYSTERIES, outcomeById, PUZZLES, reviewByI
 import { historyFor, noteAnswer, useHistoryPrefetch } from "@/lib/history/client";
 import { buildRun, costsLife, grade, rxItem, LIVES, nextStreak, pointsFor, rxXp, STEPS, type Answer, type Mode, type Question } from "@/lib/games-sims/rx/game";
 import { AccuracyBoard, type AccuracyBoardData } from "@/lib/games-sims/ui/board";
-import { Btn, buzz, Kbd, motionCss as m, Panel, Pill, Stat, toneFor, useHotkeys, verdictWord } from "@/lib/games-sims/ui/kit";
+import { Btn, buzz, ChoiceCard, Kbd, PickHeading, motionCss as m, Panel, Pill, Stat, toneFor, useHotkeys, verdictWord } from "@/lib/games-sims/ui/kit";
 import { ThumbBar } from "@/components/mobile/thumb-bar";
 import { Journey, Receptor } from "@/components/study/animations";
 import { creditServerPlay } from "@/lib/learn/credit-play";
@@ -76,16 +76,10 @@ function Intro({ board, onStart }: { board: AccuracyBoardData; onStart: (m: Mode
   useHotkeys({ "1": () => onStart("mixed"), "2": () => onStart("chain"), "3": () => onStart("mystery"), "4": () => onStart("puzzle"), "5": () => onStart("review") });
   return (
     <div className={cn("mx-auto max-w-2xl space-y-6", m.rise)}>
-      <h1 className="text-h2">Pick a mode</h1>
+      <PickHeading>Pick a mode</PickHeading>
       <div className={cn("grid gap-3 sm:grid-cols-2", m.stagger)}>
         {MODES.map((x, i) => (
-          <Btn key={x.id} variant={i === 0 ? "primary" : "outline"} size="lg" className={cn("h-auto flex-col items-start py-3 text-left", m.rise)} style={{ "--i": i } as React.CSSProperties} onClick={() => onStart(x.id)}>
-            <span className="flex items-center gap-2 text-body-strong">
-              <x.Icon aria-hidden /> {x.label}
-              <Kbd>{i + 1}</Kbd>
-            </span>
-            <span className="text-small font-normal">{x.line}</span>
-          </Btn>
+          <ChoiceCard key={x.id} icon={x.Icon} title={x.label} line={x.line} hotkey={String(i + 1)} suggested={i === 0} className={m.rise} style={{ "--i": i } as React.CSSProperties} onClick={() => onStart(x.id)} />
         ))}
       </div>
       <AccuracyBoard data={board} unit="answers" />

@@ -6,7 +6,7 @@
  * shortcut hook and the XP hook that pays out through the learn engine.
  */
 import * as React from "react";
-import { Check, CircleDashed, Info, X } from "lucide-react";
+import { ArrowRight, Check, CircleDashed, Info, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { emptyState, gainXp, istToday, type LearnState } from "@/lib/learn/engine";
 import { getLearnState, initLearnStore, setLearnState, useLearnState } from "@/lib/learn/store";
@@ -43,6 +43,71 @@ export function Btn({
       )}
     />
   );
+}
+
+/**
+ * One choice on a game's start screen (a mode, a level, a rival). Every
+ * choice looks the same at rest, so none of them reads as already picked; the
+ * suggested one carries a small "Start here" tag instead of a fill. The whole
+ * card is the tap target (at least 64 px tall).
+ */
+export function ChoiceCard({
+  title,
+  line,
+  icon: Icon,
+  hotkey,
+  suggested = false,
+  className,
+  ...props
+}: Omit<React.ComponentProps<"button">, "title"> & {
+  title: React.ReactNode;
+  line?: React.ReactNode;
+  icon?: React.ComponentType<{ className?: string; "aria-hidden"?: boolean }>;
+  hotkey?: string;
+  suggested?: boolean;
+}) {
+  const id = React.useId();
+  return (
+    <button
+      type="button"
+      aria-labelledby={`${id}-t`}
+      aria-describedby={line || suggested ? `${id}-d` : undefined}
+      {...props}
+      className={cn(
+        "group/choice relative flex min-h-16 w-full cursor-pointer items-center gap-3 rounded-[10px] border-2 border-foreground bg-card p-3 text-left text-foreground outline-none hard-shadow-sm",
+        "transition-[transform,box-shadow] duration-fast ease-snappy hover:-translate-y-0.5 hover:hard-shadow-md active:translate-x-px active:translate-y-px active:shadow-none focus-visible:ring-[3px] focus-visible:ring-ring/60",
+        "disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:translate-y-0 disabled:hover:hard-shadow-sm",
+        className,
+      )}
+    >
+      {Icon ? (
+        <span aria-hidden className={cn("grid size-11 shrink-0 place-items-center rounded-md border-2 border-foreground", suggested ? "bg-primary text-primary-foreground" : "bg-muted")}>
+          <Icon className="size-5" aria-hidden />
+        </span>
+      ) : null}
+      <span className="min-w-0 flex-1">
+        <span className="flex flex-wrap items-center gap-x-2 gap-y-1">
+          <span id={`${id}-t`} className="text-body-strong leading-tight">
+            {title}
+          </span>
+          {suggested ? (
+            <span aria-hidden className="rounded-full border-2 border-foreground bg-primary px-2 py-px font-mono text-[0.65rem] font-bold uppercase leading-tight tracking-wider text-primary-foreground">Start here</span>
+          ) : null}
+        </span>
+        <span id={`${id}-d`} className="mt-0.5 block text-small leading-snug text-muted-foreground empty:hidden">
+          {line}
+          {suggested ? <span className="sr-only">{line ? " " : ""}Suggested start.</span> : null}
+        </span>
+      </span>
+      {hotkey ? <Kbd>{hotkey}</Kbd> : null}
+      <ArrowRight aria-hidden className="size-5 shrink-0 transition-transform duration-fast ease-snappy group-hover/choice:translate-x-0.5" />
+    </button>
+  );
+}
+
+/** The heading over a game's start-screen choices. */
+export function PickHeading({ children, className }: { children: React.ReactNode; className?: string }) {
+  return <h1 className={cn("text-h3", className)}>{children}</h1>;
 }
 
 export type Tone = "good" | "part" | "bad" | "info";
