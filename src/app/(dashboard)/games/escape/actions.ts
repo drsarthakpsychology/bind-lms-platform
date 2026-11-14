@@ -8,6 +8,7 @@ import { roomById } from "@/lib/games-sims/escape/rooms";
 import type { RoomView } from "@/lib/games-sims/escape/types";
 import { secretSeed, sign, verify } from "@/lib/games/token";
 import { currentUser, gradeAnswers, payXp, saveResult } from "@/lib/games-sims/server/results";
+import { oncePerStep } from "@/lib/games-sims/server/run-steps";
 import { createTeam, joinTeam, loadMyTeam, myName, rivalTeams, updateTeam, type TeamRow } from "@/lib/games-sims/server/teams";
 import { normaliseCode, TEAM_LIMITS } from "@/lib/games-sims/teams";
 
@@ -173,21 +174,23 @@ export async function answerEscapePractice(input: { token: string; stage: number
   if (!res) return { ok: true, token: parsed.data.token, view: roomView(cur.room, cur.st, seed), state: cur.st, now: Date.now() };
   const r = cur.room;
   const p = res.door;
+  const now = Date.now();
+  const state = { ...res.state, log: [] };
+  const n = r.puzzles.length;
+  const wrong = state.wrong;
+  const ms = state.done ? teamTime(new Date(t.t0).toISOString(), now, wrong) : undefined;
+  // An old token sent again gets its first result back, not a second try.
+  const { result: out, fresh } = await oncePerStep(user.id, "escape", t.run, String(t.tr.reduce((a, x) => a + x, 0)), () => ({ ok: true as const, token: sign(res.next), view: roomView(r, state, seed), state, now, right: res.ok, ...(ms !== undefined ? { ms } : {}) }));
+  if (!fresh) return out;
   await Promise.all([
     gradeAnswers(user, [{ skill: p.skill, item: `escape:${r.id}:${p.id}`, outcome: res.ok ? 1 : 0, first: res.first }]),
     // Answer history: the first try at each lock counts.
     res.first ? record(user.id, "escape", `${r.id}:${p.id}`, res.ok) : null,
   ]);
-  const now = Date.now();
-  const state = { ...res.state, log: [] };
-  const out = { ok: true as const, token: sign(res.next), view: roomView(r, state, seed), state, now, right: res.ok };
-  if (!res.state.done) return out;
-  const n = r.puzzles.length;
-  const wrong = res.state.wrong;
-  const ms = teamTime(new Date(t.t0).toISOString(), now, wrong);
+  if (ms === undefined) return out;
   const [, xp] = await Promise.all([
     saveResult(user.id, { game: "escape", item: r.id, score: n / (n + wrong), right: n, total: n + wrong, meta: { mode: "practice", ms } }),
     payXp(user.id, "escape", escapeXp(ms, wrong), `practice:${r.id}:${t.run}`),
   ]);
-  return { ...out, ms, xp };
+  return { ...out, xp };
 }
