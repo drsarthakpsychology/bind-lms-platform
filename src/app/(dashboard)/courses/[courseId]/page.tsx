@@ -1,7 +1,9 @@
 import { notFound } from "next/navigation";
 
 import { getSession } from "@/lib/auth/session";
-import CourseOverview from "@/components/course/course-overview";
+import CourseOverview, { loadCourseOverview } from "@/components/course/course-overview";
+import { learnV2 } from "@/components/learn-v2/server";
+import { CourseV2 } from "@/components/learn-v2/course";
 import { RefreshOnSave } from "@/components/save/refresh-on-save";
 import { leaveWithoutSession } from "@/lib/auth/session-redirect";
 
@@ -23,6 +25,18 @@ export default async function CourseOverviewPage({
   // Enrollment / published / existence gating lives in the course layout, which
   // 404s before this page renders. The shared component owns fetch + render so
   // the dashboard's single-course view and this direct URL stay identical.
+  // New design (ui_v2): the same model, drawn as an editorial list by week.
+  if (await learnV2()) {
+    const model = await loadCourseOverview(courseId, session.profile);
+    if (!model) return null;
+    return (
+      <>
+        <RefreshOnSave kinds={["complete", "progress"]} />
+        <CourseV2 model={model} />
+      </>
+    );
+  }
+
   return (
     <>
       <RefreshOnSave kinds={["complete", "progress"]} />
