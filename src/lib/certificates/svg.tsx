@@ -29,7 +29,6 @@ export function CertificateSvg({ layout, images, className, label }: { layout: L
             return <path key={i} d={op.d} fill={op.fill} />;
           case "image": {
             const src = images?.[op.key];
-            // eslint-disable-next-line @next/next/no-img-element -- inside SVG; next/image does not apply
             return src ? <image key={i} href={src} x={op.x} y={op.y} width={op.w} height={op.h} preserveAspectRatio="xMinYMax meet" /> : null;
           }
           default:

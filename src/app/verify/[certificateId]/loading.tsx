@@ -1,26 +1,21 @@
 import { LoadingFrame } from "@/components/design-system/slow-state";
 import { Skeleton } from "@/components/ui/skeleton";
 
-/**
- * /verify/[certificateId] loading: matches the certificate card layout.
- * The page does a one-row Supabase lookup before rendering, so this keeps the
- * flash-of-empty-card from appearing while it resolves.
- */
+/** /verify/[certificateId] loading: the same shape as the result (status, name, title, rows). */
 export default function VerifyLoading() {
   return (
     <LoadingFrame>
-    <div className="flex min-h-screen items-center justify-center bg-background px-5">
-      <div className="w-full max-w-md rounded-lg border border-border bg-card hard-shadow-md">
-        <div className="space-y-3 p-6 text-center">
-          <Skeleton className="mx-auto h-6 w-48" />
-          <Skeleton className="mx-auto h-5 w-28" />
-          <Skeleton className="mx-auto h-8 w-52" />
-          <Skeleton className="mx-auto h-4 w-36" />
-          <Skeleton className="mx-auto h-7 w-44" />
-          <Skeleton className="mx-auto h-4 w-40" />
+      <div className="mx-auto w-full max-w-xl px-5 py-10 sm:py-16">
+        <Skeleton className="h-8 w-28 rounded-full" />
+        <Skeleton className="mt-5 h-9 w-64 max-w-full" />
+        <Skeleton className="mt-3 h-5 w-72 max-w-full" />
+        <Skeleton className="mt-5 h-4 w-full" />
+        <div className="mt-8 space-y-4">
+          <Skeleton className="h-4 w-56" />
+          <Skeleton className="h-4 w-64" />
+          <Skeleton className="h-4 w-60" />
         </div>
       </div>
-    </div>
     </LoadingFrame>
   );
 }

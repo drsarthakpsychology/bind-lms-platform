@@ -160,6 +160,22 @@ export async function signatureOptions(admin: SupabaseClient): Promise<Array<{ i
   );
 }
 
+/** Signed links to the signature images of one certificate, keyed sig0..sig2 (for the on-screen drawing). */
+export async function signatureUrls(admin: SupabaseClient, signatories: Array<{ signatureFrom?: string | null }>): Promise<Record<string, string | null>> {
+  const out: Record<string, string | null> = {};
+  const ids = signatories.map((s) => s.signatureFrom).filter((x): x is string => Boolean(x));
+  if (!ids.length) return out;
+  const { data } = await admin.from("achievements").select("id, signature_asset_path").in("id", ids);
+  const paths = new Map((data ?? []).map((a) => [a.id as string, a.signature_asset_path as string | null]));
+  await Promise.all(
+    signatories.map(async (s, i) => {
+      const p = s.signatureFrom ? paths.get(s.signatureFrom) : null;
+      out[`sig${i}`] = p ? await credentialDownloadUrl(p, 60 * 60).catch(() => null) : null;
+    }),
+  );
+  return out;
+}
+
 /** Render the PDF of a stored certificate (always from the record, so it is never stale). */
 export async function pdfForRecord(admin: SupabaseClient, r: CredentialRecord): Promise<Buffer> {
   const doc = docFromRecord(r);

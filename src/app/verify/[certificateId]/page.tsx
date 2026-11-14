@@ -1,90 +1,59 @@
 import type { Metadata } from "next";
 import { createAdminClient } from "@/lib/supabase/server";
-import { Card, CardContent } from "@/components/ui/card";
 import { SiteFooter } from "@/components/site/site-footer";
 import { SiteHeader } from "@/components/site/site-header";
-import { ShieldCheck, ShieldX, HelpCircle } from "lucide-react";
+import { normaliseCertificateId } from "@/lib/certificates/id";
+import { certStatus, istDay } from "@/lib/certificates/kinds";
+import { layoutCertificate } from "@/lib/certificates/layout";
+import { docFromRecord, isStudioRecord, loadCredential, recordKind, recordSignatories, recordTitle, signatureUrls } from "@/lib/certificates/server";
+import { CertificateSvg } from "@/lib/certificates/svg";
+import { VerifyNotFound, VerifyView, type VerifyFacts } from "./verify-view";
 
 // Public verification, never indexed, no auth required.
-export const metadata: Metadata = { robots: { index: false, follow: false } };
+export const metadata: Metadata = { title: "Verify a certificate", robots: { index: false, follow: false } };
+export const dynamic = "force-dynamic";
 
 /**
- * Public credential verification. Reads the authoritative record server-side
- * (service role) by opaque credential_id and returns ONLY approved public
- * fields: display name, credential title, institution, issue date, credential
- * id, status and (certificates only) the paragraph about what the person did.
- * Never the recipient's email or phone. Revoked credentials keep their URL
- * and show "Revoked".
+ * Public credential verification. Reads the record server-side (service
+ * role) by its public ID and shows only public fields: name, title,
+ * institution, dates, ID, status, and (certificates only) the paragraph.
+ * Never the email, the phone or why it was revoked. The status is worked out
+ * when the page loads, so a provisional certificate shows as expired the
+ * moment its date passes. Revoked certificates keep their address.
  */
 export default async function VerifyCertificatePage({ params }: { params: Promise<{ certificateId: string }> }) {
   const { certificateId } = await params;
   const admin = createAdminClient();
+  const cred = await loadCredential(admin, normaliseCertificateId(certificateId));
 
-  const { data: cred } = await admin
-    .from("credentials")
-    .select("credential_id, student_name, type, status, issued_at, revoked_at, reason, achievements(title)")
-    .eq("credential_id", certificateId)
-    .maybeSingle();
-
-  if (!cred) {
-    return (
-      <div className="flex min-h-dvh flex-col bg-background">
-        <SiteHeader />
-        <main className="flex flex-1 items-center justify-center px-5 py-12">
-          <Card className="w-full max-w-md hard-shadow-md">
-            <CardContent className="p-6 text-center">
-              <HelpCircle className="mx-auto size-10 text-muted-foreground" aria-hidden />
-              <h1 className="mt-3 text-h2">We can&apos;t find this certificate</h1>
-              <p className="mt-2 text-small text-muted-foreground">Check that the link was copied in full. If it was, the certificate was not issued by VIBHA School of Psychology.</p>
-            </CardContent>
-          </Card>
-        </main>
-        <SiteFooter />
-      </div>
-    );
+  let body: React.ReactNode = <VerifyNotFound />;
+  if (cred) {
+    const isCert = cred.type === "certificate";
+    const kind = recordKind(cred);
+    const status = certStatus({ status: cred.status, revoked_at: cred.revoked_at, expires_at: cred.expires_at, kind: isCert ? kind : null });
+    const facts: VerifyFacts = {
+      status,
+      name: cred.student_name,
+      title: recordTitle(cred),
+      what: !isCert ? "Badge" : kind === "provisional" ? "Provisional certificate" : kind === "recognition" ? "Special recognition" : "Certificate",
+      // Badges keep a rule snapshot in `reason`; only certificates show it.
+      paragraph: isCert && cred.reason?.trim() ? cred.reason.trim() : null,
+      credentialId: cred.credential_id,
+      issuedOn: cred.issued_at ? istDay(cred.issued_at) : null,
+      expiresOn: cred.expires_at ? istDay(cred.expires_at) : null,
+      revokedOn: cred.revoked_at ? istDay(cred.revoked_at) : null,
+      replacedBy: cred.replaced_by ?? null,
+    };
+    // The certificate itself, for the ones made in the studio (never a revoked one).
+    const show = isCert && isStudioRecord(cred) && status !== "revoked" && status !== "not_issued";
+    const images = show ? await signatureUrls(admin, recordSignatories(cred)).catch(() => ({})) : {};
+    body = <VerifyView facts={facts} certificate={show ? <CertificateSvg layout={layoutCertificate(docFromRecord(cred))} images={images} /> : undefined} />;
   }
-
-  const a = Array.isArray(cred.achievements) ? cred.achievements[0] : cred.achievements;
-  const title = (a?.title as string) ?? "VIBHA School of Psychology";
-  const verified = cred.status === "issued";
-  const revoked = cred.status === "revoked";
-  // Badges store a rule snapshot in `reason`; only certificates show it (the paragraph).
-  const paragraph = cred.type === "certificate" && typeof cred.reason === "string" && cred.reason.trim() ? cred.reason.trim() : null;
-  const fmt = (iso: string) => new Date(iso).toLocaleDateString("en-IN", { day: "numeric", month: "long", year: "numeric", timeZone: "Asia/Kolkata" });
 
   return (
     <div className="flex min-h-dvh flex-col bg-background">
       <SiteHeader />
-      <main className="flex flex-1 items-center justify-center px-5 py-12">
-        <Card className="w-full max-w-md hard-shadow-md">
-          <CardContent className="space-y-4 p-6 text-center">
-            <p className="text-eyebrow text-link">VIBHA School of Psychology</p>
-            <div className="flex flex-col items-center gap-2">
-              {verified ? (
-                <span className="inline-flex items-center gap-2 rounded-full border-2 border-foreground bg-primary px-3 py-1 text-sm font-bold text-primary-foreground">
-                  <ShieldCheck className="size-4" aria-hidden /> Verified
-                </span>
-              ) : revoked ? (
-                <span className="inline-flex items-center gap-2 rounded-full border-2 border-foreground bg-card px-3 py-1 text-sm font-bold text-status-alert-fg">
-                  <ShieldX className="size-4" aria-hidden /> Revoked
-                </span>
-              ) : (
-                <span className="inline-flex items-center gap-2 rounded-full border-2 border-foreground bg-card px-3 py-1 text-sm font-bold">
-                  <HelpCircle className="size-4" aria-hidden /> Not issued
-                </span>
-              )}
-            </div>
-            <p className="text-sm text-muted-foreground">This certifies that</p>
-            <h1 className="text-h2">{cred.student_name}</h1>
-            <p className="text-sm text-muted-foreground">earned</p>
-            <p className="text-h3">{title}</p>
-            {paragraph ? <p className="rounded-md border-2 border-foreground/15 bg-muted/40 p-3 text-left text-sm leading-relaxed">{paragraph}</p> : null}
-            {verified && cred.issued_at ? <p className="text-caption text-muted-foreground">Issued {fmt(cred.issued_at)}</p> : null}
-            {revoked && cred.revoked_at ? <p className="text-caption font-semibold text-status-alert-fg">Revoked {fmt(cred.revoked_at)}</p> : null}
-            <p className="break-all border-t-2 border-foreground/10 pt-4 font-mono text-caption text-muted-foreground">Credential ID {cred.credential_id}</p>
-          </CardContent>
-        </Card>
-      </main>
+      <main className="flex-1">{body}</main>
       <SiteFooter />
     </div>
   );

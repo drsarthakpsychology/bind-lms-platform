@@ -2,7 +2,7 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 
 const { put, send } = vi.hoisted(() => ({
   put: vi.fn(async (key: string) => key),
-  send: vi.fn(async (..._args: unknown[]): Promise<{ ok: boolean; id?: string; error?: string }> => ({ ok: true, id: "re_1" })),
+  send: vi.fn<(...args: unknown[]) => Promise<{ ok: boolean; id?: string; error?: string }>>(async () => ({ ok: true, id: "re_1" })),
 }));
 
 vi.mock("server-only", () => ({}));
