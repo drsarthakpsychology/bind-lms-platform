@@ -69,16 +69,12 @@ drop policy if exists "learn_progress_own_update" on public.learn_progress;
 drop policy if exists "progress_own_upsert" on public.progress;
 drop policy if exists "progress_own_update" on public.progress;
 
--- 9. Scores and evidence that only the server should write. The routes now
---    write these with the service role after their own checks.
+-- 9. Scores that only the server should write. The judgment arena route now
+--    scores on the server and writes with the service role; consulting-room
+--    scores were already written only by the server (AI-graded debrief).
 drop policy if exists "sct_attempts_insert_own" on public.sct_attempts;
 drop policy if exists "sct_attempts_update_own" on public.sct_attempts;
 drop policy if exists "sim_scores_insert_own" on public.sim_scores;
-drop policy if exists "competency_events_insert_own" on public.competency_events;
-drop policy if exists "quiz_attempts_insert_own" on public.quiz_attempts;
-drop policy if exists "mse_attempts_insert_own" on public.mse_attempts;
-drop policy if exists "osce_attempts_insert_own" on public.osce_attempts;
-drop policy if exists "formulation_attempts_insert_own" on public.formulation_attempts;
 -- No app code writes these two; students could set their own counts.
 drop policy if exists "quest_progress_insert_own" on public.quest_progress;
 drop policy if exists "quest_progress_update_own" on public.quest_progress;
