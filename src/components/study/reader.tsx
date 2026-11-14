@@ -14,6 +14,7 @@ import { SectionMarks } from "./marks";
 import s from "./study.module.css";
 import { backLinkClass } from "@/components/design-system/back-link";
 import { SectionMotif } from "@/components/reactions/graphics";
+import { MobileBottomSheet } from "@/components/mobile/mobile-bottom-sheet";
 
 export type TocItem = { id: string; num: string; title: string; part?: string; isTest: boolean; href: string };
 
@@ -64,6 +65,8 @@ function Toc({ items, moduleId, current, done, onPick }: { items: TocItem[]; mod
             <Link
               href={t.href}
               onClick={onPick}
+              // In the phone sheet, open on the section being read.
+              ref={here && onPick ? (el) => el?.scrollIntoView({ block: "center" }) : undefined}
               aria-current={here ? "page" : undefined}
               className={cn(
                 "flex items-start gap-2 rounded-md px-2 py-1.5 text-sm leading-snug transition-colors pointer-coarse:py-2.5",
@@ -270,20 +273,21 @@ export function SectionReader({
           <Link href={`/study/${moduleId}`} aria-label="Back to the module" className={backLinkClass}>
             <ArrowLeft className="size-4" aria-hidden /> Module {moduleNum}
           </Link>
-          <button type="button" onClick={() => setTocOpen(!tocOpen)} aria-expanded={tocOpen} className="inline-flex min-h-11 min-w-0 items-center gap-1.5 rounded-md border-2 border-foreground bg-card px-3 py-1.5 text-sm font-semibold">
+          <button type="button" onClick={() => setTocOpen(true)} aria-haspopup="dialog" className="inline-flex min-h-11 min-w-0 items-center gap-1.5 rounded-md border-2 border-foreground bg-card px-3 py-1.5 text-sm font-semibold">
             <ListOrdered className="size-4 shrink-0" aria-hidden /> <span className="truncate">Section {index + 1} of {toc.length}</span>
-            <ChevronDown className={cn("size-4 shrink-0 transition-transform", tocOpen && "rotate-180")} aria-hidden />
+            <ChevronDown className="size-4 shrink-0" aria-hidden />
           </button>
         </div>
-        {tocOpen ? (
-          <div className="mb-5 max-h-[60dvh] overflow-y-auto overscroll-contain rounded-3xl border-2 border-foreground bg-card p-3 md:hidden">
+        {/* Phones: the module's sections in a bottom sheet, in thumb reach. */}
+        {!wide ? (
+          <MobileBottomSheet open={tocOpen} onOpenChange={setTocOpen} title={`Module ${moduleNum}: ${readCount} of ${readTotal} read`}>
             <Toc items={toc} moduleId={moduleId} current={section.id} done={st.study.done} onPick={() => setTocOpen(false)} />
-          </div>
+          </MobileBottomSheet>
         ) : null}
 
         <header className="relative mb-6 max-w-[68ch]">
           {section.isTest ? null : <SectionMotif className="absolute top-0 right-0 hidden sm:inline-grid" />}
-          <p className="text-eyebrow text-link sm:pr-20">
+          <p className="line-clamp-1 text-eyebrow text-link sm:line-clamp-none sm:pr-20">
             {moduleTitle}
             {section.part ? ` · ${section.part.replace(/^Part [IVX]+ · /, "")}` : ""}
           </p>

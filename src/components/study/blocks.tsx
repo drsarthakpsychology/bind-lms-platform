@@ -147,7 +147,7 @@ function WideTable({ head, rows }: { head: string[]; rows: string[][] }) {
 /** Renders a section's blocks. `test` carries what the MCQ set needs to save a score. */
 export function Blocks({ blocks }: { blocks: Block[] }) {
   return (
-    <div className="space-y-5 text-[1.0625rem] leading-[1.7]">
+    <div className="space-y-5 text-[1.0625rem] leading-[1.7] text-pretty [overflow-wrap:break-word]">
       {blocks.map((b, i) => {
         switch (b.t) {
           case "h3": {
