@@ -197,10 +197,10 @@ export function Callout({ k, x, y, to, children, lines, anchor = "start", size =
 
 /* ------------------------------------------------------------------ frame */
 
-/** The drawing surface: a fixed viewBox, the handwriting font, and a name for the tests. */
-export function Sheet({ name, w, h, label, children, className, top = 0 }: { name: string; w: number; h: number; label: string; children: React.ReactNode; className?: string; top?: number }) {
+/** The drawing surface: a fixed viewBox, the handwriting font, and a name for the tests. `bare` drops the paper and border, for a drawing inside a frame of its own (the flat views of the 3D scenes). */
+export function Sheet({ name, w, h, label, children, className, top = 0, left = 0, bare = false }: { name: string; w: number; h: number; label: string; children: React.ReactNode; className?: string; top?: number; left?: number; bare?: boolean }) {
   return (
-    <svg data-sketch={name} viewBox={`0 ${top} ${w} ${h}`} role="img" aria-label={label} className={cn("sketch block h-auto w-full rounded-xl border-2 border-foreground bg-[var(--sk-paper)]", className)} style={{ fontFamily: kalam.style.fontFamily }}>
+    <svg data-sketch={name} viewBox={`${left} ${top} ${w} ${h}`} role="img" aria-label={label} className={cn(bare ? "sketch block" : "sketch block h-auto w-full rounded-xl border-2 border-foreground bg-[var(--sk-paper)]", className)} style={{ fontFamily: kalam.style.fontFamily }}>
       {children}
     </svg>
   );
