@@ -7,6 +7,10 @@ import { cn } from "@/lib/utils";
 import { Rich } from "./rich";
 import { trackLearn } from "@/lib/learn/track";
 import { StepPicker } from "./pacing";
+import { C, Callout, E, L, Label, P, R, Sheet } from "@/components/sketch/ink";
+import { JourneyArt } from "@/components/sketch/journey-art";
+import { PathwaysArt, type PathId } from "@/components/sketch/pathways-art";
+import { ReceptorArt } from "@/components/sketch/receptor-art";
 
 /**
  * Animated explainers: how a medicine travels from the mouth to a brain
@@ -62,7 +66,6 @@ export function Journey({ d }: { d: JourneyData }) {
   const stages = ROUTE_STAGES[route].map((s) => ({ ...s, text: d.notes?.[s.id] ?? (s.id === "target" ? `At last it reaches its target: ${d.target}. There it acts on receptors, and this is where the effect (and many side effects) begins.` : s.text) }));
   const [i, setI] = React.useState(0);
   const cur = stages[Math.min(i, stages.length - 1)];
-  const trail = stages.slice(0, i + 1);
   const routes = (d.routes ?? [route]) as NonNullable<JourneyData["route"]>[];
   return (
     <figure className={card}>
@@ -76,30 +79,9 @@ export function Journey({ d }: { d: JourneyData }) {
           ))}
         </div>
       ) : null}
-      <svg viewBox="0 0 320 210" className="mt-3 w-full rounded-xl border-2 border-foreground bg-background" role="img" aria-label={`${d.drug}: ${cur.name}`}>
-        {/* body */}
-        <circle cx="160" cy="38" r="30" className="fill-[var(--muted)] stroke-foreground" strokeWidth="2" />
-        <path d="M140 16 C 150 8, 172 8, 182 18 C 188 26, 186 38, 178 44 C 168 48, 150 48, 142 42 C 134 34, 134 24, 140 16 Z" className={cn("stroke-foreground transition-colors duration-slow", cur.id === "target" ? "fill-[var(--primary)]" : "fill-[var(--status-info-bg)]")} strokeWidth="1.5" />
-        <rect x="150" y="66" width="20" height="14" className="fill-[var(--muted)] stroke-foreground" strokeWidth="2" />
-        <rect x="112" y="80" width="96" height="110" rx="24" className="fill-[var(--muted)] stroke-foreground" strokeWidth="2" />
-        <path d="M108 92 L 80 150 M212 92 L 244 150" className="stroke-foreground" strokeWidth="10" strokeLinecap="round" />
-        <path d="M108 92 L 80 150 M212 92 L 244 150" className="stroke-[var(--muted)]" strokeWidth="6" strokeLinecap="round" />
-        <ellipse cx="122" cy="146" rx="18" ry="11" className={cn("stroke-foreground", cur.id === "liver" ? "fill-[var(--status-alert-bg)]" : "fill-card")} strokeWidth="1.5" />
-        <path d="M146 160 q 14 10 28 0 q 14 -10 0 20 q -14 10 -28 0" fill="none" className={cn(cur.id === "gut" ? "stroke-[var(--brand)]" : "stroke-foreground/50")} strokeWidth="3" />
-        <path d="M196 96 L 196 176" className="stroke-[var(--destructive)]/70" strokeWidth="3" strokeDasharray="4 4" />
-        <text x="205" y="104" className="fill-muted-foreground text-[8px]">blood</text>
-        <text x="96" y="168" className="fill-muted-foreground text-[8px]">liver</text>
-        {/* trail */}
-        <polyline points={trail.map((s) => `${s.x},${s.y}`).join(" ")} fill="none" className="stroke-[var(--brand)]" strokeWidth="2.5" strokeDasharray="5 4" />
-        {stages.map((s, k) => (
-          <circle key={s.id} cx={s.x} cy={s.y} r={k <= i ? 4 : 3} className={k <= i ? "fill-foreground" : "fill-foreground/25"} />
-        ))}
-        {/* the medicine */}
-        <g style={{ transform: `translate(${cur.x}px, ${cur.y}px)`, transition: "transform 900ms var(--ease-out-expo)" }}>
-          <circle r="8" className="fill-[var(--primary)] stroke-foreground" strokeWidth="2" />
-          <circle r="13" className="vibha-ping fill-none stroke-[var(--primary)]" strokeWidth="2" />
-        </g>
-      </svg>
+      <div className="mt-3">
+        <JourneyArt stops={stages.map((s) => s.id)} i={i} route={route} label={`${d.drug}: ${cur.name}`} className="mx-auto max-w-[28rem]" />
+      </div>
       <StepPicker steps={stages.map((s) => ({ id: s.id, name: s.name, text: <Rich text={s.text} /> }))} i={i} onPick={setI} kind="journey" label="Stages" />
       {d.caption ? <figcaption className="mt-2 text-sm text-muted-foreground"><Rich text={d.caption} /></figcaption> : null}
     </figure>
@@ -107,6 +89,24 @@ export function Journey({ d }: { d: JourneyData }) {
 }
 
 /* --------------------------------------------------------------- neuron */
+/** The neuron: dendrites, cell body, an axon (with or without myelin) and its endings. A fired signal runs along the axon. */
+function NeuronArt({ myelin, shot, label: aria }: { myelin: boolean; shot: number; label: string }) {
+  return (
+    <Sheet name="neuron" w={380} h={168} label={aria} className="mx-auto max-w-[32rem]">
+      <P k="n-dend" d="M60 74 L30 48 M30 48 L14 52 M30 48 L26 30 M56 104 L24 118 M24 118 L12 112 M24 118 L22 134 M52 66 L48 38" sw={1.8} single />
+      <E k="n-soma" cx={70} cy={88} w={52} h={46} sw={2.2} fill={C.wash} fillStyle="solid" />
+      <E k="n-nuc" cx={68} cy={88} w={16} h={14} sw={1.4} fill={C.blue} gap={3} />
+      <L k="n-axon" x1={94} y1={88} x2={318} y2={88} sw={2.4} />
+      {myelin ? [116, 160, 204, 248, 292].map((x) => <R key={x} k={`n-my${x}`} x={x} y={79} w={30} h={18} sw={1.6} fill={C.paper} fillStyle="solid" />) : null}
+      <P k="n-term" d="M318 88 L344 68 M318 88 L350 88 M318 88 L344 110" sw={1.8} single />
+      {[[348, 66], [354, 88], [348, 112]].map(([x, y]) => <E key={y} k={`n-bout${y}`} cx={x} cy={y} w={11} h={11} sw={1.4} fill={C.lime} fillStyle="solid" />)}
+      {shot > 0 ? <circle key={`${shot}-${myelin}`} cx={100} cy={88} r={7} fill={C.lime} stroke={C.ink} strokeWidth={1.6} className={myelin ? "vibha-ap-jump" : "vibha-ap-slide"} /> : null}
+      <Callout k="n-l-soma" x={96} y={30} lines={["cell body"]} to={[84, 68]} size={14} />
+      <Callout k="n-l-axon" x={200} y={30} lines={[myelin ? "myelin" : "axon"]} to={myelin ? [212, 78] : [206, 87]} size={14} />
+      <Label x={10} y={158} size={14} bold={false}>{myelin ? "myelin: the signal jumps from gap to gap" : "no myelin: the signal creeps along"}</Label>
+    </Sheet>
+  );
+}
 const AP_TRACE: [number, number][] = [[0, -70], [8, -70], [10, -55], [13, 35], [16, 30], [20, -60], [24, -82], [32, -74], [40, -70]];
 
 export function Neuron({ d }: { d: NeuronData }) {
@@ -114,29 +114,15 @@ export function Neuron({ d }: { d: NeuronData }) {
   const [strength, setStrength] = React.useState(70);
   const [shot, setShot] = React.useState(0);
   const fires = strength >= 50;
-  const X = (t: number) => 10 + (t / 40) * 140;
-  const Y = (mv: number) => 10 + ((40 - mv) / 130) * 80;
+  const X = (t: number) => 56 + (t / 40) * 134;
+  const Y = (mv: number) => 14 + ((40 - mv) / 130) * 86;
   const trace = fires ? AP_TRACE : ([[0, -70], [8, -70], [10, -62], [14, -68], [40, -70]] as [number, number][]);
   return (
     <figure className={card}>
       <p className={label}>{d.title ? <Rich text={d.title} /> : "How a neuron fires"}</p>
-      <svg viewBox="0 0 320 120" className="mt-3 w-full rounded-xl border-2 border-foreground bg-background" role="img" aria-label={fires ? "The signal travels down the axon" : "Too weak: no signal"}>
-        {/* dendrites + soma */}
-        <path d="M10 40 L 34 52 M10 72 L 34 62 M18 30 L 38 50" className="stroke-foreground" strokeWidth="2" />
-        <circle cx="48" cy="58" r="18" className="fill-[var(--status-info-bg)] stroke-foreground" strokeWidth="2" />
-        <text x="48" y="61" textAnchor="middle" className="fill-foreground text-[7px] font-semibold">cell body</text>
-        {/* axon */}
-        <line x1="66" y1="58" x2="282" y2="58" className="stroke-foreground" strokeWidth="3" />
-        {myelin ? [0, 1, 2, 3, 4].map((k) => <rect key={k} x={80 + k * 40} y="50" width="30" height="16" rx="7" className="fill-card stroke-foreground" strokeWidth="1.5" />) : null}
-        {/* terminal */}
-        <path d="M282 58 L 300 44 M282 58 L 302 58 M282 58 L 300 72" className="stroke-foreground" strokeWidth="2" />
-        {[44, 58, 72].map((y) => <circle key={y} cx={304} cy={y} r="4" className="fill-[var(--primary)] stroke-foreground" strokeWidth="1" />)}
-        {/* the travelling signal */}
-        {fires && shot > 0 ? (
-          <circle key={`${shot}-${myelin}`} cx="66" cy="58" r="6" className={cn("fill-[var(--brand)]", myelin ? "vibha-ap-jump" : "vibha-ap-slide")} />
-        ) : null}
-        <text x="80" y="96" className="fill-muted-foreground text-[8px]">{myelin ? "myelin sheath: the signal jumps between gaps (nodes of Ranvier)" : "no myelin: the signal creeps along every bit of membrane"}</text>
-      </svg>
+      <div className="mt-3">
+        <NeuronArt myelin={myelin} shot={fires ? shot : 0} label={fires ? "The signal travels down the axon" : "Too weak: no signal"} />
+      </div>
       <div className="mt-3 grid gap-3 sm:grid-cols-[1fr_auto] sm:items-end">
         <label className="flex flex-col gap-1 text-sm font-semibold">
           <span className="flex justify-between"><span>Stimulus strength</span><span className="tabular-nums">{strength < 50 ? "below threshold" : "above threshold"}</span></span>
@@ -148,13 +134,13 @@ export function Neuron({ d }: { d: NeuronData }) {
         </div>
       </div>
       <div className="mt-3 grid gap-3 sm:grid-cols-[10rem_1fr] sm:items-center">
-        <svg viewBox="0 0 160 100" className="w-full rounded-xl border-2 border-foreground bg-background" role="img" aria-label="Membrane voltage over time">
-          <line x1="10" x2="150" y1={Y(-55)} y2={Y(-55)} className="stroke-[var(--destructive)]/60" strokeDasharray="3 3" />
-          <text x="110" y={Y(-55) - 2} className="fill-muted-foreground text-[6px]">threshold</text>
-          <polyline key={`${shot}-${fires}`} points={trace.map(([t, v]) => `${X(t)},${Y(v)}`).join(" ")} fill="none" className="vibha-draw stroke-foreground" strokeWidth="2" pathLength={1} />
-          <text x="4" y={Y(30)} className="fill-muted-foreground text-[6px]">+30 mV</text>
-          <text x="4" y={Y(-70) + 8} className="fill-muted-foreground text-[6px]">−70 mV</text>
-        </svg>
+        <Sheet name="neuron-trace" w={200} h={124} label="Membrane voltage over time" className="mx-auto max-w-[16rem]">
+          <L k="thr" x1={10} x2={190} y1={Y(-55)} y2={Y(-55)} stroke={C.red} sw={1.4} single dash="5 4" />
+          <Label x={190} y={Y(-55) - 6} size={13} anchor="end" color={C.red}>threshold</Label>
+          <P k={`trace-${shot}-${fires}`} d={trace.map(([t, v], k) => `${k ? "L" : "M"}${X(t)} ${Y(v)}`).join(" ")} stroke={C.blue} sw={2.2} single rough={0.4} />
+          <Label x={6} y={Y(30) + 4} size={12} bold={false}>+30 mV</Label>
+          <Label x={6} y={Y(-70) + 16} size={12} bold={false}>{"\u221270 mV"}</Label>
+        </Sheet>
         <p className="text-[0.95rem] leading-relaxed" role="status">
           {shot === 0
             ? ""
@@ -185,23 +171,9 @@ export function Pathways({ d }: { d: PathwaysData }) {
   return (
     <figure className={card}>
       <p className={label}>{d.title ? <Rich text={d.title} /> : "The four dopamine pathways"}</p>
-      <svg viewBox="30 30 200 110" className="mt-3 w-full rounded-xl border-2 border-foreground bg-background" role="group" aria-label="Brain seen from the side, with dopamine pathways">
-        <path d="M50 92 C 40 60, 70 36, 112 38 C 160 38, 196 56, 198 86 C 200 106, 184 116, 166 114 L 160 132 L 150 132 L 148 116 C 120 120, 70 120, 50 92 Z" className="fill-[var(--muted)] stroke-foreground" strokeWidth="2" />
-        <text x="62" y="54" className="fill-muted-foreground text-[6px]">front</text>
-        <circle cx="152" cy="112" r="4" className="fill-foreground" />
-        <text x="157" y="122" className="fill-foreground text-[6px] font-semibold">VTA / substantia nigra</text>
-        {DA_PATHS.map((p) => {
-          const f = flowFor(p.id);
-          const dPath = `M${p.from[0]} ${p.from[1]} Q ${p.via[0]} ${p.via[1]} ${p.to[0]} ${p.to[1]}`;
-          return (
-            <g key={p.id} role="button" tabIndex={0} aria-label={p.name} aria-pressed={pick === p.id} onClick={() => setPick(p.id)} onKeyDown={(e) => (e.key === "Enter" || e.key === " ") && setPick(p.id)} className="cursor-pointer outline-none">
-              <path d={dPath} fill="none" strokeWidth={pick === p.id ? 4 : 3} strokeLinecap="round" className={cn("transition-all duration-slow", pick === p.id ? "stroke-[var(--brand)]" : "stroke-foreground/60")} style={{ opacity: 0.35 + f * 0.65 }} />
-              <path d={dPath} fill="none" strokeWidth="2" strokeDasharray="2 7" className="vibha-dash stroke-[var(--primary)]" style={{ opacity: f, animationDuration: `${0.6 / Math.max(0.15, f)}s` }} />
-              <circle cx={p.to[0]} cy={p.to[1]} r="3" className="fill-card stroke-foreground" strokeWidth="1.2" />
-            </g>
-          );
-        })}
-      </svg>
+      <div className="mt-3">
+        <PathwaysArt pick={pick as PathId} flow={flowFor} block={!blocker ? "none" : atypical ? "d2-2a" : "d2"} label={`Brain cut down the middle, front to the left, with the four dopamine pathways; ${sel.name} picked`} className="mx-auto max-w-[30rem]" />
+      </div>
       <div className="mt-3 flex flex-wrap gap-1.5">
         {DA_PATHS.map((p) => (
           <button key={p.id} type="button" aria-pressed={pick === p.id} onClick={() => setPick(p.id)} className={cn("min-h-10 rounded-md border-2 px-2.5 text-sm font-semibold", pick === p.id ? "border-foreground bg-primary text-primary-foreground" : "border-foreground/30 bg-card")}>{p.name}</button>
@@ -241,29 +213,8 @@ export function Receptor({ d }: { d: ReceptorData }) {
   return (
     <figure className={card}>
       <p className={label}>{d.title ? <Rich text={d.title} /> : `What binds to the ${d.receptor ?? "receptor"}?`}</p>
-      <div className="mt-3 grid gap-3 sm:grid-cols-[1fr_7rem] sm:items-end">
-        <svg viewBox="0 0 220 130" className="w-full rounded-xl border-2 border-foreground bg-background" role="img" aria-label={`${L.name} at the receptor: signal ${Math.round(L.signal * 100)}%`}>
-          <rect x="0" y="62" width="220" height="16" className="fill-[var(--status-info-bg)]" />
-          <text x="4" y="58" className="fill-muted-foreground text-[7px]">outside the cell</text>
-          <text x="4" y="92" className="fill-muted-foreground text-[7px]">inside the cell</text>
-          <path d="M92 40 L 92 100 L 128 100 L 128 40 L 120 40 L 120 56 L 100 56 L 100 40 Z" className={cn("stroke-foreground transition-colors duration-slow", L.signal >= 0.9 ? "fill-[var(--primary)]" : "fill-card")} strokeWidth="2" />
-          <text x="110" y="114" textAnchor="middle" className="fill-foreground text-[7px] font-semibold">{d.receptor ?? "receptor"}</text>
-          {pick !== "none" ? (
-            <g key={pick} className="vibha-dock">
-              <rect x="102" y="40" width="16" height="16" rx="4" className={cn("stroke-foreground", L.shape)} strokeWidth="1.5" />
-            </g>
-          ) : null}
-          {[0, 1, 2].map((k) => (
-            <circle key={k} cx={110} cy={104 + k * 6} r={2 + L.signal * 2.5} className="fill-[var(--brand)] transition-all duration-slow" style={{ opacity: L.signal }} />
-          ))}
-        </svg>
-        <div className="flex flex-col items-center gap-1" aria-hidden>
-          <div className="relative h-28 w-10 overflow-hidden rounded-md border-2 border-foreground bg-card">
-            <div className="absolute inset-x-0 bottom-0 bg-[var(--brand)] transition-all duration-slow" style={{ height: `${L.signal * 100}%` }} />
-            <div className="absolute inset-x-0 border-t-2 border-dashed border-foreground" style={{ bottom: "15%" }} />
-          </div>
-          <span className="text-xs font-semibold">signal</span>
-        </div>
+      <div className="mt-3">
+        <ReceptorArt id={pick} receptor={d.receptor ?? "receptor"} label={`${L.name} at the ${d.receptor ?? "receptor"}: signal ${Math.round(L.signal * 100)}%`} className="mx-auto max-w-[28rem]" />
       </div>
       <div className="mt-3 flex flex-wrap gap-1.5">
         {LIGANDS.map((x) => (
@@ -271,7 +222,7 @@ export function Receptor({ d }: { d: ReceptorData }) {
         ))}
       </div>
       <p className="vibha-pop mt-3 rounded-xl bg-muted p-3 text-[0.95rem] leading-relaxed" key={pick} role="status" aria-live="polite">
-        <span className="font-semibold">{L.name}: </span>{L.text} <span className="text-muted-foreground">Dashed line: background level.</span>
+        <span className="font-semibold">{L.name}: </span>{L.text} <span className="text-muted-foreground">Dashed line on the meter: background level.</span>
       </p>
       <button type="button" className={cn(btn, "mt-2 bg-card")} onClick={() => setPick("none")}><RotateCcw className="size-4" aria-hidden /> Empty the receptor</button>
       {d.caption ? <figcaption className="mt-2 text-sm text-muted-foreground"><Rich text={d.caption} /></figcaption> : null}
