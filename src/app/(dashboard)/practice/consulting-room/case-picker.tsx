@@ -183,7 +183,7 @@ function CaseCardItem({
   const locked = c.unlocked === false;
   const stateLabel =
     st === "completed" && typeof c.score === "number"
-      ? `${STATE_LABEL[st]} · ${Math.round(c.score * 10)}/10`
+      ? `${STATE_LABEL[st]} · ${Math.round(c.score * 10) / 10}/5`
       : STATE_LABEL[st];
 
   if (locked) {
@@ -233,7 +233,7 @@ function CaseCardItem({
       </button>
       <div className="flex items-center justify-between gap-3 border-t border-border px-4 py-2">
         <span className="flex min-w-0 items-center gap-1.5 text-caption text-muted-foreground">
-          {st === "completed" && typeof c.score === "number" && c.mark ? <span className="shrink-0 tabular-nums">Best {Math.round(c.score * 10)}/10</span> : null}
+          {st === "completed" && typeof c.score === "number" && c.mark ? <span className="shrink-0 tabular-nums">Best {Math.round(c.score * 10) / 10}/5</span> : null}
           {st === "completed" && typeof c.stars === "number" ? (
             <span className="shrink-0 text-status-pending-fg" aria-label={`${c.stars} of 3 stars earned`}>
               {"★".repeat(c.stars)}

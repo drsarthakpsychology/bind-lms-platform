@@ -113,7 +113,7 @@ function Pick({ teamsOn, teams, arranged, onPractice, onCreate, onJoin, onOpen }
       {arranged.recycled ? <RecycleNote /> : null}
       <ul className={cn("grid gap-4 md:grid-cols-3", m.stagger)}>
         {arranged.list.map(({ item: r, mark }, i) => (
-          <li key={r.id} className={cn("flex flex-col rounded-xl border-2 border-foreground bg-card p-4 hard-shadow-sm", mark === "done" && !arranged.recycled && "border-foreground/40 shadow-none", m.rise)} style={{ "--i": i } as React.CSSProperties}>
+          <li key={r.id} className={cn("flex min-w-0 flex-col rounded-xl border-2 border-foreground bg-card p-4 hard-shadow-sm", mark === "done" && !arranged.recycled && "border-foreground/40 shadow-none", m.rise)} style={{ "--i": i } as React.CSSProperties}>
             <div className="flex items-start justify-between gap-2">
               <p className="flex min-w-0 items-center gap-1.5 text-caption text-muted-foreground">
                 <MapPin className="size-3.5 shrink-0" aria-hidden /> <span className="truncate">{r.place}</span>

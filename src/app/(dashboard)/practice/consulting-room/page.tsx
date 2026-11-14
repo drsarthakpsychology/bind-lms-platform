@@ -68,7 +68,7 @@ export default async function ConsultingRoomPage() {
     }
     if (s.status === "complete") {
       const score = scoresBySession.get(String(s.id));
-      doneRows.set(key, { item: key, seen: 1, ok: typeof score === "number" ? score >= 5 : null, at: s.created_at ? Date.parse(s.created_at) || 0 : 0, due: null });
+      doneRows.set(key, { item: key, seen: 1, ok: typeof score === "number" ? score >= 2.5 : null, at: s.created_at ? Date.parse(s.created_at) || 0 : 0, due: null });
     }
   }
 
