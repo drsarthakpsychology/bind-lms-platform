@@ -5,6 +5,8 @@ import { RotateCcw } from "lucide-react";
 import type { BrainMapData, CurveData, FlowData, LayersData } from "@/lib/study/types";
 import { cn } from "@/lib/utils";
 import { Rich } from "./rich";
+import { HAND } from "@/components/sketch/ink";
+import { BOX, SketchFrame, type Link } from "@/components/sketch/frame";
 
 /**
  * Visual teaching pieces: flowcharts and cycles and layered models (shown
@@ -20,47 +22,42 @@ const btn = "inline-flex min-h-11 items-center justify-center gap-2 rounded-md b
 /* ------------------------------------------------------------------ flow */
 /**
  * A plain diagram: every step and what it means is on screen at once, so a
- * student reads it like a textbook figure. No buttons, no stepping.
+ * student reads it like a textbook figure. No buttons, no stepping. The
+ * boxes, number dots and arrows are hand-drawn round the real text.
  */
 export function Flow({ d }: { d: FlowData }) {
-  const step = (k: number, extra?: string) => {
+  const ids = d.nodes.map((n, k) => `${k}-${n.id}`);
+  const step = (k: number) => {
     const n = d.nodes[k];
     return (
-      <div className={cn("min-w-0 rounded-md border-2 border-foreground bg-card px-3 py-2", extra)}>
-        <p className="flex items-baseline gap-2 font-semibold leading-snug">
-          <span className="inline-flex size-6 shrink-0 items-center justify-center rounded-full bg-foreground text-xs text-background" aria-hidden>
+      <div data-sk="box" data-sk-id={ids[k]} className={cn(BOX, "min-w-0 px-3 py-2.5")}>
+        <p className="flex items-baseline gap-2.5 leading-snug">
+          <span data-sk="dot" data-sk-id={`dot-${ids[k]}`} className="inline-flex size-6 shrink-0 items-center justify-center rounded-full bg-[var(--sk-lime)] text-sm font-bold text-[var(--sk-on-lime)] group-data-drawn:bg-transparent" style={{ fontFamily: HAND }} aria-hidden>
             {k + 1}
           </span>
-          <span className="min-w-0 [overflow-wrap:anywhere]"><Rich text={n.label} /></span>
+          <span data-sk-label="" className="min-w-0 text-[1.05rem] font-bold [overflow-wrap:anywhere]" style={{ fontFamily: HAND }}><Rich text={n.label} /></span>
         </p>
-        {n.detail ? <p className="mt-1 pl-8 text-[0.92rem] leading-relaxed text-foreground/80 [overflow-wrap:anywhere]"><Rich text={n.detail} /></p> : null}
-      </div>
-    );
-  };
-  const arrow = (from: number) => {
-    const next = d.nodes[from + 1] ?? (d.layout === "cycle" ? d.nodes[0] : undefined);
-    if (!next) return null;
-    const el = d.edgeLabels?.[`${d.nodes[from].id}>${next.id}`];
-    return (
-      <div aria-hidden className="flex items-center gap-2 py-1 pl-4 text-sm text-muted-foreground">
-        <span className="text-base leading-none">↓</span>
-        {el ? <Rich text={el} /> : null}
+        {n.detail ? <p className="mt-1 pl-[2.125rem] text-[0.92rem] leading-relaxed text-foreground/80 [overflow-wrap:anywhere]"><Rich text={n.detail} /></p> : null}
       </div>
     );
   };
 
+  const links: Link[] = [];
   let body: React.ReactNode;
   if (d.layout === "tree") {
     const kids = (pid?: string) => d.nodes.map((x, k) => ({ x, k })).filter(({ x }) => x.parent === pid);
-    const branch = (pid?: string, depth = 0): React.ReactNode => {
+    const branch = (pid?: string, depth = 0, pk?: number): React.ReactNode => {
       const list = kids(pid);
       if (!list.length) return null;
+      list.forEach(({ k }, j) => {
+        if (pk !== undefined) links.push({ from: ids[pk], to: ids[k], kind: "elbow", after: j ? ids[list[j - 1].k] : undefined });
+      });
       return (
-        <ul className={cn("flex flex-col gap-2", depth > 0 && "mt-2 border-l-2 border-foreground/30 pl-3 sm:pl-4")}>
+        <ul className={cn("flex flex-col gap-2.5", depth > 0 && "mt-2.5 pl-8")}>
           {list.map(({ x, k }) => (
             <li key={x.id}>
               {step(k)}
-              {branch(x.id, depth + 1)}
+              {branch(x.id, depth + 1, k)}
             </li>
           ))}
         </ul>
@@ -68,15 +65,30 @@ export function Flow({ d }: { d: FlowData }) {
     };
     body = branch(undefined);
   } else {
+    const cycle = d.layout === "cycle";
+    d.nodes.forEach((_, k) => {
+      if (k < d.nodes.length - 1) links.push({ from: ids[k], to: ids[k + 1] });
+    });
+    if (cycle && d.nodes.length > 1) links.push({ from: ids[d.nodes.length - 1], to: ids[0], kind: "loop" });
+    const gap = (k: number) => {
+      const next = d.nodes[k + 1] ?? (cycle ? d.nodes[0] : undefined);
+      const el = next ? d.edgeLabels?.[`${d.nodes[k].id}>${next.id}`] : undefined;
+      if (k === d.nodes.length - 1) return el ? <p className="py-1 pl-11 text-sm font-bold text-[var(--sk-blue)]" style={{ fontFamily: HAND }}><Rich text={el} /></p> : null;
+      return (
+        <div aria-hidden className="flex min-h-8 items-center py-1 pl-11 text-sm font-bold text-[var(--sk-blue)]" style={{ fontFamily: HAND }}>
+          {el ? <span data-sk-label=""><Rich text={el} /></span> : null}
+        </div>
+      );
+    };
     body = (
-      <ol className="flex flex-col">
+      <ol className={cn("flex flex-col", cycle && "pr-7")}>
         {d.nodes.map((nd, k) => (
           <li key={nd.id}>
             {step(k)}
-            {k < d.nodes.length - 1 || d.layout === "cycle" ? arrow(k) : null}
+            {gap(k)}
           </li>
         ))}
-        {d.layout === "cycle" ? <li className="pl-4 text-sm font-semibold text-muted-foreground">Then back to 1</li> : null}
+        {cycle ? <li className="pt-1 pl-11 text-sm font-bold text-[var(--sk-soft)]" style={{ fontFamily: HAND }}>then back to 1</li> : null}
       </ol>
     );
   }
@@ -84,7 +96,7 @@ export function Flow({ d }: { d: FlowData }) {
   return (
     <figure className={card}>
       {d.title ? <p className={label}><Rich text={d.title} /></p> : null}
-      <div className={d.title ? "mt-3" : undefined}>{body}</div>
+      <SketchFrame links={links} salt={`flow-${d.nodes[0]?.id ?? ""}`} className={d.title ? "mt-3" : undefined}>{body}</SketchFrame>
       {d.caption ? <figcaption className="mt-3 text-sm text-muted-foreground"><Rich text={d.caption} /></figcaption> : null}
     </figure>
   );
