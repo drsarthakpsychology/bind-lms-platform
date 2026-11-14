@@ -62,7 +62,7 @@ export default async function CourseLayout({
   if (!allowed.includes(courseId)) notFound();
 
   return (
-    <div className="min-h-[calc(100vh-3.5rem)]">
+    <div className="min-h-[calc(100svh-3.5rem)]">
       <div className="w-full overflow-x-hidden">{children}</div>
     </div>
   );
