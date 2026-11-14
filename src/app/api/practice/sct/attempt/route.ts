@@ -1,7 +1,8 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
 import { requireStudentApi } from "@/lib/auth/api-guard";
-import { createClient, createAdminClient } from "@/lib/supabase/server";
+import { createAdminClient } from "@/lib/supabase/server";
+import { ALL_SEED_SCT_ITEMS, scoreSctResponse, simulatedPanel, type SctResponse } from "@/lib/practice/sct";
 import { rateLimitWrite } from "@/lib/rate-limit";
 
 export const runtime = "nodejs";
@@ -10,8 +11,9 @@ const schema = z.object({
   // Seed item slug, e.g. "sct-1".
   item_id: z.string().min(1),
   response: z.number().int().min(-2).max(2),
-  scored: z.number().min(0).max(1),
-  seconds_spent: z.number().int().min(0),
+  // Ignored: the server scores the call itself (kept so old clients still validate).
+  scored: z.number().min(0).max(1).optional(),
+  seconds_spent: z.number().int().min(0).max(86_400),
   // Carried so the route can create the sct_items row on first write (the
   // arena runs on static ALL_SEED_SCT_ITEMS).
   vignette: z.string().optional(),
@@ -27,7 +29,6 @@ const schema = z.object({
  * sct_attempts enforces it.
  */
 export async function POST(req: Request) {
-  const supabase = await createClient();
   const access = await requireStudentApi({ path: "/practice/judgment", flag: "judgment" });
   if (!access.ok) return access.response;
   const profile = access.profile;
@@ -40,13 +41,20 @@ export async function POST(req: Request) {
   const parsed = schema.safeParse(body);
   if (!parsed.success) return NextResponse.json({ error: "invalid body" }, { status: 400 });
 
+  // Only the arena's own seed items exist. The item text, the panel and the
+  // score all come from the server copy: a student cannot publish a new item
+  // or send their own score.
+  const seed = ALL_SEED_SCT_ITEMS.find((i) => i.id === parsed.data.item_id);
+  if (!seed) return NextResponse.json({ error: "unknown item" }, { status: 404 });
+  const scored = scoreSctResponse(parsed.data.response as SctResponse, simulatedPanel(seed.id));
+
   const admin = createAdminClient();
 
-  // Resolve the seed item slug → uuid; upsert the row on first write.
+  // Resolve the seed item slug → uuid; create the row on first write.
   const { data: existing } = await admin
     .from("sct_items")
     .select("id")
-    .eq("slug", parsed.data.item_id)
+    .eq("slug", seed.id)
     .maybeSingle();
 
   let itemId: string;
@@ -56,26 +64,28 @@ export async function POST(req: Request) {
     const { data: created } = await admin
       .from("sct_items")
       .insert({
-        slug: parsed.data.item_id,
-        vignette: parsed.data.vignette ?? "Seed SCT item",
-        hypothesis: parsed.data.hypothesis ?? "Hypothesis",
-        new_information: parsed.data.new_information ?? "",
+        slug: seed.id,
+        vignette: seed.vignette,
+        hypothesis: seed.hypothesis,
+        new_information: seed.new_information,
         status: "published",
         approved: true,
       })
       .select("id")
       .single();
-    itemId = created?.id ?? parsed.data.item_id; // fall back; FK will catch if invalid
+    if (!created?.id) return NextResponse.json({ ok: true, warning: "item not in DB; logged locally" });
+    itemId = created.id;
   }
 
-  const { error } = await supabase
+  // Written by the server (students cannot write sct_attempts directly).
+  const { error } = await admin
     .from("sct_attempts")
     .upsert(
       {
         item_id: itemId,
         user_id: user.id,
         response: parsed.data.response,
-        scored: parsed.data.scored,
+        scored,
         seconds_spent: parsed.data.seconds_spent,
       },
       { onConflict: "item_id,user_id" },

@@ -2,6 +2,7 @@
 
 import { redirect } from "next/navigation";
 import { requireSession } from "@/lib/auth/guards";
+import { safeInternalPath } from "@/lib/safe-path";
 import { createClient, createAdminClient } from "@/lib/supabase/server";
 import { getExtension, SUBMISSION_ATTACH_EXTENSIONS } from "@/lib/media/registry";
 import { verifyObjectExists } from "@/lib/storage-verify";
@@ -24,6 +25,20 @@ const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/
  * caller (lessons RLS), so progress cannot be written for lessons they cannot
  * open. Every lookup degrades gracefully when a table or column is missing.
  */
+/**
+ * Progress is written with the service role once the server has checked and
+ * clamped it, so the student's own REST access to `progress` can be removed.
+ * Falls back to the student's client where the service role isn't set.
+ */
+function progressWriter(fallback: Awaited<ReturnType<typeof createClient>>) {
+  try {
+    if (process.env.SUPABASE_SERVICE_ROLE_KEY) return createAdminClient();
+  } catch {
+    // fall through
+  }
+  return fallback;
+}
+
 export async function pingProgress(
   lessonId: string,
   watchedSeconds: number,
@@ -84,8 +99,10 @@ export async function pingProgress(
     now: Date.now(),
   });
 
+  // Written by the server after the clamp above (students cannot write
+  // progress directly; see migrations_pending/2026_11_14_security.sql).
   const { error } = await withRetry(() =>
-    supabase.from("progress").upsert(
+    progressWriter(supabase).from("progress").upsert(
       {
         user_id: profile.id,
         lesson_id: lessonId,
@@ -116,7 +133,7 @@ export async function markLessonComplete(lessonId: string): Promise<{ ok: boolea
   const { data: lesson, error: lessonErr } = await supabase.from("lessons").select("id").eq("id", lessonId).maybeSingle();
   if (!lesson) return { ok: false, retry: isTransient(lessonErr) };
   const { error } = await withRetry(() =>
-    supabase.from("progress").upsert({ user_id: profile.id, lesson_id: lessonId, is_completed: true, updated_at: new Date().toISOString() }, { onConflict: "user_id,lesson_id" }),
+    progressWriter(supabase).from("progress").upsert({ user_id: profile.id, lesson_id: lessonId, is_completed: true, updated_at: new Date().toISOString() }, { onConflict: "user_id,lesson_id" }),
   );
   if (error) console.error("markLessonComplete: progress write failed:", error.code, error.message);
   return error ? { ok: false, retry: true } : { ok: true, completed: true };
@@ -135,9 +152,12 @@ export async function completeAndAdvance(
 ): Promise<{ error: string } | void> {
   const profile = await requireSession();
   if (!profile) redirect("/login");
+  if (typeof lessonId !== "string" || !UUID_RE.test(lessonId)) redirect("/courses");
 
   const supabase = await createClient();
-  const ownLessonUrl = `/courses/${courseId}/lessons/${lessonId}`;
+  const ownLessonUrl = `/courses/${encodeURIComponent(courseId)}/lessons/${lessonId}`;
+  // Same-site paths only (never another site).
+  const next = safeInternalPath(redirectTo) ?? ownLessonUrl;
 
   // Server-side enforcement, not just a hidden button. Matches the
   // student-facing copy: a submission must exist to proceed, grading
@@ -148,6 +168,8 @@ export async function completeAndAdvance(
     .select("requires_assignment")
     .eq("id", lessonId)
     .single();
+  // A lesson this student cannot see (RLS) is never marked complete.
+  if (!lesson) redirect("/courses");
 
   if (lesson?.requires_assignment) {
     const { data: assignment } = await supabase
@@ -174,8 +196,7 @@ export async function completeAndAdvance(
   // write failed, so the lecture silently stayed "not done".
   const saved = await markLessonComplete(lessonId);
   if (!saved.ok) return { error: "Couldn't save. Try again." };
-  // Only ever on to a page of this site.
-  redirect(/^\/(?![/\\])/.test(redirectTo) ? redirectTo : `/courses/${courseId}`);
+  redirect(next);
 }
 
 export type SubmissionResult = { error: string | null };

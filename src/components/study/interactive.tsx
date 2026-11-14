@@ -9,6 +9,7 @@ import type { Card, Mcq } from "@/lib/study/types";
 import { noteAnswers, orderFor, useHistoryPrefetch } from "@/lib/history/client";
 import type { HistoryTool } from "@/lib/history/order";
 import { cn } from "@/lib/utils";
+import { mcqKey } from "@/lib/study/test-grade";
 import { Rich } from "./rich";
 import { useReaction } from "@/components/reactions/use-reaction";
 import { EndReaction, HalftoneCorner, ScoreDial } from "@/components/reactions/graphics";
@@ -137,11 +138,7 @@ export function CardDeck({
 
 /** The module test: a start screen, one question at a time, then the score and a review. */
 /** A stable id for a study question in the answer history (its text, hashed). */
-export function mcqKey(moduleId: string, m: Mcq): string {
-  let h = 2166136261;
-  for (let i = 0; i < m.q.length; i++) h = Math.imul(h ^ m.q.charCodeAt(i), 16777619);
-  return `${moduleId.slice(0, 120)}:${(h >>> 0).toString(36)}`;
-}
+export { mcqKey };
 
 const TEST_INTRO = ["Pass mark: 80%. Your best score counts."];
 
@@ -155,6 +152,7 @@ export function TestRunner({
   historyTool = "module-test",
   retry,
   scoreOf,
+  grade,
 }: {
   items: Mcq[];
   /** Where the score is saved (a module id, or a checkpoint key). */
@@ -169,6 +167,8 @@ export function TestRunner({
   retry?: () => Mcq[];
   /** The score to save and report, from this round's (default: this round's). Called after the answers are remembered. */
   scoreOf?: (round: { right: number; total: number }) => { right: number; total: number };
+  /** Module tests: the server grades the picks and keeps the result (the certificate counts it). */
+  grade?: (moduleId: string, picks: Record<string, number>) => Promise<unknown>;
 }) {
   useHistoryPrefetch(historyTool);
   const [items, setItems] = React.useState(given);
@@ -198,6 +198,13 @@ export function TestRunner({
     const score = scoreOf ? scoreOf({ right, total: items.length }) : { right, total: items.length };
     const s = getLearnState();
     if (s) setLearnState(recordTest(s, moduleId, score.right, score.total, istToday()));
+    if (grade) {
+      const sent: Record<string, number> = {};
+      items.forEach((m, k) => {
+        if (picks[k] !== undefined) sent[mcqKey(moduleId, m)] = picks[k];
+      });
+      void grade(moduleId, sent).catch(() => undefined);
+    }
     onDone?.(score.right, score.total);
     toTop();
   }

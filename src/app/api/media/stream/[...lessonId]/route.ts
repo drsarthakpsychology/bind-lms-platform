@@ -4,6 +4,8 @@ import { verifyStreamToken } from "@/lib/media/stream-token";
 import { getObjectBuffer, getObjectStream, getObjectText } from "@/lib/media/proxy-client";
 import { aesEncrypt, deriveSessionKey } from "@/lib/media/crypto";
 import { rateLimitFast } from "@/lib/rate-limit-fast";
+import { safeStreamRest, warmChunkAllowed } from "@/lib/media/stream-guard";
+import { SESSION_COOKIE } from "@/lib/auth/session";
 
 /**
  * GET /api/media/stream/:lessonId(/*rest)
@@ -60,11 +62,19 @@ export async function GET(
   // round-trip to every chunk and caused buffering on slow connections.
   // Playlists, the key and first requests still do the full check.
   const restPath = segments.slice(1).join("/");
+  // Only plain media files inside this lecture's folder: never `..` or any
+  // other object in the bucket.
+  if (!safeStreamRest(restPath)) {
+    return NextResponse.json({ error: "Not found." }, { status: 404 });
+  }
   const isChunk = restPath !== "" && restPath !== "__key__" && !restPath.endsWith(".m3u8");
   const { getStreamVerdict: peekVerdict } = await import("@/lib/media/stream-cache");
   const warm = isChunk ? peekVerdict(payload.uid, lessonId) : null;
-  const profile = warm?.ok
-    ? { id: payload.uid, role: "student" as const, scope: "full" as const }
+  // The fast path is bound to the browser session that passed the full check
+  // (its session cookie), so a copied stream URL is useless elsewhere.
+  const sessionCookie = request.cookies.get(SESSION_COOKIE)?.value;
+  const profile = warmChunkAllowed(warm, sessionCookie)
+    ? { id: payload.uid, role: "student" as const, scope: "full" as const, active_session_token: sessionCookie ?? null }
     : await requireSession();
   if (!profile || profile.id !== payload.uid) {
     return NextResponse.json({ error: "Not signed in." }, { status: 401 });
@@ -88,7 +98,12 @@ export async function GET(
       scope: profile.scope,
       lessonId,
     });
-    verdict = { ...fresh, ok: fresh.authorized && Boolean(fresh.resolved) };
+    verdict = { ...fresh, ok: fresh.authorized && Boolean(fresh.resolved), session: profile.active_session_token };
+    setStreamVerdict(profile.id, lessonId, verdict);
+  } else if (verdict.session !== profile.active_session_token) {
+    // Same viewer, newer browser session (signed in again): move the fast
+    // path to it so the old session's cookie no longer opens it.
+    verdict = { ...verdict, session: profile.active_session_token };
     setStreamVerdict(profile.id, lessonId, verdict);
   }
 

@@ -7,7 +7,7 @@ import { loadMyCohorts } from "@/lib/cohorts/access";
 import { kindFor } from "@/lib/doubts/classify";
 import { rateLimitWrite } from "@/lib/rate-limit";
 import { notifyAdminsOfDoubt, notifyAskerOfReply } from "@/lib/notify/doubts";
-import { canParticipate, isUuid, type DoubtRow } from "./visibility";
+import { canMarkSolved, canParticipate, isUuid, type DoubtRow } from "./visibility";
 
 type R = { error: string | null; id?: string };
 const clean = (s: string, max: number) => s.replace(/\s+/g, " ").trim().slice(0, max);
@@ -99,9 +99,11 @@ export async function markSolved(doubtId: string, replyId: string | null): Promi
   if (!me) return { error: "Please sign in again." };
   if (!isUuid(doubtId)) return { error: "That doubt is gone." };
   const admin = createAdminClient();
-  const { data: d } = await admin.from("doubts").select("user_id").eq("id", doubtId).maybeSingle();
+  const { data: d } = await admin.from("doubts").select("user_id, status").eq("id", doubtId).maybeSingle();
   if (!d) return { error: "That doubt is gone." };
-  if (d.user_id !== me.id && me.role !== "admin") return { error: "Only the person who asked can mark it solved." };
+  if (!canMarkSolved(d, { id: me.id, isAdmin: me.role === "admin" })) {
+    return { error: d.status === "hidden" ? "That doubt is gone." : "Only the person who asked can mark it solved." };
+  }
   if (replyId !== null && !(await replyOnDoubt(replyId, doubtId))) return { error: "That answer isn't on this doubt." };
   await admin.from("doubts").update({ solved_reply_id: replyId, status: replyId ? "solved" : "open", updated_at: new Date().toISOString() }).eq("id", doubtId);
   refresh(doubtId);

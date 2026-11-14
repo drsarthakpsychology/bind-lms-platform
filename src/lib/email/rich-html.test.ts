@@ -40,3 +40,12 @@ describe("conversions", () => {
     expect(html).not.toContain("<script");
   });
 });
+
+describe("sanitizeRich links (open redirect through a backslash)", () => {
+  it("drops /\\host links, which browsers treat as another site", () => {
+    expect(safeHref("/\\evil.example")).toBeNull();
+    expect(safeHref("/%5Cok")).toBe("/%5Cok");
+    expect(sanitizeRich('<a href="/\\evil.example">x</a>')).not.toContain("href");
+    expect(safeHref("/dashboard")).toBe("/dashboard");
+  });
+});

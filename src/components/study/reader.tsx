@@ -158,6 +158,7 @@ export function SectionReader({
   mcq,
   checks = [],
   owner = "",
+  gradeTest,
 }: {
   moduleId: string;
   moduleNum: number;
@@ -176,6 +177,8 @@ export function SectionReader({
   checks?: CheckLink[];
   /** Student id: bookmarks and notes are kept per student on this device. */
   owner?: string;
+  /** Server action that grades the module test (the certificate counts only its result). */
+  gradeTest?: (moduleId: string, picks: Record<string, number>) => Promise<unknown>;
 }) {
   initLearnStore(serverState, save, owner || undefined);
   const st = useLearnState(serverState ?? EMPTY);
@@ -327,7 +330,7 @@ export function SectionReader({
             </div>
           ))}
 
-          {section.isTest ? <TestRunner items={mcq} moduleId={moduleId} /> : null}
+          {section.isTest ? <TestRunner items={mcq} moduleId={moduleId} grade={gradeTest} /> : null}
 
           {/* Desktop: continue to the next part */}
           {wide && !section.isTest && !atEnd ? (

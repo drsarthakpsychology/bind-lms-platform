@@ -33,6 +33,24 @@ export function scoreSctResponse(response: SctResponse, panelResponses: SctRespo
   return myCount / modalCount;
 }
 
+/**
+ * Deterministic simulated panel responses for the seed items (the admin flow
+ * wires real ones). Shared by the arena (instant feedback) and the attempt
+ * route, which scores every call itself and never trusts a browser score.
+ */
+export function simulatedPanel(id: string): SctResponse[] {
+  const h = id.split("").reduce((a, c) => a + c.charCodeAt(0), 0);
+  const base = (h % 5) - 2; // -2..2
+  // A distribution clustered around `base`.
+  return [
+    base as SctResponse,
+    base as SctResponse,
+    Math.max(-2, Math.min(2, base + 1)) as SctResponse,
+    Math.max(-2, Math.min(2, base - 1)) as SctResponse,
+    Math.max(-2, Math.min(2, base + (h % 2 === 0 ? 1 : -1))) as SctResponse,
+  ];
+}
+
 /** The panel distribution (for the student-facing bar chart + expert note). */
 export function panelDistribution(panelResponses: SctResponse[]): Array<{ response: SctResponse; count: number }> {
   const counts = new Map<SctResponse, number>();

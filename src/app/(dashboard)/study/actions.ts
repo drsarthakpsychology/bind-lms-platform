@@ -10,6 +10,12 @@ import { moduleFacets } from "@/lib/achievements/rules";
 import { keepBestTests } from "@/lib/study/progress";
 import { withRetry } from "@/lib/save/retry";
 import { mergeCopies } from "@/lib/learn/merge";
+import { getSession } from "@/lib/auth/session";
+import { MODULES } from "@/lib/study";
+import { testSection } from "@/lib/study/plan";
+import { splitSection } from "@/lib/study/chunk";
+import { certificateModules } from "@/lib/achievements/certificate";
+import { gradeTest, keepServerTests, withTestResult } from "@/lib/study/test-grade";
 
 /** The stored state, plus the id of the student it belongs to (keys the browser copy). */
 export type OwnedLearnState = LearnState & { owner?: string };
@@ -70,9 +76,12 @@ export async function saveLearnState(state: LearnState): Promise<{ ok: boolean; 
     // activity ticks, study time and best test scores from the stored row are
     // kept even when this copy lacks them (an older tab or device saving over a
     // newer mark used to wipe it). Best test scores never go down (the
-    // certificate counts the best score).
+    // certificate counts the best score). Module test results (the
+    // certificate's) are graded and stored only by submitModuleTest; whatever
+    // the browser sends for them is ignored.
     const joined = prev ? mergeCopies(clamp, prev.state) : clamp;
-    const clean = { ...joined, study: { ...joined.study, tests: keepBestTests(prev?.state.study.tests, joined.study.tests) } };
+    const tests = keepServerTests(keepBestTests(prev?.state.study.tests, joined.study.tests), prev?.state.study.tests, serverOwnedTests());
+    const clean = { ...joined, study: { ...joined.study, tests } };
     if (clamped) console.warn(`saveLearnState: clamped an implausible Learn save for ${user.id} (sent xp ${next.xp}, kept ${clean.xp})`);
 
     // Write with the service role when it is configured, so student INSERT and
@@ -101,5 +110,51 @@ export async function saveLearnState(state: LearnState): Promise<{ ok: boolean; 
   } catch (e) {
     console.error("saveLearnState failed:", e instanceof Error ? e.message : e);
     return { ok: false, retry: true };
+  }
+}
+
+/** Module ids whose test result only the server may write (the certificate's tests). */
+function serverOwnedTests(): string[] {
+  return certificateModules().map((m) => m.id);
+}
+
+/**
+ * Grade a module test on the server. The browser sends only the picks; the
+ * questions and answers come from the server copy of the module, the score is
+ * worked out here, and the best result is stored with the service role. The
+ * certificate reads only these results.
+ */
+export async function submitModuleTest(moduleId: string, picks: Record<string, number>): Promise<{ ok: boolean; right?: number; total?: number }> {
+  try {
+    const session = await getSession();
+    if (session.status !== "ok") return { ok: false };
+    const userId = session.profile.id;
+    if (typeof moduleId !== "string" || !picks || typeof picks !== "object" || Object.keys(picks).length > 500) return { ok: false };
+    const mod = MODULES.find((m) => m.id === moduleId);
+    const section = mod ? testSection(mod) : undefined;
+    if (!mod || !section) return { ok: false };
+    const { right, total } = gradeTest(splitSection(section).mcq, moduleId, picks);
+    if (!total) return { ok: false };
+
+    let db: Awaited<ReturnType<typeof createClient>> | ReturnType<typeof createAdminClient>;
+    try {
+      db = process.env.SUPABASE_SERVICE_ROLE_KEY ? createAdminClient() : await createClient();
+    } catch {
+      db = await createClient();
+    }
+    const { data: row, error: readErr } = await db.from("learn_progress").select("state").eq("user_id", userId).maybeSingle();
+    if (readErr) return { ok: false };
+    const state = withTestResult(normalise(row?.state ?? null), moduleId, right, total, istToday());
+    const { error } = await db
+      .from("learn_progress")
+      .upsert({ user_id: userId, state, xp: state.xp, updated_at: new Date().toISOString() }, { onConflict: "user_id" });
+    if (error) {
+      console.warn("submitModuleTest: write failed:", error.message);
+      return { ok: false };
+    }
+    return { ok: true, right, total };
+  } catch (e) {
+    console.warn("submitModuleTest failed:", e instanceof Error ? e.message : e);
+    return { ok: false };
   }
 }
