@@ -1,3 +1,5 @@
+> **SUPERSEDED on 2026-11-14.** Use docs/architecture/DATABASE.md instead. This file is kept for history and may be out of date. Index of current docs: docs/README.md.
+
 # Database Architecture
 > Verified against `main` @ `b2a9698`. Engine: Supabase Postgres. Full table list: [DATABASE_INVENTORY](../inventory/DATABASE_INVENTORY.md).
 

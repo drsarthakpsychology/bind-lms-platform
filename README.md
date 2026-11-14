@@ -1,5 +1,8 @@
 # VIBHA School of Psychology — Secure, Invite-Only Course Platform
 
+> Current, checked documentation starts at **docs/README.md** (updated 2026-11-14). Parts of this file are older.
+
+
 Private course platform for serious learners. Invite-only accounts, no public
 sign-up: an admin creates students directly via the Supabase Admin API, and each
 account's access window is controlled server-side.

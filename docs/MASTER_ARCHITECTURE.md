@@ -1,3 +1,5 @@
+> **SUPERSEDED on 2026-11-14.** Use docs/README.md and docs/architecture/OVERVIEW.md instead. This file is kept for history and may be out of date. Index of current docs: docs/README.md.
+
 # VIBHA LMS — Master Architecture (Single Source of Truth)
 
 > **Verified against:** `main` @ `b2a9698` (PR #45), audited 2026-11-06. Read-only audit — no application code, schema or configuration was changed.
