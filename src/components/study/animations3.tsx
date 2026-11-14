@@ -6,6 +6,7 @@ import type { AttentionData, ConservationData, DissonanceData, ExperimentData, I
 import { cn } from "@/lib/utils";
 import { Rich } from "./rich";
 import { trackLearn } from "@/lib/learn/track";
+import { C, E, L, Label, P, R, Sheet } from "@/components/sketch/ink";
 
 /**
  * Third wave of animated explainers: selective attention, cognitive
@@ -90,8 +91,8 @@ export function Attention({ d }: { d: AttentionData }) {
   const other = ear === "left" ? "right" : "left";
   const named = nameKey > 0;
   // pipeline geometry
-  const SX = [34, 124, 204, 286];
-  const laneY = { left: 46, right: 80 };
+  const SX = [44, 128, 206, 284];
+  const laneY = { left: 50, right: 84 };
   const un = (seg: 1 | 2 | 3) => {
     if (seg === 1) return 1;
     if (seg === 2) return model === "early" ? 0.12 : model === "attenuation" ? 0.4 : 1;
@@ -115,44 +116,43 @@ export function Attention({ d }: { d: AttentionData }) {
           );
         })}
       </div>
-      <svg viewBox="0 0 320 104" className="mt-3 w-full rounded-xl border-2 border-foreground bg-background" role="img" aria-label={`${m.name}. Listening to the ${ear} ear. ${m.through}`}>
-        {["Ears", "Filter", "Meaning", "Awareness"].map((n, k) => (
-          <g key={n}>
-            <rect x={SX[k] - 24} y="22" width="48" height="76" rx="6" className={cn("stroke-foreground", (model === "early" && k === 1) || (model === "attenuation" && k === 1) || (model === "late" && k === 3) ? "fill-[var(--status-alert-bg)]" : "fill-card")} strokeWidth="1.5" />
-            <text x={SX[k]} y="15" textAnchor="middle" className="fill-foreground text-[10px] font-semibold">{n}</text>
-          </g>
-        ))}
-        <text x="10" y={laneY.left + 3} className="fill-foreground text-[8px] font-bold">L</text>
-        <text x="10" y={laneY.right + 3} className="fill-foreground text-[8px] font-bold">R</text>
+      <Sheet name="attention" w={320} h={108} label={`${m.name}. Listening to the ${ear} ear. ${m.through}`} className="mx-auto mt-3 max-w-[34rem]">
+        {["Ears", "Filter", "Meaning", "Awareness"].map((n, k) => {
+          const hot = (model === "early" && k === 1) || (model === "attenuation" && k === 1) || (model === "late" && k === 3);
+          return (
+            <g key={n}>
+              <R k={`att-box-${k}-${hot}`} x={SX[k] - 22} y={24} w={44} h={78} sw={hot ? 2.4 : 1.8} stroke={hot ? C.red : C.ink} fill={hot ? C.wash : C.paper} fillStyle="solid" />
+              <Label x={SX[k]} y={16} size={13} anchor="middle">{n}</Label>
+            </g>
+          );
+        })}
+        <Label x={6} y={laneY.left + 5} size={12}>L</Label>
+        <Label x={6} y={laneY.right + 5} size={12}>R</Label>
         {(["left", "right"] as const).map((side) => {
           const att = side === ear;
           const y = laneY[side];
           const op = (s: 1 | 2 | 3) => (att ? 1 : un(s));
           return (
             <g key={side}>
-              {[1, 2, 3].map((s) => (
-                <line key={s} x1={SX[s - 1] + (s === 1 ? 0 : 24)} x2={SX[s] - 24} y1={y} y2={y} className="stroke-foreground" strokeWidth={att ? 4 : 2.5} strokeDasharray={!att && s === 2 && model === "attenuation" ? "3 3" : undefined} style={{ opacity: op(s as 1 | 2 | 3), transition: "opacity 400ms" }} />
+              {[1, 2, 3].map((sg) => (
+                <L key={sg} k={`att-${side}-${sg}-${att}`} x1={SX[sg - 1] + (sg === 1 ? 0 : 22)} x2={SX[sg] - 22} y1={y} y2={y} stroke={att ? C.blue : C.ink} sw={att ? 3.6 : 2.2} single rough={0.4} dash={!att && sg === 2 && model === "attenuation" ? "4 4" : undefined} style={{ opacity: op(sg as 1 | 2 | 3), transition: "opacity 400ms" }} />
               ))}
-              {/* flowing pulses */}
               {[0, 1, 2].map((k) => (
-                <circle key={`${side}-${model}-${ear}-${k}`} cx={SX[0]} cy={y} r={att ? 3.5 : 2.5} className="vibha-flow fill-[var(--brand)]" style={{ "--tx": `${(att ? SX[3] : model === "early" ? SX[1] - 24 : model === "attenuation" ? SX[2] : SX[2] + 10) - SX[0]}px`, "--dl": `${k * 0.8}s` } as React.CSSProperties} />
+                <circle key={`${side}-${model}-${ear}-${k}`} cx={SX[0]} cy={y} r={att ? 3.5 : 2.5} fill={C.lime} stroke={C.ink} strokeWidth={1} className="vibha-flow" style={{ "--tx": `${(att ? SX[3] : model === "early" ? SX[1] - 24 : model === "attenuation" ? SX[2] : SX[2] + 10) - SX[0]}px`, "--dl": `${k * 0.8}s` } as React.CSSProperties} />
               ))}
             </g>
           );
         })}
-        {/* where the selection happens, on the ignored lane */}
-        {model === "early" ? <text x={SX[1] + 24} y={laneY[other] + 4} textAnchor="middle" className="fill-[var(--destructive)] text-[12px] font-bold">✕</text> : null}
-        {model === "attenuation" ? <text x={SX[1]} y={laneY[other] + 14} textAnchor="middle" className="fill-foreground text-[8px] font-semibold">turned down</text> : null}
-        {model === "late" ? <text x={SX[3] - 24} y={laneY[other] + 4} textAnchor="middle" className="fill-[var(--destructive)] text-[12px] font-bold" style={{ opacity: named ? 0 : 1 }}>✕</text> : null}
-        <text x={SX[1]} y={laneY[ear] - 7} textAnchor="middle" className="fill-foreground text-[8px]">chosen ear</text>
-        {/* the name travelling */}
+        {model === "early" ? <P k="att-x1" d={`M${SX[1] + 16} ${laneY[other] - 6} l12 12 M${SX[1] + 28} ${laneY[other] - 6} l-12 12`} stroke={C.red} sw={2.6} single /> : null}
+        {model === "attenuation" ? <Label x={SX[1]} y={laneY[other] + 17} size={11} anchor="middle" color={C.red}>turned down</Label> : null}
+        {model === "late" && !named ? <P k="att-x3" d={`M${SX[3] - 30} ${laneY[other] - 6} l12 12 M${SX[3] - 18} ${laneY[other] - 6} l-12 12`} stroke={C.red} sw={2.6} single /> : null}
         {named ? (
           <g key={nameKey} className="vibha-travel" style={{ "--tx": `${stop - SX[0]}px`, transform: `translateX(${stop - SX[0]}px)` } as React.CSSProperties}>
-            <rect x={SX[0] - 16} y={laneY[other] - 8} width="32" height="16" rx="8" className="fill-[var(--primary)] stroke-foreground" strokeWidth="1.5" />
-            <text x={SX[0]} y={laneY[other] + 3} textAnchor="middle" className="fill-foreground text-[8px] font-bold">name</text>
+            <R k="att-name" x={SX[0] - 18} y={laneY[other] - 9} w={36} h={18} sw={1.5} fill={C.lime} fillStyle="solid" />
+            <text x={SX[0]} y={laneY[other] + 4} textAnchor="middle" fontSize={12} fontWeight={700} fill="var(--sk-on-lime)">name</text>
           </g>
         ) : null}
-      </svg>
+      </Sheet>
       <p className="mt-1 text-xs text-muted-foreground">Thick line: the ear you chose. Faint or cut line: the ignored ear.</p>
       <div className="mt-3 flex flex-wrap gap-2" role="group" aria-label="Which ear to listen to">
         {(["left", "right"] as const).map((side) => (
@@ -199,12 +199,12 @@ const PAID = [
 function Meter({ level }: { level: number }) {
   const word = level >= 70 ? "high" : level >= 30 ? "medium" : level > 0 ? "low" : "none";
   return (
-    <svg viewBox="0 0 70 170" className="w-full" role="img" aria-label={`Tension ${word}, ${level} of 100`}>
-      <rect x="20" y="10" width="30" height="130" rx="15" className="fill-card stroke-foreground" strokeWidth="2" />
-      <rect x="24" y="14" width="22" height="122" rx="11" className="fill-[var(--destructive)]" style={{ transform: `scaleY(${level / 100})`, transformBox: "fill-box", transformOrigin: "50% 100%", transition: "transform 900ms var(--ease-out-expo)" }} />
-      <text x="35" y="156" textAnchor="middle" className="fill-foreground text-[9px] font-bold">tension</text>
-      <text x="35" y="167" textAnchor="middle" className="fill-foreground text-[9px] tabular-nums">{level} ({word})</text>
-    </svg>
+    <Sheet name="tension" w={70} h={172} label={`Tension ${word}, ${level} of 100`} className="border-0 bg-transparent">
+      <R k="meter-tube" x={20} y={10} w={30} h={130} sw={2} fill={C.paper} fillStyle="solid" />
+      <rect x="24" y="14" width="22" height="122" rx="4" fill={C.red} style={{ transform: `scaleY(${level / 100})`, transformBox: "fill-box", transformOrigin: "50% 100%", transition: "transform 900ms var(--ease-out-expo)" }} />
+      <Label x={35} y={156} size={12} anchor="middle">tension</Label>
+      <Label x={35} y={169} size={10} anchor="middle" bold={false}>{`${level} (${word})`}</Label>
+    </Sheet>
   );
 }
 
@@ -269,21 +269,21 @@ export function Dissonance({ d }: { d: DissonanceData }) {
       <div className="mt-4 rounded-xl border-2 border-foreground bg-background p-3">
         <p className="text-sm font-bold">Festinger&apos;s $1 or $20 study</p>
         <p className="mt-1 text-sm">People did a very boring task, then were paid to tell the next person it was fun. Who later said they enjoyed it more?</p>
-        <svg viewBox="0 0 320 52" className="mt-2 w-full" role="img" aria-label={p ? `${p.name}: rated about ${p.score > 0 ? "plus " : ""}${p.score.toFixed(1)} on a scale from minus 5 to plus 5` : "Enjoyment scale from minus 5 to plus 5"}>
-          <line x1="20" x2="300" y1="30" y2="30" className="stroke-foreground" strokeWidth="2" />
+        <Sheet name="dissonance-scale" w={320} h={56} label={p ? `${p.name}: rated about ${p.score > 0 ? "plus " : ""}${p.score.toFixed(1)} on a scale from minus 5 to plus 5` : "Enjoyment scale from minus 5 to plus 5"} className="mt-2 border-0 bg-transparent">
+          <L k="ds-line" x1={20} x2={300} y1={32} y2={32} sw={2} />
           {[-5, 0, 5].map((v) => (
             <g key={v}>
-              <line x1={160 + v * 28} x2={160 + v * 28} y1="25" y2="35" className="stroke-foreground" strokeWidth="1.5" />
-              <text x={160 + v * 28} y="47" textAnchor={v === -5 ? "start" : v === 5 ? "end" : "middle"} className="fill-foreground text-[9px]">{v === -5 ? "-5 very boring" : v === 5 ? "+5 very enjoyable" : "0"}</text>
+              <L k={`ds-t${v}`} x1={160 + v * 28} x2={160 + v * 28} y1={26} y2={38} sw={1.6} single />
+              <Label x={160 + v * 28} y={52} size={12} anchor={v === -5 ? "start" : v === 5 ? "end" : "middle"} bold={false}>{v === -5 ? "-5 very boring" : v === 5 ? "+5 very enjoyable" : "0"}</Label>
             </g>
           ))}
           {p ? (
             <g style={{ transform: `translateX(${p.score * 28}px)`, transition: "transform 700ms var(--ease-out-expo)" }}>
-              <path d="M160 24 l-6 -10 h12 z" className="fill-[var(--primary)] stroke-foreground" strokeWidth="1.5" />
-              <text x="160" y="9" textAnchor="middle" className="fill-foreground text-[8px] font-bold">{p.name}</text>
+              <P k="ds-mark" d="M160 26 l-6 -10 h12 z" sw={1.5} fill={C.lime} fillStyle="solid" />
+              <text x="160" y="11" textAnchor="middle" fontSize={11} fontWeight={700} fill={C.ink}>{p.name}</text>
             </g>
           ) : null}
-        </svg>
+        </Sheet>
         <div className="mt-2 flex flex-wrap gap-2" role="group" aria-label="Which group">
           {PAID.map((x) => (
             <button key={x.id} type="button" aria-pressed={paid === x.id} className={choiceCls(paid === x.id)} onClick={() => setPaid(x.id)}>{x.name}</button>
@@ -338,42 +338,45 @@ export function Conservation({ d }: { d: ConservationData }) {
     setPourKey((k) => k + 1);
     trackLearn({ type: "widget", kind: "conservation", item: liquid ? "liquid" : "number" });
   };
-  const water = "fill-[var(--status-info-fg)]";
-  return (
+    return (
     <figure className={card}>
       <p className={label}>{d.title ? <Rich text={d.title} /> : liquid ? "Piaget's water glasses" : "Piaget's row of coins"}</p>
       {liquid ? (
-        <svg viewBox="0 -30 320 210" className="mt-3 w-full rounded-xl border-2 border-foreground bg-background" role="img" aria-label={done ? "Glass B has been poured into a tall thin glass. The water is higher but the glass is thinner." : "Two identical short wide glasses, A and B, with the same amount of water, and an empty tall thin glass."}>
+        <Sheet name="conservation-liquid" top={-30} w={320} h={210} label={done ? "Glass B has been poured into a tall thin glass. The water is higher but the glass is thinner." : "Two identical short wide glasses, A and B, with the same amount of water, and an empty tall thin glass."} className="mx-auto mt-3 max-w-[30rem]">
           {/* glass A */}
-          <rect x="32" y="120" width="66" height="40" className={water} opacity="0.55" />
-          <path d="M30 100 V160 H100 V100" fill="none" className="stroke-foreground" strokeWidth="2.5" />
-          <text x="65" y="174" textAnchor="middle" className="fill-foreground text-[9px] font-bold">A</text>
+          <R k="cl-wa" x={32} y={120} w={66} h={40} stroke="none" fill={C.blue} gap={4} fw={1.6} />
+          <P k="cl-ga" d="M30 100 V160 H100 V100" sw={2.4} />
+          <Label x={65} y={178} size={14} anchor="middle">A</Label>
           {/* glass B, poured */}
           <g style={{ transformBox: "view-box", transformOrigin: "190px 100px", transform: done ? "translate(46px,-60px) rotate(65deg)" : "none", transition: "transform 900ms var(--ease-out-expo)" }}>
-            <rect x="122" y="120" width="66" height="40" className={water} opacity="0.55" style={{ transformBox: "fill-box", transformOrigin: "50% 100%", transform: done ? "scaleY(0)" : "none", transition: "transform 900ms var(--ease-out-expo) 250ms" }} />
-            <path d="M120 100 V160 H190 V100" fill="none" className="stroke-foreground" strokeWidth="2.5" />
+            <g style={{ transformBox: "fill-box", transformOrigin: "50% 100%", transform: done ? "scaleY(0)" : "none", transition: "transform 900ms var(--ease-out-expo) 250ms" }}>
+              <R k="cl-wb" x={122} y={120} w={66} h={40} stroke="none" fill={C.blue} gap={4} fw={1.6} />
+            </g>
+            <P k="cl-gb" d="M120 100 V160 H190 V100" sw={2.4} />
           </g>
-          <text x="155" y="174" textAnchor="middle" className="fill-foreground text-[9px] font-bold" style={{ opacity: done ? 0 : 1, transition: "opacity 300ms" }}>B</text>
+          {!done ? <Label x={155} y={178} size={14} anchor="middle">B</Label> : null}
           {/* stream */}
-          {pourKey > 0 && done ? <rect key={pourKey} x="241" y="40" width="4" height="118" className={cn(water, "vibha-stream")} /> : null}
+          {pourKey > 0 && done ? <rect key={pourKey} x="241" y="40" width="4" height="118" fill={C.blue} className="vibha-stream" /> : null}
           {/* tall glass */}
-          <rect x="242" y="58.5" width="26" height="101.5" className={water} opacity="0.55" style={{ transformBox: "fill-box", transformOrigin: "50% 100%", transform: done ? "none" : "scaleY(0)", transition: "transform 900ms var(--ease-out-expo) 350ms" }} />
-          <path d="M240 30 V160 H270 V30" fill="none" className="stroke-foreground" strokeWidth="2.5" />
-          <text x="255" y="174" textAnchor="middle" className="fill-foreground text-[9px] font-bold">{done ? "B, now tall" : "tall glass"}</text>
-        </svg>
+          <g style={{ transformBox: "fill-box", transformOrigin: "50% 100%", transform: done ? "none" : "scaleY(0)", transition: "transform 900ms var(--ease-out-expo) 350ms" }}>
+            <R k="cl-wt" x={242} y={58} w={26} h={102} stroke="none" fill={C.blue} gap={4} fw={1.6} />
+          </g>
+          <P k="cl-gt" d="M240 30 V160 H270 V30" sw={2.4} />
+          <Label x={255} y={178} size={14} anchor="middle">{done ? "B, now tall" : "tall glass"}</Label>
+        </Sheet>
       ) : (
-        <svg viewBox="0 0 320 170" className="mt-3 w-full rounded-xl border-2 border-foreground bg-background" role="img" aria-label={done ? "The bottom row of 6 coins has been spread out so it is longer. The top row still has 6 coins close together." : "Two rows of 6 coins, lined up one above the other."}>
+        <Sheet name="conservation-number" w={320} h={170} label={done ? "The bottom row of 6 coins has been spread out so it is longer. The top row still has 6 coins close together." : "Two rows of 6 coins, lined up one above the other."} className="mx-auto mt-3 max-w-[30rem]">
           {[0, 1].map((row) =>
             Array.from({ length: 6 }, (_, k) => (
               <g key={`${row}-${k}`} style={{ transform: row === 1 && done ? `translateX(${(k - 2.5) * 22}px)` : "none", transition: `transform 800ms var(--ease-out-expo) ${k * 40}ms` }}>
-                <circle cx={85 + k * 30} cy={row === 0 ? 55 : 120} r="11" className="fill-[var(--primary)] stroke-foreground" strokeWidth="2" />
+                <E k={`coin-${row}-${k}`} cx={85 + k * 30} cy={row === 0 ? 55 : 120} w={22} h={22} sw={2} fill={C.lime} fillStyle="solid" />
               </g>
             )),
           )}
-          <text x="20" y="58" className="fill-foreground text-[9px] font-bold">top</text>
-          <text x="20" y="123" className="fill-foreground text-[9px] font-bold">bottom</text>
-          <text x="160" y="160" textAnchor="middle" className="fill-muted-foreground text-[8px]">6 coins in each row</text>
-        </svg>
+          <Label x={10} y={30} size={14}>top row</Label>
+          <Label x={10} y={96} size={14}>bottom row</Label>
+          <Label x={160} y={162} size={13} anchor="middle" bold={false}>6 coins in each row</Label>
+        </Sheet>
       )}
       <button type="button" className={cn(btn, "mt-3 bg-foreground text-background")} onClick={toggle}>
         {liquid ? (done ? "Pour it back" : "Pour B into the tall glass") : done ? "Push them back together" : "Spread out the bottom row"}
