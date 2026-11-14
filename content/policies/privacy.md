@@ -88,7 +88,7 @@ Under the DPDP Act you have the right to:
 
 - **Access** a summary of the personal data we hold about you and how it is processed;
 - **Correct, complete, update, or erase** your personal data;
-- **Withdraw consent** at any time, as easily as you gave it — noting that withdrawal does not affect prior lawful processing, and that withdrawing consent essential to course delivery may end your access;
+- **Withdraw consent** at any time, as easily as you gave it, noting that withdrawal does not affect prior lawful processing, and that withdrawing consent essential to course delivery may end your access;
 - **Nominate** another individual to exercise your rights in the event of your death or incapacity; and
 - **Grievance redressal** through our process below, and thereafter to complain to the **Data Protection Board of India**.
 
