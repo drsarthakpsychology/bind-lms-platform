@@ -1,4 +1,5 @@
 import { studyKey, type StudyProgress } from "@/lib/learn/engine";
+import { orderByHistory, tierOf, type History } from "@/lib/history/order";
 import { splitSection } from "./chunk";
 import { readingSections } from "./plan";
 import type { Card, Mcq, Section, StudyModule } from "./types";
@@ -16,7 +17,13 @@ import type { Card, Mcq, Section, StudyModule } from "./types";
  *   later section (or straight away if nothing comes after it).
  * - Questions: the case-based questions written into those sections (many
  *   need you to apply, not repeat, what you read), then the "say it out loud"
- *   recall cards from the same sections, shuffled.
+ *   recall cards from the same sections, shuffled. A level check section
+ *   ("Check yourself") is a quiz on the whole level in its own right, so its
+ *   questions are NOT copied into the checkpoint that holds it: they ask about
+ *   other blocks, and the student has just answered them there.
+ * - A retake asks only what is not yet right (answer history, tool
+ *   "study-check"); the score is how many of the checkpoint's questions are
+ *   right now, out of all of them.
  */
 export type Checkpoint = { n: number; key: string; title: string; sectionIds: string[]; firstNum: string; lastNum: string };
 /** Every checkpoint can be opened any time. The status only says when it is best taken: "early" (its sections are not all read yet), "waiting" (read, but nothing later read yet), "ready" or "done". */
@@ -78,9 +85,36 @@ export function checkpointStatus(m: StudyModule, cp: Checkpoint, p: StudyProgres
   return later.some((id) => p.done[studyKey(m.id, id)]) ? "ready" : "waiting";
 }
 
-/** The first checkpoint that is ready and not yet taken. */
+/**
+ * The checkpoint to suggest next: the most recent one that is ready and not
+ * yet taken. One the student has left behind (a later checkpoint's sections
+ * are all read since) stays open on the module page, but is no longer pushed,
+ * so a skipped checkpoint 1 never comes back in place of every later one.
+ */
 export function dueCheckpoint(m: StudyModule, p: StudyProgress): Checkpoint | null {
-  return checkpoints(m).find((cp) => checkpointStatus(m, cp, p) === "ready") ?? null;
+  const all = checkpoints(m);
+  const read = (cp: Checkpoint) => cp.sectionIds.every((id) => p.done[studyKey(m.id, id)]);
+  const due = all.filter((cp, i) => checkpointStatus(m, cp, p) === "ready" && !all.slice(i + 1).some(read));
+  return due[due.length - 1] ?? null;
+}
+
+/** A checkpoint as the reader sees it (plain data, sent to the browser). */
+export type CheckLink = { key: string; href: string; sectionIds: string[]; later: string[] };
+
+function readyIn(c: CheckLink, moduleId: string, p: Pick<StudyProgress, "done" | "tests">): boolean {
+  const done = (id: string) => Boolean(p.done[studyKey(moduleId, id)]);
+  return !p.tests[c.key] && c.sectionIds.every(done) && (!c.later.length || c.later.some(done));
+}
+
+/**
+ * After a section is finished: the checkpoint that finishing it has just
+ * opened (ready now, not ready before), or null. A checkpoint that was
+ * already open (skipped, or left half way) is not offered again here, so
+ * finishing each later section never leads back to the same quiz.
+ */
+export function openedCheckpoint(checks: CheckLink[], moduleId: string, before: Pick<StudyProgress, "done" | "tests">, after: Pick<StudyProgress, "done" | "tests">): CheckLink | null {
+  const opened = checks.filter((c) => readyIn(c, moduleId, after) && !readyIn(c, moduleId, before));
+  return opened[opened.length - 1] ?? null;
 }
 
 /** A small deterministic shuffle (same order on server and in the browser). */
@@ -103,8 +137,31 @@ export function checkpointQuestions(m: StudyModule, cp: Checkpoint, seed = cp.ke
     const s = m.sections.find((x) => x.id === id);
     if (!s) continue;
     const parts = splitSection(s);
-    mcq.push(...parts.mcq);
+    // A level check's questions belong to the level check (see the top of this file).
+    if (!s.levelCheck) mcq.push(...parts.mcq);
     recall.push(...parts.recall);
   }
-  return { mcq: seededShuffle(mcq, seed), recall: seededShuffle(recall, `${seed}r`) };
+  // The same question written into two sections is asked once.
+  const seen = new Set<string>();
+  const unique = mcq.filter((q) => {
+    const k = `${q.q}|${q.options.join("|")}`.trim().toLowerCase();
+    if (seen.has(k)) return false;
+    seen.add(k);
+    return true;
+  });
+  return { mcq: seededShuffle(unique, seed), recall: seededShuffle(recall, `${seed}r`) };
+}
+
+/**
+ * The case questions for one sitting of a checkpoint: never seen first, then
+ * missed ones, and never one the student last answered right. Empty when
+ * every question is already right.
+ */
+export function checkpointRound<T>(mcq: readonly T[], idOf: (q: T) => string, history: History, now: number, rng: () => number): T[] {
+  return orderByHistory(mcq, idOf, history, now, rng).filter((q) => tierOf(history.get(idOf(q)), now) !== 4);
+}
+
+/** How many of a checkpoint's questions are right now (latest answer), out of all of them. */
+export function checkpointKnown<T>(mcq: readonly T[], idOf: (q: T) => string, history: History): { right: number; total: number } {
+  return { right: mcq.filter((q) => history.get(idOf(q))?.ok === true).length, total: mcq.length };
 }

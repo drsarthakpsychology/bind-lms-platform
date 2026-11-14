@@ -153,6 +153,8 @@ export function TestRunner({
   onDone,
   autoStart = false,
   historyTool = "module-test",
+  retry,
+  scoreOf,
 }: {
   items: Mcq[];
   /** Where the score is saved (a module id, or a checkpoint key). */
@@ -163,10 +165,22 @@ export function TestRunner({
   autoStart?: boolean;
   /** Where answers are remembered (src/lib/history): each start opens on questions not yet seen, then missed ones. */
   historyTool?: HistoryTool;
+  /** The questions for "Try again" (default: all of them, in history order). An empty list means nothing is left to retry. */
+  retry?: () => Mcq[];
+  /** The score to save and report, from this round's (default: this round's). Called after the answers are remembered. */
+  scoreOf?: (round: { right: number; total: number }) => { right: number; total: number };
 }) {
   useHistoryPrefetch(historyTool);
   const [items, setItems] = React.useState(given);
-  const reorder = () => setItems(orderFor(historyTool, given, (m) => mcqKey(moduleId, m)));
+  // Set when "Try again" has nothing left to ask (every question already right).
+  const [allRight, setAllRight] = React.useState(false);
+  const sent = React.useRef(false);
+  const reorder = () => {
+    const next = retry ? retry() : orderFor(historyTool, given, (m) => mcqKey(moduleId, m));
+    if (!next.length) return false;
+    setItems(next);
+    return true;
+  };
   const [i, setI] = React.useState(autoStart ? 0 : -1);
   const [picks, setPicks] = React.useState<Record<number, number>>({});
   const [done, setDone] = React.useState(false);
@@ -176,11 +190,15 @@ export function TestRunner({
   const toTop = () => requestAnimationFrame(() => top.current?.scrollIntoView({ behavior: "smooth", block: "start" }));
 
   function submit() {
+    // One save per sitting, however fast the button is tapped.
+    if (sent.current) return;
+    sent.current = true;
     setDone(true);
     noteAnswers(historyTool, items.map((m, k) => ({ item: mcqKey(moduleId, m), correct: picks[k] === m.answer })));
+    const score = scoreOf ? scoreOf({ right, total: items.length }) : { right, total: items.length };
     const s = getLearnState();
-    if (s) setLearnState(recordTest(s, moduleId, right, items.length, istToday()));
-    onDone?.(right, items.length);
+    if (s) setLearnState(recordTest(s, moduleId, score.right, score.total, istToday()));
+    onDone?.(score.right, score.total);
     toTop();
   }
 
@@ -215,9 +233,25 @@ export function TestRunner({
             {right} / {items.length}
           </p>
           <p className="mt-1 text-sm opacity-90">{right / items.length >= 0.8 ? "Strong. Look over the ones you missed, then move on." : "Go back to the sections behind the ones you missed, then re-test."}</p>
-          <button type="button" onClick={() => { reorder(); setAttempt((n) => n + 1); setPicks({}); setDone(false); setI(0); toTop(); }} className="mt-3 inline-flex min-h-11 items-center gap-1.5 rounded-md border-2 border-primary px-3 py-1.5 text-sm font-semibold text-primary">
-            <RotateCcw className="size-4" aria-hidden /> Try again
-          </button>
+          {allRight ? (
+            <p className="mt-3 text-sm font-semibold text-primary">Every question here is right now.</p>
+          ) : (
+            <button
+              type="button"
+              onClick={() => {
+                if (!reorder()) return setAllRight(true);
+                sent.current = false;
+                setAttempt((n) => n + 1);
+                setPicks({});
+                setDone(false);
+                setI(0);
+                toTop();
+              }}
+              className="mt-3 inline-flex min-h-11 items-center gap-1.5 rounded-md border-2 border-primary px-3 py-1.5 text-sm font-semibold text-primary"
+            >
+              <RotateCcw className="size-4" aria-hidden /> {retry ? "Try the missed ones again" : "Try again"}
+            </button>
+          )}
         </div>
         <details className="rounded-2xl border-2 border-foreground bg-card p-4" open={right < items.length}>
           <summary className="cursor-pointer font-semibold">Review your answers</summary>

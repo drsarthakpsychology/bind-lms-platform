@@ -42,7 +42,7 @@
  * Pure: no I/O, no clock. Pass `today` (IST YYYY-MM-DD).
  */
 
-import { addDays, daysBetween, dueItems, labRechecksDue, studyKey, type LearnState } from "@/lib/learn/engine";
+import { addDays, daysBetween, dueItems, labRechecksDue, studyKey, testDays, type LearnState } from "@/lib/learn/engine";
 import { topConfusions } from "@/lib/learn/adaptive";
 import { DOMAINS, conceptById, type Domain } from "@/lib/learn/concepts";
 import { labEntry } from "@/lib/lab/entries";
@@ -152,7 +152,7 @@ export function lastTouched(state: LearnState, m: ReviseModule): string | null {
 export function nextRetest(state: LearnState, m: ReviseModule): string | null {
   const t = state.study.tests[m.id];
   if (!t || !m.test) return null;
-  const gap = RETEST_GAPS[t.tries - 1];
+  const gap = RETEST_GAPS[testDays(t) - 1];
   return gap ? addDays(t.day, gap) : null;
 }
 
@@ -178,7 +178,7 @@ function moduleItems(state: LearnState, today: string, modules: ReviseModule[]):
     const pct = t && t.total > 0 ? t.best / t.total : null;
     const weak = pct !== null && pct < REVISE.weakPct;
     const due = nextRetest(state, m);
-    const gap = t ? RETEST_GAPS[t.tries - 1] : undefined;
+    const gap = t ? RETEST_GAPS[testDays(t) - 1] : undefined;
 
     if (due && m.test && due <= today) {
       const overdue = Math.min(7, Math.max(0, daysBetween(due, today)));

@@ -1,6 +1,7 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
+import { istToday } from "@/lib/practice/streaks";
 import { requireSuperAdmin } from "@/lib/auth/guards";
 import { createClient, createAdminClient } from "@/lib/supabase/server";
 import { generateCertificatePdf } from "@/lib/certificate";
@@ -34,7 +35,7 @@ export async function issueCertificate(
   const pdf = await generateCertificatePdf({
     studentName: student.email ?? "Student",
     courseTitle: course.title,
-    issuedAt: new Date().toISOString().slice(0, 10),
+    issuedAt: istToday(),
     certificateId: certId,
   });
 

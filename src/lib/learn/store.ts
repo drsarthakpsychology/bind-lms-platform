@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { emptyState, normalise, type LearnState } from "./engine";
+import { keepBestTests } from "@/lib/study/progress";
 
 function maxMap(a: Record<string, number>, b: Record<string, number>): Record<string, number> {
   const out = { ...a };
@@ -9,7 +10,7 @@ function maxMap(a: Record<string, number>, b: Record<string, number>): Record<st
   return out;
 }
 
-/** Keep the winner, but never lose reading ticks or study time recorded on the other copy. */
+/** Keep the winner, but never lose reading ticks, test and checkpoint scores, or study time recorded on the other copy. */
 export function mergeCopies(win: LearnState, other: LearnState): LearnState {
   const acts = { ...other.study.acts };
   for (const [m, v] of Object.entries(win.study.acts)) acts[m] = { ...(acts[m] ?? {}), ...v };
@@ -20,6 +21,8 @@ export function mergeCopies(win: LearnState, other: LearnState): LearnState {
     study: {
       ...win.study,
       done: { ...other.study.done, ...win.study.done },
+      // A test taken on another device, or saved after this copy, still counts.
+      tests: keepBestTests(other.study.tests, win.study.tests),
       written: { ...other.study.written, ...win.study.written },
       secs: maxMap(win.study.secs, other.study.secs),
       acts,

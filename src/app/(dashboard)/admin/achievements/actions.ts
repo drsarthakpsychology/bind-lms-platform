@@ -1,6 +1,7 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
+import { istToday } from "@/lib/practice/streaks";
 import { requireSuperAdmin, requireAdmin } from "@/lib/auth/guards";
 import { createAdminClient } from "@/lib/supabase/server";
 import { audit } from "@/lib/auth/audit";
@@ -265,7 +266,7 @@ export async function issueCertificate(credentialId: string): Promise<{ error: s
   const pdf = await generateCredentialPdf({
     studentName: cred.student_name as string,
     title: ach.title as string,
-    issuedAt: new Date().toISOString().slice(0, 10),
+    issuedAt: istToday(),
     credentialId: credentialId,
     signaturePng,
     rollNumber: (rollProfile?.roll_number as string | null) ?? null,

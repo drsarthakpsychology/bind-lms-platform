@@ -112,10 +112,12 @@ export function QuestionRunner({ questions, start = 0, prior = {}, saved: initia
 
   function go(to: number) {
     if (to === 0 && idx >= questions.length) {
-      // Going round again: a new session for streaks and reactions.
+      // Going round again: a new session for streaks and reactions, and
+      // every question asked afresh (no answer showing from the last round).
       reaction.reset();
       setStreak(0);
       setRound((n) => n + 1);
+      setResults({});
     }
     setIdx(to);
     setPicked(null);
@@ -153,7 +155,8 @@ export function QuestionRunner({ questions, start = 0, prior = {}, saved: initia
     let right = 0;
     let answered = 0;
     for (const x of questions) {
-      const ok = results[x.id] ? results[x.id].correct : prior[x.id];
+      // A second round counts only its own answers.
+      const ok = results[x.id] ? results[x.id].correct : round === 0 ? prior[x.id] : undefined;
       if (ok === true || ok === false) answered++;
       if (ok === true) right++;
     }
@@ -180,7 +183,11 @@ export function QuestionRunner({ questions, start = 0, prior = {}, saved: initia
               <RotateCcw className="size-4" aria-hidden /> {againLabel ?? "Go through again"}
             </button>
           ) : (
-            <button type="button" className={next ? btnPlain : btnPrimary} disabled={refreshing} onClick={() => startRefresh(() => router.refresh())}>
+            <button type="button" className={next ? btnPlain : btnPrimary} disabled={refreshing} onClick={() => startRefresh(() => {
+              // If the new set happens to be the same questions, start it afresh rather than stay here.
+              router.refresh();
+              go(0);
+            })}>
               <RotateCcw className="size-4" aria-hidden /> {refreshing ? "Picking questions…" : (againLabel ?? "Another set")}
             </button>
           )}

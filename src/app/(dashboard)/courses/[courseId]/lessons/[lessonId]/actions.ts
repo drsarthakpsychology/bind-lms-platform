@@ -148,7 +148,8 @@ export async function completeAndAdvance(
     { user_id: profile.id, lesson_id: lessonId, is_completed: true },
     { onConflict: "user_id,lesson_id" },
   );
-  redirect(redirectTo);
+  // Only ever on to a page of this site.
+  redirect(/^\/(?![/\\])/.test(redirectTo) ? redirectTo : `/courses/${courseId}`);
 }
 
 export type SubmissionResult = { error: string | null };
