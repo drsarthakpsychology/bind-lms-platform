@@ -83,6 +83,21 @@ describe("QuestionRunner", () => {
     expect(screen.getByText("0 of 1 right")).toBeInTheDocument();
   });
 
+  it("going through again asks afresh: no answer showing, last round not counted", async () => {
+    render(<QuestionRunner {...props} prior={{ s1: true }} />);
+    fireEvent.click(screen.getByRole("radio", { name: /2 and 3 only/ }));
+    fireEvent.click(screen.getByRole("button", { name: "Check answer" }));
+    fireEvent.click(await screen.findByRole("button", { name: /See your score/ }));
+    expect(screen.getByText("1 of 1 right")).toBeInTheDocument();
+    fireEvent.click(screen.getByRole("button", { name: /Go through again/ }));
+    expect(screen.queryByText(/Correct answer/)).toBeNull();
+    expect(screen.getByRole("button", { name: "Check answer" })).toBeDisabled();
+    fireEvent.click(screen.getByRole("radio", { name: /1 and 2 only/ }));
+    fireEvent.click(screen.getByRole("button", { name: "Check answer" }));
+    fireEvent.click(await screen.findByRole("button", { name: /See your score/ }));
+    expect(screen.getByText("0 of 1 right")).toBeInTheDocument();
+  });
+
   it("saves a question", async () => {
     render(<QuestionRunner {...props} />);
     const save = screen.getByRole("button", { name: "Save" });

@@ -240,17 +240,23 @@ export async function finishAttempt(
   id: string,
   data: { answers: Record<string, number | null>; marked: string[]; times: Record<string, number>; score: MockScore; standing: Standing; late: boolean },
   now = new Date(),
-): Promise<boolean> {
+): Promise<boolean | "already"> {
   const db = admin();
   if (!db || !userId) return false;
-  return safe(
-    db
+  try {
+    const { data: rows, error } = await db
       .from("prep_mock_attempts")
       .update({ submitted_at: now.toISOString(), answers: data.answers, marked: data.marked, times: data.times, score: data.score.score, max_score: data.score.max, result: { score: data.score, standing: data.standing }, late: data.late })
       .eq("id", id)
       .eq("user_id", userId)
-      .is("submitted_at", null),
-  );
+      .is("submitted_at", null)
+      .select("id");
+    if (error) return false;
+    // No row changed: another submit (a second tab, or the timer) got there first.
+    return Array.isArray(rows) && rows.length === 0 ? "already" : true;
+  } catch {
+    return false;
+  }
 }
 
 export async function loadMockHistory(userId: string, limit = 20): Promise<MockMeta[]> {

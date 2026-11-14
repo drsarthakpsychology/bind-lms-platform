@@ -139,6 +139,12 @@ export async function submitMock(input: z.input<typeof submitSchema>): Promise<M
   if (!stored) return resultView(spec, score, null, { saved: false, late: false, marked });
   const standing = await standingFor(me.id, spec.id, score.score);
   const saved = await finishAttempt(me.id, stored.id, { answers, marked, times, score, standing, late }, now);
+  if (saved === "already") {
+    // Counted once: show the result that was stored first, record nothing again.
+    const first = await loadAttempt(me.id, stored.id);
+    if (first?.result) return resultView(spec, first.result, first.standing, { saved: true, late: first.late, marked: first.marked });
+    return resultView(spec, score, standing, { saved: true, late, marked });
+  }
   // Answered questions feed the model and the bank's record (blanks are not evidence either way).
   const answeredItems = score.items.filter((i) => i.chosen !== null);
   await Promise.all([

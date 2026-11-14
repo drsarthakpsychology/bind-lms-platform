@@ -112,10 +112,12 @@ export function QuestionRunner({ questions, start = 0, prior = {}, saved: initia
 
   function go(to: number) {
     if (to === 0 && idx >= questions.length) {
-      // Going round again: a new session for streaks and reactions.
+      // Going round again: a new session for streaks and reactions, and
+      // every question asked afresh (no answer showing from the last round).
       reaction.reset();
       setStreak(0);
       setRound((n) => n + 1);
+      setResults({});
     }
     setIdx(to);
     setPicked(null);
@@ -153,7 +155,8 @@ export function QuestionRunner({ questions, start = 0, prior = {}, saved: initia
     let right = 0;
     let answered = 0;
     for (const x of questions) {
-      const ok = results[x.id] ? results[x.id].correct : prior[x.id];
+      // A second round counts only its own answers.
+      const ok = results[x.id] ? results[x.id].correct : round === 0 ? prior[x.id] : undefined;
       if (ok === true || ok === false) answered++;
       if (ok === true) right++;
     }
