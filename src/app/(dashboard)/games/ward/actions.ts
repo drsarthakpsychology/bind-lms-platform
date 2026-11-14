@@ -1,6 +1,7 @@
 "use server";
 
 import { recordHistory } from "@/lib/history/server";
+import { saveProgress } from "@/lib/cases/progress-server";
 import { z } from "zod";
 import { majority } from "@/lib/games-sims/common";
 import { campaignById } from "@/lib/games-sims/ward/campaigns";
@@ -39,9 +40,15 @@ export async function finishWardSolo(input: { campaign: string; choices: string[
     st = choose(c, st, choice);
   }
   if (!st.done) return { ok: false, score: 0, xp: 0 };
-  // Answer history: each decision, right when the best option was taken.
-  await Promise.all([gradeAnswers(user, attempts), recordHistory(user.id, "ward", attempts.map((a) => ({ item: a.item, correct: a.outcome >= 1 })))]);
   const score = outcomeScore(st);
+  // Answer history: each decision (right when the best option was taken), and
+  // the campaign itself as done (missed below a steady outcome), so the pick
+  // screen marks it Done and the next patient is a new one.
+  await Promise.all([
+    gradeAnswers(user, attempts),
+    recordHistory(user.id, "ward", [...attempts.map((a) => ({ item: a.item, correct: a.outcome >= 1 })), { item: c.id, correct: score >= 50 }]),
+    saveProgress(user.id, "ward", c.id, null),
+  ]);
   const [, xp] = await Promise.all([
     saveResult(user.id, { game: "ward", item: c.id, score: score / 100, right: attempts.filter((a) => a.outcome === 1).length, total: attempts.length, meta: { mode: "solo" } }),
     payXp(user.id, "ward", wardXp(score) * (1 - (1 - POINTS_KEPT[1]) * (attempts.length ? hintedCount / attempts.length : 0)), `${c.id}:${run}`),
@@ -101,6 +108,8 @@ async function settle(t: LoadedTeam): Promise<LoadedTeam["team"] | null> {
       t.members.flatMap((m) => [
         saveResult(m.user_id, { game: "ward", item: c.id, score: score / 100, right: next.log.filter((l) => l.q === "best").length, total: next.log.length, meta: { mode: "team", team: t.team.id } }),
         payXp(m.user_id, "ward", wardXp(score), `team:${t.team.id}`),
+        // The patient counts as done for every member (answer history).
+        recordHistory(m.user_id, "ward", [{ item: c.id, correct: score >= 50 }]),
       ]),
     );
   }

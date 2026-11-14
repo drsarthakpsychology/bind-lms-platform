@@ -16,6 +16,11 @@ import { creditServerPlay } from "@/lib/learn/credit-play";
 import { useReaction } from "@/components/reactions/use-reaction";
 import { EndReaction } from "@/components/reactions/graphics";
 import { trySave } from "@/lib/save/client";
+import { arrangeCases, nextCase, type CaseMark } from "@/lib/cases/fresh";
+import type { CaseContext } from "@/lib/cases/server";
+import { clearCaseProgress, saveCaseProgress, useCaseProgress } from "@/lib/cases/progress-client";
+import { noteAnswer, useToolHistory } from "@/lib/history/client";
+import { CaseMarkTag, RecycleNote } from "@/components/cases/case-mark";
 
 type Actions = {
   createEscapeTeam: (room: string) => Promise<{ ok: true; teamId: string } | { ok: false; reason: string }>;
@@ -27,12 +32,24 @@ type Actions = {
   finishEscapePractice: (x: { room: string; run: string; answers: string[]; wrong: number; ms: number }) => Promise<{ ok: boolean; xp: number }>;
 };
 type TeamItem = { id: string; name: string; room: string; status: string };
-type Mode = { kind: "pick" } | { kind: "practice"; room: string; run: string; startedAt: number } | { kind: "team"; teamId: string };
+/** A practice run left half-way: the doors so far and the clock (saved progress, src/lib/cases). */
+type SavedRun = { st: EscState; answers: string[]; run: string; elapsed: number };
+type Mode = { kind: "pick" } | { kind: "practice"; room: string; run: string; startedAt: number; saved?: SavedRun } | { kind: "team"; teamId: string };
+
+function validRun(room: Room | undefined, s: SavedRun | null): s is SavedRun {
+  return !!room && !!s && !!s.st && s.st.room === room.id && !s.st.done && Array.isArray(s.answers) && typeof s.run === "string" && typeof s.elapsed === "number" && Array.isArray(s.st.tries) && s.st.tries.length === room.puzzles.length;
+}
 
 const LETTERS = ["a", "b", "c", "d", "e", "f"];
 
-export function EscapeRoom({ teamsOn, openTeam, teams, actions }: { teamsOn: boolean; openTeam: string | null; teams: TeamItem[]; actions: Actions }) {
+export function EscapeRoom({ cases, teamsOn, openTeam, teams, actions }: { cases: CaseContext; teamsOn: boolean; openTeam: string | null; teams: TeamItem[]; actions: Actions }) {
   const [mode, setMode] = React.useState<Mode>(openTeam ? { kind: "team", teamId: openTeam } : { kind: "pick" });
+  // Rooms in fresh-case order (src/lib/cases/fresh.ts): half done, new this week, new, done last.
+  const history = useToolHistory("escape", cases.history);
+  const progress = useCaseProgress("escape", cases.progress);
+  const started = new Set([...progress.started].filter((id) => validRun(roomById(id), progress.get<SavedRun>(id))));
+  const opts = { history, now: cases.now, student: cases.student, started, level: (r: Room) => r.puzzles.length };
+  const arranged = arrangeCases(ROOMS, (r) => r.id, opts);
   function go(next: Mode) {
     if (next.kind !== "pick") startHowTo("team-escape-room");
     try {
@@ -42,13 +59,23 @@ export function EscapeRoom({ teamsOn, openTeam, teams, actions }: { teamsOn: boo
     }
     setMode(next);
   }
-  const practice = (room: string) => go({ kind: "practice", room, run: `${Date.now().toString(36)}${Math.floor(Math.random() * 1e6).toString(36)}`, startedAt: Date.now() });
-  if (mode.kind === "practice") return <Practice key={mode.run} room={roomById(mode.room)!} run={mode.run} startedAt={mode.startedAt} actions={actions} onExit={() => go({ kind: "pick" })} onAgain={() => practice(mode.room)} />;
+  const fresh = (room: string) => go({ kind: "practice", room, run: `${Date.now().toString(36)}${Math.floor(Math.random() * 1e6).toString(36)}`, startedAt: Date.now() });
+  /** Open a room: back at the door it was left on, else a new run. */
+  const practice = (room: string) => {
+    const saved = progress.get<SavedRun>(room);
+    if (validRun(roomById(room), saved)) go({ kind: "practice", room, run: saved.run, startedAt: Date.now() - saved.elapsed, saved });
+    else fresh(room);
+  };
+  if (mode.kind === "practice") {
+    const nextId = nextCase(ROOMS, (r) => r.id, { ...opts, current: mode.room })?.item.id;
+    return <Practice key={mode.run} room={roomById(mode.room)!} run={mode.run} startedAt={mode.startedAt} saved={mode.saved} actions={actions} onExit={() => go({ kind: "pick" })} onAgain={() => fresh(mode.room)} onNext={nextId && nextId !== mode.room ? () => practice(nextId) : undefined} />;
+  }
   if (mode.kind === "team") return <TeamRun teamId={mode.teamId} actions={actions} onExit={() => go({ kind: "pick" })} />;
   return (
     <Pick
       teamsOn={teamsOn}
       teams={teams}
+      arranged={arranged}
       onPractice={practice}
       onCreate={async (room) => {
         const r = await actions.createEscapeTeam(room);
@@ -66,22 +93,37 @@ export function EscapeRoom({ teamsOn, openTeam, teams, actions }: { teamsOn: boo
 }
 
 /* ------------------------------------------------------------------ pick */
-function Pick({ teamsOn, teams, onPractice, onCreate, onJoin, onOpen }: { teamsOn: boolean; teams: TeamItem[]; onPractice: (room: string) => void; onCreate: (room: string) => Promise<string | null>; onJoin: (code: string) => Promise<string | null>; onOpen: (id: string) => void }) {
+function Pick({ teamsOn, teams, arranged, onPractice, onCreate, onJoin, onOpen }: { teamsOn: boolean; teams: TeamItem[]; arranged: { list: { item: Room; id: string; mark: CaseMark }[]; recycled: boolean }; onPractice: (room: string) => void; onCreate: (room: string) => Promise<string | null>; onJoin: (code: string) => Promise<string | null>; onOpen: (id: string) => void }) {
   const [err, setErr] = React.useState<string | null>(null);
   const [busy, setBusy] = React.useState<string | null>(null);
+  const resume = arranged.list.filter((x) => x.mark === "started");
   return (
     <div className={cn("mx-auto max-w-3xl space-y-6", m.rise)}>
       <h1 className="text-h2">Pick a room</h1>
+      {resume.map((x) => (
+        <Panel key={x.id} className="flex flex-wrap items-center gap-3 bg-status-info-bg">
+          <DoorOpen className="size-5" aria-hidden />
+          <p className="min-w-0 flex-1 text-body">
+            You left <span className="font-semibold">{x.item.title}</span> at a locked door.
+          </p>
+          <Btn variant="ink" onClick={() => onPractice(x.id)}>
+            <Play aria-hidden /> Carry on
+          </Btn>
+        </Panel>
+      ))}
+      {arranged.recycled ? <RecycleNote /> : null}
       <ul className={cn("grid gap-4 md:grid-cols-3", m.stagger)}>
-        {ROOMS.map((r, i) => (
-          <li key={r.id} className={cn("flex flex-col rounded-xl border-2 border-foreground bg-card p-4 hard-shadow-sm", m.rise)} style={{ "--i": i } as React.CSSProperties}>
-            <p className="flex items-center gap-1.5 text-caption text-muted-foreground">
-              <MapPin className="size-3.5" aria-hidden /> {r.place}
-            </p>
+        {arranged.list.map(({ item: r, mark }, i) => (
+          <li key={r.id} className={cn("flex min-w-0 flex-col rounded-xl border-2 border-foreground bg-card p-4 hard-shadow-sm", mark === "done" && !arranged.recycled && "border-foreground/40 shadow-none", m.rise)} style={{ "--i": i } as React.CSSProperties}>
+            <div className="flex items-start justify-between gap-2">
+              <p className="flex min-w-0 items-center gap-1.5 text-caption text-muted-foreground">
+                <MapPin className="size-3.5 shrink-0" aria-hidden /> <span className="truncate">{r.place}</span>
+              </p>
+              <CaseMarkTag mark={mark} />
+            </div>
             <h2 className="mt-1 text-h3">{r.title}</h2>
             <p className="text-small font-semibold">{r.patient}</p>
             <p className="mt-2 flex-1 text-small">{r.intro}</p>
-            <p className="mt-2 text-caption text-muted-foreground">{r.puzzles.length} doors</p>
             <div className="mt-3 grid gap-2">
               {teamsOn ? (
                 <Btn
@@ -98,8 +140,8 @@ function Pick({ teamsOn, teams, onPractice, onCreate, onJoin, onOpen }: { teamsO
                   <Users aria-hidden /> {busy === r.id ? "Starting…" : "Start a team"}
                 </Btn>
               ) : null}
-              <Btn variant={teamsOn ? "outline" : "primary"} onClick={() => onPractice(r.id)}>
-                <Play aria-hidden /> Practice alone
+              <Btn variant={teamsOn || mark === "done" ? "outline" : "primary"} onClick={() => onPractice(r.id)}>
+                <Play aria-hidden /> {mark === "started" ? "Carry on alone" : mark === "done" ? "Play again alone" : "Practice alone"}
               </Btn>
             </div>
           </li>
@@ -370,9 +412,9 @@ function Header({ room, onExit, right }: { room: Room; onExit: () => void; right
 }
 
 /* -------------------------------------------------------------- practice */
-function Practice({ room, run, startedAt, actions, onExit, onAgain }: { room: Room; run: string; startedAt: number; actions: Actions; onExit: () => void; onAgain: () => void }) {
-  const [st, setSt] = React.useState<EscState>(() => startEscape(room));
-  const [answers, setAnswers] = React.useState<string[]>([]);
+function Practice({ room, run, startedAt, saved, actions, onExit, onAgain, onNext }: { room: Room; run: string; startedAt: number; saved?: SavedRun; actions: Actions; onExit: () => void; onAgain: () => void; onNext?: () => void }) {
+  const [st, setSt] = React.useState<EscState>(() => saved?.st ?? startEscape(room));
+  const [answers, setAnswers] = React.useState<string[]>(() => saved?.answers ?? []);
   const [feedback, setFeedback] = React.useState<Feedback>(null);
   const [opened, setOpened] = React.useState<number | null>(null);
   const [finishedAt, setFinishedAt] = React.useState<number | null>(null);
@@ -390,11 +432,15 @@ function Practice({ room, run, startedAt, actions, onExit, onAgain }: { room: Ro
     if (!res.state.done) reaction.onAnswer(res.ok, { partial: res.ok && !first });
     void trySave(() => actions.gradeEscapePractice({ room: room.id, stage: st.stage, answer: raw, first }), "Escape answer");
     setFeedback({ stage: st.stage, ok: res.ok });
+    const list = res.ok ? [...answers, raw] : answers;
+    // Saved progress (src/lib/cases): the door reached and the clock, here and on the server.
+    if (!res.state.done) saveCaseProgress("escape", room.id, { st: res.state, answers: list, run, elapsed: Date.now() - startedAt } satisfies SavedRun);
     if (res.ok) {
-      const list = [...answers, raw];
       setAnswers(list);
       setOpened(st.stage);
       if (res.state.done) {
+        clearCaseProgress("escape", room.id);
+        noteAnswer("escape", room.id, room.puzzles.length / (room.puzzles.length + res.state.wrong) >= 0.6, { server: false });
         const end = Date.now();
         setFinishedAt(end);
         void actions
@@ -409,7 +455,7 @@ function Practice({ room, run, startedAt, actions, onExit, onAgain }: { room: Ro
     setSt(res.state);
   }
 
-  if (st.done && opened === null) return <Escaped room={room} ms={ms} wrong={st.wrong} xp={xp} onExit={onExit} onAgain={onAgain} />;
+  if (st.done && opened === null) return <Escaped room={room} ms={ms} wrong={st.wrong} xp={xp} onExit={onExit} onAgain={onAgain} onNext={onNext} />;
 
   const p = room.puzzles[opened ?? st.stage];
   return (
@@ -625,8 +671,9 @@ function RaceBoard({ rows }: { rows: RaceRow[] }) {
   );
 }
 
-function Escaped({ room, ms, wrong, xp, onExit, onAgain, race, teamLine }: { room: Room; ms: number; wrong: number; xp: number | null; onExit: () => void; onAgain?: () => void; race?: RaceRow[]; teamLine?: string }) {
-  useHotkeys(onAgain ? { Enter: onAgain } : {});
+function Escaped({ room, ms, wrong, xp, onExit, onAgain, onNext, race, teamLine }: { room: Room; ms: number; wrong: number; xp: number | null; onExit: () => void; onAgain?: () => void; onNext?: () => void; race?: RaceRow[]; teamLine?: string }) {
+  const primary = onNext ?? onAgain;
+  useHotkeys(primary ? { Enter: primary } : {});
   const n = room.puzzles.length;
   return (
     <div className={cn("mx-auto max-w-3xl space-y-5", m.rise)}>
@@ -661,9 +708,14 @@ function Escaped({ room, ms, wrong, xp, onExit, onAgain, race, teamLine }: { roo
       </section>
       {race ? <RaceBoard rows={race} /> : null}
       <div className="grid gap-2 sm:grid-cols-2">
+        {onNext ? (
+          <Btn variant="primary" size="lg" className="sm:col-span-2" onClick={onNext}>
+            Next room <ArrowRight aria-hidden /> <Kbd>Enter</Kbd>
+          </Btn>
+        ) : null}
         {onAgain ? (
-          <Btn variant="primary" size="lg" onClick={onAgain}>
-            Play again <Kbd>Enter</Kbd>
+          <Btn variant={onNext ? "outline" : "primary"} size="lg" onClick={onAgain}>
+            Play again {onNext ? null : <Kbd>Enter</Kbd>}
           </Btn>
         ) : null}
         <Btn size="lg" onClick={onExit}>

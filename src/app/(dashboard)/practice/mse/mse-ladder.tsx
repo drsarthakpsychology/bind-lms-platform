@@ -24,6 +24,11 @@ export interface MseLadderContent {
   observe?: Array<{ id: string; content: string; why?: string }>;
   domain?: MseStimulus[];
   fullMse?: FullMseStimulus[];
+  /** How many cases at the front of each list are not done yet (fresh cases, src/lib/cases). */
+  observeFresh?: number;
+  fullFresh?: number;
+  /** The small things walk: its order, where it was left, and how many are not done yet. */
+  small?: { order: string[]; start: number; fresh: number };
 }
 
 export function MseLadder({ content }: { content?: MseLadderContent }) {
@@ -117,10 +122,10 @@ export function MseLadder({ content }: { content?: MseLadderContent }) {
 
       {/* Level body */}
       <div className="space-y-4">
-        {active === "1" ? <ObserveLevel onComplete={() => markDone("1")} stimuli={content?.observe} /> : null}
+        {active === "1" ? <ObserveLevel onComplete={() => markDone("1")} stimuli={content?.observe} fresh={content?.observeFresh} /> : null}
         {active === "2" ? <DomainLevel onComplete={() => markDone("2")} stimuli={content?.domain} /> : null}
         {active === "3" ? <ConfusableDrill onComplete={() => markDone("3")} /> : null}
-        {active === "4" ? <FullMseLevel onComplete={() => markDone("4")} stimuli={content?.fullMse} /> : null}
+        {active === "4" ? <FullMseLevel onComplete={() => markDone("4")} stimuli={content?.fullMse} fresh={content?.fullFresh} /> : null}
         {active === "5" ? <LiveMseLevel onComplete={() => markDone("5")} /> : null}
       </div>
 
@@ -137,7 +142,7 @@ export function MseLadder({ content }: { content?: MseLadderContent }) {
             />
           </summary>
           <div className="px-4 pb-4">
-            <SmallThingsDrill />
+            <SmallThingsDrill walk={content?.small} />
           </div>
         </details>
       ) : null}

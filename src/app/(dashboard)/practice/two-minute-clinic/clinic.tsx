@@ -1,6 +1,10 @@
 "use client";
 
-import { noteAnswer } from "@/lib/history/client";
+import { historyFor, noteAnswer, useToolHistory } from "@/lib/history/client";
+import { arrangeCases } from "@/lib/cases/fresh";
+import type { CaseContext } from "@/lib/cases/server";
+import { clearCaseProgress, saveCaseProgress, useCaseProgress } from "@/lib/cases/progress-client";
+import { CaseMarkTag, RecycleNote } from "@/components/cases/case-mark";
 import * as React from "react";
 import { startHowTo, useHowTo } from "@/components/help/how-to";
 import { haptic } from "@/lib/haptics";
@@ -44,15 +48,45 @@ export function clinicMood(typed: string, expert: readonly string[]): Mood {
  * not open on the same one-liner every time (there are over 140).
  */
 /** `order`: one-liner ids in answer-history order (src/lib/history), picked on the server; Next walks it. */
-export function TwoMinuteClinic({ start = 0, order }: { start?: number; order?: string[] }) {
+/** A one-liner left half way (saved progress, src/lib/cases). */
+type Saved = { phase: "type"; seconds: number; differential: string; nextQuestion: string };
+
+export function TwoMinuteClinic({ start = 0, order, ctx }: { start?: number; order?: string[]; ctx?: CaseContext }) {
   const [seq] = React.useState(() => (order ?? []).map((id) => CLINICS.findIndex((c) => c.id === id)).filter((i) => i >= 0));
   const [itemIdx, setItemIdx] = React.useState(() => (seq.length ? seq[0] : ((Math.floor(start) % CLINICS.length) + CLINICS.length) % CLINICS.length));
-  const advance = (i: number) => (seq.length ? seq[(seq.indexOf(i) + 1) % seq.length] : (i + 1) % CLINICS.length);
-  const [phase, setPhase] = React.useState<"read" | "type" | "compare">("read");
-  const [seconds, setSeconds] = React.useState(120);
-  const [differential, setDifferential] = React.useState("");
-  const [nextQuestion, setNextQuestion] = React.useState("");
+  /** The next one-liner: on through the order, skipping any done in this browser meanwhile (unless every one is done). */
+  const advance = (i: number) => {
+    if (!seq.length) return (i + 1) % CLINICS.length;
+    const h = historyFor("two-minute");
+    const at = seq.indexOf(i);
+    const after = [...seq.slice(at + 1), ...seq.slice(0, Math.max(0, at))];
+    return after.find((k) => !h.has(CLINICS[k].id)) ?? after[0] ?? i;
+  };
+  const history = useToolHistory("two-minute", ctx?.history);
+  const progress = useCaseProgress("two-minute", ctx?.progress);
+  // A one-liner left half way opens where it was (the server's copy, so the first screen matches).
+  const [first] = React.useState(() => {
+    const row = ctx?.progress.rows.find((r) => r.item === CLINICS[itemIdx]?.id && r.state !== null);
+    const s = row?.state as Saved | undefined;
+    return s && s.phase === "type" ? s : null;
+  });
+  const [phase, setPhase] = React.useState<"read" | "type" | "compare">(first ? "type" : "read");
+  const [seconds, setSeconds] = React.useState(first ? Math.max(1, Math.min(120, Number(first.seconds) || 120)) : 120);
+  const [differential, setDifferential] = React.useState(first?.differential ?? "");
+  const [nextQuestion, setNextQuestion] = React.useState(first?.nextQuestion ?? "");
   const item = CLINICS[itemIdx];
+  const now = ctx?.now ?? 0;
+  const student = ctx?.student ?? "";
+  const marks = React.useMemo(() => arrangeCases(CLINICS, (c) => c.id, { history, now, student, started: progress.started }), [history, now, student, progress.started]);
+  const mark = marks.list.find((x) => x.id === item.id)?.mark ?? "new";
+
+  // Keep the place saved while typing (ten-second steps for the clock).
+  const tick = Math.floor(seconds / 10);
+  React.useEffect(() => {
+    if (phase !== "type") return;
+    saveCaseProgress("two-minute", item.id, { phase: "type", seconds, differential, nextQuestion } satisfies Saved);
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- the clock saves every ten seconds, not every second
+  }, [phase, item.id, differential, nextQuestion, tick]);
   // The clock stops while the how-to is open.
   const { open: paused } = useHowTo("two-minute-clinic");
 
@@ -73,9 +107,13 @@ export function TwoMinuteClinic({ start = 0, order }: { start?: number; order?: 
 
   return (
     <div className="space-y-4">
+      {mark === "done" && marks.recycled && phase === "read" ? <RecycleNote /> : null}
       <div className="rounded-lg border-2 border-border bg-card p-5 hard-shadow-sm">
         <div className="flex items-center justify-between">
-          <span className="text-eyebrow text-muted-foreground">One-liner {itemIdx + 1}</span>
+          <span className="flex items-center gap-2">
+            <span className="text-eyebrow text-muted-foreground">One-liner {itemIdx + 1}</span>
+            {mark === "week" || mark === "started" ? <CaseMarkTag mark={mark} /> : null}
+          </span>
           {phase === "type" ? (
             <span className="text-numeric text-small" aria-live="polite">{seconds}s</span>
           ) : null}
@@ -121,6 +159,9 @@ export function TwoMinuteClinic({ start = 0, order }: { start?: number; order?: 
             type="button"
             onClick={() => {
               setPhase("compare");
+              // Done once compared (there is no right or wrong here): it goes behind the ones not done yet.
+              noteAnswer("two-minute", item.id, null);
+              clearCaseProgress("two-minute", item.id);
               haptic("success");
               // Retention loop: completing the daily drill keeps the streak alive.
               void trySave(() => fetch("/api/practice/clinic/complete", { method: "POST" }), "Clinic streak");
@@ -158,8 +199,11 @@ export function TwoMinuteClinic({ start = 0, order }: { start?: number; order?: 
           <button
             type="button"
             onClick={() => {
-              // Seen (there is no right or wrong here): it goes behind the ones not seen yet.
-              noteAnswer("two-minute", item.id, null);
+              // The clock ran out (it skipped the Compare button): this one is done too.
+              if (seconds === 0) {
+                noteAnswer("two-minute", item.id, null);
+                clearCaseProgress("two-minute", item.id);
+              }
               setItemIdx(advance);
               setPhase("read");
               setDifferential(""); setNextQuestion("");

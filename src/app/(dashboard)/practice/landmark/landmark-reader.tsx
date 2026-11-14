@@ -1,11 +1,17 @@
 "use client";
 
-import { noteAnswer } from "@/lib/history/client";
+import { noteAnswer, useToolHistory } from "@/lib/history/client";
 import * as React from "react";
 import { haptic } from "@/lib/haptics";
 import { AlertTriangle, GitCompare } from "lucide-react";
 import type { LandmarkCase } from "@/lib/landmark/cases";
 import { QuizCheck } from "@/components/practice/quiz-check";
+import { arrangeCases } from "@/lib/cases/fresh";
+import type { CaseContext } from "@/lib/cases/server";
+import { clearCaseProgress, saveCaseProgress, useCaseProgress } from "@/lib/cases/progress-client";
+import { CaseMarkTag, RecycleNote } from "@/components/cases/case-mark";
+
+const EMPTY_CTX: CaseContext = { student: "", history: [], progress: { owner: null, rows: [] }, now: 0 };
 
 /**
  * Landmark reader: read the case, then answer the quiz (a check, not a test).
@@ -13,17 +19,43 @@ import { QuizCheck } from "@/components/practice/quiz-check";
  *
  * The check is one question at a time via the shared QuizCheck flow (T22),
  * not a wall of every question and option on one scroll.
+ *
+ * Cases come in fresh-case order (src/lib/cases/fresh.ts): the one left open
+ * first, then new this week, then new, read ones last. The order is fixed
+ * when the page opens, so Next walks forward through it.
  */
-export function LandmarkReader({ cases }: { cases: LandmarkCase[] }) {
+export function LandmarkReader({ cases, ctx = EMPTY_CTX }: { cases: LandmarkCase[]; ctx?: CaseContext }) {
+  const history = useToolHistory("landmark", ctx.history);
+  const progress = useCaseProgress("landmark", ctx.progress);
+  // The walk order, from the server's copy only, so it doesn't move under the reader.
+  const [order] = React.useState(() => {
+    const server = new Map(ctx.history.map((r) => [r.item, r]));
+    const open = new Set(ctx.progress.rows.filter((r) => r.state !== null).map((r) => r.item));
+    return arrangeCases(cases, (c) => c.id, { history: server, now: ctx.now, student: ctx.student, started: open }).list.map((x) => x.item);
+  });
   const [idx, setIdx] = React.useState(0);
+  const marks = arrangeCases(order, (c) => c.id, { history, now: ctx.now, student: ctx.student, started: progress.started });
+  const markOf = new Map(marks.list.map((x) => [x.id, x.mark]));
 
-  const c = cases[idx];
+  const c = order[idx];
   if (!c) return null;
+  const recycled = markOf.get(c.id) === "done" && marks.recycled;
+
+  function go(i: number) {
+    const to = order[i];
+    if (!to) return;
+    setIdx(i);
+    // Left open: this case comes back first next time until it is finished.
+    saveCaseProgress("landmark", to.id, { open: true });
+    haptic("tap");
+  }
 
   return (
     <div className="space-y-4">
-      <div className="flex items-center justify-between text-small text-muted-foreground">
-        <span>{c.domain.replace("_", " ")} · case {idx + 1}</span>
+      {recycled ? <RecycleNote /> : null}
+      <div className="flex items-center justify-between gap-2 text-small text-muted-foreground">
+        <span>{c.domain.replace("_", " ")}</span>
+        <CaseMarkTag mark={markOf.get(c.id) ?? "new"} />
       </div>
 
       {/* the case */}
@@ -67,9 +99,9 @@ export function LandmarkReader({ cases }: { cases: LandmarkCase[] }) {
         <h3 className="text-base font-semibold">Check yourself</h3>
         <div className="mt-3">
           <QuizCheck
-            key={idx}
+            key={c.id}
             items={c.quiz.map((q, qi) => ({
-              id: `landmark-${idx}-${qi}`,
+              id: `landmark-${c.id}-${qi}`,
               type: "best_response" as const,
               prompt: q.question,
               options: q.options,
@@ -83,12 +115,34 @@ export function LandmarkReader({ cases }: { cases: LandmarkCase[] }) {
 
       <button
         type="button"
-        onClick={() => { noteAnswer("landmark", c.id, null); setIdx((i) => Math.min(cases.length - 1, i + 1)); haptic("tap"); }}
-        disabled={idx + 1 >= cases.length}
-        className="w-full rounded-md border-2 border-border bg-primary px-4 py-2.5 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px disabled:opacity-50"
+        onClick={() => {
+          noteAnswer("landmark", c.id, null);
+          clearCaseProgress("landmark", c.id);
+          go(idx + 1 < order.length ? idx + 1 : 0);
+        }}
+        className="w-full rounded-md border-2 border-border bg-primary px-4 py-2.5 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px"
       >
-        {idx + 1 < cases.length ? "Next case" : "You've read them all"}
+        Next case
       </button>
+
+      <details className="rounded-md border-2 border-border bg-card">
+        <summary className="flex min-h-11 cursor-pointer items-center px-4 text-small font-semibold">Choose a case</summary>
+        <ul className="max-h-80 space-y-1 overflow-y-auto px-2 pb-2">
+          {marks.list.map(({ item, mark }) => (
+            <li key={item.id}>
+              <button
+                type="button"
+                onClick={() => go(order.indexOf(item))}
+                aria-current={item.id === c.id ? "true" : undefined}
+                className={`flex min-h-11 w-full items-center justify-between gap-2 rounded-md px-2 py-1.5 text-left text-small ${item.id === c.id ? "bg-secondary font-semibold" : mark === "done" ? "text-muted-foreground" : ""}`}
+              >
+                <span className="min-w-0 truncate">{item.title}</span>
+                <CaseMarkTag mark={mark} />
+              </button>
+            </li>
+          ))}
+        </ul>
+      </details>
     </div>
   );
 }

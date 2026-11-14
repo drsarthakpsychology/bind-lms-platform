@@ -6,6 +6,10 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { isFeatureEnabled, requireFeature } from "@/lib/flags";
 import { BackPill } from "@/components/study/back";
+import { arrangeCases } from "@/lib/cases/fresh";
+import { ownerTag } from "@/lib/cases/progress";
+import { requestNow } from "@/lib/cases/server";
+import type { HistoryRow } from "@/lib/history/order";
 
 export const dynamic = "force-dynamic";
 
@@ -30,14 +34,15 @@ export default async function ConsultingRoomPage() {
 
   // Per-case session state for this student: any active session → in
   // progress; else the best completed debrief score.
-  const mySessionsData: { id: string; case_id: string; status: string }[] | null = user
+  const mySessionsData: { id: string; case_id: string; status: string; created_at?: string }[] | null = user
     ? await (async () => {
         const { data } = await supabase
           .from("sim_sessions")
-          .select("id, case_id, status")
+          .select("id, case_id, status, created_at")
           .eq("user_id", user.id)
-          .in("status", ["active", "complete"]);
-        return (data ?? []) as { id: string; case_id: string; status: string }[];
+          .in("status", ["active", "complete"])
+          .order("created_at", { ascending: true });
+        return (data ?? []) as { id: string; case_id: string; status: string; created_at?: string }[];
       })()
     : null;
   const myScores = user
@@ -49,14 +54,21 @@ export default async function ConsultingRoomPage() {
   const scoresBySession = new Map(
     (myScores?.data ?? []).map((s) => [String(s.session_id), Number(s.overall ?? 0)]),
   );
-  const stateByCase = new Map<string, { state: "not_started" | "in_progress" | "completed"; score?: number }>();
+  const stateByCase = new Map<string, { state: "not_started" | "in_progress" | "completed"; score?: number; sessionId?: string }>();
+  // Done cases as an answer history (src/lib/cases/fresh.ts): the latest completed session per case.
+  const doneRows = new Map<string, HistoryRow>();
   for (const s of mySessionsData ?? []) {
     const key = String(s.case_id);
     const existing = stateByCase.get(key);
     if (s.status === "active") {
-      stateByCase.set(key, { state: "in_progress" });
+      // The newest open session is the one to go back to.
+      stateByCase.set(key, { state: "in_progress", sessionId: String(s.id) });
     } else if (s.status === "complete" && existing?.state !== "in_progress") {
       stateByCase.set(key, { state: "completed", score: scoresBySession.get(String(s.id)) });
+    }
+    if (s.status === "complete") {
+      const score = scoresBySession.get(String(s.id));
+      doneRows.set(key, { item: key, seen: 1, ok: typeof score === "number" ? score >= 2.5 : null, at: s.created_at ? Date.parse(s.created_at) || 0 : 0, due: null });
     }
   }
 
@@ -97,8 +109,14 @@ export default async function ConsultingRoomPage() {
       stars: st?.state === "completed" || st?.score != null ? scoreToStars(st?.score) : 0,
       unlocked: completedCount >= (UNLOCK_AT[difficulty] ?? 0) || st?.state !== "not_started",
       unlockAt: UNLOCK_AT[difficulty] ?? 0,
+      sessionId: st?.state === "in_progress" ? st.sessionId : undefined,
     };
   });
+
+  // Half done first, then new this week, then new, done last (a done case can still be replayed).
+  const started = new Set(merged.filter((c) => c.state === "in_progress").map((c) => c.id));
+  const arranged = arrangeCases(merged, (c) => c.id, { history: doneRows, now: requestNow(), student: user ? ownerTag(user.id) : "", started });
+  const ordered = arranged.list.map((x) => ({ ...x.item, mark: x.mark }));
 
   // Weak spots (merged in here): the drill built from this student's own
   // debriefs. Shown once there is at least one scored interview.
@@ -116,7 +134,7 @@ export default async function ConsultingRoomPage() {
         ) : null}
       </ConsultingRoomHeader>
 
-      <CasePicker cases={merged} />
+      <CasePicker cases={ordered} recycled={arranged.recycled} />
     </div>
   );
 }

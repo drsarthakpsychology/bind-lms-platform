@@ -6,7 +6,11 @@ import { FormulationForge } from "./forge";
 import { FORMULATION_CASES } from "@/lib/practice/formulation-cases";
 import { PeerWall } from "./peer-wall";
 import { requireFeature } from "@/lib/flags";
-import { orderForViewer } from "@/lib/history/viewer";
+import { caseContext } from "@/lib/cases/server";
+import { arrangeCases } from "@/lib/cases/fresh";
+import { mergeProgress, startedIds } from "@/lib/cases/progress";
+import { fromRows } from "@/lib/history/order";
+import { CaseMarkTag, RecycleNote } from "@/components/cases/case-mark";
 import type { FormulationFactor } from "@/lib/practice/formulation";
 import { BackPill } from "@/components/study/back";
 
@@ -52,25 +56,35 @@ export default async function FormulationPage({ searchParams }: { searchParams: 
       modelNarrative: (r.model_answer as { narrative?: string } | null)?.narrative ?? "",
     }));
   const all = [...FORMULATION_CASES, ...fromDb];
-  // No case asked for: the first case not done yet, then a weak one, then the oldest (src/lib/history).
-  const firstId = pick && all.some((c) => c.id === pick) ? pick : (await orderForViewer("formulation", all.map((c) => c.id)))[0];
+  // Fresh-case order (src/lib/cases/fresh.ts): half done, new this week, new, done last.
+  const ctx = await caseContext("formulation", all.map((c) => c.id), "formulation");
+  const arranged = arrangeCases(all, (c) => c.id, { history: fromRows(ctx.history), now: ctx.now, student: ctx.student, started: startedIds(mergeProgress(ctx.progress.rows, [])) });
+  // No case asked for: the first one not done (a half-done one first).
+  const firstId = pick && all.some((c) => c.id === pick) ? pick : arranged.list[0]?.id;
   const seed = all.find((c) => c.id === firstId) ?? all[0];
+  const number = new Map(all.map((c, i) => [c.id, i + 1]));
+  const next = arranged.list.find((x) => x.id !== seed.id && x.mark !== "done") ?? arranged.list.find((x) => x.id !== seed.id);
 
   return (
     <div className="mx-auto max-w-4xl">
       <BackPill className="mb-4" />
       <ToolHeader title="Build the formulation" tip={{ id: "formulation", steps: ["Sort the factors into the 5 Ps.", "Write the story in your own words.", "Compare with the answer."] }} />
 
+      {arranged.recycled ? <RecycleNote className="mt-5" /> : null}
       <nav aria-label="Cases" className="mt-5 flex gap-2 overflow-x-auto pb-1 [scrollbar-width:none]">
-        {all.map((c, i) => (
+        {arranged.list.map(({ item: c, mark }) => (
           <Link
             key={c.id}
             href={`/practice/formulation?case=${c.id}`}
             aria-current={c.id === seed.id ? "page" : undefined}
             title={c.hint || c.title}
-            className={`shrink-0 rounded-full border-2 border-foreground px-3.5 py-1.5 text-sm font-semibold ${c.id === seed.id ? "bg-foreground text-background" : "bg-card"}`}
+            className={`inline-flex shrink-0 items-center gap-2 rounded-full border-2 px-3.5 py-1.5 text-sm font-semibold ${c.id === seed.id ? "border-foreground bg-foreground text-background" : mark === "done" ? "border-foreground/40 bg-card text-muted-foreground" : "border-foreground bg-card"}`}
           >
-            Case {i + 1}: {c.title.split(":")[0]}
+            {mark !== "done" || c.id === seed.id ? <CaseMarkTag mark={mark} /> : null}
+            <span>
+              Case {number.get(c.id)}: {c.title.split(":")[0]}
+            </span>
+            {mark === "done" && c.id !== seed.id ? <CaseMarkTag mark="done" /> : null}
           </Link>
         ))}
       </nav>
@@ -78,7 +92,7 @@ export default async function FormulationPage({ searchParams }: { searchParams: 
 
       <div className="mt-4">
         <HowToStart id="formulation">
-          <FormulationForge key={seed.id} seed={seed} />
+          <FormulationForge key={seed.id} seed={seed} progress={ctx.progress} nextHref={next ? `/practice/formulation?case=${next.id}` : null} />
         </HowToStart>
       </div>
 
