@@ -82,7 +82,7 @@ export function Release({ d }: { d: ReleaseData }) {
         {/* axon and terminal */}
         <R k="rel-axon" x={146} y={0} w={28} h={16} sw={2} fill={C.wash} fillStyle="solid" />
         <P k="rel-term" d="M60 14 H260 Q280 14 280 34 V82 H40 V34 Q40 14 60 14 Z" sw={2} fill={C.wash} fillStyle="solid" />
-        <Label x={46} y={70} size={12}>nerve ending</Label>
+        <Label x={42} y={11} size={12}>nerve ending</Label>
         {/* action potential */}
         <circle cx="160" cy="6" r="5" fill={C.lime} stroke={C.ink} strokeWidth={1.5} style={{ opacity: step === 0 ? 1 : 0, transform: step === 0 ? "translateY(10px)" : "none", transition: "transform 900ms var(--ease-out-expo), opacity 300ms" }} />
         {/* calcium channels */}
@@ -527,7 +527,7 @@ export function Strange({ d }: { d: StrangeData }) {
         <Label x={8} y={158} size={12}>How upset the infant looks</Label>
         <R k="ss-meter" x={166} y={148} w={144} h={12} sw={1.5} fill={C.paper} fillStyle="solid" />
         <rect x="168" y="150" width="140" height="8" rx="2" fill={C.red} style={{ transform: `scaleX(${upset})`, transformBox: "fill-box", transformOrigin: "0 50%", transition: "transform 700ms var(--ease-out-expo)" }} />
-        <Label x={310} y={174} size={12} anchor="end" bold={false}>{mood}</Label>
+        <Label x={310} y={172} size={12} anchor="end" bold={false}>{mood}</Label>
       </Sheet>
       <div className="mt-3 grid gap-2 sm:grid-cols-4" role="group" aria-label="Attachment style">
         {STYLES.map((x) => (

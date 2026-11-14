@@ -346,7 +346,7 @@ export function Conservation({ d }: { d: ConservationData }) {
           {/* glass A */}
           <R k="cl-wa" x={32} y={120} w={66} h={40} stroke="none" fill={C.blue} gap={4} fw={1.6} />
           <P k="cl-ga" d="M30 100 V160 H100 V100" sw={2.4} />
-          <Label x={65} y={178} size={14} anchor="middle">A</Label>
+          <Label x={65} y={175} size={14} anchor="middle">A</Label>
           {/* glass B, poured */}
           <g style={{ transformBox: "view-box", transformOrigin: "190px 100px", transform: done ? "translate(46px,-60px) rotate(65deg)" : "none", transition: "transform 900ms var(--ease-out-expo)" }}>
             <g style={{ transformBox: "fill-box", transformOrigin: "50% 100%", transform: done ? "scaleY(0)" : "none", transition: "transform 900ms var(--ease-out-expo) 250ms" }}>
@@ -354,7 +354,7 @@ export function Conservation({ d }: { d: ConservationData }) {
             </g>
             <P k="cl-gb" d="M120 100 V160 H190 V100" sw={2.4} />
           </g>
-          {!done ? <Label x={155} y={178} size={14} anchor="middle">B</Label> : null}
+          {!done ? <Label x={155} y={175} size={14} anchor="middle">B</Label> : null}
           {/* stream */}
           {pourKey > 0 && done ? <rect key={pourKey} x="241" y="40" width="4" height="118" fill={C.blue} className="vibha-stream" /> : null}
           {/* tall glass */}
@@ -362,7 +362,7 @@ export function Conservation({ d }: { d: ConservationData }) {
             <R k="cl-wt" x={242} y={58} w={26} h={102} stroke="none" fill={C.blue} gap={4} fw={1.6} />
           </g>
           <P k="cl-gt" d="M240 30 V160 H270 V30" sw={2.4} />
-          <Label x={255} y={178} size={14} anchor="middle">{done ? "B, now tall" : "tall glass"}</Label>
+          <Label x={255} y={175} size={14} anchor="middle">{done ? "B, now tall" : "tall glass"}</Label>
         </Sheet>
       ) : (
         <Sheet name="conservation-number" w={320} h={170} label={done ? "The bottom row of 6 coins has been spread out so it is longer. The top row still has 6 coins close together." : "Two rows of 6 coins, lined up one above the other."} className="mx-auto mt-3 max-w-[30rem]">
