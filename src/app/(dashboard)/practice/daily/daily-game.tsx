@@ -154,7 +154,7 @@ export function DailyGame({ serverState, save, initial }: { serverState: LearnSt
     if (!cur) return;
     setError(null);
     startTransition(async () => {
-      const res = await dailyMove({ mode: t === "daily" ? "daily" : "practice", caseId: cur.view.caseId, log: cur.log, action });
+      const res = await dailyMove({ mode: t === "daily" ? "daily" : "practice", caseId: cur.view.caseId, log: cur.log, action }).catch(() => ({ ok: false as const, error: "Connection lost. Try that again." }));
       if (!res.ok) {
         setError(res.error, t);
         return;
@@ -908,7 +908,7 @@ function AiFlag({ caseId }: { caseId: string }) {
           onSubmit={(e) => {
             e.preventDefault();
             startSending(async () => {
-              const r = await flagAiCaseAction({ caseId, reason });
+              const r = await flagAiCaseAction({ caseId, reason }).catch(() => ({ ok: false, message: "Connection lost. Try again." }));
               setMsg({ ok: r.ok, text: r.message });
             });
           }}

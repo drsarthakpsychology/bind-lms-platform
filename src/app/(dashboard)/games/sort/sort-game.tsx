@@ -56,7 +56,7 @@ export function SortGame({ serverState, save, initial }: { serverState: LearnSta
     setError(null);
     setSelected(null);
     startTransition(async () => {
-      const r = await loadSort({ mode, tier });
+      const r = await loadSort({ mode, tier }).catch(() => ({ ok: false as const, error: "That didn't load. Check your connection and try again." }));
       if (!r.ok) setError(r.error);
       else {
         setPlay(fresh(r.view));
@@ -100,7 +100,7 @@ export function SortGame({ serverState, save, initial }: { serverState: LearnSta
     if (!p || !v || p.done || !allPlaced || !picksDone || pending) return;
     setError(null);
     startTransition(async () => {
-      const r = await checkSort({ mode: v.mode, tier: v.tier, boardId: v.boardId, placement: p.placement, picks: p.picks, tries: p.tries + 1 });
+      const r = await checkSort({ mode: v.mode, tier: v.tier, boardId: v.boardId, placement: p.placement, picks: p.picks, tries: p.tries + 1 }).catch(() => ({ ok: false as const, error: "Connection lost. Your tiles are still here. Try again." }));
       if (!r.ok) {
         setError(r.error);
         return;

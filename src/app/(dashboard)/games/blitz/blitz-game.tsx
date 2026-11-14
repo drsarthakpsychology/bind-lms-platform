@@ -77,7 +77,7 @@ export function BlitzGame({ bests, serverState, save }: { bests: Bests; serverSt
       setPhase("done");
       return;
     }
-    const res = await finishBlitz(t);
+    const res = await finishBlitz(t).catch(() => ({ ok: false as const, error: "Connection lost. Your round could not be saved." }));
     if (res.ok) {
       setDone(res);
       setRun(res.state);
@@ -108,7 +108,7 @@ export function BlitzGame({ bests, serverState, save }: { bests: Bests; serverSt
 
   const begin = React.useCallback(async () => {
     setError(null);
-    const res = await startBlitz();
+    const res = await startBlitz().catch(() => ({ ok: false as const, error: "Connection lost. Try again." }));
     if (!res.ok) {
       setError(res.error);
       setPhase("ready");
@@ -195,6 +195,11 @@ export function BlitzGame({ bests, serverState, save }: { bests: Bests; serverSt
           },
           res.right ? HOLD_RIGHT_MS : HOLD_WRONG_MS,
         );
+      }).catch(() => {
+        // Lost connection: free the buttons so the same question can be tried again.
+        if (mine !== gen.current) return;
+        setBusy(false);
+        setError("Connection lost. Tap your answer again.");
       });
       inflight.current = p;
     },
