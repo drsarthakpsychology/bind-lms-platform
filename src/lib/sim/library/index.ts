@@ -11,7 +11,8 @@ import { BATCH_08 } from "./batch-08-anxiety-trauma";
 import { BATCH_09 } from "./batch-09-neuro";
 import { BATCH_10 } from "./batch-10-later-life";
 import { BATCH_11 } from "./batch-11-personality";
+import { BATCH_12 } from "./batch-12-child";
 
-export const SIM_LIBRARY_AUTHORED: LibSim[] = [...BATCH_01, ...BATCH_02, ...BATCH_03, ...BATCH_04, ...BATCH_05, ...BATCH_06, ...BATCH_07, ...BATCH_08, ...BATCH_09, ...BATCH_10, ...BATCH_11];
+export const SIM_LIBRARY_AUTHORED: LibSim[] = [...BATCH_01, ...BATCH_02, ...BATCH_03, ...BATCH_04, ...BATCH_05, ...BATCH_06, ...BATCH_07, ...BATCH_08, ...BATCH_09, ...BATCH_10, ...BATCH_11, ...BATCH_12];
 
 export const SIM_LIBRARY: LibraryCase[] = SIM_LIBRARY_AUTHORED.map(buildLibraryCase);
