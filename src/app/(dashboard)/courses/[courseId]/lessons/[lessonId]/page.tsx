@@ -226,7 +226,7 @@ export default async function LessonPage({
           <span className="truncate">{course?.title ?? "Course"}</span>
         </Link>
         {pickerLessons.length > 1 && (
-          <div className="lg:hidden">
+          <div className="shrink-0 lg:hidden">
             <LessonPicker
               courseId={courseId}
               courseTitle={course?.title ?? "Course"}
