@@ -34,10 +34,10 @@ export function SiteFooter() {
             aria-label="Footer"
           >
             <Link
-              href="#about"
+              href="/"
               className="transition-[color,translate] duration-base ease-snappy hover:-translate-x-0.5 hover:text-foreground"
             >
-              About
+              Homepage
             </Link>
             <Link
               href="/login"
@@ -49,7 +49,7 @@ export function SiteFooter() {
               href="/waitlist"
               className="transition-[color,translate] duration-base ease-snappy hover:-translate-x-0.5 hover:text-foreground"
             >
-              Join waitlist
+              Request an invitation
             </Link>
           </nav>
           <p className="text-caption text-muted-foreground">
