@@ -268,9 +268,16 @@ export function addStudySeconds(s: LearnState, module: string, seconds: number):
 /** Record a module test. XP is paid only for improvement on the best score. */
 export function recordTest(s: LearnState, module: string, right: number, total: number, today: string): LearnState {
   const prev = s.study.tests[module];
-  const best = Math.max(right, prev?.best ?? 0);
-  const gained = Math.max(0, right - (prev?.best ?? 0)) * STUDY_XP.testPerRight;
-  const next = { ...s, study: { ...s.study, tests: { ...s.study.tests, [module]: { best, total, day: today, tries: (prev?.tries ?? 0) + 1 } } } };
+  const r = Math.max(0, Math.min(Math.floor(right), Math.floor(total)));
+  // Best and total always travel together: when a test changes size, the
+  // better percentage wins, so a best of 18 can never sit over a total of 15
+  // (which would read as more than 100% and pass the certificate rule).
+  const keepOld = prev && prev.total > 0 && prev.best * total >= r * prev.total;
+  const best = keepOld ? prev.best : r;
+  const outOf = keepOld ? prev.total : total;
+  const prevHere = !prev ? 0 : prev.total === total ? prev.best : Math.floor((prev.best * total) / Math.max(1, prev.total));
+  const gained = Math.max(0, r - prevHere) * STUDY_XP.testPerRight;
+  const next = { ...s, study: { ...s.study, tests: { ...s.study.tests, [module]: { best, total: outOf, day: today, tries: (prev?.tries ?? 0) + 1 } } } };
   return gainXp(next, gained, today);
 }
 

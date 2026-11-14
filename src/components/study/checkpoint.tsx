@@ -7,7 +7,8 @@ import { istToday, recordTest, type LearnState } from "@/lib/learn/engine";
 import { getLearnState, initLearnStore, setLearnState, useLearnState } from "@/lib/learn/store";
 import type { Card, Mcq } from "@/lib/study/types";
 import { CardDeck, TestRunner, mcqKey } from "./interactive";
-import { orderFor, useHistoryPrefetch } from "@/lib/history/client";
+import { historyFor, useHistoryPrefetch } from "@/lib/history/client";
+import { checkpointKnown, checkpointRound } from "@/lib/study/checkpoints";
 import { backLinkClass } from "@/components/design-system/back-link";
 import { EndReaction, ScoreDial } from "@/components/reactions/graphics";
 
@@ -43,14 +44,32 @@ export function CheckpointView({
   const st = useLearnState(serverState ?? ({} as LearnState));
   const prev = st.study?.tests?.[cpKey];
   const [stage, setStage] = React.useState<"intro" | "mcq" | "cards" | "end">("intro");
-  // Answer history: each start opens on questions not yet seen, then missed ones (src/lib/history).
+  // Answer history (src/lib/history): a sitting asks questions not yet seen,
+  // then missed ones, and never one already answered right.
   useHistoryPrefetch("study-check");
+  const idOf = React.useCallback((m: Mcq) => mcqKey(cpKey, m), [cpKey]);
+  const round = () => checkpointRound(mcq, idOf, historyFor("study-check"), Date.now(), Math.random);
   const [ordered, setOrdered] = React.useState(mcq);
+  const [score, setScore] = React.useState<{ right: number; total: number } | null>(null);
+  // Every case question is already right: straight to the cards, the score stays.
+  const [allKnown, setAllKnown] = React.useState(false);
   const startMcq = () => {
-    setOrdered(orderFor("study-check", mcq, (m) => mcqKey(cpKey, m)));
+    const next = round();
+    if (!next.length) {
+      const known = checkpointKnown(mcq, idOf, historyFor("study-check"));
+      const s = getLearnState();
+      // Answered right on another visit but never saved here: save it once.
+      if (s && !s.study.tests[cpKey]) setLearnState(recordTest(s, cpKey, known.right, known.total, istToday()));
+      setAllKnown(true);
+      setScore(known);
+      setStage(recall.length ? "cards" : "end");
+      return;
+    }
+    setOrdered(next);
     setStage("mcq");
   };
-  const [score, setScore] = React.useState<{ right: number; total: number } | null>(null);
+  // The saved score is how many of ALL this checkpoint's questions are right now.
+  const scoreOf = () => checkpointKnown(mcq, idOf, historyFor("study-check"));
 
   const startCards = () => (recall.length ? setStage("cards") : setStage("end"));
   const deckDone = (knew: number, total: number) => {
@@ -105,6 +124,8 @@ export function CheckpointView({
           historyTool="study-check"
           label={`Checkpoint ${n}`}
           autoStart
+          retry={round}
+          scoreOf={scoreOf}
           onDone={(right, total) => setScore({ right, total })}
         />
       ) : null}
@@ -114,6 +135,7 @@ export function CheckpointView({
         </button>
       ) : null}
 
+      {stage === "cards" && allKnown ? <p className="text-sm font-semibold">Every case question here is right. Say these out loud.</p> : null}
       {stage === "cards" ? <CardDeck items={recall} kind="recall" title="Say it out loud" autoStart onDone={deckDone} /> : null}
 
       {stage === "end" ? (

@@ -7,6 +7,7 @@ import { ArrowLeft, ArrowRight, Check, ChevronDown, ListOrdered } from "lucide-r
 import type { Card, Level, Mcq } from "@/lib/study/types";
 import { ViewToggle } from "@/components/learn/view-toggle";
 import { CardDeck, TestRunner } from "./interactive";
+import { openedCheckpoint, type CheckLink } from "@/lib/study/checkpoints";
 import { addStudySeconds, emptyState, finishSection, istToday, studyKey, visitSection, type LearnState } from "@/lib/learn/engine";
 import { getLearnState, initLearnStore, setLearnState, useLearnState } from "@/lib/learn/store";
 import { cn } from "@/lib/utils";
@@ -172,7 +173,7 @@ export function SectionReader({
   viva: Card[];
   mcq: Mcq[];
   /** This module's checkpoints, to open the one that becomes ready after this section. */
-  checks?: { key: string; href: string; sectionIds: string[]; later: string[] }[];
+  checks?: CheckLink[];
   /** Student id: bookmarks and notes are kept per student on this device. */
   owner?: string;
 }) {
@@ -227,11 +228,9 @@ export function SectionReader({
     const s = getLearnState();
     const after = s ? finishSection(s, moduleId, section.id, istToday()) : null;
     if (after) setLearnState(after);
-    // A checkpoint that this section has just opened comes first.
-    const done = (id: string) => Boolean(after?.study.done[studyKey(moduleId, id)]);
-    const ready = after
-      ? checks.find((c) => !after.study.tests[c.key] && c.sectionIds.every(done) && (!c.later.length || c.later.some(done)))
-      : undefined;
+    // A checkpoint that finishing this section has just opened comes first
+    // (one already open before, taken or skipped, is not pushed again).
+    const ready = s && after ? openedCheckpoint(checks, moduleId, s.study, after.study) : null;
     router.push(ready ? `${ready.href}?then=${encodeURIComponent(next.href)}` : next.href);
   }
 
