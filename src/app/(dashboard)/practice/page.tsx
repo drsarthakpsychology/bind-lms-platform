@@ -6,6 +6,7 @@ import { loadMyBlocks } from "@/lib/access/blocks";
 import { blockedBy } from "@/lib/access/features";
 import { PracticeKeyboardNav } from "@/components/practice/keyboard-nav";
 import { MAIN_TOOLS, MORE_TOOLS, PracticeHubView, THINK_TOOLS, shownTools } from "@/components/practice/practice-hub";
+import { hubNewCases } from "@/lib/cases/hubs";
 
 /**
  * /practice: clinical skills on real cases (plan section 8). The four main
@@ -29,7 +30,7 @@ export default async function PracticeHubPage() {
   const open = [...main, ...think, ...more].filter((t) => !t.locked);
 
   // One quiet link back to the last practice tool used.
-  const resume = user ? await lastPracticePlace(user.id, open.map((t) => ({ href: t.href, title: t.title }))) : null;
+  const [resume, newCases] = await Promise.all([user ? lastPracticePlace(user.id, open.map((t) => ({ href: t.href, title: t.title }))) : null, hubNewCases(user?.id, "practice")]);
 
   return (
     <>
@@ -38,6 +39,7 @@ export default async function PracticeHubPage() {
         think={think}
         more={more}
         resume={resume}
+        newCases={newCases}
         record={{ passport: flags.skills_passport === "unlocked", record: flags.supervision === "unlocked" || flags.checkin === "unlocked" }}
       />
       <PracticeKeyboardNav links={open.map((t) => ({ href: t.href, title: t.title }))} />

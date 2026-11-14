@@ -1,4 +1,5 @@
 "use client";
+import { RecycleNote } from "@/components/cases/case-mark";
 
 import * as React from "react";
 import { startHowTo } from "@/components/help/how-to";
@@ -33,6 +34,8 @@ type Play = {
   level: Level;
   seen: string[];
   excerpt: string;
+  /** This excerpt was done before (every excerpt is done, so they come round again). */
+  again?: boolean;
   idx: number;
   tags: Tag[];
   results: TagResult[];
@@ -64,10 +67,11 @@ export function MseLab({ serverState, save, board, submit }: { serverState: Lear
     const seed = `${Date.now()}`;
     const rng = makeRng(hashString(seed));
     // Answer history: an excerpt not seen yet first, then a missed one (src/lib/history).
-    const e = pickExcerpt(level, new Set(), rng, historyFor("mse-lab"))!;
+    const h = historyFor("mse-lab");
+    const e = pickExcerpt(level, new Set(), rng, h)!;
     setBestEver(readLocal(BEST_KEY, 0));
     setDone(null);
-    setPlay({ seed, level, seen: [e.id], excerpt: e.id, idx: 0, tags: [], results: [], pick: null, revealed: false, streak: 0, best: 0, points: 0, scores: [], tagsDone: 0, tagsScore: 0, gained: 0, ruled: {} });
+    setPlay({ seed, level, seen: [e.id], excerpt: e.id, again: h.has(e.id), idx: 0, tags: [], results: [], pick: null, revealed: false, streak: 0, best: 0, points: 0, scores: [], tagsDone: 0, tagsScore: 0, gained: 0, ruled: {} });
   }
 
   if (done) return <Summary p={done} bestEver={bestEver ?? 0} board={board} onAgain={() => start(done.level)} />;
@@ -166,12 +170,13 @@ function Round({ play, setPlay, onExcerptDone, onFinish }: { play: Play; setPlay
     }
     const level = nextLevel(play.level, scores);
     const rng = makeRng(hashString(`${play.seed}:${play.seen.length}`));
-    const nx = pickExcerpt(level, new Set(play.seen), rng, historyFor("mse-lab"));
+    const h = historyFor("mse-lab");
+    const nx = pickExcerpt(level, new Set(play.seen), rng, h);
     if (!nx) {
       onFinish(done);
       return;
     }
-    setPlay({ ...done, level, seen: [...play.seen, nx.id], excerpt: nx.id, idx: 0, tags: [], results: [], pick: null, revealed: false, ruled: {} });
+    setPlay({ ...done, level, seen: [...play.seen, nx.id], excerpt: nx.id, again: h.has(nx.id), idx: 0, tags: [], results: [], pick: null, revealed: false, ruled: {} });
   }
 
   const keys: Record<string, () => void> = {};
@@ -201,6 +206,7 @@ function Round({ play, setPlay, onExcerptDone, onFinish }: { play: Play; setPlay
         </span>
       </div>
 
+      {play.again && play.idx === 0 && !play.revealed ? <RecycleNote /> : null}
       <Panel className={cn("space-y-3", m.rise)} key={e.id}>
         <div>
           <p className="text-body-strong">{e.who}</p>

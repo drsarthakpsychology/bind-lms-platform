@@ -1,6 +1,7 @@
 "use server";
 
-import { record } from "@/lib/history/server";
+import { record, recordHistory } from "@/lib/history/server";
+import { saveProgress } from "@/lib/cases/progress-server";
 import { z } from "zod";
 import { answer, escapeXp, isRight, raceBoard, startEscape, teamTime, type EscState, type RaceRow } from "@/lib/games-sims/escape/engine";
 import { roomById } from "@/lib/games-sims/escape/rooms";
@@ -116,6 +117,8 @@ export async function answerEscape(input: { teamId: string; stage: number; answe
         t.members.flatMap((m) => [
           saveResult(m.user_id, { game: "escape", item: r.id, score: n / (n + res.state.wrong), right: n, total: n + res.state.wrong, meta: { mode: "team", team: t.team.id, ms } }),
           payXp(m.user_id, "escape", escapeXp(ms, res.state.wrong), `team:${t.team.id}`),
+          // The room counts as done for every member (answer history).
+          recordHistory(m.user_id, "escape", [{ item: r.id, correct: n / (n + res.state.wrong) >= 0.6 }]),
         ]),
       );
     }
@@ -153,6 +156,9 @@ export async function finishEscapePractice(input: { room: string; run: string; a
   const [, xp] = await Promise.all([
     saveResult(user.id, { game: "escape", item: r.id, score: n / (n + parsed.data.wrong), right: n, total: n + parsed.data.wrong, meta: { mode: "practice", ms } }),
     payXp(user.id, "escape", escapeXp(ms, parsed.data.wrong), `practice:${r.id}:${parsed.data.run}`),
+    // The room is done (answer history), and its saved door goes.
+    recordHistory(user.id, "escape", [{ item: r.id, correct: n / (n + parsed.data.wrong) >= 0.6 }]),
+    saveProgress(user.id, "escape", r.id, null),
   ]);
   return { ok: true, xp };
 }

@@ -4,6 +4,8 @@ import { QuizCheck } from "@/components/practice/quiz-check";
 import { QUIZ_BANK } from "@/lib/quiz/quiz-bank";
 import { requireFeature } from "@/lib/flags";
 import { BackPill } from "@/components/study/back";
+import { SEED_OSCE_STATIONS } from "@/lib/practice/osce";
+import { caseContext } from "@/lib/cases/server";
 
 export const dynamic = "force-dynamic";
 
@@ -14,13 +16,14 @@ export const dynamic = "force-dynamic";
  */
 export default async function OscePage() {
   await requireFeature("osce");
+  const cases = await caseContext("osce", SEED_OSCE_STATIONS.map((s) => s.id), "osce");
   return (
     <div className="mx-auto max-w-3xl">
       <BackPill className="mb-4" />
       <ToolHeader title="OSCE stations" tip={{ id: "osce", steps: ["One task against the clock, like the real exam.", "Voice works best."] }} />
 
       <div className="mt-6">
-        <OsceStationView />
+        <OsceStationView cases={cases} />
       </div>
 
 <details className="group mt-8 rounded-md border-2 border-border bg-card">

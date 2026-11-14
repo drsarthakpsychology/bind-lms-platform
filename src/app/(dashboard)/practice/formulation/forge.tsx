@@ -1,6 +1,9 @@
 "use client";
 
 import { noteAnswer } from "@/lib/history/client";
+import Link from "next/link";
+import type { ProgressSnapshot } from "@/lib/cases/progress";
+import { clearCaseProgress, saveCaseProgress, useCaseProgress } from "@/lib/cases/progress-client";
 import * as React from "react";
 import { haptic } from "@/lib/haptics";
 import { diffNarratives, FIVE_P, scoreSort, SEED_FORMULATION, type FiveP, type FormulationFactor } from "@/lib/practice/formulation";
@@ -25,8 +28,11 @@ const FORGE_BASE = "formulation:in-flight";
  */
 export type ForgeSeed = { id: string; title: string; prompt: string; factors: FormulationFactor[]; modelNarrative: string };
 
-export function FormulationForge({ seed = SEED_FORMULATION }: { seed?: ForgeSeed }) {
+type Snapshot = { attempt?: Array<{ factorId: string; bucket: FiveP | null }>; stage?: number; narrative?: string };
+
+export function FormulationForge({ seed = SEED_FORMULATION, progress: server, nextHref = null }: { seed?: ForgeSeed; progress?: ProgressSnapshot; nextHref?: string | null }) {
   const FORGE_KEY = `${FORGE_BASE}:${seed.id}`;
+  const progress = useCaseProgress("formulation", server);
   const [attempt, setAttempt] = React.useState<Array<{ factorId: string; bucket: FiveP | null }>>(
     seed.factors.map((f) => ({ factorId: f.id, bucket: null })),
   );
@@ -36,47 +42,47 @@ export function FormulationForge({ seed = SEED_FORMULATION }: { seed?: ForgeSeed
   const [diff, setDiff] = React.useState<{ missing: string[]; present: string[] } | null>(null);
   // The attempt window starts when the forge opens.
   const [startedAt] = React.useState(() => new Date());
+  const restored = React.useRef(false);
 
-  // Restore the in-flight snapshot after first paint (deferred past hydration).
+  // Restore the saved step after first paint (deferred past hydration): the
+  // saved progress (server and this browser, src/lib/cases), else the old
+  // browser-only snapshot.
   React.useEffect(() => {
+    if (restored.current) return;
+    restored.current = true;
+    const saved = progress.get<Snapshot>(seed.id);
     const id = window.setTimeout(() => {
       try {
-        const raw = window.localStorage.getItem(FORGE_KEY);
-        if (!raw) return;
-        const s = JSON.parse(raw) as {
-          attempt?: Array<{ factorId: string; bucket: FiveP | null }>;
-          stage?: number;
-          narrative?: string;
-        };
+        let s: Snapshot | null = saved;
+        if (!s) {
+          const raw = window.localStorage.getItem(FORGE_KEY);
+          s = raw ? (JSON.parse(raw) as Snapshot) : null;
+        }
+        if (!s) return;
         // Only restore if the saved sort matches this seed's factor set.
         if (Array.isArray(s.attempt) && s.attempt.length === seed.factors.length) {
           setAttempt(s.attempt);
         }
-        if (typeof s.stage === "number" && s.stage >= 1 && s.stage <= 4) setStage(s.stage as 1 | 2 | 3 | 4);
+        // The compare step needs its diff, so a saved compare reopens on the narrative.
+        if (typeof s.stage === "number" && s.stage >= 1 && s.stage <= 2) setStage(s.stage as 1 | 2);
         if (typeof s.narrative === "string") setNarrative(s.narrative);
       } catch {
         /* ignore */
       }
     }, 0);
     return () => window.clearTimeout(id);
-    // eslint-disable-next-line react-hooks/exhaustive-deps -- seed is a stable default
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- once per case
   }, []);
 
-  // Persist on every change.
+  // Save the step once there is something to keep (a card placed or words written).
+  const touched = attempt.some((a) => a.bucket !== null) || narrative.trim().length > 0;
   React.useEffect(() => {
-    try {
-      window.localStorage.setItem(
-        FORGE_KEY,
-        JSON.stringify({ attempt, stage, narrative }),
-      );
-    } catch {
-      /* ignore */
-    }
-  }, [attempt, stage, narrative, FORGE_KEY]);
+    if (!touched || stage > 2) return;
+    saveCaseProgress("formulation", seed.id, { attempt, stage, narrative } satisfies Snapshot);
+  }, [attempt, stage, narrative, touched, seed.id]);
 
   /** Persist the completed scaffolded pass (a check, not a test, silent on failure). */
-  async function persistSeedAttempt() {
-    if (!diff) return;
+  async function persistSeedAttempt(diff: { missing: string[]; present: string[] }) {
     const completedAt = new Date();
     noteAnswer("formulation", seed.id, score >= 0.6);
     const payload = buildFormulationAttemptPayload(
@@ -96,7 +102,8 @@ export function FormulationForge({ seed = SEED_FORMULATION }: { seed?: ForgeSeed
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),
     }).catch(() => {}); // silent; a check, not a test
-    // The pass is submitted: clear the snapshot so a later visit starts fresh.
+    // The pass is submitted: clear the saved step so a later visit starts fresh.
+    clearCaseProgress("formulation", seed.id);
     try {
       window.localStorage.removeItem(FORGE_KEY);
     } catch {
@@ -222,8 +229,11 @@ export function FormulationForge({ seed = SEED_FORMULATION }: { seed?: ForgeSeed
           <button
             type="button"
             onClick={() => {
-              setDiff(diffNarratives(narrative, seed.modelNarrative));
+              const d = diffNarratives(narrative, seed.modelNarrative);
+              setDiff(d);
               setStage(3);
+              // The case is done once it is compared with the answer.
+              void persistSeedAttempt(d);
               haptic("tap");
               // The finish sticker: happy or sad by the sort score.
               showEndReaction(moodForScore(Math.round(score * 100), 100));
@@ -253,13 +263,23 @@ export function FormulationForge({ seed = SEED_FORMULATION }: { seed?: ForgeSeed
           <p className="text-small text-muted-foreground">
             This is a diff, not a grade. The structure is the skill.
           </p>
-          <button
-            type="button"
-            onClick={() => { void persistSeedAttempt(); setStage(4); haptic("tap"); }}
-            className="mt-1 rounded-md border-2 border-border bg-primary px-4 py-2 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px"
-          >
-            Next: formulate from your own session →
-          </button>
+          <div className="mt-1 flex flex-wrap gap-2">
+            {nextHref ? (
+              <Link
+                href={nextHref}
+                className="inline-flex min-h-11 items-center rounded-md border-2 border-border bg-primary px-4 py-2 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px"
+              >
+                Next case →
+              </Link>
+            ) : null}
+            <button
+              type="button"
+              onClick={() => { setStage(4); haptic("tap"); }}
+              className={`min-h-11 rounded-md border-2 border-border px-4 py-2 text-small font-semibold transition-transform active:translate-y-px ${nextHref ? "bg-card text-foreground" : "bg-primary text-primary-foreground hard-shadow-sm"}`}
+            >
+              Formulate from your own session →
+            </button>
+          </div>
         </div>
       ) : null}
 

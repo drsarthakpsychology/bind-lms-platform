@@ -8,6 +8,9 @@
  * "no", the look at the family member, the past tense used about oneself.
  */
 
+/** The answer-history id of a small thing (kept with the MSE trainer's history). */
+export const smallItem = (id: string) => `small:${id}`;
+
 export interface SmallThingItem {
   id: string;
   /** The observed moment. */

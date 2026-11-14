@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
+import { NewCasesLine } from "@/components/cases/case-mark";
 import { ArrowLeft, ArrowRight, DoorOpen, FlaskConical, Hospital, Layers, LayoutGrid, Pill, ScanEye, Star, Swords, Timer, Trophy, type LucideIcon } from "lucide-react";
 import { BADGES, DAILY_GOALS, emptyState, type LearnState } from "@/lib/learn/engine";
 import { initLearnStore, setLearnState, useLearnState } from "@/lib/learn/store";
@@ -96,10 +97,13 @@ function GameGroup({ id, title, games }: { id: string; title: string; games: Gam
 }
 
 /** /games: the real games, solo and with others. Nothing else competes. */
-export function LearnHome({ showLab = false }: { showLab?: boolean }) {
+export function LearnHome({ showLab = false, newCases = null }: { showLab?: boolean; newCases?: string | null }) {
   return (
     <div className="mx-auto max-w-5xl space-y-8">
-      <PageHeader title="Games" className="pb-0" />
+      <div className="space-y-2">
+        <PageHeader title="Games" className="pb-0" />
+        <NewCasesLine label={newCases} />
+      </div>
 
       <GameGroup id="solo" title="Solo" games={SOLO} />
       <GameGroup id="with-others" title="With others" games={WITH_OTHERS} />

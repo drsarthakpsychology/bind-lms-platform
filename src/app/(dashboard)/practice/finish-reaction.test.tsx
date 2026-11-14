@@ -26,7 +26,10 @@ vi.mock("@/lib/history/client", () => ({
   orderFor: <T,>(_t: string, pool: readonly T[]) => [...pool],
   noteAnswer: vi.fn(),
   useHistoryPrefetch: () => {},
+  useToolHistory: () => EMPTY_HISTORY,
+  historyFor: () => EMPTY_HISTORY,
 }));
+const EMPTY_HISTORY = new Map();
 vi.mock("@/lib/practice/competency-client", async (orig) => ({ ...(await orig<object>()), recordCompetencyEvent: vi.fn(async () => {}) }));
 
 import { TwoMinuteClinic } from "./two-minute-clinic/clinic";

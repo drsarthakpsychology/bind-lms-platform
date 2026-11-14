@@ -4,8 +4,8 @@ import { cn } from "@/lib/utils";
 import { RECYCLE_LINE, type CaseMark } from "@/lib/cases/fresh";
 
 const LOOK: Record<CaseMark, { label: string; cls: string; Icon: typeof Check | null }> = {
-  started: { label: "Half done", cls: "bg-status-info-bg text-foreground", Icon: RotateCcw },
-  week: { label: "New this week", cls: "bg-primary text-primary-foreground", Icon: Sparkles },
+  started: { label: "Half done", cls: "bg-status-info-bg text-status-info-fg", Icon: RotateCcw },
+  week: { label: "New this week", cls: "bg-status-success-bg text-status-success-fg", Icon: Sparkles },
   new: { label: "New", cls: "bg-card text-foreground", Icon: null },
   done: { label: "Done", cls: "border-foreground/40 bg-muted text-muted-foreground", Icon: Check },
 };
@@ -34,7 +34,7 @@ export function RecycleNote({ className }: { className?: string }) {
 export function NewCasesLine({ label, className }: { label: string | null; className?: string }) {
   if (!label) return null;
   return (
-    <p className={cn("inline-flex items-center gap-1.5 rounded-full border-2 border-foreground bg-primary px-3 py-1 text-sm font-semibold text-primary-foreground", className)}>
+    <p className={cn("inline-flex items-center gap-1.5 rounded-full border-2 border-foreground bg-status-success-bg px-3 py-1 text-sm font-semibold text-status-success-fg", className)}>
       <Sparkles className="size-4" aria-hidden /> {label}
     </p>
   );

@@ -33,6 +33,11 @@ export async function caseContext(tool: HistoryTool, ids: readonly string[], pro
   return { student: id ? ownerTag(id) : "", history: toRows(book.map), progress, now: Date.now() };
 }
 
+/** The request's clock, for server pages (kept out of render bodies). */
+export function requestNow(): number {
+  return Date.now();
+}
+
 /** Many tools' rows in one read. */
 async function loadMany(userId: string, tools: readonly HistoryTool[]): Promise<Map<string, Map<string, HistoryRow>>> {
   const out = new Map<string, Map<string, HistoryRow>>(tools.map((t) => [t, new Map()]));

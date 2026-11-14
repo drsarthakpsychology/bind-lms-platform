@@ -38,6 +38,11 @@ import { HintBar, useHintStatus } from "@/components/hints/hint-chip";
 import { askHint } from "@/lib/hints/actions";
 import { useReaction } from "@/components/reactions/use-reaction";
 import { EndReaction } from "@/components/reactions/graphics";
+import { arrangeCases, nextCase, type CaseMark } from "@/lib/cases/fresh";
+import type { CaseContext } from "@/lib/cases/server";
+import { clearCaseProgress, saveCaseProgress, useCaseProgress } from "@/lib/cases/progress-client";
+import { noteAnswer, useToolHistory } from "@/lib/history/client";
+import { CaseMarkTag, RecycleNote } from "@/components/cases/case-mark";
 
 type Actions = {
   finishWardSolo: (x: { campaign: string; choices: string[]; run: string }) => Promise<{ ok: boolean; score: number; xp: number }>;
@@ -56,9 +61,41 @@ const SOLO_KEY = "vibha-ward-solo";
 type Solo = { campaign: string; choices: string[]; run: string };
 type Mode = { kind: "pick" } | { kind: "solo"; solo: Solo } | { kind: "team"; teamId: string };
 
+/** Campaigns in fresh-case order (src/lib/cases/fresh.ts): half done, new this week, new, done last. */
+function useCampaigns(cases: CaseContext) {
+  const history = useToolHistory("ward", cases.history);
+  const progress = useCaseProgress("ward", cases.progress);
+  const legacy = useSavedSolo();
+  const started = React.useMemo(() => {
+    const set = new Set([...progress.started].filter((id) => {
+      const s = progress.get<Solo>(id);
+      const c = campaignById(id);
+      return !!c && !!s && Array.isArray(s.choices) && s.choices.length > 0 && !replay(c, s.choices).done;
+    }));
+    if (legacy && !progress.rows.has(legacy.campaign)) set.add(legacy.campaign);
+    return set;
+  }, [progress, legacy]);
+  const opts = { history, now: cases.now, student: cases.student, started, level: (c: Campaign) => c.tags?.level ?? 0 };
+  const arranged = arrangeCases(CAMPAIGNS, (c) => c.id, opts);
+  /** The saved run for a half-done campaign. */
+  const savedFor = (id: string): Solo | null => {
+    const s = progress.get<Solo>(id);
+    if (s && Array.isArray(s.choices) && s.choices.length) return { campaign: id, choices: s.choices, run: s.run };
+    return legacy?.campaign === id ? legacy : null;
+  };
+  const next = (current?: string) => nextCase(CAMPAIGNS, (c) => c.id, { ...opts, current })?.item.id ?? null;
+  return { arranged, savedFor, next };
+}
+
 /* ------------------------------------------------------------------ root */
-export function WardWeek({ teamsOn, openTeam, teams, actions }: { teamsOn: boolean; openTeam: string | null; teams: TeamListItem[]; actions: Actions }) {
+export function WardWeek({ cases, teamsOn, openTeam, teams, actions }: { cases: CaseContext; teamsOn: boolean; openTeam: string | null; teams: TeamListItem[]; actions: Actions }) {
   const [mode, setMode] = React.useState<Mode>(openTeam ? { kind: "team", teamId: openTeam } : { kind: "pick" });
+  const camps = useCampaigns(cases);
+  /** Open a campaign: carry on where it was left, else a fresh run. */
+  const open = (id: string) => {
+    startHowTo("ward-week");
+    setMode({ kind: "solo", solo: camps.savedFor(id) ?? newSolo(id) });
+  };
 
   function goTeam(teamId: string) {
     startHowTo("ward-week");
@@ -78,20 +115,17 @@ export function WardWeek({ teamsOn, openTeam, teams, actions }: { teamsOn: boole
     setMode({ kind: "pick" });
   }
 
-  if (mode.kind === "solo") return <SoloPlay solo={mode.solo} finish={actions.finishWardSolo} onExit={goPick} onAgain={(c) => setMode({ kind: "solo", solo: newSolo(c) })} />;
+  if (mode.kind === "solo") {
+    const nextId = camps.next(mode.solo.campaign);
+    return <SoloPlay key={mode.solo.run} solo={mode.solo} finish={actions.finishWardSolo} onExit={goPick} onAgain={(c) => setMode({ kind: "solo", solo: newSolo(c) })} onNext={nextId && nextId !== mode.solo.campaign ? () => open(nextId) : undefined} />;
+  }
   if (mode.kind === "team") return <TeamPlay teamId={mode.teamId} actions={actions} onExit={goPick} />;
   return (
     <Pick
       teamsOn={teamsOn}
       teams={teams}
-      onSolo={(c) => {
-        startHowTo("ward-week");
-        setMode({ kind: "solo", solo: newSolo(c) });
-      }}
-      onResume={(s) => {
-        startHowTo("ward-week");
-        setMode({ kind: "solo", solo: s });
-      }}
+      arranged={camps.arranged}
+      onSolo={open}
       onCreate={async (c) => {
         const r = await actions.createWardTeam(c);
         if (r.ok) goTeam(r.teamId);
@@ -109,12 +143,10 @@ export function WardWeek({ teamsOn, openTeam, teams, actions }: { teamsOn: boole
 
 function newSolo(campaign: string): Solo {
   const run = `${Date.now().toString(36)}${hashString(`${campaign}:${Date.now()}:${Math.random()}`).toString(36)}`;
-  const s = { campaign, choices: [], run };
-  writeLocal(SOLO_KEY, s);
-  return s;
+  return { campaign, choices: [], run };
 }
 
-/** A solo campaign left half-way (read from this browser without an effect). */
+/** A solo campaign left half-way under the old single-slot key (before saved progress per patient). */
 function useSavedSolo(): Solo | null {
   const raw = React.useSyncExternalStore(
     () => () => undefined,
@@ -144,55 +176,59 @@ function useSavedSolo(): Solo | null {
 function Pick({
   teamsOn,
   teams,
+  arranged,
   onSolo,
-  onResume,
   onCreate,
   onJoin,
   onOpenTeam,
 }: {
   teamsOn: boolean;
   teams: TeamListItem[];
+  arranged: { list: { item: Campaign; id: string; mark: CaseMark }[]; recycled: boolean };
   onSolo: (c: string) => void;
-  onResume: (s: Solo) => void;
   onCreate: (c: string) => Promise<string | null>;
   onJoin: (code: string) => Promise<string | null>;
   onOpenTeam: (id: string) => void;
 }) {
-  const saved = useSavedSolo();
   const [err, setErr] = React.useState<string | null>(null);
   const [busy, setBusy] = React.useState<string | null>(null);
-  useHotkeys(Object.fromEntries(CAMPAIGNS.slice(0, 9).map((c, k) => [String(k + 1), () => onSolo(c.id)])));
+  const list = arranged.list;
+  useHotkeys(Object.fromEntries(list.slice(0, 9).map((x, k) => [String(k + 1), () => onSolo(x.id)])));
   const live = teams.filter((t) => t.status !== "done");
+  const resume = list.filter((x) => x.mark === "started");
   return (
     <div className={cn("mx-auto max-w-3xl space-y-6", m.rise)}>
       <h1 className="text-h2">Pick a patient</h1>
 
-      {saved ? (
-        <Panel className="flex flex-wrap items-center gap-3 bg-status-info-bg">
+      {resume.map((x) => (
+        <Panel key={x.id} className="flex flex-wrap items-center gap-3 bg-status-info-bg">
           <BookOpen className="size-5" aria-hidden />
           <p className="min-w-0 flex-1 text-body">
-            You left <span className="font-semibold">{campaignById(saved.campaign)!.title}</span> half-way.
+            You left <span className="font-semibold">{x.item.title}</span> half-way.
           </p>
-          <Btn variant="ink" onClick={() => onResume(saved)}>
+          <Btn variant="ink" onClick={() => onSolo(x.id)}>
             <Play aria-hidden /> Carry on
           </Btn>
         </Panel>
-      ) : null}
+      ))}
+      {arranged.recycled ? <RecycleNote /> : null}
 
       <ul className={cn("grid gap-4 md:grid-cols-3", m.stagger)}>
-        {CAMPAIGNS.map((c, i) => (
-          <li key={c.id} className={cn("flex flex-col rounded-xl border-2 border-foreground bg-card p-4 hard-shadow-sm", m.rise)} style={{ "--i": i } as React.CSSProperties}>
-            <p className="flex items-center gap-1.5 text-caption text-muted-foreground">
-              <MapPin className="size-3.5" aria-hidden />
-              {c.place}
-            </p>
+        {list.map(({ item: c, mark }, i) => (
+          <li key={c.id} className={cn("flex flex-col rounded-xl border-2 border-foreground bg-card p-4 hard-shadow-sm", mark === "done" && !arranged.recycled && "border-foreground/40 shadow-none", m.rise)} style={{ "--i": i } as React.CSSProperties}>
+            <div className="flex items-start justify-between gap-2">
+              <p className="flex min-w-0 items-center gap-1.5 text-caption text-muted-foreground">
+                <MapPin className="size-3.5 shrink-0" aria-hidden />
+                <span className="truncate">{c.place}</span>
+              </p>
+              <CaseMarkTag mark={mark} />
+            </div>
             <h2 className="mt-1 text-h3">{c.title}</h2>
             <p className="text-small font-semibold">{c.patient}</p>
             <p className="mt-2 flex-1 text-small">{c.blurb}</p>
-            <p className="mt-2 text-caption text-muted-foreground">{c.chapters.length} sessions</p>
             <div className="mt-3 grid gap-2">
-              <Btn variant="primary" onClick={() => onSolo(c.id)}>
-                <Play aria-hidden /> Play solo {i < 9 ? <Kbd>{i + 1}</Kbd> : null}
+              <Btn variant={mark === "done" ? "outline" : "primary"} onClick={() => onSolo(c.id)}>
+                {mark === "done" ? <RotateCcw aria-hidden /> : <Play aria-hidden />} {mark === "started" ? "Carry on" : mark === "done" ? "Play again" : "Play solo"} {i < 9 ? <Kbd>{i + 1}</Kbd> : null}
               </Btn>
               {teamsOn ? (
                 <Btn
@@ -253,7 +289,7 @@ function Pick({
 /* ------------------------------------------------------------------ solo */
 type Reveal = { decision: Decision; option: WardOption; before: Vars; flagsBefore: string[]; after: Vars; chapterBefore: number };
 
-function SoloPlay({ solo, finish, onExit, onAgain }: { solo: Solo; finish: Actions["finishWardSolo"]; onExit: () => void; onAgain: (c: string) => void }) {
+function SoloPlay({ solo, finish, onExit, onAgain, onNext }: { solo: Solo; finish: Actions["finishWardSolo"]; onExit: () => void; onAgain: (c: string) => void; onNext?: () => void }) {
   const c = campaignById(solo.campaign)!;
   const [choices, setChoices] = React.useState<string[]>(solo.choices);
   const [reveal, setReveal] = React.useState<Reveal | null>(null);
@@ -277,9 +313,13 @@ function SoloPlay({ solo, finish, onExit, onAgain }: { solo: Solo; finish: Actio
     const list = [...choices, optionId];
     setChoices(list);
     setReveal({ decision: d, option: o, before: st.vars, flagsBefore: st.flags, after: next.vars, chapterBefore: st.chapter });
-    writeLocal(SOLO_KEY, { ...solo, choices: list });
+    // Saved progress (src/lib/cases): this browser at once, the server shortly after.
+    saveCaseProgress("ward", c.id, { choices: list, run: solo.run });
     if (next.done) {
       writeLocal(SOLO_KEY, null);
+      clearCaseProgress("ward", c.id);
+      // Done on this device straight away; the server records it in finishWardSolo.
+      noteAnswer("ward", c.id, outcomeScore(next) >= 50, { server: false });
       void finish({ campaign: c.id, choices: list, run: solo.run })
         .then((r) => {
           setResult({ xp: r.ok ? r.xp : 0, saved: r.ok });
@@ -290,7 +330,7 @@ function SoloPlay({ solo, finish, onExit, onAgain }: { solo: Solo; finish: Actio
   }
 
   const showEnd = st.done && !reveal;
-  if (showEnd) return <EndScreen c={c} st={st} xp={result ? result.xp : null} onAgain={() => onAgain(c.id)} onExit={onExit} />;
+  if (showEnd) return <EndScreen c={c} st={st} xp={result ? result.xp : null} onAgain={() => onAgain(c.id)} onNext={onNext} onExit={onExit} />;
 
   const shownChapter = reveal ? reveal.chapterBefore : st.chapter;
   return (
@@ -519,12 +559,13 @@ function RevealCard({ r, onNext, nextLabel }: { r: Reveal & { teamLine?: string 
 }
 
 /* ------------------------------------------------------------------- end */
-function EndScreen({ c, st, xp, onAgain, onExit, teamLine }: { c: Campaign; st: WardState; xp: number | null; onAgain?: () => void; onExit: () => void; teamLine?: string }) {
+function EndScreen({ c, st, xp, onAgain, onNext, onExit, teamLine }: { c: Campaign; st: WardState; xp: number | null; onAgain?: () => void; onNext?: () => void; onExit: () => void; teamLine?: string }) {
   const score = outcomeScore(st);
   const ending = endingFor(c, st);
   const tone: Tone = score >= 72 ? "good" : score >= 50 ? "part" : "bad";
   const strong = st.log.filter((l) => l.q === "best").length;
-  useHotkeys(onAgain ? { Enter: onAgain } : {});
+  const primary = onNext ?? onAgain;
+  useHotkeys(primary ? { Enter: primary } : {});
   return (
     <div className={cn("mx-auto max-w-3xl space-y-5", m.rise)}>
       <div className="flex flex-wrap items-end gap-3">
@@ -584,9 +625,14 @@ function EndScreen({ c, st, xp, onAgain, onExit, teamLine }: { c: Campaign; st: 
       </section>
 
       <div className="grid gap-2 sm:grid-cols-2">
+        {onNext ? (
+          <Btn variant="primary" size="lg" className="sm:col-span-2" onClick={onNext}>
+            Next patient <ArrowRight aria-hidden /> <Kbd>Enter</Kbd>
+          </Btn>
+        ) : null}
         {onAgain ? (
-          <Btn variant="primary" size="lg" onClick={onAgain}>
-            <RotateCcw aria-hidden /> Play again <Kbd>Enter</Kbd>
+          <Btn variant={onNext ? "outline" : "primary"} size="lg" onClick={onAgain}>
+            <RotateCcw aria-hidden /> Play again {onNext ? null : <Kbd>Enter</Kbd>}
           </Btn>
         ) : null}
         <Btn size="lg" onClick={onExit}>

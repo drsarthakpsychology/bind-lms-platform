@@ -4,20 +4,22 @@ import { ActivityTip } from "@/components/help/activity-tip";
 import { requireFeature } from "@/lib/flags";
 import { ScenarioGame } from "@/components/learn/clinic-games";
 import { loadLearnState, saveLearnState } from "../../study/actions";
+import { SCENARIOS } from "@/lib/learn/scenarios";
+import { caseContext } from "@/lib/cases/server";
 
 export const metadata: Metadata = { title: "What would you do?" };
 
 export default async function ScenariosPage({ searchParams }: { searchParams: Promise<{ note?: string }> }) {
   await requireFeature("learn");
   const { note } = await searchParams;
-  const serverState = await loadLearnState();
+  const [serverState, ctx] = await Promise.all([loadLearnState(), caseContext("wwyd", SCENARIOS.map((x) => x.id), "wwyd")]);
   return (
     <ActivityFrame
       fallback="/practice"
       title="What would you do?"
     >
       <ActivityTip id="what-would-you-do" label="How it works" steps={["Read what the patient says, then pick your response."]} />
-      <ScenarioGame key={note ?? "all"} serverState={serverState} save={saveLearnState} noteId={note} />
+      <ScenarioGame key={note ?? "all"} serverState={serverState} save={saveLearnState} noteId={note} ctx={ctx} />
     </ActivityFrame>
   );
 }

@@ -5,7 +5,12 @@ import { ActivityTip } from "@/components/help/activity-tip";
 import { isFeatureEnabled, requireFeature } from "@/lib/flags";
 import { Detective } from "@/components/learn/detective";
 import { CLINICS, randomClinicStart } from "@/lib/practice/clinic";
-import { orderForViewer } from "@/lib/history/viewer";
+import { viewerId } from "@/lib/history/viewer";
+import { caseContext } from "@/lib/cases/server";
+import { arrangeCases } from "@/lib/cases/fresh";
+import { mergeProgress, startedIds } from "@/lib/cases/progress";
+import { fromRows, seededRng } from "@/lib/history/order";
+import { progressSnapshot } from "@/lib/cases/progress-server";
 import { TwoMinuteClinic } from "../two-minute-clinic/clinic";
 import { loadLearnState, saveLearnState } from "../../study/actions";
 import { cn } from "@/lib/utils";
@@ -50,20 +55,21 @@ export default async function DetectivePage({ searchParams }: { searchParams: Pr
   if (clinic) {
     // A fresh starting line on each visit (the page is rendered per request).
     const start = randomClinicStart();
-    // Answer history (src/lib/history): one-liners not seen yet first.
-    const order = await orderForViewer("two-minute", CLINICS.map((c) => c.id));
+    // Fresh-case order (src/lib/cases/fresh.ts): the one left half way, new this week, new, done last.
+    const ctx = await caseContext("two-minute", CLINICS.map((c) => c.id), "two-minute");
+    const order = arrangeCases(CLINICS, (c) => c.id, { history: fromRows(ctx.history), now: ctx.now, student: ctx.student, started: startedIds(mergeProgress(ctx.progress.rows, [])), rng: seededRng(ctx.now) }).list.map((x) => x.id);
     return (
       <ActivityFrame fallback="/practice" title="Two-minute clinic">
         {tabs}
         <ActivityTip id="two-minute-clinic" label="How it works" steps={["Read the line, then start the clock.", "Type your top diagnoses and the one question you would ask next."]} />
         <div className="p-4 lg:p-6">
-          <TwoMinuteClinic start={start} order={order} />
+          <TwoMinuteClinic start={start} order={order} ctx={ctx} />
         </div>
       </ActivityFrame>
     );
   }
 
-  const serverState = await loadLearnState();
+  const [serverState, progress] = await Promise.all([loadLearnState(), viewerId().then((id) => progressSnapshot(id, "detective"))]);
   return (
     <ActivityFrame
       fallback="/practice"
@@ -71,7 +77,7 @@ export default async function DetectivePage({ searchParams }: { searchParams: Pr
     >
       {tabs}
       <ActivityTip id="clinic-detective" label="How it works" steps={["Guess, or open another clue.", "Fewer clues, more points. Wrong guesses cost points."]} />
-      <Detective serverState={serverState} save={saveLearnState} />
+      <Detective serverState={serverState} save={saveLearnState} progress={progress} />
     </ActivityFrame>
   );
 }
