@@ -1039,6 +1039,26 @@ html[data-cvd="on"] .bg-destructive {
   text-transform: uppercase;
 }
 
+/* Motion duration tokens as classes. Tailwind has no --duration-* theme
+   namespace, so without these `duration-fast` and friends compiled to
+   nothing and every press fell back to the 200ms default. */
+@utility duration-fast {
+  --tw-duration: var(--duration-fast);
+  transition-duration: var(--duration-fast);
+}
+@utility duration-base {
+  --tw-duration: var(--duration-base);
+  transition-duration: var(--duration-base);
+}
+@utility duration-slow {
+  --tw-duration: var(--duration-slow);
+  transition-duration: var(--duration-slow);
+}
+@utility duration-slower {
+  --tw-duration: var(--duration-slower);
+  transition-duration: var(--duration-slower);
+}
+
 @utility text-numeric {
   font-family: var(--font-geist-mono), ui-monospace, monospace;
   font-variant-numeric: tabular-nums;

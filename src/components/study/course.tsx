@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, BookmarkCheck, BookOpen, Check, NotebookPen, PenLine, RotateCcw, Trophy, Zap, ListChecks } from "lucide-react";
+import { ArrowLeft, ArrowRight, BookmarkCheck, BookOpen, Check, ChevronDown, NotebookPen, PenLine, RotateCcw, Trophy, Zap, ListChecks } from "lucide-react";
 import { emptyState, istToday, markActivity, markWritten, studyKey, type LearnState } from "@/lib/learn/engine";
 import { getLearnState, initLearnStore, setLearnState, useLearnState } from "@/lib/learn/store";
 import { checkpointHref, checkpoints, checkpointStatus, type Checkpoint } from "@/lib/study/checkpoints";
@@ -36,27 +36,34 @@ function nextLabel(n: Next): { eyebrow: string; title: string; sub?: string } {
   }
 }
 
+/**
+ * The one next step: the only lime (action) card on the screen. Same shape as
+ * Home's Continue card: icon tile, small label, title, then an ink button
+ * that sits under the words on phones (full width, in thumb reach) and on the
+ * right from 640 px.
+ */
 function ContinueCard({ next, onGo }: { next: Next; onGo?: () => void }) {
   const l = nextLabel(next);
+  const Icon = next.kind === "read" ? BookOpen : next.kind === "checkpoint" ? ListChecks : next.kind === "write" ? PenLine : next.kind === "practise" ? Zap : next.kind === "done" ? Trophy : RotateCcw;
   return (
     <Link
       href={next.href}
       onClick={onGo}
-      className="btn-sweep group flex items-center gap-4 rounded-3xl border-2 border-foreground bg-primary p-5 text-primary-foreground hard-shadow-md transition-transform active:translate-y-0.5 sm:p-6"
+      className="group/continue flex min-w-0 flex-col gap-4 rounded-2xl border-2 border-foreground bg-primary p-5 text-primary-foreground hard-shadow-md outline-none transition-[transform,box-shadow] duration-fast ease-snappy hover:-translate-y-0.5 hover:hard-shadow-lg focus-visible:ring-[3px] focus-visible:ring-ring/60 active:translate-y-px active:shadow-none motion-reduce:hover:translate-y-0 sm:flex-row sm:items-center sm:p-6"
     >
-      <span className="hidden size-14 shrink-0 place-items-center rounded-2xl border-2 border-foreground bg-card text-foreground sm:grid">
-        {next.kind === "read" ? <BookOpen className="size-7" aria-hidden /> : next.kind === "checkpoint" ? <ListChecks className="size-7" aria-hidden /> : next.kind === "write" ? <PenLine className="size-7" aria-hidden /> : next.kind === "practise" ? <Zap className="size-7" aria-hidden /> : <RotateCcw className="size-7" aria-hidden />}
+      <span className="flex min-w-0 flex-1 items-start gap-4 sm:items-center">
+        <span aria-hidden className="grid size-11 shrink-0 place-items-center rounded-xl border-2 border-foreground bg-card text-foreground sm:size-14">
+          <Icon className="size-6 sm:size-7" />
+        </span>
+        <span className="flex min-w-0 flex-1 flex-col gap-1">
+          <span className="text-eyebrow opacity-80">{l.eyebrow}</span>
+          <span className="text-h2 [overflow-wrap:anywhere]">{l.title}</span>
+          {l.sub ? <span className="text-sm font-semibold opacity-80 [overflow-wrap:anywhere]">{l.sub}</span> : null}
+        </span>
       </span>
-      <span className="min-w-0 flex-1">
-        <span className="block text-eyebrow opacity-80">{l.eyebrow}</span>
-        <span className="block text-xl font-bold leading-tight break-words sm:text-2xl">{l.title}</span>
-        {l.sub ? <span className="mt-0.5 block text-sm font-semibold opacity-80">{l.sub}</span> : null}
-      </span>
-      {/* Narrow phones: just the arrow, so the title keeps its room. */}
-      <span className="hidden shrink-0 items-center gap-1 rounded-md border-2 border-foreground bg-foreground px-4 py-2 font-bold text-background min-[400px]:flex">
+      <span className="inline-flex min-h-12 w-full shrink-0 items-center justify-center gap-2 rounded-md border-2 border-foreground bg-foreground px-5 text-sm font-bold text-background transition-transform duration-fast ease-snappy group-hover/continue:translate-x-0.5 sm:min-h-11 sm:w-fit">
         {next.kind === "done" ? "Review" : "Continue"} <ArrowRight className="size-4" aria-hidden />
       </span>
-      <ArrowRight className="size-6 shrink-0 min-[400px]:hidden" aria-hidden />
     </Link>
   );
 }
@@ -64,8 +71,69 @@ function ContinueCard({ next, onGo }: { next: Next; onGo?: () => void }) {
 function Bar({ pct, tone = "brand" }: { pct: number; tone?: "brand" | "primary" }) {
   return (
     <span className="block h-2.5 overflow-hidden rounded-full border-2 border-foreground bg-card">
-      <span className={cn("block h-full transition-[width] duration-700", tone === "brand" ? "bg-brand" : "bg-primary")} style={{ width: `${pct}%` }} />
+      <span className={cn("block h-full origin-left transition-transform duration-slower ease-out-expo motion-reduce:transition-none", tone === "brand" ? "bg-brand" : "bg-primary")} style={{ transform: `scaleX(${pct / 100})` }} />
     </span>
+  );
+}
+
+/**
+ * The modules in three shelves, so fifty rows read as a map, not a wall:
+ * the clinical course (1 to 29), the deeper modules (30s) and psychology
+ * (40 up). Pharmacokinetics is numbered with the psychology modules but is
+ * about medicines, so it sits with the clinical ones.
+ */
+const SHELF_OVERRIDE: Record<string, number> = { pharmacokinetics: 0 };
+const SHELVES = ["Clinical", "Going deeper", "Psychology"] as const;
+function shelfOf(m: StudyModule): number {
+  return SHELF_OVERRIDE[m.id] ?? (m.num < 30 ? 0 : m.num < 40 ? 1 : 2);
+}
+
+/** Reading sections in runs of the same part, in order. */
+function partsOf<T extends { part?: string }>(secs: T[]): { part?: string; items: T[] }[] {
+  const out: { part?: string; items: T[] }[] = [];
+  for (const sec of secs) {
+    const last = out[out.length - 1];
+    if (last && last.part === sec.part) last.items.push(sec);
+    else out.push({ part: sec.part, items: [sec] });
+  }
+  return out;
+}
+
+function ModuleTile({ m, pct, complete, here }: { m: StudyModule; pct: number; complete: boolean; here: boolean }) {
+  const started = pct > 0 && !complete;
+  return (
+    <Link
+      href={`/study/${m.id}`}
+      aria-current={here ? "step" : undefined}
+      className={cn(
+        "group/mod flex h-full min-h-[4.5rem] items-center gap-3 rounded-2xl border-2 border-foreground p-3 outline-none transition-[transform,box-shadow] duration-fast ease-snappy hover:-translate-y-0.5 hover:hard-shadow-sm focus-visible:ring-[3px] focus-visible:ring-ring/60 active:translate-y-px active:shadow-none motion-reduce:hover:translate-y-0 sm:p-4",
+        here ? "bg-brand text-brand-foreground hard-shadow-sm" : "bg-card",
+      )}
+    >
+      <span
+        aria-hidden
+        className={cn(
+          "grid size-11 shrink-0 place-items-center rounded-xl border-2 text-xl",
+          here ? "border-brand-foreground" : "border-foreground",
+          complete && "bg-primary",
+        )}
+      >
+        {complete ? <Check className="size-5 text-primary-foreground" /> : m.emoji}
+      </span>
+      <span className="min-w-0 flex-1">
+        <span className="block text-eyebrow opacity-80">{here ? `Module ${m.num} · You are here` : `Module ${m.num}`}</span>
+        <span className="mt-0.5 block font-bold leading-snug [overflow-wrap:anywhere]">{m.title}</span>
+        {started ? (
+          <span className="mt-2 flex items-center gap-2">
+            <span className="w-full max-w-40">
+              <Bar pct={pct} tone={here ? "primary" : "brand"} />
+            </span>
+            <span className="shrink-0 text-xs font-bold tabular-nums">{pct}%</span>
+          </span>
+        ) : null}
+      </span>
+      {complete ? <span className="shrink-0 text-xs font-bold">Done</span> : <ArrowRight className="size-5 shrink-0 transition-transform duration-fast ease-snappy group-hover/mod:translate-x-0.5" aria-hidden />}
+    </Link>
   );
 }
 
@@ -80,66 +148,58 @@ export function StudyHome({ modules, serverState, save, owner = "" }: { modules:
   const progress = courseProgress(modules, st.study);
   const currentId = next.kind !== "done" ? next.module.id : null;
 
+  const shelves = SHELVES.map((name, k) => ({ name, items: modules.map((m, i) => ({ m, i })).filter(({ m }) => shelfOf(m) === k) })).filter((s) => s.items.length);
+  const link = "inline-flex min-h-11 items-center gap-1.5 rounded-md border-2 border-foreground bg-card px-3 text-sm font-bold transition-[transform,box-shadow] duration-fast ease-snappy hover:-translate-y-px hover:hard-shadow-xs active:translate-y-px active:shadow-none";
+
   return (
     <div className="mx-auto max-w-5xl space-y-8">
-      <PageHeader
-        title="Study"
-        description={`${progress.pct}% complete`}
-        className="pb-0"
-      />
+      <div className="space-y-4">
+        <PageHeader
+          eyebrow="Study"
+          title="Your course"
+          className="pb-0"
+          actions={
+            <>
+              <Link href="/study/notes" className={link}>
+                <NotebookPen className="size-4" aria-hidden /> Summaries
+              </Link>
+              <Link href="/progress" className={link}>
+                <Trophy className="size-4" aria-hidden /> Certificate
+              </Link>
+            </>
+          }
+        />
+        {/* The course bar only once there is something on it: an empty bar
+            on day one says "nothing done", which is not the point. */}
+        {progress.pct > 0 ? (
+          <div className="flex max-w-md items-center gap-3">
+            <span className="flex-1">
+              <Bar pct={progress.pct} />
+            </span>
+            <span className="shrink-0 text-sm font-bold tabular-nums">{progress.pct}% done</span>
+          </div>
+        ) : null}
+      </div>
 
       <ContinueCard next={next} />
 
-      <Link href="/progress" className="inline-flex min-h-11 items-center gap-1.5 text-sm font-bold text-link underline-offset-4 hover:underline">
-        <Trophy className="size-4" aria-hidden /> Your progress and certificate <ArrowRight className="size-4" aria-hidden />
-      </Link>
-
-      <section aria-labelledby="modules">
-        <h2 id="modules" className="text-h2">
-          The modules
-        </h2>
-        <ol className="mt-4 space-y-3">
-          {modules.map((m, i) => {
-            const s = statuses[i];
-            const pct = progress.modules[i].pct;
-            const here = m.id === currentId;
-            return (
-              <li key={m.id}>
-                <Link
-                  href={`/study/${m.id}`}
-                  className={cn(
-                    "flex items-center gap-4 rounded-3xl border-2 border-foreground p-4 transition-transform hover:-translate-y-0.5",
-                    here ? "bg-brand text-brand-foreground hard-shadow-md" : "bg-card",
-                  )}
-                >
-                  <span className={cn("grid size-12 shrink-0 place-items-center rounded-2xl border-2 text-2xl", here ? "border-brand-foreground" : "border-foreground", s.complete && "bg-primary")}>
-                    {s.complete ? <Check className="size-6 text-primary-foreground" aria-hidden /> : <span aria-hidden>{m.emoji}</span>}
-                  </span>
-                  <span className="min-w-0 flex-1">
-                    <span className="block text-eyebrow opacity-80">
-                      Module {m.num}
-                    </span>
-                    <span className="block text-lg font-bold leading-tight break-words">{m.title}</span>
-                    <span className="mt-2 flex items-center gap-3">
-                      <span className="w-full max-w-60">
-                        <Bar pct={pct} tone={here ? "primary" : "brand"} />
-                      </span>
-                      <span className="shrink-0 text-xs font-bold">{pct}% complete</span>
-                    </span>
-                  </span>
-                  <ArrowRight className="size-5 shrink-0" aria-hidden />
-                </Link>
-              </li>
-            );
-          })}
-        </ol>
-      </section>
-
       <MarksList owner={owner} modules={modules} />
 
-      <Link href="/study/notes" className="inline-flex min-h-11 items-center gap-1.5 text-sm font-bold underline-offset-4 hover:underline">
-        <NotebookPen className="size-4" aria-hidden /> One-page summaries
-      </Link>
+      {shelves.map((shelf, k) => (
+        <section key={shelf.name} aria-labelledby={`shelf-${k}`} className="space-y-3">
+          <h2 id={`shelf-${k}`} className="flex items-center gap-2 text-h2">
+            <span aria-hidden className="size-2.5 rounded-[3px] bg-primary ring-2 ring-foreground" />
+            {shelf.name}
+          </h2>
+          <ol className="grid gap-3 md:grid-cols-2">
+            {shelf.items.map(({ m, i }) => (
+              <li key={m.id}>
+                <ModuleTile m={m} pct={progress.modules[i].pct} complete={statuses[i].complete} here={m.id === currentId} />
+              </li>
+            ))}
+          </ol>
+        </section>
+      ))}
     </div>
   );
 }
@@ -218,10 +278,14 @@ export function ModuleView({
         </p>
         <h1 className="mt-2 break-words text-display">{m.title}</h1>
         <p className="mt-2 max-w-2xl font-semibold opacity-90">{m.tagline}</p>
-        <div className="mt-4 max-w-md">
-          <Bar pct={prog.pct} tone="primary" />
-          <p className="mt-1 text-xs font-bold">{prog.pct}% complete</p>
-        </div>
+        {prog.pct > 0 ? (
+          <div className="mt-4 flex max-w-md items-center gap-3">
+            <span className="flex-1">
+              <Bar pct={prog.pct} tone="primary" />
+            </span>
+            <span className="shrink-0 text-xs font-bold tabular-nums">{prog.pct}% done</span>
+          </div>
+        ) : null}
         <span className="pointer-events-none absolute -right-4 -bottom-8 text-[8rem] opacity-15 select-none" aria-hidden>
           {m.emoji}
         </span>
@@ -249,8 +313,47 @@ export function ModuleView({
         </div>
       )}
 
-      <details className="rounded-[10px] border-2 border-foreground bg-card p-4">
-        <summary className="flex min-h-11 cursor-pointer items-center font-bold">What you will learn</summary>
+      {/* The four steps at a glance: where you are, what is done, one tap to each. */}
+      <nav aria-label="Steps in this module" className="grid grid-cols-4 gap-2">
+        {([
+          ["#step-read", "Read", s.readDone === s.readTotal],
+          ["#write", "Write", s.written],
+          ["#step-practise", "Practise", s.actsDone === s.actsTotal],
+          ["#step-test", "Test", Boolean(t)],
+        ] as const).map(([href, label, isDone], k) => {
+          const isNow = step === k + 1;
+          if (k === 3 && !test) return null;
+          return (
+            <a
+              key={href}
+              href={href}
+              aria-current={isNow ? "step" : undefined}
+              className={cn(
+                "flex min-h-14 flex-col items-center justify-center gap-1 rounded-xl border-2 px-1 py-2 text-center text-xs font-bold transition-[transform,box-shadow] duration-fast ease-snappy hover:-translate-y-px hover:hard-shadow-xs active:translate-y-px active:shadow-none sm:flex-row sm:gap-2 sm:text-sm",
+                isNow ? "border-foreground bg-card hard-shadow-xs" : "border-foreground/25 bg-card/60",
+              )}
+            >
+              <span
+                aria-hidden
+                className={cn(
+                  "grid size-6 shrink-0 place-items-center rounded-full border-2 border-foreground text-[0.7rem]",
+                  isDone ? "bg-foreground text-background" : isNow ? "bg-primary text-primary-foreground" : "bg-card",
+                )}
+              >
+                {isDone ? <Check className="size-3.5" /> : k + 1}
+              </span>
+              <span>{label}</span>
+              {isDone ? <span className="sr-only">(done)</span> : isNow ? <span className="sr-only">(now)</span> : null}
+            </a>
+          );
+        })}
+      </nav>
+
+      <details className="group rounded-2xl border-2 border-foreground bg-card px-4 py-1">
+        <summary className="flex min-h-12 cursor-pointer list-none items-center gap-2 font-bold [&::-webkit-details-marker]:hidden">
+          <span className="flex-1">What you will learn</span>
+          <ChevronDown className="size-5 shrink-0 transition-transform duration-base ease-snappy group-open:rotate-180 motion-reduce:transition-none" aria-hidden />
+        </summary>
         <ul className="mt-2 space-y-1.5 text-sm">
           {m.outcomes.map((o) => (
             <li key={o} className="flex gap-2">
@@ -258,20 +361,29 @@ export function ModuleView({
             </li>
           ))}
         </ul>
+        <div className="h-3" />
       </details>
 
       <section id="steps" aria-label="Steps" className="scroll-mt-shell space-y-6">
         {/* Step 1: Read */}
-        <div className={cn("rounded-3xl border-2 border-foreground bg-card p-5", step === 1 && "hard-shadow-md")}>
+        <div id="step-read" className={cn("scroll-mt-shell rounded-3xl border-2 border-foreground bg-card p-5", step === 1 && "hard-shadow-md")}>
           <StepHead n={1} title="Read the notes" done={s.readDone === s.readTotal} current={step === 1} sub={`${s.readDone} of ${s.readTotal} sections read`} />
-          <ol className="mt-4 space-y-1">
-            {reading.map((sec, k) => {
+          {/* Long modules fold into their parts: the part you are on stays
+              open, finished and later parts close to one line each, so
+              Write, Practise and Test are a short scroll away, not 45 rows. */}
+          <div className="mt-4 space-y-2">
+            {partsOf(reading).map((g, gi, all) => {
+              const doneHere = g.items.filter((sec) => st.study.done[studyKey(m.id, sec.id)]).length;
+              const hasHere = g.items.some((sec) => next?.kind === "read" && next.section.id === sec.id);
+              const firstOpen = all.findIndex((x) => x.items.some((sec) => !st.study.done[studyKey(m.id, sec.id)]));
+              const open = all.length === 1 || hasHere || (next?.kind !== "read" && gi === firstOpen);
+              const list = (
+          <ol className="space-y-1">
+            {g.items.map((sec) => {
               const isDone = Boolean(st.study.done[studyKey(m.id, sec.id)]);
               const here = next?.kind === "read" && next.section.id === sec.id;
-              const part = k === 0 || reading[k - 1].part !== sec.part ? sec.part : undefined;
               return (
                 <li key={sec.id}>
-                  {part ? <p className="mt-4 mb-1 text-eyebrow text-muted-foreground">{part}</p> : null}
                   <Link
                     href={sectionHref(m, sec)}
                     className={cn("flex items-center gap-3 rounded-2xl border-2 px-3 py-2.5 transition-colors", here ? "border-foreground bg-primary text-primary-foreground" : "border-transparent hover:border-foreground")}
@@ -292,6 +404,29 @@ export function ModuleView({
               );
             })}
           </ol>
+              );
+              if (all.length === 1 || !g.part) return <div key={gi}>{list}</div>;
+              const complete = doneHere === g.items.length;
+              return (
+                <details key={gi} open={open} className="group/part rounded-2xl border-2 border-foreground/15 open:border-foreground/30">
+                  <summary className="flex min-h-12 cursor-pointer list-none items-center gap-3 px-3 py-2 [&::-webkit-details-marker]:hidden">
+                    <span aria-hidden className={cn("grid size-6 shrink-0 place-items-center rounded-full border-2 border-foreground", complete && "bg-foreground text-background")}>
+                      {complete ? <Check className="size-3.5" /> : null}
+                    </span>
+                    <span className="min-w-0 flex-1">
+                      <span className="block text-sm font-bold leading-snug [overflow-wrap:anywhere]">{g.part.replace(/^Part [0IVX]+ · /, "")}</span>
+                      <span className="block text-caption text-muted-foreground tabular-nums">
+                        {g.part.match(/^Part [0IVX]+/)?.[0] ?? ""}
+                        {doneHere ? ` · ${doneHere} of ${g.items.length} read` : ""}
+                      </span>
+                    </span>
+                    <ChevronDown className="size-5 shrink-0 transition-transform duration-base ease-snappy group-open/part:rotate-180 motion-reduce:transition-none" aria-hidden />
+                  </summary>
+                  <div className="px-1 pb-2">{list}</div>
+                </details>
+              );
+            })}
+          </div>
         </div>
 
         {/* Step 2: Write */}
@@ -317,7 +452,7 @@ export function ModuleView({
         </div>
 
         {/* Step 3: Practise */}
-        <div className={cn("rounded-3xl border-2 border-foreground bg-card p-5", step === 3 && "hard-shadow-md")}>
+        <div id="step-practise" className={cn("scroll-mt-shell rounded-3xl border-2 border-foreground bg-card p-5", step === 3 && "hard-shadow-md")}>
           <StepHead n={3} title="Practise" done={s.actsDone === s.actsTotal} current={step === 3} sub={`${s.actsDone} of ${s.actsTotal} done`} />
           <ul className="mt-4 grid grid-cols-[minmax(0,1fr)] gap-2.5 sm:grid-cols-2">
             {m.activities.map((a) => {
@@ -348,7 +483,7 @@ export function ModuleView({
 
         {/* Step 4: Test */}
         {test ? (
-          <div className={cn("rounded-3xl border-2 border-foreground bg-card p-5", step === 4 && "hard-shadow-md")}>
+          <div id="step-test" className={cn("scroll-mt-shell rounded-3xl border-2 border-foreground bg-card p-5", step === 4 && "hard-shadow-md")}>
             <StepHead
               n={4}
               title="Test, then re-test"
