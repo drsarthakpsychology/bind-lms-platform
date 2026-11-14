@@ -29,6 +29,9 @@ describe("lecture-only scope guards", () => {
     expect(lectureOnlyAllowed("/doubts")).toBe(true);
     expect(lectureOnlyAllowed("/journey")).toBe(true);
     expect(lectureOnlyAllowed("/notifications")).toBe(true);
+    // A message opens on its own page; a certificate notice opens My Achievements.
+    expect(lectureOnlyAllowed("/notifications/5b0e2a52-6c1e-4d3f-9a59-6a8d8f0f2c11")).toBe(true);
+    expect(lectureOnlyAllowed("/achievements")).toBe(true);
     // Full-access sections stay closed to lecture-only accounts.
     expect(lectureOnlyAllowed("/practice")).toBe(false);
     expect(lectureOnlyAllowed("/study")).toBe(false);
