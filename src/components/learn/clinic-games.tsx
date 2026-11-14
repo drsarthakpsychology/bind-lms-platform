@@ -78,13 +78,14 @@ export function ScenarioGame({ serverState, save, noteId }: { serverState: Learn
 
   const sc = deck[si];
   const beat = sc.beats[bi];
-  const options = shuffle(beat.choices);
 
   function choose(c: Choice) {
     if (picked) return;
     setPicked(c);
     haptic(c.outcome === "best" ? "success" : "warning");
-    setAnswers((a) => [...a, { id: `${sc.id}-${bi}`, correct: c.outcome === "best" }]);
+    const id = `${sc.id}-${bi}`;
+    // A fast double tap must not count the same answer twice.
+    setAnswers((a) => (a.some((x) => x.id === id) ? a : [...a, { id, correct: c.outcome === "best" }]));
     // "Okay, but" is a near miss; a risky choice is wrong.
     reaction.onAnswer(c.outcome === "best", { partial: c.outcome === "ok" });
   }
@@ -114,7 +115,7 @@ export function ScenarioGame({ serverState, save, noteId }: { serverState: Learn
           {si + 1}
         </span>
       </div>
-      <Options key={`${sc.id}-${bi}`} beat={beat} options={options} picked={picked} onChoose={choose} />
+      <Options key={`${sc.id}-${bi}`} beat={beat} picked={picked} onChoose={choose} />
       {picked ? (
         <div className={cn("rounded-3xl border-2 border-foreground p-4 hard-shadow-md", BADGE[picked.outcome].cls, s.rise)}>
           <div className="flex items-start gap-3">
@@ -134,8 +135,9 @@ export function ScenarioGame({ serverState, save, noteId }: { serverState: Learn
   );
 }
 
-function Options({ beat, options, picked, onChoose }: { beat: Scenario["beats"][number]; options: Choice[]; picked: Choice | null; onChoose: (c: Choice) => void }) {
-  const [order] = React.useState(options);
+function Options({ beat, picked, onChoose }: { beat: Scenario["beats"][number]; picked: Choice | null; onChoose: (c: Choice) => void }) {
+  // Shuffled once per step (not on every render).
+  const [order] = React.useState(() => shuffle(beat.choices));
   return (
     <div className={cn("space-y-3", s.rise)}>
       {beat.context ? <p className="rounded-xl border-2 border-dashed border-foreground/40 px-3 py-2 text-sm">{beat.context}</p> : null}
@@ -266,9 +268,11 @@ export function TermsGame({ serverState, save }: { serverState: LearnState | nul
             type="button"
             disabled={Boolean(pick)}
             onClick={() => {
+              if (pick) return;
               setPick(o);
               haptic(o === q.answer ? "success" : "warning");
-              setAnswers((a) => [...a, { id: q.id, correct: o === q.answer }]);
+              // A fast double tap must not count the same answer twice.
+              setAnswers((a) => (a.some((x) => x.id === q.id) ? a : [...a, { id: q.id, correct: o === q.answer }]));
               noteAnswer("say-it", q.id, o === q.answer);
               reaction.onAnswer(o === q.answer);
             }}

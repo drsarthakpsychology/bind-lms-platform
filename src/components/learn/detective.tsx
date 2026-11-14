@@ -68,6 +68,8 @@ export function Detective({ serverState, save }: { serverState: LearnState | nul
   const [ruledOut, setRuledOut] = React.useState<string[] | null>(null);
   const [hints, setHints] = useHintStatus();
   useHistoryPrefetch("detective");
+  /** The round (in this run) whose answer is already counted, so a double tap can't count it twice. */
+  const counted = React.useRef("");
 
   function start(f = family) {
     startHowTo("clinic-detective");
@@ -118,7 +120,10 @@ export function Detective({ serverState, save }: { serverState: LearnState | nul
 
   function guess(id: string) {
     if (solved) return;
+    const key = `${run}:${r}`;
+    if (counted.current === key) return;
     if (id === round.c.answer) {
+      counted.current = key;
       // A hint halves this case's points.
       const gained = hintedPoints(Math.max(0, POINTS[clues - 1] - wrong.length * WRONG_PENALTY), ruledOut ? 1 : 0);
       haptic("success");
@@ -134,6 +139,7 @@ export function Detective({ serverState, save }: { serverState: LearnState | nul
       setWrong(w);
       if (clues < 4) setClues(clues + 1);
       else {
+        counted.current = key;
         setSolved({ gained: 0, correct: false });
         setAnswers((a) => [...a, { id: round.c.answer, correct: false }]);
         noteAnswer("detective", round.c.answer, false);
