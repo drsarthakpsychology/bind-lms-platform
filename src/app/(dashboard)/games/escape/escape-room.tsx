@@ -72,7 +72,7 @@ function Pick({ teamsOn, teams, onPractice, onCreate, onJoin, onOpen }: { teamsO
   const [busy, setBusy] = React.useState<string | null>(null);
   return (
     <div className={cn("mx-auto max-w-3xl space-y-6", m.rise)}>
-      <h1 className="text-h2">Pick a room</h1>
+      <h1 className="text-h3">Pick a room</h1>
       <ul className={cn("grid gap-4 md:grid-cols-3", m.stagger)}>
         {ROOMS.map((r, i) => (
           <li key={r.id} className={cn("flex flex-col rounded-xl border-2 border-foreground bg-card p-4 hard-shadow-sm", m.rise)} style={{ "--i": i } as React.CSSProperties}>
@@ -82,7 +82,6 @@ function Pick({ teamsOn, teams, onPractice, onCreate, onJoin, onOpen }: { teamsO
             <h2 className="mt-1 text-h3">{r.title}</h2>
             <p className="text-small font-semibold">{r.patient}</p>
             <p className="mt-2 flex-1 text-small">{r.intro}</p>
-            <p className="mt-2 text-caption text-muted-foreground">{r.puzzles.length} doors</p>
             <div className="mt-3 grid gap-2">
               {teamsOn ? (
                 <Btn

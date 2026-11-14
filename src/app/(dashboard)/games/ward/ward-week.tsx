@@ -166,7 +166,7 @@ function Pick({
   const live = teams.filter((t) => t.status !== "done");
   return (
     <div className={cn("mx-auto max-w-3xl space-y-6", m.rise)}>
-      <h1 className="text-h2">Pick a patient</h1>
+      <h1 className="text-h3">Pick a patient</h1>
 
       {saved ? (
         <Panel className="flex flex-wrap items-center gap-3 bg-status-info-bg">
@@ -190,7 +190,6 @@ function Pick({
             <h2 className="mt-1 text-h3">{c.title}</h2>
             <p className="text-small font-semibold">{c.patient}</p>
             <p className="mt-2 flex-1 text-small">{c.blurb}</p>
-            <p className="mt-2 text-caption text-muted-foreground">{c.chapters.length} sessions</p>
             <div className="mt-3 grid gap-2">
               <Btn variant="primary" onClick={() => onSolo(c.id)}>
                 <Play aria-hidden /> Play solo {i < 9 ? <Kbd>{i + 1}</Kbd> : null}
