@@ -183,7 +183,11 @@ export function QuestionRunner({ questions, start = 0, prior = {}, saved: initia
               <RotateCcw className="size-4" aria-hidden /> {againLabel ?? "Go through again"}
             </button>
           ) : (
-            <button type="button" className={next ? btnPlain : btnPrimary} disabled={refreshing} onClick={() => startRefresh(() => router.refresh())}>
+            <button type="button" className={next ? btnPlain : btnPrimary} disabled={refreshing} onClick={() => startRefresh(() => {
+              // If the new set happens to be the same questions, start it afresh rather than stay here.
+              router.refresh();
+              go(0);
+            })}>
               <RotateCcw className="size-4" aria-hidden /> {refreshing ? "Picking questions…" : (againLabel ?? "Another set")}
             </button>
           )}
