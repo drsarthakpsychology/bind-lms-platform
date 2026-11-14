@@ -57,3 +57,16 @@ describe("learn store keys the browser copy per student", () => {
     vi.useRealTimers();
   });
 });
+
+describe("the two copies (browser and server) never lose a test score", () => {
+  it("keeps a checkpoint taken in this browser when the server copy wins, and a module test from another device when this copy wins", async () => {
+    const s = await freshStore();
+    const tests = (t: Record<string, { best: number; total: number; day: string; tries: number }>, xp: number) => ({ ...withXp(xp), study: { ...emptyState().study, tests: t } });
+    // Same XP (a checkpoint retake earns none): the server copy wins the tie.
+    window.localStorage.setItem("vibha-learn-v1:u1", JSON.stringify(tests({ "m~cp1": { best: 3, total: 4, day: "2026-11-14", tries: 1 } }, 40)));
+    s.initLearnStore({ ...tests({ m: { best: 20, total: 25, day: "2026-11-13", tries: 1 } }, 40), owner: "u1" } as never, save);
+    const got = s.getLearnState()!.study.tests;
+    expect(got["m~cp1"]).toMatchObject({ best: 3, total: 4 });
+    expect(got.m).toMatchObject({ best: 20, total: 25 });
+  });
+});
