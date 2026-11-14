@@ -103,7 +103,8 @@ export async function markSolved(doubtId: string, replyId: string | null): Promi
   if (!d) return { error: "That doubt is gone." };
   if (d.user_id !== me.id && me.role !== "admin") return { error: "Only the person who asked can mark it solved." };
   if (replyId !== null && !(await replyOnDoubt(replyId, doubtId))) return { error: "That answer isn't on this doubt." };
-  await admin.from("doubts").update({ solved_reply_id: replyId, status: replyId ? "solved" : "open", updated_at: new Date().toISOString() }).eq("id", doubtId);
+  const { error } = await admin.from("doubts").update({ solved_reply_id: replyId, status: replyId ? "solved" : "open", updated_at: new Date().toISOString() }).eq("id", doubtId);
+  if (error) return { error: "Couldn't save that. Try again." };
   refresh(doubtId);
   return { error: null };
 }
@@ -134,7 +135,11 @@ export async function reclassifyMine(doubtId: string, kind: "doubt" | "complaint
 /** Admin: hide a post, or an answer, from the board. */
 export async function adminHideDoubt(doubtId: string, hidden: boolean): Promise<R> {
   if (!(await requireSuperAdmin())) return { error: "Not authorized." };
-  await createAdminClient().from("doubts").update({ status: hidden ? "hidden" : "open" }).eq("id", doubtId);
+  const admin = createAdminClient();
+  // Showing a post again brings back its solved state, not just "open".
+  const { data: d } = hidden ? { data: null } : await admin.from("doubts").select("solved_reply_id").eq("id", doubtId).maybeSingle();
+  const { error } = await admin.from("doubts").update({ status: hidden ? "hidden" : d?.solved_reply_id ? "solved" : "open" }).eq("id", doubtId);
+  if (error) return { error: "Couldn't change it. Try again." };
   refresh(doubtId);
   return { error: null };
 }
