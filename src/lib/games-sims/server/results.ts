@@ -14,6 +14,8 @@ import { addDays, istToday } from "@/lib/learn/engine";
 import { recordAttempts } from "@/lib/learn/model/server";
 import type { Attempt } from "@/lib/learn/model/student";
 import { awardXp } from "@/lib/leagues/xp";
+import { istMidnightUtc } from "@/lib/leagues/week";
+import { cappedPay } from "../xp-cap";
 import { accuracyBoard, type AccuracyRow, type ResultRow } from "../boards";
 
 export type Admin = ReturnType<typeof createAdminClient>;
@@ -53,14 +55,25 @@ export async function gradeAnswers(user: { id: string; role: string }, attempts:
  * These games do not also add browser XP, so nothing is counted twice.
  */
 export async function payXp(userId: string, game: string, amount: number, ref: string): Promise<number> {
-  const xp = Math.max(0, Math.min(200, Math.round(amount)));
-  if (!xp) return 0;
+  if (!(Math.round(amount) > 0)) return 0;
+  const source = `games2:${game}`;
   try {
-    const r = await awardXp(userId, `games2:${game}`, xp, `${game}:${ref}`);
+    const xp = cappedPay(await paidToday(userId, source), amount);
+    if (!xp) return 0;
+    const r = await awardXp(userId, source, xp, `${game}:${ref}`);
     return r.ok && !r.duplicate ? xp : 0;
   } catch {
     return 0;
   }
+}
+
+/** XP this game already paid the student today (India time). */
+async function paidToday(userId: string, source: string): Promise<number> {
+  const db = adminDb();
+  if (!db) return 0;
+  const { data, error } = await db.from("xp_ledger").select("amount").eq("user_id", userId).eq("source", source).gte("created_at", istMidnightUtc(istToday()).toISOString()).limit(500);
+  if (error) return 0;
+  return (data ?? []).reduce((a, r) => a + Math.max(0, Number(r.amount) || 0), 0);
 }
 
 export async function saveResult(userId: string, row: { game: string; item: string | null; score: number; right: number; total: number; meta?: Record<string, unknown> }): Promise<boolean> {

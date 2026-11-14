@@ -253,6 +253,14 @@ function Round({ play, setPlay, onExcerptDone, onFinish }: { play: Play; setPlay
             <legend className="mb-2 flex w-full flex-wrap items-center gap-2 text-small font-semibold">
               <span>Part: {domainLabel(play.pick)}.</span> <span>Now the exact word.</span>
             </legend>
+            <HintBar
+              className="mb-2"
+              status={hints}
+              onStatus={setHints}
+              used={hinted}
+              ask={() => askHint({ game: "mse", run: play.seed, excerpt: e.id, idx: play.idx, options: allOptions })}
+              onGive={(h) => setPlay({ ...play, ruled: { ...play.ruled, [play.idx]: h.remove } })}
+            />
             <div className="grid gap-2 sm:grid-cols-2">
               {options.map((t, i) => (
                 <Btn key={t} className="justify-start text-left" onClick={() => pickTerm(t)}>
@@ -263,17 +271,10 @@ function Round({ play, setPlay, onExcerptDone, onFinish }: { play: Play; setPlay
                 </Btn>
               ))}
             </div>
-            <div className="mt-2 flex flex-wrap items-center justify-between gap-2">
+            <div className="mt-2">
               <Btn variant="ghost" onClick={() => setPlay({ ...play, pick: null })}>
                 <Undo2 aria-hidden /> Change part
               </Btn>
-              <HintBar
-                status={hints}
-                onStatus={setHints}
-                used={hinted}
-                ask={() => askHint({ game: "mse", run: play.seed, excerpt: e.id, idx: play.idx, options: allOptions })}
-                onGive={(h) => setPlay({ ...play, ruled: { ...play.ruled, [play.idx]: h.remove } })}
-              />
             </div>
           </fieldset>
         ) : null}

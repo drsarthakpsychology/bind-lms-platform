@@ -16,7 +16,6 @@ import {
   Flag,
   Flame,
   FlaskConical,
-  Lightbulb,
   LoaderCircle,
   MessageCircle,
   RotateCw,
@@ -34,7 +33,7 @@ import { haptic } from "@/lib/haptics";
 import { cn } from "@/lib/utils";
 import { searchDiagnoses, type Diagnosis } from "@/lib/games/diagnoses";
 import { dailyStreak, MAX_CLUES, shareText, type Action, type PracticeRecord } from "@/lib/games/daily/engine";
-import type { CaseView } from "@/lib/games/daily/view";
+import type { CaseRest, CaseView } from "@/lib/games/daily/view";
 import type { InvestigationKind } from "@/lib/games/daily/types";
 import { CountUp } from "@/lib/games/ui/count-up";
 import { LearnLink } from "@/lib/games/ui/learn-link";
@@ -44,9 +43,9 @@ import { btnInk, btnPrimary, btnSecondary, card, chip } from "@/lib/games/ui/sty
 import fx from "@/lib/games/ui/fx.module.css";
 import { AI_CASE_LABEL, AI_CASE_NOTE } from "@/lib/ai-cases/types";
 import { AI_TOPICS } from "@/lib/ai-cases/criteria";
-import { dailyMove, flagAiCaseAction, nextAiCase, nextPractice, type DailyMeta, type MoveResult } from "./actions";
+import { dailyMove, dailyRest, flagAiCaseAction, nextAiCase, nextPractice, type DailyMeta, type MoveResult } from "./actions";
 import { creditServerPlay } from "@/lib/learn/credit-play";
-import { HintChip } from "@/components/hints/hint-chip";
+import { HintButton, type HintUse } from "@/components/hints/hint-chip";
 import { CASE_SCORE_PER_HINT } from "@/lib/hints/rules";
 import type { HintStatus } from "@/lib/hints/engine";
 import { useReaction } from "@/components/reactions/use-reaction";
@@ -155,12 +154,29 @@ export function DailyGame({ serverState, save, initial }: { serverState: LearnSt
     if (!cur) return;
     setError(null);
     startTransition(async () => {
-      const res = await dailyMove({ mode: t === "daily" ? "daily" : "practice", caseId: cur.view.caseId, log: cur.log, action });
+      const res = await dailyMove({ mode: t === "daily" ? "daily" : "practice", caseId: cur.view.caseId, log: cur.log, action }).catch(() => ({ ok: false as const, error: "Connection lost. Try that again." }));
       if (!res.ok) {
         setError(res.error, t);
         return;
       }
       after(t, res, action);
+    });
+  }
+
+  /** One hint on the open case: the server charges it and sends the hint back in the view. */
+  function takeHint(): Promise<HintUse> {
+    const t = tab;
+    const cur = t === "daily" ? daily : t === "practice" ? practice : aiGame;
+    return new Promise((resolve) => {
+      if (!cur) return resolve({ ok: false, error: LOAD_FAIL });
+      setError(null);
+      startTransition(async () => {
+        const res = await dailyMove({ mode: t === "daily" ? "daily" : "practice", caseId: cur.view.caseId, log: cur.log, action: { t: "hint" } }).catch(() => null);
+        if (!res) return resolve({ ok: false, error: "Couldn't get a hint. Try again." });
+        if (!res.ok) return resolve({ ok: false, error: res.error });
+        after(t, res, { t: "hint" });
+        resolve({ ok: true, status: res.meta.hints });
+      });
     });
   }
 
@@ -256,6 +272,7 @@ export function DailyGame({ serverState, save, initial }: { serverState: LearnSt
           shake={shake}
           gain={gain}
           onMove={move}
+          onHint={takeHint}
           onHints={setHints}
           onNextPractice={tab === "ai" ? () => newAi() : newPractice}
           streak={streak}
@@ -272,6 +289,7 @@ function CaseBoard({
   shake,
   gain,
   onMove,
+  onHint,
   onHints,
   onNextPractice,
   streak,
@@ -282,6 +300,7 @@ function CaseBoard({
   shake: number;
   gain: { xp: number; key: number } | null;
   onMove: (a?: Action) => void;
+  onHint: () => Promise<HintUse>;
   onHints: (h: HintStatus) => void;
   onNextPractice: () => void;
   streak: number;
@@ -295,7 +314,6 @@ function CaseBoard({
   const [confirmQuit, setConfirmQuit] = React.useState(false);
   const ordered = v.investigations.filter((x) => x.ordered);
   const canHint = playing && v.hints.used < 2;
-  const outOfHints = meta.hints !== null && meta.hints.left === 0;
 
   return (
     <div className="space-y-4">
@@ -326,25 +344,19 @@ function CaseBoard({
       <ol className="space-y-2" aria-label="Clues">
         {v.clues.map((c, i) => {
           const fresh = playing && i === v.clues.length - 1 && i > 0;
-          const unopened = i >= v.cluesOpen;
           return (
-            <li
-              key={i}
-              className={cn(card, "flex gap-3 p-3", unopened && "border-dashed bg-background text-muted-foreground", fresh && "hard-shadow-sm", fresh && anim(fx.reveal), unopened && anim(fx.stagger))}
-              style={unopened ? ({ "--i": i - v.cluesOpen } as React.CSSProperties) : undefined}
-            >
-              <span key={fresh ? `n${i}` : i} className={cn("grid size-7 shrink-0 place-items-center rounded-md border-2 border-foreground font-pix text-sm", i < v.cluesOpen ? "bg-primary text-primary-foreground" : "bg-background", fresh && anim(fx.pop))}>
+            <li key={i} className={cn(card, "flex gap-3 p-3", fresh && "hard-shadow-sm", fresh && anim(fx.reveal))}>
+              <span key={fresh ? `n${i}` : i} className={cn("grid size-7 shrink-0 place-items-center rounded-md border-2 border-foreground bg-primary font-pix text-sm text-primary-foreground", fresh && anim(fx.pop))}>
                 {i + 1}
               </span>
-              <p className="min-w-0 flex-1 leading-snug">
-                {unopened && <span className="mr-1 font-semibold">Unopened:</span>}
-                {c}
-              </p>
+              <p className="min-w-0 flex-1 leading-snug">{c}</p>
               {fresh && <span className={cn(chip, "h-fit shrink-0 bg-card text-xs")}>New</span>}
             </li>
           );
         })}
       </ol>
+
+      {!playing && v.unopened > 0 && <OtherClues game={game} />}
 
       {ordered.length > 0 && (
         <section aria-label="Tests you ordered" className="space-y-2">
@@ -365,16 +377,6 @@ function CaseBoard({
         </section>
       )}
 
-      {(v.hints.chapter || v.hints.pointer) && playing && (
-        <div className="rounded-lg border-2 border-foreground bg-status-info-bg p-3 text-status-info-fg">
-          <p className="flex items-center gap-2 font-bold">
-            <Lightbulb className="size-4" aria-hidden /> Hint
-          </p>
-          {v.hints.chapter && <p className="mt-1 text-sm">Chapter: {v.hints.chapter}.</p>}
-          {v.hints.pointer && <p className="mt-1 text-sm">{v.hints.pointer}</p>}
-        </div>
-      )}
-
       {playing && last && !last.ok && (
         <div key={shake} className={cn("rounded-lg border-2 border-foreground p-3", last.sameChapter ? "bg-status-pending-bg" : "bg-status-alert-bg text-status-alert-fg", anim(fx.shake))} role="status">
           <p className="flex items-center gap-2 font-bold">
@@ -392,30 +394,39 @@ function CaseBoard({
       {playing ? (
         <section className={cn(card, "space-y-3 p-4")} aria-label="Your move">
           <GuessBox disabled={pending} guessed={v.guesses.map((g) => g.dx)} onGuess={(dx) => onMove({ t: "guess", dx })} />
-          <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
+          <HintButton
+            status={meta.hints}
+            onStatus={onHints}
+            onUse={onHint}
+            used={!canHint}
+            disabled={pending}
+            shown={
+              v.hints.chapter || v.hints.pointer ? (
+                <>
+                  {v.hints.chapter && <p>Chapter: {v.hints.chapter}.</p>}
+                  {v.hints.pointer && <p>{v.hints.pointer}</p>}
+                </>
+              ) : null
+            }
+          />
+          <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
             <button type="button" className={btnSecondary} disabled={pending || !v.canClue} onClick={() => onMove({ t: "clue" })}>
               <ArrowRight className="size-4" aria-hidden /> Next clue
             </button>
             <button type="button" className={btnSecondary} aria-expanded={showTests} disabled={pending || v.investigations.every((x) => x.ordered)} onClick={() => setShowTests((s) => !s)}>
               <FlaskConical className="size-4" aria-hidden /> Order a test
             </button>
-            <button type="button" className={btnSecondary} disabled={pending || !canHint || outOfHints} onClick={() => onMove({ t: "hint" })}>
-              <Lightbulb className="size-4" aria-hidden /> <span className="truncate">{canHint ? "Hint" : "No more hints"}</span>
-            </button>
             {confirmQuit ? (
-              <button type="button" className={cn(btnInk)} disabled={pending} onClick={() => onMove({ t: "giveup" })}>
+              <button type="button" className={cn(btnInk, "col-span-2 sm:col-span-1")} disabled={pending} onClick={() => onMove({ t: "giveup" })}>
                 <Flag className="size-4" aria-hidden /> Yes, show me
               </button>
             ) : (
-              <button type="button" className={btnSecondary} disabled={pending} onClick={() => setConfirmQuit(true)}>
+              <button type="button" className={cn(btnSecondary, "col-span-2 sm:col-span-1")} disabled={pending} onClick={() => setConfirmQuit(true)}>
                 <Flag className="size-4" aria-hidden /> Give up
               </button>
             )}
           </div>
-          <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
-            <HintChip status={meta.hints} onStatus={onHints} />
-            {!v.canClue && v.cluesOpen < MAX_CLUES ? <p className="text-sm text-muted-foreground">Make a guess to open clue {v.cluesOpen + 1}.</p> : null}
-          </div>
+          {!v.canClue && v.cluesOpen < MAX_CLUES ? <p className="text-sm text-muted-foreground">Make a guess to open clue {v.cluesOpen + 1}.</p> : null}
           {showTests && (
             <ul className="grid gap-2 sm:grid-cols-2" aria-label="Tests you can order (each costs one clue point)">
               {v.investigations
@@ -474,6 +485,62 @@ function CaseBoard({
               ))}
           </ul>
         </details>
+      )}
+    </div>
+  );
+}
+
+/**
+ * After the end: the clues and tests the student never opened stay on the
+ * server until this one small control asks for them.
+ */
+function OtherClues({ game }: { game: Game }) {
+  const { view: v } = game;
+  const [rest, setRest] = React.useState<CaseRest | null>(null);
+  const [open, setOpen] = React.useState(false);
+  const [error, setError] = React.useState<string | null>(null);
+  const [pending, start] = React.useTransition();
+  function toggle() {
+    if (open) return setOpen(false);
+    if (rest) return setOpen(true);
+    setError(null);
+    start(async () => {
+      const r = await dailyRest({ mode: v.mode, caseId: v.caseId, log: game.log }).catch(() => null);
+      if (!r || !r.ok) return setError(r?.error ?? LOAD_FAIL);
+      setRest(r.rest);
+      setOpen(true);
+    });
+  }
+  return (
+    <div className="space-y-2">
+      <button type="button" className={cn(btnSecondary, "min-h-11 w-full sm:w-auto")} aria-expanded={open} disabled={pending} onClick={toggle}>
+        {pending ? <LoaderCircle className="size-4 animate-spin" aria-hidden /> : <Search className="size-4" aria-hidden />}
+        {open ? "Hide the other clues" : "Show the other clues"}
+      </button>
+      {error && <p role="status" className="text-sm text-muted-foreground">{error}</p>}
+      {open && rest && (
+        <ul className="space-y-2" aria-label="Clues and tests you didn't open">
+          {rest.clues.map((x) => (
+            <li key={`c${x.n}`} className={cn(card, "flex gap-3 border-dashed bg-background p-3")}>
+              <span className="grid size-7 shrink-0 place-items-center rounded-md border-2 border-foreground bg-background font-pix text-sm">{x.n}</span>
+              <p className="min-w-0 flex-1 leading-snug">{x.text}</p>
+            </li>
+          ))}
+          {rest.tests.map((x) => {
+            const Icon = KIND_ICON[x.kind];
+            return (
+              <li key={`t${x.label}`} className={cn(card, "flex gap-3 border-dashed bg-background p-3")}>
+                <Icon className="mt-0.5 size-5 shrink-0" aria-hidden />
+                <p className="min-w-0 flex-1 leading-snug">
+                  <span className="font-bold">
+                    {KIND_WORD[x.kind]}: {x.label}.
+                  </span>{" "}
+                  {x.result}
+                </p>
+              </li>
+            );
+          })}
+        </ul>
       )}
     </div>
   );
@@ -791,9 +858,17 @@ function ModeSwitch({ tab, onPick }: { tab: Tab; onPick: (t: Tab) => void }) {
             tab === t ? "bg-foreground text-background" : "text-foreground hover:bg-accent",
           )}
         >
-          <Icon className="size-4 shrink-0" aria-hidden />
-          <span className="truncate">{label}</span>
-          {t === "ai" ? <span className="shrink-0 rounded-full border border-current px-1.5 text-[10px] font-bold uppercase leading-4">Soon</span> : null}
+          {/* Narrow phones: words only, so the three names fit without being cut. */}
+          <Icon className="hidden size-4 shrink-0 min-[420px]:block" aria-hidden />
+          {t === "daily" ? (
+            <>
+              <span className="truncate min-[380px]:hidden">Today</span>
+              <span className="hidden truncate min-[380px]:inline">{label}</span>
+            </>
+          ) : (
+            <span className="truncate">{label}</span>
+          )}
+          {t === "ai" ? <span className="hidden shrink-0 rounded-full border border-current px-1.5 text-[10px] font-bold uppercase leading-4 min-[420px]:inline">Soon</span> : null}
         </button>
       ))}
     </div>
@@ -841,7 +916,7 @@ function AiFlag({ caseId }: { caseId: string }) {
           onSubmit={(e) => {
             e.preventDefault();
             startSending(async () => {
-              const r = await flagAiCaseAction({ caseId, reason });
+              const r = await flagAiCaseAction({ caseId, reason }).catch(() => ({ ok: false, message: "Connection lost. Try again." }));
               setMsg({ ok: r.ok, text: r.message });
             });
           }}

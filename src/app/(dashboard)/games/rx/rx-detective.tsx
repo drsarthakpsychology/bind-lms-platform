@@ -103,9 +103,14 @@ function Round({ r, setR, onAnswered, onEnd, medIds }: { r: Run; setR: (r: Run) 
   const gone = r.ruled[hintKey] ?? [];
   const hintedHere = Object.keys(r.ruled).some((k) => k === q.id || k.startsWith(`${q.id}.`));
 
+  // A fast double tap must not send the same answer twice.
+  const sent = React.useRef("");
   function pick(value: string) {
     if (r.revealed || complete) return;
     const picks = [...r.picks, value];
+    const tap = `${r.run}:${r.idx}:${picks.length}`;
+    if (sent.current === tap) return;
+    sent.current = tap;
     if (picks.length < needed) {
       const d = drugById(q.id)!;
       buzz(value === d[STEPS[picks.length - 1].key]);

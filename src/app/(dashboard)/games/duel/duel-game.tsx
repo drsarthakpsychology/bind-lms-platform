@@ -346,10 +346,12 @@ function RemoteMatch({ initial, onDone, onBack, onAgain }: { initial: DuelView; 
     return () => window.removeEventListener("beforeunload", warn);
   }, [view.phase]);
 
-  async function answer(round: number, dx: number, feature: number) {
+  async function answer(round: number, dx: number, feature: number): Promise<boolean> {
     const r = await api({ op: "answer", matchId: view.matchId, round, dx, feature });
     if (r.view) accept(r.view);
     if (r.error) setErr(r.error);
+    else setErr(null);
+    return !r.error || Boolean(r.view?.youAnswered);
   }
   async function quit() {
     const r = await api({ op: "quit", matchId: view.matchId });
@@ -411,7 +413,7 @@ function LocalMatch({ items, seed, onDone, onBack, onAgain }: { items: DuelItem[
   );
 }
 
-function Arena({ view: v, clock, err, onAnswer, onQuit, onBack, onAgain }: { view: DuelView; clock: number; err: string | null; onAnswer: (round: number, dx: number, feature: number) => void; onQuit: () => void; onBack: () => void; onAgain: () => void }) {
+function Arena({ view: v, clock, err, onAnswer, onQuit, onBack, onAgain }: { view: DuelView; clock: number; err: string | null; onAnswer: (round: number, dx: number, feature: number) => unknown; onQuit: () => void; onBack: () => void; onAgain: () => void }) {
   const reduce = useReducedMotion();
   const anim = (cls: string) => (reduce === false ? cls : undefined);
   const left = v.until ? Math.max(0, v.until - clock) : 0;
@@ -555,7 +557,7 @@ function PlayerSide({ name, icon: Icon, score, lead, gained, status, right = fal
  * One round: tap the diagnosis (+100), then tap what tells it apart (+50).
  * The second tap locks the answer in; there is no extra button.
  */
-function RoundPlay({ v, left, onAnswer }: { v: DuelView; left: number; onAnswer: (round: number, dx: number, feature: number) => void }) {
+function RoundPlay({ v, left, onAnswer }: { v: DuelView; left: number; onAnswer: (round: number, dx: number, feature: number) => unknown }) {
   const q = v.question!;
   const [dx, setDx] = React.useState<number | null>(null);
   const [sent, setSent] = React.useState(false);
@@ -567,7 +569,10 @@ function RoundPlay({ v, left, onAnswer }: { v: DuelView; left: number; onAnswer:
       if (locked || dx === null) return;
       setSent(true);
       haptic("tap");
-      onAnswer(v.round, dx, feature);
+      // A lost answer (no connection) unlocks the round so it can be sent again.
+      void Promise.resolve(onAnswer(v.round, dx, feature)).then((ok) => {
+        if (ok === false) setSent(false);
+      });
     },
     [locked, dx, onAnswer, v.round],
   );

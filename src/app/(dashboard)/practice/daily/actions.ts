@@ -19,7 +19,7 @@ import {
   type CohortStats,
   type PracticeRecord,
 } from "@/lib/games/daily/engine";
-import { buildView, type CaseView } from "@/lib/games/daily/view";
+import { buildView, restOf, type CaseRest, type CaseView } from "@/lib/games/daily/view";
 import { admin, cohortPeers, currentPlayer, isMissing } from "@/lib/games/server";
 import { hintedItems, hintStatus, spendHint, type HintStatus } from "@/lib/hints/server";
 import { itemKey } from "@/lib/hints/rules";
@@ -110,6 +110,35 @@ async function meta(userId: string, day: string, stored: boolean, withCohort: bo
   }
 }
 
+/** The case a move or a request is about (today's for "daily"). */
+async function findCase(input: { mode: "daily" | "practice"; caseId?: string }): Promise<{ ok: true; c: DailyCase; mode: "daily" | "practice"; isAi: boolean } | { ok: false; error: string }> {
+  const daily = todaysCase(istToday());
+  const mode = input.mode === "practice" ? "practice" : "daily";
+  // AI cases ("ai-…") play in practice mode only, through the same engine.
+  const isAi = mode === "practice" && typeof input.caseId === "string" && input.caseId.startsWith("ai-");
+  let c: DailyCase | undefined;
+  if (mode === "daily") c = daily;
+  else if (isAi) c = (await loadAiCase(input.caseId!))?.daily;
+  else if (typeof input.caseId === "string") c = caseById(input.caseId);
+  if (!c) return { ok: false, error: "That case isn't available." };
+  if (mode === "practice" && c.id === daily.id) return { ok: false, error: "That's today's daily case. Play it from the Daily tab." };
+  return { ok: true, c, mode, isAi };
+}
+
+/**
+ * The clues and tests the student never opened, sent only when they ask
+ * ("Show the other clues") and only once the case is over.
+ */
+export async function dailyRest(input: { mode: "daily" | "practice"; caseId?: string; log?: unknown }): Promise<{ ok: true; rest: CaseRest } | { ok: false; error: string }> {
+  const me = await currentPlayer();
+  if (!me) return { ok: false, error: "Please sign in again." };
+  const found = await findCase(input);
+  if (!found.ok) return found;
+  const { row, stored } = await loadRow(me.id, found.mode, istToday(), found.c.id);
+  const rest = restOf(found.c, replay(found.c, stored ? cleanLog(row?.log ?? []) : cleanLog(input.log)).progress);
+  return rest ? { ok: true, rest } : { ok: false, error: "Finish the case first." };
+}
+
 /**
  * Play one move (or just load, when `action` is missing). The server replays
  * the stored log; the browser's log is used only when nothing can be stored.
@@ -118,16 +147,9 @@ export async function dailyMove(input: { mode: "daily" | "practice"; caseId?: st
   const me = await currentPlayer();
   if (!me) return { ok: false, error: "Please sign in again." };
   const day = istToday();
-  const daily = todaysCase(day);
-  const mode = input.mode === "practice" ? "practice" : "daily";
-  // AI cases ("ai-…") play in practice mode only, through the same engine.
-  const isAi = mode === "practice" && typeof input.caseId === "string" && input.caseId.startsWith("ai-");
-  let c: DailyCase | undefined;
-  if (mode === "daily") c = daily;
-  else if (isAi) c = (await loadAiCase(input.caseId!))?.daily;
-  else if (input.caseId) c = caseById(input.caseId);
-  if (!c) return { ok: false, error: "That case isn't available." };
-  if (mode === "practice" && c.id === daily.id) return { ok: false, error: "That's today's daily case. Play it from the Daily tab." };
+  const found = await findCase(input);
+  if (!found.ok) return found;
+  const { c, mode, isAi } = found;
 
   const { row, stored } = await loadRow(me.id, mode, day, c.id);
   // Hints are charged per case by the hint counter; this is the case's key there.

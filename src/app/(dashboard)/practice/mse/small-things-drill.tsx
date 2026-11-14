@@ -2,7 +2,6 @@
 
 import * as React from "react";
 import { haptic } from "@/lib/haptics";
-import { cn } from "@/lib/utils";
 import { SMALL_THINGS } from "@/lib/mse/small-things";
 import { OnceHint } from "@/components/help/once-hint";
 import { EndReaction } from "@/components/reactions/graphics";
@@ -18,6 +17,7 @@ export function SmallThingsDrill() {
 
   const item = SMALL_THINGS[idx % SMALL_THINGS.length];
   const done = idx >= SMALL_THINGS.length;
+  const seen = done ? SMALL_THINGS : SMALL_THINGS.slice(0, idx + (revealed ? 1 : 0));
 
   function next() {
     setRevealed(false);
@@ -47,7 +47,7 @@ export function SmallThingsDrill() {
                   setRevealed(true);
                   haptic("success");
                 }}
-                className="mt-2 rounded-md border-2 border-border bg-primary px-4 py-1.5 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px"
+                className="mt-2 min-h-11 rounded-md border-2 border-border bg-primary px-4 py-1.5 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px"
               >
                 Reveal the read
               </button>
@@ -65,7 +65,7 @@ export function SmallThingsDrill() {
               <button
                 type="button"
                 onClick={next}
-                className="rounded-md border-2 border-border bg-primary px-4 py-1.5 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px"
+                className="min-h-11 rounded-md border-2 border-border bg-primary px-4 py-1.5 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px"
               >
                 Next observation
               </button>
@@ -82,20 +82,20 @@ export function SmallThingsDrill() {
         </div>
       )}
 
-      {/* Reference card: the full checklist, always visible */}
-      <details className="rounded-md border border-border bg-background p-3">
-        <summary className="cursor-pointer text-caption font-medium text-muted-foreground">
-          The reference card: pull this up mid-exam
-        </summary>
-        <ul className="mt-2 space-y-1.5">
-          {SMALL_THINGS.map((s) => (
-            <li key={s.id} className={cn("text-small", idx > SMALL_THINGS.indexOf(s) && "text-muted-foreground/60")}>
-              <span className="font-medium">{s.moment}</span>
-              <span className="text-muted-foreground">: {s.read}</span>
-            </li>
-          ))}
-        </ul>
-      </details>
+      {/* Reference card: only the moments already read, so it never gives away the next one. */}
+      {seen.length > 0 ? (
+        <details className="rounded-md border border-border bg-background p-3">
+          <summary className="flex min-h-11 cursor-pointer items-center text-caption font-medium text-muted-foreground">The reference card</summary>
+          <ul className="mt-2 space-y-1.5">
+            {seen.map((s) => (
+              <li key={s.id} className="text-small">
+                <span className="font-medium">{s.moment}</span>
+                <span className="text-muted-foreground">: {s.read}</span>
+              </li>
+            ))}
+          </ul>
+        </details>
+      ) : null}
     </div>
   );
 }

@@ -20,7 +20,7 @@ import {
   wrongReason,
   xpFor,
 } from "./engine";
-import { buildView } from "./view";
+import { buildView, restOf } from "./view";
 
 const mdd = caseById("dc-001")!;
 
@@ -205,6 +205,24 @@ describe("view", () => {
     expect(done.reveal?.answer).toBe("Major depressive disorder");
     expect(done.reveal?.refs).toBeNull();
     expect(buildView(mdd, apply(mdd, start(), { t: "giveup" }), "daily", true).reveal?.refs?.length).toBeGreaterThan(0);
+  });
+
+  it("never sends clues or tests the student didn't open, even after the end", () => {
+    let p = apply(mdd, start(), { t: "clue" });
+    p = apply(mdd, p, { t: "inv", i: 0 });
+    expect(restOf(mdd, p)).toBeNull();
+    p = apply(mdd, p, { t: "giveup" });
+    const v = buildView(mdd, p, "daily", false);
+    expect(v.clues).toEqual(mdd.clues.slice(0, 2));
+    const json = JSON.stringify(v);
+    for (const c of mdd.clues.slice(2)) expect(json).not.toContain(c);
+    mdd.investigations.slice(1).forEach((x) => expect(json).not.toContain(x.result));
+    expect(v.investigations[0].result).toBe(mdd.investigations[0].result);
+    expect(v.unopened).toBe(4 + mdd.investigations.length - 1);
+    const rest = restOf(mdd, p)!;
+    expect(rest.clues.map((x) => x.n)).toEqual([3, 4, 5, 6]);
+    expect(rest.clues.map((x) => x.text)).toEqual(mdd.clues.slice(2));
+    expect(rest.tests).toHaveLength(mdd.investigations.length - 1);
   });
 });
 

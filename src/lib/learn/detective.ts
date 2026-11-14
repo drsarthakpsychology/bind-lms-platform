@@ -40,5 +40,4 @@ export const CASES: Case[] = [
   { answer: "dhat", family: "disorder", clues: ["Described in South Asia", "Young men with weakness and fatigue", "Often comes with anxiety or low mood", "Worry about losing semen"] },
 ];
 
-export const POINTS = [40, 30, 20, 10] as const;
-export const WRONG_PENALTY = 5;
+export { POINTS, WRONG_PENALTY } from "./detective-rules";

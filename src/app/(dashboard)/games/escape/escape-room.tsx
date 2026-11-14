@@ -208,7 +208,7 @@ function Door({ p, seed, tries, feedback, disabled, onSubmit }: { p: Puzzle; see
   const [picked, setPicked] = React.useState<number[]>([]);
   const [order, setOrder] = React.useState<number[]>(() => shownOrder(p, seed));
   const [num, setNum] = React.useState<number>(() => (p.kind === "number" ? p.min : 0));
-  const [showHint, setShowHint] = React.useState(false);
+  // Help after wrong answers is free, so it simply shows once it opens.
   const hint = tries >= HINT_AFTER;
 
   const keys: Record<string, () => void> = {};
@@ -237,17 +237,17 @@ function Door({ p, seed, tries, feedback, disabled, onSubmit }: { p: Puzzle; see
             {tries} wrong {tries === 1 ? "try" : "tries"}
           </span>
         ) : null}
-        {hint ? (
-          <Btn variant="ghost" className="ml-auto min-h-9 px-2 text-small" onClick={() => setShowHint((s) => !s)} aria-expanded={showHint}>
-            <Lightbulb aria-hidden /> {showHint ? "Hide hint" : "Hint"}
-          </Btn>
-        ) : (
+        {!hint ? (
           <span className="ml-auto inline-flex items-center gap-1 text-caption text-muted-foreground">
             <Lightbulb className="size-3.5" aria-hidden /> Hint after {HINT_AFTER} misses
           </span>
-        )}
+        ) : null}
       </div>
-      {showHint && hint ? <p className={cn("rounded-md border-2 border-foreground bg-status-pending-bg p-2 text-small text-status-pending-fg", m.rise)}>{p.hint}</p> : null}
+      {hint ? (
+        <p className={cn("flex items-start gap-2 rounded-md border-2 border-foreground bg-status-pending-bg p-2 text-small text-status-pending-fg", m.rise)} role="status">
+          <Lightbulb className="mt-0.5 size-4 shrink-0" aria-hidden /> <span className="min-w-0">{p.hint}</span>
+        </p>
+      ) : null}
       <p className="text-body-strong">{p.prompt}</p>
 
       {p.kind === "pick" ? (
@@ -442,6 +442,7 @@ function TeamRun({ teamId, actions, onExit }: { teamId: string; actions: Actions
   const [feedback, setFeedback] = React.useState<Feedback>(null);
   const [seenStage, setSeenStage] = React.useState<number | null>(null);
   const [busy, setBusy] = React.useState(false);
+  const [lost, setLost] = React.useState(false);
   const reaction = useReaction();
 
   function apply(v: EscapeView | null) {
@@ -524,8 +525,11 @@ function TeamRun({ teamId, actions, onExit }: { teamId: string; actions: Actions
   async function submit(raw: string) {
     if (busy || !view) return;
     setBusy(true);
-    const r = await actions.answerEscape({ teamId, stage: view.state.stage, answer: raw }).catch(() => ({ view: null, ok: false }));
+    const r = await actions.answerEscape({ teamId, stage: view.state.stage, answer: raw }).catch(() => null);
     setBusy(false);
+    // No connection is not a wrong answer: no penalty shown, no "wrong" sticker.
+    setLost(r === null);
+    if (!r) return;
     buzz(r.ok);
     if (!r.view?.state.done) reaction.onAnswer(r.ok);
     setFeedback({ stage: view.state.stage, ok: r.ok, by: r.ok ? "You" : undefined });
@@ -555,7 +559,11 @@ function TeamRun({ teamId, actions, onExit }: { teamId: string; actions: Actions
           ) : (
             <Door key={`${p.id}-${seenStage}`} p={p} seed={teamId} tries={st.tries[stage] ?? 0} feedback={feedback?.stage === stage ? feedback : null} disabled={busy} onSubmit={submit} />
           )}
-          {feedback && !feedback.ok && !showOpened ? (
+          {lost ? (
+            <p className="text-small font-semibold" role="status">
+              Connection lost. Your answer was not sent. Try again.
+            </p>
+          ) : feedback && !feedback.ok && !showOpened ? (
             <p className="flex items-center gap-1.5 text-small font-semibold" role="status">
               <X className="size-4" aria-hidden /> Not that. +{PENALTY_S} seconds for the team. Try again.
             </p>

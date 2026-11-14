@@ -15,7 +15,7 @@ import { hashString } from "@/lib/games-sims/common";
 import { itemKey, ruleOut, type HintGame } from "./rules";
 
 export type HintAsk =
-  | { game: "detective"; run: string; round: number; answer: string; options: string[] }
+  | { game: "detective"; run: string; round: number; options: string[]; token?: string; answer?: string }
   | { game: "rx"; run: string; kind: "chain" | "mystery" | "puzzle" | "review"; id: string; step: number; options: string[] }
   | { game: "mse"; run: string; excerpt: string; idx: number; options: string[] }
   | { game: "ward"; run: string; campaign: string; decision: string; options: string[] }
@@ -33,6 +33,7 @@ export function resolveHint(a: HintAsk): Resolved {
   if (!a || typeof a !== "object" || typeof a.run !== "string" || a.run.length < 4 || a.run.length > 60) return null;
   switch (a.game) {
     case "detective": {
+      // `answer` is filled on the server from the signed deal (askHint), never taken from the browser.
       const c = DETECTIVE_CASES.find((x) => x.answer === a.answer);
       const o = opts(a.options);
       if (!c || !o.includes(c.answer) || !Number.isInteger(a.round) || a.round < 0 || a.round > 50) return null;
