@@ -5,6 +5,7 @@ import { readFlags } from "@/lib/flags";
 import { redirect } from "next/navigation";
 import { Reveal } from "@/components/motion/reveal";
 import { RecordTabs } from "./record-tabs";
+import { leagueWeek } from "@/lib/leagues/week";
 
 export const dynamic = "force-dynamic";
 
@@ -30,12 +31,10 @@ export default async function RecordPage() {
   } = await supabase.auth.getUser();
   if (!user) return null;
 
-  // Monday of the current week: one check-in per week.
-  const now = new Date();
-  const day = (now.getDay() + 6) % 7; // Mon=0
-  const monday = new Date(now);
-  monday.setDate(now.getDate() - day);
-  const weekLabel = monday.toISOString().slice(0, 10);
+  // Monday of the current India week: one check-in per week. (The server's
+  // clock is UTC, so before 05:30 IST on a Monday this used to file the
+  // check-in under the week before, overwriting it.)
+  const weekLabel = leagueWeek();
 
   const [{ data: entries }, { data: competencies }, { data: compRows }, { data: checkin }] = await Promise.all([
     // Explicit columns (egress: supervision_entries carries more than the log shows).

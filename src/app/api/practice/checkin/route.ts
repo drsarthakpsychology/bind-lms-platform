@@ -3,6 +3,7 @@ import { z } from "zod";
 import { requireStudentApi } from "@/lib/auth/api-guard";
 import { createClient } from "@/lib/supabase/server";
 import { rateLimit } from "@/lib/rate-limit";
+import { leagueWeek } from "@/lib/leagues/week";
 
 export const runtime = "nodejs";
 
@@ -11,7 +12,8 @@ const checkinSchema = z.object({
   energy: z.number().int().min(1).max(5),
   preparedness: z.number().int().min(1).max(5),
   freeLine: z.string().max(500).optional(),
-  weekLabel: z.string().min(1).max(40),
+  /** Ignored: the week is the server's India week (a tab left open over Sunday midnight sent last week's). */
+  weekLabel: z.string().max(40).optional(),
 });
 
 /**
@@ -27,7 +29,7 @@ export async function POST(req: Request) {
   const user = profile;
 
   const allowed = await rateLimit(`checkin:${user.id}`, 10);
-  if (!allowed) return NextResponse.json({ error: "slow down" }, { status: 429 });
+  if (!allowed) return NextResponse.json({ error: "Wait a minute and try again." }, { status: 429 });
 
   const body = await req.json().catch(() => null);
   const parsed = checkinSchema.safeParse(body);
@@ -45,13 +47,13 @@ export async function POST(req: Request) {
         energy: parsed.data.energy,
         preparedness: parsed.data.preparedness,
         free_line: parsed.data.freeLine,
-        week_label: parsed.data.weekLabel,
+        week_label: leagueWeek(),
       },
       { onConflict: "user_id,week_label" },
     )
     .select("id")
     .single();
-  if (error) return NextResponse.json({ error: error.message }, { status: 500 });
+  if (error) return NextResponse.json({ error: "Could not save. Please try again." }, { status: 500 });
 
   return NextResponse.json({ id: data.id });
 }

@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { haptic } from "@/lib/haptics";
+import { istToday } from "@/lib/practice/streaks";
 
 export interface SupervisionEntry {
   id: string;
@@ -30,7 +31,8 @@ export function SupervisionLog({
 }) {
   const [activity, setActivity] = React.useState("");
   const [hours, setHours] = React.useState("1");
-  const [date, setDate] = React.useState(new Date().toISOString().slice(0, 10));
+  // Today in India (toISOString is the UTC day, still yesterday before 05:30 IST).
+  const [date, setDate] = React.useState(() => istToday());
   const [supervisor, setSupervisor] = React.useState("");
   const [email, setEmail] = React.useState("");
   const [competency, setCompetency] = React.useState("");

@@ -258,11 +258,12 @@ export function SubmissionForm({
           </div>
           <span className="text-caption text-muted-foreground">
             Submitted on{" "}
-            {new Date(submission!.submittedAt).toLocaleString(undefined, {
+            {new Date(submission!.submittedAt).toLocaleString("en-IN", {
               month: "short",
               day: "numeric",
               hour: "numeric",
               minute: "2-digit",
+              timeZone: "Asia/Kolkata",
             })}
           </span>
         </div>

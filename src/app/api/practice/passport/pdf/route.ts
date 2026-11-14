@@ -3,6 +3,7 @@ import { requireStudentApi } from "@/lib/auth/api-guard";
 import { createClient } from "@/lib/supabase/server";
 import { rateLimit } from "@/lib/rate-limit";
 import { generatePassportPdf } from "@/lib/passport-pdf";
+import { istToday } from "@/lib/practice/streaks";
 
 export const runtime = "nodejs";
 
@@ -23,7 +24,7 @@ export async function GET() {
 
   const { data: profile } = await supabase
     .from("profiles")
-    .select("email")
+    .select("email, name")
     .eq("id", user.id)
     .maybeSingle();
 
@@ -42,14 +43,16 @@ export async function GET() {
   }
 
   const pdf = await generatePassportPdf({
-    studentName: profile?.email ?? "Student",
+    // Their name on the passport, not their email address.
+    studentName: (typeof profile?.name === "string" && profile.name.trim()) || profile?.email || "Student",
     rows: (competencies ?? []).map((c) => ({
       name: c.name as string,
       description: (c.description as string | null) ?? undefined,
       hours: hoursByComp.get(c.id) ?? 0,
       evidenced: hoursByComp.has(c.id),
     })),
-    issuedAt: new Date().toISOString().slice(0, 10),
+    // India date: before 05:30 IST the UTC date is still yesterday.
+    issuedAt: istToday(),
   });
 
   return new NextResponse(new Uint8Array(pdf), {
