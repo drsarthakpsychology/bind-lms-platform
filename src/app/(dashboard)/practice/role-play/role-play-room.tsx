@@ -111,7 +111,7 @@ export function RolePlayRoom({ sessionId, myRole, myId }: { sessionId: string; m
                 >
                   <p className="text-small">{m.content}</p>
                   <p className={cn("mt-1 text-caption", mine ? "text-primary-foreground/70" : "text-muted-foreground")}>
-                    {new Date(m.created_at).toLocaleTimeString()}
+                    {new Date(m.created_at).toLocaleTimeString("en-IN", { hour: "numeric", minute: "2-digit", timeZone: "Asia/Kolkata" })}
                   </p>
                 </div>
               </div>

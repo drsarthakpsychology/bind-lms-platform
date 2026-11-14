@@ -9,6 +9,7 @@ import { visibleCourseIds } from "@/lib/cohorts/access";
 import { VIEW_MODE_COOKIE } from "../view-mode-constants";
 import { PageHeader } from "@/components/design-system/page-header";
 import { EmptyState } from "@/components/design-system/empty-state";
+import { leaveWithoutSession } from "@/lib/auth/session-redirect";
 
 /**
  * /courses: "Lectures" in the navigation. With one course (the usual case)
@@ -18,7 +19,7 @@ import { EmptyState } from "@/components/design-system/empty-state";
  */
 export default async function LecturesIndexPage() {
   const session = await getSession();
-  if (session.status !== "ok") return null;
+  if (session.status !== "ok") return leaveWithoutSession(session);
   const { profile } = session;
 
   const viewingAsStudent = (await cookies()).get(VIEW_MODE_COOKIE)?.value === "student";

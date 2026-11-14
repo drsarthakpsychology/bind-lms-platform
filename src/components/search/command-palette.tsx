@@ -29,12 +29,35 @@ export function CommandPalette({ entries }: { entries: PaletteEntry[] }) {
   const [query, setQuery] = React.useState("");
   const [idx, setIdx] = React.useState(0);
   const inputRef = React.useRef<HTMLInputElement>(null);
+  const panelRef = React.useRef<HTMLDivElement>(null);
 
-  // Focus the input whenever the palette opens. The focus call is a DOM side
-  // effect, not a state update: safe inside the effect.
+  // Focus the input whenever the palette opens, and hand focus back to where
+  // it was (the search box in the top bar) when it closes. DOM side effects,
+  // not state updates: safe inside the effect.
   React.useEffect(() => {
-    if (open) inputRef.current?.focus();
+    if (!open) return;
+    const before = document.activeElement as HTMLElement | null;
+    inputRef.current?.focus();
+    return () => {
+      if (before && before.isConnected) before.focus();
+    };
   }, [open]);
+
+  // Tab stays inside the open search (aria-modal says the page behind is not there).
+  function trapTab(e: React.KeyboardEvent) {
+    if (e.key !== "Tab" || !panelRef.current) return;
+    const items = [...panelRef.current.querySelectorAll<HTMLElement>("input, button, a[href]")].filter((el) => !el.hasAttribute("disabled"));
+    if (!items.length) return;
+    const first = items[0];
+    const last = items[items.length - 1];
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault();
+      last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault();
+      first.focus();
+    }
+  }
 
   // Global triggers: ⌘K / Ctrl+K and the sidebar's custom event. The handlers
   // run on user input (never synchronously inside this effect), so calling
@@ -120,8 +143,10 @@ export function CommandPalette({ entries }: { entries: PaletteEntry[] }) {
       onClick={() => setOpen(false)}
     >
       <div
+        ref={panelRef}
         className="flex w-full flex-1 flex-col overflow-hidden bg-card lg:max-w-xl lg:flex-none lg:rounded-lg lg:border-2 lg:border-border lg:shadow-xl"
         onClick={(e) => e.stopPropagation()}
+        onKeyDown={trapTab}
       >
         {/* input */}
         <div className="flex items-center gap-2 border-b-2 border-border px-3 py-1.5 pt-[max(0.375rem,env(safe-area-inset-top))] lg:pt-1.5">
@@ -165,7 +190,13 @@ export function CommandPalette({ entries }: { entries: PaletteEntry[] }) {
                     <Link
                       key={item.id}
                       href={item.href}
-                      onClick={() => choose(item)}
+                      onClick={(e) => {
+                        // A plain click: navigate once (the link alone would push a second
+                        // history entry, so Back seemed to do nothing). Cmd/Ctrl-click still opens a new tab.
+                        if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
+                        e.preventDefault();
+                        choose(item);
+                      }}
                       onMouseEnter={() => setIdx(flat.indexOf(item))}
                       className={cn(
                         "flex min-h-11 items-center gap-3 rounded-md px-3 py-2 text-left",
@@ -187,9 +218,8 @@ export function CommandPalette({ entries }: { entries: PaletteEntry[] }) {
           )}
         </div>
 
-        {/* footer */}
-        {/* Keyboard keys: only where a keyboard is likely. */}
-        <div className="hidden items-center gap-3 border-t-2 border-border px-3 py-1.5 text-caption text-muted-foreground md:flex">
+        {/* footer: keyboard keys, so not on touch screens */}
+        <div className="hidden items-center gap-3 border-t-2 border-border px-3 py-1.5 text-caption text-muted-foreground pointer-fine:flex">
           <span className="flex items-center gap-1">
             <CornerDownLeft className="size-3" aria-hidden /> select
           </span>

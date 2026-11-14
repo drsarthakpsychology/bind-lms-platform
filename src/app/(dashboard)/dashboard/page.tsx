@@ -20,6 +20,7 @@ import { loadQuests } from "@/lib/hints/server";
 import { pickContinue } from "./next-step";
 import { HomeBody } from "./home-view";
 import { RefreshOnSave } from "@/components/save/refresh-on-save";
+import { leaveWithoutSession } from "@/lib/auth/session-redirect";
 
 /**
  * Home (plan section 8): one Continue card, today's goal, and the three
@@ -30,7 +31,7 @@ import { RefreshOnSave } from "@/components/save/refresh-on-save";
  */
 export default async function DashboardPage() {
   const session = await getSession();
-  if (session.status !== "ok") return null;
+  if (session.status !== "ok") return leaveWithoutSession(session);
   const { profile } = session;
 
   const cookieStore = await cookies();

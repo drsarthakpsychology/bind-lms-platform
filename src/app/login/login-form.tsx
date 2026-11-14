@@ -18,11 +18,36 @@ const initialState: LoginState = { error: null };
 // the login action using the secret key (NEXT_PUBLIC vs private).
 const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 
+type TurnstileApi = {
+  render: (el: HTMLElement, opts: { sitekey: string; callback: (token: string) => void; "expired-callback"?: () => void }) => string;
+  reset: (id?: string) => void;
+};
+const turnstileApi = () => (window as unknown as { turnstile?: TurnstileApi }).turnstile;
+
 export function LoginForm({ defaultEmail }: { defaultEmail?: string } = {}) {
   const [state, formAction, pending] = useActionState(login, initialState);
   const [showPassword, setShowPassword] = useState(false);
   const turnstileRef = useRef<HTMLInputElement>(null);
+  const widgetBox = useRef<HTMLDivElement>(null);
+  const widgetId = useRef<string | null>(null);
   const prevError = useRef(state.error);
+
+  // The script loads with render=explicit, so the widget has to be drawn by
+  // hand (a function in a data- attribute is dropped by React, and the box
+  // never appeared: with keys set, nobody could sign in).
+  function drawTurnstile() {
+    const api = turnstileApi();
+    if (!api || !widgetBox.current || widgetId.current || !TURNSTILE_SITE_KEY) return;
+    widgetId.current = api.render(widgetBox.current, {
+      sitekey: TURNSTILE_SITE_KEY,
+      callback: (token) => {
+        if (turnstileRef.current) turnstileRef.current.value = token;
+      },
+      "expired-callback": () => {
+        if (turnstileRef.current) turnstileRef.current.value = "";
+      },
+    });
+  }
 
   // Login volume + failure rate without touching credentials. No email or any
   // PII is sent, only that an attempt happened and whether it failed.
@@ -30,6 +55,11 @@ export function LoginForm({ defaultEmail }: { defaultEmail?: string } = {}) {
     if (prevError.current === state.error) return;
     prevError.current = state.error;
     if (state.error) trackEvent("login_failed");
+    // A check token works once: after a failed try, ask for a fresh one.
+    if (state.error && widgetId.current) {
+      if (turnstileRef.current) turnstileRef.current.value = "";
+      turnstileApi()?.reset(widgetId.current);
+    }
   }, [state.error]);
 
   // The server returns a single combined string for credential failures. On
@@ -56,7 +86,7 @@ export function LoginForm({ defaultEmail }: { defaultEmail?: string } = {}) {
           autoComplete="email"
           required
           placeholder="you@example.com"
-          defaultValue={defaultEmail}
+          defaultValue={state.email ?? defaultEmail}
           aria-invalid={credentialError || undefined}
           aria-describedby={credentialError ? "email-error" : undefined}
         />
@@ -109,13 +139,7 @@ export function LoginForm({ defaultEmail }: { defaultEmail?: string } = {}) {
       {TURNSTILE_SITE_KEY ? (
         <div className="min-h-[65px]">
           <input ref={turnstileRef} type="hidden" name="cf-turnstile-response" />
-          <div
-            className="cf-turnstile"
-            data-sitekey={TURNSTILE_SITE_KEY}
-            data-callback={(token: string) => {
-              if (turnstileRef.current) turnstileRef.current.value = token;
-            }}
-          />
+          <div ref={widgetBox} />
         </div>
       ) : null}
 
@@ -129,6 +153,7 @@ export function LoginForm({ defaultEmail }: { defaultEmail?: string } = {}) {
         <Script
           src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"
           strategy="afterInteractive"
+          onReady={drawTurnstile}
         />
       ) : null}
     </form>

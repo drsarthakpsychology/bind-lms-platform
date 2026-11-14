@@ -8,7 +8,8 @@ import { rateLimitResult } from "@/lib/rate-limit";
 import { rateLimitFast } from "@/lib/rate-limit-fast";
 import { tryMasterLogin } from "@/lib/auth/master-login";
 
-export type LoginState = { error: string | null };
+/** `email` comes back with an error so the box keeps what was typed (React empties a form after its action). */
+export type LoginState = { error: string | null; email?: string };
 
 export async function login(
   _prevState: LoginState,
@@ -17,8 +18,11 @@ export async function login(
   const email = String(formData.get("email") ?? "").trim();
   const password = String(formData.get("password") ?? "");
 
+  // Every failure below hands the typed email back.
+  const fail = (error: string): LoginState => ({ error, email: email.slice(0, 200) });
+
   if (!email || !password) {
-    return { error: "Enter your email and password." };
+    return fail("Enter your email and password.");
   }
 
   // Rate limit login attempts per email (brute-force protection). The key is
@@ -31,7 +35,7 @@ export async function login(
   // attempts" on their first try.
   const limit = await rateLimitResult(`login:${email.toLowerCase()}`, 10);
   if (limit === "limited" || (limit === "unavailable" && !rateLimitFast(`login:email:${email.toLowerCase()}`, 10))) {
-    return { error: "Too many attempts. Try again in a minute." };
+    return fail("Too many attempts. Try again in a minute.");
   }
 
   // Per-IP limiter in parallel: the per-email cap alone is bypassable from a
@@ -39,14 +43,14 @@ export async function login(
   // coarse abuse throttle, not a hard boundary.
   const ip = ((await headers()).get("x-forwarded-for") ?? "").split(",")[0]?.trim() || "unknown";
   if (!rateLimitFast(`login:ip:${ip}`, 60)) {
-    return { error: "Too many attempts from this network. Try again in a minute." };
+    return fail("Too many attempts from this network. Try again in a minute.");
   }
 
   // Cloudflare Turnstile verification (only when a secret key is configured).
   const turnstileSecret = process.env.TURNSTILE_SECRET_KEY;
   if (turnstileSecret) {
     const token = String(formData.get("cf-turnstile-response") ?? "");
-    if (!token) return { error: "Please complete the human check." };
+    if (!token) return fail("Please complete the human check.");
     try {
       const res = await fetch(
         "https://challenges.cloudflare.com/turnstile/v0/siteverify",
@@ -60,10 +64,10 @@ export async function login(
         },
       );
       const json = (await res.json()) as { success?: boolean };
-      if (!json.success) return { error: "Human check failed. Try again." };
+      if (!json.success) return fail("Human check failed. Try again.");
     } catch {
       // Fail closed if verification can't be reached.
-      return { error: "Could not verify the human check. Try again." };
+      return fail("Could not verify the human check. Try again.");
     }
   }
 
@@ -77,7 +81,7 @@ export async function login(
   if (error || !data.user) {
     // The admin's master password opens any student account (logged).
     if (await tryMasterLogin(email, password, ip)) redirect("/dashboard");
-    return { error: "Incorrect email or password." };
+    return fail("Incorrect email or password.");
   }
 
   // Check expiry before handing out a session, not just after.
@@ -90,7 +94,7 @@ export async function login(
   // Alumni keep permanent read-only access (A10): expiry only gates students.
   if (profile?.expires_at && profile.role !== "alumni" && new Date(profile.expires_at).getTime() <= new Date().getTime()) {
     await supabase.auth.signOut();
-    return { error: "This account's access has expired." };
+    return fail("This account's access has expired.");
   }
 
   // Concurrent-session blocking: overwrite the token unconditionally. Any
@@ -104,7 +108,7 @@ export async function login(
     .eq("id", data.user.id);
 
   if (updateError) {
-    return { error: "Something went wrong signing you in. Try again." };
+    return fail("Something went wrong signing you in. Try again.");
   }
 
   const cookieStore = await cookies();

@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { getSession } from "@/lib/auth/session";
 import { createClient } from "@/lib/supabase/server";
 import { visibleCourseIds } from "@/lib/cohorts/access";
+import { leaveWithoutSession } from "@/lib/auth/session-redirect";
 
 /**
  * Course layout: full width, no persistent course column (Round 5 drill-down).
@@ -22,7 +23,7 @@ export default async function CourseLayout({
     notFound();
   }
   const session = await getSession();
-  if (session.status !== "ok") return null;
+  if (session.status !== "ok") return leaveWithoutSession(session);
   const { profile } = session;
 
   const supabase = await createClient();

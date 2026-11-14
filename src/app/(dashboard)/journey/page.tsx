@@ -11,6 +11,7 @@ import { BOARDS } from "@/lib/standing/boards";
 import { PageHeader } from "@/components/design-system/page-header";
 import { backLinkClass } from "@/components/design-system/back-link";
 import { RefreshOnSave } from "@/components/save/refresh-on-save";
+import { leaveWithoutSession } from "@/lib/auth/session-redirect";
 
 export const metadata: Metadata = { title: "My journey" };
 export const dynamic = "force-dynamic";
@@ -22,7 +23,7 @@ export const dynamic = "force-dynamic";
  */
 export default async function JourneyPage() {
   const session = await getSession();
-  if (session.status !== "ok") return null;
+  if (session.status !== "ok") return leaveWithoutSession(session);
   const userId = session.profile.id;
   const admin = createAdminClient();
 

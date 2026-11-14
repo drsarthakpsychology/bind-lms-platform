@@ -8,6 +8,7 @@ import { askDoubt, markSolved, reclassifyMine, replyToDoubt, voteReply } from ".
 import { COMPLAINT_NOTICE, looksLikeComplaint } from "@/lib/doubts/classify";
 import type { DoubtListItem, DoubtThread } from "@/lib/doubts/data";
 import { cn } from "@/lib/utils";
+import { formatDateIST } from "@/lib/format";
 
 const ago = (iso: string) => {
   const m = Math.floor((Date.now() - new Date(iso).getTime()) / 60000);
@@ -15,7 +16,15 @@ const ago = (iso: string) => {
   if (m < 60) return `${m} min ago`;
   const h = Math.floor(m / 60);
   if (h < 24) return `${h} h ago`;
-  return new Date(iso).toLocaleDateString("en-IN", { day: "numeric", month: "short" });
+  return formatDateIST(iso, { year: false });
+};
+
+/** What the list says when a filter has nothing in it. */
+const EMPTY: Record<"all" | "open" | "mine" | "complaint", string> = {
+  all: "No doubts here yet. Be the first to ask: someone in your batch will help.",
+  open: "Every doubt has an answer. Nothing is waiting.",
+  mine: "You have not asked anything yet.",
+  complaint: "You have not sent the VIBHA team a concern.",
 };
 
 /** Ask box + list. The student writes a doubt; if it reads like a complaint we say so. */
@@ -30,7 +39,8 @@ export function DoubtsBoard({ items, canAskCohort, canAsk = true }: { items: Dou
 
   const complaintish = looksLikeComplaint(title, body);
   const shown = items.filter((d) => {
-    if (filter === "open") return d.status === "open" && d.kind === "doubt";
+    // "Unanswered" means what it says: nobody has replied yet.
+    if (filter === "open") return d.status === "open" && d.kind === "doubt" && d.replies === 0;
     if (filter === "mine") return d.mine;
     if (filter === "complaint") return d.kind === "complaint" && d.mine;
     return d.kind === "doubt" || d.mine;
@@ -39,7 +49,12 @@ export function DoubtsBoard({ items, canAskCohort, canAsk = true }: { items: Dou
   const post = async (markAs?: "doubt" | "complaint") => {
     setBusy(true);
     setErr(null);
-    const res = await askDoubt({ title, body, cohortId: canAskCohort, markAs });
+    let res: Awaited<ReturnType<typeof askDoubt>>;
+    try {
+      res = await askDoubt({ title, body, cohortId: canAskCohort, markAs });
+    } catch {
+      res = { error: "Your doubt was not sent. Check your connection and try again." };
+    }
     setBusy(false);
     if (res.error) setErr(res.error);
     else {
@@ -122,7 +137,7 @@ export function DoubtsBoard({ items, canAskCohort, canAsk = true }: { items: Dou
       </nav>
 
       {shown.length === 0 ? (
-        <p className="rounded-2xl border-2 border-dashed border-foreground/30 p-6 text-center text-sm text-muted-foreground">No doubts here yet. Be the first to ask: someone in your batch will help.</p>
+        <p className="rounded-2xl border-2 border-dashed border-foreground/30 p-6 text-center text-sm text-muted-foreground">{EMPTY[filter]}</p>
       ) : (
         <ul className="space-y-2">
           {shown.map((d) => (
@@ -157,22 +172,38 @@ export function DoubtThreadView({ thread, cohortId }: { thread: DoubtThread; coh
   const [body, setBody] = React.useState("");
   const [busy, setBusy] = React.useState(false);
   const [err, setErr] = React.useState<string | null>(null);
+  const [acting, startAct] = React.useTransition();
+  // The writer of a private concern can answer the VIBHA team back in the same thread.
+  const canReply = thread.kind === "doubt" || thread.mine;
 
   const send = async () => {
     setBusy(true);
     setErr(null);
-    const res = await replyToDoubt(thread.id, body);
-    setBusy(false);
-    if (res.error) setErr(res.error);
-    else {
-      setBody("");
-      router.refresh();
+    try {
+      const res = await replyToDoubt(thread.id, body);
+      if (res.error) setErr(res.error);
+      else {
+        setBody("");
+        router.refresh();
+      }
+    } catch {
+      setErr("Your answer was not sent. Check your connection and try again.");
+    } finally {
+      setBusy(false);
     }
   };
-  const act = async (fn: () => Promise<{ error: string | null }>) => {
-    const res = await fn();
-    if (res.error) setErr(res.error);
-    else router.refresh();
+  const act = (fn: () => Promise<{ error: string | null }>) => {
+    if (acting) return;
+    setErr(null);
+    startAct(async () => {
+      try {
+        const res = await fn();
+        if (res.error) setErr(res.error);
+        else router.refresh();
+      } catch {
+        setErr("That did not go through. Check your connection and try again.");
+      }
+    });
   };
 
   return (
@@ -186,7 +217,7 @@ export function DoubtThreadView({ thread, cohortId }: { thread: DoubtThread; coh
         {thread.body ? <p className="mt-2 whitespace-pre-line break-words text-[1.0625rem] leading-relaxed">{thread.body}</p> : null}
         <p className="mt-2 text-caption text-muted-foreground">Asked by {thread.author} · {ago(thread.createdAt)}</p>
         {thread.mine && thread.kind === "doubt" ? (
-          <button type="button" onClick={() => act(() => reclassifyMine(thread.id, "complaint", cohortId))} className="mt-1 inline-flex min-h-11 items-center text-caption font-semibold text-link underline">
+          <button type="button" disabled={acting} onClick={() => act(() => reclassifyMine(thread.id, "complaint", cohortId))} className="mt-1 inline-flex min-h-11 items-center text-caption font-semibold text-link underline disabled:opacity-60">
             This is actually a concern for VIBHA, not a study doubt
           </button>
         ) : null}
@@ -204,11 +235,11 @@ export function DoubtThreadView({ thread, cohortId }: { thread: DoubtThread; coh
             <p className="whitespace-pre-line break-words text-[1.0625rem] leading-relaxed">{r.body}</p>
             <div className="mt-2 flex flex-wrap items-center gap-3 text-caption">
               <span className="text-muted-foreground">{r.author} · {ago(r.createdAt)}</span>
-              <button type="button" aria-pressed={r.youVoted} onClick={() => act(() => voteReply(thread.id, r.id, !r.youVoted))} className={cn("inline-flex min-h-9 items-center gap-1 rounded-md border-2 border-foreground px-2.5 py-0.5 font-bold pointer-coarse:min-h-11", r.youVoted ? "bg-primary text-primary-foreground" : "bg-card")}>
+              <button type="button" aria-pressed={r.youVoted} disabled={acting} onClick={() => act(() => voteReply(thread.id, r.id, !r.youVoted))} className={cn("inline-flex min-h-9 items-center gap-1 rounded-md border-2 border-foreground px-2.5 py-0.5 font-bold disabled:opacity-60 pointer-coarse:min-h-11", r.youVoted ? "bg-primary text-primary-foreground" : "bg-card")}>
                 <ThumbsUp className="size-3.5" aria-hidden /> {r.votes} helped
               </button>
               {thread.mine && thread.kind === "doubt" ? (
-                <button type="button" onClick={() => act(() => markSolved(thread.id, r.isSolution ? null : r.id))} className="inline-flex min-h-9 items-center font-bold text-link underline pointer-coarse:min-h-11">
+                <button type="button" disabled={acting} onClick={() => act(() => markSolved(thread.id, r.isSolution ? null : r.id))} className="inline-flex min-h-9 items-center font-bold text-link underline disabled:opacity-60 pointer-coarse:min-h-11">
                   {r.isSolution ? "Unmark" : "Mark as solved"}
                 </button>
               ) : null}
@@ -217,18 +248,24 @@ export function DoubtThreadView({ thread, cohortId }: { thread: DoubtThread; coh
         ))}
       </section>
 
-      {thread.kind === "doubt" ? (
+      {thread.kind !== "doubt" ? (
+        <p className="rounded-2xl border-2 border-foreground bg-muted p-4 text-sm">The VIBHA team can see this and will get back to you. Other students can&apos;t see it.</p>
+      ) : null}
+      {canReply ? (
         <section aria-label="Your answer" className="space-y-2 rounded-2xl border-2 border-foreground bg-card p-4">
-          <h2 id="doubt-answer" className="text-sm font-bold">Help out: add your answer</h2>
-          <textarea aria-labelledby="doubt-answer" value={body} onChange={(e) => setBody(e.target.value)} rows={3} placeholder="Explain it in your own words, or share how you remember it." className="w-full rounded-xl border-2 border-foreground bg-background px-3 py-2 text-base outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60" />
-          {err ? <p className="text-sm font-semibold text-status-alert-fg">{err}</p> : null}
+          <h2 id="doubt-answer" className="text-sm font-bold">{thread.kind === "doubt" ? "Help out: add your answer" : "Add to your message"}</h2>
+          <textarea aria-labelledby="doubt-answer" value={body} onChange={(e) => setBody(e.target.value)} rows={3} placeholder={thread.kind === "doubt" ? "Explain it in your own words, or share how you remember it." : "Anything more for the VIBHA team."} className="w-full rounded-xl border-2 border-foreground bg-background px-3 py-2 text-base outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60" />
           <button type="button" onClick={send} disabled={busy || body.trim().length < 1} className="inline-flex h-10 items-center gap-1.5 rounded-md border-2 border-foreground bg-primary px-4 text-sm font-bold text-primary-foreground pointer-coarse:h-11 disabled:opacity-50">
-            {busy ? <Loader2 className="size-4 animate-spin" aria-hidden /> : <Send className="size-4" aria-hidden />} Post answer
+            {busy ? <Loader2 className="size-4 animate-spin" aria-hidden /> : <Send className="size-4" aria-hidden />} {thread.kind === "doubt" ? "Post answer" : "Send"}
           </button>
         </section>
-      ) : (
-        <p className="rounded-2xl border-2 border-foreground bg-muted p-4 text-sm">The VIBHA team can see this and will get back to you. Other students can&apos;t see it.</p>
-      )}
+      ) : null}
+      {/* Errors from any button on the thread show here, also on a private concern. */}
+      {err ? (
+        <p role="alert" className="text-sm font-semibold text-status-alert-fg">
+          {err}
+        </p>
+      ) : null}
     </div>
   );
 }
