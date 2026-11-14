@@ -25,7 +25,7 @@ You may enrol only if you:
 
 We may verify eligibility at any time and may cancel an enrolment obtained through inaccurate or incomplete information.
 
-## 1.3 Nature of our Services — please read carefully
+## 1.3 Nature of our Services: please read carefully
 
 VIBHA School of Psychology provides **supplementary professional education and skills training**. Our courses are designed to complement, not replace, formal academic degrees and statutory licensure.
 
@@ -37,7 +37,7 @@ You expressly acknowledge and agree that:
 - We make **no representation or guarantee** regarding employment, internship placement, admission to any further programme, income, or professional outcomes of any kind.
 - Nothing in our courses, materials, sessions, or communications constitutes medical advice, psychological diagnosis, psychotherapy, or treatment for you or any third party.
 
-If you require mental healthcare for yourself, please consult a qualified, registered mental health professional. Our teaching faculty do not enter into a therapist–client relationship with learners by virtue of teaching them.
+If you require mental healthcare for yourself, please consult a qualified, registered mental health professional. Our teaching faculty do not enter into a therapist-client relationship with learners by virtue of teaching them.
 
 ## 1.4 Enrolment and seat confirmation
 
@@ -68,7 +68,7 @@ You are responsible for the security of your credentials and for all activity un
 
 ## 1.7 Intellectual property
 
-All course content — including recordings, slides, handouts, case materials, assessments, question banks, frameworks, the learning platform, and the VIBHA name and marks — is the exclusive property of VIBHA School of Psychology or its licensors, and is protected under the Copyright Act, 1957 and the Trade Marks Act, 1999.
+All course content (including recordings, slides, handouts, case materials, assessments, question banks, frameworks, the learning platform, and the VIBHA name and marks) is the exclusive property of VIBHA School of Psychology or its licensors, and is protected under the Copyright Act, 1957 and the Trade Marks Act, 1999.
 
 You are granted a limited, personal, non-exclusive, non-transferable, revocable licence to access the content for your own learning during your enrolment.
 

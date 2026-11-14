@@ -86,6 +86,10 @@ export function LoginForm({ defaultEmail }: { defaultEmail?: string } = {}) {
           autoComplete="email"
           required
           placeholder="you@example.com"
+          autoCapitalize="none"
+          autoCorrect="off"
+          spellCheck={false}
+          enterKeyHint="next"
           defaultValue={state.email ?? defaultEmail}
           aria-invalid={credentialError || undefined}
           aria-describedby={credentialError ? "email-error" : undefined}
@@ -143,7 +147,7 @@ export function LoginForm({ defaultEmail }: { defaultEmail?: string } = {}) {
         </div>
       ) : null}
 
-      <Button type="submit" disabled={pending} className="w-full">
+      <Button type="submit" size="lg" disabled={pending} className="w-full">
         {pending && <Loader2 className="size-4 animate-spin" aria-hidden />}
         {pending ? "Signing in…" : "Sign in"}
       </Button>

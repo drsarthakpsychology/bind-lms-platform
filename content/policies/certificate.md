@@ -17,7 +17,7 @@ A Certificate of Completion is issued **only** to learners who have:
 
 Enrolment and payment alone do not entitle a learner to a certificate. Attending sessions without clearing the assessment does not entitle a learner to a certificate.
 
-## 5.2 What the certificate is — and what it is not
+## 5.2 What the certificate is, and what it is not
 
 Our certificate records that you completed a private professional development course and met our internal assessment standard.
 
@@ -38,7 +38,7 @@ Certificates are issued in the name given at enrolment. Please ensure your name 
 
 ## 5.4 Participation certificates
 
-At our discretion, we may issue a Certificate of Participation — which records attendance only and carries no assessment standing — to a learner who met the attendance and session completion requirements but did not clear the assessment.
+At our discretion, we may issue a Certificate of Participation (which records attendance only and carries no assessment standing) to a learner who met the attendance and session completion requirements but did not clear the assessment.
 
 ## 5.5 Revocation
 

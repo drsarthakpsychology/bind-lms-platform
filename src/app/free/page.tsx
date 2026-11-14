@@ -26,9 +26,9 @@ export default function FreeHub() {
             down. No sign-up. Nothing you answer leaves your phone.
           </p>
           <ul className={s.heroPills}>
-            <li>6 validated self-checks</li>
-            <li>5 calm exercises</li>
-            <li>100% private</li>
+            <li>No sign-up</li>
+            <li>Scored instantly</li>
+            <li>Stays on your phone</li>
             <li>Free, always</li>
           </ul>
         </div>
@@ -49,7 +49,7 @@ export default function FreeHub() {
               <li key={t.id} style={{ display: "flex" }}>
                 <Link href={`/free/tests/${t.id}`} className={`${s.card} ${i === 0 ? s.cardLime : ""}`} style={{ flex: 1 }}>
                   <span className={s.cardMeta}>
-                    {t.name} · {t.items.length} questions · {t.minutes} min
+                    {t.name} · {t.minutes} min
                   </span>
                   <span className={s.cardTitle}>{t.short}</span>
                   <span className={s.cardText}>{t.measures}.</span>

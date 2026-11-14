@@ -4,6 +4,7 @@ import * as React from "react";
 import * as Sentry from "@sentry/nextjs";
 
 import { ErrorState } from "@/components/design-system/error-state";
+import { SiteHeader } from "@/components/site/site-header";
 
 /**
  * Root error boundary. Catches uncaught render errors on every public route
@@ -27,11 +28,9 @@ export default function Error({
   }, [error]);
 
   return (
-    <ErrorState
-      onRetry={unstable_retry}
-      digest={error.digest}
-      homeHref="/go/home"
-      className="min-h-screen"
-    />
+    <div className="flex min-h-dvh flex-col bg-background">
+      <SiteHeader />
+      <ErrorState onRetry={unstable_retry} digest={error.digest} homeHref="/go/home" className="flex-1 px-4 py-16" />
+    </div>
   );
 }

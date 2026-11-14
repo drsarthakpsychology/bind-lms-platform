@@ -406,9 +406,12 @@ a.card:active {
 .foot nav {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px 16px;
+  gap: 0 20px;
 }
 .foot nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
   font-weight: 700;
 }
 
