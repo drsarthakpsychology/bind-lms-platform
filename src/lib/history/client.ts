@@ -12,6 +12,8 @@
  * effects (never during render): they read localStorage and the clock.
  */
 import * as React from "react";
+import { mergeHistory as mergeQueued } from "@/lib/save/outbox";
+import { queueSave } from "@/lib/save/client";
 import { cleanItem, mergeHistory, nextRow, orderByHistory, pickRound, type History, type HistoryRow, type HistoryTool } from "./order";
 
 const KEY = (tool: string) => `vibha-history-v1:${tool}`;
@@ -116,7 +118,17 @@ export function noteAnswers(tool: HistoryTool, answers: readonly { item: string;
   }
   writeLocal(tool, local.owner, local.map);
   if (opts.server === false) return;
-  void transport.record(tool, list.map((a) => ({ item: a.item, correct: a.correct }))).catch(() => {});
+  const payload = list.map((a) => ({ item: a.item, correct: a.correct }));
+  // Through the save outbox when it runs (kept until stored, retried); else direct.
+  if (transport === viaActions && queueSave("history", tool, { tool, answers: payload }, mergeQueued)) return;
+  void transport.record(tool, payload).then(
+    (r) => {
+      if (r && typeof r === "object" && (r as { ok?: unknown }).ok === false) console.warn(`Answer history for ${tool} was not saved on the server.`);
+    },
+    () => {
+      /* offline: the browser copy still has it */
+    },
+  );
 }
 
 export function noteAnswer(tool: HistoryTool, item: string, correct: boolean | null, opts: { server?: boolean } = {}) {

@@ -33,6 +33,7 @@ vi.mock("@/lib/auth/api-guard", () => ({
 
 vi.mock("@/lib/rate-limit", () => ({
   rateLimit: vi.fn().mockResolvedValue(true),
+  rateLimitWrite: vi.fn().mockResolvedValue(true),
 }));
 
 import { POST } from "./route";

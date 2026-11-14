@@ -11,6 +11,7 @@ import { certificateStatus } from "@/lib/achievements/certificate-server";
 import { emptyStudy } from "@/lib/learn/engine";
 import { loadLearnState } from "../study/actions";
 import { StrengthsPanel } from "./strengths";
+import { RefreshOnSave } from "@/components/save/refresh-on-save";
 
 export const metadata: Metadata = { title: "Progress" };
 
@@ -34,6 +35,7 @@ export default async function ProgressPage() {
 
   return (
     <div className="mx-auto max-w-3xl space-y-8">
+      <RefreshOnSave kinds={["learn"]} />
       <header className="space-y-3">
         <p className="text-eyebrow text-link">Progress</p>
         <h1 className="text-h1">{course.pct}% complete</h1>

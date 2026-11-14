@@ -15,6 +15,7 @@ import type { EscapeView } from "./actions";
 import { creditServerPlay } from "@/lib/learn/credit-play";
 import { useReaction } from "@/components/reactions/use-reaction";
 import { EndReaction } from "@/components/reactions/graphics";
+import { trySave } from "@/lib/save/client";
 
 type Actions = {
   createEscapeTeam: (room: string) => Promise<{ ok: true; teamId: string } | { ok: false; reason: string }>;
@@ -387,7 +388,7 @@ function Practice({ room, run, startedAt, actions, onExit, onAgain }: { room: Ro
     buzz(res.ok);
     // The last door opens straight onto the escape screen, which has its own sticker.
     if (!res.state.done) reaction.onAnswer(res.ok, { partial: res.ok && !first });
-    void actions.gradeEscapePractice({ room: room.id, stage: st.stage, answer: raw, first }).catch(() => undefined);
+    void trySave(() => actions.gradeEscapePractice({ room: room.id, stage: st.stage, answer: raw, first }), "Escape answer");
     setFeedback({ stage: st.stage, ok: res.ok });
     if (res.ok) {
       const list = [...answers, raw];

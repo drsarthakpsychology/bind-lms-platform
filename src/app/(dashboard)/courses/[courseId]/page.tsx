@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 
 import { getSession } from "@/lib/auth/session";
 import CourseOverview from "@/components/course/course-overview";
+import { RefreshOnSave } from "@/components/save/refresh-on-save";
 
 export default async function CourseOverviewPage({
   params,
@@ -21,5 +22,10 @@ export default async function CourseOverviewPage({
   // Enrollment / published / existence gating lives in the course layout, which
   // 404s before this page renders. The shared component owns fetch + render so
   // the dashboard's single-course view and this direct URL stay identical.
-  return <CourseOverview courseId={courseId} profile={session.profile} />;
+  return (
+    <>
+      <RefreshOnSave kinds={["complete", "progress"]} />
+      <CourseOverview courseId={courseId} profile={session.profile} />
+    </>
+  );
 }

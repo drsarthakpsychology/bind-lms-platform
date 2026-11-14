@@ -1,6 +1,8 @@
 import { describe, expect, it } from "vitest";
 import {
   istToday,
+  istWeekMonday,
+  nextDay,
   MAX_FREEZES_PER_MONTH,
   recordActivity,
   streakAlive,
@@ -96,5 +98,18 @@ describe("streaks — IST rollover + freezes", () => {
     const yesterdayIso = yesterday.toISOString().slice(0, 10);
     const y = recordActivity(base, yesterdayIso);
     expect(streakAlive(y)).toBe(true);
+  });
+});
+
+describe("India-time weeks and days", () => {
+  it("the week starts on the IST Monday, even before 5:30 am IST", () => {
+    // Monday 16 Nov 2026, 02:00 IST = Sunday 15 Nov, 20:30 UTC.
+    expect(istWeekMonday(new Date("2026-11-15T20:30:00Z"))).toBe("2026-11-16");
+    // Sunday 15 Nov 2026, 23:00 IST belongs to the week of Monday 9 Nov.
+    expect(istWeekMonday(new Date("2026-11-15T17:30:00Z"))).toBe("2026-11-09");
+  });
+  it("nextDay steps one calendar day, across months", () => {
+    expect(nextDay("2026-11-30")).toBe("2026-12-01");
+    expect(nextDay("2026-11-13")).toBe("2026-11-14");
   });
 });

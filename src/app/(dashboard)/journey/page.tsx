@@ -10,6 +10,7 @@ import { hoursOf } from "@/lib/standing/score";
 import { BOARDS } from "@/lib/standing/boards";
 import { PageHeader } from "@/components/design-system/page-header";
 import { backLinkClass } from "@/components/design-system/back-link";
+import { RefreshOnSave } from "@/components/save/refresh-on-save";
 
 export const metadata: Metadata = { title: "My journey" };
 export const dynamic = "force-dynamic";
@@ -65,6 +66,7 @@ export default async function JourneyPage() {
 
   return (
     <div className="mx-auto max-w-5xl space-y-6">
+      <RefreshOnSave kinds={["learn", "complete", "progress"]} />
       {/* Full accounts open My journey from Progress; lecture-only accounts have it in their menu. */}
       {session.profile.scope !== "lectures_only" ? (
         <Link href="/progress" className={backLinkClass}>

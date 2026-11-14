@@ -5,7 +5,7 @@ import { requireSession, requireSuperAdmin } from "@/lib/auth/guards";
 import { createAdminClient } from "@/lib/supabase/server";
 import { loadMyCohorts } from "@/lib/cohorts/access";
 import { kindFor } from "@/lib/doubts/classify";
-import { rateLimit } from "@/lib/rate-limit";
+import { rateLimitWrite } from "@/lib/rate-limit";
 import { notifyAdminsOfDoubt, notifyAskerOfReply } from "@/lib/notify/doubts";
 import { canParticipate, isUuid, type DoubtRow } from "./visibility";
 
@@ -42,7 +42,7 @@ function refresh(id?: string) {
 export async function askDoubt(input: { title: string; body: string; topic?: string; cohortId?: string | null; markAs?: "doubt" | "complaint" }): Promise<R> {
   const me = await requireSession();
   if (!me) return { error: "Please sign in again." };
-  if (!(await rateLimit(`doubt:${me.id}`, 20))) return { error: "Slow down a moment and try again." };
+  if (!(await rateLimitWrite(`doubt:${me.id}`, 20))) return { error: "Slow down a moment and try again." };
   const title = clean(input.title, 200);
   const body = clean(input.body, 5000);
   if (title.length < 3) return { error: "Write a short title for your doubt." };
@@ -69,7 +69,7 @@ export async function askDoubt(input: { title: string; body: string; topic?: str
 export async function replyToDoubt(doubtId: string, body: string): Promise<R> {
   const me = await requireSession();
   if (!me) return { error: "Please sign in again." };
-  if (!(await rateLimit(`doubtreply:${me.id}`, 40))) return { error: "Slow down a moment and try again." };
+  if (!(await rateLimitWrite(`doubtreply:${me.id}`, 40))) return { error: "Slow down a moment and try again." };
   const text = clean(body, 5000);
   if (text.length < 1) return { error: "Write your answer first." };
   if (!(await loadVisibleDoubt(doubtId, me))) return { error: "That doubt isn't open to you." };
@@ -84,7 +84,7 @@ export async function replyToDoubt(doubtId: string, body: string): Promise<R> {
 export async function voteReply(doubtId: string, replyId: string, on: boolean): Promise<R> {
   const me = await requireSession();
   if (!me) return { error: "Please sign in again." };
-  if (!(await rateLimit(`doubtvote:${me.id}`, 60))) return { error: "Slow down a moment and try again." };
+  if (!(await rateLimitWrite(`doubtvote:${me.id}`, 60))) return { error: "Slow down a moment and try again." };
   if (!(await loadVisibleDoubt(doubtId, me)) || !(await replyOnDoubt(replyId, doubtId))) return { error: "That answer isn't open to you." };
   const admin = createAdminClient();
   if (on) await admin.from("doubt_votes").upsert({ reply_id: replyId, user_id: me.id }, { onConflict: "reply_id,user_id", ignoreDuplicates: true });

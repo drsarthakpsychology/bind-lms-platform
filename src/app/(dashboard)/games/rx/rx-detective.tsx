@@ -22,6 +22,7 @@ import { useReaction } from "@/components/reactions/use-reaction";
 import { rxItemPages } from "@/lib/games-sims/rx/med-pages";
 import { howItWorksHref } from "@/lib/meds/sections";
 import { EndReaction } from "@/components/reactions/graphics";
+import { trySave } from "@/lib/save/client";
 
 type Grade = (a: Answer & { run?: string }) => Promise<{ ok: boolean }>;
 type Finish = (x: { run: string; answers: Answer[] }) => Promise<{ ok: boolean; xp: number }>;
@@ -67,7 +68,7 @@ export function RxDetective({ board, grade: gradeOnServer, finish, medIds = [] }
 
   if (done) return <Summary r={done.run} xp={done.xp} board={board} onAgain={() => start(done.run.mode)} onModes={() => setDone(null)} />;
   if (!run) return <Intro board={board} onStart={start} />;
-  return <Round r={run} setR={setRun} onAnswered={(a) => void gradeOnServer({ ...a, run: run.run }).catch(() => undefined)} onEnd={end} medIds={medIds} />;
+  return <Round r={run} setR={setRun} onAnswered={(a) => void trySave(() => gradeOnServer({ ...a, run: run.run }), "Rx answer")} onEnd={end} medIds={medIds} />;
 }
 
 function Intro({ board, onStart }: { board: AccuracyBoardData; onStart: (m: Mode) => void }) {

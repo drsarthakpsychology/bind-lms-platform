@@ -5,6 +5,7 @@ import { readFlags } from "@/lib/flags";
 import { redirect } from "next/navigation";
 import { Reveal } from "@/components/motion/reveal";
 import { RecordTabs } from "./record-tabs";
+import { istWeekMonday } from "@/lib/practice/streaks";
 
 export const dynamic = "force-dynamic";
 
@@ -30,12 +31,10 @@ export default async function RecordPage() {
   } = await supabase.auth.getUser();
   if (!user) return null;
 
-  // Monday of the current week: one check-in per week.
-  const now = new Date();
-  const day = (now.getDay() + 6) % 7; // Mon=0
-  const monday = new Date(now);
-  monday.setDate(now.getDate() - day);
-  const weekLabel = monday.toISOString().slice(0, 10);
+  // Monday of the current India-time week: one check-in per week. (The server
+  // runs in UTC, so the old local-time Monday was a day early before 5:30 am IST
+  // on Mondays, and that check-in landed on last week.)
+  const weekLabel = istWeekMonday();
 
   const [{ data: entries }, { data: competencies }, { data: compRows }, { data: checkin }] = await Promise.all([
     // Explicit columns (egress: supervision_entries carries more than the log shows).

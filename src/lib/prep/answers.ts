@@ -7,6 +7,7 @@ import "server-only";
  */
 import { createAdminClient } from "@/lib/supabase/server";
 import type { AnswerState } from "./progress";
+import { withRetry } from "@/lib/save/retry";
 
 type Admin = ReturnType<typeof createAdminClient>;
 
@@ -67,12 +68,16 @@ export async function saveAnswer(userId: string, item: string, choice: number, o
   if (!db || !userId) return false;
   try {
     const had = await current(db, userId, item);
-    const { error } = await db.from("prep_answers").upsert(
-      { user_id: userId, item, last_choice: choice, last_ok: ok, right_n: (had?.right_n ?? 0) + (ok ? 1 : 0), wrong_n: (had?.wrong_n ?? 0) + (ok ? 0 : 1), saved: had?.saved ?? false, last_at: now.toISOString() },
-      { onConflict: "user_id,item" },
+    const { error } = await withRetry(() =>
+      db.from("prep_answers").upsert(
+        { user_id: userId, item, last_choice: choice, last_ok: ok, right_n: (had?.right_n ?? 0) + (ok ? 1 : 0), wrong_n: (had?.wrong_n ?? 0) + (ok ? 0 : 1), saved: had?.saved ?? false, last_at: now.toISOString() },
+        { onConflict: "user_id,item" },
+      ),
     );
+    if (error) console.error("saveAnswer: prep_answers write failed:", error.code, error.message);
     return !error;
-  } catch {
+  } catch (e) {
+    console.error("saveAnswer failed:", e instanceof Error ? e.message : e);
     return false;
   }
 }
@@ -96,7 +101,8 @@ export async function saveAnswers(userId: string, list: readonly { item: string;
       const h = had.get(item);
       return { user_id: userId, item, last_choice: a.choice, last_ok: a.ok, right_n: (h?.right_n ?? 0) + (a.ok ? 1 : 0), wrong_n: (h?.wrong_n ?? 0) + (a.ok ? 0 : 1), saved: h?.saved ?? false, last_at: now.toISOString() };
     });
-    const { error: upErr } = await db.from("prep_answers").upsert(rows, { onConflict: "user_id,item" });
+    const { error: upErr } = await withRetry(() => db.from("prep_answers").upsert(rows, { onConflict: "user_id,item" }));
+    if (upErr) console.error("saveAnswers: prep_answers write failed:", upErr.code, upErr.message);
     return !upErr;
   } catch {
     return false;
