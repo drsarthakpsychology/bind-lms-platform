@@ -1,4 +1,4 @@
-import { addDays, studyKey, type StudyProgress } from "@/lib/learn/engine";
+import { addDays, studyKey, testDays, type StudyProgress } from "@/lib/learn/engine";
 import type { Section, StudyModule } from "./types";
 import { checkpointHref, dueCheckpoint } from "./checkpoints";
 
@@ -52,7 +52,7 @@ export function activityHref(m: StudyModule, href: string): string {
 export function retestDue(m: StudyModule, p: StudyProgress): string | null {
   const t = p.tests[m.id];
   if (!t) return null;
-  const gap = RETEST_GAPS[t.tries - 1];
+  const gap = RETEST_GAPS[testDays(t) - 1];
   return gap ? addDays(t.day, gap) : null;
 }
 

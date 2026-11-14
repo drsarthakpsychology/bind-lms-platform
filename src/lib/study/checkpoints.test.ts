@@ -138,3 +138,19 @@ describe("test scores", () => {
     expect(studyKey("a", "b")).toBe("a/b");
   });
 });
+
+describe("re-tests count days, not attempts", () => {
+  it("three tries on the first day still leave the 3-day re-test next", async () => {
+    const { retestDue } = await import("./plan");
+    const m = moduleById("interview-mse")!;
+    let s = recordTest(emptyState(), m.id, 10, 25, "2026-11-01");
+    s = recordTest(s, m.id, 15, 25, "2026-11-01");
+    s = recordTest(s, m.id, 21, 25, "2026-11-01");
+    expect(retestDue(m, s.study)).toBe("2026-11-04");
+    s = recordTest(s, m.id, 22, 25, "2026-11-04");
+    expect(retestDue(m, s.study)).toBe("2026-11-11");
+    // An old record without the day count falls back to its tries.
+    const old = { ...s.study, tests: { [m.id]: { best: 20, total: 25, day: "2026-11-01", tries: 2 } } };
+    expect(retestDue(m, old)).toBe("2026-11-08");
+  });
+});

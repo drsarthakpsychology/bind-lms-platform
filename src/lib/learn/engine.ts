@@ -74,7 +74,7 @@ export type StudyProgress = {
   /** module → seconds of focused study time. */
   secs: Record<string, number>;
   /** module → best test score. */
-  tests: Record<string, { best: number; total: number; day: string; tries: number }>;
+  tests: Record<string, { best: number; total: number; day: string; tries: number; days?: number }>;
   /** module → day the written practice (pass 3) was ticked. */
   written: Record<string, string>;
   /** module → activity id → day first done. */
@@ -277,8 +277,19 @@ export function recordTest(s: LearnState, module: string, right: number, total: 
   const outOf = keepOld ? prev.total : total;
   const prevHere = !prev ? 0 : prev.total === total ? prev.best : Math.floor((prev.best * total) / Math.max(1, prev.total));
   const gained = Math.max(0, r - prevHere) * STUDY_XP.testPerRight;
-  const next = { ...s, study: { ...s.study, tests: { ...s.study.tests, [module]: { best, total: outOf, day: today, tries: (prev?.tries ?? 0) + 1 } } } };
+  // Days tested on: a retry the same day is not a re-test (see testDays).
+  const days = !prev ? 1 : testDays(prev) + (prev.day === today ? 0 : 1);
+  const next = { ...s, study: { ...s.study, tests: { ...s.study.tests, [module]: { best, total: outOf, day: today, tries: (prev?.tries ?? 0) + 1, days } } } };
   return gainXp(next, gained, today);
+}
+
+/**
+ * How many different days a test has been taken on. The re-tests after 3, 7
+ * and 21 days count days, not attempts, so three tries on the first day still
+ * leave the 3-day re-test next. Older records without `days` use the tries.
+ */
+export function testDays(t: { tries: number; days?: number }): number {
+  return typeof t.days === "number" && t.days > 0 ? Math.min(t.days, t.tries) : t.tries;
 }
 
 /** Tick the on-paper practice for a module. */

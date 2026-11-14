@@ -67,8 +67,9 @@ export function keepBestTests(prev: StudyProgress["tests"] | undefined, next: St
     }
     const oldPct = old.best / Math.max(1, old.total);
     const curPct = cur.best / Math.max(1, cur.total);
-    if (oldPct > curPct) out[k] = { ...cur, best: old.best, total: old.total, tries: Math.max(cur.tries, old.tries) };
-    else if (old.tries > cur.tries) out[k] = { ...cur, tries: old.tries };
+    const days = Math.max(cur.days ?? 0, old.days ?? 0) || undefined;
+    if (oldPct > curPct) out[k] = { ...cur, best: old.best, total: old.total, tries: Math.max(cur.tries, old.tries), ...(days ? { days } : {}) };
+    else if (old.tries > cur.tries || (days && days !== cur.days)) out[k] = { ...cur, tries: Math.max(cur.tries, old.tries), ...(days ? { days } : {}) };
   }
   return out;
 }
