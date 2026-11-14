@@ -7,6 +7,7 @@ import { Rich } from "./rich";
 import { trackLearn } from "@/lib/learn/track";
 import { card, choiceCls, label, statusCls } from "./animations3";
 import { StepPicker } from "./pacing";
+import { Arrow, C, E, L, Label, P, R, Sheet } from "@/components/sketch/ink";
 
 /**
  * Third wave, part two: transmitter release with a drug picker, a CBT
@@ -77,66 +78,59 @@ export function Release({ d }: { d: ReleaseData }) {
   return (
     <figure className={card}>
       <p className={label}>{d.title ? <Rich text={d.title} /> : `How ${tx} crosses a synapse`}</p>
-      <svg viewBox="0 0 320 196" className="mt-3 w-full rounded-xl border-2 border-foreground bg-background" role="img" aria-label={`${cur.name}. ${cur.text(tx)}${affected ? ` With ${dr.name}: ${dr.text(tx)}` : ""}`}>
+      <Sheet name="release" w={320} h={200} label={`${cur.name}. ${cur.text(tx)}${affected ? ` With ${dr.name}: ${dr.text(tx)}` : ""}`} className="mx-auto mt-3 max-w-[32rem]">
         {/* axon and terminal */}
-        <rect x="146" y="0" width="28" height="14" className="fill-card stroke-foreground" strokeWidth="2" />
-        <path d="M60 14 H260 Q 280 14 280 34 V82 H40 V34 Q 40 14 60 14 Z" className="fill-card stroke-foreground" strokeWidth="2" />
-        <text x="50" y="28" className="fill-muted-foreground text-[8px]">nerve ending</text>
+        <R k="rel-axon" x={146} y={0} w={28} h={16} sw={2} fill={C.wash} fillStyle="solid" />
+        <P k="rel-term" d="M60 14 H260 Q280 14 280 34 V82 H40 V34 Q40 14 60 14 Z" sw={2} fill={C.wash} fillStyle="solid" />
+        <Label x={46} y={70} size={12}>nerve ending</Label>
         {/* action potential */}
-        <circle cx="160" cy="6" r="5" className="fill-[var(--primary)] stroke-foreground" strokeWidth="1.5" style={{ opacity: step === 0 ? 1 : 0, transform: step === 0 ? "translateY(10px)" : "none", transition: "transform 900ms var(--ease-out-expo), opacity 300ms" }} />
+        <circle cx="160" cy="6" r="5" fill={C.lime} stroke={C.ink} strokeWidth={1.5} style={{ opacity: step === 0 ? 1 : 0, transform: step === 0 ? "translateY(10px)" : "none", transition: "transform 900ms var(--ease-out-expo), opacity 300ms" }} />
         {/* calcium channels */}
         {[70, 190].map((x) => (
-          <g key={x}>
-            <rect x={x - 6} y="76" width="12" height="12" rx="2" className={cn("stroke-foreground", step >= 1 ? "fill-[var(--status-success-bg)]" : "fill-card")} strokeWidth="1.5" />
-            {[0, 1].map((k) => (
-              <text key={k} x={x - 3 + k * 6} y="96" className="fill-foreground text-[8px] font-bold" style={{ opacity: step === 1 ? 1 : 0, transform: step === 1 ? "translateY(-30px)" : "none", transition: `transform 900ms var(--ease-out-expo) ${k * 120}ms, opacity 400ms` }}>Ca</text>
-            ))}
-          </g>
+          <R key={x} k={`rel-ca-${x}-${step >= 1}`} x={x - 6} y={76} w={12} h={12} sw={1.5} fill={step >= 1 ? C.lime : C.paper} fillStyle="solid" />
         ))}
-        <text x="58" y="100" className="fill-muted-foreground text-[8px]">calcium channel</text>
+        {step === 1 ? [70, 190].map((x) => <Label key={x} x={x} y={70} size={12} anchor="middle" color={C.blue}>Ca</Label>) : null}
+        <Label x={58} y={104} size={12} bold={false}>calcium channel</Label>
         {/* vesicles */}
         {VES.map(([x, y], k) => (
           <g key={k} style={{ transform: fused ? `translateY(${78 - y - 10}px) scale(0.6)` : "none", transformBox: "fill-box", transformOrigin: "center", opacity: fused ? 0.35 : 1, transition: "transform 700ms var(--ease-out-expo), opacity 500ms" }}>
-            <circle cx={x} cy={y} r="13" className="fill-[var(--status-info-bg)] stroke-foreground" strokeWidth="1.5" />
+            <E k={`rel-ves-${k}`} cx={x} cy={y} w={26} h={26} sw={1.5} fill={C.paper} fillStyle="solid" />
           </g>
         ))}
-        {drug === "botox" && step >= 2 ? <text x="160" y="66" textAnchor="middle" className="fill-[var(--destructive)] text-[8px] font-bold">vesicles cannot fuse</text> : null}
+        {drug === "botox" && step >= 2 ? <Label x={160} y={68} size={12} anchor="middle" color={C.red}>vesicles cannot fuse</Label> : null}
         {/* MAO enzyme */}
-        <g>
-          <path d="M262 36 L271 31 A10 10 0 1 0 271 41 Z" className="fill-[var(--muted)] stroke-foreground" strokeWidth="1.5" />
-          <text x="262" y="56" textAnchor="middle" className="fill-foreground text-[8px] font-semibold">MAO</text>
-          {drug === "maoi" ? <text x="262" y="40" textAnchor="middle" className="fill-[var(--destructive)] text-[12px] font-bold">✕</text> : null}
-        </g>
+        <P k="rel-mao" d="M262 36 L271 31 A10 10 0 1 0 271 41 Z" sw={1.5} fill={C.soft} fillStyle="solid" />
+        <Label x={262} y={60} size={12} anchor="middle">MAO</Label>
+        {drug === "maoi" ? <P k="rel-mao-x" d="M254 28 l16 16 M270 28 l-16 16" stroke={C.red} sw={2.4} single /> : null}
         {/* transporter */}
-        <rect x={TRANSPORTER - 9} y="74" width="18" height="16" rx="3" className="fill-[var(--muted)] stroke-foreground" strokeWidth="1.5" />
-        <text x={TRANSPORTER} y="70" textAnchor="middle" className="fill-foreground text-[8px] font-bold">{drug === "amph" ? "↓" : "↑"}</text>
-        <text x={TRANSPORTER + 12} y="98" className="fill-muted-foreground text-[8px]">transporter</text>
-        {drug === "ssri" ? <text x={TRANSPORTER} y="87" textAnchor="middle" className="fill-[var(--destructive)] text-[12px] font-bold">✕</text> : null}
+        <R k="rel-tr" x={TRANSPORTER - 9} y={74} w={18} h={16} sw={1.5} fill={C.soft} fillStyle="solid" />
+        <Arrow k={`rel-tr-dir-${drug === "amph"}`} from={drug === "amph" ? [TRANSPORTER, 60] : [TRANSPORTER, 96]} to={drug === "amph" ? [TRANSPORTER, 96] : [TRANSPORTER, 60]} sw={1.4} />
+        <Label x={318} y={106} size={11} anchor="end" bold={false}>transporter</Label>
+        {drug === "ssri" ? <P k="rel-tr-x" d="M242 74 l16 16 M258 74 l-16 16" stroke={C.red} sw={2.4} single /> : null}
         {/* amphetamine molecules */}
         {drug === "amph" ? [0, 1].map((k) => (
-          <rect key={k} x={TRANSPORTER - 3} y="100" width="6" height="6" className="fill-[var(--destructive)]" style={{ transform: step >= 1 ? `translate(${k * 8 - 4}px, -44px) rotate(45deg)` : "rotate(45deg)", transformBox: "fill-box", transformOrigin: "center", transition: "transform 800ms var(--ease-out-expo)" }} />
+          <rect key={k} x={TRANSPORTER - 3} y="100" width="6" height="6" fill={C.red} style={{ transform: step >= 1 ? `translate(${k * 8 - 4}px, -44px) rotate(45deg)` : "rotate(45deg)", transformBox: "fill-box", transformOrigin: "center", transition: "transform 800ms var(--ease-out-expo)" }} />
         )) : null}
-        {/* gap */}
-        <text x="22" y="108" className="fill-muted-foreground text-[8px]">gap</text>
+        <Label x={8} y={110} size={12} bold={false} color={C.soft}>gap</Label>
         {/* next cell */}
-        <path d="M40 120 H280 V196 H40 Z" className="fill-card stroke-foreground" strokeWidth="2" />
+        <R k="rel-next" x={40} y={120} w={240} h={78} sw={2} fill={C.wash} fillStyle="solid" />
         {RECEPTORS.map((x) => (
           <g key={x}>
-            <path d={`M${x - 10} 120 V112 h6 v6 h8 v-6 h6 V120`} className={cn("stroke-foreground", signal > 0 ? "fill-[var(--status-success-bg)]" : "fill-card")} strokeWidth="1.5" />
-            {drug === "antag" ? <rect x={x - 4} y="111" width="8" height="7" className="fill-foreground" style={{ opacity: step >= 2 ? 1 : 0, transition: "opacity 400ms" }} /> : null}
+            <P k={`rel-rec-${x}-${signal > 0}`} d={`M${x - 10} 120 V112 h6 v6 h8 v-6 h6 V120`} sw={1.5} fill={signal > 0 ? C.lime : C.paper} fillStyle="solid" />
+            {drug === "antag" ? <rect x={x - 4} y="111" width="8" height="7" fill={C.ink} style={{ opacity: step >= 2 ? 1 : 0, transition: "opacity 400ms" }} /> : null}
           </g>
         ))}
-        <text x="226" y="132" className="fill-muted-foreground text-[8px]">receptors</text>
-        <text x="50" y="150" className="fill-foreground text-[8px] font-semibold">Message to the next cell</text>
-        <rect x="50" y="158" width="220" height="12" rx="3" className="fill-background stroke-foreground" strokeWidth="1.5" />
-        <rect x="52" y="160" width="216" height="8" rx="2" className="fill-[var(--brand)]" style={{ transform: `scaleX(${signal})`, transformBox: "fill-box", transformOrigin: "0 50%", transition: "transform 700ms var(--ease-out-expo)" }} />
-        <text x="160" y="186" textAnchor="middle" className="fill-foreground text-[8px]">{signal >= 0.9 ? (drug === "ssri" && step >= 4 ? "still on: the message lasts longer" : drug === "amph" ? "strong, even without a signal" : "on") : "off"}</text>
+        <Label x={232} y={138} size={12} bold={false}>receptors</Label>
+        <Label x={50} y={156} size={13}>Message to the next cell</Label>
+        <R k="rel-bar" x={50} y={164} w={220} h={12} sw={1.5} fill={C.paper} fillStyle="solid" />
+        <rect x="52" y="166" width="216" height="8" rx="2" fill={C.blue} style={{ transform: `scaleX(${signal})`, transformBox: "fill-box", transformOrigin: "0 50%", transition: "transform 700ms var(--ease-out-expo)" }} />
+        <Label x={160} y={192} size={12} anchor="middle" bold={false}>{signal >= 0.9 ? (drug === "ssri" && step >= 4 ? "still on: the message lasts longer" : drug === "amph" ? "strong, even without a signal" : "on") : "off"}</Label>
         {/* molecules */}
         {Array.from({ length: 6 }, (_, m) => {
           const p = molPos(m, step, drug);
-          return <circle key={m} cx="0" cy="0" r="4" className="fill-[var(--primary)] stroke-foreground" strokeWidth="1" style={{ transform: `translate(${p.x}px, ${p.y}px) scale(${p.s})`, opacity: p.o, transition: `transform 900ms var(--ease-out-expo) ${m * 50}ms, opacity 500ms` }} />;
+          return <circle key={m} cx="0" cy="0" r="4" fill={C.lime} stroke={C.ink} strokeWidth={1} style={{ transform: `translate(${p.x}px, ${p.y}px) scale(${p.s})`, opacity: p.o, transition: `transform 900ms var(--ease-out-expo) ${m * 50}ms, opacity 500ms` }} />;
         })}
-      </svg>
+      </Sheet>
       <StepPicker
         steps={REL_STEPS.map((s, k) => ({
           id: s.id,
@@ -306,7 +300,7 @@ function nightStats(segs: [number, Stage][]) {
 const X0 = 44;
 const XW = 266;
 const tx = (t: number) => X0 + (t / END) * XW;
-const ty = (s: Stage) => 18 + LEVEL[s] * 20;
+const ty = (s: Stage) => 22 + LEVEL[s] * 21;
 function hypnoPath(segs: [number, Stage][]) {
   let p = "";
   segs.forEach(([start, s], k) => {
@@ -348,38 +342,40 @@ export function Hypnogram({ d }: { d: HypnogramData }) {
   return (
     <figure className={card}>
       <p className={label}>{d.title ? <Rich text={d.title} /> : "One night of sleep"}</p>
-      <svg viewBox="0 0 320 132" className="mt-3 w-full rounded-xl border-2 border-foreground bg-background" role="img" aria-label={`Hypnogram${dep ? " in depression" : ""}. At ${clock(t)} after lights out: ${info.name}.`}>
+      <Sheet name="hypnogram" w={320} h={136} label={`Hypnogram${dep ? " in depression" : ""}. At ${clock(t)} after lights out: ${info.name}.`} className="mx-auto mt-3 max-w-[34rem]">
         {(Object.keys(LEVEL) as Stage[]).map((st) => (
           <g key={st}>
-            <line x1={X0} x2={X0 + XW} y1={ty(st)} y2={ty(st)} className="stroke-foreground/15" strokeWidth="1" />
-            <text x={X0 - 6} y={ty(st) + 3} textAnchor="end" className={cn("text-[8px] font-semibold", st === s ? "fill-[var(--link)]" : "fill-foreground")}>{st === "W" ? "Awake" : st}</text>
+            <L k={`hy-row-${st}`} x1={X0} x2={X0 + XW} y1={ty(st)} y2={ty(st)} stroke={C.soft} sw={0.8} single rough={0.3} style={{ opacity: 0.5 }} />
+            <Label x={X0 - 6} y={ty(st) + 4} size={12} anchor="end" color={st === s ? C.blue : C.ink} mark={st === s}>{st === "W" ? "Awake" : st}</Label>
           </g>
         ))}
-        <path d={hypnoPath(segs)} fill="none" className="stroke-foreground" strokeWidth="1.8" strokeLinejoin="round" key={String(dep)} style={{ opacity: 1 }} />
-        {segs.map(([start, st], k) => (st === "REM" ? <rect key={k} x={tx(start)} y={ty("REM") - 3} width={tx(segs[k + 1]?.[0] ?? END) - tx(start)} height="6" className="fill-[var(--destructive)]" /> : null))}
+        <P k={`hy-night-${dep}`} d={hypnoPath(segs)} sw={1.8} single rough={0.4} />
+        {segs.map(([start, st], k) => (st === "REM" ? <R key={`${dep}-${k}`} k={`hy-rem-${dep}-${k}`} x={tx(start)} y={ty("REM") - 3} w={tx(segs[k + 1]?.[0] ?? END) - tx(start)} h={6} stroke="none" fill={C.red} fillStyle="solid" /> : null))}
         {[0, 2, 4, 6, 8].map((h) => (
-          <text key={h} x={tx(h * 60)} y="124" textAnchor="middle" className="fill-muted-foreground text-[8px]">{h} h</text>
+          <Label key={h} x={tx(h * 60)} y={130} size={12} anchor="middle" bold={false}>{`${h} h`}</Label>
         ))}
         <g style={{ transform: `translateX(${tx(t) - X0}px)`, transition: "transform 120ms" }}>
-          <line x1={X0} x2={X0} y1="8" y2="110" className="stroke-[var(--brand)]" strokeWidth="2" />
-          <circle cx={X0} cy={ty(s)} r="4.5" className="fill-[var(--primary)] stroke-foreground" strokeWidth="1.5"/>
+          <line x1={X0} x2={X0} y1="8" y2="112" stroke={C.blue} strokeWidth={2} strokeLinecap="round" />
+          <circle cx={X0} cy={ty(s)} r="4.5" fill={C.lime} stroke={C.ink} strokeWidth={1.5} />
         </g>
-        <text x={X0 + XW} y="9" textAnchor="end" className="fill-muted-foreground text-[8px]">red bar: REM</text>
-      </svg>
+        <Label x={X0 + XW} y={10} size={11} anchor="end" bold={false} color={C.red}>red bar: REM</Label>
+      </Sheet>
       <label className="mt-3 block text-sm font-semibold">
         Time after lights out: {clock(t)}
         <input type="range" min={0} max={END - 5} step={5} value={t} onChange={(e) => setT(Number(e.target.value))} className="mt-1 h-11 w-full accent-[var(--brand)]" aria-valuetext={`${clock(t)}, ${info.name}`} />
       </label>
       <div className="mt-2 rounded-xl border-2 border-foreground bg-background p-2">
         <p className="px-1 text-xs font-bold tracking-wide uppercase">Brain waves now: {info.name}</p>
-        <svg viewBox="0 0 320 64" className="mt-1 w-full overflow-hidden" role="img" aria-label={`Brain waves typical of ${info.name}`}>
+        <Sheet name="eeg" w={320} h={64} label={`Brain waves typical of ${info.name}`} className="mt-1 overflow-hidden border-0">
           <defs>
             <clipPath id="eeg-clip"><rect x="0" y="0" width="320" height="64" /></clipPath>
           </defs>
           <g clipPath="url(#eeg-clip)">
-            <path key={s} d={EEG_PATH[s]} fill="none" className="vibha-eeg stroke-foreground" strokeWidth="1.4" />
+            <g key={s} className="vibha-eeg">
+              <P k={`eeg-${s}`} d={EEG_PATH[s]} sw={1.5} single rough={0.3} />
+            </g>
           </g>
-        </svg>
+        </Sheet>
       </div>
       <div className="mt-3 flex flex-wrap gap-2" role="group" aria-label="Which night">
         {[false, true].map((x) => (
@@ -495,43 +491,44 @@ export function Strange({ d }: { d: StrangeData }) {
   const turned = style === "avoidant" && ep === 3;
   const person = (x: number, name: string, on: boolean, fill: string) => (
     <g style={{ opacity: on ? 1 : 0, transform: on ? "none" : "translateX(30px)", transition: "transform 700ms var(--ease-out-expo), opacity 500ms" }}>
-      <circle cx={x} cy="58" r="11" className={cn(fill, "stroke-foreground")} strokeWidth="2" />
-      <path d={`M${x - 14} 112 V84 Q${x} 68 ${x + 14} 84 V112 Z`} className={cn(fill, "stroke-foreground")} strokeWidth="2" />
-      <text x={x} y="124" textAnchor="middle" className="fill-foreground text-[8px] font-semibold">{name}</text>
+      <E k={`ss-${name}-head`} cx={x} cy={56} w={22} h={22} sw={2} fill={fill} fillStyle="solid" />
+      <P k={`ss-${name}-body`} d={`M${x - 14} 112 V84 Q${x} 68 ${x + 14} 84 V112 Z`} sw={2} fill={fill} fillStyle="solid" />
     </g>
   );
   return (
     <figure className={card}>
       <p className={label}>{d.title ? <Rich text={d.title} /> : "Ainsworth's Strange Situation"}</p>
-      <svg viewBox="0 0 320 170" className="mt-3 w-full rounded-xl border-2 border-foreground bg-background" role="img" aria-label={`${SS_STEPS[ep].name}. ${sty.name} infant: ${sty.acts[ep]}`}>
-        <rect x="6" y="20" width="308" height="112" rx="6" className="fill-card stroke-foreground" strokeWidth="2" />
-        <rect x="290" y="44" width="24" height="68" className="fill-[var(--muted)] stroke-foreground" strokeWidth="2" />
-        <text x="302" y="40" textAnchor="middle" className="fill-foreground text-[8px]">door</text>
+      <Sheet name="strange" w={320} h={176} label={`${SS_STEPS[ep].name}. ${sty.name} infant: ${sty.acts[ep]}`} className="mx-auto mt-3 max-w-[32rem]">
+        <R k="ss-room" x={6} y={22} w={308} h={112} sw={2} fill={C.paper} fillStyle="solid" />
+        <R k="ss-door" x={290} y={46} w={24} h={68} sw={2} fill={C.soft} gap={4} />
+        <Label x={302} y={40} size={12} anchor="middle" bold={false}>door</Label>
         {/* toys */}
-        <rect x="168" y="114" width="12" height="12" className="fill-[var(--primary)] stroke-foreground" strokeWidth="1.5" />
-        <circle cx="194" cy="120" r="6" className="fill-[var(--status-info-bg)] stroke-foreground" strokeWidth="1.5" />
-        <text x="182" y="14" textAnchor="middle" className="fill-muted-foreground text-[8px]">{SS_STEPS[ep].name}</text>
-        {person(46, "caregiver", care, "fill-[var(--status-success-bg)]")}
-        {person(260, "stranger", stranger, "fill-[var(--muted)]")}
+        <R k="ss-toy1" x={168} y={116} w={12} h={12} sw={1.5} fill={C.lime} fillStyle="solid" />
+        <E k="ss-toy2" cx={194} cy={122} w={12} h={12} sw={1.5} fill={C.blue} fillStyle="solid" />
+        <Label x={160} y={15} size={13} anchor="middle">{SS_STEPS[ep].name}</Label>
+        {person(46, "caregiver", care, C.lime)}
+        {person(260, "stranger", stranger, C.wash)}
+        {care ? <Label x={46} y={128} size={12} anchor="middle">caregiver</Label> : null}
+        {stranger ? <Label x={260} y={128} size={12} anchor="middle">stranger</Label> : null}
         {/* infant */}
         <g style={{ transform: `translateX(${sty.x[ep]}px)`, transition: "transform 900ms var(--ease-out-expo)" }}>
           <g key={`${ep}-${style}`} className={upset >= 0.8 ? "vibha-beat" : ""} style={{ "--beat": "700ms", animationIterationCount: 3 } as React.CSSProperties}>
             <g style={{ transform: turned ? "scaleX(-1)" : "none", transition: "transform 400ms" }}>
-              <circle cx="0" cy="98" r="10" className="fill-[var(--primary)] stroke-foreground" strokeWidth="2" />
-              <circle cx="-4" cy="95" r="1.4" className="fill-foreground" />
-              <circle cx="4" cy="95" r="1.4" className="fill-foreground" />
-              <path d={mouth} transform="translate(0 98)" fill="none" className="stroke-foreground" strokeWidth="1.5" />
-              <path d="M-9 108 Q0 104 9 108 L7 124 H-7 Z" className="fill-[var(--primary)] stroke-foreground" strokeWidth="2" />
+              <E k="ss-baby-head" cx={0} cy={98} w={20} h={20} sw={2} fill={C.lime} fillStyle="solid" />
+              <circle cx="-4" cy="95" r="1.4" fill={C.ink} />
+              <circle cx="4" cy="95" r="1.4" fill={C.ink} />
+              <path d={mouth} transform="translate(0 98)" fill="none" stroke={C.ink} strokeWidth={1.5} strokeLinecap="round" />
+              <P k="ss-baby-body" d="M-9 108 Q0 104 9 108 L7 124 H-7 Z" sw={2} fill={C.lime} fillStyle="solid" />
             </g>
           </g>
-          <text x="0" y="82" textAnchor="middle" className="fill-foreground text-[8px] font-bold">{frozen ? "freezes" : turned ? "turns away" : mood}</text>
         </g>
+        <Label x={Math.max(30, Math.min(290, sty.x[ep]))} y={80} size={12} anchor="middle">{frozen ? "freezes" : turned ? "turns away" : mood}</Label>
         {/* distress meter */}
-        <text x="10" y="150" className="fill-foreground text-[8px] font-semibold">How upset the infant looks</text>
-        <rect x="130" y="142" width="180" height="10" rx="3" className="fill-background stroke-foreground" strokeWidth="1.5" />
-        <rect x="132" y="144" width="176" height="6" rx="2" className="fill-[var(--destructive)]" style={{ transform: `scaleX(${upset})`, transformBox: "fill-box", transformOrigin: "0 50%", transition: "transform 700ms var(--ease-out-expo)" }} />
-        <text x="310" y="164" textAnchor="end" className="fill-foreground text-[8px]">{mood}</text>
-      </svg>
+        <Label x={8} y={158} size={12}>How upset the infant looks</Label>
+        <R k="ss-meter" x={166} y={148} w={144} h={12} sw={1.5} fill={C.paper} fillStyle="solid" />
+        <rect x="168" y="150" width="140" height="8" rx="2" fill={C.red} style={{ transform: `scaleX(${upset})`, transformBox: "fill-box", transformOrigin: "0 50%", transition: "transform 700ms var(--ease-out-expo)" }} />
+        <Label x={310} y={174} size={12} anchor="end" bold={false}>{mood}</Label>
+      </Sheet>
       <div className="mt-3 grid gap-2 sm:grid-cols-4" role="group" aria-label="Attachment style">
         {STYLES.map((x) => (
           <button key={x.id} type="button" aria-pressed={style === x.id} className={choiceCls(style === x.id)} onClick={() => { setStyle(x.id); trackLearn({ type: "widget", kind: "strange", item: x.id }); }}>{x.name}</button>
