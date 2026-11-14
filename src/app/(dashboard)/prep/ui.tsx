@@ -21,9 +21,15 @@ export function BackToPrep({ href = "/prep", label = PREP_SHORT }: { href?: stri
 export function PrepHero({ children }: { children?: React.ReactNode }) {
   return (
     <header className="space-y-3">
+      {/* Phones: the short name on one line (the tab bar's word); the full name from 640 px. */}
       <ToolHeader
-        eyebrow="Exam Prep"
-        title={PREP_TITLE}
+        eyebrow={<span className="hidden sm:inline">{PREP_SHORT}</span>}
+        title={
+          <>
+            <span className="sm:hidden">{PREP_SHORT}</span>
+            <span className="hidden sm:inline">{PREP_TITLE}</span>
+          </>
+        }
         tip={{
           id: "prep",
           steps: ["Pick a subject, then a topic.", "Save any question to see it again."],
