@@ -86,7 +86,12 @@ function Hero() {
             <Reveal y={12}>
               <p className={s.eyebrowPill}>
                 <span className={s.liveDot} aria-hidden />
-                {COHORT.label} · by invitation · starts {COHORT.starts.toLowerCase()}
+                <span className={s.pillLong}>
+                  {COHORT.label} · by invitation · starts {COHORT.starts.toLowerCase()}
+                </span>
+                <span className={s.pillShort}>
+                  {COHORT.label} · starts {COHORT.startsShort}
+                </span>
               </p>
             </Reveal>
             <h1 id="hero-title" className={s.h1}>
@@ -108,7 +113,7 @@ function Hero() {
                   </Link>
                 </Magnetic>
                 <Magnetic>
-                  <a href="#fees" className={`${s.btn} ${s.btnWhite} ${s.btnLg}`}>
+                  <a href="#fees" className={`${s.btn} ${s.btnWhite} ${s.btnLg} ${s.heroSecondary}`}>
                     Fees &amp; how to join
                   </a>
                 </Magnetic>
@@ -163,7 +168,7 @@ function Hero() {
 
         <div className={s.quickWrap}>
           <p className={s.quickLabel}>Quick answers</p>
-          <ul className={s.quick}>
+          <ul className={s.quick} aria-label="Quick answers">
             {QUICK_ANSWERS.map((x, i) => (
               <Reveal as="li" key={x.q} delay={i * 0.05} y={14}>
                 <a href={x.href} className={s.quickCard}>
