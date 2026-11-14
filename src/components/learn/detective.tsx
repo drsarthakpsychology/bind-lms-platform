@@ -2,8 +2,8 @@
 
 import * as React from "react";
 import { startHowTo } from "@/components/help/how-to";
-import { BackLink } from "@/components/study/back";
-import { LoaderCircle, Search } from "lucide-react";
+import { Brain, LoaderCircle, Pill, Search, Shuffle, Trophy } from "lucide-react";
+import { ChoiceCard } from "@/lib/games-sims/ui/kit";
 import { emptyState, finishLesson, istToday, type LearnState, type Payout } from "@/lib/learn/engine";
 import { noteAnswer, useHistoryPrefetch } from "@/lib/history/client";
 import { CLUES, POINTS, ROUNDS, WRONG_PENALTY, type DealtRound, type Family } from "@/lib/learn/detective-rules";
@@ -97,32 +97,48 @@ export function Detective({ serverState, save }: { serverState: LearnState | nul
 
   if (!game) {
     return (
-      <div className="mx-auto max-w-xl space-y-6 py-8 text-center">
-        <Chai mood="think" size={130} />
-        <h1 className="text-h1">Clinic detective</h1>
-        {state.detectiveBest ? <p className="font-pix text-sm">Your best: {state.detectiveBest}</p> : null}
-        <div className="grid gap-3 sm:grid-cols-3">
+      <div className="mx-auto max-w-xl space-y-5 px-4 py-4 lg:px-2">
+        <div className="flex items-center gap-4">
+          <Chai mood="think" size={88} />
+          <div className="min-w-0 space-y-1">
+            <h1 className="text-h3">Pick a case type</h1>
+            {state.detectiveBest ? (
+              <p className="inline-flex items-center gap-1.5 rounded-full border-2 border-foreground bg-card px-2.5 py-0.5 text-sm font-bold tabular-nums">
+                <Trophy className="size-4" aria-hidden /> Your best: {state.detectiveBest}
+              </p>
+            ) : null}
+          </div>
+        </div>
+        <div className="grid gap-3">
           {(
             [
-              ["mixed", "Mixed"],
-              ["drug", "Medicines"],
-              ["disorder", "Disorders"],
+              ["mixed", "Mixed", "Disorders and medicines.", Shuffle],
+              ["drug", "Medicines", "Name the medicine from its clues.", Pill],
+              ["disorder", "Disorders", "Name the disorder from its clues.", Brain],
             ] as const
-          ).map(([f, label]) => (
-            <button key={f} type="button" disabled={busy} onClick={() => void start(f)} className="btn-sweep inline-flex h-14 items-center justify-center gap-2 rounded-2xl border-2 border-foreground bg-primary text-lg font-bold text-primary-foreground hard-shadow-md disabled:opacity-60">
-              {busy && family === f ? <LoaderCircle className="size-5 animate-spin" aria-hidden /> : null}
-              {label}
-            </button>
+          ).map(([f, label, line, Icon]) => (
+            <ChoiceCard
+              key={f}
+              icon={Icon}
+              suggested={f === "mixed"}
+              disabled={busy}
+              aria-busy={busy && family === f}
+              onClick={() => void start(f)}
+              title={
+                <span className="inline-flex items-center gap-2">
+                  {label}
+                  {busy && family === f ? <LoaderCircle className="size-4 animate-spin" aria-hidden /> : null}
+                </span>
+              }
+              line={line}
+            />
           ))}
         </div>
         {error ? (
-          <p role="status" className="text-sm font-semibold">
+          <p role="alert" className="rounded-md border-2 border-foreground bg-status-alert-bg px-3 py-2 text-sm font-semibold text-status-alert-fg">
             {error}
           </p>
         ) : null}
-        <BackLink className="inline-flex min-h-11 items-center text-sm font-bold underline-offset-4 hover:underline">
-          Back
-        </BackLink>
       </div>
     );
   }
