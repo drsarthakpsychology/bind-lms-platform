@@ -31,6 +31,10 @@ import { QUIZ_BANK } from "@/lib/quiz/quiz-bank";
 import { MobileStickyAction } from "@/components/mobile/mobile-sticky-action";
 import { RefreshOnSave } from "@/components/save/refresh-on-save";
 import { leaveWithoutSession } from "@/lib/auth/session-redirect";
+import { readFlags } from "@/lib/flags";
+import { uiV2For } from "@/lib/ui/v2";
+import { UiV2 } from "@/components/learn-v2/ui-v2";
+import { LessonScreenV2 } from "@/components/learn-v2/lesson";
 
 // "Check what stuck": the risk-assessment + reporting items are the most
 // universally relevant after any lesson (the order-steps spine).
@@ -212,6 +216,112 @@ export default async function LessonPage({
     : "Mark complete";
 
   const nextUp = pickerLessons;
+
+  // New design (ui_v2): the same data and the same parts, composed around the video.
+  if (uiV2For(await readFlags(), profile.role)) {
+    const prevHref = prevLesson ? `/courses/${courseId}/lessons/${prevLesson.id}` : null;
+    const materialItems = (materials ?? []).map((m) => ({ id: m.id, title: m.title, kind: m.kind, format: m.format, sizeBytes: m.size_bytes, url: m.url, storagePath: m.storage_path }));
+    const brief = assignment ? (assignment.instructions ?? assignment.prompt_text) : null;
+    return (
+      <UiV2 on>
+        <RefreshOnSave kinds={["complete", "progress"]} />
+        <LessonScreenV2
+          courseId={courseId}
+          lessonId={lessonId}
+          courseTitle={course?.title ?? "Course"}
+          title={lesson?.title ?? "Lecture"}
+          description={lesson?.description ?? null}
+          hasVideo={hasVideo}
+          position={currentIndex >= 0 && playable.length > 0 ? `Lecture ${currentIndex + 1} of ${playable.length}` : null}
+          cohorts={lessonCohorts}
+          tab={tab}
+          hasMaterials={hasMaterials}
+          hasAssignment={hasAssignment}
+          watched={lessonComplete}
+          lessons={pickerLessons}
+          showDoubts={profile.role !== "admin" || viewingAsStudent}
+          player={
+            <LazyVideoPlayer
+              lessonId={lessonId}
+              watermarkLabel={watermarkLabel}
+              nextHref={nextLesson ? `/courses/${courseId}/lessons/${nextLesson.id}` : null}
+              nextTitle={nextLesson?.title ?? null}
+            />
+          }
+          picker={pickerLessons.length > 1 ? <LessonPicker courseId={courseId} courseTitle={course?.title ?? "Course"} lessons={pickerLessons} currentId={lessonId} /> : null}
+          complete={<ContinueControl lessonId={lessonId} courseId={courseId} continueTarget={continueTarget} label={forwardLabel} isFinalLesson={!nextLesson} alreadyComplete={lastLessonCompleted} />}
+          nav={<LessonNav prevHref={prevHref} nextHref={continueTarget} nextLabel={nextLesson ? "Next lecture" : "Finish course"} />}
+          quiz={<QuizCheck items={LESSON_QUIZ_ITEMS} />}
+          materials={
+            <>
+              {showAdminAssignment ? <MaterialUploader courseId={courseId} lessonId={lessonId} materials={materialItems} /> : null}
+              {hasMaterials ? <MaterialsList materials={materialItems} courseId={courseId} /> : null}
+            </>
+          }
+          assignment={
+            !assignment ? (
+              showAdminAssignment ? <AssignmentEditor courseId={courseId} lessonId={lessonId} assignment={null} /> : null
+            ) : showAdminAssignment ? (
+              <AssignmentEditor
+                courseId={courseId}
+                lessonId={lessonId}
+                assignment={{
+                  id: assignment.id,
+                  title: assignment.title ?? "Assignment",
+                  instructions: assignment.instructions ?? assignment.prompt_text,
+                  due_at: assignment.due_at,
+                  allow_late: assignment.allow_late,
+                  is_published: assignment.is_published,
+                  max_files: assignment.max_files,
+                  max_file_mb: assignment.max_file_mb,
+                  accepted_formats: assignment.accepted_formats ?? DEFAULT_ACCEPTED_FORMATS,
+                  submissionCount: Array.isArray(assignment.submissions) ? assignment.submissions.length : 0,
+                }}
+              />
+            ) : (
+              <>
+                <div className="flex min-w-0 flex-col gap-1">
+                  <h2 className="type-h2 [overflow-wrap:anywhere]">{assignment.title ?? "Assignment"}</h2>
+                  {assignment.is_published && assignment.due_at ? (
+                    <p className="type-small text-muted-foreground">
+                      Due {new Date(assignment.due_at).toLocaleString("en-IN", { day: "numeric", month: "short", hour: "numeric", minute: "2-digit", timeZone: "Asia/Kolkata" })}
+                    </p>
+                  ) : null}
+                </div>
+                {assignment.is_published ? (
+                  <>
+                    {brief ? <p className="type-reading whitespace-pre-wrap text-foreground/90 [overflow-wrap:anywhere]">{brief}</p> : null}
+                    <SubmissionForm
+                      assignmentId={assignment.id}
+                      dueAt={assignment.due_at}
+                      allowLate={assignment.allow_late}
+                      maxFiles={assignment.max_files ?? 3}
+                      maxFileMb={assignment.max_file_mb ?? 25}
+                      existing={
+                        existingSubmission
+                          ? {
+                              status: existingSubmission.status === "returned" ? "returned" : existingSubmission.status === "approved" ? "approved" : "submitted",
+                              submittedAt: existingSubmission.submitted_at,
+                              isLate: existingSubmission.is_late,
+                              note: existingSubmission.note,
+                              files: Array.isArray(existingSubmission.submission_files)
+                                ? existingSubmission.submission_files.map((f) => ({ id: f.id, originalName: f.original_name, storagePath: f.storage_path }))
+                                : [],
+                            }
+                          : null
+                      }
+                    />
+                  </>
+                ) : (
+                  <p className="type-body text-muted-foreground">Your instructor hasn&apos;t published this assignment yet.</p>
+                )}
+              </>
+            )
+          }
+        />
+      </UiV2>
+    );
+  }
 
   return (
     <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_21rem] lg:gap-8 xl:grid-cols-[minmax(0,1fr)_24rem]">

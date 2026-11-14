@@ -2,11 +2,12 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { ArrowRight, Bookmark, BookmarkCheck, FlaskConical, NotebookPen, X } from "lucide-react";
+import { ArrowRight, Bookmark, BookmarkCheck, ChevronDown, FlaskConical, NotebookPen, X } from "lucide-react";
 import { NOTE_MAX, isBookmarked, markKey, markedSections, notePreview, noteText, setBookmark, setNote, toggleBookmark } from "@/lib/study/marks";
 import { useHydrated, useMarks } from "@/lib/study/marks-store";
 import type { StudyModule } from "@/lib/study/types";
 import { cn } from "@/lib/utils";
+import { useUiV2 } from "@/components/learn-v2/ui-v2";
 
 /* ------------------------------------------------- reader: bookmark + note */
 
@@ -142,6 +143,7 @@ const noSubscribe = () => () => {};
 export function MarksList({ owner, modules }: { owner: string; modules: StudyModule[] }) {
   const [marks, update] = useMarks(owner);
   const hydrated = useHydrated();
+  const v2 = useUiV2();
   // Opened from search ("Bookmarks and notes", /study#marks): open the list and bring it into view.
   const wanted = React.useSyncExternalStore(noSubscribe, () => window.location.hash === "#marks", () => false);
   React.useEffect(() => {
@@ -158,6 +160,39 @@ export function MarksList({ owner, modules }: { owner: string; modules: StudyMod
 
   // Nothing saved yet: say nothing. The Bookmark and My note buttons are on every section.
   if (!items.length) return null;
+  // New design: one quiet line that opens to rows (no box).
+  if (v2) {
+    return (
+      <details id="marks" open={wanted} className="group min-w-0 scroll-mt-24 border-y border-[var(--ds-hairline)]">
+        <summary className="-mx-2 flex min-h-14 cursor-pointer list-none items-center gap-3 rounded-lg px-2 outline-none transition-colors hover:bg-[var(--ds-tint)] focus-visible:ring-2 focus-visible:ring-ring [&::-webkit-details-marker]:hidden">
+          <BookmarkCheck className="size-5 shrink-0" aria-hidden />
+          <span className="min-w-0 flex-1 type-body font-semibold">Bookmarks and notes</span>
+          <ChevronDown className="size-5 shrink-0 text-muted-foreground transition-transform group-open:rotate-180 motion-reduce:transition-none" aria-hidden />
+        </summary>
+        <ul className="flex min-w-0 flex-col divide-y divide-[var(--ds-hairline)] border-t border-[var(--ds-hairline)]">
+          {items.map(({ key, m, s, bookmarked, note }) => (
+            <li key={key} className="flex min-w-0 items-center gap-1">
+              <Link href={`/study/${m.id}/${s.id}`} className="-ml-2 flex min-h-14 min-w-0 flex-1 flex-col justify-center rounded-lg px-2 py-2 outline-none transition-colors hover:bg-[var(--ds-tint)] focus-visible:ring-2 focus-visible:ring-ring">
+                <span className="type-body font-semibold [overflow-wrap:anywhere]">
+                  <span className="mr-1.5 text-muted-foreground type-num">{s.isTest ? "Test" : s.num}</span>
+                  {s.title}
+                </span>
+                <span className="type-small text-muted-foreground [overflow-wrap:anywhere]">
+                  Module {m.num} · {m.title}
+                </span>
+                {note ? <span className="mt-1 type-small [overflow-wrap:anywhere]">{notePreview(note)}</span> : null}
+              </Link>
+              {bookmarked ? (
+                <button type="button" onClick={() => update((x) => setBookmark(x, key, false, Date.now()))} aria-label={`Remove bookmark: ${s.num} ${s.title}`} className="-mr-2 grid size-11 shrink-0 place-items-center rounded-lg text-muted-foreground outline-none hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring">
+                  <X className="size-4" aria-hidden />
+                </button>
+              ) : null}
+            </li>
+          ))}
+        </ul>
+      </details>
+    );
+  }
   return (
     <details id="marks" open={wanted} className="group scroll-mt-24 rounded-2xl border-2 border-foreground bg-card">
       <summary className="flex min-h-12 cursor-pointer items-center px-4 font-bold">Bookmarks and notes ({items.length})</summary>

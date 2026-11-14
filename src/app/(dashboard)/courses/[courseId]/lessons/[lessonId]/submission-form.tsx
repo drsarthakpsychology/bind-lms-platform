@@ -14,6 +14,7 @@ import { haptic } from "@/lib/haptics";
 import { Download } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
+import { useUiV2 } from "@/components/learn-v2/ui-v2";
 import { Badge } from "@/components/ui/badge";
 import { Textarea } from "@/components/ui/textarea";
 
@@ -92,6 +93,8 @@ export function SubmissionForm({
   existing: SubmissionState | null;
 }) {
   const router = useRouter();
+  // New design: plain surfaces with a hairline instead of boxes; the drop zone stays a target.
+  const v2 = useUiV2();
   const inputRef = useRef<HTMLInputElement>(null);
   const noteRef = useRef<HTMLTextAreaElement>(null);
   const [dragOver, setDragOver] = useState(false);
@@ -224,7 +227,7 @@ export function SubmissionForm({
   // Locked states (graded / returned).
   if (isReturned || isApproved) {
     return (
-      <div className="space-y-3 rounded-md border-2 border-border bg-secondary/60 p-4">
+      <div className={v2 ? "space-y-3 border-t border-[var(--ds-hairline)] pt-4" : "space-y-3 rounded-md border-2 border-border bg-secondary/60 p-4"}>
         <div className="flex items-center gap-2">
           <Badge variant={isApproved ? "graded" : "pending"}>
             {isApproved ? (
@@ -247,7 +250,7 @@ export function SubmissionForm({
   // Already submitted: show the submitted state + unsubmit.
   if (isSubmitted && !canSubmit) {
     return (
-      <div className="space-y-3 rounded-lg border-2 border-border bg-card p-4">
+      <div className={v2 ? "space-y-4 border-t border-[var(--ds-hairline)] pt-4" : "space-y-3 rounded-lg border-2 border-border bg-card p-4"}>
         <div className="flex flex-wrap items-center justify-between gap-2">
           <div className="flex items-center gap-2">
             <Badge variant="pending">
@@ -269,7 +272,7 @@ export function SubmissionForm({
         </div>
 
         {submission?.note && (
-          <p className="whitespace-pre-wrap break-words rounded-md border-2 border-border bg-muted/50 p-3 text-small">
+          <p className={v2 ? "whitespace-pre-wrap break-words border-l-2 border-[var(--ds-card-line)] pl-3 type-body" : "whitespace-pre-wrap break-words rounded-md border-2 border-border bg-muted/50 p-3 text-small"}>
             {submission.note}
           </p>
         )}
@@ -327,7 +330,8 @@ export function SubmissionForm({
           onDragLeave={() => setDragOver(false)}
           onDrop={onDrop}
           className={
-            "flex cursor-pointer flex-col items-center justify-center gap-2 rounded-md border-2 border-dashed border-border bg-muted/40 px-6 py-10 text-center transition-colors focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60 " +
+            (v2 ? "rounded-[var(--ds-radius)] border-[1.5px] border-[var(--ds-card-line)] bg-transparent px-4 py-8 " : "rounded-md border-2 border-border bg-muted/40 px-6 py-10 ") +
+            "flex cursor-pointer flex-col items-center justify-center gap-2 border-dashed text-center transition-colors focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60 " +
             (dragOver ? "border-primary bg-accent" : "")
           }
         >
@@ -356,13 +360,13 @@ export function SubmissionForm({
       {picked.length > 0 && (
         <ul className="space-y-1.5">
           {picked.map((f, i) => (
-            <li key={i} className="flex items-center justify-between gap-2 rounded-md border-2 border-border bg-card px-3 py-2 text-small">
-              <span className="truncate text-foreground">{f.name}</span>
+            <li key={i} className={v2 ? "flex min-h-12 items-center justify-between gap-2 border-b border-[var(--ds-hairline)] text-small" : "flex items-center justify-between gap-2 rounded-md border-2 border-border bg-card px-3 py-2 text-small"}>
+              <span className={v2 ? "min-w-0 text-foreground [overflow-wrap:anywhere]" : "truncate text-foreground"}>{f.name}</span>
               <button
                 type="button"
                 onClick={() => setPicked((prev) => prev.filter((_, idx) => idx !== i))}
                 aria-label={`Remove ${f.name}`}
-                className="text-muted-foreground hover:text-foreground"
+                className={v2 ? "-mr-2 grid size-11 shrink-0 place-items-center rounded-lg text-muted-foreground hover:text-foreground" : "text-muted-foreground hover:text-foreground"}
               >
                 <X className="size-4" aria-hidden />
               </button>

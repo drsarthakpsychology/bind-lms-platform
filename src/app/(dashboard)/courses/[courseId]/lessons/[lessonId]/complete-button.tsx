@@ -8,6 +8,7 @@ import { ArrowRight } from "lucide-react";
 import { completeAndAdvance } from "./actions";
 import { haptic } from "@/lib/haptics";
 import { Button } from "@/components/ui/button";
+import { useUiV2 } from "@/components/learn-v2/ui-v2";
 
 /**
  * Client wrapper for the single forward action on a lesson.
@@ -39,6 +40,8 @@ export function CompleteButton({
 }) {
   const [isPending, startTransition] = useTransition();
   const router = useRouter();
+  // New design: Next (pinned low) is the lime action; this sits quietly under the title.
+  const v2 = useUiV2();
 
   /** The direct save failed: keep it in the save outbox (it retries) and move on. */
   function queueAndGo(hard: boolean) {
@@ -76,7 +79,8 @@ export function CompleteButton({
   return (
     <Button
       type="button"
-      variant={alreadyComplete ? "secondary" : "default"}
+      variant={v2 ? "outline" : alreadyComplete ? "secondary" : "default"}
+      size={v2 ? "lg" : undefined}
       disabled={isPending}
       onClick={onClick}
     >

@@ -7,6 +7,7 @@ import { Check, ChevronDown } from "lucide-react";
 
 import { MobileBottomSheet } from "@/components/mobile/mobile-bottom-sheet";
 import { cn } from "@/lib/utils";
+import { useUiV2 } from "@/components/learn-v2/ui-v2";
 
 type PickerLesson = {
   id: string;
@@ -34,6 +35,7 @@ export function LessonPicker({
   currentId: string;
 }) {
   const [open, setOpen] = useState(false);
+  const v2 = useUiV2();
   const pathname = usePathname();
   const active = pathname.split("/lessons/")[1]?.split("/")[0] ?? currentId;
   const index = lessons.findIndex((l) => l.id === active);
@@ -46,7 +48,11 @@ export function LessonPicker({
         aria-haspopup="dialog"
         aria-expanded={open}
         aria-label={index >= 0 ? `Lectures, ${index + 1} of ${lessons.length}: open the list` : "Lectures: open the list"}
-        className="inline-flex h-11 shrink-0 items-center gap-1.5 whitespace-nowrap rounded-md border-2 border-foreground bg-card px-3 text-sm font-bold text-foreground transition-[transform,box-shadow] hover:bg-accent active:translate-y-px"
+        className={
+          v2
+            ? "-mr-2 inline-flex h-11 shrink-0 items-center gap-1.5 whitespace-nowrap rounded-lg px-2 text-sm font-semibold text-foreground outline-none transition-colors hover:bg-[var(--ds-tint)] focus-visible:ring-2 focus-visible:ring-ring"
+            : "inline-flex h-11 shrink-0 items-center gap-1.5 whitespace-nowrap rounded-md border-2 border-foreground bg-card px-3 text-sm font-bold text-foreground transition-[transform,box-shadow] hover:bg-accent active:translate-y-px"
+        }
       >
         {/* The course name is already on the Back link beside this. */}
         <span>Lectures</span>
@@ -74,8 +80,11 @@ export function LessonPicker({
                 className={cn(
                   "flex min-h-11 items-center gap-2 rounded-md px-3 py-2.5 text-small transition-colors",
                   isActive
-                    ? "bg-primary text-primary-foreground"
+                    ? v2
+                      ? "bg-[var(--ds-tint)] font-bold text-foreground"
+                      : "bg-primary text-primary-foreground"
                     : "text-foreground hover:bg-accent",
+                  v2 && "min-h-12 text-[0.9375rem]",
                   !lesson.hasVideo && "opacity-50",
                 )}
               >
