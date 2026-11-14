@@ -2,6 +2,7 @@ import { STATIC_ENTRIES, medicinePaletteEntries, modulePaletteEntries, reference
 import { MODULES } from "@/lib/study";
 import { MEDS } from "@/lib/meds";
 import { blockedBy } from "@/lib/access/features";
+import { lectureOnlyAllowed } from "@/lib/auth/scope";
 import { referenceIndex } from "@/lib/reference/data";
 import { CommandPalette } from "./command-palette";
 import { createAdminClient } from "@/lib/supabase/server";
@@ -14,7 +15,7 @@ import { createAdminClient } from "@/lib/supabase/server";
  * page was the palette's biggest cost.
  */
 /** Admins also get every student (name, roll number, email): type to jump to their profile. */
-export async function PaletteHost({ isAdmin = false, flags = {}, blocked = [] }: { isAdmin?: boolean; flags?: Record<string, string>; blocked?: string[] }) {
+export async function PaletteHost({ isAdmin = false, flags = {}, blocked = [], scope = "full" }: { isAdmin?: boolean; flags?: Record<string, string>; blocked?: string[]; scope?: "full" | "lectures_only" }) {
   const studentEntries: PaletteEntry[] = isAdmin ? await studentPaletteEntries() : [];
 
   let referenceEntries: PaletteEntry[] = [];
@@ -27,7 +28,10 @@ export async function PaletteHost({ isAdmin = false, flags = {}, blocked = [] }:
   const reference = flags.learn === "unlocked" ? referenceEntries : [];
   // Study modules and medicines: what the top bar promises ("lectures, topics, medicines").
   const topics = [...modulePaletteEntries(MODULES), ...medicinePaletteEntries(MEDS)];
-  const entries = visibleEntries([...STATIC_ENTRIES, ...topics, ...studentEntries, ...reference], { flags, isAdmin, blocked: (href) => Boolean(blockedBy(href, blocked)) });
+  // A lecture-only account is offered only what it can open (otherwise every
+  // pick of Practice, Medicines or a module sent them silently back home).
+  const allowed = !isAdmin && scope === "lectures_only" ? lectureOnlyAllowed : undefined;
+  const entries = visibleEntries([...STATIC_ENTRIES, ...topics, ...studentEntries, ...reference], { flags, isAdmin, allowed, blocked: (href) => Boolean(blockedBy(href, blocked)) });
   return <CommandPalette entries={entries} />;
 }
 

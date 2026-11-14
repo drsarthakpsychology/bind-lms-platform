@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { medicinePaletteEntries, modulePaletteEntries, searchPalette, startEntries, STATIC_ENTRIES, scoreEntry, visibleEntries } from "./palette";
 import { MODULES } from "@/lib/study";
+import { lectureOnlyAllowed } from "@/lib/auth/scope";
 import { MEDS } from "@/lib/meds";
 
 describe("command palette search", () => {
@@ -118,5 +119,17 @@ describe("search keeps the top bar's promise: lectures, topics, medicines", () =
   it("no fixed course link (each student sees their own courses in Lectures)", () => {
     expect(STATIC_ENTRIES.some((e) => e.href.startsWith("/courses/"))).toBe(false);
   });
-});
 
+  it("a keyword inside a longer word is not a match", () => {
+    // "xp" (Games) is not in "experience", "net" (Exam Prep) is not in "internet".
+    expect(searchPalette(STATIC_ENTRIES, "experience").map((h) => h.id)).not.toContain("games");
+    expect(searchPalette(STATIC_ENTRIES, "internet").map((h) => h.id)).not.toContain("prep");
+    expect(searchPalette(STATIC_ENTRIES, "earn xp fast").map((h) => h.id)).toContain("games");
+  });
+
+  it("a lecture-only account is offered only what it can open", () => {
+    const ids = visibleEntries(STATIC_ENTRIES, { flags: { learn: "unlocked" }, allowed: lectureOnlyAllowed }).map((e) => e.id);
+    expect(ids).toEqual(expect.arrayContaining(["home", "lectures", "doubts"]));
+    for (const id of ["practice", "medicines", "study", "wall", "daily", "leaderboard"]) expect(ids, id).not.toContain(id);
+  });
+});
