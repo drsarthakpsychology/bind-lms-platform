@@ -1,8 +1,8 @@
 "use client";
 
 /**
- * Hand-drawn ink for the medicine pictures (Practice → Medicines only; Study
- * keeps its own widgets). Shapes come from rough.js's generator, which only
+ * Hand-drawn ink for the diagrams students see: the medicine pictures and the
+ * Study widgets (also shown in Exam Prep explanations and long answers). Shapes come from rough.js's generator, which only
  * computes SVG path data, so the drawing is the same on the server and in the
  * browser: every shape gets a fixed seed from its key, so it wobbles the same
  * way on every render. Colours are CSS variables (`.sketch` in globals.css),
@@ -17,6 +17,9 @@ import { cn } from "@/lib/utils";
 import { kalamWidth } from "./metrics";
 
 const kalam = Kalam({ weight: ["400", "700"], subsets: ["latin"], display: "swap" });
+
+/** The handwriting font, for labels that sit inside a drawing built from HTML (see frame.tsx). */
+export const HAND = kalam.style.fontFamily;
 
 /** The sketch palette: brand ink, blue and lime, plus red for blood and a soft grey. */
 export const C = {
@@ -201,6 +204,26 @@ export function Sheet({ name, w, h, label, children, className }: { name: string
       {children}
     </svg>
   );
+}
+
+/** Plain text for a label: drops the **bold** and *italic* marks of course text. */
+export function plain(text: string): string {
+  return text.replace(/\*\*(.+?)\*\*/g, "$1").replace(/\*(?!\s)(.+?)\*/g, "$1").replace(/`/g, "");
+}
+
+/** Breaks `text` into lines no wider than `max` viewBox units (a word longer than `max` gets a line of its own). */
+export function wrap(text: string, max: number, size = LABEL, bold = true): string[] {
+  const out: string[] = [];
+  let line = "";
+  for (const word of plain(text).split(/\s+/).filter(Boolean)) {
+    const next = line ? `${line} ${word}` : word;
+    if (line && labelWidth(next, size, bold) > max) {
+      out.push(line);
+      line = word;
+    } else line = next;
+  }
+  if (line) out.push(line);
+  return out.length ? out : [""];
 }
 
 /** A picture card: title, drawing, choices, and the plain explanation under it. */

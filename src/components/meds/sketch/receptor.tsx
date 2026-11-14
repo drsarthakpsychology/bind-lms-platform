@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { Arrow, C, Callout, Choice, E, Fact, Figure, Label, L, P, R, Say, Sheet } from "./ink";
+import { Arrow, C, Callout, Choice, E, Fact, Figure, Label, L, P, R, Say, Sheet } from "@/components/sketch/ink";
 
 /** What can sit in a receptor, and what each does to its signal. */
 export const LIGANDS = [

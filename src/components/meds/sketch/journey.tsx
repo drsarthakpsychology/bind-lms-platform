@@ -4,8 +4,8 @@ import * as React from "react";
 import { ROUTE_STAGES } from "@/components/study/animations";
 import type { Route } from "@/lib/meds/mechanisms";
 import { cn } from "@/lib/utils";
-import { Body, SPOT, type Organ } from "./body";
-import { C, Callout, Choice, E, Figure, P, Say, Sheet } from "./ink";
+import { Body, SPOT, type Organ } from "@/components/sketch/body";
+import { C, Callout, Choice, E, Figure, P, Say, Sheet } from "@/components/sketch/ink";
 
 const ROUTE_NAME: Record<Route, string> = { oral: "Tablet", iv: "Into a vein", nasal: "Nasal spray", depot: "Depot injection" };
 

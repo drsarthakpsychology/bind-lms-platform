@@ -2,8 +2,8 @@
 
 import * as React from "react";
 import { DA_PATHS } from "@/components/study/animations";
-import { BRAIN, Brain } from "./brain";
-import { Arrow, C, Callout, Choice, Cv, E, Fact, Figure, Head, L, Label, Say, Sheet } from "./ink";
+import { BRAIN, Brain } from "@/components/sketch/brain";
+import { Arrow, C, Callout, Choice, Cv, E, Fact, Figure, Head, L, Label, Say, Sheet } from "@/components/sketch/ink";
 
 type PathId = (typeof DA_PATHS)[number]["id"];
 type Block = "none" | "d2" | "d2-2a";

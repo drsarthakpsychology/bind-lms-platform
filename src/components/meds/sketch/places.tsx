@@ -6,9 +6,9 @@
  * (zolpidem), and what a beta blocker quietens in the body (propranolol).
  */
 import * as React from "react";
-import { BRAIN, Brain } from "./brain";
-import { Body } from "./body";
-import { Arrow, C, Callout, Choice, Cv, Fact, Figure, Label, L, P, R, Say, Sheet } from "./ink";
+import { BRAIN, Brain } from "@/components/sketch/brain";
+import { Body } from "@/components/sketch/body";
+import { Arrow, C, Callout, Choice, Cv, Fact, Figure, Label, L, P, R, Say, Sheet } from "@/components/sketch/ink";
 
 /* ---------------------------------------------------------------- brain map */
 
