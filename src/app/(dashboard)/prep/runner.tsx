@@ -240,15 +240,16 @@ export function QuestionRunner({ questions, start = 0, prior = {}, saved: initia
       {!result ? (
         <div className="space-y-2">
           {/* Phones: Check sits low, where the thumb is (ThumbBar). */}
-          <ThumbBar label="Answer">
-            <button type="button" className={cn(btnPrimary, "min-h-12 w-full text-base")} disabled={picked === null || busy} onClick={() => void check()}>
+          {/* The quiet way out sits beside Check, as Duolingo's Skip does (Screenrove duolingo-first-exercise). */}
+          <ThumbBar label="Answer" inlineClassName="md:flex-col-reverse md:items-stretch md:gap-2">
+            <button type="button" onClick={() => void show()} disabled={busy} className="inline-flex min-h-12 shrink-0 items-center gap-1.5 rounded-md border-2 border-foreground/40 bg-card px-3 text-sm font-semibold text-muted-foreground hover:text-foreground disabled:opacity-50 focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60 md:min-h-11 md:self-start md:border-transparent md:bg-transparent md:px-1 md:hover:underline">
+              <Eye className="hidden size-4 sm:block" aria-hidden /> Show the answer
+            </button>
+            <button type="button" className={cn(btnPrimary, "min-h-12 min-w-0 flex-1 text-base md:flex-none")} disabled={picked === null || busy} onClick={() => void check()}>
               {busy ? "Checking…" : picked === null ? "Pick an answer" : "Check answer"}
             </button>
           </ThumbBar>
-          <div className="flex flex-wrap items-center justify-between gap-2">
-            <button type="button" onClick={() => void show()} disabled={busy} className="inline-flex min-h-11 items-center gap-1.5 rounded-md px-1 text-sm font-semibold text-muted-foreground hover:text-foreground hover:underline disabled:opacity-50 focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60">
-              <Eye className="size-4" aria-hidden /> Show the answer
-            </button>
+          <div className="flex flex-wrap items-center justify-end gap-2 empty:hidden">
             <KeysHint />
           </div>
         </div>
