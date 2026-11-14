@@ -6,6 +6,7 @@ import type { HpaLoopData } from "@/lib/study/types";
 import { cn } from "@/lib/utils";
 import { trackLearn } from "@/lib/learn/track";
 import { SceneCard, btn, chip, statusCls, useReducedMotion } from "./kit";
+import { C, Cv, L, Label, P, R, Sheet, labelWidth } from "@/components/sketch/ink";
 
 /**
  * A day of stress, played. Events arrive (an exam, an argument, a
@@ -276,6 +277,36 @@ function Meter({ label, v, cls }: { label: string; v: number; cls: string }) {
 
 const CX = (t: number) => 34 + (t / DAY_END) * 262;
 const CY = (v: number) => 128 - (v / 1.4) * 112;
+const evName = (e: Ev) => e.title.split(" \u00b7 ")[1].replace("The ", "").replace("An ", "").replace("A ", "");
+
+/** Hours, events, the scale and the key: drawn once, not every frame. */
+const DayGrid = React.memo(function DayGrid() {
+  return (
+    <>
+      {[0, 240, 480, 720, 960].map((t) => (
+        <g key={t}>
+          <L k={`hd-v${t}`} x1={CX(t)} x2={CX(t)} y1={18} y2={128} stroke={C.soft} sw={0.8} single rough={0.3} style={{ opacity: 0.4 }} />
+          <Label x={CX(t)} y={143} size={12} anchor="middle" bold={false} color={C.soft}>{clock(t)}</Label>
+        </g>
+      ))}
+      {EVENTS.map((e) => (
+        <g key={e.at}>
+          <L k={`hd-e${e.at}`} x1={CX(e.at)} x2={CX(e.at)} y1={18} y2={128} stroke={C.ink} sw={1} single dash="2 4" style={{ opacity: 0.6 }} />
+          <Label x={Math.min(316 - labelWidth(evName(e), 12) / 2, CX(e.at))} y={13} size={12} anchor="middle">{evName(e)}</Label>
+        </g>
+      ))}
+      <Label x={4} y={CY(1.2) + 4} size={11} bold={false} color={C.soft}>high</Label>
+      <Label x={4} y={CY(0.1) + 4} size={11} bold={false} color={C.soft}>low</Label>
+      <L k="hd-k1" x1={34} x2={48} y1={157} y2={157} stroke={C.blue} sw={2.6} single />
+      <Label x={52} y={161} size={12} color={C.blue}>cortisol</Label>
+      <L k="hd-k2" x1={108} x2={122} y1={157} y2={157} stroke={C.red} sw={2} single dash="5 3" />
+      <Label x={126} y={161} size={12} color={C.red}>adrenaline</Label>
+      <L k="hd-k3" x1={196} x2={210} y1={157} y2={157} stroke={C.soft} sw={1.5} single dash="1 3" />
+      <Label x={214} y={161} size={12} bold={false} color={C.soft}>normal rhythm</Label>
+    </>
+  );
+});
+
 function DayChart({ state, now }: { state: DayState; now: number }) {
   const pts: { c: string; a: string; b: string } = { c: "", a: "", b: "" };
   for (let t = 0; t <= DAY_END; t += 5) {
@@ -288,32 +319,13 @@ function DayChart({ state, now }: { state: DayState; now: number }) {
   }
   const h = hormones(now, state);
   return (
-    <svg viewBox="0 0 320 166" className="w-full rounded-xl border-2 border-foreground bg-background" role="img" aria-label={`Hormone levels through the day up to ${clock(now)}. Cortisol is the solid line, adrenaline the dashed line, the dotted line is the normal daily cortisol rhythm.`}>
-      {[0, 240, 480, 720, 960].map((t) => (
-        <g key={t}>
-          <line x1={CX(t)} x2={CX(t)} y1="14" y2="128" className="stroke-foreground/10" />
-          <text x={CX(t)} y="142" textAnchor="middle" className="fill-muted-foreground text-[10px]">{clock(t)}</text>
-        </g>
-      ))}
-      {EVENTS.map((e) => (
-        <g key={e.at}>
-          <line x1={CX(e.at)} x2={CX(e.at)} y1="14" y2="128" className="stroke-foreground/40" strokeDasharray="2 3" />
-          <text x={CX(e.at) + 2} y="12" className="fill-foreground text-[9px] font-semibold">{e.title.split(" · ")[1].replace("The ", "").replace("An ", "").replace("A ", "")}</text>
-        </g>
-      ))}
-      <polyline points={pts.b} fill="none" className="stroke-foreground/40" strokeWidth="1.5" strokeDasharray="1 3" strokeLinecap="round" />
-      <polyline points={pts.a} fill="none" className="stroke-[var(--destructive)]" strokeWidth="2" strokeDasharray="5 3" />
-      <polyline points={pts.c} fill="none" className="stroke-[var(--brand)]" strokeWidth="2.75" strokeLinejoin="round" />
-      <circle cx={CX(now)} cy={CY(h.cort)} r="4" className="fill-[var(--brand)] stroke-background" strokeWidth="1.5" />
-      <text x="4" y={CY(1.2) + 3} className="fill-muted-foreground text-[9px]">high</text>
-      <text x="4" y={CY(0.1) + 3} className="fill-muted-foreground text-[9px]">low</text>
-      <line x1="34" x2="48" y1="157" y2="157" className="stroke-[var(--brand)]" strokeWidth="2.75" />
-      <text x="52" y="160" className="fill-[var(--brand)] text-[10px] font-semibold">cortisol</text>
-      <line x1="104" x2="118" y1="157" y2="157" className="stroke-[var(--destructive)]" strokeWidth="2" strokeDasharray="5 3" />
-      <text x="122" y="160" className="fill-[var(--destructive)] text-[10px] font-semibold">adrenaline</text>
-      <line x1="186" x2="200" y1="157" y2="157" className="stroke-foreground/40" strokeWidth="1.5" strokeDasharray="1 3" strokeLinecap="round" />
-      <text x="204" y="160" className="fill-muted-foreground text-[10px]">normal rhythm</text>
-    </svg>
+    <Sheet className="mx-auto max-w-[34rem]" name="hpa-day" w={320} h={168} label={`Hormone levels through the day up to ${clock(now)}. Cortisol is the solid line, adrenaline the dashed line, the dotted line is the normal daily cortisol rhythm.`}>
+      <DayGrid />
+      <polyline points={pts.b} fill="none" stroke={C.soft} strokeWidth={1.5} strokeDasharray="1 3" strokeLinecap="round" />
+      <polyline points={pts.a} fill="none" stroke={C.red} strokeWidth={2} strokeDasharray="5 3" strokeLinejoin="round" />
+      <polyline points={pts.c} fill="none" stroke={C.blue} strokeWidth={2.75} strokeLinejoin="round" strokeLinecap="round" />
+      <circle cx={CX(now)} cy={CY(h.cort)} r="4" fill={C.lime} stroke={C.ink} strokeWidth={1.5} />
+    </Sheet>
   );
 }
 
@@ -321,39 +333,55 @@ function ChronicChart({ days }: { days: number }) {
   const fb = [1, 0.8, 0.6, 0.42, 0.3];
   const lines = Array.from({ length: days }, (_, k) => {
     const s: DayState = { choices: ["avoid", "avoid", "avoid", "avoid"], feedback: fb[k], extraBase: k * 0.06 };
-    let p = "";
-    for (let t = 0; t <= DAY_END; t += 8) p += `${CX(t).toFixed(1)},${CY(hormones(t, s).cort).toFixed(1)} `;
+    const p: [number, number][] = [];
+    for (let t = 0; t <= DAY_END; t += 24) p.push([CX(t), CY(hormones(t, s).cort)]);
     return p;
   });
+  const endY = (k: number) => CY(hormones(DAY_END, { choices: ["avoid", "avoid", "avoid", "avoid"], feedback: fb[k], extraBase: k * 0.06 }).cort) + 4;
+  const ends = lines.map((_, k) => k).filter((k) => k === 0 || k === days - 1);
   return (
-    <svg viewBox="0 0 320 150" className="w-full rounded-xl border-2 border-foreground bg-background" role="img" aria-label={`Cortisol through the day for ${days} days of chronic stress. Each day's line sits higher and flatter than the last.`}>
-      {[0, 240, 480, 720, 960].map((t) => <text key={t} x={CX(t)} y="142" textAnchor="middle" className="fill-muted-foreground text-[10px]">{clock(t)}</text>)}
-      {lines.map((p, k) => <polyline key={k} points={p} fill="none" className="stroke-[var(--brand)]" strokeWidth={k === days - 1 ? 3 : 1.5} style={{ opacity: 0.25 + (k + 1) / (days + 1) * 0.75 }} />)}
-      {lines.map((_, k) => (k === 0 || k === days - 1) && <text key={k} x="314" y={CY(hormones(DAY_END, { choices: ["avoid", "avoid", "avoid", "avoid"], feedback: fb[k], extraBase: k * 0.06 }).cort) + 3} textAnchor="end" className="fill-foreground text-[9px] font-bold">Day {k + 1}</text>)}
-      <text x="34" y="12" className="fill-muted-foreground text-[10px]">cortisol through each day</text>
-    </svg>
+    <Sheet className="mx-auto max-w-[34rem]" name="hpa-chronic" w={320} h={150} label={`Cortisol through the day for ${days} days of chronic stress. Each day's line sits higher and flatter than the last.`}>
+      {[0, 240, 480, 720, 960].map((t) => <Label key={t} x={CX(t)} y={143} size={12} anchor="middle" bold={false} color={C.soft}>{clock(t)}</Label>)}
+      {lines.map((p, k) => <Cv key={k} k={`hc-${k}`} pts={p} stroke={C.blue} sw={k === days - 1 ? 2.8 : 1.4} single rough={0.4} style={{ opacity: 0.25 + ((k + 1) / (days + 1)) * 0.75 }} />)}
+      {ends.map((k, j) => {
+        // When the first and last day end close together, the first one's name moves above the last one's.
+        const y = j === 0 && ends.length > 1 && Math.abs(endY(k) - endY(ends[1])) < 14 ? endY(ends[1]) + 14 : endY(k);
+        return <Label key={k} x={316} y={y} size={12} anchor="end">{`Day ${k + 1}`}</Label>;
+      })}
+      <Label x={34} y={14} size={12} bold={false} color={C.soft}>cortisol through each day</Label>
+    </Sheet>
   );
 }
 
 /** The HPA chain with negative feedback. */
+const AxisStatic = React.memo(function AxisStatic({ active, feedback }: { active: boolean; feedback: number }) {
+  const broken = feedback < 0.5;
+  const op = 0.25 + feedback * 0.75;
+  return (
+    <>
+      {([["Hypothalamus", 22, "CRH"], ["Pituitary", 70, "ACTH"], ["Adrenal cortex", 118, "cortisol"]] as const).map(([n, y, h]) => (
+        <g key={n}>
+          <R k={`ax-${n}-${active}`} x={6} y={y - 13} w={100} h={26} sw={1.6} fill={active ? C.lime : C.paper} fillStyle="solid" />
+          <Label x={56} y={y + 5} size={12} anchor="middle" color={active ? "var(--sk-on-lime)" : C.ink}>{n}</Label>
+          <Label x={56} y={y + 26} size={11} anchor="middle" bold={false} color={C.soft}>{`${h}${n === "Adrenal cortex" ? "" : " \u2193"}`}</Label>
+        </g>
+      ))}
+      <P k={`ax-fb-${broken}`} d="M106 118 H 128 V 22 H 110 M128 70 H 110" stroke={C.red} sw={2} single dash={broken ? "3 4" : undefined} style={{ opacity: op }} />
+      <P k="ax-fb-h" d="M114 17 l -5 5 l 5 5 M114 65 l -5 5 l 5 5" stroke={C.red} sw={2} single style={{ opacity: op }} />
+      <Label x={134} y={90} size={11} color={C.red} lines={["off", "switch"]} />
+      {broken ? <P k="ax-x" d="M122 44 l12 12 M134 44 l-12 12" stroke={C.red} sw={2.6} single /> : null}
+    </>
+  );
+});
+
 function Axis({ active, feedback, reduce }: { active: boolean; feedback: number; reduce: boolean }) {
   const broken = feedback < 0.5;
   return (
-    <svg viewBox="0 0 150 150" className="w-full rounded-xl border-2 border-foreground bg-background" role="img" aria-label={`The HPA axis: hypothalamus, pituitary, adrenal cortex, with cortisol feeding back. ${active ? "Active now." : "Quiet."} ${broken ? "The feedback is failing." : "The feedback works."}`}>
+    <Sheet name="hpa-axis" w={170} h={150} label={`The HPA axis: hypothalamus, pituitary, adrenal cortex, with cortisol feeding back. ${active ? "Active now." : "Quiet."} ${broken ? "The feedback is failing." : "The feedback works."}`}>
       <style>{`@keyframes hpa-down { from { transform: translateY(0); opacity: 1 } to { transform: translateY(36px); opacity: 0 } } @keyframes hpa-up { from { transform: translateY(0); opacity: 1 } to { transform: translateY(-96px); opacity: 0 } }`}</style>
-      {[["Hypothalamus", 22, "CRH"], ["Pituitary", 70, "ACTH"], ["Adrenal cortex", 118, "cortisol"]].map(([n, y, h]) => (
-        <g key={n as string}>
-          <rect x="8" y={(y as number) - 12} width="92" height="24" rx="6" className={cn("stroke-foreground", active ? "fill-[var(--status-success-bg)]" : "fill-card")} strokeWidth="1.5" />
-          <text x="54" y={(y as number) + 4} textAnchor="middle" className="fill-foreground text-[9.5px] font-semibold">{n as string}</text>
-          <text x="54" y={(y as number) + 26} textAnchor="middle" className="fill-muted-foreground text-[8px]">{h as string}{n === "Adrenal cortex" ? "" : " ↓"}</text>
-        </g>
-      ))}
-      {active && !reduce ? [0, 1].map((k) => <circle key={k} cx="54" cy={36 + k * 48} r="3" className="fill-[var(--brand)]" style={{ animation: `hpa-down 900ms ${k * 300}ms linear infinite` }} />) : null}
-      <path d="M100 118 H 128 V 22 H 104 M128 70 H 104" fill="none" className="stroke-[var(--destructive)]" strokeWidth="2" strokeDasharray={broken ? "3 4" : undefined} style={{ opacity: 0.25 + feedback * 0.75 }} />
-      <path d="M108 18 l -5 4 l 5 4 M108 66 l -5 4 l 5 4" fill="none" className="stroke-[var(--destructive)]" strokeWidth="2" style={{ opacity: 0.25 + feedback * 0.75 }} />
-      <text x="140" y="74" textAnchor="middle" className="fill-[var(--destructive)] text-[8px] font-bold" transform="rotate(90 140 74)">off switch</text>
-      {active && !reduce && !broken ? <circle cx="128" cy="116" r="3" className="fill-[var(--destructive)]" style={{ animation: "hpa-up 1200ms linear infinite" }} /> : null}
-      {broken ? <text x="128" y="50" textAnchor="middle" className="fill-[var(--destructive)] text-[16px] font-black">✕</text> : null}
-    </svg>
+      <AxisStatic active={active} feedback={feedback} />
+      {active && !reduce ? [0, 1].map((k) => <circle key={k} cx="56" cy={36 + k * 48} r="3" fill={C.blue} style={{ animation: `hpa-down 900ms ${k * 300}ms linear infinite` }} />) : null}
+      {active && !reduce && !broken ? <circle cx="128" cy="116" r="3" fill={C.red} style={{ animation: "hpa-up 1200ms linear infinite" }} /> : null}
+    </Sheet>
   );
 }

@@ -6,6 +6,7 @@ import type { ActionPotentialData } from "@/lib/study/types";
 import { cn } from "@/lib/utils";
 import { trackLearn } from "@/lib/learn/track";
 import { sfx } from "./sfx";
+import { C, L, Label, P, R, Sheet } from "@/components/sketch/ink";
 import { Scene3DSlot, SceneCard, ViewSwitch, btn, chip, statusCls, useInView, useSceneView, useThemeColors } from "./kit";
 
 /**
@@ -257,73 +258,96 @@ export function ActionPotential({ d }: { d: ActionPotentialData }) {
 
 /* --------------------------------------------------------- voltage trace */
 
-function Trace({ sim, th }: { sim: Sim; th: number }) {
-  const W = 300, H = 150;
-  const X = (t: number) => 34 + ((t - (sim.t - WINDOW)) / WINDOW) * (W - 40);
-  const Y = (mv: number) => 10 + ((40 - mv) / 130) * (H - 24);
-  const pts = sim.samples.filter((p) => p[0] >= sim.t - WINDOW).map(([t, mv]) => `${X(t).toFixed(1)},${Y(mv).toFixed(1)}`).join(" ");
+const TW = 300, TH = 150;
+const TY = (mv: number) => 10 + ((40 - mv) / 130) * (TH - 24);
+
+/** The grid of the voltage trace: drawn once, not every frame. */
+const TraceGrid = React.memo(function TraceGrid() {
   return (
-    <svg viewBox={`0 0 ${W} ${H}`} className="w-full rounded-xl border-2 border-foreground bg-background" role="img" aria-label={`Voltage trace. Now ${Math.round(sim.v)} millivolts; threshold ${Math.round(th)}.`}>
+    <>
       {[30, 0, -55, -70].map((mv) => (
         <g key={mv}>
-          <line x1="34" x2={W - 4} y1={Y(mv)} y2={Y(mv)} className={mv === -55 ? "stroke-[var(--destructive)]" : "stroke-foreground/15"} strokeDasharray={mv === -55 ? "4 3" : undefined} />
-          <text x="30" y={Y(mv) + 4} textAnchor="end" className="fill-muted-foreground text-[10px] tabular-nums">{mv}</text>
+          <L k={`tr-g${mv}`} x1={34} x2={TW - 4} y1={TY(mv)} y2={TY(mv)} stroke={mv === -55 ? C.red : C.soft} sw={mv === -55 ? 1.4 : 0.8} single rough={0.3} dash={mv === -55 ? "5 4" : undefined} style={mv === -55 ? undefined : { opacity: 0.5 }} />
+          <Label x={30} y={TY(mv) + 4} size={12} anchor="end" bold={false} color={C.soft}>{String(mv)}</Label>
         </g>
       ))}
-      <line x1="34" x2={W - 4} y1={Y(th)} y2={Y(th)} className="stroke-[var(--destructive)]" strokeWidth="1.5" style={{ opacity: th > THRESH + 0.5 ? 1 : 0 }} />
-      <text x={W - 6} y={Y(-55) - 4} textAnchor="end" className="fill-[var(--destructive)] text-[10px] font-semibold">threshold</text>
-      <polyline points={pts} fill="none" className="stroke-[var(--brand)]" strokeWidth="2.5" strokeLinejoin="round" />
-      <circle cx={X(sim.t)} cy={Y(sim.v)} r="4" className="fill-[var(--brand)] stroke-background" strokeWidth="1.5" />
-      <text x="34" y={H - 3} className="fill-muted-foreground text-[10px]">millivolts over the last 6 seconds (slowed)</text>
-    </svg>
+      <Label x={TW - 6} y={TY(-55) - 5} size={13} anchor="end" color={C.red}>threshold</Label>
+      <Label x={34} y={TH - 3} size={12} bold={false} color={C.soft}>millivolts over the last 6 seconds (slowed)</Label>
+    </>
+  );
+});
+
+function Trace({ sim, th }: { sim: Sim; th: number }) {
+  const X = (t: number) => 34 + ((t - (sim.t - WINDOW)) / WINDOW) * (TW - 40);
+  const pts = sim.samples.filter((p) => p[0] >= sim.t - WINDOW).map(([t, mv]) => `${X(t).toFixed(1)},${TY(mv).toFixed(1)}`).join(" ");
+  return (
+    <Sheet name="ap-trace" w={TW} h={TH} label={`Voltage trace. Now ${Math.round(sim.v)} millivolts; threshold ${Math.round(th)}.`}>
+      <TraceGrid />
+      <line x1="34" x2={TW - 4} y1={TY(th)} y2={TY(th)} stroke={C.red} strokeWidth={1.5} strokeLinecap="round" style={{ opacity: th > THRESH + 0.5 ? 1 : 0 }} />
+      <polyline points={pts} fill="none" stroke={C.blue} strokeWidth={2.6} strokeLinejoin="round" strokeLinecap="round" />
+      <circle cx={X(sim.t)} cy={TY(sim.v)} r="4" fill={C.lime} stroke={C.ink} strokeWidth={1.5} />
+    </Sheet>
   );
 }
 
 /* ------------------------------------------------------- channel close-up */
 
-function Channels({ phase }: { phase: Phase }) {
+const Channels = React.memo(function Channels({ phase }: { phase: Phase }) {
   const naOpen = phase === "rising";
   const naLocked = phase === "falling";
   const kOpen = phase === "falling" || phase === "under";
   return (
-    <svg viewBox="0 0 200 150" className="w-full rounded-xl border-2 border-foreground bg-background" role="img" aria-label={`Close-up of the membrane. Sodium channels ${naOpen ? "open, sodium flowing in" : naLocked ? "locked shut" : "closed"}. Potassium channels ${kOpen ? "open, potassium flowing out" : "closed"}.`}>
+    <Sheet name="ap-channels" w={200} h={150} label={`Close-up of the membrane. Sodium channels ${naOpen ? "open, sodium flowing in" : naLocked ? "locked shut" : "closed"}. Potassium channels ${kOpen ? "open, potassium flowing out" : "closed"}.`}>
       <style>{`
         @keyframes ap-in { from { transform: translateY(-22px); opacity: 0 } 30% { opacity: 1 } to { transform: translateY(34px); opacity: 0 } }
         @keyframes ap-out { from { transform: translateY(22px); opacity: 0 } 30% { opacity: 1 } to { transform: translateY(-34px); opacity: 0 } }
       `}</style>
-      <text x="6" y="14" className="fill-muted-foreground text-[10px]">outside</text>
-      <text x="6" y="144" className="fill-muted-foreground text-[10px]">inside</text>
-      <text x="194" y="144" textAnchor="end" className="fill-foreground text-[10px] font-semibold">{naOpen ? "Na open: sodium in" : naLocked ? "Na locked, K open" : kOpen ? "K still open" : "all closed"}</text>
-      <rect x="0" y="62" width="200" height="26" className="fill-[#f6e7a6]" />
-      {[0, 1, 2, 3, 4, 5, 6, 7].map((k) => <text key={`na${k}`} x={14 + k * 24} y={k % 2 ? 36 : 48} className="fill-foreground text-[9px] font-bold">Na+</text>)}
-      {[0, 1, 2, 3, 4, 5].map((k) => <text key={`k${k}`} x={18 + k * 30} y={k % 2 ? 112 : 124} className="fill-[var(--brand)] text-[9px] font-bold">K+</text>)}
+      <Label x={6} y={16} size={12} bold={false} color={C.soft}>outside</Label>
+      <Label x={6} y={144} size={12} bold={false} color={C.soft}>inside</Label>
+      <Label x={194} y={144} size={12} anchor="end">{naOpen ? "Na open: sodium in" : naLocked ? "Na locked, K open" : kOpen ? "K still open" : "all closed"}</Label>
+      <R k="ch-mem" x={0} y={62} w={200} h={26} stroke="none" fill={C.lime} gap={5} fw={1.2} />
+      <L k="ch-mem-t" x1={0} y1={62} x2={200} y2={62} sw={1.2} single />
+      <L k="ch-mem-b" x1={0} y1={88} x2={200} y2={88} sw={1.2} single />
+      {[0, 1, 2, 3, 4, 5, 6, 7].map((k) => <text key={`na${k}`} x={14 + k * 24} y={k % 2 ? 36 : 48} fontSize={10} fontWeight={700} fill={C.red}>Na+</text>)}
+      {[0, 1, 2, 3, 4, 5].map((k) => <text key={`k${k}`} x={18 + k * 30} y={k % 2 ? 112 : 124} fontSize={10} fontWeight={700} fill={C.blue}>K+</text>)}
       {/* sodium channels */}
       {[36, 96].map((x) => (
         <g key={x}>
-          <rect x={x - 12} y="58" width="8" height="34" rx="2" className="fill-[var(--destructive)] stroke-foreground" />
-          <rect x={x + 4} y="58" width="8" height="34" rx="2" className="fill-[var(--destructive)] stroke-foreground" />
-          <rect x={x - 4} y="60" width="8" height="5" className="fill-foreground" style={{ transformBox: "fill-box", transformOrigin: "0 50%", transform: naOpen || naLocked ? "rotate(-80deg)" : "none", transition: "transform 160ms" }} />
-          <circle cx={x} cy={naLocked ? 88 : 104} r="4" className="fill-foreground" style={{ transition: "cy 200ms" }} />
-          {naOpen ? [0, 1, 2].map((k) => <text key={k} x={x - 7} y="50" className="fill-foreground text-[8px] font-bold" style={{ animation: `ap-in 520ms ${k * 150}ms linear infinite` }}>Na+</text>) : null}
-          <text x={x} y="100" textAnchor="middle" className="fill-foreground text-[8px] font-semibold">Na</text>
+          <R k={`ch-na-l${x}`} x={x - 12} y={58} w={8} h={34} sw={1.4} fill={C.red} fillStyle="solid" />
+          <R k={`ch-na-r${x}`} x={x + 4} y={58} w={8} h={34} sw={1.4} fill={C.red} fillStyle="solid" />
+          <rect x={x - 4} y="60" width="8" height="5" fill={C.ink} style={{ transformBox: "fill-box", transformOrigin: "0 50%", transform: naOpen || naLocked ? "rotate(-80deg)" : "none", transition: "transform 160ms" }} />
+          <circle cx={x} cy={naLocked ? 88 : 104} r="4" fill={C.ink} style={{ transition: "cy 200ms" }} />
+          {naOpen ? [0, 1, 2].map((k) => <text key={k} x={x - 7} y="50" fontSize={9} fontWeight={700} fill={C.red} style={{ animation: `ap-in 520ms ${k * 150}ms linear infinite` }}>Na+</text>) : null}
         </g>
       ))}
       {/* potassium channel */}
       {[170].map((x) => (
         <g key={x}>
-          <rect x={x - 12} y="58" width="8" height="34" rx="2" className="fill-[var(--brand)] stroke-foreground" />
-          <rect x={x + 4} y="58" width="8" height="34" rx="2" className="fill-[var(--brand)] stroke-foreground" />
-          <rect x={x - 4} y="85" width="8" height="5" className="fill-foreground" style={{ transformBox: "fill-box", transformOrigin: "0 50%", transform: kOpen ? "rotate(80deg)" : "none", transition: "transform 240ms" }} />
-          {kOpen ? [0, 1].map((k) => <text key={k} x={x - 5} y="104" className="fill-[var(--brand)] text-[8px] font-bold" style={{ animation: `ap-out 640ms ${k * 220}ms linear infinite` }}>K+</text>) : null}
-          <text x={x} y="56" textAnchor="middle" className="fill-foreground text-[8px] font-semibold">K</text>
+          <R k={`ch-k-l${x}`} x={x - 12} y={58} w={8} h={34} sw={1.4} fill={C.blue} fillStyle="solid" />
+          <R k={`ch-k-r${x}`} x={x + 4} y={58} w={8} h={34} sw={1.4} fill={C.blue} fillStyle="solid" />
+          <rect x={x - 4} y="85" width="8" height="5" fill={C.ink} style={{ transformBox: "fill-box", transformOrigin: "0 50%", transform: kOpen ? "rotate(80deg)" : "none", transition: "transform 240ms" }} />
+          {kOpen ? [0, 1].map((k) => <text key={k} x={x - 5} y="104" fontSize={9} fontWeight={700} fill={C.blue} style={{ animation: `ap-out 640ms ${k * 220}ms linear infinite` }}>K+</text>) : null}
         </g>
       ))}
-      {naLocked ? <g transform="translate(120 40)"><Lock width={14} height={14} /></g> : null}
-    </svg>
+      {naLocked ? <g transform="translate(120 40)" color={C.ink}><Lock width={14} height={14} /></g> : null}
+    </Sheet>
   );
-}
+});
 
 /* ----------------------------------------------------- flat neuron view */
+
+const NeuronFlatStatic = React.memo(function NeuronFlatStatic({ myelin }: { myelin: boolean }) {
+  const A0 = 74, A1 = 296;
+  return (
+    <>
+      <P k="nf-dend" d="M14 40 L 44 66 M10 110 L 44 86 M24 22 L 50 60 M30 130 L 52 92" sw={2.6} single />
+      <L k="nf-axon" x1={A0} y1={76} x2={A1} y2={76} sw={3.2} />
+      {myelin ? Array.from({ length: NODES }, (_, i) => <R key={i} k={`nf-my${i}`} x={A0 + 4 + (i * (A1 - A0)) / NODES} y={66} w={(A1 - A0) / NODES - 8} h={20} sw={1.5} fill={C.paper} fillStyle="solid" />) : null}
+      <P k="nf-term" d={`M${A1} 76 L ${A1 + 20} 56 M${A1} 76 L ${A1 + 24} 76 M${A1} 76 L ${A1 + 20} 96`} sw={2.4} single />
+      <Label x={A0} y={130} size={13} bold={false} color={C.soft}>{myelin ? "myelin: the impulse jumps between the gaps" : "no myelin: the impulse creeps along"}</Label>
+    </>
+  );
+});
 
 export function NeuronFlat({ sim, myelin }: { sim: Sim; myelin: boolean }) {
   const last = sim.fired[sim.fired.length - 1];
@@ -333,16 +357,12 @@ export function NeuronFlat({ sim, myelin }: { sim: Sim; myelin: boolean }) {
   if (last?.myelin && k < 1) x = A0 + ((A1 - A0) * Math.floor(k * NODES + 0.5)) / NODES;
   const glow = Math.max(0, Math.min(1, (sim.v - REST) / 15));
   return (
-    <svg viewBox="0 0 330 150" className="block h-full w-full" role="img" aria-label="A neuron: dendrites, cell body, axon and terminals.">
-      <path d="M14 40 L 44 66 M10 110 L 44 86 M24 22 L 50 60 M30 130 L 52 92" className="stroke-foreground" strokeWidth="3" strokeLinecap="round" />
-      <circle cx="58" cy="76" r="24" className="stroke-foreground" strokeWidth="2.5" fill={`color-mix(in oklab, var(--brand) ${Math.round(glow * 70)}%, var(--status-info-bg))`} />
-      <text x="58" y="80" textAnchor="middle" className="fill-foreground text-[10px] font-semibold">cell body</text>
-      <line x1={A0} y1="76" x2={A1} y2="76" className="stroke-foreground" strokeWidth="4" />
-      {myelin ? Array.from({ length: NODES }, (_, i) => <rect key={i} x={A0 + 4 + (i * (A1 - A0)) / NODES} y="66" width={(A1 - A0) / NODES - 8} height="20" rx="9" className="fill-card stroke-foreground" strokeWidth="1.5" />) : null}
-      <path d={`M${A1} 76 L ${A1 + 20} 56 M${A1} 76 L ${A1 + 24} 76 M${A1} 76 L ${A1 + 20} 96`} className="stroke-foreground" strokeWidth="3" />
-      {[56, 76, 96].map((y) => <circle key={y} cx={A1 + 24} cy={y} r="6" className={k >= 1 && k < 1.4 ? "fill-[var(--primary)] stroke-foreground" : "fill-card stroke-foreground"} strokeWidth="1.5" />)}
-      {last && k < 1 ? <circle cx={x} cy="76" r="9" className="fill-[var(--destructive)] stroke-background" strokeWidth="2" /> : null}
-      <text x={A0} y="128" className="fill-muted-foreground text-[11px]">{myelin ? "myelin: the impulse jumps between the gaps (nodes of Ranvier)" : "no myelin: the impulse creeps along"}</text>
-    </svg>
+    <Sheet bare name="ap-neuron" w={330} h={150} label="A neuron: dendrites, cell body, axon and terminals." className="h-full w-full">
+      <NeuronFlatStatic myelin={myelin} />
+      <circle cx="58" cy="76" r="24" stroke={C.ink} strokeWidth={2.2} fill={`color-mix(in oklab, var(--sk-lime) ${Math.round(glow * 80)}%, var(--sk-wash))`} />
+      <Label x={58} y={80} size={11} anchor="middle" color="var(--sk-on-lime)">cell body</Label>
+      {[56, 76, 96].map((y) => <circle key={y} cx={A1 + 24} cy={y} r="6" fill={k >= 1 && k < 1.4 ? C.lime : C.paper} stroke={C.ink} strokeWidth={1.5} />)}
+      {last && k < 1 ? <circle cx={x} cy="76" r="9" fill={C.red} stroke={C.paper} strokeWidth={2} /> : null}
+    </Sheet>
   );
 }
