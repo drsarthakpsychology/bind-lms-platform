@@ -15,6 +15,14 @@ export type NoteRow = {
   unread: boolean;
 };
 
+/** The first lines of a message, cut at a word, so every row stays about the same height. */
+function preview(body: string): string {
+  const flat = body.replace(/\s+/g, " ").trim();
+  if (flat.length <= 120) return flat;
+  const cut = flat.slice(0, 120);
+  return `${cut.slice(0, Math.max(60, cut.lastIndexOf(" "))).trimEnd()}…`;
+}
+
 /**
  * Notifications (new design). One list, newest first. An unread row has a
  * blue dot and a bold title; a read row is quiet. One tap opens it.
@@ -54,11 +62,7 @@ export function NotificationsV2({ rows, unread, markAll }: { rows: NoteRow[]; un
                     {n.unread ? <span className="sr-only">Unread: </span> : null}
                     {n.title}
                   </span>
-                  {n.body ? (
-                    <span title={n.body} className="line-clamp-2 type-small text-muted-foreground [overflow-wrap:anywhere]">
-                      {n.body}
-                    </span>
-                  ) : null}
+                  {n.body ? <span className="type-small text-muted-foreground [overflow-wrap:anywhere]">{preview(n.body)}</span> : null}
                 </span>
               </Link>
             </li>

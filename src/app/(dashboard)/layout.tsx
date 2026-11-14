@@ -14,6 +14,7 @@ import { readFlags } from "@/lib/flags";
 import { uiV2For } from "@/lib/ui/v2";
 import { ViewModeToggle } from "./view-mode-toggle";
 import { DetailsGate } from "@/components/profile/details-gate";
+import { UiV2Provider } from "@/components/v2me/ui-v2";
 import { VisitTracker } from "@/components/analytics/visit-tracker";
 import { SaveStatus } from "@/components/save/save-status";
 import { ownerTag } from "@/lib/save/owner";
@@ -153,11 +154,14 @@ export default async function DashboardLayout({
         ) : undefined
       }
     >
-      {gate}
-      {role === "student" ? <VisitTracker /> : null}
-      {/* Sends queued work to the server and says so when a save keeps failing. */}
-      <SaveStatus owner={ownerTag(session.profile.id)} />
-      {children}
+      {/* Tells the shared loading, error and not-found states and the first-login form which design is on. */}
+      <UiV2Provider value={mode === "student" && uiV2For(flags, role)}>
+        {gate}
+        {role === "student" ? <VisitTracker /> : null}
+        {/* Sends queued work to the server and says so when a save keeps failing. */}
+        <SaveStatus owner={ownerTag(session.profile.id)} />
+        {children}
+      </UiV2Provider>
     </AppShell>
   );
 }

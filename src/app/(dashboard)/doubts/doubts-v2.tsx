@@ -282,7 +282,7 @@ export function DoubtThreadV2({ thread, cohortId }: { thread: DoubtThread; cohor
             ) : null}
           </div>
         ) : null}
-        <h1 className="type-h1 [overflow-wrap:anywhere]">{thread.title}</h1>
+        <h1 className="type-h2 [overflow-wrap:anywhere]">{thread.title}</h1>
         {thread.body ? <p className="type-reading whitespace-pre-line [overflow-wrap:anywhere]">{thread.body}</p> : null}
         <p className="type-small text-muted-foreground">
           Asked by {thread.author} · {ago(thread.createdAt)}

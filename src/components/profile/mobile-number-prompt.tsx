@@ -8,6 +8,10 @@ import { normalizeIndianMobile } from "@/lib/phone";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { useUiV2 } from "@/components/v2me/ui-v2";
+import { fieldClass, labelClass, primaryButton, quietButton } from "@/components/v2me/parts";
+import { MobileBottomSheet } from "@/components/mobile/mobile-bottom-sheet";
+import { cn } from "@/lib/utils";
 
 /**
  * First-login WhatsApp-number capture (Kavya). Shown on /dashboard when the
@@ -35,6 +39,7 @@ export function MobileNumberPrompt({
   const [error, setError] = useState<string | null>(null);
   const [done, setDone] = useState(false);
   const [isPending, startTransition] = useTransition();
+  const v2 = useUiV2();
 
   if (!show || done) return null;
 
@@ -63,6 +68,57 @@ export function MobileNumberPrompt({
       if (result.error) setError(result.error);
       else setDone(true);
     });
+  }
+
+  if (v2) {
+    // New design: a bottom sheet over the page (closing it is "Later"), so
+    // Home keeps its one focus. Same checks and the same two server actions.
+    return (
+      <MobileBottomSheet
+        open
+        onOpenChange={(o) => {
+          if (!o && !isPending) handleLater();
+        }}
+        title="Add your WhatsApp number"
+        description="Your faculty uses this to reach you. Only you can see or change it."
+        className="mx-auto max-w-xl"
+      >
+        <form
+          className="flex min-w-0 flex-col gap-4 pb-2"
+          onSubmit={(e) => {
+            e.preventDefault();
+            handleSave();
+          }}
+          noValidate
+        >
+          <div className="flex min-w-0 flex-col gap-1.5">
+            <label htmlFor="mobile-number" className={labelClass}>
+              Mobile number
+            </label>
+            <input id="mobile-number" type="tel" inputMode="numeric" value={mobile} onChange={(e) => setMobile(e.target.value)} placeholder="98765 43210" autoComplete="tel" className={fieldClass} />
+          </div>
+          <div className="flex min-w-0 flex-col gap-1.5">
+            <label htmlFor="confirm-mobile" className={labelClass}>
+              Type it again
+            </label>
+            <input id="confirm-mobile" type="tel" inputMode="numeric" value={confirm} onChange={(e) => setConfirm(e.target.value)} placeholder="98765 43210" autoComplete="off" className={fieldClass} />
+          </div>
+          {error ? (
+            <p role="alert" className="type-small font-semibold text-status-alert-fg">
+              {error}
+            </p>
+          ) : null}
+          <div className="flex min-w-0 gap-3">
+            <button type="submit" disabled={isPending || !mobile.trim() || !confirm.trim()} className={cn(primaryButton, "flex-1")}>
+              {isPending ? <Loader2 className="animate-spin" aria-hidden /> : null} Save number
+            </button>
+            <button type="button" onClick={handleLater} disabled={isPending} className={cn(quietButton, "min-h-[3.25rem] shrink-0")}>
+              Later
+            </button>
+          </div>
+        </form>
+      </MobileBottomSheet>
+    );
   }
 
   return (

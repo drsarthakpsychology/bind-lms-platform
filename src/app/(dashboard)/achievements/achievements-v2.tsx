@@ -42,6 +42,7 @@ function linkedInPost(title: string, url: string) {
 
 /** Share on LinkedIn, copy the post, open the public verify page. Only for issued credentials. */
 function ShareActions({ credentialId, title, siteUrl }: { credentialId: string; title: string; siteUrl: string }) {
+  const minor = cn(textButton, "px-2");
   const url = verifyUrl(siteUrl, credentialId);
   const [copied, setCopied] = React.useState(false);
   return (
@@ -51,7 +52,7 @@ function ShareActions({ credentialId, title, siteUrl }: { credentialId: string; 
       </a>
       <button
         type="button"
-        className={quietButton}
+        className={minor}
         onClick={async () => {
           try {
             await navigator.clipboard.writeText(linkedInPost(title, url));
@@ -64,7 +65,7 @@ function ShareActions({ credentialId, title, siteUrl }: { credentialId: string; 
       >
         {copied ? <Check aria-hidden /> : <Copy aria-hidden />} {copied ? "Copied" : "Copy post"}
       </button>
-      <a href={url} target="_blank" rel="noreferrer" className={quietButton}>
+      <a href={url} target="_blank" rel="noreferrer" className={minor}>
         <ExternalLink aria-hidden /> Verify
       </a>
     </>

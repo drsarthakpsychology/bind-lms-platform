@@ -146,7 +146,7 @@ function EntryRow({ e, avatar = false }: { e: BoardEntry; avatar?: boolean }) {
   return (
     <li
       aria-current={e.me ? "true" : undefined}
-      className={cn("flex min-h-14 min-w-0 items-center gap-3 border-t border-[var(--ds-hairline)] py-2 first:border-t-0", e.me && "-mx-2 rounded-lg border-t-transparent bg-[var(--ds-tint)] px-2 [&+li]:border-t-transparent")}
+      className={cn("flex min-h-14 min-w-0 items-center gap-3 border-t border-[var(--ds-hairline)] py-2 first:border-t-0", e.me && "-mx-2 rounded-lg border-t-transparent bg-brand/10 px-2 dark:bg-primary/15 [&+li]:border-t-transparent")}
     >
       <span className={cn("w-7 shrink-0 text-right type-small type-num", e.me ? "font-bold text-foreground" : "text-muted-foreground")}>{e.rank}</span>
       {avatar ? (
