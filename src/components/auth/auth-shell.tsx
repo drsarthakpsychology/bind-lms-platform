@@ -38,11 +38,11 @@ export function AuthShell({ title, subtitle, children }: { title: string; subtit
           </Link>
           <ThemeToggle />
         </div>
-        <div className="flex flex-1 items-center justify-center py-10">
+        <div className="flex flex-1 items-start justify-center pt-8 pb-10 sm:items-center sm:py-10">
           <div className="w-full max-w-sm space-y-6">
             <div className="space-y-2">
               <h1 className="text-h1">{title}</h1>
-              <p className="text-small text-muted-foreground">{subtitle}</p>
+              <p className="text-body text-muted-foreground">{subtitle}</p>
             </div>
             <div className="rounded-2xl border-2 border-foreground bg-card p-6 hard-shadow-md sm:p-7">{children}</div>
           </div>

@@ -2,7 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { Loader2 } from "lucide-react";
+import { Check, Loader2 } from "lucide-react";
+import { LinkProblem } from "@/components/auth/link-problem";
 import { createClient } from "@/lib/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -91,20 +92,15 @@ export function SetPasswordForm() {
   }
 
   if (state === "error") {
-    return (
-      <Alert variant="destructive">
-        <AlertDescription>
-          This link is invalid or has expired. Ask your administrator to send a new one.
-        </AlertDescription>
-      </Alert>
-    );
+    return <LinkProblem reason="This link has expired or doesn't work." />;
   }
 
   if (state === "success") {
     return (
-      <Alert variant="warning">
-        <AlertDescription>Password set: taking you to your lectures…</AlertDescription>
-      </Alert>
+      <p role="status" className="flex items-center gap-2 rounded-md border-2 border-foreground bg-status-success-bg px-3 py-3 text-small font-semibold text-status-success-fg">
+        <Check className="size-4 shrink-0" aria-hidden />
+        Password set. Opening your Home…
+      </p>
     );
   }
 
@@ -118,6 +114,7 @@ export function SetPasswordForm() {
         <Input
           id="password"
           type="password"
+          autoComplete="new-password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
@@ -127,10 +124,11 @@ export function SetPasswordForm() {
         />
       </div>
       <div className="space-y-1.5">
-        <Label htmlFor="confirm">Repeat password</Label>
+        <Label htmlFor="confirm">Type it again</Label>
         <Input
           id="confirm"
           type="password"
+          autoComplete="new-password"
           value={confirm}
           onChange={(e) => setConfirm(e.target.value)}
           required
@@ -140,12 +138,12 @@ export function SetPasswordForm() {
       </div>
 
       {error && (
-        <Alert variant="destructive">
+        <Alert variant="destructive" role="alert">
           <AlertDescription>{error}</AlertDescription>
         </Alert>
       )}
 
-      <Button type="submit" disabled={busy} className="w-full">
+      <Button type="submit" size="lg" disabled={busy} className="w-full">
         {busy && <Loader2 className="size-4 animate-spin" aria-hidden />}
         {busy ? "Saving…" : "Set password"}
       </Button>
