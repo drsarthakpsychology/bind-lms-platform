@@ -1,3 +1,5 @@
+> **SUPERSEDED on 2026-11-14.** Use docs/LOCAL_SETUP.md and docs/ENVIRONMENT_VARIABLES.md instead. This file is kept for history and may be out of date. Index of current docs: docs/README.md.
+
 # What This Project Needs to Run (Project Setup)
 
 This is a complete checklist of everything required to run and deploy VIBHA.

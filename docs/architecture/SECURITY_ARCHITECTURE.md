@@ -1,3 +1,5 @@
+> **SUPERSEDED on 2026-11-14.** Use docs/architecture/AUTH.md and docs/security/SECURITY_AUDIT_2026_11.md instead. This file is kept for history and may be out of date. Index of current docs: docs/README.md.
+
 # Security Architecture
 > Verified against `main` @ `b2a9698`. No secrets are recorded here. Earlier audits: `docs/SECURITY_AUDIT.md` (2026-08-14, `HISTORICAL` for counts).
 

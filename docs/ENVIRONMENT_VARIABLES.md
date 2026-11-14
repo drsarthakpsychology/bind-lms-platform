@@ -1,109 +1,120 @@
-# Environment Variables
+# Environment variables
 
-Environment variables are secret settings the app reads when it starts. They
-live in a file called **`.env.local`** in the project root. This file is
-**ignored by Git** — secrets are never uploaded to GitHub.
+Every variable the code reads, checked by searching `src`, `scripts`, `livekit-agent`, `next.config.ts`, `sentry.*.config.ts` and `.github/workflows` on 2026-11-14. "Set in" was read from the Vercel project (names only, never values).
 
-The placeholder template is in **`.env.example`**.
+- Local work: copy `.env.example` to `.env.local` and fill in values. `.env.local` and `.env` are git-ignored.
+- Vercel: Project, Settings, Environment Variables. **Production** = `main` (vibhapsychology.com). **Preview** = other branches; some variables are set only for the `admin-redesign` branch.
+- `NEXT_PUBLIC_*` values are built into the browser bundle. Never put a secret in one.
 
----
+Legend: **Req** = the app or a core feature breaks without it. **Opt** = a feature is off or falls back without it.
 
-## The variables
+## Core
 
-### 1. `NEXT_PUBLIC_SUPABASE_URL`
+| Name | Req | Set in | Purpose |
+|---|---|---|---|
+| `NEXT_PUBLIC_SUPABASE_URL` | Req | Production, Preview (admin-redesign and general) | Supabase project address |
+| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Req | Production, Preview | Public Supabase key. Row level security protects the data |
+| `SUPABASE_SERVICE_ROLE_KEY` | Req | Production, Preview (admin-redesign only) | Server-only key that skips row level security. Admin writes, flags, rate limits |
+| `NEXT_PUBLIC_APP_URL` | Req | Production, Preview | Public address for links in emails and the same-origin check. A blank or localhost value falls back to `https://vibhapsychology.com` (`src/lib/app-url.ts`) |
+| `NEXT_PUBLIC_SITE_URL` | Opt | Not set | Base URL printed on certificates and credential QR codes. Falls back to `NEXT_PUBLIC_APP_URL` |
+| `SESSION_SECRET` | Req | Production, Preview | Signs video stream tokens and derives video keys. Video fails closed without it. Make it with `openssl rand -base64 32` |
+| `CRON_SECRET` | Req for crons | **Not set** | Bearer token every cron endpoint checks. Must equal the GitHub secret of the same name. Missing today, so all cron endpoints answer 401 |
+| `GAMES_SECRET` | Opt (should be set) | Not set | Signs game tokens. Falls back to the service-role key, then to a fixed dev string (`src/lib/games/token.ts`) |
 
-| | |
-| --- | --- |
-| **What it is** | The internet address of your Supabase project |
-| **Why it exists** | The app needs to know where its database lives |
-| **Required?** | **Yes** — without it nothing connects to the database |
-| **Where to get it** | Supabase dashboard → **Project Settings → API** → "Project URL" |
-| **Example format** | `https://hojhzwvuccojqkvkkslw.supabase.co` |
-| **Where used** | `src/lib/supabase/client.ts`, `src/lib/supabase/server.ts`, `src/proxy.ts` |
+## Video and files (Cloudflare R2)
 
-### 2. `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+| Name | Req | Set in | Purpose |
+|---|---|---|---|
+| `CLOUDFLARE_ACCOUNT_ID` | Req | Production only | R2 endpoint account |
+| `R2_ACCESS_KEY_ID` | Req | Production only | R2 key id |
+| `R2_SECRET_ACCESS_KEY` | Req | Production only | R2 secret |
+| `R2_BUCKET_NAME` | Req | Production only | Bucket for lectures, credentials, signatures, voice cache (`plms-videos`) |
+| `R2_PUBLIC_URL` | Opt | Not set | Public base URL, used only for cached voice files |
+| `NEXT_PUBLIC_MEDIA_PROVIDER` | Opt | Not set | Old switch (`supabase` or `r2`) for `getMediaProvider()`. Playback ignores it and reads the location from the database |
 
-| | |
-| --- | --- |
-| **What it is** | The public key that lets the app talk to Supabase (called "anon" or "publishable" in the dashboard) |
-| **Why it exists** | Every database request must prove it's from the app; this key identifies the app. It is **safe** to show in the browser because the database's security rules (RLS) still protect the data |
-| **Required?** | **Yes** |
-| **Where to get it** | Supabase dashboard → **Project Settings → API** → "anon public" (or "publishable") key |
-| **Example format** | `sb_publishable_...` **or** `eyJhbGciOiJIUzI1NiIs...` (a long JWT) |
-| **Where used** | Same as #1 (client, server, proxy) |
+## Email (Resend)
 
-### 3. `SUPABASE_SERVICE_ROLE_KEY`
+| Name | Req | Set in | Purpose |
+|---|---|---|---|
+| `RESEND_API_KEY` | Req for email | Production, Preview | Sending. Without it, sends report "email-not-configured" |
+| `RESEND_FROM_EMAIL` | Req for email | Production | From address |
+| `RESEND_REPLY_TO` | Opt | Production, Preview | Reply-to address |
+| `RESEND_WEBHOOK_SECRET` | Req for mail tracking | Production, Preview | Checks the Svix signature on `/api/emails/resend` |
+| `RESEND_DAILY_LIMIT` | Opt | Not set (default 100) | Daily cap used to pace bulk sends |
+| `ALLOWED_TEST_RECIPIENT` | Opt | Preview | Comma list. Preview deployments email only these addresses |
+| `REMINDERS_SESSION_TOMORROW`, `REMINDERS_ASSIGNMENT_DUE_48H`, `REMINDERS_INACTIVE_7D` | Opt | Not set | Turn reminder types off with `0` or `false` (`src/lib/reminders.ts`). Reminders are not sent yet |
 
-| | |
-| --- | --- |
-| **What it is** | The **secret** admin key that can do anything in your database |
-| **Why it exists** | Used only by admin operations (creating student accounts, admin reviews) that must bypass the normal user-level security |
-| **Required?** | **Yes** for admin features |
-| **Where to get it** | Supabase dashboard → **Project Settings → API** → "service_role secret" (may ask you to reveal/re-enter your password) |
-| **Example format** | `sb_secret_...` **or** `eyJhbGciOiJIUzI1NiIs...` (a long JWT) |
-| **⚠️ Important** | This key **bypasses all security**. Never put it in a file that reaches the browser, never prefix it with `NEXT_PUBLIC_`, never paste it into GitHub issues or chat. It goes only in `.env.local` and Vercel's secret settings |
-| **Where used** | `src/lib/supabase/server.ts` (`createAdminClient`) |
+## AI (all optional)
 
-### 4. Cloudflare R2 — video delivery
+| Name | Set in | Purpose |
+|---|---|---|
+| `AI_ENABLED` | Production, Preview, Development | `false` uses fixed fixture answers everywhere |
+| `AI_DEBUG` | Not set | `true` logs every AI call |
+| `AI_FIXTURE_FALLBACK` | Not set | `true` uses fixtures when no provider works (dev only) |
+| `AI_STUDENT_TIER` | Not set (default `no_train_only`) | `any` lets student data reach providers that train. Dev only |
+| `GROQ_API_KEY` | Production, Preview, Development | Main AI lane and Whisper |
+| `SAMBANOVA_API_KEY`, `OPENROUTER_API_KEY`, `OPENCODE_API_KEY` | Production | Fallback lanes |
+| `GEMINI_API_KEY`, `CEREBRAS_API_KEY`, `DEEPSEEK_API_KEY`, `ANTHROPIC_API_KEY` | Not set | More lanes |
+| `OMNIROUTE_URL`, `OMNIROUTE_API_KEY` | Not set | OmniRoute gateway (default `http://localhost:20128/v1`) |
 
-| | |
-| --- | --- |
-| **What they are** | Credentials for the R2 bucket that stores lesson HLS |
-| **Why they exist** | R2 is the video delivery backend (segmented + optionally AES-128 encrypted HLS) |
-| **Required?** | **Yes** once a lesson has a `media_assets` row with `provider = 'r2'` |
-| **Where to get them** | Cloudflare dashboard → R2 → Manage R2 API Tokens |
+## Voice (all optional, all not set in production)
 
-| Variable | Format | Used for |
-| --- | --- | --- |
-| `CLOUDFLARE_ACCOUNT_ID` | hex string (dashboard sidebar) | R2 S3 endpoint |
-| `R2_ACCESS_KEY_ID` | long hex | R2 auth |
-| `R2_SECRET_ACCESS_KEY` | long hex, shown once | R2 auth (secret) |
-| `R2_BUCKET_NAME` | e.g. `plms-videos` | object bucket |
-| `R2_BACKUP_BUCKET` | e.g. `plms-backups` | nightly DB dumps |
+| Name | Purpose |
+|---|---|
+| `NVIDIA_API_KEY` | CosyVoice text to speech, Whisper fallback |
+| `DEEPGRAM_API_KEY` | Speech to text, tried first |
+| `MIMO_TTS_URL`, `MIMO_TTS_API_KEY` | MiMo text to speech |
+| `KOKORO_API_URL` | Self-hosted Kokoro text to speech |
+| `QWEN_TTS_URL`, `QWEN_TTS_API_KEY` | Qwen text to speech |
+| `CHATTERBOX_TTS_URL`, `CHATTERBOX_TTS_API_KEY` | Chatterbox text to speech |
+| `ELEVENLABS_API_KEY`, `ELEVENLABS_VOICE_ID` | Paid, last resort |
+| `LIVEKIT_URL`, `LIVEKIT_API_KEY`, `LIVEKIT_API_SECRET` | Realtime voice room |
+| `LIVEKIT_TTS_MODEL`, `LIVEKIT_TTS_VOICE`, `LIVEKIT_STT_MODEL` | Only for the separate `livekit-agent` worker |
 
-### 5. `NEXT_PUBLIC_APP_URL`
+## Monitoring, analytics, bot check (all optional, none set)
 
-| | |
-| --- | --- |
-| **What it is** | The canonical origin of the deployed app (scheme + host, no trailing slash) |
-| **Why it exists** | The same-origin gate on the media-token endpoints. Only requests whose `Origin`/`Referer` matches this are accepted |
-| **Required?** | **Yes** for media playback to work |
-| **Where to get it** | Your production domain, e.g. `https://bind-lms-platform.vercel.app` |
+| Name | Purpose |
+|---|---|
+| `SENTRY_DSN`, `NEXT_PUBLIC_SENTRY_DSN` | Turn Sentry on (server and browser) |
+| `SENTRY_ORG`, `SENTRY_PROJECT`, `SENTRY_AUTH_TOKEN` | Build-time source map upload |
+| `NEXT_PUBLIC_POSTHOG_KEY`, `NEXT_PUBLIC_POSTHOG_HOST` | Turn PostHog on |
+| `NEXT_PUBLIC_TURNSTILE_SITE_KEY`, `TURNSTILE_SECRET_KEY` | Bot check on login |
 
----
+## Other app switches
 
-## Where each environment variable must be configured
+| Name | Set in | Purpose |
+|---|---|---|
+| `NEXT_PUBLIC_PSYCH_MODE` | **Not set** | `production` shows only published medicine pages. Unset means test mode: students also see draft and in-review content with an "awaiting review" badge (`src/lib/psychopharm/mode.ts`) |
+| `DUEL_MIN` | Tests only | Minimum duel library size in a test |
 
-| Location | Which variables |
-| --- | --- |
-| **`.env.local`** (local development) | All (Supabase + R2 + `NEXT_PUBLIC_APP_URL`) |
-| **Vercel → Project → Settings → Environment Variables** (when deploying) | All |
-| **Supabase dashboard** | Not configured there — you *copy from* there |
+## Set by Vercel or Node (do not set by hand)
 
----
+`NODE_ENV`, `NEXT_RUNTIME`, `VERCEL_ENV`, `VERCEL_DEPLOYMENT_ID`, `VERCEL_GIT_COMMIT_SHA`, `NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA`, `NEXT_DEPLOYMENT_ID` (set when Skew Protection is on).
 
-## The public vs. secret rule (easy version)
+## Scripts only (in `.env.local`, never in Vercel)
 
-- Starts with `NEXT_PUBLIC_` → it's public, safe anywhere.
-- Does **not** start with `NEXT_PUBLIC_` → it's a secret, **server-only**.
+| Name | Used by |
+|---|---|
+| `SUPABASE_DB_PASSWORD` | `scripts/apply-pending.ts`, `scripts/apply-migrations.ts` |
+| `SUPABASE_DB_URL` | `scripts/restore.ts`, `scripts/verify-backup.ts`, backup workflows |
+| `R2_ACCOUNT_ID`, `R2_BACKUP_BUCKET` | Backup scripts and workflows |
+| `R2_NEW_ACCESS_KEY_ID`, `R2_NEW_SECRET_ACCESS_KEY` | `scripts/rotate-r2.ts` |
+| `SITE_URL`, `APP_URL` | Uptime and cron workflows |
+| `ICD_CLIENT_ID`, `ICD_CLIENT_SECRET`, `PMC_CASE_LIMIT`, `ACQUIRE_DROP_FOLDER` | Corpus fetch scripts |
+| `SIM_ENV_FILE`, `SIM_EVAL_LIVE` | Simulation evaluation scripts |
+| `E2E_BASE_URL`, `E2E_ADMIN_EMAIL`, `E2E_ADMIN_PASSWORD`, `E2E_STUDENT_EMAIL`, `E2E_STUDENT_PASSWORD`, `E2E_LESSON_URL`, `E2E_ASSIGNMENT_URL` | Playwright e2e tests |
 
-The service-role key and the R2 secret are the secrets in this project. Treat
-them like passwords.
+## In Vercel but not read by the code
 
----
+`R2_DIRECT_STREAMING`, `DEMO_SUPPRESS_EMAIL`, `DEMO_ACHIEVEMENTS_USER_ID` (production). Nothing in the repo reads them. Safe to delete after the owner confirms no other project uses them.
 
-## Checklist to verify yours are set
+## GitHub Actions secrets
 
-- [ ] `.env.local` exists in the project root
-- [ ] `NEXT_PUBLIC_SUPABASE_URL` is your project URL (real value, not `your-project-ref`)
-- [ ] `NEXT_PUBLIC_SUPABASE_ANON_KEY` is a real key (long string)
-- [ ] `SUPABASE_SERVICE_ROLE_KEY` is a real key (long string)
-- [ ] `CLOUDFLARE_ACCOUNT_ID` / `R2_ACCESS_KEY_ID` / `R2_SECRET_ACCESS_KEY` / `R2_BUCKET_NAME` are set
-- [ ] `NEXT_PUBLIC_APP_URL` is your deployed origin
-- [ ] You have **not** committed `.env.local` (it's gitignored — check with `git status`)
-- [ ] When deploying, you've added them to Vercel too
+`SUPABASE_DB_URL`, `R2_ACCOUNT_ID`, `R2_ACCESS_KEY_ID`, `R2_SECRET_ACCESS_KEY`, `R2_BACKUP_BUCKET`, `RESEND_API_KEY`, `ALERT_EMAIL`, `SITE_URL`, `APP_URL`, `CRON_SECRET`, `E2E_*`. Set in GitHub, Settings, Secrets and variables, Actions.
 
----
+## To fix (owner)
 
-*Secrets are handled in this repo so that this document describes the variables
-without exposing their values.*
+1. Add `CRON_SECRET` to Vercel production, same value as the GitHub secret. Then redeploy.
+2. Add `GAMES_SECRET` (random 32 bytes) to Vercel production.
+3. Decide on `NEXT_PUBLIC_PSYCH_MODE=production` once the medicine pages are reviewed.
+4. Add the R2 variables to the `admin-redesign` preview if the test link must play video.

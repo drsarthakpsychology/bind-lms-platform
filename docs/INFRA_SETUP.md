@@ -1,3 +1,5 @@
+> **SUPERSEDED on 2026-11-14.** Use docs/architecture/INTEGRATIONS.md, docs/architecture/STORAGE.md and docs/DEPLOYMENT.md instead. This file is kept for history and may be out of date. Index of current docs: docs/README.md.
+
 # Infrastructure Setup — Plain-English Guide
 
 This is written for someone who has **not** done DevOps before. It walks

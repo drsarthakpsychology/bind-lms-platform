@@ -1,3 +1,5 @@
+> **SUPERSEDED on 2026-11-14.** Use docs/API.md instead. This file is kept for history and may be out of date. Index of current docs: docs/README.md.
+
 # API Architecture
 > Verified against `main` @ `b2a9698`. Per-route table: [API_INVENTORY](../inventory/API_INVENTORY.md).
 

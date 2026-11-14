@@ -1,3 +1,5 @@
+> **SUPERSEDED on 2026-11-14.** Use docs/architecture/VIDEO.md instead. This file is kept for history and may be out of date. Index of current docs: docs/README.md.
+
 # Workflow: Video upload & processing
 > Verified against `main` @ `b2a9698`, from `scripts/publish-lecture.ts`. **Processing is an operator CLI step, not an in-app upload pipeline.**
 ```mermaid

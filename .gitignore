@@ -52,3 +52,6 @@ __pycache__/
 
 # Transformation release package output
 /release/
+
+# Offline backups (scripts/make-offline-backup.sh)
+/backup-out/

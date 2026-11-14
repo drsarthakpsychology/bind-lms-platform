@@ -1,3 +1,5 @@
+> **SUPERSEDED on 2026-11-14.** Use docs/architecture/FRONTEND.md instead. This file is kept for history and may be out of date. Index of current docs: docs/README.md.
+
 # Frontend Architecture
 > Verified against `main` @ `b2a9698`.
 

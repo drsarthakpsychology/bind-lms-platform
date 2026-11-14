@@ -1,3 +1,5 @@
+> **SUPERSEDED on 2026-11-14.** Use docs/architecture/OVERVIEW.md instead. This file is kept for history and may be out of date. Index of current docs: docs/README.md.
+
 # VIBHA School of Psychology — PLMS System Map
 
 > A living reference for the whole system. Grounded in the code; every claim cites a file.
