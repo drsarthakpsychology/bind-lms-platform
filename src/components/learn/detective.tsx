@@ -106,7 +106,7 @@ export function Detective({ serverState, save }: { serverState: LearnState | nul
             </button>
           ))}
         </div>
-        <BackLink className="block text-sm font-bold underline-offset-4 hover:underline">
+        <BackLink className="inline-flex min-h-11 items-center text-sm font-bold underline-offset-4 hover:underline">
           Back
         </BackLink>
       </div>
