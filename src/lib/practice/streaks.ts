@@ -15,6 +15,18 @@ export function istToday(utc = new Date()): string {
   return istNow(utc).toISOString().slice(0, 10);
 }
 
+/** The Monday (YYYY-MM-DD) of the current India-time week: one weekly check-in per student per week. */
+export function istWeekMonday(utc = new Date()): string {
+  const ist = istNow(utc);
+  const back = (ist.getUTCDay() + 6) % 7; // Mon=0
+  return new Date(ist.getTime() - back * 86400000).toISOString().slice(0, 10);
+}
+
+/** The IST day after `day` (YYYY-MM-DD). */
+export function nextDay(day: string): string {
+  return new Date(Date.parse(`${day}T00:00:00Z`) + 86400000).toISOString().slice(0, 10);
+}
+
 export interface StreakState {
   current_streak: number;
   longest_streak: number;
