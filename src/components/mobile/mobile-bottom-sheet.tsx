@@ -88,7 +88,8 @@ export function MobileBottomSheet({
         ref={contentRef}
         side="bottom"
         className={cn(
-          "max-h-[85dvh] gap-0 overflow-hidden rounded-t-lg p-0",
+          // Rises in 300 ms, leaves in 200 ms (the 500 ms default felt slow on a phone).
+          "max-h-[85dvh] gap-0 overflow-hidden rounded-t-lg border-t-2 border-foreground p-0 data-[state=closed]:duration-200 data-[state=open]:duration-300",
           className,
         )}
         style={{

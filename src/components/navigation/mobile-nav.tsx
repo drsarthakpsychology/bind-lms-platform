@@ -63,7 +63,7 @@ export function MobileNav({
         side={phone ? "bottom" : "left"}
         className={cn(
           "gap-0 p-0",
-          phone ? "max-h-[88dvh] overflow-hidden rounded-t-lg border-t-2 border-foreground" : "w-[min(20rem,88vw)] border-r-2 border-foreground",
+          phone ? "max-h-[88dvh] overflow-hidden rounded-t-lg border-t-2 border-foreground data-[state=closed]:duration-200 data-[state=open]:duration-300" : "w-[min(20rem,88vw)] border-r-2 border-foreground",
         )}
       >
         <SheetHeader className={cn("border-b-2 border-foreground bg-brand px-4 pr-14 pb-4 text-brand-foreground", phone ? "pt-4" : "pt-[max(1rem,env(safe-area-inset-top))]")}>

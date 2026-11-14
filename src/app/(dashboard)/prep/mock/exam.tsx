@@ -305,11 +305,11 @@ export function MockExam({ specId, title, intro, rules }: { specId: string; titl
             {rules}
           </HowToButton>
         ) : null}
-        <button type="button" className={cn(btnPlain, "lg:hidden")} aria-expanded={paletteOpen} aria-controls="palette-phone" onClick={() => setPaletteOpen((o) => !o)}>
-          <LayoutGrid className="size-4" aria-hidden /> All
+        <button type="button" className={cn(btnPlain, "px-3 lg:hidden")} aria-label="All questions" aria-haspopup="dialog" onClick={() => setPaletteOpen(true)}>
+          <LayoutGrid className="size-4" aria-hidden /> <span className="hidden sm:inline">All</span>
         </button>
-        <button type="button" className={btnInk} onClick={() => setPhase("confirm")} disabled={phase === "submitting"}>
-          <Send className="size-4" aria-hidden /> Submit
+        <button type="button" className={cn(btnInk, "px-3 sm:px-4")} onClick={() => setPhase("confirm")} disabled={phase === "submitting"}>
+          <Send className="hidden size-4 sm:block" aria-hidden /> Submit
         </button>
       </div>
       <p className="sr-only" aria-live="polite">
