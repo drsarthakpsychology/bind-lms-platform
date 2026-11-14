@@ -34,7 +34,7 @@ import { haptic } from "@/lib/haptics";
 import { cn } from "@/lib/utils";
 import { searchDiagnoses, type Diagnosis } from "@/lib/games/diagnoses";
 import { dailyStreak, MAX_CLUES, shareText, type Action, type PracticeRecord } from "@/lib/games/daily/engine";
-import type { CaseView } from "@/lib/games/daily/view";
+import type { CaseRest, CaseView } from "@/lib/games/daily/view";
 import type { InvestigationKind } from "@/lib/games/daily/types";
 import { CountUp } from "@/lib/games/ui/count-up";
 import { LearnLink } from "@/lib/games/ui/learn-link";
@@ -44,7 +44,7 @@ import { btnInk, btnPrimary, btnSecondary, card, chip } from "@/lib/games/ui/sty
 import fx from "@/lib/games/ui/fx.module.css";
 import { AI_CASE_LABEL, AI_CASE_NOTE } from "@/lib/ai-cases/types";
 import { AI_TOPICS } from "@/lib/ai-cases/criteria";
-import { dailyMove, flagAiCaseAction, nextAiCase, nextPractice, type DailyMeta, type MoveResult } from "./actions";
+import { dailyMove, dailyRest, flagAiCaseAction, nextAiCase, nextPractice, type DailyMeta, type MoveResult } from "./actions";
 import { creditServerPlay } from "@/lib/learn/credit-play";
 import { HintChip } from "@/components/hints/hint-chip";
 import { CASE_SCORE_PER_HINT } from "@/lib/hints/rules";
@@ -326,25 +326,19 @@ function CaseBoard({
       <ol className="space-y-2" aria-label="Clues">
         {v.clues.map((c, i) => {
           const fresh = playing && i === v.clues.length - 1 && i > 0;
-          const unopened = i >= v.cluesOpen;
           return (
-            <li
-              key={i}
-              className={cn(card, "flex gap-3 p-3", unopened && "border-dashed bg-background text-muted-foreground", fresh && "hard-shadow-sm", fresh && anim(fx.reveal), unopened && anim(fx.stagger))}
-              style={unopened ? ({ "--i": i - v.cluesOpen } as React.CSSProperties) : undefined}
-            >
-              <span key={fresh ? `n${i}` : i} className={cn("grid size-7 shrink-0 place-items-center rounded-md border-2 border-foreground font-pix text-sm", i < v.cluesOpen ? "bg-primary text-primary-foreground" : "bg-background", fresh && anim(fx.pop))}>
+            <li key={i} className={cn(card, "flex gap-3 p-3", fresh && "hard-shadow-sm", fresh && anim(fx.reveal))}>
+              <span key={fresh ? `n${i}` : i} className={cn("grid size-7 shrink-0 place-items-center rounded-md border-2 border-foreground bg-primary font-pix text-sm text-primary-foreground", fresh && anim(fx.pop))}>
                 {i + 1}
               </span>
-              <p className="min-w-0 flex-1 leading-snug">
-                {unopened && <span className="mr-1 font-semibold">Unopened:</span>}
-                {c}
-              </p>
+              <p className="min-w-0 flex-1 leading-snug">{c}</p>
               {fresh && <span className={cn(chip, "h-fit shrink-0 bg-card text-xs")}>New</span>}
             </li>
           );
         })}
       </ol>
+
+      {!playing && v.unopened > 0 && <OtherClues game={game} />}
 
       {ordered.length > 0 && (
         <section aria-label="Tests you ordered" className="space-y-2">
@@ -474,6 +468,62 @@ function CaseBoard({
               ))}
           </ul>
         </details>
+      )}
+    </div>
+  );
+}
+
+/**
+ * After the end: the clues and tests the student never opened stay on the
+ * server until this one small control asks for them.
+ */
+function OtherClues({ game }: { game: Game }) {
+  const { view: v } = game;
+  const [rest, setRest] = React.useState<CaseRest | null>(null);
+  const [open, setOpen] = React.useState(false);
+  const [error, setError] = React.useState<string | null>(null);
+  const [pending, start] = React.useTransition();
+  function toggle() {
+    if (open) return setOpen(false);
+    if (rest) return setOpen(true);
+    setError(null);
+    start(async () => {
+      const r = await dailyRest({ mode: v.mode, caseId: v.caseId, log: game.log }).catch(() => null);
+      if (!r || !r.ok) return setError(r?.error ?? LOAD_FAIL);
+      setRest(r.rest);
+      setOpen(true);
+    });
+  }
+  return (
+    <div className="space-y-2">
+      <button type="button" className={cn(btnSecondary, "min-h-11 w-full sm:w-auto")} aria-expanded={open} disabled={pending} onClick={toggle}>
+        {pending ? <LoaderCircle className="size-4 animate-spin" aria-hidden /> : <Search className="size-4" aria-hidden />}
+        {open ? "Hide the other clues" : "Show the other clues"}
+      </button>
+      {error && <p role="status" className="text-sm text-muted-foreground">{error}</p>}
+      {open && rest && (
+        <ul className="space-y-2" aria-label="Clues and tests you didn't open">
+          {rest.clues.map((x) => (
+            <li key={`c${x.n}`} className={cn(card, "flex gap-3 border-dashed bg-background p-3")}>
+              <span className="grid size-7 shrink-0 place-items-center rounded-md border-2 border-foreground bg-background font-pix text-sm">{x.n}</span>
+              <p className="min-w-0 flex-1 leading-snug">{x.text}</p>
+            </li>
+          ))}
+          {rest.tests.map((x) => {
+            const Icon = KIND_ICON[x.kind];
+            return (
+              <li key={`t${x.label}`} className={cn(card, "flex gap-3 border-dashed bg-background p-3")}>
+                <Icon className="mt-0.5 size-5 shrink-0" aria-hidden />
+                <p className="min-w-0 flex-1 leading-snug">
+                  <span className="font-bold">
+                    {KIND_WORD[x.kind]}: {x.label}.
+                  </span>{" "}
+                  {x.result}
+                </p>
+              </li>
+            );
+          })}
+        </ul>
       )}
     </div>
   );

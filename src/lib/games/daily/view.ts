@@ -1,7 +1,9 @@
 /**
  * What the browser is allowed to see of a case. Built on the server from the
- * case and the replayed progress, so the answer, the unrevealed clues and the
- * unordered investigation results never leave the server mid-game.
+ * case and the replayed progress, so the answer never leaves the server
+ * mid-game, and clues or test results the student never opened never leave
+ * it at all (not even after the case ends). After the end, `restOf` gives
+ * them on request, when the student taps "Show the other clues".
  */
 
 import { CHAPTERS, diagnosisById } from "../diagnoses";
@@ -15,9 +17,12 @@ export type CaseView = {
   ai: boolean;
   difficulty: 1 | 2 | 3;
   setting: string;
+  /** Only the clues the student opened. */
   clues: string[];
   /** Clues open when the case ended (or now). */
   cluesOpen: number;
+  /** How many clues and tests were never opened (their text stays on the server). */
+  unopened: number;
   investigations: { i: number; kind: InvestigationKind; label: string; result: string | null; ordered: boolean }[];
   guesses: { dx: string; name: string; ok: boolean; sameChapter: boolean; reason: string }[];
   hints: { chapter: string | null; pointer: string | null; used: number };
@@ -46,9 +51,10 @@ export function buildView(c: DailyCase, p: Progress, mode: "daily" | "practice",
     ai: opts.ai === true,
     difficulty: c.difficulty,
     setting: c.setting,
-    clues: over ? [...c.clues] : c.clues.slice(0, p.clues),
+    clues: c.clues.slice(0, p.clues),
     cluesOpen: p.clues,
-    investigations: c.investigations.map((x, i) => ({ i, kind: x.kind, label: x.label, result: over || p.invs.includes(i) ? x.result : null, ordered: p.invs.includes(i) })),
+    unopened: Math.max(0, c.clues.length - p.clues) + c.investigations.filter((_, i) => !p.invs.includes(i)).length,
+    investigations: c.investigations.map((x, i) => ({ i, kind: x.kind, label: x.label, result: p.invs.includes(i) ? x.result : null, ordered: p.invs.includes(i) })),
     guesses: p.guesses.map((g) => ({ ...g, name: diagnosisById(g.dx)?.name ?? g.dx })),
     hints: { used: p.hints, chapter: p.hints >= 1 || over ? CHAPTERS[c.chapter].name : null, pointer: p.hints >= 2 || over ? c.pointer : null },
     canClue: canOpenClue(p),
@@ -68,5 +74,16 @@ export function buildView(c: DailyCase, p: Progress, mode: "daily" | "practice",
           refs: admin && opts.ai !== true ? c.refs : null,
         }
       : null,
+  };
+}
+
+/** The clues and tests the student never opened. Only once the case is over; null before. */
+export type CaseRest = { clues: { n: number; text: string }[]; tests: { kind: InvestigationKind; label: string; result: string }[] };
+
+export function restOf(c: DailyCase, p: Progress): CaseRest | null {
+  if (p.status === "playing") return null;
+  return {
+    clues: c.clues.slice(p.clues).map((text, i) => ({ n: p.clues + i + 1, text })),
+    tests: c.investigations.filter((_, i) => !p.invs.includes(i)).map((x) => ({ kind: x.kind, label: x.label, result: x.result })),
   };
 }
