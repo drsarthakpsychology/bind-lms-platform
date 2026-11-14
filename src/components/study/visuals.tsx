@@ -5,7 +5,7 @@ import { RotateCcw } from "lucide-react";
 import type { BrainMapData, CurveData, FlowData, LayersData } from "@/lib/study/types";
 import { cn } from "@/lib/utils";
 import { Rich } from "./rich";
-import { C, Callout, Cv, E, HAND, L, Label, P, Pg, R, Sheet, labelWidth, plain, wrap } from "@/components/sketch/ink";
+import { Arrow, C, Callout, Cv, E, HAND, L, Label, P, Pg, R, Sheet, labelWidth, plain, wrap } from "@/components/sketch/ink";
 import { BOX, SketchFrame, type Link } from "@/components/sketch/frame";
 
 /**
@@ -517,63 +517,101 @@ export function Layers({ d }: { d: LayersData }) {
 }
 
 /* -------------------------------------------------------------- brainmap */
-const REGIONS: { id: string; name: string; shape: React.ReactNode; deep?: boolean }[] = [
-  { id: "frontal", name: "Frontal lobe", shape: <path d="M60 30 C 30 45, 22 80, 40 105 L 95 100 L 105 32 C 90 24, 75 24, 60 30 Z" /> },
-  { id: "prefrontal", name: "Prefrontal cortex", shape: <path d="M60 30 C 30 45, 22 80, 40 105 L 62 102 L 70 30 Z" /> },
-  { id: "motor", name: "Motor cortex", shape: <path d="M105 32 L 95 100 L 104 99 L 114 33 Z" /> },
-  { id: "sensory", name: "Somatosensory cortex", shape: <path d="M114 33 L 104 99 L 113 98 L 123 35 Z" /> },
-  { id: "parietal", name: "Parietal lobe", shape: <path d="M123 35 C 150 38, 168 52, 172 72 L 140 92 L 113 98 Z" /> },
-  { id: "occipital", name: "Occipital lobe", shape: <path d="M172 72 C 182 88, 180 106, 168 118 L 140 112 L 140 92 Z" /> },
-  { id: "temporal", name: "Temporal lobe", shape: <path d="M40 105 L 95 100 L 140 92 L 140 112 C 118 132, 70 134, 48 120 Z" /> },
-  { id: "broca", name: "Broca's area", shape: <circle cx="62" cy="96" r="7" /> },
-  { id: "wernicke", name: "Wernicke's area", shape: <circle cx="132" cy="100" r="7" /> },
-  { id: "cerebellum", name: "Cerebellum", shape: <path d="M140 118 C 150 116, 172 122, 170 136 C 160 148, 138 146, 132 134 Z" /> },
-  { id: "brainstem", name: "Brainstem", shape: <path d="M112 112 L 126 112 L 124 160 L 114 160 Z" /> },
-  { id: "corpus-callosum", name: "Corpus callosum", deep: true, shape: <path d="M70 62 C 95 50, 130 50, 150 64" fill="none" strokeWidth="6" /> },
-  { id: "thalamus", name: "Thalamus", deep: true, shape: <ellipse cx="112" cy="74" rx="9" ry="6" /> },
-  { id: "hypothalamus", name: "Hypothalamus", deep: true, shape: <circle cx="100" cy="86" r="5" /> },
-  { id: "basal-ganglia", name: "Basal ganglia", deep: true, shape: <ellipse cx="94" cy="70" rx="9" ry="7" /> },
-  { id: "amygdala", name: "Amygdala", deep: true, shape: <circle cx="96" cy="104" r="5" /> },
-  { id: "hippocampus", name: "Hippocampus", deep: true, shape: <path d="M100 108 C 112 112, 124 108, 130 100" fill="none" strokeWidth="5" /> },
+type Pt = [number, number];
+/** The outside of the left half of the brain, front to the left, in sheet units (412 x 304). */
+const OUTLINE: Pt[] = [[82, 152], [76, 122], [88, 90], [112, 64], [150, 46], [200, 38], [250, 42], [292, 58], [322, 86], [336, 120], [334, 152], [318, 174], [292, 186], [256, 194], [216, 200], [180, 200], [150, 194], [128, 182], [116, 168], [120, 157], [100, 156]];
+const FISSURE: Pt[] = [[120, 156], [160, 146], [200, 140], [234, 136], [246, 128]];
+const CENTRAL: Pt[] = [[206, 39], [196, 80], [186, 112], [180, 142]];
+
+type Region = { id: string; name: string; spot: Pt; deep?: boolean; poly?: Pt[]; draw?: (k: string, o: { fill?: string; fillStyle?: "solid" | "hachure"; stroke?: string }) => React.ReactNode };
+const REGIONS: Region[] = [
+  { id: "frontal", name: "Frontal lobe", spot: [146, 88], poly: [[82, 152], [76, 122], [88, 90], [112, 64], [150, 46], [206, 39], [196, 80], [186, 112], [180, 142], [160, 146], [120, 156]] },
+  { id: "prefrontal", name: "Prefrontal cortex", spot: [106, 112], poly: [[82, 152], [76, 122], [88, 90], [112, 64], [140, 50], [134, 100], [128, 153], [120, 156]] },
+  { id: "motor", name: "Motor cortex", spot: [183, 94], poly: [[188, 40], [206, 39], [196, 80], [186, 112], [180, 142], [166, 144], [172, 112], [180, 78]] },
+  { id: "sensory", name: "Somatosensory cortex", spot: [208, 70], poly: [[206, 39], [224, 40], [214, 80], [203, 112], [196, 141], [180, 142], [186, 112], [196, 80]] },
+  { id: "parietal", name: "Parietal lobe", spot: [258, 96], poly: [[206, 39], [250, 42], [292, 58], [300, 62], [302, 120], [304, 150], [290, 152], [234, 136], [200, 140], [180, 142], [186, 112], [196, 80]] },
+  { id: "occipital", name: "Occipital lobe", spot: [318, 124], poly: [[300, 62], [322, 86], [336, 120], [334, 152], [318, 174], [306, 177], [304, 150], [302, 120]] },
+  { id: "temporal", name: "Temporal lobe", spot: [146, 180], poly: [[120, 156], [160, 146], [200, 140], [234, 136], [290, 152], [304, 150], [306, 177], [292, 186], [256, 194], [216, 200], [180, 200], [150, 194], [128, 182], [116, 168]] },
+  { id: "broca", name: "Broca's area", spot: [146, 134], draw: (k, o) => <E k={k} cx={146} cy={134} w={22} h={16} sw={1.6} {...o} /> },
+  { id: "wernicke", name: "Wernicke's area", spot: [254, 156], draw: (k, o) => <E k={k} cx={254} cy={156} w={24} h={16} sw={1.6} {...o} /> },
+  { id: "cerebellum", name: "Cerebellum", spot: [300, 214], draw: (k, o) => <P k={k} d="M258 196 C268 184 312 180 334 190 C352 200 350 226 332 236 C310 246 274 240 262 226 C254 216 252 204 258 196 Z" sw={2} {...o} /> },
+  { id: "brainstem", name: "Brainstem", spot: [236, 242], draw: (k, o) => <P k={k} d="M222 196 C224 222 226 248 228 274 L248 274 C248 248 250 222 252 196 Z" sw={2} {...o} /> },
+  { id: "corpus-callosum", name: "Corpus callosum", deep: true, spot: [214, 92], draw: (k, o) => <P k={k} d="M140 112 C150 84 200 78 236 82 C268 86 284 100 280 112 C276 120 266 114 258 106 C240 96 196 94 166 104 C154 110 150 122 140 112 Z" sw={1.4} dash="5 4" {...o} /> },
+  { id: "thalamus", name: "Thalamus", deep: true, spot: [228, 124], draw: (k, o) => <E k={k} cx={228} cy={124} w={34} h={20} sw={1.4} dash="5 4" {...o} /> },
+  { id: "hypothalamus", name: "Hypothalamus", deep: true, spot: [200, 144], draw: (k, o) => <E k={k} cx={200} cy={144} w={20} h={14} sw={1.4} dash="5 4" {...o} /> },
+  { id: "basal-ganglia", name: "Basal ganglia", deep: true, spot: [178, 116], draw: (k, o) => <E k={k} cx={178} cy={116} w={30} h={22} sw={1.4} dash="5 4" {...o} /> },
+  { id: "amygdala", name: "Amygdala", deep: true, spot: [168, 164], draw: (k, o) => <E k={k} cx={168} cy={164} w={16} h={14} sw={1.4} dash="5 4" {...o} /> },
+  { id: "hippocampus", name: "Hippocampus", deep: true, spot: [214, 170], draw: (k, o) => <P k={k} d="M176 166 C194 176 222 176 246 160" sw={4} single dash="5 4" {...o} /> },
 ];
+
+const BM_W = 412;
+const BM_H = 304;
+
+function BrainMapArt({ focus, pick, onPick }: { focus: string[]; pick: string | null; onPick: (id: string) => void }) {
+  const shown = REGIONS.filter((r) => !r.deep || focus.includes(r.id));
+  const sel = REGIONS.find((r) => r.id === pick);
+  const look = (r: Region) => (r.id === pick ? { fill: C.lime, fillStyle: "hachure" as const } : focus.includes(r.id) ? { fill: C.wash, fillStyle: "solid" as const } : {});
+  const num = (id: string) => focus.indexOf(id) + 1;
+  // The picked region is named in the top margin (or the bottom one, for the low parts), with a leader to its dot.
+  const callout = sel
+    ? (() => {
+        const low = sel.spot[1] > 160;
+        const w = labelWidth(sel.name);
+        const x = Math.max(8, Math.min(BM_W - w - 8, sel.spot[0] - w / 2));
+        return <Callout k={`bm-name-${sel.id}`} x={x} y={low ? BM_H - 12 : 22} lines={[sel.name]} to={[sel.spot[0], sel.spot[1] + (low ? 10 : -10)]} active />;
+      })()
+    : null;
+  return (
+    <Sheet name="brainmap" w={BM_W} h={BM_H} label={`Side view of the brain, front on the left${sel ? `, ${sel.name} picked` : ""}`} className="mx-auto max-w-[30rem]">
+      {/* cerebellum and brainstem sit behind the cerebrum */}
+      {shown.filter((r) => r.id === "cerebellum" || r.id === "brainstem").map((r) => <g key={r.id} onClick={() => onPick(r.id)} className={focus.includes(r.id) ? "cursor-pointer" : undefined}>{r.draw!(`bm-${r.id}-${r.id === pick ? "on" : focus.includes(r.id) ? "f" : "x"}`, { ...look(r), ...(r.id === pick || focus.includes(r.id) ? {} : { fill: C.paper, fillStyle: "solid" }) })}</g>)}
+      <Cv k="bm-outline" pts={[...OUTLINE, OUTLINE[0]]} sw={2.4} fill={C.paper} fillStyle="solid" />
+      {shown.filter((r) => r.poly && (r.id === pick || focus.includes(r.id))).sort((a, b) => Number(a.id === pick) - Number(b.id === pick)).map((r) => (
+        <g key={r.id} onClick={() => onPick(r.id)} className="cursor-pointer">
+          <Pg k={`bm-${r.id}-${r.id === pick ? "on" : "f"}`} pts={r.poly!} stroke="none" {...look(r)} gap={5} />
+        </g>
+      ))}
+      <Cv k="bm-fissure" pts={FISSURE} sw={2} single rough={0.6} />
+      <Cv k="bm-central" pts={CENTRAL} sw={1.8} single rough={0.6} />
+      <P k="bm-po" d="M300 62 C302 90 302 124 306 176" stroke={C.soft} sw={1.3} single dash="4 5" />
+      <P k="bm-folds" d="M120 90 C130 84 140 92 150 86 M100 128 C110 122 118 130 126 124 M232 70 C240 62 252 70 262 64 M262 116 C272 108 282 116 290 110 M150 178 C166 172 184 180 200 174 M226 186 C238 180 252 188 266 182 M312 100 C318 108 314 118 322 122" stroke={C.soft} sw={1.2} single rough={0.8} />
+      {shown.filter((r) => r.draw && r.id !== "cerebellum" && r.id !== "brainstem").map((r) => (
+        <g key={r.id} onClick={() => onPick(r.id)} className={focus.includes(r.id) ? "cursor-pointer" : undefined}>{r.draw!(`bm-${r.id}-${r.id === pick ? "on" : focus.includes(r.id) ? "f" : "x"}`, { ...look(r), stroke: r.id === pick ? C.blue : r.deep ? C.ink : undefined })}</g>
+      ))}
+      {focus.map((id) => {
+        const r = REGIONS.find((x) => x.id === id);
+        if (!r) return null;
+        const on = id === pick;
+        return (
+          <g key={id} onClick={() => onPick(id)} className="cursor-pointer">
+            <E k={`bm-dot-${id}-${on}`} cx={r.spot[0]} cy={r.spot[1]} w={23} h={23} fill={on ? C.blue : C.lime} fillStyle="solid" sw={1.4} />
+            <Label x={r.spot[0]} y={r.spot[1] + 5} size={15} anchor="middle" color={on ? C.paper : "var(--sk-on-lime)"}>{String(num(id))}</Label>
+          </g>
+        );
+      })}
+      {callout}
+      <Label x={14} y={206} size={13} bold={false} color={C.soft}>front</Label>
+      <Arrow k="bm-front" from={[56, 214]} to={[14, 214]} stroke={C.soft} sw={1.2} />
+    </Sheet>
+  );
+}
 
 export function BrainMap({ d }: { d: BrainMapData }) {
   const focus = d.focus?.length ? d.focus : REGIONS.map((r) => r.id).filter((id) => d.notes?.[id]);
   const [pick, setPick] = React.useState<string | null>(focus[0] ?? null);
-  const shown = REGIONS.filter((r) => !r.deep || focus.includes(r.id));
   const sel = REGIONS.find((r) => r.id === pick);
   return (
     <figure className={card}>
       <p className={label}>{d.title ? <Rich text={d.title} /> : "The brain"}</p>
-      <svg viewBox="15 15 175 150" className="mx-auto mt-3 w-full max-w-[26rem] rounded-xl border-2 border-foreground bg-background" role="group" aria-label="Side view of the brain, front on the left">
-        {shown.map((r) => {
-          const on = pick === r.id;
-          const isFocus = focus.includes(r.id);
-          return (
-            <g
-              key={r.id}
-              role="button"
-              tabIndex={0}
-              aria-label={r.name}
-              aria-pressed={on}
-              onClick={() => setPick(r.id)}
-              onKeyDown={(e) => (e.key === "Enter" || e.key === " ") && setPick(r.id)}
-              className={cn("cursor-pointer outline-none transition-colors", r.deep ? "stroke-foreground" : "stroke-foreground", on ? "fill-[var(--primary)] stroke-[var(--primary)]" : isFocus ? "fill-[var(--status-info-bg)]" : "fill-card")}
-              strokeWidth={r.deep ? 1.5 : 1.5}
-              style={r.deep ? { strokeDasharray: on ? undefined : "3 2" } : undefined}
-            >
-              {r.shape}
-            </g>
-          );
-        })}
-        <text x="22" y="28" className="fill-muted-foreground text-[7px]">front</text>
-      </svg>
-      <div className="mt-3 flex flex-wrap gap-1.5">
-        {focus.map((id) => {
+      <div className="mt-3">
+        <BrainMapArt focus={focus.filter((id) => REGIONS.some((r) => r.id === id))} pick={pick} onPick={(id) => focus.includes(id) && setPick(id)} />
+      </div>
+      <div className="mt-3 flex flex-wrap gap-1.5" role="group" aria-label="Brain parts">
+        {focus.map((id, k) => {
           const r = REGIONS.find((x) => x.id === id);
           return r ? (
-            <button key={id} type="button" onClick={() => setPick(id)} aria-pressed={pick === id} className={cn("min-h-10 rounded-md border-2 px-2.5 py-1 text-sm font-semibold", pick === id ? "border-foreground bg-primary text-primary-foreground" : "border-foreground/30 bg-card")}>
-              {r.name}
+            <button key={id} type="button" onClick={() => setPick(id)} aria-pressed={pick === id} className={cn("inline-flex min-h-10 items-center gap-1.5 rounded-md border-2 px-2.5 py-1 text-sm font-semibold", pick === id ? "border-foreground bg-primary text-primary-foreground" : "border-foreground/30 bg-card")}>
+              <span className="tabular-nums opacity-70" aria-hidden>{k + 1}</span> {r.name}
             </button>
           ) : null;
         })}

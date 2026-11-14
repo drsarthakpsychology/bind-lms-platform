@@ -6,4 +6,4 @@ import type { WidgetKind } from "@/lib/study/types";
  * docs/design/DIAGRAM_INVENTORY_2026_11.md for what each widget is and why
  * the others keep their own look.
  */
-export const SKETCHED: readonly WidgetKind[] = ["flow", "layers", "curve"];
+export const SKETCHED: readonly WidgetKind[] = ["flow", "layers", "curve", "brainmap"];
