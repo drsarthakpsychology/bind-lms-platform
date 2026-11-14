@@ -158,16 +158,18 @@ export function StudentActions({
           </div>
         ) : mode === "menu" ? (
           <div className="flex flex-col gap-1">
-            <button
-              type="button"
-              onClick={handleReset}
-              disabled={isPending}
-              title="Reset password to K#test"
-              className="flex min-h-11 w-full items-center gap-3 rounded-md px-3 py-2 text-left text-small font-medium transition-colors hover:bg-accent disabled:opacity-50"
-            >
-              <KeyRound className="size-4 text-muted-foreground" aria-hidden />
-              {isTest ? "Reset test password" : "Reset password"}
-            </button>
+            {isTest ? (
+              <button
+                type="button"
+                onClick={handleReset}
+                disabled={isPending}
+                title="Reset password to K#test"
+                className="flex min-h-11 w-full items-center gap-3 rounded-md px-3 py-2 text-left text-small font-medium transition-colors hover:bg-accent disabled:opacity-50"
+              >
+                <KeyRound className="size-4 text-muted-foreground" aria-hidden />
+                Reset test password
+              </button>
+            ) : null}
             {status === "blocked" ? (
               <button
                 type="button"

@@ -224,7 +224,8 @@ export function targetDifficulty(history: PracticeRecord[]): 1 | 2 | 3 {
   return Math.min(3, Math.max(1, t)) as 1 | 2 | 3;
 }
 
-export function pickPractice(cases: Pick<DailyCase, "id" | "difficulty">[], history: PracticeRecord[], excludeId: string, roll: number): string | null {
+/** `prefer`: cases to lead with among the new ones at the same level gap (this week's new cases, src/lib/cases). */
+export function pickPractice(cases: Pick<DailyCase, "id" | "difficulty">[], history: PracticeRecord[], excludeId: string, roll: number, prefer?: ReadonlySet<string>): string | null {
   const target = targetDifficulty(history);
   const seen = new Set(history.map((h) => h.id));
   const pool = cases.filter((c) => c.id !== excludeId);
@@ -244,7 +245,9 @@ export function pickPractice(cases: Pick<DailyCase, "id" | "difficulty">[], hist
     from = best;
   }
   for (const gap of [0, 1, 2]) {
-    const tier = from.filter((c) => Math.abs(c.difficulty - target) === gap);
+    const all = from.filter((c) => Math.abs(c.difficulty - target) === gap);
+    const lead = unseen.length && prefer ? all.filter((c) => prefer.has(c.id)) : [];
+    const tier = lead.length ? lead : all;
     if (tier.length) return tier[Math.min(tier.length - 1, Math.floor(roll * tier.length))].id;
   }
   return from[0].id;

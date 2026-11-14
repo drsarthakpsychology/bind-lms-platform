@@ -2,35 +2,11 @@
 
 import * as React from "react";
 import { emptyState, normalise, type LearnState } from "./engine";
-import { keepBestTests } from "@/lib/study/progress";
+import { onSaved, queueSave } from "@/lib/save/client";
+import { aheadOf, mergeCopies } from "./merge";
 
-function maxMap(a: Record<string, number>, b: Record<string, number>): Record<string, number> {
-  const out = { ...a };
-  for (const [k, v] of Object.entries(b)) out[k] = Math.max(out[k] ?? 0, v);
-  return out;
-}
-
-/** Keep the winner, but never lose reading ticks, test and checkpoint scores, or study time recorded on the other copy. */
-export function mergeCopies(win: LearnState, other: LearnState): LearnState {
-  const acts = { ...other.study.acts };
-  for (const [m, v] of Object.entries(win.study.acts)) acts[m] = { ...(acts[m] ?? {}), ...v };
-  return {
-    ...win,
-    notesRead: { ...other.notesRead, ...win.notesRead },
-    lab: { ...other.lab, ...win.lab },
-    study: {
-      ...win.study,
-      done: { ...other.study.done, ...win.study.done },
-      // A test taken on another device, or saved after this copy, still counts.
-      tests: keepBestTests(other.study.tests, win.study.tests),
-      written: { ...other.study.written, ...win.study.written },
-      secs: maxMap(win.study.secs, other.study.secs),
-      acts,
-      last: win.study.last ?? other.study.last,
-    },
-  };
-}
-
+// Joining copies lives in ./merge (shared with the server save).
+export { mergeCopies } from "./merge";
 /**
  * One Learn state per browser tab, shared by every Learn screen.
  * - Hydration-safe: React renders the server copy first, then this store.
@@ -99,6 +75,51 @@ export function initLearnStore(server: LearnState | null, save: (s: LearnState) 
   const other = win === a ? local : a;
   // Things that don't earn XP (notes read, study time) are merged from both copies.
   state = other ? mergeCopies(win, other) : win;
+  // The browser copy holds work the server never got (a save that failed, a
+  // tab closed before the save went out): send the merged copy up now instead
+  // of waiting for the student's next change.
+  if (a && aheadOf(state, a)) scheduleSave(state, key);
+}
+
+function dropLocal(k: string) {
+  try {
+    window.localStorage.removeItem(k);
+  } catch {
+    /* private mode */
+  }
+}
+
+const isClamped = (res: unknown) => Boolean(res && typeof res === "object" && (res as { clamped?: unknown }).clamped === true);
+
+let unsubscribeSaved: (() => void) | null = null;
+
+function send(next: LearnState, k: string) {
+  // The save outbox keeps the copy until the server has it, retries, and
+  // survives a new deployment. Before it runs, the Server Action is used.
+  if (typeof window !== "undefined" && queueSave("learn", k, { state: next })) {
+    unsubscribeSaved ??= onSaved("learn", (data, item) => {
+      // The server refused part of this copy: stop trusting the local one.
+      if (data?.clamped === true) dropLocal(item.key);
+    });
+    return;
+  }
+  saver?.(next).then(
+    (res) => {
+      if (isClamped(res)) dropLocal(k);
+      else if (res && typeof res === "object" && (res as { ok?: unknown }).ok === false) console.warn("Learn progress was not saved; it stays in this browser and is sent with the next change.");
+    },
+    () => {
+      /* offline: localStorage still has it, and the next load sends it up */
+    },
+  );
+}
+
+function scheduleSave(next: LearnState, k: string) {
+  if (saveTimer) clearTimeout(saveTimer);
+  saveTimer = setTimeout(() => {
+    saveTimer = null;
+    send(next, k);
+  }, 600);
 }
 
 export function setLearnState(next: LearnState) {
@@ -110,23 +131,7 @@ export function setLearnState(next: LearnState) {
     /* private mode */
   }
   listeners.forEach((l) => l());
-  if (saveTimer) clearTimeout(saveTimer);
-  saveTimer = setTimeout(() => {
-    saver?.(next)
-      .then((res) => {
-        // The server refused part of this copy: stop trusting the local one.
-        if (res && typeof res === "object" && (res as { clamped?: unknown }).clamped === true) {
-          try {
-            window.localStorage.removeItem(k);
-          } catch {
-            /* private mode */
-          }
-        }
-      })
-      .catch(() => {
-        /* offline: localStorage still has it */
-      });
-  }, 600);
+  scheduleSave(next, k);
 }
 
 export function useLearnState(serverCopy: LearnState): LearnState {
@@ -143,4 +148,34 @@ export function useLearnState(serverCopy: LearnState): LearnState {
 /** Current store value outside render (effects and handlers). */
 export function getLearnState(): LearnState | null {
   return state;
+}
+
+// Another tab of this student saved its copy: take in what it has, so this tab
+// never sends an older copy over a mark made there.
+if (typeof window !== "undefined") {
+  window.addEventListener("storage", (e) => {
+    if (!state || e.key !== key || !e.newValue) return;
+    let other: LearnState;
+    try {
+      other = normalise(JSON.parse(e.newValue));
+    } catch {
+      return;
+    }
+    const win = other.xp > state.xp ? other : state;
+    const next = mergeCopies(win, win === other ? state : other);
+    if (!aheadOf(next, state)) return;
+    state = next;
+    listeners.forEach((l) => l());
+  });
+}
+
+// Closing the tab inside the 600 ms wait: queue the save now so it is not lost
+// (the outbox sends it on the way out, or on the next page load).
+if (typeof window !== "undefined") {
+  window.addEventListener("pagehide", () => {
+    if (!saveTimer || !state) return;
+    clearTimeout(saveTimer);
+    saveTimer = null;
+    send(state, key);
+  });
 }

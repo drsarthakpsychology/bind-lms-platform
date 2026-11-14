@@ -1,6 +1,6 @@
 "use client";
 
-import { C, E, Figure, Label, P, Sheet, labelWidth } from "./ink";
+import { C, E, Figure, Label, P, Sheet, labelWidth } from "@/components/sketch/ink";
 
 type Side = { label: string; points: string[]; summary: string };
 

@@ -5,8 +5,10 @@ import { MseLadder, type MseLadderContent } from "./mse-ladder";
 import type { MseStimulus } from "@/lib/practice/mse";
 import { FULL_MSE_STIMULI, type FullMseStimulus } from "@/lib/mse/mse4-stimuli";
 import { OBSERVE_STIMULI } from "@/lib/practice/mse-observe-stimuli";
-import { order } from "@/lib/history/server";
-import { viewerId } from "@/lib/history/viewer";
+import { caseContext } from "@/lib/cases/server";
+import { arrangeCases } from "@/lib/cases/fresh";
+import { fromRows, seededRng } from "@/lib/history/order";
+import { SMALL_THINGS, smallItem } from "@/lib/mse/small-things";
 import { requireFeature } from "@/lib/flags";
 import { cleanDeep, cleanStudentText } from "@/lib/ai/student-text";
 import { BackPill } from "@/components/study/back";
@@ -81,15 +83,29 @@ export default async function MsePage() {
   // Answer history (src/lib/history): Levels 1 and 4 open on a case not seen
   // yet, then missed ones, right ones last. Picked here so the first screen
   // is the same on the server and in the browser.
-  const viewer = await viewerId();
+  // Fresh cases (src/lib/cases/fresh.ts): new this week, new, done last, so
+  // Next never reaches a done case while a new one is left. The small things
+  // walk resumes at the moment it was left.
   const observe = shaped.observe ?? OBSERVE_STIMULI;
   const fullMse = shaped.fullMse ?? FULL_MSE_STIMULI;
-  const [obsOrder, fullOrder] = await Promise.all([
-    order(viewer, "mse-trainer", observe.map((x) => x.id)),
-    order(viewer, "mse-trainer", fullMse.map((x) => x.id)),
-  ]);
-  const byOrder = <T extends { id: string }>(list: T[], ids: string[]) => ids.flatMap((id) => list.filter((x) => x.id === id).slice(0, 1));
-  const content: MseLadderContent = { ...shaped, observe: byOrder(observe, obsOrder), fullMse: byOrder(fullMse, fullOrder) };
+  const smallIds = SMALL_THINGS.map((x) => smallItem(x.id));
+  const ctx = await caseContext("mse-trainer", [...observe.map((x) => x.id), ...fullMse.map((x) => x.id), ...smallIds], "mse-small");
+  const history = fromRows(ctx.history);
+  const rng = seededRng(ctx.now);
+  const opts = { history, now: ctx.now, student: ctx.student, rng };
+  const obs = arrangeCases(observe, (x) => x.id, opts);
+  const full = arrangeCases(fullMse, (x) => x.id, opts);
+  const small = arrangeCases(SMALL_THINGS, (x) => smallItem(x.id), { history, now: ctx.now, student: ctx.student });
+  const at = (ctx.progress.rows.find((r) => r.item === "walk")?.state as { at?: string } | null)?.at;
+  const smallOrder = small.list.map((x) => x.item.id);
+  const content: MseLadderContent = {
+    ...shaped,
+    observe: obs.list.map((x) => x.item),
+    observeFresh: obs.recycled ? 0 : obs.fresh,
+    fullMse: full.list.map((x) => x.item),
+    fullFresh: full.recycled ? 0 : full.fresh,
+    small: { order: smallOrder, start: Math.max(0, at ? smallOrder.indexOf(at) : 0), fresh: small.recycled ? 0 : small.fresh },
+  };
 
   return (
     <div className="mx-auto max-w-3xl">

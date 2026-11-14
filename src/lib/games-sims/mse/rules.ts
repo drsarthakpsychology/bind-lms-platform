@@ -57,7 +57,7 @@ export function segments(text: string, quotes: string[]): { text: string; idx: n
 }
 
 /** An excerpt as the browser sees it: the interview, the quotes to tag and each one's word options, never the answers. */
-export type PublicExcerpt = { level: Level; who: string; place: string; lines: ["D" | "P" | "R", string][]; note: string; quotes: string[]; options: string[][] };
+export type PublicExcerpt = { level: Level; again: boolean; who: string; place: string; lines: ["D" | "P" | "R", string][]; note: string; quotes: string[]; options: string[][] };
 
 /** What a finding shows once it is tagged. */
 export type FindingReveal = TagResult & { answer: string; answerDomain: Domain; why: string; whyNot: string | null };

@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { z } from "zod";
 import { denyUnlessGate, requireStudentApi, type ApiGate } from "@/lib/auth/api-guard";
 import { createAdminClient } from "@/lib/supabase/server";
-import { rateLimit } from "@/lib/rate-limit";
+import { rateLimitWrite } from "@/lib/rate-limit";
 
 export const runtime = "nodejs";
 
@@ -38,7 +38,7 @@ export async function POST(req: Request) {
   const profile = access.profile;
   const user = profile;
 
-  const allowed = await rateLimit(`competency:${user.id}`, 60);
+  const allowed = await rateLimitWrite(`competency:${user.id}`, 60);
   if (!allowed) return NextResponse.json({ error: "slow down" }, { status: 429 });
 
   const body = await req.json().catch(() => null);

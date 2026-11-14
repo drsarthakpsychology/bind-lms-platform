@@ -6,6 +6,7 @@ import type { GenogramData } from "@/lib/study/types";
 import { cn } from "@/lib/utils";
 import { trackLearn } from "@/lib/learn/track";
 import { SceneCard, btn, chip, statusCls, useReducedMotion } from "./kit";
+import { Arrow, C, E, Label, P, Pg, R as Rect, Sheet } from "@/components/sketch/ink";
 
 /**
  * A genogram builder for case work. Tap a person to add parents, siblings,
@@ -255,7 +256,7 @@ export function Genogram({ d }: { d: GenogramData }) {
         <button type="button" className={cn(btn, "bg-card text-sm")} onClick={() => { setG(empty()); setSel(null); setScan(null); setSaid("A blank genogram: just you."); }}>Start blank</button>
       </div>
       <div className="mt-3 overflow-hidden rounded-xl border-2 border-foreground bg-background">
-        <svg viewBox={`${L.left} ${top} ${L.w} ${H}`} className="block h-auto max-h-[26rem] w-full" role="img" aria-label="The genogram drawing. Every person and line is also listed in words below.">
+        <Sheet bare name="genogram" left={L.left} top={top} w={L.w} h={H} label="The genogram drawing. Every person and line is also listed in words below." className="h-auto max-h-[26rem] w-full">
           <style>{`
             @keyframes gg-sweep { from { transform: translateY(0) } to { transform: translateY(${H}px) } }
             @keyframes gg-ring { 0% { transform: scale(0.6); opacity: 0 } 40% { opacity: 1 } 100% { transform: scale(1.6); opacity: 0 } }
@@ -263,14 +264,8 @@ export function Genogram({ d }: { d: GenogramData }) {
             @keyframes gg-in { from { transform: scale(0.4); opacity: 0 } to { transform: scale(1); opacity: 1 } }
             .gg-p { transform-box: fill-box; transform-origin: center; animation: gg-in 320ms cubic-bezier(0.16, 1, 0.3, 1) both; }
           `}</style>
-          <defs>
-            <pattern id="gg-hatch" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
-              <rect width="5" height="5" className="fill-foreground" />
-              <line x1="0" y1="0" x2="0" y2="5" className="stroke-card" strokeWidth="1.6" />
-            </pattern>
-          </defs>
           <Lines g={g} x={L.x} />
-          {finder && !reduce && !scan?.done ? <rect x={L.left} y={top - 24} width={L.w} height="24" className="fill-[var(--primary)]" style={{ opacity: 0.5, animation: "gg-sweep 2.4s linear both" }} /> : null}
+          {finder && !reduce && !scan?.done ? <rect x={L.left} y={top - 24} width={L.w} height="24" fill={C.lime} style={{ opacity: 0.5, animation: "gg-sweep 2.4s linear both" }} /> : null}
           {finder && (scan?.done || reduce) ? <TracePaths g={g} x={L.x} aff={finder.aff} reduce={reduce} /> : null}
           {g.people.map((p) => {
             const cx = L.x[p.id], cy = ROW[GEN[p.role]];
@@ -280,14 +275,14 @@ export function Genogram({ d }: { d: GenogramData }) {
                 <g className={reduce ? undefined : "gg-p"}>
                   <Symbol p={p} cx={cx} cy={cy} sel={sel === p.id} />
                 </g>
-                {hit ? <circle cx={cx} cy={cy} r={R + 8} className="fill-none stroke-[var(--destructive)]" strokeWidth="2.5" style={reduce ? undefined : { transformBox: "fill-box", transformOrigin: "center", animation: `gg-ring 1.2s ${0.4 + GEN[p.role] * 0.55}s ease-out 2 both` }} /> : null}
-                <text x={cx} y={cy + R + 14} textAnchor="middle" className="pointer-events-none fill-foreground text-[11px] font-semibold">{shortOf(p, g.people)}</text>
-                {p.age ? <text x={cx} y={cy + R + 26} textAnchor="middle" className="pointer-events-none fill-muted-foreground text-[10px]">{p.age.length > 9 ? p.age.replace("died at ", "d. ") : p.age}</text> : null}
-                <rect x={cx - W / 2 + 2} y={cy - R - 8} width={W - 4} height={R * 2 + 40} className="fill-transparent" />
+                {hit ? <circle cx={cx} cy={cy} r={R + 8} fill="none" stroke={C.red} strokeWidth={2.5} style={reduce ? undefined : { transformBox: "fill-box", transformOrigin: "center", animation: `gg-ring 1.2s ${0.4 + GEN[p.role] * 0.55}s ease-out 2 both` }} /> : null}
+                <Label x={cx} y={cy + R + 15} size={12} anchor="middle">{shortOf(p, g.people)}</Label>
+                {p.age ? <Label x={cx} y={cy + R + 28} size={11} anchor="middle" bold={false} color={C.soft}>{p.age.length > 9 ? p.age.replace("died at ", "d. ") : p.age}</Label> : null}
+                <rect x={cx - W / 2 + 2} y={cy - R - 8} width={W - 4} height={R * 2 + 40} fill="transparent" />
               </g>
             );
           })}
-        </svg>
+        </Sheet>
       </div>
       <p className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-xs text-muted-foreground" aria-hidden>
         <span>□ male</span><span>○ female</span><span>▨ shaded (hatched): has {cond}</span><span>✕ died</span><span>{"//"} divorced</span><span>double outline and arrow: the patient</span>
@@ -348,18 +343,19 @@ export function Genogram({ d }: { d: GenogramData }) {
 }
 
 function Symbol({ p, cx, cy, sel }: { p: Person; cx: number; cy: number; sel: boolean }) {
-  const fill = p.cond ? "fill-[url(#gg-hatch)]" : "fill-card";
-  const shape = (r: number, extra: string) =>
-    p.sex === "m" ? <rect x={cx - r} y={cy - r} width={r * 2} height={r * 2} className={extra} strokeWidth="2" />
-      : p.sex === "f" ? <circle cx={cx} cy={cy} r={r} className={extra} strokeWidth="2" />
-      : <rect x={cx - r} y={cy - r} width={r * 2} height={r * 2} transform={`rotate(45 ${cx} ${cy})`} className={extra} strokeWidth="2" />;
+  const k = `${p.id}-${p.sex}-${p.cond ? 1 : 0}`;
+  const shape = (r: number, key: string, o: { fill?: string; sw?: number }) =>
+    p.sex === "m" ? <Rect k={key} x={cx - r} y={cy - r} w={r * 2} h={r * 2} sw={o.sw ?? 2} fill={o.fill} fillStyle={o.fill === C.ink ? "hachure" : "solid"} gap={3.5} />
+      : p.sex === "f" ? <E k={key} cx={cx} cy={cy} w={r * 2} h={r * 2} sw={o.sw ?? 2} fill={o.fill} fillStyle={o.fill === C.ink ? "hachure" : "solid"} gap={3.5} />
+      : <Pg k={key} pts={[[cx, cy - r * 1.3], [cx + r * 1.3, cy], [cx, cy + r * 1.3], [cx - r * 1.3, cy]]} sw={o.sw ?? 2} fill={o.fill} fillStyle={o.fill === C.ink ? "hachure" : "solid"} gap={3.5} />;
   return (
     <g>
-      {sel ? <rect x={cx - R - 7} y={cy - R - 7} width={(R + 7) * 2} height={(R + 7) * 2} rx="6" className="fill-[var(--primary)]/60 stroke-foreground" strokeWidth="1.5" strokeDasharray="3 2" /> : null}
-      {p.role === "index" ? shape(R + 4, "fill-none stroke-foreground") : null}
-      {shape(R, `${fill} stroke-foreground`)}
-      {p.dead ? <path d={`M${cx - R - 3} ${cy - R - 3} L ${cx + R + 3} ${cy + R + 3} M${cx + R + 3} ${cy - R - 3} L ${cx - R - 3} ${cy + R + 3}`} className={p.cond ? "stroke-[var(--destructive)]" : "stroke-foreground"} strokeWidth="2.5" /> : null}
-      {p.role === "index" ? <path d={`M${cx - 34} ${cy + 24} L ${cx - R - 6} ${cy + R - 2} m 0 0 l -1 -8 m 1 8 l -8 -1`} className="fill-none stroke-foreground" strokeWidth="2" /> : null}
+      {sel ? <Rect k={`gg-sel-${p.id}`} x={cx - R - 7} y={cy - R - 7} w={(R + 7) * 2} h={(R + 7) * 2} fill={C.lime} fillStyle="solid" stroke={C.ink} sw={1.4} dash="3 3" /> : null}
+      {p.role === "index" ? shape(R + 4, `gg-idx-${k}`, { sw: 1.8 }) : null}
+      {!p.cond ? shape(R, `gg-bg-${k}`, { fill: C.paper, sw: 0.01 }) : null}
+      {shape(R, `gg-${k}`, { fill: p.cond ? C.ink : undefined })}
+      {p.dead ? <P k={`gg-dead-${p.id}`} d={`M${cx - R - 3} ${cy - R - 3} L ${cx + R + 3} ${cy + R + 3} M${cx + R + 3} ${cy - R - 3} L ${cx - R - 3} ${cy + R + 3}`} stroke={p.cond ? C.red : C.ink} sw={2.4} single /> : null}
+      {p.role === "index" ? <Arrow k={`gg-arrow-${p.id}`} from={[cx - 34, cy + 24]} to={[cx - R - 6, cy + R - 2]} sw={2} /> : null}
     </g>
   );
 }
@@ -377,15 +373,15 @@ function Lines({ g, x }: { g: Geno; x: Pos }) {
     const y = ROW[GEN[a]];
     const [xa, xb] = [x[c[0].id], x[c[1].id]].sort((m, n) => m - n);
     const ly = y;
-    out.push(<path key={`${key}-u`} d={`M${xa + R} ${ly} H ${xb - R}`} className="fill-none stroke-foreground" strokeWidth="2" />);
+    out.push(<P key={`${key}-u`} k={`gg-${key}-u-${xa}-${xb}`} d={`M${xa + R} ${ly} H ${xb - R}`} sw={2} single rough={0.6} />);
     const mid = (xa + xb) / 2;
-    if (div) out.push(<path key={`${key}-d`} d={`M${mid - 6} ${ly + 7} L ${mid - 1} ${ly - 7} M${mid + 1} ${ly + 7} L ${mid + 6} ${ly - 7}`} className="stroke-foreground" strokeWidth="2" />);
+    if (div) out.push(<P key={`${key}-d`} k={`gg-${key}-d`} d={`M${mid - 6} ${ly + 7} L ${mid - 1} ${ly - 7} M${mid + 1} ${ly + 7} L ${mid + 6} ${ly - 7}`} sw={2} single />);
     if (kids.length) {
       const cy = ROW[GEN[kids[0].role]];
       const bar = cy - R - 12;
       const ks = kids.map((k) => x[k.id]);
       const lo = Math.min(mid, ...ks), hi = Math.max(mid, ...ks);
-      out.push(<path key={`${key}-c`} d={`M${mid} ${ly} V ${bar} M${lo} ${bar} H ${hi} ${ks.map((k) => `M${k} ${bar} V ${cy - R}`).join(" ")}`} className="fill-none stroke-foreground" strokeWidth="2" />);
+      out.push(<P key={`${key}-c`} k={`gg-${key}-c-${ks.join("-")}`} d={`M${mid} ${ly} V ${bar} M${lo} ${bar} H ${hi} ${ks.map((k) => `M${k} ${bar} V ${cy - R}`).join(" ")}`} sw={2} single rough={0.6} />);
     }
   };
   const by = (r: Role) => g.people.filter((p) => p.role === r);
@@ -408,7 +404,7 @@ function TracePaths({ g, x, aff, reduce }: { g: Geno; x: Pos; aff: Person[]; red
         const chain = bloodPath(p).map((r, i) => (i === 0 ? [x[p.id], ROW[GEN[r]]] as const : pt(r))).filter(Boolean) as (readonly [number, number])[];
         if (chain.length < 2) return null;
         const d = chain.map(([cx, cy], i) => `${i ? "L" : "M"}${cx} ${cy}`).join(" ");
-        return <path key={p.id} d={d} pathLength={1} strokeDasharray="1 1" className="pointer-events-none fill-none stroke-[var(--destructive)]" strokeWidth="4" strokeLinecap="round" style={{ opacity: 0.55, strokeDashoffset: reduce ? 0 : undefined, animation: reduce ? undefined : `gg-draw 900ms ${k * 250}ms ease-out both` }} />;
+        return <path key={p.id} d={d} pathLength={1} strokeDasharray="1 1" className="pointer-events-none" fill="none" stroke={C.red} strokeWidth={4} strokeLinecap="round" style={{ opacity: 0.55, strokeDashoffset: reduce ? 0 : undefined, animation: reduce ? undefined : `gg-draw 900ms ${k * 250}ms ease-out both` }} />;
       })}
     </g>
   );

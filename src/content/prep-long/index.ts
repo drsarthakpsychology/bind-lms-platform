@@ -1,6 +1,8 @@
 import type { LongQA } from "@/lib/prep/long-types";
 import { BIOLOGICAL_L01 } from "./biological-l01";
 import { BIOLOGICAL_L02 } from "./biological-l02";
+import { BIOLOGICAL_L05 } from "./biological-l05";
+import { BIOLOGICAL_L06 } from "./biological-l06";
 import { CLINICAL_PSYCHIATRY_L01 } from "./clinical-psychiatry-l01";
 import { CLINICAL_PSYCHIATRY_L02 } from "./clinical-psychiatry-l02";
 import { CLINICAL_PSYCHIATRY_L03 } from "./clinical-psychiatry-l03";
@@ -31,6 +33,10 @@ import { DEVELOPMENTAL_L02 } from "./developmental-l02";
 import { DEVELOPMENTAL_L03 } from "./developmental-l03";
 import { DEVELOPMENTAL_L04 } from "./developmental-l04";
 import { DEVELOPMENTAL_L05 } from "./developmental-l05";
+import { ETHICS_LAW_L01 } from "./ethics-law-l01";
+import { ETHICS_LAW_L02 } from "./ethics-law-l02";
+import { ETHICS_LAW_L03 } from "./ethics-law-l03";
+import { ETHICS_LAW_L04 } from "./ethics-law-l04";
 import { HISTORY_SYSTEMS_L01 } from "./history-systems-l01";
 import { HISTORY_SYSTEMS_L02 } from "./history-systems-l02";
 import { HISTORY_SYSTEMS_L03 } from "./history-systems-l03";
@@ -47,6 +53,10 @@ import { PERCEPTION_ATTENTION_L02 } from "./perception-attention-l02";
 import { PERCEPTION_ATTENTION_L03 } from "./perception-attention-l03";
 import { PERCEPTION_ATTENTION_L04 } from "./perception-attention-l04";
 import { PERCEPTION_ATTENTION_L05 } from "./perception-attention-l05";
+import { PERSONALITY_THEORIES_L01 } from "./personality-theories-l01";
+import { PERSONALITY_THEORIES_L02 } from "./personality-theories-l02";
+import { PERSONALITY_THEORIES_L03 } from "./personality-theories-l03";
+import { PERSONALITY_THEORIES_L04 } from "./personality-theories-l04";
 import { PSYCHOMETRICS_ASSESSMENT_L01 } from "./psychometrics-assessment-l01";
 import { PSYCHOMETRICS_ASSESSMENT_L02 } from "./psychometrics-assessment-l02";
 import { PSYCHOMETRICS_ASSESSMENT_L03 } from "./psychometrics-assessment-l03";
@@ -75,6 +85,8 @@ import { RESEARCH_METHODS_L04 } from "./research-methods-l04";
 import { RESEARCH_METHODS_L05 } from "./research-methods-l05";
 import { SOCIAL_L01 } from "./social-l01";
 import { SOCIAL_L02 } from "./social-l02";
+import { SOCIAL_L03 } from "./social-l03";
+import { SOCIAL_L04 } from "./social-l04";
 import { STATISTICS_L01 } from "./statistics-l01";
 import { STATISTICS_L02 } from "./statistics-l02";
 import { STATISTICS_L03 } from "./statistics-l03";
@@ -85,6 +97,8 @@ import { STATISTICS_L05 } from "./statistics-l05";
 export const LONG_QA: LongQA[] = [
   ...BIOLOGICAL_L01,
   ...BIOLOGICAL_L02,
+  ...BIOLOGICAL_L05,
+  ...BIOLOGICAL_L06,
   ...CLINICAL_PSYCHIATRY_L01,
   ...CLINICAL_PSYCHIATRY_L02,
   ...CLINICAL_PSYCHIATRY_L03,
@@ -115,6 +129,10 @@ export const LONG_QA: LongQA[] = [
   ...DEVELOPMENTAL_L03,
   ...DEVELOPMENTAL_L04,
   ...DEVELOPMENTAL_L05,
+  ...ETHICS_LAW_L01,
+  ...ETHICS_LAW_L02,
+  ...ETHICS_LAW_L03,
+  ...ETHICS_LAW_L04,
   ...HISTORY_SYSTEMS_L01,
   ...HISTORY_SYSTEMS_L02,
   ...HISTORY_SYSTEMS_L03,
@@ -131,6 +149,10 @@ export const LONG_QA: LongQA[] = [
   ...PERCEPTION_ATTENTION_L03,
   ...PERCEPTION_ATTENTION_L04,
   ...PERCEPTION_ATTENTION_L05,
+  ...PERSONALITY_THEORIES_L01,
+  ...PERSONALITY_THEORIES_L02,
+  ...PERSONALITY_THEORIES_L03,
+  ...PERSONALITY_THEORIES_L04,
   ...PSYCHOMETRICS_ASSESSMENT_L01,
   ...PSYCHOMETRICS_ASSESSMENT_L02,
   ...PSYCHOMETRICS_ASSESSMENT_L03,
@@ -159,6 +181,8 @@ export const LONG_QA: LongQA[] = [
   ...RESEARCH_METHODS_L05,
   ...SOCIAL_L01,
   ...SOCIAL_L02,
+  ...SOCIAL_L03,
+  ...SOCIAL_L04,
   ...STATISTICS_L01,
   ...STATISTICS_L02,
   ...STATISTICS_L03,

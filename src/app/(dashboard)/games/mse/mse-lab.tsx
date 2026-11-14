@@ -1,4 +1,5 @@
 "use client";
+import { RecycleNote } from "@/components/cases/case-mark";
 
 import * as React from "react";
 import { startHowTo } from "@/components/help/how-to";
@@ -223,6 +224,7 @@ function Round({ play, setPlay, tagOnServer, onFinish }: { play: Play; setPlay: 
         </span>
       </div>
 
+      {e.again && play.idx === 0 && !play.revealed ? <RecycleNote /> : null}
       <Panel className={cn("space-y-3", m.rise)} key={play.seen.length}>
         <div>
           <p className="text-body-strong">{e.who}</p>

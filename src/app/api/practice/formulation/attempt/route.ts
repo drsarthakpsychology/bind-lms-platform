@@ -2,7 +2,8 @@ import { NextResponse } from "next/server";
 import { z } from "zod";
 import { requireStudentApi } from "@/lib/auth/api-guard";
 import { createClient, createAdminClient } from "@/lib/supabase/server";
-import { rateLimit } from "@/lib/rate-limit";
+import { rateLimitWrite } from "@/lib/rate-limit";
+import { FORMULATION_CASES } from "@/lib/practice/formulation-cases";
 
 export const runtime = "nodejs";
 
@@ -43,7 +44,7 @@ export async function POST(req: Request) {
   const profile = access.profile;
   const user = profile;
 
-  const allowed = await rateLimit(`formulation:attempt:${user.id}`, 60);
+  const allowed = await rateLimitWrite(`formulation:attempt:${user.id}`, 60);
   if (!allowed) return NextResponse.json({ error: "slow down" }, { status: 429 });
 
   const body = await req.json().catch(() => null);
@@ -61,14 +62,19 @@ export async function POST(req: Request) {
       .select("id")
       .eq("slug", parsed.data.case_id)
       .maybeSingle();
+    // Only the Forge's own cases may be created, under the server's title:
+    // a student cannot publish a new case or rename one.
+    const known = FORMULATION_CASES.find((c) => c.id === parsed.data.case_id);
     if (existing) {
       caseId = existing.id;
+    } else if (!known) {
+      return NextResponse.json({ error: "unknown case" }, { status: 404 });
     } else {
       const { data: created } = await admin
         .from("formulation_cases")
         .insert({
-          slug: parsed.data.case_id,
-          title: parsed.data.case_title ?? "Formulation case",
+          slug: known.id,
+          title: known.title,
           prompt: "Sort the factors into the 5P grid. Leave distractors out.",
           factors: [],
           distractors: [],

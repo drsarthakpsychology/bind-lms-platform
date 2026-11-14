@@ -60,7 +60,7 @@ export function canonical(p: Puzzle, raw: string, seed: string): string {
 /* ------------------------------------------------------------ practice */
 
 /** A practice run's signed payload: who, which run and room, the server start time, and the state. */
-export type PracticeToken = { u: string; run: string; room: string; t0: number; s: number; w: number; tr: number[]; d: boolean };
+export type PracticeToken = { u: string; run: string; room: string; t0: number; s: number; w: number; tr: number[]; d: boolean; el?: number };
 
 export function practiceStart(userId: string, run: string, room: Room, now: number): PracticeToken {
   const st = startEscape(room);
@@ -83,4 +83,13 @@ export function practiceAnswer(t: PracticeToken, room: Room, st: EscState, stage
   if (!res.applied) return null;
   const s = res.state;
   return { next: { ...t, s: s.stage, w: s.wrong, tr: s.tries, d: s.done }, state: s, ok: res.ok, first: (st.tries[stage] ?? 0) === 0, door };
+}
+
+/**
+ * Carry on a run left half-way: the clock picks up from the last answer
+ * (time away from the room does not count).
+ */
+export function practiceResume(t: PracticeToken, now: number): PracticeToken {
+  const el = Math.max(0, Math.min(864e5, Number.isFinite(t.el) ? (t.el as number) : 0));
+  return { ...t, t0: now - el, el };
 }

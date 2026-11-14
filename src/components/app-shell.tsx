@@ -72,7 +72,7 @@ export function AppShell({
       </a>
       {/* Search palette: opens from the top bar, ⌘K or "/". */}
       <React.Suspense fallback={null}>
-        <PaletteHost isAdmin={isAdminView} flags={flags} blocked={blocked} />
+        <PaletteHost isAdmin={isAdminView} flags={flags} blocked={blocked} scope={scope} />
       </React.Suspense>
       {/* Add people panel: one panel, opened from the palette, Home, Students and cohorts. */}
       {isAdminView ? (

@@ -6,9 +6,10 @@ import { loadLearnState, saveLearnState } from "../../study/actions";
 import { requireFeature } from "@/lib/flags";
 import { currentUser } from "@/lib/games-sims/server/results";
 import { myTeams, teamsReady } from "@/lib/games-sims/server/teams";
-import { roomById } from "@/lib/games-sims/escape/rooms";
+import { roomById, ROOMS } from "@/lib/games-sims/escape/rooms";
 import { roomCards } from "@/lib/games-sims/escape/deal";
-import { answerEscape, answerEscapePractice, createEscapeTeam, escapeView, joinEscapeTeam, startEscapePractice, startEscapeTeam } from "./actions";
+import { answerEscape, answerEscapePractice, createEscapeTeam, escapeView, joinEscapeTeam, resumeEscapePractice, startEscapePractice, startEscapeTeam } from "./actions";
+import { caseContext } from "@/lib/cases/server";
 import { EscapeRoom } from "./escape-room";
 
 export const metadata: Metadata = { title: "Team Escape Room" };
@@ -17,7 +18,7 @@ export default async function EscapePage({ searchParams }: { searchParams: Promi
   await requireFeature("learn");
   const learnState = await loadLearnState();
   const [{ team }, user] = await Promise.all([searchParams, currentUser()]);
-  const [ready, teams] = await Promise.all([teamsReady(), user ? myTeams("escape", user.id) : Promise.resolve([])]);
+  const [ready, teams, cases] = await Promise.all([teamsReady(), user ? myTeams("escape", user.id) : Promise.resolve([]), caseContext("escape", ROOMS.map((r) => r.id), "escape", user?.id ?? "")]);
   return (
     <ActivityFrame
       title="Team Escape Room"
@@ -26,10 +27,11 @@ export default async function EscapePage({ searchParams }: { searchParams: Promi
       <LearnStoreInit serverState={learnState} save={saveLearnState} />
       <EscapeRoom
         rooms={roomCards()}
+        cases={cases}
         teamsOn={ready}
         openTeam={team ?? null}
         teams={teams.filter((t) => t.status !== "done").map((t) => ({ id: t.id, name: t.name, room: t.scenario, title: roomById(t.scenario)?.title ?? t.scenario, status: t.status }))}
-        actions={{ createEscapeTeam, joinEscapeTeam, escapeView, startEscapeTeam, answerEscape, startEscapePractice, answerEscapePractice }}
+        actions={{ createEscapeTeam, joinEscapeTeam, escapeView, startEscapeTeam, answerEscape, startEscapePractice, answerEscapePractice, resumeEscapePractice }}
       />
     </ActivityFrame>
   );

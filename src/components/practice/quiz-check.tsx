@@ -10,6 +10,7 @@ import { MobileCompletionState } from "@/components/mobile/mobile-completion-sta
 import { findReference } from "@/lib/ai/student-text";
 import { EndReaction } from "@/components/reactions/graphics";
 import { OnceHint } from "@/components/help/once-hint";
+import { trySave } from "@/lib/save/client";
 
 /**
  * Student text carries no references (owner rule). The only source worth
@@ -72,11 +73,15 @@ export function QuizCheck({ items }: { items: QuizItem[] }) {
     setAnswers((a) => ({ ...a, [q.id]: authoredIdx }));
     setRevealed(true);
     // Persist the attempt (low-confidence areas surface in /admin/triage).
-    fetch("/api/practice/quiz/attempt", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ itemId: q.id, chosen: authoredIdx, correct: authoredIdx === q.correct }),
-    }).catch(() => {});
+    void trySave(
+      () =>
+        fetch("/api/practice/quiz/attempt", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ itemId: q.id, chosen: authoredIdx, correct: authoredIdx === q.correct }),
+        }),
+      "Quiz answer",
+    );
   }
 
   function next() {

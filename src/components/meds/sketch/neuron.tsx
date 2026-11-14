@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { C, Callout, Choice, E, Fact, Figure, L, Label, P, R, Say, Sheet } from "./ink";
+import { C, Callout, Choice, E, Fact, Figure, L, Label, P, R, Say, Sheet } from "@/components/sketch/ink";
 
 type State = "without" | "with";
 

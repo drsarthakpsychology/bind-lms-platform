@@ -11,6 +11,7 @@ import { QuestionView, type Pick, type QView } from "../question";
 import { btnInk, btnPlain, btnPrimary } from "../ui";
 import { useReaction } from "@/components/reactions/use-reaction";
 import { EmptySticker, EndReaction, ScoreDial, StreakMeter } from "@/components/reactions/graphics";
+import { trySave } from "@/lib/save/client";
 
 export type PracticeQ = QView & { answer: number | boolean; student: string; clinician: string; label: string };
 
@@ -93,7 +94,7 @@ export function PracticeRunner({ questions, title, saving }: { questions: Practi
     setStreak((n) => (isRight ? n + 1 : 0));
     reaction.onAnswer(isRight);
     const ms = Math.max(0, Math.min(3_600_000, Date.now() - startedAt.current));
-    void answerPractice({ item: q.id, choice: p, ms }).catch(() => undefined);
+    void trySave(() => answerPractice({ item: q.id, choice: p, ms }), "Practice answer");
   }
 
   function next() {

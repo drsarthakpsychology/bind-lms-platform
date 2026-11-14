@@ -328,6 +328,17 @@
 /* =============================================================================
    APP SHELL — collapsible sidebar (full ↔ slim icon rail, like YouTube)
    ============================================================================= */
+/* MobileStickyAction (one pinned action with a context line, below 1024 px).
+   The page's bottom padding grows by its height. */
+:root:has(.sticky-action) {
+  --sticky-h: calc(6.25rem + var(--free-inset, 0px));
+}
+@media (min-width: 1024px) {
+  :root:has(.sticky-action) {
+    --sticky-h: 0px;
+  }
+}
+
 /* Bottom tab bar (phones, <768px). Surfaces that pin a bar above it offset by
    --nav-h (MobileStickyAction). It includes the safe-area inset so the offset
    clears the whole bar on notched phones. */
@@ -1082,7 +1093,7 @@ html[data-cvd="on"] .bg-destructive {
   }
 }
 
-/* Hand-drawn medicine pictures (src/components/meds/sketch): ink, brand blue
+/* Hand-drawn diagrams (src/components/sketch): ink, brand blue
    and lime on paper, re-inked for dark mode. */
 .sketch {
   --sk-ink: #1a1a1a;

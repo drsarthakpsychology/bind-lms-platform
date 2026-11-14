@@ -7,6 +7,8 @@ import { haptic } from "@/lib/haptics";
 import { cn } from "@/lib/utils";
 import { StatusPill } from "@/components/mobile/status-pill";
 import { TipButton, TipPanel, useFirstTimeTip } from "@/components/help/first-time-tip";
+import { CaseMarkTag, RecycleNote } from "@/components/cases/case-mark";
+import type { CaseMark } from "@/lib/cases/fresh";
 
 export interface CaseCard {
   id: string;
@@ -26,6 +28,10 @@ export interface CaseCard {
   unlocked?: boolean;
   /** How many completed cases unlock the next tier. */
   unlockAt?: number;
+  /** The open session to go back to (in progress only). */
+  sessionId?: string;
+  /** Half done, new this week, new or done (src/lib/cases/fresh.ts). */
+  mark?: CaseMark;
 }
 
 const DIFFICULTY_LABEL: Record<string, string> = {
@@ -56,7 +62,7 @@ const STATE_TONE: Record<NonNullable<CaseCard["state"]>, "neutral" | "ai"> = {
  * card: the whole card starts/resumes the session. "In progress" cases are
  * surfaced first so the Resume task is immediate (T33).
  */
-export function CasePicker({ cases }: { cases: CaseCard[] }) {
+export function CasePicker({ cases, recycled = false }: { cases: CaseCard[]; recycled?: boolean }) {
   const router = useRouter();
   const [starting, setStarting] = React.useState<string | null>(null);
   const [error, setError] = React.useState<string | null>(null);
@@ -64,6 +70,12 @@ export function CasePicker({ cases }: { cases: CaseCard[] }) {
 
   async function start(c: CaseCard) {
     if (starting) return;
+    // Half done: back into the open session, where it was left.
+    if (c.state === "in_progress" && c.sessionId) {
+      haptic("tap");
+      router.push(`/practice/consulting-room/session/${c.sessionId}`);
+      return;
+    }
     setStarting(c.id);
     setError(null);
     haptic("tap");
@@ -120,6 +132,8 @@ export function CasePicker({ cases }: { cases: CaseCard[] }) {
         </div>
       ) : null}
 
+      {recycled ? <RecycleNote /> : null}
+
       {inProgress.length > 0 ? (
         <section aria-label="Continue your session">
           <div className="mb-3 flex items-center gap-3">
@@ -139,7 +153,6 @@ export function CasePicker({ cases }: { cases: CaseCard[] }) {
           <div className="mb-3 flex items-center gap-3">
             <h2 className="text-eyebrow text-muted-foreground">{g.label}</h2>
             <span className="h-px flex-1 bg-border" aria-hidden />
-            <span className="text-caption text-muted-foreground">{g.items.length} patient{g.items.length === 1 ? "" : "s"}</span>
           </div>
           <ul className="grid grid-cols-1 gap-4 lg:grid-cols-2">
             {g.items.map((c) => (
@@ -170,7 +183,7 @@ function CaseCardItem({
   const locked = c.unlocked === false;
   const stateLabel =
     st === "completed" && typeof c.score === "number"
-      ? `${STATE_LABEL[st]} · ${Math.round(c.score * 10)}/10`
+      ? `${STATE_LABEL[st]} · ${Math.round(c.score * 10) / 10}/5`
       : STATE_LABEL[st];
 
   if (locked) {
@@ -208,7 +221,7 @@ function CaseCardItem({
             <p className="text-eyebrow text-link">{DIFFICULTY_LABEL[c.difficulty] ?? c.difficulty}</p>
             <h3 className="mt-0.5 text-body-strong text-foreground">{c.title}</h3>
           </div>
-          <StatusPill tone={STATE_TONE[st]} label={stateLabel} className="shrink-0" />
+          {c.mark ? <CaseMarkTag mark={c.mark} /> : <StatusPill tone={STATE_TONE[st]} label={stateLabel} className="shrink-0" />}
         </div>
         <blockquote className="mt-3 border-l-2 border-primary pl-3">
           <p className="text-small font-medium">&ldquo;{c.hook ?? c.summary}&rdquo;</p>
@@ -220,6 +233,7 @@ function CaseCardItem({
       </button>
       <div className="flex items-center justify-between gap-3 border-t border-border px-4 py-2">
         <span className="flex min-w-0 items-center gap-1.5 text-caption text-muted-foreground">
+          {st === "completed" && typeof c.score === "number" && c.mark ? <span className="shrink-0 tabular-nums">Best {Math.round(c.score * 10) / 10}/5</span> : null}
           {st === "completed" && typeof c.stars === "number" ? (
             <span className="shrink-0 text-status-pending-fg" aria-label={`${c.stars} of 3 stars earned`}>
               {"★".repeat(c.stars)}

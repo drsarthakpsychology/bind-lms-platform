@@ -2,7 +2,10 @@
 
 import * as React from "react";
 import { haptic } from "@/lib/haptics";
-import { SMALL_THINGS } from "@/lib/mse/small-things";
+import { SMALL_THINGS, smallItem } from "@/lib/mse/small-things";
+import { noteAnswer } from "@/lib/history/client";
+import { clearCaseProgress, saveCaseProgress } from "@/lib/cases/progress-client";
+import { RecycleNote } from "@/components/cases/case-mark";
 import { OnceHint } from "@/components/help/once-hint";
 import { EndReaction } from "@/components/reactions/graphics";
 
@@ -11,22 +14,33 @@ import { EndReaction } from "@/components/reactions/graphics";
  * interview is shown, the student says what it means (read), then the move.
  * Novices never notice these; this trains the noticing.
  */
-export function SmallThingsDrill() {
-  const [idx, setIdx] = React.useState(0);
+export function SmallThingsDrill({ walk }: { walk?: { order: string[]; start: number; fresh: number } }) {
+  // Fresh cases (src/lib/cases): moments never seen first, done ones last; it opens where it was left.
+  const [items] = React.useState(() => {
+    const byId = new Map(SMALL_THINGS.map((x) => [x.id, x]));
+    const list = (walk?.order ?? []).map((id) => byId.get(id)).filter((x): x is (typeof SMALL_THINGS)[number] => !!x);
+    return list.length === SMALL_THINGS.length ? list : SMALL_THINGS;
+  });
+  const [idx, setIdx] = React.useState(() => Math.min(Math.max(0, walk?.start ?? 0), items.length - 1));
   const [revealed, setRevealed] = React.useState(false);
 
-  const item = SMALL_THINGS[idx % SMALL_THINGS.length];
-  const done = idx >= SMALL_THINGS.length;
-  const seen = done ? SMALL_THINGS : SMALL_THINGS.slice(0, idx + (revealed ? 1 : 0));
+  const item = items[idx % items.length];
+  const done = idx >= items.length;
+  const seen = done ? items : items.slice(0, idx + (revealed ? 1 : 0));
+  const recycled = walk !== undefined && !done && idx >= walk.fresh;
 
   function next() {
     setRevealed(false);
-    setIdx((i) => i + 1);
+    const to = idx + 1;
+    setIdx(to);
+    if (to < items.length) saveCaseProgress("mse-small", "walk", { at: items[to].id });
+    else clearCaseProgress("mse-small", "walk");
     haptic("tap");
   }
 
   return (
     <div className="space-y-3">
+      {recycled && !revealed ? <RecycleNote /> : null}
       {!done ? (
         <div className="rounded-lg border-2 border-border bg-background p-4">
           <p className="text-caption font-semibold text-muted-foreground">
@@ -45,6 +59,8 @@ export function SmallThingsDrill() {
                 type="button"
                 onClick={() => {
                   setRevealed(true);
+                  // Seen (nothing is graded here): it goes behind the ones not seen yet.
+                  noteAnswer("mse-trainer", smallItem(item.id), null);
                   haptic("success");
                 }}
                 className="mt-2 min-h-11 rounded-md border-2 border-border bg-primary px-4 py-1.5 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px"

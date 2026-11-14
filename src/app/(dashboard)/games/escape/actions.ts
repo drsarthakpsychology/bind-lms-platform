@@ -1,9 +1,10 @@
 "use server";
 
-import { record } from "@/lib/history/server";
+import { record, recordHistory } from "@/lib/history/server";
+import { saveProgress } from "@/lib/cases/progress-server";
 import { z } from "zod";
 import { answer, escapeXp, raceBoard, startEscape, teamTime, type EscState, type RaceRow } from "@/lib/games-sims/escape/engine";
-import { canonical, practiceAnswer, practiceStart, practiceState, roomView, type PracticeToken } from "@/lib/games-sims/escape/deal";
+import { canonical, practiceAnswer, practiceResume, practiceStart, practiceState, roomView, type PracticeToken } from "@/lib/games-sims/escape/deal";
 import { roomById } from "@/lib/games-sims/escape/rooms";
 import type { RoomView } from "@/lib/games-sims/escape/types";
 import { secretSeed, sign, verify } from "@/lib/games/token";
@@ -129,6 +130,8 @@ export async function answerEscape(input: { teamId: string; stage: number; answe
         t.members.flatMap((m) => [
           saveResult(m.user_id, { game: "escape", item: r.id, score: n / (n + res.state.wrong), right: n, total: n + res.state.wrong, meta: { mode: "team", team: t.team.id, ms } }),
           payXp(m.user_id, "escape", escapeXp(ms, res.state.wrong), `team:${t.team.id}`),
+          // The room counts as done for every member (answer history).
+          recordHistory(m.user_id, "escape", [{ item: r.id, correct: n / (n + res.state.wrong) >= 0.6 }]),
         ]),
       );
     }
@@ -138,7 +141,7 @@ export async function answerEscape(input: { teamId: string; stage: number; answe
 }
 
 export type PracticeResult =
-  | { ok: true; token: string; view: RoomView; state: EscState; now: number; right?: boolean; ms?: number; xp?: number }
+  | { ok: true; token: string; view: RoomView; state: EscState; now: number; right?: boolean; ms?: number; xp?: number; elapsed?: number }
   | { ok: false; error: string };
 
 const FAIL = "That didn't load. Try again.";
@@ -154,6 +157,18 @@ export async function startEscapePractice(room: string): Promise<PracticeResult>
   const t = practiceStart(user.id, run, r, now);
   const st = practiceState(t, user.id)!.st;
   return { ok: true, token: sign(t), view: roomView(r, st, orderSeed(run)), state: st, now };
+}
+
+/** Carry on a practice run saved half-way (its signed token): back at the door it was left on. */
+export async function resumeEscapePractice(token: string): Promise<PracticeResult> {
+  const user = await currentUser();
+  if (!user) return { ok: false, error: "Please sign in again." };
+  const t = typeof token === "string" ? verify<PracticeToken>(token) : null;
+  const cur = practiceState(t, user.id);
+  if (!t || !cur || cur.st.done) return { ok: false, error: FAIL };
+  const now = Date.now();
+  const next = practiceResume(t, now);
+  return { ok: true, token: sign(next), view: roomView(cur.room, cur.st, orderSeed(t.run)), state: cur.st, now, elapsed: next.el };
 }
 
 /**
@@ -180,7 +195,7 @@ export async function answerEscapePractice(input: { token: string; stage: number
   const wrong = state.wrong;
   const ms = state.done ? teamTime(new Date(t.t0).toISOString(), now, wrong) : undefined;
   // An old token sent again gets its first result back, not a second try.
-  const { result: out, fresh } = await oncePerStep(user.id, "escape", t.run, String(t.tr.reduce((a, x) => a + x, 0)), () => ({ ok: true as const, token: sign(res.next), view: roomView(r, state, seed), state, now, right: res.ok, ...(ms !== undefined ? { ms } : {}) }));
+  const { result: out, fresh } = await oncePerStep(user.id, "escape", t.run, String(t.tr.reduce((a, x) => a + x, 0)), () => ({ ok: true as const, token: sign({ ...res.next, el: now - t.t0 }), view: roomView(r, state, seed), state, now, right: res.ok, ...(ms !== undefined ? { ms } : {}) }));
   if (!fresh) return out;
   await Promise.all([
     gradeAnswers(user, [{ skill: p.skill, item: `escape:${r.id}:${p.id}`, outcome: res.ok ? 1 : 0, first: res.first }]),
@@ -191,6 +206,9 @@ export async function answerEscapePractice(input: { token: string; stage: number
   const [, xp] = await Promise.all([
     saveResult(user.id, { game: "escape", item: r.id, score: n / (n + wrong), right: n, total: n + wrong, meta: { mode: "practice", ms } }),
     payXp(user.id, "escape", escapeXp(ms, wrong), `practice:${r.id}:${t.run}`),
+    // The room is done (answer history), and its saved door goes.
+    recordHistory(user.id, "escape", [{ item: r.id, correct: n / (n + wrong) >= 0.6 }]),
+    saveProgress(user.id, "escape", r.id, null),
   ]);
   return { ...out, xp };
 }

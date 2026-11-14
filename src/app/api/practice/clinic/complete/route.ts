@@ -1,8 +1,8 @@
 import { NextResponse } from "next/server";
 import { requireStudentApi } from "@/lib/auth/api-guard";
 import { createClient } from "@/lib/supabase/server";
-import { istToday } from "@/lib/practice/streaks";
-import { rateLimit } from "@/lib/rate-limit";
+import { istToday, nextDay } from "@/lib/practice/streaks";
+import { rateLimitWrite } from "@/lib/rate-limit";
 
 export const runtime = "nodejs";
 
@@ -18,7 +18,7 @@ export async function POST() {
   const profile = access.profile;
   const user = profile;
 
-  const allowed = await rateLimit(`clinic:complete:${user.id}`, 30);
+  const allowed = await rateLimitWrite(`clinic:complete:${user.id}`, 30);
   if (!allowed) return NextResponse.json({ error: "slow down" }, { status: 429 });
 
   const today = istToday();
@@ -31,9 +31,9 @@ export async function POST() {
 
   if (existing) {
     const sameDay = existing.last_active_date === today;
-    const wasYesterday = !sameDay && existing.last_active_date
-      ? istToday(new Date(new Date(existing.last_active_date).getTime() + 86400000))
-      : false;
+    // The last active day was yesterday (IST). This used to be the date string
+    // itself, which is always truthy, so any gap still grew the streak.
+    const wasYesterday = !sameDay && !!existing.last_active_date && nextDay(String(existing.last_active_date)) === today;
     const nextStreak = sameDay
       ? existing.current_streak
       : wasYesterday
@@ -45,6 +45,7 @@ export async function POST() {
         current_streak: nextStreak,
         longest_streak: Math.max(existing.longest_streak, nextStreak),
         last_active_date: today,
+        updated_at: new Date().toISOString(),
       })
       .eq("id", existing.id);
     if (error) return NextResponse.json({ error: error.message }, { status: 500 });

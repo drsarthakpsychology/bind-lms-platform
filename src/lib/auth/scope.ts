@@ -18,7 +18,9 @@ export function isBlocked(profile: { status?: "active" | "blocked" } | null): bo
 
 /**
  * The routes a lecture-only account may reach: the lecture list and player,
- * their cohort's Doubts board, their own journey and alerts. Everything else
+ * their cohort's Doubts board, their own journey, their alerts (the list and
+ * each message, which opens at /notifications/<id>) and their own
+ * certificates (a certificate notice links to /achievements). Everything else
  * (Notes, Games, Practice, Medicines, Wall, Journal) needs Full access, which
  * the admin sets per student on People → Access.
  */
@@ -27,6 +29,16 @@ export function lectureOnlyAllowed(pathname: string): boolean {
   if (pathname === "/courses" || pathname.startsWith("/courses/")) return true;
   if (pathname === "/doubts" || pathname.startsWith("/doubts/")) return true;
   if (pathname === "/journey") return true;
-  if (pathname === "/notifications") return true;
+  if (pathname === "/notifications" || pathname.startsWith("/notifications/")) return true;
+  if (pathname === "/achievements") return true;
   return false;
+}
+
+/**
+ * Games, practice games and the duel are Full-access features. Their server
+ * actions and routes are reachable without the page, so they check this too.
+ * Admins and alumni are never lectures-only.
+ */
+export function gamesAllowed(profile: ScopedProfile | null): boolean {
+  return Boolean(profile) && !isLecturesOnly(profile);
 }

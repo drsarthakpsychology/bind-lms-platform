@@ -12,6 +12,8 @@
  * effects (never during render): they read localStorage and the clock.
  */
 import * as React from "react";
+import { mergeHistory as mergeQueued } from "@/lib/save/outbox";
+import { queueSave } from "@/lib/save/client";
 import { cleanItem, mergeHistory, nextRow, orderByHistory, pickRound, type History, type HistoryRow, type HistoryTool } from "./order";
 
 const KEY = (tool: string) => `vibha-history-v1:${tool}`;
@@ -36,10 +38,21 @@ export function setHistoryTransport(t?: Transport) {
 const server = new Map<string, Map<string, HistoryRow>>();
 const fetching = new Map<string, Promise<void>>();
 
+function rawLocal(tool: string): string | null {
+  try {
+    return window.localStorage.getItem(KEY(tool));
+  } catch {
+    return null;
+  }
+}
+
 function readLocal(tool: string): { owner: string | null; map: Map<string, HistoryRow> } {
+  return parseLocal(rawLocal(tool));
+}
+
+function parseLocal(raw: string | null): { owner: string | null; map: Map<string, HistoryRow> } {
   const map = new Map<string, HistoryRow>();
   try {
-    const raw = window.localStorage.getItem(KEY(tool));
     if (!raw) return { owner: null, map };
     const s = JSON.parse(raw) as Stored;
     for (const [item, v] of Object.entries(s?.r ?? {})) {
@@ -63,6 +76,28 @@ function writeLocal(tool: string, owner: string | null, map: ReadonlyMap<string,
   } catch {
     /* storage full or blocked: the server copy still counts */
   }
+  for (const f of watchers.get(tool) ?? []) f();
+}
+
+const watchers = new Map<string, Set<() => void>>();
+
+/**
+ * This tool's history for rendering (pick screens): the rows the page got
+ * from the server merged with this browser's copy. Re-renders after
+ * noteAnswer, so a case finished a moment ago shows as done.
+ */
+export function useToolHistory(tool: HistoryTool, serverRows?: readonly HistoryRow[]): History {
+  const subscribe = React.useCallback(
+    (f: () => void) => {
+      const set = watchers.get(tool) ?? new Set();
+      set.add(f);
+      watchers.set(tool, set);
+      return () => void set.delete(f);
+    },
+    [tool],
+  );
+  const raw = React.useSyncExternalStore(subscribe, () => rawLocal(tool), () => null);
+  return React.useMemo(() => mergeHistory(new Map((serverRows ?? []).map((r) => [r.item, r])), parseLocal(raw).map), [raw, serverRows]);
 }
 
 /** Fetch this student's server rows for a tool (once per page load). Never throws. */
@@ -116,7 +151,17 @@ export function noteAnswers(tool: HistoryTool, answers: readonly { item: string;
   }
   writeLocal(tool, local.owner, local.map);
   if (opts.server === false) return;
-  void transport.record(tool, list.map((a) => ({ item: a.item, correct: a.correct }))).catch(() => {});
+  const payload = list.map((a) => ({ item: a.item, correct: a.correct }));
+  // Through the save outbox when it runs (kept until stored, retried); else direct.
+  if (transport === viaActions && queueSave("history", tool, { tool, answers: payload }, mergeQueued)) return;
+  void transport.record(tool, payload).then(
+    (r) => {
+      if (r && typeof r === "object" && (r as { ok?: unknown }).ok === false) console.warn(`Answer history for ${tool} was not saved on the server.`);
+    },
+    () => {
+      /* offline: the browser copy still has it */
+    },
+  );
 }
 
 export function noteAnswer(tool: HistoryTool, item: string, correct: boolean | null, opts: { server?: boolean } = {}) {

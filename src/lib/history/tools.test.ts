@@ -29,15 +29,23 @@ describe("pickers that follow the answer history", () => {
     expect(buildRun("mixed", makeRng(3))).toHaveLength(buildRun("mixed", makeRng(3)).length);
   });
 
-  it("MSE Lab: an excerpt not seen yet, then a missed one, then the oldest right one", () => {
+  it("MSE Lab: an excerpt never done (at the level, else the nearest level); done ones only once all are done", () => {
     const level = EXCERPTS[0].level;
     const pool = EXCERPTS.filter((e) => e.level === level);
-    const allRight = H(pool.map((e, i) => right(e.id, NOW - 1000 + i)));
-    expect(pickExcerpt(level, new Set(), makeRng(1), allRight, NOW)?.id).toBe(pool[0].id);
-    const oneMissed = H([...pool.map((e) => right(e.id)), wrong(pool[2].id)]);
-    expect(pickExcerpt(level, new Set(), makeRng(4), oneMissed, NOW)?.id).toBe(pool[2].id);
     const oneNew = H(pool.slice(1).map((e) => right(e.id)));
     expect(pickExcerpt(level, new Set(), makeRng(9), oneNew, NOW)?.id).toBe(pool[0].id);
+    // Every excerpt at the level done: a new one from the nearest level, never a done one.
+    const levelDone = H(pool.map((e) => right(e.id)));
+    for (let seed = 1; seed < 6; seed++) {
+      const e = pickExcerpt(level, new Set(), makeRng(seed), levelDone, NOW)!;
+      expect(levelDone.has(e.id)).toBe(false);
+      expect(Math.abs(e.level - level)).toBe(1);
+    }
+    // Every excerpt done: the missed one at the level first, then the oldest right one.
+    const allRight = H(EXCERPTS.map((e, i) => right(e.id, NOW - 100000 + i)));
+    expect(pickExcerpt(level, new Set(), makeRng(1), allRight, NOW)?.id).toBe(pool[0].id);
+    const oneMissed = H([...EXCERPTS.map((e) => right(e.id)), wrong(pool[2].id)]);
+    expect(pickExcerpt(level, new Set(), makeRng(4), oneMissed, NOW)?.id).toBe(pool[2].id);
   });
 
   it("MSE trainer: a domain round takes unseen stimuli first", () => {

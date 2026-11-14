@@ -15,6 +15,11 @@ import { HintBar, useHintStatus } from "@/components/hints/hint-chip";
 import { askHint } from "@/lib/hints/actions";
 import { useReaction } from "@/components/reactions/use-reaction";
 import { EndReaction } from "@/components/reactions/graphics";
+import { arrangeCases, nextCase, type CaseMark } from "@/lib/cases/fresh";
+import type { CaseContext } from "@/lib/cases/server";
+import { clearCaseProgress, saveCaseProgress, useCaseProgress } from "@/lib/cases/progress-client";
+import { noteAnswer, useToolHistory } from "@/lib/history/client";
+import { CaseMarkTag, RecycleNote } from "@/components/cases/case-mark";
 
 type Actions = {
   startWardSolo: (campaign: string) => Promise<WardSolo>;
@@ -33,15 +38,43 @@ const Q_TONE: Record<Quality, Tone> = { best: "good", ok: "part", poor: "bad", h
 const SOLO_KEY = "vibha-ward-solo";
 
 type Started = Extract<WardSolo, { ok: true }>;
-/** A solo game saved in this browser: its signed token (or, from before the token, its campaign and choices). */
-type Saved = { token?: string; campaign: string; title: string; choices?: string[] };
-type Mode = { kind: "pick" } | { kind: "solo"; campaign: string; title: string; start: Started; n: number } | { kind: "team"; teamId: string };
+/**
+ * A solo game saved half-way, per patient (saved progress, src/lib/cases):
+ * its signed game from the server, or, from before that, its choices.
+ */
+type Saved = { token?: string; choices?: string[] };
+type Mode = { kind: "pick" } | { kind: "solo"; campaign: string; start: Started; n: number } | { kind: "team"; teamId: string };
 const FAIL = "That didn't load. Try again.";
 
+const savedOk = (s: Saved | null): s is Saved => !!s && (typeof s.token === "string" || (Array.isArray(s.choices) && s.choices.length > 0 && s.choices.every((x) => typeof x === "string")));
+
+/** Campaigns in fresh-case order (src/lib/cases/fresh.ts): half done, new this week, new, done last. */
+function useCampaigns(campaigns: CampaignCard[], cases: CaseContext) {
+  const history = useToolHistory("ward", cases.history);
+  const progress = useCaseProgress("ward", cases.progress);
+  const legacy = useLegacySolo();
+  const started = React.useMemo(() => {
+    const set = new Set([...progress.started].filter((id) => campaigns.some((c) => c.id === id) && savedOk(progress.get<Saved>(id))));
+    if (legacy && !progress.rows.has(legacy.campaign) && campaigns.some((c) => c.id === legacy.campaign)) set.add(legacy.campaign);
+    return set;
+  }, [progress, legacy, campaigns]);
+  const opts = { history, now: cases.now, student: cases.student, started, level: (c: CampaignCard) => c.level };
+  const arranged = arrangeCases(campaigns, (c) => c.id, opts);
+  /** The saved game for a half-done campaign. */
+  const savedFor = (id: string): Saved | null => {
+    const s = progress.get<Saved>(id);
+    if (savedOk(s)) return s;
+    return legacy?.campaign === id ? { choices: legacy.choices } : null;
+  };
+  const next = (current?: string) => nextCase(campaigns, (c) => c.id, { ...opts, current })?.item.id ?? null;
+  return { arranged, savedFor, next };
+}
+
 /* ------------------------------------------------------------------ root */
-export function WardWeek({ campaigns, teamsOn, openTeam, teams, actions }: { campaigns: CampaignCard[]; teamsOn: boolean; openTeam: string | null; teams: TeamListItem[]; actions: Actions }) {
+export function WardWeek({ campaigns, cases, teamsOn, openTeam, teams, actions }: { campaigns: CampaignCard[]; cases: CaseContext; teamsOn: boolean; openTeam: string | null; teams: TeamListItem[]; actions: Actions }) {
   const [mode, setMode] = React.useState<Mode>(openTeam ? { kind: "team", teamId: openTeam } : { kind: "pick" });
   const [startErr, setStartErr] = React.useState<string | null>(null);
+  const camps = useCampaigns(campaigns, cases);
   const titleOf = (id: string) => campaigns.find((c) => c.id === id)?.title ?? id;
 
   function goTeam(teamId: string) {
@@ -61,49 +94,65 @@ export function WardWeek({ campaigns, teamsOn, openTeam, teams, actions }: { cam
     }
     setMode({ kind: "pick" });
   }
-  /** The server deals the game; the browser gets the first session only. */
-  async function solo(campaign: string, ask: () => Promise<WardSolo>): Promise<string | null> {
-    const r = await ask().catch(() => null);
-    if (!r || !r.ok) return r?.error ?? FAIL;
+  function show(campaign: string, r: Started) {
     startHowTo("ward-week");
-    const title = titleOf(campaign);
-    writeLocal(SOLO_KEY, { token: r.token, campaign, title } satisfies Saved);
-    setMode((m) => ({ kind: "solo", campaign, title, start: r, n: m.kind === "solo" ? m.n + 1 : 0 }));
+    setMode((m) => ({ kind: "solo", campaign, start: r, n: m.kind === "solo" ? m.n + 1 : 0 }));
+  }
+  /** A new game, dealt by the server: the first session only. */
+  async function fresh(campaign: string): Promise<string | null> {
+    const r = await actions.startWardSolo(campaign).catch(() => null);
+    if (!r || !r.ok) return r?.error ?? FAIL;
+    show(campaign, r);
     return null;
   }
+  /** Open a campaign: carry on where it was left (the server replays the saved game), else a new one. */
+  async function open(campaign: string): Promise<string | null> {
+    const saved = camps.savedFor(campaign);
+    if (saved) {
+      const r = await actions.resumeWardSolo(saved.token ? { token: saved.token } : { campaign, choices: saved.choices }).catch(() => null);
+      if (r && r.ok) {
+        if (!saved.token) writeLocal(SOLO_KEY, null);
+        saveCaseProgress("ward", campaign, { token: r.token } satisfies Saved);
+        show(campaign, r);
+        return null;
+      }
+      // A saved game that can't be carried on (finished, or from another account) is dropped.
+      if (r) {
+        clearCaseProgress("ward", campaign);
+        writeLocal(SOLO_KEY, null);
+      }
+    }
+    return fresh(campaign);
+  }
+  const fail = (e: string | null) => {
+    if (e) {
+      setStartErr(e);
+      goPick();
+    }
+  };
 
-  if (mode.kind === "solo")
+  if (mode.kind === "solo") {
+    const nextId = camps.next(mode.campaign);
     return (
       <SoloPlay
         key={mode.n}
         start={mode.start}
         campaign={mode.campaign}
-        title={mode.title}
         pick={actions.pickWardSolo}
         onExit={goPick}
-        onAgain={async () => {
-          const e = await solo(mode.campaign, () => actions.startWardSolo(mode.campaign));
-          if (e) {
-            setStartErr(e);
-            goPick();
-          }
-        }}
+        onAgain={async () => fail(await fresh(mode.campaign))}
+        onNext={nextId && nextId !== mode.campaign ? async () => fail(await open(nextId)) : undefined}
       />
     );
+  }
   if (mode.kind === "team") return <TeamPlay teamId={mode.teamId} actions={actions} onExit={goPick} />;
   return (
     <Pick
-      campaigns={campaigns}
+      arranged={camps.arranged}
       startErr={startErr}
       teamsOn={teamsOn}
       teams={teams}
-      onSolo={(c) => solo(c, () => actions.startWardSolo(c))}
-      onResume={async (s) => {
-        const e = await solo(s.campaign, () => actions.resumeWardSolo(s.token ? { token: s.token } : { campaign: s.campaign, choices: s.choices }));
-        // A saved game that can't be carried on (finished, or from another account) is cleared.
-        if (e) writeLocal(SOLO_KEY, null);
-        return e;
-      }}
+      onSolo={open}
       onCreate={async (c) => {
         const r = await actions.createWardTeam(c);
         if (r.ok) goTeam(r.teamId);
@@ -120,8 +169,8 @@ export function WardWeek({ campaigns, teamsOn, openTeam, teams, actions }: { cam
   );
 }
 
-/** A solo game left half-way (read from this browser without an effect). */
-function useSavedSolo(campaigns: CampaignCard[]): Saved | null {
+/** A solo campaign left half-way under the old single-slot key (before saved progress per patient). */
+function useLegacySolo(): { campaign: string; choices: string[] } | null {
   const raw = React.useSyncExternalStore(
     () => () => undefined,
     () => {
@@ -136,43 +185,36 @@ function useSavedSolo(campaigns: CampaignCard[]): Saved | null {
   return React.useMemo(() => {
     if (!raw) return null;
     try {
-      const s = JSON.parse(raw) as Partial<Saved> & { choices?: unknown };
-      const c = campaigns.find((x) => x.id === s.campaign);
-      if (!c) return null;
-      if (typeof s.token === "string") return { token: s.token, campaign: c.id, title: c.title };
-      // Saved before the token: carried on if a choice was made.
-      return Array.isArray(s.choices) && s.choices.length && s.choices.every((x) => typeof x === "string") ? { campaign: c.id, title: c.title, choices: s.choices as string[] } : null;
+      const s = JSON.parse(raw) as { campaign?: unknown; choices?: unknown };
+      return typeof s.campaign === "string" && Array.isArray(s.choices) && s.choices.length && s.choices.every((x) => typeof x === "string") ? { campaign: s.campaign, choices: s.choices as string[] } : null;
     } catch {
       return null;
     }
-  }, [raw, campaigns]);
+  }, [raw]);
 }
 
 /* ------------------------------------------------------------------ pick */
 function Pick({
-  campaigns,
+  arranged,
   startErr,
   teamsOn,
   teams,
   onSolo,
-  onResume,
   onCreate,
   onJoin,
   onOpenTeam,
   titleOf,
 }: {
-  campaigns: CampaignCard[];
+  arranged: { list: { item: CampaignCard; id: string; mark: CaseMark }[]; recycled: boolean };
   startErr: string | null;
   teamsOn: boolean;
   teams: TeamListItem[];
   onSolo: (c: string) => Promise<string | null>;
-  onResume: (s: Saved) => Promise<string | null>;
   onCreate: (c: string) => Promise<string | null>;
   onJoin: (code: string) => Promise<string | null>;
   onOpenTeam: (id: string) => void;
   titleOf: (id: string) => string;
 }) {
-  const saved = useSavedSolo(campaigns);
   const [err, setErr] = React.useState<string | null>(startErr);
   const [busy, setBusy] = React.useState<string | null>(null);
   async function run(key: string, fn: () => Promise<string | null>) {
@@ -183,38 +225,43 @@ function Pick({
     setBusy(null);
     if (e) setErr(e);
   }
-  useHotkeys(Object.fromEntries(campaigns.slice(0, 9).map((c, k) => [String(k + 1), () => void run(`solo:${c.id}`, () => onSolo(c.id))])));
+  const list = arranged.list;
+  useHotkeys(Object.fromEntries(list.slice(0, 9).map((x, k) => [String(k + 1), () => void run(`solo:${x.id}`, () => onSolo(x.id))])));
   const live = teams.filter((t) => t.status !== "done");
+  const resume = list.filter((x) => x.mark === "started");
   return (
     <div className={cn("mx-auto max-w-3xl space-y-6", m.rise)}>
       <h1 className="text-h2">Pick a patient</h1>
 
-      {saved ? (
-        <Panel className="flex flex-wrap items-center gap-3 bg-status-info-bg">
+      {resume.map((x) => (
+        <Panel key={x.id} className="flex flex-wrap items-center gap-3 bg-status-info-bg">
           <BookOpen className="size-5" aria-hidden />
           <p className="min-w-0 flex-1 text-body">
-            You left <span className="font-semibold">{saved.title}</span> half-way.
+            You left <span className="font-semibold">{x.item.title}</span> half-way.
           </p>
-          <Btn variant="ink" disabled={busy !== null} onClick={() => void run("resume", () => onResume(saved))}>
-            <Play aria-hidden /> {busy === "resume" ? "Opening…" : "Carry on"}
+          <Btn variant="ink" disabled={busy !== null} onClick={() => void run(`resume:${x.id}`, () => onSolo(x.id))}>
+            <Play aria-hidden /> {busy === `resume:${x.id}` ? "Opening…" : "Carry on"}
           </Btn>
         </Panel>
-      ) : null}
+      ))}
+      {arranged.recycled ? <RecycleNote /> : null}
 
       <ul className={cn("grid gap-4 md:grid-cols-3", m.stagger)}>
-        {campaigns.map((c, i) => (
-          <li key={c.id} className={cn("flex flex-col rounded-xl border-2 border-foreground bg-card p-4 hard-shadow-sm", m.rise)} style={{ "--i": i } as React.CSSProperties}>
-            <p className="flex items-center gap-1.5 text-caption text-muted-foreground">
-              <MapPin className="size-3.5" aria-hidden />
-              {c.place}
-            </p>
+        {list.map(({ item: c, mark }, i) => (
+          <li key={c.id} className={cn("flex min-w-0 flex-col rounded-xl border-2 border-foreground bg-card p-4 hard-shadow-sm", mark === "done" && !arranged.recycled && "border-foreground/40 shadow-none", m.rise)} style={{ "--i": i } as React.CSSProperties}>
+            <div className="flex items-start justify-between gap-2">
+              <p className="flex min-w-0 items-center gap-1.5 text-caption text-muted-foreground">
+                <MapPin className="size-3.5 shrink-0" aria-hidden />
+                <span className="truncate">{c.place}</span>
+              </p>
+              <CaseMarkTag mark={mark} />
+            </div>
             <h2 className="mt-1 text-h3">{c.title}</h2>
             <p className="text-small font-semibold">{c.patient}</p>
             <p className="mt-2 flex-1 text-small">{c.blurb}</p>
-            <p className="mt-2 text-caption text-muted-foreground">{c.sessions} sessions</p>
             <div className="mt-3 grid gap-2">
-              <Btn variant="primary" disabled={busy !== null} onClick={() => void run(`solo:${c.id}`, () => onSolo(c.id))}>
-                <Play aria-hidden /> {busy === `solo:${c.id}` ? "Starting…" : "Play solo"} {i < 9 ? <Kbd>{i + 1}</Kbd> : null}
+              <Btn variant={mark === "done" ? "outline" : "primary"} disabled={busy !== null} onClick={() => void run(`solo:${c.id}`, () => onSolo(c.id))}>
+                {mark === "done" ? <RotateCcw aria-hidden /> : <Play aria-hidden />} {busy === `solo:${c.id}` ? "Starting…" : mark === "started" ? "Carry on" : mark === "done" ? "Play again" : "Play solo"} {i < 9 ? <Kbd>{i + 1}</Kbd> : null}
               </Btn>
               {teamsOn ? (
                 <Btn disabled={busy !== null} onClick={() => void run(c.id, () => onCreate(c.id).catch(() => "Couldn't start a team. Try again."))}>
@@ -264,7 +311,7 @@ function Pick({
 }
 
 /* ------------------------------------------------------------------ solo */
-function SoloPlay({ start, campaign, title, pick: pickOnServer, onExit, onAgain }: { start: Started; campaign: string; title: string; pick: Actions["pickWardSolo"]; onExit: () => void; onAgain: () => void }) {
+function SoloPlay({ start, campaign, pick: pickOnServer, onExit, onAgain, onNext }: { start: Started; campaign: string; pick: Actions["pickWardSolo"]; onExit: () => void; onAgain: () => void; onNext?: () => void }) {
   const [token, setToken] = React.useState(start.token);
   const [scene, setScene] = React.useState<Scene>(start.scene);
   const [reveal, setReveal] = React.useState<WardReveal | null>(null);
@@ -299,13 +346,18 @@ function SoloPlay({ start, campaign, title, pick: pickOnServer, onExit, onAgain 
     setReveal(r.reveal);
     if (r.scene.done) {
       writeLocal(SOLO_KEY, null);
+      clearCaseProgress("ward", campaign);
+      // Done on this device straight away; the server records it too.
+      noteAnswer("ward", campaign, (r.end?.score ?? 0) >= 50, { server: false });
       setEnd(r.end ?? null);
       setResult({ xp: r.saved ? (r.xp ?? 0) : 0, saved: !!r.saved });
       if (r.saved && r.xp) creditServerPlay(r.xp);
-    } else writeLocal(SOLO_KEY, { token: r.token, campaign, title } satisfies Saved);
+    }
+    // Saved progress (src/lib/cases): the signed game, this browser at once, the server shortly after.
+    else saveCaseProgress("ward", campaign, { token: r.token } satisfies Saved);
   }
 
-  if (scene.done && !reveal && end) return <EndScreen title={scene.title} end={end} xp={result ? result.xp : null} onAgain={onAgain} onExit={onExit} />;
+  if (scene.done && !reveal && end) return <EndScreen title={scene.title} end={end} xp={result ? result.xp : null} onAgain={onAgain} onNext={onNext} onExit={onExit} />;
 
   return (
     <Stage
@@ -537,11 +589,12 @@ function RevealCard({ r, onNext, nextLabel }: { r: WardReveal & { teamLine?: str
 }
 
 /* ------------------------------------------------------------------- end */
-function EndScreen({ title, end, xp, onAgain, onExit, teamLine }: { title: string; end: WardEnd; xp: number | null; onAgain?: () => void; onExit: () => void; teamLine?: string }) {
+function EndScreen({ title, end, xp, onAgain, onNext, onExit, teamLine }: { title: string; end: WardEnd; xp: number | null; onAgain?: () => void; onNext?: () => void; onExit: () => void; teamLine?: string }) {
   const score = end.score;
   const tone: Tone = score >= 72 ? "good" : score >= 50 ? "part" : "bad";
   const strong = end.log.filter((l) => l.q === "best").length;
-  useHotkeys(onAgain ? { Enter: onAgain } : {});
+  const primary = onNext ?? onAgain;
+  useHotkeys(primary ? { Enter: primary } : {});
   return (
     <div className={cn("mx-auto max-w-3xl space-y-5", m.rise)}>
       <div className="flex flex-wrap items-end gap-3">
@@ -595,9 +648,14 @@ function EndScreen({ title, end, xp, onAgain, onExit, teamLine }: { title: strin
       </section>
 
       <div className="grid gap-2 sm:grid-cols-2">
+        {onNext ? (
+          <Btn variant="primary" size="lg" className="sm:col-span-2" onClick={onNext}>
+            Next patient <ArrowRight aria-hidden /> <Kbd>Enter</Kbd>
+          </Btn>
+        ) : null}
         {onAgain ? (
-          <Btn variant="primary" size="lg" onClick={onAgain}>
-            <RotateCcw aria-hidden /> Play again <Kbd>Enter</Kbd>
+          <Btn variant={onNext ? "outline" : "primary"} size="lg" onClick={onAgain}>
+            <RotateCcw aria-hidden /> Play again {onNext ? null : <Kbd>Enter</Kbd>}
           </Btn>
         ) : null}
         <Btn size="lg" onClick={onExit}>

@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import { trackLearn } from "@/lib/learn/track";
 import { sfx } from "./sfx";
 import { SliceCanvas } from "./slice-canvas";
+import { C, E, L, Label, P, Pg, Sheet } from "@/components/sketch/ink";
 import { JourneySteps, ModeTabs, Scene3DSlot, SceneCard, ViewSwitch, along, btn, chip, flatD, statusCls, useInView, useJourney, useLegProgress, useSceneView, useThemeColors, type Journey, type V3 } from "./kit";
 import { ALWAYS, BLOBS, BPATHS_FLAT, CEREBELLUM, CORTEX, DEEP, EAR, EYES, GUIDE, HEMI, LAYERS, NIGRA, PITUITARY, PONS, REGION, REGIONS, REGION_COLOR, TUBES, type GuideView, type RegionId } from "./brain-explorer-data";
 
@@ -281,78 +282,103 @@ function GuidedFlat(p: { view: GuideView; layer: number; sel: RegionId | null; d
 
 /** The brain seen from below: frontal lobes at the top, temporal lobes at the sides, brainstem and cerebellum at the bottom. */
 function InferiorFlat({ onPick, sel }: { onPick: (r: RegionId) => void; sel: RegionId | null }) {
-  const ring = (id: RegionId) => (sel === id ? "stroke-foreground" : "stroke-foreground/50");
+  const ring = (id: RegionId) => (sel === id ? C.ink : C.soft);
+  const lobe = (m: number) => `M${160 + m * 6} 22 C ${160 + m * 70} 20 ${160 + m * 112} 70 ${160 + m * 110} 150 C ${160 + m * 108} 220 ${160 + m * 70} 262 ${160 + m * 8} 262 Z`;
+  const temp = (m: number) => `M${160 + m * 40} 118 C ${160 + m * 104} 110 ${160 + m * 112} 170 ${160 + m * 96} 214 C ${160 + m * 80} 236 ${160 + m * 46} 214 ${160 + m * 38} 170 Z`;
   return (
-    <svg viewBox="0 0 320 290" className="mx-auto block h-full w-full" role="img" aria-label="The brain from below. The written description says what you see.">
+    <Sheet bare name="brain-below" w={320} h={290} label="The brain from below. The written description says what you see." className="mx-auto h-full w-full">
       {[-1, 1].map((m) => (
         <g key={m}>
-          <path d={`M${160 + m * 6} 22 C ${160 + m * 70} 20 ${160 + m * 112} 70 ${160 + m * 110} 150 C ${160 + m * 108} 220 ${160 + m * 70} 262 ${160 + m * 8} 262 Z`} fill={REGION_COLOR.frontal} className={cn("cursor-pointer", ring("frontal"))} strokeWidth="1.5" onClick={() => onPick("frontal")} />
-          <path d={`M${160 + m * 40} 118 C ${160 + m * 104} 110 ${160 + m * 112} 170 ${160 + m * 96} 214 C ${160 + m * 80} 236 ${160 + m * 46} 214 ${160 + m * 38} 170 Z`} fill={REGION_COLOR.temporal} className={cn("cursor-pointer", ring("temporal"))} strokeWidth="1.5" onClick={() => onPick("temporal")} />
-          <ellipse cx={160 + m * 6} cy="60" rx="5" ry="22" className="fill-[#d9c7b8] stroke-foreground/60" />
+          <g className="cursor-pointer" onClick={() => onPick("frontal")}><P k={`bb-f${m}-${sel === "frontal"}`} d={lobe(m)} fill={REGION_COLOR.frontal} fillStyle="solid" stroke={ring("frontal")} sw={sel === "frontal" ? 2.4 : 1.5} /></g>
+          <g className="cursor-pointer" onClick={() => onPick("temporal")}><P k={`bb-t${m}-${sel === "temporal"}`} d={temp(m)} fill={REGION_COLOR.temporal} fillStyle="solid" stroke={ring("temporal")} sw={sel === "temporal" ? 2.4 : 1.5} /></g>
+          <E k={`bb-olf${m}`} cx={160 + m * 6} cy={60} w={10} h={44} fill={C.wash} fillStyle="solid" stroke={C.soft} sw={1.2} />
         </g>
       ))}
-      <path d="M160 22 V 262" className="stroke-foreground/50" strokeWidth="1.5" />
-      <ellipse cx="160" cy="236" rx="74" ry="34" fill={REGION_COLOR.cerebellum} className={cn("cursor-pointer", ring("cerebellum"))} strokeWidth="1.5" onClick={() => onPick("cerebellum")} />
-      <circle cx="160" cy="176" r="24" fill={REGION_COLOR.brainstem} className={cn("cursor-pointer", ring("brainstem"))} strokeWidth="1.5" onClick={() => onPick("brainstem")} />
-      <path d="M136 128 L 184 128 M148 120 L 172 136 M172 120 L 148 136" className="stroke-foreground" strokeWidth="2" />
-      <circle cx="160" cy="146" r="6" className="fill-[#f0a35e] stroke-foreground" onClick={() => onPick("hypothalamus")} />
-      <text x="160" y="14" textAnchor="middle" className="fill-muted-foreground text-[11px]">front</text>
-      <text x="160" y="286" textAnchor="middle" className="fill-muted-foreground text-[11px]">back</text>
-      <text x="112" y="132" textAnchor="end" className="fill-foreground text-[10px]">optic chiasm</text>
-    </svg>
+      <L k="bb-mid" x1={160} y1={22} x2={160} y2={262} stroke={C.soft} sw={1.4} single />
+      <g className="cursor-pointer" onClick={() => onPick("cerebellum")}><E k={`bb-cb-${sel === "cerebellum"}`} cx={160} cy={236} w={148} h={68} fill={REGION_COLOR.cerebellum} fillStyle="solid" stroke={ring("cerebellum")} sw={sel === "cerebellum" ? 2.4 : 1.5} /></g>
+      <g className="cursor-pointer" onClick={() => onPick("brainstem")}><E k={`bb-bs-${sel === "brainstem"}`} cx={160} cy={176} w={48} h={48} fill={REGION_COLOR.brainstem} fillStyle="solid" stroke={ring("brainstem")} sw={sel === "brainstem" ? 2.4 : 1.5} /></g>
+      <P k="bb-chiasm" d="M136 128 L 184 128 M148 120 L 172 136 M172 120 L 148 136" sw={2} single />
+      <g className="cursor-pointer" onClick={() => onPick("hypothalamus")}><E k="bb-hyp" cx={160} cy={146} w={12} h={12} fill={C.lime} fillStyle="solid" sw={1.2} /></g>
+      <Label x={160} y={14} size={13} anchor="middle" bold={false} color={C.soft}>front</Label>
+      <Label x={160} y={286} size={13} anchor="middle" bold={false} color={C.soft}>back</Label>
+      <Label x={124} y={132} size={12} anchor="end">optic chiasm</Label>
+    </Sheet>
   );
 }
 
-export function BrainFlat({ layer, sel, damage, journey, onPick, reduce }: { layer: number; sel: RegionId | null; damage: boolean; journey: Journey; onPick: (r: RegionId) => void; reduce: boolean }) {
-  const t = useLegProgress(journey, reduce);
+/** The drawing of the side view: re-inked only when the layer, the picked part or the damage switch changes, not every frame of a signal. */
+const BrainSide = React.memo(function BrainSide({ layer, sel, damage }: { layer: number; sel: RegionId | null; damage: boolean }) {
   const cortexOp = layer === 0 ? 1 : 0.16;
   const deepOp = layer === 0 ? 0 : 1;
-  const fill = (id: RegionId) => (sel === id && damage ? "#8a7f7f" : REGION_COLOR[id]);
-  const ring = (id: RegionId) => (sel === id ? (damage ? "stroke-[var(--destructive)]" : "stroke-foreground") : "stroke-foreground/50");
-  const sw = (id: RegionId) => (sel === id ? 3 : 1);
-  const cur = journey.cur;
-  const head = cur ? along(BPATHS_FLAT[cur.path], t) : null;
+  const fill = (id: RegionId) => (sel === id && damage ? C.soft : REGION_COLOR[id]);
+  const ring = (id: RegionId) => (sel === id ? (damage ? C.red : C.ink) : C.soft);
+  const sw = (id: RegionId) => (sel === id ? 2.6 : 1.2);
+  const tag = (id: RegionId) => `${sel === id}-${damage}`;
   return (
-    <svg viewBox="0 0 360 290" className="mx-auto block h-full w-full" role="img" aria-label="A side view of the brain, front to the left. The written description below says what is happening.">
-      <style>{`@keyframes be-pulse { 0%,100% { opacity: 0.2 } 50% { opacity: 0.6 } } .be-hot { animation: be-pulse 1.2s ease-in-out infinite; }`}</style>
+    <g className="pointer-events-none">
       {/* eye and ear */}
-      <circle cx={sx(EYES[0][0])} cy={sy(EYES[0][1])} r="9" className="fill-white stroke-foreground" strokeWidth="1.5" />
-      <circle cx={sx(EYES[0][0]) - 3} cy={sy(EYES[0][1])} r="3.5" className="fill-foreground" />
-      <ellipse cx={sx(EAR[0])} cy={sy(EAR[1]) + 6} rx="6" ry="10" className="fill-none stroke-foreground/40" strokeWidth="2" strokeDasharray="3 2" />
+      <E k="bs-eye" cx={sx(EYES[0][0])} cy={sy(EYES[0][1])} w={18} h={18} fill={C.paper} fillStyle="solid" sw={1.4} />
+      <circle cx={sx(EYES[0][0]) - 3} cy={sy(EYES[0][1])} r="3.5" fill={C.ink} />
+      <E k="bs-ear" cx={sx(EAR[0])} cy={sy(EAR[1]) + 6} w={12} h={20} stroke={C.soft} sw={1.6} dash="3 3" />
       {/* brainstem and cerebellum */}
-      <path d={flatD((TUBES.brainstem![0].pts).map((p) => [-p[0], p[1], 0] as V3), S, S, OX, OY)} fill="none" stroke={REGION_COLOR.brainstem} strokeWidth="26" strokeLinecap="round" onClick={() => onPick("brainstem")} className="cursor-pointer" />
-      <circle cx={sx(PONS[0])} cy={sy(PONS[1])} r="16" fill={fill("brainstem")} className={cn("cursor-pointer", ring("brainstem"))} strokeWidth={sw("brainstem")} onClick={() => onPick("brainstem")} />
-      <ellipse cx={sx(CEREBELLUM.c[0])} cy={sy(CEREBELLUM.c[1])} rx={CEREBELLUM.r[0] * S} ry={CEREBELLUM.r[1] * S} fill={fill("cerebellum")} className={cn("cursor-pointer", ring("cerebellum"))} strokeWidth={sw("cerebellum")} onClick={() => onPick("cerebellum")} />
-      {[0, 1, 2, 3].map((k) => <path key={k} d={`M${sx(CEREBELLUM.c[0]) - 36} ${sy(CEREBELLUM.c[1]) - 16 + k * 10} q 36 ${8 + k} 72 0`} className="pointer-events-none fill-none stroke-foreground/30" />)}
+      <path d={flatD((TUBES.brainstem![0].pts).map((p) => [-p[0], p[1], 0] as V3), S, S, OX, OY)} fill="none" stroke={REGION_COLOR.brainstem} strokeWidth="26" strokeLinecap="round" />
+      <E k={`bs-pons-${tag("brainstem")}`} cx={sx(PONS[0])} cy={sy(PONS[1])} w={32} h={32} fill={fill("brainstem")} fillStyle="solid" stroke={ring("brainstem")} sw={sw("brainstem")} />
+      <E k={`bs-cb-${tag("cerebellum")}`} cx={sx(CEREBELLUM.c[0])} cy={sy(CEREBELLUM.c[1])} w={CEREBELLUM.r[0] * S * 2} h={CEREBELLUM.r[1] * S * 2} fill={fill("cerebellum")} fillStyle="solid" stroke={ring("cerebellum")} sw={sw("cerebellum")} />
+      <P k="bs-folia" d={[0, 1, 2, 3].map((k) => `M${sx(CEREBELLUM.c[0]) - 36} ${sy(CEREBELLUM.c[1]) - 16 + k * 10} q 36 ${8 + k} 72 0`).join(" ")} stroke={C.soft} sw={1} single rough={0.6} />
       {/* deep structures */}
-      <g style={{ opacity: deepOp, transition: "opacity 500ms" }} aria-hidden={layer === 0}>
+      <g style={{ opacity: deepOp, transition: "opacity 500ms" }}>
         {(Object.keys(TUBES) as RegionId[]).filter((id) => id !== "brainstem").map((id) => TUBES[id]!.map((tb, k) => (
-          <path key={`${id}-${k}`} d={flatD(tb.pts.map((p) => [-p[0], p[1], 0] as V3), S, S, OX, OY)} fill="none" stroke={fill(id)} strokeWidth={tb.r * S * 2} strokeLinecap="round" className="cursor-pointer" onClick={() => layer > 0 && onPick(id)} />
+          <path key={`${id}-${k}`} d={flatD(tb.pts.map((p) => [-p[0], p[1], 0] as V3), S, S, OX, OY)} fill="none" stroke={fill(id)} strokeWidth={tb.r * S * 2} strokeLinecap="round" />
         )))}
         {(Object.keys(BLOBS) as RegionId[]).map((id) => BLOBS[id]!.map((b, k) => (
-          <ellipse key={`${id}-${k}`} cx={sx(b.c[0])} cy={sy(b.c[1])} rx={b.r[0] * S} ry={b.r[1] * S} fill={fill(id)} className={cn("cursor-pointer", ring(id))} strokeWidth={sw(id)} onClick={() => layer > 0 && onPick(id)} />
+          <E key={`${id}-${k}`} k={`bs-blob-${id}-${k}-${tag(id)}`} cx={sx(b.c[0])} cy={sy(b.c[1])} w={b.r[0] * S * 2} h={b.r[1] * S * 2} fill={fill(id)} fillStyle="solid" stroke={ring(id)} sw={sw(id)} />
         )))}
-        <circle cx={sx(PITUITARY[0])} cy={sy(PITUITARY[1])} r="5" className="fill-[#f0a35e] stroke-foreground" />
-        <circle cx={sx(NIGRA[0])} cy={sy(NIGRA[1])} r="5" className="fill-foreground" />
+        <E k="bs-pit" cx={sx(PITUITARY[0])} cy={sy(PITUITARY[1])} w={10} h={10} fill={C.lime} fillStyle="solid" sw={1.2} />
+        <circle cx={sx(NIGRA[0])} cy={sy(NIGRA[1])} r="5" fill={C.ink} />
       </g>
       {/* the cortex */}
       <g style={{ opacity: cortexOp, transition: "opacity 500ms" }}>
         {FLAT_REGIONS.map((r) => (
-          <path key={r.id} d={poly(r.poly)} fill={fill(r.id)} className={cn("cursor-pointer", ring(r.id))} strokeWidth={sw(r.id)} strokeLinejoin="round" onClick={() => layer === 0 && onPick(r.id)} />
+          <Pg key={r.id} k={`bs-cx-${r.id}-${tag(r.id)}`} pts={r.poly.map(([a, y]) => [sx(a), sy(y)] as [number, number])} fill={fill(r.id)} fillStyle="solid" stroke={ring(r.id)} sw={sw(r.id)} />
         ))}
-        {[0, 1, 2, 3, 4, 5].map((k) => <path key={k} d={`M${sx(1.2 - k * 0.45)} ${sy(0.85)} q 12 18 -6 40`} className="pointer-events-none fill-none stroke-foreground/20" strokeWidth="1.2" />)}
+        <P k="bs-gyri" d={[0, 1, 2, 3, 4, 5].map((k) => `M${sx(1.2 - k * 0.45)} ${sy(0.85)} q 12 18 -6 40`).join(" ")} stroke={C.ink} sw={1.1} single rough={0.7} style={{ opacity: 0.3 }} />
       </g>
-      {sel ? <path d={sel && FLAT_REGIONS.find((r) => r.id === sel) ? poly(FLAT_REGIONS.find((r) => r.id === sel)!.poly) : ""} className={cn("pointer-events-none", damage ? "fill-[var(--destructive)]" : "fill-white", !reduce && "be-hot")} style={{ opacity: layer === 0 ? 0.3 : 0 }} /> : null}
+      <Label x={8} y={284} size={13} bold={false} color={C.soft}>front</Label>
+      <Label x={352} y={284} size={13} anchor="end" bold={false} color={C.soft}>back</Label>
+    </g>
+  );
+});
+
+export function BrainFlat({ layer, sel, damage, journey, onPick, reduce }: { layer: number; sel: RegionId | null; damage: boolean; journey: Journey; onPick: (r: RegionId) => void; reduce: boolean }) {
+  const t = useLegProgress(journey, reduce);
+  const cur = journey.cur;
+  const head = cur ? along(BPATHS_FLAT[cur.path], t) : null;
+  return (
+    <Sheet bare name="brain-side" w={360} h={290} label="A side view of the brain, front to the left. The written description below says what is happening." className="mx-auto h-full w-full">
+      <style>{`@keyframes be-pulse { 0%,100% { opacity: 0.2 } 50% { opacity: 0.6 } } .be-hot { animation: be-pulse 1.2s ease-in-out infinite; }`}</style>
+      <BrainSide layer={layer} sel={sel} damage={damage} />
+      {/* tap targets, invisible, over the drawing */}
+      <g fill="transparent" className="cursor-pointer">
+        <circle cx={sx(PONS[0])} cy={sy(PONS[1])} r="16" onClick={() => onPick("brainstem")} />
+        <ellipse cx={sx(CEREBELLUM.c[0])} cy={sy(CEREBELLUM.c[1])} rx={CEREBELLUM.r[0] * S} ry={CEREBELLUM.r[1] * S} onClick={() => onPick("cerebellum")} />
+        {layer === 0
+          ? FLAT_REGIONS.map((r) => <path key={r.id} d={poly(r.poly)} onClick={() => onPick(r.id)} />)
+          : (Object.keys(BLOBS) as RegionId[]).map((id) => BLOBS[id]!.map((b, k) => <ellipse key={`${id}-${k}`} cx={sx(b.c[0])} cy={sy(b.c[1])} rx={b.r[0] * S} ry={b.r[1] * S} onClick={() => onPick(id)} />))}
+        {layer > 0
+          ? (Object.keys(TUBES) as RegionId[]).filter((id) => id !== "brainstem").map((id) => TUBES[id]!.map((tb, k) => (
+              <path key={`${id}-${k}`} d={flatD(tb.pts.map((p) => [-p[0], p[1], 0] as V3), S, S, OX, OY)} fill="none" stroke="transparent" strokeWidth={tb.r * S * 2} onClick={() => onPick(id)} />
+            )))
+          : null}
+      </g>
+      {sel ? <path d={FLAT_REGIONS.find((r) => r.id === sel) ? poly(FLAT_REGIONS.find((r) => r.id === sel)!.poly) : ""} fill={damage ? C.red : C.paper} className={cn("pointer-events-none", !reduce && "be-hot")} style={{ opacity: layer === 0 ? 0.3 : 0 }} /> : null}
       {/* the signal */}
       {journey.legs.map((l, i) => (i < journey.leg || i === journey.leg ? (
-        <path key={`${l.path}-${i}`} d={FD(l.path)} fill="none" pathLength={1} strokeDasharray="1 1" strokeDashoffset={i === journey.leg ? 1 - t : 0} className={l.tone === "motor" ? "stroke-[var(--destructive)]" : "stroke-[var(--brand)]"} strokeWidth="3.5" strokeLinecap="round" />
+        <path key={`${l.path}-${i}`} d={FD(l.path)} fill="none" pathLength={1} strokeDasharray="1 1" strokeDashoffset={i === journey.leg ? 1 - t : 0} stroke={l.tone === "motor" ? C.red : C.blue} strokeWidth={3.5} strokeLinecap="round" />
       ) : null))}
       {head && cur ? (cur.tone === "motor"
-        ? <rect x={sx(head[0]) - 6} y={sy(head[1]) - 6} width="12" height="12" transform={`rotate(45 ${sx(head[0])} ${sy(head[1])})`} className="fill-[var(--destructive)] stroke-background" strokeWidth="1.5" />
-        : <circle cx={sx(head[0])} cy={sy(head[1])} r="6.5" className="fill-[var(--brand)] stroke-background" strokeWidth="1.5" />) : null}
-      <text x="8" y="284" className="fill-muted-foreground text-[11px]">front</text>
-      <text x="352" y="284" textAnchor="end" className="fill-muted-foreground text-[11px]">back</text>
-    </svg>
+        ? <rect x={sx(head[0]) - 6} y={sy(head[1]) - 6} width="12" height="12" transform={`rotate(45 ${sx(head[0])} ${sy(head[1])})`} fill={C.red} stroke={C.paper} strokeWidth={1.5} />
+        : <circle cx={sx(head[0])} cy={sy(head[1])} r="6.5" fill={C.lime} stroke={C.ink} strokeWidth={1.5} />) : null}
+    </Sheet>
   );
 }
 

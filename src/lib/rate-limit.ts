@@ -62,3 +62,13 @@ export async function rateLimitResult(key: string, limit: number, windowMs: numb
     return "unavailable";
   }
 }
+
+/**
+ * For saving a student's own work (attempts, journal, check-ins, doubts). Says
+ * no only when the student is really over the limit. When the counter itself
+ * can't be reached, the save goes through: losing the work is worse than one
+ * missed throttle (plain rateLimit would answer "slow down" and drop it).
+ */
+export async function rateLimitWrite(key: string, limit: number, windowMs: number = WINDOW_MS): Promise<boolean> {
+  return (await rateLimitResult(key, limit, windowMs)) !== "limited";
+}

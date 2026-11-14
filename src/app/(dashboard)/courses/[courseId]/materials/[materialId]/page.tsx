@@ -9,6 +9,7 @@ import { cleanMaterialTitle } from "@/lib/media/title";
 import { loadStudentAccess } from "@/lib/cohorts/access";
 import { canWatch } from "@/lib/cohorts/rules";
 import { MaterialViewer } from "./viewer";
+import { leaveWithoutSession } from "@/lib/auth/session-redirect";
 
 /**
  * Dedicated material viewer: `/courses/:courseId/materials/:materialId`.
@@ -28,7 +29,7 @@ export default async function MaterialViewerPage({
     notFound();
   }
   const session = await getSession();
-  if (session.status !== "ok") return null;
+  if (session.status !== "ok") return leaveWithoutSession(session);
   const { profile } = session;
 
   const supabase = await createClient();

@@ -44,7 +44,10 @@ vi.mock("@/lib/history/client", () => ({
   pickRoundFor: <T,>(_t: string, pool: readonly T[], _id: unknown, n: number) => pool.slice(0, n),
   noteAnswer: vi.fn(),
   useHistoryPrefetch: () => {},
+  historyFor: () => new Map(),
+  useToolHistory: () => EMPTY_HISTORY,
 }));
+const EMPTY_HISTORY = new Map();
 
 import { ScenarioGame } from "./clinic-games";
 import { Detective } from "./detective";

@@ -7,6 +7,7 @@ import { FULL_MSE_STIMULI, scoreFullMse, type MseAttemptFields, type FullMseStim
 import { MSE_DOMAIN_ORDER, summarizeMseScore, formatDomainKey } from "@/lib/mse/ladder";
 import { buildMseAttemptPayload } from "@/lib/practice/mse-attempt";
 import { noteAnswer } from "@/lib/history/client";
+import { RecycleNote } from "@/components/cases/case-mark";
 import type { MseDomainKey } from "@/lib/mse/ladder";
 import { showEndReaction } from "@/components/reactions/store";
 import { moodForScore } from "@/lib/reactions/stickers";
@@ -23,9 +24,12 @@ const TEN_MINUTES = 10 * 60;
  */
 export function FullMseLevel({
   onComplete,
+  fresh,
   stimuli = FULL_MSE_STIMULI,
 }: {
   onComplete?: () => void;
+  /** Cases at the front not done yet; past them the list comes round again (fresh cases, src/lib/cases). */
+  fresh?: number;
   stimuli?: FullMseStimulus[];
 }) {
   const [idx, setIdx] = React.useState(0);
@@ -105,6 +109,7 @@ export function FullMseLevel({
 
   return (
     <div className="space-y-4 rounded-lg border-2 border-border bg-card p-5 hard-shadow-sm">
+      {fresh !== undefined && idx >= fresh ? <RecycleNote /> : null}
       {/* Header: timer + progress */}
       <div className="flex items-center justify-between text-small">
         <span className="text-muted-foreground">

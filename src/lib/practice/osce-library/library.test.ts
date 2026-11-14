@@ -3,8 +3,8 @@ import { describe, expect, it } from "vitest";
 import { SEED_OSCE_STATIONS } from "@/lib/practice/osce";
 import { MODULE_IDS, textProblems } from "@/lib/library/checks";
 
-/** Raise as batches land; the section target is 500. */
-const MIN_STATIONS = 112;
+/** The section target of 500 is met; raise as batches land. */
+const MIN_STATIONS = 500;
 const DASH = /[–—]/;
 const CITATION = /\b(et al\.|Kaplan|Stahl|Maudsley|Fish's|Ahuja|doi:|ISBN)\b/;
 const EXAMS = new Set(["cuet-pg", "ugc-net", "mcp-entrance", "md-psychiatry", "ma-semester"]);

@@ -33,7 +33,7 @@ export function deltaSign(k: VarKey, delta: number): -1 | 0 | 1 {
 }
 
 /** A campaign on the pick screen. */
-export type CampaignCard = { id: string; title: string; patient: string; place: string; blurb: string; sessions: number };
+export type CampaignCard = { id: string; title: string; patient: string; place: string; blurb: string; sessions: number; level: number };
 
 /** The story as the browser sees it now: the session, its beats, the decision in play (options without their quality or effect) and the dials. */
 export type Scene = {

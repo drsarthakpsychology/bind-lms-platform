@@ -1,5 +1,6 @@
 import "server-only";
 import { getSession } from "@/lib/auth/session";
+import { gamesAllowed } from "@/lib/auth/scope";
 import { createAdminClient } from "@/lib/supabase/server";
 
 /** Shared server helpers for the games. */
@@ -9,7 +10,7 @@ export type Player = { id: string; admin: boolean; name: string | null; email: s
 /** The signed-in player, or null. Admins can play (to preview). */
 export async function currentPlayer(): Promise<Player | null> {
   const s = await getSession();
-  if (s.status !== "ok") return null;
+  if (s.status !== "ok" || !gamesAllowed(s.profile)) return null;
   const p = s.profile;
   return { id: p.id, admin: p.role === "admin" || p.role === "view_admin", name: null, email: p.email ?? "" };
 }

@@ -27,7 +27,7 @@ import {
 } from "lucide-react";
 import { Watermark } from "./watermark";
 import { AttentionCheckCard, useAttentionCheck } from "./attention-check";
-import { pingProgress } from "./actions";
+import { saveProgress } from "./save-progress";
 
 /** Element plus the vendor-prefixed fullscreen methods (Safari/iOS/old Edge). */
 type FsElement = HTMLElement & {
@@ -508,7 +508,11 @@ export function VideoPlayer({
       setIsPaused(false);
       setEnded(false);
     };
-    const onPause = () => setIsPaused(true);
+    const onPause = () => {
+      setIsPaused(true);
+      // Remember where they stopped (the 10 s ping may be up to 10 s behind).
+      if (video.duration && !video.ended) saveProgress(lessonId, video.currentTime, video.duration);
+    };
     const onTimeUpdate = () => setCurrentTime(video.currentTime);
     const onProgress = () => {
       try {
@@ -528,7 +532,7 @@ export function VideoPlayer({
       setEnded(true);
       // Auto-mark complete happens via pingProgress (90% threshold); reaching
       // the end also pings so the row records completion.
-      pingProgress(lessonId, video.duration || 0, video.duration || 0);
+      saveProgress(lessonId, video.duration || 0, video.duration || 0, { now: true });
     };
     const onError = () => {
       if (recoverQuietly()) return;
@@ -568,9 +572,15 @@ export function VideoPlayer({
       if (!video || video.paused || !video.duration) return;
       // While a "Still watching?" check is open, minutes aren't counted yet.
       if (askingRef.current) return;
-      pingProgress(lessonId, video.currentTime, video.duration);
+      saveProgress(lessonId, video.currentTime, video.duration);
     }, 10000);
-    return () => clearInterval(interval);
+    // Leaving the lecture (another page, closing the tab): save the last position too.
+    const video = videoRef.current;
+    const asking = askingRef; // a flag, read when leaving (not a DOM node)
+    return () => {
+      clearInterval(interval);
+      if (video && video.duration && video.currentTime > 0 && !asking.current) saveProgress(lessonId, video.currentTime, video.duration, { now: true });
+    };
   }, [lessonId, askingRef]);
 
   // ---- Pause when the tab isn't visible ----

@@ -1,7 +1,9 @@
 "use client";
 
 import { useTransition } from "react";
+import { unstable_isUnrecognizedActionError, useRouter } from "next/navigation";
 import { toast } from "sonner";
+import { flushSaves, queueSave } from "@/lib/save/client";
 import { ArrowRight } from "lucide-react";
 import { completeAndAdvance } from "./actions";
 import { haptic } from "@/lib/haptics";
@@ -36,6 +38,18 @@ export function CompleteButton({
   alreadyComplete?: boolean;
 }) {
   const [isPending, startTransition] = useTransition();
+  const router = useRouter();
+
+  /** The direct save failed: keep it in the save outbox (it retries) and move on. */
+  function queueAndGo(hard: boolean) {
+    if (!queueSave("complete", lessonId, { lessonId })) {
+      toast.error("Couldn't save. Try again.");
+      return;
+    }
+    void flushSaves();
+    if (hard) window.location.assign(continueTarget);
+    else router.push(continueTarget);
+  }
 
   function onClick() {
     if (isPending) return;
@@ -45,8 +59,17 @@ export function CompleteButton({
         description: "Great work. You finished the course.",
       });
     }
-    startTransition(() => {
-      completeAndAdvance(lessonId, courseId, continueTarget);
+    startTransition(async () => {
+      try {
+        const r = await completeAndAdvance(lessonId, courseId, continueTarget);
+        if (r?.error) queueAndGo(false);
+      } catch (e) {
+        // A new version went live while this page was open: save through the
+        // outbox and load the next lesson fresh. Anything else (including the
+        // redirect itself) is left to Next.
+        if (unstable_isUnrecognizedActionError(e)) queueAndGo(true);
+        else throw e;
+      }
     });
   }
 

@@ -1,7 +1,7 @@
 // @vitest-environment jsdom
 import * as React from "react";
 import { act, cleanup, fireEvent, render, screen } from "@testing-library/react";
-import { afterEach, describe, expect, it, vi } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { practiceAnswer, practiceStart, practiceState, roomCards, roomView, type PracticeToken } from "@/lib/games-sims/escape/deal";
 import { escapeXp, shownOrder, teamTime } from "@/lib/games-sims/escape/engine";
 import { ROOMS, type Puzzle } from "@/lib/games-sims/escape/rooms";
@@ -26,6 +26,9 @@ vi.mock("@/components/reactions/store", () => ({
 vi.mock("@/lib/tips/actions", () => ({ loadTips: vi.fn(async () => ({ owner: "u1", ids: [] })), saveTips: vi.fn(async () => true) }));
 vi.mock("next/navigation", () => ({ useRouter: () => ({ refresh: vi.fn(), push: vi.fn(), back: vi.fn() }), usePathname: () => "/", useSearchParams: () => new URLSearchParams() }));
 vi.mock("@/lib/learn/credit-play", () => ({ creditServerPlay: vi.fn() }));
+vi.mock("@/lib/cases/progress-actions", () => ({ saveMyProgress: vi.fn(async () => ({ ok: true })), loadMyProgress: vi.fn(async () => ({ owner: null, rows: [] })) }));
+
+const cases = { student: "s", history: [], progress: { owner: null, rows: [] }, now: 0 };
 
 const SEED = "s";
 const room = ROOMS[0];
@@ -40,6 +43,11 @@ function fakeServer() {
       const t = practiceStart("u", "run", r, 0);
       const st = practiceState(t, "u")!.st;
       return { ok: true, token: enc(t), view: roomView(r, st, SEED), state: st, now: 0 };
+    },
+    resumeEscapePractice: async (token: string): Promise<PracticeResult> => {
+      const t = JSON.parse(token) as PracticeToken;
+      const cur = practiceState(t, "u")!;
+      return { ok: true, token, view: roomView(cur.room, cur.st, SEED), state: cur.st, now: 0, elapsed: 60000 };
     },
     answerEscapePractice: async ({ token, stage, answer }: { token: string; stage: number; answer: string }): Promise<PracticeResult> => {
       calls.push(answer);
@@ -88,11 +96,12 @@ async function solve(p: Puzzle) {
 const escapeRe = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 
 afterEach(cleanup);
+beforeEach(() => window.localStorage.clear());
 
 describe("Escape Room practice, dealt on the server", () => {
   it("plays a whole room: explanations show only once a door opens, the hint after two misses", async () => {
     const server = fakeServer();
-    render(<EscapeRoom rooms={roomCards()} teamsOn={false} openTeam={null} teams={[]} actions={server} />);
+    render(<EscapeRoom rooms={roomCards()} cases={cases} teamsOn={false} openTeam={null} teams={[]} actions={server} />);
     await click(screen.getAllByRole("button", { name: /Practice alone/ })[0]);
     const first = room.puzzles[0];
     expect(screen.getByText(first.prompt)).toBeTruthy();
@@ -125,12 +134,25 @@ describe("Escape Room practice, dealt on the server", () => {
     expect(server.calls.length).toBe(room.puzzles.length + 2);
   });
 
+  it("saves the run after each door and carries on from the saved door", async () => {
+    const server = fakeServer();
+    const view = render(<EscapeRoom rooms={roomCards()} cases={cases} teamsOn={false} openTeam={null} teams={[]} actions={server} />);
+    await click(screen.getAllByRole("button", { name: /Practice alone/ })[0]);
+    await solve(room.puzzles[0]);
+    view.unmount();
+    render(<EscapeRoom rooms={roomCards()} cases={cases} teamsOn={false} openTeam={null} teams={[]} actions={server} />);
+    expect(screen.getByText(/at a locked door/)).toBeTruthy();
+    await click(screen.getByRole("button", { name: /^Carry on$/ }));
+    expect(screen.getByText(room.puzzles[1].prompt)).toBeTruthy();
+    expect(screen.getByText(room.puzzles[0].unlock)).toBeTruthy();
+  });
+
   it("a lost connection is not a wrong answer", async () => {
     const server = fakeServer();
     server.answerEscapePractice = async () => {
       throw new Error("offline");
     };
-    render(<EscapeRoom rooms={roomCards()} teamsOn={false} openTeam={null} teams={[]} actions={server} />);
+    render(<EscapeRoom rooms={roomCards()} cases={cases} teamsOn={false} openTeam={null} teams={[]} actions={server} />);
     await click(screen.getAllByRole("button", { name: /Practice alone/ })[0]);
     await solve(room.puzzles[0]);
     expect(screen.getByText(/Your answer was not sent/)).toBeTruthy();

@@ -5,6 +5,7 @@ import "server-only";
  * are missing, reads come back empty and writes are dropped.
  */
 import { getSession } from "@/lib/auth/session";
+import { gamesAllowed } from "@/lib/auth/scope";
 import { createAdminClient } from "@/lib/supabase/server";
 import { displayName } from "@/lib/learn/leaderboard";
 import { loadCohortMap } from "@/lib/standing/cohort-map";
@@ -32,7 +33,9 @@ export function adminDb(): Admin | null {
 export async function currentUser(): Promise<{ id: string; role: string } | null> {
   try {
     const s = await getSession();
-    return s.status === "ok" ? { id: s.profile.id, role: s.profile.role } : null;
+    // Games need Full access: a lectures-only account may not play or earn
+    // XP through these actions even though they are reachable directly.
+    return s.status === "ok" && gamesAllowed(s.profile) ? { id: s.profile.id, role: s.profile.role } : null;
   } catch {
     return null;
   }

@@ -19,6 +19,8 @@ import { LEGAL } from "@/lib/legal-constants";
 import { loadQuests } from "@/lib/hints/server";
 import { pickContinue } from "./next-step";
 import { HomeBody } from "./home-view";
+import { RefreshOnSave } from "@/components/save/refresh-on-save";
+import { leaveWithoutSession } from "@/lib/auth/session-redirect";
 
 /**
  * Home (plan section 8): one Continue card, today's goal, and the three
@@ -29,7 +31,7 @@ import { HomeBody } from "./home-view";
  */
 export default async function DashboardPage() {
   const session = await getSession();
-  if (session.status !== "ok") return null;
+  if (session.status !== "ok") return leaveWithoutSession(session);
   const { profile } = session;
 
   const cookieStore = await cookies();
@@ -88,6 +90,9 @@ export default async function DashboardPage() {
   });
 
   return (
+    <>
+    {/* A mark made just before coming here may still be saving: show it once it lands. */}
+    <RefreshOnSave kinds={["learn", "complete", "progress"]} />
     <HomeBody
       adminPreview={viewingAsStudent && profile.role === "admin"}
       welcomeBack={Boolean(main?.started || learn?.study.last)}
@@ -97,5 +102,6 @@ export default async function DashboardPage() {
       strengths={studyOpen ? strengths : null}
       whatsappHref={`https://wa.me/${LEGAL.phone.replace(/[^\d]/g, "")}`}
     />
+    </>
   );
 }

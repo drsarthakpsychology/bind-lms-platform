@@ -33,6 +33,7 @@ vi.mock("@/lib/auth/api-guard", () => ({
 
 vi.mock("@/lib/rate-limit", () => ({
   rateLimit: vi.fn().mockResolvedValue(true),
+  rateLimitWrite: vi.fn().mockResolvedValue(true),
 }));
 
 import { POST } from "./route";
@@ -100,5 +101,20 @@ describe("POST /api/practice/formulation/attempt", () => {
     const row = insertMock.mock.calls[0][0];
     expect(row.case_id).toBeNull();
     expect(row.source_sim_session_id).toBe("11111111-2222-3333-8888-555555555555");
+  });
+
+  it("does not create a case the Forge does not have (no student-made cases)", async () => {
+    const insertCase = vi.fn();
+    admin.from.mockImplementationOnce(() => ({
+      select: vi.fn(() => ({ eq: vi.fn(() => ({ maybeSingle: vi.fn().mockResolvedValue({ data: null }) })) })),
+      insert: insertCase,
+    }) as never);
+    const res = await POST(new Request("http://test/api/practice/formulation/attempt", {
+      method: "POST",
+      body: JSON.stringify({ ...VALID_BODY, case_id: "form-made-up", case_title: "Fake case" }),
+    }));
+    expect(res.status).toBe(404);
+    expect(insertCase).not.toHaveBeenCalled();
+    expect(insertMock).not.toHaveBeenCalled();
   });
 });

@@ -32,7 +32,9 @@ function decodeEntities(s: string): string {
 export function safeHref(raw: string): string | null {
   const v = decodeEntities(raw).trim().replace(/[\u0000-\u001f\s]+/g, "");
   if (/^(https?:\/\/|mailto:)/i.test(v)) return v;
-  if (/^\/(?!\/)/.test(v)) return v; // site-relative link
+  // Site-relative link. A backslash is refused: browsers read "/\host" as
+  // "//host", another site.
+  if (/^\/(?!\/)/.test(v) && !v.includes("\\")) return v;
   return null;
 }
 

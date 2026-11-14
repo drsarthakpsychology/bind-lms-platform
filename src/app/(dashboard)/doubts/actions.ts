@@ -5,9 +5,9 @@ import { requireSession, requireSuperAdmin } from "@/lib/auth/guards";
 import { createAdminClient } from "@/lib/supabase/server";
 import { loadMyCohorts } from "@/lib/cohorts/access";
 import { kindFor } from "@/lib/doubts/classify";
-import { rateLimit } from "@/lib/rate-limit";
+import { rateLimitWrite } from "@/lib/rate-limit";
 import { notifyAdminsOfDoubt, notifyAskerOfReply } from "@/lib/notify/doubts";
-import { canParticipate, isUuid, type DoubtRow } from "./visibility";
+import { canMarkSolved, canParticipate, isUuid, type DoubtRow } from "./visibility";
 
 type R = { error: string | null; id?: string };
 const clean = (s: string, max: number) => s.replace(/\s+/g, " ").trim().slice(0, max);
@@ -42,7 +42,7 @@ function refresh(id?: string) {
 export async function askDoubt(input: { title: string; body: string; topic?: string; cohortId?: string | null; markAs?: "doubt" | "complaint" }): Promise<R> {
   const me = await requireSession();
   if (!me) return { error: "Please sign in again." };
-  if (!(await rateLimit(`doubt:${me.id}`, 20))) return { error: "Slow down a moment and try again." };
+  if (!(await rateLimitWrite(`doubt:${me.id}`, 20))) return { error: "Slow down a moment and try again." };
   const title = clean(input.title, 200);
   const body = clean(input.body, 5000);
   if (title.length < 3) return { error: "Write a short title for your doubt." };
@@ -69,7 +69,7 @@ export async function askDoubt(input: { title: string; body: string; topic?: str
 export async function replyToDoubt(doubtId: string, body: string): Promise<R> {
   const me = await requireSession();
   if (!me) return { error: "Please sign in again." };
-  if (!(await rateLimit(`doubtreply:${me.id}`, 40))) return { error: "Slow down a moment and try again." };
+  if (!(await rateLimitWrite(`doubtreply:${me.id}`, 40))) return { error: "Slow down a moment and try again." };
   const text = clean(body, 5000);
   if (text.length < 1) return { error: "Write your answer first." };
   if (!(await loadVisibleDoubt(doubtId, me))) return { error: "That doubt isn't open to you." };
@@ -84,7 +84,7 @@ export async function replyToDoubt(doubtId: string, body: string): Promise<R> {
 export async function voteReply(doubtId: string, replyId: string, on: boolean): Promise<R> {
   const me = await requireSession();
   if (!me) return { error: "Please sign in again." };
-  if (!(await rateLimit(`doubtvote:${me.id}`, 60))) return { error: "Slow down a moment and try again." };
+  if (!(await rateLimitWrite(`doubtvote:${me.id}`, 60))) return { error: "Slow down a moment and try again." };
   if (!(await loadVisibleDoubt(doubtId, me)) || !(await replyOnDoubt(replyId, doubtId))) return { error: "That answer isn't open to you." };
   const admin = createAdminClient();
   if (on) await admin.from("doubt_votes").upsert({ reply_id: replyId, user_id: me.id }, { onConflict: "reply_id,user_id", ignoreDuplicates: true });
@@ -99,11 +99,14 @@ export async function markSolved(doubtId: string, replyId: string | null): Promi
   if (!me) return { error: "Please sign in again." };
   if (!isUuid(doubtId)) return { error: "That doubt is gone." };
   const admin = createAdminClient();
-  const { data: d } = await admin.from("doubts").select("user_id").eq("id", doubtId).maybeSingle();
+  const { data: d } = await admin.from("doubts").select("user_id, status").eq("id", doubtId).maybeSingle();
   if (!d) return { error: "That doubt is gone." };
-  if (d.user_id !== me.id && me.role !== "admin") return { error: "Only the person who asked can mark it solved." };
+  if (!canMarkSolved(d, { id: me.id, isAdmin: me.role === "admin" })) {
+    return { error: d.status === "hidden" ? "That doubt is gone." : "Only the person who asked can mark it solved." };
+  }
   if (replyId !== null && !(await replyOnDoubt(replyId, doubtId))) return { error: "That answer isn't on this doubt." };
-  await admin.from("doubts").update({ solved_reply_id: replyId, status: replyId ? "solved" : "open", updated_at: new Date().toISOString() }).eq("id", doubtId);
+  const { error } = await admin.from("doubts").update({ solved_reply_id: replyId, status: replyId ? "solved" : "open", updated_at: new Date().toISOString() }).eq("id", doubtId);
+  if (error) return { error: "Couldn't save that. Try again." };
   refresh(doubtId);
   return { error: null };
 }
@@ -134,7 +137,11 @@ export async function reclassifyMine(doubtId: string, kind: "doubt" | "complaint
 /** Admin: hide a post, or an answer, from the board. */
 export async function adminHideDoubt(doubtId: string, hidden: boolean): Promise<R> {
   if (!(await requireSuperAdmin())) return { error: "Not authorized." };
-  await createAdminClient().from("doubts").update({ status: hidden ? "hidden" : "open" }).eq("id", doubtId);
+  const admin = createAdminClient();
+  // Showing a post again brings back its solved state, not just "open".
+  const { data: d } = hidden ? { data: null } : await admin.from("doubts").select("solved_reply_id").eq("id", doubtId).maybeSingle();
+  const { error } = await admin.from("doubts").update({ status: hidden ? "hidden" : d?.solved_reply_id ? "solved" : "open" }).eq("id", doubtId);
+  if (error) return { error: "Couldn't change it. Try again." };
   refresh(doubtId);
   return { error: null };
 }

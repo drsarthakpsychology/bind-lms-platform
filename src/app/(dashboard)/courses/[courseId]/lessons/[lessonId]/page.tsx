@@ -29,6 +29,8 @@ import { EmptyState } from "@/components/design-system/empty-state";
 import { QuizCheck } from "@/components/practice/quiz-check";
 import { QUIZ_BANK } from "@/lib/quiz/quiz-bank";
 import { MobileStickyAction } from "@/components/mobile/mobile-sticky-action";
+import { RefreshOnSave } from "@/components/save/refresh-on-save";
+import { leaveWithoutSession } from "@/lib/auth/session-redirect";
 
 // "Check what stuck": the risk-assessment + reporting items are the most
 // universally relevant after any lesson (the order-steps spine).
@@ -50,7 +52,7 @@ export default async function LessonPage({
     notFound();
   }
   const session = await getSession();
-  if (session.status !== "ok") return null;
+  if (session.status !== "ok") return leaveWithoutSession(session);
   const { profile } = session;
 
   // View mode: an admin previewing as student (via the view-mode switch) is
@@ -212,7 +214,9 @@ export default async function LessonPage({
   const nextUp = pickerLessons;
 
   return (
-    <div className="pb-32 lg:grid lg:grid-cols-[minmax(0,1fr)_21rem] lg:gap-8 lg:pb-0 xl:grid-cols-[minmax(0,1fr)_24rem]">
+    <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_21rem] lg:gap-8 xl:grid-cols-[minmax(0,1fr)_24rem]">
+      {/* The lecture just reached 90% (or was marked complete): show "Watched" and the tick at once. */}
+      <RefreshOnSave kinds={["complete", "progress"]} />
       <div className="min-w-0 space-y-5">
       {/* Back + (phones) the lesson list. The sidebar steps aside on this page
           so the video gets the width, like a video app's watch page. */}

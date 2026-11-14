@@ -6,6 +6,21 @@
  */
 const rtf = new Intl.RelativeTimeFormat("en", { numeric: "auto" });
 
+/** Every student is in India: dates are India dates, on the server (UTC) and in the browser alike. */
+export const IST = "Asia/Kolkata";
+
+/**
+ * "14 Nov 2026" (or "14 Nov" with `year: false`) on the India calendar day.
+ * A time just after midnight India time is already the new day, though the
+ * server's own clock (UTC) is still on the old one.
+ */
+export function formatDateIST(iso: string | Date | null | undefined, { year = true }: { year?: boolean } = {}): string {
+  if (!iso) return "";
+  const d = typeof iso === "string" ? new Date(iso) : iso;
+  if (Number.isNaN(d.getTime())) return "";
+  return d.toLocaleDateString("en-GB", { day: "numeric", month: "short", ...(year ? { year: "numeric" } : {}), timeZone: IST });
+}
+
 export function formatRelativeTime(iso: string | Date, now: number = Date.now()): string {
   const then = (typeof iso === "string" ? new Date(iso) : iso).getTime();
   if (Number.isNaN(then)) return "";
@@ -18,8 +33,6 @@ export function formatRelativeTime(iso: string | Date, now: number = Date.now())
   if (abs < 86400) return rtf.format(Math.round(diffSec / 3600), "hour");
   if (abs < 604800) return rtf.format(Math.round(diffSec / 86400), "day");
 
-  const d = new Date(then);
-  const sameYear = d.getFullYear() === new Date(now).getFullYear();
-  const month = d.toLocaleDateString("en-GB", { day: "numeric", month: "short" });
-  return sameYear ? month : `${month} ${d.getFullYear()}`;
+  const yearOf = (t: number) => new Date(t).toLocaleDateString("en-GB", { year: "numeric", timeZone: IST });
+  return formatDateIST(new Date(then), { year: yearOf(then) !== yearOf(now) });
 }

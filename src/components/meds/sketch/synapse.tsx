@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { Arrow, C, Callout, Choice, E, Fact, Figure, Label, P, R, Say, Sheet } from "./ink";
+import { Arrow, C, Callout, Choice, E, Fact, Figure, Label, P, R, Say, Sheet } from "@/components/sketch/ink";
 
 /** What the medicine does at the synapse. */
 export type SynapseAction = "reuptake" | "gaba" | "calcium" | "enzyme" | "nmda" | "glutamate";

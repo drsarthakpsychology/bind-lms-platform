@@ -50,7 +50,7 @@ export function MobileNumberPrompt({
       return;
     }
     startTransition(async () => {
-      const result = await saveMobileNumber(mobile);
+      const result = await saveMobileNumber(mobile).catch(() => ({ error: "Not saved. Check your connection and try again." }));
       if (result.error) setError(result.error);
       else setDone(true);
     });
@@ -59,7 +59,7 @@ export function MobileNumberPrompt({
   function handleLater() {
     setError(null);
     startTransition(async () => {
-      const result = await skipMobileNumber();
+      const result = await skipMobileNumber().catch(() => ({ error: "That did not go through. Check your connection and try again." }));
       if (result.error) setError(result.error);
       else setDone(true);
     });

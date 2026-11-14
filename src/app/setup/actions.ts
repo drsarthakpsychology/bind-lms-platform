@@ -1,6 +1,9 @@
 "use server";
 
+import { headers } from "next/headers";
 import { redirect } from "next/navigation";
+import { rateLimit } from "@/lib/rate-limit";
+import { rateLimitFast } from "@/lib/rate-limit-fast";
 import { createAdminClient } from "@/lib/supabase/server";
 import { hashSetupToken } from "@/lib/auth/roster";
 import { checkNewPassword } from "@/lib/auth/password-policy";
@@ -20,6 +23,12 @@ export async function completeSetup(_prev: SetupState, formData: FormData): Prom
   const confirm = String(formData.get("confirm") ?? "");
 
   if (!token || token.length > 200) return { error: "This setup link isn't valid. Ask us for a new one." };
+  // Throttle guessing of setup links per network (each try also costs a
+  // password hash and a database read).
+  const ip = ((await headers()).get("x-forwarded-for") ?? "").split(",")[0]?.trim() || "unknown";
+  if (!rateLimitFast(`setup:ip:${ip}`, 20) || !(await rateLimit(`setup:ip:${ip}`, 20))) {
+    return { error: "Too many tries. Wait a minute and try again." };
+  }
   const policy = checkNewPassword(password);
   if (policy) return { error: policy };
   if (password !== confirm) return { error: "The two passwords don't match." };

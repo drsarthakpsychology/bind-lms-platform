@@ -4,6 +4,7 @@ import * as React from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { haptic } from "@/lib/haptics";
+import { formatDateIST } from "@/lib/format";
 
 interface SessionRow {
   id: string;
@@ -130,7 +131,7 @@ export function RolePlayLobby({
                   <div>
                     <p className="text-small font-medium">{s.peerEmail}</p>
                     <p className="text-caption text-muted-foreground">
-                      You play {s.role} · {new Date(s.createdAt).toLocaleDateString()}
+                      You play {s.role} · {formatDateIST(s.createdAt)}
                     </p>
                   </div>
                   <span className={`rounded-full px-2 py-0.5 text-caption font-medium ${s.status === "active" ? "bg-status-success-bg text-status-success-fg" : "bg-secondary text-muted-foreground"}`}>

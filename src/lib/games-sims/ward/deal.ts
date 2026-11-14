@@ -16,7 +16,7 @@ import type { CampaignCard, Scene, WardEnd, WardReveal } from "./rules";
 
 const LETTERS = ["a", "b", "c", "d", "e", "f"];
 
-export const campaignCard = (c: Campaign): CampaignCard => ({ id: c.id, title: c.title, patient: c.patient, place: c.place, blurb: c.blurb, sessions: c.chapters.length });
+export const campaignCard = (c: Campaign): CampaignCard => ({ id: c.id, title: c.title, patient: c.patient, place: c.place, blurb: c.blurb, sessions: c.chapters.length, level: c.tags?.level ?? 0 });
 export const campaignCards = (): CampaignCard[] => CAMPAIGNS.map(campaignCard);
 
 export function sceneOf(c: Campaign, st: WardState): Scene {

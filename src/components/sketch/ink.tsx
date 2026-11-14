@@ -1,8 +1,8 @@
 "use client";
 
 /**
- * Hand-drawn ink for the medicine pictures (Practice → Medicines only; Study
- * keeps its own widgets). Shapes come from rough.js's generator, which only
+ * Hand-drawn ink for the diagrams students see: the medicine pictures and the
+ * Study widgets (also shown in Exam Prep explanations and long answers). Shapes come from rough.js's generator, which only
  * computes SVG path data, so the drawing is the same on the server and in the
  * browser: every shape gets a fixed seed from its key, so it wobbles the same
  * way on every render. Colours are CSS variables (`.sketch` in globals.css),
@@ -17,6 +17,9 @@ import { cn } from "@/lib/utils";
 import { kalamWidth } from "./metrics";
 
 const kalam = Kalam({ weight: ["400", "700"], subsets: ["latin"], display: "swap" });
+
+/** The handwriting font, for labels that sit inside a drawing built from HTML (see frame.tsx). */
+export const HAND = kalam.style.fontFamily;
 
 /** The sketch palette: brand ink, blue and lime, plus red for blood and a soft grey. */
 export const C = {
@@ -194,13 +197,42 @@ export function Callout({ k, x, y, to, children, lines, anchor = "start", size =
 
 /* ------------------------------------------------------------------ frame */
 
-/** The drawing surface: a fixed viewBox, the handwriting font, and a name for the tests. */
-export function Sheet({ name, w, h, label, children, className }: { name: string; w: number; h: number; label: string; children: React.ReactNode; className?: string }) {
+/** The drawing surface: a fixed viewBox, the handwriting font, and a name for the tests. `bare` drops the paper and border, for a drawing inside a frame of its own (the flat views of the 3D scenes). */
+export function Sheet({ name, w, h, label, children, className, top = 0, left = 0, bare = false }: { name: string; w: number; h: number; label: string; children: React.ReactNode; className?: string; top?: number; left?: number; bare?: boolean }) {
   return (
-    <svg data-sketch={name} viewBox={`0 0 ${w} ${h}`} role="img" aria-label={label} className={cn("sketch block h-auto w-full rounded-xl border-2 border-foreground bg-[var(--sk-paper)]", className)} style={{ fontFamily: kalam.style.fontFamily }}>
+    <svg data-sketch={name} viewBox={`${left} ${top} ${w} ${h}`} role="img" aria-label={label} className={cn(bare ? "sketch block" : "sketch block h-auto w-full rounded-xl border-2 border-foreground bg-[var(--sk-paper)]", className)} style={{ fontFamily: kalam.style.fontFamily }}>
       {children}
     </svg>
   );
+}
+
+/** Plain text for a label: drops the **bold** and *italic* marks of course text. */
+export function plain(text: string): string {
+  return text.replace(/\*\*(.+?)\*\*/g, "$1").replace(/\*(?!\s)(.+?)\*/g, "$1").replace(/`/g, "");
+}
+
+/** Breaks `text` into lines no wider than `max` viewBox units (a word longer than `max` gets a line of its own). */
+export function wrap(text: string, max: number, size = LABEL, bold = true): string[] {
+  const out: string[] = [];
+  let line = "";
+  for (const word of plain(text).split(/\s+/).filter(Boolean)) {
+    const next = line ? `${line} ${word}` : word;
+    if (line && labelWidth(next, size, bold) > max) {
+      out.push(line);
+      line = word;
+    } else line = next;
+  }
+  if (line) out.push(line);
+  return out.length ? out : [""];
+}
+
+/** The biggest of `sizes` at which `text` wraps into at most `maxLines` lines no wider than `max`; null when none fits. */
+export function fit(text: string, max: number, maxLines = 2, sizes = [15, 13]): { lines: string[]; size: number } | null {
+  for (const size of sizes) {
+    const lines = wrap(text, max, size);
+    if (lines.length <= maxLines && lines.every((l) => labelWidth(l, size) <= max)) return { lines, size };
+  }
+  return null;
 }
 
 /** A picture card: title, drawing, choices, and the plain explanation under it. */

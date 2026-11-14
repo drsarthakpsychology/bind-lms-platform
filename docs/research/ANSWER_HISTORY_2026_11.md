@@ -84,3 +84,28 @@ answered. Exam Prep needs no new table (prep_answers and prep_seen exist).
 - src/lib/history/client.test.ts: browser copy, server sends, offline and blocked storage, another student's copy dropped.
 - src/lib/history/tools.test.ts: Rx Detective, MSE Lab, MSE trainer domain round, Comorbid preference, walk-through Next.
 - Per-tool pickers: src/lib/prep/history.test.ts (mocks, Smart practice, topic sets), src/lib/learn/model/student.test.ts (map practice), src/lib/learn/adaptive.test.ts (Coach), src/lib/games/daily/engine.test.ts, src/lib/games/blitz/engine.test.ts, src/lib/games/duel/engine.test.ts, src/lib/practice/weak-spots.test.ts.
+
+## Fresh cases (case tools, November 2026)
+
+Owner's ask: a finished case never comes back while new ones remain, a
+half-finished case resumes where it was left, and every library always has
+something new.
+
+- Order (src/lib/cases/fresh.ts): half done, New this week, New, Done last
+  (missed first, then harder, then oldest). Done ones come back only when
+  every case is done, with "You've done every case. Here they are again,
+  hardest first." Rounds (What would you do, Clinic detective) hold new
+  cases only and can be short.
+- New this week: per student, per India-time week, a hash of (student,
+  week, case) over cases not done before the week began. Libraries under
+  12 cases have none. Nothing is hidden.
+- Saved progress: answer_history rows with tool `p:<tool>` and a `state`
+  jsonb column (supabase/migrations_pending/2026_11_case_progress.sql),
+  mirrored in localStorage (src/lib/cases/progress-client.ts). Cleared when
+  the case is finished.
+- Pick screens with marks: Ward Week, Escape Room, OSCE, Formulation,
+  Consulting Room, Landmark. Hubs show "N+ new cases" only from 25 up.
+- Today's daily case is unchanged for everyone; once finished, its main
+  button is "Next: a new practice case".
+- Tests: src/lib/cases/fresh.test.ts, tools.test.ts (every library),
+  progress-client.test.tsx.

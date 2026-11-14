@@ -22,5 +22,14 @@ export function canParticipate(d: DoubtRow, v: Viewer): boolean {
   return canSeeDoubt(d, v) && (v.isAdmin || d.status !== "hidden");
 }
 
+/**
+ * Mark solved / reopen: the asker or the Super Admin. A doubt the admin hid
+ * stays hidden: the asker cannot reopen it by marking it (un)solved.
+ */
+export function canMarkSolved(d: { user_id: string; status?: string | null }, v: { id: string; isAdmin: boolean }): boolean {
+  if (v.isAdmin) return true;
+  return d.user_id === v.id && d.status !== "hidden";
+}
+
 export const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 export const isUuid = (x: unknown): x is string => typeof x === "string" && UUID_RE.test(x);

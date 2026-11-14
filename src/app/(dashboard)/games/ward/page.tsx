@@ -7,6 +7,8 @@ import { requireFeature } from "@/lib/flags";
 import { currentUser } from "@/lib/games-sims/server/results";
 import { myTeams, teamsReady } from "@/lib/games-sims/server/teams";
 import { campaignCards } from "@/lib/games-sims/ward/deal";
+import { CAMPAIGNS } from "@/lib/games-sims/ward/campaigns";
+import { caseContext } from "@/lib/cases/server";
 import { castWardVote, createWardTeam, joinWardTeam, pickWardSolo, resumeWardSolo, startWardSolo, wardTeamView } from "./actions";
 import { WardWeek } from "./ward-week";
 
@@ -16,7 +18,7 @@ export default async function WardPage({ searchParams }: { searchParams: Promise
   await requireFeature("learn");
   const learnState = await loadLearnState();
   const [{ team }, user] = await Promise.all([searchParams, currentUser()]);
-  const [ready, teams] = await Promise.all([teamsReady(), user ? myTeams("ward", user.id) : Promise.resolve([])]);
+  const [ready, teams, cases] = await Promise.all([teamsReady(), user ? myTeams("ward", user.id) : Promise.resolve([]), caseContext("ward", CAMPAIGNS.map((c) => c.id), "ward", user?.id ?? "")]);
   return (
     <ActivityFrame
       title="Ward Week"
@@ -25,6 +27,7 @@ export default async function WardPage({ searchParams }: { searchParams: Promise
       <LearnStoreInit serverState={learnState} save={saveLearnState} />
       <WardWeek
         campaigns={campaignCards()}
+        cases={cases}
         teamsOn={ready}
         openTeam={team ?? null}
         teams={teams.map((t) => ({ id: t.id, name: t.name, campaign: t.scenario, status: t.status, code: t.code }))}

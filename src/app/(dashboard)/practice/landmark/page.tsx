@@ -3,7 +3,7 @@ import { HowToStart } from "@/components/help/how-to";
 import { LANDMARK_CASES } from "@/lib/landmark/cases";
 import { LandmarkReader } from "./landmark-reader";
 import { requireFeature } from "@/lib/flags";
-import { orderForViewer } from "@/lib/history/viewer";
+import { caseContext } from "@/lib/cases/server";
 import { BackPill } from "@/components/study/back";
 
 export const dynamic = "force-dynamic";
@@ -15,9 +15,8 @@ export const dynamic = "force-dynamic";
  */
 export default async function LandmarkPage() {
   await requireFeature("landmark");
-  // Answer history (src/lib/history): cases not read yet first, the oldest read last.
-  const ids = await orderForViewer("landmark", LANDMARK_CASES.map((c) => c.id));
-  const cases = ids.flatMap((id) => LANDMARK_CASES.filter((c) => c.id === id).slice(0, 1));
+  // Fresh-case order (src/lib/cases/fresh.ts): the case left open first, new this week, new, read ones last.
+  const ctx = await caseContext("landmark", LANDMARK_CASES.map((c) => c.id), "landmark");
   return (
     <div className="mx-auto max-w-3xl">
       <BackPill className="mb-4" />
@@ -25,7 +24,7 @@ export default async function LandmarkPage() {
 
       <div className="mt-6">
         <HowToStart id="landmark">
-          <LandmarkReader cases={cases.length ? cases : LANDMARK_CASES} />
+          <LandmarkReader cases={LANDMARK_CASES} ctx={ctx} />
         </HowToStart>
       </div>
     </div>

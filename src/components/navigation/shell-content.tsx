@@ -26,8 +26,15 @@ export function ShellContent({ children }: { children: React.ReactNode }) {
   return (
     <div
       className={cn(
-        "mx-auto w-full max-w-7xl px-4 pb-[calc(var(--nav-h)+2rem)] sm:px-6 md:pb-12 lg:px-10",
-        focus ? "pt-3 sm:pt-4 lg:pt-5" : "py-6 lg:py-8 short:lg:py-6",
+        "mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-10",
+        // Top only: a `py-*` here would wipe out the bottom padding below
+        // (tailwind-merge drops `pb-*` when `py-*` follows), and the last lines
+        // of every page then sat under the phone tab bar.
+        focus ? "pt-3 sm:pt-4 lg:pt-5" : "pt-6 lg:pt-8 short:lg:pt-6",
+        // Bottom: clear the tab bar (--nav-h) and any thumb bar (--thumb-h),
+        // both including the gesture-bar inset, plus breathing room.
+        // A lecture's Previous/Next bar (MobileStickyAction) adds --sticky-h.
+        "pb-[calc(var(--nav-h,0px)+var(--thumb-h,0px)+var(--sticky-h,0px)+2rem)] md:pb-[calc(var(--sticky-h,0px)+3rem)]",
       )}
     >
       {children}

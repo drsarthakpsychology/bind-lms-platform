@@ -24,8 +24,9 @@ const N = EXCERPTS.length;
 const mod = (a: number, n: number) => ((a % n) + n) % n;
 const INDEX = new Map(EXCERPTS.map((e, i) => [e.id, i]));
 
-export function publicExcerpt(e: Excerpt, options: string[][]): PublicExcerpt {
-  return { level: e.level, who: e.who, place: e.place, lines: e.lines.map(([w, t]) => [w, t] as ["D" | "P" | "R", string]), note: e.note, quotes: e.findings.map((f) => f.q), options };
+/** `again`: done before (every excerpt is done, so they come round again). */
+export function publicExcerpt(e: Excerpt, options: string[][], again = false): PublicExcerpt {
+  return { level: e.level, again, who: e.who, place: e.place, lines: e.lines.map(([w, t]) => [w, t] as ["D" | "P" | "R", string]), note: e.note, quotes: e.findings.map((f) => f.q), options };
 }
 
 function withExcerpt(t: MseToken, e: Excerpt, rng: Rng, mask: Mask): MseToken {
@@ -39,7 +40,7 @@ export function dealMse(userId: string, run: string, level: Level, rng: Rng, his
   const e = pickExcerpt(lv, new Set(), rng, history, now);
   if (!e) return null;
   const payload = withExcerpt({ u: userId, run, lv, k: [], f: 0, rs: [], ch: [], sc: [], o: [], st: 0, b: 0 }, e, rng, mask);
-  return { payload, excerpt: publicExcerpt(e, payload.o) };
+  return { payload, excerpt: publicExcerpt(e, payload.o, history.has(e.id)) };
 }
 
 /** The excerpt in play, for this student only. */
@@ -91,5 +92,5 @@ export function nextExcerpt(t: MseToken, rng: Rng, history: History, now: number
   const e = pickExcerpt(lv, new Set(seenIds(t, mask)), rng, history, now);
   if (!e) return null;
   const payload = withExcerpt({ ...t, lv }, e, rng, mask);
-  return { payload, excerpt: publicExcerpt(e, payload.o) };
+  return { payload, excerpt: publicExcerpt(e, payload.o, history.has(e.id)) };
 }
