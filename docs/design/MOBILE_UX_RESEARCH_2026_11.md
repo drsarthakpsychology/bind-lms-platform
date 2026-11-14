@@ -215,8 +215,11 @@ card-driven, no Next button; another agent is editing those files).
 
 ## 10. References for the phone shell decisions
 
-Checked in the connected reference libraries (Mobbin's MCP needs a paid plan
-and returned nothing, so Screenrove and Made Good Designs were used).
+Screenrove is the main reference (search_screens, then build_recipe with
+codecademy-quiz, codecademy-quiz-answer, codecademy-lesson, preply-quiz-level
+and leonardo-product-more, then check_my_ui and compare_screens on our
+after-screenshots). Made Good Designs filled gaps. Mobbin's MCP needs a paid
+plan and returned nothing.
 
 | Decision | Reference |
 |---|---|
@@ -225,6 +228,10 @@ and returned nothing, so Screenrove and Made Good Designs were used).
 | Back / Continue pair at the bottom of a step | UI by Made Good Designs, "Onboarding step", screen b0bcc75d6332, https://madegooddesigns.com/inspiration/ui/onboarding-step-mobile-minimal-b0bcc75d6332 |
 | A desktop side panel becomes a bottom sheet on phones, with a sticky footer | UI by Made Good Designs, "Side drawer over a data table" (brutalist), screen 99f0adc16462, https://madegooddesigns.com/inspiration/ui/side-drawer-mobile-brutalist-99f0adc16462 ; "Explore map" (brutalist), screen 0c4e516f7901, https://madegooddesigns.com/inspiration/ui/map-view-mobile-brutalist-0c4e516f7901 |
 | A "More" place that lists the rest of the app and the account | Leonardo.ai More menu, Screenrove `leonardo-product-more`, captured 2026-10-22, https://screenrove.com/leonardo/product/leonardo-product-more |
+| Disabled Check in the footer with Skip beside it; on Check, feedback rises and the same spot becomes Continue (our "Show the answer" + Check bar, then "Learn this" + Next) | Duolingo, Screenrove `duolingo-first-exercise` (captured 2026-09-24, https://screenrove.com/duolingo/flows#duolingo-first-exercise) and `duolingo-product-correct` (https://screenrove.com/duolingo/product/duolingo-product-correct); closest match returned by Screenrove check_my_ui for our after-screen |
+| Quiz footer: position "1 / 13", a thin progress bar, Next disabled until answered; the explanation sits under the chosen answer and the right one is labelled | Codecademy, Screenrove `codecademy-quiz` and `codecademy-quiz-answer`, captured 2026-10-22, https://screenrove.com/codecademy/flows#codecademy-quiz |
+| One choice per full-width row, selected row gets the strong border, Continue under the list | Preply, Screenrove `preply-quiz-level`, captured 2026-10-22, https://screenrove.com/preply/flows#preply-quiz-level |
+| Account menu: who you are, settings, a theme switch, log out (our avatar bottom sheet has the same four parts) | Sanity, Screenrove `sanity-user-menu`, https://screenrove.com/sanity (closest match from check_my_ui for our More/account sheet) |
 | Placement step before a course ("where to start") | Duolingo, Screenrove `duolingo-placement`, captured 2026-09-24, https://screenrove.com/duolingo/flows#duolingo-placement |
 
 ## 11. Bottom of the screen (owner report, Nov 2026)
