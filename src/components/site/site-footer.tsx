@@ -30,24 +30,24 @@ export function SiteFooter() {
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <Link href="/go/home" aria-label="VIBHA home"><VibhaWordmark size={32} /></Link>
           <nav
-            className="flex flex-wrap items-center gap-5 text-caption text-muted-foreground"
+            className="flex flex-wrap items-center gap-x-5 gap-y-1 text-caption text-muted-foreground"
             aria-label="Footer"
           >
             <Link
               href="/"
-              className="transition-[color,translate] duration-base ease-snappy hover:-translate-x-0.5 hover:text-foreground"
+              className="inline-flex min-h-8 items-center transition-[color,translate] duration-base ease-snappy hover:-translate-x-0.5 hover:text-foreground"
             >
               Homepage
             </Link>
             <Link
               href="/login"
-              className="transition-[color,translate] duration-base ease-snappy hover:-translate-x-0.5 hover:text-foreground"
+              className="inline-flex min-h-8 items-center transition-[color,translate] duration-base ease-snappy hover:-translate-x-0.5 hover:text-foreground"
             >
               Login
             </Link>
             <Link
               href="/waitlist"
-              className="transition-[color,translate] duration-base ease-snappy hover:-translate-x-0.5 hover:text-foreground"
+              className="inline-flex min-h-8 items-center transition-[color,translate] duration-base ease-snappy hover:-translate-x-0.5 hover:text-foreground"
             >
               Request an invitation
             </Link>
