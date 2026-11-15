@@ -284,7 +284,7 @@ export function QuietPanel({
               <>
                 <p className="truncate text-caption text-muted-foreground">To: {preview.email}</p>
                 <p className="mt-1 font-semibold">{personalise(subject, preview.name)}</p>
-                <p className="mt-2 whitespace-pre-wrap break-words">{personalise(message, preview.name)}</p>
+                <p className={v2 ? "mt-2 whitespace-pre-line [overflow-wrap:anywhere]" : "mt-2 whitespace-pre-wrap break-words"}>{personalise(message, preview.name)}</p>
               </>
             ) : (
               <p className="text-muted-foreground">Tick a student to see their email.</p>
