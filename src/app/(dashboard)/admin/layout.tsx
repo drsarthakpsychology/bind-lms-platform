@@ -36,7 +36,7 @@ export default async function AdminLayout({
   const v2 = uiV2For(await readFlags().catch(() => null), session.profile.role);
   return (
     <div className="w-full">
-      <AdminSectionTabs />
+      <AdminSectionTabs v2={v2} />
       <AdminV2Provider value={v2}>{children}</AdminV2Provider>
     </div>
   );
