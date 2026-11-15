@@ -209,7 +209,8 @@ export async function emailsSentToday(admin: SupabaseClient, now = new Date()): 
     .from("email_sends")
     .select("id", { count: "exact", head: true })
     .in("status", ["sent", "delivered"])
-    .gte("created_at", startOfEmailDay(now));
+    // A queued email that went out today was created earlier: count it by when it was sent.
+    .or(`created_at.gte.${startOfEmailDay(now)},sent_at.gte.${startOfEmailDay(now)}`);
   return count ?? 0;
 }
 

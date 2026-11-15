@@ -13,6 +13,7 @@ import { dayIst, formUrl } from "./format";
 import { readFlags } from "@/lib/flags";
 import { uiV2For } from "@/lib/ui/v2";
 import { FormsListV2 } from "../_v2/forms";
+import { btn as kit } from "../_v2/kit";
 
 export const dynamic = "force-dynamic";
 
@@ -39,7 +40,16 @@ export default async function FormsPage() {
           answers: f.responses,
           last: f.lastResponseAt ? dayIst(f.lastResponseAt) : null,
           link: <CopyLink url={formUrl(f.slug)} />,
-          actions: canEdit ? <FormRowActions id={f.id} title={f.title} active={f.isActive} responses={f.responses} /> : undefined,
+          actions: canEdit ? (
+            <>
+              {f.responses > 0 ? (
+                <Link href={`/admin/forms/${f.id}?email=all`} className={kit.quiet}>
+                  Email everyone
+                </Link>
+              ) : null}
+              <FormRowActions v2 id={f.id} title={f.title} active={f.isActive} responses={f.responses} />
+            </>
+          ) : undefined,
         }))}
       />
     );
