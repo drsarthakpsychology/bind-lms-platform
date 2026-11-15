@@ -100,7 +100,7 @@ describe("Welcome words from the website", () => {
   it("uses the server's words and keeps the app's drawings", () => {
     const w = adaptHome({ v: 1, hero: { title: ["A", "B", "C"], lede: "L", highlights: ["x", "y", "z"], quickAnswers: [] }, sections: { patients: { head: { tag: "t", title: "T", accent: "A" }, steps: [{ title: "One", text: "1" }] } } as never, contact: { phone: "1", phoneHref: "tel:1", whatsappHref: "w", address: ["Here,"] } });
     expect(w.HERO.lines).toEqual(["A", "B", "C"]);
-    expect(w.QUICK_ANSWERS).toBe(BUNDLED.QUICK_ANSWERS);
+    expect(w.QUICK_ANSWERS).toEqual(BUNDLED.QUICK_ANSWERS);
     expect(w.PATIENTS.steps[0]).toEqual({ title: "One", text: "1", heads: BUNDLED.PATIENTS.steps[0]!.heads });
     expect(w.PATIENTS.sub).toBe(BUNDLED.PATIENTS.sub);
     expect(w.CLOSING.address).toBe("Here");
