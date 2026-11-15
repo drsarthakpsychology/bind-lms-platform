@@ -31,6 +31,8 @@ export const APP_RULES = {
   streamTtl: { factor: 1.5, marginSeconds: 600, minSeconds: 30 * 60, maxSeconds: 6 * 60 * 60 },
   /** How often the stream proxy re-checks the account and phone for a playing app. */
   streamRecheckSeconds: 60,
+  /** The Welcome screen's cohort line (APP_COHORT_LINE overrides; "none" hides it). */
+  cohortLine: "Cohort Two · by invitation · starts December 2026",
 } as const;
 
 /** "1.2.3" compared number by number; anything unreadable counts as 0. */
@@ -73,6 +75,13 @@ export function supportContacts() {
   return { whatsapp: `https://wa.me/${LEGAL.phone.replace(/[^\d]/g, "")}`, email: LEGAL.contactEmail };
 }
 
+/** The Welcome screen's cohort line, or null when switched off. */
+export function cohortLine(env: Record<string, string | undefined> = process.env): string | null {
+  const v = (env.APP_COHORT_LINE ?? "").trim();
+  if (v.toLowerCase() === "none") return null;
+  return (v || APP_RULES.cohortLine).slice(0, 120);
+}
+
 export function buildConfig(now = new Date(), env: Record<string, string | undefined> = process.env): AppConfig {
   const site = appUrl();
   const notice = (env.APP_NOTICE ?? "").trim().slice(0, 200);
@@ -94,5 +103,6 @@ export function buildConfig(now = new Date(), env: Record<string, string | undef
     legal: { termsUrl: `${site}/policies/terms`, privacyUrl: `${site}/policies/privacy`, policyVersion: policyVersion() },
     contentSchemaVersion: CONTENT_SCHEMA_VERSION,
     now: now.toISOString(),
+    cohortLine: cohortLine(env),
   };
 }
