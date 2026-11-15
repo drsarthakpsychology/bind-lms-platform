@@ -5,6 +5,7 @@ import { View } from "react-native";
 
 import { useMe } from "@/api/queries";
 import { Row, RowList, Screen, Section, Skeleton, T } from "@/ds";
+import { Enter } from "@/motion";
 import { TabTop } from "@/nav/top";
 import { space, useTheme } from "@/theme";
 
@@ -13,21 +14,21 @@ export function MeScreen() {
   const c = useTheme();
   const q = useMe();
   const me = q.data;
-  const can = me?.access.can;
-  const lecturesOnly = !!me?.access.lecturesOnly;
+  const can = me?.access?.can;
+  const lecturesOnly = !!me?.access?.lecturesOnly;
   const icon = { size: 20, color: c.muted };
-  const sub = me ? [me.rollNumber, me.cohorts.map((x) => x.name).join(", "), lecturesOnly ? "Lectures" : null].filter(Boolean).join(" · ") : "";
+  const sub = me ? [me.rollNumber, (me.cohorts ?? []).map((x) => x.name).join(", "), lecturesOnly ? "Lectures" : null].filter(Boolean).join(" · ") : "";
   return (
     <Screen tab top={<TabTop />} testID="me" onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
       {me ? (
-        <View style={{ gap: space[1] }}>
+        <Enter style={{ gap: space[1] }}>
           <T v="h1">{me.name ?? me.email ?? "You"}</T>
           {sub ? (
             <T v="small" tone="muted">
               {sub}
             </T>
           ) : null}
-        </View>
+        </Enter>
       ) : (
         <View style={{ gap: space[2] }}>
           <Skeleton w="60%" h={28} />

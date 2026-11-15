@@ -6,6 +6,7 @@ import { View } from "react-native";
 import type { CourseSummary } from "@/api/contract";
 import { useCourses } from "@/api/queries";
 import { EmptyState, Hero, Loaded, ProgressLine, Row, RowList, RowsSkeleton, Screen, Section, Skeleton } from "@/ds";
+import { Enter } from "@/motion";
 import { openTarget } from "@/nav/targets";
 import { TabTop } from "@/nav/top";
 import { space, useTheme } from "@/theme";
@@ -24,34 +25,43 @@ export function LecturesBody({ courses }: { courses: CourseSummary[] }) {
   return (
     <>
       {current?.next ? (
-        <Hero
-          context={nextLine(current.next)}
-          title={current.next.title}
-          meta={current.next.midway ? "You stopped part way through" : current.started ? undefined : "Start here"}
-          action={{ label: current.next.midway ? "Continue watching" : current.next.kind === "assignment" ? "Open the assignment" : "Start watching", onPress: () => openTarget(current.next!.target), icon: <ArrowRight size={20} color={c.onPrimary} />, testID: "lectures-continue" }}
-        />
+        <Enter i={0}>
+          <Hero
+            context={nextLine(current.next)}
+            title={current.next.title}
+            meta={current.next.midway ? "You stopped part way through" : current.started ? undefined : "Start here"}
+            action={{
+              label: current.next.midway ? "Continue watching" : current.next.kind === "assignment" ? "Open the assignment" : "Start watching",
+              onPress: () => openTarget(current.next!.target),
+              icon: <ArrowRight size={20} color={c.onPrimary} />,
+              testID: "lectures-continue",
+            }}
+          />
+        </Enter>
       ) : null}
-      <Section title={courses.length > 1 ? "Your courses" : "Your course"}>
-        <RowList>
-          {courses.map((x) => {
-            const pct = x.totalLessons ? Math.round((x.completedCount / x.totalLessons) * 100) : 0;
-            return (
-              <Row
-                key={x.id}
-                testID={`course-row-${x.id}`}
-                title={x.title}
-                meta={`${x.completedCount} of ${x.totalLessons} lectures`}
-                below={
-                  <View style={{ paddingTop: space[2] }}>
-                    <ProgressLine value={pct} height={4} label={`${pct}% of ${x.title}`} />
-                  </View>
-                }
-                onPress={() => router.push(`/course/${encodeURIComponent(x.id)}`)}
-              />
-            );
-          })}
-        </RowList>
-      </Section>
+      <Enter i={1}>
+        <Section title={courses.length > 1 ? "Your courses" : "Your course"}>
+          <RowList>
+            {courses.map((x) => {
+              const pct = x.totalLessons ? Math.round((x.completedCount / x.totalLessons) * 100) : 0;
+              return (
+                <Row
+                  key={x.id}
+                  testID={`course-row-${x.id}`}
+                  title={x.title}
+                  meta={`${x.completedCount} of ${x.totalLessons} lectures`}
+                  below={
+                    <View style={{ paddingTop: space[2] }}>
+                      <ProgressLine value={pct} height={4} label={`${pct}% of ${x.title}`} />
+                    </View>
+                  }
+                  onPress={() => router.push(`/course/${encodeURIComponent(x.id)}`)}
+                />
+              );
+            })}
+          </RowList>
+        </Section>
+      </Enter>
     </>
   );
 }

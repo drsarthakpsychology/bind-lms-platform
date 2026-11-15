@@ -4,6 +4,7 @@ import { QueryClient, useMutation, useQuery, useQueryClient, type UseQueryResult
 
 import { api, onSignedOut, session } from "@/auth";
 import type * as C from "./contract";
+import * as A from "./adapt";
 import { ApiFailure } from "./errors";
 import type * as X from "./extra";
 
@@ -34,7 +35,8 @@ const NEVER_PERSIST = new Set(["stream", "checkpoint", "config", "game", "prepSe
 export const persistOptions = {
   persister,
   maxAge: 24 * 60 * 60 * 1000,
-  buster: "c1",
+  // Bumped: copies saved before the admin answers were adapted must not come back.
+  buster: "c2",
   dehydrateOptions: { shouldDehydrateQuery: (q: { queryKey: readonly unknown[]; state: { status: string } }) => q.state.status === "success" && !NEVER_PERSIST.has(String(q.queryKey[0])) },
 };
 
@@ -84,7 +86,7 @@ export const useMe = () =>
   useQuery({
     queryKey: keys.me,
     queryFn: async () => {
-      const me = await api.get<C.Me>("/me");
+      const me = A.meView(await api.get<C.Me>("/me"));
       await session.setMe(me);
       return me;
     },
@@ -122,11 +124,12 @@ export const usePrep = () => useQuery({ queryKey: keys.prep, queryFn: () => api.
 export const usePrepSet = (id: string) => useQuery({ queryKey: keys.prepSet(id), queryFn: () => api.get<X.PrepSet>(`/prep/${encodeURIComponent(id)}`), staleTime: 0 });
 export const useMedicines = (q: string, cls: string) => useQuery({ queryKey: keys.medicines(q, cls), queryFn: () => api.get<X.MedicineList>("/medicines", { query: { q, class: cls } }), placeholderData: (prev) => prev });
 export const useMedicine = (id: string) => useQuery({ queryKey: keys.medicine(id), queryFn: () => api.get<X.MedicinePage>(`/medicines/${encodeURIComponent(id)}`) });
-export const useAdminHome = () => useQuery({ queryKey: keys.admin("home"), queryFn: () => api.get<X.AdminHomeData>("/admin/home") });
-export const useAdminStudents = (q: string) => useQuery({ queryKey: keys.admin("students", q), queryFn: () => api.get<X.AdminStudentList>("/admin/students", { query: { q } }), placeholderData: (prev) => prev });
-export const useAdminStudent = (id: string) => useQuery({ queryKey: keys.admin("student", id), queryFn: () => api.get<X.AdminStudent>(`/admin/students/${encodeURIComponent(id)}`) });
-export const useAdminActivity = () => useQuery({ queryKey: keys.admin("activity"), queryFn: () => api.get<X.AdminActivity>("/admin/activity") });
-export const useAdminMessages = () => useQuery({ queryKey: keys.admin("messages"), queryFn: () => api.get<X.AdminMessages>("/admin/messages") });
+export const useAdminHome = () => useQuery({ queryKey: keys.admin("home"), queryFn: async () => A.adminHomeView(await api.get<unknown>("/admin/home")) });
+// The server reads `search`; the mock reads `q`. Both are sent.
+export const useAdminStudents = (q: string) => useQuery({ queryKey: keys.admin("students", q), queryFn: async () => A.adminStudentsView(await api.get<unknown>("/admin/students", { query: { search: q, q } })), placeholderData: (prev) => prev });
+export const useAdminStudent = (id: string) => useQuery({ queryKey: keys.admin("student", id), queryFn: async () => A.adminStudentView(await api.get<unknown>(`/admin/students/${encodeURIComponent(id)}`)) });
+export const useAdminActivity = () => useQuery({ queryKey: keys.admin("activity"), queryFn: async () => A.adminActivityView(await api.get<unknown>("/admin/activity")) });
+export const useAdminMessages = () => useQuery({ queryKey: keys.admin("messages"), queryFn: async () => A.adminMessagesView(await api.get<unknown>("/admin/messages")) });
 
 export { useMutation, useQueryClient };
 export type { UseQueryResult };
