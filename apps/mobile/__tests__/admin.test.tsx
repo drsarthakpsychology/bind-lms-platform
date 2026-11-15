@@ -136,8 +136,8 @@ describe("admin words and sums", () => {
     expect(inPeopleView(p({ stage: "fee_shared" }), "not_paid", now)).toBe(true);
     expect(inPeopleView(p({ stage: "fee_shared", paid: true }), "not_paid", now)).toBe(false);
     expect(inPeopleView(p({ invitedAt: "2026-11-10T00:00:00Z" }), "invited", now)).toBe(true);
-    expect(inPeopleView(p({}), "enquired", now)).toBe(true);
-    expect(inPeopleView(p({ invitedAt: "2026-11-10T00:00:00Z" }), "enquired", now)).toBe(false);
+    expect(inPeopleView(p({}), "not_converted", now)).toBe(true);
+    expect(inPeopleView(p({ invitedAt: "2026-11-10T00:00:00Z" }), "not_converted", now)).toBe(false);
     expect(inPeopleView(p({ lastTouch: "2026-10-01T00:00:00Z" }), "quiet", now)).toBe(true);
     expect(inPeopleView(p({ stage: "joined" }), "joined", now)).toBe(true);
     expect(inPeopleView(p({ stage: "not_interested", lastTouch: "2026-10-01T00:00:00Z" }), "quiet", now)).toBe(false);

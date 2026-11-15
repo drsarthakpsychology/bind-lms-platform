@@ -1,26 +1,30 @@
 import { PersistQueryClientProvider } from "@tanstack/react-query-persist-client";
 import { useFonts } from "expo-font";
-import { Stack, router, useSegments } from "expo-router";
+import { Stack, router, useSegments, type ErrorBoundaryProps } from "expo-router";
 import * as ScreenCapture from "expo-screen-capture";
 import * as SplashScreen from "expo-splash-screen";
 import { StatusBar } from "expo-status-bar";
 import * as React from "react";
 import { AppState, Platform, View } from "react-native";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
+import { useReducedMotion } from "react-native-reanimated";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 
 import { useViewingAsStudent, ViewAsBar } from "@/admin/view-as";
-import { persistOptions, queryClient, useConfig } from "@/api/queries";
+import { persistOptions, persister, queryClient, useConfig } from "@/api/queries";
 import { session, useSession } from "@/auth";
 import { ToastHost } from "@/ds";
+import { CrashBoundary, CrashScreen, describe, installCrashHandlers } from "@/lib/crash";
 import { applyDevSession, applyMockFromUrl } from "@/lib/dev";
 import { holdPortrait } from "@/lib/orientation";
 import { loadSettings, settingsStore } from "@/lib/settings";
+import { fadeMotion, modalMotion, stackMotion } from "@/motion";
 import { groupFor, homeHref } from "@/nav/targets";
 import { usePushRouting } from "@/push";
 import { LockScreen, OtherDeviceScreen, PausedScreen, SetPinScreen, UpdateScreen } from "@/screens/auth/gates";
 import { ThemeProvider, fonts, useTheme } from "@/theme";
 
+installCrashHandlers();
 void SplashScreen.preventAutoHideAsync().catch(() => undefined);
 applyMockFromUrl();
 
@@ -48,12 +52,23 @@ function useBoot(): boolean {
   const settingsReady = settingsStore.use((s) => s.loaded);
 
   React.useEffect(() => {
-    void loadSettings();
-    void session.boot().then(() => applyDevSession(session));
+    void loadSettings().catch(() => undefined);
+    // boot() reads the keystore; if that fails the phone starts signed out instead of hanging on the splash.
+    void session
+      .boot()
+      .catch(() => session.store.set({ phase: "visitor" }))
+      .then(() => applyDevSession(session))
+      .catch(() => undefined);
     void holdPortrait();
     // Android: FLAG_SECURE on the whole app (no screenshots, no screen recording,
     // blank in the recent-apps list). iOS: recordings come out blank.
-    if (Platform.OS !== "web") void ScreenCapture.preventScreenCaptureAsync("app").catch(() => undefined);
+    if (Platform.OS !== "web") {
+      try {
+        void ScreenCapture.preventScreenCaptureAsync("app").catch(() => undefined);
+      } catch {
+        /* Screen-capture blocking is optional: a failure only turns it off. */
+      }
+    }
   }, []);
 
   // Lock after five minutes in the background.
@@ -82,22 +97,31 @@ function useGuard(ready: boolean): void {
   const viewing = useViewingAsStudent() && groupFor(me) === "(admin)";
   React.useEffect(() => {
     if (!ready || top === undefined) return;
+    // A redirect must never throw out of an effect (that closes a release build).
+    const go = (href: string) => {
+      try {
+        router.replace(href);
+      } catch (e) {
+        console.warn("Redirect failed:", e);
+      }
+    };
     if (phase === "visitor") {
-      if (!PUBLIC.has(top)) router.replace("/welcome");
+      if (!PUBLIC.has(top)) go("/welcome");
       return;
     }
     if (top === "(visitor)" && phase === "ready") {
-      router.replace(homeHref(me));
+      go(homeHref(me));
       return;
     }
     const tabGroup = top === "(student)" || top === "(lecture)" || top === "(admin)";
-    if (tabGroup && top !== groupFor(me) && !(viewing && top === "(student)")) router.replace(homeHref(me));
-    else if (ADMIN_ONLY.has(top) && groupFor(me) !== "(admin)") router.replace(homeHref(me));
+    if (tabGroup && top !== groupFor(me) && !(viewing && top === "(student)")) go(homeHref(me));
+    else if (ADMIN_ONLY.has(top) && groupFor(me) !== "(admin)") go(homeHref(me));
   }, [ready, phase, me, top, viewing]);
 }
 
 function Shell() {
   const c = useTheme();
+  const reduce = !!useReducedMotion();
   const ready = useBoot();
   useGuard(ready);
   usePushRouting();
@@ -110,7 +134,7 @@ function Shell() {
 
   // The server may change the lock time without an app release.
   React.useEffect(() => {
-    const secs = cfg.data?.security.lockAfterBackgroundSeconds;
+    const secs = cfg.data?.security?.lockAfterBackgroundSeconds;
     if (secs) session.setLockAfter(secs * 1000);
   }, [cfg.data]);
 
@@ -149,8 +173,8 @@ function Shell() {
       <StatusBar style={c.dark ? "light" : "dark"} />
       <View style={{ flex: 1 }} accessibilityElementsHidden={!!overlay} importantForAccessibility={overlay ? "no-hide-descendants" : "auto"}>
         {/* The navigator always stays mounted (Expo Router needs it); the lock covers it completely. */}
-        {(
-          <Stack screenOptions={{ ...header, animation: Platform.OS === "android" ? "default" : undefined }}>
+        {
+          <Stack screenOptions={{ ...header, ...stackMotion(reduce) }}>
             <Stack.Screen name="index" options={{ headerShown: false }} />
             <Stack.Screen name="(visitor)" options={{ headerShown: false }} />
             <Stack.Screen name="(student)" options={{ headerShown: false }} />
@@ -167,7 +191,7 @@ function Shell() {
             <Stack.Screen name="settings" options={{ title: "Settings" }} />
             <Stack.Screen name="help" options={{ title: "Help" }} />
             <Stack.Screen name="doubts/index" options={{ title: "Doubts" }} />
-            <Stack.Screen name="doubts/ask" options={{ title: "Ask a doubt", presentation: "modal" }} />
+            <Stack.Screen name="doubts/ask" options={{ title: "Ask a doubt", presentation: "modal", ...(reduce ? null : modalMotion) }} />
             <Stack.Screen name="doubt/[id]" options={{ title: "" }} />
             <Stack.Screen name="study/index" options={{ title: "Study" }} />
             <Stack.Screen name="study/[moduleId]/index" options={{ title: "" }} />
@@ -178,16 +202,16 @@ function Shell() {
             <Stack.Screen name="certificates" options={{ title: "Certificates" }} />
             <Stack.Screen name="certificate/[id]" options={{ title: "" }} />
             <Stack.Screen name="verify/[certificateId]" options={{ title: "Verify a certificate" }} />
-            <Stack.Screen name="search" options={{ headerShown: false, animation: "fade" }} />
+            <Stack.Screen name="search" options={{ headerShown: false, ...fadeMotion }} />
             <Stack.Screen name="game/[id]" options={{ headerShown: false, gestureEnabled: false }} />
             <Stack.Screen name="case/[id]" options={{ headerShown: false }} />
             <Stack.Screen name="prep/index" options={{ title: "Exam Prep" }} />
             <Stack.Screen name="prep/[subject]" options={{ headerShown: false, gestureEnabled: false }} />
             <Stack.Screen name="medicine/[id]" options={{ title: "" }} />
             <Stack.Screen name="student/[id]" options={{ title: "" }} />
-            <Stack.Screen name="compose" options={{ title: "New message", presentation: "modal" }} />
+            <Stack.Screen name="compose" options={{ title: "New message", presentation: "modal", ...(reduce ? null : modalMotion) }} />
           </Stack>
-        )}
+        }
       </View>
       <ViewAsBar visible={viewing && !overlay} />
       {overlay}
@@ -196,15 +220,44 @@ function Shell() {
   );
 }
 
+/** Try again on the error page: drop the saved server answers (one of them may be what broke) and start from the front door. */
+function resetAfterCrash(): void {
+  queryClient.clear();
+  void persister.removeClient();
+  void SplashScreen.hideAsync().catch(() => undefined);
+  setTimeout(() => {
+    try {
+      router.replace("/");
+    } catch {
+      /* the navigator is not ready yet; it opens on the front door anyway */
+    }
+  }, 0);
+}
+
+/** Expo Router's own net for an error in this layout itself: the same calm page. */
+export function ErrorBoundary({ error, retry }: ErrorBoundaryProps) {
+  return (
+    <CrashScreen
+      crash={describe(error, "render")}
+      onRetry={() => {
+        resetAfterCrash();
+        void retry();
+      }}
+    />
+  );
+}
+
 export default function RootLayout() {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <SafeAreaProvider>
-        <PersistQueryClientProvider client={queryClient} persistOptions={persistOptions}>
-          <ThemeProvider>
-            <Shell />
-          </ThemeProvider>
-        </PersistQueryClientProvider>
+        <CrashBoundary onReset={resetAfterCrash}>
+          <PersistQueryClientProvider client={queryClient} persistOptions={persistOptions}>
+            <ThemeProvider>
+              <Shell />
+            </ThemeProvider>
+          </PersistQueryClientProvider>
+        </CrashBoundary>
       </SafeAreaProvider>
     </GestureHandlerRootView>
   );

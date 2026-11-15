@@ -11,8 +11,10 @@ import { toast } from "@/ds/toast";
 import { haptic } from "@/lib/haptics";
 
 /** "Today 12:40", "Yesterday", "12 Nov". */
-export function when(iso: string, now = Date.now()): string {
+export function when(iso: string | null | undefined, now = Date.now()): string {
+  if (!iso) return "";
   const d = new Date(iso);
+  if (Number.isNaN(d.getTime())) return "";
   const days = Math.floor((new Date(now).setHours(0, 0, 0, 0) - new Date(iso).setHours(0, 0, 0, 0)) / 86_400_000);
   if (days <= 0) return d.toLocaleTimeString("en-IN", { hour: "numeric", minute: "2-digit" });
   if (days === 1) return "Yesterday";

@@ -1,12 +1,21 @@
 import { Stack } from "expo-router";
 import * as React from "react";
 import { View } from "react-native";
+import Animated, { useAnimatedStyle } from "react-native-reanimated";
 
 import type { Progress, TopicScore } from "@/api/contract";
 import { useProgress } from "@/api/queries";
 import { EmptyState, Loaded, ProgressLine, Row, RowList, RowsSkeleton, Screen, Section, Stat, T } from "@/ds";
 import { openTarget } from "@/nav/targets";
+import { useFill } from "@/motion";
 import { space, useTheme } from "@/theme";
+
+/** One day's bar: grows up from the baseline, each a little after the one before. */
+function DayBar({ h, i, color }: { h: number; i: number; color: string }) {
+  const fill = useFill(100, 150 + i * 30);
+  const grow = useAnimatedStyle(() => ({ transform: [{ scaleY: fill.value }] }));
+  return <Animated.View style={[{ flex: 1, height: h, borderRadius: 2, backgroundColor: color, transformOrigin: "bottom" }, grow]} />;
+}
 
 function hours(sec: number): string {
   const h = Math.floor(sec / 3600);
@@ -23,7 +32,7 @@ function Days({ days }: { days: Progress["days"] }) {
     <View accessible accessibilityLabel={`Points in the last 14 days: ${total}`} style={{ gap: space[2] }}>
       <View style={{ flexDirection: "row", alignItems: "flex-end", height: 72, gap: 4 }}>
         {days.map((d, i) => (
-          <View key={d.day} style={{ flex: 1, height: Math.max(3, (d.xp / max) * 72), borderRadius: 2, backgroundColor: i === days.length - 1 ? (c.dark ? c.primary : c.ink) : c.cardLine }} />
+          <DayBar key={d.day} i={i} h={Math.max(3, (d.xp / max) * 72)} color={i === days.length - 1 ? (c.dark ? c.primary : c.ink) : c.cardLine} />
         ))}
       </View>
       <View style={{ flexDirection: "row", justifyContent: "space-between" }}>

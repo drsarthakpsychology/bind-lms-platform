@@ -11,10 +11,9 @@ jest.mock("react-native-worklets", () => ({ scheduleOnRN: (fn: Function, ...rest
 // A small stand-in for Reanimated: values are plain, animations finish at once.
 jest.mock("react-native-reanimated", () => {
   const RN = require("react-native");
-  const anim = () => {
-    const a: Record<string, unknown> = {};
-    a.duration = () => a;
-    a.delay = () => a;
+  // Layout animation builders: any chain (.delay().springify().damping()...) returns itself.
+  const anim = (): unknown => {
+    const a: unknown = new Proxy(function () {}, { get: (_t, k) => (k === "then" ? undefined : () => a), apply: () => a });
     return a;
   };
   const Easing = { bezier: () => (t: number) => t, inOut: () => (t: number) => t, out: () => (t: number) => t, quad: (t: number) => t, linear: (t: number) => t };
@@ -31,14 +30,25 @@ jest.mock("react-native-reanimated", () => {
     useAnimatedStyle: (fn: () => object) => fn(),
     useAnimatedProps: (fn: () => object) => fn(),
     withTiming: (v: unknown) => v,
+    withSpring: (v: unknown) => v,
+    withDelay: (_d: number, v: unknown) => v,
     withRepeat: (v: unknown) => v,
     withSequence: (...v: unknown[]) => v[v.length - 1],
     cancelAnimation: () => undefined,
     useReducedMotion: () => true,
+    useDerivedValue: (fn: () => unknown) => ({ value: fn(), get: fn }),
+    useAnimatedReaction: () => undefined,
+    interpolate: (x: number) => x,
+    Extrapolation: { CLAMP: "clamp" },
     FadeIn: anim(),
     FadeOut: anim(),
     FadeInDown: anim(),
     FadeOutDown: anim(),
+    FadeInUp: anim(),
+    FadeOutUp: anim(),
+    ZoomIn: anim(),
+    ZoomOut: anim(),
+    LinearTransition: anim(),
   };
 });
 jest.mock("@react-native-async-storage/async-storage", () => require("@react-native-async-storage/async-storage/jest/async-storage-mock"));

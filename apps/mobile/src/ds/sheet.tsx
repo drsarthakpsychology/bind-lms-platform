@@ -1,8 +1,10 @@
 import * as React from "react";
 import { Modal, Pressable, ScrollView, useWindowDimensions, View } from "react-native";
-import Animated, { Easing, useAnimatedStyle, useReducedMotion, useSharedValue, withTiming } from "react-native-reanimated";
+import Animated, { Easing, useAnimatedStyle, useReducedMotion, useSharedValue, withSpring, withTiming } from "react-native-reanimated";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
+import { haptic } from "@/lib/haptics";
+import { springs } from "@/motion";
 import { layout, motion, space, useTheme } from "@/theme";
 import { T } from "./text";
 
@@ -11,7 +13,7 @@ const ease = Easing.bezier(...motion.ease);
 
 /**
  * A bottom sheet for detail that would crowd the screen (today's quests, the
- * section list). Slides up in 300ms and away in 200ms, has a grabber, closes
+ * section list). Springs up (about 450ms, no bounce) and slides away in 200ms, has a grabber, closes
  * by dragging down, tapping outside, or the back gesture (the system modal's
  * own back handling, so back closes the sheet and never the screen). Sized to
  * its content, up to 85% of the screen, then it scrolls.
@@ -29,7 +31,7 @@ export function Sheet({ open, onClose, title, children, testID }: { open: boolea
 
   React.useEffect(() => {
     if (open) {
-      y.set(reduce ? 0 : withTiming(0, { duration: motion.sheetIn, easing: easeOut }));
+      y.set(reduce ? 0 : withSpring(0, springs.sheet));
       fade.set(reduce ? 1 : withTiming(1, { duration: motion.sheetIn, easing: easeOut }));
       return;
     }
@@ -42,20 +44,30 @@ export function Sheet({ open, onClose, title, children, testID }: { open: boolea
   const panel = useAnimatedStyle(() => ({ transform: [{ translateY: y.value }] }));
   const scrim = useAnimatedStyle(() => ({ opacity: fade.value }));
 
-  // Drag the grabber down to close.
-  const drag = React.useRef({ start: 0 });
+  // Drag the grabber down to close: the sheet follows the finger 1:1 (with a
+  // rubber band upward), then closes on a long or quick pull, else springs back.
+  const drag = React.useRef({ start: 0, lastY: 0, lastT: 0, v: 0 });
   const grab = {
     onStartShouldSetResponder: () => true,
     onMoveShouldSetResponder: () => true,
-    onResponderGrant: (e: { nativeEvent: { pageY: number } }) => {
-      drag.current.start = e.nativeEvent.pageY;
+    onResponderGrant: (e: { nativeEvent: { pageY: number; timestamp: number } }) => {
+      drag.current = { start: e.nativeEvent.pageY, lastY: e.nativeEvent.pageY, lastT: e.nativeEvent.timestamp, v: 0 };
     },
-    onResponderMove: (e: { nativeEvent: { pageY: number } }) => {
-      y.set(Math.max(0, e.nativeEvent.pageY - drag.current.start));
+    onResponderMove: (e: { nativeEvent: { pageY: number; timestamp: number } }) => {
+      const d = drag.current;
+      const dt = Math.max(1, e.nativeEvent.timestamp - d.lastT);
+      d.v = (e.nativeEvent.pageY - d.lastY) / dt;
+      d.lastY = e.nativeEvent.pageY;
+      d.lastT = e.nativeEvent.timestamp;
+      const dy = e.nativeEvent.pageY - d.start;
+      y.set(dy < 0 ? dy * 0.2 : dy);
     },
     onResponderRelease: (e: { nativeEvent: { pageY: number } }) => {
-      if (e.nativeEvent.pageY - drag.current.start > 80) onClose();
-      else y.set(withTiming(0, { duration: motion.state, easing: easeOut }));
+      const dy = e.nativeEvent.pageY - drag.current.start;
+      if (dy > 80 || (dy > 16 && drag.current.v > 0.5)) {
+        haptic.select();
+        onClose();
+      } else y.set(withSpring(0, springs.snappy));
     },
   };
 

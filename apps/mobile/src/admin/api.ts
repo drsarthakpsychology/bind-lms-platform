@@ -10,7 +10,7 @@ import { haptic } from "@/lib/haptics";
 import type * as A from "./contract";
 import type * as X from "./extra";
 import { guarded, useAdminRole, type AdminAction } from "./role";
-import { arr, badgesFrom, behindFrom, certListFrom, emailReportFrom, formFrom, formsFrom, inboxFrom, issueResultFrom, newKeyFrom, num, obj, previewFrom, safeActivity, safeDoubt, safeDoubts, safeHome, safeMessages, safeStudent, safeStudentList, studioFrom, submissionsFrom, systemFrom } from "./safe";
+import { arr, badgesFrom, enquiriesFrom, peopleFrom, personDetailFrom, personFrom, behindFrom, certListFrom, emailReportFrom, formFrom, formsFrom, inboxFrom, issueResultFrom, newKeyFrom, num, obj, previewFrom, safeActivity, safeDoubt, safeDoubts, safeHome, safeMessages, safeStudent, safeStudentList, studioFrom, submissionsFrom, systemFrom } from "./safe";
 
 /** Admin server data. Every key starts with "admin" so one call refreshes it all after an action. */
 const k = keys.admin;
@@ -91,9 +91,30 @@ function cohortFromHome(c: { id: string; name: string; members: number; week: nu
   return { id: c.id, name: c.name, status: "active", course: null, members: c.members, lectures: 0, pct: c.pct, activeWeek: c.week, behind: c.behind, never: 0, starts: null, ends: null };
 }
 
-export const usePeople = () => useQuery({ queryKey: k("people"), queryFn: async () => ({ items: arr<X.PersonRow>(obj(await get("/admin/people")).items).filter((p) => p && p.key) }) });
-export const usePerson = (key: string) => useQuery({ queryKey: k("person", key), queryFn: async () => { const p = obj(await get(`/admin/people/${enc(key)}`)); return { ...p, facts: arr(p.facts), timeline: arr(p.timeline), studentId: (p.studentId as string | null) ?? null } as X.PersonDetail; } });
-export const useEnquiries = () => useQuery({ queryKey: k("enquiries"), queryFn: async () => ({ items: arr<X.Enquiry>(obj(await get("/admin/enquiries")).items).filter((e) => e && e.id) }) });
+/** The pipeline: the server picks the quick view and counts each one. */
+export const usePeople = (view: X.PeopleView = "all", q = "") =>
+  useQuery({ queryKey: k("people3", `${view}:${q}`), queryFn: async () => peopleFrom(await get("/admin/people", { view, q: q || undefined, limit: 500 })), placeholderData: (prev) => prev });
+/** One person: their own route when the server has one, otherwise their row in the pipeline. */
+export const usePerson = (key: string) =>
+  useQuery({
+    queryKey: k("person3", key),
+    queryFn: () =>
+      orElse(
+        async () => {
+          const p = obj(await get(`/admin/people/${enc(key)}`));
+          const row = personFrom(p);
+          return { ...personDetailFrom(row), facts: arr<X.PersonDetail["facts"][number]>(p.facts).length ? arr<X.PersonDetail["facts"][number]>(p.facts) : personDetailFrom(row).facts, timeline: arr<X.PersonEvent>(p.timeline).length ? arr<X.PersonEvent>(p.timeline) : personDetailFrom(row).timeline };
+        },
+        async () => {
+          const list = peopleFrom(await get("/admin/people", { view: "all", limit: 500 }));
+          const row = list.items.find((p) => p.key === key || p.email === key);
+          if (!row) throw new ApiFailure("not_found", "That person is not in the pipeline any more.", 404);
+          return personDetailFrom(row);
+        },
+      ),
+    enabled: key.length > 0,
+  });
+export const useEnquiries = () => useQuery({ queryKey: k("enquiries3"), queryFn: async () => enquiriesFrom(peopleFrom(await get("/admin/people", { view: "all", enquiries: 1, limit: 500 }))) });
 
 export const useCertificates = (f: { q?: string; type?: string; status?: string } = {}) => useQuery({ queryKey: k("certificates3", JSON.stringify(f)), queryFn: async () => certListFrom(await get("/admin/certificates/issued", { q: f.q || undefined, type: f.type || undefined, status: f.status || undefined, limit: 200 })), placeholderData: (prev) => prev });
 export const useStudioOptions = () => useQuery({ queryKey: k("studio3"), queryFn: async () => studioFrom(await get("/admin/certificates/studio")), staleTime: 10 * 60_000 });
@@ -131,7 +152,13 @@ export const adminCalls = {
   submissionFile: (id: string, fileId: string) => api.get<A.AdminFileLink>(`/admin/submissions/${enc(id)}/files/${enc(fileId)}`),
   submissionAudio: (id: string) => api.get<A.AdminFileLink>(`/admin/submissions/${enc(id)}/audio`),
   signOff: (id: string, body: X.SignOffBody) => api.post<X.SignOff>(`/admin/review/signoffs/${enc(id)}`, body),
-  moveStage: (key: string, body: X.MoveStageBody) => api.post<X.PersonDetail>(`/admin/people/${enc(key)}/stage`, body),
+  /** Stage, then the follow-up date and the note when given: the website's three actions. */
+  moveStage: async (key: string, body: X.MoveStageBody) => {
+    await api.post<A.PersonSaved>(`/admin/people/${enc(key)}/stage`, { stage: body.stage } satisfies A.StageBody);
+    if (body.followUpAt !== undefined) await api.post<A.PersonSaved>(`/admin/people/${enc(key)}/follow-up`, { date: body.followUpAt ? body.followUpAt.slice(0, 10) : "" } satisfies A.FollowUpBody);
+    if (body.note?.trim()) await api.post<A.PersonSaved>(`/admin/people/${enc(key)}/activity`, { kind: "note", text: body.note.trim() } satisfies A.ActivityBody);
+    return { saved: true as const };
+  },
   issue: async (body: X.StudioIssueInput, replaces?: string | null) => issueResultFrom(await api.post<unknown>("/admin/certificates/issue", issueBody(body, replaces))),
   preview: async (body: X.StudioIssueInput, showing?: number) => api.post<A.StudioPreview>("/admin/certificates/preview", { ...issueBody(body), showing }),
   revoke: (id: string, reason: string) => api.post<{ revoked: true }>(`/admin/certificates/${enc(id)}/revoke`, { reason } satisfies A.RevokeBody),
@@ -141,10 +168,16 @@ export const adminCalls = {
   certificatePdf: (id: string) => api.get<A.AdminFileLink>(`/admin/certificates/${enc(id)}/pdf`),
   awardBadge: (id: string, userIds: string[]) => api.post<A.AwardBadgeResult>(`/admin/badges/${enc(id)}/award`, { userIds } satisfies A.AwardBadgeBody),
   awardAllBadges: () => api.post<A.AwardAllResult>("/admin/badges/award-all", {}),
-  note: (key: string, text: string) => api.post<X.PersonDetail>(`/admin/people/${enc(key)}/note`, { text } satisfies X.NoteBody),
-  invite: async (key: string): Promise<X.LoginLinkResult> => ({ sent: obj(await api.post<unknown>(`/admin/people/${enc(key)}/invite`, {})).sent !== false }),
-  markPaid: (key: string, paid: boolean) => api.post<X.PersonDetail>(`/admin/people/${enc(key)}/paid`, { paid } satisfies X.PaidBody),
-  contactPeople: async (body: X.BulkContactBody) => emailReportFrom(await api.post<unknown>("/admin/people/contact", body)),
+  note: (key: string, text: string, kind: A.ActivityBody["kind"] = "note") => api.post<A.PersonSaved>(`/admin/people/${enc(key)}/activity`, { kind, text } satisfies A.ActivityBody),
+  invite: async (key: string, name?: string): Promise<X.LoginLinkResult> => {
+    const r = obj(await api.post<unknown>(`/admin/people/${enc(key)}/invite`, { name } satisfies A.InviteBody));
+    if (r.sent === false) throw new ApiFailure("bad_request", typeof r.reason === "string" && r.reason ? r.reason : "The invitation could not be sent.", 400);
+    return { sent: true, emailed: true };
+  },
+  markPaid: (key: string, paid: boolean, amount?: number | null) => api.post<A.MarkPaidResult>(`/admin/people/${enc(key)}/paid`, { paid, amount: amount ?? null } satisfies A.MarkPaidBody),
+  contactPeople: async (body: X.BulkContactBody) => emailReportFrom(await api.post<unknown>("/admin/people/email", { keys: body.keys, subject: body.subject, body: body.text } satisfies A.PeopleEmailBody)),
+  whatsappPeople: async (keys: string[], text: string) => arr<A.PeopleWhatsAppResult["links"][number]>(obj(await api.post<unknown>("/admin/people/whatsapp", { keys, text } satisfies A.PeopleWhatsAppBody)).links),
+  sendWaitingPeople: () => api.post<A.PeopleSendWaitingResult>("/admin/people/email/send-waiting", {}),
   emailForm: async (id: string, body: X.FormEmailBody) => emailReportFrom(await api.post<unknown>(`/admin/forms/${enc(id)}/email`, { submissionIds: body.ids, subject: body.subject, body: body.text } satisfies A.FormEmailBody)),
   previewFormEmail: async (id: string, submissionId: string, subject: string, text: string) => previewFrom(await api.post<unknown>(`/admin/forms/${enc(id)}/email/preview`, { submissionId, subject, body: text } satisfies A.FormEmailPreviewBody)),
   sendWaitingForm: (id: string) => api.post<A.FormSendWaitingResult>(`/admin/forms/${enc(id)}/email/send-waiting`, {}),

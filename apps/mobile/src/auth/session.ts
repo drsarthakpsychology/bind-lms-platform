@@ -1,5 +1,6 @@
 import { createClient, type ApiClient, type SessionEvent, type Transport } from "@/api/client";
 import type { AuthTokens, DeviceInfo, Me, SignInResult, SignOutResult } from "@/api/contract";
+import { meView } from "@/api/adapt";
 import { ApiFailure } from "@/api/errors";
 import { createStore } from "@/lib/store";
 import type { KeyValue } from "@/lib/storage";
@@ -97,7 +98,8 @@ export function createSession(deps: SessionDeps) {
     },
   });
 
-  async function setMe(me: Me): Promise<void> {
+  async function setMe(raw: Me): Promise<void> {
+    const me = meView(raw);
     store.set({ me });
     await deps.prefs.set(K.me, JSON.stringify(me)).catch(() => undefined);
   }
@@ -144,7 +146,7 @@ export function createSession(deps: SessionDeps) {
       let me: Me | null = null;
       try {
         const cached = await deps.prefs.get(K.me);
-        me = cached ? (JSON.parse(cached) as Me) : null;
+        me = cached ? meView(JSON.parse(cached)) : null;
       } catch {
         me = null;
       }
@@ -156,6 +158,7 @@ export function createSession(deps: SessionDeps) {
     async signIn(email: string, password: string): Promise<void> {
       const device: DeviceInfo = { id: deviceId, ...(deps.device?.() ?? { name: "Phone", platform: "android" }) };
       const r = await api.post<SignInResult>("/auth/sign-in", { email: email.trim().toLowerCase(), password, device }, { auth: false });
+      if (!r?.tokens?.accessToken || !r.tokens.refreshToken || !r.me) throw new ApiFailure("server_error", "The server gave an answer the app did not understand. Try again.");
       tokens = r.tokens;
       await deps.secure.set(K.tokens, JSON.stringify(r.tokens));
       await pin.clear();

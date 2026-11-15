@@ -128,14 +128,22 @@ export type PersonRow = {
   /** The invitation (login) email went out. */
   invitedAt: string | null;
   paid: boolean;
+  /** From the server's People list (GET /admin/people). */
+  college?: string | null;
+  cohorts?: { id: string; name: string }[];
+  message?: string | null;
+  whatsappUrl?: string | null;
+  paidAt?: string | null;
+  paidAmount?: number | null;
+  studentId?: string | null;
 };
 
 /** The quick views of the pipeline (the website's People views on agent/admincert). */
 export const PEOPLE_VIEWS = [
   { id: "all", label: "Everyone" },
   { id: "not_paid", label: "Not paid yet" },
-  { id: "invited", label: "Invited but not joined" },
-  { id: "enquired", label: "Enquired but not converted" },
+  { id: "invited", label: "Invited, not joined" },
+  { id: "not_converted", label: "Enquired, not converted" },
   { id: "quiet", label: "Went quiet" },
   { id: "joined", label: "Joined" },
 ] as const;
@@ -144,7 +152,18 @@ export type NoteBody = { text: string };
 export type PaidBody = { paid: boolean };
 export type BulkContactBody = { keys: string[]; subject: string; text: string };
 export type BulkContactResult = { sent: number; failed: number; /** Over today's allowance: goes out with Send waiting emails. */ queued?: number; noEmail?: number };
-export type PeopleList = { items: PersonRow[] };
+export type PeopleList = {
+  items: PersonRow[];
+  /** How many each quick view holds (from the server); counted here when missing. */
+  counts?: Partial<Record<PeopleView, number>>;
+  total?: number;
+  paymentReady?: boolean;
+  followUpsDue?: number;
+  waiting?: number;
+  allowance?: { configured: boolean; limit: number; left: number };
+  mergeFields?: { key: string; label: string }[];
+  canWrite?: boolean;
+};
 export type PersonEvent = { title: string; body: string | null; at: string; tone: "ok" | "info" | "warn" | "quiet" };
 export type PersonDetail = PersonRow & { facts: { label: string; value: string }[]; timeline: PersonEvent[]; studentId: string | null };
 export type MoveStageBody = { stage: StageId; followUpAt?: string | null; note?: string };

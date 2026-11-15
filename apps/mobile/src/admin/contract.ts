@@ -1,7 +1,7 @@
 /**
  * The admin part of the server contract, copied word for word from the
  * server's src/lib/app-api/contract-practise-admin.ts (branch agent/appapi2,
- * commit 9092ba17, section "Admin"). Do not edit the copied part by hand:
+ * branch admin-redesign, commit 78f4f0c1, section "Admin"). Do not edit the copied part by hand:
  * copy it again when the server changes. Below it are the older names the
  * screens still use, and the shapes of the website loaders the server passes
  * through as they are.
@@ -342,6 +342,89 @@ export type RevokeBody = { reason: string };
 /** POST /admin/certificates/:id/resend */
 export type ResendBody = { email: boolean };
 export type ResendResult = { notified: boolean; delivery: Record<string, unknown> | null };
+
+/* People: Pipeline and Enquiries ----------------------------------------- */
+
+/** A person is named in addresses by `key` (their email, base64url), never by the email itself. */
+export type PeopleView = "all" | "not_paid" | "invited" | "not_converted" | "quiet" | "joined";
+export type AdminPerson = {
+  key: string;
+  name: string;
+  email: string;
+  phone: string | null;
+  college: string | null;
+  stage: string;
+  stageLabel: string;
+  /** "website", "instagram", "Added as a student" ... */
+  source: string;
+  isStudent: boolean;
+  isEnquiry: boolean;
+  /** Has an account and has set it up or signed in. */
+  joined: boolean;
+  studentId: string | null;
+  cohorts: { id: string; name: string }[];
+  /** Enquiry, else invite, ISO; null when neither is known. */
+  firstSeenAt: string | null;
+  lastContactAt: string | null;
+  /** week, month, older, never */
+  lastContact: "week" | "month" | "older" | "never";
+  lastSeenAt: string | null;
+  followUpAt: string | null;
+  inviteSentAt: string | null;
+  paidAt: string | null;
+  paidAmount: number | null;
+  /** The latest enquiry message. */
+  message: string | null;
+  /** wa.me link, or null when the number is unusable. */
+  whatsapp: string | null;
+};
+/**
+ * GET /admin/people?view=&quiet=7|14|30&q=&stage=&cohort=&source=&from=YYYY-MM-DD&to=&last=week|month|older|never&enquiries=1&limit&cursor
+ * The website's Pipeline (and, with enquiries=1, Enquiries: people who enquired).
+ */
+export type AdminPeople = Page<AdminPerson> & {
+  v: 1;
+  total: number;
+  view: PeopleView;
+  /** How many each quick view holds under the other filters. */
+  counts: Record<PeopleView, number>;
+  views: { id: PeopleView; label: string }[];
+  quietDays: number;
+  quietChoices: number[];
+  stages: { id: string; label: string }[];
+  lastContactChoices: { id: "week" | "month" | "older" | "never"; label: string }[];
+  cohorts: { id: string; name: string }[];
+  sources: string[];
+  /** False until 2026_11_15_people_payment.sql is in: Mark paid answers 503 until then. */
+  paymentReady: boolean;
+  /** Follow-ups due by this time tomorrow (over everyone). */
+  followUpsDue: number;
+  /** Pipeline emails waiting for tomorrow's allowance. */
+  waiting: number;
+  allowance: EmailAllowance;
+  mergeFields: MergeField[];
+  canWrite: boolean;
+};
+/** POST /admin/people/:key/paid */
+export type MarkPaidBody = { paid: boolean; amount?: number | null; note?: string | null };
+export type MarkPaidResult = { paid: boolean };
+/** POST /admin/people/:key/invite { name? } : the login link (makes the account first for an enquiry). */
+export type InviteBody = { name?: string };
+export type InviteResult = { sent: boolean; reason: string | null };
+/** POST /admin/people/:key/stage { stage } */
+export type StageBody = { stage: string };
+/** POST /admin/people/:key/activity { kind, text } : note, call, whatsapp, email, meeting. */
+export type ActivityBody = { kind: "note" | "call" | "whatsapp" | "email" | "meeting"; text: string };
+/** POST /admin/people/:key/follow-up { date } : YYYY-MM-DD, or "" to clear. */
+export type FollowUpBody = { date: string };
+export type PersonSaved = { saved: true };
+/** POST /admin/people/email { keys, subject, body } : only people in the pipeline are emailed. */
+export type PeopleEmailBody = { keys: string[]; subject: string; body: string };
+/** POST /admin/people/whatsapp { keys, text } : logs the contact and gives each person's link with {first_name} filled. */
+export type PeopleWhatsAppBody = { keys: string[]; text: string };
+export type PeopleWhatsAppResult = { links: { key: string; name: string; url: string | null }[] };
+/** POST /admin/people/email/send-waiting */
+export type PeopleSendWaitingResult = SendWaitingResult;
 
 // ------------------------------------------------------------- older names
 

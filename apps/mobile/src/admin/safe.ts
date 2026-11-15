@@ -5,6 +5,7 @@
  * (./contract.ts) into the shapes the screens were built on (./extra.ts),
  * so a screen never reads raw server JSON.
  */
+import { todayLine } from "@/api/adapt";
 import type { DoubtList, DoubtRow, DoubtThread } from "@/api/contract";
 import type * as A from "./contract";
 import type * as X from "./extra";
@@ -138,7 +139,7 @@ export function safeHome(v: unknown): A.AdminHomeData {
     .filter((a) => a.label && a.count > 0);
   return {
     v: 1,
-    dateLine: str(h.dateLine),
+    dateLine: str(h.dateLine) || todayLine(),
     todo,
     totalToDo: num(h.totalToDo, todo.reduce((n, a) => n + a.count, 0)),
     needsLook,
@@ -468,6 +469,81 @@ export function emailReportFrom(v: unknown): X.BulkContactResult {
 export function previewFrom(v: unknown): X.EmailPreview {
   const r = obj(v);
   return { to: str(r.to), subject: str(r.subject), text: str(r.text), unknownFields: arr(r.unknownFields).map((x) => str(x)).filter(Boolean) };
+}
+
+/* ----------------------------------------------------------------- people */
+
+const STAGE_IDS = ["new", "contacted", "call_done", "fee_shared", "joined", "no_reply", "not_interested"] as const;
+
+/** One person of GET /admin/people as the pipeline rows show it. */
+export function personFrom(v: unknown): X.PersonRow {
+  const p = obj(v);
+  const email = str(p.email);
+  const enquiry = p.isEnquiry === undefined ? !!p.enquiredAt : bool(p.isEnquiry);
+  return {
+    key: str(p.key, email),
+    name: str(p.name) || email.split("@")[0] || "Someone",
+    email,
+    phone: strOr(p.phone),
+    stage: oneOf(p.stage, STAGE_IDS, "new"),
+    followUpAt: strOr(p.followUpAt),
+    enquiredAt: strOr(p.enquiredAt) ?? (enquiry ? strOr(p.firstSeenAt) : null),
+    source: strOr(p.source),
+    isStudent: p.joined !== undefined ? bool(p.joined) : bool(p.isStudent),
+    lastTouch: strOr(p.lastContactAt ?? p.lastTouch),
+    invitedAt: strOr(p.inviteSentAt ?? p.invitedAt),
+    paid: p.paidAt !== undefined ? !!p.paidAt : bool(p.paid),
+    college: strOr(p.college),
+    cohorts: arr(p.cohorts).map((c) => ({ id: str(obj(c).id), name: str(obj(c).name, "Cohort") })).filter((c) => c.id),
+    message: strOr(p.message),
+    whatsappUrl: strOr(p.whatsapp),
+    paidAt: strOr(p.paidAt),
+    paidAmount: numOr(p.paidAmount),
+    studentId: strOr(p.studentId),
+  };
+}
+
+export function peopleFrom(v: unknown): X.PeopleList {
+  const r = obj(v);
+  const counts = obj(r.counts);
+  const allowance = obj(r.allowance);
+  return {
+    items: arr(r.items).map(personFrom).filter((p) => p.key),
+    counts: Object.fromEntries(Object.entries(counts).filter(([, n]) => typeof n === "number")) as X.PeopleList["counts"],
+    total: numOr(r.total) ?? undefined,
+    paymentReady: bool(r.paymentReady, true),
+    followUpsDue: num(r.followUpsDue),
+    waiting: num(r.waiting),
+    allowance: r.allowance ? { configured: bool(allowance.configured, true), limit: num(allowance.limit, 100), left: num(allowance.left, 100) } : undefined,
+    mergeFields: arr(r.mergeFields).map((m) => ({ key: str(obj(m).key), label: str(obj(m).label) })).filter((m) => m.key),
+    canWrite: bool(r.canWrite, true),
+  };
+}
+
+/** A person's page when the server has no route for one: built from their row. */
+export function personDetailFrom(p: X.PersonRow): X.PersonDetail {
+  const timeline: X.PersonEvent[] = [];
+  if (p.paidAt) timeline.push({ title: p.paidAmount ? `Paid ${p.paidAmount}` : "Paid", body: null, at: p.paidAt, tone: "ok" });
+  if (p.lastTouch) timeline.push({ title: "Last contact", body: null, at: p.lastTouch, tone: "info" });
+  if (p.invitedAt) timeline.push({ title: "Invitation sent", body: null, at: p.invitedAt, tone: "ok" });
+  if (p.enquiredAt) timeline.push({ title: "Filled the enquiry form", body: p.message ?? null, at: p.enquiredAt, tone: "info" });
+  timeline.sort((a, b) => (Date.parse(b.at) || 0) - (Date.parse(a.at) || 0));
+  return {
+    ...p,
+    studentId: p.studentId ?? null,
+    facts: [
+      ...(p.college ? [{ label: "College", value: p.college }] : []),
+      { label: "Source", value: p.source ?? "Not known" },
+      ...(p.cohorts?.length ? [{ label: "Cohort", value: p.cohorts.map((c) => c.name).join(", ") }] : []),
+    ],
+    timeline,
+  };
+}
+
+export function enquiriesFrom(list: X.PeopleList): X.EnquiryList {
+  return {
+    items: list.items.map((p) => ({ id: `e-${p.key}`, personKey: p.key, name: p.name, email: p.email, phone: p.phone, message: p.message ?? "No message.", at: p.enquiredAt ?? p.lastTouch ?? "", answered: p.stage !== "new", source: p.source })),
+  };
 }
 
 /* ----------------------------------------------------------------- system */

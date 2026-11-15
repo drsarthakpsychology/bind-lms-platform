@@ -171,7 +171,7 @@ export function inPeopleView(p: import("./extra").PersonRow, view: import("./ext
       return !p.paid && (p.stage === "fee_shared" || p.stage === "joined");
     case "invited":
       return !!p.invitedAt && !p.isStudent;
-    case "enquired":
+    case "not_converted":
       return !!p.enquiredAt && !p.invitedAt && !p.isStudent && p.stage !== "joined" && !closed;
     case "quiet": {
       const last = Date.parse(p.lastTouch ?? p.enquiredAt ?? "");

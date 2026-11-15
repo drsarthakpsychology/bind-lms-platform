@@ -12,6 +12,8 @@ import type { RawRequest, RawResponse } from "@/api/client";
 import type * as C from "@/api/contract";
 import type * as A from "./contract";
 import type * as X from "./extra";
+import { PEOPLE_VIEWS, STAGES } from "./extra";
+import { inPeopleView } from "./format";
 
 const MIN = 60_000;
 const ago = (min: number) => new Date(Date.now() - min * MIN).toISOString();
@@ -245,7 +247,6 @@ function cohorts(): X.CohortRow[] {
   return [row("c2", "Cohort Two", "active", "2026-11-02", "2027-04-30"), row("c1", "Cohort One", "ended", "2026-05-04", "2026-10-31"), { id: "c3", name: "Cohort Three", status: "upcoming", course: "Clinical Psychology in Practice", members: 0, lectures: 8, pct: 0, activeWeek: 0, behind: 0, never: 0, starts: "2027-01-11", ends: null }];
 }
 
-const publicPerson = ({ timeline: _t, facts: _f, studentId: _s, ...row }: X.PersonDetail): X.PersonRow => row;
 
 /**
  * Answers an admin call, or null when this is not an admin route (the main
@@ -460,54 +461,89 @@ export async function adminRoute(req: RawRequest, role: "admin" | "view_admin", 
   }
 
   /* -------------------------------------------------------- people */
-  if (is("GET", "/admin/people")) return ok<X.PeopleList>({ items: empty ? [] : s.people.map(publicPerson) });
-  if ((m = is("GET", "/admin/people/:key"))) {
-    const p = s.people.find((x) => x.key === m![0]);
-    return p ? ok(p) : notFound();
+  if (is("GET", "/admin/people")) {
+    const all = (empty ? [] : s.people).filter((p) => query.enquiries !== "1" || !!p.enquiredAt);
+    const needle = (query.q ?? "").toLowerCase();
+    const matching = all.filter((p) => !needle || `${p.name} ${p.email} ${p.phone ?? ""}`.toLowerCase().includes(needle));
+    const view = (PEOPLE_VIEWS.find((v) => v.id === query.view)?.id ?? "all") as X.PeopleView;
+    const items = matching.filter((p) => inPeopleView(p, view));
+    const counts = Object.fromEntries(PEOPLE_VIEWS.map((v) => [v.id, matching.filter((p) => inPeopleView(p, v.id)).length])) as Record<A.PeopleView, number>;
+    return ok<A.AdminPeople>({
+      v: 1,
+      items: items.map((p) => ({ key: p.key, name: p.name, email: p.email, phone: p.phone, college: null, stage: p.stage, stageLabel: p.stage, source: p.source ?? "website", isStudent: p.isStudent || !!p.studentId, isEnquiry: !!p.enquiredAt, joined: p.isStudent, studentId: p.studentId, cohorts: [], firstSeenAt: p.enquiredAt, lastContactAt: p.lastTouch, lastContact: "week", lastSeenAt: null, followUpAt: p.followUpAt, inviteSentAt: p.invitedAt, paidAt: p.paid ? ago(60 * 24 * 3) : null, paidAmount: null, message: p.timeline.find((t) => t.title.startsWith("Filled"))?.body ?? null, whatsapp: p.phone ? `https://wa.me/91${p.phone}` : null })),
+      nextCursor: null,
+      total: items.length,
+      view,
+      counts,
+      views: PEOPLE_VIEWS.map((v) => ({ id: v.id as A.PeopleView, label: v.label })),
+      quietDays: 14,
+      quietChoices: [7, 14, 30],
+      stages: [],
+      lastContactChoices: [],
+      cohorts: [C2, C1],
+      sources: [],
+      paymentReady: true,
+      followUpsDue: 1,
+      waiting: 0,
+      allowance: { configured: true, limit: 100, left: 92 },
+      mergeFields: [{ key: "first_name", label: "First name" }, { key: "name", label: "Full name" }],
+      canWrite: role === "admin",
+    });
   }
+  const person = (key: string) => s.people.find((x) => x.key === key);
+  const touch = (p: X.PersonDetail, title: string, bodyText: string | null, tone: X.PersonEvent["tone"]) => {
+    p.timeline.unshift({ title, body: bodyText, at: new Date().toISOString(), tone });
+    p.lastTouch = p.timeline[0]!.at;
+  };
   if ((m = is("POST", "/admin/people/:key/stage"))) {
-    const p = s.people.find((x) => x.key === m![0]);
+    const p = person(m[0]!);
     if (!p) return notFound();
     const stage = String(body.stage ?? "") as X.StageId;
-    if (!(stage in { new: 1, contacted: 1, call_done: 1, fee_shared: 1, joined: 1, no_reply: 1, not_interested: 1 })) return fail(400, "bad_request", "Pick a stage.");
+    if (!STAGES.some((x) => x.id === stage)) return fail(400, "bad_request", "Pick a stage.");
     p.stage = stage;
-    if ("followUpAt" in body) p.followUpAt = (body.followUpAt as string | null) ?? null;
-    p.timeline.unshift({ title: `Moved to ${stage.replace("_", " ")}`, body: (body.note as string) || null, at: new Date().toISOString(), tone: "ok" });
-    p.lastTouch = p.timeline[0]!.at;
-    return ok(p);
+    touch(p, `Moved to ${stage.replace("_", " ")}`, null, "ok");
+    return ok<A.PersonSaved>({ saved: true });
   }
-  if ((m = is("POST", "/admin/people/:key/note"))) {
-    const p = s.people.find((x) => x.key === m![0]);
+  if ((m = is("POST", "/admin/people/:key/follow-up"))) {
+    const p = person(m[0]!);
+    if (!p) return notFound();
+    p.followUpAt = body.date ? `${String(body.date)}T04:30:00.000Z` : null;
+    return ok<A.PersonSaved>({ saved: true });
+  }
+  if ((m = is("POST", "/admin/people/:key/activity"))) {
+    const p = person(m[0]!);
     if (!p) return notFound();
     const text = String(body.text ?? "").trim();
     if (!text) return fail(400, "bad_request", "Write the note first.", { fields: ["text"] });
-    p.timeline.unshift({ title: "Note", body: text, at: new Date().toISOString(), tone: "quiet" });
-    p.lastTouch = p.timeline[0]!.at;
-    return ok(p);
+    touch(p, body.kind === "note" ? "Note" : String(body.kind), text, "quiet");
+    return ok<A.PersonSaved>({ saved: true });
   }
   if ((m = is("POST", "/admin/people/:key/invite"))) {
-    const p = s.people.find((x) => x.key === m![0]);
+    const p = person(m[0]!);
     if (!p) return notFound();
     p.invitedAt = new Date().toISOString();
-    p.timeline.unshift({ title: "Invitation sent", body: null, at: p.invitedAt, tone: "ok" });
-    return ok<X.LoginLinkResult>({ sent: true, emailed: true, url: `https://vibhapsychology.com/setup?token=mock-${encodeURIComponent(p.key)}`, expiresAt: new Date(Date.now() + 7 * 86400_000).toISOString() });
+    touch(p, "Invitation sent", null, "ok");
+    return ok<A.InviteResult>({ sent: true, reason: null });
   }
   if ((m = is("POST", "/admin/people/:key/paid"))) {
-    const p = s.people.find((x) => x.key === m![0]);
+    const p = person(m[0]!);
     if (!p) return notFound();
     p.paid = body.paid !== false;
-    p.timeline.unshift({ title: p.paid ? "Marked as paid" : "Marked as not paid", body: null, at: new Date().toISOString(), tone: p.paid ? "ok" : "warn" });
-    return ok(p);
+    touch(p, p.paid ? "Marked as paid" : "Marked as not paid", null, p.paid ? "ok" : "warn");
+    return ok<A.MarkPaidResult>({ paid: p.paid });
   }
-  if (is("POST", "/admin/people/contact")) {
+  if (is("POST", "/admin/people/email")) {
     const keys = Array.isArray(body.keys) ? (body.keys as string[]) : [];
     if (!keys.length) return fail(400, "bad_request", "Pick who it goes to.");
-    if (!String(body.subject ?? "").trim() || !String(body.text ?? "").trim()) return fail(400, "bad_request", "Write a subject and a message.", { fields: ["subject", "text"] });
-    return ok<X.BulkContactResult>({ sent: keys.length, failed: 0 });
+    if (!String(body.subject ?? "").trim() || !String(body.body ?? "").trim()) return fail(400, "bad_request", "Write a subject and a message.", { fields: ["subject", "body"] });
+    const names = keys.map((k) => person(k)?.name ?? k);
+    return ok<A.PersonalEmailReport>({ sent: names, queued: [], failed: [], noEmail: [], duplicates: 0, remainingToday: 92 - names.length, queueFailed: false });
   }
-  if (is("GET", "/admin/enquiries")) {
-    return ok<X.EnquiryList>({ items: empty ? [] : s.people.filter((p) => p.enquiredAt && !p.isStudent).map((p) => ({ id: `e-${p.key}`, personKey: p.key, name: p.name, email: p.email, phone: p.phone, message: p.timeline.find((t) => t.title.startsWith("Filled"))?.body ?? "No message.", at: p.enquiredAt!, answered: p.stage !== "new", source: p.source })) });
+  if (is("POST", "/admin/people/whatsapp")) {
+    const keys = Array.isArray(body.keys) ? (body.keys as string[]) : [];
+    return ok<A.PeopleWhatsAppResult>({ links: keys.map((k) => { const p = person(k); return { key: k, name: p?.name ?? k, url: p?.phone ? `https://wa.me/91${p.phone}?text=${encodeURIComponent(String(body.text ?? "").replace("{first_name}", p.name.split(" ")[0]!))}` : null }; }) });
   }
+  if (is("POST", "/admin/people/email/send-waiting")) return ok<A.SendWaitingResult>({ sent: 0, failed: 0, left: 0 });
 
   /* -------------------------------------------------- certificates */
   if (is("GET", "/admin/certificates/issued")) {

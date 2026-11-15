@@ -128,25 +128,35 @@ function PersonLine({ p, onPress }: { p: PersonRow; onPress: () => void }) {
 
 function Pipeline({ initialView }: { initialView: PeopleView }) {
   const c = useTheme();
-  const q = usePeople();
   const { canWrite } = useAdminRole();
   const { run, busy } = useAdminAction();
   const [view, setView] = React.useState<PeopleView>(initialView);
   const [search, setSearch] = React.useState("");
+  const q = usePeople(view, search.trim());
+  const [wa, setWa] = React.useState<{ key: string; name: string; url: string | null }[] | null>(null);
+  const [waText, setWaText] = React.useState(false);
   const [picked, setPicked] = React.useState<Set<string>>(new Set());
   const [contact, setContact] = React.useState(false);
   return (
     <Loaded q={q} soon what="the pipeline" skeleton={<RowsSkeleton rows={6} />}>
       {(d) => {
+        // The server filters by view and search; an older answer without counts is filtered here.
         const needle = search.trim().toLowerCase();
-        const shown = d.items.filter((p) => inPeopleView(p, view) && (!needle || `${p.name} ${p.email} ${p.phone ?? ""}`.toLowerCase().includes(needle)));
-        const count = (v: PeopleView) => d.items.filter((p) => inPeopleView(p, v)).length;
+        const serverSide = d.counts && Object.keys(d.counts).length > 0;
+        const shown = serverSide ? d.items : d.items.filter((p) => inPeopleView(p, view) && (!needle || `${p.name} ${p.email} ${p.phone ?? ""}`.toLowerCase().includes(needle)));
+        const count = (v: PeopleView) => (serverSide ? (d.counts?.[v] ?? 0) : d.items.filter((p) => inPeopleView(p, v)).length);
         const all = shown.length > 0 && shown.every((p) => picked.has(p.key));
         return (
           <>
             <View style={{ flexDirection: "row" }}>
               <SearchBox value={search} onChange={setSearch} placeholder="Name, email or phone" label="Search people" testID="people-search" />
             </View>
+            {d.waiting && canWrite ? (
+              <Notice action={<SmallButton label="Send now" busy={busy === "send-waiting"} onPress={() => void run("send-waiting", () => adminCalls.sendWaitingPeople(), { done: (r) => `Sent ${r.sent}${r.left ? `, ${r.left} still waiting` : ""}` })} />}>
+                {`${plural(d.waiting, "email")} waiting for today's allowance.`}
+              </Notice>
+            ) : null}
+            {d.paymentReady === false ? <Quiet>Mark paid needs a database step first. Ask the owner to paste it.</Quiet> : null}
             <FilterChips label="View" value={view} onChange={(v) => { setView(v); setPicked(new Set()); }} options={PEOPLE_VIEWS.map((v) => ({ id: v.id, name: v.label, count: count(v.id) }))} testID="people-view" />
             {shown.length ? (
               <View style={{ gap: space[1] }}>
@@ -192,6 +202,7 @@ function Pipeline({ initialView }: { initialView: PeopleView }) {
               <View style={{ paddingTop: space[2] }}>
                 <ActionBar count={picked.size} onClear={() => setPicked(new Set())} testID="people-bar">
                   <SmallButton label="Email them" icon={<Mail size={18} color={c.ink} />} onPress={() => setContact(true)} testID="people-email" />
+                  <SmallButton label="WhatsApp" icon={<MessageCircle size={18} color={c.ink} />} onPress={() => setWaText(true)} testID="people-whatsapp" />
                 </ActionBar>
               </View>
             ) : null}
@@ -200,8 +211,10 @@ function Pipeline({ initialView }: { initialView: PeopleView }) {
               onClose={() => setContact(false)}
               count={picked.size}
               busy={busy === "contact"}
+              mergeFields={d.mergeFields}
+              allowance={d.allowance}
               onSend={(subject, text) =>
-                void run("contact", () => adminCalls.contactPeople({ keys: [...picked], subject, text }), { done: (r) => `Sent ${r.sent}${r.failed ? `, ${r.failed} failed` : ""}` }).then((r) => {
+                void run("contact", () => adminCalls.contactPeople({ keys: [...picked], subject, text }), { done: (r) => [`Sent ${r.sent}`, r.queued ? `${r.queued} wait for tomorrow` : "", r.failed ? `${r.failed} failed` : ""].filter(Boolean).join(", ") }).then((r) => {
                   if (r) {
                     setContact(false);
                     setPicked(new Set());
@@ -209,10 +222,59 @@ function Pipeline({ initialView }: { initialView: PeopleView }) {
                 })
               }
             />
+            <WhatsAppSheet
+              open={waText}
+              count={picked.size}
+              busy={busy === "contact"}
+              onClose={() => setWaText(false)}
+              onMake={(text) =>
+                void run("contact", () => adminCalls.whatsappPeople([...picked], text), { tag: "contact" }).then((links) => {
+                  if (links) {
+                    setWaText(false);
+                    setWa(links);
+                  }
+                })
+              }
+            />
+            <Sheet open={!!wa} onClose={() => setWa(null)} title="Open each chat" testID="wa-links">
+              <View style={{ gap: space[2] }}>
+                <T v="small" tone="muted">
+                  Each opens WhatsApp with the message ready. Press send there.
+                </T>
+                <RowList>
+                  {(wa ?? []).map((l) => (
+                    <Row key={l.key} title={l.name} meta={l.url ? "Open in WhatsApp" : "No usable number"} onPress={l.url ? () => void Linking.openURL(l.url!) : undefined} testID={`wa-${l.key}`} />
+                  ))}
+                </RowList>
+              </View>
+            </Sheet>
           </>
         );
       }}
     </Loaded>
+  );
+}
+
+/** WhatsApp a picked group: one message, with {first_name} filled for each. */
+function WhatsAppSheet({ open, count, busy, onClose, onMake }: { open: boolean; count: number; busy?: boolean; onClose: () => void; onMake: (text: string) => void }) {
+  const [text, setText] = React.useState("Hi {first_name}, ");
+  const [error, setError] = React.useState<string | null>(null);
+  return (
+    <Sheet open={open} onClose={onClose} title={`WhatsApp ${plural(count, "person", "people")}`} testID="wa-sheet">
+      <View style={{ gap: space[4] }}>
+        <Field label="Message" value={text} onChangeText={setText} area error={error} maxLength={2000} hint="{first_name} becomes each person's first name." testID="wa-text" />
+        <Button
+          label="Make the links"
+          busy={busy}
+          testID="wa-make"
+          onPress={() => {
+            if (!text.trim()) return setError("Write the message first.");
+            setError(null);
+            onMake(text.trim());
+          }}
+        />
+      </View>
+    </Sheet>
   );
 }
 
@@ -297,7 +359,7 @@ export function AdminPersonScreen() {
               </View>
             </View>
             <View style={{ flexDirection: "row", flexWrap: "wrap", gap: space[2] }}>
-              {p.phone ? <SmallButton label="WhatsApp" icon={<MessageCircle {...icon} />} onPress={() => void Linking.openURL(whatsapp(p.phone!))} testID="person-whatsapp" /> : null}
+              {p.whatsappUrl || p.phone ? <SmallButton label="WhatsApp" icon={<MessageCircle {...icon} />} onPress={() => void Linking.openURL(p.whatsappUrl ?? whatsapp(p.phone!))} testID="person-whatsapp" /> : null}
               {p.phone ? <SmallButton label="Call" icon={<Phone {...icon} />} onPress={() => void Linking.openURL(`tel:+91${p.phone!.replace(/\D/g, "").slice(-10)}`)} /> : null}
               <SmallButton label="Email" icon={<Mail {...icon} />} onPress={() => void Linking.openURL(`mailto:${p.email}`)} />
               {p.studentId ? <SmallButton label="Open student" onPress={() => openStudent(p.studentId!)} /> : null}
@@ -315,7 +377,7 @@ export function AdminPersonScreen() {
                     }}
                   />
                   <SmallButton label="Add a note" testID="person-note" onPress={() => setNoteOpen(true)} />
-                  {!p.isStudent ? <SmallButton label={p.invitedAt ? "Send invite again" : "Send invite"} testID="person-invite" busy={busy === "invite"} onPress={() => void run("invite", () => adminCalls.invite(p.key), { done: `Invitation sent to ${p.name}` }).then((x) => x && setLink(x))} /> : null}
+                  {!p.isStudent ? <SmallButton label={p.invitedAt ? "Send invite again" : "Send invite"} testID="person-invite" busy={busy === "invite"} onPress={() => void run("invite", () => adminCalls.invite(p.key, p.name), { done: `Invitation sent to ${p.name}` }).then((x) => x && setLink(x))} /> : null}
                   <SmallButton label={p.paid ? "Mark not paid" : "Mark paid"} testID="person-paid" busy={busy === "mark-paid"} onPress={() => void run("mark-paid", () => adminCalls.markPaid(p.key, !p.paid), { done: p.paid ? "Marked as not paid" : "Marked as paid" })} />
                 </View>
               </View>
@@ -336,7 +398,7 @@ export function AdminPersonScreen() {
             </View>
             <View style={{ gap: space[3] }}>
               <T v="h3">Details</T>
-              <Facts items={[{ label: "Email", value: p.email }, { label: "Phone", value: p.phone ? `+91 ${p.phone}` : "Not given" }, ...p.facts, ...(p.invitedAt ? [{ label: "Invited", value: day(p.invitedAt) }] : [])]} />
+              <Facts items={[{ label: "Email", value: p.email }, { label: "Phone", value: p.phone ? (p.phone.startsWith("+") ? p.phone : `+91 ${p.phone}`) : "Not given" }, ...p.facts, ...(p.invitedAt ? [{ label: "Invited", value: day(p.invitedAt) }] : []), ...(p.paidAt ? [{ label: "Paid", value: `${day(p.paidAt)}${p.paidAmount ? `, ${p.paidAmount}` : ""}` }] : [])]} />
             </View>
 
             <Sheet open={stageOpen} onClose={() => setStageOpen(false)} title="Move stage" testID="stage-sheet">
