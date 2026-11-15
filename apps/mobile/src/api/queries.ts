@@ -5,6 +5,7 @@ import { QueryClient, useMutation, useQuery, useQueryClient, type UseQueryResult
 import { api, onSignedOut, session } from "@/auth";
 import type * as C from "./contract";
 import * as A from "./adapt";
+import * as L from "./adapt-learn";
 import { ApiFailure } from "./errors";
 import type * as X from "./extra";
 
@@ -95,22 +96,22 @@ export const useMe = () =>
   });
 export const useConfig = () => useQuery({ queryKey: keys.config, queryFn: () => api.get<C.AppConfig>("/config", { auth: false }), staleTime: 10 * 60_000 });
 export const useHome = () => useQuery({ queryKey: keys.home, queryFn: () => api.get<HomeData>("/home") });
-export const useCourses = () => useQuery({ queryKey: keys.courses, queryFn: () => api.get<C.CourseList>("/courses") });
-export const useCourse = (id: string) => useQuery({ queryKey: keys.course(id), queryFn: () => api.get<C.CourseDetail>(`/courses/${encodeURIComponent(id)}`), enabled: id.length > 0 });
+export const useCourses = () => useQuery({ queryKey: keys.courses, queryFn: async () => L.courseListView(await api.get<unknown>("/courses")) });
+export const useCourse = (id: string) => useQuery({ queryKey: keys.course(id), queryFn: async () => L.courseDetailView(await api.get<unknown>(`/courses/${encodeURIComponent(id)}`)), enabled: id.length > 0 });
 export const useLecture = (id: string) => useQuery({ queryKey: keys.lecture(id), queryFn: () => api.get<C.LectureDetail>(`/lectures/${encodeURIComponent(id)}`) });
-export const useNotifications = () => useQuery({ queryKey: keys.notifications, queryFn: () => api.get<C.NotificationList>("/notifications", { query: { limit: 50 } }) });
+export const useNotifications = () => useQuery({ queryKey: keys.notifications, queryFn: async () => L.notificationListView(await api.get<unknown>("/notifications", { query: { limit: 50 } })) });
 export const useNotification = (id: string) => useQuery({ queryKey: keys.notification(id), queryFn: () => api.get<C.NotificationDetail>(`/notifications/${encodeURIComponent(id)}`) });
 export const useSettings = () => useQuery({ queryKey: keys.settings, queryFn: () => api.get<C.Settings>("/settings") });
-export const useDoubts = (mine: boolean) => useQuery({ queryKey: keys.doubts(mine), queryFn: () => api.get<C.DoubtList>("/doubts", { query: { mine: mine ? 1 : undefined, limit: 50 } }) });
-export const useDoubt = (id: string) => useQuery({ queryKey: keys.doubt(id), queryFn: () => api.get<C.DoubtThread>(`/doubts/${encodeURIComponent(id)}`) });
-export const useStudyHome = () => useQuery({ queryKey: keys.study, queryFn: () => api.get<C.StudyHome>("/study/modules") });
-export const useModule = (id: string) => useQuery({ queryKey: keys.module(id), queryFn: () => api.get<C.ModuleDetail>(`/study/modules/${encodeURIComponent(id)}`) });
-export const useSection = (m: string, s: string) => useQuery({ queryKey: keys.section(m, s), queryFn: () => api.get<C.SectionContent>(`/study/modules/${encodeURIComponent(m)}/sections/${encodeURIComponent(s)}`), staleTime: 10 * 60_000 });
+export const useDoubts = (mine: boolean) => useQuery({ queryKey: keys.doubts(mine), queryFn: async () => L.doubtListView(await api.get<unknown>("/doubts", { query: { mine: mine ? 1 : undefined, limit: 50 } })) });
+export const useDoubt = (id: string) => useQuery({ queryKey: keys.doubt(id), queryFn: async () => L.doubtThreadView(await api.get<unknown>(`/doubts/${encodeURIComponent(id)}`)) });
+export const useStudyHome = () => useQuery({ queryKey: keys.study, queryFn: async () => L.studyHomeView(await api.get<unknown>("/study/modules")) });
+export const useModule = (id: string) => useQuery({ queryKey: keys.module(id), queryFn: async () => L.moduleDetailView(await api.get<unknown>(`/study/modules/${encodeURIComponent(id)}`)) });
+export const useSection = (m: string, s: string) => useQuery({ queryKey: keys.section(m, s), queryFn: async () => L.sectionContentView(await api.get<unknown>(`/study/modules/${encodeURIComponent(m)}/sections/${encodeURIComponent(s)}`)), staleTime: 10 * 60_000 });
 export const useLearnState = () => useQuery({ queryKey: keys.learn, queryFn: () => api.get<C.LearnStateResult>("/study/state") });
 export const useCheckpoint = (m: string, n: number) => useQuery({ queryKey: keys.checkpoint(m, n), queryFn: () => api.get<C.CheckpointContent>(`/study/modules/${encodeURIComponent(m)}/checkpoints/${n}`), staleTime: 0, gcTime: 0 });
 export const useFigure = (id: string) => useQuery({ queryKey: keys.figure(id), queryFn: () => api.get<C.Figure>(`/study/figures/${encodeURIComponent(id)}`), staleTime: 24 * 60 * 60_000 });
-export const useProgress = () => useQuery({ queryKey: keys.progress, queryFn: () => api.get<C.Progress>("/progress") });
-export const useAchievements = () => useQuery({ queryKey: keys.achievements, queryFn: () => api.get<C.Achievements>("/achievements") });
+export const useProgress = () => useQuery({ queryKey: keys.progress, queryFn: async () => L.progressView(await api.get<unknown>("/progress")) });
+export const useAchievements = () => useQuery({ queryKey: keys.achievements, queryFn: async () => L.achievementsView(await api.get<unknown>("/achievements")) });
 /** The medicine library as the contract has it (GET /library/medicines): search uses it. */
 export const useLibraryMedicines = (enabled = true) => useQuery({ queryKey: ["library", "medicines"] as const, queryFn: () => api.get<C.MedicineList>("/library/medicines"), staleTime: 60 * 60_000, enabled });
 export const useMaterial = (id: string) => useQuery({ queryKey: keys.material(id), queryFn: () => api.get<C.Material>(`/materials/${encodeURIComponent(id)}`) });
