@@ -15,7 +15,6 @@ import type {
   AmesRoomData,
   AttentionData,
   BrainExplorerData,
-  BrainMapData,
   BrainSlicerData,
   ConditioningData,
   ConservationData,
@@ -774,10 +773,6 @@ function BrainWidget({ title, caption, focus, notes, ids, name }: { title?: stri
       <StepText text={`**${r.name}.** ${notes?.[r.id] ?? r.text}`} k={r.id} />
     </WidgetFrame>
   );
-}
-
-export function BrainMapWidget({ d }: { d: BrainMapData }) {
-  return <BrainWidget name="brainmap" title={d.title ?? "The lobes of the brain"} caption={d.caption} focus={d.focus} notes={d.notes} ids={["frontal", "parietal", "temporal", "occipital", "cerebellum", "brainstem"]} />;
 }
 
 export function BrainExplorerWidget({ d }: { d: BrainExplorerData }) {

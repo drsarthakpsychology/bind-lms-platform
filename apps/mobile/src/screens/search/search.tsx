@@ -4,7 +4,7 @@ import * as React from "react";
 import { Pressable, ScrollView, TextInput, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
-import { useCourse, useCourses, useDoubts, useMe, useMedicines, useStudyHome } from "@/api/queries";
+import { useCourse, useCourses, useDoubts, useLibraryMedicines, useMe, useStudyHome } from "@/api/queries";
 import { EmptyState, Row, RowList, Section, T } from "@/ds";
 import { layout, space, type as scale, useTheme } from "@/theme";
 
@@ -36,7 +36,7 @@ export function SearchScreen() {
   const course = useCourse(courseId);
   const study = useStudyHome();
   const term = q.trim();
-  const meds = useMedicines(term.length >= 2 && can?.medicines !== false ? term : "", "");
+  const meds = useLibraryMedicines(term.length >= 2 && can?.medicines !== false);
   const doubts = useDoubts(false);
 
   const hits: Hit[] = React.useMemo(() => {
@@ -44,7 +44,7 @@ export function SearchScreen() {
     const out: Hit[] = [];
     for (const w of course.data?.weeks ?? []) for (const l of w.lessons) if (l.openable && matches(l.title, term)) out.push({ key: `l-${l.id}`, title: l.title, meta: `Lecture ${l.number} · Week ${w.num}`, kind: "lecture", href: `/lecture/${l.id}` });
     if (can?.study !== false) for (const m of study.data?.modules ?? []) if (matches(`${m.title} ${m.tagline}`, term)) out.push({ key: `m-${m.id}`, title: m.title, meta: `Module ${m.num}`, kind: "module", href: `/study/${m.id}` });
-    if (can?.medicines !== false) for (const r of (meds.data?.items ?? []).slice(0, 6)) out.push({ key: `d-${r.id}`, title: r.name, meta: r.className, kind: "medicine", href: `/medicine/${r.id}` });
+    if (can?.medicines !== false) for (const r of (meds.data?.rows ?? []).filter((x) => matches(`${x.name} ${x.brands.join(" ")} ${x.cls}`, term)).slice(0, 6)) out.push({ key: `d-${r.id}`, title: r.name, meta: r.cls, kind: "medicine", href: `/medicine/${r.id}` });
     for (const d of doubts.data?.items ?? []) if (matches(`${d.title} ${d.topic ?? ""}`, term)) out.push({ key: `q-${d.id}`, title: d.title, meta: "Doubt", kind: "doubt", href: `/doubt/${d.id}` });
     for (const s of SCREENS) if (matches(s.title, term)) out.push(s);
     return out;
