@@ -258,7 +258,9 @@ export function ResponsesV2({
                 <tr>
                   {canEdit ? (
                     <th scope="col" className={cn(table.th, "w-10")}>
-                      <input type="checkbox" className="size-4 accent-[var(--link)]" aria-label="Pick everyone on this page" checked={pageAllPicked} onChange={pickPage} />
+                      <label className="-ml-1 inline-flex size-9 items-center justify-center">
+                        <input type="checkbox" className="size-5 accent-[var(--link)]" aria-label="Pick everyone on this page" checked={pageAllPicked} onChange={pickPage} />
+                      </label>
                     </th>
                   ) : null}
                   {head("name", "Name")}
@@ -276,11 +278,13 @@ export function ResponsesV2({
                   <tr key={r.id} className={table.tr} aria-selected={selected.has(r.id) || undefined}>
                     {canEdit ? (
                       <td className={table.td}>
-                        <input type="checkbox" className="size-4 accent-[var(--link)]" aria-label={`Pick ${r.name || r.email || "this answer"}`} checked={selected.has(r.id)} onChange={() => toggle(r.id)} />
+                        <label className="-ml-1 inline-flex size-9 items-center justify-center">
+                          <input type="checkbox" className="size-5 accent-[var(--link)]" aria-label={`Pick ${r.name || r.email || "this answer"}`} checked={selected.has(r.id)} onChange={() => toggle(r.id)} />
+                        </label>
                       </td>
                     ) : null}
                     <td className={cn(table.td, "min-w-40")}>
-                      <button type="button" onClick={() => setOpenId(r.id)} className="text-left font-semibold underline-offset-4 outline-none [overflow-wrap:anywhere] hover:underline focus-visible:underline">
+                      <button type="button" onClick={() => setOpenId(r.id)} className="inline-flex min-h-6 items-center text-left font-semibold underline-offset-4 outline-none [overflow-wrap:anywhere] hover:underline focus-visible:underline">
                         {r.name || "No name"}
                       </button>
                       {r.phone ? <span className="block text-muted-foreground type-num">{r.phone}</span> : null}
