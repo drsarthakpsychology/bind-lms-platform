@@ -1,11 +1,14 @@
 import Link from "next/link";
 import { PersonLinks } from "@/components/admin/person-links";
 import { notFound, redirect } from "next/navigation";
-import { requireAdmin } from "@/lib/auth/guards";
+import { isSuperAdmin, requireAdmin } from "@/lib/auth/guards";
 import { ChevronLeft, Mail, MessageCircle, Phone } from "lucide-react";
 
 import { createAdminClient } from "@/lib/supabase/server";
-import { emailFromKey, loadPeople, loadTimeline, STAGE_LABEL } from "@/lib/crm/people";
+import { emailFromKey, loadPipeline, loadTimeline, STAGE_LABEL } from "@/lib/crm/people";
+import { emailAllowance } from "@/lib/email/personal";
+import { sourceOf } from "@/lib/crm/views";
+import { PersonQuick } from "./person-quick";
 import { PersonActions } from "./person-actions";
 import { cn } from "@/lib/utils";
 import { readFlags } from "@/lib/flags";
@@ -31,7 +34,8 @@ export default async function PersonPage({ params }: { params: Promise<{ id: str
   const email = emailFromKey(id);
   if (!email) notFound();
   const admin = createAdminClient();
-  const [people, timeline] = await Promise.all([loadPeople(admin), loadTimeline(admin, email)]);
+  const [pipe, timeline] = await Promise.all([loadPipeline(admin), loadTimeline(admin, email)]);
+  const people = pipe.people;
   const p = people.find((x) => x.email === email.toLowerCase());
   if (!p) notFound();
   const wa = p.phone ? `https://wa.me/${p.phone.replace(/\D/g, "").replace(/^(\d{10})$/, "91$1")}` : null;
@@ -43,6 +47,7 @@ export default async function PersonPage({ params }: { params: Promise<{ id: str
         name={p.name}
         lead={`${p.isStudent ? "Student" : "Enquiry"} · ${STAGE_LABEL[p.stage]}`}
         links={<PersonLinks userId={p.studentId} email={p.email} here="people" v2 />}
+        headerActions={<PersonQuick p={p} canWrite={isSuperAdmin(me)} paymentReady={pipe.paymentReady} allowance={await emailAllowance(admin)} />}
         contact={[
           { label: "Email", href: `/admin/emails?folder=compose&to=${encodeURIComponent(p.email)}` },
           { label: "WhatsApp", href: wa, external: true },
@@ -51,8 +56,11 @@ export default async function PersonPage({ params }: { params: Promise<{ id: str
         facts={[
           ["Email", p.email],
           ["Phone", p.phone ?? "Not set"],
-          ["Source", p.source ?? (p.isStudent ? "Added as a student" : "Not set")],
+          ["Source", sourceOf(p)],
           ["Enquired", p.enquiredAt ? when(p.enquiredAt) : "No enquiry"],
+          ["Paid", p.paidAt ? `${when(p.paidAt)}${p.paidAmount != null ? ` · ₹${p.paidAmount.toLocaleString("en-IN")}` : ""}` : pipe.paymentReady ? "Not yet" : "Not recorded yet"],
+          ...(p.cohorts.length ? [["Cohort", p.cohorts.map((c) => c.name).join(", ")]] : []),
+          ...(p.college ? [["College", p.college]] : []),
           ["Emails sent", `${p.emailsSent}${p.opened ? " · opened" : ""}${p.replied ? " · replied" : ""}`],
           ...(p.isStudent ? [["Login", p.setupDone ? "Set up" : p.inviteSentAt ? "Link sent, not set up" : "Not sent yet"], ["Signed in", p.signedIn ? "Yes" : "No"]] : []),
         ].map(([label, value]) => ({ label, value }))}
