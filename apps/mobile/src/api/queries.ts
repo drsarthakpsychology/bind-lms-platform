@@ -65,6 +65,7 @@ export const keys = {
   progress: ["progress"] as const,
   achievements: ["achievements"] as const,
   verify: (id: string) => ["verify", id] as const,
+  material: (id: string) => ["material", id] as const,
   practise: ["practise"] as const,
   game: (id: string) => ["game", id] as const,
   caseStudy: (id: string) => ["case", id] as const,
@@ -108,6 +109,7 @@ export const useCheckpoint = (m: string, n: number) => useQuery({ queryKey: keys
 export const useFigure = (id: string) => useQuery({ queryKey: keys.figure(id), queryFn: () => api.get<C.Figure>(`/study/figures/${encodeURIComponent(id)}`), staleTime: 24 * 60 * 60_000 });
 export const useProgress = () => useQuery({ queryKey: keys.progress, queryFn: () => api.get<C.Progress>("/progress") });
 export const useAchievements = () => useQuery({ queryKey: keys.achievements, queryFn: () => api.get<C.Achievements>("/achievements") });
+export const useMaterial = (id: string) => useQuery({ queryKey: keys.material(id), queryFn: () => api.get<C.Material>(`/materials/${encodeURIComponent(id)}`) });
 export const useVerify = (id: string) => useQuery({ queryKey: keys.verify(id), queryFn: () => api.get<C.CertificateVerification>(`/public/certificates/${encodeURIComponent(id)}`, { auth: false }), enabled: id.length > 0 });
 
 /* Not in the contract yet (src/api/extra.ts, docs/app/CONTRACT_REQUESTS.md). */

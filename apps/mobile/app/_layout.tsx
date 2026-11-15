@@ -156,6 +156,7 @@ function Shell() {
             <Stack.Screen name="lectures" options={{ title: "Lectures" }} />
             <Stack.Screen name="course/[courseId]" options={{ title: "" }} />
             <Stack.Screen name="lecture/[lessonId]" options={{ headerShown: false }} />
+            <Stack.Screen name="material/[id]" options={{ title: "" }} />
             <Stack.Screen name="notifications" options={{ title: "Notifications" }} />
             <Stack.Screen name="notification/[id]" options={{ title: "" }} />
             <Stack.Screen name="settings" options={{ title: "Settings" }} />

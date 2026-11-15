@@ -196,6 +196,10 @@ async function route(req: RawRequest): Promise<RawResponse> {
     if (body.deviceCompromised === true) return fail(403, "video_refused", "Lectures cannot be played on a rooted phone.");
     return ok<C.StreamAccess>({ url: `mock://stream/${l.id}/master.m3u8?st=mock`, mediaType: "hls", headers: { "X-App-Device-Id": "mock-device-0000000000" }, expiresIn: 7200, expiresAt: new Date(Date.now() + 7200_000).toISOString(), resumeSeconds: l.progress.completed ? 0 : l.progress.watchedSeconds, durationSeconds: l.durationSeconds, watermark: meFor(kind).watermark, progressEverySeconds: 15 });
   }
+  if ((m = is("GET", "/materials/:id"))) {
+    const mat = fx.lectureDetail("l5")!.materials.find((x) => x.id === m![0]);
+    return mat ? ok<C.Material>(mat) : notFound();
+  }
   if (is("POST", "/save")) {
     const items = (body.items as C.SaveItem[] | undefined) ?? [];
     return ok<C.SaveResult>({ results: items.map((i) => ({ id: i.id, status: "ok" as const })) });
