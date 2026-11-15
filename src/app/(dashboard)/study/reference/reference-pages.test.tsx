@@ -3,6 +3,7 @@ import { renderToStaticMarkup } from "react-dom/server";
 
 vi.mock("server-only", () => ({}));
 vi.mock("@/lib/flags", () => ({ requireFeature: async () => true }));
+vi.mock("@/lib/ui/v2-server", () => ({ uiV2: async () => false }));
 const redirect = vi.fn((to: string) => {
   throw new Error(`REDIRECT ${to}`);
 });
