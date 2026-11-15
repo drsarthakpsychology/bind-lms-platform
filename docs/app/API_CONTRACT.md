@@ -90,6 +90,7 @@ Auth column: **public** (no token), **bearer** (signed in, any role), **student*
 | Status | Method and path | Auth | Request | Response | Calls |
 |---|---|---|---|---|---|
 | built | `GET /config` | public | none | `AppConfig` | `src/lib/app-api/config.ts` (constants plus `LEGAL`). `cohortLine` is the Welcome screen's line (`APP_RULES.cohortLine`; the `APP_COHORT_LINE` server setting overrides it, `none` hides it) |
+| built | `GET /public/home` | public, cached (an hour on the CDN, a day stale while it refreshes; never refused for an old app) | none | `PublicHome` | `publicHome` (`src/lib/app-api/public-home.ts`): the homepage's own words from `src/components/home/content.ts`, the section headings of `home-page.tsx` (a test keeps them word for word), `BRAND`, `LEGAL`. For the Welcome screen. Leaves out which cohort is running, the free tools and the arcade |
 | built | `POST /public/request-invitation` | public, 5 a minute per network (the website form's own counter) | `RequestInvitationBody` | `RequestInvitationResult` | `saveEnquiry` (`src/lib/enquiry.ts`, moved out of `submitWaitlist`, which calls it too); stored with `source: "app"` |
 | built | `GET /public/certificates/:certificateId` | public, 60 a minute per network | none | `CertificateVerification` | `verifyCertificate` (`src/lib/app-api/achievements.ts`): `loadCredential`, `certStatus`, the facts of `/verify/[certificateId]` |
 

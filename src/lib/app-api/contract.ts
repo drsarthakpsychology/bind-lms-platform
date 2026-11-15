@@ -152,6 +152,75 @@ export type AppConfig = {
   cohortLine?: string | null;
 };
 
+/**
+ * GET /public/home : the website homepage's key information, in its own
+ * words, for the Welcome screen. Public and cached (an hour); the same for
+ * everyone. Which cohort is running is never in it. Every list is always an
+ * array (never null); `redFlag` is the only field that can be null.
+ */
+export type HomeHead = { tag: string; title: string; accent: string };
+export type HomeTitleText = { title: string; text: string };
+export type PublicHome = {
+  v: 1;
+  brand: { name: string; shortName: string; tagline: string; description: string; parent: string; lead: string };
+  hero: {
+    /** The three lines of the big title. */
+    title: string[];
+    lede: string;
+    /** Short tags ("Real patients", "MSE in depth"). */
+    highlights: string[];
+    /** `section` is the key in `sections` that answers it. */
+    quickAnswers: { q: string; a: string; section: string }[];
+  };
+  sections: {
+    programme: { head: HomeHead; stats: { n: string; text: string }[]; included: string[]; beyond: HomeTitleText[]; assessment: HomeTitleText[]; certificate: string; manifesto: string };
+    patients: { head: HomeHead; steps: HomeTitleText[]; facts: { k: string; v: string }[] };
+    different: { head: HomeHead; rows: { college: string; vibha: string }[] };
+    disorders: {
+      head: HomeHead;
+      journey: { disorder: string; patient: string; steps: { k: string; title: string; text: string }[]; foot: string };
+      /** Labels for the disorder fields, in order. */
+      fields: { key: "looks" | "ask" | "mse" | "ruleOut" | "meds" | "therapy"; label: string }[];
+      list: { name: string; module: string; says: string; looks: string; ask: string; mse: string; ruleOut: string; meds: string; therapy: string; redFlag: string | null }[];
+      foot: string;
+      mixer: { who: string; age: string; plan: { when: string; what: string }[] }[];
+      mixerNote: string;
+    };
+    week: {
+      head: HomeHead;
+      weekday: { tag: string; title: string; sub: string; steps: string[] };
+      weekend: { tag: string; title: string; sub: string; steps: string[] };
+      days: { d: string; kind: "patient" | "live"; time: string | null }[];
+      timeline: { weeks: string; text: string }[];
+    };
+    scenarios: { head: HomeHead; list: { when: string; learn: string[] }[] };
+    faculty: { head: HomeHead; lead: { initials: string; role: string; name: string; text: string }; faculty: { initials: string; name: string; role: string }[]; leadership: { name: string; role: string }[] };
+    fees: { head: HomeHead; dependsOn: string[]; pay: string[]; note: string; joinSteps: HomeTitleText[]; whoFor: HomeTitleText[]; colleges: { gets: string[]; partnering: string[] } };
+    curriculum: {
+      head: HomeHead;
+      disciplines: { name: string; text: string }[];
+      modules: { n: string; title: string; text: string }[];
+      interview: { title: string; items: string[] }[];
+      mse: HomeTitleText[];
+      caseSheet: { learn: { title: string; items: string[] }; rows: { k: string; v: string }[] };
+      medicines: { group: string; names: string; watch: string }[];
+      ruleOut: HomeTitleText[];
+      sideOrSymptom: { q: string; a: string }[];
+      redFlags: string;
+      therapies: { name: string; text: string }[];
+      mixExample: { patient: string; plan: { when: string; what: { name: string; why: string }[] }[] };
+      defences: HomeTitleText[];
+      psychometric: { group: string; tests: string[] }[];
+      psychometricNote: string;
+    };
+    faq: { head: HomeHead; list: { q: string; a: string }[] };
+    closing: { title: string[] };
+  };
+  contact: { person: string; role: string; roleNote: string; phone: string; phoneHref: string; whatsappHref: string; email: string; address: string[] };
+  /** `requestInvitation` is the app route; `policies` are website paths (open in the browser). */
+  links: { requestInvitation: string; policies: { label: string; path: string }[] };
+};
+
 /** POST /public/request-invitation */
 export type RequestInvitationBody = {
   name: string;

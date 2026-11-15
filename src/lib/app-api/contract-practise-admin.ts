@@ -230,6 +230,26 @@ export type PractiseRecordResult = Record<string, unknown>;
 
 /** GET /leaderboards/:board (league, quiz, overall) and GET /leaderboards/games/:game */
 export type LeaderboardRow = { rank: number; name: string; points: number; me: boolean; title: string | null; extra: Record<string, unknown> | null };
+/**
+ * GET /leaderboards/shop : the XP shop (the website's /leaderboard/shop).
+ * Buying is POST /play/league/buy { item } and wearing POST /play/league/wear
+ * { kind, id }; spending never lowers the level or this week's league points.
+ */
+export type XpShop = {
+  v: 1;
+  /** False until the shop's database step is in: show the items, buying off. */
+  ready: boolean;
+  balance: number;
+  streak: { count: number; alive: boolean };
+  /** Whether a streak repair works this week, in words. */
+  repair: { ok: boolean; text: string };
+  /** Things to buy: streak_repair, hints_3, bonus_case. `ready: false` shows "Coming soon". */
+  items: { id: string; label: string; cost: number; text: string; ready: boolean }[];
+  /** Name frames and titles. */
+  looks: { id: string; label: string; kind: "frame" | "title"; cost: number; owned: boolean; worn: boolean }[];
+  note: string;
+};
+
 export type Leaderboard = {
   v: 1;
   board: string;
@@ -519,9 +539,124 @@ export type StudioIssueBody = {
  */
 export type StudioPreview = { v: 1; width: number; height: number; ops: Record<string, unknown>[]; images: Record<string, string | null>; problems: string[] };
 export type StudioIssueResult = { issued: { credentialId: string; userId: string; name: string }[]; skipped: Record<string, unknown>[]; batchId: string | null; delivery: Record<string, unknown> | null };
-/** GET /admin/certificates/issued?search=&limit&cursor */
-export type IssuedCertificate = { credentialId: string; userId: string | null; name: string; title: string; kind: string; status: string; issuedAt: string | null; revokedAt: string | null; [k: string]: unknown };
-export type IssuedCertificates = Page<IssuedCertificate> & { v: 1; total: number };
+/**
+ * GET /admin/certificates/issued?q=&type=&status=&cohort=&student=&limit&cursor
+ * Certificates, Issued: every certificate AND every badge in one list, newest
+ * first (the website's Issued page). `type` is certificate, badge, completion,
+ * provisional, recognition or custom; `status` valid, provisional, expired,
+ * revoked or draft.
+ */
+export type IssuedStatusId = "valid" | "provisional" | "expired" | "revoked" | "draft";
+export type IssuedCertificate = {
+  credentialId: string;
+  userId: string | null;
+  type: "certificate" | "badge";
+  /** completion, provisional, recognition, custom, or "badge". */
+  kind: string;
+  /** "Course completion", "Badge" ... */
+  typeLabel: string;
+  name: string;
+  title: string;
+  /** The status the list shows. */
+  status: IssuedStatusId;
+  /** In words: "Valid", "Provisional until 31 Dec 2026", "Revoked on 2 Nov 2026". */
+  statusLine: string;
+  /** The stored status (draft, approved, issued, revoked). */
+  recordStatus: string;
+  issuedAt: string | null;
+  /** "15 Nov 2026" or "Not issued". */
+  issuedDay: string;
+  expiresAt: string | null;
+  revokedAt: string | null;
+  revokeReason: string | null;
+  email: string | null;
+  roll: string | null;
+  /** Certificate email: queued, sent, failed ... or null. */
+  emailStatus: string | null;
+  cohortIds: string[];
+  /** Made in the studio, so "Correct and reissue" works (POST /admin/certificates/issue with replaces). */
+  canCorrect: boolean;
+  /** A draft course certificate: POST /admin/certificates/:id/issue-draft. */
+  isDraft: boolean;
+  /** A PDF exists: GET /admin/certificates/:id/pdf. */
+  hasPdf: boolean;
+  /** The public verify page. */
+  verifyUrl: string;
+};
+export type IssuedCertificates = Page<IssuedCertificate> & {
+  v: 1;
+  /** How many match the filters. */
+  total: number;
+  /** How many of each type, before the type filter (for the chips). */
+  counts: Record<"certificate" | "badge" | "completion" | "provisional" | "recognition" | "custom", number>;
+  types: { id: string; label: string }[];
+  statuses: { id: IssuedStatusId; label: string }[];
+  cohorts: { id: string; name: string }[];
+  /** Certificate emails waiting for tomorrow's allowance. */
+  waiting: number;
+  emailOn: boolean;
+  canWrite: boolean;
+  /** When ?student= names a person: their name for the heading. */
+  person: { id: string; name: string } | null;
+};
+/** POST /admin/certificates/:id/issue-draft : a course certificate draft is issued (its rule is checked again). */
+export type IssueDraftResult = { issued: true };
+/** POST /admin/certificates/send-waiting : waiting certificate emails, up to today's allowance. */
+export type SendWaitingResult = { sent: number; failed: number; left: number };
+
+/** GET /admin/badges : the badges that can be given by hand. */
+export type AdminBadge = { id: string; title: string; description: string | null; icon: string | null; tone: string; enabled: boolean; issuedCount: number; automatic: boolean };
+export type AdminBadges = { v: 1; badges: AdminBadge[]; canWrite: boolean; maxRecipients: number };
+/** POST /admin/badges/:id/award { userIds } : already-holders are skipped. */
+export type AwardBadgeBody = { userIds: string[] };
+export type AwardBadgeResult = { awarded: { userId: string; name: string; credentialId: string }[]; skipped: { name: string; reason: string }[] };
+/** POST /admin/badges/award-all : every badge earned so far, given now. */
+export type AwardAllResult = { awarded: number; skipped: number };
+
+/* Forms: email the people who filled a form ------------------------------ */
+
+/** GET /admin/forms */
+export type AdminFormRow = { id: string; title: string; open: boolean; answers: number; lastAnswerAt: string | null; url: string };
+export type AdminForms = { v: 1; forms: AdminFormRow[]; total: number; open: number; canWrite: boolean };
+/** What every email screen needs: today's allowance and the merge fields. */
+export type EmailAllowance = { configured: boolean; limit: number; left: number };
+export type MergeField = { key: string; label: string };
+export type EmailedMark = { lastSentAt: string | null; sent: number; waiting: number; failed: number };
+/** GET /admin/forms/:id?q=&emailed=yes|no&limit&cursor : the answers, newest first. */
+export type AdminFormAnswer = {
+  id: string;
+  at: string;
+  /** "15 Nov 2026, 4:05 pm" in India time. */
+  when: string;
+  name: string;
+  email: string;
+  phone: string;
+  /** The answers in the form's question order (identity questions left out). */
+  answers: { key: string; label: string; text: string }[];
+  /** Emails sent from this form to this address, or null when never. */
+  emailed: EmailedMark | null;
+};
+export type AdminFormAnswers = Page<AdminFormAnswer> & {
+  v: 1;
+  form: { id: string; title: string; open: boolean; url: string };
+  total: number;
+  /** Emails from this form waiting for tomorrow's allowance. */
+  waiting: number;
+  allowance: EmailAllowance;
+  mergeFields: MergeField[];
+  limits: { subject: number; body: number; recipients: number };
+  canWrite: boolean;
+};
+/** POST /admin/forms/:id/email : everyone ("all"), a picked few, or one. Addresses come from the saved answers, never from the app. */
+export type FormEmailBody = { submissionIds: string[] | "all"; subject: string; body: string };
+/** The shared sender's report: who got it now, who waits, who had no address. Names, not addresses. */
+export type PersonalEmailReport = { sent: string[]; queued: string[]; failed: { name: string; reason: string }[]; noEmail: string[]; duplicates: number; remainingToday: number; queueFailed: boolean };
+/** POST /admin/forms/:id/email/preview { submissionId, subject, body } : what that person will get. */
+export type FormEmailPreviewBody = { submissionId: string; subject: string; body: string };
+export type EmailPreview = { to: string; subject: string; text: string; unknownFields: string[] };
+/** POST /admin/forms/:id/email/send-waiting */
+export type FormSendWaitingResult = SendWaitingResult;
+
 /** POST /admin/certificates/:id/revoke */
 export type RevokeBody = { reason: string };
 /** POST /admin/certificates/:id/resend */

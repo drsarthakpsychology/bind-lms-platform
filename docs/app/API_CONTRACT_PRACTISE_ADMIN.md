@@ -4,7 +4,7 @@ Part two of the contract. Part one (`docs/app/API_CONTRACT.md`) has the basics t
 
 Status words: **built** (the route exists and has tests) or **planned** (agreed shape, not written yet).
 
-Last updated: 2026-11-15.
+Last updated: 2026-11-15 (Issued list, badges, forms emailing, XP shop added).
 
 ## 1. Rules for this part
 
@@ -75,7 +75,7 @@ Every Practise route checks the gate of the website page it stands for before an
 | built | `GET /prep/lists/:list` | `saved` or `wrong`, `?page=N` | `PrepSet` with `page` | `loadList` |
 | built | `GET /prep/mock` | none | `PrepMocks` | `PRACTICE_SPECS` (and `EXAM_SPECS` only when exam tracks are on, as the website), `loadMockHistory`; sources left out |
 | built | `GET /prep/long`, `/prep/long/:subject`, `/prep/long/:subject/:topic`, `/prep/long/:subject/:topic/:id` | none | `PrepLong` | `longSubjects`, `longTopicsFor`, `longTopic` (`src/lib/prep/long-server.ts`) |
-| planned | `GET /leaderboards/shop` | | | the shop page builds its data inline (balance, streak, items); needs moving to `src/lib` first. Buying and wearing work already: `POST /play/league/buy`, `/play/league/wear` |
+| built | `GET /leaderboards/shop` | none (gate `/leaderboard/shop`) | `XpShop` | `loadShop` (`src/lib/leagues/shop-data.ts`, moved out of the shop page, which calls it too), `SHOP`, `SHOP_READY`, `LOOKS`, `parseLook`. Buying and wearing: `POST /play/league/buy`, `/play/league/wear` |
 | planned | Exam Prep mock interview | | | needs voice and the AI feedback; `revealInterview`, `interviewFeedback`, `saveInterviewSession` can be added to `PLAY` as `prep.*` when the app has a voice screen |
 | planned | AI patient interview (Consulting Room), Practise with a classmate | | | voice, AI and live peers; shown as `play: "web"` |
 
@@ -171,7 +171,19 @@ Auth: **admin** means `admin` or `view_admin` (read); **super admin** means `adm
 | built | `POST /admin/certificates/issue` | super admin, 10 a minute | `StudioIssueBody` | `StudioIssueResult` | `issueStudioCertificates` (the studio's action; `replaces` makes it a correction) |
 | built | `POST /admin/certificates/:id/revoke` | super admin, 30 a minute | `RevokeBody` | `{ revoked: true }` | `revokeStudioCertificate` |
 | built | `POST /admin/certificates/:id/resend` | super admin, 30 a minute | `ResendBody` | `ResendResult` | `resendStudioCertificate` |
-| planned | `GET /admin/certificates/issued` | admin | `?search&kind&status&cohort` | `IssuedCertificates` | the Issued list; waits for the certificates rework (branch `agent/admincert`) so it is built once on the new list |
+| built | `GET /admin/certificates/issued` | admin | `?q=` (or `search=`) `&type=` (or `kind=`) `&status&cohort&student&limit&cursor` (default 50, max 200) | `IssuedCertificates` | Certificates, Issued: every certificate and badge in one list. `loadIssued` (`src/lib/certificates/issued-load.ts`, moved out of the Issued page, which calls it too), `filterIssued`, `countByType`, `issuedStatusLine` (`src/lib/certificates/issued.ts`) |
+| built | `POST /admin/certificates/:id/issue-draft` | super admin, 30 a minute | none | `IssueDraftResult` | `issueCertificate` (`admin/achievements/actions.ts`): a course certificate draft, its rule checked again |
+| built | `GET /admin/certificates/:id/pdf` | admin, 120 a minute | none | `AdminFileLink` | `getCredentialDownload` (15 minute address) |
+| built | `POST /admin/certificates/send-waiting` | super admin, 5 a minute | none | `SendWaitingResult` | `sendWaitingCertificateEmails` (`drainEmailQueue`) |
+| built | `GET /admin/badges` | admin | none | `AdminBadges` | `listAchievements` (badges only) |
+| built | `POST /admin/badges/:id/award` | super admin, 20 a minute | `AwardBadgeBody` (1 to 300 ids) | `AwardBadgeResult` | `awardBadge` (`awardBadgeManually`; already-holders skipped) |
+| built | `POST /admin/badges/award-all` | super admin, 2 a minute | none | `AwardAllResult` | `awardAllBadges` |
+| built | `GET /admin/forms` | admin | none | `AdminForms` | `loadForms` |
+| built | `GET /admin/forms/:id` | admin | `?q&emailed=yes|no&limit&cursor` (default 50, max 500) | `AdminFormAnswers` | `loadForm`, `loadSubmissions`, `answerColumns`, `identityKeys`, `loadFormEmailed`, `emailAllowance`, `MERGE_FIELDS`, `PERSONAL_LIMITS` |
+| built | `POST /admin/forms/:id/email` | super admin, 10 a minute | `FormEmailBody` | `PersonalEmailReport` | `emailFormRespondents` (`admin/forms/email-actions.ts`): addresses come from the saved answers on the server, duplicates once, the rest of today's allowance waits |
+| built | `POST /admin/forms/:id/email/preview` | admin, 120 a minute | `FormEmailPreviewBody` | `EmailPreview` | `composeFor`, `unknownFields` (sends nothing) |
+| built | `POST /admin/forms/:id/email/send-waiting` | super admin, 5 a minute | none | `FormSendWaitingResult` | `sendWaitingFormEmails` |
+| planned | People: Pipeline and Enquiries with the quick views (Not paid yet, Invited not joined, Enquired not converted, Went quiet, Joined), mark paid, invite, email people | admin / super admin | | | `loadPipeline`, `inView`, `viewCounts`, `filterPipeline` (`src/lib/crm/views.ts`), `markPaid`, `emailPeople`. Waits for those to be committed on branch `agent/admincert` (they are still being written there) so the routes call them instead of a copy |
 
 Notes:
 
@@ -180,7 +192,13 @@ Notes:
 - The certificate preview is the website's own layout, as drawing operations (`rect`, `line`, `path`, `stroke`, `image`, `text` in a `width` by `height` box) for react-native-svg. `problems` lists what still stops it being issued, in the studio's words.
 - `loadStudioSetup` and `src/lib/certificates/preview.ts` are the same reads and the same preview as the website's studio page and screen. The website files were left as they are because the certificates rework (branch `agent/admincert`) is changing them now; that branch should switch the studio page to `loadStudioSetup` and the studio screen to `previewDoc`, `previewImages` and `studioProblems` so there is one copy.
 
-Moved out (website unchanged): admin Home's numbers (`loadAdminOverview`, `src/lib/admin/overview.ts`), the Submissions review list (`loadSubmissionReview`, `src/lib/admin/submissions-review.ts`).
+Moved out (website unchanged): admin Home's numbers (`loadAdminOverview`, `src/lib/admin/overview.ts`), the Submissions review list (`loadSubmissionReview`, `src/lib/admin/submissions-review.ts`), the Issued list's read (`loadIssued`, `src/lib/certificates/issued-load.ts`).
+
+Certificates, Issued and Forms notes:
+
+- One list for certificates and badges. Revoke (`POST /admin/certificates/:id/revoke`) works for both; resend and the PDF are certificates only (`hasPdf`). `canCorrect` rows are corrected with `POST /admin/certificates/issue` and `replaces`; `isDraft` rows are issued with `issue-draft`.
+- `counts` are taken before the type filter, so the chips keep their numbers when one is chosen.
+- Form emails: merge fields `{first_name}`, `{name}`, `{email}`, `{form}`. The report names people, never addresses. Over today's allowance, emails wait (status pending) and go out from send-waiting. Email not set up answers 503 `unavailable`.
 
 Kept from the first version (commit 9fea713d): `AdminHome.counts`, `needsLook` rows and `live`; `AdminStudentProfile.row` and `detail` (now also flat on `AdminStudent`); `GET /admin/activity`'s `kind` and `data`; `POST /admin/messages` with `{ userIds, title, text }`.
 
