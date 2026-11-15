@@ -1,7 +1,8 @@
 /**
- * Motion pieces for the signed-out screens (Welcome, Request, Sign in, PIN).
- * Kept here, not in the shared kit, so this work cannot clash with the app's
- * motion kit; the two can be merged later.
+ * Scroll-story motion for the signed-out screens (Welcome, Sign in, PIN):
+ * the parts the shared kit (src/motion) does not have: scroll-linked reveals,
+ * parallax, scroll-rolled digits and the opening sequence. Numbers come from
+ * the kit's tokens; presses use the kit's Press.
  *
  * Rules (Screenrove motion guidelines, Emil Kowalski): only transform and
  * opacity move; strong ease-out for entering; presses answer in about 120ms;
@@ -9,9 +10,8 @@
  * back); with Reduce Motion everything is simply in place.
  */
 import * as React from "react";
-import { Pressable, Text, View, type LayoutChangeEvent, type PressableProps, type StyleProp, type TextStyle, type ViewStyle } from "react-native";
+import { Text, View, type LayoutChangeEvent, type StyleProp, type TextStyle, type ViewStyle } from "react-native";
 import Animated, {
-  Easing,
   Extrapolation,
   interpolate,
   useAnimatedStyle,
@@ -24,17 +24,18 @@ import Animated, {
   type SharedValue,
 } from "react-native-reanimated";
 
+import { curves, springs } from "@/motion";
+
 /** The brand's two colours, fixed in both themes (the website's blue and lime panels). */
 export const BLUE = "#1d44d8";
 export const LIME = "#cdf24b";
 export const INK = "#111111";
 
-/** Quintic ease-out: anything entering. */
-export const easeOut = Easing.bezier(0.23, 1, 0.32, 1);
-/** A light spring for presses and pops. */
-export const snappy = { damping: 18, stiffness: 260, mass: 0.6 } as const;
-/** A spring with a little bounce, for rare delight (a stamp, a check). */
-export const bouncy = { damping: 11, stiffness: 180, mass: 0.7 } as const;
+/** The shared kit's numbers (src/motion/tokens.ts), under the names these screens use. */
+export const easeOut = curves.out;
+export const snappy = springs.snappy;
+/** The opening's pops: the kit's bouncy spring. */
+export const bouncy = springs.bouncy;
 
 /* -------------------------------------------------------------- the stage */
 
@@ -207,28 +208,4 @@ export function useIntroSpring(delay: number, cfg: { damping: number; stiffness:
     v.set(withDelay(delay, withSpring(1, cfg)));
   }, [reduce, delay, cfg, v]);
   return v;
-}
-
-/* ---------------------------------------------------------------- presses */
-
-/** Anything tappable: shrinks to 0.97 while held, on a quick spring. */
-export function Press({ children, style, scaleTo = 0.97, ...rest }: Omit<PressableProps, "style" | "children"> & { children: React.ReactNode; style?: StyleProp<ViewStyle>; scaleTo?: number }) {
-  const reduce = useReducedMotion();
-  const s = useSharedValue(1);
-  const anim = useAnimatedStyle(() => ({ transform: [{ scale: s.value }] }));
-  return (
-    <Pressable
-      {...rest}
-      onPressIn={(e) => {
-        if (!reduce) s.set(withSpring(scaleTo, snappy));
-        rest.onPressIn?.(e);
-      }}
-      onPressOut={(e) => {
-        s.set(reduce ? 1 : withSpring(1, snappy));
-        rest.onPressOut?.(e);
-      }}
-    >
-      <Animated.View style={[style, anim]}>{children}</Animated.View>
-    </Pressable>
-  );
 }

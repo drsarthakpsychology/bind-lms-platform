@@ -10,10 +10,11 @@ import { ApiFailure, messageOf } from "@/api/errors";
 import { session, useSession } from "@/auth";
 import { T, Tint } from "@/ds";
 import { haptic } from "@/lib/haptics";
+import { Press } from "@/motion";
 import { fonts, layout, space, useTheme } from "@/theme";
 import { Person, Sparkle, Star } from "@/visitor/Art";
 import { AuthField, SubmitButton, useShake } from "@/visitor/form";
-import { BLUE, INK, LIME, Press, bouncy, easeOut, useIntro, useIntroSpring } from "@/visitor/motion";
+import { BLUE, INK, LIME, bouncy, easeOut, useIntro, useIntroSpring } from "@/visitor/motion";
 import { Dots, Pix } from "@/visitor/parts";
 
 const NOTICE: Record<string, string> = {
@@ -136,7 +137,7 @@ export function SignInScreen({ defaultEmail = "" }: { defaultEmail?: string }) {
           ) : null}
           <SubmitButton label="Sign in" busyLabel="Signing in" doneLabel="Signed in" state={state} onPress={() => void submit()} testID="sign-in-submit" />
           <View style={{ flex: 1 }} />
-          <Press onPress={() => router.push("/request")} accessibilityRole="button" accessibilityLabel="New here? Request an invitation" testID="sign-in-request" style={{ minHeight: layout.target, flexDirection: "row", alignItems: "center", justifyContent: "center", gap: space[1] }}>
+          <Press onPress={() => router.push("/request")} accessibilityRole="button" accessibilityLabel="New here? Request an invitation" testID="sign-in-request" feel="tap" innerStyle={{ minHeight: layout.target, flexDirection: "row", alignItems: "center", justifyContent: "center", gap: space[1] }}>
             <T v="small" tone="muted">
               New here?
             </T>

@@ -10,6 +10,7 @@ import { PinPad, type PinTone } from "@/auth/PinPad";
 import { Button, EmptyState, T, Wordmark } from "@/ds";
 import { BRAND } from "@/lib/brand";
 import { haptic } from "@/lib/haptics";
+import { Burst } from "@/motion";
 import { layout, space, useTheme } from "@/theme";
 import { Icon, Star } from "@/visitor/Art";
 
@@ -51,7 +52,7 @@ function GateExit() {
 }
 
 /** A lime star with a shield on it: the PIN keeps the account safe. */
-function PinArt() {
+function PinArt({ win = 0 }: { /** Each new value fires sparks: the PIN is right. */ win?: number }) {
   const pop = useSharedValue(0);
   const reduce = useReducedMotion();
   React.useEffect(() => {
@@ -62,6 +63,7 @@ function PinArt() {
     <Animated.View style={[{ alignSelf: "center", width: 84, height: 84, marginBottom: space[4], alignItems: "center", justifyContent: "center" }, anim]}>
       <Star size={84} fill="#cdf24b" style={{ position: "absolute" }} />
       <Icon name="shield" size={38} fill="#ffffff" />
+      {win ? <Burst fire={win} reach={64} count={12} /> : null}
     </Animated.View>
   );
 }
@@ -113,7 +115,7 @@ export function SetPinScreen() {
   };
 
   return (
-    <Gate testID="set-pin" art={<PinArt />} footer={first !== null && !busy ? <Button kind="text" full label="Start again" onPress={() => { setFirst(null); setValue(""); setError(null); }} /> : null}>
+    <Gate testID="set-pin" art={<PinArt win={tone === "success" ? 1 : 0} />} footer={first !== null && !busy ? <Button kind="text" full label="Start again" onPress={() => { setFirst(null); setValue(""); setError(null); }} /> : null}>
       <View style={{ alignItems: "center", gap: space[2], marginBottom: space[6] }}>
         <Animated.View key={busy ? "done" : first === null ? "one" : "two"} entering={FadeInDown.duration(220)}>
           <T v="h1" center>
@@ -165,7 +167,7 @@ export function LockScreen() {
   };
 
   return (
-    <Gate testID="lock" art={<PinArt />} footer={<Button kind="text" full label="Forgot PIN?" onPress={() => void session.forgotPin()} accessibilityHint="Signs you out. Sign in with your password to choose a new PIN." testID="forgot-pin" />}>
+    <Gate testID="lock" art={<PinArt win={tone === "success" ? 1 : 0} />} footer={<Button kind="text" full label="Forgot PIN?" onPress={() => void session.forgotPin()} accessibilityHint="Signs you out. Sign in with your password to choose a new PIN." testID="forgot-pin" />}>
       <View style={{ alignItems: "center", gap: space[2], marginBottom: space[6] }}>
         <T v="h1" center>
           {first ? `Welcome back, ${first}` : "Welcome back"}

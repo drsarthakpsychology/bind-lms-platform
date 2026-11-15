@@ -10,17 +10,15 @@ import { session } from "@/auth";
 import { PinPad } from "@/auth/PinPad";
 import { signInProblem, SignInScreen } from "@/screens/auth/sign-in";
 import { WelcomeScreen } from "@/screens/visitor/welcome";
+import { adaptHome, BUNDLED } from "@/visitor/home-data";
 import { CHAPTERS, CLOSING, DIFFERENT, FACULTY, GET, HERO, JOIN, JOURNEY, PATIENTS, QUICK_ANSWERS, WEEK } from "@/visitor/content";
 import { render } from "./utils";
 
 // The shared stand-in for Reanimated, plus the few extra pieces the visitor screens use.
 jest.mock("react-native-reanimated", () => {
   const RN = require("react-native");
-  const anim = () => {
-    const a: Record<string, unknown> = {};
-    a.duration = () => a;
-    a.delay = () => a;
-    a.easing = () => a;
+  const anim = (): unknown => {
+    const a: unknown = new Proxy(function () {}, { get: (_t, k) => (k === "then" ? undefined : () => a), apply: () => a });
     return a;
   };
   const Easing = { bezier: () => (t: number) => t, inOut: () => (t: number) => t, out: () => (t: number) => t, quad: (t: number) => t, linear: (t: number) => t };
@@ -38,6 +36,8 @@ jest.mock("react-native-reanimated", () => {
     useSharedValue: sv,
     useDerivedValue: (fn: () => unknown) => sv(fn()),
     useAnimatedStyle: (fn: () => object) => fn(),
+    useAnimatedProps: (fn: () => object) => fn(),
+    useAnimatedReaction: () => undefined,
     useAnimatedScrollHandler: () => () => undefined,
     interpolate: (v: number, i: number[], o: number[]) => {
       const t = Math.min(1, Math.max(0, (v - i[0]!) / (i[i.length - 1]! - i[0]!)));
@@ -55,6 +55,11 @@ jest.mock("react-native-reanimated", () => {
     FadeOut: anim(),
     FadeInDown: anim(),
     FadeOutDown: anim(),
+    FadeInUp: anim(),
+    FadeOutUp: anim(),
+    ZoomIn: anim(),
+    ZoomOut: anim(),
+    LinearTransition: anim(),
   };
 });
 
@@ -88,6 +93,24 @@ describe("Welcome", () => {
     const words = JSON.stringify({ HERO, QUICK_ANSWERS, PATIENTS, DIFFERENT, JOURNEY, GET, WEEK, FACULTY, JOIN, CLOSING, CHAPTERS });
     expect(words).not.toMatch(/cohort|december|2026/i);
     expect(words).not.toMatch(/[–—]/);
+  });
+});
+
+describe("Welcome words from the website", () => {
+  it("uses the server's words and keeps the app's drawings", () => {
+    const w = adaptHome({ v: 1, hero: { title: ["A", "B", "C"], lede: "L", highlights: ["x", "y", "z"], quickAnswers: [] }, sections: { patients: { head: { tag: "t", title: "T", accent: "A" }, steps: [{ title: "One", text: "1" }] } } as never, contact: { phone: "1", phoneHref: "tel:1", whatsappHref: "w", address: ["Here,"] } });
+    expect(w.HERO.lines).toEqual(["A", "B", "C"]);
+    expect(w.QUICK_ANSWERS).toBe(BUNDLED.QUICK_ANSWERS);
+    expect(w.PATIENTS.steps[0]).toEqual({ title: "One", text: "1", heads: BUNDLED.PATIENTS.steps[0]!.heads });
+    expect(w.PATIENTS.sub).toBe(BUNDLED.PATIENTS.sub);
+    expect(w.CLOSING.address).toBe("Here");
+  });
+
+  it("falls back to the bundled words when the answer is missing, wrong or mentions a cohort", () => {
+    expect(adaptHome(undefined)).toBe(BUNDLED);
+    expect(adaptHome({ v: 2 } as never)).toBe(BUNDLED);
+    expect(adaptHome({ v: 1, hero: { title: ["Cohort Two", "b", "c"], lede: "", highlights: [], quickAnswers: [] }, sections: {} as never })).toBe(BUNDLED);
+    expect(JSON.stringify(adaptHome({ v: 1, hero: { title: ["a \u2014 b", "b", "c"], lede: "", highlights: [], quickAnswers: [] }, sections: {} as never }))).not.toMatch(/\u2014/);
   });
 });
 

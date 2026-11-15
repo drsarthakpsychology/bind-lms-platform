@@ -8,11 +8,12 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { Button, T } from "@/ds";
 import { haptic } from "@/lib/haptics";
+import { Press } from "@/motion";
 import { SketchCat } from "@/sketch/cat";
 import { fonts, layout, space, useTheme } from "@/theme";
 import { Icon, Person, Sparkle, Star } from "@/visitor/Art";
-import { CLOSING, DIFFERENT, DISCIPLINES, FACULTY, GET, HERO, JOIN, JOURNEY, PATIENTS, QUICK_ANSWERS, STICKERS, WEEK } from "@/visitor/content";
-import { BLUE, Chapter, DigitRoll, INK, LIME, Parallax, Press, Reveal, ScrollStage, useScrollY, bouncy, snappy, useIntro, useIntroSpring } from "@/visitor/motion";
+import { HomeWordsCtx, useHomeWords, useWords } from "@/visitor/home-data";
+import { BLUE, Chapter, DigitRoll, INK, LIME, Parallax, Reveal, ScrollStage, useScrollY, bouncy, snappy, useIntro, useIntroSpring } from "@/visitor/motion";
 import { Dots, Face, Head, Initials, Pix } from "@/visitor/parts";
 
 const G = layout.gutter;
@@ -35,6 +36,7 @@ export function WelcomeScreen() {
   const ch = useSharedValue(1);
   const heroH = useSharedValue(600);
   const [dockH, setDockH] = React.useState(132);
+  const words = useHomeWords();
 
   // The top of this screen is always brand blue, so the clock and battery are white here.
   useFocusEffect(
@@ -49,6 +51,7 @@ export function WelcomeScreen() {
   });
 
   return (
+    <HomeWordsCtx.Provider value={words}>
     <View testID="welcome" style={{ flex: 1, backgroundColor: c.bg }}>
       <ScrollStage y={y} vh={vh}>
         <Animated.ScrollView
@@ -76,6 +79,7 @@ export function WelcomeScreen() {
       <TopBar y={y} ch={ch} vh={vh} heroH={heroH} topInset={insets.top} />
       <Dock onHeight={setDockH} />
     </View>
+    </HomeWordsCtx.Provider>
   );
 }
 
@@ -121,7 +125,7 @@ function Dock({ onHeight }: { onHeight: (h: number) => void }) {
     <Animated.View onLayout={(e: LayoutChangeEvent) => onHeight(e.nativeEvent.layout.height)} style={[{ position: "absolute", left: 0, right: 0, bottom: 0, paddingHorizontal: space[3], paddingBottom: space[3] }, anim]}>
       <View style={{ width: "100%", maxWidth: layout.readingWidth, alignSelf: "center", backgroundColor: c.card, borderRadius: 20, borderWidth: 2, borderColor: c.dark ? "rgba(255,255,255,0.22)" : INK, paddingTop: space[3], paddingHorizontal: space[3], paddingBottom: space[1], shadowColor: "#000", shadowOpacity: 0.18, shadowRadius: 18, shadowOffset: { width: 0, height: 8 }, elevation: 10 }}>
         <Button label="Sign in" onPress={() => router.push("/sign-in")} testID="welcome-sign-in" accessibilityHint="For students with a VIBHA account" />
-        <Press onPress={() => router.push("/request")} testID="welcome-request" accessibilityRole="button" accessibilityLabel="New here? Request an invitation" hitSlop={4} style={{ minHeight: layout.target, alignItems: "center", justifyContent: "center", flexDirection: "row", gap: space[1] }}>
+        <Press onPress={() => router.push("/request")} testID="welcome-request" accessibilityRole="button" accessibilityLabel="New here? Request an invitation" hitSlop={4} feel="tap" innerStyle={{ minHeight: layout.target, alignItems: "center", justifyContent: "center", flexDirection: "row", gap: space[1] }}>
           <T v="small" tone="muted">
             New here?
           </T>
@@ -192,6 +196,7 @@ function FadeUp({ delay, children, style }: { delay: number; children: React.Rea
 
 /** Each line rises out of its own mask; then a lime marker sweeps behind "Practise it." */
 function Headline({ big }: { big: number }) {
+  const { HERO } = useWords();
   const small = Math.round(big * 0.56);
   const sweep = useIntro(980, 520);
   const marker = useAnimatedStyle(() => ({ transform: [{ scaleX: sweep.value }] }));
@@ -230,6 +235,7 @@ function MaskLine({ delay, h, children }: { delay: number; h: number; children: 
 }
 
 function Lede() {
+  const { HERO } = useWords();
   return (
     <FadeUp delay={860}>
       <Text maxFontSizeMultiplier={1.4} style={{ fontFamily: fonts.body, fontSize: 17, lineHeight: 27, color: ON_BLUE_MUTED, maxWidth: 520 }}>
@@ -289,6 +295,7 @@ function PopPerson({ who, delay, w, flip, style }: { who: Parameters<typeof Pers
 }
 
 function Bubble() {
+  const { HERO } = useWords();
   const t = useIntroSpring(1500, bouncy);
   const anim = useAnimatedStyle(() => ({ opacity: Math.min(1, t.value * 2), transform: [{ scale: 0.6 + t.value * 0.4 }] }));
   return (
@@ -311,6 +318,7 @@ function StickerRows() {
 }
 
 function StickerRow({ dir, fill, fg }: { dir: 1 | -1; fill: string; fg: string }) {
+  const { STICKERS } = useWords();
   const items = dir < 0 ? STICKERS : [...STICKERS].reverse();
   return (
     <View style={{ height: 40 }}>
@@ -337,6 +345,7 @@ function SlideX({ dir, children }: { dir: 1 | -1; children: React.ReactNode }) {
 /* ============================================================ the story */
 
 function QuickAnswers() {
+  const { QUICK_ANSWERS } = useWords();
   const c = useTheme();
   return (
     <Chapter style={{ paddingHorizontal: G, paddingTop: space[7], paddingBottom: space[5], width: "100%", maxWidth: 640, alignSelf: "center", gap: space[3] }}>
@@ -356,6 +365,7 @@ function QuickAnswers() {
 }
 
 function Patients() {
+  const { PATIENTS } = useWords();
   return (
     <Chapter style={{ backgroundColor: BLUE, paddingTop: space[7], paddingBottom: space[7], overflow: "hidden" }}>
       <Dots />
@@ -397,6 +407,7 @@ function Patients() {
 }
 
 function Different() {
+  const { DIFFERENT } = useWords();
   const c = useTheme();
   return (
     <Chapter style={{ paddingHorizontal: G, paddingTop: space[7], paddingBottom: space[7], width: "100%", maxWidth: 640, alignSelf: "center", gap: space[6] }}>
@@ -438,6 +449,7 @@ function Different() {
 }
 
 function Journey() {
+  const { JOURNEY } = useWords();
   const c = useTheme();
   const bg = c.dark ? "#161616" : INK;
   return (
@@ -485,6 +497,7 @@ function Journey() {
 }
 
 function WhatYouGet() {
+  const { GET } = useWords();
   return (
     <Chapter style={{ backgroundColor: LIME, paddingTop: space[7], paddingBottom: space[7], overflow: "hidden" }}>
       <Dots color="rgba(17,17,17,0.10)" gap={14} />
@@ -523,6 +536,7 @@ function WhatYouGet() {
 }
 
 function Curriculum() {
+  const { DISCIPLINES } = useWords();
   const { width } = useWindowDimensions();
   const card = Math.min(300, Math.round(width * 0.74));
   return (
@@ -572,6 +586,7 @@ function Curriculum() {
 }
 
 function YourWeek() {
+  const { WEEK } = useWords();
   const c = useTheme();
   const [weekend, setWeekend] = React.useState(false);
   const reduce = useReducedMotion();
@@ -608,13 +623,11 @@ function YourWeek() {
         <View accessibilityRole="tablist" onLayout={(e) => setSegW(e.nativeEvent.layout.width - 8)} style={{ flexDirection: "row", padding: 4, borderRadius: 14, backgroundColor: c.tint }}>
           {segW > 0 ? <Animated.View style={[{ position: "absolute", top: 4, left: 4, bottom: 4, width: segW / 2, borderRadius: 10, backgroundColor: c.card, borderWidth: 1.5, borderColor: c.cardLine }, thumbAnim]} /> : null}
           {[false, true].map((v) => (
-            <View key={String(v)} style={{ flex: 1 }}>
-            <Press accessibilityRole="tab" accessibilityState={{ selected: weekend === v }} onPress={() => pick(v)} style={{ minHeight: 44, alignItems: "center", justifyContent: "center" }} testID={v ? "week-weekend" : "week-weekday"}>
+            <Press key={String(v)} accessibilityRole="tab" accessibilityState={{ selected: weekend === v }} onPress={() => pick(v)} feel="none" style={{ flex: 1 }} innerStyle={{ minHeight: 44, alignItems: "center", justifyContent: "center" }} testID={v ? "week-weekend" : "week-weekday"}>
               <T v="bodyStrong" tone={weekend === v ? "ink" : "muted"}>
                 {v ? "Weekend" : "Weekday"}
               </T>
             </Press>
-            </View>
           ))}
         </View>
         <View key={String(weekend)} style={{ paddingTop: space[5], gap: space[1] }}>
@@ -651,6 +664,7 @@ function Legend({ dot, label, ring }: { dot: string; label: string; ring?: boole
 }
 
 function Faculty() {
+  const { FACULTY } = useWords();
   const c = useTheme();
   return (
     <Chapter style={{ paddingTop: space[7], paddingBottom: space[7], borderTopWidth: 1, borderColor: c.hairline }}>
@@ -714,6 +728,7 @@ function Faculty() {
 }
 
 function Joining() {
+  const { CLOSING, JOIN } = useWords();
   return (
     <Chapter style={{ backgroundColor: LIME, paddingTop: space[7], paddingBottom: space[7], overflow: "hidden" }}>
       <Dots color="rgba(17,17,17,0.10)" gap={14} />
@@ -795,7 +810,7 @@ function Joining() {
 
 function Pill({ label, icon, onPress, testID }: { label: string; icon: React.ReactNode; onPress: () => void; testID: string }) {
   return (
-    <Press onPress={onPress} testID={testID} accessibilityRole="button" accessibilityLabel={label} style={{ minHeight: 44, paddingHorizontal: space[4], borderRadius: 22, backgroundColor: WHITE, flexDirection: "row", alignItems: "center", gap: space[2] }}>
+    <Press onPress={onPress} testID={testID} accessibilityRole="button" accessibilityLabel={label} feel="tap" innerStyle={{ minHeight: 44, paddingHorizontal: space[4], borderRadius: 22, backgroundColor: WHITE, flexDirection: "row", alignItems: "center", gap: space[2] }}>
       {icon}
       <Text allowFontScaling={false} style={{ fontFamily: fonts.bold, fontSize: 15, color: INK }}>
         {label}
@@ -805,6 +820,7 @@ function Pill({ label, icon, onPress, testID }: { label: string; icon: React.Rea
 }
 
 function Closing({ bottom }: { bottom: number }) {
+  const { CLOSING } = useWords();
   const { width } = useWindowDimensions();
   const size = Math.min(52, Math.floor((Math.min(width, 640) - G * 2) / 9.2));
   const cast = ["bun", "doctor3", "psych", "cap"] as const;

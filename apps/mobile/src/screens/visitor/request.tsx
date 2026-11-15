@@ -2,7 +2,7 @@ import { router } from "expo-router";
 import { Check, Mail, Phone, User } from "lucide-react-native";
 import * as React from "react";
 import { Linking, Pressable, View } from "react-native";
-import Animated, { FadeInDown, useAnimatedStyle, useReducedMotion, useSharedValue, withSpring } from "react-native-reanimated";
+import Animated, { FadeInDown, useReducedMotion } from "react-native-reanimated";
 
 import type { RequestInvitationBody, RequestInvitationResult } from "@/api/contract";
 import { ApiFailure, messageOf } from "@/api/errors";
@@ -10,6 +10,7 @@ import { api } from "@/auth";
 import { Button, Chips, Screen, T } from "@/ds";
 import { BRAND } from "@/lib/brand";
 import { haptic } from "@/lib/haptics";
+import { Burst, Stamp } from "@/motion";
 import { SketchCat } from "@/sketch/cat";
 import { layout, space, useTheme } from "@/theme";
 import { Star } from "@/visitor/Art";
@@ -120,21 +121,19 @@ export function RequestScreen() {
   );
 }
 
-/** "Request received": a lime star stamps down with a tick, the cat looks on, the words rise in. */
+/** "Request received": the kit's stamp lands a lime star with a tick, sparks fly, the cat looks on, the words rise in. */
 function Sent({ name, email }: { name: string; email: string }) {
   const reduce = useReducedMotion();
-  const stamp = useSharedValue(reduce ? 1 : 0);
-  React.useEffect(() => {
-    if (!reduce) stamp.set(withSpring(1, { damping: 10, stiffness: 170, mass: 0.7 }));
-  }, [reduce, stamp]);
-  const anim = useAnimatedStyle(() => ({ opacity: Math.min(1, stamp.value * 2), transform: [{ scale: 1.6 - stamp.value * 0.6 }, { rotate: `${(1 - stamp.value) * 30 - 8}deg` }] }));
   return (
     <View style={{ gap: space[5], paddingTop: space[5] }}>
       <View style={{ flexDirection: "row", alignItems: "flex-end", gap: space[4] }}>
-        <Animated.View style={[{ width: 110, height: 110, alignItems: "center", justifyContent: "center" }, anim]}>
-          <Star size={110} fill="#cdf24b" style={{ position: "absolute" }} />
-          <Check size={44} color="#111111" strokeWidth={4} />
-        </Animated.View>
+        <Stamp fire={1} rotate={-8}>
+          <View style={{ width: 110, height: 110, alignItems: "center", justifyContent: "center" }}>
+            <Star size={110} fill="#cdf24b" style={{ position: "absolute" }} />
+            <Check size={44} color="#111111" strokeWidth={4} />
+            <Burst fire={1} reach={70} count={12} />
+          </View>
+        </Stamp>
         <SketchCat size={96} mood="calm" />
       </View>
       <Animated.View entering={reduce ? undefined : FadeInDown.delay(250).duration(360)} style={{ gap: space[2] }}>
