@@ -143,7 +143,7 @@ export type SectionReaderProps = {
   moduleId: string;
   moduleNum: number;
   moduleTitle: string;
-  section: { id: string; num: string; title: string; part?: string; tag?: "core" | "extra"; level?: Level; levelCheck?: Level; isTest: boolean };
+  section: { id: string; num: string; title: string; part?: string; tag?: "core" | "extra"; level?: Level; levelCheck?: Level; isTest: boolean; /** Whether the Student / Clinician switch changes anything here (lib/study/views.ts). The switch shows only then. */ views?: boolean };
   toc: TocItem[];
   prevHref?: string;
   next: { href: string; label: string };
@@ -344,7 +344,7 @@ export function SectionReader({
             </div>
           ) : null}
           {/* One toolbar row: explanation style, bookmark, my note. */}
-          {!section.isTest ? <SectionMarks key={section.id} owner={owner} moduleId={moduleId} sectionId={section.id} sectionLabel={`${section.num} ${section.title}`} lead={<ViewToggle className="flex w-full sm:inline-flex sm:w-auto" />} /> : <div className="mt-3"><ViewToggle /></div>}
+          {!section.isTest ? <SectionMarks key={section.id} owner={owner} moduleId={moduleId} sectionId={section.id} sectionLabel={`${section.num} ${section.title}`} lead={section.views ? <ViewToggle className="flex w-full sm:inline-flex sm:w-auto" /> : undefined} /> : section.views ? <div className="mt-3"><ViewToggle /></div> : null}
         </header>
 
         {section.levelCheck ? (

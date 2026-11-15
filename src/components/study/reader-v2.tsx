@@ -110,12 +110,12 @@ export function SectionReaderV2(props: SectionReaderProps) {
           ) : null}
           {/* One toolbar row: explanation style, bookmark, my note. */}
           {!section.isTest ? (
-            <SectionMarks key={section.id} owner={owner} moduleId={moduleId} sectionId={section.id} sectionLabel={`${section.num} ${section.title}`} lead={<ViewToggle className="flex w-full border-[1.5px] border-[var(--ds-card-line)] bg-transparent sm:inline-flex sm:w-auto" />} />
-          ) : (
+            <SectionMarks key={section.id} owner={owner} moduleId={moduleId} sectionId={section.id} sectionLabel={`${section.num} ${section.title}`} lead={section.views ? <ViewToggle className="flex w-full border-[1.5px] border-[var(--ds-card-line)] bg-transparent sm:inline-flex sm:w-auto" /> : undefined} />
+          ) : section.views ? (
             <div>
               <ViewToggle className="border-[1.5px] border-[var(--ds-card-line)] bg-transparent" />
             </div>
-          )}
+          ) : null}
         </header>
 
         {section.levelCheck ? (
