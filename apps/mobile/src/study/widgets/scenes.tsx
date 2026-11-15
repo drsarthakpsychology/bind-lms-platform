@@ -41,6 +41,8 @@ import { T } from "@/ds/text";
 import { haptic } from "@/lib/haptics";
 import { Arrow, C, Cv, E, L, Label, P, R, SketchSheet, plain } from "@/sketch/ink";
 import { space, useTheme } from "@/theme";
+import { JourneyArt } from "@/sketch/journey-art";
+import { ReceptorArt, SIGNAL, type LigandId } from "@/sketch/receptor-art";
 import { ChoiceScene, StepPicker, StepScene, StepText, type SceneDef, type Variant } from "./engine";
 import { WidgetFrame } from "./frame";
 
@@ -122,9 +124,32 @@ export function journeyVariant(d: JourneyData, route: Route): Variant {
   };
 }
 
+/** The website's journey: the body drawing with the pill at its stop, the stages to step through. */
 export function JourneyWidget({ d }: { d: JourneyData }) {
   const routes = (d.routes?.length ? d.routes : [d.route ?? "oral"]) as Route[];
-  return <StepScene name="journey" label="A medicine's journey" title={d.title ?? `${d.drug} through the body`} caption={d.caption} variants={routes.map((r) => journeyVariant(d, r))} start={d.route} />;
+  const [route, setRoute] = React.useState<Route>(d.route && routes.includes(d.route) ? d.route : routes[0]!);
+  const [i, setI] = React.useState(0);
+  const v = journeyVariant(d, route);
+  const stagesList = v.def.steps;
+  const cur = stagesList[Math.min(i, stagesList.length - 1)]!;
+  return (
+    <WidgetFrame label="A medicine's journey" title={d.title ?? `${d.drug} through the body`} caption={d.caption} testID="w-journey">
+      {routes.length > 1 ? (
+        <Chips
+          label="Route"
+          options={routes.map((r) => ({ id: r, name: ROUTE_NAME[r] }))}
+          value={route}
+          onChange={(r) => {
+            setRoute(r as Route);
+            setI(0);
+          }}
+        />
+      ) : null}
+      <JourneyArt stops={stagesList.map((s) => s.id)} i={i} route={route} label={`${d.drug}: ${cur.name}`} />
+      <StepPicker steps={stagesList} i={Math.min(i, stagesList.length - 1)} onPick={setI} />
+      <StepText text={cur.text} k={`${route}-${cur.id}`} />
+    </WidgetFrame>
+  );
 }
 
 /* ----------------------------------------------------------------- neuron */
@@ -256,26 +281,7 @@ export function ReceptorWidget({ d }: { d: ReceptorData }) {
       title={d.title ?? `What binds to the ${receptor}?`}
       caption={d.caption}
       options={LIGANDS}
-      art={(id) => {
-        const l = LIGANDS.find((x) => x.id === id)!;
-        const fill = id === "full" ? C.lime : id === "partial" ? C.wash : id === "antagonist" ? C.soft : id === "inverse" ? C.red : undefined;
-        return (
-          <SketchSheet name={`receptor-${id}`} w={320} h={170} label={`${l.name} at the ${receptor}: signal ${Math.round(l.signal * 100)}%`}>
-            <L k="rc-mem" x1={10} y1={100} x2={230} y2={100} sw={2} />
-            <P k="rc-cup" d="M80 100 L80 70 L104 70 L110 82 L130 82 L136 70 L160 70 L160 100" fill={C.wash} fillStyle="solid" sw={2} />
-            {fill ? <P k={`rc-lig-${id}`} d={id === "antagonist" ? "M108 40 L132 40 L132 66 L108 66 Z" : "M110 50 L130 50 L130 80 L110 80 Z"} fill={fill} fillStyle="solid" sw={1.6} /> : null}
-            <Label x={120} y={130} size={13} anchor="middle" bold={false}>
-              {receptor}
-            </Label>
-            <R k="rc-meter" x={262} y={20} w={30} h={130} sw={1.6} />
-            <R k={`rc-level-${id}`} x={264} y={150 - 128 * l.signal} w={26} h={Math.max(2, 128 * l.signal)} fill={C.blue} fillStyle="solid" sw={1} />
-            <L k="rc-base" x1={254} y1={150 - 128 * 0.15} x2={300} y2={150 - 128 * 0.15} stroke={C.ink} sw={1.2} dash="4 3" single />
-            <Label x={277} y={166} size={12} anchor="middle" bold={false}>
-              signal
-            </Label>
-          </SketchSheet>
-        );
-      }}
+      art={(id) => <ReceptorArt id={id as LigandId} receptor={receptor} label={`${LIGANDS.find((x) => x.id === id)!.name} at the ${receptor}: signal ${Math.round(SIGNAL[id as LigandId] * 100)}%`} />}
     />
   );
 }

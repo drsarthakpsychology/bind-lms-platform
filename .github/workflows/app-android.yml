@@ -75,7 +75,7 @@ jobs:
           distribution: temurin
           java-version: 17
 
-      - uses: gradle/actions/setup-gradle@v4
+      - uses: gradle/actions/setup-gradle@v5
 
       - name: Install the app's packages
         run: npm ci
@@ -119,7 +119,7 @@ jobs:
           cp android/app/build/outputs/apk/release/app-release.apk "../../out/vibha-psychology-${EXPO_PUBLIC_API_MODE}-${GITHUB_RUN_NUMBER}.apk"
 
       - name: Keep the APK as a download
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: vibha-psychology-android-${{ github.run_number }}
           path: out/*.apk
