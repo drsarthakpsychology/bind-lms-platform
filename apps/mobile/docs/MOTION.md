@@ -126,6 +126,12 @@ gives the same for screens that do not use `Screen`.
 - Bursts and confetti use one shared value each; particles compute their place
   from it (no per-particle timers).
 
+## Web build
+`presets.*` return nothing on react-native-web (the screenshot build): its CSS
+emulation of layout animations left rows and badges misplaced after a
+re-render. Phones get every animation. Each preset call with the same
+arguments returns the same object, so re-renders never restart an animation.
+
 ## Tests
 The jest mock of Reanimated reports Reduce Motion on, so components render
 their still versions in tests. Layout animation builders chain freely in the

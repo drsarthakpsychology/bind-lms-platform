@@ -47,18 +47,12 @@ export function RowList({ children, bare, still, style }: { children?: React.Rea
   const c = useTheme();
   const reduce = useReducedMotion() || !!still;
   const items = React.Children.toArray(children).filter(Boolean);
-  // The staggered rise is for the list's first appearance only; later rows just fade in.
-  const [settled, setSettled] = React.useState(false);
-  React.useEffect(() => {
-    const id = setTimeout(() => setSettled(true), 700);
-    return () => clearTimeout(id);
-  }, []);
   // Long lists (the medicine library) skip the per-row layout spring: it would cost more than it shows.
   const animate = !reduce && items.length <= 40;
   return (
     <View accessibilityRole="list" style={[{ borderColor: c.hairline, borderTopWidth: bare ? 0 : 1, borderBottomWidth: bare ? 0 : 1 }, style]}>
       {items.map((child, i) => (
-        <Animated.View key={(React.isValidElement(child) && child.key) || i} entering={reduce ? undefined : !settled ? (i < 12 ? presets.rise(staggerDelay(i)) : undefined) : animate ? presets.fade() : undefined} exiting={animate ? presets.out() : undefined} layout={animate ? presets.layout() : undefined} style={i > 0 ? { borderTopWidth: 1, borderColor: c.hairline } : null}>
+        <Animated.View key={(React.isValidElement(child) && child.key) || i} entering={!reduce && i < 12 ? presets.rise(staggerDelay(i)) : undefined} exiting={animate ? presets.out() : undefined} layout={animate ? presets.layout() : undefined} style={i > 0 ? { borderTopWidth: 1, borderColor: c.hairline } : null}>
           {child}
         </Animated.View>
       ))}
