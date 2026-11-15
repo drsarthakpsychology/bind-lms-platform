@@ -1,1 +1,1 @@
-export { PractiseHub as default } from "@/screens/practise/hub";
+export { PractiseHub as default } from "@/practise/hub";
