@@ -3,6 +3,7 @@ import { createAdminClient } from "@/lib/supabase/server";
 import { sendResendEmail, logEmailSend } from "@/lib/auth/roster";
 import { appUrl as liveAppUrl, cleanAppUrl } from "@/lib/app-url";
 import { CUSTOM_SIGNATORY, linkedInAddToProfileUrl } from "./linkedin";
+import { queuePush } from "@/lib/app-api/push";
 
 /**
  * Achievement + certificate notifications. In-app rows are written first (they
@@ -37,14 +38,10 @@ export async function notifyCredential(input: NotifyInput): Promise<void> {
       : `Your certificate for "${input.title}" has been officially issued. View and share it from My Achievements.`;
 
   // In-app notification (source of truth; written even if email fails).
-  await admin.from("notifications").insert({
-    user_id: input.userId,
-    type: input.type,
-    credential_id: input.credentialId,
-    title,
-    body,
-    href: "/achievements",
-  });
+  const bell = { id: crypto.randomUUID(), user_id: input.userId, type: input.type, credential_id: input.credentialId, title, body, href: "/achievements" };
+  const written = await admin.from("notifications").insert(bell);
+  // The same notice on the student's phone (Vibha Psychology app); never blocks.
+  if (!written?.error) queuePush([bell], "achievements");
 
   // Email: best-effort, logged, never blocks the credential.
   if (!input.email) return;
@@ -103,14 +100,17 @@ export async function emailCustomCertificate(input: CustomCertEmail): Promise<{ 
   const subject = `Your certificate from VIBHA School of Psychology: ${input.title}`;
 
   if (input.userId) {
-    await admin.from("notifications").insert({
+    const bell = {
+      id: crypto.randomUUID(),
       user_id: input.userId,
       type: "certificate",
       credential_id: input.credentialId,
       title: `Your certificate is ready: ${input.title}`,
       body: `You have been given a certificate: "${input.title}". View and share it from My Achievements.`,
       href: "/achievements",
-    });
+    };
+    const written = await admin.from("notifications").insert(bell);
+    if (!written?.error) queuePush([bell], "achievements");
   }
   if (!input.email) return { sent: false, error: null };
 

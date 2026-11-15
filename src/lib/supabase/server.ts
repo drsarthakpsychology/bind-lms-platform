@@ -1,5 +1,6 @@
 import { createServerClient } from "@supabase/ssr";
 import { cookies } from "next/headers";
+import { appContext, type AppRequestContext } from "@/lib/app-api/context";
 
 /**
  * Supabase client for Server Components, Server Actions, and Route Handlers.
@@ -7,6 +8,11 @@ import { cookies } from "next/headers";
  * so call this at the top of each Server Component / action, never module-level.
  */
 export async function createClient() {
+  // A request from the mobile app (bearer token, no cookies): act as that
+  // user. Everything below is the website's cookie session, unchanged.
+  const app = appContext();
+  if (app) return appUserClient(app);
+
   const cookieStore = await cookies();
 
   return createServerClient(
@@ -31,6 +37,40 @@ export async function createClient() {
       },
     },
   );
+}
+
+/**
+ * The Supabase client for one mobile-app request: the anon key plus the
+ * caller's own access token, so row level security applies exactly as it does
+ * for the same student on the website. It never reads or writes cookies.
+ * `auth.getUser()` answers the user the app guard already verified (there is
+ * no cookie session to read), and `auth.signOut()` does nothing here: the app
+ * signs out through its own route.
+ */
+function appUserClient(app: AppRequestContext) {
+  if (app.client) return app.client as ReturnType<typeof makeAppUserClient>;
+  const client = makeAppUserClient(app);
+  app.client = client;
+  return client;
+}
+
+function makeAppUserClient(app: AppRequestContext) {
+  const client = createServerClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!, {
+    cookies: {
+      getAll() {
+        return [];
+      },
+      setAll() {
+        // No cookies for app requests.
+      },
+    },
+    global: { headers: { Authorization: `Bearer ${app.accessToken}` } },
+  });
+  const auth = client.auth as unknown as { getUser: (jwt?: string) => Promise<unknown>; signOut: () => Promise<unknown> };
+  const realGetUser = auth.getUser.bind(client.auth);
+  auth.getUser = async (jwt?: string) => (jwt ? realGetUser(jwt) : { data: { user: app.user }, error: null });
+  auth.signOut = async () => ({ error: null });
+  return client;
 }
 
 /**

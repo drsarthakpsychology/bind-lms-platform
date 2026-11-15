@@ -10,6 +10,7 @@ import { type CertKind, isCertKind, istDay, longDate } from "./kinds";
 import { layoutCertificate, type CertificateDoc, type Signatory } from "./layout";
 import { renderCertificatePdf } from "./pdf";
 import { dailyEmailLimit, planEmails, startOfEmailDay, type EmailTarget } from "./email-plan";
+import { queuePush } from "@/lib/app-api/push";
 
 /**
  * Server side of the certificate studio: reading a certificate record back
@@ -187,6 +188,7 @@ export async function pdfForRecord(admin: SupabaseClient, r: CredentialRecord): 
 export async function notifyCertificate(admin: SupabaseClient, input: { userId: string; credentialId: string; title: string; kind: CertKind; sentBy: string | null; batchId?: string | null; again?: boolean }): Promise<boolean> {
   const label = input.kind === "provisional" ? "provisional certificate" : input.kind === "recognition" ? "special recognition" : "certificate";
   const row = {
+    id: crypto.randomUUID(),
     user_id: input.userId,
     type: "certificate",
     credential_id: input.credentialId,
@@ -195,9 +197,10 @@ export async function notifyCertificate(admin: SupabaseClient, input: { userId: 
     href: `/achievements/${encodeURIComponent(input.credentialId)}`,
   };
   const withSender = await admin.from("notifications").insert({ ...row, sent_by: input.sentBy, batch_id: input.batchId ?? null });
-  if (!withSender.error) return true;
-  const plain = await admin.from("notifications").insert(row);
-  return !plain.error;
+  const ok = !withSender?.error || !(await admin.from("notifications").insert(row))?.error;
+  // The same notice on the student's phone (Vibha Psychology app); never blocks.
+  if (ok) queuePush([row], "achievements");
+  return ok;
 }
 
 /** Emails sent since the provider's day began (sent or delivered). */

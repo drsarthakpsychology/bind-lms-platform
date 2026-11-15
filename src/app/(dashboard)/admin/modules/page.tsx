@@ -1,6 +1,9 @@
 import { redirect } from "next/navigation";
 import { requireAdmin } from "@/lib/auth/guards";
 import { createAdminClient } from "@/lib/supabase/server";
+import { readFlags } from "@/lib/flags";
+import { uiV2For } from "@/lib/ui/v2";
+import { AdminPage } from "../_v2/kit";
 import { PageHeader } from "@/components/design-system/page-header";
 import { ModulesAdmin } from "./modules-admin";
 
@@ -15,7 +18,8 @@ export const dynamic = "force-dynamic";
 export default async function AdminModulesPage() {
   // Defence in depth: layouts don't re-render on every navigation, so the page
   // re-checks admin itself before reading data.
-  if (!(await requireAdmin())) redirect("/dashboard");
+  const me = await requireAdmin();
+  if (!me) redirect("/dashboard");
   const admin = createAdminClient();
 
   const [{ data: modules }, { data: students }, { data: grants }] = await Promise.all([
@@ -36,6 +40,25 @@ export default async function AdminModulesPage() {
       list.push({ id: g.student_id, email: emailById.get(g.student_id)! });
       grantedByModule.set(g.module_id, list);
     }
+  }
+
+  if (uiV2For(await readFlags(), me.role)) {
+    return (
+      <AdminPage width="default" title="Modules" lead="Publish, schedule and unpublish modules, and choose exactly who has access.">
+        <ModulesAdmin
+          modules={(modules ?? []).map((m) => ({
+            id: m.id,
+            title: m.title,
+            order: m.order_index,
+            state: m.state as string,
+            releaseAt: m.release_at as string | null,
+            cohortGranted: cohortGranted.has(m.id),
+            grantedStudents: grantedByModule.get(m.id) ?? [],
+          }))}
+          students={(students ?? []).map((s) => ({ id: s.id, email: s.email }))}
+        />
+      </AdminPage>
+    );
   }
 
   return (

@@ -61,7 +61,7 @@ export function LandmarkReader({ cases, ctx = EMPTY_CTX }: { cases: LandmarkCase
       {/* the case */}
       <div className="rounded-lg border-2 border-border bg-card p-5 hard-shadow-sm">
         <h2 className="text-base font-semibold">{c.title}</h2>
-        <p className="mt-3 text-small">{c.story}</p>
+        <p className="mt-3 max-w-[70ch] text-small">{c.story}</p>
         <div className="mt-3 grid gap-3 sm:grid-cols-2">
           <div className="rounded-md border border-border bg-background p-3">
             <p className="text-caption font-semibold text-muted-foreground">Believed then</p>

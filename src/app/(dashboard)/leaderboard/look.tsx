@@ -23,7 +23,7 @@ export function NameLine({ name, title, look, me = false, onFill = false }: { na
   const { title: t } = parseLook(look);
   return (
     <span className="min-w-0 flex-1">
-      <span className="block truncate font-semibold">
+      <span className="block truncate font-semibold" title={name}>
         {name}
         {me ? " (you)" : ""}
       </span>

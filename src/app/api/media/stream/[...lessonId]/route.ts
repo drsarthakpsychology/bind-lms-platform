@@ -6,6 +6,8 @@ import { aesEncrypt, deriveSessionKey } from "@/lib/media/crypto";
 import { rateLimitFast } from "@/lib/rate-limit-fast";
 import { safeStreamRest, warmChunkAllowed } from "@/lib/media/stream-guard";
 import { SESSION_COOKIE } from "@/lib/auth/session";
+import { verifyAppStreamToken } from "@/lib/media/app-stream-token";
+import { checkAppStreamViewer } from "@/lib/media/app-viewer";
 
 /**
  * GET /api/media/stream/:lessonId(/*rest)
@@ -50,7 +52,10 @@ export async function GET(
     return NextResponse.json({ error: "Missing stream token." }, { status: 401 });
   }
 
-  const payload = verifyStreamToken(token);
+  // The mobile app's token (src/lib/media/app-stream-token.ts) is checked by
+  // its own verifier; a website token never passes it, nor the reverse.
+  const appPayload = verifyAppStreamToken(token);
+  const payload = appPayload ?? verifyStreamToken(token);
   if (!payload || payload.lid !== lessonId) {
     return NextResponse.json({ error: "Invalid or expired stream token." }, { status: 401 });
   }
@@ -68,14 +73,23 @@ export async function GET(
     return NextResponse.json({ error: "Not found." }, { status: 404 });
   }
   const isChunk = restPath !== "" && restPath !== "__key__" && !restPath.endsWith(".m3u8");
-  const { getStreamVerdict: peekVerdict } = await import("@/lib/media/stream-cache");
-  const warm = isChunk ? peekVerdict(payload.uid, lessonId) : null;
-  // The fast path is bound to the browser session that passed the full check
-  // (its session cookie), so a copied stream URL is useless elsewhere.
-  const sessionCookie = request.cookies.get(SESSION_COOKIE)?.value;
-  const profile = warmChunkAllowed(warm, sessionCookie)
-    ? { id: payload.uid, role: "student" as const, scope: "full" as const, active_session_token: sessionCookie ?? null }
-    : await requireSession();
+  let profile: { id: string; role: "admin" | "view_admin" | "student" | "alumni"; scope: "full" | "lectures_only"; active_session_token: string | null } | null;
+  if (appPayload) {
+    // App: no cookie. The phone header and a once-a-minute account and phone
+    // check stand in for the browser session (src/lib/media/app-viewer.ts).
+    const viewer = await checkAppStreamViewer(appPayload, request.headers.get("x-app-device-id"));
+    if (!viewer.ok) return NextResponse.json({ error: viewer.error }, { status: viewer.status });
+    profile = { ...viewer.profile, active_session_token: `app:${appPayload.dev}` };
+  } else {
+    const { getStreamVerdict: peekVerdict } = await import("@/lib/media/stream-cache");
+    const warm = isChunk ? peekVerdict(payload.uid, lessonId) : null;
+    // The fast path is bound to the browser session that passed the full check
+    // (its session cookie), so a copied stream URL is useless elsewhere.
+    const sessionCookie = request.cookies.get(SESSION_COOKIE)?.value;
+    profile = warmChunkAllowed(warm, sessionCookie)
+      ? { id: payload.uid, role: "student" as const, scope: "full" as const, active_session_token: sessionCookie ?? null }
+      : await requireSession();
+  }
   if (!profile || profile.id !== payload.uid) {
     return NextResponse.json({ error: "Not signed in." }, { status: 401 });
   }
@@ -89,7 +103,9 @@ export async function GET(
   // (uid, lessonId) for the token's 5-min life. One DB query + zero repeats
   // for the ~600 segments per hour of playback.
   const { getStreamVerdict, setStreamVerdict } = await import("@/lib/media/stream-cache");
-  let verdict = getStreamVerdict(profile.id, lessonId);
+  // App viewers keep their own verdict entry, so they never move the website's fast path.
+  const verdictUid = appPayload ? `app:${profile.id}` : profile.id;
+  let verdict = getStreamVerdict(verdictUid, lessonId);
   if (!verdict) {
     const { authorizeAndResolveLesson } = await import("@/lib/media/proxy-client");
     const fresh = await authorizeAndResolveLesson({
@@ -97,14 +113,15 @@ export async function GET(
       role: profile.role,
       scope: profile.scope,
       lessonId,
+      serviceRole: Boolean(appPayload),
     });
     verdict = { ...fresh, ok: fresh.authorized && Boolean(fresh.resolved), session: profile.active_session_token };
-    setStreamVerdict(profile.id, lessonId, verdict);
+    setStreamVerdict(verdictUid, lessonId, verdict);
   } else if (verdict.session !== profile.active_session_token) {
     // Same viewer, newer browser session (signed in again): move the fast
     // path to it so the old session's cookie no longer opens it.
     verdict = { ...verdict, session: profile.active_session_token };
-    setStreamVerdict(profile.id, lessonId, verdict);
+    setStreamVerdict(verdictUid, lessonId, verdict);
   }
 
   if (!verdict.authorized) {
