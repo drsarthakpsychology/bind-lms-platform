@@ -6,6 +6,9 @@ import { createAdminClient } from "@/lib/supabase/server";
 import { countSubmissions, loadForm, usedAnswerKeys } from "@/lib/forms/load";
 import { PageHeader } from "@/components/design-system/page-header";
 import { FormBuilder } from "../../form-builder";
+import { readFlags } from "@/lib/flags";
+import { uiV2For } from "@/lib/ui/v2";
+import { FormEditV2 } from "../../../_v2/forms";
 
 export const dynamic = "force-dynamic";
 
@@ -19,6 +22,14 @@ export default async function EditFormPage({ params }: { params: Promise<{ id: s
   const form = await loadForm(admin, id);
   if (!form) notFound();
   const [reservedKeys, responses] = await Promise.all([usedAnswerKeys(admin, id), countSubmissions(admin, id)]);
+
+  if (uiV2For(await readFlags(), me.role)) {
+    return (
+      <FormEditV2 title="Edit form" back={{ href: `/admin/forms/${id}`, label: "Answers" }}>
+        <FormBuilder formId={id} initial={{ title: form.title, description: form.description ?? "", isActive: form.isActive, fields: form.fields }} reservedKeys={reservedKeys} responses={responses} />
+      </FormEditV2>
+    );
+  }
 
   return (
     <div className="space-y-6">
