@@ -10,11 +10,15 @@ import { PageHeader } from "@/components/design-system/page-header";
 import { EmptyState } from "@/components/design-system/empty-state";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { readFlags } from "@/lib/flags";
+import { uiV2For } from "@/lib/ui/v2";
+import { CoursesListV2 } from "../_v2/courses";
 
 export default async function CoursesPage() {
   // Defence in depth: layouts don't re-render on every navigation, so the page
   // re-checks admin itself before reading data.
-  if (!(await requireAdmin())) redirect("/dashboard");
+  const me = await requireAdmin();
+  if (!me) redirect("/dashboard");
   const supabase = await createClient();
 
   const [{ data: courses }, { data: allLessons }] = await Promise.all([
@@ -28,6 +32,15 @@ export default async function CoursesPage() {
   }
 
   const published = (courses ?? []).filter((c) => c.is_published).length;
+
+  if (uiV2For(await readFlags(), me.role)) {
+    return (
+      <CoursesListV2
+        createForm={<CreateCourseForm />}
+        courses={(courses ?? []).map((c) => ({ id: c.id, title: c.title, published: c.is_published, lessons: lessonCounts.get(c.id) ?? 0, actions: <CourseActions courseId={c.id} isPublished={c.is_published} /> }))}
+      />
+    );
+  }
 
   return (
     <div className="space-y-8">

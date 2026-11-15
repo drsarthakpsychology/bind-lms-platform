@@ -25,6 +25,10 @@ import { PageHeader } from "@/components/design-system/page-header";
 import { EmptyState } from "@/components/design-system/empty-state";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { readFlags } from "@/lib/flags";
+import { uiV2For } from "@/lib/ui/v2";
+import { CohortFilterV2, CourseDetailV2, type LessonV2 } from "../../_v2/courses";
+import { Tag, btn } from "../../_v2/kit";
 
 const STATUS_BADGES: Record<LessonStatus, { label: string; variant: "published" | "pending" | "draft" }> = {
   hidden: { label: "Hidden", variant: "draft" },
@@ -64,7 +68,8 @@ export default async function CourseDetailPage({
 }) {
   // Defence in depth: layouts don't re-render on every navigation, so the page
   // re-checks admin itself before reading data.
-  if (!(await requireAdmin())) redirect("/dashboard");
+  const me = await requireAdmin();
+  if (!me) redirect("/dashboard");
   const { courseId } = await params;
   const sp = await searchParams;
   const cohortParam = typeof sp.cohort === "string" ? sp.cohort : null;
@@ -121,6 +126,93 @@ export default async function CourseDetailPage({
   const assignmentByLesson = new Map<string, { id: string; is_published: boolean; instructions: string | null; prompt_text: string | null }>();
   for (const a of assignments ?? []) {
     assignmentByLesson.set(a.lesson_id, a);
+  }
+
+  if (uiV2For(await readFlags(), me.role)) {
+    const base = `/admin/courses/${courseId}`;
+    const toLesson = (lesson: LessonRow): LessonV2 => {
+      const assignment = assignmentByLesson.get(lesson.id);
+      const sharedWith = courseCohorts.links.get(lesson.id) ?? [];
+      const b = statusBadge(lesson.status);
+      return {
+        id: lesson.id,
+        number: lesson.order_index,
+        title: lesson.title,
+        status: { label: b.label, tone: b.variant === "published" ? "ok" : b.variant === "pending" ? "warn" : "quiet" },
+        video: !lesson.video_storage_path
+          ? { label: "No video", tone: "quiet" }
+          : lesson.video_status === "failed"
+            ? { label: "Video upload failed", tone: "alert" }
+            : lesson.video_status === "ready" || lesson.video_status === null
+              ? { label: "Video attached", tone: "ok" }
+              : { label: "Processing video", tone: "warn" },
+        cohorts:
+          courseCohorts.ready && cohorts.length ? (
+            <>
+              <LessonCohortChips sharedWith={sharedWith} cohorts={cohorts} />
+              <LessonCohortEditor lessonId={lesson.id} lessonTitle={lesson.title} sharedWith={sharedWith} cohorts={cohorts} />
+            </>
+          ) : undefined,
+        assignment: assignment ? <AssignmentToggle lessonId={lesson.id} courseId={courseId} published={assignment.is_published} /> : lesson.requires_assignment ? <Tag tone="warn">Assignment needs setup</Tag> : undefined,
+        actions: (
+          <>
+            <VideoUpload lessonId={lesson.id} courseId={courseId} hasVideo={Boolean(lesson.video_storage_path)} />
+            {lesson.video_storage_path ? <Link href={`/courses/${courseId}/lessons/${lesson.id}`} className={btn.quiet}>Watch</Link> : null}
+            <LessonStatusToggle lessonId={lesson.id} courseId={courseId} status={(lesson.status ?? "unlocked") as LessonStatus} />
+            <EditLesson
+              lessonId={lesson.id}
+              courseId={courseId}
+              initial={{ title: lesson.title, description: lesson.description ?? "", week: lesson.week ?? 1, requiresAssignment: lesson.requires_assignment, assignmentPrompt: assignment?.instructions ?? assignment?.prompt_text ?? "" }}
+            />
+            <span className="flex items-center gap-1">
+              <MoveLessonButton lessonId={lesson.id} courseId={courseId} direction="up" disabled={lesson.order_index === rows[0]?.order_index} label="Move lesson up" />
+              <MoveLessonButton lessonId={lesson.id} courseId={courseId} direction="down" disabled={lesson.order_index === rows[rows.length - 1]?.order_index} label="Move lesson down" />
+            </span>
+            <DeleteLessonButton lessonId={lesson.id} courseId={courseId} />
+          </>
+        ),
+      };
+    };
+    return (
+      <CourseDetailV2
+        title={<RenameCourse courseId={course.id} title={course.title} />}
+        published={course.is_published}
+        actions={<CourseActions courseId={course.id} isPublished={course.is_published} showOpenBuilder={false} />}
+        count={cohortFilter ? `${shown.length} of ${rows.length}` : String(rows.length)}
+        filter={
+          cohorts.length ? (
+            <CohortFilterV2
+              items={[
+                { key: "all", label: "All", href: base, on: !cohortFilter },
+                ...cohorts.map((c) => ({ key: c.id, label: c.status === "ended" ? `${c.name} · ended` : c.name, href: `${base}?cohort=${c.id}`, on: cohortFilter === c.id })),
+                ...(unshared || cohortFilter === "none" ? [{ key: "none", label: `Not shared (${unshared})`, href: `${base}?cohort=none`, on: cohortFilter === "none" }] : []),
+              ]}
+            />
+          ) : undefined
+        }
+        emptyText={
+          rows.length === 0
+            ? "No lectures yet. Add the first one above. It starts with a video."
+            : shown.length === 0
+              ? cohortFilter === "none"
+                ? "Every lecture is shared with at least one cohort."
+                : `No lectures for ${filterName ?? "this cohort"} yet. Add one above, or use Change on a lecture to share it.`
+              : null
+        }
+        weeks={orderedWeeks.map(([week, list]) => ({ week, lessons: list.map(toLesson) }))}
+        addOpen={rows.length === 0 || Boolean(cohortFilter && cohortFilter !== "none")}
+        addForm={<LessonForm courseId={courseId} nextOrderIndex={nextOrderIndex} defaultWeek={defaultWeek} cohorts={liveCohorts(cohorts).map((c) => ({ id: c.id, name: c.name }))} initialCohort={defaultRecordingChoice(cohorts, cohortFilter)} />}
+        people={<CoursePeoplePanel courseId={courseId} lectureCount={rows.length} data={people} />}
+        materialCount={(courseMaterials ?? []).length}
+        materials={
+          <MaterialUploader
+            courseId={courseId}
+            lessonId={null}
+            materials={(courseMaterials ?? []).map((m) => ({ id: m.id, title: m.title, kind: m.kind, format: m.format, sizeBytes: m.size_bytes, url: m.url, storagePath: m.storage_path }))}
+          />
+        }
+      />
+    );
   }
 
   return (

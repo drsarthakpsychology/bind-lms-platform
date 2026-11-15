@@ -7,6 +7,9 @@ import { PageHeader } from "@/components/design-system/page-header";
 import { StatusPill } from "@/components/mobile/status-pill";
 import { drugDetail } from "@/lib/psychopharm/store";
 import { FilterBar } from "@/components/admin/filter-bar";
+import { readFlags } from "@/lib/flags";
+import { uiV2For } from "@/lib/ui/v2";
+import { MedicinesV2 } from "../_v2/content";
 
 const STATUSES = [
   { value: "draft", label: "Draft" },
@@ -48,7 +51,8 @@ export default async function PsychReviewPage({
 }) {
   // Defence in depth: layouts don't re-render on every navigation, so the page
   // re-checks admin itself before reading data.
-  if (!(await requireAdmin())) redirect("/dashboard");
+  const me = await requireAdmin();
+  if (!me) redirect("/dashboard");
   const sp = await searchParams;
   const supabase = await createClient();
 
@@ -72,6 +76,36 @@ export default async function PsychReviewPage({
       (!drugClass || d.drug_class === drugClass),
   );
   const filteringBy = q || status || drugClass;
+
+  if (uiV2For(await readFlags(), me.role)) {
+    return (
+      <MedicinesV2
+        total={(drugs ?? []).length}
+        filtering={Boolean(filteringBy)}
+        filter={
+          <FilterBar
+            v2
+            search={{ label: "Filter medicines", placeholder: "Filter by medicine name" }}
+            selects={[
+              { param: "status", label: "Status", allLabel: "Any status", options: STATUSES },
+              { param: "class", label: "Drug class", allLabel: "All drug classes", options: classes.map((c) => ({ value: c, label: c })) },
+            ]}
+          />
+        }
+        rows={filtered.map((drug) => {
+          const st = statusByDrug.get(drug.id) ?? "draft";
+          return {
+            id: drug.id,
+            name: drug.generic_name,
+            drugClass: drug.drug_class ?? null,
+            summary: drugDetail(drug.generic_name)?.plain ?? null,
+            status: { label: statusPill(st).label, tone: st === "published" ? "ok" : st === "verified" ? "info" : st === "in_review" ? "warn" : "quiet" },
+            href: `/admin/psychopharm/editor/${encodeURIComponent(drug.generic_name.toLowerCase().replace(/\s+/g, "-"))}`,
+          };
+        })}
+      />
+    );
+  }
 
   return (
     <div className="space-y-6">
