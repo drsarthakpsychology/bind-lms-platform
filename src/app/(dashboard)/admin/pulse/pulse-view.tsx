@@ -90,7 +90,7 @@ export function PulseView({
 
         {weeks.length > 0 ? (
           <Block title="Check-ins by week">
-            <div className="min-w-0 overflow-x-auto">
+            <div className="min-w-0 overflow-x-auto rounded-sm outline-none focus-visible:ring-2 focus-visible:ring-ring" tabIndex={0} role="region" aria-label="Check-ins by week, scrolls sideways">
             <table className={cn(table.root, "min-w-[22rem]")}>
               <thead>
                 <tr>
