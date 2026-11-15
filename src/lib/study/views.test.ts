@@ -36,3 +36,26 @@ describe("the two reading views", () => {
     }
   });
 });
+
+describe("screens that always show the switch", () => {
+  const norm = (s: string) => s.replace(/\s+/g, " ").trim().toLowerCase();
+  it("every quiz explanation, concept, medicine and dose reads differently in the two views", async () => {
+    const { ALL_ITEMS } = await import("@/lib/learn/content");
+    const { ALL_CONCEPTS } = await import("@/lib/learn/concepts");
+    const { MEDS } = await import("@/lib/meds");
+    for (const i of ALL_ITEMS) expect(norm(i.student), i.id).not.toBe(norm(i.clinician));
+    for (const c of ALL_CONCEPTS) expect(norm(c.student), c.id).not.toBe(norm(c.clinician));
+    for (const m of MEDS) {
+      expect(norm(m.student), m.id).not.toBe(norm(m.clinician));
+      for (const d of m.doses) expect(norm(d.student), `${m.id} ${d.amount}`).not.toBe(norm(d.clinician));
+    }
+  });
+
+  it("every summary reads differently in the two views", async () => {
+    const { NOTES, pick } = await import("@/lib/learn/notes");
+    for (const n of NOTES) {
+      const text = (v: "student" | "clinician") => norm([pick(n.tldr, v), ...n.sections.flatMap((s) => s.points.map((p) => pick(p, v)))].join("\n"));
+      expect(text("student"), n.id).not.toBe(text("clinician"));
+    }
+  });
+});
