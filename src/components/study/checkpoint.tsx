@@ -11,6 +11,8 @@ import { historyFor, useHistoryPrefetch } from "@/lib/history/client";
 import { checkpointKnown, checkpointRound } from "@/lib/study/checkpoints";
 import { backLinkClass } from "@/components/design-system/back-link";
 import { EndReaction, ScoreDial } from "@/components/reactions/graphics";
+import { useUiV2 } from "@/components/learn-v2/ui-v2";
+import { Crumb } from "@/components/learn-v2/parts";
 
 /**
  * A checkpoint: case questions first (scored), then "say it out loud" cards.
@@ -41,6 +43,7 @@ export function CheckpointView({
   save: (s: LearnState) => Promise<unknown>;
 }) {
   initLearnStore(serverState, save);
+  const v2 = useUiV2();
   const st = useLearnState(serverState ?? ({} as LearnState));
   const prev = st.study?.tests?.[cpKey];
   const [stage, setStage] = React.useState<"intro" | "mcq" | "cards" | "end">("intro");
@@ -81,6 +84,80 @@ export function CheckpointView({
     }
     setStage("end");
   };
+
+  // New design: plain page, one question per screen, the verdict as a full-width band.
+  if (v2) {
+    const lime =
+      "inline-flex min-h-[3.25rem] w-full items-center justify-center gap-2 rounded-[var(--ds-radius)] border-2 border-foreground bg-primary px-6 type-body font-bold text-primary-foreground hard-shadow-sm outline-none transition-[transform,box-shadow] duration-[var(--ds-press)] ease-[var(--ds-ease)] focus-visible:ring-[3px] focus-visible:ring-ring/60 active:translate-x-0.5 active:translate-y-0.5 active:shadow-none md:w-fit md:min-w-60";
+    return (
+      <div data-ds="page" className="ds-page mx-auto flex w-full max-w-[44rem] min-w-0 flex-col gap-6 px-1 sm:px-0">
+        <header className="flex min-w-0 flex-col gap-2">
+          <Crumb href={`/study/${moduleId}`}>{moduleTitle}</Crumb>
+          <p className="type-small text-muted-foreground type-num">Checkpoint {n}</p>
+          {stage === "intro" || stage === "end" ? (
+            <>
+              <h1 className="type-h1">What stuck?</h1>
+              <p className="type-body text-muted-foreground [overflow-wrap:anywhere]">Covers {covers.join(", ")}.</p>
+            </>
+          ) : (
+            <h1 className="sr-only">Checkpoint {n}: what stuck?</h1>
+          )}
+        </header>
+
+        {stage === "intro" ? (
+          <section className="flex flex-col gap-3">
+            <p className="type-h3">
+              {mcq.length ? "Case questions" : ""}
+              {mcq.length && recall.length ? ", then " : ""}
+              {recall.length ? (mcq.length ? "say it aloud" : "Say it aloud") : ""}
+            </p>
+            <p className="type-body text-muted-foreground">From memory, no notes.</p>
+            {prev ? (
+              <p className="type-small font-semibold type-num">
+                Your best so far: {prev.best} of {prev.total}
+              </p>
+            ) : null}
+            <button type="button" onClick={() => (mcq.length ? startMcq() : startCards())} className={lime + " mt-2"}>
+              Start <ArrowRight className="size-5" aria-hidden />
+            </button>
+          </section>
+        ) : null}
+
+        {stage === "mcq" ? (
+          <TestRunner items={ordered} moduleId={cpKey} historyTool="study-check" label={`Checkpoint ${n}`} intro={[]} autoStart retry={round} scoreOf={scoreOf} onDone={(right, total) => setScore({ right, total })} />
+        ) : null}
+        {stage === "mcq" && score ? (
+          <button type="button" onClick={startCards} className={lime}>
+            {recall.length ? "Now say it out loud" : "Finish"} <ArrowRight className="size-5" aria-hidden />
+          </button>
+        ) : null}
+
+        {stage === "cards" && allKnown ? <p className="type-small font-semibold">Every case question here is right. Say these out loud.</p> : null}
+        {stage === "cards" ? <CardDeck items={recall} kind="recall" title="Say it out loud" autoStart onDone={deckDone} /> : null}
+
+        {stage === "end" ? (
+          <section className="-mx-5 bg-foreground px-5 py-6 text-background sm:mx-0 sm:rounded-[var(--ds-radius)] sm:px-6" role="status">
+            <p className="type-small font-semibold text-primary">Checkpoint {n} done</p>
+            {score ? (
+              <div className="mt-3 flex flex-wrap items-center gap-x-6 gap-y-4">
+                <div className="text-foreground">
+                  <ScoreDial right={score.right} total={score.total} />
+                </div>
+                <EndReaction right={score.right} total={score.total} tone="dark" className="min-w-0 flex-1 basis-56" />
+                <p className="sr-only">
+                  {score.right} / {score.total}
+                </p>
+              </div>
+            ) : null}
+            <p className="mt-3 type-body opacity-90">{score && score.right / Math.max(1, score.total) < 0.7 ? "Look at those sections again later today." : "Good. On to new material."}</p>
+            <Link href={then} className="mt-5 inline-flex min-h-[3.25rem] w-full items-center justify-center gap-2 rounded-[var(--ds-radius)] border-2 border-primary bg-primary px-6 type-body font-bold text-primary-foreground md:w-fit md:min-w-60">
+              Continue <ArrowRight className="size-5" aria-hidden />
+            </Link>
+          </section>
+        ) : null}
+      </div>
+    );
+  }
 
   return (
     <div className="mx-auto max-w-2xl space-y-6">
