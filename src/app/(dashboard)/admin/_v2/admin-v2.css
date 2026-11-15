@@ -76,3 +76,79 @@
     min-height: 2.75rem;
   }
 }
+
+/*
+ * Older parts that sit inside a v2 screen (cohort forms, lecture editor,
+ * uploaders, form builder, compose form). They keep their own logic and
+ * markup; here their 2px ink boxes become one hairline with no fill or
+ * shadow, so a v2 screen never shows a box inside a box.
+ */
+[data-admin-v2] :is(div, section, article, li, ul, ol, details, form, fieldset, aside, label, p, blockquote, table)[class*="border-2"]:not([data-keep]) {
+  border-width: 1px;
+  border-color: var(--ds-card-line);
+  box-shadow: none;
+}
+[data-admin-v2] :is(div, section, article, li, ul, ol, details, form, fieldset, aside)[class*="border-2"][class*="bg-card"]:not([data-keep]) {
+  background: transparent;
+}
+[data-admin-v2] :is(div, section, article, li, ul, ol, details, form, fieldset, aside, a)[class*="rounded-2xl"]:not([data-keep]),
+[data-admin-v2] :is(div, section, article, li, ul, ol, details, form, fieldset, aside, a)[class*="rounded-xl"]:not([data-keep]) {
+  border-radius: 0.5rem;
+}
+[data-admin-v2] [class*="hard-shadow"]:not([data-keep]) {
+  box-shadow: none;
+}
+[data-admin-v2] :is(.divide-y-2, [class*="divide-y-2"]) > :not(:last-child) {
+  border-bottom-width: 1px;
+  border-color: var(--ds-hairline);
+}
+[data-admin-v2] [class*="border-b-2"],
+[data-admin-v2] [class*="border-t-2"] {
+  border-bottom-width: 1px;
+  border-top-width: 1px;
+  border-color: var(--ds-hairline);
+}
+[data-admin-v2] [class*="border-b-2"]:not([class*="border-t"]) {
+  border-top-width: 0;
+}
+[data-admin-v2] [class*="border-t-2"]:not([class*="border-b"]) {
+  border-bottom-width: 0;
+}
+/* Older links and chips drawn as 2px ink pills. */
+[data-admin-v2] :is(a, button, span, summary)[class*="border-2"]:not([data-slot="button"]):not([data-keep]) {
+  border-width: 1px;
+  border-color: var(--ds-card-line);
+  box-shadow: none;
+}
+/* Older small text: never under 12px. */
+[data-admin-v2] [class*="text-[0.7rem]"],
+[data-admin-v2] [class*="text-[0.65rem]"],
+[data-admin-v2] [class*="text-[10px]"],
+[data-admin-v2] [class*="text-[11px]"],
+[data-admin-v2] [class*="text-[0.6875rem]"] {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+/* Older controls reach 44px on touch widths. */
+@media (max-width: 1023.98px) {
+  [data-admin-v2] :is(button, a, summary, select, input:not([type="checkbox"]):not([type="radio"]):not([type="hidden"]):not([type="range"]):not([type="color"]))[class*="h-10"],
+  [data-admin-v2] :is(button, a, summary)[class*="min-h-10"],
+  [data-admin-v2] :is(button, a, summary)[class*="min-h-9"],
+  [data-admin-v2] :is(button, a)[class*="h-7"],
+  [data-admin-v2] :is(button, a)[class*="size-8"],
+  [data-admin-v2] :is(button, a)[class*="size-9"] {
+    min-height: 2.75rem;
+  }
+  [data-admin-v2] :is(button, a)[class*="size-8"],
+  [data-admin-v2] :is(button, a)[class*="size-9"] {
+    min-width: 2.75rem;
+  }
+  [data-admin-v2] summary {
+    min-height: 2.75rem;
+    display: flex;
+    align-items: center;
+  }
+  [data-admin-v2] details > summary {
+    list-style: none;
+  }
+}

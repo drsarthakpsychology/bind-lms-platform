@@ -276,3 +276,100 @@ export function ListSkeleton({ rows = 8 }: { rows?: number }) {
     </div>
   );
 }
+
+/* ---------------------------------------------------------------- */
+/* Rows (phones, and any list that is not a table)                   */
+/* ---------------------------------------------------------------- */
+
+/** The class of a hairline row list. */
+export const rowList = "flex min-w-0 flex-col divide-y divide-[var(--ds-hairline)] border-y border-[var(--ds-hairline)]";
+
+/** A list of rows with hairlines between them. */
+export function Rows({ label, className, children }: { label?: string; className?: string; children: React.ReactNode }) {
+  return (
+    <ul aria-label={label} className={cn(rowList, className)}>
+      {children}
+    </ul>
+  );
+}
+
+/** One row that opens something: title, a quiet second line, something on the right. */
+export function RowLink({
+  href,
+  title,
+  meta,
+  end,
+  lead,
+  className,
+}: {
+  href: string;
+  title: React.ReactNode;
+  meta?: React.ReactNode;
+  end?: React.ReactNode;
+  lead?: React.ReactNode;
+  className?: string;
+}) {
+  return (
+    <li className={cn("min-w-0", className)}>
+      <Link
+        href={href}
+        className="group/row -mx-2 flex min-h-14 min-w-0 items-center gap-3 rounded-lg px-2 py-2.5 outline-none transition-colors duration-[var(--ds-state)] ease-[var(--ds-ease)] hover:bg-[var(--ds-tint)] focus-visible:ring-2 focus-visible:ring-ring"
+      >
+        {lead ? <span className="shrink-0">{lead}</span> : null}
+        <span className="flex min-w-0 flex-1 flex-col gap-0.5">
+          <span className="type-body font-semibold [overflow-wrap:anywhere]">{title}</span>
+          {meta ? <span className="type-small text-muted-foreground [overflow-wrap:anywhere]">{meta}</span> : null}
+        </span>
+        {end ? <span className="flex shrink-0 flex-col items-end gap-0.5 type-small text-muted-foreground">{end}</span> : null}
+        <span aria-hidden className="shrink-0 text-muted-foreground transition-transform duration-[var(--ds-state)] group-hover/row:translate-x-0.5 motion-reduce:transition-none">›</span>
+      </Link>
+    </li>
+  );
+}
+
+/** A row that holds content and its own controls (not a link as a whole). */
+export function RowItem({ className, children }: { className?: string; children: React.ReactNode }) {
+  return <li className={cn("flex min-w-0 flex-col gap-2 py-3.5", className)}>{children}</li>;
+}
+
+/** A name link inside a table cell or row. */
+export const nameLink = "font-semibold text-foreground underline-offset-4 outline-none [overflow-wrap:anywhere] hover:underline focus-visible:underline";
+
+/** A form label with its field under it. */
+export function Field({ label, hint, className, children }: { label: React.ReactNode; hint?: React.ReactNode; className?: string; children: React.ReactNode }) {
+  return (
+    <label className={cn("flex min-w-0 flex-col gap-1.5", className)}>
+      <span className="type-small font-semibold">{label}</span>
+      {children}
+      {hint ? <span className="type-caption text-muted-foreground [overflow-wrap:anywhere]">{hint}</span> : null}
+    </label>
+  );
+}
+
+/** A closed-by-default group for rarely used controls. One hairline, no box. */
+export function More({ summary, className, children }: { summary: React.ReactNode; className?: string; children: React.ReactNode }) {
+  return (
+    <details className={cn("group min-w-0 border-t border-[var(--ds-hairline)] pt-1", className)}>
+      <summary className="inline-flex min-h-11 cursor-pointer items-center type-small font-semibold text-muted-foreground outline-none hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring">{summary}</summary>
+      <div className="mt-2 min-w-0">{children}</div>
+    </details>
+  );
+}
+
+/** A loader failed: say so plainly, with one way forward. */
+export function LoadError({ what = "this list", href }: { what?: string; href?: string }) {
+  return (
+    <Notice tone="alert">
+      <span>
+        Could not load {what}.{" "}
+        {href ? (
+          <Link href={href} className="font-bold underline underline-offset-4">
+            Try again
+          </Link>
+        ) : (
+          "Refresh the page to try again."
+        )}
+      </span>
+    </Notice>
+  );
+}
