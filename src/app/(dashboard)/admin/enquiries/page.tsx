@@ -6,6 +6,9 @@ import { personKey } from "@/lib/crm/people";
 import { createAdminClient } from "@/lib/supabase/server";
 import { PageHeader } from "@/components/design-system/page-header";
 import { EmptyState } from "@/components/design-system/empty-state";
+import { readFlags } from "@/lib/flags";
+import { uiV2For } from "@/lib/ui/v2";
+import { EnquiriesV2 } from "../_v2/person";
 
 export const dynamic = "force-dynamic";
 
@@ -35,7 +38,8 @@ const STATUS_LABEL: Record<string, string> = {
 export default async function AdminEnquiriesPage() {
   // Defence in depth: layouts don't re-render on every navigation, so the page
   // re-checks admin itself before reading data.
-  if (!(await requireAdmin())) redirect("/dashboard");
+  const me = await requireAdmin();
+  if (!me) redirect("/dashboard");
   const admin = createAdminClient();
   const { data } = await admin
     .from("enquiries")
@@ -55,6 +59,34 @@ export default async function AdminEnquiriesPage() {
     return d.length === 10 ? `91${d}` : d.length >= 11 ? d : null;
   };
   const fresh = rows.filter((r) => !joined.has(r.email.toLowerCase()));
+
+  if (uiV2For(await readFlags(), me.role)) {
+    return (
+      <EnquiriesV2
+        lead={`${rows.length} from the public form · ${todayCount} today · ${fresh.length} not yet students`}
+        rows={rows.map((row) => {
+          const w = wa(row.phone);
+          const isStudent = joined.has(row.email.toLowerCase());
+          return {
+            id: row.id,
+            name: row.name,
+            email: row.email,
+            phone: row.phone,
+            status: row.status ? (STATUS_LABEL[row.status] ?? row.status) : "No status",
+            isStudent,
+            message: row.message,
+            when: new Date(row.created_at).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" }),
+            source: row.source ?? "website",
+            wa: w ? `https://wa.me/${w}` : null,
+            tel: row.phone ? `tel:${digits(row.phone)}` : null,
+            recordHref: `/admin/people/${personKey(row.email)}`,
+            emailHref: `/admin/emails?folder=compose&to=${encodeURIComponent(row.email)}`,
+            makeHref: isStudent ? null : `/admin/students/add?email=${encodeURIComponent(row.email)}`,
+          };
+        })}
+      />
+    );
+  }
 
   return (
     <div className="space-y-6">
