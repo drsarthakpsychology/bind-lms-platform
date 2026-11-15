@@ -1,18 +1,23 @@
 import { router } from "expo-router";
-import { BookOpen, ChevronLeft, CirclePlay, MessageCircleQuestionMark, Pill, Search as SearchIcon, Settings } from "lucide-react-native";
+import { BookOpen, ChevronLeft, CirclePlay, Layers, MessageCircleQuestionMark, NotebookText, Pill, Search as SearchIcon, Settings } from "lucide-react-native";
 import * as React from "react";
 import { Pressable, ScrollView, TextInput, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
+import { useNotes, useTerms } from "@/api/learn";
+import { searchRefs } from "@/screens/reference/reference";
 import { useCourse, useCourses, useDoubts, useLibraryMedicines, useMe, useStudyHome } from "@/api/queries";
 import { EmptyState, Row, RowList, Section, T } from "@/ds";
 import { layout, space, type as scale, useTheme } from "@/theme";
 
-type Hit = { key: string; title: string; meta?: string; kind: "lecture" | "module" | "medicine" | "doubt" | "screen"; href: string };
+type Hit = { key: string; title: string; meta?: string; kind: "lecture" | "module" | "note" | "reference" | "medicine" | "doubt" | "screen"; href: string };
 
 const SCREENS: Hit[] = [
   { key: "s-progress", title: "Progress", kind: "screen", href: "/progress" },
   { key: "s-certs", title: "Certificates and badges", kind: "screen", href: "/certificates" },
+  { key: "s-journey", title: "My journey", kind: "screen", href: "/journey" },
+  { key: "s-saved", title: "Saved bookmarks and notes", kind: "screen", href: "/saved" },
+  { key: "s-assignments", title: "Assignments", kind: "screen", href: "/assignments" },
   { key: "s-settings", title: "Settings", kind: "screen", href: "/settings" },
   { key: "s-notifications", title: "Notifications", kind: "screen", href: "/notifications" },
   { key: "s-help", title: "Help", kind: "screen", href: "/help" },
@@ -38,22 +43,28 @@ export function SearchScreen() {
   const term = q.trim();
   const meds = useLibraryMedicines(term.length >= 2 && can?.medicines !== false);
   const doubts = useDoubts(false);
+  const studyOpen = can?.study !== false && !me.data?.access.lecturesOnly;
+  const notes = useNotes(studyOpen);
+  const refs = useTerms(term.length >= 2 && studyOpen);
 
   const hits: Hit[] = React.useMemo(() => {
     if (term.length < 2) return [];
     const out: Hit[] = [];
     for (const w of course.data?.weeks ?? []) for (const l of w.lessons) if (l.openable && matches(l.title, term)) out.push({ key: `l-${l.id}`, title: l.title, meta: `Lecture ${l.number} · Week ${w.num}`, kind: "lecture", href: `/lecture/${l.id}` });
     if (can?.study !== false) for (const m of study.data?.modules ?? []) if (matches(`${m.title} ${m.tagline}`, term)) out.push({ key: `m-${m.id}`, title: m.title, meta: `Module ${m.num}`, kind: "module", href: `/study/${m.id}` });
+    if (studyOpen) for (const n of notes.data?.notes ?? []) if (matches(`${n.title} ${n.tagline}`, term)) out.push({ key: `n-${n.id}`, title: n.title, meta: "Note", kind: "note", href: `/notes/${n.id}` });
+    if (studyOpen) for (const r of searchRefs(refs.data?.items ?? [], term).slice(0, 6)) out.push({ key: `r-${r.slug}`, title: r.label, meta: r.summary, kind: "reference", href: `/reference/${r.slug}` });
     if (can?.medicines !== false) for (const r of (meds.data?.rows ?? []).filter((x) => matches(`${x.name} ${x.brands.join(" ")} ${x.cls}`, term)).slice(0, 6)) out.push({ key: `d-${r.id}`, title: r.name, meta: r.cls, kind: "medicine", href: `/medicine/${r.id}` });
     for (const d of doubts.data?.items ?? []) if (matches(`${d.title} ${d.topic ?? ""}`, term)) out.push({ key: `q-${d.id}`, title: d.title, meta: "Doubt", kind: "doubt", href: `/doubt/${d.id}` });
-    for (const s of SCREENS) if (matches(s.title, term)) out.push(s);
+    for (const s of SCREENS) if (matches(s.title, term) && (studyOpen || s.key !== "s-saved")) out.push(s);
     return out;
-  }, [term, course.data, study.data, meds.data, doubts.data, can]);
+  }, [term, course.data, study.data, meds.data, doubts.data, can, studyOpen, notes.data, refs.data]);
 
-  const ICON = { lecture: CirclePlay, module: BookOpen, medicine: Pill, doubt: MessageCircleQuestionMark, screen: Settings } as const;
+  const ICON = { lecture: CirclePlay, module: BookOpen, note: NotebookText, reference: Layers, medicine: Pill, doubt: MessageCircleQuestionMark, screen: Settings } as const;
   const groups: { title: string; kinds: Hit["kind"][] }[] = [
     { title: "Lectures", kinds: ["lecture"] },
-    { title: "Study", kinds: ["module"] },
+    { title: "Study", kinds: ["module", "note"] },
+    { title: "Quick reference", kinds: ["reference"] },
     { title: "Medicines", kinds: ["medicine"] },
     { title: "Doubts", kinds: ["doubt"] },
     { title: "In the app", kinds: ["screen"] },

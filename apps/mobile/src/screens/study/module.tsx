@@ -1,13 +1,16 @@
+import { useQueryClient } from "@tanstack/react-query";
 import { router, useLocalSearchParams } from "expo-router";
 import { ArrowRight, Check, Lock } from "lucide-react-native";
 import * as React from "react";
 import { View } from "react-native";
 
 import type { CheckpointSummary, ModuleDetail, SectionToc } from "@/api/contract";
-import { useModule } from "@/api/queries";
+import { keys, useModule } from "@/api/queries";
 import { Button, Loaded, Row, RowList, RowsSkeleton, Screen, Section, Stat, T } from "@/ds";
 import { toast } from "@/ds/toast";
+import { haptic } from "@/lib/haptics";
 import { openTarget } from "@/nav/targets";
+import { saveLearn, withActivity, withWritten } from "@/study/state";
 import { space, useTheme } from "@/theme";
 
 function sectionMark(s: SectionToc, c: ReturnType<typeof useTheme>) {
@@ -20,6 +23,19 @@ const CP_WORD: Record<CheckpointSummary["status"], string> = { early: "Read the 
 
 export function ModuleBody({ m }: { m: ModuleDetail }) {
   const c = useTheme();
+  const qc = useQueryClient();
+  const [writing, setWriting] = React.useState(false);
+  const refresh = () => {
+    void qc.invalidateQueries({ queryKey: keys.module(m.id) });
+    void qc.invalidateQueries({ queryKey: keys.study });
+  };
+  const wrote = async () => {
+    setWriting(true);
+    await saveLearn(qc, (st, today) => withWritten(st, m.id, today));
+    setWriting(false);
+    haptic.success();
+    refresh();
+  };
   const parts: { part: string | null; items: SectionToc[] }[] = [];
   for (const s of m.sections) {
     const last = parts[parts.length - 1];
@@ -52,7 +68,7 @@ export function ModuleBody({ m }: { m: ModuleDetail }) {
         <Section key={i} title={p.part ?? "Sections"}>
           <RowList>
             {p.items.map((s) => (
-              <Row key={s.id} testID={`section-${s.id}`} title={`${s.num} ${s.title}`} meta={s.tag === "extra" ? "Extra reading" : undefined} trailing={sectionMark(s, c)} chevron={false} onPress={() => openSection(s)} />
+              <Row key={s.id} testID={`section-${s.id}`} title={`${s.num} ${s.title}`} meta={s.levelCheck ? "Optional self-check" : s.tag === "extra" ? "Extra reading" : undefined} trailing={sectionMark(s, c)} chevron={false} onPress={() => openSection(s)} />
             ))}
           </RowList>
         </Section>
@@ -72,6 +88,37 @@ export function ModuleBody({ m }: { m: ModuleDetail }) {
             ))}
           </RowList>
         </Section>
+      ) : null}
+      {m.activities.length ? (
+        <Section title="Practise this module">
+          <RowList>
+            {m.activities.map((a) => (
+              <Row key={a.id} testID={`activity-${a.id}`} title={a.title} meta={a.why || undefined} trailing={a.doneOn ? <Check size={20} color={c.ink} accessibilityLabel="Done" /> : undefined} onPress={() => {
+                  void saveLearn(qc, (st, today) => withActivity(st, m.id, a.id, today)).then(refresh);
+                  openTarget(a.target);
+                }} />
+            ))}
+          </RowList>
+        </Section>
+      ) : null}
+      {m.writeTask ? (
+        <Section title="Write it out" action={<T v="small" tone="muted">On paper, from memory</T>}>
+          <View style={{ gap: space[2] }}>
+            <T v="reading">{m.writeTask}</T>
+            {m.status.written ? (
+              <T v="small" tone="muted">
+                Done
+              </T>
+            ) : (
+              <Button kind="quiet" label="I have done this on paper" busy={writing} onPress={() => void wrote()} testID="module-written" />
+            )}
+          </View>
+        </Section>
+      ) : null}
+      {m.noteId ? (
+        <RowList>
+          <Row testID="module-note" title="One-page note for this module" meta="Read it before the test" onPress={() => router.push(`/notes/${encodeURIComponent(m.noteId!)}`)} />
+        </RowList>
       ) : null}
       {m.outcomes.length ? (
         <Section title="By the end you can">

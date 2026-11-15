@@ -42,6 +42,8 @@ export function hrefFor(t: AppTarget): string | null {
       return `/study/${encodeURIComponent(t.moduleId)}/${encodeURIComponent(t.sectionId)}`;
     case "studyCheckpoint":
       return `/study/${encodeURIComponent(t.moduleId)}/checkpoint/${t.n}`;
+    case "studyNote":
+      return `/notes/${encodeURIComponent(t.noteId)}`;
     case "doubts":
       return "/doubts";
     case "doubt":
@@ -68,8 +70,21 @@ export function hrefFor(t: AppTarget): string | null {
     case "game":
       return t.game ? `/game/${encodeURIComponent(t.game)}` : "/practise";
     default:
-      return null;
+      return t.screen === "unknown" ? learnPathFor(t.web) : null;
   }
+}
+
+/** Website paths for Learn and Me screens the server does not have a target for yet. */
+function learnPathFor(web: string | undefined): string | null {
+  const p = (web ?? "").split("?")[0]!.replace(/\/+$/, "");
+  let m: RegExpExecArray | null;
+  if (p === "/journey") return "/journey";
+  if (p === "/study/notes") return "/notes";
+  if ((m = /^\/study\/notes\/([^/]+)$/.exec(p))) return `/notes/${m[1]}`;
+  if (p === "/study/reference") return "/reference";
+  if ((m = /^\/study\/reference\/([^/]+)$/.exec(p))) return `/reference/${m[1]}`;
+  if (p === "/assignments") return "/assignments";
+  return null;
 }
 
 /** Open whatever a row, a button or a notification points at. */
@@ -100,6 +115,8 @@ export function pathFromLink(input: string): string {
   const q = query ? `?${query}` : "";
   let m: RegExpExecArray | null;
   if (p === "/setup" || p === "/set-password") return `/setup${q}`;
+  const learn = learnPathFor(p);
+  if (learn) return learn;
   if (p === "/" || p === "/dashboard") return "/";
   if (p === "/login") return "/sign-in";
   if (p === "/waitlist") return "/request";

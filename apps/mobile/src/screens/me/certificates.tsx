@@ -1,4 +1,4 @@
-import { router } from "expo-router";
+import { router, Stack, useLocalSearchParams } from "expo-router";
 import { Award, Flame, Medal } from "lucide-react-native";
 import * as React from "react";
 import { Linking, Share, View } from "react-native";
@@ -77,6 +77,8 @@ function Badge({ b, i, onPress }: { b: Credential | BadgeProgress; i: number; on
 export function CertificatesScreen() {
   const c = useTheme();
   const q = useAchievements();
+  const { show } = useLocalSearchParams<{ show?: string }>();
+  const badgesOnly = show === "badges";
   const [badge, setBadge] = React.useState<Credential | BadgeProgress | null>(null);
   const close = React.useCallback(() => setBadge(null), []);
   // A newly earned certificate or badge gets confetti, once per phone.
@@ -85,14 +87,17 @@ export function CertificatesScreen() {
   return (
     <View style={{ flex: 1 }}>
       <Screen testID="certificates" onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
+        <Stack.Screen options={{ title: badgesOnly ? "Badges" : "Certificates" }} />
         <Loaded q={q} what="your certificates" skeleton={<RowsSkeleton rows={4} />}>
           {(a) => {
             const certs = a.earned.filter((x) => x.type === "certificate" && x.status !== "draft");
             const badges = a.earned.filter((x) => x.type === "badge");
-            const toEarn = a.progress.filter((x) => !x.earned);
+            const toEarn = a.progress.filter((x) => !x.earned && (!badgesOnly || x.type === "badge"));
             return (
               <>
-                {certs.length ? (
+                {badgesOnly ? (
+                  badges.length ? null : <EmptyState title="No badges yet" body="Badges come from studying, practising and finishing lectures." testID="badges-empty" />
+                ) : certs.length ? (
                   <Section title="Earned">
                     {certs.map((x) => (
                       <Card key={x.credentialId} testID={`cert-${x.credentialId}`} onPress={() => router.push(`/certificate/${encodeURIComponent(x.credentialId)}`)} accessibilityLabel={`${x.title}. Issued ${issued(x.issuedAt)}`}>

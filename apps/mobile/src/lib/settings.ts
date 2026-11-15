@@ -7,12 +7,14 @@ export type LocalSettings = {
   haptics: boolean;
   /** Reaction pictures after answers (the web's reactions switch). */
   reactions: boolean;
+  /** How study text is explained: the website's Student / Clinician switch. */
+  readAs: "student" | "clinician";
   loaded: boolean;
 };
 
 const KEY = "vibha.settings.v1";
 
-export const settingsStore = createStore<LocalSettings>({ theme: "system", haptics: true, reactions: true, loaded: false });
+export const settingsStore = createStore<LocalSettings>({ theme: "system", haptics: true, reactions: true, readAs: "student", loaded: false });
 
 export async function loadSettings(): Promise<void> {
   try {
