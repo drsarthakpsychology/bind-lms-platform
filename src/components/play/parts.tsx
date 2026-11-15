@@ -12,8 +12,8 @@ export function ListHead({ back, title, lead, tag }: { back: { href: string; lab
   return (
     <header className="flex min-w-0 flex-col gap-1">
       <BackLink href={back.href}>{back.label}</BackLink>
-      {tag ? <p className="type-caption text-muted-foreground">{tag}</p> : null}
-      <h1 className="type-h1 [overflow-wrap:anywhere]">{title}</h1>
+      {tag ? <p className="type-pix text-link [overflow-wrap:anywhere]">{tag}</p> : null}
+      <h1 className="type-h1 ds-stroke [overflow-wrap:anywhere]">{title}</h1>
       {lead ? <p className="type-small text-muted-foreground">{lead}</p> : null}
     </header>
   );

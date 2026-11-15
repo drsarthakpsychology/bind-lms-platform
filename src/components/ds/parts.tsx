@@ -167,9 +167,10 @@ export function Choices<T extends string | null>({ label, options, value, onChan
  * Nothing here yet: a plain title, one line, and at most one way on. No box,
  * no dashed border; it sits where the list would.
  */
-export function EmptyLine({ title, children, action, className }: { title: React.ReactNode; children?: React.ReactNode; action?: React.ReactNode; className?: string }) {
+export function EmptyLine({ title, children, action, art, className }: { title: React.ReactNode; children?: React.ReactNode; action?: React.ReactNode; /** A small drawing above the words (the cat). */ art?: React.ReactNode; className?: string }) {
   return (
     <div className={cn("flex min-w-0 flex-col items-start gap-2 border-y border-[var(--ds-hairline)] py-6", className)}>
+      {art ? <div aria-hidden className="pb-1">{art}</div> : null}
       <p className="type-body font-semibold [overflow-wrap:anywhere]">{title}</p>
       {children ? <p className="max-w-[60ch] type-small text-muted-foreground [overflow-wrap:anywhere]">{children}</p> : null}
       {action ? <div className="pt-1">{action}</div> : null}
@@ -225,5 +226,23 @@ export function Fold({ title, children, className }: { title: React.ReactNode; c
       </summary>
       <div className="pb-4">{children}</div>
     </details>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* Brand accents                                                       */
+/* ------------------------------------------------------------------ */
+
+/** A tiny pixel label or numeral in the brand blue ("LIBRARY", "01"). Decoration with meaning: keep it to a word or two. */
+export function Pix({ children, className }: { children: React.ReactNode; className?: string }) {
+  return <span className={cn("type-pix text-link", className)}>{children}</span>;
+}
+
+/** The small lime icon tile from the old design: one per header at most. */
+export function IconTile({ children, className }: { children: React.ReactNode; className?: string }) {
+  return (
+    <span aria-hidden className={cn("grid size-12 shrink-0 place-items-center rounded-[var(--ds-radius)] border-[1.5px] border-foreground bg-primary text-primary-foreground [&_svg]:size-6", className)}>
+      {children}
+    </span>
   );
 }

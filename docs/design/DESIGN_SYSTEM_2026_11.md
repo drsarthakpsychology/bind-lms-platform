@@ -231,3 +231,29 @@ Principles taken, nothing copied. Captured dates are the tools' own.
 - Not done here: `GameFrame`, the route-level `loading.tsx` for Home still has
   the old shape for the first moment (the v2 skeleton shows after the session
   check), and the desktop Me screen is the same single column as the phone.
+
+## 13. Brand accents (15 November)
+
+The owner's words: keep the minimal structure and the simple way it works, and
+bring back a little of the old VIBHA character so it does not feel bare. These
+are the only accents. Each is small, each has one job, and none of them puts a
+box around text. One screen, one purpose stays the rule.
+
+| accent | what it is | where | limit |
+|---|---|---|---|
+| `ds-stroke` | a short lime stroke under a heading | the page H1 (`PageFrame` and `ListHead` do it for you), a medicine's name | one per screen: the H1 |
+| `type-pix`, `Pix` | the pixel font at 12px, blue (lime in dark) | a tiny label above a title ("LIBRARY", a medicine's class), section numerals ("01"), table column names | a word or two, or a number; never a sentence, never under 12px |
+| `ds-band` | a soft blue wash behind a page header, no border | hub pages (Learn, Practise, Me), the medicine library, a medicine | the header only, one per screen |
+| `IconTile` | the old lime icon tile (1.5px ink outline, no shadow) | at the right of a banded header | one per screen |
+| `ds-spine` + `--spine` | a 4px colour line at the left edge | a medicine's family, on its row and its page header; the same colour is the dot on the family's filter chip | colour never carries meaning alone: the family's name is always written |
+| family colours | `--med-antidepressants`, `--med-antipsychotics`, `--med-mood`, `--med-anxiety`, `--med-other`, `--med-side` (`lib/meds/colors.ts`) | spines and dots only | never the colour of text |
+| the cat (`Chai`) | the pixel study cat, 56 to 64px | empty states (`EmptyLine art`), "nothing found" | one per screen, never beside the Hero |
+| hard shadow | unchanged | the one primary action (Hero button, primary button) | one per screen |
+| hover lift | a tappable `Card` rises 2px; a spine widens | cards and medicine rows | off with reduced motion |
+
+Not coming back: 2px boxes around sections, shadows on cards, a border around
+every list item, pill badges on every row.
+
+Checked the same way as everything else: the layout detector at zero and axe
+with no serious issues. The pixel label in blue on the blue wash is 6.2:1 in
+light; in dark it is lime on the darker wash.

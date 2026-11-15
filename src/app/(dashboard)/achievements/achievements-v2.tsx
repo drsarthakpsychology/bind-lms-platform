@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Check, ChevronRight, Copy, Download, ExternalLink, Share2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { formatDateIST } from "@/lib/format";
+import { Chai } from "@/components/learn/chai";
 import { PageFrame, Section, EmptyLine, quietButton, StatusWord, textButton } from "@/components/ds";
 import { MobileBottomSheet } from "@/components/mobile/mobile-bottom-sheet";
 import { downloadMyCertificate, type MyCredential, type MyProgress } from "./actions";
@@ -147,7 +148,7 @@ export function AchievementsV2({ earned, progress, rollNumber, siteUrl }: { earn
             ))}
           </ul>
         ) : (
-          <EmptyLine title="No certificates yet">Pass every module test and your course certificate shows here, ready to download and share.</EmptyLine>
+          <EmptyLine art={<Chai mood="idle" size={56} />} title="No certificates yet">Pass every module test and your course certificate shows here, ready to download and share.</EmptyLine>
         )}
       </Section>
 

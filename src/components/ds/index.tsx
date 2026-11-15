@@ -41,6 +41,9 @@ const WIDTH = {
  */
 export function PageFrame({
   title,
+  kicker,
+  band = false,
+  art,
   lead,
   actions,
   width = "default",
@@ -48,6 +51,12 @@ export function PageFrame({
   children,
 }: Children & {
   title?: React.ReactNode;
+  /** A tiny pixel label above the title (brand accent). */
+  kicker?: React.ReactNode;
+  /** A soft blue wash behind the header (hub pages, the library). */
+  band?: boolean;
+  /** Something small at the right of a banded header (an icon tile, the cat). */
+  art?: React.ReactNode;
   /** One quiet line under the title (or in place of one). */
   lead?: React.ReactNode;
   /** Right side of the title row (a small secondary control). */
@@ -57,12 +66,14 @@ export function PageFrame({
   return (
     <div data-ds="page" className={cn("ds-page mx-auto flex w-full min-w-0 flex-col gap-[var(--ds-section)] px-1 sm:px-0", WIDTH[width], className)}>
       {title || lead ? (
-        <header className="flex min-w-0 items-start justify-between gap-4">
+        <header className={cn("flex min-w-0 items-start justify-between gap-4", band && "ds-band items-center")}>
           <div className="min-w-0 space-y-1">
-            {title ? <h1 className="type-h1 [overflow-wrap:anywhere]">{title}</h1> : null}
+            {kicker ? <p className="type-pix text-link">{kicker}</p> : null}
+            {title ? <h1 className="type-h1 ds-stroke [overflow-wrap:anywhere]">{title}</h1> : null}
             {lead ? <p className="type-small text-muted-foreground">{lead}</p> : null}
           </div>
           {actions ? <div className="flex shrink-0 items-center gap-2">{actions}</div> : null}
+          {art ? <div aria-hidden className="shrink-0">{art}</div> : null}
         </header>
       ) : null}
       {children}
@@ -211,7 +222,7 @@ export function Card({ href, className, children, label }: Children & { href?: s
       aria-label={label}
       className={cn(
         base,
-        "outline-none transition-[border-color,transform] duration-[var(--ds-state)] ease-[var(--ds-ease)] hover:border-foreground focus-visible:ring-2 focus-visible:ring-ring active:scale-[0.99]",
+        "outline-none transition-[border-color,transform] duration-[var(--ds-state)] ease-[var(--ds-ease)] hover:-translate-y-0.5 hover:border-foreground focus-visible:ring-2 focus-visible:ring-ring active:translate-y-0 active:scale-[0.99] motion-reduce:hover:translate-y-0",
         className,
       )}
     >
