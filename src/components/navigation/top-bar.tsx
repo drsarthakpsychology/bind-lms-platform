@@ -81,7 +81,8 @@ export function TopBar({
           <Menu className="size-5" aria-hidden />
         </button>
 
-        <BackForward className="shrink-0" />
+        {/* New design on phones: logo, search and bell only. Each page has its own way back, so a second Back here doubled it. */}
+        <BackForward className={cn("shrink-0", v2 && !isAdminView && "hidden md:flex")} />
 
         <Link
           href={homeHref}
