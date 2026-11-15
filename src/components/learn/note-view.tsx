@@ -175,7 +175,7 @@ export function NoteView({
         <nav className="flex min-w-0 items-stretch justify-between gap-3 border-t border-[var(--ds-hairline)] pt-6" aria-label="Other notes">
           {prev ? (
             <Link href={`/study/notes/${prev.id}`} aria-label={`Previous: ${prev.title}`} className={cn(quiet, "shrink-0")}>
-              <ArrowLeft className="size-4 shrink-0" aria-hidden /> Back
+              <ArrowLeft className="size-4 shrink-0" aria-hidden /> Previous
             </Link>
           ) : (
             <span />

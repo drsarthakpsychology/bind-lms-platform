@@ -59,7 +59,7 @@ export default async function DetectivePage({ searchParams }: { searchParams: Pr
     const ctx = await caseContext("two-minute", CLINICS.map((c) => c.id), "two-minute");
     const order = arrangeCases(CLINICS, (c) => c.id, { history: fromRows(ctx.history), now: ctx.now, student: ctx.student, started: startedIds(mergeProgress(ctx.progress.rows, [])), rng: seededRng(ctx.now) }).list.map((x) => x.id);
     return (
-      <PlayFrame v2={await uiV2()} fallback="/practice" title="Two-minute clinic" titleAs="p" tip={{ id: "two-minute-clinic", label: "How it works", steps: ["Read the line, then start the clock.", "Type your top diagnoses and the one question you would ask next."] }} before={tabs}>
+      <PlayFrame v2={await uiV2()} fallback="/practice" title="Two-minute clinic" tip={{ id: "two-minute-clinic", label: "How it works", steps: ["Read the line, then start the clock.", "Type your top diagnoses and the one question you would ask next."] }} before={tabs}>
         <div className="p-4 lg:p-6">
           <TwoMinuteClinic start={start} order={order} ctx={ctx} />
         </div>
