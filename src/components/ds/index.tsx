@@ -257,7 +257,8 @@ export function Hero({
     <section aria-label="Continue" className={cn("flex min-w-0 flex-col gap-4", className)}>
       <div className="flex min-w-0 flex-col gap-2">
         {context ? <p className="type-small text-muted-foreground [overflow-wrap:anywhere]">{context}</p> : null}
-        <h2 className="type-display [overflow-wrap:anywhere]">{title}</h2>
+        {/* A long title steps down a size on phones so the button stays in reach. */}
+        <h2 className={cn("[overflow-wrap:anywhere]", typeof title === "string" && title.length > 36 ? "type-h1 md:type-display" : "type-display")}>{title}</h2>
         {meta ? <p className="type-body text-muted-foreground [overflow-wrap:anywhere]">{meta}</p> : null}
       </div>
       {pct !== undefined ? (

@@ -1,3 +1,4 @@
+import * as React from "react";
 import { redirect } from "next/navigation";
 import { cookies } from "next/headers";
 
@@ -12,12 +13,14 @@ import { readFlags } from "@/lib/flags";
 import { loadMyBlocks } from "@/lib/access/blocks";
 import { blockedBy } from "@/lib/access/features";
 import { MODULES } from "@/lib/study";
-import { courseNext } from "@/lib/study/plan";
+import { courseNext, moduleStatus } from "@/lib/study/plan";
 import { istToday, liveStreak } from "@/lib/learn/engine";
 import { EMPTY_STRENGTHS, getStrengthsWeaknesses } from "@/lib/progress/strengths";
 import { LEGAL } from "@/lib/legal-constants";
 import { loadQuests } from "@/lib/hints/server";
-import { pickContinue } from "./next-step";
+import { pickContinue, pickUpNext, type ContinueInput } from "./next-step";
+import { HomeV2, HomeV2Skeleton } from "./home-v2";
+import { uiV2For } from "@/lib/ui/v2";
 import { HomeBody } from "./home-view";
 import { RefreshOnSave } from "@/components/save/refresh-on-save";
 import { leaveWithoutSession } from "@/lib/auth/session-redirect";
@@ -30,6 +33,20 @@ import { leaveWithoutSession } from "@/lib/auth/session-redirect";
  * Leaderboard, help in Doubts.
  */
 export default async function DashboardPage() {
+  const session = await getSession();
+  if (session.status !== "ok") return leaveWithoutSession(session);
+  // New design (ui_v2): its own loading shape (hero and three rows) while the data comes.
+  if (uiV2For(await readFlags(), session.profile.role)) {
+    return (
+      <React.Suspense fallback={<HomeV2Skeleton />}>
+        <HomeData v2 />
+      </React.Suspense>
+    );
+  }
+  return <HomeData v2={false} />;
+}
+
+async function HomeData({ v2 }: { v2: boolean }) {
   const session = await getSession();
   if (session.status !== "ok") return leaveWithoutSession(session);
   const { profile } = session;
@@ -80,14 +97,45 @@ export default async function DashboardPage() {
   const studyNext = learn ? courseNext(MODULES, learn.study, today) : null;
   const weakest = strengths.weakest[0];
 
-  const step = pickContinue({
+  const input: ContinueInput = {
     lecture: main?.next ? { ...main.next, started: main.started } : null,
     study: studyNext
       ? { kind: studyNext.kind, label: studyNext.label, href: studyNext.href, module: studyNext.kind === "done" ? null : studyNext.module.title, resumed: Boolean(learn?.study.last) }
       : null,
     weakest: weakest ? { title: weakest.title, href: weakest.practiceHref } : null,
     dailyCase: flags.learn === "unlocked" && effectiveScope !== "lectures_only" && !blockedBy("/practice/daily", blocked),
-  });
+  };
+  const step = pickContinue(input);
+  const goal = learn ? { points: learn.daily.day === today ? learn.daily.xp : 0, goal: learn.dailyGoal, streak: liveStreak(learn.streak, today) } : null;
+
+  if (v2) {
+    // The hero's thin line: lectures watched in the course, or how far the module is.
+    const progress =
+      step.kind === "lecture" || step.kind === "assignment"
+        ? main && main.totalLessons > 0
+          ? { pct: Math.round((main.completedCount / main.totalLessons) * 100), label: "Lectures watched" }
+          : null
+        : (step.kind === "study" || step.kind === "retest") && learn && studyNext && studyNext.kind !== "done"
+          ? { pct: moduleStatus(studyNext.module, learn.study).pct, label: "Module done" }
+          : null;
+    const dateLine = new Intl.DateTimeFormat("en-IN", { weekday: "short", day: "numeric", month: "short", timeZone: "Asia/Kolkata" }).format(new Date(`${today}T12:00:00+05:30`));
+    return (
+      <>
+        <RefreshOnSave kinds={["learn", "complete", "progress"]} />
+        <HomeV2
+          adminPreview={viewingAsStudent && profile.role === "admin"}
+          welcomeBack={Boolean(main?.started || learn?.study.last)}
+          dateLine={dateLine}
+          step={step}
+          progress={progress}
+          allDone={step.kind === "lectures" && studyNext?.kind === "done"}
+          goal={goal}
+          quests={quests}
+          upNext={pickUpNext(input, step)}
+        />
+      </>
+    );
+  }
 
   return (
     <>
@@ -97,7 +145,7 @@ export default async function DashboardPage() {
       adminPreview={viewingAsStudent && profile.role === "admin"}
       welcomeBack={Boolean(main?.started || learn?.study.last)}
       step={step}
-      goal={learn ? { points: learn.daily.day === today ? learn.daily.xp : 0, goal: learn.dailyGoal, streak: liveStreak(learn.streak, today) } : null}
+      goal={goal}
       quests={quests}
       strengths={studyOpen ? strengths : null}
       whatsappHref={`https://wa.me/${LEGAL.phone.replace(/[^\d]/g, "")}`}
