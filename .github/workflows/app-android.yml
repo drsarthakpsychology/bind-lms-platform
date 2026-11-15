@@ -20,7 +20,10 @@
 #                               https://vibhapsychology.com/api/app/v1
 #     EAS_PROJECT_ID            the Expo project id (needed for push tokens)
 #
-# Docs for the owner: docs/app/README.md
+# For Google Play use "App Android release" (app-android-release.yml): it makes
+# the signed .aab bundle Play needs, with the real server by default.
+#
+# Docs for the owner: docs/app/README.md and apps/mobile/docs/release/OWNER_STEPS.md
 
 name: App Android build
 
