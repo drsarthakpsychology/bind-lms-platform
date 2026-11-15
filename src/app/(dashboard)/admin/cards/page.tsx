@@ -46,7 +46,7 @@ export default async function AdminCardsPage() {
   if (uiV2For(await readFlags(), me.role)) {
     return (
       <AdminPage width="default" title="Study cards" lead={`The Rounds queue. ${drafts} draft${drafts === 1 ? "" : "s"} waiting for review · ${published} published. Approve and students see it.`}>
-        <CardsAdmin cards={rows} />
+        <CardsAdmin v2 cards={rows} />
       </AdminPage>
     );
   }
