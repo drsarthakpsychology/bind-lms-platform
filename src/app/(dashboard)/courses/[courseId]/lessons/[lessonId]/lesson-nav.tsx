@@ -57,15 +57,14 @@ export function LessonNav({
             <span className="hidden type-body font-semibold lg:inline">Previous</span>
           </Link>
         ) : (
-          <span aria-hidden className={prev + " text-muted-foreground opacity-50"}>
+          <span aria-hidden className={prev + " text-muted-foreground opacity-50 lg:hidden"}>
             <ArrowLeft className="size-5" />
-            <span className="hidden type-body font-semibold lg:inline">Previous</span>
           </span>
         )}
         <Link
           href={nextHref}
           prefetch
-          className="inline-flex min-h-[3.25rem] min-w-0 flex-1 items-center justify-center gap-2 rounded-[var(--ds-radius)] border-2 border-foreground bg-primary px-5 text-center type-body font-bold text-primary-foreground hard-shadow-sm outline-none transition-[transform,box-shadow] duration-[var(--ds-press)] ease-[var(--ds-ease)] hover:-translate-y-0.5 hover:hard-shadow-md focus-visible:ring-[3px] focus-visible:ring-ring/60 active:translate-x-0.5 active:translate-y-0.5 active:shadow-none motion-reduce:hover:translate-y-0 lg:min-w-60 lg:flex-none"
+          className="inline-flex min-h-[3.25rem] min-w-0 flex-1 items-center justify-center gap-2 rounded-[var(--ds-radius)] border-2 border-foreground bg-primary px-5 text-center type-body font-bold text-primary-foreground hard-shadow-sm outline-none transition-[transform,box-shadow] duration-[var(--ds-press)] ease-[var(--ds-ease)] hover:-translate-y-0.5 hover:hard-shadow-md focus-visible:ring-[3px] focus-visible:ring-ring/60 active:translate-x-0.5 active:translate-y-0.5 active:shadow-none motion-reduce:hover:translate-y-0 lg:ml-auto lg:min-w-60 lg:flex-none"
         >
           <span className="min-w-0 [overflow-wrap:anywhere]">{nextLabel}</span>
           <ArrowRight className="size-5 shrink-0" aria-hidden />
