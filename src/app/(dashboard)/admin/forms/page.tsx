@@ -10,6 +10,9 @@ import { CopyLink } from "./copy-link";
 import { FormRowActions } from "./form-row-actions";
 import { StatusTag } from "./status-tag";
 import { dayIst, formUrl } from "./format";
+import { readFlags } from "@/lib/flags";
+import { uiV2For } from "@/lib/ui/v2";
+import { FormsListV2 } from "./forms-v2";
 
 export const dynamic = "force-dynamic";
 
@@ -23,6 +26,10 @@ export default async function FormsPage() {
   const forms = await loadForms(createAdminClient());
   const total = forms.reduce((n, f) => n + f.responses, 0);
   const open = forms.filter((f) => f.isActive).length;
+
+  if (uiV2For(await readFlags(), me.role)) {
+    return <FormsListV2 canEdit={canEdit} forms={forms.map((f) => ({ id: f.id, title: f.title, url: formUrl(f.slug), isActive: f.isActive, responses: f.responses, lastAnswer: f.lastResponseAt ? dayIst(f.lastResponseAt) : null }))} />;
+  }
 
   return (
     <div className="space-y-6">

@@ -5,6 +5,9 @@ import { isSuperAdmin, requireAdmin } from "@/lib/auth/guards";
 import { createAdminClient } from "@/lib/supabase/server";
 import { countSubmissions, loadForm, usedAnswerKeys } from "@/lib/forms/load";
 import { PageHeader } from "@/components/design-system/page-header";
+import { readFlags } from "@/lib/flags";
+import { uiV2For } from "@/lib/ui/v2";
+import { AdminPage } from "../../../_v2/kit";
 import { FormBuilder } from "../../form-builder";
 
 export const dynamic = "force-dynamic";
@@ -20,6 +23,18 @@ export default async function EditFormPage({ params }: { params: Promise<{ id: s
   if (!form) notFound();
   const [reservedKeys, responses] = await Promise.all([usedAnswerKeys(admin, id), countSubmissions(admin, id)]);
 
+  if (uiV2For(await readFlags(), me.role)) {
+    return (
+      <AdminPage title="Edit form" back={{ href: `/admin/forms/${id}`, label: "Answers" }} width="default">
+        <FormBuilder
+          formId={id}
+          initial={{ title: form.title, description: form.description ?? "", isActive: form.isActive, fields: form.fields }}
+          reservedKeys={reservedKeys}
+          responses={responses}
+        />
+      </AdminPage>
+    );
+  }
   return (
     <div className="space-y-6">
       <Link href={`/admin/forms/${id}`} className="inline-flex min-h-11 items-center gap-1.5 rounded-md border-2 border-foreground bg-card px-4 text-sm font-bold">

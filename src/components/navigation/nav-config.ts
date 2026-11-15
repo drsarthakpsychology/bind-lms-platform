@@ -179,15 +179,18 @@ export const ADMIN_SECTIONS: AdminSection[] = [
   },
   {
     key: "credentials",
-    label: "Credentials",
+    label: "Certificates",
     icon: "award",
-    href: "/admin/credentials",
+    href: "/admin/credentials/studio",
     group: "Teach",
     tabs: [
-      { href: "/admin/credentials/studio", label: "Certificate studio" },
-      { href: "/admin/credentials/issued", label: "Issued certificates" },
-      { href: "/admin/credentials", label: "Find & issue" },
-      { href: "/admin/achievements", label: "Badges & certificate types" },
+      { href: "/admin/credentials/studio", label: "Issue" },
+      { href: "/admin/credentials/issued", label: "Issued" },
+      { href: "/admin/credentials/types", label: "Types" },
+      { href: "/admin/credentials/settings", label: "Settings" },
+      // Old addresses: they redirect into the tabs above.
+      { href: "/admin/credentials", label: "Certificates", hidden: true },
+      { href: "/admin/achievements", label: "Types", hidden: true },
     ],
   },
   {
