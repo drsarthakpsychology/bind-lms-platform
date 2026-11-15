@@ -89,7 +89,7 @@ Auth column: **public** (no token), **bearer** (signed in, any role), **student*
 
 | Status | Method and path | Auth | Request | Response | Calls |
 |---|---|---|---|---|---|
-| built | `GET /config` | public | none | `AppConfig` | `src/lib/app-api/config.ts` (constants plus `LEGAL`) |
+| built | `GET /config` | public | none | `AppConfig` | `src/lib/app-api/config.ts` (constants plus `LEGAL`). `cohortLine` is the Welcome screen's line (`APP_RULES.cohortLine`; the `APP_COHORT_LINE` server setting overrides it, `none` hides it) |
 | built | `POST /public/request-invitation` | public, 5 a minute per network (the website form's own counter) | `RequestInvitationBody` | `RequestInvitationResult` | `saveEnquiry` (`src/lib/enquiry.ts`, moved out of `submitWaitlist`, which calls it too); stored with `source: "app"` |
 | built | `GET /public/certificates/:certificateId` | public, 60 a minute per network | none | `CertificateVerification` | `verifyCertificate` (`src/lib/app-api/achievements.ts`): `loadCredential`, `certStatus`, the facts of `/verify/[certificateId]` |
 
@@ -127,12 +127,13 @@ The one-phone rule:
 |---|---|---|---|---|---|
 | built | `GET /me` | bearer | none | `Me` | `buildMe` (`src/lib/app-api/me.ts`): profile, `loadMyCohorts`, `loadMyBlocks`, `readFlags`, `lectureOnlyAllowed`, `blockedBy` |
 | built | `PATCH /me` | bearer | `UpdateMeBody` | `Me` | `saveMobileNumber`, `skipMobileNumber` (`(dashboard)/dashboard/actions.ts`) |
+| built | `POST /me/deletion-request` | bearer, 3 a minute | `DeletionRequestBody` | `DeletionRequestResult` | `requestDeletion` (`src/lib/app-api/deletion.ts`): stores the request in `app_deletion_requests` and sends the super admin a bell notice and push. Nothing is deleted automatically; a person handles it |
 
 ### 2.4 Home, courses, lectures
 
 | Status | Method and path | Auth | Request | Response | Calls |
 |---|---|---|---|---|---|
-| built | `GET /home` | bearer | none | `Home` | `loadHomeModel` (`src/lib/home/model.ts`, moved out of the dashboard page, which now calls it too): `loadMyCourses`, `loadCourseOverview`, `loadLearnState`, `getStrengthsWeaknesses`, `pickContinue`, `pickUpNext` |
+| built | `GET /home` | bearer | none | `Home` | `loadHomeModel` (`src/lib/home/model.ts`, moved out of the dashboard page, which now calls it too): `loadMyCourses`, `loadCourseOverview`, `loadLearnState`, `getStrengthsWeaknesses`, `pickContinue`, `pickUpNext`, `loadQuests` (`Home.quests`, the same three quests and points as the website's Home) |
 | built | `GET /courses` | student (`/courses`) | none | `CourseList` | `loadMyCourses` (`src/lib/course/mine.ts`: published, enrolment or lectures-only, `visibleCourseIds`) and `loadCourseOverview` |
 | built | `GET /courses/:courseId` | student (`/courses`) | none | `CourseDetail` | `loadMyCourses` (the course layout's rule), `loadCourseOverview` |
 | built | `GET /lectures/:lessonId` | student (`/courses`) | none | `LectureDetail` | `loadLecture` (`src/lib/course/lecture.ts`): `canAccessLesson`, the lecture page's hidden/live and cohort rules, `lectureNeighbours` (`src/lib/course/lecture-order.ts`, shared with the lecture page) |
@@ -393,6 +394,8 @@ Kinds that are a scene with a small configuration (the data only sets options an
 | `hypnogram`, `strange`, `illusion` | same-named `...Data` | `src/components/study/animations3.tsx` |
 | `nervoussystem`, `brainexplorer`, `actionpotential`, `synapse3d`, `genogram`, `hpaloop`, `brainslicer`, `amesroom` | same-named `...Data` | `src/components/study/scenes/` (3D on the website) |
 
+How often each scene kind appears in the course today (count of `:::widget` in `src/content/study`, 15 Nov), to pick which to rebuild first: brainmap 65, journey 51, receptor 45, conditioning 21, release 19, pathways 14, neuron 13, hypnogram 10, stress 7, memoryflow 6, strange 5, illusion 5, nervoussystem 4, brainexplorer 4, hpaloop 3, dissonance 3, conservation 3, brainslicer 3, genogram 2, attention 2, actionpotential 2, synapse3d 1, amesroom 1. (The data-complete kinds: flow 482, sort 454, decide 420, figure 337, guess 236, compare 186, worked 132, layers 125, reveal 92, timeline 83, curve 81, build 25, moodline 18, synapse 17, experiment 12, thoughtrecord 10.)
+
 The file references above are where each widget is drawn on the website today; `src/components/study/widgets.tsx` holds the switch from `kind` to component. An unknown `kind` or a higher `v` than the app knows must be drawn as a plain "Open on the website" row, never crash.
 
 ### 3.4 Figures
@@ -407,6 +410,7 @@ Notification bodies are sent as `MessageBlock[]` (paragraphs, headings, lists, w
 
 | File | What it adds | Before it is run |
 |---|---|---|
+| `supabase/migrations_pending/2026_11_15_app_deletion_requests.sql` | `app_deletion_requests` (account deletion requests from the app) | Requests still reach the super admin as a bell notice and push; only the stored list is missing |
 | `supabase/migrations_pending/2026_11_15_app_devices.sql` | `app_devices` (one row per phone), `app_device_changes` (the phone-change log and admin allowances), `app_notification_prefs` | Everything works; the one-phone rule and the change limit are not enforced, push is not sent, preferences stay on the phone |
 
 ## 5. Change rules

@@ -3,7 +3,9 @@ import type { StrengthsWeaknesses, TopicScore as WebTopicScore } from "@/lib/pro
 import type { ContinueStep as WebStep, UpNextRow as WebUpNext } from "@/app/(dashboard)/dashboard/next-step";
 import type { LectureView } from "@/lib/course/lecture";
 import type { AssignmentView, SubmissionView } from "@/lib/course/assignment";
-import { APP_API_BASE, type Assignment, type ContinueStep, type CourseDetail, type CourseSummary, type LectureDetail, type Material, type Strengths, type Submission, type TopicScore, type UpNextRow } from "../contract";
+import type { QuestCard as WebQuestCard } from "@/lib/hints/server";
+import { QUEST_XP } from "@/lib/hints/quests";
+import { APP_API_BASE, type QuestCard, type Assignment, type ContinueStep, type CourseDetail, type CourseSummary, type LectureDetail, type Material, type Strengths, type Submission, type TopicScore, type UpNextRow } from "../contract";
 import { toAppTarget } from "../target";
 
 /**
@@ -139,4 +141,14 @@ export function stepOut(s: WebStep): ContinueStep {
 
 export function upNextOut(r: WebUpNext): UpNextRow {
   return { kind: r.kind, title: r.title, meta: r.meta, target: toAppTarget(r.href) };
+}
+
+export function questsOut(q: WebQuestCard): QuestCard {
+  return {
+    done: q.done,
+    xpEach: QUEST_XP,
+    xpBonus: q.xpBonus,
+    spareBonus: q.spareBonus,
+    quests: q.quests.map((x) => ({ id: x.id, label: x.label, done: x.done, progress: x.progress, target: toAppTarget(x.href) })),
+  };
 }

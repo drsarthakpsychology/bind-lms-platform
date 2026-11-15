@@ -1,5 +1,5 @@
 import { loadHomeModel } from "@/lib/home/model";
-import { courseSummary, stepOut, strengthsOut, upNextOut } from "@/lib/app-api/views/courses";
+import { courseSummary, questsOut, stepOut, strengthsOut, upNextOut } from "@/lib/app-api/views/courses";
 import { unreadCount } from "@/lib/app-api/me";
 import { supportContacts } from "@/lib/app-api/config";
 import { appRoute } from "@/lib/app-api/route";
@@ -22,5 +22,6 @@ export const GET = appRoute({ auth: "bearer" }, async ({ user }): Promise<Home> 
     courses: m.models.map(courseSummary),
     unreadNotifications: unread,
     supportWhatsapp: supportContacts().whatsapp,
+    quests: m.quests ? questsOut(m.quests) : null,
   };
 });
