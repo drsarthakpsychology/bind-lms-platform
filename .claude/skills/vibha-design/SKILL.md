@@ -5,6 +5,23 @@ description: The VIBHA School of Psychology design system — "Neo-Brutalist Pas
 
 # VIBHA Design — Neo-Brutalist Pastel
 
+> **Read this first (updated 2026-11-15).** The code is the truth, and it has
+> moved on from parts of the text below.
+> - **Palette:** the product is the four-colour blue/lime system in
+>   `src/app/globals.css`: blue `#1d44d8` (brand, links, the current place),
+>   lime `#cdf24b` (action fill and progress only, never text on white), white
+>   surfaces, ink `#111111`. In dark mode accent text turns lime. Wherever the
+>   text below says "peach", read "lime (fill only)"; where it says
+>   "terracotta", read "blue link text (`--link`)". Fonts are Archivo for
+>   everything, with the pixel font only for scores and timers.
+> - **New design (ui_v2):** new and redesigned screens follow
+>   `docs/design/DESIGN_SYSTEM_2026_11.md`: plain surfaces, hairline rows,
+>   one `Hero` per screen, `type-*` classes, `--ds-*` tokens, parts in
+>   `src/components/ds`. 2px borders and hard shadows are now reserved for the
+>   hero and primary buttons. Old screens keep the rules below until they move.
+> - **Check:** `node e2e/layout-defects.mjs` (docs/design/README_LAYOUT_DEFECTS.md),
+>   zero defects at 320 to 1440px, light and dark.
+
 Warm peach and terracotta on soft cream, 2px ink borders, hard zero-blur offset
 shadows, tight radii. The world is deliberate and loved — a redesign request
 means elevate the execution **within** it, never replace it unless the user
