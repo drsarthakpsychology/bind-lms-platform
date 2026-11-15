@@ -105,7 +105,7 @@ export function MainTile({ tool }: { tool: ShownTool }) {
       <TileLink
         tool={tool}
         className={cn(
-          "group/tile flex h-full min-w-0 flex-col gap-3 rounded-2xl border-2 border-foreground p-4 outline-none hard-shadow-sm transition-[transform,box-shadow] duration-fast ease-snappy hover:-translate-y-0.5 hover:hard-shadow-md focus-visible:ring-[3px] focus-visible:ring-ring/60 active:translate-y-px active:shadow-none sm:p-5",
+          "group/tile flex h-full min-w-0 flex-col gap-3 rounded-2xl border-2 border-foreground p-4 outline-none hard-shadow-sm transition-[transform,translate,scale,box-shadow] duration-fast ease-snappy hover:-translate-y-0.5 hover:hard-shadow-md focus-visible:ring-[3px] focus-visible:ring-ring/60 active:translate-y-px active:shadow-none sm:p-5",
           TONE[tool.tone],
           tool.locked && "opacity-70",
         )}
@@ -136,7 +136,7 @@ export function ToolRow({ tool }: { tool: ShownTool }) {
       <TileLink
         tool={tool}
         className={cn(
-          "group/row flex h-full min-h-16 min-w-0 items-center gap-3 rounded-xl border-2 border-foreground bg-card p-3 outline-none transition-[transform,box-shadow] duration-fast ease-snappy hover:-translate-y-0.5 hover:hard-shadow-sm focus-visible:ring-[3px] focus-visible:ring-ring/60 active:translate-y-px active:shadow-none",
+          "group/row flex h-full min-h-16 min-w-0 items-center gap-3 rounded-xl border-2 border-foreground bg-card p-3 outline-none transition-[transform,translate,scale,box-shadow] duration-fast ease-snappy hover:-translate-y-0.5 hover:hard-shadow-sm focus-visible:ring-[3px] focus-visible:ring-ring/60 active:translate-y-px active:shadow-none",
           tool.locked && "opacity-70",
         )}
       >

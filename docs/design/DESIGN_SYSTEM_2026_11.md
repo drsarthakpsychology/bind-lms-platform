@@ -288,8 +288,8 @@ fade and lists, fills, counts and the tick are simply there.
 A Tailwind 4 note for everyone: `-translate-y-0.5` and friends set the
 `translate` property, not `transform`, so `transition-[transform,...]` does
 not animate them. Use `transition-[translate,...]` (or `transition-transform`,
-which covers both). The ds parts are fixed; about 56 other files still use the
-old form.
+which covers both). All of the site now lists `transform,translate,scale`
+(16 November), so hover lifts and presses animate again.
 
 References: Screenrove motion guidelines and entries `interior-skeleton-swap`
 (show-delay so fast loads never flash), `interior-modal` (0.96 enter, faster

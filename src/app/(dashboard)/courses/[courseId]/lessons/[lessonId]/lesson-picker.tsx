@@ -51,7 +51,7 @@ export function LessonPicker({
         className={
           v2
             ? "-mr-2 inline-flex h-11 shrink-0 items-center gap-1.5 whitespace-nowrap rounded-lg px-2 text-sm font-semibold text-foreground outline-none transition-colors hover:bg-[var(--ds-tint)] focus-visible:ring-2 focus-visible:ring-ring"
-            : "inline-flex h-11 shrink-0 items-center gap-1.5 whitespace-nowrap rounded-md border-2 border-foreground bg-card px-3 text-sm font-bold text-foreground transition-[transform,box-shadow] hover:bg-accent active:translate-y-px"
+            : "inline-flex h-11 shrink-0 items-center gap-1.5 whitespace-nowrap rounded-md border-2 border-foreground bg-card px-3 text-sm font-bold text-foreground transition-[transform,translate,scale,box-shadow] hover:bg-accent active:translate-y-px"
         }
       >
         {/* The course name is already on the Back link beside this. */}

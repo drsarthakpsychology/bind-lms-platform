@@ -90,7 +90,7 @@ export default async function MaterialViewerPage({
           <Link
             href={backHref}
             aria-label={`Back to ${backLabel}`}
-            className="inline-flex min-h-11 shrink-0 items-center gap-1.5 rounded-md border-2 border-border bg-background px-2.5 text-sm font-medium text-foreground transition-[transform,box-shadow] hover:bg-accent active:translate-y-px"
+            className="inline-flex min-h-11 shrink-0 items-center gap-1.5 rounded-md border-2 border-border bg-background px-2.5 text-sm font-medium text-foreground transition-[transform,translate,scale,box-shadow] hover:bg-accent active:translate-y-px"
           >
             <ChevronLeft className="size-4 shrink-0" aria-hidden />
             <span className="max-w-28 truncate">{backLabel}</span>
@@ -110,7 +110,7 @@ export default async function MaterialViewerPage({
           {prev && (
             <Link
               href={`/courses/${courseId}/materials/${prev.id}`}
-              className="inline-flex min-h-11 min-w-11 items-center justify-center gap-1 rounded-md border-2 border-border bg-background px-2.5 text-sm font-medium text-foreground transition-[transform,box-shadow] hover:bg-accent active:translate-y-px"
+              className="inline-flex min-h-11 min-w-11 items-center justify-center gap-1 rounded-md border-2 border-border bg-background px-2.5 text-sm font-medium text-foreground transition-[transform,translate,scale,box-shadow] hover:bg-accent active:translate-y-px"
               aria-label={`Previous: ${prev.title}`}
               title={prev.title}
             >
@@ -120,7 +120,7 @@ export default async function MaterialViewerPage({
           {next && (
             <Link
               href={`/courses/${courseId}/materials/${next.id}`}
-              className="inline-flex min-h-11 min-w-11 items-center justify-center gap-1 rounded-md border-2 border-border bg-background px-2.5 text-sm font-medium text-foreground transition-[transform,box-shadow] hover:bg-accent active:translate-y-px"
+              className="inline-flex min-h-11 min-w-11 items-center justify-center gap-1 rounded-md border-2 border-border bg-background px-2.5 text-sm font-medium text-foreground transition-[transform,translate,scale,box-shadow] hover:bg-accent active:translate-y-px"
               aria-label={`Next: ${next.title}`}
               title={next.title}
             >

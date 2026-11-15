@@ -48,7 +48,7 @@ import type { BrainMapData, CurveData, FlowData, LayersData } from "@/lib/study/
  */
 
 const card = "rounded-2xl border-2 border-foreground bg-card p-4 sm:p-5 shadow-[var(--shadow-hard-sm)]";
-const btn = "inline-flex min-h-11 items-center justify-center gap-2 rounded-md border-2 border-foreground px-4 font-semibold transition-[transform,background-color] duration-fast active:translate-x-px active:translate-y-px";
+const btn = "inline-flex min-h-11 items-center justify-center gap-2 rounded-md border-2 border-foreground px-4 font-semibold transition-[transform,translate,scale,background-color] duration-fast active:translate-x-px active:translate-y-px";
 const label = "flex items-center gap-1.5 text-xs font-semibold tracking-wide uppercase text-link";
 
 function Verdict({ kind, children }: { kind: "good" | "ok" | "bad"; children: React.ReactNode }) {

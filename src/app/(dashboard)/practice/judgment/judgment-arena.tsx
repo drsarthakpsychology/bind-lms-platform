@@ -149,7 +149,7 @@ export function JudgmentArena({ items }: { items: SctItem[] }) {
                   disabled={showPanel}
                   aria-pressed={mine}
                   className={cn(
-                    "flex min-h-12 items-center gap-3 rounded-md border-2 border-foreground px-3 py-2 text-left text-body font-semibold transition-[transform,box-shadow] duration-fast ease-snappy sm:flex-col sm:justify-center sm:gap-1 sm:px-2 sm:text-center sm:text-small",
+                    "flex min-h-12 items-center gap-3 rounded-md border-2 border-foreground px-3 py-2 text-left text-body font-semibold transition-[transform,translate,scale,box-shadow] duration-fast ease-snappy sm:flex-col sm:justify-center sm:gap-1 sm:px-2 sm:text-center sm:text-small",
                     mine ? "bg-brand text-brand-foreground hard-shadow-xs" : "bg-background",
                     !showPanel && "hover:-translate-y-0.5 hover:hard-shadow-xs active:translate-y-px active:shadow-none",
                     showPanel && !mine && "opacity-50",

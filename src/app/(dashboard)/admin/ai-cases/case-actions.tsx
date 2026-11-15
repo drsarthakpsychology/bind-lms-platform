@@ -8,7 +8,7 @@ import { setAiCaseStatusAction } from "./actions";
 import { btn } from "../_v2/kit";
 
 const base =
-  "inline-flex min-h-11 items-center justify-center gap-2 rounded-md border-2 border-foreground px-3 py-2 text-sm font-bold transition-[transform,box-shadow] hover:-translate-y-0.5 hover:hard-shadow-sm active:translate-y-px disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring";
+  "inline-flex min-h-11 items-center justify-center gap-2 rounded-md border-2 border-foreground px-3 py-2 text-sm font-bold transition-[transform,translate,scale,box-shadow] hover:-translate-y-0.5 hover:hard-shadow-sm active:translate-y-px disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring";
 
 /** Keep live / Remove / Restore. Read-only admins see why they can't. */
 export function CaseActions({ id, status, canEdit, v2 = false }: { id: string; status: AiCaseStatus; canEdit: boolean; v2?: boolean }) {

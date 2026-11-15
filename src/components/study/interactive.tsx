@@ -19,7 +19,7 @@ import { ProgressLine } from "@/components/ds";
 
 /* New design (ui_v2): shared button shapes for the test and the cards. */
 const v2Lime =
-  "inline-flex min-h-[3.25rem] min-w-0 items-center justify-center gap-2 rounded-[var(--ds-radius)] border-2 border-foreground bg-primary px-6 type-body font-bold text-primary-foreground hard-shadow-sm outline-none transition-[transform,box-shadow] duration-[var(--ds-press)] ease-[var(--ds-ease)] focus-visible:ring-[3px] focus-visible:ring-ring/60 active:translate-x-0.5 active:translate-y-0.5 active:shadow-none disabled:opacity-50 disabled:shadow-none";
+  "inline-flex min-h-[3.25rem] min-w-0 items-center justify-center gap-2 rounded-[var(--ds-radius)] border-2 border-foreground bg-primary px-6 type-body font-bold text-primary-foreground hard-shadow-sm outline-none transition-[transform,translate,scale,box-shadow] duration-[var(--ds-press)] ease-[var(--ds-ease)] focus-visible:ring-[3px] focus-visible:ring-ring/60 active:translate-x-0.5 active:translate-y-0.5 active:shadow-none disabled:opacity-50 disabled:shadow-none";
 const v2Quiet =
   "inline-flex min-h-12 min-w-0 items-center justify-center gap-2 rounded-[var(--ds-radius)] border-[1.5px] border-[var(--ds-card-line)] px-5 type-body font-semibold outline-none transition-colors duration-[var(--ds-state)] ease-[var(--ds-ease)] hover:border-foreground focus-visible:ring-2 focus-visible:ring-ring active:bg-[var(--ds-tint)] disabled:opacity-40";
 /** The verdict: a band the full width of the screen on phones, in ink. */

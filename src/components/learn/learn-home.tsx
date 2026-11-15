@@ -35,7 +35,7 @@ function GameTile({ g }: { g: Game }) {
     <li className="min-w-0">
       <Link
         href={g.href}
-        className="group/game flex h-full min-h-24 min-w-0 overflow-hidden rounded-[10px] border-2 border-foreground bg-card outline-none hard-shadow-sm transition-[transform,box-shadow] duration-fast ease-snappy hover:-translate-y-0.5 hover:hard-shadow-md focus-visible:ring-[3px] focus-visible:ring-ring/60 active:translate-x-px active:translate-y-px active:shadow-none sm:flex-col"
+        className="group/game flex h-full min-h-24 min-w-0 overflow-hidden rounded-[10px] border-2 border-foreground bg-card outline-none hard-shadow-sm transition-[transform,translate,scale,box-shadow] duration-fast ease-snappy hover:-translate-y-0.5 hover:hard-shadow-md focus-visible:ring-[3px] focus-visible:ring-ring/60 active:translate-x-px active:translate-y-px active:shadow-none sm:flex-col"
       >
         {/* The game's mark: its colour and its icon (and, from 640 px, its tag). */}
         <span aria-hidden className={cn("relative flex w-20 shrink-0 items-center justify-center border-r-2 border-foreground sm:h-28 sm:w-full sm:border-r-0 sm:border-b-2", TONE[g.tone])}>

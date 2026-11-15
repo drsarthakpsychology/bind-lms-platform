@@ -44,7 +44,7 @@ function Row({ item }: { item: RefListItem }) {
     <li>
       <Link
         href={`/study/reference/${item.slug}`}
-        className="flex min-h-14 items-start gap-3 rounded-md border-2 border-transparent px-3 py-2.5 transition-[transform,background-color,border-color] duration-fast ease-snappy hover:border-foreground hover:bg-accent focus-visible:border-foreground"
+        className="flex min-h-14 items-start gap-3 rounded-md border-2 border-transparent px-3 py-2.5 transition-[transform,translate,scale,background-color,border-color] duration-fast ease-snappy hover:border-foreground hover:bg-accent focus-visible:border-foreground"
       >
         <span className="min-w-0 flex-1">
           <span className="block font-bold leading-snug [overflow-wrap:anywhere]">{item.label}</span>

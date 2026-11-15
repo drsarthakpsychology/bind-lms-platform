@@ -140,7 +140,7 @@ export function FormulationForge({ seed = SEED_FORMULATION, progress: server, ne
               type="button"
               onClick={() => setStage(s as 1 | 2 | 3 | 4)}
               aria-current={stage === s ? "step" : undefined}
-              className={`flex min-h-14 w-full flex-col items-center justify-center gap-1 rounded-md border-2 border-foreground px-1 py-1.5 text-center text-caption leading-tight font-semibold transition-[transform,box-shadow] duration-fast ease-snappy active:translate-y-px ${
+              className={`flex min-h-14 w-full flex-col items-center justify-center gap-1 rounded-md border-2 border-foreground px-1 py-1.5 text-center text-caption leading-tight font-semibold transition-[transform,translate,scale,box-shadow] duration-fast ease-snappy active:translate-y-px ${
                 stage === s ? "bg-brand text-brand-foreground hard-shadow-xs" : "bg-card text-foreground"
               }`}
             >
@@ -165,7 +165,7 @@ export function FormulationForge({ seed = SEED_FORMULATION, progress: server, ne
                 key={p}
                 type="button"
                 onClick={() => placeSelected(p)}
-                className={`min-h-16 rounded-[10px] border-2 border-dashed p-3 text-left transition-[transform,background-color] duration-fast ease-snappy active:translate-y-px sm:min-h-[120px] ${selected ? "border-foreground bg-primary/30" : "border-foreground/40 bg-card"}`}
+                className={`min-h-16 rounded-[10px] border-2 border-dashed p-3 text-left transition-[transform,translate,scale,background-color] duration-fast ease-snappy active:translate-y-px sm:min-h-[120px] ${selected ? "border-foreground bg-primary/30" : "border-foreground/40 bg-card"}`}
               >
                 <span className="text-caption font-semibold uppercase text-link">{p}</span>
                 <span className="mt-1 flex flex-col gap-1">
@@ -195,7 +195,7 @@ export function FormulationForge({ seed = SEED_FORMULATION, progress: server, ne
                     type="button"
                     onClick={() => { setSelected(isSel ? null : f.id); haptic("tap"); }}
                     aria-pressed={isSel}
-                    className={`min-h-11 rounded-md border-2 border-foreground px-3 py-2 text-left text-small leading-snug transition-[transform,box-shadow] duration-fast ease-snappy active:translate-y-px ${
+                    className={`min-h-11 rounded-md border-2 border-foreground px-3 py-2 text-left text-small leading-snug transition-[transform,translate,scale,box-shadow] duration-fast ease-snappy active:translate-y-px ${
                       isSel ? "-translate-y-0.5 bg-brand text-brand-foreground hard-shadow-xs" : placedIn ? "border-foreground/30 bg-secondary text-muted-foreground" : "bg-background hard-shadow-xs"
                     }`}
                   >

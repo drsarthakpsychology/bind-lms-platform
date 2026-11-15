@@ -8,7 +8,7 @@ const cardVariants = cva(
   // Product card: 2px ink border, 10px radius. `raised` and `accent` carry a
   // hard offset shadow; `interactive` is a link/button surface that presses
   // toward its shadow on hover/active.
-  "flex flex-col gap-6 rounded-lg border-2 border-border bg-card text-card-foreground transition-[transform,box-shadow]",
+  "flex flex-col gap-6 rounded-lg border-2 border-border bg-card text-card-foreground transition-[transform,translate,scale,box-shadow]",
   {
     variants: {
       variant: {

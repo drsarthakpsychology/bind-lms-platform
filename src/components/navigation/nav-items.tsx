@@ -125,7 +125,7 @@ export function NavItems({
               aria-label={item.label}
               title={item.label}
               className={cn(
-                "nav-link group/nav flex min-h-11 cursor-pointer items-center gap-3 rounded-xl border-2 px-3 py-2 text-sm font-bold transition-[color,background-color,box-shadow,transform] duration-fast ease-snappy",
+                "nav-link group/nav flex min-h-11 cursor-pointer items-center gap-3 rounded-xl border-2 px-3 py-2 text-sm font-bold transition-[color,background-color,box-shadow,transform,translate,scale] duration-fast ease-snappy",
                 quiet
                   ? active
                     ? "border-transparent bg-[var(--ds-tint)] text-foreground [&_.nav-icon]:text-link"

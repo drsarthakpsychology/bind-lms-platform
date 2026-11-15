@@ -108,7 +108,7 @@ export function MseLadder({ content }: { content?: MseLadderContent }) {
               aria-pressed={isActive}
               aria-disabled={!isUnlocked || undefined}
               className={cn(
-                "relative flex min-h-11 shrink-0 snap-start items-center gap-2 rounded-md border-2 px-3 py-2 text-small font-semibold whitespace-nowrap transition-[transform,box-shadow] duration-fast ease-snappy",
+                "relative flex min-h-11 shrink-0 snap-start items-center gap-2 rounded-md border-2 px-3 py-2 text-small font-semibold whitespace-nowrap transition-[transform,translate,scale,box-shadow] duration-fast ease-snappy",
                 isActive ? "border-foreground bg-brand text-brand-foreground hard-shadow-xs" : isUnlocked ? "border-foreground bg-card text-foreground active:translate-y-px" : "cursor-not-allowed border-dashed border-foreground/40 bg-transparent text-muted-foreground",
               )}
               title={isUnlocked ? meta.title : "Finish the level before to open this one"}

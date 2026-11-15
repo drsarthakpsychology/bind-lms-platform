@@ -190,7 +190,7 @@ export function RosterActions({ rows, v2 = false }: { rows: InviteRow[]; /** Adm
             aria-pressed={filter === f}
             onClick={() => setFilter(f)}
             className={cn(
-              "inline-flex h-9 shrink-0 cursor-pointer items-center gap-1.5 rounded-full border-2 border-foreground px-3.5 text-sm font-bold transition-[transform,box-shadow] duration-fast hover:-translate-y-px hover:hard-shadow-xs",
+              "inline-flex h-9 shrink-0 cursor-pointer items-center gap-1.5 rounded-full border-2 border-foreground px-3.5 text-sm font-bold transition-[transform,translate,scale,box-shadow] duration-fast hover:-translate-y-px hover:hard-shadow-xs",
               filter === f ? "bg-brand text-brand-foreground" : "bg-card",
             )}
           >

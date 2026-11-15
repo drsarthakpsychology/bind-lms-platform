@@ -178,7 +178,7 @@ export function LandingNav() {
                   key={l.href}
                   href={l.href}
                   onClick={closeMenu}
-                  className="rounded-md border-2 border-border px-4 py-3 text-lg font-semibold text-foreground transition-[color,background-color,transform] duration-fast ease-snappy hover:bg-accent hover:text-accent-foreground active:translate-y-px"
+                  className="rounded-md border-2 border-border px-4 py-3 text-lg font-semibold text-foreground transition-[color,background-color,transform,translate,scale] duration-fast ease-snappy hover:bg-accent hover:text-accent-foreground active:translate-y-px"
                 >
                   {l.label}
                 </Link>
@@ -186,7 +186,7 @@ export function LandingNav() {
               <Link
                 href="/login"
                 onClick={closeMenu}
-                className="rounded-md border-2 border-border px-4 py-3 text-lg font-semibold text-foreground transition-[color,background-color,transform] duration-fast ease-snappy hover:bg-accent hover:text-accent-foreground active:translate-y-px"
+                className="rounded-md border-2 border-border px-4 py-3 text-lg font-semibold text-foreground transition-[color,background-color,transform,translate,scale] duration-fast ease-snappy hover:bg-accent hover:text-accent-foreground active:translate-y-px"
               >
                 Login
               </Link>

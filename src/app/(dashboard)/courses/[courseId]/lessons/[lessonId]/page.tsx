@@ -325,7 +325,7 @@ export default async function LessonPage({
         <Link
           href={`/courses/${courseId}`}
           title={course?.title ?? "Course"}
-          className="inline-flex min-h-11 min-w-0 items-center gap-1.5 rounded-md border-2 border-foreground bg-card px-4 text-sm font-bold transition-[transform,box-shadow] duration-fast ease-snappy hover:-translate-y-px hover:hard-shadow-xs active:translate-y-px active:shadow-none"
+          className="inline-flex min-h-11 min-w-0 items-center gap-1.5 rounded-md border-2 border-foreground bg-card px-4 text-sm font-bold transition-[transform,translate,scale,box-shadow] duration-fast ease-snappy hover:-translate-y-px hover:hard-shadow-xs active:translate-y-px active:shadow-none"
         >
           <ChevronLeft className="size-4 shrink-0" aria-hidden />
           <span className="truncate">{course?.title ?? "Course"}</span>

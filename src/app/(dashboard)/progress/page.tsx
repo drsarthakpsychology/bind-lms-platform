@@ -99,7 +99,7 @@ export default async function ProgressPage() {
       ) : next ? (
         <Link
           href={next.testHref}
-          className="group/continue flex min-w-0 flex-col gap-4 rounded-2xl border-2 border-foreground bg-primary p-5 text-primary-foreground hard-shadow-md outline-none transition-[transform,box-shadow] duration-fast ease-snappy hover:-translate-y-0.5 hover:hard-shadow-lg focus-visible:ring-[3px] focus-visible:ring-ring/60 active:translate-y-px active:shadow-none motion-reduce:hover:translate-y-0 sm:flex-row sm:items-center"
+          className="group/continue flex min-w-0 flex-col gap-4 rounded-2xl border-2 border-foreground bg-primary p-5 text-primary-foreground hard-shadow-md outline-none transition-[transform,translate,scale,box-shadow] duration-fast ease-snappy hover:-translate-y-0.5 hover:hard-shadow-lg focus-visible:ring-[3px] focus-visible:ring-ring/60 active:translate-y-px active:shadow-none motion-reduce:hover:translate-y-0 sm:flex-row sm:items-center"
         >
           <span className="min-w-0 flex-1">
             <span className="block text-eyebrow opacity-80">Next for your certificate</span>
@@ -129,7 +129,7 @@ export default async function ProgressPage() {
         </div>
       </details>
 
-      <Link href="/journey" className="group/row flex min-h-14 items-center gap-3 rounded-2xl border-2 border-foreground bg-card px-4 py-3 transition-[transform,box-shadow] duration-fast ease-snappy hover:-translate-y-0.5 hover:hard-shadow-sm active:translate-y-px active:shadow-none motion-reduce:hover:translate-y-0">
+      <Link href="/journey" className="group/row flex min-h-14 items-center gap-3 rounded-2xl border-2 border-foreground bg-card px-4 py-3 transition-[transform,translate,scale,box-shadow] duration-fast ease-snappy hover:-translate-y-0.5 hover:hard-shadow-sm active:translate-y-px active:shadow-none motion-reduce:hover:translate-y-0">
         <span aria-hidden className="grid size-10 shrink-0 place-items-center rounded-md border-2 border-foreground bg-secondary">
           <Route className="size-5" />
         </span>

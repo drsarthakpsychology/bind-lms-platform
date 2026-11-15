@@ -343,7 +343,7 @@ function Question({ q, reveal, disabled, onAnswer }: { q: BlitzPrompt; reveal: R
               disabled={disabled}
               onClick={() => onAnswer(i)}
               className={cn(
-                "flex w-full items-center gap-3 rounded-md border-2 border-foreground px-3 py-3 text-left font-semibold leading-snug transition-[transform,background-color] duration-150 active:translate-y-px disabled:cursor-default",
+                "flex w-full items-center gap-3 rounded-md border-2 border-foreground px-3 py-3 text-left font-semibold leading-snug transition-[transform,translate,scale,background-color] duration-150 active:translate-y-px disabled:cursor-default",
                 q.kind === "tf" ? "min-h-20 justify-center text-xl" : "min-h-14",
                 isAnswer ? "bg-status-success-bg hard-shadow-xs" : isWrongPick ? "bg-status-alert-bg text-status-alert-fg" : "bg-card hover:-translate-y-0.5 hard-shadow-xs",
               )}

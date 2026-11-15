@@ -105,7 +105,7 @@ export function TopBar({
             "group/search mx-auto hidden h-11 w-full max-w-xl items-center gap-3 rounded-full bg-background px-4 text-left text-sm text-muted-foreground outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60 md:flex",
             v2
               ? "border border-[var(--ds-card-line)] transition-colors duration-[var(--ds-state)] hover:border-foreground"
-              : "border-2 border-foreground transition-[box-shadow,transform] duration-fast ease-snappy hover:-translate-y-px hover:hard-shadow-sm",
+              : "border-2 border-foreground transition-[box-shadow,transform,translate,scale] duration-fast ease-snappy hover:-translate-y-px hover:hard-shadow-sm",
           )}
         >
           <Search className="size-4 shrink-0 text-foreground" aria-hidden />

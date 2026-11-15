@@ -68,7 +68,7 @@ export default async function PassportPage() {
         <div className="mt-4">
           <a
             href="/api/practice/passport/pdf"
-            className="inline-flex items-center gap-2 rounded-md border-2 border-border bg-card px-4 py-2 text-small font-semibold hard-shadow-sm transition-[transform,box-shadow] duration-fast ease-snappy hover:-translate-y-0.5 hover:hard-shadow-md active:translate-y-px active:hard-shadow-none"
+            className="inline-flex items-center gap-2 rounded-md border-2 border-border bg-card px-4 py-2 text-small font-semibold hard-shadow-sm transition-[transform,translate,scale,box-shadow] duration-fast ease-snappy hover:-translate-y-0.5 hover:hard-shadow-md active:translate-y-px active:hard-shadow-none"
           >
             <Download className="size-4" aria-hidden />
             Download passport PDF

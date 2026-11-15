@@ -36,7 +36,7 @@ export function Btn({
       type="button"
       {...props}
       className={cn(
-        "inline-flex min-h-11 min-w-11 cursor-pointer items-center justify-center gap-2 rounded-md border-2 px-4 font-semibold leading-tight transition-[transform,box-shadow,background-color] duration-150 outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:translate-y-0 disabled:hover:shadow-none [&_svg]:size-4 [&_svg]:shrink-0",
+        "inline-flex min-h-11 min-w-11 cursor-pointer items-center justify-center gap-2 rounded-md border-2 px-4 font-semibold leading-tight transition-[transform,translate,scale,box-shadow,background-color] duration-150 outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:translate-y-0 disabled:hover:shadow-none [&_svg]:size-4 [&_svg]:shrink-0",
         size === "lg" && "min-h-12 px-5 text-body",
         BTN[variant],
         className,
@@ -75,7 +75,7 @@ export function ChoiceCard({
       {...props}
       className={cn(
         "group/choice relative flex min-h-16 w-full cursor-pointer items-center gap-3 rounded-[10px] border-2 border-foreground bg-card p-3 text-left text-foreground outline-none hard-shadow-sm",
-        "transition-[transform,box-shadow] duration-fast ease-snappy hover:-translate-y-0.5 hover:hard-shadow-md active:translate-x-px active:translate-y-px active:shadow-none focus-visible:ring-[3px] focus-visible:ring-ring/60",
+        "transition-[transform,translate,scale,box-shadow] duration-fast ease-snappy hover:-translate-y-0.5 hover:hard-shadow-md active:translate-x-px active:translate-y-px active:shadow-none focus-visible:ring-[3px] focus-visible:ring-ring/60",
         "disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:translate-y-0 disabled:hover:hard-shadow-sm",
         className,
       )}
