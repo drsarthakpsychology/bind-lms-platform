@@ -5,6 +5,7 @@ import { ArrowDown, Crown, TriangleAlert } from "lucide-react";
 import { loadActivity, type StudentActivity } from "@/lib/analytics/activity";
 import { cn } from "@/lib/utils";
 import { nowMs } from "@/lib/crm/people";
+import { EveryoneV2 } from "../_v2/activity";
 
 
 const SORTS: { id: keyof StudentActivity; label: string }[] = [
@@ -32,7 +33,7 @@ const hm = (min: number) => (min >= 60 ? `${Math.floor(min / 60)}h ${min % 60}m`
  * lectures watched, Learn progress, practice, when they were last seen,
  * a ranking, and a cohort heatmap of when people study.
  */
-export async function EveryoneView({ sort }: { sort?: string }) {
+export async function EveryoneView({ sort, v2 }: { sort?: string; v2?: boolean }) {
   const key = (SORTS.find((s) => s.id === sort)?.id ?? "score") as keyof StudentActivity;
   const { rows, heat, pages, totals } = await loadActivity();
   const sorted = [...rows].sort((a, b) => String(b[key] ?? "").localeCompare(String(a[key] ?? ""), undefined, { numeric: true }));
@@ -43,6 +44,41 @@ export async function EveryoneView({ sort }: { sort?: string }) {
   const now = nowMs();
   const quiet = rows.filter((r) => !r.lastSeen || now - new Date(r.lastSeen).getTime() > 7 * 86400000);
   const maxPage = Math.max(1, ...pages.map((p) => p.min));
+
+  if (v2) {
+    return (
+      <EveryoneV2
+        figures={[
+          { value: totals.activeNow, label: "active now" },
+          { value: totals.active7, label: `of ${totals.students} active this week` },
+          { value: `${totals.hours30}h`, label: "total study time (30 days)" },
+          { value: totals.lecturesDone, label: "lectures completed" },
+        ]}
+        quiet={{ count: quiet.length, names: `${quiet.slice(0, 8).map((q) => q.name).join(", ")}${quiet.length > 8 ? ` and ${quiet.length - 8} more` : ""}` }}
+        heat={heat}
+        pages={pages.map((p) => ({ label: p.label, time: hm(p.min), pct: (p.min / maxPage) * 100 }))}
+        sorts={SORTS.map((s) => ({ id: String(s.id), label: s.label }))}
+        sort={String(key)}
+        people={sorted.map((r) => ({
+          id: r.id,
+          rank: ranked.findIndex((x) => x.id === r.id) + 1,
+          name: r.name,
+          email: r.email,
+          lastSeen: ago(r.lastSeen),
+          now: presenceOf(r.lastSeen, now) === "now",
+          min7: hm(r.min7),
+          min30: hm(r.min30),
+          days: r.activeDays30,
+          lectures: `${r.lecturesDone} done · ${r.lecturesStarted} started`,
+          watched: hm(r.watchMin),
+          learn: `${r.xp} XP · streak ${r.streak}`,
+          accuracy: r.accuracy === null ? "-" : `${r.accuracy}%`,
+          practice: r.practice,
+          band: top.has(r.id) ? "top" : bottom.has(r.id) ? "bottom" : null,
+        }))}
+      />
+    );
+  }
 
   return (
     <div className="min-w-0 space-y-6">

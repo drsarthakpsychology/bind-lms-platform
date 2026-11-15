@@ -11,6 +11,9 @@ import { PageHeader } from "@/components/design-system/page-header";
 import { AutoRefresh } from "@/components/admin/auto-refresh";
 import { EveryoneView } from "./everyone-view";
 import { cn } from "@/lib/utils";
+import { readFlags } from "@/lib/flags";
+import { uiV2For } from "@/lib/ui/v2";
+import { ActivityPageV2, BehindV2, CohortsV2, LiveV2 } from "../_v2/activity";
 
 export const metadata: Metadata = { title: "Activity" };
 export const dynamic = "force-dynamic";
@@ -33,11 +36,24 @@ const time = (iso: string) => new Date(iso).toLocaleTimeString("en-IN", { timeZo
  * and the 30-day picture for everyone. Each student opens their timeline.
  */
 export default async function ActivityPage({ searchParams }: { searchParams: Promise<{ view?: string; sort?: string; cohort?: string }> }) {
-  if (!(await requireAdmin())) redirect("/dashboard");
+  const me = await requireAdmin();
+  if (!me) redirect("/dashboard");
+  const v2 = uiV2For(await readFlags(), me.role);
   const sp = await searchParams;
   const view: View = (VIEWS.map((v) => v.id) as string[]).includes(sp.view ?? "") ? (sp.view as View) : "live";
   const { rows, cohorts } = await loadRoster();
   const byId = new Map(rows.map((r) => [r.id, r]));
+
+  if (v2) {
+    return (
+      <ActivityPageV2 views={VIEWS} view={view}>
+        {view === "live" ? <LiveView v2 rows={rows} byId={byId} /> : null}
+        {view === "cohorts" ? <CohortsView v2 rows={rows} cohorts={cohorts} /> : null}
+        {view === "behind" ? <BehindView v2 rows={rows} cohorts={cohorts} cohort={sp.cohort ?? ""} /> : null}
+        {view === "everyone" ? <EveryoneView v2 sort={sp.sort} /> : null}
+      </ActivityPageV2>
+    );
+  }
 
   const tabs = (
     <nav aria-label="Activity views" className="flex gap-1 overflow-x-auto rounded-2xl border-2 border-foreground bg-card p-1 [scrollbar-width:none]">
@@ -80,7 +96,7 @@ function Num({ v, l, href }: { v: React.ReactNode; l: string; href?: string }) {
   );
 }
 
-async function LiveView({ rows, byId }: { rows: RosterRow[]; byId: Map<string, RosterRow> }) {
+async function LiveView({ rows, byId, v2 }: { rows: RosterRow[]; byId: Map<string, RosterRow>; v2?: boolean }) {
   const live = (await loadLive()).filter((l) => byId.has(l.userId));
   const watching = live.filter((l) => l.watching);
   const dayStart = istDayStart();
@@ -88,6 +104,26 @@ async function LiveView({ rows, byId }: { rows: RosterRow[]; byId: Map<string, R
   const { data: doneToday } = await createAdminClient().from("progress").select("user_id").eq("is_completed", true).gte("updated_at", dayStart).limit(5000);
   const quiet = rows.filter((r) => r.account === "active" && (r.presence === "quiet" || r.presence === "never")).length;
   const neverIn = rows.filter((r) => r.account !== "active" && r.account !== "locked").length;
+
+  if (v2) {
+    return (
+      <LiveV2
+        refresh={<AutoRefresh seconds={30} />}
+        neverIn={neverIn}
+        figures={[
+          { value: live.length, label: "on VIBHA right now" },
+          { value: watching.length, label: "watching a lecture now" },
+          { value: today, label: "came in today" },
+          { value: (doneToday ?? []).filter((d) => byId.has(d.user_id as string)).length, label: "lectures finished today" },
+          { value: quiet, label: "quiet 7+ days", href: "/admin/students?filter=attention" },
+        ]}
+        people={live.map((l) => {
+          const r = byId.get(l.userId)!;
+          return { id: r.id, name: r.name, meta: `${r.roll ?? r.email}${r.cohorts.length ? ` · ${r.cohorts.map((c) => c.name).join(", ")}` : ""}`, where: l.where, watching: l.watching, since: time(l.since) };
+        })}
+      />
+    );
+  }
 
   return (
     <div className="space-y-6">
@@ -136,8 +172,28 @@ async function LiveView({ rows, byId }: { rows: RosterRow[]; byId: Map<string, R
   );
 }
 
-function CohortsView({ rows, cohorts }: { rows: RosterRow[]; cohorts: { id: string; name: string; status: string | null }[] }) {
+function CohortsView({ rows, cohorts, v2 }: { rows: RosterRow[]; cohorts: { id: string; name: string; status: string | null }[]; v2?: boolean }) {
   const groups = [...cohorts.map((c) => ({ id: c.id, name: c.name, status: c.status, members: rows.filter((r) => r.cohorts.some((x) => x.id === c.id)) })), { id: "none", name: "Not in a cohort", status: null, members: rows.filter((r) => !r.cohorts.length) }].filter((g) => g.members.length);
+  if (v2) {
+    return (
+      <CohortsV2
+        groups={groups.map((g) => {
+          const done = g.members.reduce((a, r) => a + r.lecturesDone, 0);
+          const avail = g.members.reduce((a, r) => a + r.lecturesAvailable, 0);
+          return {
+            id: g.id,
+            name: g.name,
+            n: g.members.length,
+            pct: avail ? Math.round((done / avail) * 100) : 0,
+            week: g.members.filter((r) => r.presence === "now" || r.presence === "today" || r.presence === "week").length,
+            time: hm(g.members.reduce((a, r) => a + r.min7, 0)),
+            behind: g.members.filter((r) => r.account === "active" && isBehind(r.lecturesDone, r.lecturesAvailable)).length,
+            never: g.members.filter((r) => r.presence === "never").length,
+          };
+        })}
+      />
+    );
+  }
   return (
     <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
       {groups.map((g) => {
@@ -176,12 +232,31 @@ function CohortsView({ rows, cohorts }: { rows: RosterRow[]; cohorts: { id: stri
   );
 }
 
-function BehindView({ rows, cohorts, cohort }: { rows: RosterRow[]; cohorts: { id: string; name: string }[]; cohort: string }) {
+function BehindView({ rows, cohorts, cohort, v2 }: { rows: RosterRow[]; cohorts: { id: string; name: string }[]; cohort: string; v2?: boolean }) {
   const list = rows
     .filter((r) => r.account === "active" && (!cohort || r.cohorts.some((c) => c.id === cohort)))
     .filter((r) => isBehind(r.lecturesDone, r.lecturesAvailable) || r.presence === "quiet")
     .sort((a, b) => b.lecturesAvailable - b.lecturesDone - (a.lecturesAvailable - a.lecturesDone));
   const emails = list.map((r) => r.email).join(",");
+  if (v2) {
+    return (
+      <BehindV2
+        cohorts={cohorts.map((c) => ({ id: c.id, name: c.name }))}
+        cohort={cohort}
+        nudgeAllHref={list.length ? `/admin/emails?folder=notify&to=${encodeURIComponent(emails)}` : null}
+        list={list.map((r) => ({
+          id: r.id,
+          name: r.name,
+          sub: r.roll ?? r.email,
+          state: r.presence === "quiet" ? "Quiet 7+ days" : `${hm(r.min7)} this week`,
+          done: r.lecturesDone,
+          available: r.lecturesAvailable,
+          pct: r.lecturesAvailable ? Math.round((r.lecturesDone / r.lecturesAvailable) * 100) : 0,
+          nudgeHref: `/admin/emails?folder=notify&to=${encodeURIComponent(r.email)}`,
+        }))}
+      />
+    );
+  }
   return (
     <div className="space-y-4">
       <div className="flex flex-wrap items-center gap-2">

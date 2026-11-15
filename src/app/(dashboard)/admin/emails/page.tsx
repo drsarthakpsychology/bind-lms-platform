@@ -14,6 +14,9 @@ import { AlertTriangle, ArrowLeft, Bell, Inbox, PenSquare, Send } from "lucide-r
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { FilterBar, type FilterSelect } from "@/components/admin/filter-bar";
+import { readFlags } from "@/lib/flags";
+import { uiV2For } from "@/lib/ui/v2";
+import { MailV2 } from "../_v2/mail";
 
 export const dynamic = "force-dynamic";
 
@@ -220,6 +223,81 @@ export default async function MailPage({
   const listFolder = folder === "inbox" || folder === "sent" || (folder === "failed" && Boolean(openSent));
 
   const counts: Record<string, number | null> = { inbox: unread ?? 0, failed: failedCount };
+
+  if (uiV2For(await readFlags(), adminProfile.role)) {
+    const tone = (r: SentRow) => (r.status === "failed" || r.bounced_at ? "alert" : r.clicked_at || r.opened_at ? "ok" : r.delivered_at ? "info" : "quiet") as "alert" | "ok" | "info" | "quiet";
+    const panel =
+      folder === "compose" ? (
+        <ComposeTab
+          adminEmail={adminProfile?.email ?? ""}
+          initialTo={sp.to ? sp.to.split(",").filter(Boolean) : []}
+          templates={EMAIL_TEMPLATES.map((t) => ({ id: t.id, label: t.label, defaultSubject: t.defaultSubject, hint: t.hint }))}
+        />
+      ) : folder === "notify" ? (
+        <NotifyTab batches={notify?.batches ?? []} ready={notify?.ready ?? false} canWrite={canWrite} initialTo={sp.to ? sp.to.split(",").filter(Boolean) : []} />
+      ) : folder === "failed" && !openSent ? (
+        <FailedList items={failedItems} canWrite={canWrite} />
+      ) : undefined;
+    return (
+      <MailV2
+        folder={folder}
+        folders={FOLDERS.map((f) => ({ id: f.id, label: f.label }))}
+        counts={counts}
+        keys={<MailKeys folder={folder === "compose" ? "inbox" : folder} />}
+        panel={panel}
+        filter={
+          listFolder ? (
+            <FilterBar
+              key={folder}
+              search={{ label: `Search ${folder}`, placeholder: `Search ${folder}` }}
+              selects={folder === "inbox" ? INBOX_SELECTS : folder === "sent" ? SENT_SELECTS : []}
+            />
+          ) : undefined
+        }
+        emptyText={folder === "inbox" ? "No replies yet. When someone replies to an email you sent, it lands here." : folder === "failed" ? "Nothing failed. Good." : "Nothing sent yet."}
+        list={
+          folder === "inbox"
+            ? inbox.map((r) => ({ id: r.id, href: `/admin/emails?folder=inbox&id=${r.id}`, who: r.from_name || r.from_email, subject: r.subject ?? "(no subject)", preview: r.body_text?.slice(0, 120), when: when(r.received_at), unread: !r.read_at }))
+            : sent.map((r) => ({ id: r.id, href: `/admin/emails?folder=${folder}&id=${r.id}`, who: r.name || r.recipient, subject: r.subject, when: when(r.sent_at ?? r.created_at), status: { label: sentStatus(r).label, tone: tone(r) } }))
+        }
+        openId={openIn?.id ?? openSent?.id}
+        open={
+          openIn
+            ? {
+                subject: openIn.subject ?? "(no subject)",
+                lead: "From",
+                who: openIn.from_name ?? openIn.from_email,
+                address: openIn.from_email,
+                when: when(openIn.received_at),
+                peopleHref: `/admin/people/${personKey(openIn.from_email)}`,
+                body: openIn.body_text ?? "(No text version, open it in Resend.)",
+                backHref: "/admin/emails?folder=inbox",
+                backLabel: "Inbox",
+                controls: <InboundControls id={openIn.id} archived={Boolean(openIn.archived_at)} unread={!openIn.read_at} />,
+              }
+            : openSent
+              ? {
+                  subject: openSent.subject,
+                  lead: "To",
+                  who: openSent.name ?? openSent.recipient,
+                  address: openSent.recipient,
+                  peopleHref: `/admin/people/${personKey(openSent.recipient)}`,
+                  steps: [
+                    { label: "Sent", value: openSent.sent_at ? when(openSent.sent_at) : null },
+                    { label: "Delivered", value: openSent.delivered_at ? when(openSent.delivered_at) : null },
+                    { label: "Opened", value: openSent.opened_at ? when(openSent.opened_at) : null },
+                    { label: openSent.bounced_at ? "Bounced" : "Clicked", value: (openSent.bounced_at ?? openSent.clicked_at) ? when(openSent.bounced_at ?? openSent.clicked_at) : null },
+                  ],
+                  error: openSent.error_reason,
+                  body: openSent.body_text ?? (openSent.template_id === "credential" ? "Account setup email (the link is secret, so its text isn't kept)." : "No copy of this email was kept."),
+                  backHref: `/admin/emails?folder=${folder}`,
+                  backLabel: folder === "failed" ? "Failed" : "Sent",
+                }
+              : null
+        }
+      />
+    );
+  }
 
   return (
     <div className="-mx-4 -my-6 pb-24 sm:-mx-6 lg:-mx-10 lg:-my-8 lg:pb-0">

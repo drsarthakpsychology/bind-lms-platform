@@ -17,11 +17,17 @@ import { StatCard } from "@/components/design-system/stat-card";
 import { Reveal } from "@/components/motion/reveal";
 import { needsReview } from "@/lib/review/triage";
 import { Button } from "@/components/ui/button";
+import { readFlags } from "@/lib/flags";
+import { uiV2For } from "@/lib/ui/v2";
+import { AdminHomeV2 } from "./_v2/home";
+import { btn } from "./_v2/kit";
 
 export default async function AdminOverviewPage() {
   // Defence in depth: layouts don't re-render on every navigation, so the page
   // re-checks admin itself before reading data.
-  if (!(await requireAdmin())) redirect("/dashboard");
+  const me = await requireAdmin();
+  if (!me) redirect("/dashboard");
+  const v2 = uiV2For(await readFlags(), me.role);
   const supabase = await createClient();
   const adminClient = createAdminClient();
 
@@ -216,6 +222,33 @@ export default async function AdminOverviewPage() {
     { label: "Pipeline", href: "/admin/people", icon: <PhoneCall className="size-4" /> },
     { label: `Usage · ${dbPct}%`, href: "/admin/infra", icon: <Database className="size-4" /> },
   ];
+
+  if (v2) {
+    return (
+      <AdminHomeV2
+        todo={todo.map((a) => ({ label: a.label, count: a.count, detail: a.detail, href: a.href }))}
+        live={roster.rows
+          .filter((r) => r.presence === "now")
+          .map((r) => ({ id: r.id, name: r.name, meta: r.cohorts.length ? r.cohorts.map((c) => c.name).join(", ") : (r.roll ?? "") }))}
+        cohorts={cohortCards}
+        students={realStudents.length}
+        activeThisWeek={activeThisWeek}
+        neverIn={neverIn}
+        dbPct={dbPct}
+        actions={
+          <>
+            <Link href="/admin/emails?folder=notify" className={btn.quiet}>
+              <Bell aria-hidden /> Message
+            </Link>
+            <AddPeopleButton variant="outline" label="Add people" />
+            <Link href="/admin/courses" className={btn.quiet}>
+              <Plus aria-hidden /> New course
+            </Link>
+          </>
+        }
+      />
+    );
+  }
 
   return (
     <div className="space-y-8">

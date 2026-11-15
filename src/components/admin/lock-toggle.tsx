@@ -36,7 +36,7 @@ export function LockToggle({
       onClick={flip}
       disabled={isPending}
       aria-pressed={locked}
-      aria-label={locked ? "Unlock this student's access" : "Lock this student's access"}
+      aria-label={locked ? "Locked. Unlock this student's access" : "Unlocked. Lock this student's access"}
       className={cn(
         "inline-flex h-8 items-center gap-1.5 rounded-md border-2 px-3 text-small font-semibold transition-colors disabled:cursor-not-allowed disabled:opacity-60",
         locked
