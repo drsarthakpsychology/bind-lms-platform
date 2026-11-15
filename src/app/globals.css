@@ -1590,10 +1590,16 @@ html[data-cvd="on"] .bg-destructive {
 }
 .ds-count {
   --ds-n: var(--ds-to);
-  display: inline-block;
+  display: inline-grid;
   counter-reset: ds-n var(--ds-n);
 }
+.ds-count-real {
+  grid-area: 1 / 1;
+  color: transparent;
+}
 .ds-count::after {
+  grid-area: 1 / 1;
+  justify-self: start;
   content: counter(ds-n);
   content: counter(ds-n) / "";
 }

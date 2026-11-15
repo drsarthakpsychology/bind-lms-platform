@@ -87,17 +87,20 @@ function countable(value: React.ReactNode): { n: number; digits: number; suffix:
  * A number that counts up from 0 once, when it first paints (700ms, fast at
  * the start). Pure CSS: the digits are a counter animated through a typed
  * custom property, so nothing re-renders and nothing waits for JavaScript.
- * The width is held from the first frame (no shift), screen readers get the
- * real value, and with reduced motion it is simply the number.
+ * The real number holds the width from the first frame (no shift) and is what
+ * screen readers read; with reduced motion it is simply the number.
  */
 export function CountUp({ value, className }: { value: React.ReactNode; className?: string }) {
   const c = countable(value);
   if (!c) return <>{value}</>;
+  // The real digits stay in the page (read aloud, copied, and holding the exact
+  // width) but are see-through; the counting digits are drawn over them.
   return (
     <span className={cn("ds-count-wrap", className)}>
-      <span className="sr-only">{value}</span>
-      <span aria-hidden data-ds-count className="ds-count" style={{ ["--ds-to" as string]: c.n, minWidth: `${c.digits}ch` }} />
-      {c.suffix ? <span aria-hidden>{c.suffix}</span> : null}
+      <span data-ds-count className="ds-count" style={{ ["--ds-to" as string]: c.n }}>
+        <span className="ds-count-real">{c.n}</span>
+      </span>
+      {c.suffix}
     </span>
   );
 }

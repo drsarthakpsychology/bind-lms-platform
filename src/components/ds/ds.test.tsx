@@ -80,18 +80,17 @@ describe("ds parts", () => {
     expect(screen.getByText("Quest list")).toBeInTheDocument();
   });
 
-  it("CountUp keeps the real number for readers and holds its width", () => {
+  it("CountUp keeps the real number in the page and counts over it", () => {
     const { container } = render(<CountUp value={42} />);
-    expect(screen.getByText("42")).toHaveClass("sr-only");
+    expect(screen.getByText("42")).toHaveClass("ds-count-real");
     const n = container.querySelector("[data-ds-count]") as HTMLElement;
-    expect(n).toHaveAttribute("aria-hidden", "true");
-    expect(n.style.minWidth).toBe("2ch");
     expect(n.style.getPropertyValue("--ds-to")).toBe("42");
+    expect(container.textContent).toBe("42");
   });
 
   it("CountUp counts a percentage and leaves other values alone", () => {
     const { container, rerender } = render(<CountUp value="72%" />);
-    expect(screen.getByText("72%")).toHaveClass("sr-only");
+    expect(container.textContent).toBe("72%");
     expect(container.querySelector("[data-ds-count]")).not.toBeNull();
     for (const v of [0, "3/5", "1.5", 12345, "07"]) {
       rerender(<CountUp value={v} />);
