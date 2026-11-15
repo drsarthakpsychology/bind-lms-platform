@@ -6,12 +6,7 @@ import { MedicinePage as MedicinePageV2 } from "@/components/play/medicine-page"
 import { playV2 } from "@/components/play/v2";
 import { mechanismOf } from "@/lib/meds/mechanisms";
 import { halfLifeOf, medVisuals } from "@/lib/meds/visuals";
-import { studyModuleFor } from "@/lib/meds/study-link";
-import { moduleById } from "@/lib/study";
-import { readFlags } from "@/lib/flags";
-import { getSession } from "@/lib/auth/session";
-import { loadMyBlocks } from "@/lib/access/blocks";
-import { blockedBy } from "@/lib/access/features";
+import { medicineStudyLink } from "@/lib/meds/study-access";
 
 export function generateStaticParams() {
   return MEDS.map((m) => ({ id: m.id }));
@@ -22,17 +17,10 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   return { title: medById(id)?.name ?? "Medicine" };
 }
 
-/**
- * The Study module that teaches this medicine, when Study is open for this
- * person (switch on, a full account, Study not switched off for them).
- */
-async function studyLink(med: Parameters<typeof studyModuleFor>[0]): Promise<{ href: string; title: string } | null> {
-  const [flags, session] = await Promise.all([readFlags(), getSession()]);
-  if (flags.learn !== "unlocked" || session.status !== "ok" || session.profile.scope === "lectures_only") return null;
-  const m = moduleById(studyModuleFor(med)) ?? moduleById("medicine-profiles");
-  if (!m) return null;
-  const blocked = session.profile.role === "student" ? await loadMyBlocks(session.profile.id) : [];
-  return blockedBy(`/study/${m.id}`, blocked) ? null : { href: `/study/${m.id}`, title: m.title };
+/** (src/lib/meds/study-access.ts, shared with the mobile app.) */
+async function studyLink(med: Parameters<typeof medicineStudyLink>[0]): Promise<{ href: string; title: string } | null> {
+  const link = await medicineStudyLink(med);
+  return link ? { href: link.href, title: link.title } : null;
 }
 
 /** One medicine: practical facts first, "How it works" last (#how-it-works). */
