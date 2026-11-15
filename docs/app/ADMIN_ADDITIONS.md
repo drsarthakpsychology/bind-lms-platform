@@ -59,3 +59,72 @@ Duplicates are emailed once. What is over today's allowance
 | Add a note, move stage, follow-up | row menu, person record | `logActivity(email, "note", text)`, `setStage(email, stage)`, `setFollowUp(email, date)` | unchanged |
 
 The view and filters live in the address (`?view=not_paid&cohort=<id>&quiet=30&stage=fee_shared&source=instagram&from=2026-11-01&to=2026-11-15&last=never&q=...`), so a view can be shared.
+
+---
+
+# App admin: server routes still needed (agent appadmin, 15 November 2026)
+
+For agent appapi2. The app's admin screens are built and run against the mock
+server (`apps/mobile/src/admin/mock.ts`, which answers in the server's shapes).
+Against the real server a missing route answers 404 and that screen shows
+"Coming in the next update"; nothing crashes. The app reads every answer
+through `apps/mobile/src/admin/safe.ts`, so missing or null fields are fine.
+Types for the routes below are in `apps/mobile/src/admin/extra.ts`; change them
+there or in `contract-practise-admin.ts` and the app follows.
+
+Auth words as in part two of the contract: **admin** = admin or view_admin
+(read), **super admin** = admin only (every write). Every read with buttons
+should carry `canWrite`.
+
+## Already used by the app (built, or in your working copy)
+
+`GET /admin/home`, `GET /admin/students`, `GET /admin/students/:id`,
+lock, unlock, login-link, `POST /admin/devices/allow-change`,
+`GET /admin/activity?view=`, `GET/POST /admin/messages` (the app sends
+`{ to: "students" | "cohort" | "everyone", toId?, userIds?, title, body, alsoEmail }`),
+`GET /admin/inbox`, `POST /admin/inbox/emails/:id/reply`, `/read`,
+`GET /admin/doubts`, `POST /admin/doubts/:id/reply`, `/draft`, `/hide`,
+`GET /doubts/:id` (an admin reading any doubt, including private concerns),
+`GET /admin/submissions`, approve, grade, files, audio,
+`GET /admin/certificates/studio`, `POST /admin/certificates/preview`, `/issue` (with `replaces`),
+`/:id/revoke`, `/:id/resend`.
+
+From your working copy of `contract-practise-admin.ts` (please keep these exact paths):
+`GET /admin/certificates/issued?q=&type=&status=&cohort=&student=`,
+`POST /admin/certificates/:id/issue-draft`, `POST /admin/certificates/send-waiting`,
+`GET /admin/certificates/:id/pdf` (answer `AdminFileLink`),
+`GET /admin/badges`, `POST /admin/badges/:id/award`, `POST /admin/badges/award-all`,
+`GET /admin/forms`, `GET /admin/forms/:id?emailed=yes|no`, `POST /admin/forms/:id/email`,
+`POST /admin/forms/:id/email/preview`, `POST /admin/forms/:id/email/send-waiting`.
+
+People is now built on admin-redesign (`GET /admin/people` with views and counts,
+stage, follow-up, activity, invite, paid, email, WhatsApp, send-waiting) and the
+app uses those routes. One small ask there: `GET /admin/people/:key` for a
+person's page with the full timeline (until then the app builds the page from
+the person's row).
+
+## Still needed
+
+| Method and path | Auth | Body | Answer (`apps/mobile/src/admin/extra.ts`) | Website function to call |
+|---|---|---|---|---|
+| `GET /admin/cohorts` | admin | | `{ items: CohortRow[] }` | cohorts page loader. Until then the app uses the cohort cards on `GET /admin/home` |
+| `GET /admin/cohorts/:id` | admin | | `CohortDetail` (row + `people`, `messages`, `hoursWeek`, `sessions`) | cohort page loader. Until then the app builds it from Home and `GET /admin/students?cohort=` |
+| `GET /admin/certificates/settings` | admin | | `StudioSettings { signatories (up to 3), emailOnIssue, replyTo, emailReady }` | `loadDefaultSignatories` (`admin_settings`, `SIGNATORIES_KEY`) |
+| `PUT /admin/certificates/settings` | super admin | `Partial<StudioSettings>` | `StudioSettings` | `saveDefaultSignatories(list)` |
+| `GET /admin/certificates/studio` | (built) | | please add `signatories` (the saved defaults) so the studio fills them in | `cleanDefaultSignatories` |
+| `GET /admin/system` | admin | | `SystemData { ready, canWrite, legacyKeyOn, maxLive: 10, keys: SupportKeyView[], usage: { label, value, pct }[] }` | `loadSupportKeys` (views only: no salt, no hash), master setting `enabled`, infra numbers |
+| `POST /admin/system/support-keys` | super admin, 10 a minute | `{ label }` | `NewSupportKey { plain, last4 }` (plain shown once) | `createSupportKey(label)` |
+| `POST /admin/system/support-keys/:id/rotate` | super admin | none | `NewSupportKey` | `rotateSupportKey(id)` |
+| `POST /admin/system/support-keys/:id/revoke` | super admin | none | `{ revoked: true }` | `revokeSupportKey(id)` |
+| `POST /admin/system/legacy-key/revoke` | super admin | none | `{ revoked: true }` | `revokeLegacyKey()` |
+| `GET /admin/students/:id/messages` | admin | | `{ items: StudentMessage[] }` (title, at, opened, from) | the student page's Messages panel |
+| `GET /admin/doubts?student=:id` | admin | | `DoubtList` | add a `student` filter to the built route |
+| `GET /admin/review/signoffs`, `POST /admin/review/signoffs/:id` | admin / super admin | `SignOffBody { decision, note? }` | `SignOffList`, `SignOff` | supervision sign-off loader and action |
+| `GET /admin/push-preferences`, `PUT` | admin (each admin's own) | `Partial<AdminPushPrefs>` | `AdminPushPrefs { newDoubt, newEnquiry, fallingBehind }` | new, one row per admin in `admin_settings` |
+| push | | | `PushData` gains `admin: "new_doubt" \| "new_enquiry" \| "falling_behind"` and `id` | the app opens the doubt, the person, or the student (`apps/mobile/src/admin/push.ts`) |
+
+Small asks on built routes:
+
+- `AdminSubmission`: add `studentName` (the app looks names up from the Students list until then).
+- `POST /admin/students/:id/login-link`: optionally answer `{ sent, url, expiresAt }` so an admin can paste the link into WhatsApp (the app already shows a Share button when `url` is there).
+- `GET /admin/inbox`: emails have no thread; that is fine (the app shows the one email and the reply box).
