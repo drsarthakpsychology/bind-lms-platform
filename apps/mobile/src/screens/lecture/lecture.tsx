@@ -76,12 +76,13 @@ function AssignmentPart({ lecture }: { lecture: LectureDetail }) {
       {a.dueAt ? (
         <T v="small" tone="muted">
           Due {new Date(a.dueAt).toLocaleDateString("en-IN", { day: "numeric", month: "short" })}
+          {a.allowLate ? "" : ". Nothing can be handed in after that."}
         </T>
       ) : null}
       {a.instructions ? <T v="reading">{a.instructions}</T> : null}
       {sub ? (
         <Tint>
-          <T v="bodyStrong">{sub.status === "approved" ? `Marked${sub.score !== null ? `: ${sub.score}${a.maxScore ? ` of ${a.maxScore}` : ""}` : ""}` : sub.status === "returned" ? "Returned with feedback" : "Handed in, waiting for review"}</T>
+          <T v="bodyStrong">{sub.status === "approved" ? `Marked${sub.score !== null ? `: ${sub.score}` : ""}` : sub.status === "returned" ? "Returned with feedback" : "Handed in, waiting for review"}</T>
           {sub.feedback ? <T tone="muted">{sub.feedback}</T> : null}
         </Tint>
       ) : null}
@@ -226,7 +227,7 @@ export function LectureScreen() {
             <View style={{ gap: space[2] }}>
               <T v="h2">{l.title}</T>
               <T v="small" tone="muted" num>
-                {[l.courseTitle, l.durationSeconds ? clock(l.durationSeconds) : null, watched ? "Watched" : l.progress.watchedSeconds > 0 ? `Stopped at ${clock(l.progress.watchedSeconds)}` : null].filter(Boolean).join(" · ")}
+                {[l.courseTitle, l.durationSeconds ? `${Math.round(l.durationSeconds / 60)} min` : null, watched ? "Watched" : l.progress.watchedSeconds > 0 ? `Stopped at ${clock(l.progress.watchedSeconds)}` : null].filter(Boolean).join(" · ")}
               </T>
             </View>
             <TabRow

@@ -29,7 +29,7 @@ export function CaseScreen() {
   return (
     <GameFrame
       testID="case"
-      title={cs.patient}
+      title="Patient case"
       howTo="Read the case, then choose what you would do at each step. There is a best choice, an acceptable one and one that could harm."
       score={`${Math.min(step + 1, cs.steps.length)}/${cs.steps.length}`}
       thumb={end ? <Button label="Try it again" onPress={() => { setStep(0); setPick(null); }} /> : <Button label={step === cs.steps.length - 1 ? "Finish the case" : "Next step"} disabled={pick === null} onPress={() => { setStep(step + 1); setPick(null); }} testID="case-next" />}
@@ -37,6 +37,9 @@ export function CaseScreen() {
       {step === 0 && !end ? (
         <View style={{ gap: space[2] }}>
           <T v="h2">{cs.title}</T>
+          <T v="small" tone="muted">
+            {cs.patient}
+          </T>
           <Rich text={cs.presenting} v="reading" />
         </View>
       ) : null}

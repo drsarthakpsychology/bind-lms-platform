@@ -21,7 +21,7 @@ export function AdminActivity() {
   const [kind, setKind] = React.useState<(typeof KINDS)[number]["id"]>("all");
   return (
     <Screen tab top={<TabTop sub="Admin" />} title="Activity" testID="admin-activity" onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
-      <Chips label="Show" options={KINDS} value={kind} onChange={setKind} />
+      <Chips scroll label="Show" options={KINDS} value={kind} onChange={setKind} />
       <Loaded q={q} soon what="activity" skeleton={<RowsSkeleton rows={6} />}>
         {(d) => (
           <RowList>

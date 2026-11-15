@@ -7,3 +7,4 @@ coverage/
 *.log
 expo-env.d.ts
 .env.local
+google-services.json

@@ -191,7 +191,7 @@ export function LayersWidget({ d }: { d: LayersData }) {
               }}
             >
               {"ellipse" in s && s.ellipse ? <E k={`ly-${i}`} cx={s.ellipse.cx} cy={s.ellipse.cy} w={s.ellipse.w} h={s.ellipse.h} fill={fill} fillStyle="solid" sw={1.8} /> : <P k={`ly-${i}`} d={(s as { path: string }).path} fill={fill} fillStyle="solid" sw={1.8} />}
-              <Label x={s.tx} y={s.ty} size={14} anchor="middle" color={active ? C.onLime : C.ink}>
+              <Label x={s.tx} y={s.ty} size={17} anchor="middle" color={active ? C.onLime : C.ink}>
                 {s.label}
               </Label>
             </G>

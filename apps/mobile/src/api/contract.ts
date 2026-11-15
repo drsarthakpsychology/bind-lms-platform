@@ -413,7 +413,18 @@ export type Material = {
 
 export type SubmissionStatus = "pending_review" | "returned" | "approved";
 
-export type SubmissionFile = { id: string; name: string; format: string | null; sizeBytes: number | null; status: "ready" | "failed" | string; /** GET with the bearer token. */ filePath: string };
+export type SubmissionFile = {
+  id: string;
+  name: string;
+  format: string | null;
+  sizeBytes: number | null;
+  status: "ready" | "failed" | string;
+  /** GET this with the bearer token: it answers a `SubmissionFileLink`. */
+  filePath: string;
+};
+
+/** GET /submissions/files/:fileId: a short-lived address of the file (15 minutes). */
+export type SubmissionFileLink = { url: string; expiresIn: number };
 
 export type Submission = {
   id: string;
@@ -439,7 +450,12 @@ export type Assignment = {
   instructions: string | null;
   submissionType: "text" | "file" | "audio" | string;
   dueAt: string | null;
-  maxScore: number | null;
+  /** False: nothing can be handed in after `dueAt`. */
+  allowLate: boolean;
+  maxFiles: number;
+  maxFileMb: number;
+  /** Format groups the admin allows ("pdf", "docx", "image"...). Empty means the default set. */
+  acceptedFormats: string[];
   submission: Submission | null;
 };
 
@@ -545,7 +561,7 @@ export type PrepareUploadBody = { fileName: string };
 export type PrepareUploadResult = {
   /** Keep this and send it back in SubmitFilesBody. */
   path: string;
-  /** PUT the file bytes here (multipart field "file" not needed; raw body with Content-Type). */
+  /** PUT the raw file bytes here (not multipart), with `headers`. Works once, for this path. */
   uploadUrl: string;
   /** Header the upload needs. */
   headers: Record<string, string>;

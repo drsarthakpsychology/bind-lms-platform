@@ -1,6 +1,6 @@
 import { ChevronRight } from "lucide-react-native";
 import * as React from "react";
-import { Pressable, Switch, View, type StyleProp, type ViewStyle } from "react-native";
+import { Pressable, ScrollView, Switch, View, type StyleProp, type ViewStyle } from "react-native";
 import Animated, { Easing, useAnimatedStyle, useReducedMotion, useSharedValue, withRepeat, withTiming } from "react-native-reanimated";
 
 import { haptic } from "@/lib/haptics";
@@ -139,7 +139,7 @@ export function SwitchRow({ title, meta, value, onChange, disabled, testID }: { 
         ) : null}
       </View>
       <View pointerEvents="none" importantForAccessibility="no-hide-descendants">
-        <Switch value={value} disabled={disabled} trackColor={{ false: c.cardLine, true: c.brand }} thumbColor="#ffffff" ios_backgroundColor={c.cardLine} />
+        <Switch value={value} disabled={disabled} trackColor={{ false: c.cardLine, true: c.brand }} thumbColor="#ffffff" ios_backgroundColor={c.cardLine} {...({ activeThumbColor: "#ffffff", activeTrackColor: c.brand } as object)} />
       </View>
     </Pressable>
   );
@@ -252,11 +252,11 @@ export function LoadError({ onRetry, what = "this" }: { onRetry: () => void; wha
 
 /* ------------------------------------------------------- Chips, TabRow */
 
-/** One row of filter chips that wraps. */
-export function Chips<V extends string>({ options, value, onChange, label }: { options: { id: V; name: string }[]; value: V; onChange: (v: V) => void; label: string }) {
+/** Filter chips that wrap; with `scroll`, one row that slides sideways (filters above a list). */
+export function Chips<V extends string>({ options, value, onChange, label, scroll }: { options: { id: V; name: string }[]; value: V; onChange: (v: V) => void; label: string; scroll?: boolean }) {
   const c = useTheme();
-  return (
-    <View accessibilityRole="radiogroup" accessibilityLabel={label} style={{ flexDirection: "row", flexWrap: "wrap", gap: space[2] }}>
+  const row = (
+    <View accessibilityRole="radiogroup" accessibilityLabel={label} style={{ flexDirection: "row", flexWrap: scroll ? "nowrap" : "wrap", gap: space[2] }}>
       {options.map((o) => {
         const on = o.id === value;
         return (
@@ -280,6 +280,12 @@ export function Chips<V extends string>({ options, value, onChange, label }: { o
         );
       })}
     </View>
+  );
+  if (!scroll) return row;
+  return (
+    <ScrollView horizontal showsHorizontalScrollIndicator={false} style={{ marginHorizontal: -layout.gutter }} contentContainerStyle={{ paddingHorizontal: layout.gutter }}>
+      {row}
+    </ScrollView>
   );
 }
 

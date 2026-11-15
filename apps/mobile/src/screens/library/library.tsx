@@ -25,7 +25,7 @@ export function LibraryScreen() {
         <Search size={18} color={c.muted} />
         <TextInput testID="library-search" value={q} onChangeText={setQ} placeholder="Search by name or brand" placeholderTextColor={c.muted} accessibilityLabel="Search medicines" autoCorrect={false} autoCapitalize="none" returnKeyType="search" maxFontSizeMultiplier={1.4} style={[scale.body, { flex: 1, color: c.ink, minHeight: layout.target }, { outlineStyle: "none" } as object]} />
       </View>
-      {classes.length ? <Chips label="Class" options={[{ id: "all", name: "All" }, ...classes.map((x) => ({ id: x, name: x }))]} value={cls} onChange={setCls} /> : null}
+      {classes.length ? <Chips scroll label="Class" options={[{ id: "all", name: "All" }, ...classes.map((x) => ({ id: x, name: x }))]} value={cls} onChange={setCls} /> : null}
       <Loaded q={query} soon what="the medicine library" skeleton={<RowsSkeleton rows={8} />}>
         {(d) =>
           d.items.length ? (

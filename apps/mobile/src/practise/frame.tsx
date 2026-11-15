@@ -37,7 +37,7 @@ export function GameFrame({ title, howTo, score, children, thumb, testID, confir
         <Pressable accessibilityRole="button" accessibilityLabel="Close" onPress={close} style={{ width: layout.target, height: layout.target, alignItems: "center", justifyContent: "center" }} testID="game-close">
           <X size={24} color={c.ink} />
         </Pressable>
-        <T v="h3" numberOfLines={1} style={{ flex: 1 }}>
+        <T v="h3" style={{ flex: 1, paddingVertical: space[2] }}>
           {title}
         </T>
         {score ? (

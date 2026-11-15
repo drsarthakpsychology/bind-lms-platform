@@ -104,23 +104,6 @@ jest.mock("expo-video", () => {
   };
 });
 
-jest.mock("@gorhom/bottom-sheet", () => {
-  const React = require("react");
-  const { View, ScrollView } = require("react-native");
-  const Modal = React.forwardRef(function Modal({ children }: { children: React.ReactNode }, ref: React.Ref<unknown>) {
-    const [open, setOpen] = React.useState(false);
-    React.useImperativeHandle(ref, () => ({ present: () => setOpen(true), dismiss: () => setOpen(false) }));
-    return open ? React.createElement(View, { testID: "sheet" }, children) : null;
-  });
-  return {
-    BottomSheetModal: Modal,
-    BottomSheetModalProvider: ({ children }: { children: React.ReactNode }) => children,
-    BottomSheetScrollView: ScrollView,
-    BottomSheetBackdrop: () => null,
-    useBottomSheetTimingConfigs: () => ({}),
-  };
-});
-
 jest.mock("expo-router", () => {
   const push = jest.fn();
   const replace = jest.fn();

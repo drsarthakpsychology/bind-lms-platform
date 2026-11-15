@@ -1,3 +1,6 @@
+import fs from "node:fs";
+import path from "node:path";
+
 import type { ConfigContext, ExpoConfig } from "expo/config";
 
 /**
@@ -8,6 +11,8 @@ const APP_NAME = "Vibha Psychology";
 const PACKAGE = "com.vibhapsychology.app";
 const SITE = "vibhapsychology.com";
 const BLUE = "#1d44d8";
+/** Firebase file for push on Android. The build adds it when the owner has given it (docs/app/README.md). */
+const GOOGLE_SERVICES = fs.existsSync(path.join(__dirname, "google-services.json")) ? "./google-services.json" : undefined;
 
 export default ({ config }: ConfigContext): ExpoConfig => ({
   ...config,
@@ -30,6 +35,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   android: {
     package: PACKAGE,
     versionCode: 1,
+    googleServicesFile: GOOGLE_SERVICES,
     adaptiveIcon: {
       foregroundImage: "./assets/images/adaptive-foreground.png",
       monochromeImage: "./assets/images/adaptive-monochrome.png",
@@ -52,6 +58,9 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
           { scheme: "https", host: SITE, pathPrefix: "/doubts" },
           { scheme: "https", host: SITE, pathPrefix: "/notifications" },
           { scheme: "https", host: SITE, pathPrefix: "/verify" },
+          { scheme: "https", host: SITE, pathPrefix: "/achievements" },
+          { scheme: "https", host: SITE, pathPrefix: "/practice" },
+          { scheme: "https", host: SITE, pathPrefix: "/games" },
         ],
         category: ["BROWSABLE", "DEFAULT"],
       },
@@ -102,6 +111,6 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
     // "mock" serves fixtures from inside the app (no server needed). "live" calls apiUrl.
     apiMode: process.env.EXPO_PUBLIC_API_MODE ?? "live",
     site: `https://${SITE}`,
-    eas: { projectId: process.env.EAS_PROJECT_ID },
+    eas: { projectId: process.env.EAS_PROJECT_ID || undefined },
   },
 });

@@ -1,4 +1,3 @@
-import { BottomSheetModalProvider } from "@gorhom/bottom-sheet";
 import { PersistQueryClientProvider } from "@tanstack/react-query-persist-client";
 import { useFonts } from "expo-font";
 import { Stack, router, useSegments } from "expo-router";
@@ -196,9 +195,7 @@ export default function RootLayout() {
       <SafeAreaProvider>
         <PersistQueryClientProvider client={queryClient} persistOptions={persistOptions}>
           <ThemeProvider>
-            <BottomSheetModalProvider>
-              <Shell />
-            </BottomSheetModalProvider>
+            <Shell />
           </ThemeProvider>
         </PersistQueryClientProvider>
       </SafeAreaProvider>
