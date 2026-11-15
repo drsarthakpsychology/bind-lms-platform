@@ -1,1 +1,1 @@
-export { GameScreen as default } from "@/screens/practise/game";
+export { GameRoute as default } from "@/practise/games";

@@ -1,1 +1,1 @@
-export { PrepScreen as default } from "@/screens/practise/prep";
+export { PrepHome as default } from "@/practise/prep";

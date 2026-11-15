@@ -1,1 +1,1 @@
-export { PrepSetScreen as default } from "@/screens/practise/prep-set";
+export { PrepSubject as default } from "@/practise/prep";

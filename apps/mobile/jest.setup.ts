@@ -31,6 +31,8 @@ jest.mock("react-native-reanimated", () => {
     useAnimatedProps: (fn: () => object) => fn(),
     withTiming: (v: unknown) => v,
     withSpring: (v: unknown) => v,
+    // Gesture Handler 3 asks whether a prop is a shared value.
+    isSharedValue: (v: unknown) => !!v && typeof v === "object" && "value" in (v as object) && "get" in (v as object),
     withDelay: (_d: number, v: unknown) => v,
     withRepeat: (v: unknown) => v,
     withSequence: (...v: unknown[]) => v[v.length - 1],

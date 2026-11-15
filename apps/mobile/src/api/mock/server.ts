@@ -23,6 +23,14 @@ import type * as X from "../extra";
 import * as xf from "./extra-fixtures";
 import * as fx from "./fixtures";
 
+/*
+ * Practise and Library (POST /play/..., GET /library/...) live in
+ * src/practise/mock. Required only in mock builds, so a live build never
+ * carries their sample answer keys.
+ */
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+const practiseMock: typeof import("@/practise/mock") | null = process.env.EXPO_PUBLIC_API_MODE === "mock" ? require("@/practise/mock") : null;
+
 export type Scenario = "default" | "new" | "done" | "empty" | "error" | "slow" | "update" | "paused";
 
 type State = {
@@ -52,6 +60,7 @@ let state = fresh();
 export const mock = {
   reset() {
     state = fresh();
+    practiseMock?.resetPractiseMock();
   },
   setScenario(s: Scenario) {
     state.scenario = s;
@@ -166,6 +175,8 @@ async function route(req: RawRequest): Promise<RawResponse> {
 
   if (state.scenario === "slow") return new Promise<RawResponse>(() => undefined);
   if (state.scenario === "error") return fail(500, "server_error", "Something went wrong on our side. Try again in a minute.");
+  const practise = practiseMock?.practiseRoute(req.method, path, req.body, kind);
+  if (practise) return practise;
 
   const isNew = state.scenario === "new";
   if (is("GET", "/home")) {
