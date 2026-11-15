@@ -11,9 +11,9 @@ export type FontKey = "wordmark" | "sansWide" | "sans" | "sansBold" | "pixel" | 
 /** Owner rule: no en or em dashes anywhere. Curly quotes are kept (the fonts have them). */
 export function cleanText(s: string | null | undefined): string {
   return String(s ?? "")
-    .replace(/[–—−]/g, "-")
-    .replace(/…/g, "...")
-    .replace(/[  -​]/g, " ")
+    .replace(/[\u2013\u2014\u2212]/g, "-")
+    .replace(/\u2026/g, "...")
+    .replace(/[\u00a0\u2000-\u200b]/g, " ")
     .replace(/\s+/g, " ")
     .trim();
 }
@@ -25,10 +25,10 @@ export function drawable(text: string, font: FontKey): string {
   for (const ch of text) {
     if (g[ch]) out += ch;
     else {
-      const bare = ch.normalize("NFD").replace(/[̀-ͯ]/g, "");
+      const bare = ch.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
       if (bare && [...bare].every((c) => g[c])) out += bare;
-      else if (ch === "‘" || ch === "’") out += g["'"] ? "'" : "";
-      else if (ch === "“" || ch === "”") out += g['"'] ? '"' : "";
+      else if (ch === "\u2018" || ch === "\u2019") out += g["'"] ? "'" : "";
+      else if (ch === "\u201c" || ch === "\u201d") out += g['"'] ? '"' : "";
     }
   }
   return out;

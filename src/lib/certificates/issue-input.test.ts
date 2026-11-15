@@ -43,7 +43,7 @@ describe("checkIssue", () => {
     expect("ok" in r && r.ok.recipients).toHaveLength(1);
   });
   it("removes long dashes from the wording", () => {
-    const r = checkIssue({ ...base, title: "Case work — part one", citation: "A – B" }, today);
+    const r = checkIssue({ ...base, title: "Case work \u2014 part one", citation: "A \u2013 B" }, today);
     expect("ok" in r && r.ok.title).toBe("Case work - part one");
     expect("ok" in r && r.ok.citation).toBe("A - B");
   });

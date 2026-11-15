@@ -128,7 +128,7 @@ export function layoutCertificate(input: CertificateDoc): Layout {
   const name = cleanText(input.recipientName) || "Recipient name";
   const title = cleanText(input.title) || def.titleHint;
   const citation = cleanText(input.citation);
-  const courseLine = [cleanText(input.course), cleanText(input.module)].filter(Boolean).join("  •  ");
+  const courseLine = [cleanText(input.course), cleanText(input.module)].filter(Boolean).join("  \u2022  ");
   const provisional = input.kind === "provisional";
 
   // Paper and the brand spine.
@@ -173,7 +173,7 @@ export function layoutCertificate(input: CertificateDoc): Layout {
   let y = 78;
   text(ops, heading.toUpperCase(), { font: "pixel", size: 8.4, x: LEFT, y, color: COLORS.blue, tracking: 0.8, role: "heading" });
   if (provisional) {
-    const label = input.expiresOn ? `PROVISIONAL  •  VALID UNTIL ${longDate(input.expiresOn).toUpperCase()}` : "PROVISIONAL";
+    const label = input.expiresOn ? `PROVISIONAL  \u2022  VALID UNTIL ${longDate(input.expiresOn).toUpperCase()}` : "PROVISIONAL";
     const lw = measure(drawable(label, "pixel"), "pixel", 7, 0.7);
     const bx = RIGHT - lw - 20;
     ops.push({ k: "rect", x: bx, y: y - 15, w: lw + 20, h: 22, fill: COLORS.lime, stroke: COLORS.ink, sw: 1.2 });

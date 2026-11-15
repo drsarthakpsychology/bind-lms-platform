@@ -85,7 +85,7 @@ describe("layoutCertificate", () => {
 
 describe("text helpers", () => {
   it("removes long dashes and odd spaces", () => {
-    expect(cleanText(" A — B – C  D ")).toBe("A - B - C D");
+    expect(cleanText(" A \u2014 B \u2013 C\u00a0 D ")).toBe("A - B - C D");
   });
   it("keeps accents the font has and drops what it cannot draw", () => {
     expect(drawable("José आन्या", "serifDisplay")).toBe("José ");
