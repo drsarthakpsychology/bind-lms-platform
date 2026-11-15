@@ -3,12 +3,11 @@ import { ScrollView, View } from "react-native";
 import Animated, { FadeInDown, useReducedMotion } from "react-native-reanimated";
 
 import { Button, RowList, Section, T } from "@/ds";
-import { haptic } from "@/lib/haptics";
 import { layout, motion, space, useTheme } from "@/theme";
 import { play, useMove } from "../api";
 import { EndPanel, EndThumb, GameFrame, HudLine, MoveError, StartScreen } from "../frame";
 import appData from "../data/app-data.json";
-import { Press } from "../fx";
+import { Press } from "@/motion";
 import { Story } from "../parts";
 import { useReactions } from "../reactions";
 import type { CoCard, CoView } from "../types";
@@ -155,12 +154,10 @@ export function ComorbidGame() {
                 accessibilityRole="button"
                 accessibilityState={{ selected: on }}
                 accessibilityLabel={`${KIND_LABEL[h.kind]}: ${h.label}. ${h.line}`}
-                onPress={() => {
-                  haptic.select();
-                  setSel(on ? null : h.uid);
-                }}
+                onPress={() => setSel(on ? null : h.uid)}
                 testID={`co-card-${h.uid}`}
-                style={{ width: 148, minHeight: 180, padding: space[3], gap: space[2], borderRadius: layout.radius, borderWidth: on ? 2.5 : 1.5, borderColor: on ? c.brand : c.cardLine, backgroundColor: h.kind === "rule" ? c.alertBg : h.kind === "clear" ? c.successBg : c.card, top: on ? -8 : 0 }}
+                style={{ width: 148, transform: [{ translateY: on ? -8 : 0 }] }}
+                innerStyle={{ minHeight: 180, padding: space[3], gap: space[2], borderRadius: layout.radius, borderWidth: on ? 2.5 : 1.5, borderColor: on ? c.brand : c.cardLine, backgroundColor: h.kind === "rule" ? c.alertBg : h.kind === "clear" ? c.successBg : c.card }}
               >
                 <T v="caption" tone="muted">
                   {KIND_LABEL[h.kind].toUpperCase()}

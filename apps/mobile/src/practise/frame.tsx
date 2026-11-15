@@ -10,7 +10,8 @@ import { haptic } from "@/lib/haptics";
 import { Rich } from "@/study/rich";
 import { fonts, layout, motion, space, useTheme } from "@/theme";
 import { isSoon } from "./api";
-import { Bump, Burst, CountUp, Rise } from "./fx";
+import { Confetti, RollingNumber } from "@/motion";
+import { Bump, Rise } from "./fx";
 import { moodForScore, reactions, StickerLayer } from "./reactions";
 
 /**
@@ -349,14 +350,14 @@ export function EndPanel({ kicker = "Round over", score, scoreOf, line, stats, r
   }, [outcome, right, total]);
   return (
     <Animated.View entering={reduce ? undefined : FadeInDown.duration(motion.fill)} style={{ gap: space[5], paddingTop: space[4] }} testID="game-over">
-      <Burst fire={won} testID="end-burst" />
+      <Confetti fire={won ? 1 : 0} />
       <View style={{ gap: space[2] }}>
         <T v="caption" tone="muted">
           {kicker.toUpperCase()}
         </T>
         <View style={{ flexDirection: "row", alignItems: "baseline", gap: space[2] }}>
           {num ? (
-            <CountUp to={num.n} prefix={num.pre} suffix={num.post} tick style={{ fontFamily: fonts.pixelDigits, fontSize: 64, lineHeight: 72, color: c.ink }} testID="end-score" />
+            <RollingNumber value={num.n} prefix={num.pre} suffix={num.post} style={{ fontFamily: fonts.pixelDigits, fontSize: 64, lineHeight: 72, color: c.ink }} testID="end-score" />
           ) : (
             <T style={{ fontFamily: fonts.pixelDigits, fontSize: 64, lineHeight: 72, color: c.ink }} num maxFontSizeMultiplier={1.15} testID="end-score">
               {score}
