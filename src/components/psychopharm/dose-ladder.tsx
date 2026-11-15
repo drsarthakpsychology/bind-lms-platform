@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import { formatBand } from "@/lib/psychopharm/format";
 import type { BandView } from "@/lib/psychopharm/store";
 import { OnceHint } from "@/components/help/once-hint";
+import { useUiV2 } from "@/components/ds/v2";
 
 /**
  * The dose ladder: the single most important component in the tool (D3).
@@ -17,6 +18,7 @@ import { OnceHint } from "@/components/help/once-hint";
  * and shareable. Vertical on mobile, horizontal on desktop.
  */
 export function DoseLadder({ drug, bands }: { drug: string; bands: BandView[] }) {
+  const v2 = useUiV2();
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -59,8 +61,12 @@ export function DoseLadder({ drug, bands }: { drug: string; bands: BandView[] })
               onClick={() => select(originalOrder)}
               aria-pressed={isActive}
               className={cn(
-                "flex w-full items-center justify-between gap-2 rounded-md border-2 border-border px-4 py-3 text-left transition",
-                isActive ? "bg-primary/10 hard-shadow-sm" : "bg-card hover:bg-accent",
+                v2
+                  ? "flex min-h-12 w-full items-center justify-between gap-2 rounded-[var(--ds-radius)] border-[1.5px] px-4 py-3 text-left outline-none transition-colors duration-[var(--ds-state)] ease-[var(--ds-ease)] focus-visible:ring-2 focus-visible:ring-ring"
+                  : "flex w-full items-center justify-between gap-2 rounded-md border-2 border-border px-4 py-3 text-left transition",
+                v2
+                  ? isActive ? "border-foreground bg-[var(--ds-tint)]" : "border-[var(--ds-card-line)] hover:border-foreground"
+                  : isActive ? "bg-primary/10 hard-shadow-sm" : "bg-card hover:bg-accent",
               )}
             >
               <span className="font-semibold">{formatBand(band)}</span>

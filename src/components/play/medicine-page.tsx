@@ -292,7 +292,7 @@ export function MedicinePage({ med, related, mech, visuals = [], half = null, st
               {mech ? (
                 <>
                   <p className="type-reading">{mech.plain}</p>
-                  <div className="-mx-1 overflow-x-auto px-1">
+                  <div tabIndex={0} role="region" aria-label="Targets table, scrolls sideways" className="-mx-1 overflow-x-auto rounded-md px-1 outline-none focus-visible:ring-2 focus-visible:ring-ring">
                     <table className="w-full min-w-[32rem] border-collapse text-left type-small">
                       <thead>
                         <tr className="border-b border-foreground">
