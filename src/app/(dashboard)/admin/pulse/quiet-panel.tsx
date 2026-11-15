@@ -53,7 +53,10 @@ export function QuietPanel({
   todayIso,
   emailReady,
   sendUrl = "/api/admin/nudge/bulk",
+  v2 = false,
 }: {
+  /** Admin v2: no box around it, the list as hairline rows (no inner scroll), quiet controls. Class names only. */
+  v2?: boolean;
   students: NudgeStudent[];
   cohorts: Cohort[];
   initialCohort: string;
@@ -136,19 +139,20 @@ export function QuietPanel({
   return (
     <section
       aria-labelledby="quiet-title"
-      className="min-w-0 rounded-[10px] border-2 border-foreground bg-card p-4 hard-shadow-md sm:p-6"
+      className={v2 ? "min-w-0" : "min-w-0 rounded-[10px] border-2 border-foreground bg-card p-4 hard-shadow-md sm:p-6"}
     >
       <div className="flex flex-wrap items-start justify-between gap-3">
         <div className="min-w-0">
-          <h2 id="quiet-title" className="flex items-center gap-2 text-h3 font-bold tracking-tight">
-            <Mail className="size-5 shrink-0" aria-hidden /> Email students who&apos;ve gone quiet
+          <h2 id="quiet-title" className={v2 ? "type-h3" : "flex items-center gap-2 text-h3 font-bold tracking-tight"}>
+            {v2 ? null : <Mail className="size-5 shrink-0" aria-hidden />} Email students who&apos;ve gone quiet
           </h2>
           <p className="mt-1 text-small text-muted-foreground">
             Ticked: never started, or nothing on VIBHA for {days}+ days.
           </p>
         </div>
         <p
-          className="inline-flex max-w-full items-center gap-2 rounded-full border-2 border-foreground bg-background px-3 py-1 text-small font-semibold"
+          data-keep={v2 ? "" : undefined}
+          className={v2 ? "inline-flex max-w-full items-center gap-2 type-small font-semibold" : "inline-flex max-w-full items-center gap-2 rounded-full border-2 border-foreground bg-background px-3 py-1 text-small font-semibold"}
           aria-live="polite"
         >
           <span className="size-2 shrink-0 rounded-full bg-primary ring-1 ring-foreground" aria-hidden />
@@ -210,13 +214,13 @@ export function QuietPanel({
           No students in {groupLabel}.
         </p>
       ) : (
-        <ul className="mt-3 max-h-[28rem] divide-y-2 divide-line overflow-y-auto rounded-md border-2 border-border bg-background">
+        <ul className={v2 ? "mt-3 flex min-w-0 flex-col divide-y divide-[var(--ds-hairline)] border-y border-[var(--ds-hairline)]" : "mt-3 max-h-[28rem] divide-y-2 divide-line overflow-y-auto rounded-md border-2 border-border bg-background"}>
           {rows.map((r) => {
             const on = picked.has(r.id);
             const cohortText = r.cohortIds.length ? r.cohortIds.map(cohortName).join(", ") : "No cohort";
             return (
               <li key={r.id}>
-                <label className={cn("flex min-h-14 cursor-pointer items-start gap-3 px-3 py-2.5", on && "bg-muted")}>
+                <label className={cn("flex min-h-14 cursor-pointer items-start gap-3 py-2.5", v2 ? "px-0 hover:bg-[var(--ds-tint)]" : "px-3", on && !v2 && "bg-muted")}>
                   <input
                     type="checkbox"
                     checked={on}
@@ -226,7 +230,7 @@ export function QuietPanel({
                   <span className="min-w-0 flex-1">
                     <span className="flex flex-wrap items-baseline gap-x-2">
                       <span className="font-semibold">{r.name}</span>
-                      <span className="min-w-0 truncate text-caption text-muted-foreground">{r.email}</span>
+                      <span className={v2 ? "min-w-0 type-small text-muted-foreground [overflow-wrap:anywhere]" : "min-w-0 truncate text-caption text-muted-foreground"}>{r.email}</span>
                     </span>
                     <span className="mt-1 flex flex-wrap items-center gap-x-2 gap-y-1 text-caption text-muted-foreground">
                       <span
@@ -275,12 +279,12 @@ export function QuietPanel({
         </div>
         <div className="min-w-0">
           <p className="text-caption font-semibold">Preview</p>
-          <div className="mt-1 rounded-md border-2 border-border bg-background p-3 text-small">
+          <div className={v2 ? "mt-1 rounded-md bg-[var(--ds-tint)] p-3 type-small [overflow-wrap:anywhere]" : "mt-1 rounded-md border-2 border-border bg-background p-3 text-small"}>
             {preview ? (
               <>
                 <p className="truncate text-caption text-muted-foreground">To: {preview.email}</p>
                 <p className="mt-1 font-semibold">{personalise(subject, preview.name)}</p>
-                <p className="mt-2 whitespace-pre-wrap break-words">{personalise(message, preview.name)}</p>
+                <p className={v2 ? "mt-2 whitespace-pre-line [overflow-wrap:anywhere]" : "mt-2 whitespace-pre-wrap break-words"}>{personalise(message, preview.name)}</p>
               </>
             ) : (
               <p className="text-muted-foreground">Tick a student to see their email.</p>
@@ -290,7 +294,7 @@ export function QuietPanel({
       </div>
 
       {/* send */}
-      <div className="mt-6 flex flex-col gap-3 border-t-2 border-border pt-4">
+      <div className={v2 ? "mt-6 flex flex-col gap-3" : "mt-6 flex flex-col gap-3 border-t-2 border-border pt-4"}>
         {!emailReady ? (
           <p role="status" className="flex items-start gap-2 rounded-md border-2 border-foreground bg-status-pending-bg p-3 text-small text-status-pending-fg">
             <TriangleAlert className="mt-0.5 size-4 shrink-0" aria-hidden />

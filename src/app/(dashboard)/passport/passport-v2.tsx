@@ -4,8 +4,7 @@ import * as React from "react";
 import { BadgeCheck, ChevronRight, Download } from "lucide-react";
 import { MobileBottomSheet } from "@/components/mobile/mobile-bottom-sheet";
 import { formatDateIST } from "@/lib/format";
-import { PageFrame, Section } from "@/components/ds";
-import { EmptyLine, quietButton, StatItem, StatRow, StatusWord } from "@/components/v2me/parts";
+import { PageFrame, Section, EmptyLine, quietButton, StatItem, StatRow, StatusWord } from "@/components/ds";
 import type { PassportRow } from "./passport";
 
 const SOURCE_LABEL: Record<string, string> = {

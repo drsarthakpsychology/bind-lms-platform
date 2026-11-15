@@ -1,5 +1,5 @@
 import { Hero, PageFrame, Row, RowList, Section } from "@/components/ds";
-import { playV2 } from "@/components/play/v2";
+import { uiV2 } from "@/lib/ui/v2-server";
 import { PREP_SHORT } from "@/lib/prep/catalog";
 import { PenLine } from "lucide-react";
 import type { Metadata } from "next";
@@ -28,7 +28,7 @@ export default async function PrepPage() {
   const core = home.subjects.filter((s) => !s.optional);
   const optional = home.subjects.filter((s) => s.optional);
 
-  if (await playV2()) {
+  if (await uiV2()) {
     const savedLine = home.saved || home.wrong ? (home.canSave ? `${home.saved} saved · ${home.wrong} wrong` : `${home.wrong} to look at again`) : "Questions to look at again";
     return (
       <PageFrame title={PREP_SHORT} lead={!me.learner ? "Staff preview: answers are not saved." : undefined}>

@@ -3,22 +3,11 @@ import { redirect } from "next/navigation";
 import { cookies } from "next/headers";
 
 import { getSession } from "@/lib/auth/session";
-import { createClient } from "@/lib/supabase/server";
 import { VIEW_MODE_COOKIE } from "../view-mode-constants";
-import { loadLearnState } from "../study/actions";
 
-import { loadCourseOverview } from "@/components/course/course-overview";
-import { visibleCourseIds } from "@/lib/cohorts/access";
 import { readFlags } from "@/lib/flags";
-import { loadMyBlocks } from "@/lib/access/blocks";
-import { blockedBy } from "@/lib/access/features";
-import { MODULES } from "@/lib/study";
-import { courseNext, moduleStatus } from "@/lib/study/plan";
-import { istToday, liveStreak } from "@/lib/learn/engine";
-import { EMPTY_STRENGTHS, getStrengthsWeaknesses } from "@/lib/progress/strengths";
+import { loadHomeModel } from "@/lib/home/model";
 import { LEGAL } from "@/lib/legal-constants";
-import { loadQuests } from "@/lib/hints/server";
-import { pickContinue, pickUpNext, type ContinueInput } from "./next-step";
 import { HomeV2, HomeV2Skeleton } from "./home-v2";
 import { uiV2For } from "@/lib/ui/v2";
 import { HomeBody } from "./home-view";
@@ -59,79 +48,23 @@ async function HomeData({ v2 }: { v2: boolean }) {
   // roster is full, and the shell shows the full menu), and every published
   // course, like the Lectures page shows them.
   const preview = profile.role === "admin" && viewingAsStudent;
-  const effectiveScope = preview ? "full" : profile.scope;
-  const courseScope = preview ? "lectures_only" : profile.scope;
-
-  const supabase = await createClient();
-  const [{ data: courses }, { data: enrollments }, flags, blocked] = await Promise.all([
-    supabase.from("courses").select("id, title, is_published").eq("is_published", true).order("title", { ascending: true }),
-    supabase.from("course_enrollments").select("course_id").eq("user_id", profile.id),
-    readFlags(),
-    profile.role === "student" ? loadMyBlocks(profile.id) : Promise.resolve([] as string[]),
-  ]);
-
-  // A student sees published courses they are enrolled in (a lectures_only
-  // roster student sees every published course), plus their cohort's courses.
-  const enrolledIds = new Set((enrollments ?? []).map((e) => e.course_id));
-  const legacy = courseScope === "lectures_only" ? (courses ?? []) : (courses ?? []).filter((c) => enrolledIds.has(c.id));
-  const visible = new Set(
-    await visibleCourseIds(profile.id, profile.role === "admin", (courses ?? []).map((c) => c.id), legacy.map((c) => c.id)),
-  );
-  const myCourses = (courses ?? []).filter((c) => visible.has(c.id));
-
-  const studyOpen = flags.learn === "unlocked" && effectiveScope !== "lectures_only" && !blockedBy("/study", blocked);
-
-  const questsOn = studyOpen && (profile.role === "student" || profile.role === "alumni");
-  const [models, learn, strengths, quests] = await Promise.all([
-    Promise.all(myCourses.map((c) => loadCourseOverview(c.id, profile))).then((list) => list.filter((m): m is NonNullable<typeof m> => m !== null)),
-    studyOpen ? loadLearnState() : Promise.resolve(null),
-    studyOpen ? getStrengthsWeaknesses(profile.id) : Promise.resolve(EMPTY_STRENGTHS),
-    questsOn ? loadQuests(profile.id).catch(() => null) : Promise.resolve(null),
-  ]);
-
-  // The course in progress, else the first with lectures left, else the first.
-  const main =
-    models.find((m) => m.started && m.completedCount < m.totalLessons) ?? models.find((m) => m.completedCount < m.totalLessons) ?? models[0];
-
-  const today = istToday();
-  const studyNext = learn ? courseNext(MODULES, learn.study, today) : null;
-  const weakest = strengths.weakest[0];
-
-  const input: ContinueInput = {
-    lecture: main?.next ? { ...main.next, started: main.started } : null,
-    study: studyNext
-      ? { kind: studyNext.kind, label: studyNext.label, href: studyNext.href, module: studyNext.kind === "done" ? null : studyNext.module.title, resumed: Boolean(learn?.study.last) }
-      : null,
-    weakest: weakest ? { title: weakest.title, href: weakest.practiceHref } : null,
-    dailyCase: flags.learn === "unlocked" && effectiveScope !== "lectures_only" && !blockedBy("/practice/daily", blocked),
-  };
-  const step = pickContinue(input);
-  const goal = learn ? { points: learn.daily.day === today ? learn.daily.xp : 0, goal: learn.dailyGoal, streak: liveStreak(learn.streak, today) } : null;
+  // The same model the mobile app's Home is built from (src/lib/home/model.ts).
+  const { step, goal, quests, strengths, studyOpen, progress, dateLine, welcomeBack, allDone, upNext } = await loadHomeModel(profile, { preview });
 
   if (v2) {
-    // The hero's thin line: lectures watched in the course, or how far the module is.
-    const progress =
-      step.kind === "lecture" || step.kind === "assignment"
-        ? main && main.totalLessons > 0
-          ? { pct: Math.round((main.completedCount / main.totalLessons) * 100), label: "Lectures watched" }
-          : null
-        : (step.kind === "study" || step.kind === "retest") && learn && studyNext && studyNext.kind !== "done"
-          ? { pct: moduleStatus(studyNext.module, learn.study).pct, label: "Module done" }
-          : null;
-    const dateLine = new Intl.DateTimeFormat("en-IN", { weekday: "short", day: "numeric", month: "short", timeZone: "Asia/Kolkata" }).format(new Date(`${today}T12:00:00+05:30`));
     return (
       <>
         <RefreshOnSave kinds={["learn", "complete", "progress"]} />
         <HomeV2
           adminPreview={viewingAsStudent && profile.role === "admin"}
-          welcomeBack={Boolean(main?.started || learn?.study.last)}
+          welcomeBack={welcomeBack}
           dateLine={dateLine}
           step={step}
           progress={progress}
-          allDone={step.kind === "lectures" && studyNext?.kind === "done"}
+          allDone={allDone}
           goal={goal}
           quests={quests}
-          upNext={pickUpNext(input, step)}
+          upNext={upNext}
         />
       </>
     );
@@ -143,7 +76,7 @@ async function HomeData({ v2 }: { v2: boolean }) {
     <RefreshOnSave kinds={["learn", "complete", "progress"]} />
     <HomeBody
       adminPreview={viewingAsStudent && profile.role === "admin"}
-      welcomeBack={Boolean(main?.started || learn?.study.last)}
+      welcomeBack={welcomeBack}
       step={step}
       goal={goal}
       quests={quests}

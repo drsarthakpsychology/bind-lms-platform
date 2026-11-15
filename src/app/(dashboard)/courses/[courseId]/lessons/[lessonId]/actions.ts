@@ -9,6 +9,7 @@ import { verifyObjectExists } from "@/lib/storage-verify";
 import { clampProgress } from "./progress-clamp";
 import { isOwnSubmissionPath } from "@/lib/media/submission-paths";
 import { isTransient, withRetry } from "@/lib/save/retry";
+import { completionBlock } from "@/lib/course/complete";
 
 export type PlaybackResult =
   | { ok: true; url: string; resumeSeconds: number }
@@ -154,7 +155,6 @@ export async function completeAndAdvance(
   if (!profile) redirect("/login");
   if (typeof lessonId !== "string" || !UUID_RE.test(lessonId)) redirect("/courses");
 
-  const supabase = await createClient();
   const ownLessonUrl = `/courses/${encodeURIComponent(courseId)}/lessons/${lessonId}`;
   // Same-site paths only (never another site).
   const next = safeInternalPath(redirectTo) ?? ownLessonUrl;
@@ -163,34 +163,11 @@ export async function completeAndAdvance(
   // student-facing copy: a submission must exist to proceed, grading
   // (approval) is a separate, asynchronous admin workflow that shouldn't
   // stall the whole cohort's progress on review turnaround.
-  const { data: lesson } = await supabase
-    .from("lessons")
-    .select("requires_assignment")
-    .eq("id", lessonId)
-    .single();
+  // (src/lib/course/complete.ts, shared with the mobile app.)
+  const block = await completionBlock(lessonId, profile.id);
   // A lesson this student cannot see (RLS) is never marked complete.
-  if (!lesson) redirect("/courses");
-
-  if (lesson?.requires_assignment) {
-    const { data: assignment } = await supabase
-      .from("assignments")
-      .select("id")
-      .eq("lesson_id", lessonId)
-      .maybeSingle();
-
-    if (assignment) {
-      const { data: submission } = await supabase
-        .from("submissions")
-        .select("id")
-        .eq("assignment_id", assignment.id)
-        .eq("user_id", profile.id)
-        .maybeSingle();
-
-      if (!submission) {
-        redirect(ownLessonUrl);
-      }
-    }
-  }
+  if (block === "not_found") redirect("/courses");
+  if (block === "needs_submission") redirect(ownLessonUrl);
 
   // Previously the result was ignored and the student moved on even when the
   // write failed, so the lecture silently stayed "not done".

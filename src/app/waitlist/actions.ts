@@ -2,10 +2,8 @@
 
 import { z } from "zod";
 import { headers } from "next/headers";
-import { createAdminClient } from "@/lib/supabase/server";
+import { saveEnquiry } from "@/lib/enquiry";
 import { rateLimit } from "@/lib/rate-limit";
-import { stripMarkup } from "@/lib/sanitize";
-import { policyVersion } from "@/lib/legal-constants";
 
 const schema = z.object({
   name: z.string().min(2).max(120),
@@ -47,23 +45,12 @@ export async function submitWaitlist(input: FormData): Promise<WaitlistResult> {
     return { ok: false, error: "Too many attempts. Please wait and try again." };
   }
 
-  const admin = createAdminClient();
-  const { error } = await admin.from("enquiries").insert({
-    // stripMarkup at write time (defense-in-depth): React escapes on render,
-    // but no future raw-HTML/export path can execute a stored payload.
-    name: stripMarkup(parsed.data.name),
-    email: stripMarkup(parsed.data.email),
-    phone: parsed.data.phone ? stripMarkup(parsed.data.phone) : null,
-    status: parsed.data.status,
-    message: parsed.data.message ? stripMarkup(parsed.data.message) : null,
-    source: "landing",
-    // The acceptance record: what makes the no-refund term defensible if a
-    // waitlisted lead later challenges it.
-    policy_acceptance_at: new Date().toISOString(),
-    policy_version: policyVersion(),
-  });
-  if (error) {
-    console.error("[waitlist] insert failed:", error.message);
+  // (src/lib/enquiry.ts, shared with the mobile app's request-invitation.)
+  const saved = await saveEnquiry(
+    { name: parsed.data.name, email: parsed.data.email, phone: parsed.data.phone || null, status: parsed.data.status, message: parsed.data.message || null },
+    "landing",
+  );
+  if (!saved.ok) {
     return { ok: false, error: "Something went wrong. Please try again." };
   }
   return { ok: true };

@@ -2,6 +2,7 @@ import "server-only";
 import { createAdminClient } from "@/lib/supabase/server";
 import { logEmailSend, sendResendEmail } from "@/lib/auth/roster";
 import { isNudgeable, personalise } from "./select";
+import { queuePush } from "@/lib/app-api/push";
 
 export type NudgeRecipient = { id: string; name: string; email: string };
 export type NudgeReport = {
@@ -105,7 +106,11 @@ async function notifyToo(
   });
   try {
     const table = admin.from("notifications") as unknown as { insert?: (rows: unknown[]) => Promise<unknown> };
-    if (typeof table.insert === "function") await table.insert(rows);
+    if (typeof table.insert === "function") {
+      await table.insert(rows);
+      // The same nudge on the student's phone (Vibha Psychology app); never blocks.
+      queuePush(rows, "messages");
+    }
   } catch {
     // Database step not run yet: email-only nudge.
   }

@@ -1,10 +1,6 @@
-import { LoadingFrame } from "@/components/design-system/slow-state";
-import { ChaiLoader } from "@/components/learn/chai-loader";
+import { QuestionLoading } from "@/components/ds/loading";
 
+/** A lesson round while it opens: one question and its options. */
 export default function Loading() {
-  return (
-    <LoadingFrame>
-      <ChaiLoader label="Getting your lesson ready" tip={3} />
-    </LoadingFrame>
-  );
+  return <QuestionLoading />;
 }

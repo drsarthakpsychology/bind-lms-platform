@@ -10,6 +10,8 @@ import { BoardHeader, BoardSwitch } from "@/components/standing/board-switch";
 import { cn } from "@/lib/utils";
 import { backLinkClass } from "@/components/design-system/back-link";
 import { leaveWithoutSession } from "@/lib/auth/session-redirect";
+import { BackLink, PageFrame, Row, RowList } from "@/components/ds";
+import { uiV2 } from "@/lib/ui/v2-server";
 
 export const metadata: Metadata = { title: BOARDS.quiz.label };
 export const dynamic = "force-dynamic";
@@ -26,12 +28,18 @@ export default async function QuizLeaderboardPage() {
   const userId = session.profile.id;
   const [{ rows, myRank, total }, cohorts] = await Promise.all([loadQuizBoard(userId), loadMyCohorts(userId).catch(() => [])]);
 
+  const v2 = await uiV2();
+  const Frame = v2 ? PageFrame : OldFrame;
   return (
-    <div className="mx-auto max-w-3xl space-y-6">
+    <Frame>
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <Link href="/games" className={backLinkClass}>
-          <ArrowLeft className="size-4" aria-hidden /> Back to Games
-        </Link>
+        {v2 ? (
+          <BackLink href="/games">Games</BackLink>
+        ) : (
+          <Link href="/games" className={backLinkClass}>
+            <ArrowLeft className="size-4" aria-hidden /> Back to Games
+          </Link>
+        )}
         <BoardSwitch active="quiz" />
       </div>
 
@@ -46,18 +54,18 @@ export default async function QuizLeaderboardPage() {
             </p>
           ) : null}
         </div>
-        <ol className="overflow-hidden rounded-2xl border-2 border-foreground bg-card">
+        <ol className={v2 ? "border-y border-[var(--ds-hairline)]" : "overflow-hidden rounded-2xl border-2 border-foreground bg-card"}>
           {rows.length ? (
             rows.map((r) => (
               <li
                 key={`${r.rank}-${r.name}`}
                 aria-current={r.me ? "true" : undefined}
-                className={cn("flex items-center gap-3 border-b-2 border-foreground/10 px-4 py-2.5 last:border-b-0", r.me && "bg-primary text-primary-foreground")}
+                className={cn("flex min-h-14 items-center gap-3 px-4 py-2.5 last:border-b-0", v2 ? "border-b border-[var(--ds-hairline)]" : "border-b-2 border-foreground/10", r.me && "bg-primary text-primary-foreground")}
               >
                 <span className={cn("grid size-8 shrink-0 place-items-center rounded-full border-2 border-foreground font-pix text-xs", r.rank === 1 ? "bg-brand text-brand-foreground" : "bg-background text-foreground")}>
                   {r.rank === 1 ? <Crown className="size-4" aria-label="First" /> : r.rank}
                 </span>
-                <span className="min-w-0 flex-1 truncate font-bold">
+                <span className="min-w-0 flex-1 truncate font-bold" title={r.name}>
                   {r.name}
                   {r.me ? " (you)" : ""}
                 </span>
@@ -74,13 +82,23 @@ export default async function QuizLeaderboardPage() {
         </ol>
       </section>
 
-      <Link href={BOARDS.overall.href} className="flex items-center gap-3 rounded-2xl border-2 border-dashed border-foreground p-4">
-        <span className="min-w-0 flex-1">
-          <span className="block font-bold">{BOARDS.overall.label}</span>
-          <span className="text-sm text-muted-foreground">{BOARDS.overall.explainer} All time.</span>
-        </span>
-        <ArrowRight className="size-5 shrink-0" aria-hidden />
-      </Link>
-    </div>
+      {v2 ? (
+        <RowList>
+          <Row href={BOARDS.overall.href} title={BOARDS.overall.label} meta={`${BOARDS.overall.explainer} All time.`} />
+        </RowList>
+      ) : (
+        <Link href={BOARDS.overall.href} className="flex items-center gap-3 rounded-2xl border-2 border-dashed border-foreground p-4">
+          <span className="min-w-0 flex-1">
+            <span className="block font-bold">{BOARDS.overall.label}</span>
+            <span className="text-sm text-muted-foreground">{BOARDS.overall.explainer} All time.</span>
+          </span>
+          <ArrowRight className="size-5 shrink-0" aria-hidden />
+        </Link>
+      )}
+    </Frame>
   );
+}
+
+function OldFrame({ children }: { children: React.ReactNode }) {
+  return <div className="mx-auto max-w-3xl space-y-6">{children}</div>;
 }

@@ -1,14 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
-import type { Profile } from "@/lib/auth/session";
 import { requireSession } from "@/lib/auth/guards";
 import { isSameOrigin } from "@/lib/media/same-origin";
 import { rateLimitFast } from "@/lib/rate-limit-fast";
-import { streamFile, contentTypeForKind, type StreamedFile } from "@/lib/media/deliver";
-import {
-  getMaterialStreamVerdict,
-  setMaterialStreamVerdict,
-  type MaterialStreamVerdict,
-} from "@/lib/media/material-stream-cache";
+import type { StreamedFile } from "@/lib/media/deliver";
+import { serveMaterial } from "@/lib/media/material-serve";
 
 /**
  * GET /api/media/materials/:materialId
@@ -75,88 +70,10 @@ async function authorizeMaterial(
     return NextResponse.json({ error: "Invalid material id." }, { status: 400 });
   }
 
-  // Hot path: one combined authz + resolution read per (viewer, material),
-  // cached for 5 minutes: the video proxy's verdict-cache pattern.
-  let verdict = getMaterialStreamVerdict(profile.id, materialId);
-  if (!verdict) {
-    verdict = await resolveMaterial(profile, materialId);
-    setMaterialStreamVerdict(profile.id, materialId, verdict);
+  const served = await serveMaterial(profile, materialId, request.headers.get("range"));
+  if (!served.ok) {
+    return NextResponse.json({ error: served.error }, { status: served.status });
   }
 
-  if (!verdict.ok) {
-    return NextResponse.json({ error: verdict.reason }, { status: verdict.status ?? 403 });
-  }
-
-  const contentType = contentTypeForKind(verdict.file.kind, verdict.file.format);
-  const file = await streamFile(
-    verdict.file.provider,
-    verdict.file.bucket,
-    verdict.file.storage_path,
-    request.headers.get("range"),
-    contentType,
-  );
-  if (!file) {
-    return NextResponse.json({ error: "This material couldn't be loaded." }, { status: 404 });
-  }
-
-  return { file };
-}
-
-/**
- * One read for the whole verdict: the material row (with its course embed),
- * plus an enrollment check for non-admins. Replaces the previous two-query
- * sequence (canAccessMaterial + a second material read).
- */
-async function resolveMaterial(
-  profile: NonNullable<Profile>,
-  materialId: string,
-): Promise<MaterialStreamVerdict> {
-  const { createClient } = await import("@/lib/supabase/server");
-  const supabase = await createClient();
-
-  const { data: material } = await supabase
-    .from("materials")
-    .select("id, kind, format, storage_path, provider, bucket, course_id, lesson_id, courses!inner(is_published)")
-    .eq("id", materialId)
-    .single();
-
-  if (!material) return { ok: false, reason: "Material not found." };
-
-  if (profile.role !== "admin") {
-    const course = Array.isArray(material.courses) ? material.courses[0] : material.courses;
-    if (!course?.is_published) return { ok: false, reason: "This course isn't published." };
-
-    const { data: enrollment } = await supabase
-      .from("course_enrollments")
-      .select("course_id")
-      .eq("user_id", profile.id)
-      .eq("course_id", material.course_id)
-      .maybeSingle();
-    if (!enrollment) return { ok: false, reason: "You aren't enrolled in this course." };
-
-    // Cohorts: a material on a lecture shared with other cohorts only is not
-    // for this person (people in no cohort keep the enrolment rule above).
-    if (material.lesson_id) {
-      const { loadStudentAccess } = await import("@/lib/cohorts/access");
-      const { canWatch } = await import("@/lib/cohorts/rules");
-      if (!canWatch(await loadStudentAccess(profile.id), material.lesson_id as string, true)) {
-        return { ok: false, reason: "This material isn't part of your lectures." };
-      }
-    }
-  }
-
-  if (material.kind === "link" || !material.storage_path) {
-    return { ok: false, reason: "This material has no file.", status: 404 };
-  }
-
-  return {
-    ok: true,
-    file: {
-      kind: material.kind,
-      format: material.format,
-      storage_path: material.storage_path,
-      provider: material.provider === "r2" ? "r2" : "supabase",
-      bucket: material.bucket ?? "materials",
-    },
-  };
+  return { file: served.file };
 }

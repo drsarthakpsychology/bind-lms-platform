@@ -1,6 +1,5 @@
 import { ArrowRight, Check, Map as MapIcon, Route } from "lucide-react";
-import { Hero, PageFrame, Row, RowList, Section } from "@/components/ds";
-import { EmptyLine, ProgressLine, StatItem, StatRow, StatusWord } from "@/components/v2me/parts";
+import { Hero, PageFrame, Row, RowList, Section, EmptyLine, ProgressLine, StatItem, StatRow, StatusWord } from "@/components/ds";
 import { pct, type StrengthsWeaknesses, type TopicScore } from "@/lib/progress/strengths-core";
 
 export type ProgressModule = {
@@ -44,7 +43,7 @@ export function ProgressV2({
           <StatItem value={`${coursePct}%`} label="Course done" />
           <StatItem value={passed} sub={`of ${total}`} label="Tests passed" />
         </StatRow>
-        <ProgressLine value={coursePct} label="Course done" className="max-w-xl" />
+        <ProgressLine pct={coursePct} label="Course done" className="max-w-xl" />
       </div>
 
       {eligible ? (

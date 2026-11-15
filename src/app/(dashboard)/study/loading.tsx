@@ -1,10 +1,6 @@
-import { LoadingFrame } from "@/components/design-system/slow-state";
-import { ChaiLoader } from "@/components/learn/chai-loader";
+import { StudyHomeLoading } from "@/components/ds/loading";
 
+/** /study while it loads: the shape of Study itself (Continue, then the modules as rows). */
 export default function Loading() {
-  return (
-    <LoadingFrame>
-      <ChaiLoader label="Getting your lesson ready" tip={0} />
-    </LoadingFrame>
-  );
+  return <StudyHomeLoading />;
 }

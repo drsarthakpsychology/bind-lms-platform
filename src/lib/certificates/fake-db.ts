@@ -73,6 +73,15 @@ class Query implements PromiseLike<Result> {
     this.filters.push((r) => String(r[col] ?? "") >= v);
     return this;
   }
+  /** Only the "col.gte.value,col.gte.value" form is understood. */
+  or(expr: string) {
+    const parts = expr.split(",").map((p) => {
+      const [col, op, ...rest] = p.split(".");
+      return { col, op, v: rest.join(".") };
+    });
+    this.filters.push((r) => parts.some((p) => p.op === "gte" && r[p.col] != null && String(r[p.col]) >= p.v));
+    return this;
+  }
   order(col: string, opts: { ascending?: boolean } = {}) {
     this.sort = { col, asc: opts.ascending !== false };
     return this;

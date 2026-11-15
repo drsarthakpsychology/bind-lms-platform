@@ -5,7 +5,7 @@ import Link from "next/link";
 import { RotateCcw, Search } from "lucide-react";
 import { SlowState } from "@/components/design-system/slow-state";
 import { cn } from "@/lib/utils";
-import { primaryButton, quietButton } from "./parts";
+import { primaryButton, quietButton } from "@/components/ds";
 
 /**
  * The shared student states in the new design: loading, something went

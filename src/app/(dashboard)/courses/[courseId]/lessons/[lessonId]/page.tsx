@@ -8,6 +8,7 @@ import { getSession } from "@/lib/auth/session";
 import { createClient } from "@/lib/supabase/server";
 import { loadMyCohorts, loadStudentAccess } from "@/lib/cohorts/access";
 import { canWatch, filterLessons, myCohortsFor } from "@/lib/cohorts/rules";
+import { lectureNeighbours } from "@/lib/course/lecture-order";
 import { DEFAULT_ACCEPTED_FORMATS } from "@/lib/media/registry";
 import { VIEW_MODE_COOKIE } from "@/app/(dashboard)/view-mode-constants";
 // Lazy wrapper: the player pulls in hls.js (~500KB min / ~150KB gzip). The
@@ -33,7 +34,7 @@ import { RefreshOnSave } from "@/components/save/refresh-on-save";
 import { leaveWithoutSession } from "@/lib/auth/session-redirect";
 import { readFlags } from "@/lib/flags";
 import { uiV2For } from "@/lib/ui/v2";
-import { UiV2 } from "@/components/learn-v2/ui-v2";
+import { UiV2 } from "@/components/ds/v2";
 import { LessonScreenV2 } from "@/components/learn-v2/lesson";
 
 // "Check what stuck": the risk-assessment + reporting items are the most
@@ -164,19 +165,9 @@ export default async function LessonPage({
 
   // Course order = (week, order_index), so Previous/Next cross week boundaries:
   // the last lesson of Week 1 flows into the first lesson of Week 2.
-  const playable = (courseLessons ?? [])
-    .filter((l) => l.video_storage_path)
-    .sort((a, b) => {
-      const wa = (a as { week?: number }).week ?? 1;
-      const wb = (b as { week?: number }).week ?? 1;
-      if (wa !== wb) return wa - wb;
-      return a.order_index - b.order_index;
-    });
+  // (src/lib/course/lecture-order.ts, shared with the mobile app.)
+  const { playable, index: currentIndex, prev: prevLesson, next: nextLesson } = lectureNeighbours(courseLessons ?? [], lessonId);
   const hasVideo = Boolean((lesson as { video_storage_path?: string | null } | null)?.video_storage_path);
-  const currentIndex = playable.findIndex((l) => l.id === lessonId);
-  const prevLesson = currentIndex > 0 ? playable[currentIndex - 1] : null;
-  const nextLesson =
-    currentIndex >= 0 && currentIndex < playable.length - 1 ? playable[currentIndex + 1] : null;
 
   const continueTarget = nextLesson
     ? `/courses/${courseId}/lessons/${nextLesson.id}`

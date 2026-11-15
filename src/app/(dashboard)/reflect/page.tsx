@@ -5,7 +5,7 @@ import { requireFeature } from "@/lib/flags";
 import { PageHeader } from "@/components/design-system/page-header";
 import { PageFrame } from "@/components/ds";
 import { requireSession } from "@/lib/auth/guards";
-import { pageV2 } from "@/components/v2me/server";
+import { uiV2Role } from "@/lib/ui/v2-server";
 
 export const dynamic = "force-dynamic";
 
@@ -35,7 +35,7 @@ export default async function ReflectPage() {
   const initialShares: Record<string, string> = {};
   for (const sh of shares ?? []) initialShares[String(sh.entry_id)] = String(sh.id);
 
-  if (await pageV2((await requireSession())?.role)) {
+  if (await uiV2Role((await requireSession())?.role)) {
     return (
       <PageFrame title="Journal" lead="Private to you unless you share an entry.">
         <JournalView

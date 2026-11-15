@@ -4,7 +4,7 @@ import { Check, ChevronDown, MessageCircleQuestion, Play } from "lucide-react";
 
 import { MobileStickyAction } from "@/components/mobile/mobile-sticky-action";
 import { cn } from "@/lib/utils";
-import { Crumb, TabRow } from "./parts";
+import { BackLink, TabRow } from "@/components/ds";
 import s from "./lesson.module.css";
 
 export type LessonTab = "watch" | "materials" | "assignment";
@@ -84,7 +84,7 @@ export function LessonScreenV2({
         ) : null}
 
         <div className="flex min-w-0 items-center justify-between gap-3">
-          <Crumb href={`/courses/${courseId}`}>{courseTitle}</Crumb>
+          <BackLink href={`/courses/${courseId}`}>{courseTitle}</BackLink>
           {picker ? <div className="shrink-0 lg:hidden">{picker}</div> : null}
         </div>
 

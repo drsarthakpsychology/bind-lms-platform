@@ -4,8 +4,7 @@ import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 import { rateLimit } from "@/lib/rate-limit";
 import { rateLimitFast } from "@/lib/rate-limit-fast";
-import { createAdminClient } from "@/lib/supabase/server";
-import { hashSetupToken } from "@/lib/auth/roster";
+import { finishSetup } from "@/lib/auth/setup";
 import { checkNewPassword } from "@/lib/auth/password-policy";
 
 export type SetupState = { error: string | null };
@@ -29,44 +28,13 @@ export async function completeSetup(_prev: SetupState, formData: FormData): Prom
   if (!rateLimitFast(`setup:ip:${ip}`, 20) || !(await rateLimit(`setup:ip:${ip}`, 20))) {
     return { error: "Too many tries. Wait a minute and try again." };
   }
+  // Same order of messages as before: password rule, then the two boxes, then the link.
   const policy = checkNewPassword(password);
   if (policy) return { error: policy };
   if (password !== confirm) return { error: "The two passwords don't match." };
 
-  const admin = createAdminClient();
-  const { data: row } = await admin
-    .from("account_setup_tokens")
-    .select("id, user_id, email, expires_at, used_at, revoked_at")
-    .eq("token_hash", hashSetupToken(token))
-    .maybeSingle();
+  const done = await finishSetup(token, password);
+  if (!done.ok) return { error: done.error };
 
-  if (!row || row.used_at || row.revoked_at) {
-    return { error: "This setup link has already been used or replaced. Ask us for a new one." };
-  }
-  if (new Date(row.expires_at as string).getTime() < Date.now()) {
-    return { error: "This setup link has expired. Ask us for a new one." };
-  }
-
-  // Spend the token first (single use even if two tabs submit at once).
-  const { data: spent } = await admin
-    .from("account_setup_tokens")
-    .update({ used_at: new Date().toISOString() })
-    .eq("id", row.id)
-    .is("used_at", null)
-    .select("id")
-    .maybeSingle();
-  if (!spent) return { error: "This setup link has already been used. Ask us for a new one." };
-
-  const { error } = await admin.auth.admin.updateUserById(row.user_id as string, { password });
-  if (error) {
-    await admin.from("account_setup_tokens").update({ used_at: null }).eq("id", row.id);
-    return { error: "We couldn't save that password. Try a different one." };
-  }
-
-  await admin
-    .from("credential_invites")
-    .update({ setup_completed_at: new Date().toISOString() })
-    .eq("email", row.email as string);
-
-  redirect(`/login?setup=done&email=${encodeURIComponent(row.email as string)}`);
+  redirect(`/login?setup=done&email=${encodeURIComponent(done.email)}`);
 }

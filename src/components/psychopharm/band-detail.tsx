@@ -3,6 +3,8 @@
 import * as React from "react";
 import { formatDoseAndFrequency } from "@/lib/psychopharm/format";
 import type { BandView } from "@/lib/psychopharm/store";
+import { useUiV2 } from "@/components/ds/v2";
+import { cn } from "@/lib/utils";
 
 /**
  * The currently selected band's detail: the first thing below the ladder.
@@ -16,6 +18,7 @@ export function BandDetail({
   band?: BandView;
   register: "student" | "clinician";
 }) {
+  const v2 = useUiV2();
   if (!band) return null;
 
   const hasContent =
@@ -27,8 +30,9 @@ export function BandDetail({
     band.what_changes_going_up ||
     band.what_changes_going_down;
 
+  // New design: no box, a hairline above, the dose as the heading.
   return (
-    <section className="space-y-4 rounded-md border-2 border-border p-4">
+    <section className={cn("space-y-4", v2 ? "border-t border-[var(--ds-hairline)] pt-6" : "rounded-md border-2 border-border p-4")}>
       <header>
         <h2 className="text-h3">{formatDoseAndFrequency(band)}</h2>
         <p className="text-caption uppercase text-muted-foreground">{band.band_label}</p>

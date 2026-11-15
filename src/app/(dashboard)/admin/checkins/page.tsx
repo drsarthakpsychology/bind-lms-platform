@@ -5,6 +5,9 @@ import { PageHeader } from "@/components/design-system/page-header";
 import { MobileCard } from "@/components/mobile/mobile-card";
 import { CohortTrendChart } from "./trend-chart";
 import { cn } from "@/lib/utils";
+import { readFlags } from "@/lib/flags";
+import { uiV2For } from "@/lib/ui/v2";
+import { CheckinsV2 } from "../_v2/system";
 
 export const dynamic = "force-dynamic";
 
@@ -36,7 +39,8 @@ function isConcerningWeek(r: AggregateRow): boolean {
 export default async function AdminCheckinsPage() {
   // Defence in depth: layouts don't re-render on every navigation, so the page
   // re-checks admin itself before reading data.
-  if (!(await requireAdmin())) redirect("/dashboard");
+  const me = await requireAdmin();
+  if (!me) redirect("/dashboard");
   const admin = createAdminClient();
   const { data: rows } = await admin
     .from("checkins_aggregate")
@@ -48,6 +52,25 @@ export default async function AdminCheckinsPage() {
   const latest = aggregate[0];
   const prev = aggregate[1] ?? null;
   const concerning = aggregate.filter(isConcerningWeek);
+
+  if (uiV2For(await readFlags(), me.role)) {
+    return (
+      <CheckinsV2
+        figures={
+          latest
+            ? [
+                { label: "Responses, latest week", value: String(latest.n_responses), note: prev ? `${prev.n_responses} last week` : "" },
+                { label: "Workload, 1 to 5, higher is heavier", value: latest.avg_workload.toFixed(2), note: prev ? `${prev.avg_workload.toFixed(2)} last week` : "" },
+                { label: "Energy, 1 to 5, higher is more", value: latest.avg_energy.toFixed(2), note: prev ? `${prev.avg_energy.toFixed(2)} last week` : "" },
+                { label: "Preparedness, 1 to 5, higher is readier", value: latest.avg_preparedness.toFixed(2), note: prev ? `${prev.avg_preparedness.toFixed(2)} last week` : "" },
+              ]
+            : []
+        }
+        chart={<CohortTrendChart rows={aggregate} />}
+        weeks={aggregate.map((r) => ({ key: r.week_label, label: weekLabel(r.week_label), n: r.n_responses, workload: r.avg_workload.toFixed(2), energy: r.avg_energy.toFixed(2), preparedness: r.avg_preparedness.toFixed(2), watch: isConcerningWeek(r) }))}
+      />
+    );
+  }
 
   return (
     <div className="mx-auto max-w-4xl">

@@ -47,8 +47,8 @@ function Row({ item }: { item: RefListItem }) {
         className="flex min-h-14 items-start gap-3 rounded-md border-2 border-transparent px-3 py-2.5 transition-[transform,background-color,border-color] duration-fast ease-snappy hover:border-foreground hover:bg-accent focus-visible:border-foreground"
       >
         <span className="min-w-0 flex-1">
-          <span className="block font-bold leading-snug">{item.label}</span>
-          <span className="line-clamp-2 text-small text-muted-foreground">{item.summary}</span>
+          <span className="block font-bold leading-snug [overflow-wrap:anywhere]">{item.label}</span>
+          <span className="line-clamp-2 text-small text-muted-foreground" title={item.summary}>{item.summary}</span>
         </span>
         <KindTag kind={item.kind} className="mt-0.5" />
       </Link>

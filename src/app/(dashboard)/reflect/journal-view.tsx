@@ -11,7 +11,7 @@ import { MobileErrorLine } from "@/components/mobile/mobile-error-line";
 import { StatusPill } from "@/components/mobile/status-pill";
 import { useOffline } from "@/lib/hooks/use-offline";
 import { EmptyState } from "@/components/design-system/empty-state";
-import { chipClass, EmptyLine, primaryButton } from "@/components/v2me/parts";
+import { chipClass, EmptyLine, primaryButton } from "@/components/ds";
 
 /** Kept per student: on a shared phone one student's private draft must never open for the next. */
 const LEGACY_DRAFT_KEY = "journal:draft";

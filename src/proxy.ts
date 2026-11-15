@@ -77,6 +77,10 @@ export async function proxy(request: NextRequest) {
     });
   }
 
+  // The mobile app's API (bearer token, no cookies): nothing to refresh here,
+  // its routes check the token themselves (src/lib/app-api/guard.ts).
+  if (pathname.startsWith("/api/app/")) return NextResponse.next({ request });
+
   let response = NextResponse.next({ request });
 
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;

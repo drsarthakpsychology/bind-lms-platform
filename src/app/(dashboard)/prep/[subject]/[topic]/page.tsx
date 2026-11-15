@@ -1,6 +1,6 @@
 import { Row, RowList } from "@/components/ds";
 import { GameFrame } from "@/components/play/game-frame";
-import { playV2 } from "@/components/play/v2";
+import { uiV2 } from "@/lib/ui/v2-server";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -46,7 +46,7 @@ export default async function TopicPage({ params, searchParams }: Params) {
   const at = topics.findIndex((x) => x.id === topic);
   const nextTopic = nextChip || at < 0 ? undefined : topics[at + 1];
 
-  if (await playV2()) {
+  if (await uiV2()) {
     return (
       <GameFrame title={view.title} width="reading" back={{ href: `/prep/${subject}`, label: `Back to ${SUBJECT_TITLE[subject]}` }} aside={view.sets.length > 1 ? <SetPicker v2 sets={view.sets.map((x) => ({ n: x.n, href: x.href, done: x.stats.answered === x.stats.total }))} current={view.set} /> : undefined}>
         <div className="flex min-w-0 flex-col gap-[var(--ds-section)]">

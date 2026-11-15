@@ -1,6 +1,9 @@
 import { redirect } from "next/navigation";
 import { requireAdmin } from "@/lib/auth/guards";
 import { createAdminClient } from "@/lib/supabase/server";
+import { readFlags } from "@/lib/flags";
+import { uiV2For } from "@/lib/ui/v2";
+import { AdminPage } from "../_v2/kit";
 import { PageHeader } from "@/components/design-system/page-header";
 import { CardsAdmin, type CardRow } from "./cards-admin";
 
@@ -16,7 +19,8 @@ export const dynamic = "force-dynamic";
 export default async function AdminCardsPage() {
   // Defence in depth: layouts don't re-render on every navigation, so the page
   // re-checks admin itself before reading data.
-  if (!(await requireAdmin())) redirect("/dashboard");
+  const me = await requireAdmin();
+  if (!me) redirect("/dashboard");
   const admin = createAdminClient();
   const { data } = await admin
     .from("cards")
@@ -38,6 +42,14 @@ export default async function AdminCardsPage() {
 
   const drafts = rows.filter((r) => r.status === "draft").length;
   const published = rows.filter((r) => r.status === "published").length;
+
+  if (uiV2For(await readFlags(), me.role)) {
+    return (
+      <AdminPage width="default" title="Study cards" lead={`The Rounds queue. ${drafts} draft${drafts === 1 ? "" : "s"} waiting for review · ${published} published. Approve and students see it.`}>
+        <CardsAdmin v2 cards={rows} />
+      </AdminPage>
+    );
+  }
 
   return (
     <div className="mx-auto max-w-3xl">

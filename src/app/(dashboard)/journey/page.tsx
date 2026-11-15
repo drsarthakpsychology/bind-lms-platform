@@ -12,7 +12,7 @@ import { PageHeader } from "@/components/design-system/page-header";
 import { backLinkClass } from "@/components/design-system/back-link";
 import { RefreshOnSave } from "@/components/save/refresh-on-save";
 import { leaveWithoutSession } from "@/lib/auth/session-redirect";
-import { pageV2 } from "@/components/v2me/server";
+import { uiV2Role } from "@/lib/ui/v2-server";
 import { JourneyV2 } from "./journey-v2";
 
 export const metadata: Metadata = { title: "My journey" };
@@ -67,7 +67,7 @@ export default async function JourneyPage() {
     { icon: <Target className="size-5" aria-hidden />, label: "Practice done", value: String(practiceCount), sub: "sessions and drills" },
   ];
 
-  if (await pageV2(session.profile.role)) {
+  if (await uiV2Role(session.profile.role)) {
     return (
       <>
         <RefreshOnSave kinds={["learn", "complete", "progress"]} />

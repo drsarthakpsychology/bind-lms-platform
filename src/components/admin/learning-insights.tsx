@@ -102,7 +102,7 @@ function LabCard({ l }: { l: LabInsight }) {
   );
 }
 
-export function LearningInsightsView({ data, csvHref }: { data: LearningInsights; csvHref: string }) {
+export function LearningInsightsView({ data, csvHref, v2 = false }: { data: LearningInsights; csvHref: string; /** Admin v2: no numbered eyebrows, smaller section headings. */ v2?: boolean }) {
   const { students, started } = data;
   const finished = data.modules.reduce((a, m) => a + m.completed, 0);
   const labRuns = data.lab.reduce((a, l) => a + l.runs, 0);
@@ -155,8 +155,8 @@ export function LearningInsightsView({ data, csvHref }: { data: LearningInsights
       ) : null}
 
       <section aria-labelledby="li-modules" className="space-y-3">
-        <SectionEyebrow index="01">Course</SectionEyebrow>
-        <h2 id="li-modules" className="text-h2">
+        {v2 ? null : <SectionEyebrow index="01">Course</SectionEyebrow>}
+        <h2 id="li-modules" className={v2 ? "type-h3" : "text-h2"}>
           Modules
         </h2>
         <ul className={cn(card, "space-y-4")}>
@@ -167,8 +167,8 @@ export function LearningInsightsView({ data, csvHref }: { data: LearningInsights
       </section>
 
       <section aria-labelledby="li-hard" className="space-y-3">
-        <SectionEyebrow index="02">Hard spots</SectionEyebrow>
-        <h2 id="li-hard" className="text-h2">
+        {v2 ? null : <SectionEyebrow index="02">Hard spots</SectionEyebrow>}
+        <h2 id="li-hard" className={v2 ? "type-h3" : "text-h2"}>
           Where the class <em className="font-serif font-normal italic">struggles</em>
         </h2>
         <div className="grid grid-cols-[minmax(0,1fr)] gap-4 lg:grid-cols-2">
@@ -218,8 +218,8 @@ export function LearningInsightsView({ data, csvHref }: { data: LearningInsights
       </section>
 
       <section aria-labelledby="li-lab" className="space-y-3">
-        <SectionEyebrow index="03">Psychology Lab</SectionEyebrow>
-        <h2 id="li-lab" className="text-h2">
+        {v2 ? null : <SectionEyebrow index="03">Psychology Lab</SectionEyebrow>}
+        <h2 id="li-lab" className={v2 ? "type-h3" : "text-h2"}>
           Class results
         </h2>
         <p className="text-sm text-muted-foreground">Averages of each student&apos;s latest run. Use them in class.</p>
@@ -238,9 +238,9 @@ export function LearningInsightsView({ data, csvHref }: { data: LearningInsights
       </section>
 
       <section aria-labelledby="li-students" className="space-y-3">
-        <SectionEyebrow index="04">Students</SectionEyebrow>
+        {v2 ? null : <SectionEyebrow index="04">Students</SectionEyebrow>}
         <div className="flex flex-wrap items-center justify-between gap-3">
-          <h2 id="li-students" className="text-h2">
+          <h2 id="li-students" className={v2 ? "type-h3" : "text-h2"}>
             Every student
           </h2>
           <a

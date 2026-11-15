@@ -1,26 +1,20 @@
 import { drugFromSlug, compareDrugs, type CompareRow } from "@/lib/psychopharm/store";
 import { STANDING_NOTICE } from "@/lib/psychopharm/forbidden-phrases";
+import { COMPARE_FIELDS } from "@/lib/psychopharm/compare-fields";
 import Link from "next/link";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { PsychSearch } from "@/components/psychopharm/psych-search";
 import { MobileHeader } from "@/components/mobile/mobile-header";
+import { PageFrame, Row, RowList, Section } from "@/components/ds";
+import { ListHead } from "@/components/play/parts";
+import { uiV2 } from "@/lib/ui/v2-server";
 import { MobileSection } from "@/components/mobile/mobile-section";
 import { MobileListItem } from "@/components/mobile/mobile-list-item";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
-/** One field at a time: the mobile comparison unit (T32). */
-const FIELDS: Array<{ label: string; key: keyof CompareRow }> = [
-  { label: "Class", key: "class" },
-  { label: "Band", key: "band_label" },
-  { label: "Purpose at this dose", key: "purpose" },
-  { label: "Mechanism", key: "mechanism" },
-  { label: "Dose range", key: "dose_range" },
-  { label: "How quickly it starts working", key: "onset" },
-  { label: "Half-life (how long it stays)", key: "half_life" },
-  { label: "Main side effects / watch", key: "side_effects" },
-  { label: "Published equivalence", key: "published_equivalence" },
-];
+/** One field at a time: the mobile comparison unit (T32). Shared with the mobile app. */
+const FIELDS = COMPARE_FIELDS;
 
 function compareHref(slugs: string[], field?: string): string {
   const base = slugs
@@ -50,6 +44,29 @@ export default async function ComparePage({
 
   const showAll = sp.field === "all";
   const fieldIndex = Math.min(Math.max(Number(sp.field) || 0, 0), FIELDS.length - 1);
+
+  if (await uiV2()) {
+    // New design: the same picker and comparison, in the plain frame (no boxes around the words).
+    return (
+      <PageFrame width="reading">
+        <ListHead back={{ href: "/practice/medicines", label: "Medicines" }} tag="Library" title="Compare at a dose" lead="Each drug is shown at its band. The differences are what matter." />
+        <Section title={generic.length >= 2 ? "Add another drug" : "Pick drugs to compare"}>
+          <p className="type-small text-muted-foreground">{generic.length ? `Comparing ${generic.length} of 5.` : "Search for a drug to add it; pick at least two."}</p>
+          <PsychSearch compareTo={slugs} className="w-full" />
+        </Section>
+        {rows.length >= 2 ? (
+          <CompareFlow rows={rows} slugs={slugs} fieldIndex={fieldIndex} showAll={showAll} />
+        ) : (
+          <Section title="Or start from a common pair" level={3}>
+            <RowList>
+              <Row href="/tools/psychopharm/compare?a=risperidone&b=olanzapine" title="Risperidone and olanzapine" meta="Antipsychotics" />
+            </RowList>
+          </Section>
+        )}
+        <p className="max-w-[70ch] type-small text-muted-foreground">{STANDING_NOTICE}</p>
+      </PageFrame>
+    );
+  }
 
   return (
     <div className="mx-auto max-w-3xl space-y-6 py-6">

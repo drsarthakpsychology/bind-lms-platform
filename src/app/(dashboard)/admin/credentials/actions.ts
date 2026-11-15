@@ -9,6 +9,7 @@ import { putCredentialAsset, newCredentialId } from "@/lib/achievements/storage"
 import { emailCustomCertificate, notifyCredential } from "@/lib/achievements/notify";
 import { CUSTOM_SIGNATORY, cleanEmail, cleanPhone } from "@/lib/achievements/linkedin";
 import { getObjectBufferR2 } from "@/lib/media/r2";
+import { awardBadgeManually, type ManualAwardReport } from "@/lib/achievements/manual-award";
 
 export type CustomCertInput = {
   userId: string;
@@ -277,4 +278,18 @@ export async function previewCertificateToAnyone(input: Omit<AnyoneCertInput, "e
     signatory: CUSTOM_SIGNATORY,
   });
   return { error: null, dataUrl: `data:application/pdf;base64,${pdf.toString("base64")}` };
+}
+
+/**
+ * Certificates, Issue, Badge: give a badge by hand to one student or many.
+ * Someone who already holds it is skipped. Super Admin only, audited.
+ */
+export async function awardBadge(achievementId: string, userIds: string[]): Promise<ManualAwardReport> {
+  const me = await requireSuperAdmin();
+  if (!me) return { error: "Only the Super Admin can give badges.", awarded: [], skipped: [] };
+  const report = await awardBadgeManually(createAdminClient(), { id: me.id, email: me.email }, achievementId, userIds);
+  revalidatePath("/admin/credentials/issued");
+  revalidatePath("/achievements");
+  for (const a of report.awarded) revalidatePath(`/admin/students/${a.userId}`);
+  return report;
 }

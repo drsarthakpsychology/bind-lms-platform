@@ -5,9 +5,8 @@ import { ArrowRight, Check } from "lucide-react";
 import { emptyState, type LearnState } from "@/lib/learn/engine";
 import { initLearnStore, useLearnState } from "@/lib/learn/store";
 import { cn } from "@/lib/utils";
-import { useUiV2 } from "@/components/learn-v2/ui-v2";
-import { NextStep } from "@/components/learn-v2/parts";
-import { Row, RowList, Section } from "@/components/ds";
+import { useUiV2 } from "@/components/ds/v2";
+import { NextStep, Row, RowList, Section } from "@/components/ds";
 
 export type NoteCard = { id: string; title: string; emoji: string; tagline: string; meta: string };
 export type NoteBlock = { title: string; notes: NoteCard[] };

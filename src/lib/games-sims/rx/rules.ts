@@ -9,6 +9,8 @@ import type { JourneyData } from "@/lib/study/types";
 export type Kind = "chain" | "mystery" | "puzzle" | "review";
 export type StepKey = "cls" | "mech" | "ae" | "mon";
 export type Mode = "mixed" | Kind;
+/** The run modes, in the order the game offers them (shared with the mobile app). */
+export const RX_MODES: Mode[] = ["mixed", "chain", "mystery", "puzzle", "review"];
 
 export const STEPS: { key: StepKey; label: string; ask: string }[] = [
   { key: "cls", label: "Class", ask: "What kind of medicine is it?" },

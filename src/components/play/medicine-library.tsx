@@ -6,6 +6,8 @@ import { useRouter } from "next/navigation";
 import { Search, X } from "lucide-react";
 import { searchMeds, type MedIndexRow } from "@/lib/meds/search";
 import type { MedGroup } from "@/lib/meds/types";
+import { GROUP_COLOR } from "@/lib/meds/colors";
+import { Chai } from "@/components/learn/chai";
 import { cn } from "@/lib/utils";
 
 /**
@@ -70,10 +72,12 @@ export function MedicineLibrary({ rows, groups, doses }: { rows: MedIndexRow[]; 
             onClick={() => setGroup(g)}
             aria-pressed={group === g}
             className={cn(
-              "inline-flex h-11 items-center rounded-full border-[1.5px] px-4 type-small font-semibold whitespace-nowrap outline-none transition-colors duration-[var(--ds-state)] ease-[var(--ds-ease)] focus-visible:ring-2 focus-visible:ring-ring",
+              "inline-flex h-11 items-center gap-2 rounded-full border-[1.5px] px-4 type-small font-semibold whitespace-nowrap outline-none transition-colors duration-[var(--ds-state)] ease-[var(--ds-ease)] focus-visible:ring-2 focus-visible:ring-ring",
               group === g ? "border-foreground bg-foreground text-background" : "border-[var(--ds-card-line)] hover:border-foreground",
             )}
           >
+            {/* The family's colour: the same one as the spine on its rows below. */}
+            {g !== "All" ? <span aria-hidden className="size-2.5 shrink-0 rounded-full" style={{ background: GROUP_COLOR[g] }} /> : null}
             {g}
           </button>
         ))}
@@ -87,7 +91,7 @@ export function MedicineLibrary({ rows, groups, doses }: { rows: MedIndexRow[]; 
       {found.length ? (
         <div className="min-w-0">
           {/* Column names: wide screens only (on phones each row carries its own words). */}
-          <div aria-hidden className={cn("hidden border-b border-[var(--ds-hairline)] pb-2 type-caption text-muted-foreground", cols)}>
+          <div aria-hidden className={cn("hidden border-b border-[var(--ds-hairline)] pb-2 pl-3 type-pix text-muted-foreground", cols)}>
             <span>Medicine</span>
             <span>Class</span>
             <span className="text-right">Usual dose</span>
@@ -97,8 +101,9 @@ export function MedicineLibrary({ rows, groups, doses }: { rows: MedIndexRow[]; 
               <li key={m.id} className="min-w-0">
                 <Link
                   href={`/practice/medicines/${m.id}`}
+                  style={{ "--spine": GROUP_COLOR[m.group] } as React.CSSProperties}
                   className={cn(
-                    "group/med -mx-2 flex min-h-14 min-w-0 flex-col gap-0.5 rounded-lg px-2 py-3 outline-none transition-colors duration-[var(--ds-state)] ease-[var(--ds-ease)] hover:bg-[var(--ds-tint)] focus-visible:ring-2 focus-visible:ring-ring active:bg-[var(--ds-tint)] md:items-baseline",
+                    "group/med ds-spine -mx-2 flex min-h-14 min-w-0 flex-col gap-0.5 rounded-lg py-3 pr-2 pl-5 hover:before:scale-x-150 outline-none transition-colors duration-[var(--ds-state)] ease-[var(--ds-ease)] hover:bg-[var(--ds-tint)] focus-visible:ring-2 focus-visible:ring-ring active:bg-[var(--ds-tint)] md:items-baseline",
                     cols,
                   )}
                 >
@@ -108,11 +113,11 @@ export function MedicineLibrary({ rows, groups, doses }: { rows: MedIndexRow[]; 
                       {/* Phones: the dose sits beside the name. */}
                       {doses[m.id] ? <span className="shrink-0 type-small font-semibold type-num md:hidden">{doses[m.id]}</span> : null}
                     </span>
-                    <span className="type-small text-muted-foreground [overflow-wrap:anywhere] md:hidden">{m.cls}</span>
+                    <span className="type-small font-semibold text-link [overflow-wrap:anywhere] md:hidden">{m.cls}</span>
                     {m.line ? <span className="type-small text-muted-foreground [overflow-wrap:anywhere]">{m.line}</span> : null}
                     {m.brands.length ? <span className="type-caption text-muted-foreground [overflow-wrap:anywhere]">{m.brands.join(" · ")}</span> : null}
                   </span>
-                  <span className="hidden min-w-0 type-small [overflow-wrap:anywhere] md:block">{m.cls}</span>
+                  <span className="hidden min-w-0 type-small font-semibold text-link [overflow-wrap:anywhere] md:block">{m.cls}</span>
                   <span className="hidden min-w-0 text-right type-small font-semibold type-num [overflow-wrap:anywhere] md:block">{doses[m.id] ?? ""}</span>
                 </Link>
               </li>
@@ -120,6 +125,8 @@ export function MedicineLibrary({ rows, groups, doses }: { rows: MedIndexRow[]; 
           </ul>
         </div>
       ) : (
+        <div className="flex min-w-0 items-start gap-4">
+          <Chai mood="think" size={64} className="shrink-0" still />
         <p className="max-w-[60ch] type-body text-muted-foreground">
           Nothing found. Try the generic name, a brand, or a condition like &quot;OCD&quot;. Rarer medicines are in the{" "}
           <Link href="/tools/psychopharm/learn" className="font-semibold text-link underline underline-offset-4">
@@ -127,6 +134,7 @@ export function MedicineLibrary({ rows, groups, doses }: { rows: MedIndexRow[]; 
           </Link>
           .
         </p>
+        </div>
       )}
     </div>
   );

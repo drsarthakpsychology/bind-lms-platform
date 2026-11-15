@@ -13,7 +13,7 @@ import { LogoutButton } from "@/components/navigation/logout-button";
 
 const ROLE_LABEL: Record<string, string> = { admin: "Admin", view_admin: "Admin (view only)", student: "Student", alumni: "Alumni" };
 import { leaveWithoutSession } from "@/lib/auth/session-redirect";
-import { pageV2 } from "@/components/v2me/server";
+import { uiV2Role } from "@/lib/ui/v2-server";
 import { LEGAL } from "@/lib/legal-constants";
 import { SettingsV2 } from "./settings-v2";
 
@@ -42,7 +42,7 @@ export default async function SettingsPage() {
   const { email, role } = session.profile;
   const roleLabel = ROLE_LABEL[role] ?? role;
 
-  if (await pageV2(role)) {
+  if (await uiV2Role(role)) {
     return (
       <SettingsV2
         email={email}

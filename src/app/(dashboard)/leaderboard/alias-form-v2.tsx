@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { Check } from "lucide-react";
-import { fieldClass, labelClass, quietButton } from "@/components/v2me/parts";
+import { fieldClass, labelClass, quietButton } from "@/components/ds";
 import { cn } from "@/lib/utils";
 import { saveAlias } from "./actions";
 

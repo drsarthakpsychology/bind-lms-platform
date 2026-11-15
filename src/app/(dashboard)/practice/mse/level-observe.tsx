@@ -97,7 +97,7 @@ export function ObserveLevel({
       </div>
 
       <div>
-        <OnceHint id="mse-observe" className="text-small text-muted-foreground">
+        <OnceHint id="mse-observe" className="max-w-[70ch] text-small text-muted-foreground">
           Now describe what you observed. Diagnostic words are conclusions: &quot;depressed&quot;,
           &quot;anxious&quot;, &quot;manipulative&quot;. Behaviour words are observations. Target:{" "}
           <span className="font-semibold">100 words with zero labels</span>.
@@ -118,7 +118,7 @@ export function ObserveLevel({
           type="button"
           onClick={check}
           disabled={wordCount < 20}
-          className="rounded-md border-2 border-border bg-primary px-4 py-2 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px disabled:opacity-50"
+          className="min-h-11 rounded-md border-2 border-border bg-primary px-4 py-2 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px disabled:opacity-50"
         >
           Score my description
         </button>

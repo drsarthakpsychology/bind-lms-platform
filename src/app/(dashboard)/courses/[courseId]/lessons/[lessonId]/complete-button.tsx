@@ -8,7 +8,7 @@ import { ArrowRight } from "lucide-react";
 import { completeAndAdvance } from "./actions";
 import { haptic } from "@/lib/haptics";
 import { Button } from "@/components/ui/button";
-import { useUiV2 } from "@/components/learn-v2/ui-v2";
+import { useUiV2 } from "@/components/ds/v2";
 
 /**
  * Client wrapper for the single forward action on a lesson.

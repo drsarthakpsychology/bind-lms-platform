@@ -1084,7 +1084,7 @@ export function VideoPlayer({
                   if (v && v.currentTime > 0) recoverRef.current = { at: v.currentTime, play: true };
                   setLoadKey((k) => k + 1);
                 }}
-                className="mt-4 inline-flex h-9 items-center gap-1.5 rounded-md border-2 border-white/40 bg-white/10 px-4 text-sm font-medium text-white transition-colors hover:bg-white/20"
+                className="mt-4 inline-flex h-9 items-center gap-1.5 rounded-md border-2 border-white/40 bg-white/10 px-4 text-sm v2:h-11 v2:px-5 font-medium text-white transition-colors hover:bg-white/20"
               >
                 <RotateCcw className="size-4" aria-hidden />
                 Retry

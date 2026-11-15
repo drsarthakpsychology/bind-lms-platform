@@ -5,7 +5,7 @@ import Link from "next/link";
 import { ArrowLeft, ArrowRight, Check, ListOrdered } from "lucide-react";
 import { ViewToggle } from "@/components/learn/view-toggle";
 import { MobileBottomSheet } from "@/components/mobile/mobile-bottom-sheet";
-import { Crumb } from "@/components/learn-v2/parts";
+import { BackLink } from "@/components/ds";
 import { cn } from "@/lib/utils";
 import { CardDeck, TestRunner } from "./interactive";
 import { SectionMarks } from "./marks";
@@ -42,7 +42,7 @@ export function SectionReaderV2(props: SectionReaderProps) {
     <div data-ds="page" className="ds-page mx-auto w-full min-w-0 max-w-6xl px-1 sm:px-0 md:grid md:grid-cols-[13rem_minmax(0,1fr)] md:gap-10 lg:grid-cols-[16rem_minmax(0,1fr)] lg:gap-16">
       <aside className="hidden md:block" aria-label="Module contents">
         <div className="sticky top-[calc(var(--top-h)+1.5rem)] flex max-h-[calc(100dvh-var(--top-h)-3rem)] flex-col gap-2">
-          <Crumb href={`/study/${moduleId}`}>Module {moduleNum}</Crumb>
+          <BackLink href={`/study/${moduleId}`}>Module {moduleNum}</BackLink>
           <p className="type-small text-muted-foreground type-num">
             {readCount} of {readTotal} read
           </p>
@@ -56,7 +56,7 @@ export function SectionReaderV2(props: SectionReaderProps) {
         <div ref={topRef} className="scroll-mt-shell" />
         {/* Phones: the way back and the section list, one quiet row. */}
         <div className="mb-2 flex min-w-0 items-center justify-between gap-3 md:hidden">
-          <Crumb href={`/study/${moduleId}`}>Module {moduleNum}</Crumb>
+          <BackLink href={`/study/${moduleId}`}>Module {moduleNum}</BackLink>
           <button
             type="button"
             onClick={() => setTocOpen(true)}
@@ -110,12 +110,12 @@ export function SectionReaderV2(props: SectionReaderProps) {
           ) : null}
           {/* One toolbar row: explanation style, bookmark, my note. */}
           {!section.isTest ? (
-            <SectionMarks key={section.id} owner={owner} moduleId={moduleId} sectionId={section.id} sectionLabel={`${section.num} ${section.title}`} lead={<ViewToggle className="flex w-full border-[1.5px] border-[var(--ds-card-line)] bg-transparent sm:inline-flex sm:w-auto" />} />
-          ) : (
+            <SectionMarks key={section.id} owner={owner} moduleId={moduleId} sectionId={section.id} sectionLabel={`${section.num} ${section.title}`} lead={section.views ? <ViewToggle className="flex w-full border-[1.5px] border-[var(--ds-card-line)] bg-transparent sm:inline-flex sm:w-auto" /> : undefined} />
+          ) : section.views ? (
             <div>
               <ViewToggle className="border-[1.5px] border-[var(--ds-card-line)] bg-transparent" />
             </div>
-          )}
+          ) : null}
         </header>
 
         {section.levelCheck ? (

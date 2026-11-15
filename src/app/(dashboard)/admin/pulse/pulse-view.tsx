@@ -3,6 +3,8 @@
 import * as React from "react";
 import { haptic } from "@/lib/haptics";
 import { Radar, AlertTriangle, Rocket } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { Block, Empty, Figures, Notice, btn, table } from "../_v2/kit";
 
 /**
  * Cohort Pulse: the human dashboard. Drifting / Flying lists, an active
@@ -16,7 +18,10 @@ export function PulseView({
   activeNow = [],
   weeks = [],
   curriculumFlag = false,
+  v2 = false,
 }: {
+  /** Admin v2: numbers in one line, the weeks as a table, quiet students as rows. No boxes. */
+  v2?: boolean;
   drifting: Array<{ email: string; daysSilent: number }>;
   flying: string[];
   total: number;
@@ -46,6 +51,86 @@ export function PulseView({
     setNudged((n) => ({ ...n, [email]: state }));
   }
   const NUDGE_LABEL = { sending: "Sending…", sent: "Sent", "not-set-up": "Email not set up", failed: "Failed. Try again" } as const;
+
+  if (v2) {
+    return (
+      <div className="flex min-w-0 flex-col gap-[var(--ds-6)]">
+        <Figures
+          items={[
+            { value: activeNow.length, label: "on VIBHA now" },
+            { value: `${active} of ${total}`, label: "active this week" },
+            { value: drifting.length, label: "quiet a week or more" },
+            { value: flying.length, label: "active in the last 2 days" },
+          ]}
+        />
+        {activeNow.length ? <p className="type-small text-muted-foreground [overflow-wrap:anywhere]">On now: {activeNow.join(", ")}</p> : null}
+        {curriculumFlag ? (
+          <Notice>Check-in responses are dropping while average workload is rising. That is a curriculum problem, not a motivation problem: fix the load first.</Notice>
+        ) : null}
+
+        <Block title="Quiet students" count={drifting.length || undefined}>
+          {drifting.length === 0 ? (
+            <Empty>No one has gone quiet.</Empty>
+          ) : (
+            <ul className="flex min-w-0 flex-col divide-y divide-[var(--ds-hairline)] border-y border-[var(--ds-hairline)]">
+              {drifting.map((d) => (
+                <li key={d.email} className="flex min-w-0 flex-wrap items-center justify-between gap-x-4 gap-y-2 py-2.5">
+                  <span className="min-w-0 flex-1 basis-56 type-small">
+                    <span className="block font-semibold [overflow-wrap:anywhere]">{d.email}</span>
+                    <span className="block text-muted-foreground type-num">{d.daysSilent} days quiet</span>
+                  </span>
+                  <button type="button" onClick={() => void nudge(d.email)} disabled={nudged[d.email] === "sending" || nudged[d.email] === "sent"} className={btn.quiet}>
+                    {nudged[d.email] ? NUDGE_LABEL[nudged[d.email]] : "Send nudge"}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          )}
+        </Block>
+
+        {weeks.length > 0 ? (
+          <Block title="Check-ins by week">
+            <div className="min-w-0 overflow-x-auto rounded-sm outline-none focus-visible:ring-2 focus-visible:ring-ring" tabIndex={0} role="region" aria-label="Check-ins by week, scrolls sideways">
+            <table className={cn(table.root, "min-w-[22rem]")}>
+              <thead>
+                <tr>
+                  <th scope="col" className={table.th}>Week</th>
+                  <th scope="col" className={cn(table.th, "text-right")}>Answers</th>
+                  <th scope="col" className={cn(table.th, "text-right")}>Workload</th>
+                  <th scope="col" className={cn(table.th, "text-right")}>Energy</th>
+                  <th scope="col" className={cn(table.th, "text-right")}>Ready</th>
+                </tr>
+              </thead>
+              <tbody>
+                {weeks.map((w) => (
+                  <tr key={w.week} className={table.tr}>
+                    <td className={cn(table.td, "whitespace-nowrap type-num")}>{w.week}</td>
+                    <td className={cn(table.td, table.num)}>{w.n}</td>
+                    <td className={cn(table.td, table.num)}>{w.workload.toFixed(1)}</td>
+                    <td className={cn(table.td, table.num)}>{w.energy.toFixed(1)}</td>
+                    <td className={cn(table.td, table.num)}>{w.preparedness.toFixed(1)}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            </div>
+          </Block>
+        ) : null}
+
+        <Block title="Ahead of the pack" count={flying.length || undefined}>
+          {flying.length === 0 ? (
+            <Empty>No one is ahead yet.</Empty>
+          ) : (
+            <ul className="flex min-w-0 flex-col divide-y divide-[var(--ds-hairline)] border-y border-[var(--ds-hairline)]">
+              {flying.map((f) => (
+                <li key={f} className="py-2.5 type-small [overflow-wrap:anywhere]">{f}</li>
+              ))}
+            </ul>
+          )}
+        </Block>
+      </div>
+    );
+  }
 
   return (
     <div className="space-y-6">

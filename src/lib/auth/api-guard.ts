@@ -25,7 +25,8 @@ function deny(d: Exclude<ApiDecision, { ok: true }>): NextResponse {
   return NextResponse.json({ error: MESSAGE[d.reason], reason: d.reason }, { status: 403 });
 }
 
-async function evaluate(profile: Profile, gates: readonly ApiGate[]): Promise<ApiDecision> {
+/** Loads this student's switched-off sections and the flags, then decides. Shared with the mobile app's guard. */
+export async function evaluate(profile: Profile, gates: readonly ApiGate[]): Promise<ApiDecision> {
   const needsDetail = profile.role !== "admin" && gates.length > 0;
   const [blocks, flags] = await Promise.all([
     // Blocks are per-student (People → Access), loaded the same way the

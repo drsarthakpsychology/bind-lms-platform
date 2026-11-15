@@ -5,9 +5,8 @@ import Link from "next/link";
 import { ArrowRight, BookOpen, Check, ChevronRight, FileText, Lock, Play } from "lucide-react";
 
 import { STATE_LABEL, type OverviewLesson, type OverviewModel } from "@/components/course/course-overview-view";
-import { HeroButton, PageFrame, Row, RowList, Section } from "@/components/ds";
+import { HeroButton, PageFrame, Row, RowList, Section, Choices, BackLink, ProgressLine, EmptyLine, TabRow } from "@/components/ds";
 import { cn } from "@/lib/utils";
-import { Choices, Crumb, ProgressLine, Quiet, TabRow } from "./parts";
 
 type Tab = "lectures" | "materials" | "assignments";
 type Filter = "all" | "todo" | "watched";
@@ -128,7 +127,7 @@ export function CourseV2({ model }: { model: OverviewModel }) {
   return (
     <PageFrame className="!gap-6 md:!gap-8">
       <header className="flex min-w-0 flex-col gap-1">
-        {model.backHref ? <Crumb href={model.backHref}>All courses</Crumb> : null}
+        {model.backHref ? <BackLink href={model.backHref}>All courses</BackLink> : null}
         <h1 className="type-h1 [overflow-wrap:anywhere]">{model.title}</h1>
         {!model.published ? <p className="type-small text-muted-foreground">Draft, only you can see this</p> : null}
         {mine.length === 1 ? <p className="type-small text-muted-foreground">Your cohort: {mine[0].name}</p> : null}
@@ -185,13 +184,13 @@ export function CourseV2({ model }: { model: OverviewModel }) {
               ))}
               {weeks.length === 0 ? (
                 model.empty ? (
-                  <Quiet title="No lectures yet">Lectures appear here as soon as they are added.</Quiet>
+                  <EmptyLine title="No lectures yet">Lectures appear here as soon as they are added.</EmptyLine>
                 ) : cohort && filter === "all" ? (
-                  <Quiet title="No lectures here yet">Lectures for this cohort appear here as they are added.</Quiet>
+                  <EmptyLine title="No lectures here yet">Lectures for this cohort appear here as they are added.</EmptyLine>
                 ) : filter === "watched" ? (
-                  <Quiet title="Nothing watched yet">Lectures you finish show up here.</Quiet>
+                  <EmptyLine title="Nothing watched yet">Lectures you finish show up here.</EmptyLine>
                 ) : (
-                  <Quiet title="All caught up">You have watched everything that is open.</Quiet>
+                  <EmptyLine title="All caught up">You have watched everything that is open.</EmptyLine>
                 )
               ) : null}
             </>
@@ -232,7 +231,7 @@ export function LecturesListV2({ models }: { models: OverviewModel[] }) {
   return (
     <PageFrame title="Lectures" className="!gap-6 md:!gap-8">
       {models.length === 0 ? (
-        <Quiet title="No courses yet">Your course appears here when it is available.</Quiet>
+        <EmptyLine title="No courses yet">Your course appears here when it is available.</EmptyLine>
       ) : (
         <div className="grid min-w-0 grid-cols-[minmax(0,1fr)] gap-8 md:grid-cols-[minmax(0,1fr)_19rem] md:gap-12 lg:grid-cols-[minmax(0,1fr)_22rem] lg:gap-16">
           {lead ? (

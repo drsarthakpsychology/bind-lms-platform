@@ -12,6 +12,10 @@ import { AddPeopleForm, CohortSettings, LessonSharing, MemberActions } from "@/c
 import { CohortCalendarForm } from "../../tools/cohort-calendar-form";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
+import { readFlags } from "@/lib/flags";
+import { uiV2For } from "@/lib/ui/v2";
+import { btn, toneOf, Empty } from "../../_v2/kit";
+import { CohortDetailV2, CohortMembersV2, CohortMessagesV2, CohortOverviewV2, CohortProgressListV2, CohortSettingsV2 } from "../../_v2/cohorts";
 
 export const dynamic = "force-dynamic";
 
@@ -56,6 +60,87 @@ export default async function CohortPage({ params, searchParams }: { params: Pro
   const done = people.reduce((a, { r }) => a + (r?.lecturesDone ?? 0), 0);
   const avail = people.reduce((a, { r }) => a + (r?.lecturesAvailable ?? 0), 0);
   const pct = avail ? Math.round((done / avail) * 100) : 0;
+
+  if (uiV2For(await readFlags(), me.role)) {
+    const day = (d: string) => new Date(d).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" });
+    const notifyHref = `/admin/emails?folder=notify&to=${encodeURIComponent(emails)}`;
+    return (
+      <CohortDetailV2
+        id={id}
+        name={cohort.name}
+        status={cohort.status}
+        lead={`${n} ${n === 1 ? "person" : "people"} · ${lessonIds.size} lectures shared${cohort.starts_on ? ` · starts ${day(cohort.starts_on)}` : ""}`}
+        tab={tab}
+        tabs={TABS.map((t) => ({ id: t.id, label: t.label, count: t.id === "members" ? n : t.id === "lectures" ? lessonIds.size : undefined }))}
+        actions={
+          canWrite ? (
+            <>
+              <Link href={notifyHref} className={btn.quiet}>Message cohort</Link>
+              <AddPeopleButton cohortId={id} size="default" />
+            </>
+          ) : undefined
+        }
+      >
+        {tab === "overview" ? (
+          <CohortOverviewV2
+            figures={[
+              { value: `${week}/${n}`, label: "active this week" },
+              { value: `${pct}%`, label: "of their lectures finished" },
+              { value: behind, label: "falling behind", href: `/admin/cohorts/${id}?tab=progress` },
+              { value: never, label: "have not signed in yet", href: `/admin/cohorts/${id}?tab=members` },
+            ]}
+            links={[
+              ...courses.map((c) => ({ href: `/admin/courses/${c.id}?cohort=${id}`, label: cohort.status === "ended" ? `Course: ${c.title}` : `Upload lectures for ${cohort.name} in ${c.title}` })),
+              { href: `/admin/cohorts/${id}?tab=progress`, label: "See who is behind" },
+              { href: `/doubts?cohort=${id}`, label: "Their doubts" },
+              { href: `/admin/access?cohort=${id}`, label: "Switch sections on or off for this cohort" },
+            ]}
+          />
+        ) : null}
+        {tab === "members" ? (
+          <CohortMembersV2
+            addLabel={`Add people to ${cohort.name}`}
+            addForm={canWrite ? <AddPeopleForm cohorts={cohorts.map((c) => ({ id: c.id, name: c.name }))} defaultCohortId={id} /> : undefined}
+            members={people.map(({ m, r }) => ({
+              id: m.userId,
+              name: r?.name || m.name || m.email,
+              email: m.email,
+              roll: r?.roll ?? null,
+              account: r ? { label: ACCOUNT_LABEL[r.account], tone: toneOf(ACCOUNT_TONE[r.account]) } : null,
+              scope: m.scope === "full" ? "Full platform" : "Lectures only",
+              detailsPending: !m.detailsDone,
+              actions: canWrite ? <MemberActions cohortId={id} userId={m.userId} email={m.email} setUp={m.setUp} /> : undefined,
+            }))}
+          />
+        ) : null}
+        {tab === "lectures" ? (canWrite ? <LessonSharing cohortId={id} cohortName={cohort.name} lessons={lessons} sharedIds={[...lessonIds]} /> : <Empty>{lessonIds.size} lectures are shared with this cohort.</Empty>) : null}
+        {tab === "progress" ? (
+          <CohortProgressListV2
+            people={[...people]
+              .sort((a, b) => (a.r ? a.r.lecturesDone / Math.max(1, a.r.lecturesAvailable) : 0) - (b.r ? b.r.lecturesDone / Math.max(1, b.r.lecturesAvailable) : 0))
+              .map(({ m, r }) => ({
+                id: m.userId,
+                name: r?.name || m.email,
+                meta: r ? `${hm(r.min7)} this week · last seen ${agoLabel(r.lastSeen)}` : "No activity yet",
+                done: r?.lecturesDone ?? 0,
+                available: r?.lecturesAvailable ?? 0,
+                pct: r && r.lecturesAvailable ? Math.round((r.lecturesDone / r.lecturesAvailable) * 100) : 0,
+              }))}
+          />
+        ) : null}
+        {tab === "messages" ? (
+          <CohortMessagesV2
+            items={[
+              { href: notifyHref, title: "Notification to this cohort", meta: "On their bell inside VIBHA. Nobody in another cohort gets it." },
+              { href: `/admin/emails?folder=compose&to=${encodeURIComponent(emails)}`, title: "Email this cohort", meta: "Formatted, plain text or HTML." },
+              { href: `/doubts?cohort=${id}`, title: "Their doubts board", meta: "Answer questions from this cohort." },
+            ]}
+          />
+        ) : null}
+        {tab === "settings" ? (canWrite ? <CohortSettingsV2 settings={<CohortSettings cohort={cohort} />} calendar={<CohortCalendarForm />} /> : <Empty>Only the Super Admin can change cohort settings.</Empty>) : null}
+      </CohortDetailV2>
+    );
+  }
 
   const pill = "inline-flex h-10 items-center gap-1.5 rounded-md border-2 border-foreground px-4 text-sm font-bold";
 

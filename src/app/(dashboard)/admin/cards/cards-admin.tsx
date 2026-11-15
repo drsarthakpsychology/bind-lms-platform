@@ -1,9 +1,10 @@
 "use client";
 
 import * as React from "react";
-import { ChevronDown, ChevronUp } from "lucide-react";
+import { Check, ChevronDown, ChevronUp, Plus } from "lucide-react";
 import { haptic } from "@/lib/haptics";
 import { cn } from "@/lib/utils";
+import { Empty, Status, btn, control, type Tone } from "../_v2/kit";
 
 export interface CardRow {
   id: string;
@@ -38,7 +39,7 @@ const SOURCE_LABELS: Record<CardRow["source"], string> = {
 };
 
 /** Faculty review of the auto-drafted Rounds cards. */
-export function CardsAdmin({ cards }: { cards: CardRow[] }) {
+export function CardsAdmin({ cards, v2 = false }: { cards: CardRow[]; v2?: boolean }) {
   const [rows, setRows] = React.useState<CardRow[]>(cards);
   const [busy, setBusy] = React.useState(false);
   const [editing, setEditing] = React.useState<string | null>(null);
@@ -164,6 +165,96 @@ export function CardsAdmin({ cards }: { cards: CardRow[] }) {
       setNewFront("");
       setNewBack("");
     }
+  }
+
+  if (v2) {
+    const tone: Record<CardRow["status"], Tone> = { draft: "warn", in_review: "info", published: "ok", archived: "quiet" };
+    const addForm = addOpen ? (
+      <CardFields
+        title="New card"
+        front={newFront}
+        back={newBack}
+        onFront={setNewFront}
+        onBack={setNewBack}
+        busy={busy}
+        saveLabel={busy ? "Adding" : "Save card"}
+        onSave={() => void createCard(newFront, newBack)}
+        onCancel={() => setAddOpen(false)}
+      />
+    ) : (
+      <button type="button" onClick={() => setAddOpen(true)} className={`${btn.primary} self-start`}>
+        <Plus aria-hidden /> Add a card
+      </button>
+    );
+    return (
+      <div className="flex min-w-0 flex-col gap-4">
+        {addForm}
+        {rows.length === 0 ? (
+          <Empty>No study cards yet. Cards drafted from lesson transcripts land here for you to check.</Empty>
+        ) : (
+          <ul className="flex min-w-0 flex-col divide-y divide-[var(--ds-hairline)] border-y border-[var(--ds-hairline)]">
+            {rows.map((row, i) => (
+              <li key={row.id} className={cn("flex min-w-0 flex-col gap-2 py-4", row.status === "archived" && "text-muted-foreground")}>
+                {editing === row.id ? (
+                  <CardFields
+                    front={front}
+                    back={back}
+                    onFront={setFront}
+                    onBack={setBack}
+                    busy={busy}
+                    saveLabel="Save"
+                    onSave={() => void saveEdit(row.id)}
+                    onCancel={() => setEditing(null)}
+                  />
+                ) : (
+                  <>
+                    <div className="flex min-w-0 flex-wrap items-center gap-x-3 gap-y-1">
+                      <Status tone={tone[row.status]}>{STATUS_LABELS[row.status]}</Status>
+                      <span className="type-small text-muted-foreground">
+                        {SOURCE_LABELS[row.source]} · {new Date(row.createdAt).toLocaleDateString("en-IN", { day: "numeric", month: "short", timeZone: "Asia/Kolkata" })}
+                      </span>
+                    </div>
+                    <div className="flex min-w-0 max-w-[65ch] flex-col gap-1">
+                      <p className="type-body font-semibold [overflow-wrap:anywhere]">{row.front}</p>
+                      <p className="type-small text-muted-foreground [overflow-wrap:anywhere]">{row.back}</p>
+                    </div>
+                    <div className="flex min-w-0 flex-wrap items-center gap-2 pt-1">
+                      {row.status !== "published" ? (
+                        <button type="button" onClick={() => void act(row.id, { approved: true })} disabled={busy} className={btn.ink}>
+                          <Check aria-hidden /> Approve
+                        </button>
+                      ) : null}
+                      {row.status !== "archived" ? (
+                        <button type="button" onClick={() => void act(row.id, { status: "archived" })} disabled={busy} className={btn.quiet}>
+                          Reject
+                        </button>
+                      ) : null}
+                      <button type="button" onClick={() => startEdit(row)} disabled={busy} className={btn.quiet}>
+                        Edit
+                      </button>
+                      <button type="button" onClick={() => void createCard(row.front, row.back)} disabled={busy} className={btn.ghost}>
+                        Duplicate
+                      </button>
+                      <span className="ml-auto flex items-center gap-1">
+                        <button type="button" onClick={() => void moveCard(row.id, "up")} disabled={busy || i === 0} aria-label={`Move up: ${row.front}`} className={cn(btn.ghost, "w-11 px-0 lg:w-9")}>
+                          <ChevronUp aria-hidden />
+                        </button>
+                        <button type="button" onClick={() => void moveCard(row.id, "down")} disabled={busy || i === rows.length - 1} aria-label={`Move down: ${row.front}`} className={cn(btn.ghost, "w-11 px-0 lg:w-9")}>
+                          <ChevronDown aria-hidden />
+                        </button>
+                        <button type="button" onClick={() => void remove(row.id)} disabled={busy} className={btn.danger}>
+                          Delete
+                        </button>
+                      </span>
+                    </div>
+                  </>
+                )}
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+    );
   }
 
   if (rows.length === 0) {
@@ -336,6 +427,51 @@ function AddCardButton({
           {busy ? "Adding…" : "Save card"}
         </button>
         <button type="button" onClick={() => onOpenChange(false)} className="rounded-md border-2 border-border bg-background px-3 py-1 text-caption font-semibold">
+          Cancel
+        </button>
+      </div>
+    </div>
+  );
+}
+
+/** v2: the front and back fields for a new or edited card. */
+function CardFields({
+  title,
+  front,
+  back,
+  onFront,
+  onBack,
+  busy,
+  saveLabel,
+  onSave,
+  onCancel,
+}: {
+  title?: string;
+  front: string;
+  back: string;
+  onFront: (v: string) => void;
+  onBack: (v: string) => void;
+  busy: boolean;
+  saveLabel: string;
+  onSave: () => void;
+  onCancel: () => void;
+}) {
+  return (
+    <div className="flex min-w-0 max-w-[65ch] flex-col gap-3">
+      {title ? <h2 className="type-h3">{title}</h2> : null}
+      <label className="flex min-w-0 flex-col gap-1">
+        <span className="type-small font-semibold">Front</span>
+        <input value={front} onChange={(e) => onFront(e.target.value)} placeholder="The question or prompt" className={control} />
+      </label>
+      <label className="flex min-w-0 flex-col gap-1">
+        <span className="type-small font-semibold">Back</span>
+        <textarea value={back} onChange={(e) => onBack(e.target.value)} rows={3} placeholder="The answer" className={cn(control, "h-auto py-2 lg:h-auto")} />
+      </label>
+      <div className="flex flex-wrap gap-2">
+        <button type="button" onClick={onSave} disabled={busy || !front.trim() || !back.trim()} className={btn.primary}>
+          {saveLabel}
+        </button>
+        <button type="button" onClick={onCancel} className={btn.quiet}>
           Cancel
         </button>
       </div>

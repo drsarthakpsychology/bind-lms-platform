@@ -6,8 +6,8 @@ import { ArrowLeft, ArrowRight, Check, Loader2, ShieldCheck } from "lucide-react
 import { checkMyDetails, submitMyDetails } from "@/app/(dashboard)/details-actions";
 import { EMPTY_DETAILS, LABELS, OCCUPATIONS, QUALIFICATIONS, STATES, type Details } from "@/lib/profile-details/fields";
 import { cn } from "@/lib/utils";
-import { useUiV2 } from "@/components/v2me/ui-v2";
-import { fieldClass, labelClass, primaryButton, quietButton } from "@/components/v2me/parts";
+import { useUiV2 } from "@/components/ds/v2";
+import { fieldClass, labelClass, primaryButton, quietButton } from "@/components/ds";
 
 type Errors = Partial<Record<keyof Details, string>>;
 

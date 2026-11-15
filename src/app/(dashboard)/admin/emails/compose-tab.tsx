@@ -54,7 +54,10 @@ export function ComposeTab({
   adminEmail,
   templates,
   initialTo = [],
+  v2 = false,
 }: {
+  /** Admin v2: plain sections with hairlines instead of boxes; the chosen template and mode are dark, lime is kept for Send. */
+  v2?: boolean;
   adminEmail: string;
   templates: ComposeTemplate[];
   /** Pre-filled recipients (e.g. "Email" from a person's CRM page). */
@@ -145,17 +148,19 @@ export function ComposeTab({
   return (
     <div className="space-y-6">
       {/* Template picker */}
-      <div className="rounded-md border-2 border-border bg-card p-5">
-        <h2 className="flex items-center gap-2 text-base font-semibold">
-          <PencilLine className="size-4 text-link" aria-hidden /> Start from a template
+      <div className={v2 ? "min-w-0" : "rounded-md border-2 border-border bg-card p-5"}>
+        <h2 className={v2 ? "type-h3" : "flex items-center gap-2 text-base font-semibold"}>
+          {v2 ? null : <PencilLine className="size-4 text-link" aria-hidden />} Start from a template
         </h2>
         <div className="mt-3 flex flex-wrap gap-2">
           <button
             type="button"
             onClick={() => applyTemplate("")}
             className={cn(
-              "rounded-md border-2 border-border px-3 py-1.5 text-small font-medium transition-colors",
-              templateId === "" ? "bg-primary text-primary-foreground" : "bg-background text-muted-foreground hover:bg-accent hover:text-accent-foreground",
+              v2 ? "inline-flex min-h-11 items-center rounded-md border px-3 type-small font-semibold transition-colors lg:min-h-9" : "rounded-md border-2 border-border px-3 py-1.5 text-small font-medium transition-colors",
+              v2
+                ? templateId === "" ? "border-foreground bg-foreground text-background" : "border-[var(--ds-card-line)] bg-background hover:bg-[var(--ds-tint)]"
+                : templateId === "" ? "bg-primary text-primary-foreground" : "bg-background text-muted-foreground hover:bg-accent hover:text-accent-foreground",
             )}
           >
             Blank
@@ -166,8 +171,10 @@ export function ComposeTab({
               type="button"
               onClick={() => applyTemplate(t.id)}
               className={cn(
-                "rounded-md border-2 border-border px-3 py-1.5 text-small font-medium transition-colors",
-                templateId === t.id ? "bg-primary text-primary-foreground" : "bg-background text-muted-foreground hover:bg-accent hover:text-accent-foreground",
+                v2 ? "inline-flex min-h-11 items-center rounded-md border px-3 text-left type-small font-semibold transition-colors lg:min-h-9" : "rounded-md border-2 border-border px-3 py-1.5 text-small font-medium transition-colors",
+                v2
+                  ? templateId === t.id ? "border-foreground bg-foreground text-background" : "border-[var(--ds-card-line)] bg-background hover:bg-[var(--ds-tint)]"
+                  : templateId === t.id ? "bg-primary text-primary-foreground" : "bg-background text-muted-foreground hover:bg-accent hover:text-accent-foreground",
               )}
             >
               {t.label}
@@ -175,7 +182,7 @@ export function ComposeTab({
           ))}
         </div>
         {templates.find((t) => t.id === templateId)?.hint ? (
-          <p className="mt-2 text-caption text-muted-foreground">{templates.find((t) => t.id === templateId)?.hint}</p>
+          <p className={v2 ? "mt-2 type-small text-muted-foreground" : "mt-2 text-caption text-muted-foreground"}>{templates.find((t) => t.id === templateId)?.hint}</p>
         ) : null}
       </div>
 
@@ -194,7 +201,7 @@ export function ComposeTab({
           </div>
           <div className="space-y-2">
             <span className="text-sm font-semibold">How do you want to write it?</span>
-            <div role="radiogroup" aria-label="Email type" className="grid grid-cols-3 gap-1 rounded-xl border-2 border-foreground bg-card p-1">
+            <div role="radiogroup" aria-label="Email type" data-keep={v2 ? "" : undefined} className={v2 ? "grid grid-cols-3 gap-1 rounded-md border border-[var(--ds-card-line)] p-1" : "grid grid-cols-3 gap-1 rounded-xl border-2 border-foreground bg-card p-1"}>
               {MODES.map((m) => {
                 const Icon = m.icon;
                 const on = mode === m.id;
@@ -206,8 +213,10 @@ export function ComposeTab({
                     aria-checked={on}
                     onClick={() => setMode(m.id)}
                     className={cn(
-                      "flex h-10 items-center justify-center gap-1.5 rounded-lg text-sm font-bold transition-colors",
-                      on ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:bg-accent hover:text-foreground",
+                      v2 ? "flex min-h-11 min-w-0 items-center justify-center gap-1.5 rounded-[5px] px-1 type-small font-semibold transition-colors lg:min-h-9" : "flex h-10 items-center justify-center gap-1.5 rounded-lg text-sm font-bold transition-colors",
+                      v2
+                        ? on ? "bg-foreground text-background" : "text-muted-foreground hover:bg-[var(--ds-tint)] hover:text-foreground"
+                        : on ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:bg-accent hover:text-foreground",
                     )}
                   >
                     <Icon className="size-4" aria-hidden /> {m.label}
@@ -215,7 +224,7 @@ export function ComposeTab({
                 );
               })}
             </div>
-            <p className="text-caption text-muted-foreground">{MODES.find((m) => m.id === mode)?.hint}</p>
+            <p className={v2 ? "type-small text-muted-foreground" : "text-caption text-muted-foreground"}>{MODES.find((m) => m.id === mode)?.hint}</p>
           </div>
           {mode === "formatted" ? (
             <RichEditor key={editorKey} id="campaign-rich" onChange={setRich} ariaLabel="Email message" />
@@ -250,9 +259,9 @@ export function ComposeTab({
           )}
 
           {/* Recipients */}
-          <div className="rounded-md border-2 border-border bg-card p-4">
-            <h3 className="flex items-center gap-2 text-small font-semibold">
-              <MailCheck className="size-4 text-link" aria-hidden /> Recipients
+          <div className={v2 ? "border-t border-[var(--ds-hairline)] pt-4" : "rounded-md border-2 border-border bg-card p-4"}>
+            <h3 className={v2 ? "type-h3" : "flex items-center gap-2 text-small font-semibold"}>
+              {v2 ? null : <MailCheck className="size-4 text-link" aria-hidden />} Recipients
             </h3>
             <div className="mt-3">
               <RecipientPicker selected={selected} onChange={setSelected} />

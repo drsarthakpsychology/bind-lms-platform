@@ -1,10 +1,7 @@
-import { LoadingFrame } from "@/components/design-system/slow-state";
-import { ChaiLoader } from "@/components/learn/chai-loader";
+import { HubLoading } from "@/components/ds/loading";
+import { PREP_SHORT } from "@/lib/prep/catalog";
 
+/** Exam Prep while it loads: its title and groups of rows. */
 export default function Loading() {
-  return (
-    <LoadingFrame>
-      <ChaiLoader label="Getting your prep ready" tip={0} />
-    </LoadingFrame>
-  );
+  return <HubLoading title={PREP_SHORT} />;
 }

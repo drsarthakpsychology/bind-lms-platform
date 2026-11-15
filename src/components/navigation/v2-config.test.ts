@@ -50,7 +50,7 @@ describe("v2 hubs", () => {
   });
   it("lecture-only Me has no full-access rows", () => {
     const me = visibleGroups(ME_GROUPS, { scope: "lectures_only" }).flatMap((g) => g.rows.map((r) => r.href));
-    expect(me).toEqual(["/journey", "/achievements", "/doubts", "/notifications"]);
+    expect(me).toEqual(["/journey", "/achievements", "/achievements#badges", "/doubts", "/notifications"]);
   });
 });
 

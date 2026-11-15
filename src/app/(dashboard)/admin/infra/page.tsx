@@ -6,6 +6,9 @@ import { PROVIDERS, getKey, isEnabled } from "@/lib/ai/router";
 import { InfraMetrics } from "./infra-metrics";
 import { cn } from "@/lib/utils";
 import { daysAgoIso } from "@/lib/analytics/timeline";
+import { readFlags } from "@/lib/flags";
+import { uiV2For } from "@/lib/ui/v2";
+import { InfraV2 } from "../_v2/system";
 
 export const dynamic = "force-dynamic";
 
@@ -19,7 +22,8 @@ const when = (iso: string | null | undefined) =>
  * are ever shown, only whether one is set.
  */
 export default async function InfraPage() {
-  if (!(await requireAdmin())) redirect("/dashboard");
+  const me = await requireAdmin();
+  if (!me) redirect("/dashboard");
   const admin = createAdminClient();
   const since = daysAgoIso(7);
   const [{ data }, health, usage] = await Promise.all([
@@ -46,6 +50,35 @@ export default async function InfraPage() {
     use.set(k, a);
   }
   const aiOn = isEnabled();
+
+  if (uiV2For(await readFlags(), me.role)) {
+    return (
+      <InfraV2
+        dbBytes={metrics.db_size_bytes ?? 0}
+        tables={metrics.top_tables ?? []}
+        aiOn={aiOn}
+        providers={PROVIDERS.map((p) => {
+          const h = hp.get(p.id);
+          const u = use.get(p.id);
+          const keySet = Boolean(getKey(p));
+          const fails = h?.consecutive_failures ?? 0;
+          return {
+            id: p.id,
+            tone: !keySet ? "quiet" : fails >= 3 ? "alert" : fails > 0 ? "warn" : "ok",
+            state: !keySet ? "No key" : fails > 0 ? `${fails} failure${fails === 1 ? "" : "s"} in a row` : "Healthy",
+            note: `${p.trainsOnData ? "May train on data" : "Does not train on data"} · ${p.supports.join(", ")}`,
+            calls: u?.calls ?? 0,
+            failed: u?.errors ?? 0,
+            fallback: u?.fallback ?? 0,
+            speed: u?.n ? `${Math.round(u.ms / u.n)} ms` : h?.avg_latency_ms ? `${Math.round(Number(h.avg_latency_ms))} ms` : "No data",
+            lastOk: when(h?.last_success_at as string | null),
+            lastFail: when(h?.last_failure_at as string | null),
+            failing: fails > 0,
+          };
+        })}
+      />
+    );
+  }
 
   return (
     <div className="space-y-8">

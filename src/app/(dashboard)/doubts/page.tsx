@@ -9,9 +9,8 @@ import { ToolHeader } from "@/components/help/tool-header";
 import { loadMyBlocks } from "@/lib/access/blocks";
 import { blockedBy } from "@/lib/access/features";
 import { leaveWithoutSession } from "@/lib/auth/session-redirect";
-import { pageV2 } from "@/components/v2me/server";
-import { PageFrame } from "@/components/ds";
-import { EmptyLine } from "@/components/v2me/parts";
+import { uiV2Role } from "@/lib/ui/v2-server";
+import { PageFrame, EmptyLine } from "@/components/ds";
 import { DoubtsV2 } from "./doubts-v2";
 
 export const metadata: Metadata = { title: "Doubts" };
@@ -24,7 +23,7 @@ export default async function DoubtsPage({ searchParams }: { searchParams: Promi
   const isAdmin = session.profile.role === "admin" || session.profile.role === "view_admin";
   const sp = await searchParams;
 
-  const v2 = await pageV2(session.profile.role);
+  const v2 = await uiV2Role(session.profile.role);
 
   if (!(await doubtsReady())) {
     if (v2) {
