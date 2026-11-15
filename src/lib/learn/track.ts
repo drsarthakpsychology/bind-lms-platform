@@ -36,7 +36,9 @@ function flush() {
   const body = JSON.stringify({ events: batch, path });
   try {
     if (!navigator.sendBeacon?.("/api/learn/events", new Blob([body], { type: "application/json" }))) {
-      void fetch("/api/learn/events", { method: "POST", body, keepalive: true, headers: { "content-type": "application/json" } });
+      // A failed send (offline, or a test runner where a relative URL cannot
+      // be fetched) is dropped quietly, never an unhandled rejection.
+      fetch("/api/learn/events", { method: "POST", body, keepalive: true, headers: { "content-type": "application/json" } }).catch(() => {});
     }
   } catch {
     /* offline: dropped */
