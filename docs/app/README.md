@@ -59,6 +59,8 @@ On GitHub: **Actions** > **App Android build** > the **Run workflow** button (ri
 
 ## 2. What you need to do next, in order
 
+> **Google Play, push and iPhone:** the full click-by-click guide is now `apps/mobile/docs/release/OWNER_STEPS.md` (you make the upload key yourself in Google Cloud Shell; the Play build is the **App Android release** button). Steps 4 and 6 below are the short version.
+
 Each step says who does it. "Claude" means you ask Claude in a new message.
 
 1. **Merge the two app branches** (Claude). The server part (`agent/appapi`) and this app (`agent/appmobile`) go into your test branch, then to the test link. Say: "merge the app branches into the test branch".
