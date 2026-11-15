@@ -61,7 +61,7 @@ export function CertificatesScreen() {
           return (
             <>
               {certs.length ? (
-                <Section title="Certificates">
+                <Section title="Earned">
                   {certs.map((x) => (
                     <Card key={x.credentialId} testID={`cert-${x.credentialId}`} onPress={() => router.push(`/certificate/${encodeURIComponent(x.credentialId)}`)} accessibilityLabel={`${x.title}. Issued ${issued(x.issuedAt)}`}>
                       <View style={{ flexDirection: "row", gap: space[3], alignItems: "flex-start" }}>

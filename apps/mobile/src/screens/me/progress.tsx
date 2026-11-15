@@ -11,7 +11,7 @@ import { space, useTheme } from "@/theme";
 function hours(sec: number): string {
   const h = Math.floor(sec / 3600);
   const m = Math.round((sec % 3600) / 60);
-  return h ? `${h} h ${m} m` : `${m} m`;
+  return h ? (m ? `${h} h ${m} m` : `${h} h`) : `${m} m`;
 }
 
 /** Fourteen thin bars: points per day, oldest first. Today in ink, the rest quieter. */
