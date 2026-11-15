@@ -93,7 +93,7 @@ Built and checked on a computer (screenshots of every screen, automatic tests):
 | Admins | Home (who needs a look), Students, a student's page (allow one more phone change), Activity, Messages, New message, More |
 
 Not done yet:
-- 23 of the 39 kinds of interactive study pieces still show "Open it on the website" (the 16 most common kinds are built in the app). List in `docs/app/CONTRACT_REQUESTS.md`.
+- The website's 3D study scenes are step-by-step drawings in the app (same content and order, no 3D camera). All 39 kinds of interactive study pieces are in the app.
 - Handing in assignments as a file or a recording (text answers work).
 - Opening lecture materials (PDFs) inside the app.
 - Only two games so far; the website's other games come next.

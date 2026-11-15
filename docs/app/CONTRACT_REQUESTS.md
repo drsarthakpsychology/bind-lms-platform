@@ -47,6 +47,6 @@ Last updated: 2026-11-15.
 
 `POST /admin/devices/allow-change` (already in the contract) is used by the student page.
 
-## Study widgets still to come
+## Study widgets
 
-The app draws 16 widget kinds natively (see `apps/mobile/src/study/widgets/index.tsx`). The 23 scene kinds below fall back to an "Open on the website" row until they are rebuilt natively; no server change is needed for them, but if the server knows which of them appear most in the course, the app can rebuild those first: `brainmap`, `journey`, `neuron`, `pathways`, `receptor`, `conditioning`, `memoryflow`, `stress`, `attention`, `dissonance`, `conservation`, `release`, `hypnogram`, `strange`, `illusion`, `nervoussystem`, `brainexplorer`, `actionpotential`, `synapse3d`, `genogram`, `hpaloop`, `brainslicer`, `amesroom`.
+All 39 widget kinds are drawn natively (`apps/mobile/src/study/widgets/index.tsx`). No server change is needed. An unknown kind or a newer `v` still falls back to an "Open on the website" row.
