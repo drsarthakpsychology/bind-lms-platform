@@ -132,13 +132,15 @@ The one-phone rule:
 
 | Status | Method and path | Auth | Request | Response | Calls |
 |---|---|---|---|---|---|
-| planned | `GET /home` | bearer | none | `Home` | `loadHomeModel` (`src/lib/home/model.ts`, moved out of the dashboard page): `loadCourseOverview`, `loadLearnState`, `getStrengthsWeaknesses`, `pickContinue`, `pickUpNext` |
-| planned | `GET /courses` | student (`/courses`) | none | `CourseList` | `myCourses` (`src/lib/course/mine.ts`: `visibleCourseIds`) and `loadCourseOverview` |
-| planned | `GET /courses/:courseId` | student (`/courses`) | none | `CourseDetail` | `canAccessCourse`, `loadCourseOverview` |
-| planned | `GET /lectures/:lessonId` | student (`/courses`) | none | `LectureDetail` | `canAccessLesson`, `loadLectureDetail` (`src/lib/course/lecture.ts`) |
-| planned | `POST /lectures/:lessonId/progress` | student (`/courses`), 240 a minute | `ProgressPingBody` | `ProgressPingResult` | `pingProgress` |
-| planned | `POST /lectures/:lessonId/complete` | student (`/courses`) | none | `CompleteLectureResult` | the assignment rule of `completeAndAdvance`, then `markLessonComplete` |
-| planned | `POST /save` | bearer, 240 a minute | `SaveBody` | `SaveResult` | `applySaves` (`src/lib/save/apply.ts`), the same function the website's `/api/save` runs: `pingProgress`, `markLessonComplete`, `saveLearnState`, `recordMyAnswers`, `storeLearnEvents` |
+| built | `GET /home` | bearer | none | `Home` | `loadHomeModel` (`src/lib/home/model.ts`, moved out of the dashboard page, which now calls it too): `loadMyCourses`, `loadCourseOverview`, `loadLearnState`, `getStrengthsWeaknesses`, `pickContinue`, `pickUpNext` |
+| built | `GET /courses` | student (`/courses`) | none | `CourseList` | `loadMyCourses` (`src/lib/course/mine.ts`: published, enrolment or lectures-only, `visibleCourseIds`) and `loadCourseOverview` |
+| built | `GET /courses/:courseId` | student (`/courses`) | none | `CourseDetail` | `loadMyCourses` (the course layout's rule), `loadCourseOverview` |
+| built | `GET /lectures/:lessonId` | student (`/courses`) | none | `LectureDetail` | `loadLecture` (`src/lib/course/lecture.ts`): `canAccessLesson`, the lecture page's hidden/live and cohort rules, `lectureNeighbours` (`src/lib/course/lecture-order.ts`, shared with the lecture page) |
+| built | `POST /lectures/:lessonId/progress` | student (`/courses`), 240 a minute | `ProgressPingBody` | `ProgressPingResult` | `pingProgress` |
+| built | `POST /lectures/:lessonId/complete` | student (`/courses`), 60 a minute | none | `CompleteLectureResult` | `completionBlock` (`src/lib/course/complete.ts`, moved out of `completeAndAdvance`), then `markLessonComplete` |
+| built | `POST /save` | bearer, 240 a minute | `SaveBody` | `SaveResult` | `applySaves` (`src/lib/save/apply.ts`), the same function the website's `/api/save` runs: `pingProgress`, `markLessonComplete`, `saveLearnState`, `recordMyAnswers`, `storeLearnEvents` |
+
+Errors: a lecture not live yet answers 403 `feature_locked`; a lecture not shared with the student, hidden, or of a course they cannot open answers 404 `not_found` (as the website). `complete` answers 409 `conflict` with `details.reason: "needs_submission"` when the lecture needs its assignment handed in first.
 
 `POST /save` is the offline-safe path: the app keeps a queue on the phone and sends batches (up to 25 items, 256 KB). Each item answers `ok` (stored), `retry` (keep and send again) or `drop` (can never be stored). The direct progress and complete routes are for when the app is online and wants the answer now.
 
@@ -146,8 +148,8 @@ The one-phone rule:
 
 | Status | Method and path | Auth | Request | Response | Calls |
 |---|---|---|---|---|---|
-| planned | `POST /lectures/:lessonId/stream` | student (`/courses`), 60 a minute per student | `StreamAccessBody` | `StreamAccess` | `canAccessLesson`, `mintStreamToken` (app form, bound to user and device), `watermarkFor` |
-| planned | `GET /api/media/stream/:lessonId/...?st=<token>` (not under `/api/app/v1`: the website's existing stream route) | the stream token, plus `X-App-Device-Id` | none | HLS playlists, AES-128 key, encrypted chunks, or MP4 bytes | the existing stream proxy, with an app branch: `checkAppStreamViewer` (`src/lib/media/app-viewer.ts`) |
+| built | `POST /lectures/:lessonId/stream` | student (`/courses`), 60 a minute per student, 120 per network (the website's own limits) | `StreamAccessBody` | `StreamAccess` | `appStreamAccess` (`src/lib/app-api/stream.ts`): `loadLecture`, `playbackMedia` (`src/lib/media/playback.ts`, moved out of `/api/media/playback`), `mintAppStreamToken` (`src/lib/media/app-stream-token.ts`), `watermarkFor` |
+| built | `GET /api/media/stream/:lessonId/...?st=<token>` (not under `/api/app/v1`: the website's existing stream route) | the app stream token, plus `X-App-Device-Id` | none | HLS playlists, AES-128 key, encrypted chunks, or MP4 bytes (`Range` works) | the existing stream proxy, with an app branch: `checkAppStreamViewer` (`src/lib/media/app-viewer.ts`); everything after the viewer check is the website's code |
 
 How app video works (details in `docs/app/VIDEO_DELIVERY.md`):
 
@@ -157,21 +159,25 @@ How app video works (details in `docs/app/VIDEO_DELIVERY.md`):
 - A native player cannot swap tokens in the middle of a lecture (the website player can). So the app token lasts for the lecture: one and a half times the lecture length plus 10 minutes, never under 30 minutes, never over 6 hours. Ask for a new one when resuming or when the player gets a 401.
 - `watermark.text` (name and roll number) must be drawn moving over the video.
 - `deviceCompromised: true` is refused with 403 `video_refused`.
+- The proxy answers plain JSON errors (`{ error }`, not the app envelope) because it is the website's route: 401 means ask `/stream` again (token ran out, other phone, signed out), 403 means paused or not allowed, 429 slow down.
+- The server needs `SESSION_SECRET` (already set for the website). Without it `/stream` answers 503 `unavailable`.
 
 ### 2.6 Materials and assignments
 
 | Status | Method and path | Auth | Request | Response | Calls |
 |---|---|---|---|---|---|
-| planned | `GET /materials/:materialId` | student (`/courses`) | none | `Material` | `canAccessMaterial` |
-| planned | `GET /materials/:materialId/file` | student (`/courses`) | none | the file bytes (`Range` supported) | `canAccessMaterial` and the same streaming as `/api/media/materials/:id` |
-| planned | `GET /assignments` | student (`/courses`) | `?limit&cursor` | `Page<AssignmentRow>` | `loadCourseOverview` rows |
-| planned | `GET /assignments/:assignmentId` | student (`/courses`) | none | `Assignment` | `loadAssignment` (`src/lib/course/assignment.ts`) |
-| planned | `POST /assignments/:assignmentId/text` | student, 20 a minute | `SubmitTextBody` | `SubmitResult` | `submitTextAssignment` |
-| planned | `POST /assignments/:assignmentId/uploads` | student, 30 a minute | `PrepareUploadBody` | `PrepareUploadResult` | `prepareSubmissionUpload` |
-| planned | `POST /assignments/:assignmentId/files` | student, 20 a minute | `SubmitFilesBody` | `SubmitResult` | `submitWithFiles` |
-| planned | `POST /assignments/:assignmentId/audio` | student, 20 a minute | `SubmitAudioBody` | `SubmitResult` | `submitAudioAssignment` |
-| planned | `DELETE /assignments/:assignmentId/submission` | student | none | `UnsubmitResult` | `unsubmitAssignment` |
-| planned | `GET /submissions/files/:fileId` | bearer (owner only) | none | the file bytes | the same check as `/api/media/submissions/:fileId` |
+| built | `GET /materials/:materialId` | student (`/courses`) | none | `Material` | `checkMaterial` (`src/lib/media/material-serve.ts`: the website's material rule, published, enrolment, cohort) |
+| built | `GET /materials/:materialId/file` | student (`/courses`), 300 a minute | none | the file bytes (`Range` supported) | `serveMaterial`, the same function as `/api/media/materials/:id` |
+| built | `GET /assignments` | student (`/courses`) | `?limit&cursor` | `Page<AssignmentRow>` | `loadMyCourses`, `loadCourseOverview` rows, plus due dates and scores (`assignmentRows`, `src/lib/app-api/assignments.ts`) |
+| built | `GET /assignments/:assignmentId` | student (`/courses`) | none | `Assignment` | `loadAssignment` (`src/lib/course/assignment.ts`) |
+| built | `POST /assignments/:assignmentId/text` | student, 20 a minute | `SubmitTextBody` | `SubmitResult` | `loadAssignment`, then `submitTextAssignment` |
+| built | `POST /assignments/:assignmentId/uploads` | student, 30 a minute | `PrepareUploadBody` | `PrepareUploadResult` | `prepareSubmissionUpload` |
+| built | `POST /assignments/:assignmentId/files` | student, 20 a minute | `SubmitFilesBody` | `SubmitResult` | `submitWithFiles` |
+| built | `POST /assignments/:assignmentId/audio` | student, 20 a minute | `SubmitAudioBody` | `SubmitResult` | `submitAudioAssignment` |
+| built | `DELETE /assignments/:assignmentId/submission` | student, 20 a minute | none | `UnsubmitResult` | `unsubmitAssignment` |
+| built | `GET /submissions/files/:fileId` | bearer (owner only), 120 a minute | none | `SubmissionFileLink` (a 15 minute address) | `signSubmissionFile` (`src/lib/media/submission-file.ts`), the same function as `/api/media/submissions/:fileId` |
+
+Handing in files: `POST .../uploads` once per file answers `uploadUrl` and `headers`; `PUT` the raw bytes there; then `POST .../files` with every `{ path, name }`. Audio is the same with one file and `POST .../audio`. Only paths the server made for this student and assignment are accepted. Errors: 409 `conflict` once graded, 400 `bad_request` for a file type the assignment does not take (the message names it), 404 when the assignment is not one the student can open.
 
 ### 2.7 Study
 

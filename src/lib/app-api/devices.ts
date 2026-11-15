@@ -164,6 +164,34 @@ export function clearDeviceCache() {
 export type DeviceCheck = "ok" | "replaced" | "unenforced";
 
 /**
+ * The one-phone rule on a student's phone rows: the row this phone matches
+ * when it is still the signed-in one, else null. Two phones marked active
+ * (two sign-ins at the same moment): the later one wins. Admins are exempt.
+ */
+export function activePhone(rows: DeviceRow[], isThis: (r: DeviceRow) => boolean, role: string): DeviceRow | null {
+  const mine = rows.find(isThis) ?? null;
+  if (!mine || !mine.active) return null;
+  if (!isExempt(role) && APP_RULES.onePhoneAtATime) {
+    const newest = rows.filter((r) => r.active).sort((a, b) => String(b.activated_at ?? "").localeCompare(String(a.activated_at ?? "")))[0];
+    if (newest && !isThis(newest)) return null;
+  }
+  return mine;
+}
+
+/**
+ * For the video proxy: is the phone whose id hashes to `devHash` still this
+ * student's signed-in phone? Same rule as checkDevice. "unenforced" before
+ * the app_devices database step.
+ */
+export async function phoneStillActive(userId: string, role: string, matches: (deviceId: string) => boolean): Promise<DeviceCheck> {
+  const db = admin();
+  if (!db) return "unenforced";
+  const { rows, ready } = await loadRows(db, userId);
+  if (!ready || !rows.length) return "unenforced";
+  return activePhone(rows, (r) => matches(r.device_id), role) ? "ok" : "replaced";
+}
+
+/**
  * Is this phone still the one signed in? Run on every signed-in app request.
  * "replaced" means another phone took over (or this one signed out).
  */
@@ -176,18 +204,13 @@ export async function checkDevice(input: { userId: string; role: string; deviceI
   const { rows, ready } = await loadRows(db, input.userId);
   if (!ready) return "unenforced";
 
-  const mine = rows.find((r) => r.device_id === input.deviceId) ?? null;
   if (!rows.length) {
     // The tables were added while this phone was already signed in: adopt it.
     await registerDevice({ userId: input.userId, role: input.role, device: { id: input.deviceId, name: "This phone", platform: input.platform ?? "android" }, now });
     return "ok";
   }
-  if (!mine || !mine.active) return "replaced";
-  if (!isExempt(input.role) && APP_RULES.onePhoneAtATime) {
-    // Two phones marked active (two sign-ins at the same moment): the later one wins.
-    const newest = rows.filter((r) => r.active).sort((a, b) => String(b.activated_at ?? "").localeCompare(String(a.activated_at ?? "")))[0];
-    if (newest && newest.device_id !== input.deviceId) return "replaced";
-  }
+  const mine = activePhone(rows, (r) => r.device_id === input.deviceId, input.role);
+  if (!mine) return "replaced";
   okCache.set(key, now + CHECK_TTL_MS);
   if (okCache.size > 20_000) for (const [k, until] of okCache) if (until <= now) okCache.delete(k);
   if ((seenAt.get(key) ?? 0) + SEEN_EVERY_MS < now) {
