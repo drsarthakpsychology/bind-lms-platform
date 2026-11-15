@@ -6,9 +6,10 @@ import type { WidgetBlock, WidgetDataByKind, WidgetKind } from "@/api/contract";
 import { Row, RowList } from "@/ds/parts";
 import { config } from "@/lib/config";
 import { useTheme } from "@/theme";
+import { BrainExplorerWidget } from "./brain-explorer";
 import { BrainMapWidget } from "./brainmap";
 import { CurveWidget, FigureWidget, FlowWidget, LayersWidget, SynapseWidget } from "./diagrams";
-import { ActionPotentialWidget, AmesRoomWidget, AttentionWidget, BrainExplorerWidget, BrainSlicerWidget, ConditioningWidget, ConservationWidget, DissonanceWidget, GenogramWidget, HpaLoopWidget, HypnogramWidget, IllusionWidget, JourneyWidget, MemoryFlowWidget, NervousSystemWidget, NeuronWidget, PathwaysWidget, ReceptorWidget, ReleaseWidget, StrangeWidget, StressWidget, Synapse3dWidget } from "./scenes";
+import { ActionPotentialWidget, AmesRoomWidget, AttentionWidget, BrainSlicerWidget, ConditioningWidget, ConservationWidget, DissonanceWidget, GenogramWidget, HpaLoopWidget, HypnogramWidget, IllusionWidget, JourneyWidget, MemoryFlowWidget, NervousSystemWidget, NeuronWidget, PathwaysWidget, ReceptorWidget, ReleaseWidget, StrangeWidget, StressWidget, Synapse3dWidget } from "./scenes";
 import { BuildWidget, CompareWidget, DecideWidget, ExperimentWidget, GuessWidget, MoodlineWidget, RevealWidget, SortWidget, ThoughtRecordWidget, TimelineWidget, WorkedWidget } from "./interactive";
 
 /**

@@ -3,6 +3,7 @@ import * as React from "react";
 
 import type { WidgetBlock } from "@/api/contract";
 import { NATIVE_KINDS, WidgetView } from "@/study/widgets";
+import { EXPLORER } from "@/study/widgets/brain-explorer";
 import { brainFocus, REGIONS } from "@/study/widgets/brainmap";
 import { edgePoints } from "@/study/widgets/engine";
 import { render } from "./utils";
@@ -77,5 +78,22 @@ describe("brain map, as on the website", () => {
     expect(REGIONS).toHaveLength(17);
     expect(brainFocus({ notes: { amygdala: "fear", hippocampus: "memory", nowhere: "x" } })).toEqual(["hippocampus", "amygdala"].sort((a, b) => REGIONS.findIndex((r) => r.id === a) - REGIONS.findIndex((r) => r.id === b)));
     expect(brainFocus({ focus: ["prefrontal", "made-up"], notes: {} })).toEqual(["prefrontal"]);
+  });
+});
+
+describe("brain explorer, with the website's words", () => {
+  it("has the website's 15 parts, each with its path, damage, case and clue", async () => {
+    expect(EXPLORER).toHaveLength(15);
+    for (const r of EXPLORER) {
+      expect(REGIONS.some((x) => x.id === r.id)).toBe(true);
+      expect(r.act.length).toBeGreaterThan(0);
+      expect(r.clue.length).toBeGreaterThan(20);
+    }
+  });
+
+  it("asks where the damage is and says if you are right", async () => {
+    await render(<WidgetView block={{ t: "widget", kind: "brainexplorer", v: 1, data: {} } as WidgetBlock} ctx={ctx} />);
+    await fireEvent.press(screen.getByText("Where is the damage?"));
+    expect(screen.getAllByText(/Case 1 of 15/).length).toBe(1);
   });
 });

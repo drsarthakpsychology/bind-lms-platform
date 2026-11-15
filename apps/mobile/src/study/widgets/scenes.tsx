@@ -14,7 +14,6 @@ import type {
   ActionPotentialData,
   AmesRoomData,
   AttentionData,
-  BrainExplorerData,
   BrainSlicerData,
   ConditioningData,
   ConservationData,
@@ -726,63 +725,6 @@ export function IllusionWidget({ d }: { d: IllusionData }) {
       <Button kind="quiet" label={reveal ? "Hide the check" : d.kind === "figure-ground" ? "What is going on?" : "Check with a ruler"} onPress={() => setReveal((r) => !r)} testID="illusion-reveal" />
     </WidgetFrame>
   );
-}
-
-/* --------------------------------------------- brain map and explorer */
-
-const REGIONS: { id: string; name: string; x: number; y: number; text: string }[] = [
-  { id: "frontal", name: "Frontal lobe", x: 92, y: 70, text: "Planning, judgement, self-control, personality and speech production (Broca's area, left side). Damage can change personality, as in Phineas Gage." },
-  { id: "parietal", name: "Parietal lobe", x: 190, y: 50, text: "Touch and body sense, and where things are in space. Right-side damage can cause neglect of the left side of the world." },
-  { id: "temporal", name: "Temporal lobe", x: 150, y: 130, text: "Hearing, language understanding (Wernicke's area, left side) and memory (with the hippocampus inside it)." },
-  { id: "occipital", name: "Occipital lobe", x: 268, y: 96, text: "Vision. Damage causes blind areas even when the eyes are healthy." },
-  { id: "cerebellum", name: "Cerebellum", x: 248, y: 164, text: "Balance, coordination and the timing of movement. Alcohol affects it early, hence the unsteady walk." },
-  { id: "brainstem", name: "Brainstem", x: 196, y: 196, text: "Breathing, heart rate, sleep and wakefulness. Pathways for serotonin (raphe) and noradrenaline (locus coeruleus) start here." },
-  { id: "pfc", name: "Prefrontal cortex", x: 56, y: 104, text: "The front of the frontal lobe: working memory, weighing options, holding back impulses. It matures last, into the mid-twenties." },
-  { id: "amygdala", name: "Amygdala", x: 138, y: 156, text: "Tags threat and emotional importance in a fraction of a second. Overactive in anxiety and PTSD." },
-  { id: "hippocampus", name: "Hippocampus", x: 168, y: 158, text: "Forms new long-term memories and places events in context. Shrinks under long stress; early damage in Alzheimer's disease." },
-  { id: "thalamus", name: "Thalamus", x: 176, y: 112, text: "The relay station: almost every sense passes through it on the way to the cortex." },
-  { id: "hypothalamus", name: "Hypothalamus", x: 140, y: 128, text: "Hunger, thirst, temperature, sleep timing and hormones (through the pituitary). It starts the stress response." },
-];
-
-function BrainArt({ ids, on, onPick, name, label }: { ids: string[]; on: string | null; onPick: (id: string) => void; name: string; label: string }) {
-  return (
-    <SketchSheet name={name} w={320} h={220} label={label}>
-      <P k="bm-brain" d="M30 110 C20 50 100 14 180 18 C258 22 300 70 296 116 C292 150 268 170 236 168 C228 180 214 186 200 186 C150 180 70 170 30 110 Z" fill={C.wash} fillStyle="solid" sw={2} />
-      <P k="bm-cbl" d="M210 150 C230 140 276 140 280 160 C282 182 240 190 214 178 Z" sw={1.6} />
-      <P k="bm-stem" d="M186 170 C188 190 192 206 196 216 M208 172 C208 192 210 206 212 216" sw={1.6} single />
-      <P k="bm-sulcus" d="M150 22 C140 60 150 90 140 110 M60 120 C110 120 160 116 220 130" sw={1.2} stroke={C.soft} single />
-      {REGIONS.filter((r) => ids.includes(r.id)).map((r) => {
-        const active = r.id === on;
-        return (
-          <React.Fragment key={r.id}>
-            <E k={`bm-${r.id}`} cx={r.x} cy={r.y} w={active ? 18 : 14} h={active ? 18 : 14} fill={active ? C.lime : C.blue} fillStyle="solid" sw={1.4} />
-            <Circle cx={r.x} cy={r.y} r={18} fill="transparent" onPress={() => onPick(r.id)} />
-          </React.Fragment>
-        );
-      })}
-    </SketchSheet>
-  );
-}
-
-function BrainWidget({ title, caption, focus, notes, ids, name }: { title?: string; caption?: string; focus?: string[]; notes?: Record<string, string>; ids: string[]; name: string }) {
-  const list = REGIONS.filter((r) => ids.includes(r.id));
-  const [on, setOn] = React.useState<string | null>(focus?.[0] ?? list[0]!.id);
-  const r = list.find((x) => x.id === on) ?? list[0]!;
-  const pick = (id: string) => {
-    haptic.select();
-    setOn(id);
-  };
-  return (
-    <WidgetFrame label="The brain" title={title} caption={caption} testID={`w-${name}`}>
-      <BrainArt ids={ids} on={on} onPick={pick} name={name} label={`A brain seen from the side, ${r.name} marked`} />
-      <Chips label="Part of the brain" options={list.map((x) => ({ id: x.id, name: x.name }))} value={r.id} onChange={pick} />
-      <StepText text={`**${r.name}.** ${notes?.[r.id] ?? r.text}`} k={r.id} />
-    </WidgetFrame>
-  );
-}
-
-export function BrainExplorerWidget({ d }: { d: BrainExplorerData }) {
-  return <BrainWidget name="brainexplorer" title={d.title ?? "Explore the brain"} caption={d.caption} focus={d.focus} ids={REGIONS.map((r) => r.id)} />;
 }
 
 /* --------------------------------------------------------- nervoussystem */
