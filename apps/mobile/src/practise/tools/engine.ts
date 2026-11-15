@@ -327,7 +327,7 @@ function mseTrainer(d: Record<string, unknown>, seed: string): Def[] {
   chunks(content.observe ?? [], 3).forEach((group, k) =>
     out.push({
       id: `observe-${k + 1}`,
-      title: `Describe what you see ${k + 1}`,
+      title: `Describe what you see, round ${k + 1}`,
       line: "Level 1: observe, not conclude",
       setting: "Level 1",
       intro: "Write what you can see and hear, not what you conclude.",
@@ -338,7 +338,7 @@ function mseTrainer(d: Record<string, unknown>, seed: string): Def[] {
   chunks(content.domain ?? [], 4).forEach((group, k) =>
     out.push({
       id: `domain-${k + 1}`,
-      title: `Tag the domain ${k + 1}`,
+      title: `Tag the words, round ${k + 1}`,
       line: "Level 2: the right words",
       setting: "Level 2",
       intro: "Pick every word that describes what you read.",

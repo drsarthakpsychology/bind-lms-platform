@@ -357,7 +357,11 @@ export function EndPanel({ kicker = "Round over", score, scoreOf, line, stats, r
         </T>
         <View style={{ flexDirection: "row", alignItems: "baseline", gap: space[2] }}>
           {num ? (
-            <RollingNumber value={num.n} prefix={num.pre} suffix={num.post} style={{ fontFamily: fonts.pixelDigits, fontSize: 64, lineHeight: 72, color: c.ink }} testID="end-score" />
+            <View style={{ flexDirection: "row", alignItems: "flex-end" }} testID="end-score" accessible accessibilityLabel={score}>
+              {num.pre ? <T style={{ fontFamily: fonts.pixelDigits, fontSize: 64, lineHeight: 72, color: c.ink }}>{num.pre}</T> : null}
+              <RollingNumber value={num.n} style={{ fontFamily: fonts.pixelDigits, fontSize: 64, lineHeight: 72, color: c.ink }} />
+              {num.post ? <T style={{ fontFamily: fonts.pixelDigits, fontSize: 64, lineHeight: 72, color: c.ink }}>{num.post}</T> : null}
+            </View>
           ) : (
             <T style={{ fontFamily: fonts.pixelDigits, fontSize: 64, lineHeight: 72, color: c.ink }} num maxFontSizeMultiplier={1.15} testID="end-score">
               {score}

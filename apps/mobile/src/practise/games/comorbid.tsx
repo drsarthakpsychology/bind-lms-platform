@@ -181,7 +181,7 @@ export function ComorbidGame() {
               .map((l, k) => (
                 <Animated.View key={`${v.log.length}-${k}`} entering={reduce || k ? undefined : FadeInDown.duration(motion.state)} style={{ paddingVertical: space[2] }}>
                   <T v="small" tone={l.ok ? "ink" : "danger"}>
-                    {l.who === "you" ? "You" : "Dr Bot"} {l.text}
+                    {l.who === "you" ? "You" : "Dr Bot"}: {l.text}
                   </T>
                 </Animated.View>
               ))}
