@@ -42,7 +42,7 @@ const STAGE_CLASS: Record<Stage, string> = {
  * their own password. No password is ever shown here (none is stored): each
  * row can email a fresh one-time link or copy one to share on WhatsApp.
  */
-export function RosterActions({ rows }: { rows: InviteRow[] }) {
+export function RosterActions({ rows, v2 = false }: { rows: InviteRow[]; /** Admin v2: hairline list, 44px tick targets, names wrap. Class names only. */ v2?: boolean }) {
   const [selected, setSelected] = React.useState<Set<string>>(new Set());
   const [busy, setBusy] = React.useState(false);
   const [feedback, setFeedback] = React.useState<{ ok: boolean; text: string } | null>(null);
@@ -211,8 +211,9 @@ export function RosterActions({ rows }: { rows: InviteRow[] }) {
           No students yet. Add them on People → Students, or import a CSV from System → Admin tools.
         </p>
       ) : (
-        <div className="overflow-hidden rounded-2xl border-2 border-foreground bg-card">
-          <div className="flex items-center gap-3 border-b-2 border-foreground/10 px-3 py-2">
+        <div className={v2 ? "min-w-0" : "overflow-hidden rounded-2xl border-2 border-foreground bg-card"}>
+          <div className={v2 ? "flex items-center gap-1 border-b border-[var(--ds-card-line)]" : "flex items-center gap-3 border-b-2 border-foreground/10 px-3 py-2"}>
+            <label className={v2 ? "-ml-3 grid size-11 shrink-0 cursor-pointer place-items-center" : "contents"}>
             <input
               type="checkbox"
               checked={allSelected}
@@ -227,17 +228,19 @@ export function RosterActions({ rows }: { rows: InviteRow[] }) {
               aria-label="Select all shown"
               className="size-4 accent-[#1d44d8]"
             />
+            </label>
             <span className="text-caption font-semibold text-muted-foreground">{shown.length} shown</span>
           </div>
           {shown.length === 0 && needle ? (
             <p className="p-5 text-sm font-semibold text-muted-foreground">Nobody matches &quot;{q}&quot;. Add them on People → Cohorts.</p>
           ) : null}
-          <ul className="divide-y-2 divide-foreground/10">
+          <ul className={v2 ? "flex min-w-0 flex-col divide-y divide-[var(--ds-hairline)] border-b border-[var(--ds-hairline)]" : "divide-y-2 divide-foreground/10"}>
             {shown.map((r) => {
               const stage = stageOf(r);
               const sending = sendingEmails.has(r.email);
               return (
-                <li key={r.id} className="flex flex-wrap items-center gap-x-3 gap-y-2 px-3 py-2.5 transition-colors hover:bg-accent">
+                <li key={r.id} className={v2 ? "flex min-w-0 flex-wrap items-center gap-x-3 gap-y-2 py-1.5 transition-colors hover:bg-[var(--ds-tint)]" : "flex flex-wrap items-center gap-x-3 gap-y-2 px-3 py-2.5 transition-colors hover:bg-accent"}>
+                  <label className={v2 ? "-ml-3 grid size-11 shrink-0 cursor-pointer place-items-center" : "contents"}>
                   <input
                     type="checkbox"
                     checked={selected.has(r.email)}
@@ -246,9 +249,10 @@ export function RosterActions({ rows }: { rows: InviteRow[] }) {
                     aria-label={`Select ${r.email}`}
                     className="size-4 accent-[#1d44d8]"
                   />
+                  </label>
                   <div className="min-w-0 flex-1 basis-48">
-                    <p className="truncate text-sm font-bold">{r.name}</p>
-                    <p className="truncate text-caption text-muted-foreground">{r.email}</p>
+                    <p className={v2 ? "type-small font-semibold [overflow-wrap:anywhere]" : "truncate text-sm font-bold"}>{r.name}</p>
+                    <p className={v2 ? "type-small text-muted-foreground [overflow-wrap:anywhere]" : "truncate text-caption text-muted-foreground"}>{r.email}</p>
                   </div>
                   <span className={cn("inline-flex h-7 items-center rounded-full border-2 px-2.5 text-xs font-bold", STAGE_CLASS[stage])}>
                     {sending ? "Sending…" : STAGE_LABEL[stage]}

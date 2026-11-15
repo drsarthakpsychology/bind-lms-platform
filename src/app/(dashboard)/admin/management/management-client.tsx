@@ -72,7 +72,7 @@ export function ManagementClient({ admins, me }: { admins: AdminRow[]; me: { id:
         <ul className="mt-3 divide-y divide-foreground/20">
           {admins.map((a) => (
             <li key={a.id} className="flex flex-wrap items-center gap-3 py-3">
-              <div className="min-w-0 flex-1">
+              <div className="min-w-0 flex-1 basis-48">
                 <p className="truncate font-bold">{a.email}</p>
                 <p className="text-xs text-muted-foreground">
                   {ROLE_LABEL[a.role]} · {a.status}

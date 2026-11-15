@@ -2,6 +2,9 @@ import { redirect } from "next/navigation";
 import { requireSuperAdmin } from "@/lib/auth/guards";
 import { listAdmins } from "./actions";
 import { ManagementClient } from "./management-client";
+import { readFlags } from "@/lib/flags";
+import { uiV2For } from "@/lib/ui/v2";
+import { AdminPage } from "../_v2/kit";
 
 export const metadata = { title: "Admin Management" };
 
@@ -16,6 +19,14 @@ export default async function AdminManagementPage() {
   if (!me) redirect("/admin");
 
   const admins = await listAdmins();
+
+  if (uiV2For(await readFlags(), me.role)) {
+    return (
+      <AdminPage width="default" title="Admins" lead={`Super Admin only. Only ${me.email} can add, change or remove administrators.`}>
+        <ManagementClient admins={admins} me={{ id: me.id, email: me.email }} />
+      </AdminPage>
+    );
+  }
 
   return (
     <div className="mx-auto w-full max-w-3xl space-y-6">

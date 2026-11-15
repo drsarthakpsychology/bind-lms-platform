@@ -7,13 +7,17 @@ import { isHiddenAccount } from "@/lib/people/hidden";
 import { loadAllBlocks } from "@/lib/access/blocks";
 import { FEATURES, RESETS } from "@/lib/access/features";
 import { AccessManager, type AccessRow } from "./access-manager";
+import { readFlags } from "@/lib/flags";
+import { uiV2For } from "@/lib/ui/v2";
+import { AdminPage, Notice } from "../_v2/kit";
 
 export const metadata: Metadata = { title: "Access" };
 export const dynamic = "force-dynamic";
 
 /** People → Access: Full or Lectures only, sections on or off, and resets, for one student or many. */
 export default async function AccessPage({ searchParams }: { searchParams: Promise<{ q?: string; cohort?: string }> }) {
-  if (!(await requireAdmin())) redirect("/dashboard");
+  const me = await requireAdmin();
+  if (!me) redirect("/dashboard");
   const sp = await searchParams;
   const admin = createAdminClient();
   const [{ data: profiles }, cohortsRes, membersRes, blocks] = await Promise.all([
@@ -36,6 +40,23 @@ export default async function AccessPage({ searchParams }: { searchParams: Promi
       cohortIds: inCohort.get(p.id as string) ?? [],
       off: blocks.byUser.get(p.id as string) ?? [],
     }));
+
+  if (uiV2For(await readFlags(), me.role)) {
+    return (
+      <AdminPage title="Access for many" lead="Tick one student or many, then change their access, switch a section off or on, or start a section again.">
+        {!blocks.ready ? <Notice>Switching sections off needs the new database step (2026_11_access_doubts.sql). Full and Lectures only work now.</Notice> : null}
+        <AccessManager
+          v2
+          rows={rows}
+          cohorts={cohorts}
+          features={FEATURES.map((f) => ({ key: f.key, label: f.label, group: f.group }))}
+          resets={RESETS.map((r) => ({ key: r.key, label: r.label }))}
+          initialQuery={sp.q ?? ""}
+          initialCohort={sp.cohort ?? ""}
+        />
+      </AdminPage>
+    );
+  }
 
   return (
     <div className="space-y-6">
