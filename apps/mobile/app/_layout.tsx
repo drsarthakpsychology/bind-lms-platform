@@ -174,10 +174,15 @@ function Shell() {
             <Stack.Screen name="verify/[certificateId]" options={{ title: "Verify a certificate" }} />
             <Stack.Screen name="search" options={{ headerShown: false, animation: "fade" }} />
             <Stack.Screen name="game/[id]" options={{ headerShown: false, gestureEnabled: false }} />
-            <Stack.Screen name="case/[id]" options={{ headerShown: false }} />
-            <Stack.Screen name="prep/index" options={{ title: "Exam Prep" }} />
-            <Stack.Screen name="prep/[subject]" options={{ headerShown: false, gestureEnabled: false }} />
+            <Stack.Screen name="game/leaderboard" options={{ title: "" }} />
+            <Stack.Screen name="case/[id]" options={{ headerShown: false, gestureEnabled: false }} />
+            <Stack.Screen name="case/library" options={{ title: "" }} />
+            <Stack.Screen name="prep/index" options={{ title: "" }} />
+            <Stack.Screen name="prep/[subject]" options={{ title: "" }} />
+            <Stack.Screen name="prep/set" options={{ headerShown: false, gestureEnabled: false }} />
+            <Stack.Screen name="prep/long" options={{ title: "" }} />
             <Stack.Screen name="medicine/[id]" options={{ title: "" }} />
+            <Stack.Screen name="medicine/compare" options={{ title: "Compare" }} />
             <Stack.Screen name="student/[id]" options={{ title: "" }} />
             <Stack.Screen name="compose" options={{ title: "New message", presentation: "modal" }} />
           </Stack>

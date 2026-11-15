@@ -3,6 +3,10 @@ import { router } from "expo-router";
 import type { AppTarget, Me } from "@/api/contract";
 import { toast } from "@/ds/toast";
 
+/** Practise case tools the app has (src/practise/catalog.ts), and the website's names for them. */
+const CASE_TOOLS = new Set(["daily", "detective", "wwyd", "two-minute", "say-it", "judgment", "ethics", "landmark", "osce", "mse-trainer", "formulation", "out-of-depth", "weak-spots"]);
+const WEB_TOOL: Record<string, string> = { scenarios: "wwyd", terms: "say-it", mse: "mse-trainer", "two-minute-clinic": "two-minute" };
+
 /** The first tab for this account. */
 export function homeHref(me: Me | null): string {
   if (me?.role === "admin" || me?.role === "view_admin") return "/admin/home";
@@ -58,7 +62,8 @@ export function hrefFor(t: AppTarget): string | null {
       if (!t.tool) return "/practise";
       if (t.tool === "prep") return "/prep";
       if (t.tool === "medicines") return "/library";
-      if (t.tool.startsWith("case-")) return `/case/${encodeURIComponent(t.tool)}`;
+      if (t.tool.startsWith("case-") || CASE_TOOLS.has(t.tool)) return `/case/${encodeURIComponent(WEB_TOOL[t.tool] ?? t.tool)}`;
+      if (WEB_TOOL[t.tool]) return `/case/${WEB_TOOL[t.tool]}`;
       return "/practise";
     case "game":
       return t.game ? `/game/${encodeURIComponent(t.game)}` : "/practise";
@@ -110,7 +115,10 @@ export function pathFromLink(input: string): string {
   if (p === "/practice/medicines") return "/library";
   if ((m = /^\/practice\/medicines\/([^/]+)$/.exec(p))) return `/medicine/${m[1]}`;
   if (p === "/practice/prep" || p === "/exam-prep") return "/prep";
+  if (p === "/games/leaderboard" || p === "/practice/leaderboard") return "/game/leaderboard";
   if ((m = /^\/games\/([^/]+)$/.exec(p))) return `/game/${m[1]}`;
+  if ((m = /^\/practice\/([^/]+)$/.exec(p)) && (CASE_TOOLS.has(m[1]!) || WEB_TOOL[m[1]!])) return `/case/${WEB_TOOL[m[1]!] ?? m[1]}`;
+  if (p === "/prep") return "/prep";
   if (p === "/learn" || p === "/me") return p;
   // Paths that are the same in the app: /study, /study/m02, /study/m02/s1, /doubts, /notifications, /progress, /settings, /lecture/..., /course/...
   return p + q;
