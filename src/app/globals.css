@@ -7,6 +7,10 @@
 /* Screen height bands. Windows laptops at 125-150% zoom are only ~600-650px
    tall, so extra sticky bars ("tall:sticky") and roomy headers wait for 720px. */
 @custom-variant tall (@media (min-height: 720px));
+/* The new design (ui_v2) is on: the app shell marks itself with data-ui="v2".
+   For older shared parts that sit inside new screens (also in sheets, which
+   render outside the shell). With the switch off these never match. */
+@custom-variant v2 (:root:has([data-ui="v2"]) &);
 @custom-variant short (@media (max-height: 719.98px));
 
 /* =============================================================================
@@ -1220,6 +1224,53 @@ html[data-cvd="on"] .bg-destructive {
    border) · card (1.5px line, 12px corners, no shadow) · hero (lime, bold
    border, hard shadow, one per screen).
    ============================================================================= */
+
+/* Older screens that have not been redrawn yet keep their layout but speak
+   the new type scale, so a heading is the same size on every screen. */
+:root:has([data-ui="v2"]) .text-h1 {
+  font-size: 1.75rem;
+  line-height: 2.125rem;
+  font-weight: 750;
+  letter-spacing: -0.01em;
+}
+:root:has([data-ui="v2"]) .text-h2 {
+  font-size: 1.375rem;
+  line-height: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+:root:has([data-ui="v2"]) .text-h3 {
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  font-weight: 650;
+  letter-spacing: 0;
+}
+@media (min-width: 768px) {
+  :root:has([data-ui="v2"]) .text-h1 {
+    font-size: 2.25rem;
+    line-height: 2.625rem;
+  }
+  :root:has([data-ui="v2"]) .text-h2 {
+    font-size: 1.625rem;
+    line-height: 2rem;
+  }
+  :root:has([data-ui="v2"]) .text-h3 {
+    font-size: 1.25rem;
+    line-height: 1.625rem;
+  }
+}
+
+/* The old small pixel label (10.6px) reads as a 12px caption wherever an
+   older shared part sits inside a new-design screen. */
+:root:has([data-ui="v2"]) .text-eyebrow {
+  font-family: inherit;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
 :root {
   --ds-1: 0.25rem;
   --ds-2: 0.5rem;

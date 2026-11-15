@@ -11,8 +11,8 @@ import { historyFor, useHistoryPrefetch } from "@/lib/history/client";
 import { checkpointKnown, checkpointRound } from "@/lib/study/checkpoints";
 import { backLinkClass } from "@/components/design-system/back-link";
 import { EndReaction, ScoreDial } from "@/components/reactions/graphics";
-import { useUiV2 } from "@/components/learn-v2/ui-v2";
-import { Crumb } from "@/components/learn-v2/parts";
+import { useUiV2 } from "@/components/ds/v2";
+import { BackLink } from "@/components/ds";
 
 /**
  * A checkpoint: case questions first (scored), then "say it out loud" cards.
@@ -92,7 +92,7 @@ export function CheckpointView({
     return (
       <div data-ds="page" className="ds-page mx-auto flex w-full max-w-[44rem] min-w-0 flex-col gap-6 px-1 sm:px-0">
         <header className="flex min-w-0 flex-col gap-2">
-          <Crumb href={`/study/${moduleId}`}>{moduleTitle}</Crumb>
+          <BackLink href={`/study/${moduleId}`}>{moduleTitle}</BackLink>
           <p className="type-small text-muted-foreground type-num">Checkpoint {n}</p>
           {stage === "intro" || stage === "end" ? (
             <>

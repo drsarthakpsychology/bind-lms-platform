@@ -37,9 +37,12 @@ export function TopBar({
   unread = 0,
   inboxSlot,
   v2 = false,
+  v2Chrome = false,
 }: {
   /** New design (ui_v2), student side: phones show logo, search and bell only. */
   v2?: boolean;
+  /** New design on for this account, student or admin side: no text under 12px in the bar. */
+  v2Chrome?: boolean;
   unread?: number;
   /** Admin view: the Inbox icon + count (a server island), shown next to the bell. */
   inboxSlot?: React.ReactNode;
@@ -78,7 +81,8 @@ export function TopBar({
           <Menu className="size-5" aria-hidden />
         </button>
 
-        <BackForward className="shrink-0" />
+        {/* New design on phones: logo, search and bell only. Each page has its own way back, so a second Back here doubled it. */}
+        <BackForward className={cn("shrink-0", v2 && !isAdminView && "hidden md:flex")} />
 
         <Link
           href={homeHref}
@@ -87,7 +91,7 @@ export function TopBar({
         >
           <span className="leading-none">
             <span className="block text-[1.35rem] font-black tracking-tight [font-stretch:125%]">VIBHA</span>
-            <span className={cn("block text-muted-foreground", v2 && !isAdminView ? "type-caption" : "mt-[3px] text-[0.56rem] font-pix uppercase tracking-[0.06em]")}>
+            <span className={cn("block text-muted-foreground", v2Chrome ? "type-caption" : "mt-[3px] text-[0.56rem] font-pix uppercase tracking-[0.06em]")}>
               {isAdminView ? "Admin" : "School of Psychology"}
             </span>
           </span>
@@ -106,7 +110,7 @@ export function TopBar({
         >
           <Search className="size-4 shrink-0 text-foreground" aria-hidden />
           <span className="flex-1 truncate">Search lectures, topics, medicines…</span>
-          <kbd className={cn("hidden rounded-md bg-card px-1.5 font-mono text-foreground lg:inline", v2 && !isAdminView ? "border border-[var(--ds-card-line)] text-xs" : "border-2 border-foreground text-[0.7rem]")}>
+          <kbd className={cn("hidden rounded-md bg-card px-1.5 font-mono text-foreground lg:inline", v2 && !isAdminView ? "border border-[var(--ds-card-line)] text-xs" : cn("border-2 border-foreground", v2Chrome ? "text-xs" : "text-[0.7rem]"))}>
             /
           </kbd>
         </button>

@@ -66,7 +66,7 @@ export function AppShell({
   const showSettings = role === "admin" || scope === "full";
 
   return (
-    <div className="min-h-dvh bg-background">
+    <div className="min-h-dvh bg-background" data-ui={v2 ? "v2" : undefined}>
       {/* The remembered sidebar size, set before the sidebar paints (no jump on load). */}
       <script dangerouslySetInnerHTML={{ __html: SIDEBAR_BOOT_SCRIPT }} />
       <a
@@ -96,6 +96,7 @@ export function AppShell({
         isAdminView={isAdminView}
         unread={unread}
         v2={v2Student}
+        v2Chrome={v2}
         inboxSlot={
           isAdminView ? (
             <React.Suspense fallback={<InboxLink count={0} />}>

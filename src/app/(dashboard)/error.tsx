@@ -5,7 +5,7 @@ import * as Sentry from "@sentry/nextjs";
 
 import { ErrorState } from "@/components/design-system/error-state";
 import { ErrorV2 } from "@/components/v2me/states";
-import { useUiV2 } from "@/components/v2me/ui-v2";
+import { useUiV2 } from "@/components/ds/v2";
 
 /**
  * Dashboard-segment error boundary. Catches uncaught render errors in any page

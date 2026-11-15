@@ -67,7 +67,8 @@ export const ME_GROUPS: HubGroup[] = [
     rows: [
       { href: "/progress", label: "Progress", icon: "chart", study: true, full: true },
       { href: "/journey", label: "My journey", icon: "route" },
-      { href: "/achievements", label: "Certificates and badges", icon: "award" },
+      { href: "/achievements", label: "Certificates", icon: "award" },
+      { href: "/achievements#badges", label: "Badges", icon: "medal" },
       { href: "/leaderboard", label: "Leaderboard", icon: "trophy", full: true },
       { href: "/reflect", label: "Journal", icon: "notebook", flag: "journal", full: true },
     ],

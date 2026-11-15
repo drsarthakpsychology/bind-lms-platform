@@ -1,6 +1,5 @@
 import Link from "next/link";
-import { PageFrame } from "@/components/ds";
-import { BackLink, EmptyLine, quietButton } from "@/components/v2me/parts";
+import { PageFrame, BackLink, EmptyLine, quietButton } from "@/components/ds";
 import { cn } from "@/lib/utils";
 
 export type NoteRow = {

@@ -8,10 +8,9 @@ import { askDoubt, markSolved, reclassifyMine, replyToDoubt, voteReply } from ".
 import { COMPLAINT_NOTICE, looksLikeComplaint } from "@/lib/doubts/classify";
 import type { DoubtListItem, DoubtThread } from "@/lib/doubts/data";
 import { cn } from "@/lib/utils";
-import { PageFrame, Section, Tint } from "@/components/ds";
+import { PageFrame, Section, Tint, BackLink, chipClass, chipRow, EmptyLine, fieldClass, labelClass, primaryButton, quietButton, StatusWord, textButton } from "@/components/ds";
 import { ThumbBar } from "@/components/mobile/thumb-bar";
 import { OnceHint } from "@/components/help/once-hint";
-import { BackLink, chipClass, chipRow, EmptyLine, fieldClass, labelClass, primaryButton, quietButton, StatusWord, textButton } from "@/components/v2me/parts";
 import { ago, EMPTY } from "./doubts-ui";
 
 type Filter = "all" | "open" | "mine" | "complaint";

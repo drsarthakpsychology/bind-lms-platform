@@ -2,6 +2,8 @@
 
 import * as React from "react";
 import { BackPill } from "./back";
+import { useUiV2 } from "@/components/ds/v2";
+import { GameFrame } from "@/components/play/game-frame";
 
 /**
  * Every activity (games, Practice tools, Smart practice tools) sits in this
@@ -19,6 +21,14 @@ export function ActivityFrame({
   fallback?: string;
   children: React.ReactNode;
 }) {
+  // New design: the same one frame every game and tool uses.
+  if (useUiV2()) {
+    return (
+      <GameFrame title={title} fallback={fallback}>
+        {children}
+      </GameFrame>
+    );
+  }
   return (
     <div className="activity-frame mx-auto w-full max-w-4xl lg:px-4">
       {/* Phones: the shell already gives the side margin, so the row adds none. */}

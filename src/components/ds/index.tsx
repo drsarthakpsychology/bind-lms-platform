@@ -1,8 +1,9 @@
 import * as React from "react";
 import Link from "next/link";
-import { ChevronRight } from "lucide-react";
+import { ArrowRight, ChevronRight } from "lucide-react";
 
 import { cn } from "@/lib/utils";
+import { ProgressLine } from "./parts";
 
 /**
  * Design system v2 parts (docs/design/DESIGN_SYSTEM_2026_11.md).
@@ -314,3 +315,61 @@ export function Stat({ value, label, className }: { value: React.ReactNode; labe
     </div>
   );
 }
+
+/* ------------------------------------------------------------------ */
+/* Next step                                                           */
+/* ------------------------------------------------------------------ */
+
+/**
+ * The one thing to do next on a screen: a small label, what it is, an
+ * optional thin progress line, and the screen's one lime button.
+ */
+export function NextStep({
+  label,
+  title,
+  sub,
+  pct,
+  pctLabel,
+  pctText,
+  href,
+  action,
+  onGo,
+  wide = false,
+}: {
+  label: string;
+  title: string;
+  sub?: string;
+  pct?: number;
+  pctLabel?: string;
+  pctText?: string;
+  href: string;
+  action: string;
+  onGo?: () => void;
+  /** Keep the button full width from 768px too (narrow side columns). */
+  wide?: boolean;
+}) {
+  return (
+    <section aria-label="Continue" className="flex min-w-0 flex-col gap-4">
+      <div className="flex min-w-0 flex-col gap-1">
+        <p className="type-small text-muted-foreground [overflow-wrap:anywhere]">{label}</p>
+        <h2 className="type-h2 [overflow-wrap:anywhere]">{title}</h2>
+        {sub ? <p className="type-body text-muted-foreground [overflow-wrap:anywhere]">{sub}</p> : null}
+      </div>
+      {pct !== undefined && pct > 0 ? (
+        <div className="flex min-w-0 items-center gap-3">
+          <ProgressLine pct={pct} label={pctLabel ?? "Progress"} />
+          {pctText ? <span className="shrink-0 type-small text-muted-foreground type-num">{pctText}</span> : null}
+        </div>
+      ) : null}
+      {/* onClickCapture: the link is the ds button; the click is noted on its way down. */}
+      <div onClickCapture={onGo} className="min-w-0">
+        <HeroButton href={href} icon={<ArrowRight />} className={wide ? "md:w-full md:min-w-0" : undefined}>
+          {action}
+        </HeroButton>
+      </div>
+    </section>
+  );
+}
+
+/* The smaller shared parts (./parts). The client switch is in ./v2. */
+export * from "./parts";

@@ -1,5 +1,5 @@
 import { GameFrame } from "@/components/play/game-frame";
-import { playV2 } from "@/components/play/v2";
+import { uiV2 } from "@/lib/ui/v2-server";
 import { ToolHeader } from "@/components/help/tool-header";
 import { HowToStart } from "@/components/help/how-to";
 import { LANDMARK_CASES } from "@/lib/landmark/cases";
@@ -19,7 +19,7 @@ export default async function LandmarkPage() {
   await requireFeature("landmark");
   // Fresh-case order (src/lib/cases/fresh.ts): the case left open first, new this week, new, read ones last.
   const ctx = await caseContext("landmark", LANDMARK_CASES.map((c) => c.id), "landmark");
-  if (await playV2()) {
+  if (await uiV2()) {
     return (
       <GameFrame title="Landmark cases" width="reading" tip={{ id: "landmark", label: "How it works", steps: ["Read what was believed, then what held up."] }}>
         <HowToStart id="landmark">

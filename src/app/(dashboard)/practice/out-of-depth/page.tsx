@@ -1,5 +1,5 @@
 import { GameFrame } from "@/components/play/game-frame";
-import { playV2 } from "@/components/play/v2";
+import { uiV2 } from "@/lib/ui/v2-server";
 import { OutOfDepthDrill } from "./out-of-depth-drill";
 import { requireFeature } from "@/lib/flags";
 import { BackPill } from "@/components/study/back";
@@ -13,7 +13,7 @@ export const dynamic = "force-dynamic";
  */
 export default async function OutOfDepthPage() {
   await requireFeature("ethics");
-  if (await playV2()) {
+  if (await uiV2()) {
     return (
       <GameFrame title="Know when to refer" width="reading">
         <OutOfDepthDrill />

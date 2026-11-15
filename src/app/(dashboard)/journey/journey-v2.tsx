@@ -1,6 +1,5 @@
 import { Trophy } from "lucide-react";
-import { PageFrame, Row, RowList, Section } from "@/components/ds";
-import { ProgressLine } from "@/components/v2me/parts";
+import { PageFrame, Row, RowList, Section, ProgressLine } from "@/components/ds";
 
 export type JourneyStat = { label: string; value: string; sub?: string };
 
@@ -33,7 +32,7 @@ export function JourneyV2({
       <section aria-label="Your level" className="flex min-w-0 max-w-xl flex-col gap-3">
         <p className="type-small text-muted-foreground">{title}</p>
         <p className="type-display type-num">Level {level}</p>
-        <ProgressLine value={pct} label={`Level ${level} progress`} />
+        <ProgressLine pct={pct} label={`Level ${level} progress`} />
         <p className="type-small text-muted-foreground type-num">
           {pct}% to level {level + 1}
           {points != null ? ` · ${points} points` : ""}

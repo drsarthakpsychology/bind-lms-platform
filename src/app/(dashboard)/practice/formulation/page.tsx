@@ -1,5 +1,5 @@
 import { GameFrame } from "@/components/play/game-frame";
-import { playV2 } from "@/components/play/v2";
+import { uiV2 } from "@/lib/ui/v2-server";
 import { PlayStack } from "@/components/play/parts";
 import { Section } from "@/components/ds";
 import { ToolHeader } from "@/components/help/tool-header";
@@ -69,7 +69,7 @@ export default async function FormulationPage({ searchParams }: { searchParams: 
   const number = new Map(all.map((c, i) => [c.id, i + 1]));
   const next = arranged.list.find((x) => x.id !== seed.id && x.mark !== "done") ?? arranged.list.find((x) => x.id !== seed.id);
 
-  if (await playV2()) {
+  if (await uiV2()) {
     return (
       <GameFrame title="Build the formulation" tip={{ id: "formulation", label: "How it works", steps: ["Sort the factors into the 5 Ps.", "Write the story in your own words.", "Compare with the answer."] }}>
         <PlayStack>

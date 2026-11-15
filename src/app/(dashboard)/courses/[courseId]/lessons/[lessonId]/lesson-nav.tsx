@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import { useUiV2 } from "@/components/learn-v2/ui-v2";
+import { useUiV2 } from "@/components/ds/v2";
 
 /**
  * Persistent Previous / Next lesson controls, with left/right arrow-key

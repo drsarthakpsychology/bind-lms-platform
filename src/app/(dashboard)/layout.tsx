@@ -14,7 +14,7 @@ import { readFlags } from "@/lib/flags";
 import { uiV2For } from "@/lib/ui/v2";
 import { ViewModeToggle } from "./view-mode-toggle";
 import { DetailsGate } from "@/components/profile/details-gate";
-import { UiV2Provider } from "@/components/v2me/ui-v2";
+import { UiV2Provider } from "@/components/ds/v2";
 import { VisitTracker } from "@/components/analytics/visit-tracker";
 import { SaveStatus } from "@/components/save/save-status";
 import { ownerTag } from "@/lib/save/owner";

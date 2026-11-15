@@ -1,6 +1,6 @@
 import { PageFrame, Row, RowList } from "@/components/ds";
 import { ListHead } from "@/components/play/parts";
-import { playV2 } from "@/components/play/v2";
+import { uiV2 } from "@/lib/ui/v2-server";
 import { PREP_SHORT } from "@/lib/prep/catalog";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -37,7 +37,7 @@ export default async function SubjectPage({ params, searchParams }: { params: Pr
   const longTotal = long.reduce((a, t) => a + t.items.length, 0);
   const title = subject === "ugc-paper1" ? "General paper: teaching, research and reasoning" : SUBJECT_TITLE[subject];
 
-  if (await playV2()) {
+  if (await uiV2()) {
     return (
       <PageFrame width="reading">
         <ListHead
