@@ -4,36 +4,21 @@
  * at once (and offline), and switches to the server's words when they arrive,
  * so a change on the website reaches the app without a release.
  *
- * `PublicHome` mirrors the server's type (src/lib/app-api/contract.ts on the
- * website, docs/app/API_CONTRACT.md). It lives here, not in src/api/contract.ts,
- * until the app's contract copy is re-synced; then import it from there.
- * Only the fields Welcome uses are listed. The server never sends which
- * cohort is running.
+ * `PublicHome` is the server's type, from the contract copy in
+ * src/api/contract.ts (docs/app/API_CONTRACT.md on the website). The server
+ * never sends which cohort is running.
  */
 import { useQuery } from "@tanstack/react-query";
 import * as React from "react";
 
 import { api } from "@/auth";
+import type { HomeHead, HomeTitleText, PublicHome } from "@/api/contract";
 import * as B from "./content";
 
-type Head = { tag: string; title: string; accent: string };
-type TitleText = { title: string; text: string };
-export type PublicHome = {
-  v: 1;
-  hero: { title: string[]; lede: string; highlights: string[]; quickAnswers: { q: string; a: string; section: string }[] };
-  sections: {
-    programme: { head: Head; stats: { n: string; text: string }[]; certificate: string; manifesto: string };
-    patients: { head: Head; steps: TitleText[] };
-    different: { head: Head; rows: { college: string; vibha: string }[] };
-    disorders: { head: Head; journey: { disorder: string; patient: string; steps: { k: string; title: string; text: string }[]; foot: string } };
-    week: { head: Head; weekday: { tag: string; title: string; sub: string; steps: string[] }; weekend: { tag: string; title: string; sub: string; steps: string[] }; days: { d: string; kind: "patient" | "live"; time: string | null }[] };
-    faculty: { head: Head; lead: { initials: string; role: string; name: string; text: string }; faculty: { initials: string; name: string; role: string }[]; leadership: { name: string; role: string }[] };
-    fees: { head: Head; dependsOn: string[]; pay: string[]; joinSteps: TitleText[]; whoFor: TitleText[] };
-    curriculum: { head: Head; disciplines: { name: string; text: string }[] };
-    closing: { title: string[] };
-  };
-  contact: { phone: string; phoneHref: string; whatsappHref: string; address: string[] };
-};
+type Head = HomeHead;
+type TitleText = HomeTitleText;
+
+export type { PublicHome };
 
 /** Everything Welcome shows. Same shape as the bundled copy. */
 export type HomeWords = {

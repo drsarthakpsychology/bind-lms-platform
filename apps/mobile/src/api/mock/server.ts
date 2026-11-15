@@ -24,6 +24,7 @@ import type * as X from "../extra";
 import * as xf from "./extra-fixtures";
 import * as fx from "./fixtures";
 import { learnRoute, noteMarkedRead, resetLearnMock } from "./learn-fixtures";
+import { publicHome } from "./public-home";
 
 /*
  * Practise and Library (POST /play/..., GET /library/...) live in
@@ -131,6 +132,7 @@ async function route(req: RawRequest): Promise<RawResponse> {
 
   /* ------------------------------------------------------------ public */
   if (is("GET", "/config")) return ok(fx.config);
+  if (is("GET", "/public/home")) return ok<C.PublicHome>(publicHome);
   if (is("POST", "/public/request-invitation")) {
     if (!body.name || !/^\S+@\S+\.\S+$/.test(String(body.email ?? ""))) return fail(400, "bad_request", "Check your name and email.", { fields: ["name", "email"] });
     if (body.policyAccepted !== true) return fail(400, "bad_request", "Tick the box to agree to the privacy policy.", { fields: ["policyAccepted"] });
