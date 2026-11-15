@@ -97,19 +97,16 @@ From your working copy of `contract-practise-admin.ts` (please keep these exact 
 `GET /admin/forms`, `GET /admin/forms/:id?emailed=yes|no`, `POST /admin/forms/:id/email`,
 `POST /admin/forms/:id/email/preview`, `POST /admin/forms/:id/email/send-waiting`.
 
+People is now built on admin-redesign (`GET /admin/people` with views and counts,
+stage, follow-up, activity, invite, paid, email, WhatsApp, send-waiting) and the
+app uses those routes. One small ask there: `GET /admin/people/:key` for a
+person's page with the full timeline (until then the app builds the page from
+the person's row).
+
 ## Still needed
 
 | Method and path | Auth | Body | Answer (`apps/mobile/src/admin/extra.ts`) | Website function to call |
 |---|---|---|---|---|
-| `GET /admin/people?view=&search=&cohort=&stage=&source=&from=&to=&last=` | admin | | `{ items: PersonRow[]; counts?: Record<PeopleView, number>; paymentReady?: boolean; canWrite }` | `loadPipeline(admin)`, `inView`, `viewCounts`, `filterPipeline`, `matchesFilters` (`src/lib/crm/views.ts`, `src/lib/crm/people.ts`). Views the app shows: `all`, `not_paid`, `invited` (invited not joined), `enquired` (enquired not converted), `quiet`, `joined` |
-| `GET /admin/people/:email` | admin | | `PersonDetail` (row + `facts`, `timeline`, `studentId`) | person record loader |
-| `POST /admin/people/:email/stage` | super admin | `MoveStageBody { stage, followUpAt?, note? }` | `PersonDetail` | `setStage`, `setFollowUp`, `logActivity(note)` |
-| `POST /admin/people/:email/note` | super admin | `NoteBody { text }` | `PersonDetail` | `logActivity(email, "note", text)` |
-| `POST /admin/people/:email/invite` | super admin | none | `{ sent: true }` | `sendInvite(email, name)` |
-| `POST /admin/people/:email/paid` | super admin | `PaidBody { paid, amount?, note? }` | `PersonDetail` (or 409 `missing_step` before `2026_11_15_people_payment.sql`) | `markPaid` |
-| `POST /admin/people/contact` | super admin | `{ keys: string[] (emails), subject, text }` | `PersonalEmailReport` (the app reads `sent`/`queued`/`failed`/`noEmail` as lists or counts) | `emailPeople({ emails, subject, body })` |
-| `POST /admin/people/send-waiting` | super admin | none | `SendWaitingResult` | `sendWaitingPeopleEmails()` |
-| `GET /admin/enquiries` | admin | | `{ items: Enquiry[] }` | enquiries loader (same views as People) |
 | `GET /admin/cohorts` | admin | | `{ items: CohortRow[] }` | cohorts page loader. Until then the app uses the cohort cards on `GET /admin/home` |
 | `GET /admin/cohorts/:id` | admin | | `CohortDetail` (row + `people`, `messages`, `hoursWeek`, `sessions`) | cohort page loader. Until then the app builds it from Home and `GET /admin/students?cohort=` |
 | `GET /admin/certificates/settings` | admin | | `StudioSettings { signatories (up to 3), emailOnIssue, replyTo, emailReady }` | `loadDefaultSignatories` (`admin_settings`, `SIGNATORIES_KEY`) |
