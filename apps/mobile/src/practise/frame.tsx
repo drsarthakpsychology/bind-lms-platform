@@ -10,6 +10,7 @@ import { haptic } from "@/lib/haptics";
 import { Rich } from "@/study/rich";
 import { fonts, layout, motion, space, useTheme } from "@/theme";
 import { isSoon } from "./api";
+import { Bump, Burst, CountUp, Rise } from "./fx";
 import { moodForScore, reactions, StickerLayer } from "./reactions";
 
 /**
@@ -87,9 +88,11 @@ export function GameFrame({ title, howTo, score, scoreLabel = "Score", hud, chil
           </T>
           {score !== undefined ? (
             <View accessible accessibilityLabel={`${scoreLabel} ${score}`} style={{ paddingHorizontal: space[2], alignItems: "flex-end" }}>
-              <T style={{ fontFamily: fonts.pixelDigits, fontSize: 22, lineHeight: 28, color: c.ink }} num maxFontSizeMultiplier={1.2} testID="game-score">
-                {score}
-              </T>
+              <Bump value={score}>
+                <T style={{ fontFamily: fonts.pixelDigits, fontSize: 22, lineHeight: 28, color: c.ink }} num maxFontSizeMultiplier={1.2} testID="game-score">
+                  {score}
+                </T>
+              </Bump>
             </View>
           ) : null}
           {howTo?.length && !hideHowTo ? (
@@ -315,7 +318,9 @@ export function HudLine({ left, right }: { left: string; right?: React.ReactNode
 export function Verdict({ right, title, why, seed, learn, partial }: { right: boolean; title?: string; why?: string | null; seed?: number; learn?: { label: string; onPress: () => void } | null; partial?: boolean }) {
   return (
     <View style={{ gap: space[2] }}>
-      <VerdictBand right={right} title={title ?? (partial ? "Partly right." : undefined)} why={why} seed={seed} />
+      <Rise>
+        <VerdictBand right={right} title={title ?? (partial ? "Partly right." : undefined)} why={why} seed={seed} />
+      </Rise>
       {learn ? <Button kind="text" label={learn.label} onPress={learn.onPress} testID="verdict-learn" /> : null}
     </View>
   );
@@ -332,6 +337,9 @@ export function EndPanel({ kicker = "Round over", score, scoreOf, line, stats, r
   const c = useTheme();
   const reduce = useReducedMotion();
   const fired = React.useRef(false);
+  const m = /^([^0-9-]*)(-?\d+)(\D*)$/.exec(score);
+  const num = m ? { pre: m[1] ?? "", n: Number(m[2]), post: m[3] ?? "" } : null;
+  const won = outcome ? outcome === "won" : (total ?? 0) > 0 && (right ?? 0) / (total ?? 1) >= 0.6;
   React.useEffect(() => {
     if (fired.current) return;
     fired.current = true;
@@ -341,14 +349,19 @@ export function EndPanel({ kicker = "Round over", score, scoreOf, line, stats, r
   }, [outcome, right, total]);
   return (
     <Animated.View entering={reduce ? undefined : FadeInDown.duration(motion.fill)} style={{ gap: space[5], paddingTop: space[4] }} testID="game-over">
+      <Burst fire={won} testID="end-burst" />
       <View style={{ gap: space[2] }}>
         <T v="caption" tone="muted">
           {kicker.toUpperCase()}
         </T>
         <View style={{ flexDirection: "row", alignItems: "baseline", gap: space[2] }}>
-          <T style={{ fontFamily: fonts.pixelDigits, fontSize: 64, lineHeight: 72, color: c.ink }} num maxFontSizeMultiplier={1.15} testID="end-score">
-            {score}
-          </T>
+          {num ? (
+            <CountUp to={num.n} prefix={num.pre} suffix={num.post} tick style={{ fontFamily: fonts.pixelDigits, fontSize: 64, lineHeight: 72, color: c.ink }} testID="end-score" />
+          ) : (
+            <T style={{ fontFamily: fonts.pixelDigits, fontSize: 64, lineHeight: 72, color: c.ink }} num maxFontSizeMultiplier={1.15} testID="end-score">
+              {score}
+            </T>
+          )}
           {scoreOf ? (
             <T v="h3" tone="muted" num>
               {scoreOf}
@@ -359,15 +372,15 @@ export function EndPanel({ kicker = "Round over", score, scoreOf, line, stats, r
       </View>
       {stats?.length ? (
         <View style={{ flexDirection: "row", flexWrap: "wrap", columnGap: space[6], rowGap: space[3], borderTopWidth: 1, borderBottomWidth: 1, borderColor: c.hairline, paddingVertical: space[3] }}>
-          {stats.map((s) => (
-            <View key={s.label} accessible accessibilityLabel={`${s.label}: ${s.value}`}>
+          {stats.map((s, i) => (
+            <Animated.View key={s.label} entering={reduce ? undefined : FadeInDown.duration(260).delay(500 + i * 80)} accessible accessibilityLabel={`${s.label}: ${s.value}`}>
               <T v="score" num>
                 {s.value}
               </T>
               <T v="caption" tone="muted">
                 {s.label}
               </T>
-            </View>
+            </Animated.View>
           ))}
         </View>
       ) : null}

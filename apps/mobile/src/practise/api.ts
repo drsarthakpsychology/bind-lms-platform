@@ -4,6 +4,8 @@ import * as React from "react";
 import type { PlayResult } from "./types";
 import { ApiFailure } from "@/api/errors";
 import { api } from "@/auth";
+import { outbox } from "@/api/outbox";
+import type { PractiseRecordKind, PractiseTool, PractiseToolId } from "./contract";
 
 /**
  * Every Practise move goes through one route: POST /play/:game/:action with
@@ -94,4 +96,31 @@ export function useLoad<T>(fn: () => Promise<T>, key: string): { data: T | null;
   const retry = React.useCallback(() => setS((x) => ({ ...x, data: null, error: null, n: x.n + 1 })), []);
   const set = React.useCallback((data: T) => setS((x) => ({ ...x, data })), []);
   return { data: s.data, error: s.error, retry, set };
+}
+
+/* ------------------------------------------------ first screens and saves */
+
+/** GET /practise/tools/:tool: a game's or tool's first screen (data, case library, how-to). */
+export function useTool(tool: PractiseToolId) {
+  return useQuery({ queryKey: ["practise", "tool", tool], queryFn: () => api.get<PractiseTool>(`/practise/tools/${encodeURIComponent(tool)}`), staleTime: 30_000 });
+}
+
+/** A plain read of the Practise routes (hub, Exam Prep, boards). */
+export function useRead<T>(path: string, enabled = true) {
+  return useQuery({ queryKey: ["practise", "read", path], queryFn: () => api.get<T>(path), staleTime: 30_000, enabled });
+}
+
+/** Save or clear (null) a half-finished case, as the website's saveCaseProgress. Best effort. */
+export function saveCase(tool: string, item: string, state: unknown): void {
+  void play("cases", "mark", tool, item, state).catch(() => undefined);
+}
+
+/** A finished attempt through the website's own route for it. Best effort. */
+export function sendRecord(kind: PractiseRecordKind, body: Record<string, unknown>): void {
+  void api.post(`/practise/records/${kind}`, body).catch(() => undefined);
+}
+
+/** Answers into the answer history (what comes back first next time). Kept on the phone until sent. */
+export function noteAnswers(tool: string, answers: { item: string; correct: boolean | null }[]): void {
+  if (answers.length) void outbox.add({ kind: "history", payload: { tool, answers } }).catch(() => undefined);
 }

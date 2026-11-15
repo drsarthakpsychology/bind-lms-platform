@@ -3,13 +3,13 @@ import * as React from "react";
 import { View } from "react-native";
 import Animated, { FadeIn, useReducedMotion } from "react-native-reanimated";
 
-import { Button, OptionRow, ProgressLine, RowList, Section, T } from "@/ds";
+import { Button, ProgressLine, RowList, Section, T } from "@/ds";
 import { motion, space, useTheme } from "@/theme";
-import { play, useMove, usePlayQuery } from "../api";
+import { play, saveCase, useMove, useTool } from "../api";
 import { EndPanel, EndThumb, FrameLoading, GameFrame, HudLine, MoveError, StartScreen, StepStrip, Verdict } from "../frame";
-import { Story } from "../parts";
+import { Story, AnswerRow } from "../parts";
 import { useReactions } from "../reactions";
-import { WARD_KIND, WARD_QUALITY, WARD_VAR, type ProgressSnapshot, type WardCampaign, type WardReveal, type WardSolo, type WardVars } from "../types";
+import { WARD_KIND, WARD_QUALITY, WARD_VAR, type WardCampaign, type WardReveal, type WardSolo, type WardVars } from "../types";
 
 const HOW = ["One patient over several sessions. Read what happens, then make the call.", "Each choice moves five dials: risk, trust, insight, family support and sticking with care.", "After each call you see how strong it was and what the strongest call would have been.", "Your place is saved after every call. The ending depends on your choices."];
 
@@ -44,8 +44,7 @@ const verdictOf = (r: WardReveal) => ({ right: r.q === "best", partial: r.q === 
 /** Ward Week: one patient, your choices change the ending. Dealt and scored on the server. */
 export function WardGame() {
   const params = useLocalSearchParams<{ item?: string }>();
-  const list = usePlayQuery<{ ok: true; campaigns: WardCampaign[] }>([], "ward", "campaigns");
-  const progress = usePlayQuery<ProgressSnapshot>(["ward"], "cases", "progress", "ward");
+  const list = useTool("ward");
   const reduce = useReducedMotion();
   const mv = useMove();
   const react = useReactions();
@@ -53,18 +52,23 @@ export function WardGame() {
   const [solo, setSolo] = React.useState<WardSolo | null>(null);
   const [reveal, setReveal] = React.useState<WardReveal | null>(null);
   const [marks, setMarks] = React.useState<("ok" | "miss" | null)[]>([]);
-  const savedIds = new Set((progress.data?.rows ?? []).map((r) => r.item));
-  const campaigns = list.data?.campaigns ?? [];
+  const [campaign, setCampaign] = React.useState<string | null>(null);
+  const lib = list.data?.cases;
+  const saved = new Map((lib?.progress ?? []).filter((r) => r.state).map((r) => [r.item, (r.state as { token?: string }).token]));
+  const savedIds = new Set(saved.keys());
+  const marksBy = new Map((lib?.items ?? []).map((x) => [x.id, x.mark]));
+  const campaigns = ((list.data?.data.campaigns as WardCampaign[] | undefined) ?? []).slice().sort((a, b) => (lib ? lib.items.findIndex((x) => x.id === a.id) - lib.items.findIndex((x) => x.id === b.id) : 0));
   const chosen = pick ?? campaigns[0]?.id ?? null;
 
   const begin = async (id: string, resume: boolean) => {
     mv.reset();
     react.reset();
-    const r = await mv.run(() => (resume ? play<WardSolo>("ward", "resume", { campaign: id }) : play<WardSolo>("ward", "start", id)));
+    const r = await mv.run(() => (resume ? play<WardSolo>("ward", "resume", saved.get(id) ? { token: saved.get(id) } : { campaign: id }) : play<WardSolo>("ward", "start", id)));
     if (!r) return;
     setSolo(r);
     setReveal(null);
     setMarks([]);
+    setCampaign(id);
   };
 
   if (!solo) {
@@ -77,7 +81,7 @@ export function WardGame() {
         line="One patient. Your choices change the ending."
         howTo={HOW}
         choiceLabel="Patient"
-        choices={campaigns.map((c) => ({ id: c.id, name: `${c.title}${savedIds.has(c.id) ? " · carry on" : ""}`, line: `${c.patient}. ${c.place}. ${c.sessions} sessions.` }))}
+        choices={campaigns.map((c) => ({ id: c.id, name: `${c.title}${savedIds.has(c.id) ? " · carry on" : marksBy.get(c.id) === "done" ? " · done" : marksBy.get(c.id) === "week" ? " · new this week" : ""}`, line: `${c.patient}. ${c.place}. ${c.sessions} sessions.` }))}
         choice={chosen ?? undefined}
         onChoice={setPick}
         playLabel={resume ? "Carry on" : "Start"}
@@ -123,6 +127,8 @@ export function WardGame() {
     if (reveal || mv.pending) return;
     const r = await mv.run(() => play<WardSolo>("ward", "pick", { token: solo.token, option }));
     if (!r) return;
+    // Keep the place on the server, as the website does (saveCaseProgress("ward", campaign, { token })).
+    if (campaign) saveCase("ward", campaign, r.end ? null : { token: r.token });
     if (r.reveal) {
       setReveal(r.reveal);
       setMarks((m) => [...m, r.reveal!.q === "best" ? "ok" : r.reveal!.q === "ok" ? null : "miss"]);
@@ -167,7 +173,7 @@ export function WardGame() {
             </T>
             <T v="h3">{s.decision.prompt}</T>
             {s.decision.options.map((o, j) => (
-              <OptionRow key={o.id} index={j} text={o.text} testID={`ward-option-${j}`} disabled={mv.pending} onPress={() => void choose(o.id)} />
+              <AnswerRow key={o.id} index={j} text={o.text} testID={`ward-option-${j}`} disabled={mv.pending} onPress={() => void choose(o.id)} />
             ))}
             <Dials vars={s.vars} />
           </View>

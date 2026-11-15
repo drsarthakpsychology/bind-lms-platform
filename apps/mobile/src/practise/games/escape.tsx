@@ -4,14 +4,14 @@ import * as React from "react";
 import { Pressable, View } from "react-native";
 import Animated, { FadeIn, useReducedMotion } from "react-native-reanimated";
 
-import { Button, OptionRow, RowList, Section, T } from "@/ds";
+import { Button, RowList, Section, T } from "@/ds";
 import { haptic } from "@/lib/haptics";
 import { fonts, layout, motion, space, useTheme } from "@/theme";
-import { play, useMove, usePlayQuery } from "../api";
+import { play, saveCase, useMove, useTool } from "../api";
 import { EndPanel, EndThumb, FrameLoading, GameFrame, HudLine, MoveError, StartScreen, StepStrip, Verdict } from "../frame";
-import { Story, Tile } from "../parts";
+import { Story, Tile, AnswerRow } from "../parts";
 import { useReactions } from "../reactions";
-import { ESC_PENALTY_S, ESC_STAGE, type EscDoor, type EscResult, type EscRoomCard, type ProgressSnapshot } from "../types";
+import { ESC_PENALTY_S, ESC_STAGE, type EscDoor, type EscResult, type EscRoomCard } from "../types";
 
 const HOW = ["One patient's case, behind a row of locked doors. Each door is one step: mental state, diagnosis, risk, plan.", "Answer to open the door. A wrong answer adds 20 seconds to your time.", "After two wrong tries a hint appears.", "Your place is saved. Leave and carry on later."];
 
@@ -25,8 +25,7 @@ const mmss = (ms: number) => {
 /** Escape Room, solo: every door checked on the server; answers are positions, never the text. */
 export function EscapeGame() {
   const params = useLocalSearchParams<{ item?: string }>();
-  const rooms = usePlayQuery<{ ok: true; rooms: EscRoomCard[] }>([], "escape", "rooms");
-  const progress = usePlayQuery<ProgressSnapshot>(["escape"], "cases", "progress", "escape");
+  const rooms = useTool("escape");
   const mv = useMove();
   const react = useReactions();
   const reduce = useReducedMotion();
@@ -36,8 +35,9 @@ export function EscapeGame() {
   const [wrongFlash, setWrongFlash] = React.useState(0);
   const [startAt, setStartAt] = React.useState(0);
   const [now, setNow] = React.useState(0);
-  const saved = new Map((progress.data?.rows ?? []).map((r) => [r.item, (r.state as { token?: string } | null)?.token]));
-  const list = rooms.data?.rooms ?? [];
+  const lib = rooms.data?.cases;
+  const saved = new Map((lib?.progress ?? []).filter((r) => r.state).map((r) => [r.item, (r.state as { token?: string }).token]));
+  const list = ((rooms.data?.data.rooms as EscRoomCard[] | undefined) ?? []).slice().sort((a, b) => (lib ? lib.items.findIndex((x) => x.id === a.id) - lib.items.findIndex((x) => x.id === b.id) : 0));
   const chosen = pick ?? list[0]?.id ?? null;
 
   React.useEffect(() => {
@@ -106,13 +106,12 @@ export function EscapeGame() {
   const submit = async (raw: string) => {
     const r = await mv.run(() => play<EscResult>("escape", "answer", { token: res.token, stage: st.stage, answer: raw }));
     if (!r) return;
+    saveCase("escape", r.state.room, r.state.done ? null : { token: r.token });
     react.answer(!!r.right);
     if (r.right) {
       setOpened(true);
-      haptic.success();
     } else {
       setWrongFlash((n) => n + 1);
-      haptic.warn();
     }
     setRes(r);
   };
@@ -158,7 +157,7 @@ function Door({ door, disabled, onSubmit }: { door: EscDoor; disabled: boolean; 
   const [multi, setMulti] = React.useState<number[]>([]);
   const [order, setOrder] = React.useState<number[]>(() => (door.kind === "order" ? door.items.map((_, i) => i) : []));
   const [num, setNum] = React.useState(door.kind === "number" ? Math.round((door.min + door.max) / 2) : 0);
-  if (door.kind === "pick") return <View style={{ gap: space[3] }}>{door.options.map((o, j) => <OptionRow key={j} index={j} text={o} disabled={disabled} testID={`escape-option-${j}`} onPress={() => onSubmit(String(j))} />)}</View>;
+  if (door.kind === "pick") return <View style={{ gap: space[3] }}>{door.options.map((o, j) => <AnswerRow key={j} index={j} text={o} disabled={disabled} testID={`escape-option-${j}`} onPress={() => onSubmit(String(j))} />)}</View>;
   if (door.kind === "multi")
     return (
       <View style={{ gap: space[3] }}>

@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Pressable, ScrollView, View } from "react-native";
+import { ScrollView, View } from "react-native";
 import Animated, { FadeInDown, useReducedMotion } from "react-native-reanimated";
 
 import { Button, RowList, Section, T } from "@/ds";
@@ -7,6 +7,8 @@ import { haptic } from "@/lib/haptics";
 import { layout, motion, space, useTheme } from "@/theme";
 import { play, useMove } from "../api";
 import { EndPanel, EndThumb, GameFrame, HudLine, MoveError, StartScreen } from "../frame";
+import appData from "../data/app-data.json";
+import { Press } from "../fx";
 import { Story } from "../parts";
 import { useReactions } from "../reactions";
 import type { CoCard, CoView } from "../types";
@@ -15,7 +17,43 @@ const HOW = ["You and Dr Bot each hold a secret diagnosis. Yours is shown to you
 const LEVELS = [
   { id: "1", name: "Gentle bot", line: "Plays slowly" },
   { id: "2", name: "Sharp bot", line: "Blocks when it can" },
+  { id: "3", name: "Expert bot", line: "Rarely wastes a turn" },
 ];
+
+/* The cards' words (src/lib/games-sims/comorbid/cards.ts, copied into data/app-data.json). */
+type Named = { id: string; label: string; line: string };
+const CO = appData.COMORBID as { SYMPTOMS: Named[]; RULEOUTS: Named[]; CLEAR: Named; DIAGNOSES: { id: string; name: string; short: string; need: number; rule: string }[] };
+const named = (kind: CoCard["kind"], id: string): Named => (kind === "clear" ? CO.CLEAR : (kind === "rule" ? CO.RULEOUTS : CO.SYMPTOMS).find((x) => x.id === id) ?? { id, label: id, line: "" });
+
+/** The server's game (comorbid.state: the shared rules replayed from the seed and the moves). */
+type Card = { uid: string; kind: CoCard["kind"]; id: string };
+type Seat = { name: string; dx: string; hand: Card[]; built: string[]; blocked: string | null };
+type Game = { seed: string; seats: [Seat, Seat]; deck: Card[]; turn: 0 | 1; log: { seat: 0 | 1; card: Card; action: "play" | "swap"; ok: boolean; reason: string }[]; winner: 0 | 1 | "draw" | null };
+type Move = { uid: string; action: "play" | "swap" };
+
+/** What the student sees of a game: their own hand and diagnosis, the rival's table, never the rival's hand. */
+function toView(g: Game, xp?: number): CoView {
+  const dx = (id: string) => CO.DIAGNOSES.find((d) => d.id === id);
+  const me = g.seats[0];
+  const rival = g.seats[1];
+  const mine = dx(me.dx);
+  const built = (ids: string[]) => ids.map((id) => ({ id, label: named("sym", id).label }));
+  const block = (id: string | null) => (id ? { id, label: named("rule", id).label } : null);
+  const over = g.winner !== null;
+  return {
+    ok: true,
+    token: g.seed,
+    you: { dx: { id: me.dx, name: mine?.name ?? me.dx, rule: mine?.rule ?? "", need: mine?.need ?? 0 }, hand: me.hand.map((h) => ({ ...h, label: named(h.kind, h.id).label, line: named(h.kind, h.id).line })), built: built(me.built), blocked: block(me.blocked) },
+    rival: { name: "Dr Bot", built: built(rival.built), blocked: block(rival.blocked), hand: rival.hand.length },
+    turn: g.turn === 0 ? "you" : "rival",
+    deck: g.deck.length,
+    log: g.log.map((l) => ({ who: l.seat === 0 ? "you" : "rival", text: l.reason, ok: l.ok })),
+    winner: g.winner === null ? null : g.winner === "draw" ? "draw" : g.winner === 0 ? "you" : "rival",
+    rivalDx: over ? { id: rival.dx, name: dx(rival.dx)?.name ?? rival.dx } : null,
+    ...(xp !== undefined ? { xp } : {}),
+  };
+}
+const newSeed = () => `co${Math.floor(Math.random() * 1e12).toString(36)}`;
 
 const KIND_LABEL: Record<CoCard["kind"], string> = { sym: "Symptom", rule: "Rule-out", clear: "Tests normal" };
 
@@ -28,24 +66,36 @@ export function ComorbidGame() {
   const [level, setLevel] = React.useState("1");
   const [v, setV] = React.useState<CoView | null>(null);
   const [sel, setSel] = React.useState<string | null>(null);
+  const run = React.useRef<{ seed: string; level: 1 | 2 | 3; moves: Move[] } | null>(null);
+  const ask = (r: { seed: string; level: 1 | 2 | 3; moves: Move[] }) => play<{ ok: boolean; game?: Game; error?: string }>("comorbid", "state", { seed: r.seed, mode: "bot", level: r.level, moves: r.moves });
 
   const start = async () => {
     mv.reset();
     react.reset();
-    const r = await mv.run(() => play<CoView>("comorbid", "deal", Number(level)));
-    if (r) {
-      setV(r);
+    const r = { seed: newSeed(), level: Number(level) as 1 | 2 | 3, moves: [] as Move[] };
+    const res = await mv.run(() => ask(r));
+    if (res?.game) {
+      run.current = r;
+      setV(toView(res.game));
       setSel(null);
     }
   };
   const move = async (action: "play" | "swap") => {
-    if (!v || !sel) return;
-    const r = await mv.run(() => play<CoView>("comorbid", "move", { token: v.token, uid: sel, action }));
-    if (!r) return;
-    const mine = [...r.log].reverse().find((l) => l.who === "you");
+    const cur = run.current;
+    if (!v || !sel || !cur) return;
+    const next = { ...cur, moves: [...cur.moves, { uid: sel, action }] };
+    const res = await mv.run(() => ask(next));
+    if (!res?.game) return;
+    run.current = next;
+    let view = toView(res.game);
+    const mine = [...view.log].reverse().find((l) => l.who === "you");
     if (action === "play" && mine) react.answer(mine.ok);
-    if (mine && !mine.ok) haptic.warn();
-    setV(r);
+    if (view.winner) {
+      // The server replays and grades every move; the phone never sends a score.
+      const fin = await play<{ ok: boolean; xp: number }>("comorbid", "finish", { seed: next.seed, mode: "bot", level: next.level, moves: next.moves }).catch(() => null);
+      view = toView(res.game, fin?.xp);
+    }
+    setV(view);
     setSel(null);
   };
 
@@ -100,7 +150,7 @@ export function ComorbidGame() {
           {v.you.hand.map((h) => {
             const on = h.uid === sel;
             return (
-              <Pressable
+              <Press
                 key={h.uid}
                 accessibilityRole="button"
                 accessibilityState={{ selected: on }}
@@ -110,7 +160,7 @@ export function ComorbidGame() {
                   setSel(on ? null : h.uid);
                 }}
                 testID={`co-card-${h.uid}`}
-                style={{ width: 148, minHeight: 180, padding: space[3], gap: space[2], borderRadius: layout.radius, borderWidth: on ? 2.5 : 1.5, borderColor: on ? c.brand : c.cardLine, backgroundColor: h.kind === "rule" ? c.alertBg : h.kind === "clear" ? c.successBg : c.card, transform: [{ translateY: on ? -8 : 0 }] }}
+                style={{ width: 148, minHeight: 180, padding: space[3], gap: space[2], borderRadius: layout.radius, borderWidth: on ? 2.5 : 1.5, borderColor: on ? c.brand : c.cardLine, backgroundColor: h.kind === "rule" ? c.alertBg : h.kind === "clear" ? c.successBg : c.card, top: on ? -8 : 0 }}
               >
                 <T v="caption" tone="muted">
                   {KIND_LABEL[h.kind].toUpperCase()}
@@ -119,7 +169,7 @@ export function ComorbidGame() {
                 <T v="small" tone="muted">
                   {h.line}
                 </T>
-              </Pressable>
+              </Press>
             );
           })}
         </ScrollView>

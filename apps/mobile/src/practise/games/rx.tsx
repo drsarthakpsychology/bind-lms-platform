@@ -3,11 +3,11 @@ import * as React from "react";
 import { View } from "react-native";
 import Animated, { FadeIn, useReducedMotion } from "react-native-reanimated";
 
-import { Button, OptionRow, Row, RowList, Section, T } from "@/ds";
+import { Button, Row, RowList, Section, T } from "@/ds";
 import { motion, space } from "@/theme";
 import { play, useMove } from "../api";
 import { EndPanel, EndThumb, GameFrame, HudLine, Lives, MoveError, StartScreen, StepStrip, Verdict } from "../frame";
-import { Story } from "../parts";
+import { Story, AnswerRow } from "../parts";
 import { useReactions } from "../reactions";
 import { RX_LIVES, RX_STEPS, rxPoints, type RxAnswered, type RxCase, type RxDeal, type RxMode, type RxPick } from "../types";
 
@@ -186,7 +186,7 @@ export function RxGame() {
         {cs.kind !== "chain" || !answered ? (
           <View style={{ gap: space[3] }}>
             {options.map((o, j) => (
-              <OptionRow key={`${chainAt}-${o.id}`} index={j} text={o.label} testID={`rx-option-${j}`} disabled={!!answered || mv.pending} state={stateOf(o.id)} onPress={() => void pick(o.id)} />
+              <AnswerRow key={`${chainAt}-${o.id}`} index={j} text={o.label} testID={`rx-option-${j}`} disabled={!!answered || mv.pending} state={stateOf(o.id)} onPress={() => void pick(o.id)} />
             ))}
           </View>
         ) : null}

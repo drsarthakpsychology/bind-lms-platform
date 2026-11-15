@@ -2,12 +2,13 @@ import * as React from "react";
 import { Pressable, View } from "react-native";
 import Animated, { FadeIn, useReducedMotion } from "react-native-reanimated";
 
-import { Button, OptionRow, T } from "@/ds";
+import { Button, T } from "@/ds";
 import { haptic } from "@/lib/haptics";
 import { fonts, layout, motion, space, useTheme } from "@/theme";
 import { play, useMove } from "../api";
 import { MSE_DOMAINS, termLabel } from "../data";
 import { EndPanel, EndThumb, GameFrame, HudLine, MoveError, StartScreen, StepStrip, Verdict } from "../frame";
+import { AnswerRow } from "../parts";
 import { useReactions } from "../reactions";
 import type { MseDeal, MseExcerpt, MseLevel, MseReveal, MseTag } from "../types";
 
@@ -181,7 +182,7 @@ export function MseGame() {
         {domain && !reveal ? (
           <View style={{ gap: space[3] }}>
             {options.map((t, j) => (
-              <OptionRow key={t} index={j} text={termLabel(t)} testID={`mse-term-${j}`} disabled={mv.pending} onPress={() => void tag(t)} />
+              <AnswerRow key={t} index={j} text={termLabel(t)} testID={`mse-term-${j}`} disabled={mv.pending} onPress={() => void tag(t)} />
             ))}
             <Button kind="text" label="Change part" onPress={() => setDomain(null)} />
           </View>

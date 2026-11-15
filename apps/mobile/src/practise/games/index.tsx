@@ -7,7 +7,6 @@ import { BlitzGame } from "./blitz";
 import { ComorbidGame } from "./comorbid";
 import { DuelGame } from "./duel";
 import { EscapeGame } from "./escape";
-import { MatchGame } from "./match";
 import { MseGame } from "./mse";
 import { RxGame } from "./rx";
 import { SortGame } from "./sort";
@@ -24,7 +23,6 @@ export const GAMES: Record<string, React.ComponentType> = {
   duel: DuelGame,
   escape: EscapeGame,
   comorbid: ComorbidGame,
-  match: MatchGame,
 };
 
 export function GameRoute() {

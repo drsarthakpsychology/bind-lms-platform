@@ -8,13 +8,18 @@
 import type { RawResponse } from "@/api/client";
 import type { MedicineList, MedicinePage } from "../types";
 import { CASES, resetCases } from "./cases";
+import * as R from "./routes";
 import { GAMES, resetGames } from "./games";
 import { CONTENT, PlayError, resetSeeds } from "./kit";
 
 const ok = <T,>(data: T): RawResponse => ({ status: 200, json: { ok: true, data } });
 const fail = (status: number, code: string, message: string): RawResponse => ({ status, json: { ok: false, error: { code, message } } });
 
-const HANDLERS: Record<string, Record<string, (...args: never[]) => unknown>> = { ...GAMES, ...CASES };
+const HANDLERS: Record<string, Record<string, (...args: never[]) => unknown>> = {
+  ...GAMES,
+  ...CASES,
+  prep: { ...CASES.prep, save: (i: { id?: string; saved?: boolean }) => (i?.id ? (R.toggleSaved(i.id, !!i.saved), { ok: true }) : { ok: false }) },
+};
 
 type Med = { id: string; name: string; cls: string; group: string; brands: string[]; uses: string[]; standout: string[]; doses: { amount: string }[]; defaultDose: number; related: string[] };
 type MedSample = { med: Med; mechanism: Record<string, unknown> | null; visuals: Record<string, unknown>[]; halfLife: Record<string, unknown> | null };
@@ -42,6 +47,30 @@ export function practiseRoute(method: string, path: string, body: unknown, kind:
       return p ? ok(p) : fail(404, "not_found", "That could not be found.");
     }
     return null;
+  }
+  if (seg[0] === "practise" || seg[0] === "prep" || seg[0] === "leaderboards") {
+    if (kind === "lecture") return fail(403, "scope", "Your account is for lectures only.");
+    const q = new URLSearchParams(path.split("?")[1] ?? "");
+    const d = (i: number) => decodeURIComponent(seg[i] ?? "");
+    try {
+      if (method === "GET" && seg[0] === "practise" && seg.length === 1) return ok(R.hub());
+      if (method === "GET" && seg[0] === "practise" && seg[1] === "tools" && seg.length === 3) return ok(R.practiseTool(d(2)));
+      if (method === "POST" && seg[0] === "practise" && seg[1] === "records") return ok({ ok: true });
+      if (method === "POST" && seg[0] === "practise" && seg[1] === "duel") return fail(503, "unavailable", "Duels are not set up yet.");
+      if (method === "GET" && seg[0] === "prep") {
+        if (seg.length === 1) return ok(R.prepHome());
+        if (seg[1] === "subjects" && seg.length === 3) return ok(R.prepSubject(d(2)));
+        if (seg[1] === "subjects" && seg[3] === "topics" && seg.length === 5) return ok(R.prepTopic(d(2), d(4), Number(q.get("set")) || 0));
+        if (seg[1] === "smart") return ok(R.prepSmart());
+        if (seg[1] === "lists" && seg.length === 3) return ok(R.prepList(d(2)));
+        if (seg[1] === "long") return ok(R.prepLong(seg[2] && d(2), seg[3] && d(3), seg[4] && d(4)));
+      }
+      if (method === "GET" && seg[0] === "leaderboards") return ok(R.board(seg[1] === "games" ? d(2) : d(1)));
+    } catch (e) {
+      if (e instanceof PlayError) return fail(e.status, e.code, e.message);
+      throw e;
+    }
+    return fail(404, "not_found", "That could not be found.");
   }
   if (seg[0] !== "play" || seg.length !== 3 || method !== "POST") return null;
   if (kind === "lecture") return fail(403, "scope", "Your account is for lectures only.");

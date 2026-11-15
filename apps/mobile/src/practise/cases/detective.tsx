@@ -2,11 +2,11 @@ import * as React from "react";
 import { View } from "react-native";
 import Animated, { FadeInDown, useReducedMotion } from "react-native-reanimated";
 
-import { Button, OptionRow, T } from "@/ds";
+import { Button, T } from "@/ds";
 import { motion, space } from "@/theme";
 import { play, useMove } from "../api";
 import { EndPanel, EndThumb, GameFrame, HudLine, MoveError, StartScreen, StepStrip, Verdict } from "../frame";
-import { Tag } from "../parts";
+import { Tag, AnswerRow } from "../parts";
 import { useReactions } from "../reactions";
 import { DET_CLUES, DET_POINTS, DET_WRONG, type DetDeal, type DetFamily } from "../types";
 
@@ -126,7 +126,7 @@ export function DetectiveCase() {
       </View>
       <View style={{ gap: space[3] }}>
         {round.options.map((o, j) => (
-          <OptionRow key={o} index={j} text={o} testID={`detective-option-${j}`} disabled={!!result || wrong.includes(o) || mv.pending} state={result ? (o === result.answer ? "right" : wrong.includes(o) ? "wrong" : "dim") : wrong.includes(o) ? "wrong" : "idle"} onPress={() => void guess(o)} />
+          <AnswerRow key={o} index={j} text={o} testID={`detective-option-${j}`} disabled={!!result || wrong.includes(o) || mv.pending} state={result ? (o === result.answer ? "right" : wrong.includes(o) ? "wrong" : "dim") : wrong.includes(o) ? "wrong" : "idle"} onPress={() => void guess(o)} />
         ))}
       </View>
       <MoveError text={mv.error} />

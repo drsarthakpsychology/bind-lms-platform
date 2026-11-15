@@ -3,12 +3,12 @@ import * as React from "react";
 import { View } from "react-native";
 import Animated, { FadeIn, useReducedMotion } from "react-native-reanimated";
 
-import { OptionRow, ProgressLine, RowList, Section, T } from "@/ds";
+import { ProgressLine, RowList, Section, T } from "@/ds";
 import { haptic } from "@/lib/haptics";
 import { fonts, motion, space, useTheme } from "@/theme";
 import { play, useMove } from "../api";
 import { EndPanel, EndThumb, GameFrame, HudLine, MoveError, StartScreen } from "../frame";
-import { Tile } from "../parts";
+import { Tile, AnswerRow } from "../parts";
 import { useReactions } from "../reactions";
 import { BLITZ_MS, multiplier, type BlitzAnswer, type BlitzFinish, type BlitzPrompt, type BlitzStart } from "../types";
 
@@ -102,9 +102,7 @@ export function BlitzGame() {
     setReveal({ picked: choice, answer: r.answer });
     setRun({ ...r.state });
     react.answer(r.right);
-    if (r.right) haptic.success();
-    else {
-      haptic.warn();
+    if (!r.right) {
       setMisses((m) => [...m, { prompt: asked.prompt, answer: asked.options[r.answer] ?? "", why: r.why }]);
     }
     endAt.current = clock() + r.msLeft;
@@ -186,7 +184,7 @@ export function BlitzGame() {
           ) : (
             <View style={{ gap: space[3] }}>
               {q.options.map((o, j) => (
-                <OptionRow key={j} index={j} text={o} testID={`blitz-option-${j}`} disabled={!!reveal || mv.pending} state={!reveal ? "idle" : j === reveal.answer ? "right" : j === reveal.picked ? "wrong" : "dim"} onPress={() => void answer(j)} />
+                <AnswerRow key={j} index={j} text={o} testID={`blitz-option-${j}`} disabled={!!reveal || mv.pending} state={!reveal ? "idle" : j === reveal.answer ? "right" : j === reveal.picked ? "wrong" : "dim"} onPress={() => void answer(j)} />
               ))}
             </View>
           )}

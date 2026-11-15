@@ -5,9 +5,8 @@
  * before the student answers: every "public" shape below has options, never
  * the right one; the right one arrives in the reply to the answer.
  *
- * Shapes marked REQUESTED are not on the server yet; they are written up in
- * docs/app/CONTRACT_REQUESTS.md ("Practise, second part") and answered by the
- * mock play server until the server adds them.
+ * The first screens (hub, tools, Exam Prep, boards) are in ./contract.ts,
+ * copied from the server.
  */
 
 /* ------------------------------------------------------------------ blitz */
@@ -158,28 +157,9 @@ export type PrepChecked = PrepReveal & { correct: boolean };
 export type ProgressTool = "ward" | "escape" | "osce" | "formulation" | "detective" | "wwyd" | "two-minute" | "landmark" | "mse-small";
 export type ProgressSnapshot = { owner: string | null; rows: { item: string; state: unknown; at: number }[] };
 
-/* ===================================================== REQUESTED shapes */
+/* ================================================= drawn on the phone */
 
-/** REQUESTED `duel.start` (level) and `duel.answer` ({ token, round, dx, feature }): solo against the bot, dealt on the server. */
-export type DuelRound = { n: number; topic: string; vignette: string; options: string[]; features: string[] };
-export type DuelStart = { ok: true; token: string; rounds: number; round: DuelRound; bot: { name: string } };
-export type DuelAnswer = {
-  ok: true;
-  token: string;
-  dxOk: boolean;
-  featureOk: boolean;
-  points: number;
-  /** Positions in the options and features shown. */
-  answer: { dx: number; feature: number };
-  why: string;
-  bot: { dxOk: boolean; featureOk: boolean; points: number; ms: number };
-  score: { you: number; bot: number };
-  next: DuelRound | null;
-  end: null | { won: boolean | "draw"; xp: number };
-};
-export const DUEL_ROUND_MS = 20_000;
-
-/** REQUESTED `comorbid.deal` (level) and `comorbid.move` ({ token, uid, action }): the deck and the rival's diagnosis stay on the server. */
+/** What the Comorbid screen draws, built on the phone from the server's comorbid.state game (src/practise/games/comorbid.tsx). */
 export type CoCard = { uid: string; kind: "sym" | "rule" | "clear"; id: string; label: string; line: string };
 export type CoView = {
   ok: true;
@@ -195,17 +175,12 @@ export type CoView = {
   xp?: number;
 };
 
-/** REQUESTED `match.deal` and `match.pick` ({ token, left, right }): the pairs are checked on the server. */
-export type MatchDeal = { ok: true; token: string; title: string; lefts: string[]; rights: string[] };
-export type MatchPick = { ok: true; token: string; right: boolean; done: number[]; cleared: boolean; tries: number; xp?: number };
-
 /**
- * REQUESTED `tool.list` (tool) and `tool.deal` ({ tool, item? }), `tool.answer` ({ token, step, answer }):
- * the practice tools that the website still deals in the browser (What would
- * you do, Say it clinically, Judgment calls, Ethics, Landmark, OSCE, Two-minute
- * clinic, Formulation, Out of depth, Weak spots, MSE trainer). One shape for all
- * of them: a case in steps; each step is one kind of answer. The reveal of a
- * step (the right answer and why) comes only in the reply to `tool.answer`.
+ * The practice tools whose whole case comes to the browser on the website
+ * (What would you do, Say it clinically, Judgment calls, Ethics, Landmark,
+ * OSCE, Two-minute clinic, Formulation, Out of depth, Weak spots, MSE
+ * trainer). src/practise/tools/engine.ts turns each tool's server data
+ * (GET /practise/tools/:tool) into a case in steps of these kinds.
  */
 export type ToolId = "wwyd" | "say-it" | "judgment" | "ethics" | "landmark" | "osce" | "two-minute" | "formulation" | "out-of-depth" | "weak-spots" | "mse-trainer";
 export type ToolStep =
@@ -218,9 +193,9 @@ export type ToolStep =
   /** OSCE: tick what you would say or do, against the clock. */
   | { n: number; kind: "checklist"; ask: string; items: string[]; seconds: number }
   /** Landmark: read, then a question. */
-  | { n: number; kind: "read"; title: string; body: string };
-export type ToolCase = { id: string; title: string; setting: string | null; intro: string; steps: number; step: ToolStep };
-export type ToolDeal = { ok: true; token: string; case: ToolCase };
+  | { n: number; kind: "read"; title: string; body: string }
+  /** Free text (Two-minute clinic, MSE observe): written, then compared with the model answer. */
+  | { n: number; kind: "write"; ask: string; fields: string[]; seconds?: number };
 export type ToolReveal = {
   /** 0 to 1. */
   score: number;
@@ -232,34 +207,9 @@ export type ToolReveal = {
   notes: (string | null)[] | null;
   /** For read steps and law notes: an extra paragraph after the answer. */
   more: string | null;
+  /** Free text: not marked, the student compares with the model answer. */
+  selfCheck?: boolean;
 };
-export type ToolAnswer = { ok: true; token: string; reveal: ToolReveal; next: ToolStep | null; end: null | { score: number; takeaway: string; xp: number } };
-export type ToolListItem = { id: string; title: string; line: string | null; mark: CaseMark };
-export type ToolList = { ok: true; items: ToolListItem[] };
-
-/** REQUESTED `prep.subjects` and `prep.topics` (subject), `prep.set` ({ subject, topic, set }): the first screens of Exam Prep. */
-export type PrepSubjectRow = { id: string; title: string; questions: number; answered: number; right: number };
-export type PrepTopicRow = { id: string; title: string; questions: number; answered: number; sets: { n: number; questions: number; done: boolean; right: number | null }[] };
-export type PrepSubjects = { ok: true; subjects: PrepSubjectRow[]; long: number };
-export type PrepTopics = { ok: true; subject: { id: string; title: string }; topics: PrepTopicRow[] };
-export type PrepSet = { ok: true; title: string; questions: PrepQView[] };
-/** REQUESTED `prep.long` ({ subject? }) and `prep.longAnswer` (id): long answers, the model answer only on Show answer. */
-export type LongItem = { id: string; subject: string; topic: string; marks: number; difficulty: number; question: string; plan: string[] };
-export type LongList = { ok: true; items: LongItem[] };
-export type LongAnswer = { ok: true; id: string; answer: string; keyPoints: string[]; pitfalls: string[] };
-
-/** REQUESTED `board.week` (game): this week's leaderboard for one game, or all of Practise. */
-export type BoardRow = { rank: number; name: string; points: number; you: boolean };
-export type Board = { ok: true; title: string; week: string; rows: BoardRow[]; you: BoardRow | null };
-
-/**
- * REQUESTED `hub.state`: the small tags on the Practise hub (built from the
- * same answer history as the website's hubs: hubNewCases, case progress).
- * `tags` per hub entry id; `carryOn` is the newest half-finished case.
- */
-export type HubTag = "new" | "week" | "done" | "started";
-export type HubState = { ok: true; tags: Record<string, { tag: HubTag; count?: number } | undefined>; carryOn: { entry: string; item: string; title: string; step: string } | null; daily: { number: number; done: boolean; streak: number } | null };
-
 /* ---------------------------------------------- contract (server copy) */
 /*
  * From the server's src/lib/app-api/contract.ts (branch agent/appapi2,
@@ -279,7 +229,3 @@ export type MedicinePage = {
   halfLife: Record<string, unknown> | null;
   study: { moduleId: string; title: string; target: import("@/api/contract").AppTarget } | null;
 };
-
-/** REQUESTED `ward.campaigns` and `escape.rooms`: the pick screens. */
-export type WardCampaigns = { ok: true; campaigns: WardCampaign[] };
-export type EscRooms = { ok: true; rooms: EscRoomCard[] };

@@ -17,7 +17,6 @@ export const GAMES_SOLO: Entry[] = [
   { id: "mse", title: "MSE Lab", line: "Tag every finding in an interview.", href: "/game/mse", icon: "scan" },
   { id: "ward", title: "Ward Week", line: "One patient. Your choices change the ending.", href: "/game/ward", icon: "hospital", tool: "ward" },
   { id: "rx", title: "Rx Detective", line: "Medicines, receptors and risky mixes.", href: "/game/rx", icon: "pill" },
-  { id: "match", title: "Match the term", line: "Pair each word with its meaning.", href: "/game/match", icon: "pair" },
 ];
 
 export const GAMES_RIVAL: Entry[] = [

@@ -1,13 +1,14 @@
 import * as React from "react";
 import { Pressable, View } from "react-native";
 
-import { T } from "@/ds";
+import { OptionRow, T } from "@/ds";
+import { Feel } from "./fx";
 import { haptic } from "@/lib/haptics";
 import { layout, space, useTheme } from "@/theme";
-import type { CaseMark, HubTag } from "./types";
+import type { CaseMark } from "./types";
 
 /** A status tag: a small pill that says what something is (Done, New, This week, Carry on). Never a button. */
-export function Tag({ tag, count, testID }: { tag: HubTag | CaseMark; count?: number; testID?: string }) {
+export function Tag({ tag, count, testID }: { tag: CaseMark; count?: number; testID?: string }) {
   const c = useTheme();
   const label = tag === "new" ? (count && count > 1 ? `${count} new` : "New") : tag === "week" ? "This week" : tag === "done" ? "Done" : "Carry on";
   const style =
@@ -27,12 +28,22 @@ export function Tag({ tag, count, testID }: { tag: HubTag | CaseMark; count?: nu
   );
 }
 
+/** An answer row (A, B, C...) that pops when it turns right and shakes when it turns wrong. */
+export function AnswerRow(props: React.ComponentProps<typeof OptionRow>) {
+  return (
+    <Feel state={props.state ?? "idle"}>
+      <OptionRow {...props} />
+    </Feel>
+  );
+}
+
 /** A big tappable answer tile (a word, a card, a door option) with on, right and wrong states. */
 export function Tile({ text, onPress, state = "idle", disabled, testID, lines, children, accessibilityLabel }: { text?: string; onPress?: () => void; state?: "idle" | "on" | "right" | "wrong" | "dim" | "gone"; disabled?: boolean; testID?: string; lines?: number; children?: React.ReactNode; accessibilityLabel?: string }) {
   const c = useTheme();
   const border = state === "on" ? c.ink : state === "right" ? (c.dark ? c.primary : c.ink) : state === "wrong" ? c.danger : c.cardLine;
   const bg = state === "right" ? c.successBg : state === "wrong" ? c.alertBg : state === "on" ? c.tint : state === "gone" ? c.tint : "transparent";
   return (
+    <Feel state={state}>
     <Pressable
       testID={testID}
       accessibilityRole="button"
@@ -51,6 +62,7 @@ export function Tile({ text, onPress, state = "idle", disabled, testID, lines, c
         </T>
       )}
     </Pressable>
+    </Feel>
   );
 }
 

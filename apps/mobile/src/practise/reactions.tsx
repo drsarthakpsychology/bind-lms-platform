@@ -3,6 +3,7 @@ import { Image, Pressable, View } from "react-native";
 import Animated, { Easing, useAnimatedStyle, useReducedMotion, useSharedValue, withSequence, withTiming } from "react-native-reanimated";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
+import { haptic } from "@/lib/haptics";
 import { settingsStore } from "@/lib/settings";
 import { createStore } from "@/lib/store";
 import { motion } from "@/theme";
@@ -78,6 +79,8 @@ export function useReactions() {
   return React.useMemo(
     () => ({
       answer(right: boolean) {
+        if (right) haptic.success();
+        else haptic.warn();
         const r = run.current;
         if (right) {
           r.streak += 1;

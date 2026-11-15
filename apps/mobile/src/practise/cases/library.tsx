@@ -4,13 +4,15 @@ import { useQueries } from "@tanstack/react-query";
 
 import { Chips, EmptyState, Row, RowList, RowsSkeleton, Screen, Section } from "@/ds";
 import { useTheme } from "@/theme";
-import { play } from "../api";
+import { api } from "@/auth";
 import { CASE_TOOLS } from "../catalog";
+import type { CaseMark, PractiseTool } from "../contract";
+import { API_TOOL, arrange, buildDefs } from "../tools/engine";
 import { EntryIcon } from "../icons";
 import { Tag } from "../parts";
-import type { CaseMark, ToolList } from "../types";
 
-const TOOLS = CASE_TOOLS.filter((t) => t.kind === "tool");
+/** The tools with a case library (Done, New, This week). */
+const TOOLS = CASE_TOOLS.filter((t) => t.kind === "tool" && t.toolId && ["wwyd", "two-minute", "landmark", "osce", "formulation"].includes(t.toolId));
 type Filter = "all" | "started" | "new" | "week" | "done";
 
 /**
@@ -20,15 +22,18 @@ type Filter = "all" | "started" | "new" | "week" | "done";
 export function CaseLibrary() {
   const c = useTheme();
   const [filter, setFilter] = React.useState<Filter>("all");
-  const qs = useQueries({ queries: TOOLS.map((t) => ({ queryKey: ["play", "tool", "list", t.toolId], queryFn: () => play<ToolList>("tool", "list", t.toolId) })) });
+  const qs = useQueries({ queries: TOOLS.map((t) => ({ queryKey: ["practise", "tool", API_TOOL[t.toolId!]], queryFn: () => api.get<PractiseTool>(`/practise/tools/${API_TOOL[t.toolId!]}`), staleTime: 30_000 })) });
   const loading = qs.some((q) => q.isLoading);
-  const rows = TOOLS.flatMap((t, i) => (qs[i]?.data?.items ?? []).map((it) => ({ ...it, tool: t })));
+  const rows = TOOLS.flatMap((t, i) => {
+    const d = qs[i]?.data;
+    if (!d) return [];
+    return arrange(buildDefs(t.toolId!, d.data), d.cases).map(({ def, mark }) => ({ id: def.id, title: def.title, line: def.line, mark: (mark ?? "new") as CaseMark, tool: t }));
+  });
   const shown = rows.filter((r) => filter === "all" || r.mark === filter);
   const carry = rows.filter((r) => r.mark === "started");
   const open = (toolHref: string, id: string) => router.push(`${toolHref}?item=${encodeURIComponent(id)}`);
-  const count = (m: CaseMark) => rows.filter((r) => r.mark === m).length;
   return (
-    <Screen testID="case-library" title="All cases" lead={loading ? undefined : `${rows.length} cases · ${count("done")} done · ${count("new")} new`}>
+    <Screen testID="case-library" title="All cases" lead="Every case, with what you have done and what is new.">
       <Chips
         scroll
         label="Show"

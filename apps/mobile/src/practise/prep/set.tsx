@@ -1,16 +1,20 @@
 import { router, useLocalSearchParams } from "expo-router";
 import * as React from "react";
-import { View } from "react-native";
+import { Bookmark } from "lucide-react-native";
+import { Pressable, View } from "react-native";
 import Animated, { FadeIn, useReducedMotion } from "react-native-reanimated";
 
-import { Button, OptionRow, RowList, Section, T } from "@/ds";
+import { Button, EmptyState, RowList, Section, T } from "@/ds";
 import { Rich } from "@/study/rich";
 import { motion, space, useTheme } from "@/theme";
+import { api } from "@/auth";
+import { haptic } from "@/lib/haptics";
 import { play, useLoad, useMove } from "../api";
+import type { PrepSet } from "../contract";
 import { EndPanel, EndThumb, FrameError, FrameLoading, GameFrame, HudLine, MoveError, StepStrip, Verdict } from "../frame";
-import { Story } from "../parts";
+import { Story, AnswerRow } from "../parts";
 import { useReactions } from "../reactions";
-import type { PrepChecked, PrepQView, PrepSet } from "../types";
+import type { PrepChecked, PrepQView } from "../types";
 
 const HOW = ["One question at a time. Tap your answer to check it.", "The why comes after each answer. Questions you miss come back first next time."];
 const ROMAN = ["I", "II", "III", "IV", "V", "VI"];
@@ -60,7 +64,8 @@ export function QuestionBody({ q }: { q: PrepQView }) {
 
 /** One Exam Prep set: a question per screen, checked on the server (prep.check). */
 export function PrepSetScreen() {
-  const p = useLocalSearchParams<{ subject?: string; topic?: string; set?: string }>();
+  const p = useLocalSearchParams<{ subject?: string; topic?: string; set?: string; list?: string }>();
+  const c = useTheme();
   const reduce = useReducedMotion();
   const mv = useMove();
   const react = useReactions();
@@ -70,20 +75,44 @@ export function PrepSetScreen() {
   const [marks, setMarks] = React.useState<("ok" | "miss" | null)[]>([]);
   const [missed, setMissed] = React.useState<{ q: PrepQView; r: PrepChecked }[]>([]);
   const started = React.useRef(0);
-  const n = Number(p.set) || 0;
-  const q0 = useLoad(() => play<PrepSet>("prep", "set", { subject: p.subject, topic: p.topic, set: n }), `${p.subject}:${p.topic}:${n}`);
+  const enc = encodeURIComponent;
+  const path = p.list === "smart" ? "/prep/smart" : p.list === "saved" || p.list === "wrong" ? `/prep/lists/${p.list}` : `/prep/subjects/${enc(p.subject ?? "")}/topics/${enc(p.topic ?? "")}${p.set ? `?set=${enc(p.set)}` : ""}`;
+  const q0 = useLoad(() => api.get<PrepSet>(path), path);
   const set = q0.data;
+  const [saved, setSaved] = React.useState<string[] | null>(null);
+  const savedIds = saved ?? set?.saved ?? [];
+  const [begun, setBegun] = React.useState(false);
+  if (set && !begun) {
+    setBegun(true);
+    if (set.start > 0 && set.start < set.questions.length) {
+      setI(set.start);
+      setMarks(set.questions.slice(0, set.start).map((x) => (set.prior[x.id] === true ? "ok" : set.prior[x.id] === false ? "miss" : null)));
+    }
+  }
   React.useEffect(() => {
     started.current = Date.now();
   }, [set, i]);
   if (q0.error) return <FrameError title="Exam Prep" error={q0.error} onRetry={q0.retry} />;
   if (!set) return <FrameLoading title="Exam Prep" />;
 
-  const q = set.questions[i];
+  const q = set.questions[i] as PrepQView | undefined;
+  const nextSet = set.sets.find((x) => x.n === set.set + 1);
+  const again = () => {
+    if (p.list) router.replace(`/prep/set?list=${p.list}`);
+    else if (nextSet) router.replace(`/prep/set?subject=${enc(p.subject ?? "")}&topic=${enc(p.topic ?? "")}&set=${nextSet.n}`);
+    else router.back();
+  };
+  if (!set.questions.length) {
+    return (
+      <GameFrame testID="prep-set" title={set.title}>
+        <EmptyState mood="sleepy" title={p.list === "wrong" ? "Nothing to practise again" : p.list === "saved" ? "No saved questions" : "No questions here yet"} body={p.list ? "Questions show up here as you answer and save them." : "Try another topic."} />
+      </GameFrame>
+    );
+  }
   if (!q) {
     const right = marks.filter((m) => m === "ok").length;
     return (
-      <GameFrame testID="prep-set" title={set.title} thumb={<EndThumb again={() => router.replace(`/prep/set?subject=${encodeURIComponent(p.subject ?? "")}&topic=${encodeURIComponent(p.topic ?? "")}&set=${n + 1}`)} againLabel="Next set" extra={{ label: "Topics", onPress: () => router.back() }} />}>
+      <GameFrame testID="prep-set" title={set.title} thumb={<EndThumb again={again} againLabel={p.list ? "Another set" : nextSet ? "Next set" : "Back to the topics"} extra={p.list || !nextSet ? undefined : { label: "Topics", onPress: () => router.back() }} />}>
         <EndPanel kicker="Set done" score={`${right}`} scoreOf={`of ${set.questions.length}`} right={right} total={set.questions.length} line={right === set.questions.length ? "Every one right." : "The ones you missed come back first next time."}>
           {missed.length ? (
             <Section title="Look again">
@@ -103,6 +132,14 @@ export function PrepSetScreen() {
     );
   }
 
+  const isSaved = savedIds.includes(q.id);
+  const toggleSave = async () => {
+    const want = !isSaved;
+    setSaved(want ? [...savedIds, q.id] : savedIds.filter((x) => x !== q.id));
+    haptic.select();
+    const r = await play<{ ok: boolean }>("prep", "save", { id: q.id, saved: want }).catch(() => ({ ok: false }));
+    if (!r.ok) setSaved(savedIds);
+  };
   const choose = async (j: number) => {
     if (res || mv.pending) return;
     setPick(j);
@@ -124,7 +161,16 @@ export function PrepSetScreen() {
   const hud = (
     <View style={{ gap: space[2] }}>
       <StepStrip at={i} total={set.questions.length} marks={marks} />
-      <HudLine left={`Question ${i + 1} of ${set.questions.length}`} />
+      <HudLine
+        left={`Question ${i + 1} of ${set.questions.length}`}
+        right={
+          set.canSave ? (
+            <Pressable accessibilityRole="button" accessibilityLabel={isSaved ? "Saved. Tap to unsave" : "Save this question"} accessibilityState={{ selected: isSaved }} onPress={() => void toggleSave()} hitSlop={10} testID="prep-save">
+              <Bookmark size={20} color={c.ink} fill={isSaved ? c.ink : "transparent"} />
+            </Pressable>
+          ) : undefined
+        }
+      />
     </View>
   );
   return (
@@ -133,7 +179,7 @@ export function PrepSetScreen() {
         <QuestionBody q={q} />
         <View style={{ gap: space[3] }}>
           {q.options.map((o, j) => (
-            <OptionRow key={j} index={j} text={o} testID={`prep-option-${j}`} disabled={!!res || mv.pending} state={!res ? (pick === j ? "picked" : "idle") : j === res.answer ? "right" : j === pick ? "wrong" : "dim"} onPress={() => void choose(j)} />
+            <AnswerRow key={j} index={j} text={o} testID={`prep-option-${j}`} disabled={!!res || mv.pending} state={!res ? (pick === j ? "picked" : "idle") : j === res.answer ? "right" : j === pick ? "wrong" : "dim"} onPress={() => void choose(j)} />
           ))}
         </View>
         <MoveError text={mv.error} />

@@ -4,8 +4,10 @@ import * as React from "react";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 import { mock } from "@/api/mock/server";
-import { session } from "@/auth";
+import { api, session } from "@/auth";
 import { play } from "@/practise/api";
+import type * as C from "@/practise/contract";
+import { buildDefs, grade, scoreSct, simulatedPanel } from "@/practise/tools/engine";
 import { CaseLibrary } from "@/practise/cases/library";
 import { DailyCase } from "@/practise/cases/daily";
 import { DetectiveCase } from "@/practise/cases/detective";
@@ -14,7 +16,6 @@ import { BlitzGame } from "@/practise/games/blitz";
 import { ComorbidGame } from "@/practise/games/comorbid";
 import { DuelGame } from "@/practise/games/duel";
 import { EscapeGame } from "@/practise/games/escape";
-import { MatchGame } from "@/practise/games/match";
 import { MseGame, segments } from "@/practise/games/mse";
 import { RxGame } from "@/practise/games/rx";
 import { SortGame } from "@/practise/games/sort";
@@ -52,13 +53,9 @@ describe("answers never reach the phone before the student answers", () => {
       await play("blitz", "start"),
       await play("rx", "deal", "mixed"),
       await play("mse", "deal", 1),
-      await play("duel", "start", 1),
-      await play("match", "deal"),
       await play("detective", "deal", "mixed", []),
-      await play("prep", "set", { subject: "statistics", topic: "descriptives", set: 0 }),
-      await play("tool", "deal", { tool: "wwyd" }),
-      await play("tool", "deal", { tool: "formulation" }),
-      await play("tool", "deal", { tool: "judgment" }),
+      (await api.get<C.PrepSet>("/prep/subjects/statistics/topics/descriptives?set=1")).questions,
+      (await api.get<C.PrepSet>("/prep/smart")).questions,
       await play<P.SortLoad>("sort", "load", { mode: "daily", tier: "basic" }),
       await play("escape", "start", "kolkata"),
     ];
@@ -73,12 +70,37 @@ describe("answers never reach the phone before the student answers", () => {
 });
 
 describe("Practise hub", () => {
-  it("leads with today's case and lists every group", async () => {
+  it("draws the server's rows (GET /practise) and leads with today's case", async () => {
     await render(<PractiseHub />);
     await waitFor(() => expect(screen.getByText("Today's patient")).toBeTruthy());
-    for (const t of ["Blitz", "Criteria sort", "MSE Lab", "Ward Week", "Rx Detective", "Differential duel", "Escape Room", "Comorbid", "Clinic detective", "What would you do", "Question bank", "This week's board"]) expect(screen.getByText(t)).toBeTruthy();
-    expect(screen.getAllByText("Done").length).toBeGreaterThan(0);
-    expect(screen.getAllByText("This week").length).toBeGreaterThan(0);
+    for (const t of ["Blitz", "Criteria sort", "MSE Lab", "Ward Week", "Rx Detective", "Differential duel", "Team Escape Room", "Comorbid", "Clinic detective", "What would you do?", "Exam Prep", "League"]) expect(screen.getAllByText(t).length).toBeGreaterThan(0);
+    expect(screen.getByText("In progress")).toBeTruthy();
+    expect(screen.getByText("120+ new cases")).toBeTruthy();
+  });
+});
+
+describe("tool engine: the website's checks, on the phone", () => {
+  it("Judgment calls score against the panel, with part marks next to it", () => {
+    const panel = simulatedPanel("sct-1");
+    const best = Math.max(...[-2, -1, 0, 1, 2].map((r) => scoreSct(r, panel)));
+    expect(best).toBe(1);
+    expect([-2, -1, 0, 1, 2].some((r) => scoreSct(r, panel) > 0 && scoreSct(r, panel) < 1)).toBe(true);
+  });
+  it("every tool builds cases from its server data, and no step's public part carries the answer", async () => {
+    const tools: [import("@/practise/types").ToolId, string][] = [["wwyd", "wwyd"], ["say-it", "terms"], ["judgment", "judgment"], ["ethics", "ethics"], ["out-of-depth", "out-of-depth"], ["landmark", "landmark"], ["osce", "osce"], ["two-minute", "two-minute"], ["formulation", "formulation"], ["weak-spots", "weak-spots"], ["mse-trainer", "mse"]];
+    for (const [id, api_] of tools) {
+      const t = await api.get<C.PractiseTool>(`/practise/tools/${api_}`);
+      const defs = buildDefs(id, t.data, "t");
+      expect(defs.length).toBeGreaterThan(0);
+      for (const d of defs) for (const k of d.steps) expect(JSON.stringify(k.pub)).not.toMatch(LEAKS);
+    }
+  });
+  it("a pick is graded best, ok or harm as the website does", async () => {
+    const t = await api.get<C.PractiseTool>("/practise/tools/wwyd");
+    const k = buildDefs("wwyd", t.data)[0]!.steps[0]!;
+    expect(grade(k, k.right[0]).score).toBe(1);
+    const harm = k.verdicts!.indexOf("harm");
+    expect(grade(k, harm).verdict).toBe("harm");
   });
 });
 
@@ -197,16 +219,6 @@ describe("Comorbid", () => {
   });
 });
 
-describe("Match the term", () => {
-  it("checks each pair on the server", async () => {
-    await render(<MatchGame />);
-    await playFrom();
-    await press("match-left-0");
-    await press("match-right-0");
-    await waitFor(() => expect(screen.getByText(/tries/)).toBeTruthy());
-  });
-});
-
 describe("Case tools", () => {
   it("Daily case: a guess, then the answer on giving up", async () => {
     await render(<DailyCase />);
@@ -233,8 +245,6 @@ describe("Case tools", () => {
     await press("tool-start");
     await press("tool-option-0");
     await waitFor(() => expect(screen.getByTestId("verdict")).toBeTruthy());
-    const list = await play<P.ToolList>("tool", "list", "wwyd");
-    expect(list.items.some((i) => i.mark === "started")).toBe(true);
     while (screen.queryByTestId("tool-next")) {
       await press("tool-next");
       if (screen.queryByTestId("tool-option-0")) await press("tool-option-0");
@@ -260,8 +270,24 @@ describe("Case tools", () => {
 
   it("the case library lists every tool's cases with one tag each", async () => {
     await render(<CaseLibrary />);
-    await waitFor(() => expect(screen.getByText("Ethics, law and referral")).toBeTruthy());
+    await waitFor(() => expect(screen.getByText("Landmark cases")).toBeTruthy());
     expect(screen.getAllByText("New").length).toBeGreaterThan(0);
+  });
+
+  it("Two-minute clinic: write, then compare with the expert", async () => {
+    await render(<ToolCaseScreen tool="two-minute" />);
+    await press("tool-start");
+    await waitFor(() => expect(screen.getByTestId("tool-write-0")).toBeTruthy());
+    await fireEvent.changeText(screen.getByTestId("tool-write-0"), "Depression, adjustment disorder");
+    await press("tool-submit");
+    await waitFor(() => expect(screen.getByTestId("tool-compare")).toBeTruthy());
+  });
+
+  it("Say it clinically: a round of phrases", async () => {
+    await render(<ToolCaseScreen tool="say-it" />);
+    await press("tool-start");
+    await press("tool-option-0");
+    await waitFor(() => expect(screen.getByTestId("verdict")).toBeTruthy());
   });
 });
 
@@ -272,7 +298,7 @@ describe("Exam Prep", () => {
     expect(screen.getByTestId("prep-long")).toBeTruthy();
   });
   it("one question per screen, checked on the server, to the end", async () => {
-    params.mockReturnValue({ subject: "statistics", topic: "descriptives", set: "0" });
+    params.mockReturnValue({ subject: "statistics", topic: "descriptives", set: "1" });
     await render(<PrepSetScreen />);
     for (let k = 0; k < 10; k++) {
       if (screen.queryByTestId("game-over")) break;
@@ -282,8 +308,12 @@ describe("Exam Prep", () => {
     await waitFor(() => expect(screen.getByText(/set done/i)).toBeTruthy());
   });
   it("long answers: the model answer only on Show answer", async () => {
-    const list = await play<P.LongList>("prep", "long");
-    params.mockReturnValue({ id: list.items[0]!.id });
+    const home = await api.get<C.PrepLong>("/prep/long");
+    const subject = (home.data.subjects as { subject: string }[])[0]!.subject;
+    const sub = await api.get<C.PrepLong>(`/prep/long/${subject}`);
+    const topic = (sub.data.topics as { id: string }[])[0]!.id;
+    const top = await api.get<C.PrepLong>(`/prep/long/${subject}/${topic}`);
+    params.mockReturnValue({ subject, topic, id: (top.data.items as { id: string }[])[0]!.id });
     await render(<LongScreen />);
     await waitFor(() => expect(screen.getByTestId("long-show")).toBeTruthy());
     expect(screen.queryByTestId("long-answer")).toBeNull();

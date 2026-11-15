@@ -1,4 +1,5 @@
 /* The games' server side, for mock builds. Each answers what the website's action answers. */
+import { replay } from "./comorbid-rules";
 import dict from "../data/dictionaries.json";
 import type * as P from "../types";
 import { BLITZ_MS, COMBO_STEPS, ESC_PENALTY_S, multiplier, SORT_MAX_TRIES } from "../types";
@@ -361,164 +362,19 @@ const escape = {
 };
 export const escapeSaved = () => [...escSaved.entries()];
 
-/* ------------------------------------------------------------------- duel */
-type DuelItem = { id: string; topic: string; vignette: string; options: string[]; optionNames: string[]; features: string[]; why: string };
-type DuelRun = { items: DuelItem[]; i: number; o: number[][]; f: number[][]; you: number; bot: number; r: () => number; startedAt: number };
-const DUEL = CONTENT.DUEL as DuelItem[];
-const duelRound = (run: DuelRun): P.DuelRound => {
-  const it = run.items[run.i]!;
-  return { n: run.i, topic: it.topic, vignette: it.vignette, options: run.o[run.i]!.map((k) => it.optionNames[k]!), features: run.f[run.i]!.map((k) => it.features[k]!) };
-};
-const duel = {
-  start(_level: unknown): P.DuelStart {
-    const r = rng(nextSeed());
-    const items = shuffled(DUEL, r).slice(0, 5);
-    const run: DuelRun = { items, i: 0, o: items.map(() => perm(4, r)), f: items.map(() => perm(4, r)), you: 0, bot: 0, r, startedAt: Date.now() };
-    return { ok: true, token: keep(run), rounds: 5, round: duelRound(run), bot: { name: "Dr Bot" } };
-  },
-  answer(input: { token?: string; round?: number; dx?: number; feature?: number }): P.DuelAnswer {
-    const run = held<DuelRun>(input?.token);
-    if (input.round !== run.i) throw FAIL();
-    const o = run.o[run.i]!;
-    const f = run.f[run.i]!;
-    const dxOk = o[Number(input.dx)] === 0;
-    const featureOk = dxOk && f[Number(input.feature)] === 0;
-    const points = (dxOk ? 100 : 0) + (featureOk ? 50 : 0);
-    const bDx = run.r() < 0.6;
-    const bF = bDx && run.r() < 0.6;
-    const bot = { dxOk: bDx, featureOk: bF, points: (bDx ? 100 : 0) + (bF ? 50 : 0), ms: 4000 + Math.floor(run.r() * 9000) };
-    const you = run.you + points;
-    const botScore = run.bot + bot.points;
-    const it = run.items[run.i]!;
-    const next = { ...run, i: run.i + 1, you, bot: botScore };
-    const token = swap(input.token, next);
-    const last = next.i >= run.items.length;
-    return { ok: true, token, dxOk, featureOk, points, answer: { dx: o.indexOf(0), feature: f.indexOf(0) }, why: it.why, bot, score: { you, bot: botScore }, next: last ? null : duelRound(next), end: last ? { won: you === botScore ? "draw" : you > botScore, xp: you > botScore ? 20 : 5 } : null };
-  },
-};
-
 /* --------------------------------------------------------------- comorbid */
-type CoDx = { id: string; name: string; short: string; core: string[]; must?: string[]; symptoms: string[]; need: number; rule: string };
-type CoSym = { id: string; label: string; line: string };
-type CoRule = CoSym & { against: string[] };
-const CO = CONTENT.COMORBID as { symptoms: CoSym[]; ruleOuts: CoRule[]; clear: CoSym; diagnoses: CoDx[] };
-type Seat = { dx: CoDx; hand: P.CoCard[]; built: string[]; blocked: string | null };
-type CoRun = { seats: [Seat, Seat]; deck: P.CoCard[]; log: P.CoView["log"]; winner: P.CoView["winner"]; moves: number; level: number };
-let uid = 0;
-const card = (kind: P.CoCard["kind"], id: string): P.CoCard => {
-  const src = kind === "sym" ? CO.symptoms.find((s) => s.id === id) : kind === "rule" ? CO.ruleOuts.find((s) => s.id === id) : CO.clear;
-  return { uid: `c${++uid}`, kind, id, label: src?.label ?? id, line: src?.line ?? "" };
-};
-const symLabel = (id: string) => CO.symptoms.find((s) => s.id === id)?.label ?? id;
-const ruleLabel = (id: string) => CO.ruleOuts.find((s) => s.id === id)?.label ?? id;
-const wins = (s: Seat) => s.built.length >= s.dx.need && s.dx.core.some((x) => s.built.includes(x)) && (s.dx.must ?? []).every((x) => s.built.includes(x));
-function coView(run: CoRun, token: string): P.CoView {
-  const [me, rv] = run.seats;
-  return {
-    ok: true,
-    token,
-    you: { dx: { id: me.dx.id, name: me.dx.name, rule: me.dx.rule, need: me.dx.need }, hand: me.hand, built: me.built.map((id) => ({ id, label: symLabel(id) })), blocked: me.blocked ? { id: me.blocked, label: ruleLabel(me.blocked) } : null },
-    rival: { name: "Dr Bot", built: rv.built.map((id) => ({ id, label: symLabel(id) })), blocked: rv.blocked ? { id: rv.blocked, label: ruleLabel(rv.blocked) } : null, hand: rv.hand.length },
-    turn: "you",
-    deck: run.deck.length,
-    log: run.log.slice(-6),
-    winner: run.winner,
-    rivalDx: run.winner ? { id: rv.dx.id, name: rv.dx.name } : null,
-    ...(run.winner ? { xp: run.winner === "you" ? 15 : 5 } : {}),
-  };
-}
-function apply(run: CoRun, who: 0 | 1, c: P.CoCard, action: "play" | "swap"): { ok: boolean; text: string } {
-  const me = run.seats[who];
-  const rv = run.seats[who === 0 ? 1 : 0];
-  me.hand = me.hand.filter((x) => x.uid !== c.uid);
-  const draw = () => {
-    const d = run.deck.shift();
-    if (d) me.hand.push(d);
-  };
-  if (action === "swap") {
-    run.deck.push(c);
-    draw();
-    return { ok: true, text: `swapped ${who === 0 ? c.label : "a card"}` };
-  }
-  let res: { ok: boolean; text: string };
-  if (c.kind === "sym") {
-    if (me.blocked) res = { ok: false, text: `can't build: blocked by ${ruleLabel(me.blocked)}` };
-    else if (!me.dx.symptoms.includes(c.id)) res = { ok: false, text: `${c.label} is not part of ${who === 0 ? me.dx.short : "their diagnosis"}` };
-    else if (me.built.includes(c.id)) res = { ok: false, text: `${c.label} is already built` };
-    else {
-      me.built.push(c.id);
-      res = { ok: true, text: `built ${c.label}` };
-    }
-  } else if (c.kind === "rule") {
-    const r = CO.ruleOuts.find((x) => x.id === c.id)!;
-    if (rv.blocked) res = { ok: false, text: "the rival is already blocked" };
-    else if (!r.against.includes(rv.dx.id)) res = { ok: false, text: `${c.label} does not rule out the rival's diagnosis` };
-    else {
-      rv.blocked = c.id;
-      res = { ok: true, text: `blocked the rival with ${c.label}` };
-    }
-  } else if (me.blocked) {
-    me.blocked = null;
-    res = { ok: true, text: "cleared the rule-out" };
-  } else res = { ok: false, text: "nothing to clear" };
-  draw();
-  return res;
-}
-function botMove(run: CoRun) {
-  const b = run.seats[1];
-  const good = b.hand.find((c) => (c.kind === "sym" && !b.blocked && b.dx.symptoms.includes(c.id) && !b.built.includes(c.id)) || (c.kind === "clear" && b.blocked) || (c.kind === "rule" && !run.seats[0].blocked && CO.ruleOuts.find((r) => r.id === c.id)?.against.includes(run.seats[0].dx.id)));
-  const c = good ?? b.hand[0];
-  if (!c) return;
-  const r = apply(run, 1, c, good ? "play" : "swap");
-  run.log.push({ who: "rival", text: r.text, ok: r.ok });
-}
+type CoInput = { seed: string; mode: "bot" | "pass"; level: 1 | 2 | 3; prefer?: string; moves: { uid: string; action: "play" | "swap" }[] };
 const comorbid = {
-  deal(level: unknown): P.CoView {
-    const r = rng(nextSeed());
-    const dx = shuffled(CO.diagnoses, r);
-    const a = dx[0]!;
-    const b = dx.find((x) => x.id !== a.id && Math.abs(x.need - a.need) <= 1) ?? dx[1]!;
-    const syms = [...a.symptoms, ...b.symptoms, ...shuffled(CO.symptoms.map((s) => s.id), r).slice(0, 6)];
-    const rules = CO.ruleOuts.filter((x) => x.against.includes(a.id) || x.against.includes(b.id)).map((x) => x.id);
-    const deck = shuffled([...syms.map((s) => card("sym", s)), ...rules.map((x) => card("rule", x)), card("clear", "normaltest"), card("clear", "normaltest")], r);
-    const run: CoRun = { seats: [{ dx: a, hand: deck.splice(0, 5), built: [], blocked: null }, { dx: b, hand: deck.splice(0, 5), built: [], blocked: null }], deck, log: [], winner: null, moves: 0, level: Number(level) || 1 };
-    return coView(run, keep(run));
+  /** The website's rules replayed from the seed and the moves (as comorbidState on the server). */
+  state(input: CoInput) {
+    if (!input || typeof input.seed !== "string" || input.seed.length < 4) return { ok: false, error: "That game can't be read." };
+    const setup = { seed: input.seed, mode: input.mode, level: input.level, names: ["Player 1", "Player 2"] };
+    return { ok: true, game: replay(setup, input.moves ?? []).game };
   },
-  move(input: { token?: string; uid?: string; action?: string }): P.CoView {
-    const run = held<CoRun>(input?.token);
-    if (run.winner) throw FAIL();
-    const c = run.seats[0].hand.find((x) => x.uid === input.uid);
-    if (!c) throw FAIL();
-    const res = apply(run, 0, c, input.action === "swap" ? "swap" : "play");
-    run.log.push({ who: "you", text: res.text, ok: res.ok });
-    run.moves += 1;
-    if (wins(run.seats[0])) run.winner = "you";
-    else {
-      botMove(run);
-      if (wins(run.seats[1])) run.winner = "rival";
-      else if (run.moves >= 30 || (!run.deck.length && !run.seats[0].hand.length)) run.winner = "draw";
-    }
-    return coView(run, swap(input.token, run));
-  },
-};
-
-/* ------------------------------------------------------------------ match */
-type MatchRun = { ids: string[]; rights: number[]; done: number[]; tries: number };
-const match = {
-  deal(): P.MatchDeal {
-    const r = rng(nextSeed());
-    const ids = shuffled(Object.keys(TERMS), r).slice(0, 5);
-    const rights = perm(ids.length, r);
-    return { ok: true, token: keep<MatchRun>({ ids, rights, done: [], tries: 0 }), title: "Mental state words", lefts: ids.map((i) => TERMS[i]!.label), rights: rights.map((k) => TERMS[ids[k]!]!.def) };
-  },
-  pick(input: { token?: string; left?: number; right?: number }): P.MatchPick {
-    const run = held<MatchRun>(input?.token);
-    const l = Number(input.left);
-    const ok = run.rights[Number(input.right)] === l && !run.done.includes(l);
-    const done = ok ? [...run.done, l] : run.done;
-    const tries = run.tries + 1;
-    const cleared = done.length === run.ids.length;
-    return { ok: true, token: swap(input.token, { ...run, done, tries }), right: ok, done, cleared, tries, ...(cleared ? { xp: Math.max(5, 20 - (tries - run.ids.length) * 2) } : {}) };
+  finish(input: CoInput) {
+    const r = comorbid.state(input) as { ok: boolean; game?: { winner: unknown } };
+    if (!r.game || r.game.winner === null) return { ok: false, xp: 0 };
+    return { ok: true, xp: r.game.winner === 0 ? 20 : 5 };
   },
 };
 
@@ -535,9 +391,7 @@ export const GAMES: Record<string, Record<string, (...args: never[]) => unknown>
   sort: { load: sort.load, check: sort.check },
   rx: { deal: rx.deal, pick: rx.pick, finish: rx.finish },
   mse: { deal: mse.deal, tag: mse.tag },
-  ward: { start: ward.start, resume: ward.resume, pick: ward.pick, campaigns: () => ({ ok: true, campaigns: wardCampaigns() }) },
-  escape: { start: escape.start, resume: escape.resume, answer: escape.answer, rooms: () => ({ ok: true, rooms: escapeRooms() }) },
-  duel: { start: duel.start, answer: duel.answer },
-  comorbid: { deal: comorbid.deal, move: comorbid.move },
-  match: { deal: match.deal, pick: match.pick },
+  ward: { start: ward.start, resume: ward.resume, pick: ward.pick },
+  escape: { start: escape.start, resume: escape.resume, answer: escape.answer },
+  comorbid: { state: comorbid.state, finish: comorbid.finish },
 };
