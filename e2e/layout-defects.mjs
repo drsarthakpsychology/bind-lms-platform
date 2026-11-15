@@ -70,8 +70,17 @@ function scan({ touch }) {
     const v = h.getAttribute("data-layout-ok");
     return !v || v === "1" || v.split(/[ ,]+/).includes(kind);
   };
+  // Screen-reader-only text under any class name: a 1px box that clips.
+  const srOnly = (el) => {
+    for (let e = el, i = 0; e && e !== document.body && i < 2; e = e.parentElement, i++) {
+      const r = e.getBoundingClientRect();
+      if (r.width <= 2 && r.height <= 2 && /hidden|clip/.test(getComputedStyle(e).overflow)) return true;
+    }
+    return false;
+  };
   const hidden = (el) =>
     !!el.closest("[aria-hidden=true], [inert], .sr-only, [hidden], template, noscript") ||
+    srOnly(el) ||
     (el.checkVisibility && !el.checkVisibility({ opacityProperty: true, visibilityProperty: true }));
   const name = (el) => {
     const parts = [];
@@ -219,10 +228,13 @@ function scan({ touch }) {
     if (pinned) continue;
     // Text an ellipsis or overflow-hidden box cuts is not on screen past the box edge.
     const bx = block(el);
-    const clipX = /hidden|clip/.test(getComputedStyle(bx).overflowX) ? bx.getBoundingClientRect() : null;
+    const bs = getComputedStyle(bx);
+    const cut = /hidden|clip/.test(bs.overflowX) || /hidden|clip/.test(bs.overflowY) ? bx.getBoundingClientRect() : null;
     for (const r0 of rects) {
-      const r = clipX ? { left: Math.max(r0.left, clipX.left), right: Math.min(r0.right, clipX.right), top: r0.top, bottom: r0.bottom, height: r0.height } : r0;
-      if (r.right - r.left > 0.5) items.push({ el, r });
+      // Lines a line-clamp hides sit below the box: they are not on screen either.
+      const r = cut ? { left: Math.max(r0.left, cut.left), right: Math.min(r0.right, cut.right), top: Math.max(r0.top, cut.top), bottom: Math.min(r0.bottom, cut.bottom) } : { left: r0.left, right: r0.right, top: r0.top, bottom: r0.bottom };
+      r.height = r.bottom - r.top;
+      if (r.right - r.left > 0.5 && r.height > 0.5) items.push({ el, r });
     }
   }
   const CELL = 120;

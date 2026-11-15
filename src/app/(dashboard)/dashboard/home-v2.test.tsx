@@ -16,9 +16,9 @@ const base: HomeV2Props = {
   goal: { points: 10, goal: 40, streak: 3 },
   quests: {
     quests: [
-      { id: "a", label: "Finish one section", href: "/study", done: true, progress: null },
-      { id: "b", label: "Answer ten questions", href: "/prep", done: false, progress: "4/10" },
-      { id: "c", label: "Play the case", href: "/practice/daily", done: false, progress: null },
+      { id: "section", label: "Finish one section", href: "/study", done: true, progress: null },
+      { id: "points", label: "Answer ten questions", href: "/prep", done: false, progress: "4/10" },
+      { id: "case", label: "Play the case", href: "/practice/daily", done: false, progress: null },
     ],
     done: false,
     paid: false,
