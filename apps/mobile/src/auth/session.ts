@@ -1,0 +1,236 @@
+import { createClient, type ApiClient, type SessionEvent, type Transport } from "@/api/client";
+import type { AuthTokens, DeviceInfo, Me, SignInResult, SignOutResult } from "@/api/contract";
+import { ApiFailure } from "@/api/errors";
+import { createStore } from "@/lib/store";
+import type { KeyValue } from "@/lib/storage";
+import { createPinVault, shouldLock, type Hasher } from "./pin";
+
+/**
+ * The session: who is signed in, and whether the app is open or locked.
+ *
+ *   loading  reading the keystore at start
+ *   visitor  nobody signed in
+ *   setPin   just signed in with email and password; must choose a PIN
+ *   locked   signed in, PIN needed (every cold start, and after 5 minutes away)
+ *   ready    open
+ *
+ * Tokens and the device id live in the keystore. The PIN is local to the
+ * phone (see pin.ts). Five wrong PINs, "opened on another device", or an
+ * ended account sign the phone out and say why on the next screen.
+ */
+
+export type Phase = "loading" | "visitor" | "setPin" | "locked" | "ready";
+export type Notice = null | "device_replaced" | "account_expired" | "pin_tries" | "forgot_pin";
+export type Gate = null | { kind: "update"; minVersion: string | null; storeUrl: string | null } | { kind: "paused"; message: string };
+
+export type SessionState = { phase: Phase; me: Me | null; notice: Notice; gate: Gate; triesLeft: number };
+
+const K = { tokens: "vibha.tokens.v1", device: "vibha.device.v1", me: "vibha.me.v1" } as const;
+
+export type SessionDeps = {
+  secure: KeyValue;
+  /** Not secret: a copy of /me so the app can open without waiting for the network. */
+  prefs: KeyValue;
+  transport: Transport;
+  hash: Hasher;
+  /** A random id: letters, digits, dash. At least 16 characters. */
+  randomId: () => string;
+  now?: () => number;
+  device?: () => Omit<DeviceInfo, "id">;
+  pinMaxTries: number;
+  lockAfterMs: number;
+  /** Called after any sign-out so caches can be cleared. */
+  onSignedOut?: () => void;
+};
+
+export function createSession(deps: SessionDeps) {
+  const now = deps.now ?? Date.now;
+  const store = createStore<SessionState>({ phase: "loading", me: null, notice: null, gate: null, triesLeft: deps.pinMaxTries });
+  const pin = createPinVault({ store: deps.secure, hash: deps.hash, randomSalt: deps.randomId, maxTries: deps.pinMaxTries });
+  let tokens: AuthTokens | null = null;
+  let deviceId = "";
+  let backgroundedAt: number | null = null;
+  let lockAfterMs = deps.lockAfterMs;
+
+  async function clearLocal(): Promise<void> {
+    tokens = null;
+    await Promise.all([deps.secure.remove(K.tokens), deps.prefs.remove(K.me), pin.clear()]).catch(() => undefined);
+    deps.onSignedOut?.();
+  }
+
+  async function endSession(notice: Notice): Promise<void> {
+    await clearLocal();
+    store.set({ phase: "visitor", me: null, notice, triesLeft: deps.pinMaxTries });
+  }
+
+  function onSessionEvent(e: SessionEvent): void {
+    switch (e.code) {
+      case "device_replaced":
+        void endSession("device_replaced");
+        break;
+      case "account_expired":
+        void endSession("account_expired");
+        break;
+      case "unauthenticated":
+        // The refresh token is gone or was revoked: back to sign-in, quietly.
+        if (store.get().phase !== "visitor") void endSession(null);
+        break;
+      case "account_blocked":
+        store.set({ gate: { kind: "paused", message: e.message } });
+        break;
+      case "upgrade_required":
+        store.set({ gate: { kind: "update", minVersion: typeof e.details.minVersion === "string" ? e.details.minVersion : null, storeUrl: typeof e.details.storeUrl === "string" ? e.details.storeUrl : null } });
+        break;
+    }
+  }
+
+  const api: ApiClient = createClient({
+    transport: deps.transport,
+    onSessionEvent,
+    tokens: {
+      get: () => tokens,
+      set: async (t) => {
+        tokens = t;
+        await deps.secure.set(K.tokens, JSON.stringify(t));
+      },
+      deviceId: () => deviceId,
+    },
+  });
+
+  async function setMe(me: Me): Promise<void> {
+    store.set({ me });
+    await deps.prefs.set(K.me, JSON.stringify(me)).catch(() => undefined);
+  }
+
+  return {
+    store,
+    api,
+    pin,
+    deviceId: () => deviceId,
+    hasTokens: () => tokens !== null,
+    /** Let /config change the lock time without a release. */
+    setLockAfter(ms: number) {
+      if (ms > 0) lockAfterMs = ms;
+    },
+
+    /** Read the keystore and decide the first screen. */
+    async boot(): Promise<void> {
+      let id = await deps.secure.get(K.device).catch(() => null);
+      if (!id || !/^[A-Za-z0-9._-]{16,80}$/.test(id)) {
+        id = deps.randomId();
+        await deps.secure.set(K.device, id).catch(() => undefined);
+      }
+      deviceId = id;
+      const raw = await deps.secure.get(K.tokens).catch(() => null);
+      if (!raw) {
+        store.set({ phase: "visitor" });
+        return;
+      }
+      try {
+        tokens = JSON.parse(raw) as AuthTokens;
+      } catch {
+        tokens = null;
+      }
+      if (!tokens?.refreshToken) {
+        await clearLocal();
+        store.set({ phase: "visitor" });
+        return;
+      }
+      let me: Me | null = null;
+      try {
+        const cached = await deps.prefs.get(K.me);
+        me = cached ? (JSON.parse(cached) as Me) : null;
+      } catch {
+        me = null;
+      }
+      const hasPin = await pin.has();
+      store.set({ phase: hasPin ? "locked" : "setPin", me, triesLeft: hasPin ? await pin.triesLeft() : deps.pinMaxTries });
+    },
+
+    /** Email and password, once. Then the PIN takes over. Throws ApiFailure with the server's message. */
+    async signIn(email: string, password: string): Promise<void> {
+      const device: DeviceInfo = { id: deviceId, ...(deps.device?.() ?? { name: "Phone", platform: "android" }) };
+      const r = await api.post<SignInResult>("/auth/sign-in", { email: email.trim().toLowerCase(), password, device }, { auth: false });
+      tokens = r.tokens;
+      await deps.secure.set(K.tokens, JSON.stringify(r.tokens));
+      await pin.clear();
+      await setMe(r.me);
+      store.set({ phase: "setPin", notice: null, gate: null, triesLeft: deps.pinMaxTries });
+    },
+
+    async choosePin(value: string): Promise<void> {
+      await pin.set(value);
+      store.set({ phase: "ready", triesLeft: deps.pinMaxTries });
+    },
+
+    /** True when the PIN opened the app. The fifth wrong try signs out. */
+    async unlock(value: string): Promise<boolean> {
+      const r = await pin.verify(value);
+      if (r.ok) {
+        backgroundedAt = null;
+        store.set({ phase: "ready", triesLeft: deps.pinMaxTries });
+        return true;
+      }
+      if (r.lockedOut) {
+        await this.signOut("pin_tries");
+        return false;
+      }
+      store.set({ triesLeft: r.triesLeft });
+      return false;
+    },
+
+    /** Forgot the PIN: sign out; signing in with the password again lets them choose a new one. */
+    async forgotPin(): Promise<void> {
+      await this.signOut("forgot_pin");
+    },
+
+    async signOut(notice: Notice = null): Promise<void> {
+      if (tokens) {
+        // Tell the server, but never let a failure keep the phone signed in.
+        await api.post<SignOutResult>("/auth/sign-out").catch(() => undefined);
+      }
+      await endSession(notice);
+    },
+
+    async refreshMe(): Promise<Me | null> {
+      try {
+        const me = await api.get<Me>("/me");
+        await setMe(me);
+        if (store.get().gate?.kind === "paused") store.set({ gate: null });
+        return me;
+      } catch (e) {
+        if (e instanceof ApiFailure && e.code === "network") return store.get().me;
+        return store.get().me;
+      }
+    },
+
+    /** Save a fresh copy of /me (the Me query calls this). */
+    setMe,
+    /** Lock now (the lock screen shows; used by the dev screenshots and tests). */
+    lock() {
+      if (store.get().phase === "ready") void pin.triesLeft().then((triesLeft) => store.set({ phase: "locked", triesLeft }));
+    },
+
+    clearNotice() {
+      store.set({ notice: null });
+    },
+    clearGate() {
+      store.set({ gate: null });
+    },
+
+    /** The app went to the background. */
+    onBackground() {
+      if (backgroundedAt === null) backgroundedAt = now();
+    },
+    /** The app came back. Locks if it was away for 5 minutes or more. */
+    onForeground() {
+      const away = backgroundedAt;
+      backgroundedAt = null;
+      if (store.get().phase === "ready" && shouldLock(away, now(), lockAfterMs)) {
+        void pin.triesLeft().then((triesLeft) => store.set({ phase: "locked", triesLeft }));
+      }
+    },
+  };
+}
+
+export type Session = ReturnType<typeof createSession>;

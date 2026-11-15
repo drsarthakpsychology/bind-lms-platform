@@ -17,3 +17,6 @@ export * from "./screen";
 export * from "./sheet";
 export * from "./toast";
 export * from "./field";
+export * from "./query";
+export * from "./slider";
+export * from "./quiz";

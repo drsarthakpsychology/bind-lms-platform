@@ -13,10 +13,11 @@ export type FieldProps = Omit<TextInputProps, "style"> & {
   secret?: boolean;
   /** Several lines (a question, a message). */
   area?: boolean;
+  inputRef?: React.Ref<React.ComponentRef<typeof TextInput>>;
 };
 
 /** A form field: the label above, a 52px box, the error under it. */
-export const Field = React.forwardRef<TextInput, FieldProps>(function Field({ label, error, hint, secret, area, onFocus, onBlur, ...rest }, ref) {
+export function Field({ label, error, hint, secret, area, onFocus, onBlur, inputRef, ...rest }: FieldProps) {
   const c = useTheme();
   const [focus, setFocus] = React.useState(false);
   const [show, setShow] = React.useState(false);
@@ -25,7 +26,7 @@ export const Field = React.forwardRef<TextInput, FieldProps>(function Field({ la
       <T v="small">{label}</T>
       <View style={{ flexDirection: "row", alignItems: area ? "flex-start" : "center", minHeight: area ? 120 : layout.primary, borderRadius: layout.radius, borderWidth: focus ? 2 : 1.5, borderColor: error ? c.danger : focus ? c.link : c.cardLine, backgroundColor: c.card, paddingHorizontal: focus ? space[4] - 0.5 : space[4] }}>
         <TextInput
-          ref={ref}
+          ref={inputRef}
           accessibilityLabel={label}
           accessibilityHint={error ?? hint}
           placeholderTextColor={c.muted}
@@ -65,4 +66,4 @@ export const Field = React.forwardRef<TextInput, FieldProps>(function Field({ la
       ) : null}
     </View>
   );
-});
+}
