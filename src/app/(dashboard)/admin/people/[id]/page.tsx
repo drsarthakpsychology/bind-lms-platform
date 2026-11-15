@@ -1,13 +1,19 @@
 import Link from "next/link";
 import { PersonLinks } from "@/components/admin/person-links";
 import { notFound, redirect } from "next/navigation";
-import { requireAdmin } from "@/lib/auth/guards";
+import { isSuperAdmin, requireAdmin } from "@/lib/auth/guards";
 import { ChevronLeft, Mail, MessageCircle, Phone } from "lucide-react";
 
 import { createAdminClient } from "@/lib/supabase/server";
-import { emailFromKey, loadPeople, loadTimeline, STAGE_LABEL } from "@/lib/crm/people";
+import { emailFromKey, loadPipeline, loadTimeline, STAGE_LABEL } from "@/lib/crm/people";
+import { emailAllowance } from "@/lib/email/personal";
+import { sourceOf } from "@/lib/crm/views";
+import { PersonQuick } from "./person-quick";
 import { PersonActions } from "./person-actions";
 import { cn } from "@/lib/utils";
+import { readFlags } from "@/lib/flags";
+import { uiV2For } from "@/lib/ui/v2";
+import { PersonV2 } from "../../_v2/person";
 
 export const dynamic = "force-dynamic";
 
@@ -22,16 +28,47 @@ const when = (iso: string) =>
 export default async function PersonPage({ params }: { params: Promise<{ id: string }> }) {
   // Defence in depth: layouts don't re-render on every navigation, so the page
   // re-checks admin itself before reading data.
-  if (!(await requireAdmin())) redirect("/dashboard");
+  const me = await requireAdmin();
+  if (!me) redirect("/dashboard");
   const { id } = await params;
   const email = emailFromKey(id);
   if (!email) notFound();
   const admin = createAdminClient();
-  const [people, timeline] = await Promise.all([loadPeople(admin), loadTimeline(admin, email)]);
+  const [pipe, timeline] = await Promise.all([loadPipeline(admin), loadTimeline(admin, email)]);
+  const people = pipe.people;
   const p = people.find((x) => x.email === email.toLowerCase());
   if (!p) notFound();
   const wa = p.phone ? `https://wa.me/${p.phone.replace(/\D/g, "").replace(/^(\d{10})$/, "91$1")}` : null;
   const follow = p.followUpAt ? new Date(p.followUpAt).toISOString().slice(0, 10) : "";
+
+  if (uiV2For(await readFlags(), me.role)) {
+    return (
+      <PersonV2
+        name={p.name}
+        lead={`${p.isStudent ? "Student" : "Enquiry"} · ${STAGE_LABEL[p.stage]}`}
+        links={<PersonLinks userId={p.studentId} email={p.email} here="people" v2 />}
+        headerActions={<PersonQuick p={p} canWrite={isSuperAdmin(me)} paymentReady={pipe.paymentReady} allowance={await emailAllowance(admin)} />}
+        contact={[
+          { label: "Email", href: `/admin/emails?folder=compose&to=${encodeURIComponent(p.email)}` },
+          { label: "WhatsApp", href: wa, external: true },
+          { label: "Call", href: p.phone ? `tel:${p.phone}` : null },
+        ]}
+        facts={[
+          ["Email", p.email],
+          ["Phone", p.phone ?? "Not set"],
+          ["Source", sourceOf(p)],
+          ["Enquired", p.enquiredAt ? when(p.enquiredAt) : "No enquiry"],
+          ["Paid", p.paidAt ? `${when(p.paidAt)}${p.paidAmount != null ? ` · ₹${p.paidAmount.toLocaleString("en-IN")}` : ""}` : pipe.paymentReady ? "Not yet" : "Not recorded yet"],
+          ...(p.cohorts.length ? [["Cohort", p.cohorts.map((c) => c.name).join(", ")]] : []),
+          ...(p.college ? [["College", p.college]] : []),
+          ["Emails sent", `${p.emailsSent}${p.opened ? " · opened" : ""}${p.replied ? " · replied" : ""}`],
+          ...(p.isStudent ? [["Login", p.setupDone ? "Set up" : p.inviteSentAt ? "Link sent, not set up" : "Not sent yet"], ["Signed in", p.signedIn ? "Yes" : "No"]] : []),
+        ].map(([label, value]) => ({ label, value }))}
+        actions={<PersonActions email={p.email} name={p.name} stage={p.stage} followUp={follow} isStudent={p.isStudent} v2 />}
+        timeline={timeline.map((t) => ({ title: t.title, body: t.body, at: t.at, when: when(t.at), tone: t.tone === "blue" ? "info" : t.tone === "red" ? "alert" : t.tone === "ink" ? "quiet" : "ok" }))}
+      />
+    );
+  }
 
   return (
     <div className="space-y-6">

@@ -7,6 +7,9 @@ import { loadCohortSummaries } from "@/lib/cohorts/admin-data";
 import { PageHeader } from "@/components/design-system/page-header";
 import { NewCohortForm } from "@/components/admin/cohorts-ui";
 import { cn } from "@/lib/utils";
+import { readFlags } from "@/lib/flags";
+import { uiV2For } from "@/lib/ui/v2";
+import { CohortsListV2 } from "../_v2/cohorts";
 
 export const dynamic = "force-dynamic";
 export const metadata = { title: "Cohorts" };
@@ -24,12 +27,34 @@ const STATUS: Record<string, { label: string; cls: string }> = {
 export default async function CohortsPage() {
   // Defence in depth: layouts don't re-render on every navigation, so the page
   // re-checks admin itself before reading data.
-  if (!(await requireAdmin())) redirect("/dashboard");
+  const me = await requireAdmin();
+  if (!me) redirect("/dashboard");
   const admin = createAdminClient();
   const [{ cohorts, unassigned, tablesMissing }, { data: courses }] = await Promise.all([
     loadCohortSummaries(),
     admin.from("courses").select("id, title").order("title"),
   ]);
+
+  if (uiV2For(await readFlags(), me.role)) {
+    const day = (d: string) => new Date(d).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" });
+    return (
+      <CohortsListV2
+        tablesMissing={tablesMissing}
+        unassigned={unassigned}
+        cohorts={cohorts.map((c) => ({
+          id: c.id,
+          name: c.name,
+          status: c.status,
+          course: c.course_id ? ((courses ?? []).find((x) => x.id === c.course_id)?.title as string | undefined) ?? "A course" : null,
+          members: c.members,
+          lectures: c.lectures,
+          detailsPct: c.members ? Math.round((c.detailsDone / c.members) * 100) : 0,
+          starts: c.starts_on ? day(c.starts_on) : null,
+        }))}
+        newForm={<NewCohortForm courses={(courses ?? []).map((c) => ({ id: c.id as string, title: c.title as string }))} />}
+      />
+    );
+  }
 
   if (tablesMissing) {
     return (

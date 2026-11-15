@@ -14,8 +14,8 @@ import { ThumbBar } from "@/components/mobile/thumb-bar";
 import { Rich } from "./rich";
 import { useReaction } from "@/components/reactions/use-reaction";
 import { EndReaction, HalftoneCorner, ScoreDial } from "@/components/reactions/graphics";
-import { useUiV2 } from "@/components/learn-v2/ui-v2";
-import { ProgressLine } from "@/components/learn-v2/parts";
+import { useUiV2 } from "@/components/ds/v2";
+import { ProgressLine } from "@/components/ds";
 
 /* New design (ui_v2): shared button shapes for the test and the cards. */
 const v2Lime =

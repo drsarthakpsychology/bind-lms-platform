@@ -882,7 +882,7 @@ function ModeSwitch({ tab, onPick }: { tab: Tab; onPick: (t: Tab) => void }) {
           ) : (
             <span className="truncate">{label}</span>
           )}
-          {t === "ai" ? <span className="hidden shrink-0 rounded-full border border-current px-1.5 text-[10px] font-bold uppercase leading-4 min-[420px]:inline">Soon</span> : null}
+          {t === "ai" ? <span className="hidden shrink-0 rounded-full border border-current px-1.5 text-xs font-bold uppercase leading-4 min-[420px]:inline">Soon</span> : null}
         </button>
       ))}
     </div>

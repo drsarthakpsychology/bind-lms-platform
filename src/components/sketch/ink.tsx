@@ -248,14 +248,14 @@ export function Figure({ title, children, wide = false }: { title: string; child
 /** Choices that change the drawing (agonist or antagonist, a pathway, before or after the medicine). */
 export function Choice<T extends string>({ label, options, value, onChange }: { label: string; options: { id: T; name: string }[]; value: T; onChange: (v: T) => void }) {
   return (
-    <div className="flex flex-wrap gap-1.5" role="group" aria-label={label}>
+    <div className="flex flex-wrap gap-1.5 v2:gap-2" role="group" aria-label={label}>
       {options.map((o) => (
         <button
           key={o.id}
           type="button"
           aria-pressed={value === o.id}
           onClick={() => onChange(o.id)}
-          className={cn("min-h-10 rounded-md border-2 px-3 text-sm font-semibold transition-colors", value === o.id ? "border-foreground bg-primary text-primary-foreground" : "border-foreground/30 bg-card hover:border-foreground")}
+          className={cn("min-h-10 v2:min-h-11 rounded-md border-2 px-3 text-sm font-semibold transition-colors", value === o.id ? "border-foreground bg-primary text-primary-foreground" : "border-foreground/30 bg-card hover:border-foreground")}
         >
           {o.name}
         </button>

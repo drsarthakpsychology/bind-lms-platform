@@ -7,8 +7,8 @@ import { SidebarGate } from "@/components/navigation/sidebar-gate";
 import { ShellContent } from "@/components/navigation/shell-content";
 import { TopBar } from "@/components/navigation/top-bar";
 import { SIDEBAR_BOOT_SCRIPT } from "@/components/navigation/sidebar-boot";
-import { ADMIN_ITEMS, studentItems } from "@/components/navigation/nav-config";
-import { v2SidebarItems } from "@/components/navigation/v2-config";
+import { ADMIN_ITEMS, ADMIN_SECTIONS, studentItems } from "@/components/navigation/nav-config";
+import { adminV2SidebarItems, v2SidebarItems } from "@/components/navigation/v2-config";
 import { PaletteHost } from "@/components/search/palette-host";
 import { InboxBadge } from "@/components/admin/inbox-badge";
 import { InboxLink } from "@/components/navigation/inbox-link";
@@ -39,7 +39,7 @@ export function AppShell({
   v2 = false,
   children,
 }: {
-  /** The new design (ui_v2, lib/ui/v2.ts): five places, quiet chrome. Student side only. */
+  /** The new design (ui_v2, lib/ui/v2.ts): five places, quiet chrome. Students and the admin side. */
   v2?: boolean;
   /** Feature switches (key to status): menu items whose switch is not on are hidden. */
   flags?: Record<string, string>;
@@ -58,7 +58,9 @@ export function AppShell({
 }) {
   const isAdminView = role === "admin" && mode === "admin";
   const v2Student = v2 && !isAdminView;
-  const items = isAdminView ? ADMIN_ITEMS : v2Student ? v2SidebarItems({ scope, showStudy, blocked, flags }) : studentItems({ scope, showStudy, blocked, flags });
+  // Admin side, new design: the same quiet chrome as students (five phone tabs with a More screen, regrouped sidebar).
+  const v2Admin = v2 && isAdminView;
+  const items = isAdminView ? (v2Admin ? adminV2SidebarItems(ADMIN_SECTIONS) : ADMIN_ITEMS) : v2Student ? v2SidebarItems({ scope, showStudy, blocked, flags }) : studentItems({ scope, showStudy, blocked, flags });
   // The sidebar gate treats "admin previewing as student" like a student on
   // inner pages (they get the drill-down too).
   const gateRole = role === "admin" && mode === "student" ? "admin-preview" : role;
@@ -66,7 +68,7 @@ export function AppShell({
   const showSettings = role === "admin" || scope === "full";
 
   return (
-    <div className="min-h-dvh bg-background">
+    <div className="min-h-dvh bg-background" data-ui={v2 ? "v2" : undefined}>
       {/* The remembered sidebar size, set before the sidebar paints (no jump on load). */}
       <script dangerouslySetInnerHTML={{ __html: SIDEBAR_BOOT_SCRIPT }} />
       <a
@@ -95,12 +97,16 @@ export function AppShell({
         viewModeSwitch={viewModeSwitch}
         isAdminView={isAdminView}
         unread={unread}
-        v2={v2Student}
+        v2={v2Student || v2Admin}
+        v2Chrome={v2}
         inboxSlot={
           isAdminView ? (
-            <React.Suspense fallback={<InboxLink count={0} />}>
-              <InboxBadge />
-            </React.Suspense>
+            // New design on phones: logo, search and bell only; Inbox is on the More screen.
+            <span className={v2Admin ? "hidden md:contents" : "contents"}>
+              <React.Suspense fallback={<InboxLink count={0} />}>
+                <InboxBadge />
+              </React.Suspense>
+            </span>
           ) : null
         }
       />
@@ -109,7 +115,7 @@ export function AppShell({
         <SidebarGate role={gateRole} fallback={null}>
           <div className="hidden shrink-0 md:block">
             <div className="sticky top-[var(--top-h)] z-30 h-[calc(100dvh-var(--top-h))]">
-              <AppSidebar items={items} studentSide={!isAdminView} adminPreview={role === "admin" && mode === "student"} quiet={v2Student} />
+              <AppSidebar items={items} studentSide={!isAdminView} adminPreview={role === "admin" && mode === "student"} quiet={v2Student || v2Admin} />
             </div>
           </div>
         </SidebarGate>
@@ -122,7 +128,7 @@ export function AppShell({
       {/* Funny reactions on quiz answers (students; one pop-up app wide). */}
       {isAdminView ? null : <ReactionLayer />}
 
-      <BottomTabBar mode={mode} scope={scope} showStudy={showStudy} blocked={blocked} v2={v2Student} />
+      <BottomTabBar mode={mode} scope={scope} showStudy={showStudy} blocked={blocked} v2={v2Student || v2Admin} />
       <MobileNav
         items={items}
         viewModeSwitch={viewModeSwitch}

@@ -13,11 +13,16 @@ import { FormRowActions } from "../form-row-actions";
 import { StatusTag } from "../status-tag";
 import { formUrl } from "../format";
 import { ResponsesTable, type ResponseRow } from "./responses-table";
+import { readFlags } from "@/lib/flags";
+import { uiV2For } from "@/lib/ui/v2";
+import { loadFormEmailed } from "@/lib/forms/emailed";
+import { emailAllowance } from "@/lib/email/personal";
+import { ResponsesV2 } from "./responses-v2";
 
 export const dynamic = "force-dynamic";
 
 /** /admin/forms/[id]: every answer to one form, searchable, sortable, exportable. */
-export default async function FormResponsesPage({ params }: { params: Promise<{ id: string }> }) {
+export default async function FormResponsesPage({ params, searchParams }: { params: Promise<{ id: string }>; searchParams: Promise<{ email?: string }> }) {
   const me = await requireAdmin();
   if (!me) redirect("/dashboard");
   const { id } = await params;
@@ -39,6 +44,23 @@ export default async function FormResponsesPage({ params }: { params: Promise<{ 
     contactId: s.contact_id,
     answers: Object.fromEntries(columns.map((c) => [c.key, answerText(s.responses?.[c.key])])),
   }));
+
+  const tableColumns = columns.map((c) => ({ ...c, inTable: !hidden.has(c.key) }));
+  if (uiV2For(await readFlags(), me.role)) {
+    const [emailed, allowance] = await Promise.all([loadFormEmailed(admin, id), emailAllowance(admin)]);
+    return (
+      <ResponsesV2
+        form={{ id: form.id, title: form.title, url: formUrl(form.slug), isActive: form.isActive }}
+        rows={rows}
+        columns={tableColumns}
+        marks={emailed.marks}
+        waiting={emailed.waiting}
+        allowance={allowance}
+        canEdit={canEdit}
+        startEmail={(await searchParams).email === "all"}
+      />
+    );
+  }
 
   return (
     <div className="space-y-6">
@@ -70,7 +92,7 @@ export default async function FormResponsesPage({ params }: { params: Promise<{ 
       {rows.length === 0 ? (
         <EmptyState icon={<Inbox className="size-6" aria-hidden />} title="No answers yet" description={form.isActive ? "Share the link above. Answers show up here." : "This form is closed. Open it to take answers."} />
       ) : (
-        <ResponsesTable rows={rows} columns={columns.map((c) => ({ ...c, inTable: !hidden.has(c.key) }))} />
+        <ResponsesTable rows={rows} columns={tableColumns} />
       )}
     </div>
   );

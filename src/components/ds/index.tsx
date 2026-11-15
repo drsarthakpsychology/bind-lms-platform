@@ -1,8 +1,9 @@
 import * as React from "react";
 import Link from "next/link";
-import { ChevronRight } from "lucide-react";
+import { ArrowRight, ChevronRight } from "lucide-react";
 
 import { cn } from "@/lib/utils";
+import { ProgressLine } from "./parts";
 
 /**
  * Design system v2 parts (docs/design/DESIGN_SYSTEM_2026_11.md).
@@ -40,6 +41,9 @@ const WIDTH = {
  */
 export function PageFrame({
   title,
+  kicker,
+  band = false,
+  art,
   lead,
   actions,
   width = "default",
@@ -47,6 +51,12 @@ export function PageFrame({
   children,
 }: Children & {
   title?: React.ReactNode;
+  /** A tiny pixel label above the title (brand accent). */
+  kicker?: React.ReactNode;
+  /** A soft blue wash behind the header (hub pages, the library). */
+  band?: boolean;
+  /** Something small at the right of a banded header (an icon tile, the cat). */
+  art?: React.ReactNode;
   /** One quiet line under the title (or in place of one). */
   lead?: React.ReactNode;
   /** Right side of the title row (a small secondary control). */
@@ -56,12 +66,14 @@ export function PageFrame({
   return (
     <div data-ds="page" className={cn("ds-page mx-auto flex w-full min-w-0 flex-col gap-[var(--ds-section)] px-1 sm:px-0", WIDTH[width], className)}>
       {title || lead ? (
-        <header className="flex min-w-0 items-start justify-between gap-4">
+        <header className={cn("flex min-w-0 items-start justify-between gap-4", band && "ds-band items-center")}>
           <div className="min-w-0 space-y-1">
-            {title ? <h1 className="type-h1 [overflow-wrap:anywhere]">{title}</h1> : null}
+            {kicker ? <p className="type-pix text-link">{kicker}</p> : null}
+            {title ? <h1 className="type-h1 ds-stroke [overflow-wrap:anywhere]">{title}</h1> : null}
             {lead ? <p className="type-small text-muted-foreground">{lead}</p> : null}
           </div>
           {actions ? <div className="flex shrink-0 items-center gap-2">{actions}</div> : null}
+          {art ? <div aria-hidden className="shrink-0">{art}</div> : null}
         </header>
       ) : null}
       {children}
@@ -79,6 +91,7 @@ export function Section({
   action,
   id,
   level = 2,
+  n,
   className,
   children,
 }: Children & {
@@ -87,6 +100,8 @@ export function Section({
   action?: React.ReactNode;
   id?: string;
   level?: 2 | 3;
+  /** Brand accent: a blue pixel numeral before the heading (01, 02) where the sections run in order. */
+  n?: number;
 }) {
   const H = level === 2 ? "h2" : "h3";
   const headingId = id ? `${id}-title` : undefined;
@@ -95,8 +110,9 @@ export function Section({
       {title || action ? (
         <div className="flex min-w-0 items-baseline justify-between gap-4">
           {title ? (
-            <H id={headingId} className={cn("min-w-0 [overflow-wrap:anywhere]", level === 2 ? "type-h3" : "type-small font-semibold text-muted-foreground")}>
-              {title}
+            <H id={headingId} className={cn("min-w-0 [overflow-wrap:anywhere]", level === 2 ? "type-h3" : "type-small font-semibold text-muted-foreground", n && "flex items-baseline gap-3")}>
+              {n ? <span aria-hidden className="shrink-0 type-pix text-link">{String(n).padStart(2, "0")}</span> : null}
+              {n ? <span className="min-w-0">{title}</span> : title}
             </H>
           ) : (
             <span />
@@ -210,7 +226,7 @@ export function Card({ href, className, children, label }: Children & { href?: s
       aria-label={label}
       className={cn(
         base,
-        "outline-none transition-[border-color,transform] duration-[var(--ds-state)] ease-[var(--ds-ease)] hover:border-foreground focus-visible:ring-2 focus-visible:ring-ring active:scale-[0.99]",
+        "outline-none transition-[border-color,transform] duration-[var(--ds-state)] ease-[var(--ds-ease)] hover:-translate-y-0.5 hover:border-foreground focus-visible:ring-2 focus-visible:ring-ring active:translate-y-0 active:scale-[0.99] motion-reduce:hover:translate-y-0",
         className,
       )}
     >
@@ -256,7 +272,8 @@ export function Hero({
   return (
     <section aria-label="Continue" className={cn("flex min-w-0 flex-col gap-4", className)}>
       <div className="flex min-w-0 flex-col gap-2">
-        {context ? <p className="type-small text-muted-foreground [overflow-wrap:anywhere]">{context}</p> : null}
+        {/* Brand accent: a short context ("Lecture 4") speaks in the pixel voice; a longer line stays plain. */}
+        {context ? <p className={cn("[overflow-wrap:anywhere]", typeof context === "string" && context.length <= 28 ? "type-pix text-link" : "type-small text-muted-foreground")}>{context}</p> : null}
         {/* A long title steps down a size on phones so the button stays in reach. */}
         <h2 className={cn("[overflow-wrap:anywhere]", typeof title === "string" && title.length > 36 ? "type-h1 md:type-display" : "type-display")}>{title}</h2>
         {meta ? <p className="type-body text-muted-foreground [overflow-wrap:anywhere]">{meta}</p> : null}
@@ -314,3 +331,61 @@ export function Stat({ value, label, className }: { value: React.ReactNode; labe
     </div>
   );
 }
+
+/* ------------------------------------------------------------------ */
+/* Next step                                                           */
+/* ------------------------------------------------------------------ */
+
+/**
+ * The one thing to do next on a screen: a small label, what it is, an
+ * optional thin progress line, and the screen's one lime button.
+ */
+export function NextStep({
+  label,
+  title,
+  sub,
+  pct,
+  pctLabel,
+  pctText,
+  href,
+  action,
+  onGo,
+  wide = false,
+}: {
+  label: string;
+  title: string;
+  sub?: string;
+  pct?: number;
+  pctLabel?: string;
+  pctText?: string;
+  href: string;
+  action: string;
+  onGo?: () => void;
+  /** Keep the button full width from 768px too (narrow side columns). */
+  wide?: boolean;
+}) {
+  return (
+    <section aria-label="Continue" className="flex min-w-0 flex-col gap-4">
+      <div className="flex min-w-0 flex-col gap-1">
+        <p className="type-small text-muted-foreground [overflow-wrap:anywhere]">{label}</p>
+        <h2 className="type-h2 [overflow-wrap:anywhere]">{title}</h2>
+        {sub ? <p className="type-body text-muted-foreground [overflow-wrap:anywhere]">{sub}</p> : null}
+      </div>
+      {pct !== undefined && pct > 0 ? (
+        <div className="flex min-w-0 items-center gap-3">
+          <ProgressLine pct={pct} label={pctLabel ?? "Progress"} />
+          {pctText ? <span className="shrink-0 type-small text-muted-foreground type-num">{pctText}</span> : null}
+        </div>
+      ) : null}
+      {/* onClickCapture: the link is the ds button; the click is noted on its way down. */}
+      <div onClickCapture={onGo} className="min-w-0">
+        <HeroButton href={href} icon={<ArrowRight />} className={wide ? "md:w-full md:min-w-0" : undefined}>
+          {action}
+        </HeroButton>
+      </div>
+    </section>
+  );
+}
+
+/* The smaller shared parts (./parts). The client switch is in ./v2. */
+export * from "./parts";

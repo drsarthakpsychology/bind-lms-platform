@@ -51,6 +51,7 @@ export function FlagToggle({
   enabled,
   liveForCohortOne,
   description,
+  v2 = false,
 }: {
   flagKey: string;
   label: string;
@@ -59,6 +60,8 @@ export function FlagToggle({
   status?: string;
   enabled?: boolean;
   liveForCohortOne?: boolean;
+  /** Admin v2: a plain row (text left, switch right) instead of a card. */
+  v2?: boolean;
 }) {
   const [value, setValue] = React.useState<Status>(() =>
     normalizeStatus(status, enabled, liveForCohortOne),
@@ -88,6 +91,23 @@ export function FlagToggle({
     } finally {
       setBusy(false);
     }
+  }
+
+  if (v2) {
+    return (
+      <li className="flex min-w-0 flex-col gap-2 py-3 md:flex-row md:items-center md:justify-between md:gap-6">
+        <div className="min-w-0 md:flex-1">
+          <p className="type-body font-semibold [overflow-wrap:anywhere]">{label}</p>
+          {description ? <p className="type-small text-muted-foreground [overflow-wrap:anywhere]">{description}</p> : null}
+          {error && !busy ? (
+            <p role="alert" className="type-small font-semibold text-status-alert-fg">
+              Could not save. Try again.
+            </p>
+          ) : null}
+        </div>
+        <SegmentedControl<Status> value={value} onValueChange={(next) => void handleChange(next)} options={OPTIONS} label={`${label} status`} className="w-full shrink-0 md:w-72 [&>button]:flex-1" />
+      </li>
+    );
   }
 
   return (

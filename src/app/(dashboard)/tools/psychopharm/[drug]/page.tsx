@@ -1,6 +1,6 @@
 import { PageFrame, Row, RowList } from "@/components/ds";
 import { ListHead } from "@/components/play/parts";
-import { playV2 } from "@/components/play/v2";
+import { uiV2 } from "@/lib/ui/v2-server";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import Link from "next/link";
@@ -37,7 +37,7 @@ export default async function DrugPage({ params }: { params: Promise<{ drug: str
   // publish revalidates the tag.
   const publishedDoc = await getPublishedMedicationDocument(generic);
 
-  if (await playV2()) {
+  if (await uiV2()) {
     // New design: an editorial page. The reference content below is the same components, unchanged.
     return (
       <PageFrame width="reading">

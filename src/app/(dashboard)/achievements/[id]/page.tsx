@@ -14,6 +14,9 @@ import { layoutCertificate } from "@/lib/certificates/layout";
 import { docFromRecord, isStudioRecord, loadCredential, recordKind, recordSignatories, recordTitle, signatureUrls, verifyUrlFor } from "@/lib/certificates/server";
 import { CertificateSvg } from "@/lib/certificates/svg";
 import { CopyLink } from "./copy-link";
+import { uiV2Role } from "@/lib/ui/v2-server";
+import { BackLink, PageFrame, primaryButton, quietButton } from "@/components/ds";
+import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = { title: "Certificate" };
 export const dynamic = "force-dynamic";
@@ -49,6 +52,68 @@ export default async function MyCertificatePage({ params }: { params: Promise<{ 
   const drawn = isStudioRecord(row) && usable;
   const images = drawn ? await signatureUrls(admin, recordSignatories(row)).catch(() => ({})) : {};
   const tone = status === "revoked" ? "text-status-alert-fg" : status === "provisional" ? "text-link" : status === "expired" ? "text-muted-foreground" : "text-foreground";
+
+  if (await uiV2Role(me.role)) {
+    // New design: the way back, the title, the certificate, one lime action, then the facts as rows.
+    return (
+      <PageFrame className="gap-6">
+        <RefreshShell when={seen > 0} />
+        <header className="flex min-w-0 flex-col gap-1">
+          <BackLink href="/achievements">Certificates</BackLink>
+          <h1 className="type-h1 [overflow-wrap:anywhere]">{title}</h1>
+          <p className={cn("type-small font-semibold", tone)}>{line}</p>
+          {status === "revoked" ? <p className="max-w-[60ch] type-small text-muted-foreground">This certificate was withdrawn and can no longer be downloaded or shared. Ask your admin if you think this is a mistake.</p> : null}
+          {status === "not_issued" ? <p className="max-w-[60ch] type-small text-muted-foreground">This certificate has not been issued yet.</p> : null}
+        </header>
+
+        {drawn ? (
+          <div className="max-w-4xl overflow-hidden rounded-[var(--ds-radius)] border-[1.5px] border-[var(--ds-card-line)] bg-white" data-layout-ok>
+            <CertificateSvg layout={layoutCertificate(docFromRecord(row))} images={images} />
+          </div>
+        ) : null}
+
+        {usable ? (
+          <div className="flex min-w-0 flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+            <a href={`/api/certificates/${encodeURIComponent(row.credential_id)}/pdf`} className={cn(primaryButton, "w-full sm:w-fit sm:min-w-56")}>
+              <Download aria-hidden /> Download PDF
+            </a>
+            {status !== "expired" ? (
+              <>
+                <a
+                  href={linkedInAddToProfileUrl({ title, issuedOn: istDay(row.issued_at ?? row.created_at), verifyUrl, credentialId: row.credential_id })}
+                  target="_blank"
+                  rel="noreferrer"
+                  className={quietButton}
+                >
+                  <Share2 aria-hidden /> Add to LinkedIn
+                </a>
+                <CopyLink url={verifyUrl} v2 />
+              </>
+            ) : null}
+          </div>
+        ) : null}
+
+        <dl className="max-w-3xl divide-y divide-[var(--ds-hairline)] border-y border-[var(--ds-hairline)] type-small">
+          <div className="grid min-h-14 grid-cols-[7rem_minmax(0,1fr)] items-center gap-4 py-2 sm:grid-cols-[10rem_minmax(0,1fr)]">
+            <dt className="text-muted-foreground">Name</dt>
+            <dd className="min-w-0 font-semibold [overflow-wrap:anywhere]">{row.student_name}</dd>
+          </div>
+          <div className="grid min-h-14 grid-cols-[7rem_minmax(0,1fr)] items-center gap-4 py-2 sm:grid-cols-[10rem_minmax(0,1fr)]">
+            <dt className="text-muted-foreground">Certificate ID</dt>
+            <dd className="min-w-0 type-num font-semibold [overflow-wrap:anywhere]">{row.credential_id}</dd>
+          </div>
+          <div className="grid min-h-14 grid-cols-[7rem_minmax(0,1fr)] items-center gap-4 py-2 sm:grid-cols-[10rem_minmax(0,1fr)]">
+            <dt className="text-muted-foreground">Check it is real</dt>
+            <dd className="min-w-0">
+              <a href={verifyUrl} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center gap-1.5 font-semibold text-link underline underline-offset-4 [overflow-wrap:anywhere]">
+                <span className="min-w-0 [overflow-wrap:anywhere]">{verifyUrl.replace(/^https?:\/\//, "")}</span> <ExternalLink className="size-4 shrink-0" aria-hidden />
+              </a>
+            </dd>
+          </div>
+        </dl>
+      </PageFrame>
+    );
+  }
 
   return (
     <div className="mx-auto w-full max-w-4xl">

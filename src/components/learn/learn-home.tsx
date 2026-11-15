@@ -9,7 +9,6 @@ import { initLearnStore, setLearnState, useLearnState } from "@/lib/learn/store"
 import type { Unit } from "@/lib/learn/types";
 import { cn } from "@/lib/utils";
 import { BOARDS } from "@/lib/standing/boards";
-import { ViewToggle } from "./view-toggle";
 import s from "./learn.module.css";
 import { SOLO, WITH_OTHERS, type Game, type Tone } from "./games-list";
 import { PageHeader } from "@/components/design-system/page-header";
@@ -113,12 +112,7 @@ export function QuizPath({ units, serverState, save }: { units: Unit[]; serverSt
       <Link href="/prep/smart" className={backLinkClass}>
         <ArrowLeft className="size-4" aria-hidden /> Back to Smart practice
       </Link>
-      <div className="flex flex-wrap items-end justify-between gap-3">
-        <div>
-          <h1 className="text-h1">Quiz path</h1>
-        </div>
-        <ViewToggle />
-      </div>
+      <h1 className="text-h1">Quiz path</h1>
 
       <ol className="space-y-5">
         {units.map((u, ui) => {

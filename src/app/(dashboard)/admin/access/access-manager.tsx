@@ -31,7 +31,10 @@ export function AccessManager({
   resets,
   initialQuery,
   initialCohort,
+  v2 = false,
 }: {
+  /** Admin v2: the bar is a quiet hairline bar, rows are hairlines with 44px targets, status in words. Class names only. */
+  v2?: boolean;
   rows: AccessRow[];
   cohorts: { id: string; name: string; courseId: string | null }[];
   features: (Opt & { group: string })[];
@@ -111,9 +114,9 @@ export function AccessManager({
       </div>
 
       {/* Bulk bar */}
-      <div className="sticky top-0 z-20 space-y-2 md:top-[var(--top-h)] rounded-2xl border-2 border-foreground bg-brand p-3 text-brand-foreground hard-shadow-sm">
+      <div data-keep={v2 ? "" : undefined} className={v2 ? "sticky top-0 z-20 space-y-2 border-y border-[var(--ds-card-line)] bg-background py-2 md:top-[var(--top-h)]" : "sticky top-0 z-20 space-y-2 md:top-[var(--top-h)] rounded-2xl border-2 border-foreground bg-brand p-3 text-brand-foreground hard-shadow-sm"}>
         <div className="flex flex-wrap items-center gap-2">
-          <label className="flex items-center gap-2 text-sm font-bold">
+          <label className={v2 ? "flex min-h-11 items-center gap-2 pr-2 type-small font-semibold" : "flex items-center gap-2 text-sm font-bold"}>
             <input
               type="checkbox"
               checked={allPicked}
@@ -124,7 +127,7 @@ export function AccessManager({
             {picked.size ? `${picked.size} ticked` : `Tick all ${shown.length}`}
           </label>
           {picked.size ? (
-            <button type="button" onClick={() => setPicked(new Set())} className="text-xs font-semibold underline">
+            <button type="button" onClick={() => setPicked(new Set())} className={v2 ? "min-h-11 px-2 type-small font-semibold underline underline-offset-4" : "text-xs font-semibold underline"}>
               Clear
             </button>
           ) : null}
@@ -217,9 +220,10 @@ export function AccessManager({
       {shown.length === 0 ? (
         <p className="rounded-2xl border-2 border-dashed border-foreground/30 p-6 text-center text-sm font-semibold text-muted-foreground">Nobody matches.</p>
       ) : (
-        <ul className="divide-y-2 divide-foreground/10 overflow-hidden rounded-2xl border-2 border-foreground bg-card">
+        <ul className={v2 ? "flex min-w-0 flex-col divide-y divide-[var(--ds-hairline)] border-y border-[var(--ds-hairline)]" : "divide-y-2 divide-foreground/10 overflow-hidden rounded-2xl border-2 border-foreground bg-card"}>
           {shown.map((r) => (
-            <li key={r.id} className="flex flex-wrap items-center gap-x-3 gap-y-1.5 px-3 py-2.5">
+            <li key={r.id} className={v2 ? "flex min-w-0 flex-wrap items-center gap-x-3 gap-y-1.5 py-1.5" : "flex flex-wrap items-center gap-x-3 gap-y-1.5 px-3 py-2.5"}>
+              <label className={v2 ? "-ml-3 grid size-11 shrink-0 cursor-pointer place-items-center" : "contents"}>
               <input
                 type="checkbox"
                 checked={picked.has(r.id)}
@@ -234,30 +238,32 @@ export function AccessManager({
                 aria-label={`Tick ${r.email}`}
                 className="size-4 accent-[#1d44d8]"
               />
-              <Link href={`/admin/students/${r.id}`} className="min-w-0 flex-1 basis-48">
-                <span className="block truncate text-sm font-bold hover:underline">{r.name || r.email.split("@")[0]}</span>
-                <span className="block truncate text-caption text-muted-foreground">{r.email}</span>
+              </label>
+              <Link href={`/admin/students/${r.id}`} className={v2 ? "flex min-h-11 min-w-0 flex-1 basis-48 flex-col justify-center" : "min-w-0 flex-1 basis-48"}>
+                <span className={v2 ? "block type-small font-semibold [overflow-wrap:anywhere] hover:underline" : "block truncate text-sm font-bold hover:underline"}>{r.name || r.email.split("@")[0]}</span>
+                <span className={v2 ? "block type-small text-muted-foreground [overflow-wrap:anywhere]" : "block truncate text-caption text-muted-foreground"}>{r.email}</span>
               </Link>
               <span className="flex flex-wrap gap-1">
                 {r.cohortIds.map((c) => (
-                  <Link key={c} href={`/admin/cohorts/${c}`} className="rounded-full border-2 border-foreground/30 px-2 text-[0.7rem] font-bold hover:border-foreground">
+                  <Link key={c} href={`/admin/cohorts/${c}`} className={v2 ? "inline-flex min-h-11 items-center px-1 type-small text-muted-foreground underline-offset-4 hover:text-foreground hover:underline lg:min-h-0" : "rounded-full border-2 border-foreground/30 px-2 text-[0.7rem] font-bold hover:border-foreground"}>
                     {cohortName.get(c) ?? "Cohort"}
                   </Link>
                 ))}
               </span>
               <span
-                className={cn(
-                  "whitespace-nowrap rounded-full border-2 border-foreground px-2.5 py-0.5 text-xs font-bold",
-                  r.scope === "full" ? "bg-primary text-primary-foreground" : "bg-card",
-                )}
+                className={
+                  v2
+                    ? "whitespace-nowrap type-small font-semibold"
+                    : cn("whitespace-nowrap rounded-full border-2 border-foreground px-2.5 py-0.5 text-xs font-bold", r.scope === "full" ? "bg-primary text-primary-foreground" : "bg-card")
+                }
               >
                 {r.scope === "full" ? "Full" : "Lectures only"}
               </span>
-              {r.locked ? <span className="rounded-full border-2 border-destructive px-2 text-xs font-bold text-status-alert-fg">Locked</span> : null}
+              {r.locked ? <span className={v2 ? "type-small font-semibold text-status-alert-fg" : "rounded-full border-2 border-destructive px-2 text-xs font-bold text-status-alert-fg"}>Locked</span> : null}
               {r.off.length ? (
                 <span className="flex w-full flex-wrap gap-1 pl-7 sm:w-auto sm:pl-0">
                   {r.off.map((f) => (
-                    <span key={f} className="rounded-full bg-foreground px-2 py-0.5 text-[0.7rem] font-bold text-background" title="Switched off">
+                    <span key={f} className={v2 ? "type-small text-muted-foreground" : "rounded-full bg-foreground px-2 py-0.5 text-[0.7rem] font-bold text-background"} title="Switched off">
                       {featureName.get(f) ?? f} off
                     </span>
                   ))}

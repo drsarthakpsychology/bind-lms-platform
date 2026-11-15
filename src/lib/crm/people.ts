@@ -43,6 +43,14 @@ export type Person = {
   contacted: boolean;
   /** Last moment on VIBHA (students): page time, lectures. */
   lastSeen: string | null;
+  /** Marked paid (Pipeline, Mark paid). Null until then, or before the database step. */
+  paidAt: string | null;
+  paidAmount: number | null;
+  /** Cohorts a student is in. */
+  cohorts: Array<{ id: string; name: string }>;
+  college: string | null;
+  /** The latest enquiry message. */
+  message: string | null;
 };
 
 export const personKey = (email: string) => Buffer.from(email.toLowerCase()).toString("base64url");
@@ -59,19 +67,44 @@ const max = (a: string | null, b: string | null) => (!a ? b : !b ? a : a > b ? a
 
 /** Everyone the programme has touched, enquiries and students, merged by email. */
 export async function loadPeople(admin: SupabaseClient): Promise<Person[]> {
+  return (await loadPipeline(admin)).people;
+}
+
+/** The contact rows, with the payment columns when the database step (2026_11_15_people_payment.sql) is in. */
+async function loadContacts(admin: SupabaseClient): Promise<{ rows: Array<Record<string, unknown>>; paymentReady: boolean }> {
+  const full = await admin.from("crm_contacts").select("email, name, phone, stage, next_follow_up_at, college, paid_at, paid_amount").limit(5000);
+  if (!full.error) return { rows: full.data ?? [], paymentReady: true };
+  const base = await admin.from("crm_contacts").select("email, name, phone, stage, next_follow_up_at, college").limit(5000);
+  return { rows: base.data ?? [], paymentReady: false };
+}
+
+/** The pipeline: everyone, plus whether "Mark paid" can be saved yet. */
+export async function loadPipeline(admin: SupabaseClient): Promise<{ people: Person[]; paymentReady: boolean; cohorts: Array<{ id: string; name: string }> }> {
   const since = new Date(Date.now() - 14 * 86400000).toISOString();
-  const [{ data: enquiries }, { data: students }, { data: contacts }, { data: invites }, { data: sends }, { data: inbound }, { data: acts }, { data: visits }, { data: prog }] =
+  const [{ data: enquiries }, { data: students }, contactsRes, { data: invites }, { data: sends }, { data: inbound }, { data: acts }, { data: visits }, { data: prog }, { data: cohortRows }, { data: members }] =
     await Promise.all([
-      admin.from("enquiries").select("name, email, phone, source, created_at").order("created_at", { ascending: false }).limit(2000),
+      admin.from("enquiries").select("name, email, phone, source, message, created_at").order("created_at", { ascending: false }).limit(2000),
       admin.from("profiles").select("id, email, mobile_number, active_session_token, status, is_test").eq("role", "student").limit(2000),
-      admin.from("crm_contacts").select("email, name, phone, stage, next_follow_up_at").limit(5000),
+      loadContacts(admin),
       admin.from("credential_invites").select("email, name, sent_at, setup_completed_at").limit(5000),
       admin.from("email_sends").select("recipient, sent_at, opened_at, status").eq("status", "sent").limit(20000),
       admin.from("email_inbound").select("from_email, received_at").limit(10000),
       admin.from("crm_activities").select("email, kind, created_at").limit(20000),
       admin.from("page_visits").select("user_id, entered_at, left_at, duration_seconds").gte("entered_at", since).order("entered_at", { ascending: false }).limit(50000),
       admin.from("progress").select("user_id, updated_at").gte("updated_at", since).limit(50000),
+      admin.from("cohorts").select("id, name").order("created_at", { ascending: true }),
+      admin.from("cohort_members").select("cohort_id, user_id").limit(20000),
     ]);
+  const contacts = contactsRes.rows;
+  const cohortName = new Map((cohortRows ?? []).map((c) => [String(c.id), String(c.name)]));
+  const cohortsOf = new Map<string, Array<{ id: string; name: string }>>();
+  for (const m of members ?? []) {
+    const name = cohortName.get(String(m.cohort_id));
+    if (!name) continue;
+    const list = cohortsOf.get(String(m.user_id)) ?? [];
+    list.push({ id: String(m.cohort_id), name });
+    cohortsOf.set(String(m.user_id), list);
+  }
   const seen = new Map<string, string>();
   const bump = (id: string, at: string | null) => {
     const best = latest(seen.get(id), at);
@@ -90,6 +123,7 @@ export async function loadPeople(admin: SupabaseClient): Promise<Person[]> {
         key: personKey(email), email, name: email.split("@")[0], phone: null, isStudent: false, isEnquiry: false,
         stage: "new", followUpAt: null, enquiredAt: null, source: null, studentId: null, signedIn: false, locked: false,
         setupDone: false, inviteSentAt: null, emailsSent: 0, opened: false, replied: false, lastContactAt: null, contacted: false, lastSeen: null,
+        paidAt: null, paidAmount: null, cohorts: [], college: null, message: null,
       };
       map.set(email, p);
     }
@@ -104,6 +138,8 @@ export async function loadPeople(admin: SupabaseClient): Promise<Person[]> {
     p.phone = (e.phone as string) || p.phone;
     p.source = (e.source as string) ?? p.source;
     p.enquiredAt = p.enquiredAt ?? (e.created_at as string);
+    // Newest first, so the first message seen is the latest.
+    p.message = p.message ?? ((e.message as string) || null);
   }
   for (const s of students ?? []) {
     if (isHiddenAccount(s)) continue;
@@ -116,6 +152,7 @@ export async function loadPeople(admin: SupabaseClient): Promise<Person[]> {
     p.locked = s.status === "blocked";
     p.stage = "joined";
     p.lastSeen = seen.get(s.id as string) ?? null;
+    p.cohorts = cohortsOf.get(s.id as string) ?? [];
   }
   for (const i of invites ?? []) {
     const p = map.get(String(i.email).toLowerCase());
@@ -131,6 +168,9 @@ export async function loadPeople(admin: SupabaseClient): Promise<Person[]> {
     p.followUpAt = (c.next_follow_up_at as string) ?? null;
     if (c.name) p.name = c.name as string;
     if (c.phone) p.phone = c.phone as string;
+    if (c.college) p.college = c.college as string;
+    p.paidAt = (c.paid_at as string | null) ?? null;
+    p.paidAmount = c.paid_amount == null ? null : Number(c.paid_amount);
   }
   for (const s of sends ?? []) {
     const p = map.get(String(s.recipient).toLowerCase());
@@ -145,7 +185,7 @@ export async function loadPeople(admin: SupabaseClient): Promise<Person[]> {
   }
   for (const a of acts ?? []) {
     const p = map.get(String(a.email).toLowerCase());
-    if (!p || a.kind === "stage" || a.kind === "note") continue;
+    if (!p || a.kind === "stage" || a.kind === "note" || a.kind === "payment") continue;
     p.lastContactAt = max(p.lastContactAt, a.created_at as string);
   }
   for (const p of map.values()) p.contacted = p.emailsSent > 0 || p.lastContactAt !== null;
@@ -153,7 +193,8 @@ export async function loadPeople(admin: SupabaseClient): Promise<Person[]> {
   const hiddenEmails = new Set((students ?? []).filter(isHiddenAccount).map((s) => String(s.email).toLowerCase()));
   for (const [email] of map) if (hiddenEmails.has(email) || isRobotEmail(email)) map.delete(email);
 
-  return [...map.values()].sort((a, b) => (b.lastContactAt ?? b.enquiredAt ?? "").localeCompare(a.lastContactAt ?? a.enquiredAt ?? ""));
+  const people = [...map.values()].sort((a, b) => (b.lastContactAt ?? b.enquiredAt ?? "").localeCompare(a.lastContactAt ?? a.enquiredAt ?? ""));
+  return { people, paymentReady: contactsRes.paymentReady, cohorts: (cohortRows ?? []).map((c) => ({ id: String(c.id), name: String(c.name) })) };
 }
 
 export type TimelineItem = { at: string; kind: string; title: string; body?: string | null; tone?: "lime" | "blue" | "ink" | "red" };
@@ -177,7 +218,7 @@ export async function loadTimeline(admin: SupabaseClient, email: string): Promis
     if (s.bounced_at) items.push({ at: s.bounced_at as string, kind: "bounced", title: `Bounced: ${s.subject}`, tone: "red" });
   }
   for (const r of inbound ?? []) items.push({ at: r.received_at as string, kind: "reply", title: `Replied: ${r.subject ?? "(no subject)"}`, body: (r.body_text as string)?.slice(0, 600) ?? null, tone: "lime" });
-  const LABEL: Record<string, string> = { note: "Note", call: "Call", whatsapp: "WhatsApp", email: "Email (outside VIBHA)", meeting: "Meeting", stage: "Stage changed" };
+  const LABEL: Record<string, string> = { payment: "Payment", note: "Note", call: "Call", whatsapp: "WhatsApp", email: "Email (outside VIBHA)", meeting: "Meeting", stage: "Stage changed" };
   for (const a of acts ?? []) items.push({ at: a.created_at as string, kind: a.kind as string, title: LABEL[a.kind as string] ?? String(a.kind), body: (a.body as string) ?? null, tone: a.kind === "stage" ? "ink" : "lime" });
   if (invite?.setup_completed_at) items.push({ at: invite.setup_completed_at as string, kind: "setup", title: "Set up their account", tone: "ink" });
   return items.sort((a, b) => b.at.localeCompare(a.at));

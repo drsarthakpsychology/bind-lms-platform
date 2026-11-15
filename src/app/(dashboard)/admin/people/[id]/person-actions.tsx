@@ -17,7 +17,7 @@ const KINDS = [
 ] as const;
 
 /** Stage, follow-up, and the "log what happened" box (HubSpot-style). */
-export function PersonActions({ email, name, stage, followUp, isStudent }: { email: string; name: string; stage: string; followUp: string; isStudent: boolean }) {
+export function PersonActions({ email, name, stage, followUp, isStudent, v2 = false }: { email: string; name: string; stage: string; followUp: string; isStudent: boolean; v2?: boolean }) {
   const router = useRouter();
   const [busy, setBusy] = React.useState(false);
   const [msg, setMsg] = React.useState<string | null>(null);
@@ -34,9 +34,9 @@ export function PersonActions({ email, name, stage, followUp, isStudent }: { ema
   };
 
   return (
-    <div className="space-y-4 rounded-2xl border-2 border-foreground bg-card p-5">
+    <div className={v2 ? "flex min-w-0 flex-col gap-4" : "space-y-4 rounded-2xl border-2 border-foreground bg-card p-5"}>
       <div className="space-y-1.5">
-        <label htmlFor="stage" className="text-eyebrow text-muted-foreground">Stage</label>
+        <label htmlFor="stage" className={v2 ? "type-small font-semibold" : "text-eyebrow text-muted-foreground"}>Stage</label>
         <select id="stage" defaultValue={stage} disabled={busy} onChange={(e) => run(() => setStage(email, e.target.value), "Stage saved.")} className="h-11 w-full rounded-xl border-2 border-foreground bg-card px-3 text-sm font-bold">
           {STAGES.map((s) => (
             <option key={s.id} value={s.id}>{s.label}</option>
@@ -44,15 +44,15 @@ export function PersonActions({ email, name, stage, followUp, isStudent }: { ema
         </select>
       </div>
       <div className="space-y-1.5">
-        <label htmlFor="follow" className="text-eyebrow text-muted-foreground">Next follow-up</label>
+        <label htmlFor="follow" className={v2 ? "type-small font-semibold" : "text-eyebrow text-muted-foreground"}>Next follow-up</label>
         <input id="follow" type="date" defaultValue={followUp} disabled={busy} onChange={(e) => run(() => setFollowUp(email, e.target.value), e.target.value ? "Follow-up set." : "Follow-up cleared.")} className="h-11 w-full rounded-xl border-2 border-foreground bg-card px-3 text-sm font-bold" />
       </div>
 
       <div className="space-y-2 border-t-2 border-foreground/10 pt-4">
-        <p className="text-eyebrow text-muted-foreground">Log what happened</p>
+        <p className={v2 ? "type-small font-semibold" : "text-eyebrow text-muted-foreground"}>Log what happened</p>
         <div role="group" aria-label="Type" className="flex flex-wrap gap-1.5">
           {KINDS.map((k) => (
-            <button key={k.id} type="button" aria-pressed={kind === k.id} onClick={() => setKind(k.id)} className={cn("h-8 cursor-pointer rounded-full border-2 border-foreground px-3 text-xs font-bold", kind === k.id ? "bg-brand text-brand-foreground" : "bg-card")}>
+            <button key={k.id} type="button" aria-pressed={kind === k.id} onClick={() => setKind(k.id)} className={v2 ? cn("h-11 cursor-pointer rounded-md border px-3 type-small font-semibold lg:h-9", kind === k.id ? "border-foreground bg-foreground text-background" : "border-[var(--ds-card-line)] hover:bg-[var(--ds-tint)]") : cn("h-8 cursor-pointer rounded-full border-2 border-foreground px-3 text-xs font-bold", kind === k.id ? "bg-brand text-brand-foreground" : "bg-card")}>
               {k.label}
             </button>
           ))}
@@ -93,7 +93,7 @@ export function PersonActions({ email, name, stage, followUp, isStudent }: { ema
           <UserPlus aria-hidden /> Make them a student
         </Button>
       ) : null}
-      {msg ? <p className="text-caption font-semibold break-all" role="status">{msg}</p> : null}
+      {msg ? <p className={v2 ? "type-small font-semibold [overflow-wrap:anywhere]" : "text-caption font-semibold break-all"} role="status">{msg}</p> : null}
     </div>
   );
 }

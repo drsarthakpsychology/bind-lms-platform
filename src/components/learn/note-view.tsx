@@ -14,9 +14,8 @@ import { useExplainView, ViewToggle } from "./view-toggle";
 import n from "./notes.module.css";
 import { backLinkClass } from "@/components/design-system/back-link";
 import { OnceHint } from "@/components/help/once-hint";
-import { useUiV2 } from "@/components/learn-v2/ui-v2";
-import { Crumb } from "@/components/learn-v2/parts";
-import { HeroButton, Row, RowList } from "@/components/ds";
+import { useUiV2 } from "@/components/ds/v2";
+import { BackLink, HeroButton, Row, RowList } from "@/components/ds";
 
 const TONE: Record<string, string> = {
   lime: "bg-primary text-primary-foreground",
@@ -72,7 +71,7 @@ export function NoteView({
     return (
       <article data-ds="page" className="ds-page mx-auto flex w-full max-w-[44rem] min-w-0 flex-col gap-8 px-1 sm:px-0">
         <header className="flex min-w-0 flex-col gap-2">
-          <Crumb href="/study/notes">Summaries</Crumb>
+          <BackLink href="/study/notes">Summaries</BackLink>
           <p className="type-small text-muted-foreground type-num">
             {WEEK_BLOCKS[note.block]} · note {position.index + 1}
           </p>
@@ -176,7 +175,7 @@ export function NoteView({
         <nav className="flex min-w-0 items-stretch justify-between gap-3 border-t border-[var(--ds-hairline)] pt-6" aria-label="Other notes">
           {prev ? (
             <Link href={`/study/notes/${prev.id}`} aria-label={`Previous: ${prev.title}`} className={cn(quiet, "shrink-0")}>
-              <ArrowLeft className="size-4 shrink-0" aria-hidden /> Back
+              <ArrowLeft className="size-4 shrink-0" aria-hidden /> Previous
             </Link>
           ) : (
             <span />

@@ -10,6 +10,8 @@ import { OnsetTimeline } from "./onset-timeline";
 import type { BandView } from "@/lib/psychopharm/store";
 import { Points } from "./points";
 import { useExplainView, ViewToggle } from "@/components/learn/view-toggle";
+import { useUiV2 } from "@/components/ds/v2";
+import { cn } from "@/lib/utils";
 
 /**
  * The drug page's dynamic body. Reads ?band= so tapping a dose-ladder rung
@@ -64,6 +66,11 @@ export function DrugBandView({
   patient_counseling?: string;
 }) {
   const searchParams = useSearchParams();
+  const v2 = useUiV2();
+  // New design: hairlines instead of 2px boxes; folds are rows, not cards.
+  const fold = v2 ? "group min-w-0 border-b border-[var(--ds-hairline)]" : "group rounded-2xl border-2 border-foreground bg-card";
+  const foldSummary = v2 ? "flex min-h-14 cursor-pointer list-none items-center justify-between gap-3 rounded-lg outline-none focus-visible:ring-2 focus-visible:ring-ring [&::-webkit-details-marker]:hidden" : "flex cursor-pointer list-none items-center justify-between gap-3 px-4 py-3";
+  const foldBody = v2 ? "pb-4" : "border-t-2 border-foreground/10 px-4 py-3";
   const view = useExplainView();
   const clinician = view === "clinician";
   const activeBand = Number(searchParams?.get("band") ?? (bands.length ? 1 : 0));
@@ -88,7 +95,7 @@ export function DrugBandView({
 
   return (
     <div className="space-y-6">
-      <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border-2 border-foreground bg-card px-4 py-3">
+      <div className={cn("flex flex-wrap items-center justify-between gap-3", v2 ? "border-y border-[var(--ds-hairline)] py-3" : "rounded-2xl border-2 border-foreground bg-card px-4 py-3")}>
         <p className="text-small font-semibold">
           {clinician ? "Clinician view: mechanism, dosing logic, monitoring and interactions." : "Student view: plain words, what to notice and what to ask."}
         </p>
@@ -114,7 +121,7 @@ export function DrugBandView({
       </section>
 
       {dose_range ? (
-        <p className="rounded-xl border-2 border-dashed border-foreground/30 px-3 py-2 text-caption text-muted-foreground">
+        <p className={v2 ? "type-small text-muted-foreground" : "rounded-xl border-2 border-dashed border-foreground/30 px-3 py-2 text-caption text-muted-foreground"}>
           Doses vary from person to person. The prescriber chooses the dose for each patient, and that is the number that matters.
         </p>
       ) : null}
@@ -124,7 +131,7 @@ export function DrugBandView({
           <h2 className="text-h2">{clinician ? "Adverse effects" : "What to watch for"}</h2>
           <Points text={side_effects_common} />
           {side_effects_serious ? (
-            <div className="rounded-2xl border-2 border-destructive bg-status-alert-bg p-3 text-status-alert-fg">
+            <div className={cn("bg-status-alert-bg text-status-alert-fg", v2 ? "rounded-[var(--ds-radius)] p-4" : "rounded-2xl border-2 border-destructive p-3")}>
               <p className="text-caption font-bold uppercase">{clinician ? "Serious / rare" : "Rare but serious: tell the psychiatrist the same day"}</p>
               <Points text={side_effects_serious} className="mt-1" />
             </div>
@@ -134,24 +141,24 @@ export function DrugBandView({
 
       {labelSections.map(({ label, value }) =>
         value ? (
-          <details key={label} className="group rounded-2xl border-2 border-foreground bg-card">
-            <summary className="flex cursor-pointer list-none items-center justify-between gap-3 px-4 py-3">
+          <details key={label} className={fold}>
+            <summary className={foldSummary}>
               <h2 className="text-h3">{label}</h2>
               <ChevronDown className="size-5 shrink-0 text-muted-foreground transition-transform duration-fast ease-snappy group-open:rotate-180" aria-hidden />
             </summary>
-            <div className="border-t-2 border-foreground/10 px-4 py-3">
+            <div className={foldBody}>
               <Points text={value} max={14} />
             </div>
           </details>
         ) : null,
       )}
 
-      <details className="group rounded-2xl border-2 border-foreground bg-card">
-        <summary className="flex cursor-pointer list-none items-center justify-between gap-3 px-4 py-3">
+      <details className={fold}>
+        <summary className={foldSummary}>
           <h2 className="text-h3">In session: what to notice, red flags</h2>
           <ChevronDown className="size-5 shrink-0 text-muted-foreground transition-transform duration-fast ease-snappy group-open:rotate-180" aria-hidden />
         </summary>
-        <div className="border-t-2 border-foreground/10 px-4 py-3">
+        <div className={foldBody}>
           <ObserverNotes drugClass={drugClass} />
         </div>
       </details>

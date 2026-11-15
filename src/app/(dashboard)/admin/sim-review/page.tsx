@@ -2,6 +2,9 @@ import { redirect } from "next/navigation";
 import { requireAdmin } from "@/lib/auth/guards";
 import { createAdminClient } from "@/lib/supabase/server";
 import { loadHiddenIds } from "@/lib/people/hidden-ids";
+import { readFlags } from "@/lib/flags";
+import { uiV2For } from "@/lib/ui/v2";
+import { AdminPage } from "../_v2/kit";
 import { PageHeader } from "@/components/design-system/page-header";
 import { SimReviewList } from "./sim-review-list";
 
@@ -16,7 +19,8 @@ export const dynamic = "force-dynamic";
 export default async function SimReviewPage() {
   // Defence in depth: layouts don't re-render on every navigation, so the page
   // re-checks admin itself before reading data.
-  if (!(await requireAdmin())) redirect("/dashboard");
+  const me = await requireAdmin();
+  if (!me) redirect("/dashboard");
   const admin = createAdminClient();
 
   // Sessions by test and robot accounts (AI calibration runs) never show.
@@ -84,6 +88,14 @@ export default async function SimReviewPage() {
     note: noteBySession.get(s.session_id),
     correctedOverall: correctedBySession.get(s.session_id) ?? null,
   }));
+
+  if (uiV2For(await readFlags(), me.role)) {
+    return (
+      <AdminPage title="Practice sessions" lead="Scores made by AI, always labelled. Your comment sits on top." back={{ href: "/admin/triage", label: "Needs a look" }}>
+        <SimReviewList v2 rows={rows} />
+      </AdminPage>
+    );
+  }
 
   return (
     <div className="mx-auto max-w-5xl">

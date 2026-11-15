@@ -7,6 +7,9 @@ import { personKey } from "@/lib/crm/people";
 import { answerColumns, answerText, normalizeFields } from "@/lib/forms/fields";
 import { istStamp } from "@/lib/forms/csv";
 import { dayIst } from "../../format";
+import { readFlags } from "@/lib/flags";
+import { uiV2For } from "@/lib/ui/v2";
+import { FormContactV2 } from "../../../_v2/forms";
 
 export const dynamic = "force-dynamic";
 
@@ -17,7 +20,8 @@ const btn = "inline-flex min-h-11 items-center gap-1.5 rounded-md border-2 borde
 
 /** A contact made by a form: their details and every form answer they sent. */
 export default async function FormContactPage({ params }: { params: Promise<{ id: string }> }) {
-  if (!(await requireAdmin())) redirect("/dashboard");
+  const me = await requireAdmin();
+  if (!me) redirect("/dashboard");
   const { id } = await params;
   if (!/^[0-9a-f-]{36}$/i.test(id)) notFound();
   const admin = createAdminClient();
@@ -37,6 +41,36 @@ export default async function FormContactPage({ params }: { params: Promise<{ id
   const forms = new Map((formsRaw ?? []).map((f) => [f.id as string, { title: f.title as string, fields: normalizeFields(f.fields) }]));
   const inPipeline = Boolean(enq?.length || prof?.length || crm?.length);
   const wa = contact.phone ? contact.phone.replace(/\D/g, "").replace(/^0+/, "").replace(/^(\d{10})$/, "91$1") : null;
+
+  if (uiV2For(await readFlags(), me.role)) {
+    return (
+      <FormContactV2
+        name={contact.name || contact.email}
+        facts={[
+          { label: "Email", value: contact.email },
+          { label: "Phone", value: contact.phone ?? "Not set" },
+          { label: "Contact since", value: dayIst(contact.created_at) },
+        ]}
+        tags={contact.tags ?? []}
+        contact={[
+          { label: "Email", href: `/admin/emails?folder=compose&to=${encodeURIComponent(contact.email)}` },
+          ...(wa && wa.length >= 11 ? [{ label: "WhatsApp", href: `https://wa.me/${wa}`, external: true }] : []),
+          ...(contact.phone ? [{ label: "Call", href: `tel:${contact.phone.replace(/[^\d+]/g, "")}` }] : []),
+          ...(inPipeline ? [{ label: "Pipeline record", href: `/admin/people/${personKey(contact.email)}` }] : []),
+        ]}
+        answers={subs.map((s) => {
+          const f = forms.get(s.form_id);
+          return {
+            id: s.id,
+            formHref: `/admin/forms/${s.form_id}`,
+            formTitle: f?.title ?? "Form",
+            when: istStamp(s.created_at),
+            items: answerColumns(f?.fields ?? [], [s.responses]).map((col) => ({ label: `${col.label}${col.removed ? " (removed question)" : ""}`, value: answerText(s.responses?.[col.key]) || "No answer" })),
+          };
+        })}
+      />
+    );
+  }
 
   return (
     <div className="space-y-6">

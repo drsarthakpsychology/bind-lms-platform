@@ -2,17 +2,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft, BookOpen, Clock, Flame, GraduationCap, PlayCircle, Sparkles, Target, Trophy } from "lucide-react";
 import { getSession } from "@/lib/auth/session";
-import { createAdminClient } from "@/lib/supabase/server";
-import { loadMyBoard } from "@/lib/standing/board";
-import { normalise, levelFor, liveStreak } from "@/lib/learn/engine";
-import { istToday } from "@/lib/practice/streaks";
-import { hoursOf } from "@/lib/standing/score";
 import { BOARDS } from "@/lib/standing/boards";
+import { loadJourney, type JourneyStatKey } from "@/lib/journey/model";
 import { PageHeader } from "@/components/design-system/page-header";
 import { backLinkClass } from "@/components/design-system/back-link";
 import { RefreshOnSave } from "@/components/save/refresh-on-save";
 import { leaveWithoutSession } from "@/lib/auth/session-redirect";
-import { pageV2 } from "@/components/v2me/server";
+import { uiV2Role } from "@/lib/ui/v2-server";
 import { JourneyV2 } from "./journey-v2";
 
 export const metadata: Metadata = { title: "My journey" };
@@ -26,48 +22,21 @@ export const dynamic = "force-dynamic";
 export default async function JourneyPage() {
   const session = await getSession();
   if (session.status !== "ok") return leaveWithoutSession(session);
-  const userId = session.profile.id;
-  const admin = createAdminClient();
+  const j = await loadJourney(session.profile.id);
+  const { level, title, streak } = j;
+  const pct = j.levelPct;
+  const me = j.points !== null ? { points: j.points, rank: j.rank } : null;
+  const ICONS: Record<JourneyStatKey, React.ReactNode> = {
+    online: <Clock className="size-5" aria-hidden />,
+    lectures: <PlayCircle className="size-5" aria-hidden />,
+    finished: <GraduationCap className="size-5" aria-hidden />,
+    streak: <Flame className="size-5" aria-hidden />,
+    points: <BookOpen className="size-5" aria-hidden />,
+    practice: <Target className="size-5" aria-hidden />,
+  };
+  const stats: { icon: React.ReactNode; label: string; value: string; sub?: string }[] = j.stats.map((s) => ({ icon: ICONS[s.key], label: s.label, value: s.value, sub: s.sub }));
 
-  const [board, { data: learnRow }, { data: lessons }, practice] = await Promise.all([
-    loadMyBoard(userId).catch(() => ({ rows: [], me: null })),
-    admin.from("learn_progress").select("state").eq("user_id", userId).maybeSingle(),
-    admin.from("progress").select("watched_seconds, is_completed").eq("user_id", userId).limit(2000),
-    Promise.all([
-      admin.from("sim_sessions").select("id", { count: "exact", head: true }).eq("user_id", userId),
-      admin.from("sct_attempts").select("id", { count: "exact", head: true }).eq("user_id", userId),
-      admin.from("mse_attempts").select("id", { count: "exact", head: true }).eq("user_id", userId),
-      admin.from("osce_attempts").select("id", { count: "exact", head: true }).eq("user_id", userId),
-      admin.from("formulation_attempts").select("id", { count: "exact", head: true }).eq("user_id", userId),
-    ]),
-  ]);
-
-  const me = board.me;
-  const st = learnRow?.state ? normalise(learnRow.state) : null;
-  const level = me?.level ?? (st ? levelFor(st.xp).level : 1);
-  const title = me?.title ?? (st ? levelFor(st.xp).title : "Curious Mind");
-  const pct = me?.pct ?? (st ? levelFor(st.xp).pct : 0);
-  const streak = st ? liveStreak(st.streak, istToday()) : 0;
-  const accuracy = st && st.answered ? Math.round((st.correct / st.answered) * 100) : null;
-
-  const watchedSeconds = (lessons ?? []).reduce((a, l) => a + (l.watched_seconds ?? 0), 0);
-  const lecturesDone = (lessons ?? []).filter((l) => l.is_completed).length;
-  const lecturesStarted = (lessons ?? []).filter((l) => (l.watched_seconds ?? 0) > 0).length;
-  const practiceCount = practice.reduce((a, r) => a + (r.count ?? 0), 0);
-
-  const hoursOnline = me?.hours ?? 0;
-  const lectureHours = me?.lectureHours ?? hoursOf(watchedSeconds);
-
-  const stats: { icon: React.ReactNode; label: string; value: string; sub?: string }[] = [
-    { icon: <Clock className="size-5" aria-hidden />, label: "Time on VIBHA", value: `${hoursOnline} h`, sub: "all your time here" },
-    { icon: <PlayCircle className="size-5" aria-hidden />, label: "In lectures", value: `${lectureHours} h`, sub: `${lecturesStarted} started` },
-    { icon: <GraduationCap className="size-5" aria-hidden />, label: "Lectures finished", value: String(lecturesDone) },
-    { icon: <Flame className="size-5" aria-hidden />, label: "Day streak", value: streak ? `${streak} 🔥` : "None yet", sub: "days in a row" },
-    { icon: <BookOpen className="size-5" aria-hidden />, label: "Quiz points", value: st ? String(st.xp) : "0", sub: accuracy !== null ? `${accuracy}% right` : undefined },
-    { icon: <Target className="size-5" aria-hidden />, label: "Practice done", value: String(practiceCount), sub: "sessions and drills" },
-  ];
-
-  if (await pageV2(session.profile.role)) {
+  if (await uiV2Role(session.profile.role)) {
     return (
       <>
         <RefreshOnSave kinds={["learn", "complete", "progress"]} />

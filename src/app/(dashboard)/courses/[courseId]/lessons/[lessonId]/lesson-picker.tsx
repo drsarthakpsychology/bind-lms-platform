@@ -7,7 +7,7 @@ import { Check, ChevronDown } from "lucide-react";
 
 import { MobileBottomSheet } from "@/components/mobile/mobile-bottom-sheet";
 import { cn } from "@/lib/utils";
-import { useUiV2 } from "@/components/learn-v2/ui-v2";
+import { useUiV2 } from "@/components/ds/v2";
 
 type PickerLesson = {
   id: string;

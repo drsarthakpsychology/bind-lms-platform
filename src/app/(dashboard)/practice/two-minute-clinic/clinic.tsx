@@ -124,7 +124,7 @@ export function TwoMinuteClinic({ start = 0, order, ctx }: { start?: number; ord
           <button
             type="button"
             onClick={() => { startHowTo("two-minute-clinic"); setPhase("type"); setSeconds(120); haptic("tap"); }}
-            className="mt-4 rounded-md border-2 border-border bg-primary px-4 py-2 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px active:hard-shadow-none"
+            className="mt-4 min-h-11 rounded-md border-2 border-border bg-primary px-4 py-2 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px active:hard-shadow-none"
           >
             Start the clock
           </button>

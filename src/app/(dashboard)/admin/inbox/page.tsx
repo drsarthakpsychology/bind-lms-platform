@@ -11,6 +11,9 @@ import { agoLabel } from "@/lib/analytics/timeline";
 import { loadInbox, loadLoginPeople, type InboxThread } from "./data";
 import { LoginFinder } from "./login-finder";
 import { LoginQuick } from "../students/login-quick";
+import { readFlags } from "@/lib/flags";
+import { uiV2For } from "@/lib/ui/v2";
+import { InboxV2 } from "../_v2/inbox";
 
 export const metadata: Metadata = { title: "Inbox" };
 export const dynamic = "force-dynamic";
@@ -35,6 +38,41 @@ export default async function AdminInboxPage() {
   const total = threads.length + emails.length;
   // Email replies from a student's own address get the login shortcut too.
   const studentByEmail = new Map(people.map((p) => [p.email.toLowerCase(), p]));
+
+  if (uiV2For(await readFlags(), me.role)) {
+    return (
+      <InboxV2
+        ready={ready}
+        finder={canWrite ? <LoginFinder people={people} v2 /> : undefined}
+        threads={threads.map((t) => ({
+          id: t.id,
+          title: t.title,
+          body: t.body,
+          concern: t.kind === "complaint",
+          reason: REASON[t.need.reason].label,
+          author: t.author,
+          authorHref: `/admin/students/${t.authorId}`,
+          where: t.kind === "complaint" ? "Only you and the student see this" : (t.cohortName ?? "No cohort"),
+          when: agoLabel(t.need.lastAt),
+          followUp: t.followUp,
+          reply: <InlineReply target="doubt" id={t.id} label={`Reply to ${t.author}`} canWrite={canWrite} />,
+          login: canWrite && t.authorEmail ? <LoginQuick email={t.authorEmail} name={t.author} /> : undefined,
+        }))}
+        emails={emails.map((m) => {
+          const s = studentByEmail.get(m.fromEmail.toLowerCase());
+          return {
+            id: m.id,
+            subject: m.subject,
+            from: `${m.fromName ? `${m.fromName} · ` : ""}${m.fromEmail}`,
+            when: agoLabel(m.receivedAt),
+            body: m.body,
+            reply: <InlineReply target="email" id={m.id} label={`Reply to ${m.fromName ?? m.fromEmail}`} canWrite={canWrite} />,
+            login: canWrite && s ? <LoginQuick email={s.email} name={s.name} /> : undefined,
+          };
+        })}
+      />
+    );
+  }
 
   return (
     <div className="mx-auto max-w-3xl space-y-6">

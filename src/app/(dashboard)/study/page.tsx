@@ -4,8 +4,8 @@ import { MODULES, liteModule } from "@/lib/study";
 import { StudyHome } from "@/components/study/course";
 import { loadLearnState, saveLearnState } from "./actions";
 import { studyOwner } from "./owner";
-import { learnV2 } from "@/components/learn-v2/server";
-import { UiV2 } from "@/components/learn-v2/ui-v2";
+import { uiV2 } from "@/lib/ui/v2-server";
+import { UiV2 } from "@/components/ds/v2";
 import { StudyHomeV2 } from "@/components/study/course-v2";
 
 export const metadata: Metadata = { title: "Study" };
@@ -13,7 +13,7 @@ export const metadata: Metadata = { title: "Study" };
 /** /study: the course. One "Continue" button and the modules in order. */
 export default async function StudyPage() {
   await requireFeature("learn");
-  const [serverState, { owner }, v2] = await Promise.all([loadLearnState(), studyOwner(), learnV2()]);
+  const [serverState, { owner }, v2] = await Promise.all([loadLearnState(), studyOwner(), uiV2()]);
   if (v2) {
     return (
       <UiV2 on>

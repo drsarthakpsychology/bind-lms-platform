@@ -76,3 +76,161 @@
     min-height: 2.75rem;
   }
 }
+
+/*
+ * Older parts that sit inside a v2 screen (cohort forms, lecture editor,
+ * uploaders, form builder, compose form). They keep their own logic and
+ * markup; here their 2px ink boxes become one hairline with no fill or
+ * shadow, so a v2 screen never shows a box inside a box.
+ */
+[data-admin-v2] :is(div, section, article, li, ul, ol, details, form, fieldset, aside, label, p, blockquote, table)[class*="border-2"]:not([data-keep]) {
+  border-width: 1px;
+  border-color: var(--ds-card-line);
+  box-shadow: none;
+}
+[data-admin-v2] :is(div, section, article, li, ul, ol, details, form, fieldset, aside)[class*="border-2"][class*="bg-card"]:not([data-keep]) {
+  background: transparent;
+}
+[data-admin-v2] :is(div, section, article, li, ul, ol, details, form, fieldset, aside, a)[class*="rounded-2xl"]:not([data-keep]),
+[data-admin-v2] :is(div, section, article, li, ul, ol, details, form, fieldset, aside, a)[class*="rounded-xl"]:not([data-keep]) {
+  border-radius: 0.5rem;
+}
+[data-admin-v2] [class*="hard-shadow"]:not([data-keep]) {
+  box-shadow: none;
+}
+[data-admin-v2] :is(.divide-y-2, [class*="divide-y-2"]) > :not(:last-child) {
+  border-bottom-width: 1px;
+  border-color: var(--ds-hairline);
+}
+/* Older 2px rules become hairlines. v2 underlined tabs carry data-keep and keep their 2px underline. */
+[data-admin-v2] [class*="border-b-2"]:not([data-keep]),
+[data-admin-v2] [class*="border-t-2"]:not([data-keep]) {
+  border-bottom-width: 1px;
+  border-top-width: 1px;
+  border-color: var(--ds-hairline);
+}
+[data-admin-v2] [class*="border-b-2"]:not([data-keep]):not([class~="border-t"]):not([class*="border-t-"]) {
+  border-top-width: 0;
+}
+[data-admin-v2] [class*="border-t-2"]:not([data-keep]):not([class~="border-b"]):not([class*="border-b-"]) {
+  border-bottom-width: 0;
+}
+/* Older links and chips drawn as 2px ink pills. */
+[data-admin-v2] :is(a, button, span, summary)[class*="border-2"]:not([data-slot="button"]):not([data-keep]) {
+  border-width: 1px;
+  border-color: var(--ds-card-line);
+  box-shadow: none;
+}
+/* Older small text: never under 12px. */
+[data-admin-v2] [class*="text-[0.7rem]"],
+[data-admin-v2] [class*="text-[0.65rem]"],
+[data-admin-v2] [class*="text-[10px]"],
+[data-admin-v2] [class*="text-[11px]"],
+[data-admin-v2] [class*="text-[0.6875rem]"] {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+/* Older controls reach 44px on touch widths. */
+@media (max-width: 1023.98px) {
+  [data-admin-v2] :is(button, a, summary, select, input:not([type="checkbox"]):not([type="radio"]):not([type="hidden"]):not([type="range"]):not([type="color"]))[class*="h-10"],
+  [data-admin-v2] :is(button, a, summary)[class*="min-h-10"],
+  [data-admin-v2] :is(button, a, summary)[class*="min-h-9"],
+  [data-admin-v2] :is(button, a)[class*="h-7"],
+  [data-admin-v2] :is(button, a)[class*="size-8"],
+  [data-admin-v2] :is(button, a)[class*="size-9"] {
+    min-height: 2.75rem;
+  }
+  [data-admin-v2] :is(button, a)[class*="size-8"],
+  [data-admin-v2] :is(button, a)[class*="size-9"] {
+    min-width: 2.75rem;
+  }
+  [data-admin-v2] summary {
+    min-height: 2.75rem;
+    display: flex;
+    align-items: center;
+  }
+  [data-admin-v2] details > summary {
+    list-style: none;
+  }
+}
+@media (max-width: 1023.98px) {
+  /* Older tick rows and small text buttons inside a v2 screen. */
+  [data-admin-v2] label:has(> input[type="checkbox"]),
+  [data-admin-v2] label:has(> input[type="radio"]) {
+    min-height: 2.75rem;
+  }
+  [data-admin-v2] button[class*="text-caption"],
+  [data-admin-v2] button[class*="text-xs"],
+  [data-admin-v2] a[class*="text-caption"][class*="font-bold"] {
+    min-height: 2.75rem;
+    min-width: 2.75rem;
+  }
+}
+/* An older inline title editor inside the v2 page title keeps the title's size. */
+[data-admin-v2] h1 [class*="text-h1"] {
+  font: inherit;
+  letter-spacing: inherit;
+}
+/* Older cards (the shared Card part) inside a v2 screen: no box. */
+[data-admin-v2] [data-slot="card"]:not([data-keep]) {
+  box-shadow: none;
+  border-width: 1px;
+  border-color: var(--ds-card-line);
+  border-radius: 0.5rem;
+}
+
+/*
+ * Older parts inside a v2 screen, second pass (found by the layout checker):
+ * text wraps instead of being cut with "...", paragraphs keep a reading
+ * measure, eyebrow labels are never under 12px, and older dropdowns reach
+ * 44px on touch widths.
+ */
+[data-admin-v2] .truncate:not([data-keep]) {
+  overflow: visible;
+  text-overflow: clip;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+[data-admin-v2] p:not([data-keep]) {
+  max-width: 75ch;
+}
+[data-admin-v2] .text-eyebrow {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+@media (max-width: 1023.98px) {
+  [data-admin-v2] select:is([class*="h-9"], [class*="min-h-9"], [class*="h-8"]) {
+    min-height: 2.75rem;
+  }
+}
+
+/*
+ * Third pass. No scroll box inside the page (one scroll per screen), long
+ * button labels inside older forms wrap, and small buttons in older parts get
+ * a 44px hit area on touch widths (an invisible ::after, so nothing moves).
+ */
+[data-admin-v2] :is(ul, ol, div)[class*="overflow-y-auto"][class*="max-h-"]:not([data-keep]) {
+  max-height: none;
+  overflow-y: visible;
+}
+[data-admin-v2] form [data-slot="button"] {
+  max-width: 100%;
+  white-space: normal;
+  height: auto;
+  min-height: 2.75rem;
+  text-align: left;
+}
+@media (max-width: 1023.98px) {
+  [data-admin-v2] :is(button:not([data-slot]), [data-slot="switch"]):not([class*="absolute"]):not([class*="fixed"]):not([class*="sticky"]) {
+    position: relative;
+  }
+  [data-admin-v2] :is(button:not([data-slot]), [data-slot="switch"])::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: max(100%, 2.75rem);
+    height: max(100%, 2.75rem);
+    transform: translate(-50%, -50%);
+  }
+}
