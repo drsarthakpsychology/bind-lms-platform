@@ -126,7 +126,9 @@ export function FailedList({ items, canWrite, v2 = false }: { items: FailedItem[
             <tr>
               {canWrite ? (
                 <th scope="col" className={cn(table.th, "w-10")}>
-                  <input type="checkbox" className="size-4 accent-primary" checked={all} onChange={() => setPicked(all ? new Set() : new Set(items.map((i) => i.id)))} aria-label="Tick all" />
+                  <label className="-my-2 -ml-3 grid size-11 cursor-pointer place-items-center">
+                    <input type="checkbox" className="size-4 accent-primary" checked={all} onChange={() => setPicked(all ? new Set() : new Set(items.map((i) => i.id)))} aria-label="Tick all" />
+                  </label>
                 </th>
               ) : null}
               <th scope="col" className={table.th}>To</th>
@@ -138,7 +140,7 @@ export function FailedList({ items, canWrite, v2 = false }: { items: FailedItem[
           <tbody>
             {items.map((i) => (
               <tr key={i.id} className={table.tr} aria-selected={picked.has(i.id) || undefined}>
-                {canWrite ? <td className={cn(table.td, "align-top")}>{tick(i)}</td> : null}
+                {canWrite ? <td className={cn(table.td, "align-top")}><label className="-my-2.5 -ml-3 grid size-11 cursor-pointer place-items-center">{tick(i)}</label></td> : null}
                 <td className={cn(table.td, "align-top")}>
                   <Link href={`/admin/emails?folder=failed&id=${i.id}`} className={nameLink}>{i.name || i.recipient}</Link>
                   {i.name ? <span className="block text-muted-foreground [overflow-wrap:anywhere]">{i.recipient}</span> : null}

@@ -15,7 +15,7 @@ import { AdminPage, Block, Empty, Figures, Notice, RowItem, RowLink, Rows, Statu
  */
 export function FlagsV2({ counts, canWrite, groups }: { counts: Record<string, number>; canWrite: boolean; groups: { title: string; items: React.ReactNode[] }[] }) {
   return (
-    <AdminPage width="default" title="What's live" lead="Hidden is not shown. Live is shown but locked. Unlock is open to students.">
+    <AdminPage title="What's live" lead="Hidden is not shown. Live is shown but locked. Unlock is open to students.">
       <Figures
         items={[
           { value: counts.unlocked ?? 0, label: "open to students" },
@@ -91,7 +91,7 @@ export function MedicinesV2({ total, rows, filter, filtering }: { total: number;
 /** One review queue of the medicine database (fields, dose bands, dose ranges). */
 export function MedicineQueueV2({ title, rows }: { title: string; rows: { id: string; value: string; meta: string; actions: React.ReactNode }[] }) {
   return (
-    <AdminPage width="default" title={title} lead={`${rows.length} rows in the queue. Each action is written to the audit log.`} back={{ href: "/admin/psychopharm-review", label: "Medicines" }}>
+    <AdminPage title={title} lead={`${rows.length} rows in the queue. Each action is written to the audit log.`} back={{ href: "/admin/psychopharm-review", label: "Medicines" }}>
       {rows.length ? (
         <Rows>
           {rows.map((r) => (

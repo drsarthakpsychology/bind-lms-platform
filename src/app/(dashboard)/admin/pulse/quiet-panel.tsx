@@ -279,7 +279,7 @@ export function QuietPanel({
         </div>
         <div className="min-w-0">
           <p className="text-caption font-semibold">Preview</p>
-          <div className="mt-1 rounded-md border-2 border-border bg-background p-3 text-small">
+          <div className={v2 ? "mt-1 rounded-md bg-[var(--ds-tint)] p-3 type-small [overflow-wrap:anywhere]" : "mt-1 rounded-md border-2 border-border bg-background p-3 text-small"}>
             {preview ? (
               <>
                 <p className="truncate text-caption text-muted-foreground">To: {preview.email}</p>

@@ -105,7 +105,7 @@ export default async function AdminPulsePage({ searchParams }: { searchParams: P
 
   if (uiV2For(await readFlags(), me.role)) {
     return (
-      <AdminPage width="default" title="Who needs a nudge" lead="Students who have gone quiet, and a quick way to email them.">
+      <AdminPage title="Who needs a nudge" lead="Students who have gone quiet, and a quick way to email them.">
         <QuietPanel v2 students={quietStudents} cohorts={cohorts} initialCohort={initialCohort} initialDays={parseQuietDays(sp.days)} todayIso={new Date(now).toISOString()} emailReady={emailConfigured()} />
         <PulseView
           v2

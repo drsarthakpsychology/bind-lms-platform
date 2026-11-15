@@ -154,7 +154,7 @@ export function CheckinsV2({
   weeks: CheckinWeekV2[];
 }) {
   return (
-    <AdminPage width="default" title="Wellbeing check-ins" lead="Once a week students answer three quick questions. You only see the cohort's averages, never who said what.">
+    <AdminPage title="Wellbeing check-ins" lead="Once a week students answer three quick questions. You only see the cohort's averages, never who said what.">
       {weeks.length === 0 ? (
         <Empty>No check-ins yet. Trends appear here after the first one.</Empty>
       ) : (

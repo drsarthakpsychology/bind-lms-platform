@@ -90,7 +90,8 @@ export function PulseView({
 
         {weeks.length > 0 ? (
           <Block title="Check-ins by week">
-            <table className={table.root}>
+            <div className="min-w-0 overflow-x-auto">
+            <table className={cn(table.root, "min-w-[22rem]")}>
               <thead>
                 <tr>
                   <th scope="col" className={table.th}>Week</th>
@@ -112,6 +113,7 @@ export function PulseView({
                 ))}
               </tbody>
             </table>
+            </div>
           </Block>
         ) : null}
 
