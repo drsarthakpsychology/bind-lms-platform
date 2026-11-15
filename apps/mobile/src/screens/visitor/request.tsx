@@ -1,15 +1,20 @@
 import { router } from "expo-router";
-import { Check } from "lucide-react-native";
+import { Check, Mail, Phone, User } from "lucide-react-native";
 import * as React from "react";
 import { Linking, Pressable, View } from "react-native";
+import Animated, { FadeInDown, useReducedMotion } from "react-native-reanimated";
 
 import type { RequestInvitationBody, RequestInvitationResult } from "@/api/contract";
 import { ApiFailure, messageOf } from "@/api/errors";
 import { api } from "@/auth";
-import { Button, Chips, EmptyState, Field, Screen, T } from "@/ds";
+import { Button, Chips, Screen, T } from "@/ds";
 import { BRAND } from "@/lib/brand";
 import { haptic } from "@/lib/haptics";
+import { Burst, Stamp } from "@/motion";
+import { SketchCat } from "@/sketch/cat";
 import { layout, space, useTheme } from "@/theme";
+import { Star } from "@/visitor/Art";
+import { AuthField } from "@/visitor/form";
 
 type Status = RequestInvitationBody["status"];
 const STATUS: { id: Status; name: string }[] = [
@@ -66,21 +71,21 @@ export function RequestScreen() {
   if (sent) {
     return (
       <Screen safeTop tab testID="request-sent" footer={<Button kind="quiet" label="Back to the start" onPress={() => router.replace("/welcome")} />}>
-        <EmptyState mood="calm" title="Request received" body={`Thank you, ${name.trim().split(" ")[0]}. We read every request ourselves and will write to ${email.trim()} within a few days.`} />
+        <Sent name={name.trim().split(" ")[0] ?? ""} email={email.trim()} />
       </Screen>
     );
   }
 
   return (
-    <Screen safeTop tab testID="request" title="Request an invitation" lead="VIBHA takes a small group each cohort. Tell us a little about you." gap={space[5]} footer={<Button label="Send request" busy={busy} onPress={() => void submit()} testID="request-submit" />}>
-      <Field label="Your name" value={name} onChangeText={setName} error={errors.name} autoComplete="name" textContentType="name" autoCapitalize="words" returnKeyType="next" testID="request-name" />
-      <Field label="Email" value={email} onChangeText={setEmail} error={errors.email} autoComplete="email" textContentType="emailAddress" keyboardType="email-address" autoCapitalize="none" autoCorrect={false} testID="request-email" />
-      <Field label="WhatsApp number (optional)" value={phone} onChangeText={setPhone} error={errors.phone} keyboardType="phone-pad" autoComplete="tel" textContentType="telephoneNumber" testID="request-phone" />
+    <Screen safeTop tab testID="request" title="Request an invitation" lead="Tell us a little about you. We read every request ourselves and reply within a few days." gap={space[5]} footer={<Button label="Send request" busy={busy} onPress={() => void submit()} testID="request-submit" />}>
+      <AuthField label="Your name" icon={User} value={name} onChangeText={setName} error={errors.name} autoComplete="name" textContentType="name" autoCapitalize="words" returnKeyType="next" testID="request-name" />
+      <AuthField label="Email" icon={Mail} value={email} onChangeText={setEmail} error={errors.email} autoComplete="email" textContentType="emailAddress" keyboardType="email-address" autoCapitalize="none" autoCorrect={false} testID="request-email" />
+      <AuthField label="WhatsApp number (optional)" icon={Phone} value={phone} onChangeText={setPhone} error={errors.phone} keyboardType="phone-pad" autoComplete="tel" textContentType="telephoneNumber" testID="request-phone" />
       <View style={{ gap: space[2] }}>
         <T v="small">You are a</T>
         <Chips label="You are a" options={STATUS} value={status} onChange={setStatus} />
       </View>
-      <Field label="Anything you want us to know (optional)" value={message} onChangeText={setMessage} area maxLength={1000} testID="request-message" />
+      <AuthField label="Anything you want us to know (optional)" value={message} onChangeText={setMessage} area maxLength={1000} testID="request-message" />
       <View style={{ gap: space[1] }}>
         <Pressable
           testID="request-agree"
@@ -113,5 +118,28 @@ export function RequestScreen() {
         </T>
       ) : null}
     </Screen>
+  );
+}
+
+/** "Request received": the kit's stamp lands a lime star with a tick, sparks fly, the cat looks on, the words rise in. */
+function Sent({ name, email }: { name: string; email: string }) {
+  const reduce = useReducedMotion();
+  return (
+    <View style={{ gap: space[5], paddingTop: space[5] }}>
+      <View style={{ flexDirection: "row", alignItems: "flex-end", gap: space[4] }}>
+        <Stamp fire={1} rotate={-8}>
+          <View style={{ width: 110, height: 110, alignItems: "center", justifyContent: "center" }}>
+            <Star size={110} fill="#cdf24b" style={{ position: "absolute" }} />
+            <Check size={44} color="#111111" strokeWidth={4} />
+            <Burst fire={1} reach={70} count={12} />
+          </View>
+        </Stamp>
+        <SketchCat size={96} mood="calm" />
+      </View>
+      <Animated.View entering={reduce ? undefined : FadeInDown.delay(250).duration(360)} style={{ gap: space[2] }}>
+        <T v="display">Request received</T>
+        <T v="reading" tone="muted">{`Thank you${name ? `, ${name}` : ""}. We read every request ourselves and will write to ${email} within a few days.`}</T>
+      </Animated.View>
+    </View>
   );
 }

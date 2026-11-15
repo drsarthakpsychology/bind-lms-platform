@@ -1,26 +1,70 @@
 import * as React from "react";
 import { Linking, View } from "react-native";
+import Animated, { Easing, FadeIn, FadeInDown, FadeOut, useAnimatedStyle, useReducedMotion, useSharedValue, withDelay, withSpring, withTiming } from "react-native-reanimated";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { useConfig } from "@/api/queries";
 import { session, useSession } from "@/auth";
 import { isWeakPin } from "@/auth/pin";
-import { PinPad } from "@/auth/PinPad";
+import { PinPad, type PinTone } from "@/auth/PinPad";
 import { Button, EmptyState, T, Wordmark } from "@/ds";
 import { BRAND } from "@/lib/brand";
 import { haptic } from "@/lib/haptics";
+import { Burst } from "@/motion";
 import { layout, space, useTheme } from "@/theme";
+import { Icon, Star } from "@/visitor/Art";
 
-/** The frame of the full-screen moments (PIN, update, paused): wordmark on top, content in the middle, action low. */
-function Gate({ children, footer, testID }: { children: React.ReactNode; footer?: React.ReactNode; testID: string }) {
+/**
+ * The frame of the full-screen moments (PIN, update, paused): wordmark on top,
+ * content in the middle, action low. It rises in over the app and, when it
+ * goes (the right PIN), it lifts away and fades, so the app appears under it.
+ */
+function Gate({ children, footer, testID, art }: { children: React.ReactNode; footer?: React.ReactNode; testID: string; art?: React.ReactNode }) {
   const c = useTheme();
   const insets = useSafeAreaInsets();
+  const reduce = useReducedMotion();
   return (
-    <View testID={testID} accessibilityViewIsModal style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, backgroundColor: c.bg, paddingTop: insets.top + space[5], paddingBottom: insets.bottom + space[5], paddingHorizontal: layout.gutter }}>
+    <Animated.View
+      testID={testID}
+      accessibilityViewIsModal
+      entering={reduce ? FadeIn.duration(150) : FadeInDown.duration(320).easing(Easing.bezier(0.23, 1, 0.32, 1))}
+      exiting={reduce ? FadeOut.duration(150) : GateExit}
+      style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, backgroundColor: c.bg, paddingTop: insets.top + space[5], paddingBottom: insets.bottom + space[5], paddingHorizontal: layout.gutter }}
+    >
       <Wordmark />
-      <View style={{ flex: 1, justifyContent: "center", width: "100%", maxWidth: 420, alignSelf: "center" }}>{children}</View>
+      <View style={{ flex: 1, justifyContent: "center", width: "100%", maxWidth: 420, alignSelf: "center" }}>
+        {art}
+        {children}
+      </View>
       {footer ? <View style={{ width: "100%", maxWidth: 420, alignSelf: "center", gap: space[2] }}>{footer}</View> : null}
-    </View>
+    </Animated.View>
+  );
+}
+
+/** Leaving: the gate lifts a little, grows a touch and fades (the app shows through). */
+function GateExit() {
+  "worklet";
+  const ease = Easing.bezier(0.23, 1, 0.32, 1);
+  return {
+    initialValues: { opacity: 1, transform: [{ translateY: 0 }, { scale: 1 }] },
+    animations: { opacity: withTiming(0, { duration: 280, easing: ease }), transform: [{ translateY: withTiming(-24, { duration: 280, easing: ease }) }, { scale: withTiming(1.04, { duration: 280, easing: ease }) }] },
+  };
+}
+
+/** A lime star with a shield on it: the PIN keeps the account safe. */
+function PinArt({ win = 0 }: { /** Each new value fires sparks: the PIN is right. */ win?: number }) {
+  const pop = useSharedValue(0);
+  const reduce = useReducedMotion();
+  React.useEffect(() => {
+    pop.set(reduce ? 1 : withDelay(120, withSpring(1, { damping: 11, stiffness: 180, mass: 0.7 })));
+  }, [pop, reduce]);
+  const anim = useAnimatedStyle(() => ({ opacity: Math.min(1, pop.value * 2), transform: [{ scale: 0.5 + pop.value * 0.5 }, { rotate: `${(1 - pop.value) * -90}deg` }] }));
+  return (
+    <Animated.View style={[{ alignSelf: "center", width: 84, height: 84, marginBottom: space[4], alignItems: "center", justifyContent: "center" }, anim]}>
+      <Star size={84} fill="#cdf24b" style={{ position: "absolute" }} />
+      <Icon name="shield" size={38} fill="#ffffff" />
+      {win ? <Burst fire={win} reach={64} count={12} /> : null}
+    </Animated.View>
   );
 }
 
@@ -30,20 +74,26 @@ export function SetPinScreen() {
   const [value, setValue] = React.useState("");
   const [error, setError] = React.useState<string | null>(null);
   const [shake, setShake] = React.useState(0);
+  const [tone, setTone] = React.useState<PinTone>("normal");
   const [busy, setBusy] = React.useState(false);
 
   const reject = (msg: string) => {
     haptic.warn();
     setError(msg);
     setShake((s) => s + 1);
-    setValue("");
+    setTone("error");
+    // Let the red dots show for a moment, then clear them for the next try.
+    setTimeout(() => {
+      setTone("normal");
+      setValue("");
+    }, 420);
   };
   const complete = (pin: string) => {
     if (first === null) {
       if (isWeakPin(pin)) return reject("That one is easy to guess. Choose another.");
       setError(null);
       setFirst(pin);
-      setValue("");
+      setTimeout(() => setValue(""), 160);
       return;
     }
     if (pin !== first) {
@@ -51,28 +101,32 @@ export function SetPinScreen() {
       return reject("Those two did not match. Start again.");
     }
     setBusy(true);
-    session
-      .choosePin(pin)
-      .then(() => haptic.success())
-      .catch(() => {
+    setTone("success");
+    haptic.success();
+    // A short beat for the lime wave, then into the app.
+    setTimeout(() => {
+      session.choosePin(pin).catch(() => {
         // The phone's keystore refused the PIN: say so and let them try again, never stop here.
         setBusy(false);
         setFirst(null);
         reject("The PIN could not be saved on this phone. Try again.");
       });
+    }, 420);
   };
 
   return (
-    <Gate testID="set-pin" footer={first !== null ? <Button kind="text" full label="Start again" onPress={() => { setFirst(null); setValue(""); setError(null); }} /> : null}>
+    <Gate testID="set-pin" art={<PinArt win={tone === "success" ? 1 : 0} />} footer={first !== null && !busy ? <Button kind="text" full label="Start again" onPress={() => { setFirst(null); setValue(""); setError(null); }} /> : null}>
       <View style={{ alignItems: "center", gap: space[2], marginBottom: space[6] }}>
-        <T v="h1" center>
-          {first === null ? "Choose a PIN" : "Enter it once more"}
-        </T>
+        <Animated.View key={busy ? "done" : first === null ? "one" : "two"} entering={FadeInDown.duration(220)}>
+          <T v="h1" center>
+            {busy ? "All set" : first === null ? "Choose a PIN" : "Enter it once more"}
+          </T>
+        </Animated.View>
         <T tone={error ? "danger" : "muted"} center accessibilityLiveRegion="polite">
-          {error ?? (first === null ? "Four digits. You will use it each time you open the app." : "So we know it is the one you meant.")}
+          {busy ? "Opening your app." : (error ?? (first === null ? "Four digits. You will use it each time you open the app." : "So we know it is the one you meant."))}
         </T>
       </View>
-      <PinPad value={value} onChange={setValue} onComplete={complete} shake={shake} disabled={busy} />
+      <PinPad value={value} onChange={setValue} onComplete={complete} shake={shake} disabled={busy || tone === "error"} tone={tone} />
     </Gate>
   );
 }
@@ -85,6 +139,7 @@ export function LockScreen() {
   const [shake, setShake] = React.useState(0);
   const [busy, setBusy] = React.useState(false);
   const [wrong, setWrong] = React.useState(false);
+  const [tone, setTone] = React.useState<PinTone>("normal");
   const first = typeof me?.name === "string" ? me.name.split(" ")[0] : undefined;
 
   const complete = async (pin: string) => {
@@ -94,21 +149,25 @@ export function LockScreen() {
       ok = await session.unlock(pin);
     } catch {
       ok = false;
-    } finally {
-      setBusy(false);
     }
     if (ok) {
+      setTone("success");
       haptic.success();
       return;
     }
+    setBusy(false);
     haptic.warn();
     setWrong(true);
     setShake((s) => s + 1);
-    setValue("");
+    setTone("error");
+    setTimeout(() => {
+      setTone("normal");
+      setValue("");
+    }, 420);
   };
 
   return (
-    <Gate testID="lock" footer={<Button kind="text" full label="Forgot PIN?" onPress={() => void session.forgotPin()} accessibilityHint="Signs you out. Sign in with your password to choose a new PIN." testID="forgot-pin" />}>
+    <Gate testID="lock" art={<PinArt win={tone === "success" ? 1 : 0} />} footer={<Button kind="text" full label="Forgot PIN?" onPress={() => void session.forgotPin()} accessibilityHint="Signs you out. Sign in with your password to choose a new PIN." testID="forgot-pin" />}>
       <View style={{ alignItems: "center", gap: space[2], marginBottom: space[6] }}>
         <T v="h1" center>
           {first ? `Welcome back, ${first}` : "Welcome back"}
@@ -117,7 +176,7 @@ export function LockScreen() {
           {wrong ? (triesLeft === 1 ? "Wrong PIN. One more try, then you will be signed out." : `Wrong PIN. ${triesLeft} tries left.`) : "Enter your PIN"}
         </T>
       </View>
-      <PinPad value={value} onChange={setValue} onComplete={(p) => void complete(p)} shake={shake} disabled={busy} />
+      <PinPad value={value} onChange={setValue} onComplete={(p) => void complete(p)} shake={shake} disabled={busy || tone === "error"} tone={tone} />
     </Gate>
   );
 }
