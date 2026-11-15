@@ -5,6 +5,8 @@ import { NOTES, noteById } from "@/lib/learn/notes";
 import { SCENARIOS } from "@/lib/learn/scenarios";
 import { NoteView } from "@/components/learn/note-view";
 import { loadLearnState, saveLearnState } from "../../actions";
+import { learnV2 } from "@/components/learn-v2/server";
+import { UiV2 } from "@/components/learn-v2/ui-v2";
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
   const { id } = await params;
@@ -18,6 +20,7 @@ export default async function NotePage({ params }: { params: Promise<{ id: strin
   if (i < 0) notFound();
   const serverState = await loadLearnState();
   return (
+    <UiV2 on={await learnV2()}>
     <NoteView
       note={NOTES[i]}
       prev={NOTES[i - 1]}
@@ -27,5 +30,6 @@ export default async function NotePage({ params }: { params: Promise<{ id: strin
       save={saveLearnState}
       position={{ index: i, total: NOTES.length }}
     />
+    </UiV2>
   );
 }

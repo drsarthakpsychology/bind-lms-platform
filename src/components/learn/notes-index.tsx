@@ -5,6 +5,9 @@ import { ArrowRight, Check } from "lucide-react";
 import { emptyState, type LearnState } from "@/lib/learn/engine";
 import { initLearnStore, useLearnState } from "@/lib/learn/store";
 import { cn } from "@/lib/utils";
+import { useUiV2 } from "@/components/learn-v2/ui-v2";
+import { NextStep } from "@/components/learn-v2/parts";
+import { Row, RowList, Section } from "@/components/ds";
 
 export type NoteCard = { id: string; title: string; emoji: string; tagline: string; meta: string };
 export type NoteBlock = { title: string; notes: NoteCard[] };
@@ -15,11 +18,47 @@ const TONES = ["bg-primary text-primary-foreground", "bg-brand text-brand-foregr
 /** Notes grouped by week, with a tick on every note already read and a "Continue" card. */
 export function NotesIndex({ blocks, serverState, save }: { blocks: NoteBlock[]; serverState: LearnState | null; save: (s: LearnState) => Promise<unknown> }) {
   initLearnStore(serverState, save);
+  const v2 = useUiV2();
   const st = useLearnState(serverState ?? EMPTY);
   const all = blocks.flatMap((b) => b.notes);
   const read = all.filter((n) => st.notesRead[n.id]).length;
   const nextUp = all.find((n) => !st.notesRead[n.id]);
   const pct = Math.round((read / Math.max(1, all.length)) * 100);
+
+  // New design: one Continue, then each week's summaries as rows.
+  if (v2) {
+    return (
+      <>
+        {nextUp ? (
+          <NextStep label={read ? "Continue with" : "Start here"} title={nextUp.title} sub={nextUp.tagline} pct={pct} pctLabel="Summaries read" pctText={`${read} of ${all.length} read`} href={`/study/notes/${nextUp.id}`} action={read ? "Continue" : "Start"} />
+        ) : (
+          <p className="type-h2">You&apos;ve read every summary.</p>
+        )}
+        {blocks.map((block) => (
+          <Section key={block.title} title={block.title}>
+            <RowList>
+              {block.notes.map((n) => (
+                <Row
+                  key={n.id}
+                  href={`/study/notes/${n.id}`}
+                  title={n.title}
+                  meta={n.tagline}
+                  trailing={
+                    st.notesRead[n.id] ? (
+                      <span className="grid size-5 place-items-center rounded-full bg-primary text-primary-foreground">
+                        <Check className="size-3" strokeWidth={3} aria-hidden />
+                        <span className="sr-only">Read</span>
+                      </span>
+                    ) : null
+                  }
+                />
+              ))}
+            </RowList>
+          </Section>
+        ))}
+      </>
+    );
+  }
 
   return (
     <div className="space-y-8">
