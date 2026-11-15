@@ -3,6 +3,7 @@ import { redirect } from "next/navigation";
 import { cookies } from "next/headers";
 
 import { getSession } from "@/lib/auth/session";
+import { isAdminLike } from "@/lib/auth/guards";
 import { VIEW_MODE_COOKIE } from "../view-mode-constants";
 
 import { readFlags } from "@/lib/flags";
@@ -42,7 +43,8 @@ async function HomeData({ v2 }: { v2: boolean }) {
 
   const cookieStore = await cookies();
   const viewingAsStudent = cookieStore.get(VIEW_MODE_COOKIE)?.value === "student";
-  if (profile.role === "admin" && !viewingAsStudent) redirect("/admin");
+  // Both admin roles start on the admin side (the shell already shows them the admin menu).
+  if (isAdminLike(profile) && !viewingAsStudent) redirect("/admin");
 
   // An admin previewing the student side sees a full student's Home (the
   // roster is full, and the shell shows the full menu), and every published
