@@ -4,6 +4,7 @@ import * as Notifications from "expo-notifications";
 import * as React from "react";
 import { Platform } from "react-native";
 
+import { adminHrefFromPush } from "@/admin/push";
 import type { DeviceState, PushData } from "@/api/contract";
 import { api, session } from "@/auth";
 import { hrefFor } from "@/nav/targets";
@@ -71,6 +72,9 @@ export async function setStudyReminder(on: boolean, time: string): Promise<void>
 
 /** Where a tapped notification leads. */
 export function hrefFromPush(data: unknown): string {
+  // Admin notices (new doubt, new enquiry, student falling behind): src/admin/push.ts
+  const admin = adminHrefFromPush(data);
+  if (admin) return admin;
   const d = data as Partial<PushData> | null | undefined;
   if (d?.target && typeof d.target === "object" && "screen" in d.target) {
     const href = hrefFor(d.target);

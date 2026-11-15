@@ -1,1 +1,1 @@
-export { AdminStudent as default } from "@/screens/admin/student";
+export { AdminStudentScreen as default } from "@/admin/screens/student";

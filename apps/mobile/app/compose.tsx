@@ -1,1 +1,1 @@
-export { AdminCompose as default } from "@/screens/admin/compose";
+export { AdminComposeScreen as default } from "@/admin/screens/compose";
