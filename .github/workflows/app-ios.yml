@@ -1,0 +1,109 @@
+# Proves the Vibha Psychology iPhone app compiles: builds it for the iPhone
+# Simulator on a Mac, without signing (no Apple account needed).
+# The result cannot go on a real iPhone or to TestFlight; that needs the Apple
+# Developer account (see apps/mobile/docs/release/OWNER_STEPS.md, part 5).
+#
+# Runs only by hand: Actions > App iPhone check > Run workflow.
+# Mac runners use 10x the free GitHub minutes, so it does not run on every push.
+
+name: App iPhone check
+
+on:
+  workflow_dispatch:
+    inputs:
+      api_mode:
+        description: "Which data the app uses"
+        required: false
+        default: "live"
+        type: choice
+        options: ["live", "mock"]
+
+concurrency:
+  group: app-ios
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  simulator:
+    name: Build for the iPhone Simulator (unsigned)
+    runs-on: macos-latest
+    timeout-minutes: 90
+    defaults:
+      run:
+        working-directory: apps/mobile
+    env:
+      CI: "1"
+      EXPO_NO_TELEMETRY: "1"
+      EXPO_PUBLIC_API_MODE: ${{ inputs.api_mode || 'live' }}
+      EXPO_PUBLIC_API_URL: ${{ vars.APP_API_URL || 'https://vibhapsychology.com/api/app/v1' }}
+      APP_BUILD_NUMBER: ${{ github.run_number }}
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: latest-stable
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: apps/mobile/package-lock.json
+
+      - name: Install the app's packages
+        run: npm ci
+
+      - name: Make the iPhone project
+        run: npx expo prebuild --platform ios --no-install --clean
+
+      - name: Install the iPhone libraries (CocoaPods)
+        working-directory: apps/mobile/ios
+        run: pod install
+
+      - name: Build for the Simulator
+        working-directory: apps/mobile/ios
+        run: |
+          xcodebuild -version
+          WS=$(ls -d *.xcworkspace | head -1)
+          SCHEME="${WS%.xcworkspace}"
+          echo "Workspace: $WS, scheme: $SCHEME"
+          set -o pipefail
+          xcodebuild \
+            -workspace "$WS" \
+            -scheme "$SCHEME" \
+            -configuration Release \
+            -sdk iphonesimulator \
+            -destination "generic/platform=iOS Simulator" \
+            -derivedDataPath build \
+            CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO \
+            build | tee "$RUNNER_TEMP/xcodebuild.log" | grep -E "error:|warning: .*deprecated|\*\* BUILD" || true
+          test -d build/Build/Products/Release-iphonesimulator/*.app || { tail -200 "$RUNNER_TEMP/xcodebuild.log"; exit 1; }
+
+      - name: Check the app's settings (bundle id, permission text, HTTPS only)
+        working-directory: apps/mobile/ios/build/Build/Products/Release-iphonesimulator
+        run: |
+          APP=$(ls -d *.app | head -1)
+          P="$APP/Info.plist"
+          /usr/libexec/PlistBuddy -c "Print :CFBundleIdentifier" "$P" | grep -qx "com.vibhapsychology.app"
+          /usr/libexec/PlistBuddy -c "Print :NSMicrophoneUsageDescription" "$P"
+          /usr/libexec/PlistBuddy -c "Print :NSAppTransportSecurity:NSAllowsArbitraryLoads" "$P" | grep -qx "false"
+          echo "Bundle id, microphone text and HTTPS-only setting: OK"
+          ditto -c -k --keepParent "$APP" "$RUNNER_TEMP/vibha-psychology-simulator.zip"
+
+      - name: Keep the Simulator app as a download
+        uses: actions/upload-artifact@v5
+        with:
+          name: vibha-psychology-ios-simulator-${{ github.run_number }}
+          path: ${{ runner.temp }}/vibha-psychology-simulator.zip
+          retention-days: 14
+          if-no-files-found: error
+
+      - name: Keep the build log if it failed
+        if: failure()
+        uses: actions/upload-artifact@v5
+        with:
+          name: xcodebuild-log-${{ github.run_number }}
+          path: ${{ runner.temp }}/xcodebuild.log
+          if-no-files-found: ignore

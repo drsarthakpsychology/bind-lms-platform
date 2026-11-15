@@ -1,0 +1,180 @@
+# Builds the Vibha Psychology Android app for Google Play: a signed release
+# bundle (.aab, the file you upload to Play) and a signed .apk of the same
+# build (to install on a phone and check before uploading).
+#
+# Runs only by hand: Actions > App Android release > Run workflow.
+# The test builds stay in app-android.yml (runs on every app push, needs no secrets).
+#
+# Needs these repository secrets (Settings > Secrets and variables > Actions > Secrets).
+# The build stops with a clear message if any of the first four is missing.
+#   ANDROID_KEYSTORE_BASE64    the upload key file (upload-key.jks), base64 encoded
+#   ANDROID_KEYSTORE_PASSWORD  the key file's password
+#   ANDROID_KEY_ALIAS          the key's name inside the file (we use: upload)
+#   ANDROID_KEY_PASSWORD       the key's password (same as the file's if you followed OWNER_STEPS.md)
+#   GOOGLE_SERVICES_JSON       optional: google-services.json from Firebase, base64 encoded.
+#                              Without it the app builds and works, but cannot get push messages.
+# Variables (Settings > Secrets and variables > Actions > Variables), all optional:
+#   APP_API_URL                server address, default https://vibhapsychology.com/api/app/v1
+#   EAS_PROJECT_ID             the Expo project id (push messages need it)
+#   APP_BUILD_OFFSET           a number added to the run number to make the build number.
+#                              Only needed if Play ever says "version code already used".
+#
+# Owner guide: apps/mobile/docs/release/OWNER_STEPS.md
+
+name: App Android release
+
+on:
+  workflow_dispatch:
+    inputs:
+      api_mode:
+        description: "Which data the app uses. Keep live for Google Play."
+        required: false
+        default: "live"
+        type: choice
+        options: ["live", "mock"]
+
+concurrency:
+  group: app-android-release
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  release:
+    name: Build the Play bundle and APK
+    runs-on: ubuntu-latest
+    timeout-minutes: 75
+    defaults:
+      run:
+        working-directory: apps/mobile
+    env:
+      CI: "1"
+      EXPO_NO_TELEMETRY: "1"
+      EXPO_PUBLIC_API_MODE: ${{ inputs.api_mode || 'live' }}
+      EXPO_PUBLIC_API_URL: ${{ vars.APP_API_URL || 'https://vibhapsychology.com/api/app/v1' }}
+      EAS_PROJECT_ID: ${{ vars.EAS_PROJECT_ID }}
+      GRADLE_OPTS: "-Dorg.gradle.jvmargs=-Xmx4g -Dorg.gradle.daemon=false"
+    steps:
+      - name: Check the signing secrets are there
+        working-directory: .
+        env:
+          KEYSTORE_B64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+          KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
+          KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
+        run: |
+          missing=""
+          [ -n "$KEYSTORE_B64" ] || missing="$missing ANDROID_KEYSTORE_BASE64"
+          [ -n "$KEYSTORE_PASSWORD" ] || missing="$missing ANDROID_KEYSTORE_PASSWORD"
+          [ -n "$KEY_ALIAS" ] || missing="$missing ANDROID_KEY_ALIAS"
+          [ -n "$KEY_PASSWORD" ] || missing="$missing ANDROID_KEY_PASSWORD"
+          if [ -n "$missing" ]; then
+            echo "::error::Google Play builds must be signed with your upload key. Add these GitHub secrets first:$missing (see apps/mobile/docs/release/OWNER_STEPS.md)"
+            exit 1
+          fi
+
+      - name: Work out the build number
+        working-directory: .
+        env:
+          OFFSET: ${{ vars.APP_BUILD_OFFSET || '0' }}
+        run: |
+          n=$(( GITHUB_RUN_NUMBER + OFFSET ))
+          echo "APP_BUILD_NUMBER=$n" >> "$GITHUB_ENV"
+          echo "Build number (Android versionCode): $n"
+
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: apps/mobile/package-lock.json
+
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - uses: gradle/actions/setup-gradle@v5
+
+      - name: Install the app's packages
+        run: npm ci
+
+      - name: Check types, style and tests
+        run: |
+          npx tsc --noEmit
+          npx eslint .
+          npx jest --ci
+
+      - name: Add google-services.json (push messages), if given
+        env:
+          GOOGLE_SERVICES_JSON: ${{ secrets.GOOGLE_SERVICES_JSON }}
+        run: |
+          if [ -n "$GOOGLE_SERVICES_JSON" ]; then
+            echo "$GOOGLE_SERVICES_JSON" | base64 -d > google-services.json
+            if ! grep -q '"com.vibhapsychology.app"' google-services.json; then
+              echo "::error::google-services.json is not for com.vibhapsychology.app. In Firebase, add an Android app with exactly that package name and download its file again."
+              exit 1
+            fi
+            echo "Push messages: on (google-services.json added)."
+          else
+            echo "::warning::No GOOGLE_SERVICES_JSON secret: this build cannot receive push messages. Everything else works."
+          fi
+
+      - name: Make the Android project
+        run: npx expo prebuild --platform android --no-install --clean
+
+      - name: Build the bundle (.aab) and the APK
+        env:
+          KEYSTORE_B64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+          KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
+          KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
+        working-directory: apps/mobile/android
+        run: |
+          echo "$KEYSTORE_B64" | base64 -d > "$RUNNER_TEMP/upload.jks"
+          ./gradlew bundleRelease assembleRelease --no-daemon \
+            -Pandroid.injected.signing.store.file="$RUNNER_TEMP/upload.jks" \
+            -Pandroid.injected.signing.store.password="$KEYSTORE_PASSWORD" \
+            -Pandroid.injected.signing.key.alias="$KEY_ALIAS" \
+            -Pandroid.injected.signing.key.password="$KEY_PASSWORD"
+
+      - name: Check the files are signed with the upload key and target the right Android
+        working-directory: apps/mobile/android/app/build/outputs
+        run: |
+          jarsigner -verify bundle/release/app-release.aab | grep -q "jar verified" || { echo "::error::The bundle is not signed."; exit 1; }
+          echo "Bundle signature: OK"
+          echo "Upload key fingerprint (SHA-256), for reference:"
+          keytool -printcert -jarfile bundle/release/app-release.aab | grep -m1 "SHA256" || true
+          BT=$(ls -d "$ANDROID_HOME"/build-tools/* | sort -V | tail -1)
+          "$BT/apksigner" verify apk/release/app-release.apk
+          "$BT/aapt2" dump badging apk/release/app-release.apk | grep -E "^package:|targetSdkVersion|sdkVersion"
+          "$BT/aapt2" dump badging apk/release/app-release.apk | grep -q "targetSdkVersion:'36'" || { echo "::error::The app does not target Android 16 (API 36), which Google Play requires."; exit 1; }
+          echo "Permissions the app asks for (must match apps/mobile/docs/release/DATA_SAFETY.md):"
+          "$BT/aapt2" dump permissions apk/release/app-release.apk | tee "$RUNNER_TEMP/perms.txt"
+          if grep -qE "READ_MEDIA_IMAGES|READ_MEDIA_VIDEO|READ_EXTERNAL_STORAGE|ACCESS_FINE_LOCATION|ACCESS_COARSE_LOCATION|READ_CONTACTS|SCHEDULE_EXACT_ALARM|USE_EXACT_ALARM" "$RUNNER_TEMP/perms.txt"; then
+            echo "::error::The app asks for a permission Google Play needs a special declaration for. Block it in apps/mobile/app.config.ts (android.blockedPermissions) unless it is really needed."
+            exit 1
+          fi
+
+      - name: Name the files
+        run: |
+          mkdir -p ../../out
+          base="vibha-psychology-${APP_BUILD_NUMBER}-${EXPO_PUBLIC_API_MODE}"
+          cp android/app/build/outputs/bundle/release/app-release.aab "../../out/${base}.aab"
+          cp android/app/build/outputs/apk/release/app-release.apk "../../out/${base}.apk"
+          ls -la ../../out
+
+      - name: Keep the files as a download
+        uses: actions/upload-artifact@v5
+        with:
+          name: vibha-psychology-release-${{ env.APP_BUILD_NUMBER }}
+          path: out/*
+          retention-days: 90
+          if-no-files-found: error
+
+      - name: Forget the key file
+        if: always()
+        working-directory: .
+        run: rm -f "$RUNNER_TEMP/upload.jks" apps/mobile/google-services.json

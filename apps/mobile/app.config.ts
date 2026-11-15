@@ -13,13 +13,22 @@ const SITE = "vibhapsychology.com";
 const BLUE = "#1d44d8";
 /** Firebase file for push on Android. The build adds it when the owner has given it (docs/app/README.md). */
 const GOOGLE_SERVICES = fs.existsSync(path.join(__dirname, "google-services.json")) ? "./google-services.json" : undefined;
+/**
+ * Version shown in the stores. Raise it by hand for each public release (1.0.0, 1.0.1, 1.1.0).
+ * The build number (Android versionCode, iPhone buildNumber) must go up on every upload:
+ * the release workflow sets APP_BUILD_NUMBER from its run number, so nobody has to remember.
+ */
+const VERSION = "1.0.0";
+const BUILD_NUMBER = Math.max(1, Number.parseInt(process.env.APP_BUILD_NUMBER ?? "1", 10) || 1);
+/** Google Play requires apps to target Android 16 (API 36) since 31 August 2026. Raise when Play raises it. */
+const TARGET_SDK = 36;
 
 export default ({ config }: ConfigContext): ExpoConfig => ({
   ...config,
   name: APP_NAME,
   slug: "vibha-psychology",
   owner: undefined,
-  version: "1.0.0",
+  version: VERSION,
   scheme: "vibha",
   // Portrait and landscape are both allowed by the system; the app holds
   // portrait everywhere except the lecture player (src/lib/orientation.ts).
@@ -28,16 +37,53 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   icon: "./assets/images/icon.png",
   ios: {
     bundleIdentifier: PACKAGE,
-    supportsTablet: true,
+    buildNumber: String(BUILD_NUMBER),
+    // iPhone only for now: an iPad listing would need its own screenshots and layouts.
+    // iPads can still run the iPhone app.
+    supportsTablet: false,
     associatedDomains: [`applinks:${SITE}`],
-    infoPlist: { ITSAppUsesNonExemptEncryption: false, UIBackgroundModes: ["audio"] },
+    // Uses only standard HTTPS: answers "No" to the export-compliance question for every upload.
+    config: { usesNonExemptEncryption: false },
+    infoPlist: {
+      ITSAppUsesNonExemptEncryption: false,
+      // Every connection is HTTPS to vibhapsychology.com and the video host: no plain-HTTP exceptions.
+      NSAppTransportSecurity: { NSAllowsArbitraryLoads: false },
+      // The microphone string comes from the expo-audio plugin below. No background modes:
+      // lectures and audio stop when the app leaves the screen (and Apple rejects unused ones).
+      // Screen recording and mirroring are detected by modules/capture-guard, which hides and
+      // pauses video; it needs no permission string.
+      NSFaceIDUsageDescription: "Vibha Psychology can use Face ID to unlock the app instead of your PIN.",
+    },
+    privacyManifests: {
+      // What the app collects, as Apple's privacy manifest needs it. Matches docs/release/DATA_SAFETY.md.
+      NSPrivacyTracking: false,
+      NSPrivacyTrackingDomains: [],
+      NSPrivacyCollectedDataTypes: [
+        { NSPrivacyCollectedDataType: "NSPrivacyCollectedDataTypeName", NSPrivacyCollectedDataTypeLinked: true, NSPrivacyCollectedDataTypeTracking: false, NSPrivacyCollectedDataTypePurposes: ["NSPrivacyCollectedDataTypePurposeAppFunctionality"] },
+        { NSPrivacyCollectedDataType: "NSPrivacyCollectedDataTypeEmailAddress", NSPrivacyCollectedDataTypeLinked: true, NSPrivacyCollectedDataTypeTracking: false, NSPrivacyCollectedDataTypePurposes: ["NSPrivacyCollectedDataTypePurposeAppFunctionality"] },
+        { NSPrivacyCollectedDataType: "NSPrivacyCollectedDataTypeUserID", NSPrivacyCollectedDataTypeLinked: true, NSPrivacyCollectedDataTypeTracking: false, NSPrivacyCollectedDataTypePurposes: ["NSPrivacyCollectedDataTypePurposeAppFunctionality"] },
+        { NSPrivacyCollectedDataType: "NSPrivacyCollectedDataTypeDeviceID", NSPrivacyCollectedDataTypeLinked: true, NSPrivacyCollectedDataTypeTracking: false, NSPrivacyCollectedDataTypePurposes: ["NSPrivacyCollectedDataTypePurposeAppFunctionality"] },
+        { NSPrivacyCollectedDataType: "NSPrivacyCollectedDataTypeAudioData", NSPrivacyCollectedDataTypeLinked: true, NSPrivacyCollectedDataTypeTracking: false, NSPrivacyCollectedDataTypePurposes: ["NSPrivacyCollectedDataTypePurposeAppFunctionality"] },
+        { NSPrivacyCollectedDataType: "NSPrivacyCollectedDataTypeOtherUserContent", NSPrivacyCollectedDataTypeLinked: true, NSPrivacyCollectedDataTypeTracking: false, NSPrivacyCollectedDataTypePurposes: ["NSPrivacyCollectedDataTypePurposeAppFunctionality"] },
+        { NSPrivacyCollectedDataType: "NSPrivacyCollectedDataTypeProductInteraction", NSPrivacyCollectedDataTypeLinked: true, NSPrivacyCollectedDataTypeTracking: false, NSPrivacyCollectedDataTypePurposes: ["NSPrivacyCollectedDataTypePurposeAppFunctionality"] },
+        { NSPrivacyCollectedDataType: "NSPrivacyCollectedDataTypeCrashData", NSPrivacyCollectedDataTypeLinked: false, NSPrivacyCollectedDataTypeTracking: false, NSPrivacyCollectedDataTypePurposes: ["NSPrivacyCollectedDataTypePurposeAppFunctionality"] },
+      ],
+      NSPrivacyAccessedAPITypes: [
+        // AsyncStorage and the saved settings use UserDefaults for the app's own data only.
+        { NSPrivacyAccessedAPIType: "NSPrivacyAccessedAPICategoryUserDefaults", NSPrivacyAccessedAPITypeReasons: ["CA92.1"] },
+        { NSPrivacyAccessedAPIType: "NSPrivacyAccessedAPICategoryFileTimestamp", NSPrivacyAccessedAPITypeReasons: ["C617.1"] },
+        { NSPrivacyAccessedAPIType: "NSPrivacyAccessedAPICategorySystemBootTime", NSPrivacyAccessedAPITypeReasons: ["35F9.1"] },
+        { NSPrivacyAccessedAPIType: "NSPrivacyAccessedAPICategoryDiskSpace", NSPrivacyAccessedAPITypeReasons: ["E174.1"] },
+      ],
+    },
   },
   android: {
     package: PACKAGE,
-    versionCode: 1,
+    versionCode: BUILD_NUMBER,
     googleServicesFile: GOOGLE_SERVICES,
     adaptiveIcon: {
       foregroundImage: "./assets/images/adaptive-foreground.png",
+      backgroundImage: "./assets/images/adaptive-background.png",
       monochromeImage: "./assets/images/adaptive-monochrome.png",
       backgroundColor: BLUE,
     },
@@ -45,7 +91,16 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
     softwareKeyboardLayoutMode: "resize",
     permissions: ["POST_NOTIFICATIONS", "VIBRATE", "RECORD_AUDIO", "MODIFY_AUDIO_SETTINGS"],
     // The microphone is asked for only when a student records an assignment answer.
-    blockedPermissions: ["android.permission.READ_EXTERNAL_STORAGE", "android.permission.WRITE_EXTERNAL_STORAGE"],
+    // Files are chosen with the system picker, which needs no storage permission. READ_MEDIA_IMAGES
+    // comes from expo-screen-capture's screenshot listener, which the app does not use (it blocks
+    // capture with FLAG_SECURE); Google Play rejects apps that ask for photo access without a core need.
+    blockedPermissions: [
+      "android.permission.READ_EXTERNAL_STORAGE",
+      "android.permission.WRITE_EXTERNAL_STORAGE",
+      "android.permission.READ_MEDIA_IMAGES",
+      "android.permission.READ_MEDIA_VIDEO",
+      "android.permission.SYSTEM_ALERT_WINDOW",
+    ],
     // Links to the website open the app (verified once /.well-known/assetlinks.json is on the site).
     intentFilters: [
       {
@@ -92,11 +147,12 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
     [
       "expo-splash-screen",
       {
+        // The VIBHA mark on blue, in light and dark mode alike (assets/brand, scripts/make-assets.py).
         image: "./assets/images/splash.png",
-        imageWidth: 220,
+        imageWidth: 200,
         resizeMode: "contain",
-        backgroundColor: "#f5f5f5",
-        dark: { image: "./assets/images/splash-dark.png", backgroundColor: "#0d0d0d" },
+        backgroundColor: BLUE,
+        dark: { image: "./assets/images/splash.png", backgroundColor: BLUE },
       },
     ],
     "expo-secure-store",
@@ -104,7 +160,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
     ["expo-notifications", { icon: "./assets/images/notification.png", color: BLUE, defaultChannel: "default" }],
     ["expo-video", { supportsBackgroundPlayback: false, supportsPictureInPicture: false }],
     ["expo-screen-orientation", { initialOrientation: "DEFAULT" }],
-    ["expo-build-properties", { android: { minSdkVersion: 24 } }],
+    ["expo-build-properties", { android: { minSdkVersion: 24, targetSdkVersion: TARGET_SDK } }],
   ],
   experiments: { typedRoutes: false },
   extra: {
