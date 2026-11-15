@@ -5,12 +5,10 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { ToolHeader } from "@/components/help/tool-header";
 import { HowToStart } from "@/components/help/how-to";
-import { createClient } from "@/lib/supabase/server";
-import { analyzeWeakSpots, generateDrill } from "@/lib/practice/weak-spots";
-import { loadHistory } from "@/lib/history/server";
 import { WeakSpotsView } from "./weak-spots-view";
 import { WeakSpotsDrill } from "./weak-spots-drill";
-import { readFlags, requireFeature, type FeatureKey } from "@/lib/flags";
+import { requireFeature } from "@/lib/flags";
+import { loadWeakSpots } from "@/lib/practice/weak-spots-load";
 
 export const dynamic = "force-dynamic";
 
@@ -21,36 +19,15 @@ export const dynamic = "force-dynamic";
  */
 export default async function WeakSpotsPage() {
   await requireFeature("weak_spots");
-  const supabase = await createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
-  if (!user) return null;
-
-  const { data: scores } = await supabase
-    .from("sim_scores")
-    .select("rubric")
-    .eq("user_id", user.id)
-    .order("created_at", { ascending: false })
-    .limit(20);
-
-  const rubrics = (scores ?? []).map((s) => (s.rubric ?? {}) as Record<string, unknown>);
-  // A remedy must never open a switched-off tool: fall back to the Consulting Room.
-  const flags = await readFlags();
-  const REMEDY_FLAG: Record<string, FeatureKey> = { "/practice/mse": "mse", "/practice/osce": "osce" };
-  const spots = analyzeWeakSpots(rubrics).map((s) => {
-    const flag = REMEDY_FLAG[s.remedyHref];
-    return flag && flags[flag] !== "unlocked" ? { ...s, remedyHref: "/practice/consulting-room", remedyLabel: "Consulting Room: practise this in your next interview" } : s;
-  });
-  // Answer history (src/lib/history): drill items not seen yet first, then missed ones.
-  const history = await loadHistory(user.id, "weak-spots");
-  const drill = generateDrill(spots, 10, history.map);
+  const loaded = await loadWeakSpots();
+  if (!loaded) return null;
+  const { spots, drill, sessions } = loaded;
 
   if (await playV2()) {
     return (
       <GameFrame title="Weak spots" width="reading" back={{ href: "/practice/consulting-room", label: "Back to AI patient interview" }} tip={{ id: "weak-spots", label: "How it works", steps: ["The skills you miss most, with a drill made from them."] }}>
         <PlayStack>
-          <WeakSpotsView spots={spots} sessions={rubrics.length} />
+          <WeakSpotsView spots={spots} sessions={sessions} />
           {drill.length > 0 ? (
             <HowToStart id="weak-spots">
               <WeakSpotsDrill items={drill} />
@@ -70,7 +47,7 @@ export default async function WeakSpotsPage() {
       <ToolHeader title="Weak spots" tip={{ id: "weak-spots", steps: ["The skills you miss most, with a drill made from them."] }} />
 
       <div className="mt-6">
-        <WeakSpotsView spots={spots} sessions={rubrics.length} />
+        <WeakSpotsView spots={spots} sessions={sessions} />
       </div>
 
       {drill.length > 0 ? (

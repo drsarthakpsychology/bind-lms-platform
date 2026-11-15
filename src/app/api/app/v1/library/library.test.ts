@@ -26,6 +26,10 @@ import { GET as refHome } from "./reference/route";
 import { GET as refSearch } from "./reference/search/route";
 import { GET as refCompare } from "./reference/compare/route";
 import { GET as refDrug } from "./reference/[slug]/route";
+import { GET as terms } from "./terms/route";
+import { GET as term } from "./terms/[slug]/route";
+import { GET as cases } from "./cases/route";
+import { referenceIndex } from "@/lib/reference/data";
 
 beforeEach(() => {
   resetGuard();
@@ -66,6 +70,9 @@ describe("medicines", () => {
     const doses = p.data.sections.find((s: { id: string }) => s.id === "doses");
     expect(doses.doses).toHaveLength(medById(withMech.id)!.doses.length);
     expect(p.data.summary.student).toBe(withMech.student);
+    // The first version's fields are still there.
+    expect(p.data).toMatchObject({ v: 1, med: { id: withMech.id } });
+    expect(p.data.mechanism).not.toBeNull();
     expect(p.data.study === null || p.data.study.target.screen === "studyModule").toBe(true);
   });
 
@@ -111,5 +118,24 @@ describe("psychopharmacology reference", () => {
       { id: "b1", type: "note", value: "one", data: null },
       { id: "b2", type: "note", value: "two", data: null },
     ]);
+  });
+});
+
+describe("Quick reference and case library", () => {
+  it("the Quick reference index, search and one entry", async () => {
+    const all = referenceIndex();
+    const r = await read(await terms(appReq("/library/terms"), noParams));
+    expect(r.data.items).toHaveLength(all.length);
+    const one = all[0];
+    const s = await read(await terms(appReq(`/library/terms?q=${encodeURIComponent(one.label)}`), noParams));
+    expect(s.data.items.map((x: { slug: string }) => x.slug)).toContain(one.slug);
+    expect((await read(await term(appReq(`/library/terms/${one.slug}`), params({ slug: one.slug })))).data.entry).toBeTruthy();
+    expect((await read(await term(appReq("/library/terms/nope-nope"), params({ slug: "nope-nope" })))).status).toBe(404);
+  });
+
+  it("the case library stays closed while its flag is off; Study off closes the Quick reference", async () => {
+    expect((await read(await cases(appReq("/library/cases"), noParams))).error?.code).toBe("feature_off");
+    G.flags = { learn: "off" };
+    expect((await read(await terms(appReq("/library/terms"), noParams))).error?.code).toBe("feature_off");
   });
 });

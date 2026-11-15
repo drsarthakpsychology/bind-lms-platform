@@ -4,29 +4,15 @@ import { PlayStack } from "@/components/play/parts";
 import { Section } from "@/components/ds";
 import { ToolHeader } from "@/components/help/tool-header";
 import { HowToStart } from "@/components/help/how-to";
-import { createClient } from "@/lib/supabase/server";
 import Link from "next/link";
 import { FormulationForge } from "./forge";
-import { FORMULATION_CASES } from "@/lib/practice/formulation-cases";
 import { PeerWall } from "./peer-wall";
 import { requireFeature } from "@/lib/flags";
-import { caseContext } from "@/lib/cases/server";
-import { arrangeCases } from "@/lib/cases/fresh";
-import { mergeProgress, startedIds } from "@/lib/cases/progress";
-import { fromRows } from "@/lib/history/order";
+import { loadFormulationCases } from "@/lib/practice/formulation-load";
 import { CaseMarkTag, RecycleNote } from "@/components/cases/case-mark";
-import type { FormulationFactor } from "@/lib/practice/formulation";
 import { BackPill } from "@/components/study/back";
 
 export const dynamic = "force-dynamic";
-
-interface FormulationCaseRow {
-  slug: string;
-  title: string;
-  prompt: string;
-  factors: unknown;
-  model_answer: unknown;
-}
 
 /**
  * /practice/formulation: Formulation Forge (Part 6.2).
@@ -41,28 +27,7 @@ interface FormulationCaseRow {
 export default async function FormulationPage({ searchParams }: { searchParams: Promise<{ case?: string }> }) {
   await requireFeature("formulation");
   const { case: pick } = await searchParams;
-  const supabase = await createClient();
-  const { data: cases } = await supabase
-    .from("formulation_cases")
-    .select("slug, title, prompt, factors, model_answer")
-    .eq("status", "published")
-    .limit(50);
-
-  // Cases written in the database (with real factor cards) join the built-in set.
-  const fromDb = ((cases ?? []) as FormulationCaseRow[])
-    .filter((r) => Array.isArray(r.factors) && r.factors.length >= 6 && !FORMULATION_CASES.some((c) => c.id === r.slug))
-    .map((r) => ({
-      id: r.slug,
-      title: r.title,
-      prompt: r.prompt,
-      hint: "",
-      factors: r.factors as FormulationFactor[],
-      modelNarrative: (r.model_answer as { narrative?: string } | null)?.narrative ?? "",
-    }));
-  const all = [...FORMULATION_CASES, ...fromDb];
-  // Fresh-case order (src/lib/cases/fresh.ts): half done, new this week, new, done last.
-  const ctx = await caseContext("formulation", all.map((c) => c.id), "formulation");
-  const arranged = arrangeCases(all, (c) => c.id, { history: fromRows(ctx.history), now: ctx.now, student: ctx.student, started: startedIds(mergeProgress(ctx.progress.rows, [])) });
+  const { all, ctx, arranged } = await loadFormulationCases();
   // No case asked for: the first one not done (a half-done one first).
   const firstId = pick && all.some((c) => c.id === pick) ? pick : arranged.list[0]?.id;
   const seed = all.find((c) => c.id === firstId) ?? all[0];

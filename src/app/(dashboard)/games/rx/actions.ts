@@ -3,7 +3,7 @@
 import { z } from "zod";
 import { attemptsFor, rxItem, rxXp, type Answer } from "@/lib/games-sims/rx/game";
 import { dealRx, pickRx, runTotals, type RxToken } from "@/lib/games-sims/rx/deal";
-import type { Answered, Mode, PublicCase } from "@/lib/games-sims/rx/rules";
+import { RX_MODES, type Answered, type Mode, type PublicCase } from "@/lib/games-sims/rx/rules";
 import { rxCurrent, rxMask as mask } from "@/lib/games-sims/rx/server";
 import { MYSTERIES } from "@/lib/games-sims/rx/content";
 import { loadHistory, record, requestRng } from "@/lib/history/server";
@@ -16,7 +16,7 @@ import { cappedOutcome, itemKey, POINTS_KEPT } from "@/lib/hints/rules";
 /** Rx Detective on the server: a case's answer never reaches the browser before it is picked. */
 
 const FAIL = "That didn't load. Try again.";
-const MODES: Mode[] = ["mixed", "chain", "mystery", "puzzle", "review"];
+const MODES: Mode[] = RX_MODES;
 
 /** Was a hint used on this question in this run? (Counted on the server.) */
 function hintedIn(map: Map<string, number>, run: string, id: string): boolean {
