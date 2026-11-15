@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { ActivityFrame } from "@/components/study/activity-frame";
-import { ActivityTip } from "@/components/help/activity-tip";
+import { PlayFrame } from "@/components/play/play-frame";
+import { playV2 } from "@/components/play/v2";
 import { HowToStart } from "@/components/help/how-to";
 import { requireFeature } from "@/lib/flags";
 import { loadLearnState, saveLearnState } from "../../study/actions";
@@ -14,14 +14,10 @@ export default async function DailyCasePage() {
   await requireFeature("learn");
   const [serverState, initial] = await Promise.all([loadLearnState(), dailyMove({ mode: "daily" })]);
   return (
-    <ActivityFrame
-      title="Daily case"
-      fallback="/practice"
-    >
-      <ActivityTip id="daily-case" steps={["Name the diagnosis.", "Open clues or order tests if you need them. Fewer clues, more points."]} />
+    <PlayFrame v2={await playV2()} title="Daily case" fallback="/practice" tip={{ id: "daily-case", steps: ["Name the diagnosis.", "Open clues or order tests if you need them. Fewer clues, more points."] }}>
       <HowToStart id="daily-case">
         <DailyGame serverState={serverState} save={saveLearnState} initial={initial} />
       </HowToStart>
-    </ActivityFrame>
+    </PlayFrame>
   );
 }

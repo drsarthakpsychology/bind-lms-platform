@@ -1,3 +1,7 @@
+import { GameFrame } from "@/components/play/game-frame";
+import { playV2 } from "@/components/play/v2";
+import { Fold, PlayStack } from "@/components/play/parts";
+import { Row, RowList } from "@/components/ds";
 import { ToolHeader } from "@/components/help/tool-header";
 import Link from "next/link";
 import { todaysDilemmas } from "@/lib/practice/ethics";
@@ -64,6 +68,24 @@ export default async function EthicsPage() {
   // Deterministic daily set: the day's three dilemmas are stable for everyone.
   const daySeed = new Date().getTime();
   const dilemmas = todaysDilemmas(daySeed, 3);
+
+  if (await playV2()) {
+    return (
+      <GameFrame title="Ethics, law & referral" width="reading" tip={{ id: "ethics", label: "How it works", steps: ["Read the dilemma and decide.", "Then see what happens and what the law says."] }}>
+        <PlayStack>
+          <DilemmaFlow dilemmas={dilemmas} />
+          <div>
+            <Fold title="Quick check">
+              <QuizCheck items={ETHICS_QUIZ} />
+            </Fold>
+            <RowList className="border-t-0">
+              <Row href="/practice/out-of-depth" title="Out of depth" meta="When to refer, escalate or stop" />
+            </RowList>
+          </div>
+        </PlayStack>
+      </GameFrame>
+    );
+  }
 
   return (
     <div className="mx-auto max-w-3xl">

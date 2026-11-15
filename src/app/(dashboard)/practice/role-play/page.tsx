@@ -1,3 +1,5 @@
+import { GameFrame } from "@/components/play/game-frame";
+import { playV2 } from "@/components/play/v2";
 import { ToolHeader } from "@/components/help/tool-header";
 import { createClient } from "@/lib/supabase/server";
 import { createAdminClient } from "@/lib/supabase/server";
@@ -96,6 +98,31 @@ export default async function RolePlayPage(props: {
         };
       }
     }
+  }
+
+  if (await playV2()) {
+    return (
+      <GameFrame title="Practise with a classmate" width="reading" tip={{ id: "role-play", label: "How it works", steps: ["One of you plays the patient, the other the clinician."] }}>
+        {openSessionId ? (
+          <RolePlayRoom
+            sessionId={openSessionId}
+            myId={user.id}
+            myRole={myRole((sessions ?? []).find((s) => s.id === openSessionId) ?? { student_a: user.id, role_a: "patient" })}
+          />
+        ) : (
+          <RolePlayLobby
+            sessions={(sessions ?? []).map((s) => ({
+              id: s.id,
+              peerEmail: emailBy.get(s.student_a === user.id ? s.student_b : s.student_a) ?? "peer",
+              role: myRole(s as { student_a: string; role_a: string }),
+              status: s.status as string,
+              createdAt: s.created_at,
+            }))}
+            recommendedPeer={recommendedPeer}
+          />
+        )}
+      </GameFrame>
+    );
   }
 
   return (

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { ActivityFrame } from "@/components/study/activity-frame";
-import { ActivityTip } from "@/components/help/activity-tip";
+import { PlayFrame } from "@/components/play/play-frame";
+import { playV2 } from "@/components/play/v2";
 import { requireFeature } from "@/lib/flags";
 import { TermsGame } from "@/components/learn/clinic-games";
 import { loadLearnState, saveLearnState } from "../../study/actions";
@@ -11,12 +11,8 @@ export default async function TermsPage() {
   await requireFeature("learn");
   const serverState = await loadLearnState();
   return (
-    <ActivityFrame
-      fallback="/practice"
-      title="Say it clinically"
-    >
-      <ActivityTip id="say-it-clinically" label="How it works" steps={["Pick the clinical term for the everyday phrase."]} />
+    <PlayFrame v2={await playV2()} fallback="/practice" title="Say it clinically" titleAs="p" tip={{ id: "say-it-clinically", label: "How it works", steps: ["Pick the clinical term for the everyday phrase."] }}>
       <TermsGame serverState={serverState} save={saveLearnState} />
-    </ActivityFrame>
+    </PlayFrame>
   );
 }

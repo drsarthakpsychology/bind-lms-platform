@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { ActivityFrame } from "@/components/study/activity-frame";
-import { ActivityTip } from "@/components/help/activity-tip";
+import { PlayFrame } from "@/components/play/play-frame";
+import { playV2 } from "@/components/play/v2";
 import { LearnStoreInit } from "@/components/learn/learn-store-init";
 import { loadLearnState, saveLearnState } from "../../study/actions";
 import { requireFeature } from "@/lib/flags";
@@ -20,10 +20,7 @@ export default async function WardPage({ searchParams }: { searchParams: Promise
   const [{ team }, user] = await Promise.all([searchParams, currentUser()]);
   const [ready, teams, cases] = await Promise.all([teamsReady(), user ? myTeams("ward", user.id) : Promise.resolve([]), caseContext("ward", CAMPAIGNS.map((c) => c.id), "ward", user?.id ?? "")]);
   return (
-    <ActivityFrame
-      title="Ward Week"
-    >
-      <ActivityTip id="ward-week" intro="One patient. You are the trainee psychologist." steps={["Read each session, then make the call.", "See why it was strong or weak.", "Team mode: classmates vote, and matching votes move the story on."]} />
+    <PlayFrame v2={await playV2()} title="Ward Week" titleAs="p" tip={{ id: "ward-week", intro: "One patient. You are the trainee psychologist.", steps: ["Read each session, then make the call.", "See why it was strong or weak.", "Team mode: classmates vote, and matching votes move the story on."] }}>
       <LearnStoreInit serverState={learnState} save={saveLearnState} />
       <WardWeek
         campaigns={campaignCards()}
@@ -33,6 +30,6 @@ export default async function WardPage({ searchParams }: { searchParams: Promise
         teams={teams.map((t) => ({ id: t.id, name: t.name, campaign: t.scenario, status: t.status, code: t.code }))}
         actions={{ startWardSolo, resumeWardSolo, pickWardSolo, createWardTeam, joinWardTeam, wardTeamView, castWardVote }}
       />
-    </ActivityFrame>
+    </PlayFrame>
   );
 }

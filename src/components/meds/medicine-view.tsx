@@ -39,6 +39,12 @@ function saveView(v: View) {
   listeners.forEach((l) => l());
 }
 
+/** Student or clinician words: one choice, remembered, shared by both designs of the page. */
+export function useMedView(): [View, (v: View) => void] {
+  const view = React.useSyncExternalStore(subscribe, readView, () => "student" as View);
+  return [view, saveView];
+}
+
 /**
  * One medicine, practical facts first: what it is used for, doses and how to
  * take it, side effects, monitoring, interactions, warnings, special groups,

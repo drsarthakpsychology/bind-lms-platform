@@ -1,3 +1,6 @@
+import { GameFrame } from "@/components/play/game-frame";
+import { playV2 } from "@/components/play/v2";
+import { PlayStack } from "@/components/play/parts";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { ToolHeader } from "@/components/help/tool-header";
@@ -42,6 +45,21 @@ export default async function WeakSpotsPage() {
   // Answer history (src/lib/history): drill items not seen yet first, then missed ones.
   const history = await loadHistory(user.id, "weak-spots");
   const drill = generateDrill(spots, 10, history.map);
+
+  if (await playV2()) {
+    return (
+      <GameFrame title="Weak spots" width="reading" back={{ href: "/practice/consulting-room", label: "Back to AI patient interview" }} tip={{ id: "weak-spots", label: "How it works", steps: ["The skills you miss most, with a drill made from them."] }}>
+        <PlayStack>
+          <WeakSpotsView spots={spots} sessions={rubrics.length} />
+          {drill.length > 0 ? (
+            <HowToStart id="weak-spots">
+              <WeakSpotsDrill items={drill} />
+            </HowToStart>
+          ) : null}
+        </PlayStack>
+      </GameFrame>
+    );
+  }
 
   return (
     <div className="mx-auto max-w-2xl">

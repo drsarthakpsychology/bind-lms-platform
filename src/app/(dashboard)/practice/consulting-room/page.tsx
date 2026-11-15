@@ -1,3 +1,6 @@
+import { GameFrame } from "@/components/play/game-frame";
+import { playV2 } from "@/components/play/v2";
+import { Row, RowList } from "@/components/ds";
 import { createClient, createAdminClient } from "@/lib/supabase/server";
 
 import { CasePicker, ConsultingRoomHeader } from "./case-picker";
@@ -121,6 +124,38 @@ export default async function ConsultingRoomPage() {
   // Weak spots (merged in here): the drill built from this student's own
   // debriefs. Shown once there is at least one scored interview.
   const weakSpotsOn = scoresBySession.size > 0 && (await isFeatureEnabled("weak_spots"));
+
+  if (await playV2()) {
+    return (
+      <GameFrame
+        title="AI patient interview"
+        width="wide"
+        aside={<SimulationBadge />}
+        tip={{
+          id: "consulting-room-safety",
+          label: "Safety first",
+          children: (
+            <ul className="list-disc space-y-1 pl-5 text-muted-foreground">
+              <li>
+                Everything here is a <strong className="text-foreground">simulation</strong>. The patient is not real.
+              </li>
+              <li>If you&apos;re struggling yourself, this is not the place: reach out to your faculty or a helpline.</li>
+              <li>Your sessions are private to you and your faculty, and are used only for your debrief.</li>
+            </ul>
+          ),
+        }}
+      >
+        <div className="flex min-w-0 flex-col gap-4">
+          {weakSpotsOn ? (
+            <RowList>
+              <Row href="/practice/weak-spots" title="Your weak spots" meta="A drill made from your debriefs" />
+            </RowList>
+          ) : null}
+          <CasePicker cases={ordered} recycled={arranged.recycled} />
+        </div>
+      </GameFrame>
+    );
+  }
 
   return (
     <div className="mx-auto w-full max-w-5xl">

@@ -11,10 +11,13 @@ import { LETTERS as LETTER, ROMAN } from "@/lib/prep/labels";
 
 const option =
   "relative flex min-h-12 w-full min-w-0 items-start gap-3 rounded-lg border-2 border-foreground bg-card px-4 py-3 text-left text-base font-medium transition-transform duration-150 motion-reduce:transition-none enabled:active:translate-y-px focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60 disabled:cursor-default";
+/** New design: a large row, 1.5px outline, 12px corners. */
+const optionV2 =
+  "relative flex min-h-14 w-full min-w-0 items-start gap-3 rounded-[var(--ds-radius)] border-[1.5px] border-[var(--ds-card-line)] bg-card px-4 py-3.5 text-left type-body font-medium transition-[border-color,background-color] duration-[var(--ds-state)] ease-[var(--ds-ease)] enabled:hover:border-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:cursor-default";
 const keyBox = "mt-px grid size-7 shrink-0 place-items-center rounded-md border-2 border-current text-xs font-bold";
 
 /** The stem, passage, statements and lists of a question (exam style). */
-export function QuestionBody({ q, headingRef, number }: { q: PrepQView; headingRef?: React.Ref<HTMLHeadingElement>; number?: number }) {
+export function QuestionBody({ q, headingRef, number, v2 = false }: { q: PrepQView; headingRef?: React.Ref<HTMLHeadingElement>; number?: number; v2?: boolean }) {
   return (
     <div className="min-w-0 space-y-4 [overflow-wrap:anywhere]">
       {q.passage ? (
@@ -24,8 +27,8 @@ export function QuestionBody({ q, headingRef, number }: { q: PrepQView; headingR
         </div>
       ) : null}
       <div className="relative isolate">
-        <HalftoneCorner className="-top-3 size-24 sm:size-28" />
-        <h2 ref={headingRef} tabIndex={-1} className="relative text-lg font-semibold leading-snug outline-none sm:text-xl">
+        {v2 ? null : <HalftoneCorner className="-top-3 size-24 sm:size-28" />}
+        <h2 ref={headingRef} tabIndex={-1} className={v2 ? "relative max-w-[65ch] type-h3 outline-none" : "relative text-lg font-semibold leading-snug outline-none sm:text-xl"}>
           {number ? <span className="mr-2 font-mono text-link">Q{number}.</span> : null}
           <span className="whitespace-pre-line">{q.stem}</span>
         </h2>
@@ -85,7 +88,7 @@ export function QuestionBody({ q, headingRef, number }: { q: PrepQView; headingR
  * The four options. Keys 1 to 4 are shown on each. With `answer` set, picks lock
  * and right/wrong show with an icon and a word (never colour alone).
  */
-export function Options({ q, picked, onPick, answer, disabled, stampMotion = true }: { q: PrepQView; picked: number | null; onPick: (i: number) => void; answer?: number; disabled?: boolean; stampMotion?: boolean }) {
+export function Options({ q, picked, onPick, answer, disabled, stampMotion = true, v2 = false }: { q: PrepQView; picked: number | null; onPick: (i: number) => void; answer?: number; disabled?: boolean; stampMotion?: boolean; v2?: boolean }) {
   const locked = answer !== undefined;
   return (
     <div role="radiogroup" aria-label="Answers" className="grid gap-2.5">
@@ -101,8 +104,9 @@ export function Options({ q, picked, onPick, answer, disabled, stampMotion = tru
             disabled={locked || disabled}
             onClick={() => onPick(i)}
             className={cn(
-              option,
-              state === "picked" && "bg-brand text-brand-foreground",
+              v2 ? optionV2 : option,
+              state === "picked" && (v2 ? "border-foreground bg-brand text-brand-foreground" : "bg-brand text-brand-foreground"),
+              v2 && (state === "right" || state === "wrong") && "border-foreground",
               state === "right" && "bg-status-success-bg text-status-success-fg",
               state === "wrong" && "bg-status-alert-bg text-status-alert-fg",
             )}

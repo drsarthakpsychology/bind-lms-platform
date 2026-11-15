@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { ActivityFrame } from "@/components/study/activity-frame";
-import { ActivityTip } from "@/components/help/activity-tip";
+import { PlayFrame } from "@/components/play/play-frame";
+import { playV2 } from "@/components/play/v2";
 import { requireFeature } from "@/lib/flags";
 import { ScenarioGame } from "@/components/learn/clinic-games";
 import { loadLearnState, saveLearnState } from "../../study/actions";
@@ -14,12 +14,8 @@ export default async function ScenariosPage({ searchParams }: { searchParams: Pr
   const { note } = await searchParams;
   const [serverState, ctx] = await Promise.all([loadLearnState(), caseContext("wwyd", SCENARIOS.map((x) => x.id), "wwyd")]);
   return (
-    <ActivityFrame
-      fallback="/practice"
-      title="What would you do?"
-    >
-      <ActivityTip id="what-would-you-do" label="How it works" steps={["Read what the patient says, then pick your response."]} />
+    <PlayFrame v2={await playV2()} fallback="/practice" title="What would you do?" titleAs="p" tip={{ id: "what-would-you-do", label: "How it works", steps: ["Read what the patient says, then pick your response."] }}>
       <ScenarioGame key={note ?? "all"} serverState={serverState} save={saveLearnState} noteId={note} ctx={ctx} />
-    </ActivityFrame>
+    </PlayFrame>
   );
 }

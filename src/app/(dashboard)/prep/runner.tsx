@@ -38,6 +38,8 @@ export type RunnerProps = {
   againLabel?: string;
   back: { href: string; label: string };
   empty: React.ReactNode;
+  /** The new design (ui_v2): the same runner, drawn quieter. Looks only, no logic. */
+  v2?: boolean;
 };
 
 /**
@@ -46,7 +48,7 @@ export type RunnerProps = {
  * (the answer is never in the page before you answer) and kept, so a set
  * picks up where it was left.
  */
-export function QuestionRunner({ questions, start = 0, prior = {}, saved: initialSaved = [], canSave, preview, label, next, again, againLabel, back, empty }: RunnerProps) {
+export function QuestionRunner({ questions, start = 0, prior = {}, saved: initialSaved = [], canSave, preview, label, next, again, againLabel, back, empty, v2 = false }: RunnerProps) {
   const router = useRouter();
   const [idx, setIdx] = React.useState(() => Math.min(Math.max(0, start), Math.max(0, questions.length - 1)));
   const [picked, setPicked] = React.useState<number | null>(null);
@@ -150,7 +152,7 @@ export function QuestionRunner({ questions, start = 0, prior = {}, saved: initia
     next: () => (result ? go(idx + 1) : void check()),
   });
 
-  if (!questions.length) return <div className={card}>{empty}</div>;
+  if (!questions.length) return <div className={v2 ? "type-body text-muted-foreground" : card}>{empty}</div>;
 
   if (done) {
     let right = 0;
@@ -162,8 +164,8 @@ export function QuestionRunner({ questions, start = 0, prior = {}, saved: initia
       if (ok === true) right++;
     }
     return (
-      <div className={cn(card, "space-y-5 hard-shadow-md sm:p-6")} role="status">
-        <p className="text-eyebrow text-link">Set done</p>
+      <div className={v2 ? "min-w-0 space-y-6" : cn(card, "space-y-5 hard-shadow-md sm:p-6")} role="status">
+        <p className={v2 ? "type-h2" : "text-eyebrow text-link"}>Set done</p>
         <div className="flex flex-wrap items-center gap-x-6 gap-y-4">
           <ScoreDial right={right} total={questions.length} />
           <EndReaction right={right} total={questions.length} seed={round} className="min-w-0 flex-1 basis-56" />
@@ -205,7 +207,7 @@ export function QuestionRunner({ questions, start = 0, prior = {}, saved: initia
   return (
     <div className="min-w-0 space-y-5">
       <div className="flex flex-wrap items-center justify-between gap-2">
-        <p className="text-sm font-semibold">
+        <p className={v2 ? "type-small font-semibold text-muted-foreground type-num" : "text-sm font-semibold"}>
           <span className="sr-only">{label}: </span>Question {idx + 1}
         </p>
         <div className="flex items-center gap-2">
@@ -221,8 +223,10 @@ export function QuestionRunner({ questions, start = 0, prior = {}, saved: initia
               aria-pressed={isSaved}
               onClick={() => void flipSave(q.id)}
               className={cn(
-                "inline-flex min-h-11 items-center gap-1.5 rounded-md border-2 border-foreground px-3 text-sm font-bold transition-transform duration-150 active:translate-y-px motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60",
-                isSaved ? "bg-foreground text-background" : "bg-card",
+                v2
+                  ? "inline-flex min-h-11 items-center gap-1.5 rounded-lg px-3 type-small font-semibold transition-colors duration-[var(--ds-state)] hover:bg-[var(--ds-tint)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                  : "inline-flex min-h-11 items-center gap-1.5 rounded-md border-2 border-foreground px-3 text-sm font-bold transition-transform duration-150 active:translate-y-px motion-reduce:transition-none focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60",
+                v2 ? (isSaved ? "text-foreground" : "text-muted-foreground") : isSaved ? "bg-foreground text-background" : "bg-card",
               )}
             >
               {isSaved ? <BookmarkCheck className="size-4" aria-hidden /> : <Bookmark className="size-4" aria-hidden />}
@@ -231,12 +235,12 @@ export function QuestionRunner({ questions, start = 0, prior = {}, saved: initia
           ) : null}
         </div>
       </div>
-      <div className="h-2.5 overflow-hidden rounded-full border-2 border-foreground bg-card" aria-hidden>
-        <div className="h-full origin-left bg-brand transition-transform duration-300 motion-reduce:transition-none" style={{ transform: `scaleX(${idx / questions.length})` }} />
+      <div className={v2 ? "-mt-2 h-1.5 overflow-hidden rounded-full bg-[var(--ds-hairline)]" : "h-2.5 overflow-hidden rounded-full border-2 border-foreground bg-card"} aria-hidden>
+        <div className={cn("h-full origin-left transition-transform motion-reduce:transition-none", v2 ? "rounded-full bg-primary duration-[var(--ds-fill)] ease-[var(--ds-ease-out)]" : "bg-brand duration-300")} style={{ transform: `scaleX(${idx / questions.length})` }} />
       </div>
 
-      <QuestionBody key={q.id} q={q} headingRef={heading} />
-      <Options q={q} picked={result ? result.picked : picked} onPick={pickOne} answer={result?.answer} disabled={busy} />
+      <QuestionBody key={q.id} q={q} headingRef={heading} v2={v2} />
+      <Options q={q} picked={result ? result.picked : picked} onPick={pickOne} answer={result?.answer} disabled={busy} v2={v2} />
 
       {failed ? (
         <p role="alert" className="flex items-center gap-2 rounded-md border-2 border-foreground bg-status-alert-bg p-3 text-sm font-semibold text-status-alert-fg">
@@ -266,8 +270,10 @@ export function QuestionRunner({ questions, start = 0, prior = {}, saved: initia
           tabIndex={-1}
           aria-live="polite"
           className={cn(
-            "min-w-0 scroll-mb-28 space-y-3 rounded-md border-2 border-foreground p-4 outline-none [overflow-wrap:anywhere] md:scroll-mb-0",
-            result.correct === true ? "bg-status-success-bg text-status-success-fg" : result.correct === false ? "bg-status-alert-bg text-status-alert-fg" : "bg-card",
+            "min-w-0 scroll-mb-28 space-y-3 p-4 outline-none [overflow-wrap:anywhere] md:scroll-mb-0",
+            // New design: the verdict is a full-width band, no outline.
+            v2 ? "rounded-[var(--ds-radius)] sm:p-5" : "rounded-md border-2 border-foreground",
+            result.correct === true ? "bg-status-success-bg text-status-success-fg" : result.correct === false ? "bg-status-alert-bg text-status-alert-fg" : v2 ? "bg-[var(--ds-tint)]" : "bg-card",
           )}
         >
           <p className="flex items-center gap-2 text-lg font-bold">

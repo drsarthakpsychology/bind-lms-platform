@@ -42,23 +42,29 @@ function Chips({ sets, current, big = false, onPick }: { sets: SetChip[]; curren
  * "Set 2 of 9" button that opens the chips in a bottom sheet, so a row of
  * numbers never sits above the question looking like question numbers.
  */
-export function SetPicker({ sets, current }: { sets: SetChip[]; current: number }) {
+export function SetPicker({ sets, current, v2 = false }: { sets: SetChip[]; current: number; v2?: boolean }) {
   const [open, setOpen] = React.useState(false);
   return (
     <nav aria-label="Sets">
-      <div className="hidden sm:block">
-        <Chips sets={sets} current={current} />
-      </div>
+      {v2 ? null : (
+        <div className="hidden sm:block">
+          <Chips sets={sets} current={current} />
+        </div>
+      )}
       <button
         type="button"
         onClick={() => setOpen(true)}
         aria-haspopup="dialog"
-        className="inline-flex min-h-11 items-center gap-1.5 rounded-md border-2 border-foreground bg-card px-3 text-sm font-bold sm:hidden"
+        className={
+          v2
+            ? "inline-flex min-h-11 items-center gap-1 rounded-lg px-2 type-small font-semibold whitespace-nowrap text-muted-foreground transition-colors duration-[var(--ds-state)] hover:bg-[var(--ds-tint)] hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            : "inline-flex min-h-11 items-center gap-1.5 rounded-md border-2 border-foreground bg-card px-3 text-sm font-bold sm:hidden"
+        }
       >
         Set {sets[current]?.n ?? current + 1} of {sets.length}
         <ChevronDown className="size-4" aria-hidden />
       </button>
-      <MobileBottomSheet open={open} onOpenChange={setOpen} title="Pick a set">
+      <MobileBottomSheet open={open} onOpenChange={setOpen} title="Pick a set" className={v2 ? "mx-auto max-w-xl" : undefined}>
         <Chips sets={sets} current={current} big onPick={() => setOpen(false)} />
       </MobileBottomSheet>
     </nav>

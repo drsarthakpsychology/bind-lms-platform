@@ -1,3 +1,7 @@
+import { Hero, PageFrame, Row, RowList, Section } from "@/components/ds";
+import { playV2 } from "@/components/play/v2";
+import { PREP_SHORT } from "@/lib/prep/catalog";
+import { PenLine } from "lucide-react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Bookmark, Clock, MessagesSquare, Sparkles, type LucideIcon } from "lucide-react";
@@ -23,6 +27,49 @@ export default async function PrepPage() {
   const home = await loadHome(me.id);
   const core = home.subjects.filter((s) => !s.optional);
   const optional = home.subjects.filter((s) => s.optional);
+
+  if (await playV2()) {
+    const savedLine = home.saved || home.wrong ? (home.canSave ? `${home.saved} saved · ${home.wrong} wrong` : `${home.wrong} to look at again`) : "Questions to look at again";
+    return (
+      <PageFrame title={PREP_SHORT} lead={!me.learner ? "Staff preview: answers are not saved." : undefined}>
+        {home.resume ? (
+          <Hero
+            context={home.resume.subjectTitle}
+            title={home.resume.topicTitle}
+            meta={`Question ${home.resume.index + 1}`}
+            action={{ href: home.resume.href, label: "Pick up where you left off", icon: <ArrowRight /> }}
+          />
+        ) : PREP_ONBOARDING_ENABLED ? (
+          <Hero title="A quick first round" meta="Or pick any subject below." action={{ href: "/prep/smart", label: "Start", icon: <ArrowRight /> }} />
+        ) : null}
+
+        <Section id="subjects" title="Subjects">
+          {core.length || optional.length ? (
+            <RowList>
+              {core.map((s) => (
+                <Row key={s.subject} href={`/prep/${s.subject}`} title={s.title} meta={bigCount(s.stats.total, "questions")} trailing={pctText(s.stats)} />
+              ))}
+              {optional.map((s) => (
+                <Row key={s.subject} href={`/prep/${s.subject}`} title="General paper" meta="Optional · Teaching, research and reasoning" trailing={pctText(s.stats)} />
+              ))}
+            </RowList>
+          ) : (
+            <p className="type-body text-muted-foreground">Questions are being added.</p>
+          )}
+        </Section>
+
+        <Section id="more-practice" title="More ways to practise">
+          <RowList>
+            <Row href="/prep/smart" icon={<Sparkles />} title="Smart practice" meta="From your weak topics and missed questions" />
+            <Row href="/prep/mock" icon={<Clock />} title="Mock tests" meta="Timed papers with marking" />
+            <Row href="/prep/interview" icon={<MessagesSquare />} title="Mock interview" meta="Practise for the panel" />
+            <Row href={home.saved || !home.wrong ? "/prep/saved" : "/prep/wrong"} icon={<Bookmark />} title="Saved and wrong" meta={savedLine} />
+            <Row href="/prep/long" icon={<PenLine />} title="Long answers" meta={bigCount(longCount(), "written answers") ?? "Written answers"} />
+          </RowList>
+        </Section>
+      </PageFrame>
+    );
+  }
 
   return (
     <PrepFrame hub>

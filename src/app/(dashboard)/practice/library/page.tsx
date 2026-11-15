@@ -1,3 +1,5 @@
+import { GameFrame } from "@/components/play/game-frame";
+import { playV2 } from "@/components/play/v2";
 import { ToolHeader } from "@/components/help/tool-header";
 import { getLibraryDocs, filterLibrary, filterLibraryByTag, LIBRARY_FILTERS } from "@/lib/corpus/library";
 import { LibraryList } from "./library-list";
@@ -22,6 +24,43 @@ export default async function LibraryPage(props: {
   const all = await getLibraryDocs();
   const searched = filterLibrary(all, query);
   const filtered = tag ? filterLibraryByTag(searched, tag) : searched;
+
+  if (await playV2()) {
+    return (
+      <GameFrame title="Case library" width="reading" tip={{ id: "case-library", label: "How it works", steps: ["Search by title or opening words."] }}>
+        <div className="flex min-w-0 flex-col gap-4">
+          <nav aria-label="Filter" className="-mx-1 flex gap-2 overflow-x-auto px-1 pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+            {LIBRARY_FILTERS.map((f) => {
+              const active = tag === f.key;
+              return (
+                <Link
+                  key={f.key}
+                  href={active ? "/practice/library" : `/practice/library?tag=${f.key}`}
+                  aria-current={active ? "true" : undefined}
+                  className={`inline-flex min-h-11 shrink-0 items-center rounded-full border-[1.5px] px-4 type-small font-semibold whitespace-nowrap ${active ? "border-foreground bg-foreground text-background" : "border-[var(--ds-card-line)] hover:border-foreground"}`}
+                >
+                  {f.label}
+                </Link>
+              );
+            })}
+          </nav>
+          <LibraryList
+            docs={filtered.slice(0, 50).map((d) => ({
+              id: d.hash,
+              title: d.title,
+              sourceUrl: d.source_url,
+              licence: d.licence,
+              abstract: d.content,
+              fetchedAt: d.fetched_at,
+            }))}
+            totalCount={all.length}
+            query={query}
+            shown={Math.min(50, filtered.length)}
+          />
+        </div>
+      </GameFrame>
+    );
+  }
 
   return (
     <div className="mx-auto max-w-3xl">
