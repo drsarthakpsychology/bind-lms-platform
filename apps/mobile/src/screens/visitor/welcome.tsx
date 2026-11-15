@@ -608,11 +608,13 @@ function YourWeek() {
         <View accessibilityRole="tablist" onLayout={(e) => setSegW(e.nativeEvent.layout.width - 8)} style={{ flexDirection: "row", padding: 4, borderRadius: 14, backgroundColor: c.tint }}>
           {segW > 0 ? <Animated.View style={[{ position: "absolute", top: 4, left: 4, bottom: 4, width: segW / 2, borderRadius: 10, backgroundColor: c.card, borderWidth: 1.5, borderColor: c.cardLine }, thumbAnim]} /> : null}
           {[false, true].map((v) => (
-            <Press key={String(v)} accessibilityRole="tab" accessibilityState={{ selected: weekend === v }} onPress={() => pick(v)} style={{ minHeight: 44, alignItems: "center", justifyContent: "center" }} testID={v ? "week-weekend" : "week-weekday"}>
+            <View key={String(v)} style={{ flex: 1 }}>
+            <Press accessibilityRole="tab" accessibilityState={{ selected: weekend === v }} onPress={() => pick(v)} style={{ minHeight: 44, alignItems: "center", justifyContent: "center" }} testID={v ? "week-weekend" : "week-weekday"}>
               <T v="bodyStrong" tone={weekend === v ? "ink" : "muted"}>
                 {v ? "Weekend" : "Weekday"}
               </T>
             </Press>
+            </View>
           ))}
         </View>
         <View key={String(weekend)} style={{ paddingTop: space[5], gap: space[1] }}>
