@@ -1,5 +1,6 @@
 import { drugFromSlug, compareDrugs, type CompareRow } from "@/lib/psychopharm/store";
 import { STANDING_NOTICE } from "@/lib/psychopharm/forbidden-phrases";
+import { COMPARE_FIELDS } from "@/lib/psychopharm/compare-fields";
 import Link from "next/link";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { PsychSearch } from "@/components/psychopharm/psych-search";
@@ -12,18 +13,8 @@ import { MobileListItem } from "@/components/mobile/mobile-list-item";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
-/** One field at a time: the mobile comparison unit (T32). */
-const FIELDS: Array<{ label: string; key: keyof CompareRow }> = [
-  { label: "Class", key: "class" },
-  { label: "Band", key: "band_label" },
-  { label: "Purpose at this dose", key: "purpose" },
-  { label: "Mechanism", key: "mechanism" },
-  { label: "Dose range", key: "dose_range" },
-  { label: "How quickly it starts working", key: "onset" },
-  { label: "Half-life (how long it stays)", key: "half_life" },
-  { label: "Main side effects / watch", key: "side_effects" },
-  { label: "Published equivalence", key: "published_equivalence" },
-];
+/** One field at a time: the mobile comparison unit (T32). Shared with the mobile app. */
+const FIELDS = COMPARE_FIELDS;
 
 function compareHref(slugs: string[], field?: string): string {
   const base = slugs
