@@ -19,7 +19,10 @@ export function PersonV2({
   facts,
   actions,
   timeline,
+  headerActions,
 }: {
+  /** Replaces the contact links in the header (the pipeline's quick actions). */
+  headerActions?: React.ReactNode;
   name: string;
   lead: string;
   links: React.ReactNode;
@@ -33,7 +36,7 @@ export function PersonV2({
       title={name}
       lead={lead}
       back={{ href: "/admin/people", label: "Pipeline" }}
-      actions={contact.map((c) =>
+      actions={headerActions ?? contact.map((c) =>
         c.href ? (
           <a key={c.label} href={c.href} className={btn.quiet} {...(c.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}>
             {c.label}
