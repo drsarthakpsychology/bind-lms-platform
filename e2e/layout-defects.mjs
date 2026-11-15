@@ -217,7 +217,13 @@ function scan({ touch }) {
     let pinned = false;
     for (let e = el; e; e = e.parentElement) { const p = getComputedStyle(e).position; if (p === "fixed" || p === "sticky") { pinned = true; break; } }
     if (pinned) continue;
-    for (const r of rects) items.push({ el, r });
+    // Text an ellipsis or overflow-hidden box cuts is not on screen past the box edge.
+    const bx = block(el);
+    const clipX = /hidden|clip/.test(getComputedStyle(bx).overflowX) ? bx.getBoundingClientRect() : null;
+    for (const r0 of rects) {
+      const r = clipX ? { left: Math.max(r0.left, clipX.left), right: Math.min(r0.right, clipX.right), top: r0.top, bottom: r0.bottom, height: r0.height } : r0;
+      if (r.right - r.left > 0.5) items.push({ el, r });
+    }
   }
   const CELL = 120;
   const grid = new Map();
