@@ -22,6 +22,7 @@ import type * as C from "../contract";
 import type * as X from "../extra";
 import * as xf from "./extra-fixtures";
 import * as fx from "./fixtures";
+import { learnRoute, noteMarkedRead, resetLearnMock } from "./learn-fixtures";
 
 export type Scenario = "default" | "new" | "done" | "empty" | "error" | "slow" | "update" | "paused";
 
@@ -52,6 +53,7 @@ let state = fresh();
 export const mock = {
   reset() {
     state = fresh();
+    resetLearnMock();
   },
   setScenario(s: Scenario) {
     state.scenario = s;
@@ -283,6 +285,8 @@ async function route(req: RawRequest): Promise<RawResponse> {
   }
 
   /* ------------------------------------------------------------- study */
+  const learn = learnRoute(req.method, path, body, kind, { empty: isNew || state.scenario === "empty" });
+  if (learn) return learn;
   if (path.startsWith("/study") && kind === "lecture") return fail(403, "scope", "Your account is for lectures only.");
   if (is("GET", "/study/modules")) return ok<C.StudyHome>({ modules: fx.modules, next: fx.moduleDetail("m02")!.next, goal: { points: 18, goal: 30, streak: 6 }, courseMinutes: 505 });
   if ((m = is("GET", "/study/modules/:id"))) {
@@ -297,6 +301,7 @@ async function route(req: RawRequest): Promise<RawResponse> {
   }
   if (is("GET", "/study/state")) return ok<C.LearnStateResult>({ state: state.learn, today: "2026-11-15" });
   if (is("PUT", "/study/state")) {
+    noteMarkedRead((body as { state?: { notesRead?: Record<string, string> } }).state);
     const next = body.state as C.LearnState | undefined;
     if (next?.study) state.learn = { ...state.learn, ...next, study: { ...state.learn.study, ...next.study, done: { ...state.learn.study.done, ...next.study.done } } };
     return ok<C.SaveLearnStateResult>({ state: state.learn, clamped: false });

@@ -1,18 +1,21 @@
 import { useQueryClient } from "@tanstack/react-query";
 import { router, useLocalSearchParams } from "expo-router";
-import { ArrowRight, Bookmark, Check, ChevronLeft, ListOrdered } from "lucide-react-native";
+import { ArrowRight, Bookmark, Check, ChevronLeft, ListOrdered, NotebookPen } from "lucide-react-native";
 import * as React from "react";
 import { Pressable, ScrollView, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
-import type { Card as RecallCard, Marks, Mcq, SaveMarksResult, SectionContent } from "@/api/contract";
+import type { Card as RecallCard, Mcq, SectionContent } from "@/api/contract";
+import { useMarks } from "@/api/learn";
 import { keys, useModule, useSection } from "@/api/queries";
-import { api } from "@/auth";
 import { Button, Chips, LoadError, OptionRow, ProgressLine, Row, RowList, Sheet, Skeleton, T, VerdictBand } from "@/ds";
 import { toast } from "@/ds/toast";
 import { haptic } from "@/lib/haptics";
 import { Blocks, type BlockContext } from "@/study/blocks";
-import { Rich } from "@/study/rich";
+import { Rich, TermPress } from "@/study/rich";
+import { settingsStore, updateSettings } from "@/lib/settings";
+import { NoteSheet, saveMark } from "@/screens/learn/saved";
+import { TermSheet } from "@/screens/reference/reference";
 import { saveLearn, withLastRead, withSectionDone } from "@/study/state";
 import { layout, space, useTheme } from "@/theme";
 
@@ -85,9 +88,15 @@ export function ReaderBody({ s, view, part, finished }: { s: SectionContent; vie
             <RecallCards cards={s.recall} />
           </View>
         ) : null}
+        {s.viva.length ? (
+          <View style={{ gap: space[3] }}>
+            <T v="h3">Viva questions</T>
+            <RecallCards cards={s.viva} />
+          </View>
+        ) : null}
         {s.mcq.length ? (
           <View style={{ gap: space[3] }}>
-            <T v="h3">Check yourself</T>
+            <T v="h3">{s.section.levelCheck ? s.section.title : "Check yourself"}</T>
             <Practice items={s.mcq} />
           </View>
         ) : null}
@@ -121,9 +130,17 @@ export function ReaderScreen() {
   const mod = useModule(moduleId);
   const [part, setPart] = React.useState(0);
   const [finished, setFinished] = React.useState(false);
-  const [view, setView] = React.useState<"student" | "clinician">("student");
+  const view = settingsStore.use((x) => x.readAs);
+  const setView = (v: "student" | "clinician") => updateSettings({ readAs: v });
   const [toc, setToc] = React.useState(false);
-  const [marked, setMarked] = React.useState(false);
+  const marks = useMarks();
+  const markKey = `${moduleId}/${sectionId}`;
+  const marked = !!marks.data?.marks.bookmarks[markKey]?.on;
+  const hasNote = !!marks.data?.marks.notes[markKey]?.text;
+  const [noteOpen, setNoteOpen] = React.useState(false);
+  const closeNote = React.useCallback(() => setNoteOpen(false), []);
+  const [word, setWord] = React.useState<string | null>(null);
+  const closeWord = React.useCallback(() => setWord(null), []);
   const [saving, setSaving] = React.useState(false);
   const started = React.useRef(0);
   React.useEffect(() => {
@@ -160,16 +177,9 @@ export function ReaderScreen() {
 
   const bookmark = async () => {
     const next = !marked;
-    setMarked(next);
     haptic.select();
-    const key = `${moduleId}/${sectionId}`;
-    const changes: Marks = { v: 1, bookmarks: { [key]: { on: next, at: Date.now() } }, notes: {} };
-    try {
-      await api.put<SaveMarksResult>("/study/marks", { changes });
-      toast.show(next ? "Bookmarked" : "Bookmark removed");
-    } catch {
-      toast.show("Saved on this phone");
-    }
+    const ok = await saveMark(qc, { v: 1, bookmarks: { [markKey]: { on: next, at: Date.now() } }, notes: {} });
+    toast.show(ok ? (next ? "Bookmarked" : "Bookmark removed") : "Saved on this phone");
   };
 
   const total = s?.chunks.length ?? 1;
@@ -205,6 +215,7 @@ export function ReaderScreen() {
   const closeToc = React.useCallback(() => setToc(false), []);
 
   return (
+    <TermPress.Provider value={setWord}>
     <View testID="reader" style={{ flex: 1, backgroundColor: c.bg }}>
       <View style={{ paddingTop: insets.top, backgroundColor: c.bg, borderBottomWidth: 1, borderColor: c.hairline }}>
         <View style={{ minHeight: 56, flexDirection: "row", alignItems: "center", paddingHorizontal: space[1] }}>
@@ -220,6 +231,11 @@ export function ReaderScreen() {
           <Pressable accessibilityRole="button" accessibilityLabel={marked ? "Remove bookmark" : "Bookmark this section"} accessibilityState={{ selected: marked }} onPress={() => void bookmark()} style={{ width: layout.target, height: layout.target, alignItems: "center", justifyContent: "center" }}>
             <Bookmark size={22} color={marked ? c.link : c.ink} fill={marked ? c.link : "none"} />
           </Pressable>
+          {s && !s.section.isTest ? (
+            <Pressable accessibilityRole="button" accessibilityLabel={hasNote ? "Change my note" : "Write a note"} onPress={() => setNoteOpen(true)} style={{ width: layout.target, height: layout.target, alignItems: "center", justifyContent: "center" }} testID="reader-note">
+              <NotebookPen size={22} color={hasNote ? c.link : c.ink} />
+            </Pressable>
+          ) : null}
         </View>
         <ProgressLine value={pct} height={3} label={`Part ${Math.min(part + 1, total)} of ${total}`} />
       </View>
@@ -272,6 +288,9 @@ export function ReaderScreen() {
           </RowList>
         </View>
       </Sheet>
+      <NoteSheet open={noteOpen} onClose={closeNote} markKey={markKey} label={s ? `${s.section.num} ${s.section.title}` : ""} />
+      <TermSheet word={word} onClose={closeWord} />
     </View>
+    </TermPress.Provider>
   );
 }

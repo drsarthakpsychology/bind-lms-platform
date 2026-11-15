@@ -53,3 +53,22 @@ export async function saveLearn(qc: QueryClient, change: (s: LearnState, today: 
     return next;
   }
 }
+
+/** Opening a note counts as reading it (the website's markNoteRead). */
+export function withNoteRead(s: LearnState, noteId: string, today: string): LearnState {
+  const read = s.notesRead ?? {};
+  if (read[noteId]) return s;
+  return { ...s, notesRead: { ...read, [noteId]: today } };
+}
+
+/** "I've done this on paper": the module's write task (the website's markWritten). Points are the server's to give. */
+export function withWritten(s: LearnState, moduleId: string, today: string): LearnState {
+  if (s.study.written?.[moduleId]) return s;
+  return { ...s, study: { ...s.study, written: { ...(s.study.written ?? {}), [moduleId]: today } } };
+}
+
+/** Opening a module's activity counts as doing it (the website's markActivity). */
+export function withActivity(s: LearnState, moduleId: string, activityId: string, today: string): LearnState {
+  if (s.study.acts?.[moduleId]?.[activityId]) return s;
+  return { ...s, study: { ...s.study, acts: { ...(s.study.acts ?? {}), [moduleId]: { ...(s.study.acts?.[moduleId] ?? {}), [activityId]: today } } } };
+}
