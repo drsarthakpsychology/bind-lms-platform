@@ -8,6 +8,7 @@ import { HowToBody } from "@/components/help/how-to";
 import { TipButton, useFirstTimeTip, type TipContent } from "@/components/help/first-time-tip";
 import { useBack } from "@/components/study/back";
 import { cn } from "@/lib/utils";
+import { HAS_VIEW_TRANSITION, PageMotion } from "@/components/ds";
 
 /**
  * The one frame for every game and every practice tool (new design).
@@ -62,7 +63,8 @@ export function GameFrame({
   const found = useBack(fallback);
   const to = back ?? found;
   return (
-    <div data-ds="play" className={cn("ds-page play-frame mx-auto flex w-full min-w-0 flex-col gap-4", WIDTH[width], className)}>
+    <PageMotion>
+    <div data-ds="play" className={cn(!HAS_VIEW_TRANSITION && "ds-page", "play-frame mx-auto flex w-full min-w-0 flex-col gap-4", WIDTH[width], className)}>
       <header className="flex min-h-11 min-w-0 items-center gap-2">
         <Link
           href={to.href}
@@ -78,6 +80,7 @@ export function GameFrame({
       {tip ? <FrameTipPanel tip={tip} /> : null}
       <div className="play-body min-w-0">{children}</div>
     </div>
+    </PageMotion>
   );
 }
 

@@ -5,7 +5,7 @@ import Link from "next/link";
 import { RotateCcw, Search } from "lucide-react";
 import { SlowState } from "@/components/design-system/slow-state";
 import { cn } from "@/lib/utils";
-import { primaryButton, quietButton, SkeletonMotion } from "@/components/ds";
+import { primaryButton, quietButton, SkeletonMotion, HAS_VIEW_TRANSITION, PageMotion } from "@/components/ds";
 
 /**
  * The shared student states in the new design: loading, something went
@@ -48,7 +48,8 @@ export function LoadingV2({ rows = 5, numbers = false }: { rows?: number; number
 function StateFrame({ title, children, actions, note, heading = "h1" }: { title: string; children: React.ReactNode; actions: React.ReactNode; note?: React.ReactNode; heading?: "h1" | "h2" }) {
   const H = heading;
   return (
-    <div className="ds-page mx-auto flex min-h-[50vh] w-full min-w-0 max-w-5xl flex-col justify-center gap-6 px-1 sm:px-0">
+    <PageMotion>
+    <div className={cn(!HAS_VIEW_TRANSITION && "ds-page", "mx-auto flex min-h-[50vh] w-full min-w-0 max-w-5xl flex-col justify-center gap-6 px-1 sm:px-0")}>
       <div className="flex min-w-0 max-w-xl flex-col gap-2">
         <H className="type-h1 [overflow-wrap:anywhere]">{title}</H>
         <p className="type-body text-muted-foreground">{children}</p>
@@ -56,6 +57,7 @@ function StateFrame({ title, children, actions, note, heading = "h1" }: { title:
       <div className="flex min-w-0 flex-col gap-3 sm:flex-row sm:items-center">{actions}</div>
       {note ? <p className="type-caption text-muted-foreground [overflow-wrap:anywhere]">{note}</p> : null}
     </div>
+    </PageMotion>
   );
 }
 

@@ -12,7 +12,8 @@ import { checkpointKnown, checkpointRound } from "@/lib/study/checkpoints";
 import { backLinkClass } from "@/components/design-system/back-link";
 import { EndReaction, ScoreDial } from "@/components/reactions/graphics";
 import { useUiV2 } from "@/components/ds/v2";
-import { BackLink, SuccessMark } from "@/components/ds";
+import { BackLink, SuccessMark, HAS_VIEW_TRANSITION, PageMotion } from "@/components/ds";
+import { cn } from "@/lib/utils";
 
 /**
  * A checkpoint: case questions first (scored), then "say it out loud" cards.
@@ -90,7 +91,8 @@ export function CheckpointView({
     const lime =
       "inline-flex min-h-[3.25rem] w-full items-center justify-center gap-2 rounded-[var(--ds-radius)] border-2 border-foreground bg-primary px-6 type-body font-bold text-primary-foreground hard-shadow-sm outline-none transition-[transform,box-shadow] duration-[var(--ds-press)] ease-[var(--ds-ease)] focus-visible:ring-[3px] focus-visible:ring-ring/60 active:translate-x-0.5 active:translate-y-0.5 active:shadow-none md:w-fit md:min-w-60";
     return (
-      <div data-ds="page" className="ds-page mx-auto flex w-full max-w-[44rem] min-w-0 flex-col gap-6 px-1 sm:px-0">
+      <PageMotion>
+      <div data-ds="page" className={cn(!HAS_VIEW_TRANSITION && "ds-page", "mx-auto flex w-full max-w-[44rem] min-w-0 flex-col gap-6 px-1 sm:px-0")}>
         <header className="flex min-w-0 flex-col gap-2">
           <BackLink href={`/study/${moduleId}`}>{moduleTitle}</BackLink>
           <p className="type-small text-muted-foreground type-num">Checkpoint {n}</p>
@@ -159,6 +161,7 @@ export function CheckpointView({
           </section>
         ) : null}
       </div>
+      </PageMotion>
     );
   }
 

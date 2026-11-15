@@ -11,7 +11,7 @@ import { MedicineSketches } from "@/components/meds/medicine-visuals";
 import { useMedView } from "@/components/meds/medicine-view";
 import { MobileBottomSheet } from "@/components/mobile/mobile-bottom-sheet";
 import { GROUP_COLOR } from "@/lib/meds/colors";
-import { IconTile, Pix } from "@/components/ds";
+import { IconTile, Pix, HAS_VIEW_TRANSITION, PageMotion } from "@/components/ds";
 import { cn } from "@/lib/utils";
 
 /**
@@ -82,7 +82,8 @@ export function MedicinePage({ med, related, mech, visuals = [], half = null, st
   );
 
   return (
-    <div data-ds="page" className="ds-page mx-auto w-full min-w-0 max-w-5xl">
+    <PageMotion>
+    <div data-ds="page" className={cn(!HAS_VIEW_TRANSITION && "ds-page", "mx-auto w-full min-w-0 max-w-5xl")}>
       <Link href="/practice/medicines" className="-ml-2 inline-flex min-h-11 items-center gap-1.5 rounded-lg px-2 type-small font-semibold text-muted-foreground outline-none transition-colors duration-[var(--ds-state)] ease-[var(--ds-ease)] hover:bg-[var(--ds-tint)] hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring">
         <ArrowLeft className="size-4 shrink-0" aria-hidden /> Medicines
       </Link>
@@ -336,6 +337,7 @@ export function MedicinePage({ med, related, mech, visuals = [], half = null, st
         </ul>
       </MobileBottomSheet>
     </div>
+    </PageMotion>
   );
 }
 

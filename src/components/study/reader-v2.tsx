@@ -5,7 +5,7 @@ import Link from "next/link";
 import { ArrowLeft, ArrowRight, Check, ListOrdered } from "lucide-react";
 import { ViewToggle } from "@/components/learn/view-toggle";
 import { MobileBottomSheet } from "@/components/mobile/mobile-bottom-sheet";
-import { BackLink } from "@/components/ds";
+import { BackLink, HAS_VIEW_TRANSITION, PageMotion } from "@/components/ds";
 import { cn } from "@/lib/utils";
 import { CardDeck, TestRunner } from "./interactive";
 import { SectionMarks } from "./marks";
@@ -39,7 +39,8 @@ export function SectionReaderV2(props: SectionReaderProps) {
   );
 
   return (
-    <div data-ds="page" className="ds-page mx-auto w-full min-w-0 max-w-6xl px-1 sm:px-0 md:grid md:grid-cols-[13rem_minmax(0,1fr)] md:gap-10 lg:grid-cols-[16rem_minmax(0,1fr)] lg:gap-16">
+    <PageMotion>
+    <div data-ds="page" className={cn(!HAS_VIEW_TRANSITION && "ds-page", "mx-auto w-full min-w-0 max-w-6xl px-1 sm:px-0 md:grid md:grid-cols-[13rem_minmax(0,1fr)] md:gap-10 lg:grid-cols-[16rem_minmax(0,1fr)] lg:gap-16")}>
       <aside className="hidden md:block" aria-label="Module contents">
         <div className="sticky top-[calc(var(--top-h)+1.5rem)] flex max-h-[calc(100dvh-var(--top-h)-3rem)] flex-col gap-2">
           <BackLink href={`/study/${moduleId}`}>Module {moduleNum}</BackLink>
@@ -207,5 +208,6 @@ export function SectionReaderV2(props: SectionReaderProps) {
         ) : null}
       </article>
     </div>
+    </PageMotion>
   );
 }
