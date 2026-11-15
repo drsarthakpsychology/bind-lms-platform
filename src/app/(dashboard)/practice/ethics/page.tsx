@@ -1,7 +1,7 @@
 import { GameFrame } from "@/components/play/game-frame";
-import { playV2 } from "@/components/play/v2";
-import { Fold, PlayStack } from "@/components/play/parts";
-import { Row, RowList } from "@/components/ds";
+import { uiV2 } from "@/lib/ui/v2-server";
+import { Fold, Row, RowList } from "@/components/ds";
+import { PlayStack } from "@/components/play/parts";
 import { ToolHeader } from "@/components/help/tool-header";
 import Link from "next/link";
 import { todaysDilemmas } from "@/lib/practice/ethics";
@@ -69,7 +69,7 @@ export default async function EthicsPage() {
   const daySeed = new Date().getTime();
   const dilemmas = todaysDilemmas(daySeed, 3);
 
-  if (await playV2()) {
+  if (await uiV2()) {
     return (
       <GameFrame title="Ethics, law & referral" width="reading" tip={{ id: "ethics", label: "How it works", steps: ["Read the dilemma and decide.", "Then see what happens and what the law says."] }}>
         <PlayStack>

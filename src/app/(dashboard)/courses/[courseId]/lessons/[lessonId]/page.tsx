@@ -33,7 +33,7 @@ import { RefreshOnSave } from "@/components/save/refresh-on-save";
 import { leaveWithoutSession } from "@/lib/auth/session-redirect";
 import { readFlags } from "@/lib/flags";
 import { uiV2For } from "@/lib/ui/v2";
-import { UiV2 } from "@/components/learn-v2/ui-v2";
+import { UiV2 } from "@/components/ds/v2";
 import { LessonScreenV2 } from "@/components/learn-v2/lesson";
 
 // "Check what stuck": the risk-assessment + reporting items are the most

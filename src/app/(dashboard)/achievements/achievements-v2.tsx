@@ -5,9 +5,8 @@ import Link from "next/link";
 import { Check, Copy, Download, ExternalLink, Share2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { formatDateIST } from "@/lib/format";
-import { PageFrame, Section } from "@/components/ds";
+import { PageFrame, Section, EmptyLine, quietButton, StatusWord, textButton } from "@/components/ds";
 import { MobileBottomSheet } from "@/components/mobile/mobile-bottom-sheet";
-import { EmptyLine, quietButton, StatusWord, textButton } from "@/components/v2me/parts";
 import { downloadMyCertificate, type MyCredential, type MyProgress } from "./actions";
 
 /** Soft tile colours for a badge's icon. No border: the tile is the only colour on the row. */

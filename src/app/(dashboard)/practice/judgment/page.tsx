@@ -1,5 +1,5 @@
 import { GameFrame } from "@/components/play/game-frame";
-import { playV2 } from "@/components/play/v2";
+import { uiV2 } from "@/lib/ui/v2-server";
 import { ToolHeader } from "@/components/help/tool-header";
 import { ALL_SEED_SCT_ITEMS } from "@/lib/practice/sct";
 import { JudgmentArena } from "./judgment-arena";
@@ -20,7 +20,7 @@ export default async function JudgmentPage() {
   // wired. sct_expert_responses is admin-only RLS regardless.
   const items = ALL_SEED_SCT_ITEMS;
 
-  if (await playV2()) {
+  if (await uiV2()) {
     return (
       <GameFrame title="Judgment calls" width="reading" tip={{ id: "judgment", label: "How it works", steps: ["Say whether each new fact makes the diagnosis more or less likely."] }}>
         <JudgmentArena items={items.slice(0, 5)} />

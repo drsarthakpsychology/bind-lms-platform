@@ -7,7 +7,7 @@ import { sanitizeRich, textToHtml } from "@/lib/email/rich-html";
 import { formatRelativeTime } from "@/lib/format";
 import { RefreshShell } from "@/components/navigation/refresh-shell";
 import { leaveWithoutSession } from "@/lib/auth/session-redirect";
-import { pageV2 } from "@/components/v2me/server";
+import { uiV2Role } from "@/lib/ui/v2-server";
 import { NotificationDetailV2 } from "../notifications-v2";
 
 export const dynamic = "force-dynamic";
@@ -38,7 +38,7 @@ export default async function NotificationPage({ params }: { params: Promise<{ i
   }
   const html = sanitizeRich((n.body_html as string | null) ?? textToHtml(String(n.body ?? "")));
 
-  if (await pageV2(session.profile.role)) {
+  if (await uiV2Role(session.profile.role)) {
     return (
       <>
         <RefreshShell when={justRead} />

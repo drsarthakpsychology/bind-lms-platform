@@ -11,7 +11,7 @@ import {
 
 import { Button } from "@/components/ui/button";
 import { Row, RowList } from "@/components/ds";
-import { useUiV2 } from "@/components/learn-v2/ui-v2";
+import { useUiV2 } from "@/components/ds/v2";
 
 export type MaterialItem = {
   id: string;

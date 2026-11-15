@@ -1,5 +1,5 @@
 import { GameFrame } from "@/components/play/game-frame";
-import { playV2 } from "@/components/play/v2";
+import { uiV2 } from "@/lib/ui/v2-server";
 import { ToolHeader } from "@/components/help/tool-header";
 import { createClient } from "@/lib/supabase/server";
 import { createAdminClient } from "@/lib/supabase/server";
@@ -100,7 +100,7 @@ export default async function RolePlayPage(props: {
     }
   }
 
-  if (await playV2()) {
+  if (await uiV2()) {
     return (
       <GameFrame title="Practise with a classmate" width="reading" tip={{ id: "role-play", label: "How it works", steps: ["One of you plays the patient, the other the clinician."] }}>
         {openSessionId ? (

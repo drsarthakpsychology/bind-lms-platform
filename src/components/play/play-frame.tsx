@@ -18,7 +18,7 @@ export function PlayFrame({
   before,
   children,
 }: {
-  /** `await playV2()` from the page. */
+  /** `await uiV2()` from the page. */
   v2: boolean;
   title: string;
   fallback?: string;

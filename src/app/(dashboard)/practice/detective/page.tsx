@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PlayFrame } from "@/components/play/play-frame";
-import { playV2 } from "@/components/play/v2";
+import { uiV2 } from "@/lib/ui/v2-server";
 import { isFeatureEnabled, requireFeature } from "@/lib/flags";
 import { Detective } from "@/components/learn/detective";
 import { CLINICS, randomClinicStart } from "@/lib/practice/clinic";
@@ -59,7 +59,7 @@ export default async function DetectivePage({ searchParams }: { searchParams: Pr
     const ctx = await caseContext("two-minute", CLINICS.map((c) => c.id), "two-minute");
     const order = arrangeCases(CLINICS, (c) => c.id, { history: fromRows(ctx.history), now: ctx.now, student: ctx.student, started: startedIds(mergeProgress(ctx.progress.rows, [])), rng: seededRng(ctx.now) }).list.map((x) => x.id);
     return (
-      <PlayFrame v2={await playV2()} fallback="/practice" title="Two-minute clinic" titleAs="p" tip={{ id: "two-minute-clinic", label: "How it works", steps: ["Read the line, then start the clock.", "Type your top diagnoses and the one question you would ask next."] }} before={tabs}>
+      <PlayFrame v2={await uiV2()} fallback="/practice" title="Two-minute clinic" titleAs="p" tip={{ id: "two-minute-clinic", label: "How it works", steps: ["Read the line, then start the clock.", "Type your top diagnoses and the one question you would ask next."] }} before={tabs}>
         <div className="p-4 lg:p-6">
           <TwoMinuteClinic start={start} order={order} ctx={ctx} />
         </div>
@@ -69,7 +69,7 @@ export default async function DetectivePage({ searchParams }: { searchParams: Pr
 
   const [serverState, progress] = await Promise.all([loadLearnState(), viewerId().then((id) => progressSnapshot(id, "detective"))]);
   return (
-    <PlayFrame v2={await playV2()} fallback="/practice" title="Clinic detective" titleAs="p" tip={{ id: "clinic-detective", label: "How it works", steps: ["Guess, or open another clue.", "Fewer clues, more points. Wrong guesses cost points."] }} before={tabs}>
+    <PlayFrame v2={await uiV2()} fallback="/practice" title="Clinic detective" titleAs="p" tip={{ id: "clinic-detective", label: "How it works", steps: ["Guess, or open another clue.", "Fewer clues, more points. Wrong guesses cost points."] }} before={tabs}>
       <Detective serverState={serverState} save={saveLearnState} progress={progress} />
     </PlayFrame>
   );

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { PlayFrame } from "@/components/play/play-frame";
-import { playV2 } from "@/components/play/v2";
+import { uiV2 } from "@/lib/ui/v2-server";
 import { LearnStoreInit } from "@/components/learn/learn-store-init";
 import { loadLearnState, saveLearnState } from "../../study/actions";
 import { requireFeature } from "@/lib/flags";
@@ -20,7 +20,7 @@ export default async function EscapePage({ searchParams }: { searchParams: Promi
   const [{ team }, user] = await Promise.all([searchParams, currentUser()]);
   const [ready, teams, cases] = await Promise.all([teamsReady(), user ? myTeams("escape", user.id) : Promise.resolve([]), caseContext("escape", ROOMS.map((r) => r.id), "escape", user?.id ?? "")]);
   return (
-    <PlayFrame v2={await playV2()} title="Team Escape Room" titleAs="p" tip={{ id: "team-escape-room", intro: "One patient, locked doors.", steps: ["Start a team and share the code, or practise alone.", "Anyone can answer any door. Wrong answers add 20 seconds.", "Two misses on a door open its hint.", "The fastest team this week tops the race."] }}>
+    <PlayFrame v2={await uiV2()} title="Team Escape Room" titleAs="p" tip={{ id: "team-escape-room", intro: "One patient, locked doors.", steps: ["Start a team and share the code, or practise alone.", "Anyone can answer any door. Wrong answers add 20 seconds.", "Two misses on a door open its hint.", "The fastest team this week tops the race."] }}>
       <LearnStoreInit serverState={learnState} save={saveLearnState} />
       <EscapeRoom
         rooms={roomCards()}
