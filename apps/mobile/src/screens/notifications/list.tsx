@@ -1,6 +1,7 @@
 import { useQueryClient } from "@tanstack/react-query";
 import { Stack, router } from "expo-router";
 import * as React from "react";
+import { Platform } from "react-native";
 
 import type { NotificationRow, ReadAllResult } from "@/api/contract";
 import { keys, useNotifications } from "@/api/queries";
@@ -48,7 +49,7 @@ export function NotificationsScreen() {
   const unread = q.data?.unread ?? 0;
   return (
     <Screen testID="notifications" onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
-      <Stack.Screen options={{ headerRight: () => (unread ? <Button kind="text" label="Mark all read" busy={busy} onPress={() => void readAll()} testID="read-all" /> : null) }} />
+      <Stack.Screen options={{ headerRight: () => (unread ? <Button kind="text" label="Mark all read" busy={busy} onPress={() => void readAll()} testID="read-all" style={{ marginRight: Platform.OS === "web" ? 16 : 0 }} /> : null) }} />
       <Loaded q={q} what="your notifications">
         {(d) => (d.items.length ? <NotificationRows items={d.items} /> : <EmptyState mood="sleepy" title="Nothing new" body="Messages from the school and answers to your doubts show up here." testID="notifications-empty" />)}
       </Loaded>
