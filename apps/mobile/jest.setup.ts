@@ -120,3 +120,19 @@ jest.mock("expo-router", () => {
     Link: ({ children }: { children: unknown }) => children,
   };
 });
+
+jest.mock("expo-file-system", () => {
+  class File {
+    uri: string;
+    constructor(...parts: unknown[]) {
+      this.uri = parts.map((p) => (typeof p === "string" ? p : "cache")).join("/");
+    }
+    get exists() {
+      return false;
+    }
+    delete() {}
+    static downloadFileAsync = jest.fn(async () => new File("cache", "downloaded.pdf"));
+    static pickFileAsync = jest.fn(async () => ({ canceled: true }));
+  }
+  return { File, Paths: { cache: "cache", document: "document" }, UploadTask: jest.fn(), UploadType: { BINARY_CONTENT: 0, MULTIPART: 1 } };
+});

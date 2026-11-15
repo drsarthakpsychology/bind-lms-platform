@@ -2,7 +2,7 @@ import { useQueryClient } from "@tanstack/react-query";
 import { router, useLocalSearchParams } from "expo-router";
 import { ArrowLeft, ArrowRight, ChevronLeft, FileText } from "lucide-react-native";
 import * as React from "react";
-import { Linking, Pressable, ScrollView, View } from "react-native";
+import { Pressable, ScrollView, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import type { CompleteLectureResult, LectureDetail, Material, SubmitResult } from "@/api/contract";
@@ -36,10 +36,7 @@ function MaterialRows({ items }: { items: Material[] }) {
           title={m.title}
           meta={[m.format?.toUpperCase(), sizeLabel(m.sizeBytes)].filter(Boolean).join(" · ") || undefined}
           icon={<FileText size={20} color={c.muted} />}
-          onPress={() => {
-            if (m.url) void Linking.openURL(m.url);
-            else toast.show("Materials open on the website for now. Viewing them in the app is coming in the next update.");
-          }}
+          onPress={() => router.push(`/material/${encodeURIComponent(m.id)}`)}
         />
       ))}
     </RowList>
