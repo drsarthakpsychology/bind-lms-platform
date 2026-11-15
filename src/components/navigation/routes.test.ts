@@ -140,7 +140,8 @@ describe("no link in the source points to a missing page", () => {
   });
 
   it("no link to an address that moved", () => {
-    const moved = /["'`]\/(?:games\/(?:daily|detective|scenarios|terms|coach|play|quizzes|revise)|learn(?:\/|["'`])|practice\/learn|study\/(?:activities|progress|coach|play|detective|scenarios|terms)["'`/?]|practice\/notes)/;
+    // "/learn" itself is the Learn hub again (new design); only the old /learn/... pages moved.
+    const moved = /["'`]\/(?:games\/(?:daily|detective|scenarios|terms|coach|play|quizzes|revise)|learn\/|practice\/learn|study\/(?:activities|progress|coach|play|detective|scenarios|terms)["'`/?]|practice\/notes)/;
     expect(FILES.filter(({ text }) => moved.test(text)).map(({ f }) => f)).toEqual([]);
   });
 });

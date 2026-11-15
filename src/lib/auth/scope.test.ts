@@ -12,3 +12,12 @@ describe("gamesAllowed (games actions and the duel route)", () => {
     expect(gamesAllowed(null)).toBe(false);
   });
 });
+
+import { lectureOnlyAllowed } from "./scope";
+describe("lectureOnlyAllowed and the Me tab", () => {
+  it("lets lecture-only accounts open Me but not the Learn or Practise hubs", () => {
+    expect(lectureOnlyAllowed("/me")).toBe(true);
+    expect(lectureOnlyAllowed("/practise")).toBe(false);
+    expect(lectureOnlyAllowed("/learn")).toBe(false);
+  });
+});

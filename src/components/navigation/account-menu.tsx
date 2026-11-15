@@ -45,10 +45,13 @@ export function AccountMenu({
   email,
   role,
   showSettings,
+  phone = true,
 }: {
   email: string | null;
   role: string;
   showSettings: boolean;
+  /** False in the new design: on phones the account lives on the Me tab. */
+  phone?: boolean;
 }) {
   const { resolvedTheme, setTheme } = useTheme();
   const isDark = resolvedTheme === "dark";
@@ -61,6 +64,7 @@ export function AccountMenu({
   return (
     <>
       {/* Phones: the account opens as a bottom sheet with big rows, not a small menu in the corner. */}
+      {phone ? (
       <button
         type="button"
         aria-label="Your account"
@@ -70,6 +74,7 @@ export function AccountMenu({
       >
         <Avatar email={email} />
       </button>
+      ) : null}
       <MobileBottomSheet open={sheet} onOpenChange={setSheet} title="Your account">
         <div className="flex items-center gap-3 pb-3">
           <Avatar email={email} />

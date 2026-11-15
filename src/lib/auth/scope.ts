@@ -31,6 +31,8 @@ export function lectureOnlyAllowed(pathname: string): boolean {
   if (pathname === "/journey") return true;
   if (pathname === "/notifications" || pathname.startsWith("/notifications/")) return true;
   if (pathname === "/achievements") return true;
+  // The Me tab (new design): account, help, journey and certificates links.
+  if (pathname === "/me") return true;
   return false;
 }
 

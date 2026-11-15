@@ -36,7 +36,10 @@ export function TopBar({
   isAdminView,
   unread = 0,
   inboxSlot,
+  v2 = false,
 }: {
+  /** New design (ui_v2), student side: phones show logo, search and bell only. */
+  v2?: boolean;
   unread?: number;
   /** Admin view: the Inbox icon + count (a server island), shown next to the bell. */
   inboxSlot?: React.ReactNode;
@@ -57,7 +60,8 @@ export function TopBar({
   return (
     <header
       className={cn(
-        "z-40 border-b-2 border-foreground bg-card md:sticky md:top-0",
+        "z-40 bg-card md:sticky md:top-0",
+        v2 && !isAdminView ? "border-b border-[var(--ds-hairline)]" : "border-b-2 border-foreground",
         // Lesson and material pages are focus pages: below laptop width their
         // own back bar replaces the masthead.
         innerPage && "hidden lg:block",
@@ -83,7 +87,7 @@ export function TopBar({
         >
           <span className="leading-none">
             <span className="block text-[1.35rem] font-black tracking-tight [font-stretch:125%]">VIBHA</span>
-            <span className="mt-[3px] block text-[0.56rem] font-pix uppercase tracking-[0.06em] text-muted-foreground">
+            <span className={cn("block text-muted-foreground", v2 && !isAdminView ? "type-caption" : "mt-[3px] text-[0.56rem] font-pix uppercase tracking-[0.06em]")}>
               {isAdminView ? "Admin" : "School of Psychology"}
             </span>
           </span>
@@ -93,11 +97,16 @@ export function TopBar({
         <button
           type="button"
           onClick={openSearch}
-          className="group/search mx-auto hidden h-11 w-full max-w-xl items-center gap-3 rounded-full border-2 border-foreground bg-background px-4 text-left text-sm text-muted-foreground outline-none transition-[box-shadow,transform] duration-fast ease-snappy hover:-translate-y-px hover:hard-shadow-sm focus-visible:ring-[3px] focus-visible:ring-ring/60 md:flex"
+          className={cn(
+            "group/search mx-auto hidden h-11 w-full max-w-xl items-center gap-3 rounded-full bg-background px-4 text-left text-sm text-muted-foreground outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60 md:flex",
+            v2 && !isAdminView
+              ? "border border-[var(--ds-card-line)] transition-colors duration-[var(--ds-state)] hover:border-foreground"
+              : "border-2 border-foreground transition-[box-shadow,transform] duration-fast ease-snappy hover:-translate-y-px hover:hard-shadow-sm",
+          )}
         >
           <Search className="size-4 shrink-0 text-foreground" aria-hidden />
           <span className="flex-1 truncate">Search lectures, topics, medicines…</span>
-          <kbd className="hidden rounded-md border-2 border-foreground bg-card px-1.5 font-mono text-[0.7rem] text-foreground lg:inline">
+          <kbd className={cn("hidden rounded-md bg-card px-1.5 font-mono text-foreground lg:inline", v2 && !isAdminView ? "border border-[var(--ds-card-line)] text-xs" : "border-2 border-foreground text-[0.7rem]")}>
             /
           </kbd>
         </button>
@@ -116,7 +125,7 @@ export function TopBar({
               </span>
             ) : null}
           </Link>
-          <AccountMenu email={email} role={role} showSettings={showSettings} />
+          <AccountMenu email={email} role={role} showSettings={showSettings} phone={!(v2 && !isAdminView)} />
         </div>
       </div>
     </header>

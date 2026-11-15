@@ -47,3 +47,25 @@ describe("pickContinue", () => {
     expect(pickContinue(base).href).toBe("/courses");
   });
 });
+
+import { pickUpNext } from "./next-step";
+describe("pickUpNext (new Home)", () => {
+  const lecture = { title: "Mood and affect", href: "/courses/c/lessons/l", week: 1, number: 2, kind: "lesson" as const, started: true };
+  const study = { kind: "read", label: "Read 0.1 The interview", href: "/study/m/s", module: "The interview", resumed: true };
+  const weakest = { title: "Statistics", href: "/prep/statistics" };
+  it("never repeats the hero and stops at three", () => {
+    const input = { lecture, study, weakest, dailyCase: true };
+    const hero = pickContinue(input);
+    expect(hero.kind).toBe("study");
+    const rows = pickUpNext(input, hero);
+    expect(rows.map((r) => r.kind)).toEqual(["lecture", "weak", "daily"]);
+  });
+  it("is empty when nothing else is open", () => {
+    const input = { lecture: null, study: null, weakest: null, dailyCase: false };
+    expect(pickUpNext(input, pickContinue(input))).toEqual([]);
+  });
+  it("skips a finished Study course", () => {
+    const input = { lecture, study: { ...study, kind: "done" }, weakest: null, dailyCase: false };
+    expect(pickUpNext(input, pickContinue(input))).toEqual([]);
+  });
+});

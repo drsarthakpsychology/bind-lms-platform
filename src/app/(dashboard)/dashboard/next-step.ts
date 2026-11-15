@@ -77,3 +77,29 @@ export function pickContinue(i: ContinueInput): ContinueStep {
   }
   return { kind: "lectures", eyebrow: "Lectures", title: "Your lectures", meta: "New ones appear here first.", href: "/courses", cta: "Open" };
 }
+
+/** One row of "Up next" on the new Home: a single tap, no badges. */
+export type UpNextRow = { kind: "lecture" | "study" | "weak" | "daily"; title: string; meta: string | null; href: string };
+
+/**
+ * Up next (new Home): at most three other useful things, never the one the
+ * hero already shows. Order: the next lecture, the next Study step, a weak
+ * topic to practise, today's case.
+ */
+export function pickUpNext(i: ContinueInput, hero: ContinueStep): UpNextRow[] {
+  const rows: UpNextRow[] = [];
+  const l = i.lecture;
+  if (l && hero.kind !== "lecture" && hero.kind !== "assignment") {
+    rows.push({ kind: "lecture", title: l.title, meta: l.kind === "assignment" ? `Week ${l.week} assignment` : `Week ${l.week}${l.number ? ` · Lecture ${l.number}` : ""}`, href: l.href });
+  }
+  if (i.study && i.study.kind !== "done" && hero.kind !== "study" && hero.kind !== "retest") {
+    rows.push({ kind: "study", title: i.study.label, meta: i.study.module, href: i.study.href });
+  }
+  if (i.weakest && hero.kind !== "weak") {
+    rows.push({ kind: "weak", title: i.weakest.title, meta: "Practise a weak topic", href: i.weakest.href });
+  }
+  if (i.dailyCase && hero.kind !== "daily") {
+    rows.push({ kind: "daily", title: "Case of the day", meta: "One new patient today", href: "/practice/daily?from=/dashboard" });
+  }
+  return rows.slice(0, 3);
+}

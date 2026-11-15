@@ -3,7 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { usePathname, useSearchParams } from "next/navigation";
-import { Home, Play, LayoutDashboard, Users, BookOpen, Inbox, Mail, Wrench, Pill, Stethoscope, Mic, NotebookPen, MessageSquare, Gauge, HeartPulse, ClipboardCheck, ClipboardList, Radar, IdCard, Languages, ToggleLeft, Target, Layers, Flag, ShieldCheck, FileCheck, ListFilter, Activity, Copyright, Sparkles, Sun, Gamepad2, Trophy, Route, MessageCircleQuestion, KeyRound, Award, BarChart3, type LucideIcon } from "lucide-react";
+import { Home, Play, LayoutDashboard, Users, BookOpen, Inbox, Mail, Wrench, Pill, Stethoscope, Mic, NotebookPen, MessageSquare, Gauge, HeartPulse, ClipboardCheck, ClipboardList, Radar, IdCard, Languages, ToggleLeft, Target, Layers, Flag, ShieldCheck, FileCheck, ListFilter, Activity, Copyright, Sparkles, Sun, Gamepad2, Trophy, Route, MessageCircleQuestion, KeyRound, Award, BarChart3, Bell, Settings, UserRound, type LucideIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { activeNavHref } from "./sections";
 
@@ -52,6 +52,9 @@ export const NAV_ICONS: Record<string, LucideIcon> = {
   key: KeyRound,
   award: Award,
   chart: BarChart3,
+  bell: Bell,
+  settings: Settings,
+  user: UserRound,
 };
 
 export type NavItem = {
@@ -80,10 +83,13 @@ export function NavItems({
   items,
   onNavigate,
   className,
+  quiet = false,
 }: {
   items: NavItem[];
   onNavigate?: () => void;
   className?: string;
+  /** New design (ui_v2): no borders or shadows; the current place gets a soft fill. */
+  quiet?: boolean;
 }) {
   const pathname = usePathname() ?? "";
   const from = useSearchParams()?.get("from");
@@ -105,7 +111,7 @@ export function NavItems({
         return (
           <React.Fragment key={item.href}>
             {showHeader ? (
-              <p className="nav-section mt-4 mb-1 px-3 text-eyebrow text-muted-foreground">
+              <p className={cn("nav-section mt-4 mb-1 px-3", quiet ? "type-caption text-muted-foreground" : "text-eyebrow text-muted-foreground")}>
                 {item.section}
               </p>
             ) : null}
@@ -118,13 +124,17 @@ export function NavItems({
               title={item.label}
               className={cn(
                 "nav-link group/nav flex min-h-11 cursor-pointer items-center gap-3 rounded-xl border-2 px-3 py-2 text-sm font-bold transition-[color,background-color,box-shadow,transform] duration-fast ease-snappy",
-                active
-                  ? "border-foreground bg-brand text-brand-foreground hard-shadow-xs"
-                  : "border-transparent text-foreground/80 hover:border-foreground hover:bg-card hover:text-foreground hover:hard-shadow-xs active:translate-y-px active:shadow-none"
+                quiet
+                  ? active
+                    ? "border-transparent bg-[var(--ds-tint)] text-foreground [&_.nav-icon]:text-link"
+                    : "border-transparent font-semibold text-foreground/75 hover:bg-[var(--ds-tint)] hover:text-foreground active:translate-y-px"
+                  : active
+                    ? "border-foreground bg-brand text-brand-foreground hard-shadow-xs"
+                    : "border-transparent text-foreground/80 hover:border-foreground hover:bg-card hover:text-foreground hover:hard-shadow-xs active:translate-y-px active:shadow-none"
               )}
             >
               <Icon
-                className="nav-icon size-5 shrink-0 transition-transform duration-fast ease-snappy motion-safe:group-hover/nav:-rotate-6 motion-safe:group-hover/nav:scale-110"
+                className={cn("nav-icon size-5 shrink-0 transition-transform duration-fast ease-snappy", !quiet && "motion-safe:group-hover/nav:-rotate-6 motion-safe:group-hover/nav:scale-110")}
                 aria-hidden
               />
               {/* The slim rail shows the short word (globals.css, by sidebar width). */}

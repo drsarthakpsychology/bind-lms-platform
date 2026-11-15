@@ -10,6 +10,8 @@ import { blockedBy } from "@/lib/access/features";
 import { isImmersiveSessionPath } from "./sidebar-gate";
 import { openNavDrawer } from "./sidebar-state";
 import { activeNavHref, isRunPath } from "./sections";
+import { NAV_ICONS } from "./nav-items";
+import { v2Tabs } from "./v2-config";
 
 interface Tab {
   href: string;
@@ -69,7 +71,10 @@ export function BottomTabBar({
   scope = "full",
   showStudy = false,
   blocked = [],
+  v2 = false,
 }: {
+  /** New design (ui_v2): five tabs (Home, Learn, Practise, Library, Me), no More drawer. */
+  v2?: boolean;
   mode?: "student" | "admin";
   scope?: "full" | "lectures_only";
   showStudy?: boolean;
@@ -80,7 +85,12 @@ export function BottomTabBar({
   const reduce = useReducedMotion();
   const base =
     mode === "admin" ? ADMIN_TABS : scope === "lectures_only" ? LECTURE_ONLY_TABS : showStudy ? STUDENT_TABS : STUDENT_TABS_NO_STUDY;
-  const tabs = mode === "admin" ? base : base.filter((t) => !blockedBy(t.href, blocked));
+  const v2Student = v2 && mode === "student";
+  const tabs: Tab[] = v2Student
+    ? v2Tabs({ scope, showStudy, blocked }).map((t) => ({ href: t.href, label: t.label, icon: NAV_ICONS[t.icon] ?? Home, exact: t.exact, match: t.match }))
+    : mode === "admin"
+      ? base
+      : base.filter((t) => !blockedBy(t.href, blocked));
 
   // During a run (answering, reading one text, playing) the page's own Back
   // row is the only navigation (navigation/sections.ts).
@@ -95,7 +105,7 @@ export function BottomTabBar({
 
   return (
     <nav
-      className="bottom-tabs fixed inset-x-0 bottom-0 z-40 border-t-2 border-foreground bg-card md:hidden"
+      className={cn("bottom-tabs fixed inset-x-0 bottom-0 z-40 bg-card md:hidden", v2Student ? "border-t border-[var(--ds-hairline)]" : "border-t-2 border-foreground")}
       style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
       aria-label="Primary tabs"
     >
@@ -110,27 +120,29 @@ export function BottomTabBar({
               aria-current={active ? "page" : undefined}
               className={cn(cell, active ? "text-foreground" : "text-muted-foreground")}
             >
-              <span className={cn(pill, active ? "border-foreground" : "border-transparent")}>
+              <span className={cn(pill, active && !v2Student ? "border-foreground" : "border-transparent")}>
                 {active && (
                   <motion.span
                     layoutId="bottom-tab-active"
                     aria-hidden
-                    className="absolute inset-0 rounded-full bg-primary"
+                    className={cn("absolute inset-0 rounded-full", v2Student ? "bg-brand" : "bg-primary")}
                     transition={reduce ? { duration: 0 } : { type: "spring", stiffness: 420, damping: 34 }}
                   />
                 )}
-                <Icon className={cn("relative z-10 size-5", active && "text-primary-foreground")} aria-hidden />
+                <Icon className={cn("relative z-10 size-5", active && (v2Student ? "text-brand-foreground" : "text-primary-foreground"))} aria-hidden />
               </span>
               <span className="max-w-full whitespace-nowrap">{t.label}</span>
             </Link>
           );
         })}
+        {v2Student ? null : (
         <button type="button" onClick={openNavDrawer} className={cn(cell, "text-muted-foreground")}>
           <span className={cn(pill, "border-transparent")}>
             <Menu className="relative z-10 size-5" aria-hidden />
           </span>
           <span className="whitespace-nowrap">More</span>
         </button>
+        )}
       </div>
     </nav>
   );

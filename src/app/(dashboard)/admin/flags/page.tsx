@@ -33,6 +33,7 @@ const LABELS: Record<string, string> = {
   supervision: "Supervision",
   two_minute_clinic: "Two-Minute Clinic",
   weak_spots: "Weak Spots",
+  ui_v2: "New design",
 };
 
 const EXTRA: Record<string, string> = {
@@ -44,9 +45,11 @@ const EXTRA: Record<string, string> = {
   supervision: "Students log supervised hours; you sign them off.",
   skills_passport: "Competencies with evidence, as a PDF.",
   weak_spots: "Where each student keeps slipping, from their answers.",
+  ui_v2: "The new look. Hidden = nobody. Live = admins only (to check it first). Unlock = everyone.",
 };
 
 const GROUPS: { title: string; keys: string[] }[] = [
+  { title: "Design", keys: ["ui_v2"] },
   { title: "Learning", keys: ["learn", "lab"] },
   { title: "Practice tools", keys: PRACTICE_TOOLS.map((t) => t.flag as string) },
   { title: "Reflection & records", keys: ["journal", "checkin", "supervision", "skills_passport", "weak_spots"] },

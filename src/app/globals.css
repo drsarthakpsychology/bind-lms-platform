@@ -1198,3 +1198,155 @@ html[data-cvd="on"] .bg-destructive {
   --sk-red: #ff7b6e;
   --sk-wash: #1d2547;
 }
+
+/* =============================================================================
+   DESIGN SYSTEM V2 (2026-11, docs/design/DESIGN_SYSTEM_2026_11.md)
+   =============================================================================
+   Additive: new names only, so screens on the old system do not change.
+   Used by src/components/ds/* and the screens behind the ui_v2 switch.
+   One clear focus per screen; whitespace and type do the grouping, not boxes.
+
+   Type (phone / from 768px; size/line-height, weight):
+     display  34/38  48/52  800  tracking -2%
+     h1       28/34  36/42  750  (one per screen)
+     h2       22/28  26/32  700  tracking -1%
+     h3       18/24  20/26  650
+     body     16/25  17/27  420
+     reading  17/28  18/30  420  max 65ch / 68ch
+     small    14/20         500
+     caption  12/16         600  tracking +2% (never smaller)
+   Spacing steps only: 4 8 12 16 24 32 48 64 (--ds-1 .. --ds-8).
+   Surfaces: plain (default) · rows (1px hairline) · tint (soft fill, no
+   border) · card (1.5px line, 12px corners, no shadow) · hero (lime, bold
+   border, hard shadow, one per screen).
+   ============================================================================= */
+:root {
+  --ds-1: 0.25rem;
+  --ds-2: 0.5rem;
+  --ds-3: 0.75rem;
+  --ds-4: 1rem;
+  --ds-5: 1.5rem;
+  --ds-6: 2rem;
+  --ds-7: 3rem;
+  --ds-8: 4rem;
+  /* Phone side margin and the gap between sections. */
+  --ds-gutter: 1.25rem;
+  --ds-section: 2rem;
+  /* Hairline between rows: ink at 12%. Tint: ink at 4% on paper. */
+  --ds-hairline: color-mix(in oklab, var(--foreground) 12%, transparent);
+  --ds-tint: color-mix(in oklab, var(--foreground) 4%, var(--card));
+  --ds-card-line: color-mix(in oklab, var(--foreground) 22%, transparent);
+  --ds-radius: 0.75rem;
+  /* Motion: press, hover/state, sheet in/out, page change, progress fill. */
+  --ds-press: 120ms;
+  --ds-state: 180ms;
+  --ds-sheet-in: 300ms;
+  --ds-sheet-out: 200ms;
+  --ds-page: 200ms;
+  --ds-fill: 600ms;
+  --ds-ease: cubic-bezier(0.2, 0, 0, 1);
+  --ds-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+.dark {
+  --ds-hairline: color-mix(in oklab, var(--foreground) 14%, transparent);
+  --ds-tint: color-mix(in oklab, var(--foreground) 6%, var(--background));
+  --ds-card-line: color-mix(in oklab, var(--foreground) 24%, transparent);
+}
+@media (min-width: 768px) {
+  :root {
+    --ds-gutter: 2rem;
+    --ds-section: 3rem;
+  }
+}
+
+@utility type-display {
+  font-size: 2.125rem;
+  line-height: 2.375rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+  @media (min-width: 768px) {
+    font-size: 3rem;
+    line-height: 3.25rem;
+  }
+}
+@utility type-h1 {
+  font-size: 1.75rem;
+  line-height: 2.125rem;
+  font-weight: 750;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+  @media (min-width: 768px) {
+    font-size: 2.25rem;
+    line-height: 2.625rem;
+  }
+}
+@utility type-h2 {
+  font-size: 1.375rem;
+  line-height: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+  @media (min-width: 768px) {
+    font-size: 1.625rem;
+    line-height: 2rem;
+  }
+}
+@utility type-h3 {
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  font-weight: 650;
+  @media (min-width: 768px) {
+    font-size: 1.25rem;
+    line-height: 1.625rem;
+  }
+}
+@utility type-body {
+  font-size: 1rem;
+  line-height: 1.5625rem;
+  font-weight: 420;
+  @media (min-width: 768px) {
+    font-size: 1.0625rem;
+    line-height: 1.6875rem;
+  }
+}
+@utility type-reading {
+  font-size: 1.0625rem;
+  line-height: 1.75rem;
+  font-weight: 420;
+  max-width: 65ch;
+  @media (min-width: 768px) {
+    font-size: 1.125rem;
+    line-height: 1.875rem;
+    max-width: 68ch;
+  }
+}
+@utility type-small {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 500;
+}
+@utility type-caption {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+/* Numbers that line up (scores, counts, times). */
+@utility type-num {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Page-change cross-fade for v2 screens (PageFrame). */
+@keyframes ds-page-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.ds-page {
+  animation: ds-page-in var(--ds-page) var(--ds-ease) both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .ds-page {
+    animation: none;
+  }
+}
