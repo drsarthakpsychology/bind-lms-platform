@@ -38,3 +38,32 @@ export function splitTell(med: Pick<Med, "tell">): { take: string[]; warn: strin
   for (const t of med.tell) (isStopIfLine(t) ? warn : isStoppingLine(t) ? stopping : take).push(t);
   return { take, warn, stopping };
 }
+
+/** The heading of each section, as the medicine page shows it. */
+export const SECTION_NAMES: Record<SectionId, string> = {
+  uses: "Used for",
+  doses: "Doses",
+  "side-effects": "Side effects",
+  monitoring: "What to check",
+  interactions: "Interactions",
+  warnings: "Serious: act the same day",
+  groups: "Special groups",
+  stopping: "Switching and stopping",
+  "how-it-works": "How it works",
+};
+
+/** The dose note under the dose chips. */
+export const DOSE_NOTE = "Typical adult doses, for learning. The prescriber chooses the dose for each patient; always check the current label and local guidance.";
+
+/** The washout line added to "Switching and stopping" when the half-life is known. */
+export function washoutLine(hl: string): string {
+  return `Half-life ${hl}. After the last dose, levels take about 4 to 5 half-lives to wash out.`;
+}
+
+/** The sections one medicine's page shows, in order (empty ones are left out). Shared by the website page and the app. */
+export function shownSections(med: Pick<Med, "interactions" | "tell">, opts: { hasMechanism: boolean; visuals: number; halfLife: boolean }): SectionId[] {
+  const tell = splitTell(med);
+  const hasHow = opts.hasMechanism || opts.visuals > 0;
+  const hasStopping = Boolean(tell.stopping.length || opts.halfLife);
+  return ["uses", "doses", "side-effects", "monitoring", ...(med.interactions.length ? (["interactions"] as const) : []), "warnings", "groups", ...(hasStopping ? (["stopping"] as const) : []), ...(hasHow ? (["how-it-works"] as const) : [])];
+}

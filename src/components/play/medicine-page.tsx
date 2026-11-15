@@ -6,7 +6,7 @@ import { ArrowLeft, ArrowRight, Check, ListTree } from "lucide-react";
 import type { Med } from "@/lib/meds/types";
 import type { Mechanism } from "@/lib/meds/mechanisms";
 import type { MedVisual } from "@/lib/meds/visuals";
-import { HOW_IT_WORKS, splitTell, type SectionId } from "@/lib/meds/sections";
+import { DOSE_NOTE, HOW_IT_WORKS, SECTION_NAMES, shownSections, splitTell, washoutLine, type SectionId } from "@/lib/meds/sections";
 import { MedicineSketches } from "@/components/meds/medicine-visuals";
 import { useMedView } from "@/components/meds/medicine-view";
 import { MobileBottomSheet } from "@/components/mobile/mobile-bottom-sheet";
@@ -21,17 +21,7 @@ import { cn } from "@/lib/utils";
  * bottom sheet on phones).
  */
 
-const NAMES: Record<SectionId, string> = {
-  uses: "Used for",
-  doses: "Doses",
-  "side-effects": "Side effects",
-  monitoring: "What to check",
-  interactions: "Interactions",
-  warnings: "Serious: act the same day",
-  groups: "Special groups",
-  stopping: "Switching and stopping",
-  "how-it-works": "How it works",
-};
+const NAMES = SECTION_NAMES;
 
 const bullets = "list-disc space-y-1.5 pl-5 type-body marker:text-muted-foreground";
 
@@ -52,10 +42,9 @@ export function MedicinePage({ med, related, mech, visuals = [], half = null, st
   const [index, setIndex] = React.useState(false);
   const dose = med.doses[i];
   const tell = splitTell(med);
-  const hasHow = Boolean(mech) || visuals.length > 0;
-  const hasStopping = Boolean(tell.stopping.length || half);
-
-  const shown: SectionId[] = ["uses", "doses", "side-effects", "monitoring", ...(med.interactions.length ? (["interactions"] as const) : []), "warnings", "groups", ...(hasStopping ? (["stopping"] as const) : []), ...(hasHow ? (["how-it-works"] as const) : [])];
+  const shown: SectionId[] = shownSections(med, { hasMechanism: Boolean(mech), visuals: visuals.length, halfLife: Boolean(half) });
+  const hasHow = shown.includes(HOW_IT_WORKS);
+  const hasStopping = shown.includes("stopping");
 
   const viewSwitch = (
     <div className="inline-grid shrink-0 grid-cols-2 rounded-full bg-[var(--ds-tint)] p-1" role="radiogroup" aria-label="How much detail">
@@ -197,7 +186,7 @@ export function MedicinePage({ med, related, mech, visuals = [], half = null, st
               <Fact name="Indian brands">{med.brands.join(", ")}</Fact>
             </dl>
             <p className="max-w-[68ch] type-caption text-muted-foreground">
-              Typical adult doses, for learning. The prescriber chooses the dose for each patient; always check the current label and local guidance.
+              {DOSE_NOTE}
             </p>
           </Part>
 
@@ -237,7 +226,7 @@ export function MedicinePage({ med, related, mech, visuals = [], half = null, st
             <Part id="stopping">
               <ul className={bullets}>
                 {tell.stopping.map((u) => <li key={u}>{u}</li>)}
-                {half ? <li>Half-life {half.hl}. After the last dose, levels take about 4 to 5 half-lives to wash out.</li> : null}
+                {half ? <li>{washoutLine(half.hl)}</li> : null}
               </ul>
             </Part>
           ) : null}
