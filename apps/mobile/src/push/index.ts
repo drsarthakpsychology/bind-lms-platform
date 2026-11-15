@@ -19,21 +19,38 @@ import { router } from "expo-router";
  */
 
 if (Platform.OS !== "web") {
-  Notifications.setNotificationHandler({
-    handleNotification: async () => ({ shouldPlaySound: false, shouldSetBadge: false, shouldShowBanner: true, shouldShowList: true }),
-  });
+  try {
+    Notifications.setNotificationHandler({
+      handleNotification: async () => ({ shouldPlaySound: false, shouldSetBadge: false, shouldShowBanner: true, shouldShowList: true }),
+    });
+  } catch {
+    /* Push is optional: if the native part is missing, notifications are simply off. */
+  }
 }
 
 export type PushStatus = "granted" | "denied" | "undetermined" | "unavailable";
 
 export async function pushStatus(): Promise<PushStatus> {
   if (Platform.OS === "web" || !Device.isDevice) return "unavailable";
-  const p = await Notifications.getPermissionsAsync();
-  return p.granted ? "granted" : p.canAskAgain ? "undetermined" : "denied";
+  try {
+    const p = await Notifications.getPermissionsAsync();
+    return p.granted ? "granted" : p.canAskAgain ? "undetermined" : "denied";
+  } catch {
+    return "unavailable";
+  }
 }
 
 /** Ask (if needed), get the token, and give it to the server. Returns what happened. */
 export async function enablePush(): Promise<PushStatus> {
+  try {
+    return await enablePushInner();
+  } catch {
+    // Any failure (no Firebase set up on Android: "Default FirebaseApp is not initialized", no project id, a native error) only turns push off.
+    return "unavailable";
+  }
+}
+
+async function enablePushInner(): Promise<PushStatus> {
   if (Platform.OS === "web" || !Device.isDevice) return "unavailable";
   if (Platform.OS === "android") {
     // eslint-disable-next-line import/namespace -- re-exported with export *
@@ -60,13 +77,19 @@ export async function disablePush(): Promise<void> {
 /** A daily study reminder made on the phone itself. `time` is "HH:MM". */
 export async function setStudyReminder(on: boolean, time: string): Promise<void> {
   if (Platform.OS === "web") return;
-  await Notifications.cancelAllScheduledNotificationsAsync().catch(() => undefined);
+  try {
+    await Notifications.cancelAllScheduledNotificationsAsync().catch(() => undefined);
+  } catch {
+    return;
+  }
   if (!on) return;
-  const [h = "19", m = "0"] = time.split(":");
-  await Notifications.scheduleNotificationAsync({
+  const [h = "19", m = "0"] = (time || "19:00").split(":");
+  await Promise.resolve()
+    .then(() => Notifications.scheduleNotificationAsync({
     content: { title: "Time to study", body: "Ten minutes today keeps your streak going.", data: { target: { screen: "home", web: "/dashboard" } } },
-    trigger: { type: Notifications.SchedulableTriggerInputTypes.DAILY, hour: Number(h), minute: Number(m), channelId: "default" },
-  }).catch(() => undefined);
+    trigger: { type: Notifications.SchedulableTriggerInputTypes.DAILY, hour: Number(h) || 19, minute: Number(m) || 0, channelId: "default" },
+  }))
+    .catch(() => undefined);
 }
 
 /** Where a tapped notification leads. */
@@ -88,17 +111,32 @@ export function usePushRouting(): void {
   React.useEffect(() => {
     if (Platform.OS === "web") return;
     const open = (data: unknown) => {
-      const href = hrefFromPush(data);
-      if (session.store.get().phase === "ready") router.push(href);
-      else pending.current = href;
+      try {
+        const href = hrefFromPush(data);
+        if (session.store.get().phase === "ready") router.push(href);
+        else pending.current = href;
+      } catch {
+        /* a tap that cannot be opened is ignored */
+      }
     };
-    void Notifications.getLastNotificationResponseAsync()
-      .then((r) => {
-        if (r) open(r.notification.request.content.data);
-      })
-      .catch(() => undefined);
-    const sub = Notifications.addNotificationResponseReceivedListener((r) => open(r.notification.request.content.data));
-    return () => sub.remove();
+    let sub: { remove: () => void } | null = null;
+    try {
+      void Notifications.getLastNotificationResponseAsync()
+        .then((r) => {
+          if (r) open(r?.notification?.request?.content?.data);
+        })
+        .catch(() => undefined);
+      sub = Notifications.addNotificationResponseReceivedListener((r) => open(r?.notification?.request?.content?.data));
+    } catch {
+      /* push is optional */
+    }
+    return () => {
+      try {
+        sub?.remove();
+      } catch {
+        /* ignore */
+      }
+    };
   }, []);
 
   // A tap that arrived while the app was locked opens once the PIN is in.
@@ -106,7 +144,11 @@ export function usePushRouting(): void {
     if (phase === "ready" && pending.current) {
       const href = pending.current;
       pending.current = null;
-      router.push(href);
+      try {
+        router.push(href);
+      } catch {
+        /* ignore */
+      }
     }
   }, [phase]);
 }

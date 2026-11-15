@@ -36,7 +36,7 @@ export function Button({ label, onPress, kind = "primary", icon, disabled, busy,
   const down = useSharedValue(0);
   const blocked = disabled || busy;
   const moved = useAnimatedStyle(() => ({ transform: [{ translateX: down.value * SHADOW }, { translateY: down.value * SHADOW }] }));
-  const faded = useAnimatedStyle(() => ({ opacity: 1 - down.value * 0.35 }));
+  const faded = useAnimatedStyle(() => ({ opacity: 1 - down.value * 0.35, transform: [{ scale: 1 - down.value * 0.03 }] }));
   const pressIn = () => {
     down.value = reduce ? 1 : withTiming(1, { duration: motion.press, easing: ease });
   };

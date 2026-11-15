@@ -51,8 +51,15 @@ export function SetPinScreen() {
       return reject("Those two did not match. Start again.");
     }
     setBusy(true);
-    haptic.success();
-    void session.choosePin(pin);
+    session
+      .choosePin(pin)
+      .then(() => haptic.success())
+      .catch(() => {
+        // The phone's keystore refused the PIN: say so and let them try again, never stop here.
+        setBusy(false);
+        setFirst(null);
+        reject("The PIN could not be saved on this phone. Try again.");
+      });
   };
 
   return (
@@ -78,12 +85,18 @@ export function LockScreen() {
   const [shake, setShake] = React.useState(0);
   const [busy, setBusy] = React.useState(false);
   const [wrong, setWrong] = React.useState(false);
-  const first = me?.name?.split(" ")[0];
+  const first = typeof me?.name === "string" ? me.name.split(" ")[0] : undefined;
 
   const complete = async (pin: string) => {
     setBusy(true);
-    const ok = await session.unlock(pin);
-    setBusy(false);
+    let ok = false;
+    try {
+      ok = await session.unlock(pin);
+    } catch {
+      ok = false;
+    } finally {
+      setBusy(false);
+    }
     if (ok) {
       haptic.success();
       return;
@@ -112,7 +125,7 @@ export function LockScreen() {
 /** The app is too old for the server: nothing works until it is updated. */
 export function UpdateScreen({ storeUrl }: { storeUrl: string | null }) {
   const cfg = useConfig();
-  const url = storeUrl ?? cfg.data?.storeUrl.android ?? "https://play.google.com/store/apps/details?id=com.vibhapsychology.app";
+  const url = storeUrl ?? cfg.data?.storeUrl?.android ?? "https://play.google.com/store/apps/details?id=com.vibhapsychology.app";
   return (
     <Gate testID="update" footer={<Button label="Update the app" onPress={() => void Linking.openURL(url)} testID="update-button" />}>
       <EmptyState mood="calm" title="Time for an update" body="This version of the app is too old to carry on. The update takes a minute and your progress is safe." />

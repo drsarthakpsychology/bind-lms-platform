@@ -10,14 +10,14 @@ const WEB_TOOL: Record<string, string> = { scenarios: "wwyd", terms: "say-it", m
 /** The first tab for this account. */
 export function homeHref(me: Me | null): string {
   if (me?.role === "admin" || me?.role === "view_admin") return "/admin/home";
-  if (me?.access.lecturesOnly || me?.scope === "lectures_only") return "/lo/home";
+  if (me?.access?.lecturesOnly || me?.scope === "lectures_only") return "/lo/home";
   return "/home";
 }
 
 /** Which tab group this account belongs in. */
 export function groupFor(me: Me | null): "(student)" | "(lecture)" | "(admin)" {
   if (me?.role === "admin" || me?.role === "view_admin") return "(admin)";
-  if (me?.access.lecturesOnly || me?.scope === "lectures_only") return "(lecture)";
+  if (me?.access?.lecturesOnly || me?.scope === "lectures_only") return "(lecture)";
   return "(student)";
 }
 

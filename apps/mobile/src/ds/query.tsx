@@ -2,6 +2,7 @@ import type { UseQueryResult } from "@tanstack/react-query";
 import * as React from "react";
 
 import { ApiFailure, isClosed } from "@/api/errors";
+import { SkeletonIn } from "@/motion";
 import { EmptyState, LoadError, RowsSkeleton } from "./parts";
 
 /**
@@ -16,5 +17,6 @@ export function Loaded<T>({ q, skeleton, what, soon, children }: { q: UseQueryRe
     if (soon && q.error instanceof ApiFailure && q.error.code === "not_found") return <EmptyState mood="sleepy" title="Coming in the next update" body="This part is ready on the website and arrives in the app soon." testID="soon" />;
     return <LoadError what={what} onRetry={() => void q.refetch()} />;
   }
-  return <>{skeleton ?? <RowsSkeleton />}</>;
+  // The skeleton waits 120ms before showing, so a quick load never flashes grey.
+  return skeleton ? <SkeletonIn>{skeleton}</SkeletonIn> : <RowsSkeleton />;
 }
