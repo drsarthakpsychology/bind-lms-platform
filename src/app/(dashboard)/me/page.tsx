@@ -6,7 +6,6 @@ import { LEGAL } from "@/lib/legal-constants";
 import { ME_GROUPS, visibleGroups } from "@/components/navigation/v2-config";
 import { PageFrame, Row, RowList, Section } from "@/components/ds";
 import { HubGroups } from "@/components/ds/hub";
-import { MiddleTruncate } from "@/components/ui/middle-truncate";
 import { MeAccountRows, MeDisplayRows } from "./me-controls";
 
 export const metadata: Metadata = { title: "Me" };
@@ -34,7 +33,7 @@ export default async function MePage() {
         </span>
         <div className="min-w-0 flex-1">
           <h1 className="type-h2 [overflow-wrap:anywhere]">{name ?? "Me"}</h1>
-          {profile.email ? <MiddleTruncate text={profile.email} className="type-small text-muted-foreground" /> : null}
+          {profile.email ? <p className="type-small text-muted-foreground [overflow-wrap:anywhere]">{profile.email}</p> : null}
           <p className="type-caption text-muted-foreground">
             {roleWord}
             {profile.roll_number ? <> · <span className="type-num">{profile.roll_number}</span></> : null}
