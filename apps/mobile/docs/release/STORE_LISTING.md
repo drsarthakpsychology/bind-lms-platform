@@ -69,15 +69,15 @@ No ads. No payments in the app.
 Questions? Write to drsarthakpsychology@gmail.com or call +91 78770 49920.
 ```
 
-## Graphics (files are in `store-assets/` and `screenshots/`)
+## Graphics (files are in `store-assets/` and `phone-screenshots/`)
 
 | Play Console box | File |
 |---|---|
 | App icon (512 x 512) | `store-assets/play-icon-512.png` |
 | Feature graphic (1024 x 500) | `store-assets/feature-graphic-1024x500.png` |
-| Phone screenshots (2 to 8) | every file in `screenshots/`, in number order |
+| Phone screenshots (2 to 8) | every file in `phone-screenshots/`, in number order (1080 x 1920) |
 
-Remake them with `python3 apps/mobile/scripts/make-assets.py && node apps/mobile/scripts/make-assets.mjs` (icon and feature graphic). The screenshots come from the app's web build with sample data; they show sample names, not real students.
+Remake them with `python3 apps/mobile/scripts/make-assets.py && node apps/mobile/scripts/make-assets.mjs` (icon and feature graphic). The screenshots come from the app's web build with sample data; they show sample names, not real students (`node apps/mobile/scripts/store-screenshots.mjs`). Add a Welcome screenshot once the new Welcome screen is merged.
 
 ## Release notes for the first release (max 500)
 
