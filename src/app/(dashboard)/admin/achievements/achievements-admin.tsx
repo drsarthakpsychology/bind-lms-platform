@@ -48,12 +48,15 @@ export function AchievementsAdmin({
   total,
   courses,
   modules,
+  v2 = false,
 }: {
   achievements: AchievementRow[];
   credentials: CredentialRow[];
   total: number;
   courses: Course[];
   modules: Facet[];
+  /** Admin v2: the page draws the title; tabs are underlined. */
+  v2?: boolean;
 }) {
   const [tab, setTab] = React.useState<"achievements" | "credentials">("achievements");
   const [msg, setMsg] = React.useState<string | null>(null);
@@ -152,19 +155,39 @@ export function AchievementsAdmin({
   }
 
   return (
-    <div className="mx-auto w-full max-w-5xl space-y-6">
-      <header>
-        <p className="text-eyebrow text-link">Super Admin only</p>
-        <h1 className="text-h1">Achievements &amp; Credentials</h1>
-      </header>
+    <div className={v2 ? "flex min-w-0 flex-col gap-6" : "mx-auto w-full max-w-5xl space-y-6"}>
+      {v2 ? null : (
+        <header>
+          <p className="text-eyebrow text-link">Super Admin only</p>
+          <h1 className="text-h1">Achievements &amp; Credentials</h1>
+        </header>
+      )}
 
-      <div className="flex gap-2" role="tablist">
-        {(["achievements", "credentials"] as const).map((t) => (
-          <button key={t} type="button" onClick={() => setTab(t)} className={cn("min-h-10 rounded-full border-2 border-foreground px-4 text-sm font-bold", tab === t ? "bg-foreground text-background" : "bg-card")}>
-            {t === "achievements" ? "Achievements" : "Credentials"}
-          </button>
-        ))}
-      </div>
+      {v2 ? (
+        <div className="flex gap-1 border-b border-[var(--ds-hairline)]" role="tablist">
+          {(["achievements", "credentials"] as const).map((t) => (
+            <button
+              key={t}
+              type="button"
+              role="tab"
+              aria-selected={tab === t}
+              data-keep
+              onClick={() => setTab(t)}
+              className={cn("-mb-px inline-flex h-11 items-center border-b-2 px-3 type-small font-semibold outline-none focus-visible:ring-2 focus-visible:ring-ring", tab === t ? "border-foreground text-foreground" : "border-transparent text-muted-foreground hover:text-foreground")}
+            >
+              {t === "achievements" ? "Badge types" : "Certificates given"}
+            </button>
+          ))}
+        </div>
+      ) : (
+        <div className="flex gap-2" role="tablist">
+          {(["achievements", "credentials"] as const).map((t) => (
+            <button key={t} type="button" onClick={() => setTab(t)} className={cn("min-h-10 rounded-full border-2 border-foreground px-4 text-sm font-bold", tab === t ? "bg-foreground text-background" : "bg-card")}>
+              {t === "achievements" ? "Achievements" : "Credentials"}
+            </button>
+          ))}
+        </div>
+      )}
 
       {msg && <p className="text-sm font-semibold">{msg}</p>}
 
@@ -187,15 +210,15 @@ export function AchievementsAdmin({
             </button>
           </div>
 
-          <ul className="space-y-2">
+          <ul className={v2 ? "flex min-w-0 flex-col divide-y divide-[var(--ds-hairline)] border-y border-[var(--ds-hairline)]" : "space-y-2"}>
             {achievements.map((a) => (
-              <li key={a.id} className="flex flex-wrap items-center gap-3 rounded-2xl border-2 border-foreground bg-card p-3">
+              <li key={a.id} className={v2 ? "flex min-w-0 flex-wrap items-center gap-x-3 gap-y-2 py-3" : "flex flex-wrap items-center gap-3 rounded-2xl border-2 border-foreground bg-card p-3"}>
                 <span className={cn("grid size-10 place-items-center rounded-xl border-2 text-lg", badgeTone(a.tone))} aria-hidden>
                   {a.icon ?? "🎓"}
                 </span>
-                <div className="min-w-0 flex-1">
-                  <p className="font-bold leading-tight">{a.title}</p>
-                  <p className="text-xs text-muted-foreground">
+                <div className={v2 ? "min-w-0 flex-1 basis-48" : "min-w-0 flex-1"}>
+                  <p className={v2 ? "type-body font-semibold [overflow-wrap:anywhere]" : "font-bold leading-tight"}>{a.title}</p>
+                  <p className={v2 ? "type-small text-muted-foreground [overflow-wrap:anywhere]" : "text-xs text-muted-foreground"}>
                     {a.type} · {KIND_LABEL[(a.requirements as AchievementRequirement).kind ?? "module_complete"]} · {a.issued_count} issued
                   </p>
                 </div>

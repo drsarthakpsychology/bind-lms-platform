@@ -6,6 +6,9 @@ import { requireAdmin, isSuperAdmin } from "@/lib/auth/guards";
 import { createAdminClient } from "@/lib/supabase/server";
 import { loadRoster } from "@/lib/people/roster-data";
 import { PageHeader } from "@/components/design-system/page-header";
+import { readFlags } from "@/lib/flags";
+import { uiV2For } from "@/lib/ui/v2";
+import { AdminPage, ViewTabs } from "../_v2/kit";
 import { Badge } from "@/components/ui/badge";
 import { selectOwnedCredentials } from "@/lib/achievements/owned";
 import { AnyoneCertificateForm, CredentialActions, IssueCertificateForm } from "./credential-ui";
@@ -54,9 +57,19 @@ export default async function CredentialsPage({ searchParams }: { searchParams: 
   const one = <T,>(x: T | T[] | null | undefined): T | null => (Array.isArray(x) ? (x[0] ?? null) : (x ?? null));
   const signatures = (sigs.error ? [] : (sigs.data ?? [])).map((s) => ({ id: s.id as string, label: (s.signature_label as string | null) || `Signature from "${s.title}"` }));
 
-  return (
-    <div className="space-y-6">
-      <PageHeader title="Find & issue" description={anyone ? "Give a certificate to anyone, for example to thank a volunteer. No account needed." : "Search a student by roll number, name or email to see and manage everything they've earned, or design a certificate for them."} />
+  const v2 = uiV2For(await readFlags(), me.role);
+  const content = (
+    <>
+      {v2 ? (
+        <ViewTabs
+          label="Who is it for?"
+          current={anyone ? "anyone" : "student"}
+          tabs={[
+            { id: "student", label: "For a student", href: "/admin/credentials" },
+            { id: "anyone", label: "For anyone", href: "/admin/credentials?mode=anyone" },
+          ]}
+        />
+      ) : (
       <nav aria-label="Who is it for?" className="grid grid-cols-2 gap-2 sm:inline-grid sm:grid-cols-[auto_auto]">
         {[
           { href: "/admin/credentials", label: "For a student", on: !anyone, Icon: UserRound },
@@ -73,6 +86,7 @@ export default async function CredentialsPage({ searchParams }: { searchParams: 
           </Link>
         ))}
       </nav>
+      )}
 
       {anyone ? (
         <>
@@ -111,6 +125,7 @@ export default async function CredentialsPage({ searchParams }: { searchParams: 
       ) : (
       <>
       <FilterBar
+        v2={v2}
         search={{ label: "Roll number, name or email", placeholder: "e.g. VIBHA-000042, Aanya, or aanya@gmail.com" }}
         searchReset={["student"]}
         selects={[
@@ -189,6 +204,20 @@ export default async function CredentialsPage({ searchParams }: { searchParams: 
       ) : null}
       </>
       )}
+    </>
+  );
+  if (v2) {
+    return (
+      <AdminPage title="Find and issue" lead={anyone ? "Give a certificate to anyone, for example to thank a volunteer. No account needed." : "Search a student by roll number, name or email to see and manage everything they've earned, or design a certificate for them."}>
+        {content}
+      </AdminPage>
+    );
+  }
+
+  return (
+    <div className="space-y-6">
+      <PageHeader title="Find & issue" description={anyone ? "Give a certificate to anyone, for example to thank a volunteer. No account needed." : "Search a student by roll number, name or email to see and manage everything they've earned, or design a certificate for them."} />
+      {content}
     </div>
   );
 }
