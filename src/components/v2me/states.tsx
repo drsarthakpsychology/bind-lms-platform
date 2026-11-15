@@ -5,7 +5,7 @@ import Link from "next/link";
 import { RotateCcw, Search } from "lucide-react";
 import { SlowState } from "@/components/design-system/slow-state";
 import { cn } from "@/lib/utils";
-import { primaryButton, quietButton } from "@/components/ds";
+import { primaryButton, quietButton, SkeletonMotion } from "@/components/ds";
 
 /**
  * The shared student states in the new design: loading, something went
@@ -17,8 +17,10 @@ const bar = "animate-pulse rounded-full bg-[var(--ds-hairline)] motion-reduce:an
 
 /** A page while it loads: a title line, then rows with hairlines (the shape of most v2 screens). */
 export function LoadingV2({ rows = 5, numbers = false }: { rows?: number; numbers?: boolean }) {
+  // Fades in only after 120ms (a fast load never flashes it), and fades out as the page rises in.
   return (
-    <div aria-busy="true" className="mx-auto flex w-full min-w-0 max-w-5xl flex-col gap-[var(--ds-section)] px-1 sm:px-0">
+    <SkeletonMotion>
+    <div aria-busy="true" className="ds-skel mx-auto flex w-full min-w-0 max-w-5xl flex-col gap-[var(--ds-section)] px-1 sm:px-0">
       <SlowState className="rounded-none border-0 bg-transparent px-0 py-0" />
       <div className={cn(bar, "h-8 w-48 max-w-full rounded-lg")} />
       {numbers ? (
@@ -39,6 +41,7 @@ export function LoadingV2({ rows = 5, numbers = false }: { rows?: number; number
         ))}
       </div>
     </div>
+    </SkeletonMotion>
   );
 }
 

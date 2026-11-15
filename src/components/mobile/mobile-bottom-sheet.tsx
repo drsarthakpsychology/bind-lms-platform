@@ -46,6 +46,7 @@ export function MobileBottomSheet({
   // Drag state lives here (the SheetContent ref is the whole panel).
   const contentRef = React.useRef<HTMLDivElement>(null);
   const dragStart = React.useRef<number | null>(null);
+  const dragTime = React.useRef(0);
   const [dragDy, setDragDy] = React.useState(0);
 
   // Coarse pointer = touch. Fine pointers keep the handle decorative.
@@ -60,21 +61,24 @@ export function MobileBottomSheet({
   function onPointerDown(e: React.PointerEvent) {
     if (!coarsePointer) return;
     dragStart.current = e.clientY;
+    dragTime.current = e.timeStamp;
     (e.currentTarget as HTMLElement).setPointerCapture?.(e.pointerId);
   }
 
   function onPointerMove(e: React.PointerEvent) {
     if (dragStart.current == null) return;
     const dy = e.clientY - dragStart.current;
-    if (dy > 0) setDragDy(dy);
+    // Down follows the finger 1:1; up meets soft resistance (a few px), never a hard stop.
+    setDragDy(dy > 0 ? dy : -Math.min(12, Math.sqrt(-dy) * 1.5));
   }
 
   function onPointerUp(e: React.PointerEvent) {
     if (dragStart.current == null) return;
     const dy = e.clientY - dragStart.current;
     dragStart.current = null;
-    // Fast flick or past-threshold → dismiss; otherwise snap back.
-    if (dy > 120 || (dy > 40 && e.detail < 2)) {
+    // A flick (faster than 0.4px/ms) or a long pull dismisses; otherwise it eases back.
+    const speed = dy / Math.max(1, e.timeStamp - dragTime.current);
+    if (dy > 120 || (dy > 24 && speed > 0.4)) {
       setDragDy(0);
       onOpenChange(false);
     } else {
@@ -89,12 +93,13 @@ export function MobileBottomSheet({
         side="bottom"
         className={cn(
           // Rises in 300 ms, leaves in 200 ms (the 500 ms default felt slow on a phone).
-          "max-h-[85dvh] gap-0 overflow-hidden rounded-t-lg border-t-2 border-foreground p-0 data-[state=closed]:duration-200 data-[state=open]:duration-300",
+          // The iOS sheet curve on the way up, a short ease-in on the way down; the same curve eases a released drag back.
+          "max-h-[85dvh] gap-0 overflow-hidden rounded-t-lg border-t-2 border-foreground p-0 ease-[cubic-bezier(0.32,0.72,0,1)] data-[state=closed]:duration-200 data-[state=closed]:ease-[cubic-bezier(0.4,0,1,1)] data-[state=open]:duration-300",
           className,
         )}
         style={{
-          transform: dragDy > 0 ? `translateY(${dragDy}px)` : undefined,
-          transition: dragDy > 0 ? "none" : undefined,
+          transform: dragDy !== 0 ? `translateY(${dragDy}px)` : undefined,
+          transition: dragDy !== 0 ? "none" : undefined,
         }}
       >
         {/* The drag handle strip: the touch target for drag-to-dismiss. */}

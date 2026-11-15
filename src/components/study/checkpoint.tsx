@@ -12,7 +12,7 @@ import { checkpointKnown, checkpointRound } from "@/lib/study/checkpoints";
 import { backLinkClass } from "@/components/design-system/back-link";
 import { EndReaction, ScoreDial } from "@/components/reactions/graphics";
 import { useUiV2 } from "@/components/ds/v2";
-import { BackLink } from "@/components/ds";
+import { BackLink, SuccessMark } from "@/components/ds";
 
 /**
  * A checkpoint: case questions first (scored), then "say it out loud" cards.
@@ -136,8 +136,11 @@ export function CheckpointView({
         {stage === "cards" ? <CardDeck items={recall} kind="recall" title="Say it out loud" autoStart onDone={deckDone} /> : null}
 
         {stage === "end" ? (
-          <section className="-mx-5 bg-foreground px-5 py-6 text-background sm:mx-0 sm:rounded-[var(--ds-radius)] sm:px-6" role="status">
-            <p className="type-small font-semibold text-primary">Checkpoint {n} done</p>
+          <section className="ds-success -mx-5 bg-foreground px-5 py-6 text-background sm:mx-0 sm:rounded-[var(--ds-radius)] sm:px-6" role="status">
+            <p className="flex items-center gap-2 type-small font-semibold text-primary">
+              <SuccessMark size={28} className="border-primary" />
+              Checkpoint {n} done
+            </p>
             {score ? (
               <div className="mt-3 flex flex-wrap items-center gap-x-6 gap-y-4">
                 <div className="text-foreground">

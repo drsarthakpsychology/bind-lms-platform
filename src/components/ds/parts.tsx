@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ChevronDown, ChevronLeft } from "lucide-react";
 
 import { cn } from "@/lib/utils";
+import { CountUp, NAV_BACK } from "./motion";
 
 /**
  * Design system v2: the smaller shared parts. One of each, used by every
@@ -17,22 +18,22 @@ import { cn } from "@/lib/utils";
 
 /** The screen's one main action as a button: lime, 2px ink border, hard shadow, 52px. */
 export const primaryButton =
-  "inline-flex min-h-[3.25rem] min-w-0 cursor-pointer items-center justify-center gap-2 rounded-[var(--ds-radius)] border-2 border-foreground bg-primary px-5 py-3 text-center type-body font-bold text-primary-foreground hard-shadow-sm outline-none transition-[transform,box-shadow] duration-[var(--ds-press)] ease-[var(--ds-ease)] hover:-translate-y-0.5 hover:hard-shadow-md focus-visible:ring-[3px] focus-visible:ring-ring/60 active:translate-x-0.5 active:translate-y-0.5 active:shadow-none disabled:pointer-events-none disabled:opacity-50 motion-reduce:hover:translate-y-0 [&_svg]:size-5 [&_svg]:shrink-0";
+  "inline-flex min-h-[3.25rem] min-w-0 cursor-pointer items-center justify-center gap-2 rounded-[var(--ds-radius)] border-2 border-foreground bg-primary px-5 py-3 text-center type-body font-bold text-primary-foreground hard-shadow-sm outline-hidden transition-[translate,box-shadow] duration-[var(--ds-press)] ease-[var(--ds-ease)] hover:-translate-y-0.5 hover:hard-shadow-md focus-visible:ring-[3px] focus-visible:ring-ring/60 active:translate-x-0.5 active:translate-y-0.5 active:shadow-none disabled:pointer-events-none disabled:opacity-50 motion-reduce:hover:translate-y-0 [&_svg]:size-5 [&_svg]:shrink-0";
 
 /** A second, quieter action: thin outline, no shadow, 44px. */
 export const quietButton =
-  "inline-flex min-h-11 min-w-0 cursor-pointer items-center justify-center gap-2 rounded-[var(--ds-radius)] border-[1.5px] border-[var(--ds-card-line)] bg-transparent px-4 py-2 text-center type-small font-semibold text-foreground outline-none transition-colors duration-[var(--ds-state)] ease-[var(--ds-ease)] hover:border-foreground hover:bg-[var(--ds-tint)] focus-visible:ring-2 focus-visible:ring-ring active:bg-[var(--ds-tint)] disabled:pointer-events-none disabled:opacity-50 [&_svg]:size-4 [&_svg]:shrink-0";
+  "inline-flex min-h-11 min-w-0 cursor-pointer items-center justify-center gap-2 rounded-[var(--ds-radius)] border-[1.5px] border-[var(--ds-card-line)] bg-transparent px-4 py-2 text-center type-small font-semibold text-foreground outline-hidden ds-press hover:border-foreground hover:bg-[var(--ds-tint)] focus-visible:ring-2 focus-visible:ring-ring active:bg-[var(--ds-tint)] disabled:pointer-events-none disabled:opacity-50 [&_svg]:size-4 [&_svg]:shrink-0";
 
 /** A text action inside a sentence or under a block: link colour, 44px tall to tap. */
 export const textButton =
-  "inline-flex min-h-11 min-w-0 cursor-pointer items-center gap-1.5 rounded-md type-small font-semibold text-link underline-offset-4 outline-none hover:underline focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:size-4 [&_svg]:shrink-0";
+  "inline-flex min-h-11 min-w-0 cursor-pointer items-center gap-1.5 rounded-md type-small font-semibold text-link underline-offset-4 outline-hidden ds-press hover:underline focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:size-4 [&_svg]:shrink-0";
 
 /* ------------------------------------------------------------------ */
 /* Fields                                                              */
 /* ------------------------------------------------------------------ */
 
 export const fieldClass =
-  "min-h-12 w-full min-w-0 rounded-[var(--ds-radius)] border-[1.5px] border-[var(--ds-card-line)] bg-card px-3 py-2 type-body text-foreground outline-none transition-colors duration-[var(--ds-state)] ease-[var(--ds-ease)] placeholder:text-muted-foreground hover:border-foreground focus-visible:border-foreground focus-visible:ring-[3px] focus-visible:ring-ring/50 aria-invalid:border-destructive";
+  "min-h-12 w-full min-w-0 rounded-[var(--ds-radius)] border-[1.5px] border-[var(--ds-card-line)] bg-card px-3 py-2 type-body text-foreground outline-hidden transition-colors duration-[var(--ds-state)] ease-[var(--ds-ease)] placeholder:text-muted-foreground hover:border-foreground focus-visible:border-foreground focus-visible:ring-[3px] focus-visible:ring-ring/50 aria-invalid:border-destructive";
 
 export const labelClass = "type-small font-semibold text-foreground";
 /* ------------------------------------------------------------------ */
@@ -44,9 +45,10 @@ export function BackLink({ href, children, className }: { href: string; children
   return (
     <Link
       href={href}
+      transitionTypes={NAV_BACK}
       data-back
       className={cn(
-        "-ml-2 inline-flex min-h-11 w-fit max-w-full min-w-11 items-center gap-1 self-start rounded-lg px-2 type-small font-semibold text-muted-foreground outline-none transition-colors duration-[var(--ds-state)] ease-[var(--ds-ease)] hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring",
+        "-ml-2 inline-flex min-h-11 w-fit max-w-full min-w-11 items-center gap-1 self-start rounded-lg px-2 type-small font-semibold text-muted-foreground outline-hidden transition-colors duration-[var(--ds-state)] ease-[var(--ds-ease)] hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring",
         className,
       )}
     >
@@ -75,7 +77,7 @@ export function StatItem({ value, label, sub }: { value: React.ReactNode; label:
     <div className="flex min-w-0 flex-col-reverse">
       <dt className="type-caption text-muted-foreground">{label}</dt>
       <dd className="type-h1 type-num">
-        {value}
+        <CountUp value={value} />
         {sub ? <span className="type-small font-semibold text-muted-foreground"> {sub}</span> : null}
       </dd>
     </div>
@@ -90,7 +92,7 @@ export function ProgressLine({ pct, label, className }: { pct: number; label: st
   const v = Math.max(0, Math.min(100, Math.round(pct)));
   return (
     <div role="progressbar" aria-label={label} aria-valuenow={v} aria-valuemin={0} aria-valuemax={100} className={cn("h-1.5 w-full overflow-hidden rounded-full bg-[var(--ds-hairline)]", className)}>
-      <div className="h-full origin-left rounded-full bg-primary transition-transform duration-[var(--ds-fill)] ease-[var(--ds-ease-out)] motion-reduce:transition-none" style={{ transform: `scaleX(${v / 100})` }} />
+      <div className="ds-fill h-full origin-left rounded-full bg-primary transition-transform duration-[var(--ds-fill)] ease-[var(--ds-ease-out)] motion-reduce:transition-none" style={{ transform: `scaleX(${v / 100})` }} />
     </div>
   );
 }
@@ -115,7 +117,7 @@ export function TabRow<T extends string>({
 }) {
   const cls = (on: boolean) =>
     cn(
-      "relative inline-flex h-12 shrink-0 cursor-pointer items-center px-1 type-small font-semibold outline-none transition-colors duration-[var(--ds-state)] ease-[var(--ds-ease)] focus-visible:ring-2 focus-visible:ring-ring",
+      "ds-press relative inline-flex h-12 shrink-0 cursor-pointer items-center px-1 type-small font-semibold outline-hidden transition-colors duration-[var(--ds-state)] ease-[var(--ds-ease)] focus-visible:ring-2 focus-visible:ring-ring",
       "after:absolute after:inset-x-0 after:-bottom-px after:h-0.5 after:rounded-full after:transition-colors after:duration-[var(--ds-state)]",
       on ? "text-foreground after:bg-foreground" : "text-muted-foreground hover:text-foreground",
     );
@@ -148,7 +150,7 @@ export function Choices<T extends string | null>({ label, options, value, onChan
           aria-pressed={value === o.id}
           onClick={() => onChange(o.id)}
           className={cn(
-            "inline-flex min-h-11 min-w-11 cursor-pointer items-center justify-center rounded-lg px-3 type-small outline-none transition-colors duration-[var(--ds-state)] ease-[var(--ds-ease)] focus-visible:ring-2 focus-visible:ring-ring",
+            "ds-press inline-flex min-h-11 min-w-11 cursor-pointer items-center justify-center rounded-lg px-3 type-small outline-hidden transition-colors duration-[var(--ds-state)] ease-[var(--ds-ease)] focus-visible:ring-2 focus-visible:ring-ring",
             value === o.id ? "bg-[var(--ds-tint)] font-bold text-foreground" : "text-muted-foreground hover:text-foreground",
           )}
         >
@@ -206,7 +208,7 @@ export function StatusWord({ tone = "quiet", icon, children }: { tone?: keyof ty
 /** The chip look for filters. They wrap onto a second line instead of running off the screen. */
 export function chipClass(on: boolean) {
   return cn(
-    "inline-flex min-h-11 shrink-0 cursor-pointer items-center rounded-full border-[1.5px] px-4 type-small font-semibold outline-none transition-colors duration-[var(--ds-state)] ease-[var(--ds-ease)] focus-visible:ring-2 focus-visible:ring-ring",
+    "ds-press inline-flex min-h-11 shrink-0 cursor-pointer items-center rounded-full border-[1.5px] px-4 type-small font-semibold outline-hidden transition-colors duration-[var(--ds-state)] ease-[var(--ds-ease)] focus-visible:ring-2 focus-visible:ring-ring",
     on ? "border-foreground bg-foreground text-background" : "border-[var(--ds-card-line)] text-foreground hover:border-foreground hover:bg-[var(--ds-tint)]",
   );
 }
@@ -220,7 +222,7 @@ export const chipRow = "flex min-w-0 flex-wrap gap-2";
 export function Fold({ title, children, className }: { title: React.ReactNode; children: React.ReactNode; className?: string }) {
   return (
     <details className={cn("group/fold min-w-0 border-y border-[var(--ds-hairline)]", className)}>
-      <summary className="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 rounded-lg type-body font-semibold outline-none focus-visible:ring-2 focus-visible:ring-ring [&::-webkit-details-marker]:hidden">
+      <summary className="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 rounded-lg type-body font-semibold outline-hidden focus-visible:ring-2 focus-visible:ring-ring [&::-webkit-details-marker]:hidden">
         <span className="min-w-0 [overflow-wrap:anywhere]">{title}</span>
         <ChevronDown aria-hidden className="size-5 shrink-0 text-muted-foreground transition-transform duration-[var(--ds-state)] ease-[var(--ds-ease)] group-open/fold:rotate-180" />
       </summary>
