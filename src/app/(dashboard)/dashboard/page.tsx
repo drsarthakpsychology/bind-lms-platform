@@ -22,21 +22,23 @@ import { leaveWithoutSession } from "@/lib/auth/session-redirect";
  * assignments in Lectures, practice tools in Practice, level and rank in
  * Leaderboard, help in Doubts.
  */
-export default async function DashboardPage() {
+export default async function DashboardPage({ searchParams }: { searchParams: Promise<{ off?: string }> }) {
   const session = await getSession();
+  // ?off=1: the layout sent the student here from a section switched off for them.
+  const sectionOff = (await searchParams).off === "1";
   if (session.status !== "ok") return leaveWithoutSession(session);
   // New design (ui_v2): its own loading shape (hero and three rows) while the data comes.
   if (uiV2For(await readFlags(), session.profile.role)) {
     return (
       <React.Suspense fallback={<HomeV2Skeleton />}>
-        <HomeData v2 />
+        <HomeData v2 sectionOff={sectionOff} />
       </React.Suspense>
     );
   }
   return <HomeData v2={false} />;
 }
 
-async function HomeData({ v2 }: { v2: boolean }) {
+async function HomeData({ v2, sectionOff = false }: { v2: boolean; sectionOff?: boolean }) {
   const session = await getSession();
   if (session.status !== "ok") return leaveWithoutSession(session);
   const { profile } = session;
@@ -67,6 +69,7 @@ async function HomeData({ v2 }: { v2: boolean }) {
           goal={goal}
           quests={quests}
           upNext={upNext}
+          sectionOff={sectionOff}
         />
       </>
     );

@@ -35,6 +35,8 @@ export type HomeV2Props = {
   goal: { points: number; goal: number; streak: number } | null;
   quests: QuestCard | null;
   upNext: UpNextRow[];
+  /** Sent here from a section that is switched off for this student. */
+  sectionOff?: boolean;
 };
 
 /** A 28px ring: today's points against the goal. Lime arc on a hairline track. */
@@ -101,7 +103,7 @@ function Today({ goal, quests }: { goal: NonNullable<HomeV2Props["goal"]>; quest
   );
 }
 
-export function HomeV2({ adminPreview, welcomeBack, dateLine, step, progress, allDone, goal, quests, upNext }: HomeV2Props) {
+export function HomeV2({ adminPreview, welcomeBack, dateLine, step, progress, allDone, goal, quests, upNext, sectionOff = false }: HomeV2Props) {
   const hero = allDone
     ? { context: "All caught up", title: "Nothing left to do today.", meta: "Revise a weak topic or try a case while you wait for the next lecture.", href: "/practise", cta: "Practise" }
     : {
@@ -122,6 +124,11 @@ export function HomeV2({ adminPreview, welcomeBack, dateLine, step, progress, al
         <h1 className="type-small text-muted-foreground">
           {welcomeBack ? "Welcome back" : "Welcome to VIBHA"} <span aria-hidden>·</span> <span className="type-num">{dateLine}</span>
         </h1>
+        {sectionOff ? (
+          <p role="status" className="type-small font-semibold">
+            That section is not open for you. Ask the VIBHA team if you need it.
+          </p>
+        ) : null}
       </div>
 
       <div className="grid min-w-0 gap-8 md:grid-cols-[minmax(0,2fr)_minmax(0,1fr)] md:gap-12">
