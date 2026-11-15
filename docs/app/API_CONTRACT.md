@@ -254,6 +254,8 @@ Settings are changed through the routes that own each part: `PATCH /me`, `PUT /d
 
 ### 2.11 Practise: games and practice rounds
 
+This section is continued (and kept current) in `docs/app/API_CONTRACT_PRACTISE_ADMIN.md`, with its types in `src/lib/app-api/contract-practise-admin.ts`. Where the two disagree, that page wins. Everything below still works.
+
 | Status | Method and path | Auth | Request | Response | Calls |
 |---|---|---|---|---|---|
 | built | `POST /play/:game/:action` | student, the game's own gate (below); moves 240 a minute | `PlayBody` (`{ args: [...] }`, at most the action's argument count, 128 KB) | `PlayResult` (`{ kind: "<game>.<action>", v: 1, data }`) | the website's own server action for that move (`PLAY` in `src/lib/app-api/play.ts`) |
@@ -299,6 +301,8 @@ Planned (not built): the first screen of each game (the lists the website's page
 
 ### 2.12 Library
 
+This section is continued (and kept current) in `docs/app/API_CONTRACT_PRACTISE_ADMIN.md`, with its types in `src/lib/app-api/contract-practise-admin.ts`. Where the two disagree, that page wins. Everything below still works.
+
 | Status | Method and path | Auth | Request | Response | Calls |
 |---|---|---|---|---|---|
 | built | `GET /library/medicines` | student (`/practice/medicines`) | none | `MedicineList` | `MEDS`, `GROUPS`, `medIndex` (`src/lib/meds`) |
@@ -308,6 +312,8 @@ Planned (not built): the first screen of each game (the lists the website's page
 The medicine data is all medicine facts in the website's own shape (`Med`, `src/lib/meds/types.ts`). The app searches it on the phone (the same rule as `searchMeds`).
 
 ### 2.13 Admin
+
+This section is continued (and kept current) in `docs/app/API_CONTRACT_PRACTISE_ADMIN.md`, with its types in `src/lib/app-api/contract-practise-admin.ts`. Where the two disagree, that page wins. Everything below still works.
 
 Auth: **admin** means `admin` or `view_admin` (read); **super admin** means `admin` only (every write), the same split as the website (`requireAdmin`, `requireSuperAdmin`). Test and robot accounts are left out of every list, as on the website's admin pages.
 

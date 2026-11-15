@@ -1075,6 +1075,8 @@ export type Settings = {
 
 // ---------------------------------------------------------------------------
 // Practise and Library
+// (Current types for these routes: contract-practise-admin.ts. These stay for
+// the routes' first version, which still answers with these fields.)
 // ---------------------------------------------------------------------------
 
 /**
@@ -1108,6 +1110,7 @@ export type MedicinePage = {
 
 // ---------------------------------------------------------------------------
 // Admin (admin and view admin read; only the super admin writes)
+// (Current types for these routes: contract-practise-admin.ts.)
 // ---------------------------------------------------------------------------
 
 export type AttentionFlag = "login" | "no-mobile" | "quiet" | "never-seen" | "behind" | "email-failing" | "no-details";
