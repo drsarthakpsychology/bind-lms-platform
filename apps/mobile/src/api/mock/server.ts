@@ -125,7 +125,7 @@ async function route(req: RawRequest): Promise<RawResponse> {
   }
   if ((m = is("GET", "/public/certificates/:id"))) {
     const found = fx.achievements.earned.find((c) => c.credentialId === m![0] && c.type === "certificate");
-    return ok<C.CertificateVerification>({ found: !!found, certificateId: m[0]!, status: found ? "valid" : "unknown", recipientName: found ? "Ananya Mehta" : null, title: found?.title ?? null, issuedAt: found?.issuedAt ?? null, expiresAt: null, issuer: "VIBHA School of Psychology", verifyUrl: `https://vibhapsychology.com/verify/${m[0]}` });
+    return ok<C.CertificateVerification>({ found: !!found, certificateId: m[0]!, status: found ? "valid" : "unknown", what: found ? "Certificate" : null, recipientName: found ? "Ananya Mehta" : null, title: found?.title ?? null, paragraph: found ? "For completing Module 1 of the VIBHA clinical training programme and passing its test." : null, issuedAt: found?.issuedAt ?? null, expiresAt: null, revokedAt: null, replacedBy: null, issuer: "VIBHA School of Psychology", verifyUrl: `https://vibhapsychology.com/verify/${m[0]}` });
   }
   if (is("POST", "/auth/sign-in")) {
     const email = String(body.email ?? "");
