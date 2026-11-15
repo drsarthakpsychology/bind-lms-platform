@@ -24,7 +24,7 @@ export function MedicineEditorV2(props: { drug: string; drugId: string; initialD
   // On phones the source panel is below the page: bring it into view.
   function openSource(block: Parameters<typeof ed.setActiveBlock>[0]) {
     ed.setActiveBlock(block);
-    if (typeof window !== "undefined" && window.matchMedia("(max-width: 1023px)").matches) {
+    if (typeof window !== "undefined" && window.matchMedia?.("(max-width: 1023px)").matches) {
       requestAnimationFrame(() => sourceRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }));
     }
   }
