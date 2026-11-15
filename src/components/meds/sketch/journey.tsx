@@ -28,14 +28,14 @@ export function JourneySketch({ medName, target, routes, notes }: { medName: str
         />
       ) : null}
       <JourneyArt stops={stages.map((s) => s.id)} i={i} route={route} label={`${medName}: ${cur.name}`} />
-      <ol className="flex flex-wrap gap-1.5" aria-label="Stages">
+      <ol className="flex flex-wrap gap-1.5 v2:gap-2" aria-label="Stages">
         {stages.map((s, k) => (
           <li key={s.id}>
             <button
               type="button"
               aria-pressed={k === i}
               onClick={() => setI(k)}
-              className={cn("inline-flex min-h-10 items-center gap-1.5 rounded-md border-2 px-2.5 text-sm font-semibold", k === i ? "border-foreground bg-primary text-primary-foreground" : "border-foreground/30 bg-card hover:border-foreground")}
+              className={cn("inline-flex min-h-10 v2:min-h-11 items-center gap-1.5 rounded-md border-2 px-2.5 text-sm font-semibold", k === i ? "border-foreground bg-primary text-primary-foreground" : "border-foreground/30 bg-card hover:border-foreground")}
             >
               <span className="tabular-nums opacity-70">{k + 1}</span> {s.name}
             </button>
