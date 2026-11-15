@@ -4,6 +4,9 @@ import Link from "next/link";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { PsychSearch } from "@/components/psychopharm/psych-search";
 import { MobileHeader } from "@/components/mobile/mobile-header";
+import { PageFrame, Row, RowList, Section } from "@/components/ds";
+import { ListHead } from "@/components/play/parts";
+import { uiV2 } from "@/lib/ui/v2-server";
 import { MobileSection } from "@/components/mobile/mobile-section";
 import { MobileListItem } from "@/components/mobile/mobile-list-item";
 import { buttonVariants } from "@/components/ui/button";
@@ -50,6 +53,29 @@ export default async function ComparePage({
 
   const showAll = sp.field === "all";
   const fieldIndex = Math.min(Math.max(Number(sp.field) || 0, 0), FIELDS.length - 1);
+
+  if (await uiV2()) {
+    // New design: the same picker and comparison, in the plain frame (no boxes around the words).
+    return (
+      <PageFrame width="reading">
+        <ListHead back={{ href: "/practice/medicines", label: "Medicines" }} tag="Library" title="Compare at a dose" lead="Each drug is shown at its band. The differences are what matter." />
+        <Section title={generic.length >= 2 ? "Add another drug" : "Pick drugs to compare"}>
+          <p className="type-small text-muted-foreground">{generic.length ? `Comparing ${generic.length} of 5.` : "Search for a drug to add it; pick at least two."}</p>
+          <PsychSearch compareTo={slugs} className="w-full" />
+        </Section>
+        {rows.length >= 2 ? (
+          <CompareFlow rows={rows} slugs={slugs} fieldIndex={fieldIndex} showAll={showAll} />
+        ) : (
+          <Section title="Or start from a common pair" level={3}>
+            <RowList>
+              <Row href="/tools/psychopharm/compare?a=risperidone&b=olanzapine" title="Risperidone and olanzapine" meta="Antipsychotics" />
+            </RowList>
+          </Section>
+        )}
+        <p className="type-small text-muted-foreground">{STANDING_NOTICE}</p>
+      </PageFrame>
+    );
+  }
 
   return (
     <div className="mx-auto max-w-3xl space-y-6 py-6">
