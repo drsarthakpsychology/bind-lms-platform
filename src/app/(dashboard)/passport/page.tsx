@@ -3,6 +3,9 @@ import { Download } from "lucide-react";
 import { Passport, type PassportRow } from "./passport";
 import { requireFeature } from "@/lib/flags";
 import { Reveal } from "@/components/motion/reveal";
+import { requireSession } from "@/lib/auth/guards";
+import { pageV2 } from "@/components/v2me/server";
+import { PassportV2 } from "./passport-v2";
 
 export const dynamic = "force-dynamic";
 
@@ -47,6 +50,8 @@ export default async function PassportPage() {
     description: (c.description as string | null) ?? undefined,
     events: byComp.get(c.id) ?? [],
   }));
+
+  if (await pageV2((await requireSession())?.role)) return <PassportV2 rows={rows} />;
 
   return (
     <div className="mx-auto max-w-3xl">

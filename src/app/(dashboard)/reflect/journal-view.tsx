@@ -11,6 +11,7 @@ import { MobileErrorLine } from "@/components/mobile/mobile-error-line";
 import { StatusPill } from "@/components/mobile/status-pill";
 import { useOffline } from "@/lib/hooks/use-offline";
 import { EmptyState } from "@/components/design-system/empty-state";
+import { chipClass, EmptyLine, primaryButton } from "@/components/v2me/parts";
 
 /** Kept per student: on a shared phone one student's private draft must never open for the next. */
 const LEGACY_DRAFT_KEY = "journal:draft";
@@ -42,7 +43,7 @@ interface JournalEntry {
  * sheet behind a "New entry" action, and each entry's secondary actions
  * collapse into a single "…" sheet. Desktop keeps the inline composer.
  */
-export function JournalView({ initialEntries, userId, initialShares = {} }: { initialEntries: JournalEntry[]; userId: string; initialShares?: Record<string, string> }) {
+export function JournalView({ initialEntries, userId, initialShares = {}, v2 = false }: { initialEntries: JournalEntry[]; userId: string; initialShares?: Record<string, string>; /** New design: same journal, plain rows instead of boxes. */ v2?: boolean }) {
   const DRAFT_KEY = draftKey(userId);
   const [entries, setEntries] = React.useState<JournalEntry[]>(initialEntries);
   const [content, setContent] = React.useState("");
@@ -296,12 +297,14 @@ export function JournalView({ initialEntries, userId, initialShares = {} }: { in
                 haptic("tap");
               }}
               aria-pressed={mood === m}
-              className={cn(
-                "min-h-11 rounded-full border-2 px-4 py-1 text-caption font-medium capitalize transition-transform active:translate-y-px",
-                mood === m
-                  ? "border-foreground bg-primary text-primary-foreground"
-                  : "border-border bg-card text-muted-foreground",
-              )}
+              className={
+                v2
+                  ? cn(chipClass(mood === m), "capitalize")
+                  : cn(
+                      "min-h-11 rounded-full border-2 px-4 py-1 text-caption font-medium capitalize transition-transform active:translate-y-px",
+                      mood === m ? "border-foreground bg-primary text-primary-foreground" : "border-border bg-card text-muted-foreground",
+                    )
+              }
             >
               {m}
             </button>
@@ -312,7 +315,7 @@ export function JournalView({ initialEntries, userId, initialShares = {} }: { in
   );
 
   return (
-    <div className="space-y-6">
+    <div className={v2 ? "flex min-w-0 flex-col gap-8" : "space-y-6"}>
       {offline ? (
         <StatusPill tone="warning" label="Offline: your entry saves locally" />
       ) : justReturned ? (
@@ -327,7 +330,7 @@ export function JournalView({ initialEntries, userId, initialShares = {} }: { in
           setError(null);
           haptic("tap");
         }}
-        className="flex min-h-12 w-full items-center justify-center gap-2 rounded-md border-2 border-foreground bg-primary px-4 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px active:hard-shadow-none lg:hidden"
+        className={v2 ? cn(primaryButton, "w-full lg:hidden") : "flex min-h-12 w-full items-center justify-center gap-2 rounded-md border-2 border-foreground bg-primary px-4 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px active:hard-shadow-none lg:hidden"}
       >
         <Plus className="size-5" aria-hidden />
         New entry
@@ -336,13 +339,13 @@ export function JournalView({ initialEntries, userId, initialShares = {} }: { in
       {/* Desktop: inline composer (unchanged composition) */}
       <form
         onSubmit={save}
-        className="hidden space-y-3 rounded-lg border-2 border-border bg-card p-5 hard-shadow-sm lg:block"
+        className={v2 ? "hidden max-w-2xl space-y-4 lg:block" : "hidden space-y-3 rounded-lg border-2 border-border bg-card p-5 hard-shadow-sm lg:block"}
       >
         {composeFields}
         <button
           type="submit"
           disabled={busy || !content.trim()}
-          className="w-full rounded-md border-2 border-foreground bg-primary px-4 py-2.5 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px active:hard-shadow-none disabled:opacity-50"
+          className={v2 ? cn(primaryButton, "w-full lg:w-fit lg:min-w-48") : "w-full rounded-md border-2 border-foreground bg-primary px-4 py-2.5 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px active:hard-shadow-none disabled:opacity-50"}
         >
           {busy ? "Saving…" : "Save entry"}
         </button>
@@ -354,13 +357,19 @@ export function JournalView({ initialEntries, userId, initialShares = {} }: { in
 
       {/* history */}
       <div>
-        <h2 className="text-base font-semibold">Your entries</h2>
+        <h2 className={v2 ? "type-h3" : "text-base font-semibold"}>Your entries</h2>
         {entries.length === 0 ? (
-          <EmptyState row icon={<NotebookPen className="size-5" />} title="Nothing here yet." className="mt-2" />
+          v2 ? (
+            <EmptyLine title="No entries yet" className="mt-3">
+              Write your first one. It stays private to you unless you share it.
+            </EmptyLine>
+          ) : (
+            <EmptyState row icon={<NotebookPen className="size-5" />} title="Nothing here yet." className="mt-2" />
+          )
         ) : (
-          <ul className="mt-3 space-y-3">
+          <ul className={v2 ? "mt-3 flex flex-col divide-y divide-[var(--ds-hairline)] border-y border-[var(--ds-hairline)]" : "mt-3 space-y-3"}>
             {entries.map((e) => (
-              <li key={e.id} className="rounded-lg border-2 border-border bg-card p-4">
+              <li key={e.id} className={v2 ? "min-w-0 py-4" : "rounded-lg border-2 border-border bg-card p-4"}>
                 <div className="flex items-center justify-between gap-2">
                   <span className="text-caption text-muted-foreground">
                     {formatRelativeTime(e.createdAt)}
@@ -372,12 +381,12 @@ export function JournalView({ initialEntries, userId, initialShares = {} }: { in
                     onClick={() => openEntryMenu(e)}
                     aria-haspopup="dialog"
                     aria-label={`More options for entry from ${formatRelativeTime(e.createdAt)}`}
-                    className="flex size-11 shrink-0 items-center justify-center rounded-md border border-border text-muted-foreground transition-transform hover:bg-secondary active:translate-y-px"
+                    className={cn("flex size-11 shrink-0 items-center justify-center rounded-md text-muted-foreground transition-transform hover:bg-secondary active:translate-y-px", !v2 && "border border-border")}
                   >
                     <MoreHorizontal className="size-5" aria-hidden />
                   </button>
                 </div>
-                <p className="mt-2 whitespace-pre-wrap break-words text-small">{e.content}</p>
+                <p className={v2 ? "mt-1 max-w-[65ch] whitespace-pre-line type-body [overflow-wrap:anywhere]" : "mt-2 whitespace-pre-wrap break-words text-small"}>{e.content}</p>
               </li>
             ))}
           </ul>
@@ -395,7 +404,7 @@ export function JournalView({ initialEntries, userId, initialShares = {} }: { in
             type="submit"
             form="journal-compose-form"
             disabled={busy || !content.trim()}
-            className="w-full rounded-md border-2 border-foreground bg-primary px-4 py-2.5 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px active:hard-shadow-none disabled:opacity-50"
+            className={v2 ? cn(primaryButton, "w-full lg:w-fit lg:min-w-48") : "w-full rounded-md border-2 border-foreground bg-primary px-4 py-2.5 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px active:hard-shadow-none disabled:opacity-50"}
           >
             {busy ? "Saving…" : "Save entry"}
           </button>

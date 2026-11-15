@@ -3,6 +3,9 @@ import { Reveal } from "@/components/motion/reveal";
 import { JournalView } from "./journal-view";
 import { requireFeature } from "@/lib/flags";
 import { PageHeader } from "@/components/design-system/page-header";
+import { PageFrame } from "@/components/ds";
+import { requireSession } from "@/lib/auth/guards";
+import { pageV2 } from "@/components/v2me/server";
 
 export const dynamic = "force-dynamic";
 
@@ -31,6 +34,24 @@ export default async function ReflectPage() {
   ]);
   const initialShares: Record<string, string> = {};
   for (const sh of shares ?? []) initialShares[String(sh.entry_id)] = String(sh.id);
+
+  if (await pageV2((await requireSession())?.role)) {
+    return (
+      <PageFrame title="Journal" lead="Private to you unless you share an entry.">
+        <JournalView
+          v2
+          userId={user.id}
+          initialShares={initialShares}
+          initialEntries={(entries ?? []).map((e) => ({
+            id: e.id,
+            content: String(e.content),
+            moodTag: (e.mood_tag as string | null) ?? undefined,
+            createdAt: e.created_at,
+          }))}
+        />
+      </PageFrame>
+    );
+  }
 
   return (
     <div className="mx-auto max-w-3xl">

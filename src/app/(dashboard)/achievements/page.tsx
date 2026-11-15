@@ -6,6 +6,8 @@ import { appUrl, cleanAppUrl } from "@/lib/app-url";
 import { RefreshShell } from "@/components/navigation/refresh-shell";
 import { loadMyAchievements } from "./actions";
 import { AchievementsClient } from "./achievements-client";
+import { AchievementsV2 } from "./achievements-v2";
+import { pageV2 } from "@/components/v2me/server";
 
 export const metadata: Metadata = { title: "My Achievements" };
 
@@ -19,7 +21,11 @@ export default async function AchievementsPage() {
   return (
     <>
       <RefreshShell when={seen > 0} />
-      <AchievementsClient earned={earned} progress={progress} rollNumber={me.roll_number} siteUrl={siteUrl} />
+      {(await pageV2(me.role)) ? (
+        <AchievementsV2 earned={earned} progress={progress} rollNumber={me.roll_number} siteUrl={siteUrl} />
+      ) : (
+        <AchievementsClient earned={earned} progress={progress} rollNumber={me.roll_number} siteUrl={siteUrl} />
+      )}
     </>
   );
 }

@@ -6,6 +6,9 @@ import { redirect } from "next/navigation";
 import { Reveal } from "@/components/motion/reveal";
 import { RecordTabs } from "./record-tabs";
 import { istWeekMonday } from "@/lib/practice/streaks";
+import { PageFrame } from "@/components/ds";
+import { requireSession } from "@/lib/auth/guards";
+import { pageV2 } from "@/components/v2me/server";
 
 export const dynamic = "force-dynamic";
 
@@ -62,6 +65,38 @@ export default async function RecordPage() {
     competencyName: e.competency_id ? nameById.get(e.competency_id) : undefined,
     signoffStatus: e.signoff_status as SupervisionEntry["signoffStatus"],
   }));
+
+  if (await pageV2((await requireSession())?.role)) {
+    return (
+      <PageFrame title="Your record" lead="Supervision hours and the weekly check-in." width="reading">
+        <RecordTabs
+          supervisionEnabled={supervisionEnabled}
+          checkinEnabled={checkinEnabled}
+          supervision={
+            <SupervisionLog
+              entries={list}
+              competencies={(competencies ?? []).map((c) => ({ key: c.key as string, name: c.name as string }))}
+            />
+          }
+          checkin={
+            <CheckinForm
+              weekLabel={weekLabel}
+              initial={
+                checkin
+                  ? {
+                      workload: checkin.workload as number,
+                      energy: checkin.energy as number,
+                      preparedness: checkin.preparedness as number,
+                      freeLine: (checkin.free_line as string | null) ?? undefined,
+                    }
+                  : undefined
+              }
+            />
+          }
+        />
+      </PageFrame>
+    );
+  }
 
   return (
     <div className="mx-auto max-w-3xl space-y-10">

@@ -12,6 +12,8 @@ import { PageHeader } from "@/components/design-system/page-header";
 import { backLinkClass } from "@/components/design-system/back-link";
 import { RefreshOnSave } from "@/components/save/refresh-on-save";
 import { leaveWithoutSession } from "@/lib/auth/session-redirect";
+import { pageV2 } from "@/components/v2me/server";
+import { JourneyV2 } from "./journey-v2";
 
 export const metadata: Metadata = { title: "My journey" };
 export const dynamic = "force-dynamic";
@@ -64,6 +66,23 @@ export default async function JourneyPage() {
     { icon: <BookOpen className="size-5" aria-hidden />, label: "Quiz points", value: st ? String(st.xp) : "0", sub: accuracy !== null ? `${accuracy}% right` : undefined },
     { icon: <Target className="size-5" aria-hidden />, label: "Practice done", value: String(practiceCount), sub: "sessions and drills" },
   ];
+
+  if (await pageV2(session.profile.role)) {
+    return (
+      <>
+        <RefreshOnSave kinds={["learn", "complete", "progress"]} />
+        <JourneyV2
+          level={level}
+          title={title}
+          levelPct={pct}
+          points={me ? me.points : null}
+          rank={me?.rank ?? null}
+          stats={stats.map((s) => ({ label: s.label, value: s.label === "Day streak" ? (streak ? String(streak) : "0") : s.value, sub: s.sub }))}
+          board={{ href: BOARDS.overall.href, label: BOARDS.overall.label }}
+        />
+      </>
+    );
+  }
 
   return (
     <div className="mx-auto max-w-5xl space-y-6">

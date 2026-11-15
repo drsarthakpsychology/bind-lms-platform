@@ -11,6 +11,8 @@ import { cn } from "@/lib/utils";
 import { AliasForm } from "./alias-form";
 import { Avatar, NameLine } from "./look";
 import { leaveWithoutSession } from "@/lib/auth/session-redirect";
+import { pageV2 } from "@/components/v2me/server";
+import { LeaderboardV2 } from "./leaderboard-v2";
 
 export const metadata: Metadata = { title: BOARDS.league.label };
 export const dynamic = "force-dynamic";
@@ -27,6 +29,7 @@ export default async function LeaguePage() {
   if (session.status !== "ok") return leaveWithoutSession(session);
   const data = await loadMyLeague(session.profile.id);
   const relegates = data.tier > 1;
+  if (await pageV2(session.profile.role)) return <LeaderboardV2 data={data} />;
 
   return (
     <div className="mx-auto max-w-5xl space-y-6">

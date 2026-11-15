@@ -1,6 +1,10 @@
 import { createClient } from "@/lib/supabase/server";
 import { Reveal } from "@/components/motion/reveal";
 import { WallView } from "./wall-view";
+import { PageFrame } from "@/components/ds";
+import { BackLink } from "@/components/v2me/parts";
+import { requireSession } from "@/lib/auth/guards";
+import { pageV2 } from "@/components/v2me/server";
 
 export const dynamic = "force-dynamic";
 
@@ -66,6 +70,41 @@ export default async function WallPage() {
     const rk = String(r.reaction);
     counts[rk] = (counts[rk] ?? 0) + 1;
     reactionsByPost.set(key, counts);
+  }
+
+  if (await pageV2((await requireSession())?.role)) {
+    return (
+      <PageFrame className="gap-4 md:gap-6">
+        <BackLink href="/doubts">Doubts</BackLink>
+        <header className="flex min-w-0 flex-col gap-1 pb-2">
+          <h1 className="type-h1">Wall</h1>
+          <p className="type-small text-muted-foreground">Posts from your batch. You can post without your name.</p>
+        </header>
+        <WallView
+          v2
+          isFacultyViewer={isFacultyViewer}
+          initialPosts={(posts ?? []).map((p) => ({
+            id: p.id,
+            content: String(p.content),
+            isAnonymous: p.is_anonymous as boolean,
+            isFaculty: p.is_faculty as boolean,
+            isPinned: p.is_pinned as boolean,
+            createdAt: p.created_at,
+            // NOTE: author_id is deliberately NOT passed to the client for
+            // anonymous posts. It stays server-side.
+            replies: (repliesByPost.get(p.id) ?? []).map((r) => ({
+              id: String(r.id),
+              content: String(r.content),
+              isAnonymous: Boolean(r.is_anonymous),
+              isFaculty: Boolean(r.is_faculty),
+              createdAt: r.created_at as string,
+              reactions: reactionsByReply.get(String(r.id)) ?? {},
+            })),
+            reactions: reactionsByPost.get(p.id) ?? {},
+          }))}
+        />
+      </PageFrame>
+    );
   }
 
   return (

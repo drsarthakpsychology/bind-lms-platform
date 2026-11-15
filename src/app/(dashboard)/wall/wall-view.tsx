@@ -9,6 +9,8 @@ import { MobileTextarea } from "@/components/mobile/mobile-input";
 import { MobileErrorLine } from "@/components/mobile/mobile-error-line";
 import { StatusPill } from "@/components/mobile/status-pill";
 import { EmptyState } from "@/components/design-system/empty-state";
+import { EmptyLine, primaryButton, quietButton } from "@/components/v2me/parts";
+import { cn } from "@/lib/utils";
 import { useDraft } from "@/lib/hooks/use-draft";
 import { useOffline } from "@/lib/hooks/use-offline";
 
@@ -49,7 +51,7 @@ const REACTIONS: Array<{ key: string; label: string; icon: typeof Heart }> = [
  * a "New post" action, and per-post Report/Pin collapse into a single "…"
  * sheet. Composer + reply drafts autosave via useDraft (T46).
  */
-export function WallView({ initialPosts, isFacultyViewer = false }: { initialPosts: WallPost[]; isFacultyViewer?: boolean }) {
+export function WallView({ initialPosts, isFacultyViewer = false, v2 = false }: { initialPosts: WallPost[]; isFacultyViewer?: boolean; /** New design: same wall, plain rows instead of boxes. */ v2?: boolean }) {
   const [posts, setPosts] = React.useState<WallPost[]>(initialPosts);
   const contentDraft = useDraft("wall-composer");
   const [anonymous, setAnonymous] = React.useState(false);
@@ -292,7 +294,7 @@ export function WallView({ initialPosts, isFacultyViewer = false }: { initialPos
         aria-label="Post to the cohort wall"
         className="resize-none"
       />
-      <label className="flex min-h-12 cursor-pointer items-center gap-2.5 rounded-md border border-border bg-background px-3 text-small text-muted-foreground">
+      <label className={v2 ? "flex min-h-12 cursor-pointer items-center gap-2.5 type-small text-muted-foreground" : "flex min-h-12 cursor-pointer items-center gap-2.5 rounded-md border border-border bg-background px-3 text-small text-muted-foreground"}>
         <input
           type="checkbox"
           checked={anonymous}
@@ -310,7 +312,7 @@ export function WallView({ initialPosts, isFacultyViewer = false }: { initialPos
   );
 
   return (
-    <div className="space-y-6">
+    <div className={v2 ? "flex min-w-0 flex-col gap-8" : "space-y-6"}>
       {offline ? (
         <StatusPill tone="warning" label="Offline: your draft saves locally" />
       ) : justReturned ? (
@@ -325,7 +327,7 @@ export function WallView({ initialPosts, isFacultyViewer = false }: { initialPos
           setError(null);
           haptic("tap");
         }}
-        className="flex min-h-12 w-full items-center justify-center gap-2 rounded-md border-2 border-foreground bg-primary px-4 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px active:hard-shadow-none lg:hidden"
+        className={v2 ? cn(primaryButton, "w-full lg:hidden") : "flex min-h-12 w-full items-center justify-center gap-2 rounded-md border-2 border-foreground bg-primary px-4 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px active:hard-shadow-none lg:hidden"}
       >
         <Plus className="size-5" aria-hidden />
         New post
@@ -334,13 +336,13 @@ export function WallView({ initialPosts, isFacultyViewer = false }: { initialPos
       {/* Desktop: inline composer (unchanged composition) */}
       <form
         onSubmit={post}
-        className="hidden space-y-3 rounded-lg border-2 border-border bg-card p-5 hard-shadow-sm lg:block"
+        className={v2 ? "hidden max-w-2xl space-y-4 lg:block" : "hidden space-y-3 rounded-lg border-2 border-border bg-card p-5 hard-shadow-sm lg:block"}
       >
         {composerFields}
         <button
           type="submit"
           disabled={busy || !contentDraft.value.trim()}
-          className="w-full rounded-md border-2 border-foreground bg-primary px-4 py-2.5 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px active:hard-shadow-none disabled:opacity-50"
+          className={v2 ? cn(primaryButton, "w-full lg:w-fit lg:min-w-48") : "w-full rounded-md border-2 border-foreground bg-primary px-4 py-2.5 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px active:hard-shadow-none disabled:opacity-50"}
         >
           {busy ? "Posting…" : "Post"}
         </button>
@@ -352,22 +354,22 @@ export function WallView({ initialPosts, isFacultyViewer = false }: { initialPos
       {/* posts */}
       <div>
         {posts.length === 0 ? (
-          <EmptyState
-            icon={<MessageSquare className="size-5" aria-hidden />}
-            title="Nothing here yet"
-            description="Be the first to break the ice."
-          />
+          v2 ? (
+            <EmptyLine title="No posts yet">Write the first one. You can post without your name.</EmptyLine>
+          ) : (
+            <EmptyState icon={<MessageSquare className="size-5" aria-hidden />} title="Nothing here yet" description="Be the first to break the ice." />
+          )
         ) : (
-          <ul className="space-y-3">
+          <ul className={v2 ? "flex min-w-0 flex-col divide-y divide-[var(--ds-hairline)] border-y border-[var(--ds-hairline)]" : "space-y-3"}>
             {posts.map((p) => (
-              <li key={p.id} className={`rounded-md border-2 border-border bg-card p-4 ${p.isPinned ? "border-primary" : ""}`}>
+              <li key={p.id} className={v2 ? "min-w-0 py-5" : `rounded-md border-2 border-border bg-card p-4 ${p.isPinned ? "border-primary" : ""}`}>
                 <div className="flex flex-wrap items-center gap-2 text-caption text-muted-foreground">
                   {p.isPinned ? <span className="inline-flex items-center gap-1 font-semibold text-link"><Pin className="size-3.5" aria-hidden /> Pinned</span> : null}
                   {p.isFaculty ? <span className="rounded-full bg-secondary px-2 py-0.5 font-semibold">Faculty</span> : null}
                   {p.isAnonymous ? <span>Anonymous</span> : <span>Cohort member</span>}
                   <span>· {formatRelativeTime(p.createdAt)}</span>
                 </div>
-                <p className="mt-2 whitespace-pre-wrap break-words text-small">{p.content}</p>
+                <p className={v2 ? "mt-1 max-w-[65ch] whitespace-pre-line type-body [overflow-wrap:anywhere]" : "mt-2 whitespace-pre-wrap break-words text-small"}>{p.content}</p>
 
                 {/* reactions, not upvotes */}
                 <div className="mt-3 flex flex-wrap items-center gap-1.5">
@@ -383,7 +385,7 @@ export function WallView({ initialPosts, isFacultyViewer = false }: { initialPos
                         onClick={() => void toggleReaction({ postId: p.id }, r.key)}
                         aria-pressed={mine}
                         aria-label={`${r.label} reaction, ${count}`}
-                        className={`inline-flex min-h-8 items-center gap-1 rounded-full border px-2.5 py-0.5 text-caption transition-transform active:translate-y-px ${mine ? "border-primary bg-primary/10 text-link" : "border-border text-muted-foreground hover:bg-secondary"}`}
+                        className={`inline-flex ${v2 ? "min-h-11 min-w-11 justify-center" : "min-h-8"} items-center gap-1 rounded-full border px-2.5 py-0.5 text-caption transition-transform active:translate-y-px ${mine ? "border-primary bg-primary/10 text-link" : "border-border text-muted-foreground hover:bg-secondary"}`}
                       >
                         <Icon className="size-3" aria-hidden />
                         {count}
@@ -394,7 +396,7 @@ export function WallView({ initialPosts, isFacultyViewer = false }: { initialPos
                     type="button"
                     onClick={() => { setReplyOpen(replyOpen === p.id ? null : p.id); setReplyError(null); haptic("tap"); }}
                     aria-expanded={replyOpen === p.id}
-                    className="rounded-full border-2 border-border px-3 py-2 text-caption font-medium text-foreground transition-transform active:translate-y-px"
+                    className={v2 ? quietButton : "rounded-full border-2 border-border px-3 py-2 text-caption font-medium text-foreground transition-transform active:translate-y-px"}
                   >
                     Reply
                   </button>
@@ -411,15 +413,15 @@ export function WallView({ initialPosts, isFacultyViewer = false }: { initialPos
 
                 {/* replies */}
                 {(p.replies?.length ?? 0) > 0 ? (
-                  <ul className="mt-3 space-y-2 border-l-2 border-border pl-3">
+                  <ul className={v2 ? "mt-3 flex flex-col gap-3 border-l border-[var(--ds-card-line)] pl-4" : "mt-3 space-y-2 border-l-2 border-border pl-3"}>
                     {(p.replies ?? []).map((r) => (
-                      <li key={r.id} className="rounded-md border border-border bg-background p-2">
+                      <li key={r.id} className={v2 ? "min-w-0" : "rounded-md border border-border bg-background p-2"}>
                         <div className="flex items-center gap-2 text-caption text-muted-foreground">
                           {r.isFaculty ? <span className="rounded-full bg-secondary px-1.5 py-0.5 font-semibold">Faculty</span> : null}
                           <span>{r.isAnonymous ? "Anonymous" : "Cohort member"}</span>
                           <span>· {formatRelativeTime(r.createdAt)}</span>
                         </div>
-                        <p className="mt-1 whitespace-pre-wrap break-words text-small">{r.content}</p>
+                        <p className={v2 ? "mt-0.5 max-w-[65ch] whitespace-pre-line type-small [overflow-wrap:anywhere]" : "mt-1 whitespace-pre-wrap break-words text-small"}>{r.content}</p>
                         <div className="mt-1.5 flex flex-wrap items-center gap-1">
                           {REACTIONS.map((rr) => {
                             const Icon = rr.icon;
@@ -433,7 +435,7 @@ export function WallView({ initialPosts, isFacultyViewer = false }: { initialPos
                                 onClick={() => void toggleReaction({ replyId: r.id }, rr.key)}
                                 aria-pressed={mine}
                                 aria-label={`${rr.label} reaction, ${count}`}
-                                className={`inline-flex min-h-8 items-center gap-1 rounded-full border px-1.5 py-0.5 text-caption transition-transform active:translate-y-px ${mine ? "border-primary bg-primary/10 text-link" : "border-border text-muted-foreground hover:bg-secondary"}`}
+                                className={`inline-flex ${v2 ? "min-h-11 min-w-11 justify-center" : "min-h-8"} items-center gap-1 rounded-full border px-1.5 py-0.5 text-caption transition-transform active:translate-y-px ${mine ? "border-primary bg-primary/10 text-link" : "border-border text-muted-foreground hover:bg-secondary"}`}
                               >
                                 <Icon className="size-3" aria-hidden />
                                 {count}
@@ -469,7 +471,7 @@ export function WallView({ initialPosts, isFacultyViewer = false }: { initialPos
                         type="button"
                         onClick={() => void sendReply(p.id)}
                         disabled={replying || !replyDraft.value.trim()}
-                        className="ml-auto rounded-md border-2 border-border bg-primary px-4 py-2.5 text-caption font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px disabled:opacity-50"
+                        className={v2 ? cn(quietButton, "ml-auto border-foreground bg-primary text-primary-foreground hover:bg-primary") : "ml-auto rounded-md border-2 border-border bg-primary px-4 py-2.5 text-caption font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px disabled:opacity-50"}
                       >
                         {replying ? "Sending…" : "Reply"}
                       </button>
@@ -493,7 +495,7 @@ export function WallView({ initialPosts, isFacultyViewer = false }: { initialPos
             type="submit"
             form="wall-compose-form"
             disabled={busy || !contentDraft.value.trim()}
-            className="w-full rounded-md border-2 border-foreground bg-primary px-4 py-2.5 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px active:hard-shadow-none disabled:opacity-50"
+            className={v2 ? cn(primaryButton, "w-full lg:w-fit lg:min-w-48") : "w-full rounded-md border-2 border-foreground bg-primary px-4 py-2.5 text-small font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px active:hard-shadow-none disabled:opacity-50"}
           >
             {busy ? "Posting…" : "Post"}
           </button>

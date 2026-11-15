@@ -4,6 +4,8 @@ import * as React from "react";
 import * as Sentry from "@sentry/nextjs";
 
 import { ErrorState } from "@/components/design-system/error-state";
+import { ErrorV2 } from "@/components/v2me/states";
+import { useUiV2 } from "@/components/v2me/ui-v2";
 
 /**
  * Dashboard-segment error boundary. Catches uncaught render errors in any page
@@ -23,6 +25,9 @@ export default function Error({
     Sentry.captureException(error);
     console.error(error);
   }, [error]);
+
+  const v2 = useUiV2();
+  if (v2) return <ErrorV2 onRetry={unstable_retry} digest={error.digest} homeHref="/go/home" />;
 
   return (
     <ErrorState

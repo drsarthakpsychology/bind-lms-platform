@@ -7,6 +7,8 @@ import { sanitizeRich, textToHtml } from "@/lib/email/rich-html";
 import { formatRelativeTime } from "@/lib/format";
 import { RefreshShell } from "@/components/navigation/refresh-shell";
 import { leaveWithoutSession } from "@/lib/auth/session-redirect";
+import { pageV2 } from "@/components/v2me/server";
+import { NotificationDetailV2 } from "../notifications-v2";
 
 export const dynamic = "force-dynamic";
 
@@ -35,6 +37,15 @@ export default async function NotificationPage({ params }: { params: Promise<{ i
     if (who && who.role !== "admin" && who.role !== "view_admin") from = typeof who.name === "string" && who.name.trim() ? `From ${who.name.trim()}` : "From your batch";
   }
   const html = sanitizeRich((n.body_html as string | null) ?? textToHtml(String(n.body ?? "")));
+
+  if (await pageV2(session.profile.role)) {
+    return (
+      <>
+        <RefreshShell when={justRead} />
+        <NotificationDetailV2 from={from} when={formatRelativeTime(String(n.created_at))} title={String(n.title)} html={html} />
+      </>
+    );
+  }
 
   return (
     <div className="mx-auto max-w-2xl">

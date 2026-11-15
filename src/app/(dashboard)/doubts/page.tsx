@@ -9,6 +9,10 @@ import { ToolHeader } from "@/components/help/tool-header";
 import { loadMyBlocks } from "@/lib/access/blocks";
 import { blockedBy } from "@/lib/access/features";
 import { leaveWithoutSession } from "@/lib/auth/session-redirect";
+import { pageV2 } from "@/components/v2me/server";
+import { PageFrame } from "@/components/ds";
+import { EmptyLine } from "@/components/v2me/parts";
+import { DoubtsV2 } from "./doubts-v2";
 
 export const metadata: Metadata = { title: "Doubts" };
 export const dynamic = "force-dynamic";
@@ -20,7 +24,16 @@ export default async function DoubtsPage({ searchParams }: { searchParams: Promi
   const isAdmin = session.profile.role === "admin" || session.profile.role === "view_admin";
   const sp = await searchParams;
 
+  const v2 = await pageV2(session.profile.role);
+
   if (!(await doubtsReady())) {
+    if (v2) {
+      return (
+        <PageFrame title="Doubts">
+          <EmptyLine title={isAdmin ? "The doubts board is not set up yet" : "Doubts open soon"}>{isAdmin ? "It needs the database step 2026_11_access_doubts.sql." : undefined}</EmptyLine>
+        </PageFrame>
+      );
+    }
     return (
       <div className="mx-auto max-w-3xl">
         <h1 className="text-h1">Doubts</h1>
@@ -36,6 +49,29 @@ export default async function DoubtsPage({ searchParams }: { searchParams: Promi
   // The Wall link shows only where the Wall opens: full accounts, not switched off for this student.
   const showWall = !isAdmin && session.profile.scope !== "lectures_only" && !blockedBy("/wall", session.profile.role === "student" ? await loadMyBlocks(session.profile.id) : []);
   const group = cohorts.length ? cohorts.map((c) => c.name).join(" & ") : "your batch";
+
+  if (v2) {
+    return (
+      <DoubtsV2
+        items={items}
+        canAskCohort={cohorts[0]?.id ?? null}
+        canAsk={!isAdmin}
+        group={isAdmin ? undefined : group}
+        showWall={showWall}
+        adminNote={
+          isAdmin ? (
+            <>
+              This is the board as students see it. To reply, open{" "}
+              <Link href="/admin/doubts" className="font-semibold text-link underline underline-offset-4">
+                Doubts and concerns
+              </Link>{" "}
+              in Review.
+            </>
+          ) : undefined
+        }
+      />
+    );
+  }
 
   return (
     <div className="mx-auto max-w-3xl space-y-6">

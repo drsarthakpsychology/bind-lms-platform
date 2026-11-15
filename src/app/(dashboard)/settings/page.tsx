@@ -13,6 +13,9 @@ import { LogoutButton } from "@/components/navigation/logout-button";
 
 const ROLE_LABEL: Record<string, string> = { admin: "Admin", view_admin: "Admin (view only)", student: "Student", alumni: "Alumni" };
 import { leaveWithoutSession } from "@/lib/auth/session-redirect";
+import { pageV2 } from "@/components/v2me/server";
+import { LEGAL } from "@/lib/legal-constants";
+import { SettingsV2 } from "./settings-v2";
 
 /**
  * /settings: grouped progressive account screen (T41).
@@ -38,6 +41,18 @@ export default async function SettingsPage() {
 
   const { email, role } = session.profile;
   const roleLabel = ROLE_LABEL[role] ?? role;
+
+  if (await pageV2(role)) {
+    return (
+      <SettingsV2
+        email={email}
+        roleLabel={roleLabel}
+        rollNumber={session.profile.roll_number ?? null}
+        student={role === "student"}
+        whatsappHref={`https://wa.me/${LEGAL.phone.replace(/[^\d]/g, "")}`}
+      />
+    );
+  }
 
   return (
     <MobilePage inset={false}>
