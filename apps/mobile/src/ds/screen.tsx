@@ -4,6 +4,8 @@ import { Pressable, RefreshControl, ScrollView, View, type StyleProp, type ViewS
 import Animated, { FadeIn, useReducedMotion } from "react-native-reanimated";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
+import { haptic } from "@/lib/haptics";
+import { presets, usePressScale } from "@/motion";
 import { fonts, layout, motion, space, useTheme } from "@/theme";
 import { Button } from "./button";
 import { ProgressLine } from "./parts";
@@ -26,13 +28,15 @@ export function Wordmark({ sub = "School of Psychology", size = 22 }: { sub?: st
   );
 }
 
-/** A 48px round icon button. */
+/** A 48px round icon button. Sinks to 0.88 while pressed; the unread dot pops in. */
 export function IconButton({ label, onPress, children, dot, testID }: { label: string; onPress: () => void; children: React.ReactNode; /** A small blue dot (unread). */ dot?: boolean; testID?: string }) {
   const c = useTheme();
+  const reduce = useReducedMotion();
+  const { style, handlers } = usePressScale(0.88);
   return (
-    <Pressable testID={testID} accessibilityRole="button" accessibilityLabel={label} onPress={onPress} hitSlop={4} android_ripple={{ color: c.tint, borderless: true, radius: 24 }} style={({ pressed }) => ({ width: layout.target, height: layout.target, borderRadius: 24, alignItems: "center", justifyContent: "center", backgroundColor: pressed ? c.tint : "transparent" })}>
-      {children}
-      {dot ? <View style={{ position: "absolute", top: 11, right: 11, width: 9, height: 9, borderRadius: 5, backgroundColor: c.brand, borderWidth: 1.5, borderColor: c.card }} /> : null}
+    <Pressable testID={testID} accessibilityRole="button" accessibilityLabel={label} onPress={onPress} {...handlers} hitSlop={4} android_ripple={{ color: c.tint, borderless: true, radius: 24 }} style={({ pressed }) => ({ width: layout.target, height: layout.target, borderRadius: 24, alignItems: "center", justifyContent: "center", backgroundColor: pressed ? c.tint : "transparent" })}>
+      <Animated.View style={style}>{children}</Animated.View>
+      {dot ? <Animated.View entering={reduce ? undefined : presets.pop(300)} style={{ position: "absolute", top: 11, right: 11, width: 9, height: 9, borderRadius: 5, backgroundColor: c.brand, borderWidth: 1.5, borderColor: c.card }} /> : null}
     </Pressable>
   );
 }
@@ -97,13 +101,32 @@ export function Screen({ children, title, lead, top, footer, onRefresh, refreshi
   const c = useTheme();
   const insets = useSafeAreaInsets();
   const reduce = useReducedMotion();
+  // Pull to refresh: the spinner shows only for the person's own pull (never
+  // for quiet background refreshes), for at least 500ms so it never blinks,
+  // and the pull gives a selection haptic.
+  const [pulled, setPulled] = React.useState(false);
+  const [hold, setHold] = React.useState(false);
+  if (pulled && !hold && !refreshing) setPulled(false);
+  const pull = React.useCallback(() => {
+    if (!onRefresh) return;
+    haptic.select();
+    setPulled(true);
+    setHold(true);
+    setTimeout(() => setHold(false), 500);
+    onRefresh();
+  }, [onRefresh]);
+  const spinning = pulled && (hold || refreshing);
   const side = bleed ? 0 : layout.gutter;
   const padBottom = (footer || tab ? 0 : insets.bottom) + space[6];
   const inner = (
     <View style={[{ width: "100%", maxWidth: bleed ? undefined : layout.readingWidth + side * 2, alignSelf: "center", paddingLeft: Math.max(side, bleed ? 0 : insets.left), paddingRight: Math.max(side, bleed ? 0 : insets.right), paddingTop: space[5], paddingBottom: padBottom, gap }, contentStyle]}>
       {title || lead ? (
         <View style={{ gap: space[1] }}>
-          {title ? <T v="h1">{title}</T> : null}
+          {title ? (
+            <Animated.View entering={reduce ? undefined : presets.rise(0)}>
+              <T v="h1">{title}</T>
+            </Animated.View>
+          ) : null}
           {lead ? (
             <T v="small" tone="muted">
               {lead}
@@ -124,7 +147,7 @@ export function Screen({ children, title, lead, top, footer, onRefresh, refreshi
             keyboardDismissMode="on-drag"
             contentInsetAdjustmentBehavior="automatic"
             showsVerticalScrollIndicator={false}
-            refreshControl={onRefresh ? <RefreshControl refreshing={refreshing} onRefresh={onRefresh} tintColor={c.muted} colors={[c.brand]} progressBackgroundColor={c.card} /> : undefined}
+            refreshControl={onRefresh ? <RefreshControl refreshing={spinning} onRefresh={pull} tintColor={c.muted} colors={[c.brand]} progressBackgroundColor={c.card} /> : undefined}
           >
             {inner}
           </ScrollView>

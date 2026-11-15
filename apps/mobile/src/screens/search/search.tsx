@@ -91,7 +91,7 @@ export function SearchScreen() {
             if (!rows.length) return null;
             return (
               <Section key={g.title} title={g.title} quiet>
-                <RowList>
+                <RowList still>
                   {rows.map((h) => {
                     const Icon = ICON[h.kind];
                     return <Row key={h.key} title={h.title} meta={h.meta} icon={<Icon size={20} color={c.muted} />} onPress={() => router.push(h.href)} />;
