@@ -1,6 +1,9 @@
 import { redirect } from "next/navigation";
 import { requireAdmin } from "@/lib/auth/guards";
 import { createAdminClient } from "@/lib/supabase/server";
+import { readFlags } from "@/lib/flags";
+import { uiV2For } from "@/lib/ui/v2";
+import { AdminPage } from "../_v2/kit";
 import { PageHeader } from "@/components/design-system/page-header";
 import { WallReportsList } from "./wall-reports-list";
 
@@ -14,7 +17,8 @@ export const dynamic = "force-dynamic";
 export default async function AdminWallReportsPage() {
   // Defence in depth: layouts don't re-render on every navigation, so the page
   // re-checks admin itself before reading data.
-  if (!(await requireAdmin())) redirect("/dashboard");
+  const me = await requireAdmin();
+  if (!me) redirect("/dashboard");
   const admin = createAdminClient();
 
   const { data: reports } = await admin
@@ -39,6 +43,23 @@ export default async function AdminWallReportsPage() {
 
   const contentByPost = new Map((posts ?? []).map((p) => [p.id, String(p.content)]));
   const contentByReply = new Map((replies ?? []).map((r) => [r.id, String(r.content)]));
+
+  if (uiV2For(await readFlags(), me.role)) {
+    return (
+      <AdminPage width="default" title="Reported wall content" lead="Students flagged these. Resolve each, or dismiss the report if the content stands.">
+        <WallReportsList
+          reports={(reports ?? []).map((r) => ({
+            id: r.id,
+            content: r.reply_id
+              ? contentByReply.get(r.reply_id) ?? "(reply removed)"
+              : contentByPost.get(r.post_id) ?? "(post removed)",
+            reason: (r.reason as string | null) ?? "No reason given",
+            createdAt: r.created_at,
+          }))}
+        />
+      </AdminPage>
+    );
+  }
 
   return (
     <div className="mx-auto max-w-3xl">

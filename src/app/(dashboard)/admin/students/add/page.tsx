@@ -3,6 +3,9 @@ import Link from "next/link";
 import { ArrowLeft, FileUp, Keyboard, UserPlus } from "lucide-react";
 import { requireAdmin, isSuperAdmin } from "@/lib/auth/guards";
 import { createAdminClient } from "@/lib/supabase/server";
+import { readFlags } from "@/lib/flags";
+import { uiV2For } from "@/lib/ui/v2";
+import { AdminPage, ViewTabs } from "../../_v2/kit";
 import { PageHeader } from "@/components/design-system/page-header";
 import { AddPeopleForm } from "@/components/admin/cohorts-ui";
 import { BulkImportForm } from "../../tools/bulk-import-form";
@@ -39,6 +42,57 @@ export default async function AddStudentsPage({ searchParams }: { searchParams: 
       <Icon className="size-4" aria-hidden /> {label}
     </Link>
   );
+
+  if (uiV2For(await readFlags(), me.role)) {
+    return (
+      <AdminPage
+        width="default"
+        title="Add students"
+        back={{ href: "/admin/students", label: "Students" }}
+        lead="One person or a whole batch. They get a one-time link to set their own password. Nobody's password is ever shown or sent."
+      >
+        {!isSuperAdmin(me) ? (
+          <p className="border-y border-[var(--ds-hairline)] py-6 type-small text-muted-foreground">Only the Super Admin can add students.</p>
+        ) : (
+          <>
+            <ViewTabs
+              label="How to add"
+              current={way}
+              tabs={[
+                { id: "type", label: "Type or paste emails", href: `/admin/students/add?way=type${sp.cohort ? `&cohort=${sp.cohort}` : ""}` },
+                { id: "file", label: "Upload a file", href: `/admin/students/add?way=file${sp.cohort ? `&cohort=${sp.cohort}` : ""}` },
+              ]}
+            />
+            <section className="min-w-0">
+            {way === "file" ? (
+              <>
+                <h2 className="mb-1 type-h3">Upload a spreadsheet</h2>
+                <p className="mb-4 type-small text-muted-foreground">A CSV file with the columns <code>name,email</code>. People already on VIBHA are skipped.</p>
+                <BulkImportForm />
+              </>
+            ) : opts.length ? (
+              <>
+                <h2 className="mb-1 type-h3">Type or paste emails</h2>
+                <p className="mb-4 type-small text-muted-foreground">One per line, or separated by commas. People who already have an account are just added to the cohort.</p>
+                <AddPeopleForm cohorts={opts} defaultCohortId={sp.cohort} initialText={sp.email ?? ""} />
+              </>
+            ) : (
+              <>
+                <p className="mb-4 type-small">
+                  There&apos;s no cohort yet. <Link href="/admin/cohorts" className="font-bold text-link underline">Make one</Link> to add people in bulk, or add one student here.
+                </p>
+                <CreateStudentForm />
+              </>
+            )}
+            </section>
+            <p className="type-small text-muted-foreground">
+              Need to resend login links to many people? <Link href="/admin/students/logins" className="font-semibold text-link underline-offset-4 hover:underline">Login links</Link>.
+            </p>
+          </>
+        )}
+      </AdminPage>
+    );
+  }
 
   return (
     <div className="mx-auto max-w-3xl space-y-6">
