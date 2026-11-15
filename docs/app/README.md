@@ -2,7 +2,7 @@
 
 The phone app for students and admins. Android first; the iPhone app comes from the same code later. Everything lives in the folder `apps/mobile`.
 
-Status on 15 November 2026: built and tested on a computer, **not yet run on a real phone**. The first real test is you installing the test app (part 1 below).
+Status on 15 November 2026: built and tested on a computer, and the Android test app now builds on GitHub (the first build finished in about 30 minutes). It has **not yet run on a real phone**: the first real test is you installing it (part 1 below).
 
 ---
 

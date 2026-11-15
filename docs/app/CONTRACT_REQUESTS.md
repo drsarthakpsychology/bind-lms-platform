@@ -10,13 +10,13 @@ Last updated: 2026-11-15.
 
 ## Small additions to built routes
 
-| Where | What | Why |
-|---|---|---|
-| `GET /home` | optional `quests: QuestCard \| null` (today's three quests, `xpEach`, `xpBonus`, `spareBonus`, each quest with a `target`) | The Today line opens the quests in a sheet, as on the website's v2 Home |
-| `GET /config` | optional `cohortLine: string \| null` ("Cohort Two · by invitation · starts December 2026") | The Welcome screen says it; today it is a constant in `apps/mobile/src/lib/brand.ts` |
-| `POST /me/deletion-request` (new) | `DeletionRequestBody` → `DeletionRequestResult` | Settings has "Ask to delete my account" (Google Play requires a way to ask from inside the app). A person checks it; nothing is deleted automatically |
+Done on the server (15 Nov): `Home.quests`, `AppConfig.cohortLine`, `POST /me/deletion-request`. The app uses the contract's types for them.
 
-## Practise (phase 4)
+## Practise, Library and Admin
+
+The server has `POST /play/:game/:action`, `/library/medicines` and the admin routes now (see the contract). The app's games, library and admin screens are being moved onto them on the branches `agent/appgames` and `agent/appadmin`; the tables below are the first app proposal and are kept for reference.
+
+### Practise (phase 4)
 
 | Method and path | Answer | Screen |
 |---|---|---|
@@ -27,14 +27,14 @@ Last updated: 2026-11-15.
 | `GET /prep` | `{ subjects: PrepSubject[] }` | Exam Prep |
 | `GET /prep/:subject` | `PrepSet` (MCQs with answers, like the website's question bank) | Exam Prep set |
 
-## Library (phase 4)
+### Library (phase 4)
 
 | Method and path | Answer | Screen |
 |---|---|---|
 | `GET /medicines?q=&class=` | `MedicineList` (every medicine: name, class, key dose, brands; and the class list) | Library tab |
 | `GET /medicines/:id` | `MedicinePage` (summary and sections of points, content unchanged from the website) | Medicine page |
 
-## Admin (phase 5)
+### Admin (phase 5)
 
 | Method and path | Answer | Screen |
 |---|---|---|
