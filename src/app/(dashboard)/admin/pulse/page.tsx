@@ -10,6 +10,9 @@ import { parseQuietDays, type NudgeStudent } from "@/lib/nudge/select";
 import { emailConfigured } from "@/lib/nudge/send";
 import { nowMs } from "@/lib/crm/people";
 import { QuietPanel } from "./quiet-panel";
+import { readFlags } from "@/lib/flags";
+import { uiV2For } from "@/lib/ui/v2";
+import { AdminPage } from "../_v2/kit";
 
 export const dynamic = "force-dynamic";
 
@@ -32,7 +35,8 @@ export const dynamic = "force-dynamic";
 export default async function AdminPulsePage({ searchParams }: { searchParams: Promise<{ cohort?: string; days?: string }> }) {
   // Defence in depth: layouts don't re-render on every navigation, so the page
   // re-checks admin itself before reading data.
-  if (!(await requireAdmin())) redirect("/dashboard");
+  const me = await requireAdmin();
+  if (!me) redirect("/dashboard");
   const admin = createAdminClient();
 
   const sp = await searchParams;
@@ -98,6 +102,24 @@ export default async function AdminPulsePage({ searchParams }: { searchParams: P
     recentWeeks.length === 2 &&
     recentWeeks[0].workload > recentWeeks[1].workload &&
     recentWeeks[0].n < recentWeeks[1].n;
+
+  if (uiV2For(await readFlags(), me.role)) {
+    return (
+      <AdminPage width="default" title="Who needs a nudge" lead="Students who have gone quiet, and a quick way to email them.">
+        <QuietPanel v2 students={quietStudents} cohorts={cohorts} initialCohort={initialCohort} initialDays={parseQuietDays(sp.days)} todayIso={new Date(now).toISOString()} emailReady={emailConfigured()} />
+        <PulseView
+          v2
+          drifting={drifted.map((d) => ({ email: d.email, daysSilent: d.daysSilent }))}
+          flying={flying}
+          total={rows.length}
+          active={rows.filter((r) => r.daysSilent !== null && r.daysSilent < 7).length}
+          activeNow={activeNow}
+          weeks={weeks}
+          curriculumFlag={curriculumFlag}
+        />
+      </AdminPage>
+    );
+  }
 
   return (
     <div className="mx-auto max-w-4xl">
