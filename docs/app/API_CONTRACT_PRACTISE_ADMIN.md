@@ -185,3 +185,7 @@ Moved out (website unchanged): admin Home's numbers (`loadAdminOverview`, `src/l
 Kept from the first version (commit 9fea713d): `AdminHome.counts`, `needsLook` rows and `live`; `AdminStudentProfile.row` and `detail` (now also flat on `AdminStudent`); `GET /admin/activity`'s `kind` and `data`; `POST /admin/messages` with `{ userIds, title, text }`.
 
 Changes from the app's mock: Home's `needsLook` in the mock is `attention` here; `today.lecturesWatched` is `null` (the website's Home does not count it); messages are sent with `to` and `toId` (the mock's `everyone | cohort | student`, plus `course` and `students`), and `body` is plain text.
+
+## 5. Database steps
+
+None. Every route in this part reads and writes the tables the website already uses, through the website's own functions. Routes that depend on a website step not run yet answer as the website does (for example the doubts board's `ready: false`, the studio's `ready: false`, notifications' 503 `unavailable`).
