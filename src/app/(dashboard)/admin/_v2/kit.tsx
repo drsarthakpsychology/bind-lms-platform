@@ -41,7 +41,7 @@ export const table = {
   th: "sticky top-[var(--top-h)] z-[2] border-b border-[var(--ds-card-line)] bg-background px-3 py-2 text-left align-bottom type-caption font-semibold text-muted-foreground first:pl-0 last:pr-0",
   td: "border-b border-[var(--ds-hairline)] px-3 py-2.5 align-middle first:pl-0 last:pr-0",
   tr: "group/tr transition-colors duration-[var(--ds-state)] ease-[var(--ds-ease)] hover:bg-[var(--ds-tint)] aria-selected:bg-[color-mix(in_oklab,var(--link)_9%,transparent)]",
-  num: "text-right type-num",
+  num: "text-right whitespace-nowrap type-num",
 } as const;
 
 /* ---------------------------------------------------------------- */
@@ -203,25 +203,27 @@ export function Meter({ pct, label, tone = "info", className }: { pct: number; l
 /** Numbers in one quiet line (label under value), separated by space, never boxed. */
 export function Figures({ items, className }: { items: { value: React.ReactNode; label: React.ReactNode; href?: string }[]; className?: string }) {
   return (
-    <dl className={cn("grid min-w-0 grid-cols-2 gap-x-6 gap-y-4 sm:flex sm:flex-wrap sm:gap-x-10", className)}>
+    <ul className={cn("grid min-w-0 grid-cols-2 gap-x-6 gap-y-4 sm:flex sm:flex-wrap sm:gap-x-10", className)}>
       {items.map((it, i) => {
         const body = (
           <>
-            <dd className="type-h2 type-num">{it.value}</dd>
-            <dt className="type-caption text-muted-foreground [overflow-wrap:anywhere]">{it.label}</dt>
+            <span className="type-h2 type-num">{it.value}</span>
+            <span className="type-caption text-muted-foreground [overflow-wrap:anywhere]">{it.label}</span>
           </>
         );
-        return it.href ? (
-          <Link key={i} href={it.href} className="flex min-w-0 flex-col-reverse rounded outline-none hover:[&_dt]:text-foreground hover:[&_dt]:underline focus-visible:ring-2 focus-visible:ring-ring">
-            {body}
-          </Link>
-        ) : (
-          <div key={i} className="flex min-w-0 flex-col-reverse">
-            {body}
-          </div>
+        return (
+          <li key={i} className="min-w-0">
+            {it.href ? (
+              <Link href={it.href} className="group/fig flex min-w-0 flex-col rounded outline-none focus-visible:ring-2 focus-visible:ring-ring [&>span:last-child]:underline [&>span:last-child]:underline-offset-4 hover:[&>span:last-child]:text-foreground">
+                {body}
+              </Link>
+            ) : (
+              <div className="flex min-w-0 flex-col">{body}</div>
+            )}
+          </li>
         );
       })}
-    </dl>
+    </ul>
   );
 }
 

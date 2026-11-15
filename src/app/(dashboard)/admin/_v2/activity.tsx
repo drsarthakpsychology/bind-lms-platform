@@ -359,7 +359,7 @@ export function EveryoneV2({
         {people.length ? (
           <>
             <div className="hidden min-w-0 overflow-x-auto md:block 2xl:overflow-visible" tabIndex={0} role="group" aria-label="Every student, table">
-              <table className={cn(table.root, "min-w-[60rem]")}>
+              <table className={cn(table.root, "min-w-[60rem] [&_th]:static 2xl:[&_th]:sticky")}>
                 <thead>
                   <tr>
                     <th scope="col" className={cn(table.th, "text-right")}>#</th>

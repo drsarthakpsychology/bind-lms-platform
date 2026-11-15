@@ -304,7 +304,7 @@ export function StudentsTableV2({ rows, cohorts, canWrite, initialCohort = "", i
             {shown.map((r) => {
               const sel = picked.has(r.id);
               return (
-                <li key={r.id} className={cn("-mx-2 flex min-w-0 items-center gap-1 rounded-lg px-1", sel && "bg-[color-mix(in_oklab,var(--link)_9%,transparent)]")}>
+                <li key={r.id} className={cn("-mx-2 flex min-w-0 items-center gap-1 px-1", sel && "bg-[color-mix(in_oklab,var(--link)_9%,transparent)]")}>
                   <label className={checkWrap}>
                     <input type="checkbox" className={check} checked={sel} onChange={() => togglePick(r.id)} aria-label={`Select ${r.name}`} />
                   </label>

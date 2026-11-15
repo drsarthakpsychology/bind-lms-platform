@@ -37,7 +37,7 @@ export function InlineReply({
   if (!canWrite) return null;
   if (!open) {
     return (
-      <Button type="button" variant="outline" size="sm" className="pointer-coarse:min-h-11" onClick={() => setOpen(true)} aria-controls={boxId}>
+      <Button type="button" variant="outline" size="sm" className="pointer-coarse:min-h-11" onClick={() => setOpen(true)} aria-expanded={false}>
         <Reply aria-hidden /> Reply
       </Button>
     );
