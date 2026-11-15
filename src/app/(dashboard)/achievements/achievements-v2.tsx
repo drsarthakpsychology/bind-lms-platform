@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { Check, Copy, Download, ExternalLink, Share2 } from "lucide-react";
+import { Check, ChevronRight, Copy, Download, ExternalLink, Share2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { formatDateIST } from "@/lib/format";
 import { PageFrame, Section, EmptyLine, quietButton, StatusWord, textButton } from "@/components/ds";
@@ -124,7 +124,13 @@ export function AchievementsV2({ earned, progress, rollNumber, siteUrl }: { earn
             {certificates.map((c) => (
               <li key={c.credential_id} className="flex min-w-0 flex-col gap-3 py-4 md:flex-row md:items-center md:justify-between md:gap-6">
                 <div className="min-w-0">
-                  <p className="type-body font-semibold [overflow-wrap:anywhere]">{c.title}</p>
+                  <Link
+                    href={`/achievements/${encodeURIComponent(c.credential_id)}`}
+                    className="-mx-2 inline-flex min-h-11 max-w-full items-center gap-1 rounded-lg px-2 type-body font-semibold outline-none transition-colors duration-[var(--ds-state)] ease-[var(--ds-ease)] hover:bg-[var(--ds-tint)] focus-visible:ring-2 focus-visible:ring-ring"
+                  >
+                    <span className="min-w-0 [overflow-wrap:anywhere]">{c.title}</span>
+                    <ChevronRight aria-hidden className="size-5 shrink-0 text-muted-foreground" />
+                  </Link>
                   <p className="type-small text-muted-foreground">
                     {c.status === "revoked" ? <StatusWord tone="alert">{statusLine(c)}</StatusWord> : statusLine(c)}
                   </p>
