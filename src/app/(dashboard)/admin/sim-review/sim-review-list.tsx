@@ -5,6 +5,7 @@ import { ChevronDown, MessageSquare, Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { haptic } from "@/lib/haptics";
 import { StatusPill } from "@/components/mobile/status-pill";
+import { Empty, Notice, Status, btn, control } from "../_v2/kit";
 
 interface ReviewRow {
   id: string;
@@ -20,7 +21,7 @@ interface ReviewRow {
   correctedOverall?: number | null;
 }
 
-export function SimReviewList({ rows }: { rows: ReviewRow[] }) {
+export function SimReviewList({ rows, v2 = false }: { rows: ReviewRow[]; v2?: boolean }) {
   const [open, setOpen] = React.useState<string | null>(null);
   const [comments, setComments] = React.useState<Record<string, string>>(() =>
     Object.fromEntries(rows.map((r) => [r.id, r.note ?? ""])),
@@ -31,6 +32,8 @@ export function SimReviewList({ rows }: { rows: ReviewRow[] }) {
   const [saving, setSaving] = React.useState<Record<string, boolean>>({});
   const [saved, setSaved] = React.useState<Record<string, boolean>>({});
   const [error, setError] = React.useState<string | null>(null);
+
+  if (rows.length === 0 && v2) return <Empty>No practice sessions yet. When students finish a Consulting Room session, the AI score and the transcript land here.</Empty>;
 
   if (rows.length === 0) {
     return (
@@ -67,6 +70,111 @@ export function SimReviewList({ rows }: { rows: ReviewRow[] }) {
     } finally {
       setSaving((s) => ({ ...s, [id]: false }));
     }
+  }
+
+  if (v2) {
+    const fmt = (iso: string) => new Date(iso).toLocaleString("en-IN", { day: "numeric", month: "short", hour: "numeric", minute: "2-digit", timeZone: "Asia/Kolkata" });
+    return (
+      <div className="flex min-w-0 flex-col gap-3">
+        {error ? <Notice tone="alert">{error}</Notice> : null}
+        <ul className="flex min-w-0 flex-col divide-y divide-[var(--ds-hairline)] border-y border-[var(--ds-hairline)]">
+          {rows.map((r) => {
+            const isOpen = open === r.id;
+            const overall = typeof r.overall === "number" ? r.overall.toFixed(1) : "No score";
+            const panel = `sim-${r.id}`;
+            return (
+              <li key={r.id} className="min-w-0">
+                <button
+                  type="button"
+                  data-sim-toggle
+                  aria-expanded={isOpen}
+                  aria-controls={panel}
+                  onClick={() => { setOpen(isOpen ? null : r.id); haptic("tap"); }}
+                  className="grid w-full min-w-0 grid-cols-[minmax(0,1fr)_auto] items-center gap-x-4 gap-y-1 py-3 text-left outline-none transition-colors hover:bg-[var(--ds-tint)] focus-visible:ring-2 focus-visible:ring-ring"
+                >
+                  <span className="min-w-0">
+                    <span className="block type-body font-semibold [overflow-wrap:anywhere]">{r.studentEmail}</span>
+                    <span className="block type-small text-muted-foreground">
+                      {fmt(r.createdAt)} · {r.transcript.length} turns
+                    </span>
+                  </span>
+                  <span className="flex items-center gap-3">
+                    <span className="type-body font-semibold type-num whitespace-nowrap">
+                      {overall}
+                      {typeof r.overall === "number" ? <span className="text-muted-foreground">/5</span> : null}
+                    </span>
+                    <ChevronDown className={cn("size-4 shrink-0 text-muted-foreground transition-transform", isOpen && "rotate-180")} aria-hidden />
+                  </span>
+                  <span className="col-span-2">
+                    {r.correctedOverall != null ? <Status tone="ok">Checked by faculty, score {r.correctedOverall}</Status> : <Status tone="warn">AI score, not checked yet</Status>}
+                  </span>
+                </button>
+
+                {isOpen ? (
+                  <div id={panel} className="flex min-w-0 flex-col gap-4 pb-5 pt-1">
+                    <div className="flex min-w-0 max-w-[65ch] flex-col gap-2">
+                      {r.transcript.map((t, i) => (
+                        <p key={i} className={cn("type-small [overflow-wrap:anywhere]", t.role === "student" ? "text-foreground" : "text-muted-foreground")}>
+                          <span className="font-semibold text-foreground">{t.role === "student" ? "Student" : "Patient"}: </span>
+                          {t.content}
+                        </p>
+                      ))}
+                    </div>
+
+                    <dl className="grid min-w-0 grid-cols-2 gap-x-6 gap-y-3 sm:flex sm:flex-wrap sm:gap-x-10">
+                      {[
+                        ["Open to closed", r.rubric.open_closed_ratio],
+                        ["Reflections", r.rubric.reflective_statements],
+                        ["Early reassurance", r.rubric.premature_reassurance],
+                        ["Risk questions", r.rubric.risk_timing],
+                      ].map(([label, value]) => (
+                        <div key={String(label)} className="flex min-w-0 flex-col">
+                          <dt className="type-caption text-muted-foreground">{String(label)}</dt>
+                          <dd className={cn("type-body font-semibold type-num", label === "Early reassurance" && Number(value) > 0 && "text-status-pending-fg")}>{String(value ?? "-")}</dd>
+                        </div>
+                      ))}
+                    </dl>
+
+                    <div className="flex min-w-0 max-w-[65ch] flex-col gap-2">
+                      <label className="flex min-w-0 flex-col gap-1">
+                        <span className="type-small font-semibold">Your comment</span>
+                        <textarea
+                          value={comments[r.id] ?? ""}
+                          onChange={(e) => setComments((c) => ({ ...c, [r.id]: e.target.value }))}
+                          rows={3}
+                          placeholder="Add context, correct a score, praise a specific moment"
+                          className={cn(control, "h-auto py-2 lg:h-auto")}
+                        />
+                      </label>
+                      <div className="flex min-w-0 flex-wrap items-end gap-3">
+                        <label className="flex flex-col gap-1">
+                          <span className="type-small font-semibold">Corrected score</span>
+                          <input
+                            type="number"
+                            min={0}
+                            max={5}
+                            step={0.5}
+                            inputMode="decimal"
+                            value={corrected[r.id] ?? ""}
+                            onChange={(e) => setCorrected((c) => ({ ...c, [r.id]: e.target.value }))}
+                            placeholder="-"
+                            className={cn(control, "w-24 text-center type-num")}
+                          />
+                        </label>
+                        <button type="button" disabled={saving[r.id]} onClick={() => void saveComment(r.id, r.sessionId, r.overall)} className={btn.primary}>
+                          {saving[r.id] ? "Saving" : saved[r.id] ? "Saved" : "Save comment"}
+                        </button>
+                      </div>
+                      <p className="type-caption text-muted-foreground">A correction also guides future scoring.</p>
+                    </div>
+                  </div>
+                ) : null}
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    );
   }
 
   return (
