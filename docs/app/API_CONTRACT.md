@@ -90,8 +90,8 @@ Auth column: **public** (no token), **bearer** (signed in, any role), **student*
 | Status | Method and path | Auth | Request | Response | Calls |
 |---|---|---|---|---|---|
 | built | `GET /config` | public | none | `AppConfig` | `src/lib/app-api/config.ts` (constants plus `LEGAL`) |
-| planned | `POST /public/request-invitation` | public, 5 a minute per network | `RequestInvitationBody` | `RequestInvitationResult` | `saveEnquiry` (moved out of `submitWaitlist`, `src/app/waitlist/actions.ts`) |
-| planned | `GET /public/certificates/:certificateId` | public | none | `CertificateVerification` | the loader behind `/verify/[certificateId]` |
+| built | `POST /public/request-invitation` | public, 5 a minute per network (the website form's own counter) | `RequestInvitationBody` | `RequestInvitationResult` | `saveEnquiry` (`src/lib/enquiry.ts`, moved out of `submitWaitlist`, which calls it too); stored with `source: "app"` |
+| built | `GET /public/certificates/:certificateId` | public, 60 a minute per network | none | `CertificateVerification` | `verifyCertificate` (`src/lib/app-api/achievements.ts`): `loadCredential`, `certStatus`, the facts of `/verify/[certificateId]` |
 
 ### 2.2 Auth and device
 
@@ -185,19 +185,21 @@ All study routes: student, gate `/study` with flag `learn` (closed for lectures-
 
 | Status | Method and path | Request | Response | Calls |
 |---|---|---|---|---|
-| planned | `GET /study/modules` | none | `StudyHome` | `MODULES`, `moduleStatus`, `courseNext`, `loadLearnState` |
-| planned | `GET /study/modules/:moduleId` | none | `ModuleDetail` | `moduleById`, `moduleStatus`, `checkpoints`, `checkpointStatus`, `moduleNext`, `retestDue` |
-| planned | `GET /study/modules/:moduleId/sections/:sectionId` | none | `SectionContent` | `sectionById`, `splitSection`, `checkpoints`, `laterSectionIds` |
-| planned | `GET /study/state` | none | `LearnStateResult` | `loadLearnState` |
-| planned | `PUT /study/state` | `SaveLearnStateBody` | `SaveLearnStateResult` | `saveLearnState` (clamp, `mergeCopies`, server-owned tests), then `loadLearnState` |
-| planned | `GET /study/modules/:moduleId/checkpoints/:n` | none | `CheckpointContent` | `checkpoints`, `checkpointQuestions`, `checkpointRound`, `checkpointKnown`, `loadMyHistory` |
-| planned | `POST /study/modules/:moduleId/checkpoints/:n/answers` | `SubmitPicksBody` | `CheckpointResult` | server grading with the same question set, `recordMyAnswers("study-check")`, `saveLearnState` |
-| planned | `POST /study/modules/:moduleId/test` | `SubmitPicksBody` | `ModuleTestResult` | `submitModuleTest` (`gradeTest`, `withTestResult`) |
-| planned | `GET /study/marks` | none | `MarksResult` | `pullMarks` |
-| planned | `PUT /study/marks` | `SaveMarksBody` | `SaveMarksResult` | `pushMarks`, then `pullMarks` |
-| planned | `GET /study/notes` | none | `RevisionNoteList` | the notes library in `src/lib/learn/notes` |
-| planned | `GET /study/notes/:noteId` | none | `RevisionNote` | same |
-| planned | `GET /study/figures/:figureId` | none | `Figure` | `FIGURES` (`src/components/study/figures/registry.ts`), drawn to standalone SVG on the server |
+| built | `GET /study/modules` | none | `StudyHome` | `MODULES`, `moduleStatus`, `courseNext`, `loadLearnState` |
+| built | `GET /study/modules/:moduleId` | none | `ModuleDetail` | `moduleById`, `moduleStatus`, `checkpoints`, `checkpointStatus`, `moduleNext`, `retestDue` |
+| built | `GET /study/modules/:moduleId/sections/:sectionId` | none | `SectionContent` | `sectionById`, `splitSection`, `checkpoints`, `laterSectionIds` |
+| built | `GET /study/state` | none | `LearnStateResult` | `loadLearnState` |
+| built | `PUT /study/state` | `SaveLearnStateBody` | `SaveLearnStateResult` | `saveLearnState` (clamp, `mergeCopies`, server-owned tests), then `loadLearnState` |
+| built | `GET /study/modules/:moduleId/checkpoints/:n` | none | `CheckpointContent` | `checkpoints`, `checkpointQuestions`, `checkpointRound`, `checkpointKnown`, `loadMyHistory` |
+| built | `POST /study/modules/:moduleId/checkpoints/:n/answers` | `SubmitPicksBody` | `CheckpointResult` | `gradeCheckpoint` (`src/lib/app-api/study.ts`): grades from `checkpointQuestions`, `recordHistory("study-check")`, `checkpointKnown`, then the website's `recordTest` through `saveLearnState` |
+| built | `POST /study/modules/:moduleId/test` | `SubmitPicksBody` | `ModuleTestResult` | `submitModuleTest` (`gradeTest`, `withTestResult`); then `recordHistory("module-test")` and the attempt's points through `recordTest` and `saveLearnState` (clamped; the graded result is kept), as the website's test runner does |
+| built | `GET /study/marks` | none | `MarksResult` | `pullMarks` |
+| built | `PUT /study/marks` | `SaveMarksBody` | `SaveMarksResult` | `pushMarks`, then `pullMarks` |
+| built | `GET /study/notes` | none | `RevisionNoteList` | `noteList` (`src/lib/app-api/notes.ts`): `NOTES`, `WEEK_BLOCKS` |
+| built | `GET /study/notes/:noteId` | none | `RevisionNote` | `noteDetail`: the note, plus the figures the website places between its sections (`NOTE_FIGURES`) |
+| built | `GET /study/figures/:figureId` | none | `Figure` | `figureData` (`src/lib/app-api/figure-svg.ts`): `FIGURES` (`src/components/study/figures/registry.ts`) drawn to standalone SVG on the server, the figure palette resolved for light and dark |
+
+Writes are rate limited: state 120 a minute, checkpoint and test answers 30 a minute, marks 60 a minute. Study content is the same for everyone and comes from the website's code (no database read), so it is fast; only the learn state, history and marks are per student.
 
 Test questions: the module test section and the checkpoints are sent as `TestQuestion` (`key`, `q`, `options`) with no answer. The app sends `{ picks: { [key]: optionIndex } }` and gets the score and a review (right answer and why) back. Practice questions inside ordinary sections are sent with their answers, as on the website.
 
@@ -229,27 +231,108 @@ All: student, gate `/doubts` (open to lectures-only accounts; closed when Doubts
 
 | Status | Method and path | Request | Response | Calls |
 |---|---|---|---|---|
-| planned | `GET /doubts` | `?cohort=&mine=1&limit&cursor` | `DoubtList` | `loadDoubts`, `doubtsReady` (`src/lib/doubts/data.ts`) |
-| planned | `GET /doubts/:id` | none | `DoubtThread` | `loadDoubt` |
-| planned | `POST /doubts` | `AskDoubtBody` | `AskDoubtResult` | `askDoubt` |
-| planned | `POST /doubts/:id/replies` | `ReplyBody` | `DoubtActionResult` | `replyToDoubt` |
-| planned | `POST /doubts/:id/replies/:replyId/vote` | `VoteBody` | `DoubtActionResult` | `voteReply` |
-| planned | `POST /doubts/:id/solved` | `SolvedBody` | `DoubtActionResult` | `markSolved` |
+| built | `GET /doubts` | `?cohort=&mine=1&limit&cursor` | `DoubtList` | `loadDoubts`, `doubtsReady` (`src/lib/doubts/data.ts`) |
+| built | `GET /doubts/:id` | none | `DoubtThread` | `loadDoubt` |
+| built | `POST /doubts` | `AskDoubtBody` | `AskDoubtResult` | `askDoubt` |
+| built | `POST /doubts/:id/replies` | `ReplyBody` | `DoubtActionResult` | `replyToDoubt` |
+| built | `POST /doubts/:id/replies/:replyId/vote` | `VoteBody` | `DoubtActionResult` | `voteReply` |
+| built | `POST /doubts/:id/solved` | `SolvedBody` | `DoubtActionResult` | `markSolved` |
+
+The website's doubt actions do their own rate limits (20 doubts, 40 answers, 60 votes a minute) and visibility checks; their answers are mapped to codes: 404 for a thread the student cannot see, 403 when only the asker may mark it solved, 429, 503 before the doubts database step. Every write answers the fresh thread (`DoubtActionResult`).
 
 ### 2.10 Progress, achievements, certificates, settings
 
 | Status | Method and path | Auth | Request | Response | Calls |
 |---|---|---|---|---|---|
-| planned | `GET /progress` | bearer | none | `Progress` | `loadCourseOverview`, `loadLearnState`, `moduleStatus`, `getStrengthsWeaknesses` |
-| planned | `GET /achievements` | student (`/achievements`) | none | `Achievements` | `loadMyAchievements` |
-| planned | `GET /achievements/:credentialId/pdf` | student (`/achievements`) | none | `CertificatePdfLink` | `downloadMyCertificate` |
-| planned | `GET /settings` | bearer | none | `Settings` | `buildMe`, `deviceState`, `loadPrefs`, `LEGAL` |
+| built | `GET /progress` | bearer | none | `Progress` | `loadProgress` (`src/lib/app-api/progress.ts`): `loadMyCourses`, `loadCourseOverview`, `loadLearnState`, `moduleStatus`, `getStrengthsWeaknesses`. `study`, `days` and `strengths` are empty when Study is closed for the account |
+| built | `GET /achievements` | student (`/achievements`) | none | `Achievements` | `loadMyAchievements` |
+| built | `GET /achievements/:credentialId/pdf` | student (`/achievements`), 30 a minute | none | `CertificatePdfLink` | `downloadMyCertificate` (409 `conflict` when not issued yet) |
+| built | `GET /settings` | bearer | none | `Settings` | `buildMe`, `deviceState`, `loadPrefs`, `buildConfig` |
 
 Settings are changed through the routes that own each part: `PATCH /me`, `PUT /devices/current`, `PUT /notifications/preferences`.
 
-### 2.11 Later phases (not in this contract yet)
+### 2.11 Practise: games and practice rounds
 
-Phase 4 (Practise, Library) and Phase 5 (Admin) get their own sections when they start. Rule already agreed: game and practice rounds come as complete structured JSON (the same data objects the website's widgets use, each with a `kind` and a version), never HTML and never a web view.
+| Status | Method and path | Auth | Request | Response | Calls |
+|---|---|---|---|---|---|
+| built | `POST /play/:game/:action` | student, the game's own gate (below); moves 240 a minute | `PlayBody` (`{ args: [...] }`, at most the action's argument count, 128 KB) | `PlayResult` (`{ kind: "<game>.<action>", v: 1, data }`) | the website's own server action for that move (`PLAY` in `src/lib/app-api/play.ts`) |
+
+Every move is dealt, checked and scored on the server by the website's existing code: signed run tokens, server-held answer keys, XP caps, answer history. The app sends exactly what the website's page sends to that action, and draws `data`, which is the same object the website's game screen draws. The app never grades and never sends a score. An action that answers `{ ok: false, error }` (or `{ error }`) becomes an error answer: 401 `unauthenticated` for "sign in again", 403 `forbidden` for "not open to you", otherwise 400 `bad_request` with the website's own words.
+
+Each `kind`, its arguments, and the type of `data` (defined in the named file; the app copies these types next to `contract.ts`):
+
+| `kind` | `args` | `data` type (file) | Gate |
+|---|---|---|---|
+| `blitz.start` | none | `StartResult` (`src/lib/games/blitz/server.ts`) | `/games/blitz`, flag `learn` |
+| `blitz.answer` | `token, n, choice` | `AnswerResult` (same) | same |
+| `blitz.finish` | `token` | `FinishResult` (same) | same |
+| `sort.load` | `{ mode, tier, boardId? }` | `{ ok, view: SortView }` (`src/app/(dashboard)/games/sort/actions.ts`) | `/games/sort`, `learn` |
+| `sort.check` | `{ mode, tier, boardId, placement, picks, tries }` | `CheckResult` (same) | same |
+| `rx.deal` | `mode` | `RxDeal` (`src/app/(dashboard)/games/rx/actions.ts`) | `/games/rx`, `learn` |
+| `rx.pick` | `{ token, value }` | `RxPick` (same) | same |
+| `rx.finish` | `token` | `{ ok, xp }` | same |
+| `mse.deal` | `level` | `MseDeal` (`src/app/(dashboard)/games/mse/actions.ts`) | `/games/mse`, `learn` |
+| `mse.tag` | `{ token, domain, term }` | `MseTag` (same) | same |
+| `ward.start` | `campaign` | `WardSolo` (`src/app/(dashboard)/games/ward/actions.ts`) | `/games/ward`, `learn` |
+| `ward.resume` | `{ token?, campaign?, choices? }` | `WardSolo` | same |
+| `ward.pick` | `{ token, option }` | `WardSolo` | same |
+| `escape.start` | `room` | `PracticeResult` (`src/app/(dashboard)/games/escape/actions.ts`) | `/games/escape`, `learn` |
+| `escape.resume` | `token` | `PracticeResult` | same |
+| `escape.answer` | `{ token, stage, answer }` | `PracticeResult` | same |
+| `detective.deal` | `family, seen` | `DealResult` (`src/app/(dashboard)/practice/detective/actions.ts`) | `/practice/detective`, `learn` |
+| `detective.clue` | `token, round, n` | `{ ok, clue }` | same |
+| `detective.clues` | `token, round` | `{ ok, clues }` | same |
+| `detective.guess` | `token, round, guess, final` | `{ ok, right, answer }` | same |
+| `daily.rest` | `{ mode, caseId?, log? }` | `{ ok, rest: CaseRest }` (`src/lib/games/daily/view.ts`) | `/practice/daily`, `learn` |
+| `daily.move` | `{ mode, caseId?, log?, action? }` | `MoveResult` (same) | same |
+| `daily.next` | `localHistory, current?` | `{ ok, caseId, target, recycled }` | same |
+| `prep.check` | `{ id, choice, ms? }` | `PrepReveal & { correct }` (`src/lib/prep/view.ts`) | `/prep`, `learn` |
+| `prep.reveal` | `qid` | `PrepReveal` | same |
+| `prep.save` | `{ id, saved }` | `{ ok }` | same |
+| `prep.mockStart` | `specId` | `MockPaperView` | same |
+| `prep.mockSubmit` | the website's submit input | `MockResultView` (`src/lib/prep/results.ts`) | same |
+| `cases.progress` | `tool` | `ProgressSnapshot` (`src/lib/cases/progress-server.ts`): Done and New per case | `/practice`, `learn` |
+| `cases.mark` | `tool, item, state` | `{ ok }` | same |
+
+Planned (not built): the first screen of each game (the lists the website's page builds before the first move: boards, campaigns, rooms, case families, Exam Prep sets, the case library with Done and New), team modes (ward and escape teams, duels: these need live updates), comorbid (its rounds are dealt in the browser today, so it needs a server deal first), the Exam Prep long answers and interview practice, leaderboard and shop. Until then the app shows those games as "Open on the website".
+
+### 2.12 Library
+
+| Status | Method and path | Auth | Request | Response | Calls |
+|---|---|---|---|---|---|
+| built | `GET /library/medicines` | student (`/practice/medicines`) | none | `MedicineList` | `MEDS`, `GROUPS`, `medIndex` (`src/lib/meds`) |
+| built | `GET /library/medicines/:medId` | student (`/practice/medicines`) | none | `MedicinePage` | `medById`, `mechanismOf`, `medVisuals`, `halfLifeOf`, `medicineStudyLink` (`src/lib/meds/study-access.ts`, moved out of the medicine page) |
+| planned | `GET /library/terms`, `GET /library/cases` | student | | | the glossary and the case library |
+
+The medicine data is all medicine facts in the website's own shape (`Med`, `src/lib/meds/types.ts`). The app searches it on the phone (the same rule as `searchMeds`).
+
+### 2.13 Admin
+
+Auth: **admin** means `admin` or `view_admin` (read); **super admin** means `admin` only (every write), the same split as the website (`requireAdmin`, `requireSuperAdmin`). Test and robot accounts are left out of every list, as on the website's admin pages.
+
+| Status | Method and path | Auth | Request | Response | Calls |
+|---|---|---|---|---|---|
+| built | `GET /admin/home` | admin | none | `AdminHome` | `adminHome` (`src/lib/app-api/admin.ts`): `loadRoster`, `loadHiddenIds`, `loadLive`, `openComplaintCount` |
+| built | `GET /admin/students` | admin | `?search&cohort&flag&limit&cursor` (default 50, max 200) | `AdminStudentList` | `loadRoster` rows, `filterStudents` |
+| built | `GET /admin/students/:id` | admin | none | `AdminStudentProfile` | the roster row and `loadStudentDetail` (`src/lib/analytics/activity.ts`) |
+| built | `POST /admin/students/:id/lock` | super admin, 60 a minute | `LockBody` | `LockResult` | `setAccountStatus(id, "blocked", reason)` (`src/app/(dashboard)/admin/students/actions.ts`) |
+| built | `POST /admin/students/:id/unlock` | super admin, 60 a minute | none | `LockResult` | `setAccountStatus(id, "active")` |
+| built | `GET /admin/activity` | admin | none | `PlayResult` with `kind: "admin.activity"`; `data` is `loadActivity()`'s answer plus `live` | `loadActivity`, `loadLive` |
+| built | `GET /admin/messages` | admin | none | `MessageBatches` | `loadNotifyBatches` |
+| built | `POST /admin/messages` | super admin, 10 a minute | `SendMessageBody` | `SendMessageResult` | `sendNotifications` (bell row, phone push, optional email through the paced sender) |
+| built | `GET /admin/doubts` | admin | `?cohort&kind&limit&cursor` | `DoubtList` | `loadDoubts` as admin |
+| built | `POST /admin/doubts/:id/hide` | super admin | `HideBody` | `{ hidden }` | `adminHideDoubt` |
+| built | `POST /admin/devices/allow-change` | super admin | `AllowDeviceChangeBody` | `AllowDeviceChangeResult` | `allowDeviceChange` (section 2.2) |
+| planned | `POST /admin/students/:id/login-link` | super admin | | | `issueSetupLink` (the website's login link panel mixes it with page code; needs extracting first) |
+| planned | `GET /admin/inbox`, replies | admin | | | the enquiries inbox |
+| planned | doubt answers as the team, review queues (`needsReview`) | admin | | | |
+| planned | certificate studio actions (issue, revoke, re-send) | super admin | | | `src/lib/certificates/server.ts` |
+
+Answers to doubts by the admin use the student route `POST /doubts/:id/replies` (it is open to admins).
+
+### 2.14 Later phases
+
+Phase 6 (iPhone) needs no new routes.
 
 ## 3. Study content as data
 
