@@ -72,7 +72,7 @@ export function MedicinePage({ med, related, mech, visuals = [], half = null, st
           aria-checked={view === v}
           onClick={() => pick(v)}
           className={cn(
-            "h-9 rounded-full px-3 type-small font-semibold outline-none transition-colors duration-[var(--ds-state)] ease-[var(--ds-ease)] focus-visible:ring-2 focus-visible:ring-ring sm:px-4",
+            "h-11 rounded-full px-3 type-small font-semibold outline-none transition-colors duration-[var(--ds-state)] ease-[var(--ds-ease)] focus-visible:ring-2 focus-visible:ring-ring sm:px-4",
             view === v ? "bg-foreground text-background" : "text-muted-foreground hover:text-foreground",
           )}
         >
