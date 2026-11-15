@@ -157,10 +157,10 @@ export function RecordingHandIn({ a, onDone }: { a: Assignment; onDone: (s: Subm
           accessibilityRole="button"
           accessibilityLabel={rec.isRecording ? "Stop recording" : uri ? "Record again" : "Start recording"}
           onPress={() => void (rec.isRecording ? stop() : start())}
-          style={({ pressed }) => ({ width: 76, height: 76, borderRadius: 38, alignItems: "center", justifyContent: "center", backgroundColor: rec.isRecording ? c.danger : c.primary, borderWidth: 2, borderColor: c.dark ? "#111111" : c.line, transform: [{ scale: pressed ? 0.96 : 1 }] })}
+          style={({ pressed }) => ({ width: 76, height: 76, borderRadius: 38, alignItems: "center", justifyContent: "center", backgroundColor: rec.isRecording ? c.danger : c.ink, transform: [{ scale: pressed ? 0.96 : 1 }] })}
           testID="record-toggle"
         >
-          {rec.isRecording ? <Square size={26} color="#ffffff" fill="#ffffff" /> : uri ? <Circle size={26} color={c.onPrimary} fill={c.danger} /> : <Mic size={28} color={c.onPrimary} />}
+          {rec.isRecording ? <Square size={26} color="#ffffff" fill="#ffffff" /> : uri ? <Circle size={26} color={c.bg} fill={c.danger} /> : <Mic size={28} color={c.bg} />}
         </Pressable>
         <T v="small" tone="muted" center>
           {rec.isRecording ? "Recording. Tap to stop." : uri ? "Listen back, record again, or hand it in." : "Tap to start. Find a quiet place first."}
