@@ -170,3 +170,104 @@ export function v2SidebarItems(access: Access): NavItem[] {
     ...flat(ME_GROUPS, "Me").filter((i) => i.href !== "/notifications"),
   ];
 }
+
+/* ---------------------------------------------------------------- */
+/* Admin (ui_v2)                                                     */
+/* ---------------------------------------------------------------- */
+
+/** Paths that belong to the admin More tab (everything not on the four tabs). */
+export const ADMIN_MORE_MATCH = [
+  "/admin/more",
+  "/admin/inbox",
+  "/admin/cohorts",
+  "/admin/people",
+  "/admin/enquiries",
+  "/admin/triage",
+  "/admin/submissions",
+  "/admin/doubts",
+  "/admin/supervision",
+  "/admin/sim-review",
+  "/admin/wall-reports",
+  "/admin/calibration",
+  "/admin/courses",
+  "/admin/flags",
+  "/admin/psychopharm",
+  "/admin/psychopharm-review",
+  "/admin/ai-cases",
+  "/admin/cards",
+  "/admin/idioms",
+  "/admin/corpus",
+  "/admin/modules",
+  "/admin/forms",
+  "/admin/credentials",
+  "/admin/achievements",
+  "/admin/infra",
+  "/admin/management",
+  "/admin/tools",
+];
+
+/** Admin phone tabs (ui_v2): Home, Students, Activity, Messages, More (a screen, not a drawer). */
+export const ADMIN_V2_TABS: NavItem[] = [
+  { href: "/admin", label: "Home", icon: "home", exact: true },
+  { href: "/admin/students", label: "Students", icon: "users", match: ["/admin/access", "/admin/roster"] },
+  { href: "/admin/activity", label: "Activity", icon: "activity", match: ["/admin/pulse", "/admin/learning", "/admin/checkins"] },
+  { href: "/admin/emails", label: "Messages", icon: "mail" },
+  { href: "/admin/more", label: "More", icon: "more", match: ADMIN_MORE_MATCH },
+];
+
+/** The admin More screen (ui_v2): every other place, grouped like the student Me screen. */
+export const ADMIN_MORE_GROUPS: HubGroup[] = [
+  {
+    title: "People",
+    rows: [
+      { href: "/admin/inbox", label: "Inbox", icon: "inbox" },
+      { href: "/admin/cohorts", label: "Cohorts", icon: "users" },
+      { href: "/admin/people", label: "People", icon: "radar" },
+    ],
+  },
+  {
+    title: "Teach",
+    rows: [
+      { href: "/admin/triage", label: "Review", icon: "fileCheck" },
+      { href: "/admin/courses", label: "Content", icon: "bookOpen" },
+      { href: "/admin/forms", label: "Forms", icon: "clipboardCheck" },
+    ],
+  },
+  {
+    title: "Credentials",
+    rows: [
+      { href: "/admin/credentials", label: "Certificates", icon: "award" },
+      { href: "/admin/achievements", label: "Achievements", icon: "medal" },
+    ],
+  },
+  {
+    title: "Settings",
+    rows: [
+      { href: "/admin/infra", label: "System", icon: "gauge" },
+      { href: "/settings", label: "Settings", icon: "settings" },
+    ],
+  },
+];
+
+/**
+ * Admin desktop sidebar (ui_v2): Home, then four quiet groups. Each item keeps
+ * the pages of its place (match) so it stays lit on every tab of that place.
+ */
+export function adminV2SidebarItems(sections: { key: string; label: string; icon: string; href: string; tabs: { href: string }[] }[]): NavItem[] {
+  const GROUPS: { title: string; keys: string[] }[] = [
+    { title: "People", keys: ["students", "cohorts", "activity", "pipeline"] },
+    { title: "Messages", keys: ["inbox", "mail", "forms"] },
+    { title: "Teach", keys: ["review", "content", "credentials"] },
+    { title: "Settings", keys: ["system"] },
+  ];
+  const by = new Map(sections.map((s) => [s.key, s]));
+  const home = by.get("home");
+  const out: NavItem[] = home ? [{ href: home.href, label: home.label, icon: home.icon, exact: true }] : [];
+  for (const g of GROUPS) {
+    for (const k of g.keys) {
+      const s = by.get(k);
+      if (s) out.push({ href: s.href, label: k === "pipeline" ? "People" : s.label, icon: s.icon, section: g.title, match: s.tabs.map((t) => t.href) });
+    }
+  }
+  return out;
+}

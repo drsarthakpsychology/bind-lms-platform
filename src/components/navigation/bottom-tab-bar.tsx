@@ -11,7 +11,7 @@ import { isImmersiveSessionPath } from "./sidebar-gate";
 import { openNavDrawer } from "./sidebar-state";
 import { activeNavHref, isRunPath } from "./sections";
 import { NAV_ICONS } from "./nav-items";
-import { v2Tabs } from "./v2-config";
+import { ADMIN_V2_TABS, v2Tabs } from "./v2-config";
 
 interface Tab {
   href: string;
@@ -86,9 +86,14 @@ export function BottomTabBar({
   const base =
     mode === "admin" ? ADMIN_TABS : scope === "lectures_only" ? LECTURE_ONLY_TABS : showStudy ? STUDENT_TABS : STUDENT_TABS_NO_STUDY;
   const v2Student = v2 && mode === "student";
+  // Admin, new design: the same five-tab bar as students; More opens the More screen (no drawer).
+  const v2Admin = v2 && mode === "admin";
+  const v2Bar = v2Student || v2Admin;
   const tabs: Tab[] = v2Student
     ? v2Tabs({ scope, showStudy, blocked }).map((t) => ({ href: t.href, label: t.label, icon: NAV_ICONS[t.icon] ?? Home, exact: t.exact, match: t.match }))
-    : mode === "admin"
+    : v2Admin
+      ? ADMIN_V2_TABS.map((t) => ({ href: t.href, label: t.label, icon: NAV_ICONS[t.icon] ?? Home, exact: t.exact, match: t.match }))
+      : mode === "admin"
       ? base
       : base.filter((t) => !blockedBy(t.href, blocked));
 
@@ -105,7 +110,7 @@ export function BottomTabBar({
 
   return (
     <nav
-      className={cn("bottom-tabs fixed inset-x-0 bottom-0 z-40 bg-card md:hidden", v2Student ? "border-t border-[var(--ds-hairline)]" : "border-t-2 border-foreground")}
+      className={cn("bottom-tabs fixed inset-x-0 bottom-0 z-40 bg-card md:hidden", v2Bar ? "border-t border-[var(--ds-hairline)]" : "border-t-2 border-foreground")}
       style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
       aria-label="Primary tabs"
     >
@@ -120,22 +125,22 @@ export function BottomTabBar({
               aria-current={active ? "page" : undefined}
               className={cn(cell, active ? "text-foreground" : "text-muted-foreground")}
             >
-              <span className={cn(pill, active && !v2Student ? "border-foreground" : "border-transparent")}>
+              <span className={cn(pill, active && !v2Bar ? "border-foreground" : "border-transparent")}>
                 {active && (
                   <motion.span
                     layoutId="bottom-tab-active"
                     aria-hidden
-                    className={cn("absolute inset-0 rounded-full", v2Student ? "bg-brand" : "bg-primary")}
+                    className={cn("absolute inset-0 rounded-full", v2Bar ? "bg-brand" : "bg-primary")}
                     transition={reduce ? { duration: 0 } : { type: "spring", stiffness: 420, damping: 34 }}
                   />
                 )}
-                <Icon className={cn("relative z-10 size-5", active && (v2Student ? "text-brand-foreground" : "text-primary-foreground"))} aria-hidden />
+                <Icon className={cn("relative z-10 size-5", active && (v2Bar ? "text-brand-foreground" : "text-primary-foreground"))} aria-hidden />
               </span>
               <span className="max-w-full whitespace-nowrap">{t.label}</span>
             </Link>
           );
         })}
-        {v2Student ? null : (
+        {v2Bar ? null : (
         <button type="button" onClick={openNavDrawer} className={cn(cell, "text-muted-foreground")}>
           <span className={cn(pill, "border-transparent")}>
             <Menu className="relative z-10 size-5" aria-hidden />
