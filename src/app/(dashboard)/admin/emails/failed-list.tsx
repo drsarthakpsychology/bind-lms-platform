@@ -8,6 +8,7 @@ import { retryFailedEmails, type RetryReport } from "./retry-actions";
 import { ClearFailedButton } from "./mail-client";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { Empty, Notice, Status, btn, nameLink, table } from "../_v2/kit";
 
 export type FailedItem = {
   id: string;
@@ -43,7 +44,7 @@ function summary(r: RetryReport): string {
  * tried, and Retry for one, the ticked ones, or all. Retries are paced and
  * never send the same email to the same person twice (see retry-actions.ts).
  */
-export function FailedList({ items, canWrite }: { items: FailedItem[]; canWrite: boolean }) {
+export function FailedList({ items, canWrite, v2 = false }: { items: FailedItem[]; canWrite: boolean; /** Admin v2: no own title, a table on desktop, rows on phones, the action bar only while something is ticked. */ v2?: boolean }) {
   const router = useRouter();
   const [picked, setPicked] = React.useState<Set<string>>(new Set());
   const [busy, setBusy] = React.useState<string | null>(null);
@@ -74,6 +75,116 @@ export function FailedList({ items, canWrite }: { items: FailedItem[]; canWrite:
       else n.add(id);
       return n;
     });
+
+  if (v2) {
+    const tried = (i: FailedItem) => `Tried ${i.attempts} time${i.attempts === 1 ? "" : "s"} · last ${i.lastTry}${!i.canResend ? " · no saved copy, write it again from Compose" : ""}`;
+    const retryOne = (i: FailedItem) =>
+      canWrite ? (
+        <button type="button" className={btn.quiet} onClick={() => run([i.id], i.id)} disabled={Boolean(busy) || !i.retryNow || !i.canResend} aria-label={`Retry ${i.recipient}`}>
+          {busy === i.id ? <Loader2 className="animate-spin" aria-hidden /> : <RefreshCw aria-hidden />}
+          Retry
+        </button>
+      ) : null;
+    const tick = (i: FailedItem) => (
+      <input type="checkbox" className="size-4 accent-primary" checked={picked.has(i.id)} onChange={() => toggle(i.id)} aria-label={`Tick ${i.recipient}`} />
+    );
+    if (!items.length) return <Empty>Nothing failed. Every email went out.</Empty>;
+    return (
+      <div className="flex min-w-0 flex-col gap-4">
+        <p className="max-w-[72ch] type-small text-muted-foreground">
+          {items.length} email{items.length === 1 ? "" : "s"} did not go out. Retrying is safe: nobody gets the same email twice, and sends go out slowly so the provider does not block them.
+        </p>
+        <ul className="flex min-w-0 flex-wrap gap-x-6 gap-y-1" aria-label="Why they failed">
+          {[...groups.entries()].map(([k, n]) => {
+            const sample = items.find((i) => i.reasonKind === k)!;
+            return (
+              <li key={k} className="type-small [overflow-wrap:anywhere]">
+                <span className="font-semibold type-num">{n}</span> <span className="text-muted-foreground">{sample.reason.split(".")[0]}</span>
+              </li>
+            );
+          })}
+        </ul>
+        {canWrite ? (
+          <div className="flex min-w-0 flex-wrap items-center gap-2">
+            <button type="button" className={btn.quiet} onClick={() => run(null, "all")} disabled={Boolean(busy)}>
+              {busy === "all" ? <Loader2 className="animate-spin" aria-hidden /> : <RefreshCw aria-hidden />}
+              Retry all
+            </button>
+            <ClearFailedButton count={items.length} />
+          </div>
+        ) : null}
+        {result ? (
+          result.ok ? (
+            <p role="status" className="rounded-md bg-status-success-bg px-3 py-2.5 type-small font-semibold [overflow-wrap:anywhere]">{result.text}</p>
+          ) : (
+            <Notice tone="alert">{result.text}</Notice>
+          )
+        ) : null}
+
+        <table className={cn(table.root, "hidden md:table")}>
+          <thead>
+            <tr>
+              {canWrite ? (
+                <th scope="col" className={cn(table.th, "w-10")}>
+                  <input type="checkbox" className="size-4 accent-primary" checked={all} onChange={() => setPicked(all ? new Set() : new Set(items.map((i) => i.id)))} aria-label="Tick all" />
+                </th>
+              ) : null}
+              <th scope="col" className={table.th}>To</th>
+              <th scope="col" className={table.th}>Email</th>
+              <th scope="col" className={table.th}>Why it failed</th>
+              {canWrite ? <th scope="col" className={table.th}><span className="sr-only">Retry</span></th> : null}
+            </tr>
+          </thead>
+          <tbody>
+            {items.map((i) => (
+              <tr key={i.id} className={table.tr} aria-selected={picked.has(i.id) || undefined}>
+                {canWrite ? <td className={cn(table.td, "align-top")}>{tick(i)}</td> : null}
+                <td className={cn(table.td, "align-top")}>
+                  <Link href={`/admin/emails?folder=failed&id=${i.id}`} className={nameLink}>{i.name || i.recipient}</Link>
+                  {i.name ? <span className="block text-muted-foreground [overflow-wrap:anywhere]">{i.recipient}</span> : null}
+                </td>
+                <td className={cn(table.td, "align-top")}>
+                  <span className="block [overflow-wrap:anywhere]">{i.subject}</span>
+                  <span className="block text-muted-foreground">{i.kindLabel}</span>
+                </td>
+                <td className={cn(table.td, "align-top")}>
+                  <Status tone="alert">{i.reason}</Status>
+                  <span className="block text-muted-foreground">{tried(i)}</span>
+                </td>
+                {canWrite ? <td className={cn(table.td, "text-right align-top")}>{retryOne(i)}</td> : null}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+
+        <ul className="flex min-w-0 flex-col divide-y divide-[var(--ds-hairline)] border-y border-[var(--ds-hairline)] md:hidden">
+          {items.map((i) => (
+            <li key={i.id} className="flex min-w-0 items-start gap-3 py-3">
+              {canWrite ? <label className="-mt-2.5 -ml-3 flex size-11 shrink-0 cursor-pointer items-center justify-center">{tick(i)}</label> : null}
+              <div className="flex min-w-0 flex-1 flex-col gap-1">
+                <Link href={`/admin/emails?folder=failed&id=${i.id}`} className={cn(nameLink, "-my-2.5 flex min-h-11 items-center type-body")}>{i.name || i.recipient}</Link>
+                <span className="type-small [overflow-wrap:anywhere]">{i.kindLabel} · {i.subject}</span>
+                <Status tone="alert">{i.reason}</Status>
+                <span className="type-small text-muted-foreground">{tried(i)}</span>
+                {retryOne(i) ? <span className="pt-1">{retryOne(i)}</span> : null}
+              </div>
+            </li>
+          ))}
+        </ul>
+
+        {canWrite && picked.size ? (
+          <div role="region" aria-label="Ticked emails" className="sticky bottom-[calc(var(--nav-h)+0.75rem)] z-20 mx-auto flex w-full max-w-3xl min-w-0 flex-wrap items-center gap-2 rounded-xl border border-foreground bg-background p-2 shadow-[0_8px_24px_-8px_rgb(0_0_0/0.35)] md:bottom-4">
+            <span className="px-2 type-small font-semibold type-num">{picked.size} ticked</span>
+            <button type="button" className={btn.primary} onClick={() => run([...picked], "sel")} disabled={Boolean(busy)}>
+              {busy === "sel" ? <Loader2 className="animate-spin" aria-hidden /> : <RefreshCw aria-hidden />}
+              Retry ticked
+            </button>
+            <button type="button" className={cn(btn.ghost, "ml-auto")} onClick={() => setPicked(new Set())}>Clear</button>
+          </div>
+        ) : null}
+      </div>
+    );
+  }
 
   if (!items.length) {
     return (
