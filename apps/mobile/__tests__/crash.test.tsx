@@ -76,7 +76,7 @@ describe("Cause 1: admin screens read shapes the live server never sends", () =>
   it("Admin Home renders the live answer", async () => {
     serveLive();
     await render(<AdminHome />);
-    await waitFor(() => expect(screen.getByText("17/41")).toBeTruthy());
+    await waitFor(() => expect(screen.getByLabelText("Studied today: 17/41")).toBeTruthy());
     expect(screen.getByText("Ananya Rao")).toBeTruthy();
     expect(screen.getByText("No WhatsApp number · Quiet this week")).toBeTruthy();
   });
