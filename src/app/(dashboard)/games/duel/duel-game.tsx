@@ -3,7 +3,7 @@
 import * as React from "react";
 import { startHowTo, useHowTo } from "@/components/help/how-to";
 import Link from "next/link";
-import { useReducedMotion } from "motion/react";
+import { useReducedMotion } from "@/lib/use-reduced-motion";
 import { ArrowDown, ArrowLeft, ArrowUp, Bot, Check, Crown, Flag, LoaderCircle, Search, Shield, Swords, Timer, User, Users, X } from "lucide-react";
 import { emptyState, type LearnState } from "@/lib/learn/engine";
 import { initLearnStore, useLearnState } from "@/lib/learn/store";
