@@ -17,6 +17,7 @@
  * Sign in with any email. "lectures@..." is a lectures-only account,
  * "admin@..." an admin; the password "wrong" is refused.
  */
+import { adminMock, adminRoute } from "@/admin/mock";
 import type { RawRequest, RawResponse, Transport } from "../client";
 import type * as C from "../contract";
 import type * as X from "../extra";
@@ -61,6 +62,7 @@ export const mock = {
   reset() {
     state = fresh();
     practiseMock?.resetPractiseMock();
+    adminMock.reset();
   },
   setScenario(s: Scenario) {
     state.scenario = s;
@@ -83,9 +85,9 @@ function tokensFor(kind: string): C.AuthTokens {
   return { accessToken: `mock.${kind}.access`, refreshToken: `mock.${kind}.refresh`, expiresIn: 3600, expiresAt: new Date(Date.now() + 3600_000).toISOString() };
 }
 function meFor(kind: string): C.Me {
-  const me = kind === "lecture" ? fx.lectureOnly : kind === "admin" ? fx.admin : fx.student;
+  const me = kind === "lecture" ? fx.lectureOnly : kind === "admin" ? fx.admin : kind === "viewadmin" ? { ...fx.admin, id: "u-viewadmin", email: "viewadmin@example.com", name: "Riya Sharma", role: "view_admin" as const, watermark: { name: "Riya Sharma", rollNumber: null, text: "Riya Sharma" } } : fx.student;
   const unread = state.scenario === "empty" || state.scenario === "new" ? 0 : fx.notifications.filter((n) => !n.readAt && !state.read.has(n.id)).length;
-  return { ...me, unreadNotifications: kind === "admin" ? 0 : unread };
+  return { ...me, unreadNotifications: kind === "admin" || kind === "viewadmin" ? 0 : unread };
 }
 function kindOf(req: RawRequest): string | null {
   const m = /^Bearer mock\.(\w+)\.access$/.exec(req.headers.Authorization ?? "");
@@ -140,7 +142,7 @@ async function route(req: RawRequest): Promise<RawResponse> {
     const email = String(body.email ?? "");
     if (!email || body.password === "wrong" || !body.password) return fail(401, "invalid_credentials", "That email or password is not right.");
     if (email.startsWith("limit")) return fail(403, "device_limit", "You have changed phones twice this month. Message us on WhatsApp and we will sort it out.", { nextChangeAt: "2026-12-01T00:00:00.000Z" });
-    const kind = email.startsWith("lecture") ? "lecture" : email.startsWith("admin") ? "admin" : "student";
+    const kind = email.startsWith("lecture") ? "lecture" : email.startsWith("admin") ? "admin" : email.startsWith("viewadmin") ? "viewadmin" : "student";
     return ok<C.SignInResult>({ tokens: tokensFor(kind), me: meFor(kind), device: fx.device });
   }
   if (is("POST", "/auth/refresh")) {
@@ -179,6 +181,11 @@ async function route(req: RawRequest): Promise<RawResponse> {
   if (practise) return practise;
 
   const isNew = state.scenario === "new";
+  // Admin routes (src/admin/mock.ts): a view admin reads, only the admin writes.
+  if (kind === "admin" || kind === "viewadmin") {
+    const a = await adminRoute(req, kind === "admin" ? "admin" : "view_admin", state.scenario);
+    if (a) return a;
+  }
   if (is("GET", "/home")) {
     const h = fx.home(isNew ? "new" : state.scenario === "done" ? "done" : "default");
     return ok({ ...h, unreadNotifications: meFor(kind).unreadNotifications, quests: isNew || kind === "lecture" ? null : fx.quests, goal: kind === "lecture" ? null : h.goal, upNext: kind === "lecture" ? h.upNext.filter((r) => r.kind === "lecture") : h.upNext });
@@ -335,7 +342,7 @@ async function route(req: RawRequest): Promise<RawResponse> {
   if ((m = is("GET", "/achievements/:id/pdf"))) return ok<C.CertificatePdfLink>({ url: `https://vibhapsychology.com/mock/certificates/${m[0]}.pdf`, expiresIn: 300 });
   if (is("GET", "/settings")) {
     const me = meFor(kind);
-    return ok<C.Settings>({ account: { email: me.email, name: me.name, roleLabel: me.role === "admin" ? "Admin" : me.scope === "lectures_only" ? "Student (lectures)" : "Student", rollNumber: me.rollNumber, mobileNumber: me.mobileNumber }, device: fx.device, notifications: state.prefs, support: fx.config.support, legal: fx.config.legal, app: { minSupportedVersion: "1.0.0", latestVersion: "1.0.0" } });
+    return ok<C.Settings>({ account: { email: me.email, name: me.name, roleLabel: me.role === "admin" ? "Admin" : me.role === "view_admin" ? "View Admin" : me.scope === "lectures_only" ? "Student (lectures)" : "Student", rollNumber: me.rollNumber, mobileNumber: me.mobileNumber }, device: fx.device, notifications: state.prefs, support: fx.config.support, legal: fx.config.legal, app: { minSupportedVersion: "1.0.0", latestVersion: "1.0.0" } });
   }
 
   if (is("GET", "/library/medicines")) {
@@ -363,7 +370,7 @@ async function route(req: RawRequest): Promise<RawResponse> {
     return studentOnly ?? (page ? ok(page) : notFound());
   }
   if (path.startsWith("/admin")) {
-    if (kind !== "admin") return fail(403, "forbidden", "Only admins can open this.");
+    if (kind !== "admin" && kind !== "viewadmin") return fail(403, "forbidden", "Only admins can open this.");
     if (is("GET", "/admin/home")) return ok(xf.adminHome);
     if (is("GET", "/admin/students")) {
       const q = (query.q ?? "").toLowerCase();

@@ -10,6 +10,7 @@ import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { useReducedMotion } from "react-native-reanimated";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 
+import { useViewingAsStudent, ViewAsBar } from "@/admin/view-as";
 import { persistOptions, persister, queryClient, useConfig } from "@/api/queries";
 import { session, useSession } from "@/auth";
 import { ToastHost } from "@/ds";
@@ -92,6 +93,8 @@ function useGuard(ready: boolean): void {
   const phase = useSession((s) => s.phase);
   const me = useSession((s) => s.me);
   const top = segments[0] as string | undefined;
+  // An admin looking at the student side (More > View as student).
+  const viewing = useViewingAsStudent() && groupFor(me) === "(admin)";
   React.useEffect(() => {
     if (!ready || top === undefined) return;
     // A redirect must never throw out of an effect (that closes a release build).
@@ -111,9 +114,9 @@ function useGuard(ready: boolean): void {
       return;
     }
     const tabGroup = top === "(student)" || top === "(lecture)" || top === "(admin)";
-    if (tabGroup && top !== groupFor(me)) go(homeHref(me));
+    if (tabGroup && top !== groupFor(me) && !(viewing && top === "(student)")) go(homeHref(me));
     else if (ADMIN_ONLY.has(top) && groupFor(me) !== "(admin)") go(homeHref(me));
-  }, [ready, phase, me, top]);
+  }, [ready, phase, me, top, viewing]);
 }
 
 function Shell() {
@@ -126,6 +129,8 @@ function Shell() {
   const gate = useSession((s) => s.gate);
   const notice = useSession((s) => s.notice);
   const cfg = useConfig();
+  const segments = useSegments();
+  const viewing = useViewingAsStudent() && segments[0] === "(student)";
 
   // The server may change the lock time without an app release.
   React.useEffect(() => {
@@ -213,6 +218,7 @@ function Shell() {
           </Stack>
         }
       </View>
+      <ViewAsBar visible={viewing && !overlay} />
       {overlay}
       <ToastHost />
     </View>
