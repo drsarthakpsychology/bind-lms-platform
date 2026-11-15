@@ -921,6 +921,8 @@ export type NotificationList = Page<NotificationRow> & { unread: number };
 
 /** GET /notifications/:id (marks it read) */
 export type NotificationDetail = NotificationRow & {
+  /** "From the VIBHA team", or the batchmate who answered a doubt. */
+  from: string;
   /** The message as blocks (paragraphs, lists, links), never HTML. */
   content: MessageBlock[];
   /** Links found in the message, in order. */

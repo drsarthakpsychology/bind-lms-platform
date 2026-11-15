@@ -89,7 +89,7 @@ export function NotificationScreen() {
               <View style={{ gap: space[2] }}>
                 <T v="h1">{n.title}</T>
                 <T v="small" tone="muted">
-                  {when(n.createdAt)}
+                  {[n.from, when(n.createdAt)].filter(Boolean).join(" · ")}
                 </T>
               </View>
               <MessageBody blocks={n.content.length ? n.content : [{ t: "p", spans: [{ text: n.body }] }]} />

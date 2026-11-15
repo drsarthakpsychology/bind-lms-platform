@@ -265,6 +265,7 @@ export const quests = {
 export const notifications: NotificationDetail[] = [
   {
     id: "n1",
+    from: "From the VIBHA team",
     type: "message",
     title: "Lecture 6 opens on Monday",
     body: "Risk assessment and safety planning opens on Monday at 9 am. Finish Lecture 5 before then so the cases make sense.",
@@ -280,6 +281,7 @@ export const notifications: NotificationDetail[] = [
   },
   {
     id: "n2",
+    from: "Dr. Sarthak Dave",
     type: "nudge",
     title: "Dr. Sarthak answered your doubt",
     body: "How do I tell low mood from clinical depression in a first interview?",
@@ -291,6 +293,7 @@ export const notifications: NotificationDetail[] = [
   },
   {
     id: "n3",
+    from: "From the VIBHA team",
     type: "achievement",
     title: "Badge earned: Seven days in a row",
     body: "You studied every day this week.",
@@ -302,6 +305,7 @@ export const notifications: NotificationDetail[] = [
   },
   {
     id: "n4",
+    from: "From the VIBHA team",
     type: "message",
     title: "Welcome to Cohort Two",
     body: "Your account is ready. Start with Lecture 1 and the first study module.",
