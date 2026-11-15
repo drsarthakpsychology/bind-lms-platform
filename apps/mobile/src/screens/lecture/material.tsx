@@ -34,8 +34,15 @@ export function viewFor(m: Pick<Material, "kind" | "format" | "url" | "filePath"
   return "other";
 }
 
+/** The server gives file paths from the site root ("/api/app/v1/materials/1/file"); an older form was relative to the API. */
+export function absoluteUrl(path: string, apiUrl = config.apiUrl): string {
+  if (/^https?:\/\//.test(path)) return path;
+  if (path.startsWith("/api/")) return new URL(path, apiUrl).toString();
+  return apiUrl.replace(/\/$/, "") + path;
+}
+
 function fileUrl(m: Material): string {
-  return config.apiUrl + (m.filePath ?? "");
+  return absoluteUrl(m.filePath ?? "");
 }
 
 /* --------------------------------------------------------------------- pdf */

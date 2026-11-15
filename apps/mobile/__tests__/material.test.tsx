@@ -3,7 +3,7 @@ import * as React from "react";
 
 import * as fx from "@/api/mock/fixtures";
 import { session } from "@/auth";
-import { MaterialBody, viewFor } from "@/screens/lecture/material";
+import { MaterialBody, absoluteUrl, viewFor } from "@/screens/lecture/material";
 import { render } from "./utils";
 
 beforeAll(async () => {
@@ -20,6 +20,12 @@ describe("lecture materials in the app", () => {
     expect(viewFor({ kind: "audio", format: "mp3", url: null, filePath: "/x" })).toBe("media");
     expect(viewFor({ kind: "link", format: null, url: "https://example.com", filePath: null })).toBe("link");
     expect(viewFor({ kind: "doc", format: "docx", url: null, filePath: "/x" })).toBe("other");
+  });
+
+  it("turns the server's file path into a full address", () => {
+    expect(absoluteUrl("/api/app/v1/materials/7/file", "https://vibhapsychology.com/api/app/v1")).toBe("https://vibhapsychology.com/api/app/v1/materials/7/file");
+    expect(absoluteUrl("/materials/7/file", "https://vibhapsychology.com/api/app/v1/")).toBe("https://vibhapsychology.com/api/app/v1/materials/7/file");
+    expect(absoluteUrl("https://cdn.example.com/x.pdf")).toBe("https://cdn.example.com/x.pdf");
   });
 
   it("shows a PDF as pages inside the app", async () => {
