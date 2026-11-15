@@ -207,16 +207,19 @@ Saving study state: the app keeps its own copy of `LearnState`, changes it as th
 
 | Status | Method and path | Auth | Request | Response | Calls |
 |---|---|---|---|---|---|
-| planned | `GET /notifications` | student (`/notifications`) | `?limit&cursor` | `NotificationList` | the query of the notifications page |
-| planned | `GET /notifications/:id` | student (`/notifications`) | none | `NotificationDetail` | `openNotification` (`src/lib/notify/read.ts`, moved out of the page): marks read and opened |
-| planned | `POST /notifications/read-all` | student (`/notifications`) | none | `ReadAllResult` | `markAllNotificationsRead` |
-| planned | `GET /notifications/preferences` | bearer | none | `NotificationPrefs` | `loadPrefs` (`src/lib/app-api/prefs.ts`) |
-| planned | `PUT /notifications/preferences` | bearer | `Partial<NotificationPrefs>` | `NotificationPrefs` | `savePrefs` |
+| built | `GET /notifications` | student (`/notifications`) | `?limit&cursor` | `NotificationList` | `listNotifications` (`src/lib/app-api/notifications.ts`): the notifications page's query, with the student's own client |
+| built | `GET /notifications/:id` | student (`/notifications`) | none | `NotificationDetail` | `openNotification` (`src/lib/notify/read.ts`, moved out of the page, which calls it too): marks read and opened; `htmlToBlocks` (`src/lib/app-api/message-blocks.ts`) |
+| built | `POST /notifications/read-all` | student (`/notifications`), 30 a minute | none | `ReadAllResult` | `markAllNotificationsRead` |
+| built | `GET /notifications/preferences` | bearer | none | `NotificationPrefs` | `loadPrefs` (`src/lib/app-api/prefs.ts`) |
+| built | `PUT /notifications/preferences` | bearer, 30 a minute | `Partial<NotificationPrefs>` (without `synced`; `studyReminderTime` is "HH:MM") | `NotificationPrefs` | `savePrefs` |
 
 Push:
 
 - The app gets an Expo push token (`expo-notifications`) and stores it on its phone row with `PUT /devices/current { pushToken }`. `null` switches push off for that phone.
-- Whenever the website writes a bell notification row (admin messages, nudges, doubt answers, achievements, certificates), `sendPush` (`src/lib/app-api/push.ts`) sends the same title and text to the student's active phone through the Expo push service. It never blocks or fails the notification itself.
+- Whenever the website writes a bell notification row, `queuePush` (`src/lib/app-api/push.ts`) sends the same title and text to the student's active phone through the Expo push service, after the response. It never blocks or fails the notification itself. Built into: admin messages (`sendNotifications`), nudges, doubts (new doubt to admins, answers to the asker), achievements and certificates (`notifyCredential`, `emailCustomCertificate`, `notifyCertificate`).
+- Android notification channels the app must create: `messages` and `achievements`.
+- Server settings (optional): `EXPO_ACCESS_TOKEN` when the Expo project requires push security; `APP_PUSH_DISABLED=1` switches all push off.
+- A token Expo answers `DeviceNotRegistered` for is cleared from the phone row.
 - Every push carries `data: PushData` (`notificationId`, `type`, `target`). On tap the app opens `target`, or `GET /notifications/:id`.
 - Preferences: `push` is the master switch; `messages`, `doubtReplies`, `achievements` filter by kind on the server. `studyReminder` and `studyReminderTime` are a local notification the app schedules itself.
 

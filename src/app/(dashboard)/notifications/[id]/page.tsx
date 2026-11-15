@@ -2,8 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Bell, X } from "lucide-react";
 import { getSession } from "@/lib/auth/session";
-import { createAdminClient } from "@/lib/supabase/server";
-import { sanitizeRich, textToHtml } from "@/lib/email/rich-html";
+import { openNotification } from "@/lib/notify/read";
 import { formatRelativeTime } from "@/lib/format";
 import { RefreshShell } from "@/components/navigation/refresh-shell";
 import { leaveWithoutSession } from "@/lib/auth/session-redirect";
@@ -20,23 +19,10 @@ export default async function NotificationPage({ params }: { params: Promise<{ i
   const session = await getSession();
   if (session.status !== "ok") return leaveWithoutSession(session);
   const { id } = await params;
-  const admin = createAdminClient();
-  const { data: n } = await admin.from("notifications").select("*").eq("id", id).maybeSingle();
-  if (!n || (n.user_id !== session.profile.id && session.profile.role !== "admin")) notFound();
-
-  const justRead = n.user_id === session.profile.id && !n.read_at;
-  if (justRead) {
-    const now = new Date().toISOString();
-    const r = await admin.from("notifications").update({ read_at: now, opened_at: now }).eq("id", id);
-    if (r.error) await admin.from("notifications").update({ read_at: now }).eq("id", id);
-  }
-  // Doubt answers come from batchmates, not the team: say who it is from.
-  let from = "From the VIBHA team";
-  if (n.sent_by && n.sent_by !== n.user_id) {
-    const { data: who } = await admin.from("profiles").select("role, name").eq("id", n.sent_by).maybeSingle();
-    if (who && who.role !== "admin" && who.role !== "view_admin") from = typeof who.name === "string" && who.name.trim() ? `From ${who.name.trim()}` : "From your batch";
-  }
-  const html = sanitizeRich((n.body_html as string | null) ?? textToHtml(String(n.body ?? "")));
+  // (src/lib/notify/read.ts, shared with the mobile app.)
+  const opened = await openNotification(session.profile, id);
+  if (!opened) notFound();
+  const { row: n, justRead, from, html } = opened;
 
   if (await pageV2(session.profile.role)) {
     return (
