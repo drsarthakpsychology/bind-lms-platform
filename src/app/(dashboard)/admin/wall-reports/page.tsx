@@ -46,8 +46,9 @@ export default async function AdminWallReportsPage() {
 
   if (uiV2For(await readFlags(), me.role)) {
     return (
-      <AdminPage width="default" title="Reported wall content" lead="Students flagged these. Resolve each, or dismiss the report if the content stands.">
+      <AdminPage width="default" title="Reported wall content" lead="Students flagged these. Resolving closes the report; the post stays on the wall.">
         <WallReportsList
+          v2
           reports={(reports ?? []).map((r) => ({
             id: r.id,
             content: r.reply_id
