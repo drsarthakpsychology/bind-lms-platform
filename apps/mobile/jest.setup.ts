@@ -136,3 +136,13 @@ jest.mock("expo-file-system", () => {
   }
   return { File, Paths: { cache: "cache", document: "document" }, UploadTask: jest.fn(), UploadType: { BINARY_CONTENT: 0, MULTIPART: 1 } };
 });
+
+jest.mock("expo-audio", () => ({
+  RecordingPresets: { HIGH_QUALITY: {} },
+  requestRecordingPermissionsAsync: jest.fn(async () => ({ granted: true, canAskAgain: true })),
+  setAudioModeAsync: jest.fn(async () => undefined),
+  useAudioRecorder: jest.fn(() => ({ prepareToRecordAsync: jest.fn(async () => undefined), record: jest.fn(), stop: jest.fn(async () => undefined), uri: "file:///cache/recording.m4a" })),
+  useAudioRecorderState: jest.fn(() => ({ isRecording: false, durationMillis: 0, canRecord: true })),
+  useAudioPlayer: jest.fn(() => ({ play: jest.fn(), pause: jest.fn(), seekTo: jest.fn() })),
+  useAudioPlayerStatus: jest.fn(() => ({ playing: false, duration: 0 })),
+}));

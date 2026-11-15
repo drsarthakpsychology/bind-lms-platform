@@ -87,15 +87,13 @@ Built and checked on a computer (screenshots of every screen, automatic tests):
 |---|---|
 | Visitors | Welcome, Request an invitation, a free breathing tool, Sign in, Forgot password, the setup link from the welcome email, checking a certificate |
 | Signing in | Email and password once, then a 4-digit PIN; locks after 5 minutes away; 5 wrong PINs sign out; "opened on another device"; paused account; forced update |
-| Students | Home (Continue, Today with quests, Up next), Learn, Lectures, course page, the protected lecture player (moving name and roll number, screenshots blocked, full screen, resume, saves progress, mark as watched, previous and next), Study modules, the reader with the hand-drawn diagrams and interactive pieces, checkpoints, module tests, Progress, Certificates, Notifications, Doubts (ask, answer, vote), Settings (notifications, theme, vibration, sign out, ask to delete the account), Help, Search |
+| Students | Home (Continue, Today with quests, Up next), Learn, Lectures, course page, the protected lecture player (moving name and roll number, screenshots blocked, full screen, resume, saves progress, mark as watched, previous and next), lecture materials read inside the app (PDF pages, pictures, audio, video), handing in assignments as text, files or a voice recording, Study modules, the reader with the hand-drawn diagrams and interactive pieces, checkpoints, module tests, Progress, Certificates, Notifications, Doubts (ask, answer, vote), Settings (notifications, theme, vibration, sign out, ask to delete the account), Help, Search |
 | Practise and Library | Practise hub, two games (Quickfire, Match the term), patient cases, Exam Prep, medicine library and medicine pages (sample data until the server adds these) |
 | Lectures-only accounts | Home, Lectures, Doubts, Me |
 | Admins | Home (who needs a look), Students, a student's page (allow one more phone change), Activity, Messages, New message, More |
 
 Not done yet:
 - The website's 3D study scenes are step-by-step drawings in the app (same content and order, no 3D camera). All 39 kinds of interactive study pieces are in the app.
-- Handing in assignments as a file or a recording (text answers work).
-- Opening lecture materials (PDFs) inside the app.
 - Only two games so far; the website's other games come next.
 - Practise, Library and Admin need their server routes (listed in `docs/app/CONTRACT_REQUESTS.md`); until then they show "Coming in the next update" against the real server.
 - Offline downloads (agreed for later). Fingerprint unlock (the hook is ready; agreed for later).
