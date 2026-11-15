@@ -6,7 +6,10 @@ import type { WidgetBlock, WidgetDataByKind, WidgetKind } from "@/api/contract";
 import { Row, RowList } from "@/ds/parts";
 import { config } from "@/lib/config";
 import { useTheme } from "@/theme";
+import { BrainExplorerWidget } from "./brain-explorer";
+import { BrainMapWidget } from "./brainmap";
 import { CurveWidget, FigureWidget, FlowWidget, LayersWidget, SynapseWidget } from "./diagrams";
+import { ActionPotentialWidget, AmesRoomWidget, AttentionWidget, BrainSlicerWidget, ConditioningWidget, ConservationWidget, DissonanceWidget, GenogramWidget, HpaLoopWidget, HypnogramWidget, IllusionWidget, JourneyWidget, MemoryFlowWidget, NervousSystemWidget, NeuronWidget, PathwaysWidget, ReceptorWidget, ReleaseWidget, StrangeWidget, StressWidget, Synapse3dWidget } from "./scenes";
 import { BuildWidget, CompareWidget, DecideWidget, ExperimentWidget, GuessWidget, MoodlineWidget, RevealWidget, SortWidget, ThoughtRecordWidget, TimelineWidget, WorkedWidget } from "./interactive";
 
 /**
@@ -39,6 +42,30 @@ export const REGISTRY: Registry = {
   figure: { v: 1, C: FigureWidget },
   curve: { v: 1, C: CurveWidget },
   synapse: { v: 1, C: SynapseWidget },
+  // The website's animated and 3D scenes, rebuilt as native step-throughs (scenes.tsx).
+  brainmap: { v: 1, C: BrainMapWidget },
+  journey: { v: 1, C: JourneyWidget },
+  neuron: { v: 1, C: NeuronWidget },
+  pathways: { v: 1, C: PathwaysWidget },
+  receptor: { v: 1, C: ReceptorWidget },
+  conditioning: { v: 1, C: ConditioningWidget },
+  memoryflow: { v: 1, C: MemoryFlowWidget },
+  stress: { v: 1, C: StressWidget },
+  attention: { v: 1, C: AttentionWidget },
+  dissonance: { v: 1, C: DissonanceWidget },
+  conservation: { v: 1, C: ConservationWidget },
+  release: { v: 1, C: ReleaseWidget },
+  hypnogram: { v: 1, C: HypnogramWidget },
+  strange: { v: 1, C: StrangeWidget },
+  illusion: { v: 1, C: IllusionWidget },
+  nervoussystem: { v: 1, C: NervousSystemWidget },
+  brainexplorer: { v: 1, C: BrainExplorerWidget },
+  actionpotential: { v: 1, C: ActionPotentialWidget },
+  synapse3d: { v: 1, C: Synapse3dWidget },
+  genogram: { v: 1, C: GenogramWidget },
+  hpaloop: { v: 1, C: HpaLoopWidget },
+  brainslicer: { v: 1, C: BrainSlicerWidget },
+  amesroom: { v: 1, C: AmesRoomWidget },
 };
 
 /** Kinds the app draws today (the rest fall back to the website row). */

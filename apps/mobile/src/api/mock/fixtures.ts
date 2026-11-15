@@ -5,6 +5,7 @@
  */
 import type {
   Access,
+  Assignment,
   Achievements,
   AppConfig,
   Block,
@@ -46,6 +47,7 @@ export const config: AppConfig = {
   legal: { termsUrl: "https://vibhapsychology.com/policies/terms", privacyUrl: "https://vibhapsychology.com/policies/privacy", policyVersion: "2026-11" },
   contentSchemaVersion: 1,
   now: NOW,
+  cohortLine: "Cohort Two · by invitation · starts December 2026",
 };
 
 const watermark: Watermark = { name: "Ananya Mehta", rollNumber: "VIBHA-000123", text: "Ananya Mehta · VIBHA-000123" };
@@ -187,11 +189,18 @@ export function lectureDetail(id: string): LectureDetail | null {
     durationSeconds: l.minutes * 60,
     progress: { watchedSeconds: DONE.has(l.id) ? l.minutes * 60 : l.id === CURRENT ? 1104 : 0, completed: DONE.has(l.id) },
     requiresAssignment: false,
-    assignment: null,
-    materials: l.id === CURRENT ? [{ id: "m1", title: "PHQ-9 scoring sheet", kind: "pdf", format: "pdf", sizeBytes: 184_000, lessonId: l.id, week: 3, url: null, filePath: "/materials/m1/file" }] : [],
+    assignment: assignmentFor(l.id),
+    materials: l.id === CURRENT ? [{ id: "m1", title: "PHQ-9 scoring sheet", kind: "pdf", format: "pdf", sizeBytes: 184_000, lessonId: l.id, week: 3, url: null, filePath: "/api/app/v1/materials/m1/file" }] : [],
     prev: prev ? { id: prev.id, title: prev.title } : null,
     next: next ? { id: next.id, title: next.title } : null,
   };
+}
+
+/** Lecture 5 takes files, Lecture 6 a recording (the two kinds the app hands in natively). */
+export function assignmentFor(lessonId: string): Assignment | null {
+  if (lessonId === CURRENT) return { id: "a1", lessonId, courseId: "course-1", title: "Write up a first interview", instructions: "Interview a friend or family member about their week, using the questions from the lecture. Write up what you asked, what you heard, and what you would ask next. Hand in a PDF or a Word file.", submissionType: "file", dueAt: "2026-11-22T18:29:00.000Z", allowLate: true, maxFiles: 3, maxFileMb: 20, acceptedFormats: ["pdf", "docx"], submission: null };
+  if (lessonId === "l6") return { id: "a2", lessonId, courseId: "course-1", title: "Say it aloud: a safety question", instructions: "Record yourself asking a patient about thoughts of self-harm, in your own words, as you would in a first interview. Two minutes at most.", submissionType: "audio", dueAt: null, allowLate: true, maxFiles: 1, maxFileMb: 20, acceptedFormats: ["audio"], submission: null };
+  return null;
 }
 
 /* ------------------------------------------------------------------ home */
@@ -447,6 +456,14 @@ const sectionBlocks: Block[][] = [
   ],
 ];
 
+/** The website's scene widgets, so the native versions can be checked in the reader. */
+const sceneBlocks: Block[] = [
+  { t: "p", text: "Long stress and depression travel together. Step through what happens in the body." },
+  { t: "widget", kind: "stress", v: 1, data: {} },
+  { t: "widget", kind: "journey", v: 1, data: { drug: "Sertraline", target: "the serotonin transporter", routes: ["oral", "iv"] } },
+  { t: "widget", kind: "hypnogram", v: 1, data: { caption: "In depression, REM sleep comes earlier in the night." } },
+];
+
 export function sectionContent(moduleId: string, sectionId: string): SectionContent | null {
   const mod = moduleDetail(moduleId);
   const section = mod?.sections.find((s) => s.id === sectionId);
@@ -465,6 +482,7 @@ export function sectionContent(moduleId: string, sectionId: string): SectionCont
       { title: "A pattern, not a feeling", words: 320, blocks: sectionBlocks[0]! },
       { title: "Counting symptoms", words: 430, blocks: sectionBlocks[1]! },
       { title: "How severe is it?", words: 380, blocks: sectionBlocks[2]! },
+      { title: "The body under stress", words: 260, blocks: sceneBlocks },
     ],
     recall: isTest ? [] : [{ q: "Name the two core symptoms.", a: "Low mood, and loss of interest or pleasure." }, { q: "How long must symptoms last?", a: "At least two weeks." }],
     viva: [],

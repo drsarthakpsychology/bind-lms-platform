@@ -40,7 +40,8 @@ on:
 
 concurrency:
   group: app-android-${{ github.ref }}
-  cancel-in-progress: true
+  # A newer push waits for the running build instead of stopping it, so every build finishes.
+  cancel-in-progress: false
 
 permissions:
   contents: read
@@ -61,20 +62,20 @@ jobs:
       EAS_PROJECT_ID: ${{ vars.EAS_PROJECT_ID }}
       GRADLE_OPTS: "-Dorg.gradle.jvmargs=-Xmx4g -Dorg.gradle.daemon=false"
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: 22
           cache: npm
           cache-dependency-path: apps/mobile/package-lock.json
 
-      - uses: actions/setup-java@v4
+      - uses: actions/setup-java@v5
         with:
           distribution: temurin
           java-version: 17
 
-      - uses: gradle/actions/setup-gradle@v4
+      - uses: gradle/actions/setup-gradle@v5
 
       - name: Install the app's packages
         run: npm ci
@@ -118,7 +119,7 @@ jobs:
           cp android/app/build/outputs/apk/release/app-release.apk "../../out/vibha-psychology-${EXPO_PUBLIC_API_MODE}-${GITHUB_RUN_NUMBER}.apk"
 
       - name: Keep the APK as a download
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: vibha-psychology-android-${{ github.run_number }}
           path: out/*.apk

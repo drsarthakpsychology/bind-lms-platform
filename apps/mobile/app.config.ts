@@ -43,8 +43,9 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
     },
     predictiveBackGestureEnabled: true,
     softwareKeyboardLayoutMode: "resize",
-    permissions: ["POST_NOTIFICATIONS", "VIBRATE"],
-    blockedPermissions: ["android.permission.RECORD_AUDIO", "android.permission.READ_EXTERNAL_STORAGE", "android.permission.WRITE_EXTERNAL_STORAGE"],
+    permissions: ["POST_NOTIFICATIONS", "VIBRATE", "RECORD_AUDIO", "MODIFY_AUDIO_SETTINGS"],
+    // The microphone is asked for only when a student records an assignment answer.
+    blockedPermissions: ["android.permission.READ_EXTERNAL_STORAGE", "android.permission.WRITE_EXTERNAL_STORAGE"],
     // Links to the website open the app (verified once /.well-known/assetlinks.json is on the site).
     intentFilters: [
       {
@@ -99,6 +100,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
       },
     ],
     "expo-secure-store",
+    ["expo-audio", { microphonePermission: "Vibha Psychology uses the microphone only when you record an answer to an assignment." }],
     ["expo-notifications", { icon: "./assets/images/notification.png", color: BLUE, defaultChannel: "default" }],
     ["expo-video", { supportsBackgroundPlayback: false, supportsPictureInPicture: false }],
     ["expo-screen-orientation", { initialOrientation: "DEFAULT" }],

@@ -2,8 +2,7 @@ import { useQueryClient } from "@tanstack/react-query";
 import * as React from "react";
 import { Linking, View } from "react-native";
 
-import type { NotificationPrefs, Settings } from "@/api/contract";
-import type { DeletionRequestResult } from "@/api/extra";
+import type { DeletionRequestResult, NotificationPrefs, Settings } from "@/api/contract";
 import { messageOf } from "@/api/errors";
 import { keys, useSettings } from "@/api/queries";
 import { api, session } from "@/auth";
@@ -83,7 +82,7 @@ function DeleteAccount() {
       setOpen(false);
       toast.show("Request sent. We will write to you within 7 days.");
     } catch (e) {
-      toast.show(messageOf(e).includes("could not be found") ? "Message us on WhatsApp to delete your account." : messageOf(e));
+      toast.show(messageOf(e));
     } finally {
       setBusy(false);
     }

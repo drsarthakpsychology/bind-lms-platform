@@ -33,7 +33,7 @@ export function hrefFor(t: AppTarget): string | null {
     case "lecture":
       return `/lecture/${encodeURIComponent(t.lessonId)}${t.tab ? `?tab=${t.tab}` : ""}`;
     case "material":
-      return `/course/${encodeURIComponent(t.courseId)}`;
+      return `/material/${encodeURIComponent(t.materialId)}`;
     case "study":
       return "/study";
     case "studyModule":
