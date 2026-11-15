@@ -151,6 +151,12 @@ jobs:
           "$BT/apksigner" verify apk/release/app-release.apk
           "$BT/aapt2" dump badging apk/release/app-release.apk | grep -E "^package:|targetSdkVersion|sdkVersion"
           "$BT/aapt2" dump badging apk/release/app-release.apk | grep -q "targetSdkVersion:'36'" || { echo "::error::The app does not target Android 16 (API 36), which Google Play requires."; exit 1; }
+          echo "Permissions the app asks for (must match apps/mobile/docs/release/DATA_SAFETY.md):"
+          "$BT/aapt2" dump permissions apk/release/app-release.apk | tee "$RUNNER_TEMP/perms.txt"
+          if grep -qE "READ_MEDIA_IMAGES|READ_MEDIA_VIDEO|READ_EXTERNAL_STORAGE|ACCESS_FINE_LOCATION|ACCESS_COARSE_LOCATION|READ_CONTACTS|SCHEDULE_EXACT_ALARM|USE_EXACT_ALARM" "$RUNNER_TEMP/perms.txt"; then
+            echo "::error::The app asks for a permission Google Play needs a special declaration for. Block it in apps/mobile/app.config.ts (android.blockedPermissions) unless it is really needed."
+            exit 1
+          fi
 
       - name: Name the files
         run: |

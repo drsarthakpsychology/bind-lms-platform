@@ -91,7 +91,16 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
     softwareKeyboardLayoutMode: "resize",
     permissions: ["POST_NOTIFICATIONS", "VIBRATE", "RECORD_AUDIO", "MODIFY_AUDIO_SETTINGS"],
     // The microphone is asked for only when a student records an assignment answer.
-    blockedPermissions: ["android.permission.READ_EXTERNAL_STORAGE", "android.permission.WRITE_EXTERNAL_STORAGE"],
+    // Files are chosen with the system picker, which needs no storage permission. READ_MEDIA_IMAGES
+    // comes from expo-screen-capture's screenshot listener, which the app does not use (it blocks
+    // capture with FLAG_SECURE); Google Play rejects apps that ask for photo access without a core need.
+    blockedPermissions: [
+      "android.permission.READ_EXTERNAL_STORAGE",
+      "android.permission.WRITE_EXTERNAL_STORAGE",
+      "android.permission.READ_MEDIA_IMAGES",
+      "android.permission.READ_MEDIA_VIDEO",
+      "android.permission.SYSTEM_ALERT_WINDOW",
+    ],
     // Links to the website open the app (verified once /.well-known/assetlinks.json is on the site).
     intentFilters: [
       {
