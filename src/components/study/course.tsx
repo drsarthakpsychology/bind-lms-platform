@@ -17,7 +17,7 @@ import { backLinkClass } from "@/components/design-system/back-link";
 const EMPTY = emptyState();
 type Save = (s: LearnState) => Promise<unknown>;
 
-function nextLabel(n: Next): { eyebrow: string; title: string; sub?: string } {
+export function nextLabel(n: Next): { eyebrow: string; title: string; sub?: string } {
   switch (n.kind) {
     case "read":
       return { eyebrow: `Module ${n.module.num} · Read`, title: `${n.section.num} ${sectionTitle(n.section)}`, sub: n.module.title };
@@ -83,13 +83,13 @@ function Bar({ pct, tone = "brand" }: { pct: number; tone?: "brand" | "primary" 
  * about medicines, so it sits with the clinical ones.
  */
 const SHELF_OVERRIDE: Record<string, number> = { pharmacokinetics: 0 };
-const SHELVES = ["Clinical", "Going deeper", "Psychology"] as const;
-function shelfOf(m: StudyModule): number {
+export const SHELVES = ["Clinical", "Going deeper", "Psychology"] as const;
+export function shelfOf(m: StudyModule): number {
   return SHELF_OVERRIDE[m.id] ?? (m.num < 30 ? 0 : m.num < 40 ? 1 : 2);
 }
 
 /** Reading sections in runs of the same part, in order. */
-function partsOf<T extends { part?: string }>(secs: T[]): { part?: string; items: T[] }[] {
+export function partsOf<T extends { part?: string }>(secs: T[]): { part?: string; items: T[] }[] {
   const out: { part?: string; items: T[] }[] = [];
   for (const sec of secs) {
     const last = out[out.length - 1];

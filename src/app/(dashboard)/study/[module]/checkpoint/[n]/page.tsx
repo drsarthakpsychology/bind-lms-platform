@@ -5,6 +5,8 @@ import { moduleById } from "@/lib/study";
 import { checkpointQuestions, checkpoints } from "@/lib/study/checkpoints";
 import { CheckpointView } from "@/components/study/checkpoint";
 import { loadLearnState, saveLearnState } from "../../../actions";
+import { learnV2 } from "@/components/learn-v2/server";
+import { UiV2 } from "@/components/learn-v2/ui-v2";
 
 export const metadata: Metadata = { title: "Checkpoint" };
 
@@ -21,6 +23,7 @@ export default async function CheckpointPage({ params, searchParams }: { params:
   // Only follow links back into Study.
   const back = then && /^\/study\//.test(then) ? then : `/study/${m.id}`;
   return (
+    <UiV2 on={await learnV2()}>
     <CheckpointView
       moduleId={m.id}
       moduleNum={m.num}
@@ -34,5 +37,6 @@ export default async function CheckpointPage({ params, searchParams }: { params:
       serverState={await loadLearnState()}
       save={saveLearnState}
     />
+    </UiV2>
   );
 }

@@ -9,6 +9,9 @@ import { splitSection } from "@/lib/study/chunk";
 import { checkpointHref, checkpoints, laterSectionIds } from "@/lib/study/checkpoints";
 import { loadLearnState, saveLearnState, submitModuleTest } from "../../actions";
 import { studyOwner } from "../../owner";
+import { learnV2 } from "@/components/learn-v2/server";
+import { UiV2 } from "@/components/learn-v2/ui-v2";
+import { SectionReaderV2 } from "@/components/study/reader-v2";
 
 export async function generateMetadata({ params }: { params: Promise<{ module: string; section: string }> }): Promise<Metadata> {
   const { module, section } = await params;
@@ -34,10 +37,12 @@ export default async function SectionPage({ params }: { params: Promise<{ module
     ? { href: sectionHref(m, nextReading), label: `${nextReading.num} ${sectionTitle(nextReading)}` }
     : { href: `/study/${m.id}#steps`, label: "Back to the module" };
 
-  const [serverState, { owner }] = await Promise.all([loadLearnState(), studyOwner()]);
+  const [serverState, { owner }, v2] = await Promise.all([loadLearnState(), studyOwner(), learnV2()]);
   const parts = splitSection(s);
+  const Reader = v2 ? SectionReaderV2 : SectionReader;
   return (
-    <SectionReader
+    <UiV2 on={v2}>
+    <Reader
       moduleId={m.id}
       moduleNum={m.num}
       moduleTitle={m.title}
@@ -48,12 +53,13 @@ export default async function SectionPage({ params }: { params: Promise<{ module
       serverState={serverState}
       save={saveLearnState}
       owner={owner}
-      chunks={parts.chunks.map((c) => ({ title: c.title, node: <Blocks blocks={c.blocks} /> }))}
+      chunks={parts.chunks.map((c) => ({ title: c.title, node: <Blocks blocks={c.blocks} v2={v2} /> }))}
       recall={parts.recall}
       viva={parts.viva}
       mcq={parts.mcq}
       gradeTest={submitModuleTest}
       checks={checkpoints(m).map((cp) => ({ key: cp.key, href: checkpointHref(m, cp), sectionIds: cp.sectionIds, later: laterSectionIds(m, cp) }))}
     />
+    </UiV2>
   );
 }

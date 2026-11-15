@@ -10,6 +10,10 @@ import { VIEW_MODE_COOKIE } from "../view-mode-constants";
 import { PageHeader } from "@/components/design-system/page-header";
 import { EmptyState } from "@/components/design-system/empty-state";
 import { leaveWithoutSession } from "@/lib/auth/session-redirect";
+import { readFlags } from "@/lib/flags";
+import { uiV2For } from "@/lib/ui/v2";
+import { loadCourseOverview } from "@/components/course/course-overview";
+import { LecturesListV2 } from "@/components/learn-v2/course";
 
 /**
  * /courses: "Lectures" in the navigation. With one course (the usual case)
@@ -39,6 +43,12 @@ export default async function LecturesIndexPage() {
   const mine = (courses ?? []).filter((c) => visible.has(c.id));
 
   if (mine.length === 1) redirect(`/courses/${mine[0].id}`);
+
+  // New design (ui_v2): the courses as rows with progress and one Continue.
+  if (uiV2For(await readFlags(), profile.role)) {
+    const models = (await Promise.all(mine.map((c) => loadCourseOverview(c.id, profile)))).filter((m) => m !== null);
+    return <LecturesListV2 models={models} />;
+  }
 
   return (
     <div className="mx-auto max-w-5xl space-y-6">

@@ -1,0 +1,55 @@
+/* The lecture's video in the new design.
+   Phones (portrait): edge to edge, flush with the top of the screen, and it
+   stays there while the page scrolls under it.
+   Phones on their side: the video is the whole screen; the rest is a scroll away.
+   From 640px it sits in the column with soft corners. */
+.stage {
+  background: #000;
+}
+@media (max-width: 639px) {
+  .stage {
+    margin-inline: -1rem; /* the shell's phone gutter (ShellContent px-4) */
+    margin-top: -1.5rem; /* and its top padding (pt-6) */
+  }
+  /* While watching, the video stays at the top as the page scrolls under it.
+     Not on Materials or Assignment: typing there needs the room. */
+  .stage.stick {
+    position: sticky;
+    top: 0;
+    z-index: 30;
+  }
+}
+@media (min-width: 640px) {
+  .stage {
+    border-radius: 0.75rem;
+    overflow: clip;
+  }
+}
+@media (orientation: landscape) and (max-height: 500px) {
+  /* Nothing sits on the video: Previous / Next move into the page, under it. */
+  .pin.pin {
+    position: static;
+    margin: 1rem 0 0;
+    border-top: 0;
+    background: transparent;
+    backdrop-filter: none;
+  }
+  .stage,
+  .stage.stick {
+    position: static;
+    width: 100vw;
+    margin-inline: calc(50% - 50vw);
+    margin-top: -1.5rem;
+    border-radius: 0;
+    display: flex;
+    justify-content: center;
+  }
+  .stage > .fit {
+    width: min(100%, calc(100svh * 16 / 9));
+  }
+}
+@media (orientation: landscape) and (max-height: 500px) and (min-width: 1024px) {
+  .stage {
+    margin-top: -2rem;
+  }
+}

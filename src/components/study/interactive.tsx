@@ -14,6 +14,16 @@ import { ThumbBar } from "@/components/mobile/thumb-bar";
 import { Rich } from "./rich";
 import { useReaction } from "@/components/reactions/use-reaction";
 import { EndReaction, HalftoneCorner, ScoreDial } from "@/components/reactions/graphics";
+import { useUiV2 } from "@/components/learn-v2/ui-v2";
+import { ProgressLine } from "@/components/learn-v2/parts";
+
+/* New design (ui_v2): shared button shapes for the test and the cards. */
+const v2Lime =
+  "inline-flex min-h-[3.25rem] min-w-0 items-center justify-center gap-2 rounded-[var(--ds-radius)] border-2 border-foreground bg-primary px-6 type-body font-bold text-primary-foreground hard-shadow-sm outline-none transition-[transform,box-shadow] duration-[var(--ds-press)] ease-[var(--ds-ease)] focus-visible:ring-[3px] focus-visible:ring-ring/60 active:translate-x-0.5 active:translate-y-0.5 active:shadow-none disabled:opacity-50 disabled:shadow-none";
+const v2Quiet =
+  "inline-flex min-h-12 min-w-0 items-center justify-center gap-2 rounded-[var(--ds-radius)] border-[1.5px] border-[var(--ds-card-line)] px-5 type-body font-semibold outline-none transition-colors duration-[var(--ds-state)] ease-[var(--ds-ease)] hover:border-foreground focus-visible:ring-2 focus-visible:ring-ring active:bg-[var(--ds-tint)] disabled:opacity-40";
+/** The verdict: a band the full width of the screen on phones, in ink. */
+const v2Band = "-mx-5 bg-foreground px-5 py-6 text-background sm:mx-0 sm:rounded-[var(--ds-radius)] sm:px-6";
 
 /**
  * Self-tests are never spread across the notes. Each one sits behind a small
@@ -48,6 +58,46 @@ export function CardDeck({
   const [rounds, setRounds] = React.useState(0);
   const reaction = useReaction();
   const label = title ?? (kind === "recall" ? "Check yourself" : "Viva rapid-fire");
+  const v2 = useUiV2();
+
+  if (v2 && i < 0) {
+    return (
+      <section className="flex flex-col gap-3 border-t border-[var(--ds-hairline)] pt-6" aria-label={label}>
+        <h2 className="type-h3">{label}</h2>
+        <p className="type-body text-muted-foreground">Cover the notes, say each answer out loud, then check.</p>
+        <button type="button" onClick={() => setI(0)} className={cn(v2Quiet, "w-full md:w-fit")}>
+          Start <ArrowRight className="size-4" aria-hidden />
+        </button>
+      </section>
+    );
+  }
+  if (v2 && i >= items.length) {
+    const knew = items.length - missed.length;
+    return (
+      <section className={v2Band} role="status">
+        <div className="flex flex-wrap items-center gap-x-6 gap-y-4">
+          <div className="text-foreground">
+            <ScoreDial right={knew} total={items.length} label="known" />
+          </div>
+          <EndReaction right={knew} total={items.length} seed={rounds} tone="dark" className="min-w-0 flex-1 basis-56" />
+        </div>
+        <p className="mt-4 type-h3">
+          {knew} of {items.length} you knew
+        </p>
+        <p className="mt-1 type-small opacity-80">{missed.length ? "Re-read the parts behind the ones you missed, then try again." : "Solid. Move on."}</p>
+        <div className="mt-5 flex flex-wrap gap-3">
+          <button type="button" onClick={() => { reaction.reset(); setRounds((n) => n + 1); setI(0); setShown(false); setMissed([]); }} className="inline-flex min-h-12 items-center gap-2 rounded-[var(--ds-radius)] border-[1.5px] border-background/40 px-5 type-body font-semibold">
+            <RotateCcw className="size-4" aria-hidden /> Again
+          </button>
+          {onDone ? (
+            <button type="button" onClick={() => onDone(knew, items.length)} className="inline-flex min-h-12 flex-1 items-center justify-center gap-2 rounded-[var(--ds-radius)] border-2 border-primary bg-primary px-5 type-body font-bold text-primary-foreground sm:flex-none">
+              Continue <ArrowRight className="size-4" aria-hidden />
+            </button>
+          ) : null}
+        </div>
+      </section>
+    );
+  }
 
   if (i < 0) {
     return (
@@ -95,6 +145,45 @@ export function CardDeck({
     setShown(false);
     setI(i + 1);
   };
+  if (v2) {
+    return (
+      <section className="flex flex-col gap-4" aria-label={label} aria-live="polite">
+        <div className="flex items-center justify-between gap-3 type-small text-muted-foreground">
+          <span className="font-semibold">{label}</span>
+          <span className="type-num">
+            {i + 1} of {items.length}
+          </span>
+        </div>
+        <ProgressLine pct={(i / Math.max(1, items.length)) * 100} label={label} className="h-1" />
+        <p className="type-h3 [overflow-wrap:anywhere]">
+          <Rich text={c.q} />
+        </p>
+        {shown ? (
+          <>
+            {c.a ? (
+              <p className="rounded-[var(--ds-radius)] bg-[var(--ds-tint)] p-4 type-body [overflow-wrap:anywhere]">
+                <Rich text={c.a} />
+              </p>
+            ) : (
+              <p className="type-small text-muted-foreground">The answer is in the notes above.</p>
+            )}
+            <div className="grid grid-cols-2 gap-3">
+              <button type="button" onClick={() => next(false)} className={v2Quiet}>
+                Not yet
+              </button>
+              <button type="button" onClick={() => next(true)} className={cn(v2Quiet, "border-foreground bg-foreground text-background active:bg-foreground")}>
+                I knew it
+              </button>
+            </div>
+          </>
+        ) : (
+          <button type="button" onClick={() => setShown(true)} className={cn(v2Quiet, "w-full md:w-fit")}>
+            <Eye className="size-4" aria-hidden /> Show answer
+          </button>
+        )}
+      </section>
+    );
+  }
   return (
     <section className="relative isolate overflow-hidden rounded-2xl border-2 border-foreground bg-card p-4 sm:p-5" aria-label={label} aria-live="polite">
       <HalftoneCorner />
@@ -188,6 +277,7 @@ export function TestRunner({
   const [attempt, setAttempt] = React.useState(0);
   const right = items.filter((m, k) => picks[k] === m.answer).length;
   const top = React.useRef<HTMLDivElement>(null);
+  const v2 = useUiV2();
   const toTop = () => requestAnimationFrame(() => top.current?.scrollIntoView({ behavior: "smooth", block: "start" }));
 
   function submit() {
@@ -208,6 +298,154 @@ export function TestRunner({
     }
     onDone?.(score.right, score.total);
     toTop();
+  }
+
+  if (v2 && i < 0 && !done) {
+    return (
+      <div ref={top} className="flex scroll-mt-shell flex-col gap-3">
+        <h2 className="type-h2">{label}</h2>
+        <ul className="flex flex-col gap-1 type-body text-muted-foreground empty:hidden">
+          {(intro ?? TEST_INTRO).map((t) => (
+            <li key={t}>{t}</li>
+          ))}
+        </ul>
+        <button type="button" onClick={() => { reorder(); setI(0); }} className={cn(v2Lime, "mt-2 w-full md:w-fit md:min-w-60")}>
+          Start <ArrowRight className="size-5" aria-hidden />
+        </button>
+      </div>
+    );
+  }
+
+  if (v2 && done) {
+    return (
+      <div ref={top} className="flex scroll-mt-shell flex-col gap-6">
+        <div className={v2Band} role="status">
+          <p className="type-small font-semibold text-primary">Your score</p>
+          <div className="mt-3 flex flex-wrap items-center gap-x-6 gap-y-4">
+            <div className="text-foreground">
+              <ScoreDial right={right} total={items.length} />
+            </div>
+            <EndReaction right={right} total={items.length} seed={attempt} tone="dark" className="min-w-0 flex-1 basis-56" />
+          </div>
+          <p className="sr-only">
+            {right} / {items.length}
+          </p>
+          <p className="mt-3 type-body opacity-90">{right / items.length >= 0.8 ? "Strong. Look over the ones you missed, then move on." : "Go back to the sections behind the ones you missed, then re-test."}</p>
+          {allRight ? (
+            <p className="mt-3 type-small font-semibold text-primary">Every question here is right now.</p>
+          ) : (
+            <button
+              type="button"
+              onClick={() => {
+                if (!reorder()) return setAllRight(true);
+                sent.current = false;
+                setAttempt((n) => n + 1);
+                setPicks({});
+                setDone(false);
+                setI(0);
+                toTop();
+              }}
+              className="mt-4 inline-flex min-h-12 items-center gap-2 rounded-[var(--ds-radius)] border-[1.5px] border-primary px-5 type-body font-semibold text-primary"
+            >
+              <RotateCcw className="size-4" aria-hidden /> {retry ? "Try the missed ones again" : "Try again"}
+            </button>
+          )}
+        </div>
+        <details className="group border-y border-[var(--ds-hairline)]" open={right < items.length}>
+          <summary className="flex min-h-14 cursor-pointer list-none items-center type-body font-semibold [&::-webkit-details-marker]:hidden">Review your answers</summary>
+          <ol className="flex flex-col divide-y divide-[var(--ds-hairline)] border-t border-[var(--ds-hairline)]">
+            {items.map((m, k) => {
+              const ok = picks[k] === m.answer;
+              return (
+                <li key={k} className="flex gap-3 py-4">
+                  <span className={cn("mt-1 grid size-5 shrink-0 place-items-center rounded-full", ok ? "bg-primary text-primary-foreground" : "bg-status-alert-bg text-status-alert-fg")}>
+                    {ok ? <Check className="size-3" aria-hidden /> : <X className="size-3" aria-hidden />}
+                    <span className="sr-only">{ok ? "Right" : "Wrong"}</span>
+                  </span>
+                  <div className="flex min-w-0 flex-col gap-1.5">
+                    <p className="type-body font-semibold [overflow-wrap:anywhere]">
+                      <Rich text={m.q} />
+                    </p>
+                    <p className="type-small [overflow-wrap:anywhere]">
+                      <span className="font-semibold">Answer:</span> <Rich text={m.options[m.answer]} />
+                      {!ok && picks[k] !== undefined ? (
+                        <span className="text-muted-foreground"> · you chose <Rich text={m.options[picks[k]]} /></span>
+                      ) : null}
+                    </p>
+                    {m.why ? (
+                      <p className="type-small text-muted-foreground [overflow-wrap:anywhere]">
+                        <Rich text={m.why} />
+                      </p>
+                    ) : null}
+                  </div>
+                </li>
+              );
+            })}
+          </ol>
+        </details>
+      </div>
+    );
+  }
+
+  if (v2) {
+    const m = items[i];
+    const pick = picks[i];
+    const last = i === items.length - 1;
+    const left = items.length - Object.keys(picks).length;
+    return (
+      <div ref={top} className="flex scroll-mt-shell flex-col gap-4" aria-live="polite">
+        <div className="flex items-center justify-between gap-3 type-small text-muted-foreground">
+          <span className="font-semibold">{label}</span>
+          <span className="flex items-center gap-1">
+            <span className="type-num">
+              {i + 1} of {items.length}
+            </span>
+            {(intro ?? TEST_INTRO).length ? <HowToButton id="module-test" label="How it works" title={label} steps={intro ?? TEST_INTRO} className="-my-2 text-foreground" /> : null}
+          </span>
+        </div>
+        <ProgressLine pct={(i / Math.max(1, items.length)) * 100} label={label} className="h-1" />
+        <p className="pt-2 type-h3 [overflow-wrap:anywhere]">
+          <Rich text={m.q} />
+        </p>
+        {/* Options as large rows: the whole row is the target. */}
+        <div className="grid gap-3" role="radiogroup" aria-label={`Question ${i + 1}`}>
+          {m.options.map((o, j) => (
+            <button
+              key={j}
+              type="button"
+              role="radio"
+              aria-checked={pick === j}
+              onClick={() => setPicks({ ...picks, [i]: j })}
+              className={cn(
+                "flex min-h-14 items-center gap-3 rounded-[var(--ds-radius)] border-[1.5px] px-4 py-3 text-left type-body outline-none transition-colors duration-[var(--ds-state)] ease-[var(--ds-ease)] focus-visible:ring-2 focus-visible:ring-ring",
+                pick === j ? "border-foreground bg-[var(--ds-tint)] font-semibold" : "border-[var(--ds-card-line)] hover:border-foreground",
+              )}
+            >
+              <span aria-hidden className={cn("grid size-6 shrink-0 place-items-center rounded-full type-caption", pick === j ? "bg-foreground text-background" : "border-[1.5px] border-[var(--ds-card-line)] text-muted-foreground")}>
+                {String.fromCharCode(65 + j)}
+              </span>
+              <span className="min-w-0 [overflow-wrap:anywhere]">
+                <Rich text={o} />
+              </span>
+            </button>
+          ))}
+        </div>
+        <ThumbBar label="Move through the test" className="border-t border-[var(--ds-hairline)] md:mt-4" inlineClassName="md:justify-between md:gap-3">
+          <button type="button" onClick={() => setI(i - 1)} disabled={i === 0} aria-label="Back" className="inline-flex size-[3.25rem] shrink-0 items-center justify-center gap-2 rounded-[var(--ds-radius)] border-[1.5px] border-[var(--ds-card-line)] bg-background type-body font-semibold disabled:opacity-40 md:w-auto md:px-5">
+            <ArrowLeft className="size-5" aria-hidden /> <span className="hidden md:inline">Back</span>
+          </button>
+          {last ? (
+            <button type="button" onClick={submit} disabled={left > 0} className={cn(v2Lime, "flex-1 md:min-w-60 md:flex-none")}>
+              {left > 0 ? `${left} unanswered` : "Submit"}
+            </button>
+          ) : (
+            <button type="button" onClick={() => setI(i + 1)} disabled={pick === undefined} className={cn(v2Lime, "flex-1 md:min-w-60 md:flex-none")}>
+              Next <ArrowRight className="size-5" aria-hidden />
+            </button>
+          )}
+        </ThumbBar>
+      </div>
+    );
   }
 
   if (i < 0 && !done) {

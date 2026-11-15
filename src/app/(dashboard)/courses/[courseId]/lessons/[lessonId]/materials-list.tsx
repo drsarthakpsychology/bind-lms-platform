@@ -10,6 +10,8 @@ import {
 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
+import { Row, RowList } from "@/components/ds";
+import { useUiV2 } from "@/components/learn-v2/ui-v2";
 
 export type MaterialItem = {
   id: string;
@@ -102,6 +104,28 @@ export function MaterialsList({
   materials: MaterialItem[];
   courseId: string;
 }) {
+  const v2 = useUiV2();
+  // New design: each material is one row; the row opens it.
+  if (v2) {
+    return (
+      <RowList label="Materials">
+        {materials.map((m) => {
+          const Icon = KIND_ICONS[m.kind] ?? FileText;
+          return m.kind === "link" ? (
+            <Row key={m.id} href={m.url ?? "#"} external icon={<Icon />} title={m.title} meta="Link" chevron={false} trailing={<ExternalLink className="size-4" aria-hidden />} />
+          ) : (
+            <Row
+              key={m.id}
+              href={`/courses/${courseId}/materials/${m.id}`}
+              icon={<Icon />}
+              title={m.title}
+              meta={`${m.format?.toUpperCase() ?? m.kind}${m.sizeBytes ? ` · ${formatSize(m.sizeBytes)}` : ""}`}
+            />
+          );
+        })}
+      </RowList>
+    );
+  }
   return (
     <div className="space-y-3">
       {materials.map((m) => (

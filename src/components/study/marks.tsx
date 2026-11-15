@@ -2,11 +2,12 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { ArrowRight, Bookmark, BookmarkCheck, FlaskConical, NotebookPen, X } from "lucide-react";
+import { ArrowRight, Bookmark, BookmarkCheck, ChevronDown, FlaskConical, NotebookPen, X } from "lucide-react";
 import { NOTE_MAX, isBookmarked, markKey, markedSections, notePreview, noteText, setBookmark, setNote, toggleBookmark } from "@/lib/study/marks";
 import { useHydrated, useMarks } from "@/lib/study/marks-store";
 import type { StudyModule } from "@/lib/study/types";
 import { cn } from "@/lib/utils";
+import { useUiV2 } from "@/components/learn-v2/ui-v2";
 
 /* ------------------------------------------------- reader: bookmark + note */
 
@@ -24,9 +25,12 @@ export function SectionMarks({ owner, moduleId, sectionId, sectionLabel, lead }:
   const saved = noteText(marks, key);
   const [open, setOpen] = React.useState(false);
   const panelId = React.useId();
+  // New design: thinner lines, no hard shadow on the note.
+  const v2 = useUiV2();
+  const line = v2 ? "rounded-[var(--ds-radius)] border-[1.5px] border-[var(--ds-card-line)]" : "rounded-md border-2 border-foreground";
 
   return (
-    <div className="mt-3">
+    <div className={v2 ? undefined : "mt-3"}>
       {/* One row at every width: the view switch takes the room, Bookmark and
           My note are square 44px buttons on phones (named for screen readers)
           and get their words from 640px. Reading starts one row sooner. */}
@@ -39,8 +43,9 @@ export function SectionMarks({ owner, moduleId, sectionId, sectionLabel, lead }:
           aria-label={on ? "Bookmarked" : "Bookmark"}
           disabled={!hydrated}
           className={cn(
-            "inline-flex size-11 shrink-0 items-center justify-center gap-1.5 rounded-md border-2 border-foreground text-sm font-semibold transition-colors disabled:opacity-60 sm:w-auto sm:px-4",
-            on ? "bg-foreground text-background" : "bg-card hover:bg-muted",
+            "inline-flex size-11 shrink-0 items-center justify-center gap-1.5 text-sm font-semibold transition-colors disabled:opacity-60 sm:w-auto sm:px-4",
+            line,
+            on ? "border-foreground bg-foreground text-background" : v2 ? "hover:border-foreground" : "bg-card hover:bg-muted",
           )}
         >
           {on ? <BookmarkCheck className="size-4" aria-hidden /> : <Bookmark className="size-4" aria-hidden />}
@@ -54,8 +59,9 @@ export function SectionMarks({ owner, moduleId, sectionId, sectionLabel, lead }:
           aria-label={saved.trim() && !open ? "My note (has a note)" : "My note"}
           disabled={!hydrated}
           className={cn(
-            "relative inline-flex size-11 shrink-0 items-center justify-center gap-1.5 rounded-md border-2 border-foreground text-sm font-semibold transition-colors disabled:opacity-60 sm:w-auto sm:px-4",
-            open ? "bg-muted" : "bg-card hover:bg-muted",
+            "relative inline-flex size-11 shrink-0 items-center justify-center gap-1.5 text-sm font-semibold transition-colors disabled:opacity-60 sm:w-auto sm:px-4",
+            line,
+            open ? (v2 ? "bg-[var(--ds-tint)]" : "bg-muted") : v2 ? "hover:border-foreground" : "bg-card hover:bg-muted",
           )}
         >
           <NotebookPen className="size-4" aria-hidden /> <span className="hidden sm:inline">My note</span>
@@ -68,6 +74,7 @@ export function SectionMarks({ owner, moduleId, sectionId, sectionLabel, lead }:
 }
 
 function NotePanel({ id, initial, label, onSave, onClose }: { id: string; initial: string; label: string; onSave: (text: string) => boolean; onClose: () => void }) {
+  const v2 = useUiV2();
   const [text, setText] = React.useState(initial);
   const [state, setState] = React.useState<SaveState>("idle");
   const timer = React.useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -106,7 +113,7 @@ function NotePanel({ id, initial, label, onSave, onClose }: { id: string; initia
   const status = state === "saving" ? "Saving…" : state === "failed" ? "Could not save. Your browser may be full or in private mode." : state === "saved" ? "Saved" : "";
 
   return (
-    <div id={id} className="mt-3 rounded-2xl border-2 border-foreground bg-card p-3 hard-shadow-sm sm:p-4">
+    <div id={id} className={v2 ? "mt-3 rounded-[var(--ds-radius)] bg-[var(--ds-tint)] p-3 sm:p-4" : "mt-3 rounded-2xl border-2 border-foreground bg-card p-3 hard-shadow-sm sm:p-4"}>
       <div className="flex items-center justify-between gap-2">
         <label htmlFor={`${id}-text`} className="text-sm font-bold">
           My note <span className="sr-only">for {label}</span>
@@ -124,7 +131,7 @@ function NotePanel({ id, initial, label, onSave, onClose }: { id: string; initia
         onBlur={() => timer.current && flush()}
         rows={4}
         placeholder="In your own words: what to remember, or what to ask."
-        className="mt-1 block w-full resize-y rounded-md border-2 border-foreground bg-background px-3 py-2 text-base leading-relaxed placeholder:text-muted-foreground"
+        className={cn("mt-1 block w-full resize-y bg-background px-3 py-2 text-base leading-relaxed placeholder:text-muted-foreground", v2 ? "rounded-lg border-[1.5px] border-[var(--ds-card-line)] focus-visible:border-foreground" : "rounded-md border-2 border-foreground")}
       />
       <p className={cn("mt-1.5 text-xs font-semibold", state === "failed" ? "text-status-alert-fg" : "text-muted-foreground")} role="status" aria-live="polite">
         {state === "saved" ? "✓ " : ""}
@@ -142,6 +149,7 @@ const noSubscribe = () => () => {};
 export function MarksList({ owner, modules }: { owner: string; modules: StudyModule[] }) {
   const [marks, update] = useMarks(owner);
   const hydrated = useHydrated();
+  const v2 = useUiV2();
   // Opened from search ("Bookmarks and notes", /study#marks): open the list and bring it into view.
   const wanted = React.useSyncExternalStore(noSubscribe, () => window.location.hash === "#marks", () => false);
   React.useEffect(() => {
@@ -158,6 +166,39 @@ export function MarksList({ owner, modules }: { owner: string; modules: StudyMod
 
   // Nothing saved yet: say nothing. The Bookmark and My note buttons are on every section.
   if (!items.length) return null;
+  // New design: one quiet line that opens to rows (no box).
+  if (v2) {
+    return (
+      <details id="marks" open={wanted} className="group min-w-0 scroll-mt-24 border-y border-[var(--ds-hairline)]">
+        <summary className="-mx-2 flex min-h-14 cursor-pointer list-none items-center gap-3 rounded-lg px-2 outline-none transition-colors hover:bg-[var(--ds-tint)] focus-visible:ring-2 focus-visible:ring-ring [&::-webkit-details-marker]:hidden">
+          <BookmarkCheck className="size-5 shrink-0" aria-hidden />
+          <span className="min-w-0 flex-1 type-body font-semibold">Bookmarks and notes</span>
+          <ChevronDown className="size-5 shrink-0 text-muted-foreground transition-transform group-open:rotate-180 motion-reduce:transition-none" aria-hidden />
+        </summary>
+        <ul className="flex min-w-0 flex-col divide-y divide-[var(--ds-hairline)] border-t border-[var(--ds-hairline)]">
+          {items.map(({ key, m, s, bookmarked, note }) => (
+            <li key={key} className="flex min-w-0 items-center gap-1">
+              <Link href={`/study/${m.id}/${s.id}`} className="-ml-2 flex min-h-14 min-w-0 flex-1 flex-col justify-center rounded-lg px-2 py-2 outline-none transition-colors hover:bg-[var(--ds-tint)] focus-visible:ring-2 focus-visible:ring-ring">
+                <span className="type-body font-semibold [overflow-wrap:anywhere]">
+                  <span className="mr-1.5 text-muted-foreground type-num">{s.isTest ? "Test" : s.num}</span>
+                  {s.title}
+                </span>
+                <span className="type-small text-muted-foreground [overflow-wrap:anywhere]">
+                  Module {m.num} · {m.title}
+                </span>
+                {note ? <span className="mt-1 type-small [overflow-wrap:anywhere]">{notePreview(note)}</span> : null}
+              </Link>
+              {bookmarked ? (
+                <button type="button" onClick={() => update((x) => setBookmark(x, key, false, Date.now()))} aria-label={`Remove bookmark: ${s.num} ${s.title}`} className="-mr-2 grid size-11 shrink-0 place-items-center rounded-lg text-muted-foreground outline-none hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring">
+                  <X className="size-4" aria-hidden />
+                </button>
+              ) : null}
+            </li>
+          ))}
+        </ul>
+      </details>
+    );
+  }
   return (
     <details id="marks" open={wanted} className="group scroll-mt-24 rounded-2xl border-2 border-foreground bg-card">
       <summary className="flex min-h-12 cursor-pointer items-center px-4 font-bold">Bookmarks and notes ({items.length})</summary>

@@ -6,6 +6,9 @@ import { ModuleView } from "@/components/study/course";
 import { EXPERIMENTS } from "@/lib/lab/experiments";
 import { loadLearnState, saveLearnState } from "../actions";
 import { labOpen, studyOwner } from "../owner";
+import { learnV2 } from "@/components/learn-v2/server";
+import { UiV2 } from "@/components/learn-v2/ui-v2";
+import { ModuleViewV2 } from "@/components/study/course-v2";
 
 export async function generateMetadata({ params }: { params: Promise<{ module: string }> }): Promise<Metadata> {
   const { module } = await params;
@@ -24,6 +27,13 @@ export default async function ModulePage({ params }: { params: Promise<{ module:
   const lab = await labOpen(isAdmin);
   // Only what the cards need; nothing is sent when the Lab is closed.
   const labLinks = lab ? EXPERIMENTS.filter((x) => x.related.includes(m.id)).map((x) => ({ id: x.id, title: x.title, hook: x.hook, minutes: x.minutes })) : [];
+  if (await learnV2()) {
+    return (
+      <UiV2 on>
+        <ModuleViewV2 module={liteModule(m)} nextModule={nm ? { id: nm.id, title: nm.title, num: nm.num } : undefined} serverState={serverState} save={saveLearnState} owner={owner} labOpen={lab} labLinks={labLinks} />
+      </UiV2>
+    );
+  }
   return (
     <ModuleView
       module={liteModule(m)}

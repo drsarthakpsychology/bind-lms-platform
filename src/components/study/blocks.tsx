@@ -53,6 +53,19 @@ const BOX: Record<BoxKind, { label: string; cls: string; labelCls: string }> = {
   },
 };
 
+/** New design: call-outs without boxes. A rule down the left for most, a soft fill for the ones to say aloud, red only for traps and safety. */
+const BOX_V2: Record<BoxKind, { cls: string; labelCls: string }> = {
+  define: { cls: "border-l-2 border-brand pl-4", labelCls: "text-link" },
+  word: { cls: "rounded-[var(--ds-radius)] bg-[var(--ds-tint)] p-4", labelCls: "text-muted-foreground" },
+  trap: { cls: "rounded-[var(--ds-radius)] bg-status-alert-bg p-4 text-status-alert-fg", labelCls: "" },
+  safety: { cls: "rounded-[var(--ds-radius)] bg-status-alert-bg p-4 text-status-alert-fg", labelCls: "" },
+  mnemonic: { cls: "rounded-[var(--ds-radius)] bg-[var(--ds-tint)] p-4", labelCls: "text-muted-foreground" },
+  example: { cls: "border-l-2 border-[var(--ds-card-line)] pl-4", labelCls: "text-muted-foreground" },
+  sounds: { cls: "rounded-[var(--ds-radius)] bg-[var(--ds-tint)] p-4", labelCls: "text-muted-foreground" },
+  analogy: { cls: "border-l-2 border-[var(--ds-card-line)] pl-4", labelCls: "text-muted-foreground" },
+  note: { cls: "border-l-2 border-[var(--ds-card-line)] pl-4", labelCls: "text-muted-foreground" },
+};
+
 function List({ items, ordered }: { items: ListItem[]; ordered?: boolean }) {
   const Tag = ordered ? "ol" : "ul";
   return (
@@ -76,7 +89,62 @@ function List({ items, ordered }: { items: ListItem[]; ordered?: boolean }) {
   );
 }
 
-function Table({ head, rows }: { head: string[]; rows: string[][] }) {
+function Table({ head, rows, v2 = false }: { head: string[]; rows: string[][]; v2?: boolean }) {
+  // New design: phones get rows with hairlines (no cards); wide screens a plain ruled table.
+  if (v2) {
+    const numbered = head[0]?.trim() === "#";
+    const from = numbered ? 2 : 1;
+    return (
+      <>
+        <div className="divide-y divide-[var(--ds-hairline)] border-y border-[var(--ds-hairline)] sm:hidden">
+          {rows.map((r, i) => (
+            <div key={i} className="py-3 text-base leading-snug">
+              <p className="font-semibold">
+                {numbered ? <span className="mr-1.5 text-muted-foreground tabular-nums">{r[0]}.</span> : null}
+                <Rich text={(numbered ? r[1] : r[0]) ?? ""} />
+              </p>
+              <dl className="mt-1.5 space-y-1.5">
+                {r.slice(from).map((c, j) => (
+                  <div key={j}>
+                    <dt className="type-caption text-muted-foreground">
+                      <Rich text={head[j + from] ?? ""} />
+                    </dt>
+                    <dd>
+                      <Rich text={c} />
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+          ))}
+        </div>
+        <div className="hidden overflow-x-auto sm:block">
+          <table className="w-full min-w-[34rem] border-collapse text-left text-[0.9375rem] leading-snug">
+            <thead>
+              <tr className="border-b-[1.5px] border-foreground">
+                {head.map((h, i) => (
+                  <th key={i} scope="col" className="py-2.5 pr-4 align-bottom type-small font-semibold text-muted-foreground">
+                    <Rich text={h} />
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {rows.map((r, i) => (
+                <tr key={i} className="border-b border-[var(--ds-hairline)] align-top">
+                  {r.map((c, j) => (
+                    <td key={j} className={cn("py-2.5 pr-4", j === 0 && "font-semibold")}>
+                      <Rich text={c} />
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </>
+    );
+  }
   return (
     <>
       {/* Phones: one card per row, so nothing scrolls sideways. */}
@@ -145,9 +213,9 @@ function WideTable({ head, rows }: { head: string[]; rows: string[][] }) {
 }
 
 /** Renders a section's blocks. `test` carries what the MCQ set needs to save a score. */
-export function Blocks({ blocks }: { blocks: Block[] }) {
+export function Blocks({ blocks, v2 = false, nested = false }: { blocks: Block[]; /** New design (ui_v2): reading type, call-outs without boxes. */ v2?: boolean; nested?: boolean }) {
   return (
-    <div className="space-y-5 text-[1.0625rem] leading-[1.7] text-pretty [overflow-wrap:break-word]">
+    <div className={v2 ? cn("space-y-6 text-pretty [overflow-wrap:break-word]", !nested && "text-[1.0625rem] leading-7 font-[420] md:text-lg md:leading-[1.875rem]") : "space-y-5 text-[1.0625rem] leading-[1.7] text-pretty [overflow-wrap:break-word]"}>
       {blocks.map((b, i) => {
         switch (b.t) {
           case "h3": {
@@ -155,11 +223,11 @@ export function Blocks({ blocks }: { blocks: Block[] }) {
             return (
               <h3
                 key={i}
-                className="flex flex-wrap items-center gap-2 pt-2 text-[1.3rem] leading-tight font-bold tracking-tight"
+                className={v2 ? "flex flex-wrap items-baseline gap-x-3 gap-y-1 pt-4 type-h2" : "flex flex-wrap items-center gap-2 pt-2 text-[1.3rem] leading-tight font-bold tracking-tight"}
               >
                 <Rich text={text} />
                 {tag === "extra" ? (
-                  <span className="rounded-full border-2 border-foreground px-2 py-0.5 text-[0.65rem] font-semibold uppercase">
+                  <span className={v2 ? "type-caption text-muted-foreground" : "rounded-full border-2 border-foreground px-2 py-0.5 text-[0.65rem] font-semibold uppercase"}>
                     Extra
                   </span>
                 ) : null}
@@ -177,9 +245,23 @@ export function Blocks({ blocks }: { blocks: Block[] }) {
           case "ol":
             return <List key={i} items={b.items} ordered />;
           case "table":
-            return <Table key={i} head={b.head} rows={b.rows} />;
+            return <Table key={i} head={b.head} rows={b.rows} v2={v2} />;
           case "box": {
             const s = BOX[b.kind];
+            if (v2) {
+              const q = BOX_V2[b.kind];
+              return (
+                <aside key={i} className={q.cls}>
+                  <p className={cn("type-caption", q.labelCls)}>
+                    {s.label}
+                    {b.title ? <span> · {b.title}</span> : null}
+                  </p>
+                  <div className="mt-2 [&_ol]:pl-5 [&_ul]:pl-5">
+                    <Blocks blocks={b.blocks} v2 nested />
+                  </div>
+                </aside>
+              );
+            }
             return (
               <aside key={i} className={cn("rounded-2xl p-4 sm:p-5", s.cls)}>
                 <p className={cn("text-xs font-semibold tracking-wide uppercase", s.labelCls)}>
@@ -197,12 +279,27 @@ export function Blocks({ blocks }: { blocks: Block[] }) {
           case "view":
             return (
               <ViewOnly key={i} view={b.view}>
-                <Blocks blocks={b.blocks} />
+                <Blocks blocks={b.blocks} v2={v2} nested={nested} />
               </ViewOnly>
             );
           case "widget":
             return <Widget key={i} kind={b.kind} data={b.data} />;
           case "qa":
+            if (v2) {
+              return (
+                <details key={i} className="group border-y border-[var(--ds-hairline)]">
+                  <summary className="flex min-h-14 cursor-pointer list-none items-center gap-3 py-3 [&::-webkit-details-marker]:hidden">
+                    <span className="min-w-0 flex-1 font-semibold leading-snug">
+                      <Rich text={b.q} />
+                    </span>
+                    {b.level ? <span className="shrink-0 type-caption text-muted-foreground">{b.level}</span> : null}
+                  </summary>
+                  <div className="pb-5 [&_ol]:pl-5 [&_ul]:pl-5">
+                    <Blocks blocks={b.blocks} v2 nested />
+                  </div>
+                </details>
+              );
+            }
             return (
               <details key={i} className="group rounded-2xl border-2 border-foreground bg-card open:shadow-[var(--shadow-hard-sm)]">
                 <summary className="flex min-h-12 cursor-pointer list-none items-start gap-3 p-4 [&::-webkit-details-marker]:hidden">
