@@ -92,8 +92,11 @@ export type MedicinePage = MedicineRow & {
   related: { id: string; name: string; cls: string }[];
   /** "Learn it in Study". */
   study: { moduleId: string; title: string; target: AppTarget } | null;
-  /** The website's own objects, for an app that wants every detail (types in src/lib/meds). */
-  raw: { med: Record<string, unknown>; mechanism: Record<string, unknown> | null; visuals: Record<string, unknown>[]; halfLife: { hl: string; meaning: string } | null };
+  /** The website's own objects, as the first version of this route sent them (types in src/lib/meds). */
+  med: Record<string, unknown> & { id: string; name: string; cls: string; group: string };
+  mechanism: Record<string, unknown> | null;
+  visuals: Record<string, unknown>[] | null;
+  halfLife: { hl: string; meaning: string } | null;
 };
 
 /** GET /library/reference : the full psychopharmacology reference (every medicine in the knowledge base), grouped by receptor too. */
@@ -222,7 +225,7 @@ export type PractiseTool = {
  * student's own self-check (OSCE checklist, MSE and formulation compare), as
  * on the website; they never pay XP. Judgment calls are scored on the server.
  */
-export type PractiseRecordKind = "judgment" | "osce" | "mse" | "formulation" | "clinic" | "quiz";
+export type PractiseRecordKind = "judgment" | "osce" | "mse" | "formulation" | "clinic" | "quiz" | "competency";
 export type PractiseRecordResult = Record<string, unknown>;
 
 /** GET /leaderboards/:board (league, quiz, overall) and GET /leaderboards/games/:game */
@@ -353,7 +356,10 @@ export type AdminHomeData = {
   /** Things to do, only those with a count, in the website's order. */
   todo: AdminTodo[];
   totalToDo: number;
-  needsLook: AdminAttention[];
+  /** Students that need a look, most flags first (at most 20), as table rows. */
+  needsLook: AdminStudentRow[];
+  /** The same students as the app's mock attention rows (reason in words). */
+  attention: AdminAttention[];
   live: { userId: string; name: string; meta: string; where: string | null; lessonId: string | null; since: string | null; watching: boolean }[];
   cohorts: { id: string; name: string; members: number; week: number; behind: number; pct: number }[];
   counts: { students: number; activeThisWeek: number; onNow: number; neverIn: number; needsLook: number; locked: number; openComplaints: number; dbPct: number };
@@ -367,6 +373,8 @@ export type AdminStudentList = Page<AdminStudentRow> & { total: number; cohorts:
 
 /** GET /admin/students/:id */
 export type AdminStudent = AdminStudentRow & {
+  /** The first version's shape: the same row, and `detail` below. */
+  row: AdminStudentRow;
   /** The phone signed in to the app, and the changes used this month. */
   phone: { name: string; platform: string; changesUsed: number; limit: number; nextChangeAt: string | null } | null;
   lectures: { done: number; total: number };
@@ -382,7 +390,10 @@ export type LockResult = { blocked: boolean };
 /** POST /admin/students/:id/login-link : emails a fresh login link (the website's sendLoginLink). */
 export type LoginLinkResult = { sent: true };
 
-/** POST /admin/messages */
+/**
+ * POST /admin/messages. The first version's body (`{ userIds, title, text, alsoEmail? }`)
+ * is still accepted and is the same as `{ to: "students", userIds, title, body: text }`.
+ */
 export type AdminSendBody = {
   to: "everyone" | "cohort" | "course" | "student" | "students";
   /** The cohort, course or student id. */
@@ -424,6 +435,9 @@ export type AdminDraftResult = { text: string };
 /** GET /admin/activity?view=live|behind|cohorts|all */
 export type AdminActivity = {
   v: 1;
+  /** The first version's shape: kind "admin.activity", data = loadActivity()'s answer plus `live` (filled for view "all"). */
+  kind: "admin.activity";
+  data: Record<string, unknown> | null;
   view: "live" | "behind" | "cohorts" | "all";
   live: AdminHomeData["live"];
   /** Falling behind: active accounts under the expected lectures, quietest first. */

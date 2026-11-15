@@ -9,6 +9,8 @@ import { compareDrugs, drugDetail, drugFromSlug, drugList, mechanismIndex, searc
 import { getPublishedMedicationDocument } from "@/lib/psychopharm/published-doc";
 import { STANDING_NOTICE } from "@/lib/psychopharm/forbidden-phrases";
 import { COMPARE_FIELDS, COMPARE_MAX } from "@/lib/psychopharm/compare-fields";
+import { referenceBySlug, referenceIndex } from "@/lib/reference/data";
+import { LIBRARY_FILTERS, filterLibrary, filterLibraryByTag, getLibraryDocs } from "@/lib/corpus/library";
 import { toAppTarget } from "./target";
 import type { MedicineList, MedicinePage, MedicineRow, MedSection, ReferenceCompare, ReferenceDrug, ReferenceHome, ReferenceSearch } from "./contract-practise-admin";
 
@@ -94,7 +96,10 @@ export async function medicinePage(id: string): Promise<MedicinePage | null> {
     sections,
     related,
     study: study ? { moduleId: study.moduleId, title: study.title, target: toAppTarget(study.href) } : null,
-    raw: { med: med as unknown as Record<string, unknown>, mechanism: (mech as unknown as Record<string, unknown>) ?? null, visuals: visuals as unknown as Record<string, unknown>[], halfLife: half },
+    med: med as unknown as MedicinePage["med"],
+    mechanism: (mech as unknown as Record<string, unknown>) ?? null,
+    visuals: visuals as unknown as Record<string, unknown>[],
+    halfLife: half,
   };
 }
 
@@ -163,4 +168,40 @@ export function referenceCompare(slugs: string[]): ReferenceCompare {
     drugs: rows.map((r) => ({ slug: slugOf(r.drug), name: r.drug, values: Object.fromEntries(COMPARE_FIELDS.map((f) => [String(f.key), (r[f.key] as string | undefined) ?? null])) })),
     notice: STANDING_NOTICE,
   };
+}
+
+// ------------------------------------------------- quick reference and cases
+
+/** The Quick reference (disorders, medicines, terms): the glossary the website keeps under Study. */
+export function termIndex(q?: string | null) {
+  const query = (q ?? "").trim().toLowerCase().slice(0, 80);
+  const all = referenceIndex();
+  const items = query ? all.filter((r) => r.label.toLowerCase().includes(query) || r.aliases.some((a) => a.toLowerCase().includes(query))) : all;
+  return { v: 1 as const, items };
+}
+
+export function termPage(slug: string) {
+  const entry = referenceBySlug(slug.slice(0, 120));
+  return entry ? { v: 1 as const, entry: entry as unknown as Record<string, unknown> } : null;
+}
+
+const snippet = (s: string) => (s.length > 240 ? `${s.slice(0, 237).trimEnd()}...` : s);
+
+/** The case library (when it is switched on): the website's search and tag filters, paged. */
+export async function caseDocs(q: string, tag: string, start: number, limit: number) {
+  const all = await getLibraryDocs();
+  const searched = filterLibrary(all, q.slice(0, 120));
+  const rows = tag ? filterLibraryByTag(searched, tag) : searched;
+  return {
+    v: 1 as const,
+    filters: LIBRARY_FILTERS.map((f) => ({ key: f.key, label: f.label })),
+    items: rows.slice(start, start + limit).map((d) => ({ id: d.hash, title: d.title, source: d.source, licence: d.licence, snippet: snippet(d.content) })),
+    nextCursor: start + limit < rows.length ? String(start + limit) : null,
+    total: rows.length,
+  };
+}
+
+export async function caseDoc(id: string) {
+  const d = (await getLibraryDocs()).find((x) => x.hash === id);
+  return d ? { v: 1 as const, id: d.hash, title: d.title, source: d.source, sourceUrl: d.source_url, licence: d.licence, content: d.content } : null;
 }
