@@ -1,1 +1,1 @@
-export { CaseScreen as default } from "@/screens/practise/case";
+export { CaseRoute as default } from "@/practise/cases";
