@@ -2,14 +2,17 @@ import { router } from "expo-router";
 import { Check } from "lucide-react-native";
 import * as React from "react";
 import { Linking, Pressable, View } from "react-native";
+import Animated, { FadeInDown, useAnimatedStyle, useReducedMotion, useSharedValue, withSpring } from "react-native-reanimated";
 
 import type { RequestInvitationBody, RequestInvitationResult } from "@/api/contract";
 import { ApiFailure, messageOf } from "@/api/errors";
 import { api } from "@/auth";
-import { Button, Chips, EmptyState, Field, Screen, T } from "@/ds";
+import { Button, Chips, Field, Screen, T } from "@/ds";
 import { BRAND } from "@/lib/brand";
 import { haptic } from "@/lib/haptics";
+import { SketchCat } from "@/sketch/cat";
 import { layout, space, useTheme } from "@/theme";
+import { Star } from "@/visitor/Art";
 
 type Status = RequestInvitationBody["status"];
 const STATUS: { id: Status; name: string }[] = [
@@ -66,13 +69,13 @@ export function RequestScreen() {
   if (sent) {
     return (
       <Screen safeTop tab testID="request-sent" footer={<Button kind="quiet" label="Back to the start" onPress={() => router.replace("/welcome")} />}>
-        <EmptyState mood="calm" title="Request received" body={`Thank you, ${name.trim().split(" ")[0]}. We read every request ourselves and will write to ${email.trim()} within a few days.`} />
+        <Sent name={name.trim().split(" ")[0] ?? ""} email={email.trim()} />
       </Screen>
     );
   }
 
   return (
-    <Screen safeTop tab testID="request" title="Request an invitation" lead="VIBHA takes a small group each cohort. Tell us a little about you." gap={space[5]} footer={<Button label="Send request" busy={busy} onPress={() => void submit()} testID="request-submit" />}>
+    <Screen safeTop tab testID="request" title="Request an invitation" lead="Tell us a little about you. We read every request ourselves and reply within a few days." gap={space[5]} footer={<Button label="Send request" busy={busy} onPress={() => void submit()} testID="request-submit" />}>
       <Field label="Your name" value={name} onChangeText={setName} error={errors.name} autoComplete="name" textContentType="name" autoCapitalize="words" returnKeyType="next" testID="request-name" />
       <Field label="Email" value={email} onChangeText={setEmail} error={errors.email} autoComplete="email" textContentType="emailAddress" keyboardType="email-address" autoCapitalize="none" autoCorrect={false} testID="request-email" />
       <Field label="WhatsApp number (optional)" value={phone} onChangeText={setPhone} error={errors.phone} keyboardType="phone-pad" autoComplete="tel" textContentType="telephoneNumber" testID="request-phone" />
@@ -113,5 +116,30 @@ export function RequestScreen() {
         </T>
       ) : null}
     </Screen>
+  );
+}
+
+/** "Request received": a lime star stamps down with a tick, the cat looks on, the words rise in. */
+function Sent({ name, email }: { name: string; email: string }) {
+  const reduce = useReducedMotion();
+  const stamp = useSharedValue(reduce ? 1 : 0);
+  React.useEffect(() => {
+    if (!reduce) stamp.set(withSpring(1, { damping: 10, stiffness: 170, mass: 0.7 }));
+  }, [reduce, stamp]);
+  const anim = useAnimatedStyle(() => ({ opacity: Math.min(1, stamp.value * 2), transform: [{ scale: 1.6 - stamp.value * 0.6 }, { rotate: `${(1 - stamp.value) * 30 - 8}deg` }] }));
+  return (
+    <View style={{ gap: space[5], paddingTop: space[5] }}>
+      <View style={{ flexDirection: "row", alignItems: "flex-end", gap: space[4] }}>
+        <Animated.View style={[{ width: 110, height: 110, alignItems: "center", justifyContent: "center" }, anim]}>
+          <Star size={110} fill="#cdf24b" style={{ position: "absolute" }} />
+          <Check size={44} color="#111111" strokeWidth={4} />
+        </Animated.View>
+        <SketchCat size={96} mood="calm" />
+      </View>
+      <Animated.View entering={reduce ? undefined : FadeInDown.delay(250).duration(360)} style={{ gap: space[2] }}>
+        <T v="display">Request received</T>
+        <T v="reading" tone="muted">{`Thank you${name ? `, ${name}` : ""}. We read every request ourselves and will write to ${email} within a few days.`}</T>
+      </Animated.View>
+    </View>
   );
 }
