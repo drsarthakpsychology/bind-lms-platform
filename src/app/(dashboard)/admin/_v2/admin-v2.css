@@ -152,3 +152,28 @@
     list-style: none;
   }
 }
+@media (max-width: 1023.98px) {
+  /* Older tick rows and small text buttons inside a v2 screen. */
+  [data-admin-v2] label:has(> input[type="checkbox"]),
+  [data-admin-v2] label:has(> input[type="radio"]) {
+    min-height: 2.75rem;
+  }
+  [data-admin-v2] button[class*="text-caption"],
+  [data-admin-v2] button[class*="text-xs"],
+  [data-admin-v2] a[class*="text-caption"][class*="font-bold"] {
+    min-height: 2.75rem;
+    min-width: 2.75rem;
+  }
+}
+/* An older inline title editor inside the v2 page title keeps the title's size. */
+[data-admin-v2] h1 [class*="text-h1"] {
+  font: inherit;
+  letter-spacing: inherit;
+}
+/* Older cards (the shared Card part) inside a v2 screen: no box. */
+[data-admin-v2] [data-slot="card"]:not([data-keep]) {
+  box-shadow: none;
+  border-width: 1px;
+  border-color: var(--ds-card-line);
+  border-radius: 0.5rem;
+}
