@@ -386,7 +386,7 @@ export function JournalView({ initialEntries, userId, initialShares = {}, v2 = f
                     <MoreHorizontal className="size-5" aria-hidden />
                   </button>
                 </div>
-                <p className={v2 ? "mt-1 max-w-[65ch] whitespace-pre-wrap type-body [overflow-wrap:anywhere]" : "mt-2 whitespace-pre-wrap break-words text-small"}>{e.content}</p>
+                <p className={v2 ? "mt-1 max-w-[65ch] whitespace-pre-line type-body [overflow-wrap:anywhere]" : "mt-2 whitespace-pre-wrap break-words text-small"}>{e.content}</p>
               </li>
             ))}
           </ul>

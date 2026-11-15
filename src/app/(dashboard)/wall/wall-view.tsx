@@ -369,7 +369,7 @@ export function WallView({ initialPosts, isFacultyViewer = false, v2 = false }: 
                   {p.isAnonymous ? <span>Anonymous</span> : <span>Cohort member</span>}
                   <span>· {formatRelativeTime(p.createdAt)}</span>
                 </div>
-                <p className={v2 ? "mt-1 max-w-[65ch] whitespace-pre-wrap type-body [overflow-wrap:anywhere]" : "mt-2 whitespace-pre-wrap break-words text-small"}>{p.content}</p>
+                <p className={v2 ? "mt-1 max-w-[65ch] whitespace-pre-line type-body [overflow-wrap:anywhere]" : "mt-2 whitespace-pre-wrap break-words text-small"}>{p.content}</p>
 
                 {/* reactions, not upvotes */}
                 <div className="mt-3 flex flex-wrap items-center gap-1.5">
@@ -421,7 +421,7 @@ export function WallView({ initialPosts, isFacultyViewer = false, v2 = false }: 
                           <span>{r.isAnonymous ? "Anonymous" : "Cohort member"}</span>
                           <span>· {formatRelativeTime(r.createdAt)}</span>
                         </div>
-                        <p className={v2 ? "mt-0.5 max-w-[65ch] whitespace-pre-wrap type-small [overflow-wrap:anywhere]" : "mt-1 whitespace-pre-wrap break-words text-small"}>{r.content}</p>
+                        <p className={v2 ? "mt-0.5 max-w-[65ch] whitespace-pre-line type-small [overflow-wrap:anywhere]" : "mt-1 whitespace-pre-wrap break-words text-small"}>{r.content}</p>
                         <div className="mt-1.5 flex flex-wrap items-center gap-1">
                           {REACTIONS.map((rr) => {
                             const Icon = rr.icon;
