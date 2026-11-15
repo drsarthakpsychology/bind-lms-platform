@@ -48,3 +48,6 @@ export function pageParams(query: URLSearchParams, def = 30, max = 100): { limit
   const cursor = query.get("cursor");
   return { limit, cursor: cursor && cursor.length <= 200 ? cursor : null };
 }
+
+/** A test or checkpoint sitting: question key to the chosen option index. */
+export const picksSchema = z.object({ picks: z.record(z.string().max(200), z.number().int().min(0).max(20)).refine((p) => Object.keys(p).length <= 500, "too many") });
