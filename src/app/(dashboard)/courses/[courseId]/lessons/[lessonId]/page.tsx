@@ -290,7 +290,7 @@ export default async function LessonPage({
                 </div>
                 {assignment.is_published ? (
                   <>
-                    {brief ? <p className="type-reading whitespace-pre-wrap text-foreground/90 [overflow-wrap:anywhere]">{brief}</p> : null}
+                    {brief ? <p className="type-reading whitespace-pre-line text-foreground/90 [overflow-wrap:anywhere]">{brief}</p> : null}
                     <SubmissionForm
                       assignmentId={assignment.id}
                       dueAt={assignment.due_at}

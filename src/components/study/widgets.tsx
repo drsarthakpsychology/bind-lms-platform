@@ -167,7 +167,7 @@ function Decide({ d }: { d: DecideData }) {
               pick === i ? "border-foreground bg-brand text-brand-foreground" : "border-foreground/30 hover:border-foreground",
             )}
           >
-            <span className="mt-0.5 grid size-5 shrink-0 place-items-center rounded-full border-2 border-current text-[0.65rem] font-bold">
+            <span className="mt-0.5 grid size-6 shrink-0 place-items-center rounded-full border-2 border-current text-xs font-bold">
               {tried.includes(i) ? (ch.verdict === "best" ? <Check className="size-3" /> : ch.verdict === "harm" ? <X className="size-3" /> : "~") : String.fromCharCode(65 + i)}
             </span>
             <span><Rich text={ch.label} /></span>

@@ -34,6 +34,7 @@ type SubmissionState = {
 function OwnFileLink({ fileId, name }: { fileId: string; name: string }) {
   const [loading, setLoading] = useState(false);
   const [err, setErr] = useState<string | null>(null);
+  const v2 = useUiV2();
 
   async function open() {
     if (loading) return;
@@ -61,9 +62,9 @@ function OwnFileLink({ fileId, name }: { fileId: string; name: string }) {
         type="button"
         onClick={open}
         disabled={loading}
-        className="inline-flex items-center gap-1 text-link underline-offset-2 hover:underline disabled:opacity-50"
+        className={v2 ? "inline-flex min-h-11 items-center gap-2 text-left text-link underline-offset-2 [overflow-wrap:anywhere] hover:underline disabled:opacity-50" : "inline-flex items-center gap-1 text-link underline-offset-2 hover:underline disabled:opacity-50"}
       >
-        <Download className="size-3.5" aria-hidden />
+        <Download className={v2 ? "size-4 shrink-0" : "size-3.5"} aria-hidden />
         {name}
       </button>
       {err && <span className="text-status-alert-fg">{err}</span>}

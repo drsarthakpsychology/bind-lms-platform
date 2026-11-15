@@ -142,7 +142,7 @@ export function NoteView({
                 const on = flipped.includes(k);
                 return (
                   <li key={lay}>
-                    <button type="button" className={cn(n.flip, "w-full text-left")} data-on={on} aria-pressed={on} onClick={() => setFlipped(on ? flipped.filter((x) => x !== k) : [...flipped, k])}>
+                    <button type="button" className={cn(n.flip, "w-full text-left")} data-layout-ok="overlap" data-on={on} aria-pressed={on} onClick={() => setFlipped(on ? flipped.filter((x) => x !== k) : [...flipped, k])}>
                       <span className={n.flipInner}>
                         <span className={cn(n.face, "flex min-h-24 flex-col justify-between rounded-[var(--ds-radius)] border-[1.5px] border-[var(--ds-card-line)] bg-card p-3")}>
                           <span className="type-caption text-muted-foreground">They say</span>
