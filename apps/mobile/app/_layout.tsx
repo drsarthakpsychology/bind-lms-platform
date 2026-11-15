@@ -7,6 +7,7 @@ import { StatusBar } from "expo-status-bar";
 import * as React from "react";
 import { AppState, Platform, View } from "react-native";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
+import { useReducedMotion } from "react-native-reanimated";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 
 import { persistOptions, queryClient, useConfig } from "@/api/queries";
@@ -15,6 +16,7 @@ import { ToastHost } from "@/ds";
 import { applyDevSession, applyMockFromUrl } from "@/lib/dev";
 import { holdPortrait } from "@/lib/orientation";
 import { loadSettings, settingsStore } from "@/lib/settings";
+import { fadeMotion, modalMotion, stackMotion } from "@/motion";
 import { groupFor, homeHref } from "@/nav/targets";
 import { usePushRouting } from "@/push";
 import { LockScreen, OtherDeviceScreen, PausedScreen, SetPinScreen, UpdateScreen } from "@/screens/auth/gates";
@@ -95,6 +97,7 @@ function useGuard(ready: boolean): void {
 
 function Shell() {
   const c = useTheme();
+  const reduce = !!useReducedMotion();
   const ready = useBoot();
   useGuard(ready);
   usePushRouting();
@@ -144,8 +147,8 @@ function Shell() {
       <StatusBar style={c.dark ? "light" : "dark"} />
       <View style={{ flex: 1 }} accessibilityElementsHidden={!!overlay} importantForAccessibility={overlay ? "no-hide-descendants" : "auto"}>
         {/* The navigator always stays mounted (Expo Router needs it); the lock covers it completely. */}
-        {(
-          <Stack screenOptions={{ ...header, animation: Platform.OS === "android" ? "default" : undefined }}>
+        {
+          <Stack screenOptions={{ ...header, ...stackMotion(reduce) }}>
             <Stack.Screen name="index" options={{ headerShown: false }} />
             <Stack.Screen name="(visitor)" options={{ headerShown: false }} />
             <Stack.Screen name="(student)" options={{ headerShown: false }} />
@@ -162,7 +165,7 @@ function Shell() {
             <Stack.Screen name="settings" options={{ title: "Settings" }} />
             <Stack.Screen name="help" options={{ title: "Help" }} />
             <Stack.Screen name="doubts/index" options={{ title: "Doubts" }} />
-            <Stack.Screen name="doubts/ask" options={{ title: "Ask a doubt", presentation: "modal" }} />
+            <Stack.Screen name="doubts/ask" options={{ title: "Ask a doubt", presentation: "modal", ...(reduce ? null : modalMotion) }} />
             <Stack.Screen name="doubt/[id]" options={{ title: "" }} />
             <Stack.Screen name="study/index" options={{ title: "Study" }} />
             <Stack.Screen name="study/[moduleId]/index" options={{ title: "" }} />
@@ -173,16 +176,16 @@ function Shell() {
             <Stack.Screen name="certificates" options={{ title: "Certificates" }} />
             <Stack.Screen name="certificate/[id]" options={{ title: "" }} />
             <Stack.Screen name="verify/[certificateId]" options={{ title: "Verify a certificate" }} />
-            <Stack.Screen name="search" options={{ headerShown: false, animation: "fade" }} />
+            <Stack.Screen name="search" options={{ headerShown: false, ...fadeMotion }} />
             <Stack.Screen name="game/[id]" options={{ headerShown: false, gestureEnabled: false }} />
             <Stack.Screen name="case/[id]" options={{ headerShown: false }} />
             <Stack.Screen name="prep/index" options={{ title: "Exam Prep" }} />
             <Stack.Screen name="prep/[subject]" options={{ headerShown: false, gestureEnabled: false }} />
             <Stack.Screen name="medicine/[id]" options={{ title: "" }} />
             <Stack.Screen name="student/[id]" options={{ title: "" }} />
-            <Stack.Screen name="compose" options={{ title: "New message", presentation: "modal" }} />
+            <Stack.Screen name="compose" options={{ title: "New message", presentation: "modal", ...(reduce ? null : modalMotion) }} />
           </Stack>
-        )}
+        }
       </View>
       {overlay}
       <ToastHost />
