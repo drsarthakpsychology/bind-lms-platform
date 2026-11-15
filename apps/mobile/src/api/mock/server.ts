@@ -196,6 +196,18 @@ async function route(req: RawRequest): Promise<RawResponse> {
     if (body.deviceCompromised === true) return fail(403, "video_refused", "Lectures cannot be played on a rooted phone.");
     return ok<C.StreamAccess>({ url: `mock://stream/${l.id}/master.m3u8?st=mock`, mediaType: "hls", headers: { "X-App-Device-Id": "mock-device-0000000000" }, expiresIn: 7200, expiresAt: new Date(Date.now() + 7200_000).toISOString(), resumeSeconds: l.progress.completed ? 0 : l.progress.watchedSeconds, durationSeconds: l.durationSeconds, watermark: meFor(kind).watermark, progressEverySeconds: 15 });
   }
+  if ((m = is("POST", "/assignments/:id/uploads"))) {
+    const name = String(body.fileName ?? "");
+    if (!name) return fail(400, "bad_request", "Name the file.", { fields: ["fileName"] });
+    return ok<C.PrepareUploadResult>({ path: `submissions/${m[0]}/${Date.now()}-${name}`, uploadUrl: `mock://upload/${encodeURIComponent(name)}`, headers: { "Content-Type": "application/octet-stream" } });
+  }
+  if ((m = is("POST", "/assignments/:id/files")) || (m = is("POST", "/assignments/:id/audio")) || (m = is("POST", "/assignments/:id/text"))) {
+    const files = (body.files as { path: string; name: string }[] | undefined) ?? (body.path ? [{ path: String(body.path), name: "recording.m4a" }] : []);
+    return ok<C.SubmitResult>({
+      submission: { id: `s-${m[0]}`, status: "pending_review", submittedAt: new Date().toISOString(), isLate: false, text: (body.text as string) ?? null, note: (body.note as string) ?? null, hasAudio: !!body.path, files: files.map((f, i) => ({ id: `f${i}`, name: f.name, format: f.name.split(".").pop() ?? null, sizeBytes: null, status: "ready", filePath: `/submissions/files/f${i}` })), score: null, feedback: null, editable: true },
+    });
+  }
+  if ((m = is("DELETE", "/assignments/:id/submission"))) return ok<C.UnsubmitResult>({ removed: true });
   if ((m = is("GET", "/materials/:id"))) {
     const mat = fx.lectureDetail("l5")!.materials.find((x) => x.id === m![0]);
     return mat ? ok<C.Material>(mat) : notFound();

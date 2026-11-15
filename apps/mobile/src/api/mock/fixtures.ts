@@ -5,6 +5,7 @@
  */
 import type {
   Access,
+  Assignment,
   Achievements,
   AppConfig,
   Block,
@@ -187,11 +188,18 @@ export function lectureDetail(id: string): LectureDetail | null {
     durationSeconds: l.minutes * 60,
     progress: { watchedSeconds: DONE.has(l.id) ? l.minutes * 60 : l.id === CURRENT ? 1104 : 0, completed: DONE.has(l.id) },
     requiresAssignment: false,
-    assignment: null,
+    assignment: assignmentFor(l.id),
     materials: l.id === CURRENT ? [{ id: "m1", title: "PHQ-9 scoring sheet", kind: "pdf", format: "pdf", sizeBytes: 184_000, lessonId: l.id, week: 3, url: null, filePath: "/materials/m1/file" }] : [],
     prev: prev ? { id: prev.id, title: prev.title } : null,
     next: next ? { id: next.id, title: next.title } : null,
   };
+}
+
+/** Lecture 5 takes files, Lecture 6 a recording (the two kinds the app hands in natively). */
+export function assignmentFor(lessonId: string): Assignment | null {
+  if (lessonId === CURRENT) return { id: "a1", lessonId, courseId: "course-1", title: "Write up a first interview", instructions: "Interview a friend or family member about their week, using the questions from the lecture. Write up what you asked, what you heard, and what you would ask next. Hand in a PDF or a Word file.", submissionType: "file", dueAt: "2026-11-22T18:29:00.000Z", allowLate: true, maxFiles: 3, maxFileMb: 20, acceptedFormats: ["pdf", "docx"], submission: null };
+  if (lessonId === "l6") return { id: "a2", lessonId, courseId: "course-1", title: "Say it aloud: a safety question", instructions: "Record yourself asking a patient about thoughts of self-harm, in your own words, as you would in a first interview. Two minutes at most.", submissionType: "audio", dueAt: null, allowLate: true, maxFiles: 1, maxFileMb: 20, acceptedFormats: ["audio"], submission: null };
+  return null;
 }
 
 /* ------------------------------------------------------------------ home */
