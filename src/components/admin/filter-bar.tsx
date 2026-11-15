@@ -34,7 +34,9 @@ export function activeCount(current: string, params: string[]): number {
   return params.filter((k) => (p.get(k) ?? "").trim() !== "").length;
 }
 
-const control =
+const controlV2 =
+  "h-11 w-full min-w-0 rounded-md border border-[var(--ds-card-line)] bg-background px-3 text-sm font-medium outline-none transition-colors hover:border-foreground/50 focus-visible:border-foreground focus-visible:ring-2 focus-visible:ring-ring lg:h-9";
+const controlV1 =
   "h-10 w-full min-w-0 rounded-md border-2 border-foreground bg-card px-3 text-sm font-medium outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60 pointer-coarse:h-11";
 
 /**
@@ -51,6 +53,8 @@ type FilterBarProps = {
   /** Extra params dropped only when the search text changes (e.g. the opened student). */
   searchReset?: string[];
   className?: string;
+  /** Admin v2 look: hairline fields, 44px on touch and 36px with a mouse. */
+  v2?: boolean;
 };
 
 export function FilterBar(props: FilterBarProps) {
@@ -62,7 +66,8 @@ export function FilterBar(props: FilterBarProps) {
   );
 }
 
-function FilterBarInner({ search, selects = [], reset = ["id", "page"], searchReset = [], className }: FilterBarProps) {
+function FilterBarInner({ search, selects = [], reset = ["id", "page"], searchReset = [], className, v2 = false }: FilterBarProps) {
+  const control = v2 ? controlV2 : controlV1;
   const router = useRouter();
   const pathname = usePathname();
   const sp = useSearchParams();
@@ -129,7 +134,7 @@ function FilterBarInner({ search, selects = [], reset = ["id", "page"], searchRe
           type="button"
           variant="outline"
           size="sm"
-          className="h-10 self-start sm:hidden pointer-coarse:h-11"
+          className={cn("self-start sm:hidden", v2 ? "h-11" : "h-10 pointer-coarse:h-11")}
           aria-expanded={showMore}
           aria-controls={`${id}-selects`}
           onClick={() => setShowMore((v) => !v)}
@@ -150,7 +155,7 @@ function FilterBarInner({ search, selects = [], reset = ["id", "page"], searchRe
                 id={`${id}-${s.param}`}
                 value={value}
                 onChange={(e) => go({ [s.param]: e.target.value || null })}
-                className={cn(control, "sm:w-auto sm:max-w-60", value && "bg-secondary")}
+                className={cn(control, "sm:w-auto sm:max-w-60", value && (v2 ? "border-foreground" : "bg-secondary"))}
               >
                 <option value="">{s.allLabel}</option>
                 {s.options.map((o) => (
@@ -165,7 +170,7 @@ function FilterBarInner({ search, selects = [], reset = ["id", "page"], searchRe
       </div>
 
       {active ? (
-        <Button type="button" variant="ghost" size="sm" className="h-10 self-start pointer-coarse:h-11" onClick={clear}>
+        <Button type="button" variant="ghost" size="sm" className={cn("self-start", v2 ? "h-11 lg:h-9" : "h-10 pointer-coarse:h-11")} onClick={clear}>
           <X aria-hidden /> Clear{active > 1 ? ` (${active})` : ""}
         </Button>
       ) : null}

@@ -127,8 +127,9 @@ export function ViewTabs({ label, tabs, current }: { label: string; tabs: { id: 
             <Link
               href={t.href}
               aria-current={current === t.id ? "page" : undefined}
+              data-keep
               className={cn(
-                "inline-flex h-11 items-center gap-1.5 border-b-2 px-3 type-small font-semibold whitespace-nowrap outline-none transition-colors duration-[var(--ds-state)] ease-[var(--ds-ease)] focus-visible:ring-2 focus-visible:ring-ring",
+                "inline-flex h-11 min-w-11 items-center justify-center gap-1.5 border-b-2 px-3 type-small font-semibold whitespace-nowrap outline-none transition-colors duration-[var(--ds-state)] ease-[var(--ds-ease)] focus-visible:ring-2 focus-visible:ring-ring",
                 current === t.id ? "border-foreground text-foreground" : "border-transparent text-muted-foreground hover:text-foreground",
               )}
             >

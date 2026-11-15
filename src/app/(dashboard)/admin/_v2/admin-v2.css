@@ -102,16 +102,17 @@
   border-bottom-width: 1px;
   border-color: var(--ds-hairline);
 }
-[data-admin-v2] [class*="border-b-2"],
-[data-admin-v2] [class*="border-t-2"] {
+/* Older 2px rules become hairlines. v2 underlined tabs carry data-keep and keep their 2px underline. */
+[data-admin-v2] [class*="border-b-2"]:not([data-keep]),
+[data-admin-v2] [class*="border-t-2"]:not([data-keep]) {
   border-bottom-width: 1px;
   border-top-width: 1px;
   border-color: var(--ds-hairline);
 }
-[data-admin-v2] [class*="border-b-2"]:not([class*="border-t"]) {
+[data-admin-v2] [class*="border-b-2"]:not([data-keep]):not([class~="border-t"]):not([class*="border-t-"]) {
   border-top-width: 0;
 }
-[data-admin-v2] [class*="border-t-2"]:not([class*="border-b"]) {
+[data-admin-v2] [class*="border-t-2"]:not([data-keep]):not([class~="border-b"]):not([class*="border-b-"]) {
   border-bottom-width: 0;
 }
 /* Older links and chips drawn as 2px ink pills. */

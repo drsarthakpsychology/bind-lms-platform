@@ -17,7 +17,7 @@ interface Entry {
 /**
  * Admin review list: sign or reject a requested supervision entry.
  */
-export function SupervisionReview({ entries }: { entries: Entry[] }) {
+export function SupervisionReview({ entries, v2 = false }: { entries: Entry[]; v2?: boolean }) {
   const [busy, setBusy] = React.useState<string | null>(null);
   const [error, setError] = React.useState<string | null>(null);
 
@@ -42,6 +42,36 @@ export function SupervisionReview({ entries }: { entries: Entry[] }) {
     } finally {
       setBusy(null);
     }
+  }
+
+  if (v2) {
+    const b = "inline-flex h-11 items-center justify-center gap-1.5 rounded-md border px-3 type-small font-semibold outline-none transition-colors focus-visible:ring-2 focus-visible:ring-ring disabled:opacity-45 lg:h-9";
+    if (entries.length === 0) return <p className="border-y border-[var(--ds-hairline)] py-6 type-small text-muted-foreground">No sign-off requests. When a student asks for one, it lands here.</p>;
+    return (
+      <div className="flex min-w-0 flex-col gap-2">
+        {error ? <p className="rounded-md bg-status-alert-bg px-3 py-2.5 type-small text-status-alert-fg" role="alert">{error}</p> : null}
+        <ul className="flex min-w-0 flex-col divide-y divide-[var(--ds-hairline)] border-y border-[var(--ds-hairline)]">
+          {entries.map((e) => (
+            <li key={e.id} className="flex min-w-0 flex-wrap items-center justify-between gap-x-4 gap-y-2 py-3">
+              <div className="min-w-0 flex-1 basis-60">
+                <p className="type-body font-semibold [overflow-wrap:anywhere]">{e.activity}</p>
+                <p className="type-small text-muted-foreground [overflow-wrap:anywhere]">
+                  {e.studentEmail} · {e.date} · {e.hours}h{e.supervisorName ? ` · ${e.supervisorName}` : ""}
+                </p>
+              </div>
+              <div className="flex shrink-0 gap-2">
+                <button type="button" disabled={busy === e.id} onClick={() => void decide(e.id, "signed")} className={`${b} border-foreground bg-foreground text-background hover:opacity-90`}>
+                  <Check className="size-4" aria-hidden /> Sign
+                </button>
+                <button type="button" disabled={busy === e.id} onClick={() => void decide(e.id, "rejected")} className={`${b} border-[var(--ds-card-line)] text-status-alert-fg hover:border-status-alert-fg`}>
+                  <X className="size-4" aria-hidden /> Reject
+                </button>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+    );
   }
 
   if (entries.length === 0) {

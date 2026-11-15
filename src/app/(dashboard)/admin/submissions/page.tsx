@@ -9,6 +9,9 @@ import { SubmissionReviewRow } from "./submission-review-row";
 import { PageHeader } from "@/components/design-system/page-header";
 import { EmptyState } from "@/components/design-system/empty-state";
 import { Badge } from "@/components/ui/badge";
+import { readFlags } from "@/lib/flags";
+import { uiV2For } from "@/lib/ui/v2";
+import { SubmissionsV2 } from "../_v2/review";
 
 function formatSubmitted(iso: string): string {
   return new Date(iso).toLocaleString(undefined, {
@@ -26,7 +29,8 @@ export default async function SubmissionsPage({
 }) {
   // Defence in depth: layouts don't re-render on every navigation, so the page
   // re-checks admin itself before reading data.
-  if (!(await requireAdmin())) redirect("/dashboard");
+  const me = await requireAdmin();
+  if (!me) redirect("/dashboard");
   const { course: courseFilter, assignment: assignmentFilter, status: statusFilter } = await searchParams;
 
   const supabase = await createClient();
@@ -83,6 +87,41 @@ export default async function SubmissionsPage({
     });
 
   const pendingCount = (submissions ?? []).filter((s) => s.status === "pending_review").length;
+
+  if (uiV2For(await readFlags(), me.role)) {
+    return (
+      <SubmissionsV2
+        pending={pendingCount}
+        status={statusFilter ?? ""}
+        course={courseFilter ?? ""}
+        assignment={assignmentFilter ?? ""}
+        courses={(courses ?? []).map((c) => ({ id: c.id as string, title: String(c.title) }))}
+        assignments={(assignments ?? []).map((a) => ({ id: a.id as string, title: a.title ?? a.prompt_text?.slice(0, 40) ?? "Assignment" }))}
+        count={enriched.length}
+      >
+        {enriched.map((s) => (
+          <SubmissionReviewRow
+            key={s.id}
+            v2
+            submissionId={s.id}
+            studentEmail={s.studentEmail}
+            courseTitle={s.courseTitle}
+            lessonTitle={s.lessonTitle}
+            assignmentTitle={s.assignmentTitle}
+            submittedAt={formatSubmitted(s.submitted_at)}
+            isLate={s.is_late}
+            status={s.status}
+            textContent={s.text_content}
+            audioStoragePath={s.audio_storage_path}
+            note={s.note}
+            score={s.score}
+            feedback={s.feedback}
+            files={s.files.map((f) => ({ id: f.id, originalName: f.original_name, storagePath: f.storage_path, format: f.format }))}
+          />
+        ))}
+      </SubmissionsV2>
+    );
+  }
 
   return (
     <div className="space-y-8">
