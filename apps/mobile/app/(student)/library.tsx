@@ -1,1 +1,1 @@
-export { LibraryScreen as default } from "@/screens/library/library";
+export { LibraryScreen as default } from "@/library/list";
