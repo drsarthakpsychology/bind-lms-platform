@@ -330,6 +330,7 @@ async function AccessTab({ id, email, canWrite, person, r, isTest, v2 }: { id: s
         access={
           canWrite ? (
             <PersonAccess
+              v2
               userId={id}
               cohorts={cohorts.map((c) => ({ id: c.id, name: c.name }))}
               cohortIds={[...person.cohortIds]}

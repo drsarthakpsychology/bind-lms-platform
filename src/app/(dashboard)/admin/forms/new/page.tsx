@@ -4,6 +4,9 @@ import { ChevronLeft } from "lucide-react";
 import { requireAdmin, isSuperAdmin } from "@/lib/auth/guards";
 import { PageHeader } from "@/components/design-system/page-header";
 import { FormBuilder } from "../form-builder";
+import { readFlags } from "@/lib/flags";
+import { uiV2For } from "@/lib/ui/v2";
+import { FormEditV2 } from "../../_v2/forms";
 
 export const dynamic = "force-dynamic";
 
@@ -12,6 +15,26 @@ export default async function NewFormPage() {
   const me = await requireAdmin();
   if (!me) redirect("/dashboard");
   if (!isSuperAdmin(me)) redirect("/admin/forms");
+  if (uiV2For(await readFlags(), me.role)) {
+    return (
+      <FormEditV2 title="New form" back={{ href: "/admin/forms", label: "Forms" }}>
+        <FormBuilder
+          initial={{
+            title: "",
+            description: "",
+            isActive: true,
+            fields: [
+              { key: "full_name", type: "text", label: "Full name", required: true },
+              { key: "email_address", type: "email", label: "Email", required: true },
+              { key: "mobile_number", type: "phone", label: "Phone", required: false },
+            ],
+          }}
+          reservedKeys={[]}
+          responses={0}
+        />
+      </FormEditV2>
+    );
+  }
   return (
     <div className="space-y-6">
       <Link href="/admin/forms" className="inline-flex min-h-11 items-center gap-1.5 rounded-md border-2 border-foreground bg-card px-4 text-sm font-bold">

@@ -3,6 +3,9 @@ import { after } from "next/server";
 import { opportunisticDoubtFollowups } from "@/app/api/cron/doubt-followup/followup";
 import { getSession } from "@/lib/auth/session";
 import { AdminSectionTabs } from "@/components/navigation/admin-section-tabs";
+import { readFlags } from "@/lib/flags";
+import { uiV2For } from "@/lib/ui/v2";
+import { AdminV2Provider } from "./_v2/v2-context";
 
 export default async function AdminLayout({
   children,
@@ -29,10 +32,12 @@ export default async function AdminLayout({
 
   // Navigation lives in the app sidebar (admin nav items); this layout only
   // owns the server-side role guard and a consistent content container.
+  // The loading and error screens below read the ui_v2 switch from here.
+  const v2 = uiV2For(await readFlags().catch(() => null), session.profile.role);
   return (
     <div className="w-full">
-      <AdminSectionTabs />
-      {children}
+      <AdminSectionTabs v2={v2} />
+      <AdminV2Provider value={v2}>{children}</AdminV2Provider>
     </div>
   );
 }

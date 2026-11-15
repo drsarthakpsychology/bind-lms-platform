@@ -1,5 +1,5 @@
 import { GameFrame } from "@/components/play/game-frame";
-import { playV2 } from "@/components/play/v2";
+import { uiV2 } from "@/lib/ui/v2-server";
 import { PlayStack } from "@/components/play/parts";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
@@ -23,7 +23,7 @@ export default async function WeakSpotsPage() {
   if (!loaded) return null;
   const { spots, drill, sessions } = loaded;
 
-  if (await playV2()) {
+  if (await uiV2()) {
     return (
       <GameFrame title="Weak spots" width="reading" back={{ href: "/practice/consulting-room", label: "Back to AI patient interview" }} tip={{ id: "weak-spots", label: "How it works", steps: ["The skills you miss most, with a drill made from them."] }}>
         <PlayStack>

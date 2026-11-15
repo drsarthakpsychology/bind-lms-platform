@@ -1,10 +1,9 @@
 import { createClient } from "@/lib/supabase/server";
 import { Reveal } from "@/components/motion/reveal";
 import { WallView } from "./wall-view";
-import { PageFrame } from "@/components/ds";
-import { BackLink } from "@/components/v2me/parts";
+import { PageFrame, BackLink } from "@/components/ds";
 import { requireSession } from "@/lib/auth/guards";
-import { pageV2 } from "@/components/v2me/server";
+import { uiV2Role } from "@/lib/ui/v2-server";
 
 export const dynamic = "force-dynamic";
 
@@ -72,7 +71,7 @@ export default async function WallPage() {
     reactionsByPost.set(key, counts);
   }
 
-  if (await pageV2((await requireSession())?.role)) {
+  if (await uiV2Role((await requireSession())?.role)) {
     return (
       <PageFrame className="gap-4 md:gap-6">
         <BackLink href="/doubts">Doubts</BackLink>

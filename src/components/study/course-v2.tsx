@@ -10,8 +10,7 @@ import { activityHref, courseNext, moduleNext, moduleStatus, readingSections, re
 import { courseProgress, moduleProgress } from "@/lib/study/progress";
 import type { StudyModule } from "@/lib/study/types";
 import { cn } from "@/lib/utils";
-import { HeroButton, PageFrame, Row, RowList, Section } from "@/components/ds";
-import { Crumb, NextStep } from "@/components/learn-v2/parts";
+import { HeroButton, PageFrame, Row, RowList, Section, BackLink, NextStep } from "@/components/ds";
 import { MarksList, useSectionMarks, type LabLink } from "./marks";
 import { nextLabel, partsOf, shelfOf, SHELVES } from "./course";
 
@@ -172,7 +171,7 @@ export function ModuleViewV2({
   return (
     <PageFrame width="reading" className="!gap-8 md:!gap-10">
       <header className="flex min-w-0 flex-col gap-2">
-        <Crumb href="/study">Study</Crumb>
+        <BackLink href="/study">Study</BackLink>
         <p className="type-small text-muted-foreground type-num">Module {m.num}</p>
         <h1 className="type-h1 [overflow-wrap:anywhere]">{m.title}</h1>
         <p className="type-body text-muted-foreground [overflow-wrap:anywhere]">{m.tagline}</p>

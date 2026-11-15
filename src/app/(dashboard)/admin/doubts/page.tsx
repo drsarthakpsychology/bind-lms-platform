@@ -10,6 +10,9 @@ import { PageHeader } from "@/components/design-system/page-header";
 import { agoLabel } from "@/lib/analytics/timeline";
 import { cn } from "@/lib/utils";
 import { FilterBar } from "@/components/admin/filter-bar";
+import { readFlags } from "@/lib/flags";
+import { uiV2For } from "@/lib/ui/v2";
+import { DoubtsV2 } from "../_v2/review";
 
 export const metadata: Metadata = { title: "Doubts & concerns" };
 export const dynamic = "force-dynamic";
@@ -26,12 +29,15 @@ const VIEWS = [
  * filterable by cohort. Each opens the thread to reply or mark solved.
  */
 export default async function AdminDoubtsPage({ searchParams }: { searchParams: Promise<{ view?: string; cohort?: string; q?: string; status?: string }> }) {
-  if (!(await requireAdmin())) redirect("/dashboard");
+  const me = await requireAdmin();
+  if (!me) redirect("/dashboard");
   const session = await getSession();
   if (session.status !== "ok") redirect("/dashboard");
   const sp = await searchParams;
   const view = (VIEWS.map((v) => v.id) as string[]).includes(sp.view ?? "") ? sp.view! : "concerns";
+  const v2 = uiV2For(await readFlags(), me.role);
   if (!(await doubtsReady())) {
+    if (v2) return <DoubtsV2 ready={false} view={view} views={[]} list={[]} emptyText="" />;
     return <p className="rounded-2xl border-2 border-foreground bg-card p-4 text-sm">The doubts board isn&apos;t switched on yet (database step 2026_11_access_doubts.sql).</p>;
   }
   const [items, { data: cohorts }] = await Promise.all([
@@ -46,6 +52,28 @@ export default async function AdminDoubtsPage({ searchParams }: { searchParams: 
   const status = ["open", "solved", "hidden"].includes(sp.status ?? "") ? sp.status : null;
   const list = viewList.filter((d) => (!status || d.status === status) && (!needle || `${d.title} ${d.author} ${d.topic ?? ""}`.toLowerCase().includes(needle)));
   const q = (v: string, c?: string) => `/admin/doubts?view=${v}${c ? `&cohort=${c}` : ""}`;
+
+  if (v2) {
+    return (
+      <DoubtsV2
+        ready
+        view={view}
+        views={VIEWS.map((v) => ({ id: v.id, label: v.label, href: q(v.id, sp.cohort), count: v.id === "concerns" ? concerns.length : v.id === "open" ? open.length : null }))}
+        filter={
+          <FilterBar
+            v2
+            search={{ label: "Search doubts", placeholder: "Search by title, student or topic" }}
+            selects={[
+              { param: "cohort", label: "Cohort", allLabel: "All cohorts", options: (cohorts ?? []).map((c) => ({ value: c.id as string, label: String(c.name) })) },
+              { param: "status", label: "Status", allLabel: "Any status", options: [{ value: "open", label: "Open" }, { value: "solved", label: "Solved" }, { value: "hidden", label: "Hidden" }] },
+            ]}
+          />
+        }
+        list={list.map((d) => ({ id: d.id, title: d.title, concern: d.kind === "complaint", author: d.author, cohort: d.cohortId ? cohortName.get(d.cohortId) ?? "Cohort" : "No cohort", when: agoLabel(d.createdAt), replies: d.replies, solved: d.status === "solved" }))}
+        emptyText={needle || status ? "Nothing matches these filters." : view === "concerns" ? "No private concerns." : "Nothing here."}
+      />
+    );
+  }
 
   return (
     <div className="space-y-6">

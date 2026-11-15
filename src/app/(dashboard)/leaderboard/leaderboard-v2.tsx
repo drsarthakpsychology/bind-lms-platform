@@ -5,8 +5,7 @@ import type { BoardEntry, MyLeague } from "@/lib/leagues/board";
 import { tierName, TIERS } from "@/lib/leagues/tiers";
 import { BOARDS, type BoardKey } from "@/lib/standing/boards";
 import { cn } from "@/lib/utils";
-import { PageFrame, Row, RowList, Section } from "@/components/ds";
-import { chipClass, chipRow, StatItem, StatRow } from "@/components/v2me/parts";
+import { PageFrame, Row, RowList, Section, chipClass, chipRow, StatItem, StatRow } from "@/components/ds";
 import { parseLook } from "@/lib/leagues/shop";
 import { AliasFormV2 } from "./alias-form-v2";
 

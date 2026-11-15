@@ -10,7 +10,7 @@ import { STAGES, STAGE_LABEL, nowMs, type Person, type StageId } from "@/lib/crm
 import { setStage } from "./actions";
 import { cn } from "@/lib/utils";
 
-const VIEWS = [
+export const VIEWS = [
   { id: "all", label: "Everyone" },
   { id: "not-contacted", label: "Not contacted" },
   { id: "follow-up", label: "Follow-up due" },
@@ -20,9 +20,9 @@ const VIEWS = [
   { id: "active-now", label: "Active now" },
   { id: "not-set-up", label: "Login not set up" },
 ] as const;
-type ViewId = (typeof VIEWS)[number]["id"];
+export type ViewId = (typeof VIEWS)[number]["id"];
 
-function matches(p: Person, v: ViewId): boolean {
+export function matches(p: Person, v: ViewId): boolean {
   const soon = Date.now() + 86400000;
   switch (v) {
     case "not-contacted": return !p.contacted && !p.isStudent;
@@ -38,16 +38,25 @@ function matches(p: Person, v: ViewId): boolean {
 
 const LAYOUT_KEY = "vibha-people-layout";
 const layoutListeners = new Set<() => void>();
-function subscribeLayout(fn: () => void) {
+export function subscribeLayout(fn: () => void) {
   layoutListeners.add(fn);
   return () => layoutListeners.delete(fn);
 }
-function readLayout(): "board" | "table" {
+export function readLayout(): "board" | "table" {
   try {
     return window.localStorage.getItem(LAYOUT_KEY) === "board" ? "board" : "table";
   } catch {
     return "table";
   }
+}
+
+export function pickLayout(l: "board" | "table") {
+  try {
+    window.localStorage.setItem(LAYOUT_KEY, l);
+  } catch {
+    /* fine */
+  }
+  layoutListeners.forEach((fn) => fn());
 }
 
 const fmt = (iso: string | null) =>
@@ -62,14 +71,7 @@ export function PeopleView({ people, initialView = "all" }: { people: Person[]; 
   const layout = React.useSyncExternalStore(subscribeLayout, readLayout, () => "table" as const);
   const [view, setView] = React.useState<ViewId>(VIEWS.some((x) => x.id === initialView) ? (initialView as ViewId) : "all");
   const [q, setQ] = React.useState("");
-  const pick = (l: "board" | "table") => {
-    try {
-      window.localStorage.setItem(LAYOUT_KEY, l);
-    } catch {
-      /* fine */
-    }
-    layoutListeners.forEach((fn) => fn());
-  };
+  const pick = pickLayout;
 
   const query = q.trim().toLowerCase();
   const shown = people.filter(

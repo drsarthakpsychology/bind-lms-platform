@@ -7,6 +7,10 @@
 /* Screen height bands. Windows laptops at 125-150% zoom are only ~600-650px
    tall, so extra sticky bars ("tall:sticky") and roomy headers wait for 720px. */
 @custom-variant tall (@media (min-height: 720px));
+/* The new design (ui_v2) is on: the app shell marks itself with data-ui="v2".
+   For older shared parts that sit inside new screens (also in sheets, which
+   render outside the shell). With the switch off these never match. */
+@custom-variant v2 (:root:has([data-ui="v2"]) &);
 @custom-variant short (@media (max-height: 719.98px));
 
 /* =============================================================================
@@ -1220,6 +1224,53 @@ html[data-cvd="on"] .bg-destructive {
    border) · card (1.5px line, 12px corners, no shadow) · hero (lime, bold
    border, hard shadow, one per screen).
    ============================================================================= */
+
+/* Older screens that have not been redrawn yet keep their layout but speak
+   the new type scale, so a heading is the same size on every screen. */
+:root:has([data-ui="v2"]) .text-h1 {
+  font-size: 1.75rem;
+  line-height: 2.125rem;
+  font-weight: 750;
+  letter-spacing: -0.01em;
+}
+:root:has([data-ui="v2"]) .text-h2 {
+  font-size: 1.375rem;
+  line-height: 1.75rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+:root:has([data-ui="v2"]) .text-h3 {
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  font-weight: 650;
+  letter-spacing: 0;
+}
+@media (min-width: 768px) {
+  :root:has([data-ui="v2"]) .text-h1 {
+    font-size: 2.25rem;
+    line-height: 2.625rem;
+  }
+  :root:has([data-ui="v2"]) .text-h2 {
+    font-size: 1.625rem;
+    line-height: 2rem;
+  }
+  :root:has([data-ui="v2"]) .text-h3 {
+    font-size: 1.25rem;
+    line-height: 1.625rem;
+  }
+}
+
+/* The old small pixel label (10.6px) reads as a 12px caption wherever an
+   older shared part sits inside a new-design screen. */
+:root:has([data-ui="v2"]) .text-eyebrow {
+  font-family: inherit;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: none;
+}
+
 :root {
   --ds-1: 0.25rem;
   --ds-2: 0.5rem;
@@ -1236,6 +1287,13 @@ html[data-cvd="on"] .bg-destructive {
   --ds-hairline: color-mix(in oklab, var(--foreground) 12%, transparent);
   --ds-tint: color-mix(in oklab, var(--foreground) 4%, var(--card));
   --ds-card-line: color-mix(in oklab, var(--foreground) 22%, transparent);
+  /* Medicine families (spines and dots only, never text). */
+  --med-antidepressants: #1d44d8;
+  --med-antipsychotics: #7c3aed;
+  --med-mood: #8fb51a;
+  --med-anxiety: #0e9aa7;
+  --med-other: #e08a00;
+  --med-side: #d6456b;
   --ds-radius: 0.75rem;
   /* Motion: press, hover/state, sheet in/out, page change, progress fill. */
   --ds-press: 120ms;
@@ -1332,6 +1390,60 @@ html[data-cvd="on"] .bg-destructive {
   font-weight: 600;
   letter-spacing: 0.02em;
 }
+/* ---- Brand accents (docs/design/DESIGN_SYSTEM_2026_11.md, section 13) ----
+   A little of the old VIBHA character on top of the plain structure. Small,
+   deliberate, never a box around text. */
+
+/* The pixel voice for a tiny label or a numeral ("LIBRARY", "01"). 12px, never smaller. */
+@utility type-pix {
+  font-family: var(--font-pixel-digits), var(--font-pixel), var(--font-geist-mono), monospace;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+/* A short lime stroke under a key heading. Decoration only: the words stay ink. */
+@utility ds-stroke {
+  &::after {
+    content: "";
+    display: block;
+    width: 2.5rem;
+    height: 0.25rem;
+    margin-top: 0.5rem;
+    border-radius: 999px;
+    background: var(--primary);
+  }
+}
+/* A soft blue wash behind a page header (hubs, the library, a medicine). No border. */
+@utility ds-band {
+  border-radius: var(--ds-radius);
+  background: color-mix(in srgb, var(--brand) 7%, transparent);
+  padding: var(--ds-4);
+  @media (min-width: 768px) {
+    padding: var(--ds-5);
+  }
+  &:is(.dark *) {
+    background: color-mix(in srgb, var(--brand) 26%, transparent);
+  }
+}
+/* A thin colour spine at the left edge of a row or header: says which family a thing belongs to. */
+@utility ds-spine {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.75rem;
+    bottom: 0.75rem;
+    width: 0.25rem;
+    border-radius: 999px;
+    background: var(--spine, var(--brand));
+    transition: transform var(--ds-state) var(--ds-ease);
+    transform-origin: left center;
+  }
+}
+
 /* Numbers that line up (scores, counts, times). */
 @utility type-num {
   font-variant-numeric: tabular-nums;

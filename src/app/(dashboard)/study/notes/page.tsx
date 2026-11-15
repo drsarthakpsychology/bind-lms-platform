@@ -7,10 +7,9 @@ import { NotesIndex, type NoteBlock } from "@/components/learn/notes-index";
 import { loadLearnState, saveLearnState } from "../actions";
 import { PageHeader } from "@/components/design-system/page-header";
 import { backLinkClass } from "@/components/design-system/back-link";
-import { learnV2 } from "@/components/learn-v2/server";
-import { UiV2 } from "@/components/learn-v2/ui-v2";
-import { Crumb } from "@/components/learn-v2/parts";
-import { PageFrame } from "@/components/ds";
+import { uiV2 } from "@/lib/ui/v2-server";
+import { UiV2 } from "@/components/ds/v2";
+import { BackLink, PageFrame } from "@/components/ds";
 
 export const metadata: Metadata = { title: "One-page summaries" };
 
@@ -29,12 +28,12 @@ export default async function NotesPage() {
       meta: n.terms?.length ? "Summary, terms and quiz" : "Summary and quiz",
     })),
   })).filter((b) => b.notes.length);
-  if (await learnV2()) {
+  if (await uiV2()) {
     return (
       <UiV2 on>
         <PageFrame width="reading">
           <header className="flex min-w-0 flex-col gap-1">
-            <Crumb href="/study">Study</Crumb>
+            <BackLink href="/study">Study</BackLink>
             <h1 className="type-h1">One-page summaries</h1>
           </header>
           <NotesIndex blocks={blocks} serverState={serverState} save={saveLearnState} />

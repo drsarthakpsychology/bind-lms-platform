@@ -158,8 +158,9 @@ function Pick({ arranged, startErr, teamsOn, teams, onPractice, onCreate, onJoin
         {arranged.list.map(({ item: r, mark }, i) => (
           <li key={r.id} className={cn("flex min-w-0 flex-col rounded-xl border-2 border-foreground bg-card p-4 hard-shadow-sm", mark === "done" && !arranged.recycled && "border-foreground/40 shadow-none", m.rise)} style={{ "--i": i } as React.CSSProperties}>
             <div className="flex items-start justify-between gap-2">
-              <p className="flex min-w-0 items-center gap-1.5 text-caption text-muted-foreground">
-                <MapPin className="size-3.5 shrink-0" aria-hidden /> <span className="truncate">{r.place}</span>
+              <p className="min-w-0 flex-1 text-caption text-muted-foreground [overflow-wrap:anywhere]">
+                <MapPin className="mr-1.5 inline-block size-3.5 align-[-2px]" aria-hidden />
+                {r.place}
               </p>
               <CaseMarkTag mark={mark} />
             </div>

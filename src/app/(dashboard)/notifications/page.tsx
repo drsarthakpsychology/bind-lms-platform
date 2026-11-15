@@ -10,7 +10,7 @@ import { EmptyState } from "@/components/design-system/empty-state";
 import { cn } from "@/lib/utils";
 import { markAllNotificationsRead } from "./actions";
 import { leaveWithoutSession } from "@/lib/auth/session-redirect";
-import { pageV2 } from "@/components/v2me/server";
+import { uiV2Role } from "@/lib/ui/v2-server";
 import { NotificationsV2, type NoteRow } from "./notifications-v2";
 
 /**
@@ -73,7 +73,7 @@ export default async function NotificationsPage() {
   const hasStudent = replyItems.length > 0;
   const hasAdmin = reports.length > 0;
 
-  if (await pageV2(role)) {
+  if (await uiV2Role(role)) {
     // New design: one list, newest first (the same rows, not grouped by kind).
     const rows: (NoteRow & { at: string })[] = [
       ...(notes ?? []).map((n) => ({

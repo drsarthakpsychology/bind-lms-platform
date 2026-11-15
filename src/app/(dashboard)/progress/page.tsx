@@ -12,7 +12,7 @@ import { emptyStudy } from "@/lib/learn/engine";
 import { loadLearnState } from "../study/actions";
 import { StrengthsPanel } from "./strengths";
 import { ProgressV2 } from "./progress-v2";
-import { pageV2 } from "@/components/v2me/server";
+import { uiV2Role } from "@/lib/ui/v2-server";
 import { getStrengthsWeaknesses } from "@/lib/progress/strengths";
 import { RefreshOnSave } from "@/components/save/refresh-on-save";
 
@@ -36,7 +36,7 @@ export default async function ProgressPage() {
   // Next step: the unpassed test with the most reading done (first in course order on a tie).
   const next = [...cert.remaining].sort((a, b) => (pctOf.get(b.id) ?? 0) - (pctOf.get(a.id) ?? 0))[0];
 
-  if (await pageV2(me.role)) {
+  if (await uiV2Role(me.role)) {
     // New design: the same numbers, and the topic lists that used to sit on Home.
     const strengths = await getStrengthsWeaknesses(me.id);
     return (

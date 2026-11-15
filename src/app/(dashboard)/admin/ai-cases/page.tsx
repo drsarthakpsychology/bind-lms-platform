@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import { Flag } from "lucide-react";
 import { isSuperAdmin, requireAdmin } from "@/lib/auth/guards";
+import { readFlags } from "@/lib/flags";
+import { uiV2For } from "@/lib/ui/v2";
+import { AdminPage } from "../_v2/kit";
 import { PageHeader } from "@/components/design-system/page-header";
 import { StatusPill } from "@/components/mobile/status-pill";
 import { listForReview } from "@/lib/ai-cases";
@@ -36,15 +39,8 @@ export default async function AiCasesPage() {
   const { rows, missing } = await listForReview(120);
   const reported = rows.filter((r) => r.status === "flagged").length;
 
-  return (
-    <div className="mx-auto w-full max-w-4xl space-y-6">
-      <PageHeader
-        eyebrow="Content"
-        title="AI cases"
-        description={`Practice cases made by AI. Students see: "${AI_CASE_NOTE}". Reported cases leave practice until you check them.`}
-        badge={reported > 0 ? <StatusPill tone="warning" label={`${reported} reported`} /> : undefined}
-      />
-
+  const body = (
+    <>
       {missing ? (
         <p className="rounded-md border-2 border-dashed border-foreground bg-card p-4 text-small">
           The AI cases table isn&apos;t set up yet (supabase/migrations_pending/2026_11_ai_cases.sql). Students can still play AI cases; they just aren&apos;t listed here.
@@ -134,6 +130,26 @@ export default async function AiCasesPage() {
           })}
         </ul>
       )}
+    </>
+  );
+  if (uiV2For(await readFlags(), me.role)) {
+    return (
+      <AdminPage width="default" title="AI cases" lead={`Practice cases made by AI. Students see: "${AI_CASE_NOTE}". Reported cases leave practice until you check them.${reported > 0 ? ` ${reported} reported.` : ""}`}>
+        {body}
+      </AdminPage>
+    );
+  }
+
+  return (
+    <div className="mx-auto w-full max-w-4xl space-y-6">
+      <PageHeader
+        eyebrow="Content"
+        title="AI cases"
+        description={`Practice cases made by AI. Students see: "${AI_CASE_NOTE}". Reported cases leave practice until you check them.`}
+        badge={reported > 0 ? <StatusPill tone="warning" label={`${reported} reported`} /> : undefined}
+      />
+
+      {body}
     </div>
   );
 }

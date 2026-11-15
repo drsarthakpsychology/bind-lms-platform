@@ -37,6 +37,7 @@ export function SubmissionReviewRow({
   score,
   feedback,
   files,
+  v2 = false,
 }: {
   submissionId: string;
   studentEmail: string;
@@ -52,6 +53,8 @@ export function SubmissionReviewRow({
   score: number | null;
   feedback: string | null;
   files: ReviewFile[];
+  /** Admin v2: a plain row with a hairline, text wraps. */
+  v2?: boolean;
 }) {
   const router = useRouter();
   const [open, setOpen] = useState(false);
@@ -113,7 +116,29 @@ export function SubmissionReviewRow({
   }
 
   return (
-    <Card variant="flat">
+    <Card variant="flat" data-keep={v2 ? "" : undefined} className={v2 ? "gap-0 rounded-none border-0 border-b border-[var(--ds-hairline)] bg-transparent" : undefined}>
+      {v2 ? (
+        <button
+          type="button"
+          onClick={() => setOpen((o) => !o)}
+          aria-expanded={open}
+          className="grid min-h-14 w-full min-w-0 grid-cols-[minmax(0,1fr)_1rem] items-center gap-x-3 gap-y-1 py-3 text-left outline-none transition-colors duration-[var(--ds-state)] hover:bg-[var(--ds-tint)] focus-visible:ring-2 focus-visible:ring-ring md:grid-cols-[minmax(0,1fr)_9rem_8rem_1rem] md:gap-x-4"
+        >
+          <span className="min-w-0">
+            <span className="block type-body font-semibold [overflow-wrap:anywhere]">{assignmentTitle}</span>
+            <span className="block type-small text-muted-foreground [overflow-wrap:anywhere]">
+              {studentEmail} · {courseTitle} · {lessonTitle}
+            </span>
+            <span className="mt-1 flex flex-wrap items-center gap-x-3 type-small text-muted-foreground md:hidden">
+              <span className="type-num">{submittedAt}</span>
+              <V2Status graded={graded} late={isLate} />
+            </span>
+          </span>
+          <span className="hidden type-small text-muted-foreground type-num md:block">{submittedAt}</span>
+          <span className="hidden md:block"><V2Status graded={graded} late={isLate} /></span>
+          <ChevronDown className={"size-4 text-muted-foreground transition-transform " + (open ? "rotate-180" : "")} aria-hidden />
+        </button>
+      ) : (
       <button
         type="button"
         onClick={() => setOpen((o) => !o)}
@@ -136,9 +161,10 @@ export function SubmissionReviewRow({
           <ChevronDown className={"size-4 text-muted-foreground transition-transform " + (open ? "rotate-180" : "")} aria-hidden />
         </span>
       </button>
+      )}
 
       {open && (
-        <CardContent className="space-y-4 border-t-2 border-border">
+        <CardContent className={v2 ? "space-y-4 px-0 pt-2 pb-5" : "space-y-4 border-t-2 border-border"}>
           {/* Student's submission */}
           {textContent && (
             <div className="whitespace-pre-wrap rounded-md border-2 border-border bg-secondary/60 p-3 text-small text-foreground">
@@ -253,5 +279,16 @@ export function SubmissionReviewRow({
         </CardContent>
       )}
     </Card>
+  );
+}
+
+/** Admin v2 status: a dot plus words, never colour alone. */
+function V2Status({ graded, late }: { graded: boolean; late: boolean }) {
+  return (
+    <span className="inline-flex items-center gap-1.5 type-small font-medium text-foreground">
+      <span aria-hidden className={"size-2 shrink-0 rounded-full " + (graded ? "bg-[#2f9e44] dark:bg-status-success-fg" : "bg-[#e8910c]")} />
+      {graded ? "Graded" : "Waiting"}
+      {late ? <span className="text-status-alert-fg">· Late</span> : null}
+    </span>
   );
 }

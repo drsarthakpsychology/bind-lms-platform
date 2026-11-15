@@ -80,7 +80,7 @@ export default async function MocksPage() {
           {parts.map((s) => (
             <li key={s.id}>
               <Link href={`/prep/mock/${s.id}`} className={cn(btnPlain, "w-full justify-between")}>
-                <span className="min-w-0 truncate">{s.short}</span> <ArrowRight className="size-4 shrink-0" aria-hidden />
+                <span className="min-w-0 [overflow-wrap:anywhere]">{s.short}</span> <ArrowRight className="size-4 shrink-0" aria-hidden />
               </Link>
             </li>
           ))}
@@ -94,7 +94,7 @@ export default async function MocksPage() {
             {others.map((s) => (
               <li key={s.id}>
                 <Link href={`/prep/mock/${s.id}`} className={cn(btnPlain, "w-full justify-between")}>
-                  <span className="min-w-0 truncate">{s.title}</span> <ArrowRight className="size-4 shrink-0" aria-hidden />
+                  <span className="min-w-0 [overflow-wrap:anywhere]">{s.title}</span> <ArrowRight className="size-4 shrink-0" aria-hidden />
                 </Link>
               </li>
             ))}
@@ -111,7 +111,7 @@ export default async function MocksPage() {
             {done.map((h) => (
               <li key={h.id}>
                 <Link href={`/prep/mock/result/${h.id}`} className={cn(btnPlain, "w-full justify-between")}>
-                  <span className="min-w-0 truncate">{specById(h.specId)?.short ?? h.specId}</span>
+                  <span className="min-w-0 [overflow-wrap:anywhere]">{specById(h.specId)?.short ?? h.specId}</span>
                   <span className="shrink-0 font-mono">
                     {h.score ?? 0} / {h.max ?? 0}
                   </span>

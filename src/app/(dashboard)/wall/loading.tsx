@@ -1,7 +1,7 @@
 import { LoadingFrame } from "@/components/design-system/slow-state";
 import { Skeleton } from "@/components/ui/skeleton";
 import { LoadingV2 } from "@/components/v2me/states";
-import { V2Switch } from "@/components/v2me/ui-v2";
+import { V2Switch } from "@/components/ds/v2";
 
 export default function Loading() {
   return (

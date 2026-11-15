@@ -5,6 +5,9 @@ import { PageHeader } from "@/components/design-system/page-header";
 import { Badge } from "@/components/ui/badge";
 import { MobileHeader } from "@/components/mobile/mobile-header";
 import { MobileListItem } from "@/components/mobile/mobile-list-item";
+import { Fold, PageFrame, Row, RowList } from "@/components/ds";
+import { ListHead } from "@/components/play/parts";
+import { uiV2 } from "@/lib/ui/v2-server";
 
 /**
  * Learning layer (Part 10): browse by mechanism. Drugs that touch the same
@@ -14,8 +17,28 @@ import { MobileListItem } from "@/components/mobile/mobile-list-item";
  * Mobile (T32): one receptor group per collapsed card (show → act → reveal);
  * drugs reveal as 48px rows instead of a ~30px pill wall.
  */
-export default function LearnPage() {
+export default async function LearnPage() {
   const groups = mechanismIndex();
+  if (await uiV2()) {
+    // New design: one fold per receptor group, the drugs as rows inside. Same data.
+    return (
+      <PageFrame width="reading">
+        <ListHead back={{ href: "/practice/medicines", label: "Medicines" }} tag="Library" title="Browse by mechanism" lead="Everything that touches a receptor group, together." />
+        <div className="flex min-w-0 flex-col">
+          {groups.map((g) => (
+            <Fold key={g.tag} title={g.tag} className="-mt-px">
+              <RowList>
+                {g.drugs.map((d) => (
+                  <Row key={d.name} href={`/tools/psychopharm/${d.name.toLowerCase().replace(/\s+/g, "-")}`} icon={<Pill />} title={d.name} meta={d.qualifier} />
+                ))}
+              </RowList>
+            </Fold>
+          ))}
+        </div>
+        <p className="type-small text-muted-foreground">Nothing here is a dose or a recommendation, just how the drugs are related by receptor.</p>
+      </PageFrame>
+    );
+  }
   return (
     <div className="mx-auto max-w-3xl space-y-6 py-6">
       <MobileHeader

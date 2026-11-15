@@ -1,5 +1,5 @@
 import { GameFrame } from "@/components/play/game-frame";
-import { playV2 } from "@/components/play/v2";
+import { uiV2 } from "@/lib/ui/v2-server";
 import { ToolHeader } from "@/components/help/tool-header";
 import { getLibraryDocs, filterLibrary, filterLibraryByTag, LIBRARY_FILTERS } from "@/lib/corpus/library";
 import { LibraryList } from "./library-list";
@@ -25,7 +25,7 @@ export default async function LibraryPage(props: {
   const searched = filterLibrary(all, query);
   const filtered = tag ? filterLibraryByTag(searched, tag) : searched;
 
-  if (await playV2()) {
+  if (await uiV2()) {
     return (
       <GameFrame title="Case library" width="reading" tip={{ id: "case-library", label: "How it works", steps: ["Search by title or opening words."] }}>
         <div className="flex min-w-0 flex-col gap-4">

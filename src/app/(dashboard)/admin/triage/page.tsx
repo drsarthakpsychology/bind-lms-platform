@@ -6,6 +6,9 @@ import { PageHeader } from "@/components/design-system/page-header";
 import { priorityScore, needsReview } from "@/lib/review/triage";
 import { QUIZ_BANK } from "@/lib/quiz/quiz-bank";
 import { TriageView } from "./triage-view";
+import { readFlags } from "@/lib/flags";
+import { uiV2For } from "@/lib/ui/v2";
+import { TriageV2 } from "../_v2/review";
 
 /** Resolve internal quiz-item ids to the question text the admin can act on. */
 const QUIZ_PROMPT_BY_ID = new Map(QUIZ_BANK.map((q) => [q.id, q.prompt]));
@@ -20,7 +23,8 @@ export const dynamic = "force-dynamic";
 export default async function AdminTriagePage() {
   // Defence in depth: layouts don't re-render on every navigation, so the page
   // re-checks admin itself before reading data.
-  if (!(await requireAdmin())) redirect("/dashboard");
+  const me = await requireAdmin();
+  if (!me) redirect("/dashboard");
   const admin = createAdminClient();
 
   // Sessions by test and robot accounts (AI calibration runs) never show.
@@ -87,6 +91,8 @@ export default async function AdminTriagePage() {
 
   const needs = rows.filter((r) => r.review).sort((a, b) => b.priority - a.priority);
   const auto = rows.filter((r) => !r.review);
+
+  if (uiV2For(await readFlags(), me.role)) return <TriageV2 needs={needs.slice(0, 10)} autoReleased={auto.length} weakQuizItems={weakQuizItems} />;
 
   return (
     <div className="mx-auto max-w-4xl">

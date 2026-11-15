@@ -9,7 +9,7 @@ import { MobileTextarea } from "@/components/mobile/mobile-input";
 import { MobileErrorLine } from "@/components/mobile/mobile-error-line";
 import { StatusPill } from "@/components/mobile/status-pill";
 import { EmptyState } from "@/components/design-system/empty-state";
-import { EmptyLine, primaryButton, quietButton } from "@/components/v2me/parts";
+import { EmptyLine, primaryButton, quietButton } from "@/components/ds";
 import { cn } from "@/lib/utils";
 import { useDraft } from "@/lib/hooks/use-draft";
 import { useOffline } from "@/lib/hooks/use-offline";

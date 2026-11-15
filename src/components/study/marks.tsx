@@ -7,7 +7,7 @@ import { NOTE_MAX, isBookmarked, markKey, markedSections, notePreview, noteText,
 import { useHydrated, useMarks } from "@/lib/study/marks-store";
 import type { StudyModule } from "@/lib/study/types";
 import { cn } from "@/lib/utils";
-import { useUiV2 } from "@/components/learn-v2/ui-v2";
+import { useUiV2 } from "@/components/ds/v2";
 
 /* ------------------------------------------------- reader: bookmark + note */
 

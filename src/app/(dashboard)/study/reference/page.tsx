@@ -5,6 +5,9 @@ import { requireFeature } from "@/lib/flags";
 import { referenceIndex } from "@/lib/reference/data";
 import { ReferenceLibrary, type RefKind } from "@/components/reference/reference-library";
 import { backLinkClass } from "@/components/design-system/back-link";
+import { PageFrame } from "@/components/ds";
+import { ListHead } from "@/components/play/parts";
+import { uiV2 } from "@/lib/ui/v2-server";
 
 export const metadata: Metadata = { title: "Quick Reference A to Z" };
 
@@ -20,6 +23,14 @@ export default async function ReferencePage({ searchParams }: { searchParams: Pr
   const sp = await searchParams;
   const items = referenceIndex();
   const kind = KINDS.has(sp.kind ?? "") ? (sp.kind as RefKind) : "all";
+  if (await uiV2()) {
+    return (
+      <PageFrame>
+        <ListHead back={{ href: "/study", label: "Study" }} tag="Quick reference" title="A to Z" lead="Disorders, medicines and words." />
+        <ReferenceLibrary items={items} initialQuery={(sp.q ?? "").slice(0, 80)} initialKind={kind} />
+      </PageFrame>
+    );
+  }
   return (
     <div className="mx-auto max-w-3xl space-y-6">
       <Link href="/study" className={backLinkClass}>

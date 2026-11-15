@@ -404,6 +404,8 @@ export function MemberActions({ cohortId, userId, email, setUp }: { cohortId: st
 }
 
 /* -------------------------------------------------- one person's access */
+const V2_SECTION = "min-w-0 border-t border-[var(--ds-hairline)] py-5 first:border-t-0 first:pt-0";
+
 export function PersonAccess({
   userId,
   cohorts,
@@ -413,6 +415,7 @@ export function PersonAccess({
   grantIds,
   cohortLessonIds,
   detailsConfirmed,
+  v2 = false,
 }: {
   userId: string;
   cohorts: CohortOpt[];
@@ -422,6 +425,8 @@ export function PersonAccess({
   grantIds: string[];
   cohortLessonIds: string[];
   detailsConfirmed: boolean;
+  /** Admin v2: sections split by hairlines (no boxes), quiet toggles, 44px targets on touch. Class names only. */
+  v2?: boolean;
 }) {
   const router = useRouter();
   const [pending, start] = React.useTransition();
@@ -431,10 +436,10 @@ export function PersonAccess({
   const fromCohort = new Set(cohortLessonIds);
 
   return (
-    <div className="space-y-6">
-      <section className="rounded-2xl border-2 border-foreground bg-card p-4">
-        <h2 className="text-base font-bold">Cohorts</h2>
-        <p className="text-caption text-muted-foreground">They watch the lectures shared with any cohort ticked here.</p>
+    <div className={v2 ? "flex min-w-0 flex-col" : "space-y-6"}>
+      <section className={v2 ? V2_SECTION : "rounded-2xl border-2 border-foreground bg-card p-4"}>
+        <h2 className={v2 ? "type-h3" : "text-base font-bold"}>Cohorts</h2>
+        <p className={v2 ? "type-small text-muted-foreground" : "text-caption text-muted-foreground"}>They watch the lectures shared with any cohort ticked here.</p>
         <div className="mt-3 flex flex-wrap gap-2">
           {cohorts.map((c) => {
             const on = mine.has(c.id);
@@ -454,7 +459,12 @@ export function PersonAccess({
                     else router.refresh();
                   });
                 }}
-                className={cn("inline-flex h-10 items-center gap-1.5 rounded-full border-2 border-foreground px-4 text-sm font-semibold", on ? "bg-brand text-brand-foreground" : "bg-card")}
+                data-keep={v2 ? "" : undefined}
+                className={
+                  v2
+                    ? cn("inline-flex min-h-11 items-center gap-1.5 rounded-md border px-3 type-small font-semibold outline-none transition-colors focus-visible:ring-2 focus-visible:ring-ring lg:min-h-9", on ? "border-foreground bg-foreground text-background" : "border-[var(--ds-card-line)] bg-background hover:bg-[var(--ds-tint)]")
+                    : cn("inline-flex h-10 items-center gap-1.5 rounded-full border-2 border-foreground px-4 text-sm font-semibold", on ? "bg-brand text-brand-foreground" : "bg-card")
+                }
               >
                 {on ? <Check className="size-4" aria-hidden /> : <Plus className="size-4" aria-hidden />} {c.name}
               </button>
@@ -463,8 +473,8 @@ export function PersonAccess({
         </div>
       </section>
 
-      <section className="rounded-2xl border-2 border-foreground bg-card p-4">
-        <h2 className="text-base font-bold">What they can open</h2>
+      <section className={v2 ? V2_SECTION : "rounded-2xl border-2 border-foreground bg-card p-4"}>
+        <h2 className={v2 ? "type-h3" : "text-base font-bold"}>What they can open</h2>
         <div className="mt-3 grid grid-cols-2 gap-2 sm:max-w-md">
           {(
             [
@@ -484,25 +494,30 @@ export function PersonAccess({
                   else toast.success(v === "full" ? "Full platform on" : "Lectures only");
                 });
               }}
-              className={cn("h-10 rounded-xl border-2 border-foreground text-sm font-semibold", sc === v ? "bg-foreground text-background" : "bg-card")}
+              data-keep={v2 ? "" : undefined}
+              className={
+                v2
+                  ? cn("min-h-11 rounded-md border type-small font-semibold outline-none transition-colors focus-visible:ring-2 focus-visible:ring-ring lg:min-h-9", sc === v ? "border-foreground bg-foreground text-background" : "border-[var(--ds-card-line)] bg-background hover:bg-[var(--ds-tint)]")
+                  : cn("h-10 rounded-xl border-2 border-foreground text-sm font-semibold", sc === v ? "bg-foreground text-background" : "bg-card")
+              }
             >
               {l}
             </button>
           ))}
         </div>
-        <p className="mt-2 text-caption text-muted-foreground">Lectures only: Home, Lectures, Notes and Games. Full platform adds Practice, Journal, Wall and Medicines.</p>
+        <p className={v2 ? "mt-2 type-small text-muted-foreground" : "mt-2 text-caption text-muted-foreground"}>Lectures only: Home, Lectures, Notes and Games. Full platform adds Practice, Journal, Wall and Medicines.</p>
       </section>
 
-      <section className="rounded-2xl border-2 border-foreground bg-card p-4">
-        <h2 className="text-base font-bold">Extra lectures</h2>
-        <p className="text-caption text-muted-foreground">Give this one person a lecture their cohort doesn&apos;t have (for example a missed class from another batch).</p>
-        <ul className="mt-3 max-h-96 overflow-y-auto">
+      <section className={v2 ? V2_SECTION : "rounded-2xl border-2 border-foreground bg-card p-4"}>
+        <h2 className={v2 ? "type-h3" : "text-base font-bold"}>Extra lectures</h2>
+        <p className={v2 ? "type-small text-muted-foreground" : "text-caption text-muted-foreground"}>Give this one person a lecture their cohort doesn&apos;t have (for example a missed class from another batch).</p>
+        <ul className={v2 ? "mt-3 max-h-96 overflow-y-auto border-y border-[var(--ds-hairline)]" : "mt-3 max-h-96 overflow-y-auto"}>
           {lessons.map((l) => {
             const viaCohort = fromCohort.has(l.id);
             const on = viaCohort || grants.has(l.id);
             return (
-              <li key={l.id} className="border-b border-foreground/10 last:border-0">
-                <label className={cn("flex items-center gap-3 py-2", viaCohort ? "cursor-default" : "cursor-pointer")}>
+              <li key={l.id} className={v2 ? "border-b border-[var(--ds-hairline)] last:border-0" : "border-b border-foreground/10 last:border-0"}>
+                <label className={cn("flex items-center gap-3", v2 ? "min-h-12 py-2" : "py-2", viaCohort ? "cursor-default" : "cursor-pointer")}>
                   <input
                     type="checkbox"
                     className="size-4 accent-[#1d44d8]"
@@ -519,9 +534,9 @@ export function PersonAccess({
                       });
                     }}
                   />
-                  <span className="min-w-0 flex-1 text-sm">
-                    <span className="font-medium">{l.title}</span>
-                    <span className="block text-caption text-muted-foreground">
+                  <span className={v2 ? "min-w-0 flex-1 type-small" : "min-w-0 flex-1 text-sm"}>
+                    <span className={v2 ? "font-semibold [overflow-wrap:anywhere]" : "font-medium"}>{l.title}</span>
+                    <span className={v2 ? "block text-muted-foreground [overflow-wrap:anywhere]" : "block text-caption text-muted-foreground"}>
                       {l.course_title}
                       {l.week ? ` · Week ${l.week}` : ""}
                       {viaCohort ? " · from their cohort" : grants.has(l.id) ? " · given to them" : ""}
@@ -536,6 +551,7 @@ export function PersonAccess({
 
       {detailsConfirmed ? (
         <Button
+          className={v2 ? "mt-6 self-start" : undefined}
           type="button"
           variant="outline"
           size="sm"

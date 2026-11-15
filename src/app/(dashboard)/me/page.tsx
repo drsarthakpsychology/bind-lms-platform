@@ -27,7 +27,7 @@ export default async function MePage() {
 
   return (
     <PageFrame>
-      <header className="flex min-w-0 items-center gap-4">
+      <header className="ds-band flex min-w-0 items-center gap-4">
         <span aria-hidden className="grid size-14 shrink-0 place-items-center rounded-full bg-brand type-h2 text-brand-foreground">
           {((name ?? profile.email ?? "V").trim()[0] ?? "V").toUpperCase()}
         </span>

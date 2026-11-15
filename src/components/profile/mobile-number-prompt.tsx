@@ -8,8 +8,8 @@ import { normalizeIndianMobile } from "@/lib/phone";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { useUiV2 } from "@/components/v2me/ui-v2";
-import { fieldClass, labelClass, primaryButton, quietButton } from "@/components/v2me/parts";
+import { useUiV2 } from "@/components/ds/v2";
+import { fieldClass, labelClass, primaryButton, quietButton } from "@/components/ds";
 import { MobileBottomSheet } from "@/components/mobile/mobile-bottom-sheet";
 import { cn } from "@/lib/utils";
 

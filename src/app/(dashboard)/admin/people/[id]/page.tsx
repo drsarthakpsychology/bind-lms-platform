@@ -8,6 +8,9 @@ import { createAdminClient } from "@/lib/supabase/server";
 import { emailFromKey, loadPeople, loadTimeline, STAGE_LABEL } from "@/lib/crm/people";
 import { PersonActions } from "./person-actions";
 import { cn } from "@/lib/utils";
+import { readFlags } from "@/lib/flags";
+import { uiV2For } from "@/lib/ui/v2";
+import { PersonV2 } from "../../_v2/person";
 
 export const dynamic = "force-dynamic";
 
@@ -22,7 +25,8 @@ const when = (iso: string) =>
 export default async function PersonPage({ params }: { params: Promise<{ id: string }> }) {
   // Defence in depth: layouts don't re-render on every navigation, so the page
   // re-checks admin itself before reading data.
-  if (!(await requireAdmin())) redirect("/dashboard");
+  const me = await requireAdmin();
+  if (!me) redirect("/dashboard");
   const { id } = await params;
   const email = emailFromKey(id);
   if (!email) notFound();
@@ -32,6 +36,31 @@ export default async function PersonPage({ params }: { params: Promise<{ id: str
   if (!p) notFound();
   const wa = p.phone ? `https://wa.me/${p.phone.replace(/\D/g, "").replace(/^(\d{10})$/, "91$1")}` : null;
   const follow = p.followUpAt ? new Date(p.followUpAt).toISOString().slice(0, 10) : "";
+
+  if (uiV2For(await readFlags(), me.role)) {
+    return (
+      <PersonV2
+        name={p.name}
+        lead={`${p.isStudent ? "Student" : "Enquiry"} · ${STAGE_LABEL[p.stage]}`}
+        links={<PersonLinks userId={p.studentId} email={p.email} here="people" v2 />}
+        contact={[
+          { label: "Email", href: `/admin/emails?folder=compose&to=${encodeURIComponent(p.email)}` },
+          { label: "WhatsApp", href: wa, external: true },
+          { label: "Call", href: p.phone ? `tel:${p.phone}` : null },
+        ]}
+        facts={[
+          ["Email", p.email],
+          ["Phone", p.phone ?? "Not set"],
+          ["Source", p.source ?? (p.isStudent ? "Added as a student" : "Not set")],
+          ["Enquired", p.enquiredAt ? when(p.enquiredAt) : "No enquiry"],
+          ["Emails sent", `${p.emailsSent}${p.opened ? " · opened" : ""}${p.replied ? " · replied" : ""}`],
+          ...(p.isStudent ? [["Login", p.setupDone ? "Set up" : p.inviteSentAt ? "Link sent, not set up" : "Not sent yet"], ["Signed in", p.signedIn ? "Yes" : "No"]] : []),
+        ].map(([label, value]) => ({ label, value }))}
+        actions={<PersonActions email={p.email} name={p.name} stage={p.stage} followUp={follow} isStudent={p.isStudent} v2 />}
+        timeline={timeline.map((t) => ({ title: t.title, body: t.body, at: t.at, when: when(t.at), tone: t.tone === "blue" ? "info" : t.tone === "red" ? "alert" : t.tone === "ink" ? "quiet" : "ok" }))}
+      />
+    );
+  }
 
   return (
     <div className="space-y-6">
