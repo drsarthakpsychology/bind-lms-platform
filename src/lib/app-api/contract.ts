@@ -1129,6 +1129,10 @@ export type BadgeProgress = { id: string; type: "badge" | "certificate"; title: 
 /** GET /achievements */
 export type Achievements = { earned: Credential[]; progress: BadgeProgress[] };
 
+/** GET /journey: My journey, the website's /journey numbers. `levelPct` is 0 to 1; `points` and `rank` are null off the leaderboard. */
+export type JourneyStat = { key: "online" | "lectures" | "finished" | "streak" | "points" | "practice"; label: string; value: string; sub?: string };
+export type Journey = { level: number; title: string; levelPct: number; points: number | null; rank: number | null; streak: number; stats: JourneyStat[] };
+
 /** GET /achievements/:credentialId/pdf: a short-lived address of the PDF. */
 export type CertificatePdfLink = { url: string; expiresIn: number };
 

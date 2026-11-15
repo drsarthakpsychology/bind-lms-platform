@@ -4,7 +4,7 @@ The one agreed interface between the mobile app (`apps/mobile`) and the website 
 
 Status words: **built** (the route exists and has tests) or **planned** (agreed shape, not written yet). This page is updated with every server commit.
 
-Last updated: 2026-11-15.
+Last updated: 2026-11-16.
 
 ## 1. Basics
 
@@ -250,6 +250,7 @@ The website's doubt actions do their own rate limits (20 doubts, 40 answers, 60 
 | built | `GET /achievements` | student (`/achievements`) | none | `Achievements` | `loadMyAchievements` |
 | built | `GET /achievements/:credentialId/pdf` | student (`/achievements`), 30 a minute | none | `CertificatePdfLink` | `downloadMyCertificate` (409 `conflict` when not issued yet) |
 | built | `GET /settings` | bearer | none | `Settings` | `buildMe`, `deviceState`, `loadPrefs`, `buildConfig` |
+| built | `GET /journey` | bearer (gate `/journey`, open to lectures-only accounts as on the website) | none | `Journey` | `loadJourney` (`src/lib/journey/model.ts`, moved out of the `/journey` page, which calls it too): `loadMyBoard`, `normalise`, `levelFor`, `liveStreak`, lecture progress and practice counts |
 
 Settings are changed through the routes that own each part: `PATCH /me`, `PUT /devices/current`, `PUT /notifications/preferences`.
 
