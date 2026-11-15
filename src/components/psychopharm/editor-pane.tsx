@@ -4,17 +4,10 @@ import * as React from "react";
 import { DocumentView } from "./document-view";
 import { SourcePanel } from "./source-panel";
 import { SegmentedControl } from "@/components/ui/segmented-control";
-import type { MedicationDocument, MedBlock } from "@/lib/psychopharm/document";
+import type { MedicationDocument, MedBlock, SourceRef } from "@/lib/psychopharm/document";
 
-/**
- * The medication editor: the page IS the form.
- *
- * Renders the exact student document, but editable inline. Every text element
- * can be clicked to edit, each item has controls (edit / source / remove), and
- * each section has an "+ Add" button. Autosaves drafts; a single clearly
- * separated Publish button makes the change student-visible.
- */
-export function EditorPane({
+/** The editor's state and actions (old and new design share it). */
+export function useMedicineEditor({
   drug,
   drugId,
   initialDocument,
@@ -120,10 +113,45 @@ export function EditorPane({
       }
       setStatus("published");
       setNotice("Published: students can now see this page.");
+    } catch {
+      setNotice("Publish failed: check your connection and try again.");
     } finally { setBusy(null); }
   }
 
-  const published = status === "published";
+  function setSources(blockId: string, sources: SourceRef[]) {
+    setDoc((d) => ({
+      ...d,
+      sections: d.sections.map((s) => ({
+        ...s,
+        blocks: s.blocks.map((b) => (b.id === blockId ? { ...b, sources } : b)),
+      })),
+    }));
+    setActiveBlock((b) => (b && b.id === blockId ? { ...b, sources } : b));
+  }
+
+  return {
+    document, status, published: status === "published", busy, notice, errors, reason, setReason,
+    activeBlock, setActiveBlock, savedAt, register, setRegister,
+    editBlock, addBlock, removeBlock, addSection, publish, setSources,
+  };
+}
+
+/**
+ * The medication editor: the page IS the form.
+ *
+ * Renders the exact student document, but editable inline. Every text element
+ * can be clicked to edit, each item has controls (edit / source / remove), and
+ * each section has an "+ Add" button. Autosaves drafts; a single clearly
+ * separated Publish button makes the change student-visible.
+ */
+export function EditorPane(props: {
+  drug: string;
+  drugId: string;
+  initialDocument: MedicationDocument;
+  initialStatus: string;
+}) {
+  const { document, published, busy, notice, errors, reason, setReason, activeBlock, setActiveBlock, savedAt, register, setRegister, editBlock, addBlock, removeBlock, addSection, publish, setSources } = useMedicineEditor(props);
+
 
   return (
     <div className="flex flex-1 flex-col overflow-hidden lg:flex-row">
@@ -216,16 +244,7 @@ export function EditorPane({
           <div className="mt-3">
             <SourcePanel
               block={activeBlock}
-              onChange={(sources) => {
-                setDoc((d) => ({
-                  ...d,
-                  sections: d.sections.map((s) => ({
-                    ...s,
-                    blocks: s.blocks.map((b) => (b.id === activeBlock.id ? { ...b, sources } : b)),
-                  })),
-                }));
-                setActiveBlock((b) => (b ? { ...b, sources } : b));
-              }}
+              onChange={(sources) => setSources(activeBlock.id, sources)}
             />
           </div>
         ) : null}

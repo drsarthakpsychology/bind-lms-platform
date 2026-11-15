@@ -5,6 +5,9 @@ import { createClient } from "@/lib/supabase/server";
 import { drugFromSlug, drugDetail } from "@/lib/psychopharm/store";
 import { EditorPane } from "@/components/psychopharm/editor-pane";
 import type { MedicationDocument, MedicationDocumentRow } from "@/lib/psychopharm/document";
+import { readFlags } from "@/lib/flags";
+import { uiV2For } from "@/lib/ui/v2";
+import { MedicineEditorV2 } from "../../../_v2/medicine-editor";
 
 /** Plain labels for the document status enum (draft/in_review/verified/published). */
 const STATUS_LABELS: Record<string, string> = {
@@ -22,7 +25,8 @@ const STATUS_LABELS: Record<string, string> = {
 export default async function DrugEditorPage({ params }: { params: Promise<{ drug: string }> }) {
   // Defence in depth: layouts don't re-render on every navigation, so the page
   // re-checks admin itself before reading data.
-  if (!(await requireAdmin())) redirect("/dashboard");
+  const me = await requireAdmin();
+  if (!me) redirect("/dashboard");
   const { drug } = await params;
   const generic = drugFromSlug(drug);
   if (!generic) notFound();
@@ -45,6 +49,17 @@ export default async function DrugEditorPage({ params }: { params: Promise<{ dru
     (detail
       ? { generic_name: generic, sections: [] }
       : { generic_name: generic, sections: [] });
+
+  if (uiV2For(await readFlags(), me.role)) {
+    return (
+      <MedicineEditorV2
+        drug={generic}
+        drugId={drugRow?.id ?? ""}
+        initialDocument={initialDocument}
+        initialStatus={doc?.status ?? "draft"}
+      />
+    );
+  }
 
   return (
     <div className="flex h-[calc(100vh-3rem)] flex-col">
