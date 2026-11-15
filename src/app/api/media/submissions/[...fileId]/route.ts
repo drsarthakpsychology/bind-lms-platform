@@ -1,8 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { requireSession } from "@/lib/auth/guards";
 import { isSameOrigin } from "@/lib/media/same-origin";
-import { createClient, createAdminClient } from "@/lib/supabase/server";
-import { isOwnSubmissionPath } from "@/lib/media/submission-paths";
+import { signSubmissionFile } from "@/lib/media/submission-file";
 
 /**
  * GET /api/media/submissions/:fileId
@@ -39,47 +38,7 @@ export async function GET(
     return NextResponse.json({ error: "Invalid file id." }, { status: 400 });
   }
 
-  const supabase = await createClient();
-  const { data: file } = await supabase
-    .from("submission_files")
-    .select("id, submission_id, storage_path, original_name")
-    .eq("id", id)
-    .maybeSingle();
-
-  if (!file?.storage_path) {
-    return NextResponse.json({ error: "File not found." }, { status: 404 });
-  }
-
-  // Ownership: the file must belong to a submission owned by the caller (or
-  // the caller is an admin). Fetch the submission's user_id.
-  const { data: submission } = await supabase
-    .from("submissions")
-    .select("user_id, assignment_id")
-    .eq("id", file.submission_id)
-    .maybeSingle();
-
-  if (!submission || (submission.user_id !== profile.id && profile.role !== "admin")) {
-    return NextResponse.json({ error: "Not authorized." }, { status: 403 });
-  }
-
-  // The row is theirs, but the PATH must be too: it has to sit under the
-  // submission owner's own upload prefix (`<assignmentId>/<userId>/`). Rows
-  // recorded before the server checked paths could point at another
-  // student's file; those are never signed.
-  if (!isOwnSubmissionPath(file.storage_path, String(submission.assignment_id), String(submission.user_id))) {
-    console.warn(`submission file ${file.id} has a storage path outside its owner's prefix; refusing to sign`);
-    return NextResponse.json({ error: "Not authorized." }, { status: 403 });
-  }
-
-  // Mint a short-lived signed URL for the student's own file.
-  const admin = createAdminClient();
-  const { data, error } = await admin.storage
-    .from("submissions")
-    .createSignedUrl(file.storage_path, 60 * 15);
-
-  if (error || !data) {
-    return NextResponse.json({ error: "Couldn't load this file." }, { status: 500 });
-  }
-
-  return NextResponse.json({ url: data.signedUrl, expiresIn: 60 * 15 });
+  const link = await signSubmissionFile(profile, id);
+  if (!link.ok) return NextResponse.json({ error: link.error }, { status: link.status });
+  return NextResponse.json({ url: link.url, expiresIn: link.expiresIn });
 }

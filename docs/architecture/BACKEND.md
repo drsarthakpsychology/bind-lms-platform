@@ -29,6 +29,10 @@ Every API route and Server Action is listed in `docs/API.md`.
 2. Runs `getSession()`. Not ok: 401. Blocked: 403.
 3. Checks scope (lectures-only accounts cannot call practice APIs), admin access blocks and feature flags (`src/lib/auth/api-gate.ts`, `decideApiAccess`).
 
+## Mobile app API
+
+`src/app/api/app/v1/...`, written with `appRoute` (`src/lib/app-api/route.ts`). A request carries `Authorization: Bearer <Supabase access token>` and `X-App-Device-Id`. `requireAppUser` verifies the token, applies the paused/ended/one-phone rules and the same gates as `requireStudentApi` (`decideApiAccess`), then runs the handler inside an app request scope (`src/lib/app-api/context.ts`) so `createClient()` and `getSession()` answer that user and every existing server function runs unchanged. No same-origin check (no browser); the token plus the phone id replace it. Contract: `docs/app/API_CONTRACT.md`.
+
 ## The save outbox (`POST /api/save`)
 
 File: `src/app/api/save/route.ts`. Client: `src/lib/save/client.ts`, `src/lib/save/outbox.ts`.

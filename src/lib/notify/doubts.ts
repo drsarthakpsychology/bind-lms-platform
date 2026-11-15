@@ -1,5 +1,7 @@
 import "server-only";
 import { createAdminClient } from "@/lib/supabase/server";
+import { queuePush } from "@/lib/app-api/push";
+import type { PushKind } from "@/lib/app-api/prefs";
 
 /**
  * Bell notifications for the doubts board, both directions:
@@ -37,10 +39,12 @@ async function nameOf(userId: string): Promise<string | null> {
   }
 }
 
-async function insert(rows: Row[]) {
+async function insert(rows: Row[], push: PushKind) {
   if (!rows.length) return;
   try {
-    await createAdminClient().from("notifications").insert(rows);
+    const written = await createAdminClient().from("notifications").insert(rows);
+    // The same notice on the phone (Vibha Psychology app); never blocks the post.
+    if (!written?.error) queuePush(rows, push);
   } catch {
     // The post itself already succeeded; a missed bell is not worth an error.
   }
@@ -54,7 +58,7 @@ export async function notifyAdminsOfDoubt(input: { doubtId: string; title: strin
     const who = (await nameOf(input.askerId)) ?? "A student";
     const what = input.kind === "complaint" ? "complaint" : "doubt";
     const text = `${who} posted a ${what}: ${input.title}. ${input.body}`.trim();
-    await insert(admins.map((id) => row(id, input.kind === "complaint" ? `New complaint: ${input.title}` : `New doubt: ${input.title}`, text, `/doubts/${input.doubtId}`, `Open the ${what}`, input.askerId)));
+    await insert(admins.map((id) => row(id, input.kind === "complaint" ? `New complaint: ${input.title}` : `New doubt: ${input.title}`, text, `/doubts/${input.doubtId}`, `Open the ${what}`, input.askerId)), "messages");
   } catch {
     // ignore
   }
@@ -67,7 +71,7 @@ export async function notifyAskerOfReply(input: { doubtId: string; replierId: st
     if (!data || data.user_id === input.replierId) return;
     const who = (await nameOf(input.replierId)) ?? "Someone";
     const title = String(data.title ?? "your doubt");
-    await insert([row(String(data.user_id), `New answer: ${title}`, `${who} answered your doubt "${title}": ${input.body}`, `/doubts/${input.doubtId}`, "Read the answer", input.replierId)]);
+    await insert([row(String(data.user_id), `New answer: ${title}`, `${who} answered your doubt "${title}": ${input.body}`, `/doubts/${input.doubtId}`, "Read the answer", input.replierId)], "doubtReplies");
   } catch {
     // ignore
   }

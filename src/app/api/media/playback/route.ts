@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { requireSession } from "@/lib/auth/guards";
-import { createClient } from "@/lib/supabase/server";
+import { playbackMedia } from "@/lib/media/playback";
 import { mintStreamToken } from "@/lib/media/stream-token";
 import { isSameOrigin } from "@/lib/media/same-origin";
 import { rateLimit } from "@/lib/rate-limit";
@@ -59,42 +59,12 @@ export async function POST(request: Request) {
     );
   }
 
-  const supabase = await createClient();
-  const { data: lesson } = await supabase
-    .from("lessons")
-    .select("id, video_storage_path, video_provider, video_bucket, media_assets(master_playlist, key_prefix, provider, bucket)")
-    .eq("id", lessonId)
-    .single();
-
-  if (!lesson) {
-    return NextResponse.json({ error: "Lesson not found." }, { status: 404 });
+  // Media shape and resume position (src/lib/media/playback.ts, shared with the mobile app).
+  const media = await playbackMedia(lessonId, profile.id);
+  if (!media.ok) {
+    return NextResponse.json({ error: media.error }, { status: media.status });
   }
-
-  // Determine the media shape:
-  //  - A media_assets row (R2 migration done) → HLS master playlist.
-  //  - Otherwise → legacy raw video (single MP4).
-  const media = Array.isArray(lesson.media_assets)
-    ? lesson.media_assets[0]
-    : lesson.media_assets;
-  // Only a real master playlist means HLS. A freshly-uploaded SOURCE row has
-  // key_prefix set but master_playlist null. It must resolve as a plain MP4,
-  // not run hls.js against a raw file.
-  const masterKey = media?.master_playlist ?? null;
-  const key = masterKey ?? lesson.video_storage_path;
-
-  if (!key) {
-    return NextResponse.json({ error: "This lesson has no media." }, { status: 404 });
-  }
-  const mediaType = masterKey ? "hls" : "mp4";
-
-  // Resume position for this viewer (may be 0). Read alongside minting so the
-  // player gets everything from one request.
-  const { data: progress } = await supabase
-    .from("progress")
-    .select("watched_seconds")
-    .eq("user_id", profile.id)
-    .eq("lesson_id", lessonId)
-    .maybeSingle();
+  const { mediaType } = media;
 
   const courseId = access.courseId;
   if (!courseId) {
@@ -116,6 +86,6 @@ export async function POST(request: Request) {
     streamUrl: `/api/media/stream/${lessonId}`,
     mediaType,
     expiresIn: 300,
-    resumeSeconds: progress?.watched_seconds ?? 0,
+    resumeSeconds: media.resumeSeconds,
   });
 }
