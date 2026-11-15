@@ -25,6 +25,10 @@ import { StatusPill } from "@/components/mobile/status-pill";
 import { loadInbox, type InboxThread } from "../../inbox/data";
 import { progressPct, suggestNextStep } from "./next-step";
 import { cn } from "@/lib/utils";
+import { readFlags } from "@/lib/flags";
+import { uiV2For } from "@/lib/ui/v2";
+import { toneOf } from "../../_v2/kit";
+import { AccessV2, ActivityV2, CredentialsV2, MessagesV2, OverviewV2, StudentProfileV2 } from "../../_v2/student-profile";
 
 export const metadata: Metadata = { title: "Student" };
 export const dynamic = "force-dynamic";
@@ -125,6 +129,49 @@ export default async function StudentProfilePage({ params, searchParams }: { par
       <NextStepAction action={next.action} email={email} />
     ) : undefined;
 
+  const v2 = uiV2For(await readFlags(), me.role);
+  const isTest = Boolean(extra?.is_test);
+  const roll = (extra?.roll_number as string | null) ?? null;
+  if (v2) {
+    return (
+      <StudentProfileV2
+        tabs={TABS}
+        tab={tab}
+        head={{
+          id,
+          name,
+          roll,
+          email,
+          mobile: p.mobile_number ? String(p.mobile_number) : null,
+          status: r ? { label: ACCOUNT_LABEL[r.account], tone: toneOf(ACCOUNT_TONE[r.account]) } : null,
+          scopeLabel: p.scope === "lectures_only" ? "Lectures only" : "Full platform",
+          cohorts: r?.cohorts ?? [],
+          lastSeen: r?.lastSeen ? agoLabel(r.lastSeen) : "Never",
+          onNow: r?.presence === "now",
+          lecturesDone: r?.lecturesDone ?? 0,
+          lecturesAvailable: r?.lecturesAvailable ?? 0,
+          progressPct: progressPct(r?.lecturesDone ?? 0, r?.lecturesAvailable ?? 0),
+          flags: (r?.flags ?? []).map((f) => FLAG_LABEL[f]),
+          isTest,
+          next,
+          nextAction,
+          actions: (
+            <div className="flex min-w-0 flex-wrap items-center gap-2">
+              <StudentActionRail id={id} email={email} canWrite={canWrite} />
+              {canWrite && email ? <LoginQuick only="copy" email={email} name={name} /> : null}
+            </div>
+          ),
+        }}
+      >
+        {tab === "overview" ? <Overview v2 r={r} details={person.details} doubts={doubts} canWrite={canWrite} /> : null}
+        {tab === "access" ? <AccessTab v2 id={id} email={email} canWrite={canWrite} person={person} r={r} isTest={isTest} /> : null}
+        {tab === "activity" ? <ActivityTab v2 id={id} /> : null}
+        {tab === "credentials" ? <CredentialsTab v2 id={id} email={email} roll={roll} /> : null}
+        {tab === "messages" ? <MessagesTab v2 id={id} email={email} /> : null}
+      </StudentProfileV2>
+    );
+  }
+
   return (
     <div className="space-y-5 sm:space-y-6">
       <Link href="/admin/students" className="inline-flex min-h-10 items-center gap-1 text-sm font-bold text-link hover:underline">
@@ -197,7 +244,29 @@ function Stat({ value, label }: { value: React.ReactNode; label: string }) {
 
 type DoubtLine = { id: string; title: string; kind: "doubt" | "complaint"; status: string; createdAt: string; waiting: InboxThread | null };
 
-function Overview({ r, details, doubts, canWrite }: { r: Row; details: Record<string, string | null> | null; doubts: DoubtLine[]; canWrite: boolean }) {
+function Overview({ r, details, doubts, canWrite, v2 }: { r: Row; details: Record<string, string | null> | null; doubts: DoubtLine[]; canWrite: boolean; v2?: boolean }) {
+  if (v2) {
+    return (
+      <OverviewV2
+        doubts={doubts.map((d) => ({
+          id: d.id,
+          title: d.title,
+          complaint: d.kind === "complaint",
+          statusLabel: d.waiting ? (d.waiting.need.reason === "student-replied" ? "They wrote back" : "Waiting for you") : d.status === "solved" ? "Solved" : d.status === "hidden" ? "Hidden" : "Answered",
+          statusTone: d.waiting ? "warn" : d.status === "solved" ? "ok" : "quiet",
+          when: agoLabel(d.createdAt),
+          quote: d.waiting?.followUp || d.waiting?.body || null,
+          quoteIsReply: Boolean(d.waiting?.followUp),
+          reply: d.waiting ? <InlineReply target="doubt" id={d.id} label={`Reply to ${d.title}`} canWrite={canWrite} /> : undefined,
+        }))}
+        progress={{ done: r?.lecturesDone ?? 0, available: r?.lecturesAvailable ?? 0, pct: progressPct(r?.lecturesDone ?? 0, r?.lecturesAvailable ?? 0) }}
+        week={hm(r?.min7 ?? 0)}
+        month={hm(r?.min30 ?? 0)}
+        xp={r?.xp ?? 0}
+        details={details ? DETAIL_LABELS.map(([k, l]) => ({ label: l, value: details[k] || "Not set" })) : null}
+      />
+    );
+  }
   return (
     <div className="space-y-6">
       <section id="doubts" aria-labelledby="doubts-h" className="scroll-mt-24 rounded-xl border-2 border-foreground bg-card p-4">
@@ -250,11 +319,45 @@ function Overview({ r, details, doubts, canWrite }: { r: Row; details: Record<st
   );
 }
 
-async function AccessTab({ id, email, canWrite, person, r, isTest }: { id: string; email: string; canWrite: boolean; person: NonNullable<Awaited<ReturnType<typeof loadPersonAccess>>>; r: Row; isTest: boolean }) {
+async function AccessTab({ id, email, canWrite, person, r, isTest, v2 }: { id: string; email: string; canWrite: boolean; person: NonNullable<Awaited<ReturnType<typeof loadPersonAccess>>>; r: Row; isTest: boolean; v2?: boolean }) {
   const [lessons, { cohorts }] = await Promise.all([loadAllLessons(), loadCohortSummaries()]);
   const admin = createAdminClient();
   const { data: links } = person.cohortIds.size ? await admin.from("lesson_cohorts").select("lesson_id").in("cohort_id", [...person.cohortIds]) : { data: [] };
   const status = person.profile.status === "blocked" ? "blocked" : "active";
+  if (v2) {
+    return (
+      <AccessV2
+        access={
+          canWrite ? (
+            <PersonAccess
+              userId={id}
+              cohorts={cohorts.map((c) => ({ id: c.id, name: c.name }))}
+              cohortIds={[...person.cohortIds]}
+              scope={String(person.profile.scope ?? "full")}
+              lessons={lessons}
+              grantIds={[...person.grantIds]}
+              cohortLessonIds={(links ?? []).map((l) => l.lesson_id as string)}
+              detailsConfirmed={Boolean(person.details?.confirmed_at)}
+            />
+          ) : (
+            <p className="border-y border-[var(--ds-hairline)] py-6 type-small text-muted-foreground">View Admins can see access but not change it.</p>
+          )
+        }
+        status={r ? { label: ACCOUNT_LABEL[r.account], tone: toneOf(ACCOUNT_TONE[r.account]) } : null}
+        statusNext={r ? ACCOUNT_NEXT[r.account] : null}
+        loginControls={
+          canWrite ? (
+            <>
+              <LoginQuick email={email} name={r?.name || email.split("@")[0]} />
+              <LockToggle userId={id} status={status} />
+              <StudentActions userId={id} isTest={isTest} status={status} />
+            </>
+          ) : undefined
+        }
+        switchesHref={`/admin/access?q=${encodeURIComponent(email)}`}
+      />
+    );
+  }
   return (
     <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_22rem]">
       <div className="min-w-0">
@@ -301,7 +404,7 @@ async function AccessTab({ id, email, canWrite, person, r, isTest }: { id: strin
   );
 }
 
-async function ActivityTab({ id }: { id: string }) {
+async function ActivityTab({ id, v2 }: { id: string; v2?: boolean }) {
   const admin = createAdminClient();
   const d = await loadStudentDetail(id);
   if (!d) return null;
@@ -329,6 +432,35 @@ async function ActivityTab({ id }: { id: string }) {
   const answered = checkRows.filter((c) => c.answered_at).length;
   const maxDay = Math.max(10, ...d.daily.map((x) => x.min));
   const done = d.lectures.filter((l) => l.done).length;
+
+  if (v2) {
+    return (
+      <ActivityV2
+        figures={[
+          { value: hm(d.totals.min30), label: "on VIBHA (30 days)" },
+          { value: d.totals.activeDays, label: "active days (30)" },
+          { value: `${done}/${d.lectures.length}`, label: "lectures finished" },
+          { value: checkRows.length ? `${answered}/${checkRows.length}` : "-", label: `"Still watching?" answered` },
+        ]}
+        daily={d.daily}
+        events={events.map((e) => ({
+          text: e.text,
+          when: e.kind === "learn" ? new Date(e.at).toLocaleDateString("en-IN", { timeZone: "Asia/Kolkata", day: "numeric", month: "short" }) : when(e.at),
+          detail: e.detail,
+          alert: e.kind === "check-missed",
+        }))}
+        lectures={d.lectures.map((l) => ({ id: l.id, title: l.title, week: l.week, done: l.done, watched: l.watchedMin ? hm(l.watchedMin) : null }))}
+        learn={
+          d.learn
+            ? {
+                line: `Level ${d.learn.level.level} · ${d.learn.level.title} · ${d.learn.xp} XP · streak ${d.learn.streak} (best ${d.learn.best}) · accuracy ${d.learn.accuracy === null ? "not yet measured" : `${d.learn.accuracy}%`} over ${d.learn.answered} answers · mastery ${d.learn.mastery}%`,
+                confusions: d.learn.confusions.length ? d.learn.confusions.join(", ") : null,
+              }
+            : null
+        }
+      />
+    );
+  }
 
   return (
     <div className="space-y-6">
@@ -399,10 +531,27 @@ async function ActivityTab({ id }: { id: string }) {
   );
 }
 
-async function CredentialsTab({ id, email, roll }: { id: string; email: string; roll: string | null }) {
+async function CredentialsTab({ id, email, roll, v2 }: { id: string; email: string; roll: string | null; v2?: boolean }) {
   // Includes custom certificates sent to the student's email address.
   const { data, error } = await selectOwnedCredentials(createAdminClient(), "id, credential_id, type, status, issued_at, revoked_at, revoke_reason, achievements(title)", id, email);
   const one = <T,>(x: T | T[] | null | undefined): T | null => (Array.isArray(x) ? (x[0] ?? null) : (x ?? null));
+  if (v2) {
+    return (
+      <CredentialsV2
+        manageHref={`/admin/credentials?q=${encodeURIComponent(roll ?? id)}`}
+        notReady={Boolean(error)}
+        rows={(data ?? []).map((c) => ({
+          id: c.id as string,
+          title: one(c.achievements as { title?: string } | { title?: string }[] | null)?.title ?? "Credential",
+          kind: c.type === "certificate" ? "Certificate" : "Badge",
+          code: String(c.credential_id),
+          issued: c.issued_at ? when(c.issued_at as string) : "Not issued",
+          revoked: Boolean(c.revoked_at),
+          statusLabel: c.revoked_at ? "Revoked" : String(c.status) === "issued" ? "Issued" : String(c.status),
+        }))}
+      />
+    );
+  }
   return (
     <div className="space-y-4">
       <div className="flex flex-wrap items-center gap-2">
@@ -431,13 +580,30 @@ async function CredentialsTab({ id, email, roll }: { id: string; email: string; 
   );
 }
 
-async function MessagesTab({ id, email }: { id: string; email: string }) {
+async function MessagesTab({ id, email, v2 }: { id: string; email: string; v2?: boolean }) {
   const admin = createAdminClient();
   const [mails, notes, inbound] = await Promise.all([
     admin.from("email_sends").select("id, subject, status, template_id, created_at, opened_at").ilike("recipient", email).order("created_at", { ascending: false }).limit(50),
     admin.from("notifications").select("id, title, type, created_at, read_at").eq("user_id", id).order("created_at", { ascending: false }).limit(50),
     admin.from("email_inbound").select("id, subject, received_at").ilike("from_email", email).order("received_at", { ascending: false }).limit(20),
   ]);
+  if (v2) {
+    return (
+      <MessagesV2
+        mails={(mails.data ?? []).map((m) => ({
+          id: m.id as string,
+          subject: String(m.subject),
+          href: `/admin/emails?folder=${m.status === "failed" ? "failed" : "sent"}&id=${m.id}`,
+          state: m.status === "failed" ? "Failed" : m.opened_at ? "Opened" : "Sent",
+          failed: m.status === "failed",
+          when: when(m.created_at as string),
+        }))}
+        replies={(inbound.data ?? []).map((m) => ({ id: m.id as string, subject: String(m.subject ?? "(no subject)"), href: `/admin/emails?folder=inbox&id=${m.id}`, state: "Reply", when: when(m.received_at as string) }))}
+        notes={(notes.data ?? []).map((n) => ({ id: n.id as string, subject: String(n.title), state: n.read_at ? "Opened" : "Not opened", when: when(n.created_at as string) }))}
+        pipelineHref={`/admin/people/${personKey(email)}`}
+      />
+    );
+  }
   return (
     <div className="grid grid-cols-[minmax(0,1fr)] gap-6 lg:grid-cols-2">
       <section className="rounded-2xl border-2 border-foreground bg-card p-4">
