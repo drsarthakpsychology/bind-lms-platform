@@ -16,6 +16,7 @@ import s from "./study.module.css";
 import { backLinkClass } from "@/components/design-system/back-link";
 import { SectionMotif } from "@/components/reactions/graphics";
 import { MobileBottomSheet } from "@/components/mobile/mobile-bottom-sheet";
+import { useUiV2 } from "@/components/learn-v2/ui-v2";
 
 export type TocItem = { id: string; num: string; title: string; part?: string; isTest: boolean; href: string };
 
@@ -53,7 +54,8 @@ function useStudyTimer(moduleId: string) {
   }, [moduleId]);
 }
 
-function Toc({ items, moduleId, current, done, onPick }: { items: TocItem[]; moduleId: string; current: string; done: Record<string, string>; onPick?: () => void }) {
+export function Toc({ items, moduleId, current, done, onPick }: { items: TocItem[]; moduleId: string; current: string; done: Record<string, string>; onPick?: () => void }) {
+  const v2 = useUiV2();
   return (
     <ol className="space-y-0.5">
       {items.map((t, i) => {
@@ -62,7 +64,7 @@ function Toc({ items, moduleId, current, done, onPick }: { items: TocItem[]; mod
         const part = i === 0 || items[i - 1].part !== t.part ? t.part : undefined;
         return (
           <li key={t.id}>
-            {part ? <p className="mt-3 mb-1 px-2 text-eyebrow text-muted-foreground">{part}</p> : null}
+            {part ? <p className={v2 ? "mt-4 mb-1 px-2 type-caption text-muted-foreground" : "mt-3 mb-1 px-2 text-eyebrow text-muted-foreground"}>{part}</p> : null}
             <Link
               href={t.href}
               onClick={onPick}
@@ -71,10 +73,11 @@ function Toc({ items, moduleId, current, done, onPick }: { items: TocItem[]; mod
               aria-current={here ? "page" : undefined}
               className={cn(
                 "flex items-start gap-2 rounded-md px-2 py-1.5 text-sm leading-snug transition-colors pointer-coarse:py-2.5",
-                here ? "bg-foreground font-semibold text-background" : "hover:bg-muted",
+                here ? (v2 ? "bg-[var(--ds-tint)] font-bold text-foreground" : "bg-foreground font-semibold text-background") : v2 ? "hover:bg-[var(--ds-tint)]" : "hover:bg-muted",
+                v2 && "min-h-11 items-center rounded-lg",
               )}
             >
-              <span className={cn("mt-0.5 grid size-4 shrink-0 place-items-center rounded-full border-2", here ? "border-background" : "border-foreground", isDone && !here && "bg-primary")}>
+              <span className={cn("mt-0.5 grid size-4 shrink-0 place-items-center rounded-full", v2 ? (isDone ? "mt-0 bg-primary text-primary-foreground" : "mt-0 border-[1.5px] border-[var(--ds-card-line)]") : cn("border-2", here ? "border-background" : "border-foreground", isDone && !here && "bg-primary"))}>
                 {isDone ? <Check className="size-2.5" aria-hidden /> : null}
               </span>
               <span className="min-w-0">
@@ -136,33 +139,7 @@ const noSubscribe = () => () => {};
 
 export type ChunkView = { title: string; node: React.ReactNode };
 
-/**
- * The reading screen. A section is split into short parts.
- * - Phone: one part at a time, with Back and Next fixed at the bottom, in
- *   thumb reach.
- * - Tablet and desktop: a contents rail beside the text; parts appear one under another as you press Continue, so you
- *   never face the whole section at once but can still scroll back.
- * Self-tests sit behind start cards at the end; the module test is a start
- * screen, then one question at a time.
- */
-export function SectionReader({
-  moduleId,
-  moduleNum,
-  moduleTitle,
-  section,
-  toc,
-  prevHref,
-  next,
-  serverState,
-  save,
-  chunks,
-  recall,
-  viva,
-  mcq,
-  checks = [],
-  owner = "",
-  gradeTest,
-}: {
+export type SectionReaderProps = {
   moduleId: string;
   moduleNum: number;
   moduleTitle: string;
@@ -182,7 +159,25 @@ export function SectionReader({
   owner?: string;
   /** Server action that grades the module test (the certificate counts only its result). */
   gradeTest?: (moduleId: string, picks: Record<string, number>) => Promise<unknown>;
-}) {
+};
+
+/**
+ * Everything the reading screen keeps track of: which part is showing, the
+ * part saved in this browser, the timer, and what Finish does. One copy, so
+ * the old screen and the new design (reader-v2.tsx) can never drift apart.
+ */
+export function useReading({
+  moduleId,
+  section,
+  toc,
+  next,
+  serverState,
+  save,
+  chunks,
+  viva,
+  checks = [],
+  owner = "",
+}: Pick<SectionReaderProps, "moduleId" | "section" | "toc" | "next" | "serverState" | "save" | "chunks" | "viva" | "checks" | "owner">) {
   initLearnStore(serverState, save, owner || undefined);
   const st = useLearnState(serverState ?? EMPTY);
   const router = useRouter();
@@ -209,9 +204,6 @@ export function SectionReader({
   const readCount = toc.filter((t) => !t.isTest && st.study.done[studyKey(moduleId, t.id)]).length;
   const readTotal = toc.filter((t) => !t.isTest).length;
   const atEnd = step >= chunks.length;
-  // Recall questions are not asked straight after reading: they wait for the
-  // checkpoint, once the student has moved on (see lib/study/checkpoints.ts).
-  void recall;
   const hasCheck = viva.length > 0;
 
   // Opened on a saved part (wide screens show every part up to it): bring that part into view.
@@ -241,6 +233,41 @@ export function SectionReader({
   }
 
   const shownParts = section.isTest ? chunks.map((_, k) => k) : wide ? chunks.map((_, k) => k).filter((k) => k <= Math.min(step, chunks.length - 1) || atEnd) : atEnd ? [] : [step];
+
+  return { st, wide, tocOpen, setTocOpen, done, step, partRefs, topRef, index, readCount, readTotal, atEnd, hasCheck, go, finish, shownParts };
+}
+
+/**
+ * The reading screen. A section is split into short parts.
+ * - Phone: one part at a time, with Back and Next fixed at the bottom, in
+ *   thumb reach.
+ * - Tablet and desktop: a contents rail beside the text; parts appear one under another as you press Continue, so you
+ *   never face the whole section at once but can still scroll back.
+ * Self-tests sit behind start cards at the end; the module test is a start
+ * screen, then one question at a time.
+ */
+export function SectionReader({
+  moduleId,
+  moduleNum,
+  moduleTitle,
+  section,
+  toc,
+  prevHref,
+  next,
+  serverState,
+  save,
+  chunks,
+  recall,
+  viva,
+  mcq,
+  checks = [],
+  owner = "",
+  gradeTest,
+}: SectionReaderProps) {
+  const { st, wide, tocOpen, setTocOpen, done, step, partRefs, topRef, index, readCount, readTotal, atEnd, hasCheck, go, finish, shownParts } = useReading({ moduleId, section, toc, next, serverState, save, chunks, viva, checks, owner });
+  // Recall questions are not asked straight after reading: they wait for the
+  // checkpoint, once the student has moved on (see lib/study/checkpoints.ts).
+  void recall;
 
   const finishButton = (
     <button type="button" onClick={finish} className="btn-sweep flex min-h-14 w-full items-center justify-between gap-3 rounded-md border-2 border-foreground bg-primary px-5 py-3 text-left text-primary-foreground hard-shadow-md">

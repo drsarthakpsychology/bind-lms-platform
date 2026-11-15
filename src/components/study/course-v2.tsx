@@ -11,7 +11,7 @@ import { courseProgress, moduleProgress } from "@/lib/study/progress";
 import type { StudyModule } from "@/lib/study/types";
 import { cn } from "@/lib/utils";
 import { HeroButton, PageFrame, Row, RowList, Section } from "@/components/ds";
-import { Crumb, NextStep, ProgressLine } from "@/components/learn-v2/parts";
+import { Crumb, NextStep } from "@/components/learn-v2/parts";
 import { MarksList, useSectionMarks, type LabLink } from "./marks";
 import { nextLabel, partsOf, shelfOf, SHELVES } from "./course";
 

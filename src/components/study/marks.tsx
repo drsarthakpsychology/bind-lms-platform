@@ -25,9 +25,12 @@ export function SectionMarks({ owner, moduleId, sectionId, sectionLabel, lead }:
   const saved = noteText(marks, key);
   const [open, setOpen] = React.useState(false);
   const panelId = React.useId();
+  // New design: thinner lines, no hard shadow on the note.
+  const v2 = useUiV2();
+  const line = v2 ? "rounded-[var(--ds-radius)] border-[1.5px] border-[var(--ds-card-line)]" : "rounded-md border-2 border-foreground";
 
   return (
-    <div className="mt-3">
+    <div className={v2 ? undefined : "mt-3"}>
       {/* One row at every width: the view switch takes the room, Bookmark and
           My note are square 44px buttons on phones (named for screen readers)
           and get their words from 640px. Reading starts one row sooner. */}
@@ -40,8 +43,9 @@ export function SectionMarks({ owner, moduleId, sectionId, sectionLabel, lead }:
           aria-label={on ? "Bookmarked" : "Bookmark"}
           disabled={!hydrated}
           className={cn(
-            "inline-flex size-11 shrink-0 items-center justify-center gap-1.5 rounded-md border-2 border-foreground text-sm font-semibold transition-colors disabled:opacity-60 sm:w-auto sm:px-4",
-            on ? "bg-foreground text-background" : "bg-card hover:bg-muted",
+            "inline-flex size-11 shrink-0 items-center justify-center gap-1.5 text-sm font-semibold transition-colors disabled:opacity-60 sm:w-auto sm:px-4",
+            line,
+            on ? "border-foreground bg-foreground text-background" : v2 ? "hover:border-foreground" : "bg-card hover:bg-muted",
           )}
         >
           {on ? <BookmarkCheck className="size-4" aria-hidden /> : <Bookmark className="size-4" aria-hidden />}
@@ -55,8 +59,9 @@ export function SectionMarks({ owner, moduleId, sectionId, sectionLabel, lead }:
           aria-label={saved.trim() && !open ? "My note (has a note)" : "My note"}
           disabled={!hydrated}
           className={cn(
-            "relative inline-flex size-11 shrink-0 items-center justify-center gap-1.5 rounded-md border-2 border-foreground text-sm font-semibold transition-colors disabled:opacity-60 sm:w-auto sm:px-4",
-            open ? "bg-muted" : "bg-card hover:bg-muted",
+            "relative inline-flex size-11 shrink-0 items-center justify-center gap-1.5 text-sm font-semibold transition-colors disabled:opacity-60 sm:w-auto sm:px-4",
+            line,
+            open ? (v2 ? "bg-[var(--ds-tint)]" : "bg-muted") : v2 ? "hover:border-foreground" : "bg-card hover:bg-muted",
           )}
         >
           <NotebookPen className="size-4" aria-hidden /> <span className="hidden sm:inline">My note</span>
@@ -69,6 +74,7 @@ export function SectionMarks({ owner, moduleId, sectionId, sectionLabel, lead }:
 }
 
 function NotePanel({ id, initial, label, onSave, onClose }: { id: string; initial: string; label: string; onSave: (text: string) => boolean; onClose: () => void }) {
+  const v2 = useUiV2();
   const [text, setText] = React.useState(initial);
   const [state, setState] = React.useState<SaveState>("idle");
   const timer = React.useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -107,7 +113,7 @@ function NotePanel({ id, initial, label, onSave, onClose }: { id: string; initia
   const status = state === "saving" ? "Saving…" : state === "failed" ? "Could not save. Your browser may be full or in private mode." : state === "saved" ? "Saved" : "";
 
   return (
-    <div id={id} className="mt-3 rounded-2xl border-2 border-foreground bg-card p-3 hard-shadow-sm sm:p-4">
+    <div id={id} className={v2 ? "mt-3 rounded-[var(--ds-radius)] bg-[var(--ds-tint)] p-3 sm:p-4" : "mt-3 rounded-2xl border-2 border-foreground bg-card p-3 hard-shadow-sm sm:p-4"}>
       <div className="flex items-center justify-between gap-2">
         <label htmlFor={`${id}-text`} className="text-sm font-bold">
           My note <span className="sr-only">for {label}</span>
@@ -125,7 +131,7 @@ function NotePanel({ id, initial, label, onSave, onClose }: { id: string; initia
         onBlur={() => timer.current && flush()}
         rows={4}
         placeholder="In your own words: what to remember, or what to ask."
-        className="mt-1 block w-full resize-y rounded-md border-2 border-foreground bg-background px-3 py-2 text-base leading-relaxed placeholder:text-muted-foreground"
+        className={cn("mt-1 block w-full resize-y bg-background px-3 py-2 text-base leading-relaxed placeholder:text-muted-foreground", v2 ? "rounded-lg border-[1.5px] border-[var(--ds-card-line)] focus-visible:border-foreground" : "rounded-md border-2 border-foreground")}
       />
       <p className={cn("mt-1.5 text-xs font-semibold", state === "failed" ? "text-status-alert-fg" : "text-muted-foreground")} role="status" aria-live="polite">
         {state === "saved" ? "✓ " : ""}
