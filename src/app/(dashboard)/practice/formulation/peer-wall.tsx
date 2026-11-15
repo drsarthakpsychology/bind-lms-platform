@@ -80,7 +80,7 @@ export function PeerWall() {
           value={caseTitle}
           onChange={(e) => setCaseTitle(e.target.value)}
           placeholder="Case title (optional)"
-          className="w-full rounded-md border-2 border-border bg-background px-3 py-1.5 text-small focus:outline-none focus:ring-2 focus:ring-ring"
+          className="min-h-11 w-full rounded-md border-2 border-border bg-background px-3 py-1.5 text-small focus:outline-none focus:ring-2 focus:ring-ring"
         />
         <textarea enterKeyHint="enter"
           value={draft}
@@ -92,7 +92,7 @@ export function PeerWall() {
         <button
           type="submit"
           disabled={busy || draft.trim().length < 40}
-          className="ml-auto flex items-center gap-1 rounded-md border-2 border-border bg-primary px-3 py-1.5 text-caption font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px disabled:opacity-50"
+          className="ml-auto flex min-h-11 items-center gap-1 rounded-md border-2 border-border bg-primary px-3 py-1.5 text-caption font-semibold text-primary-foreground hard-shadow-sm transition-transform active:translate-y-px disabled:opacity-50"
         >
           <Send className="size-3" aria-hidden /> Post to the wall
         </button>

@@ -253,7 +253,7 @@ function Pick({
             <div className="flex items-start justify-between gap-2">
               <p className="flex min-w-0 items-center gap-1.5 text-caption text-muted-foreground">
                 <MapPin className="size-3.5 shrink-0" aria-hidden />
-                <span className="truncate">{c.place}</span>
+                <span className="min-w-0 [overflow-wrap:anywhere]">{c.place}</span>
               </p>
               <CaseMarkTag mark={mark} />
             </div>
