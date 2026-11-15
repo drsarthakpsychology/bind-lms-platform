@@ -23,7 +23,25 @@ import { loadFormEmailed } from "@/lib/forms/emailed";
 import { emailAllowance, type PersonalReport } from "@/lib/email/personal";
 import { MERGE_FIELDS, PERSONAL_LIMITS } from "@/lib/email/personal-plan";
 import { formUrl } from "@/app/(dashboard)/admin/forms/format";
-import type { AdminFormAnswers, AdminForms, IssuedCertificate, IssuedCertificates, PersonalEmailReport } from "./contract-practise-admin";
+import { emailFromKey, isStage, loadPipeline, STAGE_LABEL, STAGES, type Person } from "@/lib/crm/people";
+import {
+  filterPipeline,
+  firstSeen,
+  hasJoined,
+  isQuickView,
+  LAST_CONTACT_LABEL,
+  lastContactBucket,
+  QUICK_VIEWS,
+  QUIET_DAYS,
+  sourceOf,
+  sourcesOf,
+  viewCounts,
+  waLink,
+  type LastContact,
+  type PipelineFilters,
+  type QuickView,
+} from "@/lib/crm/views";
+import type { AdminPeople, AdminPerson, AdminFormAnswers, AdminForms, IssuedCertificate, IssuedCertificates, PersonalEmailReport } from "./contract-practise-admin";
 import type { ApiErrorCode } from "./contract";
 import { ApiFail } from "./respond";
 
@@ -168,3 +186,90 @@ export function reportOut(r: PersonalReport): PersonalEmailReport {
 
 /** `?cursor=` as a start index. */
 export const startOf = (cursor: string | null) => (cursor && /^\d{1,6}$/.test(cursor) ? Number(cursor) : 0);
+
+/* People ---------------------------------------------------------------- */
+
+const day = (v: string | null) => (v && /^\d{4}-\d{2}-\d{2}$/.test(v) ? v : undefined);
+
+export type PeopleQuery = { view: string | null; quiet: string | null; q: string | null; stage: string | null; cohort: string | null; source: string | null; from: string | null; to: string | null; last: string | null; enquiries: boolean };
+
+export function personOut(p: Person, now: number): AdminPerson {
+  return {
+    key: p.key,
+    name: p.name ?? "",
+    email: p.email,
+    phone: p.phone,
+    college: p.college,
+    stage: p.stage,
+    stageLabel: STAGE_LABEL[p.stage] ?? p.stage,
+    source: sourceOf(p),
+    isStudent: p.isStudent,
+    isEnquiry: p.isEnquiry,
+    joined: hasJoined(p),
+    studentId: p.studentId,
+    cohorts: p.cohorts ?? [],
+    firstSeenAt: firstSeen(p),
+    lastContactAt: p.lastContactAt,
+    lastContact: lastContactBucket(p, now),
+    lastSeenAt: p.lastSeen,
+    followUpAt: p.followUpAt,
+    inviteSentAt: p.inviteSentAt,
+    paidAt: p.paidAt,
+    paidAmount: p.paidAmount,
+    message: p.message,
+    whatsapp: waLink(p.phone),
+  };
+}
+
+export async function peopleList(admin: SupabaseClient, q: PeopleQuery, page: { limit: number; start: number }, canWrite: boolean, now: number = Date.now()): Promise<AdminPeople> {
+  const [pipe, allowance, waitingRes] = await Promise.all([
+    loadPipeline(admin),
+    emailAllowance(admin),
+    admin.from("email_sends").select("id", { count: "exact", head: true }).eq("status", "pending").eq("template_id", "pipeline"),
+  ]);
+  const everyone = q.enquiries ? pipe.people.filter((p) => p.isEnquiry) : pipe.people;
+  const view: QuickView = isQuickView(q.view) ? q.view : "all";
+  const quietN = Number(q.quiet);
+  const quietDays = (QUIET_DAYS as readonly number[]).includes(quietN) ? quietN : 14;
+  const filters: PipelineFilters = {
+    view,
+    quietDays,
+    q: q.q ?? undefined,
+    stage: q.stage && isStage(q.stage) ? q.stage : "",
+    cohortId: q.cohort ?? undefined,
+    source: q.source ?? undefined,
+    from: day(q.from),
+    to: day(q.to),
+    lastContact: q.last && q.last in LAST_CONTACT_LABEL ? (q.last as LastContact) : "",
+  };
+  const rows = filterPipeline(everyone, filters, now);
+  return {
+    v: 1,
+    items: rows.slice(page.start, page.start + page.limit).map((p) => personOut(p, now)),
+    nextCursor: page.start + page.limit < rows.length ? String(page.start + page.limit) : null,
+    total: rows.length,
+    view,
+    counts: viewCounts(everyone, filters, now),
+    views: QUICK_VIEWS.map((v) => ({ id: v.id, label: v.label })),
+    quietDays,
+    quietChoices: [...QUIET_DAYS],
+    stages: STAGES.map((s) => ({ id: s.id, label: s.label })),
+    lastContactChoices: (Object.keys(LAST_CONTACT_LABEL) as Exclude<LastContact, "">[]).map((id) => ({ id, label: LAST_CONTACT_LABEL[id] })),
+    cohorts: pipe.cohorts,
+    sources: sourcesOf(everyone),
+    paymentReady: pipe.paymentReady,
+    followUpsDue: pipe.people.filter((p) => p.followUpAt && new Date(p.followUpAt).getTime() <= now + 86400000).length,
+    waiting: waitingRes.error ? 0 : (waitingRes.count ?? 0),
+    allowance,
+    mergeFields: MERGE_FIELDS.map((m) => ({ key: m.key, label: m.label })),
+    canWrite,
+  };
+}
+
+
+/** The email behind a person `key`, or 404. */
+export function emailOfKey(key: string): string {
+  const email = key.length <= 400 ? emailFromKey(key) : null;
+  if (!email) throw new ApiFail("not_found");
+  return email;
+}

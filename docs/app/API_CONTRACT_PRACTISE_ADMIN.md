@@ -183,7 +183,15 @@ Auth: **admin** means `admin` or `view_admin` (read); **super admin** means `adm
 | built | `POST /admin/forms/:id/email` | super admin, 10 a minute | `FormEmailBody` | `PersonalEmailReport` | `emailFormRespondents` (`admin/forms/email-actions.ts`): addresses come from the saved answers on the server, duplicates once, the rest of today's allowance waits |
 | built | `POST /admin/forms/:id/email/preview` | admin, 120 a minute | `FormEmailPreviewBody` | `EmailPreview` | `composeFor`, `unknownFields` (sends nothing) |
 | built | `POST /admin/forms/:id/email/send-waiting` | super admin, 5 a minute | none | `FormSendWaitingResult` | `sendWaitingFormEmails` |
-| planned | People: Pipeline and Enquiries with the quick views (Not paid yet, Invited not joined, Enquired not converted, Went quiet, Joined), mark paid, invite, email people | admin / super admin | | | `loadPipeline`, `inView`, `viewCounts`, `filterPipeline` (`src/lib/crm/views.ts`), `markPaid`, `emailPeople`. Waits for those to be committed on branch `agent/admincert` (they are still being written there) so the routes call them instead of a copy |
+| built | `GET /admin/people` | admin | `?view=all|not_paid|invited|not_converted|quiet|joined&quiet=7|14|30&q&stage&cohort&source&from&to&last=week|month|older|never&enquiries=1&limit&cursor` (default 50, max 500) | `AdminPeople` | People, Pipeline (and Enquiries with `enquiries=1`): `loadPipeline` (`src/lib/crm/people.ts`), `filterPipeline`, `viewCounts`, `sourcesOf`, `waLink` (`src/lib/crm/views.ts`), `emailAllowance` |
+| built | `POST /admin/people/:key/paid` | super admin, 120 a minute | `MarkPaidBody` | `MarkPaidResult` | `markPaid`. Before `2026_11_15_people_payment.sql` is pasted: 503 `unavailable` with `details.missingStep: true`, nothing written |
+| built | `POST /admin/people/:key/invite` | super admin, 20 a minute | `InviteBody` | `InviteResult` | `sendInvite` (makes the account first for an enquiry) |
+| built | `POST /admin/people/:key/stage` | super admin, 120 a minute | `StageBody` | `PersonSaved` | `setStage` |
+| built | `POST /admin/people/:key/activity` | super admin, 120 a minute | `ActivityBody` | `PersonSaved` | `logActivity` |
+| built | `POST /admin/people/:key/follow-up` | super admin, 120 a minute | `FollowUpBody` | `PersonSaved` | `setFollowUp` |
+| built | `POST /admin/people/email` | super admin, 10 a minute | `PeopleEmailBody` | `PersonalEmailReport` | `emailPeople` (only people in the pipeline) |
+| built | `POST /admin/people/email/send-waiting` | super admin, 5 a minute | none | `PeopleSendWaitingResult` | `sendWaitingPeopleEmails` |
+| built | `POST /admin/people/whatsapp` | super admin, 30 a minute | `PeopleWhatsAppBody` | `PeopleWhatsAppResult` | `waMessage`, `waLink`, `logWhatsApp` (the app opens each link; the contact is logged) |
 
 Notes:
 
@@ -198,6 +206,7 @@ Certificates, Issued and Forms notes:
 
 - One list for certificates and badges. Revoke (`POST /admin/certificates/:id/revoke`) works for both; resend and the PDF are certificates only (`hasPdf`). `canCorrect` rows are corrected with `POST /admin/certificates/issue` and `replaces`; `isDraft` rows are issued with `issue-draft`.
 - `counts` are taken before the type filter, so the chips keep their numbers when one is chosen.
+- People are named in addresses by `key` (the email, base64url, as the website's person pages), never by the email. The list gives each person's `key`.
 - Form emails: merge fields `{first_name}`, `{name}`, `{email}`, `{form}`. The report names people, never addresses. Over today's allowance, emails wait (status pending) and go out from send-waiting. Email not set up answers 503 `unavailable`.
 
 Kept from the first version (commit 9fea713d): `AdminHome.counts`, `needsLook` rows and `live`; `AdminStudentProfile.row` and `detail` (now also flat on `AdminStudent`); `GET /admin/activity`'s `kind` and `data`; `POST /admin/messages` with `{ userIds, title, text }`.
@@ -206,4 +215,6 @@ Changes from the app's mock: Home's `needsLook` in the mock is `attention` here;
 
 ## 5. Database steps
 
-None. Every route in this part reads and writes the tables the website already uses, through the website's own functions. Routes that depend on a website step not run yet answer as the website does (for example the doubts board's `ready: false`, the studio's `ready: false`, notifications' 503 `unavailable`).
+None of the app's own. Mark paid needs the website's `supabase/migrations_pending/2026_11_15_people_payment.sql` (from the People work); until it is pasted `paymentReady` is false and Mark paid answers 503 with `missingStep`.
+
+Otherwise none. Every route in this part reads and writes the tables the website already uses, through the website's own functions. Routes that depend on a website step not run yet answer as the website does (for example the doubts board's `ready: false`, the studio's `ready: false`, notifications' 503 `unavailable`).
