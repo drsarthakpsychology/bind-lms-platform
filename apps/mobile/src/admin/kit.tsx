@@ -482,39 +482,35 @@ function Chip({ on, name, count, onPress, testID }: { on: boolean; name: string;
 export function SwipeRow({ children, action, enabled = true, testID }: { children: React.ReactNode; action: { label: string; onPress: () => void; danger?: boolean }; enabled?: boolean; testID?: string }) {
   const c = useTheme();
   const [x] = React.useState(() => new RNAnimated.Value(0));
-  // Whether the row is slid open, read only inside the gesture handlers.
-  const [open] = React.useState(() => ({ current: false }));
   const W = 96;
-  const settle = React.useCallback(
-    (to: number) => {
-      open.current = to !== 0;
-      RNAnimated.spring(x, { toValue: to, useNativeDriver: true, speed: 22, bounciness: to ? 6 : 0 }).start();
-    },
-    [x, open],
-  );
-  const pan = React.useMemo(
-    () =>
-      PanResponder.create({
-        onMoveShouldSetPanResponder: (_e, g) => enabled && Math.abs(g.dx) > 12 && Math.abs(g.dx) > Math.abs(g.dy) * 1.5,
-        onPanResponderMove: (_e, g) => x.setValue(Math.max(-W * 1.3, Math.min(0, g.dx + (open.current ? -W : 0)))),
-        onPanResponderRelease: (_e, g) => {
-          const end = g.dx + (open.current ? -W : 0);
-          if (end < -W * 0.5) {
-            if (!open.current) haptic.select();
-            settle(-W);
-          } else settle(0);
-        },
-        onPanResponderTerminate: () => settle(open.current ? -W : 0),
-      }),
-    [enabled, settle, x, open],
-  );
+  // The gesture and its "is it open" flag live together, made once per row.
+  const { pan, settle } = React.useMemo(() => {
+    const st = { opened: false };
+    const to = (v: number) => {
+      st.opened = v !== 0;
+      RNAnimated.spring(x, { toValue: v, useNativeDriver: true, speed: 22, bounciness: v ? 6 : 0 }).start();
+    };
+    const responder = PanResponder.create({
+      onMoveShouldSetPanResponder: (_e, g) => enabled && Math.abs(g.dx) > 12 && Math.abs(g.dx) > Math.abs(g.dy) * 1.5,
+      onPanResponderMove: (_e, g) => x.setValue(Math.max(-W * 1.3, Math.min(0, g.dx + (st.opened ? -W : 0)))),
+      onPanResponderRelease: (_e, g) => {
+        const end = g.dx + (st.opened ? -W : 0);
+        if (end < -W * 0.5) {
+          if (!st.opened) haptic.select();
+          to(-W);
+        } else to(0);
+      },
+      onPanResponderTerminate: () => to(st.opened ? -W : 0),
+    });
+    return { pan: responder, settle: to };
+  }, [enabled, x]);
   if (!enabled) return <>{children}</>;
   const run = () => {
     settle(0);
     action.onPress();
   };
   return (
-    <View testID={testID} style={{ overflow: "hidden" }} accessibilityActions={[{ name: "activate" }, { name: action.label, label: action.label }]} onAccessibilityAction={(e) => e.nativeEvent.actionName === action.label && run()}>
+    <View testID={testID} style={{ overflow: "hidden" }} accessibilityActions={[{ name: action.label, label: action.label }]} onAccessibilityAction={(e) => e.nativeEvent.actionName === action.label && run()}>
       <View style={{ position: "absolute", right: 0, top: 0, bottom: 0, width: W, alignItems: "stretch", justifyContent: "center" }}>
         <Pressable accessibilityRole="button" accessibilityLabel={action.label} onPress={run} testID={testID ? `${testID}-action` : undefined} style={({ pressed }) => ({ flex: 1, alignItems: "center", justifyContent: "center", backgroundColor: action.danger ? c.danger : c.ink, opacity: pressed ? 0.85 : 1 })}>
           <T v="small" style={{ color: c.bg, fontFamily: scale.bodyStrong.fontFamily }}>
