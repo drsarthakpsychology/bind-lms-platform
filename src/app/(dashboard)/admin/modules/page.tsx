@@ -46,6 +46,7 @@ export default async function AdminModulesPage() {
     return (
       <AdminPage width="default" title="Modules" lead="Publish, schedule and unpublish modules, and choose exactly who has access.">
         <ModulesAdmin
+          v2
           modules={(modules ?? []).map((m) => ({
             id: m.id,
             title: m.title,

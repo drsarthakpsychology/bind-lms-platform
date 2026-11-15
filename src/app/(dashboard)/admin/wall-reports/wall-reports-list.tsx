@@ -3,6 +3,7 @@
 import * as React from "react";
 import { haptic } from "@/lib/haptics";
 import { Flag, CheckCircle2 } from "lucide-react";
+import { Empty, Notice, btn } from "../_v2/kit";
 
 interface ReportRow {
   id: string;
@@ -15,7 +16,7 @@ interface ReportRow {
  * The reported-content queue. Faculty resolves a report (status → resolved);
  * the content stays visible on the wall unless they remove it separately.
  */
-export function WallReportsList({ reports }: { reports: ReportRow[] }) {
+export function WallReportsList({ reports, v2 = false }: { reports: ReportRow[]; v2?: boolean }) {
   const [rows, setRows] = React.useState<ReportRow[]>(reports);
   const [busy, setBusy] = React.useState<string | null>(null);
   const [error, setError] = React.useState<string | null>(null);
@@ -40,6 +41,30 @@ export function WallReportsList({ reports }: { reports: ReportRow[] }) {
     } finally {
       setBusy(null);
     }
+  }
+
+  if (v2) {
+    if (rows.length === 0) return <Empty>Nothing reported. The wall is clean.</Empty>;
+    return (
+      <div className="flex min-w-0 flex-col gap-3">
+        {error ? <Notice tone="alert">{error}</Notice> : null}
+        <ul className="flex min-w-0 flex-col divide-y divide-[var(--ds-hairline)] border-y border-[var(--ds-hairline)]">
+          {rows.map((r) => (
+            <li key={r.id} className="flex min-w-0 flex-col gap-2 py-4 md:flex-row md:items-start md:justify-between md:gap-6">
+              <div className="flex min-w-0 max-w-[65ch] flex-col gap-1.5">
+                <blockquote className="border-l-2 border-[var(--ds-card-line)] pl-3 type-body [overflow-wrap:anywhere]">{r.content}</blockquote>
+                <p className="type-small text-muted-foreground [overflow-wrap:anywhere]">
+                  <span className="font-semibold text-foreground">{r.reason}</span> · reported {new Date(r.createdAt).toLocaleDateString("en-IN", { day: "numeric", month: "short", timeZone: "Asia/Kolkata" })}
+                </p>
+              </div>
+              <button type="button" onClick={() => void resolve(r.id)} disabled={busy === r.id} className={`${btn.quiet} self-start`}>
+                <CheckCircle2 aria-hidden /> {busy === r.id ? "Resolving" : "Resolve"}
+              </button>
+            </li>
+          ))}
+        </ul>
+      </div>
+    );
   }
 
   if (rows.length === 0) {

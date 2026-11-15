@@ -11,6 +11,9 @@ import { createSupportKey, revokeLegacyKey, revokeSupportKey, rotateSupportKey }
 const when = (iso: string | null) =>
   iso ? new Date(iso).toLocaleString("en-IN", { timeZone: "Asia/Kolkata", day: "numeric", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit" }) : "Never";
 
+/** Same as KEY_PREFIX in lib/auth/support-keys (not imported: that file uses node:crypto). */
+const KEY_PREFIX = "vibha_sk_";
+
 type Ask = { kind: "revoke" | "rotate"; key: SupportKeyView } | { kind: "legacy" } | null;
 
 /**
@@ -86,7 +89,14 @@ export function SupportKeys({
     }
   }
 
-  const status = (k: SupportKeyView) => (k.revokedAt ? <Status tone="quiet">Revoked {when(k.revokedAt)}</Status> : <Status tone="ok">Live</Status>);
+  const status = (k: SupportKeyView) =>
+    k.revokedAt ? <Status tone="quiet">Revoked {when(k.revokedAt)}{k.revokedByEmail ? ` by ${k.revokedByEmail}` : ""}</Status> : <Status tone="ok">Live</Status>;
+  /** Masked: the prefix and the last four characters only. */
+  const masked = (k: SupportKeyView) => (
+    <span className="font-mono type-small text-muted-foreground whitespace-nowrap" aria-label={`Key ending ${k.last4}`}>
+      {KEY_PREFIX}••••{k.last4}
+    </span>
+  );
   const actions = (k: SupportKeyView) =>
     canWrite && !k.revokedAt ? (
       <span className="flex flex-wrap justify-end gap-2">
@@ -130,7 +140,7 @@ export function SupportKeys({
               <thead>
                 <tr>
                   <th scope="col" className={table.th}>Name</th>
-                  <th scope="col" className={table.th}>Key</th>
+                  <th scope="col" className={table.th}>Works for</th>
                   <th scope="col" className={table.th}>Made by</th>
                   <th scope="col" className={table.th}>Last used</th>
                   <th scope="col" className={table.th}>Status</th>
@@ -140,8 +150,11 @@ export function SupportKeys({
               <tbody>
                 {keys.map((k) => (
                   <tr key={k.id} className={cn(table.tr, k.revokedAt && "text-muted-foreground")}>
-                    <td className={table.td}><span className="font-semibold [overflow-wrap:anywhere]">{k.label}</span></td>
-                    <td className={cn(table.td, "whitespace-nowrap font-mono")}>…{k.last4}</td>
+                    <td className={table.td}>
+                      <span className="block font-semibold [overflow-wrap:anywhere]">{k.label}</span>
+                      {masked(k)}
+                    </td>
+                    <td className={table.td}>Student accounts</td>
                     <td className={table.td}>
                       <span className="block [overflow-wrap:anywhere]">{k.createdByEmail ?? "Unknown"}</span>
                       <span className="block text-muted-foreground type-num">{when(k.createdAt)}</span>
@@ -154,7 +167,7 @@ export function SupportKeys({
                 {legacy ? (
                   <tr className={table.tr}>
                     <td className={table.td}><span className="font-semibold">Older single key</span></td>
-                    <td className={cn(table.td, "text-muted-foreground")}>Hidden</td>
+                    <td className={table.td}>Student accounts</td>
                     <td className={cn(table.td, "type-num text-muted-foreground")}>Changed {when(legacy.updatedAt)}</td>
                     <td className={cn(table.td, "text-muted-foreground")}>See recent uses</td>
                     <td className={table.td}><Status tone="warn">Live, replace it</Status></td>
@@ -175,8 +188,9 @@ export function SupportKeys({
                 <li key={k.id} className={cn("flex min-w-0 flex-col gap-1 py-3", k.revokedAt && "text-muted-foreground")}>
                   <span className="flex min-w-0 flex-wrap items-baseline justify-between gap-x-3">
                     <span className="type-body font-semibold [overflow-wrap:anywhere]">{k.label}</span>
-                    <span className="font-mono type-small">…{k.last4}</span>
+                    {masked(k)}
                   </span>
+                  <span className="type-small text-muted-foreground">Works for student accounts</span>
                   <span className="type-small text-muted-foreground [overflow-wrap:anywhere]">
                     Made by {k.createdByEmail ?? "unknown"} · {when(k.createdAt)}
                   </span>
