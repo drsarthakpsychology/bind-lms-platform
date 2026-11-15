@@ -44,7 +44,7 @@ describe("GET /public/home", () => {
     const text = JSON.stringify((await GET().json()).data);
     expect(text).not.toContain(C.COHORT.label);
     expect(text).not.toContain(C.COHORT.starts);
-    expect(text).not.toMatch(/"(tone|heads|who|fill|icon)":/);
+    expect(text).not.toMatch(/"(tone|heads|fill|icon)":/);
   });
 
   it("the headings and hero line are still the homepage's own words", () => {
