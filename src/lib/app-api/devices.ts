@@ -289,3 +289,13 @@ export async function dropPushTokens(tokens: string[]): Promise<void> {
 }
 
 export { DEVICE_ID_RE };
+
+/** For the admin student page: that student's active phone (whichever it is) and the changes used. */
+export async function studentDeviceState(userId: string, role: string, now = Date.now()): Promise<DeviceState> {
+  const db = admin();
+  if (!db) return UNENFORCED;
+  const { rows, ready } = await loadRows(db, userId);
+  if (!ready) return UNENFORCED;
+  const active = rows.find((r) => r.active) ?? null;
+  return stateFrom(rows, active?.device_id ?? null, role, await loadChanges(db, userId, now), now);
+}
