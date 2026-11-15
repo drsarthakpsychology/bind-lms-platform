@@ -69,7 +69,10 @@ export function ResponsesV2({
   waiting,
   allowance,
   canEdit,
+  startEmail = false,
 }: {
+  /** Open the compose window for everyone straight away (from "Email everyone" on the list). */
+  startEmail?: boolean;
   form: { id: string; title: string; url: string; isActive: boolean };
   rows: ResponseRow[];
   columns: TableColumn[];
@@ -84,7 +87,7 @@ export function ResponsesV2({
   const [sort, setSort] = React.useState<{ key: SortKey; dir: 1 | -1 }>({ key: "at", dir: -1 });
   const [page, setPage] = React.useState(0);
   const [selected, setSelected] = React.useState<Set<string>>(() => new Set());
-  const [compose, setCompose] = React.useState<{ ids: string[] | "all" } | null>(null);
+  const [compose, setCompose] = React.useState<{ ids: string[] | "all" } | null>(() => (startEmail && canEdit && rows.length ? { ids: "all" } : null));
   const [openId, setOpenId] = React.useState<string | null>(null);
   const [draining, setDraining] = React.useState(false);
   const [drainNote, setDrainNote] = React.useState<string | null>(null);

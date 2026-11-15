@@ -14,7 +14,7 @@ export type WeakItem = { itemId: string; prompt?: string; correctPct: number; at
 /** Review, needs a look (v2). The queue first; weak quiz questions under it as a table. */
 export function TriageV2({ needs, autoReleased, weakQuizItems }: { needs: TriageNeed[]; autoReleased: number; weakQuizItems: WeakItem[] }) {
   return (
-    <AdminPage width="default" title="Needs a look" lead={`${needs.length} practice session${needs.length === 1 ? "" : "s"} to check · ${autoReleased} released without review this week`}>
+    <AdminPage title="Needs a look" lead={`${needs.length} practice session${needs.length === 1 ? "" : "s"} to check · ${autoReleased} released without review this week`}>
       <Block title="Practice sessions" count={needs.length || undefined}>
         {needs.length ? (
           <Rows>

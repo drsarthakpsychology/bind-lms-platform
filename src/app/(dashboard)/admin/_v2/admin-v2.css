@@ -178,3 +178,59 @@
   border-color: var(--ds-card-line);
   border-radius: 0.5rem;
 }
+
+/*
+ * Older parts inside a v2 screen, second pass (found by the layout checker):
+ * text wraps instead of being cut with "...", paragraphs keep a reading
+ * measure, eyebrow labels are never under 12px, and older dropdowns reach
+ * 44px on touch widths.
+ */
+[data-admin-v2] .truncate:not([data-keep]) {
+  overflow: visible;
+  text-overflow: clip;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+[data-admin-v2] p:not([data-keep]) {
+  max-width: 75ch;
+}
+[data-admin-v2] .text-eyebrow {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+@media (max-width: 1023.98px) {
+  [data-admin-v2] select:is([class*="h-9"], [class*="min-h-9"], [class*="h-8"]) {
+    min-height: 2.75rem;
+  }
+}
+
+/*
+ * Third pass. No scroll box inside the page (one scroll per screen), long
+ * button labels inside older forms wrap, and small buttons in older parts get
+ * a 44px hit area on touch widths (an invisible ::after, so nothing moves).
+ */
+[data-admin-v2] :is(ul, ol, div)[class*="overflow-y-auto"][class*="max-h-"]:not([data-keep]) {
+  max-height: none;
+  overflow-y: visible;
+}
+[data-admin-v2] form [data-slot="button"] {
+  max-width: 100%;
+  white-space: normal;
+  height: auto;
+  min-height: 2.75rem;
+  text-align: left;
+}
+@media (max-width: 1023.98px) {
+  [data-admin-v2] :is(button:not([data-slot]), [data-slot="switch"]):not([class*="absolute"]):not([class*="fixed"]):not([class*="sticky"]) {
+    position: relative;
+  }
+  [data-admin-v2] :is(button:not([data-slot]), [data-slot="switch"])::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: max(100%, 2.75rem);
+    height: max(100%, 2.75rem);
+    transform: translate(-50%, -50%);
+  }
+}

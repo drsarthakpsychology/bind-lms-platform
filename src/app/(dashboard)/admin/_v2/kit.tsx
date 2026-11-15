@@ -79,7 +79,7 @@ export function AdminPage({
           <h1 className="type-h2 [overflow-wrap:anywhere] md:type-h1">{title}</h1>
           {lead ? <p className="type-small text-muted-foreground [overflow-wrap:anywhere]">{lead}</p> : null}
         </div>
-        {actions ? <div className="flex min-w-0 flex-wrap items-center gap-2">{actions}</div> : null}
+        {actions ? <div className="flex min-w-0 flex-wrap items-center gap-2 md:shrink-0">{actions}</div> : null}
       </header>
       {children}
       </div>

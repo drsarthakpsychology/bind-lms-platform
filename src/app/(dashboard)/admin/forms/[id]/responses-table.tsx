@@ -50,7 +50,7 @@ const waLink = (phone: string) => {
  * when a form has many questions, never the page). Phones: one card per
  * answer. Search covers every answer; tap an answer to see all of it.
  */
-export function ResponsesTable({ rows, columns }: { rows: ResponseRow[]; columns: TableColumn[] }) {
+export function ResponsesTable({ rows, columns, v2 = false }: { rows: ResponseRow[]; columns: TableColumn[]; /** Admin v2: emails wrap at the @ instead of every letter; cut answers carry their full text. */ v2?: boolean }) {
   const [q, setQ] = React.useState("");
   const [sort, setSort] = React.useState<{ key: SortKey; dir: 1 | -1 }>({ key: "at", dir: -1 });
   const [page, setPage] = React.useState(0);
@@ -163,11 +163,11 @@ export function ResponsesTable({ rows, columns }: { rows: ResponseRow[]; columns
                     {r.name || "No name"}
                   </button>
                 </td>
-                <td className="max-w-[16rem] px-3 py-2 break-all">{r.email}</td>
+                <td className={v2 ? "max-w-[16rem] min-w-[12rem] px-3 py-2 [overflow-wrap:anywhere]" : "max-w-[16rem] px-3 py-2 break-all"}>{r.email}</td>
                 <td className="px-3 py-2 whitespace-nowrap">{r.phone}</td>
                 {tableCols.map((c) => (
                   <td key={c.key} className="max-w-[16rem] px-3 py-2">
-                    <span className="line-clamp-2 break-words">{r.answers[c.key]}</span>
+                    <span className="line-clamp-2 break-words" title={v2 ? r.answers[c.key] : undefined}>{r.answers[c.key]}</span>
                   </td>
                 ))}
                 <td className="px-3 py-2 whitespace-nowrap text-muted-foreground">{r.when}</td>

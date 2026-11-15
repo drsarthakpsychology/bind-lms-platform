@@ -3,10 +3,10 @@ import { redirect } from "next/navigation";
 import { ChevronLeft } from "lucide-react";
 import { requireAdmin, isSuperAdmin } from "@/lib/auth/guards";
 import { PageHeader } from "@/components/design-system/page-header";
+import { FormBuilder } from "../form-builder";
 import { readFlags } from "@/lib/flags";
 import { uiV2For } from "@/lib/ui/v2";
-import { AdminPage } from "../../_v2/kit";
-import { FormBuilder } from "../form-builder";
+import { FormEditV2 } from "../../_v2/forms";
 
 export const dynamic = "force-dynamic";
 
@@ -17,7 +17,7 @@ export default async function NewFormPage() {
   if (!isSuperAdmin(me)) redirect("/admin/forms");
   if (uiV2For(await readFlags(), me.role)) {
     return (
-      <AdminPage title="New form" back={{ href: "/admin/forms", label: "Forms" }} width="default">
+      <FormEditV2 title="New form" back={{ href: "/admin/forms", label: "Forms" }}>
         <FormBuilder
           initial={{
             title: "",
@@ -32,7 +32,7 @@ export default async function NewFormPage() {
           reservedKeys={[]}
           responses={0}
         />
-      </AdminPage>
+      </FormEditV2>
     );
   }
   return (

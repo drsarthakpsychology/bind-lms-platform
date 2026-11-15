@@ -12,7 +12,7 @@ vi.mock("@/lib/rate-limit", () => ({
     return calls.allow;
   },
 }));
-vi.mock("./master", () => ({ loadMaster: async () => ({ setting: {}, ready: true }) }));
+vi.mock("./master", () => ({ loadMaster: async () => ({ setting: {}, ready: true }), loadSupportKeys: async () => ({ keys: [], ready: true }), saveSupportKeys: async () => null }));
 vi.mock("./master-hash", () => ({
   checkMaster: () => {
     calls.checked++;

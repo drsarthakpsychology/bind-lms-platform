@@ -12,7 +12,8 @@ import { StatusTag } from "./status-tag";
 import { dayIst, formUrl } from "./format";
 import { readFlags } from "@/lib/flags";
 import { uiV2For } from "@/lib/ui/v2";
-import { FormsListV2 } from "./forms-v2";
+import { FormsListV2 } from "../_v2/forms";
+import { btn as kit } from "../_v2/kit";
 
 export const dynamic = "force-dynamic";
 
@@ -28,7 +29,30 @@ export default async function FormsPage() {
   const open = forms.filter((f) => f.isActive).length;
 
   if (uiV2For(await readFlags(), me.role)) {
-    return <FormsListV2 canEdit={canEdit} forms={forms.map((f) => ({ id: f.id, title: f.title, url: formUrl(f.slug), isActive: f.isActive, responses: f.responses, lastAnswer: f.lastResponseAt ? dayIst(f.lastResponseAt) : null }))} />;
+    return (
+      <FormsListV2
+        canEdit={canEdit}
+        lead={`${forms.length} form${forms.length === 1 ? "" : "s"} · ${open} open · ${total} answer${total === 1 ? "" : "s"}`}
+        forms={forms.map((f) => ({
+          id: f.id,
+          title: f.title,
+          open: f.isActive,
+          answers: f.responses,
+          last: f.lastResponseAt ? dayIst(f.lastResponseAt) : null,
+          link: <CopyLink url={formUrl(f.slug)} />,
+          actions: canEdit ? (
+            <>
+              {f.responses > 0 ? (
+                <Link href={`/admin/forms/${f.id}?email=all`} className={kit.quiet}>
+                  Email everyone
+                </Link>
+              ) : null}
+              <FormRowActions v2 id={f.id} title={f.title} active={f.isActive} responses={f.responses} />
+            </>
+          ) : undefined,
+        }))}
+      />
+    );
   }
 
   return (

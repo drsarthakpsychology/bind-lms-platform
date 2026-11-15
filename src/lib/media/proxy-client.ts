@@ -2,7 +2,7 @@ import "server-only";
 
 import { loadStudentAccess } from "@/lib/cohorts/access";
 import { canWatch, usesCohorts } from "@/lib/cohorts/rules";
-import { createClient } from "@/lib/supabase/server";
+import { createAdminClient, createClient } from "@/lib/supabase/server";
 
 /**
  * Server-side object resolution + streaming for the stream proxy.
@@ -109,17 +109,28 @@ export async function authorizeAndResolveLesson(opts: {
   role: "admin" | "view_admin" | "student" | "alumni";
   scope?: "full" | "lectures_only";
   lessonId: string;
+  /**
+   * The mobile app's video requests carry no cookie, so there is no user
+   * client: read with the service role instead. Row level security then does
+   * not hide lectures, so the lecture's own status is checked here (a
+   * `hidden` or not-yet-live lecture is refused for students).
+   */
+  serviceRole?: boolean;
 }): Promise<{ authorized: boolean; resolved: ResolvedStream | null }> {
-  const supabase = await createClient();
+  const supabase = opts.serviceRole ? createAdminClient() : await createClient();
   const { data: lesson } = await supabase
     .from("lessons")
     .select(
-      "course_id, video_storage_path, video_provider, video_bucket, media_assets(master_playlist, key_prefix, provider, bucket), courses(is_published)",
+      "course_id, status, video_storage_path, video_provider, video_bucket, media_assets(master_playlist, key_prefix, provider, bucket), courses(is_published)",
     )
     .eq("id", opts.lessonId)
     .single();
 
   if (!lesson) {
+    return { authorized: false, resolved: null };
+  }
+  const lessonStatus = lesson.status as string | null;
+  if (opts.serviceRole && opts.role !== "admin" && opts.role !== "view_admin" && (lessonStatus === "hidden" || lessonStatus === "live")) {
     return { authorized: false, resolved: null };
   }
 

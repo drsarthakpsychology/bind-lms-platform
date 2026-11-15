@@ -4,6 +4,7 @@ import { logEmailSend, sendResendEmail } from "@/lib/auth/roster";
 import { htmlToPlain, richToEmailHtml, sanitizeRich } from "@/lib/email/rich-html";
 import { isQuotaStop } from "@/lib/email/pace";
 import { appUrl } from "@/lib/app-url";
+import { queuePush } from "@/lib/app-api/push";
 
 export type NotifyInput = {
   userIds: string[];
@@ -69,6 +70,8 @@ export async function sendNotifications(input: NotifyInput): Promise<NotifyRepor
       return { error: dbStep ? NOTIFY_DB_STEP : error.message, created: i, emailed: 0, emailFailed: 0, batchId, needsDbStep: dbStep };
     }
   }
+  // The same notice on the student's phone (Vibha Psychology app). Never blocks or fails this send.
+  queuePush(rows, "messages");
 
   let emailed = 0;
   let emailFailed = 0;

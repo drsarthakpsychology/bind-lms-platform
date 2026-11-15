@@ -11,6 +11,7 @@ import { Label } from "@/components/ui/label";
 import { sanitizeRich } from "@/lib/email/rich-html";
 import type { NotifyBatch } from "@/lib/notify/send";
 import { cn } from "@/lib/utils";
+import { Empty, Notice, table } from "../_v2/kit";
 
 const when = (iso: string) => new Date(iso).toLocaleString("en-IN", { timeZone: "Asia/Kolkata", day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" });
 
@@ -20,7 +21,7 @@ const when = (iso: string) => new Date(iso).toLocaleString("en-IN", { timeZone: 
  * it" to send the same message by email. Below: what was sent and how many
  * opened it.
  */
-export function NotifyTab({ batches, ready, canWrite, initialTo = [] }: { batches: NotifyBatch[]; ready: boolean; canWrite: boolean; initialTo?: string[] }) {
+export function NotifyTab({ batches, ready, canWrite, initialTo = [], v2 = false }: { batches: NotifyBatch[]; ready: boolean; canWrite: boolean; initialTo?: string[]; /** Admin v2: no own title, hairlines instead of boxes, sent list as a table. */ v2?: boolean }) {
   const [title, setTitle] = React.useState("");
   const [html, setHtml] = React.useState("");
   const [key, setKey] = React.useState(0);
@@ -48,15 +49,23 @@ export function NotifyTab({ batches, ready, canWrite, initialTo = [] }: { batche
   }
 
   return (
-    <div className="space-y-6 p-4 sm:p-6">
-      <header>
-        <h1 className="text-h1">Notifications</h1>
-        <p className="mt-1 text-small text-muted-foreground">A message on the student&apos;s bell inside VIBHA. They open it, read it and close it; you see how many opened it.</p>
-      </header>
+    <div className={v2 ? "flex min-w-0 flex-col gap-6" : "space-y-6 p-4 sm:p-6"}>
+      {v2 ? (
+        <p className="max-w-[72ch] type-small text-muted-foreground">A message on the student&apos;s bell inside VIBHA. They open it, read it and close it; you see how many opened it.</p>
+      ) : (
+        <header>
+          <h1 className="text-h1">Notifications</h1>
+          <p className="mt-1 text-small text-muted-foreground">A message on the student&apos;s bell inside VIBHA. They open it, read it and close it; you see how many opened it.</p>
+        </header>
+      )}
       {!ready ? (
-        <p role="alert" className="rounded-xl border-2 border-destructive bg-status-alert-bg p-3 text-sm font-semibold text-status-alert-fg">
-          One database step is needed before students can receive these: run <code>2026_11_admin_redesign.sql</code> in Supabase → SQL Editor.
-        </p>
+        v2 ? (
+          <Notice tone="alert">One database step is needed before students can receive these: run 2026_11_admin_redesign.sql in Supabase, SQL Editor.</Notice>
+        ) : (
+          <p role="alert" className="rounded-xl border-2 border-destructive bg-status-alert-bg p-3 text-sm font-semibold text-status-alert-fg">
+            One database step is needed before students can receive these: run <code>2026_11_admin_redesign.sql</code> in Supabase → SQL Editor.
+          </p>
+        )
       ) : null}
 
       <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,22rem)]">
@@ -69,15 +78,15 @@ export function NotifyTab({ batches, ready, canWrite, initialTo = [] }: { batche
             <span className="text-sm font-semibold">Message</span>
             <RichEditor key={key} onChange={setHtml} minHeight="9rem" placeholder="Type it like a chat. Use the buttons for bold, lists or links." ariaLabel="Notification message" />
           </div>
-          <label className="flex items-start gap-2 rounded-xl border-2 border-foreground/15 bg-card p-3 text-sm">
+          <label className={v2 ? "flex min-h-11 items-start gap-3 py-1 type-small" : "flex items-start gap-2 rounded-xl border-2 border-foreground/15 bg-card p-3 text-sm"}>
             <input type="checkbox" className="mt-0.5 size-4 accent-primary" checked={alsoEmail} onChange={(e) => setAlsoEmail(e.target.checked)} />
             <span>
               <span className="flex items-center gap-1.5 font-bold"><Mail className="size-4" aria-hidden /> Also email it</span>
-              <span className="text-caption text-muted-foreground">Same message by email, with a link back to it. Counts toward the daily email limit.</span>
+              <span className={v2 ? "block text-muted-foreground" : "text-caption text-muted-foreground"}>Same message by email, with a link back to it. Counts toward the daily email limit.</span>
             </span>
           </label>
-          <div className="rounded-xl border-2 border-foreground/15 bg-card p-4">
-            <h2 className="mb-3 text-small font-bold">Who gets it</h2>
+          <div className={v2 ? "border-t border-[var(--ds-hairline)] pt-4" : "rounded-xl border-2 border-foreground/15 bg-card p-4"}>
+            <h2 className={v2 ? "mb-3 type-h3" : "mb-3 text-small font-bold"}>Who gets it</h2>
             <RecipientPicker selected={selected} onChange={setSelected} />
           </div>
           {canWrite ? (
@@ -86,7 +95,7 @@ export function NotifyTab({ batches, ready, canWrite, initialTo = [] }: { batche
               Send to {selected.size}
             </Button>
           ) : (
-            <p className="text-caption text-muted-foreground">View Admins can read but not send.</p>
+            <p className={v2 ? "type-small text-muted-foreground" : "text-caption text-muted-foreground"}>View Admins can read but not send.</p>
           )}
           {result ? (
             <p role="status" className={cn("rounded-xl border-2 p-3 text-sm font-semibold", result.ok ? "border-foreground bg-status-success-bg" : "border-destructive bg-status-alert-bg text-status-alert-fg")}>{result.text}</p>
@@ -95,7 +104,7 @@ export function NotifyTab({ batches, ready, canWrite, initialTo = [] }: { batche
 
         <aside className="space-y-2">
           <span className="text-sm font-semibold">What the student sees</span>
-          <div className="rounded-2xl border-2 border-foreground bg-card p-4 hard-shadow-sm">
+          <div data-keep={v2 ? "" : undefined} className={v2 ? "rounded-[var(--ds-radius)] border-[1.5px] border-[var(--ds-card-line)] bg-card p-4" : "rounded-2xl border-2 border-foreground bg-card p-4 hard-shadow-sm"}>
             <p className="flex items-center gap-2 text-caption font-bold text-link"><Bell className="size-4" aria-hidden /> VIBHA · now</p>
             <p className="mt-1 font-bold break-words">{title || "Your title"}</p>
             {preview ? (
@@ -107,6 +116,34 @@ export function NotifyTab({ batches, ready, canWrite, initialTo = [] }: { batche
         </aside>
       </div>
 
+      {v2 ? (
+        <section aria-label="Sent notifications" className="flex min-w-0 flex-col gap-2">
+          <h2 className="type-h3">Sent</h2>
+          {batches.length ? (
+            <table className={table.root}>
+              <thead>
+                <tr>
+                  <th scope="col" className={table.th}>Notification</th>
+                  <th scope="col" className={cn(table.th, "text-right")}>Opened</th>
+                </tr>
+              </thead>
+              <tbody>
+                {batches.map((b) => (
+                  <tr key={b.batchId} className={table.tr}>
+                    <td className={table.td}>
+                      <span className="block font-semibold [overflow-wrap:anywhere]">{b.title}</span>
+                      <span className="block text-muted-foreground">{when(b.sentAt)} · {b.type === "nudge" ? "Nudge" : "Message"}</span>
+                    </td>
+                    <td className={cn(table.td, table.num)}>{b.opened} of {b.total}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          ) : (
+            <Empty>Nothing sent yet.</Empty>
+          )}
+        </section>
+      ) : (
       <section aria-label="Sent notifications" className="space-y-2">
         <h2 className="text-h3 font-bold">Sent</h2>
         {batches.length ? (
@@ -128,6 +165,7 @@ export function NotifyTab({ batches, ready, canWrite, initialTo = [] }: { batche
           <p className="rounded-2xl border-2 border-dashed border-foreground/30 p-5 text-sm text-muted-foreground">Nothing sent yet.</p>
         )}
       </section>
+      )}
     </div>
   );
 }

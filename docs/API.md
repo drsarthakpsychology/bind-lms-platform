@@ -120,6 +120,10 @@ Other games use Server Actions (below).
 | `/go/home` | GET | session optional | Redirect: admins to `/admin`, students to `/dashboard`, others to `/` |
 | `/.well-known/api-catalog`, `/.well-known/agent-card.json`, `/.well-known/oauth-protected-resource`, `/openapi.json`, `/auth.md` | GET | public | Machine-readable discovery documents. `/openapi.json` describes only the public surface |
 
+### Mobile app API (`/api/app/v1/...`)
+
+The Vibha Psychology app's own JSON API: bearer token instead of cookies, one envelope (`{ ok, data }` or `{ ok: false, error: { code, message } }`), the same rules as the website through `requireAppUser` (`src/lib/app-api/guard.ts`) and the same server functions. Every route, its auth, body, answer and status (built or planned) is in `docs/app/API_CONTRACT.md`; the types are in `src/lib/app-api/contract.ts`. App video uses the website's `/api/media/stream` route with an app stream token (`docs/app/VIDEO_DELIVERY.md`). `src/proxy.ts` passes `/api/app/*` through untouched.
+
 ## Server Actions
 
 Server Actions are called from forms and buttons inside the app, not by URL. Their ids change on every deploy. A native app cannot call them (see `docs/NATIVE_APP_READINESS.md`).

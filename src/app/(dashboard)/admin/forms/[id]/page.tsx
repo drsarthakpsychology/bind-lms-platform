@@ -22,7 +22,7 @@ import { ResponsesV2 } from "./responses-v2";
 export const dynamic = "force-dynamic";
 
 /** /admin/forms/[id]: every answer to one form, searchable, sortable, exportable. */
-export default async function FormResponsesPage({ params }: { params: Promise<{ id: string }> }) {
+export default async function FormResponsesPage({ params, searchParams }: { params: Promise<{ id: string }>; searchParams: Promise<{ email?: string }> }) {
   const me = await requireAdmin();
   if (!me) redirect("/dashboard");
   const { id } = await params;
@@ -57,6 +57,7 @@ export default async function FormResponsesPage({ params }: { params: Promise<{ 
         waiting={emailed.waiting}
         allowance={allowance}
         canEdit={canEdit}
+        startEmail={(await searchParams).email === "all"}
       />
     );
   }

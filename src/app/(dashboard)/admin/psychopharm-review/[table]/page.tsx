@@ -4,6 +4,9 @@ import Link from "next/link";
 import { createClient } from "@/lib/supabase/server";
 import { PageHeader } from "@/components/design-system/page-header";
 import { ReviewActions } from "@/components/psychopharm/review-actions";
+import { readFlags } from "@/lib/flags";
+import { uiV2For } from "@/lib/ui/v2";
+import { MedicineQueueV2 } from "../../_v2/content";
 
 /**
  * DB-backed review queue for one table (drug_fields | dose_bands | dose_ranges).
@@ -29,7 +32,8 @@ export default async function ReviewTablePage({
 }) {
   // Defence in depth: layouts don't re-render on every navigation, so the page
   // re-checks admin itself before reading data.
-  if (!(await requireAdmin())) redirect("/dashboard");
+  const me = await requireAdmin();
+  if (!me) redirect("/dashboard");
   const { table: tableParam } = await params;
   const { drug: drugFilter } = await searchParams;
   const table = TABLE_ALIASES[tableParam];
@@ -43,6 +47,20 @@ export default async function ReviewTablePage({
     if (drug) query = supabase.from(table).select("*").eq("drug_id", drug.id).order("created_at", { ascending: true });
   }
   const { data: rows } = await query;
+
+  if (uiV2For(await readFlags(), me.role)) {
+    return (
+      <MedicineQueueV2
+        title={`Review: ${table.replace("psych_", "").replace(/_/g, " ")}`}
+        rows={(rows ?? []).map((row) => ({
+          id: row.id,
+          value: row.value != null ? (typeof row.value === "string" ? row.value : JSON.stringify(row.value)) : (row.band_label ?? row.page_ref ?? row.id),
+          meta: `Page ${row.page_ref ?? "not set"} · ${row.status}`,
+          actions: <ReviewActions table={table} id={row.id} status={row.status} isDose={table === "psych_dose_bands" || table === "psych_dose_ranges"} />,
+        }))}
+      />
+    );
+  }
 
   return (
     <div className="space-y-6">

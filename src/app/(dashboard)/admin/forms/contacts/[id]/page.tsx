@@ -9,7 +9,7 @@ import { istStamp } from "@/lib/forms/csv";
 import { dayIst } from "../../format";
 import { readFlags } from "@/lib/flags";
 import { uiV2For } from "@/lib/ui/v2";
-import { AdminPage, Block, btn as kit, Empty, Facts, Tag } from "../../../_v2/kit";
+import { FormContactV2 } from "../../../_v2/forms";
 
 export const dynamic = "force-dynamic";
 
@@ -44,45 +44,31 @@ export default async function FormContactPage({ params }: { params: Promise<{ id
 
   if (uiV2For(await readFlags(), me.role)) {
     return (
-      <AdminPage
-        title={contact.name || contact.email}
-        lead={`${contact.email}${contact.phone ? ` · ${contact.phone}` : ""} · contact since ${dayIst(contact.created_at)}`}
-        back={{ href: "/admin/forms", label: "Forms" }}
-        actions={
-          <>
-            <Link href={`/admin/emails?folder=compose&to=${encodeURIComponent(contact.email)}`} className={kit.quiet}>Email</Link>
-            {wa && wa.length >= 11 ? <a href={`https://wa.me/${wa}`} target="_blank" rel="noopener noreferrer" className={kit.quiet}>WhatsApp</a> : null}
-            {contact.phone ? <a href={`tel:${contact.phone.replace(/[^\d+]/g, "")}`} className={kit.quiet}>Call</a> : null}
-            {inPipeline ? <Link href={`/admin/people/${personKey(contact.email)}`} className={kit.quiet}>Pipeline record</Link> : null}
-          </>
-        }
-      >
-        {contact.tags?.length ? (
-          <ul className="flex flex-wrap gap-1.5" aria-label="Tags">
-            {contact.tags.map((t) => (
-              <li key={t}><Tag>{t}</Tag></li>
-            ))}
-          </ul>
-        ) : null}
-        <Block title="Form answers" count={subs.length}>
-          {subs.length === 0 ? <Empty>No form answers linked to this contact.</Empty> : null}
-          <div className="flex min-w-0 flex-col gap-[var(--ds-6)]">
-            {subs.map((s) => {
-              const f = forms.get(s.form_id);
-              const cols = answerColumns(f?.fields ?? [], [s.responses]);
-              return (
-                <section key={s.id} className="flex min-w-0 flex-col gap-2">
-                  <div className="flex min-w-0 flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
-                    <Link href={`/admin/forms/${s.form_id}`} className="type-body font-semibold underline-offset-4 [overflow-wrap:anywhere] hover:underline">{f?.title ?? "Form"}</Link>
-                    <span className="type-small text-muted-foreground">{istStamp(s.created_at)}</span>
-                  </div>
-                  <Facts items={cols.map((col) => ({ label: `${col.label}${col.removed ? " (removed question)" : ""}`, value: <span className="whitespace-pre-wrap">{answerText(s.responses?.[col.key]) || "No answer"}</span> }))} />
-                </section>
-              );
-            })}
-          </div>
-        </Block>
-      </AdminPage>
+      <FormContactV2
+        name={contact.name || contact.email}
+        facts={[
+          { label: "Email", value: contact.email },
+          { label: "Phone", value: contact.phone ?? "Not set" },
+          { label: "Contact since", value: dayIst(contact.created_at) },
+        ]}
+        tags={contact.tags ?? []}
+        contact={[
+          { label: "Email", href: `/admin/emails?folder=compose&to=${encodeURIComponent(contact.email)}` },
+          ...(wa && wa.length >= 11 ? [{ label: "WhatsApp", href: `https://wa.me/${wa}`, external: true }] : []),
+          ...(contact.phone ? [{ label: "Call", href: `tel:${contact.phone.replace(/[^\d+]/g, "")}` }] : []),
+          ...(inPipeline ? [{ label: "Pipeline record", href: `/admin/people/${personKey(contact.email)}` }] : []),
+        ]}
+        answers={subs.map((s) => {
+          const f = forms.get(s.form_id);
+          return {
+            id: s.id,
+            formHref: `/admin/forms/${s.form_id}`,
+            formTitle: f?.title ?? "Form",
+            when: istStamp(s.created_at),
+            items: answerColumns(f?.fields ?? [], [s.responses]).map((col) => ({ label: `${col.label}${col.removed ? " (removed question)" : ""}`, value: answerText(s.responses?.[col.key]) || "No answer" })),
+          };
+        })}
+      />
     );
   }
 
