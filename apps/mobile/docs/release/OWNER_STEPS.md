@@ -97,7 +97,7 @@ Google checks the app before it goes live and needs a student login.
 
 1. **https://play.google.com/console** > **Create app**.
    App name `Vibha Psychology` · Default language **English (India)** · **App** · **Free** · tick both declarations > **Create app**.
-2. Left menu **Grow users** > **Store presence** > **Main store listing**: paste the texts from `STORE_LISTING.md` (app name, short description, full description). Upload the pictures from `store-assets/` (app icon, feature graphic) and `screenshots/` (phone screenshots, in number order). **Save**.
+2. Left menu **Grow users** > **Store presence** > **Main store listing**: paste the texts from `STORE_LISTING.md` (app name, short description, full description). Upload the pictures from `store-assets/` (app icon, feature graphic) and `phone-screenshots/` (phone screenshots, in number order). **Save**.
 3. Left menu **Store settings**: Category **Education**, contact email, phone and website from `STORE_LISTING.md`. **Save**.
 4. Left menu **Policy and programs** > **App content**: answer every card using `APP_CONTENT.md` and `DATA_SAFETY.md`. Use the reviewer login from 4.1 under **App access**.
 5. Account deletion: in the same **App content** page, the **Data deletion** card (or the question inside Data safety) > paste `https://vibhapsychology.com/delete-account`.
