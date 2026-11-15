@@ -21,7 +21,6 @@ import { adminMock, adminRoute } from "@/admin/mock";
 import type { RawRequest, RawResponse, Transport } from "../client";
 import type * as C from "../contract";
 import type * as X from "../extra";
-import * as xf from "./extra-fixtures";
 import * as fx from "./fixtures";
 import { learnRoute, noteMarkedRead, resetLearnMock } from "./learn-fixtures";
 
@@ -350,48 +349,9 @@ async function route(req: RawRequest): Promise<RawResponse> {
     return ok<C.Settings>({ account: { email: me.email, name: me.name, roleLabel: me.role === "admin" ? "Admin" : me.role === "view_admin" ? "View Admin" : me.scope === "lectures_only" ? "Student (lectures)" : "Student", rollNumber: me.rollNumber, mobileNumber: me.mobileNumber }, device: fx.device, notifications: state.prefs, support: fx.config.support, legal: fx.config.legal, app: { minSupportedVersion: "1.0.0", latestVersion: "1.0.0" } });
   }
 
-  if (is("GET", "/library/medicines")) {
-    if (kind === "lecture") return fail(403, "scope", "Your account is for lectures only.");
-    return ok<C.MedicineList>({ v: 1, groups: xf.medicines.classes, rows: xf.medicines.items.map((r) => ({ id: r.id, name: r.name, cls: r.className, group: r.className, brands: r.brands, uses: [], line: r.className, dose: r.keyDose })) });
-  }
-
   /* ------------------------- not in the contract yet (src/api/extra.ts) */
   if (is("POST", "/me/deletion-request")) return ok<X.DeletionRequestResult>({ received: true, at: new Date().toISOString() });
-  const studentOnly = kind === "lecture" ? fail(403, "scope", "Your account is for lectures only.") : null;
-  if (is("GET", "/practise")) return studentOnly ?? ok(xf.practise);
-  if ((m = is("GET", "/games/:id"))) return studentOnly ?? (xf.rounds[m[0]!] ? ok(xf.rounds[m[0]!]) : notFound());
-  if ((m = is("POST", "/games/:id/result"))) return ok<X.GameResult>({ best: Math.max(8, Number(body.score) || 0), xp: (Number(body.score) || 0) * 2 });
-  if ((m = is("GET", "/cases/:id"))) return studentOnly ?? (xf.cases[m[0]!] ? ok(xf.cases[m[0]!]) : notFound());
-  if (is("GET", "/prep")) return studentOnly ?? ok<{ subjects: X.PrepSubject[] }>({ subjects: xf.prepSubjects });
-  if ((m = is("GET", "/prep/:id"))) return studentOnly ?? ok(xf.prepSet(m[0]!));
-  if (is("GET", "/medicines")) {
-    if (studentOnly) return studentOnly;
-    const q = (query.q ?? "").toLowerCase();
-    const cls = query.class ?? "";
-    return ok<X.MedicineList>({ classes: xf.medicines.classes, items: xf.medicines.items.filter((r) => (!cls || r.className === cls) && (!q || r.name.toLowerCase().includes(q) || r.brands.some((b) => b.toLowerCase().includes(q)))) });
-  }
-  if ((m = is("GET", "/medicines/:id"))) {
-    const page = xf.medicinePage(m[0]!);
-    return studentOnly ?? (page ? ok(page) : notFound());
-  }
-  if (path.startsWith("/admin")) {
-    if (kind !== "admin" && kind !== "viewadmin") return fail(403, "forbidden", "Only admins can open this.");
-    if (is("GET", "/admin/home")) return ok(xf.adminHome);
-    if (is("GET", "/admin/students")) {
-      const q = (query.q ?? "").toLowerCase();
-      return ok<X.AdminStudentList>({ items: xf.adminStudents.filter((r) => !q || r.name.toLowerCase().includes(q) || (r.rollNumber ?? "").toLowerCase().includes(q)) });
-    }
-    if ((m = is("GET", "/admin/students/:id"))) {
-      const st = xf.adminStudent(m[0]!);
-      return st ? ok(st) : notFound();
-    }
-    if (is("GET", "/admin/activity")) return ok(xf.adminActivity);
-    if (is("GET", "/admin/messages")) return ok(xf.adminMessages);
-    if (is("POST", "/admin/messages")) {
-      if (!String(body.title ?? "").trim() || !String(body.body ?? "").trim()) return fail(400, "bad_request", "Write a title and a message.", { fields: ["title", "body"] });
-      return ok<X.AdminSendResult>({ sent: body.to === "student" ? 1 : 24 });
-    }
-  }
+  if (path.startsWith("/admin")) return fail(403, "forbidden", "Only admins can open this.");
   return notFound();
 }
 
