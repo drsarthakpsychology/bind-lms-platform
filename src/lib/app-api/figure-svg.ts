@@ -1,6 +1,5 @@
 import "server-only";
 import { createElement, type ReactNode } from "react";
-import { renderToStaticMarkup } from "react-dom/server";
 import { FIGURES } from "@/components/study/figures/registry";
 import type { Figure } from "./contract";
 
@@ -80,10 +79,12 @@ export function resolveVars(svg: string, palette: Record<string, string>): strin
   return svg.replace(/var\((--[a-z0-9-]+)(?:\s*,\s*[^)]*)?\)/gi, (_, name: string) => palette[name] ?? palette["--f-ink"]);
 }
 
-export function figureData(id: string): Figure | null {
+export async function figureData(id: string): Promise<Figure | null> {
   const f = FIGURES[id];
   if (!f) return null;
   const art = typeof f.art === "function" ? (f.art as (u: (n: string) => string) => ReactNode)((n) => `${f.id}-${n}`) : f.art;
+  // Loaded at call time: Next.js refuses a static react-dom/server import in an App Route.
+  const { renderToStaticMarkup } = await import("react-dom/server");
   const inner = renderToStaticMarkup(createElement("g", null, art));
   const doc = (theme: "light" | "dark") =>
     resolveVars(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="${f.viewBox}">${inner}</svg>`, figurePalette(theme));
