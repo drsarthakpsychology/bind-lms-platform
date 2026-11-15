@@ -72,7 +72,7 @@ export default async function ComparePage({
             </RowList>
           </Section>
         )}
-        <p className="type-small text-muted-foreground">{STANDING_NOTICE}</p>
+        <p className="max-w-[70ch] type-small text-muted-foreground">{STANDING_NOTICE}</p>
       </PageFrame>
     );
   }

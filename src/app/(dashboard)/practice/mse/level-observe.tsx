@@ -97,7 +97,7 @@ export function ObserveLevel({
       </div>
 
       <div>
-        <OnceHint id="mse-observe" className="text-small text-muted-foreground">
+        <OnceHint id="mse-observe" className="max-w-[70ch] text-small text-muted-foreground">
           Now describe what you observed. Diagnostic words are conclusions: &quot;depressed&quot;,
           &quot;anxious&quot;, &quot;manipulative&quot;. Behaviour words are observations. Target:{" "}
           <span className="font-semibold">100 words with zero labels</span>.
