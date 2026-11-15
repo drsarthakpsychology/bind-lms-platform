@@ -21,7 +21,7 @@ export function MeDisplayRows({ student }: { student: boolean }) {
     <ul className="flex min-w-0 flex-col divide-y divide-[var(--ds-hairline)] border-y border-[var(--ds-hairline)]">
       <li>
         <button type="button" role="switch" aria-checked={isDark} className={row} onClick={() => setTheme(isDark ? "light" : "dark")}>
-          {isDark ? <Sun className="size-5 shrink-0" aria-hidden /> : <Moon className="size-5 shrink-0" aria-hidden />}
+          {isDark ? <span aria-hidden className="grid size-6 shrink-0 place-items-center"><Sun className="size-5" /></span> : <span aria-hidden className="grid size-6 shrink-0 place-items-center"><Moon className="size-5" /></span>}
           <span className="min-w-0 flex-1">Dark mode</span>
           <span className="type-small text-muted-foreground">{isDark ? "On" : "Off"}</span>
         </button>
@@ -29,7 +29,7 @@ export function MeDisplayRows({ student }: { student: boolean }) {
       {student ? (
         <li>
           <button type="button" role="switch" aria-checked={funny} className={row} onClick={() => setFunny(!funny)}>
-            <Smile className="size-5 shrink-0" aria-hidden />
+            <span aria-hidden className="grid size-6 shrink-0 place-items-center"><Smile className="size-5" /></span>
             <span className="min-w-0 flex-1">Funny reactions</span>
             <span className="type-small text-muted-foreground">{funny ? "On" : "Off"}</span>
           </button>
@@ -43,7 +43,7 @@ function LogOutRow() {
   const { pending } = useFormStatus();
   return (
     <button type="submit" disabled={pending} className={row + " text-destructive"}>
-      <LogOut className="size-5 shrink-0" aria-hidden />
+      <span aria-hidden className="grid size-6 shrink-0 place-items-center"><LogOut className="size-5" /></span>
       <span className="min-w-0 flex-1">{pending ? "Logging out…" : "Log out"}</span>
     </button>
   );
@@ -57,7 +57,7 @@ export function MeAccountRows({ preview }: { preview: boolean }) {
       {preview ? (
         <li>
           <button type="button" className={row} disabled={busy} onClick={() => start(() => setViewMode("admin"))}>
-            <ShieldCheck className="size-5 shrink-0" aria-hidden />
+            <span aria-hidden className="grid size-6 shrink-0 place-items-center"><ShieldCheck className="size-5" /></span>
             <span className="min-w-0 flex-1">Back to admin</span>
           </button>
         </li>

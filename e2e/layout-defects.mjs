@@ -47,7 +47,8 @@ const args = Object.fromEntries(
 );
 const harness = args.harness;
 const base = args.base;
-if (!harness && !base) {
+const merge = args.reports; // --reports a/report.json,b/report.json: only write the Markdown list
+if (!harness && !base && !merge) {
   console.error("Give --harness <file:///index.html> or --base <http://host>");
   process.exit(2);
 }
@@ -69,8 +70,17 @@ function scan({ touch }) {
     const v = h.getAttribute("data-layout-ok");
     return !v || v === "1" || v.split(/[ ,]+/).includes(kind);
   };
+  // Screen-reader-only text under any class name: a 1px box that clips.
+  const srOnly = (el) => {
+    for (let e = el, i = 0; e && e !== document.body && i < 2; e = e.parentElement, i++) {
+      const r = e.getBoundingClientRect();
+      if (r.width <= 2 && r.height <= 2 && /hidden|clip/.test(getComputedStyle(e).overflow)) return true;
+    }
+    return false;
+  };
   const hidden = (el) =>
     !!el.closest("[aria-hidden=true], [inert], .sr-only, [hidden], template, noscript") ||
+    srOnly(el) ||
     (el.checkVisibility && !el.checkVisibility({ opacityProperty: true, visibilityProperty: true }));
   const name = (el) => {
     const parts = [];
@@ -216,7 +226,16 @@ function scan({ touch }) {
     let pinned = false;
     for (let e = el; e; e = e.parentElement) { const p = getComputedStyle(e).position; if (p === "fixed" || p === "sticky") { pinned = true; break; } }
     if (pinned) continue;
-    for (const r of rects) items.push({ el, r });
+    // Text an ellipsis or overflow-hidden box cuts is not on screen past the box edge.
+    const bx = block(el);
+    const bs = getComputedStyle(bx);
+    const cut = /hidden|clip/.test(bs.overflowX) || /hidden|clip/.test(bs.overflowY) ? bx.getBoundingClientRect() : null;
+    for (const r0 of rects) {
+      // Lines a line-clamp hides sit below the box: they are not on screen either.
+      const r = cut ? { left: Math.max(r0.left, cut.left), right: Math.min(r0.right, cut.right), top: Math.max(r0.top, cut.top), bottom: Math.min(r0.bottom, cut.bottom) } : { left: r0.left, right: r0.right, top: r0.top, bottom: r0.bottom };
+      r.height = r.bottom - r.top;
+      if (r.right - r.left > 0.5 && r.height > 0.5) items.push({ el, r });
+    }
   }
   const CELL = 120;
   const grid = new Map();
@@ -275,27 +294,37 @@ function scan({ touch }) {
   return { found, sw, vw };
 }
 
-const browser = await chromium.launch(chrome ? { executablePath: chrome } : {});
-const report = [];
-for (const theme of themes) {
+let browser = merge ? null : await chromium.launch(chrome ? { executablePath: chrome } : {});
+const report = merge ? merge.split(",").flatMap((f) => JSON.parse(fs.readFileSync(f, "utf8"))) : [];
+for (const theme of merge ? [] : themes) {
   for (const w of widths) {
     const touch = w < 1024;
-    const ctx = await browser.newContext({
+    const ctxOpts = {
       viewport: { width: w, height: w < 768 ? 800 : 900 },
       deviceScaleFactor: 1,
       hasTouch: touch,
       isMobile: w < 768,
       reducedMotion: "reduce",
       colorScheme: theme === "dark" ? "dark" : "light",
-    });
+    };
+    let ctx = await browser.newContext(ctxOpts);
     if (theme === "dark") await ctx.addInitScript(() => { try { localStorage.setItem("theme", "dark"); } catch {} });
-    const page = await ctx.newPage();
     for (const p of pages) {
+      // A fresh tab per screen: one heavy screen cannot take the rest down with it.
+      let page;
+      try {
+        page = await ctx.newPage();
+      } catch {
+        // The browser went away (out of memory): start a new one and carry on.
+        browser = await chromium.launch(chrome ? { executablePath: chrome } : {});
+        ctx = await browser.newContext(ctxOpts);
+        if (theme === "dark") await ctx.addInitScript(() => { try { localStorage.setItem("theme", "dark"); } catch {} });
+        page = await ctx.newPage();
+      }
       const url = harness
         ? `${harness}?page=${encodeURIComponent(p.split("?")[0])}${p.includes("?") ? "&" + p.split("?")[1] : ""}${theme === "dark" ? "&theme=dark" : ""}`
         : new URL(p, base).toString();
       const errors = [];
-      page.removeAllListeners("pageerror");
       page.on("pageerror", (e) => errors.push(e.message));
       try {
         await page.goto(url, { waitUntil: "load", timeout: 120000 });
@@ -305,13 +334,15 @@ for (const theme of themes) {
         if (theme === "dark" && !harness) await page.evaluate(() => document.documentElement.classList.add("dark"));
       } catch (e) {
         report.push({ page: p, width: w, theme, error: String(e.message).slice(0, 200), defects: [] });
-        console.log(p, w, theme, "LOAD ERROR");
+        console.log(p, w, theme, "LOAD ERROR", String(e.message).slice(0, 80));
+        await page.close().catch(() => {});
         continue;
       }
       const crash = errors.includes("never finished rendering") ? `never finished rendering: ${errors[0]}` : await page.evaluate(() => (document.body.innerText.startsWith("ERR ") ? document.body.innerText.slice(0, 200) : null));
       if (crash) {
         report.push({ page: p, width: w, theme, error: crash, defects: [] });
         console.log(p, w, theme, "RENDER ERROR", crash.slice(0, 80));
+        await page.close().catch(() => {});
         continue;
       }
       const { found } = await page.evaluate(scan, { touch });
@@ -324,12 +355,13 @@ for (const theme of themes) {
       }
       report.push({ page: p, width: w, theme, shot, errors: errors.slice(0, 3), defects: found });
       console.log(`${p} ${w} ${theme}: ${found.length}`);
+      await page.close().catch(() => {});
     }
-    await ctx.close();
+    await ctx.close().catch(() => {});
   }
 }
-await browser.close();
-fs.writeFileSync(path.join(out, "report.json"), JSON.stringify(report, null, 1));
+await browser?.close();
+if (!merge) fs.writeFileSync(path.join(out, "report.json"), JSON.stringify(report, null, 1));
 
 if (args.md) {
   const kinds = ["hscroll", "overflow", "clip", "overlap", "truncate", "tiny", "measure", "tap"];
@@ -339,7 +371,9 @@ if (args.md) {
     per[r.page] ??= Object.fromEntries(kinds.map((k) => [k, 0]));
     for (const d of r.defects) per[r.page][d.kind]++;
   }
-  let md = `# Layout defects\n\nRun: ${new Date().toISOString().slice(0, 16)} · widths ${widths.join(", ")} · themes ${themes.join(", ")} · ${pages.length} screens · **${total} defects**\n\n`;
+  const uniq = (k) => [...new Set(report.map((r) => r[k]))];
+  const rendered = uniq("page").filter((p) => report.some((r) => r.page === p && !r.error));
+  let md = `# Layout defects\n\nRun: ${new Date().toISOString().slice(0, 16)} · widths ${uniq("width").sort((a, b) => a - b).join(", ")} · themes ${uniq("theme").join(", ")} · ${rendered.length} screens · **${total} defects**\n\n`;
   md += `Detector: \`e2e/layout-defects.mjs\`. Each row is one element at one width and theme. Screenshots outline every flagged element in red.\n\n`;
   md += `## Counts per screen\n\n| screen | ${kinds.join(" | ")} | total |\n|---|${kinds.map(() => "--:").join("|")}|--:|\n`;
   for (const [p, c] of Object.entries(per)) md += `| ${p} | ${kinds.map((k) => c[k] || "").join(" | ")} | ${Object.values(c).reduce((a, b) => a + b, 0)} |\n`;
