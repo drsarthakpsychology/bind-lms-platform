@@ -1,6 +1,6 @@
 import { PersistQueryClientProvider } from "@tanstack/react-query-persist-client";
 import { useFonts } from "expo-font";
-import { Stack, router, useSegments } from "expo-router";
+import { Stack, router, useSegments, type ErrorBoundaryProps } from "expo-router";
 import * as ScreenCapture from "expo-screen-capture";
 import * as SplashScreen from "expo-splash-screen";
 import { StatusBar } from "expo-status-bar";
@@ -9,9 +9,10 @@ import { AppState, Platform, View } from "react-native";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 
-import { persistOptions, queryClient, useConfig } from "@/api/queries";
+import { persistOptions, persister, queryClient, useConfig } from "@/api/queries";
 import { session, useSession } from "@/auth";
 import { ToastHost } from "@/ds";
+import { CrashBoundary, CrashScreen, describe, installCrashHandlers } from "@/lib/crash";
 import { applyDevSession, applyMockFromUrl } from "@/lib/dev";
 import { holdPortrait } from "@/lib/orientation";
 import { loadSettings, settingsStore } from "@/lib/settings";
@@ -20,6 +21,7 @@ import { usePushRouting } from "@/push";
 import { LockScreen, OtherDeviceScreen, PausedScreen, SetPinScreen, UpdateScreen } from "@/screens/auth/gates";
 import { ThemeProvider, fonts, useTheme } from "@/theme";
 
+installCrashHandlers();
 void SplashScreen.preventAutoHideAsync().catch(() => undefined);
 applyMockFromUrl();
 
@@ -47,12 +49,23 @@ function useBoot(): boolean {
   const settingsReady = settingsStore.use((s) => s.loaded);
 
   React.useEffect(() => {
-    void loadSettings();
-    void session.boot().then(() => applyDevSession(session));
+    void loadSettings().catch(() => undefined);
+    // boot() reads the keystore; if that fails the phone starts signed out instead of hanging on the splash.
+    void session
+      .boot()
+      .catch(() => session.store.set({ phase: "visitor" }))
+      .then(() => applyDevSession(session))
+      .catch(() => undefined);
     void holdPortrait();
     // Android: FLAG_SECURE on the whole app (no screenshots, no screen recording,
     // blank in the recent-apps list). iOS: recordings come out blank.
-    if (Platform.OS !== "web") void ScreenCapture.preventScreenCaptureAsync("app").catch(() => undefined);
+    if (Platform.OS !== "web") {
+      try {
+        void ScreenCapture.preventScreenCaptureAsync("app").catch(() => undefined);
+      } catch {
+        /* Screen-capture blocking is optional: a failure only turns it off. */
+      }
+    }
   }, []);
 
   // Lock after five minutes in the background.
@@ -79,17 +92,25 @@ function useGuard(ready: boolean): void {
   const top = segments[0] as string | undefined;
   React.useEffect(() => {
     if (!ready || top === undefined) return;
+    // A redirect must never throw out of an effect (that closes a release build).
+    const go = (href: string) => {
+      try {
+        router.replace(href);
+      } catch (e) {
+        console.warn("Redirect failed:", e);
+      }
+    };
     if (phase === "visitor") {
-      if (!PUBLIC.has(top)) router.replace("/welcome");
+      if (!PUBLIC.has(top)) go("/welcome");
       return;
     }
     if (top === "(visitor)" && phase === "ready") {
-      router.replace(homeHref(me));
+      go(homeHref(me));
       return;
     }
     const tabGroup = top === "(student)" || top === "(lecture)" || top === "(admin)";
-    if (tabGroup && top !== groupFor(me)) router.replace(homeHref(me));
-    else if (ADMIN_ONLY.has(top) && groupFor(me) !== "(admin)") router.replace(homeHref(me));
+    if (tabGroup && top !== groupFor(me)) go(homeHref(me));
+    else if (ADMIN_ONLY.has(top) && groupFor(me) !== "(admin)") go(homeHref(me));
   }, [ready, phase, me, top]);
 }
 
@@ -105,7 +126,7 @@ function Shell() {
 
   // The server may change the lock time without an app release.
   React.useEffect(() => {
-    const secs = cfg.data?.security.lockAfterBackgroundSeconds;
+    const secs = cfg.data?.security?.lockAfterBackgroundSeconds;
     if (secs) session.setLockAfter(secs * 1000);
   }, [cfg.data]);
 
@@ -190,15 +211,44 @@ function Shell() {
   );
 }
 
+/** Try again on the error page: drop the saved server answers (one of them may be what broke) and start from the front door. */
+function resetAfterCrash(): void {
+  queryClient.clear();
+  void persister.removeClient();
+  void SplashScreen.hideAsync().catch(() => undefined);
+  setTimeout(() => {
+    try {
+      router.replace("/");
+    } catch {
+      /* the navigator is not ready yet; it opens on the front door anyway */
+    }
+  }, 0);
+}
+
+/** Expo Router's own net for an error in this layout itself: the same calm page. */
+export function ErrorBoundary({ error, retry }: ErrorBoundaryProps) {
+  return (
+    <CrashScreen
+      crash={describe(error, "render")}
+      onRetry={() => {
+        resetAfterCrash();
+        void retry();
+      }}
+    />
+  );
+}
+
 export default function RootLayout() {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <SafeAreaProvider>
-        <PersistQueryClientProvider client={queryClient} persistOptions={persistOptions}>
-          <ThemeProvider>
-            <Shell />
-          </ThemeProvider>
-        </PersistQueryClientProvider>
+        <CrashBoundary onReset={resetAfterCrash}>
+          <PersistQueryClientProvider client={queryClient} persistOptions={persistOptions}>
+            <ThemeProvider>
+              <Shell />
+            </ThemeProvider>
+          </PersistQueryClientProvider>
+        </CrashBoundary>
       </SafeAreaProvider>
     </GestureHandlerRootView>
   );
