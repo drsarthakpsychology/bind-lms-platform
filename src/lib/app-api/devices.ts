@@ -2,7 +2,7 @@ import "server-only";
 import { createAdminClient } from "@/lib/supabase/server";
 import { APP_RULES } from "./config";
 import type { DeviceInfo, DeviceState } from "./contract";
-import { countRecentChanges, DEVICE_ID_RE, isExempt, nextChangeAt, type ChangeRow } from "./device-rules";
+import { countRecentChanges, DEVICE_ID_RE, isExempt, isReviewAccount, nextChangeAt, type ChangeRow } from "./device-rules";
 
 /**
  * The app's phones (table app_devices) and the one-phone rule.
@@ -64,8 +64,8 @@ async function loadChanges(db: Admin, userId: string, now: number): Promise<Chan
   return (data ?? []) as ChangeRow[];
 }
 
-function stateFrom(rows: DeviceRow[], deviceId: string | null, role: string, changes: ChangeRow[], now: number): DeviceState {
-  const exempt = isExempt(role);
+function stateFrom(rows: DeviceRow[], deviceId: string | null, role: string, changes: ChangeRow[], now: number, email?: string | null): DeviceState {
+  const exempt = isExempt(role) || isReviewAccount(email);
   const mine = rows.find((r) => r.device_id === deviceId && r.active) ?? null;
   const used = countRecentChanges(changes, now);
   return {
@@ -85,9 +85,10 @@ export type RegisterResult = { ok: true; state: DeviceState } | { ok: false; cod
  * Make this phone the student's active phone (called at sign-in).
  * The same phone again: free. The first phone ever: free. Another phone: one
  * of the allowed changes; over the allowance it is refused. Admins: any number
- * of phones, none signed out.
+ * of phones, none signed out. The store reviewer's account (APP_REVIEW_EMAILS)
+ * has no change limit but is still signed out of the old phone.
  */
-export async function registerDevice(input: { userId: string; role: string; device: DeviceInfo; now?: number }): Promise<RegisterResult> {
+export async function registerDevice(input: { userId: string; role: string; email?: string | null; device: DeviceInfo; now?: number }): Promise<RegisterResult> {
   const db = admin();
   if (!db) return { ok: true, state: UNENFORCED };
   const now = input.now ?? Date.now();
@@ -103,7 +104,7 @@ export async function registerDevice(input: { userId: string; role: string; devi
   let changes = await loadChanges(db, input.userId, now);
 
   if (isChange) {
-    if (countRecentChanges(changes, now) >= APP_RULES.deviceChangesPerMonth) {
+    if (!isReviewAccount(input.email) && countRecentChanges(changes, now) >= APP_RULES.deviceChangesPerMonth) {
       return { ok: false, code: "device_limit", nextChangeAt: nextChangeAt(changes, now) };
     }
     const { error } = await db.from("app_device_changes").insert({ user_id: input.userId, kind: "switch", from_device_id: last.device_id, to_device_id: d.id });
@@ -140,7 +141,7 @@ export async function registerDevice(input: { userId: string; role: string; devi
   }
   forget(input.userId);
   const merged = [data as DeviceRow, ...rows.filter((r) => r.device_id !== d.id).map((r) => (exempt ? r : { ...r, active: false }))];
-  return { ok: true, state: stateFrom(merged, d.id, input.role, changes, now) };
+  return { ok: true, state: stateFrom(merged, d.id, input.role, changes, now, input.email) };
 }
 
 // Positive checks are remembered for a short while per server, so a busy
@@ -220,13 +221,13 @@ export async function checkDevice(input: { userId: string; role: string; deviceI
   return "ok";
 }
 
-export async function deviceState(input: { userId: string; role: string; deviceId: string | null; now?: number }): Promise<DeviceState> {
+export async function deviceState(input: { userId: string; role: string; email?: string | null; deviceId: string | null; now?: number }): Promise<DeviceState> {
   const db = admin();
   if (!db) return UNENFORCED;
   const now = input.now ?? Date.now();
   const { rows, ready } = await loadRows(db, input.userId);
   if (!ready) return UNENFORCED;
-  return stateFrom(rows, input.deviceId, input.role, await loadChanges(db, input.userId, now), now);
+  return stateFrom(rows, input.deviceId, input.role, await loadChanges(db, input.userId, now), now, input.email);
 }
 
 /** Rename the phone, set or clear its push token. */

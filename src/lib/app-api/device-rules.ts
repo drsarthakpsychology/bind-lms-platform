@@ -16,6 +16,22 @@ export function isExempt(role: string): boolean {
   return APP_RULES.deviceExemptRoles.includes(role);
 }
 
+/**
+ * The store reviewer's account (Google Play, later Apple): set on the server
+ * as APP_REVIEW_EMAILS, a comma list of emails. Those accounts may sign in on
+ * any number of phones (reviewers use several test devices); one phone at a
+ * time still applies. Not set, or empty: nobody is exempt.
+ */
+export function isReviewAccount(email: string | null | undefined, env: string | undefined = process.env.APP_REVIEW_EMAILS): boolean {
+  if (!email || !env) return false;
+  const want = email.trim().toLowerCase();
+  if (!want) return false;
+  return env
+    .split(",")
+    .map((e) => e.trim().toLowerCase())
+    .some((e) => e.length > 0 && e === want);
+}
+
 function counted(changes: readonly ChangeRow[], now: number): number[] {
   const windowStart = now - APP_RULES.deviceWindowDays * 86_400_000;
   let resetAt = -Infinity;

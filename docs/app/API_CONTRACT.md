@@ -118,7 +118,7 @@ Sign-in notes:
 The one-phone rule:
 
 - One active phone per student. Signing in on a new phone makes it the active one; the old phone's next request answers 401 `device_replaced`.
-- A student may change phone 2 times in any 30 days. The first phone ever is free. After that, sign-in on another phone answers 403 `device_limit` until an admin allows it (`POST /admin/devices/allow-change`) or the oldest change is 30 days old.
+- A student may change phone 2 times in any 30 days. The first phone ever is free. After that, sign-in on another phone answers 403 `device_limit` until an admin allows it (`POST /admin/devices/allow-change`) or the oldest change is 30 days old. Admins are exempt, and so are the emails in the server setting `APP_REVIEW_EMAILS` (comma list, for the store reviewers; not set means nobody): they get no change limit, but one phone at a time still applies.
 - Admins and view admins are exempt from both rules.
 - Before the owner runs `supabase/migrations_pending/2026_11_15_app_devices.sql`, nothing is enforced: `DeviceState.enforced` is `false`, everything else works.
 
