@@ -2,6 +2,7 @@ import { redirect } from "next/navigation";
 import { requireSuperAdmin } from "@/lib/auth/guards";
 import { listAdmins } from "./actions";
 import { ManagementClient } from "./management-client";
+import { AdminsV2 } from "./admins-v2";
 import { readFlags } from "@/lib/flags";
 import { uiV2For } from "@/lib/ui/v2";
 import { AdminPage } from "../_v2/kit";
@@ -22,8 +23,8 @@ export default async function AdminManagementPage() {
 
   if (uiV2For(await readFlags(), me.role)) {
     return (
-      <AdminPage width="default" title="Admins" lead={`Super Admin only. Only ${me.email} can add, change or remove administrators.`}>
-        <ManagementClient admins={admins} me={{ id: me.id, email: me.email }} />
+      <AdminPage title="Admins" lead="Who can open the admin side, and what they can do. Only the Super Admin sees this page.">
+        <AdminsV2 admins={admins} me={{ id: me.id, email: me.email }} />
       </AdminPage>
     );
   }

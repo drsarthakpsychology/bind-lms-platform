@@ -1,9 +1,11 @@
 import { redirect } from "next/navigation";
-import { requireAdmin } from "@/lib/auth/guards";
+import { isSuperAdmin, requireAdmin } from "@/lib/auth/guards";
 import Link from "next/link";
 import { PageHeader } from "@/components/design-system/page-header";
 import { createAdminClient } from "@/lib/supabase/server";
-import { loadMaster } from "@/lib/auth/master";
+import { loadMaster, loadSupportKeys } from "@/lib/auth/master";
+import { sortKeys, toView } from "@/lib/auth/support-keys";
+import { SupportKeys } from "./support-keys";
 import { MasterPasswordCard } from "./master-password";
 import { readFlags } from "@/lib/flags";
 import { uiV2For } from "@/lib/ui/v2";
@@ -25,9 +27,16 @@ export default async function AdminToolsPage() {
   const uses = (events ?? []).map((e) => ({ email: String(e.email), at: String(e.created_at) }));
 
   if (uiV2For(await readFlags(), me.role)) {
+    const supportKeys = await loadSupportKeys(admin);
     return (
-      <AdminPage width="default" title="Support key" lead="A key you set that lets you sign in as a student to help them. It only works for student accounts, and every use is recorded.">
-        <MasterPasswordCard state={{ ready, set: Boolean(setting), enabled: Boolean(setting?.enabled), updatedAt: setting?.updatedAt ?? null }} uses={uses} />
+      <AdminPage title="Support keys" lead="Keys that let a helper sign in as a student to help them. They only work for student accounts, and every use is recorded.">
+        <SupportKeys
+          keys={sortKeys(supportKeys.keys.map(toView))}
+          legacy={setting?.enabled ? { updatedAt: setting.updatedAt ?? null } : null}
+          uses={uses}
+          ready={ready && supportKeys.ready}
+          canWrite={isSuperAdmin(me)}
+        />
         <p className="type-small text-muted-foreground">
           Bulk student import is in <Link href="/admin/students/add?way=file" className={link}>Students, Add students, Upload a file</Link>. The session calendar is in each cohort&apos;s Settings tab.
         </p>
