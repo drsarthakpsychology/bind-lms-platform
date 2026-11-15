@@ -2,11 +2,11 @@ import { router, useLocalSearchParams } from "expo-router";
 import * as React from "react";
 import { View } from "react-native";
 
-import { Button, Chips, EmptyState, Loaded, Row, RowList, RowsSkeleton, Screen } from "@/ds";
+import { Button, Chips, EmptyState, Row, RowList, RowsSkeleton, Screen } from "@/ds";
 import { space } from "@/theme";
 import { useActivity, useBehind, useCohorts, useRefreshAdmin } from "../api";
 import { ago, day, pct } from "../format";
-import { Block, Dot, Figures, Meter, Quiet, SmallButton, Status } from "../kit";
+import { Block, Dot, Figures, Loaded, Meter, Quiet, SmallButton, Status } from "../kit";
 import { AdminTop, openCompose, openStudent } from "../nav";
 import { useAdminRole } from "../role";
 import { ScrollTabs } from "./student";
@@ -36,7 +36,7 @@ function Live() {
             {d.live.length ? (
               <RowList>
                 {d.live.map((l) => (
-                  <Row key={l.userId} testID={`live-${l.userId}`} icon={<Dot tone={l.watching ? "ok" : "info"} />} title={l.name ?? "A student"} meta={l.where} trailing={ago(l.since).replace(" ago", "")} onPress={() => openStudent(l.userId, "activity")} />
+                  <Row key={l.userId} testID={`live-${l.userId}`} icon={<Dot tone={l.watching ? "ok" : "info"} />} title={l.name || "A student"} meta={l.where ?? l.meta ?? undefined} trailing={l.since ? ago(l.since).replace(" ago", "") : undefined} onPress={() => openStudent(l.userId, "activity")} />
                 ))}
               </RowList>
             ) : (

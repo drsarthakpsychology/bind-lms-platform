@@ -1,17 +1,18 @@
 /**
  * The admin part of the server contract, copied word for word from the
- * server's src/lib/app-api/contract.ts (branch agent/appapi2, commit 9fea713d,
- * section "Admin"). The app's own src/api/contract.ts is an older copy that
- * does not have this section yet; when it is copied again from the server,
- * delete this file and import these types from "@/api/contract" instead.
+ * server's src/lib/app-api/contract-practise-admin.ts (branch agent/appapi2,
+ * commit 9092ba17, section "Admin"). Do not edit the copied part by hand:
+ * copy it again when the server changes. Below it are the older names the
+ * screens still use, and the shapes of the website loaders the server passes
+ * through as they are.
+ *
+ * Every field can still arrive missing or null from an older server, so the
+ * screens read these through the normalisers in ./safe.ts, never raw.
  */
-import type { Page, Scope } from "@/api/contract";
+import type { AppTarget, Page, Scope } from "@/api/contract";
 
-/**
- * POST /play/:game/:action { args } answers this. `kind` is "<game>.<action>"
- * and `data` is the website action's own answer for that kind.
- */
-export type PlayResult<T = unknown> = { kind: string; v: 1; data: T };
+// ---------------------------------------------------------------- copied part
+
 
 export type AttentionFlag = "login" | "no-mobile" | "quiet" | "never-seen" | "behind" | "email-failing" | "no-details";
 
@@ -25,7 +26,6 @@ export type AdminStudentRow = {
   scope: Scope;
   blocked: boolean;
   expiresAt: string | null;
-  /** "locked" | "expired" | "active" | the invite states of src/lib/people/account-status.ts */
   account: string;
   presence: "now" | "today" | "week" | "quiet" | "never";
   lastSeen: string | null;
@@ -36,38 +36,326 @@ export type AdminStudentRow = {
   lecturesAvailable: number;
   xp: number;
   flags: AttentionFlag[];
+  /** The app's mock fields. */
+  status: "active" | "paused" | "ended";
+  progressPct: number;
+  lecturesOnly: boolean;
+  cohort: string | null;
 };
+
+/** A thing to do on admin Home, as the website's Home lists them. */
+export type AdminTodo = { id: string; label: string; count: number; detail: string; target: AppTarget; urgent: boolean };
+/** A student who needs a look (the app's mock AdminAttention, plus the flags). */
+export type AdminAttention = { id: string; studentId: string; name: string; reason: string; since: string | null; flags: AttentionFlag[] };
 
 /** GET /admin/home */
-export type AdminHome = {
+export type AdminHomeData = {
   v: 1;
-  counts: { students: number; activeThisWeek: number; onNow: number; needsLook: number; locked: number; openComplaints: number };
-  /** Students that need a look, most flags first (at most 20). */
+  /** "Mon, 16 Nov" in India time. */
+  dateLine: string;
+  /** Things to do, only those with a count, in the website's order. */
+  todo: AdminTodo[];
+  totalToDo: number;
+  /** Students that need a look, most flags first (at most 20), as table rows. */
   needsLook: AdminStudentRow[];
-  live: { userId: string; name: string | null; where: string; lessonId: string | null; since: string; watching: boolean }[];
+  /** The same students as the app's mock attention rows (reason in words). */
+  attention: AdminAttention[];
+  live: { userId: string; name: string; meta: string; where: string | null; lessonId: string | null; since: string | null; watching: boolean }[];
+  cohorts: { id: string; name: string; members: number; week: number; behind: number; pct: number }[];
+  counts: { students: number; activeThisWeek: number; onNow: number; neverIn: number; needsLook: number; locked: number; openComplaints: number; dbPct: number };
+  /** The app's mock line. */
+  today: { active: number; total: number; lecturesWatched: number | null; doubtsOpen: number; submissionsToGrade: number };
+  canWrite: boolean;
 };
 
-/** GET /admin/students?search=&cohort=&flag= (paged) */
+/** GET /admin/students?search=&q=&cohort=&flag= (paged, default 50, max 200) */
 export type AdminStudentList = Page<AdminStudentRow> & { total: number; cohorts: { id: string; name: string }[] };
 
-/**
- * GET /admin/students/:id. `detail` is the website's loadStudentDetail answer
- * (src/lib/analytics/activity.ts): visits, lectures and study for 30 days.
- */
-export type AdminStudentProfile = { row: AdminStudentRow | null; detail: Record<string, unknown> | null };
+/** GET /admin/students/:id */
+export type AdminStudent = AdminStudentRow & {
+  /** The first version's shape: the same row, and `detail` below. */
+  row: AdminStudentRow;
+  /** The phone signed in to the app, and the changes used this month. */
+  phone: { name: string; platform: string; changesUsed: number; limit: number; nextChangeAt: string | null } | null;
+  lectures: { done: number; total: number };
+  /** The website's loadStudentDetail answer (visits, lectures and study for 30 days). */
+  detail: Record<string, unknown> | null;
+  recent: { at: string; what: string }[];
+  canWrite: boolean;
+};
 
-/** POST /admin/students/:id/lock */
+/** POST /admin/students/:id/lock, /unlock */
 export type LockBody = { reason?: string };
 export type LockResult = { blocked: boolean };
+/** POST /admin/students/:id/login-link : emails a fresh login link (the website's sendLoginLink). */
+export type LoginLinkResult = { sent: true };
 
-/** POST /admin/messages: a bell notice (and push) to students, optional email. */
-export type SendMessageBody = { userIds: string[]; title: string; /** Plain text; paragraphs split by blank lines. */ text: string; alsoEmail?: boolean };
-export type SendMessageResult = { created: number; emailed: number; emailFailed: number; batchId: string | null };
-/** GET /admin/messages: recent sends with how many opened them. */
-export type MessageBatches = { batches: { batchId: string; title: string; sentAt: string; total: number; opened: number; type: string }[]; ready: boolean };
+/**
+ * POST /admin/messages. The first version's body (`{ userIds, title, text, alsoEmail? }`)
+ * is still accepted and is the same as `{ to: "students", userIds, title, body: text }`.
+ */
+export type AdminSendBody = {
+  to: "everyone" | "cohort" | "course" | "student" | "students";
+  /** The cohort, course or student id. */
+  toId?: string;
+  /** For "students": the picked student ids. */
+  userIds?: string[];
+  title: string;
+  /** Plain text; paragraphs split by blank lines. */
+  body: string;
+  alsoEmail?: boolean;
+};
+export type AdminSendResult = { sent: number; created: number; emailed: number; emailFailed: number; batchId: string | null };
+/** GET /admin/messages : recent sends with how many opened them, and who can be messaged. */
+export type AdminMessages = {
+  v: 1;
+  batches: { batchId: string; title: string; sentAt: string; total: number; opened: number; type: string }[];
+  ready: boolean;
+  /** The app's mock list (one row per recent send). */
+  items: { id: string; to: string; title: string; preview: string; at: string; unread: boolean }[];
+  cohorts: { id: string; name: string; status: string; members: number }[];
+  courses: { id: string; title: string; members: number }[];
+  students: number;
+};
 
+/** GET /admin/inbox : everything waiting on a reply, oldest first (the website's loadInbox). */
+export type AdminInbox = {
+  v: 1;
+  ready: boolean;
+  threads: { id: string; reason: "concern" | "unanswered" | "student-replied"; [k: string]: unknown }[];
+  emails: { id: string; fromEmail: string; fromName: string | null; subject: string; body: string; receivedAt: string }[];
+  canWrite: boolean;
+};
+/** POST /admin/doubts/:id/reply and POST /admin/inbox/emails/:id/reply */
+export type AdminReplyBody = { text: string };
+export type AdminReplyResult = { sent: true };
+/** POST /admin/doubts/:id/draft : an AI draft for the reply box (never posted). */
+export type AdminDraftResult = { text: string };
+
+/** GET /admin/activity?view=live|behind|cohorts|all */
+export type AdminActivity = {
+  v: 1;
+  /** The first version's shape: kind "admin.activity", data = loadActivity()'s answer plus `live` (filled for view "all"). */
+  kind: "admin.activity";
+  data: Record<string, unknown> | null;
+  view: "live" | "behind" | "cohorts" | "all";
+  live: AdminHomeData["live"];
+  /** Falling behind: active accounts under the expected lectures, quietest first. */
+  behind: AdminStudentRow[];
+  cohorts: AdminHomeData["cohorts"];
+  /** The website's loadActivity rows (per student minutes, places and lectures over 30 days), test accounts left out. */
+  rows: Record<string, unknown>[];
+  /** The app's mock feed. */
+  items: { id: string; at: string; who: string; what: string; kind: "lecture" | "study" | "doubt" | "submission" | "sign_in" }[];
+};
+
+/** GET /admin/submissions?status=pending|graded&course=&assignment= */
+export type AdminSubmission = {
+  id: string;
+  studentId: string;
+  studentEmail: string | null;
+  assignmentId: string;
+  assignmentTitle: string;
+  lessonTitle: string;
+  courseId: string | null;
+  courseTitle: string;
+  status: string;
+  submittedAt: string;
+  late: boolean;
+  text: string | null;
+  hasAudio: boolean;
+  files: { id: string; name: string; format: string | null }[];
+  score: number | null;
+  feedback: string | null;
+  note: string | null;
+};
+export type AdminSubmissions = Page<AdminSubmission> & { v: 1; pending: number; courses: { id: string; title: string }[]; assignments: { id: string; title: string; courseId: string | null }[]; canWrite: boolean };
+/** POST /admin/submissions/:id/grade */
+export type GradeBody = { feedback: string; score: number | null };
+/** POST /admin/submissions/:id/approve, /grade */
+export type ReviewResult = { status: "approved" | "returned" };
+/** GET /admin/submissions/:id/files/:fileId and /audio : a 15 minute address. */
+export type AdminFileLink = { url: string; expiresInSeconds: number };
+
+/** GET /admin/certificates/studio : what the studio needs to start. */
+export type StudioSetup = {
+  v: 1;
+  canWrite: boolean;
+  ready: boolean;
+  today: string;
+  kinds: { id: string; label: string; [k: string]: unknown }[];
+  students: { id: string; name: string; email: string; roll: string | null; cohortIds: string[] }[];
+  cohorts: { id: string; name: string; count: number }[];
+  courses: { id: string; title: string }[];
+  signatures: { id: string; label: string; url: string | null; [k: string]: unknown }[];
+  email: { configured: boolean; remaining: number; limit: number };
+};
+/** The studio form, the same as the website's StudioIssueInput. */
+export type StudioIssueBody = {
+  kind: string;
+  title: string;
+  heading?: string;
+  lead?: string;
+  connector?: string;
+  citation?: string;
+  courseId?: string | null;
+  courseLabel?: string;
+  moduleLabel?: string;
+  issuedOn: string;
+  expiresOn?: string | null;
+  signatories: { name: string; role: string; signatureFrom?: string | null }[];
+  recipients: { userId: string; name: string }[];
+  cohortId?: string | null;
+  email: boolean;
+  /** Re-issue: the certificate this one corrects. */
+  replaces?: string | null;
+};
+/**
+ * POST /admin/certificates/preview { ...StudioIssueBody, showing? } : the
+ * certificate as the student will see it, as drawing operations in a
+ * `width` by `height` box (rect, line, path, stroke, image, text), the same
+ * layout the website draws and prints. Images are keys into `images` (signed
+ * addresses, or null).
+ */
+export type StudioPreview = { v: 1; width: number; height: number; ops: Record<string, unknown>[]; images: Record<string, string | null>; problems: string[] };
+export type StudioIssueResult = { issued: { credentialId: string; userId: string; name: string }[]; skipped: Record<string, unknown>[]; batchId: string | null; delivery: Record<string, unknown> | null };
+/**
+ * GET /admin/certificates/issued?q=&type=&status=&cohort=&student=&limit&cursor
+ * Certificates, Issued: every certificate AND every badge in one list, newest
+ * first (the website's Issued page). `type` is certificate, badge, completion,
+ * provisional, recognition or custom; `status` valid, provisional, expired,
+ * revoked or draft.
+ */
+export type IssuedStatusId = "valid" | "provisional" | "expired" | "revoked" | "draft";
+export type IssuedCertificate = {
+  credentialId: string;
+  userId: string | null;
+  type: "certificate" | "badge";
+  /** completion, provisional, recognition, custom, or "badge". */
+  kind: string;
+  /** "Course completion", "Badge" ... */
+  typeLabel: string;
+  name: string;
+  title: string;
+  /** The status the list shows. */
+  status: IssuedStatusId;
+  /** In words: "Valid", "Provisional until 31 Dec 2026", "Revoked on 2 Nov 2026". */
+  statusLine: string;
+  /** The stored status (draft, approved, issued, revoked). */
+  recordStatus: string;
+  issuedAt: string | null;
+  /** "15 Nov 2026" or "Not issued". */
+  issuedDay: string;
+  expiresAt: string | null;
+  revokedAt: string | null;
+  revokeReason: string | null;
+  email: string | null;
+  roll: string | null;
+  /** Certificate email: queued, sent, failed ... or null. */
+  emailStatus: string | null;
+  cohortIds: string[];
+  /** Made in the studio, so "Correct and reissue" works (POST /admin/certificates/issue with replaces). */
+  canCorrect: boolean;
+  /** A draft course certificate: POST /admin/certificates/:id/issue-draft. */
+  isDraft: boolean;
+  /** A PDF exists: GET /admin/certificates/:id/pdf. */
+  hasPdf: boolean;
+  /** The public verify page. */
+  verifyUrl: string;
+};
+export type IssuedCertificates = Page<IssuedCertificate> & {
+  v: 1;
+  /** How many match the filters. */
+  total: number;
+  /** How many of each type, before the type filter (for the chips). */
+  counts: Record<"certificate" | "badge" | "completion" | "provisional" | "recognition" | "custom", number>;
+  types: { id: string; label: string }[];
+  statuses: { id: IssuedStatusId; label: string }[];
+  cohorts: { id: string; name: string }[];
+  /** Certificate emails waiting for tomorrow's allowance. */
+  waiting: number;
+  emailOn: boolean;
+  canWrite: boolean;
+  /** When ?student= names a person: their name for the heading. */
+  person: { id: string; name: string } | null;
+};
+/** POST /admin/certificates/:id/issue-draft : a course certificate draft is issued (its rule is checked again). */
+export type IssueDraftResult = { issued: true };
+/** POST /admin/certificates/send-waiting : waiting certificate emails, up to today's allowance. */
+export type SendWaitingResult = { sent: number; failed: number; left: number };
+
+/** GET /admin/badges : the badges that can be given by hand. */
+export type AdminBadge = { id: string; title: string; description: string | null; icon: string | null; tone: string; enabled: boolean; issuedCount: number; automatic: boolean };
+export type AdminBadges = { v: 1; badges: AdminBadge[]; canWrite: boolean; maxRecipients: number };
+/** POST /admin/badges/:id/award { userIds } : already-holders are skipped. */
+export type AwardBadgeBody = { userIds: string[] };
+export type AwardBadgeResult = { awarded: { userId: string; name: string; credentialId: string }[]; skipped: { name: string; reason: string }[] };
+/** POST /admin/badges/award-all : every badge earned so far, given now. */
+export type AwardAllResult = { awarded: number; skipped: number };
+
+/* Forms: email the people who filled a form ------------------------------ */
+
+/** GET /admin/forms */
+export type AdminFormRow = { id: string; title: string; open: boolean; answers: number; lastAnswerAt: string | null; url: string };
+export type AdminForms = { v: 1; forms: AdminFormRow[]; total: number; open: number; canWrite: boolean };
+/** What every email screen needs: today's allowance and the merge fields. */
+export type EmailAllowance = { configured: boolean; limit: number; left: number };
+export type MergeField = { key: string; label: string };
+export type EmailedMark = { lastSentAt: string | null; sent: number; waiting: number; failed: number };
+/** GET /admin/forms/:id?q=&emailed=yes|no&limit&cursor : the answers, newest first. */
+export type AdminFormAnswer = {
+  id: string;
+  at: string;
+  /** "15 Nov 2026, 4:05 pm" in India time. */
+  when: string;
+  name: string;
+  email: string;
+  phone: string;
+  /** The answers in the form's question order (identity questions left out). */
+  answers: { key: string; label: string; text: string }[];
+  /** Emails sent from this form to this address, or null when never. */
+  emailed: EmailedMark | null;
+};
+export type AdminFormAnswers = Page<AdminFormAnswer> & {
+  v: 1;
+  form: { id: string; title: string; open: boolean; url: string };
+  total: number;
+  /** Emails from this form waiting for tomorrow's allowance. */
+  waiting: number;
+  allowance: EmailAllowance;
+  mergeFields: MergeField[];
+  limits: { subject: number; body: number; recipients: number };
+  canWrite: boolean;
+};
+/** POST /admin/forms/:id/email : everyone ("all"), a picked few, or one. Addresses come from the saved answers, never from the app. */
+export type FormEmailBody = { submissionIds: string[] | "all"; subject: string; body: string };
+/** The shared sender's report: who got it now, who waits, who had no address. Names, not addresses. */
+export type PersonalEmailReport = { sent: string[]; queued: string[]; failed: { name: string; reason: string }[]; noEmail: string[]; duplicates: number; remainingToday: number; queueFailed: boolean };
+/** POST /admin/forms/:id/email/preview { submissionId, subject, body } : what that person will get. */
+export type FormEmailPreviewBody = { submissionId: string; subject: string; body: string };
+export type EmailPreview = { to: string; subject: string; text: string; unknownFields: string[] };
+/** POST /admin/forms/:id/email/send-waiting */
+export type FormSendWaitingResult = SendWaitingResult;
+
+/** POST /admin/certificates/:id/revoke */
+export type RevokeBody = { reason: string };
+/** POST /admin/certificates/:id/resend */
+export type ResendBody = { email: boolean };
+export type ResendResult = { notified: boolean; delivery: Record<string, unknown> | null };
+
+// ------------------------------------------------------------- older names
+
+/** POST /play/:game/:action answers this; GET /admin/activity keeps its kind and data. */
+export type PlayResult<T = unknown> = { kind: string; v: 1; data: T };
+export type AdminHome = AdminHomeData;
+export type AdminStudentProfile = AdminStudent;
+export type SendMessageBody = AdminSendBody;
+export type SendMessageResult = AdminSendResult;
+export type MessageBatches = AdminMessages;
 /** POST /admin/doubts/:id/hide */
 export type HideBody = { hidden: boolean };
+export type LiveRow = AdminHomeData["live"][number];
+export type HomeCohort = AdminHomeData["cohorts"][number];
 
 /* ------------------------------------------------------------------------ */
 /* Shapes of the website loaders the contract passes through as-is.         */
@@ -115,5 +403,5 @@ export type ActivityData = {
   heat: number[][];
   pages: { label: string; min: number }[];
   totals: { students: number; active7: number; activeNow: number; hours30: number; lecturesDone: number };
-  live: AdminHome["live"];
+  live: LiveRow[];
 };

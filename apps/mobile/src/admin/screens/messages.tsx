@@ -3,18 +3,19 @@ import { PenLine } from "lucide-react-native";
 import * as React from "react";
 import { Linking, View } from "react-native";
 
-import { Button, EmptyState, Field, Loaded, Row, RowList, RowsSkeleton, Screen, T } from "@/ds";
+import { Button, EmptyState, Field, Row, RowList, RowsSkeleton, Screen, T } from "@/ds";
 import { space, useTheme } from "@/theme";
 import { adminCalls, useAdminAction, useBatches, useInbox, useInboxThread, useRefreshAdmin } from "../api";
 import type { InboxItem } from "../extra";
 import { ago, plural, whatsapp } from "../format";
-import { Notice, SmallButton, Tag } from "../kit";
+import { Loaded, Notice, SmallButton, Tag } from "../kit";
 import { AdminTop, openCompose, openStudent } from "../nav";
 import { useAdminRole, VIEW_ONLY_LINE } from "../role";
 import { ScrollTabs } from "./student";
 
 export function InboxLine({ i }: { i: InboxItem }) {
-  return <Row testID={`inbox-${i.id}`} unread={i.unread} title={i.from} meta={`${i.subject} · ${i.preview}`} trailing={i.kind === "enquiry" ? <Tag>Enquiry</Tag> : ago(i.at)} onPress={() => router.push(`/admin/thread/${i.id}`)} />;
+  const tag = i.kind === "enquiry" ? "Enquiry" : i.kind === "concern" ? "Concern" : i.kind === "doubt" ? "Doubt" : null;
+  return <Row testID={`inbox-${i.id}`} unread={i.unread} title={i.from} meta={[i.subject, i.preview].filter(Boolean).join(" · ")} trailing={tag ? <Tag tone={i.kind === "concern" ? "alert" : undefined}>{tag}</Tag> : ago(i.at)} onPress={() => router.push((i.href ?? `/admin/thread/${i.id}`) as never)} />;
 }
 
 function InboxList() {
@@ -29,7 +30,7 @@ function InboxList() {
             ))}
           </RowList>
         ) : (
-          <EmptyState mood="sleepy" title="Inbox is empty" body="Replies from students and new enquiries land here." />
+          <EmptyState mood="sleepy" title="Nothing waiting" body="Doubts, concerns and email replies that need you land here." />
         )
       }
     </Loaded>
@@ -98,6 +99,13 @@ export function AdminThreadScreen() {
   const { run, busy } = useAdminAction();
   const [text, setText] = React.useState("");
   const [error, setError] = React.useState<string | null>(null);
+  // Opening an email marks it read on the website too (Super Admin only; quiet on failure).
+  const marked = React.useRef(false);
+  React.useEffect(() => {
+    if (!canWrite || !q.data || marked.current) return;
+    marked.current = true;
+    adminCalls.markRead(q.data.id).catch(() => undefined);
+  }, [canWrite, q.data]);
   const send = async () => {
     if (!text.trim()) return setError("Write a reply first.");
     setError(null);
@@ -116,7 +124,7 @@ export function AdminThreadScreen() {
               </T>
               <View style={{ flexDirection: "row", flexWrap: "wrap", gap: space[2], paddingTop: space[1] }}>
                 {t.studentId ? <SmallButton label="Open student" onPress={() => openStudent(t.studentId!)} /> : null}
-                {t.kind === "enquiry" ? <SmallButton label="Open in People" onPress={() => router.push(`/admin/person/${encodeURIComponent(t.email)}`)} /> : null}
+                {t.email ? <SmallButton label="Open in People" onPress={() => router.push(`/admin/person/${encodeURIComponent(t.email)}`)} /> : null}
                 {t.phone ? <SmallButton label="WhatsApp" onPress={() => void Linking.openURL(whatsapp(t.phone!))} /> : null}
               </View>
             </View>

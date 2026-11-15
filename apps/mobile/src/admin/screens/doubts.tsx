@@ -1,14 +1,17 @@
 import { router, useLocalSearchParams } from "expo-router";
-import { ShieldAlert } from "lucide-react-native";
+import { ShieldAlert, Sparkles } from "lucide-react-native";
 import * as React from "react";
 import { View } from "react-native";
 
 import type { DoubtRow } from "@/api/contract";
-import { Button, EmptyState, Field, Loaded, Row, RowList, RowsSkeleton, Screen, T } from "@/ds";
+import { messageOf } from "@/api/errors";
+import { toast } from "@/ds/toast";
+import { haptic } from "@/lib/haptics";
+import { Button, EmptyState, Field, Row, RowList, RowsSkeleton, Screen, T } from "@/ds";
 import { space, useTheme } from "@/theme";
 import { adminCalls, useAdminAction, useAdminDoubt, useAdminDoubts, useRefreshAdmin } from "../api";
 import { ago, type Tone } from "../format";
-import { Notice, Status, Tag } from "../kit";
+import { Loaded, Notice, SmallButton, Status, Tag } from "../kit";
 import { useAdminRole, VIEW_ONLY_LINE } from "../role";
 import { ScrollTabs } from "./student";
 
@@ -63,6 +66,22 @@ export function AdminDoubtScreen() {
   const { run, busy } = useAdminAction();
   const [text, setText] = React.useState("");
   const [error, setError] = React.useState<string | null>(null);
+  const [drafting, setDrafting] = React.useState(false);
+  /** The website's AI draft for the reply box. Never posted until the admin presses Post. */
+  const draft = async () => {
+    setDrafting(true);
+    try {
+      const t = await adminCalls.draftDoubt(String(id));
+      if (t.trim()) {
+        haptic.select();
+        setText((cur) => (cur.trim() ? `${cur.trim()}\n\n${t.trim()}` : t.trim()));
+      }
+    } catch (e) {
+      toast.show(messageOf(e));
+    } finally {
+      setDrafting(false);
+    }
+  };
   const answer = async () => {
     if (!text.trim()) return setError("Write an answer first.");
     setError(null);
@@ -104,7 +123,14 @@ export function AdminDoubtScreen() {
               </View>
               {canWrite ? (
                 <>
-                  {d.status !== "hidden" ? <Field label="Answer as the VIBHA team" value={text} onChangeText={setText} area error={error} maxLength={4000} testID="doubt-text" /> : null}
+                  {d.status !== "hidden" ? (
+                    <View style={{ gap: space[2] }}>
+                      <Field label="Answer as the VIBHA team" value={text} onChangeText={setText} area error={error} maxLength={4000} testID="doubt-text" />
+                      <View style={{ flexDirection: "row" }}>
+                        <SmallButton label="Draft an answer" icon={<Sparkles size={16} color={c.ink} />} busy={drafting} onPress={() => void draft()} testID="doubt-draft" />
+                      </View>
+                    </View>
+                  ) : null}
                   <Button kind={d.status === "hidden" ? "quiet" : "danger"} label={d.status === "hidden" ? "Show it to students again" : "Hide from students"} busy={busy === "hide-doubt"} onPress={() => void run("hide-doubt", () => adminCalls.hideDoubt(d.id, d.status !== "hidden"), { done: d.status === "hidden" ? "Shown again" : "Hidden from students" })} testID="doubt-hide" />
                 </>
               ) : (

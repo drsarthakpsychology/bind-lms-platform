@@ -9,7 +9,7 @@ import { fonts, layout, space, useTheme } from "@/theme";
 import { adminCalls, useAdminAction, useCohorts, useStudents, useStudioOptions } from "../api";
 import { CERT_KINDS, KIND_DEFAULTS, type CertKind, type IssueResult } from "../extra";
 import { day, plural, todayIst } from "../format";
-import { Facts, OptionRow, SearchBox, SelectRow } from "../kit";
+import { Facts, Notice, OptionRow, SearchBox, SelectRow } from "../kit";
 import { useAdminRole } from "../role";
 import { draftError, emptyDraft, STEPS, stepError, toIssueInput, withKind, type Draft } from "../studio";
 
@@ -179,7 +179,8 @@ function Preview({ d }: { d: Draft }) {
 
 /** Issue certificates as five short steps: type, people, wording, preview, send. */
 export function AdminIssueScreen() {
-  const params = useLocalSearchParams<{ kind?: string; to?: string }>();
+  const params = useLocalSearchParams<{ kind?: string; to?: string; replaces?: string; title?: string }>();
+  const replaces = params.replaces ? String(params.replaces) : null;
   const today = todayIst();
   const options = useStudioOptions();
   const students = useStudents();
@@ -187,7 +188,7 @@ export function AdminIssueScreen() {
   const { run, busy } = useAdminAction();
   const [step, setStep] = React.useState(0);
   const [d, setD] = React.useState<Draft>(() => {
-    const base = emptyDraft(today);
+    const base = { ...emptyDraft(today), title: params.title ? String(params.title) : "" };
     return params.kind && (CERT_KINDS as readonly string[]).includes(params.kind) ? withKind(base, params.kind as CertKind) : base;
   });
   const [error, setError] = React.useState<string | null>(null);
@@ -217,7 +218,7 @@ export function AdminIssueScreen() {
   if (done) {
     return (
       <Screen testID="issue-done" footer={<Button label="Done" onPress={() => router.back()} testID="issue-finish" />}>
-        <EmptyState mood="calm" title={`${plural(done.issued, "certificate")} issued`} body={done.queued ? `Emails are going out now (${done.queued}). Each student also sees it in the app.` : "Each student sees it in the app now."} />
+        <EmptyState mood="calm" title={replaces ? "Corrected and issued again" : `${plural(done.issued, "certificate")} issued`} body={done.queued ? `Emails are going out now (${done.queued}). Each student also sees it in the app.` : "Each student sees it in the app now."} />
         <RowList>
           {done.ids.slice(0, 8).map((id, i) => (
             <Row key={id} title={d.recipients[i]?.name ?? id} meta={id} />
@@ -243,7 +244,7 @@ export function AdminIssueScreen() {
       setStep(bad.step);
       return setError(bad.error);
     }
-    const r = await run("issue-certificate", () => adminCalls.issue(toIssueInput(d)));
+    const r = await run("issue-certificate", () => adminCalls.issue(toIssueInput(d), replaces));
     if (r) setDone(r);
   };
   const back = () => {
@@ -271,6 +272,9 @@ export function AdminIssueScreen() {
         <T v="small" tone="muted" num testID="issue-step">
           Step {step + 1} of {STEPS.length} · {STEPS[step]}
         </T>
+        {replaces ? (
+          <Notice testID="issue-replaces">{`This corrects ${replaces}. The old one is revoked and points to the new one.`}</Notice>
+        ) : null}
         <ProgressLine value={((step + 1) / STEPS.length) * 100} label={`Step ${step + 1} of ${STEPS.length}`} height={4} />
         <T v="h1">{["What kind of certificate?", "Who gets it?", "What it says", "Check it", "Send"][step]}</T>
       </View>

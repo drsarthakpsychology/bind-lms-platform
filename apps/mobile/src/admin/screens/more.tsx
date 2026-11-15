@@ -6,14 +6,14 @@ import { Linking, View } from "react-native";
 
 import { messageOf } from "@/api/errors";
 import { session } from "@/auth";
-import { Loaded, Row, RowList, RowsSkeleton, Screen, Section, SwitchRow, T } from "@/ds";
+import { Row, RowList, RowsSkeleton, Screen, Section, SwitchRow, T } from "@/ds";
 import { toast } from "@/ds/toast";
 import { config } from "@/lib/config";
 import { haptic } from "@/lib/haptics";
 import { space, useTheme } from "@/theme";
 import { adminCalls, useAdminDoubts, useInbox, usePushPrefs, useSubmissions } from "../api";
 import type { AdminPushPrefs } from "../extra";
-import { Avatar, ConfirmSheet } from "../kit";
+import { Avatar, ConfirmSheet, Loaded } from "../kit";
 import { AdminTop } from "../nav";
 import { ADMIN_PUSH } from "../push";
 import { useAdminRole } from "../role";
@@ -72,7 +72,7 @@ export function AdminMoreScreen() {
           <Row title="Admin alerts" meta="New doubts, enquiries, students falling behind" icon={<BellRing {...icon} />} onPress={() => router.push("/admin/alerts")} testID="more-alerts" />
           <Row title="Notifications" icon={<Bell {...icon} />} onPress={() => router.push("/notifications")} />
           <Row title="Settings" icon={<Settings {...icon} />} onPress={() => router.push("/settings")} testID="more-settings" />
-          <Row title="System" meta="On the website: usage and switches" icon={<Gauge {...icon} />} onPress={web("/admin/infra")} />
+          <Row title="System" meta="Support keys, and how full things are" icon={<Gauge {...icon} />} onPress={() => router.push("/admin/system")} testID="more-system" />
           <Row title="Help" icon={<CircleHelp {...icon} />} onPress={() => router.push("/help")} />
         </RowList>
       </Section>

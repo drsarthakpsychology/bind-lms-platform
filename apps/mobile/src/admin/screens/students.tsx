@@ -4,14 +4,14 @@ import { ChevronRight, KeyRound, ListFilter, Lock, MessageSquare, Share2, Unlock
 import * as React from "react";
 import { Pressable, Share, View } from "react-native";
 
-import { Button, Chips, EmptyState, Loaded, RowsSkeleton, Screen, Sheet, SwitchRow, T } from "@/ds";
+import { Button, Chips, EmptyState, RowsSkeleton, Screen, Sheet, SwitchRow, T } from "@/ds";
 import { toast } from "@/ds/toast";
 import { haptic } from "@/lib/haptics";
 import { layout, space, useTheme } from "@/theme";
 import { adminCalls, useStudents } from "../api";
 import type { AdminStudentRow, AttentionFlag } from "../contract";
 import { ACCOUNT_LABEL, accountLabel, accountTone, ago, filterCount, filterStudents, FLAG_LABEL, NO_FILTERS, PRESENCE_LABEL, studentsCsv, type Presence, type StudentFilters } from "../format";
-import { ActionBar, Check, ConfirmSheet, SearchBox, SelectRow, SmallButton, Status, Tag, Tags } from "../kit";
+import { ActionBar, Check, ConfirmSheet, Loaded, SearchBox, SelectRow, SmallButton, Status, SwipeRow, Tag, Tags } from "../kit";
 import { AdminTop, openCompose, openStudent } from "../nav";
 import { guarded, useAdminRole } from "../role";
 
@@ -230,7 +230,9 @@ export function AdminStudentsScreen() {
                 {shown.map((r) => (
                   <View key={r.id} style={{ borderBottomWidth: 1, borderColor: c.hairline }}>
                     <SelectRow on={picked.has(r.id)} onToggle={() => toggle(r.id)} label={`Select ${r.name}`} testID={`student-${r.id}`}>
-                      <StudentLine r={r} onPress={() => openStudent(r.id)} />
+                      <SwipeRow enabled={canWrite} action={{ label: "Message", onPress: () => openCompose({ to: [r.id] }) }} testID={`swipe-${r.id}`}>
+                        <StudentLine r={r} onPress={() => openStudent(r.id)} />
+                      </SwipeRow>
                     </SelectRow>
                   </View>
                 ))}

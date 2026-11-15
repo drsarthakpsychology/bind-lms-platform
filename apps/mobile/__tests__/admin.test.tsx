@@ -44,7 +44,7 @@ beforeEach(() => {
   (router.back as jest.Mock).mockClear();
 });
 
-const row = (p: Partial<AdminStudentRow>): AdminStudentRow => ({ id: "x", name: "X", email: "x@example.com", rollNumber: null, mobileNumber: null, scope: "full", blocked: false, expiresAt: null, account: "active", presence: "week", lastSeen: null, cohorts: [], minutes7: 0, activeDays30: 0, lecturesDone: 0, lecturesAvailable: 8, xp: 0, flags: [], ...p });
+const row = (p: Partial<AdminStudentRow>): AdminStudentRow => ({ id: "x", name: "X", email: "x@example.com", rollNumber: null, mobileNumber: null, scope: "full", blocked: false, expiresAt: null, account: "active", presence: "week", lastSeen: null, cohorts: [], minutes7: 0, activeDays30: 0, lecturesDone: 0, lecturesAvailable: 8, xp: 0, flags: [], status: "active", progressPct: 0, lecturesOnly: false, cohort: null, ...p });
 
 /* ------------------------------------------------------------ permission rules */
 
@@ -84,7 +84,7 @@ describe("who may do what", () => {
     await signInAs("viewadmin@example.com");
     expect(session.store.get().me?.role).toBe("view_admin");
     await expect(adminCalls.unlock("u4")).rejects.toMatchObject({ code: "forbidden" });
-    await expect(adminCalls.send({ userIds: ["u1"], title: "Hi", text: "Hello" })).rejects.toBeInstanceOf(ApiFailure);
+    await expect(adminCalls.send({ to: "students", userIds: ["u1"], title: "Hi", body: "Hello" })).rejects.toBeInstanceOf(ApiFailure);
     await expect(adminCalls.issue({ ...toIssueInput(withKind(emptyDraft("2026-11-15"), "completion")), title: "T", recipients: [{ userId: "u1", name: "A" }] })).rejects.toMatchObject({ code: "forbidden" });
     await expect(adminCalls.moveStage("tanvi@example.com", { stage: "contacted" })).rejects.toMatchObject({ code: "forbidden" });
     expect(adminMock.state().students.find((s) => s.id === "u4")?.blocked).toBe(true);
@@ -196,8 +196,9 @@ describe("admin screens as a Super Admin", () => {
 
   it("Home leads with Needs a look, shows who is on, and offers Send a message", async () => {
     await render(<AdminHomeScreen />);
-    expect(await screen.findByTestId("todo-login")).toBeTruthy();
-    expect(screen.getByText("Login needs a hand")).toBeTruthy();
+    // The server's own to-do list, in the website's words.
+    expect(await screen.findByText("Fix logins")).toBeTruthy();
+    expect(screen.getByText("Grade submissions")).toBeTruthy();
     expect(screen.getByText("Sana Khan")).toBeTruthy();
     expect(screen.getByTestId("admin-compose")).toBeTruthy();
     expect(screen.queryByTestId("view-only-note")).toBeNull();
@@ -243,7 +244,7 @@ describe("admin screens as a Super Admin", () => {
     await screen.findByText("Arjun Nair");
     await fireEvent.press(screen.getByTestId("access-link"));
     expect(await screen.findByTestId("link-sheet")).toBeTruthy();
-    expect(screen.getByText(/setup\?token=mock-u6/)).toBeTruthy();
+    expect(screen.getByText(/has it by email/)).toBeTruthy();
     await fireEvent.press(screen.getByTestId("access-phone"));
     await waitFor(() => expect(adminMock.state().allowed.has("u6")).toBe(true));
   });

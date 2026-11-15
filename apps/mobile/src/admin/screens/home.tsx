@@ -1,15 +1,16 @@
 import { router } from "expo-router";
 import { PenLine } from "lucide-react-native";
 import * as React from "react";
-import { Pressable, View } from "react-native";
+import { Linking, Pressable, View } from "react-native";
 
-import { Button, EmptyState, Loaded, Row, RowList, RowsSkeleton, Screen, T } from "@/ds";
+import { Button, EmptyState, Row, RowList, RowsSkeleton, Screen, T } from "@/ds";
+import { config } from "@/lib/config";
 import { space, useTheme } from "@/theme";
-import { useAdminHome, useCohorts, useSubmissions } from "../api";
+import { useAdminHome } from "../api";
 import type { AdminHome } from "../contract";
-import type { CohortRow } from "../extra";
+import { todoHref } from "../safe";
 import { ago, attentionGroups, plural } from "../format";
-import { Block, Dot, Meter, Notice, Quiet } from "../kit";
+import { Block, Dot, Loaded, Meter, Notice, Quiet } from "../kit";
 import { AdminTop, openCompose, openStudent } from "../nav";
 import { useAdminRole } from "../role";
 
@@ -19,12 +20,22 @@ function TodoRow({ count, label, detail, onPress, testID }: { count: number; lab
 }
 
 /** Admin Home: what needs a look right now, who is on VIBHA, how each cohort is doing. */
-export function AdminHomeView({ data, cohorts, toGrade }: { data: AdminHome; cohorts: CohortRow[] | null; toGrade: number | null }) {
+/** A Home to-do: the app's own screen when it has one, the website otherwise. */
+function openTodo(web: string) {
+  const to = todoHref(web);
+  if ("app" in to) router.push(to.app as never);
+  else void Linking.openURL(`${config.site}${to.web}`);
+}
+
+export function AdminHomeView({ data }: { data: AdminHome }) {
   const c = useTheme();
   const { viewOnly } = useAdminRole();
   const groups = attentionGroups(data.needsLook);
   const names = (rows: { name: string }[]) => (rows.length <= 2 ? rows.map((r) => r.name).join(" and ") : `${rows[0]!.name}, ${rows[1]!.name} and ${rows.length - 2} more`);
-  const todo = [
+  const toGrade = data.today.submissionsToGrade;
+  // The server's own list (the website's Home, same words and counts) when it sends one.
+  const fromServer = data.todo.map((t) => ({ key: t.id, count: t.count, label: t.label, detail: t.detail, go: () => openTodo(t.target.web) }));
+  const todo = fromServer.length ? fromServer : [
     ...groups.map((g) => ({ key: g.flag, count: g.students.length, label: g.label, detail: names(g.students), go: () => (g.students.length === 1 ? openStudent(g.students[0]!.id) : router.push(`/admin/students?flag=${g.flag}`)) })),
     ...(data.counts.openComplaints ? [{ key: "concerns", count: data.counts.openComplaints, label: "Private concerns", detail: "Students raised a concern. Answer them first.", go: () => router.push("/admin/doubts?view=complaint") }] : []),
     ...(toGrade ? [{ key: "grade", count: toGrade, label: "Waiting for a grade", detail: "Hand-ins students sent in.", go: () => router.push("/admin/review") }] : []),
@@ -40,6 +51,11 @@ export function AdminHomeView({ data, cohorts, toGrade }: { data: AdminHome; coh
   return (
     <>
       <View style={{ gap: space[2] }}>
+        {data.dateLine ? (
+          <T v="caption" tone="muted">
+            {data.dateLine}
+          </T>
+        ) : null}
         <T v="h1">Today</T>
         <View style={{ flexDirection: "row", flexWrap: "wrap", columnGap: space[3], rowGap: space[1] }}>
           {link(plural(data.counts.students, "student"), () => router.push("/admin/students"), "home-students")}
@@ -63,20 +79,19 @@ export function AdminHomeView({ data, cohorts, toGrade }: { data: AdminHome; coh
         {data.live.length ? (
           <RowList>
             {data.live.slice(0, 6).map((l) => (
-              <Row key={l.userId} title={l.name ?? "A student"} meta={`${l.where} · since ${ago(l.since).replace(" ago", "")}`} icon={<Dot tone={l.watching ? "ok" : "info"} />} onPress={() => openStudent(l.userId, "activity")} />
+              <Row key={l.userId} title={l.name || "A student"} meta={[l.where ?? l.meta, l.since ? `since ${ago(l.since).replace(" ago", "")}` : ""].filter(Boolean).join(" · ")} icon={<Dot tone={l.watching ? "ok" : "info"} />} onPress={() => openStudent(l.userId, "activity")} />
             ))}
           </RowList>
         ) : (
           <Quiet>Nobody is on right now.</Quiet>
         )}
       </Block>
-      {cohorts?.length ? (
+      {data.cohorts.length ? (
         <Block title="Cohorts" action={{ label: "All cohorts", onPress: () => router.push("/admin/cohorts") }}>
           <RowList>
-            {cohorts
-              .filter((x) => x.status !== "upcoming")
+            {data.cohorts
               .map((x) => (
-                <Row key={x.id} title={x.name} meta={`${x.activeWeek} active this week${x.behind ? ` · ${x.behind} behind` : ""}`} trailing={`${x.members} students`} below={<View style={{ paddingTop: space[1] }}><Meter pct={x.pct} label={`${x.pct}%`} /></View>} onPress={() => router.push(`/admin/cohort/${x.id}`)} />
+                <Row key={x.id} title={x.name} meta={`${x.week} active this week${x.behind ? ` · ${x.behind} behind` : ""}`} trailing={`${x.members} students`} below={<View style={{ paddingTop: space[1] }}><Meter pct={x.pct} label={`${x.pct}%`} /></View>} onPress={() => router.push(`/admin/cohort/${x.id}`)} />
               ))}
           </RowList>
         </Block>
@@ -88,20 +103,18 @@ export function AdminHomeView({ data, cohorts, toGrade }: { data: AdminHome; coh
 export function AdminHomeScreen() {
   const c = useTheme();
   const q = useAdminHome();
-  const cohorts = useCohorts();
-  const subs = useSubmissions("pending");
   const { canWrite } = useAdminRole();
   return (
     <Screen
       tab
       top={<AdminTop />}
       testID="admin-home"
-      onRefresh={() => void Promise.all([q.refetch(), cohorts.refetch(), subs.refetch()])}
+      onRefresh={() => void q.refetch()}
       refreshing={q.isRefetching}
       footer={canWrite ? <Button label="Send a message" icon={<PenLine size={20} color={c.onPrimary} />} onPress={() => openCompose()} testID="admin-compose" /> : undefined}
     >
       <Loaded q={q} soon what="today" skeleton={<RowsSkeleton rows={6} />}>
-        {(d) => <AdminHomeView data={d} cohorts={cohorts.data?.items ?? null} toGrade={subs.data?.pending ?? null} />}
+        {(d) => <AdminHomeView data={d} />}
       </Loaded>
     </Screen>
   );

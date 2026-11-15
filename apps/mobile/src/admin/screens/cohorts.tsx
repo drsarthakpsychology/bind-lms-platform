@@ -3,12 +3,12 @@ import { PenLine } from "lucide-react-native";
 import * as React from "react";
 import { View } from "react-native";
 
-import { Button, EmptyState, Loaded, Row, RowList, RowsSkeleton, Screen, T } from "@/ds";
+import { Button, EmptyState, Row, RowList, RowsSkeleton, Screen, T } from "@/ds";
 import { space, useTheme } from "@/theme";
 import { useCohort, useCohorts, useRefreshAdmin } from "../api";
 import type { CohortStatus } from "../extra";
 import { accountLabel, accountTone, ago, day, pct, plural, type Tone } from "../format";
-import { Figures, Meter, Quiet, Status } from "../kit";
+import { Figures, Loaded, Meter, Quiet, Status } from "../kit";
 import { openCompose, openStudent } from "../nav";
 import { useAdminRole } from "../role";
 import { ScrollTabs } from "./student";

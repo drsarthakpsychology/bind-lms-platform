@@ -7,9 +7,12 @@
  */
 import { Check as CheckIcon, Search, X } from "lucide-react-native";
 import * as React from "react";
-import { Pressable, TextInput, View, type StyleProp, type ViewStyle } from "react-native";
+import { AccessibilityInfo, Animated as RNAnimated, PanResponder, Pressable, ScrollView, TextInput, View, type StyleProp, type ViewStyle } from "react-native";
+import Reanimated, { FadeIn, useReducedMotion } from "react-native-reanimated";
 
-import { Button, Field, Sheet, T } from "@/ds";
+import type { UseQueryResult } from "@tanstack/react-query";
+
+import { Button, Field, Loaded as DsLoaded, Sheet, T } from "@/ds";
 import { haptic } from "@/lib/haptics";
 import { layout, space, type as scale, useTheme, type Palette } from "@/theme";
 import type { Tone } from "./format";
@@ -409,4 +412,157 @@ export function SelectRow({ on, onToggle, label, children, testID }: { on: boole
 export function Dot({ tone }: { tone: Tone }) {
   const c = useTheme();
   return <View style={{ width: 10, height: 10, borderRadius: 5, backgroundColor: toneColor(c, tone) }} />;
+}
+
+/* ------------------------------------------------------------- motion bits */
+
+/**
+ * Filter chips: the picked one fills and gets a tick that fades in; each
+ * press gives a small squeeze and a tick of the phone. Scrolls sideways when
+ * there are many. Reduce Motion turns the movement off, never the meaning.
+ */
+export function FilterChips<V extends string>({ options, value, onChange, label, testID }: { options: { id: V; name: string; count?: number }[]; value: V; onChange: (v: V) => void; label: string; testID?: string }) {
+  return (
+    <ScrollView horizontal showsHorizontalScrollIndicator={false} style={{ marginHorizontal: -layout.gutter, flexGrow: 0 }} contentContainerStyle={{ paddingHorizontal: layout.gutter }} testID={testID}>
+      <View accessibilityRole="radiogroup" accessibilityLabel={label} style={{ flexDirection: "row", gap: space[2] }}>
+        {options.map((o) => (
+          <Chip key={o.id} on={o.id === value} name={o.name} count={o.count} onPress={() => onChange(o.id)} testID={testID ? `${testID}-${o.id || "all"}` : undefined} />
+        ))}
+      </View>
+    </ScrollView>
+  );
+}
+
+function Chip({ on, name, count, onPress, testID }: { on: boolean; name: string; count?: number; onPress: () => void; testID?: string }) {
+  const c = useTheme();
+  const reduce = useReducedMotion();
+  const [scale] = React.useState(() => new RNAnimated.Value(1));
+  const to = (v: number) => {
+    if (reduce) return;
+    RNAnimated.spring(scale, { toValue: v, useNativeDriver: true, speed: 40, bounciness: v === 1 ? 10 : 0 }).start();
+  };
+  return (
+    <Pressable
+      testID={testID}
+      accessibilityRole="radio"
+      accessibilityState={{ selected: on }}
+      accessibilityLabel={count !== undefined ? `${name}, ${count}` : name}
+      onPressIn={() => to(0.94)}
+      onPressOut={() => to(1)}
+      onPress={() => {
+        haptic.select();
+        onPress();
+      }}
+      style={{ minHeight: layout.target, justifyContent: "center" }}
+    >
+      <RNAnimated.View style={{ transform: [{ scale }], minHeight: 36, paddingHorizontal: space[3], flexDirection: "row", alignItems: "center", gap: space[1], borderRadius: 18, borderWidth: 1.5, borderColor: on ? c.ink : c.cardLine, backgroundColor: on ? c.ink : "transparent" }}>
+        {on ? (
+          <Reanimated.View entering={reduce ? undefined : FadeIn.duration(160)}>
+            <CheckIcon size={14} color={c.bg} strokeWidth={3} />
+          </Reanimated.View>
+        ) : null}
+        <T v="small" style={{ color: on ? c.bg : c.ink }}>
+          {name}
+        </T>
+        {count !== undefined ? (
+          <T v="caption" num style={{ color: on ? c.bg : c.muted }}>
+            {count}
+          </T>
+        ) : null}
+      </RNAnimated.View>
+    </Pressable>
+  );
+}
+
+/**
+ * A row that slides left to show one action (Revoke, Mark paid, Email ...).
+ * The same action is always on the row's own screen or sheet too, and a
+ * screen reader gets it as a named action, so the swipe is a shortcut only.
+ */
+export function SwipeRow({ children, action, enabled = true, testID }: { children: React.ReactNode; action: { label: string; onPress: () => void; danger?: boolean }; enabled?: boolean; testID?: string }) {
+  const c = useTheme();
+  const [x] = React.useState(() => new RNAnimated.Value(0));
+  // Whether the row is slid open, read only inside the gesture handlers.
+  const [open] = React.useState(() => ({ current: false }));
+  const W = 96;
+  const settle = React.useCallback(
+    (to: number) => {
+      open.current = to !== 0;
+      RNAnimated.spring(x, { toValue: to, useNativeDriver: true, speed: 22, bounciness: to ? 6 : 0 }).start();
+    },
+    [x, open],
+  );
+  const pan = React.useMemo(
+    () =>
+      PanResponder.create({
+        onMoveShouldSetPanResponder: (_e, g) => enabled && Math.abs(g.dx) > 12 && Math.abs(g.dx) > Math.abs(g.dy) * 1.5,
+        onPanResponderMove: (_e, g) => x.setValue(Math.max(-W * 1.3, Math.min(0, g.dx + (open.current ? -W : 0)))),
+        onPanResponderRelease: (_e, g) => {
+          const end = g.dx + (open.current ? -W : 0);
+          if (end < -W * 0.5) {
+            if (!open.current) haptic.select();
+            settle(-W);
+          } else settle(0);
+        },
+        onPanResponderTerminate: () => settle(open.current ? -W : 0),
+      }),
+    [enabled, settle, x, open],
+  );
+  if (!enabled) return <>{children}</>;
+  const run = () => {
+    settle(0);
+    action.onPress();
+  };
+  return (
+    <View testID={testID} style={{ overflow: "hidden" }} accessibilityActions={[{ name: "activate" }, { name: action.label, label: action.label }]} onAccessibilityAction={(e) => e.nativeEvent.actionName === action.label && run()}>
+      <View style={{ position: "absolute", right: 0, top: 0, bottom: 0, width: W, alignItems: "stretch", justifyContent: "center" }}>
+        <Pressable accessibilityRole="button" accessibilityLabel={action.label} onPress={run} testID={testID ? `${testID}-action` : undefined} style={({ pressed }) => ({ flex: 1, alignItems: "center", justifyContent: "center", backgroundColor: action.danger ? c.danger : c.ink, opacity: pressed ? 0.85 : 1 })}>
+          <T v="small" style={{ color: c.bg, fontFamily: scale.bodyStrong.fontFamily }}>
+            {action.label}
+          </T>
+        </Pressable>
+      </View>
+      <RNAnimated.View {...pan.panHandlers} style={{ transform: [{ translateX: x }], backgroundColor: c.bg }}>
+        {children}
+      </RNAnimated.View>
+    </View>
+  );
+}
+
+/** Announce a change to screen readers (a sent message, a revoked key). */
+export const announce = (line: string) => AccessibilityInfo.announceForAccessibility?.(line);
+
+/* --------------------------------------------------------- never crash */
+
+type BoundaryState = { failed: boolean };
+/**
+ * Admin screens must never take the app down. If something the server sent
+ * cannot be drawn, this part shows a quiet line and the rest of the screen
+ * keeps working.
+ */
+export class AdminBoundary extends React.Component<{ children: React.ReactNode; what?: string }, BoundaryState> {
+  override state: BoundaryState = { failed: false };
+  static getDerivedStateFromError(): BoundaryState {
+    return { failed: true };
+  }
+  override componentDidCatch(e: unknown) {
+    if (__DEV__) console.warn("Admin screen part failed to draw", e);
+  }
+  override render() {
+    if (!this.state.failed) return this.props.children;
+    return (
+      <View style={{ gap: space[2], paddingVertical: space[3] }} testID="admin-part-failed">
+        <T v="small" tone="muted">
+          {`This part${this.props.what ? ` (${this.props.what})` : ""} could not be shown. Pull down to try again, or open it on the website.`}
+        </T>
+        <Button kind="text" full={false} label="Try again" onPress={() => this.setState({ failed: false })} />
+      </View>
+    );
+  }
+}
+
+/** The design system's Loaded, with the admin boundary around what it draws. */
+export function Loaded<T>(props: { q: UseQueryResult<T>; skeleton?: React.ReactNode; what?: string; soon?: boolean; children: (data: T) => React.ReactNode }) {
+  const { children, ...rest } = props;
+  return <DsLoaded {...rest}>{(d) => <AdminBoundary what={props.what}>{children(d)}</AdminBoundary>}</DsLoaded>;
 }

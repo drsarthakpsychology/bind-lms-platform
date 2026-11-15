@@ -3,12 +3,15 @@ import { Mail, MessageCircle, Phone } from "lucide-react-native";
 import * as React from "react";
 import { Linking, View } from "react-native";
 
-import { Button, Chips, EmptyState, Field, Loaded, Row, RowList, RowsSkeleton, Screen, Sheet, T } from "@/ds";
+import { Button, Chips, EmptyState, Field, Row, RowList, RowsSkeleton, Screen, Sheet, T } from "@/ds";
+import { messageOf } from "@/api/errors";
+import { toast } from "@/ds/toast";
+import { haptic } from "@/lib/haptics";
 import { space, useTheme } from "@/theme";
 import { adminCalls, useAdminAction, useEnquiries, usePeople, usePerson, useRefreshAdmin } from "../api";
-import { PEOPLE_VIEWS, STAGE_LABEL, STAGES, type LoginLinkResult, type PeopleView, type PersonRow, type StageId } from "../extra";
+import { PEOPLE_VIEWS, STAGE_LABEL, STAGES, type EmailPreview, type LoginLinkResult, type PeopleView, type PersonRow, type StageId } from "../extra";
 import { ago, day, followUpLine, inPeopleView, plural, whatsapp, type Tone } from "../format";
-import { ActionBar, Check, Dot, Facts, Notice, OptionRow, Quiet, SearchBox, SelectRow, SmallButton, Status, Tag } from "../kit";
+import { ActionBar, Check, Dot, Facts, FilterChips, Loaded, Notice, OptionRow, Quiet, SearchBox, SelectRow, SmallButton, Status, SwipeRow, Tag } from "../kit";
 import { openStudent } from "../nav";
 import { useAdminRole, VIEW_ONLY_LINE } from "../role";
 import { LinkSheet, ScrollTabs } from "./student";
@@ -18,25 +21,98 @@ export function stageTone(s: StageId): Tone {
 }
 
 /** Email several people, one email each (never one email with everyone in it). */
-export function ContactSheet({ open, onClose, count, onSend, busy }: { open: boolean; onClose: () => void; count: number; onSend: (subject: string, text: string) => void; busy?: boolean }) {
+/**
+ * Email people one by one: each gets their own email. Merge fields
+ * ({first_name}, {name} ...) are filled for each person by the server; a
+ * preview shows what one of them will get before anything is sent.
+ */
+export function ContactSheet({
+  open,
+  onClose,
+  count,
+  onSend,
+  busy,
+  mergeFields = [],
+  allowance,
+  preview,
+}: {
+  open: boolean;
+  onClose: () => void;
+  count: number;
+  onSend: (subject: string, text: string) => void;
+  busy?: boolean;
+  mergeFields?: { key: string; label: string }[];
+  allowance?: { configured: boolean; left: number; limit: number } | null;
+  preview?: (subject: string, text: string) => Promise<EmailPreview>;
+}) {
   const [subject, setSubject] = React.useState("");
   const [text, setText] = React.useState("");
   const [error, setError] = React.useState<string | null>(null);
+  const [shown, setShown] = React.useState<EmailPreview | null>(null);
+  const [looking, setLooking] = React.useState(false);
+  const later = allowance && allowance.configured ? Math.max(0, count - allowance.left) : 0;
+  const check = () => {
+    if (!subject.trim() || !text.trim()) {
+      setError("Write a subject and a message.");
+      return false;
+    }
+    setError(null);
+    return true;
+  };
+  const look = async () => {
+    if (!preview || !check()) return;
+    setLooking(true);
+    try {
+      setShown(await preview(subject.trim(), text.trim()));
+    } catch (e) {
+      toast.show(messageOf(e));
+    } finally {
+      setLooking(false);
+    }
+  };
   return (
     <Sheet open={open} onClose={onClose} title={`Email ${plural(count, "person", "people")}`} testID="contact-sheet">
       <View style={{ gap: space[4] }}>
         <T v="small" tone="muted">
-          Each one gets their own email, with their name at the top.
+          {later ? `Each one gets their own email. ${plural(count - later, "goes", "go")} now; ${later} wait for tomorrow's allowance.` : "Each one gets their own email."}
         </T>
-        <Field label="Subject" value={subject} onChangeText={setSubject} maxLength={150} testID="contact-subject" />
-        <Field label="Message" value={text} onChangeText={setText} area error={error} maxLength={4000} testID="contact-text" />
+        {allowance && !allowance.configured ? <Notice tone="warn">Email is not set up on the server, so nothing can be sent yet.</Notice> : null}
+        <Field label="Subject" value={subject} onChangeText={setSubject} maxLength={200} testID="contact-subject" />
+        <Field label="Message" value={text} onChangeText={(t) => { setText(t); setShown(null); }} area error={error} maxLength={10000} testID="contact-text" />
+        {mergeFields.length ? (
+          <View style={{ gap: space[2] }}>
+            <T v="caption" tone="muted">
+              Tap to add a blank that is filled in for each person
+            </T>
+            <View style={{ flexDirection: "row", flexWrap: "wrap", gap: space[2] }}>
+              {mergeFields.map((m) => (
+                <SmallButton key={m.key} label={m.label} onPress={() => { haptic.select(); setText((t) => `${t}{${m.key}}`); setShown(null); }} testID={`merge-${m.key}`} />
+              ))}
+            </View>
+          </View>
+        ) : null}
+        {shown ? (
+          <View style={{ gap: space[1], padding: space[3], borderRadius: 10, borderWidth: 1, borderColor: "rgba(127,127,127,0.35)" }} testID="contact-preview">
+            <T v="caption" tone="muted">
+              {`To ${shown.to}`}
+            </T>
+            <T v="bodyStrong">{shown.subject}</T>
+            <T v="small">{shown.text}</T>
+            {shown.unknownFields.length ? (
+              <T v="small" tone="danger">
+                {`Not known: ${shown.unknownFields.map((f) => `{${f}}`).join(", ")}. Fix these before sending.`}
+              </T>
+            ) : null}
+          </View>
+        ) : null}
+        {preview ? <Button kind="quiet" label="See what one person gets" busy={looking} onPress={() => void look()} testID="contact-preview-btn" /> : null}
         <Button
-          label="Send"
+          label={count > 1 ? `Send ${count} emails` : "Send"}
           busy={busy}
           testID="contact-send"
           onPress={() => {
-            if (!subject.trim() || !text.trim()) return setError("Write a subject and a message.");
-            setError(null);
+            if (!check()) return;
+            if (shown?.unknownFields.length) return setError("Some blanks are not known. Fix them first.");
             onSend(subject.trim(), text.trim());
           }}
         />
@@ -71,7 +147,7 @@ function Pipeline({ initialView }: { initialView: PeopleView }) {
             <View style={{ flexDirection: "row" }}>
               <SearchBox value={search} onChange={setSearch} placeholder="Name, email or phone" label="Search people" testID="people-search" />
             </View>
-            <Chips scroll label="View" value={view} onChange={setView} options={PEOPLE_VIEWS.map((v) => ({ id: v.id, name: `${v.label} ${count(v.id)}` }))} />
+            <FilterChips label="View" value={view} onChange={(v) => { setView(v); setPicked(new Set()); }} options={PEOPLE_VIEWS.map((v) => ({ id: v.id, name: v.label, count: count(v.id) }))} testID="people-view" />
             {shown.length ? (
               <View style={{ gap: space[1] }}>
                 {canWrite ? (
@@ -98,7 +174,9 @@ function Pipeline({ initialView }: { initialView: PeopleView }) {
                             })
                           }
                         >
-                          <PersonLine p={p} onPress={() => router.push(`/admin/person/${encodeURIComponent(p.key)}`)} />
+                          <SwipeRow enabled={!p.paid} action={{ label: "Mark paid", onPress: () => void run("mark-paid", () => adminCalls.markPaid(p.key, true), { done: `${p.name} marked as paid` }) }} testID={`swipe-${p.key}`}>
+                            <PersonLine p={p} onPress={() => router.push(`/admin/person/${encodeURIComponent(p.key)}`)} />
+                          </SwipeRow>
                         </SelectRow>
                       ) : (
                         <PersonLine p={p} onPress={() => router.push(`/admin/person/${encodeURIComponent(p.key)}`)} />

@@ -3,12 +3,12 @@ import { Mail } from "lucide-react-native";
 import * as React from "react";
 import { View } from "react-native";
 
-import { Button, EmptyState, Loaded, Row, RowList, RowsSkeleton, Screen, Sheet, T } from "@/ds";
+import { Button, EmptyState, Row, RowList, RowsSkeleton, Screen, Sheet, T } from "@/ds";
 import { space, useTheme } from "@/theme";
 import { adminCalls, useAdminAction, useForm, useForms, useRefreshAdmin } from "../api";
 import type { FormResponse } from "../extra";
 import { ago, plural } from "../format";
-import { ActionBar, Check, Quiet, SelectRow, SmallButton, Status } from "../kit";
+import { ActionBar, Check, FilterChips, Loaded, Notice, Quiet, SelectRow, SmallButton, Status, SwipeRow } from "../kit";
 import { openStudent } from "../nav";
 import { useAdminRole } from "../role";
 import { ContactSheet } from "./people";
@@ -16,6 +16,7 @@ import { ContactSheet } from "./people";
 /** Forms: each form with how many answered. */
 export function AdminFormsScreen() {
   const q = useForms();
+  const { canWrite } = useAdminRole();
   const { refresh, refreshing } = useRefreshAdmin();
   return (
     <Screen title="Forms" testID="admin-forms" onRefresh={refresh} refreshing={refreshing}>
@@ -24,7 +25,9 @@ export function AdminFormsScreen() {
           d.items.length ? (
             <RowList>
               {d.items.map((f) => (
-                <Row key={f.id} testID={`form-${f.id}`} title={f.title} meta={`${plural(f.responses, "answer")} · updated ${ago(f.updatedAt).toLowerCase()}`} trailing={<Status tone={f.open ? "ok" : "quiet"}>{f.open ? "Open" : "Closed"}</Status>} onPress={() => router.push(`/admin/form/${f.id}`)} />
+                <SwipeRow key={f.id} enabled={canWrite && f.responses > 0} action={{ label: "Email all", onPress: () => router.push(`/admin/form/${f.id}?email=all` as never) }} testID={`swipe-form-${f.id}`}>
+                  <Row testID={`form-${f.id}`} title={f.title} meta={[plural(f.responses, "answer"), f.updatedAt ? `last ${ago(f.updatedAt).toLowerCase()}` : ""].filter(Boolean).join(" · ")} trailing={<Status tone={f.open ? "ok" : "quiet"}>{f.open ? "Open" : "Closed"}</Status>} onPress={() => router.push(`/admin/form/${f.id}`)} />
+                </SwipeRow>
               ))}
             </RowList>
           ) : (
@@ -39,20 +42,22 @@ export function AdminFormsScreen() {
 /** One form: who answered and what they said; email one of them, some, or everyone. */
 export function AdminFormScreen() {
   const c = useTheme();
-  const { id = "" } = useLocalSearchParams<{ id: string }>();
-  const q = useForm(String(id));
+  const { id = "", email } = useLocalSearchParams<{ id: string; email?: string }>();
+  const [emailed, setEmailed] = React.useState<"" | "yes" | "no">("");
+  const q = useForm(String(id), emailed);
   const { canWrite } = useAdminRole();
   const { run, busy } = useAdminAction();
   const [picked, setPicked] = React.useState<Set<string>>(new Set());
   const [reading, setReading] = React.useState<FormResponse | null>(null);
-  const [emailTo, setEmailTo] = React.useState<string[] | "all" | null>(null);
-  const total = q.data?.respondents.length ?? 0;
+  const [emailTo, setEmailTo] = React.useState<string[] | "all" | null>(email === "all" ? "all" : null);
+  const total = q.data?.responses ?? q.data?.respondents.length ?? 0;
+  const shownCount = q.data?.respondents.length ?? 0;
   const footer = !canWrite || !total ? undefined : picked.size ? (
     <ActionBar count={picked.size} onClear={() => setPicked(new Set())} testID="form-bar">
       <SmallButton label={`Email ${picked.size}`} icon={<Mail size={18} color={c.ink} />} onPress={() => setEmailTo([...picked])} testID="form-email-some" />
     </ActionBar>
   ) : (
-    <Button label={`Email all ${total}`} onPress={() => setEmailTo("all")} testID="form-email-all" />
+    <Button label={emailed ? `Email these ${shownCount}` : `Email all ${total}`} onPress={() => setEmailTo(emailed ? (q.data?.respondents.map((r) => r.id) ?? []) : "all")} testID="form-email-all" />
   );
   return (
     <Screen testID="admin-form" gap={space[5]} onRefresh={() => void q.refetch()} refreshing={q.isRefetching} footer={footer}>
@@ -66,10 +71,29 @@ export function AdminFormScreen() {
                 <View style={{ flexDirection: "row", alignItems: "center", gap: space[3] }}>
                   <Status tone={f.open ? "ok" : "quiet"}>{f.open ? "Open" : "Closed"}</Status>
                   <T v="small" tone="muted">
-                    {plural(f.respondents.length, "answer")}
+                    {plural(f.responses, "answer")}
                   </T>
                 </View>
               </View>
+              <FilterChips
+                label="Show"
+                value={emailed}
+                onChange={(v) => {
+                  setEmailed(v);
+                  setPicked(new Set());
+                }}
+                options={[
+                  { id: "" as const, name: "Everyone" },
+                  { id: "no" as const, name: "Not emailed" },
+                  { id: "yes" as const, name: "Emailed" },
+                ]}
+                testID="form-show"
+              />
+              {f.waiting && canWrite ? (
+                <Notice testID="form-waiting" action={<SmallButton label="Send now" busy={busy === "send-waiting"} onPress={() => void run("send-waiting", () => adminCalls.sendWaitingForm(f.id), { done: (r) => `Sent ${r.sent}${r.left ? `, ${r.left} still waiting` : ""}` })} />}>
+                  {`${plural(f.waiting, "email")} from this form waiting for today's allowance.`}
+                </Notice>
+              ) : null}
               {f.respondents.length ? (
                 <View style={{ gap: space[1] }}>
                   {canWrite ? (
@@ -82,7 +106,7 @@ export function AdminFormScreen() {
                   ) : null}
                   <View style={{ borderTopWidth: 1, borderColor: c.hairline }}>
                     {f.respondents.map((r) => {
-                      const line = <Row testID={`resp-${r.id}`} title={r.name} meta={`${ago(r.at)} · ${r.answers[0]?.a ?? ""}`} trailing={r.emailed ? <Status tone="ok">Emailed</Status> : undefined} onPress={() => setReading(r)} />;
+                      const line = <Row testID={`resp-${r.id}`} title={r.name} meta={[r.when ?? ago(r.at), r.answers[0]?.a].filter(Boolean).join(" · ")} trailing={r.emailed ? <Status tone="ok">Emailed</Status> : r.emailWaiting ? <Status tone="warn">Waiting</Status> : undefined} onPress={() => setReading(r)} />;
                       return (
                         <View key={r.id} style={{ borderBottomWidth: 1, borderColor: c.hairline }}>
                           {canWrite ? (
@@ -117,8 +141,8 @@ export function AdminFormScreen() {
                     <T v="small" tone="muted">
                       {reading.email} · {ago(reading.at)}
                     </T>
-                    {reading.answers.map((a) => (
-                      <View key={a.q} style={{ gap: 2 }}>
+                    {reading.answers.map((a, i) => (
+                      <View key={`${i}-${a.q}`} style={{ gap: 2 }}>
                         <T v="caption" tone="muted">
                           {a.q}
                         </T>
@@ -155,10 +179,16 @@ export function AdminFormScreen() {
               <ContactSheet
                 open={emailTo !== null}
                 onClose={() => setEmailTo(null)}
-                count={emailTo === "all" ? f.respondents.length : (emailTo?.length ?? 0)}
+                count={emailTo === "all" ? f.responses : (emailTo?.length ?? 0)}
                 busy={busy === "email-form"}
+                mergeFields={f.mergeFields}
+                allowance={f.allowance}
+                preview={(subject, text) => {
+                  const who = emailTo === "all" || !emailTo?.length ? f.respondents[0]?.id : emailTo[0];
+                  return adminCalls.previewFormEmail(f.id, who ?? "", subject, text);
+                }}
                 onSend={(subject, text) =>
-                  void run("email-form", () => adminCalls.emailForm(f.id, { ids: emailTo ?? [], subject, text }), { done: (r) => `Sent ${r.sent}${r.failed ? `, ${r.failed} failed` : ""}` }).then((r) => {
+                  void run("email-form", () => adminCalls.emailForm(f.id, { ids: emailTo ?? [], subject, text }), { done: (r) => [`Sent ${r.sent}`, r.queued ? `${r.queued} wait for tomorrow` : "", r.failed ? `${r.failed} failed` : "", r.noEmail ? `${r.noEmail} had no email` : ""].filter(Boolean).join(", ") }).then((r) => {
                     if (r) {
                       setEmailTo(null);
                       setPicked(new Set());

@@ -5,12 +5,13 @@ import { Pressable, View } from "react-native";
 
 import { Button, Chips, EmptyState, Field, Row, RowList, Screen, Sheet, SwitchRow, T } from "@/ds";
 import { space, useTheme } from "@/theme";
-import { adminCalls, useAdminAction, useCohorts, useStudents } from "../api";
+import { adminCalls, useAdminAction, useBatches, useCohorts, useStudents } from "../api";
+import type { AdminSendBody } from "../contract";
 import { plural } from "../format";
 import { SearchBox, SelectRow } from "../kit";
 import { useAdminRole } from "../role";
 
-type To = "students" | "cohort";
+type To = "students" | "cohort" | "everyone";
 
 /** Check before sending. Pure, so it is tested. */
 export function checkMessage(m: { userIds: string[]; title: string; text: string }): string | null {
@@ -67,10 +68,14 @@ export function AdminComposeScreen() {
   const [error, setError] = React.useState<string | null>(null);
   const all = useStudents();
   const cohorts = useCohorts();
-  const members = useStudents({ cohort: cohort || "__none__" });
+  const lists = useBatches();
   const names = new Map((all.data?.items ?? []).map((r) => [r.id, r.name]));
-  const userIds = to === "cohort" ? (cohort ? (members.data?.items ?? []).map((r) => r.id) : []) : ids;
-  const cohortOptions = (cohorts.data?.items ?? []).filter((x) => x.members > 0);
+  // Who can be messaged comes with the sent list; the cohort list is the fallback.
+  const cohortOptions = (lists.data?.cohorts.length ? lists.data.cohorts : (cohorts.data?.items ?? [])).filter((x) => x.members > 0);
+  const everyone = lists.data?.students || all.data?.total || 0;
+  const reach = to === "cohort" ? (cohortOptions.find((x) => x.id === cohort)?.members ?? 0) : to === "everyone" ? everyone : ids.length;
+  // checkMessage counts people; for a cohort or everyone the server finds them.
+  const userIds = to === "students" ? ids : to === "everyone" || reach ? ["*"] : [];
 
   if (!canWrite) {
     return (
@@ -84,12 +89,13 @@ export function AdminComposeScreen() {
     const problem = checkMessage({ userIds, title, text });
     if (problem) return setError(problem);
     setError(null);
-    const r = await run("message", () => adminCalls.send({ userIds, title: title.trim(), text: text.trim(), alsoEmail: email }), { done: (x) => `Sent to ${plural(x.created, "student")}${x.emailed ? `, ${x.emailed} by email` : ""}` });
+    const body: AdminSendBody = to === "cohort" ? { to: "cohort", toId: cohort, title: title.trim(), body: text.trim(), alsoEmail: email } : to === "everyone" ? { to: "everyone", title: title.trim(), body: text.trim(), alsoEmail: email } : { to: "students", userIds: ids, title: title.trim(), body: text.trim(), alsoEmail: email };
+    const r = await run("message", () => adminCalls.send(body), { done: (x) => `Sent to ${plural(x.sent || x.created, "student")}${x.emailed ? `, ${x.emailed} by email` : ""}` });
     if (r) router.back();
   };
 
   return (
-    <Screen testID="compose" gap={space[5]} footer={<Button label={userIds.length ? `Send to ${plural(userIds.length, "student")}` : "Send"} busy={busy === "message"} onPress={() => void send()} testID="compose-send" />}>
+    <Screen testID="compose" gap={space[5]} footer={<Button label={reach ? `Send to ${plural(reach, "student")}` : "Send"} busy={busy === "message"} onPress={() => void send()} testID="compose-send" />}>
       <View style={{ gap: space[2] }}>
         <T v="small">To</T>
         <Chips
@@ -97,6 +103,7 @@ export function AdminComposeScreen() {
           options={[
             { id: "students" as const, name: "Students" },
             { id: "cohort" as const, name: "A cohort" },
+            { id: "everyone" as const, name: "Everyone" },
           ]}
           value={to}
           onChange={setTo}
@@ -116,6 +123,10 @@ export function AdminComposeScreen() {
           ) : null}
           <Button kind="quiet" full={false} label={ids.length ? "Add more" : "Pick students"} onPress={() => setPicking(true)} testID="compose-pick" />
         </View>
+      ) : to === "everyone" ? (
+        <T v="small" tone="muted" testID="compose-everyone">
+          {everyone ? `Every student on VIBHA, ${plural(everyone, "person", "people")}.` : "Every student on VIBHA."}
+        </T>
       ) : (
         <View style={{ gap: space[1] }}>
           {cohortOptions.length ? (

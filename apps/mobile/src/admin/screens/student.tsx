@@ -3,13 +3,13 @@ import { CheckCircle2, Circle, MessageSquare } from "lucide-react-native";
 import * as React from "react";
 import { Linking, ScrollView, Share, View } from "react-native";
 
-import { Button, Loaded, Row, RowList, RowsSkeleton, Screen, Sheet, TabRow, T } from "@/ds";
+import { Button, Row, RowList, RowsSkeleton, Screen, Sheet, TabRow, T } from "@/ds";
 import { layout, space, useTheme } from "@/theme";
 import { adminCalls, useAdminAction, useStudentCredentials, useStudentDoubts, useStudentMessages, useStudentProfile } from "../api";
-import type { AdminStudentRow, StudentDetail } from "../contract";
+import type { AdminStudent, AdminStudentRow, StudentDetail } from "../contract";
 import type { LoginLinkResult } from "../extra";
 import { ACCOUNT_NEXT, accountLabel, accountTone, ago, day, FLAG_LABEL, minutes, nextStep, pct, whatsapp } from "../format";
-import { Block, ConfirmSheet, DayBars, Facts, Figures, Meter, Notice, Quiet, SmallButton, Status, Tag, Tags } from "../kit";
+import { Block, ConfirmSheet, DayBars, Facts, Figures, Loaded, Meter, Notice, Quiet, SmallButton, Status, Tag, Tags } from "../kit";
 import { openCompose } from "../nav";
 import { useAdminRole } from "../role";
 import { CertLine } from "./certificates";
@@ -96,7 +96,9 @@ function Overview({ r, d }: { r: AdminStudentRow; d: StudentDetail | null }) {
   );
 }
 
-function Access({ r }: { r: AdminStudentRow }) {
+type Phone = AdminStudent["phone"];
+
+function Access({ r, phone }: { r: AdminStudentRow; phone?: Phone }) {
   const { canWrite } = useAdminRole();
   const { run, busy } = useAdminAction();
   const [lockOpen, setLockOpen] = React.useState(false);
@@ -127,6 +129,7 @@ function Access({ r }: { r: AdminStudentRow }) {
         <T v="small" tone="muted">
           Students can change phone twice a month. After that the app asks them to message you.
         </T>
+        {phone ? <Row title={phone.name} meta={`${phone.changesUsed} of ${phone.limit} changes used this month${phone.nextChangeAt ? ` · next free ${day(phone.nextChangeAt, true)}` : ""}`} testID="access-phone-now" /> : <Quiet>Not signed in to the app yet.</Quiet>}
         {canWrite ? <SmallButton label="Allow one more phone change" testID="access-phone" busy={busy === "allow-phone-change"} onPress={() => void run("allow-phone-change", () => adminCalls.allowPhoneChange(r.id), { done: "They can change phone again now" })} /> : null}
       </Block>
       <Block title="Switch sections off">
@@ -232,7 +235,7 @@ function Messages({ r }: { r: AdminStudentRow }) {
 }
 
 /** One student: who, the one next step, then tabs for the detail. */
-export function AdminStudentView({ r, d, tab, onTab }: { r: AdminStudentRow; d: StudentDetail | null; tab: Tab; onTab: (t: Tab) => void }) {
+export function AdminStudentView({ r, d, tab, onTab, phone }: { r: AdminStudentRow; d: StudentDetail | null; tab: Tab; onTab: (t: Tab) => void; phone?: Phone }) {
   const { canWrite } = useAdminRole();
   const { run, busy } = useAdminAction();
   const [link, setLink] = React.useState<LoginLinkResult | null>(null);
@@ -276,7 +279,7 @@ export function AdminStudentView({ r, d, tab, onTab }: { r: AdminStudentRow; d: 
         </T>
       </Notice>
       <ScrollTabs tabs={TABS} value={tab} onChange={onTab} />
-      {tab === "overview" ? <Overview r={r} d={d} /> : tab === "access" ? <Access r={r} /> : tab === "activity" ? <ActivityTab r={r} d={d} /> : tab === "credentials" ? <Credentials r={r} /> : <Messages r={r} />}
+      {tab === "overview" ? <Overview r={r} d={d} /> : tab === "access" ? <Access r={r} phone={phone} /> : tab === "activity" ? <ActivityTab r={r} d={d} /> : tab === "credentials" ? <Credentials r={r} /> : <Messages r={r} />}
       <LinkSheet link={link} name={r.name} mobile={r.mobileNumber} onClose={() => setLink(null)} />
     </>
   );
@@ -292,7 +295,7 @@ export function AdminStudentScreen() {
   return (
     <Screen testID="admin-student" gap={space[5]} onRefresh={() => void q.refetch()} refreshing={q.isRefetching} footer={canWrite && q.data?.row ? <Button label="Message" icon={<MessageSquare size={20} color={c.onPrimary} />} onPress={() => openCompose({ to: [id] })} testID="student-message" /> : undefined}>
       <Loaded q={q} soon what="this student" skeleton={<RowsSkeleton rows={6} />}>
-        {(p) => (p.row ? <AdminStudentView r={p.row} d={(p.detail as unknown as StudentDetail) ?? null} tab={tab} onTab={setTab} /> : <Quiet>This student could not be found.</Quiet>)}
+        {(p) => (p.row ? <AdminStudentView r={p.row} d={(p.detail as unknown as StudentDetail) ?? null} tab={tab} onTab={setTab} phone={p.phone} /> : <Quiet>This student could not be found.</Quiet>)}
       </Loaded>
     </Screen>
   );

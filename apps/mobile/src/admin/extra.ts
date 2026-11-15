@@ -46,12 +46,12 @@
 
 /* ------------------------------------------------------------- login link */
 
-export type LoginLinkResult = { sent: boolean; emailed: boolean; /** The link, so an admin can paste it into WhatsApp. */ url: string | null; expiresAt: string | null };
+export type LoginLinkResult = { sent: boolean; emailed?: boolean; /** The link, so an admin can paste it into WhatsApp (the server does not send it yet). */ url?: string | null; expiresAt?: string | null };
 
 /* ------------------------------------------------------------------ inbox */
 
-export type InboxKind = "email" | "enquiry";
-export type InboxItem = { id: string; kind: InboxKind; from: string; email: string; subject: string; preview: string; at: string; unread: boolean; studentId: string | null };
+export type InboxKind = "email" | "enquiry" | "doubt" | "concern";
+export type InboxItem = { id: string; kind: InboxKind; from: string; email: string; subject: string; preview: string; at: string; unread: boolean; studentId: string | null; /** The screen a tap opens. */ href?: string };
 export type InboxList = { items: InboxItem[]; unread: number };
 export type InboxMessage = { id: string; from: string; mine: boolean; body: string; at: string };
 export type InboxThread = { id: string; kind: InboxKind; subject: string; from: string; email: string; phone: string | null; studentId: string | null; messages: InboxMessage[] };
@@ -67,15 +67,22 @@ export type Submission = {
   course: string;
   submittedAt: string;
   status: "pending" | "graded";
+  /** What the website did with it: approved as is, or returned with feedback. */
+  reviewed?: "approved" | "returned" | null;
   grade: number | null;
   maxGrade: number;
   feedback: string | null;
   /** The student's text answer, or a file name. */
   answer: string;
   file: string | null;
+  files?: { id: string; name: string; format: string | null }[];
+  hasAudio?: boolean;
+  late?: boolean;
+  lesson?: string | null;
 };
-export type SubmissionList = { items: Submission[]; pending: number };
-export type GradeBody = { grade: number; feedback: string };
+export type SubmissionList = { items: Submission[]; pending: number; canWrite?: boolean };
+/** POST /admin/submissions/:id/grade (the website's Return feedback; the score is optional). */
+export type GradeBody = { feedback: string; score: number | null };
 
 export type SignOff = { id: string; studentId: string; studentName: string; activity: string; hours: number; date: string; supervisor: string; competency: string | null; status: "requested" | "signed" | "rejected"; note: string | null };
 export type SignOffList = { items: SignOff[] };
@@ -136,7 +143,7 @@ export type PeopleView = (typeof PEOPLE_VIEWS)[number]["id"];
 export type NoteBody = { text: string };
 export type PaidBody = { paid: boolean };
 export type BulkContactBody = { keys: string[]; subject: string; text: string };
-export type BulkContactResult = { sent: number; failed: number };
+export type BulkContactResult = { sent: number; failed: number; /** Over today's allowance: goes out with Send waiting emails. */ queued?: number; noEmail?: number };
 export type PeopleList = { items: PersonRow[] };
 export type PersonEvent = { title: string; body: string | null; at: string; tone: "ok" | "info" | "warn" | "quiet" };
 export type PersonDetail = PersonRow & { facts: { label: string; value: string }[]; timeline: PersonEvent[]; studentId: string | null };
@@ -157,9 +164,30 @@ export const KIND_DEFAULTS: Record<CertKind, { label: string; heading: string; l
   custom: { label: "Custom", heading: "Certificate", lead: "This is presented to", connector: "for", titleHint: "Certificate title", needsExpiry: false, about: "Your own wording." },
 };
 
-export type CertStatus = "valid" | "provisional" | "expired" | "revoked" | "not_issued";
-export type CertRow = { credentialId: string; title: string; kind: CertKind | "badge"; replacedBy?: string | null; recipient: string; recipientId: string; issuedAt: string; expiresAt: string | null; status: CertStatus; emailStatus: "sent" | "queued" | "failed" | "not_sent"; revokedAt: string | null; revokeReason: string | null };
-export type CertificateList = { items: CertRow[]; ready: boolean };
+export type CertStatus = "valid" | "provisional" | "expired" | "revoked" | "not_issued" | "draft";
+export type CertRow = { credentialId: string; title: string; kind: CertKind | "badge"; replacedBy?: string | null; recipient: string; recipientId: string; issuedAt: string; expiresAt: string | null; status: CertStatus; emailStatus: "sent" | "queued" | "failed" | "not_sent"; revokedAt: string | null; revokeReason: string | null;
+  /** From the server's Issued list (GET /admin/certificates/issued). */
+  statusLine?: string | null;
+  typeLabel?: string | null;
+  verifyUrl?: string | null;
+  canCorrect?: boolean;
+  isDraft?: boolean;
+  hasPdf?: boolean;
+  email?: string | null;
+  roll?: string | null;
+};
+export type CertificateList = {
+  items: CertRow[];
+  ready: boolean;
+  total?: number;
+  nextCursor?: string | null;
+  /** Certificate emails waiting for tomorrow's allowance. */
+  waiting?: number;
+  emailOn?: boolean;
+  canWrite?: boolean;
+  counts?: { certificate: number; badge: number };
+  cohorts?: { id: string; name: string }[];
+};
 
 export type StudioSignatory = { name: string; role: string; signatureFrom?: string | null };
 export type StudioRecipient = { userId: string; name: string };
@@ -182,9 +210,14 @@ export type StudioIssueInput = {
   recipients: StudioRecipient[];
   cohortId?: string | null;
   email: boolean;
+  /** A correction: the certificate this one replaces (the old one is revoked and points here). */
+  replaces?: string | null;
 };
-export type StudioOptions = { signatories: StudioSignatory[]; signatures: { id: string; label: string }[]; emailReady: boolean };
-export type IssueResult = { issued: number; emailed: number; queued: number; ids: string[] };
+export type StudioOptions = { signatories: StudioSignatory[]; signatures: { id: string; label: string }[]; emailReady: boolean; emailLeft?: number | null; ready?: boolean; today?: string | null; courses?: { id: string; title: string }[] };
+export type IssueResult = { issued: number; emailed: number; queued: number; ids: string[]; skipped?: number };
+/** GET /admin/badges, as the screens show it. */
+export type BadgeRow = { id: string; title: string; about: string; enabled: boolean; issued: number; automatic: boolean };
+export type BadgeList = { items: BadgeRow[]; canWrite: boolean; maxRecipients: number };
 export type RevokeBody = { reason: string };
 export type CertType = { id: string; name: string; kind: CertKind | "badge"; about: string; issued: number; auto: boolean };
 export type CertTypeList = { items: CertType[] };
@@ -192,10 +225,21 @@ export type StudioSettings = { signatories: StudioSignatory[]; emailOnIssue: boo
 
 /* ------------------------------------------------------------------ forms */
 
-export type FormRow = { id: string; title: string; responses: number; open: boolean; updatedAt: string };
+export type FormRow = { id: string; title: string; responses: number; open: boolean; updatedAt: string; url?: string | null };
 export type FormList = { items: FormRow[] };
-export type FormResponse = { id: string; name: string; email: string; at: string; answers: { q: string; a: string }[]; emailed: boolean; studentId: string | null };
-export type FormDetail = FormRow & { questions: string[]; respondents: FormResponse[] };
+export type FormResponse = { id: string; name: string; email: string; phone?: string | null; at: string; when?: string | null; answers: { q: string; a: string }[]; emailed: boolean; emailWaiting?: number; studentId: string | null };
+export type FormDetail = FormRow & {
+  questions: string[];
+  respondents: FormResponse[];
+  nextCursor?: string | null;
+  /** Emails from this form waiting for tomorrow's allowance. */
+  waiting?: number;
+  allowance?: { configured: boolean; limit: number; left: number };
+  /** {first_name}, {name}, {email}, {form} */
+  mergeFields?: { key: string; label: string }[];
+  canWrite?: boolean;
+};
+export type EmailPreview = { to: string; subject: string; text: string; unknownFields: string[] };
 /** Email the respondents one by one: `ids` picks some, "all" everyone who answered. */
 export type FormEmailBody = { ids: string[] | "all"; subject: string; text: string };
 export type ResendResult = { sent: boolean };
@@ -210,3 +254,12 @@ export type AdminPushKind = "new_doubt" | "new_enquiry" | "falling_behind";
 /** Extra field on PushData for admin notices. */
 export type AdminPushData = { admin: AdminPushKind; id?: string | null };
 export type AdminPushPrefs = { newDoubt: boolean; newEnquiry: boolean; fallingBehind: boolean };
+
+/* ----------------------------------------------------------------- system */
+
+/** A named support key, as the website's System page lists it (never the key itself). */
+export type SupportKeyView = { id: string; label: string; last4: string; createdAt: string; createdByEmail: string | null; revokedAt: string | null; revokedByEmail: string | null; lastUsedAt: string | null };
+/** GET /admin/system (planned): support keys and a few usage lines. */
+export type SystemData = { ready: boolean; canWrite: boolean; legacyKeyOn: boolean; maxLive: number; keys: SupportKeyView[]; usage: { label: string; value: string; pct: number | null }[] };
+/** POST /admin/system/support-keys and /:id/rotate answer the full key ONCE. */
+export type NewSupportKey = { plain: string; last4: string };

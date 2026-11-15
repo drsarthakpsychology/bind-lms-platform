@@ -34,7 +34,11 @@ export type AdminAction =
   | "invite"
   | "mark-paid"
   | "contact"
-  | "email-form";
+  | "email-form"
+  | "send-waiting"
+  | "award-badge"
+  | "award-all"
+  | "support-key";
 
 export function roleOf(me: Pick<Me, "role"> | null | undefined): AdminRole | null {
   if (me?.role === "admin") return "super";

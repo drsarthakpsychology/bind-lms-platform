@@ -1,18 +1,25 @@
 import * as React from "react";
-import { View } from "react-native";
+import { FileText, Mic } from "lucide-react-native";
+import { Linking, View } from "react-native";
 
-import { Button, Chips, EmptyState, Field, Loaded, Row, RowList, RowsSkeleton, Screen, Sheet, T } from "@/ds";
-import { space } from "@/theme";
-import { adminCalls, useAdminAction, useRefreshAdmin, useSignOffs, useSubmissions } from "../api";
+import { Button, Chips, EmptyState, Field, Row, RowList, RowsSkeleton, Screen, Sheet, T } from "@/ds";
+import { messageOf } from "@/api/errors";
+import { toast } from "@/ds/toast";
+import { space, useTheme } from "@/theme";
+import { adminCalls, useAdminAction, useRefreshAdmin, useSignOffs, useStudents, useSubmissions } from "../api";
 import type { SignOff, Submission } from "../extra";
 import { ago, day } from "../format";
-import { Facts, Notice, Status } from "../kit";
+import { Facts, Loaded, Notice, Status } from "../kit";
 import { openStudent } from "../nav";
 import { useAdminRole, VIEW_ONLY_LINE } from "../role";
 import { ScrollTabs } from "./student";
 
-/** A grade must be a whole or half number from 0 to the most marks. Pure, so it is tested. */
-export function checkGrade(raw: string, max: number): { grade: number } | { error: string } {
+/**
+ * A score is optional (the website's Return feedback), and when given it is a
+ * whole or half number from 0 to the most marks. Pure, so it is tested.
+ */
+export function checkGrade(raw: string, max: number, optional = false): { grade: number | null } | { error: string } {
+  if (optional && !raw.trim()) return { grade: null };
   const g = Number(raw.replace(",", ".").trim());
   if (!raw.trim() || !Number.isFinite(g)) return { error: `Give a grade from 0 to ${max}.` };
   if (g < 0 || g > max) return { error: `Give a grade from 0 to ${max}.` };
@@ -20,7 +27,18 @@ export function checkGrade(raw: string, max: number): { grade: number } | { erro
   return { grade: g };
 }
 
+/** Open a hand-in's file or recording: a short-lived address from the server. */
+async function openFile(get: () => Promise<{ url: string }>) {
+  try {
+    const r = await get();
+    if (r?.url) await Linking.openURL(r.url);
+  } catch (e) {
+    toast.show(messageOf(e));
+  }
+}
+
 function GradeSheet({ s, onClose }: { s: Submission | null; onClose: () => void }) {
+  const c = useTheme();
   const { canWrite } = useAdminRole();
   const { run, busy } = useAdminAction();
   const [grade, setGrade] = React.useState(s?.grade !== null && s?.grade !== undefined ? String(s.grade) : "");
@@ -28,10 +46,15 @@ function GradeSheet({ s, onClose }: { s: Submission | null; onClose: () => void 
   const [error, setError] = React.useState<string | null>(null);
   if (!s) return null;
   const save = async () => {
-    const g = checkGrade(grade, s.maxGrade);
+    const g = checkGrade(grade, s.maxGrade, true);
     if ("error" in g) return setError(g.error);
+    if (g.grade === null && !feedback.trim()) return setError("Write feedback, or approve it as it is.");
     setError(null);
-    const r = await run("grade", () => adminCalls.grade(s.id, { grade: g.grade, feedback: feedback.trim() }), { done: `Graded. ${s.studentName} gets a notice.` });
+    const r = await run("grade", () => adminCalls.grade(s.id, { score: g.grade, feedback: feedback.trim() }), { done: `Feedback sent. ${s.studentName} sees it as graded.` });
+    if (r) onClose();
+  };
+  const approve = async () => {
+    const r = await run("grade", () => adminCalls.approve(s.id), { done: `Approved. ${s.studentName} gets a notice.` });
     if (r) onClose();
   };
   return (
@@ -48,17 +71,28 @@ function GradeSheet({ s, onClose }: { s: Submission | null; onClose: () => void 
             openStudent(s.studentId);
           }}
         />
-        {s.file ? <Row title={s.file} meta="A file. Open it on the website to read it." /> : null}
+        {s.files?.length ? (
+          <RowList>
+            {s.files.map((f) => (
+              <Row key={f.id} icon={<FileText size={20} color={c.muted} />} title={f.name} meta={f.format ? f.format.toUpperCase() : "File"} onPress={() => void openFile(() => adminCalls.submissionFile(s.id, f.id))} testID={`sub-file-${f.id}`} />
+            ))}
+          </RowList>
+        ) : s.file ? (
+          <Row title={s.file} meta="A file. Open it on the website to read it." />
+        ) : null}
+        {s.hasAudio ? <Row icon={<Mic size={20} color={c.muted} />} title="Voice answer" meta="Opens in your player" onPress={() => void openFile(() => adminCalls.submissionAudio(s.id))} /> : null}
+        {s.late ? <Status tone="warn">Sent late</Status> : null}
         {s.answer ? <T>{s.answer}</T> : null}
         {canWrite ? (
           <>
-            <Field label={`Grade, out of ${s.maxGrade}`} value={grade} onChangeText={setGrade} keyboardType="decimal-pad" error={error} maxLength={5} testID="grade-value" />
-            <Field label="Feedback for the student" value={feedback} onChangeText={setFeedback} area maxLength={2000} testID="grade-feedback" />
-            <Button label={s.status === "graded" ? "Save new grade" : "Save grade"} busy={busy === "grade"} onPress={() => void save()} testID="grade-save" />
+            <Field label="Feedback for the student" value={feedback} onChangeText={setFeedback} area maxLength={4000} testID="grade-feedback" />
+            <Field label={`Score out of ${s.maxGrade} (if you give one)`} value={grade} onChangeText={setGrade} keyboardType="decimal-pad" error={error} maxLength={5} testID="grade-value" />
+            <Button label={s.status === "graded" ? "Send new feedback" : "Send feedback"} busy={busy === "grade"} onPress={() => void save()} testID="grade-save" />
+            {s.status === "pending" ? <Button kind="quiet" label="Approve as it is" busy={busy === "grade"} onPress={() => void approve()} testID="grade-approve" /> : null}
           </>
         ) : (
           <>
-            {s.status === "graded" ? <Facts items={[{ label: "Grade", value: `${s.grade} of ${s.maxGrade}` }, { label: "Feedback", value: s.feedback ?? "None" }]} /> : null}
+            {s.status === "graded" ? <Facts items={[{ label: "Score", value: s.grade === null ? (s.reviewed === "approved" ? "Approved" : "None") : `${s.grade} of ${s.maxGrade}` }, { label: "Feedback", value: s.feedback ?? "None" }]} /> : null}
             <Notice>{VIEW_ONLY_LINE}</Notice>
           </>
         )}
@@ -108,6 +142,10 @@ function SignOffSheet({ x, onClose }: { x: SignOff | null; onClose: () => void }
 function Submissions() {
   const [status, setStatus] = React.useState<"pending" | "graded" | "">("pending");
   const q = useSubmissions(status);
+  // The server sends the student's id and email; names come from the Students list.
+  const students = useStudents();
+  const names = new Map((students.data?.items ?? []).map((r) => [r.id, r.name]));
+  const named = (s: Submission): Submission => ({ ...s, studentName: names.get(s.studentId) ?? s.studentName });
   const [open, setOpen] = React.useState<Submission | null>(null);
   return (
     <>
@@ -126,7 +164,7 @@ function Submissions() {
           d.items.length ? (
             <RowList>
               {d.items.map((s) => (
-                <Row key={s.id} testID={`sub-${s.id}`} title={s.studentName} meta={`${s.assignment} · ${ago(s.submittedAt)}`} trailing={<Status tone={s.status === "graded" ? "ok" : "warn"}>{s.status === "graded" ? `${s.grade}/${s.maxGrade}` : "To grade"}</Status>} onPress={() => setOpen(s)} />
+                <Row key={s.id} testID={`sub-${s.id}`} title={named(s).studentName} meta={`${s.assignment} · ${ago(s.submittedAt)}`} trailing={<Status tone={s.status === "graded" ? "ok" : "warn"}>{s.status === "graded" ? (s.grade !== null ? `${s.grade}/${s.maxGrade}` : s.reviewed === "approved" ? "Approved" : "Returned") : "To grade"}</Status>} onPress={() => setOpen(named(s))} />
               ))}
             </RowList>
           ) : (
