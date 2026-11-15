@@ -229,14 +229,15 @@ export default async function MailPage({
     const panel =
       folder === "compose" ? (
         <ComposeTab
+          v2
           adminEmail={adminProfile?.email ?? ""}
           initialTo={sp.to ? sp.to.split(",").filter(Boolean) : []}
           templates={EMAIL_TEMPLATES.map((t) => ({ id: t.id, label: t.label, defaultSubject: t.defaultSubject, hint: t.hint }))}
         />
       ) : folder === "notify" ? (
-        <NotifyTab batches={notify?.batches ?? []} ready={notify?.ready ?? false} canWrite={canWrite} initialTo={sp.to ? sp.to.split(",").filter(Boolean) : []} />
+        <NotifyTab v2 batches={notify?.batches ?? []} ready={notify?.ready ?? false} canWrite={canWrite} initialTo={sp.to ? sp.to.split(",").filter(Boolean) : []} />
       ) : folder === "failed" && !openSent ? (
-        <FailedList items={failedItems} canWrite={canWrite} />
+        <FailedList v2 items={failedItems} canWrite={canWrite} />
       ) : undefined;
     return (
       <MailV2
@@ -248,6 +249,7 @@ export default async function MailPage({
         filter={
           listFolder ? (
             <FilterBar
+              v2
               key={folder}
               search={{ label: `Search ${folder}`, placeholder: `Search ${folder}` }}
               selects={folder === "inbox" ? INBOX_SELECTS : folder === "sent" ? SENT_SELECTS : []}

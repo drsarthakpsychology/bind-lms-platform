@@ -13,6 +13,9 @@ import { FormRowActions } from "../form-row-actions";
 import { StatusTag } from "../status-tag";
 import { formUrl } from "../format";
 import { ResponsesTable, type ResponseRow } from "./responses-table";
+import { readFlags } from "@/lib/flags";
+import { uiV2For } from "@/lib/ui/v2";
+import { FormAnswersV2 } from "../../_v2/forms";
 
 export const dynamic = "force-dynamic";
 
@@ -39,6 +42,22 @@ export default async function FormResponsesPage({ params }: { params: Promise<{ 
     contactId: s.contact_id,
     answers: Object.fromEntries(columns.map((c) => [c.key, answerText(s.responses?.[c.key])])),
   }));
+
+  if (uiV2For(await readFlags(), me.role)) {
+    return (
+      <FormAnswersV2
+        title={form.title}
+        open={form.isActive}
+        count={subs.length}
+        csvHref={subs.length > 0 ? `/api/admin/forms/${form.id}/csv` : null}
+        link={<CopyLink url={formUrl(form.slug)} />}
+        actions={canEdit ? <FormRowActions id={form.id} title={form.title} active={form.isActive} responses={subs.length} afterDelete="/admin/forms" /> : undefined}
+        emptyText={form.isActive ? "No answers yet. Share the link above. Answers show up here." : "No answers yet. This form is closed. Open it to take answers."}
+      >
+        <ResponsesTable v2 rows={rows} columns={columns.map((c) => ({ ...c, inTable: !hidden.has(c.key) }))} />
+      </FormAnswersV2>
+    );
+  }
 
   return (
     <div className="space-y-6">

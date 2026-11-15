@@ -35,7 +35,7 @@ export default async function AdminSupervisionPage() {
 
   if (uiV2For(await readFlags(), me.role)) {
     return (
-      <AdminPage width="default" title="Sign-offs" lead="Supervision entries students asked you to sign. Check the contact hours, then sign or reject.">
+      <AdminPage title="Sign-offs" lead="Supervision entries students asked you to sign. Check the contact hours, then sign or reject.">
         <SupervisionReview
           v2
           entries={(requested ?? []).filter((e) => !hidden.has(e.user_id as string)).map((e) => ({

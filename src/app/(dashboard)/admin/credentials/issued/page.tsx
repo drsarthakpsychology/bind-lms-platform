@@ -4,6 +4,9 @@ import { redirect } from "next/navigation";
 import { requireAdmin, isSuperAdmin } from "@/lib/auth/guards";
 import { createAdminClient } from "@/lib/supabase/server";
 import { FilterBar } from "@/components/admin/filter-bar";
+import { readFlags } from "@/lib/flags";
+import { uiV2For } from "@/lib/ui/v2";
+import { AdminPage, btn } from "../../_v2/kit";
 import { Button } from "@/components/ui/button";
 import { CERT_KINDS, KIND_DEFAULTS, STATUS_LABEL, istDay, longDate, statusLine, type CertStatus } from "@/lib/certificates/kinds";
 import { filterCertificates, liveStatus, type ListRow } from "@/lib/certificates/list";
@@ -77,23 +80,14 @@ export default async function IssuedCertificatesPage({ searchParams }: { searchP
   const filtering = Boolean(sp.q || sp.kind || sp.status || sp.cohort);
   const waiting = queueRes.error ? 0 : (queueRes.count ?? 0);
 
-  return (
-    <div>
-      <header className="mb-6 flex flex-wrap items-end justify-between gap-4">
-        <div>
-          <h1 className="text-h1">Issued certificates</h1>
-          {read.error ? <p className="mt-2 text-small text-muted-foreground">Certificates aren&apos;t set up in the database yet.</p> : null}
-        </div>
-        {canWrite ? (
-          <Button asChild>
-            <Link href="/admin/credentials/studio">New certificate</Link>
-          </Button>
-        ) : null}
-      </header>
+  const v2 = uiV2For(await readFlags(), me.role);
+  const content = (
+    <>
 
       {waiting > 0 ? <SendWaiting waiting={waiting} canWrite={canWrite} emailOn={emailConfigured()} /> : null}
 
       <FilterBar
+        v2={v2}
         className="mb-4"
         search={{ label: "Name, title or certificate ID", placeholder: "Name, title or certificate ID" }}
         selects={[
@@ -153,6 +147,40 @@ export default async function IssuedCertificatesPage({ searchParams }: { searchP
           ) : null}
         </div>
       )}
+    </>
+  );
+  if (v2) {
+    return (
+      <AdminPage
+        title="Issued certificates"
+        lead={read.error ? "Certificates are not set up in the database yet." : undefined}
+        actions={
+          canWrite ? (
+            <Link href="/admin/credentials/studio" className={btn.primary}>
+              New certificate
+            </Link>
+          ) : undefined
+        }
+      >
+        <div className="min-w-0">{content}</div>
+      </AdminPage>
+    );
+  }
+
+  return (
+    <div>
+      <header className="mb-6 flex flex-wrap items-end justify-between gap-4">
+        <div>
+          <h1 className="text-h1">Issued certificates</h1>
+          {read.error ? <p className="mt-2 text-small text-muted-foreground">Certificates aren&apos;t set up in the database yet.</p> : null}
+        </div>
+        {canWrite ? (
+          <Button asChild>
+            <Link href="/admin/credentials/studio">New certificate</Link>
+          </Button>
+        ) : null}
+      </header>
+      {content}
     </div>
   );
 }

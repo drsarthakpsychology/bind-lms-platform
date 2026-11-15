@@ -5,6 +5,9 @@ import { createAdminClient } from "@/lib/supabase/server";
 import { PageHeader } from "@/components/design-system/page-header";
 import { PRACTICE_TOOLS } from "@/lib/practice/tools";
 import { FlagToggle } from "./flag-toggle";
+import { readFlags } from "@/lib/flags";
+import { uiV2For } from "@/lib/ui/v2";
+import { FlagsV2 } from "../_v2/content";
 
 export const dynamic = "force-dynamic";
 
@@ -73,6 +76,25 @@ export default async function AdminFlagsPage() {
   const placed = new Set(GROUPS.flatMap((g) => g.keys));
   const groups = [...GROUPS, { title: "Other", keys: rows.map((f) => String(f.key)).filter((k) => !placed.has(k)) }];
   const canWrite = isSuperAdmin(me);
+
+  if (uiV2For(await readFlags(), me.role)) {
+    return (
+      <FlagsV2
+        counts={counts}
+        canWrite={canWrite}
+        groups={groups.map((g) => ({
+          title: g.title,
+          items: g.keys
+            .map((k) => rows.find((f) => String(f.key) === k))
+            .filter((f): f is NonNullable<typeof f> => Boolean(f))
+            .map((f) => {
+              const key = String(f.key);
+              return <FlagToggle v2 key={key} flagKey={key} label={LABELS[key] ?? key} description={EXTRA[key] ?? desc.get(key)} status={statusOf(f)} enabled={f.enabled as boolean} />;
+            }),
+        }))}
+      />
+    );
+  }
 
   return (
     <div className="space-y-6">

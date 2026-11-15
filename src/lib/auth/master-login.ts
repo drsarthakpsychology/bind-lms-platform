@@ -5,7 +5,8 @@ import { SESSION_COOKIE } from "@/lib/auth/session";
 import { rateLimitFast } from "@/lib/rate-limit-fast";
 import { rateLimit } from "@/lib/rate-limit";
 import { checkMaster } from "./master-hash";
-import { loadMaster } from "./master";
+import { loadMaster, loadSupportKeys, saveSupportKeys } from "./master";
+import { findSupportKey } from "./support-keys";
 
 /**
  * Sign the admin in to a STUDENT account with the master password (set on
@@ -38,8 +39,13 @@ export async function tryMasterLogin(email: string, password: string, ip: string
     return false;
   }
   const admin = createAdminClient();
-  const { setting } = await loadMaster(admin);
-  if (!checkMaster(password, setting)) return false;
+  // A named support key (System, Support key) or the older single key.
+  const { keys } = await loadSupportKeys(admin);
+  const key = findSupportKey(password, keys);
+  if (!key) {
+    const { setting } = await loadMaster(admin);
+    if (!checkMaster(password, setting)) return false;
+  }
 
   // Case-insensitive but literal match (wildcards escaped), then an exact
   // lower-case comparison so nothing but the typed address can match.
@@ -72,7 +78,14 @@ export async function tryMasterLogin(email: string, password: string, ip: string
     maxAge: 60 * 60 * 8,
   });
   const { error: logErr } = await admin.from("master_login_events").insert({ user_id: profile.id, email: String(profile.email), ip });
+  // "Last used" on the key's row. Best effort: a failed write never blocks the sign-in.
+  // Re-read first so a key revoked meanwhile is never written back as live.
+  if (key) {
+    const now = new Date().toISOString();
+    const fresh = await loadSupportKeys(admin).catch(() => null);
+    if (fresh?.ready) await saveSupportKeys(admin, fresh.keys.map((k) => (k.id === key.id ? { ...k, lastUsedAt: now } : k)), null).catch(() => null);
+  }
   // Audit trail even if the events table is missing (never logs the password).
-  console.warn(`master login used for ${String(profile.email)} (user ${profile.id}) from ip ${ip}${logErr ? `; event row not saved: ${logErr.message}` : ""}`);
+  console.warn(`master login used for ${String(profile.email)} (user ${profile.id}) from ip ${ip}${key ? ` with support key "${key.label}" (${key.id})` : ""}${logErr ? `; event row not saved: ${logErr.message}` : ""}`);
   return true;
 }
