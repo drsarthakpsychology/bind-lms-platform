@@ -2,6 +2,7 @@ import "server-only";
 import { cache } from "react";
 import { cookies } from "next/headers";
 import { createClient } from "@/lib/supabase/server";
+import { appContext } from "@/lib/app-api/context";
 
 export const SESSION_COOKIE = "plms_session";
 
@@ -53,6 +54,12 @@ function isExpired(expiresAt: string | null, role?: string): boolean {
  * "session_replaced" so a stale cookie can't be reused to slip back in.
  */
 export const getSession = cache(async (): Promise<SessionResult> => {
+  // A mobile-app request: its bearer token, account status and phone were
+  // already checked by requireAppUser (src/lib/app-api/guard.ts), with the
+  // same rules as below. There is no cookie to compare.
+  const app = appContext();
+  if (app) return app.session;
+
   const supabase = await createClient();
 
   const {

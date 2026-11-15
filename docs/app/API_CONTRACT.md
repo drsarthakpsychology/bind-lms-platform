@@ -89,7 +89,7 @@ Auth column: **public** (no token), **bearer** (signed in, any role), **student*
 
 | Status | Method and path | Auth | Request | Response | Calls |
 |---|---|---|---|---|---|
-| planned | `GET /config` | public | none | `AppConfig` | `src/lib/app-api/config.ts` (constants plus `LEGAL`) |
+| built | `GET /config` | public | none | `AppConfig` | `src/lib/app-api/config.ts` (constants plus `LEGAL`) |
 | planned | `POST /public/request-invitation` | public, 5 a minute per network | `RequestInvitationBody` | `RequestInvitationResult` | `saveEnquiry` (moved out of `submitWaitlist`, `src/app/waitlist/actions.ts`) |
 | planned | `GET /public/certificates/:certificateId` | public | none | `CertificateVerification` | the loader behind `/verify/[certificateId]` |
 
@@ -97,14 +97,14 @@ Auth column: **public** (no token), **bearer** (signed in, any role), **student*
 
 | Status | Method and path | Auth | Request | Response | Calls |
 |---|---|---|---|---|---|
-| planned | `POST /auth/sign-in` | public, 10 a minute per email, 60 per network | `SignInBody` | `SignInResult` | Supabase `signInWithPassword`, then the same expiry and paused checks as `login` (`src/lib/auth/actions.ts`), then `registerDevice` |
-| planned | `POST /auth/refresh` | public (refresh token in the body) | `RefreshBody` | `RefreshResult` | Supabase `refreshSession`, then the account and device checks |
-| planned | `POST /auth/sign-out` | bearer | none | `SignOutResult` | Supabase admin `signOut` for this session; the phone row is marked signed out |
-| planned | `POST /auth/setup/check` | public, 20 a minute per network | `SetupCheckBody` | `SetupCheckResult` | `checkSetupToken` (`src/lib/auth/setup.ts`) |
-| planned | `POST /auth/setup/complete` | public, 20 a minute per network | `SetupCompleteBody` | `SetupCompleteResult` | `finishSetup` (`src/lib/auth/setup.ts`, moved out of `completeSetup`) |
-| planned | `GET /devices` | bearer | none | `DeviceState` | `deviceState` (`src/lib/app-api/devices.ts`) |
-| planned | `PUT /devices/current` | bearer | `UpdateDeviceBody` | `DeviceState` | `updateDevice` |
-| planned | `POST /admin/devices/allow-change` | super admin | `AllowDeviceChangeBody` | `AllowDeviceChangeResult` | `allowDeviceChange` |
+| built | `POST /auth/sign-in` | public, 10 a minute per email, 60 per network | `SignInBody` | `SignInResult` | Supabase `signInWithPassword`, then the same expiry and paused checks as `login` (`src/lib/auth/actions.ts`), then `registerDevice` |
+| built | `POST /auth/refresh` | public (refresh token in the body) | `RefreshBody` | `RefreshResult` | Supabase `refreshSession`, then the account and device checks |
+| built | `POST /auth/sign-out` | bearer | none | `SignOutResult` | Supabase admin `signOut` for this session; the phone row is marked signed out |
+| built | `POST /auth/setup/check` | public, 20 a minute per network | `SetupCheckBody` | `SetupCheckResult` | `checkSetupToken` (`src/lib/auth/setup.ts`) |
+| built | `POST /auth/setup/complete` | public, 20 a minute per network | `SetupCompleteBody` | `SetupCompleteResult` | `finishSetup` (`src/lib/auth/setup.ts`, moved out of `completeSetup`) |
+| built | `GET /devices` | bearer | none | `DeviceState` | `deviceState` (`src/lib/app-api/devices.ts`) |
+| built | `PUT /devices/current` | bearer | `UpdateDeviceBody` | `DeviceState` | `updateDevice` |
+| built | `POST /admin/devices/allow-change` | super admin | `AllowDeviceChangeBody` | `AllowDeviceChangeResult` | `allowDeviceChange` |
 
 Sign-in errors: 401 `invalid_credentials`, 403 `account_blocked`, 403 `account_expired`, 403 `device_limit`, 429 `rate_limited`.
 
@@ -125,8 +125,8 @@ The one-phone rule:
 
 | Status | Method and path | Auth | Request | Response | Calls |
 |---|---|---|---|---|---|
-| planned | `GET /me` | bearer | none | `Me` | `buildMe` (`src/lib/app-api/me.ts`): profile, `loadMyCohorts`, `loadMyBlocks`, `readFlags`, `lectureOnlyAllowed`, `blockedBy` |
-| planned | `PATCH /me` | bearer | `UpdateMeBody` | `Me` | `saveMobileNumber`, `skipMobileNumber` (`(dashboard)/dashboard/actions.ts`) |
+| built | `GET /me` | bearer | none | `Me` | `buildMe` (`src/lib/app-api/me.ts`): profile, `loadMyCohorts`, `loadMyBlocks`, `readFlags`, `lectureOnlyAllowed`, `blockedBy` |
+| built | `PATCH /me` | bearer | `UpdateMeBody` | `Me` | `saveMobileNumber`, `skipMobileNumber` (`(dashboard)/dashboard/actions.ts`) |
 
 ### 2.4 Home, courses, lectures
 
