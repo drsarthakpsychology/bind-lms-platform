@@ -148,6 +148,8 @@ export type AppConfig = {
   contentSchemaVersion: number;
   /** Server time (ISO), for clock checks. */
   now: string;
+  /** The line the Welcome screen shows ("Cohort Two · by invitation · starts December 2026"), or null to show none. */
+  cohortLine?: string | null;
 };
 
 /** POST /public/request-invitation */
@@ -314,6 +316,10 @@ export type UpdateMeBody = {
   skipMobilePrompt?: boolean;
 };
 
+/** POST /me/deletion-request: ask the school to delete the account. A person checks it; nothing is deleted automatically. */
+export type DeletionRequestBody = { reason?: string };
+export type DeletionRequestResult = { received: true; /** ISO time the request was logged. */ at: string };
+
 export type Watermark = { name: string; rollNumber: string | null; /** Ready-made line: "Name · VIBHA-000123". */ text: string };
 
 // ---------------------------------------------------------------------------
@@ -350,7 +356,13 @@ export type Home = {
   courses: CourseSummary[];
   unreadNotifications: number;
   supportWhatsapp: string;
+  /** Today's three quests (the Today line opens them), or null when Study is closed or quests are not set up. */
+  quests?: QuestCard | null;
 };
+
+export type Quest = { id: string; label: string; done: boolean; /** "1 of 3", or null. */ progress: string | null; target: AppTarget };
+/** Points: `xpEach` per quest done, `xpBonus` once all are done. `spareBonus` is the spare-hint reward the website names. */
+export type QuestCard = { done: boolean; xpEach: number; xpBonus: number; spareBonus: number; quests: Quest[] };
 
 // ---------------------------------------------------------------------------
 // Courses and lectures
