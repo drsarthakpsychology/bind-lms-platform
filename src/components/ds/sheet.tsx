@@ -35,7 +35,7 @@ export function SheetRow({
         aria-label={label}
         onClick={() => setOpen(true)}
         className={cn(
-          "-mx-2 flex min-h-14 w-[calc(100%+1rem)] min-w-0 items-center gap-3 rounded-lg px-2 text-left outline-none transition-colors duration-[var(--ds-state)] ease-[var(--ds-ease)] hover:bg-[var(--ds-tint)] focus-visible:ring-2 focus-visible:ring-ring active:bg-[var(--ds-tint)]",
+          "ds-press ds-press-row -mx-2 flex min-h-14 w-[calc(100%+1rem)] min-w-0 items-center gap-3 rounded-lg px-2 text-left outline-hidden hover:bg-[var(--ds-tint)] focus-visible:ring-2 focus-visible:ring-ring active:bg-[var(--ds-tint)]",
           className,
         )}
       >

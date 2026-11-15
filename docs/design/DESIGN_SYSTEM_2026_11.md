@@ -259,3 +259,44 @@ every list item, pill badges on every row.
 Checked the same way as everything else: the layout detector at zero and axe
 with no serious issues. The pixel label in blue on the blue wash is 6.2:1 in
 light; in dark it is lime on the darker wash.
+
+## 14. Motion (16 November)
+
+The owner asked for a site that feels as fluid as a top app while staying
+minimal. All of it is built into the shared parts, so a v2 screen gets it by
+using them. Only transform and opacity move (plus one typed counter). Nothing
+loops. Code: `src/components/ds/motion.tsx`; CSS: `src/app/globals.css`,
+"DS MOTION".
+
+| moment | what happens | where it comes from |
+|---|---|---|
+| page change | old page fades out (120ms), new page rises 6px and fades in (220ms). Rows, cards and the hero button tag the move "forward" (new page comes from the right, 16px); `BackLink` tags it "back" (the other way). Tabs and the sidebar get the plain fade. | `PageFrame` wraps its page in `PageMotion` (React `<ViewTransition>`, View Transitions API). Browsers without it keep the old 200ms CSS fade. |
+| loading | the skeleton shows only if loading takes longer than 120ms, then fades out as the page rises in | `LoadingV2` (`SkeletonMotion`, `.ds-skel`) |
+| lists | the first 8 rows rise 6px into place, 25ms apart (under 0.45s in all) | `RowList` (`data-ds-list`) |
+| progress | the line fills from empty when it first paints (600ms), then moves with a transition | `ProgressLine`, `Hero` (`.ds-fill`) |
+| numbers | whole numbers up to 9999 (and "72%") count up from 0 once (700ms). The real digits stay in the page, see-through, so the width never shifts and screen readers read the number. | `StatItem`, `Stat` (`CountUp`) |
+| press | rows dip to 0.985, quiet buttons, chips, tabs and choices to 0.97 (120ms). The lime button keeps its sideways press into its shadow. | `.ds-press` on the ds class sets |
+| sheets | iOS sheet curve up (300ms), short ease-in down (200ms); dragging follows the finger, a flick faster than 0.4px/ms closes it, a pull upward meets soft resistance | `MobileBottomSheet` |
+| dialogs | from 0.96 with a strong ease-out, out to 0.98 in 150ms | `ui/dialog` |
+| success | a "done" band lands with a small spring; `SuccessMark` is a lime disc whose tick draws itself | `.ds-success`, `SuccessMark` (first used on the checkpoint end) |
+| focus | the 2px ring, never animated; `outline-hidden` keeps it visible in forced colours | all ds parts |
+
+Rules: arriving is ease-out, leaving is a shorter ease-in. Under 300ms for
+controls. Never from scale 0. With reduced motion, page changes become a short
+fade and lists, fills, counts and the tick are simply there.
+
+A Tailwind 4 note for everyone: `-translate-y-0.5` and friends set the
+`translate` property, not `transform`, so `transition-[transform,...]` does
+not animate them. Use `transition-[translate,...]` (or `transition-transform`,
+which covers both). The ds parts are fixed; about 56 other files still use the
+old form.
+
+References: Screenrove motion guidelines and entries `interior-skeleton-swap`
+(show-delay so fast loads never flash), `interior-modal` (0.96 enter, faster
+0.98 exit), `interior-press-depth` (press feedback), `vaul-drawer` (sheet curve,
+flick threshold, upward resistance); the Next.js view transitions guide
+(`node_modules/next/dist/docs/01-app/02-guides/view-transitions.md`); Chrome's
+modern-web-guidance `same-document-transitions`, `motion`,
+`natural-interactions`; Lazyweb Duolingo "lesson complete" (flow 2069, step
+13, captured 2026-02-20) for the success landing. Mobbin needs a paid plan and
+was not used.

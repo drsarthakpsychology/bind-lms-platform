@@ -1462,3 +1462,181 @@ html[data-cvd="on"] .bg-destructive {
     animation: none;
   }
 }
+
+/* =============================================================================
+   DS MOTION (docs/design/DESIGN_SYSTEM_2026_11.md, section 14)
+   =============================================================================
+   One motion language for the v2 screens. Only transform, opacity (and a
+   counter) animate; nothing loops. With reduced motion every movement goes:
+   page changes become a short fade, lists, fills and counts are simply there.
+   Parts: src/components/ds/motion.tsx, plus the press and fill classes used by
+   the ds parts. Curves: strong ease-out for things arriving, a short ease-in
+   for things leaving, the iOS sheet curve for sheets. */
+:root {
+  --ds-ease-strong: cubic-bezier(0.23, 1, 0.32, 1);
+  --ds-ease-exit: cubic-bezier(0.4, 0, 1, 1);
+  --ds-ease-sheet: cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+@keyframes ds-fade-in { from { opacity: 0; } }
+@keyframes ds-fade-out { to { opacity: 0; } }
+@keyframes ds-rise-in { from { opacity: 0; translate: 0 6px; } }
+@keyframes ds-from-right { from { opacity: 0; translate: 16px 0; } }
+@keyframes ds-from-left { from { opacity: 0; translate: -16px 0; } }
+@keyframes ds-to-left { to { opacity: 0; translate: -16px 0; } }
+@keyframes ds-to-right { to { opacity: 0; translate: 16px 0; } }
+
+/* ---- Page change (View Transitions, React <ViewTransition> in PageMotion) ---- */
+/* Clicks during the 220ms change reach the live page instead of the overlay. */
+::view-transition {
+  pointer-events: none;
+}
+/* The shell (top bar, tabs, sidebar) is the same on both pages: a quick crossfade at most. */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 160ms;
+}
+::view-transition-old(.ds-vt-out),
+::view-transition-old(.ds-vt-skel-out) {
+  animation: 120ms var(--ds-ease-exit) both ds-fade-out;
+}
+::view-transition-new(.ds-vt-in) {
+  animation: 220ms var(--ds-ease-strong) 60ms both ds-rise-in;
+}
+/* Forward (into a row, a card, the hero): the new page comes from the right. */
+::view-transition-old(.ds-vt-fwd-out) {
+  animation: 140ms var(--ds-ease-exit) both ds-to-left;
+}
+::view-transition-new(.ds-vt-fwd-in) {
+  animation: 240ms var(--ds-ease-strong) 40ms both ds-from-right;
+}
+/* Back (the Back link): the other way. */
+::view-transition-old(.ds-vt-back-out) {
+  animation: 140ms var(--ds-ease-exit) both ds-to-right;
+}
+::view-transition-new(.ds-vt-back-in) {
+  animation: 240ms var(--ds-ease-strong) 40ms both ds-from-left;
+}
+@media (prefers-reduced-motion: reduce) {
+  /* Keep the meaning (this is a new page), drop the movement. */
+  ::view-transition-group(*) {
+    animation-duration: 0s !important;
+  }
+  ::view-transition-old(*) {
+    animation: 100ms linear both ds-fade-out !important;
+  }
+  ::view-transition-new(*) {
+    animation: 120ms linear both ds-fade-in !important;
+  }
+}
+
+/* ---- Skeletons: never flash for a fast load ---- */
+/* Shown only if loading takes longer than 120ms; then it fades in. */
+.ds-skel {
+  animation: 160ms var(--ds-ease-strong) 120ms both ds-fade-in;
+}
+
+/* ---- Press feedback ----
+   Every tappable ds part listens: rows and quiet controls dip to 0.985,
+   small controls to 0.97, the hard-shadow buttons keep their sideways press.
+   `scale` is its own property, so it never fights a translate. */
+.ds-press {
+  transition-property: scale, background-color, border-color, color, translate, box-shadow;
+  transition-duration: var(--ds-press);
+  transition-timing-function: var(--ds-ease-strong);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .ds-press:active:not(:disabled) {
+    scale: 0.97;
+  }
+  .ds-press-row:active {
+    scale: 0.985;
+  }
+}
+
+/* ---- List entry: the first rows rise in, 25ms apart (under 0.45s in all) ---- */
+@media (prefers-reduced-motion: no-preference) {
+  [data-ds-list] > li:nth-child(-n + 8) {
+    animation: 260ms var(--ds-ease-strong) both ds-rise-in;
+  }
+  [data-ds-list] > li:nth-child(2) { animation-delay: 25ms; }
+  [data-ds-list] > li:nth-child(3) { animation-delay: 50ms; }
+  [data-ds-list] > li:nth-child(4) { animation-delay: 75ms; }
+  [data-ds-list] > li:nth-child(5) { animation-delay: 100ms; }
+  [data-ds-list] > li:nth-child(6) { animation-delay: 125ms; }
+  [data-ds-list] > li:nth-child(7) { animation-delay: 150ms; }
+  [data-ds-list] > li:nth-child(8) { animation-delay: 175ms; }
+}
+
+/* ---- Progress fills from empty when it first paints (then 600ms transitions) ---- */
+@keyframes ds-fill-in { from { transform: scaleX(0); } }
+@media (prefers-reduced-motion: no-preference) {
+  .ds-fill {
+    animation: var(--ds-fill) var(--ds-ease-strong) 120ms both ds-fill-in;
+  }
+}
+
+/* ---- Count-up: a counter driven by a typed custom property ---- */
+@property --ds-n {
+  syntax: "<integer>";
+  inherits: false;
+  initial-value: 0;
+}
+@keyframes ds-count { from { --ds-n: 0; } }
+.ds-count-wrap {
+  display: inline-flex;
+  align-items: baseline;
+  font-variant-numeric: tabular-nums;
+}
+.ds-count {
+  --ds-n: var(--ds-to);
+  display: inline-grid;
+  counter-reset: ds-n var(--ds-n);
+}
+.ds-count-real {
+  grid-area: 1 / 1;
+  color: transparent;
+}
+.ds-count::after {
+  grid-area: 1 / 1;
+  justify-self: start;
+  content: counter(ds-n);
+  content: counter(ds-n) / "";
+}
+@media (prefers-reduced-motion: no-preference) {
+  .ds-count {
+    animation: 700ms var(--ds-ease-strong) 120ms both ds-count;
+  }
+}
+
+/* ---- Success: the done band lands, the tick draws ---- */
+@keyframes ds-land { from { opacity: 0; translate: 0 8px; scale: 0.98; } }
+@keyframes ds-tick { from { stroke-dashoffset: 1; } }
+@keyframes ds-pop-in { from { opacity: 0; scale: 0.6; } }
+.ds-success {
+  animation: 200ms var(--ds-ease-strong) both ds-fade-in;
+}
+.ds-success-mark {
+  display: inline-grid;
+  flex-shrink: 0;
+  place-items: center;
+  border-radius: 999px;
+  border: 2px solid var(--foreground);
+  background: var(--primary);
+  color: var(--primary-foreground);
+}
+.ds-success-mark path {
+  stroke-dasharray: 1;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .ds-success {
+    animation: 420ms ease-out both ds-land;
+    animation: 420ms linear(0, 0.094, 0.28, 0.494, 0.685, 0.83, 0.935, 0.998, 1.031, 1.044, 1.043, 1.036, 1.026, 1.017, 1.01, 1.005, 1.001, 0.999, 0.998, 1) both ds-land;
+  }
+  .ds-success-mark {
+    animation: 360ms linear(0, 0.094, 0.28, 0.494, 0.685, 0.83, 0.935, 0.998, 1.031, 1.044, 1.043, 1.036, 1.026, 1.017, 1.01, 1.005, 1.001, 0.999, 0.998, 1) 80ms both ds-pop-in;
+  }
+  .ds-success-mark path {
+    animation: 320ms var(--ds-ease-strong) 260ms both ds-tick;
+  }
+}
