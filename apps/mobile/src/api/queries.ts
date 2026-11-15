@@ -76,8 +76,8 @@ export const keys = {
   admin: (part: string, arg = "") => ["admin", part, arg] as const,
 };
 
-/** Home, with today's quests when the server sends them (requested addition to the contract). */
-export type HomeData = C.Home & { quests?: X.QuestCard | null };
+/** Home, with today's quests (Home.quests). */
+export type HomeData = C.Home;
 
 /** The signed-in account. Every answer also refreshes the copy the session keeps. */
 export const useMe = () =>
@@ -109,6 +109,8 @@ export const useCheckpoint = (m: string, n: number) => useQuery({ queryKey: keys
 export const useFigure = (id: string) => useQuery({ queryKey: keys.figure(id), queryFn: () => api.get<C.Figure>(`/study/figures/${encodeURIComponent(id)}`), staleTime: 24 * 60 * 60_000 });
 export const useProgress = () => useQuery({ queryKey: keys.progress, queryFn: () => api.get<C.Progress>("/progress") });
 export const useAchievements = () => useQuery({ queryKey: keys.achievements, queryFn: () => api.get<C.Achievements>("/achievements") });
+/** The medicine library as the contract has it (GET /library/medicines): search uses it. */
+export const useLibraryMedicines = (enabled = true) => useQuery({ queryKey: ["library", "medicines"] as const, queryFn: () => api.get<C.MedicineList>("/library/medicines"), staleTime: 60 * 60_000, enabled });
 export const useMaterial = (id: string) => useQuery({ queryKey: keys.material(id), queryFn: () => api.get<C.Material>(`/materials/${encodeURIComponent(id)}`) });
 export const useVerify = (id: string) => useQuery({ queryKey: keys.verify(id), queryFn: () => api.get<C.CertificateVerification>(`/public/certificates/${encodeURIComponent(id)}`, { auth: false }), enabled: id.length > 0 });
 

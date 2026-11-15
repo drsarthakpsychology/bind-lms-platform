@@ -327,6 +327,11 @@ async function route(req: RawRequest): Promise<RawResponse> {
     return ok<C.Settings>({ account: { email: me.email, name: me.name, roleLabel: me.role === "admin" ? "Admin" : me.scope === "lectures_only" ? "Student (lectures)" : "Student", rollNumber: me.rollNumber, mobileNumber: me.mobileNumber }, device: fx.device, notifications: state.prefs, support: fx.config.support, legal: fx.config.legal, app: { minSupportedVersion: "1.0.0", latestVersion: "1.0.0" } });
   }
 
+  if (is("GET", "/library/medicines")) {
+    if (kind === "lecture") return fail(403, "scope", "Your account is for lectures only.");
+    return ok<C.MedicineList>({ v: 1, groups: xf.medicines.classes, rows: xf.medicines.items.map((r) => ({ id: r.id, name: r.name, cls: r.className, group: r.className, brands: r.brands, uses: [], line: r.className, dose: r.keyDose })) });
+  }
+
   /* ------------------------- not in the contract yet (src/api/extra.ts) */
   if (is("POST", "/me/deletion-request")) return ok<X.DeletionRequestResult>({ received: true, at: new Date().toISOString() });
   const studentOnly = kind === "lecture" ? fail(403, "scope", "Your account is for lectures only.") : null;

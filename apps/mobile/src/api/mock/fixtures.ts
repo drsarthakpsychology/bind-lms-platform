@@ -47,6 +47,7 @@ export const config: AppConfig = {
   legal: { termsUrl: "https://vibhapsychology.com/policies/terms", privacyUrl: "https://vibhapsychology.com/policies/privacy", policyVersion: "2026-11" },
   contentSchemaVersion: 1,
   now: NOW,
+  cohortLine: "Cohort Two · by invitation · starts December 2026",
 };
 
 const watermark: Watermark = { name: "Ananya Mehta", rollNumber: "VIBHA-000123", text: "Ananya Mehta · VIBHA-000123" };

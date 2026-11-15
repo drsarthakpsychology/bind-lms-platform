@@ -3,6 +3,7 @@ import * as React from "react";
 
 import type { WidgetBlock } from "@/api/contract";
 import { NATIVE_KINDS, WidgetView } from "@/study/widgets";
+import { brainFocus, REGIONS } from "@/study/widgets/brainmap";
 import { edgePoints } from "@/study/widgets/engine";
 import { render } from "./utils";
 
@@ -68,5 +69,13 @@ describe("the website's scene widgets, native", () => {
     const [from, to] = edgePoints({ x: 0, y: 0, w: 100, h: 40 }, { x: 0, y: 200, w: 100, h: 40 });
     expect(from[1]).toBeGreaterThanOrEqual(20);
     expect(to[1]).toBeLessThanOrEqual(180);
+  });
+});
+
+describe("brain map, as on the website", () => {
+  it("uses the website's region ids and its focus rule", () => {
+    expect(REGIONS).toHaveLength(17);
+    expect(brainFocus({ notes: { amygdala: "fear", hippocampus: "memory", nowhere: "x" } })).toEqual(["hippocampus", "amygdala"].sort((a, b) => REGIONS.findIndex((r) => r.id === a) - REGIONS.findIndex((r) => r.id === b)));
+    expect(brainFocus({ focus: ["prefrontal", "made-up"], notes: {} })).toEqual(["prefrontal"]);
   });
 });
