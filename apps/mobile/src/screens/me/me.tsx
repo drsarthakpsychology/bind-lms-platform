@@ -13,10 +13,10 @@ export function MeScreen() {
   const c = useTheme();
   const q = useMe();
   const me = q.data;
-  const can = me?.access.can;
-  const lecturesOnly = !!me?.access.lecturesOnly;
+  const can = me?.access?.can;
+  const lecturesOnly = !!me?.access?.lecturesOnly;
   const icon = { size: 20, color: c.muted };
-  const sub = me ? [me.rollNumber, me.cohorts.map((x) => x.name).join(", "), lecturesOnly ? "Lectures" : null].filter(Boolean).join(" · ") : "";
+  const sub = me ? [me.rollNumber, (me.cohorts ?? []).map((x) => x.name).join(", "), lecturesOnly ? "Lectures" : null].filter(Boolean).join(" · ") : "";
   return (
     <Screen tab top={<TabTop />} testID="me" onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
       {me ? (
