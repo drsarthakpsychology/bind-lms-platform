@@ -29,12 +29,14 @@ export type AuthFieldProps = Omit<TextInputProps, "style"> & {
   error?: string | null;
   hint?: string;
   secret?: boolean;
+  /** Several lines (a message). */
+  area?: boolean;
   icon?: React.ComponentType<{ size?: number; color?: string; strokeWidth?: number }>;
   inputRef?: React.Ref<React.ComponentRef<typeof TextInput>>;
   testID?: string;
 };
 
-export function AuthField({ label, error, hint, secret, icon: Icon, inputRef, onFocus, onBlur, testID, ...rest }: AuthFieldProps) {
+export function AuthField({ label, error, hint, secret, area, icon: Icon, inputRef, onFocus, onBlur, testID, ...rest }: AuthFieldProps) {
   const c = useTheme();
   const reduce = useReducedMotion();
   const [show, setShow] = React.useState(false);
@@ -64,7 +66,7 @@ export function AuthField({ label, error, hint, secret, icon: Icon, inputRef, on
       </T>
       <View>
         <Animated.View pointerEvents="none" style={[{ position: "absolute", left: 3, top: 3, right: -3, bottom: -3, borderRadius: layout.radius + 2, backgroundColor: LIME, borderWidth: 2, borderColor: INK }, block]} />
-        <Animated.View style={[{ flexDirection: "row", alignItems: "center", minHeight: 56, borderRadius: layout.radius + 2, borderWidth: 2, backgroundColor: c.card, paddingLeft: Icon ? space[3] : space[4], paddingRight: space[2], gap: space[3] }, frame]}>
+        <Animated.View style={[{ flexDirection: "row", alignItems: area ? "flex-start" : "center", minHeight: area ? 128 : 56, borderRadius: layout.radius + 2, borderWidth: 2, backgroundColor: c.card, paddingLeft: Icon ? space[3] : space[4], paddingRight: space[2], gap: space[3] }, frame]}>
           {Icon ? <Icon size={20} color={error ? c.danger : focused ? c.ink : c.muted} strokeWidth={2.2} /> : null}
           <TextInput
             ref={inputRef}
@@ -75,6 +77,8 @@ export function AuthField({ label, error, hint, secret, icon: Icon, inputRef, on
             selectionColor={c.brand}
             cursorColor={c.link}
             secureTextEntry={secret && !show}
+            multiline={area}
+            textAlignVertical={area ? "top" : "center"}
             maxFontSizeMultiplier={1.4}
             {...rest}
             onFocus={(e) => {
@@ -87,7 +91,7 @@ export function AuthField({ label, error, hint, secret, icon: Icon, inputRef, on
               f.set(reduce ? 0 : withTiming(0, { duration: 160, easing: easeOut }));
               onBlur?.(e);
             }}
-            style={[scale.body, { flex: 1, color: c.ink, minHeight: layout.target, paddingVertical: 0 }, { outlineStyle: "none" } as object]}
+            style={[scale.body, { flex: 1, color: c.ink, minHeight: area ? 124 : layout.target, paddingVertical: area ? space[3] : 0 }, { outlineStyle: "none" } as object]}
           />
           {secret ? (
             <Pressable

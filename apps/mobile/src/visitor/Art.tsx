@@ -29,8 +29,8 @@ export function Person({ who, width, flip, style }: { who: CastName; width: numb
 }
 
 /** The homepage's chunky star (a seal behind a person, or a loose sticker). */
-export function Star({ size, fill, stroke = "#111111", points = 12, style }: { size: number; fill: string; stroke?: string; points?: number; style?: StyleProp<ViewStyle> }) {
-  const xml = memo(`s:${points}:${fill}:${stroke}`, () => starSvg(points, 54, 96, fill, stroke));
+export function Star({ size, fill, stroke = "#111111", points = 12, inner = 54, style }: { size: number; fill: string; stroke?: string; points?: number; /** Inner radius out of 100 (bigger: a rounder seal). */ inner?: number; style?: StyleProp<ViewStyle> }) {
+  const xml = memo(`s:${points}:${inner}:${fill}:${stroke}`, () => starSvg(points, inner, 96, fill, stroke));
   return (
     <View {...hidden} pointerEvents="none" style={[{ width: size, height: size }, style]}>
       <SvgXml xml={xml} width={size} height={size} />

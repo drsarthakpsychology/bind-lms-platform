@@ -1,5 +1,5 @@
 import { router } from "expo-router";
-import { Check } from "lucide-react-native";
+import { Check, Mail, Phone, User } from "lucide-react-native";
 import * as React from "react";
 import { Linking, Pressable, View } from "react-native";
 import Animated, { FadeInDown, useAnimatedStyle, useReducedMotion, useSharedValue, withSpring } from "react-native-reanimated";
@@ -7,12 +7,13 @@ import Animated, { FadeInDown, useAnimatedStyle, useReducedMotion, useSharedValu
 import type { RequestInvitationBody, RequestInvitationResult } from "@/api/contract";
 import { ApiFailure, messageOf } from "@/api/errors";
 import { api } from "@/auth";
-import { Button, Chips, Field, Screen, T } from "@/ds";
+import { Button, Chips, Screen, T } from "@/ds";
 import { BRAND } from "@/lib/brand";
 import { haptic } from "@/lib/haptics";
 import { SketchCat } from "@/sketch/cat";
 import { layout, space, useTheme } from "@/theme";
 import { Star } from "@/visitor/Art";
+import { AuthField } from "@/visitor/form";
 
 type Status = RequestInvitationBody["status"];
 const STATUS: { id: Status; name: string }[] = [
@@ -76,14 +77,14 @@ export function RequestScreen() {
 
   return (
     <Screen safeTop tab testID="request" title="Request an invitation" lead="Tell us a little about you. We read every request ourselves and reply within a few days." gap={space[5]} footer={<Button label="Send request" busy={busy} onPress={() => void submit()} testID="request-submit" />}>
-      <Field label="Your name" value={name} onChangeText={setName} error={errors.name} autoComplete="name" textContentType="name" autoCapitalize="words" returnKeyType="next" testID="request-name" />
-      <Field label="Email" value={email} onChangeText={setEmail} error={errors.email} autoComplete="email" textContentType="emailAddress" keyboardType="email-address" autoCapitalize="none" autoCorrect={false} testID="request-email" />
-      <Field label="WhatsApp number (optional)" value={phone} onChangeText={setPhone} error={errors.phone} keyboardType="phone-pad" autoComplete="tel" textContentType="telephoneNumber" testID="request-phone" />
+      <AuthField label="Your name" icon={User} value={name} onChangeText={setName} error={errors.name} autoComplete="name" textContentType="name" autoCapitalize="words" returnKeyType="next" testID="request-name" />
+      <AuthField label="Email" icon={Mail} value={email} onChangeText={setEmail} error={errors.email} autoComplete="email" textContentType="emailAddress" keyboardType="email-address" autoCapitalize="none" autoCorrect={false} testID="request-email" />
+      <AuthField label="WhatsApp number (optional)" icon={Phone} value={phone} onChangeText={setPhone} error={errors.phone} keyboardType="phone-pad" autoComplete="tel" textContentType="telephoneNumber" testID="request-phone" />
       <View style={{ gap: space[2] }}>
         <T v="small">You are a</T>
         <Chips label="You are a" options={STATUS} value={status} onChange={setStatus} />
       </View>
-      <Field label="Anything you want us to know (optional)" value={message} onChangeText={setMessage} area maxLength={1000} testID="request-message" />
+      <AuthField label="Anything you want us to know (optional)" value={message} onChangeText={setMessage} area maxLength={1000} testID="request-message" />
       <View style={{ gap: space[1] }}>
         <Pressable
           testID="request-agree"

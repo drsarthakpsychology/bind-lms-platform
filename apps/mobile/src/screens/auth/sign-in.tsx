@@ -62,7 +62,7 @@ export function SignInScreen({ defaultEmail = "" }: { defaultEmail?: string }) {
   );
 
   // The art band folds away while the keyboard is up, so the fields and the button stay in view.
-  const band = Math.round(Math.min(300, Math.max(190, height * 0.3)));
+  const band = Math.round(Math.min(260, Math.max(170, height * 0.25)));
   const fold = useSharedValue(0);
   React.useEffect(() => {
     const show = Keyboard.addListener(Platform.OS === "ios" ? "keyboardWillShow" : "keyboardDidShow", () => fold.set(reduce ? 1 : withTiming(1, { duration: 260, easing: easeOut })));

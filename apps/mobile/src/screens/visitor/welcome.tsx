@@ -12,7 +12,7 @@ import { SketchCat } from "@/sketch/cat";
 import { fonts, layout, space, useTheme } from "@/theme";
 import { Icon, Person, Sparkle, Star } from "@/visitor/Art";
 import { CLOSING, DIFFERENT, DISCIPLINES, FACULTY, GET, HERO, JOIN, JOURNEY, PATIENTS, QUICK_ANSWERS, STICKERS, WEEK } from "@/visitor/content";
-import { BLUE, Chapter, DigitRoll, DrawLine, INK, LIME, Parallax, Press, Reveal, ScrollStage, useScrollY, bouncy, snappy, useIntro, useIntroSpring } from "@/visitor/motion";
+import { BLUE, Chapter, DigitRoll, INK, LIME, Parallax, Press, Reveal, ScrollStage, useScrollY, bouncy, snappy, useIntro, useIntroSpring } from "@/visitor/motion";
 import { Dots, Face, Head, Initials, Pix } from "@/visitor/parts";
 
 const G = layout.gutter;
@@ -58,7 +58,7 @@ export function WelcomeScreen() {
           showsVerticalScrollIndicator={false}
           onLayout={(e) => vh.set(e.nativeEvent.layout.height)}
           onContentSizeChange={(_, h) => ch.set(h)}
-          contentContainerStyle={{ paddingBottom: dockH + space[5] }}
+          contentContainerStyle={{ backgroundColor: c.bg }}
         >
           <Opening topInset={insets.top} onHeight={(h) => heroH.set(h)} />
           <QuickAnswers />
@@ -70,7 +70,7 @@ export function WelcomeScreen() {
           <YourWeek />
           <Faculty />
           <Joining />
-          <Closing />
+          <Closing bottom={dockH} />
         </Animated.ScrollView>
       </ScrollStage>
       <TopBar y={y} ch={ch} vh={vh} heroH={heroH} topInset={insets.top} />
@@ -413,10 +413,9 @@ function Different() {
         {DIFFERENT.rows.map((r, i) => (
           <Reveal key={r.vibha} lag={i * 6} style={{ flexDirection: "row", gap: space[3], paddingVertical: space[3], borderTopWidth: 1, borderColor: c.hairline }}>
             <View style={{ flex: 1, justifyContent: "center" }}>
-              <T v="small" tone="muted">
+              <T v="small" tone="muted" style={{ textDecorationLine: "line-through", textDecorationColor: c.danger }}>
                 {r.college}
               </T>
-              <DrawLine color={c.danger} height={2} lag={300 + i * 64} style={{ position: "absolute", left: 0, right: space[2], top: "50%" }} />
             </View>
             <View style={{ flex: 1, flexDirection: "row", gap: space[2] }}>
               <View style={{ width: 20, height: 20, borderRadius: 10, backgroundColor: LIME, borderWidth: 1.5, borderColor: INK, alignItems: "center", justifyContent: "center", marginTop: 1 }}>
@@ -503,16 +502,16 @@ function WhatYouGet() {
           ))}
         </View>
         <Reveal kind="scale">
-          <View style={{ backgroundColor: WHITE, borderRadius: 16, borderWidth: 2.5, borderColor: INK, padding: space[5], paddingRight: 104, minHeight: 150, gap: space[2], shadowColor: INK, shadowOpacity: 1, shadowRadius: 0, shadowOffset: { width: 5, height: 5 } }}>
+          <View style={{ backgroundColor: WHITE, borderRadius: 16, borderWidth: 2.5, borderColor: INK, padding: space[5], paddingRight: 108, minHeight: 150, gap: space[2], shadowColor: INK, shadowOpacity: 1, shadowRadius: 0, shadowOffset: { width: 5, height: 5 } }}>
             <Pix color={BLUE}>Your certificate</Pix>
             <Text maxFontSizeMultiplier={1.5} style={{ fontFamily: fonts.body, fontSize: 15, lineHeight: 22, color: INK }}>
               {GET.certificate}
             </Text>
-            <Parallax speed={0} spin={70} style={{ position: "absolute", right: -18, top: -22 }}>
-              <Star size={116} fill={BLUE} points={16} />
+            <Parallax speed={0} spin={70} style={{ position: "absolute", right: -24, top: -30 }}>
+              <Star size={128} fill={BLUE} points={16} inner={68} />
             </Parallax>
-            <View pointerEvents="none" style={{ position: "absolute", right: -18, top: -22, width: 116, height: 116, alignItems: "center", justifyContent: "center" }}>
-              <Text allowFontScaling={false} style={{ fontFamily: fonts.pixel, fontSize: 9, lineHeight: 12, color: WHITE, textAlign: "center" }}>
+            <View pointerEvents="none" style={{ position: "absolute", right: -24, top: -30, width: 128, height: 128, alignItems: "center", justifyContent: "center" }}>
+              <Text allowFontScaling={false} style={{ fontFamily: fonts.pixel, fontSize: 8, lineHeight: 11, color: WHITE, textAlign: "center" }}>
                 {"SIGNED\nBY A\nPSYCHIATRIST"}
               </Text>
             </View>
@@ -803,13 +802,13 @@ function Pill({ label, icon, onPress, testID }: { label: string; icon: React.Rea
   );
 }
 
-function Closing() {
+function Closing({ bottom }: { bottom: number }) {
   const { width } = useWindowDimensions();
   const size = Math.min(52, Math.floor((Math.min(width, 640) - G * 2) / 9.2));
   const cast = ["bun", "doctor3", "psych", "cap"] as const;
   const p = Math.min(84, Math.floor((Math.min(width, 640) - G * 2 - 90) / 4));
   return (
-    <Chapter style={{ backgroundColor: BLUE, paddingTop: space[7], overflow: "hidden" }}>
+    <Chapter style={{ backgroundColor: BLUE, paddingTop: space[7], paddingBottom: bottom, overflow: "hidden" }}>
       <Dots />
       <View style={{ paddingHorizontal: G, width: "100%", maxWidth: 640, alignSelf: "center", gap: space[2] }}>
         <Reveal kind="left">

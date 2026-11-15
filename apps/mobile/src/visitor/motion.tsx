@@ -136,19 +136,6 @@ export function Parallax({ children, speed = 0.2, spin = 0, style }: { children:
   );
 }
 
-/** A line drawn left to right as it scrolls into view (a strike-through, an underline). */
-export function DrawLine({ color, height = 3, lag = 0, style }: { color: string; height?: number; lag?: number; style?: StyleProp<ViewStyle> }) {
-  const { reduce } = useStage();
-  const local = useSharedValue(0);
-  const p = useProgress(local, lag, 120);
-  const anim = useAnimatedStyle(() => ({ transform: [{ scaleX: reduce ? 1 : p.value }] }));
-  return (
-    <View onLayout={(e) => local.set(e.nativeEvent.layout.y)} style={[{ height, overflow: "hidden" }, style]} pointerEvents="none">
-      <Animated.View style={[{ flex: 1, backgroundColor: color, transformOrigin: "left" }, anim]} />
-    </View>
-  );
-}
-
 /**
  * A number whose digits roll up from 0 like a counter as it scrolls into
  * view. Pixel digits. Screen readers hear the plain number.
