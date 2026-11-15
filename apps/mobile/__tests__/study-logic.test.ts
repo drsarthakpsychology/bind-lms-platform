@@ -26,7 +26,7 @@ describe("study logic", () => {
     expect(splitTag("Plain")).toEqual({ text: "Plain", tag: null });
   });
 
-  it("draws known widget kinds natively and sends newer versions to the website row", () => {
+  it("draws every widget kind natively and sends newer versions to the website row", () => {
     expect(canDraw({ kind: "guess", v: 1 })).toBe(true);
     expect(canDraw({ kind: "guess", v: 2 })).toBe(false);
     expect(canDraw({ kind: "hologram", v: 1 })).toBe(false);

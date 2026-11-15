@@ -148,6 +148,8 @@ export type AppConfig = {
   contentSchemaVersion: number;
   /** Server time (ISO), for clock checks. */
   now: string;
+  /** The line the Welcome screen shows ("Cohort Two · by invitation · starts December 2026"), or null to show none. */
+  cohortLine?: string | null;
 };
 
 /** POST /public/request-invitation */
@@ -166,11 +168,19 @@ export type RequestInvitationResult = { received: true };
 export type CertificateVerification = {
   found: boolean;
   certificateId: string;
-  status: "valid" | "revoked" | "expired" | "unknown";
+  /** The same words as the website's verify page. `unknown` when no such id. */
+  status: "valid" | "provisional" | "expired" | "revoked" | "not_issued" | "unknown";
+  /** "Certificate", "Provisional certificate", "Special recognition" or "Badge". */
+  what: string | null;
   recipientName: string | null;
   title: string | null;
+  /** The certificate's own paragraph, when it has one. */
+  paragraph: string | null;
   issuedAt: string | null;
   expiresAt: string | null;
+  revokedAt: string | null;
+  /** The id of the certificate that replaced this one. */
+  replacedBy: string | null;
   issuer: string;
   verifyUrl: string;
 };
@@ -306,6 +316,10 @@ export type UpdateMeBody = {
   skipMobilePrompt?: boolean;
 };
 
+/** POST /me/deletion-request: ask the school to delete the account. A person checks it; nothing is deleted automatically. */
+export type DeletionRequestBody = { reason?: string };
+export type DeletionRequestResult = { received: true; /** ISO time the request was logged. */ at: string };
+
 export type Watermark = { name: string; rollNumber: string | null; /** Ready-made line: "Name · VIBHA-000123". */ text: string };
 
 // ---------------------------------------------------------------------------
@@ -342,7 +356,13 @@ export type Home = {
   courses: CourseSummary[];
   unreadNotifications: number;
   supportWhatsapp: string;
+  /** Today's three quests (the Today line opens them), or null when Study is closed or quests are not set up. */
+  quests?: QuestCard | null;
 };
+
+export type Quest = { id: string; label: string; done: boolean; /** "1 of 3", or null. */ progress: string | null; target: AppTarget };
+/** Points: `xpEach` per quest done, `xpBonus` once all are done. `spareBonus` is the spare-hint reward the website names. */
+export type QuestCard = { done: boolean; xpEach: number; xpBonus: number; spareBonus: number; quests: Quest[] };
 
 // ---------------------------------------------------------------------------
 // Courses and lectures
@@ -1052,3 +1072,96 @@ export type Settings = {
   legal: { termsUrl: string; privacyUrl: string };
   app: { minSupportedVersion: string; latestVersion: string };
 };
+
+// ---------------------------------------------------------------------------
+// Practise and Library
+// ---------------------------------------------------------------------------
+
+/**
+ * POST /play/:game/:action { args } answers this. `kind` is "<game>.<action>"
+ * and `data` is the website action's own answer for that kind (see the table
+ * in docs/app/API_CONTRACT.md, section 2.12, for each kind's data type and
+ * where it is defined). `v` is the version of that data shape.
+ */
+export type PlayBody = { args: unknown[] };
+export type PlayResult<T = unknown> = { kind: string; v: 1; data: T };
+
+/** GET /library/medicines */
+export type MedicineRow = { id: string; name: string; cls: string; group: string; brands: string[]; uses: string[]; line: string; dose: string };
+export type MedicineList = { v: 1; groups: string[]; rows: MedicineRow[] };
+
+/**
+ * GET /library/medicines/:medId. `med`, `mechanism`, `visuals` and `halfLife`
+ * are the website's own objects (types `Med` in src/lib/meds/types.ts,
+ * `mechanismOf`, `medVisuals` and `halfLifeOf` in src/lib/meds); copy those
+ * types into the app with this file.
+ */
+export type MedicinePage = {
+  v: 1;
+  med: Record<string, unknown> & { id: string; name: string; cls: string; group: string };
+  related: { id: string; name: string; cls: string }[];
+  mechanism: Record<string, unknown> | null;
+  visuals: Record<string, unknown>[] | null;
+  halfLife: Record<string, unknown> | null;
+  study: { moduleId: string; title: string; target: AppTarget } | null;
+};
+
+// ---------------------------------------------------------------------------
+// Admin (admin and view admin read; only the super admin writes)
+// ---------------------------------------------------------------------------
+
+export type AttentionFlag = "login" | "no-mobile" | "quiet" | "never-seen" | "behind" | "email-failing" | "no-details";
+
+/** One row of the Students table (the website's roster row). */
+export type AdminStudentRow = {
+  id: string;
+  name: string;
+  email: string;
+  rollNumber: string | null;
+  mobileNumber: string | null;
+  scope: Scope;
+  blocked: boolean;
+  expiresAt: string | null;
+  /** "locked" | "expired" | "active" | the invite states of src/lib/people/account-status.ts */
+  account: string;
+  presence: "now" | "today" | "week" | "quiet" | "never";
+  lastSeen: string | null;
+  cohorts: { id: string; name: string }[];
+  minutes7: number;
+  activeDays30: number;
+  lecturesDone: number;
+  lecturesAvailable: number;
+  xp: number;
+  flags: AttentionFlag[];
+};
+
+/** GET /admin/home */
+export type AdminHome = {
+  v: 1;
+  counts: { students: number; activeThisWeek: number; onNow: number; needsLook: number; locked: number; openComplaints: number };
+  /** Students that need a look, most flags first (at most 20). */
+  needsLook: AdminStudentRow[];
+  live: { userId: string; name: string | null; where: string; lessonId: string | null; since: string; watching: boolean }[];
+};
+
+/** GET /admin/students?search=&cohort=&flag= (paged) */
+export type AdminStudentList = Page<AdminStudentRow> & { total: number; cohorts: { id: string; name: string }[] };
+
+/**
+ * GET /admin/students/:id. `detail` is the website's loadStudentDetail answer
+ * (src/lib/analytics/activity.ts): visits, lectures and study for 30 days.
+ */
+export type AdminStudentProfile = { row: AdminStudentRow | null; detail: Record<string, unknown> | null };
+
+/** POST /admin/students/:id/lock */
+export type LockBody = { reason?: string };
+export type LockResult = { blocked: boolean };
+
+/** POST /admin/messages: a bell notice (and push) to students, optional email. */
+export type SendMessageBody = { userIds: string[]; title: string; /** Plain text; paragraphs split by blank lines. */ text: string; alsoEmail?: boolean };
+export type SendMessageResult = { created: number; emailed: number; emailFailed: number; batchId: string | null };
+/** GET /admin/messages: recent sends with how many opened them. */
+export type MessageBatches = { batches: { batchId: string; title: string; sentAt: string; total: number; opened: number; type: string }[]; ready: boolean };
+
+/** POST /admin/doubts/:id/hide */
+export type HideBody = { hidden: boolean };

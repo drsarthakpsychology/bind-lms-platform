@@ -8,17 +8,9 @@
  */
 import type { AppTarget, Inline, Mcq } from "./contract";
 
-/* ------------------------------------------------------------ Home quests */
+/* Home quests and the deletion request are in the contract now; kept as names here so older imports still work. */
+export type { Quest, QuestCard, DeletionRequestBody, DeletionRequestResult } from "./contract";
 
-export type Quest = { id: string; label: string; done: boolean; progress: string | null; target: AppTarget };
-/** Extra field on GET /home. */
-export type QuestCard = { done: boolean; xpEach: number; xpBonus: number; spareBonus: number; quests: Quest[] };
-
-/* ---------------------------------------------------------- Account delete */
-
-/** POST /me/deletion-request: asks the school to delete the account (a person checks it). */
-export type DeletionRequestBody = { reason?: string };
-export type DeletionRequestResult = { received: true; /** ISO time the request was logged. */ at: string };
 
 /* --------------------------------------------------------------- Practise */
 

@@ -108,6 +108,11 @@ export function createSession(deps: SessionDeps) {
     pin,
     deviceId: () => deviceId,
     hasTokens: () => tokens !== null,
+    /** Headers for a file the app fetches itself (materials, uploads): the bearer token and the device id. Refreshes first if the token is about to run out. */
+    async authHeaders(): Promise<Record<string, string>> {
+      if (tokens && Date.parse(tokens.expiresAt) - now() < 60_000) await api.get("/me").catch(() => undefined);
+      return tokens ? { Authorization: `Bearer ${tokens.accessToken}`, "X-App-Device-Id": deviceId } : {};
+    },
     /** Let /config change the lock time without a release. */
     setLockAfter(ms: number) {
       if (ms > 0) lockAfterMs = ms;

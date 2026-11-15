@@ -5,7 +5,7 @@ import Svg, { Circle as SvgCircle } from "react-native-svg";
 
 import { outbox } from "@/api/outbox";
 import { useHome, type HomeData } from "@/api/queries";
-import type { QuestCard } from "@/api/extra";
+import type { QuestCard } from "@/api/contract";
 import { EmptyState, Hero, LoadError, Row, RowList, Screen, Section, Sheet, Skeleton, T } from "@/ds";
 import { haptic } from "@/lib/haptics";
 import { openTarget } from "@/nav/targets";

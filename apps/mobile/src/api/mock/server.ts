@@ -127,7 +127,7 @@ async function route(req: RawRequest): Promise<RawResponse> {
   }
   if ((m = is("GET", "/public/certificates/:id"))) {
     const found = fx.achievements.earned.find((c) => c.credentialId === m![0] && c.type === "certificate");
-    return ok<C.CertificateVerification>({ found: !!found, certificateId: m[0]!, status: found ? "valid" : "unknown", recipientName: found ? "Ananya Mehta" : null, title: found?.title ?? null, issuedAt: found?.issuedAt ?? null, expiresAt: null, issuer: "VIBHA School of Psychology", verifyUrl: `https://vibhapsychology.com/verify/${m[0]}` });
+    return ok<C.CertificateVerification>({ found: !!found, certificateId: m[0]!, status: found ? "valid" : "unknown", what: found ? "Certificate" : null, recipientName: found ? "Ananya Mehta" : null, title: found?.title ?? null, paragraph: found ? "For completing Module 1 of the VIBHA clinical training programme and passing its test." : null, issuedAt: found?.issuedAt ?? null, expiresAt: null, revokedAt: null, replacedBy: null, issuer: "VIBHA School of Psychology", verifyUrl: `https://vibhapsychology.com/verify/${m[0]}` });
   }
   if (is("POST", "/auth/sign-in")) {
     const email = String(body.email ?? "");
@@ -202,6 +202,22 @@ async function route(req: RawRequest): Promise<RawResponse> {
     if (!l) return notFound();
     if (body.deviceCompromised === true) return fail(403, "video_refused", "Lectures cannot be played on a rooted phone.");
     return ok<C.StreamAccess>({ url: `mock://stream/${l.id}/master.m3u8?st=mock`, mediaType: "hls", headers: { "X-App-Device-Id": "mock-device-0000000000" }, expiresIn: 7200, expiresAt: new Date(Date.now() + 7200_000).toISOString(), resumeSeconds: l.progress.completed ? 0 : l.progress.watchedSeconds, durationSeconds: l.durationSeconds, watermark: meFor(kind).watermark, progressEverySeconds: 15 });
+  }
+  if ((m = is("POST", "/assignments/:id/uploads"))) {
+    const name = String(body.fileName ?? "");
+    if (!name) return fail(400, "bad_request", "Name the file.", { fields: ["fileName"] });
+    return ok<C.PrepareUploadResult>({ path: `submissions/${m[0]}/${Date.now()}-${name}`, uploadUrl: `mock://upload/${encodeURIComponent(name)}`, headers: { "Content-Type": "application/octet-stream" } });
+  }
+  if ((m = is("POST", "/assignments/:id/files")) || (m = is("POST", "/assignments/:id/audio")) || (m = is("POST", "/assignments/:id/text"))) {
+    const files = (body.files as { path: string; name: string }[] | undefined) ?? (body.path ? [{ path: String(body.path), name: "recording.m4a" }] : []);
+    return ok<C.SubmitResult>({
+      submission: { id: `s-${m[0]}`, status: "pending_review", submittedAt: new Date().toISOString(), isLate: false, text: (body.text as string) ?? null, note: (body.note as string) ?? null, hasAudio: !!body.path, files: files.map((f, i) => ({ id: `f${i}`, name: f.name, format: f.name.split(".").pop() ?? null, sizeBytes: null, status: "ready", filePath: `/submissions/files/f${i}` })), score: null, feedback: null, editable: true },
+    });
+  }
+  if ((m = is("DELETE", "/assignments/:id/submission"))) return ok<C.UnsubmitResult>({ removed: true });
+  if ((m = is("GET", "/materials/:id"))) {
+    const mat = fx.lectureDetail("l5")!.materials.find((x) => x.id === m![0]);
+    return mat ? ok<C.Material>(mat) : notFound();
   }
   if (is("POST", "/save")) {
     const items = (body.items as C.SaveItem[] | undefined) ?? [];
@@ -316,6 +332,11 @@ async function route(req: RawRequest): Promise<RawResponse> {
   if (is("GET", "/settings")) {
     const me = meFor(kind);
     return ok<C.Settings>({ account: { email: me.email, name: me.name, roleLabel: me.role === "admin" ? "Admin" : me.role === "view_admin" ? "View Admin" : me.scope === "lectures_only" ? "Student (lectures)" : "Student", rollNumber: me.rollNumber, mobileNumber: me.mobileNumber }, device: fx.device, notifications: state.prefs, support: fx.config.support, legal: fx.config.legal, app: { minSupportedVersion: "1.0.0", latestVersion: "1.0.0" } });
+  }
+
+  if (is("GET", "/library/medicines")) {
+    if (kind === "lecture") return fail(403, "scope", "Your account is for lectures only.");
+    return ok<C.MedicineList>({ v: 1, groups: xf.medicines.classes, rows: xf.medicines.items.map((r) => ({ id: r.id, name: r.name, cls: r.className, group: r.className, brands: r.brands, uses: [], line: r.className, dose: r.keyDose })) });
   }
 
   /* ------------------------- not in the contract yet (src/api/extra.ts) */

@@ -2,16 +2,17 @@ import { useQueryClient } from "@tanstack/react-query";
 import { router, useLocalSearchParams } from "expo-router";
 import { ArrowLeft, ArrowRight, ChevronLeft, FileText } from "lucide-react-native";
 import * as React from "react";
-import { Linking, Pressable, ScrollView, View } from "react-native";
+import { Pressable, ScrollView, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
-import type { CompleteLectureResult, LectureDetail, Material, SubmitResult } from "@/api/contract";
+import type { CompleteLectureResult, LectureDetail, Material, Submission, SubmitResult, UnsubmitResult } from "@/api/contract";
 import { messageOf } from "@/api/errors";
 import { outbox } from "@/api/outbox";
 import { keys, useLecture } from "@/api/queries";
 import { api } from "@/auth";
 import { Button, Field, LoadError, Row, RowList, Sheet, Skeleton, T, TabRow, Tint } from "@/ds";
 import { toast } from "@/ds/toast";
+import { FileHandIn, RecordingHandIn } from "@/lecture/handin-ui";
 import { ProtectedPlayer, clock } from "@/lecture/player";
 import { config } from "@/lib/config";
 import { haptic } from "@/lib/haptics";
@@ -36,10 +37,7 @@ function MaterialRows({ items }: { items: Material[] }) {
           title={m.title}
           meta={[m.format?.toUpperCase(), sizeLabel(m.sizeBytes)].filter(Boolean).join(" · ") || undefined}
           icon={<FileText size={20} color={c.muted} />}
-          onPress={() => {
-            if (m.url) void Linking.openURL(m.url);
-            else toast.show("Materials open on the website for now. Viewing them in the app is coming in the next update.");
-          }}
+          onPress={() => router.push(`/material/${encodeURIComponent(m.id)}`)}
         />
       ))}
     </RowList>
@@ -52,8 +50,27 @@ function AssignmentPart({ lecture }: { lecture: LectureDetail }) {
   const [text, setText] = React.useState(a?.submission?.text ?? "");
   const [busy, setBusy] = React.useState(false);
   const [error, setError] = React.useState<string | null>(null);
+  const [openedAt] = React.useState(() => Date.now());
   if (!a) return <T tone="muted">No assignment for this lecture.</T>;
   const sub = a.submission;
+  const closed = !!a.dueAt && !a.allowLate && Date.parse(a.dueAt) < openedAt;
+  const handedIn = (s: Submission) => {
+    toast.show("Handed in");
+    qc.setQueryData<LectureDetail>(keys.lecture(lecture.id), (old) => (old && old.assignment ? { ...old, assignment: { ...old.assignment, submission: s } } : old));
+    void qc.invalidateQueries({ queryKey: keys.lecture(lecture.id) });
+  };
+  const takeBack = async () => {
+    setBusy(true);
+    try {
+      await api.del<UnsubmitResult>(`/assignments/${encodeURIComponent(a.id)}/submission`);
+      qc.setQueryData<LectureDetail>(keys.lecture(lecture.id), (old) => (old && old.assignment ? { ...old, assignment: { ...old.assignment, submission: null } } : old));
+      void qc.invalidateQueries({ queryKey: keys.lecture(lecture.id) });
+    } catch (e) {
+      toast.show(messageOf(e));
+    } finally {
+      setBusy(false);
+    }
+  };
   const submit = async () => {
     if (text.trim().length < 20) return setError("Write at least a few sentences.");
     setBusy(true);
@@ -84,6 +101,9 @@ function AssignmentPart({ lecture }: { lecture: LectureDetail }) {
         <Tint>
           <T v="bodyStrong">{sub.status === "approved" ? `Marked${sub.score !== null ? `: ${sub.score}` : ""}` : sub.status === "returned" ? "Returned with feedback" : "Handed in, waiting for review"}</T>
           {sub.feedback ? <T tone="muted">{sub.feedback}</T> : null}
+          {sub.files.length ? <T v="small" tone="muted">{sub.files.map((f) => f.name).join(", ")}</T> : null}
+          {sub.hasAudio && !sub.files.length ? <T v="small" tone="muted">A recording</T> : null}
+          {sub.editable ? <Button kind="text" label="Take it back to change it" busy={busy} onPress={() => void takeBack()} testID="assignment-unsubmit" /> : null}
         </Tint>
       ) : null}
       {a.submissionType === "text" && (!sub || sub.editable) ? (
@@ -91,8 +111,12 @@ function AssignmentPart({ lecture }: { lecture: LectureDetail }) {
           <Field label="Your answer" value={text} onChangeText={setText} area error={error} testID="assignment-text" />
           <Button kind="quiet" label={sub ? "Hand in again" : "Hand in"} busy={busy} onPress={() => void submit()} testID="assignment-submit" />
         </>
+      ) : closed && !sub ? (
+        <T tone="muted">The due date has passed, and this assignment does not take late hand-ins.</T>
+      ) : a.submissionType === "audio" && !sub ? (
+        <RecordingHandIn a={a} onDone={handedIn} />
       ) : a.submissionType !== "text" && !sub ? (
-        <T tone="muted">This assignment takes a file or a recording. Hand it in on the website for now; uploading from the app arrives in the next update.</T>
+        <FileHandIn a={a} onDone={handedIn} />
       ) : null}
     </View>
   );

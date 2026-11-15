@@ -106,7 +106,7 @@ describe("Study content", () => {
   });
 
   it("an unknown or newer widget becomes the website row, never a crash", async () => {
-    await render(<WidgetView block={{ t: "widget", kind: "amesroom", v: 1, data: {} }} ctx={ctx} />);
+    await render(<WidgetView block={{ t: "widget", kind: "amesroom", v: 2, data: {} } as never} ctx={ctx} />);
     expect(screen.getByTestId("widget-web")).toBeTruthy();
   });
 
