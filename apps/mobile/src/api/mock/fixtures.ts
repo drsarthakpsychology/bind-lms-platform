@@ -455,6 +455,14 @@ const sectionBlocks: Block[][] = [
   ],
 ];
 
+/** The website's scene widgets, so the native versions can be checked in the reader. */
+const sceneBlocks: Block[] = [
+  { t: "p", text: "Long stress and depression travel together. Step through what happens in the body." },
+  { t: "widget", kind: "stress", v: 1, data: {} },
+  { t: "widget", kind: "journey", v: 1, data: { drug: "Sertraline", target: "the serotonin transporter", routes: ["oral", "iv"] } },
+  { t: "widget", kind: "hypnogram", v: 1, data: { caption: "In depression, REM sleep comes earlier in the night." } },
+];
+
 export function sectionContent(moduleId: string, sectionId: string): SectionContent | null {
   const mod = moduleDetail(moduleId);
   const section = mod?.sections.find((s) => s.id === sectionId);
@@ -473,6 +481,7 @@ export function sectionContent(moduleId: string, sectionId: string): SectionCont
       { title: "A pattern, not a feeling", words: 320, blocks: sectionBlocks[0]! },
       { title: "Counting symptoms", words: 430, blocks: sectionBlocks[1]! },
       { title: "How severe is it?", words: 380, blocks: sectionBlocks[2]! },
+      { title: "The body under stress", words: 260, blocks: sceneBlocks },
     ],
     recall: isTest ? [] : [{ q: "Name the two core symptoms.", a: "Low mood, and loss of interest or pleasure." }, { q: "How long must symptoms last?", a: "At least two weeks." }],
     viva: [],
