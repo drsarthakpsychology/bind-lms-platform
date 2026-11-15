@@ -243,6 +243,8 @@ box around text. One screen, one purpose stays the rule.
 |---|---|---|---|
 | `ds-stroke` | a short lime stroke under a heading | the page H1 (`PageFrame` and `ListHead` do it for you), a medicine's name | one per screen: the H1 |
 | `type-pix`, `Pix` | the pixel font at 12px, blue (lime in dark) | a tiny label above a title ("LIBRARY", a medicine's class), section numerals ("01"), table column names | a word or two, or a number; never a sentence, never under 12px |
+| `Section n` | a blue pixel numeral before a section heading (01, 02) | hub groups (Learn, Practise, Me), a medicine's sections and its index | only where sections run in order; one number sequence per screen |
+| Hero context | the short line above the Hero title ("Continue watching") in the pixel voice | Home and every Hero | 28 characters or fewer, else it stays plain |
 | `ds-band` | a soft blue wash behind a page header, no border | hub pages (Learn, Practise, Me), the medicine library, a medicine | the header only, one per screen |
 | `IconTile` | the old lime icon tile (1.5px ink outline, no shadow) | at the right of a banded header | one per screen |
 | `ds-spine` + `--spine` | a 4px colour line at the left edge | a medicine's family, on its row and its page header; the same colour is the dot on the family's filter chip | colour never carries meaning alone: the family's name is always written |

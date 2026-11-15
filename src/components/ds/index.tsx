@@ -91,6 +91,7 @@ export function Section({
   action,
   id,
   level = 2,
+  n,
   className,
   children,
 }: Children & {
@@ -99,6 +100,8 @@ export function Section({
   action?: React.ReactNode;
   id?: string;
   level?: 2 | 3;
+  /** Brand accent: a blue pixel numeral before the heading (01, 02) where the sections run in order. */
+  n?: number;
 }) {
   const H = level === 2 ? "h2" : "h3";
   const headingId = id ? `${id}-title` : undefined;
@@ -107,8 +110,9 @@ export function Section({
       {title || action ? (
         <div className="flex min-w-0 items-baseline justify-between gap-4">
           {title ? (
-            <H id={headingId} className={cn("min-w-0 [overflow-wrap:anywhere]", level === 2 ? "type-h3" : "type-small font-semibold text-muted-foreground")}>
-              {title}
+            <H id={headingId} className={cn("min-w-0 [overflow-wrap:anywhere]", level === 2 ? "type-h3" : "type-small font-semibold text-muted-foreground", n && "flex items-baseline gap-3")}>
+              {n ? <span aria-hidden className="shrink-0 type-pix text-link">{String(n).padStart(2, "0")}</span> : null}
+              {n ? <span className="min-w-0">{title}</span> : title}
             </H>
           ) : (
             <span />
@@ -268,7 +272,8 @@ export function Hero({
   return (
     <section aria-label="Continue" className={cn("flex min-w-0 flex-col gap-4", className)}>
       <div className="flex min-w-0 flex-col gap-2">
-        {context ? <p className="type-small text-muted-foreground [overflow-wrap:anywhere]">{context}</p> : null}
+        {/* Brand accent: a short context ("Lecture 4") speaks in the pixel voice; a longer line stays plain. */}
+        {context ? <p className={cn("[overflow-wrap:anywhere]", typeof context === "string" && context.length <= 28 ? "type-pix text-link" : "type-small text-muted-foreground")}>{context}</p> : null}
         {/* A long title steps down a size on phones so the button stays in reach. */}
         <h2 className={cn("[overflow-wrap:anywhere]", typeof title === "string" && title.length > 36 ? "type-h1 md:type-display" : "type-display")}>{title}</h2>
         {meta ? <p className="type-body text-muted-foreground [overflow-wrap:anywhere]">{meta}</p> : null}
