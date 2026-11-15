@@ -95,10 +95,7 @@ export function DrugBandView({
 
   return (
     <div className="space-y-6">
-      <div className={cn("flex flex-wrap items-center justify-between gap-3", v2 ? "border-y border-[var(--ds-hairline)] py-3" : "rounded-2xl border-2 border-foreground bg-card px-4 py-3")}>
-        <p className="text-small font-semibold">
-          {clinician ? "Clinician view: mechanism, dosing logic, monitoring and interactions." : "Student view: plain words, what to notice and what to ask."}
-        </p>
+      <div className="flex justify-end">
         <ViewToggle />
       </div>
 
