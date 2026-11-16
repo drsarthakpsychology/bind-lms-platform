@@ -1,10 +1,11 @@
 import { MessageCircle } from "lucide-react-native";
 import * as React from "react";
 import { Linking, Text, View } from "react-native";
-import Animated, { FadeInDown, useReducedMotion } from "react-native-reanimated";
+import Animated, { useReducedMotion } from "react-native-reanimated";
 
 import { Button, Screen, Section, T } from "@/ds";
 import { BRAND } from "@/lib/brand";
+import { presets } from "@/motion";
 import { fonts, space, useTheme } from "@/theme";
 import { Icon, Star } from "@/visitor/Art";
 
@@ -14,7 +15,7 @@ const STEPS = ["Message us on WhatsApp.", "We send a new setup link to your emai
 export function ForgotPasswordScreen() {
   const c = useTheme();
   const reduce = useReducedMotion();
-  const enter = (i: number) => (reduce ? undefined : FadeInDown.delay(80 + i * 70).duration(320));
+  const enter = (i: number) => (reduce ? undefined : presets.rise(80 + i * 70));
   return (
     <Screen
       testID="forgot"

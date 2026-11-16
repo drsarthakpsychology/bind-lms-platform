@@ -40,8 +40,10 @@ jest.mock("react-native-reanimated", () => {
     useReducedMotion: () => true,
     useDerivedValue: (fn: () => unknown) => ({ value: fn(), get: fn }),
     useAnimatedReaction: () => undefined,
-    interpolate: (x: number) => x,
+    // The keyboard is always closed in tests.
+    KeyboardState: { UNKNOWN: 0, OPENING: 1, OPEN: 2, CLOSING: 3, CLOSED: 4 },
     useAnimatedKeyboard: () => ({ height: { value: 0, get: () => 0 }, state: { value: 4, get: () => 4 } }),
+    interpolate: (x: number) => x,
     Extrapolation: { CLAMP: "clamp" },
     FadeIn: anim(),
     FadeOut: anim(),
@@ -65,6 +67,15 @@ jest.mock("expo-secure-store", () => {
     deleteItemAsync: jest.fn(async (k: string) => void m.delete(k)),
   };
 });
+
+// Fingerprint and face: a phone with a fingerprint set up that always matches (tests switch it per case).
+jest.mock("expo-local-authentication", () => ({
+  AuthenticationType: { FINGERPRINT: 1, FACIAL_RECOGNITION: 2, IRIS: 3 },
+  hasHardwareAsync: jest.fn(async () => true),
+  isEnrolledAsync: jest.fn(async () => true),
+  supportedAuthenticationTypesAsync: jest.fn(async () => [1]),
+  authenticateAsync: jest.fn(async () => ({ success: true })),
+}));
 
 jest.mock("expo-haptics", () => ({
   selectionAsync: jest.fn(async () => undefined),

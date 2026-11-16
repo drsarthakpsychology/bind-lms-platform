@@ -69,14 +69,14 @@ export function RequestScreen() {
 
   if (sent) {
     return (
-      <Screen safeTop tab testID="request-sent" footer={<Button kind="quiet" label="Back to the start" onPress={() => router.replace("/welcome")} />}>
+      <Screen testID="request-sent" footer={<Button kind="quiet" label="Back to the start" onPress={() => router.replace("/welcome")} />}>
         <Sent name={name.trim().split(" ")[0] ?? ""} email={email.trim()} />
       </Screen>
     );
   }
 
   return (
-    <Screen safeTop tab testID="request" title="Request an invitation" lead="Tell us a little about you. We read every request ourselves and reply within a few days." gap={space[5]} footer={<Button label="Send request" busy={busy} onPress={() => void submit()} testID="request-submit" />}>
+    <Screen testID="request" title="Request an invitation" lead="Tell us a little about you. We read every request ourselves and reply within a few days." gap={space[5]} footer={<Button label="Send request" busy={busy} onPress={() => void submit()} testID="request-submit" />}>
       <AuthField label="Your name" icon={User} value={name} onChangeText={setName} error={errors.name} autoComplete="name" textContentType="name" autoCapitalize="words" returnKeyType="next" testID="request-name" />
       <AuthField label="Email" icon={Mail} value={email} onChangeText={setEmail} error={errors.email} autoComplete="email" textContentType="emailAddress" keyboardType="email-address" autoCapitalize="none" autoCorrect={false} testID="request-email" />
       <AuthField label="WhatsApp number (optional)" icon={Phone} value={phone} onChangeText={setPhone} error={errors.phone} keyboardType="phone-pad" autoComplete="tel" textContentType="telephoneNumber" testID="request-phone" />

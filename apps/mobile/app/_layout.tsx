@@ -13,6 +13,7 @@ import { SafeAreaProvider } from "react-native-safe-area-context";
 import { useViewingAsStudent, ViewAsBar } from "@/admin/view-as";
 import { persistOptions, persister, queryClient, useConfig } from "@/api/queries";
 import { session, useSession } from "@/auth";
+import { handoff } from "@/auth/handoff";
 import { ToastHost, toast } from "@/ds";
 import { crumb, describeCrumb } from "@/lib/breadcrumb";
 import { CrashBoundary, CrashScreen, describe, installCrashHandlers } from "@/lib/crash";
@@ -124,6 +125,38 @@ function useGuard(ready: boolean): void {
   }, [ready, phase, me, top, viewing]);
 }
 
+/**
+ * Right after a new PIN is chosen the session is open but the navigator still
+ * shows the sign-in screen. The PIN screen stays up while the guard routes to
+ * Home underneath; once Home has mounted and painted (two frames), the gate
+ * lifts away and reveals it. The old form never shows again, and the two tab
+ * bars are never on screen together.
+ */
+function useOpening(phase: string, top: string | undefined): boolean {
+  const opening = handoff.use((s) => s.opening);
+  const inApp = top === "(student)" || top === "(lecture)" || top === "(admin)";
+  React.useEffect(() => {
+    if (!opening) return;
+    const done = () => handoff.set({ opening: false });
+    // Never keep the gate up for long: if routing is slow, open anyway.
+    const safety = setTimeout(done, 1500);
+    let raf = 0;
+    if (phase !== "ready") {
+      // Signed out meanwhile (keystore refused, server said no): nothing to reveal.
+      if (phase === "visitor") done();
+    } else if (inApp) {
+      raf = requestAnimationFrame(() => {
+        raf = requestAnimationFrame(done);
+      });
+    }
+    return () => {
+      clearTimeout(safety);
+      cancelAnimationFrame(raf);
+    };
+  }, [opening, phase, inApp]);
+  return opening && phase !== "visitor";
+}
+
 function Shell() {
   const c = useTheme();
   const reduce = !!useReducedMotion();
@@ -136,6 +169,8 @@ function Shell() {
   const cfg = useConfig();
   const segments = useSegments();
   const viewing = useViewingAsStudent() && segments[0] === "(student)";
+  const opening = useOpening(phase, segments[0] as string | undefined);
+  const holdPin = handoff.use((s) => s.holdPin);
   const pathname = usePathname();
 
   // Breadcrumb: the screen on every navigation, so a native crash can be located next time.
@@ -165,7 +200,7 @@ function Shell() {
       <UpdateScreen storeUrl={gate.storeUrl} />
     ) : gate?.kind === "paused" ? (
       <PausedScreen message={gate.message} />
-    ) : phase === "setPin" ? (
+    ) : (phase === "setPin" && !holdPin) || opening ? (
       <SetPinScreen />
     ) : phase === "locked" ? (
       <LockScreen />
@@ -196,10 +231,12 @@ function Shell() {
         {
           <Stack screenOptions={{ ...header, ...stackMotion(reduce) }}>
             <Stack.Screen name="index" options={{ headerShown: false }} />
-            <Stack.Screen name="(visitor)" options={{ headerShown: false }} />
-            <Stack.Screen name="(student)" options={{ headerShown: false }} />
-            <Stack.Screen name="(lecture)" options={{ headerShown: false }} />
-            <Stack.Screen name="(admin)" options={{ headerShown: false }} />
+            {/* The groups change only when the account changes: signed out fades to Welcome; the app itself
+                appears under the PIN screen with no slide, so the gate lifting away is the only move. */}
+            <Stack.Screen name="(visitor)" options={{ headerShown: false, ...fadeMotion }} />
+            <Stack.Screen name="(student)" options={{ headerShown: false, animation: "none" }} />
+            <Stack.Screen name="(lecture)" options={{ headerShown: false, animation: "none" }} />
+            <Stack.Screen name="(admin)" options={{ headerShown: false, animation: "none" }} />
             <Stack.Screen name="setup" options={{ headerShown: false }} />
             <Stack.Screen name="forgot-password" options={{ title: "" }} />
             <Stack.Screen name="lectures" options={{ title: "Lectures" }} />

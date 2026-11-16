@@ -52,7 +52,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
       // lectures and audio stop when the app leaves the screen (and Apple rejects unused ones).
       // Screen recording and mirroring are detected by modules/capture-guard, which hides and
       // pauses video; it needs no permission string.
-      NSFaceIDUsageDescription: "Vibha Psychology can use Face ID to unlock the app instead of your PIN.",
+      // NSFaceIDUsageDescription comes from the expo-local-authentication plugin below.
     },
     privacyManifests: {
       // What the app collects, as Apple's privacy manifest needs it. Matches docs/release/DATA_SAFETY.md.
@@ -90,7 +90,8 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
     },
     predictiveBackGestureEnabled: true,
     softwareKeyboardLayoutMode: "resize",
-    permissions: ["POST_NOTIFICATIONS", "VIBRATE", "RECORD_AUDIO", "MODIFY_AUDIO_SETTINGS"],
+    // USE_BIOMETRIC: the opt-in fingerprint or face unlock (Settings > This phone); a normal permission, no prompt.
+    permissions: ["POST_NOTIFICATIONS", "VIBRATE", "RECORD_AUDIO", "MODIFY_AUDIO_SETTINGS", "USE_BIOMETRIC"],
     // The microphone is asked for only when a student records an assignment answer.
     // Files are chosen with the system picker, which needs no storage permission. READ_MEDIA_IMAGES
     // comes from expo-screen-capture's screenshot listener, which the app does not use (it blocks
@@ -159,6 +160,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
       },
     ],
     "expo-secure-store",
+    ["expo-local-authentication", { faceIDPermission: "Vibha Psychology can use Face ID to unlock the app instead of your PIN." }],
     ["expo-audio", { microphonePermission: "Vibha Psychology uses the microphone only when you record an answer to an assignment." }],
     ["expo-notifications", { icon: "./assets/images/notification.png", color: BLUE, defaultChannel: "default" }],
     ["expo-video", { supportsBackgroundPlayback: false, supportsPictureInPicture: false }],

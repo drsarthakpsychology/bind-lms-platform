@@ -7,7 +7,9 @@ import * as React from "react";
 
 import { ApiFailure } from "@/api/errors";
 import { session } from "@/auth";
+import { handoff } from "@/auth/handoff";
 import { PinPad } from "@/auth/PinPad";
+import { pausedBody } from "@/screens/auth/gates";
 import { signInProblem, SignInScreen } from "@/screens/auth/sign-in";
 import { WelcomeScreen } from "@/screens/visitor/welcome";
 import { adaptHome, BUNDLED } from "@/visitor/home-data";
@@ -39,7 +41,11 @@ jest.mock("react-native-reanimated", () => {
     useAnimatedStyle: (fn: () => object) => fn(),
     useAnimatedProps: (fn: () => object) => fn(),
     useAnimatedReaction: () => undefined,
+    // Gesture Handler 3 asks whether a prop is a shared value (the Sheet's drag).
+    isSharedValue: (v: unknown) => !!v && typeof v === "object" && "value" in (v as object) && "get" in (v as object),
     useAnimatedScrollHandler: () => () => undefined,
+    KeyboardState: { UNKNOWN: 0, OPENING: 1, OPEN: 2, CLOSING: 3, CLOSED: 4 },
+    useAnimatedKeyboard: () => ({ height: sv(0), state: sv(4) }),
     interpolate: (v: number, i: number[], o: number[]) => {
       const t = Math.min(1, Math.max(0, (v - i[0]!) / (i[i.length - 1]! - i[0]!)));
       return o[0]! + t * (o[o.length - 1]! - o[0]!);
@@ -118,9 +124,18 @@ describe("Welcome words from the website", () => {
 });
 
 describe("Visitor area", () => {
-  it("has exactly three tabs: Welcome, Request, Sign in (no free tools)", () => {
+  it("has exactly three screens: Welcome, Request, Sign in (no free tools), and no tab bar", () => {
     const dir = path.join(__dirname, "..", "app", "(visitor)");
     expect(fs.readdirSync(dir).sort()).toEqual(["_layout.tsx", "request.tsx", "sign-in.tsx", "welcome.tsx"]);
+    const layoutSrc = fs.readFileSync(path.join(dir, "_layout.tsx"), "utf8");
+    expect(layoutSrc).toMatch(/<Stack/);
+    expect(layoutSrc).not.toMatch(/TabBar/);
+  });
+
+  it("Welcome has a Jump to sheet with the four places", async () => {
+    await render(<WelcomeScreen />);
+    await fireEvent.press(screen.getByTestId("welcome-jump", { includeHiddenElements: true }));
+    for (const id of ["get", "faculty", "week", "join"]) expect(screen.getByTestId(`welcome-jump-${id}`, { includeHiddenElements: true })).toBeTruthy();
   });
 });
 
@@ -147,10 +162,46 @@ describe("Sign in", () => {
     await waitFor(() => expect(screen.getByTestId("sign-in-failure")).toBeTruthy());
   });
 
+  it("holds the PIN screen until the form has gone, then lets it in", async () => {
+    jest.useFakeTimers();
+    try {
+      await render(<SignInScreen />);
+      await fireEvent.changeText(screen.getByTestId("sign-in-email"), "ananya@example.com");
+      await fireEvent.changeText(screen.getByTestId("sign-in-password"), "right");
+      await fireEvent.press(screen.getByTestId("sign-in-submit"));
+      await waitFor(() => expect(session.store.get().phase).toBe("setPin"));
+      expect(handoff.get().holdPin).toBe(true);
+      await React.act(async () => {
+        jest.advanceTimersByTime(600);
+      });
+      expect(handoff.get().holdPin).toBe(false);
+    } finally {
+      jest.useRealTimers();
+      await React.act(() => session.signOut());
+    }
+  });
+
+  it("never holds the PIN screen after a wrong password", async () => {
+    await render(<SignInScreen />);
+    await fireEvent.changeText(screen.getByTestId("sign-in-email"), "ananya@example.com");
+    await fireEvent.changeText(screen.getByTestId("sign-in-password"), "wrong");
+    await fireEvent.press(screen.getByTestId("sign-in-submit"));
+    await waitFor(() => expect(screen.getByTestId("sign-in-failure")).toBeTruthy());
+    expect(handoff.get().holdPin).toBe(false);
+  });
+
   it("turns server errors into plain words", () => {
     expect(signInProblem(new ApiFailure("invalid_credentials", "x", 401))).toMatch(/do not match/);
     expect(signInProblem(new ApiFailure("network", "x"))).toMatch(/No internet/);
     expect(signInProblem(new ApiFailure("rate_limited", "x", 429))).toMatch(/Too many tries/);
+  });
+});
+
+describe("Paused screen", () => {
+  it("never says paused twice, and always says what to do", () => {
+    expect(pausedBody("Your account is paused.")).toBe("Message us on WhatsApp and we will sort it out.");
+    expect(pausedBody("")).toBe("Message us on WhatsApp and we will sort it out.");
+    expect(pausedBody("The fee for this month is due")).toBe("The fee for this month is due. Message us on WhatsApp and we will sort it out.");
   });
 });
 

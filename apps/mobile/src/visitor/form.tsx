@@ -3,13 +3,15 @@
  * focus (ink border, a lime block shadow slides out behind it), shakes once
  * on an error, and a submit button that turns into a spinner and then a tick.
  */
-import { Check, Eye, EyeOff } from "lucide-react-native";
+import { Eye, EyeOff } from "lucide-react-native";
 import * as React from "react";
 import { ActivityIndicator, Pressable, TextInput, View, type TextInputProps } from "react-native";
 import Animated, { interpolate, interpolateColor, useAnimatedStyle, useReducedMotion, useSharedValue, withSequence, withSpring, withTiming, type SharedValue } from "react-native-reanimated";
+import Svg from "react-native-svg";
 
 import { T } from "@/ds";
 import { haptic } from "@/lib/haptics";
+import { DrawInk } from "@/motion";
 import { fonts, layout, space, type as scale, useTheme } from "@/theme";
 import { INK, LIME, bouncy, easeOut, snappy } from "./motion";
 
@@ -167,7 +169,12 @@ export function SubmitButton({ label, busyLabel, doneLabel, state, onPress, test
         </Layer>
         <Layer n={2} face={face}>
           <View style={{ width: 24, height: 24, borderRadius: 12, backgroundColor: INK, alignItems: "center", justifyContent: "center" }}>
-            <Check size={15} color={LIME} strokeWidth={3.5} />
+            {/* The tick draws itself on in lime ink as the done face lands (drawn in full with Reduce Motion). */}
+            {state === "done" ? (
+              <Svg width={15} height={15} viewBox="0 0 24 24">
+                <DrawInk k="signin-tick" shape={TICK} o={TICK_INK} delay={80} duration={240} />
+              </Svg>
+            ) : null}
           </View>
           <T v="button" style={{ color: INK }}>
             {doneLabel}
@@ -177,6 +184,9 @@ export function SubmitButton({ label, busyLabel, doneLabel, state, onPress, test
     </Pressable>
   );
 }
+
+const TICK = { t: "path", d: "M5,12.5 L10,17.5 L19,7" } as const;
+const TICK_INK = { stroke: LIME, sw: 3.5, single: true, rough: 0.5 } as const;
 
 function Layer({ n, face, children }: { n: number; face: SharedValue<number>; children: React.ReactNode }) {
   const anim = useAnimatedStyle(() => {

@@ -1,12 +1,13 @@
 import type { BottomTabBarProps, BottomTabNavigationOptions } from "expo-router/build/layouts/Tabs";
 import * as React from "react";
-import { Animated as RNAnimated, Easing as RNEasing, Platform, Pressable, View, type LayoutChangeEvent } from "react-native";
-import Animated, { interpolate, useAnimatedKeyboard, useAnimatedReaction, useAnimatedStyle, useReducedMotion, useSharedValue, withSequence, withSpring, withTiming, type SharedValue } from "react-native-reanimated";
+import { Animated as RNAnimated, Easing as RNEasing, Pressable, View, type LayoutChangeEvent } from "react-native";
+import Animated, { interpolate, useAnimatedReaction, useAnimatedStyle, useReducedMotion, useSharedValue, withSequence, withSpring, withTiming } from "react-native-reanimated";
 import { scheduleOnRN } from "react-native-worklets";
 
 import { reportTabBar } from "@/ds/bottom-chrome";
 import { T } from "@/ds/text";
 import { haptic } from "@/lib/haptics";
+import { KeyboardState, useKeyboard } from "@/lib/keyboard";
 import { fonts, useTheme } from "@/theme";
 import { dur, shift, springs } from "./tokens";
 
@@ -16,17 +17,12 @@ const PILL_W = 60;
 const PILL_H = 32;
 const BAR_H = 64;
 
-const web = Platform.OS === "web";
-/** Reanimated's KeyboardState values (kept here so test stand-ins need no enum). */
-const KB = { OPEN: 2, CLOSING: 3, CLOSED: 4 } as const;
-const still = { height: { value: 0 }, state: { value: KB.CLOSED } } as unknown as { height: SharedValue<number>; state: SharedValue<number> };
-/** The keyboard, frame by frame on the UI thread (nothing to follow on web). */
-const useKeyboard = web || typeof useAnimatedKeyboard !== "function" ? () => still : () => useAnimatedKeyboard();
-
 /**
- * The bar slides down behind the keyboard frame by frame as it opens (UI
- * thread), and its space is given back once the keyboard is fully up; it
- * comes back as soon as the keyboard starts to close.
+ * The bar follows the keyboard (UI thread, frame by frame, through the app's
+ * one keyboard hook so the edge-to-edge flags agree): it slides down behind
+ * the keyboard as it opens and fades, leaves the layout once it is open
+ * (Android would otherwise put the bar above the keyboard), comes back as soon
+ * as the keyboard starts closing and slides up with it.
  */
 function useKeyboardBar(barH: number) {
   const kb = useKeyboard();
@@ -35,12 +31,12 @@ function useKeyboardBar(barH: number) {
     () => kb.state.value,
     (st, prev) => {
       if (st === prev) return;
-      if (st === KB.OPEN) scheduleOnRN(setUp, true);
-      else if (st === KB.CLOSING || st === KB.CLOSED) scheduleOnRN(setUp, false);
+      if (st === KeyboardState.OPEN) scheduleOnRN(setUp, true);
+      else if (st === KeyboardState.CLOSING || st === KeyboardState.CLOSED) scheduleOnRN(setUp, false);
     },
   );
   const style = useAnimatedStyle(() => {
-    const h = kb.height.value;
+    const h = Math.max(0, kb.height.value);
     return { opacity: interpolate(h, [0, barH], [1, 0], "clamp"), transform: [{ translateY: interpolate(h, [0, barH], [0, barH], "clamp") }] };
   });
   return { up, style };
