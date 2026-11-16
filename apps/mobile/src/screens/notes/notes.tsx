@@ -8,7 +8,7 @@ import Animated, { useAnimatedStyle, useReducedMotion, useSharedValue, withSprin
 import { bulletText } from "@/api/adapt-learn";
 import type { RevisionNote, RevisionNoteList, RevisionNoteSummary } from "@/api/contract";
 import { learnKeys, useNote, useNotes } from "@/api/learn";
-import { Chips, Hero, Loaded, Row, RowList, RowsSkeleton, Screen, Section, T, Tint } from "@/ds";
+import { Chips, EmptyState, Hero, Loaded, Row, RowList, RowsSkeleton, Screen, Section, T, Tint } from "@/ds";
 import { haptic } from "@/lib/haptics";
 import { OnceHint } from "@/lib/once";
 import { settingsStore, updateSettings } from "@/lib/settings";
@@ -37,6 +37,7 @@ export function NotesBody({ d }: { d: RevisionNoteList }) {
     else groups.push({ title, items: [n] });
   }
   const read = d.notes.filter((n) => n.readOn).length;
+  if (!d.notes.length) return <EmptyState mood="sleepy" title="Revision notes open soon" body="Short notes for each topic show up here as your course goes on." testID="notes-empty" />;
   return (
     <>
       {next ? (

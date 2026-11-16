@@ -233,7 +233,7 @@ All: student, gate `/doubts` (open to lectures-only accounts; closed when Doubts
 
 | Status | Method and path | Request | Response | Calls |
 |---|---|---|---|---|
-| built | `GET /doubts` | `?cohort=&mine=1&limit&cursor` | `DoubtList` | `loadDoubts`, `doubtsReady` (`src/lib/doubts/data.ts`) |
+| built | `GET /doubts` | `?cohort=&mine=1&limit&cursor` | `DoubtList` (`wall`: the class wall is open for you, the website's rule: not admins, gate `/wall`) | `loadDoubts`, `doubtsReady` (`src/lib/doubts/data.ts`) |
 | built | `GET /doubts/:id` | none | `DoubtThread` | `loadDoubt` |
 | built | `POST /doubts` | `AskDoubtBody` | `AskDoubtResult` | `askDoubt` |
 | built | `POST /doubts/:id/replies` | `ReplyBody` | `DoubtActionResult` | `replyToDoubt` |
@@ -253,6 +253,26 @@ The website's doubt actions do their own rate limits (20 doubts, 40 answers, 60 
 | built | `GET /journey` | bearer (gate `/journey`, open to lectures-only accounts as on the website) | none | `Journey` | `loadJourney` (`src/lib/journey/model.ts`, moved out of the `/journey` page, which calls it too): `loadMyBoard`, `normalise`, `levelFor`, `liveStreak`, lecture progress and practice counts |
 
 Settings are changed through the routes that own each part: `PATCH /me`, `PUT /devices/current`, `PUT /notifications/preferences`.
+
+### 2.10a Learning map and class wall
+
+Map routes: bearer, gate `{ path: "/study/map", flag: "learn" }` (the website page calls `requireFeature("learn")`; closed to lectures-only accounts and when Study is switched off). Staff accounts get `learner: false`, an empty map, and rounds that are graded but not saved, as on the website.
+
+| Status | Method and path | Request | Response | Calls |
+|---|---|---|---|---|
+| built | `GET /study/map` | none | `StudyMap` | `loadStudentMap` (`src/lib/learn/model/server.ts`) through `mapView` (`src/lib/app-api/learn-map.ts`) |
+| built | `GET /study/map/practice` | `?topic=` (unknown topic: mixed practice), 30 a minute | `MapPractice` (answers and both explanations included, as the website sends them to the browser) | `loadPracticeSession`, `bankItem` |
+| built | `POST /study/map/practice/answers` | `MapAnswerBody`, 120 a minute | `MapAnswerResult` (404 for an item not in the bank) | `answerPractice` (`src/app/(dashboard)/study/map/actions.ts`): graded on the server, saved to the model, answer history and events |
+
+Wall routes: bearer, gate `{ path: "/wall" }` (closed to lectures-only accounts and when the Wall is switched off). Reads and writes run as the caller (row level security); authors are never sent. Same rate-limit keys as the website's `/api/practice/wall/*`, so web and app share one limit.
+
+| Status | Method and path | Request | Response | Calls |
+|---|---|---|---|---|
+| built | `GET /wall` | none | `WallFeed` (50 newest, pinned first; `mine` is your own reactions) | `loadWall` (`src/lib/wall/data.ts`, shared with the website page) |
+| built | `POST /wall/posts` | `WallWriteBody`, 15 a minute | `WallWriteResult` | `addWallPost` |
+| built | `POST /wall/posts/:postId/replies` | `WallWriteBody`, 20 a minute | `WallWriteResult` | `addWallReply` |
+| built | `POST /wall/reactions` | `WallReactBody` (exactly one of postId, replyId), 30 a minute | `WallReactResult` (the same reaction again takes it back) | `toggleWallReaction` |
+| built | `POST /wall/reports` | `WallReportBody`, 10 a minute | `{ reported: true }` | `reportWall` |
 
 ### 2.11 Practise: games and practice rounds
 

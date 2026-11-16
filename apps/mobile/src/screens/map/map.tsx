@@ -147,7 +147,6 @@ export function MapBody({ m }: { m: StudyMap }) {
                 icon={<Square state={w.state} size={22} />}
                 title={w.label}
                 meta={label(w.state)}
-                trailing={<Zap size={18} color={c.link} />}
                 onPress={() => router.push({ pathname: "/map/practice", params: { topic: w.topic } })}
                 accessibilityLabel={`${w.label}, ${label(w.state)}. Quick quiz`}
               />
@@ -176,12 +175,9 @@ export function MapBody({ m }: { m: StudyMap }) {
 
       <Section title="Topic by skill">
         <View style={{ gap: space[3] }}>
-          <T v="small" tone="muted">
-            {m.calibrated ? "Tap a topic to see your chance of getting a typical question right." : "Your chances show once you have answered a few more questions."}
-          </T>
-          {m.skills.length ? (
-            <T v="caption" tone="muted">
-              {`Each square, left to right: ${m.skills.join(", ")}.`}
+          {!m.calibrated ? (
+            <T v="small" tone="muted">
+              Your chances show after a few more answers.
             </T>
           ) : null}
           <Legend m={m} />

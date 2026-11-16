@@ -5,7 +5,8 @@ import { View } from "react-native";
 
 import type { ModuleSummary, StudyHome } from "@/api/contract";
 import { useStudyHome } from "@/api/queries";
-import { Hero, Loaded, ProgressLine, Row, RowList, RowsSkeleton, Screen, Section, T } from "@/ds";
+import { EmptyState, Hero, Loaded, ProgressLine, Row, RowList, RowsSkeleton, Screen, Section, T } from "@/ds";
+import { Enter, Stamp } from "@/motion";
 import { openTarget } from "@/nav/targets";
 import { space, useTheme } from "@/theme";
 
@@ -44,13 +45,18 @@ export function StudyHomeBody({ d }: { d: StudyHome }) {
         </RowList>
       </Section>
     ) : null;
+  if (!d.modules.length) return <EmptyState mood="sleepy" title="Modules open soon" body="Your first module opens here when your course starts." testID="study-empty" />;
   return (
     <>
       {d.next.kind !== "done" ? (
-        <Hero context="Next in Study" title={d.next.label} action={{ label: d.next.kind === "test" || d.next.kind === "retest" ? "Take the test" : "Carry on", onPress: () => openTarget(d.next.target), icon: <ArrowRight size={20} color={c.onPrimary} />, testID: "study-continue" }} />
+        <Enter i={0}>
+          <Hero context="Next in Study" title={d.next.label} action={{ label: d.next.kind === "test" || d.next.kind === "retest" ? "Take the test" : "Carry on", onPress: () => openTarget(d.next.target), icon: <ArrowRight size={20} color={c.onPrimary} />, testID: "study-continue" }} />
+        </Enter>
       ) : (
         <View style={{ gap: space[2] }}>
-          <T v="h1">Every module done</T>
+          <Stamp rotate={-2}>
+            <T v="h1">Every module done</T>
+          </Stamp>
           <T tone="muted">Re-tests appear here when they are due.</T>
         </View>
       )}

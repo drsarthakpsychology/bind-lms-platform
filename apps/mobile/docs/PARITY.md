@@ -40,7 +40,8 @@ Website pages are under `src/app/(dashboard)`. Server routes are under
 | `/study/reference` Quick reference A to Z (glossary, disorders, medicines) | `/reference` | `GET /library/terms?q=` | built now |
 | `/study/reference/[slug]` | `/reference/[slug]` | `GET /library/terms/:slug` | built now |
 | `/study/placement` level check | none | none | off: `PREP_ONBOARDING_ENABLED` is false, the website sends it back to Study |
-| `/study/map` learning map | none | none | later: needs a server route around `loadStudentMap`; nothing links to it from the website's hubs |
+| `/study/map` learning map (Fix it, mix-ups, topic by skill) | `/map`, opened from Progress ("Your full map", as on the website) | `GET /study/map` | server added, built now (gate: flag `learn` and path `/study/map`, as `requireFeature("learn")`) |
+| `/study/map/practice` rounds (mixed, or one topic) | `/map/practice?topic=` | `GET /study/map/practice`, `POST /study/map/practice/answers` (the website's `answerPractice`) | server added, built now |
 
 ## Me
 
@@ -58,7 +59,7 @@ Website pages are under `src/app/(dashboard)`. Server routes are under
 | `/doubts` | `/doubts` (lecture-only: Doubts tab) | `GET /doubts` | done |
 | `/doubts/[id]` replies, votes, mark solved | `/doubt/[id]` | `GET /doubts/:id`, `POST .../replies`, `.../vote`, `.../solved` | done (the website has no attachments) |
 | Ask a doubt | `/doubts/ask` | `POST /doubts` | done |
-| `/wall` class wall | none | none | later: no server route; only linked from the website's doubts page |
+| `/wall` class wall (posts, replies, reactions, report, without names) | `/wall`, opened from Doubts when `DoubtList.wall` is true (same rule as the website: not admins, not lectures-only, not switched off) | `GET /wall`, `POST /wall/posts`, `/wall/posts/:postId/replies`, `/wall/reactions`, `/wall/reports` (shared `src/lib/wall/data.ts`) | server added, built now |
 | `/notifications` | `/notifications` | `GET /notifications`, `POST /notifications/read-all` | done |
 | `/notifications/[id]` | `/notification/[id]` | `GET /notifications/:id` | done |
 | `/settings` | `/settings` | `GET /settings`, `PATCH /me`, `PUT /devices/current`, `PUT /notifications/preferences` | done |

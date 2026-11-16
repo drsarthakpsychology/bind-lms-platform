@@ -62,9 +62,11 @@ function ReactionChip({ k, count, mine, onPress }: { k: (typeof REACTIONS)[numbe
       hitSlop={4}
       innerStyle={{ minHeight: 36, minWidth: 44, flexDirection: "row", alignItems: "center", gap: 6, paddingHorizontal: space[3], borderRadius: 999, borderWidth: 1.5, borderColor: mine ? c.link : c.cardLine, backgroundColor: mine ? c.tint : "transparent" }}
     >
-      <Stamp fire={pop}>
-        <k.Icon size={16} color={mine ? c.link : c.muted} fill={mine && k.key === "heart" ? c.link : "none"} />
-      </Stamp>
+      <View style={{ width: 16, height: 16, alignItems: "center", justifyContent: "center" }}>
+        <Stamp fire={pop}>
+          <k.Icon size={16} color={mine ? c.link : c.muted} fill={mine && k.key === "heart" ? c.link : "none"} />
+        </Stamp>
+      </View>
       {count > 0 ? <RollingNumber value={count} v="small" tone={mine ? "link" : "muted"} /> : null}
     </Press>
   );
@@ -111,7 +113,7 @@ function PostView({ p, onReact, onReply, onMore }: { p: WallPostItem; onReact: (
   const n = p.replies.length;
   return (
     <View testID={`post-${p.id}`} style={{ paddingVertical: space[4], gap: space[3], borderTopWidth: 1, borderColor: c.hairline }}>
-      <View style={{ flexDirection: "row", alignItems: "flex-start", gap: space[2] }}>
+      <View style={{ flexDirection: "row", alignItems: "center", gap: space[2], marginVertical: -space[2] }}>
         <View style={{ flex: 1 }}>
           <Byline x={p} pinned={p.isPinned} />
         </View>

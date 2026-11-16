@@ -14,6 +14,7 @@ import { Button, LoadError, OptionRow, ProgressLine, Sheet, Skeleton, T, Verdict
 import { toast } from "@/ds/toast";
 import { haptic } from "@/lib/haptics";
 import { Rich } from "@/study/rich";
+import { Burst, Confetti, RollingNumber } from "@/motion";
 import { fonts, layout, motion, space, useTheme } from "@/theme";
 
 /**
@@ -97,9 +98,13 @@ export function QuizRunner({ title, questions, submit, onDone, doneLabel }: { ti
               {title}
             </T>
             <View style={{ flexDirection: "row", alignItems: "baseline", gap: space[3] }}>
-              <T style={{ fontFamily: fonts.pixelDigits, fontSize: 56, lineHeight: 64 }} num maxFontSizeMultiplier={1.2} accessibilityLabel={`${result.right} of ${result.total} right`}>
-                {result.right}/{result.total}
-              </T>
+              <View accessible accessibilityLabel={`${result.right} of ${result.total} right`} style={{ flexDirection: "row", alignItems: "baseline" }}>
+                <RollingNumber value={result.right} style={{ fontFamily: fonts.pixelDigits, fontSize: 56, lineHeight: 64 }} />
+                <T style={{ fontFamily: fonts.pixelDigits, fontSize: 56, lineHeight: 64 }} num maxFontSizeMultiplier={1.2}>
+                  /{result.total}
+                </T>
+                <Burst fire={result.right === result.total ? 1 : 0} reach={56} />
+              </View>
               {result.best !== undefined ? (
                 <T v="small" tone="muted" num>
                   Best {result.best}
@@ -155,6 +160,7 @@ export function QuizRunner({ title, questions, submit, onDone, doneLabel }: { ti
           </>
         )}
       </View>
+      {result && result.total > 0 && result.right === result.total ? <Confetti fire={1} /> : null}
       <Sheet open={leave} onClose={closeLeave} title="Leave the test?">
         <View style={{ gap: space[3] }}>
           <T tone="muted">Your answers so far are not saved.</T>
