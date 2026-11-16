@@ -36,7 +36,7 @@ export function CompareScreen() {
   const { width } = useWindowDimensions();
   const qa = useMedicinePage(String(p.a ?? ""));
   const qb = useMedicinePage(String(p.b ?? ""));
-  if (qa.isError || qb.isError) return <Screen title="Compare"><LoadError error={qa.error ?? qb.error} what="these medicines" onRetry={() => { void qa.refetch(); void qb.refetch(); }} /></Screen>;
+  if ((qa.isError && qa.data === undefined) || (qb.isError && qb.data === undefined)) return <Screen title="Compare"><LoadError error={qa.error ?? qb.error} what="these medicines" onRetry={() => { void qa.refetch(); void qb.refetch(); }} /></Screen>;
   if (!qa.data || !qb.data) return (
       <Screen title="Compare">
         <View style={{ gap: space[3] }}>

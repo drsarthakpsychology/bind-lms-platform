@@ -36,7 +36,7 @@ export function BoardScreen() {
           {d.explainer}
         </T>
       ) : null}
-      {q.isError ? (
+      {(q.isError && q.data === undefined) ? (
         isSoon(q.error) ? <SoonState web="/leaderboard" /> : <LoadError error={q.error} onRetry={() => void q.refetch()} />
       ) : !d ? (
         <View style={{ gap: space[3] }}>

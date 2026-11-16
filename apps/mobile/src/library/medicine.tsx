@@ -64,7 +64,7 @@ export function MedicineScreen() {
   React.useEffect(() => {
     if (openedId) recentMedicines.add(openedId);
   }, [openedId]);
-  if (q.isError) {
+  if (q.isError && q.data === undefined) {
     const soon = q.error instanceof ApiFailure && q.error.code === "not_found";
     return <View style={{ flex: 1, padding: layout.gutter }}>{soon ? <EmptyState mood="soon" title="Not in the library yet" body="This medicine page arrives in the app soon." /> : <LoadError error={q.error} what="this medicine" onRetry={() => void q.refetch()} />}</View>;
   }

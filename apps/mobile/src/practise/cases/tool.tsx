@@ -50,7 +50,7 @@ export function ToolCaseScreen({ tool }: { tool: ToolId }) {
   const q = useTool(API_TOOL[tool]);
   const title = entry?.title ?? q.data?.title ?? "Practice";
   const list = React.useMemo(() => (q.data ? arrange(buildDefs(tool, q.data.data, SEED), q.data.cases) : null), [q.data, tool]);
-  if (q.isError) return <FrameError title={title} error={q.error} onRetry={() => void q.refetch()} />;
+  if (q.isError && q.data === undefined) return <FrameError title={title} error={q.error} onRetry={() => void q.refetch()} />;
   if (!list || !q.data) return <FrameLoading title={title} />;
   const howTo = q.data.howTo.length ? q.data.howTo : HOW[tool];
   return <ToolCases tool={tool} title={title} line={entry?.line ?? ""} howTo={howTo} list={list} records={q.data.records} recycleLine={q.data.cases?.recycleLine ?? null} first={params.item ?? null} />;

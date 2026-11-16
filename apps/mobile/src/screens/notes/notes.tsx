@@ -20,6 +20,7 @@ import { saveLearn, withNoteRead } from "@/study/state";
 import { Rich, TermPress } from "@/study/rich";
 import { FigureWidget } from "@/study/widgets/diagrams";
 import { layout, space, useTheme } from "@/theme";
+import { go } from "@/api/prefetch";
 
 /**
  * Notes: the website's one-page revision notes (/study/notes), grouped by
@@ -43,14 +44,14 @@ export function NotesBody({ d }: { d: RevisionNoteList }) {
     <>
       {next ? (
         <Enter i={0}>
-          <Hero context={read ? "Next note" : "Start here"} title={next.title} meta={next.tagline} progress={d.notes.length ? Math.round((read / d.notes.length) * 100) : undefined} progressLabel={`${read} of ${d.notes.length} notes read`} action={{ label: read ? "Carry on" : "Read it", onPress: () => router.push(`/notes/${encodeURIComponent(next.id)}`), icon: <ArrowRight size={20} color={c.onPrimary} />, testID: "notes-next" }} />
+          <Hero context={read ? "Next note" : "Start here"} title={next.title} meta={next.tagline} progress={d.notes.length ? Math.round((read / d.notes.length) * 100) : undefined} progressLabel={`${read} of ${d.notes.length} notes read`} action={{ label: read ? "Carry on" : "Read it", onPress: () => go(`/notes/${encodeURIComponent(next.id)}`), icon: <ArrowRight size={20} color={c.onPrimary} />, testID: "notes-next" }} />
         </Enter>
       ) : null}
       {groups.map((g) => (
         <Section key={g.title} title={g.title}>
           <RowList>
             {g.items.map((n) => (
-              <Row key={n.id} testID={`note-${n.id}`} icon={<NotebookText size={20} color={c.muted} />} title={n.title} meta={n.tagline} trailing={n.readOn ? <Check size={20} color={c.ink} accessibilityLabel="Read" /> : undefined} onPress={() => router.push(`/notes/${encodeURIComponent(n.id)}`)} />
+              <Row key={n.id} testID={`note-${n.id}`} icon={<NotebookText size={20} color={c.muted} />} title={n.title} meta={n.tagline} trailing={n.readOn ? <Check size={20} color={c.ink} accessibilityLabel="Read" /> : undefined} onPress={() => go(`/notes/${encodeURIComponent(n.id)}`)} />
             ))}
           </RowList>
         </Section>

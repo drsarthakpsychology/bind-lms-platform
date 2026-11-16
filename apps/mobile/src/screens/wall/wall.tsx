@@ -8,6 +8,7 @@ import Animated from "react-native-reanimated";
 import type { WallFeed, WallPostItem, WallReactionKey, WallReplyItem } from "@/api/contract";
 import { messageOf } from "@/api/errors";
 import { mapWallKeys, useWall, wallApi } from "@/api/map-wall";
+import { queueWrite } from "@/api/queued";
 import { Button, EmptyState, Field, IconButton, Loaded, RowsSkeleton, Screen, Sheet, SwitchRow, T } from "@/ds";
 import { toast } from "@/ds/toast";
 import { haptic } from "@/lib/haptics";
@@ -205,12 +206,11 @@ export function WallBody({ feed }: { feed: WallFeed }) {
   const react = async (target: { postId?: string; replyId?: string }, key: WallReactionKey) => {
     haptic.select();
     qc.setQueryData<WallFeed>(mapWallKeys.wall, (f) => (f ? flipReaction(f, target, key) : f));
-    try {
-      await wallApi.react({ ...target, reaction: key });
-    } catch (e) {
+    // Sent now, or when the internet is back (in order, so on-off-on ends on). Undone only if the server refuses it.
+    void queueWrite({ method: "POST", path: "/wall/reactions", body: { ...target, reaction: key }, scope: "wall-react" }).catch((e: unknown) => {
       qc.setQueryData<WallFeed>(mapWallKeys.wall, (f) => (f ? flipReaction(f, target, key) : f));
       toast.show(messageOf(e));
-    }
+    });
   };
 
   const reply = async (postId: string, text: string, anon: boolean): Promise<boolean> => {

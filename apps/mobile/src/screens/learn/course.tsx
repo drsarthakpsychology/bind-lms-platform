@@ -11,6 +11,7 @@ import { useFocusedValue } from "@/nav/focused-value";
 import { openTarget } from "@/nav/targets";
 import { space, useTheme } from "@/theme";
 import { nextLine } from "./lectures";
+import { go } from "@/api/prefetch";
 
 type Tab = "lectures" | "materials" | "assignments";
 
@@ -43,7 +44,7 @@ export function WeekList({ course }: { course: CourseDetail }) {
                 current={l.state === "started" || l.state === "next"}
                 trailing={<LessonMark l={l} />}
                 chevron={false}
-                onPress={l.openable ? () => router.push(`/lecture/${encodeURIComponent(l.id)}`) : () => toast.show(l.state === "live" ? "This lecture opens soon." : "This lecture opens in a later week.")}
+                onPress={l.openable ? () => go(`/lecture/${encodeURIComponent(l.id)}`) : () => toast.show(l.state === "live" ? "This lecture opens soon." : "This lecture opens in a later week.")}
               />
             ))}
           </RowList>

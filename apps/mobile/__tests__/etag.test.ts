@@ -55,6 +55,6 @@ describe("ETag and 304", () => {
 
   it("the fetch transport reads the ETag header and survives an empty 304", async () => {
     const f = (async () => ({ status: 304, headers: { get: (k: string) => (k === "ETag" ? '"e"' : null) }, json: async () => { throw new Error("empty"); } })) as unknown as typeof fetch;
-    await expect(makeFetchTransport(f)({ method: "GET", path: "/x", headers: {} })).resolves.toEqual({ status: 304, json: null, etag: '"e"' });
+    await expect(makeFetchTransport(f)({ method: "GET", path: "/x", headers: {} })).resolves.toEqual({ status: 304, json: null, etag: '"e"', date: null });
   });
 });

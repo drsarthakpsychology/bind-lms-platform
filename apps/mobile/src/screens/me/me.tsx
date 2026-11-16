@@ -33,7 +33,7 @@ function NextCertificate() {
   const pct = m && Number(m[2]) > 0 ? (Number(m[1]) / Number(m[2])) * 100 : null;
   return (
     <RowList>
-      <Row testID="me-next-cert" title={`Next certificate: ${next.title}`} meta={next.progress || undefined} icon={<IconDot icon={Award} />} onPress={() => router.push("/certificates")} below={pct !== null ? <ProgressLine value={pct} label={`${next.title}: ${next.progress}`} /> : undefined} />
+      <Row testID="me-next-cert" title={`Next certificate: ${next.title}`} meta={next.progress || undefined} icon={<IconDot icon={Award} />} onPress={() => go("/certificates")} below={pct !== null ? <ProgressLine value={pct} label={`${next.title}: ${next.progress}`} /> : undefined} />
     </RowList>
   );
 }
@@ -77,17 +77,17 @@ export function MeScreen() {
       ) : null}
       <Section title="Your work">
         <RowList>
-          <Row testID="me-progress" title="Progress" meta={progressMeta(lecturesOnly, can?.journey !== false, can?.achievements !== false)} icon={<IconDot icon={ChartLine} />} onPress={() => router.push("/progress")} />
-          {can?.achievements !== false ? <Row testID="me-certificates" title="Certificates" icon={<IconDot icon={Award} />} onPress={() => router.push("/certificates")} /> : null}
+          <Row testID="me-progress" title="Progress" meta={progressMeta(lecturesOnly, can?.journey !== false, can?.achievements !== false)} icon={<IconDot icon={ChartLine} />} onPress={() => go("/progress")} />
+          {can?.achievements !== false ? <Row testID="me-certificates" title="Certificates" icon={<IconDot icon={Award} />} onPress={() => go("/certificates")} /> : null}
           {!lecturesOnly && can?.leaderboard !== false ? <Row testID="me-leaderboard" title="Leaderboard" meta="Your league and the boards" icon={<IconDot icon={Trophy} />} onPress={() => router.push("/game/leaderboard")} /> : null}
           {!lecturesOnly && can?.leaderboard !== false ? <Row testID="me-shop" title="XP shop" meta="Name frames, titles and a streak repair" icon={<IconDot icon={ShoppingBag} />} onPress={() => router.push("/shop")} /> : null}
         </RowList>
       </Section>
       <Section title="Account and help">
         <RowList>
-          {!lecturesOnly && can?.doubts !== false ? <Row testID="me-doubts" title="Doubts" icon={<IconDot icon={MessageCircleQuestionMark} />} onPress={() => router.push("/doubts")} /> : null}
-          <Row testID="me-notifications" title="Notifications" trailing={me?.unreadNotifications ? `${me.unreadNotifications} new` : undefined} icon={<IconDot icon={Bell} />} onPress={() => router.push("/notifications")} />
-          <Row testID="me-settings" title="Settings" icon={<IconDot icon={Settings} />} onPress={() => router.push("/settings")} />
+          {!lecturesOnly && can?.doubts !== false ? <Row testID="me-doubts" title="Doubts" icon={<IconDot icon={MessageCircleQuestionMark} />} onPress={() => go("/doubts")} /> : null}
+          <Row testID="me-notifications" title="Notifications" trailing={me?.unreadNotifications ? `${me.unreadNotifications} new` : undefined} icon={<IconDot icon={Bell} />} onPress={() => go("/notifications")} />
+          <Row testID="me-settings" title="Settings" icon={<IconDot icon={Settings} />} onPress={() => go("/settings")} />
           <Row testID="me-help" title="Help" meta="Message us on WhatsApp" icon={<IconDot icon={CircleHelp} />} onPress={() => router.push("/help")} />
         </RowList>
       </Section>

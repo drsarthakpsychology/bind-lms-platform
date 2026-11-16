@@ -11,7 +11,7 @@ import { useReducedMotion } from "react-native-reanimated";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 
 import { useViewingAsStudent, ViewAsBar } from "@/admin/view-as";
-import { installAppLifecycle, onOpened } from "@/api/lifecycle";
+import { installAppLifecycle, onOpened, onRestored } from "@/api/lifecycle";
 import { installPrefetch } from "@/api/prefetch";
 import { persistOptions, persister, queryClient, useConfig } from "@/api/queries";
 import { session, useSession } from "@/auth";
@@ -329,7 +329,7 @@ export default function RootLayout() {
     <GestureHandlerRootView style={{ flex: 1 }}>
       <SafeAreaProvider>
         <CrashBoundary onReset={resetAfterCrash}>
-          <PersistQueryClientProvider client={queryClient} persistOptions={persistOptions}>
+          <PersistQueryClientProvider client={queryClient} persistOptions={persistOptions} onSuccess={onRestored}>
             <ThemeProvider>
               <Shell />
             </ThemeProvider>

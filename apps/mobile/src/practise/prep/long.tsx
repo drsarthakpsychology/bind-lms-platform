@@ -40,7 +40,7 @@ export function LongScreen() {
   const title = d?.level === "subject" ? longTitle((d.data as unknown as LongSubject).title) : d?.level === "topic" ? (d.data as unknown as LongTopic).title : "Long answers";
   return (
     <Screen testID="prep-long" title={title} lead={d?.level === "home" || !d ? "Write your answer first, on paper or in your head. Then see the model answer." : undefined}>
-      {q.isError ? (
+      {(q.isError && q.data === undefined) ? (
         <LoadError error={q.error} onRetry={() => void q.refetch()} />
       ) : !d ? (
         <View style={{ gap: space[3] }}>
