@@ -108,7 +108,8 @@ export function Row({ title, meta, icon, trailing, onPress, chevron, unread, cur
         {below}
       </View>
       {typeof trailing === "string" ? (
-        <T v="small" tone="muted" num>
+        // A long value (a long name) wraps on the right and never runs over the title.
+        <T v="small" tone="muted" num style={{ flexShrink: 1, maxWidth: "55%", textAlign: "right" }}>
           {trailing}
         </T>
       ) : (
@@ -389,12 +390,13 @@ function Chip({ name, on, onPress }: { name: string; on: boolean; onPress: () =>
   const c = useTheme();
   const { style, handlers } = usePressScale(0.94);
   return (
-    <Pressable accessibilityRole="radio" accessibilityState={{ selected: on }} accessibilityLabel={name} onPress={onPress} {...handlers} style={{ minHeight: layout.target, justifyContent: "center" }}>
+    <Pressable accessibilityRole="radio" accessibilityState={{ selected: on }} accessibilityLabel={name} onPress={onPress} {...handlers} style={{ minHeight: layout.target, justifyContent: "center", maxWidth: "100%" }}>
       <Animated.View
         style={[
           {
             minHeight: 36,
             paddingHorizontal: space[4],
+            paddingVertical: space[1],
             justifyContent: "center",
             borderRadius: 18,
             borderWidth: 1.5,
