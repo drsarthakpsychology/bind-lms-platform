@@ -3,6 +3,7 @@ import * as React from "react";
 
 import { DateField } from "@/admin/date-field";
 import { datesIn, monthGrid, shortDay } from "@/admin/format";
+import { adminHits } from "@/admin/screens/search";
 import { render } from "./utils";
 
 const NOW = Date.parse("2026-11-16T08:00:00Z");
@@ -33,5 +34,18 @@ describe("admin dates", () => {
     await fireEvent.press(screen.getByTestId("d"));
     await fireEvent.press(screen.getByTestId("date-2026-11-20"));
     expect(onChange).toHaveBeenCalledWith("2026-11-20");
+  });
+});
+
+describe("admin search", () => {
+  const student = { id: "u1", name: "Aditi Verma", email: "aditi@example.com", rollNumber: "R1", mobileNumber: null, cohorts: [{ id: "c2", name: "Cohort Two" }] } as never;
+  const person = (key: string, name: string, email: string) => ({ key, name, email, phone: null }) as never;
+  const cohort = { id: "c2", name: "Cohort Two", course: "Clinical", members: 12 } as never;
+  it("finds students, people who are not students yet, and cohorts", () => {
+    const h = adminHits("aditi", [student], [person("p1", "Aditi Verma", "aditi@example.com"), person("p2", "Aditi Shah", "shah@example.com")], [cohort]);
+    expect(h.students).toHaveLength(1);
+    expect(h.people.map((p: { key: string }) => p.key)).toEqual(["p2"]);
+    expect(adminHits("two", [student], [], [cohort]).cohorts).toHaveLength(1);
+    expect(adminHits("a", [student], [], [cohort]).students).toHaveLength(0);
   });
 });
