@@ -195,8 +195,9 @@ export function inPeopleView(p: import("./extra").PersonRow, view: import("./ext
 
 /** "Follow up today", "Follow up in 3 d", "Follow up was due 2 d ago". */
 export function followUpLine(iso: string | null, now = Date.now()): string | null {
-  if (!iso) return null;
-  const d = Math.round((Date.parse(iso) - now) / 86400_000);
+  const t = iso ? Date.parse(iso) : NaN;
+  if (Number.isNaN(t)) return null;
+  const d = Math.round((t - now) / 86400_000);
   if (d === 0) return "Follow up today";
   if (d > 0) return `Follow up in ${d} d`;
   return `Follow up was due ${-d} d ago`;

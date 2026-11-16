@@ -4,6 +4,7 @@ import * as React from "react";
 import { AppState, Pressable, View } from "react-native";
 import Animated, { FadeIn, FadeInLeft, FadeInRight, useReducedMotion } from "react-native-reanimated";
 
+import { day } from "@/admin/format";
 import { Button, Chips, EmptyState, LoadError, Row, RowList, RowsSkeleton, Screen, Section, Sheet, T } from "@/ds";
 import { haptic } from "@/lib/haptics";
 import { Burst, ProgressFill } from "@/motion";
@@ -42,8 +43,8 @@ const asSpecs = (d: PrepMocks | undefined) => ((d?.specs ?? []) as unknown as Mo
 
 /** The facts of one pattern, in the website's words. */
 function Facts({ spec }: { spec: MockSpec }) {
+  // No question or section counts (owner rule: small counts make a paper look thin).
   const lines = [
-    `${spec.questions} questions${spec.sections.length > 1 ? `, ${spec.sections.length} sections` : ""}`,
     `${spec.minutes} minutes`,
     `${marksText(spec.marksPerRight)} for a right answer (out of ${spec.questions * spec.marksPerRight})`,
     spec.marksPerWrong ? `${marksText(-spec.marksPerWrong)} off for a wrong answer; a blank gets 0` : "No negative marking: never leave one blank",
@@ -62,7 +63,7 @@ function Facts({ spec }: { spec: MockSpec }) {
       ))}
       {spec.sections.length > 1 ? (
         <T v="small" tone="muted">
-          {spec.sections.map((s) => `${s.title} (${s.count})`).join(" · ")}
+          {spec.sections.map((s) => s.title).join(" · ")}
         </T>
       ) : null}
     </View>
@@ -100,11 +101,11 @@ export function MocksScreen() {
           {parts.length ? (
             <Section title="Shorter sectional tests">
               <T v="small" tone="muted">
-                {`${parts[0]!.questions} questions, ${parts[0]!.minutes} minutes, one subject group.`}
+                One subject group at a time.
               </T>
               <RowList>
                 {parts.map((s) => (
-                  <Row key={s.id} testID={`mock-open-${s.id}`} title={s.title} meta={`${s.questions} questions · ${s.minutes} minutes`} icon={<Clock size={20} color={c.muted} />} onPress={() => router.push(`/prep/mock/${enc(s.id)}`)} />
+                  <Row key={s.id} testID={`mock-open-${s.id}`} title={s.title} meta={`${s.minutes} minutes`} icon={<Clock size={20} color={c.muted} />} onPress={() => router.push(`/prep/mock/${enc(s.id)}`)} />
                 ))}
               </RowList>
             </Section>
@@ -117,7 +118,7 @@ export function MocksScreen() {
                     key={h.id}
                     testID={`mock-past-${h.id}`}
                     title={name(h.specId)}
-                    meta={h.submittedAt ? new Date(h.submittedAt).toLocaleDateString("en-IN", { day: "numeric", month: "short" }) : undefined}
+                    meta={day(h.submittedAt, true) || undefined}
                     icon={<History size={20} color={c.muted} />}
                     trailing={
                       <T style={{ fontFamily: fonts.pixelDigits, fontSize: 16, lineHeight: 20, color: c.ink }} num>
