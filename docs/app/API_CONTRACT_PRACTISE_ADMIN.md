@@ -74,6 +74,7 @@ Every Practise route checks the gate of the website page it stands for before an
 | built | `GET /prep/smart` | none | `PrepSet` | `loadSmart` |
 | built | `GET /prep/lists/:list` | `saved` or `wrong`, `?page=N` | `PrepSet` with `page` | `loadList` |
 | built | `GET /prep/mock` | none | `PrepMocks` | `PRACTICE_SPECS` (and `EXAM_SPECS` only when exam tracks are on, as the website), `loadMockHistory`; sources left out |
+| built | `GET /prep/mock/result/:id` | none | `PrepMockResult` | `loadAttempt`, `standingFor` (`src/lib/prep/server.ts`), `resultView` (`src/lib/prep/results.ts`), as the website's `/prep/mock/result/:id`: own attempts only, the rank worked out again on each visit; `result` is null when the paper was never handed in (`src/lib/app-api/prep-mock.ts`) |
 | built | `GET /prep/long`, `/prep/long/:subject`, `/prep/long/:subject/:topic`, `/prep/long/:subject/:topic/:id` | none | `PrepLong` | `longSubjects`, `longTopicsFor`, `longTopic` (`src/lib/prep/long-server.ts`) |
 | built | `GET /leaderboards/shop` | none (gate `/leaderboard/shop`) | `XpShop` | `loadShop` (`src/lib/leagues/shop-data.ts`, moved out of the shop page, which calls it too), `SHOP`, `SHOP_READY`, `LOOKS`, `parseLook`. Buying and wearing: `POST /play/league/buy`, `/play/league/wear` |
 | planned | Exam Prep mock interview | | | needs voice and the AI feedback; `revealInterview`, `interviewFeedback`, `saveInterviewSession` can be added to `PLAY` as `prep.*` when the app has a voice screen |
@@ -105,7 +106,7 @@ Gates of the routes without a tool gate: `/practise` uses `/practise` (lectures-
 | `out-of-depth` | `/practice/out-of-depth`, `ethics` | `{ scenarios }` | none | none |
 | `landmark` | `/practice/landmark`, `landmark` | `{ cases }` (`LANDMARK_CASES`) | cases | `cases.mark`, `save.answers` |
 | `osce` | `/practice/osce`, `osce` | `{ stations, quiz }` | stations | `cases.mark`, `save.answers`; records `osce`, `competency`, `quiz` |
-| `mse` | `/practice/mse`, `mse` | `{ content }` (`loadMseLadderContent`: every level's stimuli in fresh-case order) | inside `content` | `cases.mark`, `save.answers`; record `mse` |
+| `mse` | `/practice/mse`, `mse` | `{ content, smallThings }` (`loadMseLadderContent`: every level's stimuli in fresh-case order; `SMALL_THINGS`, the small things walk) | inside `content` | `cases.mark`, `save.answers`; record `mse` |
 | `formulation` | `/practice/formulation`, `formulation` | `{ cases }` (`loadFormulationCases`) | cases | `cases.mark`, `save.answers`; record `formulation` |
 | `weak-spots` | `/practice/weak-spots`, `weak_spots` | `{ spots, drill, sessions }` (`loadWeakSpots`) | none | `save.answers` |
 
