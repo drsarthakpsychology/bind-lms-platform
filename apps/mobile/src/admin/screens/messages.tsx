@@ -8,10 +8,9 @@ import { space, useTheme } from "@/theme";
 import { adminCalls, useAdminAction, useBatches, useInbox, useInboxThread, useRefreshAdmin } from "../api";
 import type { InboxItem } from "../extra";
 import { ago, plural, whatsapp } from "../format";
-import { Loaded, Notice, SmallButton, Tag } from "../kit";
+import { Loaded, Notice, ScrollTabs, SmallButton, Tag } from "../kit";
 import { AdminTop, openCompose, openStudent } from "../nav";
 import { useAdminRole, VIEW_ONLY_LINE } from "../role";
-import { ScrollTabs } from "./student";
 
 export function InboxLine({ i }: { i: InboxItem }) {
   const tag = i.kind === "enquiry" ? "Enquiry" : i.kind === "concern" ? "Concern" : i.kind === "doubt" ? "Doubt" : null;

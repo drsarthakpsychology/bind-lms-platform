@@ -12,7 +12,9 @@ import Reanimated, { FadeIn, useReducedMotion } from "react-native-reanimated";
 
 import type { UseQueryResult } from "@tanstack/react-query";
 
-import { Button, Field, Loaded as DsLoaded, Sheet, T } from "@/ds";
+import Svg, { Defs, LinearGradient, Rect, Stop } from "react-native-svg";
+
+import { Button, Field, Loaded as DsLoaded, Sheet, TabRow, T } from "@/ds";
 import { haptic } from "@/lib/haptics";
 import { layout, space, type as scale, useTheme, type Palette } from "@/theme";
 import type { Tone } from "./format";
@@ -415,6 +417,64 @@ export function Dot({ tone }: { tone: Tone }) {
 }
 
 /* ------------------------------------------------------------- motion bits */
+
+/**
+ * Underlined tabs that slide sideways when they do not fit a narrow phone.
+ * While more tabs wait off the right edge, that edge fades into the page, so
+ * the cut tab reads as "there is more". Picking a tab near either end scrolls
+ * it fully into view.
+ */
+export function ScrollTabs<V extends string>({ tabs, value, onChange }: { tabs: { id: V; name: string }[]; value: V; onChange: (v: V) => void }) {
+  const c = useTheme();
+  const ref = React.useRef<ScrollView>(null);
+  const fade = `tabfade${React.useId().replace(/[^a-zA-Z0-9]/g, "")}`;
+  const [box, setBox] = React.useState({ view: 0, content: 0, x: 0 });
+  const more = box.content - box.view - box.x > 4;
+  const pick = (v: V) => {
+    const i = tabs.findIndex((t) => t.id === v);
+    if (i >= tabs.length - 2) ref.current?.scrollToEnd({ animated: true });
+    else if (i <= 1) ref.current?.scrollTo({ x: 0, animated: true });
+    onChange(v);
+  };
+  return (
+    <View style={{ marginHorizontal: -layout.gutter }}>
+      <ScrollView
+        ref={ref}
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        style={{ flexGrow: 0 }}
+        contentContainerStyle={{ paddingHorizontal: layout.gutter, minWidth: "100%" }}
+        scrollEventThrottle={32}
+        onLayout={(e) => {
+          const view = e.nativeEvent.layout.width;
+          setBox((b) => (b.view === view ? b : { ...b, view }));
+        }}
+        onContentSizeChange={(content) => setBox((b) => (b.content === content ? b : { ...b, content }))}
+        onScroll={(e) => {
+          const x = Math.round(e.nativeEvent.contentOffset.x);
+          setBox((b) => (Math.abs(b.x - x) < 2 ? b : { ...b, x }));
+        }}
+      >
+        <View style={{ flex: 1 }}>
+          <TabRow tabs={tabs} value={value} onChange={pick} />
+        </View>
+      </ScrollView>
+      {more ? (
+        <View pointerEvents="none" testID="tabs-more" style={{ position: "absolute", right: 0, top: 0, bottom: 1, width: 48 }}>
+          <Svg width="100%" height="100%">
+            <Defs>
+              <LinearGradient id={fade} x1="0" y1="0" x2="1" y2="0">
+                <Stop offset="0" stopColor={c.bg} stopOpacity={0} />
+                <Stop offset="0.75" stopColor={c.bg} stopOpacity={1} />
+              </LinearGradient>
+            </Defs>
+            <Rect x="0" y="0" width="100%" height="100%" fill={`url(#${fade})`} />
+          </Svg>
+        </View>
+      ) : null}
+    </View>
+  );
+}
 
 /**
  * Filter chips: the picked one fills and gets a tick that fades in; each

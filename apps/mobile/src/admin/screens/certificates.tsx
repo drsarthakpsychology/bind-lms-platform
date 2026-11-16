@@ -12,10 +12,9 @@ import { space, useTheme } from "@/theme";
 import { adminCalls, useAdminAction, useBadges, useCertTypes, useCertificates, useEligible, useRefreshAdmin, useStudents, useStudioSettings } from "../api";
 import { KIND_DEFAULTS, type BadgeRow, type CertRow, type CertStatus, type CertType, type CertTypeList, type RuleKind, type StudioSignatory, type TypeRule } from "../extra";
 import { day, plural, type Tone } from "../format";
-import { Block, ConfirmSheet, Facts, FilterChips, Loaded, Meter, Notice, OptionRow, Quiet, SearchBox, SelectRow, SmallButton, Status, SwipeRow, Tag } from "../kit";
+import { Block, ConfirmSheet, Facts, FilterChips, Loaded, Meter, Notice, OptionRow, Quiet, ScrollTabs, SearchBox, SelectRow, SmallButton, Status, SwipeRow, Tag } from "../kit";
 import { openStudent } from "../nav";
 import { useAdminRole, VIEW_ONLY_LINE } from "../role";
-import { ScrollTabs } from "./student";
 
 export const CERT_STATUS: Record<CertStatus, { label: string; tone: Tone }> = {
   valid: { label: "Valid", tone: "ok" },

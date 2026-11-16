@@ -11,10 +11,10 @@ import { space, useTheme } from "@/theme";
 import { adminCalls, useAdminAction, useEnquiries, usePeople, usePerson, useRefreshAdmin } from "../api";
 import { PEOPLE_VIEWS, STAGE_LABEL, STAGES, type EmailPreview, type LoginLinkResult, type PeopleView, type PersonRow, type StageId } from "../extra";
 import { ago, day, followUpLine, inPeopleView, plural, whatsapp, type Tone } from "../format";
-import { ActionBar, Check, Dot, Facts, FilterChips, Loaded, Notice, OptionRow, Quiet, SearchBox, SelectRow, SmallButton, Status, SwipeRow, Tag } from "../kit";
+import { ActionBar, Check, Dot, Facts, FilterChips, Loaded, Notice, OptionRow, Quiet, ScrollTabs, SearchBox, SelectRow, SmallButton, Status, SwipeRow, Tag } from "../kit";
 import { openStudent } from "../nav";
 import { useAdminRole, VIEW_ONLY_LINE } from "../role";
-import { LinkSheet, ScrollTabs } from "./student";
+import { LinkSheet } from "./student";
 
 export function stageTone(s: StageId): Tone {
   return s === "joined" ? "ok" : s === "new" ? "warn" : s === "no_reply" || s === "not_interested" ? "quiet" : "info";

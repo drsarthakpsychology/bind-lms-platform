@@ -6,10 +6,9 @@ import { Button, EmptyState, Row, RowList, RowsSkeleton, Screen } from "@/ds";
 import { space } from "@/theme";
 import { useActivity, useBehind, useCohorts, useRefreshAdmin } from "../api";
 import { ago, day, pct } from "../format";
-import { Block, Dot, FilterChips, Figures, Loaded, Meter, Quiet, SmallButton, Status } from "../kit";
+import { Block, Dot, Figures, FilterChips, Loaded, Meter, Quiet, ScrollTabs, SmallButton, Status } from "../kit";
 import { AdminTop, openCompose, openStudent } from "../nav";
 import { useAdminRole } from "../role";
-import { ScrollTabs } from "./student";
 
 const VIEWS = [
   { id: "live" as const, name: "Live" },
