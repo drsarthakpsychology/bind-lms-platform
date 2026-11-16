@@ -61,7 +61,8 @@ create table if not exists public.clinic_sessions (
   check (end_time > start_time)
 );
 -- One session per timetable slot per day (expanding the timetable twice adds nothing).
-create unique index if not exists clinic_sessions_slot_date on public.clinic_sessions (slot_id, date) where slot_id is not null;
+-- One-offs have no slot; NULLs never clash.
+create unique index if not exists clinic_sessions_slot_date on public.clinic_sessions (slot_id, date);
 create index if not exists clinic_sessions_date on public.clinic_sessions (date);
 create index if not exists clinic_sessions_cohorts on public.clinic_sessions using gin (cohort_ids);
 

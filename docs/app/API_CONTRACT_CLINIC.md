@@ -25,17 +25,17 @@ Status: **built** = route file exists with tests.
 
 | Method | Path | Body / query | Answer | Status |
 |---|---|---|---|---|
-| GET | `/clinic/today` | `?cohort=` | `ClinicToday` | planned |
-| GET | `/clinic/week` | `?start=YYYY-MM-DD&cohort=` (start defaults to this Monday) | `ClinicWeek` | planned |
-| POST | `/clinic/scan` | `ClinicScanBody` (`token` or `code`, optional `direction`) | `ClinicScanResult` | planned |
-| GET | `/clinic/attendance` | `?cohort=` | `ClinicMyAttendance` | planned |
-| GET | `/clinic/leave` | `?cohort=` | `ClinicMyLeave` | planned |
-| POST | `/clinic/leave` | `ClinicLeaveBody` | `ClinicLeaveRequest` | planned |
-| POST | `/clinic/leave/early` | `ClinicEarlyLeaveBody` | `ClinicLeaveRequest` | planned |
-| DELETE | `/clinic/leave/:id` | | `{ cancelled: true }` (pending only) | planned |
-| GET | `/clinic/opd` | `?cohort=` | `ClinicMyOpd` | planned |
-| PUT | `/clinic/opd/batch` | `ClinicBatchBody` (first choice only; after that 409 `conflict`) | `ClinicMyOpd` | planned |
-| POST | `/clinic/opd/logs` | `ClinicCaseLogBody` (assigned day, today or past; can be corrected) | `ClinicVisit` | planned |
+| GET | `/clinic/today` | `?cohort=` | `ClinicToday` | built |
+| GET | `/clinic/week` | `?start=YYYY-MM-DD&cohort=` (start defaults to this Monday) | `ClinicWeek` | built |
+| POST | `/clinic/scan` | `ClinicScanBody` (`token` or `code`, optional `direction`) | `ClinicScanResult` | built |
+| GET | `/clinic/attendance` | `?cohort=` | `ClinicMyAttendance` | built |
+| GET | `/clinic/leave` | `?cohort=` | `ClinicMyLeave` | built |
+| POST | `/clinic/leave` | `ClinicLeaveBody` | `ClinicLeaveRequest` | built |
+| POST | `/clinic/leave/early` | `ClinicEarlyLeaveBody` | `ClinicLeaveRequest` | built |
+| DELETE | `/clinic/leave/:id` | | `{ cancelled: true }` (pending only) | built |
+| GET | `/clinic/opd` | `?cohort=` | `ClinicMyOpd` | built |
+| PUT | `/clinic/opd/batch` | `ClinicBatchBody` (first choice only; after that 409 `conflict`) | `ClinicMyOpd` | built |
+| POST | `/clinic/opd/logs` | `ClinicCaseLogBody` (assigned day, today or past; can be corrected) | `ClinicVisit` | built |
 
 Scan errors: 400 `bad_request` (code or token wrong, too old, already scanned that way, out before in), 403 `forbidden` (not in this session's cohort), 409 `conflict` (session not open), 429 `rate_limited`.
 
@@ -43,37 +43,37 @@ Scan errors: 400 `bad_request` (code or token wrong, too old, already scanned th
 
 | Method | Path | Body / query | Answer | Status |
 |---|---|---|---|---|
-| GET | `/clinic/admin/overview` | `?cohort=` | `ClinicAdminOverview` | planned |
-| GET | `/clinic/admin/timetable` | `?cohort=` | `{ slots: ClinicSlot[] }` | planned |
-| POST | `/clinic/admin/timetable` | `ClinicSlotBody` | `ClinicSlot` | planned |
-| PUT | `/clinic/admin/timetable/:id` | `ClinicSlotBody` | `ClinicSlot` | planned |
-| DELETE | `/clinic/admin/timetable/:id` | | `{ deleted: true }` (sessions already made stay) | planned |
-| POST | `/clinic/admin/timetable/apply` | `ClinicApplyBody` (at most 120 days) | `ClinicApplyResult` | planned |
-| GET | `/clinic/admin/sessions` | `?cohort=&from=&to=` (defaults: this week) | `{ sessions: ClinicSession[]; notes: { date: string; note: string }[] }` | planned |
-| POST | `/clinic/admin/sessions` | `ClinicSessionBody` (one-off) | `ClinicSession` | planned |
-| PATCH | `/clinic/admin/sessions/:id` | `ClinicSessionPatch` (move, edit, cancel, restore, note) | `ClinicSession` | planned |
-| PUT | `/clinic/admin/notes` | `ClinicDayNoteBody` (empty note removes it) | `{ date: string; note: string \| null }` | planned |
-| GET | `/clinic/admin/sessions/:id/code` | (call again when `refreshInMs` runs out) | `ClinicShowCode` | planned |
-| GET | `/clinic/admin/sessions/:id/attendance` | | `ClinicLiveAttendance` | planned |
-| POST | `/clinic/admin/sessions/:id/attendance` | `ClinicManualMarkBody` | `ClinicLiveAttendance` | planned |
-| GET | `/clinic/admin/leave` | `?cohort=&status=pending\|approved\|rejected\|all` | `ClinicLeaveQueue` | planned |
-| POST | `/clinic/admin/leave/:id` | `ClinicLeaveDecisionBody` | `ClinicLeaveRequest` | planned |
-| GET | `/clinic/admin/allowances` | `?cohort=` | `ClinicAllowances` | planned |
-| PUT | `/clinic/admin/allowances` | `ClinicAllowanceBody` (`set` or `add`; no `userIds` = whole cohort) | `ClinicAllowanceResult` | planned |
-| GET | `/clinic/admin/opd/settings` | `?cohort=` | `ClinicOpdSettings` | planned |
-| PUT | `/clinic/admin/opd/settings` | `ClinicOpdSettings` | `ClinicOpdSettings` | planned |
-| GET | `/clinic/admin/opd/quotas` | `?cohort=` | `ClinicQuotas` | planned |
-| PUT | `/clinic/admin/opd/quotas` | `ClinicQuotaBody` | `{ changed: number }` | planned |
-| POST | `/clinic/admin/opd/extras` | `ClinicExtraBody` | `ClinicQuotaRow` | planned |
-| PUT | `/clinic/admin/opd/batch` | `ClinicAdminBatchBody` | `{ batch: ClinicBatch }` | planned |
-| POST | `/clinic/admin/opd/generate` | `ClinicGenerateBody` | `ClinicPlan` (the draft) | planned |
-| GET | `/clinic/admin/opd/plan` | `?cohort=&state=draft\|published` | `ClinicPlan` | planned |
-| POST | `/clinic/admin/opd/move` | `ClinicMoveBody` (409 `conflict` when the day is full and `force` is not set) | `ClinicPlan` | planned |
-| POST | `/clinic/admin/opd/publish` | `ClinicPublishBody` | `ClinicPublishResult` | planned |
-| DELETE | `/clinic/admin/opd/plan` | `?cohort=` (throws the draft away) | `{ deleted: number }` | planned |
-| POST | `/clinic/admin/opd/remind` | `{ cohortId }` | `ClinicRemindResult` | planned |
-| GET | `/clinic/admin/trackers` | `?cohort=` | `ClinicTrackers` | planned |
-| GET | `/clinic/admin/students/:id` | `?cohort=` | `ClinicStudentDetail` | planned |
+| GET | `/clinic/admin/overview` | `?cohort=` | `ClinicAdminOverview` | built |
+| GET | `/clinic/admin/timetable` | `?cohort=` | `{ slots: ClinicSlot[] }` | built |
+| POST | `/clinic/admin/timetable` | `ClinicSlotBody` | `ClinicSlot` | built |
+| PUT | `/clinic/admin/timetable/:id` | `ClinicSlotBody` | `ClinicSlot` | built |
+| DELETE | `/clinic/admin/timetable/:id` | | `{ deleted: true }` (sessions already made stay) | built |
+| POST | `/clinic/admin/timetable/apply` | `ClinicApplyBody` (at most 120 days) | `ClinicApplyResult` | built |
+| GET | `/clinic/admin/sessions` | `?cohort=&from=&to=` (defaults: this week) | `{ sessions: ClinicSession[]; notes: { date: string; note: string }[] }` | built |
+| POST | `/clinic/admin/sessions` | `ClinicSessionBody` (one-off) | `ClinicSession` | built |
+| PATCH | `/clinic/admin/sessions/:id` | `ClinicSessionPatch` (move, edit, cancel, restore, note) | `ClinicSession` | built |
+| PUT | `/clinic/admin/notes` | `ClinicDayNoteBody` (empty note removes it) | `{ date: string; note: string \| null }` | built |
+| GET | `/clinic/admin/sessions/:id/code` | (call again when `refreshInMs` runs out) | `ClinicShowCode` | built |
+| GET | `/clinic/admin/sessions/:id/attendance` | | `ClinicLiveAttendance` | built |
+| POST | `/clinic/admin/sessions/:id/attendance` | `ClinicManualMarkBody` | `ClinicLiveAttendance` | built |
+| GET | `/clinic/admin/leave` | `?cohort=&status=pending\|approved\|rejected\|all` | `ClinicLeaveQueue` | built |
+| POST | `/clinic/admin/leave/:id` | `ClinicLeaveDecisionBody` | `ClinicLeaveRequest` | built |
+| GET | `/clinic/admin/allowances` | `?cohort=` | `ClinicAllowances` | built |
+| PUT | `/clinic/admin/allowances` | `ClinicAllowanceBody` (`set` or `add`; no `userIds` = whole cohort) | `ClinicAllowanceResult` | built |
+| GET | `/clinic/admin/opd/settings` | `?cohort=` | `ClinicOpdSettings` | built |
+| PUT | `/clinic/admin/opd/settings` | `ClinicOpdSettings` | `ClinicOpdSettings` | built |
+| GET | `/clinic/admin/opd/quotas` | `?cohort=` | `ClinicQuotas` | built |
+| PUT | `/clinic/admin/opd/quotas` | `ClinicQuotaBody` | `{ changed: number }` | built |
+| POST | `/clinic/admin/opd/extras` | `ClinicExtraBody` | `ClinicQuotaRow` | built |
+| PUT | `/clinic/admin/opd/batch` | `ClinicAdminBatchBody` | `{ batch: ClinicBatch }` | built |
+| POST | `/clinic/admin/opd/generate` | `ClinicGenerateBody` | `ClinicPlan` (the draft) | built |
+| GET | `/clinic/admin/opd/plan` | `?cohort=&state=draft\|published` | `ClinicPlan` | built |
+| POST | `/clinic/admin/opd/move` | `ClinicMoveBody` (409 `conflict` when the day is full and `force` is not set) | `ClinicPlan` | built |
+| POST | `/clinic/admin/opd/publish` | `ClinicPublishBody` | `ClinicPublishResult` | built |
+| DELETE | `/clinic/admin/opd/plan` | `?cohort=` (throws the draft away) | `{ deleted: number }` | built |
+| POST | `/clinic/admin/opd/remind` | `{ cohortId }` | `ClinicRemindResult` | built |
+| GET | `/clinic/admin/trackers` | `?cohort=` | `ClinicTrackers` | built |
+| GET | `/clinic/admin/students/:id` | `?cohort=` | `ClinicStudentDetail` | built |
 
 ## The OPD generator (src/lib/clinic/opd.ts, `generatePlan`)
 

@@ -5,7 +5,7 @@ import { CODE_RE, codeFor, newSecret, parseQr, showCode, tokenFor, verifyCode, v
 import { decideScan, isLate, isOpen, minutesPresent, myStatus, sessionTimes, summarize } from "./attendance";
 import { approvedLeaveMap, balance, checkLeaveSessions, earlyLeaveMap, leaveCost, overLimit, overLimitOnApprove, sessionsTaken, toLeaveRequest } from "./leave";
 import { quotaOf, toVisit, visitState, visitTally } from "./cases";
-import type { LeaveRow, SessionRow, SlotRow } from "./types";
+import type { LeaveRow, SlotRow } from "./types";
 
 const COHORT = "c0c0c0c0-0000-4000-8000-000000000001";
 const SID = "5e5e5e5e-0000-4000-8000-000000000001";

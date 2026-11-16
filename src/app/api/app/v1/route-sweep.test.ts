@@ -140,3 +140,18 @@ describe("app route sweep: params the server checks by value", () => {
     expect(src).toMatch(/GAME_BOARDS = \["rx", "mse", "comorbid"\]/);
   });
 });
+
+describe("app route sweep: the clinic routes (docs/app/API_CONTRACT_CLINIC.md)", () => {
+  const doc = readFileSync(path.join(import.meta.dirname, "../../../../../docs/app/API_CONTRACT_CLINIC.md"), "utf8");
+  const listed = [...doc.matchAll(/^\| (GET|POST|PUT|PATCH|DELETE) \| `([^`]+)` \|/gm)].map((m) => ({ method: m[1] as "GET" | "POST" | "PUT" | "PATCH" | "DELETE", path: m[2]!.replace(/:[a-z]+/gi, ":p") }));
+  it("lists the clinic routes", () => expect(listed.length).toBeGreaterThan(40));
+  it.each(listed.map((c) => [`${c.method} ${c.path}`, c] as const))("%s has a route", (_n, c) => {
+    const file = resolveRoute(c.path);
+    expect(file, `no route file for ${c.method} ${c.path}`).not.toBeNull();
+    const src = readFileSync(file!, "utf8");
+    expect(exportsMethod(src, c.method), `${c.method} not exported`).toBe(true);
+    // Each method's own auth (a file can hold an admin GET and a Super Admin write).
+    const auth = new RegExp(`export const ${c.method} = appRoute(?:<[^>]*>)?\\(\\{ auth: "([a-zA-Z]+)"`).exec(src)?.[1];
+    expect(auth).toBe(c.path.startsWith("/clinic/admin/") ? (c.method === "GET" ? "admin" : "superAdmin") : "bearer");
+  });
+});
