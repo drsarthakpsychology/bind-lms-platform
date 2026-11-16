@@ -80,7 +80,7 @@ export function AdminComposeScreen() {
   if (!canWrite) {
     return (
       <Screen testID="compose">
-        <EmptyState mood="puzzled" title="View-only access" body="Only a Super Admin can send messages." action={{ label: "Back", onPress: () => router.back() }} />
+        <EmptyState mood="locked" title="View-only access" body="Only a Super Admin can send messages." action={{ label: "Back", onPress: () => router.back() }} />
       </Screen>
     );
   }
@@ -114,7 +114,7 @@ export function AdminComposeScreen() {
           {ids.length ? (
             <View style={{ flexDirection: "row", flexWrap: "wrap", gap: space[2] }}>
               {ids.map((id) => (
-                <Pressable key={id} accessibilityRole="button" accessibilityLabel={`Remove ${names.get(id) ?? "student"}`} onPress={() => setIds(ids.filter((x) => x !== id))} style={{ minHeight: 36, flexDirection: "row", alignItems: "center", gap: space[1], borderRadius: 18, paddingLeft: space[3], paddingRight: space[2], backgroundColor: c.tint }}>
+                <Pressable key={id} accessibilityRole="button" accessibilityLabel={`Remove ${names.get(id) ?? "student"}`} onPress={() => setIds(ids.filter((x) => x !== id))} style={{ minHeight: 44, flexDirection: "row", alignItems: "center", gap: space[1], borderRadius: 22, paddingLeft: space[3], paddingRight: space[2], backgroundColor: c.tint }}>
                   <T v="small">{names.get(id) ?? "Student"}</T>
                   <X size={16} color={c.muted} />
                 </Pressable>

@@ -7,11 +7,10 @@ import Animated, { FadeInDown, useReducedMotion } from "react-native-reanimated"
 import type { RequestInvitationBody, RequestInvitationResult } from "@/api/contract";
 import { ApiFailure, messageOf } from "@/api/errors";
 import { api } from "@/auth";
-import { Button, Chips, Screen, T } from "@/ds";
+import { Button, Chips, Meme, Screen, T } from "@/ds";
 import { BRAND } from "@/lib/brand";
 import { haptic } from "@/lib/haptics";
 import { Burst, Stamp } from "@/motion";
-import { SketchCat } from "@/sketch/cat";
 import { layout, space, useTheme } from "@/theme";
 import { Star } from "@/visitor/Art";
 import { AuthField } from "@/visitor/form";
@@ -121,7 +120,7 @@ export function RequestScreen() {
   );
 }
 
-/** "Request received": the kit's stamp lands a lime star with a tick, sparks fly, the cat looks on, the words rise in. */
+/** "Request received": the kit's stamp lands a lime star with a tick, sparks fly, a happy meme cat pops in, the words rise in. */
 function Sent({ name, email }: { name: string; email: string }) {
   const reduce = useReducedMotion();
   return (
@@ -134,7 +133,7 @@ function Sent({ name, email }: { name: string; email: string }) {
             <Burst fire={1} reach={70} count={12} />
           </View>
         </Stamp>
-        <SketchCat size={96} mood="calm" />
+        <Meme mood="win" size={104} delay={180} always />
       </View>
       <Animated.View entering={reduce ? undefined : FadeInDown.delay(250).duration(360)} style={{ gap: space[2] }}>
         <T v="display">Request received</T>

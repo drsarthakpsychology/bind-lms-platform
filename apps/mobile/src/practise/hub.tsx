@@ -226,7 +226,7 @@ export function PractiseHub() {
               <PractiseRows rows={s.boards.slice(0, PER_GROUP)} />
             </Section>
           ) : null}
-          {!s.cases.length && !s.games.length && !s.prep.length ? <EmptyState mood="sleepy" title="Practise opens soon" body="Your cases and games show up here once they open." /> : null}
+          {!s.cases.length && !s.games.length && !s.prep.length ? <EmptyState mood="soon" title="Practise opens soon" body="Your cases and games show up here once they open." /> : null}
         </Stagger>
       )}
     </Screen>

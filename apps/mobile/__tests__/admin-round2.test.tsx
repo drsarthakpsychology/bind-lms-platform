@@ -51,7 +51,7 @@ describe("round two answers read safely", () => {
     expect(anyoneProblem({ ...ok, name: " " })).toBe("Type their name.");
     expect(anyoneProblem({ ...ok, email: "nope" })).toBe("Type a real email address.");
     expect(anyoneProblem({ ...ok, paragraph: "" })).toBe("Write a few lines about what they did.");
-    expect(anyoneProblem({ ...ok, issuedOn: "16/11" })).toBe("Write the date as yyyy-mm-dd.");
+    expect(anyoneProblem({ ...ok, issuedOn: "16/11" })).toBe("Pick the date again.");
   });
 });
 

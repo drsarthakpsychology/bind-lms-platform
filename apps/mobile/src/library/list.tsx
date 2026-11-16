@@ -73,7 +73,7 @@ export function LibraryScreen() {
           <RowList>{rows.map((m) => row(m))}</RowList>
         </>
       ) : (
-        <EmptyState mood="puzzled" title="No medicine by that name" body="Check the spelling, or try the brand name or the condition." testID="library-empty" />
+        <EmptyState mood="missing" title="No medicine by that name" body="Check the spelling, or try the brand name or the condition." testID="library-empty" />
       )}
     </Screen>
   );

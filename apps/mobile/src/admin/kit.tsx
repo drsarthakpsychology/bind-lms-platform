@@ -12,7 +12,10 @@ import Reanimated, { FadeIn, useReducedMotion } from "react-native-reanimated";
 
 import type { UseQueryResult } from "@tanstack/react-query";
 
-import { Button, Field, Loaded as DsLoaded, Sheet, T } from "@/ds";
+import Svg, { Defs, LinearGradient, Rect, Stop } from "react-native-svg";
+
+import { Button, Field, Loaded as DsLoaded, Sheet, TabRow, T } from "@/ds";
+import { Swap, usePressScale } from "@/motion";
 import { haptic } from "@/lib/haptics";
 import { layout, space, type as scale, useTheme, type Palette } from "@/theme";
 import type { Tone } from "./format";
@@ -101,7 +104,7 @@ export function Figures({ items }: { items: { value: string; label: string; onPr
         return (
           <View key={i} style={{ width: "50%", paddingRight: space[4], minWidth: 0 }}>
             {it.onPress ? (
-              <Pressable testID={it.testID} accessibilityRole="button" accessibilityLabel={`${it.value} ${it.label}`} onPress={it.onPress} hitSlop={6} style={({ pressed }) => ({ opacity: pressed ? 0.6 : 1, alignSelf: "flex-start" })}>
+              <Pressable testID={it.testID} accessibilityRole="button" accessibilityLabel={`${it.value} ${it.label}`} onPress={it.onPress} hitSlop={{ top: 4, bottom: 8, left: 6, right: 6 }} style={({ pressed }) => ({ opacity: pressed ? 0.6 : 1, alignSelf: "flex-start" })}>
                 {body}
               </Pressable>
             ) : (
@@ -131,7 +134,7 @@ export function Block({ title, count, action, children, style, testID }: { title
         ) : null}
         <View style={{ flex: 1 }} />
         {action ? (
-          <Pressable testID={action.testID} accessibilityRole="link" onPress={action.onPress} hitSlop={10} style={{ minHeight: 32, justifyContent: "center" }}>
+          <Pressable testID={action.testID} accessibilityRole="link" onPress={action.onPress} style={{ minHeight: 44, minWidth: 44, justifyContent: "center" }}>
             <T v="small" tone="link">
               {action.label}
             </T>
@@ -229,6 +232,7 @@ export function ActionBar({ count, onClear, children, testID }: { count: number;
 /** A compact outline button for the action bar and row actions. */
 export function SmallButton({ label, onPress, icon, busy, danger, testID }: { label: string; onPress: () => void; icon?: React.ReactNode; busy?: boolean; danger?: boolean; testID?: string }) {
   const c = useTheme();
+  const { style, handlers } = usePressScale(0.96);
   return (
     <Pressable
       testID={testID}
@@ -236,13 +240,20 @@ export function SmallButton({ label, onPress, icon, busy, danger, testID }: { la
       accessibilityLabel={label}
       accessibilityState={{ busy: !!busy, disabled: !!busy }}
       disabled={busy}
-      onPress={onPress}
-      style={({ pressed }) => ({ minHeight: 44, paddingHorizontal: space[3], borderRadius: 10, borderWidth: 1.5, borderColor: danger ? c.danger : c.cardLine, flexDirection: "row", alignItems: "center", gap: space[2], backgroundColor: pressed ? c.tint : "transparent", opacity: busy ? 0.55 : 1 })}
+      onPress={() => {
+        haptic.tap();
+        onPress();
+      }}
+      {...handlers}
     >
-      {icon}
-      <T v="small" tone={danger ? "danger" : "ink"} style={{ fontFamily: scale.bodyStrong.fontFamily }}>
-        {busy ? `${label}…` : label}
-      </T>
+      {({ pressed }) => (
+        <Reanimated.View style={[{ minHeight: 44, paddingHorizontal: space[3], borderRadius: 10, borderWidth: 1.5, borderColor: danger ? c.danger : c.cardLine, flexDirection: "row", alignItems: "center", gap: space[2], backgroundColor: pressed ? c.tint : "transparent", opacity: busy ? 0.55 : 1 }, style]}>
+          {icon}
+          <T v="small" tone={danger ? "danger" : "ink"} style={{ fontFamily: scale.bodyStrong.fontFamily }}>
+            {busy ? `${label}…` : label}
+          </T>
+        </Reanimated.View>
+      )}
     </Pressable>
   );
 }
@@ -334,7 +345,7 @@ export function Facts({ items }: { items: { label: string; value: string; onPres
             {f.label}
           </T>
           {f.onPress ? (
-            <Pressable accessibilityRole="link" onPress={f.onPress} hitSlop={6}>
+            <Pressable accessibilityRole="link" accessibilityLabel={`${f.label}: ${f.value}`} onPress={f.onPress} hitSlop={{ top: 12, bottom: 12, left: 6, right: 6 }}>
               <T v="small" tone="link" style={{ fontFamily: scale.bodyStrong.fontFamily }}>
                 {f.value}
               </T>
@@ -417,6 +428,64 @@ export function Dot({ tone }: { tone: Tone }) {
 }
 
 /* ------------------------------------------------------------- motion bits */
+
+/**
+ * Underlined tabs that slide sideways when they do not fit a narrow phone.
+ * While more tabs wait off the right edge, that edge fades into the page, so
+ * the cut tab reads as "there is more". Picking a tab near either end scrolls
+ * it fully into view.
+ */
+export function ScrollTabs<V extends string>({ tabs, value, onChange }: { tabs: { id: V; name: string }[]; value: V; onChange: (v: V) => void }) {
+  const c = useTheme();
+  const ref = React.useRef<React.ComponentRef<typeof ScrollView>>(null);
+  const fade = `tabfade${React.useId().replace(/[^a-zA-Z0-9]/g, "")}`;
+  const [box, setBox] = React.useState({ view: 0, content: 0, x: 0 });
+  const more = box.content - box.view - box.x > 4;
+  const pick = (v: V) => {
+    const i = tabs.findIndex((t) => t.id === v);
+    if (i >= tabs.length - 2) ref.current?.scrollToEnd({ animated: true });
+    else if (i <= 1) ref.current?.scrollTo({ x: 0, animated: true });
+    onChange(v);
+  };
+  return (
+    <View style={{ marginHorizontal: -layout.gutter }}>
+      <ScrollView
+        ref={ref}
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        style={{ flexGrow: 0 }}
+        contentContainerStyle={{ paddingHorizontal: layout.gutter, minWidth: "100%" }}
+        scrollEventThrottle={32}
+        onLayout={(e) => {
+          const view = e.nativeEvent.layout.width;
+          setBox((b) => (b.view === view ? b : { ...b, view }));
+        }}
+        onContentSizeChange={(content) => setBox((b) => (b.content === content ? b : { ...b, content }))}
+        onScroll={(e) => {
+          const x = Math.round(e.nativeEvent.contentOffset.x);
+          setBox((b) => (Math.abs(b.x - x) < 2 ? b : { ...b, x }));
+        }}
+      >
+        <View style={{ flex: 1 }}>
+          <TabRow tabs={tabs} value={value} onChange={pick} scroll={false} />
+        </View>
+      </ScrollView>
+      {more ? (
+        <View pointerEvents="none" testID="tabs-more" style={{ position: "absolute", right: 0, top: 0, bottom: 1, width: 48 }}>
+          <Svg width="100%" height="100%">
+            <Defs>
+              <LinearGradient id={fade} x1="0" y1="0" x2="1" y2="0">
+                <Stop offset="0" stopColor={c.bg} stopOpacity={0} />
+                <Stop offset="0.75" stopColor={c.bg} stopOpacity={1} />
+              </LinearGradient>
+            </Defs>
+            <Rect x="0" y="0" width="100%" height="100%" fill={`url(#${fade})`} />
+          </Svg>
+        </View>
+      ) : null}
+    </View>
+  );
+}
 
 /**
  * Filter chips: the picked one fills and gets a tick that fades in; each
@@ -524,6 +593,23 @@ export function SwipeRow({ children, action, enabled = true, testID }: { childre
         {children}
       </RNAnimated.View>
     </View>
+  );
+}
+
+/**
+ * The content under ScrollTabs: it swaps with the motion kit's Swap, coming
+ * from the right when the picked tab is to the right of the last one, from
+ * the left when it is to the left. `gap` spaces the blocks inside it (the
+ * screen's own gap does not reach inside a wrapper).
+ */
+export function TabSwap<V extends string>({ tabs, value, gap = space[5], children }: { tabs: { id: V }[]; value: V; gap?: number; children: React.ReactNode }) {
+  const i = tabs.findIndex((t) => t.id === value);
+  const [last, setLast] = React.useState<{ v: V; i: number; dir: -1 | 0 | 1 }>({ v: value, i, dir: 0 });
+  if (last.v !== value) setLast({ v: value, i, dir: i > last.i ? 1 : -1 });
+  return (
+    <Swap k={value} dir={last.dir} style={{ gap }}>
+      {children}
+    </Swap>
   );
 }
 

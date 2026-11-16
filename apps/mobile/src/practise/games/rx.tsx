@@ -93,7 +93,7 @@ export function RxGame() {
     setAnswered(a);
     setScore((x) => x + rxPoints(s, streak));
     setStreak((x) => (s >= 0.999 ? x + 1 : 0));
-    react.answer(s >= 0.5);
+    react.answer(s >= 0.999, { partial: s > 0 && s < 0.999 });
     if (cs.kind === "chain") setStepMarks((m) => [...m, { chosen: value, right: a.graded.parts.at(-1)?.ok ?? false, correct: a.graded.parts.at(-1)?.correct ?? "" }]);
     if (s < 0.5) setLives((l) => l - 1);
     setLog((l) => [...l, { title: cs.title === "Name the chain" && cs.kind === "chain" ? cs.name : cs.title, ok: s >= 0.5, page: a.pages[0] ?? null }]);

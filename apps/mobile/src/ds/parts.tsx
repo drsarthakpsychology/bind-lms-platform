@@ -7,9 +7,10 @@ import Animated, { useAnimatedStyle, useReducedMotion, useSharedValue, withSprin
 import { crumb } from "@/lib/breadcrumb";
 import { haptic } from "@/lib/haptics";
 import { presets, ProgressFill, RollingNumber, Shimmer, SkeletonIn, springs, staggerDelay, usePressScale } from "@/motion";
-import { SketchCat } from "@/sketch/cat";
+import type { StateMood } from "@/lib/reactions/stickers";
 import { layout, space, useTheme } from "@/theme";
 import { Button } from "./button";
+import { Meme } from "./meme";
 import { T } from "./text";
 
 /* ------------------------------------------------------------- Section */
@@ -107,12 +108,14 @@ export function Row({ title, meta, icon, trailing, onPress, chevron, unread, cur
         {below}
       </View>
       {typeof trailing === "string" ? (
-        <T v="small" tone="muted" num>
+        // A long value (a long name) wraps on the right and never runs over the title.
+        <T v="small" tone="muted" num style={{ flexShrink: 1, maxWidth: "55%", textAlign: "right" }}>
           {trailing}
         </T>
-      ) : (
-        trailing
-      )}
+      ) : trailing !== undefined && trailing !== null && trailing !== false ? (
+        // A long status ("Password set, not signed in") wraps instead of squeezing the title to one word a line.
+        <View style={{ flexShrink: 1, maxWidth: "50%", alignItems: "flex-end" }}>{trailing}</View>
+      ) : null}
       {onPress && chevron !== false ? <ChevronRight size={20} color={c.muted} /> : null}
     </>
   );
@@ -349,11 +352,20 @@ export function RowsSkeleton({ rows = 4 }: { rows?: number }) {
 
 /* ---------------------------------------------------------- EmptyState */
 
-/** Nothing here, or something went wrong: the cat, one line, and at most one action. */
-export function EmptyState({ title, body, action, mood = "calm", testID }: { title: string; body?: string; action?: { label: string; onPress: () => void; primary?: boolean }; mood?: "calm" | "sleepy" | "puzzled"; testID?: string }) {
+/** Older mood names, still accepted: they map to the meme that fits them best. */
+type OldMood = "calm" | "sleepy" | "puzzled";
+const OLD: Record<OldMood, StateMood> = { calm: "soon", sleepy: "empty", puzzled: "missing" };
+export type EmptyMood = StateMood | OldMood;
+
+/**
+ * Nothing here, or something went wrong: a meme picture (see STATE_STICKER
+ * for which one each `mood` shows), one line, and at most one action.
+ */
+export function EmptyState({ title, body, action, mood = "empty", testID }: { title: string; body?: string; action?: { label: string; onPress: () => void; primary?: boolean }; mood?: EmptyMood; testID?: string }) {
+  const m = mood in OLD ? OLD[mood as OldMood] : (mood as StateMood);
   return (
     <View testID={testID} style={{ alignItems: "flex-start", gap: space[3], paddingVertical: space[5] }}>
-      <EmptyCat mood={mood} />
+      <Meme mood={m} />
       <T v="h2">{title}</T>
       {body ? (
         <T tone="muted" style={{ maxWidth: 420 }}>
@@ -365,21 +377,11 @@ export function EmptyState({ title, body, action, mood = "calm", testID }: { tit
   );
 }
 
-/** The cat settles in with a small pop when the empty state appears. */
-function EmptyCat({ mood }: { mood: "calm" | "sleepy" | "puzzled" }) {
-  const reduce = useReducedMotion();
-  return (
-    <Animated.View entering={reduce ? undefined : presets.pop(80)}>
-      <SketchCat mood={mood} />
-    </Animated.View>
-  );
-}
-
 /** The usual "could not load" state. */
 export function LoadError({ onRetry, what = "this", error }: { onRetry: () => void; what?: string; /** The failure, so the line says what really happened. */ error?: unknown }) {
   // Only blame the internet when the phone really could not reach the server (reasonOf).
   const body = reasonOf(error);
-  return <EmptyState mood="puzzled" title={`Could not load ${what}`} body={body} action={{ label: "Try again", onPress: onRetry }} testID="load-error" />;
+  return <EmptyState mood="error" title={`Could not load ${what}`} body={body} action={{ label: "Try again", onPress: onRetry }} testID="load-error" />;
 }
 
 /* ------------------------------------------------------- Chips, TabRow */
@@ -389,12 +391,13 @@ function Chip({ name, on, onPress }: { name: string; on: boolean; onPress: () =>
   const c = useTheme();
   const { style, handlers } = usePressScale(0.94);
   return (
-    <Pressable accessibilityRole="radio" accessibilityState={{ selected: on }} accessibilityLabel={name} onPress={onPress} {...handlers} style={{ minHeight: layout.target, justifyContent: "center" }}>
+    <Pressable accessibilityRole="radio" accessibilityState={{ selected: on }} accessibilityLabel={name} onPress={onPress} {...handlers} style={{ minHeight: layout.target, justifyContent: "center", maxWidth: "100%" }}>
       <Animated.View
         style={[
           {
             minHeight: 36,
             paddingHorizontal: space[4],
+            paddingVertical: space[1],
             justifyContent: "center",
             borderRadius: 18,
             borderWidth: 1.5,
@@ -438,7 +441,7 @@ export function Chips<V extends string>({ options, value, onChange, label, scrol
 }
 
 /** Underlined tabs inside a screen (About, Materials). One ink underline springs to the tab you pick. */
-export function TabRow<V extends string>({ tabs, value, onChange }: { tabs: { id: V; name: string }[]; value: V; onChange: (v: V) => void }) {
+export function TabRow<V extends string>({ tabs, value, onChange, scroll = true }: { tabs: { id: V; name: string }[]; value: V; onChange: (v: V) => void; /** False when a parent already scrolls the row sideways. */ scroll?: boolean }) {
   const c = useTheme();
   const reduce = useReducedMotion();
   const boxes = React.useRef<Record<string, { x: number; w: number }>>({});
@@ -458,8 +461,9 @@ export function TabRow<V extends string>({ tabs, value, onChange }: { tabs: { id
     opacity: w.value > 0 ? 1 : 0,
     transform: [{ translateX: x.value }, { scaleX: w.value }],
   }));
-  return (
-    <View accessibilityRole="tablist" style={{ flexDirection: "row", gap: space[5], borderBottomWidth: 1, borderColor: c.hairline }}>
+  const rowStyle: ViewStyle = { flexDirection: "row", gap: space[5], borderBottomWidth: 1, borderColor: c.hairline };
+  const items = (
+    <>
       {tabs.map((t) => {
         const on = t.id === value;
         return (
@@ -498,6 +502,18 @@ export function TabRow<V extends string>({ tabs, value, onChange }: { tabs: { id
           bar,
         ]}
       />
-    </View>
+    </>
+  );
+  if (!scroll)
+    return (
+      <View accessibilityRole="tablist" style={rowStyle}>
+        {items}
+      </View>
+    );
+  // Slides sideways when the names do not fit (a narrow phone with large text), instead of cutting the last tab off.
+  return (
+    <ScrollView horizontal showsHorizontalScrollIndicator={false} accessibilityRole="tablist" style={{ flexGrow: 0 }} contentContainerStyle={[rowStyle, { minWidth: "100%" }]}>
+      {items}
+    </ScrollView>
   );
 }

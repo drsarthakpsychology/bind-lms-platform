@@ -31,7 +31,7 @@ export function AdminFormsScreen() {
               ))}
             </RowList>
           ) : (
-            <EmptyState mood="sleepy" title="No forms yet" body="Make one on the website." />
+            <EmptyState mood="empty" title="No forms yet" body="Make one on the website." />
           )
         }
       </Loaded>

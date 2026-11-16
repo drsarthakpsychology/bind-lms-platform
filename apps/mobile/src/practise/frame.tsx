@@ -6,6 +6,7 @@ import Animated, { FadeIn, FadeInDown, useReducedMotion } from "react-native-rea
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { Button, EmptyState, Sheet, Skeleton, T, VerdictBand } from "@/ds";
+import { useKeyboardPad } from "@/ds/keyboard-pad";
 import { haptic } from "@/lib/haptics";
 import { useSeen } from "@/lib/once";
 import { Rich } from "@/study/rich";
@@ -65,6 +66,8 @@ export function GameFrame({ title, howTo, score, scoreLabel = "Score", hud, chil
   const insets = useSafeAreaInsets();
   const [help, setHelp] = React.useState(false);
   const [asking, setAsking] = React.useState(false);
+  /** The pinned footer's height, so a reaction sticker sits above its buttons. */
+  const [thumbH, setThumbH] = React.useState(0);
   const close = React.useCallback(() => {
     if (confirmLeave) setAsking(true);
     else leave();
@@ -80,8 +83,10 @@ export function GameFrame({ title, howTo, score, scoreLabel = "Score", hud, chil
   const closeHelp = React.useCallback(() => setHelp(false), []);
   const closeAsk = React.useCallback(() => setAsking(false), []);
   const body = <View style={{ gap: space[5], width: "100%", maxWidth: layout.readingWidth, alignSelf: "center" }}>{children}</View>;
+  // Typing an answer: the keyboard must not cover the box or the Check button.
+  const { ref: kbRef, pad: kbPad, onLayout: kbLayout } = useKeyboardPad();
   return (
-    <View testID={testID} style={{ flex: 1, backgroundColor: c.bg, paddingTop: insets.top }}>
+    <View ref={kbRef} onLayout={kbLayout} testID={testID} style={{ flex: 1, backgroundColor: c.bg, paddingTop: insets.top, paddingBottom: kbPad }}>
       <View style={{ backgroundColor: c.bg }}>
         <View style={{ minHeight: 56, flexDirection: "row", alignItems: "center", paddingHorizontal: space[1], gap: space[1] }}>
           <Pressable accessibilityRole="button" accessibilityLabel="Close" onPress={close} hitSlop={4} style={({ pressed }) => ({ width: layout.target, height: layout.target, borderRadius: 24, alignItems: "center", justifyContent: "center", backgroundColor: pressed ? c.tint : "transparent" })} testID="game-close">
@@ -115,11 +120,11 @@ export function GameFrame({ title, howTo, score, scoreLabel = "Score", hud, chil
         </ScrollView>
       )}
       {thumb ? (
-        <View style={{ borderTopWidth: 1, borderColor: c.hairline, backgroundColor: c.bg, paddingHorizontal: layout.gutter, paddingTop: space[3], paddingBottom: insets.bottom + space[3] }}>
+        <View onLayout={(e) => setThumbH(Math.round(e.nativeEvent.layout.height))} style={{ borderTopWidth: 1, borderColor: c.hairline, backgroundColor: c.bg, paddingHorizontal: layout.gutter, paddingTop: space[3], paddingBottom: (kbPad ? 0 : insets.bottom) + space[3] }}>
           <View style={{ width: "100%", maxWidth: layout.readingWidth, alignSelf: "center", gap: space[2] }}>{thumb}</View>
         </View>
       ) : null}
-      <StickerLayer />
+      <StickerLayer above={thumb ? thumbH || undefined : insets.bottom} />
       <HowToSheet open={help} onClose={closeHelp} steps={howTo ?? []} />
       <Sheet open={asking} onClose={closeAsk} title="Leave this round?">
         <View style={{ gap: space[3] }}>
@@ -369,7 +374,7 @@ export function EndPanel({ kicker = "Round over", score, scoreOf, line, stats, r
     fired.current = true;
     haptic.success();
     const mood = outcome ? (outcome === "won" ? "streak" : outcome === "lost" ? "wrong" : "near") : moodForScore(right ?? 0, total ?? 0);
-    reactions.show(mood, (right ?? 0) + (total ?? 0));
+    reactions.show(mood);
   }, [outcome, right, total]);
   return (
     <Animated.View entering={reduce ? undefined : FadeInDown.duration(motion.fill)} style={{ gap: space[5], paddingTop: space[4] }} testID="game-over">
@@ -461,7 +466,7 @@ export function FrameError({ title, error, onRetry, web = "/practice" }: { title
       {isSoon(error) ? (
         <SoonState web={web} />
       ) : (
-        <EmptyState mood="puzzled" title="That didn't load" body={loadLine(error)} action={{ label: "Try again", onPress: onRetry }} testID="load-error" />
+        <EmptyState mood="error" title="That didn't load" body={loadLine(error)} action={{ label: "Try again", onPress: onRetry }} testID="load-error" />
       )}
     </GameFrame>
   );

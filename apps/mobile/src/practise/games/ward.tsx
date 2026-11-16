@@ -169,7 +169,7 @@ export function WardGame() {
     if (r.reveal) {
       setReveal(r.reveal);
       setMarks((m) => [...m, r.reveal!.q === "best" ? "ok" : r.reveal!.q === "ok" ? null : "miss"]);
-      react.answer(r.reveal.q === "best");
+      react.answer(r.reveal.q === "best", { partial: r.reveal.q === "ok" });
     }
     setSolo(r);
   };
@@ -266,7 +266,7 @@ export function WardTeam({ teamId, onExit }: { teamId: string; onExit: () => voi
   if (missing && !view) {
     return (
       <GameFrame title="Ward Week" testID="ward-team-missing">
-        <EmptyState mood="puzzled" title="Team not found" body="You may not be in this team, or team play is not open yet." action={{ label: "Back to Ward Week", onPress: onExit }} />
+        <EmptyState mood="missing" title="Team not found" body="You may not be in this team, or team play is not open yet." action={{ label: "Back to Ward Week", onPress: onExit }} />
       </GameFrame>
     );
   }

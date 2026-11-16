@@ -191,7 +191,7 @@ export function SearchScreen() {
             );
           })
         ) : (
-          <EmptyState mood="puzzled" title="Nothing found" body={`Nothing matches "${term}". Try a shorter word.`} testID="search-empty" />
+          <EmptyState mood="missing" title="Nothing found" body={`Nothing matches "${term}". Try a shorter word.`} testID="search-empty" />
         )}
       </ScrollView>
     </View>
