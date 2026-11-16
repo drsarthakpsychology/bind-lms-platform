@@ -1,6 +1,6 @@
 import { router, useFocusEffect } from "expo-router";
 import { setStatusBarStyle } from "expo-status-bar";
-import { Lock, Mail } from "lucide-react-native";
+import { ChevronLeft, Lock, Mail } from "lucide-react-native";
 import * as React from "react";
 import { Keyboard, KeyboardAvoidingView, Platform, Pressable, ScrollView, Text, TextInput, View, useWindowDimensions } from "react-native";
 import Animated, { useAnimatedStyle, useDerivedValue, useReducedMotion, useSharedValue, withDelay, withTiming } from "react-native-reanimated";
@@ -210,14 +210,23 @@ function Title() {
 
 /** The name on the band. It stays in view when the band folds. */
 function BandName() {
+  // No tab bar on this screen: back to Welcome sits next to the name.
+  const back = router.canGoBack();
   return (
-    <View style={{ flexDirection: "row", alignItems: "flex-end", gap: space[2], paddingTop: space[4], paddingHorizontal: layout.gutter }} accessible accessibilityRole="header" accessibilityLabel="VIBHA School of Psychology">
+    <View style={{ flexDirection: "row", alignItems: "center", paddingTop: space[2], paddingLeft: back ? space[1] : layout.gutter, paddingRight: layout.gutter }}>
+      {back ? (
+        <Pressable testID="sign-in-back" accessibilityRole="button" accessibilityLabel="Back" onPress={() => router.back()} hitSlop={4} style={({ pressed }) => ({ width: layout.target, height: layout.target, borderRadius: layout.target / 2, alignItems: "center", justifyContent: "center", backgroundColor: pressed ? "rgba(255,255,255,0.18)" : "transparent" })}>
+          <ChevronLeft size={26} color="#ffffff" strokeWidth={2.4} />
+        </Pressable>
+      ) : null}
+    <View style={{ flexDirection: "row", alignItems: "flex-end", gap: space[2] }} accessible accessibilityRole="header" accessibilityLabel="VIBHA School of Psychology">
       <Text allowFontScaling={false} style={{ fontFamily: fonts.wordmark, fontSize: 24, color: "#ffffff", letterSpacing: -0.4 }}>
         VIBHA
       </Text>
       <Text allowFontScaling={false} style={{ fontFamily: fonts.semibold, fontSize: 12, color: "rgba(255,255,255,0.8)", paddingBottom: 4 }}>
         School of Psychology
       </Text>
+    </View>
     </View>
   );
 }

@@ -121,9 +121,18 @@ describe("Welcome words from the website", () => {
 });
 
 describe("Visitor area", () => {
-  it("has exactly three tabs: Welcome, Request, Sign in (no free tools)", () => {
+  it("has exactly three screens: Welcome, Request, Sign in (no free tools), and no tab bar", () => {
     const dir = path.join(__dirname, "..", "app", "(visitor)");
     expect(fs.readdirSync(dir).sort()).toEqual(["_layout.tsx", "request.tsx", "sign-in.tsx", "welcome.tsx"]);
+    const layoutSrc = fs.readFileSync(path.join(dir, "_layout.tsx"), "utf8");
+    expect(layoutSrc).toMatch(/<Stack/);
+    expect(layoutSrc).not.toMatch(/TabBar/);
+  });
+
+  it("Welcome has a Jump to sheet with the four places", async () => {
+    await render(<WelcomeScreen />);
+    await fireEvent.press(screen.getByTestId("welcome-jump", { includeHiddenElements: true }));
+    for (const id of ["get", "faculty", "week", "join"]) expect(screen.getByTestId(`welcome-jump-${id}`, { includeHiddenElements: true })).toBeTruthy();
   });
 });
 

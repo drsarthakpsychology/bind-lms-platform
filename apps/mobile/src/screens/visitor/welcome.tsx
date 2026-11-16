@@ -1,12 +1,13 @@
 import { router, useFocusEffect } from "expo-router";
 import { setStatusBarStyle } from "expo-status-bar";
-import { Check, MessageCircle, Phone } from "lucide-react-native";
+import { Check, ChevronDown, MessageCircle, Phone } from "lucide-react-native";
 import * as React from "react";
 import { Linking, ScrollView, Text, View, useWindowDimensions, type LayoutChangeEvent } from "react-native";
-import Animated, { Extrapolation, FadeInDown, interpolate, useAnimatedScrollHandler, useAnimatedStyle, useReducedMotion, useSharedValue, withSpring, type SharedValue } from "react-native-reanimated";
+import Animated, { Extrapolation, FadeInDown, interpolate, useAnimatedReaction, useAnimatedScrollHandler, useAnimatedStyle, useDerivedValue, useReducedMotion, useSharedValue, withSpring, type SharedValue } from "react-native-reanimated";
+import { scheduleOnRN } from "react-native-worklets";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
-import { Button, T } from "@/ds";
+import { Button, Row, RowList, Sheet, T } from "@/ds";
 import { haptic } from "@/lib/haptics";
 import { Press } from "@/motion";
 import { SketchCat } from "@/sketch/cat";
@@ -17,7 +18,20 @@ import { BLUE, Chapter, DigitRoll, INK, LIME, Parallax, Reveal, ScrollStage, use
 import { Dots, Face, Head, Initials, Pix } from "@/visitor/parts";
 
 const G = layout.gutter;
+
+/** The "Jump to" sheet's places, in page order. */
+const JUMPS = [
+  { id: "get", name: "What you get" },
+  { id: "faculty", name: "Faculty" },
+  { id: "week", name: "Your week" },
+  { id: "join", name: "Joining" },
+] as const;
+type JumpId = (typeof JUMPS)[number]["id"];
+/** Each place reports where its chapter starts. */
+const JumpCtx = React.createContext<(id: JumpId) => (y: number) => void>(() => () => undefined);
 const WHITE = "#ffffff";
+/** Height of the top bar under the status bar. */
+const BAR_H = 48;
 const ON_BLUE_MUTED = "rgba(255,255,255,0.82)";
 
 /**
@@ -37,6 +51,18 @@ export function WelcomeScreen() {
   const heroH = useSharedValue(600);
   const [dockH, setDockH] = React.useState(132);
   const words = useHomeWords();
+  const reduce = useReducedMotion();
+  const scroll = React.useRef<React.ComponentRef<typeof Animated.ScrollView>>(null);
+  const tops = React.useRef<Partial<Record<JumpId, number>>>({});
+  const mark = React.useCallback((id: JumpId) => (top: number) => void (tops.current[id] = top), []);
+  const [jumpOpen, setJumpOpen] = React.useState(false);
+  const closeJump = React.useCallback(() => setJumpOpen(false), []);
+  const jump = (id: JumpId) => {
+    setJumpOpen(false);
+    const top = tops.current[id];
+    // Land just under the top bar.
+    if (top !== undefined) scroll.current?.scrollTo({ y: Math.max(0, top - insets.top - 44), animated: !reduce });
+  };
 
   // The top of this screen is always brand blue, so the clock and battery are white here.
   useFocusEffect(
@@ -54,7 +80,9 @@ export function WelcomeScreen() {
     <HomeWordsCtx.Provider value={words}>
     <View testID="welcome" style={{ flex: 1, backgroundColor: c.bg }}>
       <ScrollStage y={y} vh={vh}>
+        <JumpCtx.Provider value={mark}>
         <Animated.ScrollView
+          ref={scroll}
           testID="welcome-scroll"
           onScroll={onScroll}
           scrollEventThrottle={16}
@@ -75,8 +103,16 @@ export function WelcomeScreen() {
           <Joining />
           <Closing bottom={dockH} />
         </Animated.ScrollView>
+        </JumpCtx.Provider>
       </ScrollStage>
-      <TopBar y={y} ch={ch} vh={vh} heroH={heroH} topInset={insets.top} />
+      <TopBar y={y} ch={ch} vh={vh} heroH={heroH} topInset={insets.top} onJump={() => setJumpOpen(true)} />
+      <Sheet open={jumpOpen} onClose={closeJump} title="Jump to" testID="welcome-jump-sheet">
+        <RowList still>
+          {JUMPS.map((j) => (
+            <Row key={j.id} testID={`welcome-jump-${j.id}`} title={j.name} onPress={() => jump(j.id)} />
+          ))}
+        </RowList>
+      </Sheet>
       <Dock onHeight={setDockH} />
     </View>
     </HomeWordsCtx.Provider>
@@ -85,12 +121,26 @@ export function WelcomeScreen() {
 
 /* ================================================================ chrome */
 
-/** A blue band behind the status bar; once the opening has scrolled away it grows into a small bar with the name and a lime reading line. */
-function TopBar({ y, ch, vh, heroH, topInset }: { y: SharedValue<number>; ch: SharedValue<number>; vh: SharedValue<number>; heroH: SharedValue<number>; topInset: number }) {
+/**
+ * A blue band behind the status bar; once the opening has scrolled away a
+ * small solid bar slides down from under it with the name, "Jump to" and a
+ * lime reading line. It is never see-through, so the sticker rows never show
+ * through the name. While hidden it sits above the screen edge, so it takes
+ * no taps.
+ */
+function TopBar({ y, ch, vh, heroH, topInset, onJump }: { y: SharedValue<number>; ch: SharedValue<number>; vh: SharedValue<number>; heroH: SharedValue<number>; topInset: number; onJump: () => void }) {
   const reduce = useReducedMotion();
+  const [shown, setShown] = React.useState(false);
+  const show = useDerivedValue(() => interpolate(y.value, [heroH.value - 120, heroH.value - 60], [0, 1], Extrapolation.CLAMP));
+  useAnimatedReaction(
+    () => show.value > 0.5,
+    (on, was) => {
+      if (on !== was) scheduleOnRN(setShown, on);
+    },
+  );
   const bar = useAnimatedStyle(() => {
-    const show = interpolate(y.value, [heroH.value - 140, heroH.value - 60], [0, 1], Extrapolation.CLAMP);
-    return { opacity: show, transform: [{ translateY: reduce ? 0 : (1 - show) * -12 }] };
+    const t = reduce ? (show.value > 0.5 ? 1 : 0) : show.value;
+    return { opacity: t > 0 ? 1 : 0, transform: [{ translateY: (1 - t) * -(BAR_H + 3) }] };
   });
   const line = useAnimatedStyle(() => {
     const max = Math.max(1, ch.value - vh.value);
@@ -98,20 +148,27 @@ function TopBar({ y, ch, vh, heroH, topInset }: { y: SharedValue<number>; ch: Sh
   });
   return (
     <>
-      <View pointerEvents="none" style={{ position: "absolute", top: 0, left: 0, right: 0, height: topInset, backgroundColor: BLUE }} />
-      <Animated.View pointerEvents="none" importantForAccessibility="no-hide-descendants" accessibilityElementsHidden style={[{ position: "absolute", top: 0, left: 0, right: 0, paddingTop: topInset, backgroundColor: BLUE }, bar]}>
-        <View style={{ height: 44, paddingHorizontal: G, flexDirection: "row", alignItems: "center", gap: space[2] }}>
+      <Animated.View pointerEvents="box-none" importantForAccessibility={shown ? "auto" : "no-hide-descendants"} accessibilityElementsHidden={!shown} style={[{ position: "absolute", top: topInset, left: 0, right: 0, backgroundColor: BLUE }, bar]}>
+        <View style={{ height: BAR_H, paddingLeft: G, paddingRight: space[2], flexDirection: "row", alignItems: "center", gap: space[2] }}>
           <Text allowFontScaling={false} style={{ fontFamily: fonts.wordmark, fontSize: 18, color: WHITE, letterSpacing: -0.3 }}>
             VIBHA
           </Text>
-          <Text allowFontScaling={false} style={{ fontFamily: fonts.semibold, fontSize: 12, color: ON_BLUE_MUTED }}>
+          <Text allowFontScaling={false} style={{ flex: 1, fontFamily: fonts.semibold, fontSize: 12, color: ON_BLUE_MUTED }}>
             School of Psychology
           </Text>
+          <Press onPress={onJump} testID="welcome-jump" accessibilityRole="button" accessibilityLabel="Jump to a part of this page" feel="select" innerStyle={{ minHeight: layout.target, paddingHorizontal: space[3], flexDirection: "row", alignItems: "center", gap: space[1] }}>
+            <Text allowFontScaling={false} style={{ fontFamily: fonts.bold, fontSize: 14, color: WHITE }}>
+              Jump to
+            </Text>
+            <ChevronDown size={18} color={WHITE} strokeWidth={2.4} />
+          </Press>
         </View>
         <View style={{ height: 3, backgroundColor: "rgba(255,255,255,0.18)" }}>
           <Animated.View style={[{ flex: 1, backgroundColor: LIME, transformOrigin: "left" }, line]} />
         </View>
       </Animated.View>
+      {/* Drawn last: the bar slides out from under it. */}
+      <View pointerEvents="none" style={{ position: "absolute", top: 0, left: 0, right: 0, height: topInset, backgroundColor: BLUE }} />
     </>
   );
 }
@@ -260,7 +317,7 @@ function Room({ width }: { width: number }) {
           {[LIME, BLUE, WHITE].map((f, i) => (
             <View key={i} style={{ width: 11, height: 11, borderRadius: 6, backgroundColor: f, borderWidth: 2, borderColor: INK }} />
           ))}
-          <Pix color={INK} size={10} style={{ marginLeft: space[2] }}>
+          <Pix color={INK} size={12} style={{ marginLeft: space[2] }}>
             Consultation room
           </Pix>
         </View>
@@ -498,8 +555,9 @@ function Journey() {
 
 function WhatYouGet() {
   const { GET } = useWords();
+  const mark = React.useContext(JumpCtx);
   return (
-    <Chapter style={{ backgroundColor: LIME, paddingTop: space[7], paddingBottom: space[7], overflow: "hidden" }}>
+    <Chapter onTop={mark("get")} style={{ backgroundColor: LIME, paddingTop: space[7], paddingBottom: space[7], overflow: "hidden" }}>
       <Dots color="rgba(17,17,17,0.10)" gap={14} />
       <View style={{ paddingHorizontal: G, gap: space[6], width: "100%", maxWidth: 640, alignSelf: "center" }}>
         <Head tag={GET.tag} title={GET.title} accent={GET.accent} ink={INK} accentColor={BLUE} muted="#2a2a2a" tagColor={INK} />
@@ -565,7 +623,7 @@ function Curriculum() {
                 <Text allowFontScaling={false} style={{ fontFamily: fonts.pixelDigits, fontSize: 22, color: i % 2 ? LIME : INK }}>
                   {String(i + 1).padStart(2, "0")}
                 </Text>
-                <Pix color={i % 2 ? WHITE : INK} size={10}>
+                <Pix color={i % 2 ? WHITE : INK} size={12}>
                   {`${i + 1} of ${DISCIPLINES.items.length}`}
                 </Pix>
               </View>
@@ -600,8 +658,9 @@ function YourWeek() {
     thumb.set(reduce ? (v ? 1 : 0) : withSpring(v ? 1 : 0, snappy));
   };
   const day = weekend ? WEEK.weekend : WEEK.weekday;
+  const mark = React.useContext(JumpCtx);
   return (
-    <Chapter style={{ paddingHorizontal: G, paddingTop: space[7], paddingBottom: space[7], width: "100%", maxWidth: 640, alignSelf: "center", gap: space[6] }}>
+    <Chapter onTop={mark("week")} style={{ paddingHorizontal: G, paddingTop: space[7], paddingBottom: space[7], width: "100%", maxWidth: 640, alignSelf: "center", gap: space[6] }}>
       <Head tag={WEEK.tag} title={WEEK.title} accent={WEEK.accent} sub={WEEK.sub} ink={c.ink} accentColor={c.link} muted={c.muted} />
       <View style={{ flexDirection: "row", gap: 6 }}>
         {WEEK.days.map((d, i) => (
@@ -666,8 +725,9 @@ function Legend({ dot, label, ring }: { dot: string; label: string; ring?: boole
 function Faculty() {
   const { FACULTY } = useWords();
   const c = useTheme();
+  const mark = React.useContext(JumpCtx);
   return (
-    <Chapter style={{ paddingTop: space[7], paddingBottom: space[7], borderTopWidth: 1, borderColor: c.hairline }}>
+    <Chapter onTop={mark("faculty")} style={{ paddingTop: space[7], paddingBottom: space[7], borderTopWidth: 1, borderColor: c.hairline }}>
       <View style={{ paddingHorizontal: G, width: "100%", maxWidth: 640, alignSelf: "center", gap: space[6] }}>
         <View style={{ paddingRight: 100 }}>
           <Head tag={FACULTY.tag} title={FACULTY.title} accent={FACULTY.accent} sub={FACULTY.sub} ink={c.ink} accentColor={c.link} muted={c.muted} />
@@ -729,8 +789,9 @@ function Faculty() {
 
 function Joining() {
   const { CLOSING, JOIN } = useWords();
+  const mark = React.useContext(JumpCtx);
   return (
-    <Chapter style={{ backgroundColor: LIME, paddingTop: space[7], paddingBottom: space[7], overflow: "hidden" }}>
+    <Chapter onTop={mark("join")} style={{ backgroundColor: LIME, paddingTop: space[7], paddingBottom: space[7], overflow: "hidden" }}>
       <Dots color="rgba(17,17,17,0.10)" gap={14} />
       <View style={{ paddingHorizontal: G, gap: space[6], width: "100%", maxWidth: 640, alignSelf: "center" }}>
         <Head tag={JOIN.tag} title={JOIN.title} accent={JOIN.accent} sub={JOIN.sub} ink={INK} accentColor={BLUE} muted="#2a2a2a" tagColor={INK} />
