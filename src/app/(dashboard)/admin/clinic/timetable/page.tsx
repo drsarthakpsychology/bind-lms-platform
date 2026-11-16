@@ -1,4 +1,5 @@
-import { addDays, weekdayOf } from "@/components/clinic/format";
+import { addDays } from "@/components/clinic/format";
+import { mondayOf } from "@/lib/clinic/time";
 import { addSession, applyTimetable, deleteSlot, loadOverview, loadSessions, loadTimetable, patchSession, saveDayNote, saveSlot } from "../../../_clinic/bridge";
 import { AdminPage, Block, LoadError } from "../../_v2/kit";
 import { CohortSwitch } from "../_ui/overview";
@@ -7,12 +8,6 @@ import { WeekSessions, WeeklyTimetable } from "../_ui/timetable";
 
 export const dynamic = "force-dynamic";
 export const metadata = { title: "Timetable" };
-
-/** The Monday on or before a date. */
-function monday(date: string): string {
-  const wd = weekdayOf(date);
-  return addDays(date, wd === 0 ? -6 : 1 - wd);
-}
 
 /** The weekly timetable, making sessions from it, and one week of real sessions with one-offs and notes. */
 export default async function TimetablePage({ searchParams }: { searchParams: Promise<{ cohort?: string; from?: string }> }) {
@@ -27,7 +22,7 @@ export default async function TimetablePage({ searchParams }: { searchParams: Pr
     );
   }
   const cohortId = ov.data.cohortId;
-  const from = monday(sp.from && /^\d{4}-\d{2}-\d{2}$/.test(sp.from) ? sp.from : ov.data.today);
+  const from = mondayOf(sp.from && /^\d{4}-\d{2}-\d{2}$/.test(sp.from) ? sp.from : ov.data.today);
   const [slots, week] = await Promise.all([loadTimetable(cohortId), loadSessions(cohortId, from, addDays(from, 6))]);
   const actions = { saveSlot, deleteSlot, apply: applyTimetable, addSession, patchSession, saveNote: saveDayNote };
   return (

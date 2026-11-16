@@ -1,3 +1,4 @@
+import { localTime } from "@/lib/clinic/time";
 import type { ClinicBatch, ClinicKind, ClinicLeaveRequest, ClinicMyStatus, ClinicLeaveStatus } from "@/lib/clinic/types";
 
 /**
@@ -65,21 +66,15 @@ export function weekdayOf(date: string): number {
   return parts(date).wd;
 }
 
-/** Add days to a YYYY-MM-DD date. */
-export function addDays(date: string, n: number): string {
-  const { y, m, d } = parts(date);
-  const t = new Date(Date.UTC(y, m - 1, d + n, 12));
-  return t.toISOString().slice(0, 10);
-}
+/** Add days to a YYYY-MM-DD date (the server's own date maths). */
+export { addDays } from "@/lib/clinic/time";
 
 /** The time of an ISO instant in India time: "8:07 am". */
 export function instantClock(iso: string | null | undefined): string {
   if (!iso) return "";
-  const t = new Date(iso);
-  if (Number.isNaN(t.getTime())) return "";
-  // Clinic time is India (UTC+05:30), the same for every viewer.
-  const ist = new Date(t.getTime() + 330 * 60_000);
-  return clock(`${String(ist.getUTCHours()).padStart(2, "0")}:${String(ist.getUTCMinutes()).padStart(2, "0")}`);
+  const t = Date.parse(iso);
+  // Clinic time is India, the same for every viewer.
+  return Number.isNaN(t) ? "" : clock(localTime(t));
 }
 
 /** "2 h 5 min", "45 min". */

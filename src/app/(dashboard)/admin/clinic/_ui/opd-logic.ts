@@ -30,5 +30,6 @@ export function planRows(plan: ClinicPlan) {
 /** A small summary line for the OPD page header. */
 export function planSummary(plan: ClinicPlan): string {
   const visits = plan.days.reduce((n, d) => n + d.morning.people.length + d.evening.people.length, 0);
-  return visits ? `${visits} visits over ${planRows(plan).length} days` : "";
+  const n = planRows(plan).length;
+  return visits ? `${visits} ${visits === 1 ? "visit" : "visits"} over ${n} ${n === 1 ? "day" : "days"}` : "";
 }
