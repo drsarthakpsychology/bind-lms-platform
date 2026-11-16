@@ -5,6 +5,7 @@
  * (./contract.ts) into the shapes the screens were built on (./extra.ts),
  * so a screen never reads raw server JSON.
  */
+import { queryOf } from "@/lib/query";
 import { datesIn, todayLine } from "./format";
 import type { DoubtList, DoubtRow, DoubtThread } from "@/api/contract";
 import type * as A from "./contract";
@@ -161,7 +162,8 @@ export function safeHome(v: unknown): A.AdminHomeData {
  */
 export function todoHref(web: string): { app: string } | { web: string } {
   const [path = "", qs = ""] = web.split("?");
-  const q = new URLSearchParams(qs);
+  const params = queryOf(qs);
+  const q = { get: (k: string) => (params[k] ? encodeURIComponent(params[k]!) : null) };
   if (path === "/admin/inbox") return { app: "/admin/messages" };
   if (path === "/admin/emails" && q.get("folder") === "inbox") return { app: "/admin/messages" };
   if (path === "/admin/people") return { app: `/admin/people${q.get("view") ? `?view=${q.get("view")}` : ""}` };

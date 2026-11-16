@@ -1,3 +1,5 @@
+import { decodeSafe } from "@/lib/query";
+
 import type * as C from "./contract";
 
 /**
@@ -313,7 +315,7 @@ export function refEntryView(raw: unknown): RefEntry | null {
   }
   if (e.kind === "medicine") {
     const href = str(d.fullHref);
-    const medId = decodeURIComponent(href.split("/").filter(Boolean).pop() ?? "") || slug;
+    const medId = decodeSafe(href.split("?")[0]!.split("/").filter(Boolean).pop() ?? "") || slug;
     return { kind: "medicine", slug, label, summary, cls: str(d.cls), plain: strOrNull(d.plain), mechanism: strOrNull(d.mechanism), uses: strs(d.uses), sideEffects: strs(d.sideEffects), monitoring: strs(d.monitoring), medId };
   }
   return { kind: "term", slug, label, summary, means: str(d.means) || summary, clinical: strOrNull(d.clinical), why: strOrNull(d.why), mixup: strOrNull(d.mixup), hook: strOrNull(d.hook), area: strOrNull(d.area), sayings: strs(d.sayings), related: strs(d.related) };
