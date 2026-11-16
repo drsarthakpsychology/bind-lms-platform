@@ -16,8 +16,9 @@ export class ApiFailure extends Error {
 
 /** A line to show the student for any thrown value. */
 export function messageOf(e: unknown): string {
-  if (e instanceof ApiFailure) return e.message;
-  return "Something went wrong. Try again.";
+  if (e instanceof ApiFailure) return e.message || reasonOf(e);
+  // A plain error from the phone (an upload or download that lost the connection): say the real reason.
+  return reasonOf(e);
 }
 
 /** Section closed for this account (hide it, do not show an error). */

@@ -189,3 +189,13 @@ describe("a send button", () => {
     expect(next).toHaveBeenCalledTimes(2);
   });
 });
+
+describe("error lines", () => {
+  it("a file upload that lost the connection says so (it said only 'Something went wrong')", () => {
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    const { messageOf } = require("@/api/errors") as typeof import("@/api/errors");
+    expect(messageOf(new Error("Network request failed"))).toBe("Check your internet and try again.");
+    expect(messageOf(new ApiFailure("bad_request", "Write a reply first.", 400))).toBe("Write a reply first.");
+    expect(messageOf("weird")).toBe("Something went wrong. Try again.");
+  });
+});

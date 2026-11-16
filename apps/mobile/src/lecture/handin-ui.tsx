@@ -5,7 +5,7 @@ import * as React from "react";
 import { Linking, Pressable, View } from "react-native";
 
 import type { Assignment, Submission } from "@/api/contract";
-import { messageOf } from "@/api/errors";
+import { reasonOf } from "@/api/errors";
 import { Button, Field, ProgressLine, Row, RowList, T } from "@/ds";
 import { haptic } from "@/lib/haptics";
 import { clock } from "@/lecture/player";
@@ -51,7 +51,7 @@ export function FileHandIn({ a, onDone }: { a: Assignment; onDone: (s: Submissio
       onDone(r.submission);
     } catch (e) {
       haptic.warn();
-      setError(messageOf(e));
+      setError(reasonOf(e));
     } finally {
       setProgress(null);
     }
@@ -140,7 +140,7 @@ export function RecordingHandIn({ a, onDone }: { a: Assignment; onDone: (s: Subm
       onDone(r.submission);
     } catch (e) {
       haptic.warn();
-      setError(messageOf(e));
+      setError(reasonOf(e));
     } finally {
       setBusy(false);
     }
