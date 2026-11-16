@@ -7,7 +7,9 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useOffline } from "@/api/online";
 import { haptic } from "@/lib/haptics";
 import { FlowGap, presets, usePressScale } from "@/motion";
-import { fonts, layout, space, useTheme } from "@/theme";
+import Svg, { Defs, LinearGradient, Rect, Stop } from "react-native-svg";
+
+import { AreaProvider, fonts, layout, space, useAccent, useTheme, type Area } from "@/theme";
 import { Button } from "./button";
 import { ProgressLine } from "./parts";
 import { useBottomChrome } from "./bottom-chrome";
@@ -109,7 +111,30 @@ export type ScreenProps = {
   gap?: number;
   testID?: string;
   contentStyle?: StyleProp<ViewStyle>;
+  /** A tab screen's area: sets its one accent family and a soft glow behind the header. */
+  area?: Area;
 };
+
+/** The soft pastel glow behind a tab screen's header: the area's wash fading into the canvas. Scrolls away with the page. */
+function AreaGlow({ area }: { area: Area }) {
+  const a = useAccent();
+  // One gradient id per area: tabs stay mounted side by side, and a shared id would paint every glow in the first tab's colour.
+  const id = `area-glow-${area}`;
+  return (
+    <View pointerEvents="none" accessible={false} importantForAccessibility="no-hide-descendants" testID="area-glow" style={{ position: "absolute", top: 0, left: 0, right: 0, height: 260 }}>
+      <Svg width="100%" height="100%">
+        <Defs>
+          <LinearGradient id={id} x1="0" y1="0" x2="0" y2="1">
+            <Stop offset="0" stopColor={a.wash} stopOpacity={0.85} />
+            <Stop offset="0.55" stopColor={a.wash} stopOpacity={0.35} />
+            <Stop offset="1" stopColor={a.wash} stopOpacity={0} />
+          </LinearGradient>
+        </Defs>
+        <Rect x="0" y="0" width="100%" height="100%" fill={`url(#${id})`} />
+      </Svg>
+    </View>
+  );
+}
 
 /**
  * Every screen sits in this: the app canvas, a 20px side margin, 32px between
@@ -117,7 +142,7 @@ export type ScreenProps = {
  * optional pinned footer. Wide screens (tablets, landscape) keep a centred
  * column so lines stay readable.
  */
-export function Screen({ children, title, lead, top, footer, onRefresh, refreshing = false, scroll = true, safeTop, tab, bleed, gap = layout.section, testID, contentStyle }: ScreenProps) {
+export function Screen({ children, title, lead, top, footer, onRefresh, refreshing = false, scroll = true, safeTop, tab, bleed, gap = layout.section, testID, contentStyle, area }: ScreenProps) {
   const c = useTheme();
   const insets = useSafeAreaInsets();
   const reduce = useReducedMotion();
@@ -145,7 +170,7 @@ export function Screen({ children, title, lead, top, footer, onRefresh, refreshi
   const padBottom = (footer || tab ? 0 : insets.bottom) + space[6];
   const own = StyleSheet.flatten(contentStyle)?.gap;
   const flowGap = typeof own === "number" ? own : gap;
-  const inner = (
+  const body = (
     <View style={[{ width: "100%", maxWidth: bleed ? undefined : layout.readingWidth + side * 2, alignSelf: "center", paddingLeft: Math.max(side, bleed ? 0 : insets.left), paddingRight: Math.max(side, bleed ? 0 : insets.right), paddingTop: space[5], paddingBottom: padBottom, gap }, contentStyle]}>
       {title || lead ? (
         <View style={{ gap: space[1] }}>
@@ -165,7 +190,16 @@ export function Screen({ children, title, lead, top, footer, onRefresh, refreshi
       <FlowGap.Provider value={flowGap}>{children}</FlowGap.Provider>
     </View>
   );
+  const inner = area ? (
+    <View>
+      <AreaGlow area={area} />
+      {body}
+    </View>
+  ) : (
+    body
+  );
   return (
+    <AreaProvider area={area}>
     <View ref={root} onLayout={kbLayout} testID={testID} style={{ flex: 1, backgroundColor: c.bg, paddingTop: safeTop ? insets.top : 0, paddingBottom: kb }}>
       {top}
       <OfflineLine />
@@ -190,6 +224,7 @@ export function Screen({ children, title, lead, top, footer, onRefresh, refreshi
         </View>
       ) : null}
     </View>
+    </AreaProvider>
   );
 }
 
@@ -199,19 +234,29 @@ export function Screen({ children, title, lead, top, footer, onRefresh, refreshi
  * words. One per screen.
  */
 export function Hero({ context, title, meta, progress, progressLabel, action, below }: { context?: string; title: string; meta?: string; progress?: number; progressLabel?: string; action: { label: string; onPress: () => void; icon?: React.ReactNode; testID?: string }; below?: React.ReactNode }) {
+  const c = useTheme();
+  const a = useAccent();
+  // In a tab screen the hero sits on a soft card in the area's wash, and a short context line speaks in the pixel voice.
+  const pix = a.on && !!context && context.length <= 28;
   return (
-    <View style={{ gap: space[4] }}>
+    <View testID={a.on ? "hero-card" : undefined} style={[{ gap: space[4] }, a.on ? { backgroundColor: a.wash, borderRadius: 20, padding: space[5] } : null]}>
       <View style={{ gap: space[2] }}>
         {context ? (
-          <T v="small" tone="muted">
-            {context}
-          </T>
+          pix ? (
+            <T tone="accent" maxFontSizeMultiplier={1.3} style={{ fontFamily: fonts.pixel, fontSize: 12, lineHeight: 16, letterSpacing: 0.4 }}>
+              {context}
+            </T>
+          ) : (
+            <T v="small" tone="muted">
+              {context}
+            </T>
+          )
         ) : null}
         {/* A long title steps down a size so the button stays in reach. */}
         <T v={(title ?? "").length > 36 ? "h1" : "display"}>{title ?? ""}</T>
         {meta ? <T tone="muted">{meta}</T> : null}
       </View>
-      {progress !== undefined ? <ProgressLine value={progress} label={progressLabel} /> : null}
+      {progress !== undefined ? <ProgressLine value={progress} label={progressLabel} track={a.on ? c.hairline : undefined} /> : null}
       <Button label={action.label} onPress={action.onPress} icon={action.icon} testID={action.testID} />
       {below}
     </View>
