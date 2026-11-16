@@ -51,6 +51,11 @@ describe("parallel bearer guard", () => {
     expect(G.db.log.filter((l) => l.table === "app_devices" || l.table === "app_device_changes")).toEqual([]);
   });
 
+  it("Auth being unreachable is our error, never a sign-out", async () => {
+    G.authDown = true;
+    expect(await code(requireAppUser(appReq("/home", { token: WITH_SUB })))).toBe("server_error");
+  });
+
   it("uses the verified user when the token's own id disagrees", async () => {
     // A token whose payload names someone else but which Supabase answers for the student.
     G.users[FORGED] = { id: STUDENT_ID, email: "asha@example.com" };

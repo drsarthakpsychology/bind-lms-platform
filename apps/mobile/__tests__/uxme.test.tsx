@@ -23,7 +23,7 @@ describe("offline line", () => {
     expect(screen.queryByTestId("offline-line")).toBeNull();
     await act(async () => markOffline());
     expect(netStore.get().offline).toBe(true);
-    expect(screen.getByText("You are offline. Showing what was saved on this phone.")).toBeTruthy();
+    expect(screen.getByText("Offline, showing saved")).toBeTruthy();
     await fireEvent.press(screen.getByRole("button", { name: "Post" }));
     expect(press).not.toHaveBeenCalled();
     await act(async () => markOnline());

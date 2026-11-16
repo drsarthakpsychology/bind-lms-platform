@@ -4,6 +4,7 @@ import { Platform } from "react-native";
 
 import { fetchTransport } from "@/api/client";
 import { mockTransport } from "@/api/mock/server";
+import { watchTransport } from "@/api/online";
 import { config } from "@/lib/config";
 import { prefs, secure } from "@/lib/storage";
 import { setBiometricEnabled } from "./biometric";
@@ -27,7 +28,8 @@ export function onSignedOut(fn: () => void): () => void {
 export const session = createSession({
   secure,
   prefs,
-  transport: config.apiMode === "mock" ? mockTransport : fetchTransport,
+  // Every answer (or failure to reach the server) also tells the online state.
+  transport: watchTransport(config.apiMode === "mock" ? mockTransport : fetchTransport),
   hash: (text) => Crypto.digestStringAsync(Crypto.CryptoDigestAlgorithm.SHA256, text),
   randomId: () => Crypto.randomUUID().replace(/[^A-Za-z0-9-]/g, ""),
   device: () => ({

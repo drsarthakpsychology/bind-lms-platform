@@ -5,6 +5,7 @@ import type { PlayResult } from "./types";
 import { ApiFailure } from "@/api/errors";
 import { api } from "@/auth";
 import { outbox } from "@/api/outbox";
+import { queueWrite } from "@/api/queued";
 import type { PractiseRecordKind, PractiseTool, PractiseToolId } from "./contract";
 
 /**
@@ -112,14 +113,14 @@ export function useRead<T>(path: string, enabled = true) {
   return useQuery({ ...readQuery<T>(path), enabled });
 }
 
-/** Save or clear (null) a half-finished case, as the website's saveCaseProgress. Best effort. */
+/** Save or clear (null) a half-finished case, as the website's saveCaseProgress. Sent when the internet allows, in order. */
 export function saveCase(tool: string, item: string, state: unknown): void {
-  void play("cases", "mark", tool, item, state).catch(() => undefined);
+  void queueWrite({ method: "POST", path: `/play/cases/mark`, body: { args: [tool, item, state] }, scope: `case:${tool}:${item}` }).catch(() => undefined);
 }
 
-/** A finished attempt through the website's own route for it. Best effort. */
+/** A finished attempt through the website's own route for it. Kept and sent later when offline (src/api/queued.ts). */
 export function sendRecord(kind: PractiseRecordKind, body: Record<string, unknown>): void {
-  void api.post(`/practise/records/${kind}`, body).catch(() => undefined);
+  void queueWrite({ method: "POST", path: `/practise/records/${kind}`, body }).catch(() => undefined);
 }
 
 /** Answers into the answer history (what comes back first next time). Kept on the phone until sent. */

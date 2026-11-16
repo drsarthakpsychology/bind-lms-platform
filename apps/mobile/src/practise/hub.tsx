@@ -186,7 +186,7 @@ export function PractiseHub() {
   const games = s ? pickRows(s.games, opened, shown) : [];
   return (
     <Screen tab area="practise" top={<TabTop />} title="Practise" testID="practise" onRefresh={() => void Promise.all([q.refetch(), prep.refetch()])} refreshing={q.isRefetching}>
-      {q.isError ? (
+      {(q.isError && q.data === undefined) ? (
         <LoadError error={q.error} what="Practise" onRetry={() => void q.refetch()} />
       ) : q.isLoading || !s ? (
         <View style={{ gap: space[3] }} testID="practise-loading">
@@ -244,7 +244,7 @@ export function PractiseGroup({ group }: { group: string }) {
   const rows = s ? s[key] : [];
   return (
     <Screen area="practise" testID={`practise-all-${key}`} title={GROUPS[key]} onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
-      {q.isError ? (
+      {(q.isError && q.data === undefined) ? (
         <LoadError error={q.error} what={GROUPS[key]} onRetry={() => void q.refetch()} />
       ) : !s ? (
         <View style={{ gap: space[3] }}>

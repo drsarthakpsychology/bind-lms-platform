@@ -10,7 +10,7 @@ import { createStatelessAuthClient } from "./supabase";
 import { loadMyBlocks } from "@/lib/access/blocks";
 import { readFlags } from "@/lib/flags";
 import { gatesNeedFlags } from "@/lib/auth/api-gate";
-import { accountProblem, bearerToken, jwtExpired, jwtSubject } from "./guard-rules";
+import { accountProblem, authFailureCode, bearerToken, jwtExpired, jwtSubject } from "./guard-rules";
 
 export type { ApiGate } from "@/lib/auth/api-guard";
 
@@ -35,6 +35,9 @@ export async function loadProfileRow(userId: string): Promise<{ profile: Profile
   // `name` is read separately-tolerant: an older database without the column still signs in.
   let res = await db.from("profiles").select(`${PROFILE_COLS}, name`).eq("id", userId).maybeSingle();
   if (res.error) res = (await db.from("profiles").select(PROFILE_COLS).eq("id", userId).maybeSingle()) as typeof res;
+  // The database did not answer (a timeout, a blip): that is our error, not "no such account".
+  // Answering null here signed the student out of the app.
+  if (res.error) throw new ApiFail("server_error");
   const row = res.data as ProfileRow | null;
   if (!row) return null;
   const profile = {
@@ -128,7 +131,7 @@ export async function requireAppUser(req: Request, gates: ApiGate | readonly Api
     const { data, error } = await userP;
     const user = data?.user;
     if (error || !user) {
-      throw new ApiFail(/expired/i.test(error?.message ?? "") ? "token_expired" : "unauthenticated");
+      throw new ApiFail(authFailureCode(error));
     }
     const sameId = sub !== null && user.id === sub;
     const loaded = await (sameId && profileP ? profileP : loadProfileRow(user.id));

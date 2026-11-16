@@ -72,19 +72,25 @@ export function TopBar({ onSearch, onBell, unread = 0, sub }: { onSearch?: () =>
   );
 }
 
-/** One thin line while the phone cannot reach the server. Saved copies still show under it. */
+/**
+ * A small calm pill while the phone cannot reach the server: what is on the
+ * screen is the copy saved on this phone, and it refreshes by itself when the
+ * internet is back. Never an error screen while there is something to show.
+ */
 export function OfflineLine() {
   const c = useTheme();
   const offline = useOffline();
   const reduce = useReducedMotion();
   if (!offline) return null;
   return (
-    <Animated.View entering={reduce ? undefined : presets.rise(0)} testID="offline-line" accessibilityRole="alert" accessibilityLiveRegion="polite" style={{ flexDirection: "row", alignItems: "center", gap: space[2], paddingVertical: space[2], paddingHorizontal: layout.gutter, backgroundColor: c.band }}>
-      <CloudOff size={16} color={c.onBand} />
-      <T v="small" tone="onBand" style={{ flex: 1 }}>
-        You are offline. Showing what was saved on this phone.
-      </T>
-    </Animated.View>
+    <View pointerEvents="none" style={{ alignItems: "center", paddingTop: space[2], paddingHorizontal: layout.gutter }}>
+      <Animated.View entering={reduce ? undefined : presets.rise(0)} testID="offline-line" accessibilityRole="alert" accessibilityLiveRegion="polite" accessibilityLabel="Offline. Showing what was saved on this phone." style={{ flexDirection: "row", alignItems: "center", gap: space[1], paddingVertical: 6, paddingHorizontal: space[3], borderRadius: 999, backgroundColor: c.band }}>
+        <CloudOff size={14} color={c.onBand} />
+        <T v="caption" tone="onBand" maxFontSizeMultiplier={1.4}>
+          Offline, showing saved
+        </T>
+      </Animated.View>
+    </View>
   );
 }
 

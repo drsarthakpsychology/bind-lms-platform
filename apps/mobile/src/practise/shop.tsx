@@ -68,7 +68,7 @@ export function ShopScreen() {
   const d = q.data;
   const first = (me.data?.name ?? "You").split(" ")[0] ?? "You";
 
-  if (q.isError) return <Screen title="XP shop"><LoadError error={q.error} what="the shop" onRetry={() => void q.refetch()} /></Screen>;
+  if (q.isError && q.data === undefined) return <Screen title="XP shop"><LoadError error={q.error} what="the shop" onRetry={() => void q.refetch()} /></Screen>;
   if (!d) {
     return (
       <Screen title="XP shop">

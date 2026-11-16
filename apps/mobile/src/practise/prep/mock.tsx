@@ -83,7 +83,7 @@ export function MocksScreen() {
   const name = (id: string) => specs.find((s) => s.id === id)?.title ?? "Mock test";
   return (
     <Screen testID="mocks" title="Mock tests" lead="Timed papers, mostly questions you have not seen." onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
-      {q.isError ? (
+      {(q.isError && q.data === undefined) ? (
         <LoadError error={q.error} what="the mock tests" onRetry={() => void q.refetch()} />
       ) : !q.data ? (
         <RowsSkeleton rows={5} />
@@ -310,7 +310,7 @@ export function MockExamScreen() {
     };
   }, [live, paper, skew]);
 
-  if (list.isError) return <FrameError title="Mock test" web="/prep/mock" error={list.error} onRetry={() => void list.refetch()} />;
+  if (list.isError && list.data === undefined) return <FrameError title="Mock test" web="/prep/mock" error={list.error} onRetry={() => void list.refetch()} />;
   if (!list.data) return <FrameLoading title="Mock test" />;
   if (!spec) {
     return (
@@ -672,7 +672,7 @@ export function MockResultScreen() {
   const d = q.data;
   return (
     <Screen testID="mock-saved" title={d?.title ?? "Mock results"} onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
-      {q.isError ? (
+      {(q.isError && q.data === undefined) ? (
         <LoadError error={q.error} what="this mock" onRetry={() => void q.refetch()} />
       ) : !d ? (
         <RowsSkeleton rows={6} />

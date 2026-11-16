@@ -11,6 +11,7 @@ import { MoreButton, useMorePages } from "@/ds/more";
 import { when } from "@/screens/notifications/list";
 import { TabTop } from "@/nav/top";
 import { useTheme } from "@/theme";
+import { go } from "@/api/prefetch";
 
 export function doubtMeta(d: DoubtRow): string {
   const replies = d.replies === 0 ? "No answers yet" : d.replies === 1 ? "1 answer" : `${d.replies} answers`;
@@ -60,7 +61,7 @@ function DoubtRows({ first, mine }: { first: DoubtList; mine: boolean }) {
     <>
       <RowList>
         {m.items.map((x) => (
-          <Row key={x.id} testID={`doubt-${x.id}`} title={x.title} meta={doubtMeta(x)} trailing={x.status === "solved" ? <SolvedWord color={c.link} /> : undefined} onPress={() => router.push(`/doubt/${encodeURIComponent(x.id)}`)} />
+          <Row key={x.id} testID={`doubt-${x.id}`} title={x.title} meta={doubtMeta(x)} trailing={x.status === "solved" ? <SolvedWord color={c.link} /> : undefined} onPress={() => go(`/doubt/${encodeURIComponent(x.id)}`)} />
         ))}
       </RowList>
       <MoreButton more={m.more} busy={m.busy} error={m.error} onPress={() => void m.loadMore()} testID="doubts-more" />

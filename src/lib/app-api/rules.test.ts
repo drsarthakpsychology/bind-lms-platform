@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { accountProblem, bearerToken, isExpired, jwtExpired } from "./guard-rules";
+import { accountProblem, authFailureCode, bearerToken, isExpired, jwtExpired } from "./guard-rules";
 import { countRecentChanges, DEVICE_ID_RE, isExempt, nextChangeAt } from "./device-rules";
 import { buildConfig, compareVersions, latestVersion, minSupportedVersion, tooOld } from "./config";
 import { toAppTarget } from "./target";
@@ -140,5 +140,18 @@ describe("answer shape", () => {
   });
   it("has a status and a message for every code", () => {
     expect(Object.keys(STATUS).sort()).toEqual(Object.keys(MESSAGE).sort());
+  });
+});
+
+describe("authFailureCode", () => {
+  it("signs out only on a real refusal; Auth being down or busy keeps the sign-in", () => {
+    expect(authFailureCode({ name: "AuthApiError", status: 403, message: "invalid JWT: token is expired" })).toBe("token_expired");
+    expect(authFailureCode({ name: "AuthApiError", status: 401, message: "invalid JWT" })).toBe("unauthenticated");
+    expect(authFailureCode({ name: "AuthApiError", status: 400, message: "Invalid Refresh Token: Already Used" })).toBe("unauthenticated");
+    expect(authFailureCode({ name: "AuthRetryableFetchError", status: 0, message: "fetch failed" })).toBe("server_error");
+    expect(authFailureCode({ name: "AuthUnknownError", message: "Unexpected token <" })).toBe("server_error");
+    expect(authFailureCode({ name: "AuthApiError", status: 502, message: "Bad gateway" })).toBe("server_error");
+    expect(authFailureCode({ name: "AuthApiError", status: 429, message: "Too many" })).toBe("rate_limited");
+    expect(authFailureCode(null)).toBe("unauthenticated");
   });
 });

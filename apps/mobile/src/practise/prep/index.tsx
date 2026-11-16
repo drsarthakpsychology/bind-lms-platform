@@ -29,7 +29,7 @@ export function PrepHome() {
   const resume = d?.resume ? hrefFor(d.resume.target) ?? `/prep/set?subject=${enc(d.resume.subject)}&topic=${enc(d.resume.topic)}&set=${d.resume.set}` : null;
   return (
     <Screen testID="prep" title="Exam Prep" lead="Questions by subject and topic, one at a time. Nothing here counts towards your marks." onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
-      {q.isError ? (
+      {(q.isError && q.data === undefined) ? (
         <LoadError error={q.error} what="Exam Prep" onRetry={() => void q.refetch()} />
       ) : !d ? (
         <View style={{ gap: space[3] }}>
@@ -72,7 +72,7 @@ export function PrepSubject() {
   const d = q.data;
   return (
     <Screen testID="prep-subject" title={d?.title ?? " "} lead={d ? statLine(d.stats) : undefined}>
-      {q.isError ? (
+      {(q.isError && q.data === undefined) ? (
         <LoadError error={q.error} what="this subject" onRetry={() => void q.refetch()} />
       ) : !d ? (
         <View style={{ gap: space[3] }}>

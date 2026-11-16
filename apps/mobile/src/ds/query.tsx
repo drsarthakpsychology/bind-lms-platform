@@ -6,6 +6,7 @@ import { openLink } from "@/lib/open";
 import { View } from "react-native";
 
 import { ApiFailure, isClosed } from "@/api/errors";
+import { useOffline } from "@/api/online";
 import { config } from "@/lib/config";
 import { LoadSwap } from "@/motion";
 import { space, useTheme } from "@/theme";
@@ -47,16 +48,32 @@ export function ComingSoon({ web, body = "This part is ready on the website.", h
 /** Under a skeleton that is taking long: a quiet "Still trying..." after 4 seconds, or as soon as a try has failed. */
 export function StillTrying({ failed }: { failed: boolean }) {
   const [late, setLate] = React.useState(false);
+  const offline = useOffline();
   React.useEffect(() => {
     const t = setTimeout(() => setLate(true), 4000);
     return () => clearTimeout(t);
   }, []);
+  // Offline: say so plainly (the read waits and opens by itself), never a skeleton that seems to hang.
+  if (offline)
+    return (
+      <T v="small" tone="muted" accessibilityLiveRegion="polite" testID="still-trying">
+        You are offline. This opens when you are back online.
+      </T>
+    );
   if (!late && !failed) return null;
   return (
     <T v="small" tone="muted" accessibilityLiveRegion="polite" testID="still-trying">
       Still trying...
     </T>
   );
+}
+
+/**
+ * Opened offline on something never loaded before: one calm line, never an
+ * error. It opens by itself when the internet is back (the read is waiting).
+ */
+export function WaitingForInternet({ onRetry }: { onRetry: () => void }) {
+  return <EmptyState mood="wait" title="This opens when you are back online" body="Everything you opened before is saved on this phone." action={{ label: "Try now", onPress: onRetry }} testID="waiting-online" />;
 }
 
 /**
@@ -67,7 +84,10 @@ export function StillTrying({ failed }: { failed: boolean }) {
  */
 export function Loaded<T>({ q, skeleton, what, soon, children }: { q: UseQueryResult<T>; skeleton?: React.ReactNode; what?: string; /** The server may not have this route yet: a 404 means "coming soon", not an error. A string is the website page that has it. */ soon?: boolean | string; children: (data: T) => React.ReactNode }) {
   let body: React.ReactNode = null;
+  // Offline with nothing saved: the read waits for the internet (React Query "paused").
+  const waiting = q.data === undefined && !q.isError && q.fetchStatus === "paused";
   if (q.data !== undefined) body = children(q.data);
+  else if (waiting) body = <WaitingForInternet onRetry={() => void q.refetch()} />;
   else if (q.isError) {
     if (isClosed(q.error)) body = <EmptyState title="Not open for your account" body="This part of VIBHA is not switched on for you yet." testID="closed" />;
     else if (soon && q.error instanceof ApiFailure && q.error.code === "not_found") body = <ComingSoon web={typeof soon === "string" ? soon : undefined} />;
@@ -76,7 +96,7 @@ export function Loaded<T>({ q, skeleton, what, soon, children }: { q: UseQueryRe
   // Nothing for 120ms, then the skeleton for at least 380ms, then the content rises in.
   return (
     <LoadSwap
-      ready={q.data !== undefined || q.isError}
+      ready={q.data !== undefined || q.isError || waiting}
       skeleton={
         <View style={{ gap: space[3] }}>
           {skeleton ?? <RowsSkeleton />}

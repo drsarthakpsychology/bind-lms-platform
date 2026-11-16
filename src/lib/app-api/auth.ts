@@ -3,7 +3,7 @@ import { createAdminClient } from "@/lib/supabase/server";
 import type { AuthTokens, DeviceInfo, RefreshResult, SignInResult } from "./contract";
 import { registerDevice, signOutDevice } from "./devices";
 import { assertAccountAndDevice, loadProfileRow } from "./guard";
-import { accountProblem } from "./guard-rules";
+import { accountProblem, authFailureCode } from "./guard-rules";
 import { buildMe } from "./me";
 import { ApiFail } from "./respond";
 import { createStatelessAuthClient } from "./supabase";
@@ -64,7 +64,11 @@ export async function appSignIn(input: { email: string; password: string; device
 
 export async function appRefresh(input: { refreshToken: string; deviceId: string; platform: "android" | "ios" }): Promise<RefreshResult> {
   const { data, error } = await createStatelessAuthClient().auth.refreshSession({ refresh_token: input.refreshToken });
-  if (error || !data.user || !data.session) throw new ApiFail("unauthenticated", "Please sign in again.");
+  if (error || !data.user || !data.session) {
+    // Auth down or busy: the app keeps its sign-in and tries again. Only a refused token signs out.
+    const code = error ? authFailureCode(error) : "unauthenticated";
+    throw code === "unauthenticated" || code === "token_expired" ? new ApiFail("unauthenticated", "Please sign in again.") : new ApiFail(code);
+  }
   const session = data.session as SessionLike;
   const loaded = await loadProfileRow(data.user.id);
   try {
@@ -72,8 +76,9 @@ export async function appRefresh(input: { refreshToken: string; deviceId: string
     // Read fresh (not from the short cache): a refresh is the moment to notice a replaced phone.
     await assertAccountAndDevice(loaded.profile, input.deviceId, input.platform, { fresh: true });
   } catch (e) {
-    // A paused account keeps its session (it lifts by itself); anything else ends it.
-    if (!(e instanceof ApiFail && e.code === "account_blocked")) await revoke(session.access_token);
+    // A paused account keeps its session (it lifts by itself), and so does a database blip
+    // (the app asks again in a moment and gets this same session back); anything else ends it.
+    if (!(e instanceof ApiFail && (e.code === "account_blocked" || e.code === "server_error"))) await revoke(session.access_token);
     throw e;
   }
   return { tokens: tokensOf(session) };
