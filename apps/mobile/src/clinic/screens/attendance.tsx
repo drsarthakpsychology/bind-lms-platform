@@ -17,7 +17,7 @@ export function AttendanceScreen() {
   const today = todayIST();
   return (
     <AreaProvider area="home">
-      <Screen testID="clinic-attendance" onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
+      <Screen area="home" testID="clinic-attendance" onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
         <ClinicLoaded q={q} what="your attendance" skeleton={<RowsSkeleton rows={5} />}>
           {(d) => (
             <View style={{ gap: layout.section }}>

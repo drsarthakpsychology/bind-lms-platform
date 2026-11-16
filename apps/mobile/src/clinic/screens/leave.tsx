@@ -226,7 +226,7 @@ export function LeaveScreen() {
   };
   return (
     <AreaProvider area="home">
-      <Screen testID="clinic-leave" onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
+      <Screen area="home" testID="clinic-leave" onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
         <ClinicLoaded q={q} what="your leave" skeleton={<RowsSkeleton rows={4} />}>
           {(p) => (
             <View style={{ gap: layout.section }}>

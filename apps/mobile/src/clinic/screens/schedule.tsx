@@ -134,7 +134,7 @@ export function ScheduleScreen() {
   };
   return (
     <AreaProvider area="home">
-      <Screen testID="clinic-schedule" onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
+      <Screen area="home" testID="clinic-schedule" onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
         <View style={{ flexDirection: "row", alignItems: "center", gap: space[2] }}>
           <IconButton label="Last week" onPress={() => shiftWeek(-1)} testID="week-prev">
             <ChevronLeft size={22} color={c.ink} />

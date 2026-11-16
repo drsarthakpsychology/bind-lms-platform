@@ -164,7 +164,7 @@ export function OpdScreen() {
   };
   return (
     <AreaProvider area="home">
-      <Screen testID="clinic-opd" onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
+      <Screen area="home" testID="clinic-opd" onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
         <ClinicLoaded q={q} what="your OPD cases" skeleton={<RowsSkeleton rows={4} />}>
           {(p: OpdPage) => {
             const needed = visitsNeeded(p.total, p.done, p.casesPerVisit);

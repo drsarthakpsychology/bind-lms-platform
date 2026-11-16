@@ -114,7 +114,7 @@ export function ScanScreen() {
   const view = phase.k === "ok" ? "ok" : phase.k === "err" ? "err" : "scan";
   return (
     <AreaProvider area="home">
-      <Screen
+      <Screen area="home"
         testID="clinic-scan"
         footer={
           view === "ok" ? (
