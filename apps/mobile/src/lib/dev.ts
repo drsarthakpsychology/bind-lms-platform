@@ -12,6 +12,7 @@ import { settingsStore } from "./settings";
  *   ?lock=1                     (then shows the PIN lock)
  *   ?pin=0                      (stops at "Choose a PIN")
  *   ?notice=device_replaced     (signs out as if opened on another phone)
+ *   ?stress=1                   (long names and titles, large numbers)
  * Does nothing on phones or against the real server.
  */
 function params(): URLSearchParams | null {
@@ -24,6 +25,7 @@ export function applyMockFromUrl(): void {
   if (!q) return;
   const s = q.get("mock");
   if (s) mock.setScenario(s as Scenario);
+  if (q.get("stress") === "1") mock.setStress(true);
   const theme = q.get("theme");
   if (theme === "dark" || theme === "light") settingsStore.set({ theme });
 }
