@@ -83,6 +83,8 @@ fs.mkdirSync(out, { recursive: true });
 function scan({ touch }) {
   const vw = document.documentElement.clientWidth;
   const found = [];
+  // Mid-redirect there is no body yet: nothing to read.
+  if (!document.body) return { found, sw: 0, vw };
   const okFor = (el, kind) => {
     const h = el.closest("[data-layout-ok]");
     if (!h) return false;
@@ -348,6 +350,7 @@ function scan({ touch }) {
  * the bottom bars.
  */
 function barScan({ atEnd }) {
+  if (!document.body) return [];
   const vw = document.documentElement.clientWidth;
   const vh = innerHeight;
   const out = [];
