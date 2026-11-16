@@ -10,6 +10,7 @@ import { Button, Chips, Field, Loaded, Row, RowList, RowsSkeleton, Screen, Secti
 import { toast } from "@/ds/toast";
 import { config } from "@/lib/config";
 import { haptic } from "@/lib/haptics";
+import { TextSizeRow } from "@/lib/reading";
 import { settingsStore, updateSettings } from "@/lib/settings";
 import { disablePush, enablePush, setStudyReminder } from "@/push";
 import { space } from "@/theme";
@@ -133,6 +134,7 @@ export function SettingsScreen() {
                 <Chips label="Appearance" options={THEMES} value={theme} onChange={(t) => updateSettings({ theme: t })} />
               </View>
               <RowList>
+                <TextSizeRow />
                 <SwitchRow testID="pref-haptics" title="Vibration on taps" value={haptics} onChange={(v) => updateSettings({ haptics: v })} />
                 <SwitchRow testID="pref-reactions" title="Funny reactions" meta="A meme and a cheeky line after some answers. This phone only." value={reactions} onChange={(v) => updateSettings({ reactions: v })} />
               </RowList>
