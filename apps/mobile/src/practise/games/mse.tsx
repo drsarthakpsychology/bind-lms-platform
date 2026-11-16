@@ -1,10 +1,10 @@
 import * as React from "react";
 import { Pressable, View } from "react-native";
-import Animated, { FadeIn, useReducedMotion } from "react-native-reanimated";
 
 import { Button, T } from "@/ds";
 import { haptic } from "@/lib/haptics";
-import { fonts, layout, motion, space, useTheme } from "@/theme";
+import { Swap } from "@/motion";
+import { fonts, layout, space, useTheme } from "@/theme";
 import { play, useMove } from "../api";
 import { MSE_DOMAINS, termLabel } from "../data";
 import { EndPanel, EndThumb, GameFrame, HudLine, MoveError, StartScreen, StepStrip, Verdict } from "../frame";
@@ -35,7 +35,6 @@ export function segments(text: string, quote: string | undefined): { text: strin
 /** MSE Lab: tag every finding in an interview. Each tag is checked on the server. */
 export function MseGame() {
   const c = useTheme();
-  const reduce = useReducedMotion();
   const mv = useMove();
   const react = useReactions();
   const [level, setLevel] = React.useState("1");
@@ -90,7 +89,7 @@ export function MseGame() {
     setScore((s) => s + Math.round(r.reveal.score * 10));
     setResults((x) => [...x, r.reveal.score]);
     setMarks((m) => [...m, r.reveal.score >= 1 ? "ok" : "miss"]);
-    react.answer(r.reveal.score >= 1);
+    react.answer(r.reveal.score >= 1, { partial: r.reveal.score > 0 && r.reveal.score < 1 });
   };
   const next = () => {
     const p = pending;
@@ -127,7 +126,7 @@ export function MseGame() {
   );
   return (
     <GameFrame testID="game-mse" title="MSE Lab" howTo={HOW} score={String(score)} hud={hud} confirmLeave thumb={reveal ? <Button label={f + 1 < ex.quotes.length ? "Next finding" : pending?.next ? "Next interview" : "See my score"} onPress={next} testID="mse-next" /> : undefined}>
-      <Animated.View key={`${exN}`} entering={reduce ? undefined : FadeIn.duration(motion.state)} style={{ gap: space[4] }}>
+      <Swap k={`${exN}`} style={{ gap: space[4] }}>
         <View style={{ gap: 2 }}>
           <T v="bodyStrong">{ex.who}</T>
           <T v="small" tone="muted">
@@ -152,7 +151,7 @@ export function MseGame() {
             <T v="reading">{mark(ex.note)}</T>
           </View>
         </View>
-      </Animated.View>
+      </Swap>
       <View style={{ gap: space[3] }}>
         <T v="h3">
           {reveal ? "Finding" : domain ? "Which word?" : "Which part of the mental state?"}

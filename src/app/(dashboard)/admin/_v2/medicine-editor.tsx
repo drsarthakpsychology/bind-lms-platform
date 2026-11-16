@@ -17,7 +17,7 @@ import { AdminPage, Block, Empty, Field, Notice, Status, btn, control } from "./
  * each block; on wide screens the publish and source panel sits on the right
  * and stays in view, on phones it follows the page.
  */
-export function MedicineEditorV2(props: { drug: string; drugId: string; initialDocument: MedicationDocument; initialStatus: string }) {
+export function MedicineEditorV2({ canWrite = true, ...props }: { drug: string; drugId: string; initialDocument: MedicationDocument; initialStatus: string; /** False for a View Admin: the page reads, nothing to change or publish. */ canWrite?: boolean }) {
   const ed = useMedicineEditor(props);
   const sourceRef = React.useRef<HTMLElement>(null);
 
@@ -57,7 +57,7 @@ export function MedicineEditorV2(props: { drug: string; drugId: string; initialD
             <DocumentView
               document={ed.document}
               register={ed.register}
-              editable
+              editable={canWrite}
               look="v2"
               onEdit={ed.editBlock}
               onAddBlock={ed.addBlock}
@@ -67,10 +67,18 @@ export function MedicineEditorV2(props: { drug: string; drugId: string; initialD
           ) : (
             <Empty>No sections yet.</Empty>
           )}
-          <button type="button" onClick={ed.addSection} className={cn(btn.quiet, "w-full sm:w-fit")}>
-            <Plus aria-hidden /> Add section
-          </button>
+          {canWrite ? (
+            <button type="button" onClick={ed.addSection} className={cn(btn.quiet, "w-full sm:w-fit")}>
+              <Plus aria-hidden /> Add section
+            </button>
+          ) : null}
         </div>
+
+        {!canWrite ? (
+          <aside aria-label="Publish" className="min-w-0">
+            <Notice>Only the Super Admin can change or publish medicine pages.</Notice>
+          </aside>
+        ) : (
 
         <aside aria-label="Publish and sources" className="flex min-w-0 flex-col gap-[var(--ds-6)] border-t border-[var(--ds-hairline)] pt-[var(--ds-5)] lg:sticky lg:top-[calc(var(--top-h,0px)+1.5rem)] lg:self-start lg:border-t-0 lg:pt-0">
           <Block title="Publish">
@@ -104,6 +112,7 @@ export function MedicineEditorV2(props: { drug: string; drugId: string; initialD
             </Block>
           </section>
         </aside>
+        )}
       </div>
     </AdminPage>
   );

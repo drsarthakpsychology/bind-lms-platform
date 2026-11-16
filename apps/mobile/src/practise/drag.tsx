@@ -5,6 +5,7 @@ import Animated, { useAnimatedStyle, useReducedMotion, useSharedValue, withSprin
 import { scheduleOnRN } from "react-native-worklets";
 
 import { haptic } from "@/lib/haptics";
+import { springs } from "@/motion";
 
 /**
  * Drag and drop, native: Gesture Handler moves the card on the UI thread
@@ -79,8 +80,8 @@ export function Draggable({ children, onDrop, onLift, enabled = true, style, tes
     onDeactivate: (e) => {
       "worklet";
       scheduleOnRN(settle, e.absoluteX, e.absoluteY);
-      x.value = withSpring(0, { damping: 18, stiffness: 220 });
-      y.value = withSpring(0, { damping: 18, stiffness: 220 });
+      x.value = withSpring(0, springs.dropBack);
+      y.value = withSpring(0, springs.dropBack);
       lift.value = withTiming(0, { duration: 160 });
     },
   });

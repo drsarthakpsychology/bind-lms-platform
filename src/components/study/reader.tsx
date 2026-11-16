@@ -404,7 +404,7 @@ export function SectionReader({
             low and wide so a thumb reaches them; Next is the wide one on the
             right, Back sits clear of it. */}
         {!wide && !section.isTest && !section.levelCheck && !atEnd ? (
-          <nav className="fixed inset-x-0 bottom-0 z-40 border-t-2 border-foreground bg-card px-4 pt-2 md:hidden" style={{ paddingBottom: "max(0.75rem, env(safe-area-inset-bottom))" }} aria-label="Parts of this section">
+          <nav data-chrome className="fixed inset-x-0 bottom-0 z-40 border-t-2 border-foreground bg-card px-4 pt-2 md:hidden" style={{ paddingBottom: "max(0.75rem, env(safe-area-inset-bottom))" }} aria-label="Parts of this section">
             <div className="mx-auto flex max-w-xl items-stretch gap-3">
               <button
                 type="button"

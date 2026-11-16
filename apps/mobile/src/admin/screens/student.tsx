@@ -1,15 +1,15 @@
 import { router, useLocalSearchParams } from "expo-router";
 import { Bell, CheckCircle2, Circle, Mail, MessageSquare, Reply } from "lucide-react-native";
 import * as React from "react";
-import { Linking, ScrollView, Share, View } from "react-native";
+import { Linking, Share, View } from "react-native";
 
-import { Button, Row, RowList, RowsSkeleton, Screen, Sheet, TabRow, T } from "@/ds";
-import { layout, space, useTheme } from "@/theme";
+import { Button, Row, RowList, RowsSkeleton, Screen, Sheet, T } from "@/ds";
+import { space, useTheme } from "@/theme";
 import { adminCalls, useAdminAction, useStudentCredentials, useStudentDoubts, useStudentMessages, useStudentProfile } from "../api";
 import type { AdminStudent, AdminStudentRow, StudentDetail } from "../contract";
 import type { LoginLinkResult } from "../extra";
 import { ACCOUNT_NEXT, accountLabel, accountTone, ago, day, FLAG_LABEL, minutes, nextStep, pct, whatsapp } from "../format";
-import { Block, ConfirmSheet, DayBars, Facts, Figures, Loaded, Meter, Notice, Quiet, SmallButton, Status, Tag, Tags } from "../kit";
+import { Block, ConfirmSheet, DayBars, Facts, Figures, Loaded, Meter, Notice, Quiet, ScrollTabs, SmallButton, Status, TabSwap, Tag, Tags } from "../kit";
 import { openCompose } from "../nav";
 import { useAdminRole } from "../role";
 import { CertLine } from "./certificates";
@@ -22,17 +22,6 @@ const TABS = [
   { id: "messages" as const, name: "Messages" },
 ];
 type Tab = (typeof TABS)[number]["id"];
-
-/** Underlined tabs that slide sideways when they do not fit a narrow phone. */
-export function ScrollTabs<V extends string>({ tabs, value, onChange }: { tabs: { id: V; name: string }[]; value: V; onChange: (v: V) => void }) {
-  return (
-    <ScrollView horizontal showsHorizontalScrollIndicator={false} style={{ marginHorizontal: -layout.gutter, flexGrow: 0 }} contentContainerStyle={{ paddingHorizontal: layout.gutter, minWidth: "100%" }}>
-      <View style={{ flex: 1 }}>
-        <TabRow tabs={tabs} value={value} onChange={onChange} />
-      </View>
-    </ScrollView>
-  );
-}
 
 /** The login link sheet: the link was emailed; it can also go by WhatsApp. */
 export function LinkSheet({ link, name, mobile, onClose, title = "Login link sent" }: { link: LoginLinkResult | null; name: string; mobile: string | null; onClose: () => void; title?: string }) {
@@ -66,7 +55,7 @@ function Overview({ r, d }: { r: AdminStudentRow; d: StudentDetail | null }) {
             { value: minutes(r.minutes7), label: "this week" },
             { value: minutes(d?.totals.min30 ?? 0), label: "in 30 days" },
             { value: String(r.activeDays30), label: "days active in 30" },
-            { value: String(r.xp), label: "XP in Notes and Games" },
+            { value: r.xp.toLocaleString("en-IN"), label: "XP in Notes and Games" },
           ]}
         />
       </Block>
@@ -178,7 +167,7 @@ function ActivityTab({ r, d }: { r: AdminStudentRow; d: StudentDetail | null }) 
       {d.learn ? (
         <Block title="Notes and Games">
           <T v="small">
-            Level {d.learn.level.title} · {d.learn.xp} XP{d.learn.accuracy !== null ? ` · ${d.learn.accuracy}% right` : ""} · {d.learn.badges} badges
+            Level {d.learn.level.title} · {d.learn.xp.toLocaleString("en-IN")} XP{d.learn.accuracy !== null ? ` · ${d.learn.accuracy}% right` : ""} · {d.learn.badges} badges
           </T>
           {d.learn.confusions.length ? (
             <T v="small" tone="muted">
@@ -282,7 +271,9 @@ export function AdminStudentView({ r, d, tab, onTab, phone }: { r: AdminStudentR
         </T>
       </Notice>
       <ScrollTabs tabs={TABS} value={tab} onChange={onTab} />
-      {tab === "overview" ? <Overview r={r} d={d} /> : tab === "access" ? <Access r={r} phone={phone} /> : tab === "activity" ? <ActivityTab r={r} d={d} /> : tab === "credentials" ? <Credentials r={r} /> : <Messages r={r} />}
+      <TabSwap tabs={TABS} value={tab} gap={space[5]}>
+        {tab === "overview" ? <Overview r={r} d={d} /> : tab === "access" ? <Access r={r} phone={phone} /> : tab === "activity" ? <ActivityTab r={r} d={d} /> : tab === "credentials" ? <Credentials r={r} /> : <Messages r={r} />}
+      </TabSwap>
       <LinkSheet link={link} name={r.name} mobile={r.mobileNumber} onClose={() => setLink(null)} />
     </>
   );

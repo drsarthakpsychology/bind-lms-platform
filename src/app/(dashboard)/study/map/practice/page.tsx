@@ -7,6 +7,8 @@ import { loadPracticeSession } from "@/lib/learn/model/server";
 import { bankItem, skillLabel, topicById } from "@/lib/learn/model/topics";
 import { PracticeRunner, type PracticeQ } from "./runner";
 import { backLinkClass } from "@/components/design-system/back-link";
+import { GameFrame } from "@/components/play/game-frame";
+import { uiV2Role } from "@/lib/ui/v2-server";
 
 export const metadata: Metadata = { title: "Practice" };
 
@@ -34,6 +36,14 @@ export default async function PracticePage({ searchParams }: { searchParams: Pro
       : [{ ...base, kind: "tf" as const, text: it.statement, answer: it.answer }];
   });
   const title = topic ? `Fix it: ${topicById(topic)!.title}` : "Mixed practice";
+
+  if (await uiV2Role(session.status === "ok" ? session.profile.role : null)) {
+    return (
+      <GameFrame title={title} width="reading" back={{ href: "/study/map", label: "Your map" }}>
+        <PracticeRunner key={round} questions={questions} title={title} saving={isLearner} />
+      </GameFrame>
+    );
+  }
 
   return (
     <div className="mx-auto max-w-2xl space-y-6">

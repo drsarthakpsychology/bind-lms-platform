@@ -3,6 +3,7 @@
  * (docs/design/DESIGN_SYSTEM_2026_11.md and src/app/globals.css).
  * Everything visual in the app reads from here.
  */
+import { dur } from "@/motion/tokens";
 
 /** The only spacing steps: 4, 8, 12, 16, 24, 32, 48, 64. */
 export const space = { 1: 4, 2: 8, 3: 12, 4: 16, 5: 24, 6: 32, 7: 48, 8: 64 } as const;
@@ -23,14 +24,19 @@ export const layout = {
   readingWidth: 620,
 } as const;
 
-/** Motion timings in ms. */
+/**
+ * Motion timings in ms, kept for older screens. They now come from the one
+ * source in src/motion/tokens.ts (`dur`); new code imports `dur` or `presets`
+ * from `@/motion` instead (docs/MOTION.md, motion budget rule 1).
+ * @deprecated use `dur` from `@/motion`.
+ */
 export const motion = {
-  press: 120,
-  state: 180,
-  sheetIn: 300,
-  sheetOut: 200,
-  page: 200,
-  fill: 600,
+  press: dur.press,
+  state: dur.state,
+  sheetIn: dur.sheetIn,
+  sheetOut: dur.sheetOut,
+  page: dur.state,
+  fill: dur.fill,
   /** cubic-bezier(0.2, 0, 0, 1) and cubic-bezier(0.16, 1, 0.3, 1) */
   ease: [0.2, 0, 0, 1] as const,
   easeOut: [0.16, 1, 0.3, 1] as const,
@@ -70,6 +76,26 @@ export const type = {
 } as const;
 export type TypeName = keyof typeof type;
 
+/**
+ * Colours that never change with the theme: the brand art (always blue, lime
+ * and ink), and video, which is always shown on black. Use the palette for
+ * everything else.
+ */
+export const fixed = {
+  blue: "#1d44d8",
+  lime: "#cdf24b",
+  ink: "#111111",
+  white: "#ffffff",
+  black: "#000000",
+  /** Video chrome: text and icons on video, the scrubber track, the control wash. */
+  onVideo: "#ffffff",
+  onVideoMuted: "rgba(255,255,255,0.8)",
+  videoTrack: "rgba(255,255,255,0.3)",
+  videoWash: "rgba(0,0,0,0.28)",
+  videoButton: "rgba(17,17,17,0.45)",
+  videoButtonPressed: "rgba(255,255,255,0.22)",
+} as const;
+
 export type Palette = {
   dark: boolean;
   /** App canvas. */
@@ -103,6 +129,33 @@ export type Palette = {
   onBand: string;
   scrim: string;
   skeleton: string;
+  /** A surface above a card: sheets, menus, a card inside a card. In dark, height is shown by a lighter surface, not a shadow. */
+  raised: string;
+  /** Third text tier: placeholders, footnotes, disabled labels (4.5:1 on bg and card). */
+  faint: string;
+  /** Blue that reads as a foreground on this theme (dots, rings, selected marks, icons): 6:1 or more on bg and card. */
+  accent: string;
+  /** Text on an accent fill. */
+  onAccent: string;
+  /** Outline of things you type in or tick (fields, radio rings, checkboxes, switch tracks): 3:1 on bg and card. */
+  fieldLine: string;
+  /** Selected row wash and the tab bar pill. */
+  selected: string;
+  pill: string;
+  /** Switch track when on, and its thumb. */
+  switchOn: string;
+  switchThumb: string;
+  /** The skeleton sweep highlight. */
+  shimmer: string;
+  /** Status colours for dots and small marks (3:1 or more), and the warning band. */
+  ok: string;
+  warn: string;
+  warnBg: string;
+  warnFg: string;
+  /** A printed page (PDF, certificate preview): white in light, dimmed in dark so it does not glare. */
+  paper: string;
+  onPaper: string;
+  paperLine: string;
   /** Hand-drawn diagram palette (the web's --sk-* values). */
   sk: { ink: string; soft: string; paper: string; blue: string; lime: string; red: string; wash: string };
 };
@@ -132,6 +185,23 @@ export const light: Palette = {
   onBand: "#ffffff",
   scrim: "rgba(17,17,17,0.45)",
   skeleton: "rgba(17,17,17,0.08)",
+  raised: "#ffffff",
+  faint: "#6b6b6b",
+  accent: "#1d44d8",
+  onAccent: "#ffffff",
+  fieldLine: "rgba(17,17,17,0.5)",
+  selected: "rgba(29,68,216,0.07)",
+  pill: "rgba(29,68,216,0.10)",
+  switchOn: "#1d44d8",
+  switchThumb: "#ffffff",
+  shimmer: "rgba(255,255,255,0.75)",
+  ok: "#1f7a35",
+  warn: "#b25e00",
+  warnBg: "#fdf1dc",
+  warnFg: "#7a4a00",
+  paper: "#ffffff",
+  onPaper: "#111111",
+  paperLine: "rgba(17,17,17,0.12)",
   sk: { ink: "#1a1a1a", soft: "#8a8a8a", paper: "#ffffff", blue: "#1d44d8", lime: "#cdf24b", red: "#c4271b", wash: "#e8edff" },
 };
 
@@ -160,5 +230,22 @@ export const dark: Palette = {
   onBand: "#111111",
   scrim: "rgba(0,0,0,0.6)",
   skeleton: "rgba(255,255,255,0.1)",
+  raised: "#222222",
+  faint: "#8f8f8f",
+  accent: "#8fa6ff",
+  onAccent: "#0d0d0d",
+  fieldLine: "rgba(255,255,255,0.42)",
+  selected: "rgba(205,242,75,0.08)",
+  pill: "rgba(205,242,75,0.16)",
+  switchOn: "#cdf24b",
+  switchThumb: "#111111",
+  shimmer: "rgba(255,255,255,0.07)",
+  ok: "#7bd88f",
+  warn: "#f0a43a",
+  warnBg: "#3a2a0c",
+  warnFg: "#f5c46b",
+  paper: "#e6e6e6",
+  onPaper: "#111111",
+  paperLine: "rgba(17,17,17,0.14)",
   sk: { ink: "#f2f2f2", soft: "#8f8f8f", paper: "#161616", blue: "#8fa6ff", lime: "#cdf24b", red: "#ff7b6e", wash: "#1d2547" },
 };

@@ -8,14 +8,15 @@ import { ApiFailure } from "@/api/errors";
 import { Button, EmptyState, LoadError, Row, RowList, RowsSkeleton, Sheet, T } from "@/ds";
 import { haptic } from "@/lib/haptics";
 import { openTarget } from "@/nav/targets";
-import { fonts, layout, motion, space, useTheme } from "@/theme";
+import { fonts, layout, space, useTheme } from "@/theme";
 import { MedicineDiagrams } from "./med-diagrams";
 import { useMedicineList, useMedicinePage } from "./list";
+import { recentMedicines } from "@/lib/recent";
 import { ClassMark } from "./marks";
 import { searchMeds } from "./meds";
 import type { MedicinePage, MedSection } from "@/practise/contract";
-import Animated, { FadeIn, useReducedMotion } from "react-native-reanimated";
-import { Enter } from "@/motion";
+import { useReducedMotion } from "react-native-reanimated";
+import { Enter, Swap } from "@/motion";
 
 type View_ = "student" | "clinician";
 
@@ -59,9 +60,13 @@ function Fact({ name, children }: { name: string; children: React.ReactNode }) {
 export function MedicineScreen() {
   const { id = "", section } = useLocalSearchParams<{ id: string; section?: string }>();
   const q = useMedicinePage(String(id));
+  const openedId = q.data?.id;
+  React.useEffect(() => {
+    if (openedId) recentMedicines.add(openedId);
+  }, [openedId]);
   if (q.isError) {
     const soon = q.error instanceof ApiFailure && q.error.code === "not_found";
-    return <View style={{ flex: 1, padding: layout.gutter }}>{soon ? <EmptyState mood="sleepy" title="Not in the library yet" body="This medicine page arrives in the app soon." /> : <LoadError error={q.error} what="this medicine" onRetry={() => void q.refetch()} />}</View>;
+    return <View style={{ flex: 1, padding: layout.gutter }}>{soon ? <EmptyState mood="soon" title="Not in the library yet" body="This medicine page arrives in the app soon." /> : <LoadError error={q.error} what="this medicine" onRetry={() => void q.refetch()} />}</View>;
   }
   if (!q.data) {
     return (
@@ -117,7 +122,8 @@ export function MedicinePageView({ page, jump }: { page: MedicinePage; jump?: st
       case "doses":
         return (
           <>
-            <ScrollView horizontal showsHorizontalScrollIndicator={false} style={{ marginHorizontal: -layout.gutter }} contentContainerStyle={{ paddingHorizontal: layout.gutter, gap: space[2] }} accessibilityRole="tablist" accessibilityLabel="Doses">
+            {/* The chips share the width and their words wrap, so a long label is never cut at the edge. */}
+            <View style={{ flexDirection: "row", flexWrap: "wrap", gap: space[2] }} accessibilityRole="tablist" accessibilityLabel="Doses">
               {x.doses.map((o, k) => (
                 <Pressable
                   key={`${o.amount}-${k}`}
@@ -129,7 +135,7 @@ export function MedicinePageView({ page, jump }: { page: MedicinePage; jump?: st
                     setDose(k);
                   }}
                   testID={`med-dose-${k}`}
-                  style={({ pressed }) => ({ minHeight: 56, paddingHorizontal: space[4], paddingVertical: space[2], justifyContent: "center", borderRadius: layout.radius, borderWidth: 1.5, borderColor: k === dose ? c.ink : c.cardLine, backgroundColor: k === dose ? c.primary : "transparent", transform: [{ scale: pressed ? 0.96 : 1 }] })}
+                  style={({ pressed }) => ({ flexGrow: 1, flexBasis: "30%", minWidth: 96, minHeight: 56, paddingHorizontal: space[3], paddingVertical: space[2], justifyContent: "center", borderRadius: layout.radius, borderWidth: 1.5, borderColor: k === dose ? c.ink : c.cardLine, backgroundColor: k === dose ? c.primary : "transparent", transform: [{ scale: pressed ? 0.96 : 1 }] })}
                 >
                   <T v="caption" style={{ color: k === dose ? c.onPrimary : c.muted }}>
                     {o.label}
@@ -139,9 +145,9 @@ export function MedicinePageView({ page, jump }: { page: MedicinePage; jump?: st
                   </T>
                 </Pressable>
               ))}
-            </ScrollView>
+            </View>
             {d ? (
-              <Animated.View key={`dose-${dose}-${view}`} entering={reduce ? undefined : FadeIn.duration(motion.state)} style={{ gap: space[2] }}>
+              <Swap k={`dose-${dose}-${view}`} style={{ gap: space[2] }}>
                 <T v="small" tone="muted">
                   {d.use}
                 </T>
@@ -151,7 +157,7 @@ export function MedicinePageView({ page, jump }: { page: MedicinePage; jump?: st
                     <Bullets items={d.watch} />
                   </Fact>
                 ) : null}
-              </Animated.View>
+              </Swap>
             ) : null}
             {x.take.length ? (
               <Fact name="How to take it">
@@ -264,9 +270,9 @@ export function MedicinePageView({ page, jump }: { page: MedicinePage; jump?: st
               </Pressable>
             </View>
           </View>
-          <Animated.View key={view} entering={reduce ? undefined : FadeIn.duration(motion.state)}>
+          <Swap k={view}>
             <T v="reading">{view === "student" ? page.summary.student : page.summary.clinician}</T>
-          </Animated.View>
+          </Swap>
         </Enter>
 
         {rest.map(part)}
@@ -328,7 +334,7 @@ function ComparePicker({ open, onClose, from }: { open: boolean; onClose: () => 
     <Sheet open={open} onClose={onClose} title={`Compare ${from.name} with`} testID="compare-picker">
       <RowList>
         {[...firsts, ...others.slice(0, 6), ...rows.filter((r) => r.id !== from.id && !firsts.includes(r) && !others.includes(r)).slice(0, 4)].map((r) => (
-          <Row key={r.id} title={r.name} meta={r.cls} icon={<ClassMark group={r.group} />} onPress={() => pick(r.id)} testID={`compare-with-${r.id}`} />
+          <Row key={r.id} title={r.name} meta={r.cls} icon={<ClassMark group={r.group} spine />} onPress={() => pick(r.id)} testID={`compare-with-${r.id}`} />
         ))}
       </RowList>
       {!rows.length ? <Button kind="quiet" label="Close" onPress={onClose} /> : null}

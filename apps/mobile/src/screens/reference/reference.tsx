@@ -92,7 +92,7 @@ export function ReferenceScreen() {
       <Loaded q={query} soon what="the Quick reference" skeleton={<RowsSkeleton rows={8} />}>
         {(d) => {
           const rows = searchRefs(d.items, q, kind);
-          if (!rows.length) return <EmptyState mood="puzzled" title="Nothing by that name" body="Try a shorter word, or the everyday word for it." testID="reference-empty" />;
+          if (!rows.length) return <EmptyState mood="missing" title="Nothing by that name" body="Try a shorter word, or the everyday word for it." testID="reference-empty" />;
           // Searching: one plain list, best match first. Browsing: grouped by letter.
           if (q.trim())
             return (
@@ -166,11 +166,11 @@ function Pills({ items, onPress }: { items: { key: string; label: string }[]; on
     <View style={{ flexDirection: "row", flexWrap: "wrap", gap: space[2] }}>
       {items.map((x) =>
         onPress ? (
-          <Press key={x.key} onPress={() => onPress(x.key)} accessibilityRole="link" innerStyle={{ minHeight: layout.target, justifyContent: "center", paddingHorizontal: space[4], borderRadius: layout.radius, borderWidth: 1.5, borderColor: c.cardLine, backgroundColor: c.card }}>
+          <Press key={x.key} onPress={() => onPress(x.key)} accessibilityRole="link" style={{ maxWidth: "100%" }} innerStyle={{ minHeight: layout.target, justifyContent: "center", paddingHorizontal: space[4], paddingVertical: space[2], borderRadius: layout.radius, borderWidth: 1.5, borderColor: c.cardLine, backgroundColor: c.card }}>
             <T v="small">{x.label}</T>
           </Press>
         ) : (
-          <View key={x.key} style={{ paddingVertical: space[2], paddingHorizontal: space[3], borderRadius: layout.radius, backgroundColor: c.tint }}>
+          <View key={x.key} style={{ maxWidth: "100%", paddingVertical: space[2], paddingHorizontal: space[3], borderRadius: layout.radius, backgroundColor: c.tint }}>
             <T v="small">“{x.label}”</T>
           </View>
         ),
@@ -315,7 +315,7 @@ export function ReferenceEntryScreen() {
           e ? (
             <EntryBody e={e} labelOf={labelOf} onOpen={(p) => router.push(p)} />
           ) : (
-            <EmptyState mood="puzzled" title="Not in the Quick reference" body="Search for it by another name." action={{ label: "Search", onPress: () => router.replace(`/reference?q=${encodeURIComponent(String(slug).replace(/-/g, " "))}`) }} />
+            <EmptyState mood="missing" title="Not in the Quick reference" body="Search for it by another name." action={{ label: "Search", onPress: () => router.replace(`/reference?q=${encodeURIComponent(String(slug).replace(/-/g, " "))}`) }} />
           )
         }
       </Loaded>

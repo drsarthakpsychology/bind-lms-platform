@@ -2,12 +2,12 @@ import { router, useLocalSearchParams } from "expo-router";
 import { ArrowLeft, ArrowRight, Check, Clock, Flag, Grid3x3, History, Send, TriangleAlert } from "lucide-react-native";
 import * as React from "react";
 import { AppState, Pressable, View } from "react-native";
-import Animated, { FadeIn, FadeInLeft, FadeInRight, useReducedMotion } from "react-native-reanimated";
+import Animated, { FadeIn, useReducedMotion } from "react-native-reanimated";
 
 import { day } from "@/admin/format";
 import { Button, Chips, EmptyState, LoadError, Row, RowList, RowsSkeleton, Screen, Section, Sheet, T } from "@/ds";
 import { haptic } from "@/lib/haptics";
-import { Burst, ProgressFill } from "@/motion";
+import { Burst, ProgressFill, Swap } from "@/motion";
 import { pathFromLink } from "@/nav/targets";
 import { Rich } from "@/study/rich";
 import { fonts, layout, motion, space, useTheme } from "@/theme";
@@ -46,7 +46,7 @@ function Facts({ spec }: { spec: MockSpec }) {
   // No question or section counts (owner rule: small counts make a paper look thin).
   const lines = [
     `${spec.minutes} minutes`,
-    `${marksText(spec.marksPerRight)} for a right answer (out of ${spec.questions * spec.marksPerRight})`,
+    `${marksText(spec.marksPerRight)} for a right answer`,
     spec.marksPerWrong ? `${marksText(-spec.marksPerWrong)} off for a wrong answer; a blank gets 0` : "No negative marking: never leave one blank",
   ];
   return (
@@ -87,7 +87,7 @@ export function MocksScreen() {
       ) : !q.data ? (
         <RowsSkeleton rows={5} />
       ) : !full ? (
-        <EmptyState mood="sleepy" title="No mock tests yet" body="New papers are on their way." />
+        <EmptyState mood="soon" title="No mock tests yet" body="New papers are on their way." />
       ) : (
         <Stagger gap={space[6]}>
           <View style={{ gap: space[4], borderWidth: 2, borderColor: c.ink, borderRadius: layout.radius, padding: space[4], backgroundColor: c.card }}>
@@ -101,7 +101,7 @@ export function MocksScreen() {
           {parts.length ? (
             <Section title="Shorter sectional tests">
               <T v="small" tone="muted">
-                One subject group at a time.
+                {`${parts[0]!.minutes} minutes each, one subject group.`}
               </T>
               <RowList>
                 {parts.map((s) => (
@@ -162,7 +162,7 @@ function Cell({ n, st, current, onPress }: { n: number; st: CellState; current: 
         justifyContent: "center",
         borderWidth: current ? 2.5 : 1.5,
         borderStyle: st === "not-visited" ? "dashed" : "solid",
-        borderColor: current ? c.brand : st === "not-visited" ? c.cardLine : c.ink,
+        borderColor: current ? c.accent : st === "not-visited" ? c.cardLine : c.ink,
         backgroundColor: filled ? c.ink : pressed ? c.tint : "transparent",
         transform: [{ scale: pressed ? 0.94 : 1 }],
       })}
@@ -308,12 +308,12 @@ export function MockExamScreen() {
     };
   }, [live, paper, skew]);
 
-  if (list.isError) return <FrameError title="Mock test" error={list.error} onRetry={() => void list.refetch()} />;
+  if (list.isError) return <FrameError title="Mock test" web="/prep/mock" error={list.error} onRetry={() => void list.refetch()} />;
   if (!list.data) return <FrameLoading title="Mock test" />;
   if (!spec) {
     return (
       <GameFrame title="Mock test">
-        <EmptyState mood="puzzled" title="That mock doesn't exist" body="Go back and pick one from the list." />
+        <EmptyState mood="missing" title="That mock doesn't exist" body="Go back and pick one from the list." />
       </GameFrame>
     );
   }
@@ -411,7 +411,7 @@ export function MockExamScreen() {
       }
     >
       {q && cur ? (
-        <Animated.View key={q.id} entering={reduce ? undefined : (dir > 0 ? FadeInRight : FadeInLeft).duration(motion.state)} style={{ gap: space[4] }}>
+        <Swap k={q.id} dir={dir > 0 ? 1 : -1} style={{ gap: space[4] }}>
           <T v="caption" tone="muted" num>
             {`${paper.sections.length > 1 ? `${cur.title.toUpperCase()} · ` : ""}QUESTION ${at + 1} OF ${flat.length}`}
           </T>
@@ -424,7 +424,7 @@ export function MockExamScreen() {
           {answers[q.id] != null ? (
             <Button kind="text" label="Clear my answer" onPress={() => { haptic.select(); setAnswers((a) => ({ ...a, [q.id]: null })); }} testID="mock-clear" />
           ) : null}
-        </Animated.View>
+        </Swap>
       ) : null}
 
       <Sheet open={palette} onClose={() => setPalette(false)} title="All questions" testID="mock-palette-sheet">
@@ -675,7 +675,7 @@ export function MockResultScreen() {
       ) : d.result ? (
         <MockResultBody r={d.result as unknown as MockResult} />
       ) : (
-        <EmptyState mood="sleepy" title="This mock wasn't submitted" body="Start a fresh one from the mocks page." action={{ label: "Mock tests", onPress: () => router.replace("/prep/mock") }} />
+        <EmptyState mood="empty" title="This mock wasn't submitted" body="Start a fresh one from the mocks page." action={{ label: "Mock tests", onPress: () => router.replace("/prep/mock") }} />
       )}
     </Screen>
   );

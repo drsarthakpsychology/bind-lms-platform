@@ -8,7 +8,7 @@ import { askDoubt, markSolved, reclassifyMine, replyToDoubt, voteReply } from ".
 import { COMPLAINT_NOTICE, looksLikeComplaint } from "@/lib/doubts/classify";
 import type { DoubtListItem, DoubtThread } from "@/lib/doubts/data";
 import { cn } from "@/lib/utils";
-import { Chai } from "@/components/learn/chai";
+import { MemeArt } from "@/components/reactions/graphics";
 import { PageFrame, Section, Tint, BackLink, chipClass, chipRow, EmptyLine, fieldClass, labelClass, primaryButton, quietButton, StatusWord, textButton } from "@/components/ds";
 import { ThumbBar } from "@/components/mobile/thumb-bar";
 import { OnceHint } from "@/components/help/once-hint";
@@ -176,7 +176,7 @@ export function DoubtsV2({
         </nav>
 
         {shown.length === 0 ? (
-          <EmptyLine art={<Chai mood="think" size={56} still />} title={EMPTY[filter]} />
+          <EmptyLine art={<MemeArt sticker="wet-cat-stare" size={72} />} title={EMPTY[filter]} />
         ) : (
           <ul className="flex min-w-0 flex-col divide-y divide-[var(--ds-hairline)] border-y border-[var(--ds-hairline)]">
             {shown.map((d) => (

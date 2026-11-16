@@ -142,38 +142,43 @@ export function RecipientPicker({
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder={`Search ${data.students.length} students…`}
-          className="h-9 w-full rounded-md border-2 border-input bg-background pl-8 pr-3 text-sm text-foreground outline-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/60"
+          className="h-11 w-full rounded-md border-2 border-input bg-background pl-8 pr-3 text-sm text-foreground outline-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/60"
         />
       </div>
 
-      <label className="flex cursor-pointer items-center gap-1.5 text-small text-foreground">
+      <label className="flex min-h-11 w-fit cursor-pointer items-center gap-2 text-small text-foreground">
         <input
           type="checkbox"
           checked={allVisibleSelected}
           onChange={toggleVisible}
           disabled={filtered.length === 0}
           aria-label="Select all visible students"
+          data-layout-ok="tap"
           className="size-4 accent-primary"
         />
         Select all{query ? " visible" : ""} ({filtered.length})
       </label>
 
-      <ul className="max-h-56 space-y-1 overflow-y-auto rounded-md border-2 border-border bg-background p-2">
+      <ul className="max-h-72 overflow-y-auto rounded-md border-2 border-border bg-background p-2">
         {filtered.length === 0 ? (
           <li className="px-1 py-1 text-caption text-muted-foreground">No students match “{query}”.</li>
         ) : (
           filtered.map((s) => {
             const isOn = selected.has(s.email);
             return (
-              <li key={s.id} className="flex items-center gap-2 text-small text-foreground">
-                <input
-                  type="checkbox"
-                  checked={isOn}
-                  onChange={() => (isOn ? untoggle(s.email) : toggle(s.email))}
-                  aria-label={`Select ${s.email}`}
-                  className="size-4 shrink-0 accent-primary"
-                />
-                <span className="truncate">{s.email}</span>
+              <li key={s.id}>
+                {/* The whole row is the tap target (44px), not just the box. */}
+                <label className="flex min-h-11 min-w-0 cursor-pointer items-center gap-2 rounded px-1 text-small text-foreground hover:bg-muted">
+                  <input
+                    type="checkbox"
+                    checked={isOn}
+                    onChange={() => (isOn ? untoggle(s.email) : toggle(s.email))}
+                    aria-label={`Select ${s.email}`}
+                    data-layout-ok="tap"
+                    className="size-4 shrink-0 accent-primary"
+                  />
+                  <span className="min-w-0 [overflow-wrap:anywhere]">{s.email}</span>
+                </label>
               </li>
             );
           })

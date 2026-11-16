@@ -9,8 +9,8 @@ import { space, useTheme } from "@/theme";
 import { useAdminHome } from "../api";
 import type { AdminHome } from "../contract";
 import { todoHref } from "../safe";
-import { ago, attentionGroups, plural } from "../format";
-import { Block, Dot, Loaded, Meter, Notice, Quiet } from "../kit";
+import { attentionGroups, plural } from "../format";
+import { Block, Dot, Loaded, Meter, Notice } from "../kit";
 import { AdminTop, openCompose, openStudent } from "../nav";
 import { useAdminRole } from "../role";
 
@@ -19,7 +19,6 @@ function TodoRow({ count, label, detail, onPress, testID }: { count: number; lab
   return <Row testID={testID} title={label} meta={detail} icon={<T v="h3" num style={{ minWidth: 28, textAlign: "right" }}>{count}</T>} onPress={onPress} />;
 }
 
-/** Admin Home: what needs a look right now, who is on VIBHA, how each cohort is doing. */
 /** A Home to-do: the app's own screen when it has one, the website otherwise. */
 function openTodo(web: string) {
   const to = todoHref(web);
@@ -27,6 +26,7 @@ function openTodo(web: string) {
   else void Linking.openURL(`${config.site}${to.web}`);
 }
 
+/** Admin Home: what needs a look right now, how many are on VIBHA (the list is in Activity), how each cohort is doing. */
 export function AdminHomeView({ data }: { data: AdminHome }) {
   const c = useTheme();
   const { viewOnly } = useAdminRole();
@@ -42,7 +42,7 @@ export function AdminHomeView({ data }: { data: AdminHome }) {
   ];
   const total = todo.reduce((n, t) => n + t.count, 0);
   const link = (label: string, onPress: () => void, testID?: string) => (
-    <Pressable testID={testID} accessibilityRole="link" onPress={onPress} hitSlop={8}>
+    <Pressable testID={testID} accessibilityRole="link" onPress={onPress} style={{ minHeight: 44, justifyContent: "center" }}>
       <T v="small" tone="muted" num style={{ textDecorationLine: "underline", textDecorationColor: c.cardLine }}>
         {label}
       </T>
@@ -57,7 +57,7 @@ export function AdminHomeView({ data }: { data: AdminHome }) {
           </T>
         ) : null}
         <T v="h1">Today</T>
-        <View style={{ flexDirection: "row", flexWrap: "wrap", columnGap: space[3], rowGap: space[1] }}>
+        <View style={{ flexDirection: "row", flexWrap: "wrap", columnGap: space[4] }}>
           {link(plural(data.counts.students, "student"), () => router.push("/admin/students"), "home-students")}
           {link(`${data.counts.activeThisWeek} active this week`, () => router.push("/admin/activity"))}
           {data.counts.locked ? link(`${data.counts.locked} locked`, () => router.push("/admin/students?account=locked")) : null}
@@ -72,20 +72,18 @@ export function AdminHomeView({ data }: { data: AdminHome }) {
             ))}
           </RowList>
         ) : (
-          <EmptyState mood="sleepy" title="All clear" body="Nothing needs you right now." />
+          <EmptyState mood="clear" title="All clear" body="Nothing needs you right now." />
         )}
       </Block>
-      <Block title="On VIBHA now" count={data.live.length || undefined} action={{ label: "Activity", onPress: () => router.push("/admin/activity") }}>
-        {data.live.length ? (
-          <RowList>
-            {data.live.slice(0, 6).map((l) => (
-              <Row key={l.userId} title={l.name || "A student"} meta={[l.where ?? l.meta, l.since ? `since ${ago(l.since).replace(" ago", "")}` : ""].filter(Boolean).join(" · ")} icon={<Dot tone={l.watching ? "ok" : "info"} />} onPress={() => openStudent(l.userId, "activity")} />
-            ))}
-          </RowList>
-        ) : (
-          <Quiet>Nobody is on right now.</Quiet>
-        )}
-      </Block>
+      <RowList>
+        <Row
+          testID="home-live"
+          title={data.live.length ? `${data.live.length} on VIBHA now` : "Nobody on VIBHA right now"}
+          meta={data.live.length ? "See who and what they are doing" : "See this week in Activity"}
+          icon={<Dot tone={data.live.length ? "ok" : "quiet"} />}
+          onPress={() => router.push(data.live.length ? "/admin/activity?view=live" : "/admin/activity")}
+        />
+      </RowList>
       {data.cohorts.length ? (
         <Block title="Cohorts" action={{ label: "All cohorts", onPress: () => router.push("/admin/cohorts") }}>
           <RowList>

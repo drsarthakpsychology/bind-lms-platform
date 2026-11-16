@@ -46,7 +46,7 @@ export function StudyHomeBody({ d }: { d: StudyHome }) {
         </RowList>
       </Section>
     ) : null;
-  if (!d.modules.length) return <EmptyState mood="sleepy" title="Modules open soon" body="Your first module opens here when your course starts." testID="study-empty" />;
+  if (!d.modules.length) return <EmptyState mood="soon" title="Modules open soon" body="Your first module opens here when your course starts." testID="study-empty" />;
   return (
     <>
       {d.next.kind !== "done" ? (

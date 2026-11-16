@@ -10,10 +10,9 @@ import { space, useTheme } from "@/theme";
 import { adminCalls, useAdminAction, useRefreshAdmin, useSignOffs, useSubmissions } from "../api";
 import type { SignOff, Submission } from "../extra";
 import { ago, day } from "../format";
-import { ConfirmSheet, Facts, Loaded, Notice, Status } from "../kit";
+import { ConfirmSheet, Facts, Loaded, Notice, ScrollTabs, Status, TabSwap } from "../kit";
 import { openStudent } from "../nav";
 import { useAdminRole, VIEW_ONLY_LINE } from "../role";
-import { ScrollTabs } from "./student";
 
 /**
  * A score is optional (the website's Return feedback), and when given it is a
@@ -163,7 +162,7 @@ function Submissions() {
               ))}
             </RowList>
           ) : (
-            <EmptyState mood="sleepy" title={status === "pending" ? "Nothing to grade" : "Nothing here"} body={status === "pending" ? "New hand-ins land here." : undefined} />
+            <EmptyState mood={status === "pending" ? "clear" : "empty"} title={status === "pending" ? "Nothing to grade" : "Nothing here"} body={status === "pending" ? "New hand-ins land here." : undefined} />
           )
         }
       </Loaded>
@@ -189,7 +188,7 @@ function SignOffs() {
               ))}
             </RowList>
           ) : (
-            <EmptyState mood="sleepy" title="No sign-off requests" body="When a student asks for one, it lands here." />
+            <EmptyState mood="clear" title="No sign-off requests" body="When a student asks for one, it lands here." />
           )
         }
       </Loaded>
@@ -216,7 +215,9 @@ export function AdminReviewScreen() {
         value={tab}
         onChange={setTab}
       />
-      {tab === "subs" ? <Submissions /> : <SignOffs />}
+      <TabSwap tabs={[{ id: "subs" as const }, { id: "signoffs" as const }]} value={tab} gap={space[5]}>
+        {tab === "subs" ? <Submissions /> : <SignOffs />}
+      </TabSwap>
     </Screen>
   );
 }

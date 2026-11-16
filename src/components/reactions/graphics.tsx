@@ -181,6 +181,18 @@ export function EmptySticker({ sticker, title, children, className }: { sticker:
   );
 }
 
+/**
+ * Just the sticker, for an empty or error state that has its own words (the
+ * art slot of EmptyLine). Decoration: the words say it. Nothing when funny
+ * reactions are off.
+ */
+export function MemeArt({ sticker, size = 64, className }: { sticker: string; size?: number; className?: string }) {
+  const [on] = useReactionsOn();
+  const st = stickerById(sticker);
+  if (!on || !st) return null;
+  return <Image src={stickerSrc(st.id)} alt="" aria-hidden width={st.w} height={st.h} unoptimized loading="lazy" draggable={false} className={cn("w-auto shrink-0 -rotate-3 select-none", className)} style={{ height: size }} />;
+}
+
 /* -------------------------------------------------------- section motif */
 /** A small stamp for a Study section opener: an open book, rubber-stamped on halftone paper. No words. */
 export function SectionMotif({ className }: { className?: string }) {

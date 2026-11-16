@@ -6,6 +6,7 @@ import Animated, { FadeIn, useReducedMotion } from "react-native-reanimated";
 
 import { Button, EmptyState, RowList, Section, T } from "@/ds";
 import { haptic } from "@/lib/haptics";
+import { Swap } from "@/motion";
 import { fonts, layout, motion, space, useTheme } from "@/theme";
 import { play, saveCase, useMove, useTool } from "../api";
 import { EndPanel, EndThumb, FrameError, FrameLoading, GameFrame, HudLine, MoveError, StartScreen, StepStrip, Verdict } from "../frame";
@@ -175,7 +176,7 @@ export function EscapeGame() {
           <Verdict right title="The door opens" why={`${last.why}\n\n${last.unlock}`} seed={st.stage} />
         </Animated.View>
       ) : v.door ? (
-        <Animated.View key={v.door.id} entering={reduce ? undefined : FadeIn.duration(motion.state)} style={{ gap: space[4] }}>
+        <Swap k={v.door.id} style={{ gap: space[4] }}>
           <T v="h3">{v.door.prompt}</T>
           <Door door={v.door} disabled={mv.pending} onSubmit={(raw) => void submit(raw)} />
           {wrongFlash && res.right === false ? <Verdict right={false} title="Still locked" why={`${ESC_PENALTY_S} seconds added.${v.hint ? "" : " Try again."}`} seed={wrongFlash} /> : null}
@@ -185,7 +186,7 @@ export function EscapeGame() {
             </Story>
           ) : null}
           <MoveError text={mv.error} />
-        </Animated.View>
+        </Swap>
       ) : null}
     </GameFrame>
   );
@@ -349,7 +350,7 @@ export function EscapeTeam({ teamId, onExit }: { teamId: string; onExit: () => v
   if (missing && !view) {
     return (
       <GameFrame title="Escape Room" testID="escape-team-missing">
-        <EmptyState mood="puzzled" title="Team not found" body="You may not be in this team, or team play is not open yet." action={{ label: "Back to the rooms", onPress: onExit }} />
+        <EmptyState mood="missing" title="Team not found" body="You may not be in this team, or team play is not open yet." action={{ label: "Back to the rooms", onPress: onExit }} />
       </GameFrame>
     );
   }
@@ -429,7 +430,7 @@ export function EscapeTeam({ teamId, onExit }: { teamId: string; onExit: () => v
           <Verdict right title={feedback?.by && feedback.by !== "You" ? `${feedback.by} opened the door` : "The door opens"} why={`${openedDoor.why}\n\n${openedDoor.unlock}`} seed={stage} />
         </Animated.View>
       ) : room.door ? (
-        <Animated.View key={`${room.door.id}-${st.stage}`} entering={reduce ? undefined : FadeIn.duration(motion.state)} style={{ gap: space[4] }}>
+        <Swap k={`${room.door.id}-${st.stage}`} style={{ gap: space[4] }}>
           <T v="h3">{room.door.prompt}</T>
           <Door door={room.door} disabled={busy} onSubmit={(raw) => void submit(raw)} />
           {lost ? <MoveError text="Connection lost. Your answer was not sent. Try again." /> : feedback && !feedback.ok ? <Verdict right={false} title="Still locked" why={`Not that. +${ESC_PENALTY_S} seconds for the team. Try again.`} seed={wrongN} /> : null}
@@ -438,7 +439,7 @@ export function EscapeTeam({ teamId, onExit }: { teamId: string; onExit: () => v
               <T>{room.hint}</T>
             </Story>
           ) : null}
-        </Animated.View>
+        </Swap>
       ) : null}
       {st.log.length ? (
         <View style={{ gap: space[1] }} accessibilityLabel="Recent tries">

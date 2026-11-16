@@ -21,3 +21,4 @@ export * from "./query";
 export * from "./slider";
 export * from "./quiz";
 export * from "./progressive";
+export * from "./meme";

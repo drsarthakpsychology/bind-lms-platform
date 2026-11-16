@@ -92,7 +92,33 @@ export function day(iso: string | null | undefined, short = false): string {
   return short ? s : `${s} ${d.getUTCFullYear()}`;
 }
 
-/** Today in India as yyyy-mm-dd. */
+/** "16 Nov" this year, "16 Nov 2027" another year (India time). */
+export function shortDay(iso: string | null | undefined, now = Date.now()): string {
+  const full = day(iso);
+  if (!full) return "";
+  const year = String(new Date(now + 5.5 * 3600_000).getUTCFullYear());
+  return full.endsWith(` ${year}`) ? full.slice(0, -year.length - 1) : full;
+}
+
+/** Any yyyy-mm-dd (or full ISO time) inside server text becomes "16 Nov", so no list shows a raw date. */
+export function datesIn(text: string, now = Date.now()): string {
+  return text.replace(/\b\d{4}-\d{2}-\d{2}(?:T[\d:.]+(?:Z|[+-]\d{2}:?\d{2})?)?\b/g, (m) => shortDay(m, now) || m);
+}
+
+export const MONTH_NAMES = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+/** yyyy-mm-dd from a year, a month (0 to 11) and a day. */
+export const isoDay = (y: number, m: number, d: number) => `${y}-${String(m + 1).padStart(2, "0")}-${String(d).padStart(2, "0")}`;
+
+/** One month as weeks from Sunday: day numbers, with null for the blanks before the 1st and after the last day. */
+export function monthGrid(y: number, m: number): (number | null)[] {
+  const first = new Date(Date.UTC(y, m, 1)).getUTCDay();
+  const days = new Date(Date.UTC(y, m + 1, 0)).getUTCDate();
+  const cells: (number | null)[] = [...Array<null>(first).fill(null), ...Array.from({ length: days }, (_, i) => i + 1)];
+  while (cells.length % 7) cells.push(null);
+  return cells;
+}
+
 /** "Sun, 15 Nov", India time (admin Home's date line). */
 export function todayLine(now = Date.now()): string {
   try {
@@ -102,6 +128,7 @@ export function todayLine(now = Date.now()): string {
   }
 }
 
+/** Today in India as yyyy-mm-dd. */
 export function todayIst(now = Date.now()): string {
   return new Date(now + 5.5 * 3600_000).toISOString().slice(0, 10);
 }
