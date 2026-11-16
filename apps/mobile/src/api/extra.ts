@@ -6,47 +6,10 @@
  * server answers these routes; against the real server the screens show a
  * quiet "arrives in the next update" state instead of an error.
  */
-import type { AppTarget, Inline, Mcq } from "./contract";
 
 /* Home quests and the deletion request are in the contract now; kept as names here so older imports still work. */
 export type { Quest, QuestCard, DeletionRequestBody, DeletionRequestResult } from "./contract";
 
-
-/* --------------------------------------------------------------- Practise */
-
-export type PractiseRow = { id: string; title: string; meta: string | null; kind: "case" | "game" | "prep"; target: AppTarget; /** "New" this week, or a best score. */ trailing: string | null };
-/** GET /practise */
-export type PractiseHubData = { cases: PractiseRow[]; games: PractiseRow[]; prep: PractiseRow[] };
-
-/** GET /games/:id: a whole round as data. Two kinds for now. */
-export type GameRound =
-  | { kind: "quickfire"; v: 1; id: string; title: string; howTo: string; seconds: number; questions: Mcq[] }
-  | { kind: "match"; v: 1; id: string; title: string; howTo: string; pairs: { left: Inline; right: Inline }[] };
-/** POST /games/:id/result */
-export type GameResultBody = { score: number; total: number; ms: number };
-export type GameResult = { best: number; xp: number };
-
-/** GET /cases/:id: a patient case in steps; each step a choice with feedback. */
-export type CaseStudy = {
-  id: string;
-  title: string;
-  patient: string;
-  presenting: Inline;
-  steps: { ask: Inline; choices: { label: Inline; verdict: "best" | "ok" | "harm"; why: Inline }[] }[];
-  takeaway: Inline;
-};
-
-/** GET /prep: subjects. GET /prep/:subject: one question set. */
-export type PrepSubject = { id: string; title: string; questions: number; done: number; best: number | null };
-export type PrepSet = { id: string; title: string; questions: Mcq[] };
-
-/* ---------------------------------------------------------------- Library */
-
-/** GET /medicines?q=&class= : every medicine, one row each. */
-export type MedicineRow = { id: string; name: string; className: string; keyDose: string; brands: string[] };
-export type MedicineList = { classes: string[]; items: MedicineRow[] };
-/** GET /medicines/:id: the medicine page, in sections, content as the website has it. */
-export type MedicinePage = MedicineRow & { summary: Inline; sections: { id: string; title: string; points: Inline[] }[] };
 
 /* ------------------------------------------------------------------ Admin */
 

@@ -208,12 +208,16 @@ function Shell() {
             <Stack.Screen name="search" options={{ headerShown: false, ...fadeMotion }} />
             <Stack.Screen name="game/[id]" options={{ headerShown: false, gestureEnabled: false }} />
             <Stack.Screen name="game/leaderboard" options={{ title: "" }} />
+            <Stack.Screen name="shop" options={{ title: "" }} />
             <Stack.Screen name="case/[id]" options={{ headerShown: false, gestureEnabled: false }} />
             <Stack.Screen name="case/library" options={{ title: "" }} />
             <Stack.Screen name="prep/index" options={{ title: "" }} />
             <Stack.Screen name="prep/[subject]" options={{ title: "" }} />
             <Stack.Screen name="prep/set" options={{ headerShown: false, gestureEnabled: false }} />
             <Stack.Screen name="prep/long" options={{ title: "" }} />
+            <Stack.Screen name="prep/mock/index" options={{ title: "" }} />
+            <Stack.Screen name="prep/mock/[spec]" options={{ headerShown: false, gestureEnabled: false }} />
+            <Stack.Screen name="prep/mock/result/[id]" options={{ title: "" }} />
             <Stack.Screen name="medicine/[id]" options={{ title: "" }} />
             <Stack.Screen name="medicine/compare" options={{ title: "Compare" }} />
             <Stack.Screen name="student/[id]" options={{ title: "" }} />

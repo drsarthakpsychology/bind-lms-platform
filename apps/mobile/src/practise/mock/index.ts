@@ -6,7 +6,8 @@
  * not carry this file or its content.
  */
 import type { RawResponse } from "@/api/client";
-import type { MedicineList, MedicinePage } from "../types";
+import type { MedDiagram, MedicineList, MedicinePage, MedSection } from "../contract";
+import { DOSE_NOTE, SECTION_NAMES, shownSections, splitTell, washoutLine, type HalfLife, type Med as LMed, type Mechanism, type MedVisual } from "@/library/meds";
 import { CASES, resetCases } from "./cases";
 import * as R from "./routes";
 import { GAMES, resetGames } from "./games";
@@ -18,22 +19,83 @@ const fail = (status: number, code: string, message: string): RawResponse => ({ 
 const HANDLERS: Record<string, Record<string, (...args: never[]) => unknown>> = {
   ...GAMES,
   ...CASES,
+  league: R.league as unknown as Record<string, (...args: never[]) => unknown>,
   prep: { ...CASES.prep, save: (i: { id?: string; saved?: boolean }) => (i?.id ? (R.toggleSaved(i.id, !!i.saved), { ok: true }) : { ok: false }) },
 };
 
-type Med = { id: string; name: string; cls: string; group: string; brands: string[]; uses: string[]; standout: string[]; doses: { amount: string }[]; defaultDose: number; related: string[] };
-type MedSample = { med: Med; mechanism: Record<string, unknown> | null; visuals: Record<string, unknown>[]; halfLife: Record<string, unknown> | null };
+type Med = LMed;
+type MedSample = { med: Med; mechanism: Mechanism | null; visuals: MedVisual[]; halfLife: HalfLife | null };
 const MEDS = CONTENT.MEDS_SAMPLE as MedSample[];
 const GROUPS = ["Antidepressants", "Antipsychotics", "Mood stabilisers", "Anxiety and sleep", "ADHD, dementia and addiction", "Side-effect medicines"];
 
+const row = (m: Med) => ({ id: m.id, name: m.name, cls: m.cls, className: m.cls, group: m.group, brands: m.brands, uses: m.uses, line: m.standout[0] ?? "", dose: m.doses[m.defaultDose]?.amount ?? "", keyDose: m.doses[m.defaultDose]?.amount ?? "" });
 export function medicineList(): MedicineList {
-  return { v: 1, groups: GROUPS, rows: MEDS.map(({ med: m }) => ({ id: m.id, name: m.name, cls: m.cls, group: m.group, brands: m.brands, uses: m.uses, line: m.standout[0] ?? "", dose: m.doses[m.defaultDose]?.amount ?? "" })) };
+  return { v: 1, groups: GROUPS, classes: GROUPS, rows: MEDS.map(({ med }) => row(med)) };
 }
+const str = (x: unknown) => (typeof x === "string" ? x : null);
+/** The website's medicineDiagrams plan (src/lib/meds/diagrams.ts), for the mock's sample medicines. */
+function diagramsOf(s: MedSample): MedDiagram[] {
+  const m = s.med;
+  const out: MedDiagram[] = [];
+  if (s.mechanism) {
+    out.push({ kind: "receptor", medName: m.name, receptor: s.mechanism.receptor.name, pick: s.mechanism.receptor.pick, note: s.mechanism.receptor.note });
+    out.push({ kind: "journey", medName: m.name, target: s.mechanism.site, routes: (s.mechanism.routes.length ? s.mechanism.routes : ["oral"]) as ("oral" | "iv" | "nasal" | "depot")[], notes: null });
+  }
+  for (const v of s.visuals) {
+    const d = v.data as Record<string, unknown>;
+    if (v.kind === "release" || v.kind === "synapse3d") out.push({ kind: "synapse", medName: m.name, action: v.kind === "release" ? "reuptake" : /gaba/i.test(String(d.transmitter ?? "")) ? "gaba" : "glutamate", transmitter: String(d.transmitter ?? "messenger"), title: str(d.title) ?? `What ${m.name} changes at the synapse`, caption: str(d.caption) });
+    else if (v.kind === "curve") out.push(v.half ? { kind: "halfLife", title: str(d.title) ?? `How long ${m.name} stays in the body`, hl: v.half.hl, meaning: v.half.meaning } : { kind: "dose", title: str(d.title) ?? m.name, shape: "window", caption: str(d.caption) });
+    else if (v.kind === "pathways") out.push({ kind: "pathways", medName: m.name, caption: str(d.caption), atypical: false, focus: null });
+    else if (v.kind === "compare") out.push({ kind: "compare", title: str(d.title) ?? "Compared", a: d.a as never, b: d.b as never });
+    else if (v.kind === "neuron") out.push({ kind: "neuron", medName: m.name, title: str(d.title) ?? `What ${m.name} calms`, caption: str(d.caption) });
+    else if (v.kind === "nervoussystem") out.push({ kind: "nervous", medName: m.name, title: str(d.title) ?? `What ${m.name} quietens`, caption: str(d.caption) });
+    else if (v.kind === "hypnogram") out.push({ kind: "hypnogram", title: str(d.title) ?? "A night of sleep", caption: str(d.caption) });
+  }
+  return out;
+}
+/** The website's medicinePage (src/lib/app-api/library.ts), built from the sample with the same section rules. */
 export function medicinePage(id: string): MedicinePage | null {
   const s = MEDS.find((x) => x.med.id === id);
   if (!s) return null;
-  const related = s.med.related.map((r) => MEDS.find((x) => x.med.id === r)?.med).filter(Boolean) as Med[];
-  return { v: 1, med: s.med as unknown as MedicinePage["med"], related: related.map((m) => ({ id: m.id, name: m.name, cls: m.cls })), mechanism: s.mechanism, visuals: s.visuals, halfLife: s.halfLife, study: { moduleId: "pharmacology", title: "Medicines in the clinic", target: { screen: "studyModule", moduleId: "pharmacology", web: "/study/pharmacology" } } };
+  const m = s.med;
+  const tell = splitTell(m);
+  const shown = shownSections(m, { hasMechanism: !!s.mechanism, visuals: s.visuals.length, halfLife: !!s.halfLife });
+  const sections = shown.map((sid): MedSection => {
+    const title = SECTION_NAMES[sid];
+    switch (sid) {
+      case "uses":
+        return { id: sid, title, points: m.uses, uses: m.uses, standout: m.standout };
+      case "doses":
+        return { id: sid, title, points: m.doses.map((d) => `${d.label}: ${d.amount}`), doses: m.doses, defaultDose: m.defaultDose, take: tell.take, forms: m.forms, brands: m.brands, note: DOSE_NOTE };
+      case "side-effects":
+        return { id: sid, title, points: m.common };
+      case "monitoring":
+        return { id: sid, title, points: m.checks };
+      case "interactions":
+        return { id: sid, title, points: m.interactions };
+      case "warnings":
+        return { id: sid, title, points: [...m.serious, ...tell.warn], tone: "alert" };
+      case "groups":
+        return { id: sid, title, points: m.groups.map((g) => `${g.label}: ${g.text}`), facts: m.groups };
+      case "stopping":
+        return { id: sid, title, points: [...tell.stopping, ...(s.halfLife ? [washoutLine(s.halfLife.hl)] : [])] };
+      default:
+        return { id: "how-it-works", title, points: s.mechanism ? [s.mechanism.plain] : [], plain: s.mechanism?.plain ?? null, targets: s.mechanism?.targets ?? [], diagrams: diagramsOf(s) };
+    }
+  });
+  const related = m.related.map((r) => MEDS.find((x) => x.med.id === r)?.med).filter((x): x is Med => !!x);
+  return {
+    v: 1,
+    ...row(m),
+    summary: { student: m.student, clinician: m.clinician },
+    sections,
+    related: related.map((x) => ({ id: x.id, name: x.name, cls: x.cls })),
+    study: { moduleId: "pharmacology", title: "Medicines in the clinic", target: { screen: "studyModule", moduleId: "pharmacology", web: "/study/pharmacology" } },
+    med: m as unknown as MedicinePage["med"],
+    mechanism: s.mechanism as unknown as Record<string, unknown> | null,
+    visuals: s.visuals as unknown as Record<string, unknown>[],
+    halfLife: s.halfLife,
+  };
 }
 
 /** Answers a Practise or Library route, or null when the path is not one of them. */
@@ -64,7 +126,10 @@ export function practiseRoute(method: string, path: string, body: unknown, kind:
         if (seg[1] === "smart") return ok(R.prepSmart());
         if (seg[1] === "lists" && seg.length === 3) return ok(R.prepList(d(2)));
         if (seg[1] === "long") return ok(R.prepLong(seg[2] && d(2), seg[3] && d(3), seg[4] && d(4)));
+        if (seg[1] === "mock" && seg.length === 2) return ok(R.prepMocks());
+        if (seg[1] === "mock" && seg[2] === "result" && seg.length === 4) return ok(R.prepMockResult(d(3)));
       }
+      if (method === "GET" && seg[0] === "leaderboards" && seg[1] === "shop") return ok(R.shop());
       if (method === "GET" && seg[0] === "leaderboards") return ok(R.board(seg[1] === "games" ? d(2) : d(1)));
     } catch (e) {
       if (e instanceof PlayError) return fail(e.status, e.code, e.message);
@@ -88,6 +153,7 @@ export function practiseRoute(method: string, path: string, body: unknown, kind:
 }
 
 export function resetPractiseMock() {
+  R.resetShop();
   resetSeeds();
   resetCases();
   resetGames();

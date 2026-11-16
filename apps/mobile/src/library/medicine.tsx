@@ -8,11 +8,14 @@ import { ApiFailure } from "@/api/errors";
 import { Button, EmptyState, LoadError, Row, RowList, RowsSkeleton, Sheet, T } from "@/ds";
 import { haptic } from "@/lib/haptics";
 import { openTarget } from "@/nav/targets";
-import { fonts, layout, space, useTheme } from "@/theme";
-import { Diagrams } from "./diagrams";
+import { fonts, layout, motion, space, useTheme } from "@/theme";
+import { MedicineDiagrams } from "./med-diagrams";
 import { useMedicineList, useMedicinePage } from "./list";
 import { ClassMark } from "./marks";
-import { DOSE_NOTE, HOW_IT_WORKS, searchMeds, SECTION_NAMES, shownSections, splitTell, washoutLine, type HalfLife, type Mechanism, type Med, type MedVisual, type SectionId } from "./meds";
+import { searchMeds } from "./meds";
+import type { MedicinePage, MedSection } from "@/practise/contract";
+import Animated, { FadeIn, useReducedMotion } from "react-native-reanimated";
+import { Enter } from "@/motion";
 
 type View_ = "student" | "clinician";
 
@@ -45,28 +48,20 @@ function Fact({ name, children }: { name: string; children: React.ReactNode }) {
   );
 }
 
-function Part({ id, shown, onAt, children }: { id: SectionId; shown: SectionId[]; onAt: (s: SectionId) => (e: { nativeEvent: { layout: { y: number } } }) => void; children: React.ReactNode }) {
-  if (!shown.includes(id)) return null;
-  return (
-    <View onLayout={onAt(id)} style={{ gap: space[3] }} testID={`med-section-${id}`}>
-      <T v="h2">{SECTION_NAMES[id]}</T>
-      {children}
-    </View>
-  );
-}
-
 /**
- * A medicine page: every fact as the website has it, in the website's order
- * (what it is used for, doses, side effects, what to check, interactions,
- * the serious ones, special groups, stopping), How it works last with its
- * diagrams. A section index sheet jumps to any part.
+ * A medicine page, from the server's own plan (GET /library/medicines/:id
+ * `sections`): only the sections the website shows for this medicine, in its
+ * order and with its names (Used for, Doses, Side effects, What to check,
+ * Interactions, Serious: act the same day, Special groups, Switching and
+ * stopping, How it works last with its pictures). A section index sheet jumps
+ * to any part.
  */
 export function MedicineScreen() {
   const { id = "", section } = useLocalSearchParams<{ id: string; section?: string }>();
   const q = useMedicinePage(String(id));
   if (q.isError) {
     const soon = q.error instanceof ApiFailure && q.error.code === "not_found";
-    return <View style={{ flex: 1, padding: layout.gutter }}>{soon ? <EmptyState mood="sleepy" title="Not in the library yet" body="This medicine page arrives in the app soon." /> : <LoadError what="this medicine" onRetry={() => void q.refetch()} />}</View>;
+    return <View style={{ flex: 1, padding: layout.gutter }}>{soon ? <EmptyState mood="sleepy" title="Not in the library yet" body="This medicine page arrives in the app soon." /> : <LoadError error={q.error} what="this medicine" onRetry={() => void q.refetch()} />}</View>;
   }
   if (!q.data) {
     return (
@@ -75,28 +70,30 @@ export function MedicineScreen() {
       </View>
     );
   }
-  return <MedicinePageView key={q.data.med.id} med={q.data.med as unknown as Med} mech={q.data.mechanism as Mechanism | null} visuals={(q.data.visuals ?? []) as unknown as MedVisual[]} half={q.data.halfLife as HalfLife | null} related={q.data.related} study={q.data.study} jump={section} />;
+  return <MedicinePageView key={q.data.id} page={q.data} jump={section} />;
 }
 
-export function MedicinePageView({ med, mech, visuals, half, related, study, jump }: { med: Med; mech: Mechanism | null; visuals: MedVisual[]; half: HalfLife | null; related: { id: string; name: string; cls: string }[]; study: { title: string; target: Parameters<typeof openTarget>[0] } | null; jump?: string }) {
+type Sec = MedSection;
+
+export function MedicinePageView({ page, jump }: { page: MedicinePage; jump?: string }) {
   const c = useTheme();
   const insets = useSafeAreaInsets();
+  const reduce = useReducedMotion();
   const [view, setView] = React.useState<View_>("student");
-  const [dose, setDose] = React.useState(med.defaultDose ?? 0);
+  const doses = page.sections.find((x): x is Extract<Sec, { id: "doses" }> => x.id === "doses");
+  const [dose, setDose] = React.useState(doses?.defaultDose ?? 0);
   const [index, setIndex] = React.useState(false);
   const [comparing, setComparing] = React.useState(false);
   const scroll = React.useRef<ScrollViewInstance>(null);
-  const ys = React.useRef<Partial<Record<SectionId, number>>>({});
+  const ys = React.useRef<Partial<Record<string, number>>>({});
   const jumped = React.useRef(false);
-  const tell = splitTell(med);
-  const sections = shownSections(med, { hasMechanism: !!mech, visuals: visuals.length, halfLife: !!half });
-  const d = med.doses[dose] ?? med.doses[0];
+  const d = doses?.doses[dose] ?? doses?.doses[0];
 
-  const go = (s: SectionId) => {
+  const go = (s: string) => {
     const y = ys.current[s];
-    if (y !== undefined) scroll.current?.scrollTo({ y: Math.max(0, y - space[3]), animated: true });
+    if (y !== undefined) scroll.current?.scrollTo({ y: Math.max(0, y - space[3]), animated: !reduce });
   };
-  const at = (s: SectionId) => (e: { nativeEvent: { layout: { y: number } } }) => {
+  const at = (s: string) => (e: { nativeEvent: { layout: { y: number } } }) => {
     ys.current[s] = e.nativeEvent.layout.y;
     if (!jumped.current && jump === s) {
       jumped.current = true;
@@ -104,20 +101,135 @@ export function MedicinePageView({ med, mech, visuals, half, related, study, jum
     }
   };
 
+  const body = (x: Sec) => {
+    switch (x.id) {
+      case "uses":
+        return (
+          <>
+            <Bullets items={x.uses.length ? x.uses : x.points} />
+            {x.standout.length ? (
+              <Fact name="What sets it apart">
+                <Bullets items={x.standout} />
+              </Fact>
+            ) : null}
+          </>
+        );
+      case "doses":
+        return (
+          <>
+            <ScrollView horizontal showsHorizontalScrollIndicator={false} style={{ marginHorizontal: -layout.gutter }} contentContainerStyle={{ paddingHorizontal: layout.gutter, gap: space[2] }} accessibilityRole="tablist" accessibilityLabel="Doses">
+              {x.doses.map((o, k) => (
+                <Pressable
+                  key={`${o.amount}-${k}`}
+                  accessibilityRole="tab"
+                  accessibilityState={{ selected: k === dose }}
+                  accessibilityLabel={`${o.label}: ${o.amount}`}
+                  onPress={() => {
+                    haptic.select();
+                    setDose(k);
+                  }}
+                  testID={`med-dose-${k}`}
+                  style={({ pressed }) => ({ minHeight: 56, paddingHorizontal: space[4], paddingVertical: space[2], justifyContent: "center", borderRadius: layout.radius, borderWidth: 1.5, borderColor: k === dose ? c.ink : c.cardLine, backgroundColor: k === dose ? c.primary : "transparent", transform: [{ scale: pressed ? 0.96 : 1 }] })}
+                >
+                  <T v="caption" style={{ color: k === dose ? c.onPrimary : c.muted }}>
+                    {o.label}
+                  </T>
+                  <T v="bodyStrong" style={{ color: k === dose ? c.onPrimary : c.ink }}>
+                    {o.amount}
+                  </T>
+                </Pressable>
+              ))}
+            </ScrollView>
+            {d ? (
+              <Animated.View key={`dose-${dose}-${view}`} entering={reduce ? undefined : FadeIn.duration(motion.state)} style={{ gap: space[2] }}>
+                <T v="small" tone="muted">
+                  {d.use}
+                </T>
+                <T v="reading">{view === "student" ? d.student : d.clinician}</T>
+                {d.watch?.length ? (
+                  <Fact name="Watch for at this dose">
+                    <Bullets items={d.watch} />
+                  </Fact>
+                ) : null}
+              </Animated.View>
+            ) : null}
+            {x.take.length ? (
+              <Fact name="How to take it">
+                <Bullets items={x.take} />
+              </Fact>
+            ) : null}
+            {x.forms ? <Fact name="Forms">{x.forms}</Fact> : null}
+            {x.brands.length ? <Fact name="Indian brands">{x.brands.join(", ")}</Fact> : null}
+            {x.note ? (
+              <T v="small" tone="muted">
+                {x.note}
+              </T>
+            ) : null}
+          </>
+        );
+      case "groups":
+        return x.facts.map((g) => (
+          <Fact key={g.label} name={g.label}>
+            {g.text}
+          </Fact>
+        ));
+      case "how-it-works":
+        return (
+          <>
+            {x.plain ? <T v="reading">{x.plain}</T> : null}
+            {x.targets.length ? (
+              <View style={{ borderTopWidth: 1.5, borderColor: c.ink }}>
+                {x.targets.map((t) => (
+                  <View key={t.target} style={{ gap: 2, paddingVertical: space[3], borderBottomWidth: 1, borderColor: c.hairline }}>
+                    <T v="bodyStrong">{t.target}</T>
+                    {view === "clinician" ? <T v="small">{t.action}</T> : null}
+                    <T v="small" tone="muted">
+                      {t.effect}
+                    </T>
+                  </View>
+                ))}
+              </View>
+            ) : null}
+            <MedicineDiagrams diagrams={x.diagrams} />
+          </>
+        );
+      default:
+        return <Bullets items={x.points} tone={x.id === "warnings" ? "alert" : undefined} />;
+    }
+  };
+
+  const how = page.sections.find((x) => x.id === "how-it-works");
+  const rest = page.sections.filter((x) => x.id !== "how-it-works");
+  const part = (x: Sec) =>
+    x.id === "warnings" ? (
+      // The one band of colour on the page.
+      <View key={x.id} onLayout={at(x.id)} testID="med-section-warnings" style={{ gap: space[3], backgroundColor: c.alertBg, borderRadius: layout.radius, padding: space[4] }}>
+        <T v="h2" tone="alert">
+          {x.title}
+        </T>
+        {body(x)}
+      </View>
+    ) : (
+      <View key={x.id} onLayout={at(x.id)} style={{ gap: space[3] }} testID={`med-section-${x.id}`}>
+        <T v="h2">{x.title}</T>
+        {body(x)}
+      </View>
+    );
+
   return (
     <View style={{ flex: 1, backgroundColor: c.bg }} testID="medicine">
       <ScrollView ref={scroll} contentContainerStyle={{ paddingHorizontal: layout.gutter, paddingTop: space[4], paddingBottom: insets.bottom + space[7], gap: space[7], width: "100%", maxWidth: layout.readingWidth + layout.gutter * 2, alignSelf: "center" }}>
-        <View style={{ gap: space[3] }}>
+        <Enter style={{ gap: space[3] }}>
           <View style={{ flexDirection: "row", alignItems: "center", gap: space[2] }}>
-            <ClassMark group={med.group} />
+            <ClassMark group={page.group} />
             <T v="small" tone="muted" style={{ flex: 1 }}>
-              {med.group} · {med.cls}
+              {page.group} · {page.cls}
             </T>
           </View>
-          <T v="display">{med.name}</T>
-          {med.brands.length ? (
+          <T v="display">{page.name}</T>
+          {page.brands.length ? (
             <T v="small" tone="muted">
-              Brands in India: {med.brands.join(", ")}
+              Brands in India: {page.brands.join(", ")}
             </T>
           ) : null}
           <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", gap: space[3], flexWrap: "wrap" }}>
@@ -152,160 +264,58 @@ export function MedicinePageView({ med, mech, visuals, half, related, study, jum
               </Pressable>
             </View>
           </View>
-          <T v="reading">{view === "student" ? med.student : med.clinician}</T>
-        </View>
+          <Animated.View key={view} entering={reduce ? undefined : FadeIn.duration(motion.state)}>
+            <T v="reading">{view === "student" ? page.summary.student : page.summary.clinician}</T>
+          </Animated.View>
+        </Enter>
 
-        <Part shown={sections} onAt={at} id="uses">
-          <Bullets items={med.uses} />
-          {med.standout.length ? (
-            <Fact name="What sets it apart">
-              <Bullets items={med.standout} />
-            </Fact>
-          ) : null}
-        </Part>
+        {rest.map(part)}
 
-        <Part shown={sections} onAt={at} id="doses">
-          <ScrollView horizontal showsHorizontalScrollIndicator={false} style={{ marginHorizontal: -layout.gutter }} contentContainerStyle={{ paddingHorizontal: layout.gutter, gap: space[2] }} accessibilityRole="tablist" accessibilityLabel="Doses">
-            {med.doses.map((x, k) => (
-              <Pressable
-                key={`${x.amount}-${k}`}
-                accessibilityRole="tab"
-                accessibilityState={{ selected: k === dose }}
-                accessibilityLabel={`${x.label}: ${x.amount}`}
-                onPress={() => {
-                  haptic.select();
-                  setDose(k);
-                }}
-                testID={`med-dose-${k}`}
-                style={{ minHeight: 56, paddingHorizontal: space[4], paddingVertical: space[2], justifyContent: "center", borderRadius: layout.radius, borderWidth: 1.5, borderColor: k === dose ? c.ink : c.cardLine, backgroundColor: k === dose ? c.primary : "transparent" }}
-              >
-                <T v="caption" style={{ color: k === dose ? c.onPrimary : c.muted }}>
-                  {x.label}
-                </T>
-                <T v="bodyStrong" style={{ color: k === dose ? c.onPrimary : c.ink }}>
-                  {x.amount}
-                </T>
-              </Pressable>
-            ))}
-          </ScrollView>
-          {d ? (
-            <View style={{ gap: space[2] }}>
-              <T v="small" tone="muted">
-                {d.use}
-              </T>
-              <T v="reading">{view === "student" ? d.student : d.clinician}</T>
-              {d.watch?.length ? (
-                <Fact name="Watch for at this dose">
-                  <Bullets items={d.watch} />
-                </Fact>
-              ) : null}
-            </View>
-          ) : null}
-          {tell.take.length ? (
-            <Fact name="How to take it">
-              <Bullets items={tell.take} />
-            </Fact>
-          ) : null}
-          <Fact name="Forms">{med.forms}</Fact>
-          <Fact name="Indian brands">{med.brands.join(", ")}</Fact>
-          <T v="small" tone="muted">
-            {DOSE_NOTE}
-          </T>
-        </Part>
-
-        <Part shown={sections} onAt={at} id="side-effects">
-          <Bullets items={med.common} />
-        </Part>
-        <Part shown={sections} onAt={at} id="monitoring">
-          <Bullets items={med.checks} />
-        </Part>
-        <Part shown={sections} onAt={at} id="interactions">
-          <Bullets items={med.interactions} />
-        </Part>
-        {/* The one band of colour on the page. */}
-        <View onLayout={at("warnings")} testID="med-section-warnings" style={{ gap: space[3], backgroundColor: c.alertBg, borderRadius: layout.radius, padding: space[4] }}>
-          <T v="h2" tone="alert">
-            {SECTION_NAMES.warnings}
-          </T>
-          <Bullets items={[...med.serious, ...tell.warn]} tone="alert" />
-        </View>
-        <Part shown={sections} onAt={at} id="groups">
-          {med.groups.map((g) => (
-            <Fact key={g.label} name={g.label}>
-              {g.text}
-            </Fact>
-          ))}
-        </Part>
-        <Part shown={sections} onAt={at} id="stopping">
-          <Bullets items={[...tell.stopping, ...(half ? [washoutLine(half.hl)] : [])]} />
-        </Part>
-
-        {related.length || study ? (
+        {page.related.length || page.study ? (
           <View style={{ gap: space[3] }}>
-            {related.length ? (
+            {page.related.length ? (
               <>
                 <T v="h3">Related</T>
                 <RowList>
-                  {related.map((r) => (
+                  {page.related.map((r) => (
                     <Row key={r.id} title={r.name} meta={r.cls} onPress={() => router.push(`/medicine/${encodeURIComponent(r.id)}`)} testID={`med-related-${r.id}`} />
                   ))}
                 </RowList>
               </>
             ) : null}
-            {study ? (
+            {page.study ? (
               <RowList>
-                <Row title={`Learn it in Study: ${study.title}`} icon={<BookOpen size={20} color={c.muted} />} onPress={() => openTarget(study.target)} />
+                <Row title={`Learn it in Study: ${page.study.title}`} icon={<BookOpen size={20} color={c.muted} />} onPress={() => openTarget(page.study!.target)} />
               </RowList>
             ) : null}
           </View>
         ) : null}
 
-        <Part shown={sections} onAt={at} id={HOW_IT_WORKS}>
-          {mech ? (
-            <>
-              <T v="reading">{mech.plain}</T>
-              <View style={{ borderTopWidth: 1.5, borderColor: c.ink }}>
-                {mech.targets.map((t) => (
-                  <View key={t.target} style={{ gap: 2, paddingVertical: space[3], borderBottomWidth: 1, borderColor: c.hairline }}>
-                    <T v="bodyStrong">{t.target}</T>
-                    {view === "clinician" ? <T v="small">{t.action}</T> : null}
-                    <T v="small" tone="muted">
-                      {t.effect}
-                    </T>
-                  </View>
-                ))}
-              </View>
-              <T v="small" tone="muted">
-                Where it acts: {mech.site}
-              </T>
-            </>
-          ) : null}
-          <Diagrams visuals={visuals} mech={mech} />
-        </Part>
+        {how ? part(how) : null}
       </ScrollView>
 
       <Sheet open={index} onClose={() => setIndex(false)} title="Sections" testID="med-index-sheet">
         <RowList>
-          {sections.map((s) => (
+          {page.sections.map((x) => (
             <Row
-              key={s}
-              title={SECTION_NAMES[s]}
-              testID={`med-jump-${s}`}
+              key={x.id}
+              title={x.title}
+              testID={`med-jump-${x.id}`}
               onPress={() => {
                 setIndex(false);
-                setTimeout(() => go(s), 220);
+                setTimeout(() => go(x.id), 220);
               }}
             />
           ))}
         </RowList>
       </Sheet>
-      <ComparePicker open={comparing} onClose={() => setComparing(false)} from={med} />
+      <ComparePicker open={comparing} onClose={() => setComparing(false)} from={{ id: page.id, name: page.name, cls: page.cls, related: page.related.map((r) => r.id) }} />
     </View>
   );
 }
 
 /** Pick the second medicine for Compare: related ones first, then a search. */
-function ComparePicker({ open, onClose, from }: { open: boolean; onClose: () => void; from: Med }) {
+function ComparePicker({ open, onClose, from }: { open: boolean; onClose: () => void; from: { id: string; name: string; cls: string; related: string[] } }) {
   const list = useMedicineList();
   const rows = list.data?.rows ?? [];
   const firsts = rows.filter((r) => from.related.includes(r.id));

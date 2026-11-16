@@ -10,8 +10,9 @@ import { Rich } from "@/study/rich";
 import { fonts, layout, motion, space, useTheme } from "@/theme";
 import { noteAnswers, saveCase, sendRecord, useTool } from "../api";
 import type { CaseMark, PractiseRecordKind } from "../contract";
+import { formatDomainKey } from "../tools/mse";
 import { API_TOOL, arrange, buildDefs, countsRight, grade, HISTORY_TOOL, PROGRESS_TOOL, recordsFor, type Def } from "../tools/engine";
-import { Stagger } from "../fx";
+import { Feel, Flip, Rise, Stagger } from "../fx";
 import { caseTool } from "../catalog";
 import { EndPanel, EndThumb, FrameError, FrameLoading, GameFrame, HudLine, StepStrip, Verdict } from "../frame";
 import { Story, Tag, Tile, AnswerRow } from "../parts";
@@ -24,12 +25,12 @@ const HOW: Record<ToolId, string[]> = {
   judgment: ["You have a working diagnosis. A new fact arrives.", "Say how it changes the odds, from much less likely to much more likely. You are scored against a panel of clinicians."],
   ethics: ["A situation with a legal or ethical catch.", "Choose what to do, then read the law behind it."],
   landmark: ["Read a famous case: what was believed then, and what holds up now.", "Then answer a few questions about it."],
-  osce: ["One task, out loud, against the clock. Start the clock and say it as if the patient is there.", "When the time is up, tick what you covered. The items worth two count most."],
+  osce: ["One task, out loud, against the clock. Start the clock and say it as if the patient is there.", "When the time is up, tick what you covered. The items worth two count most.", "Then give your overall call. It is saved for your own history."],
   "two-minute": ["A patient, a few lines, two minutes.", "Pick the most likely diagnosis before the clock runs out."],
-  formulation: ["Sort each factor into the 5Ps: presenting, predisposing, precipitating, perpetuating, protective.", "Some factors belong nowhere: leave them out."],
+  formulation: ["Sort each factor into the 5Ps: presenting, predisposing, precipitating, perpetuating, protective.", "Some factors belong nowhere: leave them out.", "Then write the story in your own words and compare it with the model."],
   "out-of-depth": ["A case that may be beyond your scope.", "Decide what to do first, and who else needs to know."],
   "weak-spots": ["Questions picked from what you miss most.", "One at a time; the why comes after each."],
-  "mse-trainer": ["Read the quote from the interview.", "Pick the word for what you see. Describe first, label second."],
+  "mse-trainer": ["Level 1: describe what you see and hear, with no labels.", "Level 2: pick the words for each domain.", "Level 4: the full MSE of one case in ten minutes, scored per domain.", "The small things: moments novices miss. Say what it means, then reveal the read."],
 };
 
 /** Milliseconds since `t` (an event-time read, never during render). */
@@ -87,7 +88,7 @@ function ToolRun({ tool, def, howTo, records, back, again }: { tool: ToolId; def
   const reduce = useReducedMotion();
   const react = useReactions();
   const entry = caseTool(tool);
-  const [at, setAt] = React.useState(0);
+  const [at, setAt] = React.useState(def.start ?? 0);
   const [reveal, setReveal] = React.useState<ToolReveal | null>(null);
   const [marks, setMarks] = React.useState<("ok" | "miss" | null)[]>([]);
   const [scores, setScores] = React.useState<number[]>([]);
@@ -120,7 +121,8 @@ function ToolRun({ tool, def, howTo, records, back, again }: { tool: ToolId; def
   const finish = () => {
     const ptool = PROGRESS_TOOL[tool];
     if (ptool) saveCase(ptool, def.id, null);
-    for (const r of recordsFor(tool, def, answers.current, records)) sendRecord(r.kind, r.body);
+    if (def.id === "small-things") saveCase("mse-small", "walk", null);
+    for (const r of recordsFor(tool, def, answers.current, records, Date.now())) sendRecord(r.kind, r.body);
     setDone(true);
   };
   const answer = (a: unknown) => {
@@ -145,7 +147,12 @@ function ToolRun({ tool, def, howTo, records, back, again }: { tool: ToolId; def
     setReveal(null);
     setPicked(null);
     if (at + 1 >= total) finish();
-    else setAt(at + 1);
+    else {
+      // The small things walk keeps its place, as the website's (saveCaseProgress("mse-small", "walk", { at })).
+      const walk = def.steps[at + 1]?.raw?.walk;
+      if (def.id === "small-things" && typeof walk === "string") saveCase("mse-small", "walk", { at: walk });
+      setAt(at + 1);
+    }
   };
   const hud = (
     <View style={{ gap: space[2] }}>
@@ -154,7 +161,7 @@ function ToolRun({ tool, def, howTo, records, back, again }: { tool: ToolId; def
     </View>
   );
   return (
-    <GameFrame testID={`tool-run-${tool}`} title={def.title} howTo={howTo} hud={hud} confirmLeave thumb={reveal ? <Button label={at + 1 < total ? "Next" : "Finish the case"} onPress={next} testID="tool-next" /> : undefined}>
+    <GameFrame testID={`tool-run-${tool}`} title={def.title} howTo={howTo} hud={hud} confirmLeave thumb={reveal ? <Button label={at + 1 < total ? (step.kind === "moment" ? "Next observation" : "Next") : "Finish the case"} onPress={next} testID="tool-next" /> : undefined}>
       {at === 0 ? (
         <Story kicker={def.setting ?? undefined}>
           <Rich text={def.intro} v="reading" />
@@ -169,13 +176,39 @@ function ToolRun({ tool, def, howTo, records, back, again }: { tool: ToolId; def
 }
 
 function RevealBand({ step, reveal, seed }: { step: ToolStep; reveal: ToolReveal; seed: number }) {
+  if (step.kind === "moment") {
+    return (
+      <View style={{ gap: space[3] }} testID="tool-moment-read">
+        <Story kicker="What it means">
+          <Rich text={reveal.why} v="reading" />
+        </Story>
+        {reveal.more ? (
+          <Story kicker="The move">
+            <Rich text={reveal.more} v="reading" />
+          </Story>
+        ) : null}
+      </View>
+    );
+  }
+  if (step.kind === "rate") {
+    return (
+      <Rise>
+        <T v="bodyStrong" testID="tool-rated">
+          {reveal.why}
+        </T>
+      </Rise>
+    );
+  }
+  if (reveal.domains) return <Lights reveal={reveal} seed={seed} />;
   if (reveal.selfCheck) {
     return (
       <View style={{ gap: space[3] }} testID="tool-compare">
+        {reveal.observe ? <ObserveLine o={reveal.observe} /> : null}
         <Story kicker="Compare with yours">
           <Rich text={reveal.why} v="reading" />
           {reveal.more ? <Rich text={reveal.more} v="small" /> : null}
         </Story>
+        {reveal.diff ? <DiffWords diff={reveal.diff} /> : null}
       </View>
     );
   }
@@ -196,6 +229,7 @@ function RevealBand({ step, reveal, seed }: { step: ToolStep; reveal: ToolReveal
 }
 
 function StepView({ step, reveal, picked, disabled, onAnswer }: { step: ToolStep; reveal: ToolReveal | null; picked: unknown; disabled: boolean; onAnswer: (a: unknown) => void }) {
+  const c = useTheme();
   switch (step.kind) {
     case "pick":
       return (
@@ -222,6 +256,32 @@ function StepView({ step, reveal, picked, disabled, onAnswer }: { step: ToolStep
       return <Buckets step={step} reveal={reveal} disabled={disabled} onAnswer={onAnswer} />;
     case "write":
       return <Write step={step} reveal={reveal} onAnswer={onAnswer} />;
+    case "rate":
+      return <Rate step={step} reveal={reveal} picked={picked as number | null} onAnswer={onAnswer} />;
+    case "fullmse":
+      return <FullMse step={step} reveal={reveal} onAnswer={onAnswer} />;
+    case "moment":
+      return (
+        <View style={{ gap: space[3] }}>
+          <T v="caption" tone="muted">
+            {step.skill.toUpperCase()}
+          </T>
+          <Flip
+            flipped={!!reveal}
+            front={
+              <View style={{ borderWidth: 2, borderColor: c.ink, borderRadius: layout.radius, padding: space[5], backgroundColor: c.card }}>
+                <T v="h3">{`\u201c${step.moment}\u201d`}</T>
+              </View>
+            }
+            back={
+              <View style={{ borderWidth: 2, borderColor: c.ink, borderRadius: layout.radius, padding: space[5], backgroundColor: c.tint }}>
+                <T v="h3">{`\u201c${step.moment}\u201d`}</T>
+              </View>
+            }
+          />
+          {!reveal ? <Button label="Reveal the read" onPress={() => onAnswer(null)} disabled={disabled} testID="tool-moment-reveal" /> : null}
+        </View>
+      );
     case "read":
       return (
         <View style={{ gap: space[3] }}>
@@ -415,12 +475,12 @@ function Write({ step, reveal, onAnswer }: { step: Extract<ToolStep, { kind: "wr
       <Rich text={step.ask} v="h3" />
       {clock}
       {step.fields.map((f, i) => (
-        <Field key={f} label={f} area value={text[i]} editable={!reveal} onChangeText={(v) => setText((t) => t.map((x, j) => (j === i ? v : x)))} testID={`tool-write-${i}`} />
+        <Field key={f} label={f} area value={text[i]} editable={!reveal} placeholder={step.placeholder} onChangeText={(v) => setText((t) => t.map((x, j) => (j === i ? v : x)))} testID={`tool-write-${i}`} hint={step.min && !reveal ? `${Math.max(0, step.min - text.join("").trim().length) || "Ready"}${text.join("").trim().length < step.min ? " more characters" : ""}` : undefined} />
       ))}
       {!reveal ? (
         <Button
           label="Compare with the answer"
-          disabled={!text.some((t) => t.trim())}
+          disabled={step.min ? text.join("").trim().length < step.min : !text.some((t) => t.trim())}
           onPress={() => {
             setRunning(false);
             onAnswer(text);
@@ -428,6 +488,155 @@ function Write({ step, reveal, onAnswer }: { step: Extract<ToolStep, { kind: "wr
           testID="tool-submit"
         />
       ) : null}
+    </View>
+  );
+}
+
+/** OSCE: your overall call, one tap on 1 to max. */
+function Rate({ step, reveal, picked, onAnswer }: { step: Extract<ToolStep, { kind: "rate" }>; reveal: ToolReveal | null; picked: number | null; onAnswer: (a: unknown) => void }) {
+  const c = useTheme();
+  return (
+    <View style={{ gap: space[3] }}>
+      <T v="h3">{step.ask}</T>
+      <T v="small" tone="muted">
+        {step.label}
+      </T>
+      <View style={{ flexDirection: "row", gap: space[2] }} accessibilityRole="radiogroup" accessibilityLabel={step.label}>
+        {Array.from({ length: step.max }, (_, i) => {
+          const on = picked === i + 1;
+          return (
+            <Feel key={i} state={on && reveal ? "right" : "idle"} style={{ flex: 1 }}>
+              <Pressable
+                accessibilityRole="radio"
+                accessibilityState={{ selected: on }}
+                accessibilityLabel={`${i + 1} of ${step.max}`}
+                disabled={!!reveal}
+                onPress={() => {
+                  haptic.select();
+                  onAnswer(i + 1);
+                }}
+                testID={`tool-rate-${i + 1}`}
+                style={({ pressed }) => ({ minHeight: 64, alignItems: "center", justifyContent: "center", borderRadius: layout.radius, borderWidth: on ? 2 : 1.5, borderColor: on ? c.ink : c.cardLine, backgroundColor: on ? c.primary : pressed ? c.tint : "transparent", transform: [{ scale: pressed ? 0.96 : 1 }] })}
+              >
+                <T style={{ fontFamily: fonts.pixelDigits, fontSize: 22, lineHeight: 28, color: on ? c.onPrimary : c.ink }}>{String(i + 1)}</T>
+              </Pressable>
+            </Feel>
+          );
+        })}
+      </View>
+    </View>
+  );
+}
+
+/** MSE Level 4: the case, then one line per domain under a ten-minute clock that keeps the meaning without motion. */
+function FullMse({ step, reveal, onAnswer }: { step: Extract<ToolStep, { kind: "fullmse" }>; reveal: ToolReveal | null; onAnswer: (a: unknown) => void }) {
+  const c = useTheme();
+  const [text, setText] = React.useState<Record<string, string>>({});
+  const [left, setLeft] = React.useState(step.seconds);
+  React.useEffect(() => {
+    if (reveal) return;
+    const id = setInterval(() => setLeft((l) => (l <= 1 ? (clearInterval(id), 0) : l - 1)), 1000);
+    return () => clearInterval(id);
+  }, [reveal]);
+  const filled = step.domains.filter((d) => (text[d] ?? "").trim()).length;
+  const urgent = left < 120;
+  return (
+    <View style={{ gap: space[3] }}>
+      <View style={{ gap: space[2] }}>
+        <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between" }}>
+          <T style={{ fontFamily: fonts.pixelDigits, fontSize: 32, lineHeight: 40, color: urgent ? c.danger : c.ink }} num accessibilityRole="timer" accessibilityLabel={`${Math.floor(left / 60)} minutes ${left % 60} seconds left`}>
+            {`${Math.floor(left / 60)}:${String(left % 60).padStart(2, "0")}`}
+          </T>
+          <T v="small" tone="muted" num>{`${filled} of ${step.domains.length} domains`}</T>
+        </View>
+        <ProgressLine value={(left / step.seconds) * 100} height={4} />
+      </View>
+      <Story kicker={step.ask}>
+        <T v="reading">{step.context}</T>
+      </Story>
+      {step.domains.map((d) => (
+        <Field key={d} label={formatDomainKey(d)} value={text[d] ?? ""} editable={!reveal} placeholder="e.g. flat, congruent" onChangeText={(v) => setText((t) => ({ ...t, [d]: v }))} testID={`tool-mse-${d}`} />
+      ))}
+      {!reveal ? <Button label={left === 0 ? "Time's up: submit" : "Submit MSE"} disabled={!filled} onPress={() => onAnswer(text)} testID="tool-submit" /> : null}
+    </View>
+  );
+}
+
+const LIGHT_WORD = { green: "Matched", amber: "Fair", red: "Missed" } as const;
+
+/** MSE Level 4 result: each domain in a word and a colour, your words next to the expert's. */
+function Lights({ reveal, seed }: { reveal: ToolReveal; seed: number }) {
+  const c = useTheme();
+  const rows = reveal.domains ?? [];
+  const green = rows.filter((r) => r.light === "green").length;
+  const amber = rows.filter((r) => r.light === "amber").length;
+  return (
+    <View style={{ gap: space[3] }} testID="tool-lights">
+      <Verdict right={reveal.score >= 0.6} partial={reveal.score > 0 && reveal.score < 0.6} title={`${green} of ${rows.length} domains matched${amber ? `, ${amber} fair` : ""}`} why={reveal.why} seed={seed} />
+      <Stagger>
+        <RowList still>
+          {rows.map((r) => (
+            <View key={r.domain} style={{ paddingVertical: space[3], gap: 2 }} accessible accessibilityLabel={`${r.domain}: ${LIGHT_WORD[r.light]}`}>
+              <View style={{ flexDirection: "row", alignItems: "center", gap: space[2] }}>
+                <View style={{ width: 10, height: 10, borderRadius: 5, backgroundColor: r.light === "green" ? c.successFg : r.light === "amber" ? c.link : c.danger }} />
+                <T v="bodyStrong" style={{ flex: 1 }}>
+                  {r.domain}
+                </T>
+                <T v="caption" style={{ color: r.light === "green" ? c.successFg : r.light === "amber" ? c.link : c.danger }}>
+                  {LIGHT_WORD[r.light].toUpperCase()}
+                </T>
+              </View>
+              <T v="small">{`You: ${r.you.length ? r.you.join(", ") : "(none)"}`}</T>
+              <T v="small" tone="muted">{`Expert: ${r.expert.length ? r.expert.join(", ") : "no finding"}`}</T>
+            </View>
+          ))}
+        </RowList>
+      </Stagger>
+    </View>
+  );
+}
+
+/** Level 1: say plainly when a label slipped in. */
+function ObserveLine({ o }: { o: { labels: string[]; observations: number; words: number } }) {
+  return (
+    <View style={{ gap: space[1] }} testID="tool-observe">
+      {o.labels.length ? (
+        <T v="bodyStrong" tone="danger">{`Labels slipped in: ${o.labels.join(", ")}. Describe the behaviour instead.`}</T>
+      ) : (
+        <T v="bodyStrong">{o.words >= 80 ? "No labels. A full description." : "No labels. Aim for about 100 words."}</T>
+      )}
+      <T v="small" tone="muted" num>{`${o.words} words · ${o.observations} observation words`}</T>
+    </View>
+  );
+}
+
+/** Formulation: the model's words you used and the ones you missed, as chips. A diff, not a grade. */
+function DiffWords({ diff }: { diff: { missing: string[]; present: string[] } }) {
+  const c = useTheme();
+  const chip = (w: string, got: boolean) => (
+    <View key={`${got}-${w}`} style={{ minHeight: 28, paddingHorizontal: space[2], borderRadius: 14, justifyContent: "center", borderWidth: 1.5, borderColor: got ? c.ink : c.cardLine, backgroundColor: got ? c.successBg : "transparent" }}>
+      <T v="small" style={{ color: got ? c.successFg : c.muted }}>
+        {w}
+      </T>
+    </View>
+  );
+  return (
+    <View style={{ gap: space[3] }} testID="tool-diff">
+      <View style={{ gap: space[1] }}>
+        <T v="caption" tone="muted">
+          WORDS YOU GOT
+        </T>
+        <View style={{ flexDirection: "row", flexWrap: "wrap", gap: space[1] }}>{diff.present.length ? diff.present.map((w) => chip(w, true)) : <T v="small" tone="muted">(none yet)</T>}</View>
+      </View>
+      <View style={{ gap: space[1] }}>
+        <T v="caption" tone="muted">
+          WORDS YOU MISSED
+        </T>
+        <View style={{ flexDirection: "row", flexWrap: "wrap", gap: space[1] }}>{diff.missing.length ? diff.missing.map((w) => chip(w, false)) : <T v="small" tone="muted">(none, excellent)</T>}</View>
+      </View>
+      <T v="small" tone="muted">
+        This is a diff, not a grade. The structure is the skill.
+      </T>
     </View>
   );
 }
