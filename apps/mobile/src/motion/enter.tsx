@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Platform, type StyleProp, type ViewStyle } from "react-native";
-import Animated, { FadeIn, FadeInDown, FadeOut, FadeOutUp, LinearTransition, useReducedMotion, withSpring, withTiming, ZoomIn } from "react-native-reanimated";
+import Animated, { FadeIn, FadeInDown, FadeOut, FadeOutUp, LinearTransition, useReducedMotion, withDelay, withSpring, withTiming, ZoomIn } from "react-native-reanimated";
 
 import { curves, dur, shift, springs, stagger } from "./tokens";
 
@@ -74,6 +74,53 @@ export const presets = {
       return {
         initialValues: { opacity: 0, transform: [{ translateY: 16 }] },
         animations: { opacity: withTiming(1, { duration: 120, easing: curves.out }), transform: [{ translateY: withSpring(0, springs.smooth) }] },
+      };
+    }),
+  /**
+   * Screen choreography, part 1: the header (title and lead line) arrives
+   * first, fading in and lifting 10px into place, 220ms. `low`: the fade only.
+   */
+  head: (low = false) =>
+    cached(`head${low}`, () => () => {
+      "worklet";
+      const t = { duration: low ? dur.state : 220, easing: curves.out };
+      return low
+        ? { initialValues: { opacity: 0 }, animations: { opacity: withTiming(1, t) } }
+        : { initialValues: { opacity: 0, transform: [{ translateY: 10 }] }, animations: { opacity: withTiming(1, t), transform: [{ translateY: withTiming(0, t) }] } };
+    }),
+  /**
+   * Screen choreography, part 2: the body follows the header 70ms later,
+   * fading in and lifting 8px, 240ms, so the whole screen has landed by
+   * ~310ms (the native slide is 320). `low`: a fade only, 40ms after.
+   */
+  body: (low = false) =>
+    cached(`body${low}`, () => () => {
+      "worklet";
+      const t = { duration: low ? dur.state : 240, easing: curves.out };
+      const delay = low ? 40 : 70;
+      return low
+        ? { initialValues: { opacity: 0 }, animations: { opacity: withDelay(delay, withTiming(1, t)) } }
+        : {
+            initialValues: { opacity: 0, transform: [{ translateY: shift.swapIn }] },
+            animations: { opacity: withDelay(delay, withTiming(1, t)), transform: [{ translateY: withDelay(delay, withTiming(0, t)) }] },
+          };
+    }),
+  /**
+   * Continuity from a list row to its page: the page's title starts where the
+   * row's title was on screen (`fromY`, window coordinates) and glides into its
+   * own place while the page slides in, a little smaller and lighter at first,
+   * so the row reads as having opened into the page. The distance is capped at
+   * 160px so a row near the bottom never flies across the screen.
+   */
+  fromRow: (fromY: number) =>
+    // Rows sit at many heights: kept in 8px steps so the cache stays small.
+    cached(`fromRow${Math.round(fromY / 8) * 8}`, () => (values: { targetGlobalOriginY: number }) => {
+      "worklet";
+      const dy = Math.max(-160, Math.min(160, fromY - values.targetGlobalOriginY));
+      const move = springs.morph;
+      return {
+        initialValues: { opacity: 0.35, transform: [{ translateY: dy }, { scale: 0.94 }] },
+        animations: { opacity: withTiming(1, { duration: dur.state, easing: curves.out }), transform: [{ translateY: withSpring(0, move) }, { scale: withSpring(1, move) }] },
       };
     }),
   /** A toast rising in from the bottom edge: 12px and a fade, 180ms. */

@@ -32,6 +32,8 @@ export const springs = {
   room: { stiffness: 140, damping: 16, mass: 0.8 },
   /** A dragged card springing back to its place. */
   dropBack: { stiffness: 220, damping: 18, mass: 1 },
+  /** A row's title gliding into its page's title (list to detail continuity): quick, no overshoot. */
+  morph: { stiffness: 420, damping: 40, mass: 0.8 },
   /** A bar or switch filling on or off (strength meter, toggles). */
   toggle: { stiffness: 260, damping: 18, mass: 1 },
 } as const;

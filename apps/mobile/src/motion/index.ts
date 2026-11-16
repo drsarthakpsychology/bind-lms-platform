@@ -10,7 +10,8 @@
  *   progress   ProgressRing, ProgressFill, useFill
  *   burst      Burst, Confetti, Stamp       success moments
  *   tabbar     MotionTabBar, tabSceneOptions
- *   stack      stackMotion, modalMotion, fadeMotion
+ *   stack      useStackMotion, routeMotion   push, sheet, overlay, play per route
+ *   continuity useFromRow, continuity     list row title glides into its page
  *   refresh    useRefresh                   pull to refresh
  *   wins       useNewWins                   celebrate each win once
  *   swap       Swap                         keyed content swaps with no blank frame
@@ -42,3 +43,4 @@ export * from "./mask";
 export * from "./tier";
 export * from "./sprite";
 export * from "./celebrate";
+export * from "./continuity";
