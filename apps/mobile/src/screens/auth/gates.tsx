@@ -10,7 +10,7 @@ import { PinPad, type PinTone } from "@/auth/PinPad";
 import { Button, EmptyState, T, Wordmark } from "@/ds";
 import { BRAND } from "@/lib/brand";
 import { haptic } from "@/lib/haptics";
-import { Burst, springs } from "@/motion";
+import { Burst, springs, Swap } from "@/motion";
 import { layout, space, useTheme } from "@/theme";
 import { Icon, Star } from "@/visitor/Art";
 
@@ -117,11 +117,11 @@ export function SetPinScreen() {
   return (
     <Gate testID="set-pin" art={<PinArt win={tone === "success" ? 1 : 0} />} footer={first !== null && !busy ? <Button kind="text" full label="Start again" onPress={() => { setFirst(null); setValue(""); setError(null); }} /> : null}>
       <View style={{ alignItems: "center", gap: space[2], marginBottom: space[6] }}>
-        <Animated.View key={busy ? "done" : first === null ? "one" : "two"} entering={FadeInDown.duration(220)}>
+        <Swap k={busy ? "done" : first === null ? "one" : "two"}>
           <T v="h1" center>
             {busy ? "All set" : first === null ? "Choose a PIN" : "Enter it once more"}
           </T>
-        </Animated.View>
+        </Swap>
         <T tone={error ? "danger" : "muted"} center accessibilityLiveRegion="polite">
           {busy ? "Opening your app." : (error ?? (first === null ? "Four digits. You will use it each time you open the app." : "So we know it is the one you meant."))}
         </T>

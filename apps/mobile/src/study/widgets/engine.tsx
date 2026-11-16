@@ -1,14 +1,14 @@
 import { ChevronLeft, ChevronRight } from "lucide-react-native";
 import * as React from "react";
 import { Pressable, View } from "react-native";
-import Animated, { FadeIn, useReducedMotion } from "react-native-reanimated";
 import { G } from "react-native-svg";
 
 import { Chips } from "@/ds/parts";
 import { T } from "@/ds/text";
 import { haptic } from "@/lib/haptics";
+import { Swap } from "@/motion";
 import { Arrow, C, E, Label, R, SketchSheet, fit, plain, wrap } from "@/sketch/ink";
-import { layout, motion, space, useTheme } from "@/theme";
+import { layout, space, useTheme } from "@/theme";
 import { Rich } from "../rich";
 import { WidgetFrame } from "./frame";
 
@@ -132,11 +132,10 @@ export function StepPicker({ steps, i, onPick }: { steps: { name: string }[]; i:
 
 /** The words for the current step: fades in on change, read out by screen readers. */
 export function StepText({ text, k }: { text: string; k: string }) {
-  const reduce = useReducedMotion();
   return (
-    <Animated.View key={k} entering={reduce ? undefined : FadeIn.duration(motion.state)} accessibilityLiveRegion="polite">
+    <Swap k={k} accessibilityLiveRegion="polite">
       <Rich text={text} v="reading" />
-    </Animated.View>
+    </Swap>
   );
 }
 
