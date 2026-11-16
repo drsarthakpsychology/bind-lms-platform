@@ -109,8 +109,10 @@ function FlipCard({ lay, term, i }: { lay: string; term: string; i: number }) {
 
 /** The short version, split into a few lines the way the website shows it. */
 function points(text: string, max: number): string[] {
-  const parts = text
-    .split(/(?<=[.!?])\s+(?=[A-Z0-9])/)
+  // No lookbehind: older Hermes builds do not have it.
+  const parts = String(text ?? "")
+    .replace(/([.!?])\s+(?=[A-Z0-9])/g, "$1\n")
+    .split("\n")
     .map((x) => x.trim())
     .filter(Boolean);
   return parts.length > max ? [...parts.slice(0, max - 1), parts.slice(max - 1).join(" ")] : parts;

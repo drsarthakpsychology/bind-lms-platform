@@ -79,6 +79,17 @@ export function resolveVars(svg: string, palette: Record<string, string>): strin
   return svg.replace(/var\((--[a-z0-9-]+)(?:\s*,\s*[^)]*)?\)/gi, (_, name: string) => palette[name] ?? palette["--f-ink"]);
 }
 
+/**
+ * react-native-svg on Android closes the whole app (a Java exception while
+ * drawing) on two things the website's figures use: marker
+ * orient="auto-start-reverse" (it parses anything but "auto" as a number) and
+ * web pointer-events values such as "visibleStroke". The app cannot draw
+ * them anyway, so they are turned into what it understands.
+ */
+export function nativeSafe(svg: string): string {
+  return svg.replace(/\sorient="auto-start-reverse"/g, ' orient="auto"').replace(/\spointer-events="(?!none"|auto"|box-none"|box-only")[^"]*"/g, "");
+}
+
 export async function figureData(id: string): Promise<Figure | null> {
   const f = FIGURES[id];
   if (!f) return null;
@@ -87,6 +98,6 @@ export async function figureData(id: string): Promise<Figure | null> {
   const { renderToStaticMarkup } = await import("react-dom/server");
   const inner = renderToStaticMarkup(createElement("g", null, art));
   const doc = (theme: "light" | "dark") =>
-    resolveVars(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="${f.viewBox}">${inner}</svg>`, figurePalette(theme));
+    nativeSafe(resolveVars(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="${f.viewBox}">${inner}</svg>`, figurePalette(theme)));
   return { v: 1, id: f.id, title: f.title, summary: f.summary, viewBox: f.viewBox, labels: f.labels.map((l) => ({ ...l })), svg: { light: doc("light"), dark: doc("dark") } };
 }

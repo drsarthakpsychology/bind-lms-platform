@@ -91,8 +91,13 @@ function learnPathFor(web: string | undefined): string | null {
 }
 
 /** Open whatever a row, a button or a notification points at. */
-export function openTarget(t: AppTarget): void {
-  const href = hrefFor(t);
+export function openTarget(t: AppTarget | null | undefined): void {
+  let href: string | null = null;
+  try {
+    href = t && typeof t === "object" ? hrefFor(t) : null;
+  } catch {
+    href = null;
+  }
   if (href) router.push(href);
   else toast.show("This part arrives in the next update of the app.");
 }
