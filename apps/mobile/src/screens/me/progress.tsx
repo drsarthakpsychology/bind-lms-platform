@@ -1,4 +1,5 @@
-import { Stack } from "expo-router";
+import { router, Stack } from "expo-router";
+import { Map as MapIcon } from "lucide-react-native";
 import * as React from "react";
 import { View } from "react-native";
 import Animated, { useAnimatedStyle } from "react-native-reanimated";
@@ -59,6 +60,7 @@ function Topics({ items }: { items: TopicScore[] }) {
 
 /** Where you stand: numbers in one row, the last two weeks, then your topics. */
 export function ProgressBody({ p }: { p: Progress }) {
+  const c = useTheme();
   const lect = p.lectures.reduce((a, l) => ({ done: a.done + l.completed, total: a.total + l.total }), { done: 0, total: 0 });
   return (
     <>
@@ -83,6 +85,11 @@ export function ProgressBody({ p }: { p: Progress }) {
         <Section title="Last two weeks">
           <Days days={p.days} />
         </Section>
+      ) : null}
+      {p.study ? (
+        <RowList>
+          <Row testID="progress-map" icon={<MapIcon size={20} color={c.ink} />} title="Your full map" meta="Every topic and how well you know it" onPress={() => router.push("/map")} />
+        </RowList>
       ) : null}
       {p.strengths?.hasData ? (
         <>

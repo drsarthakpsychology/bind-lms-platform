@@ -1,5 +1,5 @@
 import { router } from "expo-router";
-import { Plus } from "lucide-react-native";
+import { MessagesSquare, Plus } from "lucide-react-native";
 import * as React from "react";
 
 import type { DoubtRow } from "@/api/contract";
@@ -30,17 +30,24 @@ function DoubtsBody() {
         onChange={setMine}
       />
       <Loaded q={q} what="doubts">
-        {(d) =>
-          d.items.length ? (
-            <RowList>
-              {d.items.map((x) => (
-                <Row key={x.id} testID={`doubt-${x.id}`} title={x.title} meta={doubtMeta(x)} trailing={x.status === "solved" ? <SolvedWord color={c.link} /> : undefined} onPress={() => router.push(`/doubt/${encodeURIComponent(x.id)}`)} />
-              ))}
-            </RowList>
-          ) : (
-            <EmptyState title={mine === "mine" ? "You have not asked anything yet" : "No doubts yet"} body="Ask about anything from the lectures or the reading. The faculty and your batch answer here." testID="doubts-empty" />
-          )
-        }
+        {(d) => (
+          <>
+            {d.wall ? (
+              <RowList>
+                <Row testID="doubts-wall" icon={<MessagesSquare size={20} color={c.ink} />} title="Class wall" meta="Talk with your batch, with or without your name" onPress={() => router.push("/wall")} />
+              </RowList>
+            ) : null}
+            {d.items.length ? (
+              <RowList>
+                {d.items.map((x) => (
+                  <Row key={x.id} testID={`doubt-${x.id}`} title={x.title} meta={doubtMeta(x)} trailing={x.status === "solved" ? <SolvedWord color={c.link} /> : undefined} onPress={() => router.push(`/doubt/${encodeURIComponent(x.id)}`)} />
+                ))}
+              </RowList>
+            ) : (
+              <EmptyState title={mine === "mine" ? "You have not asked anything yet" : "No doubts yet"} body="Ask about anything from the lectures or the reading. The faculty and your batch answer here." testID="doubts-empty" />
+            )}
+          </>
+        )}
       </Loaded>
     </>
   );

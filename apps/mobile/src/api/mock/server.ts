@@ -24,6 +24,7 @@ import type * as X from "../extra";
 import * as xf from "./extra-fixtures";
 import * as fx from "./fixtures";
 import { learnRoute, noteMarkedRead, resetLearnMock } from "./learn-fixtures";
+import { mapWallRoute, resetMapWallMock } from "./map-wall-fixtures";
 import { publicHome } from "./public-home";
 
 /*
@@ -66,6 +67,7 @@ export const mock = {
     practiseMock?.resetPractiseMock();
     adminMock.reset();
     resetLearnMock();
+    resetMapWallMock();
   },
   setScenario(s: Scenario) {
     state.scenario = s;
@@ -266,7 +268,7 @@ async function route(req: RawRequest): Promise<RawResponse> {
     const items = doubtRows()
       .filter((d) => (query.mine ? d.mine : true))
       .map(({ body: _b, replies, ...d }) => ({ ...d, replies: replies.length }));
-    return ok<C.DoubtList>({ items, nextCursor: null, cohorts: [{ id: "c2", name: "Cohort Two" }], ready: true });
+    return ok<C.DoubtList>({ items, nextCursor: null, cohorts: [{ id: "c2", name: "Cohort Two" }], ready: true, wall: kind !== "lecture" });
   }
   if (is("POST", "/doubts")) {
     const title = String(body.title ?? "").trim();
@@ -303,6 +305,10 @@ async function route(req: RawRequest): Promise<RawResponse> {
     d.status = body.replyId ? "solved" : "open";
     return ok<C.DoubtActionResult>({ thread: d });
   }
+
+  /* ------------------------------------------------- map and class wall */
+  const mw = mapWallRoute(req.method, path, body, query, kind, { empty: isNew || state.scenario === "empty" });
+  if (mw) return mw;
 
   /* ------------------------------------------------------------- study */
   const learn = learnRoute(req.method, path, body, kind, { empty: isNew || state.scenario === "empty" });
