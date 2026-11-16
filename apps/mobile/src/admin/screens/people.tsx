@@ -128,22 +128,31 @@ function PersonLine({ p, onPress }: { p: PersonRow; onPress: () => void }) {
   return <Row testID={`person-${p.key}`} title={p.name} meta={[follow, p.source, p.paid ? "Paid" : null].filter(Boolean).join(" · ") || p.email} trailing={<Status tone={stageTone(p.stage)}>{STAGE_LABEL[p.stage]}</Status>} onPress={onPress} />;
 }
 
-function Pipeline({ initialView }: { initialView: PeopleView }) {
+type Picked = { picked: Set<string>; setPicked: React.Dispatch<React.SetStateAction<Set<string>>>; sheet: "email" | "whatsapp" | null; setSheet: (s: "email" | "whatsapp" | null) => void };
+
+function Pipeline({ initialView, picked, setPicked, sheet, setSheet }: { initialView: PeopleView } & Picked) {
   const c = useTheme();
   const { canWrite } = useAdminRole();
   const { run, busy } = useAdminAction();
   const [view, setView] = React.useState<PeopleView>(initialView);
   const [search, setSearch] = React.useState("");
-  const q = usePeople(view, search.trim());
+  // The server searches: ask once typing pauses, not on every letter (each ask reads up to 500 people).
+  const [asked, setAsked] = React.useState("");
+  React.useEffect(() => {
+    const t = setTimeout(() => setAsked(search.trim()), 300);
+    return () => clearTimeout(t);
+  }, [search]);
+  const q = usePeople(view, asked);
   const [wa, setWa] = React.useState<{ key: string; name: string; url: string | null }[] | null>(null);
-  const [waText, setWaText] = React.useState(false);
-  const [picked, setPicked] = React.useState<Set<string>>(new Set());
-  const [contact, setContact] = React.useState(false);
+  const contact = sheet === "email";
+  const waText = sheet === "whatsapp";
+  const setContact = (on: boolean) => setSheet(on ? "email" : null);
+  const setWaText = (on: boolean) => setSheet(on ? "whatsapp" : null);
   return (
     <Loaded q={q} soon what="the pipeline" skeleton={<RowsSkeleton rows={6} />}>
       {(d) => {
         // The server filters by view and search; an older answer without counts is filtered here.
-        const needle = search.trim().toLowerCase();
+        const needle = asked.toLowerCase();
         const serverSide = d.counts && Object.keys(d.counts).length > 0;
         const shown = serverSide ? d.items : d.items.filter((p) => inPeopleView(p, view) && (!needle || `${p.name} ${p.email} ${p.phone ?? ""}`.toLowerCase().includes(needle)));
         const count = (v: PeopleView) => (serverSide ? (d.counts?.[v] ?? 0) : d.items.filter((p) => inPeopleView(p, v)).length);
@@ -200,14 +209,6 @@ function Pipeline({ initialView }: { initialView: PeopleView }) {
             ) : (
               <EmptyState mood="empty" title="Nobody here" body={view === "all" ? "People who enquire show here." : "No one is in this view right now."} />
             )}
-            {picked.size ? (
-              <View style={{ paddingTop: space[2] }}>
-                <ActionBar count={picked.size} onClear={() => setPicked(new Set())} testID="people-bar">
-                  <SmallButton label="Email them" icon={<Mail size={18} color={c.ink} />} onPress={() => setContact(true)} testID="people-email" />
-                  <SmallButton label="WhatsApp" icon={<MessageCircle size={18} color={c.ink} />} onPress={() => setWaText(true)} testID="people-whatsapp" />
-                </ActionBar>
-              </View>
-            ) : null}
             <ContactSheet
               open={contact}
               onClose={() => setContact(false)}
@@ -301,12 +302,30 @@ function Enquiries() {
 
 /** People: who to contact next. Quick views, search, and email several at once. */
 export function AdminPeopleScreen() {
+  const c = useTheme();
   const params = useLocalSearchParams<{ tab?: string; view?: string }>();
+  // Picked people and their action bar live here, so the bar is the pinned footer (it sat under the whole list).
+  const [picked, setPicked] = React.useState<Set<string>>(new Set());
+  const [sheet, setSheet] = React.useState<"email" | "whatsapp" | null>(null);
   const [tab, setTab] = React.useState<"pipeline" | "enquiries">(params.tab === "enquiries" ? "enquiries" : "pipeline");
   const { refresh, refreshing } = useRefreshAdmin();
   const initialView = (PEOPLE_VIEWS.some((v) => v.id === params.view) ? params.view : "all") as PeopleView;
   return (
-    <Screen title="People" testID="admin-people" gap={space[4]} onRefresh={refresh} refreshing={refreshing}>
+    <Screen
+      title="People"
+      testID="admin-people"
+      gap={space[4]}
+      onRefresh={refresh}
+      refreshing={refreshing}
+      footer={
+        tab === "pipeline" && picked.size ? (
+          <ActionBar count={picked.size} onClear={() => setPicked(new Set())} testID="people-bar">
+            <SmallButton label="Email them" icon={<Mail size={18} color={c.ink} />} onPress={() => setSheet("email")} testID="people-email" />
+            <SmallButton label="WhatsApp" icon={<MessageCircle size={18} color={c.ink} />} onPress={() => setSheet("whatsapp")} testID="people-whatsapp" />
+          </ActionBar>
+        ) : undefined
+      }
+    >
       <ScrollTabs
         tabs={[
           { id: "pipeline" as const, name: "Pipeline" },
@@ -316,7 +335,7 @@ export function AdminPeopleScreen() {
         onChange={setTab}
       />
       <TabSwap tabs={[{ id: "pipeline" as const }, { id: "enquiries" as const }]} value={tab} gap={space[4]}>
-        {tab === "pipeline" ? <Pipeline initialView={initialView} /> : <Enquiries />}
+        {tab === "pipeline" ? <Pipeline initialView={initialView} picked={picked} setPicked={setPicked} sheet={sheet} setSheet={setSheet} /> : <Enquiries />}
       </TabSwap>
     </Screen>
   );
