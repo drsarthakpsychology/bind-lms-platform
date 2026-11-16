@@ -2,7 +2,7 @@ import { File, Paths } from "expo-file-system";
 import { Stack, useLocalSearchParams } from "expo-router";
 import { useVideoPlayer, VideoView } from "expo-video";
 import * as React from "react";
-import { Image, Linking, PixelRatio, Pressable, ScrollView, useWindowDimensions, View } from "react-native";
+import { Image, PixelRatio, Pressable, ScrollView, useWindowDimensions, View } from "react-native";
 
 import { pdfPages, type RenderedPage } from "../../../modules/pdf-pages/src";
 import { reasonOf } from "@/api/errors";
@@ -13,6 +13,7 @@ import { Button, EmptyState, Loaded, RowsSkeleton, Screen, Skeleton, T } from "@
 import { config } from "@/lib/config";
 import { haptic } from "@/lib/haptics";
 import { OnceHint } from "@/lib/once";
+import { openLink } from "@/lib/open";
 import { fixed, layout, space, useTheme } from "@/theme";
 
 /**
@@ -220,10 +221,10 @@ export function MaterialBody({ m }: { m: Material }) {
       {view === "link" ? (
         <View style={{ gap: space[3] }}>
           <T tone="muted">This material is a page on another website.</T>
-          <Button kind="quiet" label="Open the link" onPress={() => m.url && void Linking.openURL(m.url)} />
+          <Button kind="quiet" label="Open the link" onPress={() => m.url && void openLink(m.url)} />
         </View>
       ) : null}
-      {view === "other" ? <EmptyState title="Open this one on the website" body="The app shows PDFs, pictures, audio and video. This kind of file opens on the website for now." action={{ label: "Open on the website", onPress: () => void Linking.openURL(config.site) }} /> : null}
+      {view === "other" ? <EmptyState title="Open this one on the website" body="The app shows PDFs, pictures, audio and video. This kind of file opens on the website for now." action={{ label: "Open on the website", onPress: () => void openLink(config.site) }} /> : null}
       {view === "pdf" ? (
         <OnceHint id="material-pdf" v="caption" tone="muted">
           Tap a page to zoom. Nothing is saved on your phone.
