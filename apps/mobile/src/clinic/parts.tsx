@@ -1,10 +1,11 @@
 import { CalendarClock, Hospital, MonitorPlay, Sunrise, Users } from "lucide-react-native";
 import * as React from "react";
-import { Linking, Pressable, View } from "react-native";
+import { Pressable, View } from "react-native";
 
 import { Status } from "@/admin/kit";
 import type { Tone } from "@/admin/format";
-import { T, toast } from "@/ds";
+import { T } from "@/ds";
+import { openLink as open } from "@/lib/open";
 import { haptic } from "@/lib/haptics";
 import { layout, space, useAccent, useTheme } from "@/theme";
 import type { AttendState, ClinicSession, LeaveStatus, OpdVisitStatus, RosterState, SessionKind } from "./contract";
@@ -25,7 +26,7 @@ export const VisitWord = ({ s }: { s: OpdVisitStatus }) => <Status tone={VISIT_T
 /** Opens an online class link; a bad link says so instead of failing quietly. */
 export function openLink(url: string) {
   haptic.tap();
-  void Linking.openURL(url).catch(() => toast.show("That link did not open. Ask the admin for it."));
+  void open(url);
 }
 
 /**

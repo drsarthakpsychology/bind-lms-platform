@@ -148,7 +148,7 @@ function Weekly({ t, canWrite, cohorts, cohortId }: { t: Timetable; canWrite: bo
             <View>
               {rows.map((s) => (
                 <View key={s.id} style={{ borderTopWidth: 1, borderColor: c.hairline }}>
-                  <SessionLine s={{ ...s, date: "", status: "scheduled", note: null, mine: null, batch: null }} testID={`slot-${s.id}`} trailing={cohorts.length > 1 ? <T v="small" tone="muted">{cohorts.filter((x) => s.cohortIds.includes(x.id)).map((x) => x.name).join(", ")}</T> : undefined} />
+                  <SessionLine s={{ ...s, date: "", status: "scheduled", note: null, mine: null, batch: null }} testID={`slot-${s.id}`} trailing={s.cohortIds.length > 1 ? <T v="small" tone="muted">{cohorts.filter((x) => s.cohortIds.includes(x.id)).map((x) => x.name).join(", ")}</T> : undefined} />
                   {canWrite ? (
                     <View style={{ flexDirection: "row", gap: space[2], marginLeft: 48, paddingBottom: space[3] }}>
                       <SmallButton label="Change" onPress={() => setEdit(s)} testID={`slot-${s.id}-edit`} />

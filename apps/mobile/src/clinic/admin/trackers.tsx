@@ -75,7 +75,7 @@ export function AdminTrackersScreen() {
                         title={s.name}
                         meta={`${s.attendancePct === null ? "No sessions yet" : `${s.attendancePct}% attendance`} · ${s.casesDone} of ${s.opdTotal} cases · ${s.visits} visits${s.absences ? ` · ${s.absences} absent` : ""}`}
                         trailing={s.unsubmitted ? <Tag tone="warn">{`${s.unsubmitted} to log`}</Tag> : undefined}
-                        below={<Meter pct={cp} label={`${s.name}: ${cp}% of cases`} />}
+                        below={<Meter pct={cp} label={`${cp}%`} />}
                         onPress={() => openStudent(s.studentId)}
                       />
                     );

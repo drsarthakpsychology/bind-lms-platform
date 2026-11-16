@@ -84,7 +84,7 @@ export function AdminClinicScreen() {
                 <SessionList>
                   {d.sessions.map((s) => (
                     <View key={s.id} style={{ paddingBottom: space[3] }}>
-                      <SessionLine s={s} onPress={() => openSession(s.id)} testID={`a-s-${s.id}`} trailing={<T v="small" tone="muted" num>{s.counts.expected ? `${s.counts.in + s.counts.out}/${s.counts.expected}` : ""}</T>} />
+                      <SessionLine s={s} onPress={() => openSession(s.id)} testID={`a-s-${s.id}`} trailing={null} />
                       <T v="small" tone="muted" num style={{ marginLeft: 48, marginTop: -space[2] }}>
                         {countsLine(s)}
                       </T>

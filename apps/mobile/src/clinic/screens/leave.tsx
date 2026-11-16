@@ -11,7 +11,7 @@ import { AreaProvider, layout, space, useTheme } from "@/theme";
 import { clinicCalls, clinicKeys, useLeave } from "../api";
 import { ClinicLoaded } from "../loaded";
 import type { ClinicSession, LeavePage, LeaveRequest } from "../contract";
-import { canLeaveEarly, dateLabel, leavesLine, minutesOf, parseClock, rangeLabel, relDay, requestTitle, sessionTitle, timeLabel, todayIST } from "../logic";
+import { canLeaveEarly, dateLabel, minutesOf, parseClock, rangeLabel, relDay, requestTitle, sessionTitle, timeLabel, todayIST } from "../logic";
 import { LeaveWord } from "../parts";
 
 /** A whole-row tick: the row is the target (56px), the box shows the state. */
@@ -237,9 +237,11 @@ export function LeaveScreen() {
                   {p.pending ? <Stat value={String(p.pending)} label="Waiting" /> : null}
                   <Stat value={String(p.allowance)} label="In all" />
                 </View>
-                <T v="small" tone={p.left <= 0 ? "alert" : "muted"} testID="leave-left-line">
-                  {p.left <= 0 ? "No leaves left. You can still ask; the admin decides." : leavesLine(p.left)}
-                </T>
+                {p.left <= 0 ? (
+                  <T v="small" tone="alert" testID="leave-left-line">
+                    No leaves left. You can still ask; the admin decides.
+                  </T>
+                ) : null}
               </View>
               <View style={{ gap: space[2] }}>
                 <Button label="Ask for leave" onPress={() => setSheet("ask")} testID="leave-ask" />
