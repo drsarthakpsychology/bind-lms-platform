@@ -28,7 +28,7 @@ export function applyMockFromUrl(): void {
   const s = q.get("mock");
   if (s) mock.setScenario(s as Scenario);
   if (q.get("stress") === "1") mock.setStress(true);
-  // With ?as= the delay starts after the quick sign-in (applyDevSession), so it times only the screen's own calls.
+  // With ?as= the delay is set in applyDevSession.
   const delay = Number(q.get("delay"));
   if (delay > 0 && !q.get("as")) mock.setDelay(delay);
   (window as unknown as { __vibhaCalls?: () => { method: string; path: string; at: number }[] }).__vibhaCalls = () => mock.log().map((c) => ({ method: c.method, path: c.path, at: c.at ?? 0 }));
@@ -44,6 +44,9 @@ export async function applyDevSession(session: { signIn: (e: string, p: string) 
   // The "paused" and "update" scenarios refuse sign-in; sign in on the default and switch after.
   const scenario = q.get("mock") as Scenario | null;
   mock.setScenario("default");
+  // The delay covers the sign-in too, so a call made the moment the account opens is timed fairly.
+  const delay = Number(q.get("delay"));
+  if (delay > 0) mock.setDelay(delay);
   await session.signIn(`${as}@example.com`, "mock-password");
   if (q.get("pin") === "0") return;
   await session.choosePin("2580");
@@ -52,8 +55,6 @@ export async function applyDevSession(session: { signIn: (e: string, p: string) 
     return;
   }
   if (scenario) mock.setScenario(scenario);
-  const delay = Number(q.get("delay"));
-  if (delay > 0) mock.setDelay(delay);
   // Speed checks time a screen from here (the account is open).
   if (typeof performance !== "undefined" && typeof performance.mark === "function") performance.mark("vibha-open");
   if (q.get("lock") === "1") session.lock();
