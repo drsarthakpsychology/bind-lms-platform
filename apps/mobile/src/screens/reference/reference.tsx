@@ -159,11 +159,11 @@ function Pills({ items, onPress }: { items: { key: string; label: string }[]; on
     <View style={{ flexDirection: "row", flexWrap: "wrap", gap: space[2] }}>
       {items.map((x) =>
         onPress ? (
-          <Press key={x.key} onPress={() => onPress(x.key)} accessibilityRole="link" innerStyle={{ minHeight: layout.target, justifyContent: "center", paddingHorizontal: space[4], borderRadius: layout.radius, borderWidth: 1.5, borderColor: c.cardLine, backgroundColor: c.card }}>
+          <Press key={x.key} onPress={() => onPress(x.key)} accessibilityRole="link" style={{ maxWidth: "100%" }} innerStyle={{ minHeight: layout.target, justifyContent: "center", paddingHorizontal: space[4], paddingVertical: space[2], borderRadius: layout.radius, borderWidth: 1.5, borderColor: c.cardLine, backgroundColor: c.card }}>
             <T v="small">{x.label}</T>
           </Press>
         ) : (
-          <View key={x.key} style={{ paddingVertical: space[2], paddingHorizontal: space[3], borderRadius: layout.radius, backgroundColor: c.tint }}>
+          <View key={x.key} style={{ maxWidth: "100%", paddingVertical: space[2], paddingHorizontal: space[3], borderRadius: layout.radius, backgroundColor: c.tint }}>
             <T v="small">“{x.label}”</T>
           </View>
         ),
