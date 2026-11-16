@@ -69,7 +69,7 @@ function stressed(v: unknown, key = ""): unknown {
   if (Array.isArray(v)) return v.map((x) => stressed(x, key));
   if (v && typeof v === "object") return Object.fromEntries(Object.entries(v as Record<string, unknown>).map(([k, x]) => [k, stressed(x, k)]));
   if (typeof v === "string" && TEXT_KEYS.test(key) && v.length > 0 && v.length < 60 && !v.includes("://")) return v + LONG;
-  if (typeof v === "number" && NUM_KEYS.test(key) && Number.isInteger(v) && v > 0) return v * 1379;
+  if (typeof v === "number" && NUM_KEYS.test(key) && Number.isInteger(v) && v > 0) return v * 37;
   return v;
 }
 
