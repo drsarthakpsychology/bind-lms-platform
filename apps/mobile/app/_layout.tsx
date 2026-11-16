@@ -1,6 +1,6 @@
 import { PersistQueryClientProvider } from "@tanstack/react-query-persist-client";
 import { useFonts } from "expo-font";
-import { Stack, router, useSegments, type ErrorBoundaryProps } from "expo-router";
+import { Stack, router, usePathname, useSegments, type ErrorBoundaryProps } from "expo-router";
 import * as ScreenCapture from "expo-screen-capture";
 import * as SplashScreen from "expo-splash-screen";
 import { StatusBar } from "expo-status-bar";
@@ -14,7 +14,8 @@ import { useViewingAsStudent, ViewAsBar } from "@/admin/view-as";
 import { persistOptions, persister, queryClient, useConfig } from "@/api/queries";
 import { session, useSession } from "@/auth";
 import { handoff } from "@/auth/handoff";
-import { ToastHost } from "@/ds";
+import { ToastHost, toast } from "@/ds";
+import { crumb, describeCrumb } from "@/lib/breadcrumb";
 import { CrashBoundary, CrashScreen, describe, installCrashHandlers } from "@/lib/crash";
 import { applyDevSession, applyMockFromUrl } from "@/lib/dev";
 import { holdPortrait } from "@/lib/orientation";
@@ -26,6 +27,8 @@ import { LockScreen, OtherDeviceScreen, PausedScreen, SetPinScreen, UpdateScreen
 import { ThemeProvider, fonts, useTheme } from "@/theme";
 
 installCrashHandlers();
+// Read last run's breadcrumb before this run writes its own.
+const lastRun = crumb.load();
 void SplashScreen.preventAutoHideAsync().catch(() => undefined);
 applyMockFromUrl();
 
@@ -75,6 +78,8 @@ function useBoot(): boolean {
   // Lock after five minutes in the background.
   React.useEffect(() => {
     const sub = AppState.addEventListener("change", (s) => {
+      // A trip to the background is a normal stop; dying in the foreground is not (see lib/breadcrumb).
+      crumb.foreground(s === "active");
       if (s === "active") session.onForeground();
       else session.onBackground();
     });
@@ -166,6 +171,21 @@ function Shell() {
   const viewing = useViewingAsStudent() && segments[0] === "(student)";
   const opening = useOpening(phase, segments[0] as string | undefined);
   const holdPin = handoff.use((s) => s.holdPin);
+  const pathname = usePathname();
+
+  // Breadcrumb: the screen on every navigation, so a native crash can be located next time.
+  React.useEffect(() => {
+    crumb.screen(pathname || `/${segments.join("/")}`);
+  }, [pathname, segments]);
+
+  // Last run closed itself (a native crash the error page could not catch): say where, once.
+  const [closedOn, setClosedOn] = React.useState("");
+  React.useEffect(() => {
+    void lastRun.then((p) => setClosedOn(describeCrumb(p)));
+  }, []);
+  React.useEffect(() => {
+    if (ready && closedOn) toast.show(`The app closed last time on: ${closedOn}`, 8000);
+  }, [ready, closedOn]);
 
   // The server may change the lock time without an app release.
   React.useEffect(() => {
