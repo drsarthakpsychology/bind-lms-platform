@@ -42,6 +42,8 @@ export type SessionDeps = {
   lockAfterMs: number;
   /** Called after any sign-out so caches can be cleared. */
   onSignedOut?: () => void;
+  /** Called before a sign-out the person chose, while the tokens still work: send what is waiting. */
+  beforeSignOut?: () => Promise<void>;
 };
 
 export function createSession(deps: SessionDeps) {
@@ -195,6 +197,11 @@ export function createSession(deps: SessionDeps) {
     },
 
     async signOut(notice: Notice = null): Promise<void> {
+      // Signing out by choice (or to choose a new PIN): send the saves still on the phone first,
+      // for a few seconds at most, or that watch time and progress would be thrown away.
+      if (tokens && (notice === null || notice === "forgot_pin") && deps.beforeSignOut) {
+        await Promise.race([deps.beforeSignOut().catch(() => undefined), new Promise((r) => setTimeout(r, 5000))]);
+      }
       if (tokens) {
         // Tell the server, but never let a failure keep the phone signed in.
         await api.post<SignOutResult>("/auth/sign-out").catch(() => undefined);

@@ -130,3 +130,21 @@ describe("a stalled connection", () => {
     await expect(t({ method: "GET", path: "/home", headers: {} })).rejects.toMatchObject({ code: "network", message: expect.stringMatching(/too slow/) });
   });
 });
+
+describe("signing out", () => {
+  it("by choice sends the waiting saves first; when another phone took over it does not wait", async () => {
+    const order: string[] = [];
+    const secure = memoryStore();
+    const s = createSession({ secure, prefs: memoryStore(), transport: async (r) => (order.push(r.path), mockTransport(r)), hash: async (t) => `h(${t})`, randomId: () => "id-0000000000000077", pinMaxTries: 5, lockAfterMs: 300_000, beforeSignOut: async () => void order.push("flush") });
+    await s.boot();
+    await s.signIn("ananya@example.com", "pw");
+    await s.choosePin("2580");
+    order.length = 0;
+    await s.signOut();
+    expect(order).toEqual(["flush", "/auth/sign-out"]);
+    await s.signIn("ananya@example.com", "pw");
+    order.length = 0;
+    await s.signOut("device_replaced");
+    expect(order).not.toContain("flush");
+  });
+});

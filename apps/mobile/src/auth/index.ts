@@ -9,6 +9,13 @@ import { prefs, secure } from "@/lib/storage";
 import { createSession } from "./session";
 
 const signedOutListeners = new Set<() => void>();
+const beforeSignOutTasks = new Set<() => Promise<void>>();
+/** Run something before a chosen sign-out, while the tokens still work (send waiting saves). */
+export function beforeSignOut(fn: () => Promise<void>): () => void {
+  beforeSignOutTasks.add(fn);
+  return () => void beforeSignOutTasks.delete(fn);
+}
+
 /** Run something whenever the phone is signed out (clear cached data). */
 export function onSignedOut(fn: () => void): () => void {
   signedOutListeners.add(fn);
@@ -31,6 +38,9 @@ export const session = createSession({
   pinMaxTries: config.pin.maxTries,
   lockAfterMs: config.pin.lockAfterMs,
   onSignedOut: () => signedOutListeners.forEach((fn) => fn()),
+  beforeSignOut: async () => {
+    await Promise.all([...beforeSignOutTasks].map((fn) => fn().catch(() => undefined)));
+  },
 });
 
 export const api = session.api;
