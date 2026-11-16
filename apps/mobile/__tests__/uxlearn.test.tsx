@@ -10,6 +10,7 @@ import { T } from "@/ds";
 import { nextSpeed, ProtectedPlayer } from "@/lecture/player";
 import { ReadingSize, TextSizeRow } from "@/lib/reading";
 import { settingsStore, updateSettings } from "@/lib/settings";
+import { LecturesTab } from "@/screens/learn/lectures";
 import { LectureScreen } from "@/screens/lecture/lecture";
 import { NoteScreen } from "@/screens/notes/notes";
 import { exactRef } from "@/screens/reference/reference";
@@ -107,5 +108,14 @@ describe("lecture", () => {
     const speed = await screen.findByTestId("player-speed");
     await fireEvent.press(speed);
     expect(screen.getByText("1.25x")).toBeTruthy();
+  });
+});
+
+describe("lectures-only account", () => {
+  it("the Lectures tab is the full list by week, with no second hero", async () => {
+    await render(<LecturesTab />);
+    expect(await screen.findByTestId("lesson-l5")).toBeTruthy();
+    expect(screen.getAllByText(/^Week \d/).length).toBeGreaterThan(0);
+    expect(screen.queryByTestId("lectures-continue")).toBeNull();
   });
 });
