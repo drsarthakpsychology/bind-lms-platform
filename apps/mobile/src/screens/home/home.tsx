@@ -7,7 +7,7 @@ import { useReducedMotion } from "react-native-reanimated";
 import { outbox } from "@/api/outbox";
 import { useHome, type HomeData } from "@/api/queries";
 import type { QuestCard } from "@/api/contract";
-import { EmptyState, Hero, LoadError, Row, RowList, Screen, Section, Sheet, Skeleton, T } from "@/ds";
+import { EmptyState, Hero, LoadError, Row, RowList, Screen, Section, Sheet, Skeleton, StillTrying, T } from "@/ds";
 import { haptic } from "@/lib/haptics";
 import { Enter, PixelBurst, ProgressRing, RollingNumber, SkeletonIn, Stamp } from "@/motion";
 import { openTarget } from "@/nav/targets";
@@ -293,7 +293,12 @@ export function HomeScreen() {
   const q = useHome();
   return (
     <Screen tab top={<TabTop />} testID="home" onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
-      {q.data ? <HomeView data={q.data} /> : q.isError ? <LoadError what="your home screen" error={q.error} onRetry={() => void q.refetch()} /> : <HomeSkeleton />}
+      {q.data ? <HomeView data={q.data} /> : q.isError ? <LoadError what="your home screen" error={q.error} onRetry={() => void q.refetch()} /> : (
+        <>
+          <HomeSkeleton />
+          <StillTrying failed={q.failureCount > 0} />
+        </>
+      )}
       {q.data && !q.data.step && !q.data.upNext.length ? <EmptyState title="Nothing here yet" body="Your first lecture appears here as soon as it opens." /> : null}
     </Screen>
   );
