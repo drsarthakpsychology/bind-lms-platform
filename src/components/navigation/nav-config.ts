@@ -122,6 +122,22 @@ export const ADMIN_SECTIONS: AdminSection[] = [
     ],
   },
   {
+    // Schedule, QR attendance, leave and OPD cases (owner spec, 16 Nov 2026).
+    key: "clinic",
+    label: "Clinic",
+    icon: "calendar",
+    href: "/admin/clinic",
+    group: "People",
+    tabs: [
+      { href: "/admin/clinic", label: "Today" },
+      { href: "/admin/clinic/leave", label: "Leave" },
+      { href: "/admin/clinic/allowances", label: "Leaves allowed" },
+      { href: "/admin/clinic/timetable", label: "Timetable" },
+      { href: "/admin/clinic/opd", label: "OPD" },
+      { href: "/admin/clinic/trackers", label: "Trackers" },
+    ],
+  },
+  {
     // Top-bar Inbox (DI §C-6): everything waiting on a reply. On phones it is
     // in More (the bottom bar keeps 4 tabs + More so labels stay readable at 360px).
     key: "inbox",

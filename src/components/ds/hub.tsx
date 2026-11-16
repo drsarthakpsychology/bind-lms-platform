@@ -1,4 +1,4 @@
-import { Award, BarChart3, Medal, Bell, BookOpen, ClipboardCheck, Gamepad2, Layers, MessageCircleQuestion, NotebookPen, Pill, Play, Route, Settings, Sparkles, Stethoscope, Sun, Target, Trophy, type LucideIcon } from "lucide-react";
+import { Award, BarChart3, Medal, Bell, BookOpen, ClipboardCheck, Gamepad2, Layers, MessageCircleQuestion, NotebookPen, Pill, Play, Route, Settings, Sparkles, Stethoscope, Sun, Target, Trophy, CalendarDays, CalendarX2, ScanLine, type LucideIcon } from "lucide-react";
 import type { HubGroup } from "@/components/navigation/v2-config";
 import { Row, RowList, Section } from "./index";
 
@@ -23,6 +23,9 @@ export const HUB_ICONS: Record<string, LucideIcon> = {
   bell: Bell,
   settings: Settings,
   pill: Pill,
+  calendar: CalendarDays,
+  calendarOff: CalendarX2,
+  scan: ScanLine,
 };
 
 /** A hub screen's body: each group a heading over hairline rows. */
