@@ -10,6 +10,7 @@ import { ApiFailure, messageOf, reasonOf } from "@/api/errors";
 import { api, session } from "@/auth";
 import { EmptyState, Screen, Skeleton, T } from "@/ds";
 import { haptic } from "@/lib/haptics";
+import { springs } from "@/motion";
 import { space, useTheme } from "@/theme";
 import { AuthField, SubmitButton } from "@/visitor/form";
 
@@ -101,7 +102,7 @@ function Bar({ on, full, track }: { on: boolean; full: boolean; track: string })
   const reduce = useReducedMotion();
   const v = useSharedValue(on ? 1 : 0);
   React.useEffect(() => {
-    v.set(reduce ? (on ? 1 : 0) : withSpring(on ? 1 : 0, { damping: 18, stiffness: 260 }));
+    v.set(reduce ? (on ? 1 : 0) : withSpring(on ? 1 : 0, springs.toggle));
   }, [on, reduce, v]);
   const anim = useAnimatedStyle(() => ({ transform: [{ scaleX: v.value }] }));
   return (
