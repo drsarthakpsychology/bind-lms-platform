@@ -2,7 +2,7 @@ import { router, useLocalSearchParams } from "expo-router";
 import * as React from "react";
 import { Pressable, useWindowDimensions, View } from "react-native";
 
-import { LoadError, RowsSkeleton, Screen, T } from "@/ds";
+import { LoadError, RowsSkeleton, Screen, StillTrying, T } from "@/ds";
 import { layout, space, useTheme } from "@/theme";
 import { useMedicinePage } from "./list";
 import { ClassMark } from "./marks";
@@ -37,7 +37,14 @@ export function CompareScreen() {
   const qa = useMedicinePage(String(p.a ?? ""));
   const qb = useMedicinePage(String(p.b ?? ""));
   if (qa.isError || qb.isError) return <Screen title="Compare"><LoadError error={qa.error ?? qb.error} what="these medicines" onRetry={() => { void qa.refetch(); void qb.refetch(); }} /></Screen>;
-  if (!qa.data || !qb.data) return <Screen title="Compare"><RowsSkeleton rows={8} /></Screen>;
+  if (!qa.data || !qb.data) return (
+      <Screen title="Compare">
+        <View style={{ gap: space[3] }}>
+          <RowsSkeleton rows={8} />
+          <StillTrying failed={qa.failureCount > 0 || qb.failureCount > 0} />
+        </View>
+      </Screen>
+    );
   const sides: Side[] = [qa.data, qb.data].map((d) => ({ med: d.med as unknown as Med, mech: d.mechanism as Mechanism | null, half: d.halfLife as HalfLife | null }));
   const rows = sides.map(rowsOf);
   const two = width > 360;

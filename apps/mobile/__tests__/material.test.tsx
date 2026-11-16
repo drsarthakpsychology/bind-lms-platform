@@ -48,7 +48,7 @@ describe("lecture materials in the app", () => {
     expect(materialWebUrl("m 1", "c1", "https://vibhapsychology.com/")).toBe("https://vibhapsychology.com/courses/c1/materials/m%201");
     expect(materialWebUrl("m1", null, "https://vibhapsychology.com")).toBe("https://vibhapsychology.com/courses");
     const open = jest.spyOn(Linking, "openURL").mockResolvedValue(undefined);
-    const doc = { id: "m9", title: "Case notes", kind: "doc", format: "docx", sizeBytes: null, lessonId: "l5", week: 2, url: null, filePath: "/api/app/v1/materials/m9/file" } as const;
+    const doc = { id: "m9", title: "Case notes", kind: "doc", format: "docx", sizeBytes: null, lessonId: "l5", courseId: null, week: 2, url: null, filePath: "/api/app/v1/materials/m9/file" } as const;
     await render(<MaterialBody m={doc} courseId="course-1" />);
     await fireEvent.press(screen.getByText("Open on the website"));
     expect(open).toHaveBeenCalledWith(expect.stringMatching(/\/courses\/course-1\/materials\/m9$/));

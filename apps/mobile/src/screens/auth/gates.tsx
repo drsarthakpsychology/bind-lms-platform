@@ -182,8 +182,19 @@ export function LockScreen() {
   const first = typeof me?.name === "string" ? me.name.split(" ")[0] : undefined;
   // Fingerprint or face, when switched on in Settings: asked once as the lock appears, and on the button.
   const [bio, setBio] = React.useState<string | null>(null);
+  // One phone prompt at a time: a second tap while it is up would stack another one.
+  const asking = React.useRef(false);
   const tryBio = React.useCallback(async () => {
-    if (!(await unlockWithBiometric())) return;
+    if (asking.current) return;
+    asking.current = true;
+    let ok = false;
+    try {
+      ok = await unlockWithBiometric();
+    } finally {
+      asking.current = false;
+    }
+    // "Use PIN", a failed match or any error: the PIN pad stays, nothing else changes.
+    if (!ok) return;
     setTone("success");
     haptic.success();
     session.openWithBiometric();

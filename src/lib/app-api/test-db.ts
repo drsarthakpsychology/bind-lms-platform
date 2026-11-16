@@ -84,6 +84,15 @@ class Query implements PromiseLike<Result> {
     this.filters.push((r) => String(r[col] ?? "") >= v);
     return this;
   }
+  lte(col: string, v: string) {
+    this.filters.push((r) => String(r[col] ?? "") <= v);
+    return this;
+  }
+  /** Array column holds every value given. */
+  contains(col: string, vs: unknown[]) {
+    this.filters.push((r) => Array.isArray(r[col]) && vs.every((v) => (r[col] as unknown[]).includes(v)));
+    return this;
+  }
   lt(col: string, v: string) {
     this.filters.push((r) => String(r[col] ?? "") < v);
     return this;

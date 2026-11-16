@@ -105,6 +105,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
       "android.permission.SYSTEM_ALERT_WINDOW",
       // The attendance code screen brightens only its own window (expo-brightness), never the phone's setting.
       "android.permission.WRITE_SETTINGS",
+      // CAMERA is asked for (above) only for the attendance scanner; the signature picker never uses it.
       // No advertising: the advertising id is never read.
       "com.google.android.gms.permission.AD_ID",
     ],
@@ -164,6 +165,9 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
     ],
     "expo-secure-store",
     ["expo-local-authentication", { faceIDPermission: "Vibha Psychology can use Face ID to unlock the app instead of your PIN." }],
+    // Admins pick a signature image for certificates from their photos. The system photo picker
+    // needs no storage permission; the picker never opens the camera (only the attendance scanner does).
+    ["expo-image-picker", { photosPermission: "Vibha Psychology opens your photos only when you choose a signature image for certificates.", cameraPermission: false }],
     ["expo-audio", { microphonePermission: "Vibha Psychology uses the microphone only when you record an answer to an assignment." }],
     ["expo-notifications", { icon: "./assets/images/notification.png", color: BLUE, defaultChannel: "default" }],
     // The attendance QR scanner (barcode scanning only; no photos, no video, no microphone).

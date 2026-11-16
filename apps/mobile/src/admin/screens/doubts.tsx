@@ -14,10 +14,18 @@ import { ago, type Tone } from "../format";
 import { ConfirmSheet, Loaded, Notice, ScrollTabs, SmallButton, Status, Tag } from "../kit";
 import { useAdminRole, VIEW_ONLY_LINE } from "../role";
 
-export function doubtState(d: Pick<DoubtRow, "status" | "replies">): { tone: Tone; label: string } {
+export function doubtState(d: Pick<DoubtRow, "status" | "replies" | "lastReplyBy">): { tone: Tone; label: string } {
   if (d.status === "hidden") return { tone: "quiet", label: "Hidden" };
   if (d.status === "solved") return { tone: "ok", label: "Solved" };
-  return d.replies ? { tone: "quiet", label: "Open" } : { tone: "warn", label: "No answer yet" };
+  if (!d.replies) return { tone: "warn", label: "No answer yet" };
+  if (d.lastReplyBy === "faculty") return { tone: "quiet", label: "Answered" };
+  if (d.lastReplyBy === "student") return { tone: "warn", label: "Student replied" };
+  return { tone: "quiet", label: "Open" };
+}
+
+/** Waiting for the team: open, and the last word is not already the team's (older servers do not say: every open one waits). */
+export function isWaiting(d: Pick<DoubtRow, "status" | "lastReplyBy">): boolean {
+  return d.status === "open" && d.lastReplyBy !== "faculty";
 }
 
 const VIEWS = [
@@ -39,7 +47,7 @@ export function AdminDoubtsScreen() {
       <ScrollTabs tabs={VIEWS} value={view} onChange={setView} />
       <Loaded q={q} soon what="doubts" skeleton={<RowsSkeleton rows={5} />}>
         {(d) => {
-          const items = view === "waiting" ? d.items.filter((x) => x.status === "open") : d.items;
+          const items = view === "waiting" ? d.items.filter(isWaiting) : d.items;
           return items.length ? (
             <RowList>
               {items.map((x) => {

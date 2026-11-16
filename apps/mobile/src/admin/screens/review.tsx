@@ -1,7 +1,8 @@
 import { useLocalSearchParams } from "expo-router";
 import * as React from "react";
+import { openLink } from "@/lib/open";
 import { FileText, Mic } from "lucide-react-native";
-import { Linking, View } from "react-native";
+import { View } from "react-native";
 
 import { Button, Chips, EmptyState, Field, Row, RowList, RowsSkeleton, Screen, Sheet, T } from "@/ds";
 import { messageOf } from "@/api/errors";
@@ -31,7 +32,7 @@ export function checkGrade(raw: string, max: number, optional = false): { grade:
 async function openFile(get: () => Promise<{ url: string }>) {
   try {
     const r = await get();
-    if (r?.url) await Linking.openURL(r.url);
+    if (r?.url) await openLink(r.url);
   } catch (e) {
     toast.show(messageOf(e));
   }

@@ -1,12 +1,12 @@
 import { reasonOf } from "@/api/errors";
 import { ChevronRight } from "lucide-react-native";
 import * as React from "react";
-import { Pressable, ScrollView, Switch, View, type LayoutChangeEvent, type StyleProp, type ViewStyle } from "react-native";
+import { Pressable, ScrollView, StyleSheet, Switch, View, type LayoutChangeEvent, type StyleProp, type ViewStyle } from "react-native";
 import Animated, { useAnimatedStyle, useReducedMotion, useSharedValue, withSpring } from "react-native-reanimated";
 
 import { crumb } from "@/lib/breadcrumb";
 import { haptic } from "@/lib/haptics";
-import { presets, ProgressFill, RollingNumber, Shimmer, SkeletonIn, springs, staggerDelay, usePressScale } from "@/motion";
+import { FlowGap, presets, ProgressFill, RollingNumber, Shimmer, SkeletonIn, springs, staggerDelay, usePressScale } from "@/motion";
 import type { StateMood } from "@/lib/reactions/stickers";
 import { layout, space, useAccent, useTheme } from "@/theme";
 import { Button } from "./button";
@@ -38,7 +38,7 @@ export function Section({ title, action, children, quiet, style }: { title?: str
           {action}
         </View>
       ) : null}
-      {children}
+      <FlowGap.Provider value={(StyleSheet.flatten(style)?.gap as number | undefined) ?? space[3]}>{children}</FlowGap.Provider>
     </View>
   );
 }

@@ -10,7 +10,7 @@ import type { CheckpointResult, LearnStateResult, ModuleTestResult, QuestionRevi
 import { messageOf } from "@/api/errors";
 import { keys, useCheckpoint, useSection, useModule } from "@/api/queries";
 import { api } from "@/auth";
-import { Button, LoadError, OptionRow, ProgressLine, Sheet, Skeleton, T, VerdictBand } from "@/ds";
+import { Button, LoadError, OptionRow, ProgressLine, Sheet, Skeleton, StillTrying, T, VerdictBand } from "@/ds";
 import { toast } from "@/ds/toast";
 import { haptic } from "@/lib/haptics";
 import { useHardwareBack } from "@/nav/back";
@@ -187,7 +187,7 @@ export function QuizRunner({ title, questions, submit, onDone, doneLabel }: { ti
   );
 }
 
-function QuizSkeleton() {
+function QuizSkeleton({ failed }: { failed: boolean }) {
   const insets = useSafeAreaInsets();
   return (
     <View style={{ flex: 1, padding: layout.gutter, paddingTop: insets.top + 72, gap: space[4] }} testID="quiz-skeleton">
@@ -196,6 +196,7 @@ function QuizSkeleton() {
       {[0, 1, 2, 3].map((k) => (
         <Skeleton key={k} h={56} r={12} />
       ))}
+      <StillTrying failed={failed} />
     </View>
   );
 }
@@ -207,7 +208,7 @@ export function CheckpointScreen() {
   const n = Number(p.n ?? 1);
   const q = useCheckpoint(moduleId, n);
   const done = () => router.replace(`/study/${encodeURIComponent(moduleId)}`);
-  if (!q.data) return q.isError ? <LoadError what="this checkpoint" error={q.error} onRetry={() => void q.refetch()} /> : <QuizSkeleton />;
+  if (!q.data) return q.isError ? <LoadError what="this checkpoint" error={q.error} onRetry={() => void q.refetch()} /> : <QuizSkeleton failed={q.failureCount > 0} />;
   return (
     <QuizRunner
       title={q.data.title}
@@ -232,7 +233,7 @@ export function ModuleTestScreen() {
   const testId = mod.data?.sections.find((s) => s.isTest)?.id ?? "test";
   const q = useSection(moduleId, testId);
   const done = () => router.replace(`/study/${encodeURIComponent(moduleId)}`);
-  if (!q.data?.test) return q.isError || (q.data && !q.data.test) ? <LoadError what="the module test" error={q.error ?? new Error("not found")} onRetry={() => void q.refetch()} /> : <QuizSkeleton />;
+  if (!q.data?.test) return q.isError || (q.data && !q.data.test) ? <LoadError what="the module test" error={q.error ?? new Error("not found")} onRetry={() => void q.refetch()} /> : <QuizSkeleton failed={q.failureCount > 0} />;
   return (
     <QuizRunner
       title={`Module ${q.data.moduleNum} test`}

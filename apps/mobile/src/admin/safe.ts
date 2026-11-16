@@ -272,7 +272,7 @@ export function inboxFrom(v: unknown): X.InboxList & { emails: X.InboxThread[]; 
 
 export function safeDoubtRow(v: unknown): DoubtRow {
   const d = obj(v);
-  return { id: str(d.id), title: str(d.title, "Doubt"), topic: strOr(d.topic), kind: d.kind === "complaint" ? "complaint" : "doubt", status: oneOf(d.status, ["open", "solved", "hidden"] as const, "open"), cohortId: strOr(d.cohortId), author: str(d.author, "A student"), mine: bool(d.mine), replies: num(d.replies), createdAt: str(d.createdAt) };
+  return { id: str(d.id), title: str(d.title, "Doubt"), topic: strOr(d.topic), kind: d.kind === "complaint" ? "complaint" : "doubt", status: oneOf(d.status, ["open", "solved", "hidden"] as const, "open"), cohortId: strOr(d.cohortId), author: str(d.author, "A student"), mine: bool(d.mine), replies: num(d.replies), lastReplyBy: d.lastReplyBy === "faculty" || d.lastReplyBy === "student" ? d.lastReplyBy : d.lastReplyBy === null ? null : undefined, createdAt: str(d.createdAt) };
 }
 export function safeDoubts(v: unknown): DoubtList {
   const r = obj(v);
@@ -280,7 +280,7 @@ export function safeDoubts(v: unknown): DoubtList {
 }
 export function safeDoubt(v: unknown): DoubtThread {
   const d = obj(v);
-  const { replies: _r, ...row } = safeDoubtRow(d);
+  const { replies: _r, lastReplyBy: _l, ...row } = safeDoubtRow(d);
   return {
     ...row,
     body: str(d.body),

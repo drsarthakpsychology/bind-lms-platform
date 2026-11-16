@@ -71,6 +71,11 @@ jest.mock("expo-secure-store", () => {
   };
 });
 
+// The photo picker (admin signature upload): picks a small PNG unless a test says otherwise.
+jest.mock("expo-image-picker", () => ({
+  launchImageLibraryAsync: jest.fn(async () => ({ canceled: false, assets: [{ uri: "file:///sig.png", base64: "iVBORw0KGgo=", mimeType: "image/png", width: 300, height: 100 }] })),
+}));
+
 // Fingerprint and face: a phone with a fingerprint set up that always matches (tests switch it per case).
 jest.mock("expo-local-authentication", () => ({
   AuthenticationType: { FINGERPRINT: 1, FACIAL_RECOGNITION: 2, IRIS: 3 },
@@ -142,6 +147,7 @@ jest.mock("expo-router", () => {
     useSegments: jest.fn(() => []),
     useNavigation: jest.fn(() => ({ setOptions: jest.fn(), addListener: jest.fn(() => jest.fn()) })),
     useFocusEffect: jest.fn(),
+    useIsFocused: jest.fn(() => true),
     Stack: { Screen: () => null },
     Redirect: () => null,
     Link: ({ children }: { children: unknown }) => children,

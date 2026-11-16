@@ -6,7 +6,7 @@ import { rateLimitResult, rateLimitWrite } from "@/lib/rate-limit";
 import { rateLimitFast } from "@/lib/rate-limit-fast";
 import { runInAppContext } from "./context";
 import { assertVersion, requireAppUser, type ApiGate, type AppUser } from "./guard";
-import { ApiFail, fail, ok } from "./respond";
+import { ApiFail, fail, ok, okTagged } from "./respond";
 
 /**
  * The wrapper every /api/app/v1 route is written with. It gives each route
@@ -81,8 +81,9 @@ function helpers<P>(req: Request, params: P): RouteHelpers<P> {
 
 type Ctx<P> = { params: Promise<P> };
 
-function finish(result: unknown): Response {
-  return result instanceof Response ? result : ok(result);
+function finish(req: Request, result: unknown): Response {
+  if (result instanceof Response) return result;
+  return req.method === "GET" ? okTagged(req, result) : ok(result);
 }
 
 function onError(e: unknown, where: string): NextResponse {
@@ -107,12 +108,12 @@ export function appRoute<P>(
       const h = helpers(req, params);
       if (opts.auth === "public") {
         assertVersion(req);
-        return finish(await (handler as PublicHandler<P>)({ ...h, user: null }));
+        return finish(req, await (handler as PublicHandler<P>)({ ...h, user: null }));
       }
       const user = await requireAppUser(req, opts.gates ?? []);
       if (opts.auth === "admin" && !isAdminLike(user.profile)) throw new ApiFail("forbidden");
       if (opts.auth === "superAdmin" && !isSuperAdmin(user.profile)) throw new ApiFail("forbidden");
-      return await runInAppContext(user.context, async () => finish(await (handler as UserHandler<P>)({ ...h, user })));
+      return await runInAppContext(user.context, async () => finish(req, await (handler as UserHandler<P>)({ ...h, user })));
     } catch (e) {
       return onError(e, where);
     }

@@ -190,7 +190,7 @@ export function lectureDetail(id: string): LectureDetail | null {
     progress: { watchedSeconds: DONE.has(l.id) ? l.minutes * 60 : l.id === CURRENT ? 1104 : 0, completed: DONE.has(l.id) },
     requiresAssignment: false,
     assignment: assignmentFor(l.id),
-    materials: l.id === CURRENT ? [{ id: "m1", title: "PHQ-9 scoring sheet", kind: "pdf", format: "pdf", sizeBytes: 184_000, lessonId: l.id, week: 3, url: null, filePath: "/api/app/v1/materials/m1/file" }] : [],
+    materials: l.id === CURRENT ? [{ id: "m1", title: "PHQ-9 scoring sheet", kind: "pdf", format: "pdf", sizeBytes: 184_000, lessonId: l.id, courseId: "course-1", week: 3, url: null, filePath: "/api/app/v1/materials/m1/file" }] : [],
     prev: prev ? { id: prev.id, title: prev.title } : null,
     next: next ? { id: next.id, title: next.title } : null,
   };

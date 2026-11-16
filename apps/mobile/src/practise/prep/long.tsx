@@ -4,7 +4,7 @@ import * as React from "react";
 import { Pressable, View } from "react-native";
 import Animated, { FadeInDown, useReducedMotion } from "react-native-reanimated";
 
-import { Button, LoadError, Row, RowList, RowsSkeleton, Screen, Section, T } from "@/ds";
+import { Button, LoadError, Row, RowList, RowsSkeleton, Screen, Section, StillTrying, T } from "@/ds";
 import type { Block } from "@/api/contract";
 import { Blocks } from "@/study/blocks";
 import { haptic } from "@/lib/haptics";
@@ -24,6 +24,11 @@ type LongTopic = { subject: string; topic: string; title: string; items: { id: s
 type LongQ = { item: LongItem; next: { id: string; question: string } | null };
 const enc = encodeURIComponent;
 
+/** "Long answers: Statistics": the subject alone read like the subject's own page. */
+export function longTitle(subject: string): string {
+  return `Long answers: ${subject}`;
+}
+
 /** Long answers (GET /prep/long...): subjects, topics, questions, then one question with Show answer. */
 export function LongScreen() {
   const p = useLocalSearchParams<{ subject?: string; topic?: string; id?: string }>();
@@ -32,13 +37,16 @@ export function LongScreen() {
   const d = q.data;
   if (d?.level === "question") return <LongQuestion key={p.id} q={d.data as unknown as LongQ} subject={p.subject!} topic={p.topic!} />;
   const go = (qs: string) => router.push(`/prep/long?${qs}`);
-  const title = d?.level === "subject" ? (d.data as unknown as LongSubject).title : d?.level === "topic" ? (d.data as unknown as LongTopic).title : "Long answers";
+  const title = d?.level === "subject" ? longTitle((d.data as unknown as LongSubject).title) : d?.level === "topic" ? (d.data as unknown as LongTopic).title : "Long answers";
   return (
     <Screen testID="prep-long" title={title} lead={d?.level === "home" || !d ? "Write your answer first, on paper or in your head. Then see the model answer." : undefined}>
       {q.isError ? (
         <LoadError error={q.error} onRetry={() => void q.refetch()} />
       ) : !d ? (
-        <RowsSkeleton rows={5} />
+        <View style={{ gap: space[3] }}>
+          <RowsSkeleton rows={5} />
+          <StillTrying failed={q.failureCount > 0} />
+        </View>
       ) : (
         <Stagger>
           <RowList>

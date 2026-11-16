@@ -2,7 +2,8 @@ import type { UseQueryResult } from "@tanstack/react-query";
 import { router } from "expo-router";
 import { ExternalLink } from "lucide-react-native";
 import * as React from "react";
-import { Linking, View } from "react-native";
+import { openLink } from "@/lib/open";
+import { View } from "react-native";
 
 import { ApiFailure, isClosed } from "@/api/errors";
 import { config } from "@/lib/config";
@@ -11,12 +12,11 @@ import { space, useTheme } from "@/theme";
 import { Button } from "./button";
 import { EmptyState, LoadError, RowsSkeleton } from "./parts";
 import { T } from "./text";
-import { toast } from "./toast";
 
 /** Open a website page (a path such as "/study/notes", or a full address). */
 export function openWebsite(path = "/dashboard"): void {
   const url = /^https?:\/\//.test(path) ? path : `${config.site}${path.startsWith("/") ? path : `/${path}`}`;
-  void Linking.openURL(url).catch(() => toast.show("That didn't open. Try again."));
+  void openLink(url);
 }
 
 function goBack(home: string): void {

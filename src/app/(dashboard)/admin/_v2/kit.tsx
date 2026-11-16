@@ -67,7 +67,7 @@ export function AdminPage({
   children: React.ReactNode;
 }) {
   return (
-    <PageFrame width={width} className={cn("gap-[var(--ds-5)] md:gap-[var(--ds-6)]", className)}>
+    <PageFrame width={width} area="admin" className={cn("gap-[var(--ds-5)] md:gap-[var(--ds-6)]", className)}>
       <div data-admin-v2 className="contents">
       <header className="flex min-w-0 flex-col gap-3 md:flex-row md:items-end md:justify-between md:gap-6">
         <div className="min-w-0 space-y-1">
@@ -194,8 +194,8 @@ export function Meter({ pct, label, tone = "info", className }: { pct: number; l
   return (
     <span className={cn("flex min-w-0 items-center gap-2", className)}>
       {label ? <span className="shrink-0 type-small type-num">{label}</span> : null}
-      <span aria-hidden className="h-1 min-w-8 flex-1 overflow-hidden rounded-full bg-[var(--ds-hairline)]">
-        <span className={cn("block h-full rounded-full", tone === "warn" ? "bg-[#e8910c]" : "bg-link")} style={{ width: `${p}%` }} />
+      <span aria-hidden className="h-1 min-w-8 flex-1 overflow-hidden rounded-full bg-[var(--area-wash,var(--ds-hairline))]">
+        <span className={cn("block h-full rounded-full", tone === "warn" ? "bg-[#e8910c]" : "bg-[var(--area-deep,var(--link))]")} style={{ width: `${p}%` }} />
       </span>
     </span>
   );
