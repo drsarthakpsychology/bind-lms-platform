@@ -87,6 +87,36 @@ describe("one phone at a time", () => {
     expect((await deviceState({ userId: "adm", role: "admin", deviceId: A })).limit).toBeNull();
   });
 
+  it("the store reviewer's account (APP_REVIEW_EMAILS) has no change limit, but still one phone at a time", async () => {
+    process.env.APP_REVIEW_EMAILS = " other@x.com , Reviewer@Vibha.test ";
+    try {
+      const email = "reviewer@vibha.test";
+      for (const [i, id] of [A, B, C, D].entries()) {
+        expect((await registerDevice({ userId: "rev", role: "student", email, device: phone(id), now: T0 + i })).ok).toBe(true);
+      }
+      expect(await checkDevice({ userId: "rev", role: "student", deviceId: A, now: T0 + 10 })).toBe("replaced");
+      expect(await checkDevice({ userId: "rev", role: "student", deviceId: D, now: T0 + 10 })).toBe("ok");
+      expect((await deviceState({ userId: "rev", role: "student", email, deviceId: D })).limit).toBeNull();
+      // Anyone else keeps the limit.
+      await registerDevice({ userId: U, role: "student", email: "student@x.com", device: phone(A), now: T0 });
+      await registerDevice({ userId: U, role: "student", email: "student@x.com", device: phone(B), now: T0 + 1 });
+      await registerDevice({ userId: U, role: "student", email: "student@x.com", device: phone(C), now: T0 + 2 });
+      db.tables.app_device_changes.filter((c) => c.user_id === U).forEach((c, i) => (c.created_at = new Date(T0 + i + 1).toISOString()));
+      expect((await registerDevice({ userId: U, role: "student", email: "student@x.com", device: phone(D), now: T0 + 3 })).ok).toBe(false);
+    } finally {
+      delete process.env.APP_REVIEW_EMAILS;
+    }
+  });
+
+  it("without APP_REVIEW_EMAILS nobody is exempt", async () => {
+    delete process.env.APP_REVIEW_EMAILS;
+    const { isReviewAccount } = await import("./device-rules");
+    expect(isReviewAccount("reviewer@vibha.test")).toBe(false);
+    expect(isReviewAccount("a@b.c", "")).toBe(false);
+    expect(isReviewAccount("", "a@b.c")).toBe(false);
+    expect(isReviewAccount("A@B.C", "x@y.z,a@b.c")).toBe(true);
+  });
+
   it("a phone the server has never seen is refused once the student has another", async () => {
     await registerDevice({ userId: U, role: "student", device: phone(A), now: T0 });
     expect(await checkDevice({ userId: U, role: "student", deviceId: B, now: T0 })).toBe("replaced");

@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { useReducedMotion } from "motion/react";
+import { useReducedMotion } from "@/lib/use-reduced-motion";
 import { BookOpen, Check, CircleDot, LayoutGrid, LoaderCircle, Shuffle, Undo2, Users, X } from "lucide-react";
 import { emptyState, type LearnState } from "@/lib/learn/engine";
 import { initLearnStore, useLearnState } from "@/lib/learn/store";

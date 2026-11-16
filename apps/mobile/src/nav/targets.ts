@@ -84,6 +84,9 @@ function learnPathFor(web: string | undefined): string | null {
   if (p === "/study/reference") return "/reference";
   if ((m = /^\/study\/reference\/([^/]+)$/.exec(p))) return `/reference/${m[1]}`;
   if (p === "/assignments") return "/assignments";
+  if (p === "/study/map") return "/map";
+  if (p === "/study/map/practice") return "/map/practice";
+  if (p === "/wall") return "/wall";
   return null;
 }
 
@@ -116,7 +119,7 @@ export function pathFromLink(input: string): string {
   let m: RegExpExecArray | null;
   if (p === "/setup" || p === "/set-password") return `/setup${q}`;
   const learn = learnPathFor(p);
-  if (learn) return learn;
+  if (learn) return learn === "/map/practice" ? learn + q : learn;
   if (p === "/" || p === "/dashboard") return "/";
   if (p === "/login") return "/sign-in";
   if (p === "/waitlist") return "/request";

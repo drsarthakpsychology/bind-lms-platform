@@ -1,12 +1,12 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
 import { requireStudentApi } from "@/lib/auth/api-guard";
-import { createClient } from "@/lib/supabase/server";
+import { toggleWallReaction, WALL_REACTIONS } from "@/lib/wall/data";
 import { rateLimit } from "@/lib/rate-limit";
 
 export const runtime = "nodejs";
 
-const REACTIONS = ["heart", "insight", "question", "applause", "worry"] as const;
+const REACTIONS = WALL_REACTIONS;
 
 const reactSchema = z.object({
   postId: z.string().uuid().optional(),
@@ -22,7 +22,6 @@ const reactSchema = z.object({
  * DELETE /api/practice/wall/reaction: remove a reaction.
  */
 export async function POST(req: Request) {
-  const supabase = await createClient();
   const access = await requireStudentApi({ path: "/wall" });
   if (!access.ok) return access.response;
   const profile = access.profile;
@@ -37,26 +36,7 @@ export async function POST(req: Request) {
   const { postId, replyId, reaction } = parsed.data;
 
   // Toggle: if this exact reaction already exists, remove it.
-  const { data: existing } = await supabase
-    .from("wall_reactions")
-    .select("id")
-    .eq("author_id", user.id)
-    .eq("reaction", reaction)
-    .eq("post_id", postId ?? null)
-    .eq("reply_id", replyId ?? null)
-    .maybeSingle();
-
-  if (existing) {
-    await supabase.from("wall_reactions").delete().eq("id", existing.id);
-    return NextResponse.json({ ok: true, removed: true });
-  }
-
-  const { error } = await supabase.from("wall_reactions").insert({
-    post_id: postId ?? null,
-    reply_id: replyId ?? null,
-    author_id: user.id,
-    reaction,
-  });
-  if (error) return NextResponse.json({ error: error.message }, { status: 500 });
-  return NextResponse.json({ ok: true, added: true });
+  const r = await toggleWallReaction(user.id, { postId, replyId, reaction });
+  if (!r.ok) return NextResponse.json({ error: r.error }, { status: 500 });
+  return NextResponse.json(r.value.added ? { ok: true, added: true } : { ok: true, removed: true });
 }

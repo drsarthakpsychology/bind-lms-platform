@@ -152,6 +152,75 @@ export type AppConfig = {
   cohortLine?: string | null;
 };
 
+/**
+ * GET /public/home : the website homepage's key information, in its own
+ * words, for the Welcome screen. Public and cached (an hour); the same for
+ * everyone. Which cohort is running is never in it. Every list is always an
+ * array (never null); `redFlag` is the only field that can be null.
+ */
+export type HomeHead = { tag: string; title: string; accent: string };
+export type HomeTitleText = { title: string; text: string };
+export type PublicHome = {
+  v: 1;
+  brand: { name: string; shortName: string; tagline: string; description: string; parent: string; lead: string };
+  hero: {
+    /** The three lines of the big title. */
+    title: string[];
+    lede: string;
+    /** Short tags ("Real patients", "MSE in depth"). */
+    highlights: string[];
+    /** `section` is the key in `sections` that answers it. */
+    quickAnswers: { q: string; a: string; section: string }[];
+  };
+  sections: {
+    programme: { head: HomeHead; stats: { n: string; text: string }[]; included: string[]; beyond: HomeTitleText[]; assessment: HomeTitleText[]; certificate: string; manifesto: string };
+    patients: { head: HomeHead; steps: HomeTitleText[]; facts: { k: string; v: string }[] };
+    different: { head: HomeHead; rows: { college: string; vibha: string }[] };
+    disorders: {
+      head: HomeHead;
+      journey: { disorder: string; patient: string; steps: { k: string; title: string; text: string }[]; foot: string };
+      /** Labels for the disorder fields, in order. */
+      fields: { key: "looks" | "ask" | "mse" | "ruleOut" | "meds" | "therapy"; label: string }[];
+      list: { name: string; module: string; says: string; looks: string; ask: string; mse: string; ruleOut: string; meds: string; therapy: string; redFlag: string | null }[];
+      foot: string;
+      mixer: { who: string; age: string; plan: { when: string; what: string }[] }[];
+      mixerNote: string;
+    };
+    week: {
+      head: HomeHead;
+      weekday: { tag: string; title: string; sub: string; steps: string[] };
+      weekend: { tag: string; title: string; sub: string; steps: string[] };
+      days: { d: string; kind: "patient" | "live"; time: string | null }[];
+      timeline: { weeks: string; text: string }[];
+    };
+    scenarios: { head: HomeHead; list: { when: string; learn: string[] }[] };
+    faculty: { head: HomeHead; lead: { initials: string; role: string; name: string; text: string }; faculty: { initials: string; name: string; role: string }[]; leadership: { name: string; role: string }[] };
+    fees: { head: HomeHead; dependsOn: string[]; pay: string[]; note: string; joinSteps: HomeTitleText[]; whoFor: HomeTitleText[]; colleges: { gets: string[]; partnering: string[] } };
+    curriculum: {
+      head: HomeHead;
+      disciplines: { name: string; text: string }[];
+      modules: { n: string; title: string; text: string }[];
+      interview: { title: string; items: string[] }[];
+      mse: HomeTitleText[];
+      caseSheet: { learn: { title: string; items: string[] }; rows: { k: string; v: string }[] };
+      medicines: { group: string; names: string; watch: string }[];
+      ruleOut: HomeTitleText[];
+      sideOrSymptom: { q: string; a: string }[];
+      redFlags: string;
+      therapies: { name: string; text: string }[];
+      mixExample: { patient: string; plan: { when: string; what: { name: string; why: string }[] }[] };
+      defences: HomeTitleText[];
+      psychometric: { group: string; tests: string[] }[];
+      psychometricNote: string;
+    };
+    faq: { head: HomeHead; list: { q: string; a: string }[] };
+    closing: { title: string[] };
+  };
+  contact: { person: string; role: string; roleNote: string; phone: string; phoneHref: string; whatsappHref: string; email: string; address: string[] };
+  /** `requestInvitation` is the app route; `policies` are website paths (open in the browser). */
+  links: { requestInvitation: string; policies: { label: string; path: string }[] };
+};
+
 /** POST /public/request-invitation */
 export type RequestInvitationBody = {
   name: string;
@@ -994,7 +1063,7 @@ export type DoubtRow = {
 };
 
 /** GET /doubts?cohort=&mine=1 (paged) */
-export type DoubtList = Page<DoubtRow> & { cohorts: { id: string; name: string }[]; ready: boolean };
+export type DoubtList = Page<DoubtRow> & { cohorts: { id: string; name: string }[]; ready: boolean; /** The class wall is open for you (the website links it from Doubts). Missing on older servers. */ wall?: boolean };
 
 export type DoubtReply = { id: string; author: string; mine: boolean; body: string; votes: number; youVoted: boolean; isSolution: boolean; createdAt: string };
 
@@ -1078,7 +1147,61 @@ export type Settings = {
 };
 
 // ---------------------------------------------------------------------------
+// Learning map (/study/map) and class wall (/wall)
+// ---------------------------------------------------------------------------
+
+/** How well a skill is known. `label` words come with each answer (MapState.label). */
+export type MapStateKey = "new" | "learning" | "shaky" | "mastered" | "decaying";
+export type MapState = { key: MapStateKey; label: string };
+export type MapCell = { skill: string; label: string; state: MapStateKey; hasItems: boolean; /** Chance of a right answer, 0 to 1, once calibrated; else null. */ p: number | null };
+export type MapTopic = { id: string; title: string; studyTarget: AppTarget | null; cells: MapCell[] };
+export type MapWeak = { skill: string; topic: string; label: string; state: MapStateKey; studyTarget: AppTarget | null };
+export type MapMixUp = { a: string; b: string; n: number; topic: string | null; topicTitle: string | null };
+
+/** GET /study/map: the website's /study/map (loadStudentMap). Staff accounts get `learner: false` and an empty map. */
+export type StudyMap = {
+  learner: boolean;
+  /** Reviews due, mixed into the next practice round. */
+  due: number;
+  calibrated: boolean;
+  /** Answers still needed before chances show (0 once calibrated). */
+  answersToCalibrate: number;
+  states: MapState[];
+  /** Column names, in the order of each topic's cells. */
+  skills: string[];
+  weak: MapWeak[];
+  mixUps: MapMixUp[];
+  topics: MapTopic[];
+};
+
+export type MapQuestion =
+  | { id: string; kind: "mcq"; topic: string; label: string; text: string; vignette?: string; options: string[]; answer: number; student: string; clinician: string }
+  | { id: string; kind: "tf"; topic: string; label: string; text: string; answer: boolean; student: string; clinician: string };
+/** GET /study/map/practice?topic= : a round picked for this student (the website's /study/map/practice). Without a topic it is mixed practice. */
+export type MapPractice = { title: string; topic: string | null; round: string; saving: boolean; questions: MapQuestion[] };
+/** POST /study/map/practice/answers : one answer, graded on the server and fed to the map. */
+export type MapAnswerBody = { item: string; choice: number | boolean | "skip"; ms?: number };
+export type MapAnswerResult = { ok: boolean; saved: boolean };
+
+export type WallReactionKey = "heart" | "insight" | "question" | "applause" | "worry";
+/** Authors are never sent: posts are "Faculty", "Anonymous" or "Cohort member". `mine` is the reactions you gave. */
+export type WallReplyItem = { id: string; content: string; isAnonymous: boolean; isFaculty: boolean; createdAt: string; reactions: Partial<Record<WallReactionKey, number>>; mine: WallReactionKey[] };
+export type WallPostItem = WallReplyItem & { isPinned: boolean; replies: WallReplyItem[] };
+/** GET /wall: the newest 50 posts, pinned first. */
+export type WallFeed = { posts: WallPostItem[] };
+/** POST /wall/posts and POST /wall/posts/:postId/replies */
+export type WallWriteBody = { content: string; isAnonymous?: boolean };
+export type WallWriteResult = { id: string };
+/** POST /wall/reactions : the same reaction again takes it back. */
+export type WallReactBody = { postId?: string; replyId?: string; reaction: WallReactionKey };
+export type WallReactResult = { added: boolean };
+/** POST /wall/reports */
+export type WallReportBody = { postId?: string; replyId?: string; reason?: string };
+
+// ---------------------------------------------------------------------------
 // Practise and Library
+// (Current types for these routes: contract-practise-admin.ts. These stay for
+// the routes' first version, which still answers with these fields.)
 // ---------------------------------------------------------------------------
 
 /**
@@ -1112,6 +1235,7 @@ export type MedicinePage = {
 
 // ---------------------------------------------------------------------------
 // Admin (admin and view admin read; only the super admin writes)
+// (Current types for these routes: contract-practise-admin.ts.)
 // ---------------------------------------------------------------------------
 
 export type AttentionFlag = "login" | "no-mobile" | "quiet" | "never-seen" | "behind" | "email-failing" | "no-details";

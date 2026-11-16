@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
 import { requireStudentApi } from "@/lib/auth/api-guard";
-import { createClient } from "@/lib/supabase/server";
+import { addWallPost } from "@/lib/wall/data";
 import { rateLimit } from "@/lib/rate-limit";
 
 export const runtime = "nodejs";
@@ -16,7 +16,6 @@ const postSchema = z.object({
  * the SELECT policy hides it for anonymous posts on student queries.
  */
 export async function POST(req: Request) {
-  const supabase = await createClient();
   const access = await requireStudentApi({ path: "/wall" });
   if (!access.ok) return access.response;
   const profile = access.profile;
@@ -29,17 +28,8 @@ export async function POST(req: Request) {
   const parsed = postSchema.safeParse(body);
   if (!parsed.success) return NextResponse.json({ error: "invalid body" }, { status: 400 });
 
-  const { data, error } = await supabase
-    .from("wall_posts")
-    .insert({
-      author_id: user.id,
-      content: parsed.data.content,
-      is_anonymous: parsed.data.isAnonymous,
-      is_faculty: false,
-    })
-    .select("id")
-    .single();
-  if (error) return NextResponse.json({ error: error.message }, { status: 500 });
+  const r = await addWallPost(user.id, parsed.data);
+  if (!r.ok) return NextResponse.json({ error: r.error }, { status: 500 });
 
-  return NextResponse.json({ id: data.id });
+  return NextResponse.json({ id: r.value.id });
 }

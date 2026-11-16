@@ -199,6 +199,9 @@ function Shell() {
             <Stack.Screen name="study/[moduleId]/checkpoint/[n]" options={{ headerShown: false, gestureEnabled: false }} />
             <Stack.Screen name="study/[moduleId]/test" options={{ headerShown: false, gestureEnabled: false }} />
             <Stack.Screen name="progress" options={{ title: "Progress" }} />
+            <Stack.Screen name="map/index" options={{ title: "Your map" }} />
+            <Stack.Screen name="map/practice" options={{ headerShown: false, gestureEnabled: false }} />
+            <Stack.Screen name="wall" options={{ title: "Class wall" }} />
             <Stack.Screen name="certificates" options={{ title: "Certificates" }} />
             <Stack.Screen name="certificate/[id]" options={{ title: "" }} />
             <Stack.Screen name="verify/[certificateId]" options={{ title: "Verify a certificate" }} />

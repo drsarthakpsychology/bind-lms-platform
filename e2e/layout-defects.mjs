@@ -25,6 +25,8 @@
  *   --md <file>        also write a Markdown defect list
  *   --chrome <path>    Chromium binary (defaults to the local Playwright one)
  *   --shots all|defects|none  (default defects)
+ *   --cookies "a=1; b=2"  cookies for --base (a signed-in session against a
+ *                      local mock), or --cookies @file to read them from a file
  *
  * Opt-outs, for things that are meant to look that way:
  *   data-layout-ok            on an element skips every check inside it
@@ -57,6 +59,15 @@ const widths = (args.widths ?? "360,390,768,1024,1440").split(",").map(Number);
 const themes = (args.themes ?? "light,dark").split(",");
 const out = path.resolve(args.out ?? "layout-defects-out");
 const shots = args.shots ?? "defects";
+const cookieText = args.cookies ? (args.cookies.startsWith("@") ? fs.readFileSync(args.cookies.slice(1), "utf8") : args.cookies).trim() : "";
+async function addCookies(ctx) {
+  if (!cookieText || !base) return;
+  const list = cookieText.split(/;\s*/).filter(Boolean).map((c) => {
+    const i = c.indexOf("=");
+    return { name: c.slice(0, i), value: c.slice(i + 1), url: base };
+  });
+  await ctx.addCookies(list);
+}
 const chrome = args.chrome ?? (fs.existsSync("/opt/pw-browsers/chromium-1243/chrome-linux64/chrome") ? "/opt/pw-browsers/chromium-1243/chrome-linux64/chrome" : undefined);
 fs.mkdirSync(out, { recursive: true });
 
@@ -308,6 +319,7 @@ for (const theme of merge ? [] : themes) {
       colorScheme: theme === "dark" ? "dark" : "light",
     };
     let ctx = await browser.newContext(ctxOpts);
+    await addCookies(ctx);
     if (theme === "dark") await ctx.addInitScript(() => { try { localStorage.setItem("theme", "dark"); } catch {} });
     for (const p of pages) {
       // A fresh tab per screen: one heavy screen cannot take the rest down with it.
@@ -318,6 +330,7 @@ for (const theme of merge ? [] : themes) {
         // The browser went away (out of memory): start a new one and carry on.
         browser = await chromium.launch(chrome ? { executablePath: chrome } : {});
         ctx = await browser.newContext(ctxOpts);
+        await addCookies(ctx);
         if (theme === "dark") await ctx.addInitScript(() => { try { localStorage.setItem("theme", "dark"); } catch {} });
         page = await ctx.newPage();
       }

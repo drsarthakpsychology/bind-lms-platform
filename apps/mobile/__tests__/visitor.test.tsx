@@ -11,6 +11,7 @@ import { PinPad } from "@/auth/PinPad";
 import { signInProblem, SignInScreen } from "@/screens/auth/sign-in";
 import { WelcomeScreen } from "@/screens/visitor/welcome";
 import { adaptHome, BUNDLED } from "@/visitor/home-data";
+import { publicHome } from "@/api/mock/public-home";
 import { CHAPTERS, CLOSING, DIFFERENT, FACULTY, GET, HERO, JOIN, JOURNEY, PATIENTS, QUICK_ANSWERS, WEEK } from "@/visitor/content";
 import { render } from "./utils";
 
@@ -98,7 +99,7 @@ describe("Welcome", () => {
 
 describe("Welcome words from the website", () => {
   it("uses the server's words and keeps the app's drawings", () => {
-    const w = adaptHome({ v: 1, hero: { title: ["A", "B", "C"], lede: "L", highlights: ["x", "y", "z"], quickAnswers: [] }, sections: { patients: { head: { tag: "t", title: "T", accent: "A" }, steps: [{ title: "One", text: "1" }] } } as never, contact: { phone: "1", phoneHref: "tel:1", whatsappHref: "w", address: ["Here,"] } });
+    const w = adaptHome({ v: 1, hero: { title: ["A", "B", "C"], lede: "L", highlights: ["x", "y", "z"], quickAnswers: [] }, sections: { patients: { head: { tag: "t", title: "T", accent: "A" }, steps: [{ title: "One", text: "1" }] } } as never, contact: { phone: "1", phoneHref: "tel:1", whatsappHref: "w", address: ["Here,"] } as never });
     expect(w.HERO.lines).toEqual(["A", "B", "C"]);
     expect(w.QUICK_ANSWERS).toEqual(BUNDLED.QUICK_ANSWERS);
     expect(w.PATIENTS.steps[0]).toEqual({ title: "One", text: "1", heads: BUNDLED.PATIENTS.steps[0]!.heads });
@@ -108,6 +109,8 @@ describe("Welcome words from the website", () => {
 
   it("falls back to the bundled words when the answer is missing, wrong or mentions a cohort", () => {
     expect(adaptHome(undefined)).toBe(BUNDLED);
+    // The mock server answers /public/home with the bundled words in the server shape: the round trip changes nothing.
+    expect(JSON.parse(JSON.stringify(adaptHome(publicHome)))).toEqual(JSON.parse(JSON.stringify(BUNDLED)));
     expect(adaptHome({ v: 2 } as never)).toBe(BUNDLED);
     expect(adaptHome({ v: 1, hero: { title: ["Cohort Two", "b", "c"], lede: "", highlights: [], quickAnswers: [] }, sections: {} as never })).toBe(BUNDLED);
     expect(JSON.stringify(adaptHome({ v: 1, hero: { title: ["a \u2014 b", "b", "c"], lede: "", highlights: [], quickAnswers: [] }, sections: {} as never }))).not.toMatch(/\u2014/);

@@ -1,4 +1,4 @@
-import { ApiFailure, messageOf } from "@/api/errors";
+import { reasonOf } from "@/api/errors";
 import { ChevronRight } from "lucide-react-native";
 import * as React from "react";
 import { Pressable, ScrollView, Switch, View, type LayoutChangeEvent, type StyleProp, type ViewStyle } from "react-native";
@@ -373,9 +373,8 @@ function EmptyCat({ mood }: { mood: "calm" | "sleepy" | "puzzled" }) {
 
 /** The usual "could not load" state. */
 export function LoadError({ onRetry, what = "this", error }: { onRetry: () => void; what?: string; /** The failure, so the line says what really happened. */ error?: unknown }) {
-  // Only blame the internet when the phone really could not reach the server.
-  const offline = error === undefined || (error instanceof ApiFailure && error.code === "network");
-  const body = offline ? "Check your internet and try again." : error instanceof ApiFailure && error.code === "server_error" ? "Something went wrong on our side. Try again in a minute." : messageOf(error);
+  // Only blame the internet when the phone really could not reach the server (reasonOf).
+  const body = reasonOf(error);
   return <EmptyState mood="puzzled" title={`Could not load ${what}`} body={body} action={{ label: "Try again", onPress: onRetry }} testID="load-error" />;
 }
 

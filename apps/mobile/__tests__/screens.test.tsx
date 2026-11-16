@@ -84,7 +84,7 @@ describe("Quiz", () => {
     await fireEvent.press(screen.getByTestId("quiz-next"));
     expect(submit).toHaveBeenCalledWith({ q1: 1, q2: 2, q3: 0 });
     expect(await screen.findByTestId("quiz-result")).toBeTruthy();
-    expect(screen.getByText("2/3")).toBeTruthy();
+    expect(screen.getByLabelText("2 of 3 right")).toBeTruthy();
     expect(screen.getByTestId("verdict")).toBeTruthy();
   });
 });

@@ -74,15 +74,21 @@ beforeEach(() => {
 describe("doubts", () => {
   it("lists the board with paging, mine only, and the student's cohorts", async () => {
     let r = await read(await doubts(appReq("/doubts?limit=1"), noParams));
-    expect(r.data).toMatchObject({ items: [{ id: D }], nextCursor: "1", cohorts: [{ id: "c1", name: "Cohort 2" }], ready: true });
+    expect(r.data).toMatchObject({ items: [{ id: D }], nextCursor: "1", cohorts: [{ id: "c1", name: "Cohort 2" }], ready: true, wall: true });
     expect(h.list.mock.calls[0][0]).toMatchObject({ userId: STUDENT_ID, isAdmin: false, cohortIds: ["c1"], cohortFilter: null });
     r = await read(await doubts(appReq("/doubts?mine=1"), noParams));
     expect(r.data.items.map((d: { id: string }) => d.id)).toEqual(["mine-1"]);
   });
 
   it("is open to lectures-only accounts and closed when Doubts is switched off", async () => {
+    G.blocks = ["wall"];
+    expect((await read(await doubts(appReq("/doubts"), noParams))).data.wall).toBe(false);
+    G.blocks = [];
     G.db.tables.profiles[0] = profileRow({ scope: "lectures_only" });
-    expect((await read(await doubts(appReq("/doubts"), noParams))).status).toBe(200);
+    const lo = await read(await doubts(appReq("/doubts"), noParams));
+    expect(lo.status).toBe(200);
+    // The class wall is not part of lectures-only access.
+    expect(lo.data.wall).toBe(false);
     G.blocks = ["doubts"];
     expect((await read(await doubts(appReq("/doubts"), noParams))).error?.code).toBe("access_block");
   });

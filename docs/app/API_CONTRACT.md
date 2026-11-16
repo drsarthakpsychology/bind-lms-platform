@@ -55,7 +55,7 @@ type ApiError = { ok: false; error: { code: ApiErrorCode; message: string; detai
 | 403 | `forbidden` | Not enrolled, not the owner, not an admin | Show the message |
 | 403 | `device_limit` | Too many phone changes this month. `details.nextChangeAt` | Show the message and the support contact |
 | 403 | `video_refused` | Video refused (rooted phone) | Show the message |
-| 404 | `not_found` | | |
+| 404 | `not_found` | The thing is not there, or no route answers this path (any unknown `/api/app/v1/...` path answers this JSON, never an HTML page) | Route the app may not have yet: use its fallback or show "not on the server yet" |
 | 409 | `conflict` | Clashes with stored state (already graded) | Show the message, reload |
 | 413 | `too_large` | | |
 | 426 | `upgrade_required` | App too old. `details.minVersion`, `details.storeUrl` | Blocking update screen |
@@ -118,7 +118,7 @@ Sign-in notes:
 The one-phone rule:
 
 - One active phone per student. Signing in on a new phone makes it the active one; the old phone's next request answers 401 `device_replaced`.
-- A student may change phone 2 times in any 30 days. The first phone ever is free. After that, sign-in on another phone answers 403 `device_limit` until an admin allows it (`POST /admin/devices/allow-change`) or the oldest change is 30 days old.
+- A student may change phone 2 times in any 30 days. The first phone ever is free. After that, sign-in on another phone answers 403 `device_limit` until an admin allows it (`POST /admin/devices/allow-change`) or the oldest change is 30 days old. Admins are exempt, and so are the emails in the server setting `APP_REVIEW_EMAILS` (comma list, for the store reviewers; not set means nobody): they get no change limit, but one phone at a time still applies.
 - Admins and view admins are exempt from both rules.
 - Before the owner runs `supabase/migrations_pending/2026_11_15_app_devices.sql`, nothing is enforced: `DeviceState.enforced` is `false`, everything else works.
 
@@ -233,7 +233,7 @@ All: student, gate `/doubts` (open to lectures-only accounts; closed when Doubts
 
 | Status | Method and path | Request | Response | Calls |
 |---|---|---|---|---|
-| built | `GET /doubts` | `?cohort=&mine=1&limit&cursor` | `DoubtList` | `loadDoubts`, `doubtsReady` (`src/lib/doubts/data.ts`) |
+| built | `GET /doubts` | `?cohort=&mine=1&limit&cursor` | `DoubtList` (`wall`: the class wall is open for you, the website's rule: not admins, gate `/wall`) | `loadDoubts`, `doubtsReady` (`src/lib/doubts/data.ts`) |
 | built | `GET /doubts/:id` | none | `DoubtThread` | `loadDoubt` |
 | built | `POST /doubts` | `AskDoubtBody` | `AskDoubtResult` | `askDoubt` |
 | built | `POST /doubts/:id/replies` | `ReplyBody` | `DoubtActionResult` | `replyToDoubt` |
@@ -253,6 +253,26 @@ The website's doubt actions do their own rate limits (20 doubts, 40 answers, 60 
 | built | `GET /journey` | bearer (gate `/journey`, open to lectures-only accounts as on the website) | none | `Journey` | `loadJourney` (`src/lib/journey/model.ts`, moved out of the `/journey` page, which calls it too): `loadMyBoard`, `normalise`, `levelFor`, `liveStreak`, lecture progress and practice counts |
 
 Settings are changed through the routes that own each part: `PATCH /me`, `PUT /devices/current`, `PUT /notifications/preferences`.
+
+### 2.10a Learning map and class wall
+
+Map routes: bearer, gate `{ path: "/study/map", flag: "learn" }` (the website page calls `requireFeature("learn")`; closed to lectures-only accounts and when Study is switched off). Staff accounts get `learner: false`, an empty map, and rounds that are graded but not saved, as on the website.
+
+| Status | Method and path | Request | Response | Calls |
+|---|---|---|---|---|
+| built | `GET /study/map` | none | `StudyMap` | `loadStudentMap` (`src/lib/learn/model/server.ts`) through `mapView` (`src/lib/app-api/learn-map.ts`) |
+| built | `GET /study/map/practice` | `?topic=` (unknown topic: mixed practice), 30 a minute | `MapPractice` (answers and both explanations included, as the website sends them to the browser) | `loadPracticeSession`, `bankItem` |
+| built | `POST /study/map/practice/answers` | `MapAnswerBody`, 120 a minute | `MapAnswerResult` (404 for an item not in the bank) | `answerPractice` (`src/app/(dashboard)/study/map/actions.ts`): graded on the server, saved to the model, answer history and events |
+
+Wall routes: bearer, gate `{ path: "/wall" }` (closed to lectures-only accounts and when the Wall is switched off). Reads and writes run as the caller (row level security); authors are never sent. Same rate-limit keys as the website's `/api/practice/wall/*`, so web and app share one limit.
+
+| Status | Method and path | Request | Response | Calls |
+|---|---|---|---|---|
+| built | `GET /wall` | none | `WallFeed` (50 newest, pinned first; `mine` is your own reactions) | `loadWall` (`src/lib/wall/data.ts`, shared with the website page) |
+| built | `POST /wall/posts` | `WallWriteBody`, 15 a minute | `WallWriteResult` | `addWallPost` |
+| built | `POST /wall/posts/:postId/replies` | `WallWriteBody`, 20 a minute | `WallWriteResult` | `addWallReply` |
+| built | `POST /wall/reactions` | `WallReactBody` (exactly one of postId, replyId), 30 a minute | `WallReactResult` (the same reaction again takes it back) | `toggleWallReaction` |
+| built | `POST /wall/reports` | `WallReportBody`, 10 a minute | `{ reported: true }` | `reportWall` |
 
 ### 2.11 Practise: games and practice rounds
 
@@ -426,3 +446,5 @@ Notification bodies are sent as `MessageBlock[]` (paragraphs, headings, lists, w
 - Adding a field or a route is not a breaking change. The app must ignore fields it does not know.
 - Removing or renaming a field, or changing a type, needs `/api/app/v2`, or a raised `minSupportedVersion`.
 - Every change to a route lands in the same commit as the change to `contract.ts` and to this page.
+- `src/app/api/app/v1/route-sweep.test.ts` reads every request in apps/mobile and fails when one has no route, a missing method, a query key the route ignores or a body key its schema does not know. A call the app makes before its route exists goes in `PENDING` in `src/lib/app-api/route-sweep.ts`; a path built in a variable goes in `DYNAMIC` there.
+- If the app ever gets an answer that is not JSON (an HTML page from a proxy, a 405 for a missing method), it shows a plain line saying so, not "check your internet".

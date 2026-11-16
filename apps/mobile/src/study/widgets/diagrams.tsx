@@ -3,6 +3,7 @@ import { View } from "react-native";
 import Animated, { Easing, useAnimatedProps, useReducedMotion, useSharedValue, withTiming, type SharedValue } from "react-native-reanimated";
 import { Circle, G, SvgXml } from "react-native-svg";
 
+import { reasonOf } from "@/api/errors";
 import type { CurveData, FigureData, FlowData, LayersData, SynapseData } from "@/api/contract";
 import { useFigure } from "@/api/queries";
 import { Button } from "@/ds/button";
@@ -342,7 +343,7 @@ export function FigureWidget({ d }: { d: FigureData }) {
   if (!q.data) {
     return (
       <WidgetFrame label="Figure" title={d.title} testID="w-figure">
-        {q.isError ? <T tone="muted">The drawing could not load. Check your internet.</T> : <Skeleton h={180} r={12} />}
+        {q.isError ? <T tone="muted">{`The drawing could not load. ${reasonOf(q.error)}`}</T> : <Skeleton h={180} r={12} />}
       </WidgetFrame>
     );
   }

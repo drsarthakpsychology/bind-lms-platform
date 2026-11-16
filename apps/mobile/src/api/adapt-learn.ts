@@ -439,6 +439,7 @@ export function doubtListView(raw: unknown): C.DoubtList {
       .map(obj)
       .map((c) => ({ id: str(c.id), name: str(c.name) })),
     ready: d.ready !== false,
+    wall: bool(d.wall),
   };
 }
 
@@ -453,5 +454,84 @@ export function doubtThreadView(raw: unknown): C.DoubtThread {
       .map(obj)
       .filter((r) => r.id)
       .map((r) => ({ id: str(r.id), author: str(r.author) || "A batchmate", mine: bool(r.mine), body: str(r.body), votes: num(r.votes), youVoted: bool(r.youVoted), isSolution: bool(r.isSolution), createdAt: str(r.createdAt) })),
+  };
+}
+
+/* ------------------------------------------------ Learning map, class wall */
+
+const MAP_STATES = ["new", "learning", "shaky", "mastered", "decaying"] as const;
+const MAP_LABEL: Record<C.MapStateKey, string> = { new: "Not started", learning: "Learning", shaky: "Shaky", mastered: "Mastered", decaying: "Needs review" };
+const targetOrNull = (v: unknown): C.AppTarget | null => (typeof obj(v).screen === "string" ? (v as C.AppTarget) : null);
+const pOrNull = (v: unknown): number | null => {
+  const n = numOrNull(v);
+  return n === null ? null : Math.max(0, Math.min(1, n));
+};
+
+export function studyMapView(raw: unknown): C.StudyMap {
+  const d = obj(raw);
+  const states = arr(d.states).map(obj).filter((x) => MAP_STATES.includes(x.key as C.MapStateKey));
+  return {
+    learner: d.learner !== false,
+    due: Math.max(0, num(d.due)),
+    calibrated: bool(d.calibrated),
+    answersToCalibrate: Math.max(0, num(d.answersToCalibrate)),
+    states: states.length ? states.map((x) => ({ key: x.key as C.MapStateKey, label: str(x.label) || MAP_LABEL[x.key as C.MapStateKey] })) : MAP_STATES.map((key) => ({ key, label: MAP_LABEL[key] })),
+    skills: strs(d.skills),
+    weak: arr(d.weak)
+      .map(obj)
+      .filter((w) => w.skill)
+      .map((w) => ({ skill: str(w.skill), topic: str(w.topic), label: str(w.label) || str(w.skill), state: oneOf(w.state, MAP_STATES, "learning"), studyTarget: targetOrNull(w.studyTarget) })),
+    mixUps: arr(d.mixUps)
+      .map(obj)
+      .filter((m) => m.a && m.b)
+      .map((m) => ({ a: str(m.a), b: str(m.b), n: Math.max(1, num(m.n, 1)), topic: strOrNull(m.topic), topicTitle: strOrNull(m.topicTitle) })),
+    topics: arr(d.topics)
+      .map(obj)
+      .filter((t) => t.id)
+      .map((t) => ({
+        id: str(t.id),
+        title: str(t.title) || str(t.id),
+        studyTarget: targetOrNull(t.studyTarget),
+        cells: arr(t.cells)
+          .map(obj)
+          .map((c) => ({ skill: str(c.skill), label: str(c.label), state: oneOf(c.state, MAP_STATES, "new"), hasItems: bool(c.hasItems), p: pOrNull(c.p) })),
+      })),
+  };
+}
+
+export function mapPracticeView(raw: unknown): C.MapPractice {
+  const d = obj(raw);
+  const questions = arr(d.questions)
+    .map(obj)
+    .flatMap((q): C.MapQuestion[] => {
+      const base = { id: str(q.id), topic: str(q.topic), label: str(q.label), text: str(q.text), student: str(q.student), clinician: str(q.clinician) };
+      if (!base.id || !base.text) return [];
+      if (q.kind === "tf" && typeof q.answer === "boolean") return [{ ...base, kind: "tf", answer: q.answer }];
+      const options = strs(q.options);
+      const answer = num(q.answer, -1);
+      if (q.kind !== "mcq" || options.length < 2 || answer < 0 || answer >= options.length) return [];
+      return [{ ...base, kind: "mcq", options, answer, ...(typeof q.vignette === "string" && q.vignette ? { vignette: q.vignette } : {}) }];
+    });
+  return { title: str(d.title) || "Mixed practice", topic: strOrNull(d.topic), round: str(d.round), saving: d.saving !== false, questions };
+}
+
+const WALL_KEYS = ["heart", "insight", "question", "applause", "worry"] as const;
+function wallCounts(v: unknown): Partial<Record<C.WallReactionKey, number>> {
+  const o = obj(v);
+  const out: Partial<Record<C.WallReactionKey, number>> = {};
+  for (const k of WALL_KEYS) if (num(o[k]) > 0) out[k] = num(o[k]);
+  return out;
+}
+function wallReply(v: unknown): C.WallReplyItem {
+  const r = obj(v);
+  return { id: str(r.id), content: str(r.content), isAnonymous: bool(r.isAnonymous), isFaculty: bool(r.isFaculty), createdAt: str(r.createdAt), reactions: wallCounts(r.reactions), mine: arr(r.mine).filter((k): k is C.WallReactionKey => WALL_KEYS.includes(k as C.WallReactionKey)) };
+}
+
+export function wallFeedView(raw: unknown): C.WallFeed {
+  return {
+    posts: arr(obj(raw).posts)
+      .map(obj)
+      .filter((p) => p.id)
+      .map((p) => ({ ...wallReply(p), isPinned: bool(p.isPinned), replies: arr(p.replies).map(wallReply).filter((r) => r.id) })),
   };
 }

@@ -13,7 +13,7 @@ const ROLE_LABEL: Record<string, string> = { admin: "Admin", view_admin: "View a
 export const GET = appRoute({ auth: "bearer" }, async ({ user }): Promise<Settings> => {
   const [me, device, notifications] = await Promise.all([
     buildMe(user.profile, user.name),
-    deviceState({ userId: user.profile.id, role: user.profile.role, deviceId: user.deviceId }),
+    deviceState({ userId: user.profile.id, role: user.profile.role, email: user.profile.email, deviceId: user.deviceId }),
     loadPrefs(user.profile.id),
   ]);
   const config = buildConfig();

@@ -127,4 +127,7 @@ export const GATES = {
   notifications: { path: "/notifications" },
   achievements: { path: "/achievements" },
   journey: { path: "/journey" },
+  /** The website's /study/map: requireFeature("learn") plus its own path for blocks and scope. */
+  studyMap: { path: "/study/map", flag: "learn" },
+  wall: { path: "/wall" },
 } as const satisfies Record<string, ApiGate>;

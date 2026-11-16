@@ -3,7 +3,7 @@
 import * as React from "react";
 import { startHowTo, useHowTo } from "@/components/help/how-to";
 import Link from "next/link";
-import { useReducedMotion } from "motion/react";
+import { useReducedMotion } from "@/lib/use-reduced-motion";
 import { ArrowLeft, BookOpen, Check, Crown, Flame, LoaderCircle, RotateCcw, Timer, Trophy, Users, X, Zap } from "lucide-react";
 import { haptic } from "@/lib/haptics";
 import { cn } from "@/lib/utils";

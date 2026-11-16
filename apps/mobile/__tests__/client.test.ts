@@ -1,6 +1,6 @@
 import { createClient, type RawRequest, type RawResponse } from "@/api/client";
 import type { AuthTokens } from "@/api/contract";
-import { ApiFailure } from "@/api/errors";
+import { ApiFailure, reasonOf } from "@/api/errors";
 
 const later = () => new Date(Date.now() + 3600_000).toISOString();
 
@@ -92,5 +92,17 @@ describe("API client", () => {
     const api = createClient({ transport, tokens: { get: () => ({ accessToken: "A", refreshToken: "R", expiresIn: 1, expiresAt: new Date(Date.now() - 1000).toISOString() }), set: () => undefined, deviceId: () => "d".repeat(16) }, onSessionEvent });
     await expect(api.get("/home")).rejects.toMatchObject({ code: "network" });
     expect(onSessionEvent).not.toHaveBeenCalled();
+  });
+});
+
+describe("reasonOf: error lines say what really happened", () => {
+  it("blames the internet only when the phone could not reach the server", () => {
+    expect(reasonOf(new ApiFailure("network", "x"))).toMatch(/internet/);
+    expect(reasonOf(new ApiFailure("server_error", "x"))).toMatch(/our side/);
+    expect(reasonOf(new ApiFailure("device_required", "This request is missing the device id."))).toBe("This request is missing the device id.");
+    expect(reasonOf(new Error("java.net.SocketTimeoutException: timeout"))).toMatch(/internet/);
+    expect(reasonOf(new Error("HTTP 403"))).toMatch(/not open for your account/);
+    expect(reasonOf(new Error("Response code: 404"))).toMatch(/no longer here/);
+    expect(reasonOf(new Error("decoder failed"))).not.toMatch(/internet/);
   });
 });

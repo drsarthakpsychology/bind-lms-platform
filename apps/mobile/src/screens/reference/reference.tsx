@@ -333,7 +333,7 @@ export function TermSheet({ word, onClose }: { word: string | null; onClose: () 
   return (
     <Sheet open={word !== null} onClose={onClose} title={hit?.label ?? word ?? ""} testID="term-sheet">
       {index.isError || entry.isError ? (
-        <LoadError what="this word" onRetry={() => void (index.isError ? index.refetch() : entry.refetch())} />
+        <LoadError what="this word" error={index.isError ? index.error : entry.error} onRetry={() => void (index.isError ? index.refetch() : entry.refetch())} />
       ) : !index.data || (hit && !entry.data) ? (
         <View style={{ gap: space[3] }}>
           <Skeleton w="90%" h={18} />

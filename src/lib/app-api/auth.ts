@@ -54,7 +54,7 @@ export async function appSignIn(input: { email: string; password: string; device
     throw new ApiFail(problem);
   }
 
-  const registered = await registerDevice({ userId: profile.id, role: profile.role, device: input.device });
+  const registered = await registerDevice({ userId: profile.id, role: profile.role, email: profile.email, device: input.device });
   if (!registered.ok) {
     await revoke(session.access_token);
     throw new ApiFail("device_limit", undefined, { nextChangeAt: registered.nextChangeAt });

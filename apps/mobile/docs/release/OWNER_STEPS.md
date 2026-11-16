@@ -82,7 +82,13 @@ Google checks the app before it goes live and needs a student login.
 
 1. On vibhapsychology.com, as admin, add a new student with the email `drsarthakpsychology+playreview@gmail.com` (Gmail delivers it to your normal inbox).
 2. Open the welcome email it gets and set a password. Write the email and password down for step 4.3.
-3. Reviewers use several phones. If they report "changed phones too often": open the Vibha Psychology app with your admin account > **Students** > that student > **Allow one more phone change**.
+3. Reviewers use several phones, so switch off the phone-change limit for this one login:
+   1. Go to vercel.com > your project > **Settings** (top bar) > **Environment Variables** (left list).
+   2. **Key**: `APP_REVIEW_EMAILS`. **Value**: `drsarthakpsychology+playreview@gmail.com`. Tick **Production** only. Press **Save**.
+   3. Top bar **Deployments** > the top one > **...** (three dots) > **Redeploy** > **Redeploy**. Wait for the green "Ready".
+   4. More than one reviewer login later (for example Apple's)? Put them all in the same value, with a comma between: `one@gmail.com,two@gmail.com`.
+   5. When the app is live you can delete the variable (same page, **...** > **Remove**) and redeploy. No variable means nobody skips the limit.
+   This login can still be signed in on only one phone at a time (a new phone signs the old one out), which is fine for reviewers.
 
 ### 4.2 Build the file for Play (40 minutes, mostly waiting)
 
@@ -153,6 +159,8 @@ What you need before TestFlight:
 | Variable | `APP_API_MODE` | `live` or `mock`, only for the test builds ("App Android build") |
 | Variable | `APP_API_URL` | only if the server address ever changes |
 | Variable | `APP_BUILD_OFFSET` | only if Play says "Version code has already been used": set it to `100` |
+
+On Vercel (not GitHub): `APP_REVIEW_EMAILS`, the store reviewer logins that may change phones without a limit (step 4.1). Leave it out to give nobody that.
 
 The three build buttons in GitHub Actions:
 

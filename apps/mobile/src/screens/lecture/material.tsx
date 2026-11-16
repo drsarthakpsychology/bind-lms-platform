@@ -1,17 +1,18 @@
 import { File, Paths } from "expo-file-system";
 import { Stack, useLocalSearchParams } from "expo-router";
 import { useVideoPlayer, VideoView } from "expo-video";
-import { FileText } from "lucide-react-native";
 import * as React from "react";
 import { Image, Linking, PixelRatio, Pressable, ScrollView, useWindowDimensions, View } from "react-native";
 
 import { pdfPages, type RenderedPage } from "../../../modules/pdf-pages/src";
+import { reasonOf } from "@/api/errors";
 import type { Material } from "@/api/contract";
 import { useMaterial } from "@/api/queries";
 import { session } from "@/auth";
 import { Button, EmptyState, Loaded, RowsSkeleton, Screen, Skeleton, T } from "@/ds";
 import { config } from "@/lib/config";
 import { haptic } from "@/lib/haptics";
+import { OnceHint } from "@/lib/once";
 import { layout, space, useTheme } from "@/theme";
 
 /**
@@ -70,8 +71,8 @@ function PdfReader({ m }: { m: Material }) {
         created.push(file.uri);
         const pages = await pdfPages.pageCount(file.uri);
         if (live) setDoc({ phase: "ready", path: file.uri, pages });
-      } catch {
-        if (live) setDoc({ phase: "error", message: "The file could not be opened. Check your internet and try again." });
+      } catch (e) {
+        if (live) setDoc({ phase: "error", message: reasonOf(e) });
       }
     })();
     return () => {
@@ -202,7 +203,6 @@ function MediaView({ m }: { m: Material }) {
 /* ------------------------------------------------------------------ screen */
 
 export function MaterialBody({ m }: { m: Material }) {
-  const c = useTheme();
   const view = viewFor(m);
   return (
     <>
@@ -223,12 +223,9 @@ export function MaterialBody({ m }: { m: Material }) {
       ) : null}
       {view === "other" ? <EmptyState title="Open this one on the website" body="The app shows PDFs, pictures, audio and video. This kind of file opens on the website for now." action={{ label: "Open on the website", onPress: () => void Linking.openURL(config.site) }} /> : null}
       {view === "pdf" ? (
-        <View style={{ flexDirection: "row", gap: space[2], alignItems: "center" }}>
-          <FileText size={16} color={c.muted} />
-          <T v="caption" tone="muted" style={{ flex: 1 }}>
-            Read inside the app. Tap a page to zoom. Nothing is saved on your phone.
-          </T>
-        </View>
+        <OnceHint id="material-pdf" v="caption" tone="muted">
+          Tap a page to zoom. Nothing is saved on your phone.
+        </OnceHint>
       ) : null}
     </>
   );

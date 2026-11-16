@@ -10,7 +10,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { isCaptured, onCaptureChange } from "../../modules/capture-guard/src";
 import type { StreamAccess } from "@/api/contract";
-import { ApiFailure, messageOf } from "@/api/errors";
+import { ApiFailure, reasonOf } from "@/api/errors";
 import { api } from "@/auth";
 import { Button, Skeleton, T } from "@/ds";
 import { haptic } from "@/lib/haptics";
@@ -213,7 +213,7 @@ export function ProtectedPlayer({ lessonId, onTime, compromised }: PlayerProps) 
       } catch (e) {
         if (!live) return;
         if (e instanceof ApiFailure && e.code === "video_refused") setPhase({ kind: "refused", message: e.message });
-        else setPhase({ kind: "error", message: messageOf(e) });
+        else setPhase({ kind: "error", message: reasonOf(e) });
       }
     })();
     return () => {
@@ -297,7 +297,7 @@ export function ProtectedPlayer({ lessonId, onTime, compromised }: PlayerProps) 
               {pb.failed ? (
                 <View style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, alignItems: "center", justifyContent: "center", padding: space[5], gap: space[3] }}>
                   <T center style={{ color: "#ffffff" }}>
-                    The lecture stopped. Check your internet and try again.
+                    {`The lecture stopped. ${reasonOf(pb.failed)}`}
                   </T>
                   <Button kind="quiet" full={false} label="Try again" onPress={() => {
               setPhase({ kind: "loading" });

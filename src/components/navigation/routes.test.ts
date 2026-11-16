@@ -113,7 +113,11 @@ function sourceFiles(dir = SRC, out: string[] = []): string[] {
   }
   return out;
 }
-const FILES = sourceFiles().map((f) => ({ f: path.relative(ROOT, f), text: fs.readFileSync(f, "utf8") }));
+// App server routes and their helpers hold API paths for the phone app, not links a person follows.
+const API_DIRS = [path.join("src", "app", "api"), path.join("src", "lib", "app-api")];
+const FILES = sourceFiles()
+  .map((f) => ({ f: path.relative(ROOT, f), text: fs.readFileSync(f, "utf8") }))
+  .filter(({ f }) => !API_DIRS.some((d) => f.startsWith(d)));
 const PLACES = "dashboard|study|courses|practice|prep|games|progress|doubts|achievements|leaderboard|reflect|wall|journey|today|record|passport|tools|notifications|settings|learn|admin";
 
 describe("no link in the source points to a missing page", () => {
@@ -130,8 +134,6 @@ describe("no link in the source points to a missing page", () => {
     const re = /`(\/[a-z][a-z0-9/-]*\/)\$\{[^}]+\}((?:\/[a-z0-9-]+|\/\$\{[^}]+\})*)(?:[?#][^`]*)?`/g;
     const bad: string[] = [];
     for (const { f, text } of FILES) {
-      // Server routes for the app build gate paths, not links a person follows.
-      if (f.startsWith(path.join("src", "app", "api"))) continue;
       for (const m of text.matchAll(re)) {
         if (m[1].startsWith("/api/")) continue;
         const p = `${m[1]}x${m[2].replace(/\$\{[^}]+\}/g, "x")}`;

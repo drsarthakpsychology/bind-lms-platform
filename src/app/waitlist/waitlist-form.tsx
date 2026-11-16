@@ -50,7 +50,14 @@ export function WaitlistForm() {
     setError(null);
     const form = e.currentTarget;
     const data = new FormData(form);
-    const res = await submitWaitlist(data);
+    let res: Awaited<ReturnType<typeof submitWaitlist>>;
+    try {
+      res = await submitWaitlist(data);
+    } catch {
+      // No connection, or the site was updated while the form was open: the
+      // request never reached us. Say so instead of spinning forever.
+      res = { ok: false, error: "Your request was not sent. Check your connection and try again." };
+    }
     if (res.ok) {
       // Funnel event. Non-identifying only: the status bucket is useful for
       // cohort mix; name/email/phone never leave the DB as events.

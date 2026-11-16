@@ -2,7 +2,7 @@ import { useQueryClient } from "@tanstack/react-query";
 import { useLocalSearchParams } from "expo-router";
 import { ThumbsUp } from "lucide-react-native";
 import * as React from "react";
-import { Pressable, View } from "react-native";
+import { View } from "react-native";
 
 import type { DoubtActionResult, DoubtReply, DoubtThread } from "@/api/contract";
 import { messageOf } from "@/api/errors";
@@ -11,11 +11,14 @@ import { api } from "@/auth";
 import { Button, Field, Loaded, RowsSkeleton, Screen, T } from "@/ds";
 import { toast } from "@/ds/toast";
 import { haptic } from "@/lib/haptics";
+import { Press, RollingNumber, Stamp } from "@/motion";
 import { when } from "@/screens/notifications/list";
 import { layout, space, useTheme } from "@/theme";
 
 function Reply({ r, thread, onThread }: { r: DoubtReply; thread: DoubtThread; onThread: (t: DoubtThread) => void }) {
   const c = useTheme();
+  // The thumb lands like a stamp when you add your vote.
+  const [pop, setPop] = React.useState(0);
   const vote = async () => {
     haptic.select();
     try {
@@ -49,12 +52,25 @@ function Reply({ r, thread, onThread }: { r: DoubtReply; thread: DoubtThread; on
       </View>
       <T v="reading">{r.body}</T>
       <View style={{ flexDirection: "row", alignItems: "center", gap: space[4] }}>
-        <Pressable accessibilityRole="button" accessibilityLabel={r.youVoted ? `Remove your vote. ${r.votes} votes` : `This helped. ${r.votes} votes`} accessibilityState={{ selected: r.youVoted }} onPress={() => void vote()} style={{ minHeight: layout.target, flexDirection: "row", alignItems: "center", gap: space[2] }}>
-          <ThumbsUp size={18} color={r.youVoted ? c.link : c.muted} fill={r.youVoted ? c.link : "none"} />
-          <T v="small" tone={r.youVoted ? "link" : "muted"} num>
-            {r.votes}
-          </T>
-        </Pressable>
+        <Press
+          feel="none"
+          scale={0.92}
+          accessibilityRole="button"
+          accessibilityLabel={r.youVoted ? `Remove your vote. ${r.votes} votes` : `This helped. ${r.votes} votes`}
+          accessibilityState={{ selected: r.youVoted }}
+          onPress={() => {
+            if (!r.youVoted) setPop((n) => n + 1);
+            void vote();
+          }}
+          innerStyle={{ minHeight: layout.target, flexDirection: "row", alignItems: "center", gap: space[2] }}
+        >
+          <View style={{ width: 18, height: 18, alignItems: "center", justifyContent: "center" }}>
+            <Stamp fire={pop}>
+              <ThumbsUp size={18} color={r.youVoted ? c.link : c.muted} fill={r.youVoted ? c.link : "none"} />
+            </Stamp>
+          </View>
+          <RollingNumber value={r.votes} v="small" tone={r.youVoted ? "link" : "muted"} />
+        </Press>
         {thread.mine && !r.mine ? <Button kind="text" label={r.isSolution ? "Not the solution" : "Mark as solution"} onPress={() => void solve()} /> : null}
       </View>
     </View>
