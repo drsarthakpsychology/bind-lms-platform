@@ -89,7 +89,9 @@ jest.mock("expo-haptics", () => ({
   selectionAsync: jest.fn(async () => undefined),
   impactAsync: jest.fn(async () => undefined),
   notificationAsync: jest.fn(async () => undefined),
-  ImpactFeedbackStyle: { Light: "light", Medium: "medium" },
+  performAndroidHapticsAsync: jest.fn(async () => undefined),
+  ImpactFeedbackStyle: { Light: "light", Medium: "medium", Heavy: "heavy", Soft: "soft", Rigid: "rigid" },
+  AndroidHaptics: { Confirm: "confirm", Reject: "reject", Clock_Tick: "clock-tick", Context_Click: "context-click", Virtual_Key: "virtual-key", Long_Press: "long-press" },
   NotificationFeedbackType: { Success: "success", Warning: "warning", Error: "error" },
 }));
 

@@ -5,6 +5,7 @@ import * as React from "react";
 import { LectureIntro } from "@/lecture/intro";
 import { PAUSE, PLAY, PlayPause, quad } from "@/lecture/playmorph";
 import { isSafePath } from "@/lib/svg-safe";
+import { settingsStore } from "@/lib/settings";
 import { prefs } from "@/lib/storage";
 import { CertificateMoment } from "@/moments/certificate";
 import { freshCertificates } from "@/moments/store";
@@ -16,7 +17,12 @@ import { render } from "./utils";
 
 const note = Haptics.notificationAsync as jest.Mock;
 
-beforeEach(() => note.mockClear());
+// Medium: success and warning are full notification haptics (Light makes them gentle bumps).
+beforeEach(() => {
+  note.mockClear();
+  settingsStore.set({ haptics: "medium" });
+});
+afterAll(() => settingsStore.set({ haptics: "light" }));
 
 describe("end of a round (storyboard 2)", () => {
   it("a lost round gets a warning haptic, never a success one", async () => {
