@@ -34,7 +34,8 @@ export default async function SmartPage() {
     const q = KEY.get(id);
     return q ? [toView(q)] : [];
   });
-  const lead = smart.reviews ? `From your weak topics, including ${smart.reviews} you missed before.` : "From your weak topics.";
+  // No count here: "including 1 you missed before" makes the set look thin.
+  const lead = smart.reviews ? "From your weak topics and questions you missed before." : "From your weak topics.";
   if (await uiV2()) {
     return (
       <GameFrame title="Smart practice" width="reading" back={{ href: "/prep", label: PREP_SHORT }}>
