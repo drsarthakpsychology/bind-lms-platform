@@ -397,10 +397,11 @@ function Scale({ step, reveal, picked, disabled, onAnswer }: { step: Extract<Too
                 onAnswer(j);
               }}
               testID={`tool-scale-${j}`}
-              style={({ pressed }) => ({ flex: 1, minHeight: 88, padding: space[2], alignItems: "center", justifyContent: "center", gap: space[1], borderRadius: layout.radius, borderWidth: right || mine ? 2 : 1.5, borderColor: right ? (c.dark ? c.primary : c.ink) : mine && reveal ? c.danger : c.cardLine, backgroundColor: right ? c.successBg : mine && reveal ? c.alertBg : pressed ? c.tint : "transparent" })}
+              style={({ pressed }) => ({ flex: 1, minHeight: 88, paddingVertical: space[2], paddingHorizontal: 2, alignItems: "center", justifyContent: "center", gap: space[1], borderRadius: layout.radius, borderWidth: right || mine ? 2 : 1.5, borderColor: right ? (c.dark ? c.primary : c.ink) : mine && reveal ? c.danger : c.cardLine, backgroundColor: right ? c.successBg : mine && reveal ? c.alertBg : pressed ? c.tint : "transparent" })}
             >
-              <T style={{ fontFamily: fonts.pixelDigits, fontSize: 18, lineHeight: 22, color: c.ink }}>{["-2", "-1", "0", "+1", "+2"][j]}</T>
-              <T v="caption" center>
+              <T maxFontSizeMultiplier={1.2} style={{ fontFamily: fonts.pixelDigits, fontSize: 18, lineHeight: 22, color: c.ink }}>{["-2", "-1", "0", "+1", "+2"][j]}</T>
+              {/* Five boxes share one row: the words stop growing at 1.2x so "likely" never breaks mid-word. */}
+              <T v="caption" center maxFontSizeMultiplier={1.2}>
                 {l}
               </T>
             </Pressable>

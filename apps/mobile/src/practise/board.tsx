@@ -47,14 +47,14 @@ export function BoardScreen() {
         <RowList>
           {d.rows.map((r) => (
             <View key={`${r.rank}-${r.name}`} accessible accessibilityLabel={`${r.rank}. ${r.name}${r.me ? " (you)" : ""}, ${r.points} points`} style={{ minHeight: layout.row, flexDirection: "row", alignItems: "center", gap: space[4], marginHorizontal: -space[2], paddingHorizontal: space[2], borderRadius: 8, backgroundColor: r.me ? c.tint : "transparent" }} testID={r.me ? "board-you" : undefined}>
-              <T style={{ fontFamily: fonts.pixelDigits, fontSize: 18, lineHeight: 24, minWidth: 40, color: r.rank <= 3 ? c.link : c.muted }} num>
+              <T numberOfLines={1} style={{ fontFamily: fonts.pixelDigits, fontSize: 18, lineHeight: 24, minWidth: 40, flexShrink: 0, color: r.rank <= 3 ? c.link : c.muted }} num>
                 {r.rank}
               </T>
-              <T v="bodyStrong" style={{ flex: 1 }} tone={r.me ? "link" : "ink"}>
+              <T v="bodyStrong" style={{ flex: 1, minWidth: 0 }} tone={r.me ? "link" : "ink"}>
                 {r.me ? `${r.name} (you)` : r.name}
               </T>
-              <T style={{ fontFamily: fonts.pixelDigits, fontSize: 18, lineHeight: 24, color: c.ink }} num>
-                {r.points}
+              <T numberOfLines={1} style={{ fontFamily: fonts.pixelDigits, fontSize: 18, lineHeight: 24, flexShrink: 0, color: c.ink }} num>
+                {r.points.toLocaleString("en-IN")}
               </T>
             </View>
           ))}
