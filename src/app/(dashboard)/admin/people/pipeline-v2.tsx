@@ -96,7 +96,8 @@ function signals(p: Person): { text: string; late: boolean } {
   if (p.replied) parts.push("Replied");
   const late = Boolean(p.followUpAt && new Date(p.followUpAt).getTime() < nowMs());
   if (p.followUpAt) parts.push(`Follow up ${fmt(p.followUpAt)}`);
-  return { text: parts.join(" · "), late };
+  // The no-break space keeps each · on the line of the words before it.
+  return { text: parts.join("\u00a0· "), late };
 }
 
 function PaidLine({ p, ready }: { p: Person; ready: boolean }) {
