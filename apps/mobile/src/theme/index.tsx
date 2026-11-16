@@ -32,6 +32,7 @@ function tellPhone(choice: "system" | "light" | "dark", p: Palette) {
 /**
  * Follows the phone's light or dark setting unless the student chose one in
  * Settings. A change fades the old background away over the new colours.
+ * `force` pins a look for a small part (no fade, nothing told to the phone).
  */
 export function ThemeProvider({ children, force }: { children: React.ReactNode; force?: "light" | "dark" }) {
   const system = useColorScheme();
@@ -51,6 +52,8 @@ export function ThemeProvider({ children, force }: { children: React.ReactNode; 
     if (!force) tellPhone(choice, palette);
   }, [force, choice, palette]);
 
+  // A forced look (tests, a light island such as a button on video) only changes the colours.
+  if (force) return <ThemeContext.Provider value={palette}>{children}</ThemeContext.Provider>;
   return (
     <ThemeContext.Provider value={palette}>
       <View style={{ flex: 1, backgroundColor: palette.bg }}>

@@ -16,7 +16,7 @@ import type { Drawing } from "./safe";
 export function CertDrawing({ drawing, label }: { drawing: Drawing; label: string }) {
   const c = useTheme();
   return (
-    <View accessible accessibilityRole="image" accessibilityLabel={label} testID="cert-drawing" style={{ borderRadius: layout.radius, overflow: "hidden", borderWidth: 1, borderColor: c.hairline, backgroundColor: "#ffffff", aspectRatio: drawing.width / Math.max(1, drawing.height) }}>
+    <View accessible accessibilityRole="image" accessibilityLabel={label} testID="cert-drawing" style={{ borderRadius: layout.radius, overflow: "hidden", borderWidth: 1, borderColor: c.hairline, backgroundColor: c.paper, aspectRatio: drawing.width / Math.max(1, drawing.height) }}>
       <Svg width="100%" height="100%" viewBox={`0 0 ${drawing.width} ${drawing.height}`} preserveAspectRatio="xMidYMid meet">
         {drawing.ops.map((op, i) => {
           switch (op.k) {

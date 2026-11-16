@@ -21,6 +21,6 @@ const LOOK: Record<string, { fill: "brand" | "ink" | "primary" | "wash" | "soft"
 export function ClassMark({ group, size = 12 }: { group: string; size?: number }) {
   const c = useTheme();
   const l = LOOK[group] ?? { fill: "none", ring: true };
-  const bg = l.fill === "brand" ? c.brand : l.fill === "ink" ? c.ink : l.fill === "primary" ? c.primary : l.fill === "wash" ? c.sk.wash : l.fill === "soft" ? c.sk.soft : "transparent";
+  const bg = l.fill === "brand" ? c.accent : l.fill === "ink" ? c.ink : l.fill === "primary" ? c.primary : l.fill === "wash" ? c.sk.wash : l.fill === "soft" ? c.sk.soft : "transparent";
   return <View accessible={false} importantForAccessibility="no" style={{ width: size, height: size, borderRadius: 3, backgroundColor: bg, borderWidth: l.ring ? 1.5 : 0, borderColor: c.ink }} />;
 }

@@ -161,7 +161,7 @@ function Cell({ n, st, current, onPress }: { n: number; st: CellState; current: 
         justifyContent: "center",
         borderWidth: current ? 2.5 : 1.5,
         borderStyle: st === "not-visited" ? "dashed" : "solid",
-        borderColor: current ? c.brand : st === "not-visited" ? c.cardLine : c.ink,
+        borderColor: current ? c.accent : st === "not-visited" ? c.cardLine : c.ink,
         backgroundColor: filled ? c.ink : pressed ? c.tint : "transparent",
         transform: [{ scale: pressed ? 0.94 : 1 }],
       })}
