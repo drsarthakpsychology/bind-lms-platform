@@ -29,7 +29,7 @@ function sizeLabel(b: number | null): string {
   return b > 1_000_000 ? `${(b / 1_000_000).toFixed(1)} MB` : `${Math.round(b / 1000)} KB`;
 }
 
-function MaterialRows({ items }: { items: Material[] }) {
+function MaterialRows({ items, courseId }: { items: Material[]; courseId: string }) {
   const c = useTheme();
   if (!items.length) return <T tone="muted">No materials for this lecture.</T>;
   return (
@@ -40,7 +40,7 @@ function MaterialRows({ items }: { items: Material[] }) {
           title={m.title}
           meta={[m.format?.toUpperCase(), sizeLabel(m.sizeBytes)].filter(Boolean).join(" · ") || undefined}
           icon={<FileText size={20} color={c.muted} />}
-          onPress={() => router.push(`/material/${encodeURIComponent(m.id)}`)}
+          onPress={() => router.push(`/material/${encodeURIComponent(m.id)}${courseId ? `?course=${encodeURIComponent(courseId)}` : ""}`)}
         />
       ))}
     </RowList>
@@ -284,7 +284,7 @@ export function LectureScreen() {
             />
             <Swap k={tab} dir={dir} testID="lecture-tab-body">
               {tab === "about" ? l.description ? <T v="reading">{l.description}</T> : <T tone="muted">No notes for this lecture.</T> : null}
-              {tab === "materials" ? <MaterialRows items={l.materials} /> : null}
+              {tab === "materials" ? <MaterialRows items={l.materials} courseId={l.courseId} /> : null}
               {tab === "assignment" ? (
                 <HandInSlot.Provider value={setHandIn}>
                   <AssignmentPart lecture={l} />

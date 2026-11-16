@@ -45,6 +45,12 @@ export function absoluteUrl(path: string, apiUrl = config.apiUrl): string {
   return apiUrl.replace(/\/$/, "") + path;
 }
 
+/** The material's own page on the website (/courses/<course>/materials/<id>); the course list when the course is not known. */
+export function materialWebUrl(materialId: string, courseId: string | null | undefined, site = config.site): string {
+  const base = site.replace(/\/$/, "");
+  return courseId ? `${base}/courses/${encodeURIComponent(courseId)}/materials/${encodeURIComponent(materialId)}` : `${base}/courses`;
+}
+
 function fileUrl(m: Material): string {
   return absoluteUrl(m.filePath ?? "");
 }
@@ -205,7 +211,7 @@ function MediaView({ m }: { m: Material }) {
 
 /* ------------------------------------------------------------------ screen */
 
-export function MaterialBody({ m }: { m: Material }) {
+export function MaterialBody({ m, courseId }: { m: Material; courseId?: string | null }) {
   const view = viewFor(m);
   return (
     <>
@@ -224,7 +230,7 @@ export function MaterialBody({ m }: { m: Material }) {
           <Button kind="quiet" label="Open the link" onPress={() => m.url && void openLink(m.url)} />
         </View>
       ) : null}
-      {view === "other" ? <EmptyState title="Open this one on the website" body="The app shows PDFs, pictures, audio and video. This kind of file opens on the website for now." action={{ label: "Open on the website", onPress: () => void openLink(config.site) }} /> : null}
+      {view === "other" ? <EmptyState title="Open this one on the website" body="The app shows PDFs, pictures, audio and video. This kind of file opens on the website for now." action={{ label: "Open on the website", onPress: () => void openLink(materialWebUrl(m.id, courseId)) }} /> : null}
       {view === "pdf" ? (
         <OnceHint id="material-pdf" v="caption" tone="muted">
           Tap a page to zoom. Nothing is saved on your phone.
@@ -235,13 +241,14 @@ export function MaterialBody({ m }: { m: Material }) {
 }
 
 export function MaterialScreen() {
-  const { id = "" } = useLocalSearchParams<{ id: string }>();
+  const { id = "", course } = useLocalSearchParams<{ id: string; course?: string | string[] }>();
   const q = useMaterial(String(id));
+  const courseId = Array.isArray(course) ? course[0] : course;
   return (
     <Screen testID="material" gap={space[4]}>
       <Stack.Screen options={{ title: "" }} />
       <Loaded q={q} what="this material" skeleton={<RowsSkeleton rows={3} />}>
-        {(m) => <MaterialBody m={m} />}
+        {(m) => <MaterialBody m={m} courseId={courseId} />}
       </Loaded>
     </Screen>
   );
