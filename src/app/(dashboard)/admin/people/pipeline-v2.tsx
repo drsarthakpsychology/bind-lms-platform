@@ -96,7 +96,8 @@ function signals(p: Person): { text: string; late: boolean } {
   if (p.replied) parts.push("Replied");
   const late = Boolean(p.followUpAt && new Date(p.followUpAt).getTime() < nowMs());
   if (p.followUpAt) parts.push(`Follow up ${fmt(p.followUpAt)}`);
-  return { text: parts.join(" · "), late };
+  // The no-break space keeps each · on the line of the words before it.
+  return { text: parts.join("\u00a0· "), late };
 }
 
 function PaidLine({ p, ready }: { p: Person; ready: boolean }) {
@@ -339,7 +340,7 @@ export function PipelineV2({
                       </Link>
                       <span className="block text-muted-foreground [overflow-wrap:anywhere]">{p.email}</span>
                       <span className="block text-muted-foreground [overflow-wrap:anywhere]">
-                        {[p.cohorts.map((c) => c.name).join(", "), sourceOf(p)].filter(Boolean).join(" · ")}
+                        {[p.cohorts.map((c) => c.name).join(", "), sourceOf(p)].filter(Boolean).join("\u00a0· ")}
                       </span>
                       {scope === "enquiries" && p.message ? <span className="mt-1 block max-w-[60ch] whitespace-pre-line text-foreground/85 [overflow-wrap:anywhere]">{p.message}</span> : null}
                     </td>
@@ -379,7 +380,7 @@ export function PipelineV2({
                       </span>
                     </span>
                     <span className={cn("type-small", sig.late ? "text-status-alert-fg" : "text-muted-foreground")}>
-                      {[sig.text, p.lastContactAt ? `Last contact ${fmt(p.lastContactAt)}` : "Never contacted"].filter(Boolean).join(" · ")}
+                      {[sig.text, p.lastContactAt ? `Last contact ${fmt(p.lastContactAt)}` : "Never contacted"].filter(Boolean).join("\u00a0· ")}
                     </span>
                   </div>
                   <QuickActions p={p} canWrite={canWrite} paymentReady={paymentReady} onEmail={() => setCompose([p.email])} compact />

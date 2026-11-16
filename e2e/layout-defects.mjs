@@ -11,6 +11,12 @@
  *   tiny         text under 12px
  *   measure      reading text wider than 80 characters per line
  *   tap          a control under 44x44 px on a touch width (< 1024 px)
+ *   bar          page content painted over a fixed bar (tab bar, top bar, thumb
+ *                bar, pinned action): sampled with elementFromPoint across the
+ *                bar at the top, middle and end of the page
+ *   reach        at the end of the page the last content is still under a
+ *                bottom bar (the page cannot be scrolled far enough)
+ *   separator    a line that starts with a "·" (the separator wrapped alone)
  *
  * Two ways to point it at screens:
  *   Harness (a static bundle that renders one page per ?page=NAME, with
@@ -25,6 +31,8 @@
  *   --md <file>        also write a Markdown defect list
  *   --chrome <path>    Chromium binary (defaults to the local Playwright one)
  *   --shots all|defects|none  (default defects)
+ *   --resize           load each screen once per kind of device and resize
+ *                      through its widths (faster; JS layouts get a resize)
  *   --cookies "a=1; b=2"  cookies for --base (a signed-in session against a
  *                      local mock), or --cookies @file to read them from a file
  *
@@ -75,6 +83,8 @@ fs.mkdirSync(out, { recursive: true });
 function scan({ touch }) {
   const vw = document.documentElement.clientWidth;
   const found = [];
+  // Mid-redirect there is no body yet: nothing to read.
+  if (!document.body) return { found, sw: 0, vw };
   const okFor = (el, kind) => {
     const h = el.closest("[data-layout-ok]");
     if (!h) return false;
@@ -201,10 +211,11 @@ function scan({ touch }) {
     // ancestors that clip (fixed-height cards, overflow hidden wrappers)
     for (let a = box.parentElement, i = 0; a && a !== document.body && i < 6; a = a.parentElement, i++) {
       const acs = getComputedStyle(a);
+      // A sideways scroller (a carousel) shows the rest on scroll: not cut off.
+      if (acs.overflowX === "auto" || acs.overflowX === "scroll") break;
       const cx = /hidden|clip/.test(acs.overflowX);
       const cy = /hidden|clip/.test(acs.overflowY);
       if (!cx && !cy) continue;
-      if (acs.overflowX === "auto" || acs.overflowX === "scroll") break;
       const ar = a.getBoundingClientRect();
       if (ar.width < 2 || ar.height < 2) break; // sr-only style boxes
       if (acs.textOverflow === "ellipsis" || (acs.webkitLineClamp && acs.webkitLineClamp !== "none")) break;
@@ -277,6 +288,33 @@ function scan({ touch }) {
       }
   }
 
+  // 8. a "·" separator that wrapped to the start of a line
+  const dots = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+  for (let t = dots.nextNode(); t; t = dots.nextNode()) {
+    const s = t.textContent;
+    if (!s.includes("·") || !t.parentElement || hidden(t.parentElement) || t.parentElement.closest("svg")) continue;
+    for (let i = s.indexOf("·"); i !== -1; i = s.indexOf("·", i + 1)) {
+      const r = document.createRange();
+      r.setStart(t, i); r.setEnd(t, i + 1);
+      const dot = r.getBoundingClientRect();
+      if (!dot.width) continue;
+      // the visible thing before the dot: the previous character here, or the end of the previous text
+      let prev = null;
+      for (let j = i - 1; j >= 0; j--) {
+        if (/\s/.test(s[j])) continue;
+        r.setStart(t, j); r.setEnd(t, j + 1); prev = r.getBoundingClientRect(); break;
+      }
+      if (!prev) {
+        const b = block(t.parentElement);
+        const w2 = document.createTreeWalker(b, NodeFilter.SHOW_TEXT);
+        let last = null;
+        for (let u = w2.nextNode(); u && u !== t; u = w2.nextNode()) if (u.textContent.trim()) last = u;
+        if (last) { const k = last.textContent.trimEnd().length; r.setStart(last, k - 1); r.setEnd(last, k); prev = r.getBoundingClientRect(); }
+      }
+      if (prev && prev.width && dot.top > prev.bottom - 2) add(t.parentElement, "separator", "a line starts with the · separator");
+    }
+  }
+
   // 7. tap targets on touch widths
   if (touch) {
     const sel = "a[href], button, [role=button], [role=tab], [role=radio], [role=checkbox], [role=switch], [role=menuitem], [role=option], input:not([type=hidden]), select, textarea, summary";
@@ -305,16 +343,96 @@ function scan({ touch }) {
   return { found, sw, vw };
 }
 
+/**
+ * Runs inside the page at one scroll position. Finds the fixed bars along the
+ * top and bottom edges and samples them with elementFromPoint: whatever is hit
+ * must belong to the bar (or to another fixed layer, such as a sheet or a
+ * toast). At the end of the page it also checks that the last content clears
+ * the bottom bars.
+ */
+function barScan({ atEnd }) {
+  if (!document.body) return [];
+  const vw = document.documentElement.clientWidth;
+  const vh = innerHeight;
+  const out = [];
+  const fixedOf = (el) => { for (let e = el; e && e !== document.documentElement; e = e.parentElement) { if (getComputedStyle(e).position === "fixed") return e; } return null; };
+  const bars = [];
+  for (const el of document.body.querySelectorAll("*")) {
+    const cs = getComputedStyle(el);
+    if (cs.position !== "fixed" || cs.display === "none" || cs.visibility === "hidden" || +cs.opacity === 0) continue;
+    if (el.closest("[data-layout-ok]")) continue;
+    if (el.parentElement && fixedOf(el.parentElement)) continue;
+    const r = el.getBoundingClientRect();
+    if (r.width < vw * 0.6 || r.height < 24 || r.height > vh * 0.45) continue;
+    const edge = r.bottom >= vh - 2 ? "bottom" : r.top <= 2 ? "top" : null;
+    if (!edge) continue;
+    bars.push({ el, r, edge });
+  }
+  const label = (el) => {
+    const parts = [];
+    for (let e = el, i = 0; e && e !== document.body && i < 3; e = e.parentElement, i++) {
+      const cls = String(e.getAttribute("class") ?? "").split(/\s+/).filter((c) => c && !c.includes(":") && !c.includes("[")).slice(0, 3);
+      parts.unshift(e.tagName.toLowerCase() + (cls.length ? "." + cls.join(".") : ""));
+    }
+    return parts.join(" > ");
+  };
+  for (const { el, r } of bars) {
+    const bad = new Map();
+    for (let x = r.left + 3; x < r.right - 2; x += 10)
+      for (let y = r.top + 2; y < r.bottom - 1; y += 6) {
+        if (y < 0 || y >= vh) continue;
+        const hit = document.elementFromPoint(x, y);
+        if (!hit || el.contains(hit) || hit === document.documentElement || hit === document.body) continue;
+        const f = fixedOf(hit);
+        if (f && f !== el) continue; // a sheet, dialog, toast or other fixed layer above it
+        bad.set(hit, (bad.get(hit) ?? 0) + 1);
+      }
+    for (const [hit, n] of bad) out.push({ kind: "bar", el: label(hit), text: (hit.textContent || "").replace(/\s+/g, " ").trim().slice(0, 60), detail: `painted over ${label(el)} (${n} samples, scrollY ${Math.round(scrollY)})` });
+  }
+  if (atEnd) {
+    const bottomBars = bars.filter((b) => b.edge === "bottom");
+    const top = Math.min(...bottomBars.map((b) => b.r.top));
+    if (bottomBars.length && Number.isFinite(top)) {
+      const main = document.querySelector("main") ?? document.body;
+      let low = null;
+      const tw = document.createTreeWalker(main, NodeFilter.SHOW_TEXT);
+      for (let t = tw.nextNode(); t; t = tw.nextNode()) {
+        if (!t.textContent.trim() || !t.parentElement || fixedOf(t.parentElement)) continue;
+        const p = t.parentElement;
+        if (p.closest("[aria-hidden=true], .sr-only, [hidden]") || (p.checkVisibility && !p.checkVisibility({ opacityProperty: true, visibilityProperty: true }))) continue;
+        const rg = document.createRange(); rg.selectNodeContents(t);
+        const rr = rg.getBoundingClientRect();
+        if (rr.height < 1 || rr.width < 1) continue;
+        if (!low || rr.bottom > low.r.bottom) low = { el: p, r: rr };
+      }
+      if (low && low.r.bottom > top + 1 && !low.el.closest("[data-layout-ok]")) out.push({ kind: "reach", el: label(low.el), text: (low.el.textContent || "").trim().slice(0, 60), detail: `last text ends ${Math.round(low.r.bottom - top)}px under the bottom bar at the end of the page` });
+    }
+  }
+  return out;
+}
+
 let browser = merge ? null : await chromium.launch(chrome ? { executablePath: chrome } : {});
 const report = merge ? merge.split(",").flatMap((f) => JSON.parse(fs.readFileSync(f, "utf8"))) : [];
+// --resize: one load per screen for phones (< 768) and one for wider windows
+// (tablet and desktop), then the window is resized through the widths. Much
+// faster against a slow dev server; without it every width is a fresh load.
+const resize = !!args.resize;
+const kindOf = (w) => (w < 768 ? "phone" : "wide");
+const groups = [];
+for (const w of widths) {
+  const g = resize && groups.find((x) => kindOf(x[0]) === kindOf(w));
+  if (g) g.push(w);
+  else groups.push([w]);
+}
 for (const theme of merge ? [] : themes) {
-  for (const w of widths) {
-    const touch = w < 1024;
+  for (const ws of groups) {
+    const w0 = ws[0];
+    const touch = w0 < 1024;
     const ctxOpts = {
-      viewport: { width: w, height: w < 768 ? 800 : 900 },
+      viewport: { width: w0, height: w0 < 768 ? 800 : 900 },
       deviceScaleFactor: 1,
       hasTouch: touch,
-      isMobile: w < 768,
+      isMobile: w0 < 768,
       reducedMotion: "reduce",
       colorScheme: theme === "dark" ? "dark" : "light",
     };
@@ -346,28 +464,68 @@ for (const theme of merge ? [] : themes) {
         await page.waitForTimeout(400);
         if (theme === "dark" && !harness) await page.evaluate(() => document.documentElement.classList.add("dark"));
       } catch (e) {
-        report.push({ page: p, width: w, theme, error: String(e.message).slice(0, 200), defects: [] });
-        console.log(p, w, theme, "LOAD ERROR", String(e.message).slice(0, 80));
+        for (const w of ws) report.push({ page: p, width: w, theme, error: String(e.message).slice(0, 200), defects: [] });
+        console.log(p, ws.join("/"), theme, "LOAD ERROR", String(e.message).slice(0, 80));
         await page.close().catch(() => {});
         continue;
       }
-      const crash = errors.includes("never finished rendering") ? `never finished rendering: ${errors[0]}` : await page.evaluate(() => (document.body.innerText.startsWith("ERR ") ? document.body.innerText.slice(0, 200) : null));
+      const crash = errors.includes("never finished rendering") ? `never finished rendering: ${errors[0]}` : await page.evaluate(() => (document.body.innerText.startsWith("ERR ") ? document.body.innerText.slice(0, 200) : null)).catch(() => null);
       if (crash) {
-        report.push({ page: p, width: w, theme, error: crash, defects: [] });
-        console.log(p, w, theme, "RENDER ERROR", crash.slice(0, 80));
+        for (const w of ws) report.push({ page: p, width: w, theme, error: crash, defects: [] });
+        console.log(p, ws.join("/"), theme, "RENDER ERROR", crash.slice(0, 80));
         await page.close().catch(() => {});
         continue;
       }
-      const { found } = await page.evaluate(scan, { touch });
-      const slug = `${p.replace(/[^a-z0-9]+/gi, "_").replace(/^_|_$/g, "") || "root"}-${w}-${theme}`;
-      let shot = null;
-      if (shots === "all" || (shots === "defects" && found.length)) {
-        await page.addStyleTag({ content: "[data-defect]{outline:2px solid #ff0040 !important;outline-offset:1px}" });
-        shot = path.join(out, slug + ".jpg");
-        await page.screenshot({ path: shot, fullPage: true, type: "jpeg", quality: 55 }).catch(() => (shot = null));
+      for (const w of ws) {
+        if (w !== w0) {
+          await page.setViewportSize({ width: w, height: w < 768 ? 800 : 900 });
+          await page.waitForTimeout(350);
+        }
+        // Clear the marks of the previous width.
+        await page.evaluate(() => {
+          for (const e of document.querySelectorAll("[data-defect]")) e.removeAttribute("data-defect");
+          for (const e of document.querySelectorAll("[data-measured]")) e.removeAttribute("data-measured");
+          document.getElementById("__ld-outline")?.remove();
+          window.scrollTo(0, 0);
+        }).catch(() => {});
+        let found;
+        try {
+          found = (await page.evaluate(scan, { touch: w < 1024 })).found;
+        } catch (e) {
+          // The screen moved on by itself (a client redirect) while it was being read.
+          report.push({ page: p, width: w, theme, error: String(e.message).slice(0, 200), defects: [] });
+          console.log(p, w, theme, "SCAN ERROR", String(e.message).slice(0, 80));
+          break;
+        }
+        // Fixed bars: sample them at the top, the middle and the end of the page.
+        const maxY = await page.evaluate(() => document.documentElement.scrollHeight - innerHeight).catch(() => 0);
+        const seenBar = new Set();
+        for (const y of [0, Math.round(maxY / 2), maxY]) {
+          await page.evaluate((yy) => window.scrollTo(0, yy), y).catch(() => {});
+          await page.waitForTimeout(150);
+          for (const d of await page.evaluate(barScan, { atEnd: y === maxY }).catch(() => [])) {
+            const k = d.kind + d.el + d.text;
+            if (seenBar.has(k)) continue;
+            seenBar.add(k);
+            found.push(d);
+          }
+        }
+        await page.evaluate(() => window.scrollTo(0, 0)).catch(() => {});
+        const slug = `${p.replace(/[^a-z0-9]+/gi, "_").replace(/^_|_$/g, "") || "root"}-${w}-${theme}`;
+        let shot = null;
+        if (shots === "all" || (shots === "defects" && found.length)) {
+          await page.evaluate(() => {
+            const st = document.createElement("style");
+            st.id = "__ld-outline";
+            st.textContent = "[data-defect]{outline:2px solid #ff0040 !important;outline-offset:1px}";
+            document.head.appendChild(st);
+          }).catch(() => {});
+          shot = path.join(out, slug + ".jpg");
+          await page.screenshot({ path: shot, fullPage: true, type: "jpeg", quality: 55 }).catch(() => (shot = null));
+        }
+        report.push({ page: p, width: w, theme, shot, errors: errors.slice(0, 3), defects: found });
+        console.log(`${p} ${w} ${theme}: ${found.length}`);
       }
-      report.push({ page: p, width: w, theme, shot, errors: errors.slice(0, 3), defects: found });
-      console.log(`${p} ${w} ${theme}: ${found.length}`);
       await page.close().catch(() => {});
     }
     await ctx.close().catch(() => {});
@@ -377,7 +535,7 @@ await browser?.close();
 if (!merge) fs.writeFileSync(path.join(out, "report.json"), JSON.stringify(report, null, 1));
 
 if (args.md) {
-  const kinds = ["hscroll", "overflow", "clip", "overlap", "truncate", "tiny", "measure", "tap"];
+  const kinds = ["hscroll", "overflow", "clip", "overlap", "truncate", "tiny", "measure", "tap", "bar", "reach", "separator"];
   const total = report.reduce((s, r) => s + r.defects.length, 0);
   const per = {};
   for (const r of report) {

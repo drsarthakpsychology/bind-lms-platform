@@ -87,10 +87,10 @@ function Hero() {
               <p className={s.eyebrowPill}>
                 <span className={s.liveDot} aria-hidden />
                 <span className={s.pillLong}>
-                  {COHORT.label} · by invitation · starts {COHORT.starts.toLowerCase()}
+                  {COHORT.label}&nbsp;· by invitation&nbsp;· starts {COHORT.starts.toLowerCase()}
                 </span>
                 <span className={s.pillShort}>
-                  {COHORT.label} · starts {COHORT.startsShort}
+                  {COHORT.label}&nbsp;· starts {COHORT.startsShort}
                 </span>
               </p>
             </Reveal>
@@ -437,7 +437,7 @@ function Play() {
 }
 
 /* ===================================================== FREE FOR EVERYONE */
-const FREE_TESTS = INSTRUMENTS.map((i) => ({ href: `/free/tests/${i.id}`, title: i.short, meta: `${i.name} · ${i.minutes} min` }));
+const FREE_TESTS = INSTRUMENTS.map((i) => ({ href: `/free/tests/${i.id}`, title: i.short, meta: `${i.name}\u00a0· ${i.minutes} min` }));
 const FREE_CALM = CALM_TOOLS.map((c) => ({ href: `/free/calm/${c.id}`, title: c.title, meta: c.minutes }));
 
 function FreeStrip() {
@@ -639,7 +639,7 @@ function FeesJoin() {
         </div>
 
         <div className={s.whoRow}>
-          <p className={s.pixLabel}>Who can join · no degree, age or experience requirement</p>
+          <p className={s.pixLabel}>Who can join&nbsp;· no degree, age or experience requirement</p>
           <ul className={s.who}>
             {WHO_FOR.map((w) => (
               <Tilt as="li" key={w.title} className={s.whoCard} max={6}>
@@ -1053,7 +1053,7 @@ function Footer() {
         <p>
           Cookies: only what&apos;s needed to run the site. See the <Link href="/policies/cookies">Cookie Policy</Link>.
         </p>
-        <p>© 2026 VIBHA School of Psychology · Ahmedabad, India</p>
+        <p>© 2026 VIBHA School of Psychology&nbsp;· Ahmedabad, India</p>
       </div>
     </footer>
   );
