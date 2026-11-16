@@ -153,7 +153,7 @@ function TopBar({ y, ch, vh, heroH, topInset, onJump }: { y: SharedValue<number>
           <Text allowFontScaling={false} style={{ fontFamily: fonts.wordmark, fontSize: 18, color: WHITE, letterSpacing: -0.3 }}>
             VIBHA
           </Text>
-          <Text allowFontScaling={false} style={{ flex: 1, fontFamily: fonts.semibold, fontSize: 12, color: ON_BLUE_MUTED }}>
+          <Text allowFontScaling={false} numberOfLines={1} style={{ flex: 1, fontFamily: fonts.pixel, fontSize: 10, letterSpacing: 0.6, textTransform: "uppercase", color: ON_BLUE_MUTED }}>
             School of Psychology
           </Text>
           <Press onPress={onJump} testID="welcome-jump" accessibilityRole="button" accessibilityLabel="Jump to a part of this page" feel="select" innerStyle={{ minHeight: layout.target, paddingHorizontal: space[3], flexDirection: "row", alignItems: "center", gap: space[1] }}>
@@ -227,7 +227,7 @@ function Wordmark() {
         ))}
       </View>
       <FadeUp delay={420} style={{ paddingBottom: 4 }}>
-        <Text allowFontScaling={false} style={{ fontFamily: fonts.semibold, fontSize: 13, color: ON_BLUE_MUTED }}>
+        <Text allowFontScaling={false} style={{ fontFamily: fonts.pixel, fontSize: 11, letterSpacing: 0.66, textTransform: "uppercase", color: ON_BLUE_MUTED }}>
           School of Psychology
         </Text>
       </FadeUp>

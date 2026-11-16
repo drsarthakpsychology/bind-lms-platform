@@ -17,16 +17,17 @@ import { useKeyboardPad } from "./keyboard-pad";
 import { T } from "./text";
 import { TitleInk } from "@/moments/title";
 
-/** The VIBHA wordmark: wide black Archivo, with the school line under it. */
+/** The VIBHA wordmark, as on the website: wide black Archivo, with the school line under it in the pixel face. */
 export function Wordmark({ sub = "School of Psychology", size = 22 }: { sub?: string | null; size?: number }) {
   const c = useTheme();
+  const subSize = Math.max(9, Math.round(size * 0.45));
   return (
     <View accessible accessibilityRole="header" accessibilityLabel={sub ? `VIBHA ${sub}` : "VIBHA"}>
       <T style={{ fontFamily: fonts.wordmark, fontSize: size, lineHeight: size + 2, letterSpacing: -0.4, color: c.ink }} maxFontSizeMultiplier={1.2}>
         VIBHA
       </T>
       {sub ? (
-        <T v="caption" tone="muted" maxFontSizeMultiplier={1.2}>
+        <T tone="muted" maxFontSizeMultiplier={1.2} style={{ fontFamily: fonts.pixel, fontSize: subSize, lineHeight: subSize + 4, letterSpacing: subSize * 0.06, textTransform: "uppercase", marginTop: 2 }}>
           {sub}
         </T>
       ) : null}

@@ -225,7 +225,7 @@ function BandName() {
       <Text allowFontScaling={false} style={{ fontFamily: fonts.wordmark, fontSize: 24, color: "#ffffff", letterSpacing: -0.4 }}>
         VIBHA
       </Text>
-      <Text allowFontScaling={false} style={{ fontFamily: fonts.semibold, fontSize: 12, color: "rgba(255,255,255,0.8)", paddingBottom: 4 }}>
+      <Text allowFontScaling={false} style={{ fontFamily: fonts.pixel, fontSize: 11, letterSpacing: 0.66, textTransform: "uppercase", color: "rgba(255,255,255,0.85)", paddingBottom: 5 }}>
         School of Psychology
       </Text>
     </View>
