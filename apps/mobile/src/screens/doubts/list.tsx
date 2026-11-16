@@ -2,9 +2,12 @@ import { router } from "expo-router";
 import { MessagesSquare, Plus } from "lucide-react-native";
 import * as React from "react";
 
-import type { DoubtRow } from "@/api/contract";
+import { doubtListView } from "@/api/adapt-learn";
+import type { DoubtList, DoubtRow } from "@/api/contract";
 import { useDoubts } from "@/api/queries";
+import { api } from "@/auth";
 import { Button, Chips, EmptyState, Loaded, Row, RowList, Screen, T } from "@/ds";
+import { MoreButton, useMorePages } from "@/ds/more";
 import { when } from "@/screens/notifications/list";
 import { TabTop } from "@/nav/top";
 import { useTheme } from "@/theme";
@@ -38,17 +41,29 @@ function DoubtsBody() {
               </RowList>
             ) : null}
             {d.items.length ? (
-              <RowList>
-                {d.items.map((x) => (
-                  <Row key={x.id} testID={`doubt-${x.id}`} title={x.title} meta={doubtMeta(x)} trailing={x.status === "solved" ? <SolvedWord color={c.link} /> : undefined} onPress={() => router.push(`/doubt/${encodeURIComponent(x.id)}`)} />
-                ))}
-              </RowList>
+              <DoubtRows key={mine} first={d} mine={mine === "mine"} />
             ) : (
               <EmptyState title={mine === "mine" ? "You have not asked anything yet" : "No doubts yet"} body="Ask about anything from the lectures or the reading. The faculty and your batch answer here." testID="doubts-empty" />
             )}
           </>
         )}
       </Loaded>
+    </>
+  );
+}
+
+/** Every doubt, 50 at a time (a whole batch asks far more than one page). */
+function DoubtRows({ first, mine }: { first: DoubtList; mine: boolean }) {
+  const c = useTheme();
+  const m = useMorePages(first, async (cursor) => doubtListView(await api.get<unknown>("/doubts", { query: { mine: mine ? 1 : undefined, limit: 50, cursor } })));
+  return (
+    <>
+      <RowList>
+        {m.items.map((x) => (
+          <Row key={x.id} testID={`doubt-${x.id}`} title={x.title} meta={doubtMeta(x)} trailing={x.status === "solved" ? <SolvedWord color={c.link} /> : undefined} onPress={() => router.push(`/doubt/${encodeURIComponent(x.id)}`)} />
+        ))}
+      </RowList>
+      <MoreButton more={m.more} busy={m.busy} error={m.error} onPress={() => void m.loadMore()} testID="doubts-more" />
     </>
   );
 }

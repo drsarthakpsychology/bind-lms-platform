@@ -3,10 +3,12 @@ import { Stack, router } from "expo-router";
 import * as React from "react";
 import { Platform } from "react-native";
 
-import type { NotificationRow, ReadAllResult } from "@/api/contract";
+import type { NotificationList, NotificationRow, ReadAllResult } from "@/api/contract";
+import { notificationListView } from "@/api/adapt-learn";
 import { keys, useNotifications } from "@/api/queries";
 import { api } from "@/auth";
 import { Button, EmptyState, Loaded, Row, RowList, Screen } from "@/ds";
+import { MoreButton, useMorePages } from "@/ds/more";
 import { toast } from "@/ds/toast";
 import { haptic } from "@/lib/haptics";
 
@@ -28,6 +30,17 @@ export function NotificationRows({ items }: { items: NotificationRow[] }) {
         <Row key={n.id} testID={`notification-${n.id}`} unread={!n.readAt} title={n.title} meta={n.body} trailing={when(n.createdAt)} chevron={false} onPress={() => router.push(`/notification/${encodeURIComponent(n.id)}`)} accessibilityLabel={`${n.readAt ? "" : "Unread. "}${n.title}. ${n.body}`} />
       ))}
     </RowList>
+  );
+}
+
+/** Every notification, 50 at a time. */
+function AllNotifications({ first }: { first: NotificationList }) {
+  const m = useMorePages(first, async (cursor) => notificationListView(await api.get<unknown>("/notifications", { query: { limit: 50, cursor } })));
+  return (
+    <>
+      <NotificationRows items={m.items} />
+      <MoreButton more={m.more} busy={m.busy} error={m.error} onPress={() => void m.loadMore()} testID="notifications-more" />
+    </>
   );
 }
 
@@ -53,7 +66,7 @@ export function NotificationsScreen() {
     <Screen testID="notifications" onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
       <Stack.Screen options={{ headerRight: () => (unread ? <Button kind="text" label="Mark all read" busy={busy} onPress={() => void readAll()} testID="read-all" style={{ marginRight: Platform.OS === "web" ? 16 : 0 }} /> : null) }} />
       <Loaded q={q} what="your notifications">
-        {(d) => (d.items.length ? <NotificationRows items={d.items} /> : <EmptyState mood="clear" title="Nothing new" body="Messages from the school and answers to your doubts show up here." testID="notifications-empty" />)}
+        {(d) => (d.items.length ? <AllNotifications first={d} /> : <EmptyState mood="clear" title="Nothing new" body="Messages from the school and answers to your doubts show up here." testID="notifications-empty" />)}
       </Loaded>
     </Screen>
   );

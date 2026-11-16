@@ -1,7 +1,13 @@
 /** Round 3 of the app bug hunt: real-shaped server data and release-only behaviour. */
+import * as React from "react";
 import { todoHref } from "@/admin/safe";
 import { refEntryView } from "@/api/adapt-learn";
+import { fireEvent, screen, waitFor } from "@testing-library/react-native";
+
+import { api } from "@/auth";
 import { decodeSafe, queryOf } from "@/lib/query";
+import { NotificationsScreen } from "@/screens/notifications/list";
+import { render } from "./utils";
 
 describe("addresses from the server never throw", () => {
   it("queryOf keeps '=' inside a value, takes a name without a value, and survives a stray %", () => {
@@ -22,5 +28,22 @@ describe("addresses from the server never throw", () => {
   it("a medicine entry whose link has a stray % still opens (decodeURIComponent threw inside the adapter)", () => {
     const e = refEntryView({ entry: { kind: "medicine", slug: "lithium", label: "Lithium", data: { fullHref: "/practice/medicines/li%thium?x=1" } } });
     expect(e && e.kind === "medicine" ? e.medId : null).toBe("li%thium");
+  });
+});
+
+describe("paged lists reach their older rows", () => {
+  const row = (i: number) => ({ id: `n${i}`, type: "message", title: `Note ${i}`, body: "", createdAt: "2026-11-01T10:00:00.000000+00:00", readAt: "2026-11-01T10:00:00Z", target: { screen: "notifications", web: "/notifications" } });
+  it("notifications: Show older loads the next page once, then goes away", async () => {
+    const get = jest.spyOn(api, "get").mockImplementation((async (_path: string, opts?: { query?: Record<string, unknown> }) =>
+      opts?.query?.cursor === "p2" ? { items: [row(2), row(1)], nextCursor: null, unread: 0 } : { items: [row(4), row(3)], nextCursor: "p2", unread: 0 }) as never);
+    await render(<NotificationsScreen />);
+    await waitFor(() => expect(screen.getByTestId("notification-n4")).toBeTruthy());
+    expect(screen.queryByTestId("notification-n1")).toBeNull();
+    fireEvent.press(screen.getByTestId("notifications-more"));
+    fireEvent.press(screen.getByTestId("notifications-more"));
+    await waitFor(() => expect(screen.getByTestId("notification-n1")).toBeTruthy());
+    expect(screen.queryByTestId("notifications-more")).toBeNull();
+    expect(get.mock.calls.filter((c) => (c[1] as { query?: { cursor?: string } })?.query?.cursor === "p2")).toHaveLength(1);
+    get.mockRestore();
   });
 });
