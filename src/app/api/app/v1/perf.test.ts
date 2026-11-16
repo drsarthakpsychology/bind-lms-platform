@@ -34,21 +34,21 @@ type Case = { name: string; path: string; // eslint-disable-next-line @typescrip
 
 /** Serial-depth budgets (round trips one after another), cold and warm. */
 const CASES: Case[] = [
-  { name: "home", path: "/home", mod: () => import("./home/route"), budget: { cold: 99, warm: 99 } },
-  { name: "practise", path: "/practise", mod: () => import("./practise/route"), budget: { cold: 99, warm: 99 } },
-  { name: "practise/tools/blitz", path: "/practise/tools/blitz", mod: () => import("./practise/tools/[tool]/route"), params: { tool: "blitz" }, budget: { cold: 99, warm: 99 } },
-  { name: "practise/tools/wwyd", path: "/practise/tools/wwyd", mod: () => import("./practise/tools/[tool]/route"), params: { tool: "wwyd" }, budget: { cold: 99, warm: 99 } },
-  { name: "prep", path: "/prep", mod: () => import("./prep/route"), budget: { cold: 99, warm: 99 } },
-  { name: "study/modules", path: "/study/modules", mod: () => import("./study/modules/route"), budget: { cold: 99, warm: 99 } },
-  { name: "study/state", path: "/study/state", mod: () => import("./study/state/route"), budget: { cold: 99, warm: 99 } },
-  { name: "courses", path: "/courses", mod: () => import("./courses/route"), budget: { cold: 99, warm: 99 } },
-  { name: "library/medicines", path: "/library/medicines", mod: () => import("./library/medicines/route"), budget: { cold: 99, warm: 99 } },
-  { name: "me", path: "/me", mod: () => import("./me/route"), budget: { cold: 99, warm: 99 } },
-  { name: "notifications", path: "/notifications", mod: () => import("./notifications/route"), budget: { cold: 99, warm: 99 } },
-  { name: "leaderboards/quiz", path: "/leaderboards/quiz", mod: () => import("./leaderboards/[board]/route"), params: { board: "quiz" }, budget: { cold: 99, warm: 99 } },
-  { name: "achievements", path: "/achievements", mod: () => import("./achievements/route"), budget: { cold: 99, warm: 99 } },
-  { name: "admin/home", path: "/admin/home", mod: () => import("./admin/home/route"), admin: true, budget: { cold: 99, warm: 99 } },
-  { name: "admin/students", path: "/admin/students", mod: () => import("./admin/students/route"), admin: true, budget: { cold: 99, warm: 99 } },
+  { name: "home", path: "/home", mod: () => import("./home/route"), budget: { cold: 3, warm: 3 } },
+  { name: "practise", path: "/practise", mod: () => import("./practise/route"), budget: { cold: 3, warm: 2 } },
+  { name: "practise/tools/blitz", path: "/practise/tools/blitz", mod: () => import("./practise/tools/[tool]/route"), params: { tool: "blitz" }, budget: { cold: 4, warm: 4 } },
+  { name: "practise/tools/wwyd", path: "/practise/tools/wwyd", mod: () => import("./practise/tools/[tool]/route"), params: { tool: "wwyd" }, budget: { cold: 3, warm: 3 } },
+  { name: "prep", path: "/prep", mod: () => import("./prep/route"), budget: { cold: 2, warm: 2 } },
+  { name: "study/modules", path: "/study/modules", mod: () => import("./study/modules/route"), budget: { cold: 2, warm: 2 } },
+  { name: "study/state", path: "/study/state", mod: () => import("./study/state/route"), budget: { cold: 2, warm: 2 } },
+  { name: "courses", path: "/courses", mod: () => import("./courses/route"), budget: { cold: 3, warm: 3 } },
+  { name: "library/medicines", path: "/library/medicines", mod: () => import("./library/medicines/route"), budget: { cold: 2, warm: 1 } },
+  { name: "me", path: "/me", mod: () => import("./me/route"), budget: { cold: 2, warm: 2 } },
+  { name: "notifications", path: "/notifications", mod: () => import("./notifications/route"), budget: { cold: 2, warm: 2 } },
+  { name: "leaderboards/quiz", path: "/leaderboards/quiz", mod: () => import("./leaderboards/[board]/route"), params: { board: "quiz" }, budget: { cold: 3, warm: 3 } },
+  { name: "achievements", path: "/achievements", mod: () => import("./achievements/route"), budget: { cold: 2, warm: 2 } },
+  { name: "admin/home", path: "/admin/home", mod: () => import("./admin/home/route"), admin: true, budget: { cold: 3, warm: 3 } },
+  { name: "admin/students", path: "/admin/students", mod: () => import("./admin/students/route"), admin: true, budget: { cold: 2, warm: 2 } },
 ];
 
 let h: Harness;
