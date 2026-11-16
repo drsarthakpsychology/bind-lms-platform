@@ -103,16 +103,18 @@ export function openTarget(t: AppTarget): void {
  * a shared certificate, a notification link.
  */
 export function pathFromLink(input: string): string {
-  let path = input;
-  try {
-    if (/^[a-z][a-z0-9+.-]*:\/\//i.test(input)) {
-      const u = new URL(input);
-      // vibha://lecture/l5 parses "lecture" as the host.
-      path = (u.protocol === "vibha:" ? `/${u.host}${u.pathname}` : u.pathname) + u.search;
-    }
-  } catch {
+  // Read by hand, not with URL: React Native's URL only understands http(s), so
+  // on a phone vibha://lecture/l5 came out as "/" and opened Home.
+  let path = input.split("#")[0] ?? "";
+  const scheme = /^([a-z][a-z0-9+.-]*):\/\/([^/?]*)(.*)$/i.exec(path);
+  if (scheme) {
+    const [, proto = "", host = "", rest = ""] = scheme;
+    // vibha://lecture/l5: "lecture" is where a web address has its host.
+    path = proto.toLowerCase() === "vibha" ? `/${host}${rest}` : rest || "/";
+  } else if (/^[a-z][a-z0-9+.-]*:/i.test(path)) {
     return "/";
   }
+  path = `/${path.replace(/^\/+/, "")}`;
   const [rawPath = "/", query = ""] = path.split("?");
   const p = rawPath.replace(/\/+$/, "") || "/";
   const q = query ? `?${query}` : "";
