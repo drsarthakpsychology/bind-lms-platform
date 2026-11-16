@@ -10,7 +10,7 @@ import { PinPad, type PinTone } from "@/auth/PinPad";
 import { Button, EmptyState, T, Wordmark } from "@/ds";
 import { BRAND } from "@/lib/brand";
 import { haptic } from "@/lib/haptics";
-import { Burst } from "@/motion";
+import { Burst, springs } from "@/motion";
 import { layout, space, useTheme } from "@/theme";
 import { Icon, Star } from "@/visitor/Art";
 
@@ -56,7 +56,7 @@ function PinArt({ win = 0 }: { /** Each new value fires sparks: the PIN is right
   const pop = useSharedValue(0);
   const reduce = useReducedMotion();
   React.useEffect(() => {
-    pop.set(reduce ? 1 : withDelay(120, withSpring(1, { damping: 11, stiffness: 180, mass: 0.7 })));
+    pop.set(reduce ? 1 : withDelay(120, withSpring(1, springs.art)));
   }, [pop, reduce]);
   const anim = useAnimatedStyle(() => ({ opacity: Math.min(1, pop.value * 2), transform: [{ scale: 0.5 + pop.value * 0.5 }, { rotate: `${(1 - pop.value) * -90}deg` }] }));
   return (
