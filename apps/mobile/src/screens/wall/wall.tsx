@@ -60,14 +60,18 @@ function ReactionChip({ k, count, mine, onPress }: { k: (typeof REACTIONS)[numbe
       accessibilityState={{ selected: mine }}
       accessibilityLabel={`${k.label}, ${count}${mine ? ". You reacted" : ""}`}
       hitSlop={4}
-      innerStyle={{ minHeight: 36, minWidth: 44, flexDirection: "row", alignItems: "center", gap: 6, paddingHorizontal: space[3], borderRadius: 999, borderWidth: 1.5, borderColor: mine ? c.link : c.cardLine, backgroundColor: mine ? c.tint : "transparent" }}
+      innerStyle={{ minHeight: layout.target - 4, minWidth: 44, flexDirection: "row", alignItems: "center", gap: 6, paddingHorizontal: space[3], borderRadius: 999, borderWidth: 1.5, borderColor: mine ? c.link : c.cardLine, backgroundColor: mine ? c.tint : "transparent" }}
     >
       <View style={{ width: 16, height: 16, alignItems: "center", justifyContent: "center" }}>
         <Stamp fire={pop}>
           <k.Icon size={16} color={mine ? c.link : c.muted} fill={mine && k.key === "heart" ? c.link : "none"} />
         </Stamp>
       </View>
-      {count > 0 ? <RollingNumber value={count} v="small" tone={mine ? "link" : "muted"} /> : null}
+      {/* The name says what the icon means (the triangle is Worry, not Report). */}
+      <T v="small" tone={mine ? "link" : "muted"}>
+        {k.label}
+      </T>
+      {count > 0 ? <RollingNumber value={count} v="small" tone={mine ? "link" : "ink"} /> : null}
     </Press>
   );
 }
@@ -146,6 +150,7 @@ function PostView({ p, onReact, onReply, onMore }: { p: WallPostItem; onReact: (
             kind="quiet"
             label="Send reply"
             busy={busy}
+            needsServer
             disabled={!text.trim()}
             onPress={async () => {
               setBusy(true);
@@ -186,7 +191,7 @@ function Composer({ open, onClose, onSent }: { open: boolean; onClose: () => voi
       <View style={{ gap: space[3] }}>
         <Field label="What do you want to say?" area value={text} onChangeText={setText} maxLength={2000} testID="wall-text" />
         <SwitchRow title="Post without your name" meta={anon ? "Nobody in your batch sees who wrote it." : undefined} value={anon} onChange={setAnon} testID="wall-anon" />
-        <Button label="Post" busy={busy} disabled={!text.trim()} onPress={() => void send()} testID="wall-send" />
+        <Button label="Post" busy={busy} needsServer disabled={!text.trim()} onPress={() => void send()} testID="wall-send" />
       </View>
     </Sheet>
   );

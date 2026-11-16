@@ -4,6 +4,7 @@ import * as React from "react";
 
 import { mock } from "@/api/mock/server";
 import { session } from "@/auth";
+import { AskScreen } from "@/screens/doubts/ask";
 import { MeScreen } from "@/screens/me/me";
 import { ProgressScreen } from "@/screens/me/progress";
 import { dayGroup } from "@/screens/notifications/list";
@@ -73,5 +74,14 @@ describe("Search", () => {
     expect(screen.getByTestId("shortcut-lectures")).toBeTruthy();
     await fireEvent.press(screen.getByTestId("recent-remove-blitz"));
     expect(screen.queryByTestId("recent-blitz")).toBeNull();
+  });
+});
+
+describe("Ask a doubt", () => {
+  it("offers the modules you are on as topic chips", async () => {
+    await render(<AskScreen />);
+    const chip = await screen.findByRole("radio", { name: "Mood disorders" });
+    await fireEvent.press(chip);
+    expect(screen.getByDisplayValue("Mood disorders")).toBeTruthy();
   });
 });

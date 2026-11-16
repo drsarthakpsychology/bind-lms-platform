@@ -71,7 +71,7 @@ function Reply({ r, thread, onThread }: { r: DoubtReply; thread: DoubtThread; on
           </View>
           <RollingNumber value={r.votes} v="small" tone={r.youVoted ? "link" : "muted"} />
         </Press>
-        {thread.mine && !r.mine ? <Button kind="text" label={r.isSolution ? "Not the solution" : "Mark as solution"} onPress={() => void solve()} /> : null}
+        {thread.mine && !r.mine ? <Button kind="text" label={r.isSolution ? "Unmark solution" : "Mark as solution"} onPress={() => void solve()} /> : null}
       </View>
     </View>
   );
@@ -125,7 +125,7 @@ export function DoubtScreen() {
             </View>
             <View style={{ gap: space[3] }}>
               <Field label="Your answer" value={text} onChangeText={setText} area testID="reply-text" />
-              <Button kind="quiet" label="Post answer" busy={busy} disabled={!text.trim()} onPress={() => void send()} testID="reply-send" />
+              <Button kind="quiet" label="Post answer" busy={busy} needsServer disabled={!text.trim()} onPress={() => void send()} testID="reply-send" />
             </View>
           </>
         )}
