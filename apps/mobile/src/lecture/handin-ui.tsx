@@ -22,12 +22,13 @@ export type FooterAction = { label: string; onPress: () => void; busy?: boolean;
  * button in the pinned footer (where the thumb is) instead of the page.
  * Without it (tests, other screens) the button stays in the page.
  */
-export const HandInSlot = React.createContext<((a: FooterAction | null) => void) | null>(null);
+export const HandInSlot = React.createContext<((a: FooterAction | null, owner: object) => void) | null>(null);
 
 /** Puts `action` in the footer while this part is on screen. Returns true when the footer has it. */
 export function useFooterAction(action: FooterAction | null): boolean {
   const slot = React.useContext(HandInSlot);
   const press = React.useRef<() => void>(() => undefined);
+  const [owner] = React.useState(() => ({}));
   const onPress = action?.onPress;
   React.useEffect(() => {
     if (onPress) press.current = onPress;
@@ -38,9 +39,9 @@ export function useFooterAction(action: FooterAction | null): boolean {
   const testID = action?.testID;
   React.useEffect(() => {
     if (!slot) return;
-    slot(label ? { label, busy, disabled, testID, onPress: () => press.current() } : null);
-  }, [slot, label, busy, disabled, testID]);
-  React.useEffect(() => (slot ? () => slot(null) : undefined), [slot]);
+    slot(label ? { label, busy, disabled, testID, onPress: () => press.current() } : null, owner);
+  }, [slot, owner, label, busy, disabled, testID]);
+  React.useEffect(() => (slot ? () => slot(null, owner) : undefined), [slot, owner]);
   return !!slot;
 }
 

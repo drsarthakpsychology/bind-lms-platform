@@ -16,6 +16,7 @@ import { FileHandIn, HandInSlot, RecordingHandIn, useFooterAction, type FooterAc
 import { ProtectedPlayer, clock } from "@/lecture/player";
 import { config } from "@/lib/config";
 import { createStore } from "@/lib/store";
+import { Swap } from "@/motion";
 import { haptic } from "@/lib/haptics";
 import { enablePush, pushStatus } from "@/push";
 import { layout, space, useTheme } from "@/theme";
@@ -172,9 +173,11 @@ export function LectureScreen() {
   const lastSent = React.useRef(0);
   const last = React.useRef({ t: 0, d: 0 });
   // The Assignment tab's hand-in button lives in the pinned footer.
-  const [footer] = React.useState(() => createStore<{ action: FooterAction | null }>({ action: null }));
+  const [footer] = React.useState(() => createStore<{ action: FooterAction | null; owner: object | null }>({ action: null, owner: null }));
   const handIn = footer.use((x) => x.action);
-  const setHandIn = React.useCallback((action: FooterAction | null) => footer.set({ action }), [footer]);
+  // A part leaving (during the tab swap) only clears the button if it is still its own.
+  const setHandIn = React.useCallback((action: FooterAction | null, owner: object) => footer.set((s) => (action ? { action, owner } : s.owner === owner ? { action: null, owner: null } : {})), [footer]);
+  const [dir, setDir] = React.useState<1 | -1>(1);
 
   const save = React.useCallback(
     (t: number, d: number) => {
@@ -225,6 +228,9 @@ export function LectureScreen() {
   };
 
   const l = q.data;
+  const tabs: { id: Tab; name: string }[] = l
+    ? [{ id: "about", name: "About" }, ...(l.materials.length ? [{ id: "materials" as Tab, name: "Materials" }] : []), ...(l.assignment ? [{ id: "assignment" as Tab, name: "Assignment" }] : [])]
+    : [];
   const watched = l ? l.progress.completed || done : false;
   const blockedByAssignment = !!l?.requiresAssignment && !l.assignment?.submission;
 
@@ -263,21 +269,22 @@ export function LectureScreen() {
               </T>
             </View>
             <TabRow
-              tabs={[
-                { id: "about" as Tab, name: "About" },
-                ...(l.materials.length ? [{ id: "materials" as Tab, name: `Materials (${l.materials.length})` }] : []),
-                ...(l.assignment ? [{ id: "assignment" as Tab, name: "Assignment" }] : []),
-              ]}
+              tabs={tabs}
               value={tab}
-              onChange={setTab}
+              onChange={(t) => {
+                setDir(tabs.findIndex((x) => x.id === t) >= tabs.findIndex((x) => x.id === tab) ? 1 : -1);
+                setTab(t);
+              }}
             />
-            {tab === "about" ? l.description ? <T v="reading">{l.description}</T> : <T tone="muted">No notes for this lecture.</T> : null}
-            {tab === "materials" ? <MaterialRows items={l.materials} /> : null}
-            {tab === "assignment" ? (
-              <HandInSlot.Provider value={setHandIn}>
-                <AssignmentPart lecture={l} />
-              </HandInSlot.Provider>
-            ) : null}
+            <Swap k={tab} dir={dir} testID="lecture-tab-body">
+              {tab === "about" ? l.description ? <T v="reading">{l.description}</T> : <T tone="muted">No notes for this lecture.</T> : null}
+              {tab === "materials" ? <MaterialRows items={l.materials} /> : null}
+              {tab === "assignment" ? (
+                <HandInSlot.Provider value={setHandIn}>
+                  <AssignmentPart lecture={l} />
+                </HandInSlot.Provider>
+              ) : null}
+            </Swap>
           </ScrollView>
           <View style={{ borderTopWidth: 1, borderColor: c.hairline, paddingHorizontal: layout.gutter, paddingTop: space[3], paddingBottom: insets.bottom + space[3], gap: space[2], backgroundColor: c.bg }}>
             {tab === "assignment" ? (
