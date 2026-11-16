@@ -89,7 +89,7 @@ describe("links to other apps", () => {
     const show = jest.spyOn(toast, "show").mockImplementation(() => undefined);
     await expect(openLink("mailto:a@b.c")).resolves.toBe(false);
     expect(show).toHaveBeenCalledWith("No email app on this phone opens this.");
-    open.mockResolvedValue(true);
+    open.mockResolvedValue(undefined);
     await expect(openLink("https://wa.me/919999999999")).resolves.toBe(true);
     open.mockRestore();
     show.mockRestore();
