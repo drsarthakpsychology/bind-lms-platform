@@ -23,8 +23,83 @@ export function groupFor(me: Me | null): "(student)" | "(lecture)" | "(admin)" {
   return "(student)";
 }
 
+const enc = encodeURIComponent;
+
+/**
+ * Website pages whose app screen is more exact than the server's target kind.
+ * The server sends every /prep, /tools and /practice page as "practice" with
+ * the second word as the tool, and /journey as "progress", so without this a
+ * Prep "Carry on", a smart practice nudge or a medicine compare link landed on
+ * the Practise tab, and clinic notices for /leave or /opd opened the browser.
+ * Null when the page has no better screen.
+ */
+export function nativeFor(web: string | undefined): string | null {
+  const [raw = "", qs = ""] = (web ?? "").split("#")[0]!.split("?");
+  const p = raw.replace(/\/+$/, "");
+  const q = new Map(qs.split("&").filter(Boolean).map((kv) => {
+    const [k = "", v = ""] = kv.split("=");
+    try {
+      return [decodeURIComponent(k), decodeURIComponent(v.replace(/\+/g, " "))] as const;
+    } catch {
+      return [k, v] as const;
+    }
+  }));
+  const seg = p.split("/").filter(Boolean).map((s) => {
+    try {
+      return decodeURIComponent(s);
+    } catch {
+      return s;
+    }
+  });
+  const [a, b, c, d, e] = seg;
+  if (a === "prep") {
+    if (!b) return "/prep";
+    if (b === "smart" || b === "review") return "/prep/set?list=smart";
+    if (b === "wrong" || b === "saved") return `/prep/set?list=${b}`;
+    if (b === "mock") {
+      if (c === "result" && d) return `/prep/mock/result/${enc(d)}`;
+      return c ? `/prep/mock/${enc(c)}` : "/prep/mock";
+    }
+    if (b === "long") return "/prep/long";
+    // Off on the website too (it sends these back to /prep).
+    if (b === "diagnostic" || b === "goal") return "/prep";
+    if (b === "interview") return null;
+    if (b === "practice") return c ? `/prep/${enc(c)}` : "/prep";
+    if (c === "long") return `/prep/long?subject=${enc(b)}${d ? `&topic=${enc(d)}` : ""}${d && e ? `&id=${enc(e)}` : ""}`;
+    if (c) return `/prep/set?subject=${enc(b)}&topic=${enc(c)}${q.get("set") ? `&set=${enc(q.get("set")!)}` : ""}`;
+    return `/prep/${enc(b)}`;
+  }
+  if (a === "tools" && b === "psychopharm") {
+    if (c === "compare") return "/medicine/compare";
+    if (c && c !== "learn") return `/medicine/${enc(c)}`;
+    return "/library";
+  }
+  if (a === "practice") {
+    if (b === "medicines") return c ? `/medicine/${enc(c)}` : "/library";
+    if (b === "library") return "/case/library";
+    if (b === "leaderboard") return "/game/leaderboard";
+    return null;
+  }
+  if (a === "games") {
+    if (b === "leaderboard") return "/game/leaderboard";
+    if (b === "progress") return "/progress";
+    return null;
+  }
+  if (a === "leaderboard") return b === "shop" ? "/shop" : "/game/leaderboard";
+  if (a === "journey") return "/journey";
+  // The website's own clinic pages (the app keeps them under /clinic).
+  if (a === "leave" || a === "opd") return `/clinic/${a}`;
+  if (a === "schedule") return "/clinic/schedule";
+  if (a === "attendance") return b === "scan" ? "/clinic/scan" : "/clinic/attendance";
+  return null;
+}
+
 /** The app screen for a server target; null when this version has no screen for it. */
 export function hrefFor(t: AppTarget): string | null {
+  if (t.screen === "practice" || t.screen === "game" || t.screen === "progress" || t.screen === "unknown") {
+    const own = nativeFor(t.web);
+    if (own) return own;
+  }
   switch (t.screen) {
     case "home":
       return "/";
@@ -138,6 +213,8 @@ export function pathFromLink(input: string): string {
   if (p === "/setup" || p === "/set-password") return `/setup${q}`;
   const learn = learnPathFor(p);
   if (learn) return learn === "/map/practice" ? learn + q : learn;
+  const own = nativeFor(p + q);
+  if (own) return own;
   if (p === "/" || p === "/dashboard") return "/";
   if (p === "/login") return "/sign-in";
   if (p === "/waitlist") return "/request";
