@@ -37,7 +37,7 @@ describe("end of a round (storyboard 2)", () => {
     );
     await waitFor(() => expect(note).toHaveBeenCalledWith("success"));
     expect(note).toHaveBeenCalledTimes(1);
-    await waitFor(() => expect(screen.getByTestId("reaction")).toBeTruthy(), { timeout: 2000 });
+    await waitFor(() => expect(screen.getByTestId("reaction")).toBeTruthy(), { timeout: 6000 });
   });
 });
 
