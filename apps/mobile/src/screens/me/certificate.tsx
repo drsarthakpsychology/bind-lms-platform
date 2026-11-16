@@ -1,10 +1,11 @@
 import { useLocalSearchParams } from "expo-router";
 import { Award } from "lucide-react-native";
 import * as React from "react";
-import { Linking, View } from "react-native";
+import { View } from "react-native";
 
 import { useAchievements } from "@/api/queries";
 import { Button, EmptyState, Loaded, Row, RowList, RowsSkeleton, Screen, T } from "@/ds";
+import { openLink } from "@/lib/open";
 import { space, useTheme } from "@/theme";
 import { downloadCertificate, issued, shareCertificate } from "./certificates";
 
@@ -29,7 +30,7 @@ export function CertificateScreen() {
               <RowList>
                 <Row title="Issued" trailing={x.status === "revoked" ? "Withdrawn" : issued(x.issuedAt)} />
                 <Row title="Certificate number" meta={x.credentialId} />
-                {x.verifyUrl ? <Row title="Public check page" meta={x.verifyUrl.replace(/^https?:\/\//, "")} onPress={() => void Linking.openURL(x.verifyUrl!)} /> : null}
+                {x.verifyUrl ? <Row testID="cert-check" title="Public check page" meta={x.verifyUrl.replace(/^https?:\/\//, "")} onPress={() => void openLink(x.verifyUrl!)} /> : null}
               </RowList>
               {/* The one Share: it sends the public check page. */}
               {x.verifyUrl && x.status === "issued" ? <Button kind="quiet" label="Share" onPress={() => void shareCertificate(x)} testID="cert-share" /> : null}

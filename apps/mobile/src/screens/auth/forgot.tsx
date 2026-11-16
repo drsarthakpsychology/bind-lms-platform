@@ -1,10 +1,11 @@
 import { MessageCircle } from "lucide-react-native";
 import * as React from "react";
-import { Linking, Text, View } from "react-native";
+import { Text, View } from "react-native";
 import Animated, { useReducedMotion } from "react-native-reanimated";
 
 import { Button, Screen, Section, T } from "@/ds";
 import { BRAND } from "@/lib/brand";
+import { openLink } from "@/lib/open";
 import { presets } from "@/motion";
 import { fonts, space, useTheme } from "@/theme";
 import { Icon, Star } from "@/visitor/Art";
@@ -19,7 +20,7 @@ export function ForgotPasswordScreen() {
   return (
     <Screen
       testID="forgot"
-      footer={<Button label="Message us on WhatsApp" icon={<MessageCircle size={20} color={c.onPrimary} />} onPress={() => void Linking.openURL(`${BRAND.whatsapp}?text=${encodeURIComponent("Hi, I forgot my VIBHA password. Please send me a new setup link.")}`)} testID="forgot-whatsapp" />}
+      footer={<Button label="Message us on WhatsApp" icon={<MessageCircle size={20} color={c.onPrimary} />} onPress={() => void openLink(`${BRAND.whatsapp}?text=${encodeURIComponent("Hi, I forgot my VIBHA password. Please send me a new setup link.")}`)} testID="forgot-whatsapp" />}
     >
       <Animated.View entering={enter(0)} style={{ gap: space[4] }}>
         <View style={{ width: 72, height: 72, alignItems: "center", justifyContent: "center" }}>

@@ -1,6 +1,6 @@
 import { useQueryClient } from "@tanstack/react-query";
 import * as React from "react";
-import { Linking, View } from "react-native";
+import { View } from "react-native";
 
 import type { DeletionRequestResult, NotificationPrefs, Settings } from "@/api/contract";
 import { messageOf } from "@/api/errors";
@@ -10,6 +10,7 @@ import { Button, Chips, Field, Loaded, Row, RowList, RowsSkeleton, Screen, Secti
 import { toast } from "@/ds/toast";
 import { config } from "@/lib/config";
 import { haptic } from "@/lib/haptics";
+import { openLink } from "@/lib/open";
 import { TextSizeRow } from "@/lib/reading";
 import { settingsStore, updateSettings } from "@/lib/settings";
 import { disablePush, enablePush, setStudyReminder } from "@/push";
@@ -150,8 +151,8 @@ export function SettingsScreen() {
             <Notifications prefs={s.notifications} />
             <Section title="Privacy" quiet>
               <RowList>
-                <Row title="Privacy policy" onPress={() => void Linking.openURL(s.legal.privacyUrl)} />
-                <Row title="Terms" onPress={() => void Linking.openURL(s.legal.termsUrl)} />
+                <Row testID="settings-privacy" title="Privacy policy" onPress={() => void openLink(s.legal.privacyUrl)} />
+                <Row testID="settings-terms" title="Terms" onPress={() => void openLink(s.legal.termsUrl)} />
               </RowList>
             </Section>
             <Section>
