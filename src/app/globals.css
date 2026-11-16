@@ -1444,6 +1444,94 @@ html[data-cvd="on"] .bg-destructive {
   }
 }
 
+/* ---- Area colour (round 10, owner: "a little bit of colour and our theme") ----
+   Each of the five places has one soft colour family, the same values as the
+   phone app (apps/mobile/src/theme/tokens.ts, `areas`), so both read as one
+   brand. A page opts in with <PageFrame area="learn">; everything inside it
+   picks the family up from three variables:
+     --area-wash     soft surface: the header glow, icon circles, a hero card, tracks
+     --area-deep     foreground on the wash, the canvas and cards: icons, pixel
+                     numerals, numbers, progress, a chosen chip (4.5:1 or more on
+                     all three, both themes)
+     --area-on-deep  text on a deep fill (a chosen chip)
+   One family per screen, never loud: lime stays the one primary button.
+   Admin screens use the brand blue family (data-area="admin"), the same
+   values as Learn. Outside an area nothing changes. Unlayered on purpose (wins over utilities). */
+[data-area="home"] { --area-wash: #eefac4; --area-deep: #4a6400; --area-on-deep: #ffffff; }
+[data-area="learn"],
+[data-area="admin"] { --area-wash: #e8edff; --area-deep: #1d44d8; --area-on-deep: #ffffff; }
+[data-area="practise"] { --area-wash: #ffe9dc; --area-deep: #a8431a; --area-on-deep: #ffffff; }
+[data-area="library"] { --area-wash: #dcf3ef; --area-deep: #0b6b70; --area-on-deep: #ffffff; }
+[data-area="me"] { --area-wash: #eee7ff; --area-deep: #6430d0; --area-on-deep: #ffffff; }
+.dark [data-area="home"] { --area-wash: #212a0b; --area-deep: #cdf24b; --area-on-deep: #111111; }
+.dark [data-area="learn"],
+.dark [data-area="admin"] { --area-wash: #19214a; --area-deep: #9db1ff; --area-on-deep: #111111; }
+.dark [data-area="practise"] { --area-wash: #33190f; --area-deep: #ffaf85; --area-on-deep: #111111; }
+.dark [data-area="library"] { --area-wash: #0c2927; --area-deep: #6fd8cc; --area-on-deep: #111111; }
+.dark [data-area="me"] { --area-wash: #231a3e; --area-deep: #c4abff; --area-on-deep: #111111; }
+
+/* The header glow: the area's wash, a little deeper in the top right corner,
+   fading out to the left. Replaces the flat blue band inside an area. */
+[data-area] .ds-band {
+  background:
+    radial-gradient(120% 160% at 100% 0%, color-mix(in oklab, var(--area-deep) 12%, transparent), transparent 62%),
+    var(--area-wash);
+}
+.dark [data-area] .ds-band {
+  background:
+    radial-gradient(120% 160% at 100% 0%, color-mix(in oklab, var(--area-deep) 14%, transparent), transparent 62%),
+    var(--area-wash);
+}
+/* The short stroke under the page title takes the area's colour. */
+[data-area] .ds-stroke::after { background: var(--area-deep); }
+/* Small accents: the pixel numeral before a section heading, a kicker, a number. */
+.ds-accent { color: var(--area-deep, var(--link)); }
+[data-area] .ds-num { color: var(--area-deep); }
+/* The header's icon: a soft circle in the area colour (no ink outline, no lime). */
+[data-area] .ds-icon-tile {
+  border-color: transparent;
+  border-radius: 999px;
+  background: var(--area-deep);
+  color: var(--area-on-deep);
+}
+/* A row's icon sits on a soft circle in the wash. */
+[data-area] .ds-row-icon {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 999px;
+  background: var(--area-wash);
+  color: var(--area-deep);
+}
+[data-area] .ds-row-icon svg { width: 1.125rem; height: 1.125rem; }
+/* Progress: the area's deep colour on its wash. */
+[data-area] [role="progressbar"]:has(> .ds-fill) { background: var(--area-wash); }
+[data-area] [role="progressbar"] > .ds-fill { background-color: var(--area-deep); }
+/* The one thing to do sits on a soft card in the wash (the button stays lime). */
+[data-area] .ds-hero {
+  border-radius: 1.25rem;
+  background: var(--area-wash);
+  padding: var(--ds-5);
+}
+[data-area] .ds-hero [role="progressbar"]:has(> .ds-fill) { background: var(--ds-hairline); }
+/* A chosen filter chip fills with the area colour instead of ink. */
+[data-area] .ds-chip-on {
+  border-color: var(--area-deep);
+  background: var(--area-deep);
+  color: var(--area-on-deep);
+}
+
+/* A category chip (a medicine family): a faint wash and outline of its own
+   colour, so the row of filters reads as colour coded. Text stays ink. */
+.ds-chip-family {
+  border-color: color-mix(in oklab, var(--chip) 40%, transparent);
+  background: color-mix(in oklab, var(--chip) 9%, transparent);
+}
+.dark .ds-chip-family {
+  border-color: color-mix(in oklab, var(--chip) 55%, transparent);
+  background: color-mix(in oklab, var(--chip) 18%, transparent);
+}
+.ds-chip-family:hover { border-color: var(--chip); }
+
 /* Numbers that line up (scores, counts, times). */
 @utility type-num {
   font-variant-numeric: tabular-nums;

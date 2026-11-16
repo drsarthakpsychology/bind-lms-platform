@@ -15,7 +15,7 @@ export default async function MedicinesPage() {
     // The usual dose of each medicine (the one its page opens on), for the list's third column.
     const doses = Object.fromEntries(MEDS.map((m) => [m.id, m.doses[m.defaultDose]?.amount ?? ""]));
     return (
-      <PageFrame title="Medicines" kicker="Library" band art={<IconTile><Pill /></IconTile>}>
+      <PageFrame title="Medicines" kicker="Library" area="library" band art={<IconTile><Pill /></IconTile>}>
         <MedicineLibrary rows={medIndex()} groups={GROUPS} doses={doses} />
       </PageFrame>
     );

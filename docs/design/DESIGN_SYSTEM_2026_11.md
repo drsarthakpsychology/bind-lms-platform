@@ -300,3 +300,43 @@ modern-web-guidance `same-document-transitions`, `motion`,
 `natural-interactions`; Lazyweb Duolingo "lesson complete" (flow 2069, step
 13, captured 2026-02-20) for the success landing. Mobbin needs a paid plan and
 was not used.
+
+## 15. Area colour (16 November, round 10)
+
+Owner: "a little bit of colour and our theme", Gen Z aesthetic yet minimal.
+Each place has one soft colour family, the same values as the phone app
+(`apps/mobile/src/theme/tokens.ts`, `areas`), so web and app read as one brand.
+
+| area | light wash / deep | dark wash / deep |
+|---|---|---|
+| home | `#eefac4` / `#4a6400` | `#212a0b` / `#cdf24b` |
+| learn (and admin) | `#e8edff` / `#1d44d8` | `#19214a` / `#9db1ff` |
+| practise | `#ffe9dc` / `#a8431a` | `#33190f` / `#ffaf85` |
+| library | `#dcf3ef` / `#0b6b70` | `#0c2927` / `#6fd8cc` |
+| me | `#eee7ff` / `#6430d0` | `#231a3e` / `#c4abff` |
+
+Deep is 4.5:1 or more on its wash, the canvas and cards in both themes.
+
+How to use it: `<PageFrame area="learn">`. Inside, with no other change:
+the banded header becomes a soft glow in the wash; the header icon is a deep
+circle; row icons sit on wash circles; the pixel numerals and kicker, `Stat`
+and `StatItem` numbers, progress lines and `ProgressRing` take the deep
+colour; `Hero`, `NextStep` and the course Continue block sit on a wash card
+(the button stays lime, the one primary action); a chosen chip
+(`chipClass`) fills with deep. The CSS is in `globals.css`, "Area colour";
+the class hooks are `ds-accent`, `ds-num`, `ds-row-icon`, `ds-icon-tile`,
+`ds-hero`, `ds-chip-on`, `ds-chip-family` (a category chip washed in its own
+colour, for example a medicine family). Outside an area nothing changes. One
+family per screen; no grain, no loops; nothing new animates.
+
+Screens with an area now: Learn hub, Lectures, a course (learn); Practise hub
+(practise); Medicines (library); Me, Progress, My journey (me); every admin
+v2 page through `AdminPage` (admin, blue: meters only, the rest stays ink).
+
+References: Screenrove Coda "Docs home" (coda-product-home, captured
+2026-10-02) and Plasmic "Project dashboard" (plasmic-product-projects,
+2026-10-22) for colour kept to icons and small marks on a plain page;
+Lazyweb mobile Atoms, Elevate, Headway, Headspace and Finch (pastel learning
+and habit homes: one pastel per section, tinted icon circles, rings for
+progress); Made Good Designs pastel theme ("Pastel Spheres on Gradient",
+palette `#cbd8eb #e2d2dd #d6d3e3`) for the soft wash.

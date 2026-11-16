@@ -37,7 +37,7 @@ export function ProgressV2({
   modules: ProgressModule[];
 }) {
   return (
-    <PageFrame title="Progress" width="default">
+    <PageFrame title="Progress" area="me" width="default">
       <div className="flex min-w-0 flex-col gap-4">
         <StatRow label="Your course so far">
           <StatItem value={`${coursePct}%`} label="Course done" />

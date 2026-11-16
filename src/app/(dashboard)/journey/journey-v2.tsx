@@ -28,7 +28,7 @@ export function JourneyV2({
 }) {
   const pct = Math.round(levelPct * 100);
   return (
-    <PageFrame title="My journey" lead="Private to you and your faculty.">
+    <PageFrame title="My journey" area="me" lead="Private to you and your faculty.">
       <section aria-label="Your level" className="flex min-w-0 max-w-xl flex-col gap-3">
         <p className="type-small text-muted-foreground">{title}</p>
         <p className="type-display type-num">Level {level}</p>
