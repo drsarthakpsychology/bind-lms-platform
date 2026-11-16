@@ -1,25 +1,7 @@
 import type { BottomTabBarProps, BottomTabNavigationOptions } from "expo-router/build/layouts/Tabs";
 import * as React from "react";
-import {
-  Animated as RNAnimated,
-  Easing as RNEasing,
-  Platform,
-  Pressable,
-  View,
-  type LayoutChangeEvent,
-} from "react-native";
-import Animated, {
-  interpolate,
-  useAnimatedKeyboard,
-  useAnimatedReaction,
-  useAnimatedStyle,
-  useReducedMotion,
-  useSharedValue,
-  withSequence,
-  withSpring,
-  withTiming,
-  type SharedValue,
-} from "react-native-reanimated";
+import { Animated as RNAnimated, Easing as RNEasing, Platform, Pressable, View, type LayoutChangeEvent } from "react-native";
+import Animated, { interpolate, useAnimatedKeyboard, useAnimatedReaction, useAnimatedStyle, useReducedMotion, useSharedValue, withSequence, withSpring, withTiming, type SharedValue } from "react-native-reanimated";
 import { scheduleOnRN } from "react-native-worklets";
 
 import { T } from "@/ds/text";
@@ -36,13 +18,9 @@ const BAR_H = 64;
 const web = Platform.OS === "web";
 /** Reanimated's KeyboardState values (kept here so test stand-ins need no enum). */
 const KB = { OPEN: 2, CLOSING: 3, CLOSED: 4 } as const;
-const still = { height: { value: 0 }, state: { value: KB.CLOSED } } as unknown as {
-  height: SharedValue<number>;
-  state: SharedValue<number>;
-};
+const still = { height: { value: 0 }, state: { value: KB.CLOSED } } as unknown as { height: SharedValue<number>; state: SharedValue<number> };
 /** The keyboard, frame by frame on the UI thread (nothing to follow on web). */
-const useKeyboard =
-  web || typeof useAnimatedKeyboard !== "function" ? () => still : () => useAnimatedKeyboard();
+const useKeyboard = web || typeof useAnimatedKeyboard !== "function" ? () => still : () => useAnimatedKeyboard();
 
 /**
  * The bar slides down behind the keyboard frame by frame as it opens (UI
@@ -62,29 +40,12 @@ function useKeyboardBar(barH: number) {
   );
   const style = useAnimatedStyle(() => {
     const h = kb.height.value;
-    return {
-      opacity: interpolate(h, [0, barH], [1, 0], "clamp"),
-      transform: [{ translateY: interpolate(h, [0, barH], [0, barH], "clamp") }],
-    };
+    return { opacity: interpolate(h, [0, barH], [1, 0], "clamp"), transform: [{ translateY: interpolate(h, [0, barH], [0, barH], "clamp") }] };
   });
   return { up, style };
 }
 
-function TabItem({
-  label,
-  Icon,
-  focused,
-  onPress,
-  onLongPress,
-  a11y,
-}: {
-  label: string;
-  Icon?: TabIcon;
-  focused: boolean;
-  onPress: () => void;
-  onLongPress: () => void;
-  a11y?: string;
-}) {
+function TabItem({ label, Icon, focused, onPress, onLongPress, a11y }: { label: string; Icon?: TabIcon; focused: boolean; onPress: () => void; onLongPress: () => void; a11y?: string }) {
   const c = useTheme();
   const reduce = useReducedMotion();
   const pop = useSharedValue(1);
@@ -96,8 +57,7 @@ function TabItem({
       first.current = false;
       return;
     }
-    if (focused && !reduce)
-      pop.set(withSequence(withTiming(0.82, { duration: 90 }), withSpring(1, springs.bouncy)));
+    if (focused && !reduce) pop.set(withSequence(withTiming(0.82, { duration: 90 }), withSpring(1, springs.bouncy)));
   }, [focused, reduce, pop]);
   const iconStyle = useAnimatedStyle(() => ({
     transform: [{ scale: pop.value * (1 - press.value * 0.08) }, { translateY: -press.value }],
@@ -118,11 +78,7 @@ function TabItem({
       }}
       style={{ flex: 1, height: BAR_H, alignItems: "center", justifyContent: "center", gap: 2 }}
     >
-      <Animated.View
-        style={[{ height: PILL_H, alignItems: "center", justifyContent: "center" }, iconStyle]}
-      >
-        {Icon ? <Icon size={24} color={color} strokeWidth={focused ? 2.4 : 2} /> : null}
-      </Animated.View>
+      <Animated.View style={[{ height: PILL_H, alignItems: "center", justifyContent: "center" }, iconStyle]}>{Icon ? <Icon size={24} color={color} strokeWidth={focused ? 2.4 : 2} /> : null}</Animated.View>
       <T
         allowFontScaling={false}
         numberOfLines={1}
@@ -149,14 +105,7 @@ function TabItem({
  * Pass as `tabBar` to Expo Router's <Tabs>; give each screen
  * `options.tabBarIcon` as a plain icon component via `tabIcons`.
  */
-export function MotionTabBar({
-  state,
-  descriptors,
-  emitter,
-  navigateToTab,
-  insets,
-  icons,
-}: BottomTabBarProps & { icons: Record<string, TabIcon> }) {
+export function MotionTabBar({ state, descriptors, emitter, navigateToTab, insets, icons }: BottomTabBarProps & { icons: Record<string, TabIcon> }) {
   const c = useTheme();
   const reduce = useReducedMotion();
   const kb = useKeyboardBar(BAR_H + insets.bottom);
@@ -173,34 +122,14 @@ export function MotionTabBar({
     const travel = Math.min(1, Math.abs(x.value - target) * 2);
     return {
       opacity: w > 0 ? 1 : 0,
-      transform: [
-        { translateX: x.value * w + (w - PILL_W) / 2 },
-        { scaleX: 1 + travel * 0.6 },
-        { scaleY: 1 - travel * 0.12 },
-      ],
+      transform: [{ translateX: x.value * w + (w - PILL_W) / 2 }, { scaleX: 1 + travel * 0.6 }, { scaleY: 1 - travel * 0.12 }],
     };
   });
   if (kb.up) return null;
   const pillColor = c.dark ? "rgba(205,242,75,0.16)" : "rgba(29,68,216,0.10)";
   return (
-    <Animated.View
-      style={[
-        {
-          backgroundColor: c.card,
-          borderTopWidth: 1,
-          borderColor: c.hairline,
-          paddingBottom: insets.bottom,
-          paddingLeft: insets.left,
-          paddingRight: insets.right,
-        },
-        kb.style,
-      ]}
-    >
-      <View
-        accessibilityRole="tablist"
-        style={{ flexDirection: "row", height: BAR_H }}
-        onLayout={(e: LayoutChangeEvent) => itemW.set(e.nativeEvent.layout.width / n)}
-      >
+    <Animated.View style={[{ backgroundColor: c.card, borderTopWidth: 1, borderColor: c.hairline, paddingBottom: insets.bottom, paddingLeft: insets.left, paddingRight: insets.right }, kb.style]}>
+      <View accessibilityRole="tablist" style={{ flexDirection: "row", height: BAR_H }} onLayout={(e: LayoutChangeEvent) => itemW.set(e.nativeEvent.layout.width / n)}>
         <Animated.View
           pointerEvents="none"
           style={[
@@ -251,9 +180,7 @@ export function MotionTabBar({
  * the first half, the new one fades in and rises 8px in the second half, so
  * two pages of text never show at once (220ms). Off with Reduce Motion.
  */
-export function tabSceneOptions(
-  reduce: boolean,
-): Pick<BottomTabNavigationOptions, "animation" | "sceneStyleInterpolator" | "transitionSpec"> {
+export function tabSceneOptions(reduce: boolean): Pick<BottomTabNavigationOptions, "animation" | "sceneStyleInterpolator" | "transitionSpec"> {
   if (reduce) return { animation: "none" };
   return {
     animation: "shift",
@@ -263,18 +190,8 @@ export function tabSceneOptions(
     },
     sceneStyleInterpolator: ({ current }: { current: { progress: RNAnimated.Value } }) => ({
       sceneStyle: {
-        opacity: current.progress.interpolate({
-          inputRange: [-1, -0.5, 0, 0.5, 1],
-          outputRange: [0, 0, 1, 0, 0],
-        }),
-        transform: [
-          {
-            translateY: current.progress.interpolate({
-              inputRange: [-1, 0, 1],
-              outputRange: [shift.tab, 0, shift.tab],
-            }),
-          },
-        ],
+        opacity: current.progress.interpolate({ inputRange: [-1, -0.5, 0, 0.5, 1], outputRange: [0, 0, 1, 0, 0] }),
+        transform: [{ translateY: current.progress.interpolate({ inputRange: [-1, 0, 1], outputRange: [shift.tab, 0, shift.tab] }) }],
       },
     }),
   };

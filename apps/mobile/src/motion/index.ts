@@ -14,6 +14,10 @@
  *   refresh    useRefresh                   pull to refresh
  *   wins       useNewWins                   celebrate each win once
  *   swap       Swap                         keyed content swaps with no blank frame
+ *   draw       DrawInk, pathLength          rough.js ink that draws itself on
+ *   pixel      PixelBurst                   pixel fireworks for rare wins
+ *   mask       MaskLine                     a line of type rising out of a mask
+ *   tier       useMotionTier, scaled        low-end Android budget
  *
  * Rules: transform and opacity only; worklets on the UI thread; every part
  * checks Reduce Motion and keeps the meaning without the movement.
@@ -30,3 +34,7 @@ export * from "./stack";
 export * from "./refresh";
 export * from "./wins";
 export * from "./swap";
+export * from "./draw";
+export * from "./pixel";
+export * from "./mask";
+export * from "./tier";
