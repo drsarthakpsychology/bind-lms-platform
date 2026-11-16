@@ -132,7 +132,7 @@ export function MapV2({
         <div className="flex min-w-0 flex-col gap-3">
           {!data.calibrated ? (
             <p className="type-small text-muted-foreground">
-              Scores show after {CALIBRATION_ANSWERS} answers. {left} to go.
+              Scores show after {CALIBRATION_ANSWERS} answers.{left < CALIBRATION_ANSWERS ? ` ${left} to go.` : null}
             </p>
           ) : null}
           <ul aria-label="What each label means" className="flex min-w-0 flex-wrap gap-x-5 gap-y-1">

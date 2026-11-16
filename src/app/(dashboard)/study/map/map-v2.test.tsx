@@ -2,6 +2,7 @@
 import { render, screen, within } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 import type { StudentMap } from "@/lib/learn/model/server";
+import { CALIBRATION_ANSWERS } from "@/lib/learn/model/elo";
 import { MapV2 } from "./map-v2";
 
 const cell = (skill: string, label: string, state: StudentMap["topics"][number]["cells"][number]["state"], p: number | null = null, hasItems = true) => ({ skill, competency: "recognise" as never, label, hasItems, state, n: 0, p });
@@ -58,5 +59,11 @@ describe("Study map (v2)", () => {
   it("before calibration says how many answers are left", () => {
     render(<MapV2 data={{ ...base, calibrated: false }} {...props} left={12} />);
     expect(screen.getByText(/12 to go/)).toBeInTheDocument();
+  });
+
+  it("with no answers yet it does not repeat the same number ('30 answers. 30 to go.')", () => {
+    render(<MapV2 data={{ ...base, calibrated: false }} {...props} left={CALIBRATION_ANSWERS} />);
+    expect(screen.getByText(`Scores show after ${CALIBRATION_ANSWERS} answers.`)).toBeInTheDocument();
+    expect(document.body.textContent).not.toMatch(/to go/);
   });
 });
