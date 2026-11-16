@@ -72,7 +72,7 @@ export function CaseLibrary() {
             );
           })
         : null}
-      {!loading && !shown.length ? <EmptyState mood="sleepy" title={filter === "done" ? "Nothing done yet" : "Nothing here"} body={filter === "started" ? "Cases you leave half way show up here." : "Try another filter."} /> : null}
+      {!loading && !shown.length ? <EmptyState mood="empty" title={filter === "done" ? "Nothing done yet" : "Nothing here"} body={filter === "started" ? "Cases you leave half way show up here." : "Try another filter."} /> : null}
     </Screen>
   );
 }

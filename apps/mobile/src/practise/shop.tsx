@@ -149,7 +149,7 @@ export function ShopScreen() {
           </T>
         </View>
       </View>
-      {!d.ready ? <EmptyState mood="sleepy" title="The shop opens soon" body="You can look around; buying switches on shortly." /> : null}
+      {!d.ready ? <EmptyState mood="soon" title="The shop opens soon" body="You can look around; buying switches on shortly." /> : null}
       {error && !pending ? (
         <T v="small" tone="danger" accessibilityLiveRegion="polite">
           {error}

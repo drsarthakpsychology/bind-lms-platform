@@ -97,7 +97,7 @@ export function AdminAnyoneScreen() {
   if (!canWrite) {
     return (
       <Screen testID="anyone">
-        <EmptyState mood="puzzled" title="View-only access" body="Only a Super Admin can issue certificates." action={{ label: "Back", onPress: () => router.back() }} />
+        <EmptyState mood="locked" title="View-only access" body="Only a Super Admin can issue certificates." action={{ label: "Back", onPress: () => router.back() }} />
       </Screen>
     );
   }

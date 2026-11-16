@@ -51,7 +51,7 @@ export function SetupScreen({ token }: { token: string }) {
     const reason = !token ? "unknown" : (check.data?.reason ?? "unknown");
     return (
       <Screen safeTop testID="setup-invalid">
-        <EmptyState mood="puzzled" title="This link cannot be used" body={check.isError ? `Could not check the link. ${reasonOf(check.error)}` : REASON[reason]} action={{ label: "Go to sign in", onPress: () => router.replace("/sign-in") }} />
+        <EmptyState mood="error" title="This link cannot be used" body={check.isError ? `Could not check the link. ${reasonOf(check.error)}` : REASON[reason]} action={{ label: "Go to sign in", onPress: () => router.replace("/sign-in") }} />
       </Screen>
     );
   }

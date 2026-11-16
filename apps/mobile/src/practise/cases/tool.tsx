@@ -78,7 +78,7 @@ function ToolPicker({ tool, title, line, howTo, list, recycleLine, onPick }: { t
           </RowList>
         </Stagger>
       ) : (
-        <EmptyState mood="sleepy" title={tool === "weak-spots" ? "No weak spots yet" : "Nothing here yet"} body={tool === "weak-spots" ? "Do a practice interview first. Your drill is made from what you miss there." : "New cases are on their way."} testID="tool-empty" />
+        <EmptyState mood="empty" title={tool === "weak-spots" ? "No weak spots yet" : "Nothing here yet"} body={tool === "weak-spots" ? "Do a practice interview first. Your drill is made from what you miss there." : "New cases are on their way."} testID="tool-empty" />
       )}
     </GameFrame>
   );

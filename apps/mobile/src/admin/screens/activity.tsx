@@ -98,7 +98,7 @@ function Behind() {
               {canWrite ? <Button kind="quiet" label={`Nudge all ${d.items.length}`} onPress={() => openCompose({ to: d.items.map((r) => r.id), title: "Checking in" })} testID="nudge-all" /> : null}
             </>
           ) : (
-            <EmptyState mood="sleepy" title="Nobody is behind" body="Everyone is keeping up with their cohort." />
+            <EmptyState mood="clear" title="Nobody is behind" body="Everyone is keeping up with their cohort." />
           )}
         </>
       )}
@@ -150,7 +150,7 @@ function Students() {
                 ))}
               </RowList>
             ) : (
-              <EmptyState mood="sleepy" title="No activity yet" body="Students show here once they start." />
+              <EmptyState mood="empty" title="No activity yet" body="Students show here once they start." />
             )}
           </>
         );

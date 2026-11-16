@@ -196,7 +196,7 @@ function Pipeline({ initialView }: { initialView: PeopleView }) {
                 </View>
               </View>
             ) : (
-              <EmptyState mood="sleepy" title="Nobody here" body={view === "all" ? "People who enquire show here." : "No one is in this view right now."} />
+              <EmptyState mood="empty" title="Nobody here" body={view === "all" ? "People who enquire show here." : "No one is in this view right now."} />
             )}
             {picked.size ? (
               <View style={{ paddingTop: space[2] }}>
@@ -290,7 +290,7 @@ function Enquiries() {
             ))}
           </RowList>
         ) : (
-          <EmptyState mood="sleepy" title="No enquiries" body="People who fill the enquiry form show here, newest first." />
+          <EmptyState mood="empty" title="No enquiries" body="People who fill the enquiry form show here, newest first." />
         )
       }
     </Loaded>

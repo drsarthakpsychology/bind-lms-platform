@@ -268,7 +268,7 @@ export function WardTeam({ teamId, onExit }: { teamId: string; onExit: () => voi
   if (missing && !view) {
     return (
       <GameFrame title="Ward Week" testID="ward-team-missing">
-        <EmptyState mood="puzzled" title="Team not found" body="You may not be in this team, or team play is not open yet." action={{ label: "Back to Ward Week", onPress: onExit }} />
+        <EmptyState mood="missing" title="Team not found" body="You may not be in this team, or team play is not open yet." action={{ label: "Back to Ward Week", onPress: onExit }} />
       </GameFrame>
     );
   }

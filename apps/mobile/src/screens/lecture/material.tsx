@@ -111,7 +111,7 @@ function PdfReader({ m }: { m: Material }) {
   }, [doc, pageWidth]);
 
   if (mock) return <MockPages title={m.title} />;
-  if (doc.phase === "error") return <EmptyState mood="puzzled" title="Could not open this file" body={doc.message} />;
+  if (doc.phase === "error") return <EmptyState mood="error" title="Could not open this file" body={doc.message} />;
   if (doc.phase === "loading") {
     return (
       <View style={{ gap: space[3] }} testID="material-loading">

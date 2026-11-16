@@ -163,7 +163,7 @@ function Submissions() {
               ))}
             </RowList>
           ) : (
-            <EmptyState mood="sleepy" title={status === "pending" ? "Nothing to grade" : "Nothing here"} body={status === "pending" ? "New hand-ins land here." : undefined} />
+            <EmptyState mood={status === "pending" ? "clear" : "empty"} title={status === "pending" ? "Nothing to grade" : "Nothing here"} body={status === "pending" ? "New hand-ins land here." : undefined} />
           )
         }
       </Loaded>
@@ -189,7 +189,7 @@ function SignOffs() {
               ))}
             </RowList>
           ) : (
-            <EmptyState mood="sleepy" title="No sign-off requests" body="When a student asks for one, it lands here." />
+            <EmptyState mood="clear" title="No sign-off requests" body="When a student asks for one, it lands here." />
           )
         }
       </Loaded>

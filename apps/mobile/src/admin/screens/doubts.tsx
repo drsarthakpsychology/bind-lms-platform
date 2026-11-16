@@ -49,7 +49,7 @@ export function AdminDoubtsScreen() {
               })}
             </RowList>
           ) : (
-            <EmptyState mood="sleepy" title={view === "waiting" ? "Nothing waiting" : "No doubts yet"} body={view === "waiting" ? "Every doubt has an answer." : "Doubts students ask show here."} />
+            <EmptyState mood={view === "waiting" ? "clear" : "empty"} title={view === "waiting" ? "Nothing waiting" : "No doubts yet"} body={view === "waiting" ? "Every doubt has an answer." : "Doubts students ask show here."} />
           );
         }}
       </Loaded>

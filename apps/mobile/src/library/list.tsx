@@ -44,7 +44,7 @@ export function LibraryScreen() {
       </View>
       {q.data ? <Chips scroll label="Group" options={[{ id: "All", name: "All" }, ...q.data.groups.map((g) => ({ id: g, name: g }))]} value={group} onChange={setGroup} /> : null}
       {q.isError ? (
-        soon ? <EmptyState mood="sleepy" title="Coming in the next update" body="The medicine library is ready on the website and arrives in the app soon." testID="soon" /> : <LoadError error={q.error} what="the medicine library" onRetry={() => void q.refetch()} />
+        soon ? <EmptyState mood="soon" title="Coming in the next update" body="The medicine library is ready on the website and arrives in the app soon." testID="soon" /> : <LoadError error={q.error} what="the medicine library" onRetry={() => void q.refetch()} />
       ) : !q.data ? (
         <RowsSkeleton rows={9} />
       ) : rows.length ? (
@@ -59,7 +59,7 @@ export function LibraryScreen() {
           </RowList>
         </>
       ) : (
-        <EmptyState mood="puzzled" title="No medicine by that name" body="Check the spelling, or try the brand name or the condition." testID="library-empty" />
+        <EmptyState mood="missing" title="No medicine by that name" body="Check the spelling, or try the brand name or the condition." testID="library-empty" />
       )}
     </Screen>
   );

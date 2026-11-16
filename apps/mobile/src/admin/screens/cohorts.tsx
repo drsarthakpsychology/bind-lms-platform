@@ -42,7 +42,7 @@ export function AdminCohortsScreen() {
               ))}
             </RowList>
           ) : (
-            <EmptyState mood="sleepy" title="No cohorts yet" body="Make one on the website." />
+            <EmptyState mood="empty" title="No cohorts yet" body="Make one on the website." />
           )
         }
       </Loaded>

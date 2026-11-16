@@ -7,6 +7,7 @@ import { haptic } from "@/lib/haptics";
 import { settingsStore } from "@/lib/settings";
 import { createStore } from "@/lib/store";
 import { motion } from "@/theme";
+import { STICKERS, type Mood } from "@/lib/reactions/stickers";
 
 /**
  * The website's reaction stickers (public/reactions, the same art): cat and
@@ -15,25 +16,7 @@ import { motion } from "@/theme";
  * up), and now and then after an answer (a streak, a run of misses). Off when
  * the student turns reactions off in Settings. A tap removes it.
  */
-export type Mood = "right" | "streak" | "surprise" | "near" | "wrong";
-
-const STICKERS: { id: string; mood: Mood; alt: string; w: number; h: number; src: number }[] = [
-  { id: "smug-thumbs-up", mood: "right", alt: "Smug cat giving a thumbs up", w: 349, h: 374, src: require("./stickers/smug-thumbs-up.webp") },
-  { id: "shaka-cat", mood: "right", alt: "Cat throwing a shaka sign", w: 337, h: 374, src: require("./stickers/shaka-cat.webp") },
-  { id: "flower-cat", mood: "right", alt: "Happy cat holding a flower", w: 374, h: 371, src: require("./stickers/flower-cat.webp") },
-  { id: "pointing-cat", mood: "right", alt: "Cat pointing a paw at you", w: 305, h: 374, src: require("./stickers/pointing-cat.webp") },
-  { id: "smug-beagle", mood: "right", alt: "Smug beagle looking pleased", w: 276, h: 374, src: require("./stickers/smug-beagle.webp") },
-  { id: "hamster-heart", mood: "streak", alt: "Hamster making a tiny heart", w: 253, h: 374, src: require("./stickers/hamster-heart.webp") },
-  { id: "sunlit-dog", mood: "streak", alt: "Dog glowing in the sunlight", w: 347, h: 374, src: require("./stickers/sunlit-dog.webp") },
-  { id: "shocked-dog", mood: "surprise", alt: "Shocked dog staring in disbelief", w: 365, h: 374, src: require("./stickers/shocked-dog.webp") },
-  { id: "crying-thumbs-up", mood: "near", alt: "Crying cat giving a thumbs up", w: 374, h: 367, src: require("./stickers/crying-thumbs-up.webp") },
-  { id: "wet-cat-stare", mood: "wrong", alt: "Wet cat staring blankly", w: 370, h: 374, src: require("./stickers/wet-cat-stare.webp") },
-  { id: "cat-hand-on-head", mood: "wrong", alt: "Cat with a paw on its head", w: 374, h: 297, src: require("./stickers/cat-hand-on-head.webp") },
-  { id: "screaming-point-cat", mood: "wrong", alt: "Screaming cat pointing", w: 374, h: 346, src: require("./stickers/screaming-point-cat.webp") },
-  { id: "smug-corgi", mood: "wrong", alt: "Smug corgi giving side eye", w: 327, h: 374, src: require("./stickers/smug-corgi.webp") },
-  { id: "praying-dog", mood: "wrong", alt: "Dog with its paws pressed together", w: 342, h: 374, src: require("./stickers/praying-dog.webp") },
-  { id: "crying-cat", mood: "wrong", alt: "Crying cat with teary eyes", w: 374, h: 326, src: require("./stickers/crying-cat.webp") },
-];
+export type { Mood } from "@/lib/reactions/stickers";
 
 /** A round's share right as a mood (the website's moodForScore). */
 export function moodForScore(right: number, total: number): Mood {

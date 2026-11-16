@@ -437,9 +437,9 @@ export function FrameError({ title, error, onRetry }: { title: string; error: un
   return (
     <GameFrame title={title} testID="frame-error">
       {isSoon(error) ? (
-        <EmptyState mood="sleepy" title="Coming in the next update" body="This is ready on the website and arrives in the app soon." testID="soon" />
+        <EmptyState mood="soon" title="Coming in the next update" body="This is ready on the website and arrives in the app soon." testID="soon" />
       ) : (
-        <EmptyState mood="puzzled" title="That didn't load" body={loadLine(error)} action={{ label: "Try again", onPress: onRetry }} testID="load-error" />
+        <EmptyState mood="error" title="That didn't load" body={loadLine(error)} action={{ label: "Try again", onPress: onRetry }} testID="load-error" />
       )}
     </GameFrame>
   );

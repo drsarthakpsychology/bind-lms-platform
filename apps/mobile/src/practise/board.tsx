@@ -39,11 +39,11 @@ export function BoardScreen() {
         </T>
       ) : null}
       {q.isError ? (
-        isSoon(q.error) ? <EmptyState mood="sleepy" title="Coming in the next update" body="The board is ready on the website and arrives in the app soon." /> : <LoadError error={q.error} onRetry={() => void q.refetch()} />
+        isSoon(q.error) ? <EmptyState mood="soon" title="Coming in the next update" body="The board is ready on the website and arrives in the app soon." /> : <LoadError error={q.error} onRetry={() => void q.refetch()} />
       ) : !d ? (
         <RowsSkeleton rows={8} />
       ) : !d.rows.length ? (
-        <EmptyState mood="sleepy" title="Nobody on the board yet" body="Play this week and your name shows up here." />
+        <EmptyState mood="empty" title="Nobody on the board yet" body="Play this week and your name shows up here." />
       ) : (
         <Stagger>
         <RowList>

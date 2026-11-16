@@ -346,7 +346,7 @@ export function EscapeTeam({ teamId, onExit }: { teamId: string; onExit: () => v
   if (missing && !view) {
     return (
       <GameFrame title="Escape Room" testID="escape-team-missing">
-        <EmptyState mood="puzzled" title="Team not found" body="You may not be in this team, or team play is not open yet." action={{ label: "Back to the rooms", onPress: onExit }} />
+        <EmptyState mood="missing" title="Team not found" body="You may not be in this team, or team play is not open yet." action={{ label: "Back to the rooms", onPress: onExit }} />
       </GameFrame>
     );
   }
