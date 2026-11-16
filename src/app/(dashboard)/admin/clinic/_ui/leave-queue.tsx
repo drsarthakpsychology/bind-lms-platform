@@ -3,7 +3,7 @@
 import * as React from "react";
 import { useRouter } from "next/navigation";
 
-import { LEAVE_STATUS_LABEL, clock, dayShort, instantClock, leaves } from "@/components/clinic/format";
+import { LEAVE_STATUS_LABEL, askLine, clock, dayShort, leaves } from "@/components/clinic/format";
 import type { Res } from "@/components/clinic/result";
 import type { ClinicLeaveDecisionBody, ClinicLeaveQueue } from "@/lib/clinic/types";
 import { cn } from "@/lib/utils";
@@ -13,12 +13,6 @@ type Req = ClinicLeaveQueue["requests"][number];
 
 const TONE = { pending: "warn", approved: "ok", rejected: "alert", cancelled: "quiet" } as const;
 
-/** What a request asks for, in a few words. */
-export function askLine(r: Pick<Req, "kind" | "cost" | "leaveAt">): string {
-  if (r.kind === "early") return `Leave early${r.leaveAt ? ` at ${r.leaveAt.includes("T") ? instantClock(r.leaveAt) : clock(r.leaveAt)}` : ""}`;
-  if (r.kind === "missed") return "Missed OPD day";
-  return r.cost === 1 ? "1 session" : `${r.cost} sessions`;
-}
 
 export function LeaveQueue({ data, decide, canWrite }: { data: ClinicLeaveQueue; decide: (id: string, body: ClinicLeaveDecisionBody) => Promise<Res<unknown>>; canWrite: boolean }) {
   if (!data.requests.length) return <Empty>Nothing waiting.</Empty>;

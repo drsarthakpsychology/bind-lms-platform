@@ -1,4 +1,4 @@
-import type { ClinicBatch, ClinicKind, ClinicMyStatus, ClinicLeaveStatus } from "@/lib/clinic/types";
+import type { ClinicBatch, ClinicKind, ClinicLeaveRequest, ClinicMyStatus, ClinicLeaveStatus } from "@/lib/clinic/types";
 
 /**
  * Plain words for the clinic screens (website, student and admin). Pure, so
@@ -146,4 +146,11 @@ export function leaves(n: number): string {
 /** "1 case", "2 cases". */
 export function cases(n: number): string {
   return `${n} ${n === 1 ? "case" : "cases"}`;
+}
+
+/** What a request asks for, in a few words. */
+export function askLine(r: Pick<ClinicLeaveRequest, "kind" | "cost" | "leaveAt">): string {
+  if (r.kind === "early") return `Leave early${r.leaveAt ? ` at ${r.leaveAt.includes("T") ? instantClock(r.leaveAt) : clock(r.leaveAt)}` : ""}`;
+  if (r.kind === "missed") return "Missed OPD day";
+  return r.cost === 1 ? "1 session" : `${r.cost} sessions`;
 }

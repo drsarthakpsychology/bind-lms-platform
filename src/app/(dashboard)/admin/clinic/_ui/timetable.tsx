@@ -231,7 +231,7 @@ export function WeekSessions({
   notes,
   actions,
   canWrite,
-  hrefFor,
+  weekHref,
 }: {
   cohortId: string;
   from: string;
@@ -239,7 +239,8 @@ export function WeekSessions({
   notes: { date: string; note: string }[];
   actions: TimetableActions;
   canWrite: boolean;
-  hrefFor: (from: string) => string;
+  /** The week's address without its date: the date of the Monday is added. */
+  weekHref: string;
 }) {
   const router = useRouter();
   const [adding, setAdding] = React.useState<Draft | null>(null);
@@ -264,13 +265,13 @@ export function WeekSessions({
   return (
     <div className="flex min-w-0 flex-col gap-5">
       <nav aria-label="Week" className="flex min-w-0 flex-wrap items-center gap-2">
-        <Link href={hrefFor(addDays(from, -7))} className={btn.quiet}>
+        <Link href={`${weekHref}${addDays(from, -7)}`} className={btn.quiet}>
           ← Earlier
         </Link>
         <span className="type-small font-semibold type-num">
           {dayShort(from)} to {dayShort(addDays(from, 6))}
         </span>
-        <Link href={hrefFor(addDays(from, 7))} className={btn.quiet}>
+        <Link href={`${weekHref}${addDays(from, 7)}`} className={btn.quiet}>
           Later →
         </Link>
       </nav>

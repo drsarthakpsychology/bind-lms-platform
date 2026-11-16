@@ -1,3 +1,4 @@
+import type * as React from "react";
 import { ArrowRight, BookOpen, Check, ChevronRight, Circle, Dumbbell, Flame, Play, Sparkles, Stethoscope } from "lucide-react";
 import Link from "next/link";
 
@@ -37,6 +38,8 @@ export type HomeV2Props = {
   upNext: UpNextRow[];
   /** Sent here from a section that is switched off for this student. */
   sectionOff?: boolean;
+  /** Today's schedule (sessions, OPD day, the admin's note), when the clinic has any. */
+  clinic?: React.ReactNode;
 };
 
 /** A 28px ring: today's points against the goal. Lime arc on a hairline track. */
@@ -103,7 +106,7 @@ function Today({ goal, quests }: { goal: NonNullable<HomeV2Props["goal"]>; quest
   );
 }
 
-export function HomeV2({ adminPreview, welcomeBack, dateLine, step, progress, allDone, goal, quests, upNext, sectionOff = false }: HomeV2Props) {
+export function HomeV2({ adminPreview, welcomeBack, dateLine, step, progress, allDone, goal, quests, upNext, sectionOff = false, clinic }: HomeV2Props) {
   const hero = allDone
     ? { context: "All caught up", title: "Nothing left to do today.", meta: "Revise a weak topic or try a case while you wait for the next lecture.", href: "/practise", cta: "Practise" }
     : {
@@ -143,6 +146,7 @@ export function HomeV2({ adminPreview, welcomeBack, dateLine, step, progress, al
         />
 
         <div className="flex min-w-0 flex-col gap-6">
+          {clinic}
           {goal ? (
             <Section id="today" title="Today">
               <div className="border-y border-[var(--ds-hairline)]">
