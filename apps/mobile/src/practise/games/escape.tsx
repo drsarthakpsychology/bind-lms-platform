@@ -18,8 +18,9 @@ const HOW = ["One patient's case, behind a row of locked doors. Each door is one
 
 const clock = () => Date.now();
 
-const mmss = (ms: number) => {
-  const s = Math.max(0, Math.round(ms / 1000));
+/** "4:07". A time the phone cannot work out (an unreadable finish date) shows 0:00, not "NaN:NaN". */
+export const mmss = (ms: number) => {
+  const s = Number.isFinite(ms) ? Math.max(0, Math.round(ms / 1000)) : 0;
   return `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`;
 };
 
@@ -368,8 +369,9 @@ export function EscapeTeam({ teamId, onExit }: { teamId: string; onExit: () => v
   if (view.status === "lobby") {
     const enough = view.members.length >= TEAM_LIMITS.escape.min;
     return (
-      <GameFrame testID="escape-lobby" title={room.title} thumb={<Button label="Start the clock" icon={<Play size={18} color={c.onPrimary} />} disabled={!enough} busy={busy} onPress={async () => { setBusy(true); haptic.tap(); const v = await play<EscTeamView | null>("escape", "startTeam", teamId).catch(() => null); setBusy(false); apply(v); }} testID="escape-start-team" />}>
+      <GameFrame testID="escape-lobby" title={room.title} thumb={<Button label="Start the clock" icon={<Play size={18} color={c.onPrimary} />} disabled={!enough} busy={busy} onPress={async () => { if (busy) return; setBusy(true); setLost(false); haptic.tap(); const v = await play<EscTeamView | null>("escape", "startTeam", teamId).catch(() => undefined); setBusy(false); if (v === undefined) { setLost(true); haptic.warn(); } else apply(v); }} testID="escape-start-team" />}>
         {header}
+        {lost ? <MoveError text="Connection lost. The clock did not start. Try again." /> : null}
         <Story kicker={room.place}>
           <T v="reading">{room.intro}</T>
         </Story>

@@ -12,7 +12,7 @@ import { mock } from "@/api/mock/server";
 import { session } from "@/auth";
 import { ToolCaseScreen } from "@/practise/cases/tool";
 import { GameFrame } from "@/practise/frame";
-import { EscapeGame } from "@/practise/games/escape";
+import { EscapeGame, mmss } from "@/practise/games/escape";
 import { JoinBox } from "@/practise/games/team";
 import * as R from "@/practise/mock/routes";
 import { shopState } from "@/practise/mock/routes";
@@ -61,6 +61,9 @@ describe("dates the phone cannot read", () => {
     expect(followUpLine(null)).toBeNull();
     expect(followUpLine("2026-11-16T10:00:00Z", Date.parse("2026-11-16T10:00:00Z"))).toBe("Follow up today");
     expect(day("not a date", true)).toBe("");
+    // Escape Room team time with an unreadable finish date.
+    expect(mmss(Date.parse("later") - 1000)).toBe("0:00");
+    expect(mmss(247_000)).toBe("4:07");
   });
 });
 
