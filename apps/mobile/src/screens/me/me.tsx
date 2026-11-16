@@ -4,10 +4,10 @@ import * as React from "react";
 import { View } from "react-native";
 
 import { useAchievements, useMe, useProgress } from "@/api/queries";
-import { ProgressLine, Row, RowList, Screen, Section, Skeleton, Stat, T } from "@/ds";
+import { IconDot, ProgressLine, Row, RowList, Screen, Section, Skeleton, Stat, T } from "@/ds";
 import { Enter } from "@/motion";
 import { TabTop } from "@/nav/top";
-import { space, useTheme } from "@/theme";
+import { space } from "@/theme";
 
 /** Three numbers under the name: lectures, modules and the streak. */
 function Summary() {
@@ -25,7 +25,6 @@ function Summary() {
 
 /** The next certificate to earn, with how far along it is. */
 function NextCertificate() {
-  const c = useTheme();
   const a = useAchievements().data;
   const next = a?.progress.find((x) => x.type === "certificate" && !x.earned);
   if (!next) return null;
@@ -33,22 +32,20 @@ function NextCertificate() {
   const pct = m && Number(m[2]) > 0 ? (Number(m[1]) / Number(m[2])) * 100 : null;
   return (
     <RowList>
-      <Row testID="me-next-cert" title={`Next certificate: ${next.title}`} meta={next.progress || undefined} icon={<Award size={20} color={c.link} />} onPress={() => router.push("/certificates")} below={pct !== null ? <ProgressLine value={pct} label={`${next.title}: ${next.progress}`} /> : undefined} />
+      <Row testID="me-next-cert" title={`Next certificate: ${next.title}`} meta={next.progress || undefined} icon={<IconDot icon={Award} />} onPress={() => router.push("/certificates")} below={pct !== null ? <ProgressLine value={pct} label={`${next.title}: ${next.progress}`} /> : undefined} />
     </RowList>
   );
 }
 
 /** Me: who you are, three numbers, the next certificate, then grouped rows (the website's ME_GROUPS). */
 export function MeScreen() {
-  const c = useTheme();
   const q = useMe();
   const me = q.data;
   const can = me?.access?.can;
   const lecturesOnly = !!me?.access?.lecturesOnly;
-  const icon = { size: 20, color: c.muted };
   const sub = me ? [me.rollNumber, (me.cohorts ?? []).map((x) => x.name).join(", "), lecturesOnly ? "Lectures" : null].filter(Boolean).join(" · ") : "";
   return (
-    <Screen tab top={<TabTop />} testID="me" onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
+    <Screen tab area="me" top={<TabTop />} testID="me" onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
       {me ? (
         <Enter style={{ gap: space[1] }}>
           <T v="h1">{me.name ?? me.email ?? "You"}</T>
@@ -68,18 +65,18 @@ export function MeScreen() {
       {me && can?.achievements !== false ? <NextCertificate /> : null}
       <Section title="Your work">
         <RowList>
-          <Row testID="me-progress" title="Progress" meta="Topics, map, your level and badges" icon={<ChartLine {...icon} />} onPress={() => router.push("/progress")} />
-          {can?.achievements !== false ? <Row testID="me-certificates" title="Certificates" icon={<Award {...icon} />} onPress={() => router.push("/certificates")} /> : null}
-          {!lecturesOnly && can?.leaderboard !== false ? <Row testID="me-leaderboard" title="Leaderboard" meta="Your league and the boards" icon={<Trophy {...icon} />} onPress={() => router.push("/game/leaderboard")} /> : null}
-          {!lecturesOnly && can?.leaderboard !== false ? <Row testID="me-shop" title="XP shop" meta="Name frames, titles and a streak repair" icon={<ShoppingBag {...icon} />} onPress={() => router.push("/shop")} /> : null}
+          <Row testID="me-progress" title="Progress" meta="Topics, map, your level and badges" icon={<IconDot icon={ChartLine} />} onPress={() => router.push("/progress")} />
+          {can?.achievements !== false ? <Row testID="me-certificates" title="Certificates" icon={<IconDot icon={Award} />} onPress={() => router.push("/certificates")} /> : null}
+          {!lecturesOnly && can?.leaderboard !== false ? <Row testID="me-leaderboard" title="Leaderboard" meta="Your league and the boards" icon={<IconDot icon={Trophy} />} onPress={() => router.push("/game/leaderboard")} /> : null}
+          {!lecturesOnly && can?.leaderboard !== false ? <Row testID="me-shop" title="XP shop" meta="Name frames, titles and a streak repair" icon={<IconDot icon={ShoppingBag} />} onPress={() => router.push("/shop")} /> : null}
         </RowList>
       </Section>
       <Section title="Account and help">
         <RowList>
-          {!lecturesOnly && can?.doubts !== false ? <Row testID="me-doubts" title="Doubts" icon={<MessageCircleQuestionMark {...icon} />} onPress={() => router.push("/doubts")} /> : null}
-          <Row testID="me-notifications" title="Notifications" trailing={me?.unreadNotifications ? `${me.unreadNotifications} new` : undefined} icon={<Bell {...icon} />} onPress={() => router.push("/notifications")} />
-          <Row testID="me-settings" title="Settings" icon={<Settings {...icon} />} onPress={() => router.push("/settings")} />
-          <Row testID="me-help" title="Help" meta="Message us on WhatsApp" icon={<CircleHelp {...icon} />} onPress={() => router.push("/help")} />
+          {!lecturesOnly && can?.doubts !== false ? <Row testID="me-doubts" title="Doubts" icon={<IconDot icon={MessageCircleQuestionMark} />} onPress={() => router.push("/doubts")} /> : null}
+          <Row testID="me-notifications" title="Notifications" trailing={me?.unreadNotifications ? `${me.unreadNotifications} new` : undefined} icon={<IconDot icon={Bell} />} onPress={() => router.push("/notifications")} />
+          <Row testID="me-settings" title="Settings" icon={<IconDot icon={Settings} />} onPress={() => router.push("/settings")} />
+          <Row testID="me-help" title="Help" meta="Message us on WhatsApp" icon={<IconDot icon={CircleHelp} />} onPress={() => router.push("/help")} />
         </RowList>
       </Section>
     </Screen>

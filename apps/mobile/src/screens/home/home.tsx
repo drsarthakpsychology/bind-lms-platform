@@ -7,12 +7,12 @@ import { useReducedMotion } from "react-native-reanimated";
 import { outbox } from "@/api/outbox";
 import { useHome, type HomeData } from "@/api/queries";
 import type { QuestCard } from "@/api/contract";
-import { EmptyState, Hero, LoadError, Row, RowList, Screen, Section, Sheet, Skeleton, T } from "@/ds";
+import { EmptyState, Hero, IconDot, LoadError, Row, RowList, Screen, Section, Sheet, Skeleton, T } from "@/ds";
 import { haptic } from "@/lib/haptics";
 import { Enter, PixelBurst, ProgressRing, RollingNumber, SkeletonIn, Stamp } from "@/motion";
 import { openTarget } from "@/nav/targets";
 import { TabTop } from "@/nav/top";
-import { layout, space, useTheme } from "@/theme";
+import { layout, space, useAccent, useTheme } from "@/theme";
 
 /**
  * Home. One purpose: carry on. Top to bottom:
@@ -32,9 +32,11 @@ const UP_ICON = { lecture: Play, study: BookOpen, weak: Dumbbell, daily: Stethos
  */
 export function GoalRing({ pct, size = 28 }: { pct: number; size?: number }) {
   const c = useTheme();
+  const a = useAccent();
   const done = pct >= 100;
+  // On Home the ring is the area's deep colour on its wash.
   return (
-    <ProgressRing pct={pct} size={size} stroke={4} delay={200}>
+    <ProgressRing pct={pct} size={size} stroke={4} delay={200} color={a.on ? a.deep : undefined} track={a.on ? a.wash : undefined}>
       {done ? (
         <View testID="goal-ring-done">
           <Check size={Math.round(size * 0.55)} color={c.ink} strokeWidth={3} />
@@ -94,7 +96,7 @@ function Today({ goal, quests, fresh }: { goal: NonNullable<HomeData["goal"]>; q
         )}
         {streak || questLine ? (
           <View style={{ flexDirection: "row", alignItems: "center", gap: space[1], flexWrap: "wrap" }}>
-            {goal.streak > 0 ? <Flame size={16} color={c.muted} /> : null}
+            {goal.streak > 0 ? <Flame size={16} color={c.areas.practise.deep} fill={c.areas.practise.wash} /> : null}
             <T v="small" tone="muted" num style={{ flexShrink: 1 }} testID="home-streak">
               {streak}
               {streak ? questLine : questLine.replace(/^ · /, "")}
@@ -279,7 +281,7 @@ export function HomeView({ data }: { data: HomeData }) {
             <RowList>
               {upNext.slice(0, 3).map((r, i) => {
                 const Icon = UP_ICON[r.kind as keyof typeof UP_ICON] ?? Play;
-                return <Row key={i} testID={`up-next-${i}`} title={r.title} meta={r.meta ?? undefined} icon={<Icon size={20} color={c.muted} />} onPress={() => openTarget(r.target)} />;
+                return <Row key={i} testID={`up-next-${i}`} title={r.title} meta={r.meta ?? undefined} icon={<IconDot icon={Icon} />} onPress={() => openTarget(r.target)} />;
               })}
             </RowList>
           </Section>
@@ -292,7 +294,7 @@ export function HomeView({ data }: { data: HomeData }) {
 export function HomeScreen() {
   const q = useHome();
   return (
-    <Screen tab top={<TabTop />} testID="home" onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
+    <Screen tab area="home" top={<TabTop />} testID="home" onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
       {q.data ? <HomeView data={q.data} /> : q.isError ? <LoadError what="your home screen" error={q.error} onRetry={() => void q.refetch()} /> : <HomeSkeleton />}
       {q.data && !q.data.step && !q.data.upNext.length ? <EmptyState title="Nothing here yet" body="Your first lecture appears here as soon as it opens." /> : null}
     </Screen>
