@@ -98,6 +98,24 @@ describe("app route sweep: every call has a route", () => {
   });
 });
 
+describe("app route sweep: a path no route answers", () => {
+  it("gets a JSON not_found for every method, never the website's HTML 404", async () => {
+    const mod = await import("./[...path]/route");
+    for (const m of ["GET", "POST", "PUT", "PATCH", "DELETE"] as const) {
+      const res = mod[m]();
+      expect(res.status).toBe(404);
+      expect(res.headers.get("content-type")).toMatch(/json/);
+      const json = (await res.json()) as { ok: boolean; error: { code: string } };
+      expect(json.ok).toBe(false);
+      expect(json.error.code).toBe("not_found");
+    }
+  });
+  it("is never picked for a path a real route answers", () => {
+    expect(resolveRoute("/study")).toBeNull();
+    expect(resolveRoute("/study/modules")).toMatch(/study\/modules\/route\.ts$/);
+  });
+});
+
 describe("app route sweep: Practise moves", () => {
   const server = serverPlays();
   it("reads the server's games", () => expect(server.size).toBeGreaterThan(8));
