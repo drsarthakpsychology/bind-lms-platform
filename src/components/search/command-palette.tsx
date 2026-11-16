@@ -3,25 +3,51 @@
 import * as React from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Search, ArrowRight, CornerDownLeft, X } from "lucide-react";
+import { Search, ArrowRight, CornerDownLeft, Clock, X } from "lucide-react";
 import { haptic } from "@/lib/haptics";
 import { cn } from "@/lib/utils";
-import { searchPalette, startEntries, type PaletteEntry } from "@/lib/search/palette";
+import { groupEntries, mergeResults, searchPalette, serverEntries, startEntries, type PaletteEntry, type PaletteGroup, type ServerHit } from "@/lib/search/palette";
+import { addRecent } from "@/lib/search/engine";
 
-const GROUP_LABEL: Record<PaletteEntry["group"], string> = {
+const GROUP_LABEL: Record<PaletteGroup, string> = {
   Nav: "Go to",
+  Lectures: "Lectures",
   Study: "Study",
+  Topics: "Topics",
+  Notes: "Revision notes",
   Medicines: "Medicines",
   Tools: "Tools",
   Reference: "Quick Reference",
+  Cases: "Cases",
+  Files: "Course files",
   Admin: "Admin",
+  Students: "Students",
 };
+
+const RECENT_KEY = "vibha.search.recent";
+function readRecent(): string[] {
+  try {
+    const v = JSON.parse(window.localStorage.getItem(RECENT_KEY) ?? "[]") as unknown;
+    return Array.isArray(v) ? v.filter((x): x is string => typeof x === "string").slice(0, 8) : [];
+  } catch {
+    return [];
+  }
+}
+function writeRecent(list: string[]): void {
+  try {
+    window.localStorage.setItem(RECENT_KEY, JSON.stringify(list));
+  } catch {
+    // A private window: recent searches are only a convenience.
+  }
+}
 
 /**
  * Search: opens from the top bar's search box, ⌘K (Ctrl+K) or "/". Before
- * anything is typed it offers the menu's places; then it searches the
- * menu, tools, Study modules, medicines and the Quick Reference, and opens
- * the pick. Keyboard: ↑/↓ move, Enter opens, Esc closes.
+ * anything is typed it offers recent searches and the menu's places; then it
+ * searches the page's own list at once (menu, tools, modules, medicines,
+ * Quick Reference, typo tolerant) and, a moment after typing stops, the
+ * server (/api/search: the student's own lectures and files, topics, notes,
+ * cases, and students for admins). Keyboard: ↑/↓ move, Enter opens, Esc closes.
  */
 export function CommandPalette({ entries }: { entries: PaletteEntry[] }) {
   const router = useRouter();
@@ -30,7 +56,40 @@ export function CommandPalette({ entries }: { entries: PaletteEntry[] }) {
   const [idx, setIdx] = React.useState(0);
   const inputRef = React.useRef<HTMLInputElement>(null);
   const panelRef = React.useRef<HTMLDivElement>(null);
+  // The server's answer for what was typed (lectures, notes, cases...), and the words it answers.
+  const [server, setServer] = React.useState<{ q: string; hits: PaletteEntry[] }>({ q: "", hits: [] });
+  const [recent, setRecent] = React.useState<string[]>([]);
+  const timer = React.useRef<ReturnType<typeof setTimeout> | null>(null);
+  const inflight = React.useRef<AbortController | null>(null);
 
+  // Ask the server a moment after typing stops (never per key), cancelling an older question.
+  function askServer(q: string) {
+    if (timer.current) clearTimeout(timer.current);
+    inflight.current?.abort();
+    const term = q.trim();
+    if (term.length < 2) return;
+    timer.current = setTimeout(() => {
+      const ctrl = new AbortController();
+      inflight.current = ctrl;
+      fetch(`/api/search?q=${encodeURIComponent(term)}`, { signal: ctrl.signal, credentials: "same-origin" })
+        .then((r) => (r.ok ? (r.json() as Promise<{ results?: ServerHit[] }>) : { results: [] }))
+        .then((a) => setServer({ q: term, hits: serverEntries(a.results ?? []) }))
+        .catch(() => undefined); // offline or cancelled: the page's own results stay
+    }, 180);
+  }
+  React.useEffect(
+    () => () => {
+      if (timer.current) clearTimeout(timer.current);
+      inflight.current?.abort();
+    },
+    [],
+  );
+
+  function remember(term: string) {
+    const next = addRecent(readRecent(), term);
+    writeRecent(next);
+    setRecent(next);
+  }
   // Focus the input whenever the palette opens, and hand focus back to where
   // it was (the search box in the top bar) when it closes. DOM side effects,
   // not state updates: safe inside the effect.
@@ -67,6 +126,7 @@ export function CommandPalette({ entries }: { entries: PaletteEntry[] }) {
       setOpen(true);
       setQuery("");
       setIdx(0);
+      setRecent(readRecent());
     }
     function onKey(e: KeyboardEvent) {
       if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
@@ -74,6 +134,7 @@ export function CommandPalette({ entries }: { entries: PaletteEntry[] }) {
         setOpen((o) => !o);
         setQuery("");
         setIdx(0);
+        setRecent(readRecent());
       }
       // "/" opens search like YouTube/GitHub, but never while typing.
       if (e.key === "/" && !e.metaKey && !e.ctrlKey && !e.altKey) {
@@ -95,26 +156,33 @@ export function CommandPalette({ entries }: { entries: PaletteEntry[] }) {
     };
   }, []);
 
-  const results = query.trim() ? searchPalette(entries, query) : startEntries(entries);
+  const term = query.trim();
+  const local = term ? searchPalette(entries, query) : startEntries(entries);
+  // Server rows only for the words on screen (an older answer never shows under newer words).
+  const results = term ? mergeResults(local, server.q === term ? server.hits : []) : local;
 
   function onQuery(e: React.ChangeEvent<HTMLInputElement>) {
     setQuery(e.target.value);
     setIdx(0); // selection resets alongside the query, not from an effect.
+    askServer(e.target.value);
   }
-  const grouped = React.useMemo(() => {
-    const out: Array<{ group: PaletteEntry["group"]; items: PaletteEntry[] }> = [];
-    for (const r of results) {
-      const g = out.find((o) => o.group === r.group);
-      if (g) g.items.push(r);
-      else out.push({ group: r.group, items: [r] });
-    }
-    return out;
-  }, [results]);
-
-  const flat = results;
+  function pickRecent(r: string) {
+    setQuery(r);
+    setIdx(0);
+    askServer(r);
+    inputRef.current?.focus();
+  }
+  function forget(r: string) {
+    const next = readRecent().filter((x) => x !== r);
+    writeRecent(next);
+    setRecent(next);
+  }
+  const grouped = groupEntries(results);
+  const flat = grouped.flatMap((g) => g.items);
 
   function choose(e: PaletteEntry) {
     haptic("tap");
+    if (term.length >= 2) remember(term);
     setOpen(false);
     router.push(e.href);
   }
@@ -167,7 +235,7 @@ export function CommandPalette({ entries }: { entries: PaletteEntry[] }) {
             value={query}
             onChange={onQuery}
             onKeyDown={onKeyDown}
-            placeholder="Search lectures, topics, medicines…"
+            placeholder="Search lectures, notes, medicines, cases…"
             enterKeyHint="search"
             className="min-h-11 w-full bg-transparent text-base focus:outline-none lg:text-small"
             aria-label="Search"
@@ -184,9 +252,25 @@ export function CommandPalette({ entries }: { entries: PaletteEntry[] }) {
 
         {/* results */}
         <div className="flex-1 overflow-y-auto p-1 lg:max-h-[50vh]">
+          {!term && recent.length ? (
+            <div className="mb-1">
+              <p className="px-3 py-1.5 text-caption font-semibold uppercase tracking-wide text-muted-foreground">Recent searches</p>
+              {recent.map((r) => (
+                <div key={r} className="flex items-center">
+                  <button type="button" onClick={() => pickRecent(r)} className="flex min-h-11 flex-1 items-center gap-3 rounded-md px-3 py-2 text-left hover:bg-secondary">
+                    <Clock className="size-4 shrink-0 text-muted-foreground" aria-hidden />
+                    <span className="truncate text-small">{r}</span>
+                  </button>
+                  <button type="button" onClick={() => forget(r)} aria-label={`Remove ${r} from recent searches`} className="grid size-11 shrink-0 place-items-center rounded-md text-muted-foreground hover:text-foreground">
+                    <X className="size-4" aria-hidden />
+                  </button>
+                </div>
+              ))}
+            </div>
+          ) : null}
           {flat.length === 0 ? (
             <p className="px-3 py-6 text-center text-small text-muted-foreground">
-              {query.trim() ? "Nothing matches. Try another word." : "Type a topic, a medicine or a tool."}
+              {term ? "Nothing matches. Try another word." : "Type a lecture, a topic, a medicine or a case."}
             </p>
           ) : (
             grouped.map((g) => (
