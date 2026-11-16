@@ -432,7 +432,12 @@ export async function adminRoute(req: RawRequest, role: "admin" | "view_admin", 
       .filter((d) => d.status !== "hidden" || query.kind === "hidden")
       .filter((d) => !query.kind || query.kind === "hidden" || d.kind === query.kind)
       .filter((d) => !query.student || s.students.find((r) => r.id === query.student)?.name === d.author)
-      .map(({ body: _b, replies, ...d }) => ({ ...d, replies: replies.length }));
+      .map(({ body: _b, replies, ...d }) => {
+        const last = replies[replies.length - 1];
+        // The team: this admin's own answers, Dr. Sarthak's, or "VIBHA team".
+        const lastReplyBy = last ? (last.mine || /^Dr\.|VIBHA/.test(last.author) ? ("faculty" as const) : ("student" as const)) : null;
+        return { ...d, replies: replies.length, lastReplyBy };
+      });
     return ok<C.DoubtList>({ items, nextCursor: null, cohorts: [C2, C1], ready: true });
   }
   if ((m = is("GET", "/doubts/:id"))) {
@@ -664,6 +669,15 @@ export async function adminRoute(req: RawRequest, role: "admin" | "view_admin", 
     const clean = list.filter((x) => String(x?.name ?? "").trim()).slice(0, 3).map((x) => ({ name: String(x.name).trim(), role: String(x.role ?? "").trim(), signatureFrom: x.signatureFrom ?? null }));
     if (!clean.length) return fail(400, "bad_request", "Add at least one signatory with a name.");
     s.studio = { ...s.studio, signatories: clean };
+    return ok({ v: 1, ...s.studio, canWrite: true });
+  }
+  if (is("POST", "/admin/certificates/signatures")) {
+    if (role !== "admin") return fail(403, "forbidden", "Only a super admin can do this.");
+    const label = String(body.label ?? "").trim().replace(/\s+/g, " ").slice(0, 60);
+    if (!label) return fail(400, "bad_request", "Say whose signature it is.");
+    if (!/^data:image\/(png|jpeg|jpg);base64,.+$/.test(String(body.dataUrl ?? ""))) return fail(400, "bad_request", "Upload a PNG or JPEG image.");
+    const id = `sig-${label.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") || "image"}`;
+    s.studio = { ...s.studio, signatures: [...s.studio.signatures.filter((g) => g.id !== id), { id, label, url: null }] };
     return ok({ v: 1, ...s.studio, canWrite: true });
   }
   if (is("POST", "/admin/certificates/preview")) return ok(mockDrawing(body));
