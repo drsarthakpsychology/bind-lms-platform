@@ -62,7 +62,7 @@ function Reply({ r, thread, onThread }: { r: DoubtReply; thread: DoubtThread; on
             if (!r.youVoted) setPop((n) => n + 1);
             void vote();
           }}
-          innerStyle={{ minHeight: layout.target, flexDirection: "row", alignItems: "center", gap: space[2] }}
+          innerStyle={{ minHeight: layout.target, minWidth: layout.target, flexDirection: "row", alignItems: "center", gap: space[2] }}
         >
           <View style={{ width: 18, height: 18, alignItems: "center", justifyContent: "center" }}>
             <Stamp fire={pop}>

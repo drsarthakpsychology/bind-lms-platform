@@ -54,10 +54,10 @@ function Days({ days }: { days: Progress["days"] }) {
           </T>
         ) : null}
       </View>
-      <View accessible accessibilityLabel={`Points in the last 14 days: ${total}, about ${Math.round(avg)} a day`} style={{ height: H }}>
+      <View accessibilityLabel={`Points in the last 14 days: ${total}, about ${Math.round(avg)} a day`} style={{ height: H }}>
         <View style={{ flexDirection: "row", alignItems: "flex-end", height: H, gap: 4 }}>
           {days.map((d, i) => (
-            <Pressable key={d.day} testID={`day-${i}`} onPress={() => setPick(i)} style={{ flex: 1, height: H, justifyContent: "flex-end" }} hitSlop={{ top: 12, bottom: 12 }}>
+            <Pressable key={d.day} testID={`day-${i}`} accessibilityRole="button" accessibilityState={{ selected: i === pick }} accessibilityLabel={`${dayName(d.day, i === days.length - 1)}: ${d.xp} points`} onPress={() => setPick(i)} style={{ flex: 1, height: H, justifyContent: "flex-end" }} hitSlop={{ top: 12, bottom: 12 }}>
               <DayBar i={i} h={Math.max(3, (d.xp / max) * H)} color={i === pick ? (c.dark ? c.primary : c.ink) : c.cardLine} />
             </Pressable>
           ))}
@@ -80,7 +80,7 @@ function Topics({ items }: { items: TopicScore[] }) {
   return (
     <RowList>
       {items.map((t) => (
-        <Row key={t.id} title={t.title} meta={t.n === 1 ? "1 answer" : `${t.n} answers`} trailing={`${Math.round(t.p * 100)}%`} onPress={() => openTarget(t.studyTarget ?? t.practiceTarget)} />
+        <Row key={t.id} title={t.title} trailing={`${Math.round(t.p * 100)}%`} onPress={() => openTarget(t.studyTarget ?? t.practiceTarget)} />
       ))}
     </RowList>
   );
