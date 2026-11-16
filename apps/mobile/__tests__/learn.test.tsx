@@ -81,7 +81,7 @@ describe("links", () => {
     expect(hrefFor({ screen: "studyNote", noteId: "depression", web: "/study/notes/depression" })).toBe("/notes/depression");
     expect(hrefFor({ screen: "unknown", web: "/journey" })).toBe("/journey");
     expect(hrefFor({ screen: "unknown", web: "/study/reference/anhedonia" })).toBe("/reference/anhedonia");
-    expect(hrefFor({ screen: "unknown", web: "/wall" })).toBeNull();
+    expect(hrefFor({ screen: "unknown", web: "/wall" })).toBe("/wall");
     expect(pathFromLink("https://vibhapsychology.com/study/notes")).toBe("/notes");
   });
   it("marks a note read once", () => {

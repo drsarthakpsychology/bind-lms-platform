@@ -203,7 +203,6 @@ function MediaView({ m }: { m: Material }) {
 /* ------------------------------------------------------------------ screen */
 
 export function MaterialBody({ m }: { m: Material }) {
-  const c = useTheme();
   const view = viewFor(m);
   return (
     <>
