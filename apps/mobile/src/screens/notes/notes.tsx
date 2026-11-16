@@ -63,7 +63,7 @@ export function NotesScreen() {
   return (
     <Screen testID="notes" onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
       <Stack.Screen options={{ title: "Notes" }} />
-      <Loaded q={q} soon what="your notes" skeleton={<RowsSkeleton rows={6} />}>
+      <Loaded q={q} soon="/study/notes" what="your notes" skeleton={<RowsSkeleton rows={6} />}>
         {(d) => <NotesBody d={d} />}
       </Loaded>
     </Screen>

@@ -2,6 +2,7 @@ import * as React from "react";
 import { ActivityIndicator, Pressable, View, type StyleProp, type ViewStyle } from "react-native";
 import Animated, { Easing, useAnimatedStyle, useReducedMotion, useSharedValue, withTiming } from "react-native-reanimated";
 
+import { useOffline } from "@/api/online";
 import { haptic } from "@/lib/haptics";
 import { layout, motion, space, useTheme } from "@/theme";
 import { T } from "./text";
@@ -18,6 +19,8 @@ type ButtonProps = {
   disabled?: boolean;
   /** Shows a small spinner in place of the icon and blocks presses. */
   busy?: boolean;
+  /** Needs the server (Post, Hand in, Send): greyed out while the phone is offline. */
+  needsServer?: boolean;
   /** Fills the width (default for primary and quiet). */
   full?: boolean;
   testID?: string;
@@ -30,11 +33,13 @@ type ButtonProps = {
  * progress, and the only thing with a hard shadow: on press it moves 3px into
  * its shadow over 120ms, with a light haptic.
  */
-export function Button({ label, onPress, kind = "primary", icon, disabled, busy, full, testID, accessibilityHint, style }: ButtonProps) {
+export function Button({ label, onPress, kind = "primary", icon, disabled, busy, needsServer, full, testID, accessibilityHint, style }: ButtonProps) {
   const c = useTheme();
   const reduce = useReducedMotion();
   const down = useSharedValue(0);
-  const blocked = disabled || busy;
+  const offline = useOffline();
+  const blocked = disabled || busy || (!!needsServer && offline);
+  const hint = needsServer && offline ? "Needs the internet" : accessibilityHint;
   const moved = useAnimatedStyle(() => ({ transform: [{ translateX: down.value * SHADOW }, { translateY: down.value * SHADOW }] }));
   const faded = useAnimatedStyle(() => ({ opacity: 1 - down.value * 0.35, transform: [{ scale: 1 - down.value * 0.03 }] }));
   const pressIn = () => {
@@ -48,7 +53,7 @@ export function Button({ label, onPress, kind = "primary", icon, disabled, busy,
     if (kind === "primary") haptic.tap();
     onPress?.();
   };
-  const a11y = { accessibilityRole: "button" as const, accessibilityLabel: label, accessibilityHint, accessibilityState: { disabled: !!blocked, busy: !!busy } };
+  const a11y = { accessibilityRole: "button" as const, accessibilityLabel: label, accessibilityHint: hint, accessibilityState: { disabled: !!blocked, busy: !!busy } };
 
   if (kind === "text" || kind === "danger") {
     return (

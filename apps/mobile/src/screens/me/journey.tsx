@@ -99,7 +99,7 @@ export function JourneyScreen() {
   return (
     <Screen testID="journey" onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
       <Stack.Screen options={{ title: "My journey" }} />
-      <Loaded q={q} soon what="your journey" skeleton={<RowsSkeleton rows={4} />}>
+      <Loaded q={q} soon="/journey" what="your journey" skeleton={<RowsSkeleton rows={4} />}>
         {(j) => <JourneyBody j={j} />}
       </Loaded>
     </Screen>

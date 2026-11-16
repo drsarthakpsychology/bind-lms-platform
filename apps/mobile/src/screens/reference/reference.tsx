@@ -89,7 +89,7 @@ export function ReferenceScreen() {
         value={kind}
         onChange={setKind}
       />
-      <Loaded q={query} soon what="the Quick reference" skeleton={<RowsSkeleton rows={8} />}>
+      <Loaded q={query} soon="/study/reference" what="the Quick reference" skeleton={<RowsSkeleton rows={8} />}>
         {(d) => {
           const rows = searchRefs(d.items, q, kind);
           if (!rows.length) return <EmptyState mood="puzzled" title="Nothing by that name" body="Try a shorter word, or the everyday word for it." testID="reference-empty" />;
