@@ -146,7 +146,8 @@ create table if not exists public.clinic_leave_requests (
 );
 create index if not exists clinic_leave_requests_user on public.clinic_leave_requests (user_id, cohort_id);
 create index if not exists clinic_leave_requests_status on public.clinic_leave_requests (status, created_at);
-create unique index if not exists clinic_leave_requests_missed on public.clinic_leave_requests (assignment_id) where assignment_id is not null;
+-- One missed-day row per assignment (NULLs never clash, so leave and early rows are free).
+create unique index if not exists clinic_leave_requests_missed on public.clinic_leave_requests (assignment_id);
 
 -- 8. OPD settings per cohort. seats: {"1": {"morning": 3, "evening": 3}, "6": {}}
 -- keyed by weekday (0 Sunday .. 6 Saturday).
