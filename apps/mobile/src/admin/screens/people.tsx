@@ -319,7 +319,7 @@ export function AdminPeopleScreen() {
       refreshing={refreshing}
       footer={
         tab === "pipeline" && picked.size ? (
-          <ActionBar count={picked.size} onClear={() => setPicked(new Set())} testID="people-bar">
+          <ActionBar count={picked.size} onClear={() => setPicked(new Set())} testID="people-bar" noun="people">
             <SmallButton label="Email them" icon={<Mail size={18} color={c.ink} />} onPress={() => setSheet("email")} testID="people-email" />
             <SmallButton label="WhatsApp" icon={<MessageCircle size={18} color={c.ink} />} onPress={() => setSheet("whatsapp")} testID="people-whatsapp" />
           </ActionBar>
