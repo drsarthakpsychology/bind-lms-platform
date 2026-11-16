@@ -9,7 +9,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { Button, Meme, Row, RowList, Sheet, T } from "@/ds";
 import { haptic } from "@/lib/haptics";
-import { MaskLine, Press, presets } from "@/motion";
+import { MaskLine, Press, Swap, presets } from "@/motion";
 import { fonts, layout, space, useTheme } from "@/theme";
 import { Icon, Person, Sparkle, Star } from "@/visitor/Art";
 import { HomeWordsCtx, useHomeWords, useWords } from "@/visitor/home-data";
@@ -678,23 +678,26 @@ function YourWeek() {
             </Press>
           ))}
         </View>
-        <View key={String(weekend)} style={{ paddingTop: space[5], gap: space[1] }}>
-          <Animated.View entering={reduce ? undefined : presets.rise(0)}>
-            <Pix color={c.link}>{day.tag}</Pix>
-            <T v="h2">{day.title}</T>
-            <T tone="muted">{day.sub}</T>
-          </Animated.View>
-          <View style={{ paddingTop: space[3] }}>
-            {day.steps.map((s, i) => (
-              <Animated.View key={s} entering={reduce ? undefined : presets.rise(60 + i * 40)} style={{ flexDirection: "row", gap: space[3], paddingVertical: space[2], alignItems: "center" }}>
-                <Text allowFontScaling={false} style={{ fontFamily: fonts.pixelDigits, fontSize: 16, color: c.link, width: 22 }}>
-                  {i + 1}
-                </Text>
-                <T style={{ flex: 1 }}>{s}</T>
-              </Animated.View>
-            ))}
+        {/* Swap: the old day fades out while the new one rises, so the area never blinks. */}
+        <Swap k={weekend ? "weekend" : "weekday"} dir={weekend ? 1 : -1}>
+          <View style={{ paddingTop: space[5], gap: space[1] }}>
+            <Animated.View entering={reduce ? undefined : presets.rise(0)}>
+              <Pix color={c.link}>{day.tag}</Pix>
+              <T v="h2">{day.title}</T>
+              <T tone="muted">{day.sub}</T>
+            </Animated.View>
+            <View style={{ paddingTop: space[3] }}>
+              {day.steps.map((s, i) => (
+                <Animated.View key={s} entering={reduce ? undefined : presets.rise(60 + i * 40)} style={{ flexDirection: "row", gap: space[3], paddingVertical: space[2], alignItems: "center" }}>
+                  <Text allowFontScaling={false} style={{ fontFamily: fonts.pixelDigits, fontSize: 16, color: c.link, width: 22 }}>
+                    {i + 1}
+                  </Text>
+                  <T style={{ flex: 1 }}>{s}</T>
+                </Animated.View>
+              ))}
+            </View>
           </View>
-        </View>
+        </Swap>
       </View>
     </Chapter>
   );
