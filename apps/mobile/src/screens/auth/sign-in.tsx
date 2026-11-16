@@ -2,7 +2,7 @@ import { router, useFocusEffect } from "expo-router";
 import { setStatusBarStyle } from "expo-status-bar";
 import { ChevronLeft, Lock, Mail } from "lucide-react-native";
 import * as React from "react";
-import { Keyboard, KeyboardAvoidingView, Platform, Pressable, ScrollView, Text, TextInput, View, useWindowDimensions } from "react-native";
+import { Keyboard, Pressable, ScrollView, Text, TextInput, View, useWindowDimensions } from "react-native";
 import Animated, { useAnimatedStyle, useDerivedValue, useReducedMotion, useSharedValue, withDelay, withTiming } from "react-native-reanimated";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
@@ -10,6 +10,7 @@ import { ApiFailure, messageOf } from "@/api/errors";
 import { session, useSession } from "@/auth";
 import { holdPin, releasePin } from "@/auth/handoff";
 import { T, Tint } from "@/ds";
+import { useKeyboardPad } from "@/ds/keyboard-pad";
 import { haptic } from "@/lib/haptics";
 import { KeyboardState, useKeyboard } from "@/lib/keyboard";
 import { Press, dur } from "@/motion";
@@ -78,6 +79,9 @@ export function SignInScreen({ defaultEmail = "" }: { defaultEmail?: string }) {
   const band = Math.round(Math.min(260, Math.max(170, height * 0.25)));
   const lift = band - FOLDED;
   const kb = useKeyboard();
+  // The fields and the button stay above the keyboard: the form's frame pads itself by what the
+  // keyboard covers (0 when the window already shrank), so the scroll can bring the field into view.
+  const { ref: frame, pad: kbPad, onLayout: frameLayout } = useKeyboardPad();
   const fold = useDerivedValue(() => {
     if (reduce) return kb.state.value === KeyboardState.OPENING || kb.state.value === KeyboardState.OPEN ? 1 : 0;
     return Math.min(1, Math.max(0, kb.height.value / FOLD_AT));
@@ -142,9 +146,8 @@ export function SignInScreen({ defaultEmail = "" }: { defaultEmail?: string }) {
   return (
     <View testID="sign-in" style={{ flex: 1, backgroundColor: c.bg }}>
       {/* The form's frame starts where the folded band ends and clips what is below the screen. */}
-      <View style={{ position: "absolute", top: insets.top + FOLDED, left: 0, right: 0, bottom: 0, overflow: "hidden" }}>
+      <View ref={frame} onLayout={frameLayout} style={{ position: "absolute", top: insets.top + FOLDED, left: 0, right: 0, bottom: 0, overflow: "hidden", paddingBottom: kbPad }}>
       <Animated.View style={[{ flex: 1 }, formStyle]}>
-      <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : undefined} style={{ flex: 1 }}>
         <ScrollView keyboardShouldPersistTaps="handled" keyboardDismissMode="interactive" showsVerticalScrollIndicator={false} contentContainerStyle={{ flexGrow: 1, paddingHorizontal: layout.gutter, paddingTop: space[5], paddingBottom: space[6] + lift, width: "100%", maxWidth: 480, alignSelf: "center", gap: space[5] }}>
           <Title />
           {notice && NOTICE[notice] ? (
@@ -181,7 +184,6 @@ export function SignInScreen({ defaultEmail = "" }: { defaultEmail?: string }) {
             </T>
           </Press>
         </ScrollView>
-      </KeyboardAvoidingView>
       </Animated.View>
       </View>
       <Animated.View style={[{ position: "absolute", top: 0, left: 0, right: 0, height: insets.top + band, backgroundColor: BLUE, overflow: "hidden", borderBottomWidth: 2.5, borderColor: INK }, bandStyle]}>
