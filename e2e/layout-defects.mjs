@@ -211,10 +211,11 @@ function scan({ touch }) {
     // ancestors that clip (fixed-height cards, overflow hidden wrappers)
     for (let a = box.parentElement, i = 0; a && a !== document.body && i < 6; a = a.parentElement, i++) {
       const acs = getComputedStyle(a);
+      // A sideways scroller (a carousel) shows the rest on scroll: not cut off.
+      if (acs.overflowX === "auto" || acs.overflowX === "scroll") break;
       const cx = /hidden|clip/.test(acs.overflowX);
       const cy = /hidden|clip/.test(acs.overflowY);
       if (!cx && !cy) continue;
-      if (acs.overflowX === "auto" || acs.overflowX === "scroll") break;
       const ar = a.getBoundingClientRect();
       if (ar.width < 2 || ar.height < 2) break; // sr-only style boxes
       if (acs.textOverflow === "ellipsis" || (acs.webkitLineClamp && acs.webkitLineClamp !== "none")) break;
