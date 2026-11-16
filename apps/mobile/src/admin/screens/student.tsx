@@ -4,7 +4,7 @@ import * as React from "react";
 import { Linking, Share, View } from "react-native";
 
 import { Button, Row, RowList, RowsSkeleton, Screen, Sheet, T } from "@/ds";
-import { layout, space, useTheme } from "@/theme";
+import { space, useTheme } from "@/theme";
 import { adminCalls, useAdminAction, useStudentCredentials, useStudentDoubts, useStudentMessages, useStudentProfile } from "../api";
 import type { AdminStudent, AdminStudentRow, StudentDetail } from "../contract";
 import type { LoginLinkResult } from "../extra";

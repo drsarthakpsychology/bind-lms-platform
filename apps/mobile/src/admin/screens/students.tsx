@@ -234,7 +234,7 @@ export function AdminStudentsScreen() {
         {() => (
           <View style={{ gap: space[2] }}>
             {flag ? (
-              <Pressable testID="flag-chip" accessibilityRole="button" accessibilityLabel={`Showing ${FLAG_LABEL[flag]}. Remove`} onPress={() => setFlag(undefined)} style={{ alignSelf: "flex-start", minHeight: 36, flexDirection: "row", alignItems: "center", gap: space[1], borderRadius: 18, paddingHorizontal: space[3], backgroundColor: c.tint }}>
+              <Pressable testID="flag-chip" accessibilityRole="button" accessibilityLabel={`Showing ${FLAG_LABEL[flag]}. Remove`} onPress={() => setFlag(undefined)} style={{ alignSelf: "flex-start", minHeight: layout.target, flexDirection: "row", alignItems: "center", gap: space[1], borderRadius: 22, paddingHorizontal: space[3], backgroundColor: c.tint }}>
                 <T v="small">{FLAG_LABEL[flag]}</T>
                 <X size={16} color={c.muted} />
               </Pressable>
