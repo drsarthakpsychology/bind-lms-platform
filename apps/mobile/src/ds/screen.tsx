@@ -9,6 +9,7 @@ import { presets, usePressScale } from "@/motion";
 import { fonts, layout, motion, space, useTheme } from "@/theme";
 import { Button } from "./button";
 import { ProgressLine } from "./parts";
+import { useBottomChrome } from "./bottom-chrome";
 import { useKeyboardPad } from "./keyboard-pad";
 import { T } from "./text";
 
@@ -119,6 +120,9 @@ export function Screen({ children, title, lead, top, footer, onRefresh, refreshi
   const spinning = pulled && (hold || refreshing);
   // The keyboard covers the bottom: lift the footer (a reply box) and shorten the list above it.
   const { ref: root, pad: kb, onLayout: kbLayout } = useKeyboardPad();
+  // The toast sits above this footer and the tab bar, so it never covers the buttons.
+  const [footH, setFootH] = React.useState(0);
+  useBottomChrome(footer ? footH : 0, !!tab, kb);
   const side = bleed ? 0 : layout.gutter;
   const padBottom = (footer || tab ? 0 : insets.bottom) + space[6];
   const inner = (
@@ -159,7 +163,7 @@ export function Screen({ children, title, lead, top, footer, onRefresh, refreshi
         )}
       </Animated.View>
       {footer ? (
-        <View style={{ backgroundColor: c.bg, borderTopWidth: 1, borderColor: c.hairline, paddingTop: space[3], paddingBottom: (tab || kb ? 0 : insets.bottom) + space[3], paddingLeft: Math.max(layout.gutter, insets.left), paddingRight: Math.max(layout.gutter, insets.right) }}>
+        <View onLayout={(e) => setFootH(Math.round(e.nativeEvent.layout.height))} style={{ backgroundColor: c.bg, borderTopWidth: 1, borderColor: c.hairline, paddingTop: space[3], paddingBottom: (tab || kb ? 0 : insets.bottom) + space[3], paddingLeft: Math.max(layout.gutter, insets.left), paddingRight: Math.max(layout.gutter, insets.right) }}>
           <View style={{ width: "100%", maxWidth: layout.readingWidth, alignSelf: "center", gap: space[2] }}>{footer}</View>
         </View>
       ) : null}

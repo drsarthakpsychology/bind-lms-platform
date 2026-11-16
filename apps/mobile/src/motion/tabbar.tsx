@@ -4,6 +4,7 @@ import { Animated as RNAnimated, Easing as RNEasing, Platform, Pressable, View, 
 import Animated, { interpolate, useAnimatedKeyboard, useAnimatedReaction, useAnimatedStyle, useReducedMotion, useSharedValue, withSequence, withSpring, withTiming, type SharedValue } from "react-native-reanimated";
 import { scheduleOnRN } from "react-native-worklets";
 
+import { reportTabBar } from "@/ds/bottom-chrome";
 import { T } from "@/ds/text";
 import { haptic } from "@/lib/haptics";
 import { fonts, useTheme } from "@/theme";
@@ -109,6 +110,11 @@ export function MotionTabBar({ state, descriptors, emitter, navigateToTab, inset
   const c = useTheme();
   const reduce = useReducedMotion();
   const kb = useKeyboardBar(BAR_H + insets.bottom);
+  // Tell the toast how tall the bar is (nothing while it is behind the keyboard).
+  React.useEffect(() => {
+    if (kb.up) reportTabBar(0);
+  }, [kb.up]);
+  React.useEffect(() => () => reportTabBar(0), []);
   const n = state.routes.length;
   const itemW = useSharedValue(0);
   const x = useSharedValue(state.index);
@@ -128,7 +134,7 @@ export function MotionTabBar({ state, descriptors, emitter, navigateToTab, inset
   if (kb.up) return null;
   const pillColor = c.pill;
   return (
-    <Animated.View style={[{ backgroundColor: c.card, borderTopWidth: 1, borderColor: c.hairline, paddingBottom: insets.bottom, paddingLeft: insets.left, paddingRight: insets.right }, kb.style]}>
+    <Animated.View onLayout={(e: LayoutChangeEvent) => reportTabBar(Math.round(e.nativeEvent.layout.height))} style={[{ backgroundColor: c.card, borderTopWidth: 1, borderColor: c.hairline, paddingBottom: insets.bottom, paddingLeft: insets.left, paddingRight: insets.right }, kb.style]}>
       <View accessibilityRole="tablist" style={{ flexDirection: "row", height: BAR_H }} onLayout={(e: LayoutChangeEvent) => itemW.set(e.nativeEvent.layout.width / n)}>
         <Animated.View
           pointerEvents="none"
