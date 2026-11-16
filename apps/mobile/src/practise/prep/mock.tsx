@@ -7,6 +7,7 @@ import Animated, { FadeIn, useReducedMotion } from "react-native-reanimated";
 import { Button, Chips, EmptyState, LoadError, Row, RowList, RowsSkeleton, Screen, Section, Sheet, T } from "@/ds";
 import { haptic } from "@/lib/haptics";
 import { Burst, ProgressFill, Swap } from "@/motion";
+import { PixelLoader, useSlow } from "@/moments/parts";
 import { pathFromLink } from "@/nav/targets";
 import { Rich } from "@/study/rich";
 import { fonts, layout, motion, space, useTheme } from "@/theme";
@@ -198,6 +199,9 @@ export function MockExamScreen() {
   const [palette, setPalette] = React.useState(false);
   const [confirm, setConfirm] = React.useState(false);
   const [submitting, setSubmitting] = React.useState<false | "you" | "auto">(false);
+  // Waits over a second show the pixel loader with what is happening.
+  const slowStart = useSlow(starting);
+  const slowSubmit = useSlow(!!submitting);
   const [error, setError] = React.useState<string | null>(null);
   const [result, setResult] = React.useState<MockResult | null>(null);
   const times = React.useRef<Record<string, number>>({});
@@ -334,6 +338,7 @@ export function MockExamScreen() {
             The timer starts when you press Start. It submits on its own when time is up.
           </T>
           <MoveError text={startError} />
+          {slowStart ? <PixelLoader label="Setting out your paper" /> : null}
         </Animated.View>
       </GameFrame>
     );
@@ -491,6 +496,7 @@ export function MockExamScreen() {
             </T>
           ) : null}
           <MoveError text={error} />
+          {slowSubmit ? <PixelLoader label="Marking your paper" /> : null}
           <Button label={error ? "Try again" : "Submit now"} icon={<Send size={18} color={c.onPrimary} />} busy={!!submitting} onPress={() => void submit(left <= 0)} testID="mock-submit" />
           {!submitting && left > 0 ? <Button kind="text" label="Keep going" onPress={() => setConfirm(false)} testID="mock-keep" /> : null}
         </View>

@@ -10,7 +10,8 @@ import { CertificateMoment } from "@/moments/certificate";
 import { freshCertificates } from "@/moments/store";
 import { StreakPanel } from "@/moments/streak";
 import type { Credential } from "@/api/contract";
-import { EndPanel, GameFrame } from "@/practise/frame";
+import { PixelLoader, useSlow } from "@/moments/parts";
+import { EndPanel, GameFrame, StartScreen } from "@/practise/frame";
 import { render } from "./utils";
 
 const note = Haptics.notificationAsync as jest.Mock;
@@ -91,5 +92,28 @@ describe("streak kept (storyboard 4)", () => {
     expect(screen.getByText(/6 days in a row/)).toBeTruthy();
     fireEvent.press(screen.getByTestId("moment-streak-close"));
     await waitFor(() => expect(onClose).toHaveBeenCalled());
+  });
+});
+
+describe("waits and intros", () => {
+  function Slow({ on }: { on: boolean }) {
+    const slow = useSlow(on, 50);
+    return slow ? <PixelLoader label="Setting up the round" /> : null;
+  }
+
+  it("the pixel loader shows only once a wait passes its time, and goes when it ends", async () => {
+    const r = await render(<Slow on />);
+    expect(screen.queryByLabelText("Setting up the round")).toBeNull();
+    await waitFor(() => expect(screen.getByLabelText("Setting up the round")).toBeTruthy());
+    r.rerender(<Slow on={false} />);
+    await waitFor(() => expect(screen.queryByLabelText("Setting up the round")).toBeNull());
+  });
+
+  it("a game intro shows its title and Play works at once", async () => {
+    const onPlay = jest.fn();
+    await render(<StartScreen title="Rx Detective" line="Find the drug." howTo={["Read the case."]} onPlay={onPlay} />);
+    expect(screen.getByText("Rx Detective")).toBeTruthy();
+    fireEvent.press(screen.getByTestId("start-play"));
+    expect(onPlay).toHaveBeenCalled();
   });
 });
