@@ -27,6 +27,8 @@ export type AppRequestContext = {
   client?: unknown;
   /** This student's switched-off sections, read once per request (loadMyBlocks). */
   blocks?: Promise<string[]>;
+  /** Shared reads made once per request (requestMemo). */
+  memo?: Map<string, Promise<unknown>>;
 };
 
 const store = new AsyncLocalStorage<AppRequestContext>();
@@ -37,4 +39,24 @@ export function appContext(): AppRequestContext | null {
 
 export function runInAppContext<T>(ctx: AppRequestContext, fn: () => T): T {
   return store.run(ctx, fn);
+}
+
+/**
+ * One answer per app request for a shared read (the roster, the activity
+ * tables, the hidden accounts), the way React's cache() dedupes them while a
+ * website page renders. Route handlers have no React cache scope, so without
+ * this a screen that asks twice reads twice. Outside an app request: no memo.
+ */
+export function requestMemo<T>(key: string, load: () => Promise<T>): Promise<T> {
+  const app = store.getStore();
+  if (!app) return load();
+  app.memo ??= new Map();
+  let hit = app.memo.get(key) as Promise<T> | undefined;
+  if (!hit) {
+    hit = load();
+    app.memo.set(key, hit);
+    // A failed read is not kept: the next caller in the request tries again.
+    hit.catch(() => app.memo?.delete(key));
+  }
+  return hit;
 }
