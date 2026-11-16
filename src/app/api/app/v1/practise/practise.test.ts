@@ -121,6 +121,14 @@ describe("GET /practise/tools/:tool", () => {
     expect((await read(await getTool("rx"))).data.data.modes).toContain("mixed");
   });
 
+  it("the MSE trainer sends its levels and the small things walk", async () => {
+    G.flags.mse = "unlocked";
+    const r = await read(await getTool("mse"));
+    expect(r.data.data.content).toEqual({ observe: [] });
+    expect(r.data.data.smallThings.length).toBeGreaterThan(10);
+    expect(r.data.data.smallThings[0]).toMatchObject({ id: "st-1", moment: expect.any(String), read: expect.any(String), move: expect.any(String) });
+  });
+
   it("a case library comes with Done, New, This week and half-way", async () => {
     const r = await read(await getTool("wwyd"));
     expect(r.data.cases.items).toHaveLength(new Set(SCENARIOS.map((s) => s.id)).size);

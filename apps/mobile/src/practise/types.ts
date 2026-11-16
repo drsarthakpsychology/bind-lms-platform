@@ -233,7 +233,13 @@ export type ToolStep =
   /** Landmark: read, then a question. */
   | { n: number; kind: "read"; title: string; body: string }
   /** Free text (Two-minute clinic, MSE observe): written, then compared with the model answer. */
-  | { n: number; kind: "write"; ask: string; fields: string[]; seconds?: number };
+  | { n: number; kind: "write"; ask: string; fields: string[]; seconds?: number; /** Fewest characters before it can be compared (formulation: 40). */ min?: number; placeholder?: string }
+  /** OSCE: your overall call on the station, 1 to max. */
+  | { n: number; kind: "rate"; ask: string; label: string; max: number }
+  /** MSE Level 4: the full MSE of one case under a ten-minute clock, one line per domain. */
+  | { n: number; kind: "fullmse"; ask: string; context: string; domains: string[]; seconds: number }
+  /** The small things: one moment from an interview; the read and the move show after a tap. */
+  | { n: number; kind: "moment"; skill: string; moment: string };
 export type ToolReveal = {
   /** 0 to 1. */
   score: number;
@@ -247,6 +253,12 @@ export type ToolReveal = {
   more: string | null;
   /** Free text: not marked, the student compares with the model answer. */
   selfCheck?: boolean;
+  /** Formulation: the model's words you used and missed. */
+  diff?: { missing: string[]; present: string[] };
+  /** MSE Level 1: the labels that slipped in, and the observation words counted. */
+  observe?: { labels: string[]; observations: number; words: number };
+  /** MSE Level 4: each domain's light with your words and the expert's. */
+  domains?: { domain: string; light: "green" | "amber" | "red"; you: string[]; expert: string[] }[];
 };
 /* ---------------------------------------------- contract (server copy) */
 /*

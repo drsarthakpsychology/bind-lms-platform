@@ -12,6 +12,7 @@ import appData from "../data/app-data.json";
 import { diagnosisName } from "../data";
 import type { CaseLibrary, CaseMark, PractiseRecordKind, PractiseTool, PractiseToolId } from "../contract";
 import type { ProgressTool, ToolId, ToolReveal, ToolStep } from "../types";
+import { diffNarratives, formatDomainKey, MSE_DOMAIN_ORDER, OSCE_COMPETENCY_KEYS, osceScores, scoreMseCode, scoreMseLevel1Attempt, scoreMseLevel2Attempt, scoreObserve, scoreSort, splitTerms, summarizeMseScore } from "./mse";
 
 /** App tool id to the server's tool id (GET /practise/tools/:tool). */
 export const API_TOOL: Record<ToolId, PractiseToolId> = {
@@ -65,7 +66,7 @@ export type Key = {
   /** Raw data a record needs (Judgment calls). */
   raw?: Record<string, unknown>;
 };
-export type Def = { id: string; title: string; line: string | null; setting: string | null; intro: string; steps: Key[]; takeaway: string };
+export type Def = { id: string; title: string; line: string | null; setting: string | null; intro: string; steps: Key[]; takeaway: string; /** The step to open on (the small things walk resumes where it was left). */ start?: number };
 
 /* ---------------------------------------------------------------- helpers */
 
@@ -125,12 +126,14 @@ type Dilemma = { id: string; tag: string; setting: string; vignette: string; opt
 type QuizItem = { id: string; prompt: string; options: string[]; correct: number; rationale: string };
 type Ood = { id: string; vignette: string; options: { option: string; label: string }[]; correct: string; reasoning: string };
 type Landmark = { id: string; title: string; domain: string; story: string; believedThen: string; understandNow: string; quiz: { question: string; options: string[]; correct: number; rationale: string }[] };
-type Osce = { id: string; title: string; task: string; duration_seconds: number; checklist: { item: string; weight: number }[] };
+type Osce = { id: string; title: string; task: string; duration_seconds: number; checklist: { item: string; weight: number }[]; global_rating?: { label: string; max: number } };
 type Clinic = { id: string; topic: string; line: string; diagnosis: string; expertDifferential: string[]; expertNext: string; lesson: string; objective: string };
 type Form = { id: string; title: string; prompt: string; hint?: string; modelNarrative: string; factors: { id: string; text: string; bucket: string }[] };
 type Drill = { id: string; skill: string; scenario: string; weakLine: string; strongLine: string; why: string };
 type Spot = { key: string; label: string };
 type MseStim = { id: string; content: string; domain: string; expertTags: string[]; amberTags: string[]; why?: string };
+type FullStim = { id: string; title: string; context: string; expert: Record<string, string[]>; amber: Record<string, string[]> };
+type Small = { id: string; moment: string; read: string; move: string; skill: string };
 
 const BUCKET_IDS = ["presenting", "predisposing", "precipitating", "perpetuating", "protective", "distractor"] as const;
 const BUCKET_NAMES = ["Presenting", "Predisposing", "Precipitating", "Perpetuating", "Protective", "Leave out"];
@@ -261,7 +264,10 @@ function osce(d: Record<string, unknown>): Def[] {
     line: `${Math.round(s.duration_seconds / 60)} minutes`,
     setting: "OSCE station",
     intro: s.task,
-    steps: [{ pub: { n: 0, kind: "checklist" as const, ask: "Say it out loud as if the patient is in front of you. Then tick what you covered.", items: s.checklist.map((c) => c.item), seconds: s.duration_seconds }, right: s.checklist.map((_, i) => i), weights: s.checklist.map((c) => c.weight), why: "Examiners give the most marks for the items worth two.", item: s.id }],
+    steps: [
+      { pub: { n: 0, kind: "checklist" as const, ask: "Say it out loud as if the patient is in front of you. Then tick what you covered.", items: s.checklist.map((c) => c.item), seconds: s.duration_seconds }, right: s.checklist.map((_, i) => i), weights: s.checklist.map((c) => c.weight), why: "Examiners give the most marks for the items worth two.", item: s.id },
+      { pub: { n: 1, kind: "rate" as const, ask: "Now your overall call on how it went.", label: s.global_rating?.label ?? "Overall competence", max: s.global_rating?.max ?? 5 }, right: [], why: "", item: s.id, selfCheck: true, raw: { title: s.title, checklist: s.checklist } },
+    ],
     takeaway: "Ask the hard questions plainly, then make a plan you can act on today.",
   }));
 }
@@ -295,7 +301,10 @@ function formulation(d: Record<string, unknown>): Def[] {
     line: f.hint ?? null,
     setting: null,
     intro: f.prompt,
-    steps: [{ pub: { n: 0, kind: "buckets" as const, ask: "Put each factor where it belongs.", buckets: BUCKET_NAMES, items: f.factors.map((x) => x.text) }, right: f.factors.map((x) => Math.max(0, BUCKET_IDS.indexOf(x.bucket as (typeof BUCKET_IDS)[number]))), why: f.modelNarrative, item: f.id }],
+    steps: [
+      { pub: { n: 0, kind: "buckets" as const, ask: "Put each factor where it belongs.", buckets: BUCKET_NAMES, items: f.factors.map((x) => x.text) }, right: f.factors.map((x) => Math.max(0, BUCKET_IDS.indexOf(x.bucket as (typeof BUCKET_IDS)[number]))), why: "Each P is one part of the story: why now, why this person, what keeps it going, what helps.", item: f.id },
+      { pub: { n: 1, kind: "write" as const, ask: "Write a 3 to 6 sentence formulation linking the factors you sorted.", fields: ["Your formulation"], min: 40, placeholder: "They present with..." }, right: [], why: f.modelNarrative, item: f.id, selfCheck: true, raw: { model: f.modelNarrative, title: f.title, factors: f.factors.map((x) => ({ id: x.id, bucket: x.bucket })) } },
+    ],
     takeaway: f.modelNarrative,
   }));
 }
@@ -322,7 +331,7 @@ function weakSpots(d: Record<string, unknown>, seed: string): Def[] {
 
 /** The MSE trainer: describe first (Observe), then tag the domain words (Domains). */
 function mseTrainer(d: Record<string, unknown>, seed: string): Def[] {
-  const content = (d.content ?? {}) as { observe?: { id: string; content: string; why?: string }[]; domain?: MseStim[] };
+  const content = (d.content ?? {}) as { observe?: { id: string; content: string; why?: string }[]; domain?: MseStim[]; fullMse?: FullStim[]; small?: { order: string[]; start: number; fresh: number } };
   const out: Def[] = [];
   chunks(content.observe ?? [], 3).forEach((group, k) =>
     out.push({
@@ -331,7 +340,7 @@ function mseTrainer(d: Record<string, unknown>, seed: string): Def[] {
       line: "Level 1: observe, not conclude",
       setting: "Level 1",
       intro: "Write what you can see and hear, not what you conclude.",
-      steps: group.map((o, n) => ({ pub: { n, kind: "write" as const, ask: o.content, fields: ["What you see and hear"] }, right: [], why: o.why ?? "Describe the behaviour itself: what someone else in the room would also see.", selfCheck: true, item: o.id })),
+      steps: group.map((o, n) => ({ pub: { n, kind: "write" as const, ask: o.content, fields: ["What you see and hear"], seconds: 180 }, right: [], why: o.why ?? "Describe the behaviour itself: what someone else in the room would also see.", selfCheck: true, item: o.id, raw: { level: "1" } })),
       takeaway: "Describe first, label second.",
     }),
   );
@@ -353,11 +362,39 @@ function mseTrainer(d: Record<string, unknown>, seed: string): Def[] {
           notes: options.map((o) => (s.amberTags.includes(o) ? "Also fair" : null)),
           why: s.why ?? `The expert words: ${s.expertTags.join(", ")}.`,
           item: s.id,
+          raw: { level: "2", domain: s.domain, expert: s.expertTags, amber: s.amberTags },
         };
       }),
       takeaway: "Use the shared words, so the next clinician reads the same picture.",
     }),
   );
+  for (const f of content.fullMse ?? []) {
+    out.push({
+      id: f.id,
+      title: f.title,
+      line: "Level 4: the full MSE in ten minutes",
+      setting: "Level 4",
+      intro: "Write the full MSE: one line per domain, terms split by commas.",
+      steps: [{ pub: { n: 0, kind: "fullmse", ask: f.title, context: f.context, domains: [...MSE_DOMAIN_ORDER], seconds: 600 }, right: [], why: "Green is what the expert coded. Amber is defensible: real clinical judgment, not a miss. Red is where the patient showed something and you did not describe it. If you did not see it, say so: describing the absence is still an observation.", item: f.id, raw: { level: "4", expert: f.expert, amber: f.amber } }],
+      takeaway: "The MSE is a description of what you saw, domain by domain.",
+    });
+  }
+  const small = arr<Small>(d.smallThings);
+  if (small.length) {
+    const by = new Map(small.map((x) => [x.id, x]));
+    const ordered = (content.small?.order ?? []).map((id) => by.get(id)).filter((x): x is Small => !!x);
+    const list = ordered.length === small.length ? ordered : small;
+    out.push({
+      id: "small-things",
+      title: "The small things novices miss",
+      line: "The pause, the look, the past tense",
+      setting: "The small things",
+      intro: "A moment from an interview. Take a beat: what did you actually just see?",
+      steps: list.map((x, n) => ({ pub: { n, kind: "moment", skill: x.skill, moment: x.moment }, right: [], why: x.read, more: x.move, selfCheck: true, item: `small:${x.id}`, raw: { walk: x.id } })),
+      takeaway: "Every small thing you notice is a second channel of the MSE: the past tense, the pause, the look at the family member.",
+      start: Math.max(0, Math.min(list.length - 1, content.small?.start ?? 0)),
+    });
+  }
   return out;
 }
 
@@ -412,7 +449,28 @@ export function grade(k: Key, answer: unknown): ToolReveal {
   const s = k.pub;
   const base = { right: k.right, why: k.why, notes: k.notes ?? null, more: k.more ?? null };
   if (s.kind === "read") return { ...base, score: 1, verdict: null };
-  if (s.kind === "write") return { ...base, score: 1, verdict: null, selfCheck: true };
+  if (s.kind === "moment") return { ...base, score: 1, verdict: null, selfCheck: true };
+  if (s.kind === "rate") {
+    const n = Number(answer) || 0;
+    return { ...base, why: `Your overall call: ${n} of ${s.max}.`, score: s.max ? n / s.max : 0, verdict: null, selfCheck: true };
+  }
+  if (s.kind === "fullmse") {
+    const text = (answer ?? {}) as Record<string, string>;
+    const fields = Object.fromEntries(Object.entries(text).map(([k, v]) => [k, splitTerms(String(v ?? ""))]));
+    const expert = (k.raw?.expert ?? {}) as Record<string, string[]>;
+    const lights = scoreMseCode(expert, fields, (k.raw?.amber ?? {}) as Record<string, string[]>);
+    const sum = summarizeMseScore(lights);
+    return { ...base, score: sum.max ? sum.score / sum.max : 0, verdict: null, domains: MSE_DOMAIN_ORDER.map((d) => ({ domain: formatDomainKey(d), light: lights[d] ?? "red", you: fields[d] ?? [], expert: expert[d] ?? [] })) };
+  }
+  if (s.kind === "write") {
+    const text = Array.isArray(answer) ? (answer as string[]).join("\n") : String(answer ?? "");
+    if (typeof k.raw?.model === "string") return { ...base, score: 1, verdict: null, selfCheck: true, diff: diffNarratives(text, k.raw.model) };
+    if (k.raw?.level === "1") {
+      const o = scoreObserve(text);
+      return { ...base, score: 1, verdict: null, selfCheck: true, observe: o };
+    }
+    return { ...base, score: 1, verdict: null, selfCheck: true };
+  }
   if (s.kind === "pick") {
     const a = Number(answer);
     const v = k.verdicts?.[a] ?? (a === k.right[0] ? "best" : "harm");
@@ -441,11 +499,23 @@ export function grade(k: Key, answer: unknown): ToolReveal {
 }
 
 /** A pick, scale or multi answer counts as right for the answer history at 75% and above. */
-export const countsRight = (r: ToolReveal) => (r.selfCheck ? null : r.score >= 0.75);
+export function countsRight(r: ToolReveal): boolean | null {
+  if (r.observe) return r.observe.labels.length === 0 && r.observe.words >= 80;
+  if (r.domains) return r.score >= 0.6;
+  return r.selfCheck ? null : r.score >= 0.75;
+}
 
-/** The records a finished case sends (POST /practise/records/:kind), in the website routes' own JSON. */
-export function recordsFor(tool: ToolId, def: Def, answers: { step: number; answer: unknown; ms: number }[], served: PractiseRecordKind[]): { kind: PractiseRecordKind; body: Record<string, unknown> }[] {
+/**
+ * The records a finished case sends (POST /practise/records/:kind), in the
+ * website routes' own JSON: Judgment calls (scored again on the server), the
+ * Two-minute clinic streak, and the self-checks the website stores for the
+ * student's history (OSCE, MSE, formulation; they never pay XP). `now` is
+ * when the case finished; each answer's `ms` dates its start.
+ */
+export function recordsFor(tool: ToolId, def: Def, answers: { step: number; answer: unknown; ms: number }[], served: PractiseRecordKind[], now = Date.now()): { kind: PractiseRecordKind; body: Record<string, unknown> }[] {
   const out: { kind: PractiseRecordKind; body: Record<string, unknown> }[] = [];
+  const iso = (t: number) => new Date(t).toISOString();
+  const total = answers.reduce((a, x) => a + Math.max(0, x.ms), 0);
   if (tool === "judgment" && served.includes("judgment")) {
     for (const a of answers) {
       const k = def.steps[a.step];
@@ -454,6 +524,57 @@ export function recordsFor(tool: ToolId, def: Def, answers: { step: number; answ
     }
   }
   if (tool === "two-minute" && served.includes("clinic")) out.push({ kind: "clinic", body: {} });
+  if (tool === "osce") {
+    const ticks = answers.find((a) => def.steps[a.step]?.pub.kind === "checklist");
+    const rate = answers.find((a) => def.steps[a.step]?.pub.kind === "rate");
+    const k = def.steps.find((x) => x.pub.kind === "rate");
+    const list = (k?.raw?.checklist ?? []) as { item: string; weight: number }[];
+    const max = k?.pub.kind === "rate" ? k.pub.max : 5;
+    if (ticks && list.length) {
+      const on = new Set((ticks.answer as number[]) ?? []);
+      const done = list.map((_, i) => on.has(i));
+      const sc = osceScores(list.map((c) => c.weight), done, Number(rate?.answer) || 0, max);
+      const rating = Number(rate?.answer) || Math.round(sc.checklist * 5);
+      if (served.includes("osce")) out.push({ kind: "osce", body: { slug: def.id, mode: "text", started_at: iso(now - total), completed_at: iso(now), checklist: list.map((c, i) => ({ item: c.item, weight: c.weight, done: done[i] })), global_rating: rating, scores: { checklist_fraction: sc.checklist, global_rating: max ? rating / max : 0, composite: Math.round((sc.checklist * 0.6 + (max ? rating / max : 0) * 0.4) * 100) / 100 } } });
+      if (served.includes("competency")) out.push({ kind: "competency", body: { tool: "osce", keys: OSCE_COMPETENCY_KEYS[def.id] ?? ["clinical_interviewing"], score: Math.min(5, rating), detail: `OSCE: ${String(k?.raw?.title ?? def.title)}`.slice(0, 300) } });
+    }
+  }
+  if (tool === "formulation" && served.includes("formulation")) {
+    const sortA = answers.find((a) => def.steps[a.step]?.pub.kind === "buckets");
+    const writeA = answers.find((a) => def.steps[a.step]?.pub.kind === "write");
+    const k = def.steps.find((x) => x.pub.kind === "write");
+    const factors = (k?.raw?.factors ?? []) as { id: string; bucket: string }[];
+    if (sortA && writeA && factors.length) {
+      const placed = ((sortA.answer as (number | null)[]) ?? []).map((b) => (b === null || b === undefined ? null : (BUCKET_IDS[b] ?? null)));
+      const narrative = (Array.isArray(writeA.answer) ? (writeA.answer as string[]).join("\n") : String(writeA.answer ?? "")).trim();
+      out.push({ kind: "formulation", body: { case_id: def.id, case_title: String(k?.raw?.title ?? def.title), sorted_factors: factors.map((f, i) => ({ factorId: f.id, bucket: placed[i] ?? null })), narrative, diff: diffNarratives(narrative, String(k?.raw?.model ?? "")), score: Math.round(scoreSort(placed, factors.map((f) => f.bucket)) * 100) / 100, started_at: iso(now - total), completed_at: iso(now) } });
+    }
+  }
+  if (tool === "mse-trainer" && served.includes("mse")) {
+    let t = now - total;
+    for (const a of answers) {
+      const k = def.steps[a.step];
+      const started = t;
+      t += Math.max(0, a.ms);
+      const level = k?.raw?.level;
+      if (!k || !level) continue;
+      const window = { started_at: iso(started), completed_at: iso(t) };
+      if (level === "1") {
+        const text = Array.isArray(a.answer) ? (a.answer as string[]).join("\n") : String(a.answer ?? "");
+        const o = scoreObserve(text);
+        out.push({ kind: "mse", body: { stimulus_id: k.item, level: "1", ...window, score: scoreMseLevel1Attempt(o.observations, o.labels, o.words), labels: o.labels, observations: o.observations } });
+      } else if (level === "2" && k.pub.kind === "multi") {
+        const opts = k.pub.options;
+        const picked = ((a.answer as number[]) ?? []).map((i) => opts[i]).filter((x): x is string => !!x);
+        const expert = (k.raw?.expert ?? []) as string[];
+        const amber = (k.raw?.amber ?? []) as string[];
+        out.push({ kind: "mse", body: { stimulus_id: k.item, level: "2", domain: k.raw?.domain, ...window, score: scoreMseLevel2Attempt(picked, expert, amber), picked, expert, amber } });
+      } else if (level === "4") {
+        const r = grade(k, a.answer);
+        out.push({ kind: "mse", body: { stimulus_id: k.item, level: "4", ...window, score: Math.round(r.score * 100) / 100, labels: MSE_DOMAIN_ORDER.filter((d) => splitTerms(String((a.answer as Record<string, string> | null)?.[d] ?? "")).length > 0) } });
+      }
+    }
+  }
   return out;
 }
 
