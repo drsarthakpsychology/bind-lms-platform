@@ -4,6 +4,7 @@ import * as React from "react";
 import { Pressable, ScrollView, Switch, View, type LayoutChangeEvent, type StyleProp, type ViewStyle } from "react-native";
 import Animated, { useAnimatedStyle, useReducedMotion, useSharedValue, withSpring } from "react-native-reanimated";
 
+import { crumb } from "@/lib/breadcrumb";
 import { haptic } from "@/lib/haptics";
 import { presets, ProgressFill, RollingNumber, Shimmer, SkeletonIn, springs, staggerDelay, usePressScale } from "@/motion";
 import { SketchCat } from "@/sketch/cat";
@@ -146,7 +147,10 @@ function PressRow({ children, onPress, label, current, base, testID }: { childre
       accessibilityRole="button"
       accessibilityLabel={label}
       accessibilityState={{ selected: current }}
-      onPress={onPress}
+      onPress={() => {
+        crumb.action(label);
+        onPress();
+      }}
       onPressIn={() => {
         handlers.onPressIn();
         setDown(true);
