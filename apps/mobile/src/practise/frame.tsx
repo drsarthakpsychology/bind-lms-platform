@@ -8,6 +8,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Button, EmptyState, Sheet, Skeleton, T, VerdictBand } from "@/ds";
 import { haptic } from "@/lib/haptics";
 import { settingsStore } from "@/lib/settings";
+import { streakMoment } from "@/moments/host";
 import { Rich } from "@/study/rich";
 import { fonts, layout, motion, space, useTheme } from "@/theme";
 import { ApiFailure } from "@/api/errors";
@@ -372,6 +373,7 @@ export function EndPanel({ kicker = "Round over", score, scoreOf, line, stats, r
     const id = setTimeout(() => {
       if (result === "won") {
         haptic.success();
+        streakMoment.done();
         setBurst(1);
       } else if (result === "lost") {
         haptic.warn();

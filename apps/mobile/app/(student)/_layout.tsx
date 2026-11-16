@@ -1,10 +1,12 @@
 import { BookOpen, Dumbbell, House, Pill, User } from "lucide-react-native";
 
+import { MomentHost } from "@/moments/host";
 import { TabBar } from "@/nav/tabs";
 
 /** Students: Home, Learn, Practise, Library, Me. */
 export default function StudentTabs() {
   return (
+    <>
     <TabBar
       tabs={[
         { name: "home", title: "Home", icon: House },
@@ -14,5 +16,7 @@ export default function StudentTabs() {
         { name: "me", title: "Me", icon: User },
       ]}
     />
+    <MomentHost />
+    </>
   );
 }

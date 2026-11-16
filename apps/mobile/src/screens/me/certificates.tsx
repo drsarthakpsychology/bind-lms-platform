@@ -81,8 +81,8 @@ export function CertificatesScreen() {
   const badgesOnly = show === "badges";
   const [badge, setBadge] = React.useState<Credential | BadgeProgress | null>(null);
   const close = React.useCallback(() => setBadge(null), []);
-  // A newly earned certificate or badge gets confetti, once per phone.
-  const won = q.data ? q.data.earned.filter((x) => x.status === "issued" || x.type === "badge").map((x) => x.credentialId) : null;
+  // A newly earned badge gets confetti, once per phone (a new certificate gets its own full-screen moment, src/moments).
+  const won = q.data ? q.data.earned.filter((x) => x.type === "badge").map((x) => x.credentialId) : null;
   const fire = useNewWins("achievements", won);
   return (
     <View style={{ flex: 1 }}>

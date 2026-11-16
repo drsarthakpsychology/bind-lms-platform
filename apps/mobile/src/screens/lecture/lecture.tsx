@@ -12,6 +12,7 @@ import { keys, useLecture } from "@/api/queries";
 import { api } from "@/auth";
 import { Button, Field, LoadError, Row, RowList, Sheet, Skeleton, T, TabRow, Tint } from "@/ds";
 import { toast } from "@/ds/toast";
+import { streakMoment } from "@/moments/host";
 import { FileHandIn, RecordingHandIn } from "@/lecture/handin-ui";
 import { ProtectedPlayer, clock } from "@/lecture/player";
 import { config } from "@/lib/config";
@@ -203,6 +204,7 @@ export function LectureScreen() {
       const r = await api.post<CompleteLectureResult>(`/lectures/${encodeURIComponent(l.id)}/complete`);
       haptic.success();
       setDone(true);
+      streakMoment.done();
       toast.show("Marked as watched");
       void qc.invalidateQueries({ queryKey: keys.lecture(l.id) });
       void qc.invalidateQueries({ queryKey: keys.course(l.courseId) });

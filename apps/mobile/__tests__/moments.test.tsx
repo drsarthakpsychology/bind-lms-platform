@@ -1,10 +1,15 @@
-import { screen, waitFor } from "@testing-library/react-native";
+import { fireEvent, screen, waitFor } from "@testing-library/react-native";
 import * as Haptics from "expo-haptics";
 import * as React from "react";
 
 import { LectureIntro } from "@/lecture/intro";
 import { PAUSE, PLAY, PlayPause, quad } from "@/lecture/playmorph";
 import { isSafePath } from "@/lib/svg-safe";
+import { prefs } from "@/lib/storage";
+import { CertificateMoment } from "@/moments/certificate";
+import { freshCertificates } from "@/moments/store";
+import { StreakPanel } from "@/moments/streak";
+import type { Credential } from "@/api/contract";
 import { EndPanel, GameFrame } from "@/practise/frame";
 import { render } from "./utils";
 
@@ -49,5 +54,42 @@ describe("lecture (storyboard 5)", () => {
     );
     expect(screen.getByTestId("icon-play")).toBeTruthy();
     expect(screen.getByLabelText("Lecture 5, Week 3")).toBeTruthy();
+  });
+});
+
+const cert = (id: string): Credential => ({ credentialId: id, type: "certificate", status: "issued", title: "Foundations of Psychopathology", description: null, icon: null, tone: "blue", issuedAt: "2026-11-16T10:00:00.000Z", revokedAt: null, revokeReason: null, kind: null, expiresAt: null, verifyUrl: "https://vibhapsychology.com/verify/x" } as Credential);
+
+describe("certificate earned (storyboard 3)", () => {
+  it("a fresh install remembers what is there without replaying it; a new one plays once", async () => {
+    await prefs.remove("vibha.moments.certs");
+    expect(await freshCertificates([cert("a")])).toEqual([]);
+    expect((await freshCertificates([cert("a"), cert("b")])).map((c) => c.credentialId)).toEqual(["b"]);
+    expect(await freshCertificates([cert("a"), cert("b")])).toEqual([]);
+  });
+
+  it("a new student with none yet still gets the first one", async () => {
+    await prefs.remove("vibha.moments.certs");
+    expect(await freshCertificates([])).toEqual([]);
+    expect((await freshCertificates([cert("c")])).map((c) => c.credentialId)).toEqual(["c"]);
+  });
+
+  it("shows the certificate with its buttons and a success haptic; Close closes", async () => {
+    const onClose = jest.fn();
+    await render(<CertificateMoment cert={cert("a")} onClose={onClose} />);
+    expect(screen.getByText("Certificate earned")).toBeTruthy();
+    await waitFor(() => expect(note).toHaveBeenCalledWith("success"), { timeout: 2000 });
+    fireEvent.press(screen.getByTestId("moment-close"));
+    await waitFor(() => expect(onClose).toHaveBeenCalled());
+  });
+});
+
+describe("streak kept (storyboard 4)", () => {
+  it("shows the count and closes with Keep going", async () => {
+    const onClose = jest.fn();
+    await render(<StreakPanel days={6} onClose={onClose} />);
+    expect(screen.getByLabelText("6 day streak")).toBeTruthy();
+    expect(screen.getByText(/6 days in a row/)).toBeTruthy();
+    fireEvent.press(screen.getByTestId("moment-streak-close"));
+    await waitFor(() => expect(onClose).toHaveBeenCalled());
   });
 });
