@@ -1,14 +1,15 @@
 import * as React from "react";
 import { ActivityIndicator, Pressable, View, type StyleProp, type ViewStyle } from "react-native";
-import Animated, { Easing, useAnimatedStyle, useReducedMotion, useSharedValue, withTiming } from "react-native-reanimated";
+import Animated, { useAnimatedStyle, useReducedMotion, useSharedValue, withTiming } from "react-native-reanimated";
 
 import { crumb } from "@/lib/breadcrumb";
 import { haptic } from "@/lib/haptics";
-import { layout, motion, space, useTheme } from "@/theme";
+import { curves, dur } from "@/motion";
+import { layout, space, useTheme } from "@/theme";
 import { T } from "./text";
 
 const SHADOW = 3;
-const ease = Easing.bezier(...motion.ease);
+const ease = curves.standard;
 
 type ButtonProps = {
   label: string;
@@ -39,10 +40,10 @@ export function Button({ label, onPress, kind = "primary", icon, disabled, busy,
   const moved = useAnimatedStyle(() => ({ transform: [{ translateX: down.value * SHADOW }, { translateY: down.value * SHADOW }] }));
   const faded = useAnimatedStyle(() => ({ opacity: 1 - down.value * 0.35, transform: [{ scale: 1 - down.value * 0.03 }] }));
   const pressIn = () => {
-    down.value = reduce ? 1 : withTiming(1, { duration: motion.press, easing: ease });
+    down.value = reduce ? 1 : withTiming(1, { duration: dur.press, easing: ease });
   };
   const pressOut = () => {
-    down.value = reduce ? 0 : withTiming(0, { duration: motion.press, easing: ease });
+    down.value = reduce ? 0 : withTiming(0, { duration: dur.press, easing: ease });
   };
   const press = () => {
     if (blocked) return;

@@ -1,12 +1,12 @@
 import { Bell, Search } from "lucide-react-native";
 import * as React from "react";
 import { Pressable, RefreshControl, ScrollView, View, type StyleProp, type ViewStyle } from "react-native";
-import Animated, { FadeIn, useReducedMotion } from "react-native-reanimated";
+import Animated, { useReducedMotion } from "react-native-reanimated";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { haptic } from "@/lib/haptics";
 import { presets, usePressScale } from "@/motion";
-import { fonts, layout, motion, space, useTheme } from "@/theme";
+import { fonts, layout, space, useTheme } from "@/theme";
 import { Button } from "./button";
 import { ProgressLine } from "./parts";
 import { useBottomChrome } from "./bottom-chrome";
@@ -147,7 +147,7 @@ export function Screen({ children, title, lead, top, footer, onRefresh, refreshi
   return (
     <View ref={root} onLayout={kbLayout} testID={testID} style={{ flex: 1, backgroundColor: c.bg, paddingTop: safeTop ? insets.top : 0, paddingBottom: kb }}>
       {top}
-      <Animated.View entering={reduce ? undefined : FadeIn.duration(motion.page)} style={{ flex: 1 }}>
+      <Animated.View entering={reduce ? undefined : presets.fadeState()} style={{ flex: 1 }}>
         {scroll ? (
           <ScrollView
             keyboardShouldPersistTaps="handled"

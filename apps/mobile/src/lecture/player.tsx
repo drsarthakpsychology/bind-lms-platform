@@ -5,7 +5,7 @@ import { useVideoPlayer, VideoView } from "expo-video";
 import { Maximize, Minimize, Pause, Play, RotateCcw, RotateCw } from "lucide-react-native";
 import * as React from "react";
 import { AppState, BackHandler, Platform, Pressable, View, type LayoutChangeEvent } from "react-native";
-import Animated, { FadeIn, FadeOut, useReducedMotion } from "react-native-reanimated";
+import Animated, { useReducedMotion } from "react-native-reanimated";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { isCaptured, onCaptureChange } from "../../modules/capture-guard/src";
@@ -15,7 +15,8 @@ import { api } from "@/auth";
 import { Button, Skeleton, T } from "@/ds";
 import { haptic } from "@/lib/haptics";
 import { allowRotation, goLandscape, holdPortrait } from "@/lib/orientation";
-import { ThemeProvider, fixed, fonts, layout, motion, space } from "@/theme";
+import { presets } from "@/motion";
+import { ThemeProvider, fixed, fonts, layout, space } from "@/theme";
 import { Watermark } from "./watermark";
 
 /**
@@ -152,7 +153,7 @@ function Controls({ pb, full, onFull, onFirstPlay }: { pb: Playback; full: boole
   return (
     <Pressable accessibilityLabel={shown ? "Hide controls" : "Show controls"} onPress={() => setShown((s) => !s)} style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0 }} testID="player-surface">
       {shown ? (
-        <Animated.View entering={reduce ? undefined : FadeIn.duration(motion.state)} exiting={reduce ? undefined : FadeOut.duration(motion.state)} style={{ flex: 1, backgroundColor: fixed.videoWash, justifyContent: "space-between" }}>
+        <Animated.View entering={reduce ? undefined : presets.fadeState()} exiting={reduce ? undefined : presets.out()} style={{ flex: 1, backgroundColor: fixed.videoWash, justifyContent: "space-between" }}>
           <View />
           <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "center", gap: space[6] }}>
             <RoundButton label="Back 10 seconds" onPress={() => pb.seek(pb.time - 10)}>
