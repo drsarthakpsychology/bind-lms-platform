@@ -41,7 +41,7 @@ function Today({ goal, quests }: { goal: NonNullable<HomeData["goal"]>; quests: 
   const doneCount = quests?.quests.filter((q) => q.done).length ?? 0;
   const questLine = quests ? (quests.done ? " · quests done" : ` · ${doneCount} of ${quests.quests.length} quests`) : "";
   const title = hit ? "Today's goal met" : `${Math.min(goal.points, goal.goal)} of ${goal.goal} points today`;
-  const streak = `${goal.streak} day${goal.streak === 1 ? "" : "s"} in a row`;
+  const streak = streakLine(goal.streak);
   // A win: once the ring has filled, sparks fly from it with a success haptic.
   const [fire, setFire] = React.useState(0);
   React.useEffect(() => {
@@ -191,6 +191,11 @@ export function HomeSkeleton() {
       </View>
     </SkeletonIn>
   );
+}
+
+/** "6 days in a row", or a start line instead of "0 days in a row". */
+export function streakLine(days: number): string {
+  return days > 0 ? `${days} day${days === 1 ? "" : "s"} in a row` : "Start your streak today";
 }
 
 export function HomeView({ data }: { data: HomeData }) {

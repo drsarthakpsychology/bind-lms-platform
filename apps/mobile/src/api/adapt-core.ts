@@ -30,7 +30,7 @@ export function homeView(raw: unknown): C.Home {
       title: str(s.title) || "Your lectures",
       meta: strOrNull(s.meta),
       cta: str(s.cta) || "Open",
-      target: target(s.target, { screen: "lectures", web: "/courses" } as C.AppTarget),
+      target: target(s.target, { screen: "courses", web: "/courses" } as C.AppTarget),
     },
     progress: p ? { pct: Math.max(0, Math.min(100, num(p.pct))), label: str(p.label) } : null,
     allDone: d.allDone === true,

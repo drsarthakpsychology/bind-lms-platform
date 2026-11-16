@@ -109,7 +109,7 @@ describe("coming back to the app", () => {
 
 describe("a tapped notification", () => {
   it("opens once, though the start-up check and the listener both report it", async () => {
-    const N = Notifications as unknown as Record<string, jest.Mock> & { clearLastNotificationResponse: jest.Mock };
+    const N = Notifications as unknown as { getLastNotificationResponseAsync: jest.Mock; addNotificationResponseReceivedListener: jest.Mock; clearLastNotificationResponse: jest.Mock };
     Platform.OS = "android";
     await session.boot();
     if (session.store.get().phase !== "ready") {
@@ -228,5 +228,15 @@ describe("the lecture's short-lived address", () => {
     expect(shouldRenew(a, 3, now)).toBe(false);
     expect(shouldRenew({ ...a, expiresAt: "2026-11-16T12:00:00Z" }, 0, now)).toBe(false);
     expect(shouldRenew({ ...a, expiresAt: "" }, 0, now)).toBe(false);
+  });
+});
+
+describe("small numbers", () => {
+  it("a new student is not told '0 days in a row'", () => {
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    const { streakLine } = require("@/screens/home/home") as typeof import("@/screens/home/home");
+    expect(streakLine(0)).toBe("Start your streak today");
+    expect(streakLine(1)).toBe("1 day in a row");
+    expect(streakLine(6)).toBe("6 days in a row");
   });
 });

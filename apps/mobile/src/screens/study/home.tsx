@@ -8,6 +8,7 @@ import { useStudyHome } from "@/api/queries";
 import { EmptyState, Hero, Loaded, ProgressLine, Row, RowList, RowsSkeleton, Screen, Section, T } from "@/ds";
 import { Enter, Stamp } from "@/motion";
 import { openTarget } from "@/nav/targets";
+import { streakLine } from "@/screens/home/home";
 import { space, useTheme } from "@/theme";
 
 export function moduleMeta(m: ModuleSummary): string {
@@ -61,7 +62,7 @@ export function StudyHomeBody({ d }: { d: StudyHome }) {
         </View>
       )}
       <T v="small" tone="muted" num>
-        {d.goal.points} of {d.goal.goal} points today · {d.goal.streak} day{d.goal.streak === 1 ? "" : "s"} in a row
+        {d.goal.points} of {d.goal.goal} points today · {streakLine(d.goal.streak)}
       </T>
       {shelf("Reading now", now)}
       {shelf("Coming up", later)}
