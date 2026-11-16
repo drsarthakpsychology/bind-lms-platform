@@ -53,9 +53,11 @@ export function ShopScreen() {
   const qc = useQueryClient();
   const q = useRead<XpShop>("/leaderboards/shop");
   const me = useMe();
-  const [balance, setBalance] = React.useState<number | null>(null);
+  const [balance, setBalanceAt] = React.useState<{ v: number; at: number } | null>(null);
   const [owned, setOwned] = React.useState<Set<string>>(new Set());
-  const [worn, setWorn] = React.useState<{ frame: string | null; title: string | null } | null>(null);
+  const [worn, setWornAt] = React.useState<{ v: { frame: string | null; title: string | null }; at: number } | null>(null);
+  const setBalance = (v: number) => setBalanceAt({ v, at: q.dataUpdatedAt });
+  const setWorn = (v: { frame: string | null; title: string | null }) => setWornAt({ v, at: q.dataUpdatedAt });
   const [bought, setBought] = React.useState<Set<string>>(new Set());
   const [pending, setPending] = React.useState<Pending | null>(null);
   const [busy, setBusy] = React.useState(false);
@@ -74,9 +76,11 @@ export function ShopScreen() {
       </Screen>
     );
   }
-  const bal = balance ?? d.balance;
+  // What the phone set after a buy or a wear holds only until the server's
+  // next answer (pull to refresh, the refetch after a buy): that answer wins.
+  const bal = balance && balance.at === q.dataUpdatedAt ? balance.v : d.balance;
   const has = (l: Look) => l.owned || owned.has(l.id);
-  const wearing = worn ?? { frame: d.looks.find((l) => l.kind === "frame" && l.worn)?.id ?? null, title: d.looks.find((l) => l.kind === "title" && l.worn)?.id ?? null };
+  const wearing = (worn && worn.at === q.dataUpdatedAt ? worn.v : null) ?? { frame: d.looks.find((l) => l.kind === "frame" && l.worn)?.id ?? null, title: d.looks.find((l) => l.kind === "title" && l.worn)?.id ?? null };
 
   const confirm = async () => {
     if (!pending || busy) return;
@@ -142,10 +146,10 @@ export function ShopScreen() {
         <View style={{ alignItems: "flex-end", gap: 2 }}>
           <View style={{ flexDirection: "row", alignItems: "center", gap: space[1] }}>
             <Flame size={18} color={d.streak.alive ? c.danger : c.muted} />
-            <T v="bodyStrong" num>{`${d.streak.count} day${d.streak.count === 1 ? "" : "s"}`}</T>
+            <T v="bodyStrong" num>{d.streak.count > 0 ? `${d.streak.count} day${d.streak.count === 1 ? "" : "s"}` : "Start today"}</T>
           </View>
           <T v="caption" tone="muted">
-            {d.streak.alive ? "STREAK" : "STREAK LOST"}
+            {d.streak.alive || d.streak.count <= 0 ? "STREAK" : "STREAK LOST"}
           </T>
         </View>
       </View>
