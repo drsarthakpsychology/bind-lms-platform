@@ -113,6 +113,37 @@ describe("session", () => {
     expect(s.store.get().gate).toMatchObject({ kind: "update", minVersion: "2.0.0" });
   });
 
+  it("changes the PIN after the current one; wrong current PINs count like the lock's", async () => {
+    const { s, signedOut } = make();
+    await s.boot();
+    await s.signIn("a@b.co", "pw");
+    await s.choosePin("2580");
+    expect(await s.checkPin("1397")).toEqual({ ok: false, triesLeft: 4 });
+    expect(await s.checkPin("2580")).toEqual({ ok: true, triesLeft: 5 });
+    await s.changePin("1397");
+    s.lock();
+    await new Promise((r) => setTimeout(r, 0));
+    expect(await s.unlock("2580")).toBe(false);
+    expect(await s.unlock("1397")).toBe(true);
+    for (let i = 0; i < 5; i++) await s.checkPin("0000");
+    expect(s.store.get().phase).toBe("visitor");
+    expect(s.store.get().notice).toBe("pin_tries");
+    expect(signedOut).toHaveBeenCalled();
+  });
+
+  it("the fingerprint or face check opens only a locked app", async () => {
+    const { s } = make();
+    await s.boot();
+    s.openWithBiometric();
+    expect(s.store.get().phase).toBe("visitor");
+    await s.signIn("a@b.co", "pw");
+    await s.choosePin("2580");
+    s.lock();
+    await new Promise((r) => setTimeout(r, 0));
+    s.openWithBiometric();
+    expect(s.store.get().phase).toBe("ready");
+  });
+
   it("forgot PIN signs out so a new PIN can be chosen after the password", async () => {
     const { s } = make();
     await s.boot();

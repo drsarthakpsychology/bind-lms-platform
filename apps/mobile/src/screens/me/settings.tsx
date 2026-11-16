@@ -12,6 +12,7 @@ import { config } from "@/lib/config";
 import { haptic } from "@/lib/haptics";
 import { settingsStore, updateSettings } from "@/lib/settings";
 import { disablePush, enablePush, setStudyReminder } from "@/push";
+import { PhoneSecurity } from "@/screens/me/security";
 import { space } from "@/theme";
 
 const TIMES = [
@@ -128,6 +129,7 @@ export function SettingsScreen() {
               <RowList>
                 <Row title={s.device.current?.name ?? "This phone"} meta={s.device.enforced ? "VIBHA works on one phone at a time. Signing in on another phone signs this one out." : undefined} />
                 {s.device.limit !== null ? <Row title="Phone changes in the last 30 days" trailing={`${s.device.changesUsed} of ${s.device.limit}`} /> : null}
+                <PhoneSecurity />
               </RowList>
             </Section>
             <Notifications prefs={s.notifications} />

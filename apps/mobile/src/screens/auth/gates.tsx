@@ -5,6 +5,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { useConfig } from "@/api/queries";
 import { session, useSession } from "@/auth";
+import { biometricEnabled, biometricKind, unlockWithBiometric } from "@/auth/biometric";
 import { handoff } from "@/auth/handoff";
 import { isWeakPin } from "@/auth/pin";
 import { PinPad, type PinTone } from "@/auth/PinPad";
@@ -156,6 +157,27 @@ export function LockScreen() {
   const [wrong, setWrong] = React.useState(false);
   const [tone, setTone] = React.useState<PinTone>("normal");
   const first = typeof me?.name === "string" ? me.name.split(" ")[0] : undefined;
+  // Fingerprint or face, when switched on in Settings: asked once as the lock appears, and on the button.
+  const [bio, setBio] = React.useState<string | null>(null);
+  const tryBio = React.useCallback(async () => {
+    if (!(await unlockWithBiometric())) return;
+    setTone("success");
+    haptic.success();
+    session.openWithBiometric();
+  }, []);
+  React.useEffect(() => {
+    let live = true;
+    void (async () => {
+      if (!(await biometricEnabled())) return;
+      const kind = await biometricKind();
+      if (!live) return;
+      setBio(kind === "face" ? "Use face unlock" : kind === "fingerprint" ? "Use fingerprint" : "Use fingerprint or face");
+      void tryBio();
+    })();
+    return () => {
+      live = false;
+    };
+  }, [tryBio]);
 
   const complete = async (pin: string) => {
     setBusy(true);
@@ -182,7 +204,16 @@ export function LockScreen() {
   };
 
   return (
-    <Gate testID="lock" art={<PinArt win={tone === "success" ? 1 : 0} />} footer={<Button kind="text" full label="Forgot PIN?" onPress={() => void session.forgotPin()} accessibilityHint="Signs you out. Sign in with your password to choose a new PIN." testID="forgot-pin" />}>
+    <Gate
+      testID="lock"
+      art={<PinArt win={tone === "success" ? 1 : 0} />}
+      footer={
+        <>
+          {bio ? <Button kind="quiet" label={bio} onPress={() => void tryBio()} testID="lock-biometric" /> : null}
+          <Button kind="text" full label="Forgot PIN?" onPress={() => void session.forgotPin()} accessibilityHint="Signs you out. Sign in with your password to choose a new PIN." testID="forgot-pin" />
+        </>
+      }
+    >
       <View style={{ alignItems: "center", gap: space[2], marginBottom: space[6] }}>
         <T v="h1" center>
           {first ? `Welcome back, ${first}` : "Welcome back"}
