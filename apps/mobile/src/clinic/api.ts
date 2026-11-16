@@ -28,21 +28,31 @@ export const clinicKeys = {
 
 /* ------------------------------------------------------------ student */
 
-export const useClinicToday = (enabled = true) => useQuery({ queryKey: clinicKeys.today, queryFn: async () => S.today(await get("/clinic/today")), enabled, staleTime: 60_000 });
-export const useClinicWeek = (from: string) => useQuery({ queryKey: clinicKeys.week(from), queryFn: async () => S.week(await get("/clinic/week", { start: from })), placeholderData: (prev) => prev });
-/** My leave, with my sessions for this week and the next two to ask for. */
-export const useLeave = () =>
-  useQuery({
-    queryKey: clinicKeys.leave,
-    queryFn: async () => {
-      const m = mondayOf(todayIST());
-      const [leave, ...weeks] = await Promise.all([get("/clinic/leave"), get("/clinic/week", { start: m }), get("/clinic/week", { start: addDays(m, 7) }), get("/clinic/week", { start: addDays(m, 14) })]);
-      return S.leavePage(leave, weeks);
-    },
-  });
-export const opdQuery = { queryKey: clinicKeys.opd, queryFn: async () => S.opdPage(await get("/clinic/opd")) };
-export const useOpd = () => useQuery(opdQuery);
-export const useMyAttendance = () => useQuery({ queryKey: clinicKeys.attendance, queryFn: async () => S.attendance(await get("/clinic/attendance")) });
+const leaveRead = async () => {
+  const m = mondayOf(todayIST());
+  const [leave, ...weeks] = await Promise.all([get("/clinic/leave"), get("/clinic/week", { start: m }), get("/clinic/week", { start: addDays(m, 7) }), get("/clinic/week", { start: addDays(m, 14) })]);
+  return S.leavePage(leave, weeks);
+};
+
+/**
+ * Every clinic read as one query object, so a screen and the prefetcher
+ * (src/api/prefetch.ts) ask for exactly the same thing.
+ */
+export const clinicQo = {
+  today: () => ({ queryKey: clinicKeys.today, queryFn: async () => S.today(await get("/clinic/today")), staleTime: 60_000 }),
+  week: (from: string) => ({ queryKey: clinicKeys.week(from), queryFn: async () => S.week(await get("/clinic/week", { start: from })) }),
+  /** My leave, with my sessions for this week and the next two to ask for. */
+  leave: () => ({ queryKey: clinicKeys.leave, queryFn: leaveRead }),
+  opd: () => ({ queryKey: clinicKeys.opd, queryFn: async () => S.opdPage(await get("/clinic/opd")) }),
+  attendance: () => ({ queryKey: clinicKeys.attendance, queryFn: async () => S.attendance(await get("/clinic/attendance")) }),
+};
+
+export const useClinicToday = (enabled = true) => useQuery({ ...clinicQo.today(), enabled });
+export const useClinicWeek = (from: string) => useQuery({ ...clinicQo.week(from), placeholderData: (prev) => prev });
+export const useLeave = () => useQuery(clinicQo.leave());
+export const opdQuery = clinicQo.opd();
+export const useOpd = () => useQuery(clinicQo.opd());
+export const useMyAttendance = () => useQuery(clinicQo.attendance());
 
 export const clinicCalls = {
   /** `token` is the whole text the camera read; `code` the 6 characters typed. */
@@ -61,17 +71,38 @@ export const cohortStore = createStore<{ id: string | null }>({ id: null });
 const ak = (part: string, arg = "") => ["admin", "clinic", part, cohortStore.get().id ?? "", arg] as const;
 const cq = (extra?: Record<string, string | number | undefined>) => ({ cohort: cohortStore.get().id ?? undefined, ...extra });
 
-export const overviewQuery = () => ({
-  queryKey: ak("overview"),
-  queryFn: async () => {
-    const t = todayIST();
-    const [o, s] = await Promise.all([get("/clinic/admin/overview", cq()), get("/clinic/admin/sessions", cq({ from: t, to: t })).catch(() => null)]);
-    return S.adminToday(o, s);
-  },
-});
+export const clinicAdminQo = {
+  today: () => ({
+    queryKey: ak("overview"),
+    queryFn: async () => {
+      const t = todayIST();
+      const [o, s] = await Promise.all([get("/clinic/admin/overview", cq()), get("/clinic/admin/sessions", cq({ from: t, to: t })).catch(() => null)]);
+      return S.adminToday(o, s);
+    },
+  }),
+  session: (id: string) => ({ queryKey: ak("session", id), queryFn: async () => S.sessionDetail(await get(`/clinic/admin/sessions/${enc(id)}/attendance`)) }),
+  leaves: (status: "pending" | "all") => ({ queryKey: ak("leaves", status), queryFn: async () => S.adminLeaves(await get("/clinic/admin/leave", cq({ status }))) }),
+  trackers: () => ({ queryKey: ak("trackers"), queryFn: async () => S.trackers(await get("/clinic/admin/trackers", cq())) }),
+  timetable: () => ({
+    queryKey: ak("timetable"),
+    queryFn: async () => {
+      const t = todayIST();
+      const [slots, sessions] = await Promise.all([get("/clinic/admin/timetable", cq()), get("/clinic/admin/sessions", cq({ from: t, to: addDays(t, 13) }))]);
+      return S.timetable(slots, sessions);
+    },
+  }),
+  opd: () => ({
+    queryKey: ak("opd"),
+    queryFn: async (): Promise<C.OpdAdmin> => {
+      const [settings, plan] = await Promise.all([get("/clinic/admin/opd/settings", cq()), get("/clinic/admin/opd/plan", cq())]);
+      return { cohortId: (settings as { cohortId?: string } | null)?.cohortId ?? null, settings: S.opdSettings(settings), plan: S.plan(plan) };
+    },
+  }),
+};
+
 export function useAdminClinicToday() {
   cohortStore.use((s) => s.id);
-  return useQuery(overviewQuery());
+  return useQuery(clinicAdminQo.today());
 }
 /** The cohort id every admin write names: the one picked, or the overview's. */
 export function useCohortId(): string | null {
@@ -81,36 +112,43 @@ export function useCohortId(): string | null {
 }
 
 /** The list refreshes every 10 seconds while the screen is open, so scans show as they come in. */
-export const useSessionDetail = (id: string, live = true) => useQuery({ queryKey: ak("session", id), queryFn: async () => S.sessionDetail(await get(`/clinic/admin/sessions/${enc(id)}/attendance`)), enabled: id.length > 0, refetchInterval: live ? 10_000 : false });
+export const useSessionDetail = (id: string, live = true) => useQuery({ ...clinicAdminQo.session(id), enabled: id.length > 0, refetchInterval: live ? 10_000 : false });
 export function useAdminLeaves(status: "pending" | "all") {
   cohortStore.use((s) => s.id);
-  return useQuery({ queryKey: ak("leaves", status), queryFn: async () => S.adminLeaves(await get("/clinic/admin/leave", cq({ status }))) });
+  return useQuery(clinicAdminQo.leaves(status));
 }
 export function useClinicStudents() {
   cohortStore.use((s) => s.id);
-  return useQuery({ queryKey: ak("trackers"), queryFn: async () => S.trackers(await get("/clinic/admin/trackers", cq())) });
+  return useQuery(clinicAdminQo.trackers());
 }
 export function useTimetable() {
   cohortStore.use((s) => s.id);
-  return useQuery({
-    queryKey: ak("timetable"),
-    queryFn: async () => {
-      const t = todayIST();
-      const [slots, sessions] = await Promise.all([get("/clinic/admin/timetable", cq()), get("/clinic/admin/sessions", cq({ from: t, to: addDays(t, 13) }))]);
-      return S.timetable(slots, sessions);
-    },
-  });
+  return useQuery(clinicAdminQo.timetable());
 }
 export function useOpdAdmin() {
   cohortStore.use((s) => s.id);
-  return useQuery({
-    queryKey: ak("opd"),
-    queryFn: async (): Promise<C.OpdAdmin> => {
-      const [settings, plan] = await Promise.all([get("/clinic/admin/opd/settings", cq()), get("/clinic/admin/opd/plan", cq())]);
-      const s = S.opdSettings(settings);
-      return { cohortId: (settings as { cohortId?: string } | null)?.cohortId ?? null, settings: s, plan: S.plan(plan) };
-    },
-  });
+  return useQuery(clinicAdminQo.opd());
+}
+
+/** What a clinic screen asks for first (for the prefetcher: a tap starts loading before the screen draws). */
+export function clinicRouteReads(path: string[]): { queryKey: readonly unknown[] }[] {
+  const [a, b, c, d] = path;
+  if (a === "clinic") {
+    if (b === "schedule") return [clinicQo.week(mondayOf(todayIST()))];
+    if (b === "leave") return [clinicQo.leave()];
+    if (b === "opd") return [clinicQo.opd()];
+    if (b === "attendance") return [clinicQo.attendance()];
+    return [];
+  }
+  if (a === "admin" && b === "clinic") {
+    if (!c) return [clinicAdminQo.today()];
+    if ((c === "session" || c === "code") && d) return [clinicAdminQo.session(d)];
+    if (c === "leaves") return [clinicAdminQo.leaves("pending")];
+    if (c === "allowances" || c === "trackers") return [clinicAdminQo.trackers()];
+    if (c === "timetable") return [clinicAdminQo.timetable()];
+    if (c === "opd") return [clinicAdminQo.opd()];
+  }
+  return [];
 }
 
 const slotBody = (d: C.SlotDraft): W.ClinicSlotBody => ({ cohortIds: d.cohortIds, weekday: (["mon", "tue", "wed", "thu", "fri", "sat", "sun"].indexOf(d.weekday) + 1) % 7, start: d.start, end: d.end, kind: d.kind, title: d.title, place: d.place, onlineLink: d.link, compulsory: d.compulsory, validFrom: null, validTo: null });
