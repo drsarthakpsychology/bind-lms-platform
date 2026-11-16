@@ -74,10 +74,10 @@ export const useCohort = (id: string) => useQuery({ queryKey: k("cohort4", id), 
 
 /** The pipeline: the server picks the quick view and counts each one. */
 export const usePeople = (view: X.PeopleView = "all", q = "") =>
-  useQuery({ queryKey: k("people3", `${view}:${q}`), queryFn: async () => peopleFrom(await get("/admin/people", { view, q: q || undefined, limit: 500 })), placeholderData: (prev) => prev });
+  useQuery({ queryKey: k("people3", `${view}:${q}`), queryFn: async () => peopleFrom(await getAll("/admin/people", { view, q: q || undefined, limit: 500 })), placeholderData: (prev) => prev });
 /** One person's record with the whole history. */
 export const usePerson = (key: string) => useQuery({ queryKey: k("person4", key), queryFn: async () => personPageFrom(await get(`/admin/people/${enc(key)}`)), enabled: key.length > 0 });
-export const useEnquiries = () => useQuery({ queryKey: k("enquiries3"), queryFn: async () => enquiriesFrom(peopleFrom(await get("/admin/people", { view: "all", enquiries: 1, limit: 500 }))) });
+export const useEnquiries = () => useQuery({ queryKey: k("enquiries3"), queryFn: async () => enquiriesFrom(peopleFrom(await getAll("/admin/people", { view: "all", enquiries: 1, limit: 500 }))) });
 
 export const useCertificates = (f: { q?: string; type?: string; status?: string } = {}) => useQuery({ queryKey: k("certificates3", JSON.stringify(f)), queryFn: async () => certListFrom(await getAll("/admin/certificates/issued", { q: f.q || undefined, type: f.type || undefined, status: f.status || undefined, limit: 200 })), placeholderData: (prev) => prev });
 export const useStudioOptions = () => useQuery({ queryKey: k("studio3"), queryFn: async () => studioFrom(await get("/admin/certificates/studio")), staleTime: 10 * 60_000 });
@@ -90,7 +90,7 @@ export const useEligible = (typeId: string | null) => useQuery({ queryKey: k("el
 export const useCertDrawing = (body: X.StudioIssueInput | null, showing: number) =>
   useQuery({ queryKey: k("cert-drawing", JSON.stringify([body, showing])), queryFn: async () => drawingFrom(await api.post<unknown>("/admin/certificates/preview", { ...body, showing })), enabled: !!body, placeholderData: (prev) => prev, staleTime: 5 * 60_000 });
 export const useForms = () => useQuery({ queryKey: k("forms3"), queryFn: async () => formsFrom(await get("/admin/forms")) });
-export const useForm = (id: string, emailed: "" | "yes" | "no" = "") => useQuery({ queryKey: k("form3", `${id}:${emailed}`), queryFn: async () => formFrom(await get(`/admin/forms/${enc(id)}`, { emailed: emailed || undefined, limit: 200 }), id), placeholderData: (prev) => prev });
+export const useForm = (id: string, emailed: "" | "yes" | "no" = "") => useQuery({ queryKey: k("form3", `${id}:${emailed}`), queryFn: async () => formFrom(await getAll(`/admin/forms/${enc(id)}`, { emailed: emailed || undefined, limit: 500 }), id), placeholderData: (prev) => prev });
 export const usePushPrefs = () => useQuery({ queryKey: k("push-prefs"), queryFn: async () => pushPrefsFrom(await get("/admin/push-preferences")) });
 export const useSystem = () => useQuery({ queryKey: k("system"), queryFn: async () => systemFrom(await get("/admin/system")) });
 

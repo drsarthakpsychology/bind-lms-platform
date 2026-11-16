@@ -80,6 +80,37 @@ describe("admin lists read every page", () => {
   });
 });
 
+describe("admin people and form answers read every page", () => {
+  const Wrap = ({ children }: { children: React.ReactNode }) => {
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    const { QueryClient, QueryClientProvider } = require("@tanstack/react-query") as typeof import("@tanstack/react-query");
+    const [client] = React.useState(() => new QueryClient({ defaultOptions: { queries: { retry: false } } }));
+    return <QueryClientProvider client={client}>{children}</QueryClientProvider>;
+  };
+  const paged = (path: string, first: unknown[], rest: unknown[], extra: Record<string, unknown> = {}) =>
+    jest.spyOn(api, "get").mockImplementation((async (p: string, opts?: { query?: Record<string, unknown> }) => {
+      if (p !== path) return {};
+      return opts?.query?.cursor === "2" ? { items: rest, nextCursor: null } : { ...extra, items: first, nextCursor: "2", total: first.length + rest.length };
+    }) as never);
+  const person = (k: string) => ({ key: k, name: `Person ${k}`, kind: "lead" });
+  const answer = (id: string) => ({ id, name: `Answer ${id}`, answers: {} });
+
+  it("People, Enquiries and a form's answers past the first page are all there", async () => {
+    const { usePeople, useEnquiries, useForm } = jest.requireActual<typeof import("@/admin/api")>("@/admin/api");
+    let get = paged("/admin/people", [person("a")], [person("b")]);
+    const people = await renderHook(() => usePeople("all", ""), { wrapper: Wrap });
+    await waitFor(() => expect(people.result.current.data?.items.map((x) => x.key)).toEqual(["a", "b"]));
+    const enq = await renderHook(() => useEnquiries(), { wrapper: Wrap });
+    await waitFor(() => expect(enq.result.current.data).toBeTruthy());
+    expect(get.mock.calls.some((c) => (c[1] as { query?: { enquiries?: number; cursor?: string } })?.query?.enquiries === 1 && (c[1] as { query?: { cursor?: string } }).query?.cursor === "2")).toBe(true);
+    get.mockRestore();
+    get = paged("/admin/forms/f1", [answer("x")], [answer("y")], { form: { id: "f1", title: "Sign up", open: true, url: "" } });
+    const form = await renderHook(() => useForm("f1"), { wrapper: Wrap });
+    await waitFor(() => expect(form.result.current.data?.respondents.map((x) => x.id)).toEqual(["x", "y"]));
+    get.mockRestore();
+  });
+});
+
 describe("lecture player", () => {
   it("a lecture watched to the end opens at the top; part way it opens where it stopped", () => {
     const { resumeFrom, atEnd } = jest.requireActual<typeof import("@/lecture/player")>("@/lecture/player");
