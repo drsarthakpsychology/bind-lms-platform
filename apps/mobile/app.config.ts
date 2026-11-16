@@ -185,7 +185,9 @@ const base = ({ config }: ConfigContext): ExpoConfig => ({
     ["expo-local-authentication", { faceIDPermission: "Vibha Psychology can use Face ID to unlock the app instead of your PIN." }],
     // Admins pick a signature image for certificates from their photos. The system photo picker
     // needs no storage permission; the picker never opens the camera (only the attendance scanner does).
-    ["expo-image-picker", { photosPermission: "Vibha Psychology opens your photos only when you choose a signature image for certificates.", cameraPermission: false }],
+    // Never set cameraPermission: false here: expo-image-picker then strips CAMERA from the whole app
+    // (tools:node="remove"), which silently breaks the attendance scanner and hides it in Android settings.
+    ["expo-image-picker", { photosPermission: "Vibha Psychology opens your photos only when you choose a signature image for certificates.", cameraPermission: "Vibha Psychology uses the camera only to scan the attendance code at your session." }],
     ["expo-audio", { microphonePermission: "Vibha Psychology uses the microphone only when you record an answer to an assignment." }],
     ["expo-notifications", { icon: "./assets/images/notification.png", color: BLUE, defaultChannel: "default" }],
     // The attendance QR scanner (barcode scanning only; no photos, no video, no microphone).
