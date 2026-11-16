@@ -14,6 +14,7 @@ import { openLink } from "@/lib/open";
 import { TextSizeRow } from "@/lib/reading";
 import { settingsStore, updateSettings } from "@/lib/settings";
 import { disablePush, enablePush, setStudyReminder } from "@/push";
+import { PermissionsSection } from "@/screens/me/permissions";
 import { PhoneSecurity } from "@/screens/me/security";
 import { space } from "@/theme";
 
@@ -168,6 +169,7 @@ export function SettingsScreen() {
               </RowList>
             </Section>
             <Notifications prefs={s.notifications} />
+            <PermissionsSection />
             <Section title="Privacy" quiet>
               <RowList>
                 <Row testID="settings-privacy" title="Privacy policy" onPress={() => void openLink(s.legal.privacyUrl)} />
