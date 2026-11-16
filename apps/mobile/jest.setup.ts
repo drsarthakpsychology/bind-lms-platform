@@ -40,6 +40,9 @@ jest.mock("react-native-reanimated", () => {
     useReducedMotion: () => true,
     useDerivedValue: (fn: () => unknown) => ({ value: fn(), get: fn }),
     useAnimatedReaction: () => undefined,
+    // The keyboard is always closed in tests.
+    KeyboardState: { UNKNOWN: 0, OPENING: 1, OPEN: 2, CLOSING: 3, CLOSED: 4 },
+    useAnimatedKeyboard: () => ({ height: { value: 0, get: () => 0 }, state: { value: 4, get: () => 4 } }),
     interpolate: (x: number) => x,
     Extrapolation: { CLAMP: "clamp" },
     FadeIn: anim(),

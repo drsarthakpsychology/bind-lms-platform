@@ -1,10 +1,12 @@
 import type { BottomTabBarProps, BottomTabNavigationOptions } from "expo-router/build/layouts/Tabs";
 import * as React from "react";
-import { Animated as RNAnimated, Easing as RNEasing, Keyboard, Platform, Pressable, View, type LayoutChangeEvent } from "react-native";
-import Animated, { useAnimatedStyle, useReducedMotion, useSharedValue, withSequence, withSpring, withTiming } from "react-native-reanimated";
+import { Animated as RNAnimated, Easing as RNEasing, Pressable, View, type LayoutChangeEvent } from "react-native";
+import Animated, { useAnimatedReaction, useAnimatedStyle, useReducedMotion, useSharedValue, withSequence, withSpring, withTiming } from "react-native-reanimated";
+import { scheduleOnRN } from "react-native-worklets";
 
 import { T } from "@/ds/text";
 import { haptic } from "@/lib/haptics";
+import { KeyboardState, useKeyboard } from "@/lib/keyboard";
 import { fonts, useTheme } from "@/theme";
 import { springs } from "./tokens";
 
@@ -14,19 +16,25 @@ const PILL_W = 60;
 const PILL_H = 32;
 const BAR_H = 64;
 
-/** Hide the bar while the keyboard is up (Android puts the bar above the keyboard otherwise). */
-function useKeyboardUp(): boolean {
+/**
+ * The bar follows the keyboard (UI thread, frame by frame): it slides down
+ * behind the keyboard as it opens, leaves the layout once it is open (Android
+ * would otherwise put the bar above the keyboard), comes back as soon as the
+ * keyboard starts closing and slides up with it.
+ */
+function useKeyboardBar() {
+  const kb = useKeyboard();
   const [up, setUp] = React.useState(false);
-  React.useEffect(() => {
-    if (Platform.OS === "web") return;
-    const show = Keyboard.addListener("keyboardDidShow", () => setUp(true));
-    const hide = Keyboard.addListener("keyboardDidHide", () => setUp(false));
-    return () => {
-      show.remove();
-      hide.remove();
-    };
-  }, []);
-  return up;
+  useAnimatedReaction(
+    () => kb.state.value,
+    (s, prev) => {
+      if (s === prev) return;
+      if (s === KeyboardState.OPEN) scheduleOnRN(setUp, true);
+      else if (s === KeyboardState.CLOSING || s === KeyboardState.CLOSED) scheduleOnRN(setUp, false);
+    },
+  );
+  const style = useAnimatedStyle(() => ({ transform: [{ translateY: Math.max(0, kb.height.value) }] }));
+  return { up, style };
 }
 
 function TabItem({ label, Icon, focused, onPress, onLongPress, a11y }: { label: string; Icon?: TabIcon; focused: boolean; onPress: () => void; onLongPress: () => void; a11y?: string }) {
@@ -92,7 +100,7 @@ function TabItem({ label, Icon, focused, onPress, onLongPress, a11y }: { label: 
 export function MotionTabBar({ state, descriptors, emitter, navigateToTab, insets, icons }: BottomTabBarProps & { icons: Record<string, TabIcon> }) {
   const c = useTheme();
   const reduce = useReducedMotion();
-  const keyboard = useKeyboardUp();
+  const keyboard = useKeyboardBar();
   const n = state.routes.length;
   const itemW = useSharedValue(0);
   const x = useSharedValue(state.index);
@@ -109,18 +117,18 @@ export function MotionTabBar({ state, descriptors, emitter, navigateToTab, inset
       transform: [{ translateX: x.value * w + (w - PILL_W) / 2 }, { scaleX: 1 + travel * 0.6 }, { scaleY: 1 - travel * 0.12 }],
     };
   });
-  if (keyboard) return null;
+  if (keyboard.up) return null;
   const pillColor = c.dark ? "rgba(205,242,75,0.16)" : "rgba(29,68,216,0.10)";
   return (
-    <View
-      style={{
+    <Animated.View
+      style={[{
         backgroundColor: c.card,
         borderTopWidth: 1,
         borderColor: c.hairline,
         paddingBottom: insets.bottom,
         paddingLeft: insets.left,
         paddingRight: insets.right,
-      }}
+      }, keyboard.style]}
     >
       <View accessibilityRole="tablist" style={{ flexDirection: "row", height: BAR_H }} onLayout={(e: LayoutChangeEvent) => itemW.set(e.nativeEvent.layout.width / n)}>
         <Animated.View
@@ -164,7 +172,7 @@ export function MotionTabBar({ state, descriptors, emitter, navigateToTab, inset
           );
         })}
       </View>
-    </View>
+    </Animated.View>
   );
 }
 
