@@ -47,3 +47,21 @@ describe("paged lists reach their older rows", () => {
     get.mockRestore();
   });
 });
+
+describe("admin lists read every page", () => {
+  it("students past the server's page size are not lost, and a looping cursor stops", async () => {
+    const { getAll } = jest.requireActual<typeof import("@/admin/api")>("@/admin/api");
+    const get = jest.spyOn(api, "get").mockImplementation((async (_p: string, opts?: { query?: Record<string, unknown> }) => {
+      const c = opts?.query?.cursor;
+      if (!c) return { items: [{ id: "a" }], nextCursor: "1", total: 3 };
+      if (c === "1") return { items: [{ id: "b" }], nextCursor: "2" };
+      return { items: [{ id: "c" }], nextCursor: "2" };
+    }) as never);
+    const all = (await getAll("/admin/students", { limit: 200 })) as { items: { id: string }[]; total: number; nextCursor: null };
+    expect(all.items.map((x) => x.id)).toEqual(["a", "b", "c"]);
+    expect(all.total).toBe(3);
+    expect(all.nextCursor).toBeNull();
+    expect(get).toHaveBeenCalledTimes(3);
+    get.mockRestore();
+  });
+});

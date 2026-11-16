@@ -17,13 +17,34 @@ const k = keys.admin;
 const enc = encodeURIComponent;
 const get = (path: string, query?: Record<string, string | number | undefined>) => api.get<unknown>(path, query ? { query } : undefined);
 
+/**
+ * Every page of a list the screen filters and counts on the phone. The server
+ * stops at its own page size (200 students, 100 doubts or hand-ins) and sends
+ * a `nextCursor`; the screens read only the first page, so a big cohort lost
+ * students past the 200th and older open doubts never showed as waiting.
+ * Stops after `maxPages` so a server that loops cannot hold the screen.
+ */
+export async function getAll(path: string, query: Record<string, string | number | undefined>, maxPages = 25): Promise<unknown> {
+  const first = obj(await get(path, query));
+  const items = [...arr(first.items)];
+  let cursor = typeof first.nextCursor === "string" && first.nextCursor ? first.nextCursor : null;
+  const seen = new Set<string>();
+  for (let i = 1; cursor && i < maxPages && !seen.has(cursor); i++) {
+    seen.add(cursor);
+    const page = obj(await get(path, { ...query, cursor }));
+    items.push(...arr(page.items));
+    cursor = typeof page.nextCursor === "string" && page.nextCursor ? page.nextCursor : null;
+  }
+  return { ...first, items, nextCursor: null };
+}
+
 export const useAdminHome = () => useQuery({ queryKey: k("home3"), queryFn: async () => safeHome(await get("/admin/home")) });
 export const useStudents = (q: { search?: string; cohort?: string; flag?: string } = {}) =>
-  useQuery({ queryKey: k("students3", JSON.stringify(q)), queryFn: async () => safeStudentList(await get("/admin/students", { search: q.search, cohort: q.cohort, flag: q.flag, limit: 200 })), placeholderData: (prev) => prev });
+  useQuery({ queryKey: k("students3", JSON.stringify(q)), queryFn: async () => safeStudentList(await getAll("/admin/students", { search: q.search, cohort: q.cohort, flag: q.flag, limit: 200 })), placeholderData: (prev) => prev });
 export const useStudentProfile = (id: string) => useQuery({ queryKey: k("profile3", id), queryFn: async () => safeStudent(await get(`/admin/students/${enc(id)}`)), enabled: id.length > 0 });
-export const useStudentCredentials = (id: string) => useQuery({ queryKey: k("student-creds", id), queryFn: async () => certListFrom(await get("/admin/certificates/issued", { student: id, limit: 100 })), enabled: id.length > 0 });
+export const useStudentCredentials = (id: string) => useQuery({ queryKey: k("student-creds", id), queryFn: async () => certListFrom(await getAll("/admin/certificates/issued", { student: id, limit: 200 })), enabled: id.length > 0 });
 export const useStudentMessages = (id: string) => useQuery({ queryKey: k("student-msgs", id), queryFn: async () => studentMessagesFrom(await get(`/admin/students/${enc(id)}/messages`)), enabled: id.length > 0 });
-export const useStudentDoubts = (id: string) => useQuery({ queryKey: k("student-doubts", id), queryFn: async () => safeDoubts(await get("/admin/doubts", { student: id, limit: 50 })), enabled: id.length > 0 });
+export const useStudentDoubts = (id: string) => useQuery({ queryKey: k("student-doubts", id), queryFn: async () => safeDoubts(await getAll("/admin/doubts", { student: id, limit: 100 })), enabled: id.length > 0 });
 
 export const useActivity = () => useQuery({ queryKey: k("activity3"), queryFn: async () => safeActivity(await get("/admin/activity", { view: "all" })) });
 export const useBehind = (cohort: string) => useQuery({ queryKey: k("behind3", cohort), queryFn: async () => behindFrom(safeActivity(await get("/admin/activity", { view: "behind" })), cohort), placeholderData: (prev) => prev });
@@ -42,10 +63,10 @@ export const useInboxThread = (id: string) =>
     },
   });
 
-export const useAdminDoubts = (kind: "" | "doubt" | "complaint") => useQuery({ queryKey: k("doubts3", kind), queryFn: async () => safeDoubts(await get("/admin/doubts", { kind: kind || undefined, limit: 100 })) });
+export const useAdminDoubts = (kind: "" | "doubt" | "complaint") => useQuery({ queryKey: k("doubts3", kind), queryFn: async () => safeDoubts(await getAll("/admin/doubts", { kind: kind || undefined, limit: 100 })) });
 export const useAdminDoubt = (id: string) => useQuery({ queryKey: k("doubt3", id), queryFn: async () => safeDoubt(await get(`/doubts/${enc(id)}`)) });
 
-export const useSubmissions = (status: "pending" | "graded" | "") => useQuery({ queryKey: k("submissions3", status), queryFn: async () => submissionsFrom(await get("/admin/submissions", { status: status || undefined, limit: 100 })) });
+export const useSubmissions = (status: "pending" | "graded" | "") => useQuery({ queryKey: k("submissions3", status), queryFn: async () => submissionsFrom(await getAll("/admin/submissions", { status: status || undefined, limit: 100 })) });
 export const useSignOffs = () => useQuery({ queryKey: k("signoffs"), queryFn: async () => signOffsFrom(await get("/admin/review/signoffs")) });
 
 export const useCohorts = () => useQuery({ queryKey: k("cohorts4"), queryFn: async () => cohortsFrom(await get("/admin/cohorts")) });
@@ -58,7 +79,7 @@ export const usePeople = (view: X.PeopleView = "all", q = "") =>
 export const usePerson = (key: string) => useQuery({ queryKey: k("person4", key), queryFn: async () => personPageFrom(await get(`/admin/people/${enc(key)}`)), enabled: key.length > 0 });
 export const useEnquiries = () => useQuery({ queryKey: k("enquiries3"), queryFn: async () => enquiriesFrom(peopleFrom(await get("/admin/people", { view: "all", enquiries: 1, limit: 500 }))) });
 
-export const useCertificates = (f: { q?: string; type?: string; status?: string } = {}) => useQuery({ queryKey: k("certificates3", JSON.stringify(f)), queryFn: async () => certListFrom(await get("/admin/certificates/issued", { q: f.q || undefined, type: f.type || undefined, status: f.status || undefined, limit: 200 })), placeholderData: (prev) => prev });
+export const useCertificates = (f: { q?: string; type?: string; status?: string } = {}) => useQuery({ queryKey: k("certificates3", JSON.stringify(f)), queryFn: async () => certListFrom(await getAll("/admin/certificates/issued", { q: f.q || undefined, type: f.type || undefined, status: f.status || undefined, limit: 200 })), placeholderData: (prev) => prev });
 export const useStudioOptions = () => useQuery({ queryKey: k("studio3"), queryFn: async () => studioFrom(await get("/admin/certificates/studio")), staleTime: 10 * 60_000 });
 export const useBadges = () => useQuery({ queryKey: k("badges"), queryFn: async () => badgesFrom(await get("/admin/badges")) });
 export const useStudioSettings = () => useQuery({ queryKey: k("studio-settings2"), queryFn: async () => studioSettingsFrom(await get("/admin/certificates/settings")) });
