@@ -186,7 +186,7 @@ export function LiveAttendance({
 }
 
 function RowStatus({ r }: { r: ClinicAttendanceRow }) {
-  const text = r.inAt && !r.outAt && r.status !== "no_scan_out" ? (r.late ? "In, late" : "In") : STATUS_LABEL[r.status];
+  const text = r.inAt && !r.outAt && r.status !== "no_scan_out" ? (r.late ? "In, late" : "In") : r.status === "upcoming" ? "Not in" : STATUS_LABEL[r.status];
   const tone = r.inAt && !r.outAt && r.status !== "no_scan_out" ? (r.late ? "warn" : "info") : STATUS_TONE[r.status];
   return (
     <span className="flex flex-col items-end gap-0.5 md:items-start">

@@ -58,22 +58,22 @@ export function SessionRow({ s, showScan = false }: { s: ClinicMySession; showSc
   const line = myLine(s);
   const scan = showScan && s.open && s.required && !off && (s.my.status === "upcoming" || s.my.status === "in");
   return (
-    <li className="grid min-h-14 min-w-0 grid-cols-[4.75rem_minmax(0,1fr)] gap-x-3 gap-y-1 py-3 sm:grid-cols-[6rem_minmax(0,1fr)_auto] sm:items-center">
+    <li className="grid min-h-14 min-w-0 grid-cols-[6.5rem_minmax(0,1fr)] gap-x-3 gap-y-1 py-3 @lg:grid-cols-[7rem_minmax(0,1fr)_auto] @lg:items-center">
       <span className={cn("type-small font-semibold type-num", off && "text-muted-foreground line-through decoration-foreground/40")}>{timeRange(s.start, s.end)}</span>
       <span className="flex min-w-0 flex-col gap-0.5">
-        <span className={cn("type-body font-semibold [overflow-wrap:anywhere]", off && "text-muted-foreground line-through decoration-foreground/40")}>
-          {s.title || KIND_LABEL[s.kind]}
-          {s.assigned ? <span className="ml-2 type-caption font-semibold text-link no-underline">Your OPD day</span> : null}
+        <span className="flex min-w-0 flex-wrap items-baseline gap-x-2">
+          <span className={cn("min-w-0 type-body font-semibold [overflow-wrap:anywhere]", off && "text-muted-foreground line-through decoration-foreground/40")}>{s.title || KIND_LABEL[s.kind]}</span>
+          {s.assigned ? <span className="type-caption font-semibold text-link">Your OPD day</span> : null}
         </span>
-        <span className="flex min-w-0 flex-wrap items-center gap-x-2 type-small text-muted-foreground">
-          {s.title && s.title !== KIND_LABEL[s.kind] ? <span>{KIND_LABEL[s.kind]}</span> : null}
+        <span className="flex min-w-0 flex-wrap items-center gap-x-1.5 type-small text-muted-foreground">
+          {s.title && s.title !== KIND_LABEL[s.kind] ? <span>{KIND_LABEL[s.kind]}{s.place || s.onlineLink ? "," : ""}</span> : null}
           <Where s={s} />
           {s.movedFrom ? <span>Moved from {movedText(s.movedFrom)}</span> : null}
           {s.my.earlyLeaveAt ? <span>Leaving at {instantClock(s.my.earlyLeaveAt) || s.my.earlyLeaveAt}</span> : null}
         </span>
         {s.note ? <span className="type-small [overflow-wrap:anywhere]">{s.note}</span> : null}
       </span>
-      <span className="col-start-2 flex min-w-0 flex-wrap items-center gap-x-3 gap-y-1 sm:col-start-3 sm:justify-end">
+      <span className="col-start-2 flex min-w-0 flex-wrap items-center gap-x-3 gap-y-1 @lg:col-start-3 @lg:justify-end">
         <StatusText tone={line.tone}>{line.text}</StatusText>
         {scan ? (
           <Link href="/attendance/scan" className="inline-flex min-h-11 items-center gap-1.5 type-small font-semibold text-link underline-offset-4 hover:underline focus-visible:underline [&_svg]:size-4">
@@ -90,7 +90,7 @@ function movedText(v: string): string {
   return t ? `${dayShort(d)}, ${timeRange(t, null)}` : dayShort(d);
 }
 
-export const sessionList = "flex min-w-0 flex-col divide-y divide-[var(--ds-hairline)] border-y border-[var(--ds-hairline)]";
+export const sessionList = "@container flex min-w-0 flex-col divide-y divide-[var(--ds-hairline)] border-y border-[var(--ds-hairline)]";
 
 /** Home's Today block: the admin's note, the OPD day line, today's sessions. Null when there is nothing today. */
 export function TodayBlock({ today }: { today: ClinicToday }) {
@@ -102,7 +102,7 @@ export function TodayBlock({ today }: { today: ClinicToday }) {
         <h2 id="clinic-today" className="type-h3">
           Schedule today
         </h2>
-        <Link href="/schedule" className="inline-flex min-h-11 shrink-0 items-center type-small font-semibold text-link underline-offset-4 hover:underline focus-visible:underline">
+        <Link href="/schedule" className="inline-flex min-h-11 min-w-11 shrink-0 items-center justify-end type-small font-semibold text-link underline-offset-4 hover:underline focus-visible:underline">
           Week
         </Link>
       </div>

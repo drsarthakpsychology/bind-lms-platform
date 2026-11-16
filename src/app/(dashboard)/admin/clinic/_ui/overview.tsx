@@ -41,7 +41,7 @@ export function ClinicToday({ data, q }: { data: ClinicAdminOverview; q: string 
                 <RowItem key={s.id}>
                   <div className="flex min-w-0 flex-col gap-3 md:flex-row md:items-center md:justify-between">
                     <span className="flex min-w-0 flex-col gap-0.5">
-                      <Link href={`/admin/clinic/session/${s.id}${q}`} className={cn(nameLink, "type-body", off && "text-muted-foreground line-through")}>
+                      <Link href={`/admin/clinic/session/${s.id}${q}`} className={cn(nameLink, "inline-flex min-h-11 items-center type-body lg:min-h-0", off && "text-muted-foreground line-through")}>
                         <span className="type-num">{timeRange(s.start, s.end)}</span>, {s.title || KIND_LABEL[s.kind]}
                       </Link>
                       <span className="type-small text-muted-foreground [overflow-wrap:anywhere]">{[KIND_LABEL[s.kind], s.place, s.onlineLink ? "Online" : null].filter(Boolean).join(", ")}</span>

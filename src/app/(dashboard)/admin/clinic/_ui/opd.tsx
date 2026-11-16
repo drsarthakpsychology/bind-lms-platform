@@ -205,7 +205,7 @@ export function QuotaTable({ data, actions, canWrite }: { data: ClinicQuotas; ac
           <tr>
             {canWrite ? (
               <th className={cn(table.th, "w-11")}>
-                <input type="checkbox" aria-label="Tick everyone" checked={all} onChange={() => setPicked(all ? [] : data.rows.map((r) => r.userId))} className="size-5 accent-[var(--link)]" />
+                <label className="-my-2 -ml-2.5 inline-flex size-11 cursor-pointer items-center justify-center lg:size-9"><input type="checkbox" aria-label="Tick everyone" checked={all} onChange={() => setPicked(all ? [] : data.rows.map((r) => r.userId))} className="size-5 accent-[var(--link)]" /></label>
               </th>
             ) : null}
             <th className={table.th}>Student</th>
@@ -244,7 +244,7 @@ function QuotaTr({ r, cohortId, canWrite, picked, onPick, actions }: { r: Clinic
     <tr className={table.tr} aria-selected={picked || undefined}>
       {canWrite ? (
         <td className={cn(table.td, "align-top")}>
-          <input type="checkbox" aria-label={`Tick ${r.name ?? "student"}`} checked={picked} onChange={onPick} className="mt-1 size-5 accent-[var(--link)]" />
+          <label className="-my-2 -ml-2.5 inline-flex size-11 cursor-pointer items-center justify-center lg:size-9"><input type="checkbox" aria-label={`Tick ${r.name ?? "student"}`} checked={picked} onChange={onPick} className="size-5 accent-[var(--link)]" /></label>
         </td>
       ) : null}
       <td className={cn(table.td, "align-top")}>
@@ -257,7 +257,7 @@ function QuotaTr({ r, cohortId, canWrite, picked, onPick, actions }: { r: Clinic
           </span>
         ) : null}
         {canWrite ? (
-          <More summary="Add cases or change batch" className="mt-1 border-t-0 pt-0">
+          <More summary="Change" className="mt-0 border-t-0 pt-0">
             <div className="flex min-w-0 flex-col gap-3 pb-1">
               <form
                 className="flex min-w-0 flex-col gap-2 sm:flex-row sm:items-end"
@@ -408,19 +408,12 @@ export function OpdPlan({ plan, actions, canWrite }: { plan: ClinicPlan; actions
 
       {p.short.length ? (
         <Notice>
-          Not enough seats for{" "}
-          {p.short.map((s, i) => (
-            <span key={s.userId}>
-              {i ? ", " : ""}
-              {s.name ?? "a student"} ({s.visits} {s.visits === 1 ? "visit" : "visits"} short)
-            </span>
-          ))}
-          .
+          <span>Not enough seats for {p.short.map((s) => `${s.name ?? "a student"} (${s.visits} ${s.visits === 1 ? "visit" : "visits"} short)`).join(", ")}.</span>
         </Notice>
       ) : null}
       {p.noBatch.length ? (
         <Notice>
-          No batch yet, so left out: {p.noBatch.map((s) => s.name ?? "a student").join(", ")}.
+          <span>No batch yet, so left out: {p.noBatch.map((s) => s.name ?? "a student").join(", ")}.</span>
         </Notice>
       ) : null}
 
