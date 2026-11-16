@@ -48,7 +48,7 @@ export function AskScreen() {
     <Screen testID="ask" gap={space[5]} footer={<Button label="Post" busy={busy} onPress={() => void submit()} testID="ask-submit" />}>
       <Field label="Your question" value={title} onChangeText={setTitle} error={error} maxLength={200} testID="ask-title" />
       <Field label="More detail (optional)" value={body} onChangeText={setBody} area maxLength={4000} testID="ask-body" />
-      <Field label="Topic (optional)" value={topic} onChangeText={setTopic} placeholder="For example: Depression" testID="ask-topic" />
+      <Field label="Topic (optional)" value={topic} onChangeText={setTopic} placeholder="For example: Depression" maxLength={120} testID="ask-topic" />
       <View style={{ gap: space[2] }}>
         <T v="small">This is</T>
         <Chips label="This is" options={KINDS} value={kind} onChange={setKind} />

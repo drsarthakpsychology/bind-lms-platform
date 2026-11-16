@@ -108,7 +108,7 @@ function AssignmentPart({ lecture }: { lecture: LectureDetail }) {
       ) : null}
       {a.submissionType === "text" && (!sub || sub.editable) ? (
         <>
-          <Field label="Your answer" value={text} onChangeText={setText} area error={error} testID="assignment-text" />
+          <Field label="Your answer" value={text} onChangeText={setText} area error={error} maxLength={50000} testID="assignment-text" />
           <Button kind="quiet" label={sub ? "Hand in again" : "Hand in"} busy={busy} onPress={() => void submit()} testID="assignment-submit" />
         </>
       ) : closed && !sub ? (

@@ -19,6 +19,7 @@ import { shopState } from "@/practise/mock/routes";
 import { MocksScreen } from "@/practise/prep/mock";
 import { ShopScreen } from "@/practise/shop";
 import { SearchScreen } from "@/screens/search/search";
+import { AskScreen } from "@/screens/doubts/ask";
 import { render } from "./utils";
 
 describe("Android back", () => {
@@ -178,6 +179,15 @@ describe("search", () => {
     await waitFor(() => expect(screen.getByTestId("search-empty")).toBeTruthy());
     expect(screen.queryByText("Psychosis")).toBeNull();
     expect(mock.log().some((l) => l.path.startsWith("/study/modules"))).toBe(false);
+  });
+});
+
+describe("forms", () => {
+  it("stop at the server's own length limits (a long paste was refused with a vague error)", async () => {
+    await session.signIn("ananya@example.com", "pw");
+    await session.choosePin("2580");
+    await render(<AskScreen />);
+    expect(screen.getByTestId("ask-topic").props.maxLength).toBe(120);
   });
 });
 

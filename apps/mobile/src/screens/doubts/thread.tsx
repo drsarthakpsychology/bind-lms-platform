@@ -124,7 +124,7 @@ export function DoubtScreen() {
               ))}
             </View>
             <View style={{ gap: space[3] }}>
-              <Field label="Your answer" value={text} onChangeText={setText} area testID="reply-text" />
+              <Field label="Your answer" value={text} onChangeText={setText} area maxLength={10000} testID="reply-text" />
               <Button kind="quiet" label="Post answer" busy={busy} disabled={!text.trim()} onPress={() => void send()} testID="reply-send" />
             </View>
           </>

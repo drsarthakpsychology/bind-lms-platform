@@ -94,7 +94,7 @@ function DeleteAccount() {
       <Sheet open={open} onClose={close} title="Delete your account?">
         <View style={{ gap: space[4] }}>
           <T tone="muted">We delete your account, progress and certificates after checking it is you. Issued certificates can no longer be verified. This cannot be undone.</T>
-          <Field label="Anything you want to tell us (optional)" value={reason} onChangeText={setReason} area />
+          <Field label="Anything you want to tell us (optional)" value={reason} onChangeText={setReason} area maxLength={1000} />
           <Button kind="quiet" label="Send the request" busy={busy} onPress={() => void send()} testID="delete-send" />
           <Button kind="text" full label="Keep my account" onPress={close} />
         </View>
