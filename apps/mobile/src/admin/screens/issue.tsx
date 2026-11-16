@@ -10,6 +10,7 @@ import { adminCalls, useAdminAction, useCertDrawing, useCohorts, useStudents, us
 import { CertPreviewBlock } from "../cert-drawing";
 import { CERT_KINDS, KIND_DEFAULTS, type CertKind, type IssueResult } from "../extra";
 import { day, plural, todayIst } from "../format";
+import { DateField } from "../date-field";
 import { Facts, Notice, OptionRow, SearchBox, SelectRow } from "../kit";
 import { useAdminRole } from "../role";
 import { draftError, emptyDraft, STEPS, stepError, toIssueInput, withKind, type Draft } from "../studio";
@@ -83,8 +84,8 @@ function Wording({ d, set }: { d: Draft; set: (p: Partial<Draft>) => void }) {
       <Field label="Line at the top" value={d.heading} onChangeText={(heading) => set({ heading })} maxLength={80} />
       <Field label="Line above the name" value={d.lead} onChangeText={(lead) => set({ lead })} maxLength={80} />
       <Field label="Line under the name" value={d.connector} onChangeText={(connector) => set({ connector })} maxLength={80} />
-      <Field label="Issue date" hint="yyyy-mm-dd" value={d.issuedOn} onChangeText={(issuedOn) => set({ issuedOn })} maxLength={10} keyboardType="numbers-and-punctuation" testID="issue-date" />
-      <Field label={def.needsExpiry ? "Runs out on" : "Runs out on (leave empty for never)"} hint="yyyy-mm-dd" value={d.expiresOn} onChangeText={(expiresOn) => set({ expiresOn })} maxLength={10} keyboardType="numbers-and-punctuation" testID="issue-expiry" />
+      <DateField label="Issue date" value={d.issuedOn} onChange={(issuedOn) => set({ issuedOn })} testID="issue-date" />
+      <DateField label="Runs out on" value={d.expiresOn} onChange={(expiresOn) => set({ expiresOn })} min={d.issuedOn || undefined} optional={def.needsExpiry ? undefined : "Never"} testID="issue-expiry" />
       {sigs.map((s, i) => (
         <View key={i} style={{ gap: space[3] }}>
           <Field label={`Signed by${sigs.length > 1 ? ` (${i + 1})` : ""}`} value={s.name} onChangeText={(name) => set({ signatories: sigs.map((x, j) => (j === i ? { ...x, name } : x)) })} maxLength={60} testID={`issue-sig-${i}`} />

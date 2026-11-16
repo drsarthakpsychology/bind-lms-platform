@@ -5,7 +5,7 @@
  * (./contract.ts) into the shapes the screens were built on (./extra.ts),
  * so a screen never reads raw server JSON.
  */
-import { todayLine } from "./format";
+import { datesIn, todayLine } from "./format";
 import type { DoubtList, DoubtRow, DoubtThread } from "@/api/contract";
 import type * as A from "./contract";
 import type * as X from "./extra";
@@ -435,7 +435,7 @@ export function formFrom(v: unknown, id: string): X.FormDetail {
       email: str(a.email),
       phone: strOr(a.phone),
       at: str(a.at),
-      when: strOr(a.when),
+      when: a.when ? datesIn(str(a.when)) : null,
       answers: arr(a.answers).map((q) => ({ q: str(obj(q).label ?? obj(q).q), a: str(obj(q).text ?? obj(q).a) })).filter((q) => q.q || q.a),
       emailed: mark ? num(mark.sent) > 0 || !!mark.lastSentAt : bool(a.emailed),
       emailWaiting: mark ? num(mark.waiting) : 0,
@@ -702,7 +702,7 @@ export function personPageFrom(v: unknown): X.PersonDetail {
   return {
     ...row,
     studentId: row.studentId ?? null,
-    facts: arr(p.facts).map((f) => ({ label: str(obj(f).label), value: str(obj(f).value) })).filter((f) => f.label),
+    facts: arr(p.facts).map((f) => ({ label: str(obj(f).label), value: datesIn(str(obj(f).value)) })).filter((f) => f.label),
     timeline: arr(p.timeline).map((x) => {
       const t = obj(x);
       return { title: str(t.title), body: strOr(t.body), at: str(t.at), tone: oneOf(t.tone, tones, "info") };
