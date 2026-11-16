@@ -55,7 +55,7 @@ function Overview({ r, d }: { r: AdminStudentRow; d: StudentDetail | null }) {
             { value: minutes(r.minutes7), label: "this week" },
             { value: minutes(d?.totals.min30 ?? 0), label: "in 30 days" },
             { value: String(r.activeDays30), label: "days active in 30" },
-            { value: String(r.xp), label: "XP in Notes and Games" },
+            { value: r.xp.toLocaleString("en-IN"), label: "XP in Notes and Games" },
           ]}
         />
       </Block>
@@ -167,7 +167,7 @@ function ActivityTab({ r, d }: { r: AdminStudentRow; d: StudentDetail | null }) 
       {d.learn ? (
         <Block title="Notes and Games">
           <T v="small">
-            Level {d.learn.level.title} · {d.learn.xp} XP{d.learn.accuracy !== null ? ` · ${d.learn.accuracy}% right` : ""} · {d.learn.badges} badges
+            Level {d.learn.level.title} · {d.learn.xp.toLocaleString("en-IN")} XP{d.learn.accuracy !== null ? ` · ${d.learn.accuracy}% right` : ""} · {d.learn.badges} badges
           </T>
           {d.learn.confusions.length ? (
             <T v="small" tone="muted">
