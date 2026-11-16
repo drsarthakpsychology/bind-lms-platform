@@ -2,7 +2,7 @@
 import * as React from "react";
 import { todoHref } from "@/admin/safe";
 import { refEntryView } from "@/api/adapt-learn";
-import { fireEvent, screen, waitFor } from "@testing-library/react-native";
+import { act, fireEvent, renderHook, screen, waitFor } from "@testing-library/react-native";
 
 import { api } from "@/auth";
 import { decodeSafe, queryOf } from "@/lib/query";
@@ -39,12 +39,26 @@ describe("paged lists reach their older rows", () => {
     await render(<NotificationsScreen />);
     await waitFor(() => expect(screen.getByTestId("notification-n4")).toBeTruthy());
     expect(screen.queryByTestId("notification-n1")).toBeNull();
-    fireEvent.press(screen.getByTestId("notifications-more"));
-    fireEvent.press(screen.getByTestId("notifications-more"));
+    await fireEvent.press(screen.getByTestId("notifications-more"));
     await waitFor(() => expect(screen.getByTestId("notification-n1")).toBeTruthy());
     expect(screen.queryByTestId("notifications-more")).toBeNull();
     expect(get.mock.calls.filter((c) => (c[1] as { query?: { cursor?: string } })?.query?.cursor === "p2")).toHaveLength(1);
     get.mockRestore();
+  });
+});
+
+describe("Show older on a double tap", () => {
+  it("asks for the next page once", async () => {
+    const { useMorePages } = jest.requireActual<typeof import("@/ds/more")>("@/ds/more");
+    const fetchPage = jest.fn(async () => ({ items: [{ id: "b" }], nextCursor: null }));
+    const first = { items: [{ id: "a" }], nextCursor: "p2" };
+    const { result } = await renderHook(() => useMorePages(first, fetchPage));
+    await act(async () => {
+      await Promise.all([result.current.loadMore(), result.current.loadMore()]);
+    });
+    expect(fetchPage).toHaveBeenCalledTimes(1);
+    expect(result.current.items.map((x) => x.id)).toEqual(["a", "b"]);
+    expect(result.current.more).toBe(false);
   });
 });
 
@@ -93,5 +107,22 @@ describe("links to other apps", () => {
     await expect(openLink("https://wa.me/919999999999")).resolves.toBe(true);
     open.mockRestore();
     show.mockRestore();
+  });
+});
+
+describe("assignments reach their older rows", () => {
+  const row = (i: number) => ({ id: `a${i}`, lessonId: `l${i}`, courseId: "c1", title: `Task ${i}`, lessonTitle: `Lecture ${i}`, week: 1, dueAt: null, status: "not_started", score: null });
+  it("Show older loads the next page into the same list, then goes away", async () => {
+    const { AssignmentsScreen } = jest.requireActual<typeof import("@/screens/learn/assignments")>("@/screens/learn/assignments");
+    const get = jest.spyOn(api, "get").mockImplementation((async (_path: string, opts?: { query?: Record<string, unknown> }) =>
+      opts?.query?.cursor === "p2" ? { items: [row(1)], nextCursor: null } : { items: [row(3), row(2)], nextCursor: "p2" }) as never);
+    await render(<AssignmentsScreen />);
+    await waitFor(() => expect(screen.getByTestId("assignment-a3")).toBeTruthy());
+    expect(screen.queryByTestId("assignment-a1")).toBeNull();
+    await fireEvent.press(screen.getByTestId("assignments-more"));
+    await waitFor(() => expect(screen.getByTestId("assignment-a1")).toBeTruthy());
+    expect(screen.queryByTestId("assignments-more")).toBeNull();
+    expect(get.mock.calls.filter((c) => (c[1] as { query?: { cursor?: string } })?.query?.cursor === "p2")).toHaveLength(1);
+    get.mockRestore();
   });
 });

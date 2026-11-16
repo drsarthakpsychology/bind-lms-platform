@@ -2,9 +2,12 @@ import { router, Stack } from "expo-router";
 import { Check, CircleDashed, Clock } from "lucide-react-native";
 import * as React from "react";
 
-import type { AssignmentRow } from "@/api/contract";
+import type { AssignmentRow, Page } from "@/api/contract";
+import { assignmentPageView } from "@/api/adapt-learn";
 import { useAssignments } from "@/api/learn";
+import { api } from "@/auth";
 import { EmptyState, Loaded, Row, RowList, RowsSkeleton, Screen, Section } from "@/ds";
+import { MoreButton, useMorePages } from "@/ds/more";
 import { space, useTheme } from "@/theme";
 
 /**
@@ -67,6 +70,17 @@ export function AssignmentsBody({ items, now }: { items: AssignmentRow[]; now: n
   );
 }
 
+/** Every assignment, 100 at a time; "Show older" brings the next 100 into the same sections. */
+function AllAssignments({ first, now }: { first: Page<AssignmentRow>; now: number }) {
+  const m = useMorePages(first, async (cursor) => assignmentPageView(await api.get<unknown>("/assignments", { query: { limit: 100, cursor } })));
+  return (
+    <>
+      <AssignmentsBody items={m.items} now={now} />
+      <MoreButton more={m.more} busy={m.busy} error={m.error} onPress={() => void m.loadMore()} testID="assignments-more" />
+    </>
+  );
+}
+
 export function AssignmentsScreen() {
   const q = useAssignments();
   const [now] = React.useState(() => Date.now());
@@ -74,7 +88,7 @@ export function AssignmentsScreen() {
     <Screen testID="assignments" gap={space[6]} onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
       <Stack.Screen options={{ title: "Assignments" }} />
       <Loaded q={q} what="your assignments" skeleton={<RowsSkeleton rows={4} />}>
-        {(d) => <AssignmentsBody items={d.items} now={now} />}
+        {(d) => <AllAssignments first={d} now={now} />}
       </Loaded>
     </Screen>
   );
