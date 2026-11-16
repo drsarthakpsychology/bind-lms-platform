@@ -13,7 +13,7 @@ export function Tag({ tag, count, testID }: { tag: CaseMark; count?: number; tes
   const label = tag === "new" ? (count && count > 1 ? `${count} new` : "New") : tag === "week" ? "This week" : tag === "done" ? "Done" : "Carry on";
   const style =
     tag === "new"
-      ? { backgroundColor: c.brand, borderColor: c.brand, color: c.onBrand }
+      ? { backgroundColor: c.accent, borderColor: c.accent, color: c.onAccent }
       : tag === "done"
         ? { backgroundColor: c.successBg, borderColor: c.successBg, color: c.successFg }
         : tag === "started"
@@ -70,7 +70,7 @@ export function Tile({ text, onPress, state = "idle", disabled, testID, lines, c
 export function Story({ kicker, children }: { kicker?: string; children: React.ReactNode }) {
   const c = useTheme();
   return (
-    <View style={{ gap: space[2], borderLeftWidth: 3, borderColor: c.brand, paddingLeft: space[4] }}>
+    <View style={{ gap: space[2], borderLeftWidth: 3, borderColor: c.accent, paddingLeft: space[4] }}>
       {kicker ? (
         <T v="caption" tone="muted">
           {kicker.toUpperCase()}

@@ -21,15 +21,15 @@ import type { Tone } from "./format";
 export function toneColor(c: Palette, tone: Tone): string {
   switch (tone) {
     case "ok":
-      return c.dark ? "#7bd88f" : "#2f9e44";
+      return c.ok;
     case "warn":
-      return "#e8910c";
+      return c.warn;
     case "alert":
       return c.alertFg;
     case "info":
-      return c.dark ? "#8fa6ff" : c.brand;
+      return c.accent;
     default:
-      return c.cardLine;
+      return c.faint;
   }
 }
 
@@ -49,8 +49,8 @@ export function Status({ tone, children, strong, testID }: { tone: Tone; childre
 /** A small flat label (a cohort, a flag). */
 export function Tag({ children, tone = "quiet" }: { children: React.ReactNode; tone?: "quiet" | "warn" | "alert" }) {
   const c = useTheme();
-  const bg = tone === "alert" ? c.alertBg : tone === "warn" ? (c.dark ? "#3a2a0c" : "#fdf1dc") : c.tint;
-  const fg = tone === "alert" ? c.alertFg : tone === "warn" ? (c.dark ? "#f5c46b" : "#7a4a00") : c.ink;
+  const bg = tone === "alert" ? c.alertBg : tone === "warn" ? c.warnBg : c.tint;
+  const fg = tone === "alert" ? c.alertFg : tone === "warn" ? c.warnFg : c.ink;
   return (
     <View style={{ borderRadius: 4, paddingHorizontal: 6, paddingVertical: 2, backgroundColor: bg, maxWidth: "100%" }}>
       <T v="caption" style={{ color: fg }}>
@@ -159,13 +159,15 @@ export function Quiet({ children }: { children: React.ReactNode }) {
 export function SearchBox({ value, onChange, placeholder, label, testID }: { value: string; onChange: (v: string) => void; placeholder: string; label: string; testID?: string }) {
   const c = useTheme();
   return (
-    <View style={{ flexDirection: "row", alignItems: "center", gap: space[2], minHeight: layout.target, borderRadius: layout.radius, borderWidth: 1.5, borderColor: c.cardLine, backgroundColor: c.card, paddingLeft: space[3], flex: 1, minWidth: 0 }}>
+    <View style={{ flexDirection: "row", alignItems: "center", gap: space[2], minHeight: layout.target, borderRadius: layout.radius, borderWidth: 1.5, borderColor: c.fieldLine, backgroundColor: c.card, paddingLeft: space[3], flex: 1, minWidth: 0 }}>
       <Search size={18} color={c.muted} />
       <TextInput
         value={value}
         onChangeText={onChange}
         placeholder={placeholder}
-        placeholderTextColor={c.muted}
+        placeholderTextColor={c.faint}
+        keyboardAppearance={c.dark ? "dark" : "light"}
+        selectionColor={c.accent}
         accessibilityLabel={label}
         autoCorrect={false}
         autoCapitalize="none"
@@ -198,8 +200,8 @@ export function Check({ on, onPress, label, testID }: { on: boolean; onPress: ()
       }}
       style={{ width: layout.target, height: layout.target, alignItems: "center", justifyContent: "center" }}
     >
-      <View style={{ width: 22, height: 22, borderRadius: 5, borderWidth: 1.5, borderColor: on ? c.link : c.cardLine, backgroundColor: on ? c.link : "transparent", alignItems: "center", justifyContent: "center" }}>
-        {on ? <CheckIcon size={15} strokeWidth={3} color={c.dark ? "#111111" : "#ffffff"} /> : null}
+      <View style={{ width: 22, height: 22, borderRadius: 5, borderWidth: 1.5, borderColor: on ? c.link : c.fieldLine, backgroundColor: on ? c.link : "transparent", alignItems: "center", justifyContent: "center" }}>
+        {on ? <CheckIcon size={15} strokeWidth={3} color={c.bg} /> : null}
       </View>
     </Pressable>
   );
@@ -351,7 +353,7 @@ export function Facts({ items }: { items: { label: string; value: string; onPres
 /** One tinted line: the next step on a profile, the view-only note, a warning. */
 export function Notice({ children, tone = "plain", action, testID }: { children: React.ReactNode; tone?: "plain" | "warn" | "alert"; action?: React.ReactNode; testID?: string }) {
   const c = useTheme();
-  const bg = tone === "alert" ? c.alertBg : tone === "warn" ? (c.dark ? "#3a2a0c" : "#fdf1dc") : c.tint;
+  const bg = tone === "alert" ? c.alertBg : tone === "warn" ? c.warnBg : c.tint;
   return (
     <View testID={testID} style={{ borderRadius: layout.radius, backgroundColor: bg, padding: space[4], gap: space[3] }}>
       {typeof children === "string" ? <T v="small">{children}</T> : children}
@@ -401,7 +403,7 @@ export function DayBars({ days }: { days: { day: string; min: number }[] }) {
 export function SelectRow({ on, onToggle, label, children, testID }: { on: boolean; onToggle: () => void; label: string; children: React.ReactNode; testID?: string }) {
   const c = useTheme();
   return (
-    <View style={{ flexDirection: "row", alignItems: "center", marginHorizontal: -space[2], paddingRight: space[2], borderRadius: 8, backgroundColor: on ? (c.dark ? "rgba(205,242,75,0.08)" : "rgba(29,68,216,0.07)") : "transparent" }}>
+    <View style={{ flexDirection: "row", alignItems: "center", marginHorizontal: -space[2], paddingRight: space[2], borderRadius: 8, backgroundColor: on ? c.selected : "transparent" }}>
       <Check on={on} onPress={onToggle} label={label} testID={testID ? `${testID}-check` : undefined} />
       <View style={{ flex: 1, minWidth: 0 }}>{children}</View>
     </View>

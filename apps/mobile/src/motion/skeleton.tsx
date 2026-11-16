@@ -28,7 +28,7 @@ export function Shimmer() {
     transform: [{ translateX: -BAND + t.value * (w.value + BAND * 2) }],
   }));
   if (reduce) return null;
-  const hi = c.dark ? "rgba(255,255,255,0.07)" : "rgba(255,255,255,0.75)";
+  const hi = c.shimmer;
   return (
     <View pointerEvents="none" style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, overflow: "hidden" }} onLayout={(e: LayoutChangeEvent) => w.set(e.nativeEvent.layout.width)}>
       <Animated.View style={[{ position: "absolute", top: 0, bottom: 0, width: BAND }, band]}>

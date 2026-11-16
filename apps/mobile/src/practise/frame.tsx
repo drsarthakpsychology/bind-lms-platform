@@ -242,7 +242,7 @@ export function StartScreen<V extends string>({
                 testID={`choice-${o.id}`}
                 style={({ pressed }) => ({ minHeight: layout.row, flexDirection: "row", alignItems: "center", gap: space[3], paddingHorizontal: space[4], paddingVertical: space[3], borderRadius: layout.radius, borderWidth: on ? 2 : 1.5, borderColor: on ? c.ink : c.cardLine, backgroundColor: pressed ? c.tint : on ? c.card : "transparent" })}
               >
-                <View style={{ width: 20, height: 20, borderRadius: 10, borderWidth: 2, borderColor: on ? c.ink : c.cardLine, alignItems: "center", justifyContent: "center" }}>{on ? <View style={{ width: 10, height: 10, borderRadius: 5, backgroundColor: c.brand }} /> : null}</View>
+                <View style={{ width: 20, height: 20, borderRadius: 10, borderWidth: 2, borderColor: on ? c.ink : c.fieldLine, alignItems: "center", justifyContent: "center" }}>{on ? <View style={{ width: 10, height: 10, borderRadius: 5, backgroundColor: c.accent }} /> : null}</View>
                 <View style={{ flex: 1, minWidth: 0, gap: 2 }}>
                   <T v="bodyStrong">{o.name}</T>
                   {o.line ? (
@@ -276,7 +276,7 @@ export function Lives({ left, total }: { left: number; total: number }) {
   return (
     <View accessible accessibilityLabel={`${left} of ${total} lives left`} style={{ flexDirection: "row", gap: 6 }}>
       {Array.from({ length: total }, (_, i) => (
-        <View key={i} style={{ width: 12, height: 12, borderRadius: 3, borderWidth: 1.5, borderColor: c.ink, backgroundColor: i < left ? c.brand : "transparent" }} />
+        <View key={i} style={{ width: 12, height: 12, borderRadius: 3, borderWidth: 1.5, borderColor: c.ink, backgroundColor: i < left ? c.accent : "transparent" }} />
       ))}
     </View>
   );
@@ -289,7 +289,7 @@ export function StepStrip({ at, total, marks }: { at: number; total: number; mar
     <View accessible accessibilityLabel={`Step ${Math.min(at + 1, total)} of ${total}`} style={{ flexDirection: "row", gap: 4 }}>
       {Array.from({ length: total }, (_, i) => {
         const m = marks?.[i];
-        const bg = m === "ok" ? (c.dark ? c.primary : c.ink) : m === "miss" ? c.danger : i === at ? c.brand : c.hairline;
+        const bg = m === "ok" ? (c.dark ? c.primary : c.ink) : m === "miss" ? c.danger : i === at ? c.accent : c.fieldLine;
         return <View key={i} style={{ flex: 1, height: 4, borderRadius: 2, backgroundColor: bg }} />;
       })}
     </View>
