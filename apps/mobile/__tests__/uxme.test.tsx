@@ -24,20 +24,20 @@ describe("offline line", () => {
     await act(async () => markOffline());
     expect(netStore.get().offline).toBe(true);
     expect(screen.getByText("You are offline. Showing what was saved on this phone.")).toBeTruthy();
-    fireEvent.press(screen.getByRole("button", { name: "Post" }));
+    await fireEvent.press(screen.getByRole("button", { name: "Post" }));
     expect(press).not.toHaveBeenCalled();
     await act(async () => markOnline());
     expect(screen.queryByTestId("offline-line")).toBeNull();
-    fireEvent.press(screen.getByRole("button", { name: "Post" }));
+    await fireEvent.press(screen.getByRole("button", { name: "Post" }));
     expect(press).toHaveBeenCalledTimes(1);
   });
 });
 
 describe("coming soon", () => {
   it("opens the same page on the website", async () => {
-    const open = jest.spyOn(Linking, "openURL").mockResolvedValue(true);
+    const open = jest.spyOn(Linking, "openURL").mockResolvedValue(undefined);
     await render(<ComingSoon web="/study/notes" />);
-    fireEvent.press(screen.getByText("Open on the website"));
+    await fireEvent.press(screen.getByText("Open on the website"));
     expect(open).toHaveBeenCalledWith(expect.stringMatching(/\/study\/notes$/));
     expect(screen.getByText("Back")).toBeTruthy();
   });

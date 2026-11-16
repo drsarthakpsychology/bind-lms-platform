@@ -31,7 +31,8 @@ export function CertificateScreen() {
                 <Row title="Certificate number" meta={x.credentialId} />
                 {x.verifyUrl ? <Row title="Public check page" meta={x.verifyUrl.replace(/^https?:\/\//, "")} onPress={() => void Linking.openURL(x.verifyUrl!)} /> : null}
               </RowList>
-              {x.verifyUrl ? <Button kind="quiet" label="Share" onPress={() => void shareCertificate(x)} /> : null}
+              {/* The one Share: it sends the public check page. */}
+              {x.verifyUrl && x.status === "issued" ? <Button kind="quiet" label="Share" onPress={() => void shareCertificate(x)} testID="cert-share" /> : null}
             </>
           );
         }}

@@ -1,15 +1,44 @@
 import { router } from "expo-router";
-import { Award, Bell, ChartLine, CircleHelp, Medal, MessageCircleQuestionMark, Route, Settings, Trophy } from "lucide-react-native";
+import { Award, Bell, ChartLine, CircleHelp, MessageCircleQuestionMark, Settings, ShoppingBag, Trophy } from "lucide-react-native";
 import * as React from "react";
 import { View } from "react-native";
 
-import { useMe } from "@/api/queries";
-import { Row, RowList, Screen, Section, Skeleton, T } from "@/ds";
+import { useAchievements, useMe, useProgress } from "@/api/queries";
+import { ProgressLine, Row, RowList, Screen, Section, Skeleton, Stat, T } from "@/ds";
 import { Enter } from "@/motion";
 import { TabTop } from "@/nav/top";
 import { space, useTheme } from "@/theme";
 
-/** Me: who you are in one line, then grouped rows (the website's ME_GROUPS). */
+/** Three numbers under the name: lectures, modules and the streak. */
+function Summary() {
+  const p = useProgress().data;
+  if (!p) return null;
+  const lect = p.lectures.reduce((a, l) => ({ done: a.done + l.completed, total: a.total + l.total }), { done: 0, total: 0 });
+  return (
+    <View testID="me-summary" style={{ flexDirection: "row", flexWrap: "wrap", columnGap: space[6], rowGap: space[3] }}>
+      {lect.total ? <Stat value={`${lect.done}/${lect.total}`} label="Lectures" /> : null}
+      {p.study ? <Stat value={`${p.study.modulesDone}/${p.study.modulesTotal}`} label="Modules" /> : null}
+      {p.study ? p.study.streak > 0 ? <Stat value={String(p.study.streak)} label="Day streak" /> : <Stat value="Start today" label="Day streak" /> : null}
+    </View>
+  );
+}
+
+/** The next certificate to earn, with how far along it is. */
+function NextCertificate() {
+  const c = useTheme();
+  const a = useAchievements().data;
+  const next = a?.progress.find((x) => x.type === "certificate" && !x.earned);
+  if (!next) return null;
+  const m = /^(\d+)\s*(?:of|\/)\s*(\d+)/.exec(next.progress);
+  const pct = m && Number(m[2]) > 0 ? (Number(m[1]) / Number(m[2])) * 100 : null;
+  return (
+    <RowList>
+      <Row testID="me-next-cert" title={`Next certificate: ${next.title}`} meta={next.progress || undefined} icon={<Award size={20} color={c.link} />} onPress={() => router.push("/certificates")} below={pct !== null ? <ProgressLine value={pct} label={`${next.title}: ${next.progress}`} /> : undefined} />
+    </RowList>
+  );
+}
+
+/** Me: who you are, three numbers, the next certificate, then grouped rows (the website's ME_GROUPS). */
 export function MeScreen() {
   const c = useTheme();
   const q = useMe();
@@ -35,16 +64,17 @@ export function MeScreen() {
           <Skeleton w="40%" h={14} />
         </View>
       )}
+      {me && !lecturesOnly ? <Summary /> : null}
+      {me && can?.achievements !== false ? <NextCertificate /> : null}
       <Section title="Your work">
         <RowList>
-          <Row testID="me-progress" title="Progress" meta="Lectures, modules and your topics" icon={<ChartLine {...icon} />} onPress={() => router.push("/progress")} />
-          {!me?.access?.blocks?.includes("journey") ? <Row testID="me-journey" title="My journey" meta="Your level, hours and streak" icon={<Route {...icon} />} onPress={() => router.push("/journey")} /> : null}
+          <Row testID="me-progress" title="Progress" meta="Topics, map, your level and badges" icon={<ChartLine {...icon} />} onPress={() => router.push("/progress")} />
           {can?.achievements !== false ? <Row testID="me-certificates" title="Certificates" icon={<Award {...icon} />} onPress={() => router.push("/certificates")} /> : null}
-          {can?.achievements !== false ? <Row testID="me-badges" title="Badges" icon={<Medal {...icon} />} onPress={() => router.push("/certificates?show=badges")} /> : null}
-          {!lecturesOnly && can?.leaderboard !== false ? <Row testID="me-leaderboard" title="Leaderboard" meta="Your league, the boards and the XP shop" icon={<Trophy {...icon} />} onPress={() => router.push("/game/leaderboard")} /> : null}
+          {!lecturesOnly && can?.leaderboard !== false ? <Row testID="me-leaderboard" title="Leaderboard" meta="Your league and the boards" icon={<Trophy {...icon} />} onPress={() => router.push("/game/leaderboard")} /> : null}
+          {!lecturesOnly && can?.leaderboard !== false ? <Row testID="me-shop" title="XP shop" meta="Name frames, titles and a streak repair" icon={<ShoppingBag {...icon} />} onPress={() => router.push("/shop")} /> : null}
         </RowList>
       </Section>
-      <Section title="Help">
+      <Section title="Account and help">
         <RowList>
           {!lecturesOnly && can?.doubts !== false ? <Row testID="me-doubts" title="Doubts" icon={<MessageCircleQuestionMark {...icon} />} onPress={() => router.push("/doubts")} /> : null}
           <Row testID="me-notifications" title="Notifications" trailing={me?.unreadNotifications ? `${me.unreadNotifications} new` : undefined} icon={<Bell {...icon} />} onPress={() => router.push("/notifications")} />

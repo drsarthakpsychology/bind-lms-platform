@@ -149,12 +149,12 @@ describe("Learn screens", () => {
         now={Date.parse("2026-11-16T06:00:00Z")}
         items={[
           { id: "a", lessonId: "l5", courseId: "c", title: "Case summary", lessonTitle: "Depression", week: 3, dueAt: "2026-11-17T06:00:00Z", status: "not_started", score: null },
-          { id: "b", lessonId: "l1", courseId: "c", title: "Intro", lessonTitle: "Intro", week: 1, dueAt: null, status: "graded", score: 9 },
+          { id: "b", lessonId: "l1", courseId: "c", title: "Intro", lessonTitle: "Intro", week: 1, dueAt: null, status: "graded", score: 90 },
         ]}
       />,
     );
     expect(screen.getByText("Week 3 · Depression · Due tomorrow")).toBeTruthy();
-    expect(screen.getByText("9")).toBeTruthy();
+    expect(screen.getByText("90 of 100")).toBeTruthy();
     fireEvent.press(screen.getByTestId("assignment-a"));
     expect(router.push).toHaveBeenLastCalledWith("/lecture/l5?tab=assignment");
   });
@@ -164,6 +164,6 @@ describe("Learn screens", () => {
     expect(await screen.findByText("Keen Observer")).toBeTruthy();
     expect(screen.getByText("1240 points · #3 on the leaderboard")).toBeTruthy();
     expect(screen.getByTestId("journey-practice")).toBeTruthy();
-    expect(screen.getByLabelText("Day streak: 6 🔥, days in a row")).toBeTruthy();
+    expect(screen.getByLabelText("Day streak: 6")).toBeTruthy();
   });
 });

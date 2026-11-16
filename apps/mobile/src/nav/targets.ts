@@ -101,7 +101,7 @@ export function openTarget(t: AppTarget | null | undefined): void {
   }
   if (href) router.push(href);
   // Not in the app yet: open the same page on the website rather than a dead end.
-  else if (t.web) openWebsite(t.web);
+  else if (t && typeof t === "object" && typeof t.web === "string" && t.web) openWebsite(t.web);
   else toast.show("This part arrives in the next update of the app.");
 }
 
