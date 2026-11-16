@@ -194,12 +194,14 @@ describe("admin screens as a Super Admin", () => {
     await signInAs("admin@example.com");
   });
 
-  it("Home leads with Needs a look, shows who is on, and offers Send a message", async () => {
+  it("Home leads with Needs a look, says how many are on, and offers Send a message", async () => {
     await render(<AdminHomeScreen />);
     // The server's own to-do list, in the website's words.
     expect(await screen.findByText("Fix logins")).toBeTruthy();
     expect(screen.getByText("Grade submissions")).toBeTruthy();
-    expect(screen.getByText("Sana Khan")).toBeTruthy();
+    // Home keeps only the count of who is on; the list lives in Activity.
+    expect(screen.getByTestId("home-live")).toBeTruthy();
+    expect(screen.queryByText("Lecture: Anxiety disorders: telling them apart")).toBeNull();
     expect(screen.getByTestId("admin-compose")).toBeTruthy();
     expect(screen.queryByTestId("view-only-note")).toBeNull();
   });
@@ -208,6 +210,9 @@ describe("admin screens as a Super Admin", () => {
     await render(<AdminStudentsScreen />);
     await screen.findByTestId("student-u1");
     expect(screen.queryByTestId("action-bar")).toBeNull();
+    // Tick boxes only show in select mode.
+    expect(screen.queryByTestId("student-u1-check")).toBeNull();
+    await fireEvent.press(screen.getByTestId("students-select"));
     await fireEvent.press(screen.getByTestId("student-u1-check"));
     await fireEvent.press(screen.getByTestId("student-u2-check"));
     expect(screen.getByText("2 selected")).toBeTruthy();
@@ -318,7 +323,9 @@ describe("admin screens as a view-only admin", () => {
   it("Students: ticking shows only Share list", async () => {
     await render(<AdminStudentsScreen />);
     await screen.findByTestId("student-u1");
-    await fireEvent.press(screen.getByTestId("student-u1-check"));
+    // A long press on a row starts select mode with that row ticked.
+    await fireEvent(screen.getByTestId("student-u1"), "longPress");
+    expect(screen.getByText("1 selected")).toBeTruthy();
     expect(screen.getByTestId("bulk-share")).toBeTruthy();
     expect(screen.queryByTestId("bulk-lock")).toBeNull();
     expect(screen.queryByTestId("bulk-links")).toBeNull();

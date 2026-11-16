@@ -184,7 +184,7 @@ export function SectionReaderV2(props: SectionReaderProps) {
 
         {/* Phone: Back and Next, pinned low while reading. Next is the wide lime one. */}
         {!wide && reading && !atEnd ? (
-          <nav
+          <nav data-chrome
             className="fixed inset-x-0 bottom-0 z-40 border-t border-[var(--ds-hairline)] bg-background/95 px-5 pt-3 backdrop-blur-sm md:hidden"
             style={{ paddingBottom: "max(0.75rem, env(safe-area-inset-bottom))" }}
             aria-label="Parts of this section"

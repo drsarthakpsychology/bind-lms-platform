@@ -31,7 +31,7 @@ export function GameRoute() {
   if (G) return <G />;
   return (
     <GameFrame title="Game">
-      <EmptyState mood="puzzled" title="No game by that name" body="Go back to Practise and pick one from the list." />
+      <EmptyState mood="missing" title="No game by that name" body="Go back to Practise and pick one from the list." />
     </GameFrame>
   );
 }

@@ -108,8 +108,11 @@ export function DetectiveCase() {
   return (
     <GameFrame testID="case-detective" title="Clinic detective" howTo={HOW} score={String(score)} hud={hud} confirmLeave thumb={result ? <Button label={r + 1 >= deal.rounds.length ? "See my score" : "Next case"} onPress={next} testID="detective-next" /> : undefined}>
       {mark === "new" || mark === "week" ? (
-        <View style={{ flexDirection: "row" }}>
+        <View style={{ flexDirection: "row", alignItems: "center", gap: space[1] }}>
           <Tag tag={mark} />
+          <T v="caption" tone="muted">
+            {mark === "new" ? "New case" : "This week"}
+          </T>
         </View>
       ) : null}
       <View style={{ gap: space[3] }}>

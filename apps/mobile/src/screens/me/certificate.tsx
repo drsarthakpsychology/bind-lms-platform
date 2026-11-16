@@ -18,7 +18,7 @@ export function CertificateScreen() {
       <Loaded q={q} what="this certificate" skeleton={<RowsSkeleton rows={3} />}>
         {(a) => {
           const x = a.earned.find((e) => e.credentialId === id);
-          if (!x) return <EmptyState mood="puzzled" title="Certificate not found" body="It may have been withdrawn. Message us if you think this is wrong." />;
+          if (!x) return <EmptyState mood="missing" title="Certificate not found" body="It may have been withdrawn. Message us if you think this is wrong." />;
           return (
             <>
               <View style={{ gap: space[3] }}>

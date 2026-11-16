@@ -124,7 +124,7 @@ export function AdminSystemScreen() {
                     ))}
                   </RowList>
                 ) : (
-                  <EmptyState mood="sleepy" title="No keys yet" body={canWrite ? "Make one for each person who helps students sign in." : undefined} />
+                  <EmptyState mood="empty" title="No keys yet" body={canWrite ? "Make one for each person who helps students sign in." : undefined} />
                 )}
                 {d.legacyKeyOn ? (
                   <Notice tone="warn" action={canWrite ? <SmallButton label="Turn it off" danger onPress={() => setLegacy(true)} testID="key-legacy" /> : undefined}>

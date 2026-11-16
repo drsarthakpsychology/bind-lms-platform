@@ -16,7 +16,7 @@ export function Loaded<T>({ q, skeleton, what, soon, children }: { q: UseQueryRe
   if (q.data !== undefined) body = children(q.data);
   else if (q.isError) {
     if (isClosed(q.error)) body = <EmptyState title="Not open for your account" body="This part of VIBHA is not switched on for you yet." testID="closed" />;
-    else if (soon && q.error instanceof ApiFailure && q.error.code === "not_found") body = <EmptyState mood="sleepy" title="Coming in the next update" body="This part is ready on the website and arrives in the app soon." testID="soon" />;
+    else if (soon && q.error instanceof ApiFailure && q.error.code === "not_found") body = <EmptyState mood="soon" title="Coming in the next update" body="This part is ready on the website and arrives in the app soon." testID="soon" />;
     else body = <LoadError what={what} error={q.error} onRetry={() => void q.refetch()} />;
   }
   // Nothing for 120ms, then the skeleton for at least 380ms, then the content rises in.

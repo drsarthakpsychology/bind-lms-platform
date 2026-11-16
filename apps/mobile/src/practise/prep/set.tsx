@@ -91,7 +91,7 @@ export function PrepSetScreen() {
   React.useEffect(() => {
     started.current = Date.now();
   }, [set, i]);
-  if (q0.error) return <FrameError title="Exam Prep" error={q0.error} onRetry={q0.retry} />;
+  if (q0.error) return <FrameError title="Exam Prep" web="/prep" error={q0.error} onRetry={q0.retry} />;
   if (!set) return <FrameLoading title="Exam Prep" />;
 
   const q = set.questions[i] as PrepQView | undefined;
@@ -104,7 +104,7 @@ export function PrepSetScreen() {
   if (!set.questions.length) {
     return (
       <GameFrame testID="prep-set" title={set.title}>
-        <EmptyState mood="sleepy" title={p.list === "wrong" ? "Nothing to practise again" : p.list === "saved" ? "No saved questions" : "No questions here yet"} body={p.list ? "Questions show up here as you answer and save them." : "Try another topic."} />
+        <EmptyState mood={p.list === "wrong" ? "clear" : "empty"} title={p.list === "wrong" ? "Nothing to practise again" : p.list === "saved" ? "No saved questions" : "No questions here yet"} body={p.list ? "Questions show up here as you answer and save them." : "Try another topic."} />
       </GameFrame>
     );
   }

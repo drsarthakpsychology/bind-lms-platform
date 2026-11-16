@@ -8,6 +8,7 @@ import { scheduleOnRN } from "react-native-worklets";
 import { haptic } from "@/lib/haptics";
 import { curves, dur, springs } from "@/motion";
 import { layout, space, useTheme } from "@/theme";
+import { useKeyboardPad } from "./keyboard-pad";
 import { T } from "./text";
 
 /** Close when pulled past this share of the sheet's height... */
@@ -23,7 +24,8 @@ const FLICK = 400;
  * content is scrolled to the top: the sheet follows the finger 1:1 on the UI
  * thread (rubber band upward), closes past 25% of its height or on a quick
  * flick, else springs back. Tapping outside or the back gesture closes it too.
- * Sized to its content, up to 85% of the screen, then it scrolls.
+ * Sized to its content, up to 85% of the screen, then it scrolls. With the
+ * keyboard up, the sheet sits on top of it (useKeyboardPad).
  */
 export function Sheet({ open, onClose, title, children, testID }: { open: boolean; onClose: () => void; title?: string; children?: React.ReactNode; testID?: string }) {
   const c = useTheme();
@@ -39,6 +41,8 @@ export function Sheet({ open, onClose, title, children, testID }: { open: boolea
   // Plain state, changed only when it flips (not per scroll frame).
   const [atTop, setAtTop] = React.useState(true);
   const want = useSharedValue(open);
+  // Edge to edge, the window may not shrink for the keyboard: lift the sheet above it.
+  const { ref: kbRef, pad: kbPad, onLayout: kbLayout } = useKeyboardPad();
 
   const rise = React.useCallback(() => {
     p.set(reduce ? 1 : withSpring(1, springs.sheet));
@@ -109,15 +113,16 @@ export function Sheet({ open, onClose, title, children, testID }: { open: boolea
   if (!shown) return null;
   return (
     <Modal visible transparent animationType="none" onRequestClose={onClose} statusBarTranslucent navigationBarTranslucent>
-      <GestureHandlerRootView style={{ flex: 1, justifyContent: "flex-end" }}>
+      <GestureHandlerRootView style={{ flex: 1 }}>
+        <View ref={kbRef} onLayout={kbLayout} style={{ flex: 1, justifyContent: "flex-end", paddingBottom: kbPad }}>
         <Animated.View style={[{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, backgroundColor: c.scrim }, scrim]}>
           <Pressable accessibilityRole="button" accessibilityLabel="Close" onPress={onClose} style={{ flex: 1 }} />
         </Animated.View>
         <GestureDetector gesture={bodyPan}>
-          <Animated.View testID={testID} onLayout={onLayout} accessibilityViewIsModal accessibilityLabel={title} style={[{ maxHeight: "85%", width: "100%", maxWidth: 640, alignSelf: "center", backgroundColor: c.card, borderTopLeftRadius: 20, borderTopRightRadius: 20 }, panel]}>
+          <Animated.View testID={testID} onLayout={onLayout} accessibilityViewIsModal accessibilityLabel={title} style={[{ maxHeight: "85%", width: "100%", maxWidth: 640, alignSelf: "center", backgroundColor: c.raised, borderTopLeftRadius: 20, borderTopRightRadius: 20 }, panel]}>
             <GestureDetector gesture={grabPan}>
               <View style={{ alignItems: "center", paddingTop: space[2], paddingBottom: space[3] }} accessibilityLabel="Drag down to close">
-                <View style={{ width: 36, height: 4, borderRadius: 2, backgroundColor: c.cardLine }} />
+                <View style={{ width: 36, height: 4, borderRadius: 2, backgroundColor: c.fieldLine }} />
               </View>
             </GestureDetector>
             <ScrollView bounces={false} onScroll={onScroll} scrollEventThrottle={32} contentContainerStyle={{ paddingHorizontal: layout.gutter, paddingBottom: insets.bottom + space[5], gap: space[3] }}>
@@ -126,6 +131,7 @@ export function Sheet({ open, onClose, title, children, testID }: { open: boolea
             </ScrollView>
           </Animated.View>
         </GestureDetector>
+        </View>
       </GestureHandlerRootView>
     </Modal>
   );

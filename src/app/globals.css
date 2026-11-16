@@ -1496,6 +1496,35 @@ html[data-cvd="on"] .bg-destructive {
 ::view-transition-new(root) {
   animation-duration: 160ms;
 }
+/* The fixed chrome (tab bar, top bar, thumb bar, pinned actions, sheets and
+   dialogs) is captured on its own, above the page. Without this the page's
+   snapshot (a named group, drawn in the transition overlay) paints over the
+   phone tab bar for the whole change: a student row's name and "Active ...
+   lectures" on top of the Students pill (owner, Android, 16 Nov). Each piece
+   gets its own automatic name (match-element) and the class below; the chrome
+   does not animate: the live new state shows at once, on top. Browsers without
+   match-element ignore the line and keep the old behaviour. */
+.bottom-tabs,
+.thumb-bar,
+.sticky-action,
+[data-chrome],
+[data-slot="sheet-content"],
+[data-slot="sheet-overlay"],
+[data-slot="dialog-content"],
+[data-slot="dialog-overlay"] {
+  view-transition-name: match-element;
+  view-transition-class: ds-chrome;
+}
+::view-transition-group(.ds-chrome) {
+  z-index: 100;
+  animation: none;
+}
+::view-transition-old(.ds-chrome) {
+  display: none;
+}
+::view-transition-new(.ds-chrome) {
+  animation: none;
+}
 ::view-transition-old(.ds-vt-out),
 ::view-transition-old(.ds-vt-skel-out) {
   animation: 120ms var(--ds-ease-exit) both ds-fade-out;

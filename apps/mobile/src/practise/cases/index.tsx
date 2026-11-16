@@ -17,7 +17,7 @@ export function CaseRoute() {
   if (t?.kind === "tool" && t.toolId) return <ToolCaseScreen key={t.toolId} tool={t.toolId} />;
   return (
     <GameFrame title="Case">
-      <EmptyState mood="puzzled" title="No case tool by that name" body="Go back to Practise and pick one from the list." />
+      <EmptyState mood="missing" title="No case tool by that name" body="Go back to Practise and pick one from the list." />
     </GameFrame>
   );
 }

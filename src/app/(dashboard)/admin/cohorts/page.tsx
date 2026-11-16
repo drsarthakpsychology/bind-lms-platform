@@ -1,5 +1,5 @@
 import { redirect } from "next/navigation";
-import { requireAdmin } from "@/lib/auth/guards";
+import { isSuperAdmin, requireAdmin } from "@/lib/auth/guards";
 import Link from "next/link";
 import { ArrowRight, UserPlus, Users } from "lucide-react";
 import { createAdminClient } from "@/lib/supabase/server";
@@ -51,7 +51,9 @@ export default async function CohortsPage() {
           detailsPct: c.members ? Math.round((c.detailsDone / c.members) * 100) : 0,
           starts: c.starts_on ? day(c.starts_on) : null,
         }))}
-        newForm={<NewCohortForm courses={(courses ?? []).map((c) => ({ id: c.id as string, title: c.title as string }))} />}
+        // New cohort and Add people are Super Admin only.
+        canAdd={isSuperAdmin(me)}
+        newForm={isSuperAdmin(me) ? <NewCohortForm courses={(courses ?? []).map((c) => ({ id: c.id as string, title: c.title as string }))} /> : undefined}
       />
     );
   }

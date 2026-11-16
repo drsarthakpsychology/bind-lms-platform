@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Chai } from "@/components/learn/chai";
+import { MemeArt } from "@/components/reactions/graphics";
 import { PageFrame, BackLink, EmptyLine, quietButton } from "@/components/ds";
 import { cn } from "@/lib/utils";
 
@@ -43,7 +43,7 @@ export function NotificationsV2({ rows, unread, markAll }: { rows: NoteRow[]; un
       }
     >
       {rows.length === 0 ? (
-        <EmptyLine art={<Chai mood="sleep" size={56} still />} title="Nothing new">Messages from the VIBHA team, badges and certificates you earn, and replies to your posts show here.</EmptyLine>
+        <EmptyLine art={<MemeArt sticker="sunlit-dog" size={72} />} title="Nothing new">Messages from the VIBHA team, badges and certificates you earn, and replies to your posts show here.</EmptyLine>
       ) : (
         <ul className="flex min-w-0 flex-col divide-y divide-[var(--ds-hairline)] border-y border-[var(--ds-hairline)]">
           {rows.map((n) => (

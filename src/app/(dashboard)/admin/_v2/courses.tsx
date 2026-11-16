@@ -7,7 +7,7 @@ import { AdminPage, Block, Empty, More, RowItem, Rows, Status, btn, nameLink, ta
 export type CourseRowV2 = { id: string; title: string; published: boolean; lessons: number; actions?: React.ReactNode };
 
 /** Courses (v2). One purpose: open a course. A table on desktop, rows on phones; "New course" closed under the list. */
-export function CoursesListV2({ courses, createForm }: { courses: CourseRowV2[]; createForm: React.ReactNode }) {
+export function CoursesListV2({ courses, createForm }: { courses: CourseRowV2[]; /** Left out for a View Admin. */ createForm?: React.ReactNode }) {
   const published = courses.filter((c) => c.published).length;
   const st = (c: CourseRowV2) => <Status tone={c.published ? "ok" : "quiet"}>{c.published ? "Published" : "Draft"}</Status>;
   return (
@@ -49,11 +49,13 @@ export function CoursesListV2({ courses, createForm }: { courses: CourseRowV2[];
           </Rows>
         </>
       ) : (
-        <Empty>No courses yet. Create the first one below.</Empty>
+        <Empty>{createForm ? "No courses yet. Create the first one below." : "No courses yet."}</Empty>
       )}
-      <More summary="New course" className="max-w-xl">
-        {createForm}
-      </More>
+      {createForm ? (
+        <More summary="New course" className="max-w-xl">
+          {createForm}
+        </More>
+      ) : null}
     </AdminPage>
   );
 }
@@ -97,13 +99,14 @@ export function CourseDetailV2({
 }: {
   title: React.ReactNode;
   published: boolean;
-  actions: React.ReactNode;
+  actions?: React.ReactNode;
   filter?: React.ReactNode;
   count: string;
   weeks: { week: number; lessons: LessonV2[] }[];
   emptyText: string | null;
   addOpen: boolean;
-  addForm: React.ReactNode;
+  /** Left out for a View Admin. */
+  addForm?: React.ReactNode;
   people: React.ReactNode;
   materials: React.ReactNode;
   materialCount: number;
@@ -120,6 +123,7 @@ export function CourseDetailV2({
       }
       actions={actions}
     >
+{addForm ? (
       <details open={addOpen} className="group min-w-0 border-y border-[var(--ds-hairline)]">
         <summary className="flex min-h-12 cursor-pointer list-none items-center justify-between gap-3 type-body font-semibold outline-none hover:text-link focus-visible:ring-2 focus-visible:ring-ring [&::-webkit-details-marker]:hidden">
           Add a lecture
@@ -127,6 +131,7 @@ export function CourseDetailV2({
         </summary>
         <div className="min-w-0 pt-2 pb-5">{addForm}</div>
       </details>
+      ) : null}
 
       <Block title="Lectures" count={count}>
         {filter}

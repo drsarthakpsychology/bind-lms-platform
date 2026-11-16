@@ -126,7 +126,7 @@ export function MotionTabBar({ state, descriptors, emitter, navigateToTab, inset
     };
   });
   if (kb.up) return null;
-  const pillColor = c.dark ? "rgba(205,242,75,0.16)" : "rgba(29,68,216,0.10)";
+  const pillColor = c.pill;
   return (
     <Animated.View style={[{ backgroundColor: c.card, borderTopWidth: 1, borderColor: c.hairline, paddingBottom: insets.bottom, paddingLeft: insets.left, paddingRight: insets.right }, kb.style]}>
       <View accessibilityRole="tablist" style={{ flexDirection: "row", height: BAR_H }} onLayout={(e: LayoutChangeEvent) => itemW.set(e.nativeEvent.layout.width / n)}>

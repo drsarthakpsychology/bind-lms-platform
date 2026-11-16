@@ -132,6 +132,8 @@ export default async function MailPage({
   if (raw === "logins") redirect("/admin/students/logins");
   const folder: Folder = (["inbox", "notify", "sent", "failed", "compose"] as const).includes(raw as Folder) ? (raw as Folder) : "inbox";
   const canWrite = isSuperAdmin(adminProfile);
+  // Sending is Super Admin only: a View Admin's compose form could only fail.
+  if (folder === "compose" && !canWrite) redirect("/admin/emails");
   const q = (sp.q ?? "").trim().toLowerCase().slice(0, 100);
 
   const admin = createAdminClient();
@@ -246,6 +248,7 @@ export default async function MailPage({
         counts={counts}
         keys={<MailKeys folder={folder === "compose" ? "inbox" : folder} />}
         panel={panel}
+        canCompose={canWrite}
         filter={
           listFolder ? (
             <FilterBar
@@ -307,13 +310,13 @@ export default async function MailPage({
       <div className="grid min-h-[calc(100dvh-var(--top-h)-4.5rem)] grid-cols-[minmax(0,1fr)] grid-rows-[auto_1fr] lg:grid-cols-[13.5rem_minmax(0,1fr)] lg:grid-rows-1">
         {/* Folder rail (a chip row on phones) */}
         <nav aria-label="Mail folders" className="border-b-2 border-foreground/10 bg-card p-3 lg:border-r-2 lg:border-b-0 lg:border-foreground lg:p-4">
-          <Link
+          {canWrite ? <Link
             href="/admin/emails?folder=compose"
             className="mb-3 hidden h-12 items-center justify-center gap-2 rounded-2xl border-2 border-foreground bg-primary text-sm font-bold text-primary-foreground hard-shadow-sm transition-transform hover:-translate-y-0.5 lg:flex"
           >
             <PenSquare className="size-4" aria-hidden /> Compose
             <kbd className="rounded border border-current px-1 font-mono text-[0.65rem]">C</kbd>
-          </Link>
+          </Link> : null}
           <ul className="flex gap-1 overflow-x-auto [scrollbar-width:none] lg:flex-col">
             {FOLDERS.map((f) => {
               const Icon = f.icon;
@@ -480,7 +483,7 @@ export default async function MailPage({
       </div>
 
       {/* Compose button on phones (Gmail's floating pencil) */}
-      {folder !== "compose" && !reading ? (
+      {canWrite && folder !== "compose" && !reading ? (
         <Link
           href="/admin/emails?folder=compose"
           aria-label="Compose"

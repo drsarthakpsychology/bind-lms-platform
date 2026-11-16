@@ -163,7 +163,7 @@ function Board({ view, again }: { view: SortView; again: () => void }) {
                   if (put(sel, gi)) haptic.success();
                 } else setOpen(gi);
               }}
-              style={({ pressed }) => ({ width: "48.5%", minHeight: 112, padding: space[3], gap: space[2], borderRadius: layout.radius, borderWidth: target ? 2 : 1.5, borderStyle: target ? "dashed" : "solid", borderColor: ok ? (c.dark ? c.primary : c.ink) : target ? c.brand : c.cardLine, backgroundColor: ok ? c.successBg : pressed ? c.tint : c.card })}
+              style={({ pressed }) => ({ width: "48.5%", minHeight: 112, padding: space[3], gap: space[2], borderRadius: layout.radius, borderWidth: target ? 2 : 1.5, borderStyle: target ? "dashed" : "solid", borderColor: ok ? (c.dark ? c.primary : c.ink) : target ? c.accent : c.cardLine, backgroundColor: ok ? c.successBg : pressed ? c.tint : c.card })}
             >
               <View style={{ flexDirection: "row", alignItems: "flex-start", gap: space[1] }}>
                 <T v="small" style={{ flex: 1, fontWeight: "700" }} numberOfLines={3}>
@@ -173,7 +173,7 @@ function Board({ view, again }: { view: SortView; again: () => void }) {
               </View>
               <View style={{ flexDirection: "row", gap: 3 }}>
                 {[0, 1, 2, 3].map((k) => (
-                  <View key={k} style={{ flex: 1, height: 6, borderRadius: 3, backgroundColor: k < inBin.length ? (ok ? c.ink : c.brand) : c.hairline }} />
+                  <View key={k} style={{ flex: 1, height: 6, borderRadius: 3, backgroundColor: k < inBin.length ? (ok ? c.ink : c.accent) : c.fieldLine }} />
                 ))}
               </View>
               {away ? (
@@ -202,7 +202,7 @@ function Board({ view, again }: { view: SortView; again: () => void }) {
                   setSel(sel === top ? null : top);
                 }}
                 testID={`sort-tile-${top}`}
-                style={{ minHeight: 120, padding: space[5], justifyContent: "center", borderRadius: layout.radius, borderWidth: 2, borderColor: sel === top ? c.brand : c.ink, backgroundColor: c.card }}
+                style={{ minHeight: 120, padding: space[5], justifyContent: "center", borderRadius: layout.radius, borderWidth: 2, borderColor: sel === top ? c.accent : c.ink, backgroundColor: c.card }}
               >
                 <T v="h3" center>
                   {view.tiles[top]}
