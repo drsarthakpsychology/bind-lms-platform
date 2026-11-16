@@ -122,7 +122,7 @@ export function ScheduleScreen() {
   const [dir, setDir] = React.useState<-1 | 0 | 1>(0);
   const q = useClinicWeek(from);
   const c = useTheme();
-  const go = (weeks: number) => {
+  const shiftWeek = (weeks: number) => {
     const next = addDays(from, weeks * 7);
     setFrom(next);
     setDir(weeks > 0 ? 1 : -1);
@@ -136,7 +136,7 @@ export function ScheduleScreen() {
     <AreaProvider area="home">
       <Screen testID="clinic-schedule" onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
         <View style={{ flexDirection: "row", alignItems: "center", gap: space[2] }}>
-          <IconButton label="Last week" onPress={() => go(-1)} testID="week-prev">
+          <IconButton label="Last week" onPress={() => shiftWeek(-1)} testID="week-prev">
             <ChevronLeft size={22} color={c.ink} />
           </IconButton>
           <View style={{ flex: 1, alignItems: "center" }}>
@@ -144,7 +144,7 @@ export function ScheduleScreen() {
               {weekLabel(from, addDays(from, 6))}
             </T>
             {from !== mondayOf(today) ? (
-              <Pressable accessibilityRole="button" onPress={() => go(Math.round((Date.parse(mondayOf(today)) - Date.parse(from)) / (7 * 86400_000)))} style={{ minHeight: 32, justifyContent: "center" }} testID="week-now">
+              <Pressable accessibilityRole="button" onPress={() => shiftWeek(Math.round((Date.parse(mondayOf(today)) - Date.parse(from)) / (7 * 86400_000)))} style={{ minHeight: 32, justifyContent: "center" }} testID="week-now">
                 <T v="small" tone="link">
                   Back to this week
                 </T>
@@ -155,7 +155,7 @@ export function ScheduleScreen() {
               </T>
             )}
           </View>
-          <IconButton label="Next week" onPress={() => go(1)} testID="week-next">
+          <IconButton label="Next week" onPress={() => shiftWeek(1)} testID="week-next">
             <ChevronRight size={22} color={c.ink} />
           </IconButton>
         </View>
