@@ -287,7 +287,7 @@ export function LectureScreen() {
         </>
       ) : q.isError ? (
         <View style={{ padding: layout.gutter }}>
-          <LoadError what="this lecture" onRetry={() => void q.refetch()} />
+          <LoadError what="this lecture" error={q.error} onRetry={() => void q.refetch()} />
         </View>
       ) : (
         <LectureSkeleton />

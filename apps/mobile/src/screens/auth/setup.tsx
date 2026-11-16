@@ -6,7 +6,7 @@ import { View } from "react-native";
 import Animated, { useAnimatedStyle, useReducedMotion, useSharedValue, withSpring } from "react-native-reanimated";
 
 import type { SetupCheckResult, SetupCompleteResult } from "@/api/contract";
-import { ApiFailure, messageOf } from "@/api/errors";
+import { ApiFailure, messageOf, reasonOf } from "@/api/errors";
 import { api, session } from "@/auth";
 import { EmptyState, Screen, Skeleton, T } from "@/ds";
 import { haptic } from "@/lib/haptics";
@@ -51,7 +51,7 @@ export function SetupScreen({ token }: { token: string }) {
     const reason = !token ? "unknown" : (check.data?.reason ?? "unknown");
     return (
       <Screen safeTop testID="setup-invalid">
-        <EmptyState mood="puzzled" title="This link cannot be used" body={check.isError ? "Could not check the link. Check your internet and open it again." : REASON[reason]} action={{ label: "Go to sign in", onPress: () => router.replace("/sign-in") }} />
+        <EmptyState mood="puzzled" title="This link cannot be used" body={check.isError ? `Could not check the link. ${reasonOf(check.error)}` : REASON[reason]} action={{ label: "Go to sign in", onPress: () => router.replace("/sign-in") }} />
       </Screen>
     );
   }

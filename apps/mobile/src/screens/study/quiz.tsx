@@ -195,7 +195,7 @@ export function CheckpointScreen() {
   const n = Number(p.n ?? 1);
   const q = useCheckpoint(moduleId, n);
   const done = () => router.replace(`/study/${encodeURIComponent(moduleId)}`);
-  if (!q.data) return q.isError ? <LoadError what="this checkpoint" onRetry={() => void q.refetch()} /> : <QuizSkeleton />;
+  if (!q.data) return q.isError ? <LoadError what="this checkpoint" error={q.error} onRetry={() => void q.refetch()} /> : <QuizSkeleton />;
   return (
     <QuizRunner
       title={q.data.title}
@@ -220,7 +220,7 @@ export function ModuleTestScreen() {
   const testId = mod.data?.sections.find((s) => s.isTest)?.id ?? "test";
   const q = useSection(moduleId, testId);
   const done = () => router.replace(`/study/${encodeURIComponent(moduleId)}`);
-  if (!q.data?.test) return q.isError || (q.data && !q.data.test) ? <LoadError what="the module test" onRetry={() => void q.refetch()} /> : <QuizSkeleton />;
+  if (!q.data?.test) return q.isError || (q.data && !q.data.test) ? <LoadError what="the module test" error={q.error ?? new Error("not found")} onRetry={() => void q.refetch()} /> : <QuizSkeleton />;
   return (
     <QuizRunner
       title={`Module ${q.data.moduleNum} test`}

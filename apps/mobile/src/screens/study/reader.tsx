@@ -243,7 +243,7 @@ export function ReaderScreen() {
         {s ? (
           <ReaderBody s={s} view={view} part={part} finished={finished} />
         ) : q.isError ? (
-          <LoadError what="this section" onRetry={() => void q.refetch()} />
+          <LoadError what="this section" error={q.error} onRetry={() => void q.refetch()} />
         ) : (
           <View style={{ gap: space[3] }} testID="reader-skeleton">
             <Skeleton w="30%" h={14} />

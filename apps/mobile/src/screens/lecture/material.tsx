@@ -6,6 +6,7 @@ import * as React from "react";
 import { Image, Linking, PixelRatio, Pressable, ScrollView, useWindowDimensions, View } from "react-native";
 
 import { pdfPages, type RenderedPage } from "../../../modules/pdf-pages/src";
+import { reasonOf } from "@/api/errors";
 import type { Material } from "@/api/contract";
 import { useMaterial } from "@/api/queries";
 import { session } from "@/auth";
@@ -70,8 +71,8 @@ function PdfReader({ m }: { m: Material }) {
         created.push(file.uri);
         const pages = await pdfPages.pageCount(file.uri);
         if (live) setDoc({ phase: "ready", path: file.uri, pages });
-      } catch {
-        if (live) setDoc({ phase: "error", message: "The file could not be opened. Check your internet and try again." });
+      } catch (e) {
+        if (live) setDoc({ phase: "error", message: reasonOf(e) });
       }
     })();
     return () => {

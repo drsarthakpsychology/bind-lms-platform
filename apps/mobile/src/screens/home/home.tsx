@@ -262,7 +262,7 @@ export function HomeScreen() {
   const q = useHome();
   return (
     <Screen tab top={<TabTop />} testID="home" onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
-      {q.data ? <HomeView data={q.data} /> : q.isError ? <LoadError what="your home screen" onRetry={() => void q.refetch()} /> : <HomeSkeleton />}
+      {q.data ? <HomeView data={q.data} /> : q.isError ? <LoadError what="your home screen" error={q.error} onRetry={() => void q.refetch()} /> : <HomeSkeleton />}
       {q.data && !q.data.step && !q.data.upNext.length ? <EmptyState title="Nothing here yet" body="Your first lecture appears here as soon as it opens." /> : null}
     </Screen>
   );
