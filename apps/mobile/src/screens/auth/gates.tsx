@@ -1,7 +1,8 @@
 import * as React from "react";
 import { Linking, View } from "react-native";
-import Animated, { Easing, FadeIn, FadeOut, useAnimatedStyle, useReducedMotion, useSharedValue, withDelay, withSpring, withTiming } from "react-native-reanimated";
+import Animated, { Easing, useAnimatedStyle, useReducedMotion, useSharedValue, withDelay, withSpring, withTiming } from "react-native-reanimated";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+import Svg, { Path } from "react-native-svg";
 
 import { useConfig } from "@/api/queries";
 import { session, useSession } from "@/auth";
@@ -12,9 +13,10 @@ import { PinPad, type PinTone } from "@/auth/PinPad";
 import { Button, EmptyState, T, Wordmark } from "@/ds";
 import { BRAND } from "@/lib/brand";
 import { haptic } from "@/lib/haptics";
-import { Burst, dur, springs, Swap } from "@/motion";
+import { Burst, DrawInk, dur, presets, springs, Swap } from "@/motion";
+import { C } from "@/sketch/ink";
 import { layout, space, useTheme } from "@/theme";
-import { Icon, Star } from "@/visitor/Art";
+import { Star } from "@/visitor/Art";
 
 /**
  * The frame of the full-screen moments (PIN, update, paused): wordmark on top,
@@ -29,8 +31,8 @@ function Gate({ children, footer, testID, art }: { children: React.ReactNode; fo
     <Animated.View
       testID={testID}
       accessibilityViewIsModal
-      entering={reduce ? FadeIn.duration(150) : GateEnter}
-      exiting={reduce ? FadeOut.duration(150) : GateExit}
+      entering={reduce ? presets.fadeState() : GateEnter}
+      exiting={reduce ? presets.out() : GateExit}
       style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, backgroundColor: c.bg, paddingTop: insets.top + space[5], paddingBottom: insets.bottom + space[5], paddingHorizontal: layout.gutter }}
     >
       <Wordmark />
@@ -63,18 +65,39 @@ function GateExit() {
   };
 }
 
-/** A lime star with a shield on it: the PIN keeps the account safe. */
-function PinArt({ win = 0 }: { /** Each new value fires sparks: the PIN is right. */ win?: number }) {
+/** The shield (the visitor icon's shape, 100 units): white paper, an ink outline, a tick. */
+const SHIELD_D = "M50,8 L86,22 C86,58 72,80 50,92 C28,80 14,58 14,22 L50,8";
+const SHIELD = { t: "path", d: SHIELD_D } as const;
+const TICK = { t: "path", d: "M34,50 L46,62 L68,38" } as const;
+const SHIELD_INK = { stroke: C.onLime, sw: 6, single: true, rough: 0.6 } as const;
+const TICK_INK = { stroke: C.onLime, sw: 8, single: true, rough: 0.5 } as const;
+
+/**
+ * A lime star with a shield on it: the PIN keeps the account safe. The
+ * shield's ink outline draws on as the digits go in (a quarter per digit) and
+ * closes on the fourth; when the PIN is right the tick draws itself in.
+ * Reduce Motion: the outline is drawn in full and the tick just appears.
+ */
+function PinArt({ win = 0, digits = 0 }: { /** Each new value fires sparks: the PIN is right. */ win?: number; /** Digits typed so far (0 to 4). */ digits?: number }) {
   const pop = useSharedValue(0);
   const reduce = useReducedMotion();
   React.useEffect(() => {
     pop.set(reduce ? 1 : withDelay(120, withSpring(1, springs.art)));
   }, [pop, reduce]);
   const anim = useAnimatedStyle(() => ({ opacity: Math.min(1, pop.value * 2), transform: [{ scale: 0.5 + pop.value * 0.5 }, { rotate: `${(1 - pop.value) * -90}deg` }] }));
+  const ink = useSharedValue(0);
+  const drawn = win ? 1 : Math.min(4, Math.max(0, digits)) / 4;
+  React.useEffect(() => {
+    ink.set(withTiming(drawn, { duration: dur.state }));
+  }, [ink, drawn]);
   return (
     <Animated.View style={[{ alignSelf: "center", width: 84, height: 84, marginBottom: space[4], alignItems: "center", justifyContent: "center" }, anim]}>
       <Star size={84} fill="#cdf24b" style={{ position: "absolute" }} />
-      <Icon name="shield" size={38} fill="#ffffff" />
+      <Svg width={38} height={38} viewBox="0 0 100 100" pointerEvents="none">
+        <Path d={SHIELD_D} fill="#ffffff" />
+        <DrawInk k="pin-shield" shape={SHIELD} o={SHIELD_INK} progress={ink} />
+        {win ? <DrawInk k="pin-tick" shape={TICK} o={TICK_INK} delay={dur.state} duration={260} /> : null}
+      </Svg>
       {win ? <Burst fire={win} reach={64} count={12} /> : null}
     </Animated.View>
   );
@@ -130,7 +153,7 @@ export function SetPinScreen() {
   };
 
   return (
-    <Gate testID="set-pin" art={<PinArt win={tone === "success" ? 1 : 0} />} footer={first !== null && !busy ? <Button kind="text" full label="Start again" onPress={() => { setFirst(null); setValue(""); setError(null); }} /> : null}>
+    <Gate testID="set-pin" art={<PinArt win={tone === "success" ? 1 : 0} digits={value.length} />} footer={first !== null && !busy ? <Button kind="text" full label="Start again" onPress={() => { setFirst(null); setValue(""); setError(null); }} /> : null}>
       <View style={{ alignItems: "center", gap: space[2], marginBottom: space[6] }}>
         <Swap k={busy ? "done" : first === null ? "one" : "two"}>
           <T v="h1" center>
@@ -205,7 +228,7 @@ export function LockScreen() {
   return (
     <Gate
       testID="lock"
-      art={<PinArt win={tone === "success" ? 1 : 0} />}
+      art={<PinArt win={tone === "success" ? 1 : 0} digits={value.length} />}
       footer={
         <>
           {bio ? <Button kind="quiet" label={bio} onPress={() => void tryBio()} testID="lock-biometric" /> : null}
