@@ -1,4 +1,3 @@
-import { router } from "expo-router";
 import { ArrowRight, Check } from "lucide-react-native";
 import * as React from "react";
 import { View } from "react-native";
@@ -7,6 +6,7 @@ import type { ModuleSummary, StudyHome } from "@/api/contract";
 import { useStudyHome } from "@/api/queries";
 import { EmptyState, Hero, Loaded, ProgressLine, Row, RowList, RowsSkeleton, Screen, Section, T } from "@/ds";
 import { Enter, Stamp } from "@/motion";
+import { go } from "@/api/prefetch";
 import { openTarget } from "@/nav/targets";
 import { streakLine } from "@/screens/home/home";
 import { space, useTheme } from "@/theme";
@@ -40,7 +40,7 @@ export function StudyHomeBody({ d }: { d: StudyHome }) {
                   </View>
                 ) : undefined
               }
-              onPress={() => router.push(`/study/${encodeURIComponent(m.id)}`)}
+              onPress={() => go(`/study/${encodeURIComponent(m.id)}`)}
             />
           ))}
         </RowList>

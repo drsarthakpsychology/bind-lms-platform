@@ -7,6 +7,7 @@ import { EmptyState, Hero, LoadError, Row, RowList, Screen, Section, Skeleton, T
 import { toast } from "@/ds/toast";
 import { config } from "@/lib/config";
 import { recentPractise, recentPrep } from "@/lib/recent";
+import { go } from "@/api/prefetch";
 import { hrefFor } from "@/nav/targets";
 import { TabTop } from "@/nav/top";
 import { space, useTheme } from "@/theme";
@@ -58,7 +59,7 @@ export function openRow(r: PractiseRow): void {
     return;
   }
   const href = r.play === "native" ? hrefFor(r.target) : null;
-  if (href) router.push(href);
+  if (href) go(href);
   else void Linking.openURL(`${config.site}${r.target.web}`).catch(() => toast.show("That didn't open. Try again."));
 }
 
@@ -141,7 +142,7 @@ function PrepRows({ home, fallback }: { home: PrepHome | undefined; fallback: Pr
             icon={<EntryIcon icon="list" color={c.muted} />}
             onPress={() => {
               recentPrep.add(s.id);
-              router.push(carry && resume ? resume : `/prep/${encodeURIComponent(s.id)}`);
+              go(carry && resume ? resume : `/prep/${encodeURIComponent(s.id)}`);
             }}
           />
         );

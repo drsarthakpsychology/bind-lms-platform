@@ -1,4 +1,4 @@
-import { useQuery, useQueryClient } from "@tanstack/react-query";
+import { queryOptions, useQuery, useQueryClient } from "@tanstack/react-query";
 import * as React from "react";
 
 import type * as C from "@/api/contract";
@@ -38,7 +38,14 @@ export async function getAll(path: string, query: Record<string, string | number
   return { ...first, items, nextCursor: null };
 }
 
-export const useAdminHome = () => useQuery({ queryKey: k("home3"), queryFn: async () => safeHome(await get("/admin/home")) });
+/** The admin tabs' first reads as ready-made queries: the hooks below use them, and the app loads them at open (src/api/prefetch.ts). */
+export const adminQo = {
+  home: () => queryOptions({ queryKey: k("home3"), queryFn: async () => safeHome(await get("/admin/home")) }),
+  students: () => queryOptions({ queryKey: k("students3", JSON.stringify({})), queryFn: async () => safeStudentList(await getAll("/admin/students", { search: undefined, cohort: undefined, flag: undefined, limit: 200 })) }),
+  activity: () => queryOptions({ queryKey: k("activity3"), queryFn: async () => safeActivity(await get("/admin/activity", { view: "all" })) }),
+  inbox: () => queryOptions({ queryKey: k("inbox3"), queryFn: async () => inboxFrom(await get("/admin/inbox")) }),
+};
+export const useAdminHome = () => useQuery(adminQo.home());
 export const useStudents = (q: { search?: string; cohort?: string; flag?: string } = {}) =>
   useQuery({ queryKey: k("students3", JSON.stringify(q)), queryFn: async () => safeStudentList(await getAll("/admin/students", { search: q.search, cohort: q.cohort, flag: q.flag, limit: 200 })), placeholderData: (prev) => prev });
 export const useStudentProfile = (id: string) => useQuery({ queryKey: k("profile3", id), queryFn: async () => safeStudent(await get(`/admin/students/${enc(id)}`)), enabled: id.length > 0 });
@@ -46,11 +53,11 @@ export const useStudentCredentials = (id: string) => useQuery({ queryKey: k("stu
 export const useStudentMessages = (id: string) => useQuery({ queryKey: k("student-msgs", id), queryFn: async () => studentMessagesFrom(await get(`/admin/students/${enc(id)}/messages`)), enabled: id.length > 0 });
 export const useStudentDoubts = (id: string) => useQuery({ queryKey: k("student-doubts", id), queryFn: async () => safeDoubts(await getAll("/admin/doubts", { student: id, limit: 100 })), enabled: id.length > 0 });
 
-export const useActivity = () => useQuery({ queryKey: k("activity3"), queryFn: async () => safeActivity(await get("/admin/activity", { view: "all" })) });
+export const useActivity = () => useQuery(adminQo.activity());
 export const useBehind = (cohort: string) => useQuery({ queryKey: k("behind3", cohort), queryFn: async () => behindFrom(safeActivity(await get("/admin/activity", { view: "behind" })), cohort), placeholderData: (prev) => prev });
 
 export const useBatches = () => useQuery({ queryKey: k("batches3"), queryFn: async () => safeMessages(await get("/admin/messages")) });
-export const useInbox = () => useQuery({ queryKey: k("inbox3"), queryFn: async () => inboxFrom(await get("/admin/inbox")) });
+export const useInbox = () => useQuery(adminQo.inbox());
 /** An email in the inbox. The server sends them with the inbox, so this reads the same answer. */
 export const useInboxThread = (id: string) =>
   useQuery({
