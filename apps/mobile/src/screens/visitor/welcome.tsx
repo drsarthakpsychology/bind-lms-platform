@@ -3,13 +3,13 @@ import { setStatusBarStyle } from "expo-status-bar";
 import { Check, ChevronDown, MessageCircle, Phone } from "lucide-react-native";
 import * as React from "react";
 import { Linking, ScrollView, Text, View, useWindowDimensions, type LayoutChangeEvent } from "react-native";
-import Animated, { Extrapolation, FadeInDown, interpolate, useAnimatedReaction, useAnimatedScrollHandler, useAnimatedStyle, useDerivedValue, useReducedMotion, useSharedValue, withSpring, type SharedValue } from "react-native-reanimated";
+import Animated, { Extrapolation, interpolate, useAnimatedReaction, useAnimatedScrollHandler, useAnimatedStyle, useDerivedValue, useReducedMotion, useSharedValue, withSpring, type SharedValue } from "react-native-reanimated";
 import { scheduleOnRN } from "react-native-worklets";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { Button, Meme, Row, RowList, Sheet, T } from "@/ds";
 import { haptic } from "@/lib/haptics";
-import { MaskLine, Press } from "@/motion";
+import { MaskLine, Press, presets } from "@/motion";
 import { fonts, layout, space, useTheme } from "@/theme";
 import { Icon, Person, Sparkle, Star } from "@/visitor/Art";
 import { HomeWordsCtx, useHomeWords, useWords } from "@/visitor/home-data";
@@ -679,14 +679,14 @@ function YourWeek() {
           ))}
         </View>
         <View key={String(weekend)} style={{ paddingTop: space[5], gap: space[1] }}>
-          <Animated.View entering={reduce ? undefined : FadeInDown.duration(260)}>
+          <Animated.View entering={reduce ? undefined : presets.rise(0)}>
             <Pix color={c.link}>{day.tag}</Pix>
             <T v="h2">{day.title}</T>
             <T tone="muted">{day.sub}</T>
           </Animated.View>
           <View style={{ paddingTop: space[3] }}>
             {day.steps.map((s, i) => (
-              <Animated.View key={s} entering={reduce ? undefined : FadeInDown.delay(60 + i * 40).duration(260)} style={{ flexDirection: "row", gap: space[3], paddingVertical: space[2], alignItems: "center" }}>
+              <Animated.View key={s} entering={reduce ? undefined : presets.rise(60 + i * 40)} style={{ flexDirection: "row", gap: space[3], paddingVertical: space[2], alignItems: "center" }}>
                 <Text allowFontScaling={false} style={{ fontFamily: fonts.pixelDigits, fontSize: 16, color: c.link, width: 22 }}>
                   {i + 1}
                 </Text>
