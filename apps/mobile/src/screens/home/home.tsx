@@ -9,8 +9,7 @@ import { useHome, type HomeData } from "@/api/queries";
 import type { QuestCard } from "@/api/contract";
 import { EmptyState, Hero, LoadError, Row, RowList, Screen, Section, Sheet, Skeleton, T } from "@/ds";
 import { haptic } from "@/lib/haptics";
-import { PixelPop } from "@/moments/parts";
-import { Enter, ProgressRing, RollingNumber, SkeletonIn, Stamp } from "@/motion";
+import { Enter, PixelBurst, ProgressRing, RollingNumber, SkeletonIn, Stamp } from "@/motion";
 import { openTarget } from "@/nav/targets";
 import { TabTop } from "@/nav/top";
 import { layout, space, useTheme } from "@/theme";
@@ -60,7 +59,7 @@ function Today({ goal, quests }: { goal: NonNullable<HomeData["goal"]>; quests: 
     <>
       <View>
         <GoalRing pct={pct} />
-        <PixelPop fire={fire} reach={30} />
+        <PixelBurst fire={fire} reach={30} />
       </View>
       <View style={{ flex: 1, minWidth: 0 }}>
         {reduce ? (

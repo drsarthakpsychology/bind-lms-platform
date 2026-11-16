@@ -5,9 +5,9 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { T } from "@/ds";
 import { haptic } from "@/lib/haptics";
-import { curves, dur, RollingNumber } from "@/motion";
+import { curves, dur, PixelBurst, RollingNumber } from "@/motion";
 import { fixed, fonts, layout, space } from "@/theme";
-import { PixelFlame, PixelPop } from "./parts";
+import { PixelFlame } from "./parts";
 
 /**
  * Streak kept (storyboard 4, "keep the flame"), once a day after the first
@@ -85,7 +85,7 @@ export function StreakPanel({ days, onClose }: { days: number; onClose: () => vo
             return (
               <View key={i} style={{ flex: 1, alignItems: "center", gap: 4 }}>
                 <View style={{ width: "100%", aspectRatio: 1, maxWidth: 40, borderRadius: 6, borderWidth: 2, borderColor: INK, backgroundColor: on ? INK : "transparent" }}>
-                  {isToday ? <PixelPop fire={today && !reduce ? 1 : 0} reach={26} cells={16} size={4} /> : null}
+                  {isToday ? <PixelBurst fire={today && !reduce ? 1 : 0} reach={26} cells={16} cell={4} /> : null}
                 </View>
                 <T v="caption" style={{ color: INK }}>
                   {DAYS[(dow + i + 1) % 7]}

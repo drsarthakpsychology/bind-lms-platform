@@ -8,10 +8,10 @@ import type { Credential } from "@/api/contract";
 import { useMe } from "@/api/queries";
 import { Button, T } from "@/ds";
 import { haptic } from "@/lib/haptics";
-import { Confetti, curves, dur, Stamp } from "@/motion";
+import { Confetti, curves, dur, PixelBurst, scaled, Stamp, useMotionTier } from "@/motion";
 import { fixed, fonts, layout, space } from "@/theme";
 import { InkUnderline } from "./ink";
-import { InkDraw, PixelPop } from "./parts";
+import { InkDraw } from "./parts";
 
 /**
  * Certificate earned (storyboard 3, "stamped"), full screen, the first time
@@ -49,6 +49,7 @@ function issuedLine(iso: string | null): string {
 
 export function CertificateMoment({ cert, onClose, onShare }: { cert: Credential; onClose: () => void; onShare?: (c: Credential) => void }) {
   const reduce = useReducedMotion();
+  const tier = useMotionTier();
   const insets = useSafeAreaInsets();
   const { width, height } = useWindowDimensions();
   const name = useMe().data?.name ?? "";
@@ -156,10 +157,7 @@ export function CertificateMoment({ cert, onClose, onShare }: { cert: Credential
                       <T style={{ fontFamily: fonts.pixel, fontSize: 14, lineHeight: 18, color: PAPER.ink }}>VIBHA</T>
                     </View>
                   </Stamp>
-                  <PixelPop fire={still ? 0 : 1} reach={58} />
-                  <View style={{ position: "absolute", left: -40, top: -30, right: 40, bottom: 30 }}>
-                    <PixelPop fire={still ? 0 : 1} reach={34} cells={16} size={4} />
-                  </View>
+                  <PixelBurst fire={still ? 0 : 1} bursts={2} reach={58} />
                 </View>
               ) : null}
             </View>
@@ -177,7 +175,7 @@ export function CertificateMoment({ cert, onClose, onShare }: { cert: Credential
           </View>
         </Animated.View>
       </View>
-      <Confetti fire={landed && !still ? 1 : 0} />
+      <Confetti fire={landed && !still ? 1 : 0} count={scaled(36, tier)} />
     </Animated.View>
   );
 }

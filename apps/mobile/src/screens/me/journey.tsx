@@ -6,8 +6,8 @@ import { View } from "react-native";
 import type { Journey, JourneyStat } from "@/api/contract";
 import { useJourney } from "@/api/learn";
 import { Loaded, RowsSkeleton, Screen, T } from "@/ds";
-import { PixelPop, PixelStar } from "@/moments/parts";
-import { Enter, ProgressRing, RollingNumber, useNewWins } from "@/motion";
+import { PixelStar } from "@/moments/parts";
+import { Enter, PixelBurst, ProgressRing, RollingNumber, useNewWins } from "@/motion";
 import { layout, space, useTheme } from "@/theme";
 
 /**
@@ -65,7 +65,7 @@ export function JourneyBody({ j }: { j: Journey }) {
               </View>
             </ProgressRing>
             <PixelStar fire={levelUp} size={104} />
-            <PixelPop fire={levelUp} reach={58} />
+            <PixelBurst fire={levelUp} reach={58} />
           </View>
           <View style={{ flex: 1, gap: space[1] }}>
             <T v="h3" tone="onBrand">

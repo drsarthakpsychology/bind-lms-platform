@@ -15,8 +15,8 @@ import { fonts, layout, space, useTheme } from "@/theme";
 import { ApiFailure } from "@/api/errors";
 import { isSoon } from "./api";
 import { SoonState } from "./soon";
-import { Confetti, curves, dur, presets, RollingNumber, springs, staggerDelay } from "@/motion";
-import { InkDraw, MaskUp, PixelLoader, PixelPop, useRun, useSlow } from "@/moments/parts";
+import { Confetti, curves, dur, PixelBurst, presets, RollingNumber, scaled, springs, staggerDelay, useMotionTier } from "@/motion";
+import { InkDraw, MaskUp, PixelLoader, useRun, useSlow } from "@/moments/parts";
 import { ALL_ENTRIES, type Icon } from "./catalog";
 import { EntryIcon } from "./icons";
 import { Bump } from "./fx";
@@ -91,6 +91,7 @@ export function GameFrame({ title, howTo, score, scoreLabel = "Score", hud, chil
   const closeHelp = React.useCallback(() => setHelp(false), []);
   const closeAsk = React.useCallback(() => setAsking(false), []);
   const [confetti, setConfetti] = React.useState(0);
+  const tier = useMotionTier();
   const fx = React.useMemo(() => ({ confetti: () => setConfetti((n) => n + 1) }), []);
   const body = <View style={{ gap: space[5], width: "100%", maxWidth: layout.readingWidth, alignSelf: "center" }}>{children}</View>;
   // Typing an answer: the keyboard must not cover the box or the Check button.
@@ -136,7 +137,7 @@ export function GameFrame({ title, howTo, score, scoreLabel = "Score", hud, chil
         </View>
       ) : null}
       <StickerLayer above={thumb ? thumbH || undefined : insets.bottom} />
-      <Confetti fire={confetti} />
+      <Confetti fire={confetti} count={scaled(36, tier)} />
       <HowToSheet open={help} onClose={closeHelp} steps={howTo ?? []} />
       <Sheet open={asking} onClose={closeAsk} title="Leave this round?">
         <View style={{ gap: space[3] }}>
@@ -464,7 +465,7 @@ export function EndPanel({ kicker = "Round over", score, scoreOf, line, stats, r
         </T>
         <View style={{ flexDirection: "row", alignItems: "baseline", gap: space[2] }}>
           <Animated.View style={dipStyle}>
-            {result === "won" ? <PixelPop fire={burst} reach={56} /> : null}
+            {result === "won" ? <PixelBurst fire={burst} reach={56} /> : null}
             {num ? (
               <View style={{ flexDirection: "row", alignItems: "flex-end" }} testID="end-score" accessible accessibilityLabel={score}>
                 {num.pre ? <T style={big}>{num.pre}</T> : null}
