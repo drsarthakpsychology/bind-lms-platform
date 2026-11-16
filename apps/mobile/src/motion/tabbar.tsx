@@ -1,12 +1,13 @@
 import type { BottomTabBarProps, BottomTabNavigationOptions } from "expo-router/build/layouts/Tabs";
 import * as React from "react";
-import { Animated as RNAnimated, Easing as RNEasing, Keyboard, Platform, Pressable, View, type LayoutChangeEvent } from "react-native";
-import Animated, { useAnimatedStyle, useReducedMotion, useSharedValue, withSequence, withSpring, withTiming } from "react-native-reanimated";
+import { Animated as RNAnimated, Easing as RNEasing, Platform, Pressable, View, type LayoutChangeEvent } from "react-native";
+import Animated, { interpolate, useAnimatedKeyboard, useAnimatedReaction, useAnimatedStyle, useReducedMotion, useSharedValue, withSequence, withSpring, withTiming, type SharedValue } from "react-native-reanimated";
+import { scheduleOnRN } from "react-native-worklets";
 
 import { T } from "@/ds/text";
 import { haptic } from "@/lib/haptics";
 import { fonts, useTheme } from "@/theme";
-import { springs } from "./tokens";
+import { dur, shift, springs } from "./tokens";
 
 export type TabIcon = React.ComponentType<{ size?: number; color?: string; strokeWidth?: number }>;
 
@@ -14,19 +15,34 @@ const PILL_W = 60;
 const PILL_H = 32;
 const BAR_H = 64;
 
-/** Hide the bar while the keyboard is up (Android puts the bar above the keyboard otherwise). */
-function useKeyboardUp(): boolean {
+const web = Platform.OS === "web";
+/** Reanimated's KeyboardState values (kept here so test stand-ins need no enum). */
+const KB = { OPEN: 2, CLOSING: 3, CLOSED: 4 } as const;
+const still = { height: { value: 0 }, state: { value: KB.CLOSED } } as unknown as { height: SharedValue<number>; state: SharedValue<number> };
+/** The keyboard, frame by frame on the UI thread (nothing to follow on web). */
+const useKeyboard = web || typeof useAnimatedKeyboard !== "function" ? () => still : () => useAnimatedKeyboard();
+
+/**
+ * The bar slides down behind the keyboard frame by frame as it opens (UI
+ * thread), and its space is given back once the keyboard is fully up; it
+ * comes back as soon as the keyboard starts to close.
+ */
+function useKeyboardBar(barH: number) {
+  const kb = useKeyboard();
   const [up, setUp] = React.useState(false);
-  React.useEffect(() => {
-    if (Platform.OS === "web") return;
-    const show = Keyboard.addListener("keyboardDidShow", () => setUp(true));
-    const hide = Keyboard.addListener("keyboardDidHide", () => setUp(false));
-    return () => {
-      show.remove();
-      hide.remove();
-    };
-  }, []);
-  return up;
+  useAnimatedReaction(
+    () => kb.state.value,
+    (st, prev) => {
+      if (st === prev) return;
+      if (st === KB.OPEN) scheduleOnRN(setUp, true);
+      else if (st === KB.CLOSING || st === KB.CLOSED) scheduleOnRN(setUp, false);
+    },
+  );
+  const style = useAnimatedStyle(() => {
+    const h = kb.height.value;
+    return { opacity: interpolate(h, [0, barH], [1, 0], "clamp"), transform: [{ translateY: interpolate(h, [0, barH], [0, barH], "clamp") }] };
+  });
+  return { up, style };
 }
 
 function TabItem({ label, Icon, focused, onPress, onLongPress, a11y }: { label: string; Icon?: TabIcon; focused: boolean; onPress: () => void; onLongPress: () => void; a11y?: string }) {
@@ -92,7 +108,7 @@ function TabItem({ label, Icon, focused, onPress, onLongPress, a11y }: { label: 
 export function MotionTabBar({ state, descriptors, emitter, navigateToTab, insets, icons }: BottomTabBarProps & { icons: Record<string, TabIcon> }) {
   const c = useTheme();
   const reduce = useReducedMotion();
-  const keyboard = useKeyboardUp();
+  const kb = useKeyboardBar(BAR_H + insets.bottom);
   const n = state.routes.length;
   const itemW = useSharedValue(0);
   const x = useSharedValue(state.index);
@@ -109,19 +125,10 @@ export function MotionTabBar({ state, descriptors, emitter, navigateToTab, inset
       transform: [{ translateX: x.value * w + (w - PILL_W) / 2 }, { scaleX: 1 + travel * 0.6 }, { scaleY: 1 - travel * 0.12 }],
     };
   });
-  if (keyboard) return null;
+  if (kb.up) return null;
   const pillColor = c.pill;
   return (
-    <View
-      style={{
-        backgroundColor: c.card,
-        borderTopWidth: 1,
-        borderColor: c.hairline,
-        paddingBottom: insets.bottom,
-        paddingLeft: insets.left,
-        paddingRight: insets.right,
-      }}
-    >
+    <Animated.View style={[{ backgroundColor: c.card, borderTopWidth: 1, borderColor: c.hairline, paddingBottom: insets.bottom, paddingLeft: insets.left, paddingRight: insets.right }, kb.style]}>
       <View accessibilityRole="tablist" style={{ flexDirection: "row", height: BAR_H }} onLayout={(e: LayoutChangeEvent) => itemW.set(e.nativeEvent.layout.width / n)}>
         <Animated.View
           pointerEvents="none"
@@ -164,13 +171,14 @@ export function MotionTabBar({ state, descriptors, emitter, navigateToTab, inset
           );
         })}
       </View>
-    </View>
+    </Animated.View>
   );
 }
 
 /**
- * Tab screens trade places with a fade and a 16px shift toward the side you
- * moved (200ms, Material standard curve). Off with Reduce Motion.
+ * Tab screens switch with Material's "fade through": the old tab fades out in
+ * the first half, the new one fades in and rises 8px in the second half, so
+ * two pages of text never show at once (220ms). Off with Reduce Motion.
  */
 export function tabSceneOptions(reduce: boolean): Pick<BottomTabNavigationOptions, "animation" | "sceneStyleInterpolator" | "transitionSpec"> {
   if (reduce) return { animation: "none" };
@@ -178,19 +186,12 @@ export function tabSceneOptions(reduce: boolean): Pick<BottomTabNavigationOption
     animation: "shift",
     transitionSpec: {
       animation: "timing",
-      config: { duration: 200, easing: RNEasing.bezier(0.2, 0, 0, 1) },
+      config: { duration: dur.tabOut + dur.tabIn, easing: RNEasing.bezier(0.2, 0, 0, 1) },
     },
     sceneStyleInterpolator: ({ current }: { current: { progress: RNAnimated.Value } }) => ({
       sceneStyle: {
-        opacity: current.progress.interpolate({ inputRange: [-1, 0, 1], outputRange: [0, 1, 0] }),
-        transform: [
-          {
-            translateX: current.progress.interpolate({
-              inputRange: [-1, 0, 1],
-              outputRange: [-16, 0, 16],
-            }),
-          },
-        ],
+        opacity: current.progress.interpolate({ inputRange: [-1, -0.5, 0, 0.5, 1], outputRange: [0, 0, 1, 0, 0] }),
+        transform: [{ translateY: current.progress.interpolate({ inputRange: [-1, 0, 1], outputRange: [shift.tab, 0, shift.tab] }) }],
       },
     }),
   };

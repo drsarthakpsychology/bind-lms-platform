@@ -5,7 +5,7 @@ import Svg, { Defs, LinearGradient, Rect, Stop } from "react-native-svg";
 
 import { useTheme } from "@/theme";
 import { presets } from "./enter";
-import { dur } from "./tokens";
+import { curves, dur, shift } from "./tokens";
 
 const BAND = 140;
 
@@ -47,14 +47,19 @@ export function Shimmer() {
   );
 }
 
+/** True inside `LoadSwap`, which has already waited the 120ms. */
+const Gated = React.createContext(false);
+
 /**
  * Wraps a skeleton so it only shows when loading takes longer than 120ms
- * (a fast load never flashes grey), then fades in.
+ * (a fast load never flashes grey), then fades in. Inside `LoadSwap` /
+ * `Loaded` the wait has already happened, so it just fades in.
  */
 export function SkeletonIn({ children, style }: { children?: React.ReactNode; style?: StyleProp<ViewStyle> }) {
   const reduce = useReducedMotion();
+  const gated = React.useContext(Gated);
   return (
-    <Animated.View entering={reduce ? undefined : presets.fade(dur.skeletonDelay)} style={style}>
+    <Animated.View entering={reduce ? undefined : presets.fade(gated ? 0 : dur.skeletonDelay)} style={style}>
       {children}
     </Animated.View>
   );
@@ -62,13 +67,54 @@ export function SkeletonIn({ children, style }: { children?: React.ReactNode; st
 
 /**
  * Wraps loaded content so it settles in where the skeleton was: a fade with
- * a 6px rise. Put it around the first render of data; refreshes do not replay it.
+ * a 6px rise (260ms, on the UI thread, also on web). Only the first
+ * appearance animates. Reduce Motion: shown at once.
  */
 export function Reveal({ children, style }: { children?: React.ReactNode; style?: StyleProp<ViewStyle> }) {
   const reduce = useReducedMotion();
-  return (
-    <Animated.View entering={reduce ? undefined : presets.rise(0)} style={style}>
-      {children}
-    </Animated.View>
-  );
+  const v = useSharedValue(reduce ? 1 : 0);
+  React.useEffect(() => {
+    if (!reduce) v.set(withTiming(1, { duration: dur.enter, easing: curves.out }));
+  }, [reduce, v]);
+  const anim = useAnimatedStyle(() => ({ opacity: v.value, transform: [{ translateY: (1 - v.value) * shift.reveal }] }));
+  return <Animated.View style={[style, anim]}>{children}</Animated.View>;
+}
+
+export type LoadPhase = "wait" | "skeleton" | "content";
+
+/**
+ * When to show a skeleton: nothing for the first 120ms (a quick load never
+ * flashes grey); once it shows, it stays at least 380ms (no grey blink);
+ * then the content. `revealed` is true when the content followed a wait, so
+ * it should settle in with `Reveal`; saved data shows at once, still.
+ */
+export function useLoadGate(ready: boolean): { phase: LoadPhase; revealed: boolean } {
+  const [st, setSt] = React.useState<{ phase: LoadPhase; at: number; revealed: boolean }>({ phase: ready ? "content" : "wait", at: 0, revealed: false });
+  // Ready before the skeleton was due: straight to content (adjusted while rendering).
+  if (ready && st.phase === "wait") setSt({ phase: "content", at: 0, revealed: true });
+  if (!ready && st.phase === "content") setSt({ phase: "wait", at: 0, revealed: false });
+  React.useEffect(() => {
+    if (st.phase === "wait" && !ready) {
+      const t = setTimeout(() => setSt({ phase: "skeleton", at: Date.now(), revealed: false }), dur.skeletonDelay);
+      return () => clearTimeout(t);
+    }
+    if (st.phase === "skeleton" && ready) {
+      const t = setTimeout(() => setSt({ phase: "content", at: 0, revealed: true }), Math.max(0, st.at + dur.skeletonMin - Date.now()));
+      return () => clearTimeout(t);
+    }
+  }, [ready, st]);
+  return { phase: st.phase, revealed: st.revealed };
+}
+
+/**
+ * Loading to content in one part: nothing for 120ms, then the skeleton for
+ * at least 380ms, then the content rises 6px into place. `Loaded` uses it.
+ *
+ *   <LoadSwap ready={!!q.data} skeleton={<LectureSkeleton />}>{q.data ? <Lecture d={q.data} /> : null}</LoadSwap>
+ */
+export function LoadSwap({ ready, skeleton, children }: { ready: boolean; skeleton: React.ReactNode; children?: React.ReactNode }) {
+  const { phase, revealed } = useLoadGate(ready);
+  if (phase === "wait") return null;
+  if (phase === "skeleton") return <Gated.Provider value>{skeleton}</Gated.Provider>;
+  return revealed ? <Reveal>{children}</Reveal> : <>{children}</>;
 }

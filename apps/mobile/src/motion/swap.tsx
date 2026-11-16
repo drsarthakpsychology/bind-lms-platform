@@ -1,6 +1,13 @@
 import * as React from "react";
 import { View, type StyleProp, type ViewStyle } from "react-native";
-import Animated, { useAnimatedReaction, useAnimatedStyle, useReducedMotion, useSharedValue, withTiming, type SharedValue } from "react-native-reanimated";
+import Animated, {
+  useAnimatedReaction,
+  useAnimatedStyle,
+  useReducedMotion,
+  useSharedValue,
+  withTiming,
+  type SharedValue,
+} from "react-native-reanimated";
 import { scheduleOnRN } from "react-native-worklets";
 
 import { curves, dur, shift } from "./tokens";
@@ -39,19 +46,38 @@ const Hold = React.memo(
 export function Swap({ k, dir = 0, style, testID, accessibilityLiveRegion, children }: Props) {
   const reduce = useReducedMotion();
   const painted = useSharedValue(0);
-  const [st, setSt] = React.useState<{ cur: string | number; n: number; out: { k: string | number; n: number }[] }>({ cur: k, n: 0, out: [] });
+  const [st, setSt] = React.useState<{
+    cur: string | number;
+    n: number;
+    out: { k: string | number; n: number }[];
+  }>({ cur: k, n: 0, out: [] });
   // Adjust state while rendering when the key changes (React's "store info from previous renders").
   if (st.cur !== k) {
     const n = st.n + 1;
     setSt({ cur: k, n, out: reduce ? [] : [...st.out, { k: st.cur, n: st.n }].slice(-2) });
   }
-  const gone = React.useCallback((gen: number) => setSt((s) => ({ ...s, out: s.out.filter((o) => o.n !== gen) })), []);
+  const gone = React.useCallback(
+    (gen: number) => setSt((s) => ({ ...s, out: s.out.filter((o) => o.n !== gen) })),
+    [],
+  );
   // Each layer is keyed by its generation, so a layer keeps its instance from live to leaving.
-  const layers = [...st.out.map((o) => ({ key: o.k, n: o.n, live: false })), { key: st.cur, n: st.n, live: true }];
+  const layers = [
+    ...st.out.map((o) => ({ key: o.k, n: o.n, live: false })),
+    { key: st.cur, n: st.n, live: true },
+  ];
   return (
     <View testID={testID} accessibilityLiveRegion={accessibilityLiveRegion}>
       {layers.map((l) => (
-        <Layer key={`${l.key}:${l.n}`} n={l.n} live={l.live} dir={dir} still={reduce || st.n === 0} painted={painted} onGone={gone} style={style}>
+        <Layer
+          key={`${l.key}:${l.n}`}
+          n={l.n}
+          live={l.live}
+          dir={dir}
+          still={reduce || st.n === 0}
+          painted={painted}
+          onGone={gone}
+          style={style}
+        >
           <Hold frozen={!l.live} node={l.live ? children : null} />
         </Layer>
       ))}
@@ -59,7 +85,25 @@ export function Swap({ k, dir = 0, style, testID, accessibilityLiveRegion, child
   );
 }
 
-function Layer({ n, live, dir, still, painted, onGone, style, children }: { n: number; live: boolean; dir: Dir; still: boolean; painted: SharedValue<number>; onGone: (gen: number) => void; style?: StyleProp<ViewStyle>; children: React.ReactNode }) {
+function Layer({
+  n,
+  live,
+  dir,
+  still,
+  painted,
+  onGone,
+  style,
+  children,
+}: {
+  n: number;
+  live: boolean;
+  dir: Dir;
+  still: boolean;
+  painted: SharedValue<number>;
+  onGone: (gen: number) => void;
+  style?: StyleProp<ViewStyle>;
+  children: React.ReactNode;
+}) {
   // The first content and Reduce Motion start in place; a swapped-in layer starts hidden.
   const [first] = React.useState(still);
   const o = useSharedValue(first ? 1 : 0);
@@ -95,7 +139,10 @@ function Layer({ n, live, dir, still, painted, onGone, style, children }: { n: n
     const t = setTimeout(() => painted.set(Math.max(painted.get(), n + 1)), 250);
     return () => clearTimeout(t);
   }, [live, painted, n]);
-  const anim = useAnimatedStyle(() => ({ opacity: o.value, transform: [{ translateX: x.value }, { translateY: y.value }] }));
+  const anim = useAnimatedStyle(() => ({
+    opacity: o.value,
+    transform: [{ translateX: x.value }, { translateY: y.value }],
+  }));
   return (
     <Animated.View
       onLayout={onLayout}

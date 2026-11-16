@@ -7,7 +7,7 @@ process.env.EXPO_PUBLIC_API_MODE = "mock";
 
 require("react-native-gesture-handler/jestSetup");
 
-jest.mock("react-native-worklets", () => ({ scheduleOnRN: (fn: Function, ...rest: unknown[]) => fn(...rest), runOnJS: (fn: unknown) => fn }));
+jest.mock("react-native-worklets", () => ({ scheduleOnRN: (fn: Function, ...rest: unknown[]) => fn(...rest), scheduleOnUI: (fn: Function, ...rest: unknown[]) => fn(...rest), runOnJS: (fn: unknown) => fn, runOnUI: (fn: unknown) => fn }));
 // A small stand-in for Reanimated: values are plain, animations finish at once.
 jest.mock("react-native-reanimated", () => {
   const RN = require("react-native");
@@ -41,6 +41,7 @@ jest.mock("react-native-reanimated", () => {
     useDerivedValue: (fn: () => unknown) => ({ value: fn(), get: fn }),
     useAnimatedReaction: () => undefined,
     interpolate: (x: number) => x,
+    useAnimatedKeyboard: () => ({ height: { value: 0, get: () => 0 }, state: { value: 4, get: () => 4 } }),
     Extrapolation: { CLAMP: "clamp" },
     FadeIn: anim(),
     FadeOut: anim(),
