@@ -78,24 +78,24 @@ export const SCENARIOS = [
 
 
 export const MODULES = [
-  { n: "01", title: "Foundations and the therapy room", text: "Normal versus abnormal · ethics and the Mental Healthcare Act 2017 · what you can and can't do · seating, body language, listening" },
-  { n: "02", title: "Psychiatric interview and MSE", text: "Interview structure · full history · complete MSE · insight and judgement · history from the Indian family" },
-  { n: "03", title: "Defence mechanisms in practice", text: "Spotting defences and thinking errors in session · what they tell you · using them in the plan" },
-  { n: "04", title: "Psychological assessment", text: "Interview, observation and case study · choosing, giving and scoring a test · writing up the result" },
-  { n: "05", title: "Depression, anxiety and suicide risk", text: "From first interview to treatment plan · panic, phobias, social anxiety · asking about suicide · safety planning · crisis help" },
-  { n: "06", title: "Bipolar disorder, schizophrenia, OCD", text: "Interviewing mania and psychosis · delusions and hallucinations · catatonia · OCD and exposure therapy" },
-  { n: "07", title: "Medicines and side effects", text: "Common names, generic and brand · what each group is for · common side effects · side effect or symptom? · red flags · mid-programme test" },
-  { n: "08", title: "Clinical reasoning and diagnosis", text: "Using ICD-11 and DSM-5-TR · telling similar disorders apart · biases that mislead clinicians · from symptoms to formulation" },
-  { n: "09", title: "Therapies I: cognitive and behavioural", text: "CBT · REBT · exposure therapy · behavioural techniques · how your therapy is scored · hypnotherapy" },
-  { n: "10", title: "Therapies II: mixing them", text: "DBT · ACT · person-centred, existential, Gestalt · narrative, transactional analysis · motivational interviewing · mindfulness · combining therapies" },
-  { n: "11", title: "Personality disorders", text: "Borderline, narcissistic, antisocial, histrionic · anger and splitting in session · managing your own reactions to a patient" },
-  { n: "12", title: "Couples, families, addiction, crisis", text: "Couple and family therapy in Indian families · grief counselling · addiction and de-addiction · calming an agitated patient" },
-  { n: "13", title: "Body, culture, memory and dementia", text: "Physical symptoms with a psychological cause · Indian ways of expressing distress · delirium, dementia or depression · counselling the caregiver" },
-  { n: "14", title: "Child and developmental psychology", text: "The parent interview · ADHD and parent training · autism, from early signs to referral · learning disability and school support" },
-  { n: "15", title: "Trauma, PTSD and eating disorders", text: "PTSD and complex trauma · grounding · stabilise before processing · eating disorders: medical red flags, family-based treatment" },
-  { n: "16", title: "Notes, reports and final portfolio", text: "SOAP, DAP and BIRP notes · formulation with the five Ps · referral letters · final project: one patient followed over time" },
-  { n: "17", title: "Across the lifespan (throughout)", text: "Medicines in older adults and children · group behaviour and conflict · matching therapy to the patient" },
-  { n: "18", title: "Forensic psychology", text: "Fitness to stand trial · involuntary admission under the Mental Healthcare Act 2017 · risk of violence · forensic reports · POCSO cases" },
+  { n: "01", title: "Foundations and the therapy room", text: "Normal versus abnormal\u00a0· ethics and the Mental Healthcare Act 2017\u00a0· what you can and can't do\u00a0· seating, body language, listening" },
+  { n: "02", title: "Psychiatric interview and MSE", text: "Interview structure\u00a0· full history\u00a0· complete MSE\u00a0· insight and judgement\u00a0· history from the Indian family" },
+  { n: "03", title: "Defence mechanisms in practice", text: "Spotting defences and thinking errors in session\u00a0· what they tell you\u00a0· using them in the plan" },
+  { n: "04", title: "Psychological assessment", text: "Interview, observation and case study\u00a0· choosing, giving and scoring a test\u00a0· writing up the result" },
+  { n: "05", title: "Depression, anxiety and suicide risk", text: "From first interview to treatment plan\u00a0· panic, phobias, social anxiety\u00a0· asking about suicide\u00a0· safety planning\u00a0· crisis help" },
+  { n: "06", title: "Bipolar disorder, schizophrenia, OCD", text: "Interviewing mania and psychosis\u00a0· delusions and hallucinations\u00a0· catatonia\u00a0· OCD and exposure therapy" },
+  { n: "07", title: "Medicines and side effects", text: "Common names, generic and brand\u00a0· what each group is for\u00a0· common side effects\u00a0· side effect or symptom?\u00a0· red flags\u00a0· mid-programme test" },
+  { n: "08", title: "Clinical reasoning and diagnosis", text: "Using ICD-11 and DSM-5-TR\u00a0· telling similar disorders apart\u00a0· biases that mislead clinicians\u00a0· from symptoms to formulation" },
+  { n: "09", title: "Therapies I: cognitive and behavioural", text: "CBT\u00a0· REBT\u00a0· exposure therapy\u00a0· behavioural techniques\u00a0· how your therapy is scored\u00a0· hypnotherapy" },
+  { n: "10", title: "Therapies II: mixing them", text: "DBT\u00a0· ACT\u00a0· person-centred, existential, Gestalt\u00a0· narrative, transactional analysis\u00a0· motivational interviewing\u00a0· mindfulness\u00a0· combining therapies" },
+  { n: "11", title: "Personality disorders", text: "Borderline, narcissistic, antisocial, histrionic\u00a0· anger and splitting in session\u00a0· managing your own reactions to a patient" },
+  { n: "12", title: "Couples, families, addiction, crisis", text: "Couple and family therapy in Indian families\u00a0· grief counselling\u00a0· addiction and de-addiction\u00a0· calming an agitated patient" },
+  { n: "13", title: "Body, culture, memory and dementia", text: "Physical symptoms with a psychological cause\u00a0· Indian ways of expressing distress\u00a0· delirium, dementia or depression\u00a0· counselling the caregiver" },
+  { n: "14", title: "Child and developmental psychology", text: "The parent interview\u00a0· ADHD and parent training\u00a0· autism, from early signs to referral\u00a0· learning disability and school support" },
+  { n: "15", title: "Trauma, PTSD and eating disorders", text: "PTSD and complex trauma\u00a0· grounding\u00a0· stabilise before processing\u00a0· eating disorders: medical red flags, family-based treatment" },
+  { n: "16", title: "Notes, reports and final portfolio", text: "SOAP, DAP and BIRP notes\u00a0· formulation with the five Ps\u00a0· referral letters\u00a0· final project: one patient followed over time" },
+  { n: "17", title: "Across the lifespan (throughout)", text: "Medicines in older adults and children\u00a0· group behaviour and conflict\u00a0· matching therapy to the patient" },
+  { n: "18", title: "Forensic psychology", text: "Fitness to stand trial\u00a0· involuntary admission under the Mental Healthcare Act 2017\u00a0· risk of violence\u00a0· forensic reports\u00a0· POCSO cases" },
 ] as const;
 
 export const INTERVIEW = [
@@ -123,13 +123,13 @@ export const MSE = [
 export const CASE_SHEET = {
   learn: { title: "Depression", items: ["Low mood most days", "Loss of interest", "Poor sleep and appetite", "Hopelessness", "Rule out: bipolar, alcohol, thyroid"] },
   rows: [
-    { k: "Chief complaints", v: "Low mood × 3 months · poor sleep × 2 months · lost interest in work × 2 months", mark: "Low mood × 3 months" },
+    { k: "Chief complaints", v: "Low mood × 3 months\u00a0· poor sleep × 2 months\u00a0· lost interest in work × 2 months", mark: "Low mood × 3 months" },
     { k: "Present illness", v: "Gradual onset after losing his job. Worse in the mornings. No past episodes of elated mood." },
-    { k: "Personal · family", v: "Father treated for depression. Social drinker; alcohol use asked and noted.", mark: "alcohol use asked and noted" },
+    { k: "Personal\u00a0· family", v: "Father treated for depression. Social drinker; alcohol use asked and noted.", mark: "alcohol use asked and noted" },
     { k: "MSE", v: "Affect: depressed, restricted. Thought: hopelessness, no suicidal plan. Insight present.", mark: "depressed, restricted" },
     { k: "Provisional diagnosis", v: "Depressive episode, moderate (ICD-11)", mark: "Depressive episode, moderate" },
-    { k: "Ruled out", v: "Bipolar disorder · alcohol-related low mood · thyroid problem" },
-    { k: "Plan", v: "Psychiatrist review for medicines · behavioural activation and CBT · follow-up in one week" },
+    { k: "Ruled out", v: "Bipolar disorder\u00a0· alcohol-related low mood\u00a0· thyroid problem" },
+    { k: "Plan", v: "Psychiatrist review for medicines\u00a0· behavioural activation and CBT\u00a0· follow-up in one week" },
   ],
 } as const;
 
@@ -154,7 +154,7 @@ export const SIDE_OR_SYMPTOM = [
   { q: "Shaking hands", a: "Nerves, or lithium?" },
 ] as const;
 
-export const RED_FLAGS = "High fever with stiff muscles · a new skin rash · confusion or fainting · new or worse thoughts of suicide";
+export const RED_FLAGS = "High fever with stiff muscles\u00a0· a new skin rash\u00a0· confusion or fainting\u00a0· new or worse thoughts of suicide";
 
 export const THERAPIES = [
   { name: "CBT", text: "Change the thoughts and habits that keep a problem going.", tone: "blue" },
@@ -213,18 +213,18 @@ export const FACULTY = [
 
 export const LEADERSHIP = [
   { name: "Dr. Vishwa V. Dave", role: "Co-Founder, CEO & CFO" },
-  { name: "Kavya Bothra", role: "Chief Operating Officer · point of contact for authorisation" },
+  { name: "Kavya Bothra", role: "Chief Operating Officer\u00a0· point of contact for authorisation" },
 ] as const;
 
 export const DAY = {
   weekday: {
-    tag: "Weekday · in person",
+    tag: "Weekday\u00a0· in person",
     title: "Patient batch",
     sub: "Morning or evening",
     steps: ["Arrive at the clinic", "See a patient with your group", "Plan the treatment together", "Get the psychiatrist's corrections", "Write the case sheet", "Add it to your case log"],
   },
   weekend: {
-    tag: "Weekend · everyone",
+    tag: "Weekend\u00a0· everyone",
     title: "Live discussion",
     sub: "Online or in person, from 8 am",
     steps: ["Join the psychiatrist, live", "One patient, or one disorder, in depth", "“What would you do?”", "The psychiatrist's answer, from years of practice", "Ask as many questions as you want", "Your assignment for the week"],
@@ -321,7 +321,7 @@ export const JOURNEY = {
     { k: "Diagnosis", title: "Name it, provisionally", text: "Depressive episode, moderate (ICD-11). Written, not guessed.", icon: "clipboard" },
     { k: "Case sheet", title: "Write it up properly", text: "Every finding in its place, in the format psychiatrists read.", icon: "book" },
     { k: "Treatment plan", title: "Plan with the psychiatrist", text: "Medicines reviewed by the psychiatrist. Your role, their role, clearly split.", icon: "pill" },
-    { k: "Therapy plan", title: "Plan the sessions", text: "Sessions 1 to 2 motivational interviewing · 3 to 6 behavioural activation + CBT · then relapse prevention.", icon: "puzzle" },
+    { k: "Therapy plan", title: "Plan the sessions", text: "Sessions 1 to 2 motivational interviewing\u00a0· 3 to 6 behavioural activation + CBT\u00a0· then relapse prevention.", icon: "puzzle" },
     { k: "Counselling", title: "Talk to him, and his family", text: "Explain the illness simply. Involve family without breaking confidence.", icon: "family" },
     { k: "Follow-up", title: "Review and adjust", text: "Side effects checked. Progress measured. Plan changed when it isn't working.", icon: "loop" },
   ],
@@ -342,7 +342,7 @@ export const DISORDERS = [
     says: "I feel tired all the time. Nothing feels interesting any more.",
     looks: "Low mood, no interest, poor sleep and appetite. Often first described as body aches or weakness.",
     ask: "“Have you ever felt that life is not worth living?” Asked directly and calmly.",
-    mse: "Low, restricted affect · slow speech · hopeless and guilty thoughts",
+    mse: "Low, restricted affect\u00a0· slow speech\u00a0· hopeless and guilty thoughts",
     ruleOut: "Thyroid problems, anaemia, bipolar disorder, alcohol use",
     meds: "SSRIs such as escitalopram, sertraline, fluoxetine",
     therapy: "Behavioural activation first, then CBT for negative thinking",
@@ -354,7 +354,7 @@ export const DISORDERS = [
     says: "My heart races and I can't breathe. I thought I was dying.",
     looks: "Constant worry, racing heart, breathlessness. Many come straight from a normal ECG.",
     ask: "“What were you doing when the first attack came? What did you think was happening?”",
-    mse: "Anxious affect · restlessness · catastrophic thoughts",
+    mse: "Anxious affect\u00a0· restlessness\u00a0· catastrophic thoughts",
     ruleOut: "Thyroid, heart rhythm problems, too much caffeine, withdrawal",
     meds: "SSRIs; short-term clonazepam, and why it is kept short",
     therapy: "Explaining the body's alarm, breathing retraining, exposure, CBT",
@@ -366,7 +366,7 @@ export const DISORDERS = [
     says: "I don't need sleep. I'm starting three businesses this week.",
     looks: "Spells of huge energy, little sleep, big spending, between spells of depression.",
     ask: "“Was there a time you needed very little sleep but felt full of energy?”",
-    mse: "High or irritable mood · pressured speech · flight of ideas · grandiosity",
+    mse: "High or irritable mood\u00a0· pressured speech\u00a0· flight of ideas\u00a0· grandiosity",
     ruleOut: "A switch caused by antidepressants, steroids, substance use, thyroid",
     meds: "Mood stabilisers: lithium, valproate; atypical antipsychotics",
     therapy: "Mood charting, early warning signs, family psychoeducation",
@@ -378,7 +378,7 @@ export const DISORDERS = [
     says: "The neighbours are talking about me through the walls.",
     looks: "Voices, fixed false beliefs, withdrawal. Families often try faith healers first.",
     ask: "“Do you hear voices when no one is around? What do they say?”",
-    mse: "Delusions · hallucinations · muddled thinking · flat affect · poor insight",
+    mse: "Delusions\u00a0· hallucinations\u00a0· muddled thinking\u00a0· flat affect\u00a0· poor insight",
     ruleOut: "Drug-induced psychosis, delirium, epilepsy, mood disorder with psychosis",
     meds: "Antipsychotics: risperidone, olanzapine, aripiprazole; long-acting injections",
     therapy: "Family psychoeducation, sticking with treatment, social skills, CBT for psychosis",
@@ -390,7 +390,7 @@ export const DISORDERS = [
     says: "I know it's silly, but I have to wash until it feels right.",
     looks: "Washing, checking or counting to quieten unwanted thoughts. Often hidden for years.",
     ask: "“Do some thoughts keep coming back that you don't want? What do you do to stop them?”",
-    mse: "Obsessions they know are their own · rituals · anxiety · usually good insight",
+    mse: "Obsessions they know are their own\u00a0· rituals\u00a0· anxiety\u00a0· usually good insight",
     ruleOut: "Psychosis, obsessive personality, tics, depression",
     meds: "SSRIs, often at higher doses (fluoxetine, fluvoxamine); clomipramine",
     therapy: "Exposure and response prevention (ERP)",
@@ -414,7 +414,7 @@ export const DISORDERS = [
     says: "I can stop whenever I want. I only drink at night.",
     looks: "Alcohol, tobacco, cannabis or pills. Usually brought in by family after a crisis.",
     ask: "“When was your last drink? How much? What happens when you stop?”",
-    mse: "Signs of intoxication or withdrawal · denial · playing it down",
+    mse: "Signs of intoxication or withdrawal\u00a0· denial\u00a0· playing it down",
     ruleOut: "Withdrawal delirium, head injury, liver disease, depression underneath",
     meds: "Detox: chlordiazepoxide or lorazepam with thiamine. Later: naltrexone, acamprosate, disulfiram",
     therapy: "Motivational interviewing, relapse prevention, involving the family",
@@ -438,7 +438,7 @@ export const DISORDERS = [
     says: "I see the accident again every night. I don't take that road any more.",
     looks: "Nightmares, flashbacks, jumpiness and avoidance after an accident, assault or loss.",
     ask: "Safety first. Don't push for details in the first session.",
-    mse: "On guard · easily startled · numb · intrusive memories",
+    mse: "On guard\u00a0· easily startled\u00a0· numb\u00a0· intrusive memories",
     ruleOut: "Head injury, depression, substance use, acute stress (under a month)",
     meds: "SSRIs such as sertraline; prazosin for nightmares in some cases",
     therapy: "Stabilise and ground first, then trauma-focused CBT",
@@ -450,7 +450,7 @@ export const DISORDERS = [
     says: "I'm not thin. I just need to lose a little more.",
     looks: "Weight loss, fear of gaining weight, or binge-and-purge cycles. Parents often notice first.",
     ask: "“How do you feel about your body? What do you eat on a usual day?”",
-    mse: "Preoccupied with weight and shape · low mood · denies how serious it is",
+    mse: "Preoccupied with weight and shape\u00a0· low mood\u00a0· denies how serious it is",
     ruleOut: "Thyroid, diabetes, gut problems, depression",
     meds: "No medicine fixes it. Fluoxetine helps bulimia and depression alongside",
     therapy: "Family-based treatment, CBT for eating disorders, meal plans with a dietician",
@@ -462,7 +462,7 @@ export const DISORDERS = [
     says: "(Daughter) Papa was fine last week. Now he doesn't know where he is.",
     looks: "Slow forgetting over months (dementia), or sudden confusion over days (delirium).",
     ask: "To the family: “Did it start suddenly or slowly? Is it worse at night?”",
-    mse: "Disoriented · poor attention · memory loss · screened with MMSE or MoCA",
+    mse: "Disoriented\u00a0· poor attention\u00a0· memory loss\u00a0· screened with MMSE or MoCA",
     ruleOut: "Infection, low sodium, medicines, depression, B12 or thyroid problems",
     meds: "Dementia: donepezil, memantine. Delirium: treat the cause first",
     therapy: "Caregiver counselling, routine, memory aids, a safe home",
@@ -601,12 +601,12 @@ export const BEYOND = [
 export const WEEKS_TIMELINE = [
   { w: "Weeks 1 to 2", t: "Foundations, the therapy room, the psychiatric interview and MSE" },
   { w: "Weeks 3 to 4", t: "Defence mechanisms in practice, psychological assessment" },
-  { w: "Weeks 5 to 6", t: "Depression, anxiety, suicide risk · bipolar, schizophrenia, OCD" },
-  { w: "Weeks 7 to 8", t: "Medicines and side effects · clinical reasoning and diagnosis" },
+  { w: "Weeks 5 to 6", t: "Depression, anxiety, suicide risk\u00a0· bipolar, schizophrenia, OCD" },
+  { w: "Weeks 7 to 8", t: "Medicines and side effects\u00a0· clinical reasoning and diagnosis" },
   { w: "Weeks 9 to 10", t: "Therapies I and II: how each works, then mixing them" },
-  { w: "Weeks 11 to 12", t: "Personality disorders · couples, families, addiction, crisis" },
-  { w: "Weeks 13 to 14", t: "Body, culture, memory and dementia · children and development" },
-  { w: "Weeks 15 to 16", t: "Trauma and eating disorders · notes, reports, final portfolio" },
+  { w: "Weeks 11 to 12", t: "Personality disorders\u00a0· couples, families, addiction, crisis" },
+  { w: "Weeks 13 to 14", t: "Body, culture, memory and dementia\u00a0· children and development" },
+  { w: "Weeks 15 to 16", t: "Trauma and eating disorders\u00a0· notes, reports, final portfolio" },
 ] as const;
 
 /* ======================================================================
@@ -655,18 +655,18 @@ export const JOIN_STEPS = [
 ] as const;
 
 export const DISCIPLINES = [
-  { name: "Clinical psychology", text: "Disorders · interview · MSE · diagnosis · formulation · treatment plans · forensic work" },
+  { name: "Clinical psychology", text: "Disorders\u00a0· interview\u00a0· MSE\u00a0· diagnosis\u00a0· formulation\u00a0· treatment plans\u00a0· forensic work" },
   { name: "Psychotherapies", text: "18 therapies, how each works, and how to mix them for one patient" },
-  { name: "Psychopharmacology", text: "Common medicine names · side effects · side effect or symptom? · red flags · when to refer" },
-  { name: "Child psychology", text: "Development · assessing children · ADHD, autism, learning difficulties · working with parents" },
-  { name: "Neuropsychology", text: "Brain and behaviour · attention and memory · dementia and delirium · reading a report" },
-  { name: "Hypnotherapy", text: "Induction · trance states · suggestibility · where it helps, and where it doesn't" },
-  { name: "Counselling", text: "Listening · silence · boundaries · risk · closing a session well" },
-  { name: "Professional practice", text: "Setting fees · records · referral networks · ethical promotion · avoiding burnout", extra: true },
+  { name: "Psychopharmacology", text: "Common medicine names\u00a0· side effects\u00a0· side effect or symptom?\u00a0· red flags\u00a0· when to refer" },
+  { name: "Child psychology", text: "Development\u00a0· assessing children\u00a0· ADHD, autism, learning difficulties\u00a0· working with parents" },
+  { name: "Neuropsychology", text: "Brain and behaviour\u00a0· attention and memory\u00a0· dementia and delirium\u00a0· reading a report" },
+  { name: "Hypnotherapy", text: "Induction\u00a0· trance states\u00a0· suggestibility\u00a0· where it helps, and where it doesn't" },
+  { name: "Counselling", text: "Listening\u00a0· silence\u00a0· boundaries\u00a0· risk\u00a0· closing a session well" },
+  { name: "Professional practice", text: "Setting fees\u00a0· records\u00a0· referral networks\u00a0· ethical promotion\u00a0· avoiding burnout", extra: true },
 ] as const;
 
 export const ASSESSMENT = [
-  { title: "Every week", text: "Assignments · reflective portfolio · case logs from your patient sessions · written feedback" },
+  { title: "Every week", text: "Assignments\u00a0· reflective portfolio\u00a0· case logs from your patient sessions\u00a0· written feedback" },
   { title: "Timed write-ups", text: "Case formulations against the clock, returned with the faculty's reasoning beside yours" },
   { title: "Final exam", text: "Written exam, the same online and offline, plus your portfolio" },
   { title: "If you fall short", text: "Targeted feedback, extra practice and a re-sit. Nobody is dropped." },
