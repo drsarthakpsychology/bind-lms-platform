@@ -2,6 +2,7 @@ import * as React from "react";
 import { ActivityIndicator, Pressable, View, type StyleProp, type ViewStyle } from "react-native";
 import Animated, { Easing, useAnimatedStyle, useReducedMotion, useSharedValue, withTiming } from "react-native-reanimated";
 
+import { crumb } from "@/lib/breadcrumb";
 import { haptic } from "@/lib/haptics";
 import { layout, motion, space, useTheme } from "@/theme";
 import { T } from "./text";
@@ -57,6 +58,7 @@ export function Button({ label, onPress, kind = "primary", icon, disabled, busy,
       locked.current = true;
     }
     if (kind === "primary") haptic.tap();
+    crumb.action(label);
     onPress?.();
   };
   const a11y = { accessibilityRole: "button" as const, accessibilityLabel: label, accessibilityHint, accessibilityState: { disabled: !!blocked, busy: !!busy } };

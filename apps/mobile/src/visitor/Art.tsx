@@ -2,6 +2,8 @@ import * as React from "react";
 import { View, type StyleProp, type ViewStyle } from "react-native";
 import { SvgXml } from "react-native-svg";
 
+import { safeSvgXml } from "@/lib/svg-safe";
+
 import { CAST, characterSvg, iconSvg, sparkleSvg, starSvg, type CastName, type IconName } from "./art";
 
 /** The website's illustrations never change while the app runs: build each SVG string once. */
@@ -9,7 +11,7 @@ const cache = new Map<string, string>();
 function memo(key: string, make: () => string): string {
   let v = cache.get(key);
   if (v === undefined) {
-    v = make();
+    v = safeSvgXml(make());
     cache.set(key, v);
   }
   return v;
