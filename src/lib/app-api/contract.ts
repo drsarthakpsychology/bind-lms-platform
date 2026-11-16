@@ -1302,3 +1302,318 @@ export type MessageBatches = { batches: { batchId: string; title: string; sentAt
 
 /** POST /admin/doubts/:id/hide */
 export type HideBody = { hidden: boolean };
+
+/* =====================================================================
+ * Clinic: schedule, QR attendance, leave, OPD cases (docs/app/API_CONTRACT_CLINIC.md)
+ * Dates are "YYYY-MM-DD" and times "HH:MM", clinic local time (India, UTC+05:30).
+ * Instants (scan times, decisions) are ISO strings.
+ * ===================================================================== */
+
+export type ClinicKind = "opd_morning" | "opd_evening" | "class" | "online_class" | "early_class" | "other";
+export type ClinicBatch = "morning" | "evening";
+export type ClinicDirection = "in" | "out";
+
+/** One student's place in a session. */
+export type ClinicMyStatus =
+  | "upcoming" // not started (or open and not scanned yet)
+  | "in" // scanned in, not out yet
+  | "present" // scanned in and out
+  | "late" // scanned in after start + late minutes
+  | "no_scan_out" // scanned in, session over, never scanned out (flagged, not invented)
+  | "on_leave" // approved leave
+  | "absent" // required, over, no scan, no leave
+  | "cancelled"
+  | "not_required"; // OPD day the student is not assigned to
+
+export type ClinicSession = {
+  id: string;
+  cohortIds: string[];
+  date: string;
+  start: string;
+  end: string;
+  kind: ClinicKind;
+  title: string;
+  place: string | null;
+  onlineLink: string | null;
+  compulsory: boolean;
+  status: "scheduled" | "cancelled";
+  origin: "timetable" | "one_off";
+  note: string | null;
+  /** "2026-11-18 08:00" when the admin moved it. */
+  movedFrom: string | null;
+  /** OPD sessions only. */
+  batch: ClinicBatch | null;
+};
+
+/** A session as one student sees it. */
+export type ClinicMySession = ClinicSession & {
+  /** Required for this student: compulsory classes, and OPD days they are assigned to. */
+  required: boolean;
+  /** OPD session on one of this student's published OPD days. */
+  assigned: boolean;
+  /** Scanning is accepted now (30 minutes before start to 60 minutes after end). */
+  open: boolean;
+  my: { status: ClinicMyStatus; inAt: string | null; outAt: string | null; late: boolean; minutes: number | null; leaveId: string | null; earlyLeaveAt: string | null };
+};
+
+export type ClinicDay = { date: string; note: string | null; sessions: ClinicMySession[] };
+
+/** GET /clinic/today */
+export type ClinicToday = {
+  v: 1;
+  date: string;
+  cohortId: string | null;
+  note: string | null;
+  sessions: ClinicMySession[];
+  /** Today is one of my OPD days. */
+  opd: { batch: ClinicBatch; start: string | null; end: string | null; sessionId: string | null; assignmentId: string } | null;
+  leavesLeft: number | null;
+  /** Past OPD days with no case log yet. */
+  logsDue: number;
+};
+
+/** GET /clinic/week?start=YYYY-MM-DD (start defaults to this Monday; 7 days). */
+export type ClinicWeek = { v: 1; from: string; to: string; cohortId: string | null; days: ClinicDay[] };
+
+/** POST /clinic/scan. Send `token` (from the QR) or `code` (6 characters). */
+export type ClinicScanBody = { token?: string; code?: string; direction?: ClinicDirection };
+export type ClinicScanResult = { sessionId: string; title: string; direction: ClinicDirection; at: string; late: boolean; minutes: number | null };
+
+/** GET /clinic/attendance */
+export type ClinicAttendanceSummary = {
+  required: number;
+  attended: number;
+  late: number;
+  onLeave: number;
+  absent: number;
+  noScanOut: number;
+  /** attended / (required - onLeave), 0 to 100; null when nothing is due yet. */
+  percent: number | null;
+  minutes: number;
+};
+export type ClinicMyAttendance = { v: 1; cohortId: string | null; summary: ClinicAttendanceSummary; sessions: ClinicMySession[] };
+
+export type ClinicLeaveStatus = "pending" | "approved" | "rejected" | "cancelled";
+export type ClinicLeaveRequest = {
+  id: string;
+  userId: string;
+  cohortId: string;
+  kind: "leave" | "early" | "missed";
+  sessions: { id: string; date: string; start: string; title: string }[];
+  leaveAt: string | null;
+  reason: string | null;
+  status: ClinicLeaveStatus;
+  overLimit: boolean;
+  /** Sessions this request uses as leaves (early leave uses none). */
+  cost: number;
+  decidedAt: string | null;
+  decisionNote: string | null;
+  createdAt: string;
+};
+export type ClinicLeaveBalance = { allowance: number; used: number; pending: number; left: number };
+
+/** GET /clinic/leave */
+export type ClinicMyLeave = { v: 1; cohortId: string | null; balance: ClinicLeaveBalance; requests: ClinicLeaveRequest[] };
+/** POST /clinic/leave */
+export type ClinicLeaveBody = { sessionIds: string[]; reason: string };
+/** POST /clinic/leave/early */
+export type ClinicEarlyLeaveBody = { sessionId: string; leaveAt: string; reason: string };
+
+export type ClinicQuota = { base: number; extras: { count: number; note: string | null; at: string }[]; total: number; done: number; pending: number };
+export type ClinicVisit = {
+  assignmentId: string;
+  date: string;
+  batch: ClinicBatch;
+  start: string | null;
+  end: string | null;
+  sessionId: string | null;
+  /** done: case log sent; due: past and no log yet; upcoming; missed: no scan and no leave (counts as a leave). */
+  state: "upcoming" | "today" | "due" | "done" | "absent" | "missed" | "on_leave";
+  log: { cases: number; absent: boolean; note: string | null } | null;
+};
+
+/** GET /clinic/opd */
+export type ClinicMyOpd = {
+  v: 1;
+  cohortId: string | null;
+  batch: ClinicBatch | null;
+  /** The student picks once; after that only the admin changes it. */
+  canChooseBatch: boolean;
+  casesPerVisit: number;
+  quota: ClinicQuota;
+  visits: ClinicVisit[];
+};
+/** PUT /clinic/opd/batch */
+export type ClinicBatchBody = { batch: ClinicBatch };
+/** POST /clinic/opd/logs */
+export type ClinicCaseLogBody = { assignmentId: string; cases: number; absent?: boolean; note?: string };
+
+/* ----------------------------- admin ----------------------------- */
+
+export type ClinicCohortRef = { id: string; name: string };
+
+/** GET /clinic/admin/overview?cohort= */
+export type ClinicAdminOverview = {
+  v: 1;
+  cohorts: ClinicCohortRef[];
+  cohortId: string | null;
+  today: string;
+  sessions: (ClinicSession & { counts: { expected: number; in: number; out: number; late: number; onLeave: number } })[];
+  pendingLeave: number;
+  logsDue: number;
+  canWrite: boolean;
+};
+
+export type ClinicSlot = {
+  id: string;
+  cohortIds: string[];
+  weekday: number;
+  start: string;
+  end: string;
+  kind: ClinicKind;
+  title: string;
+  place: string | null;
+  onlineLink: string | null;
+  compulsory: boolean;
+  validFrom: string | null;
+  validTo: string | null;
+  active: boolean;
+};
+/** POST /clinic/admin/timetable and PUT /clinic/admin/timetable/:id */
+export type ClinicSlotBody = Omit<ClinicSlot, "id" | "active"> & { active?: boolean };
+/** POST /clinic/admin/timetable/apply: make sessions from the timetable for a date range (adds only what is missing). */
+export type ClinicApplyBody = { cohortId: string; from: string; to: string };
+export type ClinicApplyResult = { created: number; skipped: number };
+
+/** POST /clinic/admin/sessions: a one-off session. */
+export type ClinicSessionBody = {
+  cohortIds: string[];
+  date: string;
+  start: string;
+  end: string;
+  kind: ClinicKind;
+  title: string;
+  place?: string | null;
+  onlineLink?: string | null;
+  compulsory?: boolean;
+  note?: string | null;
+  notify?: boolean;
+};
+/** PATCH /clinic/admin/sessions/:id: move, edit, cancel or restore, note. */
+export type ClinicSessionPatch = Partial<Omit<ClinicSessionBody, "cohortIds">> & { status?: "scheduled" | "cancelled" };
+
+/** PUT /clinic/admin/notes */
+export type ClinicDayNoteBody = { cohortId: string; date: string; note: string };
+
+/** GET /clinic/admin/sessions/:id/code: the QR text and the 6-character code for this 30-second window. */
+export type ClinicShowCode = { sessionId: string; qr: string; code: string; window: number; validUntil: string; refreshInMs: number };
+
+export type ClinicAttendanceRow = {
+  userId: string;
+  name: string | null;
+  roll: string | null;
+  status: ClinicMyStatus;
+  inAt: string | null;
+  outAt: string | null;
+  late: boolean;
+  minutes: number | null;
+  manual: boolean;
+  note: string | null;
+  earlyLeaveAt: string | null;
+};
+/** GET /clinic/admin/sessions/:id/attendance */
+export type ClinicLiveAttendance = {
+  v: 1;
+  session: ClinicSession;
+  open: boolean;
+  lateMinutes: number;
+  rows: ClinicAttendanceRow[];
+  counts: { expected: number; in: number; out: number; late: number; onLeave: number; missing: number };
+};
+/** POST /clinic/admin/sessions/:id/attendance: mark by hand. `at` defaults to now (or session start for "in" after it ended). */
+export type ClinicManualMarkBody = { userId: string; direction: ClinicDirection | "clear"; at?: string; note?: string };
+
+/** GET /clinic/admin/leave?cohort=&status= */
+export type ClinicLeaveQueue = { v: 1; requests: (ClinicLeaveRequest & { name: string | null; roll: string | null; balance: ClinicLeaveBalance; overLimitNow: boolean })[] };
+/** POST /clinic/admin/leave/:id */
+export type ClinicLeaveDecisionBody = { decision: "approve" | "reject"; note?: string };
+
+export type ClinicAllowanceRow = { userId: string; name: string | null; roll: string | null; balance: ClinicLeaveBalance; log: { old: number | null; new: number; note: string | null; at: string }[] };
+/** GET /clinic/admin/allowances?cohort= */
+export type ClinicAllowances = { v: 1; cohortId: string; rows: ClinicAllowanceRow[] };
+/** PUT /clinic/admin/allowances: set (or add to) the allowance for the whole cohort (no userIds) or the students listed. */
+export type ClinicAllowanceBody = { cohortId: string; userIds?: string[]; set?: number; add?: number; note?: string };
+export type ClinicAllowanceResult = { changed: number };
+
+/** seats["1"].morning = seats on Mondays in the morning batch. Weekday 0 is Sunday. */
+export type ClinicSeats = Record<string, { morning?: number; evening?: number }>;
+/** GET/PUT /clinic/admin/opd/settings?cohort= */
+export type ClinicOpdSettings = {
+  cohortId: string;
+  seats: ClinicSeats;
+  casesPerVisit: number;
+  startDate: string | null;
+  endDate: string | null;
+  lateMinutes: number;
+  holidays: string[];
+  freezeDays: number;
+};
+
+export type ClinicQuotaRow = { userId: string; name: string | null; roll: string | null; batch: ClinicBatch | null; quota: ClinicQuota; visitsPlanned: number };
+/** GET /clinic/admin/opd/quotas?cohort= */
+export type ClinicQuotas = { v: 1; cohortId: string; casesPerVisit: number; rows: ClinicQuotaRow[] };
+/** PUT /clinic/admin/opd/quotas: base cases for the whole cohort (no userIds) or the students listed. */
+export type ClinicQuotaBody = { cohortId: string; userIds?: string[]; base: number };
+/** POST /clinic/admin/opd/extras: "Add cases: N, note 'paid 12 Nov'". */
+export type ClinicExtraBody = { cohortId: string; userId: string; count: number; note?: string };
+/** PUT /clinic/admin/opd/batch: the admin changes a student's batch. */
+export type ClinicAdminBatchBody = { cohortId: string; userId: string; batch: ClinicBatch };
+
+export type ClinicPlanEntry = { assignmentId: string; userId: string; name: string | null; source: "kept" | "new" | "moved" };
+export type ClinicPlanDay = { date: string; weekday: number; morning: { seats: number; people: ClinicPlanEntry[] }; evening: { seats: number; people: ClinicPlanEntry[] } };
+/** GET /clinic/admin/opd/plan?cohort=&state=draft|published (state defaults to draft when one exists). */
+export type ClinicPlan = {
+  v: 1;
+  cohortId: string;
+  state: "draft" | "published";
+  hasDraft: boolean;
+  from: string | null;
+  to: string | null;
+  days: ClinicPlanDay[];
+  /** Students the seats could not fit (visits still needed). */
+  short: { userId: string; name: string | null; visits: number }[];
+  /** Students with no batch yet (left out of the plan). */
+  noBatch: { userId: string; name: string | null }[];
+};
+/** POST /clinic/admin/opd/generate: make a draft from today on (keeps published days). */
+export type ClinicGenerateBody = { cohortId: string };
+/** POST /clinic/admin/opd/move: move one draft (or published) visit. `force` allows a full day. */
+export type ClinicMoveBody = { assignmentId: string; date: string; batch: ClinicBatch; force?: boolean };
+/** POST /clinic/admin/opd/publish */
+export type ClinicPublishBody = { cohortId: string; notify?: boolean };
+export type ClinicPublishResult = { published: number; removed: number; notified: number };
+
+export type ClinicTrackerRow = {
+  userId: string;
+  name: string | null;
+  roll: string | null;
+  batch: ClinicBatch | null;
+  attendance: ClinicAttendanceSummary;
+  leave: ClinicLeaveBalance;
+  cases: ClinicQuota;
+  visits: { planned: number; done: number; absent: number; missed: number; due: number };
+};
+/** GET /clinic/admin/trackers?cohort= */
+export type ClinicTrackers = { v: 1; cohortId: string; rows: ClinicTrackerRow[] };
+/** GET /clinic/admin/students/:id?cohort= */
+export type ClinicStudentDetail = {
+  v: 1;
+  cohortId: string;
+  row: ClinicTrackerRow;
+  sessions: ClinicMySession[];
+  leave: ClinicLeaveRequest[];
+  visits: ClinicVisit[];
+  allowanceLog: { old: number | null; new: number; note: string | null; at: string }[];
+};
+/** POST /clinic/admin/opd/remind: a notice to everyone with a case log due. */
+export type ClinicRemindResult = { notified: number };
