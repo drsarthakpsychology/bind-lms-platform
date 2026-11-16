@@ -4,7 +4,6 @@ import * as React from "react";
 import { AppState, Pressable, View } from "react-native";
 import Animated, { FadeIn, FadeInLeft, FadeInRight, useReducedMotion } from "react-native-reanimated";
 
-import { api } from "@/auth";
 import { Button, Chips, EmptyState, LoadError, Row, RowList, RowsSkeleton, Screen, Section, Sheet, T } from "@/ds";
 import { haptic } from "@/lib/haptics";
 import { Burst, ProgressFill } from "@/motion";
@@ -507,13 +506,14 @@ type Filter = "all" | "wrong" | "blank" | "marked";
 
 /** The result and the full review, the same for a fresh hand-in and a saved mock. */
 export function MockResultBody({ r, fresh }: { r: MockResult; fresh?: boolean }) {
-  const c = useTheme();
   const [filter, setFilter] = React.useState<Filter>("all");
   const [open, setOpen] = React.useState<number | null>(null);
   const [burst, setBurst] = React.useState(0);
   const pct = r.max ? Math.max(0, r.score) / r.max : 0;
   React.useEffect(() => {
-    if (fresh && pct >= 0.6) setBurst(1);
+    if (!fresh || pct < 0.6) return;
+    const id = setTimeout(() => setBurst(1), 400);
+    return () => clearTimeout(id);
   }, [fresh, pct]);
   const rows = r.rows.map((row, i) => ({ row, i })).filter(({ row }) => (filter === "wrong" ? row.chosen !== null && !row.correct : filter === "blank" ? row.chosen === null : filter === "marked" ? row.marked : true));
   const standing = !r.saved ? "This attempt wasn't saved, so it has no rank." : r.standing && r.standing.of > 1 ? `#${r.standing.rank} of ${r.standing.of}${r.standing.percentile !== null ? `, ahead of ${r.standing.percentile}%` : ""}` : "You're the first VIBHA student to finish this mock. Your rank appears as others take it.";

@@ -7,7 +7,7 @@
 import type { AppTarget } from "@/api/contract";
 import type * as C from "../contract";
 import { caseState, mockHistory, MOCK_SPECS, prepData } from "./cases";
-import { escapeRooms, escapeSaved, wardCampaigns, wardSaved } from "./games";
+import { escapeRooms, escapeSaved, teamsOf, wardCampaigns, wardSaved } from "./games";
 import { PlayError } from "./kit";
 import tools from "./tools.json";
 import more from "./tools2.json";
@@ -95,9 +95,9 @@ export function practiseTool(id: string): C.PractiseTool {
     case "mse":
       return tool("mse", "Mental state exam", ["Write what you can see and hear, not what you conclude."], M.mse, null, ["mse"]);
     case "ward":
-      return tool("ward", "Ward Week", ["Read each session, then make the call.", "See why it was strong or weak."], { campaigns: wardCampaigns(), teamsOn: false, teams: [] }, library("ward", wardCampaigns().map((c) => c.id)));
+      return tool("ward", "Ward Week", ["Read each session, then make the call.", "See why it was strong or weak."], { campaigns: wardCampaigns(), teamsOn: true, teams: teamsOf("ward") }, library("ward", wardCampaigns().map((c) => c.id)));
     case "escape":
-      return tool("escape", "Team Escape Room", ["Anyone can answer any door. Wrong answers add 20 seconds.", "Two misses on a door open its hint."], { rooms: escapeRooms(), teamsOn: false, teams: [] }, library("escape", escapeRooms().map((r) => r.id)));
+      return tool("escape", "Team Escape Room", ["Anyone can answer any door. Wrong answers add 20 seconds.", "Two misses on a door open its hint."], { rooms: escapeRooms(), teamsOn: true, teams: teamsOf("escape").filter((t) => t.status !== "done") }, library("escape", escapeRooms().map((r) => r.id)));
     case "duel":
       return tool("duel", "Differential duel", ["Pick the diagnosis: +100.", "Then pick what tells it apart from its look-alike: +50.", "Same points? The faster player wins."], { profile: { available: false, rating: 1200, rd: 350, tier: "Unranked", games: 0, wins: 0, losses: 0, draws: 0, forfeits: 0, peak: 1200 }, offlineItems: M.duel });
     case "comorbid":

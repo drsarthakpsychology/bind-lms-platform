@@ -92,6 +92,13 @@ export type WardSolo = { ok: true; token: string; scene: WardScene; reveal?: War
 export type WardCampaign = { id: string; title: string; patient: string; place: string; blurb: string; sessions: number; level: number };
 export const WARD_KIND: Record<WardKind, string> = { assessment: "Assessment", risk: "Risk", referral: "Referral", psychoeducation: "Explaining it", family: "Family meeting", medicines: "Medicines, with the psychiatrist" };
 export const WARD_VAR: Record<keyof WardVars, string> = { risk: "Risk", trust: "Trust", insight: "Insight", family: "Family support", adherence: "Sticking with care" };
+/** src/app/(dashboard)/games/ward/actions.ts WardTeamView: the team's story, polled. Qualities only for calls already made. */
+export type WardTeamView = { teamId: string; code: string; name: string; campaign: string; scene: WardScene; reveals: WardReveal[]; end: WardEnd | null; members: { name: string; me: boolean; voted: boolean }[]; myVote: string | null; votes: number; version: number; xp: number };
+/** src/lib/games-sims/teams.ts TEAM_LIMITS */
+export const TEAM_LIMITS = { escape: { min: 2, max: 5 }, ward: { min: 2, max: 3 } } as const;
+export type TeamJoin = { ok: true; teamId: string } | { ok: false; reason: string };
+/** A team row on the first screen (GET /practise/tools/ward and /escape). */
+export type TeamListItem = { id: string; name: string; status: string; code?: string; campaign?: string; room?: string; title?: string };
 export const WARD_QUALITY: Record<WardQuality, string> = { best: "Strong choice", ok: "Reasonable", poor: "Weak choice", harm: "Harmful choice" };
 
 /* ----------------------------------------------------------------- escape */
@@ -107,6 +114,10 @@ export type EscRoomCard = { id: string; title: string; place: string; patient: s
 export type EscView = EscRoomCard & { stages: EscStage[]; door: EscDoor | null; hint: string | null; opened: EscOpened[]; outro: string | null };
 export type EscState = { room: string; stage: number; wrong: number; tries: number[]; log: { stage: number; name: string; ok: boolean; at: string }[]; done: boolean };
 export type EscResult = { ok: true; token: string; view: EscView; state: EscState; now: number; right?: boolean; ms?: number; xp?: number; elapsed?: number };
+/** src/lib/games-sims/escape/engine.ts RaceRow */
+export type RaceRow = { id: string; name: string; stage: number; done: boolean; ms: number; me: boolean };
+/** src/app/(dashboard)/games/escape/actions.ts EscapeView: the team's room, polled. */
+export type EscTeamView = { teamId: string; code: string; name: string; room: string; view: EscView; status: "lobby" | "playing" | "done"; state: EscState; members: { name: string; me: boolean }[]; startedAt: string | null; finishedAt: string | null; now: number; race: RaceRow[]; xp: number };
 export const ESC_STAGE: Record<EscStage, string> = { mse: "Mental state", diagnosis: "Diagnosis", differential: "Differential", risk: "Risk", course: "Course", plan: "Plan", medicine: "Medicine", criteria: "Criteria" };
 export const ESC_PENALTY_S = 20;
 

@@ -302,6 +302,70 @@ const ward = {
 };
 export const wardSaved = () => [...saved.keys()];
 
+/* ------------------------------------------------- teams (ward, escape) */
+type Team = { id: string; code: string; name: string; game: "ward" | "escape"; scenario: string; status: "lobby" | "playing" | "done"; members: string[]; version: number; ward?: WState; votes?: Map<number, Map<string, string>>; reveals?: P.WardReveal[]; esc?: EscRun; startedAt: string | null; finishedAt: string | null };
+const TEAMS = new Map<string, Team>();
+let teamN = 0;
+const ME = "You";
+const MATE = "Ravi K.";
+export const teamsOf = (game: "ward" | "escape") => [...TEAMS.values()].filter((t) => t.game === game).map((t) => ({ id: t.id, name: t.name, status: t.status, code: t.code, campaign: t.scenario, room: t.scenario, title: t.game === "escape" ? ROOMS.find((r) => r.id === t.scenario)?.title : CAMPAIGNS.find((c) => c.id === t.scenario)?.title }));
+function newTeam(game: "ward" | "escape", scenario: string): Team {
+  const id = `team-${++teamN}`;
+  const t: Team = { id, code: `K7RQ${teamN}`, name: `Team ${["Lime", "Blue", "Ink"][teamN % 3]}`, game, scenario, status: game === "ward" ? "playing" : "lobby", members: [ME], version: 0, startedAt: null, finishedAt: null };
+  TEAMS.set(id, t);
+  return t;
+}
+function joinTeam(game: "ward" | "escape", code: unknown): P.TeamJoin {
+  const t = [...TEAMS.values()].find((x) => x.game === game && x.code === String(code ?? "").toUpperCase().trim());
+  if (!t) return { ok: false, reason: "No team with that code." };
+  if (t.status === "done") return { ok: false, reason: "That game has finished." };
+  return { ok: true, teamId: t.id };
+}
+function wardTeamView(teamId: unknown): P.WardTeamView | null {
+  const t = TEAMS.get(String(teamId));
+  if (!t || !t.ward) return null;
+  const c = CAMPAIGNS.find((x) => x.id === t.scenario)!;
+  const step = t.ward.log.length;
+  const v = t.votes!.get(step) ?? new Map<string, string>();
+  return { teamId: t.id, code: t.code, name: t.name, campaign: c.id, scene: scene(c, t.ward), reveals: t.reveals!, end: t.ward.done ? endOf(c, t.ward) : null, members: t.members.map((m) => ({ name: m, me: m === ME, voted: v.has(m) })), myVote: v.get(ME) ?? null, votes: v.size, version: t.version, xp: t.ward.done ? 10 + Math.round(endOf(c, t.ward).score / 5) : 0 };
+}
+const wardTeam = {
+  createTeam(campaign: unknown) {
+    const c = CAMPAIGNS.find((x) => x.id === campaign);
+    if (!c) return { ok: false, reason: "Sign in again, then try." };
+    const t = newTeam("ward", c.id);
+    const base = { vars: { ...c.start }, flags: [] as string[] };
+    t.ward = { chapter: 0, queue: queueFor(c, 0, base), ...base, log: [], done: false };
+    t.votes = new Map();
+    t.reveals = [];
+    // A classmate joins straight away in the mock, so a vote can settle.
+    t.members.push(MATE);
+    return { ok: true, teamId: t.id };
+  },
+  joinTeam: (code: unknown) => joinTeam("ward", code),
+  teamView: wardTeamView,
+  vote(input: { teamId?: string; step?: number; choice?: string }) {
+    const t = TEAMS.get(String(input?.teamId));
+    if (!t?.ward || t.ward.done || input.step !== t.ward.log.length) return wardTeamView(input?.teamId);
+    const c = CAMPAIGNS.find((x) => x.id === t.scenario)!;
+    const d = decisionOf(c, t.ward);
+    const o = d?.options.find((x) => x.id === input.choice);
+    if (!d || !o) return wardTeamView(t.id);
+    const v = t.votes!.get(input.step) ?? new Map<string, string>();
+    v.set(ME, o.id);
+    v.set(MATE, o.id);
+    t.votes!.set(input.step, v);
+    const before = t.ward;
+    const after = choose(c, before, o.id);
+    const best = d.options.find((x) => x.q === "best") ?? d.options[0]!;
+    t.reveals!.push({ chapter: before.chapter, chapterTitle: c.chapters[before.chapter]?.title ?? "", beats: beatsOf(c, before), kind: d.kind, skill: d.skill, letter: "ABCDEF"[d.options.indexOf(o)] ?? "A", text: o.text, q: o.q, why: o.why, best: o.q === "best" ? null : { text: best.text, why: best.why }, before: { ...before.vars }, after: { ...after.vars }, voters: v.size });
+    t.ward = after;
+    t.version += 1;
+    if (after.done) t.status = "done";
+    return wardTeamView(t.id);
+  },
+};
+
 /* ----------------------------------------------------------------- escape */
 type Puzzle = { id: string; stage: P.EscStage; kind: "pick" | "multi" | "order" | "number"; prompt: string; options?: string[]; items?: string[]; min?: number; max?: number; unit?: string; answer?: number | number[]; hint: string; why: string; unlock: string; skill: string };
 type Room = { id: string; title: string; place: string; patient: string; intro: string; outro: string; puzzles: Puzzle[] };
@@ -362,6 +426,57 @@ const escape = {
 };
 export const escapeSaved = () => [...escSaved.entries()];
 
+function escTeamView(teamId: unknown): P.EscTeamView | null {
+  const t = TEAMS.get(String(teamId));
+  if (!t?.esc) return null;
+  const now = Date.now();
+  const ms = t.startedAt ? (t.finishedAt ? Date.parse(t.finishedAt) : now) - Date.parse(t.startedAt) + t.esc.st.wrong * ESC_PENALTY_S * 1000 : 0;
+  const race: P.RaceRow[] = [
+    { id: "rival-1", name: "Team Kite", stage: t.esc.room.puzzles.length, done: true, ms: 9 * 60_000, me: false },
+    ...(t.status !== "lobby" ? [{ id: t.id, name: t.name, stage: t.esc.st.stage, done: t.esc.st.done, ms, me: true }] : []),
+    { id: "rival-2", name: "Team Fern", stage: 1, done: false, ms: 4 * 60_000, me: false },
+  ];
+  return { teamId: t.id, code: t.code, name: t.name, room: t.scenario, view: escView(t.esc), status: t.status, state: t.esc.st, members: t.members.map((m) => ({ name: m, me: m === ME })), startedAt: t.startedAt, finishedAt: t.finishedAt, now, race, xp: t.esc.st.done ? Math.max(10, 40 - t.esc.st.wrong * 3) : 0 };
+}
+const escTeam = {
+  createTeam(room: unknown) {
+    const r = ROOMS.find((x) => x.id === room);
+    if (!r) return { ok: false, reason: "Sign in again, then try." };
+    const t = newTeam("escape", r.id);
+    const rr = rng(nextSeed());
+    t.esc = { room: r, st: { room: r.id, stage: 0, wrong: 0, tries: r.puzzles.map(() => 0), log: [], done: false }, start: 0, orders: r.puzzles.map((p) => (p.kind === "order" ? perm(p.items!.length, rr) : [])) };
+    t.members.push(MATE);
+    return { ok: true, teamId: t.id };
+  },
+  joinTeam: (code: unknown) => joinTeam("escape", code),
+  view: escTeamView,
+  startTeam(teamId: unknown) {
+    const t = TEAMS.get(String(teamId));
+    if (t?.esc && t.status === "lobby" && t.members.length >= 2) {
+      t.status = "playing";
+      t.startedAt = new Date().toISOString();
+    }
+    return escTeamView(teamId);
+  },
+  answerTeam(input: { teamId?: string; stage?: number; answer?: string }) {
+    const t = TEAMS.get(String(input?.teamId));
+    if (!t?.esc || t.status !== "playing" || input.stage !== t.esc.st.stage) return { view: escTeamView(input?.teamId), ok: false };
+    const run = t.esc;
+    const p = run.room.puzzles[run.st.stage]!;
+    const right = escRight(p, String(input.answer ?? ""), run.orders[run.st.stage]);
+    const tries = [...run.st.tries];
+    tries[run.st.stage] = (tries[run.st.stage] ?? 0) + 1;
+    const stage = right ? run.st.stage + 1 : run.st.stage;
+    const done = stage >= run.room.puzzles.length;
+    t.esc = { ...run, st: { ...run.st, stage, wrong: run.st.wrong + (right ? 0 : 1), tries, log: [...run.st.log, { stage: run.st.stage, name: ME, ok: right, at: new Date().toISOString() }], done } };
+    if (done) {
+      t.status = "done";
+      t.finishedAt = new Date().toISOString();
+    }
+    return { view: escTeamView(t.id), ok: right };
+  },
+};
+
 /* --------------------------------------------------------------- comorbid */
 type CoInput = { seed: string; mode: "bot" | "pass"; level: 1 | 2 | 3; prefer?: string; moves: { uid: string; action: "play" | "swap" }[] };
 const comorbid = {
@@ -382,6 +497,8 @@ export function resetGames() {
   sortRuns.clear();
   saved.clear();
   escSaved.clear();
+  TEAMS.clear();
+  teamN = 0;
   blitzBest = 240;
 }
 
@@ -391,7 +508,7 @@ export const GAMES: Record<string, Record<string, (...args: never[]) => unknown>
   sort: { load: sort.load, check: sort.check },
   rx: { deal: rx.deal, pick: rx.pick, finish: rx.finish },
   mse: { deal: mse.deal, tag: mse.tag },
-  ward: { start: ward.start, resume: ward.resume, pick: ward.pick },
-  escape: { start: escape.start, resume: escape.resume, answer: escape.answer },
+  ward: { start: ward.start, resume: ward.resume, pick: ward.pick, ...wardTeam },
+  escape: { start: escape.start, resume: escape.resume, answer: escape.answer, ...escTeam },
   comorbid: { state: comorbid.state, finish: comorbid.finish },
 };
