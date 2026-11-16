@@ -37,7 +37,7 @@ export function ComingSoon({ web, body = "This part is ready on the website.", h
   const c = useTheme();
   return (
     <View testID={testID} style={{ gap: space[3] }}>
-      <EmptyState mood="sleepy" title="Coming soon to the app" body={body} />
+      <EmptyState mood="soon" title="Coming soon to the app" body={body} />
       <Button label="Open on the website" icon={<ExternalLink size={18} color={c.onPrimary} />} onPress={() => openWebsite(web)} testID="soon-web" />
       <Button kind="text" label="Back" onPress={() => goBack(home)} testID="soon-back" />
     </View>
@@ -68,11 +68,7 @@ export function Loaded<T>({ q, skeleton, what, soon, children }: { q: UseQueryRe
   if (q.data !== undefined) return <>{children(q.data)}</>;
   if (q.isError) {
     if (isClosed(q.error)) return <EmptyState title="Not open for your account" body="This part of VIBHA is not switched on for you yet." testID="closed" />;
-<<<<<<< HEAD
     if (soon && q.error instanceof ApiFailure && q.error.code === "not_found") return <ComingSoon web={typeof soon === "string" ? soon : undefined} />;
-=======
-    if (soon && q.error instanceof ApiFailure && q.error.code === "not_found") return <EmptyState mood="soon" title="Coming in the next update" body="This part is ready on the website and arrives in the app soon." testID="soon" />;
->>>>>>> admin-redesign
     return <LoadError what={what} error={q.error} onRetry={() => void q.refetch()} />;
   }
   // The skeleton waits 120ms before showing, so a quick load never flashes grey.
