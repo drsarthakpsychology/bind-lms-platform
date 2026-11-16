@@ -7,8 +7,10 @@ import type { ModuleStatus } from "@/api/contract";
 import { mock } from "@/api/mock/server";
 import { session } from "@/auth";
 import { T } from "@/ds";
+import { nextSpeed, ProtectedPlayer } from "@/lecture/player";
 import { ReadingSize, TextSizeRow } from "@/lib/reading";
 import { settingsStore, updateSettings } from "@/lib/settings";
+import { LectureScreen } from "@/screens/lecture/lecture";
 import { NoteScreen } from "@/screens/notes/notes";
 import { exactRef } from "@/screens/reference/reference";
 import { moduleStatusLines } from "@/screens/study/module";
@@ -83,5 +85,27 @@ describe("notes", () => {
     const words = await screen.findByTestId("note-words");
     expect(words).toBeTruthy();
     expect(screen.queryByTestId("note-word-0")).toBeNull();
+  });
+});
+
+describe("lecture", () => {
+  it("Mark as watched only on About; the Assignment tab has no watched button", async () => {
+    (useLocalSearchParams as jest.Mock).mockReturnValue({ lessonId: "l5" });
+    await render(<LectureScreen />);
+    expect(await screen.findByTestId("lecture-complete")).toBeTruthy();
+    await fireEvent.press(screen.getByText("Assignment"));
+    expect(screen.queryByTestId("lecture-complete")).toBeNull();
+    // A file hand-in shows Hand in in the footer only once a file is chosen.
+    expect(screen.queryByTestId("handin-send")).toBeNull();
+    await fireEvent.press(screen.getByText("About"));
+    expect(screen.getByTestId("lecture-complete")).toBeTruthy();
+  });
+
+  it("the speed button steps 1x, 1.25x, 1.5x, 2x", async () => {
+    expect([1, 1.25, 1.5, 2].map(nextSpeed)).toEqual([1.25, 1.5, 2, 1]);
+    await render(<ProtectedPlayer lessonId="l5" compromised={false} />);
+    const speed = await screen.findByTestId("player-speed");
+    await fireEvent.press(speed);
+    expect(screen.getByText("1.25x")).toBeTruthy();
   });
 });

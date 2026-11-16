@@ -26,6 +26,9 @@ import { layout, space, useTheme } from "@/theme";
 
 export type MaterialView = "pdf" | "image" | "media" | "link" | "other";
 
+/** In dark mode a white page glares: draw it a little dimmer (about 90% white on the dark canvas). */
+const PAGE_DIM = 0.88;
+
 export function viewFor(m: Pick<Material, "kind" | "format" | "url" | "filePath">): MaterialView {
   if (m.kind === "link" || (!m.filePath && m.url)) return "link";
   const f = (m.format ?? "").toLowerCase();
@@ -134,7 +137,7 @@ function PdfReader({ m }: { m: Material }) {
               haptic.select();
               setZoom((z) => !z);
             }}
-            style={{ width: w, height: h, backgroundColor: "#ffffff", borderRadius: 6, borderWidth: 1, borderColor: c.hairline, overflow: "hidden" }}
+            style={{ width: w, height: h, backgroundColor: "#ffffff", borderRadius: 6, borderWidth: 1, borderColor: c.hairline, overflow: "hidden", opacity: c.dark ? PAGE_DIM : 1 }}
           >
             {p ? <Image source={{ uri: p.uri }} style={{ width: "100%", height: "100%" }} resizeMode="contain" /> : <Skeleton w="100%" h={h} r={0} />}
           </Pressable>
@@ -157,7 +160,7 @@ function MockPages({ title }: { title: string }) {
   return (
     <View style={{ gap: space[3] }} testID="material-pages">
       {[1, 2].map((p) => (
-        <View key={p} accessibilityLabel={`Page ${p} of 2`} style={{ aspectRatio: 1 / 1.3, backgroundColor: "#ffffff", borderRadius: 6, borderWidth: 1, borderColor: c.hairline, padding: space[5], gap: space[3] }}>
+        <View key={p} accessibilityLabel={`Page ${p} of 2`} style={{ aspectRatio: 1 / 1.3, backgroundColor: "#ffffff", borderRadius: 6, borderWidth: 1, borderColor: c.hairline, padding: space[5], gap: space[3], opacity: c.dark ? PAGE_DIM : 1 }}>
           <T v="h3" style={{ color: "#111111" }}>
             {p === 1 ? title : "Scoring"}
           </T>
