@@ -31,6 +31,8 @@
  *   --md <file>        also write a Markdown defect list
  *   --chrome <path>    Chromium binary (defaults to the local Playwright one)
  *   --shots all|defects|none  (default defects)
+ *   --resize           load each screen once per kind of device and resize
+ *                      through its widths (faster; JS layouts get a resize)
  *   --cookies "a=1; b=2"  cookies for --base (a signed-in session against a
  *                      local mock), or --cookies @file to read them from a file
  *
@@ -407,14 +409,26 @@ function barScan({ atEnd }) {
 
 let browser = merge ? null : await chromium.launch(chrome ? { executablePath: chrome } : {});
 const report = merge ? merge.split(",").flatMap((f) => JSON.parse(fs.readFileSync(f, "utf8"))) : [];
+// --resize: one load per screen for each kind of device (phone < 768, tablet,
+// desktop), then the window is resized through that kind's widths. Much
+// faster against a slow dev server; without it every width is a fresh load.
+const resize = !!args.resize;
+const kindOf = (w) => (w < 768 ? "phone" : w < 1024 ? "tablet" : "desktop");
+const groups = [];
+for (const w of widths) {
+  const g = resize && groups.find((x) => kindOf(x[0]) === kindOf(w));
+  if (g) g.push(w);
+  else groups.push([w]);
+}
 for (const theme of merge ? [] : themes) {
-  for (const w of widths) {
-    const touch = w < 1024;
+  for (const ws of groups) {
+    const w0 = ws[0];
+    const touch = w0 < 1024;
     const ctxOpts = {
-      viewport: { width: w, height: w < 768 ? 800 : 900 },
+      viewport: { width: w0, height: w0 < 768 ? 800 : 900 },
       deviceScaleFactor: 1,
       hasTouch: touch,
-      isMobile: w < 768,
+      isMobile: w0 < 768,
       reducedMotion: "reduce",
       colorScheme: theme === "dark" ? "dark" : "light",
     };
@@ -446,51 +460,68 @@ for (const theme of merge ? [] : themes) {
         await page.waitForTimeout(400);
         if (theme === "dark" && !harness) await page.evaluate(() => document.documentElement.classList.add("dark"));
       } catch (e) {
-        report.push({ page: p, width: w, theme, error: String(e.message).slice(0, 200), defects: [] });
-        console.log(p, w, theme, "LOAD ERROR", String(e.message).slice(0, 80));
+        for (const w of ws) report.push({ page: p, width: w, theme, error: String(e.message).slice(0, 200), defects: [] });
+        console.log(p, ws.join("/"), theme, "LOAD ERROR", String(e.message).slice(0, 80));
         await page.close().catch(() => {});
         continue;
       }
-      const crash = errors.includes("never finished rendering") ? `never finished rendering: ${errors[0]}` : await page.evaluate(() => (document.body.innerText.startsWith("ERR ") ? document.body.innerText.slice(0, 200) : null));
+      const crash = errors.includes("never finished rendering") ? `never finished rendering: ${errors[0]}` : await page.evaluate(() => (document.body.innerText.startsWith("ERR ") ? document.body.innerText.slice(0, 200) : null)).catch(() => null);
       if (crash) {
-        report.push({ page: p, width: w, theme, error: crash, defects: [] });
-        console.log(p, w, theme, "RENDER ERROR", crash.slice(0, 80));
+        for (const w of ws) report.push({ page: p, width: w, theme, error: crash, defects: [] });
+        console.log(p, ws.join("/"), theme, "RENDER ERROR", crash.slice(0, 80));
         await page.close().catch(() => {});
         continue;
       }
-      let found;
-      try {
-        found = (await page.evaluate(scan, { touch })).found;
-      } catch (e) {
-        // The screen moved on by itself (a client redirect) while it was being read.
-        report.push({ page: p, width: w, theme, error: String(e.message).slice(0, 200), defects: [] });
-        console.log(p, w, theme, "SCAN ERROR", String(e.message).slice(0, 80));
-        await page.close().catch(() => {});
-        continue;
-      }
-      // Fixed bars: sample them at the top, the middle and the end of the page.
-      const maxY = await page.evaluate(() => document.documentElement.scrollHeight - innerHeight).catch(() => 0);
-      const seenBar = new Set();
-      for (const y of [0, Math.round(maxY / 2), maxY]) {
-        await page.evaluate((yy) => window.scrollTo(0, yy), y).catch(() => {});
-        await page.waitForTimeout(150);
-        for (const d of await page.evaluate(barScan, { atEnd: y === maxY }).catch(() => [])) {
-          const k = d.kind + d.el + d.text;
-          if (seenBar.has(k)) continue;
-          seenBar.add(k);
-          found.push(d);
+      for (const w of ws) {
+        if (w !== w0) {
+          await page.setViewportSize({ width: w, height: w < 768 ? 800 : 900 });
+          await page.waitForTimeout(350);
         }
+        // Clear the marks of the previous width.
+        await page.evaluate(() => {
+          for (const e of document.querySelectorAll("[data-defect]")) e.removeAttribute("data-defect");
+          for (const e of document.querySelectorAll("[data-measured]")) e.removeAttribute("data-measured");
+          document.getElementById("__ld-outline")?.remove();
+          window.scrollTo(0, 0);
+        }).catch(() => {});
+        let found;
+        try {
+          found = (await page.evaluate(scan, { touch: w < 1024 })).found;
+        } catch (e) {
+          // The screen moved on by itself (a client redirect) while it was being read.
+          report.push({ page: p, width: w, theme, error: String(e.message).slice(0, 200), defects: [] });
+          console.log(p, w, theme, "SCAN ERROR", String(e.message).slice(0, 80));
+          break;
+        }
+        // Fixed bars: sample them at the top, the middle and the end of the page.
+        const maxY = await page.evaluate(() => document.documentElement.scrollHeight - innerHeight).catch(() => 0);
+        const seenBar = new Set();
+        for (const y of [0, Math.round(maxY / 2), maxY]) {
+          await page.evaluate((yy) => window.scrollTo(0, yy), y).catch(() => {});
+          await page.waitForTimeout(150);
+          for (const d of await page.evaluate(barScan, { atEnd: y === maxY }).catch(() => [])) {
+            const k = d.kind + d.el + d.text;
+            if (seenBar.has(k)) continue;
+            seenBar.add(k);
+            found.push(d);
+          }
+        }
+        await page.evaluate(() => window.scrollTo(0, 0)).catch(() => {});
+        const slug = `${p.replace(/[^a-z0-9]+/gi, "_").replace(/^_|_$/g, "") || "root"}-${w}-${theme}`;
+        let shot = null;
+        if (shots === "all" || (shots === "defects" && found.length)) {
+          await page.evaluate(() => {
+            const st = document.createElement("style");
+            st.id = "__ld-outline";
+            st.textContent = "[data-defect]{outline:2px solid #ff0040 !important;outline-offset:1px}";
+            document.head.appendChild(st);
+          }).catch(() => {});
+          shot = path.join(out, slug + ".jpg");
+          await page.screenshot({ path: shot, fullPage: true, type: "jpeg", quality: 55 }).catch(() => (shot = null));
+        }
+        report.push({ page: p, width: w, theme, shot, errors: errors.slice(0, 3), defects: found });
+        console.log(`${p} ${w} ${theme}: ${found.length}`);
       }
-      await page.evaluate(() => window.scrollTo(0, 0)).catch(() => {});
-      const slug = `${p.replace(/[^a-z0-9]+/gi, "_").replace(/^_|_$/g, "") || "root"}-${w}-${theme}`;
-      let shot = null;
-      if (shots === "all" || (shots === "defects" && found.length)) {
-        await page.addStyleTag({ content: "[data-defect]{outline:2px solid #ff0040 !important;outline-offset:1px}" });
-        shot = path.join(out, slug + ".jpg");
-        await page.screenshot({ path: shot, fullPage: true, type: "jpeg", quality: 55 }).catch(() => (shot = null));
-      }
-      report.push({ page: p, width: w, theme, shot, errors: errors.slice(0, 3), defects: found });
-      console.log(`${p} ${w} ${theme}: ${found.length}`);
       await page.close().catch(() => {});
     }
     await ctx.close().catch(() => {});
