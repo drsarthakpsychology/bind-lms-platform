@@ -119,13 +119,23 @@ export function CommandPalette({ entries }: { entries: PaletteEntry[] }) {
     router.push(e.href);
   }
 
+  // Arrow keys move past the bottom of the visible list: bring the picked row into view.
+  // (A DOM side effect in an event handler, not state.)
+  function reveal(i: number) {
+    requestAnimationFrame(() => panelRef.current?.querySelector<HTMLElement>(`[data-row="${i}"]`)?.scrollIntoView({ block: "nearest" }));
+  }
+
   function onKeyDown(e: React.KeyboardEvent) {
     if (e.key === "ArrowDown") {
       e.preventDefault();
-      setIdx((i) => Math.min(flat.length - 1, i + 1));
+      const next = Math.min(flat.length - 1, idx + 1);
+      setIdx(next);
+      reveal(next);
     } else if (e.key === "ArrowUp") {
       e.preventDefault();
-      setIdx((i) => Math.max(0, i - 1));
+      const next = Math.max(0, idx - 1);
+      setIdx(next);
+      reveal(next);
     } else if (e.key === "Enter" && flat[idx]) {
       e.preventDefault();
       choose(flat[idx]);
@@ -185,11 +195,15 @@ export function CommandPalette({ entries }: { entries: PaletteEntry[] }) {
                   {GROUP_LABEL[g.group]}
                 </p>
                 {g.items.map((item) => {
-                  const active = flat.indexOf(item) === idx;
+                  const row = flat.indexOf(item);
+                  const active = row === idx;
                   return (
                     <Link
                       key={item.id}
                       href={item.href}
+                      data-row={row}
+                      aria-current={active ? "true" : undefined}
+                      title={item.hint ? `${item.label}: ${item.hint}` : item.label}
                       onClick={(e) => {
                         // A plain click: navigate once (the link alone would push a second
                         // history entry, so Back seemed to do nothing). Cmd/Ctrl-click still opens a new tab.
@@ -197,7 +211,7 @@ export function CommandPalette({ entries }: { entries: PaletteEntry[] }) {
                         e.preventDefault();
                         choose(item);
                       }}
-                      onMouseEnter={() => setIdx(flat.indexOf(item))}
+                      onMouseEnter={() => setIdx(row)}
                       className={cn(
                         "flex min-h-11 items-center gap-3 rounded-md px-3 py-2 text-left",
                         active && "bg-secondary",

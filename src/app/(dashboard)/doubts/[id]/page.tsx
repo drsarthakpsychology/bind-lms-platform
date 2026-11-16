@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 import { getSession } from "@/lib/auth/session";
+import { isAdminLike } from "@/lib/auth/guards";
 import { loadMyCohorts } from "@/lib/cohorts/access";
 import { loadDoubt } from "@/lib/doubts/data";
 import { DoubtThreadView } from "../doubts-ui";
@@ -19,7 +20,8 @@ export default async function DoubtPage({ params }: { params: Promise<{ id: stri
   if (!/^[0-9a-f-]{36}$/i.test(id)) notFound();
   const session = await getSession();
   if (session.status !== "ok") return leaveWithoutSession(session);
-  const isAdmin = session.profile.role === "admin";
+  // Same rule as the board (../page.tsx): a View Admin reads every thread the board lists.
+  const isAdmin = isAdminLike(session.profile);
   const cohorts = await loadMyCohorts(session.profile.id);
   const thread = await loadDoubt(id, { userId: session.profile.id, isAdmin, cohortIds: cohorts.map((c) => c.id) });
   if (!thread) notFound();

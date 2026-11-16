@@ -219,7 +219,8 @@ export function SubmissionForm({
   async function handleUnsubmit() {
     setSubmitting(true);
     setError(null);
-    const result = await unsubmitAssignment(assignmentId);
+    // A dropped connection rejects: say so and free the buttons (they stayed locked).
+    const result = await unsubmitAssignment(assignmentId).catch(() => ({ error: "Could not take it back. Check your connection and try again." }));
     setSubmitting(false);
     if (result.error) setError(result.error);
     else router.refresh();
@@ -292,6 +293,12 @@ export function SubmissionForm({
           {submitting && <Loader2 className="size-3.5 animate-spin" aria-hidden />}
           Unsubmit and edit
         </Button>
+        {/* Why Unsubmit did not go through (it used to fail without a word here). */}
+        {error && (
+          <p role="alert" className="text-caption text-status-alert-fg">
+            {error}
+          </p>
+        )}
       </div>
     );
   }
