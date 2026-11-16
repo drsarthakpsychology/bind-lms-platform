@@ -1,10 +1,10 @@
-import { Award, BookOpen, ClipboardCheck, FileCheck, Gauge, Inbox, Medal, Radar, Settings, Users, type LucideIcon } from "lucide-react";
+import { Award, BookOpen, CalendarDays, ClipboardCheck, FileCheck, Gauge, Inbox, Medal, Radar, Settings, Users, type LucideIcon } from "lucide-react";
 import { ADMIN_MORE_GROUPS } from "@/components/navigation/v2-config";
 import { PageFrame, Row, RowList, Section } from "@/components/ds";
 import { MeDisplayRows } from "../../me/me-controls";
 import { MoreAccountRows } from "./more-controls";
 
-const ICONS: Record<string, LucideIcon> = { inbox: Inbox, users: Users, radar: Radar, fileCheck: FileCheck, bookOpen: BookOpen, clipboardCheck: ClipboardCheck, award: Award, medal: Medal, gauge: Gauge, settings: Settings };
+const ICONS: Record<string, LucideIcon> = { inbox: Inbox, users: Users, radar: Radar, fileCheck: FileCheck, bookOpen: BookOpen, clipboardCheck: ClipboardCheck, award: Award, medal: Medal, gauge: Gauge, settings: Settings, calendar: CalendarDays };
 
 /** The More screen itself (plain props, so it renders in tests and the fixture harness). */
 export function AdminMoreScreen({ email, viewOnly }: { email: string | null; viewOnly: boolean }) {

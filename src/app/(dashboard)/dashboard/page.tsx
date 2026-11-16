@@ -14,6 +14,8 @@ import { uiV2For } from "@/lib/ui/v2";
 import { HomeBody } from "./home-view";
 import { RefreshOnSave } from "@/components/save/refresh-on-save";
 import { leaveWithoutSession } from "@/lib/auth/session-redirect";
+import { TodayBlock } from "@/components/clinic/sessions";
+import { loadToday } from "../_clinic/bridge";
 
 /**
  * Home (plan section 8): one Continue card, today's goal, and the three
@@ -53,7 +55,12 @@ async function HomeData({ v2, sectionOff = false }: { v2: boolean; sectionOff?: 
   // course, like the Lectures page shows them.
   const preview = profile.role === "admin" && viewingAsStudent;
   // The same model the mobile app's Home is built from (src/lib/home/model.ts).
-  const { step, goal, quests, strengths, studyOpen, progress, dateLine, welcomeBack, allDone, upNext } = await loadHomeModel(profile, { preview });
+  // Today's clinic schedule loads beside the Home model; a clinic that is not set up shows nothing.
+  const [{ step, goal, quests, strengths, studyOpen, progress, dateLine, welcomeBack, allDone, upNext }, today] = await Promise.all([
+    loadHomeModel(profile, { preview }),
+    loadToday().catch(() => null),
+  ]);
+  const clinic = today?.ok ? <TodayBlock today={today.data} /> : null;
 
   if (v2) {
     return (
@@ -70,6 +77,7 @@ async function HomeData({ v2, sectionOff = false }: { v2: boolean; sectionOff?: 
           quests={quests}
           upNext={upNext}
           sectionOff={sectionOff}
+          clinic={clinic}
         />
       </>
     );
@@ -79,6 +87,7 @@ async function HomeData({ v2, sectionOff = false }: { v2: boolean; sectionOff?: 
     <>
     {/* A mark made just before coming here may still be saving: show it once it lands. */}
     <RefreshOnSave kinds={["learn", "complete", "progress"]} />
+    {clinic ? <div className="mx-auto mb-6 w-full max-w-5xl">{clinic}</div> : null}
     <HomeBody
       adminPreview={viewingAsStudent && profile.role === "admin"}
       welcomeBack={welcomeBack}

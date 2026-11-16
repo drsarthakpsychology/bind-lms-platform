@@ -63,6 +63,13 @@ export const PRACTISE_GROUPS: HubGroup[] = [
 
 export const ME_GROUPS: HubGroup[] = [
   {
+    title: "Clinic",
+    rows: [
+      { href: "/clinic", label: "Clinic", icon: "calendar", full: true },
+      { href: "/attendance/scan", label: "Scan attendance", icon: "scan", full: true },
+    ],
+  },
+  {
     title: "Your work",
     rows: [
       { href: "/progress", label: "Progress", icon: "chart", study: true, full: true },
@@ -107,6 +114,11 @@ export const PRACTISE_MATCH = ["/practise", "/practice", "/games", "/prep"];
 export const LIBRARY_MATCH = ["/practice/medicines", "/tools/psychopharm"];
 export const ME_MATCH = [
   "/me",
+  "/clinic",
+  "/schedule",
+  "/attendance",
+  "/leave",
+  "/opd",
   "/progress",
   "/journey",
   "/study/map",
@@ -180,6 +192,7 @@ export const ADMIN_MORE_MATCH = [
   "/admin/more",
   "/admin/inbox",
   "/admin/cohorts",
+  "/admin/clinic",
   "/admin/people",
   "/admin/enquiries",
   "/admin/triage",
@@ -222,6 +235,7 @@ export const ADMIN_MORE_GROUPS: HubGroup[] = [
     rows: [
       { href: "/admin/inbox", label: "Inbox", icon: "inbox" },
       { href: "/admin/cohorts", label: "Cohorts", icon: "users" },
+      { href: "/admin/clinic", label: "Clinic", icon: "calendar" },
       { href: "/admin/people", label: "People", icon: "radar" },
     ],
   },
@@ -255,7 +269,7 @@ export const ADMIN_MORE_GROUPS: HubGroup[] = [
  */
 export function adminV2SidebarItems(sections: { key: string; label: string; icon: string; href: string; tabs: { href: string }[] }[]): NavItem[] {
   const GROUPS: { title: string; keys: string[] }[] = [
-    { title: "People", keys: ["students", "cohorts", "activity", "pipeline"] },
+    { title: "People", keys: ["students", "cohorts", "clinic", "activity", "pipeline"] },
     { title: "Messages", keys: ["inbox", "mail", "forms"] },
     { title: "Teach", keys: ["review", "content", "credentials"] },
     { title: "Settings", keys: ["system"] },

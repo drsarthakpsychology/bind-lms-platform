@@ -30,6 +30,8 @@ const eslintConfig = defineConfig([
     // Local Supabase generated state (gitignored; a generated edge-runtime
     // bundle sits here and is not source code).
     "supabase/.temp/**",
+    // Vendored third-party builds (minified, with their own licence).
+    "src/vendor/**",
   ]),
 ]);
 

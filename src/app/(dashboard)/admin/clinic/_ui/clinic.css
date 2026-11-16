@@ -1,0 +1,13 @@
+/* Clinic admin: the Show code countdown line (empties over one 30-second window). */
+@keyframes clinic-countdown {
+  from { transform: scaleX(1); }
+  to { transform: scaleX(0); }
+}
+.clinic-countdown {
+  animation-name: clinic-countdown;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+@media (prefers-reduced-motion: reduce) {
+  .clinic-countdown { animation: none; opacity: 0.4; }
+}

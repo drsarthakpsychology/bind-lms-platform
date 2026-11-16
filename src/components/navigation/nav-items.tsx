@@ -3,7 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { usePathname, useSearchParams } from "next/navigation";
-import { Home, Play, LayoutDashboard, Users, BookOpen, Inbox, Mail, Wrench, Pill, Stethoscope, Mic, NotebookPen, MessageSquare, Gauge, HeartPulse, ClipboardCheck, ClipboardList, Radar, IdCard, Languages, ToggleLeft, Target, Layers, Flag, ShieldCheck, FileCheck, ListFilter, Activity, Copyright, Sparkles, Sun, Gamepad2, Trophy, Route, MessageCircleQuestion, KeyRound, Award, Medal, BarChart3, Bell, Settings, UserRound, Menu, type LucideIcon } from "lucide-react";
+import { Home, Play, LayoutDashboard, Users, BookOpen, Inbox, Mail, Wrench, Pill, Stethoscope, Mic, NotebookPen, MessageSquare, Gauge, HeartPulse, ClipboardCheck, ClipboardList, Radar, IdCard, Languages, ToggleLeft, Target, Layers, Flag, ShieldCheck, FileCheck, ListFilter, Activity, Copyright, Sparkles, Sun, Gamepad2, Trophy, Route, MessageCircleQuestion, KeyRound, Award, Medal, BarChart3, Bell, Settings, UserRound, Menu, CalendarDays, CalendarX2, ScanLine, type LucideIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { activeNavHref } from "./sections";
 
@@ -57,6 +57,9 @@ export const NAV_ICONS: Record<string, LucideIcon> = {
   settings: Settings,
   user: UserRound,
   more: Menu,
+  calendar: CalendarDays,
+  calendarOff: CalendarX2,
+  scan: ScanLine,
 };
 
 export type NavItem = {
