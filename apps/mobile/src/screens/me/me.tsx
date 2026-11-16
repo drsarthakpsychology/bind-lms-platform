@@ -68,7 +68,7 @@ export function MeScreen() {
       {me && can?.achievements !== false ? <NextCertificate /> : null}
       <Section title="Your work">
         <RowList>
-          <Row testID="me-progress" title="Progress" meta="Topics, map, your level and badges" icon={<ChartLine {...icon} />} onPress={() => router.push("/progress")} />
+          <Row testID="me-progress" title="Progress" meta={lecturesOnly ? "Lectures watched, your level and badges" : "Topics, map, your level and badges"} icon={<ChartLine {...icon} />} onPress={() => router.push("/progress")} />
           {can?.achievements !== false ? <Row testID="me-certificates" title="Certificates" icon={<Award {...icon} />} onPress={() => router.push("/certificates")} /> : null}
           {!lecturesOnly && can?.leaderboard !== false ? <Row testID="me-leaderboard" title="Leaderboard" meta="Your league and the boards" icon={<Trophy {...icon} />} onPress={() => router.push("/game/leaderboard")} /> : null}
           {!lecturesOnly && can?.leaderboard !== false ? <Row testID="me-shop" title="XP shop" meta="Name frames, titles and a streak repair" icon={<ShoppingBag {...icon} />} onPress={() => router.push("/shop")} /> : null}

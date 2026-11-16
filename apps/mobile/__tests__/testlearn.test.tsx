@@ -1,13 +1,16 @@
 // Round 10 test-and-fix (student, lecture-only and visitor screens).
-import { fireEvent, screen, waitFor } from "@testing-library/react-native";
+import { fireEvent, render as rawRender, screen, waitFor } from "@testing-library/react-native";
 import * as React from "react";
+import { StyleSheet, Text, View } from "react-native";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 import { mock } from "@/api/mock/server";
 import { session } from "@/auth";
+import { LoadSwap } from "@/motion";
 import { missWhy } from "@/practise/games/blitz";
 import { SortGame } from "@/practise/games/sort";
 import { render } from "./utils";
+import { searchCovers, searchHint } from "@/screens/search/search";
 
 beforeAll(async () => {
   await session.boot();
@@ -44,5 +47,32 @@ describe("Criteria sort", () => {
     await press("sort-bin-1");
     await waitFor(() => expect(screen.getByText("1 of 16 placed")).toBeTruthy());
     expect(screen.queryByText("No cards here yet.")).toBeNull();
+  });
+});
+
+describe("Content that rises in after a load keeps the column's gap", () => {
+  it("passes the gap to the wrapper, so sections are not glued together on first load", async () => {
+    const view = (ready: boolean) => (
+      <LoadSwap ready={ready} gap={32} skeleton={<Text>loading</Text>}>
+        <View testID="a" />
+        <View testID="b" />
+      </LoadSwap>
+    );
+    const r = await rawRender(view(false));
+    await r.rerender(view(true));
+    const styles: object[] = [];
+    for (let n = screen.getByTestId("a").parent; n; n = n.parent) styles.push(StyleSheet.flatten(n.props.style) ?? {});
+    expect(styles.some((x) => (x as { gap?: number }).gap === 32)).toBe(true);
+  });
+});
+
+describe("Search says only what this account can find", () => {
+  it("a lecture-only account is not promised modules, medicines, cases or games", () => {
+    expect(searchCovers({ study: false, medicines: false, practise: false, games: false })).toBe("Lectures and doubts.");
+    expect(searchHint(false, false)).toBe("Lectures, doubts");
+  });
+  it("a student sees the full list", () => {
+    expect(searchCovers({ study: true, medicines: true, practise: true, games: true })).toBe("Lectures, modules, notes, medicines, cases, games and Exam Prep.");
+    expect(searchHint(true, true)).toBe("Lectures, modules, medicines");
   });
 });
