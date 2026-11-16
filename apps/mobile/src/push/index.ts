@@ -107,6 +107,9 @@ export function hrefFromPush(data: unknown): string {
   return "/notifications";
 }
 
+/** Notifications already opened in this run of the app. */
+const handledTaps = new Set<string>();
+
 /** Mounted once: opens the right screen when a notification is tapped, also when the tap started the app. */
 export function usePushRouting(): void {
   const phase = session.store.use((s) => s.phase);
@@ -114,9 +117,19 @@ export function usePushRouting(): void {
 
   React.useEffect(() => {
     if (Platform.OS === "web") return;
-    const open = (data: unknown) => {
+    const open = (r: Notifications.NotificationResponse | null | undefined) => {
       try {
-        const href = hrefFromPush(data);
+        // The tap that started the app is also reported by the listener, and Android keeps
+        // giving the last tap back on later starts: open each notification once.
+        const id = r?.notification?.request?.identifier ?? "";
+        if (!r || (id && handledTaps.has(id))) return;
+        if (id) handledTaps.add(id);
+        try {
+          Notifications.clearLastNotificationResponse?.();
+        } catch {
+          /* older native part */
+        }
+        const href = hrefFromPush(r.notification?.request?.content?.data);
         if (session.store.get().phase === "ready") router.push(href);
         else pending.current = href;
       } catch {
@@ -126,11 +139,9 @@ export function usePushRouting(): void {
     let sub: { remove: () => void } | null = null;
     try {
       void Notifications.getLastNotificationResponseAsync()
-        .then((r) => {
-          if (r) open(r?.notification?.request?.content?.data);
-        })
+        .then((r) => open(r))
         .catch(() => undefined);
-      sub = Notifications.addNotificationResponseReceivedListener((r) => open(r?.notification?.request?.content?.data));
+      sub = Notifications.addNotificationResponseReceivedListener((r) => open(r));
     } catch {
       /* push is optional */
     }

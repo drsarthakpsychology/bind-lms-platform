@@ -73,7 +73,7 @@ export function SearchScreen() {
   return (
     <View testID="search" style={{ flex: 1, backgroundColor: c.bg, paddingTop: insets.top }}>
       <View style={{ flexDirection: "row", alignItems: "center", gap: space[1], paddingRight: layout.gutter, paddingLeft: space[1], minHeight: 64, borderBottomWidth: 1, borderColor: c.hairline }}>
-        <Pressable accessibilityRole="button" accessibilityLabel="Back" onPress={() => router.back()} style={{ width: layout.target, height: layout.target, alignItems: "center", justifyContent: "center" }}>
+        <Pressable accessibilityRole="button" accessibilityLabel="Back" onPress={() => (router.canGoBack() ? router.back() : router.replace("/"))} style={{ width: layout.target, height: layout.target, alignItems: "center", justifyContent: "center" }}>
           <ChevronLeft size={26} color={c.ink} />
         </Pressable>
         <View style={{ flex: 1, flexDirection: "row", alignItems: "center", gap: space[2], minHeight: layout.target, borderRadius: layout.radius, backgroundColor: c.tint, paddingHorizontal: space[3] }}>

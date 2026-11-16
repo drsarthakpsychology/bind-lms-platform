@@ -20,7 +20,7 @@ import { session } from "@/auth";
 import { render } from "./utils";
 
 type Bend = "none" | "empty" | "nulls" | "missing" | "long" | "huge" | "offline" | "error";
-const bender: { mode: Bend } = { mode: "none" };
+const bender: { mode: Bend; bent: number } = { mode: "none", bent: 0 };
 
 jest.mock("@/api/mock/server", () => {
   const real = jest.requireActual("@/api/mock/server");
@@ -34,10 +34,19 @@ jest.mock("@/api/mock/server", () => {
   };
 });
 
-/* Field names the contracts say may be null, read from the contract files themselves. */
-function nullableKeys(): Set<string> {
-  const files = ["src/api/contract.ts", "src/admin/contract.ts", "src/practise/contract.ts", "src/api/extra.ts"];
-  const out = new Set<string>();
+/*
+ * What may be null or left out, read from the contract files: every object
+ * type written in them, with each field's "can be null" and "can be left
+ * out". An answer's object is matched to the smallest contract type that has
+ * all its fields, and only that type's nullable fields are bent, so a screen
+ * is never blamed for a null the server cannot send.
+ */
+type Shape = { props: Map<string, { nullable: boolean; optional: boolean }> };
+function contractShapes(): Shape[] {
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  const ts = require("typescript") as typeof import("typescript");
+  const files = ["src/api/contract.ts", "src/admin/contract.ts", "src/practise/contract.ts", "src/api/extra.ts", "src/library/meds.ts"];
+  const shapes: Shape[] = [];
   for (const f of files) {
     let text = "";
     try {
@@ -45,24 +54,50 @@ function nullableKeys(): Set<string> {
     } catch {
       continue;
     }
-    for (const m of text.matchAll(/(\w+)\??:\s*[^;,{}\n]*\bnull\b/g)) out.add(m[1]!);
+    const src = ts.createSourceFile(f, text, ts.ScriptTarget.Latest, true);
+    const visit = (n: import("typescript").Node) => {
+      if (ts.isTypeLiteralNode(n) || ts.isInterfaceDeclaration(n)) {
+        const props = new Map<string, { nullable: boolean; optional: boolean }>();
+        for (const m of n.members) {
+          if (!ts.isPropertySignature(m) || !m.name) continue;
+          const name = m.name.getText(src).replace(/^["']|["']$/g, "");
+          const t = m.type;
+          const nullable = !!t && ts.isUnionTypeNode(t) && t.types.some((x) => x.kind === ts.SyntaxKind.LiteralType && (x as import("typescript").LiteralTypeNode).literal.kind === ts.SyntaxKind.NullKeyword);
+          props.set(name, { nullable, optional: !!m.questionToken });
+        }
+        if (props.size) shapes.push({ props });
+      }
+      ts.forEachChild(n, visit);
+    };
+    visit(src);
   }
-  return out;
+  return shapes;
 }
-const NULLABLE = nullableKeys();
+const SHAPES = contractShapes();
+function shapeOf(o: Record<string, unknown>): Shape | null {
+  const keys = Object.keys(o);
+  if (keys.length < 2) return null;
+  let best: Shape | null = null;
+  for (const s of SHAPES) {
+    if (keys.every((k) => s.props.has(k)) && (!best || s.props.size < best.props.size)) best = s;
+  }
+  return best;
+}
 const AUTH_PATHS = /^\/auth\//;
 const TEXT_KEYS = /^(title|name|body|message|description|tagline|meta|label|text|summary|question|instructions|caption|about|lessonTitle|courseTitle|subtitle|excerpt|preview|note|reason|author|subject|line|hint|detail|status_text|cohort|cohortName|studentName|recipientName|paragraph|greeting|headline|blurb|prompt|why|answer|explanation)$/;
 const COUNT_KEYS = /(count|total|points|xp|streak|unread|students|done|best|score|rank|hours|minutes|seconds|questions|size|views|votes|replies|attempts|watched|sizeBytes|duration)$/i;
 const LONG = "अनन्या मेहता 🧠 मनोविज्ञान ".repeat(14) + "\u{1F469}\u{1F3FD}‍⚕️ end";
 
-function walk(v: unknown, fn: (key: string, val: unknown) => unknown, key = ""): unknown {
-  if (Array.isArray(v)) return v.map((x) => walk(x, fn, key));
+function walk(v: unknown, fn: (key: string, val: unknown, shape: Shape | null) => unknown): unknown {
+  if (Array.isArray(v)) return v.map((x) => walk(x, fn));
   if (v && typeof v === "object") {
+    const src = v as Record<string, unknown>;
+    const shape = shapeOf(src);
     const o: Record<string, unknown> = {};
-    for (const [k, x] of Object.entries(v as Record<string, unknown>)) {
-      const next = fn(k, x);
+    for (const [k, x] of Object.entries(src)) {
+      const next = fn(k, x, shape);
       if (next === DROP) continue;
-      o[k] = walk(next, fn, k);
+      o[k] = walk(next, fn);
     }
     return o;
   }
@@ -77,10 +112,17 @@ function bend(res: RawResponse, p: string): RawResponse | Promise<RawResponse> {
   if (mode === "error") return { status: 500, json: { ok: false, error: { code: "server_error", message: "Something went wrong on our side." } } };
   const json = res.json as { ok?: boolean; data?: unknown } | null;
   if (!json || json.ok !== true) return res;
-  const data = walk(json.data, (k, x) => {
+  const data = walk(json.data, (k, x, shape) => {
+    const p = shape?.props.get(k);
     if (mode === "empty") return Array.isArray(x) ? [] : x;
-    if (mode === "nulls") return NULLABLE.has(k) && x !== null && typeof x !== "object" ? null : NULLABLE.has(k) && x && typeof x === "object" && !Array.isArray(x) ? null : x;
-    if (mode === "missing") return NULLABLE.has(k) ? DROP : x;
+    if (mode === "nulls" && p?.nullable && x !== null) {
+      bender.bent += 1;
+      return null;
+    }
+    if (mode === "missing" && p?.optional) {
+      bender.bent += 1;
+      return DROP;
+    }
     if (mode === "long") return typeof x === "string" && TEXT_KEYS.test(k) ? LONG : x;
     if (mode === "huge") return typeof x === "number" && COUNT_KEYS.test(k) ? 987654321 : x;
     return x;
@@ -129,6 +171,44 @@ const STUDENT: Shot[] = [
   { file: "study/index" },
   { file: "verify/[certificateId]", params: { certificateId: "VIBHA-C2-0123-M1" } },
   { file: "wall" },
+  { file: "(student)/practise" },
+  { file: "shop" },
+  { file: "game/leaderboard" },
+  { file: "case/library" },
+  { file: "game/[id]", params: { id: "blitz" } },
+  { file: "game/[id]", params: { id: "sort" } },
+  { file: "game/[id]", params: { id: "mse" } },
+  { file: "game/[id]", params: { id: "ward" } },
+  { file: "game/[id]", params: { id: "rx" } },
+  { file: "game/[id]", params: { id: "duel" } },
+  { file: "game/[id]", params: { id: "escape" } },
+  { file: "game/[id]", params: { id: "comorbid" } },
+  { file: "game/[id]", params: { id: "team" } },
+  { file: "game/[id]", params: { id: "nope" } },
+  { file: "case/[id]", params: { id: "daily" } },
+  { file: "case/[id]", params: { id: "detective" } },
+  { file: "case/[id]", params: { id: "wwyd" } },
+  { file: "case/[id]", params: { id: "two-minute" } },
+  { file: "case/[id]", params: { id: "say-it" } },
+  { file: "case/[id]", params: { id: "judgment" } },
+  { file: "case/[id]", params: { id: "ethics" } },
+  { file: "case/[id]", params: { id: "landmark" } },
+  { file: "case/[id]", params: { id: "osce" } },
+  { file: "case/[id]", params: { id: "mse-trainer" } },
+  { file: "case/[id]", params: { id: "formulation" } },
+  { file: "case/[id]", params: { id: "out-of-depth" } },
+  { file: "case/[id]", params: { id: "weak-spots" } },
+  { file: "case/[id]", params: { id: "nope" } },
+  { file: "prep/index" },
+  { file: "prep/[subject]", params: { subject: "statistics" } },
+  { file: "prep/long" },
+  { file: "prep/long", params: { subject: "statistics" } },
+  { file: "prep/set", params: { subject: "statistics", topic: "descriptives" } },
+  { file: "prep/mock/index" },
+  { file: "prep/mock/[spec]", params: { spec: "practice-clinical" } },
+  { file: "prep/mock/result/[id]", params: { id: "nope" } },
+  { file: "medicine/[id]", params: { id: "escitalopram" } },
+  { file: "medicine/compare", params: { a: "escitalopram", b: "sertraline" } },
 ];
 const LECTURE: Shot[] = [{ file: "(lecture)/lo/home" }, { file: "(lecture)/lo/lectures" }, { file: "(lecture)/lo/doubts" }, { file: "(lecture)/lo/me" }, { file: "lecture/[lessonId]", params: { lessonId: "l5" } }, { file: "notifications" }, { file: "settings" }, { file: "certificates" }, { file: "search" }];
 const ADMIN: Shot[] = [
@@ -230,6 +310,8 @@ describe.each(ROLES)("%s", (_role, email, shots) => {
       expect(failures).toEqual([]);
       expect(drew).toBeGreaterThan(shots.length / 2);
       if (b === "long" && email) expect(bent).toBeGreaterThan(0);
+      if (b === "nulls" && email) expect(bender.bent).toBeGreaterThan(20);
+      bender.bent = 0;
     });
   }
 });

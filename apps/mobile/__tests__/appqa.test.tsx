@@ -2,15 +2,22 @@
  * Bugs found in the final app check, one test each.
  */
 import { focusManager } from "@tanstack/react-query";
+import * as Notifications from "expo-notifications";
+import { router } from "expo-router";
+import * as React from "react";
+import { Platform } from "react-native";
 
 import { homeView, lectureView, notificationDetailView, streamView } from "@/api/adapt-core";
 import type { SaveItem } from "@/api/contract";
 import { ApiFailure } from "@/api/errors";
 import { onAppState } from "@/api/lifecycle";
 import { outbox } from "@/api/outbox";
+import { session } from "@/auth";
 import { createOutbox } from "@/lib/outbox";
+import { usePushRouting } from "@/push";
 import { memoryStore } from "@/lib/storage";
 import { issued } from "@/screens/me/certificates";
+import { render } from "./utils";
 
 describe("answers with nulls draw instead of throwing", () => {
   it("Home without a step, lists or quests", () => {
@@ -95,5 +102,36 @@ describe("coming back to the app", () => {
     onAppState("active", false);
     expect(flush).toHaveBeenCalledTimes(1);
     flush.mockRestore();
+  });
+});
+
+describe("a tapped notification", () => {
+  it("opens once, though the start-up check and the listener both report it", async () => {
+    const N = Notifications as unknown as Record<string, jest.Mock> & { clearLastNotificationResponse: jest.Mock };
+    Platform.OS = "android";
+    await session.boot();
+    if (session.store.get().phase !== "ready") {
+      await session.signIn("ananya@example.com", "pw");
+      await session.choosePin("2580");
+    }
+    const tap = { notification: { request: { identifier: "push-1", content: { data: { notificationId: "n1" } } } } };
+    let listener: ((r: unknown) => void) | null = null;
+    N.getLastNotificationResponseAsync.mockResolvedValue(tap);
+    N.addNotificationResponseReceivedListener.mockImplementation((fn: (r: unknown) => void) => {
+      listener = fn;
+      return { remove: jest.fn() };
+    });
+    N.clearLastNotificationResponse = jest.fn();
+    (router.push as jest.Mock).mockClear();
+    function Probe() {
+      usePushRouting();
+      return null;
+    }
+    await render(<Probe />);
+    await new Promise((r) => setTimeout(r, 0));
+    listener!(tap);
+    expect((router.push as jest.Mock).mock.calls).toEqual([["/notification/n1"]]);
+    expect(N.clearLastNotificationResponse).toHaveBeenCalled();
+    Platform.OS = "ios";
   });
 });
