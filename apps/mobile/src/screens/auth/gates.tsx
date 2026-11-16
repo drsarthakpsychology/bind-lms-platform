@@ -24,7 +24,7 @@ import { Star } from "@/visitor/Art";
  * content in the middle, action low. It rises in over the app and, when it
  * goes (the right PIN), it lifts away and fades, so the app appears under it.
  */
-function Gate({ children, footer, testID, art }: { children: React.ReactNode; footer?: React.ReactNode; testID: string; art?: React.ReactNode }) {
+export function Gate({ children, footer, testID, art }: { children: React.ReactNode; footer?: React.ReactNode; testID: string; art?: React.ReactNode }) {
   const c = useTheme();
   const insets = useSafeAreaInsets();
   const reduce = useReducedMotion();

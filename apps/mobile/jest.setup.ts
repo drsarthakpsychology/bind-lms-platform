@@ -187,6 +187,10 @@ jest.mock("expo-camera", () => {
   const g = globalThis as unknown as { __camera?: { onBarcodeScanned?: (r: { data: string }) => void } };
   return {
     useCameraPermissions: jest.fn(() => [{ granted: true, canAskAgain: true, status: "granted" }, jest.fn(async () => ({ granted: true }))]),
+    Camera: {
+      getCameraPermissionsAsync: jest.fn(async () => ({ granted: true, canAskAgain: true, status: "granted" })),
+      requestCameraPermissionsAsync: jest.fn(async () => ({ granted: true, canAskAgain: true, status: "granted" })),
+    },
     CameraView: (props: { onBarcodeScanned?: (r: { data: string }) => void }) => {
       g.__camera = { onBarcodeScanned: props.onBarcodeScanned };
       return React.createElement(View, { testID: "camera-view" });

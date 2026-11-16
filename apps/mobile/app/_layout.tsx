@@ -26,6 +26,7 @@ import { fadeMotion, modalMotion, stackMotion } from "@/motion";
 import { guardTarget } from "@/nav/guard";
 import { usePushRouting } from "@/push";
 import { LockScreen, OtherDeviceScreen, PausedScreen, SetPinScreen, UpdateScreen } from "@/screens/auth/gates";
+import { FirstRunPermissions } from "@/screens/auth/permissions";
 import { ThemeProvider, fonts, useTheme } from "@/theme";
 
 installCrashHandlers();
@@ -173,6 +174,7 @@ function Shell() {
   const viewing = useViewingAsStudent() && segments[0] === "(student)";
   const opening = useOpening(phase, segments[0] as string | undefined);
   const holdPin = handoff.use((s) => s.holdPin);
+  const me = useSession((s) => s.me);
   const pathname = usePathname();
 
   // Breadcrumb: the screen on every navigation, so a native crash can be located next time.
@@ -292,6 +294,8 @@ function Shell() {
       </View>
       <ViewAsBar visible={viewing && !overlay} />
       {overlay}
+      {/* After sign-in (and the PIN), once on this phone: notifications and the camera, each with Allow or Not now. */}
+      <FirstRunPermissions active={phase === "ready" && !overlay && !!me} me={me} />
       <ToastHost />
     </View>
   );
