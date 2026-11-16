@@ -12,6 +12,7 @@ import { mock } from "@/api/mock/server";
 import { session } from "@/auth";
 import { ToolCaseScreen } from "@/practise/cases/tool";
 import { GameFrame } from "@/practise/frame";
+import { EscapeGame } from "@/practise/games/escape";
 import { JoinBox } from "@/practise/games/team";
 import * as R from "@/practise/mock/routes";
 import { shopState } from "@/practise/mock/routes";
@@ -134,6 +135,22 @@ describe("MSE Level 4 clock", () => {
       now.mockRestore();
       sub.mockRestore();
       (useLocalSearchParams as jest.Mock).mockReturnValue({});
+    }
+  });
+});
+
+describe("Escape Room", () => {
+  it("says the rooms did not load instead of a start screen with nothing to play", async () => {
+    await session.signIn("ananya@example.com", "pw");
+    await session.choosePin("2580");
+    mock.reset();
+    mock.setScenario("error");
+    try {
+      await render(<EscapeGame />);
+      await waitFor(() => expect(screen.getByTestId("load-error")).toBeTruthy(), { timeout: 4000 });
+      expect(screen.queryByTestId("escape-start")).toBeNull();
+    } finally {
+      mock.reset();
     }
   });
 });

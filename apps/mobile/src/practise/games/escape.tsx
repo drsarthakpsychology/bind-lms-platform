@@ -8,7 +8,7 @@ import { Button, EmptyState, RowList, Section, T } from "@/ds";
 import { haptic } from "@/lib/haptics";
 import { fonts, layout, motion, space, useTheme } from "@/theme";
 import { play, saveCase, useMove, useTool } from "../api";
-import { EndPanel, EndThumb, FrameLoading, GameFrame, HudLine, MoveError, StartScreen, StepStrip, Verdict } from "../frame";
+import { EndPanel, EndThumb, FrameError, FrameLoading, GameFrame, HudLine, MoveError, StartScreen, StepStrip, Verdict } from "../frame";
 import { Story, Tile, AnswerRow } from "../parts";
 import { useReactions } from "../reactions";
 import { ESC_PENALTY_S, ESC_STAGE, TEAM_LIMITS, type EscDoor, type EscResult, type EscRoomCard, type EscTeamView, type RaceRow, type TeamJoin, type TeamListItem } from "../types";
@@ -77,6 +77,8 @@ export function EscapeGame() {
 
   if (!res) {
     if (rooms.isLoading) return <FrameLoading title="Escape Room" />;
+    // Offline or a failed answer: say so (it showed a start screen with no rooms and a Play that did nothing).
+    if (rooms.isError && !rooms.data) return <FrameError title="Escape Room" error={rooms.error} onRetry={() => void rooms.refetch()} />;
     const teamsOn = !!rooms.data?.data.teamsOn;
     const teams = (rooms.data?.data.teams as TeamListItem[] | undefined) ?? [];
     const createTeam = async () => {
