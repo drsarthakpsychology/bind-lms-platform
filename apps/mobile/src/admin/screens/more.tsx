@@ -11,7 +11,6 @@ import { session } from "@/auth";
 import { Row, RowList, RowsSkeleton, Screen, Section, SwitchRow, T } from "@/ds";
 import { toast } from "@/ds/toast";
 import { config } from "@/lib/config";
-import { haptic } from "@/lib/haptics";
 import { space, useTheme } from "@/theme";
 import { adminCalls, useAdminDoubts, usePushPrefs, useSubmissions } from "../api";
 import type { AdminPushPrefs } from "../extra";
@@ -98,7 +97,6 @@ export function AdminAlertsScreen() {
   const q = usePushPrefs();
   const qc = useQueryClient();
   const set = async (p: Partial<AdminPushPrefs>) => {
-    haptic.select();
     qc.setQueryData<AdminPushPrefs>(["admin", "push-prefs", ""], (prev) => (prev ? { ...prev, ...p } : prev));
     try {
       await adminCalls.pushPrefs(p);

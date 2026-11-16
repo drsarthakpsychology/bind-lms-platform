@@ -110,7 +110,6 @@ function Preview({ d }: { d: Draft }) {
   const body = React.useMemo(() => toIssueInput(d), [d]);
   const q = useCertDrawing(body, at);
   const nav = (dir: -1 | 1) => {
-    haptic.select();
     setI((x) => Math.max(0, Math.min(d.recipients.length - 1, x + dir)));
   };
   return (
@@ -196,7 +195,6 @@ export function AdminIssueScreen() {
     }
     setError(null);
     if (step < STEPS.length - 1) {
-      haptic.select();
       return setStep(step + 1);
     }
     const bad = draftError(d, today);

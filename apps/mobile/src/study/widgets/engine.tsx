@@ -5,7 +5,6 @@ import { G } from "react-native-svg";
 
 import { Chips } from "@/ds/parts";
 import { T } from "@/ds/text";
-import { haptic } from "@/lib/haptics";
 import { Swap } from "@/motion";
 import { Arrow, C, E, Label, R, SketchSheet, fit, plain, wrap } from "@/sketch/ink";
 import { layout, space, useTheme } from "@/theme";
@@ -73,7 +72,6 @@ export function SceneArt({ name, def, step, onNode, label }: { name: string; def
             onPress={
               onNode
                 ? () => {
-                    haptic.select();
                     onNode(n.id);
                   }
                 : undefined
@@ -97,7 +95,6 @@ export function StepPicker({ steps, i, onPick }: { steps: { name: string }[]; i:
   const c = useTheme();
   const go = (n: number) => {
     if (n < 0 || n >= steps.length) return;
-    haptic.select();
     onPick(n);
   };
   const btn = (dir: -1 | 1) => (

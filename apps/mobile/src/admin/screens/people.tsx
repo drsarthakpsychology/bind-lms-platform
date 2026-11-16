@@ -7,7 +7,6 @@ import { View } from "react-native";
 import { Button, Chips, EmptyState, Field, Row, RowList, RowsSkeleton, Screen, Sheet, T } from "@/ds";
 import { messageOf } from "@/api/errors";
 import { toast } from "@/ds/toast";
-import { haptic } from "@/lib/haptics";
 import { space, useTheme } from "@/theme";
 import { adminCalls, useAdminAction, useEnquiries, usePeople, usePerson, useRefreshAdmin } from "../api";
 import { PEOPLE_VIEWS, STAGE_LABEL, STAGES, type EmailPreview, type LoginLinkResult, type PeopleView, type PersonRow, type StageId } from "../extra";
@@ -88,7 +87,7 @@ export function ContactSheet({
             </T>
             <View style={{ flexDirection: "row", flexWrap: "wrap", gap: space[2] }}>
               {mergeFields.map((m) => (
-                <SmallButton key={m.key} label={m.label} onPress={() => { haptic.select(); setText((t) => `${t}{${m.key}}`); setShown(null); }} testID={`merge-${m.key}`} />
+                <SmallButton key={m.key} label={m.label} onPress={() => { setText((t) => `${t}{${m.key}}`); setShown(null); }} testID={`merge-${m.key}`} />
               ))}
             </View>
           </View>

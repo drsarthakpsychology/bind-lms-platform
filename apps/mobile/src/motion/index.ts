@@ -3,7 +3,7 @@
  * Full guide with examples: apps/mobile/docs/MOTION.md.
  *
  *   tokens     springs, dur, curves, stagger
- *   press      Press, usePressScale         press feedback (scale + haptic)
+ *   press      Press, usePressScale         press feedback (scale; haptic only if asked)
  *   enter      Enter, StaggerList, useEnter, presets, staggerDelay
  *   skeleton   Shimmer, SkeletonIn, Reveal  loading to content
  *   number     RollingNumber                digits roll into place

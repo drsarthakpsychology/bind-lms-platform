@@ -5,7 +5,6 @@ import { useAdminAction, useRefreshAdmin } from "@/admin/api";
 import { ActionBar, Check, Quiet, SearchBox, SmallButton } from "@/admin/kit";
 import { useAdminRole } from "@/admin/role";
 import { Button, Field, RowsSkeleton, Screen, Section, Sheet, T } from "@/ds";
-import { haptic } from "@/lib/haptics";
 import { layout, space, useTheme } from "@/theme";
 import { adminClinicCalls, useAdminClinicToday, useClinicStudents } from "../api";
 import { ClinicLoaded } from "../loaded";
@@ -117,7 +116,6 @@ function StudentLine({ s, on, onToggle, onOpen, canWrite }: { s: ClinicStudent; 
         accessibilityLabel={`${s.name}. ${s.leavesLeft} of ${s.leaveAllowance} leaves left. ${s.casesDone} of ${s.opdTotal} cases.`}
         disabled={!canWrite}
         onPress={() => {
-          haptic.select();
           onOpen();
         }}
         style={({ pressed }) => ({ flex: 1, minHeight: layout.row, paddingVertical: space[2], justifyContent: "center", opacity: pressed ? 0.7 : 1 })}

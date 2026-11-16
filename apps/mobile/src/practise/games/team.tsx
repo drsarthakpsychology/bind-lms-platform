@@ -60,7 +60,6 @@ export function usePoll<T>(on: boolean, ms: number, load: () => Promise<T>, appl
 export function TeamCode({ code, name, message }: { code: string; name: string; message: string }) {
   const c = useTheme();
   const share = () => {
-    haptic.tap();
     void Share.share({ message: `${message} Code: ${code}` }).catch(() => undefined);
   };
   return (

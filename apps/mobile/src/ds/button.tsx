@@ -4,7 +4,6 @@ import Animated, { useAnimatedStyle, useReducedMotion, useSharedValue, withTimin
 
 import { useOffline } from "@/api/online";
 import { crumb } from "@/lib/breadcrumb";
-import { haptic } from "@/lib/haptics";
 import { curves, dur } from "@/motion";
 import { layout, space, useTheme } from "@/theme";
 import { T } from "./text";
@@ -33,7 +32,8 @@ type ButtonProps = {
 /**
  * Buttons. The primary one is the only lime thing on a screen besides
  * progress, and the only thing with a hard shadow: on press it moves 3px into
- * its shadow over 120ms, with a light haptic.
+ * its shadow over 120ms. No haptic: the result of the action
+ * gives one when it matters (saved, wrong, done).
  */
 export function Button({ label, onPress, kind = "primary", icon, disabled, busy, needsServer, full, testID, accessibilityHint, style }: ButtonProps) {
   const c = useTheme();
@@ -63,7 +63,6 @@ export function Button({ label, onPress, kind = "primary", icon, disabled, busy,
       if (locked.current) return;
       locked.current = true;
     }
-    if (kind === "primary") haptic.tap();
     crumb.action(label);
     onPress?.();
   };

@@ -54,7 +54,6 @@ function ReactionChip({ k, count, mine, onPress }: { k: (typeof REACTIONS)[numbe
         if (!mine) setPop((n) => n + 1);
         onPress();
       }}
-      feel="tap"
       scale={0.92}
       accessibilityRole="button"
       accessibilityState={{ selected: mine }}

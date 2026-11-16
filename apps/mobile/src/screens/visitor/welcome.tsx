@@ -9,7 +9,6 @@ import { scheduleOnRN } from "react-native-worklets";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { Button, Meme, Row, RowList, Sheet, T } from "@/ds";
-import { haptic } from "@/lib/haptics";
 import { MaskLine, Press, Swap, presets } from "@/motion";
 import { fonts, layout, space, useTheme } from "@/theme";
 import { Icon, Person, Sparkle, Star } from "@/visitor/Art";
@@ -156,7 +155,7 @@ function TopBar({ y, ch, vh, heroH, topInset, onJump }: { y: SharedValue<number>
           <Text allowFontScaling={false} numberOfLines={1} style={{ flex: 1, fontFamily: fonts.pixel, fontSize: 10, letterSpacing: 0.6, textTransform: "uppercase", color: ON_BLUE_MUTED }}>
             School of Psychology
           </Text>
-          <Press onPress={onJump} testID="welcome-jump" accessibilityRole="button" accessibilityLabel="Jump to a part of this page" feel="select" innerStyle={{ minHeight: layout.target, paddingHorizontal: space[3], flexDirection: "row", alignItems: "center", gap: space[1] }}>
+          <Press onPress={onJump} testID="welcome-jump" accessibilityRole="button" accessibilityLabel="Jump to a part of this page" innerStyle={{ minHeight: layout.target, paddingHorizontal: space[3], flexDirection: "row", alignItems: "center", gap: space[1] }}>
             <Text allowFontScaling={false} style={{ fontFamily: fonts.bold, fontSize: 14, color: WHITE }}>
               Jump to
             </Text>
@@ -182,7 +181,7 @@ function Dock({ onHeight }: { onHeight: (h: number) => void }) {
     <Animated.View onLayout={(e: LayoutChangeEvent) => onHeight(e.nativeEvent.layout.height)} style={[{ position: "absolute", left: 0, right: 0, bottom: 0, paddingHorizontal: space[3], paddingBottom: space[3] }, anim]}>
       <View style={{ width: "100%", maxWidth: layout.readingWidth, alignSelf: "center", backgroundColor: c.card, borderRadius: 20, borderWidth: 2, borderColor: c.dark ? "rgba(255,255,255,0.22)" : INK, paddingTop: space[3], paddingHorizontal: space[3], paddingBottom: space[1], shadowColor: "#000", shadowOpacity: 0.18, shadowRadius: 18, shadowOffset: { width: 0, height: 8 }, elevation: 10 }}>
         <Button label="Sign in" onPress={() => router.push("/sign-in")} testID="welcome-sign-in" accessibilityHint="For students with a VIBHA account" />
-        <Press onPress={() => router.push("/request")} testID="welcome-request" accessibilityRole="button" accessibilityLabel="New here? Request an invitation" hitSlop={4} feel="tap" innerStyle={{ minHeight: layout.target, alignItems: "center", justifyContent: "center", flexDirection: "row", gap: space[1] }}>
+        <Press onPress={() => router.push("/request")} testID="welcome-request" accessibilityRole="button" accessibilityLabel="New here? Request an invitation" hitSlop={4} innerStyle={{ minHeight: layout.target, alignItems: "center", justifyContent: "center", flexDirection: "row", gap: space[1] }}>
           <T v="small" tone="muted">
             New here?
           </T>
@@ -603,7 +602,6 @@ function Curriculum() {
           decelerationRate="fast"
           snapToInterval={card + space[3]}
           snapToAlignment="start"
-          onMomentumScrollEnd={() => haptic.select()}
           contentContainerStyle={{ paddingHorizontal: G, gap: space[3] }}
           accessibilityLabel="Seven disciplines"
         >
@@ -643,7 +641,6 @@ function YourWeek() {
   const thumbAnim = useAnimatedStyle(() => ({ transform: [{ translateX: thumb.value * (segW / 2) }] }));
   const pick = (v: boolean) => {
     if (v === weekend) return;
-    haptic.select();
     setWeekend(v);
     thumb.set(reduce ? (v ? 1 : 0) : withSpring(v ? 1 : 0, snappy));
   };
@@ -864,7 +861,7 @@ function Joining() {
 
 function Pill({ label, icon, onPress, testID }: { label: string; icon: React.ReactNode; onPress: () => void; testID: string }) {
   return (
-    <Press onPress={onPress} testID={testID} accessibilityRole="button" accessibilityLabel={label} feel="tap" innerStyle={{ minHeight: 44, paddingHorizontal: space[4], borderRadius: 22, backgroundColor: WHITE, flexDirection: "row", alignItems: "center", gap: space[2] }}>
+    <Press onPress={onPress} testID={testID} accessibilityRole="button" accessibilityLabel={label} innerStyle={{ minHeight: 44, paddingHorizontal: space[4], borderRadius: 22, backgroundColor: WHITE, flexDirection: "row", alignItems: "center", gap: space[2] }}>
       {icon}
       <Text allowFontScaling={false} style={{ fontFamily: fonts.bold, fontSize: 15, color: INK }}>
         {label}

@@ -6,7 +6,6 @@ import { Status } from "@/admin/kit";
 import type { Tone } from "@/admin/format";
 import { T } from "@/ds";
 import { openLink as open } from "@/lib/open";
-import { haptic } from "@/lib/haptics";
 import { layout, space, useAccent, useTheme } from "@/theme";
 import type { AttendState, ClinicSession, LeaveStatus, OpdVisitStatus, RosterState, SessionKind } from "./contract";
 import { clockOf, isOpd, LEAVE_WORD, rangeLabel, ROSTER_WORD, sessionTitle, stateWord, timeLabel, VISIT_WORD } from "./logic";
@@ -25,7 +24,6 @@ export const VisitWord = ({ s }: { s: OpdVisitStatus }) => <Status tone={VISIT_T
 
 /** Opens an online class link; a bad link says so instead of failing quietly. */
 export function openLink(url: string) {
-  haptic.tap();
   void open(url);
 }
 
@@ -93,7 +91,6 @@ export function SessionLine({ s, trailing, onPress, testID, hideState }: { s: Cl
       accessibilityRole="button"
       accessibilityLabel={label}
       onPress={() => {
-        haptic.select();
         onPress();
       }}
       style={({ pressed }) => ({ backgroundColor: pressed ? c.tint : "transparent", marginHorizontal: -space[2], paddingHorizontal: space[2], borderRadius: 10 })}

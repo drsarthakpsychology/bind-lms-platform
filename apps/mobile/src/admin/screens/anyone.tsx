@@ -141,7 +141,6 @@ export function AdminAnyoneScreen() {
     setPreviewing(true);
     try {
       await pdf.show(await adminCalls.anyonePreview(f));
-      haptic.select();
     } catch (e) {
       toast.show(messageOf(e));
     } finally {

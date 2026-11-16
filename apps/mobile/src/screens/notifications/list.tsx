@@ -10,7 +10,6 @@ import { api } from "@/auth";
 import { Button, EmptyState, Loaded, Row, RowList, Screen, Section } from "@/ds";
 import { MoreButton, useMorePages } from "@/ds/more";
 import { toast } from "@/ds/toast";
-import { haptic } from "@/lib/haptics";
 
 /** "Today 12:40", "Yesterday", "12 Nov". */
 export function when(iso: string | null | undefined, now = Date.now()): string {
@@ -77,7 +76,6 @@ export function NotificationsScreen() {
     setBusy(true);
     try {
       await api.post<ReadAllResult>("/notifications/read-all");
-      haptic.select();
       await Promise.all([qc.invalidateQueries({ queryKey: keys.notifications }), qc.invalidateQueries({ queryKey: keys.me })]);
     } catch {
       toast.show("Could not mark them read. Try again.");

@@ -8,7 +8,6 @@ import { DateField } from "@/admin/date-field";
 import { ConfirmSheet, Notice, SmallButton } from "@/admin/kit";
 import { useAdminRole } from "@/admin/role";
 import { Button, RowsSkeleton, Screen, Section, Sheet, T } from "@/ds";
-import { haptic } from "@/lib/haptics";
 import { Swap } from "@/motion";
 import { layout, space, useTheme } from "@/theme";
 import { adminClinicCalls, useCohortId, useOpdAdmin } from "../api";
@@ -108,7 +107,6 @@ function NameChip({ seat, onPress, canWrite }: { seat: PlanSeat; onPress: () => 
       accessibilityLabel={`${seat.name}${seat.fixed ? ", kept" : ". Move"}`}
       disabled={!canWrite || seat.fixed}
       onPress={() => {
-        haptic.select();
         onPress();
       }}
       style={({ pressed }) => ({ minHeight: 36, paddingHorizontal: space[3], borderRadius: 18, justifyContent: "center", backgroundColor: pressed ? c.pill : c.tint, opacity: seat.fixed ? 0.7 : 1 })}

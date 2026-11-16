@@ -219,7 +219,6 @@ export function AdminStudentsScreen() {
           accessibilityRole="button"
           accessibilityLabel={nFilters ? `Filters, ${nFilters} on` : "Filters"}
           onPress={() => {
-            haptic.select();
             setSheet(true);
           }}
           style={({ pressed }) => ({ minHeight: layout.target, paddingHorizontal: space[3], borderRadius: layout.radius, borderWidth: 1.5, borderColor: nFilters ? c.ink : c.cardLine, flexDirection: "row", alignItems: "center", gap: space[2], backgroundColor: pressed ? c.tint : c.card })}

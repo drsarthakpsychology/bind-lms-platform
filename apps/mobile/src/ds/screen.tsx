@@ -5,7 +5,6 @@ import Animated, { useReducedMotion } from "react-native-reanimated";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { useOffline } from "@/api/online";
-import { haptic } from "@/lib/haptics";
 import { FlowGap, presets, usePressScale } from "@/motion";
 import Svg, { Defs, LinearGradient, Rect, Stop } from "react-native-svg";
 
@@ -148,14 +147,12 @@ export function Screen({ children, title, lead, top, footer, onRefresh, refreshi
   const insets = useSafeAreaInsets();
   const reduce = useReducedMotion();
   // Pull to refresh: the spinner shows only for the person's own pull (never
-  // for quiet background refreshes), for at least 500ms so it never blinks,
-  // and the pull gives a selection haptic.
+  // for quiet background refreshes), for at least 500ms so it never blinks.
   const [pulled, setPulled] = React.useState(false);
   const [hold, setHold] = React.useState(false);
   if (pulled && !hold && !refreshing) setPulled(false);
   const pull = React.useCallback(() => {
     if (!onRefresh) return;
-    haptic.select();
     setPulled(true);
     setHold(true);
     setTimeout(() => setHold(false), 500);

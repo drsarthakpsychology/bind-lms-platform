@@ -39,16 +39,16 @@ export type PressProps = Omit<PressableProps, "style" | "children"> & {
   innerStyle?: StyleProp<ViewStyle>;
   /** How far it shrinks: 0.97 for rows and cards, 0.92 for small icons. */
   scale?: number;
-  /** The haptic on press: "select" (default) for picking, "tap" for an action, or none. */
+  /** The haptic on press: none (default; plain navigation has none), "select" for picking a choice, "tap" for an action that commits. */
   feel?: Feel;
 };
 
 /**
  * Anything you can press that is not a Button: scales to 0.97 on a stiff
- * spring while held (so the screen feels like it is listening), with a light
- * haptic on press. Use it for cards, tiles, icon buttons and custom rows.
+ * spring while held (so the screen feels like it is listening). No haptic
+ * unless `feel` asks for one: opening things is not a haptic moment. Use it for cards, tiles, icon buttons and custom rows.
  */
-export function Press({ children, style, innerStyle, scale = 0.97, feel = "select", onPress, onPressIn, onPressOut, ...rest }: PressProps) {
+export function Press({ children, style, innerStyle, scale = 0.97, feel = "none", onPress, onPressIn, onPressOut, ...rest }: PressProps) {
   const { style: anim, handlers } = usePressScale(scale);
   return (
     <Pressable

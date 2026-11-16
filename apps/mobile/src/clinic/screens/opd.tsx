@@ -80,7 +80,6 @@ function LogSheet({ visit, onClose, onDone }: { visit: OpdVisit | null; onClose:
     }
   };
   const step = (d: number) => {
-    haptic.select();
     setN((x) => Math.max(0, Math.min(20, x + d)));
   };
   return (

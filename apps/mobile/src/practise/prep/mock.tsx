@@ -224,7 +224,6 @@ export function MockExamScreen() {
   const go = (i: number) => {
     if (!flat[i]) return;
     stopClock();
-    haptic.select();
     setDir(i >= at ? 1 : -1);
     setAt(i);
     setVisited((v) => ({ ...v, [flat[i]!.q.id]: true }));
@@ -235,7 +234,6 @@ export function MockExamScreen() {
     if (!spec || starting) return;
     setStarting(true);
     setStartError(null);
-    haptic.tap();
     try {
       const r = await play<MockPaper | { error: string }>("prep", "mockStart", spec.id);
       if ("error" in r) {
@@ -383,7 +381,7 @@ export function MockExamScreen() {
           <Grid3x3 size={16} color={c.ink} />
           <T v="small" num style={{ fontFamily: fonts.semibold }}>{`${counts.answered}/${flat.length}`}</T>
         </Pressable>
-        <Pressable accessibilityRole="button" accessibilityLabel="Submit" onPress={() => { haptic.tap(); setConfirm(true); }} testID="mock-submit-open" style={({ pressed }) => ({ minHeight: 40, flexDirection: "row", alignItems: "center", gap: space[1], paddingHorizontal: space[3], borderRadius: 10, backgroundColor: c.ink, opacity: pressed ? 0.85 : 1 })}>
+        <Pressable accessibilityRole="button" accessibilityLabel="Submit" onPress={() => setConfirm(true)} testID="mock-submit-open" style={({ pressed }) => ({ minHeight: 40, flexDirection: "row", alignItems: "center", gap: space[1], paddingHorizontal: space[3], borderRadius: 10, backgroundColor: c.ink, opacity: pressed ? 0.85 : 1 })}>
           <Send size={15} color={c.bg} />
           <T v="small" style={{ fontFamily: fonts.semibold, color: c.bg }}>
             Submit
@@ -427,7 +425,7 @@ export function MockExamScreen() {
             ))}
           </View>
           {answers[q.id] != null ? (
-            <Button kind="text" label="Clear my answer" onPress={() => { haptic.select(); setAnswers((a) => ({ ...a, [q.id]: null })); }} testID="mock-clear" />
+            <Button kind="text" label="Clear my answer" onPress={() => setAnswers((a) => ({ ...a, [q.id]: null }))} testID="mock-clear" />
           ) : null}
         </Swap>
       ) : null}

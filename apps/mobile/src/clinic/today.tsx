@@ -4,7 +4,6 @@ import { Pressable, View } from "react-native";
 
 import { go } from "@/api/prefetch";
 import { Button, Section, T } from "@/ds";
-import { haptic } from "@/lib/haptics";
 import { Enter } from "@/motion";
 import { space, useAccent, useTheme } from "@/theme";
 import { useClinicToday } from "./api";
@@ -19,7 +18,6 @@ export function HeadLink({ label, onPress, testID }: { label: string; onPress: (
       testID={testID}
       accessibilityRole="link"
       onPress={() => {
-        haptic.select();
         onPress();
       }}
       hitSlop={6}
@@ -85,7 +83,6 @@ export function TodayBlockView({ d }: { d: ClinicToday }) {
             testID="today-to-log"
             accessibilityRole="button"
             onPress={() => {
-              haptic.select();
               go("/clinic/opd");
             }}
           >

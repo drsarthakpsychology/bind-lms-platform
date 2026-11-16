@@ -6,7 +6,6 @@ import { Share, View } from "react-native";
 import { Button, EmptyState, Field, Row, RowList, RowsSkeleton, Screen, Sheet, T } from "@/ds";
 import { toast } from "@/ds/toast";
 import { config } from "@/lib/config";
-import { haptic } from "@/lib/haptics";
 import { space, useTheme } from "@/theme";
 import { adminCalls, useAdminAction, useRefreshAdmin, useSystem } from "../api";
 import type { NewSupportKey, SupportKeyView } from "../extra";
@@ -31,7 +30,6 @@ function ShowOnce({ k, onClose }: { k: NewSupportKey | null; onClose: () => void
     if (!k) return;
     try {
       await Share.share({ message: k.plain });
-      haptic.select();
     } catch {
       toast.show("Could not open sharing. Press and hold the key to copy it.");
     }
