@@ -4,6 +4,7 @@ import { PenLine } from "lucide-react-native";
 import * as React from "react";
 import { Pressable, View } from "react-native";
 
+import { AdminTodayBlock } from "@/clinic/admin/today";
 import { Button, EmptyState, Row, RowList, RowsSkeleton, Screen, T } from "@/ds";
 import { config } from "@/lib/config";
 import { space, useTheme } from "@/theme";
@@ -115,6 +116,7 @@ export function AdminHomeScreen() {
       <Loaded q={q} soon what="today" skeleton={<RowsSkeleton rows={6} />}>
         {(d) => <AdminHomeView data={d} />}
       </Loaded>
+      <AdminTodayBlock />
     </Screen>
   );
 }

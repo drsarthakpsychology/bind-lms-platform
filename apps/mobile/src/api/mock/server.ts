@@ -18,6 +18,7 @@
  * "admin@..." an admin; the password "wrong" is refused.
  */
 import { adminMock, adminRoute } from "@/admin/mock";
+import { clinicMock, clinicRoute } from "@/clinic/mock";
 import type { RawRequest, RawResponse, Transport } from "../client";
 import type * as C from "../contract";
 import type * as X from "../extra";
@@ -78,6 +79,7 @@ export const mock = {
     state = fresh();
     practiseMock?.resetPractiseMock();
     adminMock.reset();
+    clinicMock.reset();
     resetLearnMock();
     resetMapWallMock();
   },
@@ -201,6 +203,10 @@ async function route(req: RawRequest): Promise<RawResponse> {
   if (state.scenario === "error") return fail(500, "server_error", "Something went wrong on our side. Try again in a minute.");
   const practise = practiseMock?.practiseRoute(req.method, path, req.body, kind);
   if (practise) return practise;
+
+  // Schedule, attendance, leave and OPD (src/clinic/mock.ts).
+  const clinic = clinicRoute(req.method, req.path, req.body, kind);
+  if (clinic) return clinic;
 
   const isNew = state.scenario === "new";
   // Admin routes (src/admin/mock.ts): a view admin reads, only the admin writes.

@@ -277,6 +277,11 @@ function Shell() {
             <Stack.Screen name="medicine/[id]" options={{ title: "" }} />
             <Stack.Screen name="medicine/compare" options={{ title: "Compare" }} />
             <Stack.Screen name="student/[id]" options={{ title: "" }} />
+            <Stack.Screen name="clinic/schedule" options={{ title: "Schedule" }} />
+            <Stack.Screen name="clinic/scan" options={{ title: "" }} />
+            <Stack.Screen name="clinic/leave" options={{ title: "Leave" }} />
+            <Stack.Screen name="clinic/opd" options={{ title: "OPD cases" }} />
+            <Stack.Screen name="clinic/attendance" options={{ title: "My attendance" }} />
             <Stack.Screen name="compose" options={{ title: "New message", presentation: "modal", ...(reduce ? null : modalMotion) }} />
           </Stack>
         }

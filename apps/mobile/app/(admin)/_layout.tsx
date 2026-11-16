@@ -19,6 +19,7 @@ export default function AdminStack() {
       <Stack.Screen name="admin/certificates/anyone" options={{ title: "" }} />
       <Stack.Screen name="admin/alerts" options={{ title: "Admin alerts" }} />
       <Stack.Screen name="admin/search" options={{ headerShown: false, ...fadeMotion }} />
+      <Stack.Screen name="admin/clinic/code/[id]" options={{ headerShown: false, ...fadeMotion }} />
     </Stack>
   );
 }

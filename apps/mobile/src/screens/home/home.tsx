@@ -5,6 +5,7 @@ import { Pressable, View } from "react-native";
 import { useReducedMotion } from "react-native-reanimated";
 
 import { outbox } from "@/api/outbox";
+import { TodayBlock } from "@/clinic/today";
 import { useHome, type HomeData } from "@/api/queries";
 import type { QuestCard } from "@/api/contract";
 import { EmptyState, Hero, IconDot, LoadError, Row, RowList, Screen, Section, Sheet, Skeleton, T } from "@/ds";
@@ -268,6 +269,7 @@ export function HomeView({ data }: { data: HomeData }) {
           />
         </Enter>
       ) : null}
+      <TodayBlock />
       {goal ? (
         <Enter i={3}>
           <Section title="Today">

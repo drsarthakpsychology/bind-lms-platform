@@ -1,5 +1,5 @@
 import { router } from "expo-router";
-import { Award, Bell, ChartLine, CircleHelp, MessageCircleQuestionMark, Settings, ShoppingBag, Trophy } from "lucide-react-native";
+import { Award, Bell, CalendarCheck, CalendarDays, CalendarOff, ChartLine, ClipboardList, CircleHelp, MessageCircleQuestionMark, Settings, ShoppingBag, Trophy } from "lucide-react-native";
 import * as React from "react";
 import { View } from "react-native";
 
@@ -63,6 +63,16 @@ export function MeScreen() {
       )}
       {me && !lecturesOnly ? <Summary /> : null}
       {me && can?.achievements !== false ? <NextCertificate /> : null}
+      {!lecturesOnly ? (
+        <Section title="Clinic">
+          <RowList>
+            <Row testID="me-schedule" title="Schedule" meta="Sessions and your OPD days" icon={<IconDot icon={CalendarDays} />} onPress={() => router.push("/clinic/schedule")} />
+            <Row testID="me-leave" title="Leave" icon={<IconDot icon={CalendarOff} />} onPress={() => router.push("/clinic/leave")} />
+            <Row testID="me-opd" title="OPD cases" icon={<IconDot icon={ClipboardList} />} onPress={() => router.push("/clinic/opd")} />
+            <Row testID="me-attendance" title="My attendance" icon={<IconDot icon={CalendarCheck} />} onPress={() => router.push("/clinic/attendance")} />
+          </RowList>
+        </Section>
+      ) : null}
       <Section title="Your work">
         <RowList>
           <Row testID="me-progress" title="Progress" meta="Topics, map, your level and badges" icon={<IconDot icon={ChartLine} />} onPress={() => router.push("/progress")} />

@@ -173,3 +173,19 @@ jest.mock("expo-audio", () => ({
   useAudioPlayer: jest.fn(() => ({ play: jest.fn(), pause: jest.fn(), seekTo: jest.fn() })),
   useAudioPlayerStatus: jest.fn(() => ({ playing: false, duration: 0 })),
 }));
+
+// The attendance scanner: a camera that has permission; tests read a code by calling the last onBarcodeScanned.
+jest.mock("expo-camera", () => {
+  const React = require("react");
+  const { View } = require("react-native");
+  const g = globalThis as unknown as { __camera?: { onBarcodeScanned?: (r: { data: string }) => void } };
+  return {
+    useCameraPermissions: jest.fn(() => [{ granted: true, canAskAgain: true, status: "granted" }, jest.fn(async () => ({ granted: true }))]),
+    CameraView: (props: { onBarcodeScanned?: (r: { data: string }) => void }) => {
+      g.__camera = { onBarcodeScanned: props.onBarcodeScanned };
+      return React.createElement(View, { testID: "camera-view" });
+    },
+  };
+});
+jest.mock("expo-keep-awake", () => ({ useKeepAwake: jest.fn(), activateKeepAwakeAsync: jest.fn(async () => undefined), deactivateKeepAwake: jest.fn(async () => undefined) }));
+jest.mock("expo-brightness", () => ({ setBrightnessAsync: jest.fn(async () => undefined), restoreSystemBrightnessAsync: jest.fn(async () => undefined), isAvailableAsync: jest.fn(async () => true) }));

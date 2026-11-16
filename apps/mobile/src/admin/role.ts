@@ -38,7 +38,9 @@ export type AdminAction =
   | "send-waiting"
   | "award-badge"
   | "award-all"
-  | "support-key";
+  | "support-key"
+  /** Schedule, attendance, leave and OPD (src/clinic). */
+  | "clinic";
 
 export function roleOf(me: Pick<Me, "role"> | null | undefined): AdminRole | null {
   if (me?.role === "admin") return "super";

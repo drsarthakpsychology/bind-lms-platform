@@ -1,7 +1,7 @@
 import { useQueryClient } from "@tanstack/react-query";
 import { openLink } from "@/lib/open";
 import { router } from "expo-router";
-import { Award, Bell, BellRing, BookOpen, CircleHelp, ClipboardList, FileCheck, Gauge, GraduationCap, LogOut, MessageCircleQuestion, Radar, Settings, Users } from "lucide-react-native";
+import { Award, Bell, BellRing, CalendarClock, BookOpen, CircleHelp, ClipboardList, FileCheck, Gauge, GraduationCap, LogOut, MessageCircleQuestion, Radar, Settings, Users } from "lucide-react-native";
 import * as React from "react";
 import { View } from "react-native";
 
@@ -52,6 +52,11 @@ export function AdminMoreScreen() {
           <Row title="Cohorts" icon={<Users {...icon} />} onPress={() => router.push("/admin/cohorts")} testID="more-cohorts" />
           <Row title="People" meta="Enquiries and who to contact next" icon={<Radar {...icon} />} onPress={() => router.push("/admin/people")} testID="more-people" />
           <Row title="Forms" meta="Answers, and email who answered" icon={<ClipboardList {...icon} />} onPress={() => router.push("/admin/forms")} testID="more-forms" />
+        </RowList>
+      </Section>
+      <Section title="Clinic">
+        <RowList>
+          <Row title="Sessions and attendance" meta="Today, Show code, leave, timetable, OPD" icon={<CalendarClock {...icon} />} onPress={() => router.push("/admin/clinic")} testID="more-clinic" />
         </RowList>
       </Section>
       <Section title="Teach">
