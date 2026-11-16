@@ -2,7 +2,7 @@ import { router } from "expo-router";
 import { CircleHelp, X } from "lucide-react-native";
 import * as React from "react";
 import { BackHandler, Pressable, ScrollView, View } from "react-native";
-import Animated, { FadeIn, useAnimatedStyle, useReducedMotion, useSharedValue, withSequence, withSpring, withTiming } from "react-native-reanimated";
+import Animated, { useAnimatedStyle, useReducedMotion, useSharedValue, withSequence, withSpring, withTiming } from "react-native-reanimated";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { Button, EmptyState, Sheet, Skeleton, T, VerdictBand } from "@/ds";
@@ -10,10 +10,13 @@ import { haptic } from "@/lib/haptics";
 import { settingsStore } from "@/lib/settings";
 import { streakMoment } from "@/moments/host";
 import { Rich } from "@/study/rich";
-import { fonts, layout, motion, space, useTheme } from "@/theme";
+import { fonts, layout, space, useTheme } from "@/theme";
 import { ApiFailure } from "@/api/errors";
 import { isSoon } from "./api";
-import { Burst, Confetti, curves, dur, presets, RollingNumber, springs } from "@/motion";
+import { Burst, Confetti, curves, dur, presets, RollingNumber, springs, staggerDelay } from "@/motion";
+import { InkDraw, MaskUp, PixelLoader, useRun, useSlow } from "@/moments/parts";
+import { ALL_ENTRIES, type Icon } from "./catalog";
+import { EntryIcon } from "./icons";
 import { Bump, Rise } from "./fx";
 import { EndSticker, moodForScore, reactions, StickerLayer } from "./reactions";
 
@@ -178,6 +181,31 @@ export function HowToSheet({ open, onClose, steps, onPlay }: { open: boolean; on
 
 /* ------------------------------------------------------------ start screen */
 
+/**
+ * A game's intro, under 500ms: its icon pops while a ring of ink draws
+ * itself around it, the title rises out of its mask, the line fades up and
+ * the choices rise in 40ms apart. Play works from the first frame.
+ */
+export const INTRO_AT = { title: 80, line: 200, chips: 240 } as const;
+const MARK_RING = [{ k: "game-mark", shape: { t: "ellipse" as const, cx: 28, cy: 28, w: 50, h: 48 } }];
+const MARK_OPTS = { stroke: "@ink", sw: 1.8, rough: 1.2 };
+
+function GameMark({ icon }: { icon: Icon }) {
+  const c = useTheme();
+  const reduce = useReducedMotion();
+  const p = useRun(0, 420, false, curves.inOut);
+  return (
+    <View style={{ width: 56, height: 56, alignItems: "center", justifyContent: "center" }} accessibilityElementsHidden importantForAccessibility="no-hide-descendants">
+      <View style={{ position: "absolute", top: 0, left: 0 }}>
+        <InkDraw shapes={MARK_RING} p={p} width={56} height={56} o={MARK_OPTS} />
+      </View>
+      <Animated.View entering={reduce ? undefined : presets.pop(60)}>
+        <EntryIcon icon={icon} size={26} color={c.ink} />
+      </Animated.View>
+    </View>
+  );
+}
+
 export type Choice<V extends string> = { id: V; name: string; line?: string };
 
 /**
@@ -198,6 +226,7 @@ export function StartScreen<V extends string>({
   error,
   note,
   below,
+  icon,
   testID,
 }: {
   title: string;
@@ -214,32 +243,41 @@ export function StartScreen<V extends string>({
   /** A quiet fact under the line: "Your best: 240". */
   note?: string | null;
   below?: React.ReactNode;
+  /** The game's icon; found from the catalog by title when not given. */
+  icon?: Icon;
   testID?: string;
 }) {
   const c = useTheme();
   const reduce = useReducedMotion();
   const [help, setHelp] = React.useState(false);
+  const mark = icon ?? ALL_ENTRIES.find((e) => e.title === title)?.icon;
   return (
     <GameFrame title="" testID={testID ?? "start"} thumb={<Button label={playLabel} onPress={onPlay} busy={busy} testID="start-play" />}>
-      <Animated.View entering={reduce ? undefined : FadeIn.duration(motion.page)} style={{ gap: space[3], paddingTop: space[4] }}>
-        <T v="display">{title}</T>
-        <T tone="muted" style={{ maxWidth: 460 }}>
-          {line}
-        </T>
+      <View style={{ gap: space[3], paddingTop: space[4] }}>
+        {mark ? <GameMark icon={mark} /> : null}
+        <MaskUp delay={INTRO_AT.title}>
+          <T v="display">{title}</T>
+        </MaskUp>
+        <Animated.View entering={reduce ? undefined : presets.fade(INTRO_AT.line)}>
+          <T tone="muted" style={{ maxWidth: 460 }}>
+            {line}
+          </T>
+        </Animated.View>
         {note ? (
           <T v="small" num style={{ fontFamily: fonts.pixelDigits, color: c.link, letterSpacing: 0.5 }}>
             {note}
           </T>
         ) : null}
-      </Animated.View>
+      </View>
       {choices?.length ? (
         <View style={{ gap: space[2] }} accessibilityRole="radiogroup" accessibilityLabel={choiceLabel}>
           <T v="caption" tone="muted">
             {choiceLabel.toUpperCase()}
           </T>
-          {choices.map((o) => {
+          {choices.map((o, i) => {
             const on = o.id === choice;
             return (
+              <Animated.View key={o.id} entering={reduce ? undefined : presets.rise(staggerDelay(i, INTRO_AT.chips))}>
               <Pressable
                 key={o.id}
                 accessibilityRole="radio"
@@ -262,6 +300,7 @@ export function StartScreen<V extends string>({
                   ) : null}
                 </View>
               </Pressable>
+              </Animated.View>
             );
           })}
         </View>
@@ -451,11 +490,13 @@ export function EndThumb({ again, againLabel = "Play again", extra }: { again: (
 
 /* ------------------------------------------------------------ load states */
 
-/** While the first move loads, and when it cannot. */
+/** While the first move loads, and when it cannot. A wait over a second adds the pixel loader. */
 export function FrameLoading({ title }: { title: string }) {
+  const slow = useSlow(true, 1000);
   return (
     <GameFrame title={title} testID="frame-loading">
       <View style={{ gap: space[3] }} accessibilityRole="progressbar" accessibilityLabel="Loading">
+        {slow ? <PixelLoader label="Setting up the round" /> : null}
         <Skeleton w="70%" h={26} />
         <Skeleton h={16} />
         <Skeleton w="85%" h={16} />

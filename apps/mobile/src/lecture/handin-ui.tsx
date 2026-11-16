@@ -11,6 +11,7 @@ import { haptic } from "@/lib/haptics";
 import { clock } from "@/lecture/player";
 import { layout, space, useTheme } from "@/theme";
 import { checkFile, handInFiles, handInRecording, mimeTypesFor, type Picked } from "./handin";
+import { PixelLoader, useSlow } from "@/moments/parts";
 
 /* ------------------------------------------------------------------ files */
 
@@ -103,6 +104,7 @@ export function RecordingHandIn({ a, onDone }: { a: Assignment; onDone: (s: Subm
   const [uri, setUri] = React.useState<string | null>(null);
   const [error, setError] = React.useState<string | null>(null);
   const [busy, setBusy] = React.useState(false);
+  const slow = useSlow(busy, 1000);
   const player = useAudioPlayer(uri ? { uri } : null);
   const status = useAudioPlayerStatus(player);
 
@@ -174,6 +176,7 @@ export function RecordingHandIn({ a, onDone }: { a: Assignment; onDone: (s: Subm
           {error}
         </T>
       ) : null}
+      {slow ? <PixelLoader label="Sending your recording" /> : null}
       <Button kind="quiet" label="Hand in the recording" disabled={!uri || rec.isRecording} busy={busy} onPress={() => void send()} testID="record-send" />
     </View>
   );
