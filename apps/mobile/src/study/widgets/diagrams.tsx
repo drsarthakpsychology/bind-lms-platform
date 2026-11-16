@@ -11,6 +11,7 @@ import { Row, RowList, Skeleton } from "@/ds/parts";
 import { Slider } from "@/ds/slider";
 import { T } from "@/ds/text";
 import { haptic } from "@/lib/haptics";
+import { finite, safeSvgXml } from "@/lib/svg-safe";
 import { Arrow, C, Cv, E, L, Label, P, R, SketchSheet, fit, plain, wrap } from "@/sketch/ink";
 import { useTheme } from "@/theme";
 import { Rich } from "../rich";
@@ -70,10 +71,11 @@ export function layoutFlow(d: FlowData): { nodes: Placed[]; h: number; edges: [s
   }
   if (d.layout === "tree") {
     const depth = new Map<string, number>();
-    const of = (id: string): number => {
+    const of = (id: string, seen = 0): number => {
       if (depth.has(id)) return depth.get(id)!;
       const nd = d.nodes.find((x) => x.id === id);
-      const v = nd?.parent ? of(nd.parent) + 1 : 0;
+      // A parent loop in the data must not recurse forever.
+      const v = nd?.parent && seen < d.nodes.length ? of(nd.parent, seen + 1) + 1 : 0;
       depth.set(id, v);
       return v;
     };
@@ -340,6 +342,9 @@ export function FigureWidget({ d }: { d: FigureData }) {
   const q = useFigure(d.id);
   const [on, setOn] = React.useState<string | null>(d.focus?.[0] ?? null);
   const [shown, setShown] = React.useState<Set<string>>(new Set());
+  const raw = q.data ? (c.dark ? q.data.svg?.dark : q.data.svg?.light) : undefined;
+  // safeSvgXml: some valid SVG (marker orient, pointer-events) closes the app on Android.
+  const xml = React.useMemo(() => safeSvgXml(highlight(raw ?? "", on, c.sk.blue)), [raw, on, c.sk.blue]);
   if (!q.data) {
     return (
       <WidgetFrame label="Figure" title={d.title} testID="w-figure">
@@ -348,15 +353,16 @@ export function FigureWidget({ d }: { d: FigureData }) {
     );
   }
   const f = q.data;
-  const [, , vw, vh] = f.viewBox.split(/\s+/).map(Number);
-  const xml = highlight(c.dark ? f.svg.dark : f.svg.light, on, c.sk.blue);
+  const [, , vw, vh] = String(f.viewBox ?? "").split(/\s+/).map(Number);
+  const labels = Array.isArray(f.labels) ? f.labels.filter((l) => l && typeof l.id === "string") : [];
+  const ratio = finite(vw) > 0 && finite(vh) > 0 ? vw! / vh! : 320 / 180;
   return (
     <WidgetFrame label={d.quiz ? "Name the parts" : "Figure"} title={d.title ?? f.title} caption={d.caption ?? f.summary} testID="w-figure">
-      <View accessible accessibilityRole="image" accessibilityLabel={`${f.title}. ${f.labels.map((l) => l.name).join(", ")}`} style={{ width: "100%", aspectRatio: (vw || 320) / (vh || 180), backgroundColor: c.sk.paper, borderRadius: 12 }}>
-        <SvgXml xml={xml} width="100%" height="100%" />
+      <View accessible accessibilityRole="image" accessibilityLabel={`${f.title}. ${labels.map((l) => l.name).join(", ")}`} style={{ width: "100%", aspectRatio: ratio, backgroundColor: c.sk.paper, borderRadius: 12 }}>
+        {xml ? <SvgXml xml={xml} width="100%" height="100%" /> : null}
       </View>
       <RowList>
-        {f.labels.map((l, i) => {
+        {labels.map((l, i) => {
           const hidden = d.quiz && !shown.has(l.id);
           return (
             <Row

@@ -1,3 +1,4 @@
+import { router } from "expo-router";
 import { ArrowRight, BookOpen, Check, ChevronRight, Circle, Dumbbell, Flame, Play, Stethoscope } from "lucide-react-native";
 import * as React from "react";
 import { Pressable, View } from "react-native";
@@ -196,6 +197,7 @@ export function HomeSkeleton() {
 export function HomeView({ data }: { data: HomeData }) {
   const c = useTheme();
   const { step, allDone, progress, goal, upNext, welcomeBack } = data;
+  // The server may send no step (nothing open yet): then there is no hero, only the empty state below.
   const hero = allDone
     ? {
         context: "All caught up",
@@ -203,12 +205,14 @@ export function HomeView({ data }: { data: HomeData }) {
         meta: "Revise a weak topic or try a case while you wait for the next lecture.",
         cta: "Practise",
       }
-    : {
-        context: !welcomeBack && step.kind === "lecture" ? "Start your first lecture" : step.eyebrow,
-        title: step.title,
-        meta: step.meta ?? undefined,
-        cta: step.cta,
-      };
+    : step
+      ? {
+          context: !welcomeBack && step.kind === "lecture" ? "Start your first lecture" : step.eyebrow,
+          title: step.title || "Carry on",
+          meta: step.meta ?? undefined,
+          cta: step.cta || "Open",
+        }
+      : null;
   return (
     <>
       <Enter i={0}>
@@ -219,22 +223,24 @@ export function HomeView({ data }: { data: HomeData }) {
           </T>
         </T>
       </Enter>
-      <Enter i={1}>
-        <Hero
-          context={hero.context}
-          title={hero.title}
-          meta={hero.meta}
-          progress={!allDone && progress && progress.pct > 0 ? progress.pct : undefined}
-          progressLabel={progress?.label}
-          action={{
-            label: hero.cta,
-            onPress: () => openTarget(step.target),
-            icon: <ArrowRight size={20} color={c.onPrimary} />,
-            testID: "home-continue",
-          }}
-          below={<SaveLine />}
-        />
-      </Enter>
+      {hero ? (
+        <Enter i={1}>
+          <Hero
+            context={hero.context}
+            title={hero.title}
+            meta={hero.meta}
+            progress={!allDone && progress && progress.pct > 0 ? progress.pct : undefined}
+            progressLabel={progress?.label}
+            action={{
+              label: hero.cta,
+              onPress: () => (step ? openTarget(step.target) : router.push("/practise")),
+              icon: <ArrowRight size={20} color={c.onPrimary} />,
+              testID: "home-continue",
+            }}
+            below={<SaveLine />}
+          />
+        </Enter>
+      ) : null}
       {goal ? (
         <Enter i={3}>
           <Section title="Today">
@@ -247,7 +253,7 @@ export function HomeView({ data }: { data: HomeData }) {
           <Section title="Up next">
             <RowList>
               {upNext.slice(0, 3).map((r, i) => {
-                const Icon = UP_ICON[r.kind];
+                const Icon = UP_ICON[r.kind as keyof typeof UP_ICON] ?? Play;
                 return <Row key={i} testID={`up-next-${i}`} title={r.title} meta={r.meta ?? undefined} icon={<Icon size={20} color={c.muted} />} onPress={() => openTarget(r.target)} />;
               })}
             </RowList>
