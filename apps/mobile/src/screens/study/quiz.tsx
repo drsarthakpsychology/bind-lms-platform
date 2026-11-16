@@ -14,7 +14,7 @@ import { Button, LoadError, OptionRow, ProgressLine, Sheet, Skeleton, T, Verdict
 import { toast } from "@/ds/toast";
 import { haptic } from "@/lib/haptics";
 import { Rich } from "@/study/rich";
-import { Burst, Confetti, RollingNumber } from "@/motion";
+import { Burst, Confetti, RollingNumber, Swap } from "@/motion";
 import { fonts, layout, motion, space, useTheme } from "@/theme";
 
 /**
@@ -138,14 +138,14 @@ export function QuizRunner({ title, questions, submit, onDone, doneLabel }: { ti
             </View>
           </Animated.View>
         ) : q ? (
-          <Animated.View key={q.key} entering={reduce ? undefined : FadeIn.duration(motion.state)} style={{ gap: space[5] }} testID={`question-${i}`}>
+          <Swap k={q.key} style={{ gap: space[5] }} testID={`question-${i}`}>
             <Rich text={q.q} v="h2" />
             <View style={{ gap: space[3] }} accessibilityRole="radiogroup">
               {q.options.map((o, j) => (
                 <OptionRow key={j} index={j} text={o} testID={`option-${j}`} state={picked === j ? "picked" : "idle"} onPress={() => setPicks((p) => ({ ...p, [q.key]: j }))} />
               ))}
             </View>
-          </Animated.View>
+          </Swap>
         ) : (
           <T tone="muted">No questions right now. Every question here is already right.</T>
         )}

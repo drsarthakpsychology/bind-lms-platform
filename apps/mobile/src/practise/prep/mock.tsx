@@ -2,11 +2,11 @@ import { router, useLocalSearchParams } from "expo-router";
 import { ArrowLeft, ArrowRight, Check, Clock, Flag, Grid3x3, History, Send, TriangleAlert } from "lucide-react-native";
 import * as React from "react";
 import { AppState, Pressable, View } from "react-native";
-import Animated, { FadeIn, FadeInLeft, FadeInRight, useReducedMotion } from "react-native-reanimated";
+import Animated, { FadeIn, useReducedMotion } from "react-native-reanimated";
 
 import { Button, Chips, EmptyState, LoadError, Row, RowList, RowsSkeleton, Screen, Section, Sheet, T } from "@/ds";
 import { haptic } from "@/lib/haptics";
-import { Burst, ProgressFill } from "@/motion";
+import { Burst, ProgressFill, Swap } from "@/motion";
 import { pathFromLink } from "@/nav/targets";
 import { Rich } from "@/study/rich";
 import { fonts, layout, motion, space, useTheme } from "@/theme";
@@ -410,7 +410,7 @@ export function MockExamScreen() {
       }
     >
       {q && cur ? (
-        <Animated.View key={q.id} entering={reduce ? undefined : (dir > 0 ? FadeInRight : FadeInLeft).duration(motion.state)} style={{ gap: space[4] }}>
+        <Swap k={q.id} dir={dir > 0 ? 1 : -1} style={{ gap: space[4] }}>
           <T v="caption" tone="muted" num>
             {`${paper.sections.length > 1 ? `${cur.title.toUpperCase()} · ` : ""}QUESTION ${at + 1} OF ${flat.length}`}
           </T>
@@ -423,7 +423,7 @@ export function MockExamScreen() {
           {answers[q.id] != null ? (
             <Button kind="text" label="Clear my answer" onPress={() => { haptic.select(); setAnswers((a) => ({ ...a, [q.id]: null })); }} testID="mock-clear" />
           ) : null}
-        </Animated.View>
+        </Swap>
       ) : null}
 
       <Sheet open={palette} onClose={() => setPalette(false)} title="All questions" testID="mock-palette-sheet">
