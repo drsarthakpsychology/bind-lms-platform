@@ -6,6 +6,10 @@
  */
 
 import { BOARDS } from "@/lib/standing/boards";
+import { createIndex, type SearchDoc } from "./engine";
+
+/** Nav to Admin are built into the page; the rest come from the server search (/api/search). */
+export type PaletteGroup = "Nav" | "Lectures" | "Study" | "Topics" | "Notes" | "Medicines" | "Tools" | "Reference" | "Cases" | "Files" | "Admin" | "Students";
 
 export interface PaletteEntry {
   id: string;
@@ -14,7 +18,7 @@ export interface PaletteEntry {
   hint?: string;
   href: string;
   /** Group the result clusters under. */
-  group: "Nav" | "Study" | "Medicines" | "Tools" | "Reference" | "Admin";
+  group: PaletteGroup;
   /** Keywords beyond the label, searched too (e.g. "patient", "MSE"). */
   keywords?: string[];
   shortcut?: string;
@@ -162,12 +166,57 @@ export function scoreEntry(entry: PaletteEntry, query: string): number {
   return 0;
 }
 
-/** Search the static palette (case docs are added server-side). */
-export function searchPalette(entries: PaletteEntry[], query: string): PaletteEntry[] {
-  return entries
+type Indexed = { index: ReturnType<typeof createIndex<SearchDoc & { entry: PaletteEntry }>> };
+const indexes = new WeakMap<PaletteEntry[], Indexed>();
+function fuzzyIndex(entries: PaletteEntry[]): Indexed {
+  let x = indexes.get(entries);
+  if (!x) {
+    x = { index: createIndex(entries.map((e) => ({ id: e.id, type: e.group, title: e.label, meta: e.hint, keywords: e.keywords, entry: e }))) };
+    indexes.set(entries, x);
+  }
+  return x;
+}
+
+/**
+ * Search the page's own entries. Exact words first (the ranking above), then,
+ * while there is room, near misses: "lithum", "skizophrenia", "formulaton".
+ */
+export function searchPalette(entries: PaletteEntry[], query: string, max = 12): PaletteEntry[] {
+  const strict = entries
     .map((e) => ({ e, score: scoreEntry(e, query) }))
     .filter((x) => x.score > 0)
     .sort((a, b) => b.score - a.score || a.e.label.localeCompare(b.e.label))
     .map((x) => x.e)
-    .slice(0, 12);
+    .slice(0, max);
+  if (strict.length >= max || query.trim().length < 3) return strict;
+  const seen = new Set(strict.map((e) => e.id));
+  const near = fuzzyIndex(entries)
+    .index.search(query, { limit: max, perType: max })
+    .map((h) => h.doc.entry)
+    .filter((e) => !seen.has(e.id));
+  return [...strict, ...near].slice(0, max);
+}
+
+/** A server search result (/api/search) as a row of the palette. */
+export type ServerHit = { id: string; type: string; title: string; meta: string; href: string };
+const SERVER_GROUP: Record<string, PaletteGroup> = { lecture: "Lectures", file: "Files", module: "Study", section: "Topics", note: "Notes", medicine: "Medicines", glossary: "Reference", case: "Cases", student: "Students" };
+export function serverEntries(hits: readonly ServerHit[]): PaletteEntry[] {
+  return hits.map((h) => ({ id: `srv-${h.id}`, label: h.title, hint: h.meta || undefined, href: h.href, group: SERVER_GROUP[h.type] ?? "Tools" }));
+}
+
+/** The page's own matches and the server's, one row per page, the page's first. */
+export function mergeResults(local: readonly PaletteEntry[], server: readonly PaletteEntry[], max = 24): PaletteEntry[] {
+  const seen = new Set(local.map((e) => e.href));
+  return [...local, ...server.filter((e) => !seen.has(e.href) && (seen.add(e.href), true))].slice(0, max);
+}
+
+/** Groups in a fixed order, so rows do not jump about as the server answers. */
+export const GROUP_ORDER: readonly PaletteGroup[] = ["Nav", "Lectures", "Study", "Topics", "Notes", "Medicines", "Reference", "Cases", "Tools", "Files", "Students", "Admin"];
+export function groupEntries(results: readonly PaletteEntry[]): { group: PaletteGroup; items: PaletteEntry[] }[] {
+  const out: { group: PaletteGroup; items: PaletteEntry[] }[] = [];
+  for (const g of GROUP_ORDER) {
+    const items = results.filter((r) => r.group === g);
+    if (items.length) out.push({ group: g, items });
+  }
+  return out;
 }

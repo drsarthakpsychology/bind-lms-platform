@@ -336,6 +336,14 @@ This section is continued (and kept current) in `docs/app/API_CONTRACT_PRACTISE_
 
 The medicine data is all medicine facts in the website's own shape (`Med`, `src/lib/meds/types.ts`). The app searches it on the phone (the same rule as `searchMeds`).
 
+### 2.12a Search everything
+
+| Status | Method and path | Auth | Request | Response | Calls |
+|---|---|---|---|---|---|
+| built | `GET /search?q=&types=&perType=` | bearer (each group checked on its own) | `q` 2 to 80 characters; `types` a comma list of `lecture,file,module,section,note,medicine,glossary,case,student`; `perType` 1 to 20 (default 6) | `SearchAnswer` `{ v: 1, q, results: { id, type, title, meta, href, app }[], types }` | `searchEverything` (`src/lib/search/everything.ts`) |
+
+Each group is offered only when the website would open it for this account (`decideApiAccess` per group: lecture-only scope, sections switched off, feature switches). Lectures and files come from `loadMyCourses` + `loadCourseOverview`, openable only. `student` is for admins. `app` is the Expo Router path to open; `types` lists the groups this account can search. Typo tolerant (`src/lib/search/engine.ts`, copied byte for byte to `apps/mobile/src/lib/search-engine.ts`). The website's top bar uses the same search at `GET /api/search?q=` (cookie session).
+
 ### 2.13 Admin
 
 This section is continued (and kept current) in `docs/app/API_CONTRACT_PRACTISE_ADMIN.md`, with its types in `src/lib/app-api/contract-practise-admin.ts`. Where the two disagree, that page wins. Everything below still works.

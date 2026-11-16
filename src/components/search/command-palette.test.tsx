@@ -40,4 +40,39 @@ describe("CommandPalette", () => {
     fireEvent.keyDown(input, { key: "Enter" });
     expect(push).toHaveBeenCalledWith("/p6");
   });
+
+  it("adds the server's lectures after typing stops, and remembers the search", async () => {
+    vi.useFakeTimers();
+    try {
+      window.localStorage.clear();
+      const fetchMock = vi.fn(async () => ({ ok: true, json: async () => ({ results: [{ id: "lecture:l1", type: "lecture", title: "Mental state examination", meta: "Lecture 3 · Week 1", href: "/courses/c/lessons/l1" }] }) }));
+      vi.stubGlobal("fetch", fetchMock);
+      render(<CommandPalette entries={entries} />);
+      act(() => {
+        window.dispatchEvent(new Event("plms:open-search"));
+      });
+      const input = screen.getByRole("textbox", { name: "Search" });
+      fireEvent.change(input, { target: { value: "m" } });
+      fireEvent.change(input, { target: { value: "ment" } });
+      fireEvent.change(input, { target: { value: "mental" } });
+      expect(fetchMock).not.toHaveBeenCalled();
+      await act(async () => {
+        await vi.advanceTimersByTimeAsync(200);
+      });
+      expect(fetchMock).toHaveBeenCalledTimes(1);
+      expect(String((fetchMock.mock.calls[0] as unknown[])[0])).toBe("/api/search?q=mental");
+      expect(screen.getByText("Lectures")).toBeTruthy();
+      fireEvent.click(screen.getByText("Mental state examination"));
+      expect(push).toHaveBeenCalledWith("/courses/c/lessons/l1");
+      expect(JSON.parse(window.localStorage.getItem("vibha.search.recent") ?? "[]")).toEqual(["mental"]);
+      act(() => {
+        window.dispatchEvent(new Event("plms:open-search"));
+      });
+      expect(screen.getByText("Recent searches")).toBeTruthy();
+      expect(screen.getByRole("button", { name: "Remove mental from recent searches" })).toBeTruthy();
+    } finally {
+      vi.unstubAllGlobals();
+      vi.useRealTimers();
+    }
+  });
 });
