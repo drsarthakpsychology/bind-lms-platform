@@ -9,7 +9,7 @@ import { Button, Field, IconButton, Loaded, RowsSkeleton, Screen, Section, Sheet
 import { haptic } from "@/lib/haptics";
 import { Burst, ProgressRing, RollingNumber, useCelebrate } from "@/motion";
 import { AreaProvider, layout, space, useAccent, useTheme } from "@/theme";
-import { clinicCalls, clinicKeys, useOpd } from "../api";
+import { clinicCalls, clinicKeys, opdQuery, useOpd } from "../api";
 import type { Batch, OpdPage, OpdVisit } from "../contract";
 import { BATCH_NAME, casesLine, pct, rangeLabel, relDay, todayIST, visitsNeeded } from "../logic";
 import { VisitWord } from "../parts";
@@ -57,7 +57,7 @@ function BatchChoice({ onPick }: { onPick: (b: Batch) => void }) {
 }
 
 /** The log for one visit: how many cases (0 allowed) or "I was absent", and a one-line note. */
-function LogSheet({ visit, onClose, onDone }: { visit: OpdVisit | null; onClose: () => void; onDone: (done: number, total: number) => void }) {
+function LogSheet({ visit, onClose, onDone }: { visit: OpdVisit | null; onClose: () => void; onDone: () => void }) {
   const c = useTheme();
   const [n, setN] = React.useState(2);
   const [note, setNote] = React.useState("");
@@ -68,9 +68,9 @@ function LogSheet({ visit, onClose, onDone }: { visit: OpdVisit | null; onClose:
     setBusy(true);
     setError(null);
     try {
-      const r = await clinicCalls.logCases(visit.id, { cases: absent ? null : n, absent, note: note.trim() || null });
+      await clinicCalls.logCases({ assignmentId: visit.id, cases: absent ? 0 : n, absent, note: note.trim() || undefined });
       setNote("");
-      onDone(Number(r.done) || 0, Number(r.total) || 0);
+      onDone();
     } catch (e) {
       haptic.warn();
       setError(messageOf(e));
@@ -211,7 +211,7 @@ export function OpdScreen() {
                   </Section>
                 ) : null}
                 <Section title="My OPD days">
-                  {!p.published ? (
+                  {!p.visits.length ? (
                     <T v="small" tone="muted">
                       Your OPD days show here once the admin publishes the timetable.
                     </T>
@@ -239,10 +239,14 @@ export function OpdScreen() {
                 <LogSheet
                   visit={logging}
                   onClose={() => setLogging(null)}
-                  onDone={(done, total) => {
+                  onDone={() => {
                     setLogging(null);
-                    celebrate({ win: true, result: () => toast.show(casesLine(done, total)), particles: () => setFire((x) => x + 1) });
-                    refresh();
+                    // The new count comes from the server's own tally, then the ring fills and sparks.
+                    void qc
+                      .fetchQuery({ ...opdQuery, staleTime: 0 })
+                      .then((next) => celebrate({ win: true, result: () => toast.show(`Saved. ${casesLine(next.done, next.total)}`), particles: () => setFire((x) => x + 1) }))
+                      .catch(() => toast.show("Saved"))
+                      .finally(refresh);
                   }}
                 />
               </View>

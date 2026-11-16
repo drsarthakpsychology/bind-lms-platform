@@ -9,7 +9,7 @@ import { StaggerList } from "@/motion";
 import { space, useTheme } from "@/theme";
 import { adminClinicCalls, useAdminLeaves } from "../api";
 import type { AdminLeave } from "../contract";
-import { dateLabel, leavesLine, rangeLabel, timeLabel } from "../logic";
+import { dateLabel, leavesLine, requestTitle, timeLabel } from "../logic";
 import { LeaveWord } from "../parts";
 
 /** Approve or not, with an optional note the student sees. */
@@ -18,7 +18,7 @@ function DecideSheet({ item, decision, onClose }: { item: AdminLeave | null; dec
   const { run, busy } = useAdminAction();
   const go = async () => {
     if (!item) return;
-    const r = await run("clinic", () => adminClinicCalls.decide(item.id, { decision, note: note.trim() || null }), { done: decision === "approve" ? `Approved for ${item.name}` : `Not approved for ${item.name}` });
+    const r = await run("clinic", () => adminClinicCalls.decide(item.id, { decision, note: note.trim() || undefined }), { done: decision === "approve" ? `Approved for ${item.name}` : `Not approved for ${item.name}` });
     if (r !== undefined) {
       setNote("");
       onClose();
@@ -47,23 +47,25 @@ function LeaveCard({ l, onDecide, canWrite }: { l: AdminLeave; onDecide: (d: "ap
         <View style={{ flex: 1, minWidth: 0 }}>
           <T v="bodyStrong">{l.name}</T>
           <T v="small" tone="muted">
-            {l.kind === "early" ? `Leave early at ${timeLabel(l.leaveAt ?? "")}` : l.sessions.length > 1 ? `Leave for ${l.sessions.length} sessions` : "Leave"}
-            {l.cohort ? ` · ${l.cohort}` : ""}
+            {requestTitle(l)}
           </T>
         </View>
         <LeaveWord s={l.status} />
       </View>
       {l.sessions.map((s) => (
         <T key={s.id} v="small" num>
-          {s.title} · {dateLabel(s.date)}, {rangeLabel(s.start, s.end)}
+          {s.title} · {dateLabel(s.date)}
+          {s.start ? `, ${timeLabel(s.start)}` : ""}
         </T>
       ))}
-      <T v="small" tone="muted">
-        “{l.reason}”
-      </T>
+      {l.reason ? (
+        <T v="small" tone="muted">
+          “{l.reason}”
+        </T>
+      ) : null}
       <View style={{ flexDirection: "row", flexWrap: "wrap", gap: space[2], alignItems: "center" }}>
         {l.overLimit ? <Tag tone="alert">Over the limit</Tag> : null}
-        {l.kind === "leave" ? (
+        {l.kind !== "early" ? (
           <T v="small" tone="muted" num>
             {leavesLine(l.left)} of {l.allowance}
           </T>
@@ -100,9 +102,9 @@ export function AdminLeavesScreen() {
       <FilterChips label="Show" value={status} onChange={setStatus} testID="aleave-filter" options={[{ id: "pending", name: "Waiting" }, { id: "all", name: "All" }]} />
       <Loaded q={q} what="leave requests" soon skeleton={<RowsSkeleton rows={4} />}>
         {(d) =>
-          d.items.length ? (
+          d.length ? (
             <StaggerList>
-              {d.items.map((l) => (
+              {d.map((l) => (
                 <LeaveCard key={l.id} l={l} canWrite={canWrite} onDecide={(x) => setOpen({ item: l, d: x })} />
               ))}
             </StaggerList>

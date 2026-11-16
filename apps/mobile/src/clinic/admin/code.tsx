@@ -8,7 +8,7 @@ import Animated, { Easing, useAnimatedProps, useReducedMotion, useSharedValue, w
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import Svg, { Circle } from "react-native-svg";
 
-import { messageOf } from "@/api/errors";
+import { ApiFailure, messageOf } from "@/api/errors";
 import { Button, IconButton, T } from "@/ds";
 import { Swap } from "@/motion";
 import { fixed, fonts, layout, space, useTheme } from "@/theme";
@@ -103,17 +103,18 @@ export function ShowCodeScreen() {
       try {
         const r = await adminClinicCalls.code(sid);
         if (!alive) return;
-        const sk = r.serverNow ? skewOf(r.serverNow, Date.now()) : 0;
         setCode(r);
-        setSkew(sk);
+        setSkew(skewOf(r.validUntil, r.refreshInMs, Date.now()));
         setError(null);
-        // The next code: just after this window ends by the server's clock.
-        const wait = Math.max(1000, Date.parse(r.windowEndsAt) - (Date.now() + sk) + 250);
-        timer = setTimeout(() => void load(), Number.isFinite(wait) ? Math.min(wait, 31_000) : 30_000);
+        // The next code: just after this window ends (the server says when).
+        timer = setTimeout(() => void load(), Math.max(1000, Math.min(r.refreshInMs, 31_000)) + 250);
       } catch (e) {
         if (!alive) return;
-        setError(messageOf(e));
-        timer = setTimeout(() => void load(), 5000);
+        // Not open yet (409): say so, and look again every 30 seconds. Anything else: try again in 5.
+        const closed = e instanceof ApiFailure && e.code === "conflict";
+        if (closed) setCode(null);
+        setError(closed ? `${messageOf(e)} Scanning is open from 30 minutes before the start to an hour after the end.` : messageOf(e));
+        timer = setTimeout(() => void load(), closed ? 30_000 : 5000);
       }
     };
     void load();
@@ -129,7 +130,7 @@ export function ShowCodeScreen() {
     return () => clearInterval(t);
   }, []);
 
-  const left = code ? secondsLeft(code.windowEndsAt, now, skew) : 0;
+  const left = code ? secondsLeft(code.validUntil, now, skew) : 0;
   const s = detail.data?.session;
   const qrSize = Math.max(200, Math.min(width - 48, height - 380, 420));
   const n = s?.counts;
@@ -168,13 +169,8 @@ export function ShowCodeScreen() {
                 {error}
               </T>
             ) : null}
-            {!code.open ? (
-              <T tone="alert" center testID="code-closed">
-                Scanning is not open for this session now. It opens 30 minutes before the start.
-              </T>
-            ) : null}
             <View style={{ flexDirection: "row", alignItems: "center", gap: space[4] }}>
-              <CountdownRing seconds={left} period={code.periodSeconds} />
+              <CountdownRing seconds={left} period={30} />
               <View>
                 <T v="small" tone="muted">
                   New code in {left} s
@@ -189,7 +185,7 @@ export function ShowCodeScreen() {
           </>
         ) : error ? (
           <View style={{ gap: space[3], alignItems: "center" }}>
-            <T center tone="alert">
+            <T center tone="alert" testID="code-error">
               {error}
             </T>
             <Button kind="quiet" label="Try again" onPress={() => setTries((x) => x + 1)} />

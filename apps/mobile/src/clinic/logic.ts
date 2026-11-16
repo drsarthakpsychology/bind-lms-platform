@@ -104,11 +104,11 @@ export const KIND_NAME: Record<SessionKind, string> = {
   opd_morning: "OPD morning",
   opd_evening: "OPD evening",
   class: "Class",
-  online: "Online class",
-  early: "Early class",
+  online_class: "Online class",
+  early_class: "Early class",
   other: "Session",
 };
-export const KINDS: SessionKind[] = ["class", "online", "early", "opd_morning", "opd_evening", "other"];
+export const KINDS: SessionKind[] = ["class", "online_class", "early_class", "opd_morning", "opd_evening", "other"];
 export const isOpd = (k: SessionKind) => k === "opd_morning" || k === "opd_evening";
 
 /** What a session shows as its title: the admin's title, or the kind. */
@@ -118,7 +118,7 @@ export function sessionTitle(s: Pick<ClinicSession, "title" | "kind">): string {
 
 /** One line under a session's title: time and place, or "Online". */
 export function sessionMeta(s: Pick<ClinicSession, "start" | "end" | "place" | "link" | "kind">): string {
-  const where = s.place || (s.link || s.kind === "online" ? "Online" : "");
+  const where = s.place || (s.link || s.kind === "online_class" ? "Online" : "");
   return where ? `${rangeLabel(s.start, s.end)} · ${where}` : rangeLabel(s.start, s.end);
 }
 
@@ -159,63 +159,76 @@ export const VISIT_WORD: Record<OpdVisitStatus, string> = { upcoming: "Coming up
 
 /* ------------------------------------------------------------ the code */
 
-/** Letters and digits a person can type without mixing them up. */
+/** The letters and digits in a code: no 0, O, 1 or I, so nothing is mixed up. */
 export const CODE_LETTERS = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
 
-/** What was typed, cleaned: capitals, no spaces or dashes; O read as 0 is not guessed. */
+/** What was typed, cleaned: capitals, no spaces or dashes, at most 6. */
 export function cleanCode(s: string): string {
   return (s ?? "").toUpperCase().replace(/[\s-]+/g, "").slice(0, 6);
 }
 
-export const isCode = (s: string) => /^[A-Z0-9]{6}$/.test(s);
+export const isCode = (s: string) => /^[A-HJ-NP-Z2-9]{6}$/.test(s);
+
+/** The QR text the server makes ("vibha-att:1:<session>:<window>:<token>"). */
+export const QR_PREFIX = "vibha-att:1:";
 
 /**
- * What to send for a scan. Six letters and digits (typed, or a QR that holds
- * only the code) go as `code`; anything else the camera read goes as `qr`
- * for the server to check.
+ * What to send for a scan: the camera's text as `token` (the server checks
+ * it), or six typed letters as `code`. Null for anything that cannot be one.
  */
-export function scanBody(raw: string, typed = false): { qr?: string; code?: string } | null {
+export function scanBody(raw: string, typed = false): { token?: string; code?: string } | null {
   const t = (raw ?? "").trim();
   if (!t) return null;
+  if (typed) {
+    const c = cleanCode(t);
+    return isCode(c) ? { code: c } : null;
+  }
+  if (t.startsWith(QR_PREFIX) && t.length < 200) return { token: t };
   const c = cleanCode(t);
-  if (typed) return isCode(c) ? { code: c } : null;
-  if (t.length <= 8 && isCode(c)) return { code: c };
-  return t.length > 512 ? null : { qr: t };
+  return t.length <= 8 && isCode(c) ? { code: c } : null;
 }
 
-/** Plain words for every scan refusal. */
+/**
+ * Plain words for every scan refusal. The server answers 400 for a wrong,
+ * old or repeated code (its message says which), 403 for someone else's
+ * session, 409 when the session is not open, 429 for too many tries.
+ */
 export function scanError(e: unknown): { title: string; body: string } {
-  const code = e instanceof ApiFailure ? e.code : "";
+  const code = e instanceof ApiFailure ? (e.code as string) : "";
   const msg = e instanceof ApiFailure ? e.message : "";
-  switch (code as string) {
-    case "code_expired":
-      return { title: "That code has changed", body: "The code changes every 30 seconds. Scan the one on the screen now." };
-    case "not_your_session":
+  if (code === "bad_request") {
+    if (/already/i.test(msg)) return { title: "Already scanned", body: msg };
+    if (/before|scan in first|not in yet/i.test(msg)) return { title: "Scan in first", body: msg };
+    if (/old|expired|changed|too late/i.test(msg)) return { title: "That code has changed", body: "The code changes every 30 seconds. Scan the one on the screen now." };
+    return { title: "That code did not work", body: msg || "Scan the code on the admin's screen, or type the 6 letters under it." };
+  }
+  switch (code) {
+    case "forbidden":
       return { title: "Not your session", body: "This code is for a session you are not in. Check you are in the right room." };
-    case "already_scanned":
-      return { title: "Already scanned", body: msg || "You have already scanned for this session." };
-    case "session_closed":
-      return { title: "Scanning is closed", body: msg || "This session is not open for scanning now. Ask the admin to mark you." };
-    case "bad_code":
-      return { title: "That is not an attendance code", body: "Scan the code on the admin's screen, or type the 6 letters under it." };
+    case "conflict":
+      return { title: "Scanning is closed", body: msg || "This session is not open for scanning now. It opens 30 minutes before the start." };
+    case "rate_limited":
+      return { title: "Too many tries", body: "Wait a minute, then scan again." };
     case "network":
       return { title: "No internet", body: "Connect and scan again. The code changes every 30 seconds." };
+    case "unavailable":
+      return { title: "Not set up yet", body: "Attendance is not switched on yet. Ask the admin to mark you." };
     default:
       return { title: "That did not work", body: msg || "Try again, or type the 6 letters under the code." };
   }
 }
 
 /** Seconds left in the code's window, by the server's clock (`skew` = server minus phone). */
-export function secondsLeft(windowEndsAt: string, now: number, skew: number): number {
-  const end = Date.parse(windowEndsAt);
+export function secondsLeft(validUntil: string, now: number, skew: number): number {
+  const end = Date.parse(validUntil);
   if (!Number.isFinite(end)) return 0;
   return Math.max(0, Math.ceil((end - (now + skew)) / 1000));
 }
 
-/** Server time minus phone time, from an answer's `serverNow`. */
-export function skewOf(serverNow: string, phoneNow: number): number {
-  const s = Date.parse(serverNow);
-  return Number.isFinite(s) ? s - phoneNow : 0;
+/** Server minus phone time, from a code answer received at `phoneNow`: the server's now is `validUntil - refreshInMs`. */
+export function skewOf(validUntil: string, refreshInMs: number, phoneNow: number): number {
+  const end = Date.parse(validUntil);
+  return Number.isFinite(end) ? end - refreshInMs - phoneNow : 0;
 }
 
 /* ------------------------------------------------------ numbers, lines */
@@ -275,4 +288,21 @@ export function byTime<T extends { date: string; start: string }>(rows: T[]): T[
 /** Can a student still ask to leave this session early? Only today's or later, not cancelled. */
 export function canLeaveEarly(s: Pick<ClinicSession, "date" | "status">, today: string): boolean {
   return s.status !== "cancelled" && s.date >= today;
+}
+
+/** "2 hours 15 minutes", "45 minutes", "3 hours". */
+export function hoursLine(minutes: number): string {
+  const m = Math.max(0, Math.round(minutes));
+  const h = Math.floor(m / 60);
+  const r = m % 60;
+  const hh = h ? `${h} hour${h === 1 ? "" : "s"}` : "";
+  const mm = r ? `${r} minute${r === 1 ? "" : "s"}` : "";
+  return [hh, mm].filter(Boolean).join(" ") || "0 minutes";
+}
+
+/** "Leave", "Leave for 2 sessions", "Leave early at 5 pm", "Missed OPD day". */
+export function requestTitle(r: { kind: "leave" | "early" | "missed"; sessions: unknown[]; leaveAt: string | null }): string {
+  if (r.kind === "early") return r.leaveAt ? `Leave early at ${timeLabel(r.leaveAt)}` : "Leave early";
+  if (r.kind === "missed") return "Missed OPD day";
+  return r.sessions.length > 1 ? `Leave for ${r.sessions.length} sessions` : "Leave";
 }

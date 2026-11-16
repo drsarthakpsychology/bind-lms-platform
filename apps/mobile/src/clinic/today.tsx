@@ -9,7 +9,7 @@ import { Enter } from "@/motion";
 import { space, useAccent, useTheme } from "@/theme";
 import { useClinicToday } from "./api";
 import type { ClinicToday } from "./contract";
-import { dateLabel, opdLine } from "./logic";
+import { opdLine } from "./logic";
 import { Band, openLink, SessionLine, SessionList } from "./parts";
 
 /** A small text link in a section heading ("Week"), 44px tall. */
@@ -80,7 +80,7 @@ export function TodayBlockView({ d }: { d: ClinicToday }) {
             Nothing on your timetable today.
           </T>
         ) : null}
-        {d.toLog.length ? (
+        {d.logsDue ? (
           <Pressable
             testID="today-to-log"
             accessibilityRole="button"
@@ -95,7 +95,7 @@ export function TodayBlockView({ d }: { d: ClinicToday }) {
                   <View style={{ flexDirection: "row", gap: space[2], alignItems: "center", minHeight: 28 }}>
                     <ClipboardPen size={18} color={c.warnFg} />
                     <T v="bodyStrong" style={{ flex: 1, color: c.warnFg }}>
-                      {d.toLog.length === 1 ? `Log your cases for ${dateLabel(d.toLog[0]!.date)}` : `Log your cases for ${d.toLog.length} OPD visits`}
+                      {d.logsDue === 1 ? "Log your cases for your last OPD visit" : `Log your cases for ${d.logsDue} OPD visits`}
                     </T>
                   </View>
                 </Band>

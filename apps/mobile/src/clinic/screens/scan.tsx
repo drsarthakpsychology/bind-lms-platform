@@ -10,7 +10,7 @@ import { Burst, Stamp, Swap, useCelebrate } from "@/motion";
 import { AreaProvider, space, useAccent, useTheme } from "@/theme";
 import { clinicCalls, clinicKeys } from "../api";
 import type { ScanResult } from "../contract";
-import { cleanCode, clockOf, isCode, rangeLabel, scanBody, scanError } from "../logic";
+import { cleanCode, clockOf, hoursLine, isCode, scanBody, scanError } from "../logic";
 import { CodeScanner } from "../scanner";
 
 type Phase = { k: "scan" } | { k: "busy" } | { k: "ok"; r: ScanResult } | { k: "err"; title: string; body: string };
@@ -41,19 +41,14 @@ function Done({ r, fire }: { r: ScanResult; fire: number }) {
         <T center v="bodyStrong">
           {r.session.title}
         </T>
-        {r.session.start ? (
-          <T center v="small" tone="muted" num>
-            {rangeLabel(r.session.start, r.session.end)}
-          </T>
-        ) : null}
         {r.late ? (
           <T center v="small" style={{ color: c.warnFg }} testID="scan-late">
             Marked late
           </T>
         ) : null}
-        {r.direction === "out" && r.hours !== null ? (
+        {r.direction === "out" && r.minutes !== null ? (
           <T center v="small" tone="muted" num>
-            {r.hours} hours today
+            {hoursLine(r.minutes)} today
           </T>
         ) : null}
         <T center v="small" tone="muted">
@@ -81,7 +76,7 @@ export function ScanScreen() {
   const busy = phase.k === "busy";
 
   const send = React.useCallback(
-    async (body: { qr?: string; code?: string }) => {
+    async (body: { token?: string; code?: string }) => {
       setPhase({ k: "busy" });
       try {
         const r = await clinicCalls.scan(body);

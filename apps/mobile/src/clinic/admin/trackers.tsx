@@ -60,7 +60,7 @@ export function AdminTrackersScreen() {
               />
               {by === "logs" && due.length && canWrite ? (
                 <View style={{ alignItems: "flex-start" }}>
-                  <SmallButton label={`Remind ${due.length} ${due.length === 1 ? "student" : "students"}`} busy={!!busy} onPress={() => void run("clinic", () => adminClinicCalls.remind(due.map((x) => x.studentId)), { done: (r) => `Reminder sent to ${r.sent}` })} testID="trk-remind" />
+                  <SmallButton label={`Remind ${due.length} ${due.length === 1 ? "student" : "students"}`} busy={!!busy} onPress={() => d.cohortId && void run("clinic", () => adminClinicCalls.remind(d.cohortId!), { done: (r) => `Reminder sent to ${r.notified}` })} testID="trk-remind" />
                 </View>
               ) : null}
               {rows.length ? (

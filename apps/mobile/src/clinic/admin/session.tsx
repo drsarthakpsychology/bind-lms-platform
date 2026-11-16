@@ -11,7 +11,7 @@ import { haptic } from "@/lib/haptics";
 import { StaggerList } from "@/motion";
 import { layout, space, useTheme } from "@/theme";
 import { adminClinicCalls, useSessionDetail } from "../api";
-import type { AdminSessionDetail, MarkBody, RosterRow } from "../contract";
+import type { AdminSessionDetail, MarkState, RosterRow } from "../contract";
 import { clockOf, dateLabel, KIND_NAME, sessionMeta, sessionTitle, timeLabel } from "../logic";
 import { RosterWord } from "../parts";
 import { openCode } from "./today";
@@ -27,7 +27,7 @@ export function filterRoster(rows: RosterRow[], f: Filter): RosterRow[] {
 
 /** Mark someone by hand (phone dead, no camera), always with a note. */
 function MarkSheet({ row, sessionId, onClose }: { row: RosterRow | null; sessionId: string; onClose: () => void }) {
-  const [state, setState] = React.useState<MarkBody["state"]>("in");
+  const [state, setState] = React.useState<MarkState>("in");
   const [note, setNote] = React.useState("");
   const [error, setError] = React.useState<string | null>(null);
   const { run, busy } = useAdminAction();
@@ -35,7 +35,7 @@ function MarkSheet({ row, sessionId, onClose }: { row: RosterRow | null; session
     if (!row) return;
     if (note.trim().length < 2) return setError("Write a short note, for example: phone dead.");
     setError(null);
-    const r = await run("clinic", () => adminClinicCalls.mark(sessionId, { studentId: row.studentId, state, note: note.trim() }), { done: `${row.name} marked` });
+    const r = await run("clinic", () => adminClinicCalls.mark(sessionId, row.studentId, state, note.trim()), { done: `${row.name} marked` });
     if (r !== undefined) {
       setNote("");
       onClose();
@@ -121,6 +121,11 @@ export function SessionBody({ d }: { d: AdminSessionDetail }) {
           <T tone="alert">Cancelled{s.note ? `: ${s.note}` : ""}</T>
         ) : null}
       </View>
+      {!d.open && s.status !== "cancelled" ? (
+        <T v="small" tone="muted" testID="session-closed">
+          Scanning is open from 30 minutes before the start to an hour after the end.
+        </T>
+      ) : null}
       {s.status !== "cancelled" ? <Button label="Show code" icon={<QrCode size={20} color={c.onPrimary} />} onPress={() => openCode(s.id)} testID="session-code" /> : null}
       <Figures
         items={[

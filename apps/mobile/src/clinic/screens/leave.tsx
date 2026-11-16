@@ -10,7 +10,7 @@ import { StaggerList } from "@/motion";
 import { AreaProvider, layout, space, useTheme } from "@/theme";
 import { clinicCalls, clinicKeys, useLeave } from "../api";
 import type { ClinicSession, LeavePage, LeaveRequest } from "../contract";
-import { canLeaveEarly, dateLabel, leavesLine, minutesOf, parseClock, rangeLabel, relDay, sessionTitle, timeLabel, todayIST } from "../logic";
+import { canLeaveEarly, dateLabel, leavesLine, minutesOf, parseClock, rangeLabel, relDay, requestTitle, sessionTitle, timeLabel, todayIST } from "../logic";
 import { LeaveWord } from "../parts";
 
 /** A whole-row tick: the row is the target (56px), the box shows the state. */
@@ -54,8 +54,7 @@ function AskSheet({ open, onClose, page, onDone }: { open: boolean; onClose: () 
   const [reason, setReason] = React.useState("");
   const [error, setError] = React.useState<string | null>(null);
   const [busy, setBusy] = React.useState(false);
-  const pending = page.requests.filter((r) => r.kind === "leave" && r.status === "pending").reduce((n, r) => n + r.sessions.length, 0);
-  const over = picked.length > 0 && picked.length > page.left - pending;
+  const over = picked.length > 0 && picked.length > page.left;
   const send = async () => {
     if (!picked.length) return setError("Tick at least one session.");
     if (reason.trim().length < 3) return setError("Write a short reason.");
@@ -93,7 +92,7 @@ function AskSheet({ open, onClose, page, onDone }: { open: boolean; onClose: () 
         </View>
         {over ? (
           <T v="small" tone="alert" testID="leave-over">
-            {page.left - pending <= 0 ? "You have no leaves left." : `That is more than the ${page.left - pending} leaves you have left.`} You can still ask; the admin decides.
+            {page.left <= 0 ? "You have no leaves left." : `That is more than the ${page.left} ${page.left === 1 ? "leave" : "leaves"} you have left.`} You can still ask; the admin decides.
           </T>
         ) : null}
         <Field label="Reason" value={reason} onChangeText={setReason} maxLength={200} placeholder="For example: family function" testID="leave-reason" />
@@ -167,7 +166,7 @@ function EarlySheet({ open, onClose, page, onDone }: { open: boolean; onClose: (
 
 function RequestRow({ r, onCancel, today }: { r: LeaveRequest; onCancel: () => void; today: string }) {
   const c = useTheme();
-  const what = r.kind === "early" ? `Leave early at ${timeLabel(r.leaveAt ?? "")}` : r.sessions.length > 1 ? `Leave for ${r.sessions.length} sessions` : "Leave";
+  const what = requestTitle(r);
   return (
     <View testID={`req-${r.id}`} style={{ paddingVertical: space[3], gap: space[1], borderTopWidth: 1, borderColor: c.hairline }}>
       <View style={{ flexDirection: "row", alignItems: "center", gap: space[3] }}>
@@ -178,10 +177,11 @@ function RequestRow({ r, onCancel, today }: { r: LeaveRequest; onCancel: () => v
       </View>
       {r.sessions.map((s) => (
         <T key={s.id} v="small" tone="muted" num>
-          {s.title} · {s.date === today ? "Today" : dateLabel(s.date)}, {rangeLabel(s.start, s.end)}
+          {s.title} · {s.date === today ? "Today" : dateLabel(s.date)}
+          {s.start ? `, ${timeLabel(s.start)}` : ""}
         </T>
       ))}
-      <T v="small">{r.reason}</T>
+      {r.reason ? <T v="small">{r.reason}</T> : null}
       {r.overLimit ? (
         <T v="small" style={{ color: c.warnFg }}>
           Asked with no leaves left
@@ -208,6 +208,10 @@ export function LeaveScreen() {
   const [sheet, setSheet] = React.useState<"ask" | "early" | null>(null);
   const today = todayIST();
   const refresh = () => void qc.invalidateQueries({ queryKey: clinicKeys.all });
+  const done = () => {
+    setSheet(null);
+    refresh();
+  };
   const cancel = async (id: string) => {
     try {
       await clinicCalls.cancelLeave(id);
@@ -226,9 +230,10 @@ export function LeaveScreen() {
           {(p) => (
             <View style={{ gap: layout.section }}>
               <View style={{ gap: space[2] }}>
-                <View style={{ flexDirection: "row", gap: space[6] }}>
+                <View style={{ flexDirection: "row", gap: space[6], flexWrap: "wrap" }}>
                   <Stat value={String(p.left)} label="Leaves left" />
                   <Stat value={String(p.used)} label="Used" />
+                  {p.pending ? <Stat value={String(p.pending)} label="Waiting" /> : null}
                   <Stat value={String(p.allowance)} label="In all" />
                 </View>
                 <T v="small" tone={p.left <= 0 ? "alert" : "muted"} testID="leave-left-line">
@@ -252,8 +257,8 @@ export function LeaveScreen() {
                   </T>
                 )}
               </Section>
-              <AskSheet open={sheet === "ask"} onClose={() => setSheet(null)} page={p} onDone={() => (setSheet(null), refresh())} />
-              <EarlySheet open={sheet === "early"} onClose={() => setSheet(null)} page={p} onDone={() => (setSheet(null), refresh())} />
+              <AskSheet open={sheet === "ask"} onClose={() => setSheet(null)} page={p} onDone={done} />
+              <EarlySheet open={sheet === "early"} onClose={() => setSheet(null)} page={p} onDone={done} />
             </View>
           )}
         </Loaded>

@@ -10,7 +10,7 @@ import { layout, space, useAccent, useTheme } from "@/theme";
 import type { AttendState, ClinicSession, LeaveStatus, OpdVisitStatus, RosterState, SessionKind } from "./contract";
 import { clockOf, isOpd, LEAVE_WORD, rangeLabel, ROSTER_WORD, sessionTitle, stateWord, timeLabel, VISIT_WORD } from "./logic";
 
-export const KIND_ICON: Record<SessionKind, typeof Users> = { opd_morning: Hospital, opd_evening: Hospital, class: Users, online: MonitorPlay, early: Sunrise, other: CalendarClock };
+export const KIND_ICON: Record<SessionKind, typeof Users> = { opd_morning: Hospital, opd_evening: Hospital, class: Users, online_class: MonitorPlay, early_class: Sunrise, other: CalendarClock };
 
 export const STATE_TONE: Record<AttendState, Tone> = { upcoming: "quiet", open: "info", in: "ok", done: "ok", no_out: "warn", missed: "alert", leave: "quiet", cancelled: "quiet" };
 export const ROSTER_TONE: Record<RosterState, Tone> = { in: "ok", out: "quiet", missing: "alert", leave: "quiet", no_out: "warn" };
@@ -39,7 +39,7 @@ export function SessionLine({ s, trailing, onPress, testID, hideState }: { s: Cl
   const a = useAccent();
   const Icon = KIND_ICON[s.kind] ?? CalendarClock;
   const cancelled = s.status === "cancelled";
-  const where = s.place || (s.link || s.kind === "online" ? "Online" : "");
+  const where = s.place || (s.link || s.kind === "online_class" ? "Online" : "");
   const meta = `${rangeLabel(s.start, s.end)}${where ? ` · ${where}` : ""}`;
   const right = trailing ?? (!hideState && s.mine ? <StateWord s={s.mine.state} late={s.mine.late} /> : null);
   const label = `${sessionTitle(s)}, ${meta}${cancelled ? ", cancelled" : ""}${s.mine ? `, ${stateWord(s.mine.state, s.mine.late)}` : ""}`;

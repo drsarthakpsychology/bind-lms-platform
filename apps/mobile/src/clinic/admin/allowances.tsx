@@ -7,14 +7,13 @@ import { useAdminRole } from "@/admin/role";
 import { Button, Field, RowsSkeleton, Screen, Section, Sheet, T } from "@/ds";
 import { haptic } from "@/lib/haptics";
 import { layout, space, useTheme } from "@/theme";
-import { adminClinicCalls, useClinicStudents } from "../api";
+import { adminClinicCalls, useAdminClinicToday, useClinicStudents } from "../api";
 import type { Batch, ClinicStudent, ClinicStudents, Ref } from "../contract";
 import { BATCH_NAME } from "../logic";
 import { LineRow, Pills, Stepper } from "./kit";
 
 /** The same leaves and cases for a whole cohort or the students ticked. */
-function BulkSheet({ open, onClose, cohorts, picked }: { open: boolean; onClose: () => void; cohorts: Ref[]; picked: string[] }) {
-  const [cohort, setCohort] = React.useState<string>(cohorts[0]?.id ?? "");
+function BulkSheet({ open, onClose, cohortId, cohortName, picked }: { open: boolean; onClose: () => void; cohortId: string; cohortName: string; picked: string[] }) {
   const [what, setWhat] = React.useState<"leaves" | "cases">("leaves");
   const [n, setN] = React.useState(4);
   const [note, setNote] = React.useState("");
@@ -23,17 +22,16 @@ function BulkSheet({ open, onClose, cohorts, picked }: { open: boolean; onClose:
   const go = async () => {
     if (!note.trim()) return setError("Write a short note for the change.");
     setError(null);
-    const body = { ...(picked.length ? { studentIds: picked } : { cohortId: cohort }), ...(what === "leaves" ? { leaves: n } : { opdTotal: n }), note: note.trim() };
-    const r = await run("clinic", () => adminClinicCalls.bulkAllowance(body), { done: (x) => `Saved for ${x.updated} ${x.updated === 1 ? "student" : "students"}` });
+    const ids = picked.length ? picked : undefined;
+    const r = await run("clinic", () => (what === "leaves" ? adminClinicCalls.setLeaves(cohortId, n, note.trim(), ids) : adminClinicCalls.setCases(cohortId, n, ids)), { done: (x) => `Saved for ${x.changed} ${x.changed === 1 ? "student" : "students"}` });
     if (r !== undefined) {
       setNote("");
       onClose();
     }
   };
   return (
-    <Sheet open={open} onClose={onClose} title={picked.length ? `Set for ${picked.length} selected` : "Set for a cohort"} testID="bulk-sheet">
+    <Sheet open={open} onClose={onClose} title={picked.length ? `Set for ${picked.length} selected` : `Set for all of ${cohortName}`} testID="bulk-sheet">
       <View style={{ gap: space[4] }}>
-        {!picked.length ? <Pills label="Cohort" options={cohorts} value={cohort} onChange={setCohort} testID="bulk-cohort" /> : null}
         <Pills
           label="What"
           value={what}
@@ -58,7 +56,7 @@ function BulkSheet({ open, onClose, cohorts, picked }: { open: boolean; onClose:
 }
 
 /** One student: leaves, total cases, batch, and paid extra cases; every change keeps a note. */
-function EditSheet({ s, onClose }: { s: ClinicStudent | null; onClose: () => void }) {
+function EditSheet({ s, cohortId, onClose }: { s: ClinicStudent | null; cohortId: string; onClose: () => void }) {
   const [leaves, setLeaves] = React.useState(s?.leaveAllowance ?? 0);
   const [cases, setCases] = React.useState(s ? s.opdTotal - s.extras : 0);
   const [batch, setBatch] = React.useState<Batch | null>(s?.batch ?? null);
@@ -75,8 +73,10 @@ function EditSheet({ s, onClose }: { s: ClinicStudent | null; onClose: () => voi
     const r = await run(
       "clinic",
       async () => {
-        if (changed) await adminClinicCalls.editStudent(s.studentId, { leaveAllowance: leaves, opdTotal: cases + s.extras, ...(batch && batch !== s.batch ? { batch } : {}), note: note.trim() });
-        if (extra) await adminClinicCalls.extraCases(s.studentId, { cases: extra, note: note.trim() });
+        if (leaves !== s.leaveAllowance) await adminClinicCalls.setLeaves(cohortId, leaves, note.trim(), [s.studentId]);
+        if (cases !== s.opdTotal - s.extras) await adminClinicCalls.setCases(cohortId, cases, [s.studentId]);
+        if (batch && batch !== s.batch) await adminClinicCalls.setBatch(cohortId, s.studentId, batch);
+        if (extra) await adminClinicCalls.extraCases(cohortId, s.studentId, extra, note.trim());
         return true;
       },
       { done: `Saved for ${s.name}` },
@@ -130,21 +130,19 @@ function StudentLine({ s, on, onToggle, onOpen, canWrite }: { s: ClinicStudent; 
   );
 }
 
-function Body({ d }: { d: ClinicStudents }) {
+function Body({ d, cohort }: { d: ClinicStudents; cohort: Ref }) {
   const { canWrite } = useAdminRole();
-  const [cohort, setCohort] = React.useState<string>("");
   const [search, setSearch] = React.useState("");
   const [picked, setPicked] = React.useState<string[]>([]);
   const [bulk, setBulk] = React.useState(false);
   const [edit, setEdit] = React.useState<ClinicStudent | null>(null);
-  const rows = d.items.filter((s) => (!cohort || s.cohortId === cohort) && (!search.trim() || s.name.toLowerCase().includes(search.trim().toLowerCase())));
+  const rows = d.items.filter((s) => !search.trim() || s.name.toLowerCase().includes(search.trim().toLowerCase()));
   return (
     <View style={{ gap: space[4] }}>
       <SearchBox value={search} onChange={setSearch} placeholder="Find a student" label="Find a student" testID="allow-search" />
-      <Pills label="Cohort" value={cohort} onChange={setCohort} options={[{ id: "", name: "All" }, ...d.cohorts]} testID="allow-cohort" />
       {canWrite && !picked.length ? (
         <View style={{ alignItems: "flex-start" }}>
-          <SmallButton label="Set for a whole cohort" onPress={() => setBulk(true)} testID="allow-bulk" />
+          <SmallButton label={`Set for all of ${cohort.name}`} onPress={() => setBulk(true)} testID="allow-bulk" />
         </View>
       ) : null}
       <Section>
@@ -166,7 +164,8 @@ function Body({ d }: { d: ClinicStudents }) {
       {bulk ? (
         <BulkSheet
           open
-          cohorts={d.cohorts}
+          cohortId={cohort.id}
+          cohortName={cohort.name}
           picked={picked}
           onClose={() => {
             setBulk(false);
@@ -174,7 +173,7 @@ function Body({ d }: { d: ClinicStudents }) {
           }}
         />
       ) : null}
-      {edit ? <EditSheet key={edit.studentId} s={edit} onClose={() => setEdit(null)} /> : null}
+      {edit ? <EditSheet key={edit.studentId} s={edit} cohortId={cohort.id} onClose={() => setEdit(null)} /> : null}
     </View>
   );
 }
@@ -182,11 +181,15 @@ function Body({ d }: { d: ClinicStudents }) {
 /** Allowances: each student's leaves and OPD cases, set in bulk or one by one (with a note). */
 export function AdminAllowancesScreen() {
   const q = useClinicStudents();
+  const o = useAdminClinicToday();
   const { refresh, refreshing } = useRefreshAdmin();
   return (
-    <Screen testID="admin-allowances" title="Allowances" onRefresh={refresh} refreshing={refreshing}>
+    <Screen testID="admin-allowances" title="Allowances" lead={o.data?.cohorts.find((x) => x.id === (q.data?.cohortId ?? o.data?.cohortId))?.name} onRefresh={refresh} refreshing={refreshing}>
       <Loaded q={q} what="the students" soon skeleton={<RowsSkeleton rows={6} />}>
-        {(d) => <Body d={d} />}
+        {(d) => {
+          const id = d.cohortId ?? o.data?.cohortId ?? "";
+          return <Body d={d} cohort={{ id, name: o.data?.cohorts.find((x) => x.id === id)?.name ?? "the cohort" }} />;
+        }}
       </Loaded>
     </Screen>
   );

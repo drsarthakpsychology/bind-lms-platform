@@ -5,7 +5,7 @@ import { Loaded, RowsSkeleton, Screen, Section, Stat, T } from "@/ds";
 import { ProgressRing } from "@/motion";
 import { AreaProvider, layout, space, useAccent, useTheme } from "@/theme";
 import { useMyAttendance } from "../api";
-import { clockOf, dateLabel, relDay, todayIST } from "../logic";
+import { clockOf, dateLabel, hoursLine, relDay, todayIST } from "../logic";
 import { StateWord } from "../parts";
 
 /** My attendance: the percent, the counts, and every session so far with in and out times. */
@@ -33,9 +33,11 @@ export function AttendanceScreen() {
                   <Stat value={String(d.onLeave)} label="On leave" />
                 </View>
               </View>
-              {d.hours ? (
+              {d.minutes || d.noOut ? (
                 <T v="small" tone="muted" num>
-                  {d.hours} hours present so far
+                  {d.minutes ? `${hoursLine(d.minutes)} present so far` : ""}
+                  {d.minutes && d.noOut ? " · " : ""}
+                  {d.noOut ? `${d.noOut} with no scan out` : ""}
                 </T>
               ) : null}
               <Section title="Sessions">

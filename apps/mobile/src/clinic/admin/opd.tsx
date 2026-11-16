@@ -11,14 +11,14 @@ import { Button, RowsSkeleton, Screen, Section, Sheet, T } from "@/ds";
 import { haptic } from "@/lib/haptics";
 import { Swap } from "@/motion";
 import { layout, space, useTheme } from "@/theme";
-import { adminClinicCalls, useOpdAdmin } from "../api";
+import { adminClinicCalls, useCohortId, useOpdAdmin } from "../api";
 import type { Batch, OpdAdmin, OpdPlan, OpdSettings, PlanDay, PlanSeat } from "../contract";
 import { WEEKDAYS } from "../contract";
 import { BATCH_NAME, dateLabel, dayShort, todayIST } from "../logic";
 import { LineRow, Pills, Stepper } from "./kit";
 
 /** Seats per weekday and batch, the cases per visit and the date range. */
-function SettingsBlock({ s, canWrite }: { s: OpdSettings; canWrite: boolean }) {
+function SettingsBlock({ s, canWrite, cohortId }: { s: OpdSettings; canWrite: boolean; cohortId: string }) {
   const [d, setD] = React.useState(s);
   const { run, busy } = useAdminAction();
   const c = useTheme();
@@ -64,7 +64,7 @@ function SettingsBlock({ s, canWrite }: { s: OpdSettings; canWrite: boolean }) {
             </View>
           ))}
         </View>
-        {canWrite && dirty ? <Button kind="quiet" label="Save settings" busy={!!busy} onPress={() => void run("clinic", () => adminClinicCalls.saveOpdSettings(d), { done: "Settings saved. Generate again to use them." })} testID="opd-save" /> : null}
+        {canWrite && dirty ? <Button kind="quiet" label="Save settings" busy={!!busy} onPress={() => void run("clinic", () => adminClinicCalls.saveOpdSettings(cohortId, d), { done: "Settings saved. Generate again to use them." })} testID="opd-save" /> : null}
       </View>
     </Section>
   );
@@ -85,7 +85,7 @@ function MoveSeatSheet({ seat, from, plan, onClose }: { seat: PlanSeat; from: st
         <Pills label="Batch" value={batch} onChange={setBatch} options={(["morning", "evening"] as const).map((b) => ({ id: b, name: BATCH_NAME[b] }))} testID="seat-batch" />
         <View style={{ flexDirection: "row", flexWrap: "wrap", gap: space[2] }}>
           {free.slice(0, 24).map((d) => (
-            <SmallButton key={d.date} label={dateLabel(d.date)} busy={busy === d.date} onPress={() => void run("clinic", () => adminClinicCalls.moveSeat({ studentId: seat.studentId, fromDate: from, toDate: d.date, batch }), { done: `${seat.name} moved to ${dateLabel(d.date)}`, tag: d.date }).then((r) => r && onClose())} testID={`seat-to-${d.date}`} />
+            <SmallButton key={d.date} label={dateLabel(d.date)} busy={busy === d.date} onPress={() => void run("clinic", () => adminClinicCalls.moveSeat({ assignmentId: seat.assignmentId, date: d.date, batch }), { done: `${seat.name} moved to ${dateLabel(d.date)}`, tag: d.date }).then((r) => r && onClose())} testID={`seat-to-${d.date}`} />
           ))}
         </View>
         {!free.length ? (
@@ -178,6 +178,8 @@ function Body({ d }: { d: OpdAdmin }) {
   const [publish, setPublish] = React.useState(false);
   const c = useTheme();
   const p = d.plan;
+  const fallback = useCohortId();
+  const cohortId = d.cohortId ?? fallback ?? "";
   const status = p.status === "draft" ? "Draft, not published yet. Students do not see it." : p.status === "published" ? "Published. Students see their OPD days." : "No OPD timetable yet.";
   return (
     <View style={{ gap: layout.section }}>
@@ -189,18 +191,24 @@ function Body({ d }: { d: OpdAdmin }) {
         </Swap>
         {p.short.length ? (
           <Notice tone="alert" testID="opd-short">
-            Not enough seats for {p.short.map((x) => `${x.name.split(" ")[0]} (${x.placed} of ${x.needed} visits)`).join(", ")}.
+            Not enough seats for {p.short.map((x) => `${x.name.split(" ")[0]} (${x.visits} more ${x.visits === 1 ? "visit" : "visits"})`).join(", ")}.
+          </Notice>
+        ) : null}
+        {p.noBatch.length ? (
+          <Notice tone="plain" testID="opd-nobatch">
+            No batch yet, so not in the plan: {p.noBatch.map((x) => x.name).join(", ")}. Set it under Allowances.
           </Notice>
         ) : null}
         {canWrite ? (
           <View style={{ gap: space[2] }}>
-            <Button kind={p.status === "draft" ? "quiet" : "primary"} label={p.status === "none" ? "Generate a draft" : "Generate again"} icon={<Sparkles size={20} color={p.status === "draft" ? c.ink : c.onPrimary} />} busy={busy === "clinic"} onPress={() => void run("clinic", () => adminClinicCalls.generate(), { done: "Draft ready. Check it, then publish." })} testID="opd-generate" />
+            <Button kind={p.status === "draft" ? "quiet" : "primary"} label={p.status === "none" ? "Generate a draft" : "Generate again"} icon={<Sparkles size={20} color={p.status === "draft" ? c.ink : c.onPrimary} />} busy={busy === "clinic"} onPress={() => void run("clinic", () => adminClinicCalls.generate(cohortId), { done: "Draft ready. Check it, then publish." })} testID="opd-generate" />
             {p.status !== "none" ? (
               <T v="small" tone="muted">
                 Generating again fills gaps from the day after tomorrow on. Past days and the next two stay.
               </T>
             ) : null}
             {p.status === "draft" ? <Button label="Publish" onPress={() => setPublish(true)} testID="opd-publish" /> : null}
+            {p.status === "draft" ? <Button kind="text" label="Throw away the draft" busy={busy === "discard"} onPress={() => void run("clinic", () => adminClinicCalls.discard(cohortId), { done: "Draft thrown away", tag: "discard" })} testID="opd-discard" /> : null}
           </View>
         ) : null}
         <Pressable accessibilityRole="link" onPress={() => router.push("/admin/clinic/allowances")} style={{ minHeight: 44, justifyContent: "center" }} testID="opd-quotas">
@@ -210,8 +218,8 @@ function Body({ d }: { d: OpdAdmin }) {
         </Pressable>
       </View>
       <Calendar plan={p} canWrite={canWrite} />
-      <SettingsBlock s={d.settings} canWrite={canWrite} />
-      <ConfirmSheet open={publish} onClose={() => setPublish(false)} title="Publish the OPD timetable?" body="Every student gets a notification with their OPD days." confirm="Publish" busy={busy === "publish"} onConfirm={() => void run("clinic", () => adminClinicCalls.publish(), { done: (r) => `Published. ${r.notified} students told.`, tag: "publish" }).then(() => setPublish(false))} testID="publish-confirm" />
+      <SettingsBlock s={d.settings} canWrite={canWrite} cohortId={cohortId} />
+      <ConfirmSheet open={publish} onClose={() => setPublish(false)} title="Publish the OPD timetable?" body="Every student gets a notification with their OPD days." confirm="Publish" busy={busy === "publish"} onConfirm={() => void run("clinic", () => adminClinicCalls.publish(cohortId), { done: (r) => `Published. ${r.notified} ${r.notified === 1 ? "student" : "students"} told.`, tag: "publish" }).then(() => setPublish(false))} testID="publish-confirm" />
     </View>
   );
 }

@@ -8,7 +8,9 @@ import { Loaded, Quiet, SmallButton } from "@/admin/kit";
 import { useAdminRole } from "@/admin/role";
 import { Button, Field, IconDot, Row, RowList, RowsSkeleton, Screen, Section, Sheet, T } from "@/ds";
 import { space, useTheme } from "@/theme";
-import { adminClinicCalls, useAdminClinicToday } from "../api";
+import { adminClinicCalls, cohortStore, useAdminClinicToday } from "../api";
+import { dateLabel } from "../logic";
+import { Pills } from "./kit";
 import type { AdminSession } from "../contract";
 import { Band, SessionLine, SessionList } from "../parts";
 import { HeadLink } from "../today";
@@ -26,14 +28,14 @@ export const openSession = (id: string) => router.push(`/admin/clinic/session/${
 export const openCode = (id: string) => router.push(`/admin/clinic/code/${encodeURIComponent(id)}`);
 
 /** The note students see on today's schedule. */
-function NoteSheet({ open, onClose, date, note }: { open: boolean; onClose: () => void; date: string; note: string | null }) {
+function NoteSheet({ open, onClose, date, note, cohortId }: { open: boolean; onClose: () => void; date: string; note: string | null; cohortId: string }) {
   const [text, setText] = React.useState(note ?? "");
   const { run, busy } = useAdminAction();
   return (
     <Sheet open={open} onClose={onClose} title="Note on today's schedule" testID="note-sheet">
       <View style={{ gap: space[4] }}>
         <Field label="Note to students" value={text} onChangeText={setText} maxLength={200} placeholder="For example: bring your case sheets" testID="note-text" />
-        <Button label={text.trim() ? "Save note" : "Remove note"} busy={!!busy} onPress={() => void run("clinic", () => adminClinicCalls.dayNote(date, text.trim()), { done: text.trim() ? "Note saved" : "Note removed" }).then((r) => r && onClose())} testID="note-save" />
+        <Button label={text.trim() ? "Save note" : "Remove note"} busy={!!busy} onPress={() => void run("clinic", () => adminClinicCalls.dayNote(cohortId, date, text.trim()), { done: text.trim() ? "Note saved" : "Note removed" }).then((r) => r && onClose())} testID="note-save" />
       </View>
     </Sheet>
   );
@@ -57,9 +59,10 @@ export function AdminClinicScreen() {
             <View style={{ gap: space[1] }}>
               <T v="h1">Today</T>
               <T tone="muted" num>
-                {d.dateLine}
+                {dateLabel(d.date, true)}
               </T>
             </View>
+            {d.cohorts.length > 1 ? <Pills label="Cohort" value={d.cohortId} onChange={(id) => cohortStore.set({ id })} options={d.cohorts} testID="clinic-cohort" /> : null}
             <View style={{ gap: space[3] }}>
               {d.note ? (
                 <Band tone="plain" testID="admin-note">
@@ -103,10 +106,10 @@ export function AdminClinicScreen() {
                 <Row title="Allowances" meta="Leaves and OPD cases for each student" icon={<IconDot icon={SlidersHorizontal} />} onPress={() => router.push("/admin/clinic/allowances")} testID="clinic-allowances" />
                 <Row title="Timetable" meta="Weekly slots and one-off sessions" icon={<IconDot icon={CalendarClock} />} onPress={() => router.push("/admin/clinic/timetable")} testID="clinic-timetable" />
                 <Row title="OPD timetable" meta="Seats, generate, move, publish" icon={<IconDot icon={Hospital} />} onPress={() => router.push("/admin/clinic/opd")} testID="clinic-opd" />
-                <Row title="Trackers" meta="Attendance and cases for everyone" icon={<IconDot icon={ChartColumn} />} trailing={d.unsubmittedLogs ? `${d.unsubmittedLogs} logs due` : undefined} onPress={() => router.push("/admin/clinic/trackers")} testID="clinic-trackers" />
+                <Row title="Trackers" meta="Attendance and cases for everyone" icon={<IconDot icon={ChartColumn} />} trailing={d.logsDue ? `${d.logsDue} logs due` : undefined} onPress={() => router.push("/admin/clinic/trackers")} testID="clinic-trackers" />
               </RowList>
             </Section>
-            {note ? <NoteSheet open={note} onClose={() => setNote(false)} date={d.date} note={d.note} /> : null}
+            {note && d.cohortId ? <NoteSheet open={note} onClose={() => setNote(false)} date={d.date} note={d.note} cohortId={d.cohortId} /> : null}
           </View>
         )}
       </Loaded>

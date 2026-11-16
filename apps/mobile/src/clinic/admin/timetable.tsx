@@ -8,7 +8,7 @@ import { ConfirmSheet, Loaded, Quiet, SmallButton, TabSwap, ScrollTabs } from "@
 import { useAdminRole } from "@/admin/role";
 import { Button, Field, RowsSkeleton, Screen, Section, Sheet, SwitchRow, T } from "@/ds";
 import { space, useTheme } from "@/theme";
-import { adminClinicCalls, useTimetable } from "../api";
+import { adminClinicCalls, useAdminClinicToday, useCohortId, useTimetable } from "../api";
 import type { AdminSession, Ref, SessionKind, Slot, Timetable, Weekday } from "../contract";
 import { WEEKDAYS } from "../contract";
 import { dateLabel, dayLong, dayShort, isOpd, KIND_NAME, KINDS, minutesOf, parseClock, relDay, sessionMeta, todayIST } from "../logic";
@@ -28,7 +28,7 @@ export function checkTimes(start: string, end: string): { start: string; end: st
 type Draft = { weekday: Weekday; date: string; kind: SessionKind; title: string; start: string; end: string; place: string; link: string; cohortIds: string[]; compulsory: boolean; note: string };
 
 /** A weekly slot (`slot` set or a new one) or a one-off session (`oneOff`). */
-function SessionSheet({ open, onClose, cohorts, slot, oneOff }: { open: boolean; onClose: () => void; cohorts: Ref[]; slot?: Slot | null; oneOff?: boolean }) {
+function SessionSheet({ open, onClose, cohorts, cohortId, slot, oneOff }: { open: boolean; onClose: () => void; cohorts: Ref[]; cohortId: string; slot?: Slot | null; oneOff?: boolean }) {
   const [d, setD] = React.useState<Draft>(() => ({
     weekday: slot?.weekday ?? "mon",
     date: todayIST(),
@@ -38,7 +38,7 @@ function SessionSheet({ open, onClose, cohorts, slot, oneOff }: { open: boolean;
     end: slot?.end ?? "13:00",
     place: slot?.place ?? "",
     link: slot?.link ?? "",
-    cohortIds: slot?.cohortIds ?? (cohorts[0] ? [cohorts[0].id] : []),
+    cohortIds: slot?.cohortIds ?? [cohortId],
     compulsory: slot?.compulsory ?? true,
     note: "",
   }));
@@ -52,7 +52,20 @@ function SessionSheet({ open, onClose, cohorts, slot, oneOff }: { open: boolean;
     if (d.kind === "other" && !d.title.trim()) return setError("Name this session.");
     setError(null);
     const base = { kind: d.kind, title: d.title.trim(), start: t.start, end: t.end, place: d.place.trim() || null, link: d.link.trim() || null, cohortIds: d.cohortIds, compulsory: d.compulsory };
-    const r = await run("clinic", () => (oneOff ? adminClinicCalls.addSession({ ...base, date: d.date, note: d.note.trim() || null }) : slot ? adminClinicCalls.editSlot(slot.id, { ...base, weekday: d.weekday }) : adminClinicCalls.addSlot({ ...base, weekday: d.weekday })), { done: oneOff ? "Session added. Students get a notification." : "Timetable saved" });
+    const r = await run(
+      "clinic",
+      async () => {
+        if (oneOff) {
+          await adminClinicCalls.addSession({ ...base, date: d.date, note: d.note.trim() || null });
+          return "Session added. Students get a notification.";
+        }
+        await (slot ? adminClinicCalls.editSlot(slot.id, { ...base, weekday: d.weekday }) : adminClinicCalls.addSlot({ ...base, weekday: d.weekday }));
+        // Make the sessions for the next 8 weeks from the timetable (only the missing ones).
+        const made = await adminClinicCalls.apply(cohortId).catch(() => null);
+        return made && made.created ? `Timetable saved. ${made.created} new ${made.created === 1 ? "session" : "sessions"} in the next 8 weeks.` : "Timetable saved";
+      },
+      { done: (line) => line },
+    );
     if (r !== undefined) onClose();
   };
   return (
@@ -69,7 +82,7 @@ function SessionSheet({ open, onClose, cohorts, slot, oneOff }: { open: boolean;
             <Field label="End" value={d.end} onChangeText={(v) => set({ end: v })} maxLength={8} testID="slot-end" />
           </View>
         </View>
-        {d.kind === "online" ? <Field label="Link" value={d.link} onChangeText={(v) => set({ link: v })} autoCapitalize="none" keyboardType="url" testID="slot-link" /> : <Field label="Place" value={d.place} onChangeText={(v) => set({ place: v })} maxLength={80} testID="slot-place" />}
+        {d.kind === "online_class" ? <Field label="Link" value={d.link} onChangeText={(v) => set({ link: v })} autoCapitalize="none" keyboardType="url" testID="slot-link" /> : <Field label="Place" value={d.place} onChangeText={(v) => set({ place: v })} maxLength={80} testID="slot-place" />}
         <MultiPills label="Cohorts" options={cohorts} value={d.cohortIds} onChange={(v) => set({ cohortIds: v })} testID="slot-cohorts" />
         <SwitchRow title="Compulsory" meta={isOpd(d.kind) ? "OPD is only for the students assigned that day" : "Counts for attendance"} value={d.compulsory} onChange={(v) => set({ compulsory: v })} testID="slot-compulsory" />
         {oneOff ? <Field label="Note to students (optional)" value={d.note} onChangeText={(v) => set({ note: v })} maxLength={200} testID="slot-note" /> : null}
@@ -118,7 +131,7 @@ function MoveSheet({ s, onClose }: { s: AdminSession; onClose: () => void }) {
   );
 }
 
-function Weekly({ t, canWrite }: { t: Timetable; canWrite: boolean }) {
+function Weekly({ t, canWrite, cohorts, cohortId }: { t: Timetable; canWrite: boolean; cohorts: Ref[]; cohortId: string }) {
   const c = useTheme();
   const [edit, setEdit] = React.useState<Slot | null | "new">(null);
   const [remove, setRemove] = React.useState<Slot | null>(null);
@@ -134,7 +147,7 @@ function Weekly({ t, canWrite }: { t: Timetable; canWrite: boolean }) {
             <View>
               {rows.map((s) => (
                 <View key={s.id} style={{ borderTopWidth: 1, borderColor: c.hairline }}>
-                  <SessionLine s={{ ...s, date: "", status: "scheduled", note: null, mine: null }} testID={`slot-${s.id}`} trailing={<T v="small" tone="muted">{t.cohorts.filter((x) => s.cohortIds.includes(x.id)).map((x) => x.name).join(", ")}</T>} />
+                  <SessionLine s={{ ...s, date: "", status: "scheduled", note: null, mine: null, batch: null }} testID={`slot-${s.id}`} trailing={cohorts.length > 1 ? <T v="small" tone="muted">{cohorts.filter((x) => s.cohortIds.includes(x.id)).map((x) => x.name).join(", ")}</T> : undefined} />
                   {canWrite ? (
                     <View style={{ flexDirection: "row", gap: space[2], marginLeft: 48, paddingBottom: space[3] }}>
                       <SmallButton label="Change" onPress={() => setEdit(s)} testID={`slot-${s.id}-edit`} />
@@ -148,13 +161,13 @@ function Weekly({ t, canWrite }: { t: Timetable; canWrite: boolean }) {
         );
       })}
       {!t.slots.length ? <Quiet>No weekly slots yet.</Quiet> : null}
-      {edit ? <SessionSheet open cohorts={t.cohorts} slot={edit === "new" ? null : edit} onClose={() => setEdit(null)} /> : null}
-      <ConfirmSheet open={!!remove} onClose={() => setRemove(null)} title="Remove this slot?" body="Sessions from today on that come from it are removed. Past ones stay." confirm="Remove" danger busy={!!busy} onConfirm={() => remove && void run("clinic", () => adminClinicCalls.removeSlot(remove.id), { done: "Slot removed" }).then(() => setRemove(null))} testID="slot-remove-confirm" />
+      {edit ? <SessionSheet open cohorts={cohorts} cohortId={cohortId} slot={edit === "new" ? null : edit} onClose={() => setEdit(null)} /> : null}
+      <ConfirmSheet open={!!remove} onClose={() => setRemove(null)} title="Remove this slot?" body="New weeks will not get it. Sessions already on the calendar stay; cancel them under Next two weeks." confirm="Remove" danger busy={!!busy} onConfirm={() => remove && void run("clinic", () => adminClinicCalls.removeSlot(remove.id), { done: "Slot removed" }).then(() => setRemove(null))} testID="slot-remove-confirm" />
     </View>
   );
 }
 
-function Coming({ t, canWrite }: { t: Timetable; canWrite: boolean }) {
+function Coming({ t, canWrite, cohorts, cohortId }: { t: Timetable; canWrite: boolean; cohorts: Ref[]; cohortId: string }) {
   const c = useTheme();
   const today = todayIST();
   const [add, setAdd] = React.useState(false);
@@ -185,7 +198,7 @@ function Coming({ t, canWrite }: { t: Timetable; canWrite: boolean }) {
         </Section>
       ))}
       {!days.length ? <Quiet>Nothing in the next two weeks.</Quiet> : null}
-      {add ? <SessionSheet open oneOff cohorts={t.cohorts} onClose={() => setAdd(false)} /> : null}
+      {add ? <SessionSheet open oneOff cohorts={cohorts} cohortId={cohortId} onClose={() => setAdd(false)} /> : null}
       {move ? <MoveSheet s={move} onClose={() => setMove(null)} /> : null}
       <ConfirmSheet
         open={!!cancel}
@@ -196,7 +209,7 @@ function Coming({ t, canWrite }: { t: Timetable; canWrite: boolean }) {
         danger
         busy={!!busy}
         reason={{ label: "Note to students" }}
-        onConfirm={(note) => cancel && void run("clinic", () => adminClinicCalls.cancelSession(cancel.id, { note: note || null }), { done: "Cancelled. Students get a notification." }).then(() => setCancel(null))}
+        onConfirm={(note) => cancel && void run("clinic", () => adminClinicCalls.cancelSession(cancel.id, note || null), { done: "Cancelled. Students get a notification." }).then(() => setCancel(null))}
         testID="cancel-confirm"
       />
     </View>
@@ -206,6 +219,9 @@ function Coming({ t, canWrite }: { t: Timetable; canWrite: boolean }) {
 /** Timetable: the weekly slots per cohort, and the next two weeks with one-offs, moves and cancels. */
 export function AdminTimetableScreen() {
   const q = useTimetable();
+  const o = useAdminClinicToday();
+  const cohortId = useCohortId() ?? "";
+  const cohorts = o.data?.cohorts ?? [];
   const { canWrite } = useAdminRole();
   const { refresh, refreshing } = useRefreshAdmin();
   const [tab, setTab] = React.useState<"week" | "next">("week");
@@ -219,7 +235,7 @@ export function AdminTimetableScreen() {
       <Loaded q={q} what="the timetable" soon skeleton={<RowsSkeleton rows={6} />}>
         {(t) => (
           <TabSwap tabs={tabs} value={tab}>
-            {tab === "week" ? <Weekly t={t} canWrite={canWrite} /> : <Coming t={t} canWrite={canWrite} />}
+            {tab === "week" ? <Weekly t={t} canWrite={canWrite} cohorts={cohorts} cohortId={cohortId} /> : <Coming t={t} canWrite={canWrite} cohorts={cohorts} cohortId={cohortId} />}
           </TabSwap>
         )}
       </Loaded>
