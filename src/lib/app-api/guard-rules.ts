@@ -24,6 +24,23 @@ export function jwtExpired(token: string, now: number): boolean {
   }
 }
 
+/**
+ * The user id a token names (its `sub` claim), read without checking the
+ * signature. Only used to start the profile and phone reads while Supabase
+ * verifies the token; nothing read with it is used or written unless the
+ * verified user has this same id. Null when the token has no readable id.
+ */
+export function jwtSubject(token: string): string | null {
+  try {
+    const part = token.split(".")[1];
+    if (!part) return null;
+    const payload = JSON.parse(Buffer.from(part, "base64url").toString("utf8")) as { sub?: unknown };
+    return typeof payload.sub === "string" && /^[0-9a-f-]{36}$/i.test(payload.sub) ? payload.sub : null;
+  } catch {
+    return null;
+  }
+}
+
 /** Access has ended (students only; alumni keep read access for good). Same rule as getSession. */
 export function isExpired(expiresAt: string | null | undefined, role: string | undefined, now: number): boolean {
   if (!expiresAt) return false;
