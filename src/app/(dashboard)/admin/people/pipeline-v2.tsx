@@ -44,6 +44,8 @@ export type PipelineInitial = {
   from: string;
   to: string;
   last: string;
+  /** "1": follow-ups due only. */
+  due: string;
 };
 
 type State = Required<Omit<PipelineFilters, "stage" | "lastContact" | "view">> & { view: QuickView; stage: StageId | ""; lastContact: LastContact };
@@ -60,6 +62,8 @@ function toState(i: Partial<PipelineInitial>): State {
     from: /^\d{4}-\d{2}-\d{2}$/.test(i.from ?? "") ? (i.from as string) : "",
     to: /^\d{4}-\d{2}-\d{2}$/.test(i.to ?? "") ? (i.to as string) : "",
     lastContact: (["week", "month", "older", "never"] as const).includes(i.last as Exclude<LastContact, "">) ? (i.last as LastContact) : "",
+    // Admin Today links here with the old view name (?view=follow-up).
+    due: i.due === "1" || i.view === "follow-up",
   };
 }
 
@@ -76,6 +80,7 @@ function writeUrl(s: State) {
     if (s.from) p.set("from", s.from);
     if (s.to) p.set("to", s.to);
     if (s.lastContact) p.set("last", s.lastContact);
+    if (s.due) p.set("due", "1");
     const q = p.toString();
     window.history.replaceState(null, "", `${window.location.pathname}${q ? `?${q}` : ""}`);
   } catch {
@@ -128,7 +133,7 @@ export function PipelineV2({
   const router = useRouter();
   const [s, setS] = React.useState<State>(() => toState(initial));
   const [now] = React.useState(() => nowMs());
-  const [filtersOpen, setFiltersOpen] = React.useState(() => Boolean(initial.stage || initial.cohort || initial.source || initial.from || initial.to || initial.last));
+  const [filtersOpen, setFiltersOpen] = React.useState(() => Boolean(initial.stage || initial.cohort || initial.source || initial.from || initial.to || initial.last || initial.due === "1" || initial.view === "follow-up"));
   const [limit, setLimit] = React.useState(PAGE);
   const [selected, setSelected] = React.useState<Set<string>>(() => new Set());
   const [compose, setCompose] = React.useState<string[] | null>(null);
@@ -143,13 +148,24 @@ export function PipelineV2({
     writeUrl(next);
   };
 
+  // The chosen quick view can sit past the edge on a phone (Enquiries opens on
+  // the fourth one): scroll the row so it is always in sight.
+  const viewsRef = React.useRef<HTMLUListElement>(null);
+  React.useEffect(() => {
+    const ul = viewsRef.current;
+    const on = ul?.querySelector<HTMLElement>('[aria-pressed="true"]');
+    if (!ul || !on) return;
+    const left = on.offsetLeft - ul.offsetLeft;
+    if (left < ul.scrollLeft || left + on.offsetWidth > ul.scrollLeft + ul.clientWidth) ul.scrollLeft = Math.max(0, left - 16);
+  }, [s.view]);
+
   const base = React.useMemo(() => (scope === "enquiries" ? people.filter((p) => p.isEnquiry) : people), [people, scope]);
   const shown = React.useMemo(() => filterPipeline(base, s, now), [base, s, now]);
   const counts = React.useMemo(() => viewCounts(base, s, now), [base, s, now]);
   const sources = React.useMemo(() => sourcesOf(base), [base]);
   const byEmail = React.useMemo(() => new Map(base.map((p) => [p.email, p])), [base]);
   const slice = shown.slice(0, limit);
-  const otherFilters = Boolean(s.stage || s.cohortId || s.source || s.from || s.to || s.lastContact);
+  const otherFilters = Boolean(s.stage || s.cohortId || s.source || s.from || s.to || s.lastContact || s.due);
   const filtering = otherFilters || Boolean(s.q);
   const allShownPicked = shown.length > 0 && shown.every((p) => selected.has(p.email));
 
@@ -192,7 +208,7 @@ export function PipelineV2({
 
       {/* Quick views: each one answers "who do I connect with?" */}
       <nav aria-label="Quick views" className="min-w-0 border-b border-[var(--ds-hairline)]">
-        <ul className="-mb-px flex gap-1 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+        <ul ref={viewsRef} className="-mb-px flex gap-1 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
           {QUICK_VIEWS.map((v) => (
             <li key={v.id} className="shrink-0">
               <button
@@ -244,7 +260,7 @@ export function PipelineV2({
       </div>
 
       <div id="pipeline-filters" hidden={!filtersOpen} className="min-w-0">
-        <div className="grid min-w-0 grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-6">
+        <div className="grid min-w-0 grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
           <FilterSelect label="Stage" value={s.stage} onChange={(v) => set({ stage: v as StageId | "" })} options={[{ v: "", l: "Any stage" }, ...STAGES.map((x) => ({ v: x.id, l: x.label }))]} />
           <FilterSelect label="Cohort" value={s.cohortId} onChange={(v) => set({ cohortId: v })} options={[{ v: "", l: "Any cohort" }, ...cohorts.map((c) => ({ v: c.id, l: c.name }))]} />
           <FilterSelect label="Source" value={s.source} onChange={(v) => set({ source: v })} options={[{ v: "", l: "Any source" }, ...sources.map((x) => ({ v: x, l: x }))]} />
@@ -254,6 +270,7 @@ export function PipelineV2({
             onChange={(v) => set({ lastContact: v as LastContact })}
             options={[{ v: "", l: "Any time" }, ...(Object.keys(LAST_CONTACT_LABEL) as Array<Exclude<LastContact, "">>).map((k) => ({ v: k, l: LAST_CONTACT_LABEL[k] }))]}
           />
+          <FilterSelect label="Follow-up" value={s.due ? "1" : ""} onChange={(v) => set({ due: v === "1" })} options={[{ v: "", l: "Any" }, { v: "1", l: "Due now" }]} />
           <label className="flex min-w-0 flex-col gap-1">
             <span className="type-caption font-semibold text-muted-foreground">First seen from</span>
             <input type="date" value={s.from} max={s.to || undefined} onChange={(e) => set({ from: e.target.value })} className={cn(control, "w-full")} />
@@ -276,7 +293,7 @@ export function PipelineV2({
             </button>
           ) : null}
           {filtering ? (
-            <button type="button" className={btn.ghost} onClick={() => set({ q: "", stage: "", cohortId: "", source: "", from: "", to: "", lastContact: "" })}>
+            <button type="button" className={btn.ghost} onClick={() => set({ q: "", stage: "", cohortId: "", source: "", from: "", to: "", lastContact: "", due: false })}>
               Clear filters
             </button>
           ) : null}

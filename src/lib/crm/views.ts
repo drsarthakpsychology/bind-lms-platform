@@ -39,7 +39,12 @@ export type PipelineFilters = {
   from?: string;
   to?: string;
   lastContact?: LastContact;
+  /** Only people whose next follow-up is today or overdue (by tomorrow, as the Pipeline header counts it). */
+  due?: boolean;
 };
+
+/** A follow-up is due: planned for before this time tomorrow. Same rule as the "follow-ups due" count. */
+export const followUpDue = (p: Person, now: number) => Boolean(p.followUpAt) && ms(p.followUpAt) <= now + DAY;
 
 const ms = (iso: string | null | undefined) => (iso ? new Date(iso).getTime() : NaN);
 
@@ -106,6 +111,7 @@ export function matchesFilters(p: Person, f: PipelineFilters, now: number): bool
     if (f.to && d > f.to) return false;
   }
   if (f.lastContact && lastContactBucket(p, now) !== f.lastContact) return false;
+  if (f.due && !followUpDue(p, now)) return false;
   return true;
 }
 

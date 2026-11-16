@@ -1,5 +1,5 @@
 import { notFound, redirect } from "next/navigation";
-import { requireAdmin } from "@/lib/auth/guards";
+import { isSuperAdmin, requireAdmin } from "@/lib/auth/guards";
 import Link from "next/link";
 import { createClient } from "@/lib/supabase/server";
 import { drugFromSlug, drugDetail } from "@/lib/psychopharm/store";
@@ -57,6 +57,7 @@ export default async function DrugEditorPage({ params }: { params: Promise<{ dru
         drugId={drugRow?.id ?? ""}
         initialDocument={initialDocument}
         initialStatus={doc?.status ?? "draft"}
+        canWrite={isSuperAdmin(me)}
       />
     );
   }
