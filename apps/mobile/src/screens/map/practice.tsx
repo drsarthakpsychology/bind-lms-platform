@@ -12,7 +12,7 @@ import { Button, EmptyState, LoadError, OptionRow, ProgressLine, Skeleton, T, Ve
 import { toast } from "@/ds/toast";
 import { haptic } from "@/lib/haptics";
 import { settingsStore } from "@/lib/settings";
-import { Burst, Confetti, RollingNumber } from "@/motion";
+import { Burst, Confetti, RollingNumber, Swap } from "@/motion";
 import { fonts, layout, motion, space, useTheme } from "@/theme";
 
 /**
@@ -166,7 +166,7 @@ export function RoundRunner({ round, onAgain, onDone }: { round: MapPractice; on
             <VerdictBand right={right / Math.max(1, total) >= 0.7} title={allRight ? "Every one right." : right / Math.max(1, total) >= 0.7 ? "A good round." : "Worth another round."} why={round.saving ? "Your map is updated. The next round adapts to these answers." : "Staff answers are not saved."} />
           </Animated.View>
         ) : q ? (
-          <Animated.View key={q.id} entering={reduce ? undefined : FadeIn.duration(motion.state)} style={{ gap: space[5] }} testID={`map-q-${i}`}>
+          <Swap k={q.id} style={{ gap: space[5] }} testID={`map-q-${i}`}>
             <T v="caption" tone="muted">
               {q.label}
             </T>
@@ -179,7 +179,7 @@ export function RoundRunner({ round, onAgain, onDone }: { round: MapPractice; on
                 </View>
               </View>
             ) : null}
-          </Animated.View>
+          </Swap>
         ) : null}
       </ScrollView>
       <View style={{ borderTopWidth: 1, borderColor: c.hairline, paddingHorizontal: layout.gutter, paddingTop: space[3], paddingBottom: insets.bottom + space[3], gap: space[2] }}>

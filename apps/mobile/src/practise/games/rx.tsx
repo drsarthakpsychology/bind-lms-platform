@@ -1,10 +1,10 @@
 import { router } from "expo-router";
 import * as React from "react";
 import { View } from "react-native";
-import Animated, { FadeIn, useReducedMotion } from "react-native-reanimated";
 
 import { Button, Row, RowList, Section, T } from "@/ds";
-import { motion, space } from "@/theme";
+import { Swap } from "@/motion";
+import { space } from "@/theme";
 import { play, useMove } from "../api";
 import { EndPanel, EndThumb, GameFrame, HudLine, Lives, MoveError, StartScreen, StepStrip, Verdict } from "../frame";
 import { Story, AnswerRow } from "../parts";
@@ -24,7 +24,6 @@ const howItWorks = (id: string) => router.push(`/medicine/${encodeURIComponent(i
 
 /** Rx Detective: medicines, receptors and risky mixes. Each pick is checked on the server. */
 export function RxGame() {
-  const reduce = useReducedMotion();
   const mv = useMove();
   const react = useReactions();
   const [mode, setMode] = React.useState<RxMode>("mixed");
@@ -127,7 +126,7 @@ export function RxGame() {
   const page = answered?.pages[0];
   return (
     <GameFrame testID="game-rx" title="Rx Detective" howTo={HOW} score={String(score)} hud={hud} confirmLeave thumb={answered ? <Button label={lives <= 0 || i + 1 >= run.cases.length ? "See my score" : "Next case"} onPress={next} testID="rx-next" /> : undefined}>
-      <Animated.View key={i} entering={reduce ? undefined : FadeIn.duration(motion.state)} style={{ gap: space[4] }}>
+      <Swap k={i} style={{ gap: space[4] }}>
         <T v="caption" tone="muted">
           {cs.title.toUpperCase()}
         </T>
@@ -201,7 +200,7 @@ export function RxGame() {
             learn={page ? { label: answered.graded.score < 0.999 ? `See how ${page.name} works` : `Open ${page.name}`, onPress: () => howItWorks(page.id) } : null}
           />
         ) : null}
-      </Animated.View>
+      </Swap>
     </GameFrame>
   );
 }
