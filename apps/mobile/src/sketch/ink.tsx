@@ -11,6 +11,7 @@ import Svg, { G, Path, Text as SvgText } from "react-native-svg";
 import { RoughGenerator } from "roughjs/bin/generator";
 import type { Options } from "roughjs/bin/core";
 
+import { finite, isSafePath } from "@/lib/svg-safe";
 import { fonts, useTheme, type Palette } from "@/theme";
 import { kalamWidth } from "./metrics";
 
@@ -107,15 +108,22 @@ export function inkPaths(k: string, shape: Shape, o: InkOpts, p: Palette) {
 /** One rough shape. `k` is the seed key: keep it stable. */
 export function Ink({ k, shape, o = {} }: { k: string; shape: Shape; o?: InkOpts }) {
   const p = useTheme();
-  const paths = React.useMemo(() => inkPaths(k, shape, o, p), [k, shape, o, p]);
+  // Android's native path parser closes the app on NaN or broken path data: drop such a shape instead.
+  const paths = React.useMemo(() => {
+    try {
+      return inkPaths(k, shape, o, p).filter((x) => typeof x.d === "string" && x.d !== "" && isSafePath(x.d));
+    } catch {
+      return [];
+    }
+  }, [k, shape, o, p]);
   return (
-    <G opacity={o.opacity}>
+    <G opacity={o.opacity === undefined ? undefined : finite(o.opacity, 1)}>
       {paths.map((path, i) => (
         <Path
           key={i}
           d={path.d}
           stroke={path.stroke}
-          strokeWidth={path.strokeWidth}
+          strokeWidth={finite(path.strokeWidth, 1)}
           fill={path.fill ?? "none"}
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -177,7 +185,7 @@ export function Label({ x, y, children, size = LABEL, anchor = "start", color = 
           })
         : null}
       {rows.map((r, i) => (
-        <SvgText key={i} x={x} y={y + i * lead} fontSize={size} textAnchor={anchor} fontFamily={bold ? fonts.handBold : fonts.hand} fill={mark ? C.onLime : resolve(color, p)}>
+        <SvgText key={i} x={finite(x)} y={finite(y) + i * lead} fontSize={finite(size, LABEL)} textAnchor={anchor} fontFamily={bold ? fonts.handBold : fonts.hand} fill={mark ? C.onLime : resolve(color, p)}>
           {r}
         </SvgText>
       ))}
