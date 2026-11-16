@@ -458,21 +458,30 @@ for (const theme of merge ? [] : themes) {
         await page.close().catch(() => {});
         continue;
       }
-      const { found } = await page.evaluate(scan, { touch });
+      let found;
+      try {
+        found = (await page.evaluate(scan, { touch })).found;
+      } catch (e) {
+        // The screen moved on by itself (a client redirect) while it was being read.
+        report.push({ page: p, width: w, theme, error: String(e.message).slice(0, 200), defects: [] });
+        console.log(p, w, theme, "SCAN ERROR", String(e.message).slice(0, 80));
+        await page.close().catch(() => {});
+        continue;
+      }
       // Fixed bars: sample them at the top, the middle and the end of the page.
-      const maxY = await page.evaluate(() => document.documentElement.scrollHeight - innerHeight);
+      const maxY = await page.evaluate(() => document.documentElement.scrollHeight - innerHeight).catch(() => 0);
       const seenBar = new Set();
       for (const y of [0, Math.round(maxY / 2), maxY]) {
-        await page.evaluate((yy) => window.scrollTo(0, yy), y);
+        await page.evaluate((yy) => window.scrollTo(0, yy), y).catch(() => {});
         await page.waitForTimeout(150);
-        for (const d of await page.evaluate(barScan, { atEnd: y === maxY })) {
+        for (const d of await page.evaluate(barScan, { atEnd: y === maxY }).catch(() => [])) {
           const k = d.kind + d.el + d.text;
           if (seenBar.has(k)) continue;
           seenBar.add(k);
           found.push(d);
         }
       }
-      await page.evaluate(() => window.scrollTo(0, 0));
+      await page.evaluate(() => window.scrollTo(0, 0)).catch(() => {});
       const slug = `${p.replace(/[^a-z0-9]+/gi, "_").replace(/^_|_$/g, "") || "root"}-${w}-${theme}`;
       let shot = null;
       if (shots === "all" || (shots === "defects" && found.length)) {
