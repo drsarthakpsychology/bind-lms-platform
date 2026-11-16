@@ -6,6 +6,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { createStore } from "@/lib/store";
 import { presets } from "@/motion";
 import { layout, space, useTheme } from "@/theme";
+import { bottomChrome, toastBottom } from "./bottom-chrome";
 import { T } from "./text";
 
 type ToastState = { id: number; text: string | null };
@@ -26,7 +27,8 @@ export const toast = {
 };
 
 /**
- * Mounted once at the root. The toast sits above the tab bar, in ink. The
+ * Mounted once at the root. The toast sits above the front screen's pinned
+ * footer and the tab bar (both measured, see bottom-chrome.ts), in ink. The
  * host stays mounted so a toast leaves the way it came (rises 12px in 180ms,
  * drops and fades in 140ms); a new toast pushes the old one out.
  */
@@ -35,8 +37,9 @@ export function ToastHost() {
   const insets = useSafeAreaInsets();
   const reduce = useReducedMotion();
   const { id, text } = store.use((s) => s);
+  const bottom = bottomChrome.use((s) => toastBottom(s, insets.bottom)) + space[3];
   return (
-    <View pointerEvents="none" style={{ position: "absolute", left: 0, right: 0, bottom: insets.bottom + 84, alignItems: "center", paddingHorizontal: layout.gutter }}>
+    <View pointerEvents="none" style={{ position: "absolute", left: 0, right: 0, bottom, alignItems: "center", paddingHorizontal: layout.gutter }}>
       {text ? (
         <Animated.View
           key={id}

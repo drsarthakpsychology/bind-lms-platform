@@ -1,11 +1,11 @@
 import * as React from "react";
 import { View } from "react-native";
-import Animated, { cancelAnimation, Easing, useAnimatedProps, useAnimatedStyle, useReducedMotion, useSharedValue, withDelay, withRepeat, withTiming, type SharedValue } from "react-native-reanimated";
+import Animated, { useAnimatedProps, useAnimatedStyle, useReducedMotion, useSharedValue, withDelay, withTiming, type SharedValue } from "react-native-reanimated";
 import Svg, { Path, Rect } from "react-native-svg";
 
 import { T } from "@/ds/text";
 import { finite, safePath } from "@/lib/svg-safe";
-import { curves, dur, pathLength } from "@/motion";
+import { curves, dur, pathLength, Sprite, sprites } from "@/motion";
 import { inkPaths, type InkOpts, type Shape } from "@/sketch/ink";
 import { fixed, useTheme } from "@/theme";
 
@@ -149,41 +149,16 @@ export function PixelStar({ fire, size = 96, color }: { fire: number; size?: num
 
 /* ----------------------------------------------------------- pixel loader */
 
-// The 3x3 chevron wave: each step lights one diagonal of cells.
-const WAVE = [0, 1, 2, 1, 2, 3, 2, 3, 4];
-
-function LoaderCell({ i, t, cell, color }: { i: number; t: SharedValue<number>; cell: number; color: string }) {
-  const props = useAnimatedProps(() => {
-    const step = Math.floor(t.value * 5) % 5;
-    return { opacity: step === WAVE[i] ? 1 : Math.abs(step - WAVE[i]!) === 1 ? 0.45 : 0.15 };
-  });
-  return <AnimatedRect x={(i % 3) * (cell + 2)} y={Math.floor(i / 3) * (cell + 2)} width={cell} height={cell} fill={color} animatedProps={props} />;
-}
-
 /**
- * The pixel loader for waits over a second: a 3x3 grid lighting in a
- * chevron wave (650ms a cycle), with the action word ("Loading the round").
- * Loops only while it is on screen. Reduce Motion: the grid stays still.
+ * The pixel loader for waits over a second: the kit's 3x3 chevron wave
+ * (sprites.loader, 650ms a loop) with the action word ("Setting up the
+ * round"). Loops only while it is on screen. Reduce Motion: still.
  */
 export function PixelLoader({ label, color, testID }: { label: string; color?: string; testID?: string }) {
   const c = useTheme();
-  const reduce = useReducedMotion();
-  const t = useSharedValue(0.4);
-  React.useEffect(() => {
-    if (reduce) return;
-    t.set(0);
-    t.set(withRepeat(withTiming(1, { duration: 650, easing: Easing.linear }), -1, false));
-    return () => cancelAnimation(t);
-  }, [reduce, t]);
-  const cell = 6;
-  const tone = color ?? (c.dark ? c.primary : c.brand);
   return (
     <View accessibilityRole="progressbar" accessibilityLabel={label} testID={testID ?? "pixel-loader"} style={{ flexDirection: "row", alignItems: "center", gap: 10 }}>
-      <Svg width={cell * 3 + 4} height={cell * 3 + 4}>
-        {Array.from({ length: 9 }, (_, i) => (
-          <LoaderCell key={i} i={i} t={t} cell={cell} color={tone} />
-        ))}
-      </Svg>
+      <Sprite frames={sprites.loader} cell={6} gap={2} frameMs={130} loops={-1} color={color ?? (c.dark ? c.primary : c.brand)} />
       <T v="small" tone="muted">
         {label}
       </T>

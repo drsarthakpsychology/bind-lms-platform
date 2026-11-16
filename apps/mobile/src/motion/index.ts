@@ -18,6 +18,8 @@
  *   pixel      PixelBurst                   pixel fireworks for rare wins
  *   mask       MaskLine                     a line of type rising out of a mask
  *   tier       useMotionTier, scaled        low-end Android budget
+ *   sprite     Sprite, sprites              small pixel animations (loader, tick, star, flame)
+ *   celebrate  useCelebrate, momentBeats    one order for every win
  *
  * Rules: transform and opacity only; worklets on the UI thread; every part
  * checks Reduce Motion and keeps the meaning without the movement.
@@ -38,3 +40,5 @@ export * from "./draw";
 export * from "./pixel";
 export * from "./mask";
 export * from "./tier";
+export * from "./sprite";
+export * from "./celebrate";

@@ -79,7 +79,7 @@ function entry(slug: string): Record<string, unknown> | null {
 const ASSIGNMENTS: C.AssignmentRow[] = [
   { id: "a5", lessonId: "l5", courseId: "course-1", title: "Write a short case summary", lessonTitle: "Depression: how it presents in the clinic", week: 3, dueAt: "2026-11-20T18:29:00.000Z", status: "not_started", score: null },
   { id: "a3", lessonId: "l3", courseId: "course-1", title: "MSE of a role-play patient", lessonTitle: "Mental status examination, part one", week: 2, dueAt: null, status: "submitted", score: null },
-  { id: "a1", lessonId: "l1", courseId: "course-1", title: "What a psychologist does", lessonTitle: "What clinical psychology is, and is not", week: 1, dueAt: null, status: "graded", score: 9 },
+  { id: "a1", lessonId: "l1", courseId: "course-1", title: "What a psychologist does", lessonTitle: "What clinical psychology is, and is not", week: 1, dueAt: null, status: "graded", score: 90 },
 ];
 
 const JOURNEY: C.Journey = {

@@ -40,6 +40,19 @@ describe("Home", () => {
     await render(<HomeView data={{ ...fx.home("new"), quests: null }} />);
     expect(screen.getByText("Start your first lecture")).toBeTruthy();
     expect(screen.getByText(/Welcome to VIBHA/)).toBeTruthy();
+    expect(screen.queryByText(/0 days in a row/)).toBeNull();
+    expect(screen.getByText("Your first points come from the first lecture")).toBeTruthy();
+  });
+
+  it("does not crash when the server sends no step", async () => {
+    const d = { ...fx.home("default"), quests: null, allDone: false, step: undefined as unknown as ReturnType<typeof fx.home>["step"] };
+    await render(<HomeView data={d} />);
+    expect(screen.queryByTestId("home-continue")).toBeNull();
+  });
+
+  it("marks a met goal with a tick in the ring", async () => {
+    await render(<HomeView data={{ ...fx.home("done"), quests: null }} />);
+    expect(screen.getByTestId("goal-ring-done")).toBeTruthy();
   });
 
   it("says when everything is done", async () => {

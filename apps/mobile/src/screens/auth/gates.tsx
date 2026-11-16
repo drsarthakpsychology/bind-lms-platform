@@ -206,7 +206,7 @@ export function PausedScreen({ message }: { message: string }) {
         </>
       }
     >
-      <EmptyState mood="wait" title="Your account is paused" body={message} />
+      <EmptyState mood="wait" title="Your account is paused" body={message.replace(/^\s*your account is paused[.!]?\s*/i, "") || undefined} />
     </Gate>
   );
 }

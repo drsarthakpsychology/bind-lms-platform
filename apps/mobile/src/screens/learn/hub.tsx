@@ -1,5 +1,5 @@
 import { router } from "expo-router";
-import { Bookmark, BookOpen, CirclePlay, ClipboardList, Layers, NotebookText } from "lucide-react-native";
+import { Bookmark, BookOpen, CirclePlay, ClipboardList, Layers, Map as MapIcon, NotebookText } from "lucide-react-native";
 import * as React from "react";
 import { View } from "react-native";
 
@@ -12,7 +12,7 @@ import { space, useTheme } from "@/theme";
 /**
  * Learn: the hub for Lectures and Study. A title, then one group of rows per
  * kind of learning (the website's LEARN_GROUPS: Lectures, Modules, Notes,
- * Quick reference), plus Assignments and Saved. Each row says where you are.
+ * Quick reference), plus Assignments, Your map and Saved. Each row says where you are.
  */
 export function LearnHub() {
   const c = useTheme();
@@ -61,6 +61,7 @@ export function LearnHub() {
             <Row testID="learn-study" title="Modules" meta={modules.length ? `${modsDone} of ${modules.length} complete${study.data?.next && study.data.next.kind !== "done" ? ` · Next: ${study.data.next.label}` : ""}` : "Reading, checkpoints and module tests"} icon={<BookOpen {...icon} />} onPress={() => router.push("/study")} />
             <Row testID="learn-notes" title="Notes" meta={notes.data?.notes.length ? `${notesRead} of ${notes.data.notes.length} read` : "One page on each topic"} icon={<NotebookText {...icon} />} onPress={() => router.push("/notes")} />
             <Row testID="learn-reference" title="Quick reference" meta="Disorders, medicines and terms, A to Z" icon={<Layers {...icon} />} onPress={() => router.push("/reference")} />
+            <Row testID="learn-map" title="Your map" meta="Every topic and how well you know it" icon={<MapIcon {...icon} />} onPress={() => router.push("/map")} />
             <Row testID="learn-saved" title="Saved" meta="Your bookmarks and notes" icon={<Bookmark {...icon} />} onPress={() => router.push("/saved")} />
           </RowList>
         </Section>

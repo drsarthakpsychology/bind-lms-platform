@@ -2,6 +2,7 @@ import { router } from "expo-router";
 
 import type { AppTarget, Me } from "@/api/contract";
 import { toast } from "@/ds/toast";
+import { openWebsite } from "@/ds/query";
 
 /** Practise case tools the app has (src/practise/catalog.ts), and the website's names for them. */
 const CASE_TOOLS = new Set(["daily", "detective", "wwyd", "two-minute", "say-it", "judgment", "ethics", "landmark", "osce", "mse-trainer", "formulation", "out-of-depth", "weak-spots"]);
@@ -99,6 +100,8 @@ export function openTarget(t: AppTarget | null | undefined): void {
     href = null;
   }
   if (href) router.push(href);
+  // Not in the app yet: open the same page on the website rather than a dead end.
+  else if (t && typeof t === "object" && typeof t.web === "string" && t.web) openWebsite(t.web);
   else toast.show("This part arrives in the next update of the app.");
 }
 

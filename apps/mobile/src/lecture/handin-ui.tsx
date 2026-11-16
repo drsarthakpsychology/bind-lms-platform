@@ -13,6 +13,39 @@ import { layout, space, useTheme } from "@/theme";
 import { checkFile, handInFiles, handInRecording, mimeTypesFor, type Picked } from "./handin";
 import { PixelLoader, useSlow } from "@/moments/parts";
 
+/* ------------------------------------------------------------ footer slot */
+
+/** The hand-in button, when it lives in the screen's pinned footer instead of the page. */
+export type FooterAction = { label: string; onPress: () => void; busy?: boolean; disabled?: boolean; testID?: string };
+
+/**
+ * The lecture screen provides this: a hand-in part then puts its "Hand in"
+ * button in the pinned footer (where the thumb is) instead of the page.
+ * Without it (tests, other screens) the button stays in the page.
+ */
+export const HandInSlot = React.createContext<((a: FooterAction | null, owner: object) => void) | null>(null);
+
+/** Puts `action` in the footer while this part is on screen. Returns true when the footer has it. */
+export function useFooterAction(action: FooterAction | null): boolean {
+  const slot = React.useContext(HandInSlot);
+  const press = React.useRef<() => void>(() => undefined);
+  const [owner] = React.useState(() => ({}));
+  const onPress = action?.onPress;
+  React.useEffect(() => {
+    if (onPress) press.current = onPress;
+  });
+  const label = action?.label;
+  const busy = action?.busy;
+  const disabled = action?.disabled;
+  const testID = action?.testID;
+  React.useEffect(() => {
+    if (!slot) return;
+    slot(label ? { label, busy, disabled, testID, onPress: () => press.current() } : null, owner);
+  }, [slot, owner, label, busy, disabled, testID]);
+  React.useEffect(() => (slot ? () => slot(null, owner) : undefined), [slot, owner]);
+  return !!slot;
+}
+
 /* ------------------------------------------------------------------ files */
 
 export function FileHandIn({ a, onDone }: { a: Assignment; onDone: (s: Submission) => void }) {
@@ -58,6 +91,8 @@ export function FileHandIn({ a, onDone }: { a: Assignment; onDone: (s: Submissio
     }
   };
 
+  const inFooter = useFooterAction(files.length ? { label: "Hand in", busy: progress !== null, onPress: () => void send(), testID: "handin-send" } : null);
+
   return (
     <View style={{ gap: space[3] }} testID="handin-files">
       {files.length ? (
@@ -88,7 +123,7 @@ export function FileHandIn({ a, onDone }: { a: Assignment; onDone: (s: Submissio
           {error}
         </T>
       ) : null}
-      <Button kind="quiet" label="Hand in" busy={progress !== null} disabled={!files.length} onPress={() => void send()} testID="handin-send" />
+      {inFooter ? null : <Button kind="quiet" label="Hand in" busy={progress !== null} disabled={!files.length} onPress={() => void send()} testID="handin-send" />}
     </View>
   );
 }
@@ -149,6 +184,8 @@ export function RecordingHandIn({ a, onDone }: { a: Assignment; onDone: (s: Subm
   };
 
   const secs = Math.floor((rec.durationMillis ?? 0) / 1000);
+  // Nothing in the footer until there is a recording to hand in.
+  const inFooter = useFooterAction(uri && !rec.isRecording ? { label: "Hand in the recording", busy, onPress: () => void send(), testID: "record-send" } : null);
   return (
     <View style={{ gap: space[4] }} testID="handin-recording">
       <View style={{ alignItems: "center", gap: space[3], paddingVertical: space[3] }}>
@@ -177,7 +214,7 @@ export function RecordingHandIn({ a, onDone }: { a: Assignment; onDone: (s: Subm
         </T>
       ) : null}
       {slow ? <PixelLoader label="Sending your recording" /> : null}
-      <Button kind="quiet" label="Hand in the recording" disabled={!uri || rec.isRecording} busy={busy} onPress={() => void send()} testID="record-send" />
+      {inFooter ? null : <Button kind="quiet" label="Hand in the recording" disabled={!uri || rec.isRecording} busy={busy} onPress={() => void send()} testID="record-send" />}
     </View>
   );
 }

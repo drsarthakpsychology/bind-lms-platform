@@ -15,7 +15,7 @@ import { fonts, layout, space, useTheme } from "@/theme";
 import { ApiFailure } from "@/api/errors";
 import { isSoon } from "./api";
 import { SoonState } from "./soon";
-import { Confetti, curves, dur, PixelBurst, presets, RollingNumber, scaled, springs, staggerDelay, useMotionTier } from "@/motion";
+import { beats, Confetti, curves, dur, PixelBurst, presets, RollingNumber, scaled, springs, staggerDelay, useCelebrate, useMotionTier } from "@/motion";
 import { InkDraw, MaskUp, PixelLoader, useRun, useSlow } from "@/moments/parts";
 import { ALL_ENTRIES, type Icon } from "./catalog";
 import { EntryIcon } from "./icons";
@@ -410,15 +410,16 @@ export function Verdict({ right, title, why, seed, learn, partial }: { right: bo
 /**
  * The end of a round, in one order (storyboard 2, "the case closes"):
  *     0ms  the panel and its kicker fade up; the score's digits roll in
- *   450ms  the score lands: won, a success haptic and a burst behind the
- *          score; lost, a warning haptic and a 2px dip, no particles
- *   650ms  the reaction sticker and its line slap in (src/ds/reactions)
- *   800ms  the small numbers rise in, 60ms apart
- * Confetti only for a perfect round or a new personal best, on the whole
- * screen (the frame's root), from 450ms. Play again works from 0ms. With
- * Reduce Motion: the panel fades in and the haptic still plays.
+ *   280ms  won: a success haptic; lost: a warning haptic and a 2px dip;
+ *          in between: a tap
+ *   320ms  won: a pixel burst behind the score (confetti too for a
+ *          perfect round or a new personal best, on the whole screen)
+ *   640ms  the reaction sticker and its line slap in (src/ds/reactions)
+ *   900ms  the small numbers rise in, 60ms apart
+ * Timed by the kit's useCelebrate and `beats`. Play again works from 0ms.
+ * Reduce Motion: the panel fades in, the haptic still plays, no particles.
  */
-export const END_AT = { land: 450, sticker: 650, stats: 800, statStep: 60 } as const;
+export const END_AT = { land: beats.haptic, sticker: beats.sticker, stats: beats.stats, statStep: 60 } as const;
 
 export function EndPanel({ kicker = "Round over", score, scoreOf, line, stats, right, total, outcome, best, children }: { kicker?: string; score: string; scoreOf?: string; line?: string; stats?: { label: string; value: string }[]; right?: number; total?: number; outcome?: "won" | "lost" | "mixed"; /** A new personal best: confetti. */ best?: boolean; children?: React.ReactNode }) {
   const c = useTheme();
@@ -432,26 +433,18 @@ export function EndPanel({ kicker = "Round over", score, scoreOf, line, stats, r
   const mood = outcome ? (outcome === "won" ? "streak" : outcome === "lost" ? "wrong" : "near") : moodForScore(right ?? 0, total ?? 0);
   const [burst, setBurst] = React.useState(0);
   const dip = useSharedValue(0);
+  const celebrate = useCelebrate();
   React.useEffect(() => {
     reactions.dismiss();
-    // The result lands first; then the haptic, then particles (motion budget 5.1 rule 5).
-    const id = setTimeout(() => {
-      if (result === "won") {
-        haptic.success();
-        streakMoment.done();
-        setBurst(1);
-      } else if (result === "lost") {
-        haptic.warn();
-        if (!reduce) dip.set(withSequence(withTiming(2, { duration: dur.micro, easing: curves.out }), withSpring(0, springs.smooth)));
-      } else haptic.tap();
-      if (perfect || best) fx.confetti();
-    }, reduce ? 0 : END_AT.land);
-    // The sticker (the shared reaction layer) slaps in after the burst.
-    const sid = setTimeout(() => reactions.show(mood), Math.max(0, (reduce ? END_AT.land : END_AT.sticker) - SETTLE_MS));
-    return () => {
-      clearTimeout(id);
-      clearTimeout(sid);
-    };
+    const won = result === "won";
+    // One order for every win (the kit's beats): the score rolls, then the haptic, then particles, then the sticker.
+    celebrate([
+      { at: beats.haptic, run: won ? () => (haptic.success(), streakMoment.done()) : result === "lost" ? haptic.warn : haptic.tap },
+      ...(won ? [{ at: beats.particles, motion: true, run: () => (setBurst(1), perfect || best ? fx.confetti() : undefined) }] : []),
+      ...(result === "lost" ? [{ at: beats.haptic, motion: true, run: () => dip.set(withSequence(withTiming(2, { duration: dur.micro, easing: curves.out }), withSpring(0, springs.smooth))) }] : []),
+      // The shared reaction layer waits SETTLE_MS itself, so ask early enough to land on the beat.
+      { at: Math.max(0, beats.sticker - SETTLE_MS), run: () => reactions.show(mood) },
+    ]);
     // Once per panel: a new round mounts a new panel.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
