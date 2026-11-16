@@ -366,6 +366,8 @@ Answers to doubts by the admin use the student route `POST /doubts/:id/replies` 
 
 Phase 6 (iPhone) needs no new routes.
 
+Clinic routes (schedule, QR attendance, leave, OPD cases): see `API_CONTRACT_CLINIC.md`.
+
 ## 3. Study content as data
 
 The app draws everything natively. The server sends study content as structured JSON, never HTML. The version of this JSON is `CONTENT_SCHEMA_VERSION` (1). It is in `AppConfig.contentSchemaVersion` and in every `SectionContent`.
@@ -443,6 +445,7 @@ Notification bodies are sent as `MessageBlock[]` (paragraphs, headings, lists, w
 |---|---|---|
 | `supabase/migrations_pending/2026_11_15_app_deletion_requests.sql` | `app_deletion_requests` (account deletion requests from the app) | Requests still reach the super admin as a bell notice and push; only the stored list is missing |
 | `supabase/migrations_pending/2026_11_15_app_devices.sql` | `app_devices` (one row per phone), `app_device_changes` (the phone-change log and admin allowances), `app_notification_prefs` | Everything works; the one-phone rule and the change limit are not enforced, push is not sent, preferences stay on the phone |
+| `supabase/migrations_pending/2026_11_16_clinic.sql` | The clinic tables: timetable, sessions, QR secrets, attendance, leave, OPD settings, batches, case quotas, OPD days, case logs (routes in `API_CONTRACT_CLINIC.md`) | Every `/clinic/**` route answers 503 `unavailable` |
 
 ## 5. Change rules
 
