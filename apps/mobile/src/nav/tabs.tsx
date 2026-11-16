@@ -2,10 +2,10 @@ import { Tabs } from "expo-router";
 import * as React from "react";
 import { useReducedMotion } from "react-native-reanimated";
 
-import { MotionTabBar, tabSceneOptions, type TabIcon } from "@/motion";
-import { useTheme } from "@/theme";
+import { MotionTabBar, tabSceneOptions, useMotionTier, type TabIcon } from "@/motion";
+import { useTheme, type Area } from "@/theme";
 
-export type TabDef = { name: string; title: string; icon: TabIcon };
+export type TabDef = { name: string; title: string; icon: TabIcon; /** The area the tab's screen wears: the bar's pill washes into its colour. */ area?: Area };
 
 /**
  * The bottom tab bar, the same for every kind of account: icon and short
@@ -17,7 +17,9 @@ export type TabDef = { name: string; title: string; icon: TabIcon };
 export function TabBar({ tabs }: { tabs: TabDef[] }) {
   const c = useTheme();
   const reduce = useReducedMotion();
+  const { low } = useMotionTier();
   const icons = React.useMemo(() => Object.fromEntries(tabs.map((t) => [t.name, t.icon])), [tabs]);
+  const areas = React.useMemo(() => Object.fromEntries(tabs.map((t) => [t.name, t.area])), [tabs]);
   // Warm up the other tabs once the first one has settled, so a first visit never shows an empty frame.
   const [warm, setWarm] = React.useState(false);
   React.useEffect(() => {
@@ -27,13 +29,13 @@ export function TabBar({ tabs }: { tabs: TabDef[] }) {
   }, []);
   return (
     <Tabs
-      tabBar={(props) => <MotionTabBar {...props} icons={icons} />}
+      tabBar={(props) => <MotionTabBar {...props} icons={icons} areas={areas} />}
       screenOptions={{
         headerShown: false,
         tabBarHideOnKeyboard: true,
         lazy: !warm,
         sceneStyle: { backgroundColor: c.bg },
-        ...tabSceneOptions(!!reduce),
+        ...tabSceneOptions(!!reduce, low),
       }}
     >
       {tabs.map((t) => (
