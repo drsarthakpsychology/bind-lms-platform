@@ -27,6 +27,13 @@ function toneColor(c: Palette, tone: Tone): string {
 }
 
 /**
+ * Reading comfort for long text (the reader, notes, quick reference): `scale`
+ * multiplies the size, `line` the space between lines. Set by `ReadingSize`
+ * (src/lib/reading.tsx); outside it text keeps the normal scale.
+ */
+export const TextScale = React.createContext<{ scale: number; line: number } | null>(null);
+
+/**
  * Meta lines join parts with " · ". The space before each dot becomes a
  * no-break space, so a wrapped line never starts with "·": the dot stays at
  * the end of the line above.
@@ -54,12 +61,17 @@ export type TProps = TextProps & {
 export function T({ v = "body", tone = "ink", num, center, style, maxFontSizeMultiplier, children, ...rest }: TProps) {
   const c = useTheme();
   const big = v === "display" || v === "h1" || v === "h2";
+  const reading = React.useContext(TextScale);
+  const base = scale[v];
+  // Headings grow half as much, so a title never pushes the action off the screen.
+  const k = reading ? (big ? 1 + (reading.scale - 1) / 2 : reading.scale) : 1;
+  const sized = reading && (k !== 1 || reading.line !== 1) ? { fontSize: Math.round(base.fontSize * k), lineHeight: Math.round(base.lineHeight * k * (big ? 1 : reading.line)) } : null;
   return (
     <Text
       accessibilityRole={v === "display" || v === "h1" || v === "h2" || v === "h3" ? "header" : undefined}
       maxFontSizeMultiplier={maxFontSizeMultiplier ?? (big ? 1.3 : 1.6)}
       {...rest}
-      style={[scale[v], { color: toneColor(c, tone) }, num ? { fontVariant: ["tabular-nums"] } : null, center ? { textAlign: "center" } : null, style]}
+      style={[base, sized, { color: toneColor(c, tone) }, num ? { fontVariant: ["tabular-nums"] } : null, center ? { textAlign: "center" } : null, style]}
     >
       {glue(children)}
     </Text>

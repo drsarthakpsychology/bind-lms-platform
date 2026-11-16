@@ -41,6 +41,8 @@ export const presets = {
     ),
   /** Plain fade, for content replacing a skeleton. */
   fade: (delay = 0) => cached(`fade${delay}`, () => FadeIn.delay(delay).duration(dur.enter).easing(curves.out)),
+  /** A quick fade for a state change (controls showing, a block revealed, a screen arriving): 180ms. */
+  fadeState: (delay = 0) => cached(`fadeState${delay}`, () => FadeIn.delay(delay).duration(dur.state).easing(curves.standard)),
   /** Something small appearing in place (a badge, a check): from 0.9, never from 0. */
   pop: (delay = 0) => cached(`pop${delay}`, () => ZoomIn.delay(delay).springify().stiffness(springs.bouncy.stiffness).damping(springs.bouncy.damping).mass(springs.bouncy.mass).withInitialValues({ transform: [{ scale: 0.9 }] })),
   /** Leaving: quicker than entering. */

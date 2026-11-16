@@ -5,6 +5,7 @@ import { View } from "react-native";
 
 import type { AskDoubtBody, AskDoubtResult } from "@/api/contract";
 import { messageOf } from "@/api/errors";
+import { useMe, useStudyHome } from "@/api/queries";
 import { api } from "@/auth";
 import { Button, Chips, Field, Screen, T } from "@/ds";
 import { haptic } from "@/lib/haptics";
@@ -15,7 +16,18 @@ const KINDS = [
   { id: "complaint" as const, name: "Something is wrong" },
 ];
 
-/** Ask a doubt: the question, a little detail, one action pinned low. */
+/** The modules you are on now (the next one first), as topic chips, at most four. */
+function useTopicChoices(enabled: boolean): { id: string; name: string }[] {
+  const q = useStudyHome();
+  if (!enabled || !q.data) return [];
+  const next = "moduleId" in q.data.next ? q.data.next.moduleId : null;
+  const mods = q.data.modules;
+  const now = [...mods.filter((m) => m.id === next), ...mods.filter((m) => m.id !== next && m.status.pct > 0 && !m.status.complete)];
+  const picked = (now.length ? now : mods.filter((m) => !m.status.complete)).slice(0, 4);
+  return picked.map((m) => ({ id: m.title, name: m.title }));
+}
+
+/** Ask a doubt: the question, a little detail, topic chips from what you are studying, one action pinned low. */
 export function AskScreen() {
   const qc = useQueryClient();
   const [title, setTitle] = React.useState("");
@@ -24,6 +36,9 @@ export function AskScreen() {
   const [kind, setKind] = React.useState<"doubt" | "complaint">("doubt");
   const [error, setError] = React.useState<string | null>(null);
   const [busy, setBusy] = React.useState(false);
+  const me = useMe().data;
+  const studyOpen = me?.access?.can?.study !== false && !me?.access?.lecturesOnly;
+  const topics = useTopicChoices(studyOpen);
   const submit = async () => {
     if (title.trim().length < 8) {
       haptic.warn();
@@ -45,10 +60,13 @@ export function AskScreen() {
     }
   };
   return (
-    <Screen testID="ask" gap={space[5]} footer={<Button label="Post" busy={busy} onPress={() => void submit()} testID="ask-submit" />}>
+    <Screen testID="ask" gap={space[5]} footer={<Button label="Post" busy={busy} needsServer onPress={() => void submit()} testID="ask-submit" />}>
       <Field label="Your question" value={title} onChangeText={setTitle} error={error} maxLength={200} testID="ask-title" />
       <Field label="More detail (optional)" value={body} onChangeText={setBody} area maxLength={4000} testID="ask-body" />
-      <Field label="Topic (optional)" value={topic} onChangeText={setTopic} placeholder="For example: Depression" testID="ask-topic" />
+      <View style={{ gap: space[2] }}>
+        <Field label="Topic (optional)" value={topic} onChangeText={setTopic} placeholder="For example: Depression" testID="ask-topic" />
+        {topics.length ? <Chips label="Your topics" options={topics} value={topic} onChange={setTopic} /> : null}
+      </View>
       <View style={{ gap: space[2] }}>
         <T v="small">This is</T>
         <Chips label="This is" options={KINDS} value={kind} onChange={setKind} />

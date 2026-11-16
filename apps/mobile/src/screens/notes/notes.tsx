@@ -1,20 +1,21 @@
 import { useQueryClient } from "@tanstack/react-query";
 import { router, Stack, useLocalSearchParams } from "expo-router";
-import { ArrowLeft, ArrowRight, Check } from "lucide-react-native";
+import { ArrowLeft, ArrowRight, Check, NotebookText } from "lucide-react-native";
 import * as React from "react";
 import { Pressable, View } from "react-native";
 import Animated, { useAnimatedStyle, useReducedMotion, useSharedValue, withSpring } from "react-native-reanimated";
 
 import { bulletText } from "@/api/adapt-learn";
 import type { RevisionNote, RevisionNoteList, RevisionNoteSummary } from "@/api/contract";
-import { learnKeys, useNote, useNotes } from "@/api/learn";
+import { learnKeys, useNote, useNotes, useTerms } from "@/api/learn";
 import { Chips, EmptyState, Hero, Loaded, Row, RowList, RowsSkeleton, Screen, Section, T, Tint } from "@/ds";
 import { haptic } from "@/lib/haptics";
 import { OnceHint } from "@/lib/once";
+import { ReadingSize } from "@/lib/reading";
 import { settingsStore, updateSettings } from "@/lib/settings";
 import { Enter, Press, springs } from "@/motion";
 import { openTarget } from "@/nav/targets";
-import { TermSheet } from "@/screens/reference/reference";
+import { exactRef, TermSheet } from "@/screens/reference/reference";
 import { saveLearn, withNoteRead } from "@/study/state";
 import { Rich, TermPress } from "@/study/rich";
 import { FigureWidget } from "@/study/widgets/diagrams";
@@ -49,7 +50,7 @@ export function NotesBody({ d }: { d: RevisionNoteList }) {
         <Section key={g.title} title={g.title}>
           <RowList>
             {g.items.map((n) => (
-              <Row key={n.id} testID={`note-${n.id}`} title={`${n.emoji ? `${n.emoji}  ` : ""}${n.title}`} meta={n.tagline} trailing={n.readOn ? <Check size={20} color={c.ink} accessibilityLabel="Read" /> : undefined} onPress={() => router.push(`/notes/${encodeURIComponent(n.id)}`)} />
+              <Row key={n.id} testID={`note-${n.id}`} icon={<NotebookText size={20} color={c.muted} />} title={n.title} meta={n.tagline} trailing={n.readOn ? <Check size={20} color={c.ink} accessibilityLabel="Read" /> : undefined} onPress={() => router.push(`/notes/${encodeURIComponent(n.id)}`)} />
             ))}
           </RowList>
         </Section>
@@ -63,7 +64,7 @@ export function NotesScreen() {
   return (
     <Screen testID="notes" onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
       <Stack.Screen options={{ title: "Notes" }} />
-      <Loaded q={q} soon what="your notes" skeleton={<RowsSkeleton rows={6} />}>
+      <Loaded q={q} soon="/study/notes" what="your notes" skeleton={<RowsSkeleton rows={6} />}>
         {(d) => <NotesBody d={d} />}
       </Loaded>
     </Screen>
@@ -118,6 +119,35 @@ function points(text: string, max: number): string[] {
   return parts.length > max ? [...parts.slice(0, max - 1), parts.slice(max - 1).join(" ")] : parts;
 }
 
+/**
+ * "Ask about" and other short lists: plain words with dots between them. A word
+ * the Quick reference has is a link that opens it; the rest are plain text.
+ */
+function WordList({ words }: { words: string[] }) {
+  const onTerm = React.useContext(TermPress);
+  const index = useTerms(words.length > 0 && !!onTerm);
+  const items = index.data?.items;
+  return (
+    <T v="reading" testID="note-words">
+      {words.map((w, k) => {
+        const hit = items && onTerm ? exactRef(items, w) : null;
+        return (
+          <React.Fragment key={k}>
+            {k ? <T v="reading" tone="muted">{"  ·  "}</T> : null}
+            {hit && onTerm ? (
+              <T v="reading" tone="link" accessibilityRole="link" accessibilityHint="Opens it in the Quick reference" onPress={() => onTerm(w)} style={{ textDecorationLine: "underline", textDecorationStyle: "dotted" }} testID={`note-word-${k}`}>
+                {w}
+              </T>
+            ) : (
+              w
+            )}
+          </React.Fragment>
+        );
+      })}
+    </T>
+  );
+}
+
 export function NoteBody({ n, view, neighbours }: { n: RevisionNote; view: "student" | "clinician"; neighbours: { prev: RevisionNoteSummary | null; next: RevisionNoteSummary | null } }) {
   const c = useTheme();
   return (
@@ -138,13 +168,7 @@ export function NoteBody({ n, view, neighbours }: { n: RevisionNote; view: "stud
         const alert = s.style === "alert";
         const body =
           s.style === "chips" ? (
-            <View style={{ flexDirection: "row", flexWrap: "wrap", gap: space[2] }}>
-              {s.points.map((p, k) => (
-                <View key={k} style={{ borderRadius: 8, backgroundColor: c.tint, paddingHorizontal: space[3], paddingVertical: space[2] }}>
-                  <Rich text={bulletText(p, view)} v="small" />
-                </View>
-              ))}
-            </View>
+            <WordList words={s.points.map((p) => bulletText(p, view).replace(/\*\*|`|\*/g, ""))} />
           ) : (
             <View style={{ gap: space[3] }}>
               {s.points.map((p, k) => (
@@ -268,7 +292,11 @@ export function NoteScreen() {
           </Enter>
         ) : null}
         <Loaded q={q} what="this note" skeleton={<RowsSkeleton rows={6} />}>
-          {(note) => <NoteBody n={note} view={view} neighbours={neighbours} />}
+          {(note) => (
+            <ReadingSize>
+              <NoteBody n={note} view={view} neighbours={neighbours} />
+            </ReadingSize>
+          )}
         </Loaded>
       </Screen>
       <TermSheet word={word} onClose={closeWord} />

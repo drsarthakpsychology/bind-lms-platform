@@ -7,14 +7,14 @@ import type { MapStateKey, MapTopic, StudyMap } from "@/api/contract";
 import { useStudyMap } from "@/api/map-wall";
 import { Button, EmptyState, Hero, Loaded, Row, RowList, RowsSkeleton, Screen, Section, Sheet, T, Tint } from "@/ds";
 import { openTarget } from "@/nav/targets";
-import { Enter, Press, presets } from "@/motion";
+import { Enter, presets } from "@/motion";
 import { layout, space, useTheme, type Palette } from "@/theme";
 import Animated from "react-native-reanimated";
 
 /**
  * Your map (the website's /study/map): what to practise next, what you mix
- * up, and every topic as a strip of skills, each square coloured by how well
- * you know it. Tap a topic for its skills one by one.
+ * up, a thin bar summing up every skill, then each topic as a row with one
+ * word for where it stands. Tap a topic for its skills one by one.
  */
 
 /** The fill and mark of a state. Colour is never the only sign: each state has its own mark. */
@@ -45,35 +45,50 @@ function Square({ state, size = 26, i = 0, empty }: { state: MapStateKey; size?:
   );
 }
 
-function Legend({ m }: { m: StudyMap }) {
-  return (
-    <View accessibilityLabel={`What the colours mean: ${m.states.map((s) => s.label).join(", ")}`} style={{ flexDirection: "row", flexWrap: "wrap", columnGap: space[4], rowGap: space[2] }}>
-      {m.states.map((s) => (
-        <View key={s.key} style={{ flexDirection: "row", alignItems: "center", gap: space[2] }}>
-          <Square state={s.key} size={18} />
-          <T v="caption" tone="muted">
-            {s.label}
-          </T>
-        </View>
-      ))}
-    </View>
-  );
+/** One state for a whole topic: the weakest that needs work wins, so the word says what to do. */
+export function topicState(t: MapTopic): MapStateKey {
+  const live = t.cells.filter((x) => x.hasItems).map((x) => x.state);
+  if (!live.length || live.every((s) => s === "new")) return "new";
+  if (live.includes("shaky")) return "shaky";
+  if (live.includes("decaying")) return "decaying";
+  if (live.every((s) => s === "mastered")) return "mastered";
+  return "learning";
 }
 
-function TopicRow({ t, i, onOpen }: { t: MapTopic; i: number; onOpen: () => void }) {
+function TopicRow({ t, label, onOpen }: { t: MapTopic; label: (s: MapStateKey) => string; onOpen: () => void }) {
+  const state = topicState(t);
+  return <Row testID={`map-topic-${t.id}`} title={t.title} meta={label(state)} icon={<Square state={state} size={20} />} onPress={onOpen} accessibilityLabel={`${t.title}, ${label(state)}. Open its skills`} />;
+}
+
+/**
+ * The whole map at a glance: one thin bar split by how many skills are in
+ * each state, with the words underneath. Replaces the grid of tiny squares.
+ */
+export function MapSummary({ m }: { m: StudyMap }) {
   const c = useTheme();
-  const labels = t.cells.filter((x) => x.hasItems).map((x) => `${x.label} ${x.state}`);
+  const cells = m.topics.flatMap((t) => t.cells.filter((x) => x.hasItems));
+  const order: MapStateKey[] = ["mastered", "learning", "decaying", "shaky", "new"];
+  const parts = order.map((k) => ({ k, n: cells.filter((x) => x.state === k).length, label: m.states.find((x) => x.key === k)?.label ?? k })).filter((x) => x.n > 0);
+  if (!parts.length) return null;
   return (
-    <Enter i={i}>
-      <Press testID={`map-topic-${t.id}`} onPress={onOpen} accessibilityRole="button" accessibilityLabel={`${t.title}. ${labels.join(", ")}`} innerStyle={{ paddingVertical: space[3], gap: space[2], borderBottomWidth: 1, borderColor: c.hairline }}>
-        <T v="bodyStrong">{t.title}</T>
-        <View style={{ flexDirection: "row", gap: 6 }}>
-          {t.cells.map((cell, k) => (
-            <Square key={cell.skill || k} state={cell.state} empty={!cell.hasItems} i={i + k} />
-          ))}
-        </View>
-      </Press>
-    </Enter>
+    <View testID="map-summary" accessible accessibilityLabel={`Your skills: ${parts.map((p) => `${p.label} ${p.n}`).join(", ")}`} style={{ gap: space[2] }}>
+      <View style={{ flexDirection: "row", height: 12, borderRadius: 6, overflow: "hidden", gap: 2, backgroundColor: c.bg }}>
+        {parts.map((p) => {
+          const look = stateLook(c, p.k);
+          return <View key={p.k} style={{ flex: p.n, backgroundColor: look.bg, borderWidth: p.k === "new" || p.k === "decaying" ? 1 : 0, borderColor: look.border }} />;
+        })}
+      </View>
+      <View style={{ flexDirection: "row", flexWrap: "wrap", columnGap: space[4], rowGap: space[1] }}>
+        {parts.map((p) => (
+          <View key={p.k} style={{ flexDirection: "row", alignItems: "center", gap: space[2], maxWidth: "100%" }}>
+            <Square state={p.k} size={14} />
+            <T v="caption" tone="muted" style={{ flexShrink: 1 }}>
+              {p.label}
+            </T>
+          </View>
+        ))}
+      </View>
+    </View>
   );
 }
 
@@ -173,19 +188,19 @@ export function MapBody({ m }: { m: StudyMap }) {
         </Section>
       ) : null}
 
-      <Section title="Topic by skill">
+      <Section title="Topics">
         <View style={{ gap: space[3] }}>
           {!m.calibrated ? (
             <T v="small" tone="muted">
               Your chances show after a few more answers.
             </T>
           ) : null}
-          <Legend m={m} />
-          <View>
-            {m.topics.map((t, i) => (
-              <TopicRow key={t.id} t={t} i={Math.min(i, 8)} onOpen={() => setOpen(t)} />
+          <MapSummary m={m} />
+          <RowList>
+            {m.topics.map((t) => (
+              <TopicRow key={t.id} t={t} label={label} onOpen={() => setOpen(t)} />
             ))}
-          </View>
+          </RowList>
         </View>
       </Section>
       <TopicSheet t={open} m={m} onClose={() => setOpen(null)} />

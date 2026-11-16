@@ -648,5 +648,5 @@ export class AdminBoundary extends React.Component<{ children: React.ReactNode; 
 /** The design system's Loaded, with the admin boundary around what it draws. */
 export function Loaded<T>(props: { q: UseQueryResult<T>; skeleton?: React.ReactNode; what?: string; soon?: boolean; children: (data: T) => React.ReactNode }) {
   const { children, ...rest } = props;
-  return <DsLoaded {...rest}>{(d) => <AdminBoundary what={props.what}>{children(d)}</AdminBoundary>}</DsLoaded>;
+  return <DsLoaded {...rest} soon={rest.soon ? "/admin" : undefined}>{(d) => <AdminBoundary what={props.what}>{children(d)}</AdminBoundary>}</DsLoaded>;
 }

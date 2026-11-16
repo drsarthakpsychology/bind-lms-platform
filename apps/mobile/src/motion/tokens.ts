@@ -93,3 +93,10 @@ export const curves = {
 
 /** List entry: 40ms between rows, capped so the whole list is in within ~360ms. */
 export const stagger = { step: 40, max: 8, rise: 10 } as const;
+
+/**
+ * The order of a celebration (ms after the result is shown), budget rule 5:
+ * the result lands, then the haptic, then particles, then the sticker, then
+ * the stats. `Celebrate` uses these, so every win keeps the same beat.
+ */
+export const beats = { result: 0, haptic: 280, particles: 320, sticker: 640, stats: 900 } as const;

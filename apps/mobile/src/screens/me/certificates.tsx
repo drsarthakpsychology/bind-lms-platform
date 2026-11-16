@@ -34,7 +34,7 @@ export async function shareCertificate(c: Credential): Promise<void> {
   }).catch(() => undefined);
 }
 
-function Badge({ b, i, onPress }: { b: Credential | BadgeProgress; i: number; onPress: () => void }) {
+export function Badge({ b, i, onPress }: { b: Credential | BadgeProgress; i: number; onPress: () => void }) {
   const c = useTheme();
   const reduce = useReducedMotion();
   const earned = "credentialId" in b || b.earned;
@@ -92,7 +92,8 @@ export function CertificatesScreen() {
           {(a) => {
             const certs = a.earned.filter((x) => x.type === "certificate" && x.status !== "draft");
             const badges = a.earned.filter((x) => x.type === "badge");
-            const toEarn = a.progress.filter((x) => !x.earned && (!badgesOnly || x.type === "badge"));
+            // Badges live in Progress; this screen keeps them only for old ?show=badges links.
+            const toEarn = a.progress.filter((x) => !x.earned && x.type === (badgesOnly ? "badge" : "certificate"));
             return (
               <>
                 {badgesOnly ? (
@@ -113,7 +114,6 @@ export function CertificatesScreen() {
                         {x.status === "issued" ? (
                           <View style={{ flexDirection: "row", gap: space[5] }}>
                             <Button kind="text" label="Download" onPress={() => void downloadCertificate(x.credentialId)} />
-                            {x.verifyUrl ? <Button kind="text" label="Share" onPress={() => void shareCertificate(x)} /> : null}
                           </View>
                         ) : null}
                       </Card>
@@ -122,7 +122,7 @@ export function CertificatesScreen() {
                 ) : (
                   <EmptyState title="No certificates yet" body="Finish a module and pass its test to earn your first certificate." testID="certs-empty" />
                 )}
-                {badges.length ? (
+                {badgesOnly && badges.length ? (
                   <Section title="Badges">
                     <View style={{ flexDirection: "row", flexWrap: "wrap" }}>
                       {badges.map((b, i) => (

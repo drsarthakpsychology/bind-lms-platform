@@ -11,6 +11,8 @@ import { createStore } from "./store";
 export type Recent = {
   /** Put `id` first. */
   add: (id: string) => void;
+  /** Take `id` off the list. */
+  remove: (id: string) => void;
   /** The ids, newest first; empty until loaded. */
   use: () => string[];
 };
@@ -39,6 +41,12 @@ export function recentList(name: string, max = 8): Recent {
       store.set({ ids });
       void prefs.set(key, JSON.stringify(ids)).catch(() => undefined);
     },
+    remove: (id) => {
+      load();
+      const ids = store.get().ids.filter((x) => x !== id);
+      store.set({ ids });
+      void prefs.set(key, JSON.stringify(ids)).catch(() => undefined);
+    },
     use: () => {
       React.useEffect(load, []);
       return store.use((s) => s.ids);
@@ -50,5 +58,7 @@ export function recentList(name: string, max = 8): Recent {
 export const recentPractise = recentList("practise");
 /** Exam Prep subjects opened, by subject id. */
 export const recentPrep = recentList("prep", 3);
+/** What was searched for, newest first (Search's start screen). */
+export const recentSearches = recentList("searches", 6);
 /** Medicine pages opened, by medicine id. */
 export const recentMedicines = recentList("medicines", 3);
