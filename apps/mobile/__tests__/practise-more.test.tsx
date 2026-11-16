@@ -4,6 +4,7 @@ import * as React from "react";
 
 import { mock } from "@/api/mock/server";
 import { session } from "@/auth";
+import { MedicineScreen } from "@/library/medicine";
 import { ToolCaseScreen } from "@/practise/cases/tool";
 import { EscapeGame } from "@/practise/games/escape";
 import { WardGame } from "@/practise/games/ward";
@@ -174,5 +175,20 @@ describe("XP shop", () => {
     await render(<ShopScreen />);
     await waitFor(() => expect(screen.getByTestId("shop-buy-bonus_case")).toBeTruthy());
     expect(screen.getByTestId("shop-buy-bonus_case").props.accessibilityState).toMatchObject({ disabled: true });
+  });
+});
+
+describe("Medicine page", () => {
+  it("draws the server's sections in order, How it works last with its pictures, and the synapse switches", async () => {
+    params.mockReturnValue({ id: "sertraline" });
+    await render(<MedicineScreen />);
+    await waitFor(() => expect(screen.getByTestId("med-section-uses")).toBeTruthy(), { timeout: 4000 });
+    for (const id of ["doses", "side-effects", "monitoring", "warnings", "groups", "how-it-works"]) expect(screen.getByTestId(`med-section-${id}`)).toBeTruthy();
+    expect(screen.getByTestId("med-diagrams")).toBeTruthy();
+    expect(screen.getByTestId("d-receptor")).toBeTruthy();
+    expect(screen.getByTestId("d-synapse-reuptake")).toBeTruthy();
+    expect(screen.getByText(/blocks the pump/)).toBeTruthy();
+    await fireEvent.press(screen.getByLabelText("Without the medicine"));
+    await waitFor(() => expect(screen.getByText(/pump soon pulls the rest back/)).toBeTruthy());
   });
 });
