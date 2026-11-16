@@ -10,7 +10,6 @@ import { G } from "react-native-svg";
 import type { BrainMapData } from "@/api/contract";
 import { Chips } from "@/ds/parts";
 import { T } from "@/ds/text";
-import { haptic } from "@/lib/haptics";
 import { C, Callout, Cv, E, Label, P, Pg, SketchSheet, labelWidth } from "@/sketch/ink";
 import { WidgetFrame } from "./frame";
 import { StepText } from "./engine";
@@ -120,7 +119,6 @@ export function BrainMapWidget({ d }: { d: BrainMapData }) {
   const [pick, setPick] = React.useState<string | null>(focus[0] ?? null);
   const sel = REGIONS.find((r) => r.id === pick);
   const choose = (id: string) => {
-    haptic.select();
     setPick(id);
   };
   return (

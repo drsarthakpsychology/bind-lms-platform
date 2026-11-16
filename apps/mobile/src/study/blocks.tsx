@@ -5,7 +5,6 @@ import Animated, { useReducedMotion } from "react-native-reanimated";
 
 import type { Block, BoxKind, ListItem } from "@/api/contract";
 import { T } from "@/ds/text";
-import { haptic } from "@/lib/haptics";
 import { presets } from "@/motion";
 import { layout, space, useTheme } from "@/theme";
 import { Rich } from "./rich";
@@ -111,7 +110,6 @@ function Qa({ q, blocks, ctx }: { q: string; blocks: Block[]; ctx: BlockContext 
         accessibilityRole="button"
         accessibilityState={{ expanded: open }}
         onPress={() => {
-          haptic.select();
           setOpen((o) => !o);
         }}
         style={{ minHeight: layout.row, flexDirection: "row", alignItems: "center", gap: space[3], paddingVertical: space[3] }}

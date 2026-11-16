@@ -6,7 +6,6 @@ import { scheduleOnRN } from "react-native-worklets";
 
 import { reportTabBar } from "@/ds/bottom-chrome";
 import { T } from "@/ds/text";
-import { haptic } from "@/lib/haptics";
 import { KeyboardState, useKeyboard } from "@/lib/keyboard";
 import { fonts, useTheme } from "@/theme";
 import { dur, shift, springs } from "./tokens";
@@ -96,8 +95,8 @@ function TabItem({ label, Icon, focused, onPress, onLongPress, a11y }: { label: 
  * The bottom tab bar with motion: a soft pill sits behind the current tab's
  * icon and springs to the tab you press, stretching a little as it travels
  * (it reads as one thing moving, never two indicators crossing). The icon
- * pops on arrival, presses sink slightly, and each press gives a selection
- * haptic. With Reduce Motion the pill jumps and nothing pops.
+ * pops on arrival and presses sink slightly. No haptic: switching tabs is
+ * navigation. With Reduce Motion the pill jumps and nothing pops.
  *
  * Pass as `tabBar` to Expo Router's <Tabs>; give each screen
  * `options.tabBarIcon` as a plain icon component via `tabIcons`.
@@ -160,7 +159,6 @@ export function MotionTabBar({ state, descriptors, emitter, navigateToTab, inset
               focused={focused}
               a11y={options?.tabBarAccessibilityLabel}
               onPress={() => {
-                haptic.select();
                 const event = emitter.emit({
                   type: "tabPress",
                   target: route.key,

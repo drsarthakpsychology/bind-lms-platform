@@ -281,7 +281,6 @@ function PressCard({ children, onPress, label, base, style, testID }: { children
       accessibilityRole="button"
       accessibilityLabel={label}
       onPress={() => {
-        haptic.select();
         onPress();
       }}
       onPressIn={() => {
@@ -454,7 +453,6 @@ export function Chips<V extends string>({ options, value, onChange, label, scrol
           mark={o.mark}
           on={o.id === value}
           onPress={() => {
-            haptic.select();
             onChange(o.id);
           }}
         />
@@ -505,7 +503,6 @@ export function TabRow<V extends string>({ tabs, value, onChange, scroll = true 
               if (on) move(t.id, false);
             }}
             onPress={() => {
-              haptic.select();
               onChange(t.id);
             }}
             style={{ minHeight: layout.target, justifyContent: "center" }}

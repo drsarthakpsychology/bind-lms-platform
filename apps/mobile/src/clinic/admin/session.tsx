@@ -7,7 +7,6 @@ import { useAdminAction, useRefreshAdmin } from "@/admin/api";
 import { Figures, FilterChips, OptionRow, Quiet } from "@/admin/kit";
 import { useAdminRole } from "@/admin/role";
 import { Button, Field, RowsSkeleton, Screen, Sheet, T } from "@/ds";
-import { haptic } from "@/lib/haptics";
 import { StaggerList } from "@/motion";
 import { layout, space, useTheme } from "@/theme";
 import { adminClinicCalls, useSessionDetail } from "../api";
@@ -86,7 +85,6 @@ function RosterLine({ r, onPress, canWrite }: { r: RosterRow; onPress: () => voi
           accessibilityRole="button"
           accessibilityLabel={`${r.name}. ${times || "No scan"}. Mark by hand`}
           onPress={() => {
-            haptic.select();
             onPress();
           }}
           style={({ pressed }) => ({ backgroundColor: pressed ? c.tint : "transparent", marginHorizontal: -space[2], paddingHorizontal: space[2], borderRadius: 8 })}

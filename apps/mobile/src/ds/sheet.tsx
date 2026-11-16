@@ -5,7 +5,6 @@ import Animated, { useAnimatedStyle, useReducedMotion, useSharedValue, withSprin
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { scheduleOnRN } from "react-native-worklets";
 
-import { haptic } from "@/lib/haptics";
 import { curves, dur, springs } from "@/motion";
 import { layout, space, useTheme } from "@/theme";
 import { useKeyboardPad } from "./keyboard-pad";
@@ -50,7 +49,6 @@ export function Sheet({ open, onClose, title, children, testID }: { open: boolea
   React.useEffect(() => {
     want.set(open);
     if (open) {
-      haptic.select();
       // Rise now if the height is known; otherwise onLayout starts it.
       if (h.get() > 0 || reduce) rise();
       return;
@@ -84,7 +82,6 @@ export function Sheet({ open, onClose, title, children, testID }: { open: boolea
   const scrim = useAnimatedStyle(() => ({ opacity: Math.min(1, Math.max(0, p.value)) }));
 
   const close = React.useCallback(() => {
-    haptic.select();
     onClose();
   }, [onClose]);
   const config = (enabled: boolean) => ({

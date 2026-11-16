@@ -98,7 +98,7 @@ function LongQuestion({ q, subject, topic }: { q: LongQ; subject: string; topic:
   const thumb = open ? (
     next ? <Button label="Next question" onPress={() => router.replace(`/prep/long?subject=${enc(subject)}&topic=${enc(topic)}&id=${enc(next.id)}`)} testID="long-next" /> : <Button kind="quiet" label="Back to the list" onPress={() => router.back()} />
   ) : (
-    <Button label="Show answer" onPress={() => { haptic.tap(); setOpen(true); }} testID="long-show" />
+    <Button label="Show answer" onPress={() => setOpen(true)} testID="long-show" />
   );
   return (
     <GameFrame testID="long-question" title={`${item.marks} marks`} thumb={thumb}>

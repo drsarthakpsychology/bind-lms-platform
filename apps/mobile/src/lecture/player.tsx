@@ -14,7 +14,6 @@ import { ApiFailure, reasonOf } from "@/api/errors";
 import { streamView } from "@/api/adapt-core";
 import { api, session } from "@/auth";
 import { Button, Skeleton, T } from "@/ds";
-import { haptic } from "@/lib/haptics";
 import { presets } from "@/motion";
 import { ThemeProvider, fixed, fonts, layout, space } from "@/theme";
 import { LectureIntro, type IntroInfo } from "./intro";
@@ -173,7 +172,6 @@ function Controls({ pb, full, onFull, onFirstPlay, sides }: { pb: Playback; full
     return () => clearTimeout(id);
   }, [pb.playing, shown]);
   const toggle = () => {
-    haptic.select();
     if (pb.playing) pb.pause();
     else {
       onFirstPlay();
@@ -209,7 +207,6 @@ function Controls({ pb, full, onFull, onFirstPlay, sides }: { pb: Playback; full
               accessibilityRole="button"
               accessibilityLabel={`Speed ${speedLabel(pb.rate)}. Change speed`}
               onPress={() => {
-                haptic.select();
                 pb.setRate(nextSpeed(pb.rate));
               }}
               hitSlop={6}
@@ -225,7 +222,6 @@ function Controls({ pb, full, onFull, onFirstPlay, sides }: { pb: Playback; full
                 accessibilityRole="button"
                 accessibilityLabel={full ? "Leave full screen" : "Full screen"}
                 onPress={() => {
-                  haptic.select();
                   onFull();
                 }}
                 hitSlop={6}

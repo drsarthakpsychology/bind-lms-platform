@@ -102,7 +102,6 @@ export function StreakPanel({ days, onClose }: { days: number; onClose: () => vo
             accessibilityRole="button"
             accessibilityLabel="Keep going"
             onPress={() => {
-              haptic.tap();
               leave();
             }}
             testID="moment-streak-close"

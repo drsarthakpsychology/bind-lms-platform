@@ -6,7 +6,6 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { ApiFailure } from "@/api/errors";
 import { Button, EmptyState, LoadError, Row, RowList, RowsSkeleton, Sheet, StillTrying, T } from "@/ds";
-import { haptic } from "@/lib/haptics";
 import { openTarget } from "@/nav/targets";
 import { fonts, layout, space, useTheme } from "@/theme";
 import { MedicineDiagrams } from "./med-diagrams";
@@ -132,7 +131,6 @@ export function MedicinePageView({ page, jump }: { page: MedicinePage; jump?: st
                   accessibilityState={{ selected: k === dose }}
                   accessibilityLabel={`${o.label}: ${o.amount}`}
                   onPress={() => {
-                    haptic.select();
                     setDose(k);
                   }}
                   testID={`med-dose-${k}`}
@@ -247,7 +245,6 @@ export function MedicinePageView({ page, jump }: { page: MedicinePage; jump?: st
                   accessibilityRole="radio"
                   accessibilityState={{ selected: view === v }}
                   onPress={() => {
-                    haptic.select();
                     setView(v);
                   }}
                   testID={`med-view-${v}`}

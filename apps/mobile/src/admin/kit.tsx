@@ -241,7 +241,6 @@ export function SmallButton({ label, onPress, icon, busy, danger, testID }: { la
       accessibilityState={{ busy: !!busy, disabled: !!busy }}
       disabled={busy}
       onPress={() => {
-        haptic.tap();
         onPress();
       }}
       {...handlers}
@@ -521,7 +520,6 @@ function Chip({ on, name, count, onPress, testID }: { on: boolean; name: string;
       onPressIn={() => to(0.94)}
       onPressOut={() => to(1)}
       onPress={() => {
-        haptic.select();
         onPress();
       }}
       style={{ minHeight: layout.target, justifyContent: "center" }}

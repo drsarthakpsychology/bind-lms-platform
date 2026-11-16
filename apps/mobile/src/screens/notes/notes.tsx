@@ -9,7 +9,6 @@ import { bulletText } from "@/api/adapt-learn";
 import type { RevisionNote, RevisionNoteList, RevisionNoteSummary } from "@/api/contract";
 import { learnKeys, useNote, useNotes, useTerms } from "@/api/learn";
 import { Chips, EmptyState, Hero, Loaded, Row, RowList, RowsSkeleton, Screen, Section, T, Tint } from "@/ds";
-import { haptic } from "@/lib/haptics";
 import { OnceHint } from "@/lib/once";
 import { ReadingSize } from "@/lib/reading";
 import { settingsStore, updateSettings } from "@/lib/settings";
@@ -82,7 +81,6 @@ function FlipCard({ lay, term, i }: { lay: string; term: string; i: number }) {
   const front = useAnimatedStyle(() => ({ opacity: turn.value < 0.5 ? 1 : 0, transform: [{ perspective: 800 }, { rotateY: `${turn.value * 180}deg` }] }));
   const back = useAnimatedStyle(() => ({ opacity: turn.value >= 0.5 ? 1 : 0, transform: [{ perspective: 800 }, { rotateY: `${turn.value * 180 - 180}deg` }] }));
   const flip = () => {
-    haptic.select();
     const next = !on;
     setOn(next);
     turn.value = reduce ? (next ? 1 : 0) : withSpring(next ? 1 : 0, springs.snappy);

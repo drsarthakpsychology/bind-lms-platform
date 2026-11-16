@@ -116,7 +116,6 @@ function Today({ goal, quests, fresh }: { goal: NonNullable<HomeData["goal"]>; q
           accessibilityRole="button"
           accessibilityLabel={`Today: ${title}${streak ? `, ${streak}` : ""}. Open today's quests`}
           onPress={() => {
-            haptic.select();
             setOpen(true);
           }}
           style={({ pressed }) => ({

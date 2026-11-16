@@ -4,7 +4,6 @@ import { Pressable, View } from "react-native";
 
 import { go } from "@/api/prefetch";
 import { IconButton, IconDot, Row, RowList, RowsSkeleton, Screen, Section, Skeleton, T } from "@/ds";
-import { haptic } from "@/lib/haptics";
 import { Swap } from "@/motion";
 import { AreaProvider, layout, space, useAccent, useTheme } from "@/theme";
 import { useClinicWeek } from "../api";
@@ -41,7 +40,6 @@ function DayStrip({ week, day, onPick, today }: { week: ClinicWeek; day: string;
             accessibilityState={{ selected: on }}
             accessibilityLabel={`${dateLabel(d.date, true)}${d.date === today ? ", today" : ""}${opd ? ", your OPD day" : ""}${has ? "" : ", nothing on"}`}
             onPress={() => {
-              haptic.select();
               onPick(d.date);
             }}
             style={{ flex: 1, minHeight: 64, borderRadius: 12, alignItems: "center", justifyContent: "center", gap: 2, backgroundColor: on ? a.deep : "transparent", borderWidth: d.date === today && !on ? 1.5 : 0, borderColor: a.deep }}

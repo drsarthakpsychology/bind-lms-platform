@@ -213,7 +213,7 @@ time spent off screen), and the scrim and the sheet move from one value, so
 they always agree. Drag runs on the UI thread (gesture-handler Pan): on the
 grabber always, on the whole sheet once its content is scrolled to the top. It
 follows the finger 1:1 (rubber band upward), closes past 25% of its height or
-on a flick over 0.4px/ms, else springs back. A selection haptic on open. With
+on a flick over 0.4px/ms, else springs back. No haptic on open or close. With
 the keyboard up it sits on top of it (`useKeyboardPad`).
 
 ### Toast
@@ -225,8 +225,8 @@ the keyboard, so it never covers a footer button.
 
 ### Pull to refresh
 `Screen` handles it: pass `onRefresh` and `refreshing` as before. The spinner
-only shows for the person's own pull (not for quiet background refreshes), stays
-at least 500ms, and the pull gives a selection haptic. `useRefresh(...refetch)`
+only shows for the person's own pull (not for quiet background refreshes) and
+stays at least 500ms. No haptic (a pull is scrolling). `useRefresh(...refetch)`
 gives the same for screens that do not use `Screen`.
 
 ## Performance
@@ -249,3 +249,17 @@ their still versions in tests. `__tests__/motion-kit.test.tsx` covers the
 kit's helpers (path lengths, tier scaling, celebration order, toast
 placement) and renders each part. Layout animation builders chain freely in the
 mock (`jest.setup.ts`).
+
+## Haptics
+
+`haptic.select | tap | success | warn` from `@/lib/haptics`, nothing else. Every
+call goes through the Vibration choice in Me > Settings (Off, Light, Medium,
+Strong; Light by default). Light is soft ticks and gentle bumps; on Android,
+Light and Medium use the phone's haptic engine and only Strong uses the motor.
+A pick right after another haptic (under 80ms) is dropped.
+
+Use them for meaningful moments only: an answer right or wrong, saved, scan
+done, long-press, start recording, a vote, a failed or destructive action, and
+picking a choice (answer option, switch, stepper). Never for opening a screen,
+switching tabs, filter chips, opening or closing a sheet, expanding a row,
+paging, or scrolling. `Press` has no haptic unless you pass `feel`.

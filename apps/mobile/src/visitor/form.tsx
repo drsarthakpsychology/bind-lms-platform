@@ -10,7 +10,6 @@ import Animated, { interpolate, interpolateColor, useAnimatedStyle, useReducedMo
 import Svg from "react-native-svg";
 
 import { T } from "@/ds";
-import { haptic } from "@/lib/haptics";
 import { DrawInk } from "@/motion";
 import { fonts, layout, space, type as scale, useTheme } from "@/theme";
 import { INK, LIME, bouncy, easeOut, snappy } from "./motion";
@@ -100,7 +99,6 @@ export function AuthField({ label, error, hint, secret, area, icon: Icon, inputR
               accessibilityRole="button"
               accessibilityLabel={show ? "Hide password" : "Show password"}
               onPress={() => {
-                haptic.select();
                 setShow((s) => !s);
               }}
               hitSlop={6}
@@ -149,7 +147,6 @@ export function SubmitButton({ label, busyLabel, doneLabel, state, onPress, test
       onPressIn={() => down.set(reduce ? 1 : withTiming(1, { duration: 100 }))}
       onPressOut={() => down.set(reduce ? 0 : withTiming(0, { duration: 120 }))}
       onPress={() => {
-        haptic.tap();
         onPress();
       }}
       style={{ paddingRight: 3, paddingBottom: 3 }}

@@ -175,7 +175,7 @@ export function SignInScreen({ defaultEmail = "" }: { defaultEmail?: string }) {
           ) : null}
           <SubmitButton label="Sign in" busyLabel="Signing in" doneLabel="Signed in" state={state} onPress={() => void submit()} testID="sign-in-submit" />
           <View style={{ flex: 1 }} />
-          <Press onPress={() => router.push("/request")} accessibilityRole="button" accessibilityLabel="New here? Request an invitation" testID="sign-in-request" feel="tap" innerStyle={{ minHeight: layout.target, flexDirection: "row", alignItems: "center", justifyContent: "center", gap: space[1] }}>
+          <Press onPress={() => router.push("/request")} accessibilityRole="button" accessibilityLabel="New here? Request an invitation" testID="sign-in-request" innerStyle={{ minHeight: layout.target, flexDirection: "row", alignItems: "center", justifyContent: "center", gap: space[1] }}>
             <T v="small" tone="muted">
               New here?
             </T>
