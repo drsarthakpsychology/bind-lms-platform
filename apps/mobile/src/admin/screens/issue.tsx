@@ -170,7 +170,7 @@ export function AdminIssueScreen() {
   if (!canWrite) {
     return (
       <Screen testID="issue">
-        <EmptyState mood="puzzled" title="View-only access" body="Only a Super Admin can issue certificates." action={{ label: "Back", onPress: () => router.back() }} />
+        <EmptyState mood="locked" title="View-only access" body="Only a Super Admin can issue certificates." action={{ label: "Back", onPress: () => router.back() }} />
       </Screen>
     );
   }
@@ -178,7 +178,7 @@ export function AdminIssueScreen() {
   if (done) {
     return (
       <Screen testID="issue-done" footer={<Button label="Done" onPress={() => router.back()} testID="issue-finish" />}>
-        <EmptyState mood="calm" title={replaces ? "Corrected and issued again" : `${plural(done.issued, "certificate")} issued`} body={done.queued ? `Emails are going out now (${done.queued}). Each student also sees it in the app.` : "Each student sees it in the app now."} />
+        <EmptyState mood="win" title={replaces ? "Corrected and issued again" : `${plural(done.issued, "certificate")} issued`} body={done.queued ? `Emails are going out now (${done.queued}). Each student also sees it in the app.` : "Each student sees it in the app now."} />
         <RowList>
           {done.ids.slice(0, 8).map((id, i) => (
             <Row key={id} title={d.recipients[i]?.name ?? id} meta={id} />

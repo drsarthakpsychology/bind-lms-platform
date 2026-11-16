@@ -92,7 +92,7 @@ export function ReferenceScreen() {
       <Loaded q={query} soon what="the Quick reference" skeleton={<RowsSkeleton rows={8} />}>
         {(d) => {
           const rows = searchRefs(d.items, q, kind);
-          if (!rows.length) return <EmptyState mood="puzzled" title="Nothing by that name" body="Try a shorter word, or the everyday word for it." testID="reference-empty" />;
+          if (!rows.length) return <EmptyState mood="missing" title="Nothing by that name" body="Try a shorter word, or the everyday word for it." testID="reference-empty" />;
           // Searching: one plain list, best match first. Browsing: grouped by letter.
           if (q.trim())
             return (
@@ -308,7 +308,7 @@ export function ReferenceEntryScreen() {
           e ? (
             <EntryBody e={e} labelOf={labelOf} onOpen={(p) => router.push(p)} />
           ) : (
-            <EmptyState mood="puzzled" title="Not in the Quick reference" body="Search for it by another name." action={{ label: "Search", onPress: () => router.replace(`/reference?q=${encodeURIComponent(String(slug).replace(/-/g, " "))}`) }} />
+            <EmptyState mood="missing" title="Not in the Quick reference" body="Search for it by another name." action={{ label: "Search", onPress: () => router.replace(`/reference?q=${encodeURIComponent(String(slug).replace(/-/g, " "))}`) }} />
           )
         }
       </Loaded>

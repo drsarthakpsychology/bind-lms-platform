@@ -176,7 +176,7 @@ function Issued({ openId }: { openId?: string }) {
                   ))}
                 </RowList>
               ) : (
-                <EmptyState mood="sleepy" title={search || show ? "None match" : "Nothing issued yet"} body={search || show ? undefined : "Certificates and badges you give show here."} />
+                <EmptyState mood={search || show ? "missing" : "empty"} title={search || show ? "None match" : "Nothing issued yet"} body={search || show ? undefined : "Certificates and badges you give show here."} />
               )}
               <CertSheet key={opened?.credentialId ?? "none"} x={opened} onClose={() => setOpen(null)} onRevoke={(x) => { setOpen(null); setRevoking(x); }} />
             </>
@@ -211,7 +211,7 @@ function Find() {
               ))}
             </RowList>
           ) : (
-            <EmptyState mood="puzzled" title="Nobody found" body="Try part of the name or the roll number." />
+            <EmptyState mood="missing" title="Nobody found" body="Try part of the name or the roll number." />
           )
         }
       </Loaded>
@@ -354,7 +354,7 @@ function EligibleSheet({ t, onClose }: { t: CertType | null; onClose: () => void
                 ))}
               </View>
             ) : (
-              <EmptyState mood="calm" title="Nobody new qualifies" body="Everyone who meets the rule already has one." />
+              <EmptyState mood="clear" title="Nobody new qualifies" body="Everyone who meets the rule already has one." />
             )
           }
         </Loaded>

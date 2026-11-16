@@ -80,7 +80,7 @@ export function AdminComposeScreen() {
   if (!canWrite) {
     return (
       <Screen testID="compose">
-        <EmptyState mood="puzzled" title="View-only access" body="Only a Super Admin can send messages." action={{ label: "Back", onPress: () => router.back() }} />
+        <EmptyState mood="locked" title="View-only access" body="Only a Super Admin can send messages." action={{ label: "Back", onPress: () => router.back() }} />
       </Screen>
     );
   }

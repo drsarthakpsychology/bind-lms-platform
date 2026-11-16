@@ -140,7 +140,7 @@ export function SettingsScreen() {
               </View>
               <RowList>
                 <SwitchRow testID="pref-haptics" title="Vibration on taps" value={haptics} onChange={(v) => updateSettings({ haptics: v })} />
-                <SwitchRow title="Reaction pictures after answers" value={reactions} onChange={(v) => updateSettings({ reactions: v })} />
+                <SwitchRow testID="pref-reactions" title="Funny reactions" meta="A meme and a cheeky line after some answers. This phone only." value={reactions} onChange={(v) => updateSettings({ reactions: v })} />
               </RowList>
             </Section>
             <Section title="Privacy and terms" quiet>

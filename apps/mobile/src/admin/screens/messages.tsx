@@ -29,7 +29,7 @@ function InboxList() {
             ))}
           </RowList>
         ) : (
-          <EmptyState mood="sleepy" title="Nothing waiting" body="Doubts, concerns and email replies that need you land here." />
+          <EmptyState mood="clear" title="Nothing waiting" body="Doubts, concerns and email replies that need you land here." />
         )
       }
     </Loaded>
@@ -48,7 +48,7 @@ function Sent() {
             ))}
           </RowList>
         ) : (
-          <EmptyState mood="sleepy" title="Nothing sent yet" body="Messages you send show here with how many opened them." />
+          <EmptyState mood="empty" title="Nothing sent yet" body="Messages you send show here with how many opened them." />
         )
       }
     </Loaded>

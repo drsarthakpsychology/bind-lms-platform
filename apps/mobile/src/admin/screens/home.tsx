@@ -72,7 +72,7 @@ export function AdminHomeView({ data }: { data: AdminHome }) {
             ))}
           </RowList>
         ) : (
-          <EmptyState mood="sleepy" title="All clear" body="Nothing needs you right now." />
+          <EmptyState mood="clear" title="All clear" body="Nothing needs you right now." />
         )}
       </Block>
       <RowList>

@@ -16,7 +16,7 @@ export function SoonState({ web, body = "This part is ready on the website.", te
   const c = useTheme();
   return (
     <View testID={testID} style={{ gap: space[3] }}>
-      <EmptyState mood="sleepy" title="Coming soon to the app" body={body} />
+      <EmptyState mood="soon" title="Coming soon to the app" body={body} />
       <Button label="Open on the website" icon={<ExternalLink size={18} color={c.onPrimary} />} onPress={() => void Linking.openURL(`${config.site}${web}`).catch(() => toast.show("That didn't open. Try again."))} testID="soon-web" />
       <Button kind="text" label="Back" onPress={() => (router.canGoBack() ? router.back() : router.replace("/practise"))} testID="soon-back" />
     </View>

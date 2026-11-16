@@ -85,7 +85,7 @@ export function MocksScreen() {
       ) : !q.data ? (
         <RowsSkeleton rows={5} />
       ) : !full ? (
-        <EmptyState mood="sleepy" title="No mock tests yet" body="New papers are on their way." />
+        <EmptyState mood="soon" title="No mock tests yet" body="New papers are on their way." />
       ) : (
         <Stagger gap={space[6]}>
           <View style={{ gap: space[4], borderWidth: 2, borderColor: c.ink, borderRadius: layout.radius, padding: space[4], backgroundColor: c.card }}>
@@ -311,7 +311,7 @@ export function MockExamScreen() {
   if (!spec) {
     return (
       <GameFrame title="Mock test">
-        <EmptyState mood="puzzled" title="That mock doesn't exist" body="Go back and pick one from the list." />
+        <EmptyState mood="missing" title="That mock doesn't exist" body="Go back and pick one from the list." />
       </GameFrame>
     );
   }
@@ -673,7 +673,7 @@ export function MockResultScreen() {
       ) : d.result ? (
         <MockResultBody r={d.result as unknown as MockResult} />
       ) : (
-        <EmptyState mood="sleepy" title="This mock wasn't submitted" body="Start a fresh one from the mocks page." action={{ label: "Mock tests", onPress: () => router.replace("/prep/mock") }} />
+        <EmptyState mood="empty" title="This mock wasn't submitted" body="Start a fresh one from the mocks page." action={{ label: "Mock tests", onPress: () => router.replace("/prep/mock") }} />
       )}
     </Screen>
   );

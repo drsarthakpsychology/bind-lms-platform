@@ -7,9 +7,10 @@ import Animated, { useAnimatedStyle, useReducedMotion, useSharedValue, withSprin
 import { crumb } from "@/lib/breadcrumb";
 import { haptic } from "@/lib/haptics";
 import { presets, ProgressFill, RollingNumber, Shimmer, SkeletonIn, springs, staggerDelay, usePressScale } from "@/motion";
-import { SketchCat } from "@/sketch/cat";
+import type { StateMood } from "@/lib/reactions/stickers";
 import { layout, space, useTheme } from "@/theme";
 import { Button } from "./button";
+import { Meme } from "./meme";
 import { T } from "./text";
 
 /* ------------------------------------------------------------- Section */
@@ -349,11 +350,20 @@ export function RowsSkeleton({ rows = 4 }: { rows?: number }) {
 
 /* ---------------------------------------------------------- EmptyState */
 
-/** Nothing here, or something went wrong: the cat, one line, and at most one action. */
-export function EmptyState({ title, body, action, mood = "calm", testID }: { title: string; body?: string; action?: { label: string; onPress: () => void; primary?: boolean }; mood?: "calm" | "sleepy" | "puzzled"; testID?: string }) {
+/** Older mood names, still accepted: they map to the meme that fits them best. */
+type OldMood = "calm" | "sleepy" | "puzzled";
+const OLD: Record<OldMood, StateMood> = { calm: "soon", sleepy: "empty", puzzled: "missing" };
+export type EmptyMood = StateMood | OldMood;
+
+/**
+ * Nothing here, or something went wrong: a meme picture (see STATE_STICKER
+ * for which one each `mood` shows), one line, and at most one action.
+ */
+export function EmptyState({ title, body, action, mood = "empty", testID }: { title: string; body?: string; action?: { label: string; onPress: () => void; primary?: boolean }; mood?: EmptyMood; testID?: string }) {
+  const m = mood in OLD ? OLD[mood as OldMood] : (mood as StateMood);
   return (
     <View testID={testID} style={{ alignItems: "flex-start", gap: space[3], paddingVertical: space[5] }}>
-      <EmptyCat mood={mood} />
+      <Meme mood={m} />
       <T v="h2">{title}</T>
       {body ? (
         <T tone="muted" style={{ maxWidth: 420 }}>
@@ -365,21 +375,11 @@ export function EmptyState({ title, body, action, mood = "calm", testID }: { tit
   );
 }
 
-/** The cat settles in with a small pop when the empty state appears. */
-function EmptyCat({ mood }: { mood: "calm" | "sleepy" | "puzzled" }) {
-  const reduce = useReducedMotion();
-  return (
-    <Animated.View entering={reduce ? undefined : presets.pop(80)}>
-      <SketchCat mood={mood} />
-    </Animated.View>
-  );
-}
-
 /** The usual "could not load" state. */
 export function LoadError({ onRetry, what = "this", error }: { onRetry: () => void; what?: string; /** The failure, so the line says what really happened. */ error?: unknown }) {
   // Only blame the internet when the phone really could not reach the server (reasonOf).
   const body = reasonOf(error);
-  return <EmptyState mood="puzzled" title={`Could not load ${what}`} body={body} action={{ label: "Try again", onPress: onRetry }} testID="load-error" />;
+  return <EmptyState mood="error" title={`Could not load ${what}`} body={body} action={{ label: "Try again", onPress: onRetry }} testID="load-error" />;
 }
 
 /* ------------------------------------------------------- Chips, TabRow */

@@ -257,7 +257,7 @@ export function AdminStudentsScreen() {
               {shown.length ? <Button kind="text" label={selecting ? "Done" : "Select"} onPress={() => (selecting ? stopSelecting() : setSelecting(true))} testID="students-select" /> : null}
             </View>
             {shown.length === 0 ? (
-              <EmptyState mood="puzzled" title={rows.length ? "No one matches" : "No students yet"} body={rows.length ? "Try fewer filters." : "Students appear here once they are added on the website."} />
+              <EmptyState mood={rows.length ? "missing" : "empty"} title={rows.length ? "No one matches" : "No students yet"} body={rows.length ? "Try fewer filters." : "Students appear here once they are added on the website."} />
             ) : (
               <View style={{ borderTopWidth: 1, borderColor: c.hairline }}>
                 {shown.map((r) => (

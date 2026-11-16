@@ -41,7 +41,7 @@ export function BoardScreen() {
       ) : !d ? (
         <RowsSkeleton rows={8} />
       ) : !d.rows.length ? (
-        <EmptyState mood="sleepy" title="Nobody on the board yet" body="Play this week and your name shows up here." />
+        <EmptyState mood="empty" title="Nobody on the board yet" body="Play this week and your name shows up here." />
       ) : (
         <Stagger>
         <RowList>

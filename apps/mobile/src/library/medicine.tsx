@@ -66,7 +66,7 @@ export function MedicineScreen() {
   }, [openedId]);
   if (q.isError) {
     const soon = q.error instanceof ApiFailure && q.error.code === "not_found";
-    return <View style={{ flex: 1, padding: layout.gutter }}>{soon ? <EmptyState mood="sleepy" title="Not in the library yet" body="This medicine page arrives in the app soon." /> : <LoadError error={q.error} what="this medicine" onRetry={() => void q.refetch()} />}</View>;
+    return <View style={{ flex: 1, padding: layout.gutter }}>{soon ? <EmptyState mood="soon" title="Not in the library yet" body="This medicine page arrives in the app soon." /> : <LoadError error={q.error} what="this medicine" onRetry={() => void q.refetch()} />}</View>;
   }
   if (!q.data) {
     return (
