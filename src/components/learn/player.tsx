@@ -16,7 +16,7 @@ import { setLearnState, useLearnState, initLearnStore } from "@/lib/learn/store"
 import { useExplainView, ViewToggle } from "./view-toggle";
 import s from "./learn.module.css";
 import { useReaction, useReactionsOn } from "@/components/reactions/use-reaction";
-import { EndReaction, StreakMeter } from "@/components/reactions/graphics";
+import { EndReaction, MemeArt, StreakMeter } from "@/components/reactions/graphics";
 import type { Mood } from "@/lib/reactions/stickers";
 
 const RIGHT = ["Nice!", "Spot on.", "Exactly.", "You've got it.", "Clinician brain!", "Sharp.", "Yes!", "Perfect."];
@@ -81,7 +81,7 @@ function LessonRun({ mode, state, order }: { mode: Exclude<Mode, { kind: "blitz"
   if (!queue.length) {
     return (
       <div className="mx-auto max-w-xl space-y-6 py-10 text-center">
-        <Chai mood="sleep" size={140} />
+        <MemeArt sticker={mode.kind === "review" ? "sunlit-dog" : "screaming-point-cat"} size={120} className="mx-auto" />
         <h1 className="text-h1">{mode.kind === "review" ? "Nothing to review right now." : "Lesson not found."}</h1>
         <p className="text-muted-foreground">
           {mode.kind === "review" ? "Questions you miss come back here on the right day. Do a lesson and check back tomorrow." : ""}

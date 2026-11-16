@@ -5,7 +5,7 @@ import { ArrowLeft, ArrowRight, BookOpen, Clock, FlaskConical, GraduationCap, Li
 import { emptyState, istToday, type LearnState } from "@/lib/learn/engine";
 import { initLearnStore, useLearnState } from "@/lib/learn/store";
 import { buildRevisionPlan, type ReviseItem, type ReviseKind, type ReviseModule, type RevisionPlan } from "@/lib/revise/plan";
-import { Chai } from "@/components/learn/chai";
+import { MemeArt } from "@/components/reactions/graphics";
 import { cn } from "@/lib/utils";
 import { backLinkClass } from "@/components/design-system/back-link";
 
@@ -108,7 +108,7 @@ function Later({ items }: { items: RevisionPlan["later"] }) {
 function Empty({ title, text, href, cta, mood }: { title: string; text: string; href: string; cta: string; mood: "happy" | "sleep" }) {
   return (
     <div className="flex flex-col items-center gap-3 rounded-3xl border-2 border-foreground bg-card px-5 py-8 text-center hard-shadow-sm">
-      <Chai mood={mood} size={80} />
+      <MemeArt sticker={mood === "happy" ? "sunlit-dog" : "wet-cat-stare"} size={88} />
       <h2 className="text-xl font-bold">{title}</h2>
       <p className="max-w-sm text-sm text-muted-foreground">{text}</p>
       <Link href={href} className="mt-1 inline-flex min-h-11 items-center gap-1.5 rounded-full border-2 border-foreground bg-primary px-5 py-2 font-bold text-primary-foreground hard-shadow-sm transition-transform hover:-translate-y-0.5 active:translate-y-0.5">
