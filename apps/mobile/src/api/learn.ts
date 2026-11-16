@@ -1,4 +1,4 @@
-import { useQuery } from "@tanstack/react-query";
+import { queryOptions, useQuery } from "@tanstack/react-query";
 
 import { api } from "@/auth";
 import * as L from "./adapt-learn";
@@ -18,11 +18,22 @@ export const learnKeys = {
   journey: ["journey"] as const,
 };
 
-export const useNotes = (enabled = true) => useQuery({ queryKey: learnKeys.notes, queryFn: async () => L.noteListView(await api.get<unknown>("/study/notes")), staleTime: 10 * 60_000, enabled });
-export const useNote = (id: string) => useQuery({ queryKey: learnKeys.note(id), queryFn: async () => L.noteView(await api.get<unknown>(`/study/notes/${encodeURIComponent(id)}`)), staleTime: 60 * 60_000, enabled: id.length > 0 });
-/** The whole index is small (a few hundred rows); it is searched on the phone. */
-export const useTerms = (enabled = true) => useQuery({ queryKey: learnKeys.terms, queryFn: async () => L.refIndexView(await api.get<unknown>("/library/terms")), staleTime: 60 * 60_000, enabled });
-export const useTerm = (slug: string) => useQuery({ queryKey: learnKeys.term(slug), queryFn: async () => L.refEntryView(await api.get<unknown>(`/library/terms/${encodeURIComponent(slug)}`)), staleTime: 60 * 60_000, enabled: slug.length > 0 });
-export const useMarks = () => useQuery({ queryKey: learnKeys.marks, queryFn: async () => L.marksView(await api.get<unknown>("/study/marks")) });
-export const useAssignments = () => useQuery({ queryKey: learnKeys.assignments, queryFn: async () => L.assignmentPageView(await api.get<unknown>("/assignments", { query: { limit: 100 } })) });
-export const useJourney = () => useQuery({ queryKey: learnKeys.journey, queryFn: async () => L.journeyView(await api.get<unknown>("/journey")) });
+/** The same reads as ready-made queries, for the hooks below and the prefetcher (src/api/prefetch.ts). */
+export const learnQo = {
+  notes: () => queryOptions({ queryKey: learnKeys.notes, queryFn: async () => L.noteListView(await api.get<unknown>("/study/notes")), staleTime: 10 * 60_000 }),
+  note: (id: string) => queryOptions({ queryKey: learnKeys.note(id), queryFn: async () => L.noteView(await api.get<unknown>(`/study/notes/${encodeURIComponent(id)}`)), staleTime: 60 * 60_000, enabled: id.length > 0 }),
+  /** The whole index is small (a few hundred rows); it is searched on the phone. */
+  terms: () => queryOptions({ queryKey: learnKeys.terms, queryFn: async () => L.refIndexView(await api.get<unknown>("/library/terms")), staleTime: 60 * 60_000 }),
+  term: (slug: string) => queryOptions({ queryKey: learnKeys.term(slug), queryFn: async () => L.refEntryView(await api.get<unknown>(`/library/terms/${encodeURIComponent(slug)}`)), staleTime: 60 * 60_000, enabled: slug.length > 0 }),
+  marks: () => queryOptions({ queryKey: learnKeys.marks, queryFn: async () => L.marksView(await api.get<unknown>("/study/marks")) }),
+  assignments: () => queryOptions({ queryKey: learnKeys.assignments, queryFn: async () => L.assignmentPageView(await api.get<unknown>("/assignments", { query: { limit: 100 } })) }),
+  journey: () => queryOptions({ queryKey: learnKeys.journey, queryFn: async () => L.journeyView(await api.get<unknown>("/journey")) }),
+};
+
+export const useNotes = (enabled = true) => useQuery({ ...learnQo.notes(), enabled });
+export const useNote = (id: string) => useQuery(learnQo.note(id));
+export const useTerms = (enabled = true) => useQuery({ ...learnQo.terms(), enabled });
+export const useTerm = (slug: string) => useQuery(learnQo.term(slug));
+export const useMarks = () => useQuery(learnQo.marks());
+export const useAssignments = () => useQuery(learnQo.assignments());
+export const useJourney = () => useQuery(learnQo.journey());

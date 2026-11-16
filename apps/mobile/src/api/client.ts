@@ -17,7 +17,7 @@ import { ApiFailure } from "./errors";
 
 export type Method = "GET" | "POST" | "PUT" | "PATCH" | "DELETE";
 export type RawRequest = { method: Method; path: string; headers: Record<string, string>; body?: unknown };
-export type RawResponse = { status: number; json: unknown };
+export type RawResponse = { status: number; json: unknown; /** The answer's ETag header, when it has one (GETs). */ etag?: string | null };
 export type Transport = (req: RawRequest) => Promise<RawResponse>;
 
 export type TokenSource = {
@@ -51,7 +51,13 @@ export function makeFetchTransport(f: typeof fetch = (...a) => fetch(...a), time
         if (ctrl?.signal.aborted) throw new ApiFailure("network", "The connection is too slow right now. Check your internet and try again.");
         json = null;
       }
-      return { status: res.status, json };
+      let etag: string | null = null;
+      try {
+        etag = res.headers?.get?.("ETag") ?? null;
+      } catch {
+        etag = null;
+      }
+      return { status: res.status, json, etag };
     } finally {
       if (timer) clearTimeout(timer);
     }
@@ -75,8 +81,27 @@ export function notJson(status: number): ApiFailure {
 
 export type CallOptions ={ body?: unknown; /** False for public routes. */ auth?: boolean; query?: Record<string, string | number | boolean | null | undefined> };
 
+/** How many GET answers the client keeps with their ETag (most recent first out last). */
+export const HELD_MAX = 200;
+
 export function createClient(deps: { transport: Transport; tokens: TokenSource; onSessionEvent?: (e: SessionEvent) => void; version?: string; platform?: string }) {
   let refreshing: Promise<AuthTokens> | null = null;
+  /**
+   * The last answer of each GET address with its ETag (docs/app/API_CONTRACT.md
+   * section 1). The next GET of that address sends If-None-Match; an unchanged
+   * answer comes back as an empty 304 and the held copy is used, so a repeat
+   * open costs a few hundred bytes instead of the whole answer. Kept in memory
+   * only, for this sign-in (cleared on sign-out); never written to the phone.
+   */
+  const held = new Map<string, { etag: string; data: unknown }>();
+  const hold = (key: string, etag: string, data: unknown) => {
+    held.delete(key);
+    held.set(key, { etag, data });
+    if (held.size > HELD_MAX) {
+      const oldest = held.keys().next().value;
+      if (oldest !== undefined) held.delete(oldest);
+    }
+  };
 
   const baseHeaders = (): Record<string, string> => {
     const h: Record<string, string> = {
@@ -107,10 +132,29 @@ export function createClient(deps: { transport: Transport; tokens: TokenSource; 
           .map(([k, v]) => `${encodeURIComponent(k)}=${encodeURIComponent(String(v))}`)
           .join("&")
       : "";
-    const res = await deps.transport({ method, path: q ? `${path}?${q}` : path, headers, body: opts.body });
+    const full = q ? `${path}?${q}` : path;
+    const mine = method === "GET" ? held.get(full) : undefined;
+    if (mine) headers["If-None-Match"] = mine.etag;
+    let res = await deps.transport({ method, path: full, headers, body: opts.body });
+    if (res.status === 304) {
+      // Unchanged: the copy we hold is the answer.
+      if (mine) {
+        hold(full, mine.etag, mine.data);
+        return mine.data as T;
+      }
+      // A 304 for a copy we no longer hold: ask again without the header.
+      delete headers["If-None-Match"];
+      res = await deps.transport({ method, path: full, headers, body: opts.body });
+    }
     const json = res.json as ApiResponse<T> | null;
     if (json && typeof json === "object" && "ok" in json) {
-      if (json.ok) return json.data;
+      if (json.ok) {
+        if (method === "GET") {
+          if (res.etag) hold(full, res.etag, json.data);
+          else held.delete(full);
+        }
+        return json.data;
+      }
       // An error answer without its error part (a proxy, an older server) is still a plain failure, never a TypeError.
       const err = (json as { error?: Partial<{ code: ApiErrorCode; message: string; details: Record<string, unknown> }> }).error;
       if (!err || typeof err.code !== "string") throw notJson(res.status);
@@ -179,6 +223,8 @@ export function createClient(deps: { transport: Transport; tokens: TokenSource; 
     put: <T,>(path: string, body?: unknown, opts?: Omit<CallOptions, "body">) => call<T>("PUT", path, { ...opts, body: body ?? {} }),
     patch: <T,>(path: string, body?: unknown, opts?: Omit<CallOptions, "body">) => call<T>("PATCH", path, { ...opts, body: body ?? {} }),
     del: <T,>(path: string, opts?: Omit<CallOptions, "body">) => call<T>("DELETE", path, opts),
+    /** Drop every held answer (sign-out: the next account never gets this one's copies). */
+    forgetHeld: () => held.clear(),
   };
 }
 

@@ -12,6 +12,7 @@ import { SafeAreaProvider } from "react-native-safe-area-context";
 
 import { useViewingAsStudent, ViewAsBar } from "@/admin/view-as";
 import { installAppLifecycle, onOpened } from "@/api/lifecycle";
+import { installPrefetch } from "@/api/prefetch";
 import { persistOptions, persister, queryClient, useConfig } from "@/api/queries";
 import { session, useSession } from "@/auth";
 import { handoff } from "@/auth/handoff";
@@ -81,9 +82,12 @@ function useBoot(): boolean {
       else session.onBackground();
     });
     const off = installAppLifecycle(() => session.hasTokens());
+    // Every tab's data starts loading the moment an account opens (under the PIN screen too).
+    const offPrefetch = installPrefetch();
     return () => {
       sub.remove();
       off();
+      offPrefetch();
     };
   }, []);
 

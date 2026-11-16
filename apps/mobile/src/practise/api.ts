@@ -1,4 +1,4 @@
-import { useQuery } from "@tanstack/react-query";
+import { queryOptions, useQuery } from "@tanstack/react-query";
 import * as React from "react";
 
 import type { PlayResult } from "./types";
@@ -101,13 +101,15 @@ export function useLoad<T>(fn: () => Promise<T>, key: string): { data: T | null;
 /* ------------------------------------------------ first screens and saves */
 
 /** GET /practise/tools/:tool: a game's or tool's first screen (data, case library, how-to). */
+export const toolQuery = (tool: PractiseToolId) => queryOptions({ queryKey: ["practise", "tool", tool], queryFn: () => api.get<PractiseTool>(`/practise/tools/${encodeURIComponent(tool)}`), staleTime: 30_000 });
 export function useTool(tool: PractiseToolId) {
-  return useQuery({ queryKey: ["practise", "tool", tool], queryFn: () => api.get<PractiseTool>(`/practise/tools/${encodeURIComponent(tool)}`), staleTime: 30_000 });
+  return useQuery(toolQuery(tool));
 }
 
-/** A plain read of the Practise routes (hub, Exam Prep, boards). */
+/** A plain read of the Practise routes (hub, Exam Prep, boards), as a ready-made query (the prefetcher uses it too). */
+export const readQuery = <T,>(path: string) => queryOptions({ queryKey: ["practise", "read", path], queryFn: () => api.get<T>(path), staleTime: 30_000 });
 export function useRead<T>(path: string, enabled = true) {
-  return useQuery({ queryKey: ["practise", "read", path], queryFn: () => api.get<T>(path), staleTime: 30_000, enabled });
+  return useQuery({ ...readQuery<T>(path), enabled });
 }
 
 /** Save or clear (null) a half-finished case, as the website's saveCaseProgress. Best effort. */
