@@ -179,7 +179,7 @@ export function Hero({ context, title, meta, progress, progressLabel, action, be
           </T>
         ) : null}
         {/* A long title steps down a size so the button stays in reach. */}
-        <T v={title.length > 36 ? "h1" : "display"}>{title}</T>
+        <T v={(title ?? "").length > 36 ? "h1" : "display"}>{title ?? ""}</T>
         {meta ? <T tone="muted">{meta}</T> : null}
       </View>
       {progress !== undefined ? <ProgressLine value={progress} label={progressLabel} /> : null}

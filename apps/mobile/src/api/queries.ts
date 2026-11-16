@@ -3,8 +3,10 @@ import { createAsyncStoragePersister } from "@tanstack/query-async-storage-persi
 import { QueryClient, useMutation, useQuery, useQueryClient, type UseQueryResult } from "@tanstack/react-query";
 
 import { api, onSignedOut, session } from "@/auth";
+import { config } from "@/lib/config";
 import type * as C from "./contract";
 import * as A from "./adapt";
+import * as K from "./adapt-core";
 import * as L from "./adapt-learn";
 import { ApiFailure } from "./errors";
 
@@ -35,8 +37,9 @@ const NEVER_PERSIST = new Set(["stream", "checkpoint", "config", "game", "prepSe
 export const persistOptions = {
   persister,
   maxAge: 24 * 60 * 60 * 1000,
-  // Bumped: copies saved before the admin answers were adapted must not come back.
-  buster: "c2",
+  // Copies saved by another app version are dropped: their shape may be one this version's screens no longer read.
+  // Bump the letter part when a saved shape changes inside one version.
+  buster: `c3-${config.appVersion}`,
   dehydrateOptions: { shouldDehydrateQuery: (q: { queryKey: readonly unknown[]; state: { status: string } }) => q.state.status === "success" && !NEVER_PERSIST.has(String(q.queryKey[0])) },
 };
 
@@ -87,12 +90,12 @@ export const useMe = () =>
     initialDataUpdatedAt: 0,
   });
 export const useConfig = () => useQuery({ queryKey: keys.config, queryFn: () => api.get<C.AppConfig>("/config", { auth: false }), staleTime: 10 * 60_000 });
-export const useHome = () => useQuery({ queryKey: keys.home, queryFn: () => api.get<HomeData>("/home") });
+export const useHome = () => useQuery({ queryKey: keys.home, queryFn: async () => K.homeView(await api.get<unknown>("/home")) });
 export const useCourses = () => useQuery({ queryKey: keys.courses, queryFn: async () => L.courseListView(await api.get<unknown>("/courses")) });
 export const useCourse = (id: string) => useQuery({ queryKey: keys.course(id), queryFn: async () => L.courseDetailView(await api.get<unknown>(`/courses/${encodeURIComponent(id)}`)), enabled: id.length > 0 });
-export const useLecture = (id: string) => useQuery({ queryKey: keys.lecture(id), queryFn: () => api.get<C.LectureDetail>(`/lectures/${encodeURIComponent(id)}`) });
+export const useLecture = (id: string) => useQuery({ queryKey: keys.lecture(id), queryFn: async () => K.lectureView(await api.get<unknown>(`/lectures/${encodeURIComponent(id)}`)) });
 export const useNotifications = () => useQuery({ queryKey: keys.notifications, queryFn: async () => L.notificationListView(await api.get<unknown>("/notifications", { query: { limit: 50 } })) });
-export const useNotification = (id: string) => useQuery({ queryKey: keys.notification(id), queryFn: () => api.get<C.NotificationDetail>(`/notifications/${encodeURIComponent(id)}`) });
+export const useNotification = (id: string) => useQuery({ queryKey: keys.notification(id), queryFn: async () => K.notificationDetailView(await api.get<unknown>(`/notifications/${encodeURIComponent(id)}`)) });
 export const useSettings = () => useQuery({ queryKey: keys.settings, queryFn: () => api.get<C.Settings>("/settings") });
 export const useDoubts = (mine: boolean) => useQuery({ queryKey: keys.doubts(mine), queryFn: async () => L.doubtListView(await api.get<unknown>("/doubts", { query: { mine: mine ? 1 : undefined, limit: 50 } })) });
 export const useDoubt = (id: string) => useQuery({ queryKey: keys.doubt(id), queryFn: async () => L.doubtThreadView(await api.get<unknown>(`/doubts/${encodeURIComponent(id)}`)) });

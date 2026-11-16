@@ -6,7 +6,9 @@ import { fonts } from "@/theme";
 /** Inline marks of course text: **bold**, *italic*, `term`. Nothing else. */
 export type Piece = { text: string; bold?: boolean; italic?: boolean; term?: boolean };
 
-export function parseInline(text: string): Piece[] {
+export function parseInline(raw: string): Piece[] {
+  // Section text comes from hand-written content: a missing or numeric text must still draw.
+  const text = typeof raw === "string" ? raw : typeof raw === "number" ? String(raw) : "";
   const out: Piece[] = [];
   const re = /\*\*(.+?)\*\*|\*(?!\s)(.+?)\*|`(.+?)`/g;
   let at = 0;

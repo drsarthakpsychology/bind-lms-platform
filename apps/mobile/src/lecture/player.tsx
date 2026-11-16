@@ -11,7 +11,8 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { isCaptured, onCaptureChange } from "../../modules/capture-guard/src";
 import type { StreamAccess } from "@/api/contract";
 import { ApiFailure, reasonOf } from "@/api/errors";
-import { api } from "@/auth";
+import { streamView } from "@/api/adapt-core";
+import { api, session } from "@/auth";
 import { Button, Skeleton, T } from "@/ds";
 import { haptic } from "@/lib/haptics";
 import { allowRotation, goLandscape, holdPortrait } from "@/lib/orientation";
@@ -208,8 +209,10 @@ export function ProtectedPlayer({ lessonId, onTime, compromised }: PlayerProps) 
     void (async () => {
       const rooted = compromised ?? (Platform.OS === "android" ? await Device.isRootedExperimentalAsync().catch(() => false) : false);
       try {
-        const access = await api.post<StreamAccess>(`/lectures/${encodeURIComponent(lessonId)}/stream`, { deviceCompromised: rooted });
-        if (live) setPhase({ kind: "ready", access });
+        const access = streamView(await api.post<unknown>(`/lectures/${encodeURIComponent(lessonId)}/stream`, { deviceCompromised: rooted }), session.store.get().me?.watermark.text);
+        if (!live) return;
+        if (access) setPhase({ kind: "ready", access });
+        else setPhase({ kind: "error", message: "The lecture could not start. Try again in a minute." });
       } catch (e) {
         if (!live) return;
         if (e instanceof ApiFailure && e.code === "video_refused") setPhase({ kind: "refused", message: e.message });
