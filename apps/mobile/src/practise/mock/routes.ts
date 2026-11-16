@@ -212,3 +212,59 @@ export function board(id: string): C.Leaderboard {
   return { v: 1, board: id, label: label[id]!, period: id === "overall" ? "All time" : "This week", explainer: id === "league" ? "Points from everything you practise. Monday to Sunday." : "Your best scores this week.", scope: "Your cohort only. First name and initial.", rows, me: { rank: 2, total: rows.length }, raw: {} };
 }
 
+
+/* ------------------------------------------------------------------- shop */
+const LOOKS = [
+  { id: "frame-blue", label: "Blue frame", kind: "frame" as const, cost: 150 },
+  { id: "frame-lime", label: "Lime frame", kind: "frame" as const, cost: 150 },
+  { id: "frame-ink", label: "Double ink frame", kind: "frame" as const, cost: 300 },
+  { id: "title-blue", label: "Blue title", kind: "title" as const, cost: 200 },
+  { id: "title-fill", label: "Title on a lime tag", kind: "title" as const, cost: 400 },
+];
+const ITEMS = [
+  { id: "streak_repair", label: "Streak repair", cost: 60, text: "Brings back a streak you lost in the last 2 days. One a week.", ready: true },
+  { id: "hints_3", label: "3 extra hints", cost: 30, text: "3 more hints for today. One buy a day.", ready: true },
+  { id: "bonus_case", label: "Bonus challenge", cost: 80, text: "One extra hard case this week.", ready: false },
+];
+export const shopState = { balance: 420, owned: new Set<string>(["frame-blue"]), look: { frame: "frame-blue" as string | null, title: null as string | null }, hints: false };
+export function resetShop() {
+  shopState.balance = 420;
+  shopState.owned = new Set(["frame-blue"]);
+  shopState.look = { frame: "frame-blue", title: null };
+  shopState.hints = false;
+}
+export function shop(): C.XpShop {
+  return { v: 1, ready: true, balance: shopState.balance, streak: { count: 6, alive: true }, repair: { ok: false, text: "Your streak is still going." }, items: ITEMS, looks: LOOKS.map((l) => ({ ...l, owned: shopState.owned.has(l.id), worn: shopState.look[l.kind] === l.id })), note: "Spending XP never lowers your level or this week's league points." };
+}
+const lookStr = () => [shopState.look.frame, shopState.look.title].filter(Boolean).join("|") || null;
+export const league = {
+  buy(item: unknown): C.BuyResult {
+    const id = String(item ?? "");
+    if (id.startsWith("look:")) {
+      const l = LOOKS.find((x) => x.id === id.slice(5));
+      if (!l) return { error: "Unknown item." };
+      if (shopState.owned.has(l.id)) return { error: "You already own this." };
+      if (shopState.balance < l.cost) return { error: `You need ${l.cost - shopState.balance} more XP.` };
+      shopState.balance -= l.cost;
+      shopState.owned.add(l.id);
+      shopState.look[l.kind] = l.id;
+      return { error: null, balance: shopState.balance, look: lookStr() };
+    }
+    const it = ITEMS.find((x) => x.id === id);
+    if (!it) return { error: "Unknown item." };
+    if (!it.ready) return { error: "Coming soon." };
+    if (id === "streak_repair") return { error: "Your streak is still going." };
+    if (shopState.hints) return { error: "You've already bought today's hints." };
+    if (shopState.balance < it.cost) return { error: `You need ${it.cost - shopState.balance} more XP.` };
+    shopState.hints = true;
+    shopState.balance -= it.cost;
+    return { error: null, balance: shopState.balance };
+  },
+  wear(kind: unknown, id: unknown): { error: string | null; look?: string | null } {
+    if (kind !== "frame" && kind !== "title") return { error: "Unknown item." };
+    if (id && !shopState.owned.has(String(id))) return { error: "Buy it first." };
+    shopState.look[kind] = id ? String(id) : null;
+    return { error: null, look: lookStr() };
+  },
+  alias: (name: unknown) => ({ error: null, alias: name ? String(name) : null }),
+};

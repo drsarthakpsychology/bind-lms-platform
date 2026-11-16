@@ -305,3 +305,20 @@ export type PrepMockResult = { v: 1; id: string; specId: string; title: string; 
 /** GET /prep/long, /prep/long/:subject, /prep/long/:subject/:topic, /prep/long/:subject/:topic/:id : long answers (written answers, read and compared). */
 export type PrepLong = { v: 1; level: "home" | "subject" | "topic" | "question"; data: Record<string, unknown> };
 
+/** GET /leaderboards/shop : the XP shop. Buying and wearing go through POST /play/league/buy and /play/league/wear. */
+export type XpShop = {
+  v: 1;
+  /** False until the shop's database step is in: show the items, buying off. */
+  ready: boolean;
+  balance: number;
+  streak: { count: number; alive: boolean };
+  /** Whether a streak repair works this week, in words. */
+  repair: { ok: boolean; text: string };
+  /** Things to buy: streak_repair, hints_3, bonus_case. `ready: false` shows "Coming soon". */
+  items: { id: string; label: string; cost: number; text: string; ready: boolean }[];
+  /** Name frames and titles. */
+  looks: { id: string; label: string; kind: "frame" | "title"; cost: number; owned: boolean; worn: boolean }[];
+  note: string;
+};
+/** The website's buyItem answer (src/app/(dashboard)/leaderboard/actions.ts). */
+export type BuyResult = { error: string | null; balance?: number; lastDay?: string; look?: string | null };

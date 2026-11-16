@@ -205,6 +205,7 @@ function Shell() {
             <Stack.Screen name="search" options={{ headerShown: false, ...fadeMotion }} />
             <Stack.Screen name="game/[id]" options={{ headerShown: false, gestureEnabled: false }} />
             <Stack.Screen name="game/leaderboard" options={{ title: "" }} />
+            <Stack.Screen name="shop" options={{ title: "" }} />
             <Stack.Screen name="case/[id]" options={{ headerShown: false, gestureEnabled: false }} />
             <Stack.Screen name="case/library" options={{ title: "" }} />
             <Stack.Screen name="prep/index" options={{ title: "" }} />

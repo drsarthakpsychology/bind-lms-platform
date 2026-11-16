@@ -18,6 +18,7 @@ const fail = (status: number, code: string, message: string): RawResponse => ({ 
 const HANDLERS: Record<string, Record<string, (...args: never[]) => unknown>> = {
   ...GAMES,
   ...CASES,
+  league: R.league as unknown as Record<string, (...args: never[]) => unknown>,
   prep: { ...CASES.prep, save: (i: { id?: string; saved?: boolean }) => (i?.id ? (R.toggleSaved(i.id, !!i.saved), { ok: true }) : { ok: false }) },
 };
 
@@ -67,6 +68,7 @@ export function practiseRoute(method: string, path: string, body: unknown, kind:
         if (seg[1] === "mock" && seg.length === 2) return ok(R.prepMocks());
         if (seg[1] === "mock" && seg[2] === "result" && seg.length === 4) return ok(R.prepMockResult(d(3)));
       }
+      if (method === "GET" && seg[0] === "leaderboards" && seg[1] === "shop") return ok(R.shop());
       if (method === "GET" && seg[0] === "leaderboards") return ok(R.board(seg[1] === "games" ? d(2) : d(1)));
     } catch (e) {
       if (e instanceof PlayError) return fail(e.status, e.code, e.message);
@@ -90,6 +92,7 @@ export function practiseRoute(method: string, path: string, body: unknown, kind:
 }
 
 export function resetPractiseMock() {
+  R.resetShop();
   resetSeeds();
   resetCases();
   resetGames();

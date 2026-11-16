@@ -8,6 +8,7 @@ import { ToolCaseScreen } from "@/practise/cases/tool";
 import { EscapeGame } from "@/practise/games/escape";
 import { WardGame } from "@/practise/games/ward";
 import { MockExamScreen, MocksScreen } from "@/practise/prep/mock";
+import { ShopScreen } from "@/practise/shop";
 import { render } from "./utils";
 
 const params = useLocalSearchParams as jest.Mock;
@@ -152,5 +153,26 @@ describe("Self-check records and the MSE trainer", () => {
     await press("tool-next");
     const marks = posted("/play/cases/mark").map((l) => (l.body as { args: unknown[] }).args);
     expect(marks).toContainEqual(["mse-small", "walk", { at: "st-2" }]);
+  });
+});
+
+describe("XP shop", () => {
+  it("buys a title with XP: the server's answer sets the balance, and it can be worn and taken off", async () => {
+    await render(<ShopScreen />);
+    await waitFor(() => expect(screen.getByTestId("shop-balance")).toBeTruthy());
+    await press("shop-buy-title-blue");
+    await waitFor(() => expect(screen.getByText("Leaves 220 XP")).toBeTruthy());
+    await press("shop-spend");
+    await waitFor(() => expect(screen.getByTestId("shop-wear-title-blue")).toBeTruthy());
+    expect(posted("/play/league/buy")[0]!.body).toEqual({ args: ["look:title-blue"] });
+    expect(screen.getAllByText("WEARING")).toHaveLength(2);
+    await press("shop-wear-title-blue");
+    expect(posted("/play/league/wear").at(-1)!.body).toEqual({ args: ["title", null] });
+  });
+
+  it("an item that is not ready cannot be bought", async () => {
+    await render(<ShopScreen />);
+    await waitFor(() => expect(screen.getByTestId("shop-buy-bonus_case")).toBeTruthy());
+    expect(screen.getByTestId("shop-buy-bonus_case").props.accessibilityState).toMatchObject({ disabled: true });
   });
 });

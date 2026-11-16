@@ -1,5 +1,5 @@
 import { router } from "expo-router";
-import { Award, Bell, ChartLine, CircleHelp, Medal, MessageCircleQuestionMark, Route, Settings } from "lucide-react-native";
+import { Award, Bell, ChartLine, CircleHelp, Medal, MessageCircleQuestionMark, Route, Settings, Trophy } from "lucide-react-native";
 import * as React from "react";
 import { View } from "react-native";
 
@@ -41,6 +41,7 @@ export function MeScreen() {
           {!me?.access?.blocks?.includes("journey") ? <Row testID="me-journey" title="My journey" meta="Your level, hours and streak" icon={<Route {...icon} />} onPress={() => router.push("/journey")} /> : null}
           {can?.achievements !== false ? <Row testID="me-certificates" title="Certificates" icon={<Award {...icon} />} onPress={() => router.push("/certificates")} /> : null}
           {can?.achievements !== false ? <Row testID="me-badges" title="Badges" icon={<Medal {...icon} />} onPress={() => router.push("/certificates?show=badges")} /> : null}
+          {!lecturesOnly && can?.leaderboard !== false ? <Row testID="me-leaderboard" title="Leaderboard" meta="Your league, the boards and the XP shop" icon={<Trophy {...icon} />} onPress={() => router.push("/game/leaderboard")} /> : null}
         </RowList>
       </Section>
       <Section title="Help">
