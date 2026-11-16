@@ -1,5 +1,5 @@
 import { useQueryClient } from "@tanstack/react-query";
-import { router, useLocalSearchParams } from "expo-router";
+import { router, useLocalSearchParams, useNavigation } from "expo-router";
 import { ArrowLeft, ArrowRight, ChevronLeft, FileText } from "lucide-react-native";
 import * as React from "react";
 import { Pressable, ScrollView, View } from "react-native";
@@ -14,6 +14,7 @@ import { Button, Field, LoadError, Row, RowList, Sheet, Skeleton, T, TabRow, Tin
 import { toast } from "@/ds/toast";
 import { streakMoment } from "@/moments/host";
 import { FileHandIn, HandInSlot, RecordingHandIn, useFooterAction, type FooterAction } from "@/lecture/handin-ui";
+import { useFullScreen } from "@/lecture/fullscreen";
 import { ProtectedPlayer, clock } from "@/lecture/player";
 import { config } from "@/lib/config";
 import { createStore } from "@/lib/store";
@@ -181,6 +182,13 @@ export function LectureScreen() {
   // A part leaving (during the tab swap) only clears the button if it is still its own.
   const setHandIn = React.useCallback((action: FooterAction | null, owner: object) => footer.set((s) => (action ? { action, owner } : s.owner === owner ? { action: null, owner: null } : {})), [footer]);
   const [dir, setDir] = React.useState<1 | -1>(1);
+  // Full screen: the player stays where it is (no remount); everything around it is hidden.
+  const fs = useFullScreen(!!q.data?.hasVideo);
+  const navigation = useNavigation();
+  React.useEffect(() => {
+    // No swipe-back out of the lecture while the video fills the screen (Back leaves full screen first).
+    navigation.setOptions({ gestureEnabled: !fs.full });
+  }, [navigation, fs.full]);
 
   const save = React.useCallback(
     (t: number, d: number) => {
@@ -243,8 +251,8 @@ export function LectureScreen() {
   return (
     <View testID="lecture" style={{ flex: 1, backgroundColor: c.bg }}>
       {/* Black band under the status bar, the way back, and the video edge to edge. */}
-      <View style={{ backgroundColor: fixed.black, paddingTop: insets.top }}>
-        <View style={{ flexDirection: "row", alignItems: "center", minHeight: layout.target, paddingRight: layout.gutter }}>
+      <View style={fs.full ? { backgroundColor: fixed.black, flex: 1 } : { backgroundColor: fixed.black, paddingTop: insets.top }}>
+        <View style={{ flexDirection: "row", alignItems: "center", minHeight: layout.target, paddingRight: layout.gutter, display: fs.full ? "none" : "flex" }}>
           <Pressable accessibilityRole="button" accessibilityLabel="Back" onPress={back} hitSlop={4} style={{ width: layout.target, height: layout.target, alignItems: "center", justifyContent: "center" }} testID="lecture-back">
             <ChevronLeft size={26} color={fixed.onVideo} />
           </Pressable>
@@ -253,7 +261,7 @@ export function LectureScreen() {
           </T>
         </View>
         {l?.hasVideo ? (
-          <ProtectedPlayer lessonId={lessonId} onTime={onTime} intro={{ number: l.number, week: l.week }} />
+          <ProtectedPlayer lessonId={lessonId} onTime={onTime} intro={{ number: l.number, week: l.week }} full={fs.full} onFull={fs.toggle} />
         ) : l ? (
           <View style={{ aspectRatio: 16 / 9, alignItems: "center", justifyContent: "center", padding: space[5] }}>
             <T center style={{ color: fixed.onVideo }}>
@@ -265,6 +273,8 @@ export function LectureScreen() {
         )}
       </View>
 
+      {/* Kept mounted (a half-written answer survives), just out of the way in full screen. */}
+      <View style={{ flex: 1, display: fs.full ? "none" : "flex" }}>
       {l && gate.phase === "content" ? (
         <Reveal style={{ flex: 1 }}>
           <ScrollView keyboardShouldPersistTaps="handled" contentContainerStyle={{ padding: layout.gutter, paddingBottom: space[7] * 2, gap: space[5], width: "100%", maxWidth: layout.readingWidth + layout.gutter * 2, alignSelf: "center" }}>
@@ -319,6 +329,7 @@ export function LectureScreen() {
       ) : gate.phase === "skeleton" ? (
         <LectureSkeleton />
       ) : null}
+      </View>
     </View>
   );
 }
