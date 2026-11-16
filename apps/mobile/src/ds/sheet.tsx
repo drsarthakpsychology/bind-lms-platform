@@ -1,93 +1,132 @@
 import * as React from "react";
-import { Modal, Pressable, ScrollView, useWindowDimensions, View } from "react-native";
-import Animated, { Easing, useAnimatedStyle, useReducedMotion, useSharedValue, withSpring, withTiming } from "react-native-reanimated";
+import { Modal, Pressable, ScrollView, View, type LayoutChangeEvent, type NativeScrollEvent, type NativeSyntheticEvent } from "react-native";
+import { GestureDetector, GestureHandlerRootView, usePanGesture } from "react-native-gesture-handler";
+import Animated, { useAnimatedStyle, useReducedMotion, useSharedValue, withSpring, withTiming } from "react-native-reanimated";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { scheduleOnRN } from "react-native-worklets";
 
 import { haptic } from "@/lib/haptics";
-import { springs } from "@/motion";
-import { layout, motion, space, useTheme } from "@/theme";
+import { curves, dur, springs } from "@/motion";
+import { layout, space, useTheme } from "@/theme";
 import { T } from "./text";
 
-const easeOut = Easing.bezier(...motion.easeOut);
-const ease = Easing.bezier(...motion.ease);
+/** Close when pulled past this share of the sheet's height... */
+const CLOSE_AT = 0.25;
+/** ...or flicked down faster than 0.4px/ms (Vaul's numbers). */
+const FLICK = 400;
 
 /**
  * A bottom sheet for detail that would crowd the screen (today's quests, the
- * section list). Springs up (about 450ms, no bounce) and slides away in 200ms, has a grabber, closes
- * by dragging down, tapping outside, or the back gesture (the system modal's
- * own back handling, so back closes the sheet and never the screen). Sized to
- * its content, up to 85% of the screen, then it scrolls.
+ * section list). Springs up from its own measured height (about 450ms, no
+ * bounce) and slides away in 200ms; the scrim and the sheet move from one
+ * value, so they always agree. Drag down on the grabber, or anywhere once the
+ * content is scrolled to the top: the sheet follows the finger 1:1 on the UI
+ * thread (rubber band upward), closes past 25% of its height or on a quick
+ * flick, else springs back. Tapping outside or the back gesture closes it too.
+ * Sized to its content, up to 85% of the screen, then it scrolls.
  */
 export function Sheet({ open, onClose, title, children, testID }: { open: boolean; onClose: () => void; title?: string; children?: React.ReactNode; testID?: string }) {
   const c = useTheme();
   const insets = useSafeAreaInsets();
   const reduce = useReducedMotion();
-  const { height } = useWindowDimensions();
   const [shown, setShown] = React.useState(open);
   // Mount as soon as it opens (state adjusted while rendering, not in an effect).
   if (open && !shown) setShown(true);
-  const y = useSharedValue(height);
-  const fade = useSharedValue(0);
+  /** 0 = closed, 1 = open; the sheet's place and the scrim both come from it. */
+  const p = useSharedValue(reduce && open ? 1 : 0);
+  /** The sheet's measured height (0 until it has laid out). */
+  const h = useSharedValue(0);
+  // Plain state, changed only when it flips (not per scroll frame).
+  const [atTop, setAtTop] = React.useState(true);
+  const want = useSharedValue(open);
 
+  const rise = React.useCallback(() => {
+    p.set(reduce ? 1 : withSpring(1, springs.sheet));
+  }, [p, reduce]);
   React.useEffect(() => {
+    want.set(open);
     if (open) {
-      y.set(reduce ? 0 : withSpring(0, springs.sheet));
-      fade.set(reduce ? 1 : withTiming(1, { duration: motion.sheetIn, easing: easeOut }));
+      haptic.select();
+      // Rise now if the height is known; otherwise onLayout starts it.
+      if (h.get() > 0 || reduce) rise();
       return;
     }
-    y.set(reduce ? height : withTiming(height, { duration: motion.sheetOut, easing: ease }));
-    fade.set(reduce ? 0 : withTiming(0, { duration: motion.sheetOut, easing: ease }));
-    const id = setTimeout(() => setShown(false), reduce ? 0 : motion.sheetOut);
-    return () => clearTimeout(id);
-  }, [open, reduce, height, y, fade]);
+    if (reduce) {
+      p.set(0);
+      setTimeout(() => setShown(false), 0);
+      return;
+    }
+    p.set(
+      withTiming(0, { duration: dur.sheetOut, easing: curves.inOut }, (done) => {
+        if (done) scheduleOnRN(setShown, false);
+      }),
+    );
+  }, [open, reduce, p, h, want, rise]);
+  const onLayout = React.useCallback(
+    (e: LayoutChangeEvent) => {
+      const first = h.get() === 0;
+      h.set(e.nativeEvent.layout.height);
+      if (first && want.get()) rise();
+    },
+    [h, want, rise],
+  );
 
-  const panel = useAnimatedStyle(() => ({ transform: [{ translateY: y.value }] }));
-  const scrim = useAnimatedStyle(() => ({ opacity: fade.value }));
+  const panel = useAnimatedStyle(() => {
+    const H = h.value || 2000;
+    const v = p.value;
+    // Above fully open, the sheet only gives a little (rubber band).
+    return { opacity: h.value > 0 || reduce ? 1 : 0, transform: [{ translateY: v > 1 ? -(v - 1) * H * 0.2 : (1 - v) * H }] };
+  });
+  const scrim = useAnimatedStyle(() => ({ opacity: Math.min(1, Math.max(0, p.value)) }));
 
-  // Drag the grabber down to close: the sheet follows the finger 1:1 (with a
-  // rubber band upward), then closes on a long or quick pull, else springs back.
-  const drag = React.useRef({ start: 0, lastY: 0, lastT: 0, v: 0 });
-  const grab = {
-    onStartShouldSetResponder: () => true,
-    onMoveShouldSetResponder: () => true,
-    onResponderGrant: (e: { nativeEvent: { pageY: number; timestamp: number } }) => {
-      drag.current = { start: e.nativeEvent.pageY, lastY: e.nativeEvent.pageY, lastT: e.nativeEvent.timestamp, v: 0 };
+  const close = React.useCallback(() => {
+    haptic.select();
+    onClose();
+  }, [onClose]);
+  const config = (enabled: boolean) => ({
+    enabled,
+    activeOffsetY: 8,
+    failOffsetY: -8,
+    onUpdate: (e: { translationY: number }) => {
+      "worklet";
+      const H = h.value || 1;
+      p.value = 1 - e.translationY / H;
     },
-    onResponderMove: (e: { nativeEvent: { pageY: number; timestamp: number } }) => {
-      const d = drag.current;
-      const dt = Math.max(1, e.nativeEvent.timestamp - d.lastT);
-      d.v = (e.nativeEvent.pageY - d.lastY) / dt;
-      d.lastY = e.nativeEvent.pageY;
-      d.lastT = e.nativeEvent.timestamp;
-      const dy = e.nativeEvent.pageY - d.start;
-      y.set(dy < 0 ? dy * 0.2 : dy);
+    onDeactivate: (e: { translationY: number; velocityY: number }) => {
+      "worklet";
+      const H = h.value || 1;
+      if (e.translationY > H * CLOSE_AT || (e.translationY > 0 && e.velocityY > FLICK)) scheduleOnRN(close);
+      else p.value = withSpring(1, springs.snappy);
     },
-    onResponderRelease: (e: { nativeEvent: { pageY: number } }) => {
-      const dy = e.nativeEvent.pageY - drag.current.start;
-      if (dy > 80 || (dy > 16 && drag.current.v > 0.5)) {
-        haptic.select();
-        onClose();
-      } else y.set(withSpring(0, springs.snappy));
-    },
+  });
+  const grabPan = usePanGesture(config(true));
+  const bodyPan = usePanGesture(config(atTop));
+  const onScroll = (e: NativeSyntheticEvent<NativeScrollEvent>) => {
+    const top = e.nativeEvent.contentOffset.y <= 0;
+    if (top !== atTop) setAtTop(top);
   };
 
   if (!shown) return null;
   return (
     <Modal visible transparent animationType="none" onRequestClose={onClose} statusBarTranslucent navigationBarTranslucent>
-      <View style={{ flex: 1, justifyContent: "flex-end" }}>
+      <GestureHandlerRootView style={{ flex: 1, justifyContent: "flex-end" }}>
         <Animated.View style={[{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, backgroundColor: c.scrim }, scrim]}>
           <Pressable accessibilityRole="button" accessibilityLabel="Close" onPress={onClose} style={{ flex: 1 }} />
         </Animated.View>
-        <Animated.View testID={testID} accessibilityViewIsModal accessibilityLabel={title} style={[{ maxHeight: "85%", width: "100%", maxWidth: 640, alignSelf: "center", backgroundColor: c.card, borderTopLeftRadius: 20, borderTopRightRadius: 20 }, panel]}>
-          <View {...grab} style={{ alignItems: "center", paddingTop: space[2], paddingBottom: space[3] }} accessibilityLabel="Drag down to close">
-            <View style={{ width: 36, height: 4, borderRadius: 2, backgroundColor: c.cardLine }} />
-          </View>
-          <ScrollView bounces={false} contentContainerStyle={{ paddingHorizontal: layout.gutter, paddingBottom: insets.bottom + space[5], gap: space[3] }}>
-            {title ? <T v="h2">{title}</T> : null}
-            <View>{children}</View>
-          </ScrollView>
-        </Animated.View>
-      </View>
+        <GestureDetector gesture={bodyPan}>
+          <Animated.View testID={testID} onLayout={onLayout} accessibilityViewIsModal accessibilityLabel={title} style={[{ maxHeight: "85%", width: "100%", maxWidth: 640, alignSelf: "center", backgroundColor: c.card, borderTopLeftRadius: 20, borderTopRightRadius: 20 }, panel]}>
+            <GestureDetector gesture={grabPan}>
+              <View style={{ alignItems: "center", paddingTop: space[2], paddingBottom: space[3] }} accessibilityLabel="Drag down to close">
+                <View style={{ width: 36, height: 4, borderRadius: 2, backgroundColor: c.cardLine }} />
+              </View>
+            </GestureDetector>
+            <ScrollView bounces={false} onScroll={onScroll} scrollEventThrottle={32} contentContainerStyle={{ paddingHorizontal: layout.gutter, paddingBottom: insets.bottom + space[5], gap: space[3] }}>
+              {title ? <T v="h2">{title}</T> : null}
+              <View>{children}</View>
+            </ScrollView>
+          </Animated.View>
+        </GestureDetector>
+      </GestureHandlerRootView>
     </Modal>
   );
 }
