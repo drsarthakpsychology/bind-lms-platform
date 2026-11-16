@@ -6,7 +6,7 @@ import { Pressable, TextInput, View } from "react-native";
 
 import { ApiFailure } from "@/api/errors";
 import { api } from "@/auth";
-import { Chips, EmptyState, LoadError, Row, RowList, RowsSkeleton, Screen, T } from "@/ds";
+import { Chips, EmptyState, LoadError, Row, RowList, RowsSkeleton, Screen, T, useProgressive } from "@/ds";
 import { TabTop } from "@/nav/top";
 import type { MedicineList } from "@/practise/types";
 import type { MedicinePage } from "@/practise/contract";
@@ -52,15 +52,23 @@ export function LibraryScreen() {
           <T v="small" tone="muted" num>
             {rows.length} medicine{rows.length === 1 ? "" : "s"}
           </T>
-          <RowList>
-            {rows.map((m) => (
-              <Row key={m.id} testID={`med-${m.id}`} icon={<ClassMark group={m.group} />} title={m.name} meta={`${m.cls}${m.dose ? ` · usual ${m.dose}` : ""}${m.brands.length ? ` · ${m.brands.slice(0, 2).join(", ")}` : ""}`} onPress={() => router.push(`/medicine/${encodeURIComponent(m.id)}`)} />
-            ))}
-          </RowList>
+          <MedRows key={group} rows={rows} still={!!text} />
         </>
       ) : (
         <EmptyState mood="puzzled" title="No medicine by that name" body="Check the spelling, or try the brand name or the condition." testID="library-empty" />
       )}
     </Screen>
+  );
+}
+
+/** The medicine rows, drawn a part at a time (the library is long). */
+function MedRows({ rows, still }: { rows: MedicineList["rows"]; still: boolean }) {
+  const shown = useProgressive(rows.length);
+  return (
+    <RowList still={still}>
+      {rows.slice(0, shown).map((m) => (
+        <Row key={m.id} testID={`med-${m.id}`} icon={<ClassMark group={m.group} />} title={m.name} meta={`${m.cls}${m.dose ? ` · usual ${m.dose}` : ""}${m.brands.length ? ` · ${m.brands.slice(0, 2).join(", ")}` : ""}`} onPress={() => router.push(`/medicine/${encodeURIComponent(m.id)}`)} />
+      ))}
+    </RowList>
   );
 }

@@ -199,3 +199,21 @@ describe("error lines", () => {
     expect(messageOf("weird")).toBe("Something went wrong. Try again.");
   });
 });
+
+describe("long lists", () => {
+  it("draw a part at once and the rest in steps (a thousand rows froze the phone)", async () => {
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    const { useProgressive } = require("@/ds") as typeof import("@/ds");
+    const seen: number[] = [];
+    function L() {
+      const n = useProgressive(1000);
+      seen.push(n);
+      return null;
+    }
+    await render(<L />);
+    expect(seen[0]).toBe(60);
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    const { waitFor } = require("@testing-library/react-native");
+    await waitFor(() => expect(seen[seen.length - 1]).toBe(1000), { timeout: 3000 });
+  });
+});

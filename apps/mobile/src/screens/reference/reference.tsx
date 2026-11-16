@@ -5,7 +5,7 @@ import { Pressable, TextInput, View } from "react-native";
 
 import type { RefEntry, RefIndexItem, RefKind } from "@/api/adapt-learn";
 import { useTerm, useTerms } from "@/api/learn";
-import { Button, Chips, EmptyState, Loaded, LoadError, Row, RowList, RowsSkeleton, Screen, Section, Sheet, Skeleton, T, Tint } from "@/ds";
+import { Button, Chips, EmptyState, Loaded, LoadError, Row, RowList, RowsSkeleton, Screen, Section, Sheet, Skeleton, T, Tint, useProgressive } from "@/ds";
 import { Enter, Press, Reveal } from "@/motion";
 import { Rich } from "@/study/rich";
 import { layout, space, type as scale, useTheme } from "@/theme";
@@ -102,29 +102,36 @@ export function ReferenceScreen() {
                 ))}
               </RowList>
             );
-          const letters: { letter: string; items: RefIndexItem[] }[] = [];
-          for (const r of [...rows].sort((a, b) => a.label.localeCompare(b.label))) {
-            const L = /[a-z]/i.test(r.letter) ? r.letter.toUpperCase() : "#";
-            const last = letters[letters.length - 1];
-            if (last && last.letter === L) last.items.push(r);
-            else letters.push({ letter: L, items: [r] });
-          }
-          return (
-            <>
-              {letters.map((g) => (
-                <Section key={g.letter} title={g.letter} quiet>
-                  <RowList>
-                    {g.items.map((r) => (
-                      <Row key={r.slug} testID={`ref-${r.slug}`} title={r.label} meta={kind === "all" ? `${KIND_WORD[r.kind]} · ${r.summary}` : r.summary} onPress={() => router.push(`/reference/${encodeURIComponent(r.slug)}`)} />
-                    ))}
-                  </RowList>
-                </Section>
-              ))}
-            </>
-          );
+          return <AToZ key={kind} rows={rows} kind={kind} />;
         }}
       </Loaded>
     </Screen>
+  );
+}
+
+/** Browsing: every entry by letter, drawn a part at a time (the full list is long). */
+function AToZ({ rows, kind }: { rows: RefIndexItem[]; kind: string }) {
+  const sorted = React.useMemo(() => [...rows].sort((a, b) => a.label.localeCompare(b.label)), [rows]);
+  const shown = useProgressive(sorted.length);
+  const letters: { letter: string; items: RefIndexItem[] }[] = [];
+  for (const r of sorted.slice(0, shown)) {
+    const L = /[a-z]/i.test(r.letter) ? r.letter.toUpperCase() : "#";
+    const last = letters[letters.length - 1];
+    if (last && last.letter === L) last.items.push(r);
+    else letters.push({ letter: L, items: [r] });
+  }
+  return (
+    <>
+      {letters.map((g) => (
+        <Section key={g.letter} title={g.letter} quiet>
+          <RowList>
+            {g.items.map((r) => (
+              <Row key={r.slug} testID={`ref-${r.slug}`} title={r.label} meta={kind === "all" ? `${KIND_WORD[r.kind]} · ${r.summary}` : r.summary} onPress={() => router.push(`/reference/${encodeURIComponent(r.slug)}`)} />
+            ))}
+          </RowList>
+        </Section>
+      ))}
+    </>
   );
 }
 
