@@ -11,6 +11,7 @@ import { useReducedMotion } from "react-native-reanimated";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 
 import { useViewingAsStudent, ViewAsBar } from "@/admin/view-as";
+import { installAppLifecycle, onOpened } from "@/api/lifecycle";
 import { persistOptions, persister, queryClient, useConfig } from "@/api/queries";
 import { session, useSession } from "@/auth";
 import { ToastHost } from "@/ds";
@@ -77,8 +78,17 @@ function useBoot(): boolean {
       if (s === "active") session.onForeground();
       else session.onBackground();
     });
-    return () => sub.remove();
+    const off = installAppLifecycle(() => session.hasTokens());
+    return () => {
+      sub.remove();
+      off();
+    };
   }, []);
+
+  // Open: send the saves kept on the phone (from an earlier day, or from before a crash).
+  React.useEffect(() => {
+    if (phase === "ready") onOpened();
+  }, [phase]);
 
   const ready = (fontsReady || !!fontError) && phase !== "loading" && settingsReady;
   React.useEffect(() => {

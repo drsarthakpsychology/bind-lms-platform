@@ -90,9 +90,9 @@ function AssignmentPart({ lecture }: { lecture: LectureDetail }) {
   return (
     <View style={{ gap: space[4] }}>
       <T v="h3">{a.title}</T>
-      {a.dueAt ? (
+      {a.dueAt && !Number.isNaN(Date.parse(a.dueAt)) ? (
         <T v="small" tone="muted">
-          Due {new Date(a.dueAt).toLocaleDateString("en-IN", { day: "numeric", month: "short" })}
+          Due {new Date(a.dueAt).toLocaleDateString("en-IN", { day: "numeric", month: "short", timeZone: "Asia/Kolkata" })}
           {a.allowLate ? "" : ". Nothing can be handed in after that."}
         </T>
       ) : null}

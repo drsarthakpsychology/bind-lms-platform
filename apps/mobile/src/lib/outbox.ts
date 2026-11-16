@@ -1,4 +1,5 @@
 import type { SaveItem, SaveResult } from "@/api/contract";
+import { ApiFailure } from "@/api/errors";
 import { createStore } from "./store";
 import type { KeyValue } from "./storage";
 
@@ -20,6 +21,7 @@ export function createOutbox(deps: { store: KeyValue; post: Post; schedule?: (fn
   let loaded = false;
   let sending: Promise<void> | null = null;
   let failures = 0;
+  let size = 25;
   let n = 0;
   const schedule = deps.schedule ?? ((fn: () => void, ms: number) => setTimeout(fn, ms));
   const newId = deps.newId ?? (() => `s${Date.now().toString(36)}${(n++).toString(36)}`);
@@ -53,24 +55,46 @@ export function createOutbox(deps: { store: KeyValue; post: Post; schedule?: (fn
         return;
       }
     }
+    // Study progress is a whole copy made from the newest one, so only the newest is kept.
+    // (Each offline change used to add another full copy; 25 of them could pass the
+    // server's size limit and then nothing was ever saved again.)
+    if (item.kind === "learn") items = items.filter((x) => x.kind !== "learn");
     items.push(item);
   }
 
   async function sendOnce(): Promise<void> {
     await load();
     while (items.length) {
-      const batch = items.slice(0, 25);
+      const batch = items.slice(0, size);
       let res: SaveResult;
       try {
         res = await deps.post(batch);
-      } catch {
+      } catch (e) {
+        // The server read the batch and will never take it as it is: too big, or not
+        // understood (a public Wi-Fi sign-in page answers 200, so it is not this). Send fewer at a time, and drop one item that is refused alone,
+        // so one bad item can never stop every later save.
+        if (e instanceof ApiFailure && (e.code === "bad_request" || e.code === "too_large") && (e.status === 400 || e.status === 413)) {
+          if (batch.length > 1) size = Math.max(1, Math.floor(batch.length / 2));
+          else {
+            items = items.slice(1);
+            await persist();
+          }
+          continue;
+        }
+        // Closed for this account (a lectures-only account, a section switched off): these can never be saved.
+        if (e instanceof ApiFailure && (e.code === "scope" || e.code === "access_block" || e.code === "feature_off" || e.code === "feature_locked")) {
+          const gone = new Set(batch.map((b) => b.id));
+          items = items.filter((i) => !gone.has(i.id));
+          await persist();
+          continue;
+        }
         failures += 1;
         state.set({ retrying: true });
         schedule(() => void flush(), Math.min(60_000, 1000 * 2 ** failures));
         return;
       }
       failures = 0;
-      const done = new Set(res.results.filter((r) => r.status === "ok" || r.status === "drop").map((r) => r.id));
+      const done = new Set((Array.isArray(res?.results) ? res.results : []).filter((r) => r.status === "ok" || r.status === "drop").map((r) => r.id));
       const before = items.length;
       items = items.filter((i) => !done.has(i.id));
       await persist();

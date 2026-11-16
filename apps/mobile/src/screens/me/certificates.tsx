@@ -14,7 +14,9 @@ import { Confetti, presets, Press, staggerDelay, useNewWins } from "@/motion";
 import { layout, space, useTheme } from "@/theme";
 
 export function issued(iso: string | null): string {
-  return iso ? new Date(iso).toLocaleDateString("en-IN", { day: "numeric", month: "long", year: "numeric" }) : "";
+  const t = iso ? Date.parse(iso) : NaN;
+  // A date the phone cannot read shows nothing (never "Invalid Date").
+  return Number.isNaN(t) ? "" : new Date(t).toLocaleDateString("en-IN", { day: "numeric", month: "long", year: "numeric", timeZone: "Asia/Kolkata" });
 }
 
 export async function downloadCertificate(id: string): Promise<void> {

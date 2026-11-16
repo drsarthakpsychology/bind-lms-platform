@@ -1,0 +1,99 @@
+/**
+ * Bugs found in the final app check, one test each.
+ */
+import { focusManager } from "@tanstack/react-query";
+
+import { homeView, lectureView, notificationDetailView, streamView } from "@/api/adapt-core";
+import type { SaveItem } from "@/api/contract";
+import { ApiFailure } from "@/api/errors";
+import { onAppState } from "@/api/lifecycle";
+import { outbox } from "@/api/outbox";
+import { createOutbox } from "@/lib/outbox";
+import { memoryStore } from "@/lib/storage";
+import { issued } from "@/screens/me/certificates";
+
+describe("answers with nulls draw instead of throwing", () => {
+  it("Home without a step, lists or quests", () => {
+    for (const raw of [null, {}, { step: null, upNext: null, courses: [null], quests: { quests: null } }]) {
+      const h = homeView(raw);
+      expect(typeof h.step.title).toBe("string");
+      expect(h.step.title.length).toBeGreaterThan(0);
+      expect(Array.isArray(h.upNext) && Array.isArray(h.courses)).toBe(true);
+    }
+    expect(homeView({ quests: { quests: [{ id: "q1", label: "Read", target: null }] } }).quests?.quests[0]?.target.screen).toBe("home");
+  });
+  it("a lecture without progress, materials or a title", () => {
+    const l = lectureView({ id: "l1", progress: null, materials: null, assignment: { id: "a1", submission: { files: null } } });
+    expect(l.progress).toEqual({ watchedSeconds: 0, completed: false });
+    expect(l.materials).toEqual([]);
+    expect(l.title).toBe("Lecture");
+    expect(l.assignment?.submission?.files).toEqual([]);
+  });
+  it("a notification without a target, blocks or links", () => {
+    const n = notificationDetailView({ id: "n1", target: null, content: null, links: [{ label: "x", target: null, url: null }] });
+    expect(n.target.screen).toBe("notification");
+    expect(n.content).toEqual([]);
+    expect(n.links).toEqual([]);
+  });
+  it("a stream answer without an address is refused, not played", () => {
+    expect(streamView({ url: null })).toBeNull();
+    expect(streamView({ url: "https://x/y.m3u8", watermark: null }, "Asha · VIBHA-1")?.watermark.text).toBe("Asha · VIBHA-1");
+  });
+  it("a date the phone cannot read shows nothing", () => {
+    expect(issued("not a date")).toBe("");
+    expect(issued(null)).toBe("");
+    expect(issued("2026-11-06T12:00:00.000Z")).toMatch(/2026/);
+  });
+});
+
+describe("save outbox", () => {
+  it("keeps only the newest study copy (old copies could pass the size limit)", async () => {
+    const box = createOutbox({ store: memoryStore(), post: async () => Promise.reject(new ApiFailure("network", "x")), schedule: () => undefined });
+    for (let i = 0; i < 30; i++) await box.add({ kind: "learn", payload: { state: { n: i } } } as Omit<SaveItem, "id">);
+    expect(box.items()).toHaveLength(1);
+    expect((box.items()[0]!.payload as { state: { n: number } }).state.n).toBe(29);
+  });
+  it("a batch the server refuses as too big goes in smaller parts, and one refused item is dropped", async () => {
+    const sent: number[] = [];
+    const post = jest.fn(async (items: SaveItem[]) => {
+      sent.push(items.length);
+      if (items.length > 2) throw new ApiFailure("too_large", "Too big", 413);
+      if (items.some((i) => (i.payload as { lessonId?: string }).lessonId === "bad")) throw new ApiFailure("bad_request", "No", 400);
+      return { results: items.map((i) => ({ id: i.id, status: "ok" as const })) };
+    });
+    let n = 0;
+    const box = createOutbox({ store: memoryStore(), post, schedule: () => undefined, newId: () => `i${n++}` });
+    await box.add({ kind: "complete", payload: { lessonId: "bad" } });
+    for (let i = 0; i < 5; i++) await box.add({ kind: "complete", payload: { lessonId: `l${i}` } });
+    await box.flush();
+    expect(box.items()).toEqual([]);
+    expect(box.state.get().retrying).toBe(false);
+  });
+  it("a public Wi-Fi page (200, not JSON) never drops saves", async () => {
+    const box = createOutbox({ store: memoryStore(), post: async () => Promise.reject(new ApiFailure("bad_request", "Not understood", 200)), schedule: () => undefined });
+    await box.add({ kind: "complete", payload: { lessonId: "l1" } });
+    await box.flush();
+    expect(box.items()).toHaveLength(1);
+    expect(box.state.get().retrying).toBe(true);
+  });
+  it("saves closed for the account are dropped, not retried for ever", async () => {
+    const box = createOutbox({ store: memoryStore(), post: async () => Promise.reject(new ApiFailure("scope", "Lectures only", 403)), schedule: () => undefined });
+    await box.add({ kind: "history", payload: { tool: "x", answers: [] } });
+    await box.flush();
+    expect(box.items()).toEqual([]);
+  });
+});
+
+describe("coming back to the app", () => {
+  it("tells the data layer the app is in front again, and sends waiting saves", () => {
+    const flush = jest.spyOn(outbox, "flush").mockResolvedValue(undefined);
+    onAppState("background", true);
+    expect(focusManager.isFocused()).toBe(false);
+    onAppState("active", true);
+    expect(focusManager.isFocused()).toBe(true);
+    expect(flush).toHaveBeenCalledTimes(1);
+    onAppState("active", false);
+    expect(flush).toHaveBeenCalledTimes(1);
+    flush.mockRestore();
+  });
+});
