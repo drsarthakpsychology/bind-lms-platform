@@ -1,15 +1,15 @@
 import { router, useLocalSearchParams } from "expo-router";
 import { Bell, CheckCircle2, Circle, Mail, MessageSquare, Reply } from "lucide-react-native";
 import * as React from "react";
-import { Linking, ScrollView, Share, View } from "react-native";
+import { Linking, Share, View } from "react-native";
 
-import { Button, Row, RowList, RowsSkeleton, Screen, Sheet, TabRow, T } from "@/ds";
-import { layout, space, useTheme } from "@/theme";
+import { Button, Row, RowList, RowsSkeleton, Screen, Sheet, T } from "@/ds";
+import { space, useTheme } from "@/theme";
 import { adminCalls, useAdminAction, useStudentCredentials, useStudentDoubts, useStudentMessages, useStudentProfile } from "../api";
 import type { AdminStudent, AdminStudentRow, StudentDetail } from "../contract";
 import type { LoginLinkResult } from "../extra";
 import { ACCOUNT_NEXT, accountLabel, accountTone, ago, day, FLAG_LABEL, minutes, nextStep, pct, whatsapp } from "../format";
-import { Block, ConfirmSheet, DayBars, Facts, Figures, Loaded, Meter, Notice, Quiet, SmallButton, Status, Tag, Tags } from "../kit";
+import { Block, ConfirmSheet, DayBars, Facts, Figures, Loaded, Meter, Notice, Quiet, ScrollTabs, SmallButton, Status, TabSwap, Tag, Tags } from "../kit";
 import { openCompose } from "../nav";
 import { useAdminRole } from "../role";
 import { CertLine } from "./certificates";
@@ -22,17 +22,6 @@ const TABS = [
   { id: "messages" as const, name: "Messages" },
 ];
 type Tab = (typeof TABS)[number]["id"];
-
-/** Underlined tabs that slide sideways when they do not fit a narrow phone. */
-export function ScrollTabs<V extends string>({ tabs, value, onChange }: { tabs: { id: V; name: string }[]; value: V; onChange: (v: V) => void }) {
-  return (
-    <ScrollView horizontal showsHorizontalScrollIndicator={false} style={{ marginHorizontal: -layout.gutter, flexGrow: 0 }} contentContainerStyle={{ paddingHorizontal: layout.gutter, minWidth: "100%" }}>
-      <View style={{ flex: 1 }}>
-        <TabRow tabs={tabs} value={value} onChange={onChange} />
-      </View>
-    </ScrollView>
-  );
-}
 
 /** The login link sheet: the link was emailed; it can also go by WhatsApp. */
 export function LinkSheet({ link, name, mobile, onClose, title = "Login link sent" }: { link: LoginLinkResult | null; name: string; mobile: string | null; onClose: () => void; title?: string }) {
@@ -282,7 +271,9 @@ export function AdminStudentView({ r, d, tab, onTab, phone }: { r: AdminStudentR
         </T>
       </Notice>
       <ScrollTabs tabs={TABS} value={tab} onChange={onTab} />
-      {tab === "overview" ? <Overview r={r} d={d} /> : tab === "access" ? <Access r={r} phone={phone} /> : tab === "activity" ? <ActivityTab r={r} d={d} /> : tab === "credentials" ? <Credentials r={r} /> : <Messages r={r} />}
+      <TabSwap tabs={TABS} value={tab} gap={space[5]}>
+        {tab === "overview" ? <Overview r={r} d={d} /> : tab === "access" ? <Access r={r} phone={phone} /> : tab === "activity" ? <ActivityTab r={r} d={d} /> : tab === "credentials" ? <Credentials r={r} /> : <Messages r={r} />}
+      </TabSwap>
       <LinkSheet link={link} name={r.name} mobile={r.mobileNumber} onClose={() => setLink(null)} />
     </>
   );

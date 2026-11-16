@@ -8,10 +8,9 @@ import { space, useTheme } from "@/theme";
 import { adminCalls, useAdminAction, useBatches, useInbox, useInboxThread, useRefreshAdmin } from "../api";
 import type { InboxItem } from "../extra";
 import { ago, plural, whatsapp } from "../format";
-import { Loaded, Notice, SmallButton, Tag } from "../kit";
+import { Loaded, Notice, ScrollTabs, SmallButton, TabSwap, Tag } from "../kit";
 import { AdminTop, openCompose, openStudent } from "../nav";
 import { useAdminRole, VIEW_ONLY_LINE } from "../role";
-import { ScrollTabs } from "./student";
 
 export function InboxLine({ i }: { i: InboxItem }) {
   const tag = i.kind === "enquiry" ? "Enquiry" : i.kind === "concern" ? "Concern" : i.kind === "doubt" ? "Doubt" : null;
@@ -75,17 +74,9 @@ export function AdminMessagesScreen() {
         value={tab}
         onChange={setTab}
       />
-      {tab === "inbox" ? <InboxList /> : <Sent />}
-    </Screen>
-  );
-}
-
-/** The inbox on its own (from More). */
-export function AdminInboxScreen() {
-  const { refresh, refreshing } = useRefreshAdmin();
-  return (
-    <Screen title="Inbox" testID="admin-inbox" onRefresh={refresh} refreshing={refreshing}>
-      <InboxList />
+      <TabSwap tabs={[{ id: "inbox" as const }, { id: "sent" as const }]} value={tab} gap={space[5]}>
+        {tab === "inbox" ? <InboxList /> : <Sent />}
+      </TabSwap>
     </Screen>
   );
 }

@@ -6,10 +6,9 @@ import { Button, EmptyState, Row, RowList, RowsSkeleton, Screen } from "@/ds";
 import { space } from "@/theme";
 import { useActivity, useBehind, useCohorts, useRefreshAdmin } from "../api";
 import { ago, day, pct } from "../format";
-import { Block, Dot, FilterChips, Figures, Loaded, Meter, Quiet, SmallButton, Status } from "../kit";
+import { Block, Dot, Figures, FilterChips, Loaded, Meter, Quiet, ScrollTabs, SmallButton, Status, TabSwap } from "../kit";
 import { AdminTop, openCompose, openStudent } from "../nav";
 import { useAdminRole } from "../role";
-import { ScrollTabs } from "./student";
 
 const VIEWS = [
   { id: "live" as const, name: "Live" },
@@ -184,12 +183,21 @@ function Cohorts() {
 /** Activity: who is on now, who is falling behind, how each cohort is doing. */
 export function AdminActivityScreen() {
   const params = useLocalSearchParams<{ view?: string }>();
-  const [view, setView] = React.useState<View_>(VIEWS.some((v) => v.id === params.view) ? (params.view as View_) : "live");
+  const asked = VIEWS.some((v) => v.id === params.view) ? (params.view as View_) : null;
+  const [view, setView] = React.useState<View_>(asked ?? "live");
+  // A new address (Home's "on VIBHA now", a to-do) picks its view even when the tab is already open.
+  const [seen, setSeen] = React.useState(params.view);
+  if (params.view !== seen) {
+    setSeen(params.view);
+    if (asked) setView(asked);
+  }
   const { refresh, refreshing } = useRefreshAdmin();
   return (
     <Screen tab top={<AdminTop />} title="Activity" testID="admin-activity" gap={space[5]} onRefresh={refresh} refreshing={refreshing}>
       <ScrollTabs tabs={VIEWS} value={view} onChange={setView} />
-      {view === "live" ? <Live /> : view === "behind" ? <Behind /> : view === "students" ? <Students /> : <Cohorts />}
+      <TabSwap tabs={VIEWS} value={view} gap={space[5]}>
+        {view === "live" ? <Live /> : view === "behind" ? <Behind /> : view === "students" ? <Students /> : <Cohorts />}
+      </TabSwap>
     </Screen>
   );
 }
