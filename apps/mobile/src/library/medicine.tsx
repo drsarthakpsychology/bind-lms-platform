@@ -8,15 +8,15 @@ import { ApiFailure } from "@/api/errors";
 import { Button, EmptyState, LoadError, Row, RowList, RowsSkeleton, Sheet, T } from "@/ds";
 import { haptic } from "@/lib/haptics";
 import { openTarget } from "@/nav/targets";
-import { fonts, layout, motion, space, useTheme } from "@/theme";
+import { fonts, layout, space, useTheme } from "@/theme";
 import { MedicineDiagrams } from "./med-diagrams";
 import { useMedicineList, useMedicinePage } from "./list";
 import { recentMedicines } from "@/lib/recent";
 import { ClassMark } from "./marks";
 import { searchMeds } from "./meds";
 import type { MedicinePage, MedSection } from "@/practise/contract";
-import Animated, { FadeIn, useReducedMotion } from "react-native-reanimated";
-import { Enter } from "@/motion";
+import { useReducedMotion } from "react-native-reanimated";
+import { Enter, Swap } from "@/motion";
 
 type View_ = "student" | "clinician";
 
@@ -147,7 +147,7 @@ export function MedicinePageView({ page, jump }: { page: MedicinePage; jump?: st
               ))}
             </View>
             {d ? (
-              <Animated.View key={`dose-${dose}-${view}`} entering={reduce ? undefined : FadeIn.duration(motion.state)} style={{ gap: space[2] }}>
+              <Swap k={`dose-${dose}-${view}`} style={{ gap: space[2] }}>
                 <T v="small" tone="muted">
                   {d.use}
                 </T>
@@ -157,7 +157,7 @@ export function MedicinePageView({ page, jump }: { page: MedicinePage; jump?: st
                     <Bullets items={d.watch} />
                   </Fact>
                 ) : null}
-              </Animated.View>
+              </Swap>
             ) : null}
             {x.take.length ? (
               <Fact name="How to take it">
@@ -270,9 +270,9 @@ export function MedicinePageView({ page, jump }: { page: MedicinePage; jump?: st
               </Pressable>
             </View>
           </View>
-          <Animated.View key={view} entering={reduce ? undefined : FadeIn.duration(motion.state)}>
+          <Swap k={view}>
             <T v="reading">{view === "student" ? page.summary.student : page.summary.clinician}</T>
-          </Animated.View>
+          </Swap>
         </Enter>
 
         {rest.map(part)}

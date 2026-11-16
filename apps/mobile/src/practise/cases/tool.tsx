@@ -2,12 +2,12 @@ import { useLocalSearchParams } from "expo-router";
 import { Check } from "lucide-react-native";
 import * as React from "react";
 import { Pressable, View } from "react-native";
-import Animated, { FadeInRight, useReducedMotion } from "react-native-reanimated";
 
 import { Button, EmptyState, Field, ProgressLine, Row, RowList, T } from "@/ds";
 import { haptic } from "@/lib/haptics";
+import { Swap } from "@/motion";
 import { Rich } from "@/study/rich";
-import { fonts, layout, motion, space, useTheme } from "@/theme";
+import { fonts, layout, space, useTheme } from "@/theme";
 import { noteAnswers, saveCase, sendRecord, useTool } from "../api";
 import type { CaseMark, PractiseRecordKind } from "../contract";
 import { formatDomainKey } from "../tools/mse";
@@ -95,7 +95,6 @@ function ToolPicker({ tool, title, line, howTo, list, recycleLine, onPick }: { t
 }
 
 function ToolRun({ tool, def, howTo, records, browse, again }: { tool: ToolId; def: Def; howTo: string[]; records: PractiseRecordKind[]; browse: (() => void) | null; again: () => void }) {
-  const reduce = useReducedMotion();
   const react = useReactions();
   const entry = caseTool(tool);
   const [at, setAt] = React.useState(def.start ?? 0);
@@ -188,10 +187,10 @@ function ToolRun({ tool, def, howTo, records, browse, again }: { tool: ToolId; d
           <Rich text={def.intro} v="reading" />
         </Story>
       ) : null}
-      <Animated.View key={at} entering={reduce ? undefined : FadeInRight.duration(motion.state)} style={{ gap: space[4] }}>
+      <Swap k={at} dir={1} style={{ gap: space[4] }}>
         <StepView step={step} reveal={reveal} picked={picked} disabled={false} onAnswer={answer} />
         {reveal ? <RevealBand step={step} reveal={reveal} seed={at} /> : null}
-      </Animated.View>
+      </Swap>
     </GameFrame>
   );
 }

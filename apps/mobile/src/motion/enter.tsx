@@ -1,8 +1,8 @@
 import * as React from "react";
 import { Platform, type StyleProp, type ViewStyle } from "react-native";
-import Animated, { FadeIn, FadeInDown, FadeOut, FadeOutUp, LinearTransition, useReducedMotion, ZoomIn } from "react-native-reanimated";
+import Animated, { FadeIn, FadeInDown, FadeOut, FadeOutUp, LinearTransition, useReducedMotion, withSpring, withTiming, ZoomIn } from "react-native-reanimated";
 
-import { curves, dur, springs, stagger } from "./tokens";
+import { curves, dur, shift, springs, stagger } from "./tokens";
 
 /** Delay for the i-th item of a staggered group, capped so long lists never wait. */
 export function staggerDelay(i: number, base = 0): number {
@@ -49,6 +49,45 @@ export const presets = {
   outUp: () => cached("outUp", () => FadeOutUp.duration(dur.exit).easing(curves.out)),
   /** Rows sliding into the gap when one is added or removed. */
   layout: () => cached("layout", () => LinearTransition.springify().stiffness(springs.snappy.stiffness).damping(springs.snappy.damping).mass(springs.snappy.mass)),
+  /**
+   * Keyed content arriving (a question, a round): fade and an 8px move from
+   * the direction of travel, 180ms. `dir` 1 = from the right, -1 = from the
+   * left, 0 = rises. Prefer the `Swap` part, which also plays the old one out.
+   */
+  swap: (dir: -1 | 0 | 1 = 0) =>
+    cached(`swap${dir}`, () => () => {
+      "worklet";
+      const t = { duration: dur.swapIn, easing: curves.out };
+      return {
+        initialValues: { opacity: 0, transform: [{ translateX: dir * shift.swapIn }, { translateY: dir ? 0 : shift.swapIn }] },
+        animations: { opacity: withTiming(1, t), transform: [{ translateX: withTiming(0, t) }, { translateY: withTiming(0, t) }] },
+      };
+    }),
+  /** Keyed content leaving: fade and 6px up, 100ms. */
+  swapOut: () => cached("swapOut", () => FadeOutUp.duration(dur.swapOut).easing(curves.out).withInitialValues({ opacity: 1, transform: [{ translateY: 0 }] })),
+  /** A verdict band: readable by 120ms, then settles the last 16px on the smooth spring. */
+  verdict: (delay = 0) =>
+    cached(`verdict${delay}`, () => () => {
+      "worklet";
+      return {
+        initialValues: { opacity: 0, transform: [{ translateY: 16 }] },
+        animations: { opacity: withTiming(1, { duration: 120, easing: curves.out }), transform: [{ translateY: withSpring(0, springs.smooth) }] },
+      };
+    }),
+  /** A toast rising in from the bottom edge: 12px and a fade, 180ms. */
+  toast: () =>
+    cached("toast", () => () => {
+      "worklet";
+      const t = { duration: dur.toastIn, easing: curves.out };
+      return { initialValues: { opacity: 0, transform: [{ translateY: shift.toast }] }, animations: { opacity: withTiming(1, t), transform: [{ translateY: withTiming(0, t) }] } };
+    }),
+  /** A toast leaving the way it came: drops 12px and fades, 140ms. */
+  toastOut: () =>
+    cached("toastOut", () => () => {
+      "worklet";
+      const t = { duration: dur.toastOut, easing: curves.out };
+      return { initialValues: { opacity: 1, transform: [{ translateY: 0 }] }, animations: { opacity: withTiming(0, t), transform: [{ translateY: withTiming(shift.toast, t) }] } };
+    }),
 } as const;
 
 /**
