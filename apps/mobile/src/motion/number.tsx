@@ -41,7 +41,7 @@ function Column({ digit, from, delay, v, tone, style }: { digit: number; from: n
  *
  * `<RollingNumber value={86} suffix="%" v="h1" />`
  */
-export function RollingNumber({ value, prefix = "", suffix = "", v = "h2", tone, style, format = (n) => String(n), testID }: { value: number; prefix?: string; suffix?: string; v?: TProps["v"]; tone?: TProps["tone"]; style?: StyleProp<TextStyle>; format?: (n: number) => string; testID?: string }) {
+export function RollingNumber({ value, from, prefix = "", suffix = "", v = "h2", tone, style, format = (n) => String(n), testID }: { value: number; /** Start the first roll from this number instead of zero (a streak rolling from yesterday's count). */ from?: number; prefix?: string; suffix?: string; v?: TProps["v"]; tone?: TProps["tone"]; style?: StyleProp<TextStyle>; format?: (n: number) => string; testID?: string }) {
   const reduce = useReducedMotion();
   const text = `${prefix}${format(Math.round(value))}${suffix}`;
   if (reduce) {
@@ -52,6 +52,8 @@ export function RollingNumber({ value, prefix = "", suffix = "", v = "h2", tone,
     );
   }
   const chars = text.split("");
+  // Digits of the starting number, right-aligned with this one's places.
+  const start = from === undefined ? "" : format(Math.round(from)).replace(/\D/g, "");
   const digitCount = chars.filter((ch) => ch >= "0" && ch <= "9").length;
   let place = 0;
   return (
@@ -60,7 +62,8 @@ export function RollingNumber({ value, prefix = "", suffix = "", v = "h2", tone,
         if (ch >= "0" && ch <= "9") {
           const k = place++;
           // Keyed from the right, so 99 -> 100 keeps the units column rolling.
-          return <Column key={`d${digitCount - k}`} digit={Number(ch)} from={0} delay={(digitCount - 1 - k) * 30} v={v} tone={tone} style={style} />;
+          const s = start[start.length - (digitCount - k)];
+          return <Column key={`d${digitCount - k}`} digit={Number(ch)} from={s ? Number(s) : 0} delay={(digitCount - 1 - k) * 30} v={v} tone={tone} style={style} />;
         }
         return (
           <T key={`c${i}`} v={v} tone={tone} num style={style}>

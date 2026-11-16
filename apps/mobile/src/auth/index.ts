@@ -6,6 +6,7 @@ import { fetchTransport } from "@/api/client";
 import { mockTransport } from "@/api/mock/server";
 import { config } from "@/lib/config";
 import { prefs, secure } from "@/lib/storage";
+import { setBiometricEnabled } from "./biometric";
 import { createSession } from "./session";
 
 const signedOutListeners = new Set<() => void>();
@@ -37,7 +38,11 @@ export const session = createSession({
   }),
   pinMaxTries: config.pin.maxTries,
   lockAfterMs: config.pin.lockAfterMs,
-  onSignedOut: () => signedOutListeners.forEach((fn) => fn()),
+  onSignedOut: () => {
+    // Fingerprint or face unlock belongs to this sign-in: the next person chooses again.
+    void setBiometricEnabled(false);
+    signedOutListeners.forEach((fn) => fn());
+  },
   beforeSignOut: async () => {
     await Promise.all([...beforeSignOutTasks].map((fn) => fn().catch(() => undefined)));
   },

@@ -124,7 +124,7 @@ export function BlitzGame() {
     const s = d?.state ?? run;
     return (
       <GameFrame testID="game-blitz" title="Blitz" thumb={<EndThumb again={() => void start()} extra={{ label: "This week's board", onPress: () => router.push("/game/leaderboard?game=blitz") }} />}>
-        <EndPanel score={String(s.score)} line={d?.newBest ? "A new best." : d ? `Your best before today: ${d.bests.mine}` : "Saved when you are back online."} right={s.correct} total={Math.max(1, s.answered)} stats={[{ label: "Right", value: `${s.correct}/${s.answered}` }, { label: "Best streak", value: String(s.best) }, ...(d ? [{ label: "XP", value: `+${d.xp}` }] : [])]}>
+        <EndPanel score={String(s.score)} best={!!d?.newBest} line={d?.newBest ? "A new best." : d ? `Your best before today: ${d.bests.mine}` : "Saved when you are back online."} right={s.correct} total={Math.max(1, s.answered)} stats={[{ label: "Right", value: `${s.correct}/${s.answered}` }, { label: "Best streak", value: String(s.best) }, ...(d ? [{ label: "XP", value: `+${d.xp}` }] : [])]}>
           {d?.bests.cohort ? (
             <T v="small" tone="muted">
               Best in your batch this week: {d.bests.cohort.score} ({d.bests.cohort.you ? "you" : d.bests.cohort.name})

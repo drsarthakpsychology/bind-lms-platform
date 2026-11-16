@@ -7,7 +7,7 @@ import type { NotificationList, NotificationRow, ReadAllResult } from "@/api/con
 import { notificationListView } from "@/api/adapt-learn";
 import { keys, useNotifications } from "@/api/queries";
 import { api } from "@/auth";
-import { Button, EmptyState, Loaded, Row, RowList, Screen } from "@/ds";
+import { Button, EmptyState, Loaded, Row, RowList, Screen, Section } from "@/ds";
 import { MoreButton, useMorePages } from "@/ds/more";
 import { toast } from "@/ds/toast";
 import { haptic } from "@/lib/haptics";
@@ -23,6 +23,30 @@ export function when(iso: string | null | undefined, now = Date.now()): string {
   return d.toLocaleDateString("en-IN", { day: "numeric", month: "short" });
 }
 
+/** Today, This week (the last 7 days) or Earlier. */
+export function dayGroup(iso: string | null | undefined, now = Date.now()): "Today" | "This week" | "Earlier" {
+  const t = iso ? Date.parse(iso) : NaN;
+  if (!Number.isFinite(t)) return "Earlier";
+  const days = Math.floor((new Date(now).setHours(0, 0, 0, 0) - new Date(t).setHours(0, 0, 0, 0)) / 86_400_000);
+  if (days <= 0) return "Today";
+  if (days < 7) return "This week";
+  return "Earlier";
+}
+
+/** The rows under Today, This week and Earlier headings (newest first, as the server sends them). */
+export function NotificationGroups({ items, now }: { items: NotificationRow[]; now: number }) {
+  const groups = (["Today", "This week", "Earlier"] as const).map((g) => ({ g, rows: items.filter((n) => dayGroup(n.createdAt, now) === g) })).filter((x) => x.rows.length);
+  return (
+    <>
+      {groups.map(({ g, rows }) => (
+        <Section key={g} title={g} quiet>
+          <NotificationRows items={rows} />
+        </Section>
+      ))}
+    </>
+  );
+}
+
 export function NotificationRows({ items }: { items: NotificationRow[] }) {
   return (
     <RowList>
@@ -33,18 +57,18 @@ export function NotificationRows({ items }: { items: NotificationRow[] }) {
   );
 }
 
-/** Every notification, 50 at a time. */
-function AllNotifications({ first }: { first: NotificationList }) {
+/** Every notification, 50 at a time, under the day headings; "Show older" brings the next 50 into them. */
+function AllNotifications({ first, now }: { first: NotificationList; now: number }) {
   const m = useMorePages(first, async (cursor) => notificationListView(await api.get<unknown>("/notifications", { query: { limit: 50, cursor } })));
   return (
     <>
-      <NotificationRows items={m.items} />
+      <NotificationGroups items={m.items} now={now} />
       <MoreButton more={m.more} busy={m.busy} error={m.error} onPress={() => void m.loadMore()} testID="notifications-more" />
     </>
   );
 }
 
-/** Notifications: one list, newest first, a blue dot and bold title when unread. */
+/** Notifications: newest first under Today, This week and Earlier; a blue dot and bold title when unread. */
 export function NotificationsScreen() {
   const qc = useQueryClient();
   const q = useNotifications();
@@ -62,11 +86,12 @@ export function NotificationsScreen() {
     }
   };
   const unread = q.data?.unread ?? 0;
+  const [now] = React.useState(() => Date.now());
   return (
     <Screen testID="notifications" onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
       <Stack.Screen options={{ headerRight: () => (unread ? <Button kind="text" label="Mark all read" busy={busy} onPress={() => void readAll()} testID="read-all" style={{ marginRight: Platform.OS === "web" ? 16 : 0 }} /> : null) }} />
       <Loaded q={q} what="your notifications">
-        {(d) => (d.items.length ? <AllNotifications first={d} /> : <EmptyState mood="clear" title="Nothing new" body="Messages from the school and answers to your doubts show up here." testID="notifications-empty" />)}
+        {(d) => (d.items.length ? <AllNotifications first={d} now={now} /> : <EmptyState mood="clear" title="Nothing new" body="Messages from the school and answers to your doubts show up here." testID="notifications-empty" />)}
       </Loaded>
     </Screen>
   );

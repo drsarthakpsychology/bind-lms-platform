@@ -235,7 +235,8 @@ describe("small numbers", () => {
   it("a new student is not told '0 days in a row'", () => {
     // eslint-disable-next-line @typescript-eslint/no-require-imports
     const { streakLine } = require("@/screens/home/home") as typeof import("@/screens/home/home");
-    expect(streakLine(0)).toBe("Start your streak today");
+    expect(streakLine(0)).toBe("");
+    expect(streakLine(0, true)).toBe("Your first points come from the first lecture");
     expect(streakLine(1)).toBe("1 day in a row");
     expect(streakLine(6)).toBe("6 days in a row");
   });

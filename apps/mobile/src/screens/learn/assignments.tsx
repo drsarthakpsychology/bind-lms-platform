@@ -58,7 +58,7 @@ export function AssignmentsBody({ items, now }: { items: AssignmentRow[]; now: n
         <Section title="Marked">
           <RowList>
             {marked.map((a) => (
-              <Row key={a.id} title={a.title} meta={meta(a)} icon={<Check size={20} color={c.ink} />} trailing={a.score !== null ? String(a.score) : "Marked"} onPress={() => open(a)} />
+              <Row key={a.id} title={a.title} meta={meta(a)} icon={<Check size={20} color={c.ink} />} trailing={a.score !== null ? `${a.score} of 100` : "Marked"} onPress={() => open(a)} />
             ))}
           </RowList>
         </Section>

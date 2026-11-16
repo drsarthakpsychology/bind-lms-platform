@@ -1,1 +1,1 @@
-export { JourneyScreen as default } from "@/screens/me/journey";
+export { ProgressScreen as default } from "@/screens/me/progress";

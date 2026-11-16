@@ -5,8 +5,8 @@ import Animated, { useAnimatedStyle, useReducedMotion, useSharedValue, withSeque
 
 import { T } from "@/ds";
 import { haptic } from "@/lib/haptics";
-import { springs } from "@/motion";
-import { fonts, motion, space, useTheme } from "@/theme";
+import { dur, springs } from "@/motion";
+import { fonts, space, useTheme } from "@/theme";
 
 const KEYS = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "", "0", "del"] as const;
 const LIME = "#cdf24b";
@@ -90,11 +90,12 @@ function Key({ k, onPress, disabled }: { k: string; onPress: () => void; disable
       accessibilityLabel={k === "del" ? "Delete last digit" : k}
       disabled={disabled}
       onPress={onPress}
-      onPressIn={() => down.set(reduce ? 1 : withTiming(1, { duration: motion.press / 2 }))}
-      onPressOut={() => down.set(reduce ? 0 : withTiming(0, { duration: motion.press * 2 }))}
+      onPressIn={() => down.set(reduce ? 1 : withTiming(1, { duration: dur.press / 2 }))}
+      onPressOut={() => down.set(reduce ? 0 : withTiming(0, { duration: dur.press * 2 }))}
       style={{ width: 96, height: 72, alignItems: "center", justifyContent: "center" }}
     >
-      <Animated.View style={[{ width: 72, height: 72, borderRadius: 36, alignItems: "center", justifyContent: "center", opacity: disabled ? 0.4 : 1 }, anim]}>
+      {/* A faint circle on every digit key: the 3x4 grid reads at a glance and the target is clear. */}
+      <Animated.View style={[{ width: 72, height: 72, borderRadius: 36, alignItems: "center", justifyContent: "center", opacity: disabled ? 0.4 : 1, backgroundColor: k === "del" ? "transparent" : c.dark ? "rgba(255,255,255,0.07)" : "rgba(17,17,17,0.045)" }, anim]}>
         <Animated.View pointerEvents="none" style={[{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, borderRadius: 36, backgroundColor: c.dark ? "rgba(205,242,75,0.22)" : "rgba(29,68,216,0.10)" }, glow]} />
         {k === "del" ? (
           <Delete size={26} color={c.ink} />
@@ -108,4 +109,4 @@ function Key({ k, onPress, disabled }: { k: string; onPress: () => void; disable
   );
 }
 
-export const PIN_MOTION = motion.press;
+export const PIN_MOTION = dur.press;

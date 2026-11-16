@@ -38,7 +38,7 @@ let gen = 0;
 /** A sticker stays this long (the website's 10 seconds); a tap removes it at once. */
 export const SHOW_MS = 10_000;
 /** Let the right/wrong mark land first (the website's settle time). */
-const SETTLE_MS = 320;
+export const SETTLE_MS = 320;
 
 const on = () => settingsStore.get().reactions;
 

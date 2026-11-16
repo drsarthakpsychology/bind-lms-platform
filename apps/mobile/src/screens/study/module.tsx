@@ -1,12 +1,12 @@
 import { useQueryClient } from "@tanstack/react-query";
 import { router, useLocalSearchParams } from "expo-router";
-import { ArrowRight, Check, Lock } from "lucide-react-native";
+import { ArrowRight, Check, Circle, Lock } from "lucide-react-native";
 import * as React from "react";
 import { View } from "react-native";
 
-import type { CheckpointSummary, ModuleDetail, SectionToc } from "@/api/contract";
+import type { CheckpointSummary, ModuleDetail, ModuleStatus, SectionToc } from "@/api/contract";
 import { keys, useModule } from "@/api/queries";
-import { Button, Loaded, Row, RowList, RowsSkeleton, Screen, Section, Stat, T } from "@/ds";
+import { Button, Loaded, Row, RowList, RowsSkeleton, Screen, Section, T } from "@/ds";
 import { toast } from "@/ds/toast";
 import { haptic } from "@/lib/haptics";
 import { openTarget } from "@/nav/targets";
@@ -17,6 +17,17 @@ function sectionMark(s: SectionToc, c: ReturnType<typeof useTheme>) {
   if (s.doneOn) return <Check size={20} color={c.ink} accessibilityLabel="Read" />;
   if (s.isTest) return <T v="small" tone="muted">Test</T>;
   return <T v="small" tone="muted" num>{Math.max(1, Math.round(s.words / 200))} min</T>;
+}
+
+/** The module's four steps in plain words: "Read: 1 of 4", "Written: not yet", with a tick when done. */
+export function moduleStatusLines(st: ModuleStatus): { label: string; value: string; done: boolean }[] {
+  const lines = [
+    { label: "Read", value: st.readTotal && st.readDone >= st.readTotal ? "all done" : `${st.readDone} of ${st.readTotal}`, done: st.readTotal > 0 && st.readDone >= st.readTotal },
+    { label: "Written", value: st.written ? "done" : "not yet", done: st.written },
+  ];
+  if (st.actsTotal > 0) lines.push({ label: "Practised", value: st.actsDone >= st.actsTotal ? "all done" : st.actsDone ? `${st.actsDone} of ${st.actsTotal}` : "not yet", done: st.actsDone >= st.actsTotal });
+  lines.push({ label: "Test", value: st.best !== null && st.total ? `best ${st.best} of ${st.total}` : "not yet", done: st.tested });
+  return lines;
 }
 
 const CP_WORD: Record<CheckpointSummary["status"], string> = { early: "Read the sections first", waiting: "Opens after the sections", ready: "Ready", done: "Done" };
@@ -58,11 +69,15 @@ export function ModuleBody({ m }: { m: ModuleDetail }) {
           <Button label={m.next.kind === "test" || m.next.kind === "retest" ? "Take the test" : m.next.kind === "checkpoint" ? "Open the checkpoint" : "Carry on"} icon={<ArrowRight size={20} color={c.onPrimary} />} onPress={() => openTarget(m.next.target)} testID="module-next" />
         </View>
       ) : null}
-      <View style={{ flexDirection: "row", flexWrap: "wrap", columnGap: space[6], rowGap: space[3] }}>
-        <Stat value={`${m.status.readDone}/${m.status.readTotal}`} label="Read" />
-        <Stat value={m.status.written ? "Yes" : "No"} label="Written" />
-        <Stat value={`${m.status.actsDone}/${m.status.actsTotal}`} label="Practised" />
-        <Stat value={m.status.best !== null && m.status.total ? `${m.status.best}/${m.status.total}` : "Not yet"} label="Test" />
+      <View style={{ gap: space[1] }} testID="module-status">
+        {moduleStatusLines(m.status).map((l) => (
+          <View key={l.label} style={{ flexDirection: "row", alignItems: "center", gap: space[2] }}>
+            {l.done ? <Check size={18} color={c.ink} /> : <Circle size={18} color={c.muted} />}
+            <T num>
+              <T v="bodyStrong">{l.label}:</T> {l.value}
+            </T>
+          </View>
+        ))}
       </View>
       {parts.map((p, i) => (
         <Section key={i} title={p.part ?? "Sections"}>

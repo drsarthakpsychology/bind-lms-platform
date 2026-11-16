@@ -1,6 +1,6 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { createAsyncStoragePersister } from "@tanstack/query-async-storage-persister";
-import { QueryClient, useMutation, useQuery, useQueryClient, type UseQueryResult } from "@tanstack/react-query";
+import { MutationCache, QueryCache, QueryClient, useMutation, useQuery, useQueryClient, type UseQueryResult } from "@tanstack/react-query";
 
 import { api, onSignedOut, session } from "@/auth";
 import { config } from "@/lib/config";
@@ -9,6 +9,16 @@ import * as A from "./adapt";
 import * as K from "./adapt-core";
 import * as L from "./adapt-learn";
 import { ApiFailure } from "./errors";
+import { configureOnline, markOffline, markOnline } from "./online";
+
+/** A call that could not reach the server marks the phone offline; any answer marks it online. */
+const follow = {
+  onError: (e: unknown) => {
+    if (e instanceof ApiFailure && e.code === "network") markOffline();
+    else if (e instanceof ApiFailure && e.status > 0) markOnline();
+  },
+  onSuccess: () => markOnline(),
+};
 
 /**
  * Server data. TanStack Query keeps a copy of every answer, shows it at once
@@ -17,13 +27,16 @@ import { ApiFailure } from "./errors";
  * addresses and test questions are never kept.
  */
 export const queryClient = new QueryClient({
+  queryCache: new QueryCache(follow),
+  mutationCache: new MutationCache(follow),
   defaultOptions: {
     queries: {
       staleTime: 30_000,
       gcTime: 24 * 60 * 60 * 1000,
       retry: (count, error) => {
         if (error instanceof ApiFailure && error.code !== "network" && error.code !== "server_error" && error.code !== "rate_limited") return false;
-        return count < 2;
+        // One retry, then the error shows with Try again (the student is not kept on a skeleton).
+        return count < 1;
       },
       refetchOnReconnect: true,
     },
@@ -42,6 +55,12 @@ export const persistOptions = {
   buster: `c3-${config.appVersion}-${config.appBuild}`,
   dehydrateOptions: { shouldDehydrateQuery: (q: { queryKey: readonly unknown[]; state: { status: string } }) => q.state.status === "success" && !NEVER_PERSIST.has(String(q.queryKey[0])) },
 };
+
+configureOnline({
+  probe: () => api.get("/config", { auth: false }),
+  // Back online: load again whatever could not load.
+  onBack: () => void queryClient.refetchQueries({ type: "active", predicate: (q) => q.state.status === "error" }),
+});
 
 onSignedOut(() => {
   queryClient.clear();

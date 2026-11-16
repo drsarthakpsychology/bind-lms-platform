@@ -191,6 +191,37 @@ export function createSession(deps: SessionDeps) {
       return false;
     },
 
+    /**
+     * Settings > Change PIN, step one: is this the current PIN? A wrong one
+     * counts like a wrong try on the lock screen; the fifth signs out.
+     */
+    async checkPin(value: string): Promise<{ ok: boolean; triesLeft: number }> {
+      const r = await pin.verify(value);
+      if (r.ok) {
+        store.set({ triesLeft: deps.pinMaxTries });
+        return { ok: true, triesLeft: deps.pinMaxTries };
+      }
+      if (r.lockedOut) {
+        await this.signOut("pin_tries");
+        return { ok: false, triesLeft: 0 };
+      }
+      store.set({ triesLeft: r.triesLeft });
+      return { ok: false, triesLeft: r.triesLeft };
+    },
+
+    /** Settings > Change PIN, last step (after checkPin said yes). */
+    async changePin(value: string): Promise<void> {
+      await pin.set(value);
+      store.set({ triesLeft: deps.pinMaxTries });
+    },
+
+    /** The phone's fingerprint or face check matched on the lock screen: open, like a right PIN. */
+    openWithBiometric(): void {
+      if (store.get().phase !== "locked") return;
+      backgroundedAt = null;
+      store.set({ phase: "ready" });
+    },
+
     /** Forgot the PIN: sign out; signing in with the password again lets them choose a new one. */
     async forgotPin(): Promise<void> {
       await this.signOut("forgot_pin");

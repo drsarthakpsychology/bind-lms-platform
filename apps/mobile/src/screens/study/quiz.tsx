@@ -16,6 +16,7 @@ import { haptic } from "@/lib/haptics";
 import { useHardwareBack } from "@/nav/back";
 import { Rich } from "@/study/rich";
 import { Burst, Confetti, RollingNumber, Swap } from "@/motion";
+import { streakMoment } from "@/moments/host";
 import { fonts, layout, motion, space, useTheme } from "@/theme";
 
 /**
@@ -68,6 +69,7 @@ export function QuizRunner({ title, questions, submit, onDone, doneLabel }: { ti
       const r = await submit(picks);
       if (r.right === r.total) haptic.success();
       setResult(r);
+      streakMoment.done();
       scroll.current?.scrollTo({ y: 0, animated: false });
     } catch (e) {
       haptic.warn();

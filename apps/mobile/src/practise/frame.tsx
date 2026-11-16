@@ -2,7 +2,7 @@ import { router } from "expo-router";
 import { CircleHelp, X } from "lucide-react-native";
 import * as React from "react";
 import { Pressable, ScrollView, View } from "react-native";
-import Animated, { FadeIn, FadeInDown, useReducedMotion } from "react-native-reanimated";
+import Animated, { useAnimatedStyle, useReducedMotion, useSharedValue, withSequence, withSpring, withTiming } from "react-native-reanimated";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { Button, EmptyState, Sheet, Skeleton, T, VerdictBand } from "@/ds";
@@ -10,14 +10,19 @@ import { useKeyboardPad } from "@/ds/keyboard-pad";
 import { haptic } from "@/lib/haptics";
 import { useHardwareBack } from "@/nav/back";
 import { useSeen } from "@/lib/once";
+import { streakMoment } from "@/moments/host";
 import { Rich } from "@/study/rich";
-import { fonts, layout, motion, space, useTheme } from "@/theme";
+import { fonts, layout, space, useTheme } from "@/theme";
 import { ApiFailure } from "@/api/errors";
 import { isSoon } from "./api";
 import { SoonState } from "./soon";
-import { Confetti, RollingNumber } from "@/motion";
+import { beats, Confetti, curves, dur, PixelBurst, presets, RollingNumber, scaled, springs, staggerDelay, useCelebrate, useMotionTier } from "@/motion";
+import { InkDraw, MaskUp, PixelLoader, useRun, useSlow } from "@/moments/parts";
+import { ALL_ENTRIES, type Icon } from "./catalog";
+import { EntryIcon } from "./icons";
 import { Bump } from "./fx";
 import { moodForScore, reactions, StickerLayer } from "./reactions";
+import { SETTLE_MS } from "@/ds/reactions";
 
 /**
  * The one frame every game and practice tool sits in. Four parts, always in
@@ -38,6 +43,9 @@ export function leave(): void {
   if (router.canGoBack()) router.back();
   else router.replace("/practise");
 }
+
+/** The frame's screen-wide effects, for parts deep in the scroll (confetti must cover the screen, not the panel). */
+const FrameFx = React.createContext<{ confetti: () => void }>({ confetti: () => undefined });
 
 export type FrameProps = {
   title: string;
@@ -80,10 +88,14 @@ export function GameFrame({ title, howTo, score, scoreLabel = "Score", hud, chil
   React.useEffect(() => () => reactions.dismiss(), []);
   const closeHelp = React.useCallback(() => setHelp(false), []);
   const closeAsk = React.useCallback(() => setAsking(false), []);
+  const [confetti, setConfetti] = React.useState(0);
+  const tier = useMotionTier();
+  const fx = React.useMemo(() => ({ confetti: () => setConfetti((n) => n + 1) }), []);
   const body = <View style={{ gap: space[5], width: "100%", maxWidth: layout.readingWidth, alignSelf: "center" }}>{children}</View>;
   // Typing an answer: the keyboard must not cover the box or the Check button.
   const { ref: kbRef, pad: kbPad, onLayout: kbLayout } = useKeyboardPad();
   return (
+    <FrameFx.Provider value={fx}>
     <View ref={kbRef} onLayout={kbLayout} testID={testID} style={{ flex: 1, backgroundColor: c.bg, paddingTop: insets.top, paddingBottom: kbPad }}>
       <View style={{ backgroundColor: c.bg }}>
         <View style={{ minHeight: 56, flexDirection: "row", alignItems: "center", paddingHorizontal: space[1], gap: space[1] }}>
@@ -123,6 +135,7 @@ export function GameFrame({ title, howTo, score, scoreLabel = "Score", hud, chil
         </View>
       ) : null}
       <StickerLayer above={thumb ? thumbH || undefined : insets.bottom} />
+      <Confetti fire={confetti} count={scaled(36, tier)} />
       <HowToSheet open={help} onClose={closeHelp} steps={howTo ?? []} />
       <Sheet open={asking} onClose={closeAsk} title="Leave this round?">
         <View style={{ gap: space[3] }}>
@@ -140,6 +153,7 @@ export function GameFrame({ title, howTo, score, scoreLabel = "Score", hud, chil
         </View>
       </Sheet>
     </View>
+    </FrameFx.Provider>
   );
 }
 
@@ -173,6 +187,31 @@ export function HowToSheet({ open, onClose, steps, onPlay }: { open: boolean; on
 
 /* ------------------------------------------------------------ start screen */
 
+/**
+ * A game's intro, under 500ms: its icon pops while a ring of ink draws
+ * itself around it, the title rises out of its mask, the line fades up and
+ * the choices rise in 40ms apart. Play works from the first frame.
+ */
+export const INTRO_AT = { title: 80, line: 200, chips: 240 } as const;
+const MARK_RING = [{ k: "game-mark", shape: { t: "ellipse" as const, cx: 28, cy: 28, w: 50, h: 48 } }];
+const MARK_OPTS = { stroke: "@ink", sw: 1.8, rough: 1.2 };
+
+function GameMark({ icon }: { icon: Icon }) {
+  const c = useTheme();
+  const reduce = useReducedMotion();
+  const p = useRun(0, 420, false, curves.inOut);
+  return (
+    <View style={{ width: 56, height: 56, alignItems: "center", justifyContent: "center" }} accessibilityElementsHidden importantForAccessibility="no-hide-descendants">
+      <View style={{ position: "absolute", top: 0, left: 0 }}>
+        <InkDraw shapes={MARK_RING} p={p} width={56} height={56} o={MARK_OPTS} />
+      </View>
+      <Animated.View entering={reduce ? undefined : presets.pop(60)}>
+        <EntryIcon icon={icon} size={26} color={c.ink} />
+      </Animated.View>
+    </View>
+  );
+}
+
 export type Choice<V extends string> = { id: V; name: string; line?: string };
 
 /**
@@ -193,6 +232,7 @@ export function StartScreen<V extends string>({
   error,
   note,
   below,
+  icon,
   testID,
 }: {
   title: string;
@@ -209,11 +249,14 @@ export function StartScreen<V extends string>({
   /** A quiet fact under the line: "Your best: 240". */
   note?: string | null;
   below?: React.ReactNode;
+  /** The game's icon; found from the catalog by title when not given. */
+  icon?: Icon;
   testID?: string;
 }) {
   const c = useTheme();
   const reduce = useReducedMotion();
   const [help, setHelp] = React.useState(false);
+  const mark = icon ?? ALL_ENTRIES.find((e) => e.title === title)?.icon;
   // The rules show in the empty middle until the first Play on this phone; after that, one link.
   const rules = useSeen(`howto.${testID ?? title}`);
   const play = () => {
@@ -223,25 +266,31 @@ export function StartScreen<V extends string>({
   const summary = !rules.seen && howTo.length ? howTo.slice(0, 3) : null;
   return (
     <GameFrame title="" testID={testID ?? "start"} thumb={<Button label={playLabel} onPress={play} busy={busy} testID="start-play" />}>
-      <Animated.View entering={reduce ? undefined : FadeIn.duration(motion.page)} style={{ gap: space[3], paddingTop: space[4] }}>
-        <T v="display">{title}</T>
-        <T tone="muted" style={{ maxWidth: 460 }}>
-          {line}
-        </T>
+      <View style={{ gap: space[3], paddingTop: space[4] }}>
+        {mark ? <GameMark icon={mark} /> : null}
+        <MaskUp delay={INTRO_AT.title}>
+          <T v="display">{title}</T>
+        </MaskUp>
+        <Animated.View entering={reduce ? undefined : presets.fade(INTRO_AT.line)}>
+          <T tone="muted" style={{ maxWidth: 460 }}>
+            {line}
+          </T>
+        </Animated.View>
         {note ? (
           <T v="small" num style={{ fontFamily: fonts.pixelDigits, color: c.link, letterSpacing: 0.5 }}>
             {note}
           </T>
         ) : null}
-      </Animated.View>
+      </View>
       {choices?.length ? (
         <View style={{ gap: space[2] }} accessibilityRole="radiogroup" accessibilityLabel={choiceLabel}>
           <T v="caption" tone="muted">
             {choiceLabel.toUpperCase()}
           </T>
-          {choices.map((o) => {
+          {choices.map((o, i) => {
             const on = o.id === choice;
             return (
+              <Animated.View key={o.id} entering={reduce ? undefined : presets.rise(staggerDelay(i, INTRO_AT.chips))}>
               <Pressable
                 key={o.id}
                 accessibilityRole="radio"
@@ -264,6 +313,7 @@ export function StartScreen<V extends string>({
                   ) : null}
                 </View>
               </Pressable>
+              </Animated.View>
             );
           })}
         </View>
@@ -356,43 +406,69 @@ export function Verdict({ right, title, why, seed, learn, partial }: { right: bo
 /* ------------------------------------------------------------- end screen */
 
 /**
- * The end of a round: a sticker (when reactions are on), the score big in the
- * pixel font, a line, small numbers in a row, then whatever the game wants to
- * look back on. The frame's thumb holds Play again.
+ * The end of a round, in one order (storyboard 2, "the case closes"):
+ *     0ms  the panel and its kicker fade up; the score's digits roll in
+ *   280ms  won: a success haptic; lost: a warning haptic and a 2px dip;
+ *          in between: a tap
+ *   320ms  won: a pixel burst behind the score (confetti too for a
+ *          perfect round or a new personal best, on the whole screen)
+ *   640ms  the reaction sticker and its line slap in (src/ds/reactions)
+ *   900ms  the small numbers rise in, 60ms apart
+ * Timed by the kit's useCelebrate and `beats`. Play again works from 0ms.
+ * Reduce Motion: the panel fades in, the haptic still plays, no particles.
  */
-export function EndPanel({ kicker = "Round over", score, scoreOf, line, stats, right, total, outcome, children }: { kicker?: string; score: string; scoreOf?: string; line?: string; stats?: { label: string; value: string }[]; right?: number; total?: number; outcome?: "won" | "lost" | "mixed"; children?: React.ReactNode }) {
+export const END_AT = { land: beats.haptic, sticker: beats.sticker, stats: beats.stats, statStep: 60 } as const;
+
+export function EndPanel({ kicker = "Round over", score, scoreOf, line, stats, right, total, outcome, best, children }: { kicker?: string; score: string; scoreOf?: string; line?: string; stats?: { label: string; value: string }[]; right?: number; total?: number; outcome?: "won" | "lost" | "mixed"; /** A new personal best: confetti. */ best?: boolean; children?: React.ReactNode }) {
   const c = useTheme();
   const reduce = useReducedMotion();
-  const fired = React.useRef(false);
+  const fx = React.useContext(FrameFx);
   const m = /^([^0-9-]*)(-?\d+)(\D*)$/.exec(score);
   const num = m ? { pre: m[1] ?? "", n: Number(m[2]), post: m[3] ?? "" } : null;
-  const won = outcome ? outcome === "won" : (total ?? 0) > 0 && (right ?? 0) / (total ?? 1) >= 0.6;
+  const ratio = (total ?? 0) > 0 ? (right ?? 0) / (total ?? 1) : null;
+  const result = outcome ?? (ratio === null ? "mixed" : ratio >= 0.6 ? "won" : ratio >= 0.35 ? "mixed" : "lost");
+  const perfect = ratio === 1 && result === "won";
+  const mood = outcome ? (outcome === "won" ? "streak" : outcome === "lost" ? "wrong" : "near") : moodForScore(right ?? 0, total ?? 0);
+  const [burst, setBurst] = React.useState(0);
+  const dip = useSharedValue(0);
+  const celebrate = useCelebrate();
   React.useEffect(() => {
-    if (fired.current) return;
-    fired.current = true;
-    haptic.success();
-    const mood = outcome ? (outcome === "won" ? "streak" : outcome === "lost" ? "wrong" : "near") : moodForScore(right ?? 0, total ?? 0);
-    reactions.show(mood);
-  }, [outcome, right, total]);
+    reactions.dismiss();
+    const won = result === "won";
+    // One order for every win (the kit's beats): the score rolls, then the haptic, then particles, then the sticker.
+    celebrate([
+      { at: beats.haptic, run: won ? () => (haptic.success(), streakMoment.done()) : result === "lost" ? haptic.warn : haptic.tap },
+      ...(won ? [{ at: beats.particles, motion: true, run: () => (setBurst(1), perfect || best ? fx.confetti() : undefined) }] : []),
+      ...(result === "lost" ? [{ at: beats.haptic, motion: true, run: () => dip.set(withSequence(withTiming(2, { duration: dur.micro, easing: curves.out }), withSpring(0, springs.smooth))) }] : []),
+      // The shared reaction layer waits SETTLE_MS itself, so ask early enough to land on the beat.
+      { at: Math.max(0, beats.sticker - SETTLE_MS), run: () => reactions.show(mood) },
+    ]);
+    // Once per panel: a new round mounts a new panel.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+  const dipStyle = useAnimatedStyle(() => ({ transform: [{ translateY: dip.value }] }));
+  const big = { fontFamily: fonts.pixelDigits, fontSize: 64, lineHeight: 72, color: c.ink };
   return (
-    <Animated.View entering={reduce ? undefined : FadeInDown.duration(motion.fill)} style={{ gap: space[5], paddingTop: space[4] }} testID="game-over">
-      <Confetti fire={won ? 1 : 0} />
+    <Animated.View entering={reduce ? presets.fade() : presets.rise()} style={{ gap: space[5], paddingTop: space[4] }} testID="game-over">
       <View style={{ gap: space[2] }}>
         <T v="caption" tone="muted">
           {kicker.toUpperCase()}
         </T>
         <View style={{ flexDirection: "row", alignItems: "baseline", gap: space[2] }}>
-          {num ? (
-            <View style={{ flexDirection: "row", alignItems: "flex-end" }} testID="end-score" accessible accessibilityLabel={score}>
-              {num.pre ? <T style={{ fontFamily: fonts.pixelDigits, fontSize: 64, lineHeight: 72, color: c.ink }}>{num.pre}</T> : null}
-              <RollingNumber value={num.n} style={{ fontFamily: fonts.pixelDigits, fontSize: 64, lineHeight: 72, color: c.ink }} />
-              {num.post ? <T style={{ fontFamily: fonts.pixelDigits, fontSize: 64, lineHeight: 72, color: c.ink }}>{num.post}</T> : null}
-            </View>
-          ) : (
-            <T style={{ fontFamily: fonts.pixelDigits, fontSize: 64, lineHeight: 72, color: c.ink }} num maxFontSizeMultiplier={1.15} testID="end-score">
-              {score}
-            </T>
-          )}
+          <Animated.View style={dipStyle}>
+            {result === "won" ? <PixelBurst fire={burst} reach={56} /> : null}
+            {num ? (
+              <View style={{ flexDirection: "row", alignItems: "flex-end" }} testID="end-score" accessible accessibilityLabel={score}>
+                {num.pre ? <T style={big}>{num.pre}</T> : null}
+                <RollingNumber value={num.n} style={big} />
+                {num.post ? <T style={big}>{num.post}</T> : null}
+              </View>
+            ) : (
+              <T style={big} num maxFontSizeMultiplier={1.15} testID="end-score">
+                {score}
+              </T>
+            )}
+          </Animated.View>
           {scoreOf ? (
             <T v="h3" tone="muted" num>
               {scoreOf}
@@ -404,7 +480,7 @@ export function EndPanel({ kicker = "Round over", score, scoreOf, line, stats, r
       {stats?.length ? (
         <View style={{ flexDirection: "row", flexWrap: "wrap", columnGap: space[6], rowGap: space[3], borderTopWidth: 1, borderBottomWidth: 1, borderColor: c.hairline, paddingVertical: space[3] }}>
           {stats.map((s, i) => (
-            <Animated.View key={s.label} entering={reduce ? undefined : FadeInDown.duration(260).delay(500 + i * 80)} accessible accessibilityLabel={`${s.label}: ${s.value}`}>
+            <Animated.View key={s.label} entering={reduce ? undefined : presets.rise(END_AT.stats + i * END_AT.statStep)} accessible accessibilityLabel={`${s.label}: ${s.value}`}>
               <T v="score" num>
                 {s.value}
               </T>
@@ -435,11 +511,13 @@ export function EndThumb({ again, againLabel = "Play again", extra }: { again: (
 
 /* ------------------------------------------------------------ load states */
 
-/** While the first move loads, and when it cannot. */
+/** While the first move loads, and when it cannot. A wait over a second adds the pixel loader. */
 export function FrameLoading({ title }: { title: string }) {
+  const slow = useSlow(true, 1000);
   return (
     <GameFrame title={title} testID="frame-loading">
       <View style={{ gap: space[3] }} accessibilityRole="progressbar" accessibilityLabel="Loading">
+        {slow ? <PixelLoader label="Setting up the round" /> : null}
         <Skeleton w="70%" h={26} />
         <Skeleton h={16} />
         <Skeleton w="85%" h={16} />

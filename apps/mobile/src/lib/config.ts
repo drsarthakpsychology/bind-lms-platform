@@ -25,6 +25,6 @@ export const config = {
   progressPingMs: 15_000,
   /** A lecture counts as watched from this share. */
   completeAt: 0.9,
-  /** Biometric unlock: the hook exists (src/auth/biometric.ts) but is off in v1. */
-  biometrics: false,
+  /** Fingerprint or face unlock as an opt-in in Settings (src/auth/biometric.ts). False hides the switch everywhere. */
+  biometrics: true,
 } as const;

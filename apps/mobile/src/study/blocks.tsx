@@ -1,12 +1,13 @@
 import { ChevronDown } from "lucide-react-native";
 import * as React from "react";
 import { Pressable, ScrollView, View } from "react-native";
-import Animated, { FadeIn, useReducedMotion } from "react-native-reanimated";
+import Animated, { useReducedMotion } from "react-native-reanimated";
 
 import type { Block, BoxKind, ListItem } from "@/api/contract";
 import { T } from "@/ds/text";
 import { haptic } from "@/lib/haptics";
-import { layout, motion, space, useTheme } from "@/theme";
+import { presets } from "@/motion";
+import { layout, space, useTheme } from "@/theme";
 import { Rich } from "./rich";
 import { WidgetView, type WidgetContext } from "./widgets";
 
@@ -119,7 +120,7 @@ function Qa({ q, blocks, ctx }: { q: string; blocks: Block[]; ctx: BlockContext 
         <ChevronDown size={20} color={c.muted} style={{ transform: [{ rotate: open ? "180deg" : "0deg" }] }} />
       </Pressable>
       {open ? (
-        <Animated.View entering={reduce ? undefined : FadeIn.duration(motion.state)} style={{ paddingBottom: space[4] }}>
+        <Animated.View entering={reduce ? undefined : presets.fadeState()} style={{ paddingBottom: space[4] }}>
           <Blocks blocks={blocks} ctx={ctx} />
         </Animated.View>
       ) : null}

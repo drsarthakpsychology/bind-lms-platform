@@ -9,7 +9,7 @@ import { Person } from "./Art";
 import { Reveal } from "./motion";
 
 /** The website's small pixel label (Silkscreen, upper case). For tags and tiny labels only. */
-export function Pix({ children, color, size = 11, style }: { children: string; color: string; size?: number; style?: StyleProp<TextStyle> }) {
+export function Pix({ children, color, size = 12, style }: { children: string; color: string; size?: number; style?: StyleProp<TextStyle> }) {
   return (
     <Text allowFontScaling maxFontSizeMultiplier={1.3} style={[{ fontFamily: fonts.pixel, fontSize: size, lineHeight: Math.round(size * 1.6), letterSpacing: 0.6, color, textTransform: "uppercase" }, style]}>
       {children}

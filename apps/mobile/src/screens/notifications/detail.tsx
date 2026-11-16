@@ -93,7 +93,7 @@ export function NotificationScreen() {
                 </T>
               </View>
               <MessageBody blocks={n.content.length ? n.content : [{ t: "p", spans: [{ text: n.body }] }]} />
-              {link?.target ? <Button kind="quiet" label={link.label} onPress={() => openTarget(link.target!)} /> : n.target.screen !== "notification" ? <Button kind="quiet" label="Open" onPress={() => openTarget(n.target)} /> : null}
+              {link?.target ? <Button label={link.label} onPress={() => openTarget(link.target!)} testID="notification-action" /> : n.target.screen !== "notification" ? <Button label="Open" onPress={() => openTarget(n.target)} testID="notification-action" /> : null}
             </>
           );
         }}

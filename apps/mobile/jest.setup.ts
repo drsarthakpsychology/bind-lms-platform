@@ -7,7 +7,7 @@ process.env.EXPO_PUBLIC_API_MODE = "mock";
 
 require("react-native-gesture-handler/jestSetup");
 
-jest.mock("react-native-worklets", () => ({ scheduleOnRN: (fn: Function, ...rest: unknown[]) => fn(...rest), runOnJS: (fn: unknown) => fn }));
+jest.mock("react-native-worklets", () => ({ scheduleOnRN: (fn: Function, ...rest: unknown[]) => fn(...rest), scheduleOnUI: (fn: Function, ...rest: unknown[]) => fn(...rest), runOnJS: (fn: unknown) => fn, runOnUI: (fn: unknown) => fn }));
 // A small stand-in for Reanimated: values are plain, animations finish at once.
 jest.mock("react-native-reanimated", () => {
   const RN = require("react-native");
@@ -40,6 +40,9 @@ jest.mock("react-native-reanimated", () => {
     useReducedMotion: () => true,
     useDerivedValue: (fn: () => unknown) => ({ value: fn(), get: fn }),
     useAnimatedReaction: () => undefined,
+    // The keyboard is always closed in tests.
+    KeyboardState: { UNKNOWN: 0, OPENING: 1, OPEN: 2, CLOSING: 3, CLOSED: 4 },
+    useAnimatedKeyboard: () => ({ height: { value: 0, get: () => 0 }, state: { value: 4, get: () => 4 } }),
     interpolate: (x: number) => x,
     interpolateColor: (_v: number, _i: number[], o: string[]) => o[0],
     useAnimatedScrollHandler: () => () => undefined,
@@ -67,6 +70,15 @@ jest.mock("expo-secure-store", () => {
     deleteItemAsync: jest.fn(async (k: string) => void m.delete(k)),
   };
 });
+
+// Fingerprint and face: a phone with a fingerprint set up that always matches (tests switch it per case).
+jest.mock("expo-local-authentication", () => ({
+  AuthenticationType: { FINGERPRINT: 1, FACIAL_RECOGNITION: 2, IRIS: 3 },
+  hasHardwareAsync: jest.fn(async () => true),
+  isEnrolledAsync: jest.fn(async () => true),
+  supportedAuthenticationTypesAsync: jest.fn(async () => [1]),
+  authenticateAsync: jest.fn(async () => ({ success: true })),
+}));
 
 jest.mock("expo-haptics", () => ({
   selectionAsync: jest.fn(async () => undefined),
