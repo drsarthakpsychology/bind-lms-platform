@@ -13,6 +13,8 @@ import { settingsStore } from "./settings";
  *   ?pin=0                      (stops at "Choose a PIN")
  *   ?notice=device_replaced     (signs out as if opened on another phone)
  *   ?stress=1                   (long names and titles, large numbers)
+ *   ?delay=300                  (every mock answer waits this long, like a slow network;
+ *                                the calls made are on window.__vibhaCalls for speed checks)
  * Does nothing on phones or against the real server.
  */
 function params(): URLSearchParams | null {
@@ -26,6 +28,10 @@ export function applyMockFromUrl(): void {
   const s = q.get("mock");
   if (s) mock.setScenario(s as Scenario);
   if (q.get("stress") === "1") mock.setStress(true);
+  // With ?as= the delay starts after the quick sign-in (applyDevSession), so it times only the screen's own calls.
+  const delay = Number(q.get("delay"));
+  if (delay > 0 && !q.get("as")) mock.setDelay(delay);
+  (window as unknown as { __vibhaCalls?: () => { method: string; path: string; at: number }[] }).__vibhaCalls = () => mock.log().map((c) => ({ method: c.method, path: c.path, at: c.at ?? 0 }));
   const theme = q.get("theme");
   if (theme === "dark" || theme === "light") settingsStore.set({ theme });
 }
@@ -46,5 +52,9 @@ export async function applyDevSession(session: { signIn: (e: string, p: string) 
     return;
   }
   if (scenario) mock.setScenario(scenario);
+  const delay = Number(q.get("delay"));
+  if (delay > 0) mock.setDelay(delay);
+  // Speed checks time a screen from here (the account is open).
+  if (typeof performance !== "undefined" && typeof performance.mark === "function") performance.mark("vibha-open");
   if (q.get("lock") === "1") session.lock();
 }

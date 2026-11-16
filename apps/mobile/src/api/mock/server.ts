@@ -48,7 +48,7 @@ type State = {
   pushToken: string | null;
   /** Set to make the next signed-in call answer device_replaced (tests). */
   replaced: boolean;
-  log: { method: string; path: string; body?: unknown }[];
+  log: { method: string; path: string; body?: unknown; /** ms since page start (speed checks) */ at?: number }[];
 };
 
 function fresh(): State {
@@ -382,7 +382,7 @@ async function route(req: RawRequest): Promise<RawResponse> {
 
 /** The transport the API client uses in mock mode. */
 export const mockTransport: Transport = async (req) => {
-  state.log.push({ method: req.method, path: req.path, body: req.body });
+  state.log.push({ method: req.method, path: req.path, body: req.body, at: typeof performance !== "undefined" ? Math.round(performance.now()) : 0 });
   if (state.delayMs) await new Promise((r) => setTimeout(r, state.delayMs));
   const res = await route(req);
   return stress && res.json ? { ...res, json: stressed(res.json) as RawResponse["json"] } : res;
