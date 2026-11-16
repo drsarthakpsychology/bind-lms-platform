@@ -97,6 +97,7 @@ describe("Learn screens", () => {
     expect(await screen.findByTestId("learn-notes")).toBeTruthy();
     expect(screen.getByTestId("learn-reference")).toBeTruthy();
     expect(screen.getByTestId("learn-saved")).toBeTruthy();
+    expect(screen.getByTestId("learn-map")).toBeTruthy();
     expect(await screen.findByText("1 to hand in")).toBeTruthy();
   });
 
