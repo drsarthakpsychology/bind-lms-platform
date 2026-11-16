@@ -21,7 +21,7 @@ export const control =
   "h-11 min-w-0 rounded-md border border-[var(--ds-card-line)] bg-background px-3 type-small text-foreground outline-none transition-colors duration-[var(--ds-state)] ease-[var(--ds-ease)] hover:border-foreground/50 focus-visible:border-foreground focus-visible:ring-2 focus-visible:ring-ring lg:h-9";
 
 const btnBase =
-  "inline-flex h-11 min-w-0 shrink-0 items-center justify-center gap-1.5 rounded-md px-3 type-small font-semibold whitespace-nowrap outline-none transition-colors duration-[var(--ds-state)] ease-[var(--ds-ease)] focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-45 lg:h-9 [&_svg]:size-4 [&_svg]:shrink-0";
+  "inline-flex h-11 min-w-11 shrink-0 items-center justify-center gap-1.5 rounded-md px-3 type-small font-semibold whitespace-nowrap outline-none transition-colors duration-[var(--ds-state)] ease-[var(--ds-ease)] focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-45 lg:h-9 [&_svg]:size-4 [&_svg]:shrink-0";
 
 /** Buttons. `primary` is the one lime action of a screen; the rest stay quiet. */
 export const btn = {

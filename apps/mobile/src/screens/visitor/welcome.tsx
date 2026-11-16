@@ -7,10 +7,9 @@ import Animated, { Extrapolation, FadeInDown, interpolate, useAnimatedReaction, 
 import { scheduleOnRN } from "react-native-worklets";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
-import { Button, Row, RowList, Sheet, T } from "@/ds";
+import { Button, Meme, Row, RowList, Sheet, T } from "@/ds";
 import { haptic } from "@/lib/haptics";
 import { Press } from "@/motion";
-import { SketchCat } from "@/sketch/cat";
 import { fonts, layout, space, useTheme } from "@/theme";
 import { Icon, Person, Sparkle, Star } from "@/visitor/Art";
 import { HomeWordsCtx, useHomeWords, useWords } from "@/visitor/home-data";
@@ -918,7 +917,7 @@ function Closing({ bottom }: { bottom: number }) {
           </Reveal>
         ))}
         <Reveal kind="scale" lag={70} span={120} style={{ marginBottom: 8 }}>
-          <SketchCat size={80} mood="calm" />
+          <Meme mood="hello" size={84} delay={0} always tilt={-6} bg={LIME} line={INK} />
         </Reveal>
       </View>
     </Chapter>

@@ -13,6 +13,7 @@
  *   stack      stackMotion, modalMotion, fadeMotion
  *   refresh    useRefresh                   pull to refresh
  *   wins       useNewWins                   celebrate each win once
+ *   swap       Swap                         keyed content swaps with no blank frame
  *
  * Rules: transform and opacity only; worklets on the UI thread; every part
  * checks Reduce Motion and keeps the meaning without the movement.
@@ -28,3 +29,4 @@ export * from "./tabbar";
 export * from "./stack";
 export * from "./refresh";
 export * from "./wins";
+export * from "./swap";

@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Linking, View } from "react-native";
-import Animated, { Easing, FadeIn, FadeInDown, FadeOut, useAnimatedStyle, useReducedMotion, useSharedValue, withDelay, withSpring, withTiming } from "react-native-reanimated";
+import Animated, { Easing, FadeIn, FadeOut, useAnimatedStyle, useReducedMotion, useSharedValue, withDelay, withSpring, withTiming } from "react-native-reanimated";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { useConfig } from "@/api/queries";
@@ -12,7 +12,7 @@ import { PinPad, type PinTone } from "@/auth/PinPad";
 import { Button, EmptyState, T, Wordmark } from "@/ds";
 import { BRAND } from "@/lib/brand";
 import { haptic } from "@/lib/haptics";
-import { Burst, dur } from "@/motion";
+import { Burst, dur, springs, Swap } from "@/motion";
 import { layout, space, useTheme } from "@/theme";
 import { Icon, Star } from "@/visitor/Art";
 
@@ -68,7 +68,7 @@ function PinArt({ win = 0 }: { /** Each new value fires sparks: the PIN is right
   const pop = useSharedValue(0);
   const reduce = useReducedMotion();
   React.useEffect(() => {
-    pop.set(reduce ? 1 : withDelay(120, withSpring(1, { damping: 11, stiffness: 180, mass: 0.7 })));
+    pop.set(reduce ? 1 : withDelay(120, withSpring(1, springs.art)));
   }, [pop, reduce]);
   const anim = useAnimatedStyle(() => ({ opacity: Math.min(1, pop.value * 2), transform: [{ scale: 0.5 + pop.value * 0.5 }, { rotate: `${(1 - pop.value) * -90}deg` }] }));
   return (
@@ -82,7 +82,6 @@ function PinArt({ win = 0 }: { /** Each new value fires sparks: the PIN is right
 
 /** Choose a PIN right after signing in: enter it, then enter it again. */
 export function SetPinScreen() {
-  const reduce = useReducedMotion();
   const [first, setFirst] = React.useState<string | null>(null);
   const [value, setValue] = React.useState("");
   const [error, setError] = React.useState<string | null>(null);
@@ -133,11 +132,11 @@ export function SetPinScreen() {
   return (
     <Gate testID="set-pin" art={<PinArt win={tone === "success" ? 1 : 0} />} footer={first !== null && !busy ? <Button kind="text" full label="Start again" onPress={() => { setFirst(null); setValue(""); setError(null); }} /> : null}>
       <View style={{ alignItems: "center", gap: space[2], marginBottom: space[6] }}>
-        <Animated.View key={busy ? "done" : first === null ? "one" : "two"} entering={reduce ? FadeIn.duration(150) : FadeInDown.duration(220)}>
+        <Swap k={busy ? "done" : first === null ? "one" : "two"}>
           <T v="h1" center>
             {busy ? "All set" : first === null ? "Choose a PIN" : "Enter it once more"}
           </T>
-        </Animated.View>
+        </Swap>
         <T tone={error ? "danger" : "muted"} center accessibilityLiveRegion="polite">
           {busy ? "Opening your app." : (error ?? (first === null ? "Four digits. You will use it each time you open the app." : "So we know it is the one you meant."))}
         </T>
@@ -233,7 +232,7 @@ export function UpdateScreen({ storeUrl }: { storeUrl: string | null }) {
   const url = storeUrl ?? cfg.data?.storeUrl?.android ?? "https://play.google.com/store/apps/details?id=com.vibhapsychology.app";
   return (
     <Gate testID="update" footer={<Button label="Update the app" onPress={() => void Linking.openURL(url)} testID="update-button" />}>
-      <EmptyState mood="calm" title="Time for an update" body="This version of the app is too old to carry on. The update takes a minute and your progress is safe." />
+      <EmptyState mood="wait" title="Time for an update" body="This version of the app is too old to carry on. The update takes a minute and your progress is safe." />
     </Gate>
   );
 }
@@ -261,7 +260,7 @@ export function PausedScreen({ message }: { message: string }) {
         </>
       }
     >
-      <EmptyState mood="sleepy" title="Your account is paused" body={pausedBody(message)} />
+      <EmptyState mood="wait" title="Your account is paused" body={pausedBody(message)} />
     </Gate>
   );
 }
@@ -270,7 +269,7 @@ export function PausedScreen({ message }: { message: string }) {
 export function OtherDeviceScreen({ onContinue }: { onContinue: () => void }) {
   return (
     <Gate testID="other-device" footer={<Button label="Sign in again" onPress={onContinue} testID="other-device-continue" />}>
-      <EmptyState mood="puzzled" title="Opened on another device" body="Your account was opened on another phone, so this one was signed out. VIBHA works on one phone at a time. Sign in again to use this one." />
+      <EmptyState mood="error" title="Opened on another device" body="Your account was opened on another phone, so this one was signed out. VIBHA works on one phone at a time. Sign in again to use this one." />
     </Gate>
   );
 }

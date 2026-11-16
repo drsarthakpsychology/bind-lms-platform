@@ -76,12 +76,13 @@ export async function loadAdminOverview() {
   // Last activity per student from the aggregate view → active this week / quiet.
   const now = new Date().getTime();
   const DAY = 86400000;
-  const activeThisWeek = [...studentIds].filter((id) => {
+  const activeWeek = (id: string) => {
     const last = lastOf(id);
     if (!last) return false;
     const t = new Date(String(last)).getTime();
     return Number.isFinite(t) && (now - t) / DAY < 7;
-  }).length;
+  };
+  const activeThisWeek = [...studentIds].filter(activeWeek).length;
   const quietCount = [...studentIds].filter((id) => {
     const last = lastOf(id);
     if (!last) return false;
@@ -200,7 +201,8 @@ export async function loadAdminOverview() {
         id: c.id,
         name: c.name,
         members: m.length,
-        week: m.filter((r) => r.presence === "now" || r.presence === "today" || r.presence === "week").length,
+        // Same signal as the header's "active this week", so the cohort numbers add up to it.
+        week: m.filter((r) => activeWeek(r.id)).length,
         behind: m.filter((r) => r.account === "active" && isBehind(r.lecturesDone, r.lecturesAvailable)).length,
         pct: avail ? Math.round((done / avail) * 100) : 0,
       };

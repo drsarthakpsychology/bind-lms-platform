@@ -12,11 +12,15 @@ const row =
   "-mx-2 flex min-h-14 w-[calc(100%+1rem)] min-w-0 items-center gap-4 rounded-lg px-2 text-left type-body font-semibold outline-none transition-colors duration-[var(--ds-state)] ease-[var(--ds-ease)] hover:bg-[var(--ds-tint)] focus-visible:ring-2 focus-visible:ring-ring active:bg-[var(--ds-tint)] disabled:opacity-60";
 
 /** Look and feel: dark mode and funny reactions, saved on this device. */
+const noopSubscribe = () => () => {};
+
 export function MeDisplayRows({ student }: { student: boolean }) {
   const { resolvedTheme, setTheme } = useTheme();
   const [funny, setFunny] = useReactionsOn();
-  // The theme is only known after mount (next-themes); until then show the neutral label.
-  const isDark = resolvedTheme === "dark";
+  // The theme is only known in the browser (next-themes reads it from storage);
+  // the server and the first client render draw the switch off, so they match.
+  const mounted = React.useSyncExternalStore(noopSubscribe, () => true, () => false);
+  const isDark = mounted && resolvedTheme === "dark";
   return (
     <ul className="flex min-w-0 flex-col divide-y divide-[var(--ds-hairline)] border-y border-[var(--ds-hairline)]">
       <li>

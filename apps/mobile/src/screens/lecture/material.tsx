@@ -13,7 +13,7 @@ import { Button, EmptyState, Loaded, RowsSkeleton, Screen, Skeleton, T } from "@
 import { config } from "@/lib/config";
 import { haptic } from "@/lib/haptics";
 import { OnceHint } from "@/lib/once";
-import { layout, space, useTheme } from "@/theme";
+import { fixed, layout, space, useTheme } from "@/theme";
 
 /**
  * A lecture material, opened inside the app. PDFs are drawn page by page by
@@ -111,7 +111,7 @@ function PdfReader({ m }: { m: Material }) {
   }, [doc, pageWidth]);
 
   if (mock) return <MockPages title={m.title} />;
-  if (doc.phase === "error") return <EmptyState mood="puzzled" title="Could not open this file" body={doc.message} />;
+  if (doc.phase === "error") return <EmptyState mood="error" title="Could not open this file" body={doc.message} />;
   if (doc.phase === "loading") {
     return (
       <View style={{ gap: space[3] }} testID="material-loading">
@@ -134,9 +134,9 @@ function PdfReader({ m }: { m: Material }) {
               haptic.select();
               setZoom((z) => !z);
             }}
-            style={{ width: w, height: h, backgroundColor: "#ffffff", borderRadius: 6, borderWidth: 1, borderColor: c.hairline, overflow: "hidden" }}
+            style={{ width: w, height: h, backgroundColor: c.paper, borderRadius: 6, borderWidth: 1, borderColor: c.hairline, overflow: "hidden" }}
           >
-            {p ? <Image source={{ uri: p.uri }} style={{ width: "100%", height: "100%" }} resizeMode="contain" /> : <Skeleton w="100%" h={h} r={0} />}
+            {p ? <Image source={{ uri: p.uri }} style={{ width: "100%", height: "100%", opacity: c.dark ? 0.9 : 1 }} resizeMode="contain" /> : <Skeleton w="100%" h={h} r={0} />}
           </Pressable>
         );
       })}
@@ -157,12 +157,12 @@ function MockPages({ title }: { title: string }) {
   return (
     <View style={{ gap: space[3] }} testID="material-pages">
       {[1, 2].map((p) => (
-        <View key={p} accessibilityLabel={`Page ${p} of 2`} style={{ aspectRatio: 1 / 1.3, backgroundColor: "#ffffff", borderRadius: 6, borderWidth: 1, borderColor: c.hairline, padding: space[5], gap: space[3] }}>
-          <T v="h3" style={{ color: "#111111" }}>
+        <View key={p} accessibilityLabel={`Page ${p} of 2`} style={{ aspectRatio: 1 / 1.3, backgroundColor: c.paper, borderRadius: 6, borderWidth: 1, borderColor: c.hairline, padding: space[5], gap: space[3] }}>
+          <T v="h3" style={{ color: c.onPaper }}>
             {p === 1 ? title : "Scoring"}
           </T>
           {Array.from({ length: 9 }, (_, i) => (
-            <View key={i} style={{ height: 8, width: `${[92, 80, 96, 70, 88, 60, 94, 76, 50][i]}%`, borderRadius: 4, backgroundColor: "rgba(17,17,17,0.12)" }} />
+            <View key={i} style={{ height: 8, width: `${[92, 80, 96, 70, 88, 60, 94, 76, 50][i]}%`, borderRadius: 4, backgroundColor: c.paperLine }} />
           ))}
           <T v="caption" style={{ color: "#4d4d4d", marginTop: "auto" }}>
             Page {p} of 2 · sample
@@ -188,7 +188,7 @@ function MediaPlayer({ m, headers }: { m: Material; headers: Record<string, stri
   const player = useVideoPlayer({ uri: fileUrl(m), headers }, (p) => {
     p.staysActiveInBackground = false;
   });
-  return <VideoView player={player} nativeControls contentFit="contain" allowsPictureInPicture={false} style={{ width: "100%", aspectRatio: m.kind === "audio" ? 3 : 16 / 9, backgroundColor: "#000000", borderRadius: 8 }} />;
+  return <VideoView player={player} nativeControls contentFit="contain" allowsPictureInPicture={false} style={{ width: "100%", aspectRatio: m.kind === "audio" ? 3 : 16 / 9, backgroundColor: fixed.black, borderRadius: 8 }} />;
 }
 
 function MediaView({ m }: { m: Material }) {

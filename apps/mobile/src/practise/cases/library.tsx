@@ -9,7 +9,7 @@ import { CASE_TOOLS } from "../catalog";
 import type { CaseMark, PractiseTool } from "../contract";
 import { API_TOOL, arrange, buildDefs } from "../tools/engine";
 import { EntryIcon } from "../icons";
-import { Tag } from "../parts";
+import { markWord, Tag } from "../parts";
 
 /** The tools with a case library (Done, New, This week). */
 const TOOLS = CASE_TOOLS.filter((t) => t.kind === "tool" && t.toolId && ["wwyd", "two-minute", "landmark", "osce", "formulation"].includes(t.toolId));
@@ -33,7 +33,7 @@ export function CaseLibrary() {
   const carry = rows.filter((r) => r.mark === "started");
   const open = (toolHref: string, id: string) => router.push(`${toolHref}?item=${encodeURIComponent(id)}`);
   return (
-    <Screen testID="case-library" title="All cases" lead="Every case, with what you have done and what is new.">
+    <Screen testID="case-library" title="All cases">
       <Chips
         scroll
         label="Show"
@@ -41,7 +41,7 @@ export function CaseLibrary() {
         onChange={setFilter}
         options={[
           { id: "all", name: "All" },
-          { id: "started", name: `Carry on${carry.length ? ` ${carry.length}` : ""}` },
+          { id: "started", name: "Half way" },
           { id: "new", name: "New" },
           { id: "week", name: "This week" },
           { id: "done", name: "Done" },
@@ -49,7 +49,7 @@ export function CaseLibrary() {
       />
       {loading ? <RowsSkeleton rows={8} /> : null}
       {!loading && filter === "all" && carry.length ? (
-        <Section title="Carry on">
+        <Section title="Half way">
           <RowList>
             {carry.map((r) => (
               <Row key={`${r.tool.id}-${r.id}`} title={r.title} meta={r.tool.title} icon={<EntryIcon icon={r.tool.icon} color={c.muted} />} trailing={<Tag tag="started" />} onPress={() => open(r.tool.href, r.id)} />
@@ -65,14 +65,14 @@ export function CaseLibrary() {
               <Section key={t.id} title={t.title}>
                 <RowList>
                   {mine.map((r) => (
-                    <Row key={r.id} testID={`library-${t.id}-${r.id}`} title={r.title} meta={r.line ?? undefined} trailing={<Tag tag={r.mark} />} onPress={() => open(t.href, r.id)} />
+                    <Row key={r.id} testID={`library-${t.id}-${r.id}`} title={r.title} meta={r.mark === "week" || r.mark === "started" ? [markWord(r.mark), r.line].filter(Boolean).join(" · ") : r.line ?? undefined} trailing={<Tag tag={r.mark} />} onPress={() => open(t.href, r.id)} />
                   ))}
                 </RowList>
               </Section>
             );
           })
         : null}
-      {!loading && !shown.length ? <EmptyState mood="sleepy" title={filter === "done" ? "Nothing done yet" : "Nothing here"} body={filter === "started" ? "Cases you leave half way show up here." : "Try another filter."} /> : null}
+      {!loading && !shown.length ? <EmptyState mood="empty" title={filter === "done" ? "Nothing done yet" : "Nothing here"} body={filter === "started" ? "Cases you leave half way show up here." : "Try another filter."} /> : null}
     </Screen>
   );
 }

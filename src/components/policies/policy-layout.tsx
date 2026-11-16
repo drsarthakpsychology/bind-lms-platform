@@ -39,13 +39,13 @@ export function PolicyLayout({
         >
           <Link
             href="/login"
-            className="transition-[color,translate] duration-base ease-snappy hover:-translate-x-0.5 hover:text-foreground"
+            className="inline-flex min-h-11 items-center transition-[color,translate] duration-base ease-snappy hover:-translate-x-0.5 hover:text-foreground"
           >
             Sign in
           </Link>
           <Link
             href="/waitlist"
-            className="transition-[color,translate] duration-base ease-snappy hover:-translate-x-0.5 hover:text-foreground"
+            className="inline-flex min-h-11 items-center transition-[color,translate] duration-base ease-snappy hover:-translate-x-0.5 hover:text-foreground"
           >
             Request an invitation
           </Link>

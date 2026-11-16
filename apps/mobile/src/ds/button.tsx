@@ -84,7 +84,7 @@ export function Button({ label, onPress, kind = "primary", icon, disabled, busy,
       <View pointerEvents="none" style={{ position: "absolute", left: SHADOW, top: SHADOW, right: 0, bottom: 0, borderRadius: layout.radius, backgroundColor: blocked ? "transparent" : c.shadow }} />
       <Animated.View
         style={[
-          { minHeight: layout.primary, paddingHorizontal: space[5], paddingVertical: space[3], borderRadius: layout.radius, borderWidth: 2, borderColor: blocked ? c.cardLine : c.dark ? "#111111" : c.line, backgroundColor: blocked ? c.tint : c.primary, flexDirection: "row", alignItems: "center", justifyContent: "center", gap: space[2] },
+          { minHeight: layout.primary, paddingHorizontal: space[5], paddingVertical: space[3], borderRadius: layout.radius, borderWidth: 2, borderColor: blocked ? c.cardLine : c.dark ? c.onPrimary : c.line, backgroundColor: blocked ? c.tint : c.primary, flexDirection: "row", alignItems: "center", justifyContent: "center", gap: space[2] },
           blocked ? null : moved,
         ]}
       >

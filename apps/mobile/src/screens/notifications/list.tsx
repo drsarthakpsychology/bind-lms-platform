@@ -53,7 +53,7 @@ export function NotificationsScreen() {
     <Screen testID="notifications" onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
       <Stack.Screen options={{ headerRight: () => (unread ? <Button kind="text" label="Mark all read" busy={busy} onPress={() => void readAll()} testID="read-all" style={{ marginRight: Platform.OS === "web" ? 16 : 0 }} /> : null) }} />
       <Loaded q={q} what="your notifications">
-        {(d) => (d.items.length ? <NotificationRows items={d.items} /> : <EmptyState mood="sleepy" title="Nothing new" body="Messages from the school and answers to your doubts show up here." testID="notifications-empty" />)}
+        {(d) => (d.items.length ? <NotificationRows items={d.items} /> : <EmptyState mood="clear" title="Nothing new" body="Messages from the school and answers to your doubts show up here." testID="notifications-empty" />)}
       </Loaded>
     </Screen>
   );

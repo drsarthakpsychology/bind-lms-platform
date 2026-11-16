@@ -72,7 +72,7 @@ export type AdminSection = {
   /** Sidebar group header. */
   group?: string;
   /** `hidden` tabs only mark a page as belonging here (not shown as a tab). */
-  tabs: { href: string; label: string; hidden?: boolean }[];
+  tabs: { href: string; label: string; hidden?: boolean; /** Super Admin only: a View Admin is sent away from it, so the tab is left out for them. */ superOnly?: boolean }[];
 };
 
 export const ADMIN_SECTIONS: AdminSection[] = [
@@ -201,7 +201,7 @@ export const ADMIN_SECTIONS: AdminSection[] = [
     group: "Settings",
     tabs: [
       { href: "/admin/infra", label: "Usage & AI providers" },
-      { href: "/admin/management", label: "Admins" },
+      { href: "/admin/management", label: "Admins", superOnly: true },
       { href: "/admin/tools", label: "Support key" },
     ],
   },

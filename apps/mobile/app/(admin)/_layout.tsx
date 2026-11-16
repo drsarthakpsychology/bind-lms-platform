@@ -3,6 +3,7 @@ import * as React from "react";
 import { Platform } from "react-native";
 
 import { useAdminHeader } from "@/admin/nav";
+import { fadeMotion } from "@/motion";
 
 /**
  * Admins: the five tabs, and the admin screens that open on top of them
@@ -17,6 +18,7 @@ export default function AdminStack() {
       <Stack.Screen name="admin/certificates/new" options={{ title: "", gestureEnabled: false }} />
       <Stack.Screen name="admin/certificates/anyone" options={{ title: "" }} />
       <Stack.Screen name="admin/alerts" options={{ title: "Admin alerts" }} />
+      <Stack.Screen name="admin/search" options={{ headerShown: false, ...fadeMotion }} />
     </Stack>
   );
 }

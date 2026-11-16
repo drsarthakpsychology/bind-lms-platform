@@ -22,7 +22,7 @@ const TIMES = [
   { id: "21:00", name: "9 pm" },
 ];
 const THEMES = [
-  { id: "system" as const, name: "Like the phone" },
+  { id: "system" as const, name: "Match phone" },
   { id: "light" as const, name: "Light" },
   { id: "dark" as const, name: "Dark" },
 ];
@@ -136,13 +136,13 @@ export function SettingsScreen() {
             <Section title="App" quiet>
               <View style={{ gap: space[2] }}>
                 <T v="small" tone="muted">
-                  Look
+                  Appearance
                 </T>
-                <Chips label="Look" options={THEMES} value={theme} onChange={(t) => updateSettings({ theme: t })} />
+                <Chips label="Appearance" options={THEMES} value={theme} onChange={(t) => updateSettings({ theme: t })} />
               </View>
               <RowList>
                 <SwitchRow testID="pref-haptics" title="Vibration on taps" value={haptics} onChange={(v) => updateSettings({ haptics: v })} />
-                <SwitchRow title="Reaction pictures after answers" value={reactions} onChange={(v) => updateSettings({ reactions: v })} />
+                <SwitchRow testID="pref-reactions" title="Funny reactions" meta="A meme and a cheeky line after some answers. This phone only." value={reactions} onChange={(v) => updateSettings({ reactions: v })} />
               </RowList>
             </Section>
             <Section title="Privacy and terms" quiet>

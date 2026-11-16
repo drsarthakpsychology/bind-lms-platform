@@ -2,11 +2,11 @@ import { router, useLocalSearchParams } from "expo-router";
 import * as React from "react";
 import { Bookmark } from "lucide-react-native";
 import { Pressable, View } from "react-native";
-import Animated, { FadeIn, useReducedMotion } from "react-native-reanimated";
 
 import { Button, EmptyState, RowList, Section, T } from "@/ds";
+import { Swap } from "@/motion";
 import { Rich } from "@/study/rich";
-import { motion, space, useTheme } from "@/theme";
+import { space, useTheme } from "@/theme";
 import { api } from "@/auth";
 import { haptic } from "@/lib/haptics";
 import { play, useLoad, useMove } from "../api";
@@ -66,7 +66,6 @@ export function QuestionBody({ q }: { q: PrepQView }) {
 export function PrepSetScreen() {
   const p = useLocalSearchParams<{ subject?: string; topic?: string; set?: string; list?: string }>();
   const c = useTheme();
-  const reduce = useReducedMotion();
   const mv = useMove();
   const react = useReactions();
   const [i, setI] = React.useState(0);
@@ -92,7 +91,7 @@ export function PrepSetScreen() {
   React.useEffect(() => {
     started.current = Date.now();
   }, [set, i]);
-  if (q0.error) return <FrameError title="Exam Prep" error={q0.error} onRetry={q0.retry} />;
+  if (q0.error) return <FrameError title="Exam Prep" web="/prep" error={q0.error} onRetry={q0.retry} />;
   if (!set) return <FrameLoading title="Exam Prep" />;
 
   const q = set.questions[i] as PrepQView | undefined;
@@ -105,7 +104,7 @@ export function PrepSetScreen() {
   if (!set.questions.length) {
     return (
       <GameFrame testID="prep-set" title={set.title}>
-        <EmptyState mood="sleepy" title={p.list === "wrong" ? "Nothing to practise again" : p.list === "saved" ? "No saved questions" : "No questions here yet"} body={p.list ? "Questions show up here as you answer and save them." : "Try another topic."} />
+        <EmptyState mood={p.list === "wrong" ? "clear" : "empty"} title={p.list === "wrong" ? "Nothing to practise again" : p.list === "saved" ? "No saved questions" : "No questions here yet"} body={p.list ? "Questions show up here as you answer and save them." : "Try another topic."} />
       </GameFrame>
     );
   }
@@ -175,7 +174,7 @@ export function PrepSetScreen() {
   );
   return (
     <GameFrame testID="prep-set" title={set.title} howTo={HOW} score={`${marks.filter((m) => m === "ok").length}`} hud={hud} confirmLeave={i > 0} thumb={res ? <Button label={i + 1 >= set.questions.length ? "Finish the set" : "Next question"} onPress={next} testID="prep-next" /> : undefined}>
-      <Animated.View key={q.id} entering={reduce ? undefined : FadeIn.duration(motion.state)} style={{ gap: space[4] }}>
+      <Swap k={q.id} style={{ gap: space[4] }}>
         <QuestionBody q={q} />
         <View style={{ gap: space[3] }}>
           {q.options.map((o, j) => (
@@ -184,7 +183,7 @@ export function PrepSetScreen() {
         </View>
         <MoveError text={mv.error} />
         {res ? <Verdict right={res.correct} why={res.explanation} seed={i} /> : null}
-      </Animated.View>
+      </Swap>
     </GameFrame>
   );
 }

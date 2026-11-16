@@ -20,3 +20,4 @@ export * from "./field";
 export * from "./query";
 export * from "./slider";
 export * from "./quiz";
+export * from "./meme";

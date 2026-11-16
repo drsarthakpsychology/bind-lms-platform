@@ -5,6 +5,7 @@ import Animated, { useAnimatedStyle, useReducedMotion, useSharedValue, withSeque
 
 import { T } from "@/ds";
 import { haptic } from "@/lib/haptics";
+import { springs } from "@/motion";
 import { fonts, motion, space, useTheme } from "@/theme";
 
 const KEYS = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "", "0", "del"] as const;
@@ -64,11 +65,11 @@ function Dot({ i, on, tone }: { i: number; on: boolean; tone: PinTone }) {
   const reduce = useReducedMotion();
   const pop = useSharedValue(1);
   React.useEffect(() => {
-    if (on && !reduce) pop.set(withSequence(withTiming(1.35, { duration: 90 }), withSpring(1, { damping: 9, stiffness: 260 })));
+    if (on && !reduce) pop.set(withSequence(withTiming(1.35, { duration: 90 }), withSpring(1, springs.dot)));
   }, [on, reduce, pop]);
   React.useEffect(() => {
     // The success wave: each dot jumps in turn.
-    if (tone === "success" && !reduce) pop.set(withSequence(withTiming(1, { duration: i * 60 }), withTiming(1.45, { duration: 110 }), withSpring(1, { damping: 8, stiffness: 220 })));
+    if (tone === "success" && !reduce) pop.set(withSequence(withTiming(1, { duration: i * 60 }), withTiming(1.45, { duration: 110 }), withSpring(1, springs.wave)));
   }, [tone, reduce, pop, i]);
   const anim = useAnimatedStyle(() => ({ transform: [{ scale: pop.value }] }));
   const color = tone === "error" ? c.danger : tone === "success" ? LIME : c.ink;

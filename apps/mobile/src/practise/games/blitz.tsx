@@ -1,11 +1,12 @@
 import { router } from "expo-router";
 import * as React from "react";
 import { View } from "react-native";
-import Animated, { FadeIn, useReducedMotion } from "react-native-reanimated";
+import { useReducedMotion } from "react-native-reanimated";
 
 import { ProgressLine, RowList, Section, T } from "@/ds";
 import { haptic } from "@/lib/haptics";
-import { fonts, motion, space, useTheme } from "@/theme";
+import { Swap } from "@/motion";
+import { fonts, space, useTheme } from "@/theme";
 import { play, useMove } from "../api";
 import { EndPanel, EndThumb, GameFrame, HudLine, MoveError, StartScreen } from "../frame";
 import { Tile, AnswerRow } from "../parts";
@@ -101,7 +102,7 @@ export function BlitzGame() {
     token.current = r.token;
     setReveal({ picked: choice, answer: r.answer });
     setRun({ ...r.state });
-    react.answer(r.right);
+    react.answer(r.right, { timed: true });
     if (!r.right) {
       setMisses((m) => [...m, { prompt: asked.prompt, answer: asked.options[r.answer] ?? "", why: r.why }]);
     }
@@ -160,13 +161,13 @@ export function BlitzGame() {
   return (
     <GameFrame testID="game-blitz" title="Blitz" score={String(run.score)} hud={hud} hideHowTo confirmLeave>
       {phase.t === "count" ? (
-        <Animated.View key={phase.n} entering={reduce ? undefined : FadeIn.duration(motion.state)} style={{ alignItems: "center", paddingVertical: space[8] }}>
+        <Swap k={phase.n} style={{ alignItems: "center", paddingVertical: space[8] }}>
           <T style={{ fontFamily: fonts.pixelDigits, fontSize: 96, lineHeight: 104, color: c.ink }} accessibilityLiveRegion="polite">
             {phase.n || "Go"}
           </T>
-        </Animated.View>
+        </Swap>
       ) : q ? (
-        <Animated.View key={q.n} entering={reduce ? undefined : FadeIn.duration(motion.press)} style={{ gap: space[5] }}>
+        <Swap k={q.n} style={{ gap: space[5] }}>
           <T v="caption" tone="muted">
             {q.kind === "tf" ? "TRUE OR FALSE" : "PICK ONE"}
           </T>
@@ -189,7 +190,7 @@ export function BlitzGame() {
             </View>
           )}
           <MoveError text={mv.error} />
-        </Animated.View>
+        </Swap>
       ) : null}
     </GameFrame>
   );

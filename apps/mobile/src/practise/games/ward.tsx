@@ -1,11 +1,11 @@
 import { useLocalSearchParams } from "expo-router";
 import * as React from "react";
 import { View } from "react-native";
-import Animated, { FadeIn, useReducedMotion } from "react-native-reanimated";
 
 import { Button, EmptyState, ProgressLine, RowList, Section, T } from "@/ds";
 import { haptic } from "@/lib/haptics";
-import { motion, space, useTheme } from "@/theme";
+import { Swap } from "@/motion";
+import { space, useTheme } from "@/theme";
 import { play, saveCase, useMove, useTool } from "../api";
 import { EndPanel, EndThumb, FrameLoading, GameFrame, HudLine, MoveError, StartScreen, StepStrip, Verdict } from "../frame";
 import { Story, AnswerRow } from "../parts";
@@ -47,7 +47,6 @@ const verdictOf = (r: WardReveal) => ({ right: r.q === "best", partial: r.q === 
 export function WardGame() {
   const params = useLocalSearchParams<{ item?: string; team?: string }>();
   const list = useTool("ward");
-  const reduce = useReducedMotion();
   const mv = useMove();
   const react = useReactions();
   const [pick, setPick] = React.useState<string | null>(params.item ?? null);
@@ -170,7 +169,7 @@ export function WardGame() {
     if (r.reveal) {
       setReveal(r.reveal);
       setMarks((m) => [...m, r.reveal!.q === "best" ? "ok" : r.reveal!.q === "ok" ? null : "miss"]);
-      react.answer(r.reveal.q === "best");
+      react.answer(r.reveal.q === "best", { partial: r.reveal.q === "ok" });
     }
     setSolo(r);
   };
@@ -184,7 +183,7 @@ export function WardGame() {
   );
   return (
     <GameFrame testID="game-ward" title={s.title} howTo={HOW} hud={hud} confirmLeave saves thumb={reveal ? <Button label={solo.end ? "See the ending" : "Next"} onPress={next} testID="ward-next" /> : undefined}>
-      <Animated.View key={`${s.step}-${!!reveal}`} entering={reduce ? undefined : FadeIn.duration(motion.state)} style={{ gap: space[5] }}>
+      <Swap k={`${s.step}-${!!reveal}`} style={{ gap: space[5] }}>
         <T v="h2">{shown.chapterTitle}</T>
         <Story>
           {shown.beats.map((b, k) => (
@@ -217,7 +216,7 @@ export function WardGame() {
           </View>
         ) : null}
         <MoveError text={mv.error} />
-      </Animated.View>
+      </Swap>
     </GameFrame>
   );
 }
@@ -247,7 +246,6 @@ function WardEnding({ title, end, xp, teamLine, again, againLabel }: { title: st
  * vote is graded for the one who gave it. The view is polled every 4 seconds.
  */
 export function WardTeam({ teamId, onExit }: { teamId: string; onExit: () => void }) {
-  const reduce = useReducedMotion();
   const react = useReactions();
   const [view, setView] = React.useState<WardTeamView | null>(null);
   const [missing, setMissing] = React.useState(false);
@@ -268,7 +266,7 @@ export function WardTeam({ teamId, onExit }: { teamId: string; onExit: () => voi
   if (missing && !view) {
     return (
       <GameFrame title="Ward Week" testID="ward-team-missing">
-        <EmptyState mood="puzzled" title="Team not found" body="You may not be in this team, or team play is not open yet." action={{ label: "Back to Ward Week", onPress: onExit }} />
+        <EmptyState mood="missing" title="Team not found" body="You may not be in this team, or team play is not open yet." action={{ label: "Back to Ward Week", onPress: onExit }} />
       </GameFrame>
     );
   }
@@ -312,7 +310,7 @@ export function WardTeam({ teamId, onExit }: { teamId: string; onExit: () => voi
   return (
     <GameFrame testID="ward-team" title={scene.title} howTo={HOW} hud={hud} saves confirmLeave thumb={pending ? <Button label={nextLabel} onPress={markSeen} testID="ward-next" /> : undefined}>
       {header}
-      <Animated.View key={`${scene.step}-${seen}`} entering={reduce ? undefined : FadeIn.duration(motion.state)} style={{ gap: space[5] }}>
+      <Swap k={`${scene.step}-${seen}`} style={{ gap: space[5] }}>
         <T v="h2">{pending ? pending.chapterTitle : scene.chapterTitle}</T>
         <Story>
           {(pending ? pending.beats : scene.beats).map((b, k) => (
@@ -357,7 +355,7 @@ export function WardTeam({ teamId, onExit }: { teamId: string; onExit: () => voi
             <Dials vars={scene.vars} />
           </View>
         ) : null}
-      </Animated.View>
+      </Swap>
     </GameFrame>
   );
 }

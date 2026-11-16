@@ -10,6 +10,7 @@ import { ApiFailure, messageOf, reasonOf } from "@/api/errors";
 import { api, session } from "@/auth";
 import { EmptyState, Screen, Skeleton, T } from "@/ds";
 import { haptic } from "@/lib/haptics";
+import { springs } from "@/motion";
 import { space, useTheme } from "@/theme";
 import { AuthField, SubmitButton } from "@/visitor/form";
 
@@ -51,7 +52,7 @@ export function SetupScreen({ token }: { token: string }) {
     const reason = !token ? "unknown" : (check.data?.reason ?? "unknown");
     return (
       <Screen safeTop testID="setup-invalid">
-        <EmptyState mood="puzzled" title="This link cannot be used" body={check.isError ? `Could not check the link. ${reasonOf(check.error)}` : REASON[reason]} action={{ label: "Go to sign in", onPress: () => router.replace("/sign-in") }} />
+        <EmptyState mood="error" title="This link cannot be used" body={check.isError ? `Could not check the link. ${reasonOf(check.error)}` : REASON[reason]} action={{ label: "Go to sign in", onPress: () => router.replace("/sign-in") }} />
       </Screen>
     );
   }
@@ -101,7 +102,7 @@ function Bar({ on, full, track }: { on: boolean; full: boolean; track: string })
   const reduce = useReducedMotion();
   const v = useSharedValue(on ? 1 : 0);
   React.useEffect(() => {
-    v.set(reduce ? (on ? 1 : 0) : withSpring(on ? 1 : 0, { damping: 18, stiffness: 260 }));
+    v.set(reduce ? (on ? 1 : 0) : withSpring(on ? 1 : 0, springs.toggle));
   }, [on, reduce, v]);
   const anim = useAnimatedStyle(() => ({ transform: [{ scaleX: v.value }] }));
   return (

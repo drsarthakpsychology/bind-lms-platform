@@ -1,10 +1,10 @@
 import * as React from "react";
 import { View } from "react-native";
-import Animated, { FadeIn, useReducedMotion } from "react-native-reanimated";
 
 import { api } from "@/auth";
 import { Button, ProgressLine, T } from "@/ds";
-import { fonts, motion, space, useTheme } from "@/theme";
+import { Swap } from "@/motion";
+import { fonts, space, useTheme } from "@/theme";
 import { moveError, useTool } from "../api";
 import { diagnosisName } from "../data";
 import { EndPanel, EndThumb, FrameError, FrameLoading, GameFrame, HudLine, MoveError, StartScreen, StepStrip, Verdict } from "../frame";
@@ -63,7 +63,6 @@ export function DuelGame() {
 
 function Board({ how, round, total, marks, score, opp, left, reveal, waiting, busy, error, onAnswer, onNext, nextLabel }: { how: string[]; round: Round; total: number; marks: ("ok" | "miss" | null)[]; score: { you: number; opp: number }; opp: string; left: number; reveal: Reveal | null; waiting: boolean; busy: boolean; error: string | null; onAnswer: (dx: number, f: number) => void; onNext?: () => void; nextLabel?: string }) {
   const c = useTheme();
-  const reduce = useReducedMotion();
   const [dx, setDx] = React.useState<number | null>(null);
   const hud = (
     <View style={{ gap: space[2] }}>
@@ -84,7 +83,7 @@ function Board({ how, round, total, marks, score, opp, left, reveal, waiting, bu
   const thumb = reveal ? (onNext ? <Button label={nextLabel ?? "Next round"} onPress={onNext} testID="duel-next" /> : <T v="small" tone="muted" center>The next round starts in a moment.</T>) : waiting ? <T v="small" tone="muted" center>Answer in. Waiting for {opp}.</T> : undefined;
   return (
     <GameFrame testID="game-duel" title="Differential duel" howTo={how} hud={hud} confirmLeave thumb={thumb}>
-      <Animated.View key={round.n} entering={reduce ? undefined : FadeIn.duration(motion.state)} style={{ gap: space[4] }}>
+      <Swap k={round.n} style={{ gap: space[4] }}>
         <Story kicker={round.topic}>
           <T v="reading">{round.vignette}</T>
         </Story>
@@ -109,7 +108,7 @@ function Board({ how, round, total, marks, score, opp, left, reveal, waiting, bu
         )}
         <MoveError text={error} />
         {reveal ? <Verdict right={reveal.dxOk} partial={reveal.dxOk && !reveal.featureOk} title={`You +${reveal.points} · ${opp} +${reveal.opp}`} why={reveal.why} seed={round.n} /> : null}
-      </Animated.View>
+      </Swap>
     </GameFrame>
   );
 }
@@ -169,7 +168,7 @@ function LiveDuel({ how, profile }: { how: string[]; profile: Profile }) {
   React.useEffect(() => {
     if (last && last.round > seen.current) {
       seen.current = last.round;
-      react.answer(last.you.dxOk);
+      react.answer(last.you.dxOk, { timed: true });
     }
   }, [last, react]);
 
@@ -250,7 +249,7 @@ function LocalDuel({ how, items }: { how: string[]; items: Item[] }) {
       setReveal({ dxOk, featureOk, points, dx: round.dx, feature: round.feature, why: round.why, opp });
       setScore((s) => ({ you: s.you + points, opp: s.opp + opp }));
       setMarks((m) => [...m, dxOk ? "ok" : "miss"]);
-      react.answer(dxOk);
+      react.answer(dxOk, { timed: true });
     },
     [game, round, reveal, at, react],
   );
