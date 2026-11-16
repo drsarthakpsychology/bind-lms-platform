@@ -83,7 +83,6 @@ export function NotificationsScreen() {
     } catch (e) {
       if (e instanceof ApiFailure && e.code === "network") {
         // Offline: mark them read here now, and tell the server when the internet is back.
-        haptic.select();
         const at = new Date().toISOString();
         qc.setQueryData<NotificationList>(keys.notifications, (l) => (l ? { ...l, unread: 0, items: l.items.map((n) => (n.readAt ? n : { ...n, readAt: at })) } : l));
         void queueWrite({ method: "POST", path: "/notifications/read-all", scope: "read-all" })
