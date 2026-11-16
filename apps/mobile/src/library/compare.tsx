@@ -35,7 +35,7 @@ export function CompareScreen() {
   const p = useLocalSearchParams<{ a?: string; b?: string }>();
   const qa = useMedicinePage(String(p.a ?? ""));
   const qb = useMedicinePage(String(p.b ?? ""));
-  if (qa.isError || qb.isError) return <Screen title="Compare"><LoadError what="these medicines" onRetry={() => { void qa.refetch(); void qb.refetch(); }} /></Screen>;
+  if (qa.isError || qb.isError) return <Screen title="Compare"><LoadError error={qa.error ?? qb.error} what="these medicines" onRetry={() => { void qa.refetch(); void qb.refetch(); }} /></Screen>;
   if (!qa.data || !qb.data) return <Screen title="Compare"><RowsSkeleton rows={8} /></Screen>;
   const sides: Side[] = [qa.data, qb.data].map((d) => ({ med: d.med as unknown as Med, mech: d.mechanism as Mechanism | null, half: d.halfLife as HalfLife | null }));
   const rows = sides.map(rowsOf);

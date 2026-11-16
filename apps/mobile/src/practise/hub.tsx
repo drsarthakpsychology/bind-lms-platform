@@ -96,7 +96,7 @@ export function PractiseHub() {
   return (
     <Screen tab top={<TabTop />} title="Practise" testID="practise" onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
       {q.isError ? (
-        <LoadError what="Practise" onRetry={() => void q.refetch()} />
+        <LoadError error={q.error} what="Practise" onRetry={() => void q.refetch()} />
       ) : q.isLoading || !s ? (
         <View style={{ gap: space[3] }} testID="practise-loading">
           <Skeleton w="40%" h={14} />

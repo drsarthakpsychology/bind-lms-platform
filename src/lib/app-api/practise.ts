@@ -27,6 +27,7 @@ import { campaignCards } from "@/lib/games-sims/ward/deal";
 import { ROOMS, roomById } from "@/lib/games-sims/escape/rooms";
 import { roomCards } from "@/lib/games-sims/escape/deal";
 import { CLINICS, randomClinicStart } from "@/lib/practice/clinic";
+import { SMALL_THINGS } from "@/lib/mse/small-things";
 import { SCENARIOS, WORDS } from "@/lib/learn/scenarios";
 import { ALL_TERMS } from "@/lib/learn/notes";
 import { SAY_IT } from "@/lib/decode/say-it";
@@ -301,7 +302,8 @@ export const TOOLS: Record<PractiseToolId, ToolDef> = {
     howTo: ["Write what you can see and hear, not what you conclude."],
     moves: ["cases.mark", "save.answers"],
     records: ["mse"],
-    load: async () => ({ data: { content: await loadMseLadderContent() } }),
+    // The small things walk: the moments themselves (static, no answers to hide; the read shows after a tap, as on the website).
+    load: async () => ({ data: { content: await loadMseLadderContent(), smallThings: SMALL_THINGS } }),
   },
   formulation: {
     gate: flagGate("/practice/formulation", "formulation"),

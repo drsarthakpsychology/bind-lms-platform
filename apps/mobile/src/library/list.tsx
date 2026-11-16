@@ -8,7 +8,8 @@ import { ApiFailure } from "@/api/errors";
 import { api } from "@/auth";
 import { Chips, EmptyState, LoadError, Row, RowList, RowsSkeleton, Screen, T } from "@/ds";
 import { TabTop } from "@/nav/top";
-import type { MedicineList, MedicinePage } from "@/practise/types";
+import type { MedicineList } from "@/practise/types";
+import type { MedicinePage } from "@/practise/contract";
 import { layout, space, type as scale, useTheme } from "@/theme";
 import { ClassMark } from "./marks";
 import { searchMeds } from "./meds";
@@ -43,7 +44,7 @@ export function LibraryScreen() {
       </View>
       {q.data ? <Chips scroll label="Group" options={[{ id: "All", name: "All" }, ...q.data.groups.map((g) => ({ id: g, name: g }))]} value={group} onChange={setGroup} /> : null}
       {q.isError ? (
-        soon ? <EmptyState mood="sleepy" title="Coming in the next update" body="The medicine library is ready on the website and arrives in the app soon." testID="soon" /> : <LoadError what="the medicine library" onRetry={() => void q.refetch()} />
+        soon ? <EmptyState mood="sleepy" title="Coming in the next update" body="The medicine library is ready on the website and arrives in the app soon." testID="soon" /> : <LoadError error={q.error} what="the medicine library" onRetry={() => void q.refetch()} />
       ) : !q.data ? (
         <RowsSkeleton rows={9} />
       ) : rows.length ? (
