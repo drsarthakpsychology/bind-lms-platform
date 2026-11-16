@@ -70,7 +70,10 @@ export function DateField({ label, value, onChange, hint, error, min, optional, 
 function DateSheet({ open, title, value, min, optional, onClose, onPick, testID }: { open: boolean; title: string; value: string; min?: string; optional?: string; onClose: () => void; onPick: (v: string) => void; testID?: string }) {
   const c = useTheme();
   const today = todayIst();
-  const start = value || (min && min > today ? min : today);
+  // Only a real yyyy-mm-dd opens on its month: anything else (a time, an old
+  // value from the server) made Array(NaN) in monthGrid, which throws.
+  const day10 = (v?: string) => (v && /^\d{4}-\d{2}-\d{2}/.test(v) ? v.slice(0, 10) : "");
+  const start = day10(value) || (day10(min) && day10(min) > today ? day10(min) : today);
   const [ym, setYm] = React.useState({ y: Number(start.slice(0, 4)), m: Number(start.slice(5, 7)) - 1 });
   // Opening again starts on the month of the current value.
   const [wasOpen, setWasOpen] = React.useState(open);
@@ -112,7 +115,7 @@ function DateSheet({ open, title, value, min, optional, onClose, onPick, testID 
           {cells.map((d, i) => {
             if (!d) return <View key={i} style={{ width: `${100 / 7}%`, height: layout.target }} />;
             const iso = isoDay(ym.y, ym.m, d);
-            const on = iso === value;
+            const on = iso === value.slice(0, 10);
             const isToday = iso === today;
             const off = !!min && iso < min;
             return (

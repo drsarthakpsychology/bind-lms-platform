@@ -35,6 +35,17 @@ describe("admin dates", () => {
     await fireEvent.press(screen.getByTestId("date-2026-11-20"));
     expect(onChange).toHaveBeenCalledWith("2026-11-20");
   });
+
+  it("a value that is not a day opens on today's month instead of crashing (Array(NaN) threw)", async () => {
+    await render(<DateField label="Runs out on" value="soon" min="later" onChange={jest.fn()} testID="d2" />);
+    await fireEvent.press(screen.getByTestId("d2"));
+    expect(screen.getByTestId("date-month")).toBeTruthy();
+  });
+  it("a full time from the server opens on its own month and marks its day", async () => {
+    await render(<DateField label="Issue date" value="2027-02-03T10:00:00Z" onChange={jest.fn()} testID="d3" />);
+    await fireEvent.press(screen.getByTestId("d3"));
+    expect(screen.getByTestId("date-month").props.children).toBe("February 2027");
+  });
 });
 
 describe("admin search", () => {
