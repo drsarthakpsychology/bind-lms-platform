@@ -36,7 +36,7 @@ export function LongScreen() {
   return (
     <Screen testID="prep-long" title={title} lead={d?.level === "home" || !d ? "Write your answer first, on paper or in your head. Then see the model answer." : undefined}>
       {q.isError ? (
-        <LoadError onRetry={() => void q.refetch()} />
+        <LoadError error={q.error} onRetry={() => void q.refetch()} />
       ) : !d ? (
         <RowsSkeleton rows={5} />
       ) : (

@@ -83,7 +83,7 @@ export function MocksScreen() {
   return (
     <Screen testID="mocks" title="Mock tests" lead="Timed papers, mostly questions you have not seen." onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
       {q.isError ? (
-        <LoadError what="the mock tests" onRetry={() => void q.refetch()} />
+        <LoadError error={q.error} what="the mock tests" onRetry={() => void q.refetch()} />
       ) : !q.data ? (
         <RowsSkeleton rows={5} />
       ) : !full ? (
@@ -668,7 +668,7 @@ export function MockResultScreen() {
   return (
     <Screen testID="mock-saved" title={d?.title ?? "Mock results"} onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
       {q.isError ? (
-        <LoadError what="this mock" onRetry={() => void q.refetch()} />
+        <LoadError error={q.error} what="this mock" onRetry={() => void q.refetch()} />
       ) : !d ? (
         <RowsSkeleton rows={6} />
       ) : d.result ? (

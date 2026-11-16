@@ -29,7 +29,7 @@ export function PrepHome() {
   return (
     <Screen testID="prep" title="Exam Prep" lead="Questions by subject and topic, one at a time. Nothing here counts towards your marks." onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
       {q.isError ? (
-        <LoadError what="Exam Prep" onRetry={() => void q.refetch()} />
+        <LoadError error={q.error} what="Exam Prep" onRetry={() => void q.refetch()} />
       ) : !d ? (
         <RowsSkeleton rows={5} />
       ) : (
@@ -69,7 +69,7 @@ export function PrepSubject() {
   return (
     <Screen testID="prep-subject" title={d?.title ?? " "} lead={d ? statLine(d.stats) : undefined}>
       {q.isError ? (
-        <LoadError what="this subject" onRetry={() => void q.refetch()} />
+        <LoadError error={q.error} what="this subject" onRetry={() => void q.refetch()} />
       ) : !d ? (
         <RowsSkeleton rows={6} />
       ) : (
