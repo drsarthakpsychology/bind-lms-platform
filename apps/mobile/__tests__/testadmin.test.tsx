@@ -5,7 +5,8 @@ import { StyleSheet, Text } from "react-native";
 
 import { followUpDate, followUpLine } from "@/admin/format";
 import { adminMock } from "@/admin/mock";
-import { AdminPersonScreen } from "@/admin/screens/people";
+import { AdminDoubtScreen } from "@/admin/screens/doubts";
+import { AdminPeopleScreen, AdminPersonScreen } from "@/admin/screens/people";
 import { mock } from "@/api/mock/server";
 import { session } from "@/auth";
 import { FlowGap, Reveal } from "@/motion";
@@ -89,5 +90,29 @@ describe("people follow-ups", () => {
     await fireEvent.press(screen.getByTestId("stage-save"));
     await waitFor(() => expect(adminMock.state().people.find((p) => p.key === "farhan@example.com")?.stage).toBe("fee_shared"));
     expect(adminMock.state().people.find((p) => p.key === "farhan@example.com")?.followUpAt).toBe(before);
+  });
+});
+
+describe("admin actions that are hard to take back", () => {
+  it("hiding a doubt asks first", async () => {
+    await signInAs("admin@example.com");
+    params.mockReturnValue({ id: "ad1" });
+    await render(<AdminDoubtScreen />);
+    await screen.findByText("Is flat affect the same as blunted affect?");
+    await fireEvent.press(screen.getByTestId("doubt-hide"));
+    expect(adminMock.state().doubts.find((d) => d.id === "ad1")?.status).not.toBe("hidden");
+    await fireEvent.press(await screen.findByTestId("confirm-go"));
+    await waitFor(() => expect(adminMock.state().doubts.find((d) => d.id === "ad1")?.status).toBe("hidden"));
+  });
+
+  it("People: ticking someone shows the email and WhatsApp bar", async () => {
+    await signInAs("admin@example.com");
+    await render(<AdminPeopleScreen />);
+    await screen.findByText("Tanvi Gupta");
+    expect(screen.queryByTestId("people-bar")).toBeNull();
+    await fireEvent.press(screen.getByTestId("people-all"));
+    expect(await screen.findByTestId("people-bar")).toBeTruthy();
+    await fireEvent.press(screen.getByTestId("people-email"));
+    expect(await screen.findByTestId("contact-subject")).toBeTruthy();
   });
 });
