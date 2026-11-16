@@ -1378,7 +1378,7 @@ export type ClinicAttendanceSummary = {
   onLeave: number;
   absent: number;
   noScanOut: number;
-  /** attended / (required - onLeave), 0 to 100; null when nothing is due yet. */
+  /** Required sessions attended / (required - onLeave), 0 to 100; null when nothing is due yet. `attended` also counts sessions joined that were not required. */
   percent: number | null;
   minutes: number;
 };
