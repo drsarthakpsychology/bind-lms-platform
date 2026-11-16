@@ -1,5 +1,5 @@
 import { redirect } from "next/navigation";
-import { requireAdmin } from "@/lib/auth/guards";
+import { isSuperAdmin, requireAdmin } from "@/lib/auth/guards";
 import Link from "next/link";
 import { BookOpen, Plus } from "lucide-react";
 import { createClient } from "@/lib/supabase/server";
@@ -33,11 +33,13 @@ export default async function CoursesPage() {
 
   const published = (courses ?? []).filter((c) => c.is_published).length;
 
+  // A View Admin sees the list; creating, publishing and deleting are Super Admin only.
+  const canWrite = isSuperAdmin(me);
   if (uiV2For(await readFlags(), me.role)) {
     return (
       <CoursesListV2
-        createForm={<CreateCourseForm />}
-        courses={(courses ?? []).map((c) => ({ id: c.id, title: c.title, published: c.is_published, lessons: lessonCounts.get(c.id) ?? 0, actions: <CourseActions courseId={c.id} isPublished={c.is_published} /> }))}
+        createForm={canWrite ? <CreateCourseForm /> : undefined}
+        courses={(courses ?? []).map((c) => ({ id: c.id, title: c.title, published: c.is_published, lessons: lessonCounts.get(c.id) ?? 0, actions: canWrite ? <CourseActions courseId={c.id} isPublished={c.is_published} /> : undefined }))}
       />
     );
   }
