@@ -10,10 +10,9 @@ import { space, useTheme } from "@/theme";
 import { adminCalls, useAdminAction, useRefreshAdmin, useSignOffs, useSubmissions } from "../api";
 import type { SignOff, Submission } from "../extra";
 import { ago, day } from "../format";
-import { ConfirmSheet, Facts, Loaded, Notice, Status } from "../kit";
+import { ConfirmSheet, Facts, Loaded, Notice, ScrollTabs, Status } from "../kit";
 import { openStudent } from "../nav";
 import { useAdminRole, VIEW_ONLY_LINE } from "../role";
-import { ScrollTabs } from "./student";
 
 /**
  * A score is optional (the website's Return feedback), and when given it is a
