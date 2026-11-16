@@ -467,7 +467,7 @@ export function ScrollTabs<V extends string>({ tabs, value, onChange }: { tabs: 
         }}
       >
         <View style={{ flex: 1 }}>
-          <TabRow tabs={tabs} value={value} onChange={pick} />
+          <TabRow tabs={tabs} value={value} onChange={pick} scroll={false} />
         </View>
       </ScrollView>
       {more ? (
