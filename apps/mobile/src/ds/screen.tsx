@@ -116,19 +116,21 @@ export type ScreenProps = {
 };
 
 /** The soft pastel glow behind a tab screen's header: the area's wash fading into the canvas. Scrolls away with the page. */
-function AreaGlow() {
+function AreaGlow({ area }: { area: Area }) {
   const a = useAccent();
+  // One gradient id per area: tabs stay mounted side by side, and a shared id would paint every glow in the first tab's colour.
+  const id = `area-glow-${area}`;
   return (
     <View pointerEvents="none" accessible={false} importantForAccessibility="no-hide-descendants" testID="area-glow" style={{ position: "absolute", top: 0, left: 0, right: 0, height: 260 }}>
       <Svg width="100%" height="100%">
         <Defs>
-          <LinearGradient id="area-glow" x1="0" y1="0" x2="0" y2="1">
+          <LinearGradient id={id} x1="0" y1="0" x2="0" y2="1">
             <Stop offset="0" stopColor={a.wash} stopOpacity={0.85} />
             <Stop offset="0.55" stopColor={a.wash} stopOpacity={0.35} />
             <Stop offset="1" stopColor={a.wash} stopOpacity={0} />
           </LinearGradient>
         </Defs>
-        <Rect x="0" y="0" width="100%" height="100%" fill="url(#area-glow)" />
+        <Rect x="0" y="0" width="100%" height="100%" fill={`url(#${id})`} />
       </Svg>
     </View>
   );
@@ -188,7 +190,7 @@ export function Screen({ children, title, lead, top, footer, onRefresh, refreshi
   );
   const inner = area ? (
     <View>
-      <AreaGlow />
+      <AreaGlow area={area} />
       {body}
     </View>
   ) : (
