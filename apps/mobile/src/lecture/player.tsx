@@ -4,7 +4,7 @@ import { StatusBar } from "expo-status-bar";
 import { useVideoPlayer, VideoView } from "expo-video";
 import { Maximize, Minimize, RotateCcw, RotateCw } from "lucide-react-native";
 import * as React from "react";
-import { AppState, BackHandler, Platform, Pressable, View, type LayoutChangeEvent } from "react-native";
+import { AppState, Platform, Pressable, View, type LayoutChangeEvent } from "react-native";
 import Animated, { useReducedMotion } from "react-native-reanimated";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
@@ -15,7 +15,6 @@ import { streamView } from "@/api/adapt-core";
 import { api, session } from "@/auth";
 import { Button, Skeleton, T } from "@/ds";
 import { haptic } from "@/lib/haptics";
-import { allowRotation, goLandscape, holdPortrait } from "@/lib/orientation";
 import { presets } from "@/motion";
 import { ThemeProvider, fixed, fonts, layout, space } from "@/theme";
 import { LectureIntro, type IntroInfo } from "./intro";
@@ -31,8 +30,10 @@ import { Watermark } from "./watermark";
  *  - Android: the whole app has FLAG_SECURE (app/_layout.tsx), so recordings
  *    and screenshots come out black. iPhone: while the screen is recorded or
  *    mirrored the picture is hidden and the lecture paused.
- *  - Full screen is the app's own (turns the phone on its side and fills the
- *    screen), so the watermark stays on top. Back leaves full screen first.
+ *  - Full screen is the app's own, so the watermark and these controls stay on
+ *    top: the lecture screen owns it (src/lecture/fullscreen.ts: the side lock,
+ *    hidden system bars, Back, turning the phone) and hides everything around the
+ *    player, so the player is never moved or remounted and playback runs on.
  *  - Pauses when the app goes to the background.
  * In mock mode (no server) a stand-in surface plays a silent timeline so the
  * screen can be built and tested.
@@ -162,7 +163,7 @@ function RoundButton({ label, onPress, children, size = 48 }: { label: string; o
   );
 }
 
-function Controls({ pb, full, onFull, onFirstPlay }: { pb: Playback; full: boolean; onFull: () => void; onFirstPlay: () => void }) {
+function Controls({ pb, full, onFull, onFirstPlay, sides }: { pb: Playback; full: boolean; onFull?: () => void; onFirstPlay: () => void; sides: { left: number; right: number; bottom: number } }) {
   const reduce = useReducedMotion();
   const [shown, setShown] = React.useState(true);
   // Controls fade away 3 s after the lecture starts playing; a tap brings them back.
@@ -196,7 +197,7 @@ function Controls({ pb, full, onFull, onFirstPlay }: { pb: Playback; full: boole
               <RotateCw size={22} color={fixed.onVideo} />
             </RoundButton>
           </View>
-          <View style={{ flexDirection: "row", alignItems: "center", gap: space[3], paddingHorizontal: space[3] }}>
+          <View style={{ flexDirection: "row", alignItems: "center", gap: space[3], paddingLeft: space[3] + sides.left, paddingRight: space[3] + sides.right, paddingBottom: sides.bottom }}>
             <T v="caption" num style={{ color: fixed.onVideo, fontFamily: fonts.semibold }} maxFontSizeMultiplier={1.2}>
               {clock(pb.time)}
             </T>
@@ -219,9 +220,21 @@ function Controls({ pb, full, onFull, onFirstPlay }: { pb: Playback; full: boole
                 {speedLabel(pb.rate)}
               </T>
             </Pressable>
-            <Pressable accessibilityRole="button" accessibilityLabel={full ? "Leave full screen" : "Full screen"} onPress={onFull} hitSlop={6} style={{ width: layout.target, height: layout.target, alignItems: "center", justifyContent: "center" }} testID="player-full">
-              {full ? <Minimize size={22} color={fixed.onVideo} /> : <Maximize size={22} color={fixed.onVideo} />}
-            </Pressable>
+            {onFull ? (
+              <Pressable
+                accessibilityRole="button"
+                accessibilityLabel={full ? "Leave full screen" : "Full screen"}
+                onPress={() => {
+                  haptic.select();
+                  onFull();
+                }}
+                hitSlop={6}
+                style={{ width: layout.target, height: layout.target, alignItems: "center", justifyContent: "center" }}
+                testID="player-full"
+              >
+                {full ? <Minimize size={22} color={fixed.onVideo} /> : <Maximize size={22} color={fixed.onVideo} />}
+              </Pressable>
+            ) : null}
           </View>
         </Animated.View>
       ) : null}
@@ -239,18 +252,21 @@ export type PlayerProps = {
   compromised?: boolean;
   /** The intro shown over the video until the first Play (storyboard 5). */
   intro?: IntroInfo;
+  /** Full screen (owned by the lecture screen, see src/lecture/fullscreen.ts). */
+  full?: boolean;
+  /** The full-screen button. No button without it. */
+  onFull?: () => void;
 };
 
 type Phase = { kind: "loading" } | { kind: "ready"; access: StreamAccess } | { kind: "refused"; message: string } | { kind: "error"; message: string };
 
-export function ProtectedPlayer({ lessonId, onTime, compromised, intro }: PlayerProps) {
+export function ProtectedPlayer({ lessonId, onTime, compromised, intro, full = false, onFull }: PlayerProps) {
   // Per lecture: Next and Previous replace the lecture in the same player.
   const [playedFor, setPlayedFor] = React.useState<string | null>(null);
   const played = playedFor === lessonId;
   const firstPlay = React.useCallback(() => setPlayedFor(lessonId), [lessonId]);
   const insets = useSafeAreaInsets();
   const [phase, setPhase] = React.useState<Phase>({ kind: "loading" });
-  const [full, setFull] = React.useState(false);
   const [captured, setCaptured] = React.useState(isCaptured());
   const [attempt, setAttempt] = React.useState(0);
   const pbRef = React.useRef<Playback | null>(null);
@@ -295,12 +311,6 @@ export function ProtectedPlayer({ lessonId, onTime, compromised, intro }: Player
     return () => sub.remove();
   }, []);
 
-  // The lecture screen may turn; everything else stays upright.
-  React.useEffect(() => {
-    void allowRotation();
-    return () => void holdPortrait();
-  }, []);
-
   /** Playback stopped: if the address ran out, get a new one and carry on from the same place. */
   const renewIfExpired = (access: StreamAccess, time: number) => {
     if (!shouldRenew(access, renewed.current)) return;
@@ -310,27 +320,11 @@ export function ProtectedPlayer({ lessonId, onTime, compromised, intro }: Player
     setAttempt((a) => a + 1);
   };
 
-  const toggleFull = React.useCallback(() => {
-    haptic.select();
-    setFull((f) => {
-      if (f) void allowRotation();
-      else void goLandscape();
-      return !f;
-    });
-  }, []);
-
-  React.useEffect(() => {
-    if (!full) return;
-    const sub = BackHandler.addEventListener("hardwareBackPress", () => {
-      toggleFull();
-      return true;
-    });
-    return () => sub.remove();
-  }, [full, toggleFull]);
-
-  const frame = full
-    ? { position: "absolute" as const, top: 0, left: 0, right: 0, bottom: 0, zIndex: 50, paddingLeft: insets.left, paddingRight: insets.right }
-    : { width: "100%" as const, aspectRatio: 16 / 9 };
+  // Full screen fills what the lecture screen gives it (the whole screen: it hides
+  // everything else). The same view either way, so the video is never remounted.
+  const frame = full ? { flex: 1 } : { width: "100%" as const, aspectRatio: 16 / 9 };
+  // Clear of a camera cutout and the gesture line when the bars show for a moment.
+  const sides = full ? { left: insets.left, right: insets.right, bottom: Math.min(insets.bottom, space[3]) } : { left: 0, right: 0, bottom: 0 };
 
   let body: React.ReactNode;
   if (phase.kind === "loading") {
@@ -383,7 +377,7 @@ export function ProtectedPlayer({ lessonId, onTime, compromised, intro }: Player
                   </ThemeProvider>
                 </View>
               ) : (
-                <Controls pb={pb} full={full} onFull={toggleFull} onFirstPlay={firstPlay} />
+                <Controls pb={pb} full={full} onFull={onFull} onFirstPlay={firstPlay} sides={sides} />
               )}
               <Watermark text={phase.access.watermark.text} />
             </>
