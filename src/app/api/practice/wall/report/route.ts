@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
 import { requireStudentApi } from "@/lib/auth/api-guard";
-import { createClient } from "@/lib/supabase/server";
+import { reportWall } from "@/lib/wall/data";
 import { rateLimit } from "@/lib/rate-limit";
 
 export const runtime = "nodejs";
@@ -17,7 +17,6 @@ const schema = z.object({
 /** POST /api/practice/wall/report: student flags a post/reply for faculty.
  *  wall_reports RLS: owner insert, owner+admin select (privacy test). */
 export async function POST(req: Request) {
-  const supabase = await createClient();
   const access = await requireStudentApi({ path: "/wall" });
   if (!access.ok) return access.response;
   const profile = access.profile;
@@ -30,12 +29,7 @@ export async function POST(req: Request) {
   const parsed = schema.safeParse(body);
   if (!parsed.success) return NextResponse.json({ error: "invalid body" }, { status: 400 });
 
-  const { error } = await supabase.from("wall_reports").insert({
-    post_id: parsed.data.postId ?? null,
-    reply_id: parsed.data.replyId ?? null,
-    reported_by: user.id,
-    reason: parsed.data.reason,
-  });
-  if (error) return NextResponse.json({ error: error.message }, { status: 500 });
+  const r = await reportWall(user.id, parsed.data);
+  if (!r.ok) return NextResponse.json({ error: r.error }, { status: 500 });
   return NextResponse.json({ ok: true });
 }
