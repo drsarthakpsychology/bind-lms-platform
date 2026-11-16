@@ -380,10 +380,28 @@ async function route(req: RawRequest): Promise<RawResponse> {
   return notFound();
 }
 
+/** A short fingerprint of an answer (FNV-1a), quoted like an HTTP ETag. */
+function etagOf(text: string): string {
+  let h = 0x811c9dc5;
+  for (let i = 0; i < text.length; i++) {
+    h ^= text.charCodeAt(i);
+    h = Math.imul(h, 0x01000193);
+  }
+  return `W/"${(h >>> 0).toString(36)}-${text.length.toString(36)}"`;
+}
+
 /** The transport the API client uses in mock mode. */
 export const mockTransport: Transport = async (req) => {
   state.log.push({ method: req.method, path: req.path, body: req.body, at: typeof performance !== "undefined" ? Math.round(performance.now()) : 0 });
-  if (state.delayMs) await new Promise((r) => setTimeout(r, state.delayMs));
-  const res = await route(req);
-  return stress && res.json ? { ...res, json: stressed(res.json) as RawResponse["json"] } : res;
+  // The sign-in itself stays quick (speed checks time what the screens ask for, from the moment the account opens).
+  if (state.delayMs && !req.path.startsWith("/auth/")) await new Promise((r) => setTimeout(r, state.delayMs));
+  const routed = await route(req);
+  const res = stress && routed.json ? { ...routed, json: stressed(routed.json) as RawResponse["json"] } : routed;
+  // ETag and 304 as the server does them (docs/app/API_CONTRACT.md section 1).
+  if (req.method === "GET" && res.status === 200 && res.json && typeof res.json === "object" && (res.json as { ok?: unknown }).ok === true) {
+    const etag = etagOf(JSON.stringify(res.json));
+    if (req.headers["If-None-Match"] === etag) return { status: 304, json: null, etag };
+    return { ...res, etag };
+  }
+  return res;
 };

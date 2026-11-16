@@ -63,6 +63,7 @@ configureOnline({
 });
 
 onSignedOut(() => {
+  api.forgetHeld();
   queryClient.clear();
   void persister.removeClient();
 });
