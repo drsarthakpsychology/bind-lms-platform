@@ -9,6 +9,7 @@ import { session } from "@/auth";
 import { LoadSwap } from "@/motion";
 import { missWhy } from "@/practise/games/blitz";
 import { SortGame } from "@/practise/games/sort";
+import { WardGame } from "@/practise/games/ward";
 import { render } from "./utils";
 import { searchCovers, searchHint } from "@/screens/search/search";
 
@@ -74,5 +75,18 @@ describe("Search says only what this account can find", () => {
   it("a student sees the full list", () => {
     expect(searchCovers({ study: true, medicines: true, practise: true, games: true })).toBe("Lectures, modules, notes, medicines, cases, games and Exam Prep.");
     expect(searchHint(true, true)).toBe("Lectures, modules, medicines");
+  });
+});
+
+describe("Ward Week team: the team's call", () => {
+  it("does not show the next call's empty vote count beside the result", async () => {
+    await render(<WardGame />);
+    await press("team-create");
+    await press("ward-vote-1");
+    await waitFor(() => expect(screen.getByText(/The team chose/)).toBeTruthy());
+    expect(screen.queryByText(/\d+\/\d+ voted/)).toBeNull();
+    expect(screen.queryByText("Not yet")).toBeNull();
+    await press("ward-next");
+    await waitFor(() => expect(screen.getByText(/\d+\/\d+ voted/)).toBeTruthy());
   });
 });
