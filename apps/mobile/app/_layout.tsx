@@ -211,6 +211,7 @@ function Shell() {
             <Stack.Screen name="shop" options={{ title: "" }} />
             <Stack.Screen name="case/[id]" options={{ headerShown: false, gestureEnabled: false }} />
             <Stack.Screen name="case/library" options={{ title: "" }} />
+            <Stack.Screen name="practise/[group]" options={{ title: "" }} />
             <Stack.Screen name="prep/index" options={{ title: "" }} />
             <Stack.Screen name="prep/[subject]" options={{ title: "" }} />
             <Stack.Screen name="prep/set" options={{ headerShown: false, gestureEnabled: false }} />

@@ -20,7 +20,7 @@ import { MseGame, segments } from "@/practise/games/mse";
 import { RxGame } from "@/practise/games/rx";
 import { SortGame } from "@/practise/games/sort";
 import { WardGame } from "@/practise/games/ward";
-import { PractiseHub } from "@/practise/hub";
+import { PractiseGroup, PractiseHub } from "@/practise/hub";
 import { PrepHome } from "@/practise/prep";
 import { LongScreen } from "@/practise/prep/long";
 import { PrepSetScreen } from "@/practise/prep/set";
@@ -70,12 +70,19 @@ describe("answers never reach the phone before the student answers", () => {
 });
 
 describe("Practise hub", () => {
-  it("draws the server's rows (GET /practise) and leads with today's case", async () => {
+  it("leads with today's case, then short groups of at most four rows with See all", async () => {
     await render(<PractiseHub />);
     await waitFor(() => expect(screen.getByText("Today's patient")).toBeTruthy());
-    for (const t of ["Blitz", "Criteria sort", "MSE Lab", "Ward Week", "Rx Detective", "Differential duel", "Team Escape Room", "Comorbid", "Clinic detective", "What would you do?", "Exam Prep", "League"]) expect(screen.getAllByText(t).length).toBeGreaterThan(0);
-    expect(screen.getByText("In progress")).toBeTruthy();
-    expect(screen.getByText("120+ new cases")).toBeTruthy();
+    for (const t of ["Pick up again", "Cases", "Games", "Exam Prep", "Boards", "League"]) expect(screen.getAllByText(t).length).toBeGreaterThan(0);
+    expect(screen.getByTestId("hub-pick-wwyd")).toBeTruthy();
+    expect(screen.queryByText("120+ new cases")).toBeNull();
+    expect(screen.getAllByTestId(/^practise-/).filter((e) => /^practise-(detective|two-minute|terms|judgment|mse|formulation|osce|landmark|ethics|out-of-depth|weak-spots|consulting-room)$/.test(String(e.props.testID))).length).toBeLessThanOrEqual(4);
+    expect(screen.getByTestId("hub-all-cases")).toBeTruthy();
+  });
+  it("See all lists the whole group", async () => {
+    await render(<PractiseGroup group="games" />);
+    await waitFor(() => expect(screen.getByText("Comorbid")).toBeTruthy());
+    for (const t of ["Blitz", "Criteria sort", "MSE Lab", "Ward Week", "Rx Detective", "Differential duel", "Team Escape Room"]) expect(screen.getByText(t)).toBeTruthy();
   });
 });
 
