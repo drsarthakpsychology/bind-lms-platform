@@ -1,19 +1,27 @@
-"""Draws the app icon, adaptive icon, splash and notification icon as SVG.
-Text is converted to outlines from the bundled Archivo files, so no font needs
-to be installed. Run: python3 scripts/make-assets.py && node scripts/make-assets.mjs
+"""Draws the app icon, adaptive icon, splash, notification icon and favicon as SVG.
+The logo is the VIBHA wordmark, the same one the website uses (src/components/brand/vibha-logo.tsx):
+"VIBHA" in the wide black Archivo cut, and "SCHOOL OF PSYCHOLOGY" in the pixel face where there is room.
+Text is converted to outlines from the bundled font files, so no font needs to be installed.
+Run: python3 apps/mobile/scripts/make-assets.py && node apps/mobile/scripts/make-assets.mjs
 """
 from fontTools.ttLib import TTFont
 from fontTools.pens.svgPathPen import SVGPathPen
 from fontTools.pens.transformPen import TransformPen
+from fontTools.pens.boundsPen import BoundsPen
 import os
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 FONTS = os.path.join(HERE, "..", "assets", "fonts")
 OUT = os.path.join(HERE, "..", "assets", "brand")
+# BLUE matches app.config.ts; LIME is the website's --primary.
 BLUE, LIME, INK, WHITE = "#1d44d8", "#cdf24b", "#111111", "#ffffff"
+WORD = "Archivo-Wordmark.ttf"
+PIX = "Silkscreen.ttf"
+TRACK = -0.02  # the website draws VIBHA with tracking-tight
 
 
 def text_path(text, font_file, size, x, y, anchor="middle", tracking=0.0):
+    """Outline of `text` with its baseline at y. Returns (path, advance width, ink box)."""
     font = TTFont(os.path.join(FONTS, font_file))
     gs, cmap, hmtx = font.getGlyphSet(), font.getBestCmap(), font["hmtx"]
     scale = size / font["head"].unitsPerEm
@@ -21,23 +29,42 @@ def text_path(text, font_file, size, x, y, anchor="middle", tracking=0.0):
     total = sum(widths) - tracking * size
     cx = x - total / 2 if anchor == "middle" else x
     out = []
+    box = BoundsPen(gs)
     for c, w in zip(text, widths):
+        t = (scale, 0, 0, -scale, cx, y)
         pen = SVGPathPen(gs)
-        gs[cmap[ord(c)]].draw(TransformPen(pen, (scale, 0, 0, -scale, cx, y)))
+        gs[cmap[ord(c)]].draw(TransformPen(pen, t))
+        gs[cmap[ord(c)]].draw(TransformPen(box, t))
         out.append(pen.getCommands())
         cx += w
-    return " ".join(out), total
+    return " ".join(out), total, box.bounds
 
 
-def mark(cx, cy, s, stroke=WHITE, pupil=LIME, ring=INK):
-    """The VIBHA mark (a V whose opening holds a pupil), from the web's vibha-logo.tsx; 40-unit box."""
-    k = s / 40.0
-    ox, oy = cx - 20 * k, cy - 21 * k
-    p = lambda x, y: f"{ox + x * k:.1f} {oy + y * k:.1f}"
-    return (
-        f'<path d="M{p(8, 8)} L{p(20, 34)} L{p(32, 8)}" fill="none" stroke="{stroke}" stroke-width="{5 * k:.1f}" stroke-linecap="round" stroke-linejoin="round"/>'
-        f'<circle cx="{ox + 20 * k:.1f}" cy="{oy + 17 * k:.1f}" r="{5 * k:.1f}" fill="{pupil}" stroke="{ring}" stroke-width="{2 * k:.1f}"/>'
-    )
+def vibha(cx, cy, width, fill):
+    """The word VIBHA, its ink box centred on (cx, cy) and `width` wide."""
+    _, _, (x0, y0, x1, y1) = text_path("VIBHA", WORD, 1000, 0, 0, anchor="start", tracking=TRACK)
+    s = width / (x1 - x0)
+    # Ink box at size 1000 is (x0..x1, y0..y1) with y0 = -cap height; place it centred.
+    x = cx - (x0 + (x1 - x0) / 2) * s
+    y = cy - (y0 + (y1 - y0) / 2) * s
+    d, _, box = text_path("VIBHA", WORD, 1000 * s, x, y, anchor="start", tracking=TRACK)
+    return f'<path d="{d}" fill="{fill}"/>', box
+
+
+def lockup(cx, cy, width, word=LIME, sub=WHITE, sub_opacity=0.85):
+    """VIBHA over SCHOOL OF PSYCHOLOGY, as on the website. The school line is as wide as the word."""
+    _, _, (wx0, wy0, wx1, wy1) = text_path("VIBHA", WORD, 1000, 0, 0, anchor="start", tracking=TRACK)
+    word_h = (wy1 - wy0) * width / (wx1 - wx0)
+    line = "SCHOOL OF PSYCHOLOGY"
+    _, _, (sx0, sy0, sx1, sy1) = text_path(line, PIX, 1000, 0, 0, anchor="start", tracking=0.06)
+    ss = width / (sx1 - sx0)
+    sub_h = (sy1 - sy0) * ss
+    gap = word_h * 0.22
+    top = cy - (word_h + gap + sub_h) / 2
+    w_svg, _ = vibha(cx, top + word_h / 2, width, word)
+    sub_y = top + word_h + gap + sub_h  # baseline of the school line
+    d, _, _ = text_path(line, PIX, 1000 * ss, cx - (sx0 + (sx1 - sx0) / 2) * ss, sub_y, anchor="start", tracking=0.06)
+    return w_svg + f'<path d="{d}" fill="{sub}" fill-opacity="{sub_opacity}"/>'
 
 
 def svg(w, h, body, bg=None):
@@ -50,56 +77,26 @@ def write(name, content):
         f.write(content)
 
 
-def mono_mark(cx, cy, s, colour=WHITE):
-    """One-colour mark for Android themed icons and the notification icon.
-    Android uses only the shape (alpha), so the pupil is a solid dot with a
-    clear gap cut around it, not a ring that would merge with the V."""
-    k = s / 40.0
-    ox, oy = cx - 20 * k, cy - 21 * k
-    p = lambda x, y: f"{ox + x * k:.1f} {oy + y * k:.1f}"
-    px, py = ox + 20 * k, oy + 17 * k
-    return (
-        f'<defs><mask id="gap"><rect width="100%" height="100%" fill="#fff"/>'
-        f'<circle cx="{px:.1f}" cy="{py:.1f}" r="{7 * k:.1f}" fill="#000"/></mask></defs>'
-        f'<path mask="url(#gap)" d="M{p(8, 8)} L{p(20, 34)} L{p(32, 8)}" fill="none" stroke="{colour}" stroke-width="{5 * k:.1f}" stroke-linecap="round" stroke-linejoin="round"/>'
-        f'<circle cx="{px:.1f}" cy="{py:.1f}" r="{5 * k:.1f}" fill="{colour}"/>'
-    )
-
-
-# App icon (iOS, Play listing, legacy Android): blue field, white V, lime pupil. No transparency (iOS rule).
-write("icon.svg", svg(1024, 1024, mark(512, 512, 640), BLUE))
-# Android adaptive icon, 108dp canvas: the launcher masks it to a circle/squircle of about 61%,
-# so the mark stays inside the central 66% safe zone. Background is the solid blue.
-write("adaptive-foreground.svg", svg(1024, 1024, mark(512, 512, 430)))
+# App icon (iOS, Play listing, older Android): blue field, lime VIBHA, as the website shows it on blue.
+# No transparency (iOS rule). 80% wide keeps clear of the rounded corners.
+write("icon.svg", svg(1024, 1024, vibha(512, 512, 800, LIME)[0], BLUE))
+# Android adaptive icon, 108dp canvas: launchers cut it to a circle or squircle and only the
+# central 66dp circle (61% of the canvas, 626 px) is always shown. VIBHA is 590 px wide, so its
+# corners sit inside that circle. Background is the solid blue.
+write("adaptive-foreground.svg", svg(1024, 1024, vibha(512, 512, 590, LIME)[0]))
 write("adaptive-background.svg", svg(1024, 1024, "", BLUE))
-write("adaptive-monochrome.svg", svg(1024, 1024, mono_mark(512, 512, 430)))
-# Notification icon: white on transparent (Android tints it).
-write("notification.svg", svg(96, 96, mono_mark(48, 48, 84)))
-# Splash: only the mark, on blue (light and dark alike). Android 12+ shows the splash image inside
-# a circle two thirds of its size, so the mark is kept well inside that circle; no text (it would be cut).
-write("splash.svg", svg(1024, 1024, mark(512, 512, 640)))
+# Themed icon (Android 13+): only the shape is used, the launcher picks the colour.
+write("adaptive-monochrome.svg", svg(1024, 1024, vibha(512, 512, 590, WHITE)[0]))
+# Notification icon: white on transparent (Android tints it). Full width so it reads at 24dp.
+write("notification.svg", svg(96, 96, vibha(48, 48, 92, WHITE)[0]))
+# Splash: the full wordmark on blue, light and dark alike. Android 12+ shows the splash image
+# inside a circle two thirds of its size, so the lockup stays inside a 660 px circle.
+write("splash.svg", svg(1024, 1024, lockup(512, 512, 600)))
 # Wordmark for in-app use and the store listing.
-d, total = text_path("VIBHA", "Archivo-Wordmark.ttf", 200, 40, 200, anchor="start", tracking=-0.02)
+d, total, _ = text_path("VIBHA", WORD, 200, 40, 200, anchor="start", tracking=TRACK)
 write("wordmark.svg", svg(int(total) + 80, 260, f'<path d="{d}" fill="{INK}"/>'))
-write("favicon.svg", svg(96, 96, mark(48, 48, 64), BLUE))
-# Google Play feature graphic (1024 x 500): blue, the mark, the name in white, a lime underline.
-name_d, name_w = text_path("Vibha Psychology", "Archivo-800.ttf", 72, 0, 0, anchor="start", tracking=-0.02)
-mark_s = 200
-gap = 36
-mark_w = mark_s * 0.725  # the V's drawn width, caps included
-x0 = (1024 - (mark_w + gap + name_w)) / 2
-name_x = x0 + mark_w + gap
-d_name, _ = text_path("Vibha Psychology", "Archivo-800.ttf", 72, name_x, 266, anchor="start", tracking=-0.02)
-d_sub, _ = text_path("Psychology you can practise.", "Archivo-600.ttf", 30, name_x, 314, anchor="start")
-write(
-    "feature-graphic.svg",
-    svg(
-        1024,
-        500,
-        mark(x0 + mark_w / 2, 262, mark_s)
-        + f'<path d="{d_name}" fill="{WHITE}"/>'
-        + f'<path d="{d_sub}" fill="{LIME}"/>',
-        BLUE,
-    ),
-)
+write("favicon.svg", svg(96, 96, vibha(48, 48, 84, LIME)[0], BLUE))
+# Google Play feature graphic (1024 x 500): blue, the wordmark lockup, a lime line under it.
+d_sub, sub_w, _ = text_path("Psychology you can practise.", "Archivo-600.ttf", 34, 512, 400, anchor="middle")
+write("feature-graphic.svg", svg(1024, 500, lockup(512, 220, 620) + f'<path d="{d_sub}" fill="{LIME}"/>', BLUE))
 print("svg written")
