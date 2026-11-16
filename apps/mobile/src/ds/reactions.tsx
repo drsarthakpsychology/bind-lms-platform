@@ -123,10 +123,11 @@ export function EndReaction({ right, total, mood, seed = "" }: { right?: number;
 
 /**
  * The sticker layer. Mount once per screen that answers questions (GameFrame
- * does). `bottom` is the room to keep clear above the safe area, so the
- * sticker sits above a pinned Next or Check button.
+ * does). `above` is the measured height of the screen's pinned footer (its
+ * Next, Check or Play again buttons, safe area included), so the sticker
+ * never covers them; without it the sticker keeps 96 points clear.
  */
-export function ReactionLayer({ bottom = 96 }: { bottom?: number }) {
+export function ReactionLayer({ above }: { above?: number }) {
   const shown = store.use((s) => s.shown);
   const insets = useSafeAreaInsets();
   // Leaving the screen closes the sticker (after this unmount, never during it).
@@ -140,7 +141,7 @@ export function ReactionLayer({ bottom = 96 }: { bottom?: number }) {
   if (!shown) return null;
   return (
     <View pointerEvents="box-none" style={{ position: "absolute", left: 0, right: 0, top: 0, bottom: 0 }}>
-      <Popup key={shown.key} r={shown} bottom={insets.bottom + bottom} />
+      <Popup key={shown.key} r={shown} bottom={above ? above + 12 : insets.bottom + 96} />
     </View>
   );
 }

@@ -92,6 +92,7 @@ export function RoundRunner({ round, onAgain, onDone }: { round: MapPractice; on
   const unsaved = React.useRef(0);
   const scroll = React.useRef<React.ComponentRef<typeof ScrollView>>(null);
   const react = useReactions();
+  const [footH, setFootH] = React.useState(0);
   const total = round.questions.length;
   const done = i >= total;
   const q = round.questions[i];
@@ -185,7 +186,7 @@ export function RoundRunner({ round, onAgain, onDone }: { round: MapPractice; on
           </Animated.View>
         ) : null}
       </ScrollView>
-      <View style={{ borderTopWidth: 1, borderColor: c.hairline, paddingHorizontal: layout.gutter, paddingTop: space[3], paddingBottom: insets.bottom + space[3], gap: space[2] }}>
+      <View onLayout={(e) => setFootH(Math.round(e.nativeEvent.layout.height))} style={{ borderTopWidth: 1, borderColor: c.hairline, paddingHorizontal: layout.gutter, paddingTop: space[3], paddingBottom: insets.bottom + space[3], gap: space[2] }}>
         {done ? (
           <>
             <Button label="Another round" icon={<RotateCcw size={20} color={c.onPrimary} />} onPress={onAgain} testID="map-round-again" />
@@ -203,7 +204,7 @@ export function RoundRunner({ round, onAgain, onDone }: { round: MapPractice; on
       </View>
       {allRight ? <Confetti fire={1} /> : null}
       {done ? <EndReaction right={right} total={total} /> : null}
-      <ReactionLayer />
+      <ReactionLayer above={footH || undefined} />
     </View>
   );
 }
