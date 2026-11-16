@@ -25,6 +25,8 @@ export type AppRequestContext = {
   deviceId: string | null;
   /** The user-bound Supabase client, made once per request. */
   client?: unknown;
+  /** This student's switched-off sections, read once per request (loadMyBlocks). */
+  blocks?: Promise<string[]>;
 };
 
 const store = new AsyncLocalStorage<AppRequestContext>();

@@ -196,13 +196,24 @@ export async function phoneStillActive(userId: string, role: string, matches: (d
  * Is this phone still the one signed in? Run on every signed-in app request.
  * "replaced" means another phone took over (or this one signed out).
  */
-export async function checkDevice(input: { userId: string; role: string; deviceId: string; platform?: "android" | "ios"; now?: number; fresh?: boolean }): Promise<DeviceCheck> {
+/**
+ * `role` may be a promise: the app guard starts this read while the token is
+ * still being verified, and passes the role once it is. Nothing is written
+ * (and no answer is decided) before that promise resolves; when it rejects
+ * (bad token, no profile, paused account) this rejects too.
+ */
+export async function checkDevice(input: { userId: string; role: string | PromiseLike<string>; deviceId: string; platform?: "android" | "ios"; now?: number; fresh?: boolean }): Promise<DeviceCheck> {
   const now = input.now ?? Date.now();
   const key = `${input.userId}:${input.deviceId}`;
   if (!input.fresh && (okCache.get(key) ?? 0) > now) return "ok";
   const db = admin();
   if (!db) return "unenforced";
-  const { rows, ready } = await loadRows(db, input.userId);
+  const loaded = await loadRows(db, input.userId);
+  const role = await input.role;
+  return decideDevice(db, { ...input, role }, loaded, key, now);
+}
+
+async function decideDevice(db: Admin, input: { userId: string; role: string; deviceId: string; platform?: "android" | "ios" }, { rows, ready }: { rows: DeviceRow[]; ready: boolean }, key: string, now: number): Promise<DeviceCheck> {
   if (!ready) return "unenforced";
 
   if (!rows.length) {

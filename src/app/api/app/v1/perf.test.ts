@@ -25,11 +25,12 @@ import { ADMIN_ID, DEVICE, STUDENT_ID, profileRow, token } from "@/lib/app-api/t
 
 const URL_ = "http://sb.perf.test";
 const DELAY = 15;
-const STUDENT = token("perf-student");
-const ADMIN = token("perf-admin");
+const STUDENT = token("perf-student", false, STUDENT_ID);
+const ADMIN = token("perf-admin", false, ADMIN_ID);
 const COURSE = { id: "c0000000-0000-4000-8000-000000000000", title: "Psychopathology", is_published: true, weeks: [] };
 
-type Case = { name: string; path: string; mod: () => Promise<{ GET: (req: Request, ctx: { params: Promise<unknown> }) => Promise<Response> }>; params?: Record<string, string>; admin?: boolean; budget: { cold: number; warm: number } };
+type Case = { name: string; path: string; // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  mod: () => Promise<{ GET: (req: Request, ctx: { params: Promise<any> }) => Promise<Response> }>; params?: Record<string, string>; admin?: boolean; budget: { cold: number; warm: number } };
 
 /** Serial-depth budgets (round trips one after another), cold and warm. */
 const CASES: Case[] = [
