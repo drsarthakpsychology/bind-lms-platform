@@ -1,7 +1,7 @@
 import { useLocalSearchParams } from "expo-router";
 import { Check } from "lucide-react-native";
 import * as React from "react";
-import { Pressable, View } from "react-native";
+import { AppState, Pressable, View } from "react-native";
 import Animated, { FadeInRight, useReducedMotion } from "react-native-reanimated";
 
 import { Button, EmptyState, Field, ProgressLine, Row, RowList, T } from "@/ds";
@@ -306,7 +306,7 @@ function Ticks({ step, reveal, disabled, onAnswer }: { step: Extract<ToolStep, {
     const id = setInterval(() => setLeft((l) => (l <= 1 ? (clearInterval(id), 0) : l - 1)), 1000);
     return () => clearInterval(id);
   }, [running]);
-  const total = step.kind === "checklist" ? step.seconds : 1;
+  const total = step.kind === "checklist" ? Math.max(1, step.seconds || 0) : 1;
   return (
     <View style={{ gap: space[3] }}>
       <Rich text={step.ask} v="h3" />
@@ -532,11 +532,27 @@ function Rate({ step, reveal, picked, onAnswer }: { step: Extract<ToolStep, { ki
 function FullMse({ step, reveal, onAnswer }: { step: Extract<ToolStep, { kind: "fullmse" }>; reveal: ToolReveal | null; onAnswer: (a: unknown) => void }) {
   const c = useTheme();
   const [text, setText] = React.useState<Record<string, string>>({});
-  const [left, setLeft] = React.useState(step.seconds);
+  const total = Math.max(1, step.seconds || 0);
+  const [left, setLeft] = React.useState(total);
+  // The clock runs on the wall clock: a phone's timers stop while the app is
+  // in the background, so counting ticks gave free minutes to anyone who
+  // switched apps.
   React.useEffect(() => {
     if (reveal) return;
-    const id = setInterval(() => setLeft((l) => (l <= 1 ? (clearInterval(id), 0) : l - 1)), 1000);
-    return () => clearInterval(id);
+    const end = Date.now() + left * 1000;
+    const tick = () => {
+      const l = Math.max(0, Math.ceil((end - Date.now()) / 1000));
+      setLeft(l);
+      if (l === 0) clearInterval(id);
+    };
+    const id = setInterval(tick, 1000);
+    const sub = AppState.addEventListener("change", (s) => s === "active" && tick());
+    return () => {
+      clearInterval(id);
+      sub.remove();
+    };
+    // `left` is read once, when the clock starts.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [reveal]);
   const filled = step.domains.filter((d) => (text[d] ?? "").trim()).length;
   const urgent = left < 120;
@@ -549,7 +565,7 @@ function FullMse({ step, reveal, onAnswer }: { step: Extract<ToolStep, { kind: "
           </T>
           <T v="small" tone="muted" num>{`${filled} of ${step.domains.length} domains`}</T>
         </View>
-        <ProgressLine value={(left / step.seconds) * 100} height={4} />
+        <ProgressLine value={(left / total) * 100} height={4} />
       </View>
       <Story kicker={step.ask}>
         <T v="reading">{step.context}</T>

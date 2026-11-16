@@ -3,13 +3,14 @@
  */
 import { useFocusEffect, useLocalSearchParams } from "expo-router";
 import * as React from "react";
-import { BackHandler, Text } from "react-native";
+import { AppState, BackHandler, Text } from "react-native";
 
 import { act, fireEvent, screen, waitFor } from "@testing-library/react-native";
 
 import { day, followUpLine } from "@/admin/format";
 import { mock } from "@/api/mock/server";
 import { session } from "@/auth";
+import { ToolCaseScreen } from "@/practise/cases/tool";
 import { GameFrame } from "@/practise/frame";
 import { JoinBox } from "@/practise/games/team";
 import * as R from "@/practise/mock/routes";
@@ -105,6 +106,34 @@ describe("mock tests", () => {
       expect(screen.getByText("Start today")).toBeTruthy();
     } finally {
       spy.mockRestore();
+    }
+  });
+});
+
+describe("MSE Level 4 clock", () => {
+  it("counts the time the app was in the background (phone timers stop there, so switching apps paused it)", async () => {
+    await session.signIn("ananya@example.com", "pw");
+    await session.choosePin("2580");
+    mock.reset();
+    (useLocalSearchParams as jest.Mock).mockReturnValue({ item: "mse4-sandeep" });
+    const handlers: ((s: string) => void)[] = [];
+    const sub = jest.spyOn(AppState, "addEventListener").mockImplementation(((_: string, h: (s: string) => void) => {
+      handlers.push(h);
+      return { remove: () => undefined };
+    }) as never);
+    const real = Date.now();
+    const now = jest.spyOn(Date, "now").mockReturnValue(real);
+    try {
+      await render(<ToolCaseScreen tool="mse-trainer" />);
+      await waitFor(() => expect(screen.getByTestId("tool-mse-appearance")).toBeTruthy());
+      expect(screen.getByText("10:00")).toBeTruthy();
+      now.mockReturnValue(real + 9 * 60_000 + 30_000);
+      await act(async () => handlers.forEach((h) => h("active")));
+      expect(screen.getByText("0:30")).toBeTruthy();
+    } finally {
+      now.mockRestore();
+      sub.mockRestore();
+      (useLocalSearchParams as jest.Mock).mockReturnValue({});
     }
   });
 });
