@@ -65,7 +65,7 @@ export function MeScreen() {
       {me && can?.achievements !== false ? <NextCertificate /> : null}
       <Section title="Your work">
         <RowList>
-          <Row testID="me-progress" title="Progress" meta="Topics, map, your level and badges" icon={<IconDot icon={ChartLine} />} onPress={() => router.push("/progress")} />
+          <Row testID="me-progress" title="Progress" meta={progressMeta(lecturesOnly, can?.journey !== false, can?.achievements !== false)} icon={<IconDot icon={ChartLine} />} onPress={() => router.push("/progress")} />
           {can?.achievements !== false ? <Row testID="me-certificates" title="Certificates" icon={<IconDot icon={Award} />} onPress={() => router.push("/certificates")} /> : null}
           {!lecturesOnly && can?.leaderboard !== false ? <Row testID="me-leaderboard" title="Leaderboard" meta="Your league and the boards" icon={<IconDot icon={Trophy} />} onPress={() => router.push("/game/leaderboard")} /> : null}
           {!lecturesOnly && can?.leaderboard !== false ? <Row testID="me-shop" title="XP shop" meta="Name frames, titles and a streak repair" icon={<IconDot icon={ShoppingBag} />} onPress={() => router.push("/shop")} /> : null}
@@ -81,4 +81,10 @@ export function MeScreen() {
       </Section>
     </Screen>
   );
+}
+
+/** What the Progress screen holds for this account, in a few words. */
+export function progressMeta(lecturesOnly: boolean, journey: boolean, badges: boolean): string {
+  const parts = [lecturesOnly ? "Lectures watched" : "Topics, map", journey ? "your level" : null, badges ? "badges" : null].filter(Boolean) as string[];
+  return parts.length > 1 ? `${parts.slice(0, -1).join(", ")} and ${parts[parts.length - 1]}` : parts[0]!;
 }

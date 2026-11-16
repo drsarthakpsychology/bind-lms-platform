@@ -57,6 +57,12 @@ async function loadMany(userId: string, tools: readonly HistoryTool[]): Promise<
   return out;
 }
 
+/** The new-case counts of several hubs from one read of the viewer's history. */
+export async function newCasesInGroups(userId: string, groups: readonly (readonly { tool: HistoryTool; ids: readonly string[] }[])[]): Promise<number[]> {
+  const book = await loadMany(userId, [...new Set(groups.flat().map((l) => l.tool))]);
+  return groups.map((libraries) => libraries.reduce((n, l) => n + newCount(l.ids, book.get(l.tool) ?? new Map()), 0));
+}
+
 /** How many cases the viewer has never done, across a hub's case tools. */
 export async function newCasesIn(userId: string, libraries: readonly { tool: HistoryTool; ids: readonly string[] }[]): Promise<number> {
   const book = await loadMany(userId, [...new Set(libraries.map((l) => l.tool))]);

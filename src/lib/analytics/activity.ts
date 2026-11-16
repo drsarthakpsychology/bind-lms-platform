@@ -1,4 +1,6 @@
 import "server-only";
+import { cache } from "react";
+import { requestMemo } from "@/lib/app-api/context";
 import { latest, presenceOf, visitEnd } from "@/lib/people/presence";
 import { isHiddenAccount } from "@/lib/people/hidden";
 import { createAdminClient } from "@/lib/supabase/server";
@@ -71,7 +73,10 @@ export function describePath(path: string, lessonTitles: Map<string, string>): s
   return table.find(([re]) => re.test(path))?.[1] ?? path;
 }
 
-export async function loadActivity() {
+/** Every student's recent activity. Read once per request (website pages and app routes alike). */
+export const loadActivity = cache(() => requestMemo("analytics:activity", readActivity));
+
+async function readActivity() {
   const admin = createAdminClient();
   const since30 = new Date(Date.now() - 30 * DAY_MS).toISOString();
   const [{ data: profiles }, { data: visits }, { data: progress }, { data: lessons }, learnRes, { data: sims }] = await Promise.all([

@@ -1,6 +1,7 @@
 import "server-only";
 import { cache } from "react";
 import { createAdminClient } from "@/lib/supabase/server";
+import { requestMemo } from "@/lib/app-api/context";
 import { loadActivity } from "@/lib/analytics/activity";
 import { isHiddenAccount } from "@/lib/people/hidden";
 import { presenceOf, type Presence } from "@/lib/people/presence";
@@ -45,7 +46,9 @@ export type Roster = {
   publishedLectures: number;
 };
 
-export const loadRoster = cache(async (): Promise<Roster> => {
+export const loadRoster = cache((): Promise<Roster> => requestMemo("people:roster", readRoster));
+
+async function readRoster(): Promise<Roster> {
   const admin = createAdminClient();
   const [activity, profilesRes, cohortsRes, membersRes, linksRes, grantsRes, invitesRes, tokensRes, detailsRes, lessonsRes, failedRes] = await Promise.all([
     loadActivity(),
@@ -178,4 +181,4 @@ export const loadRoster = cache(async (): Promise<Roster> => {
     })),
     publishedLectures: published,
   };
-});
+}

@@ -72,58 +72,51 @@ export async function computePracticeStates(
 ): Promise<Record<string, SurfaceState>> {
   const out: Record<string, SurfaceState> = {};
 
-  // --- Consulting Room: sim_sessions (active = in progress; complete today = done) ---
-  const [activeSessions, completeToday] = await Promise.all([
+  // Every count is independent: read them all at once (one round trip, not nine).
+  const today = { todayOnly: true } as const;
+  const [activeSessions, completeToday, mseToday, mseCount, osceToday, osceCount, formToday, formCount, sctToday, sctCount, pairCount, wallCount, libCount] = await Promise.all([
     countRows(supabase, "sim_sessions", userId, { status: "active" }),
     countRows(supabase, "sim_sessions", userId, { status: "complete", todayOnly: true, todayCol: "ended_at" }),
+    countRows(supabase, "mse_attempts", userId, today),
+    countRows(supabase, "mse_attempts", userId),
+    countRows(supabase, "osce_attempts", userId, today),
+    countRows(supabase, "osce_attempts", userId),
+    countRows(supabase, "formulation_attempts", userId, today),
+    countRows(supabase, "formulation_attempts", userId),
+    countRows(supabase, "sct_attempts", userId, today),
+    countRows(supabase, "sct_attempts", userId),
+    countRows(supabase, "pair_sessions", userId, { or: `student_a.eq.${userId},student_b.eq.${userId}` }),
+    countRows(supabase, "wall_posts", userId, { userCol: "author_id" }),
+    countRows(supabase, "library_notes", userId),
   ]);
+
+  // --- Consulting Room: sim_sessions (active = in progress; complete today = done) ---
   if (activeSessions > 0) out["/practice/consulting-room"] = { state: "in_progress" };
   else if (completeToday > 0) out["/practice/consulting-room"] = { state: "done_today" };
 
   // --- MSE Trainer: mse_attempts ---
-  const [mseToday, mseCount] = await Promise.all([
-    countRows(supabase, "mse_attempts", userId, { todayOnly: true }),
-    countRows(supabase, "mse_attempts", userId),
-  ]);
   if (mseToday > 0) out["/practice/mse"] = { state: "done_today" };
   else if (mseCount > 0) out["/practice/mse"] = { state: "in_progress", progress: `${mseCount} attempt${mseCount === 1 ? "" : "s"}` };
 
   // --- OSCE: osce_attempts ---
-  const [osceToday, osceCount] = await Promise.all([
-    countRows(supabase, "osce_attempts", userId, { todayOnly: true }),
-    countRows(supabase, "osce_attempts", userId),
-  ]);
   if (osceToday > 0) out["/practice/osce"] = { state: "done_today" };
   else if (osceCount > 0) out["/practice/osce"] = { state: "in_progress", progress: `${osceCount} station${osceCount === 1 ? "" : "s"} done` };
 
   // --- Formulation: formulation_attempts ---
-  const [formToday, formCount] = await Promise.all([
-    countRows(supabase, "formulation_attempts", userId, { todayOnly: true }),
-    countRows(supabase, "formulation_attempts", userId),
-  ]);
   if (formToday > 0) out["/practice/formulation"] = { state: "done_today" };
   else if (formCount > 0) out["/practice/formulation"] = { state: "in_progress", progress: `${formCount} case${formCount === 1 ? "" : "s"} done` };
 
   // --- Judgment Calls: sct_attempts ---
-  const [sctToday, sctCount] = await Promise.all([
-    countRows(supabase, "sct_attempts", userId, { todayOnly: true }),
-    countRows(supabase, "sct_attempts", userId),
-  ]);
   if (sctToday > 0) out["/practice/judgment"] = { state: "done_today" };
   else if (sctCount > 0) out["/practice/judgment"] = { state: "in_progress", progress: `${sctCount} call${sctCount === 1 ? "" : "s"} answered` };
 
   // --- Peer Role-Play: pair_sessions (a OR b) ---
-  const pairCount = await countRows(supabase, "pair_sessions", userId, {
-    or: `student_a.eq.${userId},student_b.eq.${userId}`,
-  });
   if (pairCount > 0) out["/practice/role-play"] = { state: "in_progress", progress: `${pairCount} session${pairCount === 1 ? "" : "s"}` };
 
   // --- Cohort Wall: wall_posts (author_id) ---
-  const wallCount = await countRows(supabase, "wall_posts", userId, { userCol: "author_id" });
   if (wallCount > 0) out["/wall"] = { progress: `${wallCount} post${wallCount === 1 ? "" : "s"}` };
 
   // --- Case Library: library_notes ---
-  const libCount = await countRows(supabase, "library_notes", userId);
   if (libCount > 0) out["/practice/library"] = { progress: `${libCount} note${libCount === 1 ? "" : "s"}` };
 
   return out;

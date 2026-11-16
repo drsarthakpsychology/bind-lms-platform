@@ -26,12 +26,13 @@ function deny(d: Exclude<ApiDecision, { ok: true }>): NextResponse {
 }
 
 /** Loads this student's switched-off sections and the flags, then decides. Shared with the mobile app's guard. */
-export async function evaluate(profile: Profile, gates: readonly ApiGate[]): Promise<ApiDecision> {
+export async function evaluate(profile: Profile, gates: readonly ApiGate[], pre: { blocks?: () => Promise<string[]> } = {}): Promise<ApiDecision> {
   const needsDetail = profile.role !== "admin" && gates.length > 0;
   const [blocks, flags] = await Promise.all([
     // Blocks are per-student (People → Access), loaded the same way the
-    // dashboard layout loads them: students only.
-    needsDetail && profile.role === "student" ? loadMyBlocks(profile.id) : Promise.resolve([] as string[]),
+    // dashboard layout loads them: students only. `pre.blocks` answers rows
+    // the caller already started loading for this same profile.
+    needsDetail && profile.role === "student" ? (pre.blocks ?? loadMyBlocks)(profile.id) : Promise.resolve([] as string[]),
     needsDetail && gatesNeedFlags(gates) ? readFlags() : Promise.resolve({}),
   ]);
   return decideApiAccess({ session: "ok", profile, gates, blocks, flags });

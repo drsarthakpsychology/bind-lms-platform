@@ -159,8 +159,11 @@ function Board({ view, again }: { view: SortView; again: () => void }) {
               accessibilityLabel={`${g}, ${inBin.length} of 4${ok ? ", right" : ""}`}
               testID={`sort-bin-${gi}`}
               onPress={() => {
-                if (sel !== null) {
-                  if (put(sel, gi)) haptic.success();
+                // A tap on an empty diagnosis with a card showing puts that card there:
+                // there is nothing in it to see, so opening it would be a dead end.
+                const card = sel ?? (inBin.length === 0 ? top : null);
+                if (card !== null) {
+                  if (put(card, gi)) haptic.success();
                 } else setOpen(gi);
               }}
               style={({ pressed }) => ({ width: "48.5%", minHeight: 112, padding: space[3], gap: space[2], borderRadius: layout.radius, borderWidth: target ? 2 : 1.5, borderStyle: target ? "dashed" : "solid", borderColor: ok ? (c.dark ? c.primary : c.ink) : target ? c.accent : c.cardLine, backgroundColor: ok ? c.successBg : pressed ? c.tint : c.card })}

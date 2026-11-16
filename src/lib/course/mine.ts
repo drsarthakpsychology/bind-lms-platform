@@ -1,7 +1,7 @@
 import "server-only";
 import type { Profile } from "@/lib/auth/session";
 import { createClient } from "@/lib/supabase/server";
-import { visibleCourseIds } from "@/lib/cohorts/access";
+import { loadStudentAccess, visibleCourseIds } from "@/lib/cohorts/access";
 
 export type MyCourse = { id: string; title: string; is_published: boolean };
 
@@ -15,6 +15,8 @@ export type MyCourse = { id: string; title: string; is_published: boolean };
  */
 export async function loadMyCourses(profile: Pick<Profile, "id" | "role">, courseScope: "full" | "lectures_only"): Promise<MyCourse[]> {
   const supabase = await createClient();
+  // Start the cohort read with the course reads (visibleCourseIds below reuses it).
+  if (profile.role !== "admin") void loadStudentAccess(profile.id).catch(() => undefined);
   const [{ data: courses }, { data: enrollments }] = await Promise.all([
     supabase.from("courses").select("id, title, is_published").eq("is_published", true).order("title", { ascending: true }),
     supabase.from("course_enrollments").select("course_id").eq("user_id", profile.id),

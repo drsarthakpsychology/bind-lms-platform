@@ -51,6 +51,18 @@ export function matches(text: string, q: string): boolean {
 }
 
 /** Search across lectures, modules, medicines, doubts and the app's own screens. */
+/** The box's hint: only what this account can open. */
+export function searchHint(study: boolean, medicines: boolean): string {
+  return ["Lectures", study ? "modules" : "doubts", medicines ? "medicines" : null].filter(Boolean).join(", ");
+}
+
+/** The start screen's line: what a search looks through, for this account. */
+export function searchCovers(open: { study: boolean; medicines: boolean; practise: boolean; games: boolean }): string {
+  const parts = ["lectures", ...(open.study ? ["modules", "notes"] : []), ...(open.medicines ? ["medicines"] : []), ...(open.practise ? ["cases"] : []), ...(open.games ? ["games"] : []), ...(open.practise ? ["Exam Prep"] : []), ...(open.study || open.practise ? [] : ["doubts"])];
+  const list = parts.length > 1 ? `${parts.slice(0, -1).join(", ")} and ${parts[parts.length - 1]}` : parts[0]!;
+  return list.charAt(0).toUpperCase() + list.slice(1) + ".";
+}
+
 export function SearchScreen() {
   const c = useTheme();
   const insets = useSafeAreaInsets();
@@ -68,11 +80,13 @@ export function SearchScreen() {
   const weeksKey = courseList.map((r) => r.dataUpdatedAt).join(",");
   const study = useStudyHome(studyOpen);
   const term = q.trim();
-  const meds = useLibraryMedicines(term.length >= 2 && can?.medicines !== false);
+  const lecturesOnly = !!me.data?.access.lecturesOnly;
+  // Lecture-only accounts have no medicines (the server says 403): never ask, never list them.
+  const medsOpen = !lecturesOnly && can?.medicines !== false;
+  const meds = useLibraryMedicines(term.length >= 2 && medsOpen);
   const doubts = useDoubts(false);
   const notes = useNotes(studyOpen);
   const refs = useTerms(term.length >= 2 && studyOpen);
-  const lecturesOnly = !!me.data?.access.lecturesOnly;
   const practiseOpen = !lecturesOnly && can?.practice !== false;
   const gamesOpen = !lecturesOnly && can?.games !== false;
   const prep = useRead<PrepHome>("/prep", term.length >= 2 && practiseOpen);
@@ -92,7 +106,7 @@ export function SearchScreen() {
     if (studyOpen) for (const m of study.data?.modules ?? []) if (matches(`${m.title} ${m.tagline}`, term)) out.push({ key: `m-${m.id}`, title: m.title, meta: `Module ${m.num}`, kind: "module", href: `/study/${e(m.id)}` });
     if (studyOpen) for (const n of notes.data?.notes ?? []) if (matches(`${n.title} ${n.tagline}`, term)) out.push({ key: `n-${n.id}`, title: n.title, meta: "Note", kind: "note", href: `/notes/${e(n.id)}` });
     if (studyOpen) for (const r of searchRefs(refs.data?.items ?? [], term).slice(0, 6)) out.push({ key: `r-${r.slug}`, title: r.label, meta: r.summary, kind: "reference", href: `/reference/${e(r.slug)}` });
-    if (can?.medicines !== false) for (const r of (meds.data?.rows ?? []).filter((x) => matches(`${x.name} ${x.brands.join(" ")} ${x.cls}`, term)).slice(0, 6)) out.push({ key: `d-${r.id}`, title: r.name, meta: r.cls, kind: "medicine", href: `/medicine/${e(r.id)}` });
+    if (medsOpen) for (const r of (meds.data?.rows ?? []).filter((x) => matches(`${x.name} ${x.brands.join(" ")} ${x.cls}`, term)).slice(0, 6)) out.push({ key: `d-${r.id}`, title: r.name, meta: r.cls, kind: "medicine", href: `/medicine/${e(r.id)}` });
     for (const d of doubts.data?.items ?? []) if (matches(`${d.title} ${d.topic ?? ""}`, term)) out.push({ key: `q-${d.id}`, title: d.title, meta: "Doubt", kind: "doubt", href: `/doubt/${e(d.id)}` });
     if (gamesOpen) for (const g of [...GAMES_SOLO, ...GAMES_RIVAL]) if (matches(`${g.title} ${g.line}`, term)) out.push({ key: `g-${g.id}`, title: g.title, meta: g.line, kind: "game", href: g.href });
     if (practiseOpen) for (const t of CASE_TOOLS) if (matches(`${t.title} ${t.line}`, term)) out.push({ key: `c-${t.id}`, title: t.title, meta: t.line, kind: "case", href: t.href });
@@ -102,12 +116,12 @@ export function SearchScreen() {
     return out;
     // weeksKey stands for every course's answer.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [term, weeksKey, study.data, meds.data, doubts.data, can, studyOpen, notes.data, refs.data, gamesOpen, practiseOpen, prep.data, lecturesOnly]);
+  }, [term, weeksKey, study.data, meds.data, doubts.data, can, studyOpen, notes.data, refs.data, gamesOpen, practiseOpen, prep.data, lecturesOnly, medsOpen]);
 
   const shortcuts = [
     { id: "lectures", name: "Lectures", href: "/lectures", show: can?.lectures !== false },
     { id: "notes", name: "Notes", href: "/notes", show: studyOpen },
-    { id: "medicines", name: "Medicines", href: "/library", show: !lecturesOnly && can?.medicines !== false },
+    { id: "medicines", name: "Medicines", href: "/library", show: medsOpen },
     { id: "reference", name: "Quick reference", href: "/reference", show: studyOpen },
   ].filter((x) => x.show);
   const open = (href: string) => {
@@ -140,7 +154,7 @@ export function SearchScreen() {
             autoFocus
             value={q}
             onChangeText={setQ}
-            placeholder="Lectures, modules, medicines"
+            placeholder={searchHint(studyOpen, medsOpen)}
             placeholderTextColor={c.muted}
             accessibilityLabel="Search"
             returnKeyType="search"
@@ -185,7 +199,7 @@ export function SearchScreen() {
                 </RowList>
               </Section>
             ) : (
-              <T tone="muted">Lectures, modules, notes, medicines, cases, games and Exam Prep.</T>
+              <T tone="muted">{searchCovers({ study: studyOpen, medicines: medsOpen, practise: practiseOpen, games: gamesOpen })}</T>
             )}
           </>
         ) : hits.length ? (

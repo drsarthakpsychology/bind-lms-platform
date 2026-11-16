@@ -11,7 +11,7 @@ import { messageOf } from "@/api/errors";
 import { outbox } from "@/api/outbox";
 import { keys, useLecture } from "@/api/queries";
 import { api } from "@/auth";
-import { Button, Field, LoadError, Row, RowList, Sheet, Skeleton, T, TabRow, Tint } from "@/ds";
+import { Button, Field, LoadError, Row, RowList, Sheet, Skeleton, StillTrying, T, TabRow, Tint } from "@/ds";
 import { toast } from "@/ds/toast";
 import { streakMoment } from "@/moments/host";
 import { FileHandIn, HandInSlot, RecordingHandIn, useFooterAction, type FooterAction } from "@/lecture/handin-ui";
@@ -152,7 +152,7 @@ function AssignmentPart({ lecture }: { lecture: LectureDetail }) {
   );
 }
 
-function LectureSkeleton() {
+function LectureSkeleton({ failed }: { failed: boolean }) {
   return (
     <View style={{ padding: layout.gutter, gap: space[3] }}>
       <Skeleton w="40%" h={14} />
@@ -161,6 +161,7 @@ function LectureSkeleton() {
       <Skeleton h={48} r={8} style={{ marginTop: space[4] }} />
       <Skeleton h={14} />
       <Skeleton w="80%" h={14} />
+      <StillTrying failed={failed} />
     </View>
   );
 }
@@ -357,7 +358,7 @@ export function LectureScreen() {
           <LoadError what="this lecture" error={q.error} onRetry={() => void q.refetch()} />
         </View>
       ) : gate.phase === "skeleton" ? (
-        <LectureSkeleton />
+        <LectureSkeleton failed={q.failureCount > 0} />
       ) : null}
     </View>
   );

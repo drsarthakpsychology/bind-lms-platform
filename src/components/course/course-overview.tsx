@@ -54,6 +54,12 @@ export async function loadCourseOverview(
   backHref?: string,
 ): Promise<OverviewModel | null> {
   const supabase = await createClient();
+  // The cohort reads do not depend on the course rows: start them with them.
+  const isAdmin = profile.role === "admin";
+  const accessP = loadStudentAccess(profile.id);
+  const cohortsP = isAdmin ? Promise.resolve([] as Awaited<ReturnType<typeof loadMyCohorts>>) : loadMyCohorts(profile.id);
+  accessP.catch(() => undefined);
+  cohortsP.catch(() => undefined);
 
   const [{ data: course }, { data: lessonsAll }, { data: progress }, { data: courseMaterials }, { data: assignments }, { data: submissions }] =
     await Promise.all([
@@ -87,8 +93,7 @@ export async function loadCourseOverview(
 
   // Cohorts: keep only the lectures this person may watch. (The course
   // layout already applied the old enrolment rule, so "legacy" is true here.)
-  const isAdmin = profile.role === "admin";
-  const [access, myCohortsAll] = await Promise.all([loadStudentAccess(profile.id), isAdmin ? Promise.resolve([]) : loadMyCohorts(profile.id)]);
+  const [access, myCohortsAll] = await Promise.all([accessP, cohortsP]);
   const lessons = filterLessons(access, lessonsAll ?? [], true, isAdmin);
   // Only the student's own cohorts are ever named on their screens.
   const myCohorts = myCohortsAll.filter((c) => access.cohortIds.includes(c.id));
