@@ -180,8 +180,9 @@ function objectProp(obj: string, key: string): string | null {
   return obj.slice(at, skipGroup(obj, at));
 }
 
-const CALL_RE = /(^|[^\w.$])(api\.)?(get|post|put|patch|del)\s*(?=[<(])/g;
-const METHOD: Record<string, Method> = { get: "GET", post: "POST", put: "PUT", patch: "PATCH", del: "DELETE" };
+const CALL_RE = /(^|[^\w.$])(api\.)?(get|post|put|patch|del|useRead)\s*(?=[<(])/g;
+/** useRead(path) is the Practise screens' GET (src/practise/api.ts). */
+const METHOD: Record<string, Method> = { get: "GET", post: "POST", put: "PUT", patch: "PATCH", del: "DELETE", useRead: "GET" };
 
 /** Every call with a literal path in one source file. */
 export function scanSource(src: string, file: string): AppCall[] {
@@ -191,7 +192,7 @@ export function scanSource(src: string, file: string): AppCall[] {
   for (const m of src.matchAll(CALL_RE)) {
     const viaApi = !!m[2];
     const verb = m[3]!;
-    if (!viaApi && !(ownGet && verb === "get")) continue;
+    if (!viaApi && !(ownGet && verb === "get") && verb !== "useRead") continue;
     let i = m.index! + m[0].length;
     if (src[i] === "<") i = skipGroup(src, i);
     if (src[i] !== "(") continue;
@@ -238,7 +239,8 @@ export function scanSource(src: string, file: string): AppCall[] {
     const bodyArg = hasBody ? args[0] : undefined;
     const optsArg = hasBody ? args[1] : args[0];
     let query: string[] = [];
-    if (!viaApi && optsArg && !optsArg.startsWith("#")) query = topKeys(optsArg);
+    if (verb === "useRead") query = [];
+    else if (!viaApi && optsArg && !optsArg.startsWith("#")) query = topKeys(optsArg);
     else if (optsArg && !optsArg.startsWith("#")) {
       const qo = objectProp(optsArg, "query");
       if (qo) query = topKeys(qo);
