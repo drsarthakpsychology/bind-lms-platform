@@ -41,6 +41,7 @@ jest.mock("react-native-reanimated", () => {
     useDerivedValue: (fn: () => unknown) => ({ value: fn(), get: fn }),
     useAnimatedReaction: () => undefined,
     interpolate: (x: number) => x,
+    useAnimatedKeyboard: () => ({ height: { value: 0, get: () => 0 }, state: { value: 4, get: () => 4 } }),
     Extrapolation: { CLAMP: "clamp" },
     FadeIn: anim(),
     FadeOut: anim(),
