@@ -73,8 +73,10 @@ export function createSession(deps: SessionDeps) {
         void endSession("account_expired");
         break;
       case "unauthenticated":
-        // The refresh token is gone or was revoked: back to sign-in, quietly.
-        if (store.get().phase !== "visitor") void endSession(null);
+        // The refresh token is gone or was revoked: back to sign-in, quietly. Not while the
+        // keystore is still being read at start: a call made then has no tokens yet, and must
+        // never sign out the account that is about to be loaded.
+        if (store.get().phase !== "visitor" && store.get().phase !== "loading") void endSession(null);
         break;
       case "account_blocked":
         store.set({ gate: { kind: "paused", message: e.message } });

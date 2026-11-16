@@ -96,7 +96,10 @@ export function createClient(deps: { transport: Transport; tokens: TokenSource; 
     const json = res.json as ApiResponse<T> | null;
     if (json && typeof json === "object" && "ok" in json) {
       if (json.ok) return json.data;
-      throw new ApiFailure(json.error.code, json.error.message, res.status, json.error.details ?? {});
+      // An error answer without its error part (a proxy, an older server) is still a plain failure, never a TypeError.
+      const err = (json as { error?: Partial<{ code: ApiErrorCode; message: string; details: Record<string, unknown> }> }).error;
+      if (!err || typeof err.code !== "string") throw notJson(res.status);
+      throw new ApiFailure(err.code, typeof err.message === "string" && err.message ? err.message : notJson(res.status).message, res.status, err.details && typeof err.details === "object" ? err.details : {});
     }
     throw notJson(res.status);
   }
