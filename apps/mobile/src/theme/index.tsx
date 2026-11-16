@@ -7,9 +7,11 @@ import Animated, { Easing, useAnimatedStyle, useReducedMotion, useSharedValue, w
 
 import { settingsStore } from "@/lib/settings";
 import { setNavigationBarDark } from "../../modules/system-bars/src";
-import { dark, light, type Palette } from "./tokens";
+import { useAreaName, neutralSwatch } from "./area";
+import { dark, light, type Palette, type Swatch } from "./tokens";
 
 export * from "./tokens";
+export { AreaProvider, neutralSwatch, useAreaName } from "./area";
 
 const ThemeContext = React.createContext<Palette>(light);
 
@@ -85,6 +87,13 @@ function Fade({ color, onDone }: { color: string; onDone: () => void }) {
 /** The current colours. */
 export function useTheme(): Palette {
   return React.useContext(ThemeContext);
+}
+
+/** The accent family of the area this part sits in (neutral greys outside one), and whether there is one. */
+export function useAccent(): Swatch & { on: boolean } {
+  const c = useTheme();
+  const a = useAreaName();
+  return a ? { ...c.areas[a], on: true } : { ...neutralSwatch(c), on: false };
 }
 
 /**

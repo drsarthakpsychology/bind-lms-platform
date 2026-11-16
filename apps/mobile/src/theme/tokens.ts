@@ -96,8 +96,27 @@ export const fixed = {
   videoButtonPressed: "rgba(255,255,255,0.22)",
 } as const;
 
+/**
+ * The five areas of the app. Each has one soft colour family (Gen Z minimal:
+ * one accent family per screen, never loud). Home is VIBHA lime, Learn VIBHA
+ * blue, Practise peach (blue's warm complement), Medicines mint (the anxiety
+ * family's teal), Me lilac (the antipsychotic family's violet).
+ */
+export type Area = "home" | "learn" | "practise" | "library" | "me";
+
+/**
+ * One area's colours.
+ *   wash   soft surface: the hero card, icon circles, the header glow, a track
+ *   deep   foreground on wash, bg and card: icons, pixel labels, fills, rings
+ *          (4.5:1 or more on wash, bg and card, both themes)
+ *   onDeep text on a deep fill (a selected chip)
+ */
+export type Swatch = { wash: string; deep: string; onDeep: string };
+
 export type Palette = {
   dark: boolean;
+  /** Area accents (one family per screen; see `Area`). */
+  areas: Record<Area, Swatch>;
   /** App canvas. */
   bg: string;
   /** Bars and sheets. */
@@ -162,6 +181,14 @@ export type Palette = {
 
 export const light: Palette = {
   dark: false,
+  // Contrast, deep on wash / on bg: lime 6.1 / 6.2, blue 6.3 / 6.7, peach 5.2 / 5.5, mint 5.3 / 5.8, lilac 6.1 / 6.7.
+  areas: {
+    home: { wash: "#eefac4", deep: "#4a6400", onDeep: "#ffffff" },
+    learn: { wash: "#e8edff", deep: "#1d44d8", onDeep: "#ffffff" },
+    practise: { wash: "#ffe9dc", deep: "#a8431a", onDeep: "#ffffff" },
+    library: { wash: "#d9f1f4", deep: "#0b6b70", onDeep: "#ffffff" },
+    me: { wash: "#eee7ff", deep: "#6430d0", onDeep: "#ffffff" },
+  },
   bg: "#f5f5f5",
   card: "#ffffff",
   ink: "#111111",
@@ -207,6 +234,14 @@ export const light: Palette = {
 
 export const dark: Palette = {
   dark: true,
+  // Contrast, deep on wash / on card: lime 11.7 / 13, blue 7.5 / 8.6, peach 8.9 / 9.9, mint 9.1 / 10, lilac 8.2 / 9.
+  areas: {
+    home: { wash: "#212a0b", deep: "#cdf24b", onDeep: "#111111" },
+    learn: { wash: "#19214a", deep: "#9db1ff", onDeep: "#111111" },
+    practise: { wash: "#2f1e12", deep: "#ffaf85", onDeep: "#111111" },
+    library: { wash: "#0c2927", deep: "#6fd8cc", onDeep: "#111111" },
+    me: { wash: "#231a3e", deep: "#c4abff", onDeep: "#111111" },
+  },
   bg: "#0d0d0d",
   card: "#181818",
   ink: "#ffffff",
