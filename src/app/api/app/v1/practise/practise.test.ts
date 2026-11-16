@@ -32,8 +32,8 @@ vi.mock("@/lib/access/blocks", async () => (await import("@/lib/app-api/test-gua
 vi.mock("@/lib/rate-limit", async () => (await import("@/lib/app-api/test-guard")).rateMock());
 vi.mock("@/lib/rate-limit-fast", async () => (await import("@/lib/app-api/test-guard")).fastRateMock());
 vi.mock("@/lib/practice/practice-state", () => ({ computePracticeStates: h.states }));
-vi.mock("@/lib/practice/resume", () => ({ lastPracticePlace: h.resume }));
-vi.mock("@/lib/cases/hubs", () => ({ hubNewCases: h.newCases }));
+vi.mock("@/lib/practice/resume", () => ({ lastPracticePlace: h.resume, recentPracticeVisits: async () => [{ path: "/practice/mse" }] }));
+vi.mock("@/lib/cases/hubs", () => ({ hubNewCases: h.newCases, hubNewCasesBoth: async (_u: string, o: { games: boolean }) => ({ practice: await h.newCases(), games: o.games ? await h.newCases() : null }) }));
 vi.mock("@/lib/games/blitz/server", () => ({ loadBests: h.bests }));
 vi.mock("@/lib/games/duel/server", () => ({ profile: h.duelProfile, offlineRounds: () => [] }));
 vi.mock("@/lib/games-sims/server/results", () => ({ loadAccuracyBoard: h.board }));

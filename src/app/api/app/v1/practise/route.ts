@@ -1,4 +1,4 @@
-import { practiseHub } from "@/lib/app-api/practise";
+import { practiseHub } from "@/lib/app-api/practise-hub";
 import { appRoute } from "@/lib/app-api/route";
 import type { PractiseHubData } from "@/lib/app-api/contract-practise-admin";
 
