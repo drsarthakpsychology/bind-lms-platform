@@ -194,12 +194,14 @@ describe("admin screens as a Super Admin", () => {
     await signInAs("admin@example.com");
   });
 
-  it("Home leads with Needs a look, shows who is on, and offers Send a message", async () => {
+  it("Home leads with Needs a look, says how many are on, and offers Send a message", async () => {
     await render(<AdminHomeScreen />);
     // The server's own to-do list, in the website's words.
     expect(await screen.findByText("Fix logins")).toBeTruthy();
     expect(screen.getByText("Grade submissions")).toBeTruthy();
-    expect(screen.getByText("Sana Khan")).toBeTruthy();
+    // Home keeps only the count of who is on; the list lives in Activity.
+    expect(screen.getByTestId("home-live")).toBeTruthy();
+    expect(screen.queryByText("Lecture: Anxiety disorders: telling them apart")).toBeNull();
     expect(screen.getByTestId("admin-compose")).toBeTruthy();
     expect(screen.queryByTestId("view-only-note")).toBeNull();
   });

@@ -64,7 +64,7 @@ describe("never crash on what the server sends", () => {
     await signInAs("admin@example.com");
     await render(<AdminHomeView data={safeHome({ counts: {} })} />);
     expect(screen.getByText("All clear")).toBeTruthy();
-    expect(screen.getByText("Nobody is on right now.")).toBeTruthy();
+    expect(screen.getByText("Nobody on VIBHA right now")).toBeTruthy();
   });
 
   it("the server's inbox becomes one list: doubts first, then emails", () => {
