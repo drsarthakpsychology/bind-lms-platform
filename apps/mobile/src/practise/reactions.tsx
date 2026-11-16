@@ -1,12 +1,12 @@
 import * as React from "react";
-import { Image, Pressable, View } from "react-native";
-import Animated, { Easing, useAnimatedStyle, useReducedMotion, useSharedValue, withSequence, withTiming } from "react-native-reanimated";
+import { Image, Platform, Pressable, View } from "react-native";
+import Animated, { useAnimatedStyle, useReducedMotion, useSharedValue, withDelay, withSpring, withTiming } from "react-native-reanimated";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { haptic } from "@/lib/haptics";
 import { settingsStore } from "@/lib/settings";
 import { createStore } from "@/lib/store";
-import { motion } from "@/theme";
+import { curves, dur, springs } from "@/motion";
 import { STICKERS, type Mood } from "@/lib/reactions/stickers";
 
 /**
@@ -36,7 +36,7 @@ export function stickerFor(mood: Mood, seed: number): (typeof STICKERS)[number] 
 type Shown = { id: string; mood: Mood; key: number } | null;
 const store = createStore<{ shown: Shown; lastAt: number }>({ shown: null, lastAt: 0 });
 /** A sticker stays this long; a tap removes it at once. */
-export const SHOW_MS = 4_000;
+export const SHOW_MS = 3_000;
 /** No more than one answer sticker in this window (end stickers always show). */
 const THROTTLE_MS = 15_000;
 
@@ -88,32 +88,100 @@ export function useReactions() {
   );
 }
 
-/** The sticker layer: bottom corner, above the pinned action, never under a finger for long. */
+/**
+ * The sticker slap (motion plan 4.3): in from 0.9, tilted 8 degrees and 24px
+ * low, onto -4 degrees on the bouncy spring; out by dropping 16px as it
+ * fades. With Reduce Motion it only fades. `play(false)` runs the exit and
+ * calls `done` after it.
+ */
+function useSlap(delay = 0) {
+  const reduce = useReducedMotion();
+  const t = useSharedValue(0);
+  const o = useSharedValue(0);
+  const drop = useSharedValue(0);
+  const play = React.useCallback(
+    (on: boolean, done?: () => void) => {
+      if (on) {
+        drop.set(0);
+        t.set(reduce ? 1 : withDelay(delay, withSpring(1, springs.bouncy)));
+        o.set(withDelay(delay, withTiming(1, { duration: reduce ? dur.state : dur.press, easing: curves.out })));
+        return;
+      }
+      if (!reduce) drop.set(withTiming(16, { duration: dur.exit, easing: curves.out }));
+      o.set(withTiming(0, { duration: dur.exit, easing: curves.out }));
+      if (done) setTimeout(done, dur.exit);
+    },
+    [delay, reduce, t, o, drop],
+  );
+  const style = useAnimatedStyle(() => {
+    const k = t.value;
+    return {
+      opacity: o.value,
+      transform: [{ translateY: (1 - k) * 24 + drop.value }, { rotate: `${8 - 12 * k}deg` }, { scale: 0.9 + 0.1 * k }],
+    };
+  });
+  return { play, style };
+}
+
+const shadow = Platform.OS === "ios" ? { shadowColor: "#000000", shadowOpacity: 0.18, shadowRadius: 6, shadowOffset: { width: 0, height: 3 } } : null;
+
+/**
+ * Answer stickers during play: the top right corner, under the header and
+ * away from the answers and the thumb. They slap in after the verdict and
+ * drop away after SHOW_MS (or at a tap).
+ */
 export function StickerLayer() {
   const shown = store.use((s) => s.shown);
   const insets = useSafeAreaInsets();
-  const reduce = useReducedMotion();
-  const scale = useSharedValue(1);
-  const fade = useSharedValue(1);
+  const [on, setOn] = React.useState<Shown>(shown);
+  const { play, style } = useSlap();
+  // Keep the last sticker on screen while it leaves.
+  if (shown && shown !== on) setOn(shown);
   React.useEffect(() => {
-    if (!shown) return;
-    scale.set(reduce ? 1 : withSequence(withTiming(1.12, { duration: 160, easing: Easing.bezier(...motion.easeOut) }), withTiming(1, { duration: 220, easing: Easing.bezier(...motion.easeOut) })));
-    fade.set(reduce ? 1 : withTiming(1, { duration: motion.state }));
-    const id = setTimeout(() => reactions.dismiss(), SHOW_MS);
-    return () => clearTimeout(id);
-  }, [shown, reduce, scale, fade]);
-  const style = useAnimatedStyle(() => ({ transform: [{ scale: scale.value }, { rotate: "-4deg" }], opacity: fade.value }));
-  if (!shown) return null;
-  const s = STICKERS.find((x) => x.id === shown.id)!;
-  const w = 132;
+    if (shown) {
+      play(true);
+      const id = setTimeout(() => reactions.dismiss(), SHOW_MS);
+      return () => clearTimeout(id);
+    }
+    play(false, () => setOn(null));
+    return undefined;
+  }, [shown, play]);
+  if (!on) return null;
+  const s = STICKERS.find((x) => x.id === on.id)!;
+  const w = 96;
   const h = Math.round((s.h / s.w) * w);
   return (
     <View pointerEvents="box-none" style={{ position: "absolute", left: 0, right: 0, bottom: 0, top: 0 }}>
-      <Animated.View style={[{ position: "absolute", right: 16, bottom: insets.bottom + 96 }, style]}>
+      <Animated.View style={[{ position: "absolute", right: 12, top: insets.top + 60 }, shadow, style]}>
         <Pressable accessibilityRole="image" accessibilityLabel={`${s.alt}. Tap to close.`} onPress={() => reactions.dismiss()} testID="sticker">
           <Image source={s.src} style={{ width: w, height: h }} resizeMode="contain" />
         </Pressable>
       </Animated.View>
     </View>
+  );
+}
+
+/**
+ * The end of a round's sticker, slapped onto the corner of the score card
+ * (storyboard 2, at 650ms). Follows the Funny reactions switch; a tap
+ * peels it off.
+ */
+export function EndSticker({ mood, seed, delay }: { mood: Mood; seed: number; delay: number }) {
+  const enabled = settingsStore.use((x) => x.reactions);
+  const [gone, setGone] = React.useState(false);
+  const { play, style } = useSlap(delay);
+  React.useEffect(() => {
+    if (enabled) play(true);
+  }, [enabled, play]);
+  if (!enabled || gone) return null;
+  const s = stickerFor(mood, seed);
+  const w = 104;
+  const h = Math.round((s.h / s.w) * w);
+  return (
+    <Animated.View pointerEvents="box-none" style={[{ position: "absolute", right: 0, top: -8 }, shadow, style]}>
+      <Pressable accessibilityRole="image" accessibilityLabel={`${s.alt}. Tap to close.`} onPress={() => play(false, () => setGone(true))} testID="sticker">
+        <Image source={s.src} style={{ width: w, height: h }} resizeMode="contain" />
+      </Pressable>
+    </Animated.View>
   );
 }

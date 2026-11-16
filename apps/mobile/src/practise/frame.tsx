@@ -2,18 +2,19 @@ import { router } from "expo-router";
 import { CircleHelp, X } from "lucide-react-native";
 import * as React from "react";
 import { BackHandler, Pressable, ScrollView, View } from "react-native";
-import Animated, { FadeIn, FadeInDown, useReducedMotion } from "react-native-reanimated";
+import Animated, { FadeIn, useAnimatedStyle, useReducedMotion, useSharedValue, withSequence, withSpring, withTiming } from "react-native-reanimated";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { Button, EmptyState, Sheet, Skeleton, T, VerdictBand } from "@/ds";
 import { haptic } from "@/lib/haptics";
+import { settingsStore } from "@/lib/settings";
 import { Rich } from "@/study/rich";
 import { fonts, layout, motion, space, useTheme } from "@/theme";
 import { ApiFailure } from "@/api/errors";
 import { isSoon } from "./api";
-import { Confetti, RollingNumber } from "@/motion";
+import { Burst, Confetti, curves, dur, presets, RollingNumber, springs } from "@/motion";
 import { Bump, Rise } from "./fx";
-import { moodForScore, reactions, StickerLayer } from "./reactions";
+import { EndSticker, moodForScore, reactions, StickerLayer } from "./reactions";
 
 /**
  * The one frame every game and practice tool sits in. Four parts, always in
@@ -34,6 +35,9 @@ export function leave(): void {
   if (router.canGoBack()) router.back();
   else router.replace("/practise");
 }
+
+/** The frame's screen-wide effects, for parts deep in the scroll (confetti must cover the screen, not the panel). */
+const FrameFx = React.createContext<{ confetti: () => void }>({ confetti: () => undefined });
 
 export type FrameProps = {
   title: string;
@@ -77,8 +81,11 @@ export function GameFrame({ title, howTo, score, scoreLabel = "Score", hud, chil
   React.useEffect(() => () => reactions.dismiss(), []);
   const closeHelp = React.useCallback(() => setHelp(false), []);
   const closeAsk = React.useCallback(() => setAsking(false), []);
+  const [confetti, setConfetti] = React.useState(0);
+  const fx = React.useMemo(() => ({ confetti: () => setConfetti((n) => n + 1) }), []);
   const body = <View style={{ gap: space[5], width: "100%", maxWidth: layout.readingWidth, alignSelf: "center" }}>{children}</View>;
   return (
+    <FrameFx.Provider value={fx}>
     <View testID={testID} style={{ flex: 1, backgroundColor: c.bg, paddingTop: insets.top }}>
       <View style={{ backgroundColor: c.bg }}>
         <View style={{ minHeight: 56, flexDirection: "row", alignItems: "center", paddingHorizontal: space[1], gap: space[1] }}>
@@ -118,6 +125,7 @@ export function GameFrame({ title, howTo, score, scoreLabel = "Score", hud, chil
         </View>
       ) : null}
       <StickerLayer />
+      <Confetti fire={confetti} />
       <HowToSheet open={help} onClose={closeHelp} steps={howTo ?? []} />
       <Sheet open={asking} onClose={closeAsk} title="Leave this round?">
         <View style={{ gap: space[3] }}>
@@ -135,6 +143,7 @@ export function GameFrame({ title, howTo, score, scoreLabel = "Score", hud, chil
         </View>
       </Sheet>
     </View>
+    </FrameFx.Provider>
   );
 }
 
@@ -331,43 +340,72 @@ export function Verdict({ right, title, why, seed, learn, partial }: { right: bo
 /* ------------------------------------------------------------- end screen */
 
 /**
- * The end of a round: a sticker (when reactions are on), the score big in the
- * pixel font, a line, small numbers in a row, then whatever the game wants to
- * look back on. The frame's thumb holds Play again.
+ * The end of a round, in one order (storyboard 2, "the case closes"):
+ *     0ms  the panel and its kicker fade up; the score's digits roll in
+ *   450ms  the score lands: won, a success haptic and a burst behind the
+ *          score; lost, a warning haptic and a 2px dip, no particles
+ *   650ms  the sticker slaps onto the corner of the score card
+ *   800ms  the small numbers rise in, 60ms apart
+ * Confetti only for a perfect round or a new personal best, on the whole
+ * screen (the frame's root), from 450ms. Play again works from 0ms. With
+ * Reduce Motion: the panel fades in and the haptic still plays.
  */
-export function EndPanel({ kicker = "Round over", score, scoreOf, line, stats, right, total, outcome, children }: { kicker?: string; score: string; scoreOf?: string; line?: string; stats?: { label: string; value: string }[]; right?: number; total?: number; outcome?: "won" | "lost" | "mixed"; children?: React.ReactNode }) {
+export const END_AT = { land: 450, sticker: 650, stats: 800, statStep: 60 } as const;
+
+export function EndPanel({ kicker = "Round over", score, scoreOf, line, stats, right, total, outcome, best, children }: { kicker?: string; score: string; scoreOf?: string; line?: string; stats?: { label: string; value: string }[]; right?: number; total?: number; outcome?: "won" | "lost" | "mixed"; /** A new personal best: confetti. */ best?: boolean; children?: React.ReactNode }) {
   const c = useTheme();
   const reduce = useReducedMotion();
-  const fired = React.useRef(false);
+  const fx = React.useContext(FrameFx);
+  const stickers = settingsStore.use((x) => x.reactions);
   const m = /^([^0-9-]*)(-?\d+)(\D*)$/.exec(score);
   const num = m ? { pre: m[1] ?? "", n: Number(m[2]), post: m[3] ?? "" } : null;
-  const won = outcome ? outcome === "won" : (total ?? 0) > 0 && (right ?? 0) / (total ?? 1) >= 0.6;
+  const ratio = (total ?? 0) > 0 ? (right ?? 0) / (total ?? 1) : null;
+  const result = outcome ?? (ratio === null ? "mixed" : ratio >= 0.6 ? "won" : ratio >= 0.35 ? "mixed" : "lost");
+  const perfect = ratio === 1 && result === "won";
+  const mood = outcome ? (outcome === "won" ? "streak" : outcome === "lost" ? "wrong" : "near") : moodForScore(right ?? 0, total ?? 0);
+  const [burst, setBurst] = React.useState(0);
+  const dip = useSharedValue(0);
+  const [seed] = React.useState(() => (right ?? 0) + (total ?? 0) + score.length);
   React.useEffect(() => {
-    if (fired.current) return;
-    fired.current = true;
-    haptic.success();
-    const mood = outcome ? (outcome === "won" ? "streak" : outcome === "lost" ? "wrong" : "near") : moodForScore(right ?? 0, total ?? 0);
-    reactions.show(mood, (right ?? 0) + (total ?? 0));
-  }, [outcome, right, total]);
+    reactions.dismiss();
+    // The result lands first; then the haptic, then particles (motion budget 5.1 rule 5).
+    const id = setTimeout(() => {
+      if (result === "won") {
+        haptic.success();
+        setBurst(1);
+      } else if (result === "lost") {
+        haptic.warn();
+        if (!reduce) dip.set(withSequence(withTiming(2, { duration: dur.micro, easing: curves.out }), withSpring(0, springs.smooth)));
+      } else haptic.tap();
+      if (perfect || best) fx.confetti();
+    }, reduce ? 0 : END_AT.land);
+    return () => clearTimeout(id);
+    // Once per panel: a new round mounts a new panel.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+  const dipStyle = useAnimatedStyle(() => ({ transform: [{ translateY: dip.value }] }));
+  const big = { fontFamily: fonts.pixelDigits, fontSize: 64, lineHeight: 72, color: c.ink };
   return (
-    <Animated.View entering={reduce ? undefined : FadeInDown.duration(motion.fill)} style={{ gap: space[5], paddingTop: space[4] }} testID="game-over">
-      <Confetti fire={won ? 1 : 0} />
+    <Animated.View entering={reduce ? presets.fade() : presets.rise()} style={{ gap: space[5], paddingTop: space[4] }} testID="game-over">
       <View style={{ gap: space[2] }}>
         <T v="caption" tone="muted">
           {kicker.toUpperCase()}
         </T>
-        <View style={{ flexDirection: "row", alignItems: "baseline", gap: space[2] }}>
-          {num ? (
-            <View style={{ flexDirection: "row", alignItems: "flex-end" }} testID="end-score" accessible accessibilityLabel={score}>
-              {num.pre ? <T style={{ fontFamily: fonts.pixelDigits, fontSize: 64, lineHeight: 72, color: c.ink }}>{num.pre}</T> : null}
-              <RollingNumber value={num.n} style={{ fontFamily: fonts.pixelDigits, fontSize: 64, lineHeight: 72, color: c.ink }} />
-              {num.post ? <T style={{ fontFamily: fonts.pixelDigits, fontSize: 64, lineHeight: 72, color: c.ink }}>{num.post}</T> : null}
-            </View>
-          ) : (
-            <T style={{ fontFamily: fonts.pixelDigits, fontSize: 64, lineHeight: 72, color: c.ink }} num maxFontSizeMultiplier={1.15} testID="end-score">
-              {score}
-            </T>
-          )}
+        <View style={{ flexDirection: "row", alignItems: "baseline", gap: space[2], paddingRight: stickers ? 104 : 0 }}>
+          <Animated.View style={dipStyle}>
+            {result === "won" ? <Burst fire={burst} reach={56} count={12} /> : null}
+            {num ? (
+              <View style={{ flexDirection: "row", alignItems: "flex-end" }} testID="end-score" accessible accessibilityLabel={score}>
+                {num.pre ? <T style={big}>{num.pre}</T> : null}
+                <RollingNumber value={num.n} style={big} />
+                {num.post ? <T style={big}>{num.post}</T> : null}
+              </View>
+            ) : (
+              <T style={big} num maxFontSizeMultiplier={1.15} testID="end-score">
+                {score}
+              </T>
+            )}
+          </Animated.View>
           {scoreOf ? (
             <T v="h3" tone="muted" num>
               {scoreOf}
@@ -375,11 +413,12 @@ export function EndPanel({ kicker = "Round over", score, scoreOf, line, stats, r
           ) : null}
         </View>
         {line ? <T v="h3">{line}</T> : null}
+        <EndSticker mood={mood} seed={seed} delay={reduce ? 0 : END_AT.sticker} />
       </View>
       {stats?.length ? (
         <View style={{ flexDirection: "row", flexWrap: "wrap", columnGap: space[6], rowGap: space[3], borderTopWidth: 1, borderBottomWidth: 1, borderColor: c.hairline, paddingVertical: space[3] }}>
           {stats.map((s, i) => (
-            <Animated.View key={s.label} entering={reduce ? undefined : FadeInDown.duration(260).delay(500 + i * 80)} accessible accessibilityLabel={`${s.label}: ${s.value}`}>
+            <Animated.View key={s.label} entering={reduce ? undefined : presets.rise(END_AT.stats + i * END_AT.statStep)} accessible accessibilityLabel={`${s.label}: ${s.value}`}>
               <T v="score" num>
                 {s.value}
               </T>
