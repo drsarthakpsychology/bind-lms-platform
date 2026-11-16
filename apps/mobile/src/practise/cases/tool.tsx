@@ -269,9 +269,8 @@ function StepView({ step, reveal, picked, disabled, onAnswer }: { step: ToolStep
           <Flip
             flipped={!!reveal}
             front={
-              <View style={{ borderWidth: 2, borderColor: c.ink, borderRadius: layout.radius, padding: space[5], backgroundColor: c.card, gap: space[4] }}>
+              <View style={{ borderWidth: 2, borderColor: c.ink, borderRadius: layout.radius, padding: space[5], backgroundColor: c.card }}>
                 <T v="h3">{`\u201c${step.moment}\u201d`}</T>
-                <Button label="Reveal the read" onPress={() => onAnswer(null)} disabled={disabled} testID="tool-moment-reveal" />
               </View>
             }
             back={
@@ -280,6 +279,7 @@ function StepView({ step, reveal, picked, disabled, onAnswer }: { step: ToolStep
               </View>
             }
           />
+          {!reveal ? <Button label="Reveal the read" onPress={() => onAnswer(null)} disabled={disabled} testID="tool-moment-reveal" /> : null}
         </View>
       );
     case "read":

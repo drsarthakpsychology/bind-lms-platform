@@ -306,7 +306,7 @@ export const wardSaved = () => [...saved.keys()];
 type Team = { id: string; code: string; name: string; game: "ward" | "escape"; scenario: string; status: "lobby" | "playing" | "done"; members: string[]; version: number; ward?: WState; votes?: Map<number, Map<string, string>>; reveals?: P.WardReveal[]; esc?: EscRun; startedAt: string | null; finishedAt: string | null };
 const TEAMS = new Map<string, Team>();
 let teamN = 0;
-const ME = "You";
+const ME = "Ananya M.";
 const MATE = "Ravi K.";
 export const teamsOf = (game: "ward" | "escape") => [...TEAMS.values()].filter((t) => t.game === game).map((t) => ({ id: t.id, name: t.name, status: t.status, code: t.code, campaign: t.scenario, room: t.scenario, title: t.game === "escape" ? ROOMS.find((r) => r.id === t.scenario)?.title : CAMPAIGNS.find((c) => c.id === t.scenario)?.title }));
 function newTeam(game: "ward" | "escape", scenario: string): Team {
