@@ -4,6 +4,7 @@ import { notFound, redirect } from "next/navigation";
 import { Award, CheckCircle2, ChevronLeft, Circle, Clock, Mail, MessageCircleQuestion, MessageSquare, PlayCircle, ShieldAlert, Sparkles, Upload } from "lucide-react";
 import { requireAdmin, isSuperAdmin } from "@/lib/auth/guards";
 import { createAdminClient } from "@/lib/supabase/server";
+import { loadStudentMessages } from "@/lib/people/student-messages";
 import { loadRoster } from "@/lib/people/roster-data";
 import { loadStudentDetail } from "@/lib/analytics/activity";
 import { agoLabel, buildTimeline, daysAgoIso, type TimelineEvent } from "@/lib/analytics/timeline";
@@ -582,12 +583,11 @@ async function CredentialsTab({ id, email, roll, v2 }: { id: string; email: stri
 }
 
 async function MessagesTab({ id, email, v2 }: { id: string; email: string; v2?: boolean }) {
-  const admin = createAdminClient();
-  const [mails, notes, inbound] = await Promise.all([
-    admin.from("email_sends").select("id, subject, status, template_id, created_at, opened_at").ilike("recipient", email).order("created_at", { ascending: false }).limit(50),
-    admin.from("notifications").select("id, title, type, created_at, read_at").eq("user_id", id).order("created_at", { ascending: false }).limit(50),
-    admin.from("email_inbound").select("id, subject, received_at").ilike("from_email", email).order("received_at", { ascending: false }).limit(20),
-  ]);
+  const m = await loadStudentMessages(createAdminClient(), id, email);
+  // The shapes this tab drew from before the loader moved to src/lib.
+  const mails = { data: m.mails.map((x) => ({ id: x.id, subject: x.subject, status: x.status, created_at: x.createdAt, opened_at: x.openedAt })) };
+  const notes = { data: m.notes.map((x) => ({ id: x.id, title: x.title, type: x.type, created_at: x.createdAt, read_at: x.readAt })) };
+  const inbound = { data: m.replies.map((x) => ({ id: x.id, subject: x.subject, received_at: x.receivedAt })) };
   if (v2) {
     return (
       <MessagesV2

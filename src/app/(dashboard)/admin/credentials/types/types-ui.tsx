@@ -7,6 +7,7 @@ import { Loader2, Plus, Upload } from "lucide-react";
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { cn } from "@/lib/utils";
 import { REQUIREMENT_KINDS, type AchievementRequirement } from "@/lib/achievements/rules";
+import { isEditableRule, MADE_FOR_YOU as MADE_FOR_YOU_RE, RULE_LABEL as RULE_WORDS, ruleText as ruleWords, TYPE_TONES } from "@/lib/achievements/type-words";
 import { createCertificateDraft, listCertificateEligible, saveAchievement, saveSignatureAsset, setAchievementEnabled, type AchievementRow } from "../../achievements/actions";
 import { Block, btn, Empty, More, nameLink, Notice, RowItem, Rows, Status, table } from "../../_v2/kit";
 import { field, label } from "../_ui/parts";
@@ -14,39 +15,11 @@ import { field, label } from "../_ui/parts";
 type Facet = { id: string; title: string };
 type Kind = AchievementRequirement["kind"];
 
-const RULE_LABEL: Record<Kind, string> = {
-  module_complete: "Finish a module",
-  sections_read: "Read a number of sections",
-  xp: "Earn a number of XP",
-  watch_seconds: "Watch a number of minutes",
-  course_complete: "Finish a course",
-  module_tests_passed: "Pass every module test at 80%",
-};
-const TONES = ["lime", "blue", "ink", "gold", "rose"] as const;
-/** Types the studio, the monthly merit and the signature store make for themselves. */
-const MADE_FOR_YOU = /^(custom-|studio-|merit-|signature-)/;
-
-const editable = (a: AchievementRow) => (REQUIREMENT_KINDS as readonly string[]).includes(String((a.requirements as { kind?: string }).kind ?? ""));
-
-function ruleText(a: AchievementRow, modules: Facet[], courses: Facet[]): string {
-  const r = (a.requirements ?? {}) as Partial<AchievementRequirement> & { kind?: string; module?: string; course_id?: string; count?: number; min?: number };
-  switch (r.kind) {
-    case "module_complete":
-      return `Finish ${modules.find((m) => m.id === r.module)?.title ?? "a module"}`;
-    case "sections_read":
-      return `Read ${r.count ?? 1} sections of ${modules.find((m) => m.id === r.module)?.title ?? "a module"}`;
-    case "xp":
-      return `Earn ${r.min ?? 0} XP`;
-    case "watch_seconds":
-      return `Watch ${Math.round((r.min ?? 0) / 60)} minutes`;
-    case "course_complete":
-      return `Finish ${courses.find((c) => c.id === r.course_id)?.title ?? "a course"}`;
-    case "module_tests_passed":
-      return RULE_LABEL.module_tests_passed;
-    default:
-      return r.kind ? "Automatic milestone" : "Given by hand";
-  }
-}
+const RULE_LABEL = RULE_WORDS;
+const TONES = TYPE_TONES;
+const MADE_FOR_YOU = MADE_FOR_YOU_RE;
+const editable = (a: AchievementRow) => isEditableRule(a);
+const ruleText = (a: AchievementRow, modules: Facet[], courses: Facet[]) => ruleWords(a, modules, courses);
 
 /**
  * The badge and certificate types. A table from 768px, rows on phones. New

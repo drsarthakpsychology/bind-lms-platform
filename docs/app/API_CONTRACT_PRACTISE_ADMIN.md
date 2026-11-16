@@ -4,7 +4,7 @@ Part two of the contract. Part one (`docs/app/API_CONTRACT.md`) has the basics t
 
 Status words: **built** (the route exists and has tests) or **planned** (agreed shape, not written yet).
 
-Last updated: 2026-11-15 (Issued list, badges, forms emailing, XP shop added).
+Last updated: 2026-11-16 (admin round two: cohorts, certificate settings and types, no-account certificates, system and support keys, a student's messages, sign-offs, admin push, a person's record).
 
 ## 1. Rules for this part
 
@@ -192,6 +192,30 @@ Auth: **admin** means `admin` or `view_admin` (read); **super admin** means `adm
 | built | `POST /admin/people/email` | super admin, 10 a minute | `PeopleEmailBody` | `PersonalEmailReport` | `emailPeople` (only people in the pipeline) |
 | built | `POST /admin/people/email/send-waiting` | super admin, 5 a minute | none | `PeopleSendWaitingResult` | `sendWaitingPeopleEmails` |
 | built | `POST /admin/people/whatsapp` | super admin, 30 a minute | `PeopleWhatsAppBody` | `PeopleWhatsAppResult` | `waMessage`, `waLink`, `logWhatsApp` (the app opens each link; the contact is logged) |
+| built | `GET /admin/cohorts` | admin | none | `AdminCohorts` | `loadCohortSummaries`, `loadRoster`, `cohortFigures` (`src/lib/cohorts/figures.ts`, moved out of the cohort page) |
+| built | `GET /admin/cohorts/:id` | admin | none | `AdminCohortDetail` | `loadCohort`, `loadRoster`, `cohortFigures`; `messages` are the bell batches that reached its members |
+| built | `GET /admin/certificates/settings` | admin | none | `CertificateSettings` | `loadCertificateSettings` (`src/lib/certificates/settings-load.ts`, moved out of the Settings page, which calls it too) |
+| built | `PUT /admin/certificates/settings` | super admin, 30 a minute | `CertificateSettingsBody` | `CertificateSettings` | `saveDefaultSignatories` |
+| built | `POST /admin/certificates/signatures` | super admin, 10 a minute | `SignatureUploadBody` (PNG or JPEG data URL, 2 MB) | `CertificateSettings` | `uploadSignatureImage` |
+| built | `POST /admin/certificates/anyone/preview` | super admin, 60 a minute | `AnyoneCertificateBody` | `AnyonePreview` (the PDF as base64; nothing saved or sent) | `previewCertificateToAnyone` |
+| built | `POST /admin/certificates/anyone` | super admin, 10 a minute | `AnyoneCertificateBody` | `AnyoneIssueResult` | `issueCertificateToAnyone` (no account, no login; linked to a student when the email is one) |
+| built | `GET /admin/certificates/types` | admin | none | `AdminCertTypes` | `listAchievements`, `moduleFacets`, `ruleText`, `isMadeForYou` (`src/lib/achievements/type-words.ts`, moved out of the Types screen) |
+| built | `POST /admin/certificates/types`, `PUT /admin/certificates/types/:id` | super admin, 30 a minute | `CertTypeBody` | `{ id }` | `saveAchievement` |
+| built | `POST /admin/certificates/types/:id/enabled` | super admin, 60 a minute | `CertTypeEnabledBody` | `{ enabled }` | `setAchievementEnabled` |
+| built | `GET /admin/certificates/types/:id/eligible` | super admin, 6 a minute | none | `CertEligible` | `listCertificateEligible` |
+| built | `POST /admin/certificates/types/:id/drafts` | super admin, 10 a minute | `CertDraftsBody` (1 to 100) | `CertDraftsResult` | `createCertificateDraft` for each |
+| built | `POST /admin/certificates/types/:id/signature` | super admin, 10 a minute | `SignatureUploadBody` | `{ saved: true }` | `saveSignatureAsset` |
+| built | `GET /admin/system` | admin | none | `AdminSystem` | `loadSupportState` (`src/lib/auth/support-state.ts`, moved out of the Support keys page: views only, never a key, salt or hash), `infra_metrics` with `src/lib/infra/limits.ts` |
+| built | `POST /admin/system/support-keys` | super admin, 10 a minute (strict) | `{ label }` | `NewSupportKey` (shown once) | `createSupportKey` |
+| built | `POST /admin/system/support-keys/:id/rotate` | super admin, 10 a minute (strict) | none | `NewSupportKey` | `rotateSupportKey` |
+| built | `POST /admin/system/support-keys/:id/revoke` | super admin, 10 a minute (strict) | none | `{ revoked: true }` | `revokeSupportKey` |
+| built | `POST /admin/system/legacy-key/revoke` | super admin, 10 a minute (strict) | none | `{ revoked: true }` | `revokeLegacyKey` |
+| built | `GET /admin/students/:id/messages` | admin | none | `StudentMessages` | `loadStudentMessages` (`src/lib/people/student-messages.ts`, moved out of the student page's Messages tab) |
+| built | `GET /admin/doubts?student=:id` | admin | | `DoubtList` | `loadDoubts` with `authorFilter` |
+| built | `GET /admin/review/signoffs` | admin | none | `SignOffList` | `loadSignOffRequests` (`src/lib/admin/signoffs.ts`, moved out of the Sign-offs page) |
+| built | `POST /admin/review/signoffs/:id` | super admin, 120 a minute | `SignOffBody` | `SignOffResult` (409 `conflict` when it is no longer waiting) | `decideSignOff` (also used by `/api/admin/supervision-signoff`) |
+| built | `GET /admin/push-preferences`, `PUT` | admin (each admin's own, view admins too), 60 a minute | `Partial<AdminPushPrefs>` | `AdminPushPrefs` | `src/lib/app-api/admin-push.ts` (`admin_settings`, key `admin_push_prefs:<id>`) |
+| built | `GET /admin/people/:key` | admin | none | `AdminPersonDetail` | `loadPipeline`, `loadTimeline`, `personFacts` (`src/lib/crm/person-facts.ts`, moved out of the person page) |
 
 Notes:
 
@@ -201,6 +225,12 @@ Notes:
 - `loadStudioSetup` and `src/lib/certificates/preview.ts` are the same reads and the same preview as the website's studio page and screen. The website files were left as they are because the certificates rework (branch `agent/admincert`) is changing them now; that branch should switch the studio page to `loadStudioSetup` and the studio screen to `previewDoc`, `previewImages` and `studioProblems` so there is one copy.
 
 Moved out (website unchanged): admin Home's numbers (`loadAdminOverview`, `src/lib/admin/overview.ts`), the Submissions review list (`loadSubmissionReview`, `src/lib/admin/submissions-review.ts`), the Issued list's read (`loadIssued`, `src/lib/certificates/issued-load.ts`).
+
+Round two notes:
+
+- `AdminSubmission` has `studentName` (full name, the email's first part when none is saved). `StudioSetup` has `signatories` (the saved defaults).
+- Admin phone notices: `PushData` carries `admin` (`new_doubt`, `new_enquiry`, `falling_behind`) and `id` (the doubt id, the person key, the student id). A new doubt or concern pushes to each admin whose `newDoubt` is on (the bell row is written for every admin as before). A new enquiry pushes (no bell row, as on the website) to admins and view admins whose `newEnquiry` is on. `falling_behind` has its setting only: nothing sends it yet.
+- No-account certificates use the website's older PDF template, so their preview is the PDF itself; the studio's preview is the drawing.
 
 Certificates, Issued and Forms notes:
 

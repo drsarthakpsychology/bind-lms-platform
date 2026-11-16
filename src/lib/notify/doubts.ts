@@ -1,6 +1,7 @@
 import "server-only";
 import { createAdminClient } from "@/lib/supabase/server";
 import { queuePush } from "@/lib/app-api/push";
+import { queueAdminPush } from "@/lib/app-api/admin-push";
 import type { PushKind } from "@/lib/app-api/prefs";
 
 /**
@@ -39,12 +40,16 @@ async function nameOf(userId: string): Promise<string | null> {
   }
 }
 
-async function insert(rows: Row[], push: PushKind) {
+async function insert(rows: Row[], push: PushKind, forAdmins?: { id: string }) {
   if (!rows.length) return;
   try {
     const written = await createAdminClient().from("notifications").insert(rows);
     // The same notice on the phone (Vibha Psychology app); never blocks the post.
-    if (!written?.error) queuePush(rows, push);
+    // Admins get it only when their "new doubts" phone notice is on.
+    if (!written?.error) {
+      if (forAdmins) await queueAdminPush(rows, "new_doubt", forAdmins.id);
+      else queuePush(rows, push);
+    }
   } catch {
     // The post itself already succeeded; a missed bell is not worth an error.
   }
@@ -58,7 +63,7 @@ export async function notifyAdminsOfDoubt(input: { doubtId: string; title: strin
     const who = (await nameOf(input.askerId)) ?? "A student";
     const what = input.kind === "complaint" ? "complaint" : "doubt";
     const text = `${who} posted a ${what}: ${input.title}. ${input.body}`.trim();
-    await insert(admins.map((id) => row(id, input.kind === "complaint" ? `New complaint: ${input.title}` : `New doubt: ${input.title}`, text, `/doubts/${input.doubtId}`, `Open the ${what}`, input.askerId)), "messages");
+    await insert(admins.map((id) => row(id, input.kind === "complaint" ? `New complaint: ${input.title}` : `New doubt: ${input.title}`, text, `/doubts/${input.doubtId}`, `Open the ${what}`, input.askerId)), "messages", { id: input.doubtId });
   } catch {
     // ignore
   }

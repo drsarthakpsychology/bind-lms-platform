@@ -17,6 +17,7 @@ export const GET = appRoute({ auth: "admin" }, async ({ user, query }): Promise<
     id: s.id,
     studentId: s.user_id,
     studentEmail: s.studentEmail ?? null,
+    studentName: s.studentName,
     assignmentId: s.assignmentId,
     assignmentTitle: s.assignmentTitle,
     lessonTitle: s.lessonTitle,

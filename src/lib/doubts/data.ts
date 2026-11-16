@@ -53,10 +53,12 @@ export async function doubtsReady(): Promise<boolean> {
  * ones with no cohort), plus their own complaints. Complaints from other
  * people are never shown. Admins see everything for the chosen cohort.
  */
-export async function loadDoubts(opts: { userId: string; isAdmin: boolean; cohortIds: string[]; cohortFilter?: string | null }): Promise<DoubtListItem[]> {
+export async function loadDoubts(opts: { userId: string; isAdmin: boolean; cohortIds: string[]; cohortFilter?: string | null; authorFilter?: string | null }): Promise<DoubtListItem[]> {
   const admin = createAdminClient();
   let q = admin.from("doubts").select("id, title, topic, kind, status, cohort_id, user_id, created_at").order("created_at", { ascending: false }).limit(300);
   if (opts.isAdmin && opts.cohortFilter) q = q.eq("cohort_id", opts.cohortFilter);
+  // One student's doubts and concerns (the admin student page).
+  if (opts.isAdmin && opts.authorFilter) q = q.eq("user_id", opts.authorFilter);
   const { data: doubts, error } = await q;
   if (error) return [];
   const rows = (doubts ?? []).filter((d) => {

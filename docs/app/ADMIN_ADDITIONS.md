@@ -103,7 +103,7 @@ app uses those routes. One small ask there: `GET /admin/people/:key` for a
 person's page with the full timeline (until then the app builds the page from
 the person's row).
 
-## Still needed
+## Still needed (all built on 16 November: see part two of the contract, section 4)
 
 | Method and path | Auth | Body | Answer (`apps/mobile/src/admin/extra.ts`) | Website function to call |
 |---|---|---|---|---|
