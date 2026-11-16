@@ -43,4 +43,9 @@ describe("PIN", () => {
     expect(shouldLock(0, five - 1, five)).toBe(false);
     expect(shouldLock(0, five, five)).toBe(true);
   });
+
+  it("locks when the phone's clock went back while the app was away (it never locked)", () => {
+    const five = 5 * 60 * 1000;
+    expect(shouldLock(10 * five, 10 * five - 3_600_000, five)).toBe(true);
+  });
 });

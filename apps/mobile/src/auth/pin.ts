@@ -76,5 +76,7 @@ export type PinVault = ReturnType<typeof createPinVault>;
 /** Should the app lock after coming back from the background? */
 export function shouldLock(backgroundedAt: number | null, now: number, lockAfterMs: number): boolean {
   if (backgroundedAt === null) return false;
-  return now - backgroundedAt >= lockAfterMs;
+  // A clock moved back while away (by hand, or a wrong network time) also locks:
+  // otherwise setting the time back an hour kept the app open for ever.
+  return now < backgroundedAt || now - backgroundedAt >= lockAfterMs;
 }
