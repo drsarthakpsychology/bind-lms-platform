@@ -12,7 +12,15 @@ import { cn } from "@/lib/utils";
  * System): the second level of navigation, like Shopify's or Gmail's tabs.
  * Scrolls sideways on phones; the active tab scrolls itself into view.
  */
-export function AdminSectionTabs({ v2 = false }: { /** New design: quiet underlined tabs, no eyebrow, hairline edge. */ v2?: boolean }) {
+export function AdminSectionTabs({
+  v2 = false,
+  viewOnly = false,
+}: {
+  /** New design: quiet underlined tabs, no eyebrow, hairline edge. */
+  v2?: boolean;
+  /** A View Admin: tabs for Super Admin pages are left out (those pages send them back). */
+  viewOnly?: boolean;
+}) {
   const pathname = usePathname() ?? "";
   const section = adminSectionFor(pathname);
   const activeRef = React.useRef<HTMLAnchorElement>(null);
@@ -21,9 +29,8 @@ export function AdminSectionTabs({ v2 = false }: { /** New design: quiet underli
     activeRef.current?.scrollIntoView({ block: "nearest", inline: "center" });
   }, [pathname]);
 
-  if (!section || section.tabs.filter((t) => !t.hidden).length < 2) return null;
-
-  const tabs = section.tabs.filter((t) => !t.hidden);
+  const tabs = section ? section.tabs.filter((t) => !t.hidden && !(viewOnly && t.superOnly)) : [];
+  if (!section || tabs.length < 2) return null;
   const activeHref = [...section.tabs]
     .filter((t) => pathname === t.href || pathname.startsWith(t.href + "/"))
     .sort((a, b) => b.href.length - a.href.length)[0]?.href;

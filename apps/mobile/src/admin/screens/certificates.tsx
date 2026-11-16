@@ -473,7 +473,7 @@ function Settings() {
                 <View style={{ flexDirection: "row", flexWrap: "wrap", gap: space[3] }}>
                   {saved.signatures.map((g) => (
                     <View key={g.id} style={{ width: 148, gap: space[1] }} testID={`signature-${g.id}`}>
-                      <View style={{ height: 64, borderRadius: 10, borderWidth: 1, borderColor: c.hairline, backgroundColor: "#ffffff", alignItems: "center", justifyContent: "center", overflow: "hidden" }}>
+                      <View style={{ height: 64, borderRadius: 10, borderWidth: 1, borderColor: c.hairline, backgroundColor: c.paper, alignItems: "center", justifyContent: "center", overflow: "hidden" }}>
                         {g.url ? <Image source={{ uri: g.url }} style={{ width: 136, height: 56 }} resizeMode="contain" accessibilityLabel={`Signature of ${g.label}`} /> : <PenLine size={20} color={c.muted} />}
                       </View>
                       <T v="caption" tone="muted" numberOfLines={1}>

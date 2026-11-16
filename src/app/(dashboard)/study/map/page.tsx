@@ -16,6 +16,8 @@ import { STATE_ICON, StateTag, btnPlain, btnPrimary, stateTone } from "./ui";
 import { PageHeader } from "@/components/design-system/page-header";
 import { backLinkClass } from "@/components/design-system/back-link";
 import { EmptyState } from "@/components/design-system/empty-state";
+import { uiV2Role } from "@/lib/ui/v2-server";
+import { MapV2 } from "./map-v2";
 
 export const metadata: Metadata = { title: "Your map" };
 
@@ -31,6 +33,11 @@ export default async function MapPage() {
   const placed = new Map(PREP_ONBOARDING_ENABLED ? (data.placement?.topics ?? []).map((t) => [t.topic, t.level]) : []);
   const left = answersToCalibrate(data.graded);
   const fresh = PREP_ONBOARDING_ENABLED && data.graded === 0 && !data.placement;
+
+  if (await uiV2Role(session.status === "ok" ? session.profile.role : null)) {
+    const words = new Map([...placed].map(([k, v]) => [k, LEVEL_WORD[v]]));
+    return <MapV2 data={data} titles={titles} isLearner={isLearner} fresh={fresh} left={left} placed={words} />;
+  }
 
   return (
     <div className="mx-auto max-w-6xl space-y-8">

@@ -5,14 +5,16 @@ import { BackHandler, Pressable, ScrollView, View } from "react-native";
 import Animated, { FadeIn, FadeInDown, useReducedMotion } from "react-native-reanimated";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
-import { Button, ComingSoon, EmptyState, Sheet, Skeleton, T, VerdictBand } from "@/ds";
+import { Button, EmptyState, Sheet, Skeleton, T, VerdictBand } from "@/ds";
 import { haptic } from "@/lib/haptics";
+import { useSeen } from "@/lib/once";
 import { Rich } from "@/study/rich";
 import { fonts, layout, motion, space, useTheme } from "@/theme";
 import { ApiFailure } from "@/api/errors";
 import { isSoon } from "./api";
+import { SoonState } from "./soon";
 import { Confetti, RollingNumber } from "@/motion";
-import { Bump, Rise } from "./fx";
+import { Bump } from "./fx";
 import { moodForScore, reactions, StickerLayer } from "./reactions";
 
 /**
@@ -209,8 +211,15 @@ export function StartScreen<V extends string>({
   const c = useTheme();
   const reduce = useReducedMotion();
   const [help, setHelp] = React.useState(false);
+  // The rules show in the empty middle until the first Play on this phone; after that, one link.
+  const rules = useSeen(`howto.${testID ?? title}`);
+  const play = () => {
+    rules.mark();
+    onPlay();
+  };
+  const summary = !rules.seen && howTo.length ? howTo.slice(0, 3) : null;
   return (
-    <GameFrame title="" testID={testID ?? "start"} thumb={<Button label={playLabel} onPress={onPlay} busy={busy} testID="start-play" />}>
+    <GameFrame title="" testID={testID ?? "start"} thumb={<Button label={playLabel} onPress={play} busy={busy} testID="start-play" />}>
       <Animated.View entering={reduce ? undefined : FadeIn.duration(motion.page)} style={{ gap: space[3], paddingTop: space[4] }}>
         <T v="display">{title}</T>
         <T tone="muted" style={{ maxWidth: 460 }}>
@@ -242,7 +251,7 @@ export function StartScreen<V extends string>({
                 testID={`choice-${o.id}`}
                 style={({ pressed }) => ({ minHeight: layout.row, flexDirection: "row", alignItems: "center", gap: space[3], paddingHorizontal: space[4], paddingVertical: space[3], borderRadius: layout.radius, borderWidth: on ? 2 : 1.5, borderColor: on ? c.ink : c.cardLine, backgroundColor: pressed ? c.tint : on ? c.card : "transparent" })}
               >
-                <View style={{ width: 20, height: 20, borderRadius: 10, borderWidth: 2, borderColor: on ? c.ink : c.cardLine, alignItems: "center", justifyContent: "center" }}>{on ? <View style={{ width: 10, height: 10, borderRadius: 5, backgroundColor: c.brand }} /> : null}</View>
+                <View style={{ width: 20, height: 20, borderRadius: 10, borderWidth: 2, borderColor: on ? c.ink : c.fieldLine, alignItems: "center", justifyContent: "center" }}>{on ? <View style={{ width: 10, height: 10, borderRadius: 5, backgroundColor: c.accent }} /> : null}</View>
                 <View style={{ flex: 1, minWidth: 0, gap: 2 }}>
                   <T v="bodyStrong">{o.name}</T>
                   {o.line ? (
@@ -256,14 +265,29 @@ export function StartScreen<V extends string>({
           })}
         </View>
       ) : null}
-      <Button kind="text" label="How to play" onPress={() => setHelp(true)} testID="start-howto" />
+      {summary ? (
+        <View style={{ gap: space[2] }} testID="start-rules">
+          <T v="caption" tone="muted">
+            HOW TO PLAY
+          </T>
+          {summary.map((s, i) => (
+            <View key={i} style={{ flexDirection: "row", gap: space[3] }}>
+              <T v="score" style={{ width: 20 }} num>
+                {i + 1}
+              </T>
+              <Rich text={s} style={{ flex: 1 }} />
+            </View>
+          ))}
+        </View>
+      ) : null}
+      {!summary || howTo.length > 3 ? <Button kind="text" label={summary ? "All the rules" : "How to play"} onPress={() => setHelp(true)} testID="start-howto" /> : null}
       {error ? (
         <T v="small" tone="danger" accessibilityLiveRegion="polite">
           {error}
         </T>
       ) : null}
       {below}
-      <HowToSheet open={help} onClose={() => setHelp(false)} steps={howTo} onPlay={onPlay} />
+      <HowToSheet open={help} onClose={() => setHelp(false)} steps={howTo} onPlay={play} />
     </GameFrame>
   );
 }
@@ -276,7 +300,7 @@ export function Lives({ left, total }: { left: number; total: number }) {
   return (
     <View accessible accessibilityLabel={`${left} of ${total} lives left`} style={{ flexDirection: "row", gap: 6 }}>
       {Array.from({ length: total }, (_, i) => (
-        <View key={i} style={{ width: 12, height: 12, borderRadius: 3, borderWidth: 1.5, borderColor: c.ink, backgroundColor: i < left ? c.brand : "transparent" }} />
+        <View key={i} style={{ width: 12, height: 12, borderRadius: 3, borderWidth: 1.5, borderColor: c.ink, backgroundColor: i < left ? c.accent : "transparent" }} />
       ))}
     </View>
   );
@@ -289,7 +313,7 @@ export function StepStrip({ at, total, marks }: { at: number; total: number; mar
     <View accessible accessibilityLabel={`Step ${Math.min(at + 1, total)} of ${total}`} style={{ flexDirection: "row", gap: 4 }}>
       {Array.from({ length: total }, (_, i) => {
         const m = marks?.[i];
-        const bg = m === "ok" ? (c.dark ? c.primary : c.ink) : m === "miss" ? c.danger : i === at ? c.brand : c.hairline;
+        const bg = m === "ok" ? (c.dark ? c.primary : c.ink) : m === "miss" ? c.danger : i === at ? c.accent : c.fieldLine;
         return <View key={i} style={{ flex: 1, height: 4, borderRadius: 2, backgroundColor: bg }} />;
       })}
     </View>
@@ -320,9 +344,7 @@ export function HudLine({ left, right }: { left: string; right?: React.ReactNode
 export function Verdict({ right, title, why, seed, learn, partial }: { right: boolean; title?: string; why?: string | null; seed?: number; learn?: { label: string; onPress: () => void } | null; partial?: boolean }) {
   return (
     <View style={{ gap: space[2] }}>
-      <Rise>
-        <VerdictBand right={right} title={title ?? (partial ? "Partly right." : undefined)} why={why} seed={seed} />
-      </Rise>
+      <VerdictBand right={right} title={title ?? (partial ? "Partly right." : undefined)} why={why} seed={seed} />
       {learn ? <Button kind="text" label={learn.label} onPress={learn.onPress} testID="verdict-learn" /> : null}
     </View>
   );
@@ -433,11 +455,11 @@ export function loadLine(error: unknown): string {
   return error.message || "That didn't work. Try again.";
 }
 
-export function FrameError({ title, error, onRetry }: { title: string; error: unknown; onRetry: () => void }) {
+export function FrameError({ title, error, onRetry, web = "/practice" }: { title: string; error: unknown; onRetry: () => void; /** The same page on the website, for a part the app does not have yet. */ web?: string }) {
   return (
     <GameFrame title={title} testID="frame-error">
       {isSoon(error) ? (
-        <ComingSoon web="/practise" />
+        <SoonState web={web} />
       ) : (
         <EmptyState mood="puzzled" title="That didn't load" body={loadLine(error)} action={{ label: "Try again", onPress: onRetry }} testID="load-error" />
       )}

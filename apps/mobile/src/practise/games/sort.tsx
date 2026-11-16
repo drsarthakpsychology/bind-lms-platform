@@ -1,11 +1,11 @@
 import { Check } from "lucide-react-native";
 import * as React from "react";
 import { Pressable, ScrollView, View } from "react-native";
-import Animated, { FadeIn, useReducedMotion } from "react-native-reanimated";
 
 import { Button, Row, RowList, Section, Sheet, T } from "@/ds";
 import { haptic } from "@/lib/haptics";
-import { layout, motion, space, useTheme } from "@/theme";
+import { Swap } from "@/motion";
+import { layout, space, useTheme } from "@/theme";
 import { play, useLoad, useMove } from "../api";
 import { Draggable, useZones } from "../drag";
 import { EndPanel, EndThumb, FrameError, FrameLoading, GameFrame, HudLine, Lives, MoveError, StartScreen, Verdict } from "../frame";
@@ -64,7 +64,6 @@ function SortBoardScreen({ mode, tier, again }: { mode: "daily" | "practice"; ti
 
 function Board({ view, again }: { view: SortView; again: () => void }) {
   const c = useTheme();
-  const reduce = useReducedMotion();
   const mv = useMove();
   const react = useReactions();
   const { hit, measure } = useZones();
@@ -164,7 +163,7 @@ function Board({ view, again }: { view: SortView; again: () => void }) {
                   if (put(sel, gi)) haptic.success();
                 } else setOpen(gi);
               }}
-              style={({ pressed }) => ({ width: "48.5%", minHeight: 112, padding: space[3], gap: space[2], borderRadius: layout.radius, borderWidth: target ? 2 : 1.5, borderStyle: target ? "dashed" : "solid", borderColor: ok ? (c.dark ? c.primary : c.ink) : target ? c.brand : c.cardLine, backgroundColor: ok ? c.successBg : pressed ? c.tint : c.card })}
+              style={({ pressed }) => ({ width: "48.5%", minHeight: 112, padding: space[3], gap: space[2], borderRadius: layout.radius, borderWidth: target ? 2 : 1.5, borderStyle: target ? "dashed" : "solid", borderColor: ok ? (c.dark ? c.primary : c.ink) : target ? c.accent : c.cardLine, backgroundColor: ok ? c.successBg : pressed ? c.tint : c.card })}
             >
               <View style={{ flexDirection: "row", alignItems: "flex-start", gap: space[1] }}>
                 <T v="small" style={{ flex: 1, fontWeight: "700" }} numberOfLines={3}>
@@ -174,7 +173,7 @@ function Board({ view, again }: { view: SortView; again: () => void }) {
               </View>
               <View style={{ flexDirection: "row", gap: 3 }}>
                 {[0, 1, 2, 3].map((k) => (
-                  <View key={k} style={{ flex: 1, height: 6, borderRadius: 3, backgroundColor: k < inBin.length ? (ok ? c.ink : c.brand) : c.hairline }} />
+                  <View key={k} style={{ flex: 1, height: 6, borderRadius: 3, backgroundColor: k < inBin.length ? (ok ? c.ink : c.accent) : c.fieldLine }} />
                 ))}
               </View>
               {away ? (
@@ -193,7 +192,7 @@ function Board({ view, again }: { view: SortView; again: () => void }) {
       </View>
       <View style={{ flex: 1, justifyContent: "center", gap: space[3] }}>
         {top !== null ? (
-          <Animated.View key={top} entering={reduce ? undefined : FadeIn.duration(motion.state)} style={{ gap: space[3] }}>
+          <Swap k={top} style={{ gap: space[3] }}>
             <Draggable onDrop={(x, y) => { const z = hit(x, y); return z ? put(top, Number(z.slice(1))) : false; }} onLift={setLifted} testID="sort-card">
               <Pressable
                 accessibilityRole="button"
@@ -203,7 +202,7 @@ function Board({ view, again }: { view: SortView; again: () => void }) {
                   setSel(sel === top ? null : top);
                 }}
                 testID={`sort-tile-${top}`}
-                style={{ minHeight: 120, padding: space[5], justifyContent: "center", borderRadius: layout.radius, borderWidth: 2, borderColor: sel === top ? c.brand : c.ink, backgroundColor: c.card }}
+                style={{ minHeight: 120, padding: space[5], justifyContent: "center", borderRadius: layout.radius, borderWidth: 2, borderColor: sel === top ? c.accent : c.ink, backgroundColor: c.card }}
               >
                 <T v="h3" center>
                   {view.tiles[top]}
@@ -216,7 +215,7 @@ function Board({ view, again }: { view: SortView; again: () => void }) {
               </T>
               {deck.length > 1 ? <Button kind="text" label="Next card" onPress={skip} testID="sort-skip" /> : null}
             </View>
-          </Animated.View>
+          </Swap>
         ) : (
           <Verdict right title="All sixteen placed" why={view.tier === "advanced" && !picks.every(Boolean) ? "Pick a rule for each diagnosis, then check." : "Check when you are ready. Tap a diagnosis to move a card."} />
         )}

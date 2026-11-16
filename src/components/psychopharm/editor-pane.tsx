@@ -88,10 +88,15 @@ export function useMedicineEditor({
     } finally { setBusy(null); }
   }, [drug, document, reason]);
 
-  const firstRender = React.useRef(true);
+  // Only a real change to the document saves. Opening the page (an effect that
+  // runs twice in development), or typing the publish reason (which remakes
+  // saveDraft), must not write a draft of an unchanged document.
+  const lastSaved = React.useRef<string | null>(null);
   React.useEffect(() => {
-    if (firstRender.current) { firstRender.current = false; return; }
-    const t = setTimeout(() => saveDraft(), 800);
+    const json = JSON.stringify(document);
+    if (lastSaved.current === null) { lastSaved.current = json; return; }
+    if (json === lastSaved.current) return;
+    const t = setTimeout(() => { lastSaved.current = json; void saveDraft(); }, 800);
     return () => clearTimeout(t);
   }, [document, saveDraft]);
 

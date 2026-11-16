@@ -38,7 +38,7 @@ export function ProgressRing({ pct, size = 28, stroke = 4, color, track, delay =
   return (
     <View accessible={!!label} accessibilityRole={label ? "progressbar" : undefined} accessibilityLabel={label} accessibilityValue={label ? { min: 0, max: 100, now: Math.round(clamp(pct)) } : undefined} style={{ width: size, height: size, alignItems: "center", justifyContent: "center" }}>
       <Svg width={size} height={size} style={{ position: "absolute", transform: [{ rotate: "-90deg" }] }}>
-        <Circle cx={size / 2} cy={size / 2} r={r} fill="none" strokeWidth={stroke} stroke={track ?? c.hairline} />
+        <Circle cx={size / 2} cy={size / 2} r={r} fill="none" strokeWidth={stroke} stroke={track ?? c.cardLine} />
         <AnimatedCircle cx={size / 2} cy={size / 2} r={r} fill="none" strokeWidth={stroke} strokeLinecap="round" stroke={color ?? (c.dark ? c.primary : c.ink)} strokeDasharray={`${len}`} animatedProps={props} />
       </Svg>
       {children}
@@ -64,7 +64,7 @@ export function ProgressFill({ pct, height = 6, color, track, delay = 0 }: { pct
       style={{
         height,
         borderRadius: height / 2,
-        backgroundColor: track ?? c.hairline,
+        backgroundColor: track ?? c.cardLine,
         overflow: "hidden",
         alignSelf: "stretch",
       }}

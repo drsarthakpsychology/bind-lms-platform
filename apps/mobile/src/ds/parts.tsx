@@ -94,7 +94,7 @@ export function Row({ title, meta, icon, trailing, onPress, chevron, unread, cur
       {icon ? <View style={{ width: 24, alignItems: "center" }}>{icon}</View> : null}
       <View style={{ flex: 1, minWidth: 0, gap: 2 }}>
         <View style={{ flexDirection: "row", alignItems: "center", gap: space[2] }}>
-          {unread ? <View style={{ width: 8, height: 8, borderRadius: 4, backgroundColor: c.brand }} /> : null}
+          {unread ? <View style={{ width: 8, height: 8, borderRadius: 4, backgroundColor: c.accent }} /> : null}
           <T v="bodyStrong" tone={danger ? "danger" : current ? "link" : "ink"} style={{ flex: 1 }}>
             {title}
           </T>
@@ -213,7 +213,7 @@ export function SwitchRow({ title, meta, value, onChange, disabled, testID }: { 
         ) : null}
       </View>
       <View pointerEvents="none" importantForAccessibility="no-hide-descendants">
-        <Switch value={value} disabled={disabled} trackColor={{ false: c.cardLine, true: c.brand }} thumbColor="#ffffff" ios_backgroundColor={c.cardLine} {...({ activeThumbColor: "#ffffff", activeTrackColor: c.brand } as object)} />
+        <Switch value={value} disabled={disabled} trackColor={{ false: c.fieldLine, true: c.switchOn }} thumbColor={value ? c.switchThumb : "#ffffff"} ios_backgroundColor={c.fieldLine} {...({ activeThumbColor: c.switchThumb, activeTrackColor: c.switchOn } as object)} />
       </View>
     </Pressable>
   );

@@ -45,6 +45,7 @@ export function ContactSheet({
   allowance?: { configured: boolean; left: number; limit: number } | null;
   preview?: (subject: string, text: string) => Promise<EmailPreview>;
 }) {
+  const c = useTheme();
   const [subject, setSubject] = React.useState("");
   const [text, setText] = React.useState("");
   const [error, setError] = React.useState<string | null>(null);
@@ -92,7 +93,7 @@ export function ContactSheet({
           </View>
         ) : null}
         {shown ? (
-          <View style={{ gap: space[1], padding: space[3], borderRadius: 10, borderWidth: 1, borderColor: "rgba(127,127,127,0.35)" }} testID="contact-preview">
+          <View style={{ gap: space[1], padding: space[3], borderRadius: 10, borderWidth: 1, borderColor: c.cardLine }} testID="contact-preview">
             <T v="caption" tone="muted">
               {`To ${shown.to}`}
             </T>
