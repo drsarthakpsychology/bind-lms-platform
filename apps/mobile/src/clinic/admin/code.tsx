@@ -111,10 +111,12 @@ export function ShowCodeScreen() {
       } catch (e) {
         if (!alive) return;
         // Not open yet (409): say so, and look again every 30 seconds. Anything else: try again in 5.
+        // A View Admin can show a code only once a Super Admin has opened it (403): say so, look again in 30 seconds.
         const closed = e instanceof ApiFailure && e.code === "conflict";
-        if (closed) setCode(null);
-        setError(closed ? `${messageOf(e)} Scanning is open from 30 minutes before the start to an hour after the end.` : messageOf(e));
-        timer = setTimeout(() => void load(), closed ? 30_000 : 5000);
+        const refused = e instanceof ApiFailure && e.code === "forbidden";
+        if (closed || refused) setCode(null);
+        setError(closed ? `${messageOf(e)} Scanning is open from 30 minutes before the start to an hour after the end.` : refused ? `${messageOf(e)} A Super Admin opens the code first; after that it shows here too.` : messageOf(e));
+        timer = setTimeout(() => void load(), closed || refused ? 30_000 : 5000);
       }
     };
     void load();

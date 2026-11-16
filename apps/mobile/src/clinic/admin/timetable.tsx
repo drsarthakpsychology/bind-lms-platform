@@ -4,11 +4,12 @@ import { View } from "react-native";
 
 import { useAdminAction, useRefreshAdmin } from "@/admin/api";
 import { DateField } from "@/admin/date-field";
-import { ConfirmSheet, Loaded, Quiet, SmallButton, TabSwap, ScrollTabs } from "@/admin/kit";
+import { ConfirmSheet, Quiet, SmallButton, TabSwap, ScrollTabs } from "@/admin/kit";
 import { useAdminRole } from "@/admin/role";
 import { Button, Field, RowsSkeleton, Screen, Section, Sheet, SwitchRow, T } from "@/ds";
 import { space, useTheme } from "@/theme";
 import { adminClinicCalls, useAdminClinicToday, useCohortId, useTimetable } from "../api";
+import { ClinicLoaded } from "../loaded";
 import type { AdminSession, Ref, SessionKind, Slot, Timetable, Weekday } from "../contract";
 import { WEEKDAYS } from "../contract";
 import { dateLabel, dayLong, dayShort, isOpd, KIND_NAME, KINDS, minutesOf, parseClock, relDay, sessionMeta, todayIST } from "../logic";
@@ -232,13 +233,13 @@ export function AdminTimetableScreen() {
   return (
     <Screen testID="admin-timetable" title="Timetable" onRefresh={refresh} refreshing={refreshing}>
       <ScrollTabs tabs={tabs} value={tab} onChange={setTab} />
-      <Loaded q={q} what="the timetable" soon skeleton={<RowsSkeleton rows={6} />}>
+      <ClinicLoaded admin q={q} what="the timetable" skeleton={<RowsSkeleton rows={6} />}>
         {(t) => (
           <TabSwap tabs={tabs} value={tab}>
             {tab === "week" ? <Weekly t={t} canWrite={canWrite} cohorts={cohorts} cohortId={cohortId} /> : <Coming t={t} canWrite={canWrite} cohorts={cohorts} cohortId={cohortId} />}
           </TabSwap>
         )}
-      </Loaded>
+      </ClinicLoaded>
     </Screen>
   );
 }

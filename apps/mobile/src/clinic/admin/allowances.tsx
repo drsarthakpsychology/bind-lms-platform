@@ -2,12 +2,13 @@ import * as React from "react";
 import { Pressable, View } from "react-native";
 
 import { useAdminAction, useRefreshAdmin } from "@/admin/api";
-import { ActionBar, Check, Loaded, Quiet, SearchBox, SmallButton } from "@/admin/kit";
+import { ActionBar, Check, Quiet, SearchBox, SmallButton } from "@/admin/kit";
 import { useAdminRole } from "@/admin/role";
 import { Button, Field, RowsSkeleton, Screen, Section, Sheet, T } from "@/ds";
 import { haptic } from "@/lib/haptics";
 import { layout, space, useTheme } from "@/theme";
 import { adminClinicCalls, useAdminClinicToday, useClinicStudents } from "../api";
+import { ClinicLoaded } from "../loaded";
 import type { Batch, ClinicStudent, ClinicStudents, Ref } from "../contract";
 import { BATCH_NAME } from "../logic";
 import { LineRow, Pills, Stepper } from "./kit";
@@ -185,12 +186,12 @@ export function AdminAllowancesScreen() {
   const { refresh, refreshing } = useRefreshAdmin();
   return (
     <Screen testID="admin-allowances" title="Allowances" lead={o.data?.cohorts.find((x) => x.id === (q.data?.cohortId ?? o.data?.cohortId))?.name} onRefresh={refresh} refreshing={refreshing}>
-      <Loaded q={q} what="the students" soon skeleton={<RowsSkeleton rows={6} />}>
+      <ClinicLoaded admin q={q} what="the students" skeleton={<RowsSkeleton rows={6} />}>
         {(d) => {
           const id = d.cohortId ?? o.data?.cohortId ?? "";
           return <Body d={d} cohort={{ id, name: o.data?.cohorts.find((x) => x.id === id)?.name ?? "the cohort" }} />;
         }}
-      </Loaded>
+      </ClinicLoaded>
     </Screen>
   );
 }

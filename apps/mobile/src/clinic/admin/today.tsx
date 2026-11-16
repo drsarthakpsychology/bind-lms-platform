@@ -4,11 +4,12 @@ import * as React from "react";
 import { View } from "react-native";
 
 import { useAdminAction, useRefreshAdmin } from "@/admin/api";
-import { Loaded, Quiet, SmallButton } from "@/admin/kit";
+import { Quiet, SmallButton } from "@/admin/kit";
 import { useAdminRole } from "@/admin/role";
 import { Button, Field, IconDot, Row, RowList, RowsSkeleton, Screen, Section, Sheet, T } from "@/ds";
 import { space, useTheme } from "@/theme";
 import { adminClinicCalls, cohortStore, useAdminClinicToday } from "../api";
+import { ClinicLoaded } from "../loaded";
 import { dateLabel } from "../logic";
 import { Pills } from "./kit";
 import type { AdminSession } from "../contract";
@@ -53,7 +54,7 @@ export function AdminClinicScreen() {
   const [note, setNote] = React.useState(false);
   return (
     <Screen testID="admin-clinic" onRefresh={refresh} refreshing={refreshing}>
-      <Loaded q={q} what="today's sessions" soon skeleton={<RowsSkeleton rows={4} />}>
+      <ClinicLoaded admin q={q} what="today's sessions" skeleton={<RowsSkeleton rows={4} />}>
         {(d) => (
           <View style={{ gap: space[6] }}>
             <View style={{ gap: space[1] }}>
@@ -112,7 +113,7 @@ export function AdminClinicScreen() {
             {note && d.cohortId ? <NoteSheet open={note} onClose={() => setNote(false)} date={d.date} note={d.note} cohortId={d.cohortId} /> : null}
           </View>
         )}
-      </Loaded>
+      </ClinicLoaded>
     </Screen>
   );
 }

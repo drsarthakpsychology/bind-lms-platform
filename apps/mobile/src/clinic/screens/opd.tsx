@@ -5,11 +5,12 @@ import { Pressable, View } from "react-native";
 
 import { ConfirmSheet } from "@/admin/kit";
 import { messageOf } from "@/api/errors";
-import { Button, Field, IconButton, Loaded, RowsSkeleton, Screen, Section, Sheet, T, toast } from "@/ds";
+import { Button, Field, IconButton, RowsSkeleton, Screen, Section, Sheet, T, toast } from "@/ds";
 import { haptic } from "@/lib/haptics";
 import { Burst, ProgressRing, RollingNumber, useCelebrate } from "@/motion";
 import { AreaProvider, layout, space, useAccent, useTheme } from "@/theme";
 import { clinicCalls, clinicKeys, opdQuery, useOpd } from "../api";
+import { ClinicLoaded } from "../loaded";
 import type { Batch, OpdPage, OpdVisit } from "../contract";
 import { BATCH_NAME, casesLine, pct, rangeLabel, relDay, todayIST, visitsNeeded } from "../logic";
 import { VisitWord } from "../parts";
@@ -164,7 +165,7 @@ export function OpdScreen() {
   return (
     <AreaProvider area="home">
       <Screen testID="clinic-opd" onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
-        <Loaded q={q} what="your OPD cases" soon skeleton={<RowsSkeleton rows={4} />}>
+        <ClinicLoaded q={q} what="your OPD cases" skeleton={<RowsSkeleton rows={4} />}>
           {(p: OpdPage) => {
             const needed = visitsNeeded(p.total, p.done, p.casesPerVisit);
             const toLog = p.visits.filter((v) => v.status === "to_log");
@@ -252,7 +253,7 @@ export function OpdScreen() {
               </View>
             );
           }}
-        </Loaded>
+        </ClinicLoaded>
         <ConfirmSheet
           open={!!batch}
           onClose={() => setBatch(null)}

@@ -88,6 +88,9 @@ function learnPathFor(web: string | undefined): string | null {
   if (p === "/study/map") return "/map";
   if (p === "/study/map/practice") return "/map/practice";
   if (p === "/wall") return "/wall";
+  // Clinic notices (leave decided, a session moved, OPD days published) link to /clinic: the schedule.
+  if (p === "/clinic" || p === "/clinic/schedule" || p === "/dashboard/clinic") return "/clinic/schedule";
+  if ((m = /^\/clinic\/(leave|opd|attendance|scan)$/.exec(p))) return `/clinic/${m[1]}`;
   return null;
 }
 

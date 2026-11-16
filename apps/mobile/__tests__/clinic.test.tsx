@@ -4,7 +4,7 @@ import * as React from "react";
 
 import { ApiFailure } from "@/api/errors";
 import { mock } from "@/api/mock/server";
-import { session } from "@/auth";
+import { api, session } from "@/auth";
 import { AdminAllowancesScreen } from "@/clinic/admin/allowances";
 import { ShowCodeScreen } from "@/clinic/admin/code";
 import { AdminLeavesScreen } from "@/clinic/admin/leaves";
@@ -24,11 +24,15 @@ import { LeaveScreen } from "@/clinic/screens/leave";
 import { OpdScreen } from "@/clinic/screens/opd";
 import { ScanScreen } from "@/clinic/screens/scan";
 import { ScheduleScreen, weekLabel } from "@/clinic/screens/schedule";
-import { TodayBlockView } from "@/clinic/today";
+import { TodayBlock, TodayBlockView } from "@/clinic/today";
 import { haptic } from "@/lib/haptics";
+import { pathFromLink } from "@/nav/targets";
 import { render } from "./utils";
 
 const params = useLocalSearchParams as jest.Mock;
+/** The machine is shared: give screens time to load. */
+const wf = (fn: () => void) => waitFor(fn, { timeout: 8000 });
+jest.setTimeout(20_000);
 
 async function signInAs(email: string) {
   if (session.store.get().phase !== "visitor" && session.store.get().phase !== "loading") await session.signOut();
@@ -103,6 +107,12 @@ describe("clinic words and numbers", () => {
     expect(weekdayFrom(6)).toBe("sat");
     expect(L.relDay(today, today)).toBe("Today");
     expect(L.relDay(L.addDays(today, 1), today)).toBe("Tomorrow");
+  });
+
+  it("opens clinic notices (they link to /clinic) on the schedule", () => {
+    expect(pathFromLink("/clinic")).toBe("/clinic/schedule");
+    expect(pathFromLink("https://vibhapsychology.com/clinic")).toBe("/clinic/schedule");
+    expect(pathFromLink("/clinic/leave")).toBe("/clinic/leave");
   });
 
   it("cleans the code and decides what to send", () => {
@@ -191,9 +201,12 @@ describe("student clinic calls (mock server, server shapes)", () => {
     const again = await fail(clinicCalls.scan({ token: clinicMock.qrFor(c.id) }));
     expect(again.code).toBe("bad_request");
     expect(L.scanError(again).title).toBe("Already scanned");
-    const other = await fail(clinicCalls.scan({ code: clinicMock.codeFor(cohortOne().id) }));
+    const other = await fail(clinicCalls.scan({ token: clinicMock.qrFor(cohortOne().id) }));
     expect(other.code).toBe("forbidden");
     expect(L.scanError(other).title).toBe("Not your session");
+    // A typed code is matched to my own open sessions only.
+    const typed = await fail(clinicCalls.scan({ code: clinicMock.codeFor(cohortOne().id) }));
+    expect(typed.code).toBe("bad_request");
   });
 
   it("refuses an old QR and a wrong typed code", async () => {
@@ -206,7 +219,7 @@ describe("student clinic calls (mock server, server shapes)", () => {
   });
 
   it("asks for leave, marks it over the limit when none are left, and cancels it", async () => {
-    const page = S.leavePage(await (await import("@/auth")).api.get("/clinic/leave"), []);
+    const page = S.leavePage(await api.get("/clinic/leave"), []);
     expect(page.left).toBeGreaterThanOrEqual(0);
     const short = await fail(clinicCalls.askLeave({ sessionIds: [], reason: "x" }));
     expect(short.code).toBe("bad_request");
@@ -222,7 +235,7 @@ describe("student clinic calls (mock server, server shapes)", () => {
   });
 
   it("logs cases for a visit that is due; the batch is set once", async () => {
-    const opd = S.opdPage(await (await import("@/auth")).api.get("/clinic/opd"));
+    const opd = S.opdPage(await api.get("/clinic/opd"));
     const due = opd.visits.find((v) => v.status === "to_log")!;
     expect(due).toBeTruthy();
     const v = await clinicCalls.logCases({ assignmentId: due.id, cases: 3, absent: false });
@@ -292,9 +305,9 @@ describe("student clinic screens", () => {
     (haptic.success as unknown as jest.Mock | undefined)?.mockClear?.();
     await render(<ScanScreen />);
     expect(screen.getByTestId("camera-view")).toBeTruthy();
-    fireEvent.changeText(screen.getByTestId("scan-code"), clinicMock.codeFor(classToday().id).toLowerCase());
-    fireEvent.press(screen.getByTestId("scan-send"));
-    await waitFor(() => expect(screen.getByTestId("scan-direction")).toBeTruthy());
+    await fireEvent.changeText(screen.getByTestId("scan-code"), clinicMock.codeFor(classToday().id).toLowerCase());
+    await fireEvent.press(screen.getByTestId("scan-send"));
+    await wf(() => expect(screen.getByTestId("scan-direction")).toBeTruthy());
     expect(screen.getByTestId("scan-direction").props.children).toBe("IN");
     expect(screen.getByTestId("scan-time")).toBeTruthy();
   });
@@ -305,40 +318,51 @@ describe("student clinic screens", () => {
     await act(async () => {
       g.__camera?.onBarcodeScanned?.({ data: clinicMock.qrFor(cohortOne().id) });
     });
-    await waitFor(() => expect(screen.getByTestId("scan-error-title")).toBeTruthy());
+    await wf(() => expect(screen.getByTestId("scan-error-title")).toBeTruthy());
     expect(screen.getByText("Not your session")).toBeTruthy();
-    fireEvent.press(screen.getByTestId("scan-retry"));
-    await waitFor(() => expect(screen.getByTestId("scan-code")).toBeTruthy());
+    await fireEvent.press(screen.getByTestId("scan-retry"));
+    await wf(() => expect(screen.getByTestId("scan-code")).toBeTruthy());
   });
 
   it("Schedule shows the week with my OPD days", async () => {
     await render(<ScheduleScreen />);
-    await waitFor(() => expect(screen.getByTestId(`day-${today}`)).toBeTruthy());
+    await wf(() => expect(screen.getByTestId(`day-${today}`)).toBeTruthy());
     expect(screen.getByText("My OPD days this week")).toBeTruthy();
     expect(screen.getByTestId("day-opd")).toBeTruthy();
-    fireEvent.press(screen.getByTestId("week-next"));
-    await waitFor(() => expect(screen.getByTestId("week-now")).toBeTruthy());
+    await fireEvent.press(screen.getByTestId("week-next"));
+    await wf(() => expect(screen.getByTestId("week-now")).toBeTruthy());
   });
 
   it("Leave shows leaves left and my requests; asking without a reason is stopped", async () => {
     await render(<LeaveScreen />);
-    await waitFor(() => expect(screen.getByText("Leaves left")).toBeTruthy());
+    await wf(() => expect(screen.getByText("Leaves left")).toBeTruthy());
     expect(screen.getByText("Family wedding out of town")).toBeTruthy();
-    fireEvent.press(screen.getByTestId("leave-ask"));
-    await waitFor(() => expect(screen.getByTestId("leave-send")).toBeTruthy());
-    fireEvent.press(screen.getByTestId("leave-send"));
-    await waitFor(() => expect(screen.getByTestId("leave-error")).toBeTruthy());
+    await fireEvent.press(screen.getByTestId("leave-ask"));
+    await wf(() => expect(screen.getByTestId("leave-send")).toBeTruthy());
+    await fireEvent.press(screen.getByTestId("leave-send"));
+    await wf(() => expect(screen.getByTestId("leave-error")).toBeTruthy());
   });
 
   it("OPD shows cases done of total and a visit to log", async () => {
     await render(<OpdScreen />);
-    await waitFor(() => expect(screen.getByTestId("opd-cases-line")).toBeTruthy());
+    await wf(() => expect(screen.getByTestId("opd-cases-line")).toBeTruthy());
     expect(screen.getByText("Log your cases")).toBeTruthy();
+  });
+
+  it("Before the clinic is set up (503) the screens say so calmly, and Home shows nothing", async () => {
+    clinicMock.setOff(true);
+    const v = await render(<LeaveScreen />);
+    await wf(() => expect(screen.getByTestId("clinic-off")).toBeTruthy());
+    expect(screen.getByText("Not switched on yet")).toBeTruthy();
+    await v.unmount();
+    await render(<TodayBlock />);
+    await new Promise((r) => setTimeout(r, 300));
+    expect(screen.queryByTestId("clinic-today")).toBeNull();
   });
 
   it("My attendance shows the percent", async () => {
     await render(<AttendanceScreen />);
-    await waitFor(() => expect(screen.getByTestId("att-pct")).toBeTruthy());
+    await wf(() => expect(screen.getByTestId("att-pct")).toBeTruthy());
   });
 });
 
@@ -350,15 +374,61 @@ describe("admin clinic screens", () => {
   it("Today lists the sessions with Show code and the clinic places", async () => {
     await render(<AdminClinicScreen />);
     const c = classToday();
-    await waitFor(() => expect(screen.getByTestId(`a-s-${c.id}-code`)).toBeTruthy());
+    await wf(() => expect(screen.getByTestId(`a-s-${c.id}-code`)).toBeTruthy());
     expect(screen.getByTestId("clinic-leaves")).toBeTruthy();
-    expect(screen.getByTestId("clinic-cohort")).toBeTruthy();
+    expect(screen.getByTestId("clinic-cohort-c1")).toBeTruthy();
+  });
+
+  it("The session list marks a student by hand, with a note", async () => {
+    const c = classToday();
+    params.mockReturnValue({ id: c.id });
+    await render(<AdminSessionScreen />);
+    await wf(() => expect(screen.getByTestId("roster-u-student")).toBeTruthy());
+    await fireEvent.press(screen.getByTestId("roster-u-student"));
+    await wf(() => expect(screen.getByTestId("mark-save")).toBeTruthy());
+    await fireEvent.press(screen.getByTestId("mark-save"));
+    await wf(() => expect(screen.getByText("Write a short note, for example: phone dead.")).toBeTruthy());
+    await fireEvent.changeText(screen.getByTestId("mark-note"), "Phone dead");
+    await fireEvent.press(screen.getByTestId("mark-save"));
+    await wf(() => expect(clinicMock.state().scans[`${c.id}|u-student`]?.manual).toBe(true));
+  });
+
+  it("The leave queue approves with the over-limit flag shown", async () => {
+    await render(<AdminLeavesScreen />);
+    await wf(() => expect(screen.getByTestId("aleave-lv4")).toBeTruthy());
+    expect(screen.getByText("Over the limit")).toBeTruthy();
+    await fireEvent.press(screen.getByTestId("aleave-lv1-approve"));
+    await wf(() => expect(screen.getByTestId("decide-go")).toBeTruthy());
+    await fireEvent.press(screen.getByTestId("decide-go"));
+    await wf(() => expect(clinicMock.state().leaves.find((l) => l.id === "lv1")?.status).toBe("approved"));
+  });
+
+  it("Allowances lists everyone with leaves and cases", async () => {
+    await render(<AdminAllowancesScreen />);
+    await wf(() => expect(screen.getByTestId("allow-u-student")).toBeTruthy());
+  });
+
+  it("Timetable lists the weekly slots", async () => {
+    await render(<AdminTimetableScreen />);
+    await wf(() => expect(screen.getByTestId("slot-sl3")).toBeTruthy());
+  });
+
+  it("OPD generates a draft to publish", async () => {
+    await render(<AdminOpdScreen />);
+    await wf(() => expect(screen.getByTestId("opd-generate")).toBeTruthy());
+    await fireEvent.press(screen.getByTestId("opd-generate"));
+    await wf(() => expect(screen.getByTestId("opd-publish")).toBeTruthy());
+  });
+
+  it("Trackers list everyone", async () => {
+    await render(<AdminTrackersScreen />);
+    await wf(() => expect(screen.getByTestId("trk-u-student")).toBeTruthy());
   });
 
   it("Show code shows the 6 letters, the QR and the seconds left", async () => {
     params.mockReturnValue({ id: classToday().id });
     await render(<ShowCodeScreen />);
-    await waitFor(() => expect(screen.getByTestId("code-text")).toBeTruthy());
+    await wf(() => expect(screen.getByTestId("code-text")).toBeTruthy());
     expect(screen.getByTestId("code-text").props.children).toBe(clinicMock.codeFor(classToday().id));
     expect(screen.getByTestId("code-qr")).toBeTruthy();
     expect(screen.getByTestId("code-seconds")).toBeTruthy();
@@ -368,46 +438,7 @@ describe("admin clinic screens", () => {
     const later = clinicMock.state().sessions.find((x) => x.date > today && !x.cancelled)!;
     params.mockReturnValue({ id: later.id });
     await render(<ShowCodeScreen />);
-    await waitFor(() => expect(screen.getByTestId("code-error")).toBeTruthy());
+    await wf(() => expect(screen.getByTestId("code-error")).toBeTruthy());
   });
 
-  it("The session list marks a student by hand, with a note", async () => {
-    const c = classToday();
-    params.mockReturnValue({ id: c.id });
-    await render(<AdminSessionScreen />);
-    await waitFor(() => expect(screen.getByTestId("roster-u-student")).toBeTruthy());
-    fireEvent.press(screen.getByTestId("roster-u-student"));
-    await waitFor(() => expect(screen.getByTestId("mark-save")).toBeTruthy());
-    fireEvent.press(screen.getByTestId("mark-save"));
-    await waitFor(() => expect(screen.getByText("Write a short note, for example: phone dead.")).toBeTruthy());
-    fireEvent.changeText(screen.getByTestId("mark-note"), "Phone dead");
-    fireEvent.press(screen.getByTestId("mark-save"));
-    await waitFor(() => expect(clinicMock.state().scans[`${c.id}|u-student`]?.manual).toBe(true));
-  });
-
-  it("The leave queue approves with the over-limit flag shown", async () => {
-    await render(<AdminLeavesScreen />);
-    await waitFor(() => expect(screen.getByTestId("aleave-lv4")).toBeTruthy());
-    expect(screen.getByText("Over the limit")).toBeTruthy();
-    fireEvent.press(screen.getByTestId("aleave-lv1-approve"));
-    await waitFor(() => expect(screen.getByTestId("decide-go")).toBeTruthy());
-    fireEvent.press(screen.getByTestId("decide-go"));
-    await waitFor(() => expect(clinicMock.state().leaves.find((l) => l.id === "lv1")?.status).toBe("approved"));
-  });
-
-  it("Allowances, timetable, OPD and trackers open", async () => {
-    const a = await render(<AdminAllowancesScreen />);
-    await waitFor(() => expect(screen.getByTestId("allow-u-student")).toBeTruthy());
-    a.unmount();
-    const t = await render(<AdminTimetableScreen />);
-    await waitFor(() => expect(screen.getByTestId("slot-sl3")).toBeTruthy());
-    t.unmount();
-    const o = await render(<AdminOpdScreen />);
-    await waitFor(() => expect(screen.getByTestId("opd-generate")).toBeTruthy());
-    fireEvent.press(screen.getByTestId("opd-generate"));
-    await waitFor(() => expect(screen.getByTestId("opd-publish")).toBeTruthy());
-    o.unmount();
-    await render(<AdminTrackersScreen />);
-    await waitFor(() => expect(screen.getByTestId("trk-u-student")).toBeTruthy());
-  });
 });

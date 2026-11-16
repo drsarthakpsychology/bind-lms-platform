@@ -2,12 +2,13 @@ import * as React from "react";
 import { View } from "react-native";
 
 import { useAdminAction, useRefreshAdmin } from "@/admin/api";
-import { Figures, FilterChips, Loaded, Meter, Quiet, SmallButton, Tag } from "@/admin/kit";
+import { Figures, FilterChips, Meter, Quiet, SmallButton, Tag } from "@/admin/kit";
 import { openStudent } from "@/admin/nav";
 import { useAdminRole } from "@/admin/role";
 import { Row, RowsSkeleton, Screen } from "@/ds";
 import { space } from "@/theme";
 import { adminClinicCalls, useClinicStudents } from "../api";
+import { ClinicLoaded } from "../loaded";
 import type { ClinicStudent } from "../contract";
 import { pct } from "../logic";
 
@@ -29,7 +30,7 @@ export function AdminTrackersScreen() {
   const [by, setBy] = React.useState<Sort>("attendance");
   return (
     <Screen testID="admin-trackers" title="Trackers" onRefresh={refresh} refreshing={refreshing}>
-      <Loaded q={q} what="the trackers" soon skeleton={<RowsSkeleton rows={6} />}>
+      <ClinicLoaded admin q={q} what="the trackers" skeleton={<RowsSkeleton rows={6} />}>
         {(d) => {
           const rows = sortTrackers(d.items, by);
           const withPct = d.items.filter((x) => x.attendancePct !== null);
@@ -86,7 +87,7 @@ export function AdminTrackersScreen() {
             </View>
           );
         }}
-      </Loaded>
+      </ClinicLoaded>
     </Screen>
   );
 }

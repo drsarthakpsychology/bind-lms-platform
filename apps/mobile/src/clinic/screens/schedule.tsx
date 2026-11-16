@@ -3,11 +3,12 @@ import { CalendarCheck, CalendarOff, ChevronLeft, ChevronRight, ClipboardList, H
 import * as React from "react";
 import { Pressable, View } from "react-native";
 
-import { IconButton, IconDot, Loaded, Row, RowList, RowsSkeleton, Screen, Section, Skeleton, T } from "@/ds";
+import { IconButton, IconDot, Row, RowList, RowsSkeleton, Screen, Section, Skeleton, T } from "@/ds";
 import { haptic } from "@/lib/haptics";
 import { Swap } from "@/motion";
 import { AreaProvider, layout, space, useAccent, useTheme } from "@/theme";
 import { useClinicWeek } from "../api";
+import { ClinicLoaded } from "../loaded";
 import type { ClinicWeek } from "../contract";
 import { addDays, BATCH_NAME, dateLabel, dayShort, mondayOf, rangeLabel, relDay, todayIST, weekdayOf } from "../logic";
 import { Band, openLink, SessionLine, SessionList } from "../parts";
@@ -158,7 +159,7 @@ export function ScheduleScreen() {
             <ChevronRight size={22} color={c.ink} />
           </IconButton>
         </View>
-        <Loaded q={q} what="your schedule" soon skeleton={<WeekSkeleton />}>
+        <ClinicLoaded q={q} what="your schedule" skeleton={<WeekSkeleton />}>
           {(w) => (
             <View style={{ gap: layout.section }}>
               <DayStrip week={w} day={day} onPick={pick} today={today} />
@@ -180,7 +181,7 @@ export function ScheduleScreen() {
               </Section>
             </View>
           )}
-        </Loaded>
+        </ClinicLoaded>
         <RowList>
           <Row title="Leave" meta="Ask for a day off or to leave early" icon={<IconDot icon={CalendarOff} />} onPress={() => router.push("/clinic/leave")} testID="go-leave" />
           <Row title="OPD cases" meta="Your batch, visits and case logs" icon={<IconDot icon={ClipboardList} />} onPress={() => router.push("/clinic/opd")} testID="go-opd" />

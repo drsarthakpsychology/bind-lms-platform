@@ -5,13 +5,14 @@ import { Pressable, View } from "react-native";
 
 import { useAdminAction, useRefreshAdmin } from "@/admin/api";
 import { DateField } from "@/admin/date-field";
-import { ConfirmSheet, Loaded, Notice, SmallButton } from "@/admin/kit";
+import { ConfirmSheet, Notice, SmallButton } from "@/admin/kit";
 import { useAdminRole } from "@/admin/role";
 import { Button, RowsSkeleton, Screen, Section, Sheet, T } from "@/ds";
 import { haptic } from "@/lib/haptics";
 import { Swap } from "@/motion";
 import { layout, space, useTheme } from "@/theme";
 import { adminClinicCalls, useCohortId, useOpdAdmin } from "../api";
+import { ClinicLoaded } from "../loaded";
 import type { Batch, OpdAdmin, OpdPlan, OpdSettings, PlanDay, PlanSeat } from "../contract";
 import { WEEKDAYS } from "../contract";
 import { BATCH_NAME, dateLabel, dayShort, todayIST } from "../logic";
@@ -186,17 +187,17 @@ function Body({ d }: { d: OpdAdmin }) {
       <View style={{ gap: space[3] }}>
         <Swap k={p.status}>
           <Notice tone={p.status === "draft" ? "warn" : "plain"} testID="opd-status">
-            {status}
+            <T v="small">{status}</T>
           </Notice>
         </Swap>
         {p.short.length ? (
           <Notice tone="alert" testID="opd-short">
-            Not enough seats for {p.short.map((x) => `${x.name.split(" ")[0]} (${x.visits} more ${x.visits === 1 ? "visit" : "visits"})`).join(", ")}.
+            <T v="small">Not enough seats for {p.short.map((x) => `${x.name.split(" ")[0]} (${x.visits} more ${x.visits === 1 ? "visit" : "visits"})`).join(", ")}.</T>
           </Notice>
         ) : null}
         {p.noBatch.length ? (
           <Notice tone="plain" testID="opd-nobatch">
-            No batch yet, so not in the plan: {p.noBatch.map((x) => x.name).join(", ")}. Set it under Allowances.
+            <T v="small">No batch yet, so not in the plan: {p.noBatch.map((x) => x.name).join(", ")}. Set it under Allowances.</T>
           </Notice>
         ) : null}
         {canWrite ? (
@@ -230,9 +231,9 @@ export function AdminOpdScreen() {
   const { refresh, refreshing } = useRefreshAdmin();
   return (
     <Screen testID="admin-opd" title="OPD timetable" onRefresh={refresh} refreshing={refreshing}>
-      <Loaded q={q} what="the OPD timetable" soon skeleton={<RowsSkeleton rows={6} />}>
+      <ClinicLoaded admin q={q} what="the OPD timetable" skeleton={<RowsSkeleton rows={6} />}>
         {(d) => <Body d={d} />}
-      </Loaded>
+      </ClinicLoaded>
     </Screen>
   );
 }

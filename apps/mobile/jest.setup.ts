@@ -194,4 +194,4 @@ jest.mock("expo-camera", () => {
   };
 });
 jest.mock("expo-keep-awake", () => ({ useKeepAwake: jest.fn(), activateKeepAwakeAsync: jest.fn(async () => undefined), deactivateKeepAwake: jest.fn(async () => undefined) }));
-jest.mock("expo-brightness", () => ({ setBrightnessAsync: jest.fn(async () => undefined), restoreSystemBrightnessAsync: jest.fn(async () => undefined), isAvailableAsync: jest.fn(async () => true) }));
+jest.mock("expo-brightness", () => ({ getBrightnessAsync: jest.fn(async () => 0.5), setBrightnessAsync: jest.fn(async () => undefined), restoreSystemBrightnessAsync: jest.fn(async () => undefined), isAvailableAsync: jest.fn(async () => true) }));

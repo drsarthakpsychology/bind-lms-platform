@@ -4,13 +4,14 @@ import * as React from "react";
 import { Pressable, View } from "react-native";
 
 import { useAdminAction, useRefreshAdmin } from "@/admin/api";
-import { Figures, FilterChips, Loaded, OptionRow, Quiet } from "@/admin/kit";
+import { Figures, FilterChips, OptionRow, Quiet } from "@/admin/kit";
 import { useAdminRole } from "@/admin/role";
 import { Button, Field, RowsSkeleton, Screen, Sheet, T } from "@/ds";
 import { haptic } from "@/lib/haptics";
 import { StaggerList } from "@/motion";
 import { layout, space, useTheme } from "@/theme";
 import { adminClinicCalls, useSessionDetail } from "../api";
+import { ClinicLoaded } from "../loaded";
 import type { AdminSessionDetail, MarkState, RosterRow } from "../contract";
 import { clockOf, dateLabel, KIND_NAME, sessionMeta, sessionTitle, timeLabel } from "../logic";
 import { RosterWord } from "../parts";
@@ -175,9 +176,9 @@ export function AdminSessionScreen() {
   const { refresh, refreshing } = useRefreshAdmin();
   return (
     <Screen testID="admin-session" onRefresh={refresh} refreshing={refreshing}>
-      <Loaded q={q} what="this session" skeleton={<RowsSkeleton rows={6} />}>
+      <ClinicLoaded admin q={q} what="this session" skeleton={<RowsSkeleton rows={6} />}>
         {(d) => <SessionBody d={d} />}
-      </Loaded>
+      </ClinicLoaded>
     </Screen>
   );
 }

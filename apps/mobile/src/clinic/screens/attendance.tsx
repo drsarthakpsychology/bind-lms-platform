@@ -1,10 +1,11 @@
 import * as React from "react";
 import { View } from "react-native";
 
-import { Loaded, RowsSkeleton, Screen, Section, Stat, T } from "@/ds";
+import { RowsSkeleton, Screen, Section, Stat, T } from "@/ds";
 import { ProgressRing } from "@/motion";
 import { AreaProvider, layout, space, useAccent, useTheme } from "@/theme";
 import { useMyAttendance } from "../api";
+import { ClinicLoaded } from "../loaded";
 import { clockOf, dateLabel, hoursLine, relDay, todayIST } from "../logic";
 import { StateWord } from "../parts";
 
@@ -17,7 +18,7 @@ export function AttendanceScreen() {
   return (
     <AreaProvider area="home">
       <Screen testID="clinic-attendance" onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
-        <Loaded q={q} what="your attendance" soon skeleton={<RowsSkeleton rows={5} />}>
+        <ClinicLoaded q={q} what="your attendance" skeleton={<RowsSkeleton rows={5} />}>
           {(d) => (
             <View style={{ gap: layout.section }}>
               <View style={{ flexDirection: "row", alignItems: "center", gap: space[5] }}>
@@ -65,7 +66,7 @@ export function AttendanceScreen() {
               </Section>
             </View>
           )}
-        </Loaded>
+        </ClinicLoaded>
       </Screen>
     </AreaProvider>
   );

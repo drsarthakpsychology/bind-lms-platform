@@ -169,10 +169,17 @@ function fresh(): State {
 
 let state: State | null = null;
 const st = (): State => (state ??= fresh());
+/** Before the owner runs the SQL every clinic route answers 503 `unavailable`. */
+let off = false;
 
 export const clinicMock = {
   reset() {
     state = null;
+    off = false;
+  },
+  /** Tests and screenshots: the server has the routes but not the tables yet. */
+  setOff(v: boolean) {
+    off = v;
   },
   /** Tests: the 6 characters and the QR text on the admin's screen for a session right now. */
   codeFor: (sessionId: string) => code(st(), sessionId, windowNow()),
@@ -417,6 +424,7 @@ const slotOut = (x: Slot): W.ClinicSlot => ({ id: x.id, cohortIds: x.cohortIds, 
 export function clinicRoute(method: string, fullPath: string, rawBody: unknown, who: string): RawResponse | null {
   const [path = "", qs = ""] = fullPath.split("?");
   if (!path.startsWith("/clinic")) return null;
+  if (off) return fail(503, "unavailable", "This isn't set up yet.");
   const query = Object.fromEntries(new URLSearchParams(qs));
   const body = (rawBody ?? {}) as Record<string, unknown>;
   const seg = path.split("/").filter(Boolean);
@@ -718,7 +726,8 @@ export function clinicRoute(method: string, fullPath: string, rawBody: unknown, 
       if (!target) return fail(400, "bad_request", "That is not an attendance code.");
       if (token(s, target.id, w) !== x[3] && token(s, target.id, w - 1) !== x[3]) return fail(400, "bad_request", "That code is too old. Scan the one on the screen now.");
     } else if (typed) {
-      const open = s.sessions.filter((y) => isOpen(y));
+      // Like the server: a typed code is matched to the student's own open sessions only.
+      const open = s.sessions.filter((y) => isOpen(y) && y.cohortIds.includes(me.cohortId) && (!isOpd(y.kind) || expected(s, y).some((p) => p.id === id)));
       target = open.find((y) => code(s, y.id, w) === typed || code(s, y.id, w - 1) === typed);
       if (!target) return fail(400, "bad_request", open.some((y) => [2, 3, 4, 5, 6].some((k) => code(s, y.id, w - k) === typed)) ? "That code is too old. Type the one on the screen now." : "That code is not right. Check the 6 letters.");
     } else return fail(400, "bad_request", "Scan the code or type it.");

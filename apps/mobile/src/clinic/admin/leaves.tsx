@@ -2,12 +2,13 @@ import * as React from "react";
 import { View } from "react-native";
 
 import { useAdminAction, useRefreshAdmin } from "@/admin/api";
-import { FilterChips, Loaded, Quiet, SmallButton, Tag } from "@/admin/kit";
+import { FilterChips, Quiet, SmallButton, Tag } from "@/admin/kit";
 import { useAdminRole } from "@/admin/role";
 import { Button, Field, RowsSkeleton, Screen, Sheet, T } from "@/ds";
 import { StaggerList } from "@/motion";
 import { space, useTheme } from "@/theme";
 import { adminClinicCalls, useAdminLeaves } from "../api";
+import { ClinicLoaded } from "../loaded";
 import type { AdminLeave } from "../contract";
 import { dateLabel, leavesLine, requestTitle, timeLabel } from "../logic";
 import { LeaveWord } from "../parts";
@@ -100,7 +101,7 @@ export function AdminLeavesScreen() {
   return (
     <Screen testID="admin-leaves" title="Leave requests" onRefresh={refresh} refreshing={refreshing}>
       <FilterChips label="Show" value={status} onChange={setStatus} testID="aleave-filter" options={[{ id: "pending", name: "Waiting" }, { id: "all", name: "All" }]} />
-      <Loaded q={q} what="leave requests" soon skeleton={<RowsSkeleton rows={4} />}>
+      <ClinicLoaded admin q={q} what="leave requests" skeleton={<RowsSkeleton rows={4} />}>
         {(d) =>
           d.length ? (
             <StaggerList>
@@ -112,7 +113,7 @@ export function AdminLeavesScreen() {
             <Quiet>{status === "pending" ? "Nothing waiting." : "No requests yet."}</Quiet>
           )
         }
-      </Loaded>
+      </ClinicLoaded>
       <DecideSheet item={open?.item ?? null} decision={open?.d ?? "approve"} onClose={() => setOpen(null)} />
     </Screen>
   );

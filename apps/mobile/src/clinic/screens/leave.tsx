@@ -4,11 +4,12 @@ import * as React from "react";
 import { Pressable, View } from "react-native";
 
 import { messageOf } from "@/api/errors";
-import { Button, Field, Loaded, RowsSkeleton, Screen, Section, Sheet, Stat, T, toast } from "@/ds";
+import { Button, Field, RowsSkeleton, Screen, Section, Sheet, Stat, T, toast } from "@/ds";
 import { haptic } from "@/lib/haptics";
 import { StaggerList } from "@/motion";
 import { AreaProvider, layout, space, useTheme } from "@/theme";
 import { clinicCalls, clinicKeys, useLeave } from "../api";
+import { ClinicLoaded } from "../loaded";
 import type { ClinicSession, LeavePage, LeaveRequest } from "../contract";
 import { canLeaveEarly, dateLabel, leavesLine, minutesOf, parseClock, rangeLabel, relDay, requestTitle, sessionTitle, timeLabel, todayIST } from "../logic";
 import { LeaveWord } from "../parts";
@@ -226,7 +227,7 @@ export function LeaveScreen() {
   return (
     <AreaProvider area="home">
       <Screen testID="clinic-leave" onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
-        <Loaded q={q} what="your leave" soon skeleton={<RowsSkeleton rows={4} />}>
+        <ClinicLoaded q={q} what="your leave" skeleton={<RowsSkeleton rows={4} />}>
           {(p) => (
             <View style={{ gap: layout.section }}>
               <View style={{ gap: space[2] }}>
@@ -261,7 +262,7 @@ export function LeaveScreen() {
               <EarlySheet open={sheet === "early"} onClose={() => setSheet(null)} page={p} onDone={done} />
             </View>
           )}
-        </Loaded>
+        </ClinicLoaded>
       </Screen>
     </AreaProvider>
   );
