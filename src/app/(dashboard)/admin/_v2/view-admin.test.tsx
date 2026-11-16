@@ -4,6 +4,7 @@ import { describe, expect, it } from "vitest";
 import type { MedicationDocument } from "@/lib/psychopharm/document";
 import { MedicineEditorV2 } from "./medicine-editor";
 import { CoursesListV2 } from "./courses";
+import { MailV2 } from "./mail";
 
 const doc = { generic_name: "lithium", sections: [] } as unknown as MedicationDocument;
 
@@ -25,5 +26,14 @@ describe("View Admin sees no controls that only fail", () => {
     render(<CoursesListV2 courses={[{ id: "c1", title: "Internship", published: true, lessons: 14 }]} />);
     expect(screen.getByRole("link", { name: "Internship" })).toBeInTheDocument();
     expect(screen.queryByText("New course")).toBeNull();
+  });
+
+  it("mail: no Compose button for a View Admin, still there for a Super Admin", () => {
+    const base = { folder: "inbox", folders: [{ id: "inbox", label: "Inbox" }], counts: {}, keys: null, list: [] };
+    const { unmount } = render(<MailV2 {...base} canCompose={false} />);
+    expect(screen.queryByRole("link", { name: /Compose/ })).toBeNull();
+    unmount();
+    render(<MailV2 {...base} />);
+    expect(screen.getAllByRole("link", { name: /Compose/ }).length).toBeGreaterThan(0);
   });
 });
