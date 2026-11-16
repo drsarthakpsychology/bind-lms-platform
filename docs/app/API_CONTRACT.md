@@ -168,7 +168,7 @@ How app video works (details in `docs/app/VIDEO_DELIVERY.md`):
 
 | Status | Method and path | Auth | Request | Response | Calls |
 |---|---|---|---|---|---|
-| built | `GET /materials/:materialId` | student (`/courses`) | none | `Material` | `checkMaterial` (`src/lib/media/material-serve.ts`: the website's material rule, published, enrolment, cohort) |
+| built | `GET /materials/:materialId` | student (`/courses`) | none | `Material` (with `courseId`, so the app can open `/courses/<courseId>/materials/<id>` on the website; also set on `LectureDetail.materials`) | `checkMaterial` (`src/lib/media/material-serve.ts`: the website's material rule, published, enrolment, cohort) |
 | built | `GET /materials/:materialId/file` | student (`/courses`), 300 a minute | none | the file bytes (`Range` supported) | `serveMaterial`, the same function as `/api/media/materials/:id` |
 | built | `GET /assignments` | student (`/courses`) | `?limit&cursor` | `Page<AssignmentRow>` | `loadMyCourses`, `loadCourseOverview` rows, plus due dates and scores (`assignmentRows`, `src/lib/app-api/assignments.ts`) |
 | built | `GET /assignments/:assignmentId` | student (`/courses`) | none | `Assignment` | `loadAssignment` (`src/lib/course/assignment.ts`) |

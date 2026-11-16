@@ -68,7 +68,7 @@ export function courseDetail(m: OverviewModel): CourseDetail {
 export const materialFilePath = (id: string) => `${APP_API_BASE}/materials/${id}/file`;
 export const submissionFilePath = (id: string) => `${APP_API_BASE}/submissions/files/${id}`;
 
-export function materialView(m: { id: string; title: string | null; kind: string; format: string | null; size_bytes: number | null; url: string | null; storage_path: string | null; lesson_id: string | null; week?: number | null }): Material {
+export function materialView(m: { id: string; title: string | null; kind: string; format: string | null; size_bytes: number | null; url: string | null; storage_path: string | null; lesson_id: string | null; course_id?: string | null; week?: number | null }): Material {
   const isLink = m.kind === "link" || !m.storage_path;
   return {
     id: m.id,
@@ -77,6 +77,7 @@ export function materialView(m: { id: string; title: string | null; kind: string
     format: m.format ?? null,
     sizeBytes: m.size_bytes ?? null,
     lessonId: m.lesson_id ?? null,
+    courseId: m.course_id ?? null,
     week: m.week ?? null,
     url: m.kind === "link" ? (m.url ?? null) : null,
     filePath: isLink ? null : materialFilePath(m.id),
@@ -121,7 +122,7 @@ export function lectureOut(l: LectureView): LectureDetail {
             submission: l.assignment.submission ? submissionOut(l.assignment.submission) : null,
           }
         : null,
-    materials: l.materials.map(materialView),
+    materials: l.materials.map((m) => materialView({ ...m, course_id: l.courseId })),
     prev: l.prev,
     next: l.next,
   };
