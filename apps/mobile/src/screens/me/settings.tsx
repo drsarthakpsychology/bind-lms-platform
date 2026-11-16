@@ -124,13 +124,7 @@ export function SettingsScreen() {
                 <Row title="Account" trailing={s.account.roleLabel} />
               </RowList>
             </Section>
-            <Section title="This phone" quiet>
-              <RowList>
-                <Row title={s.device.current?.name ?? "This phone"} meta={s.device.enforced ? "VIBHA works on one phone at a time. Signing in on another phone signs this one out." : undefined} />
-                {s.device.limit !== null ? <Row title="Phone changes in the last 30 days" trailing={`${s.device.changesUsed} of ${s.device.limit}`} /> : null}
-              </RowList>
-            </Section>
-            <Notifications prefs={s.notifications} />
+            {/* Order: Account, App (what people open Settings for most), This phone, Notifications, Privacy. */}
             <Section title="App" quiet>
               <View style={{ gap: space[2] }}>
                 <T v="small" tone="muted">
@@ -143,7 +137,14 @@ export function SettingsScreen() {
                 <SwitchRow title="Reaction pictures after answers" value={reactions} onChange={(v) => updateSettings({ reactions: v })} />
               </RowList>
             </Section>
-            <Section title="Privacy and terms" quiet>
+            <Section title="This phone" quiet>
+              <RowList>
+                <Row title={s.device.current?.name ?? "This phone"} meta={s.device.enforced ? "VIBHA works on one phone at a time. Signing in on another phone signs this one out." : undefined} />
+                {s.device.limit !== null ? <Row title="Phone changes in the last 30 days" trailing={`${s.device.changesUsed} of ${s.device.limit}`} /> : null}
+              </RowList>
+            </Section>
+            <Notifications prefs={s.notifications} />
+            <Section title="Privacy" quiet>
               <RowList>
                 <Row title="Privacy policy" onPress={() => void Linking.openURL(s.legal.privacyUrl)} />
                 <Row title="Terms" onPress={() => void Linking.openURL(s.legal.termsUrl)} />
@@ -154,7 +155,6 @@ export function SettingsScreen() {
                 <Row
                   testID="sign-out"
                   title={leaving ? "Signing out..." : "Sign out"}
-                  danger
                   chevron={false}
                   onPress={() => {
                     setLeaving(true);
