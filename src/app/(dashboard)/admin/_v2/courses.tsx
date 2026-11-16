@@ -99,13 +99,14 @@ export function CourseDetailV2({
 }: {
   title: React.ReactNode;
   published: boolean;
-  actions: React.ReactNode;
+  actions?: React.ReactNode;
   filter?: React.ReactNode;
   count: string;
   weeks: { week: number; lessons: LessonV2[] }[];
   emptyText: string | null;
   addOpen: boolean;
-  addForm: React.ReactNode;
+  /** Left out for a View Admin. */
+  addForm?: React.ReactNode;
   people: React.ReactNode;
   materials: React.ReactNode;
   materialCount: number;
@@ -122,6 +123,7 @@ export function CourseDetailV2({
       }
       actions={actions}
     >
+{addForm ? (
       <details open={addOpen} className="group min-w-0 border-y border-[var(--ds-hairline)]">
         <summary className="flex min-h-12 cursor-pointer list-none items-center justify-between gap-3 type-body font-semibold outline-none hover:text-link focus-visible:ring-2 focus-visible:ring-ring [&::-webkit-details-marker]:hidden">
           Add a lecture
@@ -129,6 +131,7 @@ export function CourseDetailV2({
         </summary>
         <div className="min-w-0 pt-2 pb-5">{addForm}</div>
       </details>
+      ) : null}
 
       <Block title="Lectures" count={count}>
         {filter}

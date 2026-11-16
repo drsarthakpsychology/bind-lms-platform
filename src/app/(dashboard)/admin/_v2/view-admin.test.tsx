@@ -3,7 +3,7 @@ import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 import type { MedicationDocument } from "@/lib/psychopharm/document";
 import { MedicineEditorV2 } from "./medicine-editor";
-import { CoursesListV2 } from "./courses";
+import { CourseDetailV2, CoursesListV2 } from "./courses";
 import { MailV2 } from "./mail";
 
 const doc = { generic_name: "lithium", sections: [] } as unknown as MedicationDocument;
@@ -35,5 +35,11 @@ describe("View Admin sees no controls that only fail", () => {
     unmount();
     render(<MailV2 {...base} />);
     expect(screen.getAllByRole("link", { name: /Compose/ }).length).toBeGreaterThan(0);
+  });
+
+  it("course page: no Add a lecture fold without an add form", () => {
+    render(<CourseDetailV2 title="Internship" published count="0" weeks={[]} emptyText="No lectures yet." addOpen={false} people={null} materials={null} materialCount={0} />);
+    expect(screen.queryByText("Add a lecture")).toBeNull();
+    expect(screen.getByText("No lectures yet.")).toBeInTheDocument();
   });
 });
