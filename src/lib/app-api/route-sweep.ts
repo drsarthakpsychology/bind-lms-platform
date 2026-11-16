@@ -59,26 +59,9 @@ function dyn(method: Method, p: string, where: string): AppCall {
  * building them. Allowed to be missing; once a file exists it is checked like
  * every other route. Keep this short: an entry is a screen that fails live.
  */
-export const PENDING: { method: Method; path: string; why: string }[] = [
-  // Admin screens (agent adminfull is adding these routes, round R2).
-  { method: "GET", path: "/admin/students/:p/messages", why: "adminfull" },
-  { method: "GET", path: "/admin/review/signoffs", why: "adminfull" },
-  { method: "POST", path: "/admin/review/signoffs/:p", why: "adminfull" },
-  { method: "GET", path: "/admin/cohorts", why: "adminfull (app falls back to /admin/home on not_found)" },
-  { method: "GET", path: "/admin/cohorts/:p", why: "adminfull (app falls back to /admin/home + /admin/students on not_found)" },
-  { method: "GET", path: "/admin/people/:p", why: "adminfull (app falls back to /admin/people on not_found)" },
-  { method: "GET", path: "/admin/certificates/settings", why: "adminfull" },
-  { method: "PUT", path: "/admin/certificates/settings", why: "adminfull" },
-  { method: "GET", path: "/admin/push-preferences", why: "adminfull" },
-  { method: "PUT", path: "/admin/push-preferences", why: "adminfull" },
-  { method: "GET", path: "/admin/system", why: "adminfull" },
-  { method: "POST", path: "/admin/system/support-keys", why: "adminfull" },
-  { method: "POST", path: "/admin/system/support-keys/:p/rotate", why: "adminfull" },
-  { method: "POST", path: "/admin/system/support-keys/:p/revoke", why: "adminfull" },
-  { method: "POST", path: "/admin/system/legacy-key/revoke", why: "adminfull" },
-];
+export const PENDING: { method: Method; path: string; why: string }[] = [];
 /** Query keys the app sends that the server does not read yet. */
-export const PENDING_QUERY: { path: string; key: string; why: string }[] = [{ path: "/admin/doubts", key: "student", why: "adminfull (a student's doubts on the admin profile)" }];
+export const PENDING_QUERY: { path: string; key: string; why: string }[] = [];
 
 /* ------------------------------------------------------------ app source */
 

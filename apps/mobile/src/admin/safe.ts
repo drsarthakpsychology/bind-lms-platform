@@ -5,7 +5,7 @@
  * (./contract.ts) into the shapes the screens were built on (./extra.ts),
  * so a screen never reads raw server JSON.
  */
-import { todayLine } from "@/api/adapt";
+import { todayLine } from "./format";
 import type { DoubtList, DoubtRow, DoubtThread } from "@/api/contract";
 import type * as A from "./contract";
 import type * as X from "./extra";
@@ -381,7 +381,7 @@ export function studioFrom(v: unknown): X.StudioOptions {
   const email = obj(r.email);
   return {
     signatories: arr(r.signatories ?? r.defaultSignatories).map((s) => ({ name: str(obj(s).name), role: str(obj(s).role), signatureFrom: strOr(obj(s).signatureFrom) })).filter((s) => s.name),
-    signatures: arr(r.signatures).map((s) => ({ id: str(obj(s).id), label: str(obj(s).label, "Signature") })).filter((s) => s.id),
+    signatures: signaturesFrom(r.signatures),
     emailReady: r.emailReady !== undefined ? bool(r.emailReady) : bool(email.configured, true),
     emailLeft: email.remaining === undefined ? null : num(email.remaining),
     ready: bool(r.ready, true),
@@ -559,6 +559,7 @@ export function systemFrom(v: unknown): X.SystemData {
       const k = obj(x);
       return { id: str(k.id), label: str(k.label, "Key"), last4: str(k.last4, "????"), createdAt: str(k.createdAt), createdByEmail: strOr(k.createdByEmail), revokedAt: strOr(k.revokedAt), revokedByEmail: strOr(k.revokedByEmail), lastUsedAt: strOr(k.lastUsedAt) };
     }).filter((k) => k.id),
+    uses: arr(r.uses).map((x) => ({ email: str(obj(x).email), at: str(obj(x).at) })).filter((u) => u.at),
     usage: arr(r.usage).map((x) => ({ label: str(obj(x).label), value: str(obj(x).value), pct: numOr(obj(x).pct) })).filter((u) => u.label),
   };
 }
@@ -566,4 +567,180 @@ export function systemFrom(v: unknown): X.SystemData {
 export function newKeyFrom(v: unknown): X.NewSupportKey {
   const r = obj(v);
   return { plain: str(r.plain), last4: str(r.last4 ?? obj(r.key).last4) };
+}
+
+/* -------------------------------------------------------- round two reads */
+
+const COHORT_STATES = ["upcoming", "active", "ended"] as const;
+
+export function cohortRowFrom(v: unknown): X.CohortRow {
+  const c = obj(v);
+  return {
+    id: str(c.id),
+    name: str(c.name, "Cohort"),
+    status: oneOf(c.status, COHORT_STATES, "active"),
+    course: strOr(c.course),
+    members: num(c.members),
+    lectures: num(c.lectures),
+    pct: pct(c.pct),
+    activeWeek: num(c.activeWeek),
+    behind: num(c.behind),
+    never: num(c.never),
+    starts: strOr(c.starts),
+    ends: strOr(c.ends),
+  };
+}
+
+export function cohortsFrom(v: unknown): X.CohortList {
+  return { items: arr(obj(v).items).map(cohortRowFrom).filter((c) => c.id) };
+}
+
+export function cohortFrom(v: unknown, id: string): X.CohortDetail {
+  const r = obj(v);
+  const row = cohortRowFrom({ id, ...r });
+  return {
+    ...row,
+    people: arr(r.people).map((x) => {
+      const m = obj(x);
+      return { id: str(m.id), name: str(m.name) || str(m.email).split("@")[0] || "Student", rollNumber: strOr(m.rollNumber), account: str(m.account, "active"), presence: oneOf(m.presence, PRESENCE, "never"), lastSeen: strOr(m.lastSeen), done: num(m.done), available: Math.max(num(m.available), num(m.done)) };
+    }).filter((m) => m.id),
+    messages: arr(r.messages).map((x) => {
+      const b = obj(x);
+      return { batchId: str(b.batchId), title: str(b.title, "Message"), sentAt: str(b.sentAt), total: num(b.total), opened: num(b.opened) };
+    }).filter((b) => b.batchId),
+    hoursWeek: num(r.hoursWeek),
+    sessions: arr(r.sessions).map((x) => ({ title: str(obj(x).title), at: str(obj(x).at) })).filter((x) => x.title && x.at),
+  };
+}
+
+const MSG_FROM = ["email", "reply", "bell"] as const;
+export function studentMessagesFrom(v: unknown): { items: X.StudentMessage[] } {
+  return {
+    items: arr(obj(v).items).map((x) => {
+      const m = obj(x);
+      const opened = bool(m.opened);
+      return { id: str(m.id), title: str(m.title, "Message"), at: str(m.at), opened, from: oneOf(m.from, MSG_FROM, "bell"), state: str(m.state, opened ? "Opened" : "Not opened"), failed: bool(m.failed) };
+    }).filter((m) => m.id),
+  };
+}
+
+export function signOffsFrom(v: unknown): X.SignOffList {
+  const r = obj(v);
+  return {
+    canWrite: bool(r.canWrite, true),
+    items: arr(r.items).map((x) => {
+      const e = obj(x);
+      const email = str(e.studentEmail);
+      return { id: str(e.id), studentId: str(e.studentId), studentName: str(e.studentName) || email.split("@")[0] || "Student", studentEmail: email, activity: str(e.activity, "Supervision"), hours: num(e.hours), date: str(e.date), supervisor: strOr(e.supervisor), competency: strOr(e.competency), status: oneOf(e.status, ["requested", "signed", "rejected"] as const, "requested") };
+    }).filter((e) => e.id),
+  };
+}
+
+export function signaturesFrom(v: unknown): X.SignatureImage[] {
+  return arr(v).map((x) => ({ id: str(obj(x).id), label: str(obj(x).label, "Signature"), url: strOr(obj(x).url) })).filter((x) => x.id);
+}
+
+export function studioSettingsFrom(v: unknown): X.StudioSettings {
+  const r = obj(v);
+  const e = obj(r.email);
+  return {
+    signatories: arr(r.signatories).map((x) => ({ name: str(obj(x).name), role: str(obj(x).role), signatureFrom: strOr(obj(x).signatureFrom) })).filter((x) => x.name).slice(0, 3),
+    signatures: signaturesFrom(r.signatures),
+    email: { configured: bool(e.configured), limit: num(e.limit, 100), sentToday: num(e.sentToday), waiting: num(e.waiting) },
+    canWrite: bool(r.canWrite, true),
+  };
+}
+
+const RULE_KINDS = ["module_complete", "sections_read", "xp", "watch_seconds", "course_complete", "module_tests_passed"] as const;
+
+function ruleFrom(v: unknown): X.TypeRule | null {
+  const r = obj(v);
+  switch (r.kind) {
+    case "module_complete":
+      return { kind: "module_complete", module: str(r.module) };
+    case "sections_read":
+      return { kind: "sections_read", module: str(r.module), count: Math.max(1, num(r.count, 1)) };
+    case "xp":
+      return { kind: "xp", min: Math.max(1, num(r.min, 100)) };
+    case "watch_seconds":
+      return { kind: "watch_seconds", min: Math.max(60, num(r.min, 3600)) };
+    case "course_complete":
+      return { kind: "course_complete", course_id: str(r.course_id) };
+    case "module_tests_passed":
+      return { kind: "module_tests_passed" };
+    default:
+      return null;
+  }
+}
+
+export function certTypesFrom(v: unknown): X.CertTypeList {
+  const r = obj(v);
+  const facets = (x: unknown) => arr(x).map((f) => ({ id: str(obj(f).id), title: str(obj(f).title) })).filter((f) => f.id);
+  return {
+    items: arr(r.items).map((x) => {
+      const t = obj(x);
+      return { id: str(t.id), type: t.type === "certificate" ? "certificate" : "badge", title: str(t.title, "Untitled"), description: strOr(t.description), tone: str(t.tone, "lime"), enabled: bool(t.enabled), issued: num(t.issued), ruleText: str(t.ruleText, "Given by hand"), rule: ruleFrom(t.rule), madeForYou: bool(t.madeForYou), hasSignature: bool(t.hasSignature), signatureLabel: strOr(t.signatureLabel) } satisfies X.CertType;
+    }).filter((t) => t.id),
+    rules: arr(r.rules).map((x) => ({ id: oneOf(obj(x).id, RULE_KINDS, "xp"), label: str(obj(x).label) })).filter((x) => x.label),
+    tones: arr(r.tones).map((x) => str(x)).filter(Boolean),
+    modules: facets(r.modules),
+    courses: facets(r.courses),
+    canWrite: bool(r.canWrite, true),
+  };
+}
+
+export function pushPrefsFrom(v: unknown): X.AdminPushPrefs {
+  const p = obj(v);
+  return { newDoubt: p.newDoubt !== false, newEnquiry: p.newEnquiry !== false, fallingBehind: p.fallingBehind === true };
+}
+
+/** A person's own record (GET /admin/people/:key), the row plus facts and the whole history. */
+export function personPageFrom(v: unknown): X.PersonDetail {
+  const p = obj(v);
+  const row = personFrom(p);
+  const tones = ["ok", "info", "warn", "quiet"] as const;
+  return {
+    ...row,
+    studentId: row.studentId ?? null,
+    facts: arr(p.facts).map((f) => ({ label: str(obj(f).label), value: str(obj(f).value) })).filter((f) => f.label),
+    timeline: arr(p.timeline).map((x) => {
+      const t = obj(x);
+      return { title: str(t.title), body: strOr(t.body), at: str(t.at), tone: oneOf(t.tone, tones, "info") };
+    }).filter((t) => t.title && t.at),
+  };
+}
+
+export function anyoneResultFrom(v: unknown): X.AnyoneResult {
+  const r = obj(v);
+  return { credentialId: str(r.credentialId), verifyUrl: str(r.verifyUrl), linkedStudent: strOr(r.linkedStudent), emailNote: strOr(r.emailNote) };
+}
+
+/** The certificate drawing (POST /admin/certificates/preview): only the operations the app knows how to draw. */
+export type DrawOp =
+  | { k: "rect"; x: number; y: number; w: number; h: number; fill: string | null; stroke: string | null; sw: number }
+  | { k: "line"; x1: number; y1: number; x2: number; y2: number; stroke: string; sw: number }
+  | { k: "path"; d: string; fill: string }
+  | { k: "stroke"; d: string; stroke: string; sw: number }
+  | { k: "image"; x: number; y: number; w: number; h: number; key: string };
+export type Drawing = { width: number; height: number; ops: DrawOp[]; images: Record<string, string | null>; problems: string[] };
+
+export function drawingFrom(v: unknown): Drawing {
+  const r = obj(v);
+  const ops: DrawOp[] = [];
+  for (const x of arr(r.ops)) {
+    const o = obj(x);
+    if (o.k === "rect") ops.push({ k: "rect", x: num(o.x), y: num(o.y), w: num(o.w), h: num(o.h), fill: strOr(o.fill), stroke: strOr(o.stroke), sw: num(o.sw) });
+    else if (o.k === "line") ops.push({ k: "line", x1: num(o.x1), y1: num(o.y1), x2: num(o.x2), y2: num(o.y2), stroke: str(o.stroke, "#000"), sw: num(o.sw, 1) });
+    else if (o.k === "path" && typeof o.d === "string") ops.push({ k: "path", d: o.d, fill: str(o.fill, "#000") });
+    else if (o.k === "stroke" && typeof o.d === "string") ops.push({ k: "stroke", d: o.d, stroke: str(o.stroke, "#000"), sw: num(o.sw, 1) });
+    else if (o.k === "image") ops.push({ k: "image", x: num(o.x), y: num(o.y), w: num(o.w), h: num(o.h), key: str(o.key) });
+  }
+  const images = obj(r.images);
+  return {
+    width: num(r.width, 842),
+    height: num(r.height, 595),
+    ops,
+    images: Object.fromEntries(Object.entries(images).map(([k, u]) => [k, strOr(u)])),
+    problems: arr(r.problems).map((p) => str(p)).filter(Boolean),
+  };
 }

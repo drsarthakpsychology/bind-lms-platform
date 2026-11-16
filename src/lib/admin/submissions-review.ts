@@ -24,7 +24,7 @@ export async function loadSubmissionReview({ courseFilter, assignmentFilter, sta
       supabase.from("assignments").select("id, lesson_id, title, prompt_text"),
       supabase.from("lessons").select("id, title, course_id"),
       supabase.from("courses").select("id, title"),
-      supabase.from("profiles").select("id, email").eq("role", "student"),
+      supabase.from("profiles").select("id, email, name").eq("role", "student"),
       supabase.from("submission_files").select("id, submission_id, original_name, storage_path, format").limit(1000),
     ]);
 
@@ -32,6 +32,7 @@ export async function loadSubmissionReview({ courseFilter, assignmentFilter, sta
   const lessonsById = new Map((lessons ?? []).map((l) => [l.id, l]));
   const coursesById = new Map((courses ?? []).map((c) => [c.id, c]));
   const emailsById = new Map((profiles ?? []).map((p) => [p.id, p.email]));
+  const namesById = new Map((profiles ?? []).map((p) => [p.id, (p.name as string | null) ?? null]));
   const filesBySubmission = new Map<string, typeof files>();
   for (const f of files ?? []) {
     const list = filesBySubmission.get(f.submission_id) ?? [];
@@ -54,6 +55,7 @@ export async function loadSubmissionReview({ courseFilter, assignmentFilter, sta
         courseId: course?.id ?? "",
         courseTitle: course?.title ?? "Unknown course",
         studentEmail: emailsById.get(s.user_id) ?? s.user_id,
+        studentName: namesById.get(s.user_id)?.trim() || String(emailsById.get(s.user_id) ?? "").split("@")[0] || "Student",
         files: filesBySubmission.get(s.id) ?? [],
       };
     })

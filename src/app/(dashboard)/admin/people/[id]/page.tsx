@@ -8,6 +8,7 @@ import { createAdminClient } from "@/lib/supabase/server";
 import { emailFromKey, loadPipeline, loadTimeline, STAGE_LABEL } from "@/lib/crm/people";
 import { emailAllowance } from "@/lib/email/personal";
 import { sourceOf } from "@/lib/crm/views";
+import { personFacts } from "@/lib/crm/person-facts";
 import { PersonQuick } from "./person-quick";
 import { PersonActions } from "./person-actions";
 import { cn } from "@/lib/utils";
@@ -53,17 +54,7 @@ export default async function PersonPage({ params }: { params: Promise<{ id: str
           { label: "WhatsApp", href: wa, external: true },
           { label: "Call", href: p.phone ? `tel:${p.phone}` : null },
         ]}
-        facts={[
-          ["Email", p.email],
-          ["Phone", p.phone ?? "Not set"],
-          ["Source", sourceOf(p)],
-          ["Enquired", p.enquiredAt ? when(p.enquiredAt) : "No enquiry"],
-          ["Paid", p.paidAt ? `${when(p.paidAt)}${p.paidAmount != null ? ` · ₹${p.paidAmount.toLocaleString("en-IN")}` : ""}` : pipe.paymentReady ? "Not yet" : "Not recorded yet"],
-          ...(p.cohorts.length ? [["Cohort", p.cohorts.map((c) => c.name).join(", ")]] : []),
-          ...(p.college ? [["College", p.college]] : []),
-          ["Emails sent", `${p.emailsSent}${p.opened ? " · opened" : ""}${p.replied ? " · replied" : ""}`],
-          ...(p.isStudent ? [["Login", p.setupDone ? "Set up" : p.inviteSentAt ? "Link sent, not set up" : "Not sent yet"], ["Signed in", p.signedIn ? "Yes" : "No"]] : []),
-        ].map(([label, value]) => ({ label, value }))}
+        facts={personFacts(p, pipe.paymentReady)}
         actions={<PersonActions email={p.email} name={p.name} stage={p.stage} followUp={follow} isStudent={p.isStudent} v2 />}
         timeline={timeline.map((t) => ({ title: t.title, body: t.body, at: t.at, when: when(t.at), tone: t.tone === "blue" ? "info" : t.tone === "red" ? "alert" : t.tone === "ink" ? "quiet" : "ok" }))}
       />

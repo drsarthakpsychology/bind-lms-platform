@@ -3,27 +3,13 @@
 import * as React from "react";
 import { CircleAlert, Database, HardDrive, Zap } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { fmtBytes, pct, SUPABASE_DB_LIMIT_BYTES, WARN_AT } from "@/lib/infra/limits";
 
 interface InfraMetricsData {
   db_size_bytes?: number;
   top_tables?: Array<{ name: string; size: number }>;
   ai_usage_7d?: Array<{ provider: string; calls: number; tokens: number }>;
   provider_health?: Array<{ provider: string; consecutive_failures: number }>;
-}
-
-const SUPABASE_DB_LIMIT_BYTES = 500 * 1024 * 1024; // 500 MB free
-const WARN_AT = 0.7;
-
-function fmtBytes(n: number): string {
-  if (n >= 1024 * 1024 * 1024) return `${(n / 1024 ** 3).toFixed(2)} GB`;
-  if (n >= 1024 * 1024) return `${(n / 1024 ** 2).toFixed(1)} MB`;
-  if (n >= 1024) return `${(n / 1024).toFixed(1)} KB`;
-  return `${n} B`;
-}
-
-function pct(n: number, limit: number): number {
-  if (!limit) return 0;
-  return Math.round((n / limit) * 100);
 }
 
 export function InfraMetrics({ metrics }: { metrics: InfraMetricsData }) {

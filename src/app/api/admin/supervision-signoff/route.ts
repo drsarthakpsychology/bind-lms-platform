@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { z } from "zod";
 import { requireSuperAdmin } from "@/lib/auth/guards";
 import { createAdminClient } from "@/lib/supabase/server";
+import { decideSignOff } from "@/lib/admin/signoffs";
 
 export const runtime = "nodejs";
 
@@ -23,22 +24,7 @@ export async function POST(req: Request) {
   const parsed = schema.safeParse(body);
   if (!parsed.success) return NextResponse.json({ error: "invalid body" }, { status: 400 });
 
-  const adminClient = createAdminClient();
-  const { data: entry } = await adminClient
-    .from("supervision_entries")
-    .select("id, signoff_status, user_id")
-    .eq("id", parsed.data.entryId)
-    .maybeSingle();
-  if (!entry) return NextResponse.json({ error: "not found" }, { status: 404 });
-  if (entry.signoff_status !== "requested") {
-    return NextResponse.json({ error: "entry not awaiting sign-off" }, { status: 409 });
-  }
-
-  const { error } = await adminClient
-    .from("supervision_entries")
-    .update({ signoff_status: parsed.data.action })
-    .eq("id", parsed.data.entryId);
-  if (error) return NextResponse.json({ error: error.message }, { status: 500 });
-
-  return NextResponse.json({ ok: true, status: parsed.data.action });
+  const r = await decideSignOff(createAdminClient(), parsed.data.entryId, parsed.data.action);
+  if (!r.ok) return NextResponse.json({ error: r.message }, { status: r.why === "not_found" ? 404 : r.why === "not_requested" ? 409 : 500 });
+  return NextResponse.json({ ok: true, status: r.status });
 }

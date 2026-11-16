@@ -3,8 +3,8 @@ import { isSuperAdmin, requireAdmin } from "@/lib/auth/guards";
 import Link from "next/link";
 import { PageHeader } from "@/components/design-system/page-header";
 import { createAdminClient } from "@/lib/supabase/server";
-import { loadMaster, loadSupportKeys } from "@/lib/auth/master";
-import { sortKeys, toView } from "@/lib/auth/support-keys";
+import { loadMaster } from "@/lib/auth/master";
+import { loadSupportState } from "@/lib/auth/support-state";
 import { SupportKeys } from "./support-keys";
 import { MasterPasswordCard } from "./master-password";
 import { readFlags } from "@/lib/flags";
@@ -27,16 +27,10 @@ export default async function AdminToolsPage() {
   const uses = (events ?? []).map((e) => ({ email: String(e.email), at: String(e.created_at) }));
 
   if (uiV2For(await readFlags(), me.role)) {
-    const supportKeys = await loadSupportKeys(admin);
+    const state = await loadSupportState(admin);
     return (
       <AdminPage title="Support keys" lead="Keys that let a helper sign in as a student to help them. They only work for student accounts, and every use is recorded.">
-        <SupportKeys
-          keys={sortKeys(supportKeys.keys.map(toView))}
-          legacy={setting?.enabled ? { updatedAt: setting.updatedAt ?? null } : null}
-          uses={uses}
-          ready={ready && supportKeys.ready}
-          canWrite={isSuperAdmin(me)}
-        />
+        <SupportKeys keys={state.keys} legacy={state.legacy} uses={state.uses} ready={state.ready} canWrite={isSuperAdmin(me)} />
         <p className="type-small text-muted-foreground">
           Bulk student import is in <Link href="/admin/students/add?way=file" className={link}>Students, Add students, Upload a file</Link>. The session calendar is in each cohort&apos;s Settings tab.
         </p>

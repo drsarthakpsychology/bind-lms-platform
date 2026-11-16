@@ -5,7 +5,7 @@ import { Bell, ChevronLeft, Mail, MessageCircleQuestion, PlayCircle } from "luci
 import { loadAllLessons, loadCohort, loadCohortSummaries } from "@/lib/cohorts/admin-data";
 import { loadRoster } from "@/lib/people/roster-data";
 import { ACCOUNT_LABEL, ACCOUNT_TONE } from "@/lib/people/account-status";
-import { isBehind } from "@/lib/people/attention";
+import { byProgress, cohortFigures } from "@/lib/cohorts/figures";
 import { agoLabel } from "@/lib/analytics/timeline";
 import { AddPeopleButton } from "@/components/admin/add-people-panel";
 import { AddPeopleForm, CohortSettings, LessonSharing, MemberActions } from "@/components/admin/cohorts-ui";
@@ -53,13 +53,7 @@ export default async function CohortPage({ params, searchParams }: { params: Pro
   const courses = [...courseIds].map((cid) => ({ id: cid, title: lessons.find((l) => l.course_id === cid)?.course_title ?? "Course" }));
   const emails = members.map((m) => m.email).filter(Boolean).join(",");
 
-  const n = people.length;
-  const week = people.filter(({ r }) => r && (r.presence === "now" || r.presence === "today" || r.presence === "week")).length;
-  const never = people.filter(({ r }) => r && r.account !== "active" && r.account !== "locked").length;
-  const behind = people.filter(({ r }) => r && r.account === "active" && isBehind(r.lecturesDone, r.lecturesAvailable)).length;
-  const done = people.reduce((a, { r }) => a + (r?.lecturesDone ?? 0), 0);
-  const avail = people.reduce((a, { r }) => a + (r?.lecturesAvailable ?? 0), 0);
-  const pct = avail ? Math.round((done / avail) * 100) : 0;
+  const { n, week, never, behind, pct } = cohortFigures(people.map(({ r }) => r));
 
   if (uiV2For(await readFlags(), me.role)) {
     const day = (d: string) => new Date(d).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" });
@@ -116,8 +110,7 @@ export default async function CohortPage({ params, searchParams }: { params: Pro
         {tab === "lectures" ? (canWrite ? <LessonSharing cohortId={id} cohortName={cohort.name} lessons={lessons} sharedIds={[...lessonIds]} /> : <Empty>{lessonIds.size} lectures are shared with this cohort.</Empty>) : null}
         {tab === "progress" ? (
           <CohortProgressListV2
-            people={[...people]
-              .sort((a, b) => (a.r ? a.r.lecturesDone / Math.max(1, a.r.lecturesAvailable) : 0) - (b.r ? b.r.lecturesDone / Math.max(1, b.r.lecturesAvailable) : 0))
+            people={byProgress(people)
               .map(({ m, r }) => ({
                 id: m.userId,
                 name: r?.name || m.email,
@@ -248,8 +241,7 @@ export default async function CohortPage({ params, searchParams }: { params: Pro
 
       {tab === "progress" ? (
         <ul className="divide-y-2 divide-foreground/10 overflow-hidden rounded-2xl border-2 border-foreground bg-card">
-          {[...people]
-            .sort((a, b) => (a.r ? a.r.lecturesDone / Math.max(1, a.r.lecturesAvailable) : 0) - (b.r ? b.r.lecturesDone / Math.max(1, b.r.lecturesAvailable) : 0))
+          {byProgress(people)
             .map(({ m, r }) => {
               const p = r && r.lecturesAvailable ? Math.round((r.lecturesDone / r.lecturesAvailable) * 100) : 0;
               return (

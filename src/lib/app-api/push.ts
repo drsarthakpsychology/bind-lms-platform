@@ -31,6 +31,7 @@ export function buildMessages(
   kind: PushKind,
   targets: readonly { userId: string; token: string }[],
   prefs: ReadonlyMap<string, { push: boolean; messages: boolean; doubtReplies: boolean; achievements: boolean }>,
+  extra?: Partial<PushData>,
 ): ExpoMessage[] {
   const byUser = new Map<string, string[]>();
   for (const t of targets) byUser.set(t.userId, [...(byUser.get(t.userId) ?? []), t.token]);
@@ -47,7 +48,7 @@ export function buildMessages(
         sound: "default",
         priority: "high",
         channelId: kind === "achievements" ? "achievements" : "messages",
-        data: { notificationId: r.id ?? "", type: r.type ?? "message", target: toAppTarget(href) },
+        data: { notificationId: r.id ?? "", type: r.type ?? "message", target: toAppTarget(href), ...extra },
       });
     }
   }
@@ -57,14 +58,14 @@ export function buildMessages(
 type Fetch = typeof fetch;
 
 /** Send now. Answers how many were accepted. Never throws. */
-export async function sendPush(rows: readonly BellRow[], kind: PushKind, opts: { fetchImpl?: Fetch } = {}): Promise<number> {
+export async function sendPush(rows: readonly BellRow[], kind: PushKind, opts: { fetchImpl?: Fetch; extra?: Partial<PushData> } = {}): Promise<number> {
   try {
     if (!rows.length || process.env.APP_PUSH_DISABLED === "1") return 0;
     const users = [...new Set(rows.map((r) => r.user_id))];
     const targets = await activePushTargets(users);
     if (!targets.length) return 0;
     const prefs = await loadPrefsMany(users);
-    const messages = buildMessages(rows, kind, targets, prefs);
+    const messages = buildMessages(rows, kind, targets, prefs, opts.extra);
     const f = opts.fetchImpl ?? fetch;
     let accepted = 0;
     const dead: string[] = [];
@@ -92,9 +93,9 @@ export async function sendPush(rows: readonly BellRow[], kind: PushKind, opts: {
  * Send after the response. Outside a request (scripts, tests) it simply
  * starts the send without waiting.
  */
-export function queuePush(rows: readonly BellRow[], kind: PushKind): void {
+export function queuePush(rows: readonly BellRow[], kind: PushKind, extra?: Partial<PushData>): void {
   if (!rows.length) return;
-  const run = () => sendPush(rows, kind).then(() => undefined);
+  const run = () => sendPush(rows, kind, { extra }).then(() => undefined);
   try {
     after(run);
   } catch {

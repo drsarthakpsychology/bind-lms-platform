@@ -1043,7 +1043,16 @@ export type NotificationPrefs = {
 };
 
 /** The `data` object of every push the server sends. */
-export type PushData = { notificationId: string; type: string; target: AppTarget };
+export type PushData = {
+  notificationId: string;
+  type: string;
+  target: AppTarget;
+  /** Admin notices only: which one, and the doubt id, person key or student id a tap opens. */
+  admin?: AdminPushKind;
+  id?: string | null;
+};
+/** The three admin phone notices (GET/PUT /admin/push-preferences turns each on or off). */
+export type AdminPushKind = "new_doubt" | "new_enquiry" | "falling_behind";
 
 // ---------------------------------------------------------------------------
 // Doubts

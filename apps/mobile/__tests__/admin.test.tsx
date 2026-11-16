@@ -293,8 +293,10 @@ describe("admin screens as a Super Admin", () => {
     await fireEvent.changeText(screen.getByTestId("issue-title"), "Best case presentation");
     await waitFor(() => expect(screen.getByTestId("issue-sig-0").props.value).toBe("Dr. Sarthak Dave"));
     await fireEvent.press(screen.getByTestId("issue-next"));
-    expect(screen.getByTestId("cert-preview")).toBeTruthy();
-    expect(screen.getAllByText("Sana Khan").length).toBeGreaterThan(0);
+    // The server's own drawing of the certificate, with the person it is for.
+    await waitFor(() => expect(screen.getByTestId("cert-drawing")).toBeTruthy());
+    expect(screen.getByTestId("cert-drawing").props.accessibilityLabel).toContain("Best case presentation");
+    expect(screen.queryByTestId("cert-problems")).toBeNull();
     await fireEvent.press(screen.getByTestId("issue-next"));
     await fireEvent.press(screen.getByTestId("issue-next"));
     expect(await screen.findByText("1 certificate issued")).toBeTruthy();

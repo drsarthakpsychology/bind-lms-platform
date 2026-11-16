@@ -2,6 +2,7 @@ import "server-only";
 import { createAdminClient } from "@/lib/supabase/server";
 import { stripMarkup } from "@/lib/sanitize";
 import { policyVersion } from "@/lib/legal-constants";
+import { pushNewEnquiry } from "@/lib/app-api/admin-push";
 
 /**
  * Store one "request an invitation" enquiry (table enquiries, service role:
@@ -31,5 +32,7 @@ export async function saveEnquiry(input: EnquiryInput, source: "landing" | "app"
     console.error("[enquiry] insert failed:", error.message);
     return { ok: false };
   }
+  // A phone notice to the admins who want one; never blocks or fails the enquiry.
+  void pushNewEnquiry({ name: stripMarkup(input.name), email: stripMarkup(input.email) });
   return { ok: true };
 }

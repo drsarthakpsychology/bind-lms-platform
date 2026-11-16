@@ -1,7 +1,7 @@
 /**
  * The admin part of the server contract, copied word for word from the
  * server's src/lib/app-api/contract-practise-admin.ts (branch agent/appapi2,
- * branch admin-redesign, commit 78f4f0c1, section "Admin"). Do not edit the copied part by hand:
+ * branch agent/adminfull, 16 November, section "Admin"). Do not edit the copied part by hand:
  * copy it again when the server changes. Below it are the older names the
  * screens still use, and the shapes of the website loaders the server passes
  * through as they are.
@@ -154,6 +154,8 @@ export type AdminSubmission = {
   id: string;
   studentId: string;
   studentEmail: string | null;
+  /** Their full name (the email's first part when no name is saved). */
+  studentName: string;
   assignmentId: string;
   assignmentTitle: string;
   lessonTitle: string;
@@ -189,6 +191,8 @@ export type StudioSetup = {
   courses: { id: string; title: string }[];
   signatures: { id: string; label: string; url: string | null; [k: string]: unknown }[];
   email: { configured: boolean; remaining: number; limit: number };
+  /** Who signs by default (Certificates, Settings), so the studio starts with them. */
+  signatories: DefaultSignatory[];
 };
 /** The studio form, the same as the website's StudioIssueInput. */
 export type StudioIssueBody = {
@@ -343,6 +347,7 @@ export type RevokeBody = { reason: string };
 export type ResendBody = { email: boolean };
 export type ResendResult = { notified: boolean; delivery: Record<string, unknown> | null };
 
+
 /* People: Pipeline and Enquiries ----------------------------------------- */
 
 /** A person is named in addresses by `key` (their email, base64url), never by the email itself. */
@@ -425,6 +430,192 @@ export type PeopleWhatsAppBody = { keys: string[]; text: string };
 export type PeopleWhatsAppResult = { links: { key: string; name: string; url: string | null }[] };
 /** POST /admin/people/email/send-waiting */
 export type PeopleSendWaitingResult = SendWaitingResult;
+
+/* Admin, round two: cohorts, settings, types, no-account certificates, system, sign-offs, push ---- */
+
+export type CohortStatus = "upcoming" | "active" | "ended";
+/** GET /admin/cohorts : every cohort with its numbers (the website's Cohorts page). */
+export type AdminCohortRow = {
+  id: string;
+  name: string;
+  status: CohortStatus;
+  /** The course it is for, or null. */
+  course: string | null;
+  members: number;
+  /** Lectures shared with it. */
+  lectures: number;
+  /** Share of their lectures finished, all members. */
+  pct: number;
+  activeWeek: number;
+  behind: number;
+  /** Members who have not signed in yet. */
+  never: number;
+  /** Share of members who filled in their details. */
+  detailsPct: number;
+  /** yyyy-mm-dd */
+  starts: string | null;
+  ends: string | null;
+};
+export type AdminCohorts = { v: 1; items: AdminCohortRow[]; /** Students in no cohort. */ unassigned: number; /** False before the cohort tables exist. */ ready: boolean; canWrite: boolean };
+export type AdminCohortMember = {
+  id: string;
+  name: string;
+  email: string;
+  rollNumber: string | null;
+  account: string;
+  accountLabel: string;
+  presence: "now" | "today" | "week" | "quiet" | "never";
+  lastSeen: string | null;
+  done: number;
+  available: number;
+  minutes7: number;
+  scope: "full" | "lectures_only";
+  detailsDone: boolean;
+};
+/** GET /admin/cohorts/:id : one cohort (the website's cohort workspace). `people` in the Members order; the Progress order is least finished first. */
+export type AdminCohortDetail = AdminCohortRow & {
+  v: 1;
+  people: AdminCohortMember[];
+  /** Bell messages that reached this cohort's members, newest first. */
+  messages: { batchId: string; title: string; sentAt: string; total: number; opened: number }[];
+  /** Hours on VIBHA in the last 7 days, all members. */
+  hoursWeek: number;
+  /** Planned sessions (none sent yet: the website keeps them in its calendar). */
+  sessions: { title: string; at: string }[];
+  canWrite: boolean;
+};
+
+/** A saved signature image (a short-lived address to draw it). */
+export type SignatureImage = { id: string; label: string; url: string | null };
+export type DefaultSignatory = { name: string; role: string; signatureFrom: string | null };
+/** GET /admin/certificates/settings : who signs by default, the signature images, and email. */
+export type CertificateSettings = {
+  v: 1;
+  /** Up to three; the owner's default list until one is saved. */
+  signatories: DefaultSignatory[];
+  signatures: SignatureImage[];
+  email: { configured: boolean; limit: number; sentToday: number; waiting: number };
+  canWrite: boolean;
+};
+/** PUT /admin/certificates/settings (super admin) : the default signatories. Answers CertificateSettings. */
+export type CertificateSettingsBody = { signatories: { name: string; role: string; signatureFrom?: string | null }[] };
+/** POST /admin/certificates/signatures (super admin) : a PNG or JPEG data URL, up to 2 MB. Answers CertificateSettings. */
+export type SignatureUploadBody = { label: string; dataUrl: string };
+
+/** POST /admin/certificates/anyone/preview and /anyone : a certificate for someone without an account (a volunteer, a guest speaker). */
+export type AnyoneCertificateBody = {
+  name: string;
+  email: string;
+  phone?: string | null;
+  title: string;
+  /** A few lines about what they did (up to 600 characters). */
+  paragraph: string;
+  heading?: string;
+  lead?: string;
+  /** yyyy-mm-dd, today when missing. */
+  issuedOn?: string;
+  /** A saved signature image's id. */
+  signatureFrom?: string | null;
+  /** Email it with the PDF (issue only). */
+  emailIt?: boolean;
+};
+/** The PDF, as the website's preview makes it (nothing saved or sent). */
+export type AnyonePreview = { pdfBase64: string; fileName: string };
+export type AnyoneIssueResult = { credentialId: string; verifyUrl: string; /** The student the email belongs to, when it is one. */ linkedStudent: string | null; /** Why the email did not go, when it did not. */ emailNote: string | null };
+
+/** GET /admin/certificates/types : badge and certificate types with their rules (Certificates, Types). */
+export type RuleKind = "module_complete" | "sections_read" | "xp" | "watch_seconds" | "course_complete" | "module_tests_passed";
+export type TypeRule =
+  | { kind: "module_complete"; module: string }
+  | { kind: "sections_read"; module: string; count: number }
+  | { kind: "xp"; min: number }
+  | { kind: "watch_seconds"; min: number }
+  | { kind: "course_complete"; course_id: string }
+  | { kind: "module_tests_passed" };
+export type AdminCertType = {
+  id: string;
+  type: "badge" | "certificate";
+  title: string;
+  description: string | null;
+  tone: string;
+  icon: string | null;
+  enabled: boolean;
+  issued: number;
+  /** The rule in words. */
+  ruleText: string;
+  /** The rule, when it is one the form can edit; null for hand-given and milestone types. */
+  rule: TypeRule | null;
+  moduleId: string | null;
+  courseId: string | null;
+  /** Made by the studio, the monthly merit or the signature store: not edited here. */
+  madeForYou: boolean;
+  signatureLabel: string | null;
+  hasSignature: boolean;
+};
+export type AdminCertTypes = {
+  v: 1;
+  items: AdminCertType[];
+  rules: { id: RuleKind; label: string }[];
+  tones: string[];
+  modules: { id: string; title: string }[];
+  courses: { id: string; title: string }[];
+  canWrite: boolean;
+};
+/** POST /admin/certificates/types (new) and PUT /admin/certificates/types/:id (super admin). Answers `{ id }`. */
+export type CertTypeBody = { type: "badge" | "certificate"; title: string; description?: string; tone?: string; icon?: string | null; moduleId?: string | null; courseId?: string | null; rule: TypeRule };
+/** POST /admin/certificates/types/:id/enabled { enabled } */
+export type CertTypeEnabledBody = { enabled: boolean };
+/** GET /admin/certificates/types/:id/eligible (super admin) : students who meet a course certificate's rule and have none yet. */
+export type CertEligible = { items: { id: string; name: string; reason: string }[] };
+/** POST /admin/certificates/types/:id/drafts { userIds } (super admin) : drafts to issue from Issued. */
+export type CertDraftsBody = { userIds: string[] };
+export type CertDraftsResult = { made: { userId: string; credentialId: string }[]; failed: { userId: string; reason: string }[] };
+
+/** GET /admin/system : support keys (views only: never the key itself) and how full things are. */
+export type SupportKeyView = { id: string; label: string; last4: string; createdAt: string; createdByEmail: string | null; revokedAt: string | null; revokedByEmail: string | null; lastUsedAt: string | null };
+export type AdminSystem = {
+  v: 1;
+  ready: boolean;
+  canWrite: boolean;
+  /** The older single shared key still works. */
+  legacyKeyOn: boolean;
+  maxLive: number;
+  keys: SupportKeyView[];
+  /** The last sign-ins with a key. */
+  uses: { email: string; at: string }[];
+  usage: { label: string; value: string; pct: number | null }[];
+};
+/** POST /admin/system/support-keys { label } and /:id/rotate : the full key, shown ONCE. */
+export type NewSupportKey = { plain: string; last4: string };
+
+/** GET /admin/students/:id/messages : what was sent to one student and what came back, newest first. */
+export type StudentMessage = {
+  id: string;
+  /** email: an email to them; reply: their email reply; bell: a notification in VIBHA. */
+  from: "email" | "reply" | "bell";
+  title: string;
+  at: string;
+  opened: boolean;
+  /** "Sent", "Opened", "Failed", "Not opened", "Reply". */
+  state: string;
+  failed: boolean;
+};
+export type StudentMessages = { v: 1; items: StudentMessage[] };
+
+/** GET /admin/review/signoffs : supervision entries students asked to be signed. */
+export type SignOff = { id: string; studentId: string; studentName: string; studentEmail: string; activity: string; hours: number; date: string; supervisor: string | null; competency: string | null; status: "requested" | "signed" | "rejected" };
+export type SignOffList = { v: 1; items: SignOff[]; canWrite: boolean };
+/** POST /admin/review/signoffs/:id (super admin) */
+export type SignOffBody = { decision: "signed" | "rejected" };
+export type SignOffResult = { id: string; status: "signed" | "rejected" };
+
+/** GET and PUT /admin/push-preferences : this admin's own phone notices. */
+export type AdminPushPrefs = { newDoubt: boolean; newEnquiry: boolean; fallingBehind: boolean };
+
+/** GET /admin/people/:key : one person's record with the whole history, newest first. */
+export type AdminPersonEvent = { at: string; kind: string; title: string; body: string | null; tone: "ok" | "info" | "warn" | "quiet" };
+export type AdminPersonDetail = AdminPerson & { v: 1; facts: { label: string; value: string }[]; timeline: AdminPersonEvent[]; paymentReady: boolean; canWrite: boolean };
+
 
 // ------------------------------------------------------------- older names
 

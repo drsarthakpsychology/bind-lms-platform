@@ -3,67 +3,16 @@ import { ChevronLeft, ChevronRight } from "lucide-react-native";
 import * as React from "react";
 import { Pressable, View } from "react-native";
 
-import { Button, Chips, EmptyState, Field, ProgressLine, Row, RowList, Screen, SwitchRow, T } from "@/ds";
+import { Button, Chips, EmptyState, Field, LoadError, ProgressLine, Row, RowList, Screen, SwitchRow, T } from "@/ds";
 import { haptic } from "@/lib/haptics";
-import { fonts, layout, space, useTheme } from "@/theme";
-import { adminCalls, useAdminAction, useCohorts, useStudents, useStudioOptions } from "../api";
+import { layout, space, useTheme } from "@/theme";
+import { adminCalls, useAdminAction, useCertDrawing, useCohorts, useStudents, useStudioOptions } from "../api";
+import { CertPreviewBlock } from "../cert-drawing";
 import { CERT_KINDS, KIND_DEFAULTS, type CertKind, type IssueResult } from "../extra";
 import { day, plural, todayIst } from "../format";
 import { Facts, Notice, OptionRow, SearchBox, SelectRow } from "../kit";
 import { useAdminRole } from "../role";
 import { draftError, emptyDraft, STEPS, stepError, toIssueInput, withKind, type Draft } from "../studio";
-
-/** The certificate as it will look: a thin blue frame, the name large, the number in the pixel font. */
-export function CertificatePreview({ d, name }: { d: Draft; name: string }) {
-  const c = useTheme();
-  const kind = d.kind ?? "completion";
-  const def = KIND_DEFAULTS[kind];
-  const signed = d.signatories.filter((s) => s.name.trim());
-  return (
-    <View testID="cert-preview" accessible accessibilityLabel={`Preview: ${d.heading || def.heading}. ${d.lead || def.lead} ${name} ${d.connector || def.connector} ${d.title || def.titleHint}.`} style={{ borderWidth: 2, borderColor: c.line, borderRadius: layout.radius, backgroundColor: c.card, padding: space[2] }}>
-      <View style={{ borderWidth: 1, borderColor: c.dark ? "#8fa6ff" : c.brand, borderRadius: 8, paddingVertical: space[5], paddingHorizontal: space[4], alignItems: "center", gap: space[2] }}>
-        <T style={{ fontFamily: fonts.wordmark, fontSize: 18, letterSpacing: -0.3 }} maxFontSizeMultiplier={1.2}>
-          VIBHA
-        </T>
-        <T v="caption" tone="muted" center style={{ textTransform: "uppercase", letterSpacing: 1.6 }}>
-          {d.heading || def.heading}
-        </T>
-        <T v="small" tone="muted" center style={{ paddingTop: space[2] }}>
-          {d.lead || def.lead}
-        </T>
-        <T v="h1" center>
-          {name}
-        </T>
-        <View style={{ width: 56, height: 4, borderRadius: 2, backgroundColor: c.primary }} />
-        <T v="small" tone="muted" center>
-          {d.connector || def.connector}
-        </T>
-        <T v="h3" center>
-          {d.title || def.titleHint}
-        </T>
-        <T v="caption" tone="muted" center>
-          {day(d.issuedOn)}
-          {d.expiresOn ? ` · valid until ${day(d.expiresOn)}` : ""}
-        </T>
-        <View style={{ flexDirection: "row", flexWrap: "wrap", justifyContent: "center", columnGap: space[5], rowGap: space[2], paddingTop: space[3] }}>
-          {signed.map((s) => (
-            <View key={s.name} style={{ alignItems: "center", borderTopWidth: 1, borderColor: c.hairline, paddingTop: space[1], minWidth: 120 }}>
-              <T v="small" style={{ fontFamily: fonts.semibold }}>
-                {s.name}
-              </T>
-              <T v="caption" tone="muted" center>
-                {s.role}
-              </T>
-            </View>
-          ))}
-        </View>
-        <T style={{ fontFamily: fonts.pixel, fontSize: 12, lineHeight: 16, color: c.muted, paddingTop: space[2] }} maxFontSizeMultiplier={1.2}>
-          VIBHA-C2-0000-XX
-        </T>
-      </View>
-    </View>
-  );
-}
 
 function PickPeople({ d, set }: { d: Draft; set: (p: Partial<Draft>) => void }) {
   const [mode, setMode] = React.useState<"students" | "cohort">(d.cohortId ? "cohort" : "students");
@@ -127,6 +76,7 @@ function PickPeople({ d, set }: { d: Draft; set: (p: Partial<Draft>) => void }) 
 function Wording({ d, set }: { d: Draft; set: (p: Partial<Draft>) => void }) {
   const def = KIND_DEFAULTS[d.kind ?? "completion"];
   const sigs = d.signatories.length ? d.signatories : [{ name: "", role: "" }];
+  const images = useStudioOptions().data?.signatures ?? [];
   return (
     <View style={{ gap: space[4] }}>
       <Field label="Title" placeholder={def.titleHint} value={d.title} onChangeText={(title) => set({ title })} maxLength={120} testID="issue-title" />
@@ -139,6 +89,7 @@ function Wording({ d, set }: { d: Draft; set: (p: Partial<Draft>) => void }) {
         <View key={i} style={{ gap: space[3] }}>
           <Field label={`Signed by${sigs.length > 1 ? ` (${i + 1})` : ""}`} value={s.name} onChangeText={(name) => set({ signatories: sigs.map((x, j) => (j === i ? { ...x, name } : x)) })} maxLength={60} testID={`issue-sig-${i}`} />
           <Field label="Their role" value={s.role} onChangeText={(role) => set({ signatories: sigs.map((x, j) => (j === i ? { ...x, role } : x)) })} maxLength={60} />
+          {images.length ? <Chips label="Signature" value={s.signatureFrom ?? ""} onChange={(v) => set({ signatories: sigs.map((x, j) => (j === i ? { ...x, signatureFrom: v || null } : x)) })} options={[{ id: "", name: "None" }, ...images.map((g) => ({ id: g.id, name: g.label }))]} /> : null}
         </View>
       ))}
       <View style={{ flexDirection: "row", gap: space[4] }}>
@@ -149,26 +100,34 @@ function Wording({ d, set }: { d: Draft; set: (p: Partial<Draft>) => void }) {
   );
 }
 
+/** The server's own drawing of the certificate, one person at a time, with what still stops it. */
 function Preview({ d }: { d: Draft }) {
   const c = useTheme();
   const [i, setI] = React.useState(0);
-  const who = d.recipients[Math.min(i, d.recipients.length - 1)];
+  const at = Math.min(i, Math.max(0, d.recipients.length - 1));
+  const who = d.recipients[at];
+  const body = React.useMemo(() => toIssueInput(d), [d]);
+  const q = useCertDrawing(body, at);
   const nav = (dir: -1 | 1) => {
     haptic.select();
     setI((x) => Math.max(0, Math.min(d.recipients.length - 1, x + dir)));
   };
   return (
     <View style={{ gap: space[3] }}>
-      <CertificatePreview d={d} name={who?.name ?? "Student name"} />
+      {q.error && !q.data ? (
+        <LoadError what="the preview" error={q.error} onRetry={() => void q.refetch()} />
+      ) : (
+        <CertPreviewBlock drawing={q.data} loading={q.isFetching} label={`Certificate for ${who?.name ?? "the student"}: ${d.title || "no title yet"}`} />
+      )}
       {d.recipients.length > 1 ? (
         <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between" }}>
-          <Pressable accessibilityRole="button" accessibilityLabel="Previous person" disabled={i === 0} onPress={() => nav(-1)} style={{ width: layout.target, height: layout.target, alignItems: "center", justifyContent: "center", opacity: i === 0 ? 0.3 : 1 }}>
+          <Pressable accessibilityRole="button" accessibilityLabel="Previous person" disabled={at === 0} onPress={() => nav(-1)} style={{ width: layout.target, height: layout.target, alignItems: "center", justifyContent: "center", opacity: at === 0 ? 0.3 : 1 }}>
             <ChevronLeft size={22} color={c.ink} />
           </Pressable>
-          <T v="small" tone="muted" num>
-            {i + 1} of {d.recipients.length}
+          <T v="small" tone="muted" num accessibilityLiveRegion="polite">
+            {who?.name ?? ""} · {at + 1} of {d.recipients.length}
           </T>
-          <Pressable accessibilityRole="button" accessibilityLabel="Next person" disabled={i >= d.recipients.length - 1} onPress={() => nav(1)} style={{ width: layout.target, height: layout.target, alignItems: "center", justifyContent: "center", opacity: i >= d.recipients.length - 1 ? 0.3 : 1 }}>
+          <Pressable accessibilityRole="button" accessibilityLabel="Next person" disabled={at >= d.recipients.length - 1} onPress={() => nav(1)} style={{ width: layout.target, height: layout.target, alignItems: "center", justifyContent: "center", opacity: at >= d.recipients.length - 1 ? 0.3 : 1 }}>
             <ChevronRight size={22} color={c.ink} />
           </Pressable>
         </View>

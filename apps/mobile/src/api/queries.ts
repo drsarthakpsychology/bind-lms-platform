@@ -110,12 +110,6 @@ export const useMaterial = (id: string) => useQuery({ queryKey: keys.material(id
 export const useVerify = (id: string) => useQuery({ queryKey: keys.verify(id), queryFn: () => api.get<C.CertificateVerification>(`/public/certificates/${encodeURIComponent(id)}`, { auth: false }), enabled: id.length > 0 });
 
 /* Practise, Exam Prep and the Library read the server's own routes from src/practise (src/practise/contract.ts). */
-export const useAdminHome = () => useQuery({ queryKey: keys.admin("home"), queryFn: async () => A.adminHomeView(await api.get<unknown>("/admin/home")) });
-// The server reads `search`; the mock reads `q`. Both are sent.
-export const useAdminStudents = (q: string) => useQuery({ queryKey: keys.admin("students", q), queryFn: async () => A.adminStudentsView(await api.get<unknown>("/admin/students", { query: { search: q, q } })), placeholderData: (prev) => prev });
-export const useAdminStudent = (id: string) => useQuery({ queryKey: keys.admin("student", id), queryFn: async () => A.adminStudentView(await api.get<unknown>(`/admin/students/${encodeURIComponent(id)}`)) });
-export const useAdminActivity = () => useQuery({ queryKey: keys.admin("activity"), queryFn: async () => A.adminActivityView(await api.get<unknown>("/admin/activity")) });
-export const useAdminMessages = () => useQuery({ queryKey: keys.admin("messages"), queryFn: async () => A.adminMessagesView(await api.get<unknown>("/admin/messages")) });
 
 export { useMutation, useQueryClient };
 export type { UseQueryResult };

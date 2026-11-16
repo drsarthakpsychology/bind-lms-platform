@@ -1,7 +1,7 @@
 import { redirect } from "next/navigation";
 import { requireAdmin } from "@/lib/auth/guards";
 import { createAdminClient } from "@/lib/supabase/server";
-import { loadHiddenIds } from "@/lib/people/hidden-ids";
+import { loadSignOffRequests } from "@/lib/admin/signoffs";
 import { PageHeader } from "@/components/design-system/page-header";
 import { SupervisionReview } from "./supervision-review";
 import { readFlags } from "@/lib/flags";
@@ -21,32 +21,23 @@ export default async function AdminSupervisionPage() {
   if (!me) redirect("/dashboard");
   const admin = createAdminClient();
 
-  const [{ data: requested }, { data: profiles }] = await Promise.all([
-    admin
-      .from("supervision_entries")
-      .select("id, user_id, activity, hours, date, supervisor_name, competency_id, signoff_status")
-      .eq("signoff_status", "requested")
-      .order("date", { ascending: false })
-      .limit(100),
-    admin.from("profiles").select("id, email").limit(500),
-  ]);
-  const emailBy = new Map((profiles ?? []).map((p) => [p.id, p.email]));
-  const hidden = await loadHiddenIds();
+  const requested = await loadSignOffRequests(admin);
+  const entries = requested.map((e) => ({
+    id: e.id,
+    studentEmail: e.studentEmail,
+    activity: e.activity,
+    hours: e.hours,
+    date: e.date,
+    supervisorName: e.supervisorName ?? undefined,
+    signoffStatus: e.signoffStatus,
+  }));
 
   if (uiV2For(await readFlags(), me.role)) {
     return (
       <AdminPage title="Sign-offs" lead="Supervision entries students asked you to sign. Check the contact hours, then sign or reject.">
         <SupervisionReview
           v2
-          entries={(requested ?? []).filter((e) => !hidden.has(e.user_id as string)).map((e) => ({
-            id: e.id,
-            studentEmail: emailBy.get(e.user_id) ?? "student",
-            activity: String(e.activity),
-            hours: Number(e.hours),
-            date: e.date as string,
-            supervisorName: (e.supervisor_name as string | null) ?? undefined,
-            signoffStatus: e.signoff_status as string,
-          }))}
+          entries={entries}
         />
       </AdminPage>
     );
@@ -61,15 +52,7 @@ export default async function AdminSupervisionPage() {
 
       <div className="mt-6">
         <SupervisionReview
-          entries={(requested ?? []).filter((e) => !hidden.has(e.user_id as string)).map((e) => ({
-            id: e.id,
-            studentEmail: emailBy.get(e.user_id) ?? "student",
-            activity: String(e.activity),
-            hours: Number(e.hours),
-            date: e.date as string,
-            supervisorName: (e.supervisor_name as string | null) ?? undefined,
-            signoffStatus: e.signoff_status as string,
-          }))}
+          entries={entries}
         />
       </div>
     </div>
