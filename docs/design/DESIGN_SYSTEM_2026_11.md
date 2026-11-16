@@ -311,8 +311,8 @@ Each place has one soft colour family, the same values as the phone app
 |---|---|---|
 | home | `#eefac4` / `#4a6400` | `#212a0b` / `#cdf24b` |
 | learn (and admin) | `#e8edff` / `#1d44d8` | `#19214a` / `#9db1ff` |
-| practise | `#ffe9dc` / `#a8431a` | `#33190f` / `#ffaf85` |
-| library | `#dcf3ef` / `#0b6b70` | `#0c2927` / `#6fd8cc` |
+| practise | `#ffe9dc` / `#a8431a` | `#2f1e12` / `#ffaf85` |
+| library | `#d9f1f4` / `#0b6b70` | `#0c2927` / `#6fd8cc` |
 | me | `#eee7ff` / `#6430d0` | `#231a3e` / `#c4abff` |
 
 Deep is 4.5:1 or more on its wash, the canvas and cards in both themes.
