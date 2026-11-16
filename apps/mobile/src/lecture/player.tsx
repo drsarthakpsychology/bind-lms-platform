@@ -203,6 +203,9 @@ export function ProtectedPlayer({ lessonId, onTime, compromised }: PlayerProps) 
   const [captured, setCaptured] = React.useState(isCaptured());
   const [attempt, setAttempt] = React.useState(0);
   const pbRef = React.useRef<Playback | null>(null);
+  // Where the lecture was when its address ran out, to carry on from there with a new one.
+  const carryOn = React.useRef(0);
+  const renewed = React.useRef(0);
 
   React.useEffect(() => {
     let live = true;
@@ -211,7 +214,7 @@ export function ProtectedPlayer({ lessonId, onTime, compromised }: PlayerProps) 
       try {
         const access = streamView(await api.post<unknown>(`/lectures/${encodeURIComponent(lessonId)}/stream`, { deviceCompromised: rooted }), session.store.get().me?.watermark.text);
         if (!live) return;
-        if (access) setPhase({ kind: "ready", access });
+        if (access) setPhase({ kind: "ready", access: carryOn.current > 5 ? { ...access, resumeSeconds: carryOn.current } : access });
         else setPhase({ kind: "error", message: "The lecture could not start. Try again in a minute." });
       } catch (e) {
         if (!live) return;
@@ -246,6 +249,15 @@ export function ProtectedPlayer({ lessonId, onTime, compromised }: PlayerProps) 
     void allowRotation();
     return () => void holdPortrait();
   }, []);
+
+  /** Playback stopped: if the address ran out, get a new one and carry on from the same place. */
+  const renewIfExpired = (access: StreamAccess, time: number) => {
+    if (!shouldRenew(access, renewed.current)) return;
+    renewed.current += 1;
+    carryOn.current = time;
+    setPhase({ kind: "loading" });
+    setAttempt((a) => a + 1);
+  };
 
   const toggleFull = React.useCallback(() => {
     haptic.select();
@@ -299,13 +311,21 @@ export function ProtectedPlayer({ lessonId, onTime, compromised }: PlayerProps) 
               <TimeReporter pb={pb} onTime={onTime} />
               {pb.failed ? (
                 <View style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, alignItems: "center", justifyContent: "center", padding: space[5], gap: space[3] }}>
+                  <Renew onFail={() => renewIfExpired(phase.access, pb.time)} />
                   <T center style={{ color: "#ffffff" }}>
                     {`The lecture stopped. ${reasonOf(pb.failed)}`}
                   </T>
-                  <Button kind="quiet" full={false} label="Try again" onPress={() => {
-              setPhase({ kind: "loading" });
-              setAttempt((a) => a + 1);
-            }} style={{ backgroundColor: "#ffffff", borderRadius: layout.radius }} />
+                  <Button
+                    kind="quiet"
+                    full={false}
+                    label="Try again"
+                    onPress={() => {
+                      carryOn.current = pb.time;
+                      setPhase({ kind: "loading" });
+                      setAttempt((a) => a + 1);
+                    }}
+                    style={{ backgroundColor: "#ffffff", borderRadius: layout.radius }}
+                  />
                 </View>
               ) : (
                 <Controls pb={pb} full={full} onFull={toggleFull} onFirstPlay={() => undefined} />
@@ -331,6 +351,26 @@ export function ProtectedPlayer({ lessonId, onTime, compromised }: PlayerProps) 
       ) : null}
     </View>
   );
+}
+
+/**
+ * The stream's address is short-lived. When playback stops after it ran out
+ * (a long pause), ask for a new one at once and carry on from the same place,
+ * instead of showing "The lecture stopped". Once per address, so a real fault
+ * still shows Try again.
+ */
+export function shouldRenew(access: StreamAccess, renewedTimes: number, now = Date.now()): boolean {
+  const end = Date.parse(access.expiresAt);
+  return renewedTimes < 3 && Number.isFinite(end) && end - now < 60_000;
+}
+
+function Renew({ onFail }: { onFail: () => void }) {
+  React.useEffect(() => {
+    onFail();
+    // Once, when the failure shows.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+  return null;
 }
 
 /** Passes the position up without re-rendering the screen on every tick. */

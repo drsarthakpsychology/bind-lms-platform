@@ -217,3 +217,16 @@ describe("long lists", () => {
     await waitFor(() => expect(seen[seen.length - 1]).toBe(1000), { timeout: 3000 });
   });
 });
+
+describe("the lecture's short-lived address", () => {
+  it("is renewed by itself when it ran out during a long pause, a few times at most", () => {
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    const { shouldRenew } = require("@/lecture/player") as typeof import("@/lecture/player");
+    const now = Date.parse("2026-11-16T10:00:00Z");
+    const a = streamView({ url: "https://x/y.m3u8", expiresAt: "2026-11-16T09:59:00Z" })!;
+    expect(shouldRenew(a, 0, now)).toBe(true);
+    expect(shouldRenew(a, 3, now)).toBe(false);
+    expect(shouldRenew({ ...a, expiresAt: "2026-11-16T12:00:00Z" }, 0, now)).toBe(false);
+    expect(shouldRenew({ ...a, expiresAt: "" }, 0, now)).toBe(false);
+  });
+});
