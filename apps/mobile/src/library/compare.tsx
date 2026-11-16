@@ -1,6 +1,6 @@
 import { router, useLocalSearchParams } from "expo-router";
 import * as React from "react";
-import { Pressable, View } from "react-native";
+import { Pressable, useWindowDimensions, View } from "react-native";
 
 import { LoadError, RowsSkeleton, Screen, T } from "@/ds";
 import { layout, space, useTheme } from "@/theme";
@@ -26,19 +26,21 @@ function rowsOf(s: Side): [string, string[]][] {
 }
 
 /**
- * Two medicines side by side, fact by fact. On a phone each fact is a row
- * with the two medicines one under the other, each with its class mark, so
- * nothing is squeezed into half a screen.
+ * Two medicines side by side, fact by fact. On phones over 360px wide each
+ * fact is two columns (A | B) so the two read across without scrolling
+ * back; on narrower phones the two sit one under the other.
  */
 export function CompareScreen() {
   const c = useTheme();
   const p = useLocalSearchParams<{ a?: string; b?: string }>();
+  const { width } = useWindowDimensions();
   const qa = useMedicinePage(String(p.a ?? ""));
   const qb = useMedicinePage(String(p.b ?? ""));
   if (qa.isError || qb.isError) return <Screen title="Compare"><LoadError error={qa.error ?? qb.error} what="these medicines" onRetry={() => { void qa.refetch(); void qb.refetch(); }} /></Screen>;
   if (!qa.data || !qb.data) return <Screen title="Compare"><RowsSkeleton rows={8} /></Screen>;
   const sides: Side[] = [qa.data, qb.data].map((d) => ({ med: d.med as unknown as Med, mech: d.mechanism as Mechanism | null, half: d.halfLife as HalfLife | null }));
   const rows = sides.map(rowsOf);
+  const two = width > 360;
   return (
     <Screen testID="compare" title={`${sides[0]!.med.name} and ${sides[1]!.med.name}`} gap={space[6]}>
       <View style={{ flexDirection: "row", gap: space[3] }}>
@@ -57,22 +59,26 @@ export function CompareScreen() {
       {rows[0]!.map(([label], i) => (
         <View key={label} style={{ gap: space[3] }} testID={`compare-${i}`}>
           <T v="h3">{label}</T>
-          {sides.map((s, k) => {
-            const items = rows[k]![i]![1];
-            return (
-              <View key={s.med.id} style={{ flexDirection: "row", gap: space[3] }}>
-                <View style={{ paddingTop: 6 }}>
-                  <ClassMark group={s.med.group} size={10} />
+          <View style={two ? { flexDirection: "row", gap: space[4] } : { gap: space[3] }}>
+            {sides.map((s, k) => {
+              const items = rows[k]![i]![1];
+              return (
+                <View key={s.med.id} style={two ? { flex: 1, gap: 2, paddingLeft: k ? space[4] : 0, borderLeftWidth: k ? 1 : 0, borderColor: c.hairline } : { flexDirection: "row", gap: space[3] }}>
+                  {two ? null : (
+                    <View style={{ paddingTop: 6 }}>
+                      <ClassMark group={s.med.group} size={10} />
+                    </View>
+                  )}
+                  <View style={{ flex: two ? undefined : 1, gap: 2 }}>
+                    <T v="caption" tone="muted">
+                      {s.med.name.toUpperCase()}
+                    </T>
+                    {items.length ? items.map((t, j) => <T key={j} v={two ? "small" : "body"}>{t}</T>) : <T v={two ? "small" : "body"} tone="muted">Not listed</T>}
+                  </View>
                 </View>
-                <View style={{ flex: 1, gap: 2 }}>
-                  <T v="caption" tone="muted">
-                    {s.med.name.toUpperCase()}
-                  </T>
-                  {items.length ? items.map((t, j) => <T key={j}>{t}</T>) : <T tone="muted">Not listed</T>}
-                </View>
-              </View>
-            );
-          })}
+              );
+            })}
+          </View>
         </View>
       ))}
     </Screen>
