@@ -12,10 +12,9 @@ import { space, useTheme } from "@/theme";
 import { adminCalls, useAdminAction, useBadges, useCertTypes, useCertificates, useEligible, useRefreshAdmin, useStudents, useStudioSettings } from "../api";
 import { KIND_DEFAULTS, type BadgeRow, type CertRow, type CertStatus, type CertType, type CertTypeList, type RuleKind, type StudioSignatory, type TypeRule } from "../extra";
 import { day, plural, type Tone } from "../format";
-import { Block, ConfirmSheet, Facts, FilterChips, Loaded, Meter, Notice, OptionRow, Quiet, SearchBox, SelectRow, SmallButton, Status, SwipeRow, Tag } from "../kit";
+import { Block, ConfirmSheet, Facts, FilterChips, Loaded, Meter, Notice, OptionRow, Quiet, ScrollTabs, SearchBox, SelectRow, SmallButton, Status, SwipeRow, TabSwap, Tag } from "../kit";
 import { openStudent } from "../nav";
 import { useAdminRole, VIEW_ONLY_LINE } from "../role";
-import { ScrollTabs } from "./student";
 
 export const CERT_STATUS: Record<CertStatus, { label: string; tone: Tone }> = {
   valid: { label: "Valid", tone: "ok" },
@@ -473,7 +472,7 @@ function Settings() {
                 <View style={{ flexDirection: "row", flexWrap: "wrap", gap: space[3] }}>
                   {saved.signatures.map((g) => (
                     <View key={g.id} style={{ width: 148, gap: space[1] }} testID={`signature-${g.id}`}>
-                      <View style={{ height: 64, borderRadius: 10, borderWidth: 1, borderColor: c.hairline, backgroundColor: "#ffffff", alignItems: "center", justifyContent: "center", overflow: "hidden" }}>
+                      <View style={{ height: 64, borderRadius: 10, borderWidth: 1, borderColor: c.hairline, backgroundColor: c.paper, alignItems: "center", justifyContent: "center", overflow: "hidden" }}>
                         {g.url ? <Image source={{ uri: g.url }} style={{ width: 136, height: 56 }} resizeMode="contain" accessibilityLabel={`Signature of ${g.label}`} /> : <PenLine size={20} color={c.muted} />}
                       </View>
                       <T v="caption" tone="muted" numberOfLines={1}>
@@ -525,7 +524,9 @@ export function AdminCertificatesScreen() {
   return (
     <Screen title="Certificates" testID="admin-certificates" gap={space[4]} onRefresh={refresh} refreshing={refreshing} footer={canWrite ? <Button label="Issue certificates" icon={<Plus size={20} color={c.onPrimary} />} onPress={() => router.push("/admin/certificates/new")} testID="certs-issue" /> : undefined}>
       <ScrollTabs tabs={TABS} value={tab} onChange={setTab} />
-      {tab === "issued" ? <Issued openId={params.open} /> : tab === "find" ? <Find /> : tab === "types" ? <Types /> : <Settings />}
+      <TabSwap tabs={TABS} value={tab} gap={space[4]}>
+        {tab === "issued" ? <Issued openId={params.open} /> : tab === "find" ? <Find /> : tab === "types" ? <Types /> : <Settings />}
+      </TabSwap>
     </Screen>
   );
 }

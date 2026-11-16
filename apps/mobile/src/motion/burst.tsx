@@ -61,7 +61,7 @@ export function Burst({ fire, count = 10, reach = 34, size = 5 }: { fire: number
     transform: [{ scale: 0.4 + ring.value * 1.2 }],
   }));
   if (reduce) return null;
-  const colors = [c.primary, c.dark ? c.sk.blue : c.brand, c.ink];
+  const colors = [c.primary, c.accent, c.ink];
   return (
     <View
       pointerEvents="none"
@@ -146,7 +146,7 @@ export function Confetti({ fire, count = 36 }: { fire: number; count?: number })
     p.set(withTiming(1, { duration: dur.confetti, easing: Easing.linear }));
   }, [fire, reduce, p]);
   if (reduce || fire <= 0) return null;
-  const colors = [c.primary, c.dark ? c.sk.blue : c.brand, c.ink, c.primary];
+  const colors = [c.primary, c.accent, c.ink, c.primary];
   return (
     <View
       pointerEvents="none"

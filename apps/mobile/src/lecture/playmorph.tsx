@@ -3,6 +3,7 @@ import Animated, { useAnimatedProps, useReducedMotion, useSharedValue, withTimin
 import Svg, { Path } from "react-native-svg";
 
 import { curves, dur } from "@/motion";
+import { fixed } from "@/theme";
 
 /**
  * Play and Pause as one icon that morphs (storyboard 5): the two pause bars
@@ -36,7 +37,7 @@ function Half({ i, t, color }: { i: 0 | 1; t: SharedValue<number>; color: string
   return <AnimatedPath animatedProps={props} fill={color} strokeLinejoin="round" stroke={color} strokeWidth={1} />;
 }
 
-export function PlayPause({ playing, size = 30, color = "#ffffff" }: { playing: boolean; size?: number; color?: string }) {
+export function PlayPause({ playing, size = 30, color = fixed.onVideo as string }: { playing: boolean; size?: number; color?: string }) {
   const reduce = useReducedMotion();
   // 1 = play triangle (paused), 0 = pause bars (playing).
   const t = useSharedValue(playing ? 0 : 1);

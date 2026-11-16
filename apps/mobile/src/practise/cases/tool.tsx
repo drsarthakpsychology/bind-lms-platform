@@ -15,7 +15,7 @@ import { API_TOOL, arrange, buildDefs, countsRight, grade, HISTORY_TOOL, PROGRES
 import { Feel, Flip, Rise, Stagger } from "../fx";
 import { caseTool } from "../catalog";
 import { EndPanel, EndThumb, FrameError, FrameLoading, GameFrame, HudLine, StepStrip, Verdict } from "../frame";
-import { Story, Tag, Tile, AnswerRow } from "../parts";
+import { markWord, Story, Tag, Tile, AnswerRow } from "../parts";
 import { useReactions } from "../reactions";
 import type { ToolId, ToolReveal, ToolStep } from "../types";
 
@@ -39,27 +39,37 @@ const since = (t: number) => Date.now() - t;
 /** One shuffle seed per app session: a case keeps its option order while it is open. */
 const SEED = String(Math.floor(Math.random() * 1e9));
 
-/** A case tool: first its cases (Done, New, This week, Carry on), then one case in steps. */
+/**
+ * A case tool opens straight on the next case (half way first, then the
+ * first not done). Its cases are behind a small All cases link; a tool with
+ * one case has no list at all.
+ */
 export function ToolCaseScreen({ tool }: { tool: ToolId }) {
   const entry = caseTool(tool);
   const params = useLocalSearchParams<{ item?: string }>();
-  const [item, setItem] = React.useState<string | null>(params.item ?? null);
-  const [nonce, setNonce] = React.useState(0);
   const q = useTool(API_TOOL[tool]);
   const title = entry?.title ?? q.data?.title ?? "Practice";
   const list = React.useMemo(() => (q.data ? arrange(buildDefs(tool, q.data.data, SEED), q.data.cases) : null), [q.data, tool]);
   if (q.isError) return <FrameError title={title} error={q.error} onRetry={() => void q.refetch()} />;
   if (!list || !q.data) return <FrameLoading title={title} />;
   const howTo = q.data.howTo.length ? q.data.howTo : HOW[tool];
-  const def = item ? list.find((x) => x.def.id === item)?.def : null;
-  if (def) return <ToolRun key={`${def.id}-${nonce}`} tool={tool} def={def} howTo={howTo} records={q.data.records} back={() => setItem(null)} again={() => setNonce((n) => n + 1)} />;
-  return <ToolPicker tool={tool} title={title} line={entry?.line ?? ""} howTo={howTo} list={list} recycleLine={q.data.cases?.recycleLine ?? null} onPick={setItem} />;
+  return <ToolCases tool={tool} title={title} line={entry?.line ?? ""} howTo={howTo} list={list} records={q.data.records} recycleLine={q.data.cases?.recycleLine ?? null} first={params.item ?? null} />;
 }
 
+/** Holds which case is open. The next case is chosen once, when the tool opens, so a refresh never swaps it. */
+function ToolCases({ tool, title, line, howTo, list, records, recycleLine, first }: { tool: ToolId; title: string; line: string; howTo: string[]; list: { def: Def; mark: CaseMark | null }[]; records: PractiseRecordKind[]; recycleLine: string | null; first: string | null }) {
+  const [item, setItem] = React.useState<string | null>(() => first ?? (list.find((i) => i.mark === "started") ?? list.find((i) => i.mark !== "done") ?? list[0])?.def.id ?? null);
+  const [nonce, setNonce] = React.useState(0);
+  const def = item ? list.find((x) => x.def.id === item)?.def : null;
+  const many = list.length > 1;
+  if (def) return <ToolRun key={`${def.id}-${nonce}`} tool={tool} def={def} howTo={howTo} records={records} browse={many ? () => setItem(null) : null} again={() => setNonce((n) => n + 1)} />;
+  return <ToolPicker tool={tool} title={title} line={line} howTo={howTo} list={list} recycleLine={recycleLine} onPick={setItem} />;
+}
+
+/** All cases of one tool: a dot for new, a tick for done, the word for half way and this week in the meta line. */
 function ToolPicker({ tool, title, line, howTo, list, recycleLine, onPick }: { tool: ToolId; title: string; line: string; howTo: string[]; list: { def: Def; mark: CaseMark | null }[]; recycleLine: string | null; onPick: (id: string) => void }) {
-  const first = list.find((i) => i.mark === "started") ?? list.find((i) => i.mark !== "done") ?? list[0];
   return (
-    <GameFrame testID={`tool-${tool}`} title="" howTo={howTo} thumb={first ? <Button label={first.mark === "started" ? "Carry on" : list.length === 1 ? "Start" : "Start the next case"} onPress={() => onPick(first.def.id)} testID="tool-start" /> : undefined}>
+    <GameFrame testID={`tool-${tool}`} title="" howTo={howTo}>
       <View style={{ gap: space[2], paddingTop: space[4] }}>
         <T v={title.length > 22 ? "h1" : "display"}>{title}</T>
         <T tone="muted">{line}</T>
@@ -73,7 +83,7 @@ function ToolPicker({ tool, title, line, howTo, list, recycleLine, onPick }: { t
         <Stagger>
           <RowList>
             {list.map(({ def, mark }) => (
-              <Row key={def.id} testID={`tool-item-${def.id}`} title={def.title} meta={def.line ?? undefined} trailing={mark ? <Tag tag={mark} /> : undefined} onPress={() => onPick(def.id)} />
+              <Row key={def.id} testID={`tool-item-${def.id}`} title={def.title} meta={(mark === "started" || mark === "week" ? [markWord(mark), def.line] : [def.line]).filter(Boolean).join(" · ") || undefined} trailing={mark ? <Tag tag={mark} /> : undefined} onPress={() => onPick(def.id)} />
             ))}
           </RowList>
         </Stagger>
@@ -84,7 +94,7 @@ function ToolPicker({ tool, title, line, howTo, list, recycleLine, onPick }: { t
   );
 }
 
-function ToolRun({ tool, def, howTo, records, back, again }: { tool: ToolId; def: Def; howTo: string[]; records: PractiseRecordKind[]; back: () => void; again: () => void }) {
+function ToolRun({ tool, def, howTo, records, browse, again }: { tool: ToolId; def: Def; howTo: string[]; records: PractiseRecordKind[]; browse: (() => void) | null; again: () => void }) {
   const react = useReactions();
   const entry = caseTool(tool);
   const [at, setAt] = React.useState(def.start ?? 0);
@@ -106,7 +116,7 @@ function ToolRun({ tool, def, howTo, records, back, again }: { tool: ToolId; def
 
   if (done || !key) {
     return (
-      <GameFrame testID="tool-end" title={def.title} thumb={<EndThumb again={back} againLabel="Choose another case" extra={{ label: "Do this one again", onPress: again }} />}>
+      <GameFrame testID="tool-end" title={def.title} thumb={browse ? <EndThumb again={browse} againLabel="Choose another case" extra={{ label: "Do this one again", onPress: again }} /> : <EndThumb again={again} againLabel="Do it again" />}>
         <EndPanel kicker="Case done" score={graded ? `${pct}%` : "Done"} right={graded ? pct : 1} total={graded ? 100 : 1}>
           <Story kicker="Take away">
             <Rich text={def.takeaway} v="reading" />
@@ -156,11 +166,22 @@ function ToolRun({ tool, def, howTo, records, back, again }: { tool: ToolId; def
   const hud = (
     <View style={{ gap: space[2] }}>
       <StepStrip at={at} total={total} marks={marks} />
-      <HudLine left={total > 1 ? `${title} · step ${at + 1} of ${total}` : title} />
+      <HudLine
+        left={total > 1 ? `${title} · step ${at + 1} of ${total}` : title}
+        right={
+          browse ? (
+            <Pressable onPress={browse} accessibilityRole="link" hitSlop={12} style={{ minHeight: 32, justifyContent: "center" }} testID="tool-all-cases">
+              <T v="small" tone="link">
+                All cases
+              </T>
+            </Pressable>
+          ) : undefined
+        }
+      />
     </View>
   );
   return (
-    <GameFrame testID={`tool-run-${tool}`} title={def.title} howTo={howTo} hud={hud} confirmLeave thumb={reveal ? <Button label={at + 1 < total ? (step.kind === "moment" ? "Next observation" : "Next") : "Finish the case"} onPress={next} testID="tool-next" /> : undefined}>
+    <GameFrame testID={`tool-run-${tool}`} title={def.title} howTo={howTo} hud={hud} confirmLeave={at > 0 || marks.length > 0} thumb={reveal ? <Button label={at + 1 < total ? (step.kind === "moment" ? "Next observation" : "Next") : "Finish the case"} onPress={next} testID="tool-next" /> : undefined}>
       {at === 0 ? (
         <Story kicker={def.setting ?? undefined}>
           <Rich text={def.intro} v="reading" />
@@ -376,10 +397,11 @@ function Scale({ step, reveal, picked, disabled, onAnswer }: { step: Extract<Too
                 onAnswer(j);
               }}
               testID={`tool-scale-${j}`}
-              style={({ pressed }) => ({ flex: 1, minHeight: 88, padding: space[2], alignItems: "center", justifyContent: "center", gap: space[1], borderRadius: layout.radius, borderWidth: right || mine ? 2 : 1.5, borderColor: right ? (c.dark ? c.primary : c.ink) : mine && reveal ? c.danger : c.cardLine, backgroundColor: right ? c.successBg : mine && reveal ? c.alertBg : pressed ? c.tint : "transparent" })}
+              style={({ pressed }) => ({ flex: 1, minHeight: 88, paddingVertical: space[2], paddingHorizontal: 2, alignItems: "center", justifyContent: "center", gap: space[1], borderRadius: layout.radius, borderWidth: right || mine ? 2 : 1.5, borderColor: right ? (c.dark ? c.primary : c.ink) : mine && reveal ? c.danger : c.cardLine, backgroundColor: right ? c.successBg : mine && reveal ? c.alertBg : pressed ? c.tint : "transparent" })}
             >
-              <T style={{ fontFamily: fonts.pixelDigits, fontSize: 18, lineHeight: 22, color: c.ink }}>{["-2", "-1", "0", "+1", "+2"][j]}</T>
-              <T v="caption" center>
+              <T maxFontSizeMultiplier={1.2} style={{ fontFamily: fonts.pixelDigits, fontSize: 18, lineHeight: 22, color: c.ink }}>{["-2", "-1", "0", "+1", "+2"][j]}</T>
+              {/* Five boxes share one row: the words stop growing at 1.2x so "likely" never breaks mid-word. */}
+              <T v="caption" center maxFontSizeMultiplier={1.2}>
                 {l}
               </T>
             </Pressable>

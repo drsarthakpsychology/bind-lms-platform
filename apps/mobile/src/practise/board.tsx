@@ -1,13 +1,13 @@
-import { router, useLocalSearchParams } from "expo-router";
-import { ShoppingBag } from "lucide-react-native";
+import { useLocalSearchParams } from "expo-router";
 import * as React from "react";
 import { View } from "react-native";
 
-import { Chips, EmptyState, LoadError, Row, RowList, RowsSkeleton, Screen, T } from "@/ds";
+import { Chips, EmptyState, LoadError, RowList, RowsSkeleton, Screen, T } from "@/ds";
 import { fonts, layout, space, useTheme } from "@/theme";
 import { isSoon, useRead } from "./api";
 import type { Leaderboard } from "./contract";
 import { Stagger } from "./fx";
+import { SoonState } from "./soon";
 
 /** The boards the server keeps (GET /leaderboards/:board and /leaderboards/games/:game). */
 const BOARDS = [
@@ -30,16 +30,14 @@ export function BoardScreen() {
   return (
     <Screen testID="board" title={d?.label ?? "Boards"} lead={d ? [d.period, d.scope].filter(Boolean).join(" · ") : undefined} gap={space[5]}>
       <Chips scroll label="Board" options={BOARDS.map((b) => ({ id: b.id, name: b.name }))} value={board} onChange={setBoard} />
-      <RowList>
-        <Row testID="board-shop" title="XP shop" meta="Spend XP on name frames, titles and a streak repair" icon={<ShoppingBag size={20} color={c.muted} />} onPress={() => router.push("/shop")} />
-      </RowList>
+      {/* The XP shop lives in Me now (uxme adds the row there): the board is the list only. */}
       {d?.explainer ? (
         <T v="small" tone="muted">
           {d.explainer}
         </T>
       ) : null}
       {q.isError ? (
-        isSoon(q.error) ? <EmptyState mood="soon" title="Coming in the next update" body="The board is ready on the website and arrives in the app soon." /> : <LoadError error={q.error} onRetry={() => void q.refetch()} />
+        isSoon(q.error) ? <SoonState web="/leaderboard" /> : <LoadError error={q.error} onRetry={() => void q.refetch()} />
       ) : !d ? (
         <RowsSkeleton rows={8} />
       ) : !d.rows.length ? (
@@ -49,14 +47,14 @@ export function BoardScreen() {
         <RowList>
           {d.rows.map((r) => (
             <View key={`${r.rank}-${r.name}`} accessible accessibilityLabel={`${r.rank}. ${r.name}${r.me ? " (you)" : ""}, ${r.points} points`} style={{ minHeight: layout.row, flexDirection: "row", alignItems: "center", gap: space[4], marginHorizontal: -space[2], paddingHorizontal: space[2], borderRadius: 8, backgroundColor: r.me ? c.tint : "transparent" }} testID={r.me ? "board-you" : undefined}>
-              <T style={{ fontFamily: fonts.pixelDigits, fontSize: 18, lineHeight: 24, minWidth: 40, color: r.rank <= 3 ? c.link : c.muted }} num>
+              <T numberOfLines={1} style={{ fontFamily: fonts.pixelDigits, fontSize: 18, lineHeight: 24, minWidth: 40, flexShrink: 0, color: r.rank <= 3 ? c.link : c.muted }} num>
                 {r.rank}
               </T>
-              <T v="bodyStrong" style={{ flex: 1 }} tone={r.me ? "link" : "ink"}>
+              <T v="bodyStrong" style={{ flex: 1, minWidth: 0 }} tone={r.me ? "link" : "ink"}>
                 {r.me ? `${r.name} (you)` : r.name}
               </T>
-              <T style={{ fontFamily: fonts.pixelDigits, fontSize: 18, lineHeight: 24, color: c.ink }} num>
-                {r.points}
+              <T numberOfLines={1} style={{ fontFamily: fonts.pixelDigits, fontSize: 18, lineHeight: 24, flexShrink: 0, color: c.ink }} num>
+                {r.points.toLocaleString("en-IN")}
               </T>
             </View>
           ))}

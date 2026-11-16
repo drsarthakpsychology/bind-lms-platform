@@ -6,19 +6,22 @@ import Animated, { useAnimatedStyle, useReducedMotion, useSharedValue, withSeque
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { Button, EmptyState, Sheet, Skeleton, T, VerdictBand } from "@/ds";
+import { useKeyboardPad } from "@/ds/keyboard-pad";
 import { haptic } from "@/lib/haptics";
-import { settingsStore } from "@/lib/settings";
+import { useSeen } from "@/lib/once";
 import { streakMoment } from "@/moments/host";
 import { Rich } from "@/study/rich";
 import { fonts, layout, space, useTheme } from "@/theme";
 import { ApiFailure } from "@/api/errors";
 import { isSoon } from "./api";
-import { Burst, Confetti, curves, dur, presets, RollingNumber, springs, staggerDelay } from "@/motion";
-import { InkDraw, MaskUp, PixelLoader, useRun, useSlow } from "@/moments/parts";
+import { SoonState } from "./soon";
+import { Confetti, curves, dur, presets, RollingNumber, springs, staggerDelay } from "@/motion";
+import { InkDraw, MaskUp, PixelLoader, PixelPop, useRun, useSlow } from "@/moments/parts";
 import { ALL_ENTRIES, type Icon } from "./catalog";
 import { EntryIcon } from "./icons";
-import { Bump, Rise } from "./fx";
-import { EndSticker, moodForScore, reactions, StickerLayer } from "./reactions";
+import { Bump } from "./fx";
+import { moodForScore, reactions, StickerLayer } from "./reactions";
+import { SETTLE_MS } from "@/ds/reactions";
 
 /**
  * The one frame every game and practice tool sits in. Four parts, always in
@@ -71,6 +74,8 @@ export function GameFrame({ title, howTo, score, scoreLabel = "Score", hud, chil
   const insets = useSafeAreaInsets();
   const [help, setHelp] = React.useState(false);
   const [asking, setAsking] = React.useState(false);
+  /** The pinned footer's height, so a reaction sticker sits above its buttons. */
+  const [thumbH, setThumbH] = React.useState(0);
   const close = React.useCallback(() => {
     if (confirmLeave) setAsking(true);
     else leave();
@@ -88,9 +93,11 @@ export function GameFrame({ title, howTo, score, scoreLabel = "Score", hud, chil
   const [confetti, setConfetti] = React.useState(0);
   const fx = React.useMemo(() => ({ confetti: () => setConfetti((n) => n + 1) }), []);
   const body = <View style={{ gap: space[5], width: "100%", maxWidth: layout.readingWidth, alignSelf: "center" }}>{children}</View>;
+  // Typing an answer: the keyboard must not cover the box or the Check button.
+  const { ref: kbRef, pad: kbPad, onLayout: kbLayout } = useKeyboardPad();
   return (
     <FrameFx.Provider value={fx}>
-    <View testID={testID} style={{ flex: 1, backgroundColor: c.bg, paddingTop: insets.top }}>
+    <View ref={kbRef} onLayout={kbLayout} testID={testID} style={{ flex: 1, backgroundColor: c.bg, paddingTop: insets.top, paddingBottom: kbPad }}>
       <View style={{ backgroundColor: c.bg }}>
         <View style={{ minHeight: 56, flexDirection: "row", alignItems: "center", paddingHorizontal: space[1], gap: space[1] }}>
           <Pressable accessibilityRole="button" accessibilityLabel="Close" onPress={close} hitSlop={4} style={({ pressed }) => ({ width: layout.target, height: layout.target, borderRadius: 24, alignItems: "center", justifyContent: "center", backgroundColor: pressed ? c.tint : "transparent" })} testID="game-close">
@@ -124,11 +131,11 @@ export function GameFrame({ title, howTo, score, scoreLabel = "Score", hud, chil
         </ScrollView>
       )}
       {thumb ? (
-        <View style={{ borderTopWidth: 1, borderColor: c.hairline, backgroundColor: c.bg, paddingHorizontal: layout.gutter, paddingTop: space[3], paddingBottom: insets.bottom + space[3] }}>
+        <View onLayout={(e) => setThumbH(Math.round(e.nativeEvent.layout.height))} style={{ borderTopWidth: 1, borderColor: c.hairline, backgroundColor: c.bg, paddingHorizontal: layout.gutter, paddingTop: space[3], paddingBottom: (kbPad ? 0 : insets.bottom) + space[3] }}>
           <View style={{ width: "100%", maxWidth: layout.readingWidth, alignSelf: "center", gap: space[2] }}>{thumb}</View>
         </View>
       ) : null}
-      <StickerLayer />
+      <StickerLayer above={thumb ? thumbH || undefined : insets.bottom} />
       <Confetti fire={confetti} />
       <HowToSheet open={help} onClose={closeHelp} steps={howTo ?? []} />
       <Sheet open={asking} onClose={closeAsk} title="Leave this round?">
@@ -251,8 +258,15 @@ export function StartScreen<V extends string>({
   const reduce = useReducedMotion();
   const [help, setHelp] = React.useState(false);
   const mark = icon ?? ALL_ENTRIES.find((e) => e.title === title)?.icon;
+  // The rules show in the empty middle until the first Play on this phone; after that, one link.
+  const rules = useSeen(`howto.${testID ?? title}`);
+  const play = () => {
+    rules.mark();
+    onPlay();
+  };
+  const summary = !rules.seen && howTo.length ? howTo.slice(0, 3) : null;
   return (
-    <GameFrame title="" testID={testID ?? "start"} thumb={<Button label={playLabel} onPress={onPlay} busy={busy} testID="start-play" />}>
+    <GameFrame title="" testID={testID ?? "start"} thumb={<Button label={playLabel} onPress={play} busy={busy} testID="start-play" />}>
       <View style={{ gap: space[3], paddingTop: space[4] }}>
         {mark ? <GameMark icon={mark} /> : null}
         <MaskUp delay={INTRO_AT.title}>
@@ -290,7 +304,7 @@ export function StartScreen<V extends string>({
                 testID={`choice-${o.id}`}
                 style={({ pressed }) => ({ minHeight: layout.row, flexDirection: "row", alignItems: "center", gap: space[3], paddingHorizontal: space[4], paddingVertical: space[3], borderRadius: layout.radius, borderWidth: on ? 2 : 1.5, borderColor: on ? c.ink : c.cardLine, backgroundColor: pressed ? c.tint : on ? c.card : "transparent" })}
               >
-                <View style={{ width: 20, height: 20, borderRadius: 10, borderWidth: 2, borderColor: on ? c.ink : c.cardLine, alignItems: "center", justifyContent: "center" }}>{on ? <View style={{ width: 10, height: 10, borderRadius: 5, backgroundColor: c.brand }} /> : null}</View>
+                <View style={{ width: 20, height: 20, borderRadius: 10, borderWidth: 2, borderColor: on ? c.ink : c.fieldLine, alignItems: "center", justifyContent: "center" }}>{on ? <View style={{ width: 10, height: 10, borderRadius: 5, backgroundColor: c.accent }} /> : null}</View>
                 <View style={{ flex: 1, minWidth: 0, gap: 2 }}>
                   <T v="bodyStrong">{o.name}</T>
                   {o.line ? (
@@ -305,14 +319,29 @@ export function StartScreen<V extends string>({
           })}
         </View>
       ) : null}
-      <Button kind="text" label="How to play" onPress={() => setHelp(true)} testID="start-howto" />
+      {summary ? (
+        <View style={{ gap: space[2] }} testID="start-rules">
+          <T v="caption" tone="muted">
+            HOW TO PLAY
+          </T>
+          {summary.map((s, i) => (
+            <View key={i} style={{ flexDirection: "row", gap: space[3] }}>
+              <T v="score" style={{ width: 20 }} num>
+                {i + 1}
+              </T>
+              <Rich text={s} style={{ flex: 1 }} />
+            </View>
+          ))}
+        </View>
+      ) : null}
+      {!summary || howTo.length > 3 ? <Button kind="text" label={summary ? "All the rules" : "How to play"} onPress={() => setHelp(true)} testID="start-howto" /> : null}
       {error ? (
         <T v="small" tone="danger" accessibilityLiveRegion="polite">
           {error}
         </T>
       ) : null}
       {below}
-      <HowToSheet open={help} onClose={() => setHelp(false)} steps={howTo} onPlay={onPlay} />
+      <HowToSheet open={help} onClose={() => setHelp(false)} steps={howTo} onPlay={play} />
     </GameFrame>
   );
 }
@@ -325,7 +354,7 @@ export function Lives({ left, total }: { left: number; total: number }) {
   return (
     <View accessible accessibilityLabel={`${left} of ${total} lives left`} style={{ flexDirection: "row", gap: 6 }}>
       {Array.from({ length: total }, (_, i) => (
-        <View key={i} style={{ width: 12, height: 12, borderRadius: 3, borderWidth: 1.5, borderColor: c.ink, backgroundColor: i < left ? c.brand : "transparent" }} />
+        <View key={i} style={{ width: 12, height: 12, borderRadius: 3, borderWidth: 1.5, borderColor: c.ink, backgroundColor: i < left ? c.accent : "transparent" }} />
       ))}
     </View>
   );
@@ -338,7 +367,7 @@ export function StepStrip({ at, total, marks }: { at: number; total: number; mar
     <View accessible accessibilityLabel={`Step ${Math.min(at + 1, total)} of ${total}`} style={{ flexDirection: "row", gap: 4 }}>
       {Array.from({ length: total }, (_, i) => {
         const m = marks?.[i];
-        const bg = m === "ok" ? (c.dark ? c.primary : c.ink) : m === "miss" ? c.danger : i === at ? c.brand : c.hairline;
+        const bg = m === "ok" ? (c.dark ? c.primary : c.ink) : m === "miss" ? c.danger : i === at ? c.accent : c.fieldLine;
         return <View key={i} style={{ flex: 1, height: 4, borderRadius: 2, backgroundColor: bg }} />;
       })}
     </View>
@@ -369,9 +398,7 @@ export function HudLine({ left, right }: { left: string; right?: React.ReactNode
 export function Verdict({ right, title, why, seed, learn, partial }: { right: boolean; title?: string; why?: string | null; seed?: number; learn?: { label: string; onPress: () => void } | null; partial?: boolean }) {
   return (
     <View style={{ gap: space[2] }}>
-      <Rise>
-        <VerdictBand right={right} title={title ?? (partial ? "Partly right." : undefined)} why={why} seed={seed} />
-      </Rise>
+      <VerdictBand right={right} title={title ?? (partial ? "Partly right." : undefined)} why={why} seed={seed} />
       {learn ? <Button kind="text" label={learn.label} onPress={learn.onPress} testID="verdict-learn" /> : null}
     </View>
   );
@@ -384,7 +411,7 @@ export function Verdict({ right, title, why, seed, learn, partial }: { right: bo
  *     0ms  the panel and its kicker fade up; the score's digits roll in
  *   450ms  the score lands: won, a success haptic and a burst behind the
  *          score; lost, a warning haptic and a 2px dip, no particles
- *   650ms  the sticker slaps onto the corner of the score card
+ *   650ms  the reaction sticker and its line slap in (src/ds/reactions)
  *   800ms  the small numbers rise in, 60ms apart
  * Confetti only for a perfect round or a new personal best, on the whole
  * screen (the frame's root), from 450ms. Play again works from 0ms. With
@@ -396,7 +423,6 @@ export function EndPanel({ kicker = "Round over", score, scoreOf, line, stats, r
   const c = useTheme();
   const reduce = useReducedMotion();
   const fx = React.useContext(FrameFx);
-  const stickers = settingsStore.use((x) => x.reactions);
   const m = /^([^0-9-]*)(-?\d+)(\D*)$/.exec(score);
   const num = m ? { pre: m[1] ?? "", n: Number(m[2]), post: m[3] ?? "" } : null;
   const ratio = (total ?? 0) > 0 ? (right ?? 0) / (total ?? 1) : null;
@@ -405,7 +431,6 @@ export function EndPanel({ kicker = "Round over", score, scoreOf, line, stats, r
   const mood = outcome ? (outcome === "won" ? "streak" : outcome === "lost" ? "wrong" : "near") : moodForScore(right ?? 0, total ?? 0);
   const [burst, setBurst] = React.useState(0);
   const dip = useSharedValue(0);
-  const [seed] = React.useState(() => (right ?? 0) + (total ?? 0) + score.length);
   React.useEffect(() => {
     reactions.dismiss();
     // The result lands first; then the haptic, then particles (motion budget 5.1 rule 5).
@@ -420,7 +445,12 @@ export function EndPanel({ kicker = "Round over", score, scoreOf, line, stats, r
       } else haptic.tap();
       if (perfect || best) fx.confetti();
     }, reduce ? 0 : END_AT.land);
-    return () => clearTimeout(id);
+    // The sticker (the shared reaction layer) slaps in after the burst.
+    const sid = setTimeout(() => reactions.show(mood), Math.max(0, (reduce ? END_AT.land : END_AT.sticker) - SETTLE_MS));
+    return () => {
+      clearTimeout(id);
+      clearTimeout(sid);
+    };
     // Once per panel: a new round mounts a new panel.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -432,9 +462,9 @@ export function EndPanel({ kicker = "Round over", score, scoreOf, line, stats, r
         <T v="caption" tone="muted">
           {kicker.toUpperCase()}
         </T>
-        <View style={{ flexDirection: "row", alignItems: "baseline", gap: space[2], paddingRight: stickers ? 104 : 0 }}>
+        <View style={{ flexDirection: "row", alignItems: "baseline", gap: space[2] }}>
           <Animated.View style={dipStyle}>
-            {result === "won" ? <Burst fire={burst} reach={56} count={12} /> : null}
+            {result === "won" ? <PixelPop fire={burst} reach={56} /> : null}
             {num ? (
               <View style={{ flexDirection: "row", alignItems: "flex-end" }} testID="end-score" accessible accessibilityLabel={score}>
                 {num.pre ? <T style={big}>{num.pre}</T> : null}
@@ -454,7 +484,6 @@ export function EndPanel({ kicker = "Round over", score, scoreOf, line, stats, r
           ) : null}
         </View>
         {line ? <T v="h3">{line}</T> : null}
-        <EndSticker mood={mood} seed={seed} delay={reduce ? 0 : END_AT.sticker} />
       </View>
       {stats?.length ? (
         <View style={{ flexDirection: "row", flexWrap: "wrap", columnGap: space[6], rowGap: space[3], borderTopWidth: 1, borderBottomWidth: 1, borderColor: c.hairline, paddingVertical: space[3] }}>
@@ -515,11 +544,11 @@ export function loadLine(error: unknown): string {
   return error.message || "That didn't work. Try again.";
 }
 
-export function FrameError({ title, error, onRetry }: { title: string; error: unknown; onRetry: () => void }) {
+export function FrameError({ title, error, onRetry, web = "/practice" }: { title: string; error: unknown; onRetry: () => void; /** The same page on the website, for a part the app does not have yet. */ web?: string }) {
   return (
     <GameFrame title={title} testID="frame-error">
       {isSoon(error) ? (
-        <EmptyState mood="soon" title="Coming in the next update" body="This is ready on the website and arrives in the app soon." testID="soon" />
+        <SoonState web={web} />
       ) : (
         <EmptyState mood="error" title="That didn't load" body={loadLine(error)} action={{ label: "Try again", onPress: onRetry }} testID="load-error" />
       )}

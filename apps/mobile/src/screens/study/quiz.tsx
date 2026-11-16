@@ -32,6 +32,8 @@ export function QuizRunner({ title, questions, submit, onDone, doneLabel }: { ti
   const insets = useSafeAreaInsets();
   const reduce = useReducedMotion();
   const [i, setI] = React.useState(0);
+  // Forward questions come in from the right, Previous from the left.
+  const [dir, setDir] = React.useState<1 | -1>(1);
   const [picks, setPicks] = React.useState<Record<string, number>>({});
   const [result, setResult] = React.useState<Result | null>(null);
   const [busy, setBusy] = React.useState(false);
@@ -59,6 +61,7 @@ export function QuizRunner({ title, questions, submit, onDone, doneLabel }: { ti
   const next = async () => {
     if (!q || picked === undefined) return;
     if (i < questions.length - 1) {
+      setDir(1);
       setI(i + 1);
       scroll.current?.scrollTo({ y: 0, animated: false });
       return;
@@ -140,7 +143,7 @@ export function QuizRunner({ title, questions, submit, onDone, doneLabel }: { ti
             </View>
           </Animated.View>
         ) : q ? (
-          <Swap k={q.key} style={{ gap: space[5] }} testID={`question-${i}`}>
+          <Swap k={q.key} dir={dir} style={{ gap: space[5] }} testID={`question-${i}`}>
             <Rich text={q.q} v="h2" />
             <View style={{ gap: space[3] }} accessibilityRole="radiogroup">
               {q.options.map((o, j) => (
@@ -158,7 +161,10 @@ export function QuizRunner({ title, questions, submit, onDone, doneLabel }: { ti
         ) : (
           <>
             <Button label={i < questions.length - 1 ? "Next" : "Check my answers"} disabled={picked === undefined} busy={busy} onPress={() => void next()} testID="quiz-next" />
-            {i > 0 ? <Button kind="text" full label="Previous question" onPress={() => setI(i - 1)} /> : null}
+            {/* The row is always there (hidden on the first question) so Next never moves under the thumb. */}
+            <View style={{ opacity: i > 0 ? 1 : 0 }} pointerEvents={i > 0 ? "auto" : "none"} accessibilityElementsHidden={i === 0} importantForAccessibility={i > 0 ? "auto" : "no-hide-descendants"}>
+              <Button kind="text" full label="Previous question" disabled={i === 0} onPress={() => { setDir(-1); setI(i - 1); }} testID="quiz-prev" />
+            </View>
           </>
         )}
       </View>

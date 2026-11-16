@@ -43,9 +43,8 @@ const asSpecs = (d: PrepMocks | undefined) => ((d?.specs ?? []) as unknown as Mo
 /** The facts of one pattern, in the website's words. */
 function Facts({ spec }: { spec: MockSpec }) {
   const lines = [
-    `${spec.questions} questions${spec.sections.length > 1 ? `, ${spec.sections.length} sections` : ""}`,
     `${spec.minutes} minutes`,
-    `${marksText(spec.marksPerRight)} for a right answer (out of ${spec.questions * spec.marksPerRight})`,
+    `${marksText(spec.marksPerRight)} for a right answer`,
     spec.marksPerWrong ? `${marksText(-spec.marksPerWrong)} off for a wrong answer; a blank gets 0` : "No negative marking: never leave one blank",
   ];
   return (
@@ -62,7 +61,7 @@ function Facts({ spec }: { spec: MockSpec }) {
       ))}
       {spec.sections.length > 1 ? (
         <T v="small" tone="muted">
-          {spec.sections.map((s) => `${s.title} (${s.count})`).join(" · ")}
+          {spec.sections.map((s) => s.title).join(" · ")}
         </T>
       ) : null}
     </View>
@@ -100,11 +99,11 @@ export function MocksScreen() {
           {parts.length ? (
             <Section title="Shorter sectional tests">
               <T v="small" tone="muted">
-                {`${parts[0]!.questions} questions, ${parts[0]!.minutes} minutes, one subject group.`}
+                {`${parts[0]!.minutes} minutes each, one subject group.`}
               </T>
               <RowList>
                 {parts.map((s) => (
-                  <Row key={s.id} testID={`mock-open-${s.id}`} title={s.title} meta={`${s.questions} questions · ${s.minutes} minutes`} icon={<Clock size={20} color={c.muted} />} onPress={() => router.push(`/prep/mock/${enc(s.id)}`)} />
+                  <Row key={s.id} testID={`mock-open-${s.id}`} title={s.title} meta={`${s.minutes} minutes`} icon={<Clock size={20} color={c.muted} />} onPress={() => router.push(`/prep/mock/${enc(s.id)}`)} />
                 ))}
               </RowList>
             </Section>
@@ -161,7 +160,7 @@ function Cell({ n, st, current, onPress }: { n: number; st: CellState; current: 
         justifyContent: "center",
         borderWidth: current ? 2.5 : 1.5,
         borderStyle: st === "not-visited" ? "dashed" : "solid",
-        borderColor: current ? c.brand : st === "not-visited" ? c.cardLine : c.ink,
+        borderColor: current ? c.accent : st === "not-visited" ? c.cardLine : c.ink,
         backgroundColor: filled ? c.ink : pressed ? c.tint : "transparent",
         transform: [{ scale: pressed ? 0.94 : 1 }],
       })}
@@ -307,7 +306,7 @@ export function MockExamScreen() {
     };
   }, [live, paper, skew]);
 
-  if (list.isError) return <FrameError title="Mock test" error={list.error} onRetry={() => void list.refetch()} />;
+  if (list.isError) return <FrameError title="Mock test" web="/prep/mock" error={list.error} onRetry={() => void list.refetch()} />;
   if (!list.data) return <FrameLoading title="Mock test" />;
   if (!spec) {
     return (

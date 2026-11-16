@@ -28,7 +28,7 @@ describe("end of a round (storyboard 2)", () => {
     expect(note).not.toHaveBeenCalledWith("success");
   });
 
-  it("a won round gets one success haptic and its sticker on the score card", async () => {
+  it("a won round gets one success haptic, then the shared reaction sticker", async () => {
     await render(
       <GameFrame title="Rx">
         <EndPanel score="80" right={8} total={10} />
@@ -36,7 +36,7 @@ describe("end of a round (storyboard 2)", () => {
     );
     await waitFor(() => expect(note).toHaveBeenCalledWith("success"));
     expect(note).toHaveBeenCalledTimes(1);
-    expect(screen.getByTestId("sticker")).toBeTruthy();
+    await waitFor(() => expect(screen.getByTestId("reaction")).toBeTruthy(), { timeout: 2000 });
   });
 });
 

@@ -1,6 +1,6 @@
 import { redirect } from "next/navigation";
 import type { Metadata } from "next";
-import { requireAdmin } from "@/lib/auth/guards";
+import { isSuperAdmin, requireAdmin } from "@/lib/auth/guards";
 import { createAdminClient } from "@/lib/supabase/server";
 import { PageHeader } from "@/components/design-system/page-header";
 import { isHiddenAccount } from "@/lib/people/hidden";
@@ -18,6 +18,18 @@ export const dynamic = "force-dynamic";
 export default async function AccessPage({ searchParams }: { searchParams: Promise<{ q?: string; cohort?: string }> }) {
   const me = await requireAdmin();
   if (!me) redirect("/dashboard");
+  // Every control here changes access, which is Super Admin only: a View Admin gets one plain line.
+  if (!isSuperAdmin(me)) {
+    return uiV2For(await readFlags(), me.role) ? (
+      <AdminPage title="Access for many">
+        <Notice>Only the Super Admin can change access.</Notice>
+      </AdminPage>
+    ) : (
+      <div className="space-y-6">
+        <PageHeader eyebrow="People" title="Access" description="Only the Super Admin can change access." />
+      </div>
+    );
+  }
   const sp = await searchParams;
   const admin = createAdminClient();
   const [{ data: profiles }, cohortsRes, membersRes, blocks] = await Promise.all([

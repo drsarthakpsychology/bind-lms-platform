@@ -48,11 +48,11 @@ export function stepError(step: number, d: Draft, today: string): string | null 
   if (step === 2) {
     if (!d.title.trim()) return "Give the certificate a title.";
     if (d.title.trim().length > 120) return "Keep the title under 120 characters.";
-    if (!isDay(d.issuedOn)) return "Write the issue date as yyyy-mm-dd.";
+    if (!isDay(d.issuedOn)) return "Pick the issue date.";
     const needs = d.kind ? KIND_DEFAULTS[d.kind].needsExpiry : false;
     if (needs && !d.expiresOn) return "A provisional certificate needs a date it runs out.";
     if (d.expiresOn) {
-      if (!isDay(d.expiresOn)) return "Write the end date as yyyy-mm-dd.";
+      if (!isDay(d.expiresOn)) return "Pick the end date again.";
       if (d.expiresOn < d.issuedOn) return "The end date is before the issue date.";
       if (d.expiresOn < today) return "The end date has already passed.";
     }

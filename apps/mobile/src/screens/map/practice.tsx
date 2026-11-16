@@ -9,6 +9,7 @@ import { useQueryClient } from "@tanstack/react-query";
 import type { MapPractice, MapQuestion } from "@/api/contract";
 import { answerMap, mapWallKeys, useMapRound } from "@/api/map-wall";
 import { Button, EmptyState, LoadError, OptionRow, ProgressLine, Skeleton, T, VerdictBand, type OptionState } from "@/ds";
+import { EndReaction, ReactionLayer, useReactions } from "@/ds/reactions";
 import { toast } from "@/ds/toast";
 import { haptic } from "@/lib/haptics";
 import { settingsStore } from "@/lib/settings";
@@ -90,6 +91,8 @@ export function RoundRunner({ round, onAgain, onDone }: { round: MapPractice; on
   const startedAt = React.useRef(0);
   const unsaved = React.useRef(0);
   const scroll = React.useRef<React.ComponentRef<typeof ScrollView>>(null);
+  const react = useReactions();
+  const [footH, setFootH] = React.useState(0);
   const total = round.questions.length;
   const done = i >= total;
   const q = round.questions[i];
@@ -111,6 +114,7 @@ export function RoundRunner({ round, onAgain, onDone }: { round: MapPractice; on
     const ok = p === q.answer;
     setPicked(p);
     setChecked(true);
+    react.answer(ok, {}, false);
     if (ok) {
       setRight((r) => r + 1);
       setSpark((n) => n + 1);
@@ -182,7 +186,7 @@ export function RoundRunner({ round, onAgain, onDone }: { round: MapPractice; on
           </Swap>
         ) : null}
       </ScrollView>
-      <View style={{ borderTopWidth: 1, borderColor: c.hairline, paddingHorizontal: layout.gutter, paddingTop: space[3], paddingBottom: insets.bottom + space[3], gap: space[2] }}>
+      <View onLayout={(e) => setFootH(Math.round(e.nativeEvent.layout.height))} style={{ borderTopWidth: 1, borderColor: c.hairline, paddingHorizontal: layout.gutter, paddingTop: space[3], paddingBottom: insets.bottom + space[3], gap: space[2] }}>
         {done ? (
           <>
             <Button label="Another round" icon={<RotateCcw size={20} color={c.onPrimary} />} onPress={onAgain} testID="map-round-again" />
@@ -199,6 +203,8 @@ export function RoundRunner({ round, onAgain, onDone }: { round: MapPractice; on
         )}
       </View>
       {allRight ? <Confetti fire={1} /> : null}
+      {done ? <EndReaction right={right} total={total} /> : null}
+      <ReactionLayer above={footH || undefined} />
     </View>
   );
 }
@@ -217,7 +223,7 @@ export function MapPracticeScreen() {
       {q.isError ? (
         <LoadError what="this round" error={q.error} onRetry={() => void q.refetch()} />
       ) : q.data ? (
-        <EmptyState title="No questions for this yet" body="New questions for this topic are on their way. Try mixed practice." action={{ label: "Back to your map", onPress: done }} testID="map-round-empty" />
+        <EmptyState mood="wait" title="No questions for this yet" body="New questions for this topic are on their way. Try mixed practice." action={{ label: "Back to your map", onPress: done }} testID="map-round-empty" />
       ) : (
         <RoundSkeleton />
       )}

@@ -15,6 +15,7 @@ import { pdfPages } from "../../../modules/pdf-pages/src";
 import { adminCalls, useAdminAction, useStudioOptions } from "../api";
 import type { AnyoneInput, AnyoneResult } from "../extra";
 import { day, todayIst } from "../format";
+import { DateField } from "../date-field";
 import { ConfirmSheet, Facts, Notice } from "../kit";
 import { useAdminRole } from "../role";
 
@@ -28,7 +29,7 @@ export function anyoneProblem(f: AnyoneInput): string | null {
   if (!isEmail(f.email)) return "Type a real email address.";
   if (!f.title.trim()) return "Give the certificate a title.";
   if (!f.paragraph.trim()) return "Write a few lines about what they did.";
-  if (f.issuedOn && !/^\d{4}-\d{2}-\d{2}$/.test(f.issuedOn)) return "Write the date as yyyy-mm-dd.";
+  if (f.issuedOn && !/^\d{4}-\d{2}-\d{2}$/.test(f.issuedOn)) return "Pick the date again.";
   return null;
 }
 
@@ -177,7 +178,7 @@ export function AdminAnyoneScreen() {
       <Field label="What they did" value={f.paragraph} onChangeText={(paragraph) => set({ paragraph })} maxLength={600} multiline testID="anyone-paragraph" />
       <Field label="Line at the top" value={f.heading ?? ""} onChangeText={(heading) => set({ heading })} maxLength={80} />
       <Field label="Line under the name" value={f.lead ?? ""} onChangeText={(lead) => set({ lead })} maxLength={80} />
-      <Field label="Date" hint="yyyy-mm-dd" value={f.issuedOn ?? ""} onChangeText={(issuedOn) => set({ issuedOn })} maxLength={10} keyboardType="numbers-and-punctuation" />
+      <DateField label="Date" value={f.issuedOn ?? ""} onChange={(issuedOn) => set({ issuedOn })} testID="anyone-date" />
       {sigs.length ? <Chips label="Signature" value={f.signatureFrom ?? ""} onChange={(v) => set({ signatureFrom: v || null })} options={[{ id: "", name: "None" }, ...sigs.map((g) => ({ id: g.id, name: g.label }))]} /> : null}
       <SwitchRow title="Email it with the PDF" value={f.emailIt !== false} onChange={(emailIt) => set({ emailIt })} testID="anyone-emailit" />
       {error ? (

@@ -169,7 +169,7 @@ export function WardGame() {
     if (r.reveal) {
       setReveal(r.reveal);
       setMarks((m) => [...m, r.reveal!.q === "best" ? "ok" : r.reveal!.q === "ok" ? null : "miss"]);
-      react.answer(r.reveal.q === "best");
+      react.answer(r.reveal.q === "best", { partial: r.reveal.q === "ok" });
     }
     setSolo(r);
   };

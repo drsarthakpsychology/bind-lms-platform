@@ -1,5 +1,5 @@
 import { notFound, redirect } from "next/navigation";
-import { requireAdmin } from "@/lib/auth/guards";
+import { isSuperAdmin, requireAdmin } from "@/lib/auth/guards";
 import Link from "next/link";
 import { LessonThumb } from "@/components/course/lesson-thumb";
 import { ChevronDown, ChevronLeft, FileVideo2, ListPlus, Paperclip } from "lucide-react";
@@ -130,6 +130,8 @@ export default async function CourseDetailPage({
 
   if (uiV2For(await readFlags(), me.role)) {
     const base = `/admin/courses/${courseId}`;
+    // A View Admin reads the course; every change here is Super Admin only and would just fail.
+    const canWrite = isSuperAdmin(me);
     const toLesson = (lesson: LessonRow): LessonV2 => {
       const assignment = assignmentByLesson.get(lesson.id);
       const sharedWith = courseCohorts.links.get(lesson.id) ?? [];
@@ -150,11 +152,13 @@ export default async function CourseDetailPage({
           courseCohorts.ready && cohorts.length ? (
             <>
               <LessonCohortChips sharedWith={sharedWith} cohorts={cohorts} />
-              <LessonCohortEditor lessonId={lesson.id} lessonTitle={lesson.title} sharedWith={sharedWith} cohorts={cohorts} />
+              {canWrite ? <LessonCohortEditor lessonId={lesson.id} lessonTitle={lesson.title} sharedWith={sharedWith} cohorts={cohorts} /> : null}
             </>
           ) : undefined,
-        assignment: assignment ? <AssignmentToggle lessonId={lesson.id} courseId={courseId} published={assignment.is_published} /> : lesson.requires_assignment ? <Tag tone="warn">Assignment needs setup</Tag> : undefined,
-        actions: (
+        assignment: assignment && !canWrite ? <Tag>{assignment.is_published ? "Assignment on" : "Assignment off"}</Tag> : assignment ? <AssignmentToggle lessonId={lesson.id} courseId={courseId} published={assignment.is_published} /> : lesson.requires_assignment ? <Tag tone="warn">Assignment needs setup</Tag> : undefined,
+        actions: !canWrite ? (
+          lesson.video_storage_path ? <Link href={`/courses/${courseId}/lessons/${lesson.id}`} className={btn.quiet}>Watch</Link> : undefined
+        ) : (
           <>
             <VideoUpload lessonId={lesson.id} courseId={courseId} hasVideo={Boolean(lesson.video_storage_path)} />
             {lesson.video_storage_path ? <Link href={`/courses/${courseId}/lessons/${lesson.id}`} className={btn.quiet}>Watch</Link> : null}
@@ -175,9 +179,9 @@ export default async function CourseDetailPage({
     };
     return (
       <CourseDetailV2
-        title={<RenameCourse courseId={course.id} title={course.title} />}
+        title={canWrite ? <RenameCourse courseId={course.id} title={course.title} /> : course.title}
         published={course.is_published}
-        actions={<CourseActions courseId={course.id} isPublished={course.is_published} showOpenBuilder={false} />}
+        actions={canWrite ? <CourseActions courseId={course.id} isPublished={course.is_published} showOpenBuilder={false} /> : undefined}
         count={cohortFilter ? `${shown.length} of ${rows.length}` : String(rows.length)}
         filter={
           cohorts.length ? (
@@ -192,7 +196,7 @@ export default async function CourseDetailPage({
         }
         emptyText={
           rows.length === 0
-            ? "No lectures yet. Add the first one above. It starts with a video."
+            ? canWrite ? "No lectures yet. Add the first one above. It starts with a video." : "No lectures yet."
             : shown.length === 0
               ? cohortFilter === "none"
                 ? "Every lecture is shared with at least one cohort."
@@ -201,7 +205,7 @@ export default async function CourseDetailPage({
         }
         weeks={orderedWeeks.map(([week, list]) => ({ week, lessons: list.map(toLesson) }))}
         addOpen={rows.length === 0 || Boolean(cohortFilter && cohortFilter !== "none")}
-        addForm={<LessonForm courseId={courseId} nextOrderIndex={nextOrderIndex} defaultWeek={defaultWeek} cohorts={liveCohorts(cohorts).map((c) => ({ id: c.id, name: c.name }))} initialCohort={defaultRecordingChoice(cohorts, cohortFilter)} />}
+        addForm={canWrite ? <LessonForm courseId={courseId} nextOrderIndex={nextOrderIndex} defaultWeek={defaultWeek} cohorts={liveCohorts(cohorts).map((c) => ({ id: c.id, name: c.name }))} initialCohort={defaultRecordingChoice(cohorts, cohortFilter)} /> : undefined}
         people={<CoursePeoplePanel courseId={courseId} lectureCount={rows.length} data={people} />}
         materialCount={(courseMaterials ?? []).length}
         materials={

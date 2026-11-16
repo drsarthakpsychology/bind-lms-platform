@@ -89,7 +89,7 @@ export function MseGame() {
     setScore((s) => s + Math.round(r.reveal.score * 10));
     setResults((x) => [...x, r.reveal.score]);
     setMarks((m) => [...m, r.reveal.score >= 1 ? "ok" : "miss"]);
-    react.answer(r.reveal.score >= 1);
+    react.answer(r.reveal.score >= 1, { partial: r.reveal.score > 0 && r.reveal.score < 1 });
   };
   const next = () => {
     const p = pending;

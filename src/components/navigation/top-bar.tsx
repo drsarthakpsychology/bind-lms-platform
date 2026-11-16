@@ -61,7 +61,7 @@ export function TopBar({
   const focusPage = !isAdminView && isFocusPath(pathname);
 
   return (
-    <header
+    <header data-chrome
       className={cn(
         "z-40 bg-card md:sticky md:top-0",
         v2 ? "border-b border-[var(--ds-hairline)]" : "border-b-2 border-foreground",

@@ -39,7 +39,7 @@ export function LookName({ name, frame, title, size = "body" }: { name: string; 
     </View>
   );
   if (!frame) return text;
-  const color = frame === "frame-blue" ? c.brand : frame === "frame-lime" ? c.primary : c.ink;
+  const color = frame === "frame-blue" ? c.accent : frame === "frame-lime" ? c.primary : c.ink;
   return (
     <View style={{ alignSelf: "flex-start", borderWidth: 2.5, borderColor: color, borderRadius: 10, padding: frame === "frame-ink" ? 2 : space[1] }}>
       {frame === "frame-ink" ? <View style={{ borderWidth: 1.5, borderColor: c.ink, borderRadius: 7, padding: space[1] }}>{text}</View> : text}

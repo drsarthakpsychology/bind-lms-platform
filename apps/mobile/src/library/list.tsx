@@ -6,7 +6,9 @@ import { Pressable, TextInput, View } from "react-native";
 
 import { ApiFailure } from "@/api/errors";
 import { api } from "@/auth";
-import { Chips, EmptyState, LoadError, Row, RowList, RowsSkeleton, Screen, T } from "@/ds";
+import { Chips, EmptyState, LoadError, Row, RowList, RowsSkeleton, Screen, Section, T } from "@/ds";
+import { recentMedicines } from "@/lib/recent";
+import { SoonState } from "@/practise/soon";
 import { TabTop } from "@/nav/top";
 import type { MedicineList } from "@/practise/types";
 import type { MedicinePage } from "@/practise/contract";
@@ -31,6 +33,10 @@ export function LibraryScreen() {
     return group === "All" ? found : found.filter((r) => r.group === group);
   }, [q.data, text, group]);
   const soon = q.error instanceof ApiFailure && q.error.code === "not_found";
+  const filtering = !!text.trim() || group !== "All";
+  const recentIds = recentMedicines.use();
+  const recent = filtering || !q.data ? [] : recentIds.map((id) => q.data!.rows.find((r) => r.id === id)).filter((r): r is NonNullable<typeof r> => !!r).slice(0, 3);
+  const row = (m: (typeof rows)[number], prefix = "med") => <Row key={m.id} testID={`${prefix}-${m.id}`} icon={<ClassMark group={m.group} spine />} title={m.name} meta={`${m.cls}${m.dose ? ` · usual ${m.dose}` : ""}${m.brands.length ? ` · ${m.brands.slice(0, 2).join(", ")}` : ""}`} onPress={() => router.push(`/medicine/${encodeURIComponent(m.id)}`)} />;
   return (
     <Screen tab top={<TabTop />} title="Medicines" testID="library" gap={space[4]} onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
       <View style={{ flexDirection: "row", alignItems: "center", gap: space[2], minHeight: layout.primary, borderRadius: layout.radius, borderWidth: 1.5, borderColor: c.cardLine, backgroundColor: c.card, paddingLeft: space[4] }}>
@@ -44,19 +50,27 @@ export function LibraryScreen() {
       </View>
       {q.data ? <Chips scroll label="Group" options={[{ id: "All", name: "All" }, ...q.data.groups.map((g) => ({ id: g, name: g }))]} value={group} onChange={setGroup} /> : null}
       {q.isError ? (
-        soon ? <EmptyState mood="soon" title="Coming in the next update" body="The medicine library is ready on the website and arrives in the app soon." testID="soon" /> : <LoadError error={q.error} what="the medicine library" onRetry={() => void q.refetch()} />
+        soon ? <SoonState web="/library" /> : <LoadError error={q.error} what="the medicine library" onRetry={() => void q.refetch()} />
       ) : !q.data ? (
         <RowsSkeleton rows={9} />
       ) : rows.length ? (
         <>
-          <T v="small" tone="muted" num>
-            {rows.length} medicine{rows.length === 1 ? "" : "s"}
-          </T>
-          <RowList>
-            {rows.map((m) => (
-              <Row key={m.id} testID={`med-${m.id}`} icon={<ClassMark group={m.group} />} title={m.name} meta={`${m.cls}${m.dose ? ` · usual ${m.dose}` : ""}${m.brands.length ? ` · ${m.brands.slice(0, 2).join(", ")}` : ""}`} onPress={() => router.push(`/medicine/${encodeURIComponent(m.id)}`)} />
-            ))}
-          </RowList>
+          {recent.length ? (
+            <Section title="Recently opened" quiet>
+              <RowList>{recent.map((m) => row(m, "recent"))}</RowList>
+            </Section>
+          ) : null}
+          {/* A count only while searching or filtering: "3 match". */}
+          {filtering ? (
+            <T v="small" tone="muted" num testID="library-count">
+              {`${rows.length} match`}
+            </T>
+          ) : recent.length ? (
+            <T v="small" tone="muted">
+              All medicines
+            </T>
+          ) : null}
+          <RowList>{rows.map((m) => row(m))}</RowList>
         </>
       ) : (
         <EmptyState mood="missing" title="No medicine by that name" body="Check the spelling, or try the brand name or the condition." testID="library-empty" />

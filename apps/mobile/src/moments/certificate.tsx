@@ -9,7 +9,7 @@ import { useMe } from "@/api/queries";
 import { Button, T } from "@/ds";
 import { haptic } from "@/lib/haptics";
 import { Confetti, curves, dur, Stamp } from "@/motion";
-import { fonts, layout, space } from "@/theme";
+import { fixed, fonts, layout, space } from "@/theme";
 import { InkUnderline } from "./ink";
 import { InkDraw, PixelPop } from "./parts";
 
@@ -30,7 +30,7 @@ import { InkDraw, PixelPop } from "./parts";
 export const CERT_AT = { card: 300, frame: 550, stamp: 900, name: 1300 } as const;
 const RECEIPT = Easing.bezier(0.5, 0.3, 0.1, 1);
 
-const PAPER = { bg: "#fdf8ec", ink: "#1a1a1a", blue: "#1d44d8", soft: "#6b6b6b", lime: "#cdf24b" };
+const PAPER = { bg: "#fdf8ec", ink: "#1a1a1a", blue: fixed.blue, soft: "#6b6b6b", lime: fixed.lime };
 
 /** A beat: 0 to 1 after `delay`. Still: at 1 at once. Reduce Motion: a short fade (consumers use it for opacity only). */
 function useBeat(delay: number, duration: number, still: boolean, easing = curves.out): SharedValue<number> {
@@ -119,7 +119,7 @@ export function CertificateMoment({ cert, onClose, onShare }: { cert: Credential
       </Animated.View>
       <View pointerEvents="box-none" style={{ flex: 1, alignItems: "center", justifyContent: "center", paddingTop: insets.top, paddingBottom: insets.bottom, gap: space[5] }}>
         <Animated.View pointerEvents="none" style={titleStyle}>
-          <T v="h2" center style={{ color: "#ffffff" }} accessibilityRole="header">
+          <T v="h2" center style={{ color: fixed.white }} accessibilityRole="header">
             Certificate earned
           </T>
         </Animated.View>

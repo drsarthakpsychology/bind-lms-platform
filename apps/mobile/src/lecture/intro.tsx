@@ -4,7 +4,7 @@ import Animated, { useAnimatedStyle, useReducedMotion, useSharedValue, withDelay
 
 import { T } from "@/ds";
 import { curves, dur, RollingNumber } from "@/motion";
-import { fonts, space } from "@/theme";
+import { fixed, fonts, space } from "@/theme";
 import { InkUnderline } from "@/moments/ink";
 
 /**
@@ -17,7 +17,7 @@ import { InkUnderline } from "@/moments/ink";
  */
 export type IntroInfo = { number: number | null; week: number };
 
-const LIME = "#cdf24b";
+const LIME = fixed.lime;
 
 export function LectureIntro({ info, gone }: { info: IntroInfo; gone: boolean }) {
   const reduce = useReducedMotion();

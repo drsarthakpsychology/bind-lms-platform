@@ -78,9 +78,9 @@ export function Sheet({ open, onClose, title, children, testID }: { open: boolea
         <Animated.View style={[{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, backgroundColor: c.scrim }, scrim]}>
           <Pressable accessibilityRole="button" accessibilityLabel="Close" onPress={onClose} style={{ flex: 1 }} />
         </Animated.View>
-        <Animated.View testID={testID} accessibilityViewIsModal accessibilityLabel={title} style={[{ maxHeight: "85%", width: "100%", maxWidth: 640, alignSelf: "center", backgroundColor: c.card, borderTopLeftRadius: 20, borderTopRightRadius: 20 }, panel]}>
+        <Animated.View testID={testID} accessibilityViewIsModal accessibilityLabel={title} style={[{ maxHeight: "85%", width: "100%", maxWidth: 640, alignSelf: "center", backgroundColor: c.raised, borderTopLeftRadius: 20, borderTopRightRadius: 20 }, panel]}>
           <View {...grab} style={{ alignItems: "center", paddingTop: space[2], paddingBottom: space[3] }} accessibilityLabel="Drag down to close">
-            <View style={{ width: 36, height: 4, borderRadius: 2, backgroundColor: c.cardLine }} />
+            <View style={{ width: 36, height: 4, borderRadius: 2, backgroundColor: c.fieldLine }} />
           </View>
           <ScrollView bounces={false} contentContainerStyle={{ paddingHorizontal: layout.gutter, paddingBottom: insets.bottom + space[5], gap: space[3] }}>
             {title ? <T v="h2">{title}</T> : null}

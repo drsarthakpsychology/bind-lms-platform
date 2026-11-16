@@ -7,7 +7,7 @@ import { Search, X } from "lucide-react";
 import { searchMeds, type MedIndexRow } from "@/lib/meds/search";
 import type { MedGroup } from "@/lib/meds/types";
 import { GROUP_COLOR } from "@/lib/meds/colors";
-import { Chai } from "@/components/learn/chai";
+import { MemeArt } from "@/components/reactions/graphics";
 import { cn } from "@/lib/utils";
 
 /**
@@ -126,7 +126,7 @@ export function MedicineLibrary({ rows, groups, doses }: { rows: MedIndexRow[]; 
         </div>
       ) : (
         <div className="flex min-w-0 items-start gap-4">
-          <Chai mood="think" size={64} className="shrink-0" still />
+          <MemeArt sticker="screaming-point-cat" size={64} />
         <p className="max-w-[60ch] type-body text-muted-foreground">
           Nothing found. Try the generic name, a brand, or a condition like &quot;OCD&quot;. Rarer medicines are in the{" "}
           <Link href="/tools/psychopharm/learn" className="font-semibold text-link underline underline-offset-4">

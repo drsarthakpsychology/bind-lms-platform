@@ -6,7 +6,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { T } from "@/ds";
 import { haptic } from "@/lib/haptics";
 import { curves, dur, RollingNumber } from "@/motion";
-import { fonts, layout, space } from "@/theme";
+import { fixed, fonts, layout, space } from "@/theme";
 import { PixelFlame, PixelPop } from "./parts";
 
 /**
@@ -21,8 +21,8 @@ import { PixelFlame, PixelPop } from "./parts";
  */
 export const STREAK_AT = { flame: 200, roll: 560, land: 800, week: 700, copy: 900, auto: 3900 } as const;
 
-const LIME = "#cdf24b";
-const INK = "#111111";
+const LIME = fixed.lime;
+const INK = fixed.ink;
 const DAYS = ["S", "M", "T", "W", "T", "F", "S"];
 
 export function StreakPanel({ days, onClose }: { days: number; onClose: () => void }) {

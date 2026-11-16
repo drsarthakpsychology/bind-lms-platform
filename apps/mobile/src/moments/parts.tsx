@@ -7,7 +7,7 @@ import { T } from "@/ds/text";
 import { finite, safePath } from "@/lib/svg-safe";
 import { curves, dur } from "@/motion";
 import { inkPaths, type InkOpts, type Shape } from "@/sketch/ink";
-import { useTheme } from "@/theme";
+import { fixed, useTheme } from "@/theme";
 
 /**
  * Small drawing parts for the hero moments. They follow the motion plan's
@@ -91,7 +91,7 @@ export function PixelPop({ fire, reach = 48, cells = 24, size = 5 }: { fire: num
     p.set(withTiming(1, { duration: dur.burst, easing: curves.out }));
   }, [fire, reduce, p]);
   if (reduce || fire <= 0) return null;
-  const colors = c.dark ? [c.primary, c.sk.blue, "#ffffff"] : [c.primary, c.brand, c.ink];
+  const colors = c.dark ? [c.primary, c.sk.blue, fixed.white] : [c.primary, c.brand, c.ink];
   const half = Math.ceil(Math.min(24, cells) / 2);
   return (
     <View pointerEvents="none" style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, alignItems: "center", justifyContent: "center" }}>
@@ -116,7 +116,7 @@ function FlameCell({ x, y, row, cell, p, flick, tone }: { x: number; y: number; 
 }
 
 /** The pixel flame: builds from the bottom row up, flickers twice and stops. */
-export function PixelFlame({ size = 72, delay = 0, still = false, ink = "#111111", core = "#1d44d8" }: { size?: number; delay?: number; still?: boolean; ink?: string; core?: string }) {
+export function PixelFlame({ size = 72, delay = 0, still = false, ink = fixed.ink as string, core = fixed.blue as string }: { size?: number; delay?: number; still?: boolean; ink?: string; core?: string }) {
   const reduce = useReducedMotion();
   const p = useRun(delay, 6 * 60, still, curves.standard);
   const flick = useSharedValue(0);

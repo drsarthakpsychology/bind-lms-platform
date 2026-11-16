@@ -9,7 +9,7 @@ export type FormRowV2 = { id: string; title: string; open: boolean; answers: num
 const openStatus = (open: boolean) => <Status tone={open ? "ok" : "quiet"}>{open ? "Open" : "Closed"}</Status>;
 
 /** Forms (v2). One purpose: see answers. A table on wide screens, rows below; New form is the one primary action. */
-export function FormsListV2({ forms, lead, canEdit }: { forms: FormRowV2[]; lead: string; canEdit: boolean }) {
+export function FormsListV2({ forms, lead, canEdit }: { forms: FormRowV2[]; lead?: string; canEdit: boolean }) {
   return (
     <AdminPage
       title="Forms"
