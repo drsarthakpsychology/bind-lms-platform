@@ -26,7 +26,8 @@ export function Meme({ mood, sticker, size = 112, delay = 80, always, tilt = -4,
   // The tile is square; the sticker fits inside with a little room for its shadow.
   const inner = Math.round(size * 0.84);
   const scale = Math.min(inner / s.w, inner / s.h);
-  const good = mood === "win" || mood === "hello";
+  // Each mood sits on its own pastel (a colourful empty state, never loud): wins on lime, errors on peach, missing on lilac, coming soon on mint, the rest on blue.
+  const wash = mood === "win" || mood === "hello" || mood === "clear" ? c.areas.home.wash : mood === "error" || mood === "wait" ? c.areas.practise.wash : mood === "missing" || mood === "locked" ? c.areas.me.wash : mood === "soon" ? c.areas.library.wash : c.areas.learn.wash;
   return (
     <Animated.View entering={reduce ? presets.fade(delay) : presets.pop(delay)} style={style} testID={testID ?? "meme"}>
       <View
@@ -37,7 +38,7 @@ export function Meme({ mood, sticker, size = 112, delay = 80, always, tilt = -4,
           width: size,
           height: size,
           borderRadius: Math.round(size * 0.22),
-          backgroundColor: bg ?? (good ? c.successBg : c.tint),
+          backgroundColor: bg ?? wash,
           borderWidth: line ? 2 : 1,
           borderColor: line ?? c.hairline,
           alignItems: "center",

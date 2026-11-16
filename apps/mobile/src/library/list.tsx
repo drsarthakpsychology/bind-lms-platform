@@ -38,7 +38,7 @@ export function LibraryScreen() {
   const recent = filtering || !q.data ? [] : recentIds.map((id) => q.data!.rows.find((r) => r.id === id)).filter((r): r is NonNullable<typeof r> => !!r).slice(0, 3);
   const row = (m: (typeof rows)[number], prefix = "med") => <Row key={m.id} testID={`${prefix}-${m.id}`} icon={<ClassMark group={m.group} spine />} title={m.name} meta={`${m.cls}${m.dose ? ` · usual ${m.dose}` : ""}${m.brands.length ? ` · ${m.brands.slice(0, 2).join(", ")}` : ""}`} onPress={() => router.push(`/medicine/${encodeURIComponent(m.id)}`)} />;
   return (
-    <Screen tab top={<TabTop />} title="Medicines" testID="library" gap={space[4]} onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
+    <Screen tab area="library" top={<TabTop />} title="Medicines" testID="library" gap={space[4]} onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
       <View style={{ flexDirection: "row", alignItems: "center", gap: space[2], minHeight: layout.primary, borderRadius: layout.radius, borderWidth: 1.5, borderColor: c.cardLine, backgroundColor: c.card, paddingLeft: space[4] }}>
         <Search size={18} color={c.muted} />
         <TextInput testID="library-search" value={text} onChangeText={setText} placeholder="Name, brand, group or condition" placeholderTextColor={c.muted} accessibilityLabel="Search medicines by name, brand, group or use" autoCorrect={false} autoCapitalize="none" returnKeyType="search" maxFontSizeMultiplier={1.4} style={[scale.body, { flex: 1, color: c.ink, minHeight: layout.target }, { outlineStyle: "none" } as object]} />
@@ -48,7 +48,7 @@ export function LibraryScreen() {
           </Pressable>
         ) : null}
       </View>
-      {q.data ? <Chips scroll label="Group" options={[{ id: "All", name: "All" }, ...q.data.groups.map((g) => ({ id: g, name: g }))]} value={group} onChange={setGroup} /> : null}
+      {q.data ? <Chips scroll label="Group" options={[{ id: "All", name: "All" }, ...q.data.groups.map((g) => ({ id: g, name: g, mark: <ClassMark group={g} size={10} /> }))]} value={group} onChange={setGroup} /> : null}
       {q.isError ? (
         soon ? <SoonState web="/library" /> : <LoadError error={q.error} what="the medicine library" onRetry={() => void q.refetch()} />
       ) : !q.data ? (

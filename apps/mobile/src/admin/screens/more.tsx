@@ -36,7 +36,7 @@ export function AdminMoreScreen() {
       <View style={{ flexDirection: "row", alignItems: "center", gap: space[4] }}>
         <Avatar name={me?.name ?? me?.email ?? "A"} size={56} />
         <View style={{ flex: 1, minWidth: 0 }}>
-          <T v="h2">More</T>
+          <T v="h2">{me?.name || "More"}</T>
           {me?.email ? (
             <T v="small" tone="muted">
               {me.email}

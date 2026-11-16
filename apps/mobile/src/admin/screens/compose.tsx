@@ -8,7 +8,7 @@ import { space, useTheme } from "@/theme";
 import { adminCalls, useAdminAction, useBatches, useCohorts, useStudents } from "../api";
 import type { AdminSendBody } from "../contract";
 import { plural } from "../format";
-import { SearchBox, SelectRow } from "../kit";
+import { ConfirmSheet, SearchBox, SelectRow } from "../kit";
 import { useAdminRole } from "../role";
 
 type To = "students" | "cohort" | "everyone";
@@ -66,6 +66,7 @@ export function AdminComposeScreen() {
   const [email, setEmail] = React.useState(false);
   const [picking, setPicking] = React.useState(false);
   const [error, setError] = React.useState<string | null>(null);
+  const [confirming, setConfirming] = React.useState(false);
   const all = useStudents();
   const cohorts = useCohorts();
   const lists = useBatches();
@@ -85,17 +86,25 @@ export function AdminComposeScreen() {
     );
   }
 
-  const send = async () => {
+  // A whole cohort or everyone: one more look before it goes (a message cannot be taken back).
+  const wide = to !== "students";
+  const check = () => {
     const problem = checkMessage({ userIds, title, text });
     if (problem) return setError(problem);
     setError(null);
+    if (wide) setConfirming(true);
+    else void send();
+  };
+  const send = async () => {
     const body: AdminSendBody = to === "cohort" ? { to: "cohort", toId: cohort, title: title.trim(), body: text.trim(), alsoEmail: email } : to === "everyone" ? { to: "everyone", title: title.trim(), body: text.trim(), alsoEmail: email } : { to: "students", userIds: ids, title: title.trim(), body: text.trim(), alsoEmail: email };
     const r = await run("message", () => adminCalls.send(body), { done: (x) => `Sent to ${plural(x.sent || x.created, "student")}${x.emailed ? `, ${x.emailed} by email` : ""}` });
+    setConfirming(false);
     if (r) router.back();
   };
+  const whom = to === "everyone" ? "every student" : (cohortOptions.find((x) => x.id === cohort)?.name ?? "this cohort");
 
   return (
-    <Screen testID="compose" gap={space[5]} footer={<Button label={reach ? `Send to ${plural(reach, "student")}` : "Send"} busy={busy === "message"} onPress={() => void send()} testID="compose-send" />}>
+    <Screen testID="compose" gap={space[5]} footer={<Button label={reach ? `Send to ${plural(reach, "student")}` : "Send"} busy={busy === "message"} onPress={check} testID="compose-send" />}>
       <View style={{ gap: space[2] }}>
         <T v="small">To</T>
         <Chips
@@ -152,6 +161,16 @@ export function AdminComposeScreen() {
           {error}
         </T>
       ) : null}
+      <ConfirmSheet
+        open={confirming}
+        onClose={() => setConfirming(false)}
+        title={`Send to ${plural(reach, "student")}?`}
+        body={`"${title.trim()}" goes to ${whom}${email ? ", by email too" : ""}. It cannot be taken back.`}
+        confirm="Send"
+        busy={busy === "message"}
+        onConfirm={() => void send()}
+        testID="compose-confirm"
+      />
       <PickStudents open={picking} onClose={() => setPicking(false)} picked={ids} onChange={setIds} />
     </Screen>
   );

@@ -3,7 +3,7 @@ import { ExternalLink, Lock, Trophy } from "lucide-react-native";
 import * as React from "react";
 import { Linking, Pressable, View } from "react-native";
 
-import { EmptyState, Hero, LoadError, Row, RowList, Screen, Section, Skeleton, StillTrying, T } from "@/ds";
+import { EmptyState, Hero, IconDot, LoadError, Row, RowList, Screen, Section, Skeleton, StillTrying, T } from "@/ds";
 import { toast } from "@/ds/toast";
 import { config } from "@/lib/config";
 import { recentPractise, recentPrep } from "@/lib/recent";
@@ -92,7 +92,7 @@ export function PractiseRows({ rows, testPrefix = "practise" }: { rows: Practise
             {r.trailing}
           </T>
         ) : undefined;
-        return <Row key={r.id} testID={`${testPrefix}-${r.id}`} title={r.title} meta={r.meta ?? undefined} icon={own ? <EntryIcon icon={own.icon} color={c.muted} /> : r.kind === "board" ? <Trophy size={20} color={c.muted} /> : undefined} trailing={trailing} onPress={() => openRow(r)} />;
+        return <Row key={r.id} testID={`${testPrefix}-${r.id}`} title={r.title} meta={r.meta ?? undefined} icon={own ? <IconDot render={(col) => <EntryIcon icon={own.icon} size={18} color={col} />} /> : r.kind === "board" ? <IconDot icon={Trophy} /> : undefined} trailing={trailing} onPress={() => openRow(r)} />;
       })}
     </RowList>
   );
@@ -112,7 +112,6 @@ const pctRight = (s: PrepSubject) => (s.stats.answered ? s.stats.right / s.stats
 
 /** Exam Prep on the hub: the subject you were on first, then your weakest, then ones not started. */
 function PrepRows({ home, fallback }: { home: PrepHome | undefined; fallback: PractiseRow[] }) {
-  const c = useTheme();
   const opened = recentPrep.use();
   if (!home || !home.subjects.length) return <PractiseRows rows={fallback.slice(0, PER_GROUP)} />;
   const last = home.resume?.subject ?? opened[0] ?? null;
@@ -138,7 +137,7 @@ function PrepRows({ home, fallback }: { home: PrepHome | undefined; fallback: Pr
             testID={`hub-prep-${s.id}`}
             title={s.title}
             meta={meta}
-            icon={<EntryIcon icon="list" color={c.muted} />}
+            icon={<IconDot render={(col) => <EntryIcon icon="list" size={18} color={col} />} />}
             onPress={() => {
               recentPrep.add(s.id);
               router.push(carry && resume ? resume : `/prep/${encodeURIComponent(s.id)}`);
@@ -183,9 +182,8 @@ export function PractiseHub() {
   const shown = new Set(["daily", ...pick.map((p) => p.key)]);
   const cases = s ? pickRows(s.cases, opened, shown) : [];
   const games = s ? pickRows(s.games, opened, shown) : [];
-  const c = useTheme();
   return (
-    <Screen tab top={<TabTop />} title="Practise" testID="practise" onRefresh={() => void Promise.all([q.refetch(), prep.refetch()])} refreshing={q.isRefetching}>
+    <Screen tab area="practise" top={<TabTop />} title="Practise" testID="practise" onRefresh={() => void Promise.all([q.refetch(), prep.refetch()])} refreshing={q.isRefetching}>
       {q.isError ? (
         <LoadError error={q.error} what="Practise" onRetry={() => void q.refetch()} />
       ) : q.isLoading || !s ? (
@@ -202,7 +200,7 @@ export function PractiseHub() {
             <Section title="Pick up again">
               <RowList>
                 {pick.map((p) => (
-                  <Row key={p.key} testID={`hub-pick-${p.key}`} title={p.title} meta={p.meta} icon={p.icon ? <EntryIcon icon={p.icon} color={c.muted} /> : undefined} onPress={p.open} />
+                  <Row key={p.key} testID={`hub-pick-${p.key}`} title={p.title} meta={p.meta} icon={p.icon ? <IconDot render={(col) => <EntryIcon icon={p.icon!} size={18} color={col} />} /> : undefined} onPress={p.open} />
                 ))}
               </RowList>
             </Section>
@@ -243,7 +241,7 @@ export function PractiseGroup({ group }: { group: string }) {
   const key = (group in GROUPS ? group : "cases") as keyof typeof GROUPS;
   const rows = s ? s[key] : [];
   return (
-    <Screen testID={`practise-all-${key}`} title={GROUPS[key]} onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
+    <Screen area="practise" testID={`practise-all-${key}`} title={GROUPS[key]} onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
       {q.isError ? (
         <LoadError error={q.error} what={GROUPS[key]} onRetry={() => void q.refetch()} />
       ) : !s ? (

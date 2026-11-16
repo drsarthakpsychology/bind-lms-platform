@@ -6,11 +6,10 @@ import Animated, { useAnimatedStyle, useReducedMotion, useSharedValue, withSprin
 
 import { crumb } from "@/lib/breadcrumb";
 import { haptic } from "@/lib/haptics";
-import { presets, ProgressFill, RollingNumber, Shimmer, SkeletonIn, springs, staggerDelay, usePressScale } from "@/motion";
+import { FlowGap, presets, ProgressFill, RollingNumber, Shimmer, SkeletonIn, springs, staggerDelay, usePressScale } from "@/motion";
 import type { StateMood } from "@/lib/reactions/stickers";
-import { layout, space, useTheme } from "@/theme";
+import { layout, space, useAccent, useTheme } from "@/theme";
 import { Button } from "./button";
-import { StackGap } from "./gap";
 import { Meme } from "./meme";
 import { T } from "./text";
 
@@ -39,7 +38,23 @@ export function Section({ title, action, children, quiet, style }: { title?: str
           {action}
         </View>
       ) : null}
-      <StackGap.Provider value={(StyleSheet.flatten(style)?.gap as number | undefined) ?? space[3]}>{children}</StackGap.Provider>
+      <FlowGap.Provider value={(StyleSheet.flatten(style)?.gap as number | undefined) ?? space[3]}>{children}</FlowGap.Provider>
+    </View>
+  );
+}
+
+/* ------------------------------------------------------------- IconDot */
+
+/**
+ * A row's icon on a soft circle in the screen's accent family (a pastel wash
+ * with the deep colour on it). Outside a tab screen it stays grey. Pass a
+ * lucide icon, or `render` for an icon that takes a colour.
+ */
+export function IconDot({ icon: Icon, render, size = 36 }: { icon?: React.ComponentType<{ size?: number; color?: string; strokeWidth?: number }>; render?: (color: string) => React.ReactNode; size?: number }) {
+  const a = useAccent();
+  return (
+    <View accessible={false} importantForAccessibility="no-hide-descendants" style={{ width: size, height: size, borderRadius: size / 2, backgroundColor: a.wash, alignItems: "center", justifyContent: "center" }}>
+      {render ? render(a.deep) : Icon ? <Icon size={Math.round(size * 0.5)} color={a.deep} strokeWidth={2} /> : null}
     </View>
   );
 }
@@ -93,7 +108,7 @@ export function Row({ title, meta, icon, trailing, onPress, chevron, unread, cur
   const c = useTheme();
   const body = (
     <>
-      {icon ? <View style={{ width: 24, alignItems: "center" }}>{icon}</View> : null}
+      {icon ? <View style={{ minWidth: 24, alignItems: "center" }}>{icon}</View> : null}
       <View style={{ flex: 1, minWidth: 0, gap: 2 }}>
         <View style={{ flexDirection: "row", alignItems: "center", gap: space[2] }}>
           {unread ? <View style={{ width: 8, height: 8, borderRadius: 4, backgroundColor: c.accent }} /> : null}
@@ -287,6 +302,8 @@ function PressCard({ children, onPress, label, base, style, testID }: { children
 
 /** A number and its label, inline. Several sit in one row with gaps, no boxes. */
 export function Stat({ value, label, pixel }: { value: string; label: string; /** The pixel font, for scores only. */ pixel?: boolean }) {
+  // In a tab screen the number takes the area's deep colour.
+  const tone = useAccent().on ? ("accent" as const) : undefined;
   // A plain number (with an optional sign, unit or %) rolls into place.
   const frac = /^(\d+)\/(\d+)$/.exec(value);
   const m = /^(\D{0,2})(\d{1,3}(?:,\d{3})*|\d+)(\D{0,3})$/.exec(value);
@@ -294,15 +311,15 @@ export function Stat({ value, label, pixel }: { value: string; label: string; /*
     <View style={{ minWidth: 0, flexShrink: 1 }} accessible accessibilityLabel={`${label}: ${value}`}>
       {frac ? (
         <View style={{ flexDirection: "row", alignItems: "flex-end" }}>
-          <RollingNumber v={pixel ? "score" : "h2"} value={Number(frac[1] ?? 0)} />
-          <T v={pixel ? "score" : "h2"} num>
+          <RollingNumber v={pixel ? "score" : "h2"} tone={tone} value={Number(frac[1] ?? 0)} />
+          <T v={pixel ? "score" : "h2"} tone={tone} num>
             /{frac[2]}
           </T>
         </View>
       ) : m ? (
-        <RollingNumber v={pixel ? "score" : "h2"} prefix={m[1] ?? ""} suffix={m[3] ?? ""} value={Number((m[2] ?? "0").replace(/,/g, ""))} format={m[2]?.includes(",") ? (n) => n.toLocaleString("en-IN") : undefined} />
+        <RollingNumber v={pixel ? "score" : "h2"} tone={tone} prefix={m[1] ?? ""} suffix={m[3] ?? ""} value={Number((m[2] ?? "0").replace(/,/g, ""))} format={m[2]?.includes(",") ? (n) => n.toLocaleString("en-IN") : undefined} />
       ) : (
-        <T v={pixel ? "score" : "h2"} num>
+        <T v={pixel ? "score" : "h2"} tone={tone} num>
           {value}
         </T>
       )}
@@ -314,11 +331,13 @@ export function Stat({ value, label, pixel }: { value: string; label: string; /*
 }
 
 /** A thin line that fills from the left (700ms, strong ease-out; transform only). `value` is 0 to 100. */
-export function ProgressLine({ value, label, height = 6 }: { value: number; label?: string; height?: number }) {
+export function ProgressLine({ value, label, height = 6, color, track }: { value: number; label?: string; height?: number; color?: string; track?: string }) {
+  // In a tab screen the fill takes the area's deep colour on its wash.
+  const a = useAccent();
   const pct = Math.max(0, Math.min(100, Math.round(value)));
   return (
     <View accessible accessibilityRole="progressbar" accessibilityLabel={label ?? "Progress"} accessibilityValue={{ min: 0, max: 100, now: pct }} style={{ alignSelf: "stretch" }}>
-      <ProgressFill pct={pct} height={height} />
+      <ProgressFill pct={pct} height={height} color={color ?? (a.on ? a.deep : undefined)} track={track ?? (a.on ? a.wash : undefined)} />
     </View>
   );
 }
@@ -388,8 +407,12 @@ export function LoadError({ onRetry, what = "this", error }: { onRetry: () => vo
 /* ------------------------------------------------------- Chips, TabRow */
 
 /** One chip: sinks while pressed. */
-function Chip({ name, on, onPress }: { name: string; on: boolean; onPress: () => void }) {
+function Chip({ name, on, onPress, mark }: { name: string; on: boolean; onPress: () => void; mark?: React.ReactNode }) {
   const c = useTheme();
+  const a = useAccent();
+  // In a tab screen the picked chip fills with the area's deep colour; elsewhere ink.
+  const fill = a.on ? a.deep : c.ink;
+  const onFill = a.on ? a.onDeep : c.bg;
   const { style, handlers } = usePressScale(0.94);
   return (
     <Pressable accessibilityRole="radio" accessibilityState={{ selected: on }} accessibilityLabel={name} onPress={onPress} {...handlers} style={{ minHeight: layout.target, justifyContent: "center", maxWidth: "100%" }}>
@@ -402,13 +425,17 @@ function Chip({ name, on, onPress }: { name: string; on: boolean; onPress: () =>
             justifyContent: "center",
             borderRadius: 18,
             borderWidth: 1.5,
-            borderColor: on ? c.ink : c.cardLine,
-            backgroundColor: on ? c.ink : "transparent",
+            borderColor: on ? fill : c.cardLine,
+            backgroundColor: on ? fill : "transparent",
+            flexDirection: "row",
+            alignItems: "center",
+            gap: space[2],
           },
           style,
         ]}
       >
-        <T v="small" style={{ color: on ? c.bg : c.ink }}>
+        {mark}
+        <T v="small" style={{ color: on ? onFill : c.ink }}>
           {name}
         </T>
       </Animated.View>
@@ -417,13 +444,14 @@ function Chip({ name, on, onPress }: { name: string; on: boolean; onPress: () =>
 }
 
 /** Filter chips that wrap; with `scroll`, one row that slides sideways (filters above a list). */
-export function Chips<V extends string>({ options, value, onChange, label, scroll }: { options: { id: V; name: string }[]; value: V; onChange: (v: V) => void; label: string; scroll?: boolean }) {
+export function Chips<V extends string>({ options, value, onChange, label, scroll }: { options: { id: V; name: string; /** A small mark before the name (a family colour dot); the name is always written. */ mark?: React.ReactNode }[]; value: V; onChange: (v: V) => void; label: string; scroll?: boolean }) {
   const row = (
     <View accessibilityRole="radiogroup" accessibilityLabel={label} style={{ flexDirection: "row", flexWrap: scroll ? "nowrap" : "wrap", gap: space[2] }}>
       {options.map((o) => (
         <Chip
           key={o.id}
           name={o.name}
+          mark={o.mark}
           on={o.id === value}
           onPress={() => {
             haptic.select();
