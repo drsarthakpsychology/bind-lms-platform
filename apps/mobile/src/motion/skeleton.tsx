@@ -47,6 +47,13 @@ export function Shimmer() {
   );
 }
 
+/**
+ * The gap of the column a `Loaded` sits in (a `Screen`, a `Swap`). Loaded
+ * content often is several parts side by side in that column; `Reveal` wraps
+ * them in one view, so it keeps the same gap or the parts would touch.
+ */
+export const FlowGap = React.createContext<number | undefined>(undefined);
+
 /** True inside `LoadSwap`, which has already waited the 120ms. */
 const Gated = React.createContext(false);
 
@@ -77,7 +84,12 @@ export function Reveal({ children, style }: { children?: React.ReactNode; style?
     if (!reduce) v.set(withTiming(1, { duration: dur.enter, easing: curves.out }));
   }, [reduce, v]);
   const anim = useAnimatedStyle(() => ({ opacity: v.value, transform: [{ translateY: (1 - v.value) * shift.reveal }] }));
-  return <Animated.View style={[style, anim]}>{children}</Animated.View>;
+  const gap = React.useContext(FlowGap);
+  return (
+    <Animated.View style={[gap === undefined ? null : { gap }, style, anim]}>
+      <FlowGap.Provider value={undefined}>{children}</FlowGap.Provider>
+    </Animated.View>
+  );
 }
 
 export type LoadPhase = "wait" | "skeleton" | "content";

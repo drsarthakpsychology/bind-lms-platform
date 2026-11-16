@@ -1,12 +1,12 @@
 import { Bell, CloudOff, Search } from "lucide-react-native";
 import * as React from "react";
-import { Pressable, RefreshControl, ScrollView, View, type StyleProp, type ViewStyle } from "react-native";
+import { Pressable, RefreshControl, ScrollView, StyleSheet, View, type StyleProp, type ViewStyle } from "react-native";
 import Animated, { useReducedMotion } from "react-native-reanimated";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { useOffline } from "@/api/online";
 import { haptic } from "@/lib/haptics";
-import { presets, usePressScale } from "@/motion";
+import { FlowGap, presets, usePressScale } from "@/motion";
 import { fonts, layout, space, useTheme } from "@/theme";
 import { Button } from "./button";
 import { ProgressLine } from "./parts";
@@ -143,6 +143,8 @@ export function Screen({ children, title, lead, top, footer, onRefresh, refreshi
   useBottomChrome(footer ? footH : 0, !!tab, kb);
   const side = bleed ? 0 : layout.gutter;
   const padBottom = (footer || tab ? 0 : insets.bottom) + space[6];
+  const own = StyleSheet.flatten(contentStyle)?.gap;
+  const flowGap = typeof own === "number" ? own : gap;
   const inner = (
     <View style={[{ width: "100%", maxWidth: bleed ? undefined : layout.readingWidth + side * 2, alignSelf: "center", paddingLeft: Math.max(side, bleed ? 0 : insets.left), paddingRight: Math.max(side, bleed ? 0 : insets.right), paddingTop: space[5], paddingBottom: padBottom, gap }, contentStyle]}>
       {title || lead ? (
@@ -160,7 +162,7 @@ export function Screen({ children, title, lead, top, footer, onRefresh, refreshi
           ) : null}
         </View>
       ) : null}
-      {children}
+      <FlowGap.Provider value={flowGap}>{children}</FlowGap.Provider>
     </View>
   );
   return (

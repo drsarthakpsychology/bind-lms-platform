@@ -1,5 +1,5 @@
 import * as React from "react";
-import { View, type StyleProp, type ViewStyle } from "react-native";
+import { StyleSheet, View, type StyleProp, type ViewStyle } from "react-native";
 import Animated, {
   useAnimatedReaction,
   useAnimatedStyle,
@@ -10,6 +10,7 @@ import Animated, {
 } from "react-native-reanimated";
 import { scheduleOnRN } from "react-native-worklets";
 
+import { FlowGap } from "./skeleton";
 import { curves, dur, shift } from "./tokens";
 
 type Dir = -1 | 0 | 1;
@@ -65,7 +66,9 @@ export function Swap({ k, dir = 0, style, testID, accessibilityLiveRegion, child
     ...st.out.map((o) => ({ key: o.k, n: o.n, live: false })),
     { key: st.cur, n: st.n, live: true },
   ];
+  const gap = StyleSheet.flatten(style)?.gap;
   return (
+    <FlowGap.Provider value={typeof gap === "number" ? gap : undefined}>
     <View testID={testID} accessibilityLiveRegion={accessibilityLiveRegion}>
       {layers.map((l) => (
         <Layer
@@ -82,6 +85,7 @@ export function Swap({ k, dir = 0, style, testID, accessibilityLiveRegion, child
         </Layer>
       ))}
     </View>
+    </FlowGap.Provider>
   );
 }
 
