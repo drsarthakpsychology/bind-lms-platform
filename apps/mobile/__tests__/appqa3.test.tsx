@@ -79,3 +79,19 @@ describe("lecture player", () => {
     expect(atEnd(0, 0)).toBe(false);
   });
 });
+
+describe("links to other apps", () => {
+  it("says so when no app on the phone opens the link (the tap did nothing)", async () => {
+    const { Linking } = jest.requireActual<typeof import("react-native")>("react-native");
+    const { toast } = jest.requireActual<typeof import("@/ds/toast")>("@/ds/toast");
+    const { openLink } = jest.requireActual<typeof import("@/lib/open")>("@/lib/open");
+    const open = jest.spyOn(Linking, "openURL").mockRejectedValue(new Error("No Activity found to handle Intent"));
+    const show = jest.spyOn(toast, "show").mockImplementation(() => undefined);
+    await expect(openLink("mailto:a@b.c")).resolves.toBe(false);
+    expect(show).toHaveBeenCalledWith("No email app on this phone opens this.");
+    open.mockResolvedValue(true);
+    await expect(openLink("https://wa.me/919999999999")).resolves.toBe(true);
+    open.mockRestore();
+    show.mockRestore();
+  });
+});

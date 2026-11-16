@@ -1,9 +1,10 @@
 import { File, Paths } from "expo-file-system";
+import { openLink } from "@/lib/open";
 import { router } from "expo-router";
 import * as Sharing from "expo-sharing";
 import { Check } from "lucide-react-native";
 import * as React from "react";
-import { Image, Linking, PixelRatio, Share, useWindowDimensions, View } from "react-native";
+import { Image, PixelRatio, Share, useWindowDimensions, View } from "react-native";
 
 import { messageOf } from "@/api/errors";
 import { Button, Chips, EmptyState, Field, Screen, SwitchRow, T } from "@/ds";
@@ -123,7 +124,7 @@ export function AdminAnyoneScreen() {
           </T>
         </View>
         <Facts items={[{ label: "Number", value: done.credentialId }]} />
-        <Button kind="quiet" label="Open the check page" onPress={() => void Linking.openURL(done.verifyUrl)} testID="anyone-verify" />
+        <Button kind="quiet" label="Open the check page" onPress={() => void openLink(done.verifyUrl)} testID="anyone-verify" />
         <Button kind="text" full label="Share the check page" onPress={() => void Share.share({ message: done.verifyUrl })} />
       </Screen>
     );

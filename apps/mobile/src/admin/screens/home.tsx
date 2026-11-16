@@ -1,7 +1,8 @@
 import { router } from "expo-router";
+import { openLink } from "@/lib/open";
 import { PenLine } from "lucide-react-native";
 import * as React from "react";
-import { Linking, Pressable, View } from "react-native";
+import { Pressable, View } from "react-native";
 
 import { Button, EmptyState, Row, RowList, RowsSkeleton, Screen, T } from "@/ds";
 import { config } from "@/lib/config";
@@ -23,7 +24,7 @@ function TodoRow({ count, label, detail, onPress, testID }: { count: number; lab
 function openTodo(web: string) {
   const to = todoHref(web);
   if ("app" in to) router.push(to.app as never);
-  else void Linking.openURL(`${config.site}${to.web}`);
+  else void openLink(`${config.site}${to.web}`);
 }
 
 /** Admin Home: what needs a look right now, how many are on VIBHA (the list is in Activity), how each cohort is doing. */

@@ -1,6 +1,7 @@
 import { KeyRound, Plus } from "lucide-react-native";
+import { openLink } from "@/lib/open";
 import * as React from "react";
-import { Linking, Share, View } from "react-native";
+import { Share, View } from "react-native";
 
 import { Button, EmptyState, Field, Row, RowList, RowsSkeleton, Screen, Sheet, T } from "@/ds";
 import { toast } from "@/ds/toast";
@@ -154,7 +155,7 @@ export function AdminSystemScreen() {
                   </View>
                 </Block>
               ) : null}
-              <Button kind="text" full label="Admins and switches on the website" onPress={() => void Linking.openURL(`${config.site}/admin/management`)} />
+              <Button kind="text" full label="Admins and switches on the website" onPress={() => void openLink(`${config.site}/admin/management`)} />
             </>
           );
         }}

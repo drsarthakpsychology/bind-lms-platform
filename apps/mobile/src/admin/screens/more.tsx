@@ -1,8 +1,9 @@
 import { useQueryClient } from "@tanstack/react-query";
+import { openLink } from "@/lib/open";
 import { router } from "expo-router";
 import { Award, Bell, BellRing, BookOpen, CircleHelp, ClipboardList, FileCheck, Gauge, GraduationCap, LogOut, MessageCircleQuestion, Radar, Settings, Users } from "lucide-react-native";
 import * as React from "react";
-import { Linking, View } from "react-native";
+import { View } from "react-native";
 
 import { messageOf } from "@/api/errors";
 import { session } from "@/auth";
@@ -29,7 +30,7 @@ export function AdminMoreScreen() {
   const [out, setOut] = React.useState(false);
   const icon = { size: 20, color: c.muted };
   const n = (x: number | undefined) => (x ? String(x) : undefined);
-  const web = (path: string) => () => void Linking.openURL(`${config.site}${path}`);
+  const web = (path: string) => () => void openLink(`${config.site}${path}`);
   return (
     <Screen tab top={<AdminTop />} testID="admin-more">
       <View style={{ flexDirection: "row", alignItems: "center", gap: space[4] }}>

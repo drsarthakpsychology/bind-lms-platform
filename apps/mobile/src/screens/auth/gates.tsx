@@ -1,5 +1,6 @@
 import * as React from "react";
-import { Linking, View } from "react-native";
+import { openLink } from "@/lib/open";
+import { View } from "react-native";
 import Animated, { Easing, FadeIn, FadeInDown, FadeOut, useAnimatedStyle, useReducedMotion, useSharedValue, withDelay, withSpring, withTiming } from "react-native-reanimated";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
@@ -186,7 +187,7 @@ export function UpdateScreen({ storeUrl }: { storeUrl: string | null }) {
   const cfg = useConfig();
   const url = storeUrl ?? cfg.data?.storeUrl?.android ?? "https://play.google.com/store/apps/details?id=com.vibhapsychology.app";
   return (
-    <Gate testID="update" footer={<Button label="Update the app" onPress={() => void Linking.openURL(url)} testID="update-button" />}>
+    <Gate testID="update" footer={<Button label="Update the app" onPress={() => void openLink(url)} testID="update-button" />}>
       <EmptyState mood="wait" title="Time for an update" body="This version of the app is too old to carry on. The update takes a minute and your progress is safe." />
     </Gate>
   );
@@ -200,7 +201,7 @@ export function PausedScreen({ message }: { message: string }) {
       testID="paused"
       footer={
         <>
-          <Button kind="quiet" label="Message us on WhatsApp" onPress={() => void Linking.openURL(BRAND.whatsapp)} />
+          <Button kind="quiet" label="Message us on WhatsApp" onPress={() => void openLink(BRAND.whatsapp)} />
           <Button kind="text" full busy={busy} label="Try again" onPress={() => { setBusy(true); void session.refreshMe().finally(() => setBusy(false)); }} />
           <Button kind="text" full label="Sign out" onPress={() => { session.clearGate(); void session.signOut(); }} />
         </>

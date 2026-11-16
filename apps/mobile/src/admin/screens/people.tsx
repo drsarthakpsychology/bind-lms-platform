@@ -1,7 +1,8 @@
 import { router, useLocalSearchParams } from "expo-router";
+import { openLink } from "@/lib/open";
 import { Mail, MessageCircle, Phone } from "lucide-react-native";
 import * as React from "react";
-import { Linking, View } from "react-native";
+import { View } from "react-native";
 
 import { Button, Chips, EmptyState, Field, Row, RowList, RowsSkeleton, Screen, Sheet, T } from "@/ds";
 import { messageOf } from "@/api/errors";
@@ -244,7 +245,7 @@ function Pipeline({ initialView }: { initialView: PeopleView }) {
                 </T>
                 <RowList>
                   {(wa ?? []).map((l) => (
-                    <Row key={l.key} title={l.name} meta={l.url ? "Open in WhatsApp" : "No usable number"} onPress={l.url ? () => void Linking.openURL(l.url!) : undefined} testID={`wa-${l.key}`} />
+                    <Row key={l.key} title={l.name} meta={l.url ? "Open in WhatsApp" : "No usable number"} onPress={l.url ? () => void openLink(l.url!) : undefined} testID={`wa-${l.key}`} />
                   ))}
                 </RowList>
               </View>
@@ -362,9 +363,9 @@ export function AdminPersonScreen() {
               </View>
             </View>
             <View style={{ flexDirection: "row", flexWrap: "wrap", gap: space[2] }}>
-              {p.whatsappUrl || p.phone ? <SmallButton label="WhatsApp" icon={<MessageCircle {...icon} />} onPress={() => void Linking.openURL(p.whatsappUrl ?? whatsapp(p.phone!))} testID="person-whatsapp" /> : null}
-              {p.phone ? <SmallButton label="Call" icon={<Phone {...icon} />} onPress={() => void Linking.openURL(`tel:+91${p.phone!.replace(/\D/g, "").slice(-10)}`)} /> : null}
-              <SmallButton label="Email" icon={<Mail {...icon} />} onPress={() => void Linking.openURL(`mailto:${p.email}`)} />
+              {p.whatsappUrl || p.phone ? <SmallButton label="WhatsApp" icon={<MessageCircle {...icon} />} onPress={() => void openLink(p.whatsappUrl ?? whatsapp(p.phone!))} testID="person-whatsapp" /> : null}
+              {p.phone ? <SmallButton label="Call" icon={<Phone {...icon} />} onPress={() => void openLink(`tel:+91${p.phone!.replace(/\D/g, "").slice(-10)}`)} /> : null}
+              <SmallButton label="Email" icon={<Mail {...icon} />} onPress={() => void openLink(`mailto:${p.email}`)} />
               {p.studentId ? <SmallButton label="Open student" onPress={() => openStudent(p.studentId!)} /> : null}
             </View>
             {canWrite ? (

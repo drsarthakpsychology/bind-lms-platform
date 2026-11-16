@@ -1,7 +1,8 @@
 import { router, useLocalSearchParams } from "expo-router";
+import { openLink } from "@/lib/open";
 import { PenLine } from "lucide-react-native";
 import * as React from "react";
-import { Linking, View } from "react-native";
+import { View } from "react-native";
 
 import { Button, EmptyState, Field, Row, RowList, RowsSkeleton, Screen, T } from "@/ds";
 import { space, useTheme } from "@/theme";
@@ -116,7 +117,7 @@ export function AdminThreadScreen() {
               <View style={{ flexDirection: "row", flexWrap: "wrap", gap: space[2], paddingTop: space[1] }}>
                 {t.studentId ? <SmallButton label="Open student" onPress={() => openStudent(t.studentId!)} /> : null}
                 {t.email ? <SmallButton label="Open in People" onPress={() => router.push(`/admin/person/${encodeURIComponent(t.email)}`)} /> : null}
-                {t.phone ? <SmallButton label="WhatsApp" onPress={() => void Linking.openURL(whatsapp(t.phone!))} /> : null}
+                {t.phone ? <SmallButton label="WhatsApp" onPress={() => void openLink(whatsapp(t.phone!))} /> : null}
               </View>
             </View>
             <View style={{ gap: space[5] }}>

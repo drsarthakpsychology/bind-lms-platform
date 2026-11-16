@@ -1,7 +1,8 @@
 import { router, useLocalSearchParams } from "expo-router";
+import { openLink } from "@/lib/open";
 import { Bell, CheckCircle2, Circle, Mail, MessageSquare, Reply } from "lucide-react-native";
 import * as React from "react";
-import { Linking, Share, View } from "react-native";
+import { Share, View } from "react-native";
 
 import { Button, Row, RowList, RowsSkeleton, Screen, Sheet, T } from "@/ds";
 import { space, useTheme } from "@/theme";
@@ -34,7 +35,7 @@ export function LinkSheet({ link, name, mobile, onClose, title = "Login link sen
             {link.url}
           </T>
         ) : null}
-        {link?.url && mobile ? <Button label="Send on WhatsApp" onPress={() => void Linking.openURL(`${whatsapp(mobile)}?text=${encodeURIComponent(`Your VIBHA login link: ${link.url}`)}`)} /> : null}
+        {link?.url && mobile ? <Button label="Send on WhatsApp" onPress={() => void openLink(`${whatsapp(mobile)}?text=${encodeURIComponent(`Your VIBHA login link: ${link.url}`)}`)} /> : null}
         {link?.url ? (
           <Button kind="quiet" label="Share the link" onPress={() => void Share.share({ message: link.url! }).catch(() => undefined)} />
         ) : null}
@@ -75,8 +76,8 @@ function Overview({ r, d }: { r: AdminStudentRow; d: StudentDetail | null }) {
           items={[
             { label: "Access", value: r.scope === "full" ? "Full platform" : "Lectures only" },
             { label: "Access ends", value: r.expiresAt ? day(r.expiresAt) : "No end date" },
-            { label: "Mobile", value: r.mobileNumber ? `+91 ${r.mobileNumber}` : "Not given", onPress: r.mobileNumber ? () => void Linking.openURL(whatsapp(r.mobileNumber!)) : undefined },
-            { label: "Email", value: r.email, onPress: () => void Linking.openURL(`mailto:${r.email}`) },
+            { label: "Mobile", value: r.mobileNumber ? `+91 ${r.mobileNumber}` : "Not given", onPress: r.mobileNumber ? () => void openLink(whatsapp(r.mobileNumber!)) : undefined },
+            { label: "Email", value: r.email, onPress: () => void openLink(`mailto:${r.email}`) },
             ...(d?.profile.created_at ? [{ label: "Joined", value: day(d.profile.created_at) }] : []),
           ]}
         />
@@ -122,7 +123,7 @@ function Access({ r, phone }: { r: AdminStudentRow; phone?: Phone }) {
         {canWrite ? <SmallButton label="Allow one more phone change" testID="access-phone" busy={busy === "allow-phone-change"} onPress={() => void run("allow-phone-change", () => adminCalls.allowPhoneChange(r.id), { done: "They can change phone again now" })} /> : null}
       </Block>
       <Block title="Switch sections off">
-        <Row title="Section switches" meta="On the website: hide Notes, Games or a practice tool for this student" onPress={() => void Linking.openURL(`https://vibhapsychology.com/admin/students/${r.id}?tab=access`)} />
+        <Row title="Section switches" meta="On the website: hide Notes, Games or a practice tool for this student" onPress={() => void openLink(`https://vibhapsychology.com/admin/students/${r.id}?tab=access`)} />
       </Block>
       <ConfirmSheet open={lockOpen} onClose={() => setLockOpen(false)} title={`Lock ${r.name}?`} body="They are signed out and cannot sign in until you unlock them." confirm="Lock account" danger busy={busy === "lock"} reason={{ label: "Reason (only admins see it)" }} onConfirm={(reason) => void run("lock", () => adminCalls.lock(r.id, reason || undefined), { done: `${r.name} is locked` }).then(() => setLockOpen(false))} testID="confirm-lock" />
       <LinkSheet link={link} name={r.name} mobile={r.mobileNumber} onClose={() => setLink(null)} />

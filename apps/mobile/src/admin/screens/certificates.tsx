@@ -1,4 +1,5 @@
 import { router, useLocalSearchParams } from "expo-router";
+import { openLink as openUrl } from "@/lib/open";
 import { Award, FileDown, Medal, PenLine, Plus, UserRoundPlus } from "lucide-react-native";
 import * as React from "react";
 import { Image, Linking, View } from "react-native";
@@ -84,7 +85,7 @@ function CertSheet({ x, onClose, onRevoke }: { x: CertRow | null; onClose: () =>
           ]}
         />
         <View style={{ flexDirection: "row", flexWrap: "wrap", gap: space[2] }}>
-          <SmallButton label="Check page" onPress={() => void Linking.openURL(x.verifyUrl || `${config.site}/verify/${encodeURIComponent(x.credentialId)}`)} />
+          <SmallButton label="Check page" onPress={() => void openUrl(x.verifyUrl || `${config.site}/verify/${encodeURIComponent(x.credentialId)}`)} />
           {x.hasPdf ? <SmallButton label="PDF" icon={<FileDown size={16} />} onPress={() => void openLink(() => adminCalls.certificatePdf(x.credentialId))} testID="cert-pdf" /> : null}
         </View>
         {canWrite && live ? (
