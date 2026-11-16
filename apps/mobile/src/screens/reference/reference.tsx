@@ -7,6 +7,7 @@ import type { RefEntry, RefIndexItem, RefKind } from "@/api/adapt-learn";
 import { useTerm, useTerms } from "@/api/learn";
 import { Button, Chips, EmptyState, Loaded, LoadError, Row, RowList, RowsSkeleton, Screen, Section, Sheet, Skeleton, T, Tint } from "@/ds";
 import { Enter, Press, Reveal } from "@/motion";
+import { ReadingSize } from "@/lib/reading";
 import { Rich } from "@/study/rich";
 import { layout, space, type as scale, useTheme } from "@/theme";
 
@@ -44,6 +45,13 @@ export function findRef(items: RefIndexItem[], word: string): RefIndexItem | nul
   const hits = searchRefs(items, word);
   const best = hits[0];
   return best && norm(best.label) === norm(word) ? best : best && best.aliases.map(norm).includes(norm(word)) ? best : (hits.length === 1 ? best : null) ?? null;
+}
+
+/** Only an entry whose name (or a name it also goes by) is exactly the word. */
+export function exactRef(items: RefIndexItem[], word: string): RefIndexItem | null {
+  const w = norm(word);
+  if (!w) return null;
+  return items.find((r) => norm(r.label) === w || r.aliases.some((a) => norm(a) === w)) ?? null;
 }
 
 function SearchBox({ value, onChange }: { value: string; onChange: (v: string) => void }) {
@@ -306,7 +314,9 @@ export function ReferenceEntryScreen() {
       <Loaded q={q} what="this entry" skeleton={<RowsSkeleton rows={5} />}>
         {(e) =>
           e ? (
-            <EntryBody e={e} labelOf={labelOf} onOpen={(p) => router.push(p)} />
+            <ReadingSize>
+              <EntryBody e={e} labelOf={labelOf} onOpen={(p) => router.push(p)} />
+            </ReadingSize>
           ) : (
             <EmptyState mood="missing" title="Not in the Quick reference" body="Search for it by another name." action={{ label: "Search", onPress: () => router.replace(`/reference?q=${encodeURIComponent(String(slug).replace(/-/g, " "))}`) }} />
           )

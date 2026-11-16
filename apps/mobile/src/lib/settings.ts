@@ -9,12 +9,16 @@ export type LocalSettings = {
   reactions: boolean;
   /** How study text is explained: the website's Student / Clinician switch. */
   readAs: "student" | "clinician";
+  /** Reading text size in the reader, notes and quick reference (Aa sheet and Settings, Text size). */
+  textSize: "small" | "normal" | "large" | "larger";
+  /** Space between lines in the same places. */
+  lineSpacing: "normal" | "roomy";
   loaded: boolean;
 };
 
 const KEY = "vibha.settings.v1";
 
-export const settingsStore = createStore<LocalSettings>({ theme: "system", haptics: true, reactions: true, readAs: "student", loaded: false });
+export const settingsStore = createStore<LocalSettings>({ theme: "system", haptics: true, reactions: true, readAs: "student", textSize: "normal", lineSpacing: "normal", loaded: false });
 
 export async function loadSettings(): Promise<void> {
   try {

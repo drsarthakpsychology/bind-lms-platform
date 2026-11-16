@@ -18,12 +18,20 @@ export function TabBar({ tabs }: { tabs: TabDef[] }) {
   const c = useTheme();
   const reduce = useReducedMotion();
   const icons = React.useMemo(() => Object.fromEntries(tabs.map((t) => [t.name, t.icon])), [tabs]);
+  // Warm up the other tabs once the first one has settled, so a first visit never shows an empty frame.
+  const [warm, setWarm] = React.useState(false);
+  React.useEffect(() => {
+    // About when Home's entry has played out (its blocks are in by ~600ms).
+    const t = setTimeout(() => setWarm(true), 1200);
+    return () => clearTimeout(t);
+  }, []);
   return (
     <Tabs
       tabBar={(props) => <MotionTabBar {...props} icons={icons} />}
       screenOptions={{
         headerShown: false,
         tabBarHideOnKeyboard: true,
+        lazy: !warm,
         sceneStyle: { backgroundColor: c.bg },
         ...tabSceneOptions(!!reduce),
       }}

@@ -12,9 +12,11 @@ import { keys, useLecture } from "@/api/queries";
 import { api } from "@/auth";
 import { Button, Field, LoadError, Row, RowList, Sheet, Skeleton, T, TabRow, Tint } from "@/ds";
 import { toast } from "@/ds/toast";
-import { FileHandIn, RecordingHandIn } from "@/lecture/handin-ui";
+import { FileHandIn, HandInSlot, RecordingHandIn, useFooterAction, type FooterAction } from "@/lecture/handin-ui";
 import { ProtectedPlayer, clock } from "@/lecture/player";
 import { config } from "@/lib/config";
+import { createStore } from "@/lib/store";
+import { Swap } from "@/motion";
 import { haptic } from "@/lib/haptics";
 import { enablePush, pushStatus } from "@/push";
 import { fixed, layout, space, useLightStatusBar, useTheme } from "@/theme";
@@ -51,8 +53,10 @@ function AssignmentPart({ lecture }: { lecture: LectureDetail }) {
   const [busy, setBusy] = React.useState(false);
   const [error, setError] = React.useState<string | null>(null);
   const [openedAt] = React.useState(() => Date.now());
+  const sub = a?.submission ?? null;
+  const writing = a?.submissionType === "text" && (!sub || sub.editable);
+  const inFooter = useFooterAction(writing ? { label: sub ? "Hand in again" : "Hand in", busy, onPress: () => void submit(), testID: "assignment-submit" } : null);
   if (!a) return <T tone="muted">No assignment for this lecture.</T>;
-  const sub = a.submission;
   const closed = !!a.dueAt && !a.allowLate && Date.parse(a.dueAt) < openedAt;
   const handedIn = (s: Submission) => {
     toast.show("Handed in");
@@ -71,7 +75,8 @@ function AssignmentPart({ lecture }: { lecture: LectureDetail }) {
       setBusy(false);
     }
   };
-  const submit = async () => {
+  async function submit() {
+    if (!a) return;
     if (text.trim().length < 20) return setError("Write at least a few sentences.");
     setBusy(true);
     setError(null);
@@ -86,7 +91,7 @@ function AssignmentPart({ lecture }: { lecture: LectureDetail }) {
     } finally {
       setBusy(false);
     }
-  };
+  }
   return (
     <View style={{ gap: space[4] }}>
       <T v="h3">{a.title}</T>
@@ -109,7 +114,7 @@ function AssignmentPart({ lecture }: { lecture: LectureDetail }) {
       {a.submissionType === "text" && (!sub || sub.editable) ? (
         <>
           <Field label="Your answer" value={text} onChangeText={setText} area error={error} testID="assignment-text" />
-          <Button kind="quiet" label={sub ? "Hand in again" : "Hand in"} busy={busy} onPress={() => void submit()} testID="assignment-submit" />
+          {inFooter ? null : <Button kind="quiet" label={sub ? "Hand in again" : "Hand in"} busy={busy} onPress={() => void submit()} testID="assignment-submit" />}
         </>
       ) : closed && !sub ? (
         <T tone="muted">The due date has passed, and this assignment does not take late hand-ins.</T>
@@ -169,6 +174,12 @@ export function LectureScreen() {
   const [done, setDone] = React.useState(false);
   const lastSent = React.useRef(0);
   const last = React.useRef({ t: 0, d: 0 });
+  // The Assignment tab's hand-in button lives in the pinned footer.
+  const [footer] = React.useState(() => createStore<{ action: FooterAction | null; owner: object | null }>({ action: null, owner: null }));
+  const handIn = footer.use((x) => x.action);
+  // A part leaving (during the tab swap) only clears the button if it is still its own.
+  const setHandIn = React.useCallback((action: FooterAction | null, owner: object) => footer.set((s) => (action ? { action, owner } : s.owner === owner ? { action: null, owner: null } : {})), [footer]);
+  const [dir, setDir] = React.useState<1 | -1>(1);
 
   const save = React.useCallback(
     (t: number, d: number) => {
@@ -219,6 +230,9 @@ export function LectureScreen() {
   };
 
   const l = q.data;
+  const tabs: { id: Tab; name: string }[] = l
+    ? [{ id: "about", name: "About" }, ...(l.materials.length ? [{ id: "materials" as Tab, name: "Materials" }] : []), ...(l.assignment ? [{ id: "assignment" as Tab, name: "Assignment" }] : [])]
+    : [];
   const watched = l ? l.progress.completed || done : false;
   const blockedByAssignment = !!l?.requiresAssignment && !l.assignment?.submission;
 
@@ -249,7 +263,7 @@ export function LectureScreen() {
 
       {l ? (
         <>
-          <ScrollView contentContainerStyle={{ padding: layout.gutter, paddingBottom: space[6], gap: space[5], width: "100%", maxWidth: layout.readingWidth + layout.gutter * 2, alignSelf: "center" }}>
+          <ScrollView keyboardShouldPersistTaps="handled" contentContainerStyle={{ padding: layout.gutter, paddingBottom: space[7] * 2, gap: space[5], width: "100%", maxWidth: layout.readingWidth + layout.gutter * 2, alignSelf: "center" }}>
             <View style={{ gap: space[2] }}>
               <T v="h2">{l.title}</T>
               <T v="small" tone="muted" num>
@@ -257,27 +271,34 @@ export function LectureScreen() {
               </T>
             </View>
             <TabRow
-              tabs={[
-                { id: "about" as Tab, name: "About" },
-                ...(l.materials.length ? [{ id: "materials" as Tab, name: `Materials (${l.materials.length})` }] : []),
-                ...(l.assignment ? [{ id: "assignment" as Tab, name: "Assignment" }] : []),
-              ]}
+              tabs={tabs}
               value={tab}
-              onChange={setTab}
+              onChange={(t) => {
+                setDir(tabs.findIndex((x) => x.id === t) >= tabs.findIndex((x) => x.id === tab) ? 1 : -1);
+                setTab(t);
+              }}
             />
-            {tab === "about" ? l.description ? <T v="reading">{l.description}</T> : <T tone="muted">No notes for this lecture.</T> : null}
-            {tab === "materials" ? <MaterialRows items={l.materials} /> : null}
-            {tab === "assignment" ? <AssignmentPart lecture={l} /> : null}
+            <Swap k={tab} dir={dir} testID="lecture-tab-body">
+              {tab === "about" ? l.description ? <T v="reading">{l.description}</T> : <T tone="muted">No notes for this lecture.</T> : null}
+              {tab === "materials" ? <MaterialRows items={l.materials} /> : null}
+              {tab === "assignment" ? (
+                <HandInSlot.Provider value={setHandIn}>
+                  <AssignmentPart lecture={l} />
+                </HandInSlot.Provider>
+              ) : null}
+            </Swap>
           </ScrollView>
           <View style={{ borderTopWidth: 1, borderColor: c.hairline, paddingHorizontal: layout.gutter, paddingTop: space[3], paddingBottom: insets.bottom + space[3], gap: space[2], backgroundColor: c.bg }}>
-            {!watched ? (
+            {tab === "assignment" ? (
+              handIn ? <Button label={handIn.label} busy={handIn.busy} disabled={handIn.disabled} onPress={handIn.onPress} testID={handIn.testID} /> : null
+            ) : tab === "about" && !watched ? (
               <Button label={blockedByAssignment ? "Hand in the assignment first" : "Mark as watched"} disabled={blockedByAssignment} busy={busy} onPress={() => void complete(l)} testID="lecture-complete" />
-            ) : l.next ? (
+            ) : watched && l.next ? (
               <Button label={`Next: ${l.next.title}`} icon={<ArrowRight size={20} color={c.onPrimary} />} onPress={() => go(l.next!.id)} testID="lecture-next-primary" />
             ) : null}
             <View style={{ flexDirection: "row", justifyContent: "space-between", gap: space[3] }}>
               {l.prev ? <Button kind="text" label="Previous" icon={<ArrowLeft size={18} color={c.link} />} onPress={() => go(l.prev!.id)} testID="lecture-prev" /> : <View />}
-              {l.next && !watched ? <Button kind="text" label="Next" icon={<ArrowRight size={18} color={c.link} />} onPress={() => go(l.next!.id)} testID="lecture-next" /> : null}
+              {l.next && !(watched && tab !== "assignment") ? <Button kind="text" label="Next" icon={<ArrowRight size={18} color={c.link} />} onPress={() => go(l.next!.id)} testID="lecture-next" /> : null}
             </View>
           </View>
           <ReminderSheet

@@ -1,6 +1,6 @@
 import { useQueryClient } from "@tanstack/react-query";
 import { router, useLocalSearchParams } from "expo-router";
-import { ArrowRight, Bookmark, Check, ChevronLeft, ListOrdered, NotebookPen } from "lucide-react-native";
+import { ALargeSmall, ArrowRight, Bookmark, Check, ChevronLeft, ListOrdered, NotebookPen } from "lucide-react-native";
 import * as React from "react";
 import { Pressable, ScrollView, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -13,6 +13,8 @@ import { toast } from "@/ds/toast";
 import { haptic } from "@/lib/haptics";
 import { Blocks, type BlockContext } from "@/study/blocks";
 import { Rich, TermPress } from "@/study/rich";
+import { useOnce } from "@/lib/once";
+import { ReadingSize, TextSizeSheet } from "@/lib/reading";
 import { settingsStore, updateSettings } from "@/lib/settings";
 import { NoteSheet, saveMark } from "@/screens/learn/saved";
 import { TermSheet } from "@/screens/reference/reference";
@@ -119,6 +121,29 @@ export function ReaderBody({ s, view, part, finished }: { s: SectionContent; vie
   );
 }
 
+/**
+ * One icon button in the reader bar. The first time the reader opens on this
+ * phone each icon carries its name underneath; after that, icons only.
+ */
+function BarButton({ name, label, onPress, testID, children, named, selected }: { name: string; label: string; onPress: () => void; testID?: string; children: React.ReactNode; named: boolean; selected?: boolean }) {
+  return (
+    <Pressable accessibilityRole="button" accessibilityLabel={label} accessibilityState={selected === undefined ? undefined : { selected }} onPress={onPress} testID={testID} style={{ minWidth: layout.target, minHeight: layout.target, paddingHorizontal: named ? 2 : 0, alignItems: "center", justifyContent: "center" }}>
+      {children}
+      {named ? (
+        <T v="caption" tone="muted" maxFontSizeMultiplier={1.2} importantForAccessibility="no" accessibilityElementsHidden>
+          {name}
+        </T>
+      ) : null}
+    </Pressable>
+  );
+}
+
+/** "2.1 of 4": where you are in the module, never the (long) title, which lives on the page. */
+export function readerPlace(num: string, sections: { isTest?: boolean }[] | undefined): string {
+  const total = (sections ?? []).filter((x) => !x.isTest).length;
+  return total ? `${num} of ${total}` : num;
+}
+
 export function ReaderScreen() {
   const c = useTheme();
   const insets = useSafeAreaInsets();
@@ -133,6 +158,9 @@ export function ReaderScreen() {
   const view = settingsStore.use((x) => x.readAs);
   const setView = (v: "student" | "clinician") => updateSettings({ readAs: v });
   const [toc, setToc] = React.useState(false);
+  const [sizeOpen, setSizeOpen] = React.useState(false);
+  const closeSize = React.useCallback(() => setSizeOpen(false), []);
+  const named = useOnce("reader-bar-names");
   const marks = useMarks();
   const markKey = `${moduleId}/${sectionId}`;
   const marked = !!marks.data?.marks.bookmarks[markKey]?.on;
@@ -222,26 +250,31 @@ export function ReaderScreen() {
           <Pressable accessibilityRole="button" accessibilityLabel="Back" onPress={back} style={{ width: layout.target, height: layout.target, alignItems: "center", justifyContent: "center" }} testID="reader-back">
             <ChevronLeft size={26} color={c.ink} />
           </Pressable>
-          <T v="small" tone="muted" numberOfLines={1} style={{ flex: 1 }}>
-            {s ? `${s.section.num} ${s.section.title}` : " "}
+          <T v="small" tone="muted" num style={{ flex: 1 }} testID="reader-place" accessibilityLabel={s ? `Section ${readerPlace(s.section.num, mod.data?.sections)}` : undefined}>
+            {s ? readerPlace(s.section.num, mod.data?.sections) : " "}
           </T>
-          <Pressable accessibilityRole="button" accessibilityLabel="Sections of this module" onPress={() => setToc(true)} style={{ width: layout.target, height: layout.target, alignItems: "center", justifyContent: "center" }} testID="reader-toc">
+          <BarButton name="Size" label="Text size" named={named} onPress={() => setSizeOpen(true)} testID="reader-size">
+            <ALargeSmall size={24} color={c.ink} />
+          </BarButton>
+          <BarButton name="Sections" label="Sections of this module" named={named} onPress={() => setToc(true)} testID="reader-toc">
             <ListOrdered size={22} color={c.ink} />
-          </Pressable>
-          <Pressable accessibilityRole="button" accessibilityLabel={marked ? "Remove bookmark" : "Bookmark this section"} accessibilityState={{ selected: marked }} onPress={() => void bookmark()} style={{ width: layout.target, height: layout.target, alignItems: "center", justifyContent: "center" }}>
+          </BarButton>
+          <BarButton name="Save" label={marked ? "Remove bookmark" : "Bookmark this section"} selected={marked} named={named} onPress={() => void bookmark()} testID="reader-bookmark">
             <Bookmark size={22} color={marked ? c.link : c.ink} fill={marked ? c.link : "none"} />
-          </Pressable>
+          </BarButton>
           {s && !s.section.isTest ? (
-            <Pressable accessibilityRole="button" accessibilityLabel={hasNote ? "Change my note" : "Write a note"} onPress={() => setNoteOpen(true)} style={{ width: layout.target, height: layout.target, alignItems: "center", justifyContent: "center" }} testID="reader-note">
+            <BarButton name="Note" label={hasNote ? "Change my note" : "Write a note"} named={named} onPress={() => setNoteOpen(true)} testID="reader-note">
               <NotebookPen size={22} color={hasNote ? c.link : c.ink} />
-            </Pressable>
+            </BarButton>
           ) : null}
         </View>
         <ProgressLine value={pct} height={3} label={`Part ${Math.min(part + 1, total)} of ${total}`} />
       </View>
       <ScrollView ref={scroll} contentContainerStyle={{ paddingHorizontal: layout.gutter, paddingTop: space[5], paddingBottom: space[7], width: "100%", maxWidth: layout.readingWidth + layout.gutter * 2, alignSelf: "center" }}>
         {s ? (
-          <ReaderBody s={s} view={view} part={part} finished={finished} />
+          <ReadingSize>
+            <ReaderBody s={s} view={view} part={part} finished={finished} />
+          </ReadingSize>
         ) : q.isError ? (
           <LoadError what="this section" error={q.error} onRetry={() => void q.refetch()} />
         ) : (
@@ -288,6 +321,7 @@ export function ReaderScreen() {
           </RowList>
         </View>
       </Sheet>
+      <TextSizeSheet open={sizeOpen} onClose={closeSize} />
       <NoteSheet open={noteOpen} onClose={closeNote} markKey={markKey} label={s ? `${s.section.num} ${s.section.title}` : ""} />
       <TermSheet word={word} onClose={closeWord} />
     </View>

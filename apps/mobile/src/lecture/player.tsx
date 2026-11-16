@@ -34,7 +34,12 @@ import { Watermark } from "./watermark";
  * screen can be built and tested.
  */
 
-export type Playback = { playing: boolean; time: number; duration: number; ready: boolean; failed: string | null; play: () => void; pause: () => void; seek: (t: number) => void };
+export type Playback = { playing: boolean; time: number; duration: number; ready: boolean; failed: string | null; play: () => void; pause: () => void; seek: (t: number) => void; /** Playback speed, 1 is normal. */ rate: number; setRate: (r: number) => void };
+
+/** The speeds the speed button steps through. */
+export const SPEEDS = [1, 1.25, 1.5, 2] as const;
+export const nextSpeed = (r: number): number => SPEEDS[(SPEEDS.findIndex((x) => x === r) + 1) % SPEEDS.length] ?? 1;
+export const speedLabel = (r: number): string => `${r}x`;
 
 export function clock(sec: number): string {
   const s = Math.max(0, Math.floor(sec));
@@ -52,7 +57,7 @@ function RealSurface({ access, children }: { access: StreamAccess; children: (p:
     p.staysActiveInBackground = false;
     if (access.resumeSeconds > 5) p.currentTime = access.resumeSeconds;
   });
-  const [state, setState] = React.useState({ playing: false, time: access.resumeSeconds, duration: access.durationSeconds ?? 0, ready: false, failed: null as string | null });
+  const [state, setState] = React.useState({ playing: false, time: access.resumeSeconds, duration: access.durationSeconds ?? 0, ready: false, failed: null as string | null, rate: 1 });
   useEventListener(player, "timeUpdate", (e) => setState((s) => ({ ...s, time: e.currentTime, duration: player.duration || s.duration })));
   useEventListener(player, "playingChange", (e) => setState((s) => ({ ...s, playing: e.isPlaying })));
   useEventListener(player, "statusChange", (e) => setState((s) => ({ ...s, ready: e.status === "readyToPlay" || s.ready, failed: e.status === "error" ? (e.error?.message ?? "The lecture could not play.") : null })));
@@ -64,6 +69,11 @@ function RealSurface({ access, children }: { access: StreamAccess; children: (p:
       // eslint-disable-next-line react-hooks/immutability -- the player is a native object, not React state
       player.currentTime = Math.max(0, Math.min(t, state.duration || t));
       setState((s) => ({ ...s, time: t }));
+    },
+    setRate: (r) => {
+      // eslint-disable-next-line react-hooks/immutability -- the player is a native object, not React state
+      player.playbackRate = r;
+      setState((s) => ({ ...s, rate: r }));
     },
   };
   return (
@@ -79,12 +89,13 @@ function MockSurface({ access, children }: { access: StreamAccess; children: (p:
   const duration = access.durationSeconds ?? 3600;
   const [playing, setPlaying] = React.useState(false);
   const [time, setTime] = React.useState(access.resumeSeconds);
+  const [rate, setRate] = React.useState(1);
   React.useEffect(() => {
     if (!playing) return;
     const id = setInterval(() => setTime((t) => Math.min(duration, t + 1)), 1000);
     return () => clearInterval(id);
   }, [playing, duration]);
-  return <>{children({ playing, time, duration, ready: true, failed: null, play: () => setPlaying(true), pause: () => setPlaying(false), seek: (t) => setTime(Math.max(0, Math.min(duration, t))) })}</>;
+  return <>{children({ playing, time, duration, ready: true, failed: null, play: () => setPlaying(true), pause: () => setPlaying(false), seek: (t) => setTime(Math.max(0, Math.min(duration, t))), rate, setRate })}</>;
 }
 
 /* ------------------------------------------------------------- controls */
@@ -173,6 +184,21 @@ function Controls({ pb, full, onFull, onFirstPlay }: { pb: Playback; full: boole
             <T v="caption" num style={{ color: fixed.onVideo, fontFamily: fonts.semibold }} maxFontSizeMultiplier={1.2}>
               {clock(pb.duration)}
             </T>
+            <Pressable
+              accessibilityRole="button"
+              accessibilityLabel={`Speed ${speedLabel(pb.rate)}. Change speed`}
+              onPress={() => {
+                haptic.select();
+                pb.setRate(nextSpeed(pb.rate));
+              }}
+              hitSlop={6}
+              style={{ minWidth: layout.target, height: layout.target, alignItems: "center", justifyContent: "center" }}
+              testID="player-speed"
+            >
+              <T v="caption" num style={{ color: "#ffffff", fontFamily: fonts.bold }} maxFontSizeMultiplier={1.2}>
+                {speedLabel(pb.rate)}
+              </T>
+            </Pressable>
             <Pressable accessibilityRole="button" accessibilityLabel={full ? "Leave full screen" : "Full screen"} onPress={onFull} hitSlop={6} style={{ width: layout.target, height: layout.target, alignItems: "center", justifyContent: "center" }} testID="player-full">
               {full ? <Minimize size={22} color={fixed.onVideo} /> : <Maximize size={22} color={fixed.onVideo} />}
             </Pressable>
