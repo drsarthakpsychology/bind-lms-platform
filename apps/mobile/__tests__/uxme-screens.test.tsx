@@ -6,6 +6,8 @@ import { mock } from "@/api/mock/server";
 import { session } from "@/auth";
 import { MeScreen } from "@/screens/me/me";
 import { ProgressScreen } from "@/screens/me/progress";
+import { dayGroup } from "@/screens/notifications/list";
+import { SearchScreen } from "@/screens/search/search";
 import { render } from "./utils";
 
 beforeAll(async () => {
@@ -46,5 +48,30 @@ describe("Progress", () => {
     expect(screen.getByTestId("days-value").props.children).toMatch(/^Today: \d+ points$/);
     await fireEvent.press(first);
     expect(screen.getByTestId("days-value").props.children).not.toMatch(/^Today/);
+  });
+});
+
+describe("Notifications", () => {
+  it("groups by Today, This week and Earlier", () => {
+    const now = Date.parse("2026-11-16T12:00:00+05:30");
+    expect(dayGroup("2026-11-16T08:00:00+05:30", now)).toBe("Today");
+    expect(dayGroup("2026-11-12T08:00:00+05:30", now)).toBe("This week");
+    expect(dayGroup("2026-11-01T08:00:00+05:30", now)).toBe("Earlier");
+    expect(dayGroup(null, now)).toBe("Earlier");
+  });
+});
+
+describe("Search", () => {
+  it("reads ?q=, finds games and cases, and remembers the search", async () => {
+    (useLocalSearchParams as jest.Mock).mockReturnValue({ q: "blitz" });
+    await render(<SearchScreen />);
+    const hit = await screen.findByTestId("hit-g-blitz");
+    await fireEvent.press(hit);
+    expect(router.push).toHaveBeenLastCalledWith("/game/blitz");
+    await fireEvent.press(screen.getByTestId("search-clear"));
+    expect(await screen.findByTestId("recent-blitz")).toBeTruthy();
+    expect(screen.getByTestId("shortcut-lectures")).toBeTruthy();
+    await fireEvent.press(screen.getByTestId("recent-remove-blitz"));
+    expect(screen.queryByTestId("recent-blitz")).toBeNull();
   });
 });

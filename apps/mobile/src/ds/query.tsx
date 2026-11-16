@@ -1,26 +1,28 @@
 import type { UseQueryResult } from "@tanstack/react-query";
 import { router } from "expo-router";
+import { ExternalLink } from "lucide-react-native";
 import * as React from "react";
 import { Linking, View } from "react-native";
 
 import { ApiFailure, isClosed } from "@/api/errors";
 import { config } from "@/lib/config";
 import { SkeletonIn } from "@/motion";
-import { space } from "@/theme";
+import { space, useTheme } from "@/theme";
 import { Button } from "./button";
 import { EmptyState, LoadError, RowsSkeleton } from "./parts";
 import { T } from "./text";
+import { toast } from "./toast";
 
 /** Open a website page (a path such as "/study/notes", or a full address). */
 export function openWebsite(path = "/dashboard"): void {
   const url = /^https?:\/\//.test(path) ? path : `${config.site}${path.startsWith("/") ? path : `/${path}`}`;
-  void Linking.openURL(url).catch(() => undefined);
+  void Linking.openURL(url).catch(() => toast.show("That didn't open. Try again."));
 }
 
-function goBack(): void {
+function goBack(home: string): void {
   try {
     if (router.canGoBack()) router.back();
-    else router.replace("/");
+    else router.replace(home);
   } catch {
     /* no navigator (tests) */
   }
@@ -28,14 +30,16 @@ function goBack(): void {
 
 /**
  * A part that is ready on the website but not in the app yet. Never a dead
- * end: the same page opens on the website, or Back.
+ * end: the same page opens on the website, or Back. Practise's SoonState is
+ * this same part.
  */
-export function ComingSoon({ web, body, testID = "soon" }: { /** The website page that has it ("/study/notes"). */ web?: string; body?: string; testID?: string }) {
+export function ComingSoon({ web, body = "This part is ready on the website.", home = "/", testID = "soon" }: { /** The website page that has it ("/study/notes"). */ web?: string; body?: string; /** Where Back goes when there is nothing to go back to. */ home?: string; testID?: string }) {
+  const c = useTheme();
   return (
     <View testID={testID} style={{ gap: space[3] }}>
-      <EmptyState mood="sleepy" title="Coming in the next update" body={body ?? "This part is ready on the website and arrives in the app soon."} />
-      <Button label="Open on the website" onPress={() => openWebsite(web)} testID="soon-web" />
-      <Button kind="quiet" label="Back" onPress={goBack} testID="soon-back" />
+      <EmptyState mood="sleepy" title="Coming soon to the app" body={body} />
+      <Button label="Open on the website" icon={<ExternalLink size={18} color={c.onPrimary} />} onPress={() => openWebsite(web)} testID="soon-web" />
+      <Button kind="text" label="Back" onPress={() => goBack(home)} testID="soon-back" />
     </View>
   );
 }
