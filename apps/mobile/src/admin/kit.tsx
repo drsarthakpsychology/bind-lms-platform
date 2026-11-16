@@ -15,6 +15,7 @@ import type { UseQueryResult } from "@tanstack/react-query";
 import Svg, { Defs, LinearGradient, Rect, Stop } from "react-native-svg";
 
 import { Button, Field, Loaded as DsLoaded, Sheet, TabRow, T } from "@/ds";
+import { Swap } from "@/motion";
 import { haptic } from "@/lib/haptics";
 import { layout, space, type as scale, useTheme, type Palette } from "@/theme";
 import type { Tone } from "./format";
@@ -133,7 +134,7 @@ export function Block({ title, count, action, children, style, testID }: { title
         ) : null}
         <View style={{ flex: 1 }} />
         {action ? (
-          <Pressable testID={action.testID} accessibilityRole="link" onPress={action.onPress} hitSlop={10} style={{ minHeight: 32, justifyContent: "center" }}>
+          <Pressable testID={action.testID} accessibilityRole="link" onPress={action.onPress} style={{ minHeight: 44, minWidth: 44, justifyContent: "center" }}>
             <T v="small" tone="link">
               {action.label}
             </T>
@@ -582,6 +583,23 @@ export function SwipeRow({ children, action, enabled = true, testID }: { childre
         {children}
       </RNAnimated.View>
     </View>
+  );
+}
+
+/**
+ * The content under ScrollTabs: it swaps with the motion kit's Swap, coming
+ * from the right when the picked tab is to the right of the last one, from
+ * the left when it is to the left. `gap` spaces the blocks inside it (the
+ * screen's own gap does not reach inside a wrapper).
+ */
+export function TabSwap<V extends string>({ tabs, value, gap = space[5], children }: { tabs: { id: V }[]; value: V; gap?: number; children: React.ReactNode }) {
+  const i = tabs.findIndex((t) => t.id === value);
+  const [last, setLast] = React.useState<{ v: V; i: number; dir: -1 | 0 | 1 }>({ v: value, i, dir: 0 });
+  if (last.v !== value) setLast({ v: value, i, dir: i > last.i ? 1 : -1 });
+  return (
+    <Swap k={value} dir={last.dir} style={{ gap }}>
+      {children}
+    </Swap>
   );
 }
 

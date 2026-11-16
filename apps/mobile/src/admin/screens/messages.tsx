@@ -8,7 +8,7 @@ import { space, useTheme } from "@/theme";
 import { adminCalls, useAdminAction, useBatches, useInbox, useInboxThread, useRefreshAdmin } from "../api";
 import type { InboxItem } from "../extra";
 import { ago, plural, whatsapp } from "../format";
-import { Loaded, Notice, ScrollTabs, SmallButton, Tag } from "../kit";
+import { Loaded, Notice, ScrollTabs, SmallButton, TabSwap, Tag } from "../kit";
 import { AdminTop, openCompose, openStudent } from "../nav";
 import { useAdminRole, VIEW_ONLY_LINE } from "../role";
 
@@ -74,7 +74,9 @@ export function AdminMessagesScreen() {
         value={tab}
         onChange={setTab}
       />
-      {tab === "inbox" ? <InboxList /> : <Sent />}
+      <TabSwap tabs={[{ id: "inbox" as const }, { id: "sent" as const }]} value={tab} gap={space[5]}>
+        {tab === "inbox" ? <InboxList /> : <Sent />}
+      </TabSwap>
     </Screen>
   );
 }

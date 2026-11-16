@@ -9,7 +9,7 @@ import { adminCalls, useAdminAction, useStudentCredentials, useStudentDoubts, us
 import type { AdminStudent, AdminStudentRow, StudentDetail } from "../contract";
 import type { LoginLinkResult } from "../extra";
 import { ACCOUNT_NEXT, accountLabel, accountTone, ago, day, FLAG_LABEL, minutes, nextStep, pct, whatsapp } from "../format";
-import { Block, ConfirmSheet, DayBars, Facts, Figures, Loaded, Meter, Notice, Quiet, ScrollTabs, SmallButton, Status, Tag, Tags } from "../kit";
+import { Block, ConfirmSheet, DayBars, Facts, Figures, Loaded, Meter, Notice, Quiet, ScrollTabs, SmallButton, Status, TabSwap, Tag, Tags } from "../kit";
 import { openCompose } from "../nav";
 import { useAdminRole } from "../role";
 import { CertLine } from "./certificates";
@@ -271,7 +271,9 @@ export function AdminStudentView({ r, d, tab, onTab, phone }: { r: AdminStudentR
         </T>
       </Notice>
       <ScrollTabs tabs={TABS} value={tab} onChange={onTab} />
-      {tab === "overview" ? <Overview r={r} d={d} /> : tab === "access" ? <Access r={r} phone={phone} /> : tab === "activity" ? <ActivityTab r={r} d={d} /> : tab === "credentials" ? <Credentials r={r} /> : <Messages r={r} />}
+      <TabSwap tabs={TABS} value={tab} gap={space[5]}>
+        {tab === "overview" ? <Overview r={r} d={d} /> : tab === "access" ? <Access r={r} phone={phone} /> : tab === "activity" ? <ActivityTab r={r} d={d} /> : tab === "credentials" ? <Credentials r={r} /> : <Messages r={r} />}
+      </TabSwap>
       <LinkSheet link={link} name={r.name} mobile={r.mobileNumber} onClose={() => setLink(null)} />
     </>
   );

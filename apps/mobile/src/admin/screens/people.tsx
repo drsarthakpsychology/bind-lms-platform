@@ -11,7 +11,7 @@ import { space, useTheme } from "@/theme";
 import { adminCalls, useAdminAction, useEnquiries, usePeople, usePerson, useRefreshAdmin } from "../api";
 import { PEOPLE_VIEWS, STAGE_LABEL, STAGES, type EmailPreview, type LoginLinkResult, type PeopleView, type PersonRow, type StageId } from "../extra";
 import { ago, day, followUpLine, inPeopleView, plural, whatsapp, type Tone } from "../format";
-import { ActionBar, Check, Dot, Facts, FilterChips, Loaded, Notice, OptionRow, Quiet, ScrollTabs, SearchBox, SelectRow, SmallButton, Status, SwipeRow, Tag } from "../kit";
+import { ActionBar, Check, Dot, Facts, FilterChips, Loaded, Notice, OptionRow, Quiet, ScrollTabs, SearchBox, SelectRow, SmallButton, Status, SwipeRow, TabSwap, Tag } from "../kit";
 import { openStudent } from "../nav";
 import { useAdminRole, VIEW_ONLY_LINE } from "../role";
 import { LinkSheet } from "./student";
@@ -313,7 +313,9 @@ export function AdminPeopleScreen() {
         value={tab}
         onChange={setTab}
       />
-      {tab === "pipeline" ? <Pipeline initialView={initialView} /> : <Enquiries />}
+      <TabSwap tabs={[{ id: "pipeline" as const }, { id: "enquiries" as const }]} value={tab} gap={space[4]}>
+        {tab === "pipeline" ? <Pipeline initialView={initialView} /> : <Enquiries />}
+      </TabSwap>
     </Screen>
   );
 }

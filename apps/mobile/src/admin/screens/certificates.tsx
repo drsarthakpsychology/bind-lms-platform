@@ -12,7 +12,7 @@ import { space, useTheme } from "@/theme";
 import { adminCalls, useAdminAction, useBadges, useCertTypes, useCertificates, useEligible, useRefreshAdmin, useStudents, useStudioSettings } from "../api";
 import { KIND_DEFAULTS, type BadgeRow, type CertRow, type CertStatus, type CertType, type CertTypeList, type RuleKind, type StudioSignatory, type TypeRule } from "../extra";
 import { day, plural, type Tone } from "../format";
-import { Block, ConfirmSheet, Facts, FilterChips, Loaded, Meter, Notice, OptionRow, Quiet, ScrollTabs, SearchBox, SelectRow, SmallButton, Status, SwipeRow, Tag } from "../kit";
+import { Block, ConfirmSheet, Facts, FilterChips, Loaded, Meter, Notice, OptionRow, Quiet, ScrollTabs, SearchBox, SelectRow, SmallButton, Status, SwipeRow, TabSwap, Tag } from "../kit";
 import { openStudent } from "../nav";
 import { useAdminRole, VIEW_ONLY_LINE } from "../role";
 
@@ -524,7 +524,9 @@ export function AdminCertificatesScreen() {
   return (
     <Screen title="Certificates" testID="admin-certificates" gap={space[4]} onRefresh={refresh} refreshing={refreshing} footer={canWrite ? <Button label="Issue certificates" icon={<Plus size={20} color={c.onPrimary} />} onPress={() => router.push("/admin/certificates/new")} testID="certs-issue" /> : undefined}>
       <ScrollTabs tabs={TABS} value={tab} onChange={setTab} />
-      {tab === "issued" ? <Issued openId={params.open} /> : tab === "find" ? <Find /> : tab === "types" ? <Types /> : <Settings />}
+      <TabSwap tabs={TABS} value={tab} gap={space[4]}>
+        {tab === "issued" ? <Issued openId={params.open} /> : tab === "find" ? <Find /> : tab === "types" ? <Types /> : <Settings />}
+      </TabSwap>
     </Screen>
   );
 }
