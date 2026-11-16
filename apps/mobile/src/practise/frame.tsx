@@ -7,10 +7,12 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { Button, EmptyState, Sheet, Skeleton, T, VerdictBand } from "@/ds";
 import { haptic } from "@/lib/haptics";
+import { useSeen } from "@/lib/once";
 import { Rich } from "@/study/rich";
 import { fonts, layout, motion, space, useTheme } from "@/theme";
 import { ApiFailure } from "@/api/errors";
 import { isSoon } from "./api";
+import { SoonState } from "./soon";
 import { Confetti, RollingNumber } from "@/motion";
 import { Bump, Rise } from "./fx";
 import { moodForScore, reactions, StickerLayer } from "./reactions";
@@ -209,8 +211,15 @@ export function StartScreen<V extends string>({
   const c = useTheme();
   const reduce = useReducedMotion();
   const [help, setHelp] = React.useState(false);
+  // The rules show in the empty middle until the first Play on this phone; after that, one link.
+  const rules = useSeen(`howto.${testID ?? title}`);
+  const play = () => {
+    rules.mark();
+    onPlay();
+  };
+  const summary = !rules.seen && howTo.length ? howTo.slice(0, 3) : null;
   return (
-    <GameFrame title="" testID={testID ?? "start"} thumb={<Button label={playLabel} onPress={onPlay} busy={busy} testID="start-play" />}>
+    <GameFrame title="" testID={testID ?? "start"} thumb={<Button label={playLabel} onPress={play} busy={busy} testID="start-play" />}>
       <Animated.View entering={reduce ? undefined : FadeIn.duration(motion.page)} style={{ gap: space[3], paddingTop: space[4] }}>
         <T v="display">{title}</T>
         <T tone="muted" style={{ maxWidth: 460 }}>
@@ -256,14 +265,29 @@ export function StartScreen<V extends string>({
           })}
         </View>
       ) : null}
-      <Button kind="text" label="How to play" onPress={() => setHelp(true)} testID="start-howto" />
+      {summary ? (
+        <View style={{ gap: space[2] }} testID="start-rules">
+          <T v="caption" tone="muted">
+            HOW TO PLAY
+          </T>
+          {summary.map((s, i) => (
+            <View key={i} style={{ flexDirection: "row", gap: space[3] }}>
+              <T v="score" style={{ width: 20 }} num>
+                {i + 1}
+              </T>
+              <Rich text={s} style={{ flex: 1 }} />
+            </View>
+          ))}
+        </View>
+      ) : null}
+      {!summary || howTo.length > 3 ? <Button kind="text" label={summary ? "All the rules" : "How to play"} onPress={() => setHelp(true)} testID="start-howto" /> : null}
       {error ? (
         <T v="small" tone="danger" accessibilityLiveRegion="polite">
           {error}
         </T>
       ) : null}
       {below}
-      <HowToSheet open={help} onClose={() => setHelp(false)} steps={howTo} onPlay={onPlay} />
+      <HowToSheet open={help} onClose={() => setHelp(false)} steps={howTo} onPlay={play} />
     </GameFrame>
   );
 }
@@ -433,11 +457,11 @@ export function loadLine(error: unknown): string {
   return error.message || "That didn't work. Try again.";
 }
 
-export function FrameError({ title, error, onRetry }: { title: string; error: unknown; onRetry: () => void }) {
+export function FrameError({ title, error, onRetry, web = "/practice" }: { title: string; error: unknown; onRetry: () => void; /** The same page on the website, for a part the app does not have yet. */ web?: string }) {
   return (
     <GameFrame title={title} testID="frame-error">
       {isSoon(error) ? (
-        <EmptyState mood="sleepy" title="Coming in the next update" body="This is ready on the website and arrives in the app soon." testID="soon" />
+        <SoonState web={web} />
       ) : (
         <EmptyState mood="puzzled" title="That didn't load" body={loadLine(error)} action={{ label: "Try again", onPress: onRetry }} testID="load-error" />
       )}
