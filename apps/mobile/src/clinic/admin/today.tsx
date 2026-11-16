@@ -98,7 +98,10 @@ export function AdminClinicScreen() {
                   ))}
                 </SessionList>
               ) : (
-                <Quiet>No sessions today.</Quiet>
+                <View style={{ gap: space[1] }}>
+          <Quiet>No sessions today.</Quiet>
+          <HeadLink label="Set up the timetable" onPress={() => go("/admin/clinic/timetable")} testID="home-timetable" />
+        </View>
               )}
             </Section>
             <Section title="Clinic">

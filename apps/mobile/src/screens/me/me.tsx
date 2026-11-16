@@ -1,5 +1,5 @@
 import { router } from "expo-router";
-import { Award, Bell, CalendarCheck, CalendarDays, CalendarOff, ChartLine, ClipboardList, CircleHelp, MessageCircleQuestionMark, Settings, ShoppingBag, Trophy } from "lucide-react-native";
+import { Award, Bell, CalendarCheck, CalendarDays, CalendarOff, ChartLine, ClipboardList, CircleHelp, MessageCircleQuestionMark, Settings, ShoppingBag, Trophy, QrCode } from "lucide-react-native";
 import * as React from "react";
 import { View } from "react-native";
 
@@ -67,6 +67,7 @@ export function MeScreen() {
       {!lecturesOnly ? (
         <Section title="Clinic">
           <RowList>
+            <Row testID="me-scan" title="Scan attendance" meta="Scan the code when you arrive and when you leave" icon={<IconDot icon={QrCode} />} onPress={() => go("/clinic/scan")} />
             <Row testID="me-schedule" title="Schedule" meta="Sessions and your OPD days" icon={<IconDot icon={CalendarDays} />} onPress={() => go("/clinic/schedule")} />
             <Row testID="me-leave" title="Leave" icon={<IconDot icon={CalendarOff} />} onPress={() => go("/clinic/leave")} />
             <Row testID="me-opd" title="OPD cases" icon={<IconDot icon={ClipboardList} />} onPress={() => go("/clinic/opd")} />
