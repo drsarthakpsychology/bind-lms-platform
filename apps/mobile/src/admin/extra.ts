@@ -1,47 +1,9 @@
 /**
- * Admin routes the server has marked "planned" (docs/app/API_CONTRACT.md,
- * section 2.13, on agent/appapi2) or not listed yet. The app builds against
- * these shapes and the mock server answers them; against the real server a
- * missing route answers 404 and the screen shows "Coming in the next update".
- *
- * Requests for the server side, one line each:
- *   POST /admin/students/:id/login-link      super admin  -> LoginLinkResult   (issueSetupLink)
- *   GET  /admin/inbox                         admin        -> InboxList
- *   GET  /admin/inbox/:id                     admin        -> InboxThread
- *   POST /admin/inbox/:id/reply               super admin  InboxReplyBody -> InboxThread
- *   GET  /admin/review/submissions?status=    admin        -> SubmissionList
- *   POST /admin/review/submissions/:id/grade  super admin  GradeBody -> Submission
- *   GET  /admin/review/signoffs               admin        -> SignOffList
- *   POST /admin/review/signoffs/:id           super admin  SignOffBody -> SignOff
- *   GET  /admin/cohorts                       admin        -> CohortList
- *   GET  /admin/cohorts/:id                   admin        -> CohortDetail
- *   GET  /admin/activity/behind?cohort=       admin        -> BehindList
- *   GET  /admin/people?view=&search=          admin        -> PeopleList
- *   GET  /admin/people/:key                   admin        -> PersonDetail
- *   POST /admin/people/:key/stage             super admin  MoveStageBody -> PersonDetail
- *   POST /admin/people/:key/note              super admin  NoteBody -> PersonDetail
- *   POST /admin/people/:key/invite            super admin  -> LoginLinkResult   (sends the invitation email)
- *   POST /admin/people/:key/paid              super admin  PaidBody -> PersonDetail
- *   POST /admin/people/contact                super admin  BulkContactBody -> BulkContactResult (one email each)
- *   GET  /admin/enquiries                     admin        -> EnquiryList
- *   GET  /admin/forms                         admin        -> FormList
- *   GET  /admin/forms/:id                     admin        -> FormDetail (with respondents)
- *   POST /admin/forms/:id/email               super admin  FormEmailBody -> BulkContactResult
- *   GET  /admin/certificates?status=&search=  admin        -> CertificateList
- *   GET  /admin/certificates/options          admin        -> StudioOptions
- *   POST /admin/certificates                  super admin  StudioIssueInput -> IssueResult
- *   POST /admin/certificates/:id/revoke       super admin  RevokeBody -> CertRow
- *   POST /admin/certificates/:id/resend       super admin  -> ResendResult
- *   POST /admin/certificates/:id/reissue      super admin  -> CertRow (a new id; the old one says "replaced")
- *   GET  /admin/certificates/types            admin        -> CertTypeList (certificate kinds and badges)
- *   GET  /admin/certificates/settings         admin        -> StudioSettings
- *   PUT  /admin/certificates/settings         super admin  Partial<StudioSettings> -> StudioSettings
- *   GET  /admin/students/:id/credentials      admin        -> { items: CertRow[] }
- *   GET  /admin/students/:id/messages         admin        -> { items: StudentMessage[] }
- *   GET  /admin/push-preferences              admin        -> AdminPushPrefs
- *   PUT  /admin/push-preferences              admin        Partial<AdminPushPrefs> -> AdminPushPrefs
- * Push: the server adds `admin` to PushData for the three admin notices
- * (AdminPushData below) so a tap opens the right admin screen.
+ * The shapes the admin screens read. The server's own types are in
+ * ./contract.ts (copied from src/lib/app-api/contract-practise-admin.ts);
+ * ./safe.ts turns each answer into these, filling anything missing, so a
+ * screen never reads raw server JSON. Every route the screens call is built
+ * (docs/app/API_CONTRACT_PRACTISE_ADMIN.md, section 4).
  */
 
 /* ------------------------------------------------------------- login link */
@@ -84,9 +46,9 @@ export type SubmissionList = { items: Submission[]; pending: number; canWrite?: 
 /** POST /admin/submissions/:id/grade (the website's Return feedback; the score is optional). */
 export type GradeBody = { feedback: string; score: number | null };
 
-export type SignOff = { id: string; studentId: string; studentName: string; activity: string; hours: number; date: string; supervisor: string; competency: string | null; status: "requested" | "signed" | "rejected"; note: string | null };
-export type SignOffList = { items: SignOff[] };
-export type SignOffBody = { decision: "signed" | "rejected"; note?: string };
+export type SignOff = { id: string; studentId: string; studentName: string; studentEmail: string; activity: string; hours: number; date: string; supervisor: string | null; competency: string | null; status: "requested" | "signed" | "rejected" };
+export type SignOffList = { items: SignOff[]; canWrite: boolean };
+export type SignOffBody = { decision: "signed" | "rejected" };
 
 /* ---------------------------------------------------------------- cohorts */
 
@@ -232,15 +194,31 @@ export type StudioIssueInput = {
   /** A correction: the certificate this one replaces (the old one is revoked and points here). */
   replaces?: string | null;
 };
-export type StudioOptions = { signatories: StudioSignatory[]; signatures: { id: string; label: string }[]; emailReady: boolean; emailLeft?: number | null; ready?: boolean; today?: string | null; courses?: { id: string; title: string }[] };
+export type StudioOptions = { signatories: StudioSignatory[]; signatures: SignatureImage[]; emailReady: boolean; emailLeft?: number | null; ready?: boolean; today?: string | null; courses?: { id: string; title: string }[] };
 export type IssueResult = { issued: number; emailed: number; queued: number; ids: string[]; skipped?: number };
 /** GET /admin/badges, as the screens show it. */
 export type BadgeRow = { id: string; title: string; about: string; enabled: boolean; issued: number; automatic: boolean };
 export type BadgeList = { items: BadgeRow[]; canWrite: boolean; maxRecipients: number };
 export type RevokeBody = { reason: string };
-export type CertType = { id: string; name: string; kind: CertKind | "badge"; about: string; issued: number; auto: boolean };
-export type CertTypeList = { items: CertType[] };
-export type StudioSettings = { signatories: StudioSignatory[]; emailOnIssue: boolean; replyTo: string | null; emailReady: boolean };
+/** A rule the type form can edit (the website's AchievementRequirement). */
+export type TypeRule =
+  | { kind: "module_complete"; module: string }
+  | { kind: "sections_read"; module: string; count: number }
+  | { kind: "xp"; min: number }
+  | { kind: "watch_seconds"; min: number }
+  | { kind: "course_complete"; course_id: string }
+  | { kind: "module_tests_passed" };
+export type RuleKind = TypeRule["kind"];
+/** GET /admin/certificates/types, one row. */
+export type CertType = { id: string; type: "badge" | "certificate"; title: string; description: string | null; tone: string; enabled: boolean; issued: number; ruleText: string; rule: TypeRule | null; madeForYou: boolean; hasSignature: boolean; signatureLabel: string | null };
+export type CertTypeList = { items: CertType[]; rules: { id: RuleKind; label: string }[]; tones: string[]; modules: { id: string; title: string }[]; courses: { id: string; title: string }[]; canWrite: boolean };
+export type CertTypeBody = { type: "badge" | "certificate"; title: string; description?: string; tone?: string; rule: TypeRule };
+export type SignatureImage = { id: string; label: string; url: string | null };
+/** GET /admin/certificates/settings */
+export type StudioSettings = { signatories: StudioSignatory[]; signatures: SignatureImage[]; email: { configured: boolean; limit: number; sentToday: number; waiting: number }; canWrite: boolean };
+/** A certificate for someone without an account. */
+export type AnyoneInput = { name: string; email: string; phone?: string | null; title: string; paragraph: string; heading?: string; lead?: string; issuedOn?: string; signatureFrom?: string | null; emailIt?: boolean };
+export type AnyoneResult = { credentialId: string; verifyUrl: string; linkedStudent: string | null; emailNote: string | null };
 
 /* ------------------------------------------------------------------ forms */
 
@@ -265,7 +243,8 @@ export type ResendResult = { sent: boolean };
 
 /* ------------------------------------------------------- student extras */
 
-export type StudentMessage = { id: string; title: string; at: string; opened: boolean; from: string };
+/** GET /admin/students/:id/messages: an email to them, their reply, or a bell notice. */
+export type StudentMessage = { id: string; title: string; at: string; opened: boolean; from: "email" | "reply" | "bell"; state: string; failed: boolean };
 
 /* ------------------------------------------------------------------ push */
 
@@ -279,6 +258,6 @@ export type AdminPushPrefs = { newDoubt: boolean; newEnquiry: boolean; fallingBe
 /** A named support key, as the website's System page lists it (never the key itself). */
 export type SupportKeyView = { id: string; label: string; last4: string; createdAt: string; createdByEmail: string | null; revokedAt: string | null; revokedByEmail: string | null; lastUsedAt: string | null };
 /** GET /admin/system (planned): support keys and a few usage lines. */
-export type SystemData = { ready: boolean; canWrite: boolean; legacyKeyOn: boolean; maxLive: number; keys: SupportKeyView[]; usage: { label: string; value: string; pct: number | null }[] };
+export type SystemData = { ready: boolean; canWrite: boolean; legacyKeyOn: boolean; maxLive: number; keys: SupportKeyView[]; uses: { email: string; at: string }[]; usage: { label: string; value: string; pct: number | null }[] };
 /** POST /admin/system/support-keys and /:id/rotate answer the full key ONCE. */
 export type NewSupportKey = { plain: string; last4: string };

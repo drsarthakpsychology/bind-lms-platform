@@ -143,6 +143,7 @@ type AdminState = {
   allowed: Set<string>;
   forms: X.FormDetail[];
   studio: X.StudioSettings;
+  types: X.CertType[];
   keys: X.SupportKeyView[];
   legacyKey: boolean;
 };
@@ -158,8 +159,8 @@ function fresh(): AdminState {
       { id: "s3", studentId: "u8", studentName: "Dev Malhotra", assignment: "Write up a first interview", course: "Clinical Psychology in Practice", submittedAt: ago(60 * 50), status: "graded", reviewed: "returned", grade: 80, maxGrade: 100, feedback: "Clear history. Add a short summary and your next step at the end.", answer: "A 31 year old man with worry about his health for six months...", file: null },
     ],
     signoffs: [
-      { id: "so1", studentId: "u5", studentName: "Sana Khan", activity: "Observed intake interviews at the clinic", hours: 6, date: dayStr(3), supervisor: "Dr. Sarthak Dave", competency: "Interviewing", status: "requested", note: null },
-      { id: "so2", studentId: "u10", studentName: "Neha Joshi", activity: "Case presentation: generalised anxiety", hours: 2, date: dayStr(6), supervisor: "Dr. Sarthak Dave", competency: "Case formulation", status: "requested", note: null },
+      { id: "so1", studentId: "u5", studentName: "Sana Khan", activity: "Observed intake interviews at the clinic", hours: 6, date: dayStr(3), supervisor: "Dr. Sarthak Dave", competency: "Interviewing", status: "requested", studentEmail: "sana@example.com" },
+      { id: "so2", studentId: "u10", studentName: "Neha Joshi", activity: "Case presentation: generalised anxiety", hours: 2, date: dayStr(6), supervisor: "Dr. Sarthak Dave", competency: "Case formulation", status: "requested", studentEmail: "neha@example.com" },
     ],
     people: seedPeople(),
     certs: seedCerts(),
@@ -186,7 +187,13 @@ function fresh(): AdminState {
       { id: "k0", label: "Front desk", last4: "a91B", createdAt: ago(60 * 24 * 40), createdByEmail: "admin@example.com", revokedAt: ago(60 * 24 * 12), revokedByEmail: "admin@example.com", lastUsedAt: ago(60 * 24 * 13) },
     ],
     legacyKey: true,
-    studio: { signatories: [{ name: "Dr. Sarthak Dave", role: "Director, VIBHA School of Psychology", signatureFrom: "sig-sd" }], emailOnIssue: true, replyTo: "hello@vibhapsychology.com", emailReady: true },
+    studio: { signatories: [{ name: "Dr. Sarthak Dave", role: "Director, VIBHA School of Psychology", signatureFrom: "sig-sd" }], signatures: [{ id: "sig-sd", label: "Dr. Sarthak Dave", url: null }], email: { configured: true, limit: 100, sentToday: 8, waiting: 0 }, canWrite: true },
+    types: [
+      { id: "t1", type: "badge", title: "First module done", description: "Finished a whole module.", tone: "lime", enabled: true, issued: 18, ruleText: "Finish Foundations", rule: { kind: "module_complete", module: "foundations" }, madeForYou: false, hasSignature: false, signatureLabel: null },
+      { id: "t2", type: "badge", title: "Helping hand", description: "Helped a classmate.", tone: "blue", enabled: true, issued: 4, ruleText: "Given by hand", rule: null, madeForYou: false, hasSignature: false, signatureLabel: null },
+      { id: "t3", type: "certificate", title: "Clinical Psychology in Practice", description: null, tone: "ink", enabled: true, issued: 0, ruleText: "Finish Clinical Psychology in Practice", rule: { kind: "course_complete", course_id: "k1" }, madeForYou: false, hasSignature: true, signatureLabel: "Dr. Sarthak Dave" },
+      { id: "t4", type: "certificate", title: "Signature: Dr. Sarthak Dave", description: null, tone: "ink", enabled: false, issued: 0, ruleText: "Given by hand", rule: null, madeForYou: true, hasSignature: true, signatureLabel: "Dr. Sarthak Dave" },
+    ],
   };
 }
 
@@ -234,6 +241,30 @@ function live(): A.AdminHome["live"] {
     { userId: "u5", name: "Sana Khan", meta: "VIBHA-000142", where: "Lecture: Anxiety disorders: telling them apart", lessonId: "l7", since: ago(14), watching: true },
     { userId: "u1", name: "Ananya Mehta", meta: "VIBHA-000123", where: "Study", lessonId: null, since: ago(6), watching: false },
   ];
+}
+
+/** A small certificate drawing in the server's operations (the real one is the website's layout). */
+function mockDrawing(b: Record<string, unknown>): A.StudioPreview {
+  const recipients = (Array.isArray(b.recipients) ? b.recipients : []) as { name: string }[];
+  const name = recipients[Math.min(Number(b.showing ?? 0), Math.max(0, recipients.length - 1))]?.name ?? "";
+  const problems = [...(!String(b.title ?? "").trim() ? ["Give the certificate a title."] : []), ...(!recipients.length ? ["Pick at least one student."] : [])];
+  const bar = (x: number, y: number, w: number, h: number) => `M${x} ${y}H${x + w}V${y + h}H${x}Z`;
+  return {
+    v: 1,
+    width: 842,
+    height: 595,
+    ops: [
+      { k: "rect", x: 0, y: 0, w: 842, h: 595, fill: "#fbfaf6" },
+      { k: "rect", x: 0, y: 0, w: 214, h: 595, fill: "#2f49d1" },
+      { k: "stroke", d: "M60 90 L107 140 L154 90", stroke: "#d8f36a", sw: 10 },
+      { k: "path", d: bar(272, 120, 300, 18), fill: "#1b1b1f" },
+      { k: "path", d: bar(272, 200, Math.min(480, 40 + name.length * 18), 34), fill: "#1b1b1f" },
+      { k: "path", d: bar(272, 270, 360, 16), fill: "#55555f" },
+      { k: "line", x1: 272, y1: 470, x2: 440, y2: 470, stroke: "#1b1b1f", sw: 1 },
+    ],
+    images: {},
+    problems,
+  };
 }
 
 function cohorts(): X.CohortRow[] {
@@ -319,7 +350,14 @@ export async function adminRoute(req: RawRequest, role: "admin" | "view_admin", 
   if ((m = is("GET", "/admin/students/:id/credentials"))) return ok({ items: s.certs.filter((c) => c.recipientId === m![0]) });
   if ((m = is("GET", "/admin/students/:id/messages"))) {
     const r = s.students.find((x) => x.id === m![0]);
-    return ok<{ items: X.StudentMessage[] }>({ items: r ? [{ id: "sm1", title: "Lecture 6 opens on Monday", at: ago(60 * 3), opened: r.presence !== "never", from: "Kavya Bothra" }, { id: "sm2", title: "Welcome to Cohort Two", at: ago(60 * 24 * 13), opened: r.presence !== "never", from: "Kavya Bothra" }] : [] });
+    if (!r) return notFound();
+    const seen = r.presence !== "never";
+    return ok<A.StudentMessages>({ v: 1, items: [
+      { id: "bell:sm1", from: "bell", title: "Lecture 6 opens on Monday", at: ago(60 * 3), opened: seen, state: seen ? "Opened" : "Not opened", failed: false },
+      { id: "email:sm3", from: "email", title: "Your login link", at: ago(60 * 24 * 2), opened: seen, state: seen ? "Opened" : "Sent", failed: false },
+      { id: "reply:sm4", from: "reply", title: "Re: Your login link", at: ago(60 * 24 * 2 - 30), opened: true, state: "Reply", failed: false },
+      { id: "bell:sm2", from: "bell", title: "Welcome to Cohort Two", at: ago(60 * 24 * 13), opened: seen, state: seen ? "Opened" : "Not opened", failed: false },
+    ] });
   }
   if ((m = is("POST", "/admin/students/:id/lock")) || (m = is("POST", "/admin/students/:id/unlock"))) {
     const r = s.students.find((x) => x.id === m![0]);
@@ -426,7 +464,7 @@ export async function adminRoute(req: RawRequest, role: "admin" | "view_admin", 
     const all = empty ? [] : s.submissions;
     const items: A.AdminSubmission[] = all
       .filter((x) => !query.status || x.status === query.status)
-      .map((x) => ({ id: x.id, studentId: x.studentId, studentEmail: s.students.find((r) => r.id === x.studentId)?.email ?? null, assignmentId: `as-${x.assignment.length}`, assignmentTitle: x.assignment, lessonTitle: "Lecture 2", courseId: "k1", courseTitle: x.course, status: x.status === "graded" ? (x.reviewed ?? "returned") : "submitted", submittedAt: x.submittedAt, late: false, text: x.answer || null, hasAudio: false, files: x.file ? [{ id: `file-${x.id}`, name: x.file, format: "pdf" }] : [], score: x.grade, feedback: x.feedback, note: null }));
+      .map((x) => ({ id: x.id, studentId: x.studentId, studentEmail: s.students.find((r) => r.id === x.studentId)?.email ?? null, studentName: x.studentName, assignmentId: `as-${x.assignment.length}`, assignmentTitle: x.assignment, lessonTitle: "Lecture 2", courseId: "k1", courseTitle: x.course, status: x.status === "graded" ? (x.reviewed ?? "returned") : "submitted", submittedAt: x.submittedAt, late: false, text: x.answer || null, hasAudio: false, files: x.file ? [{ id: `file-${x.id}`, name: x.file, format: "pdf" }] : [], score: x.grade, feedback: x.feedback, note: null }));
     return ok<A.AdminSubmissions>({ v: 1, items, nextCursor: null, pending: all.filter((x) => x.status === "pending").length, courses: [{ id: "k1", title: "Clinical Psychology in Practice" }], assignments: [], canWrite: role === "admin" });
   }
   if ((m = is("POST", "/admin/submissions/:id/grade")) || (m = is("POST", "/admin/submissions/:id/approve"))) {
@@ -442,17 +480,18 @@ export async function adminRoute(req: RawRequest, role: "admin" | "view_admin", 
     return ok<A.ReviewResult>({ status: "returned" });
   }
   if ((m = is("GET", "/admin/submissions/:id/files/:fileId"))) return ok<A.AdminFileLink>({ url: `https://vibhapsychology.com/mock/files/${m[1]}`, expiresInSeconds: 900 });
-  if (is("GET", "/admin/review/signoffs")) return ok<X.SignOffList>({ items: empty ? [] : s.signoffs.filter((x) => x.status === "requested") });
+  if (is("GET", "/admin/review/signoffs")) return ok<A.SignOffList>({ v: 1, canWrite: role === "admin", items: empty ? [] : s.signoffs.filter((x) => x.status === "requested") });
   if ((m = is("POST", "/admin/review/signoffs/:id"))) {
     const x = s.signoffs.find((y) => y.id === m![0]);
     if (!x) return notFound();
-    if (body.decision === "rejected" && !String(body.note ?? "").trim()) return fail(400, "bad_request", "Say why, so the student can fix it.", { fields: ["note"] });
-    Object.assign(x, { status: body.decision === "rejected" ? "rejected" : "signed", note: (body.note as string) ?? null });
-    return ok(x);
+    if (x.status !== "requested") return fail(409, "conflict", "This entry is not waiting for a sign-off any more.");
+    if (body.decision !== "signed" && body.decision !== "rejected") return fail(400, "bad_request", "Sign or reject.", { fields: ["decision"] });
+    x.status = body.decision;
+    return ok<A.SignOffResult>({ id: x.id, status: x.status });
   }
 
   /* ------------------------------------------------------- cohorts */
-  if (is("GET", "/admin/cohorts")) return ok<X.CohortList>({ items: empty ? [] : cohorts() });
+  if (is("GET", "/admin/cohorts")) return ok({ v: 1, items: empty ? [] : cohorts(), unassigned: empty ? 0 : 2, ready: true, canWrite: role === "admin" });
   if ((m = is("GET", "/admin/cohorts/:id"))) {
     const row = cohorts().find((c) => c.id === m![0]);
     if (!row) return notFound();
@@ -491,6 +530,11 @@ export async function adminRoute(req: RawRequest, role: "admin" | "view_admin", 
     });
   }
   const person = (key: string) => s.people.find((x) => x.key === key);
+  if ((m = is("GET", "/admin/people/:key")) && !["email", "whatsapp"].includes(m[0]!)) {
+    const p = person(m[0]!);
+    if (!p) return notFound();
+    return ok({ v: 1, key: p.key, name: p.name, email: p.email, phone: p.phone, college: p.college ?? null, stage: p.stage, stageLabel: p.stage, source: p.source ?? "website", isStudent: p.isStudent, isEnquiry: !!p.enquiredAt, joined: p.isStudent, studentId: p.studentId, cohorts: p.cohorts ?? [], firstSeenAt: p.enquiredAt, lastContactAt: p.lastTouch, lastContact: "week", lastSeenAt: null, followUpAt: p.followUpAt, inviteSentAt: p.invitedAt, paidAt: p.paid ? ago(60 * 24 * 3) : null, paidAmount: null, message: null, whatsapp: p.phone ? `https://wa.me/91${p.phone}` : null, facts: p.facts, timeline: p.timeline.map((t) => ({ ...t, kind: "note" })), paymentReady: true, canWrite: role === "admin" });
+  }
   const touch = (p: X.PersonDetail, title: string, bodyText: string | null, tone: X.PersonEvent["tone"]) => {
     p.timeline.unshift({ title, body: bodyText, at: new Date().toISOString(), tone });
     p.lastTouch = p.timeline[0]!.at;
@@ -614,11 +658,43 @@ export async function adminRoute(req: RawRequest, role: "admin" | "view_admin", 
   }
 
   /* ------------------------------------------------- certificate area */
-  if (is("GET", "/admin/certificates/settings")) return ok(s.studio);
+  if (is("GET", "/admin/certificates/settings")) return ok({ v: 1, ...s.studio, canWrite: role === "admin" });
   if (is("PUT", "/admin/certificates/settings")) {
-    s.studio = { ...s.studio, ...(body as Partial<X.StudioSettings>), emailReady: true };
-    return ok(s.studio);
+    const list = (Array.isArray(body.signatories) ? body.signatories : []) as X.StudioSignatory[];
+    const clean = list.filter((x) => String(x?.name ?? "").trim()).slice(0, 3).map((x) => ({ name: String(x.name).trim(), role: String(x.role ?? "").trim(), signatureFrom: x.signatureFrom ?? null }));
+    if (!clean.length) return fail(400, "bad_request", "Add at least one signatory with a name.");
+    s.studio = { ...s.studio, signatories: clean };
+    return ok({ v: 1, ...s.studio, canWrite: true });
   }
+  if (is("POST", "/admin/certificates/preview")) return ok(mockDrawing(body));
+  if (is("POST", "/admin/certificates/anyone/preview")) {
+    if (!String(body.name ?? "").trim()) return fail(400, "bad_request", "Type their name.");
+    return ok({ pdfBase64: "JVBERi0xLjQK", fileName: "certificate-preview.pdf" });
+  }
+  if (is("POST", "/admin/certificates/anyone")) {
+    if (!/@/.test(String(body.email ?? ""))) return fail(400, "bad_request", "Type a real email address.");
+    if (!String(body.paragraph ?? "").trim()) return fail(400, "bad_request", "Write a few lines about what they did.");
+    return ok<A.AnyoneIssueResult>({ credentialId: "VIBHA-ANY-0001", verifyUrl: "https://vibhapsychology.com/verify/VIBHA-ANY-0001", linkedStudent: null, emailNote: null });
+  }
+  if (is("GET", "/admin/certificates/types")) return ok({ v: 1, items: s.types, rules: [{ id: "module_complete", label: "Finish a module" }, { id: "sections_read", label: "Read a number of sections" }, { id: "xp", label: "Earn a number of XP" }, { id: "watch_seconds", label: "Watch a number of minutes" }, { id: "course_complete", label: "Finish a course" }, { id: "module_tests_passed", label: "Pass every module test at 80%" }], tones: ["lime", "blue", "ink", "gold", "rose"], modules: [{ id: "foundations", title: "Foundations" }, { id: "assessment", title: "Assessment" }], courses: [{ id: "k1", title: "Clinical Psychology in Practice" }], canWrite: role === "admin" });
+  if (is("POST", "/admin/certificates/types") || (m = is("PUT", "/admin/certificates/types/:id"))) {
+    const title = String(body.title ?? "").trim();
+    if (!title) return fail(400, "bad_request", "Title is required.");
+    const rule = body.rule as X.TypeRule;
+    const id = m?.[0] ?? `t${s.types.length + 1}`;
+    const prev = s.types.find((t) => t.id === id);
+    const row: X.CertType = { id, type: body.type === "certificate" ? "certificate" : "badge", title, description: String(body.description ?? "") || null, tone: String(body.tone ?? "lime"), enabled: prev?.enabled ?? true, issued: prev?.issued ?? 0, ruleText: rule?.kind === "xp" ? `Earn ${rule.min} XP` : title, rule, madeForYou: false, hasSignature: prev?.hasSignature ?? false, signatureLabel: prev?.signatureLabel ?? null };
+    s.types = prev ? s.types.map((t) => (t.id === id ? row : t)) : [...s.types, row];
+    return ok({ id });
+  }
+  if ((m = is("POST", "/admin/certificates/types/:id/enabled"))) {
+    const t = s.types.find((x) => x.id === m![0]);
+    if (!t) return notFound();
+    t.enabled = body.enabled === true;
+    return ok({ enabled: t.enabled });
+  }
+  if ((m = is("GET", "/admin/certificates/types/:id/eligible"))) return ok<A.CertEligible>({ items: s.students.slice(0, 2).map((r) => ({ id: r.id, name: r.name, reason: "Finished every lecture" })) });
+  if ((m = is("POST", "/admin/certificates/types/:id/drafts"))) return ok<A.CertDraftsResult>({ made: ((body.userIds as string[]) ?? []).map((u, i) => ({ userId: u, credentialId: `VIBHA-D${i}` })), failed: [] });
 
   /* --------------------------------------------------------- forms */
   if (is("GET", "/admin/forms")) return ok<A.AdminForms>({ v: 1, forms: empty ? [] : s.forms.map((f) => ({ id: f.id, title: f.title, open: f.open, answers: f.respondents.length, lastAnswerAt: f.updatedAt, url: `https://vibhapsychology.com/f/${f.id}` })), total: s.forms.length, open: s.forms.filter((f) => f.open).length, canWrite: role === "admin" });
@@ -649,7 +725,7 @@ export async function adminRoute(req: RawRequest, role: "admin" | "view_admin", 
   if ((m = is("POST", "/admin/forms/:id/email/send-waiting"))) return ok<A.SendWaitingResult>({ sent: 0, failed: 0, left: 0 });
 
   /* -------------------------------------------------------- system */
-  if (is("GET", "/admin/system")) return ok<X.SystemData>({ ready: true, canWrite: role === "admin", legacyKeyOn: s.legacyKey, maxLive: 10, keys: s.keys, usage: [{ label: "Database", value: "31% of the free plan", pct: 31 }, { label: "Emails today", value: "8 of 100", pct: 8 }] });
+  if (is("GET", "/admin/system")) return ok<A.AdminSystem>({ v: 1, ready: true, canWrite: role === "admin", legacyKeyOn: s.legacyKey, maxLive: 10, keys: s.keys, uses: [{ email: "meera@example.com", at: ago(60 * 5) }], usage: [{ label: "Database", value: "155.2 MB of 500.0 MB", pct: 31 }, { label: "AI calls, last 7 days", value: "412", pct: null }] });
   if (is("POST", "/admin/system/support-keys")) {
     const label = String(body.label ?? "").trim();
     if (!label) return fail(400, "bad_request", "Give the key a name, for example who uses it.", { fields: ["label"] });

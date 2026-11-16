@@ -93,6 +93,15 @@ export function day(iso: string | null | undefined, short = false): string {
 }
 
 /** Today in India as yyyy-mm-dd. */
+/** "Sun, 15 Nov", India time (admin Home's date line). */
+export function todayLine(now = Date.now()): string {
+  try {
+    return new Date(now).toLocaleDateString("en-IN", { weekday: "short", day: "numeric", month: "short", timeZone: "Asia/Kolkata" });
+  } catch {
+    return "";
+  }
+}
+
 export function todayIst(now = Date.now()): string {
   return new Date(now + 5.5 * 3600_000).toISOString().slice(0, 10);
 }

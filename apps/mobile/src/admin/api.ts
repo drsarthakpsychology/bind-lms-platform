@@ -10,29 +10,19 @@ import { haptic } from "@/lib/haptics";
 import type * as A from "./contract";
 import type * as X from "./extra";
 import { guarded, useAdminRole, type AdminAction } from "./role";
-import { arr, badgesFrom, enquiriesFrom, peopleFrom, personDetailFrom, personFrom, behindFrom, certListFrom, emailReportFrom, formFrom, formsFrom, inboxFrom, issueResultFrom, newKeyFrom, num, obj, previewFrom, safeActivity, safeDoubt, safeDoubts, safeHome, safeMessages, safeStudent, safeStudentList, studioFrom, submissionsFrom, systemFrom } from "./safe";
+import { anyoneResultFrom, arr, badgesFrom, behindFrom, certListFrom, certTypesFrom, cohortFrom, cohortsFrom, drawingFrom, emailReportFrom, enquiriesFrom, formFrom, formsFrom, inboxFrom, issueResultFrom, newKeyFrom, num, obj, peopleFrom, personPageFrom, previewFrom, pushPrefsFrom, safeActivity, safeDoubt, safeDoubts, safeHome, safeMessages, safeStudent, safeStudentList, signOffsFrom, studentMessagesFrom, studioFrom, studioSettingsFrom, submissionsFrom, systemFrom } from "./safe";
 
 /** Admin server data. Every key starts with "admin" so one call refreshes it all after an action. */
 const k = keys.admin;
 const enc = encodeURIComponent;
 const get = (path: string, query?: Record<string, string | number | undefined>) => api.get<unknown>(path, query ? { query } : undefined);
-const isMissing = (e: unknown) => e instanceof ApiFailure && e.code === "not_found";
-/** A route the server may not have yet: try it, and on 404 build the answer from routes it has. */
-async function orElse<T>(first: () => Promise<T>, fallback: () => Promise<T>): Promise<T> {
-  try {
-    return await first();
-  } catch (e) {
-    if (isMissing(e)) return fallback();
-    throw e;
-  }
-}
 
 export const useAdminHome = () => useQuery({ queryKey: k("home3"), queryFn: async () => safeHome(await get("/admin/home")) });
 export const useStudents = (q: { search?: string; cohort?: string; flag?: string } = {}) =>
   useQuery({ queryKey: k("students3", JSON.stringify(q)), queryFn: async () => safeStudentList(await get("/admin/students", { search: q.search, cohort: q.cohort, flag: q.flag, limit: 200 })), placeholderData: (prev) => prev });
 export const useStudentProfile = (id: string) => useQuery({ queryKey: k("profile3", id), queryFn: async () => safeStudent(await get(`/admin/students/${enc(id)}`)), enabled: id.length > 0 });
 export const useStudentCredentials = (id: string) => useQuery({ queryKey: k("student-creds", id), queryFn: async () => certListFrom(await get("/admin/certificates/issued", { student: id, limit: 100 })), enabled: id.length > 0 });
-export const useStudentMessages = (id: string) => useQuery({ queryKey: k("student-msgs", id), queryFn: async () => ({ items: arr<X.StudentMessage>(obj(await get(`/admin/students/${enc(id)}/messages`)).items) }), enabled: id.length > 0 });
+export const useStudentMessages = (id: string) => useQuery({ queryKey: k("student-msgs", id), queryFn: async () => studentMessagesFrom(await get(`/admin/students/${enc(id)}/messages`)), enabled: id.length > 0 });
 export const useStudentDoubts = (id: string) => useQuery({ queryKey: k("student-doubts", id), queryFn: async () => safeDoubts(await get("/admin/doubts", { student: id, limit: 50 })), enabled: id.length > 0 });
 
 export const useActivity = () => useQuery({ queryKey: k("activity3"), queryFn: async () => safeActivity(await get("/admin/activity", { view: "all" })) });
@@ -56,73 +46,31 @@ export const useAdminDoubts = (kind: "" | "doubt" | "complaint") => useQuery({ q
 export const useAdminDoubt = (id: string) => useQuery({ queryKey: k("doubt3", id), queryFn: async () => safeDoubt(await get(`/doubts/${enc(id)}`)) });
 
 export const useSubmissions = (status: "pending" | "graded" | "") => useQuery({ queryKey: k("submissions3", status), queryFn: async () => submissionsFrom(await get("/admin/submissions", { status: status || undefined, limit: 100 })) });
-export const useSignOffs = () => useQuery({ queryKey: k("signoffs"), queryFn: async () => ({ items: arr<X.SignOff>(obj(await get("/admin/review/signoffs")).items) }) });
+export const useSignOffs = () => useQuery({ queryKey: k("signoffs"), queryFn: async () => signOffsFrom(await get("/admin/review/signoffs")) });
 
-/** Cohorts: their own route when the server has it, otherwise the cohort cards on admin Home. */
-export const useCohorts = () =>
-  useQuery({
-    queryKey: k("cohorts3"),
-    queryFn: () =>
-      orElse(
-        async () => ({ items: arr<X.CohortRow>(obj(await get("/admin/cohorts")).items).filter((c) => c && c.id) }),
-        async () => ({ items: safeHome(await get("/admin/home")).cohorts.map(cohortFromHome) }),
-      ),
-  });
-export const useCohort = (id: string) =>
-  useQuery({
-    queryKey: k("cohort3", id),
-    queryFn: () =>
-      orElse(
-        async () => {
-          const c = obj(await get(`/admin/cohorts/${enc(id)}`));
-          return { ...cohortFromHome({ id, name: "Cohort", members: 0, week: 0, behind: 0, pct: 0 }), ...c, people: arr<X.CohortMember>(c.people), messages: arr<X.CohortDetail["messages"][number]>(c.messages), sessions: arr<X.CohortDetail["sessions"][number]>(c.sessions), hoursWeek: num(c.hoursWeek) } as X.CohortDetail;
-        },
-        async () => {
-          const [home, list] = await Promise.all([get("/admin/home").then(safeHome), get("/admin/students", { cohort: id, limit: 200 }).then(safeStudentList)]);
-          const card = home.cohorts.find((c) => c.id === id);
-          const name = card?.name ?? list.cohorts.find((c) => c.id === id)?.name ?? "Cohort";
-          const row = cohortFromHome(card ?? { id, name, members: list.items.length, week: 0, behind: 0, pct: 0 });
-          return { ...row, people: list.items.map((r) => ({ id: r.id, name: r.name, rollNumber: r.rollNumber, account: r.account, presence: r.presence, lastSeen: r.lastSeen, done: r.lecturesDone, available: r.lecturesAvailable })), messages: [], hoursWeek: 0, sessions: [] };
-        },
-      ),
-    enabled: id.length > 0,
-  });
-function cohortFromHome(c: { id: string; name: string; members: number; week: number; behind: number; pct: number }): X.CohortRow {
-  return { id: c.id, name: c.name, status: "active", course: null, members: c.members, lectures: 0, pct: c.pct, activeWeek: c.week, behind: c.behind, never: 0, starts: null, ends: null };
-}
+export const useCohorts = () => useQuery({ queryKey: k("cohorts4"), queryFn: async () => cohortsFrom(await get("/admin/cohorts")) });
+export const useCohort = (id: string) => useQuery({ queryKey: k("cohort4", id), queryFn: async () => cohortFrom(await get(`/admin/cohorts/${enc(id)}`), id), enabled: id.length > 0 });
 
 /** The pipeline: the server picks the quick view and counts each one. */
 export const usePeople = (view: X.PeopleView = "all", q = "") =>
   useQuery({ queryKey: k("people3", `${view}:${q}`), queryFn: async () => peopleFrom(await get("/admin/people", { view, q: q || undefined, limit: 500 })), placeholderData: (prev) => prev });
-/** One person: their own route when the server has one, otherwise their row in the pipeline. */
-export const usePerson = (key: string) =>
-  useQuery({
-    queryKey: k("person3", key),
-    queryFn: () =>
-      orElse(
-        async () => {
-          const p = obj(await get(`/admin/people/${enc(key)}`));
-          const row = personFrom(p);
-          return { ...personDetailFrom(row), facts: arr<X.PersonDetail["facts"][number]>(p.facts).length ? arr<X.PersonDetail["facts"][number]>(p.facts) : personDetailFrom(row).facts, timeline: arr<X.PersonEvent>(p.timeline).length ? arr<X.PersonEvent>(p.timeline) : personDetailFrom(row).timeline };
-        },
-        async () => {
-          const list = peopleFrom(await get("/admin/people", { view: "all", limit: 500 }));
-          const row = list.items.find((p) => p.key === key || p.email === key);
-          if (!row) throw new ApiFailure("not_found", "That person is not in the pipeline any more.", 404);
-          return personDetailFrom(row);
-        },
-      ),
-    enabled: key.length > 0,
-  });
+/** One person's record with the whole history. */
+export const usePerson = (key: string) => useQuery({ queryKey: k("person4", key), queryFn: async () => personPageFrom(await get(`/admin/people/${enc(key)}`)), enabled: key.length > 0 });
 export const useEnquiries = () => useQuery({ queryKey: k("enquiries3"), queryFn: async () => enquiriesFrom(peopleFrom(await get("/admin/people", { view: "all", enquiries: 1, limit: 500 }))) });
 
 export const useCertificates = (f: { q?: string; type?: string; status?: string } = {}) => useQuery({ queryKey: k("certificates3", JSON.stringify(f)), queryFn: async () => certListFrom(await get("/admin/certificates/issued", { q: f.q || undefined, type: f.type || undefined, status: f.status || undefined, limit: 200 })), placeholderData: (prev) => prev });
 export const useStudioOptions = () => useQuery({ queryKey: k("studio3"), queryFn: async () => studioFrom(await get("/admin/certificates/studio")), staleTime: 10 * 60_000 });
 export const useBadges = () => useQuery({ queryKey: k("badges"), queryFn: async () => badgesFrom(await get("/admin/badges")) });
-export const useStudioSettings = () => useQuery({ queryKey: k("studio-settings"), queryFn: async () => { const s = obj(await get("/admin/certificates/settings")); return { signatories: arr<X.StudioSignatory>(s.signatories), emailOnIssue: s.emailOnIssue !== false, replyTo: (s.replyTo as string | null) ?? null, emailReady: s.emailReady !== false } satisfies X.StudioSettings; } });
+export const useStudioSettings = () => useQuery({ queryKey: k("studio-settings2"), queryFn: async () => studioSettingsFrom(await get("/admin/certificates/settings")) });
+export const useCertTypes = () => useQuery({ queryKey: k("cert-types"), queryFn: async () => certTypesFrom(await get("/admin/certificates/types")) });
+/** Students who meet a course certificate's rule (checks everyone, so only on request). */
+export const useEligible = (typeId: string | null) => useQuery({ queryKey: k("eligible", typeId ?? ""), queryFn: async () => arr<{ id: string; name: string; reason: string }>(obj(await get(`/admin/certificates/types/${enc(typeId ?? "")}/eligible`)).items), enabled: !!typeId, staleTime: 60_000 });
+/** The certificate as the student will get it: the server's own drawing, fetched once the wording settles. */
+export const useCertDrawing = (body: X.StudioIssueInput | null, showing: number) =>
+  useQuery({ queryKey: k("cert-drawing", JSON.stringify([body, showing])), queryFn: async () => drawingFrom(await api.post<unknown>("/admin/certificates/preview", { ...body, showing })), enabled: !!body, placeholderData: (prev) => prev, staleTime: 5 * 60_000 });
 export const useForms = () => useQuery({ queryKey: k("forms3"), queryFn: async () => formsFrom(await get("/admin/forms")) });
 export const useForm = (id: string, emailed: "" | "yes" | "no" = "") => useQuery({ queryKey: k("form3", `${id}:${emailed}`), queryFn: async () => formFrom(await get(`/admin/forms/${enc(id)}`, { emailed: emailed || undefined, limit: 200 }), id), placeholderData: (prev) => prev });
-export const usePushPrefs = () => useQuery({ queryKey: k("push-prefs"), queryFn: async () => { const p = obj(await get("/admin/push-preferences")); return { newDoubt: p.newDoubt !== false, newEnquiry: p.newEnquiry !== false, fallingBehind: p.fallingBehind === true } satisfies X.AdminPushPrefs; } });
+export const usePushPrefs = () => useQuery({ queryKey: k("push-prefs"), queryFn: async () => pushPrefsFrom(await get("/admin/push-preferences")) });
 export const useSystem = () => useQuery({ queryKey: k("system"), queryFn: async () => systemFrom(await get("/admin/system")) });
 
 /** What the studio sends: the website's StudioIssueInput, with `replaces` for a correction. */
@@ -151,7 +99,7 @@ export const adminCalls = {
   grade: (id: string, body: X.GradeBody) => api.post<A.ReviewResult>(`/admin/submissions/${enc(id)}/grade`, body satisfies A.GradeBody),
   submissionFile: (id: string, fileId: string) => api.get<A.AdminFileLink>(`/admin/submissions/${enc(id)}/files/${enc(fileId)}`),
   submissionAudio: (id: string) => api.get<A.AdminFileLink>(`/admin/submissions/${enc(id)}/audio`),
-  signOff: (id: string, body: X.SignOffBody) => api.post<X.SignOff>(`/admin/review/signoffs/${enc(id)}`, body),
+  signOff: (id: string, body: X.SignOffBody) => api.post<A.SignOffResult>(`/admin/review/signoffs/${enc(id)}`, body satisfies A.SignOffBody),
   /** Stage, then the follow-up date and the note when given: the website's three actions. */
   moveStage: async (key: string, body: X.MoveStageBody) => {
     await api.post<A.PersonSaved>(`/admin/people/${enc(key)}/stage`, { stage: body.stage } satisfies A.StageBody);
@@ -181,8 +129,13 @@ export const adminCalls = {
   emailForm: async (id: string, body: X.FormEmailBody) => emailReportFrom(await api.post<unknown>(`/admin/forms/${enc(id)}/email`, { submissionIds: body.ids, subject: body.subject, body: body.text } satisfies A.FormEmailBody)),
   previewFormEmail: async (id: string, submissionId: string, subject: string, text: string) => previewFrom(await api.post<unknown>(`/admin/forms/${enc(id)}/email/preview`, { submissionId, subject, body: text } satisfies A.FormEmailPreviewBody)),
   sendWaitingForm: (id: string) => api.post<A.FormSendWaitingResult>(`/admin/forms/${enc(id)}/email/send-waiting`, {}),
-  studioSettings: (body: Partial<X.StudioSettings>) => api.put<X.StudioSettings>("/admin/certificates/settings", body),
-  pushPrefs: (body: Partial<X.AdminPushPrefs>) => api.put<X.AdminPushPrefs>("/admin/push-preferences", body),
+  saveSignatories: async (signatories: X.StudioSignatory[]) => studioSettingsFrom(await api.put<unknown>("/admin/certificates/settings", { signatories: signatories.map((x) => ({ name: x.name, role: x.role, signatureFrom: x.signatureFrom ?? null })) } satisfies A.CertificateSettingsBody)),
+  anyonePreview: async (body: X.AnyoneInput) => String(obj(await api.post<unknown>("/admin/certificates/anyone/preview", body)).pdfBase64 ?? ""),
+  anyoneIssue: async (body: X.AnyoneInput) => anyoneResultFrom(await api.post<unknown>("/admin/certificates/anyone", body)),
+  saveType: (id: string | null, body: X.CertTypeBody) => (id ? api.put<{ id: string }>(`/admin/certificates/types/${enc(id)}`, body) : api.post<{ id: string }>("/admin/certificates/types", body)),
+  enableType: (id: string, enabled: boolean) => api.post<{ enabled: boolean }>(`/admin/certificates/types/${enc(id)}/enabled`, { enabled } satisfies A.CertTypeEnabledBody),
+  makeDrafts: (id: string, userIds: string[]) => api.post<A.CertDraftsResult>(`/admin/certificates/types/${enc(id)}/drafts`, { userIds } satisfies A.CertDraftsBody),
+  pushPrefs: async (body: Partial<X.AdminPushPrefs>) => pushPrefsFrom(await api.put<unknown>("/admin/push-preferences", body)),
   makeKey: async (label: string) => newKeyFrom(await api.post<unknown>("/admin/system/support-keys", { label })),
   rotateKey: async (id: string) => newKeyFrom(await api.post<unknown>(`/admin/system/support-keys/${enc(id)}/rotate`, {})),
   revokeKey: (id: string) => api.post<{ revoked: true }>(`/admin/system/support-keys/${enc(id)}/revoke`, {}),

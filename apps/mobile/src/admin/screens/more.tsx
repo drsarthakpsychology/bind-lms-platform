@@ -106,7 +106,8 @@ export function AdminAlertsScreen() {
       <Loaded q={q} soon what="alerts" skeleton={<RowsSkeleton rows={3} />}>
         {(p) => (
           <RowList>
-            {(Object.keys(ADMIN_PUSH) as (keyof typeof ADMIN_PUSH)[]).map((k) => (
+            {/* Falling behind has no sender on the server yet, so it is not offered. */}
+            {(Object.keys(ADMIN_PUSH) as (keyof typeof ADMIN_PUSH)[]).filter((k) => k !== "falling_behind").map((k) => (
               <SwitchRow key={k} title={ADMIN_PUSH[k].title} meta={ADMIN_PUSH[k].about} value={p[ADMIN_PUSH[k].pref]} onChange={(v) => void set({ [ADMIN_PUSH[k].pref]: v })} testID={`alert-${k}`} />
             ))}
           </RowList>

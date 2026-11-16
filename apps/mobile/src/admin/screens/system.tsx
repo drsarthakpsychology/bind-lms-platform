@@ -133,6 +133,15 @@ export function AdminSystemScreen() {
                 ) : null}
                 {!canWrite ? <Quiet>{VIEW_ONLY_LINE}</Quiet> : null}
               </Block>
+              {d.uses.length ? (
+                <Block title="Recent sign-ins with a key">
+                  <RowList>
+                    {d.uses.slice(0, 5).map((u, i) => (
+                      <Row key={`${u.at}-${i}`} title={u.email} meta={ago(u.at)} />
+                    ))}
+                  </RowList>
+                </Block>
+              ) : null}
               {d.usage.length ? (
                 <Block title="How full things are">
                   <View style={{ gap: space[3] }}>

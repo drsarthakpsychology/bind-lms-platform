@@ -1,5 +1,5 @@
 import { router, useLocalSearchParams } from "expo-router";
-import { CheckCircle2, Circle, MessageSquare } from "lucide-react-native";
+import { Bell, CheckCircle2, Circle, Mail, MessageSquare, Reply } from "lucide-react-native";
 import * as React from "react";
 import { Linking, ScrollView, Share, View } from "react-native";
 
@@ -213,16 +213,19 @@ function Credentials({ r }: { r: AdminStudentRow }) {
   );
 }
 
+const MSG_FROM = { email: "Email to them", reply: "Their reply", bell: "In VIBHA" } as const;
+
 function Messages({ r }: { r: AdminStudentRow }) {
+  const c = useTheme();
   const q = useStudentMessages(r.id);
   return (
-    <Block title="Messages sent to them">
+    <Block title="Messages">
       <Loaded q={q} soon what="messages">
         {(d) =>
           d.items.length ? (
             <RowList>
               {d.items.map((m) => (
-                <Row key={m.id} title={m.title} meta={`${ago(m.at)} · from ${m.from}`} trailing={<Status tone={m.opened ? "ok" : "quiet"}>{m.opened ? "Opened" : "Not opened"}</Status>} />
+                <Row key={m.id} testID={`msg-${m.id}`} icon={m.from === "email" ? <Mail size={18} color={c.muted} /> : m.from === "reply" ? <Reply size={18} color={c.muted} /> : <Bell size={18} color={c.muted} />} title={m.title} meta={`${MSG_FROM[m.from]} · ${ago(m.at)}`} trailing={<Status tone={m.failed ? "alert" : m.from === "reply" ? "info" : m.opened ? "ok" : "quiet"}>{m.state}</Status>} />
               ))}
             </RowList>
           ) : (

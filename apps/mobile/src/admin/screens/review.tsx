@@ -1,3 +1,4 @@
+import { useLocalSearchParams } from "expo-router";
 import * as React from "react";
 import { FileText, Mic } from "lucide-react-native";
 import { Linking, View } from "react-native";
@@ -6,10 +7,10 @@ import { Button, Chips, EmptyState, Field, Row, RowList, RowsSkeleton, Screen, S
 import { messageOf } from "@/api/errors";
 import { toast } from "@/ds/toast";
 import { space, useTheme } from "@/theme";
-import { adminCalls, useAdminAction, useRefreshAdmin, useSignOffs, useStudents, useSubmissions } from "../api";
+import { adminCalls, useAdminAction, useRefreshAdmin, useSignOffs, useSubmissions } from "../api";
 import type { SignOff, Submission } from "../extra";
 import { ago, day } from "../format";
-import { Facts, Loaded, Notice, Status } from "../kit";
+import { ConfirmSheet, Facts, Loaded, Notice, Status } from "../kit";
 import { openStudent } from "../nav";
 import { useAdminRole, VIEW_ONLY_LINE } from "../role";
 import { ScrollTabs } from "./student";
@@ -104,13 +105,10 @@ function GradeSheet({ s, onClose }: { s: Submission | null; onClose: () => void 
 function SignOffSheet({ x, onClose }: { x: SignOff | null; onClose: () => void }) {
   const { canWrite } = useAdminRole();
   const { run, busy } = useAdminAction();
-  const [note, setNote] = React.useState("");
-  const [error, setError] = React.useState<string | null>(null);
+  const [rejecting, setRejecting] = React.useState(false);
   if (!x) return null;
   const decide = async (decision: "signed" | "rejected") => {
-    if (decision === "rejected" && !note.trim()) return setError("Say why, so the student can fix it.");
-    setError(null);
-    const r = await run("sign-off", () => adminCalls.signOff(x.id, { decision, note: note.trim() || undefined }), { done: decision === "signed" ? "Signed" : "Sent back to the student" });
+    const r = await run("sign-off", () => adminCalls.signOff(x.id, { decision }), { done: decision === "signed" ? `Signed for ${x.studentName}` : "Rejected" });
     if (r) onClose();
   };
   return (
@@ -121,15 +119,16 @@ function SignOffSheet({ x, onClose }: { x: SignOff | null; onClose: () => void }
             { label: "Student", value: x.studentName },
             { label: "Hours", value: String(x.hours) },
             { label: "Date", value: day(x.date) },
-            { label: "Supervisor", value: x.supervisor },
+            { label: "Supervisor", value: x.supervisor ?? "Not named" },
             ...(x.competency ? [{ label: "Skill", value: x.competency }] : []),
           ]}
         />
         {canWrite ? (
           <>
-            <Field label="Note (needed to send it back)" value={note} onChangeText={setNote} error={error} maxLength={500} testID="signoff-note" />
+            <T v="small" tone="muted">Check the contact hours, then sign or reject.</T>
             <Button label="Sign" busy={busy === "sign-off"} onPress={() => void decide("signed")} testID="signoff-sign" />
-            <Button kind="danger" full label="Send back" onPress={() => void decide("rejected")} testID="signoff-reject" />
+            <Button kind="danger" full label="Reject" onPress={() => setRejecting(true)} testID="signoff-reject" />
+            <ConfirmSheet open={rejecting} onClose={() => setRejecting(false)} title="Reject this entry?" body={`${x.studentName} will see it was not signed.`} confirm="Reject" danger busy={busy === "sign-off"} onConfirm={() => void decide("rejected")} testID="confirm-signoff-reject" />
           </>
         ) : (
           <Notice>{VIEW_ONLY_LINE}</Notice>
@@ -142,10 +141,6 @@ function SignOffSheet({ x, onClose }: { x: SignOff | null; onClose: () => void }
 function Submissions() {
   const [status, setStatus] = React.useState<"pending" | "graded" | "">("pending");
   const q = useSubmissions(status);
-  // The server sends the student's id and email; names come from the Students list.
-  const students = useStudents();
-  const names = new Map((students.data?.items ?? []).map((r) => [r.id, r.name]));
-  const named = (s: Submission): Submission => ({ ...s, studentName: names.get(s.studentId) ?? s.studentName });
   const [open, setOpen] = React.useState<Submission | null>(null);
   return (
     <>
@@ -164,7 +159,7 @@ function Submissions() {
           d.items.length ? (
             <RowList>
               {d.items.map((s) => (
-                <Row key={s.id} testID={`sub-${s.id}`} title={named(s).studentName} meta={`${s.assignment} · ${ago(s.submittedAt)}`} trailing={<Status tone={s.status === "graded" ? "ok" : "warn"}>{s.status === "graded" ? (s.grade !== null ? `${s.grade}/${s.maxGrade}` : s.reviewed === "approved" ? "Approved" : "Returned") : "To grade"}</Status>} onPress={() => setOpen(named(s))} />
+                <Row key={s.id} testID={`sub-${s.id}`} title={s.studentName} meta={`${s.assignment} · ${ago(s.submittedAt)}`} trailing={<Status tone={s.status === "graded" ? "ok" : "warn"}>{s.status === "graded" ? (s.grade !== null ? `${s.grade}/${s.maxGrade}` : s.reviewed === "approved" ? "Approved" : "Returned") : "To grade"}</Status>} onPress={() => setOpen(s)} />
               ))}
             </RowList>
           ) : (
@@ -205,7 +200,8 @@ function SignOffs() {
 
 /** Review: hand-ins to grade and supervision sign-offs. */
 export function AdminReviewScreen() {
-  const [tab, setTab] = React.useState<"subs" | "signoffs">("subs");
+  const params = useLocalSearchParams<{ tab?: string }>();
+  const [tab, setTab] = React.useState<"subs" | "signoffs">(params.tab === "signoffs" ? "signoffs" : "subs");
   const subs = useSubmissions("pending");
   const so = useSignOffs();
   const { refresh, refreshing } = useRefreshAdmin();

@@ -3,7 +3,8 @@ import * as Notifications from "expo-notifications";
 import * as React from "react";
 import { Text } from "react-native";
 
-import { adminActivityView, adminHomeView, adminMessagesView, adminStudentView, adminStudentsView, meView } from "@/api/adapt";
+import { meView } from "@/api/adapt";
+import { certTypesFrom, cohortFrom, cohortsFrom, drawingFrom, personPageFrom, safeActivity, safeHome, safeMessages, safeStudent, safeStudentList, signOffsFrom, studentMessagesFrom, studioSettingsFrom, systemFrom } from "@/admin/safe";
 import { api, session } from "@/auth";
 import { CrashBoundary, crashStore, installCrashHandlers, resetCrashNet } from "@/lib/crash";
 import { homeHref, groupFor } from "@/nav/targets";
@@ -112,14 +113,9 @@ describe("Cause 1: admin screens read shapes the live server never sends", () =>
 
   it("adapters never throw on empty, null or odd answers", () => {
     for (const bad of [null, undefined, 1, "x", [], {}, { needsLook: null, counts: null }, { items: null }, { row: null, detail: null }, { data: null }, { batches: null }]) {
-      expect(() => adminHomeView(bad)).not.toThrow();
-      expect(() => adminStudentsView(bad)).not.toThrow();
-      expect(() => adminStudentView(bad)).not.toThrow();
-      expect(() => adminActivityView(bad)).not.toThrow();
-      expect(() => adminMessagesView(bad)).not.toThrow();
-      expect(() => meView(bad)).not.toThrow();
+      for (const read of [safeHome, safeStudentList, safeStudent, safeActivity, safeMessages, meView, cohortsFrom, (v: unknown) => cohortFrom(v, "c1"), studentMessagesFrom, signOffsFrom, studioSettingsFrom, certTypesFrom, systemFrom, personPageFrom, drawingFrom]) expect(() => read(bad)).not.toThrow();
     }
-    expect(adminHomeView({}).today.total).toBe(0);
+    expect(safeHome({}).cohorts).toEqual([]);
   });
 });
 

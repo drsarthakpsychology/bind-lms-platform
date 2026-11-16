@@ -15,6 +15,7 @@ export default function AdminStack() {
     <Stack screenOptions={{ ...header, animation: Platform.OS === "android" ? "default" : undefined }}>
       <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
       <Stack.Screen name="admin/certificates/new" options={{ title: "", gestureEnabled: false }} />
+      <Stack.Screen name="admin/certificates/anyone" options={{ title: "" }} />
       <Stack.Screen name="admin/alerts" options={{ title: "Admin alerts" }} />
     </Stack>
   );
