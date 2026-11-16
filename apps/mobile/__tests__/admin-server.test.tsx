@@ -85,7 +85,7 @@ describe("never crash on what the server sends", () => {
 
 describe("Home to-do links", () => {
   it("open the app's own screen, or the website when the app has none", () => {
-    expect(todoHref("/admin/inbox")).toEqual({ app: "/admin/inbox" });
+    expect(todoHref("/admin/inbox")).toEqual({ app: "/admin/messages" });
     expect(todoHref("/admin/submissions")).toEqual({ app: "/admin/review" });
     expect(todoHref("/admin/students/logins")).toEqual({ app: "/admin/students?flag=login" });
     expect(todoHref("/admin/activity?view=behind")).toEqual({ app: "/admin/activity?view=behind" });

@@ -1,6 +1,6 @@
 import { useQueryClient } from "@tanstack/react-query";
 import { router } from "expo-router";
-import { Award, Bell, BellRing, BookOpen, CircleHelp, ClipboardList, FileCheck, Gauge, GraduationCap, Inbox, LogOut, MessageCircleQuestion, Radar, Settings, Users } from "lucide-react-native";
+import { Award, Bell, BellRing, BookOpen, CircleHelp, ClipboardList, FileCheck, Gauge, GraduationCap, LogOut, MessageCircleQuestion, Radar, Settings, Users } from "lucide-react-native";
 import * as React from "react";
 import { Linking, View } from "react-native";
 
@@ -11,7 +11,7 @@ import { toast } from "@/ds/toast";
 import { config } from "@/lib/config";
 import { haptic } from "@/lib/haptics";
 import { space, useTheme } from "@/theme";
-import { adminCalls, useAdminDoubts, useInbox, usePushPrefs, useSubmissions } from "../api";
+import { adminCalls, useAdminDoubts, usePushPrefs, useSubmissions } from "../api";
 import type { AdminPushPrefs } from "../extra";
 import { Avatar, ConfirmSheet, Loaded } from "../kit";
 import { AdminTop } from "../nav";
@@ -24,7 +24,6 @@ export function AdminMoreScreen() {
   const c = useTheme();
   const me = session.store.use((s) => s.me);
   const { roleLabel } = useAdminRole();
-  const inbox = useInbox();
   const waiting = useAdminDoubts("");
   const toGrade = useSubmissions("pending");
   const [out, setOut] = React.useState(false);
@@ -49,7 +48,6 @@ export function AdminMoreScreen() {
       </View>
       <Section title="People">
         <RowList>
-          <Row title="Inbox" icon={<Inbox {...icon} />} trailing={n(inbox.data?.unread)} onPress={() => router.push("/admin/inbox")} testID="more-inbox" />
           <Row title="Cohorts" icon={<Users {...icon} />} onPress={() => router.push("/admin/cohorts")} testID="more-cohorts" />
           <Row title="People" meta="Enquiries and who to contact next" icon={<Radar {...icon} />} onPress={() => router.push("/admin/people")} testID="more-people" />
           <Row title="Forms" meta="Answers, and email who answered" icon={<ClipboardList {...icon} />} onPress={() => router.push("/admin/forms")} testID="more-forms" />

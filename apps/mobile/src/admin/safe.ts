@@ -162,8 +162,8 @@ export function safeHome(v: unknown): A.AdminHomeData {
 export function todoHref(web: string): { app: string } | { web: string } {
   const [path = "", qs = ""] = web.split("?");
   const q = new URLSearchParams(qs);
-  if (path === "/admin/inbox") return { app: "/admin/inbox" };
-  if (path === "/admin/emails" && q.get("folder") === "inbox") return { app: "/admin/inbox?show=email" };
+  if (path === "/admin/inbox") return { app: "/admin/messages" };
+  if (path === "/admin/emails" && q.get("folder") === "inbox") return { app: "/admin/messages" };
   if (path === "/admin/people") return { app: `/admin/people${q.get("view") ? `?view=${q.get("view")}` : ""}` };
   if (path === "/admin/submissions") return { app: "/admin/review" };
   if (path === "/admin/activity") return { app: `/admin/activity${q.get("view") ? `?view=${q.get("view")}` : ""}` };

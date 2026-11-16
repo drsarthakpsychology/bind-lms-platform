@@ -80,16 +80,6 @@ export function AdminMessagesScreen() {
   );
 }
 
-/** The inbox on its own (from More). */
-export function AdminInboxScreen() {
-  const { refresh, refreshing } = useRefreshAdmin();
-  return (
-    <Screen title="Inbox" testID="admin-inbox" onRefresh={refresh} refreshing={refreshing}>
-      <InboxList />
-    </Screen>
-  );
-}
-
 /** One conversation: read it, reply under it. */
 export function AdminThreadScreen() {
   const c = useTheme();
