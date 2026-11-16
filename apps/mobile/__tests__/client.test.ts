@@ -1,5 +1,6 @@
 import { createClient, type RawRequest, type RawResponse } from "@/api/client";
 import type { AuthTokens } from "@/api/contract";
+import { ApiFailure } from "@/api/errors";
 
 const later = () => new Date(Date.now() + 3600_000).toISOString();
 
@@ -56,5 +57,40 @@ describe("API client", () => {
   it("turns an answer it does not understand into a plain error", async () => {
     const api = createClient({ transport: async () => ({ status: 502, json: null }), tokens: { get: () => null, set: () => undefined, deviceId: () => "d".repeat(16) } });
     await expect(api.get("/config", { auth: false })).rejects.toMatchObject({ code: "server_error" });
+  });
+  it("renewal sends the phone's id (the live server refuses it without one)", async () => {
+    let tokens: AuthTokens = { accessToken: "old", refreshToken: "R1", expiresIn: 3600, expiresAt: new Date(Date.now() + 5_000).toISOString() };
+    const seen: RawRequest[] = [];
+    const transport = async (r: RawRequest): Promise<RawResponse> => {
+      seen.push(r);
+      if (r.path === "/auth/refresh") {
+        if (!r.headers["X-App-Device-Id"]) return { status: 400, json: { ok: false, error: { code: "device_required", message: "This request is missing the device id." } } };
+        return { status: 200, json: { ok: true, data: { tokens: { accessToken: "new", refreshToken: "R2", expiresIn: 3600, expiresAt: later() } } } };
+      }
+      return { status: 200, json: { ok: true, data: "fine" } };
+    };
+    const api = createClient({ transport, tokens: { get: () => tokens, set: (t) => void (tokens = t), deviceId: () => "d".repeat(16) } });
+    await expect(api.get("/home")).resolves.toBe("fine");
+    expect(seen[0]!.path).toBe("/auth/refresh");
+    expect(seen[0]!.headers["X-App-Device-Id"]).toBe("d".repeat(16));
+  });
+
+  it("a renewal the server refuses signs out instead of leaving every screen failing", async () => {
+    const onSessionEvent = jest.fn();
+    const transport = async (r: RawRequest): Promise<RawResponse> =>
+      r.path === "/auth/refresh" ? { status: 401, json: { ok: false, error: { code: "bad_request", message: "no" } } } : { status: 200, json: { ok: true, data: "fine" } };
+    const api = createClient({ transport, tokens: { get: () => ({ accessToken: "A", refreshToken: "R", expiresIn: 1, expiresAt: new Date(Date.now() - 1000).toISOString() }), set: () => undefined, deviceId: () => "d".repeat(16) }, onSessionEvent });
+    await expect(api.get("/home")).rejects.toMatchObject({ code: "unauthenticated" });
+    expect(onSessionEvent).toHaveBeenCalledWith(expect.objectContaining({ code: "unauthenticated" }));
+  });
+
+  it("no internet during renewal keeps the session", async () => {
+    const onSessionEvent = jest.fn();
+    const transport = async (): Promise<RawResponse> => {
+      throw new ApiFailure("network", "No internet.");
+    };
+    const api = createClient({ transport, tokens: { get: () => ({ accessToken: "A", refreshToken: "R", expiresIn: 1, expiresAt: new Date(Date.now() - 1000).toISOString() }), set: () => undefined, deviceId: () => "d".repeat(16) }, onSessionEvent });
+    await expect(api.get("/home")).rejects.toMatchObject({ code: "network" });
+    expect(onSessionEvent).not.toHaveBeenCalled();
   });
 });

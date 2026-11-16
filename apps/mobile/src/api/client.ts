@@ -50,19 +50,29 @@ export type CallOptions = { body?: unknown; /** False for public routes. */ auth
 export function createClient(deps: { transport: Transport; tokens: TokenSource; onSessionEvent?: (e: SessionEvent) => void; version?: string; platform?: string }) {
   let refreshing: Promise<AuthTokens> | null = null;
 
-  const baseHeaders = (): Record<string, string> => ({
-    Accept: "application/json",
-    [APP_HEADERS.appVersion]: deps.version ?? config.appVersion,
-    [APP_HEADERS.platform]: deps.platform ?? (Platform.OS === "ios" ? "ios" : "android"),
-  });
+  const baseHeaders = (): Record<string, string> => {
+    const h: Record<string, string> = {
+      Accept: "application/json",
+      [APP_HEADERS.appVersion]: deps.version ?? config.appVersion,
+      [APP_HEADERS.platform]: deps.platform ?? (Platform.OS === "ios" ? "ios" : "android"),
+    };
+    // Every call says which phone it is. /auth/refresh needs it too, and it is sent
+    // without a bearer token: leaving it out made every renewal fail after the
+    // first hour, so every screen showed "Could not load".
+    let id = "";
+    try {
+      id = deps.tokens.deviceId();
+    } catch {
+      id = "";
+    }
+    if (id) h[APP_HEADERS.deviceId] = id;
+    return h;
+  };
 
   async function send<T>(method: Method, path: string, opts: CallOptions, token: string | null): Promise<T> {
     const headers = baseHeaders();
     if (opts.body !== undefined) headers["Content-Type"] = "application/json";
-    if (token) {
-      headers[APP_HEADERS.authorization] = `Bearer ${token}`;
-      headers[APP_HEADERS.deviceId] = deps.tokens.deviceId();
-    }
+    if (token) headers[APP_HEADERS.authorization] = `Bearer ${token}`;
     const q = opts.query
       ? Object.entries(opts.query)
           .filter(([, v]) => v !== undefined && v !== null && v !== "")
@@ -86,6 +96,14 @@ export function createClient(deps: { transport: Transport; tokens: TokenSource; 
       .then(async (r) => {
         await deps.tokens.set(r.tokens);
         return r.tokens;
+      })
+      .catch((e: unknown) => {
+        // No internet: keep the session and let the screen offer Try again.
+        if (e instanceof ApiFailure && (e.code === "network" || e.code === "server_error" || e.code === "rate_limited")) throw e;
+        // The session codes (phone replaced, account paused) pass through as they are.
+        if (e instanceof ApiFailure && (e.code === "device_replaced" || e.code === "account_expired" || e.code === "account_blocked" || e.code === "upgrade_required")) throw e;
+        // Anything else means the saved sign-in cannot be renewed: sign in again, never a stuck app.
+        throw new ApiFailure("unauthenticated", "Please sign in again.", 401);
       })
       .finally(() => {
         refreshing = null;
