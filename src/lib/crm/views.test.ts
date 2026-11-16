@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import type { Person } from "./people";
-import { DAY, filterPipeline, inView, lastContactBucket, sourcesOf, viewCounts, waLink, waMessage } from "./views";
+import { DAY, filterPipeline, followUpDue, inView, lastContactBucket, sourcesOf, viewCounts, waLink, waMessage } from "./views";
 
 const NOW = new Date("2026-11-15T06:30:00Z").getTime();
 const ago = (days: number) => new Date(NOW - days * DAY).toISOString();
@@ -103,3 +103,19 @@ describe("WhatsApp links", () => {
     expect(waMessage("Hi {first_name}, fee details for {name}", { name: "aanya rao", email: "a@x.co" })).toBe("Hi Aanya, fee details for aanya rao");
   });
 });
+
+describe("follow-up due filter (Admin Today links to it)", () => {
+  const overdue = person({ email: "due@x.co", isEnquiry: true, followUpAt: ago(1) });
+  const tomorrow = person({ email: "soon@x.co", isEnquiry: true, followUpAt: new Date(NOW + 0.5 * DAY).toISOString() });
+  const later = person({ email: "later@x.co", isEnquiry: true, followUpAt: new Date(NOW + 5 * DAY).toISOString() });
+  const list = [overdue, tomorrow, later, enquiryNew];
+  it("keeps only follow-ups planned before this time tomorrow", () => {
+    expect(emails(filterPipeline(list, { due: true }, NOW))).toEqual(["due@x.co", "soon@x.co"]);
+    expect(followUpDue(later, NOW)).toBe(false);
+    expect(filterPipeline(list, {}, NOW)).toHaveLength(4);
+  });
+  it("the quick view counts follow the filter", () => {
+    expect(viewCounts(list, { due: true }, NOW).all).toBe(2);
+  });
+});
+
