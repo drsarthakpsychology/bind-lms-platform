@@ -6,6 +6,8 @@ import { loadMyCohorts } from "@/lib/cohorts/access";
 import { BOARDS, scopeLine } from "@/lib/standing/boards";
 import { loadAccuracyBoard } from "@/lib/games-sims/server/results";
 import type { ApiGate } from "@/lib/auth/api-guard";
+import { loadAdminBoard } from "@/lib/standing/admin-board-data";
+import type { AdminQuery } from "@/lib/standing/admin-board";
 import type { Leaderboard } from "./contract-practise-admin";
 
 /**
@@ -27,6 +29,29 @@ export type GameBoard = (typeof GAME_BOARDS)[number];
 
 async function scope(userId: string): Promise<string> {
   return scopeLine((await loadMyCohorts(userId).catch(() => [])).map((c) => c.name));
+}
+
+/**
+ * The admin answer: every student in the chosen cohort (or all), zero scores
+ * included, real names, searched, sorted and cut into pages. The caller must
+ * have checked the viewer is an admin.
+ */
+export async function adminLeaderboard(board: "league" | "quiz" | "overall", query: AdminQuery): Promise<Leaderboard> {
+  const b = BOARDS[board];
+  const p = await loadAdminBoard(board, query);
+  const cohort = p.query.cohort ? (p.cohorts.find((c) => c.id === p.query.cohort)?.name ?? null) : null;
+  return {
+    v: 1,
+    board,
+    label: b.label,
+    period: b.period,
+    explainer: b.explainer,
+    scope: `${cohort ?? "All cohorts"}. Every student, full names.`,
+    rows: p.rows.map((r) => ({ rank: r.rank, name: r.name, points: r.points, me: false, title: r.cohorts.join(", ") || null, extra: r.extra })),
+    me: { rank: null, total: p.total },
+    raw: {},
+    admin: { page: p.page, pages: p.pages, size: p.size, total: p.total, matched: p.matched, q: p.query.q, cohort: p.query.cohort, sort: p.query.sort, dir: p.query.dir, cohorts: p.cohorts },
+  };
 }
 
 export async function leaderboard(board: "league" | "quiz" | "overall", userId: string): Promise<Leaderboard> {

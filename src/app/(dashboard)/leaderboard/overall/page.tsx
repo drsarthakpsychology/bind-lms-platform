@@ -1,4 +1,8 @@
 import type { Metadata } from "next";
+import { isAdminLike } from "@/lib/auth/guards";
+import { AdminBoard } from "@/components/standing/admin-board";
+import { loadAdminBoard } from "@/lib/standing/admin-board-data";
+import { parseAdminQuery } from "@/lib/standing/admin-board";
 import { ArrowRight, Clock, Crown, Flame } from "lucide-react";
 import Link from "next/link";
 import { getSession } from "@/lib/auth/session";
@@ -25,9 +29,11 @@ const SHOWN = 100;
  * all time, your cohort only. Top three on a podium. First name and initial
  * only; everyone starts at Level 1. The weekly quiz board is one tap away.
  */
-export default async function OverallLeaderboardPage() {
+export default async function OverallLeaderboardPage({ searchParams }: { searchParams: Promise<Record<string, string | string[] | undefined>> }) {
   const session = await getSession();
   if (session.status !== "ok") return leaveWithoutSession(session);
+  // Admins see every student in the cohort (zero scores too), not the student view.
+  if (isAdminLike(session.profile)) return <AdminBoard board="overall" data={await loadAdminBoard("overall", parseAdminQuery(await searchParams))} />;
   const userId = session.profile.id;
   const [{ rows, me }, cohorts] = await Promise.all([loadMyBoard(userId), loadMyCohorts(userId)]);
   const podium = rows.slice(0, 3);

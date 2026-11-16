@@ -130,6 +130,7 @@ export function practiseRoute(method: string, path: string, body: unknown, kind:
         if (seg[1] === "mock" && seg[2] === "result" && seg.length === 4) return ok(R.prepMockResult(d(3)));
       }
       if (method === "GET" && seg[0] === "leaderboards" && seg[1] === "shop") return ok(R.shop());
+      if (method === "GET" && seg[0] === "leaderboards" && (kind === "admin" || kind === "viewadmin") && ["league", "quiz", "overall"].includes(d(1))) return ok(R.adminBoard(d(1), q));
       if (method === "GET" && seg[0] === "leaderboards") return ok(R.board(seg[1] === "games" ? d(2) : d(1)));
     } catch (e) {
       if (e instanceof PlayError) return fail(e.status, e.code, e.message);
