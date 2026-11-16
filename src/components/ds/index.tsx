@@ -4,6 +4,7 @@ import { ArrowRight, ChevronRight } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import { ProgressLine } from "./parts";
+import { CountUp, HAS_VIEW_TRANSITION, NAV_FORWARD, PageMotion } from "./motion";
 
 /**
  * Design system v2 parts (docs/design/DESIGN_SYSTEM_2026_11.md).
@@ -64,20 +65,23 @@ export function PageFrame({
   width?: keyof typeof WIDTH;
 }) {
   return (
-    <div data-ds="page" className={cn("ds-page mx-auto flex w-full min-w-0 flex-col gap-[var(--ds-section)] px-1 sm:px-0", WIDTH[width], className)}>
-      {title || lead ? (
-        <header className={cn("flex min-w-0 items-start justify-between gap-4", band && "ds-band items-center")}>
-          <div className="min-w-0 space-y-1">
-            {kicker ? <p className="type-pix text-link">{kicker}</p> : null}
-            {title ? <h1 className="type-h1 ds-stroke [overflow-wrap:anywhere]">{title}</h1> : null}
-            {lead ? <p className="type-small text-muted-foreground">{lead}</p> : null}
-          </div>
-          {actions ? <div className="flex shrink-0 items-center gap-2">{actions}</div> : null}
-          {art ? <div aria-hidden className="shrink-0">{art}</div> : null}
-        </header>
-      ) : null}
-      {children}
-    </div>
+    <PageMotion>
+      {/* The page change is a View Transition where React has it; the CSS fade (.ds-page) is the fallback. */}
+      <div data-ds="page" className={cn(!HAS_VIEW_TRANSITION && "ds-page", "mx-auto flex w-full min-w-0 flex-col gap-[var(--ds-section)] px-1 sm:px-0", WIDTH[width], className)}>
+        {title || lead ? (
+          <header className={cn("flex min-w-0 items-start justify-between gap-4", band && "ds-band items-center")}>
+            <div className="min-w-0 space-y-1">
+              {kicker ? <p className="type-pix text-link">{kicker}</p> : null}
+              {title ? <h1 className="type-h1 ds-stroke [overflow-wrap:anywhere]">{title}</h1> : null}
+              {lead ? <p className="type-small text-muted-foreground">{lead}</p> : null}
+            </div>
+            {actions ? <div className="flex shrink-0 items-center gap-2">{actions}</div> : null}
+            {art ? <div aria-hidden className="shrink-0">{art}</div> : null}
+          </header>
+        ) : null}
+        {children}
+      </div>
+    </PageMotion>
   );
 }
 
@@ -132,7 +136,7 @@ export function Section({
 /** Rows with a 1px hairline between them. A list, a menu, a settings group. */
 export function RowList({ className, children, label }: Children & { label?: string }) {
   return (
-    <ul aria-label={label} className={cn("flex min-w-0 flex-col divide-y divide-[var(--ds-hairline)] border-y border-[var(--ds-hairline)]", className)}>
+    <ul aria-label={label} data-ds-list className={cn("flex min-w-0 flex-col divide-y divide-[var(--ds-hairline)] border-y border-[var(--ds-hairline)]", className)}>
       {children}
     </ul>
   );
@@ -187,7 +191,7 @@ export function Row({
   if (!href) return <li className={cn(rowInner, className)}>{body}</li>;
   const link = cn(
     rowInner,
-    "group/row -mx-2 rounded-lg px-2 outline-none transition-colors duration-[var(--ds-state)] ease-[var(--ds-ease)] hover:bg-[var(--ds-tint)] focus-visible:ring-2 focus-visible:ring-ring active:bg-[var(--ds-tint)]",
+    "ds-press ds-press-row group/row -mx-2 rounded-lg px-2 outline-hidden hover:bg-[var(--ds-tint)] focus-visible:ring-2 focus-visible:ring-ring active:bg-[var(--ds-tint)]",
   );
   return (
     <li className={cn("min-w-0", className)}>
@@ -196,7 +200,7 @@ export function Row({
           {body}
         </a>
       ) : (
-        <Link href={href} aria-current={current ? "page" : undefined} className={link}>
+        <Link href={href} transitionTypes={NAV_FORWARD} aria-current={current ? "page" : undefined} className={link}>
           {body}
         </Link>
       )}
@@ -223,10 +227,11 @@ export function Card({ href, className, children, label }: Children & { href?: s
   return (
     <Link
       href={href}
+      transitionTypes={NAV_FORWARD}
       aria-label={label}
       className={cn(
         base,
-        "outline-none transition-[border-color,transform] duration-[var(--ds-state)] ease-[var(--ds-ease)] hover:-translate-y-0.5 hover:border-foreground focus-visible:ring-2 focus-visible:ring-ring active:translate-y-0 active:scale-[0.99] motion-reduce:hover:translate-y-0",
+        "outline-hidden transition-[border-color,translate,scale] duration-[var(--ds-state)] ease-[var(--ds-ease)] hover:-translate-y-0.5 hover:border-foreground focus-visible:ring-2 focus-visible:ring-ring active:translate-y-0 active:scale-[0.99] motion-reduce:hover:translate-y-0",
         className,
       )}
     >
@@ -288,7 +293,7 @@ export function Hero({
           className="h-1.5 w-full overflow-hidden rounded-full bg-[var(--ds-hairline)]"
         >
           <div
-            className="h-full origin-left rounded-full bg-primary transition-transform duration-[var(--ds-fill)] ease-[var(--ds-ease-out)] motion-reduce:transition-none dark:bg-primary"
+            className="ds-fill h-full origin-left rounded-full bg-primary transition-transform duration-[var(--ds-fill)] ease-[var(--ds-ease-out)] motion-reduce:transition-none dark:bg-primary"
             style={{ transform: `scaleX(${pct / 100})` }}
           />
         </div>
@@ -307,8 +312,9 @@ export function HeroButton({ href, icon, children, className }: { href: string; 
     <Link
       href={href}
       prefetch
+      transitionTypes={NAV_FORWARD}
       className={cn(
-        "inline-flex min-h-[3.25rem] w-full min-w-0 items-center justify-center gap-2 rounded-[var(--ds-radius)] border-2 border-foreground bg-primary px-5 py-3 text-center type-body font-bold text-primary-foreground hard-shadow-sm outline-none transition-[transform,box-shadow] duration-[var(--ds-press)] ease-[var(--ds-ease)] hover:-translate-y-0.5 hover:hard-shadow-md focus-visible:ring-[3px] focus-visible:ring-ring/60 active:translate-x-0.5 active:translate-y-0.5 active:shadow-none motion-reduce:hover:translate-y-0 md:w-fit md:min-w-60",
+        "inline-flex min-h-[3.25rem] w-full min-w-0 items-center justify-center gap-2 rounded-[var(--ds-radius)] border-2 border-foreground bg-primary px-5 py-3 text-center type-body font-bold text-primary-foreground hard-shadow-sm outline-hidden transition-[translate,box-shadow] duration-[var(--ds-press)] ease-[var(--ds-ease)] hover:-translate-y-0.5 hover:hard-shadow-md focus-visible:ring-[3px] focus-visible:ring-ring/60 active:translate-x-0.5 active:translate-y-0.5 active:shadow-none motion-reduce:hover:translate-y-0 md:w-fit md:min-w-60",
         className,
       )}
     >
@@ -326,7 +332,7 @@ export function HeroButton({ href, icon, children, className }: { href: string; 
 export function Stat({ value, label, className }: { value: React.ReactNode; label: React.ReactNode; className?: string }) {
   return (
     <div className={cn("flex min-w-0 flex-col", className)}>
-      <span className="type-h2 type-num">{value}</span>
+      <span className="type-h2 type-num"><CountUp value={value} /></span>
       <span className="type-caption text-muted-foreground">{label}</span>
     </div>
   );
@@ -389,3 +395,4 @@ export function NextStep({
 
 /* The smaller shared parts (./parts). The client switch is in ./v2. */
 export * from "./parts";
+export * from "./motion";

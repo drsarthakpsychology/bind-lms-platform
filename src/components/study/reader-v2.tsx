@@ -5,7 +5,7 @@ import Link from "next/link";
 import { ArrowLeft, ArrowRight, Check, ListOrdered } from "lucide-react";
 import { ViewToggle } from "@/components/learn/view-toggle";
 import { MobileBottomSheet } from "@/components/mobile/mobile-bottom-sheet";
-import { BackLink } from "@/components/ds";
+import { BackLink, HAS_VIEW_TRANSITION, PageMotion } from "@/components/ds";
 import { cn } from "@/lib/utils";
 import { CardDeck, TestRunner } from "./interactive";
 import { SectionMarks } from "./marks";
@@ -15,7 +15,7 @@ import s from "./study.module.css";
 const quietButton =
   "inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-[var(--ds-radius)] border-[1.5px] border-[var(--ds-card-line)] px-5 type-body font-semibold outline-none transition-colors duration-[var(--ds-state)] ease-[var(--ds-ease)] hover:border-foreground focus-visible:ring-2 focus-visible:ring-ring active:bg-[var(--ds-tint)]";
 const limeButton =
-  "inline-flex min-h-[3.25rem] min-w-0 items-center justify-center gap-2 rounded-[var(--ds-radius)] border-2 border-foreground bg-primary px-5 text-center type-body font-bold text-primary-foreground hard-shadow-sm outline-none transition-[transform,box-shadow] duration-[var(--ds-press)] ease-[var(--ds-ease)] focus-visible:ring-[3px] focus-visible:ring-ring/60 active:translate-x-0.5 active:translate-y-0.5 active:shadow-none";
+  "inline-flex min-h-[3.25rem] min-w-0 items-center justify-center gap-2 rounded-[var(--ds-radius)] border-2 border-foreground bg-primary px-5 text-center type-body font-bold text-primary-foreground hard-shadow-sm outline-none transition-[transform,translate,scale,box-shadow] duration-[var(--ds-press)] ease-[var(--ds-ease)] focus-visible:ring-[3px] focus-visible:ring-ring/60 active:translate-x-0.5 active:translate-y-0.5 active:shadow-none";
 
 /**
  * The reading screen in the new design: an editorial page. Reading type on a
@@ -39,7 +39,8 @@ export function SectionReaderV2(props: SectionReaderProps) {
   );
 
   return (
-    <div data-ds="page" className="ds-page mx-auto w-full min-w-0 max-w-6xl px-1 sm:px-0 md:grid md:grid-cols-[13rem_minmax(0,1fr)] md:gap-10 lg:grid-cols-[16rem_minmax(0,1fr)] lg:gap-16">
+    <PageMotion>
+    <div data-ds="page" className={cn(!HAS_VIEW_TRANSITION && "ds-page", "mx-auto w-full min-w-0 max-w-6xl px-1 sm:px-0 md:grid md:grid-cols-[13rem_minmax(0,1fr)] md:gap-10 lg:grid-cols-[16rem_minmax(0,1fr)] lg:gap-16")}>
       <aside className="hidden md:block" aria-label="Module contents">
         <div className="sticky top-[calc(var(--top-h)+1.5rem)] flex max-h-[calc(100dvh-var(--top-h)-3rem)] flex-col gap-2">
           <BackLink href={`/study/${moduleId}`}>Module {moduleNum}</BackLink>
@@ -110,12 +111,12 @@ export function SectionReaderV2(props: SectionReaderProps) {
           ) : null}
           {/* One toolbar row: explanation style, bookmark, my note. */}
           {!section.isTest ? (
-            <SectionMarks key={section.id} owner={owner} moduleId={moduleId} sectionId={section.id} sectionLabel={`${section.num} ${section.title}`} lead={<ViewToggle className="flex w-full border-[1.5px] border-[var(--ds-card-line)] bg-transparent sm:inline-flex sm:w-auto" />} />
-          ) : (
+            <SectionMarks key={section.id} owner={owner} moduleId={moduleId} sectionId={section.id} sectionLabel={`${section.num} ${section.title}`} lead={section.views ? <ViewToggle className="flex w-full border-[1.5px] border-[var(--ds-card-line)] bg-transparent sm:inline-flex sm:w-auto" /> : undefined} />
+          ) : section.views ? (
             <div>
               <ViewToggle className="border-[1.5px] border-[var(--ds-card-line)] bg-transparent" />
             </div>
-          )}
+          ) : null}
         </header>
 
         {section.levelCheck ? (
@@ -207,5 +208,6 @@ export function SectionReaderV2(props: SectionReaderProps) {
         ) : null}
       </article>
     </div>
+    </PageMotion>
   );
 }

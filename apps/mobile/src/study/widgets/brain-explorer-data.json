@@ -1,0 +1,256 @@
+[
+ {
+  "id": "frontal",
+  "name": "Frontal lobe (prefrontal cortex)",
+  "does": "Plans, decides, keeps a goal in mind and holds back impulses. It is the last part of the brain to finish maturing, in the mid twenties.",
+  "act": [
+   "Information from the senses at the back of the brain flows forward to the prefrontal cortex, which weighs it up against your goals.",
+   "It sends a brake signal down to the amygdala: the impulse is noticed but held back. You choose instead of react."
+  ],
+  "hurt": [
+   "Information still reaches the front of the brain.",
+   "But the damaged prefrontal cortex cannot send its brake. The impulse goes straight through to action."
+  ],
+  "damage": "Damage changes personality and judgement more than intelligence: impulsiveness, poor planning, rudeness, apathy or poor decisions.",
+  "example": "Phineas Gage, a railway foreman, survived an iron rod blasting through his left frontal lobe in 1848. His memory and speech were fine, but friends said he was \"no longer Gage\": impulsive, crude and unable to stick to a plan.",
+  "clue": "After an accident, a careful, reliable man becomes impulsive and rude, makes plans he never carries out, and cannot hold back what he wants to say."
+ },
+ {
+  "id": "motor",
+  "name": "Motor cortex",
+  "does": "A strip just in front of the central groove that sends commands to move the muscles on the opposite side of the body. The face is near the bottom of the strip, the legs at the top.",
+  "act": [
+   "A command leaves the motor cortex, crosses to the other side low in the brainstem, and runs down the spinal cord to the right hand. The fingers move."
+  ],
+  "hurt": [
+   "The damaged motor strip sends a weak or no command. The muscles on the opposite side cannot be moved on purpose."
+  ],
+  "damage": "Damage causes weakness or paralysis of the opposite side of the body (hemiparesis).",
+  "example": "A common stroke picture: a blocked artery on the left side of the brain leaves the right arm and leg weak and the right side of the face drooping.",
+  "clue": "She wakes unable to lift her right arm, and the right side of her face droops."
+ },
+ {
+  "id": "parietal",
+  "name": "Parietal lobe",
+  "does": "Receives touch, pain, temperature and body position in a strip just behind the central groove, and builds a map of where things are in space.",
+  "act": [
+   "A touch on the right hand travels up the spinal cord and brainstem to the thalamus.",
+   "The thalamus relays it to the touch strip of the parietal lobe: you feel it, and know where on the body it was.",
+   "The back of the parietal lobe adds where the hand is in space, so you can reach for things without looking."
+  ],
+  "hurt": [
+   "The touch travels up to the thalamus as usual.",
+   "It reaches the damaged parietal lobe, which cannot build a map of that side of the world."
+  ],
+  "damage": "Damage on the left can cause problems with reading, writing, maths and telling left from right. Damage on the right parietal lobe (the mirror of this one) often causes neglect of the left side of space.",
+  "example": "After a right parietal stroke, a patient eats only from the right half of her plate, and when asked to draw a clock she crowds all twelve numbers into its right half.",
+  "clue": "A man eats only the food on the right side of his plate and shaves only the right side of his face. He does not seem to know the left side is there."
+ },
+ {
+  "id": "occipital",
+  "name": "Occipital lobe (visual cortex)",
+  "does": "Turns signals from the eyes into sight: edges, colour, movement and shapes. It sits at the very back of the brain, far from the eyes.",
+  "act": [
+   "Light hits the eyes. The message runs along the optic nerves, partly crosses over, relays in the thalamus and fans out to the visual cortex at the back. The back of the brain lights up: you see."
+  ],
+  "hurt": [
+   "The eyes work and send the message, but it arrives at a damaged visual cortex. Nothing is seen in that part of the visual field."
+  ],
+  "damage": "Each occipital lobe sees the opposite half of the world. Damage on one side takes away the opposite half of vision in both eyes (hemianopia); damage on both sides causes cortical blindness, even though the eyes are healthy.",
+  "example": "A stroke in the left occipital lobe leaves a patient unable to see anything to the right of where she looks, with either eye. She learns to turn her head to scan.",
+  "clue": "After a stroke, a woman bumps into things on her right. Each eye on its own misses the right half of the world."
+ },
+ {
+  "id": "temporal",
+  "name": "Temporal lobe",
+  "does": "Hears (the hearing area sits on its upper edge), recognises faces, objects and words, and, deep inside, holds the hippocampus and amygdala for memory and emotion.",
+  "act": [
+   "Sound reaches the ear. The message travels through the brainstem and thalamus to the hearing area on the upper edge of the temporal lobe. You hear it, and the temporal lobe recognises what it is."
+  ],
+  "hurt": [
+   "Sound still arrives, but the damaged temporal lobe cannot work out what the sound or sight means."
+  ],
+  "damage": "Damage can affect hearing words, recognising things, memory and emotion. Damage underneath, usually on the right, can cause face blindness (prosopagnosia).",
+  "example": "After damage to the underside of the right temporal lobe, a man cannot recognise his own family by their faces and waits for them to speak.",
+  "clue": "A man can no longer recognise his wife's face, though he knows her at once by her voice."
+ },
+ {
+  "id": "broca",
+  "name": "Broca's area",
+  "does": "In the left frontal lobe, just in front of the mouth part of the motor strip. It plans the movements and grammar of speech.",
+  "act": [
+   "You hear a question. It reaches the hearing area.",
+   "Wernicke's area works out what the words mean.",
+   "A bundle of fibres (the arcuate fasciculus) carries the reply idea forward to Broca's area.",
+   "Broca's area plans the sounds and grammar and the motor strip moves the lips and tongue. You answer."
+  ],
+  "hurt": [
+   "You hear the question.",
+   "Wernicke's area understands it fine.",
+   "The reply idea reaches a damaged Broca's area.",
+   "Speech comes out slow, effortful and broken, with the small grammar words missing."
+  ],
+  "damage": "Broca's aphasia: speech is slow, effortful and telegraphic, but understanding is fairly good. People know what they want to say and are often frustrated.",
+  "example": "In 1861 Paul Broca examined a patient nicknamed Tan, who understood speech but could say only the word \"tan\". After he died, Broca found damage in the left frontal lobe, the area now named after him.",
+  "clue": "She understands what you say, but speaks slowly and with great effort: \"Walk... dog... park.\"",
+  "bubble": {
+   "ok": "I walked the dog in the park.",
+   "hurt": "Walk... dog... park."
+  }
+ },
+ {
+  "id": "wernicke",
+  "name": "Wernicke's area",
+  "does": "In the left temporal lobe, behind the hearing area. It links the sounds of words to their meanings, for understanding and for choosing words.",
+  "act": [
+   "You hear a question. It reaches the hearing area.",
+   "Wernicke's area turns the sounds into meaning: you understand.",
+   "Your reply idea travels forward along the arcuate fasciculus.",
+   "Broca's area plans it and the mouth says it."
+  ],
+  "hurt": [
+   "You hear the question.",
+   "The damaged Wernicke's area cannot attach meaning to the words.",
+   "A reply still flows forward, but the words were chosen without meaning.",
+   "Speech comes out fluent and well paced, but empty or full of wrong and made up words."
+  ],
+  "damage": "Wernicke's aphasia: fluent, easy speech that makes little sense, with wrong or invented words, and poor understanding. People are often unaware of the problem.",
+  "example": "Carl Wernicke described in 1874 patients who spoke freely but whose speech was meaningless and who could not follow what was said to them, with damage at the back of the left temporal lobe.",
+  "clue": "He talks fluently and fast, but the words make little sense, and he does not understand your questions.",
+  "bubble": {
+   "ok": "I walked the dog in the park.",
+   "hurt": "I flimmed the doggle on the sky, you know, the window thing."
+  }
+ },
+ {
+  "id": "cerebellum",
+  "name": "Cerebellum",
+  "does": "The little brain at the back. It compares the movement you meant with the movement you made, and corrects it: balance, smooth timing and learning skills like cycling.",
+  "act": [
+   "The motor cortex sends a copy of its command down to the pons.",
+   "The pons passes it to the cerebellum, which also hears from the muscles and the balance organs.",
+   "The cerebellum sends a correction back through the thalamus to the motor cortex. The movement becomes smooth and on target."
+  ],
+  "hurt": [
+   "The copy of the command arrives.",
+   "But the damaged cerebellum cannot compare and correct."
+  ],
+  "damage": "Damage causes clumsy, shaky, poorly timed movement on the same side of the body (ataxia), an unsteady wide walk and slurred speech. Strength is normal.",
+  "example": "Years of heavy drinking can shrink the front of the cerebellum, leaving a wide, staggering walk. Alcohol affects the cerebellum quickly too, which is why the police ask a drunk driver to walk a straight line.",
+  "clue": "He walks with his feet wide apart and staggers, his hand shakes more as it gets near the target, and his speech is slurred."
+ },
+ {
+  "id": "brainstem",
+  "name": "Brainstem",
+  "does": "Midbrain, pons and medulla. It keeps you alive: breathing, heart rate, blood pressure, swallowing, and sleep and waking. Every message between brain and body passes through it.",
+  "act": [
+   "The medulla sends a breathing rhythm down to the breathing muscles: breathe in.",
+   "And again, about 12 to 16 times a minute, without you thinking about it.",
+   "A network running up through the brainstem (the reticular formation) keeps the cortex awake and alert."
+  ],
+  "hurt": [
+   "Commands from the motor cortex reach the damaged pons and stop there. Nothing gets through to the body.",
+   "But the waking network above the damage still works: the person is fully conscious."
+  ],
+  "damage": "Damage can be fatal, or cause coma, problems with breathing and swallowing, or locked-in syndrome after a stroke in the pons.",
+  "example": "Locked-in syndrome: after a stroke in his pons, a French magazine editor could move only his left eyelid. He wrote a whole memoir by blinking as an assistant read out the alphabet, letter by letter.",
+  "clue": "After a stroke she is fully awake and aware, can hear and think, but cannot move or speak. She can only blink and move her eyes up and down."
+ },
+ {
+  "id": "thalamus",
+  "name": "Thalamus",
+  "does": "The relay station in the middle of the brain. Every sense except smell stops here before going on to the cortex. It also helps control sleep, waking and attention.",
+  "act": [
+   "A message from the eyes arrives at the thalamus.",
+   "It is relayed to the visual cortex at the back.",
+   "A touch message arrives from the body.",
+   "It is relayed up to the touch strip. The thalamus is a sorting office, not the final stop."
+  ],
+  "hurt": [
+   "A touch message arrives at the damaged thalamus and is not passed on properly."
+  ],
+  "damage": "A small thalamic stroke causes numbness of the opposite side of the body, sometimes followed by severe burning pain. Damage to the middle of the thalamus and nearby causes severe memory problems.",
+  "example": "Korsakoff syndrome: in long-term heavy drinking with a lack of thiamine (vitamin B1), damage to the middle of the thalamus and the mammillary bodies leaves severe loss of new memory, filled with invented stories (confabulation).",
+  "clue": "After years of heavy drinking and poor diet, a man cannot remember what happened an hour ago and fills the gaps with confident invented stories."
+ },
+ {
+  "id": "hypothalamus",
+  "name": "Hypothalamus",
+  "does": "Smaller than a grape, below the thalamus. It is the body's thermostat and control panel: hunger, thirst, temperature, sleep timing, sexual behaviour, and it drives the pituitary gland and the stress response.",
+  "act": [
+   "The hypothalamus senses that the body needs something (for example, you are stressed) and sends a hormone signal to the pituitary gland just below it.",
+   "The pituitary releases its own hormones into the blood, which travel to glands around the body, such as the adrenal glands (cortisol)."
+  ],
+  "hurt": [
+   "The damaged hypothalamus sends the wrong signals, or none."
+  ],
+  "damage": "Damage disturbs hunger, thirst, temperature, sleep and hormones.",
+  "example": "Children treated for a tumour near the hypothalamus (craniopharyngioma) can develop extreme hunger and rapid weight gain, because the signal that says \"you are full\" is lost.",
+  "clue": "After surgery for a tumour near the base of the brain, a child is hungry all the time, gains weight fast and cannot keep a steady body temperature."
+ },
+ {
+  "id": "amygdala",
+  "name": "Amygdala",
+  "does": "An almond-shaped cluster deep in the temporal lobe. It spots threat and danger in a split second, learns what to fear, and makes emotional events memorable.",
+  "act": [
+   "You glimpse something that looks like a snake. The eyes send the message to the thalamus.",
+   "The thalamus sends a fast, rough copy straight to the amygdala, before the cortex has even worked out what it is.",
+   "The amygdala sounds the alarm to the hypothalamus.",
+   "The hypothalamus fires the body's fight or flight response: you jump back, heart pounding."
+  ],
+  "hurt": [
+   "You see the snake.",
+   "The message reaches the damaged amygdala. No alarm sounds. You stay calm, even when you should not."
+  ],
+  "damage": "Damage to both amygdalae removes fear and the ability to read fear in other people's faces.",
+  "example": "Patient S.M. has Urbach-Wiethe disease, which destroyed both her amygdalae. She does not feel fear: she handled snakes and spiders, and in fear conditioning experiments showed no fear response at all.",
+  "clue": "A woman with a rare disease that destroyed both of these almond-shaped parts handles snakes and spiders happily and walks into danger. She does not feel fear."
+ },
+ {
+  "id": "hippocampus",
+  "name": "Hippocampus",
+  "does": "A seahorse-shaped curl inside the temporal lobe. It ties the parts of an experience together into a new memory, then over days and weeks helps store it in the cortex. It also builds maps of places.",
+  "act": [
+   "You meet someone new: their face, name and the place all arrive at the hippocampus from the cortex.",
+   "The hippocampus binds them into one memory and, often during sleep, replays it to the cortex for long-term storage."
+  ],
+  "hurt": [
+   "The new experience arrives at the damaged hippocampus and is not bound into a memory. Within minutes of being distracted, it is gone."
+  ],
+  "damage": "Damage to both sides causes anterograde amnesia: old memories and skills remain, but new facts and events cannot be stored. It is one of the first areas affected in Alzheimer's disease.",
+  "example": "H.M. (Henry Molaison) had parts of both inner temporal lobes, including the hippocampus, removed in 1953 to stop his seizures. For the rest of his life he could not form new lasting memories, though he could still learn new motor skills such as mirror drawing.",
+  "clue": "After surgery that removed parts of both inner temporal lobes, a man could remember his childhood but could not form a single new lasting memory."
+ },
+ {
+  "id": "basal-ganglia",
+  "name": "Basal ganglia",
+  "does": "A group of deep nuclei (the caudate, putamen and globus pallidus) that select which movement to start and smooth it, and that form habits. They depend on dopamine from the substantia nigra in the midbrain.",
+  "act": [
+   "The motor cortex proposes a movement to the basal ganglia.",
+   "Dopamine from the substantia nigra says \"go\".",
+   "The basal ganglia release the brake on the thalamus.",
+   "The thalamus tells the motor cortex: start now. The movement begins smoothly."
+  ],
+  "hurt": [
+   "The motor cortex proposes a movement.",
+   "Too little dopamine arrives from the substantia nigra. The brake stays on: the movement is slow to start and small."
+  ],
+  "damage": "Loss of dopamine causes Parkinson's disease: tremor at rest, slowness, stiffness and shuffling. Loss of cells in the caudate causes Huntington's disease, with jerky, dance-like movements.",
+  "example": "In Parkinson's disease, most of the dopamine cells of the substantia nigra have already died before the first symptoms appear. Levodopa, which the brain turns into dopamine, can bring movement back.",
+  "clue": "A man's hand trembles while it rests in his lap, he is slow to start walking, and he shuffles in small steps."
+ },
+ {
+  "id": "corpus-callosum",
+  "name": "Corpus callosum",
+  "does": "A thick bridge of about 200 million nerve fibres joining the left and right hemispheres, so each side knows what the other is doing.",
+  "act": [
+   "The left hemisphere sends what it knows across the corpus callosum to the right hemisphere. Both sides share the same picture."
+  ],
+  "hurt": [
+   "The bridge is cut. The message stops in the middle: each hemisphere works on its own."
+  ],
+  "damage": "Cutting it (split-brain surgery, once used for severe epilepsy) leaves the two hemispheres unable to share information.",
+  "example": "Split-brain patients cannot name an object felt by the left hand out of sight: the right hemisphere feels it, but speech lives in the left hemisphere, and the bridge between them has been cut.",
+  "clue": "After an operation for severe epilepsy, a woman cannot name an object held in her left hand out of sight, though she can pick it out by touch."
+ }
+]

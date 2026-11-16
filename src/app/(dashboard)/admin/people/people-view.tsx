@@ -122,7 +122,7 @@ export function PeopleView({ people, initialView = "all" }: { people: Person[]; 
             aria-pressed={view === v.id}
             onClick={() => setView(v.id)}
             className={cn(
-              "inline-flex h-9 shrink-0 cursor-pointer items-center gap-1.5 rounded-full border-2 border-foreground px-3.5 text-sm font-bold transition-[transform,box-shadow] duration-fast hover:-translate-y-px hover:hard-shadow-xs",
+              "inline-flex h-9 shrink-0 cursor-pointer items-center gap-1.5 rounded-full border-2 border-foreground px-3.5 text-sm font-bold transition-[transform,translate,scale,box-shadow] duration-fast hover:-translate-y-px hover:hard-shadow-xs",
               view === v.id ? "bg-[#111111] text-primary dark:bg-white dark:text-[#111111]" : "bg-card",
             )}
           >

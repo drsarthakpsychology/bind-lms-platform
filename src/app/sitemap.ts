@@ -22,6 +22,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${siteUrl}/free/help`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.6 },
     ...INSTRUMENTS.map((i) => ({ url: `${siteUrl}/free/tests/${i.id}`, lastModified: new Date(), changeFrequency: "yearly" as const, priority: 0.7 })),
     ...CALM_TOOLS.map((c) => ({ url: `${siteUrl}/free/calm/${c.id}`, lastModified: new Date(), changeFrequency: "yearly" as const, priority: 0.6 })),
+    { url: `${siteUrl}/delete-account`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.3 },
     { url: `${siteUrl}/policies`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.6 },
     ...getPolicies().map((p) => ({
       url: `${siteUrl}/policies/${p.meta.slug}`,

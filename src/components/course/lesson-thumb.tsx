@@ -27,7 +27,7 @@ export function LessonThumb({
     <span
       aria-hidden
       className={cn(
-        "relative flex aspect-video w-full items-center justify-center overflow-hidden rounded-xl border-2 transition-[transform,box-shadow] duration-fast ease-snappy",
+        "relative flex aspect-video w-full items-center justify-center overflow-hidden rounded-xl border-2 transition-[transform,translate,scale,box-shadow] duration-fast ease-snappy",
         locked
           ? "border-dashed border-foreground/50 bg-muted text-muted-foreground"
           : state === "next"
@@ -47,7 +47,7 @@ export function LessonThumb({
       {hero ? null : (
       <span
         className={cn(
-          "relative font-pix leading-none transition-[opacity,transform] duration-base ease-snappy",
+          "relative font-pix leading-none transition-[opacity,transform,translate,scale] duration-base ease-snappy",
           size === "lg" ? "text-5xl sm:text-6xl" : "text-3xl sm:text-4xl",
           !locked && "group-hover/thumb:scale-75 group-hover/thumb:opacity-0 group-focus-visible/thumb:scale-75 group-focus-visible/thumb:opacity-0",
         )}
@@ -60,7 +60,7 @@ export function LessonThumb({
       ) : (
         <span
           className={cn(
-            "absolute flex items-center justify-center rounded-full border-2 border-foreground bg-primary text-primary-foreground transition-[opacity,transform] duration-base ease-out-expo",
+            "absolute flex items-center justify-center rounded-full border-2 border-foreground bg-primary text-primary-foreground transition-[opacity,transform,translate,scale] duration-base ease-out-expo",
             size === "lg" ? "size-16" : "size-11",
             state === "next" && size === "lg"
               ? "translate-y-0 opacity-100 group-hover/thumb:scale-110"

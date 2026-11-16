@@ -1,8 +1,13 @@
 import { LoadingFrame } from "@/components/design-system/slow-state";
 import { Skeleton } from "@/components/ui/skeleton";
+import { V2Switch } from "@/components/ds/v2";
+import { CourseLoading } from "@/components/ds/loading";
 
 export default function Loading() {
   return (
+    <V2Switch
+      next={<CourseLoading />}
+      old={
     <LoadingFrame>
     <div className="mx-auto w-full max-w-3xl space-y-8">
       <div className="space-y-3">
@@ -24,5 +29,7 @@ export default function Loading() {
       </div>
     </div>
     </LoadingFrame>
+      }
+    />
   );
 }

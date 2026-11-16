@@ -23,7 +23,7 @@ export const statusCls = "mt-3 rounded-xl bg-muted p-3 text-[0.95rem] leading-re
 
 export function chip(on: boolean, extra?: string) {
   return cn(
-    "min-h-11 rounded-md border-2 border-foreground px-3 py-2 text-left text-sm font-semibold transition-[transform,background-color] duration-fast active:translate-x-px active:translate-y-px",
+    "min-h-11 rounded-md border-2 border-foreground px-3 py-2 text-left text-sm font-semibold transition-[transform,translate,scale,background-color] duration-fast active:translate-x-px active:translate-y-px",
     on ? "bg-foreground text-background" : "bg-card hover:-translate-y-0.5",
     extra,
   );

@@ -1,14 +1,16 @@
 import { redirect } from "next/navigation";
-import { requireAdmin } from "@/lib/auth/guards";
+import { isSuperAdmin, requireAdmin } from "@/lib/auth/guards";
 import { Inbox } from "lucide-react";
 import Link from "next/link";
-import { personKey } from "@/lib/crm/people";
+import { loadPipeline, nowMs, personKey } from "@/lib/crm/people";
+import { emailAllowance } from "@/lib/email/personal";
+import { AdminPage } from "../_v2/kit";
+import { PipelineV2, type PipelineInitial } from "../people/pipeline-v2";
 import { createAdminClient } from "@/lib/supabase/server";
 import { PageHeader } from "@/components/design-system/page-header";
 import { EmptyState } from "@/components/design-system/empty-state";
 import { readFlags } from "@/lib/flags";
 import { uiV2For } from "@/lib/ui/v2";
-import { EnquiriesV2 } from "../_v2/person";
 
 export const dynamic = "force-dynamic";
 
@@ -35,12 +37,28 @@ const STATUS_LABEL: Record<string, string> = {
  * by the admin layout. Reads via the service-role client (RLS is admin-select
  * only, which this is).
  */
-export default async function AdminEnquiriesPage() {
+export default async function AdminEnquiriesPage({ searchParams }: { searchParams: Promise<Partial<PipelineInitial>> }) {
   // Defence in depth: layouts don't re-render on every navigation, so the page
   // re-checks admin itself before reading data.
   const me = await requireAdmin();
   if (!me) redirect("/dashboard");
   const admin = createAdminClient();
+  if (uiV2For(await readFlags(), me.role)) {
+    const sp = await searchParams;
+    const [pipe, allowance, waitingRes] = await Promise.all([
+      loadPipeline(admin),
+      emailAllowance(admin),
+      admin.from("email_sends").select("id", { count: "exact", head: true }).eq("status", "pending").eq("template_id", "pipeline"),
+    ]);
+    const enq = pipe.people.filter((p) => p.isEnquiry);
+    const today = new Date(nowMs() + 5.5 * 3600000).toISOString().slice(0, 10);
+    const todayCount = enq.filter((p) => p.enquiredAt && new Date(new Date(p.enquiredAt).getTime() + 5.5 * 3600000).toISOString().slice(0, 10) === today).length;
+    return (
+      <AdminPage title="Enquiries" lead={`${enq.length} from the public form · ${todayCount} today · ${enq.filter((p) => !p.isStudent).length} not yet students`}>
+        <PipelineV2 scope="enquiries" people={pipe.people} cohorts={pipe.cohorts} initial={{ view: "not_converted", ...sp }} canWrite={isSuperAdmin(me)} paymentReady={pipe.paymentReady} allowance={allowance} waiting={waitingRes.error ? 0 : (waitingRes.count ?? 0)} />
+      </AdminPage>
+    );
+  }
   const { data } = await admin
     .from("enquiries")
     .select("id, name, email, phone, status, message, source, created_at")
@@ -59,34 +77,6 @@ export default async function AdminEnquiriesPage() {
     return d.length === 10 ? `91${d}` : d.length >= 11 ? d : null;
   };
   const fresh = rows.filter((r) => !joined.has(r.email.toLowerCase()));
-
-  if (uiV2For(await readFlags(), me.role)) {
-    return (
-      <EnquiriesV2
-        lead={`${rows.length} from the public form · ${todayCount} today · ${fresh.length} not yet students`}
-        rows={rows.map((row) => {
-          const w = wa(row.phone);
-          const isStudent = joined.has(row.email.toLowerCase());
-          return {
-            id: row.id,
-            name: row.name,
-            email: row.email,
-            phone: row.phone,
-            status: row.status ? (STATUS_LABEL[row.status] ?? row.status) : "No status",
-            isStudent,
-            message: row.message,
-            when: new Date(row.created_at).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" }),
-            source: row.source ?? "website",
-            wa: w ? `https://wa.me/${w}` : null,
-            tel: row.phone ? `tel:${digits(row.phone)}` : null,
-            recordHref: `/admin/people/${personKey(row.email)}`,
-            emailHref: `/admin/emails?folder=compose&to=${encodeURIComponent(row.email)}`,
-            makeHref: isStudent ? null : `/admin/students/add?email=${encodeURIComponent(row.email)}`,
-          };
-        })}
-      />
-    );
-  }
 
   return (
     <div className="space-y-6">

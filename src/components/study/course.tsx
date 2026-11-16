@@ -49,7 +49,7 @@ function ContinueCard({ next, onGo }: { next: Next; onGo?: () => void }) {
     <Link
       href={next.href}
       onClick={onGo}
-      className="group/continue flex min-w-0 flex-col gap-4 rounded-2xl border-2 border-foreground bg-primary p-5 text-primary-foreground hard-shadow-md outline-none transition-[transform,box-shadow] duration-fast ease-snappy hover:-translate-y-0.5 hover:hard-shadow-lg focus-visible:ring-[3px] focus-visible:ring-ring/60 active:translate-y-px active:shadow-none motion-reduce:hover:translate-y-0 sm:flex-row sm:items-center sm:p-6"
+      className="group/continue flex min-w-0 flex-col gap-4 rounded-2xl border-2 border-foreground bg-primary p-5 text-primary-foreground hard-shadow-md outline-none transition-[transform,translate,scale,box-shadow] duration-fast ease-snappy hover:-translate-y-0.5 hover:hard-shadow-lg focus-visible:ring-[3px] focus-visible:ring-ring/60 active:translate-y-px active:shadow-none motion-reduce:hover:translate-y-0 sm:flex-row sm:items-center sm:p-6"
     >
       <span className="flex min-w-0 flex-1 items-start gap-4 sm:items-center">
         <span aria-hidden className="grid size-11 shrink-0 place-items-center rounded-xl border-2 border-foreground bg-card text-foreground sm:size-14">
@@ -106,7 +106,7 @@ function ModuleTile({ m, pct, complete, here }: { m: StudyModule; pct: number; c
       href={`/study/${m.id}`}
       aria-current={here ? "step" : undefined}
       className={cn(
-        "group/mod flex h-full min-h-[4.5rem] items-center gap-3 rounded-2xl border-2 border-foreground p-3 outline-none transition-[transform,box-shadow] duration-fast ease-snappy hover:-translate-y-0.5 hover:hard-shadow-sm focus-visible:ring-[3px] focus-visible:ring-ring/60 active:translate-y-px active:shadow-none motion-reduce:hover:translate-y-0 sm:p-4",
+        "group/mod flex h-full min-h-[4.5rem] items-center gap-3 rounded-2xl border-2 border-foreground p-3 outline-none transition-[transform,translate,scale,box-shadow] duration-fast ease-snappy hover:-translate-y-0.5 hover:hard-shadow-sm focus-visible:ring-[3px] focus-visible:ring-ring/60 active:translate-y-px active:shadow-none motion-reduce:hover:translate-y-0 sm:p-4",
         here ? "bg-brand text-brand-foreground hard-shadow-sm" : "bg-card",
       )}
     >
@@ -149,7 +149,7 @@ export function StudyHome({ modules, serverState, save, owner = "" }: { modules:
   const currentId = next.kind !== "done" ? next.module.id : null;
 
   const shelves = SHELVES.map((name, k) => ({ name, items: modules.map((m, i) => ({ m, i })).filter(({ m }) => shelfOf(m) === k) })).filter((s) => s.items.length);
-  const link = "inline-flex min-h-11 items-center gap-1.5 rounded-md border-2 border-foreground bg-card px-3 text-sm font-bold transition-[transform,box-shadow] duration-fast ease-snappy hover:-translate-y-px hover:hard-shadow-xs active:translate-y-px active:shadow-none";
+  const link = "inline-flex min-h-11 items-center gap-1.5 rounded-md border-2 border-foreground bg-card px-3 text-sm font-bold transition-[transform,translate,scale,box-shadow] duration-fast ease-snappy hover:-translate-y-px hover:hard-shadow-xs active:translate-y-px active:shadow-none";
 
   return (
     <div className="mx-auto max-w-5xl space-y-8">
@@ -329,7 +329,7 @@ export function ModuleView({
               href={href}
               aria-current={isNow ? "step" : undefined}
               className={cn(
-                "flex min-h-14 flex-col items-center justify-center gap-1 rounded-xl border-2 px-1 py-2 text-center text-xs font-bold transition-[transform,box-shadow] duration-fast ease-snappy hover:-translate-y-px hover:hard-shadow-xs active:translate-y-px active:shadow-none sm:flex-row sm:gap-2 sm:text-sm",
+                "flex min-h-14 flex-col items-center justify-center gap-1 rounded-xl border-2 px-1 py-2 text-center text-xs font-bold transition-[transform,translate,scale,box-shadow] duration-fast ease-snappy hover:-translate-y-px hover:hard-shadow-xs active:translate-y-px active:shadow-none sm:flex-row sm:gap-2 sm:text-sm",
                 isNow ? "border-foreground bg-card hard-shadow-xs" : "border-foreground/25 bg-card/60",
               )}
             >

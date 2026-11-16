@@ -45,7 +45,7 @@ function SkillCard({ tool }: { tool: ShownTool }) {
           href={tool.href}
           className={cn(
             base,
-            "group/skill outline-none transition-[border-color,transform] duration-[var(--ds-state)] ease-[var(--ds-ease)] hover:border-foreground focus-visible:ring-2 focus-visible:ring-ring active:scale-[0.99] motion-reduce:active:scale-100",
+            "group/skill outline-none transition-[border-color,transform,translate,scale] duration-[var(--ds-state)] ease-[var(--ds-ease)] hover:border-foreground focus-visible:ring-2 focus-visible:ring-ring active:scale-[0.99] motion-reduce:active:scale-100",
           )}
         >
           {body}

@@ -148,7 +148,7 @@ export function AchievementsV2({ earned, progress, rollNumber, siteUrl }: { earn
             ))}
           </ul>
         ) : (
-          <EmptyLine art={<Chai mood="idle" size={56} />} title="No certificates yet">Pass every module test and your course certificate shows here, ready to download and share.</EmptyLine>
+          <EmptyLine art={<Chai mood="idle" size={56} still />} title="No certificates yet">Pass every module test and your course certificate shows here, ready to download and share.</EmptyLine>
         )}
       </Section>
 

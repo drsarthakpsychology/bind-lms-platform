@@ -231,7 +231,7 @@ export function Dissonance({ d }: { d: DissonanceData }) {
             <p className={cn("mt-1 text-[0.95rem]", changed("belief") && "line-through opacity-60")}><Rich text={belief} /></p>
             {changed("belief") ? <p className="vibha-pop mt-1 text-[0.95rem] font-semibold">New belief: {exText("I change my belief so it fits what I do.")}</p> : null}
           </div>
-          <div className="rounded-xl border-2 border-foreground bg-background p-3 transition-[opacity,transform] duration-slow" style={{ opacity: phase === 0 ? 0 : 1, transform: phase === 0 ? "translateY(-12px)" : "none" }} aria-hidden={phase === 0}>
+          <div className="rounded-xl border-2 border-foreground bg-background p-3 transition-[opacity,transform,translate,scale] duration-slow" style={{ opacity: phase === 0 ? 0 : 1, transform: phase === 0 ? "translateY(-12px)" : "none" }} aria-hidden={phase === 0}>
             <p className="text-xs font-bold tracking-wide uppercase">Behaviour</p>
             <p className={cn("mt-1 text-[0.95rem]", changed("behaviour") && "line-through opacity-60")}><Rich text={behaviour} /></p>
             {changed("behaviour") ? <p className="vibha-pop mt-1 text-[0.95rem] font-semibold">New behaviour: {exText("I change what I do so it fits the belief.")}</p> : null}

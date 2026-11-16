@@ -92,7 +92,7 @@ export default async function SimReviewPage() {
   if (uiV2For(await readFlags(), me.role)) {
     return (
       <AdminPage title="Practice sessions" lead="Scores made by AI, always labelled. Your comment sits on top." back={{ href: "/admin/triage", label: "Needs a look" }}>
-        <SimReviewList rows={rows} />
+        <SimReviewList v2 rows={rows} />
       </AdminPage>
     );
   }

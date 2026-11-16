@@ -65,7 +65,7 @@ export default async function LecturesIndexPage() {
             <li key={c.id}>
               <Link
                 href={`/courses/${c.id}`}
-                className="group flex h-full items-center gap-4 rounded-2xl border-2 border-foreground bg-card p-4 transition-[transform,box-shadow] duration-fast ease-snappy hover:-translate-x-0.5 hover:-translate-y-0.5 hover:hard-shadow-md active:translate-x-0.5 active:translate-y-0.5 active:shadow-none"
+                className="group flex h-full items-center gap-4 rounded-2xl border-2 border-foreground bg-card p-4 transition-[transform,translate,scale,box-shadow] duration-fast ease-snappy hover:-translate-x-0.5 hover:-translate-y-0.5 hover:hard-shadow-md active:translate-x-0.5 active:translate-y-0.5 active:shadow-none"
               >
                 <span className="flex aspect-video w-24 shrink-0 items-center justify-center rounded-xl border-2 border-foreground bg-brand text-primary">
                   <PlayCircle className="size-8" aria-hidden />

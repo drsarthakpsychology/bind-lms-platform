@@ -2,13 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { getSession } from "@/lib/auth/session";
-import { createAdminClient } from "@/lib/supabase/server";
-import { liveStreak } from "@/lib/learn/engine";
-import { istToday } from "@/lib/practice/streaks";
-import { xpBalance } from "@/lib/leagues/xp";
-import { leagueWeek } from "@/lib/leagues/week";
-import { canRepair, isLookId, type LookId } from "@/lib/leagues/shop";
-import { loadLearnState, saveLearnState } from "../../study/actions";
+import { saveLearnState } from "../../study/actions";
+import { loadShop } from "@/lib/leagues/shop-data";
 import { ShopClient } from "./shop-client";
 import { backLinkClass } from "@/components/design-system/back-link";
 import { leaveWithoutSession } from "@/lib/auth/session-redirect";
@@ -23,29 +18,17 @@ export const dynamic = "force-dynamic";
 export default async function ShopPage() {
   const session = await getSession();
   if (session.status !== "ok") return leaveWithoutSession(session);
-  const userId = session.profile.id;
-  const admin = createAdminClient();
-  const today = istToday();
-  const week = leagueWeek();
-  const [bal, learn, used, profile] = await Promise.all([
-    xpBalance(userId),
-    loadLearnState(),
-    admin.from("streak_repairs").select("week").eq("user_id", userId).eq("week", week).maybeSingle(),
-    admin.from("profiles").select("look").eq("id", userId).maybeSingle(),
-  ]);
-  const streak = learn?.streak ?? { count: 0, best: 0, lastDay: null, freezes: 0 };
-  const repair = canRepair(streak, today, Boolean(used.data));
-  const owned = bal.ledger.filter((r) => r.source === "shop:look" && r.ref && isLookId(r.ref)).map((r) => r.ref as LookId);
+  const data = await loadShop(session.profile.id);
 
   const shop = (
     <ShopClient
-      ready={bal.ready && !used.error}
-      balance={bal.balance}
-      streak={{ count: streak.count, alive: liveStreak(streak, today) > 0 }}
-      repair={repair.ok ? { ok: true, text: `Brings back your ${repair.count}-day streak.` } : { ok: false, text: repair.reason }}
-      owned={owned}
-      look={(profile.data?.look as string | null) ?? null}
-      serverState={learn}
+      ready={data.ready}
+      balance={data.balance}
+      streak={data.streak}
+      repair={data.repair}
+      owned={data.owned}
+      look={data.look}
+      serverState={data.learn}
       save={saveLearnState}
     />
   );

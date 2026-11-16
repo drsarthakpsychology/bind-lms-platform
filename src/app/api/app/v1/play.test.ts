@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { G, resetGuard } from "@/lib/app-api/test-guard";
-import { STUDENT_ID, appReq, noParams, params, profileRow, read } from "@/lib/app-api/test-kit";
+import { STUDENT_ID, appReq, params, profileRow, read } from "@/lib/app-api/test-kit";
 
 const h = vi.hoisted(() => ({
   start: vi.fn(),
@@ -20,8 +20,10 @@ vi.mock("@/app/(dashboard)/games/blitz/actions", () => ({ startBlitz: h.start, a
 vi.mock("@/app/(dashboard)/games/sort/actions", () => ({ loadSort: vi.fn(), checkSort: vi.fn() }));
 vi.mock("@/app/(dashboard)/games/rx/actions", () => ({ dealRxRun: vi.fn(), pickRxAnswer: vi.fn(), finishRxRun: vi.fn() }));
 vi.mock("@/app/(dashboard)/games/mse/actions", () => ({ dealMseRound: vi.fn(), tagMseFinding: vi.fn() }));
-vi.mock("@/app/(dashboard)/games/ward/actions", () => ({ startWardSolo: vi.fn(), resumeWardSolo: vi.fn(), pickWardSolo: vi.fn() }));
-vi.mock("@/app/(dashboard)/games/escape/actions", () => ({ startEscapePractice: vi.fn(), resumeEscapePractice: vi.fn(), answerEscapePractice: vi.fn() }));
+vi.mock("@/app/(dashboard)/games/ward/actions", () => ({ startWardSolo: vi.fn(), resumeWardSolo: vi.fn(), pickWardSolo: vi.fn(), createWardTeam: vi.fn(), joinWardTeam: vi.fn(), wardTeamView: vi.fn(), castWardVote: vi.fn() }));
+vi.mock("@/app/(dashboard)/games/escape/actions", () => ({ startEscapePractice: vi.fn(), resumeEscapePractice: vi.fn(), answerEscapePractice: vi.fn(), createEscapeTeam: vi.fn(), joinEscapeTeam: vi.fn(), escapeView: vi.fn(), startEscapeTeam: vi.fn(), answerEscape: vi.fn() }));
+vi.mock("@/app/(dashboard)/games/comorbid/actions", () => ({ finishComorbid: vi.fn() }));
+vi.mock("@/app/(dashboard)/leaderboard/actions", () => ({ saveAlias: vi.fn(), buyItem: vi.fn(), wearLook: vi.fn() }));
 vi.mock("@/app/(dashboard)/practice/detective/actions", () => ({ dealDetective: vi.fn(), detectiveClue: vi.fn(), detectiveAllClues: vi.fn(), detectiveGuess: vi.fn() }));
 vi.mock("@/app/(dashboard)/practice/daily/actions", () => ({ dailyRest: vi.fn(), dailyMove: vi.fn(), nextPractice: vi.fn() }));
 vi.mock("@/app/(dashboard)/prep/actions", () => ({ checkAnswer: vi.fn(), revealAnswer: vi.fn(), toggleSaved: vi.fn(), startMock: vi.fn(), submitMock: vi.fn() }));
@@ -30,9 +32,6 @@ vi.mock("@/lib/cases/progress-actions", () => ({ loadMyProgress: h.progress, sav
 import { clearDeviceCache } from "@/lib/app-api/devices";
 import { playFailure } from "@/lib/app-api/play";
 import { POST as play } from "./play/[game]/[action]/route";
-import { GET as meds } from "./library/medicines/route";
-import { GET as med } from "./library/medicines/[medId]/route";
-import { MEDS } from "@/lib/meds";
 
 const call = (game: string, action: string, args: unknown[] = []) => play(appReq(`/play/${game}/${action}`, { body: { args } }), params({ game, action }));
 
@@ -98,22 +97,5 @@ describe("POST /play/:game/:action", () => {
     expect(playFailure({ error: null, alias: "x" })).toBeNull();
     expect(playFailure({ ok: false, reason: "Full." })).toBe("Full.");
     expect(playFailure(null)).toBeNull();
-  });
-});
-
-describe("medicines library", () => {
-  it("lists every medicine with its usual dose, and one medicine page as data", async () => {
-    const r = await read(await meds(appReq("/library/medicines"), noParams));
-    expect(r.data.rows).toHaveLength(MEDS.length);
-    expect(r.data.rows[0]).toMatchObject({ id: MEDS[0].id, name: MEDS[0].name, dose: expect.any(String) });
-    const p = await read(await med(appReq(`/library/medicines/${MEDS[0].id}`), params({ medId: MEDS[0].id })));
-    expect(p.data).toMatchObject({ v: 1, med: { id: MEDS[0].id } });
-    expect(p.data.study === null || p.data.study.target.screen === "studyModule").toBe(true);
-    expect((await read(await med(appReq("/library/medicines/nope"), params({ medId: "nope" })))).status).toBe(404);
-  });
-
-  it("is closed when Medicines is switched off", async () => {
-    G.blocks = ["medicines"];
-    expect((await read(await meds(appReq("/library/medicines"), noParams))).error?.code).toBe("access_block");
   });
 });

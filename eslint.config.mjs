@@ -23,6 +23,8 @@ const eslintConfig = defineConfig([
     "scripts/psychopharm/**",
     // Claude Code skill tooling (helper scripts for the auditing skill).
     ".claude/skills/**",
+    // The phone app has its own lint, types and tests (apps/mobile).
+    "apps/**",
     // Local git worktrees (never linted in CI, but present locally).
     ".claude/worktrees/**",
     // Local Supabase generated state (gitignored; a generated edge-runtime

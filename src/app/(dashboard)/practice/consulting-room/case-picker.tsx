@@ -209,7 +209,7 @@ function CaseCardItem({
   }
 
   return (
-    <li className="overflow-hidden rounded-md border-2 border-border bg-card hard-shadow-sm transition-[transform,box-shadow] hover:-translate-y-0.5 hover:hard-shadow-md active:translate-y-px">
+    <li className="overflow-hidden rounded-md border-2 border-border bg-card hard-shadow-sm transition-[transform,translate,scale,box-shadow] hover:-translate-y-0.5 hover:hard-shadow-md active:translate-y-px">
       <button
         type="button"
         onClick={() => onStart(c)}
@@ -305,7 +305,7 @@ function ModePicker({ graded, onChange }: { graded: boolean; onChange: (g: boole
             <label
               key={label}
               className={cn(
-                "flex min-h-11 cursor-pointer items-start gap-3 rounded-md border-2 p-3 transition-[transform,box-shadow] has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-ring",
+                "flex min-h-11 cursor-pointer items-start gap-3 rounded-md border-2 p-3 transition-[transform,translate,scale,box-shadow] has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-ring",
                 on ? "border-foreground bg-card hard-shadow-sm" : "border-border bg-background hover:-translate-y-0.5",
               )}
             >

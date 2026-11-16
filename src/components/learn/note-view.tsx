@@ -15,7 +15,7 @@ import n from "./notes.module.css";
 import { backLinkClass } from "@/components/design-system/back-link";
 import { OnceHint } from "@/components/help/once-hint";
 import { useUiV2 } from "@/components/ds/v2";
-import { BackLink, HeroButton, Row, RowList } from "@/components/ds";
+import { BackLink, HeroButton, Row, RowList, HAS_VIEW_TRANSITION, PageMotion } from "@/components/ds";
 
 const TONE: Record<string, string> = {
   lime: "bg-primary text-primary-foreground",
@@ -69,7 +69,8 @@ export function NoteView({
   if (v2) {
     const quiet = "inline-flex min-h-12 min-w-0 items-center gap-2 rounded-[var(--ds-radius)] border-[1.5px] border-[var(--ds-card-line)] px-4 type-small font-semibold outline-none transition-colors duration-[var(--ds-state)] ease-[var(--ds-ease)] hover:border-foreground focus-visible:ring-2 focus-visible:ring-ring";
     return (
-      <article data-ds="page" className="ds-page mx-auto flex w-full max-w-[44rem] min-w-0 flex-col gap-8 px-1 sm:px-0">
+      <PageMotion>
+      <article data-ds="page" className={cn(!HAS_VIEW_TRANSITION && "ds-page", "mx-auto flex w-full max-w-[44rem] min-w-0 flex-col gap-8 px-1 sm:px-0")}>
         <header className="flex min-w-0 flex-col gap-2">
           <BackLink href="/study/notes">Summaries</BackLink>
           <p className="type-small text-muted-foreground type-num">
@@ -187,6 +188,7 @@ export function NoteView({
           ) : null}
         </nav>
       </article>
+      </PageMotion>
     );
   }
 

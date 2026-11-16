@@ -62,7 +62,7 @@ export function StatCard({
   );
 
   const classes = cn(
-    "group relative flex min-h-[6.5rem] flex-col gap-2 rounded-lg border-2 border-border p-4 transition-[transform,box-shadow] duration-fast ease-snappy",
+    "group relative flex min-h-[6.5rem] flex-col gap-2 rounded-lg border-2 border-border p-4 transition-[transform,translate,scale,box-shadow] duration-fast ease-snappy",
     accent
       ? "border-foreground bg-primary text-primary-foreground hard-shadow-sm"
       : "border-foreground bg-card hard-shadow-sm",

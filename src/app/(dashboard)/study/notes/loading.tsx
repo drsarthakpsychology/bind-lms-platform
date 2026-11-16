@@ -1,10 +1,6 @@
-import { LoadingFrame } from "@/components/design-system/slow-state";
-import { ChaiLoader } from "@/components/learn/chai-loader";
+import { NotesLoading } from "@/components/ds/loading";
 
+/** The summaries while they load: grouped rows. */
 export default function Loading() {
-  return (
-    <LoadingFrame>
-      <ChaiLoader label="Opening your notes" tip={5} />
-    </LoadingFrame>
-  );
+  return <NotesLoading />;
 }

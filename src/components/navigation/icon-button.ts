@@ -1,6 +1,6 @@
 /** Top-bar icon control (menu, search, bell, inbox): 40px, 44px on touch, rounded rectangle. */
 export const TOP_BAR_ICON_BTN =
-  "inline-flex size-10 shrink-0 items-center justify-center rounded-md border-2 border-transparent text-foreground outline-none transition-[background-color,border-color,transform] duration-fast ease-snappy hover:border-foreground hover:bg-primary active:scale-95 focus-visible:ring-[3px] focus-visible:ring-ring/60 pointer-coarse:size-11";
+  "inline-flex size-10 shrink-0 items-center justify-center rounded-md border-2 border-transparent text-foreground outline-none transition-[background-color,border-color,transform,translate,scale] duration-fast ease-snappy hover:border-foreground hover:bg-primary active:scale-95 focus-visible:ring-[3px] focus-visible:ring-ring/60 pointer-coarse:size-11";
 
 /** The small count bubble on the bell and the inbox. */
 export const TOP_BAR_COUNT =

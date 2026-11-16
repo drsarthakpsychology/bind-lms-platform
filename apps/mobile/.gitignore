@@ -1,0 +1,11 @@
+node_modules/
+.expo/
+dist/
+# Made by "expo prebuild" (root only: modules/*/android and modules/*/ios are hand-written native code and must be committed)
+/android/
+/ios/
+coverage/
+*.log
+expo-env.d.ts
+.env.local
+google-services.json

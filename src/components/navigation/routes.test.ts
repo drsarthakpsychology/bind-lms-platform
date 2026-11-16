@@ -130,6 +130,8 @@ describe("no link in the source points to a missing page", () => {
     const re = /`(\/[a-z][a-z0-9/-]*\/)\$\{[^}]+\}((?:\/[a-z0-9-]+|\/\$\{[^}]+\})*)(?:[?#][^`]*)?`/g;
     const bad: string[] = [];
     for (const { f, text } of FILES) {
+      // Server routes for the app build gate paths, not links a person follows.
+      if (f.startsWith(path.join("src", "app", "api"))) continue;
       for (const m of text.matchAll(re)) {
         if (m[1].startsWith("/api/")) continue;
         const p = `${m[1]}x${m[2].replace(/\$\{[^}]+\}/g, "x")}`;

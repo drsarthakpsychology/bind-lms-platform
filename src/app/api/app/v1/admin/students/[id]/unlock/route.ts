@@ -2,7 +2,7 @@ import { setAccountStatus } from "@/app/(dashboard)/admin/students/actions";
 import { ApiFail } from "@/lib/app-api/respond";
 import { appRoute } from "@/lib/app-api/route";
 import { uuid } from "@/lib/app-api/schemas";
-import type { LockResult } from "@/lib/app-api/contract";
+import type { LockResult } from "@/lib/app-api/contract-practise-admin";
 
 export const runtime = "nodejs";
 

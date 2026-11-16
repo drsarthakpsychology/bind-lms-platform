@@ -4,7 +4,7 @@ The one agreed interface between the mobile app (`apps/mobile`) and the website 
 
 Status words: **built** (the route exists and has tests) or **planned** (agreed shape, not written yet). This page is updated with every server commit.
 
-Last updated: 2026-11-15.
+Last updated: 2026-11-16.
 
 ## 1. Basics
 
@@ -90,6 +90,7 @@ Auth column: **public** (no token), **bearer** (signed in, any role), **student*
 | Status | Method and path | Auth | Request | Response | Calls |
 |---|---|---|---|---|---|
 | built | `GET /config` | public | none | `AppConfig` | `src/lib/app-api/config.ts` (constants plus `LEGAL`). `cohortLine` is the Welcome screen's line (`APP_RULES.cohortLine`; the `APP_COHORT_LINE` server setting overrides it, `none` hides it) |
+| built | `GET /public/home` | public, cached (an hour on the CDN, a day stale while it refreshes; never refused for an old app) | none | `PublicHome` | `publicHome` (`src/lib/app-api/public-home.ts`): the homepage's own words from `src/components/home/content.ts`, the section headings of `home-page.tsx` (a test keeps them word for word), `BRAND`, `LEGAL`. For the Welcome screen. Leaves out which cohort is running, the free tools and the arcade |
 | built | `POST /public/request-invitation` | public, 5 a minute per network (the website form's own counter) | `RequestInvitationBody` | `RequestInvitationResult` | `saveEnquiry` (`src/lib/enquiry.ts`, moved out of `submitWaitlist`, which calls it too); stored with `source: "app"` |
 | built | `GET /public/certificates/:certificateId` | public, 60 a minute per network | none | `CertificateVerification` | `verifyCertificate` (`src/lib/app-api/achievements.ts`): `loadCredential`, `certStatus`, the facts of `/verify/[certificateId]` |
 
@@ -249,10 +250,13 @@ The website's doubt actions do their own rate limits (20 doubts, 40 answers, 60 
 | built | `GET /achievements` | student (`/achievements`) | none | `Achievements` | `loadMyAchievements` |
 | built | `GET /achievements/:credentialId/pdf` | student (`/achievements`), 30 a minute | none | `CertificatePdfLink` | `downloadMyCertificate` (409 `conflict` when not issued yet) |
 | built | `GET /settings` | bearer | none | `Settings` | `buildMe`, `deviceState`, `loadPrefs`, `buildConfig` |
+| built | `GET /journey` | bearer (gate `/journey`, open to lectures-only accounts as on the website) | none | `Journey` | `loadJourney` (`src/lib/journey/model.ts`, moved out of the `/journey` page, which calls it too): `loadMyBoard`, `normalise`, `levelFor`, `liveStreak`, lecture progress and practice counts |
 
 Settings are changed through the routes that own each part: `PATCH /me`, `PUT /devices/current`, `PUT /notifications/preferences`.
 
 ### 2.11 Practise: games and practice rounds
+
+This section is continued (and kept current) in `docs/app/API_CONTRACT_PRACTISE_ADMIN.md`, with its types in `src/lib/app-api/contract-practise-admin.ts`. Where the two disagree, that page wins. Everything below still works.
 
 | Status | Method and path | Auth | Request | Response | Calls |
 |---|---|---|---|---|---|
@@ -299,6 +303,8 @@ Planned (not built): the first screen of each game (the lists the website's page
 
 ### 2.12 Library
 
+This section is continued (and kept current) in `docs/app/API_CONTRACT_PRACTISE_ADMIN.md`, with its types in `src/lib/app-api/contract-practise-admin.ts`. Where the two disagree, that page wins. Everything below still works.
+
 | Status | Method and path | Auth | Request | Response | Calls |
 |---|---|---|---|---|---|
 | built | `GET /library/medicines` | student (`/practice/medicines`) | none | `MedicineList` | `MEDS`, `GROUPS`, `medIndex` (`src/lib/meds`) |
@@ -308,6 +314,8 @@ Planned (not built): the first screen of each game (the lists the website's page
 The medicine data is all medicine facts in the website's own shape (`Med`, `src/lib/meds/types.ts`). The app searches it on the phone (the same rule as `searchMeds`).
 
 ### 2.13 Admin
+
+This section is continued (and kept current) in `docs/app/API_CONTRACT_PRACTISE_ADMIN.md`, with its types in `src/lib/app-api/contract-practise-admin.ts`. Where the two disagree, that page wins. Everything below still works.
 
 Auth: **admin** means `admin` or `view_admin` (read); **super admin** means `admin` only (every write), the same split as the website (`requireAdmin`, `requireSuperAdmin`). Test and robot accounts are left out of every list, as on the website's admin pages.
 

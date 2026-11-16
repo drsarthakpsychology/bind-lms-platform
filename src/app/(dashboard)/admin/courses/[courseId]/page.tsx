@@ -458,7 +458,7 @@ function CohortFilter({ courseId, cohorts, active, unshared }: { courseId: strin
           scroll={false}
           aria-current={i.on ? "page" : undefined}
           className={cn(
-            "inline-flex h-9 items-center rounded-full border-2 border-foreground px-3.5 text-sm font-bold transition-[transform,box-shadow] duration-fast ease-snappy hover:-translate-y-px hover:hard-shadow-xs active:translate-y-px active:shadow-none",
+            "inline-flex h-9 items-center rounded-full border-2 border-foreground px-3.5 text-sm font-bold transition-[transform,translate,scale,box-shadow] duration-fast ease-snappy hover:-translate-y-px hover:hard-shadow-xs active:translate-y-px active:shadow-none",
             i.on ? "bg-foreground text-background" : "bg-card",
           )}
         >

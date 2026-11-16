@@ -4,6 +4,7 @@ import * as React from "react";
 import { Search, Loader2, BookMarked } from "lucide-react";
 import type { MedBlock, SourceRef } from "@/lib/psychopharm/document";
 import { BLOCK_TYPE_LABEL } from "./document-view";
+import { cn } from "@/lib/utils";
 
 /** A knowledge-search hit (subset of the /api/knowledge/search payload). */
 interface KnowledgeHit {
@@ -32,9 +33,12 @@ interface KnowledgeHit {
 export function SourcePanel({
   block,
   onChange,
+  look,
 }: {
   block: MedBlock;
   onChange: (sources: SourceRef[]) => void;
+  /** "v2": the new admin design (no box, labelled fields, 44px on touch). */
+  look?: "v2";
 }) {
   const [title, setTitle] = React.useState(block.sources[0]?.title ?? "");
   const [page, setPage] = React.useState(block.sources[0]?.page ?? "");
@@ -103,6 +107,73 @@ export function SourcePanel({
       quote: quote || block.sources[0]?.quote,
     };
     onChange([src]);
+  }
+
+  if (look === "v2") {
+    const field =
+      "h-11 w-full min-w-0 rounded-md border border-[var(--ds-card-line)] bg-background px-3 type-small text-foreground outline-none transition-colors duration-[var(--ds-state)] ease-[var(--ds-ease)] hover:border-foreground/50 focus-visible:border-foreground focus-visible:ring-2 focus-visible:ring-ring lg:h-9";
+    const label = "flex min-w-0 flex-col gap-1.5 type-small font-semibold";
+    return (
+      <div className="flex min-w-0 flex-col gap-3">
+        <p className="type-small text-muted-foreground">{BLOCK_TYPE_LABEL[block.type] ?? "Note"}</p>
+        <div className="flex min-w-0 items-center gap-2">
+          <input
+            type="search"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            onKeyDown={(e) => e.key === "Enter" && runSearch()}
+            placeholder="Search the books"
+            aria-label="Search the books for this block's source"
+            className={cn(field, "flex-1")}
+          />
+          <button
+            type="button"
+            onClick={runSearch}
+            disabled={searching || !search.trim()}
+            aria-label="Search books"
+            className="inline-flex size-11 shrink-0 items-center justify-center rounded-md border border-[var(--ds-card-line)] outline-none transition-colors duration-[var(--ds-state)] hover:border-foreground/60 focus-visible:ring-2 focus-visible:ring-ring disabled:opacity-45 lg:size-9"
+          >
+            {searching ? <Loader2 className="size-4 animate-spin motion-reduce:animate-none" aria-hidden /> : <Search className="size-4" aria-hidden />}
+          </button>
+        </div>
+        {searched && !searching && results.length === 0 ? <p className="type-small text-muted-foreground">Nothing found. Try other words.</p> : null}
+        {results.length > 0 ? (
+          <ul className="flex min-w-0 flex-col divide-y divide-[var(--ds-hairline)] border-y border-[var(--ds-hairline)]">
+            {results.map((h) => (
+              <li key={h.id} className="min-w-0">
+                <button
+                  type="button"
+                  onClick={() => applyHit(h)}
+                  className="-mx-2 flex w-[calc(100%+1rem)] min-w-0 flex-col gap-0.5 rounded-lg px-2 py-2.5 text-left outline-none transition-colors duration-[var(--ds-state)] hover:bg-[var(--ds-tint)] focus-visible:ring-2 focus-visible:ring-ring"
+                >
+                  <span className="type-small font-semibold [overflow-wrap:anywhere]">{h.citation}</span>
+                  <span className="line-clamp-2 type-caption text-muted-foreground">{h.text}</span>
+                </button>
+              </li>
+            ))}
+          </ul>
+        ) : null}
+        <label className={label}>
+          Book or guideline
+          <input value={title} onChange={(e) => setTitle(e.target.value)} className={cn(field, "font-normal")} />
+        </label>
+        <label className={label}>
+          Page
+          <input value={page} onChange={(e) => setPage(e.target.value)} inputMode="numeric" className={cn(field, "font-normal")} />
+        </label>
+        <label className={label}>
+          Quote
+          <textarea value={quote} onChange={(e) => setQuote(e.target.value)} rows={4} className={cn(field, "h-auto py-2 font-normal lg:h-auto")} />
+        </label>
+        <button
+          type="button"
+          onClick={commit}
+          className="inline-flex h-11 w-fit items-center justify-center rounded-md border border-foreground bg-foreground px-3 type-small font-semibold text-background outline-none transition-opacity duration-[var(--ds-state)] hover:opacity-90 focus-visible:ring-2 focus-visible:ring-ring lg:h-9"
+        >
+          Save source
+        </button>
+      </div>
+    );
   }
 
   return (

@@ -35,7 +35,7 @@ export function WeekChips({
               onClick={(e) => go(e, w.num)}
               aria-current={w.isCurrent ? "true" : undefined}
               className={cn(
-                "inline-flex h-9 items-center gap-1.5 rounded-full border-2 px-3.5 text-sm font-bold whitespace-nowrap transition-[transform,box-shadow,background-color] duration-fast ease-snappy hover:-translate-y-px hover:hard-shadow-xs active:translate-y-px active:shadow-none",
+                "inline-flex h-9 items-center gap-1.5 rounded-full border-2 px-3.5 text-sm font-bold whitespace-nowrap transition-[transform,translate,scale,box-shadow,background-color] duration-fast ease-snappy hover:-translate-y-px hover:hard-shadow-xs active:translate-y-px active:shadow-none",
                 w.isCurrent
                   ? "border-foreground bg-brand text-brand-foreground"
                   : w.future

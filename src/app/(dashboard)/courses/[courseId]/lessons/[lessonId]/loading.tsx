@@ -1,8 +1,13 @@
 import { LoadingFrame } from "@/components/design-system/slow-state";
 import { Skeleton } from "@/components/ui/skeleton";
+import { V2Switch } from "@/components/ds/v2";
+import { LectureLoading } from "@/components/ds/loading";
 
 export default function Loading() {
   return (
+    <V2Switch
+      next={<LectureLoading />}
+      old={
     <LoadingFrame>
     <div className="mx-auto max-w-3xl space-y-8">
       <div className="flex items-center justify-between">
@@ -19,5 +24,7 @@ export default function Loading() {
       </div>
     </div>
     </LoadingFrame>
+      }
+    />
   );
 }

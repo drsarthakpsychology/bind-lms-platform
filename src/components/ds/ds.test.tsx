@@ -3,6 +3,8 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 import { Card, Hero, PageFrame, Row, RowList, Section, Stat, Tint } from "./index";
 import { SheetRow } from "./sheet";
+import { CountUp, PageMotion, SuccessMark } from "./motion";
+import { StatItem } from "./parts";
 
 describe("ds parts", () => {
   it("PageFrame gives the screen its one H1", () => {
@@ -76,5 +78,49 @@ describe("ds parts", () => {
     expect(btn).toHaveAttribute("aria-expanded", "false");
     fireEvent.click(btn);
     expect(screen.getByText("Quest list")).toBeInTheDocument();
+  });
+
+  it("CountUp keeps the real number in the page and counts over it", () => {
+    const { container } = render(<CountUp value={42} />);
+    expect(screen.getByText("42")).toHaveClass("ds-count-real");
+    const n = container.querySelector("[data-ds-count]") as HTMLElement;
+    expect(n.style.getPropertyValue("--ds-to")).toBe("42");
+    expect(container.textContent).toBe("42");
+  });
+
+  it("CountUp counts a percentage and leaves other values alone", () => {
+    const { container, rerender } = render(<CountUp value="72%" />);
+    expect(container.textContent).toBe("72%");
+    expect(container.querySelector("[data-ds-count]")).not.toBeNull();
+    for (const v of [0, "3/5", "1.5", 12345, "07"]) {
+      rerender(<CountUp value={v} />);
+      expect(container.querySelector("[data-ds-count]")).toBeNull();
+      expect(container.textContent).toBe(String(v));
+    }
+  });
+
+  it("StatItem and Stat count their numbers up", () => {
+    const { container } = render(<StatItem value={7} sub="of 9" label="Tests passed" />);
+    expect(container.querySelector("dd [data-ds-count]")).not.toBeNull();
+    expect(screen.getByText("7")).toBeInTheDocument();
+  });
+
+  it("PageMotion renders the page where View Transitions are missing", () => {
+    render(<PageMotion><p>page</p></PageMotion>);
+    expect(screen.getByText("page")).toBeInTheDocument();
+  });
+
+  it("rows, progress and the mark carry the motion hooks", () => {
+    const { container } = render(
+      <>
+        <RowList label="L"><Row href="/a" title="A" /></RowList>
+        <Hero title="T" progress={30} action={{ href: "/x", label: "Go" }} />
+        <SuccessMark />
+      </>,
+    );
+    expect(screen.getByRole("list", { name: "L" })).toHaveAttribute("data-ds-list");
+    expect(screen.getByRole("link", { name: "A" }).className).toContain("ds-press");
+    expect(container.querySelector(".ds-fill")).not.toBeNull();
+    expect(container.querySelector(".ds-success-mark")).toHaveAttribute("aria-hidden", "true");
   });
 });

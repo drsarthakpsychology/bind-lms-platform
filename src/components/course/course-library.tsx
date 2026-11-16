@@ -58,7 +58,7 @@ export function CourseLibrary({ model }: { model: OverviewModel }) {
       {model.backHref ? (
         <Link
           href={model.backHref}
-          className="inline-flex min-h-10 items-center gap-1.5 rounded-full border-2 border-foreground bg-card px-4 text-sm font-bold transition-[transform,box-shadow] duration-fast ease-snappy hover:-translate-y-px hover:hard-shadow-xs active:translate-y-px active:shadow-none"
+          className="inline-flex min-h-10 items-center gap-1.5 rounded-full border-2 border-foreground bg-card px-4 text-sm font-bold transition-[transform,translate,scale,box-shadow] duration-fast ease-snappy hover:-translate-y-px hover:hard-shadow-xs active:translate-y-px active:shadow-none"
         >
           <ChevronLeft className="size-4" aria-hidden />
           All courses
@@ -117,7 +117,7 @@ export function CourseLibrary({ model }: { model: OverviewModel }) {
                 aria-pressed={filter === id}
                 onClick={() => setFilter(id)}
                 className={cn(
-                  "inline-flex h-9 cursor-pointer items-center rounded-full border-2 border-foreground px-3.5 text-sm font-bold transition-[transform,box-shadow] duration-fast ease-snappy hover:-translate-y-px hover:hard-shadow-xs active:translate-y-px active:shadow-none",
+                  "inline-flex h-9 cursor-pointer items-center rounded-full border-2 border-foreground px-3.5 text-sm font-bold transition-[transform,translate,scale,box-shadow] duration-fast ease-snappy hover:-translate-y-px hover:hard-shadow-xs active:translate-y-px active:shadow-none",
                   filter === id ? "bg-[#111111] text-primary dark:bg-white dark:text-[#111111]" : "bg-card",
                 )}
               >
@@ -135,7 +135,7 @@ export function CourseLibrary({ model }: { model: OverviewModel }) {
                   aria-pressed={cohort === c.id}
                   onClick={() => setCohort(c.id)}
                   className={cn(
-                    "inline-flex h-9 cursor-pointer items-center rounded-full border-2 border-foreground px-3.5 text-sm font-bold transition-[transform,box-shadow] duration-fast ease-snappy hover:-translate-y-px hover:hard-shadow-xs active:translate-y-px active:shadow-none",
+                    "inline-flex h-9 cursor-pointer items-center rounded-full border-2 border-foreground px-3.5 text-sm font-bold transition-[transform,translate,scale,box-shadow] duration-fast ease-snappy hover:-translate-y-px hover:hard-shadow-xs active:translate-y-px active:shadow-none",
                     cohort === c.id ? "bg-[#111111] text-primary dark:bg-white dark:text-[#111111]" : "bg-card",
                   )}
                 >

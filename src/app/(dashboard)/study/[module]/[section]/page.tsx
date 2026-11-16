@@ -6,6 +6,7 @@ import { readingSections, sectionHref, sectionTitle } from "@/lib/study/plan";
 import { Blocks } from "@/components/study/blocks";
 import { SectionReader, type TocItem } from "@/components/study/reader";
 import { splitSection } from "@/lib/study/chunk";
+import { sectionHasViews } from "@/lib/study/views";
 import { checkpointHref, checkpoints, laterSectionIds } from "@/lib/study/checkpoints";
 import { loadLearnState, saveLearnState, submitModuleTest } from "../../actions";
 import { studyOwner } from "../../owner";
@@ -46,7 +47,7 @@ export default async function SectionPage({ params }: { params: Promise<{ module
       moduleId={m.id}
       moduleNum={m.num}
       moduleTitle={m.title}
-      section={{ id: s.id, num: s.num, title: sectionTitle(s), part: s.part, tag: s.tag, level: s.level, levelCheck: s.levelCheck, isTest: s.isTest }}
+      section={{ id: s.id, num: s.num, title: sectionTitle(s), part: s.part, tag: s.tag, level: s.level, levelCheck: s.levelCheck, isTest: s.isTest, views: sectionHasViews(s) }}
       toc={toc}
       prevHref={prev ? sectionHref(m, prev) : undefined}
       next={next}

@@ -4,6 +4,7 @@ import * as React from "react";
 import { haptic } from "@/lib/haptics";
 import { cn } from "@/lib/utils";
 import { CheckSquare, Eye, LockOpen, UserX, Users } from "lucide-react";
+import { Notice, Status, btn, control, type Tone } from "../_v2/kit";
 
 interface GrantedStudent {
   id: string;
@@ -33,7 +34,7 @@ const STATE_CHIP: Record<string, string> = {
  * (who has it, revoke per student or revoke the cohort), and an explicit
  * "grant every module to one student" override.
  */
-export function ModulesAdmin({ modules, students }: { modules: ModuleRow[]; students: Array<{ id: string; email: string }> }) {
+export function ModulesAdmin({ modules, students, v2 = false }: { modules: ModuleRow[]; students: Array<{ id: string; email: string }>; v2?: boolean }) {
   const [selected, setSelected] = React.useState<Set<string>>(new Set());
   const [busy, setBusy] = React.useState(false);
   const [error, setError] = React.useState<string | null>(null);
@@ -106,6 +107,98 @@ export function ModulesAdmin({ modules, students }: { modules: ModuleRow[]; stud
   function overrideAll() {
     if (!overrideTargetId) return;
     void apply({ action: "grant_cohort", ids: modules.map((m) => m.id), targetStudentId: overrideTargetId });
+  }
+
+  if (v2) {
+    const STATE: Record<string, { tone: Tone; label: string }> = {
+      draft: { tone: "quiet", label: "Draft" },
+      scheduled: { tone: "info", label: "Scheduled" },
+      published: { tone: "ok", label: "Published" },
+      archived: { tone: "quiet", label: "Archived" },
+    };
+    const pick = (id: string, value: string, onChange: (v: string) => void, label: string, disabled?: boolean) => (
+      <select id={id} aria-label={label} value={value} onChange={(e) => onChange(e.target.value)} disabled={disabled} className={cn(control, "w-full sm:w-auto sm:max-w-xs")}>
+        <option value="">Choose a student</option>
+        {students.map((s) => (
+          <option key={s.id} value={s.id}>{s.email}</option>
+        ))}
+      </select>
+    );
+    return (
+      <div className="flex min-w-0 flex-col gap-[var(--ds-6)]">
+        {error ? <Notice tone="alert">{error}</Notice> : null}
+
+        <div className="flex min-w-0 flex-col gap-3">
+          <ul className="flex min-w-0 flex-col divide-y divide-[var(--ds-hairline)] border-y border-[var(--ds-hairline)]">
+            {modules.map((m) => {
+              const checked = selected.has(m.id);
+              const isExpanded = single?.id === m.id;
+              const st = STATE[m.state] ?? { tone: "quiet" as Tone, label: m.state };
+              const meta = [
+                m.cohortGranted ? "Whole cohort" : "No cohort access",
+                m.grantedStudents.length > 0 ? `${m.grantedStudents.length} ${m.grantedStudents.length === 1 ? "student" : "students"} added by hand` : null,
+                m.releaseAt ? `opens ${new Date(m.releaseAt).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric", timeZone: "Asia/Kolkata" })}` : null,
+              ].filter(Boolean).join(" · ");
+              return (
+                <li key={m.id} className={cn("min-w-0", checked && "bg-[color-mix(in_oklab,var(--link)_6%,transparent)]")}>
+                  <div className="grid min-w-0 grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-x-3 py-2">
+                    <label className="flex size-11 cursor-pointer items-center justify-center">
+                      <input type="checkbox" checked={checked} onChange={() => toggle(m.id)} className="size-4 accent-[var(--link)]" aria-label={`Select ${m.title}`} />
+                    </label>
+                    <div className="min-w-0 py-1">
+                      <p className="type-body font-semibold [overflow-wrap:anywhere]">
+                        <span className="mr-2 type-small font-medium text-muted-foreground type-num">{m.order}</span>
+                        {m.title}
+                      </p>
+                      <p className="type-small text-muted-foreground [overflow-wrap:anywhere]">{meta}</p>
+                    </div>
+                    <div className="flex flex-col items-end gap-1">
+                      <Status tone={st.tone}>{st.label}</Status>
+                      <button type="button" onClick={() => setSelected(isExpanded ? new Set() : new Set([m.id]))} aria-expanded={isExpanded} className={cn(btn.ghost, "-mr-2 text-link")}>
+                        Who has it
+                      </button>
+                    </div>
+                  </div>
+                  {isExpanded ? <AccessPanelV2 module={m} busy={busy} onRevokeStudent={revokeStudent} onRevokeCohort={() => revokeCohort(m.id)} /> : null}
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+
+        {selected.size > 0 ? (
+          <section aria-label="Change the selected modules" className="sticky bottom-[calc(4rem+env(safe-area-inset-bottom))] z-[3] -mx-4 flex min-w-0 flex-col gap-3 border-t border-[var(--ds-card-line)] bg-background px-4 py-3 md:bottom-0 md:mx-0 md:px-0">
+            <p className="type-small font-semibold type-num">{selected.size} selected</p>
+            <div className="flex min-w-0 flex-wrap gap-2">
+              <button type="button" onClick={() => bulk("publish")} disabled={busy} className={btn.ink}>Publish</button>
+              <button type="button" onClick={() => bulk("schedule")} disabled={busy} className={btn.quiet}>Schedule</button>
+              <button type="button" onClick={() => bulk("unpublish")} disabled={busy} className={btn.quiet}>Unpublish</button>
+              <button type="button" onClick={() => bulk("grant_cohort")} disabled={busy} className={btn.quiet}>Give the cohort access</button>
+              <button type="button" onClick={() => bulk("revoke_cohort")} disabled={busy} className={btn.danger}>Take cohort access away</button>
+            </div>
+            <div className="flex min-w-0 flex-wrap items-center gap-2">
+              {pick("grant-student", grantTargetId, setGrantTargetId, "Give one student the selected modules", busy)}
+              <button type="button" onClick={grantToStudent} disabled={busy || !grantTargetId} className={btn.quiet}>
+                Give this student access
+              </button>
+            </div>
+          </section>
+        ) : (
+          <p className="type-small text-muted-foreground">Tick modules to publish, schedule or change who has them.</p>
+        )}
+
+        <section className="flex min-w-0 max-w-[65ch] flex-col gap-2">
+          <h2 className="type-h3">Give one student every module</h2>
+          <p className="type-small text-muted-foreground">For fee waivers or catching up. It adds the student to every module and leaves cohort access as it is.</p>
+          <div className="flex min-w-0 flex-wrap items-center gap-2">
+            {pick("override-student", overrideTargetId, setOverrideTargetId, "Student to give every module")}
+            <button type="button" onClick={overrideAll} disabled={busy || !overrideTargetId} className={btn.quiet}>
+              <LockOpen aria-hidden /> Give every module
+            </button>
+          </div>
+        </section>
+      </div>
+    );
   }
 
   return (
@@ -307,5 +400,38 @@ function BulkBtn({ onClick, label, busy }: { onClick: () => void; label: string;
     >
       {label}
     </button>
+  );
+}
+
+/** v2: who has one module, with a remove button per student. */
+function AccessPanelV2({ module, busy, onRevokeStudent, onRevokeCohort }: { module: ModuleRow; busy: boolean; onRevokeStudent: (studentId: string) => void; onRevokeCohort: () => void }) {
+  return (
+    <div className="ml-11 flex min-w-0 flex-col gap-2 pb-4">
+      <div className="flex min-w-0 flex-wrap items-center justify-between gap-2">
+        <span className="flex min-w-0 items-center gap-2 type-small">
+          <Users className="size-4 shrink-0 text-muted-foreground" aria-hidden />
+          {module.cohortGranted ? "The whole cohort has access" : "No cohort access"}
+        </span>
+        {module.cohortGranted ? (
+          <button type="button" onClick={onRevokeCohort} disabled={busy} className={btn.danger}>
+            <UserX aria-hidden /> Take cohort access away
+          </button>
+        ) : null}
+      </div>
+      {module.grantedStudents.length === 0 ? (
+        <p className="type-small text-muted-foreground">Nobody added by hand.</p>
+      ) : (
+        <ul className="flex min-w-0 flex-col divide-y divide-[var(--ds-hairline)] border-y border-[var(--ds-hairline)]">
+          {module.grantedStudents.map((s) => (
+            <li key={s.id} className="flex min-w-0 flex-wrap items-center justify-between gap-x-3 gap-y-1 py-1.5">
+              <span className="min-w-0 type-small [overflow-wrap:anywhere]">{s.email}</span>
+              <button type="button" onClick={() => onRevokeStudent(s.id)} disabled={busy} className={btn.ghost} aria-label={`Remove ${s.email}`}>
+                <UserX aria-hidden /> Remove
+              </button>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
   );
 }

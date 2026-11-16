@@ -136,14 +136,14 @@ export function MaterialViewer({
                 setSlow(false);
                 setLoadKey((k) => k + 1);
               }}
-              className="inline-flex h-9 items-center gap-1.5 rounded-md border-2 border-foreground bg-primary px-4 text-sm font-medium text-primary-foreground transition-[transform,box-shadow] hover:bg-primary/90 active:translate-y-0.5"
+              className="inline-flex h-9 items-center gap-1.5 rounded-md border-2 border-foreground bg-primary px-4 text-sm font-medium text-primary-foreground transition-[transform,translate,scale,box-shadow] hover:bg-primary/90 active:translate-y-0.5"
             >
               <RotateCcw className="size-4" aria-hidden />
               Retry
             </button>
             <a
               href={courseId ? `/courses/${courseId}` : "#"}
-              className="inline-flex h-9 items-center gap-1.5 rounded-md border-2 border-border bg-background px-4 text-sm font-medium text-foreground transition-[transform,box-shadow] hover:bg-accent active:translate-y-px"
+              className="inline-flex h-9 items-center gap-1.5 rounded-md border-2 border-border bg-background px-4 text-sm font-medium text-foreground transition-[transform,translate,scale,box-shadow] hover:bg-accent active:translate-y-px"
             >
               Back to course
             </a>
@@ -319,7 +319,7 @@ function PdfViewer({ signedUrl, materialId, watermarkLabel, onFail }: { signedUr
             onClick={() => setPageNum((p) => Math.max(1, p - 1))}
             disabled={pageNum <= 1 || !doc}
             aria-label="Previous page"
-            className="inline-flex size-10 items-center justify-center rounded-md border-2 border-border bg-background text-foreground transition-[transform,box-shadow] hover:bg-accent active:translate-y-px disabled:opacity-40"
+            className="inline-flex size-10 items-center justify-center rounded-md border-2 border-border bg-background text-foreground transition-[transform,translate,scale,box-shadow] hover:bg-accent active:translate-y-px disabled:opacity-40"
           >
             <ChevronLeft className="size-4" aria-hidden />
           </button>
@@ -331,7 +331,7 @@ function PdfViewer({ signedUrl, materialId, watermarkLabel, onFail }: { signedUr
             onClick={() => setPageNum((p) => Math.min(pageCount || 1, p + 1))}
             disabled={!doc || pageNum >= (pageCount || 1)}
             aria-label="Next page"
-            className="inline-flex size-10 items-center justify-center rounded-md border-2 border-border bg-background text-foreground transition-[transform,box-shadow] hover:bg-accent active:translate-y-px disabled:opacity-40"
+            className="inline-flex size-10 items-center justify-center rounded-md border-2 border-border bg-background text-foreground transition-[transform,translate,scale,box-shadow] hover:bg-accent active:translate-y-px disabled:opacity-40"
           >
             <ChevronRight className="size-4" aria-hidden />
           </button>
@@ -341,7 +341,7 @@ function PdfViewer({ signedUrl, materialId, watermarkLabel, onFail }: { signedUr
             type="button"
             onClick={() => setZoom((z) => Math.max(0.5, z - 0.25))}
             aria-label="Zoom out"
-            className="inline-flex size-10 items-center justify-center rounded-md border-2 border-border bg-background text-foreground transition-[transform,box-shadow] hover:bg-accent active:translate-y-px"
+            className="inline-flex size-10 items-center justify-center rounded-md border-2 border-border bg-background text-foreground transition-[transform,translate,scale,box-shadow] hover:bg-accent active:translate-y-px"
           >
             <ZoomOut className="size-4" aria-hidden />
           </button>
@@ -352,7 +352,7 @@ function PdfViewer({ signedUrl, materialId, watermarkLabel, onFail }: { signedUr
             type="button"
             onClick={() => setZoom((z) => Math.min(3, z + 0.25))}
             aria-label="Zoom in"
-            className="inline-flex size-10 items-center justify-center rounded-md border-2 border-border bg-background text-foreground transition-[transform,box-shadow] hover:bg-accent active:translate-y-px"
+            className="inline-flex size-10 items-center justify-center rounded-md border-2 border-border bg-background text-foreground transition-[transform,translate,scale,box-shadow] hover:bg-accent active:translate-y-px"
           >
             <ZoomIn className="size-4" aria-hidden />
           </button>
@@ -417,7 +417,7 @@ function AudioViewer({ signedUrl, title, watermarkLabel }: { signedUrl: string; 
                 else a.pause();
               }}
               aria-label={isPaused ? "Play" : "Pause"}
-              className="inline-flex size-11 items-center justify-center rounded-md border-2 border-foreground bg-primary text-primary-foreground transition-[transform,box-shadow] hover:bg-primary/90 active:translate-y-0.5"
+              className="inline-flex size-11 items-center justify-center rounded-md border-2 border-foreground bg-primary text-primary-foreground transition-[transform,translate,scale,box-shadow] hover:bg-primary/90 active:translate-y-0.5"
             >
               {isPaused ? <Play className="size-5 fill-current" aria-hidden /> : <Pause className="size-5 fill-current" aria-hidden />}
             </button>

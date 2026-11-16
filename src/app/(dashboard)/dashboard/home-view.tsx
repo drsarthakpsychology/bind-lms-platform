@@ -40,7 +40,7 @@ export function ContinueCard({ step, stacked = false }: { step: ContinueStep; st
       href={step.href}
       prefetch
       className={cn(
-        "group/continue flex min-w-0 flex-col gap-4 rounded-2xl border-2 border-foreground bg-primary p-5 text-primary-foreground hard-shadow-md outline-none transition-[transform,box-shadow] duration-fast ease-snappy hover:-translate-y-0.5 hover:hard-shadow-lg focus-visible:ring-[3px] focus-visible:ring-ring/60 active:translate-y-px active:shadow-none motion-reduce:hover:translate-y-0 sm:flex-row sm:items-center sm:p-6",
+        "group/continue flex min-w-0 flex-col gap-4 rounded-2xl border-2 border-foreground bg-primary p-5 text-primary-foreground hard-shadow-md outline-none transition-[transform,translate,scale,box-shadow] duration-fast ease-snappy hover:-translate-y-0.5 hover:hard-shadow-lg focus-visible:ring-[3px] focus-visible:ring-ring/60 active:translate-y-px active:shadow-none motion-reduce:hover:translate-y-0 sm:flex-row sm:items-center sm:p-6",
         stacked && "lg:flex-col lg:items-stretch lg:justify-between lg:gap-6",
       )}
     >
@@ -130,7 +130,7 @@ export function GoalCard({ points, goal, streak, quests = null }: { points: numb
 }
 
 function TopicRow({ t, weak }: { t: TopicScore; weak: boolean }) {
-  const link = "inline-flex min-h-11 items-center gap-1 rounded-lg border-2 px-3 text-sm font-bold transition-[transform,box-shadow] duration-fast ease-snappy hover:-translate-y-0.5 hover:hard-shadow-xs active:translate-y-px active:shadow-none";
+  const link = "inline-flex min-h-11 items-center gap-1 rounded-lg border-2 px-3 text-sm font-bold transition-[transform,translate,scale,box-shadow] duration-fast ease-snappy hover:-translate-y-0.5 hover:hard-shadow-xs active:translate-y-px active:shadow-none";
   return (
     <li className="flex min-w-0 flex-col gap-2 rounded-xl border-2 border-foreground/15 p-3 sm:flex-row sm:items-center sm:gap-3">
       <span className="flex min-w-0 flex-1 items-center gap-2">

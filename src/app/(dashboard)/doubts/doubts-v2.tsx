@@ -176,7 +176,7 @@ export function DoubtsV2({
         </nav>
 
         {shown.length === 0 ? (
-          <EmptyLine art={<Chai mood="think" size={56} />} title={EMPTY[filter]} />
+          <EmptyLine art={<Chai mood="think" size={56} still />} title={EMPTY[filter]} />
         ) : (
           <ul className="flex min-w-0 flex-col divide-y divide-[var(--ds-hairline)] border-y border-[var(--ds-hairline)]">
             {shown.map((d) => (

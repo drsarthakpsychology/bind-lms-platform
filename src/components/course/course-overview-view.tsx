@@ -84,7 +84,7 @@ export function ContinueCard({ model }: { model: OverviewModel }) {
     <Link
       href={model.next.href}
       prefetch
-      className="group/thumb grid gap-4 rounded-2xl border-2 border-foreground bg-card p-3 outline-none transition-[transform,box-shadow] duration-fast ease-snappy hard-shadow-sm hover:-translate-x-0.5 hover:-translate-y-0.5 hover:hard-shadow-lg focus-visible:ring-[3px] focus-visible:ring-ring/60 active:translate-x-0.5 active:translate-y-0.5 active:shadow-none sm:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] sm:p-4"
+      className="group/thumb grid gap-4 rounded-2xl border-2 border-foreground bg-card p-3 outline-none transition-[transform,translate,scale,box-shadow] duration-fast ease-snappy hard-shadow-sm hover:-translate-x-0.5 hover:-translate-y-0.5 hover:hard-shadow-lg focus-visible:ring-[3px] focus-visible:ring-ring/60 active:translate-x-0.5 active:translate-y-0.5 active:shadow-none sm:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] sm:p-4"
     >
       {model.next.kind === "lesson" ? (
         <LessonThumb number={model.next.number} state="next" size="lg" className="group-hover/thumb:translate-x-0 group-hover/thumb:translate-y-0 group-hover/thumb:shadow-none" />
@@ -349,7 +349,7 @@ export function Row({
       href={href}
       className={cn(
         cls,
-        "transition-[transform,box-shadow,border-color] duration-fast ease-snappy hover:-translate-y-px hover:border-foreground hover:hard-shadow-xs focus-visible:ring-[3px] focus-visible:ring-ring/60 active:translate-y-px active:shadow-none",
+        "transition-[transform,translate,scale,box-shadow,border-color] duration-fast ease-snappy hover:-translate-y-px hover:border-foreground hover:hard-shadow-xs focus-visible:ring-[3px] focus-visible:ring-ring/60 active:translate-y-px active:shadow-none",
       )}
     >
       {inner}

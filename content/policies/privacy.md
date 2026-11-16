@@ -100,12 +100,26 @@ Note that requests to erase data may be limited where we are legally required to
 
 Our Services are not directed at children under 18. Where a learner is between 16 and 18, we process data only with verifiable consent from a parent or legal guardian, and we do not undertake tracking, behavioural monitoring, or targeted advertising directed at them. If you believe a child's data has been collected without proper consent, contact drsarthakpsychology@gmail.com and we will delete it.
 
-## 6.10 Data protection contact
+## 6.10 The Vibha Psychology app
+
+The Vibha Psychology app for Android and iPhone uses the same account as this website. On top of what is described above, the app:
+
+- **Keeps a phone id**, made by the app when you sign in, with your phone's model, its system version and the app's version. We use it so your account is open on one phone at a time, and to show you which phone that is.
+- **Keeps a push messages address** for your phone, if you allow notifications, so we can send you messages, replies to your doubts and certificate news. Turn it off at any time in the app's Settings or your phone's settings.
+- **Uses the microphone only when you record an answer** to an assignment. The recording is sent to us as your answer. Nothing is recorded at any other time.
+- **Sends files only when you choose them** to hand in an assignment.
+- **Blocks screenshots and screen recording** inside the app, and shows your name and roll number over lecture videos, to protect the course material. This happens on your phone; nothing about it is sent to us.
+- **Checks whether the phone is rooted or jailbroken** before a lecture plays, and tells our server only yes or no, because lectures do not play on such phones.
+- **Does not** use advertising, does not track you across other apps or websites, and does not collect your location or contacts.
+
+Your sign-in details are kept in your phone's secure storage. Your PIN never leaves your phone. To delete your account, see [Delete your account](/delete-account).
+
+## 6.11 Data protection contact
 
 **Kavya Bothra, Program Manager & Head**
 Email: drsarthakpsychology@gmail.com
 Address: [REGISTERED_ADDRESS]
 
-## 6.11 Changes
+## 6.12 Changes
 
 We may update this policy. The current version is always available on our website with its "Last updated" date. Where changes materially affect your rights, we will notify you by email.

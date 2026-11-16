@@ -1,0 +1,130 @@
+# Builds the Vibha Psychology Android app (apps/mobile) into an installable
+# APK and keeps it as a download on the run's page ("Artifacts").
+#
+# Runs by hand (Actions > App Android build > Run workflow) and on every push
+# that changes apps/mobile. Needs no secrets to work: without them the APK is
+# signed with the standard test key (fine for testing, not for Google Play).
+#
+# Optional secrets and variables (Settings > Secrets and variables > Actions):
+#   Secrets
+#     ANDROID_KEYSTORE_BASE64   the upload keystore, base64 encoded (Play builds)
+#     ANDROID_KEYSTORE_PASSWORD its password
+#     ANDROID_KEY_ALIAS         the key alias inside it
+#     ANDROID_KEY_PASSWORD      the key password
+#     GOOGLE_SERVICES_JSON      the google-services.json file from Firebase,
+#                               base64 encoded (needed for push notifications)
+#   Variables
+#     APP_API_MODE              "mock" (sample data inside the app, the default)
+#                               or "live" (the real server)
+#     APP_API_URL               server address, default
+#                               https://vibhapsychology.com/api/app/v1
+#     EAS_PROJECT_ID            the Expo project id (needed for push tokens)
+#
+# For Google Play use "App Android release" (app-android-release.yml): it makes
+# the signed .aab bundle Play needs, with the real server by default.
+#
+# Docs for the owner: docs/app/README.md and apps/mobile/docs/release/OWNER_STEPS.md
+
+name: App Android build
+
+on:
+  workflow_dispatch:
+    inputs:
+      api_mode:
+        description: "Which data the app uses: mock (sample data) or live (the real server)"
+        required: false
+        default: ""
+        type: choice
+        options: ["", "mock", "live"]
+  push:
+    paths:
+      - "apps/mobile/**"
+      - ".github/workflows/app-android.yml"
+
+concurrency:
+  group: app-android-${{ github.ref }}
+  # A newer push waits for the running build instead of stopping it, so every build finishes.
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build the APK
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    defaults:
+      run:
+        working-directory: apps/mobile
+    env:
+      CI: "1"
+      EXPO_NO_TELEMETRY: "1"
+      EXPO_PUBLIC_API_MODE: ${{ inputs.api_mode || vars.APP_API_MODE || 'mock' }}
+      EXPO_PUBLIC_API_URL: ${{ vars.APP_API_URL || 'https://vibhapsychology.com/api/app/v1' }}
+      EAS_PROJECT_ID: ${{ vars.EAS_PROJECT_ID }}
+      GRADLE_OPTS: "-Dorg.gradle.jvmargs=-Xmx4g -Dorg.gradle.daemon=false"
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: apps/mobile/package-lock.json
+
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - uses: gradle/actions/setup-gradle@v5
+
+      - name: Install the app's packages
+        run: npm ci
+
+      - name: Check types, style and tests
+        run: |
+          npx tsc --noEmit
+          npx eslint .
+          npx jest --ci
+
+      - name: Add google-services.json (push notifications), if given
+        env:
+          GOOGLE_SERVICES_JSON: ${{ secrets.GOOGLE_SERVICES_JSON }}
+        if: env.GOOGLE_SERVICES_JSON != ''
+        run: echo "$GOOGLE_SERVICES_JSON" | base64 -d > google-services.json
+
+      - name: Make the Android project
+        run: npx expo prebuild --platform android --no-install --clean
+
+      - name: Build the APK
+        env:
+          KEYSTORE_B64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+          KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
+          KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
+        working-directory: apps/mobile/android
+        run: |
+          SIGN=""
+          if [ -n "$KEYSTORE_B64" ]; then
+            echo "$KEYSTORE_B64" | base64 -d > "$RUNNER_TEMP/upload.keystore"
+            SIGN="-Pandroid.injected.signing.store.file=$RUNNER_TEMP/upload.keystore -Pandroid.injected.signing.store.password=$KEYSTORE_PASSWORD -Pandroid.injected.signing.key.alias=$KEY_ALIAS -Pandroid.injected.signing.key.password=$KEY_PASSWORD"
+            echo "Signing with the upload key."
+          else
+            echo "No upload key given: signing with the standard test key."
+          fi
+          ./gradlew assembleRelease --no-daemon $SIGN
+
+      - name: Name the file
+        run: |
+          mkdir -p ../../out
+          cp android/app/build/outputs/apk/release/app-release.apk "../../out/vibha-psychology-${EXPO_PUBLIC_API_MODE}-${GITHUB_RUN_NUMBER}.apk"
+
+      - name: Keep the APK as a download
+        uses: actions/upload-artifact@v5
+        with:
+          name: vibha-psychology-android-${{ github.run_number }}
+          path: out/*.apk
+          retention-days: 30
+          if-no-files-found: error

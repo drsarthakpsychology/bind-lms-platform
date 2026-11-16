@@ -1,0 +1,80 @@
+/* Loading skeletons (loading.tsx). Calm: the shapes fade in once, a beat
+   after the tap so a fast page never flashes them, and the lime stroke under
+   the title draws once. Nothing loops. With reduced motion, everything is
+   simply there. */
+
+.bone {
+  display: block;
+  border-radius: 0.375rem;
+  background: var(--ds-hairline);
+  opacity: 0;
+  animation: in 320ms var(--ds-ease-out) 140ms forwards;
+}
+.soft {
+  opacity: 0;
+  animation: inSoft 320ms var(--ds-ease-out) 140ms forwards;
+}
+
+/* The brand stroke under the page title (the same place and size as ds-stroke). */
+.stroke {
+  display: block;
+  width: 2.5rem;
+  height: 0.25rem;
+  margin-top: 0.5rem;
+  border-radius: 999px;
+  background: var(--primary);
+  transform: scaleX(0);
+  transform-origin: left center;
+  animation: draw 700ms var(--ds-ease-out) 220ms forwards;
+}
+
+/* The lecture video's place: ink, as the player is. */
+.screen {
+  background: #000;
+  aspect-ratio: 16 / 9;
+  opacity: 0;
+  animation: in 320ms var(--ds-ease-out) 80ms forwards;
+}
+@media (max-width: 639px) {
+  .screen {
+    margin-inline: -1rem;
+    margin-top: -1.5rem;
+  }
+}
+@media (min-width: 640px) {
+  .screen {
+    border-radius: 0.75rem;
+  }
+}
+
+@keyframes in {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes inSoft {
+  to {
+    opacity: 0.6;
+  }
+}
+@keyframes draw {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bone,
+  .screen {
+    animation: none;
+    opacity: 1;
+  }
+  .soft {
+    animation: none;
+    opacity: 0.6;
+  }
+  .stroke {
+    animation: none;
+    transform: none;
+  }
+}

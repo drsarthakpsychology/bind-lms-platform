@@ -4,7 +4,7 @@ import { Check, ChevronDown, MessageCircleQuestion, Play } from "lucide-react";
 
 import { MobileStickyAction } from "@/components/mobile/mobile-sticky-action";
 import { cn } from "@/lib/utils";
-import { BackLink, TabRow } from "@/components/ds";
+import { BackLink, TabRow, HAS_VIEW_TRANSITION, PageMotion } from "@/components/ds";
 import s from "./lesson.module.css";
 
 export type LessonTab = "watch" | "materials" | "assignment";
@@ -74,7 +74,8 @@ export function LessonScreenV2({
   if (hasAssignment) tabs.push({ id: "assignment", label: "Assignment", href: `${base}?tab=assignment` });
 
   return (
-    <div data-ds="page" className="ds-page mx-auto grid w-full min-w-0 grid-cols-[minmax(0,1fr)] lg:grid-cols-[minmax(0,1fr)_20rem] lg:gap-12 xl:grid-cols-[minmax(0,1fr)_23rem]">
+    <PageMotion>
+    <div data-ds="page" className={cn(!HAS_VIEW_TRANSITION && "ds-page", "mx-auto grid w-full min-w-0 grid-cols-[minmax(0,1fr)] lg:grid-cols-[minmax(0,1fr)_20rem] lg:gap-12 xl:grid-cols-[minmax(0,1fr)_23rem]")}>
       <div className="flex min-w-0 flex-col gap-4">
         {/* A reading lecture has no video: its text is the page. */}
         {hasVideo ? (
@@ -188,5 +189,6 @@ export function LessonScreenV2({
         </aside>
       ) : null}
     </div>
+    </PageMotion>
   );
 }
