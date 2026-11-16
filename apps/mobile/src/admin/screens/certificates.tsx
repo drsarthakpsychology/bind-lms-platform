@@ -2,7 +2,7 @@ import { router, useLocalSearchParams } from "expo-router";
 import { openLink as openUrl } from "@/lib/open";
 import { Award, FileDown, Medal, PenLine, Plus, UserRoundPlus } from "lucide-react-native";
 import * as React from "react";
-import { Image, Linking, View } from "react-native";
+import { Image, View } from "react-native";
 
 import { messageOf } from "@/api/errors";
 import { Button, Chips, EmptyState, Field, Row, RowList, RowsSkeleton, Screen, Sheet, SwitchRow, T } from "@/ds";
@@ -16,6 +16,7 @@ import { day, plural, type Tone } from "../format";
 import { Block, ConfirmSheet, Facts, FilterChips, Loaded, Meter, Notice, OptionRow, Quiet, ScrollTabs, SearchBox, SelectRow, SmallButton, Status, SwipeRow, TabSwap, Tag } from "../kit";
 import { openStudent } from "../nav";
 import { useAdminRole, VIEW_ONLY_LINE } from "../role";
+import { pickSignature } from "../signature-pick";
 
 export const CERT_STATUS: Record<CertStatus, { label: string; tone: Tone }> = {
   valid: { label: "Valid", tone: "ok" },
@@ -31,7 +32,7 @@ export const kindLabel = (k: CertRow["kind"]) => (k === "badge" ? "Badge" : (KIN
 async function openLink(get: () => Promise<{ url: string }>) {
   try {
     const r = await get();
-    if (r?.url) await Linking.openURL(r.url);
+    if (r?.url) await openUrl(r.url);
   } catch (e) {
     toast.show(messageOf(e));
   }
@@ -430,6 +431,31 @@ function Types() {
   );
 }
 
+/** Upload a signature image from the phone's photos: whose it is, then pick and crop. */
+function AddSignature({ suggest }: { suggest: string }) {
+  const { run, busy } = useAdminAction();
+  const [label, setLabel] = React.useState<string | null>(null);
+  const name = label ?? suggest;
+  const add = async () => {
+    const who = name.trim();
+    if (!who) return toast.show("Say whose signature it is.");
+    const picked = await pickSignature();
+    if (!picked) return;
+    if ("error" in picked) return toast.show(picked.error);
+    const r = await run("studio-settings", () => adminCalls.uploadSignature(who, picked.dataUrl), { done: "Signature saved", tag: "signature-upload" });
+    if (r) setLabel(null);
+  };
+  return (
+    <View style={{ gap: space[2] }}>
+      <Field label="Whose signature" value={name} onChangeText={setLabel} maxLength={60} testID="signature-label" />
+      <Button kind="quiet" label="Add a signature image" busy={busy === "signature-upload"} onPress={() => void add()} testID="signature-add" />
+      <T v="caption" tone="muted">
+        A clear photo of the signature on plain white paper. Crop it close.
+      </T>
+    </View>
+  );
+}
+
 /** Who signs every new certificate (up to three, each with a saved signature image), and today's email. */
 function Settings() {
   const c = useTheme();
@@ -483,8 +509,9 @@ function Settings() {
                   ))}
                 </View>
               ) : (
-                <Quiet>None saved yet. Add them on the website.</Quiet>
+                <Quiet>None saved yet.</Quiet>
               )}
+              {canWrite ? <AddSignature suggest={sigs.find((x) => x.name.trim())?.name ?? ""} /> : null}
             </Block>
             <Block title="Email">
               {e.configured ? (
