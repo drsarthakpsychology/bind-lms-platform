@@ -116,6 +116,7 @@ describe("Blitz", () => {
     jest.useFakeTimers();
     try {
       await render(<BlitzGame />);
+      await waitFor(() => expect(screen.getByTestId("start-rules")).toBeTruthy());
       await playFrom();
       await act(async () => {
         jest.advanceTimersByTime(3000);
@@ -246,10 +247,11 @@ describe("Case tools", () => {
     await waitFor(() => expect(screen.getByText(/clue 2 of 4|on clue 1/)).toBeTruthy());
   });
 
-  it("What would you do: cases with tags, Carry on after a step, finish", async () => {
+  it("What would you do: opens on the next case, All cases lists them with marks, finish", async () => {
     await render(<ToolCaseScreen tool="wwyd" />);
-    await waitFor(() => expect(screen.getAllByText("Done").length).toBeGreaterThan(0));
-    await press("tool-start");
+    await press("tool-all-cases");
+    await waitFor(() => expect(screen.getAllByLabelText("Done").length).toBeGreaterThan(0));
+    await fireEvent.press(screen.getAllByTestId(/^tool-item-/)[0]!);
     await press("tool-option-0");
     await waitFor(() => expect(screen.getByTestId("verdict")).toBeTruthy());
     while (screen.queryByTestId("tool-next")) {
@@ -261,7 +263,6 @@ describe("Case tools", () => {
 
   it("Formulation: sorts every factor and checks", async () => {
     await render(<ToolCaseScreen tool="formulation" />);
-    await press("tool-start");
     await waitFor(() => expect(screen.getByTestId("tool-bucket-0-0")).toBeTruthy());
     for (let i = 0; screen.queryByTestId(`tool-bucket-${i}-0`); i++) await fireEvent.press(screen.getByTestId(`tool-bucket-${i}-1`));
     await press("tool-submit");
@@ -270,7 +271,6 @@ describe("Case tools", () => {
 
   it("Judgment calls: one tap on the scale", async () => {
     await render(<ToolCaseScreen tool="judgment" />);
-    await press("tool-start");
     await press("tool-scale-2");
     await waitFor(() => expect(screen.getAllByText(/panel/).length).toBeGreaterThan(0));
   });
@@ -278,12 +278,11 @@ describe("Case tools", () => {
   it("the case library lists every tool's cases with one tag each", async () => {
     await render(<CaseLibrary />);
     await waitFor(() => expect(screen.getByText("Landmark cases")).toBeTruthy());
-    expect(screen.getAllByText("New").length).toBeGreaterThan(0);
+    expect(screen.getAllByLabelText("New").length).toBeGreaterThan(0);
   });
 
   it("Two-minute clinic: write, then compare with the expert", async () => {
     await render(<ToolCaseScreen tool="two-minute" />);
-    await press("tool-start");
     await waitFor(() => expect(screen.getByTestId("tool-write-0")).toBeTruthy());
     await fireEvent.changeText(screen.getByTestId("tool-write-0"), "Depression, adjustment disorder");
     await press("tool-submit");
@@ -292,7 +291,6 @@ describe("Case tools", () => {
 
   it("Say it clinically: a round of phrases", async () => {
     await render(<ToolCaseScreen tool="say-it" />);
-    await press("tool-start");
     await press("tool-option-0");
     await waitFor(() => expect(screen.getByTestId("verdict")).toBeTruthy());
   });
