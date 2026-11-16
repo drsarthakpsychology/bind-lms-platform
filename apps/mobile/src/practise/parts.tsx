@@ -23,7 +23,7 @@ export function Tag({ tag, count, testID }: { tag: CaseMark; count?: number; tes
   const label = markWord(tag, count);
   const mark =
     tag === "new" ? (
-      <View style={{ width: 8, height: 8, borderRadius: 4, backgroundColor: c.brand }} />
+      <View style={{ width: 8, height: 8, borderRadius: 4, backgroundColor: c.dark ? c.sk.blue : c.brand }} />
     ) : tag === "done" ? (
       <Check size={18} color={c.successFg} strokeWidth={2.5} />
     ) : tag === "started" ? (
