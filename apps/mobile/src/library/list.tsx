@@ -6,7 +6,7 @@ import { Pressable, TextInput, View } from "react-native";
 
 import { ApiFailure } from "@/api/errors";
 import { api } from "@/auth";
-import { Chips, EmptyState, LoadError, Row, RowList, RowsSkeleton, Screen, Section, T, useProgressive } from "@/ds";
+import { Chips, EmptyState, LoadError, Row, RowList, RowsSkeleton, Screen, Section, StillTrying, T, useProgressive } from "@/ds";
 import { recentMedicines } from "@/lib/recent";
 import { SoonState } from "@/practise/soon";
 import { TabTop } from "@/nav/top";
@@ -52,7 +52,10 @@ export function LibraryScreen() {
       {q.isError ? (
         soon ? <SoonState web="/library" /> : <LoadError error={q.error} what="the medicine library" onRetry={() => void q.refetch()} />
       ) : !q.data ? (
-        <RowsSkeleton rows={9} />
+        <View style={{ gap: space[3] }}>
+          <RowsSkeleton rows={9} />
+          <StillTrying failed={q.failureCount > 0} />
+        </View>
       ) : rows.length ? (
         <>
           {recent.length ? (

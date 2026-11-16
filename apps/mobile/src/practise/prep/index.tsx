@@ -3,7 +3,7 @@ import { BookOpen, Bookmark, RotateCcw, Sparkles } from "lucide-react-native";
 import * as React from "react";
 import { View } from "react-native";
 
-import { Hero, LoadError, ProgressLine, Row, RowList, RowsSkeleton, Screen, Section } from "@/ds";
+import { Hero, LoadError, ProgressLine, Row, RowList, RowsSkeleton, Screen, Section, StillTrying } from "@/ds";
 import { recentPrep } from "@/lib/recent";
 import { hrefFor } from "@/nav/targets";
 import { space, useTheme } from "@/theme";
@@ -32,7 +32,10 @@ export function PrepHome() {
       {q.isError ? (
         <LoadError error={q.error} what="Exam Prep" onRetry={() => void q.refetch()} />
       ) : !d ? (
-        <RowsSkeleton rows={5} />
+        <View style={{ gap: space[3] }}>
+          <RowsSkeleton rows={5} />
+          <StillTrying failed={q.failureCount > 0} />
+        </View>
       ) : (
         <Stagger gap={space[6]}>
           {d.resume && resume ? <Hero context={`Carry on · ${d.resume.subjectTitle}`} title={d.resume.topicTitle} meta={`Set ${d.resume.set} of ${d.resume.sets}`} action={{ label: "Carry on", onPress: () => router.push(resume), testID: "prep-resume" }} /> : null}
@@ -72,7 +75,10 @@ export function PrepSubject() {
       {q.isError ? (
         <LoadError error={q.error} what="this subject" onRetry={() => void q.refetch()} />
       ) : !d ? (
-        <RowsSkeleton rows={6} />
+        <View style={{ gap: space[3] }}>
+          <RowsSkeleton rows={6} />
+          <StillTrying failed={q.failureCount > 0} />
+        </View>
       ) : (
         <Stagger>
           <RowList>

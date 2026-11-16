@@ -3,7 +3,7 @@ import { ExternalLink, Lock, Trophy } from "lucide-react-native";
 import * as React from "react";
 import { Linking, Pressable, View } from "react-native";
 
-import { EmptyState, Hero, IconDot, LoadError, Row, RowList, Screen, Section, Skeleton, T } from "@/ds";
+import { EmptyState, Hero, IconDot, LoadError, Row, RowList, Screen, Section, Skeleton, StillTrying, T } from "@/ds";
 import { toast } from "@/ds/toast";
 import { config } from "@/lib/config";
 import { recentPractise, recentPrep } from "@/lib/recent";
@@ -191,6 +191,7 @@ export function PractiseHub() {
           <Skeleton w="40%" h={14} />
           <Skeleton w="80%" h={34} />
           <Skeleton h={52} r={12} />
+          <StillTrying failed={q.failureCount > 0} />
         </View>
       ) : (
         <Stagger gap={space[6]}>
@@ -248,6 +249,7 @@ export function PractiseGroup({ group }: { group: string }) {
           <Skeleton h={52} r={12} />
           <Skeleton h={52} r={12} />
           <Skeleton h={52} r={12} />
+          <StillTrying failed={q.failureCount > 0} />
         </View>
       ) : (
         <Stagger gap={space[6]}>

@@ -8,7 +8,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import type { Card as RecallCard, Mcq, SectionContent } from "@/api/contract";
 import { useMarks } from "@/api/learn";
 import { keys, useModule, useSection } from "@/api/queries";
-import { Button, Chips, LoadError, OptionRow, ProgressLine, Row, RowList, Sheet, Skeleton, T, VerdictBand } from "@/ds";
+import { Button, Chips, LoadError, OptionRow, ProgressLine, Row, RowList, Sheet, Skeleton, StillTrying, T, VerdictBand } from "@/ds";
 import { toast } from "@/ds/toast";
 import { haptic } from "@/lib/haptics";
 import { Blocks, type BlockContext } from "@/study/blocks";
@@ -284,6 +284,7 @@ export function ReaderScreen() {
             {[92, 98, 86, 95, 70].map((w, i) => (
               <Skeleton key={i} w={`${w}%`} h={16} />
             ))}
+            <StillTrying failed={q.failureCount > 0} />
           </View>
         )}
       </ScrollView>
