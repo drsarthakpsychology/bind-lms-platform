@@ -1,7 +1,7 @@
 import { router, useLocalSearchParams } from "expo-router";
 import { ArrowRight, RotateCcw, X } from "lucide-react-native";
 import * as React from "react";
-import { BackHandler, Pressable, ScrollView, View } from "react-native";
+import { Pressable, ScrollView, View } from "react-native";
 import Animated, { FadeIn, useReducedMotion } from "react-native-reanimated";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useQueryClient } from "@tanstack/react-query";
@@ -11,6 +11,7 @@ import { answerMap, mapWallKeys, useMapRound } from "@/api/map-wall";
 import { Button, EmptyState, LoadError, OptionRow, ProgressLine, Skeleton, T, VerdictBand, type OptionState } from "@/ds";
 import { toast } from "@/ds/toast";
 import { haptic } from "@/lib/haptics";
+import { useHardwareBack } from "@/nav/back";
 import { settingsStore } from "@/lib/settings";
 import { Burst, Confetti, RollingNumber } from "@/motion";
 import { fonts, layout, motion, space, useTheme } from "@/theme";
@@ -98,13 +99,10 @@ export function RoundRunner({ round, onAgain, onDone }: { round: MapPractice; on
     startedAt.current = Date.now();
   }, [i]);
 
-  React.useEffect(() => {
-    const sub = BackHandler.addEventListener("hardwareBackPress", () => {
-      onDone();
-      return true;
-    });
-    return () => sub.remove();
-  }, [onDone]);
+  useHardwareBack(() => {
+    onDone();
+    return true;
+  });
 
   const check = (p: Pick = picked) => {
     if (!q || p === null || checked) return;

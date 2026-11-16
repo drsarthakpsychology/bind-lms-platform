@@ -1,12 +1,13 @@
 import { router } from "expo-router";
 import { CircleHelp, X } from "lucide-react-native";
 import * as React from "react";
-import { BackHandler, Pressable, ScrollView, View } from "react-native";
+import { Pressable, ScrollView, View } from "react-native";
 import Animated, { FadeIn, FadeInDown, useReducedMotion } from "react-native-reanimated";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { Button, EmptyState, Sheet, Skeleton, T, VerdictBand } from "@/ds";
 import { haptic } from "@/lib/haptics";
+import { useHardwareBack } from "@/nav/back";
 import { Rich } from "@/study/rich";
 import { fonts, layout, motion, space, useTheme } from "@/theme";
 import { ApiFailure } from "@/api/errors";
@@ -67,13 +68,10 @@ export function GameFrame({ title, howTo, score, scoreLabel = "Score", hud, chil
     if (confirmLeave) setAsking(true);
     else leave();
   }, [confirmLeave]);
-  React.useEffect(() => {
-    const sub = BackHandler.addEventListener("hardwareBackPress", () => {
-      close();
-      return true;
-    });
-    return () => sub.remove();
-  }, [close]);
+  useHardwareBack(() => {
+    close();
+    return true;
+  });
   React.useEffect(() => () => reactions.dismiss(), []);
   const closeHelp = React.useCallback(() => setHelp(false), []);
   const closeAsk = React.useCallback(() => setAsking(false), []);

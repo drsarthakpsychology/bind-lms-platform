@@ -2,7 +2,7 @@ import { useQueryClient } from "@tanstack/react-query";
 import { router, useLocalSearchParams } from "expo-router";
 import { ArrowRight, X } from "lucide-react-native";
 import * as React from "react";
-import { BackHandler, Pressable, ScrollView, View } from "react-native";
+import { Pressable, ScrollView, View } from "react-native";
 import Animated, { FadeIn, useReducedMotion } from "react-native-reanimated";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
@@ -13,6 +13,7 @@ import { api } from "@/auth";
 import { Button, LoadError, OptionRow, ProgressLine, Sheet, Skeleton, T, VerdictBand } from "@/ds";
 import { toast } from "@/ds/toast";
 import { haptic } from "@/lib/haptics";
+import { useHardwareBack } from "@/nav/back";
 import { Rich } from "@/study/rich";
 import { Burst, Confetti, RollingNumber } from "@/motion";
 import { fonts, layout, motion, space, useTheme } from "@/theme";
@@ -47,13 +48,10 @@ export function QuizRunner({ title, questions, submit, onDone, doneLabel }: { ti
     else onDone();
   }, [dirty, onDone]);
 
-  React.useEffect(() => {
-    const sub = BackHandler.addEventListener("hardwareBackPress", () => {
-      exit();
-      return true;
-    });
-    return () => sub.remove();
-  }, [exit]);
+  useHardwareBack(() => {
+    exit();
+    return true;
+  });
 
   const next = async () => {
     if (!q || picked === undefined) return;
