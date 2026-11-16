@@ -43,8 +43,16 @@ export function Button({ label, onPress, kind = "primary", icon, disabled, busy,
   const pressOut = () => {
     down.value = reduce ? 0 : withTiming(0, { duration: motion.press, easing: ease });
   };
+  // A button that sends something (it has a `busy` state) takes one press: a quick second
+  // tap lands before `busy` has drawn, and used to post a doubt or a reply twice.
+  const lastPress = React.useRef(0);
   const press = () => {
     if (blocked) return;
+    if (busy !== undefined) {
+      const now = Date.now();
+      if (now - lastPress.current < 800) return;
+      lastPress.current = now;
+    }
     if (kind === "primary") haptic.tap();
     onPress?.();
   };

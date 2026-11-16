@@ -37,9 +37,9 @@ const NEVER_PERSIST = new Set(["stream", "checkpoint", "config", "game", "prepSe
 export const persistOptions = {
   persister,
   maxAge: 24 * 60 * 60 * 1000,
-  // Copies saved by another app version are dropped: their shape may be one this version's screens no longer read.
-  // Bump the letter part when a saved shape changes inside one version.
-  buster: `c3-${config.appVersion}`,
+  // Copies saved by another build are dropped: their shape may be one this build's screens no longer read
+  // (the version stays 1.0.0 across many uploads, so the build number is part of it).
+  buster: `c3-${config.appVersion}-${config.appBuild}`,
   dehydrateOptions: { shouldDehydrateQuery: (q: { queryKey: readonly unknown[]; state: { status: string } }) => q.state.status === "success" && !NEVER_PERSIST.has(String(q.queryKey[0])) },
 };
 

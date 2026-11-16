@@ -17,6 +17,8 @@ import { createOutbox } from "@/lib/outbox";
 import { usePushRouting } from "@/push";
 import { memoryStore } from "@/lib/storage";
 import { issued } from "@/screens/me/certificates";
+import { fireEvent, screen } from "@testing-library/react-native";
+import { Button } from "@/ds";
 import { render } from "./utils";
 
 describe("answers with nulls draw instead of throwing", () => {
@@ -133,5 +135,57 @@ describe("a tapped notification", () => {
     expect((router.push as jest.Mock).mock.calls).toEqual([["/notification/n1"]]);
     expect(N.clearLastNotificationResponse).toHaveBeenCalled();
     Platform.OS = "ios";
+  });
+});
+
+describe("the copy of server answers kept on the phone", () => {
+  it("belongs to one build: an older build's copy is not shown to this one", () => {
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    const { persistOptions } = require("@/api/queries");
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    const { config } = require("@/lib/config");
+    expect(persistOptions.buster).toContain(config.appVersion);
+    expect(persistOptions.buster).toContain(config.appBuild);
+  });
+});
+
+describe("the root guard", () => {
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  const { guardTarget } = require("@/nav/guard") as typeof import("@/nav/guard");
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  const fx = require("@/api/mock/fixtures") as typeof import("@/api/mock/fixtures");
+  const base = { me: null, notice: null, viewingAsStudent: false } as const;
+  it("signed out for a reason goes to Sign in, where the reason is written", () => {
+    expect(guardTarget({ ...base, phase: "visitor", top: "(student)", notice: "pin_tries" })).toBe("/sign-in");
+    expect(guardTarget({ ...base, phase: "visitor", top: "(student)", notice: "forgot_pin" })).toBe("/sign-in");
+    expect(guardTarget({ ...base, phase: "visitor", top: "(student)", notice: "account_expired" })).toBe("/sign-in");
+    expect(guardTarget({ ...base, phase: "visitor", top: "(student)" })).toBe("/welcome");
+    expect(guardTarget({ ...base, phase: "visitor", top: "verify" })).toBeNull();
+  });
+  it("keeps each account in its own tabs, and lets an admin view the student side", () => {
+    expect(guardTarget({ ...base, phase: "ready", top: "(admin)", me: fx.student })).toBe("/home");
+    expect(guardTarget({ ...base, phase: "ready", top: "(student)", me: fx.lectureOnly })).toBe("/lo/home");
+    expect(guardTarget({ ...base, phase: "ready", top: "compose", me: fx.student })).toBe("/home");
+    expect(guardTarget({ ...base, phase: "ready", top: "(student)", me: fx.admin, viewingAsStudent: true })).toBeNull();
+    expect(guardTarget({ ...base, phase: "ready", top: "(student)", me: fx.admin })).toBe("/admin/home");
+    expect(guardTarget({ ...base, phase: "ready", top: "(visitor)", me: fx.student })).toBe("/home");
+    expect(guardTarget({ ...base, phase: "setPin", top: "(visitor)", me: fx.student })).toBeNull();
+  });
+});
+
+describe("a send button", () => {
+  it("takes one press when tapped twice quickly (it used to post twice)", async () => {
+    const send = jest.fn();
+    await render(<Button label="Post" busy={false} onPress={send} testID="b" />);
+    await fireEvent.press(screen.getByTestId("b"));
+    await fireEvent.press(screen.getByTestId("b"));
+    expect(send).toHaveBeenCalledTimes(1);
+  });
+  it("a plain button (no busy state) still takes every press", async () => {
+    const next = jest.fn();
+    await render(<Button label="Next" onPress={next} testID="n" />);
+    await fireEvent.press(screen.getByTestId("n"));
+    await fireEvent.press(screen.getByTestId("n"));
+    expect(next).toHaveBeenCalledTimes(2);
   });
 });

@@ -20,7 +20,7 @@ import { applyDevSession, applyMockFromUrl } from "@/lib/dev";
 import { holdPortrait } from "@/lib/orientation";
 import { loadSettings, settingsStore } from "@/lib/settings";
 import { fadeMotion, modalMotion, stackMotion } from "@/motion";
-import { groupFor, homeHref } from "@/nav/targets";
+import { guardTarget } from "@/nav/guard";
 import { usePushRouting } from "@/push";
 import { LockScreen, OtherDeviceScreen, PausedScreen, SetPinScreen, UpdateScreen } from "@/screens/auth/gates";
 import { ThemeProvider, fonts, useTheme } from "@/theme";
@@ -29,10 +29,6 @@ installCrashHandlers();
 void SplashScreen.preventAutoHideAsync().catch(() => undefined);
 applyMockFromUrl();
 
-/** Screens a visitor may see without signing in. */
-const PUBLIC = new Set(["(visitor)", "setup", "verify", "forgot-password"]);
-/** Screens only admins open. */
-const ADMIN_ONLY = new Set(["(admin)", "student", "compose"]);
 
 function useBoot(): boolean {
   const [fontsReady, fontError] = useFonts({
@@ -102,9 +98,10 @@ function useGuard(ready: boolean): void {
   const segments = useSegments();
   const phase = useSession((s) => s.phase);
   const me = useSession((s) => s.me);
+  const notice = useSession((s) => s.notice);
   const top = segments[0] as string | undefined;
   // An admin looking at the student side (More > View as student).
-  const viewing = useViewingAsStudent() && groupFor(me) === "(admin)";
+  const viewing = useViewingAsStudent();
   React.useEffect(() => {
     if (!ready || top === undefined) return;
     // A redirect must never throw out of an effect (that closes a release build).
@@ -115,18 +112,9 @@ function useGuard(ready: boolean): void {
         console.warn("Redirect failed:", e);
       }
     };
-    if (phase === "visitor") {
-      if (!PUBLIC.has(top)) go("/welcome");
-      return;
-    }
-    if (top === "(visitor)" && phase === "ready") {
-      go(homeHref(me));
-      return;
-    }
-    const tabGroup = top === "(student)" || top === "(lecture)" || top === "(admin)";
-    if (tabGroup && top !== groupFor(me) && !(viewing && top === "(student)")) go(homeHref(me));
-    else if (ADMIN_ONLY.has(top) && groupFor(me) !== "(admin)") go(homeHref(me));
-  }, [ready, phase, me, top, viewing]);
+    const href = guardTarget({ phase, top, me, notice, viewingAsStudent: viewing });
+    if (href) go(href);
+  }, [ready, phase, me, top, viewing, notice]);
 }
 
 function Shell() {

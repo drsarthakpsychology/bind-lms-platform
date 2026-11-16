@@ -12,6 +12,8 @@ export const config = {
   apiMode: (process.env.EXPO_PUBLIC_API_MODE ?? extra.apiMode ?? "live") as "mock" | "live",
   site: extra.site ?? "https://vibhapsychology.com",
   appVersion: Constants.expoConfig?.version ?? "1.0.0",
+  /** The build number (Android versionCode), which goes up on every upload even when the version stays. */
+  appBuild: String(Constants.expoConfig?.android?.versionCode ?? Constants.expoConfig?.ios?.buildNumber ?? "1"),
   pin: {
     length: 4,
     /** Lock after this long in the background. */
