@@ -156,7 +156,10 @@ export function QuizRunner({ title, questions, submit, onDone, doneLabel }: { ti
         ) : (
           <>
             <Button label={i < questions.length - 1 ? "Next" : "Check my answers"} disabled={picked === undefined} busy={busy} onPress={() => void next()} testID="quiz-next" />
-            {i > 0 ? <Button kind="text" full label="Previous question" onPress={() => setI(i - 1)} /> : null}
+            {/* The row is always there (hidden on the first question) so Next never moves under the thumb. */}
+            <View style={{ opacity: i > 0 ? 1 : 0 }} pointerEvents={i > 0 ? "auto" : "none"} accessibilityElementsHidden={i === 0} importantForAccessibility={i > 0 ? "auto" : "no-hide-descendants"}>
+              <Button kind="text" full label="Previous question" disabled={i === 0} onPress={() => setI(i - 1)} testID="quiz-prev" />
+            </View>
           </>
         )}
       </View>
