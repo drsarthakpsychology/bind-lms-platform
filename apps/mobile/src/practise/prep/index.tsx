@@ -4,6 +4,7 @@ import * as React from "react";
 import { View } from "react-native";
 
 import { Hero, LoadError, ProgressLine, Row, RowList, RowsSkeleton, Screen, Section } from "@/ds";
+import { recentPrep } from "@/lib/recent";
 import { hrefFor } from "@/nav/targets";
 import { space, useTheme } from "@/theme";
 import { useRead } from "../api";
@@ -38,7 +39,7 @@ export function PrepHome() {
           <Section title="Subjects">
             <RowList>
               {d.subjects.map((s) => (
-                <Row key={s.id} testID={`prep-${s.id}`} title={s.title} meta={statLine(s.stats)} below={bar(s.stats)} trailing={s.stats.total && s.stats.answered >= s.stats.total ? <Tag tag="done" /> : undefined} onPress={() => router.push(`/prep/${enc(s.id)}`)} />
+                <Row key={s.id} testID={`prep-${s.id}`} title={s.title} meta={statLine(s.stats)} below={bar(s.stats)} trailing={s.stats.total && s.stats.answered >= s.stats.total ? <Tag tag="done" /> : undefined} onPress={() => { recentPrep.add(s.id); router.push(`/prep/${enc(s.id)}`); }} />
               ))}
             </RowList>
           </Section>

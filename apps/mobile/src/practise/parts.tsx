@@ -1,3 +1,4 @@
+import { Check } from "lucide-react-native";
 import * as React from "react";
 import { Pressable, View } from "react-native";
 
@@ -7,34 +8,38 @@ import { haptic } from "@/lib/haptics";
 import { layout, space, useTheme } from "@/theme";
 import type { CaseMark } from "./types";
 
-/** A status tag: a small pill that says what something is (Done, New, This week, Carry on). Never a button. */
+/** The word for a case mark, for the meta line and screen readers. */
+export function markWord(tag: CaseMark, count?: number): string {
+  return tag === "new" ? (count && count > 1 ? `${count} new` : "New") : tag === "week" ? "This week" : tag === "done" ? "Done" : "Half way";
+}
+
+/**
+ * A case mark at the row's right edge, drawn small: a blue dot for new, a
+ * tick for done, an open ring for half way, nothing for this week (its word
+ * goes in the meta line). Never a pill, never a button.
+ */
 export function Tag({ tag, count, testID }: { tag: CaseMark; count?: number; testID?: string }) {
   const c = useTheme();
-  const label = tag === "new" ? (count && count > 1 ? `${count} new` : "New") : tag === "week" ? "This week" : tag === "done" ? "Done" : "Carry on";
-  const style =
-    tag === "new"
-      ? { backgroundColor: c.accent, borderColor: c.accent, color: c.onAccent }
-      : tag === "done"
-        ? { backgroundColor: c.successBg, borderColor: c.successBg, color: c.successFg }
-        : tag === "started"
-          ? { backgroundColor: "transparent", borderColor: c.ink, color: c.ink }
-          : { backgroundColor: "transparent", borderColor: c.cardLine, color: c.ink };
+  const label = markWord(tag, count);
+  const mark =
+    tag === "new" ? (
+      <View style={{ width: 8, height: 8, borderRadius: 4, backgroundColor: c.accent }} />
+    ) : tag === "done" ? (
+      <Check size={18} color={c.successFg} strokeWidth={2.5} />
+    ) : tag === "started" ? (
+      <View style={{ width: 10, height: 10, borderRadius: 5, borderWidth: 2, borderColor: c.link }} />
+    ) : null;
+  if (!mark) return null;
   return (
-    <View testID={testID} accessible accessibilityLabel={label} style={{ minHeight: 24, paddingHorizontal: space[2], borderRadius: 12, borderWidth: 1.5, borderColor: style.borderColor, backgroundColor: style.backgroundColor, justifyContent: "center", alignSelf: "center" }}>
-      <T v="caption" style={{ color: style.color }} num>
-        {label}
-      </T>
+    <View testID={testID} accessible accessibilityLabel={label} style={{ width: 20, alignItems: "center", justifyContent: "center", alignSelf: "center" }}>
+      {mark}
     </View>
   );
 }
 
-/** An answer row (A, B, C...) that pops when it turns right and shakes when it turns wrong. */
+/** An answer row (A, B, C...): the letter pops when it is chosen or marked, the tick draws on, a wrong one shakes (all in OptionRow). */
 export function AnswerRow(props: React.ComponentProps<typeof OptionRow>) {
-  return (
-    <Feel state={props.state ?? "idle"}>
-      <OptionRow {...props} />
-    </Feel>
-  );
+  return <OptionRow {...props} />;
 }
 
 /** A big tappable answer tile (a word, a card, a door option) with on, right and wrong states. */

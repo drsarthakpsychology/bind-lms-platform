@@ -1,11 +1,11 @@
 import { Check } from "lucide-react-native";
 import * as React from "react";
 import { Pressable, ScrollView, View } from "react-native";
-import Animated, { FadeIn, useReducedMotion } from "react-native-reanimated";
 
 import { Button, Row, RowList, Section, Sheet, T } from "@/ds";
 import { haptic } from "@/lib/haptics";
-import { layout, motion, space, useTheme } from "@/theme";
+import { Swap } from "@/motion";
+import { layout, space, useTheme } from "@/theme";
 import { play, useLoad, useMove } from "../api";
 import { Draggable, useZones } from "../drag";
 import { EndPanel, EndThumb, FrameError, FrameLoading, GameFrame, HudLine, Lives, MoveError, StartScreen, Verdict } from "../frame";
@@ -64,7 +64,6 @@ function SortBoardScreen({ mode, tier, again }: { mode: "daily" | "practice"; ti
 
 function Board({ view, again }: { view: SortView; again: () => void }) {
   const c = useTheme();
-  const reduce = useReducedMotion();
   const mv = useMove();
   const react = useReactions();
   const { hit, measure } = useZones();
@@ -193,7 +192,7 @@ function Board({ view, again }: { view: SortView; again: () => void }) {
       </View>
       <View style={{ flex: 1, justifyContent: "center", gap: space[3] }}>
         {top !== null ? (
-          <Animated.View key={top} entering={reduce ? undefined : FadeIn.duration(motion.state)} style={{ gap: space[3] }}>
+          <Swap k={top} style={{ gap: space[3] }}>
             <Draggable onDrop={(x, y) => { const z = hit(x, y); return z ? put(top, Number(z.slice(1))) : false; }} onLift={setLifted} testID="sort-card">
               <Pressable
                 accessibilityRole="button"
@@ -216,7 +215,7 @@ function Board({ view, again }: { view: SortView; again: () => void }) {
               </T>
               {deck.length > 1 ? <Button kind="text" label="Next card" onPress={skip} testID="sort-skip" /> : null}
             </View>
-          </Animated.View>
+          </Swap>
         ) : (
           <Verdict right title="All sixteen placed" why={view.tier === "advanced" && !picks.every(Boolean) ? "Pick a rule for each diagnosis, then check." : "Check when you are ready. Tap a diagnosis to move a card."} />
         )}

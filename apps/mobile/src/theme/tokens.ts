@@ -3,6 +3,7 @@
  * (docs/design/DESIGN_SYSTEM_2026_11.md and src/app/globals.css).
  * Everything visual in the app reads from here.
  */
+import { dur } from "@/motion/tokens";
 
 /** The only spacing steps: 4, 8, 12, 16, 24, 32, 48, 64. */
 export const space = { 1: 4, 2: 8, 3: 12, 4: 16, 5: 24, 6: 32, 7: 48, 8: 64 } as const;
@@ -23,14 +24,19 @@ export const layout = {
   readingWidth: 620,
 } as const;
 
-/** Motion timings in ms. */
+/**
+ * Motion timings in ms, kept for older screens. They now come from the one
+ * source in src/motion/tokens.ts (`dur`); new code imports `dur` or `presets`
+ * from `@/motion` instead (docs/MOTION.md, motion budget rule 1).
+ * @deprecated use `dur` from `@/motion`.
+ */
 export const motion = {
-  press: 120,
-  state: 180,
-  sheetIn: 300,
-  sheetOut: 200,
-  page: 200,
-  fill: 600,
+  press: dur.press,
+  state: dur.state,
+  sheetIn: dur.sheetIn,
+  sheetOut: dur.sheetOut,
+  page: dur.state,
+  fill: dur.fill,
   /** cubic-bezier(0.2, 0, 0, 1) and cubic-bezier(0.16, 1, 0.3, 1) */
   ease: [0.2, 0, 0, 1] as const,
   easeOut: [0.16, 1, 0.3, 1] as const,
