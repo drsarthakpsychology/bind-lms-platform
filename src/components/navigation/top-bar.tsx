@@ -102,14 +102,18 @@ export function TopBar({
           type="button"
           onClick={openSearch}
           className={cn(
-            "group/search mx-auto hidden h-11 w-full max-w-xl items-center gap-3 rounded-full bg-background px-4 text-left text-sm text-muted-foreground outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60 md:flex",
+            "group/search mx-auto hidden h-11 w-full min-w-0 max-w-xl items-center gap-3 rounded-full bg-background px-4 text-left text-sm text-muted-foreground outline-none focus-visible:ring-[3px] focus-visible:ring-ring/60 md:flex",
             v2
               ? "border border-[var(--ds-card-line)] transition-colors duration-[var(--ds-state)] hover:border-foreground"
               : "border-2 border-foreground transition-[box-shadow,transform,translate,scale] duration-fast ease-snappy hover:-translate-y-px hover:hard-shadow-sm",
           )}
         >
           <Search className="size-4 shrink-0 text-foreground" aria-hidden />
-          <span className="flex-1 truncate">Search lectures, topics, medicines…</span>
+          {/* Tablets: the short word fits beside the account buttons; laptops get the full hint. */}
+          <span className="flex-1 truncate">
+            <span className="lg:hidden">Search</span>
+            <span className="hidden lg:inline">Search lectures, topics, medicines…</span>
+          </span>
           <kbd className={cn("hidden rounded-md bg-card px-1.5 font-mono text-foreground lg:inline", v2 ? "border border-[var(--ds-card-line)] text-xs" : cn("border-2 border-foreground", v2Chrome ? "text-xs" : "text-[0.7rem]"))}>
             /
           </kbd>

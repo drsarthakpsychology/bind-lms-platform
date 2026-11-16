@@ -409,11 +409,11 @@ function barScan({ atEnd }) {
 
 let browser = merge ? null : await chromium.launch(chrome ? { executablePath: chrome } : {});
 const report = merge ? merge.split(",").flatMap((f) => JSON.parse(fs.readFileSync(f, "utf8"))) : [];
-// --resize: one load per screen for each kind of device (phone < 768, tablet,
-// desktop), then the window is resized through that kind's widths. Much
+// --resize: one load per screen for phones (< 768) and one for wider windows
+// (tablet and desktop), then the window is resized through the widths. Much
 // faster against a slow dev server; without it every width is a fresh load.
 const resize = !!args.resize;
-const kindOf = (w) => (w < 768 ? "phone" : w < 1024 ? "tablet" : "desktop");
+const kindOf = (w) => (w < 768 ? "phone" : "wide");
 const groups = [];
 for (const w of widths) {
   const g = resize && groups.find((x) => kindOf(x[0]) === kindOf(w));
