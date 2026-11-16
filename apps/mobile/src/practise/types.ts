@@ -152,6 +152,33 @@ export type PrepQView = { id: string; subject: string; topic: string; type: "mcq
 export type PrepReveal = { id: string; answer: number; explanation: string; learnHref: string; visual?: unknown };
 export type PrepChecked = PrepReveal & { correct: boolean };
 
+/** src/app/(dashboard)/prep/actions.ts startMock: a fresh paper, no answers in it. `deadline` and `serverNow` are the server's clock. */
+export type MockPaper = { attemptId: string | null; specId: string; deadline: number; serverNow: number; sections: { title: string; wanted: number; questions: PrepQView[] }[] };
+/** src/lib/prep/scoring.ts Standing */
+export type MockStanding = { rank: number; of: number; percentile: number | null };
+type Tally = { score: number; max: number; right: number; wrong: number; blank: number };
+/** src/lib/prep/results.ts ReviewRow: every question after hand-in, with its answer and why. */
+export type MockReviewRow = { q: PrepQView; section: string; chosen: number | null; answer: number; correct: boolean; ms: number | null; explanation: string; learnHref: string; marked: boolean };
+/** src/lib/prep/results.ts MockResultView (submitMock answers it; GET /prep/mock/result/:id carries it). */
+export type MockResult = Tally & {
+  specId: string;
+  title: string;
+  marksPerRight: number;
+  marksPerWrong: number;
+  accuracy: number | null;
+  standing: MockStanding | null;
+  saved: boolean;
+  late: boolean;
+  totalMs: number;
+  sections: (Tally & { title: string })[];
+  subjects: (Tally & { subject: string; title: string; learnHref: string })[];
+  rows: MockReviewRow[];
+};
+/** One pattern on GET /prep/mock (the website's spec without its sources). */
+export type MockSpec = { id: string; title: string; short?: string; minutes: number; questions: number; marksPerRight: number; marksPerWrong: number; exam: string | null; sections: { title: string; count: number }[] };
+/** src/lib/prep/server.ts MockMeta */
+export type MockMeta = { id: string; specId: string; startedAt: string; submittedAt: string | null; score: number | null; max: number | null };
+
 /* ---------------------------------------------------------- case progress */
 /** src/lib/cases/progress.ts */
 export type ProgressTool = "ward" | "escape" | "osce" | "formulation" | "detective" | "wwyd" | "two-minute" | "landmark" | "mse-small";

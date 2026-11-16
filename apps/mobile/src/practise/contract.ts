@@ -299,6 +299,9 @@ export type PrepSet = {
 /** GET /prep/mock : timed papers. Start with POST /play/prep/mockStart, hand in with POST /play/prep/mockSubmit. */
 export type PrepMocks = { v: 1; specs: { id: string; title: string; minutes: number; questions: number; [k: string]: unknown }[]; history: Record<string, unknown>[] };
 
+/** GET /prep/mock/result/:id : one of the student's own saved mocks. `result` is the website's MockResultView (score, sections, subjects, every question with its answer and why), null when it was never handed in. */
+export type PrepMockResult = { v: 1; id: string; specId: string; title: string; result: Record<string, unknown> | null };
+
 /** GET /prep/long, /prep/long/:subject, /prep/long/:subject/:topic, /prep/long/:subject/:topic/:id : long answers (written answers, read and compared). */
 export type PrepLong = { v: 1; level: "home" | "subject" | "topic" | "question"; data: Record<string, unknown> };
 

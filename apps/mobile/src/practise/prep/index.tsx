@@ -51,7 +51,7 @@ export function PrepHome() {
               {d.more
                 .filter((r) => r.id !== "long")
                 .map((r) => (
-                  <Row key={r.id} testID={`prep-more-${r.id}`} title={r.title} meta={r.meta ?? undefined} onPress={() => openRow(r)} />
+                  <Row key={r.id} testID={`prep-more-${r.id}`} title={r.title} meta={r.meta ?? undefined} onPress={() => (r.id === "mock" ? router.push("/prep/mock") : openRow(r))} />
                 ))}
             </RowList>
           </Section>

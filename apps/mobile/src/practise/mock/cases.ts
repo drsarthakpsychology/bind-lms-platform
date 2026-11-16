@@ -179,18 +179,85 @@ const prep = {
   save(): { ok: true } {
     return { ok: true };
   },
+  /** The website's startMock: a fresh paper from the bank, no answers, the server's clock. */
+  mockStart(specId: unknown): P.MockPaper | { error: string } {
+    const spec = MOCK_SPECS.find((x) => x.id === specId);
+    if (!spec) return { error: "That mock doesn't exist." };
+    const now = Date.now();
+    const id = `mock-${++mockN}`;
+    const take = (from: number, n: number) => PREP.slice(from, from + n).map(({ answer: _a, explanation: _e, difficulty: _d, ...q }) => q);
+    let at = 0;
+    const sections = spec.sections.map((s) => {
+      const questions = take(at, s.count);
+      at += s.count;
+      return { title: s.title, wanted: s.count, questions };
+    });
+    mocks.set(id, { specId: spec.id, ids: sections.flatMap((s) => s.questions.map((q) => q.id)) });
+    return { attemptId: id, specId: spec.id, deadline: now + spec.minutes * 60_000, serverNow: now, sections };
+  },
+  /** The website's submitMock: scored here against the stored paper; the phone's score is never read. */
+  mockSubmit(input: { specId?: string; attemptId?: string; answers?: Record<string, number | null>; marked?: string[]; times?: Record<string, number> }): P.MockResult | { error: string } {
+    const spec = MOCK_SPECS.find((x) => x.id === input?.specId);
+    const paper = input?.attemptId ? mocks.get(input.attemptId) : undefined;
+    if (!spec || !paper) return { error: "That mock doesn't exist." };
+    const r = scoreMock(spec, paper.ids, input.answers ?? {}, input.marked ?? [], input.times ?? {});
+    mockHistory.unshift({ id: input.attemptId!, specId: spec.id, startedAt: new Date().toISOString(), submittedAt: new Date().toISOString(), score: r.score, max: r.max, result: r });
+    return r;
+  },
 };
+
+export const MOCK_SPECS = [
+  { id: "practice-full", title: "Full psychology mock", short: "Full psychology mock", minutes: 30, questions: 8, marksPerRight: 2, marksPerWrong: -0.5, exam: null, sections: [{ title: "Part A", count: 4 }, { title: "Part B", count: 4 }] },
+  { id: "practice-clinical", title: "Clinical and abnormal", short: "Clinical and abnormal", minutes: 10, questions: 4, marksPerRight: 2, marksPerWrong: -0.5, exam: null, sections: [{ title: "Clinical", count: 4 }] },
+];
+const mocks = new Map<string, { specId: string; ids: string[] }>();
+let mockN = 0;
+export const mockHistory: (P.MockMeta & { result: P.MockResult })[] = [];
+function scoreMock(spec: (typeof MOCK_SPECS)[number], ids: string[], answers: Record<string, number | null>, marked: string[], times: Record<string, number>): P.MockResult {
+  const rows = ids.map((id, i) => {
+    const q = PREP.find((x) => x.id === id)!;
+    const chosen = answers[id] ?? null;
+    let k = i;
+    const section = spec.sections.find((s) => (k -= s.count) < 0)?.title ?? "";
+    const { answer, explanation, difficulty: _d, ...view } = q;
+    return { q: view, section, chosen, answer, correct: chosen === answer, ms: times[id] ?? null, explanation, learnHref: "/study", marked: marked.includes(id) };
+  });
+  const tally = (rs: typeof rows) => {
+    const right = rs.filter((r) => r.correct).length;
+    const blank = rs.filter((r) => r.chosen === null).length;
+    const wrong = rs.length - right - blank;
+    return { right, wrong, blank, score: right * spec.marksPerRight + wrong * spec.marksPerWrong, max: rs.length * spec.marksPerRight };
+  };
+  const all = tally(rows);
+  return {
+    ...all,
+    specId: spec.id,
+    title: spec.title,
+    marksPerRight: spec.marksPerRight,
+    marksPerWrong: spec.marksPerWrong,
+    accuracy: all.right + all.wrong ? all.right / (all.right + all.wrong) : null,
+    standing: { rank: 3, of: 12, percentile: 78 },
+    saved: true,
+    late: false,
+    totalMs: Object.values(times).reduce((a, b) => a + b, 0),
+    sections: spec.sections.map((s) => ({ title: s.title, ...tally(rows.filter((r) => r.section === s.title)) })),
+    subjects: [...new Set(rows.map((r) => r.q.subject))].map((sub) => ({ subject: sub, title: SUBJECTS.find((x) => x.id === sub)?.title ?? sub, learnHref: "/study", ...tally(rows.filter((r) => r.q.subject === sub)) })),
+    rows,
+  };
+}
 
 export const CASES: Record<string, Record<string, (...args: never[]) => unknown>> = {
   daily: { move: daily.move, rest: daily.rest, next: daily.next },
   detective: { deal: detective.deal, clue: detective.clue, clues: detective.clues, guess: detective.guess },
   cases: { progress: cases.progress, mark: cases.mark },
-  prep: { check: prep.check, reveal: prep.reveal, save: prep.save },
+  prep: { check: prep.check, reveal: prep.reveal, save: prep.save, mockStart: prep.mockStart, mockSubmit: prep.mockSubmit },
 };
 export function resetCases() {
   dailyRows.clear();
   started.clear();
   answered.clear();
+  mocks.clear();
+  mockHistory.length = 0;
   doneItems.clear();
   doneItems.add("wwyd:sc-mania-1");
   doneItems.add("ethics:mha-advance-directive");

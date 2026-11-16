@@ -211,6 +211,9 @@ function Shell() {
             <Stack.Screen name="prep/[subject]" options={{ title: "" }} />
             <Stack.Screen name="prep/set" options={{ headerShown: false, gestureEnabled: false }} />
             <Stack.Screen name="prep/long" options={{ title: "" }} />
+            <Stack.Screen name="prep/mock/index" options={{ title: "" }} />
+            <Stack.Screen name="prep/mock/[spec]" options={{ headerShown: false, gestureEnabled: false }} />
+            <Stack.Screen name="prep/mock/result/[id]" options={{ title: "" }} />
             <Stack.Screen name="medicine/[id]" options={{ title: "" }} />
             <Stack.Screen name="medicine/compare" options={{ title: "Compare" }} />
             <Stack.Screen name="student/[id]" options={{ title: "" }} />

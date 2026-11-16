@@ -6,7 +6,7 @@
  */
 import type { AppTarget } from "@/api/contract";
 import type * as C from "../contract";
-import { caseState, prepData } from "./cases";
+import { caseState, mockHistory, MOCK_SPECS, prepData } from "./cases";
 import { escapeRooms, escapeSaved, wardCampaigns, wardSaved } from "./games";
 import { PlayError } from "./kit";
 import tools from "./tools.json";
@@ -129,8 +129,16 @@ export function prepHome(): C.PrepHome {
     saved: saved.size,
     wrong,
     canSave: true,
-    more: [],
+    more: [row("mock", "Mock tests", "Timed papers with marking", "prep", { screen: "practice", tool: "mock", web: "/prep/mock" })],
   };
+}
+export function prepMocks(): C.PrepMocks {
+  return { v: 1, specs: MOCK_SPECS as unknown as C.PrepMocks["specs"], history: mockHistory.map(({ result: _r, ...h }) => h) as unknown as C.PrepMocks["history"] };
+}
+export function prepMockResult(id: string): C.PrepMockResult {
+  const h = mockHistory.find((x) => x.id === id);
+  if (!h) throw new PlayError(404, "not_found", "That could not be found.");
+  return { v: 1, id, specId: h.specId, title: h.result.title, result: h.result as unknown as Record<string, unknown> };
 }
 export function prepSubject(id: string): C.PrepSubjectDetail {
   const s = prepData.SUBJECTS.find((x) => x.id === id);
