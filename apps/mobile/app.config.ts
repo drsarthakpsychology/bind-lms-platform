@@ -2,6 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 
 import type { ConfigContext, ExpoConfig } from "expo/config";
+import { AndroidConfig, withAndroidManifest, type ConfigPlugin } from "expo/config-plugins";
 
 /**
  * One place for the app's identity. Store name: "Vibha Psychology".
@@ -23,7 +24,24 @@ const BUILD_NUMBER = Math.max(1, Number.parseInt(process.env.APP_BUILD_NUMBER ??
 /** Google Play requires apps to target Android 16 (API 36) since 31 August 2026. Raise when Play raises it. */
 const TARGET_SDK = 36;
 
-export default ({ config }: ConfigContext): ExpoConfig => ({
+/**
+ * Android: turning the phone (and folding, resizing, a keyboard) must never
+ * restart the app's screen, or a lecture in full screen would close and start
+ * over. The app handles these changes itself; this makes sure the main screen
+ * says so, whatever the build template has.
+ */
+const HANDLED_CHANGES = ["keyboard", "keyboardHidden", "orientation", "screenSize", "screenLayout", "smallestScreenSize", "uiMode"];
+export const withHandledConfigChanges: ConfigPlugin = (cfg) =>
+  withAndroidManifest(cfg, (mod) => {
+    const main = AndroidConfig.Manifest.getMainActivityOrThrow(mod.modResults);
+    const have = (main.$["android:configChanges"] ?? "").split("|").filter(Boolean);
+    main.$["android:configChanges"] = [...new Set([...have, ...HANDLED_CHANGES])].join("|");
+    return mod;
+  });
+
+export default (ctx: ConfigContext): ExpoConfig => withHandledConfigChanges(base(ctx));
+
+const base = ({ config }: ConfigContext): ExpoConfig => ({
   ...config,
   name: APP_NAME,
   slug: "vibha-psychology",
