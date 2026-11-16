@@ -16,6 +16,7 @@ import { FileHandIn, RecordingHandIn } from "@/lecture/handin-ui";
 import { ProtectedPlayer, clock } from "@/lecture/player";
 import { config } from "@/lib/config";
 import { haptic } from "@/lib/haptics";
+import { Reveal, useLoadGate } from "@/motion";
 import { enablePush, pushStatus } from "@/push";
 import { layout, space, useTheme } from "@/theme";
 
@@ -217,6 +218,8 @@ export function LectureScreen() {
   };
 
   const l = q.data;
+  // The skeleton only after 120ms, then at least 380ms (no grey flash).
+  const gate = useLoadGate(!!l || q.isError);
   const watched = l ? l.progress.completed || done : false;
   const blockedByAssignment = !!l?.requiresAssignment && !l.assignment?.submission;
 
@@ -245,8 +248,8 @@ export function LectureScreen() {
         )}
       </View>
 
-      {l ? (
-        <>
+      {l && gate.phase === "content" ? (
+        <Reveal style={{ flex: 1 }}>
           <ScrollView contentContainerStyle={{ padding: layout.gutter, paddingBottom: space[6], gap: space[5], width: "100%", maxWidth: layout.readingWidth + layout.gutter * 2, alignSelf: "center" }}>
             <View style={{ gap: space[2] }}>
               <T v="h2">{l.title}</T>
@@ -284,14 +287,14 @@ export function LectureScreen() {
               setAsk(false);
             }}
           />
-        </>
+        </Reveal>
       ) : q.isError ? (
         <View style={{ padding: layout.gutter }}>
           <LoadError what="this lecture" error={q.error} onRetry={() => void q.refetch()} />
         </View>
-      ) : (
+      ) : gate.phase === "skeleton" ? (
         <LectureSkeleton />
-      )}
+      ) : null}
     </View>
   );
 }
