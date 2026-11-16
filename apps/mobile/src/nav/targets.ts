@@ -92,8 +92,13 @@ function learnPathFor(web: string | undefined): string | null {
 }
 
 /** Open whatever a row, a button or a notification points at. */
-export function openTarget(t: AppTarget): void {
-  const href = hrefFor(t);
+export function openTarget(t: AppTarget | null | undefined): void {
+  let href: string | null = null;
+  try {
+    href = t && typeof t === "object" ? hrefFor(t) : null;
+  } catch {
+    href = null;
+  }
   if (href) router.push(href);
   // Not in the app yet: open the same page on the website rather than a dead end.
   else if (t.web) openWebsite(t.web);

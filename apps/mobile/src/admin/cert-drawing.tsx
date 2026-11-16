@@ -3,6 +3,7 @@ import { View } from "react-native";
 import Svg, { Image as SvgImage, Line, Path, Rect } from "react-native-svg";
 
 import { Skeleton, T } from "@/ds";
+import { finite, safePath } from "@/lib/svg-safe";
 import { Reveal } from "@/motion";
 import { layout, space, useTheme } from "@/theme";
 import type { Drawing } from "./safe";
@@ -16,7 +17,7 @@ import type { Drawing } from "./safe";
 export function CertDrawing({ drawing, label }: { drawing: Drawing; label: string }) {
   const c = useTheme();
   return (
-    <View accessible accessibilityRole="image" accessibilityLabel={label} testID="cert-drawing" style={{ borderRadius: layout.radius, overflow: "hidden", borderWidth: 1, borderColor: c.hairline, backgroundColor: "#ffffff", aspectRatio: drawing.width / Math.max(1, drawing.height) }}>
+    <View accessible accessibilityRole="image" accessibilityLabel={label} testID="cert-drawing" style={{ borderRadius: layout.radius, overflow: "hidden", borderWidth: 1, borderColor: c.hairline, backgroundColor: "#ffffff", aspectRatio: finite(drawing.width, 842) / Math.max(1, finite(drawing.height, 595)) }}>
       <Svg width="100%" height="100%" viewBox={`0 0 ${drawing.width} ${drawing.height}`} preserveAspectRatio="xMidYMid meet">
         {drawing.ops.map((op, i) => {
           switch (op.k) {
@@ -25,9 +26,9 @@ export function CertDrawing({ drawing, label }: { drawing: Drawing; label: strin
             case "line":
               return <Line key={i} x1={op.x1} y1={op.y1} x2={op.x2} y2={op.y2} stroke={op.stroke} strokeWidth={op.sw} />;
             case "stroke":
-              return <Path key={i} d={op.d} fill="none" stroke={op.stroke} strokeWidth={op.sw} strokeLinecap="round" strokeLinejoin="round" />;
+              return <Path key={i} d={safePath(op.d)} fill="none" stroke={op.stroke} strokeWidth={finite(op.sw, 1)} strokeLinecap="round" strokeLinejoin="round" />;
             case "path":
-              return <Path key={i} d={op.d} fill={op.fill} />;
+              return <Path key={i} d={safePath(op.d)} fill={op.fill} />;
             case "image": {
               const src = drawing.images[op.key];
               return src ? <SvgImage key={i} href={{ uri: src }} x={op.x} y={op.y} width={op.w} height={op.h} preserveAspectRatio="xMinYMax meet" /> : null;
