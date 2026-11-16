@@ -9,7 +9,8 @@ import { useHome, type HomeData } from "@/api/queries";
 import type { QuestCard } from "@/api/contract";
 import { EmptyState, Hero, LoadError, Row, RowList, Screen, Section, Sheet, Skeleton, T } from "@/ds";
 import { haptic } from "@/lib/haptics";
-import { Burst, Enter, ProgressRing, RollingNumber, SkeletonIn, Stamp } from "@/motion";
+import { PixelPop } from "@/moments/parts";
+import { Enter, ProgressRing, RollingNumber, SkeletonIn, Stamp } from "@/motion";
 import { openTarget } from "@/nav/targets";
 import { TabTop } from "@/nav/top";
 import { layout, space, useTheme } from "@/theme";
@@ -43,7 +44,7 @@ function Today({ goal, quests }: { goal: NonNullable<HomeData["goal"]>; quests: 
   const questLine = quests ? (quests.done ? " · quests done" : ` · ${doneCount} of ${quests.quests.length} quests`) : "";
   const title = hit ? "Today's goal met" : `${Math.min(goal.points, goal.goal)} of ${goal.goal} points today`;
   const streak = `${goal.streak} day${goal.streak === 1 ? "" : "s"} in a row`;
-  // A win: once the ring has filled, sparks fly from it with a success haptic.
+  // A win (storyboard 4, goal met): once the ring has filled, a pixel burst pops from it with a success haptic and the title stamps.
   const [fire, setFire] = React.useState(0);
   React.useEffect(() => {
     const day = new Date().toDateString();
@@ -59,7 +60,7 @@ function Today({ goal, quests }: { goal: NonNullable<HomeData["goal"]>; quests: 
     <>
       <View>
         <GoalRing pct={pct} />
-        <Burst fire={fire} reach={30} />
+        <PixelPop fire={fire} reach={30} />
       </View>
       <View style={{ flex: 1, minWidth: 0 }}>
         {reduce ? (

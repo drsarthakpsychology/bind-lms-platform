@@ -6,13 +6,15 @@ import { View } from "react-native";
 import type { Journey, JourneyStat } from "@/api/contract";
 import { useJourney } from "@/api/learn";
 import { Loaded, RowsSkeleton, Screen, T } from "@/ds";
-import { Burst, Enter, ProgressRing, RollingNumber, useNewWins } from "@/motion";
+import { PixelPop, PixelStar } from "@/moments/parts";
+import { Enter, ProgressRing, RollingNumber, useNewWins } from "@/motion";
 import { layout, space, useTheme } from "@/theme";
 
 /**
  * My journey (the website's /journey): your level on a ring that fills, the
  * level title, points and rank, then six numbers that roll into place. A
- * new level gets a burst, once.
+ * new level, once (under 1.2s): the level number rolls up from the old one,
+ * a pixel star grows behind the ring and a pixel burst pops from it.
  */
 
 const ICON: Record<JourneyStat["key"], typeof Clock> = { online: Clock, lectures: CirclePlay, finished: GraduationCap, streak: Flame, points: BookOpen, practice: Target };
@@ -59,10 +61,11 @@ export function JourneyBody({ j }: { j: Journey }) {
                 <T v="caption" tone="onBrand">
                   LEVEL
                 </T>
-                <RollingNumber value={j.level} v="h1" tone="onBrand" />
+                <RollingNumber key={levelUp} value={j.level} from={levelUp ? j.level - 1 : undefined} v="h1" tone="onBrand" />
               </View>
             </ProgressRing>
-            <Burst fire={levelUp} reach={52} />
+            <PixelStar fire={levelUp} size={104} />
+            <PixelPop fire={levelUp} reach={58} />
           </View>
           <View style={{ flex: 1, gap: space[1] }}>
             <T v="h3" tone="onBrand">
