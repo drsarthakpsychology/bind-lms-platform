@@ -24,15 +24,29 @@ import { layout, space, useTheme } from "@/theme";
 
 const UP_ICON = { lecture: Play, study: BookOpen, weak: Dumbbell, daily: Stethoscope } as const;
 
-/** A 28px ring: today's points against the goal. Fills from empty on arrival. */
+/**
+ * A 28px ring: today's points against the goal. Fills from empty on arrival.
+ * Once the goal is met the ring also carries a tick, so it reads as done even
+ * before (or without) the fill animation.
+ */
 export function GoalRing({ pct, size = 28 }: { pct: number; size?: number }) {
-  return <ProgressRing pct={pct} size={size} stroke={4} delay={200} />;
+  const c = useTheme();
+  const done = pct >= 100;
+  return (
+    <ProgressRing pct={pct} size={size} stroke={4} delay={200}>
+      {done ? (
+        <View testID="goal-ring-done">
+          <Check size={Math.round(size * 0.55)} color={c.ink} strokeWidth={3} />
+        </View>
+      ) : null}
+    </ProgressRing>
+  );
 }
 
 /** The goal-met burst plays once per day per app session, not on every visit to Home. */
 const celebrated = new Set<string>();
 
-function Today({ goal, quests }: { goal: NonNullable<HomeData["goal"]>; quests: QuestCard | null | undefined }) {
+function Today({ goal, quests, fresh }: { goal: NonNullable<HomeData["goal"]>; quests: QuestCard | null | undefined; /** A new student with no points yet. */ fresh: boolean }) {
   const c = useTheme();
   const reduce = useReducedMotion();
   const [open, setOpen] = React.useState(false);
@@ -41,7 +55,7 @@ function Today({ goal, quests }: { goal: NonNullable<HomeData["goal"]>; quests: 
   const doneCount = quests?.quests.filter((q) => q.done).length ?? 0;
   const questLine = quests ? (quests.done ? " · quests done" : ` · ${doneCount} of ${quests.quests.length} quests`) : "";
   const title = hit ? "Today's goal met" : `${Math.min(goal.points, goal.goal)} of ${goal.goal} points today`;
-  const streak = `${goal.streak} day${goal.streak === 1 ? "" : "s"} in a row`;
+  const streak = streakLine(goal.streak, fresh);
   // A win: once the ring has filled, sparks fly from it with a success haptic.
   const [fire, setFire] = React.useState(0);
   React.useEffect(() => {
@@ -77,13 +91,15 @@ function Today({ goal, quests }: { goal: NonNullable<HomeData["goal"]>; quests: 
             </T>
           </View>
         )}
-        <View style={{ flexDirection: "row", alignItems: "center", gap: space[1], flexWrap: "wrap" }}>
-          <Flame size={16} color={c.muted} />
-          <T v="small" tone="muted" num style={{ flexShrink: 1 }}>
-            {streak}
-            {questLine}
-          </T>
-        </View>
+        {streak || questLine ? (
+          <View style={{ flexDirection: "row", alignItems: "center", gap: space[1], flexWrap: "wrap" }}>
+            {goal.streak > 0 ? <Flame size={16} color={c.muted} /> : null}
+            <T v="small" tone="muted" num style={{ flexShrink: 1 }} testID="home-streak">
+              {streak}
+              {streak ? questLine : questLine.replace(/^ · /, "")}
+            </T>
+          </View>
+        ) : null}
       </View>
     </>
   );
@@ -94,7 +110,7 @@ function Today({ goal, quests }: { goal: NonNullable<HomeData["goal"]>; quests: 
         <Pressable
           testID="home-today"
           accessibilityRole="button"
-          accessibilityLabel={`Today: ${title}, ${streak}. Open today's quests`}
+          accessibilityLabel={`Today: ${title}${streak ? `, ${streak}` : ""}. Open today's quests`}
           onPress={() => {
             haptic.select();
             setOpen(true);
@@ -193,10 +209,22 @@ export function HomeSkeleton() {
   );
 }
 
+/**
+ * "6 days in a row". No "0 days in a row": a new student is told where points
+ * come from, anyone else with no streak sees nothing.
+ */
+export function streakLine(days: number, fresh = false): string {
+  if (days > 0) return `${days} day${days === 1 ? "" : "s"} in a row`;
+  return fresh ? "Your first points come from the first lecture" : "";
+}
+
 export function HomeView({ data }: { data: HomeData }) {
   const c = useTheme();
-  const { step, allDone, progress, goal, upNext, welcomeBack } = data;
-  const hero = allDone
+  const { allDone, progress, goal, upNext, welcomeBack } = data;
+  // The server should always send a step, but an older or broken reply must not crash Home.
+  const step = (data.step as HomeData["step"] | null | undefined) ?? null;
+  if (!step && !allDone) return null;
+  const hero = allDone || !step
     ? {
         context: "All caught up",
         title: "Nothing left to do today.",
@@ -228,7 +256,7 @@ export function HomeView({ data }: { data: HomeData }) {
           progressLabel={progress?.label}
           action={{
             label: hero.cta,
-            onPress: () => openTarget(step.target),
+            onPress: () => (step ? openTarget(step.target) : openTarget({ screen: "practice", tool: null, web: "/practice" })),
             icon: <ArrowRight size={20} color={c.onPrimary} />,
             testID: "home-continue",
           }}
@@ -238,7 +266,7 @@ export function HomeView({ data }: { data: HomeData }) {
       {goal ? (
         <Enter i={3}>
           <Section title="Today">
-            <Today goal={goal} quests={data.quests} />
+            <Today goal={goal} quests={data.quests} fresh={!welcomeBack && goal.points <= 0} />
           </Section>
         </Enter>
       ) : null}
