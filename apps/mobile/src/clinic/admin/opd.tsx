@@ -1,8 +1,8 @@
-import { router } from "expo-router";
 import { Sparkles } from "lucide-react-native";
 import * as React from "react";
 import { Pressable, View } from "react-native";
 
+import { go } from "@/api/prefetch";
 import { useAdminAction, useRefreshAdmin } from "@/admin/api";
 import { DateField } from "@/admin/date-field";
 import { ConfirmSheet, Notice, SmallButton } from "@/admin/kit";
@@ -212,7 +212,7 @@ function Body({ d }: { d: OpdAdmin }) {
             {p.status === "draft" ? <Button kind="text" label="Throw away the draft" busy={busy === "discard"} onPress={() => void run("clinic", () => adminClinicCalls.discard(cohortId), { done: "Draft thrown away", tag: "discard" })} testID="opd-discard" /> : null}
           </View>
         ) : null}
-        <Pressable accessibilityRole="link" onPress={() => router.push("/admin/clinic/allowances")} style={{ minHeight: 44, justifyContent: "center" }} testID="opd-quotas">
+        <Pressable accessibilityRole="link" onPress={() => go("/admin/clinic/allowances")} style={{ minHeight: 44, justifyContent: "center" }} testID="opd-quotas">
           <T v="small" tone="link">
             Cases for each student and paid extras
           </T>

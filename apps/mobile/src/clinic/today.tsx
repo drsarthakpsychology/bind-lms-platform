@@ -1,8 +1,8 @@
-import { router } from "expo-router";
 import { ClipboardPen, Hospital, Megaphone, QrCode } from "lucide-react-native";
 import * as React from "react";
 import { Pressable, View } from "react-native";
 
+import { go } from "@/api/prefetch";
 import { Button, Section, T } from "@/ds";
 import { haptic } from "@/lib/haptics";
 import { Enter } from "@/motion";
@@ -39,7 +39,7 @@ export function TodayBlockView({ d }: { d: ClinicToday }) {
   const scannable = d.sessions.some((s) => s.mine && (s.mine.state === "open" || s.mine.state === "in"));
   const empty = !d.sessions.length && !d.opd;
   return (
-    <Section title="Your day" action={<HeadLink label="Week" onPress={() => router.push("/clinic/schedule")} testID="today-week" />}>
+    <Section title="Your day" action={<HeadLink label="Week" onPress={() => go("/clinic/schedule")} testID="today-week" />}>
       <View testID="clinic-today" style={{ gap: space[3] }}>
         {d.opd ? (
           <Band testID="today-opd">
@@ -72,7 +72,7 @@ export function TodayBlockView({ d }: { d: ClinicToday }) {
         {d.sessions.length ? (
           <SessionList>
             {d.sessions.map((s) => (
-              <SessionLine key={s.id} s={s} testID={`today-s-${s.id}`} onPress={s.link && s.status !== "cancelled" ? () => openLink(s.link!) : () => router.push("/clinic/schedule")} />
+              <SessionLine key={s.id} s={s} testID={`today-s-${s.id}`} onPress={s.link && s.status !== "cancelled" ? () => openLink(s.link!) : () => go("/clinic/schedule")} />
             ))}
           </SessionList>
         ) : empty ? (
@@ -86,7 +86,7 @@ export function TodayBlockView({ d }: { d: ClinicToday }) {
             accessibilityRole="button"
             onPress={() => {
               haptic.select();
-              router.push("/clinic/opd");
+              go("/clinic/opd");
             }}
           >
             {({ pressed }) => (
@@ -103,7 +103,7 @@ export function TodayBlockView({ d }: { d: ClinicToday }) {
             )}
           </Pressable>
         ) : null}
-        {scannable || d.opd ? <Button kind="quiet" label="Scan attendance" icon={<QrCode size={20} color={c.ink} />} onPress={() => router.push("/clinic/scan")} testID="today-scan" /> : null}
+        {scannable || d.opd ? <Button kind="quiet" label="Scan attendance" icon={<QrCode size={20} color={c.ink} />} onPress={() => go("/clinic/scan")} testID="today-scan" /> : null}
       </View>
     </Section>
   );

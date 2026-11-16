@@ -1,4 +1,5 @@
 import { useQueryClient } from "@tanstack/react-query";
+import { go } from "@/api/prefetch";
 import { openLink } from "@/lib/open";
 import { router } from "expo-router";
 import { Award, Bell, BellRing, CalendarClock, BookOpen, CircleHelp, ClipboardList, FileCheck, Gauge, GraduationCap, LogOut, MessageCircleQuestion, Radar, Settings, Users } from "lucide-react-native";
@@ -57,7 +58,7 @@ export function AdminMoreScreen() {
       </Section>
       <Section title="Clinic">
         <RowList>
-          <Row title="Sessions and attendance" meta="Today, Show code, leave, timetable, OPD" icon={<CalendarClock {...icon} />} onPress={() => router.push("/admin/clinic")} testID="more-clinic" />
+          <Row title="Sessions and attendance" meta="Today, Show code, leave, timetable, OPD" icon={<CalendarClock {...icon} />} onPress={() => go("/admin/clinic")} testID="more-clinic" />
         </RowList>
       </Section>
       <Section title="Teach">

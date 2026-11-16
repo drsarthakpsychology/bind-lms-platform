@@ -1,8 +1,8 @@
-import { router } from "expo-router";
 import { CalendarCheck, CalendarOff, ChevronLeft, ChevronRight, ClipboardList, Hospital } from "lucide-react-native";
 import * as React from "react";
 import { Pressable, View } from "react-native";
 
+import { go } from "@/api/prefetch";
 import { IconButton, IconDot, Row, RowList, RowsSkeleton, Screen, Section, Skeleton, T } from "@/ds";
 import { haptic } from "@/lib/haptics";
 import { Swap } from "@/motion";
@@ -183,9 +183,9 @@ export function ScheduleScreen() {
           )}
         </ClinicLoaded>
         <RowList>
-          <Row title="Leave" meta="Ask for a day off or to leave early" icon={<IconDot icon={CalendarOff} />} onPress={() => router.push("/clinic/leave")} testID="go-leave" />
-          <Row title="OPD cases" meta="Your batch, visits and case logs" icon={<IconDot icon={ClipboardList} />} onPress={() => router.push("/clinic/opd")} testID="go-opd" />
-          <Row title="My attendance" icon={<IconDot icon={CalendarCheck} />} onPress={() => router.push("/clinic/attendance")} testID="go-attendance" />
+          <Row title="Leave" meta="Ask for a day off or to leave early" icon={<IconDot icon={CalendarOff} />} onPress={() => go("/clinic/leave")} testID="go-leave" />
+          <Row title="OPD cases" meta="Your batch, visits and case logs" icon={<IconDot icon={ClipboardList} />} onPress={() => go("/clinic/opd")} testID="go-opd" />
+          <Row title="My attendance" icon={<IconDot icon={CalendarCheck} />} onPress={() => go("/clinic/attendance")} testID="go-attendance" />
         </RowList>
       </Screen>
     </AreaProvider>

@@ -27,6 +27,7 @@ import { ScheduleScreen, weekLabel } from "@/clinic/screens/schedule";
 import { TodayBlock, TodayBlockView } from "@/clinic/today";
 import { haptic } from "@/lib/haptics";
 import { pathFromLink } from "@/nav/targets";
+import { routeReads } from "@/api/prefetch";
 import { render } from "./utils";
 
 const params = useLocalSearchParams as jest.Mock;
@@ -113,6 +114,15 @@ describe("clinic words and numbers", () => {
     expect(pathFromLink("/clinic")).toBe("/clinic/schedule");
     expect(pathFromLink("https://vibhapsychology.com/clinic")).toBe("/clinic/schedule");
     expect(pathFromLink("/clinic/leave")).toBe("/clinic/leave");
+  });
+
+  it("a tap on a clinic screen starts its read (the prefetcher knows every clinic address)", () => {
+    expect(routeReads("/clinic/leave")[0]?.queryKey).toEqual(["clinic", "leave"]);
+    expect(routeReads("/clinic/opd")[0]?.queryKey).toEqual(["clinic", "opd"]);
+    expect(routeReads("/clinic/schedule")[0]?.queryKey[1]).toBe("week");
+    expect(routeReads("/admin/clinic")[0]?.queryKey.slice(0, 3)).toEqual(["admin", "clinic", "overview"]);
+    expect(routeReads("/admin/clinic/session/s1")[0]?.queryKey).toContain("s1");
+    expect(routeReads("/clinic/scan")).toEqual([]);
   });
 
   it("cleans the code and decides what to send", () => {

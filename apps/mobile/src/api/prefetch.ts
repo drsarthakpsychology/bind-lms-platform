@@ -2,6 +2,7 @@ import type { FetchQueryOptions, QueryKey } from "@tanstack/react-query";
 import { router } from "expo-router";
 
 import { adminQo } from "@/admin/api";
+import { clinicAdminQo, clinicQo, clinicRouteReads } from "@/clinic/api";
 import { session } from "@/auth";
 import { readQuery } from "@/practise/api";
 import type * as C from "./contract";
@@ -33,11 +34,13 @@ function load(reads: (Read | null | undefined | false)[]): void {
 /** The first reads of the account's tabs (what each tab screen asks for when it opens). */
 export function tabReads(me: C.Me | null): Read[] {
   if (!me) return [];
-  if (me.role === "admin" || me.role === "view_admin") return [adminQo.home(), adminQo.students(), adminQo.activity(), adminQo.inbox()];
+  if (me.role === "admin" || me.role === "view_admin") return [adminQo.home(), adminQo.students(), adminQo.activity(), adminQo.inbox(), clinicAdminQo.today()];
   const can = me.access.can;
   if (me.access.lecturesOnly) return [qo.home(), qo.courses(), qo.doubts(false)];
   const reads: (Read | false)[] = [
     qo.home(),
+    // Home's "Your day" block (schedule, OPD day, scan).
+    clinicQo.today(),
     qo.achievements(),
     qo.progress(),
     can.lectures !== false && qo.courses(),
@@ -64,6 +67,7 @@ export function routeReads(href: string): Read[] {
   const path = href.split(/[?#]/)[0] ?? "";
   const p = path.split("/").filter(Boolean).map(seg);
   const [a, b, c] = p;
+  if (a === "clinic" || (a === "admin" && b === "clinic")) return clinicRouteReads(p);
   switch (a) {
     case "lectures":
       return [qo.courses()];

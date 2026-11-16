@@ -1,8 +1,8 @@
-import { router } from "expo-router";
 import { CalendarClock, CalendarOff, ChartColumn, Hospital, QrCode, SlidersHorizontal } from "lucide-react-native";
 import * as React from "react";
 import { View } from "react-native";
 
+import { go } from "@/api/prefetch";
 import { useAdminAction, useRefreshAdmin } from "@/admin/api";
 import { Quiet, SmallButton } from "@/admin/kit";
 import { useAdminRole } from "@/admin/role";
@@ -25,8 +25,8 @@ export function countsLine(s: AdminSession): string {
   return parts.join(" · ");
 }
 
-export const openSession = (id: string) => router.push(`/admin/clinic/session/${encodeURIComponent(id)}`);
-export const openCode = (id: string) => router.push(`/admin/clinic/code/${encodeURIComponent(id)}`);
+export const openSession = (id: string) => go(`/admin/clinic/session/${encodeURIComponent(id)}`);
+export const openCode = (id: string) => go(`/admin/clinic/code/${encodeURIComponent(id)}`);
 
 /** The note students see on today's schedule. */
 function NoteSheet({ open, onClose, date, note, cohortId }: { open: boolean; onClose: () => void; date: string; note: string | null; cohortId: string }) {
@@ -103,11 +103,11 @@ export function AdminClinicScreen() {
             </Section>
             <Section title="Clinic">
               <RowList>
-                <Row title="Leave requests" icon={<IconDot icon={CalendarOff} />} trailing={d.pendingLeaves ? `${d.pendingLeaves} waiting` : undefined} onPress={() => router.push("/admin/clinic/leaves")} testID="clinic-leaves" />
-                <Row title="Allowances" meta="Leaves and OPD cases for each student" icon={<IconDot icon={SlidersHorizontal} />} onPress={() => router.push("/admin/clinic/allowances")} testID="clinic-allowances" />
-                <Row title="Timetable" meta="Weekly slots and one-off sessions" icon={<IconDot icon={CalendarClock} />} onPress={() => router.push("/admin/clinic/timetable")} testID="clinic-timetable" />
-                <Row title="OPD timetable" meta="Seats, generate, move, publish" icon={<IconDot icon={Hospital} />} onPress={() => router.push("/admin/clinic/opd")} testID="clinic-opd" />
-                <Row title="Trackers" meta="Attendance and cases for everyone" icon={<IconDot icon={ChartColumn} />} trailing={d.logsDue ? `${d.logsDue} logs due` : undefined} onPress={() => router.push("/admin/clinic/trackers")} testID="clinic-trackers" />
+                <Row title="Leave requests" icon={<IconDot icon={CalendarOff} />} trailing={d.pendingLeaves ? `${d.pendingLeaves} waiting` : undefined} onPress={() => go("/admin/clinic/leaves")} testID="clinic-leaves" />
+                <Row title="Allowances" meta="Leaves and OPD cases for each student" icon={<IconDot icon={SlidersHorizontal} />} onPress={() => go("/admin/clinic/allowances")} testID="clinic-allowances" />
+                <Row title="Timetable" meta="Weekly slots and one-off sessions" icon={<IconDot icon={CalendarClock} />} onPress={() => go("/admin/clinic/timetable")} testID="clinic-timetable" />
+                <Row title="OPD timetable" meta="Seats, generate, move, publish" icon={<IconDot icon={Hospital} />} onPress={() => go("/admin/clinic/opd")} testID="clinic-opd" />
+                <Row title="Trackers" meta="Attendance and cases for everyone" icon={<IconDot icon={ChartColumn} />} trailing={d.logsDue ? `${d.logsDue} logs due` : undefined} onPress={() => go("/admin/clinic/trackers")} testID="clinic-trackers" />
               </RowList>
             </Section>
             {note && d.cohortId ? <NoteSheet open={note} onClose={() => setNote(false)} date={d.date} note={d.note} cohortId={d.cohortId} /> : null}
@@ -127,7 +127,7 @@ export function AdminTodayBlock() {
   if (!d) return null;
   const live = d.sessions.filter((s) => s.status !== "cancelled");
   return (
-    <Section title="Sessions today" action={<HeadLink label="Clinic" onPress={() => router.push("/admin/clinic")} testID="home-clinic" />}>
+    <Section title="Sessions today" action={<HeadLink label="Clinic" onPress={() => go("/admin/clinic")} testID="home-clinic" />}>
       {live.length ? (
         <SessionList>
           {live.map((s) => (
@@ -143,7 +143,7 @@ export function AdminTodayBlock() {
         <Quiet>No sessions today.</Quiet>
       )}
       {d.pendingLeaves ? (
-        <HeadLink label={`${d.pendingLeaves} leave ${d.pendingLeaves === 1 ? "request" : "requests"} waiting`} onPress={() => router.push("/admin/clinic/leaves")} testID="home-leaves" />
+        <HeadLink label={`${d.pendingLeaves} leave ${d.pendingLeaves === 1 ? "request" : "requests"} waiting`} onPress={() => go("/admin/clinic/leaves")} testID="home-leaves" />
       ) : null}
     </Section>
   );

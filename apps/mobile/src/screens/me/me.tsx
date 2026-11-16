@@ -3,6 +3,7 @@ import { Award, Bell, CalendarCheck, CalendarDays, CalendarOff, ChartLine, Clipb
 import * as React from "react";
 import { View } from "react-native";
 
+import { go } from "@/api/prefetch";
 import { useAchievements, useMe, useProgress } from "@/api/queries";
 import { IconDot, ProgressLine, Row, RowList, Screen, Section, Skeleton, Stat, T } from "@/ds";
 import { Enter } from "@/motion";
@@ -66,10 +67,10 @@ export function MeScreen() {
       {!lecturesOnly ? (
         <Section title="Clinic">
           <RowList>
-            <Row testID="me-schedule" title="Schedule" meta="Sessions and your OPD days" icon={<IconDot icon={CalendarDays} />} onPress={() => router.push("/clinic/schedule")} />
-            <Row testID="me-leave" title="Leave" icon={<IconDot icon={CalendarOff} />} onPress={() => router.push("/clinic/leave")} />
-            <Row testID="me-opd" title="OPD cases" icon={<IconDot icon={ClipboardList} />} onPress={() => router.push("/clinic/opd")} />
-            <Row testID="me-attendance" title="My attendance" icon={<IconDot icon={CalendarCheck} />} onPress={() => router.push("/clinic/attendance")} />
+            <Row testID="me-schedule" title="Schedule" meta="Sessions and your OPD days" icon={<IconDot icon={CalendarDays} />} onPress={() => go("/clinic/schedule")} />
+            <Row testID="me-leave" title="Leave" icon={<IconDot icon={CalendarOff} />} onPress={() => go("/clinic/leave")} />
+            <Row testID="me-opd" title="OPD cases" icon={<IconDot icon={ClipboardList} />} onPress={() => go("/clinic/opd")} />
+            <Row testID="me-attendance" title="My attendance" icon={<IconDot icon={CalendarCheck} />} onPress={() => go("/clinic/attendance")} />
           </RowList>
         </Section>
       ) : null}
