@@ -133,8 +133,11 @@ export function ReactionLayer({ above }: { above?: number }) {
   // Leaving the screen closes the sticker (after this unmount, never during it).
   React.useEffect(
     () => () => {
+      // Cancel one still waiting now; remove the one on screen just after. Only that one:
+      // a full dismiss later would also cancel the sticker the next screen just asked for.
       gen++;
-      setTimeout(() => reactions.dismiss(), 0);
+      const cur = store.get().shown;
+      if (cur) setTimeout(() => reactions.dismiss(cur.key), 0);
     },
     [],
   );

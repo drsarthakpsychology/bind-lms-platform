@@ -17,7 +17,7 @@ import { createOutbox } from "@/lib/outbox";
 import { usePushRouting } from "@/push";
 import { memoryStore } from "@/lib/storage";
 import { issued } from "@/screens/me/certificates";
-import { fireEvent, screen } from "@testing-library/react-native";
+import { act, fireEvent, screen } from "@testing-library/react-native";
 import { Button } from "@/ds";
 import { render } from "./utils";
 
@@ -239,5 +239,28 @@ describe("small numbers", () => {
     expect(streakLine(0, true)).toBe("Your first points come from the first lecture");
     expect(streakLine(1)).toBe("1 day in a row");
     expect(streakLine(6)).toBe("6 days in a row");
+  });
+});
+
+describe("reaction stickers", () => {
+  afterEach(() => jest.useRealTimers());
+  it("leaving one game screen never cancels the next screen's end sticker", async () => {
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    const { ReactionLayer, reactions } = require("@/ds/reactions") as typeof import("@/ds/reactions");
+    jest.useFakeTimers();
+    const first = await render(<ReactionLayer />);
+    await act(async () => {
+      reactions.show("streak");
+      jest.advanceTimersByTime(400);
+    });
+    expect(screen.getByTestId("reaction")).toBeTruthy();
+    await first.unmount();
+    // The next round ends before the old screen's clean-up has run.
+    reactions.show("right");
+    await render(<ReactionLayer />);
+    await act(async () => {
+      jest.advanceTimersByTime(400);
+    });
+    expect(screen.getByTestId("reaction")).toBeTruthy();
   });
 });
