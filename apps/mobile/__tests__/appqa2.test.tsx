@@ -1,7 +1,7 @@
 /**
  * Bugs found in the second app check (with Practise), one test each.
  */
-import { useFocusEffect } from "expo-router";
+import { useFocusEffect, useLocalSearchParams } from "expo-router";
 import * as React from "react";
 import { BackHandler, Text } from "react-native";
 
@@ -16,6 +16,7 @@ import * as R from "@/practise/mock/routes";
 import { shopState } from "@/practise/mock/routes";
 import { MocksScreen } from "@/practise/prep/mock";
 import { ShopScreen } from "@/practise/shop";
+import { SearchScreen } from "@/screens/search/search";
 import { render } from "./utils";
 
 describe("Android back", () => {
@@ -105,6 +106,29 @@ describe("mock tests", () => {
     } finally {
       spy.mockRestore();
     }
+  });
+});
+
+describe("search", () => {
+  const params = useLocalSearchParams as jest.Mock;
+  afterEach(() => params.mockReturnValue({}));
+  it("starts with the words a link brought (?q= was ignored)", async () => {
+    await session.signIn("ananya@example.com", "pw");
+    await session.choosePin("2580");
+    params.mockReturnValue({ q: "psychosis" });
+    await render(<SearchScreen />);
+    expect(screen.getByTestId("search-input").props.value).toBe("psychosis");
+    await waitFor(() => expect(screen.getByText("Psychosis")).toBeTruthy());
+  });
+  it("does not offer Study modules to a lecture-only account (they opened a closed screen)", async () => {
+    await session.signIn("lectures@example.com", "pw");
+    await session.choosePin("2580");
+    mock.reset();
+    params.mockReturnValue({ q: "psychosis" });
+    await render(<SearchScreen />);
+    await waitFor(() => expect(screen.getByTestId("search-empty")).toBeTruthy());
+    expect(screen.queryByText("Psychosis")).toBeNull();
+    expect(mock.log().some((l) => l.path.startsWith("/study/modules"))).toBe(false);
   });
 });
 

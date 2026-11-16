@@ -92,14 +92,15 @@ export const useMe = () =>
 export const useConfig = () => useQuery({ queryKey: keys.config, queryFn: () => api.get<C.AppConfig>("/config", { auth: false }), staleTime: 10 * 60_000 });
 export const useHome = () => useQuery({ queryKey: keys.home, queryFn: async () => K.homeView(await api.get<unknown>("/home")) });
 export const useCourses = () => useQuery({ queryKey: keys.courses, queryFn: async () => L.courseListView(await api.get<unknown>("/courses")) });
-export const useCourse = (id: string) => useQuery({ queryKey: keys.course(id), queryFn: async () => L.courseDetailView(await api.get<unknown>(`/courses/${encodeURIComponent(id)}`)), enabled: id.length > 0 });
+export const courseQuery = (id: string) => ({ queryKey: keys.course(id), queryFn: async () => L.courseDetailView(await api.get<unknown>(`/courses/${encodeURIComponent(id)}`)), enabled: id.length > 0 });
+export const useCourse = (id: string) => useQuery(courseQuery(id));
 export const useLecture = (id: string) => useQuery({ queryKey: keys.lecture(id), queryFn: async () => K.lectureView(await api.get<unknown>(`/lectures/${encodeURIComponent(id)}`)) });
 export const useNotifications = () => useQuery({ queryKey: keys.notifications, queryFn: async () => L.notificationListView(await api.get<unknown>("/notifications", { query: { limit: 50 } })) });
 export const useNotification = (id: string) => useQuery({ queryKey: keys.notification(id), queryFn: async () => K.notificationDetailView(await api.get<unknown>(`/notifications/${encodeURIComponent(id)}`)) });
 export const useSettings = () => useQuery({ queryKey: keys.settings, queryFn: () => api.get<C.Settings>("/settings") });
 export const useDoubts = (mine: boolean) => useQuery({ queryKey: keys.doubts(mine), queryFn: async () => L.doubtListView(await api.get<unknown>("/doubts", { query: { mine: mine ? 1 : undefined, limit: 50 } })) });
 export const useDoubt = (id: string) => useQuery({ queryKey: keys.doubt(id), queryFn: async () => L.doubtThreadView(await api.get<unknown>(`/doubts/${encodeURIComponent(id)}`)) });
-export const useStudyHome = () => useQuery({ queryKey: keys.study, queryFn: async () => L.studyHomeView(await api.get<unknown>("/study/modules")) });
+export const useStudyHome = (enabled = true) => useQuery({ queryKey: keys.study, queryFn: async () => L.studyHomeView(await api.get<unknown>("/study/modules")), enabled });
 export const useModule = (id: string) => useQuery({ queryKey: keys.module(id), queryFn: async () => L.moduleDetailView(await api.get<unknown>(`/study/modules/${encodeURIComponent(id)}`)) });
 export const useSection = (m: string, s: string) => useQuery({ queryKey: keys.section(m, s), queryFn: async () => L.sectionContentView(await api.get<unknown>(`/study/modules/${encodeURIComponent(m)}/sections/${encodeURIComponent(s)}`)), staleTime: 10 * 60_000 });
 export const useLearnState = () => useQuery({ queryKey: keys.learn, queryFn: () => api.get<C.LearnStateResult>("/study/state") });
