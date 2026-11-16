@@ -1,12 +1,15 @@
 import * as React from "react";
 import { Text, type TextProps } from "react-native";
 
-import { type as scale, useTheme, type Palette, type TypeName } from "@/theme";
+import { type as scale, useAreaName, useTheme, type Palette, type TypeName } from "@/theme";
 
-type Tone = "ink" | "muted" | "link" | "danger" | "onPrimary" | "onBand" | "onBrand" | "alert";
+/** `accent`: the area's deep colour (a tab screen's one accent family); the link colour outside an area. */
+type Tone = "ink" | "muted" | "link" | "danger" | "onPrimary" | "onBand" | "onBrand" | "alert" | "accent";
 
-function toneColor(c: Palette, tone: Tone): string {
+function toneColor(c: Palette, tone: Tone, area: ReturnType<typeof useAreaName>): string {
   switch (tone) {
+    case "accent":
+      return area ? c.areas[area].deep : c.link;
     case "muted":
       return c.muted;
     case "link":
@@ -60,6 +63,7 @@ export type TProps = TextProps & {
  */
 export function T({ v = "body", tone = "ink", num, center, style, maxFontSizeMultiplier, children, ...rest }: TProps) {
   const c = useTheme();
+  const area = useAreaName();
   const big = v === "display" || v === "h1" || v === "h2";
   const reading = React.useContext(TextScale);
   const base = scale[v];
@@ -71,7 +75,7 @@ export function T({ v = "body", tone = "ink", num, center, style, maxFontSizeMul
       accessibilityRole={v === "display" || v === "h1" || v === "h2" || v === "h3" ? "header" : undefined}
       maxFontSizeMultiplier={maxFontSizeMultiplier ?? (big ? 1.3 : 1.6)}
       {...rest}
-      style={[base, sized, { color: toneColor(c, tone) }, num ? { fontVariant: ["tabular-nums"] } : null, center ? { textAlign: "center" } : null, style]}
+      style={[base, sized, { color: toneColor(c, tone, area) }, num ? { fontVariant: ["tabular-nums"] } : null, center ? { textAlign: "center" } : null, style]}
     >
       {glue(children)}
     </Text>

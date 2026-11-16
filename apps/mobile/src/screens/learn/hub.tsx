@@ -5,10 +5,10 @@ import { View } from "react-native";
 
 import { useAssignments, useNotes } from "@/api/learn";
 import { useCourses, useMe, useStudyHome } from "@/api/queries";
-import { ProgressLine, Row, RowList, Screen, Section } from "@/ds";
+import { IconDot, ProgressLine, Row, RowList, Screen, Section } from "@/ds";
 import { go } from "@/api/prefetch";
 import { TabTop } from "@/nav/top";
-import { space, useTheme } from "@/theme";
+import { space } from "@/theme";
 
 /**
  * Learn: the hub for Lectures and Study. A title, then one group of rows per
@@ -16,7 +16,6 @@ import { space, useTheme } from "@/theme";
  * Quick reference), plus Assignments, Your map and Saved. Each row says where you are.
  */
 export function LearnHub() {
-  const c = useTheme();
   const me = useMe();
   const can = me.data?.access.can;
   const courses = useCourses();
@@ -29,10 +28,9 @@ export function LearnHub() {
   const lecturePct = course && course.totalLessons ? Math.round((course.completedCount / course.totalLessons) * 100) : null;
   const modules = study.data?.modules ?? [];
   const modsDone = modules.filter((m) => m.status.complete).length;
-  const icon = { size: 20, color: c.muted };
 
   return (
-    <Screen tab top={<TabTop />} title="Learn" testID="learn" onRefresh={() => void Promise.all([courses.refetch(), study.refetch(), notes.refetch(), assignments.refetch()])} refreshing={courses.isRefetching || study.isRefetching}>
+    <Screen tab area="learn" top={<TabTop />} title="Learn" testID="learn" onRefresh={() => void Promise.all([courses.refetch(), study.refetch(), notes.refetch(), assignments.refetch()])} refreshing={courses.isRefetching || study.isRefetching}>
       {can?.lectures !== false ? (
         <Section title="Classes">
           <RowList>
@@ -40,7 +38,7 @@ export function LearnHub() {
               testID="learn-lectures"
               title="Lectures"
               meta={course ? `${course.completedCount} of ${course.totalLessons} watched${course.next ? ` · Next: ${course.next.title}` : ""}` : "Your recorded classes"}
-              icon={<CirclePlay {...icon} />}
+              icon={<IconDot icon={CirclePlay} />}
               below={
                 lecturePct !== null ? (
                   <View style={{ paddingTop: space[2] }}>
@@ -51,7 +49,7 @@ export function LearnHub() {
               onPress={() => go("/lectures")}
             />
             {assignments.data?.items.length ? (
-              <Row testID="learn-assignments" title="Assignments" meta={toHandIn ? `${toHandIn} to hand in` : "All handed in"} icon={<ClipboardList {...icon} />} onPress={() => go("/assignments")} />
+              <Row testID="learn-assignments" title="Assignments" meta={toHandIn ? `${toHandIn} to hand in` : "All handed in"} icon={<IconDot icon={ClipboardList} />} onPress={() => go("/assignments")} />
             ) : null}
           </RowList>
         </Section>
@@ -59,11 +57,11 @@ export function LearnHub() {
       {can?.study !== false ? (
         <Section title="Study">
           <RowList>
-            <Row testID="learn-study" title="Modules" meta={modules.length ? `${modsDone} of ${modules.length} complete${study.data?.next && study.data.next.kind !== "done" ? ` · Next: ${study.data.next.label}` : ""}` : "Reading, checkpoints and module tests"} icon={<BookOpen {...icon} />} onPress={() => go("/study")} />
-            <Row testID="learn-notes" title="Notes" meta={notes.data?.notes.length ? `${notesRead} of ${notes.data.notes.length} read` : "One page on each topic"} icon={<NotebookText {...icon} />} onPress={() => go("/notes")} />
-            <Row testID="learn-reference" title="Quick reference" meta="Disorders, medicines and terms, A to Z" icon={<Layers {...icon} />} onPress={() => go("/reference")} />
-            <Row testID="learn-map" title="Your map" meta="Every topic and how well you know it" icon={<MapIcon {...icon} />} onPress={() => router.push("/map")} />
-            <Row testID="learn-saved" title="Saved" meta="Your bookmarks and notes" icon={<Bookmark {...icon} />} onPress={() => router.push("/saved")} />
+            <Row testID="learn-study" title="Modules" meta={modules.length ? `${modsDone} of ${modules.length} complete${study.data?.next && study.data.next.kind !== "done" ? ` · Next: ${study.data.next.label}` : ""}` : "Reading, checkpoints and module tests"} icon={<IconDot icon={BookOpen} />} onPress={() => go("/study")} />
+            <Row testID="learn-notes" title="Notes" meta={notes.data?.notes.length ? `${notesRead} of ${notes.data.notes.length} read` : "One page on each topic"} icon={<IconDot icon={NotebookText} />} onPress={() => go("/notes")} />
+            <Row testID="learn-reference" title="Quick reference" meta="Disorders, medicines and terms, A to Z" icon={<IconDot icon={Layers} />} onPress={() => go("/reference")} />
+            <Row testID="learn-map" title="Your map" meta="Every topic and how well you know it" icon={<IconDot icon={MapIcon} />} onPress={() => router.push("/map")} />
+            <Row testID="learn-saved" title="Saved" meta="Your bookmarks and notes" icon={<IconDot icon={Bookmark} />} onPress={() => router.push("/saved")} />
           </RowList>
         </Section>
       ) : null}

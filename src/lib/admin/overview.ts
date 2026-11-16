@@ -21,6 +21,21 @@ export type AdminTodoItem = { label: string; count: number; detail: string; href
 export async function loadAdminOverview() {
   const supabase = await createClient();
   const adminClient = createAdminClient();
+  // Everything below is independent: start every read now so the page waits
+  // for the slowest one, not for each in turn.
+  const nowIso = new Date().toISOString();
+  const hiddenP = loadHiddenIds();
+  const activityP = loadActivity();
+  const rosterP = loadRoster();
+  // Query builders only run once awaited: Promise.resolve starts this one now.
+  const infraP = Promise.resolve(adminClient.rpc("infra_metrics"));
+  const mailP = Promise.all([
+    adminClient.from("crm_contacts").select("email", { count: "exact", head: true }).lte("next_follow_up_at", nowIso),
+    adminClient.from("email_inbound").select("id", { count: "exact", head: true }).is("read_at", null).is("archived_at", null),
+    loadOpenFailures(adminClient).then((rows) => ({ count: rows.length })),
+  ]);
+  const complaintsP = openComplaintCount();
+  for (const p of [hiddenP, activityP, rosterP, mailP, complaintsP]) p.catch(() => undefined);
 
   const [
     { data: students },
@@ -51,11 +66,11 @@ export async function loadAdminOverview() {
   ]);
 
   // Real students only: test and robot accounts (AI calibration) never count.
-  const hidden = await loadHiddenIds();
+  const hidden = await hiddenP;
   const realStudents = (students ?? []).filter((s) => !hidden.has(s.id as string));
   const studentIds = new Set(realStudents.map((s) => s.id));
   // Last moment on VIBHA: page time and lectures (Activity) plus the view.
-  const { rows: seenRows } = await loadActivity();
+  const { rows: seenRows } = await activityP;
   const seenBy = new Map(seenRows.map((r) => [r.id, r.lastSeen]));
   const activityByUser = new Map((activity ?? []).map((a) => [a.user_id, a]));
   const lastOf = (id: string) => latest(seenBy.get(id), (activityByUser.get(id)?.last_active_at as string | null) ?? null);
@@ -95,19 +110,14 @@ export async function loadAdminOverview() {
   const notStarted = realStudents.filter((s) => !activityByUser.get(s.id)?.started && !lastOf(s.id)).length;
 
   // Infra warning strip: the one silent failure that takes the cohort down.
-  const { data: infraData } = await adminClient.rpc("infra_metrics");
+  const { data: infraData } = await infraP;
   const dbSize = (infraData as { db_size_bytes?: number } | null)?.db_size_bytes ?? 0;
   const DB_LIMIT = 500 * 1024 * 1024;
   const dbPct = dbSize ? Math.round((dbSize / DB_LIMIT) * 100) : 0;
 
   // CRM + mail: follow-ups due today or earlier, unread replies, failed sends.
-  const nowIso = new Date().toISOString();
-  const [{ count: followUpsDue }, { count: unreadReplies }, { count: failedSends }] = await Promise.all([
-    adminClient.from("crm_contacts").select("email", { count: "exact", head: true }).lte("next_follow_up_at", nowIso),
-    adminClient.from("email_inbound").select("id", { count: "exact", head: true }).is("read_at", null).is("archived_at", null),
-    loadOpenFailures(adminClient).then((rows) => ({ count: rows.length })),
-  ]);
-  const complaints = await openComplaintCount();
+  const [{ count: followUpsDue }, { count: unreadReplies }, { count: failedSends }] = await mailP;
+  const complaints = await complaintsP;
 
   const actions = [
     {
@@ -177,7 +187,7 @@ export async function loadAdminOverview() {
   ];
 
   // Login problems (link expired, email failed, never invited, never came in).
-  const roster = await loadRoster();
+  const roster = await rosterP;
   const loginTrouble = roster.rows.filter((r) => r.flags.includes("login")).length;
   actions.splice(1, 0, {
     label: "Fix logins",

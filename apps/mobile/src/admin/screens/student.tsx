@@ -1,4 +1,5 @@
 import { router, useLocalSearchParams } from "expo-router";
+import { config } from "@/lib/config";
 import { openLink } from "@/lib/open";
 import { Bell, CheckCircle2, Circle, Mail, MessageSquare, Reply } from "lucide-react-native";
 import * as React from "react";
@@ -123,7 +124,7 @@ function Access({ r, phone }: { r: AdminStudentRow; phone?: Phone }) {
         {canWrite ? <SmallButton label="Allow one more phone change" testID="access-phone" busy={busy === "allow-phone-change"} onPress={() => void run("allow-phone-change", () => adminCalls.allowPhoneChange(r.id), { done: "They can change phone again now" })} /> : null}
       </Block>
       <Block title="Switch sections off">
-        <Row title="Section switches" meta="On the website: hide Notes, Games or a practice tool for this student" onPress={() => void openLink(`https://vibhapsychology.com/admin/students/${r.id}?tab=access`)} />
+        <Row title="Section switches" meta="On the website: hide Notes, Games or a practice tool for this student" onPress={() => void openLink(`${config.site}/admin/students/${r.id}?tab=access`)} />
       </Block>
       <ConfirmSheet open={lockOpen} onClose={() => setLockOpen(false)} title={`Lock ${r.name}?`} body="They are signed out and cannot sign in until you unlock them." confirm="Lock account" danger busy={busy === "lock"} reason={{ label: "Reason (only admins see it)" }} onConfirm={(reason) => void run("lock", () => adminCalls.lock(r.id, reason || undefined), { done: `${r.name} is locked` }).then(() => setLockOpen(false))} testID="confirm-lock" />
       <LinkSheet link={link} name={r.name} mobile={r.mobileNumber} onClose={() => setLink(null)} />

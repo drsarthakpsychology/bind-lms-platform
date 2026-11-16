@@ -7,7 +7,10 @@ import { type AppRequestContext } from "./context";
 import { checkDevice, DEVICE_ID_RE } from "./devices";
 import { ApiFail } from "./respond";
 import { createStatelessAuthClient } from "./supabase";
-import { accountProblem, bearerToken, jwtExpired } from "./guard-rules";
+import { loadMyBlocks } from "@/lib/access/blocks";
+import { readFlags } from "@/lib/flags";
+import { gatesNeedFlags } from "@/lib/auth/api-gate";
+import { accountProblem, bearerToken, jwtExpired, jwtSubject } from "./guard-rules";
 
 export type { ApiGate } from "@/lib/auth/api-guard";
 
@@ -95,30 +98,69 @@ export async function requireAppUser(req: Request, gates: ApiGate | readonly Api
   if (!token) throw new ApiFail("unauthenticated");
   if (jwtExpired(token, Date.now())) throw new ApiFail("token_expired");
   const deviceId = deviceIdOf(req);
-
-  const { data, error } = await createStatelessAuthClient().auth.getUser(token);
-  const user = data?.user;
-  if (error || !user) {
-    throw new ApiFail(/expired/i.test(error?.message ?? "") ? "token_expired" : "unauthenticated");
-  }
-
-  const loaded = await loadProfileRow(user.id);
-  // Auth user without a profile row: fail closed, as the website does.
-  if (!loaded) throw new ApiFail("unauthenticated");
-  const { profile, name } = loaded;
   const platform = platformOf(req);
-  await assertAccountAndDevice(profile, deviceId, platform);
-
   const list = Array.isArray(gates) ? (gates as readonly ApiGate[]) : [gates as ApiGate];
-  const decision = await evaluate(profile, list);
-  if (!decision.ok) throw new ApiFail(decision.reason === "account_blocked" ? "account_blocked" : decision.reason);
 
-  const context: AppRequestContext = {
-    accessToken: token,
-    user: user as unknown as AppRequestContext["user"],
-    session: { status: "ok", profile },
-    profile,
-    deviceId,
-  };
-  return { profile, name, accessToken: token, deviceId, platform, appVersion: req.headers.get("x-app-version"), context };
+  // One round trip instead of four: the token check (Supabase Auth), the
+  // profile row, this phone's row and the switched-off sections all start at
+  // once, keyed by the id the token names. Every answer below is still taken
+  // in the old order, and only once Auth has confirmed that same id: a token
+  // whose id does not match is refused, and the phone check writes nothing
+  // until the account has passed (see checkDevice).
+  const sub = jwtSubject(token);
+  const userP = createStatelessAuthClient().auth.getUser(token);
+  const profileP = sub ? loadProfileRow(sub) : null;
+  const blocksP = sub && list.length ? loadMyBlocks(sub) : null;
+  if (list.length && gatesNeedFlags(list)) void readFlags().catch(() => undefined);
+
+  let admitted!: (role: string) => void;
+  let refused!: (e: unknown) => void;
+  const roleOk = new Promise<string>((ok, bad) => {
+    admitted = ok;
+    refused = bad;
+  });
+  roleOk.catch(() => undefined);
+  const deviceP = sub ? checkDevice({ userId: sub, role: roleOk, deviceId, platform }) : null;
+  // Answers nobody waits for after an early refusal must not become unhandled rejections.
+  for (const p of [profileP, blocksP, deviceP]) p?.catch(() => undefined);
+
+  try {
+    const { data, error } = await userP;
+    const user = data?.user;
+    if (error || !user) {
+      throw new ApiFail(/expired/i.test(error?.message ?? "") ? "token_expired" : "unauthenticated");
+    }
+    const sameId = sub !== null && user.id === sub;
+    const loaded = await (sameId && profileP ? profileP : loadProfileRow(user.id));
+    // Auth user without a profile row: fail closed, as the website does.
+    if (!loaded) throw new ApiFail("unauthenticated");
+    const { profile, name } = loaded;
+    const problem = accountProblem(profile, Date.now());
+    if (problem) throw new ApiFail(problem);
+
+    if (sameId && deviceP) {
+      admitted(profile.role);
+      if ((await deviceP) === "replaced") throw new ApiFail("device_replaced");
+    } else {
+      refused(new ApiFail("unauthenticated"));
+      await assertAccountAndDevice(profile, deviceId, platform);
+    }
+
+    const blocks = sameId && blocksP ? blocksP : null;
+    const decision = await evaluate(profile, list, blocks ? { blocks: () => blocks } : {});
+    if (!decision.ok) throw new ApiFail(decision.reason === "account_blocked" ? "account_blocked" : decision.reason);
+
+    const context: AppRequestContext = {
+      accessToken: token,
+      user: user as unknown as AppRequestContext["user"],
+      session: { status: "ok", profile },
+      profile,
+      deviceId,
+      ...(blocks && profile.role === "student" ? { blocks } : {}),
+    };
+    return { profile, name, accessToken: token, deviceId, platform, appVersion: req.headers.get("x-app-version"), context };
+  } catch (e) {
+    refused(e);
+    throw e;
+  }
 }

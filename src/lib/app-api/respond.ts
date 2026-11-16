@@ -1,3 +1,4 @@
+import { createHash } from "node:crypto";
 import { NextResponse } from "next/server";
 import type { ApiErrorCode } from "./contract";
 
@@ -57,6 +58,21 @@ const HEADERS = { "Cache-Control": "private, no-store" } as const;
 
 export function ok<T>(data: T, status = 200): NextResponse {
   return NextResponse.json({ ok: true, data }, { status, headers: HEADERS });
+}
+
+/**
+ * A GET answer with an ETag. When the app sends back the ETag of the copy it
+ * already has (If-None-Match) and nothing changed, the answer is an empty 304
+ * instead of the whole body again. The answer stays `private, no-store`: the
+ * app keeps its own copy, nothing in between keeps one.
+ */
+export function okTagged<T>(req: Request, data: T): Response {
+  const body = JSON.stringify({ ok: true, data });
+  const etag = `W/"${createHash("sha1").update(body).digest("base64url")}"`;
+  const headers = { ...HEADERS, ETag: etag, Vary: "Authorization" };
+  const sent = req.headers.get("if-none-match");
+  if (sent && sent.split(",").some((t) => t.trim() === etag)) return new Response(null, { status: 304, headers });
+  return new Response(body, { status: 200, headers: { ...headers, "Content-Type": "application/json" } });
 }
 
 export function fail(code: ApiErrorCode, message?: string, details?: Record<string, unknown>): NextResponse {

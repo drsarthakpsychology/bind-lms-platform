@@ -16,7 +16,7 @@ import { ROOMS } from "@/lib/games-sims/escape/rooms";
 import { EXCERPTS } from "@/lib/games-sims/mse/excerpts";
 import type { HistoryTool } from "@/lib/history/order";
 import { hubNewLabel } from "./fresh";
-import { newCasesIn } from "./server";
+import { newCasesIn, newCasesInGroups } from "./server";
 
 type Library = { tool: HistoryTool; ids: readonly string[] };
 
@@ -43,5 +43,16 @@ export async function hubNewCases(userId: string | null | undefined, hub: "pract
     return hubNewLabel(await newCasesIn(userId, hub === "practice" ? PRACTICE : GAMES));
   } catch {
     return null;
+  }
+}
+
+/** Both hub lines from one read (the app's Practise tab shows both). `games: false` skips the games line. */
+export async function hubNewCasesBoth(userId: string | null | undefined, opts: { games: boolean }): Promise<{ practice: string | null; games: string | null }> {
+  if (!userId) return { practice: null, games: null };
+  try {
+    const [practice, games] = await newCasesInGroups(userId, opts.games ? [PRACTICE, GAMES] : [PRACTICE]);
+    return { practice: hubNewLabel(practice), games: opts.games ? hubNewLabel(games) : null };
+  } catch {
+    return { practice: null, games: null };
   }
 }

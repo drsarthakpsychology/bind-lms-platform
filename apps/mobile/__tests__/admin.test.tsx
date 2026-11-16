@@ -281,6 +281,9 @@ describe("admin screens as a Super Admin", () => {
     await fireEvent.changeText(screen.getByTestId("compose-body"), "See you on Friday.");
     await waitFor(() => expect(screen.getByText("Send to 2 students")).toBeTruthy());
     await fireEvent.press(screen.getByTestId("compose-send"));
+    // A whole cohort asks once more before sending.
+    expect(adminMock.state().batches[0]?.title).not.toBe("Reunion");
+    await fireEvent.press(await screen.findByTestId("confirm-go"));
     await waitFor(() => expect(router.back).toHaveBeenCalled());
     expect(adminMock.state().batches[0]).toMatchObject({ title: "Reunion", total: 2 });
   });
