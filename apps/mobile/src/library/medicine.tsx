@@ -5,7 +5,7 @@ import { Pressable, ScrollView, View, type ScrollViewInstance } from "react-nati
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { ApiFailure } from "@/api/errors";
-import { Button, EmptyState, LoadError, Row, RowList, RowsSkeleton, Sheet, T } from "@/ds";
+import { Button, EmptyState, LoadError, Row, RowList, RowsSkeleton, Sheet, StillTrying, T } from "@/ds";
 import { haptic } from "@/lib/haptics";
 import { openTarget } from "@/nav/targets";
 import { fonts, layout, space, useTheme } from "@/theme";
@@ -72,6 +72,7 @@ export function MedicineScreen() {
     return (
       <View style={{ flex: 1, padding: layout.gutter }}>
         <RowsSkeleton rows={8} />
+        <StillTrying failed={q.failureCount > 0} />
       </View>
     );
   }

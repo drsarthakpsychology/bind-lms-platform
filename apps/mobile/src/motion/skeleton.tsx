@@ -48,7 +48,7 @@ export function Shimmer() {
 }
 
 /**
- * The gap of the column a `Loaded` sits in (a `Screen`, a `Swap`). Loaded
+ * The gap of the column a `Loaded` sits in (a `Screen`, a `Section`, a `Swap`). Loaded
  * content often is several parts side by side in that column; `Reveal` wraps
  * them in one view, so it keeps the same gap or the parts would touch.
  */

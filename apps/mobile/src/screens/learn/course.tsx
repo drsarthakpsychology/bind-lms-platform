@@ -7,6 +7,7 @@ import type { CourseDetail, CourseLesson } from "@/api/contract";
 import { useCourse } from "@/api/queries";
 import { Button, EmptyState, Loaded, ProgressLine, Row, RowList, RowsSkeleton, Screen, Section, T, TabRow } from "@/ds";
 import { toast } from "@/ds/toast";
+import { useFocusedValue } from "@/nav/focused-value";
 import { openTarget } from "@/nav/targets";
 import { space, useTheme } from "@/theme";
 import { nextLine } from "./lectures";
@@ -55,7 +56,8 @@ export function WeekList({ course }: { course: CourseDetail }) {
 export function CourseBody({ course }: { course: CourseDetail }) {
   const c = useTheme();
   const [tab, setTab] = React.useState<Tab>("lectures");
-  const pct = course.totalLessons ? Math.round((course.completedCount / course.totalLessons) * 100) : 0;
+  // Held while a lecture is open on top, so the line fills in view on the way back.
+  const pct = useFocusedValue(course.totalLessons ? Math.round((course.completedCount / course.totalLessons) * 100) : 0);
   const materials = course.weeks.flatMap((w) => w.materials.map((m) => ({ ...m, week: w.num })));
   const assignments = course.weeks.flatMap((w) => w.assignments.map((a) => ({ ...a, week: w.num })));
   const tabs: { id: Tab; name: string }[] = [{ id: "lectures", name: "Lectures" }];

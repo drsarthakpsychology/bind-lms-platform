@@ -20,6 +20,9 @@ import { CountUp, HAS_VIEW_TRANSITION, NAV_FORWARD, PageMotion } from "./motion"
  * Every part is a server component; Sheet (./sheet) is the only client part.
  */
 
+/** The five places, each with its own soft colour family. */
+export type Area = "home" | "learn" | "practise" | "library" | "me" | "admin";
+
 type Children = { children?: React.ReactNode; className?: string };
 
 /* ------------------------------------------------------------------ */
@@ -48,9 +51,12 @@ export function PageFrame({
   lead,
   actions,
   width = "default",
+  area,
   className,
   children,
 }: Children & {
+  /** The place this page belongs to: gives it that place's one soft colour family (globals.css, "Area colour"). */
+  area?: Area;
   title?: React.ReactNode;
   /** A tiny pixel label above the title (brand accent). */
   kicker?: React.ReactNode;
@@ -67,11 +73,11 @@ export function PageFrame({
   return (
     <PageMotion>
       {/* The page change is a View Transition where React has it; the CSS fade (.ds-page) is the fallback. */}
-      <div data-ds="page" className={cn(!HAS_VIEW_TRANSITION && "ds-page", "mx-auto flex w-full min-w-0 flex-col gap-[var(--ds-section)] px-1 sm:px-0", WIDTH[width], className)}>
+      <div data-ds="page" data-area={area} className={cn(!HAS_VIEW_TRANSITION && "ds-page", "mx-auto flex w-full min-w-0 flex-col gap-[var(--ds-section)] px-1 sm:px-0", WIDTH[width], className)}>
         {title || lead ? (
           <header className={cn("flex min-w-0 items-start justify-between gap-4", band && "ds-band items-center")}>
             <div className="min-w-0 space-y-1">
-              {kicker ? <p className="type-pix text-link">{kicker}</p> : null}
+              {kicker ? <p className="type-pix ds-accent">{kicker}</p> : null}
               {title ? <h1 className="type-h1 ds-stroke [overflow-wrap:anywhere]">{title}</h1> : null}
               {lead ? <p className="type-small text-muted-foreground">{lead}</p> : null}
             </div>
@@ -115,7 +121,7 @@ export function Section({
         <div className="flex min-w-0 items-baseline justify-between gap-4">
           {title ? (
             <H id={headingId} className={cn("min-w-0 [overflow-wrap:anywhere]", level === 2 ? "type-h3" : "type-small font-semibold text-muted-foreground", n && "flex items-baseline gap-3")}>
-              {n ? <span aria-hidden className="shrink-0 type-pix text-link">{String(n).padStart(2, "0")}</span> : null}
+              {n ? <span aria-hidden className="shrink-0 type-pix ds-accent">{String(n).padStart(2, "0")}</span> : null}
               {n ? <span className="min-w-0">{title}</span> : title}
             </H>
           ) : (
@@ -176,7 +182,7 @@ export function Row({
   const body = (
     <>
       {icon ? (
-        <span aria-hidden className="grid size-6 shrink-0 place-items-center text-foreground [&_svg]:size-5">
+        <span aria-hidden className="ds-row-icon grid size-6 shrink-0 place-items-center text-foreground [&_svg]:size-5">
           {icon}
         </span>
       ) : null}
@@ -275,10 +281,10 @@ export function Hero({
 }) {
   const pct = progress === undefined ? undefined : Math.max(0, Math.min(100, Math.round(progress)));
   return (
-    <section aria-label="Continue" className={cn("flex min-w-0 flex-col gap-4", className)}>
+    <section aria-label="Continue" className={cn("ds-hero flex min-w-0 flex-col gap-4", className)}>
       <div className="flex min-w-0 flex-col gap-2">
         {/* Brand accent: a short context ("Lecture 4") speaks in the pixel voice; a longer line stays plain. */}
-        {context ? <p className={cn("[overflow-wrap:anywhere]", typeof context === "string" && context.length <= 28 ? "type-pix text-link" : "type-small text-muted-foreground")}>{context}</p> : null}
+        {context ? <p className={cn("[overflow-wrap:anywhere]", typeof context === "string" && context.length <= 28 ? "type-pix ds-accent" : "type-small text-muted-foreground")}>{context}</p> : null}
         {/* A long title steps down a size on phones so the button stays in reach. */}
         <h2 className={cn("[overflow-wrap:anywhere]", typeof title === "string" && title.length > 36 ? "type-h1 md:type-display" : "type-display")}>{title}</h2>
         {meta ? <p className="type-body text-muted-foreground [overflow-wrap:anywhere]">{meta}</p> : null}
@@ -332,7 +338,7 @@ export function HeroButton({ href, icon, children, className }: { href: string; 
 export function Stat({ value, label, className }: { value: React.ReactNode; label: React.ReactNode; className?: string }) {
   return (
     <div className={cn("flex min-w-0 flex-col", className)}>
-      <span className="type-h2 type-num"><CountUp value={value} /></span>
+      <span className="ds-num type-h2 type-num"><CountUp value={value} /></span>
       <span className="type-caption text-muted-foreground">{label}</span>
     </div>
   );
@@ -371,7 +377,7 @@ export function NextStep({
   wide?: boolean;
 }) {
   return (
-    <section aria-label="Continue" className="flex min-w-0 flex-col gap-4">
+    <section aria-label="Continue" className="ds-hero flex min-w-0 flex-col gap-4">
       <div className="flex min-w-0 flex-col gap-1">
         <p className="type-small text-muted-foreground [overflow-wrap:anywhere]">{label}</p>
         <h2 className="type-h2 [overflow-wrap:anywhere]">{title}</h2>

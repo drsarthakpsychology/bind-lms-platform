@@ -10,9 +10,9 @@ export const STUDENT_ID = "11111111-1111-4111-8111-111111111111";
 export const ADMIN_ID = "22222222-2222-4222-8222-222222222222";
 
 /** A token that looks like a JWT with a far expiry (or a past one). */
-export function token(name: string, expired = false): string {
+export function token(name: string, expired = false, sub?: string): string {
   const exp = Math.floor(Date.now() / 1000) + (expired ? -60 : 3600);
-  return `${Buffer.from(name).toString("base64url")}xxxxxxxxxx.${Buffer.from(JSON.stringify({ exp })).toString("base64url")}.sig`;
+  return `${Buffer.from(name).toString("base64url")}xxxxxxxxxx.${Buffer.from(JSON.stringify(sub ? { exp, sub } : { exp })).toString("base64url")}.sig`;
 }
 
 export const STUDENT_TOKEN = token("student");

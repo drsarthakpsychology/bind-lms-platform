@@ -151,6 +151,7 @@ export const adminCalls = {
   previewFormEmail: async (id: string, submissionId: string, subject: string, text: string) => previewFrom(await api.post<unknown>(`/admin/forms/${enc(id)}/email/preview`, { submissionId, subject, body: text } satisfies A.FormEmailPreviewBody)),
   sendWaitingForm: (id: string) => api.post<A.FormSendWaitingResult>(`/admin/forms/${enc(id)}/email/send-waiting`, {}),
   saveSignatories: async (signatories: X.StudioSignatory[]) => studioSettingsFrom(await api.put<unknown>("/admin/certificates/settings", { signatories: signatories.map((x) => ({ name: x.name, role: x.role, signatureFrom: x.signatureFrom ?? null })) } satisfies A.CertificateSettingsBody)),
+  uploadSignature: async (label: string, dataUrl: string) => studioSettingsFrom(await api.post<unknown>("/admin/certificates/signatures", { label, dataUrl } satisfies A.SignatureUploadBody)),
   anyonePreview: async (body: X.AnyoneInput) => String(obj(await api.post<unknown>("/admin/certificates/anyone/preview", body)).pdfBase64 ?? ""),
   anyoneIssue: async (body: X.AnyoneInput) => anyoneResultFrom(await api.post<unknown>("/admin/certificates/anyone", body)),
   saveType: (id: string | null, body: X.CertTypeBody) => (id ? api.put<{ id: string }>(`/admin/certificates/types/${enc(id)}`, body) : api.post<{ id: string }>("/admin/certificates/types", body)),

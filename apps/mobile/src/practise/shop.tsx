@@ -5,7 +5,7 @@ import { Pressable, View } from "react-native";
 import Animated, { useReducedMotion } from "react-native-reanimated";
 
 import { useMe } from "@/api/queries";
-import { Button, EmptyState, LoadError, RowsSkeleton, Screen, Section, Sheet, T } from "@/ds";
+import { Button, EmptyState, LoadError, RowsSkeleton, Screen, Section, Sheet, StillTrying, T } from "@/ds";
 import { haptic } from "@/lib/haptics";
 import { Burst, Confetti, presets, RollingNumber, Stamp } from "@/motion";
 import { fonts, layout, space, useTheme } from "@/theme";
@@ -72,7 +72,10 @@ export function ShopScreen() {
   if (!d) {
     return (
       <Screen title="XP shop">
-        <RowsSkeleton rows={6} />
+        <View style={{ gap: space[3] }}>
+          <RowsSkeleton rows={6} />
+          <StillTrying failed={q.failureCount > 0} />
+        </View>
       </Screen>
     );
   }

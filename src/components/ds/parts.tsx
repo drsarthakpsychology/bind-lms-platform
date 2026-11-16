@@ -76,7 +76,7 @@ export function StatItem({ value, label, sub }: { value: React.ReactNode; label:
   return (
     <div className="flex min-w-0 flex-col-reverse">
       <dt className="type-caption text-muted-foreground">{label}</dt>
-      <dd className="type-h1 type-num">
+      <dd className="ds-num type-h1 type-num">
         <CountUp value={value} />
         {sub ? <span className="type-small font-semibold text-muted-foreground"> {sub}</span> : null}
       </dd>
@@ -94,6 +94,27 @@ export function ProgressLine({ pct, label, className }: { pct: number; label: st
     <div role="progressbar" aria-label={label} aria-valuenow={v} aria-valuemin={0} aria-valuemax={100} className={cn("h-1.5 w-full overflow-hidden rounded-full bg-[var(--ds-hairline)]", className)}>
       <div className="ds-fill h-full origin-left rounded-full bg-primary transition-transform duration-[var(--ds-fill)] ease-[var(--ds-ease-out)] motion-reduce:transition-none" style={{ transform: `scaleX(${v / 100})` }} />
     </div>
+  );
+}
+
+/**
+ * A small progress ring with the number inside: the area's deep colour on its
+ * wash (blue on a hairline outside an area). For a row's "how far" at a glance;
+ * the words next to it still say it.
+ */
+export function ProgressRing({ pct, label, size = 44, className }: { pct: number; label: string; size?: number; className?: string }) {
+  const v = Math.max(0, Math.min(100, Math.round(pct)));
+  const stroke = 4;
+  const r = (size - stroke) / 2;
+  const c = 2 * Math.PI * r;
+  return (
+    <span role="img" aria-label={`${label}: ${v}%`} className={cn("relative inline-grid shrink-0 place-items-center", className)} style={{ width: size, height: size }}>
+      <svg aria-hidden width={size} height={size} viewBox={`0 0 ${size} ${size}`} className="-rotate-90">
+        <circle cx={size / 2} cy={size / 2} r={r} fill="none" strokeWidth={stroke} style={{ stroke: "var(--area-wash, var(--ds-hairline))" }} />
+        {v > 0 ? <circle cx={size / 2} cy={size / 2} r={r} fill="none" strokeWidth={stroke} strokeLinecap="round" strokeDasharray={c} strokeDashoffset={c * (1 - v / 100)} style={{ stroke: "var(--area-deep, var(--link))" }} /> : null}
+      </svg>
+      <span aria-hidden className="absolute inset-0 grid place-items-center text-[0.75rem] leading-none font-bold type-num">{v}</span>
+    </span>
   );
 }
 
@@ -209,7 +230,7 @@ export function StatusWord({ tone = "quiet", icon, children }: { tone?: keyof ty
 export function chipClass(on: boolean) {
   return cn(
     "ds-press inline-flex min-h-11 shrink-0 cursor-pointer items-center rounded-full border-[1.5px] px-4 type-small font-semibold outline-hidden transition-colors duration-[var(--ds-state)] ease-[var(--ds-ease)] focus-visible:ring-2 focus-visible:ring-ring",
-    on ? "border-foreground bg-foreground text-background" : "border-[var(--ds-card-line)] text-foreground hover:border-foreground hover:bg-[var(--ds-tint)]",
+    on ? "ds-chip-on border-foreground bg-foreground text-background" : "border-[var(--ds-card-line)] text-foreground hover:border-foreground hover:bg-[var(--ds-tint)]",
   );
 }
 export const chipRow = "flex min-w-0 flex-wrap gap-2";
@@ -237,13 +258,13 @@ export function Fold({ title, children, className }: { title: React.ReactNode; c
 
 /** A tiny pixel label or numeral in the brand blue ("LIBRARY", "01"). Decoration with meaning: keep it to a word or two. */
 export function Pix({ children, className }: { children: React.ReactNode; className?: string }) {
-  return <span className={cn("type-pix text-link", className)}>{children}</span>;
+  return <span className={cn("type-pix ds-accent", className)}>{children}</span>;
 }
 
 /** The small lime icon tile from the old design: one per header at most. */
 export function IconTile({ children, className }: { children: React.ReactNode; className?: string }) {
   return (
-    <span aria-hidden className={cn("grid size-12 shrink-0 place-items-center rounded-[var(--ds-radius)] border-[1.5px] border-foreground bg-primary text-primary-foreground [&_svg]:size-6", className)}>
+    <span aria-hidden className={cn("ds-icon-tile grid size-12 shrink-0 place-items-center rounded-[var(--ds-radius)] border-[1.5px] border-foreground bg-primary text-primary-foreground [&_svg]:size-6", className)}>
       {children}
     </span>
   );

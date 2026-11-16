@@ -493,6 +493,8 @@ export type Material = {
   format: string | null;
   sizeBytes: number | null;
   lessonId: string | null;
+  /** The course it belongs to, for its page on the website (/courses/<courseId>/materials/<id>). */
+  courseId: string | null;
   week: number | null;
   /** For kind "link": the outside address. */
   url: string | null;
@@ -1068,6 +1070,8 @@ export type DoubtRow = {
   author: string;
   mine: boolean;
   replies: number;
+  /** Who answered last: the VIBHA team ("faculty") or a student; null with no answers. Missing on older servers. */
+  lastReplyBy?: "student" | "faculty" | null;
   createdAt: string;
 };
 

@@ -42,14 +42,14 @@ export type HomeV2Props = {
   clinic?: React.ReactNode;
 };
 
-/** A 28px ring: today's points against the goal. Lime arc on a hairline track. */
+/** A 28px ring: today's points against the goal. The Home colour on its wash. */
 function GoalRing({ pct }: { pct: number }) {
   const r = 11;
   const c = 2 * Math.PI * r;
   return (
     <svg viewBox="0 0 28 28" className="size-7 shrink-0 -rotate-90" aria-hidden>
-      <circle cx="14" cy="14" r={r} fill="none" strokeWidth="4" className="stroke-[var(--ds-hairline)]" />
-      <circle cx="14" cy="14" r={r} fill="none" strokeWidth="4" strokeLinecap="round" strokeDasharray={c} strokeDashoffset={c * (1 - pct / 100)} className="stroke-foreground dark:stroke-primary" />
+      <circle cx="14" cy="14" r={r} fill="none" strokeWidth="4" className="stroke-[var(--area-wash,var(--ds-hairline))]" />
+      <circle cx="14" cy="14" r={r} fill="none" strokeWidth="4" strokeLinecap="round" strokeDasharray={c} strokeDashoffset={c * (1 - pct / 100)} className="stroke-[var(--area-deep,var(--foreground))]" />
     </svg>
   );
 }
@@ -117,7 +117,7 @@ export function HomeV2({ adminPreview, welcomeBack, dateLine, step, progress, al
         cta: step.cta,
       };
   return (
-    <PageFrame className="gap-6 md:gap-[var(--ds-section)]">
+    <PageFrame area="home" className="gap-6 md:gap-[var(--ds-section)]">
       <div className="flex flex-col gap-1">
         {adminPreview ? (
           <p className="flex items-center gap-2 type-small text-muted-foreground">

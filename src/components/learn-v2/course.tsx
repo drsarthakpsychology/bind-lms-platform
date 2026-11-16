@@ -5,7 +5,7 @@ import Link from "next/link";
 import { ArrowRight, BookOpen, Check, ChevronRight, FileText, Lock, Play } from "lucide-react";
 
 import { STATE_LABEL, type OverviewLesson, type OverviewModel } from "@/components/course/course-overview-view";
-import { HeroButton, PageFrame, Row, RowList, Section, Choices, BackLink, ProgressLine, EmptyLine, TabRow } from "@/components/ds";
+import { HeroButton, PageFrame, Row, RowList, Section, Choices, BackLink, ProgressLine, ProgressRing, EmptyLine, TabRow } from "@/components/ds";
 import { cn } from "@/lib/utils";
 
 type Tab = "lectures" | "materials" | "assignments";
@@ -25,7 +25,7 @@ export function ContinueBlock({ model, courseTitle }: { model: OverviewModel; co
   }
   const n = model.next;
   return (
-    <section aria-label="Continue" className="flex min-w-0 flex-col gap-4">
+    <section aria-label="Continue" className="ds-hero flex min-w-0 flex-col gap-4">
       <div className="flex min-w-0 flex-col gap-1">
         <p className="type-small text-muted-foreground [overflow-wrap:anywhere]">
           {courseTitle ? `${courseTitle} · ` : ""}
@@ -125,7 +125,7 @@ export function CourseV2({ model }: { model: OverviewModel }) {
   if (assignments.length) tabs.push({ id: "assignments", label: "Assignments" });
 
   return (
-    <PageFrame className="!gap-6 md:!gap-8">
+    <PageFrame area="learn" className="!gap-6 md:!gap-8">
       <header className="flex min-w-0 flex-col gap-1">
         {model.backHref ? <BackLink href={model.backHref}>All courses</BackLink> : null}
         <h1 className="type-h1 [overflow-wrap:anywhere]">{model.title}</h1>
@@ -229,7 +229,7 @@ export function CourseV2({ model }: { model: OverviewModel }) {
 export function LecturesListV2({ models }: { models: OverviewModel[] }) {
   const lead = models.find((m) => m.next && m.started) ?? models.find((m) => m.next) ?? null;
   return (
-    <PageFrame title="Lectures" className="!gap-6 md:!gap-8">
+    <PageFrame title="Lectures" area="learn" className="!gap-6 md:!gap-8">
       {models.length === 0 ? (
         <EmptyLine title="No courses yet">Your course appears here when it is available.</EmptyLine>
       ) : (
@@ -249,9 +249,9 @@ export function LecturesListV2({ models }: { models: OverviewModel[] }) {
                       href={`/courses/${m.courseId}`}
                       className="group/row -mx-2 flex min-h-[4.5rem] min-w-0 items-center gap-4 rounded-lg px-2 py-3 outline-none transition-colors duration-[var(--ds-state)] ease-[var(--ds-ease)] hover:bg-[var(--ds-tint)] focus-visible:ring-2 focus-visible:ring-ring active:bg-[var(--ds-tint)]"
                     >
-                      <span className="flex min-w-0 flex-1 flex-col gap-2">
+                      {m.totalLessons > 0 ? <ProgressRing pct={pct} label={`${m.title}: lectures watched`} /> : null}
+                      <span className="flex min-w-0 flex-1 flex-col gap-1">
                         <span className="type-body font-semibold [overflow-wrap:anywhere]">{m.title}</span>
-                        {m.totalLessons > 0 ? <ProgressLine pct={pct} label={`${m.title}: lectures watched`} className="max-w-56" /> : null}
                         <span className="type-small text-muted-foreground type-num">{m.totalLessons > 0 ? `${m.completedCount} of ${m.totalLessons} watched` : "Lectures appear here as they open"}</span>
                       </span>
                       <ChevronRight aria-hidden className="size-5 shrink-0 text-muted-foreground transition-transform duration-[var(--ds-state)] ease-[var(--ds-ease)] group-hover/row:translate-x-0.5" />

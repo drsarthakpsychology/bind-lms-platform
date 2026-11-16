@@ -298,13 +298,14 @@ export function WardTeam({ teamId, onExit }: { teamId: string; onExit: () => voi
   const header = (
     <View style={{ gap: space[3] }}>
       <TeamCode code={view.code} name={view.name} message={`Join my Ward Week team on VIBHA (${scene.title}).`} />
-      <Members members={view.members.map((x) => ({ name: x.name, me: x.me, done: x.voted, doneWord: "Voted", waitWord: "Not yet" }))} max={TEAM_LIMITS.ward.max} />
+      {/* While the last call's result is on screen, the votes for the next call would read as "nobody voted" next to "the team chose B". */}
+      <Members members={view.members.map((x) => ({ name: x.name, me: x.me, done: pending ? undefined : x.voted, doneWord: "Voted", waitWord: "Not yet" }))} max={TEAM_LIMITS.ward.max} />
     </View>
   );
   const hud = (
     <View style={{ gap: space[2] }}>
       <StepStrip at={scene.chapter} total={scene.sessions} />
-      <HudLine left={`Session ${(pending?.chapter ?? scene.chapter) + 1} of ${scene.sessions} · ${scene.patient}`} right={`${view.votes}/${view.members.length} voted`} />
+      <HudLine left={`Session ${(pending?.chapter ?? scene.chapter) + 1} of ${scene.sessions} · ${scene.patient}`} right={pending ? undefined : `${view.votes}/${view.members.length} voted`} />
     </View>
   );
   return (

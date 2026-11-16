@@ -4,25 +4,49 @@ import { ArrowLeft, ArrowRight, ChevronLeft, FileText } from "lucide-react-nativ
 import * as React from "react";
 import { Pressable, ScrollView, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+import Svg from "react-native-svg";
 
 import type { CompleteLectureResult, LectureDetail, Material, Submission, SubmitResult, UnsubmitResult } from "@/api/contract";
 import { messageOf } from "@/api/errors";
 import { outbox } from "@/api/outbox";
 import { keys, useLecture } from "@/api/queries";
 import { api } from "@/auth";
-import { Button, Field, LoadError, Row, RowList, Sheet, Skeleton, T, TabRow, Tint } from "@/ds";
+import { Button, Field, LoadError, Row, RowList, Sheet, Skeleton, StillTrying, T, TabRow, Tint } from "@/ds";
 import { toast } from "@/ds/toast";
 import { streakMoment } from "@/moments/host";
 import { FileHandIn, HandInSlot, RecordingHandIn, useFooterAction, type FooterAction } from "@/lecture/handin-ui";
 import { ProtectedPlayer, clock } from "@/lecture/player";
+import { countWatched } from "@/lecture/watched";
 import { config } from "@/lib/config";
 import { createStore } from "@/lib/store";
 import { haptic } from "@/lib/haptics";
-import { Reveal, Swap, useLoadGate } from "@/motion";
+import { beats, DrawInk, Reveal, Swap, useLoadGate } from "@/motion";
 import { enablePush, pushStatus } from "@/push";
 import { fixed, layout, space, useLightStatusBar, useTheme } from "@/theme";
 
 type Tab = "about" | "materials" | "assignment";
+
+const TICK = { t: "path", d: "M5,12.5 L10,17.5 L19,7" } as const;
+
+/** "Mark as watched" after it worked: the same lime block, settled into its shadow, with a tick that draws itself on. */
+function WatchedFace() {
+  const c = useTheme();
+  const ink = React.useMemo(() => ({ stroke: c.primary, sw: 3.5, single: true, rough: 0.5 }), [c.primary]);
+  return (
+    <View accessible accessibilityRole="text" accessibilityLabel="Watched" accessibilityLiveRegion="polite" testID="lecture-watched" style={{ paddingRight: 3, paddingBottom: 3 }}>
+      <View style={{ minHeight: layout.primary, borderRadius: layout.radius, borderWidth: 2, borderColor: c.dark ? c.onPrimary : c.line, backgroundColor: c.primary, flexDirection: "row", alignItems: "center", justifyContent: "center", gap: space[2], paddingHorizontal: space[5], transform: [{ translateX: 3 }, { translateY: 3 }] }}>
+        <View style={{ width: 24, height: 24, borderRadius: 12, backgroundColor: c.onPrimary, alignItems: "center", justifyContent: "center" }}>
+          <Svg width={15} height={15} viewBox="0 0 24 24">
+            <DrawInk k="lecture-watched-tick" shape={TICK} o={ink} delay={80} duration={240} />
+          </Svg>
+        </View>
+        <T v="button" tone="onPrimary">
+          Watched
+        </T>
+      </View>
+    </View>
+  );
+}
 
 function sizeLabel(b: number | null): string {
   if (!b) return "";
@@ -128,7 +152,7 @@ function AssignmentPart({ lecture }: { lecture: LectureDetail }) {
   );
 }
 
-function LectureSkeleton() {
+function LectureSkeleton({ failed }: { failed: boolean }) {
   return (
     <View style={{ padding: layout.gutter, gap: space[3] }}>
       <Skeleton w="40%" h={14} />
@@ -137,6 +161,7 @@ function LectureSkeleton() {
       <Skeleton h={48} r={8} style={{ marginTop: space[4] }} />
       <Skeleton h={14} />
       <Skeleton w="80%" h={14} />
+      <StillTrying failed={failed} />
     </View>
   );
 }
@@ -173,6 +198,13 @@ export function LectureScreen() {
   const [busy, setBusy] = React.useState(false);
   const [ask, setAsk] = React.useState(false);
   const [done, setDone] = React.useState(false);
+  const nextTimer = React.useRef<ReturnType<typeof setTimeout> | null>(null);
+  React.useEffect(
+    () => () => {
+      if (nextTimer.current) clearTimeout(nextTimer.current);
+    },
+    [],
+  );
   const lastSent = React.useRef(0);
   const last = React.useRef({ t: 0, d: 0 });
   // The Assignment tab's hand-in button lives in the pinned footer.
@@ -218,11 +250,17 @@ export function LectureScreen() {
       haptic.success();
       setDone(true);
       streakMoment.done();
-      toast.show("Marked as watched");
+      // The course page and Lectures list count it now, so their lines fill on the way back.
+      countWatched(qc, l.courseId, l.id);
       void qc.invalidateQueries({ queryKey: keys.lecture(l.id) });
       void qc.invalidateQueries({ queryKey: keys.course(l.courseId) });
+      void qc.invalidateQueries({ queryKey: keys.courses });
       if ((await pushStatus()) === "undetermined") setAsk(true);
-      else if (r.next) go(r.next.id);
+      // The next lecture opens once the tick has drawn and been seen.
+      else if (r.next) {
+        const id = r.next.id;
+        nextTimer.current = setTimeout(() => go(id), beats.stats);
+      }
     } catch (e) {
       haptic.warn();
       toast.show(messageOf(e));
@@ -295,14 +333,17 @@ export function LectureScreen() {
           <View style={{ borderTopWidth: 1, borderColor: c.hairline, paddingHorizontal: layout.gutter, paddingTop: space[3], paddingBottom: insets.bottom + space[3], gap: space[2], backgroundColor: c.bg }}>
             {tab === "assignment" ? (
               handIn ? <Button label={handIn.label} busy={handIn.busy} disabled={handIn.disabled} onPress={handIn.onPress} testID={handIn.testID} /> : null
-            ) : tab === "about" && !watched ? (
-              <Button label={blockedByAssignment ? "Hand in the assignment first" : "Mark as watched"} disabled={blockedByAssignment} busy={busy} onPress={() => void complete(l)} testID="lecture-complete" />
+            ) : tab === "about" && (!watched || done) ? (
+              // The button's face turns into a drawn tick and "Watched" in place (same size, no jump).
+              <Swap k={done ? "watched" : "mark"}>
+                {done ? <WatchedFace /> : <Button label={blockedByAssignment ? "Hand in the assignment first" : "Mark as watched"} disabled={blockedByAssignment} busy={busy} onPress={() => void complete(l)} testID="lecture-complete" />}
+              </Swap>
             ) : watched && l.next ? (
               <Button label={`Next: ${l.next.title}`} icon={<ArrowRight size={20} color={c.onPrimary} />} onPress={() => go(l.next!.id)} testID="lecture-next-primary" />
             ) : null}
             <View style={{ flexDirection: "row", justifyContent: "space-between", gap: space[3] }}>
               {l.prev ? <Button kind="text" label="Previous" icon={<ArrowLeft size={18} color={c.link} />} onPress={() => go(l.prev!.id)} testID="lecture-prev" /> : <View />}
-              {l.next && !(watched && tab !== "assignment") ? <Button kind="text" label="Next" icon={<ArrowRight size={18} color={c.link} />} onPress={() => go(l.next!.id)} testID="lecture-next" /> : null}
+              {l.next && (done || !(watched && tab !== "assignment")) ? <Button kind="text" label="Next" icon={<ArrowRight size={18} color={c.link} />} onPress={() => go(l.next!.id)} testID="lecture-next" /> : null}
             </View>
           </View>
           <ReminderSheet
@@ -317,7 +358,7 @@ export function LectureScreen() {
           <LoadError what="this lecture" error={q.error} onRetry={() => void q.refetch()} />
         </View>
       ) : gate.phase === "skeleton" ? (
-        <LectureSkeleton />
+        <LectureSkeleton failed={q.failureCount > 0} />
       ) : null}
     </View>
   );

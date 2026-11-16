@@ -39,16 +39,25 @@ export type FlagStatus = "off" | "live" | "unlocked";
 
 const CACHE_TTL_MS = 30_000;
 let cache: { at: number; flags: Record<string, FlagStatus> } | null = null;
+// One read at a time: requests that arrive while the flags are being read share it.
+let reading: Promise<Record<string, FlagStatus>> | null = null;
 
 /** Read all flags (cached briefly so a page doesn't hammer the DB). */
 export async function readFlags(): Promise<Record<string, FlagStatus>> {
   if (cache && Date.now() - cache.at < CACHE_TTL_MS) return cache.flags;
-  const admin = createAdminClient();
-  const { data } = await admin.from("feature_flags").select("key, status");
-  const flags: Record<string, FlagStatus> = {};
-  for (const f of data ?? []) flags[String(f.key)] = (f.status as FlagStatus) ?? "unlocked";
-  cache = { at: Date.now(), flags };
-  return flags;
+  reading ??= (async () => {
+    try {
+      const admin = createAdminClient();
+      const { data } = await admin.from("feature_flags").select("key, status");
+      const flags: Record<string, FlagStatus> = {};
+      for (const f of data ?? []) flags[String(f.key)] = (f.status as FlagStatus) ?? "unlocked";
+      cache = { at: Date.now(), flags };
+      return flags;
+    } finally {
+      reading = null;
+    }
+  })();
+  return reading;
 }
 
 /** Full content access? ("unlocked" only.) */

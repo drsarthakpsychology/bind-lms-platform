@@ -215,9 +215,9 @@ export function Check({ on, onPress, label, testID }: { on: boolean; onPress: ()
  * the thumb is (the screen's pinned footer): the count, then the actions,
  * then Clear.
  */
-export function ActionBar({ count, onClear, children, testID }: { count: number; onClear: () => void; children?: React.ReactNode; testID?: string }) {
+export function ActionBar({ count, onClear, children, testID, noun = "students" }: { count: number; onClear: () => void; children?: React.ReactNode; testID?: string; /** What is picked, for screen readers: "students", "people", "answers". */ noun?: string }) {
   return (
-    <View testID={testID} accessibilityLabel="Actions for the selected students" style={{ gap: space[2] }}>
+    <View testID={testID} accessibilityLabel={`Actions for the ${count} selected ${noun}`} style={{ gap: space[2] }}>
       <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between" }}>
         <T v="bodyStrong" num>
           {count} selected

@@ -2,7 +2,8 @@ import { router, useFocusEffect } from "expo-router";
 import { setStatusBarStyle } from "expo-status-bar";
 import { Check, ChevronDown, MessageCircle, Phone } from "lucide-react-native";
 import * as React from "react";
-import { Linking, ScrollView, Text, View, useWindowDimensions, type LayoutChangeEvent } from "react-native";
+import { openLink } from "@/lib/open";
+import { ScrollView, Text, View, useWindowDimensions, type LayoutChangeEvent } from "react-native";
 import Animated, { Extrapolation, interpolate, useAnimatedReaction, useAnimatedScrollHandler, useAnimatedStyle, useDerivedValue, useReducedMotion, useSharedValue, withSpring, type SharedValue } from "react-native-reanimated";
 import { scheduleOnRN } from "react-native-worklets";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
@@ -851,8 +852,8 @@ function Joining() {
               </View>
             ))}
             <View style={{ flexDirection: "row", gap: space[2], flexWrap: "wrap" }}>
-              <Pill label="Call us" icon={<Phone size={16} color={INK} />} onPress={() => void Linking.openURL(CLOSING.phoneHref)} testID="welcome-call" />
-              <Pill label="WhatsApp" icon={<MessageCircle size={16} color={INK} />} onPress={() => void Linking.openURL(CLOSING.whatsappHref)} testID="welcome-whatsapp" />
+              <Pill label="Call us" icon={<Phone size={16} color={INK} />} onPress={() => void openLink(CLOSING.phoneHref)} testID="welcome-call" />
+              <Pill label="WhatsApp" icon={<MessageCircle size={16} color={INK} />} onPress={() => void openLink(CLOSING.whatsappHref)} testID="welcome-whatsapp" />
             </View>
           </View>
         </Reveal>
@@ -894,7 +895,7 @@ function Closing({ bottom }: { bottom: number }) {
         </Reveal>
         <Reveal style={{ marginTop: space[5], gap: space[1] }}>
           <Pix color={LIME}>Enquiries</Pix>
-          <Text accessibilityRole="link" onPress={() => void Linking.openURL(CLOSING.phoneHref)} maxFontSizeMultiplier={1.3} style={{ fontFamily: fonts.h1, fontSize: 24, lineHeight: 30, color: WHITE }}>
+          <Text accessibilityRole="link" onPress={() => void openLink(CLOSING.phoneHref)} maxFontSizeMultiplier={1.3} style={{ fontFamily: fonts.h1, fontSize: 24, lineHeight: 30, color: WHITE }}>
             {CLOSING.phone}
           </Text>
           <Text maxFontSizeMultiplier={1.5} style={{ fontFamily: fonts.body, fontSize: 14, lineHeight: 20, color: ON_BLUE_MUTED }}>

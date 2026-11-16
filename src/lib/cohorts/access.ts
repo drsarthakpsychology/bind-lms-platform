@@ -1,6 +1,7 @@
 import "server-only";
 import { cache } from "react";
 import { createAdminClient } from "@/lib/supabase/server";
+import { requestMemo } from "@/lib/app-api/context";
 import { NO_ACCESS_DATA, type StudentAccess } from "./rules";
 
 export type CohortRow = {
@@ -21,7 +22,9 @@ export type CohortRow = {
  * If the cohort tables don't exist yet (the database file hasn't been run),
  * this returns "no cohorts", so the old rules keep working.
  */
-export const loadStudentAccess = cache(async (userId: string): Promise<StudentAccess> => {
+export const loadStudentAccess = cache((userId: string): Promise<StudentAccess> => requestMemo(`cohorts:access:${userId}`, () => readStudentAccess(userId)));
+
+async function readStudentAccess(userId: string): Promise<StudentAccess> {
   let admin;
   try {
     admin = createAdminClient();
@@ -48,10 +51,12 @@ export const loadStudentAccess = cache(async (userId: string): Promise<StudentAc
     grantedLessonIds: new Set((grants ?? []).map((g) => g.lesson_id as string)),
     cohortsByLesson,
   };
-});
+}
 
 /** The names of a person's cohorts, for "You're in Cohort 2" on their screens. */
-export const loadMyCohorts = cache(async (userId: string): Promise<{ id: string; name: string }[]> => {
+export const loadMyCohorts = cache((userId: string): Promise<{ id: string; name: string }[]> => requestMemo(`cohorts:mine:${userId}`, () => readMyCohorts(userId)));
+
+async function readMyCohorts(userId: string): Promise<{ id: string; name: string }[]> {
   try {
     const admin = createAdminClient();
     const { data, error } = await admin.from("cohort_members").select("cohort_id, cohorts(id, name)").eq("user_id", userId);
@@ -62,7 +67,7 @@ export const loadMyCohorts = cache(async (userId: string): Promise<{ id: string;
   } catch {
     return [];
   }
-});
+}
 
 /**
  * Which of the given courses this person can open.

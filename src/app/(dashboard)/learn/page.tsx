@@ -12,7 +12,7 @@ export default async function LearnPage() {
   const nav = await loadNavAccess();
   if (!nav) return null;
   return (
-    <PageFrame title="Learn" band art={<IconTile><BookOpen /></IconTile>}>
+    <PageFrame title="Learn" area="learn" band art={<IconTile><BookOpen /></IconTile>}>
       <HubGroups groups={visibleGroups(LEARN_GROUPS, nav.access)} />
     </PageFrame>
   );

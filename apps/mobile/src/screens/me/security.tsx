@@ -36,7 +36,10 @@ export function PhoneSecurity() {
     if (!bio) return;
     if (on) {
       // Turning it on asks the phone once, so it is really this person's finger or face.
-      if (!(await unlockWithBiometric("Confirm it is you"))) return;
+      if (!(await unlockWithBiometric("Confirm it is you"))) {
+        toast.show(`Your ${WORDS[bio.kind]} was not confirmed, so it stays off.`);
+        return;
+      }
       haptic.success();
     }
     await setBiometricEnabled(on);

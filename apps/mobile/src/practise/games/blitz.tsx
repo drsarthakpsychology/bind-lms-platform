@@ -21,6 +21,19 @@ const HOLD_WRONG = 1100;
 const clock = () => Date.now();
 
 type Miss = { prompt: string; answer: string; why: string };
+
+/**
+ * The line under a missed answer, or "" when it only says the prompt again.
+ * "Which word fits: <definition>" with the answer "X" often comes back as
+ * "X: <definition>", the same words twice in a row on the end screen.
+ */
+export function missWhy(m: Miss): string {
+  const why = m.why.trim();
+  const rest = why.startsWith(`${m.answer}:`) ? why.slice(m.answer.length + 1).trim() : why;
+  if (!rest) return "";
+  const norm = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+  return norm(m.prompt).includes(norm(rest)) ? "" : why;
+}
 type Phase = { t: "start" } | { t: "count"; n: number } | { t: "run" } | { t: "end"; done: BlitzFinish | null };
 
 /** Blitz: a 60-second fast-fact round. The server holds the clock and every answer. */
@@ -133,15 +146,18 @@ export function BlitzGame() {
           {misses.length ? (
             <Section title="What you missed">
               <RowList>
-                {misses.map((m, i) => (
-                  <View key={i} style={{ paddingVertical: space[3], gap: space[1] }}>
-                    <T v="small" tone="muted">
-                      {m.prompt}
-                    </T>
-                    <T v="bodyStrong">{m.answer}</T>
-                    <T v="small">{m.why}</T>
-                  </View>
-                ))}
+                {misses.map((m, i) => {
+                  const why = missWhy(m);
+                  return (
+                    <View key={i} style={{ paddingVertical: space[3], gap: space[1] }}>
+                      <T v="small" tone="muted">
+                        {m.prompt}
+                      </T>
+                      <T v="bodyStrong">{m.answer}</T>
+                      {why ? <T v="small">{why}</T> : null}
+                    </View>
+                  );
+                })}
               </RowList>
             </Section>
           ) : null}

@@ -7,6 +7,7 @@ import type { CourseSummary } from "@/api/contract";
 import { useCourse, useCourses } from "@/api/queries";
 import { EmptyState, Hero, Loaded, ProgressLine, Row, RowList, RowsSkeleton, Screen, Section, Skeleton, T } from "@/ds";
 import { Enter } from "@/motion";
+import { useFocusedValue } from "@/nav/focused-value";
 import { openTarget } from "@/nav/targets";
 import { TabTop } from "@/nav/top";
 import { layout, space, useTheme } from "@/theme";
@@ -16,6 +17,12 @@ import { WeekList } from "./course";
 export function nextLine(n: NonNullable<CourseSummary["next"]>): string {
   const what = n.kind === "assignment" ? "Assignment" : n.number ? `Lecture ${n.number}` : "Lecture";
   return `${what} · Week ${n.week}`;
+}
+
+/** A course row's line: it fills when the student comes back to this list (after marking a lecture watched). */
+function CourseLine({ pct, title }: { pct: number; title: string }) {
+  const shown = useFocusedValue(pct);
+  return <ProgressLine value={shown} height={4} label={`${shown}% of ${title}`} />;
 }
 
 /** One Continue, then every course as a row with a thin progress line. */
@@ -53,7 +60,7 @@ export function LecturesBody({ courses }: { courses: CourseSummary[] }) {
                   meta={`${x.completedCount} of ${x.totalLessons} lectures`}
                   below={
                     <View style={{ paddingTop: space[2] }}>
-                      <ProgressLine value={pct} height={4} label={`${pct}% of ${x.title}`} />
+                      <CourseLine pct={pct} title={x.title} />
                     </View>
                   }
                   onPress={() => router.push(`/course/${encodeURIComponent(x.id)}`)}

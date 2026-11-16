@@ -1,7 +1,8 @@
 import { router } from "expo-router";
 import { Check, Mail, Phone, User } from "lucide-react-native";
 import * as React from "react";
-import { Linking, Pressable, View } from "react-native";
+import { openLink } from "@/lib/open";
+import { Pressable, View } from "react-native";
 import Animated, { FadeInDown, useReducedMotion } from "react-native-reanimated";
 
 import type { RequestInvitationBody, RequestInvitationResult } from "@/api/contract";
@@ -100,7 +101,7 @@ export function RequestScreen() {
           <View style={{ width: 24, height: 24, borderRadius: 6, borderWidth: 1.5, borderColor: errors.agreed ? c.danger : agreed ? c.ink : c.cardLine, backgroundColor: agreed ? c.ink : "transparent", alignItems: "center", justifyContent: "center" }}>{agreed ? <Check size={16} color={c.bg} strokeWidth={3} /> : null}</View>
           <T v="small" style={{ flex: 1 }}>
             I agree to the{" "}
-            <T v="small" tone="link" accessibilityRole="link" onPress={() => void Linking.openURL(BRAND.privacyUrl)}>
+            <T v="small" tone="link" accessibilityRole="link" onPress={() => void openLink(BRAND.privacyUrl)}>
               privacy policy
             </T>
           </T>

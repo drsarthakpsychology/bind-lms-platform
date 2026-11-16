@@ -1,6 +1,7 @@
 import "server-only";
 import { createAdminClient } from "@/lib/supabase/server";
 import { displayName } from "@/lib/learn/leaderboard";
+import { lastReplyBy, type LastReplyBy } from "./last-reply";
 
 export type DoubtListItem = {
   id: string;
@@ -12,6 +13,8 @@ export type DoubtListItem = {
   author: string;
   mine: boolean;
   replies: number;
+  /** Who answered last: the VIBHA team ("faculty") or a student. Null with no answers. */
+  lastReplyBy?: LastReplyBy;
   createdAt: string;
 };
 
@@ -73,11 +76,16 @@ export async function loadDoubts(opts: { userId: string; isAdmin: boolean; cohor
   const authorIds = [...new Set(rows.map((d) => d.user_id as string))];
   const [{ data: profiles }, { data: replies }] = await Promise.all([
     authorIds.length ? admin.from("profiles").select("id, name, email").in("id", authorIds) : Promise.resolve({ data: [] as { id: string; name: string | null; email: string | null }[] }),
-    ids.length ? admin.from("doubt_replies").select("doubt_id").in("doubt_id", ids) : Promise.resolve({ data: [] as { doubt_id: string }[] }),
+    ids.length ? admin.from("doubt_replies").select("doubt_id, user_id, hidden, created_at").in("doubt_id", ids) : Promise.resolve({ data: [] as { doubt_id: string; user_id: string; hidden: boolean | null; created_at: string }[] }),
   ]);
   const prof = new Map((profiles ?? []).map((p) => [p.id, p]));
   const replyCount = new Map<string, number>();
   for (const r of replies ?? []) replyCount.set(r.doubt_id as string, (replyCount.get(r.doubt_id as string) ?? 0) + 1);
+  // Who answered last (the admin Waiting view leaves out doubts the team already answered).
+  const replierIds = [...new Set((replies ?? []).map((r) => r.user_id as string).filter(Boolean))];
+  const { data: roles } = replierIds.length ? await admin.from("profiles").select("id, role").in("id", replierIds) : { data: [] as { id: string; role: string | null }[] };
+  const roleById = new Map((roles ?? []).map((p) => [p.id as string, (p.role as string | null) ?? null]));
+  const last = lastReplyBy((replies ?? []) as { doubt_id: string; user_id: string; created_at: string; hidden?: boolean | null }[], (id) => roleById.get(id));
   return rows.map((d) => ({
     id: d.id as string,
     title: d.title as string,
@@ -88,6 +96,7 @@ export async function loadDoubts(opts: { userId: string; isAdmin: boolean; cohor
     author: nameOf(prof.get(d.user_id as string)),
     mine: d.user_id === opts.userId,
     replies: replyCount.get(d.id as string) ?? 0,
+    lastReplyBy: last.get(d.id as string) ?? null,
     createdAt: d.created_at as string,
   }));
 }

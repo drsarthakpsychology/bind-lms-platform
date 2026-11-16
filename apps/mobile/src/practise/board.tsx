@@ -2,7 +2,7 @@ import { useLocalSearchParams } from "expo-router";
 import * as React from "react";
 import { View } from "react-native";
 
-import { Chips, EmptyState, LoadError, RowList, RowsSkeleton, Screen, T } from "@/ds";
+import { Chips, EmptyState, LoadError, RowList, RowsSkeleton, Screen, StillTrying, T } from "@/ds";
 import { fonts, layout, space, useTheme } from "@/theme";
 import { isSoon, useRead } from "./api";
 import type { Leaderboard } from "./contract";
@@ -39,7 +39,10 @@ export function BoardScreen() {
       {q.isError ? (
         isSoon(q.error) ? <SoonState web="/leaderboard" /> : <LoadError error={q.error} onRetry={() => void q.refetch()} />
       ) : !d ? (
-        <RowsSkeleton rows={8} />
+        <View style={{ gap: space[3] }}>
+          <RowsSkeleton rows={8} />
+          <StillTrying failed={q.failureCount > 0} />
+        </View>
       ) : !d.rows.length ? (
         <EmptyState mood="empty" title="Nobody on the board yet" body="Play this week and your name shows up here." />
       ) : (

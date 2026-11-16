@@ -8,7 +8,7 @@ import { useQueryClient } from "@tanstack/react-query";
 
 import type { MapPractice, MapQuestion } from "@/api/contract";
 import { answerMap, mapWallKeys, useMapRound } from "@/api/map-wall";
-import { Button, EmptyState, LoadError, OptionRow, ProgressLine, Skeleton, T, VerdictBand, type OptionState } from "@/ds";
+import { Button, EmptyState, LoadError, OptionRow, ProgressLine, Skeleton, StillTrying, T, VerdictBand, type OptionState } from "@/ds";
 import { EndReaction, ReactionLayer, useReactions } from "@/ds/reactions";
 import { toast } from "@/ds/toast";
 import { haptic } from "@/lib/haptics";
@@ -66,7 +66,7 @@ function Question({ q, picked, checked, onPick }: { q: MapQuestion; picked: Pick
   );
 }
 
-function RoundSkeleton() {
+function RoundSkeleton({ failed }: { failed: boolean }) {
   return (
     <View style={{ gap: space[4] }} testID="map-round-skeleton">
       <Skeleton w="90%" h={26} />
@@ -74,6 +74,7 @@ function RoundSkeleton() {
       {[0, 1, 2, 3].map((k) => (
         <Skeleton key={k} h={56} r={12} />
       ))}
+      <StillTrying failed={failed} />
     </View>
   );
 }
@@ -223,7 +224,7 @@ export function MapPracticeScreen() {
       ) : q.data ? (
         <EmptyState mood="wait" title="No questions for this yet" body="New questions for this topic are on their way. Try mixed practice." action={{ label: "Back to your map", onPress: done }} testID="map-round-empty" />
       ) : (
-        <RoundSkeleton />
+        <RoundSkeleton failed={q.failureCount > 0} />
       )}
     </View>
   );

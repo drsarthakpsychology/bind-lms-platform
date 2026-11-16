@@ -21,6 +21,7 @@ Last updated: 2026-11-16.
 | `X-App-Device-Id` | every signed-in route, and video requests | The id the app made at first start. 16 to 80 characters: letters, digits, `.`, `-`, `_`. Keep it in secure storage and never change it |
 | `X-App-Version` | every request | e.g. `1.0.0`. Below the server's minimum every route answers 426 `upgrade_required` |
 | `X-App-Platform` | every request | `android` or `ios` |
+| `If-None-Match` | optional, any GET | The `ETag` of the copy the app already holds. Unchanged: the answer is an empty `304` (keep showing the held copy) |
 
 ### Answer shape
 
@@ -37,6 +38,8 @@ type ApiError = { ok: false; error: { code: ApiErrorCode; message: string; detai
 ```
 
 `code` is stable: the app switches on it. `message` is plain English that can be shown as is.
+
+Every successful GET (the `{ ok: true }` JSON answers) carries an `ETag` and `Cache-Control: private, no-store`. Send it back as `If-None-Match` on the next GET of the same address with the same sign-in, and an unchanged answer comes back as `304` with no body. File, video and PDF routes answer as before.
 
 | HTTP | `code` | Meaning | What the app does |
 |---|---|---|---|
@@ -168,7 +171,7 @@ How app video works (details in `docs/app/VIDEO_DELIVERY.md`):
 
 | Status | Method and path | Auth | Request | Response | Calls |
 |---|---|---|---|---|---|
-| built | `GET /materials/:materialId` | student (`/courses`) | none | `Material` | `checkMaterial` (`src/lib/media/material-serve.ts`: the website's material rule, published, enrolment, cohort) |
+| built | `GET /materials/:materialId` | student (`/courses`) | none | `Material` (with `courseId`, so the app can open `/courses/<courseId>/materials/<id>` on the website; also set on `LectureDetail.materials`) | `checkMaterial` (`src/lib/media/material-serve.ts`: the website's material rule, published, enrolment, cohort) |
 | built | `GET /materials/:materialId/file` | student (`/courses`), 300 a minute | none | the file bytes (`Range` supported) | `serveMaterial`, the same function as `/api/media/materials/:id` |
 | built | `GET /assignments` | student (`/courses`) | `?limit&cursor` | `Page<AssignmentRow>` | `loadMyCourses`, `loadCourseOverview` rows, plus due dates and scores (`assignmentRows`, `src/lib/app-api/assignments.ts`) |
 | built | `GET /assignments/:assignmentId` | student (`/courses`) | none | `Assignment` | `loadAssignment` (`src/lib/course/assignment.ts`) |
