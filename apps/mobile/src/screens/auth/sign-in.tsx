@@ -157,7 +157,7 @@ export function SignInScreen({ defaultEmail = "" }: { defaultEmail?: string }) {
           <Animated.View style={[{ gap: space[4] }, shake]}>
             <AuthField label="Email" icon={Mail} value={email} onChangeText={(v) => { setEmail(v); if (errors.email) setErrors((x) => ({ ...x, email: undefined })); }} error={errors.email} autoComplete="email" textContentType="username" keyboardType="email-address" autoCapitalize="none" autoCorrect={false} returnKeyType="next" onSubmitEditing={() => passwordRef.current?.focus()} placeholder="you@example.com" testID="sign-in-email" />
             <AuthField inputRef={passwordRef} label="Password" icon={Lock} value={password} onChangeText={(v) => { setPassword(v); if (errors.password) setErrors((x) => ({ ...x, password: undefined })); }} error={errors.password} secret autoComplete="current-password" textContentType="password" autoCapitalize="none" returnKeyType="go" onSubmitEditing={() => void submit()} testID="sign-in-password" />
-            <Pressable onPress={() => router.push("/forgot-password")} testID="sign-in-forgot" accessibilityRole="link" hitSlop={6} style={{ alignSelf: "flex-end", minHeight: 32, justifyContent: "center" }}>
+            <Pressable onPress={() => router.push("/forgot-password")} testID="sign-in-forgot" accessibilityRole="link" hitSlop={6} style={{ alignSelf: "flex-end", minHeight: layout.target, paddingHorizontal: space[1], justifyContent: "center" }}>
               <T v="small" tone="link" style={{ fontFamily: fonts.bold }}>
                 Forgot your password?
               </T>

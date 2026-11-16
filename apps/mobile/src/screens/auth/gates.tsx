@@ -207,6 +207,15 @@ export function UpdateScreen({ storeUrl }: { storeUrl: string | null }) {
   );
 }
 
+const PAUSED_ASK = "Message us on WhatsApp and we will sort it out.";
+
+/** The server's words only when they add something to the title (it often repeats "your account is paused"). */
+export function pausedBody(message: string | null | undefined): string {
+  const m = (message ?? "").trim();
+  if (!m || /paused/i.test(m)) return PAUSED_ASK;
+  return `${m.replace(/[.\s]*$/, ".")} ${PAUSED_ASK}`;
+}
+
 /** The account is paused. It lifts by itself; "Try again" asks the server. */
 export function PausedScreen({ message }: { message: string }) {
   const [busy, setBusy] = React.useState(false);
@@ -215,13 +224,13 @@ export function PausedScreen({ message }: { message: string }) {
       testID="paused"
       footer={
         <>
-          <Button kind="quiet" label="Message us on WhatsApp" onPress={() => void Linking.openURL(BRAND.whatsapp)} />
+          <Button label="Message us on WhatsApp" onPress={() => void Linking.openURL(BRAND.whatsapp)} testID="paused-whatsapp" />
           <Button kind="text" full busy={busy} label="Try again" onPress={() => { setBusy(true); void session.refreshMe().finally(() => setBusy(false)); }} />
           <Button kind="text" full label="Sign out" onPress={() => { session.clearGate(); void session.signOut(); }} />
         </>
       }
     >
-      <EmptyState mood="sleepy" title="Your account is paused" body={message} />
+      <EmptyState mood="sleepy" title="Your account is paused" body={pausedBody(message)} />
     </Gate>
   );
 }

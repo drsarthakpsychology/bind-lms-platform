@@ -9,6 +9,7 @@ import { ApiFailure } from "@/api/errors";
 import { session } from "@/auth";
 import { handoff } from "@/auth/handoff";
 import { PinPad } from "@/auth/PinPad";
+import { pausedBody } from "@/screens/auth/gates";
 import { signInProblem, SignInScreen } from "@/screens/auth/sign-in";
 import { WelcomeScreen } from "@/screens/visitor/welcome";
 import { adaptHome, BUNDLED } from "@/visitor/home-data";
@@ -191,6 +192,14 @@ describe("Sign in", () => {
     expect(signInProblem(new ApiFailure("invalid_credentials", "x", 401))).toMatch(/do not match/);
     expect(signInProblem(new ApiFailure("network", "x"))).toMatch(/No internet/);
     expect(signInProblem(new ApiFailure("rate_limited", "x", 429))).toMatch(/Too many tries/);
+  });
+});
+
+describe("Paused screen", () => {
+  it("never says paused twice, and always says what to do", () => {
+    expect(pausedBody("Your account is paused.")).toBe("Message us on WhatsApp and we will sort it out.");
+    expect(pausedBody("")).toBe("Message us on WhatsApp and we will sort it out.");
+    expect(pausedBody("The fee for this month is due")).toBe("The fee for this month is due. Message us on WhatsApp and we will sort it out.");
   });
 });
 
