@@ -1,7 +1,9 @@
 import { loadOverview } from "../../_clinic/bridge";
-import { AdminPage, LoadError } from "../_v2/kit";
+import { AdminPage } from "../_v2/kit";
 import { ClinicToday, CohortSwitch } from "./_ui/overview";
 import { clinicAdmin } from "./_ui/page-bits";
+
+import { ClinicLoadError } from "./_ui/load-error";
 
 export const dynamic = "force-dynamic";
 export const metadata = { title: "Clinic" };
@@ -12,7 +14,7 @@ export default async function ClinicTodayPage({ searchParams }: { searchParams: 
   const res = await loadOverview(cohort);
   return (
     <AdminPage title="Clinic" actions={res.ok ? <CohortSwitch cohorts={res.data.cohorts} current={res.data.cohortId} hrefFor={(id) => `/admin/clinic?cohort=${id}`} /> : null}>
-      {res.ok ? <ClinicToday data={res.data} q={res.data.cohortId ? `?cohort=${res.data.cohortId}` : q} /> : <LoadError what="the clinic" href={`/admin/clinic${q}`} />}
+      {res.ok ? <ClinicToday data={res.data} q={res.data.cohortId ? `?cohort=${res.data.cohortId}` : q} /> : <ClinicLoadError res={res} what="the clinic" href={`/admin/clinic${q}`} />}
     </AdminPage>
   );
 }

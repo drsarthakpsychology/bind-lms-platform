@@ -1,8 +1,10 @@
 import { loadAllowances, loadOverview, saveAllowances } from "../../../_clinic/bridge";
-import { AdminPage, LoadError } from "../../_v2/kit";
+import { AdminPage } from "../../_v2/kit";
 import { Allowances } from "../_ui/allowances";
 import { CohortSwitch } from "../_ui/overview";
 import { clinicAdmin } from "../_ui/page-bits";
+
+import { ClinicLoadError } from "../_ui/load-error";
 
 export const dynamic = "force-dynamic";
 export const metadata = { title: "Leaves allowed" };
@@ -13,7 +15,7 @@ export default async function AllowancesPage({ searchParams }: { searchParams: P
   const [res, ov] = await Promise.all([loadAllowances(cohort), loadOverview(cohort)]);
   return (
     <AdminPage title="Leaves allowed" actions={ov.ok ? <CohortSwitch cohorts={ov.data.cohorts} current={res.ok ? res.data.cohortId : ov.data.cohortId} hrefFor={(id) => `/admin/clinic/allowances?cohort=${id}`} /> : null}>
-      {res.ok ? <Allowances data={res.data} save={saveAllowances} canWrite={canWrite} /> : <LoadError what="leaves" href={`/admin/clinic/allowances${q}`} />}
+      {res.ok ? <Allowances data={res.data} save={saveAllowances} canWrite={canWrite} /> : <ClinicLoadError res={res} what="leaves" href={`/admin/clinic/allowances${q}`} />}
     </AdminPage>
   );
 }

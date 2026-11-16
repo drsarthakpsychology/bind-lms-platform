@@ -65,11 +65,8 @@ export const ME_GROUPS: HubGroup[] = [
   {
     title: "Clinic",
     rows: [
-      { href: "/schedule", label: "Schedule", icon: "calendar", full: true },
+      { href: "/clinic", label: "Clinic", icon: "calendar", full: true },
       { href: "/attendance/scan", label: "Scan attendance", icon: "scan", full: true },
-      { href: "/leave", label: "Leave", icon: "calendarOff", full: true },
-      { href: "/opd", label: "OPD cases", icon: "stethoscope", full: true },
-      { href: "/attendance", label: "My attendance", icon: "clipboardCheck", full: true },
     ],
   },
   {
@@ -117,6 +114,7 @@ export const PRACTISE_MATCH = ["/practise", "/practice", "/games", "/prep"];
 export const LIBRARY_MATCH = ["/practice/medicines", "/tools/psychopharm"];
 export const ME_MATCH = [
   "/me",
+  "/clinic",
   "/schedule",
   "/attendance",
   "/leave",

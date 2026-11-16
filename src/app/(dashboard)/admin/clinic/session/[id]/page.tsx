@@ -3,9 +3,11 @@ import { QrCode } from "lucide-react";
 
 import { KIND_LABEL, dayLong, timeRange } from "@/components/clinic/format";
 import { loadLiveAttendance, markAttendance } from "../../../../_clinic/bridge";
-import { AdminPage, LoadError, btn } from "../../../_v2/kit";
+import { AdminPage, btn } from "../../../_v2/kit";
 import { LiveAttendance } from "../../_ui/live-attendance";
 import { clinicAdmin } from "../../_ui/page-bits";
+
+import { ClinicLoadError } from "../../_ui/load-error";
 
 export const dynamic = "force-dynamic";
 export const metadata = { title: "Attendance" };
@@ -29,7 +31,7 @@ export default async function SessionAttendancePage({ params, searchParams }: { 
         ) : null
       }
     >
-      {res.ok ? <LiveAttendance first={res} sessionId={id} load={loadLiveAttendance} mark={markAttendance} canWrite={canWrite} /> : <LoadError what="this session" href={`/admin/clinic/session/${id}${q}`} />}
+      {res.ok ? <LiveAttendance first={res} sessionId={id} load={loadLiveAttendance} mark={markAttendance} canWrite={canWrite} /> : <ClinicLoadError res={res} what="this session" href={`/admin/clinic/session/${id}${q}`} />}
     </AdminPage>
   );
 }

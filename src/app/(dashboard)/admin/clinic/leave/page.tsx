@@ -1,7 +1,9 @@
 import { loadLeaveQueue, decideLeave } from "../../../_clinic/bridge";
-import { AdminPage, LoadError, ViewTabs } from "../../_v2/kit";
+import { AdminPage, ViewTabs } from "../../_v2/kit";
 import { LeaveQueue } from "../_ui/leave-queue";
 import { clinicAdmin } from "../_ui/page-bits";
+
+import { ClinicLoadError } from "../_ui/load-error";
 
 export const dynamic = "force-dynamic";
 export const metadata = { title: "Leave" };
@@ -24,7 +26,7 @@ export default async function ClinicLeavePage({ searchParams }: { searchParams: 
   return (
     <AdminPage title="Leave">
       <ViewTabs label="Requests" current={status} tabs={VIEWS.map((v) => ({ id: v.id, label: v.label, href: href(v.id), count: v.id === "pending" && res.ok ? res.data.requests.length : null }))} />
-      {res.ok ? <LeaveQueue data={res.data} decide={decideLeave} canWrite={canWrite} /> : <LoadError what="leave requests" href={href(status)} />}
+      {res.ok ? <LeaveQueue data={res.data} decide={decideLeave} canWrite={canWrite} /> : <ClinicLoadError res={res} what="leave requests" href={href(status)} />}
     </AdminPage>
   );
 }

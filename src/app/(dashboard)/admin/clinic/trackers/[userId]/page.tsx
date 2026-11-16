@@ -1,8 +1,10 @@
 import { AttendanceFigures, AttendanceList } from "@/components/clinic/attendance-view";
 import { BATCH_LABEL, LEAVE_STATUS_LABEL, askLine, cases, dayShort, leaves } from "@/components/clinic/format";
 import { loadStudentDetail } from "../../../../_clinic/bridge";
-import { AdminPage, Block, Empty, Facts, LoadError, Rows, RowItem } from "../../../_v2/kit";
+import { AdminPage, Block, Empty, Facts, Rows, RowItem } from "../../../_v2/kit";
 import { clinicAdmin } from "../../_ui/page-bits";
+
+import { ClinicLoadError } from "../../_ui/load-error";
 
 export const dynamic = "force-dynamic";
 export const metadata = { title: "Student" };
@@ -15,7 +17,7 @@ export default async function ClinicStudentPage({ params, searchParams }: { para
   if (!res.ok) {
     return (
       <AdminPage title="Student" back={{ href: `/admin/clinic/trackers${q}`, label: "Trackers" }}>
-        <LoadError what="this student" />
+        <ClinicLoadError res={res} what="this student" />
       </AdminPage>
     );
   }

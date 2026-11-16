@@ -1,9 +1,11 @@
 import { loadOverview, loadTrackers, remindLogs } from "../../../_clinic/bridge";
-import { AdminPage, LoadError } from "../../_v2/kit";
+import { AdminPage } from "../../_v2/kit";
 import { CohortSwitch } from "../_ui/overview";
 import { clinicAdmin } from "../_ui/page-bits";
 import { RemindButton } from "../_ui/remind";
 import { Trackers, cohortTotals } from "../_ui/trackers";
+
+import { ClinicLoadError } from "../_ui/load-error";
 
 export const dynamic = "force-dynamic";
 export const metadata = { title: "Trackers" };
@@ -22,7 +24,7 @@ export default async function TrackersPage({ searchParams }: { searchParams: Pro
           remind={canWrite ? <RemindButton cohortId={res.data.cohortId} remind={remindLogs} due={cohortTotals(res.data.rows).logsDue} /> : null}
         />
       ) : (
-        <LoadError what="the trackers" href={`/admin/clinic/trackers${q}`} />
+        <ClinicLoadError res={res} what="the trackers" href={`/admin/clinic/trackers${q}`} />
       )}
     </AdminPage>
   );

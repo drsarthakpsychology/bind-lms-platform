@@ -40,7 +40,7 @@ export type OpdAdminActions = {
   discard: (cohortId: string) => Promise<Res<unknown>>;
 };
 
-const fail = () => ({ ok: false as const, error: "Could not reach the server." });
+const fail = (): { ok: false; error: string; code?: string } => ({ ok: false, error: "Could not reach the server." });
 const ORDER = [1, 2, 3, 4, 5, 6, 0];
 const BATCHES: ClinicBatch[] = ["morning", "evening"];
 
@@ -334,7 +334,7 @@ export function OpdPlan({ plan, actions, canWrite }: { plan: ClinicPlan; actions
     setBusy(false);
     if (!x.ok) {
       // A full day: offer to go over the seats once.
-      if (!force && /full/i.test(x.error)) setFull({ date, batch });
+      if (!force && x.code === "conflict") setFull({ date, batch });
       setMsg({ ok: false, text: x.error });
       return;
     }

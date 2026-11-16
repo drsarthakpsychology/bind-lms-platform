@@ -1,5 +1,5 @@
 // @vitest-environment jsdom
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 
 import type { ClinicAttendanceRow, ClinicLeaveQueue, ClinicPlan, ClinicSlot, ClinicTrackerRow } from "@/lib/clinic/types";
@@ -86,7 +86,7 @@ describe("OPD", () => {
     const a = { generate: vi.fn(), move: vi.fn(), publish: vi.fn(), discard: vi.fn() };
     render(<OpdPlan plan={plan} actions={a} canWrite />);
     expect(screen.getByRole("button", { name: "Publish" })).toBeInTheDocument();
-    screen.getByRole("button", { name: /Aarav Mehta/ }).click();
+    fireEvent.click(screen.getByRole("button", { name: /Aarav Mehta/ }));
     expect(screen.getByRole("status")).toHaveTextContent("Moving Aarav Mehta");
   });
 });
