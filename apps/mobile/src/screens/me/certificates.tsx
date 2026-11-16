@@ -1,7 +1,8 @@
 import { router, Stack, useLocalSearchParams } from "expo-router";
 import { Award, Flame, Medal } from "lucide-react-native";
 import * as React from "react";
-import { Linking, Share, View } from "react-native";
+import { openLink } from "@/lib/open";
+import { Share, View } from "react-native";
 import Animated, { useReducedMotion } from "react-native-reanimated";
 
 import type { BadgeProgress, CertificatePdfLink, Credential } from "@/api/contract";
@@ -22,7 +23,7 @@ export function issued(iso: string | null): string {
 export async function downloadCertificate(id: string): Promise<void> {
   try {
     const link = await api.get<CertificatePdfLink>(`/achievements/${encodeURIComponent(id)}/pdf`);
-    await Linking.openURL(link.url);
+    await openLink(link.url);
   } catch (e) {
     toast.show(messageOf(e));
   }

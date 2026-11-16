@@ -427,7 +427,7 @@ export function notificationListView(raw: unknown): C.NotificationList {
 
 function doubtRow(raw: unknown): C.DoubtRow {
   const r = obj(raw);
-  return { id: str(r.id), title: str(r.title) || "Doubt", topic: strOrNull(r.topic), kind: r.kind === "complaint" ? "complaint" : "doubt", status: oneOf(r.status, ["open", "solved", "hidden"] as const, "open"), cohortId: strOrNull(r.cohortId), author: str(r.author) || "A batchmate", mine: bool(r.mine), replies: num(r.replies), createdAt: str(r.createdAt) };
+  return { id: str(r.id), title: str(r.title) || "Doubt", topic: strOrNull(r.topic), kind: r.kind === "complaint" ? "complaint" : "doubt", status: oneOf(r.status, ["open", "solved", "hidden"] as const, "open"), cohortId: strOrNull(r.cohortId), author: str(r.author) || "A batchmate", mine: bool(r.mine), replies: num(r.replies), lastReplyBy: r.lastReplyBy === "faculty" || r.lastReplyBy === "student" ? r.lastReplyBy : null, createdAt: str(r.createdAt) };
 }
 
 export function doubtListView(raw: unknown): C.DoubtList {
@@ -447,8 +447,9 @@ export function doubtListView(raw: unknown): C.DoubtList {
 
 export function doubtThreadView(raw: unknown): C.DoubtThread {
   const d = obj(raw);
-  const { replies: _count, ...row } = doubtRow(d);
+  const { replies: _count, lastReplyBy: _last, ...row } = doubtRow(d);
   void _count;
+  void _last;
   return {
     ...row,
     body: str(d.body),

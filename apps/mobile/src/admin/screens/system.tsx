@@ -147,8 +147,16 @@ export function AdminSystemScreen() {
                 <Block title="How full things are">
                   <View style={{ gap: space[3] }}>
                     {d.usage.map((u) => (
-                      <View key={u.label} style={{ gap: space[1] }}>
-                        <Row title={u.label} trailing={u.value} />
+                      <View key={u.label} style={{ gap: space[1] }} testID={`usage-${u.label}`}>
+                        {/* Label and value share a line while they fit; with large text or a long label the value moves under it (never on top of it). */}
+                        <View accessible accessibilityLabel={`${u.label}: ${u.value}`} style={{ flexDirection: "row", flexWrap: "wrap", justifyContent: "space-between", alignItems: "baseline", columnGap: space[3], rowGap: 2, paddingVertical: space[2] }}>
+                          <T v="bodyStrong" style={{ flexShrink: 1 }}>
+                            {u.label}
+                          </T>
+                          <T v="small" tone="muted" num>
+                            {u.value}
+                          </T>
+                        </View>
                         {u.pct !== null ? <Meter pct={u.pct} tone={u.pct > 80 ? "warn" : "info"} /> : null}
                       </View>
                     ))}

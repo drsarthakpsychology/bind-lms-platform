@@ -1,7 +1,8 @@
 import { useQueryClient } from "@tanstack/react-query";
 import { useLocalSearchParams } from "expo-router";
 import * as React from "react";
-import { Linking, View } from "react-native";
+import { openLink } from "@/lib/open";
+import { View } from "react-native";
 
 import type { MessageBlock, MessageSpan } from "@/api/contract";
 import { keys, useNotification } from "@/api/queries";
@@ -18,7 +19,7 @@ function Spans({ spans }: { spans: MessageSpan[] }) {
         if (s.link) {
           const link = s.link;
           return (
-            <T key={i} v="reading" tone="link" accessibilityRole="link" style={[style, { textDecorationLine: "underline" }]} onPress={() => (link.target ? openTarget(link.target) : link.url ? void Linking.openURL(link.url) : undefined)}>
+            <T key={i} v="reading" tone="link" accessibilityRole="link" style={[style, { textDecorationLine: "underline" }]} onPress={() => (link.target ? openTarget(link.target) : link.url ? void openLink(link.url) : undefined)}>
               {s.text}
             </T>
           );

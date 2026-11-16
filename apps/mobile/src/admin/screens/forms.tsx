@@ -53,7 +53,7 @@ export function AdminFormScreen() {
   const total = q.data?.responses ?? q.data?.respondents.length ?? 0;
   const shownCount = q.data?.respondents.length ?? 0;
   const footer = !canWrite || !total ? undefined : picked.size ? (
-    <ActionBar count={picked.size} onClear={() => setPicked(new Set())} testID="form-bar">
+    <ActionBar count={picked.size} onClear={() => setPicked(new Set())} testID="form-bar" noun="answers">
       <SmallButton label={`Email ${picked.size}`} icon={<Mail size={18} color={c.ink} />} onPress={() => setEmailTo([...picked])} testID="form-email-some" />
     </ActionBar>
   ) : (

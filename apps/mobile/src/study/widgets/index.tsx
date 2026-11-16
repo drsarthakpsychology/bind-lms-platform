@@ -1,6 +1,6 @@
 import { ExternalLink } from "lucide-react-native";
 import * as React from "react";
-import { Linking } from "react-native";
+import { openLink } from "@/lib/open";
 
 import type { WidgetBlock, WidgetDataByKind, WidgetKind } from "@/api/contract";
 import { Row, RowList } from "@/ds/parts";
@@ -91,7 +91,7 @@ function WebRow({ ctx }: { ctx: WidgetContext }) {
   const c = useTheme();
   return (
     <RowList>
-      <Row testID="widget-web" title="An interactive piece" meta="Open it on the website for now. It arrives in the app soon." icon={<ExternalLink size={20} color={c.muted} />} onPress={() => void Linking.openURL(`${config.site}/study/${ctx.moduleId}/${ctx.sectionId}`)} />
+      <Row testID="widget-web" title="An interactive piece" meta="Open it on the website for now. It arrives in the app soon." icon={<ExternalLink size={20} color={c.muted} />} onPress={() => void openLink(`${config.site}/study/${ctx.moduleId}/${ctx.sectionId}`)} />
     </RowList>
   );
 }

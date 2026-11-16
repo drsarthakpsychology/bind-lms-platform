@@ -60,7 +60,7 @@ export function homeView(raw: unknown): C.Home {
 
 function materialView(raw: unknown): C.Material {
   const m = obj(raw);
-  return { id: str(m.id), title: str(m.title) || "Material", kind: str(m.kind, "doc"), format: strOrNull(m.format), sizeBytes: numOrNull(m.sizeBytes), lessonId: strOrNull(m.lessonId), week: numOrNull(m.week), url: strOrNull(m.url), filePath: strOrNull(m.filePath) };
+  return { id: str(m.id), title: str(m.title) || "Material", kind: str(m.kind, "doc"), format: strOrNull(m.format), sizeBytes: numOrNull(m.sizeBytes), lessonId: strOrNull(m.lessonId), courseId: strOrNull(m.courseId), week: numOrNull(m.week), url: strOrNull(m.url), filePath: strOrNull(m.filePath) };
 }
 
 function submissionView(raw: unknown): C.Submission | null {

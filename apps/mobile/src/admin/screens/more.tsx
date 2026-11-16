@@ -17,6 +17,7 @@ import type { AdminPushPrefs } from "../extra";
 import { Avatar, ConfirmSheet, Loaded } from "../kit";
 import { AdminTop } from "../nav";
 import { ADMIN_PUSH } from "../push";
+import { isWaiting } from "./doubts";
 import { useAdminRole } from "../role";
 import { startViewAs } from "../view-as";
 
@@ -56,7 +57,7 @@ export function AdminMoreScreen() {
       </Section>
       <Section title="Teach">
         <RowList>
-          <Row title="Doubts and concerns" icon={<MessageCircleQuestion {...icon} />} trailing={n(waiting.data?.items.filter((d) => d.status === "open").length)} onPress={() => router.push("/admin/doubts")} testID="more-doubts" />
+          <Row title="Doubts and concerns" icon={<MessageCircleQuestion {...icon} />} trailing={n(waiting.data?.items.filter(isWaiting).length)} onPress={() => router.push("/admin/doubts")} testID="more-doubts" />
           <Row title="Review" meta="Hand-ins and sign-offs" icon={<FileCheck {...icon} />} trailing={n(toGrade.data?.pending)} onPress={() => router.push("/admin/review")} testID="more-review" />
           <Row title="Content" meta="On the website: courses and lectures" icon={<BookOpen {...icon} />} onPress={web("/admin/courses")} />
         </RowList>

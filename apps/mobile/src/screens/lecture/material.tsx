@@ -248,7 +248,7 @@ export function MaterialScreen() {
     <Screen testID="material" gap={space[4]}>
       <Stack.Screen options={{ title: "" }} />
       <Loaded q={q} what="this material" skeleton={<RowsSkeleton rows={3} />}>
-        {(m) => <MaterialBody m={m} courseId={courseId} />}
+        {(m) => <MaterialBody m={m} courseId={courseId || m.courseId} />}
       </Loaded>
     </Screen>
   );
