@@ -1,6 +1,6 @@
 import { Bell, CloudOff, Search } from "lucide-react-native";
 import * as React from "react";
-import { Pressable, RefreshControl, ScrollView, View, type StyleProp, type ViewStyle } from "react-native";
+import { Pressable, RefreshControl, ScrollView, StyleSheet, View, type StyleProp, type ViewStyle } from "react-native";
 import Animated, { useReducedMotion } from "react-native-reanimated";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
@@ -13,6 +13,7 @@ import { ProgressLine } from "./parts";
 import { useBottomChrome } from "./bottom-chrome";
 import { useKeyboardPad } from "./keyboard-pad";
 import { T } from "./text";
+import { StackGap } from "./gap";
 import { TitleInk } from "@/moments/title";
 
 /** The VIBHA wordmark: wide black Archivo, with the school line under it. */
@@ -160,7 +161,7 @@ export function Screen({ children, title, lead, top, footer, onRefresh, refreshi
           ) : null}
         </View>
       ) : null}
-      {children}
+      <StackGap.Provider value={(StyleSheet.flatten(contentStyle)?.gap as number | undefined) ?? gap}>{children}</StackGap.Provider>
     </View>
   );
   return (

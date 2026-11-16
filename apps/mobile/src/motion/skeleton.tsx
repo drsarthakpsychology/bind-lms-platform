@@ -112,9 +112,9 @@ export function useLoadGate(ready: boolean): { phase: LoadPhase; revealed: boole
  *
  *   <LoadSwap ready={!!q.data} skeleton={<LectureSkeleton />}>{q.data ? <Lecture d={q.data} /> : null}</LoadSwap>
  */
-export function LoadSwap({ ready, skeleton, children }: { ready: boolean; skeleton: React.ReactNode; children?: React.ReactNode }) {
+export function LoadSwap({ ready, skeleton, children, gap }: { ready: boolean; skeleton: React.ReactNode; children?: React.ReactNode; /** The parent column's gap, so several blocks keep their spacing inside the rising wrapper. */ gap?: number }) {
   const { phase, revealed } = useLoadGate(ready);
   if (phase === "wait") return null;
   if (phase === "skeleton") return <Gated.Provider value>{skeleton}</Gated.Provider>;
-  return revealed ? <Reveal>{children}</Reveal> : <>{children}</>;
+  return revealed ? <Reveal style={gap !== undefined ? { gap } : undefined}>{children}</Reveal> : <>{children}</>;
 }

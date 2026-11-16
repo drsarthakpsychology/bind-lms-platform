@@ -9,6 +9,7 @@ import { config } from "@/lib/config";
 import { LoadSwap } from "@/motion";
 import { space, useTheme } from "@/theme";
 import { Button } from "./button";
+import { StackGap } from "./gap";
 import { EmptyState, LoadError, RowsSkeleton } from "./parts";
 import { T } from "./text";
 import { toast } from "./toast";
@@ -66,6 +67,7 @@ export function StillTrying({ failed }: { failed: boolean }) {
  * A skeleton shows only after 120ms and then for at least 380ms.
  */
 export function Loaded<T>({ q, skeleton, what, soon, children }: { q: UseQueryResult<T>; skeleton?: React.ReactNode; what?: string; /** The server may not have this route yet: a 404 means "coming soon", not an error. A string is the website page that has it. */ soon?: boolean | string; children: (data: T) => React.ReactNode }) {
+  const gap = React.useContext(StackGap);
   let body: React.ReactNode = null;
   if (q.data !== undefined) body = children(q.data);
   else if (q.isError) {
@@ -73,9 +75,11 @@ export function Loaded<T>({ q, skeleton, what, soon, children }: { q: UseQueryRe
     else if (soon && q.error instanceof ApiFailure && q.error.code === "not_found") body = <ComingSoon web={typeof soon === "string" ? soon : undefined} />;
     else body = <LoadError what={what} error={q.error} onRetry={() => void q.refetch()} />;
   }
-  // Nothing for 120ms, then the skeleton for at least 380ms, then the content rises in.
+  // Nothing for 120ms, then the skeleton for at least 380ms, then the content rises in
+  // (keeping the column's gap between its blocks, as when it shows at once).
   return (
     <LoadSwap
+      gap={gap}
       ready={q.data !== undefined || q.isError}
       skeleton={
         <View style={{ gap: space[3] }}>
