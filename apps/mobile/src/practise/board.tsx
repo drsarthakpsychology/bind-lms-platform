@@ -50,7 +50,7 @@ export function BoardScreen() {
               <T numberOfLines={1} style={{ fontFamily: fonts.pixelDigits, fontSize: 18, lineHeight: 24, minWidth: 40, flexShrink: 0, color: r.rank <= 3 ? c.link : c.muted }} num>
                 {r.rank}
               </T>
-              <T v="bodyStrong" style={{ flex: 1 }} tone={r.me ? "link" : "ink"}>
+              <T v="bodyStrong" style={{ flex: 1, minWidth: 0 }} tone={r.me ? "link" : "ink"}>
                 {r.me ? `${r.name} (you)` : r.name}
               </T>
               <T numberOfLines={1} style={{ fontFamily: fonts.pixelDigits, fontSize: 18, lineHeight: 24, flexShrink: 0, color: c.ink }} num>
