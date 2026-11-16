@@ -1,14 +1,14 @@
 import { Check, X } from "lucide-react-native";
 import * as React from "react";
 import { Pressable, View } from "react-native";
-import Animated, { Easing, FadeInDown, useAnimatedProps, useAnimatedStyle, useReducedMotion, useSharedValue, withSequence, withSpring, withTiming } from "react-native-reanimated";
+import Animated, { Easing, useAnimatedProps, useAnimatedStyle, useReducedMotion, useSharedValue, withSequence, withSpring, withTiming } from "react-native-reanimated";
 import Svg, { Path } from "react-native-svg";
 
 import { Rich } from "@/study/rich";
 import { haptic } from "@/lib/haptics";
 import { settingsStore } from "@/lib/settings";
-import { dur, springs, usePressScale } from "@/motion";
-import { layout, motion, space, useTheme } from "@/theme";
+import { dur, presets, springs, usePressScale } from "@/motion";
+import { layout, space, useTheme } from "@/theme";
 import { T } from "./text";
 
 export type OptionState = "idle" | "picked" | "right" | "wrong" | "dim";
@@ -90,7 +90,7 @@ const REACT_WRONG = ["Not quite.", "Close, but no.", "Let's see why."];
 
 /**
  * The verdict: a full-width ink band that rises from the bottom after an
- * answer, with a one-word reaction (when reactions are on) and why.
+ * answer (readable by 120ms, settling its last 16px on the smooth spring), with a one-word reaction (when reactions are on) and why.
  */
 export function VerdictBand({ right, title, why, seed = 0, testID = "verdict" }: { right: boolean; title?: string; why?: string | null; seed?: number; testID?: string }) {
   const c = useTheme();
@@ -103,7 +103,7 @@ export function VerdictBand({ right, title, why, seed = 0, testID = "verdict" }:
   const pool = right ? REACT_RIGHT : REACT_WRONG;
   const head = title ?? (reactions ? pool[seed % pool.length]! : right ? "Right." : "Not this one.");
   return (
-    <Animated.View testID={testID} entering={reduce ? undefined : FadeInDown.duration(motion.state)} accessibilityLiveRegion="polite" accessibilityRole="alert" style={{ backgroundColor: c.band, borderRadius: layout.radius, padding: space[4], gap: space[1], flexDirection: "row", alignItems: "flex-start" }}>
+    <Animated.View testID={testID} entering={reduce ? undefined : presets.verdict()} accessibilityLiveRegion="polite" accessibilityRole="alert" style={{ backgroundColor: c.band, borderRadius: layout.radius, padding: space[4], gap: space[1], flexDirection: "row", alignItems: "flex-start" }}>
       <View style={{ width: 28, height: 28, borderRadius: 14, alignItems: "center", justifyContent: "center", backgroundColor: right ? c.primary : c.danger, marginRight: space[3], marginTop: 1 }}>
         {right ? <Check size={18} color="#111111" strokeWidth={3} /> : <X size={18} color="#ffffff" strokeWidth={3} />}
       </View>

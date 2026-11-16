@@ -12,7 +12,7 @@ import { space, useTheme } from "@/theme";
  * A part the app does not have yet: never a dead end. It opens the same page
  * on the website, or goes back.
  */
-export function SoonState({ web, body = "This part is ready on the website. The app gets it soon.", testID = "soon" }: { web: string; body?: string; testID?: string }) {
+export function SoonState({ web, body = "This part is ready on the website.", testID = "soon" }: { web: string; body?: string; testID?: string }) {
   const c = useTheme();
   return (
     <View testID={testID} style={{ gap: space[3] }}>

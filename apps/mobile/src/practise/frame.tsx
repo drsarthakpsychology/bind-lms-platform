@@ -14,7 +14,7 @@ import { ApiFailure } from "@/api/errors";
 import { isSoon } from "./api";
 import { SoonState } from "./soon";
 import { Confetti, RollingNumber } from "@/motion";
-import { Bump, Rise } from "./fx";
+import { Bump } from "./fx";
 import { moodForScore, reactions, StickerLayer } from "./reactions";
 
 /**
@@ -344,9 +344,7 @@ export function HudLine({ left, right }: { left: string; right?: React.ReactNode
 export function Verdict({ right, title, why, seed, learn, partial }: { right: boolean; title?: string; why?: string | null; seed?: number; learn?: { label: string; onPress: () => void } | null; partial?: boolean }) {
   return (
     <View style={{ gap: space[2] }}>
-      <Rise>
-        <VerdictBand right={right} title={title ?? (partial ? "Partly right." : undefined)} why={why} seed={seed} />
-      </Rise>
+      <VerdictBand right={right} title={title ?? (partial ? "Partly right." : undefined)} why={why} seed={seed} />
       {learn ? <Button kind="text" label={learn.label} onPress={learn.onPress} testID="verdict-learn" /> : null}
     </View>
   );
