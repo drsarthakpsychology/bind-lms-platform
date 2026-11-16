@@ -4,12 +4,13 @@ import * as React from "react";
 import { View } from "react-native";
 
 import type { CourseSummary } from "@/api/contract";
-import { useCourses } from "@/api/queries";
-import { EmptyState, Hero, Loaded, ProgressLine, Row, RowList, RowsSkeleton, Screen, Section, Skeleton } from "@/ds";
+import { useCourse, useCourses } from "@/api/queries";
+import { EmptyState, Hero, Loaded, ProgressLine, Row, RowList, RowsSkeleton, Screen, Section, Skeleton, T } from "@/ds";
 import { Enter } from "@/motion";
 import { openTarget } from "@/nav/targets";
 import { TabTop } from "@/nav/top";
-import { space, useTheme } from "@/theme";
+import { layout, space, useTheme } from "@/theme";
+import { WeekList } from "./course";
 
 /** "Lecture 5 · Week 3" */
 export function nextLine(n: NonNullable<CourseSummary["next"]>): string {
@@ -92,13 +93,46 @@ export function LecturesScreen() {
   );
 }
 
-/** The same, as the Lectures tab of a lectures-only account. */
+/** One course's weeks, loaded on their own. The title shows only when there is more than one course. */
+function CourseWeeks({ summary, titled }: { summary: CourseSummary; titled: boolean }) {
+  const q = useCourse(summary.id);
+  const pct = summary.totalLessons ? Math.round((summary.completedCount / summary.totalLessons) * 100) : 0;
+  return (
+    <View style={{ gap: layout.section }}>
+      <View style={{ gap: space[2] }}>
+        {titled ? <T v="h2">{summary.title}</T> : null}
+        <T v="small" tone="muted" num>
+          {summary.completedCount} of {summary.totalLessons} lectures watched
+        </T>
+        <ProgressLine value={pct} height={4} label={`${pct}% watched`} />
+      </View>
+      <Loaded q={q} what="your lectures" skeleton={<RowsSkeleton rows={5} />}>
+        {(d) => (d.empty ? <EmptyState title="No lectures yet" body="Lectures appear here week by week." /> : <WeekList course={d} />)}
+      </Loaded>
+    </View>
+  );
+}
+
+/**
+ * The Lectures tab of a lectures-only account: Home already carries the one
+ * Continue, so this is the full list, grouped by week (no second hero).
+ */
 export function LecturesTab() {
   const q = useCourses();
   return (
     <Screen tab top={<TabTop />} title="Lectures" testID="lectures-tab" onRefresh={() => void q.refetch()} refreshing={q.isRefetching}>
-      <Loaded q={q} what="your lectures" skeleton={<LecturesSkeleton />}>
-        {(d) => <LecturesBody courses={d.courses} />}
+      <Loaded q={q} what="your lectures" skeleton={<RowsSkeleton rows={6} />}>
+        {(d) =>
+          d.courses.length ? (
+            <View style={{ gap: layout.section }}>
+              {d.courses.map((x) => (
+                <CourseWeeks key={x.id} summary={x} titled={d.courses.length > 1} />
+              ))}
+            </View>
+          ) : (
+            <EmptyState title="No lectures yet" body="Your lectures appear here as soon as your cohort starts." />
+          )
+        }
       </Loaded>
     </Screen>
   );

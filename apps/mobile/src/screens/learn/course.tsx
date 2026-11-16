@@ -27,6 +27,31 @@ function LessonMark({ l }: { l: CourseLesson }) {
 
 const WEEK_WORD: Record<CourseDetail["weeks"][number]["status"], string> = { complete: "Done", "in-progress": "In progress", upcoming: "Coming up", "not-started": "" };
 
+/** Every lecture of the course, grouped by week, with a mark for where each one stands. */
+export function WeekList({ course }: { course: CourseDetail }) {
+  return (
+    <>
+      {course.weeks.map((w) => (
+        <Section key={w.num} title={`Week ${w.num}${w.isCurrent ? " · This week" : ""}`} action={WEEK_WORD[w.status] ? <T v="small" tone="muted">{WEEK_WORD[w.status]}</T> : undefined}>
+          <RowList>
+            {w.lessons.map((l) => (
+              <Row
+                key={l.id}
+                testID={`lesson-${l.id}`}
+                title={`${l.number}. ${l.title}`}
+                current={l.state === "started" || l.state === "next"}
+                trailing={<LessonMark l={l} />}
+                chevron={false}
+                onPress={l.openable ? () => router.push(`/lecture/${encodeURIComponent(l.id)}`) : () => toast.show(l.state === "live" ? "This lecture opens soon." : "This lecture opens in a later week.")}
+              />
+            ))}
+          </RowList>
+        </Section>
+      ))}
+    </>
+  );
+}
+
 export function CourseBody({ course }: { course: CourseDetail }) {
   const c = useTheme();
   const [tab, setTab] = React.useState<Tab>("lectures");
@@ -60,25 +85,7 @@ export function CourseBody({ course }: { course: CourseDetail }) {
       <View style={{ gap: space[5] }}>
         {tabs.length > 1 ? <TabRow tabs={tabs} value={tab} onChange={setTab} /> : null}
         {course.empty ? <EmptyState title="No lectures yet" body="Lectures appear here week by week." /> : null}
-        {tab === "lectures"
-          ? course.weeks.map((w) => (
-              <Section key={w.num} title={`Week ${w.num}${w.isCurrent ? " · This week" : ""}`} action={WEEK_WORD[w.status] ? <T v="small" tone="muted">{WEEK_WORD[w.status]}</T> : undefined}>
-                <RowList>
-                  {w.lessons.map((l) => (
-                    <Row
-                      key={l.id}
-                      testID={`lesson-${l.id}`}
-                      title={`${l.number}. ${l.title}`}
-                      current={l.state === "started" || l.state === "next"}
-                      trailing={<LessonMark l={l} />}
-                      chevron={false}
-                      onPress={l.openable ? () => router.push(`/lecture/${encodeURIComponent(l.id)}`) : () => toast.show(l.state === "live" ? "This lecture opens soon." : "This lecture opens in a later week.")}
-                    />
-                  ))}
-                </RowList>
-              </Section>
-            ))
-          : null}
+        {tab === "lectures" ? <WeekList course={course} /> : null}
         {tab === "materials" ? (
           <RowList>
             {materials.map((m) => (

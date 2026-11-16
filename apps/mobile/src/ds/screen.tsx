@@ -1,9 +1,10 @@
-import { Bell, Search } from "lucide-react-native";
+import { Bell, CloudOff, Search } from "lucide-react-native";
 import * as React from "react";
 import { Pressable, RefreshControl, ScrollView, View, type StyleProp, type ViewStyle } from "react-native";
 import Animated, { useReducedMotion } from "react-native-reanimated";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
+import { useOffline } from "@/api/online";
 import { haptic } from "@/lib/haptics";
 import { presets, usePressScale } from "@/motion";
 import { fonts, layout, space, useTheme } from "@/theme";
@@ -65,6 +66,22 @@ export function TopBar({ onSearch, onBell, unread = 0, sub }: { onSearch?: () =>
         </View>
       </View>
     </View>
+  );
+}
+
+/** One thin line while the phone cannot reach the server. Saved copies still show under it. */
+export function OfflineLine() {
+  const c = useTheme();
+  const offline = useOffline();
+  const reduce = useReducedMotion();
+  if (!offline) return null;
+  return (
+    <Animated.View entering={reduce ? undefined : presets.rise(0)} testID="offline-line" accessibilityRole="alert" accessibilityLiveRegion="polite" style={{ flexDirection: "row", alignItems: "center", gap: space[2], paddingVertical: space[2], paddingHorizontal: layout.gutter, backgroundColor: c.band }}>
+      <CloudOff size={16} color={c.onBand} />
+      <T v="small" tone="onBand" style={{ flex: 1 }}>
+        You are offline. Showing what was saved on this phone.
+      </T>
+    </Animated.View>
   );
 }
 
@@ -147,6 +164,7 @@ export function Screen({ children, title, lead, top, footer, onRefresh, refreshi
   return (
     <View ref={root} onLayout={kbLayout} testID={testID} style={{ flex: 1, backgroundColor: c.bg, paddingTop: safeTop ? insets.top : 0, paddingBottom: kb }}>
       {top}
+      <OfflineLine />
       <Animated.View entering={reduce ? undefined : presets.fadeState()} style={{ flex: 1 }}>
         {scroll ? (
           <ScrollView
