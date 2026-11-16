@@ -26,9 +26,9 @@ export default async function MePage() {
   const roleWord = preview ? "Admin, seeing the student side" : profile.role === "alumni" ? "Alumni" : profile.role === "student" ? "Student" : "Admin";
 
   return (
-    <PageFrame>
+    <PageFrame area="me">
       <header className="ds-band flex min-w-0 items-center gap-4">
-        <span aria-hidden className="grid size-14 shrink-0 place-items-center rounded-full bg-brand type-h2 text-brand-foreground">
+        <span aria-hidden className="grid size-14 shrink-0 place-items-center rounded-full bg-[var(--area-deep)] type-h2 text-[var(--area-on-deep)]">
           {((name ?? profile.email ?? "V").trim()[0] ?? "V").toUpperCase()}
         </span>
         <div className="min-w-0 flex-1">

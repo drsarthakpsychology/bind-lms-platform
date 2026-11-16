@@ -13,7 +13,7 @@ export default async function PractisePage() {
   if (!nav) return null;
   const groups = visibleGroups(PRACTISE_GROUPS, nav.access);
   return (
-    <PageFrame title="Practise" band art={<IconTile><Stethoscope /></IconTile>}>
+    <PageFrame title="Practise" area="practise" band art={<IconTile><Stethoscope /></IconTile>}>
       {groups.length ? <HubGroups groups={groups} /> : <p className="type-body text-muted-foreground">Nothing to practise yet. Your cases and games open here when your course starts.</p>}
     </PageFrame>
   );

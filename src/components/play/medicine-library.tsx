@@ -71,13 +71,15 @@ export function MedicineLibrary({ rows, groups, doses }: { rows: MedIndexRow[]; 
             type="button"
             onClick={() => setGroup(g)}
             aria-pressed={group === g}
+            // Each family chip carries a faint wash of its own colour (the spine's); the chosen one fills with the Library colour.
+            style={g !== "All" && group !== g ? ({ "--chip": GROUP_COLOR[g] } as React.CSSProperties) : undefined}
             className={cn(
               "inline-flex h-11 items-center gap-2 rounded-full border-[1.5px] px-4 type-small font-semibold whitespace-nowrap outline-none transition-colors duration-[var(--ds-state)] ease-[var(--ds-ease)] focus-visible:ring-2 focus-visible:ring-ring",
-              group === g ? "border-foreground bg-foreground text-background" : "border-[var(--ds-card-line)] hover:border-foreground",
+              group === g ? "ds-chip-on border-foreground bg-foreground text-background" : g !== "All" ? "ds-chip-family hover:border-foreground" : "border-[var(--ds-card-line)] hover:border-foreground",
             )}
           >
             {/* The family's colour: the same one as the spine on its rows below. */}
-            {g !== "All" ? <span aria-hidden className="size-2.5 shrink-0 rounded-full" style={{ background: GROUP_COLOR[g] }} /> : null}
+            {g !== "All" ? <span aria-hidden className={cn("size-2.5 shrink-0 rounded-full", group === g && "ring-2 ring-current")} style={{ background: GROUP_COLOR[g] }} /> : null}
             {g}
           </button>
         ))}
@@ -113,11 +115,11 @@ export function MedicineLibrary({ rows, groups, doses }: { rows: MedIndexRow[]; 
                       {/* Phones: the dose sits beside the name. */}
                       {doses[m.id] ? <span className="shrink-0 type-small font-semibold type-num md:hidden">{doses[m.id]}</span> : null}
                     </span>
-                    <span className="type-small font-semibold text-link [overflow-wrap:anywhere] md:hidden">{m.cls}</span>
+                    <span className="type-small font-semibold ds-accent [overflow-wrap:anywhere] md:hidden">{m.cls}</span>
                     {m.line ? <span className="type-small text-muted-foreground [overflow-wrap:anywhere]">{m.line}</span> : null}
                     {m.brands.length ? <span className="type-caption text-muted-foreground [overflow-wrap:anywhere]">{m.brands.join(" · ")}</span> : null}
                   </span>
-                  <span className="hidden min-w-0 type-small font-semibold text-link [overflow-wrap:anywhere] md:block">{m.cls}</span>
+                  <span className="hidden min-w-0 type-small font-semibold ds-accent [overflow-wrap:anywhere] md:block">{m.cls}</span>
                   <span className="hidden min-w-0 text-right type-small font-semibold type-num [overflow-wrap:anywhere] md:block">{doses[m.id] ?? ""}</span>
                 </Link>
               </li>
