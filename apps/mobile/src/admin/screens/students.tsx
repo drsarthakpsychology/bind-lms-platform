@@ -3,10 +3,12 @@ import { useLocalSearchParams } from "expo-router";
 import { ChevronRight, KeyRound, ListFilter, Lock, MessageSquare, Share2, Unlock, X } from "lucide-react-native";
 import * as React from "react";
 import { Pressable, Share, View } from "react-native";
+import Animated from "react-native-reanimated";
 
 import { Button, Chips, EmptyState, RowsSkeleton, Screen, Sheet, SwitchRow, T } from "@/ds";
 import { toast } from "@/ds/toast";
 import { haptic } from "@/lib/haptics";
+import { usePressScale } from "@/motion";
 import { layout, space, useTheme } from "@/theme";
 import { adminCalls, useStudents } from "../api";
 import type { AdminStudentRow, AttentionFlag } from "../contract";
@@ -16,10 +18,29 @@ import { AdminTop, openCompose, openStudent } from "../nav";
 import { guarded, useAdminRole } from "../role";
 
 /** One student in the list: name, account and when last seen, lectures, flags. The row opens the profile. */
-export function StudentLine({ r, onPress }: { r: AdminStudentRow; onPress: () => void }) {
+export function StudentLine({ r, onPress, onLongPress, selecting }: { r: AdminStudentRow; onPress: () => void; onLongPress?: () => void; selecting?: boolean }) {
   const c = useTheme();
+  const { style: pressStyle, handlers } = usePressScale(0.98);
   return (
-    <Pressable testID={`student-${r.id}`} accessibilityRole="button" accessibilityLabel={`${r.name}. ${accountLabel(r.account)}. ${r.presence === "now" ? "On now" : `Seen ${ago(r.lastSeen)}`}`} onPress={onPress} style={({ pressed }) => ({ minHeight: 64, paddingVertical: space[2], flexDirection: "row", alignItems: "center", gap: space[2], borderRadius: 8, backgroundColor: pressed ? c.tint : "transparent" })}>
+    <Pressable
+      testID={`student-${r.id}`}
+      accessibilityRole="button"
+      accessibilityLabel={`${r.name}. ${accountLabel(r.account)}. ${r.presence === "now" ? "On now" : `Seen ${ago(r.lastSeen)}`}`}
+      accessibilityHint={selecting ? "Ticks or unticks this student" : onLongPress ? "Opens the profile. Press and hold to select" : undefined}
+      onPress={onPress}
+      onLongPress={
+        onLongPress
+          ? () => {
+              haptic.tap();
+              onLongPress();
+            }
+          : undefined
+      }
+      delayLongPress={350}
+      {...handlers}
+      style={({ pressed }) => ({ borderRadius: 8, backgroundColor: pressed ? c.tint : "transparent" })}
+    >
+      <Animated.View style={[{ minHeight: 72, paddingVertical: space[3], paddingHorizontal: space[2], flexDirection: "row", alignItems: "center", gap: space[2] }, pressStyle]}>
       <View style={{ flex: 1, minWidth: 0, gap: 2 }}>
         <T v="bodyStrong">{r.name}</T>
         <View style={{ flexDirection: "row", flexWrap: "wrap", alignItems: "center", columnGap: space[3], rowGap: 2 }}>
@@ -40,7 +61,8 @@ export function StudentLine({ r, onPress }: { r: AdminStudentRow; onPress: () =>
           </View>
         ) : null}
       </View>
-      <ChevronRight size={20} color={c.muted} />
+      {selecting ? null : <ChevronRight size={20} color={c.muted} />}
+      </Animated.View>
     </Pressable>
   );
 }
@@ -94,8 +116,9 @@ function FiltersSheet({ open, onClose, value, onChange, cohorts, shown }: { open
 }
 
 /**
- * Students: search, filters behind one button, rows you can tick, and one
- * action bar (the pinned footer) only while something is ticked.
+ * Students: search, filters behind one button, and calm rows that open the
+ * profile. Select (or a long press on a row) turns on tick boxes; one action
+ * bar (the pinned footer) shows while something is ticked.
  */
 export function AdminStudentsScreen() {
   const c = useTheme();
@@ -115,6 +138,15 @@ export function AdminStudentsScreen() {
   }
   const [sheet, setSheet] = React.useState(false);
   const [picked, setPicked] = React.useState<Set<string>>(new Set());
+  const [selecting, setSelecting] = React.useState(false);
+  const stopSelecting = () => {
+    setSelecting(false);
+    setPicked(new Set());
+  };
+  const startWith = (id: string) => {
+    setSelecting(true);
+    setPicked(new Set([id]));
+  };
   const [busy, setBusy] = React.useState<string | null>(null);
   const [confirmLock, setConfirmLock] = React.useState(false);
 
@@ -153,7 +185,7 @@ export function AdminStudentsScreen() {
       if (bad) haptic.warn();
       else haptic.success();
       toast.show(bad ? `${what}: ${good}. ${bad} did not work.` : `${what}: ${good}.`);
-      setPicked(new Set());
+      stopSelecting();
       void qc.invalidateQueries({ queryKey: ["admin"] });
     });
   }
@@ -165,7 +197,7 @@ export function AdminStudentsScreen() {
 
   const icon = { size: 18, color: c.ink };
   const bar = picked.size ? (
-    <ActionBar count={picked.size} onClear={() => setPicked(new Set())} testID="action-bar">
+    <ActionBar count={picked.size} onClear={stopSelecting} testID="action-bar">
       {canWrite ? (
         <>
           <SmallButton label="Send login link" icon={<KeyRound {...icon} />} busy={busy === "links"} onPress={() => void bulk("links")} testID="bulk-links" />
@@ -207,8 +239,8 @@ export function AdminStudentsScreen() {
                 <X size={16} color={c.muted} />
               </Pressable>
             ) : null}
-            <View style={{ flexDirection: "row", alignItems: "center", marginLeft: -space[2], gap: space[1] }}>
-              <Check on={allPicked} onPress={() => setPicked(allPicked ? new Set() : new Set(shown.map((r) => r.id)))} label="Select everyone shown" testID="students-all" />
+            <View style={{ flexDirection: "row", alignItems: "center", marginLeft: selecting ? -space[2] : 0, gap: space[1], minHeight: layout.target }}>
+              {selecting ? <Check on={allPicked} onPress={() => setPicked(allPicked ? new Set() : new Set(shown.map((r) => r.id)))} label="Select everyone shown" testID="students-all" /> : null}
               <T v="small" tone="muted" num style={{ flex: 1 }} accessibilityLiveRegion="polite" testID="students-count">
                 {shown.length === rows.length ? `${rows.length} students` : `${shown.length} of ${rows.length}`}
               </T>
@@ -222,6 +254,7 @@ export function AdminStudentsScreen() {
                   }}
                 />
               ) : null}
+              {shown.length ? <Button kind="text" label={selecting ? "Done" : "Select"} onPress={() => (selecting ? stopSelecting() : setSelecting(true))} testID="students-select" /> : null}
             </View>
             {shown.length === 0 ? (
               <EmptyState mood="puzzled" title={rows.length ? "No one matches" : "No students yet"} body={rows.length ? "Try fewer filters." : "Students appear here once they are added on the website."} />
@@ -229,11 +262,17 @@ export function AdminStudentsScreen() {
               <View style={{ borderTopWidth: 1, borderColor: c.hairline }}>
                 {shown.map((r) => (
                   <View key={r.id} style={{ borderBottomWidth: 1, borderColor: c.hairline }}>
-                    <SelectRow on={picked.has(r.id)} onToggle={() => toggle(r.id)} label={`Select ${r.name}`} testID={`student-${r.id}`}>
-                      <SwipeRow enabled={canWrite} action={{ label: "Message", onPress: () => openCompose({ to: [r.id] }) }} testID={`swipe-${r.id}`}>
-                        <StudentLine r={r} onPress={() => openStudent(r.id)} />
-                      </SwipeRow>
-                    </SelectRow>
+                    {selecting ? (
+                      <SelectRow on={picked.has(r.id)} onToggle={() => toggle(r.id)} label={`Select ${r.name}`} testID={`student-${r.id}`}>
+                        <StudentLine r={r} selecting onPress={() => toggle(r.id)} />
+                      </SelectRow>
+                    ) : (
+                      <View style={{ marginHorizontal: -space[2] }}>
+                        <SwipeRow enabled={canWrite} action={{ label: "Message", onPress: () => openCompose({ to: [r.id] }) }} testID={`swipe-${r.id}`}>
+                          <StudentLine r={r} onPress={() => openStudent(r.id)} onLongPress={() => startWith(r.id)} />
+                        </SwipeRow>
+                      </View>
+                    )}
                   </View>
                 ))}
               </View>
