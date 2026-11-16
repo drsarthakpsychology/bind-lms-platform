@@ -26,9 +26,12 @@ jest.mock("@/api/mock/server", () => {
   const real = jest.requireActual("@/api/mock/server");
   return {
     ...real,
-    mockTransport: async (req: { path: string }) => {
+    mockTransport: async (req: { path: string; headers?: Record<string, string> }) => {
       const b = (globalThis as unknown as { __bend: (r: RawResponse, p: string) => RawResponse | Promise<RawResponse> }).__bend;
-      const res = await real.mockTransport(req);
+      // A bent answer is a different answer: never let a 304 hand back the plain copy the client holds.
+      const headers = { ...(req.headers ?? {}) };
+      delete headers["If-None-Match"];
+      const res = await real.mockTransport({ ...req, headers });
       return b ? b(res, req.path) : res;
     },
   };

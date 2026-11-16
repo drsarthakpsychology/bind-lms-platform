@@ -9,6 +9,7 @@ import { keys, useModule } from "@/api/queries";
 import { Button, Loaded, Row, RowList, RowsSkeleton, Screen, Section, T } from "@/ds";
 import { toast } from "@/ds/toast";
 import { haptic } from "@/lib/haptics";
+import { go } from "@/api/prefetch";
 import { openTarget } from "@/nav/targets";
 import { saveLearn, withActivity, withWritten } from "@/study/state";
 import { space, useTheme } from "@/theme";
@@ -53,7 +54,7 @@ export function ModuleBody({ m }: { m: ModuleDetail }) {
     if (last && last.part === s.part) last.items.push(s);
     else parts.push({ part: s.part, items: [s] });
   }
-  const openSection = (s: SectionToc) => router.push(s.isTest ? `/study/${encodeURIComponent(m.id)}/test` : `/study/${encodeURIComponent(m.id)}/${encodeURIComponent(s.id)}`);
+  const openSection = (s: SectionToc) => go(s.isTest ? `/study/${encodeURIComponent(m.id)}/test` : `/study/${encodeURIComponent(m.id)}/${encodeURIComponent(s.id)}`);
   return (
     <>
       <View style={{ gap: space[2] }}>

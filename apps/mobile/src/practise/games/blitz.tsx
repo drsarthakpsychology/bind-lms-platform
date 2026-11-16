@@ -75,36 +75,58 @@ export function BlitzGame() {
     return () => clearInterval(id);
   }, [phase.t, finish]);
 
-  // 3, 2, 1
+  // 3, 2, 1, Go. The round is dealt while the count runs, so the wait for the server hides inside it;
+  // a slow deal holds on "Go" and the round starts the moment it lands.
+  const [dealt, setDealt] = React.useState(false);
+  React.useEffect(() => {
+    if (phase.t === "count" && phase.n > 0) haptic.select();
+  }, [phase]);
   React.useEffect(() => {
     if (phase.t !== "count") return;
-    haptic.select();
     const n = phase.n;
+    const go = () => {
+      endAt.current = clock() + BLITZ_MS;
+      setPhase({ t: "run" });
+    };
+    if (n <= 0) {
+      if (dealt) go();
+      return;
+    }
     const id = setTimeout(
       () => {
-        if (n <= 1) {
-          endAt.current = clock() + BLITZ_MS;
-          setPhase({ t: "run" });
-        } else setPhase({ t: "count", n: n - 1 });
+        if (n <= 1 && dealt) go();
+        else setPhase({ t: "count", n: n - 1 });
       },
       reduce ? 300 : 650,
     );
     return () => clearTimeout(id);
-  }, [phase, reduce]);
+  }, [phase, reduce, dealt]);
 
   const start = async () => {
     mv.reset();
     react.reset();
     finishing.current = false;
-    const r = await mv.run(() => play<BlitzStart>("blitz", "start"));
-    if (!r) return;
-    token.current = r.token;
-    setQ(r.question);
+    setDealt(false);
     setRun({ score: 0, combo: 0, correct: 0, answered: 0, best: 0 });
     setMisses([]);
     setReveal(null);
-    setLeft(r.msLeft);
     setPhase({ t: "count", n: 3 });
+    let failed = false;
+    const r = await mv.run(() =>
+      play<BlitzStart>("blitz", "start").catch((e: unknown) => {
+        failed = true;
+        throw e;
+      }),
+    );
+    if (!r) {
+      // Not dealt (no connection): back to the start screen, where the error shows with Play.
+      if (failed) setPhase({ t: "start" });
+      return;
+    }
+    token.current = r.token;
+    setQ(r.question);
+    setLeft(r.msLeft);
+    setDealt(true);
   };
 
   const answer = async (choice: number) => {

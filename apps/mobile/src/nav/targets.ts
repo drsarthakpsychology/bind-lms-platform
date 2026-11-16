@@ -1,6 +1,7 @@
 import { router } from "expo-router";
 
 import type { AppTarget, Me } from "@/api/contract";
+import { prefetchRoute } from "@/api/prefetch";
 import { toast } from "@/ds/toast";
 import { openWebsite } from "@/ds/query";
 
@@ -102,7 +103,11 @@ export function openTarget(t: AppTarget | null | undefined): void {
   } catch {
     href = null;
   }
-  if (href) router.push(href);
+  if (href) {
+    // Its data starts loading now, while the screen is still on its way.
+    prefetchRoute(href);
+    router.push(href);
+  }
   // Not in the app yet: open the same page on the website rather than a dead end.
   else if (t && typeof t === "object" && typeof t.web === "string" && t.web) openWebsite(t.web);
   else toast.show("This part arrives in the next update of the app.");
