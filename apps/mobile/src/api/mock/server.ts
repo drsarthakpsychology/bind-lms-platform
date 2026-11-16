@@ -59,6 +59,19 @@ function structuredCloneSafe<T>(v: T): T {
 }
 
 let state = fresh();
+let stress = false;
+
+/** Long text and large numbers for layout checks (web screenshots only). */
+const LONG = " Venkatasubramanian Raghunathan Chattopadhyay";
+const TEXT_KEYS = /^(name|title|fullName|displayName|label|cohortName|moduleTitle|courseTitle|sectionTitle|lectureTitle|subject|topic|studentName|author|by)$/;
+const NUM_KEYS = /^(count|points|xp|streak|total|done|answered|correct|unread|minutes|students|members|views|score|coins|rank|days)$/i;
+function stressed(v: unknown, key = ""): unknown {
+  if (Array.isArray(v)) return v.map((x) => stressed(x, key));
+  if (v && typeof v === "object") return Object.fromEntries(Object.entries(v as Record<string, unknown>).map(([k, x]) => [k, stressed(x, k)]));
+  if (typeof v === "string" && TEXT_KEYS.test(key) && v.length > 0 && v.length < 60 && !v.includes("://")) return v + LONG;
+  if (typeof v === "number" && NUM_KEYS.test(key) && Number.isInteger(v) && v > 0) return v * 37;
+  return v;
+}
 
 export const mock = {
   reset() {
@@ -77,6 +90,10 @@ export const mock = {
   },
   replaceDevice() {
     state.replaced = true;
+  },
+  /** Layout checks: long names and titles, big numbers in every answer. */
+  setStress(on: boolean) {
+    stress = on;
   },
   log: () => state.log,
 };
@@ -367,5 +384,6 @@ async function route(req: RawRequest): Promise<RawResponse> {
 export const mockTransport: Transport = async (req) => {
   state.log.push({ method: req.method, path: req.path, body: req.body });
   if (state.delayMs) await new Promise((r) => setTimeout(r, state.delayMs));
-  return route(req);
+  const res = await route(req);
+  return stress && res.json ? { ...res, json: stressed(res.json) as RawResponse["json"] } : res;
 };

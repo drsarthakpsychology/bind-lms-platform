@@ -24,13 +24,14 @@ export function Field({ label, error, hint, secret, area, onFocus, onBlur, input
   return (
     <View style={{ gap: space[2] }}>
       <T v="small">{label}</T>
-      <View style={{ flexDirection: "row", alignItems: area ? "flex-start" : "center", minHeight: area ? 120 : layout.primary, borderRadius: layout.radius, borderWidth: focus ? 2 : 1.5, borderColor: error ? c.danger : focus ? c.link : c.cardLine, backgroundColor: c.card, paddingHorizontal: focus ? space[4] - 0.5 : space[4] }}>
+      <View style={{ flexDirection: "row", alignItems: area ? "flex-start" : "center", minHeight: area ? 120 : layout.primary, borderRadius: layout.radius, borderWidth: focus ? 2 : 1.5, borderColor: error ? c.danger : focus ? c.link : c.fieldLine, backgroundColor: c.card, paddingHorizontal: focus ? space[4] - 0.5 : space[4] }}>
         <TextInput
           ref={inputRef}
           accessibilityLabel={label}
           accessibilityHint={error ?? hint}
-          placeholderTextColor={c.muted}
-          selectionColor={c.brand}
+          placeholderTextColor={c.faint}
+          selectionColor={c.accent}
+          keyboardAppearance={c.dark ? "dark" : "light"}
           cursorColor={c.link}
           multiline={area}
           textAlignVertical={area ? "top" : "center"}

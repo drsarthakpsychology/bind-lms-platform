@@ -1,6 +1,6 @@
 import type * as React from "react";
 import { redirect } from "next/navigation";
-import { requireAdmin } from "@/lib/auth/guards";
+import { isSuperAdmin, requireAdmin } from "@/lib/auth/guards";
 import { ArrowRight, Bell, BookOpen, Database, GraduationCap, Inbox, KeyRound, Mail, MailWarning, PhoneCall, Plus, ShieldAlert, ToggleLeft, UserPlus, Users } from "lucide-react";
 import Link from "next/link";
 import { loadAdminOverview, type AdminTodoIcon } from "@/lib/admin/overview";
@@ -54,7 +54,8 @@ export default async function AdminOverviewPage() {
         neverIn={neverIn}
         dbPct={dbPct}
         actions={
-          <>
+          // Messaging, adding people and new courses are Super Admin only.
+          isSuperAdmin(me) ? <>
             <Link href="/admin/emails?folder=notify" className={btn.quiet}>
               <Bell aria-hidden /> Message
             </Link>
@@ -62,7 +63,7 @@ export default async function AdminOverviewPage() {
             <Link href="/admin/courses" className={btn.quiet}>
               <Plus aria-hidden /> New course
             </Link>
-          </>
+          </> : null
         }
       />
     );

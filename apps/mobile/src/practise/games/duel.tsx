@@ -168,7 +168,7 @@ function LiveDuel({ how, profile }: { how: string[]; profile: Profile }) {
   React.useEffect(() => {
     if (last && last.round > seen.current) {
       seen.current = last.round;
-      react.answer(last.you.dxOk);
+      react.answer(last.you.dxOk, { timed: true });
     }
   }, [last, react]);
 
@@ -249,7 +249,7 @@ function LocalDuel({ how, items }: { how: string[]; items: Item[] }) {
       setReveal({ dxOk, featureOk, points, dx: round.dx, feature: round.feature, why: round.why, opp });
       setScore((s) => ({ you: s.you + points, opp: s.opp + opp }));
       setMarks((m) => [...m, dxOk ? "ok" : "miss"]);
-      react.answer(dxOk);
+      react.answer(dxOk, { timed: true });
     },
     [game, round, reveal, at, react],
   );

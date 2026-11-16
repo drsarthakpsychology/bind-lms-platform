@@ -52,6 +52,7 @@ export function MailV2({
   open,
   openId,
   panel,
+  canCompose = true,
 }: {
   folder: string;
   folders: readonly { id: string; label: string }[];
@@ -65,6 +66,8 @@ export function MailV2({
   openId?: string;
   /** Compose, Notifications or the Failed list: takes the whole body. */
   panel?: React.ReactNode;
+  /** False for a View Admin: sending is Super Admin only, so no Compose button. */
+  canCompose?: boolean;
 }) {
   const reading = Boolean(open);
   const composing = folder === "compose";
@@ -73,7 +76,7 @@ export function MailV2({
       title={composing ? "New email" : "Messages"}
       back={composing ? { href: "/admin/emails", label: "Messages" } : undefined}
       actions={
-        composing ? undefined : (
+        composing || !canCompose ? undefined : (
           <Link href="/admin/emails?folder=compose" className={cn(btn.primary, "hidden md:inline-flex")}>
             <PenSquare aria-hidden /> Compose
             <kbd className="ml-1 hidden rounded border border-current px-1 type-caption lg:inline" aria-hidden>C</kbd>
@@ -154,14 +157,14 @@ export function MailV2({
             ) : (
               <p className="py-16 text-center type-small text-muted-foreground">
                 Pick an email to read it.
-                <span className="mt-1 block type-caption font-medium">J / K to move · C to compose</span>
+                <span className="mt-1 block type-caption font-medium">{canCompose ? "J / K to move · C to compose" : "J / K to move"}</span>
               </p>
             )}
           </section>
         </div>
       )}
 
-      {!composing && !reading ? (
+      {canCompose && !composing && !reading ? (
         <Link
           href="/admin/emails?folder=compose"
           className="fixed right-4 bottom-[calc(var(--nav-h)+1rem)] z-30 inline-flex h-12 items-center gap-2 rounded-[var(--ds-radius)] border-2 border-foreground bg-primary px-4 type-small font-bold text-primary-foreground hard-shadow-sm outline-none focus-visible:ring-2 focus-visible:ring-ring md:hidden"

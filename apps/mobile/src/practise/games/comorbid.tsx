@@ -157,7 +157,7 @@ export function ComorbidGame() {
                 onPress={() => setSel(on ? null : h.uid)}
                 testID={`co-card-${h.uid}`}
                 style={{ width: 148, transform: [{ translateY: on ? -8 : 0 }] }}
-                innerStyle={{ minHeight: 180, padding: space[3], gap: space[2], borderRadius: layout.radius, borderWidth: on ? 2.5 : 1.5, borderColor: on ? c.brand : c.cardLine, backgroundColor: h.kind === "rule" ? c.alertBg : h.kind === "clear" ? c.successBg : c.card }}
+                innerStyle={{ minHeight: 180, padding: space[3], gap: space[2], borderRadius: layout.radius, borderWidth: on ? 2.5 : 1.5, borderColor: on ? c.accent : c.cardLine, backgroundColor: h.kind === "rule" ? c.alertBg : h.kind === "clear" ? c.successBg : c.card }}
               >
                 <T v="caption" tone="muted">
                   {KIND_LABEL[h.kind].toUpperCase()}

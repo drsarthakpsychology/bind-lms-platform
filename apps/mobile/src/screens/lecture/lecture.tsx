@@ -19,7 +19,7 @@ import { createStore } from "@/lib/store";
 import { Swap } from "@/motion";
 import { haptic } from "@/lib/haptics";
 import { enablePush, pushStatus } from "@/push";
-import { layout, space, useTheme } from "@/theme";
+import { fixed, layout, space, useLightStatusBar, useTheme } from "@/theme";
 
 type Tab = "about" | "materials" | "assignment";
 
@@ -161,6 +161,8 @@ function ReminderSheet({ open, onClose }: { open: boolean; onClose: () => void }
 
 export function LectureScreen() {
   const c = useTheme();
+  // The top is always black (video), so the clock and battery stay white in light mode too.
+  useLightStatusBar();
   const insets = useSafeAreaInsets();
   const qc = useQueryClient();
   const params = useLocalSearchParams<{ lessonId: string; tab?: string }>();
@@ -237,12 +239,12 @@ export function LectureScreen() {
   return (
     <View testID="lecture" style={{ flex: 1, backgroundColor: c.bg }}>
       {/* Black band under the status bar, the way back, and the video edge to edge. */}
-      <View style={{ backgroundColor: "#000000", paddingTop: insets.top }}>
+      <View style={{ backgroundColor: fixed.black, paddingTop: insets.top }}>
         <View style={{ flexDirection: "row", alignItems: "center", minHeight: layout.target, paddingRight: layout.gutter }}>
           <Pressable accessibilityRole="button" accessibilityLabel="Back" onPress={back} hitSlop={4} style={{ width: layout.target, height: layout.target, alignItems: "center", justifyContent: "center" }} testID="lecture-back">
-            <ChevronLeft size={26} color="#ffffff" />
+            <ChevronLeft size={26} color={fixed.onVideo} />
           </Pressable>
-          <T v="small" numberOfLines={1} style={{ color: "rgba(255,255,255,0.8)", flex: 1 }}>
+          <T v="small" numberOfLines={1} style={{ color: fixed.onVideoMuted, flex: 1 }}>
             {l ? `${l.number ? `Lecture ${l.number} · ` : ""}Week ${l.week}` : " "}
           </T>
         </View>
@@ -250,7 +252,7 @@ export function LectureScreen() {
           <ProtectedPlayer lessonId={lessonId} onTime={onTime} />
         ) : l ? (
           <View style={{ aspectRatio: 16 / 9, alignItems: "center", justifyContent: "center", padding: space[5] }}>
-            <T center style={{ color: "#ffffff" }}>
+            <T center style={{ color: fixed.onVideo }}>
               This lecture has no video. Read the notes below.
             </T>
           </View>

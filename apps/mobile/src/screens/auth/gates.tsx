@@ -187,7 +187,7 @@ export function UpdateScreen({ storeUrl }: { storeUrl: string | null }) {
   const url = storeUrl ?? cfg.data?.storeUrl?.android ?? "https://play.google.com/store/apps/details?id=com.vibhapsychology.app";
   return (
     <Gate testID="update" footer={<Button label="Update the app" onPress={() => void Linking.openURL(url)} testID="update-button" />}>
-      <EmptyState mood="calm" title="Time for an update" body="This version of the app is too old to carry on. The update takes a minute and your progress is safe." />
+      <EmptyState mood="wait" title="Time for an update" body="This version of the app is too old to carry on. The update takes a minute and your progress is safe." />
     </Gate>
   );
 }
@@ -206,7 +206,7 @@ export function PausedScreen({ message }: { message: string }) {
         </>
       }
     >
-      <EmptyState mood="sleepy" title="Your account is paused" body={message} />
+      <EmptyState mood="wait" title="Your account is paused" body={message} />
     </Gate>
   );
 }
@@ -215,7 +215,7 @@ export function PausedScreen({ message }: { message: string }) {
 export function OtherDeviceScreen({ onContinue }: { onContinue: () => void }) {
   return (
     <Gate testID="other-device" footer={<Button label="Sign in again" onPress={onContinue} testID="other-device-continue" />}>
-      <EmptyState mood="puzzled" title="Opened on another device" body="Your account was opened on another phone, so this one was signed out. VIBHA works on one phone at a time. Sign in again to use this one." />
+      <EmptyState mood="error" title="Opened on another device" body="Your account was opened on another phone, so this one was signed out. VIBHA works on one phone at a time. Sign in again to use this one." />
     </Gate>
   );
 }

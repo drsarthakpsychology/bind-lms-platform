@@ -15,7 +15,7 @@ import { api } from "@/auth";
 import { Button, Skeleton, T } from "@/ds";
 import { haptic } from "@/lib/haptics";
 import { allowRotation, goLandscape, holdPortrait } from "@/lib/orientation";
-import { fonts, layout, motion, space } from "@/theme";
+import { ThemeProvider, fixed, fonts, layout, motion, space } from "@/theme";
 import { Watermark } from "./watermark";
 
 /**
@@ -127,9 +127,9 @@ function Scrubber({ time, duration, onSeek }: { time: number; duration: number; 
         onAccessibilityAction={(e) => onSeek(time + (e.nativeEvent.actionName === "increment" ? 30 : -30))}
         style={{ height: layout.target, justifyContent: "center", flex: 1 }}
       >
-        <View pointerEvents="none" style={{ height: 4, borderRadius: 2, backgroundColor: "rgba(255,255,255,0.3)", overflow: "visible" }}>
-          <View style={{ width: `${pct * 100}%`, height: 4, borderRadius: 2, backgroundColor: "#cdf24b" }} />
-          <View style={{ position: "absolute", left: `${pct * 100}%`, top: -6, width: 16, height: 16, marginLeft: -8, borderRadius: 8, backgroundColor: "#ffffff" }} />
+        <View pointerEvents="none" style={{ height: 4, borderRadius: 2, backgroundColor: fixed.videoTrack, overflow: "visible" }}>
+          <View style={{ width: `${pct * 100}%`, height: 4, borderRadius: 2, backgroundColor: fixed.lime }} />
+          <View style={{ position: "absolute", left: `${pct * 100}%`, top: -6, width: 16, height: 16, marginLeft: -8, borderRadius: 8, backgroundColor: fixed.white }} />
         </View>
       </View>
   );
@@ -137,7 +137,7 @@ function Scrubber({ time, duration, onSeek }: { time: number; duration: number; 
 
 function RoundButton({ label, onPress, children, size = 48 }: { label: string; onPress: () => void; children: React.ReactNode; size?: number }) {
   return (
-    <Pressable accessibilityRole="button" accessibilityLabel={label} onPress={onPress} hitSlop={6} style={({ pressed }) => ({ width: size, height: size, borderRadius: size / 2, alignItems: "center", justifyContent: "center", backgroundColor: pressed ? "rgba(255,255,255,0.22)" : "rgba(17,17,17,0.45)" })}>
+    <Pressable accessibilityRole="button" accessibilityLabel={label} onPress={onPress} hitSlop={6} style={({ pressed }) => ({ width: size, height: size, borderRadius: size / 2, alignItems: "center", justifyContent: "center", backgroundColor: pressed ? fixed.videoButtonPressed : fixed.videoButton })}>
       {children}
     </Pressable>
   );
@@ -163,25 +163,25 @@ function Controls({ pb, full, onFull, onFirstPlay }: { pb: Playback; full: boole
   return (
     <Pressable accessibilityLabel={shown ? "Hide controls" : "Show controls"} onPress={() => setShown((s) => !s)} style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0 }} testID="player-surface">
       {shown ? (
-        <Animated.View entering={reduce ? undefined : FadeIn.duration(motion.state)} exiting={reduce ? undefined : FadeOut.duration(motion.state)} style={{ flex: 1, backgroundColor: "rgba(0,0,0,0.28)", justifyContent: "space-between" }}>
+        <Animated.View entering={reduce ? undefined : FadeIn.duration(motion.state)} exiting={reduce ? undefined : FadeOut.duration(motion.state)} style={{ flex: 1, backgroundColor: fixed.videoWash, justifyContent: "space-between" }}>
           <View />
           <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "center", gap: space[6] }}>
             <RoundButton label="Back 10 seconds" onPress={() => pb.seek(pb.time - 10)}>
-              <RotateCcw size={22} color="#ffffff" />
+              <RotateCcw size={22} color={fixed.onVideo} />
             </RoundButton>
             <RoundButton label={pb.playing ? "Pause" : "Play"} onPress={toggle} size={64}>
-              {pb.playing ? <Pause size={30} color="#ffffff" fill="#ffffff" /> : <Play size={30} color="#ffffff" fill="#ffffff" style={{ marginLeft: 3 }} />}
+              {pb.playing ? <Pause size={30} color={fixed.onVideo} fill={fixed.onVideo} /> : <Play size={30} color={fixed.onVideo} fill={fixed.onVideo} style={{ marginLeft: 3 }} />}
             </RoundButton>
             <RoundButton label="Forward 10 seconds" onPress={() => pb.seek(pb.time + 10)}>
-              <RotateCw size={22} color="#ffffff" />
+              <RotateCw size={22} color={fixed.onVideo} />
             </RoundButton>
           </View>
           <View style={{ flexDirection: "row", alignItems: "center", gap: space[3], paddingHorizontal: space[3] }}>
-            <T v="caption" num style={{ color: "#ffffff", fontFamily: fonts.semibold }} maxFontSizeMultiplier={1.2}>
+            <T v="caption" num style={{ color: fixed.onVideo, fontFamily: fonts.semibold }} maxFontSizeMultiplier={1.2}>
               {clock(pb.time)}
             </T>
             <Scrubber time={pb.time} duration={pb.duration} onSeek={pb.seek} />
-            <T v="caption" num style={{ color: "#ffffff", fontFamily: fonts.semibold }} maxFontSizeMultiplier={1.2}>
+            <T v="caption" num style={{ color: fixed.onVideo, fontFamily: fonts.semibold }} maxFontSizeMultiplier={1.2}>
               {clock(pb.duration)}
             </T>
             <Pressable
@@ -200,7 +200,7 @@ function Controls({ pb, full, onFull, onFirstPlay }: { pb: Playback; full: boole
               </T>
             </Pressable>
             <Pressable accessibilityRole="button" accessibilityLabel={full ? "Leave full screen" : "Full screen"} onPress={onFull} hitSlop={6} style={{ width: layout.target, height: layout.target, alignItems: "center", justifyContent: "center" }} testID="player-full">
-              {full ? <Minimize size={22} color="#ffffff" /> : <Maximize size={22} color="#ffffff" />}
+              {full ? <Minimize size={22} color={fixed.onVideo} /> : <Maximize size={22} color={fixed.onVideo} />}
             </Pressable>
           </View>
         </Animated.View>
@@ -302,13 +302,15 @@ export function ProtectedPlayer({ lessonId, onTime, compromised }: PlayerProps) 
   } else if (phase.kind === "refused" || phase.kind === "error") {
     body = (
       <View testID={phase.kind === "refused" ? "player-refused" : "player-error"} style={{ flex: 1, alignItems: "center", justifyContent: "center", padding: space[5], gap: space[3] }}>
-        <T center style={{ color: "#ffffff" }}>
+        <T center style={{ color: fixed.onVideo }}>
           {phase.message}
         </T>
-        {phase.kind === "error" ? <Button kind="quiet" full={false} label="Try again" onPress={() => {
+        {phase.kind === "error" ? <ThemeProvider force="light">
+                <Button kind="quiet" full={false} label="Try again" onPress={() => {
               setPhase({ kind: "loading" });
               setAttempt((a) => a + 1);
-            }} style={{ backgroundColor: "#ffffff", borderRadius: layout.radius }} /> : null}
+            }} style={{ backgroundColor: fixed.white, borderRadius: layout.radius }} />
+              </ThemeProvider> : null}
       </View>
     );
   } else {
@@ -322,13 +324,15 @@ export function ProtectedPlayer({ lessonId, onTime, compromised }: PlayerProps) 
               <TimeReporter pb={pb} onTime={onTime} />
               {pb.failed ? (
                 <View style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, alignItems: "center", justifyContent: "center", padding: space[5], gap: space[3] }}>
-                  <T center style={{ color: "#ffffff" }}>
+                  <T center style={{ color: fixed.onVideo }}>
                     {`The lecture stopped. ${reasonOf(pb.failed)}`}
                   </T>
-                  <Button kind="quiet" full={false} label="Try again" onPress={() => {
+                  <ThemeProvider force="light">
+                <Button kind="quiet" full={false} label="Try again" onPress={() => {
               setPhase({ kind: "loading" });
               setAttempt((a) => a + 1);
-            }} style={{ backgroundColor: "#ffffff", borderRadius: layout.radius }} />
+            }} style={{ backgroundColor: fixed.white, borderRadius: layout.radius }} />
+              </ThemeProvider>
                 </View>
               ) : (
                 <Controls pb={pb} full={full} onFull={toggleFull} onFirstPlay={() => undefined} />
@@ -342,12 +346,12 @@ export function ProtectedPlayer({ lessonId, onTime, compromised }: PlayerProps) 
   }
 
   return (
-    <View testID="player" style={[frame, { backgroundColor: "#000000", overflow: "hidden" }]}>
+    <View testID="player" style={[frame, { backgroundColor: fixed.black, overflow: "hidden" }]}>
       {full ? <StatusBar hidden /> : null}
       {body}
       {captured ? (
-        <View testID="player-captured" style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, backgroundColor: "#000000", alignItems: "center", justifyContent: "center", padding: space[5] }}>
-          <T center style={{ color: "#ffffff" }}>
+        <View testID="player-captured" style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, backgroundColor: fixed.black, alignItems: "center", justifyContent: "center", padding: space[5] }}>
+          <T center style={{ color: fixed.onVideo }}>
             Screen recording or mirroring is on, so the lecture is hidden. Turn it off to carry on.
           </T>
         </View>

@@ -8,10 +8,9 @@ import { space, useTheme } from "@/theme";
 import { useCohort, useCohorts, useRefreshAdmin } from "../api";
 import type { CohortStatus } from "../extra";
 import { accountLabel, accountTone, ago, day, pct, plural, type Tone } from "../format";
-import { Figures, Loaded, Meter, Quiet, Status } from "../kit";
+import { Figures, Loaded, Meter, Quiet, ScrollTabs, Status } from "../kit";
 import { openCompose, openStudent } from "../nav";
 import { useAdminRole } from "../role";
-import { ScrollTabs } from "./student";
 
 export const COHORT_STATUS: Record<CohortStatus, { label: string; tone: Tone }> = {
   upcoming: { label: "Upcoming", tone: "info" },
@@ -42,7 +41,7 @@ export function AdminCohortsScreen() {
               ))}
             </RowList>
           ) : (
-            <EmptyState mood="sleepy" title="No cohorts yet" body="Make one on the website." />
+            <EmptyState mood="empty" title="No cohorts yet" body="Make one on the website." />
           )
         }
       </Loaded>

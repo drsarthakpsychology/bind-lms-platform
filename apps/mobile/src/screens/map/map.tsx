@@ -23,13 +23,13 @@ export function stateLook(c: Palette, s: MapStateKey): { bg: string; fg: string;
     case "mastered":
       return { bg: c.primary, fg: c.onPrimary, border: c.primary, Icon: Check };
     case "learning":
-      return { bg: c.brand, fg: c.onBrand, border: c.brand, Icon: null };
+      return { bg: c.accent, fg: c.onAccent, border: c.accent, Icon: null };
     case "shaky":
       return { bg: c.alertBg, fg: c.danger, border: c.danger, Icon: AlertTriangle };
     case "decaying":
       return { bg: c.card, fg: c.ink, border: c.ink, Icon: RotateCcw };
     default:
-      return { bg: c.tint, fg: c.muted, border: c.cardLine, Icon: null };
+      return { bg: c.tint, fg: c.muted, border: c.fieldLine, Icon: null };
   }
 }
 

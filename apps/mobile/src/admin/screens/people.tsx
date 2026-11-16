@@ -11,10 +11,10 @@ import { space, useTheme } from "@/theme";
 import { adminCalls, useAdminAction, useEnquiries, usePeople, usePerson, useRefreshAdmin } from "../api";
 import { PEOPLE_VIEWS, STAGE_LABEL, STAGES, type EmailPreview, type LoginLinkResult, type PeopleView, type PersonRow, type StageId } from "../extra";
 import { ago, day, followUpLine, inPeopleView, plural, whatsapp, type Tone } from "../format";
-import { ActionBar, Check, Dot, Facts, FilterChips, Loaded, Notice, OptionRow, Quiet, SearchBox, SelectRow, SmallButton, Status, SwipeRow, Tag } from "../kit";
+import { ActionBar, Check, Dot, Facts, FilterChips, Loaded, Notice, OptionRow, Quiet, ScrollTabs, SearchBox, SelectRow, SmallButton, Status, SwipeRow, TabSwap, Tag } from "../kit";
 import { openStudent } from "../nav";
 import { useAdminRole, VIEW_ONLY_LINE } from "../role";
-import { LinkSheet, ScrollTabs } from "./student";
+import { LinkSheet } from "./student";
 
 export function stageTone(s: StageId): Tone {
   return s === "joined" ? "ok" : s === "new" ? "warn" : s === "no_reply" || s === "not_interested" ? "quiet" : "info";
@@ -45,6 +45,7 @@ export function ContactSheet({
   allowance?: { configured: boolean; left: number; limit: number } | null;
   preview?: (subject: string, text: string) => Promise<EmailPreview>;
 }) {
+  const c = useTheme();
   const [subject, setSubject] = React.useState("");
   const [text, setText] = React.useState("");
   const [error, setError] = React.useState<string | null>(null);
@@ -92,7 +93,7 @@ export function ContactSheet({
           </View>
         ) : null}
         {shown ? (
-          <View style={{ gap: space[1], padding: space[3], borderRadius: 10, borderWidth: 1, borderColor: "rgba(127,127,127,0.35)" }} testID="contact-preview">
+          <View style={{ gap: space[1], padding: space[3], borderRadius: 10, borderWidth: 1, borderColor: c.cardLine }} testID="contact-preview">
             <T v="caption" tone="muted">
               {`To ${shown.to}`}
             </T>
@@ -196,7 +197,7 @@ function Pipeline({ initialView }: { initialView: PeopleView }) {
                 </View>
               </View>
             ) : (
-              <EmptyState mood="sleepy" title="Nobody here" body={view === "all" ? "People who enquire show here." : "No one is in this view right now."} />
+              <EmptyState mood="empty" title="Nobody here" body={view === "all" ? "People who enquire show here." : "No one is in this view right now."} />
             )}
             {picked.size ? (
               <View style={{ paddingTop: space[2] }}>
@@ -290,7 +291,7 @@ function Enquiries() {
             ))}
           </RowList>
         ) : (
-          <EmptyState mood="sleepy" title="No enquiries" body="People who fill the enquiry form show here, newest first." />
+          <EmptyState mood="empty" title="No enquiries" body="People who fill the enquiry form show here, newest first." />
         )
       }
     </Loaded>
@@ -313,7 +314,9 @@ export function AdminPeopleScreen() {
         value={tab}
         onChange={setTab}
       />
-      {tab === "pipeline" ? <Pipeline initialView={initialView} /> : <Enquiries />}
+      <TabSwap tabs={[{ id: "pipeline" as const }, { id: "enquiries" as const }]} value={tab} gap={space[4]}>
+        {tab === "pipeline" ? <Pipeline initialView={initialView} /> : <Enquiries />}
+      </TabSwap>
     </Screen>
   );
 }

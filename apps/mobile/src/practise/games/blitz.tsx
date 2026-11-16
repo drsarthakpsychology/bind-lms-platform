@@ -102,7 +102,7 @@ export function BlitzGame() {
     token.current = r.token;
     setReveal({ picked: choice, answer: r.answer });
     setRun({ ...r.state });
-    react.answer(r.right);
+    react.answer(r.right, { timed: true });
     if (!r.right) {
       setMisses((m) => [...m, { prompt: asked.prompt, answer: asked.options[r.answer] ?? "", why: r.why }]);
     }

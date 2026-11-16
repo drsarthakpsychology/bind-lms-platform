@@ -1,7 +1,7 @@
 import { useLocalSearchParams } from "expo-router";
 import { FlaskConical, Lightbulb } from "lucide-react-native";
 import * as React from "react";
-import { View } from "react-native";
+import { Pressable, View } from "react-native";
 import Animated, { FadeInDown, useReducedMotion } from "react-native-reanimated";
 
 import { Button, Row, RowList, Section, T } from "@/ds";
@@ -180,7 +180,11 @@ function CaseBoard({ first, mode, caseId, another }: { first: DailyMove; mode: "
       {body}
       <MoveError text={mv.error} />
       {v.guesses.length && !v.guesses[v.guesses.length - 1]!.ok ? <Verdict right={false} title="Not this one" why="The next clue is open." seed={v.guesses.length} /> : null}
-      <Button kind="danger" label="Give up and see the answer" onPress={() => void act({ t: "giveup" })} testID="daily-giveup" />
+      <Pressable accessibilityRole="button" onPress={() => void act({ t: "giveup" })} disabled={mv.pending} hitSlop={8} style={{ minHeight: 44, alignSelf: "center", justifyContent: "center", paddingHorizontal: space[3] }} testID="daily-giveup">
+        <T v="small" tone="muted" style={{ textDecorationLine: "underline" }}>
+          Give up and see the answer
+        </T>
+      </Pressable>
       <GuessSheet open={guessing} onClose={() => setGuessing(false)} tried={v.guesses.map((g) => g.dx)} onGuess={(dx) => { setGuessing(false); void act({ t: "guess", dx }); }} />
     </GameFrame>
   );

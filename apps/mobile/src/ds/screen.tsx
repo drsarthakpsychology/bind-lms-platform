@@ -9,6 +9,7 @@ import { presets, usePressScale } from "@/motion";
 import { fonts, layout, motion, space, useTheme } from "@/theme";
 import { Button } from "./button";
 import { ProgressLine } from "./parts";
+import { useKeyboardPad } from "./keyboard-pad";
 import { T } from "./text";
 
 /** The VIBHA wordmark: wide black Archivo, with the school line under it. */
@@ -36,7 +37,7 @@ export function IconButton({ label, onPress, children, dot, testID }: { label: s
   return (
     <Pressable testID={testID} accessibilityRole="button" accessibilityLabel={label} onPress={onPress} {...handlers} hitSlop={4} android_ripple={{ color: c.tint, borderless: true, radius: 24 }} style={({ pressed }) => ({ width: layout.target, height: layout.target, borderRadius: 24, alignItems: "center", justifyContent: "center", backgroundColor: pressed ? c.tint : "transparent" })}>
       <Animated.View style={style}>{children}</Animated.View>
-      {dot ? <Animated.View entering={reduce ? undefined : presets.pop(300)} style={{ position: "absolute", top: 11, right: 11, width: 9, height: 9, borderRadius: 5, backgroundColor: c.brand, borderWidth: 1.5, borderColor: c.card }} /> : null}
+      {dot ? <Animated.View entering={reduce ? undefined : presets.pop(300)} style={{ position: "absolute", top: 11, right: 11, width: 9, height: 9, borderRadius: 5, backgroundColor: c.accent, borderWidth: 1.5, borderColor: c.card }} /> : null}
     </Pressable>
   );
 }
@@ -116,6 +117,8 @@ export function Screen({ children, title, lead, top, footer, onRefresh, refreshi
     onRefresh();
   }, [onRefresh]);
   const spinning = pulled && (hold || refreshing);
+  // The keyboard covers the bottom: lift the footer (a reply box) and shorten the list above it.
+  const { ref: root, pad: kb, onLayout: kbLayout } = useKeyboardPad();
   const side = bleed ? 0 : layout.gutter;
   const padBottom = (footer || tab ? 0 : insets.bottom) + space[6];
   const inner = (
@@ -138,7 +141,7 @@ export function Screen({ children, title, lead, top, footer, onRefresh, refreshi
     </View>
   );
   return (
-    <View testID={testID} style={{ flex: 1, backgroundColor: c.bg, paddingTop: safeTop ? insets.top : 0 }}>
+    <View ref={root} onLayout={kbLayout} testID={testID} style={{ flex: 1, backgroundColor: c.bg, paddingTop: safeTop ? insets.top : 0, paddingBottom: kb }}>
       {top}
       <Animated.View entering={reduce ? undefined : FadeIn.duration(motion.page)} style={{ flex: 1 }}>
         {scroll ? (
@@ -147,7 +150,7 @@ export function Screen({ children, title, lead, top, footer, onRefresh, refreshi
             keyboardDismissMode="on-drag"
             contentInsetAdjustmentBehavior="automatic"
             showsVerticalScrollIndicator={false}
-            refreshControl={onRefresh ? <RefreshControl refreshing={spinning} onRefresh={pull} tintColor={c.muted} colors={[c.brand]} progressBackgroundColor={c.card} /> : undefined}
+            refreshControl={onRefresh ? <RefreshControl refreshing={spinning} onRefresh={pull} tintColor={c.muted} colors={[c.dark ? c.primary : c.brand]} progressBackgroundColor={c.card} /> : undefined}
           >
             {inner}
           </ScrollView>
@@ -156,7 +159,7 @@ export function Screen({ children, title, lead, top, footer, onRefresh, refreshi
         )}
       </Animated.View>
       {footer ? (
-        <View style={{ backgroundColor: c.bg, borderTopWidth: 1, borderColor: c.hairline, paddingTop: space[3], paddingBottom: (tab ? 0 : insets.bottom) + space[3], paddingLeft: Math.max(layout.gutter, insets.left), paddingRight: Math.max(layout.gutter, insets.right) }}>
+        <View style={{ backgroundColor: c.bg, borderTopWidth: 1, borderColor: c.hairline, paddingTop: space[3], paddingBottom: (tab || kb ? 0 : insets.bottom) + space[3], paddingLeft: Math.max(layout.gutter, insets.left), paddingRight: Math.max(layout.gutter, insets.right) }}>
           <View style={{ width: "100%", maxWidth: layout.readingWidth, alignSelf: "center", gap: space[2] }}>{footer}</View>
         </View>
       ) : null}

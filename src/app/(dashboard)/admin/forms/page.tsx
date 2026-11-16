@@ -32,7 +32,7 @@ export default async function FormsPage() {
     return (
       <FormsListV2
         canEdit={canEdit}
-        lead={`${forms.length} form${forms.length === 1 ? "" : "s"} · ${open} open · ${total} answer${total === 1 ? "" : "s"}`}
+        lead={forms.length ? `${forms.length} form${forms.length === 1 ? "" : "s"} · ${open} open · ${total} answer${total === 1 ? "" : "s"}` : undefined}
         forms={forms.map((f) => ({
           id: f.id,
           title: f.title,

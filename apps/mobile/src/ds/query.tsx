@@ -14,7 +14,7 @@ export function Loaded<T>({ q, skeleton, what, soon, children }: { q: UseQueryRe
   if (q.data !== undefined) return <>{children(q.data)}</>;
   if (q.isError) {
     if (isClosed(q.error)) return <EmptyState title="Not open for your account" body="This part of VIBHA is not switched on for you yet." testID="closed" />;
-    if (soon && q.error instanceof ApiFailure && q.error.code === "not_found") return <EmptyState mood="sleepy" title="Coming in the next update" body="This part is ready on the website and arrives in the app soon." testID="soon" />;
+    if (soon && q.error instanceof ApiFailure && q.error.code === "not_found") return <EmptyState mood="soon" title="Coming in the next update" body="This part is ready on the website and arrives in the app soon." testID="soon" />;
     return <LoadError what={what} error={q.error} onRetry={() => void q.refetch()} />;
   }
   // The skeleton waits 120ms before showing, so a quick load never flashes grey.

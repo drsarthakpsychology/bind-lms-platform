@@ -184,7 +184,7 @@ export function GradedForm({
           </p>
         )}
 
-        <div className="fixed inset-x-0 bottom-0 border-t-2 border-foreground bg-card px-4 py-3 pb-[max(0.75rem,env(safe-area-inset-bottom))]">
+        <div data-chrome className="fixed inset-x-0 bottom-0 z-40 border-t-2 border-foreground bg-card px-4 py-3 pb-[max(0.75rem,env(safe-area-inset-bottom))]">
           <div className="mx-auto flex max-w-2xl items-center gap-3">
             <p className="hidden flex-1 text-small text-muted-foreground sm:block">You can hand in once for this session.</p>
             <button type="submit" className={cn(btnPrimary, "w-full sm:w-auto")} disabled={sending}>

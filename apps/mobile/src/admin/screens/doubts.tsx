@@ -11,9 +11,8 @@ import { Button, EmptyState, Field, Row, RowList, RowsSkeleton, Screen, T } from
 import { space, useTheme } from "@/theme";
 import { adminCalls, useAdminAction, useAdminDoubt, useAdminDoubts, useRefreshAdmin } from "../api";
 import { ago, type Tone } from "../format";
-import { Loaded, Notice, SmallButton, Status, Tag } from "../kit";
+import { Loaded, Notice, ScrollTabs, SmallButton, Status, Tag } from "../kit";
 import { useAdminRole, VIEW_ONLY_LINE } from "../role";
-import { ScrollTabs } from "./student";
 
 export function doubtState(d: Pick<DoubtRow, "status" | "replies">): { tone: Tone; label: string } {
   if (d.status === "hidden") return { tone: "quiet", label: "Hidden" };
@@ -49,7 +48,7 @@ export function AdminDoubtsScreen() {
               })}
             </RowList>
           ) : (
-            <EmptyState mood="sleepy" title={view === "waiting" ? "Nothing waiting" : "No doubts yet"} body={view === "waiting" ? "Every doubt has an answer." : "Doubts students ask show here."} />
+            <EmptyState mood={view === "waiting" ? "clear" : "empty"} title={view === "waiting" ? "Nothing waiting" : "No doubts yet"} body={view === "waiting" ? "Every doubt has an answer." : "Doubts students ask show here."} />
           );
         }}
       </Loaded>

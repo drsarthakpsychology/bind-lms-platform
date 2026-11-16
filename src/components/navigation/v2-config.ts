@@ -237,7 +237,7 @@ export const ADMIN_MORE_GROUPS: HubGroup[] = [
     title: "Credentials",
     rows: [
       { href: "/admin/credentials", label: "Certificates", icon: "award" },
-      { href: "/admin/achievements", label: "Achievements", icon: "medal" },
+      { href: "/admin/credentials/types", label: "Badges and types", icon: "medal" },
     ],
   },
   {

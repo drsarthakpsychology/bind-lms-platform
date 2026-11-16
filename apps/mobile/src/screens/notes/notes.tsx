@@ -38,7 +38,7 @@ export function NotesBody({ d }: { d: RevisionNoteList }) {
     else groups.push({ title, items: [n] });
   }
   const read = d.notes.filter((n) => n.readOn).length;
-  if (!d.notes.length) return <EmptyState mood="sleepy" title="Revision notes open soon" body="Short notes for each topic show up here as your course goes on." testID="notes-empty" />;
+  if (!d.notes.length) return <EmptyState mood="soon" title="Revision notes open soon" body="Short notes for each topic show up here as your course goes on." testID="notes-empty" />;
   return (
     <>
       {next ? (

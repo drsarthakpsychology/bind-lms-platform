@@ -33,6 +33,17 @@ function toneColor(c: Palette, tone: Tone): string {
  */
 export const TextScale = React.createContext<{ scale: number; line: number } | null>(null);
 
+/**
+ * Meta lines join parts with " · ". The space before each dot becomes a
+ * no-break space, so a wrapped line never starts with "·": the dot stays at
+ * the end of the line above.
+ */
+export function glue(children: React.ReactNode): React.ReactNode {
+  if (typeof children === "string") return children.includes(" ·") ? children.replace(/ +·/g, "\u00a0·") : children;
+  if (Array.isArray(children)) return children.map((x) => (typeof x === "string" ? glue(x) : x));
+  return children;
+}
+
 export type TProps = TextProps & {
   /** One of the eight sizes. Default: body. */
   v?: TypeName;
@@ -47,7 +58,7 @@ export type TProps = TextProps & {
  * (headings stop at 1.3x so a title cannot push the action off the screen).
  * Text wraps; it is never cut.
  */
-export function T({ v = "body", tone = "ink", num, center, style, maxFontSizeMultiplier, ...rest }: TProps) {
+export function T({ v = "body", tone = "ink", num, center, style, maxFontSizeMultiplier, children, ...rest }: TProps) {
   const c = useTheme();
   const big = v === "display" || v === "h1" || v === "h2";
   const reading = React.useContext(TextScale);
@@ -61,6 +72,8 @@ export function T({ v = "body", tone = "ink", num, center, style, maxFontSizeMul
       maxFontSizeMultiplier={maxFontSizeMultiplier ?? (big ? 1.3 : 1.6)}
       {...rest}
       style={[base, sized, { color: toneColor(c, tone) }, num ? { fontVariant: ["tabular-nums"] } : null, center ? { textAlign: "center" } : null, style]}
-    />
+    >
+      {glue(children)}
+    </Text>
   );
 }

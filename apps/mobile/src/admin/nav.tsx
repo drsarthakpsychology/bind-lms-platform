@@ -20,10 +20,10 @@ export function useAdminHeader() {
   };
 }
 
-/** The bar on the admin tabs: the VIBHA mark with "Admin" under it, and the bell. */
+/** The bar on the admin tabs: the VIBHA mark with "Admin" under it, search (students, people, cohorts), and the bell. */
 export function AdminTop() {
   const me = useMe();
-  return <TopBar sub={me.data?.role === "view_admin" ? "Admin · view only" : "Admin"} unread={me.data?.unreadNotifications ?? 0} onBell={() => router.push("/notifications")} />;
+  return <TopBar sub={me.data?.role === "view_admin" ? "Admin · view only" : "Admin"} unread={me.data?.unreadNotifications ?? 0} onSearch={() => router.push("/admin/search")} onBell={() => router.push("/notifications")} />;
 }
 
 /** Open a student's page (it lives outside the admin group, at /student/:id). */
