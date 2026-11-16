@@ -1471,7 +1471,13 @@ export type ClinicSlot = {
   active: boolean;
 };
 /** POST /clinic/admin/timetable and PUT /clinic/admin/timetable/:id */
-export type ClinicSlotBody = Omit<ClinicSlot, "id" | "active"> & { active?: boolean };
+export type ClinicSlotBody = Omit<ClinicSlot, "id" | "active" | "place" | "onlineLink" | "validFrom" | "validTo"> & {
+  place?: string | null;
+  onlineLink?: string | null;
+  validFrom?: string | null;
+  validTo?: string | null;
+  active?: boolean;
+};
 /** POST /clinic/admin/timetable/apply: make sessions from the timetable for a date range (adds only what is missing). */
 export type ClinicApplyBody = { cohortId: string; from: string; to: string };
 export type ClinicApplyResult = { created: number; skipped: number };
