@@ -92,6 +92,13 @@ export type WardSolo = { ok: true; token: string; scene: WardScene; reveal?: War
 export type WardCampaign = { id: string; title: string; patient: string; place: string; blurb: string; sessions: number; level: number };
 export const WARD_KIND: Record<WardKind, string> = { assessment: "Assessment", risk: "Risk", referral: "Referral", psychoeducation: "Explaining it", family: "Family meeting", medicines: "Medicines, with the psychiatrist" };
 export const WARD_VAR: Record<keyof WardVars, string> = { risk: "Risk", trust: "Trust", insight: "Insight", family: "Family support", adherence: "Sticking with care" };
+/** src/app/(dashboard)/games/ward/actions.ts WardTeamView: the team's story, polled. Qualities only for calls already made. */
+export type WardTeamView = { teamId: string; code: string; name: string; campaign: string; scene: WardScene; reveals: WardReveal[]; end: WardEnd | null; members: { name: string; me: boolean; voted: boolean }[]; myVote: string | null; votes: number; version: number; xp: number };
+/** src/lib/games-sims/teams.ts TEAM_LIMITS */
+export const TEAM_LIMITS = { escape: { min: 2, max: 5 }, ward: { min: 2, max: 3 } } as const;
+export type TeamJoin = { ok: true; teamId: string } | { ok: false; reason: string };
+/** A team row on the first screen (GET /practise/tools/ward and /escape). */
+export type TeamListItem = { id: string; name: string; status: string; code?: string; campaign?: string; room?: string; title?: string };
 export const WARD_QUALITY: Record<WardQuality, string> = { best: "Strong choice", ok: "Reasonable", poor: "Weak choice", harm: "Harmful choice" };
 
 /* ----------------------------------------------------------------- escape */
@@ -107,6 +114,10 @@ export type EscRoomCard = { id: string; title: string; place: string; patient: s
 export type EscView = EscRoomCard & { stages: EscStage[]; door: EscDoor | null; hint: string | null; opened: EscOpened[]; outro: string | null };
 export type EscState = { room: string; stage: number; wrong: number; tries: number[]; log: { stage: number; name: string; ok: boolean; at: string }[]; done: boolean };
 export type EscResult = { ok: true; token: string; view: EscView; state: EscState; now: number; right?: boolean; ms?: number; xp?: number; elapsed?: number };
+/** src/lib/games-sims/escape/engine.ts RaceRow */
+export type RaceRow = { id: string; name: string; stage: number; done: boolean; ms: number; me: boolean };
+/** src/app/(dashboard)/games/escape/actions.ts EscapeView: the team's room, polled. */
+export type EscTeamView = { teamId: string; code: string; name: string; room: string; view: EscView; status: "lobby" | "playing" | "done"; state: EscState; members: { name: string; me: boolean }[]; startedAt: string | null; finishedAt: string | null; now: number; race: RaceRow[]; xp: number };
 export const ESC_STAGE: Record<EscStage, string> = { mse: "Mental state", diagnosis: "Diagnosis", differential: "Differential", risk: "Risk", course: "Course", plan: "Plan", medicine: "Medicine", criteria: "Criteria" };
 export const ESC_PENALTY_S = 20;
 
@@ -152,6 +163,33 @@ export type PrepQView = { id: string; subject: string; topic: string; type: "mcq
 export type PrepReveal = { id: string; answer: number; explanation: string; learnHref: string; visual?: unknown };
 export type PrepChecked = PrepReveal & { correct: boolean };
 
+/** src/app/(dashboard)/prep/actions.ts startMock: a fresh paper, no answers in it. `deadline` and `serverNow` are the server's clock. */
+export type MockPaper = { attemptId: string | null; specId: string; deadline: number; serverNow: number; sections: { title: string; wanted: number; questions: PrepQView[] }[] };
+/** src/lib/prep/scoring.ts Standing */
+export type MockStanding = { rank: number; of: number; percentile: number | null };
+type Tally = { score: number; max: number; right: number; wrong: number; blank: number };
+/** src/lib/prep/results.ts ReviewRow: every question after hand-in, with its answer and why. */
+export type MockReviewRow = { q: PrepQView; section: string; chosen: number | null; answer: number; correct: boolean; ms: number | null; explanation: string; learnHref: string; marked: boolean };
+/** src/lib/prep/results.ts MockResultView (submitMock answers it; GET /prep/mock/result/:id carries it). */
+export type MockResult = Tally & {
+  specId: string;
+  title: string;
+  marksPerRight: number;
+  marksPerWrong: number;
+  accuracy: number | null;
+  standing: MockStanding | null;
+  saved: boolean;
+  late: boolean;
+  totalMs: number;
+  sections: (Tally & { title: string })[];
+  subjects: (Tally & { subject: string; title: string; learnHref: string })[];
+  rows: MockReviewRow[];
+};
+/** One pattern on GET /prep/mock (the website's spec without its sources). */
+export type MockSpec = { id: string; title: string; short?: string; minutes: number; questions: number; marksPerRight: number; marksPerWrong: number; exam: string | null; sections: { title: string; count: number }[] };
+/** src/lib/prep/server.ts MockMeta */
+export type MockMeta = { id: string; specId: string; startedAt: string; submittedAt: string | null; score: number | null; max: number | null };
+
 /* ---------------------------------------------------------- case progress */
 /** src/lib/cases/progress.ts */
 export type ProgressTool = "ward" | "escape" | "osce" | "formulation" | "detective" | "wwyd" | "two-minute" | "landmark" | "mse-small";
@@ -195,7 +233,13 @@ export type ToolStep =
   /** Landmark: read, then a question. */
   | { n: number; kind: "read"; title: string; body: string }
   /** Free text (Two-minute clinic, MSE observe): written, then compared with the model answer. */
-  | { n: number; kind: "write"; ask: string; fields: string[]; seconds?: number };
+  | { n: number; kind: "write"; ask: string; fields: string[]; seconds?: number; /** Fewest characters before it can be compared (formulation: 40). */ min?: number; placeholder?: string }
+  /** OSCE: your overall call on the station, 1 to max. */
+  | { n: number; kind: "rate"; ask: string; label: string; max: number }
+  /** MSE Level 4: the full MSE of one case under a ten-minute clock, one line per domain. */
+  | { n: number; kind: "fullmse"; ask: string; context: string; domains: string[]; seconds: number }
+  /** The small things: one moment from an interview; the read and the move show after a tap. */
+  | { n: number; kind: "moment"; skill: string; moment: string };
 export type ToolReveal = {
   /** 0 to 1. */
   score: number;
@@ -209,6 +253,12 @@ export type ToolReveal = {
   more: string | null;
   /** Free text: not marked, the student compares with the model answer. */
   selfCheck?: boolean;
+  /** Formulation: the model's words you used and missed. */
+  diff?: { missing: string[]; present: string[] };
+  /** MSE Level 1: the labels that slipped in, and the observation words counted. */
+  observe?: { labels: string[]; observations: number; words: number };
+  /** MSE Level 4: each domain's light with your words and the expert's. */
+  domains?: { domain: string; light: "green" | "amber" | "red"; you: string[]; expert: string[] }[];
 };
 /* ---------------------------------------------- contract (server copy) */
 /*

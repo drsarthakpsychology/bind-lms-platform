@@ -6,8 +6,8 @@
  */
 import type { AppTarget } from "@/api/contract";
 import type * as C from "../contract";
-import { caseState, prepData } from "./cases";
-import { escapeRooms, escapeSaved, wardCampaigns, wardSaved } from "./games";
+import { caseState, mockHistory, MOCK_SPECS, prepData } from "./cases";
+import { escapeRooms, escapeSaved, teamsOf, wardCampaigns, wardSaved } from "./games";
 import { PlayError } from "./kit";
 import tools from "./tools.json";
 import more from "./tools2.json";
@@ -95,9 +95,9 @@ export function practiseTool(id: string): C.PractiseTool {
     case "mse":
       return tool("mse", "Mental state exam", ["Write what you can see and hear, not what you conclude."], M.mse, null, ["mse"]);
     case "ward":
-      return tool("ward", "Ward Week", ["Read each session, then make the call.", "See why it was strong or weak."], { campaigns: wardCampaigns(), teamsOn: false, teams: [] }, library("ward", wardCampaigns().map((c) => c.id)));
+      return tool("ward", "Ward Week", ["Read each session, then make the call.", "See why it was strong or weak."], { campaigns: wardCampaigns(), teamsOn: true, teams: teamsOf("ward") }, library("ward", wardCampaigns().map((c) => c.id)));
     case "escape":
-      return tool("escape", "Team Escape Room", ["Anyone can answer any door. Wrong answers add 20 seconds.", "Two misses on a door open its hint."], { rooms: escapeRooms(), teamsOn: false, teams: [] }, library("escape", escapeRooms().map((r) => r.id)));
+      return tool("escape", "Team Escape Room", ["Anyone can answer any door. Wrong answers add 20 seconds.", "Two misses on a door open its hint."], { rooms: escapeRooms(), teamsOn: true, teams: teamsOf("escape").filter((t) => t.status !== "done") }, library("escape", escapeRooms().map((r) => r.id)));
     case "duel":
       return tool("duel", "Differential duel", ["Pick the diagnosis: +100.", "Then pick what tells it apart from its look-alike: +50.", "Same points? The faster player wins."], { profile: { available: false, rating: 1200, rd: 350, tier: "Unranked", games: 0, wins: 0, losses: 0, draws: 0, forfeits: 0, peak: 1200 }, offlineItems: M.duel });
     case "comorbid":
@@ -129,8 +129,16 @@ export function prepHome(): C.PrepHome {
     saved: saved.size,
     wrong,
     canSave: true,
-    more: [],
+    more: [row("mock", "Mock tests", "Timed papers with marking", "prep", { screen: "practice", tool: "mock", web: "/prep/mock" })],
   };
+}
+export function prepMocks(): C.PrepMocks {
+  return { v: 1, specs: MOCK_SPECS as unknown as C.PrepMocks["specs"], history: mockHistory.map(({ result: _r, ...h }) => h) as unknown as C.PrepMocks["history"] };
+}
+export function prepMockResult(id: string): C.PrepMockResult {
+  const h = mockHistory.find((x) => x.id === id);
+  if (!h) throw new PlayError(404, "not_found", "That could not be found.");
+  return { v: 1, id, specId: h.specId, title: h.result.title, result: h.result as unknown as Record<string, unknown> };
 }
 export function prepSubject(id: string): C.PrepSubjectDetail {
   const s = prepData.SUBJECTS.find((x) => x.id === id);
@@ -204,3 +212,59 @@ export function board(id: string): C.Leaderboard {
   return { v: 1, board: id, label: label[id]!, period: id === "overall" ? "All time" : "This week", explainer: id === "league" ? "Points from everything you practise. Monday to Sunday." : "Your best scores this week.", scope: "Your cohort only. First name and initial.", rows, me: { rank: 2, total: rows.length }, raw: {} };
 }
 
+
+/* ------------------------------------------------------------------- shop */
+const LOOKS = [
+  { id: "frame-blue", label: "Blue frame", kind: "frame" as const, cost: 150 },
+  { id: "frame-lime", label: "Lime frame", kind: "frame" as const, cost: 150 },
+  { id: "frame-ink", label: "Double ink frame", kind: "frame" as const, cost: 300 },
+  { id: "title-blue", label: "Blue title", kind: "title" as const, cost: 200 },
+  { id: "title-fill", label: "Title on a lime tag", kind: "title" as const, cost: 400 },
+];
+const ITEMS = [
+  { id: "streak_repair", label: "Streak repair", cost: 60, text: "Brings back a streak you lost in the last 2 days. One a week.", ready: true },
+  { id: "hints_3", label: "3 extra hints", cost: 30, text: "3 more hints for today. One buy a day.", ready: true },
+  { id: "bonus_case", label: "Bonus challenge", cost: 80, text: "One extra hard case this week.", ready: false },
+];
+export const shopState = { balance: 420, owned: new Set<string>(["frame-blue"]), look: { frame: "frame-blue" as string | null, title: null as string | null }, hints: false };
+export function resetShop() {
+  shopState.balance = 420;
+  shopState.owned = new Set(["frame-blue"]);
+  shopState.look = { frame: "frame-blue", title: null };
+  shopState.hints = false;
+}
+export function shop(): C.XpShop {
+  return { v: 1, ready: true, balance: shopState.balance, streak: { count: 6, alive: true }, repair: { ok: false, text: "Your streak is still going." }, items: ITEMS, looks: LOOKS.map((l) => ({ ...l, owned: shopState.owned.has(l.id), worn: shopState.look[l.kind] === l.id })), note: "Spending XP never lowers your level or this week's league points." };
+}
+const lookStr = () => [shopState.look.frame, shopState.look.title].filter(Boolean).join("|") || null;
+export const league = {
+  buy(item: unknown): C.BuyResult {
+    const id = String(item ?? "");
+    if (id.startsWith("look:")) {
+      const l = LOOKS.find((x) => x.id === id.slice(5));
+      if (!l) return { error: "Unknown item." };
+      if (shopState.owned.has(l.id)) return { error: "You already own this." };
+      if (shopState.balance < l.cost) return { error: `You need ${l.cost - shopState.balance} more XP.` };
+      shopState.balance -= l.cost;
+      shopState.owned.add(l.id);
+      shopState.look[l.kind] = l.id;
+      return { error: null, balance: shopState.balance, look: lookStr() };
+    }
+    const it = ITEMS.find((x) => x.id === id);
+    if (!it) return { error: "Unknown item." };
+    if (!it.ready) return { error: "Coming soon." };
+    if (id === "streak_repair") return { error: "Your streak is still going." };
+    if (shopState.hints) return { error: "You've already bought today's hints." };
+    if (shopState.balance < it.cost) return { error: `You need ${it.cost - shopState.balance} more XP.` };
+    shopState.hints = true;
+    shopState.balance -= it.cost;
+    return { error: null, balance: shopState.balance };
+  },
+  wear(kind: unknown, id: unknown): { error: string | null; look?: string | null } {
+    if (kind !== "frame" && kind !== "title") return { error: "Unknown item." };
+    if (id && !shopState.owned.has(String(id))) return { error: "Buy it first." };
+    shopState.look[kind] = id ? String(id) : null;
+    return { error: null, look: lookStr() };
+  },
+  alias: (name: unknown) => ({ error: null, alias: name ? String(name) : null }),
+};
