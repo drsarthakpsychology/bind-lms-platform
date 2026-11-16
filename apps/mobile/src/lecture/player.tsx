@@ -2,7 +2,7 @@ import { useEventListener } from "expo";
 import * as Device from "expo-device";
 import { StatusBar } from "expo-status-bar";
 import { useVideoPlayer, VideoView } from "expo-video";
-import { Maximize, Minimize, Pause, Play, RotateCcw, RotateCw } from "lucide-react-native";
+import { Maximize, Minimize, RotateCcw, RotateCw } from "lucide-react-native";
 import * as React from "react";
 import { AppState, BackHandler, Platform, Pressable, View, type LayoutChangeEvent } from "react-native";
 import Animated, { FadeIn, FadeOut, useReducedMotion } from "react-native-reanimated";
@@ -16,6 +16,8 @@ import { Button, Skeleton, T } from "@/ds";
 import { haptic } from "@/lib/haptics";
 import { allowRotation, goLandscape, holdPortrait } from "@/lib/orientation";
 import { fonts, layout, motion, space } from "@/theme";
+import { LectureIntro, type IntroInfo } from "./intro";
+import { PlayPause } from "./playmorph";
 import { Watermark } from "./watermark";
 
 /**
@@ -159,7 +161,7 @@ function Controls({ pb, full, onFull, onFirstPlay }: { pb: Playback; full: boole
               <RotateCcw size={22} color="#ffffff" />
             </RoundButton>
             <RoundButton label={pb.playing ? "Pause" : "Play"} onPress={toggle} size={64}>
-              {pb.playing ? <Pause size={30} color="#ffffff" fill="#ffffff" /> : <Play size={30} color="#ffffff" fill="#ffffff" style={{ marginLeft: 3 }} />}
+              <PlayPause playing={pb.playing} />
             </RoundButton>
             <RoundButton label="Forward 10 seconds" onPress={() => pb.seek(pb.time + 10)}>
               <RotateCw size={22} color="#ffffff" />
@@ -191,11 +193,17 @@ export type PlayerProps = {
   onTime?: (time: number, duration: number, playing: boolean) => void;
   /** For tests: skip the root check. */
   compromised?: boolean;
+  /** The intro shown over the video until the first Play (storyboard 5). */
+  intro?: IntroInfo;
 };
 
 type Phase = { kind: "loading" } | { kind: "ready"; access: StreamAccess } | { kind: "refused"; message: string } | { kind: "error"; message: string };
 
-export function ProtectedPlayer({ lessonId, onTime, compromised }: PlayerProps) {
+export function ProtectedPlayer({ lessonId, onTime, compromised, intro }: PlayerProps) {
+  // Per lecture: Next and Previous replace the lecture in the same player.
+  const [playedFor, setPlayedFor] = React.useState<string | null>(null);
+  const played = playedFor === lessonId;
+  const firstPlay = React.useCallback(() => setPlayedFor(lessonId), [lessonId]);
   const insets = useSafeAreaInsets();
   const [phase, setPhase] = React.useState<Phase>({ kind: "loading" });
   const [full, setFull] = React.useState(false);
@@ -305,7 +313,7 @@ export function ProtectedPlayer({ lessonId, onTime, compromised }: PlayerProps) 
             }} style={{ backgroundColor: "#ffffff", borderRadius: layout.radius }} />
                 </View>
               ) : (
-                <Controls pb={pb} full={full} onFull={toggleFull} onFirstPlay={() => undefined} />
+                <Controls pb={pb} full={full} onFull={toggleFull} onFirstPlay={firstPlay} />
               )}
               <Watermark text={phase.access.watermark.text} />
             </>
@@ -319,6 +327,7 @@ export function ProtectedPlayer({ lessonId, onTime, compromised }: PlayerProps) 
     <View testID="player" style={[frame, { backgroundColor: "#000000", overflow: "hidden" }]}>
       {full ? <StatusBar hidden /> : null}
       {body}
+      {intro ? <LectureIntro info={intro} gone={played} /> : null}
       {captured ? (
         <View testID="player-captured" style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, backgroundColor: "#000000", alignItems: "center", justifyContent: "center", padding: space[5] }}>
           <T center style={{ color: "#ffffff" }}>

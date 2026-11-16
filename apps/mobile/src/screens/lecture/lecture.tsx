@@ -233,7 +233,7 @@ export function LectureScreen() {
           </T>
         </View>
         {l?.hasVideo ? (
-          <ProtectedPlayer lessonId={lessonId} onTime={onTime} />
+          <ProtectedPlayer lessonId={lessonId} onTime={onTime} intro={{ number: l.number, week: l.week }} />
         ) : l ? (
           <View style={{ aspectRatio: 16 / 9, alignItems: "center", justifyContent: "center", padding: space[5] }}>
             <T center style={{ color: "#ffffff" }}>
