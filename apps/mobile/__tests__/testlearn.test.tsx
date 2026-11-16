@@ -12,6 +12,7 @@ import { SortGame } from "@/practise/games/sort";
 import { WardGame } from "@/practise/games/ward";
 import { render } from "./utils";
 import { searchCovers, searchHint } from "@/screens/search/search";
+import { progressMeta } from "@/screens/me/me";
 
 beforeAll(async () => {
   await session.boot();
@@ -88,5 +89,12 @@ describe("Ward Week team: the team's call", () => {
     expect(screen.queryByText("Not yet")).toBeNull();
     await press("ward-next");
     await waitFor(() => expect(screen.getByText(/\d+\/\d+ voted/)).toBeTruthy());
+  });
+});
+
+describe("Me: the Progress row", () => {
+  it("names only what this account has", () => {
+    expect(progressMeta(false, true, true)).toBe("Topics, map, your level and badges");
+    expect(progressMeta(true, false, false)).toBe("Lectures watched");
   });
 });

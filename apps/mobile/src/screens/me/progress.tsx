@@ -182,7 +182,8 @@ export function ProgressScreen() {
   const c = useTheme();
   const me = useMe().data;
   const q = useProgress();
-  const showJourney = !me?.access?.blocks?.includes("journey");
+  // Lecture-only accounts have no journey (can.journey false): the section would only say "not open".
+  const showJourney = !me?.access?.blocks?.includes("journey") && me?.access?.can?.journey !== false;
   const showBadges = me?.access?.can?.achievements !== false;
   const j = useJourney();
   const a = useAchievements();
