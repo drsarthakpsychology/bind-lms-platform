@@ -9,11 +9,11 @@ export default function StudentTabs() {
     <>
     <TabBar
       tabs={[
-        { name: "home", title: "Home", icon: House },
-        { name: "learn", title: "Learn", icon: BookOpen },
-        { name: "practise", title: "Practise", icon: Dumbbell },
-        { name: "library", title: "Medicines", icon: Pill },
-        { name: "me", title: "Me", icon: User },
+        { name: "home", area: "home", title: "Home", icon: House },
+        { name: "learn", area: "learn", title: "Learn", icon: BookOpen },
+        { name: "practise", area: "practise", title: "Practise", icon: Dumbbell },
+        { name: "library", area: "library", title: "Medicines", icon: Pill },
+        { name: "me", area: "me", title: "Me", icon: User },
       ]}
     />
     <MomentHost />

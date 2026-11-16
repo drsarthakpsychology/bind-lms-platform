@@ -108,3 +108,50 @@ describe("motion kit parts render", () => {
     expect(screen.getByText("Rises")).toBeTruthy();
   });
 });
+
+describe("screen transitions per route kind", () => {
+  const { routeMotion } = jest.requireActual("@/motion/stack") as typeof import("@/motion/stack");
+  test("push slides with parallax and a matching swipe back on both platforms", () => {
+    for (const os of ["android", "ios"]) {
+      const m = routeMotion("push", { reduce: false, low: false, os });
+      expect(m.animation).toBe("ios_from_right");
+      expect(m.gestureEnabled).toBe(true);
+      expect(m.animationMatchesGesture).toBe(true);
+    }
+  });
+  test("sheet is the system page sheet on iPhone and slides up on Android", () => {
+    expect(routeMotion("sheet", { reduce: false, low: false, os: "ios" })).toEqual({ presentation: "modal", animation: "default" });
+    expect(routeMotion("sheet", { reduce: false, low: false, os: "android" })).toMatchObject({ presentation: "modal", animation: "slide_from_bottom" });
+  });
+  test("play fades up, overlay fades", () => {
+    expect(routeMotion("play", { reduce: false, low: false, os: "android" }).animation).toBe("fade_from_bottom");
+    expect(routeMotion("overlay", { reduce: false, low: false, os: "android" }).animation).toBe("fade");
+  });
+  test("low-end Android and Reduce Motion get plain fades; a sheet stays a modal", () => {
+    for (const kind of ["push", "sheet", "overlay", "play"] as const) {
+      expect(routeMotion(kind, { reduce: false, low: true, os: "android" }).animation).toBe("fade");
+      expect(routeMotion(kind, { reduce: true, low: false, os: "ios" }).animation).toBe("fade");
+    }
+    expect(routeMotion("sheet", { reduce: true, low: false, os: "android" }).presentation).toBe("modal");
+    // The low tier is Android only: an iPhone keeps the slide.
+    expect(routeMotion("push", { reduce: false, low: true, os: "ios" }).animation).toBe("ios_from_right");
+  });
+});
+
+describe("list to page continuity", () => {
+  const { continuity } = jest.requireActual("@/motion/continuity") as typeof import("@/motion/continuity");
+  afterEach(() => continuity.clear());
+  test("a pressed row's place is found by the page with the same title, for one second", () => {
+    jest.useFakeTimers();
+    continuity.mark("Lithium ", 412);
+    expect(continuity.peek("Lithium")).toBe(412);
+    expect(continuity.peek("Valproate")).toBeUndefined();
+    jest.advanceTimersByTime(1001);
+    expect(continuity.peek("Lithium")).toBeUndefined();
+    jest.useRealTimers();
+  });
+  test("bad positions are ignored", () => {
+    continuity.mark("Lithium", Number.NaN);
+    expect(continuity.peek("Lithium")).toBeUndefined();
+  });
+});

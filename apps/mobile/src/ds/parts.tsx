@@ -6,7 +6,7 @@ import Animated, { useAnimatedStyle, useReducedMotion, useSharedValue, withSprin
 
 import { crumb } from "@/lib/breadcrumb";
 import { haptic } from "@/lib/haptics";
-import { FlowGap, presets, ProgressFill, RollingNumber, Shimmer, SkeletonIn, springs, staggerDelay, usePressScale } from "@/motion";
+import { continuity, FlowGap, presets, ProgressFill, RollingNumber, Shimmer, SkeletonIn, springs, staggerDelay, usePressScale } from "@/motion";
 import type { StateMood } from "@/lib/reactions/stickers";
 import { layout, space, useAccent, useTheme } from "@/theme";
 import { Button } from "./button";
@@ -149,14 +149,14 @@ export function Row({ title, meta, icon, trailing, onPress, chevron, unread, cur
       </View>
     );
   return (
-    <PressRow testID={testID} label={accessibilityLabel ?? (meta ? `${title}. ${meta}` : title)} current={!!current} onPress={onPress} base={base}>
+    <PressRow testID={testID} title={title} label={accessibilityLabel ?? (meta ? `${title}. ${meta}` : title)} current={!!current} onPress={onPress} base={base}>
       {body}
     </PressRow>
   );
 }
 
 /** A pressable row: a tint fades in under the finger and the row sinks to 0.98 on a stiff spring. */
-function PressRow({ children, onPress, label, current, base, testID }: { children: React.ReactNode; onPress: () => void; label: string; current: boolean; base: ViewStyle; testID?: string }) {
+function PressRow({ children, onPress, title, label, current, base, testID }: { children: React.ReactNode; onPress: () => void; title: string; label: string; current: boolean; base: ViewStyle; testID?: string }) {
   const c = useTheme();
   const { style, handlers } = usePressScale(0.98);
   const [down, setDown] = React.useState(false);
@@ -166,8 +166,11 @@ function PressRow({ children, onPress, label, current, base, testID }: { childre
       accessibilityRole="button"
       accessibilityLabel={label}
       accessibilityState={{ selected: current }}
-      onPress={() => {
+      onPress={(e) => {
         crumb.action(label);
+        // Where this row's title sat on screen, so the page it opens can grow its title out of it (useFromRow).
+        const ev = e?.nativeEvent;
+        if (ev) continuity.mark(title, ev.pageY - ev.locationY);
         onPress();
       }}
       onPressIn={() => {
