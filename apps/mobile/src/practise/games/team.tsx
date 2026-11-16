@@ -124,16 +124,21 @@ export function JoinBox({ onJoin, label }: { onJoin: (code: string) => Promise<s
   const [code, setCode] = React.useState("");
   const [busy, setBusy] = React.useState(false);
   const [err, setErr] = React.useState<string | null>(null);
+  const joining = React.useRef(false);
   const go = async () => {
+    // The keyboard's Go and the Join button can both fire for one join.
+    if (joining.current) return;
     const k = normaliseCode(code);
     if (k.length < 4) {
       setErr("Type the code your classmate shared.");
       haptic.warn();
       return;
     }
+    joining.current = true;
     setBusy(true);
     setErr(null);
     const problem = await onJoin(k).catch(() => "Couldn't join. Try again.");
+    joining.current = false;
     setBusy(false);
     if (problem) {
       setErr(problem);
