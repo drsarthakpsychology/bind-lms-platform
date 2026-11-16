@@ -3,14 +3,15 @@ import { setStatusBarStyle } from "expo-status-bar";
 import { Lock, Mail } from "lucide-react-native";
 import * as React from "react";
 import { Keyboard, KeyboardAvoidingView, Platform, Pressable, ScrollView, Text, TextInput, View, useWindowDimensions } from "react-native";
-import Animated, { useAnimatedStyle, useReducedMotion, useSharedValue, withTiming } from "react-native-reanimated";
+import Animated, { useAnimatedStyle, useReducedMotion, useSharedValue, withDelay, withTiming } from "react-native-reanimated";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { ApiFailure, messageOf } from "@/api/errors";
 import { session, useSession } from "@/auth";
+import { holdPin, releasePin } from "@/auth/handoff";
 import { T, Tint } from "@/ds";
 import { haptic } from "@/lib/haptics";
-import { Press } from "@/motion";
+import { Press, dur } from "@/motion";
 import { fonts, layout, space, useTheme } from "@/theme";
 import { Person, Sparkle, Star } from "@/visitor/Art";
 import { AuthField, SubmitButton, useShake } from "@/visitor/form";
@@ -38,7 +39,9 @@ export function signInProblem(err: unknown): string {
  * Sign in: the most important screen a visitor sees. Blue art band on top
  * (it folds away while the keyboard is up), then email and password, one big
  * button. Wrong details shake the form and say what to do in plain words.
- * When it works the button turns into a tick and the PIN screen slides in.
+ * When it works the button turns into a tick, the form drops away, the band
+ * slides up out of view, and only then does the PIN screen rise in (it waits
+ * through `holdPin`, src/auth/handoff.ts).
  */
 export function SignInScreen({ defaultEmail = "" }: { defaultEmail?: string }) {
   const c = useTheme();
@@ -46,6 +49,7 @@ export function SignInScreen({ defaultEmail = "" }: { defaultEmail?: string }) {
   const { height } = useWindowDimensions();
   const reduce = useReducedMotion();
   const notice = useSession((s) => s.notice);
+  const phase = useSession((s) => s.phase);
   const [email, setEmail] = React.useState(defaultEmail);
   const [password, setPassword] = React.useState("");
   const [errors, setErrors] = React.useState<{ email?: string; password?: string }>({});
@@ -76,6 +80,31 @@ export function SignInScreen({ defaultEmail = "" }: { defaultEmail?: string }) {
   const bandStyle = useAnimatedStyle(() => ({ height: insets.top + band - fold.value * (band - 64) }));
   const artStyle = useAnimatedStyle(() => ({ opacity: 1 - fold.value, transform: [{ translateY: fold.value * -40 }, { scale: 1 - fold.value * 0.15 }] }));
 
+  // The exit after a good sign in: 0 in place, 1 gone (form dropped 8px and faded, band up out of view).
+  const out = useSharedValue(0);
+  const timer = React.useRef<ReturnType<typeof setTimeout> | null>(null);
+  React.useEffect(
+    () => () => {
+      if (timer.current) clearTimeout(timer.current);
+      releasePin();
+    },
+    [],
+  );
+  // Signed out again while this screen was still here (the account ended mid-way): show the form again.
+  if (state === "done" && phase === "visitor") setState("idle");
+  React.useEffect(() => {
+    if (state === "idle") out.set(0);
+  }, [state, out]);
+  const formOut = useAnimatedStyle(() => ({ opacity: 1 - Math.min(1, out.value * 1.6), transform: [{ translateY: reduce ? 0 : out.value * 8 }] }));
+  const bandOut = useAnimatedStyle(() => (reduce ? { opacity: 1 - out.value } : { transform: [{ translateY: -out.value * (insets.top + band + 4) }] }));
+
+  const leave = () => {
+    // Tick first (the button's done face), then the form and band go, then the PIN screen rises in.
+    const wait = reduce ? 120 : 240;
+    out.set(withDelay(wait, withTiming(1, { duration: reduce ? 150 : dur.enter, easing: easeOut })));
+    timer.current = setTimeout(releasePin, wait + 150);
+  };
+
   const submit = async () => {
     if (state !== "idle") return;
     const e: typeof errors = {};
@@ -89,11 +118,14 @@ export function SignInScreen({ defaultEmail = "" }: { defaultEmail?: string }) {
     }
     Keyboard.dismiss();
     setState("busy");
+    holdPin();
     try {
       await session.signIn(email.trim(), password);
       haptic.success();
       setState("done");
+      leave();
     } catch (err) {
+      releasePin();
       haptic.warn();
       setFailure(signInProblem(err));
       setShakes((s) => s + 1);
@@ -103,12 +135,13 @@ export function SignInScreen({ defaultEmail = "" }: { defaultEmail?: string }) {
 
   return (
     <View testID="sign-in" style={{ flex: 1, backgroundColor: c.bg }}>
-      <Animated.View style={[{ backgroundColor: BLUE, overflow: "hidden", borderBottomWidth: 2.5, borderColor: INK }, bandStyle]}>
+      <Animated.View style={[{ backgroundColor: BLUE, overflow: "hidden", borderBottomWidth: 2.5, borderColor: INK, zIndex: 1 }, bandStyle, bandOut]}>
         <Dots />
         <Animated.View style={[{ flex: 1, paddingTop: insets.top }, artStyle]}>
           <BandArt h={band} />
         </Animated.View>
       </Animated.View>
+      <Animated.View style={[{ flex: 1 }, formOut]}>
       <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : undefined} style={{ flex: 1 }}>
         <ScrollView keyboardShouldPersistTaps="handled" keyboardDismissMode="interactive" showsVerticalScrollIndicator={false} contentContainerStyle={{ flexGrow: 1, paddingHorizontal: layout.gutter, paddingTop: space[5], paddingBottom: space[6], width: "100%", maxWidth: 480, alignSelf: "center", gap: space[5] }}>
           <Title />
@@ -147,6 +180,7 @@ export function SignInScreen({ defaultEmail = "" }: { defaultEmail?: string }) {
           </Press>
         </ScrollView>
       </KeyboardAvoidingView>
+      </Animated.View>
     </View>
   );
 }

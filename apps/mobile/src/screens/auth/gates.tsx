@@ -5,12 +5,13 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { useConfig } from "@/api/queries";
 import { session, useSession } from "@/auth";
+import { handoff } from "@/auth/handoff";
 import { isWeakPin } from "@/auth/pin";
 import { PinPad, type PinTone } from "@/auth/PinPad";
 import { Button, EmptyState, T, Wordmark } from "@/ds";
 import { BRAND } from "@/lib/brand";
 import { haptic } from "@/lib/haptics";
-import { Burst } from "@/motion";
+import { Burst, dur } from "@/motion";
 import { layout, space, useTheme } from "@/theme";
 import { Icon, Star } from "@/visitor/Art";
 
@@ -27,7 +28,7 @@ function Gate({ children, footer, testID, art }: { children: React.ReactNode; fo
     <Animated.View
       testID={testID}
       accessibilityViewIsModal
-      entering={reduce ? FadeIn.duration(150) : FadeInDown.duration(320).easing(Easing.bezier(0.23, 1, 0.32, 1))}
+      entering={reduce ? FadeIn.duration(150) : GateEnter}
       exiting={reduce ? FadeOut.duration(150) : GateExit}
       style={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, backgroundColor: c.bg, paddingTop: insets.top + space[5], paddingBottom: insets.bottom + space[5], paddingHorizontal: layout.gutter }}
     >
@@ -39,6 +40,16 @@ function Gate({ children, footer, testID, art }: { children: React.ReactNode; fo
       {footer ? <View style={{ width: "100%", maxWidth: 420, alignSelf: "center", gap: space[2] }}>{footer}</View> : null}
     </Animated.View>
   );
+}
+
+/** Arriving: the gate rises 12px from below and fades in (after the sign-in form has dropped away). */
+function GateEnter() {
+  "worklet";
+  const ease = Easing.bezier(0.23, 1, 0.32, 1);
+  return {
+    initialValues: { opacity: 0, transform: [{ translateY: 12 }] },
+    animations: { opacity: withTiming(1, { duration: dur.enter, easing: ease }), transform: [{ translateY: withTiming(0, { duration: dur.enter, easing: ease }) }] },
+  };
 }
 
 /** Leaving: the gate lifts a little, grows a touch and fades (the app shows through). */
@@ -70,6 +81,7 @@ function PinArt({ win = 0 }: { /** Each new value fires sparks: the PIN is right
 
 /** Choose a PIN right after signing in: enter it, then enter it again. */
 export function SetPinScreen() {
+  const reduce = useReducedMotion();
   const [first, setFirst] = React.useState<string | null>(null);
   const [value, setValue] = React.useState("");
   const [error, setError] = React.useState<string | null>(null);
@@ -103,10 +115,13 @@ export function SetPinScreen() {
     setBusy(true);
     setTone("success");
     haptic.success();
-    // A short beat for the lime wave, then into the app.
+    // A short beat for the lime wave, then into the app. This screen stays up
+    // until Home has painted under it, then lifts away (app/_layout.tsx).
     setTimeout(() => {
+      handoff.set({ opening: true });
       session.choosePin(pin).catch(() => {
         // The phone's keystore refused the PIN: say so and let them try again, never stop here.
+        handoff.set({ opening: false });
         setBusy(false);
         setFirst(null);
         reject("The PIN could not be saved on this phone. Try again.");
@@ -117,7 +132,7 @@ export function SetPinScreen() {
   return (
     <Gate testID="set-pin" art={<PinArt win={tone === "success" ? 1 : 0} />} footer={first !== null && !busy ? <Button kind="text" full label="Start again" onPress={() => { setFirst(null); setValue(""); setError(null); }} /> : null}>
       <View style={{ alignItems: "center", gap: space[2], marginBottom: space[6] }}>
-        <Animated.View key={busy ? "done" : first === null ? "one" : "two"} entering={FadeInDown.duration(220)}>
+        <Animated.View key={busy ? "done" : first === null ? "one" : "two"} entering={reduce ? FadeIn.duration(150) : FadeInDown.duration(220)}>
           <T v="h1" center>
             {busy ? "All set" : first === null ? "Choose a PIN" : "Enter it once more"}
           </T>

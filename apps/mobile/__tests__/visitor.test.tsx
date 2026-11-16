@@ -7,6 +7,7 @@ import * as React from "react";
 
 import { ApiFailure } from "@/api/errors";
 import { session } from "@/auth";
+import { handoff } from "@/auth/handoff";
 import { PinPad } from "@/auth/PinPad";
 import { signInProblem, SignInScreen } from "@/screens/auth/sign-in";
 import { WelcomeScreen } from "@/screens/visitor/welcome";
@@ -40,6 +41,8 @@ jest.mock("react-native-reanimated", () => {
     useAnimatedProps: (fn: () => object) => fn(),
     useAnimatedReaction: () => undefined,
     useAnimatedScrollHandler: () => () => undefined,
+    KeyboardState: { UNKNOWN: 0, OPENING: 1, OPEN: 2, CLOSING: 3, CLOSED: 4 },
+    useAnimatedKeyboard: () => ({ height: sv(0), state: sv(4) }),
     interpolate: (v: number, i: number[], o: number[]) => {
       const t = Math.min(1, Math.max(0, (v - i[0]!) / (i[i.length - 1]! - i[0]!)));
       return o[0]! + t * (o[o.length - 1]! - o[0]!);
@@ -145,6 +148,34 @@ describe("Sign in", () => {
     await fireEvent.changeText(screen.getByTestId("sign-in-password"), "wrong");
     await fireEvent.press(screen.getByTestId("sign-in-submit"));
     await waitFor(() => expect(screen.getByTestId("sign-in-failure")).toBeTruthy());
+  });
+
+  it("holds the PIN screen until the form has gone, then lets it in", async () => {
+    jest.useFakeTimers();
+    try {
+      await render(<SignInScreen />);
+      await fireEvent.changeText(screen.getByTestId("sign-in-email"), "ananya@example.com");
+      await fireEvent.changeText(screen.getByTestId("sign-in-password"), "right");
+      await fireEvent.press(screen.getByTestId("sign-in-submit"));
+      await waitFor(() => expect(session.store.get().phase).toBe("setPin"));
+      expect(handoff.get().holdPin).toBe(true);
+      await React.act(async () => {
+        jest.advanceTimersByTime(600);
+      });
+      expect(handoff.get().holdPin).toBe(false);
+    } finally {
+      jest.useRealTimers();
+      await React.act(() => session.signOut());
+    }
+  });
+
+  it("never holds the PIN screen after a wrong password", async () => {
+    await render(<SignInScreen />);
+    await fireEvent.changeText(screen.getByTestId("sign-in-email"), "ananya@example.com");
+    await fireEvent.changeText(screen.getByTestId("sign-in-password"), "wrong");
+    await fireEvent.press(screen.getByTestId("sign-in-submit"));
+    await waitFor(() => expect(screen.getByTestId("sign-in-failure")).toBeTruthy());
+    expect(handoff.get().holdPin).toBe(false);
   });
 
   it("turns server errors into plain words", () => {
