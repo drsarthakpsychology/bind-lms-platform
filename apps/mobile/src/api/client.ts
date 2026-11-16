@@ -45,7 +45,20 @@ export const fetchTransport: Transport = async (req) => {
   return { status: res.status, json };
 };
 
-export type CallOptions = { body?: unknown; /** False for public routes. */ auth?: boolean; query?: Record<string, string | number | boolean | null | undefined> };
+/**
+ * An answer that is not the contract's JSON (an HTML error page, an empty 405).
+ * The phone did reach a server, so this never says "check your internet".
+ * 404 and 405 mean the server has no such route yet: `not_found`, so the
+ * screens' fallbacks and "Coming in the next update" states still work.
+ */
+export function notJson(status: number): ApiFailure {
+  if (status === 404 || status === 405) return new ApiFailure("not_found", "This part is not on the server yet. Update the app, or try again later.", status);
+  if (status >= 500) return new ApiFailure("server_error", "Something went wrong on our side. Try again in a minute.", status);
+  if (status === 401 || status === 403) return new ApiFailure("forbidden", "The server refused this request. Sign out and in again, or ask us.", status);
+  return new ApiFailure("bad_request", "The server gave an answer the app did not understand. If you are on public Wi-Fi, open its sign-in page first, then try again.", status);
+}
+
+export type CallOptions ={ body?: unknown; /** False for public routes. */ auth?: boolean; query?: Record<string, string | number | boolean | null | undefined> };
 
 export function createClient(deps: { transport: Transport; tokens: TokenSource; onSessionEvent?: (e: SessionEvent) => void; version?: string; platform?: string }) {
   let refreshing: Promise<AuthTokens> | null = null;
@@ -85,7 +98,7 @@ export function createClient(deps: { transport: Transport; tokens: TokenSource; 
       if (json.ok) return json.data;
       throw new ApiFailure(json.error.code, json.error.message, res.status, json.error.details ?? {});
     }
-    throw new ApiFailure(res.status >= 500 ? "server_error" : "bad_request", "The server gave an answer the app did not understand. Try again.", res.status);
+    throw notJson(res.status);
   }
 
   function refresh(): Promise<AuthTokens> {
@@ -99,7 +112,8 @@ export function createClient(deps: { transport: Transport; tokens: TokenSource; 
       })
       .catch((e: unknown) => {
         // No internet: keep the session and let the screen offer Try again.
-        if (e instanceof ApiFailure && (e.code === "network" || e.code === "server_error" || e.code === "rate_limited")) throw e;
+        // A server without the renewal route (a broken deploy answering 404) is not a refused sign-in either.
+        if (e instanceof ApiFailure && (e.code === "network" || e.code === "server_error" || e.code === "rate_limited" || e.code === "not_found")) throw e;
         // The session codes (phone replaced, account paused) pass through as they are.
         if (e instanceof ApiFailure && (e.code === "device_replaced" || e.code === "account_expired" || e.code === "account_blocked" || e.code === "upgrade_required")) throw e;
         // Anything else means the saved sign-in cannot be renewed: sign in again, never a stuck app.
