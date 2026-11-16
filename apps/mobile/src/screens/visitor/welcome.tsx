@@ -9,7 +9,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { Button, Meme, Row, RowList, Sheet, T } from "@/ds";
 import { haptic } from "@/lib/haptics";
-import { Press } from "@/motion";
+import { MaskLine, Press } from "@/motion";
 import { fonts, layout, space, useTheme } from "@/theme";
 import { Icon, Person, Sparkle, Star } from "@/visitor/Art";
 import { HomeWordsCtx, useHomeWords, useWords } from "@/visitor/home-data";
@@ -276,16 +276,6 @@ function Headline({ big }: { big: number }) {
           </Text>
         </View>
       </MaskLine>
-    </View>
-  );
-}
-
-function MaskLine({ delay, h, children }: { delay: number; h: number; children: React.ReactNode }) {
-  const t = useIntro(delay, 720);
-  const anim = useAnimatedStyle(() => ({ transform: [{ translateY: (1 - t.value) * h }] }));
-  return (
-    <View style={{ overflow: "hidden", height: h + 4 }}>
-      <Animated.View style={anim}>{children}</Animated.View>
     </View>
   );
 }

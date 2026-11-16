@@ -41,6 +41,8 @@ jest.mock("react-native-reanimated", () => {
     useAnimatedStyle: (fn: () => object) => fn(),
     useAnimatedProps: (fn: () => object) => fn(),
     useAnimatedReaction: () => undefined,
+    // Gesture Handler 3 asks whether a prop is a shared value (the Sheet's drag).
+    isSharedValue: (v: unknown) => !!v && typeof v === "object" && "value" in (v as object) && "get" in (v as object),
     useAnimatedScrollHandler: () => () => undefined,
     KeyboardState: { UNKNOWN: 0, OPENING: 1, OPEN: 2, CLOSING: 3, CLOSED: 4 },
     useAnimatedKeyboard: () => ({ height: sv(0), state: sv(4) }),
