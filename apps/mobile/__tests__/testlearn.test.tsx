@@ -6,13 +6,15 @@ import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 import { mock } from "@/api/mock/server";
 import { session } from "@/auth";
-import { LoadSwap } from "@/motion";
+import { FlowGap, LoadSwap } from "@/motion";
 import { missWhy } from "@/practise/games/blitz";
 import { SortGame } from "@/practise/games/sort";
 import { WardGame } from "@/practise/games/ward";
 import { render } from "./utils";
 import { searchCovers, searchHint } from "@/screens/search/search";
 import { progressMeta } from "@/screens/me/me";
+import { longTitle } from "@/practise/prep/long";
+import { PrepHome } from "@/practise/prep";
 
 beforeAll(async () => {
   await session.boot();
@@ -54,11 +56,14 @@ describe("Criteria sort", () => {
 
 describe("Content that rises in after a load keeps the column's gap", () => {
   it("passes the gap to the wrapper, so sections are not glued together on first load", async () => {
+    // A Section provides its own 12px gap the same way (FlowGap), so content loaded inside one keeps it too.
     const view = (ready: boolean) => (
-      <LoadSwap ready={ready} gap={32} skeleton={<Text>loading</Text>}>
-        <View testID="a" />
-        <View testID="b" />
-      </LoadSwap>
+      <FlowGap.Provider value={32}>
+        <LoadSwap ready={ready} skeleton={<Text>loading</Text>}>
+          <View testID="a" />
+          <View testID="b" />
+        </LoadSwap>
+      </FlowGap.Provider>
     );
     const r = await rawRender(view(false));
     await r.rerender(view(true));
@@ -96,5 +101,24 @@ describe("Me: the Progress row", () => {
   it("names only what this account has", () => {
     expect(progressMeta(false, true, true)).toBe("Topics, map, your level and badges");
     expect(progressMeta(true, false, false)).toBe("Lectures watched");
+  });
+});
+
+describe("Exam Prep", () => {
+  it("names the long answers list with the subject", () => {
+    expect(longTitle("Statistics")).toBe("Long answers: Statistics");
+  });
+  it("says Still trying when the subjects take long", async () => {
+    jest.useFakeTimers();
+    try {
+      mock.setScenario("slow");
+      await render(<PrepHome />);
+      await waitFor(() => {
+        jest.advanceTimersByTime(4500);
+        expect(screen.getByTestId("still-trying")).toBeTruthy();
+      });
+    } finally {
+      jest.useRealTimers();
+    }
   });
 });
