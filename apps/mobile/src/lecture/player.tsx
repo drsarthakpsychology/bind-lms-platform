@@ -45,15 +45,29 @@ export function clock(sec: number): string {
   return h ? `${h}:${String(m).padStart(2, "0")}:${r}` : `${m}:${r}`;
 }
 
+/**
+ * Where a lecture opens. A lecture watched to (nearly) the end starts again
+ * from the top: it opened on its last seconds, so Play ended it at once.
+ */
+export function resumeFrom(resume: number, duration: number | null | undefined): number {
+  const r = Number.isFinite(resume) ? resume : 0;
+  if (r <= 5) return 0;
+  return duration && duration > 0 && r >= duration - 15 ? 0 : r;
+}
+
+/** Play at the very end starts again from the top (the phone's player just stays ended). */
+export const atEnd = (time: number, duration: number) => duration > 0 && time >= duration - 1;
+
 /* ------------------------------------------------------------- surfaces */
 
 function RealSurface({ access, children }: { access: StreamAccess; children: (p: Playback) => React.ReactNode }) {
   const player = useVideoPlayer({ uri: access.url, headers: access.headers, contentType: access.mediaType === "hls" ? "hls" : "progressive" }, (p) => {
     p.timeUpdateEventInterval = 1;
     p.staysActiveInBackground = false;
-    if (access.resumeSeconds > 5) p.currentTime = access.resumeSeconds;
+    const from = resumeFrom(access.resumeSeconds, access.durationSeconds);
+    if (from) p.currentTime = from;
   });
-  const [state, setState] = React.useState({ playing: false, time: access.resumeSeconds, duration: access.durationSeconds ?? 0, ready: false, failed: null as string | null });
+  const [state, setState] = React.useState({ playing: false, time: resumeFrom(access.resumeSeconds, access.durationSeconds), duration: access.durationSeconds ?? 0, ready: false, failed: null as string | null });
   useEventListener(player, "timeUpdate", (e) => setState((s) => ({ ...s, time: e.currentTime, duration: player.duration || s.duration })));
   useEventListener(player, "playingChange", (e) => setState((s) => ({ ...s, playing: e.isPlaying })));
   useEventListener(player, "statusChange", (e) => setState((s) => ({ ...s, ready: e.status === "readyToPlay" || s.ready, failed: e.status === "error" ? (e.error?.message ?? "The lecture could not play.") : null })));
@@ -62,9 +76,10 @@ function RealSurface({ access, children }: { access: StreamAccess; children: (p:
     play: () => player.play(),
     pause: () => player.pause(),
     seek: (t) => {
+      const to = Math.max(0, Math.min(t, state.duration || t));
       // eslint-disable-next-line react-hooks/immutability -- the player is a native object, not React state
-      player.currentTime = Math.max(0, Math.min(t, state.duration || t));
-      setState((s) => ({ ...s, time: t }));
+      player.currentTime = to;
+      setState((s) => ({ ...s, time: to }));
     },
   };
   return (
@@ -79,7 +94,7 @@ function RealSurface({ access, children }: { access: StreamAccess; children: (p:
 function MockSurface({ access, children }: { access: StreamAccess; children: (p: Playback) => React.ReactNode }) {
   const duration = access.durationSeconds ?? 3600;
   const [playing, setPlaying] = React.useState(false);
-  const [time, setTime] = React.useState(access.resumeSeconds);
+  const [time, setTime] = React.useState(() => resumeFrom(access.resumeSeconds, duration));
   React.useEffect(() => {
     if (!playing) return;
     const id = setInterval(() => setTime((t) => Math.min(duration, t + 1)), 1000);
@@ -147,6 +162,7 @@ function Controls({ pb, full, onFull, onFirstPlay }: { pb: Playback; full: boole
     if (pb.playing) pb.pause();
     else {
       onFirstPlay();
+      if (atEnd(pb.time, pb.duration)) pb.seek(0);
       pb.play();
     }
   };

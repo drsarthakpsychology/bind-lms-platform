@@ -65,3 +65,17 @@ describe("admin lists read every page", () => {
     get.mockRestore();
   });
 });
+
+describe("lecture player", () => {
+  it("a lecture watched to the end opens at the top; part way it opens where it stopped", () => {
+    const { resumeFrom, atEnd } = jest.requireActual<typeof import("@/lecture/player")>("@/lecture/player");
+    expect(resumeFrom(3590, 3600)).toBe(0);
+    expect(resumeFrom(1200, 3600)).toBe(1200);
+    expect(resumeFrom(1200, null)).toBe(1200);
+    expect(resumeFrom(3, 3600)).toBe(0);
+    expect(resumeFrom(Number.NaN, 3600)).toBe(0);
+    expect(atEnd(3600, 3600)).toBe(true);
+    expect(atEnd(100, 3600)).toBe(false);
+    expect(atEnd(0, 0)).toBe(false);
+  });
+});
