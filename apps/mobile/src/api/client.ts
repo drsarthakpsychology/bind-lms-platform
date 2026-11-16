@@ -29,21 +29,36 @@ export type TokenSource = {
 /** Codes that end or pause the session; the session store listens for them. */
 export type SessionEvent = { code: Extract<ApiErrorCode, "device_replaced" | "account_expired" | "account_blocked" | "upgrade_required" | "unauthenticated">; message: string; details: Record<string, unknown> };
 
-export const fetchTransport: Transport = async (req) => {
-  let res: Response;
-  try {
-    res = await fetch(config.apiUrl + req.path, { method: req.method, headers: req.headers, body: req.body === undefined ? undefined : JSON.stringify(req.body) });
-  } catch {
-    throw new ApiFailure("network", "No internet. Check your connection and try again.");
-  }
-  let json: unknown = null;
-  try {
-    json = await res.json();
-  } catch {
-    json = null;
-  }
-  return { status: res.status, json };
-};
+/** How long one call may take. React Native's fetch has no time limit of its own, so a stalled
+ * mobile connection left a screen on its skeleton for ever. */
+export const CALL_TIMEOUT_MS = 30_000;
+
+export function makeFetchTransport(f: typeof fetch = (...a) => fetch(...a), timeoutMs = CALL_TIMEOUT_MS): Transport {
+  return async (req) => {
+    const ctrl = typeof AbortController === "function" ? new AbortController() : null;
+    const timer = ctrl ? setTimeout(() => ctrl.abort(), timeoutMs) : null;
+    try {
+      let res: Response;
+      try {
+        res = await f(config.apiUrl + req.path, { method: req.method, headers: req.headers, body: req.body === undefined ? undefined : JSON.stringify(req.body), signal: ctrl?.signal });
+      } catch {
+        throw new ApiFailure("network", ctrl?.signal.aborted ? "The connection is too slow right now. Check your internet and try again." : "No internet. Check your connection and try again.");
+      }
+      let json: unknown = null;
+      try {
+        json = await res.json();
+      } catch {
+        if (ctrl?.signal.aborted) throw new ApiFailure("network", "The connection is too slow right now. Check your internet and try again.");
+        json = null;
+      }
+      return { status: res.status, json };
+    } finally {
+      if (timer) clearTimeout(timer);
+    }
+  };
+}
+
+export const fetchTransport: Transport = makeFetchTransport();
 
 /**
  * An answer that is not the contract's JSON (an HTML error page, an empty 405).

@@ -117,3 +117,16 @@ describe("a sign-in's life", () => {
     await expect(s.api.get("/home")).rejects.toBeInstanceOf(ApiFailure);
   });
 });
+
+describe("a stalled connection", () => {
+  it("gives up after the time limit with a plain line, instead of loading for ever", async () => {
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    const { makeFetchTransport } = require("@/api/client") as typeof import("@/api/client");
+    const hang = ((_u: string, init?: { signal?: AbortSignal }) =>
+      new Promise((_res, rej) => {
+        init?.signal?.addEventListener("abort", () => rej(new Error("Aborted")));
+      })) as unknown as typeof fetch;
+    const t = makeFetchTransport(hang, 20);
+    await expect(t({ method: "GET", path: "/home", headers: {} })).rejects.toMatchObject({ code: "network", message: expect.stringMatching(/too slow/) });
+  });
+});
