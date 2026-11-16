@@ -10,6 +10,7 @@ import { fonts, layout, motion, space, useTheme } from "@/theme";
 import { Button } from "./button";
 import { ProgressLine } from "./parts";
 import { T } from "./text";
+import { TitleInk } from "@/moments/title";
 
 /** The VIBHA wordmark: wide black Archivo, with the school line under it. */
 export function Wordmark({ sub = "School of Psychology", size = 22 }: { sub?: string | null; size?: number }) {
@@ -125,6 +126,7 @@ export function Screen({ children, title, lead, top, footer, onRefresh, refreshi
           {title ? (
             <Animated.View entering={reduce ? undefined : presets.rise(0)}>
               <T v="h1">{title}</T>
+              {tab ? <TitleInk title={title} /> : null}
             </Animated.View>
           ) : null}
           {lead ? (
