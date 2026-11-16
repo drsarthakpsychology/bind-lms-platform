@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { useReducedMotion } from "motion/react";
+import { useReducedMotion } from "@/lib/use-reduced-motion";
 import {
   ArrowRight,
   BookOpen,

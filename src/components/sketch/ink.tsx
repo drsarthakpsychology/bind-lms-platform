@@ -102,9 +102,20 @@ function draw(shape: Shape, o: Options) {
   }
 }
 
+/**
+ * Path data rounded to hundredths. rough.js does the same sums on the server
+ * (Node) and in the browser (Chrome), but their Math functions can differ in
+ * the last digit (-6.5815646511146975 vs -6.581564651114697), and React then
+ * reports a hydration mismatch on every drawing. A hundredth of a unit is far
+ * below a pixel, and the page gets smaller too.
+ */
+export function roundPath(d: string): string {
+  return d.replace(/-?(?:\d+\.?\d*|\.\d+)(?:e[-+]?\d+)?/gi, (n) => String(Math.round(Number(n) * 100) / 100));
+}
+
 /** One rough shape as SVG paths. `k` is the seed key: keep it stable. */
 export function Ink({ k, shape, o = {} }: { k: string; shape: Shape; o?: InkOpts }) {
-  const paths = gen.toPaths(draw(shape, toOptions(k, o)));
+  const paths = gen.toPaths(draw(shape, toOptions(k, o))).map((p) => ({ ...p, d: roundPath(p.d) }));
   return (
     <g className={o.className} style={o.style} aria-hidden>
       {paths.map((p, i) => (

@@ -55,7 +55,7 @@ type ApiError = { ok: false; error: { code: ApiErrorCode; message: string; detai
 | 403 | `forbidden` | Not enrolled, not the owner, not an admin | Show the message |
 | 403 | `device_limit` | Too many phone changes this month. `details.nextChangeAt` | Show the message and the support contact |
 | 403 | `video_refused` | Video refused (rooted phone) | Show the message |
-| 404 | `not_found` | | |
+| 404 | `not_found` | The thing is not there, or no route answers this path (any unknown `/api/app/v1/...` path answers this JSON, never an HTML page) | Route the app may not have yet: use its fallback or show "not on the server yet" |
 | 409 | `conflict` | Clashes with stored state (already graded) | Show the message, reload |
 | 413 | `too_large` | | |
 | 426 | `upgrade_required` | App too old. `details.minVersion`, `details.storeUrl` | Blocking update screen |
@@ -426,3 +426,5 @@ Notification bodies are sent as `MessageBlock[]` (paragraphs, headings, lists, w
 - Adding a field or a route is not a breaking change. The app must ignore fields it does not know.
 - Removing or renaming a field, or changing a type, needs `/api/app/v2`, or a raised `minSupportedVersion`.
 - Every change to a route lands in the same commit as the change to `contract.ts` and to this page.
+- `src/app/api/app/v1/route-sweep.test.ts` reads every request in apps/mobile and fails when one has no route, a missing method, a query key the route ignores or a body key its schema does not know. A call the app makes before its route exists goes in `PENDING` in `src/lib/app-api/route-sweep.ts`; a path built in a variable goes in `DYNAMIC` there.
+- If the app ever gets an answer that is not JSON (an HTML page from a proxy, a 405 for a missing method), it shows a plain line saying so, not "check your internet".

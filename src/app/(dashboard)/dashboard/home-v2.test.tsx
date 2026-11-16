@@ -73,6 +73,14 @@ describe("Home (new design)", () => {
     expect(screen.queryByRole("region", { name: "Today" })).toBeNull();
   });
 
+  it("says why the student was sent home from a section switched off for them", () => {
+    const { unmount } = render(<HomeV2 {...base} />);
+    expect(screen.queryByText(/That section is not open for you/)).toBeNull();
+    unmount();
+    render(<HomeV2 {...base} sectionOff />);
+    expect(screen.getByText(/That section is not open for you/)).toBeInTheDocument();
+  });
+
   it("skeleton is a labelled loading state", () => {
     render(<HomeV2Skeleton />);
     expect(screen.getByRole("status", { name: "Loading" })).toBeInTheDocument();
