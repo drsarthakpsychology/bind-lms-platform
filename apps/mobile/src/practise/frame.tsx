@@ -347,7 +347,7 @@ export function EndPanel({ kicker = "Round over", score, scoreOf, line, stats, r
     fired.current = true;
     haptic.success();
     const mood = outcome ? (outcome === "won" ? "streak" : outcome === "lost" ? "wrong" : "near") : moodForScore(right ?? 0, total ?? 0);
-    reactions.show(mood, (right ?? 0) + (total ?? 0));
+    reactions.show(mood);
   }, [outcome, right, total]);
   return (
     <Animated.View entering={reduce ? undefined : FadeInDown.duration(motion.fill)} style={{ gap: space[5], paddingTop: space[4] }} testID="game-over">
