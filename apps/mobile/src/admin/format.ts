@@ -220,12 +220,29 @@ export function inPeopleView(p: import("./extra").PersonRow, view: import("./ext
   }
 }
 
-/** "Follow up today", "Follow up in 3 d", "Follow up was due 2 d ago". */
+/** The phone's calendar day of a moment, as a whole number (days since 1970 on the local calendar). */
+function localDay(t: number): number {
+  const d = new Date(t);
+  return Math.round(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()) / 86400_000);
+}
+
+/**
+ * "Follow up today", "Follow up in 3 d", "Follow up was due 2 d ago", by
+ * calendar day on the phone (the server keeps 9am on the day). Rounding the
+ * hours between called tomorrow morning "today" after 9pm.
+ */
 export function followUpLine(iso: string | null, now = Date.now()): string | null {
   const t = iso ? Date.parse(iso) : NaN;
   if (Number.isNaN(t)) return null;
-  const d = Math.round((t - now) / 86400_000);
+  const d = localDay(t) - localDay(now);
   if (d === 0) return "Follow up today";
   if (d > 0) return `Follow up in ${d} d`;
   return `Follow up was due ${-d} d ago`;
+}
+
+/** The day `days` from today on the phone's calendar, as the server wants it (YYYY-MM-DD). */
+export function followUpDate(days: number, now = Date.now()): string {
+  const d = new Date(now);
+  const t = new Date(d.getFullYear(), d.getMonth(), d.getDate() + days);
+  return `${t.getFullYear()}-${String(t.getMonth() + 1).padStart(2, "0")}-${String(t.getDate()).padStart(2, "0")}`;
 }

@@ -11,7 +11,7 @@ import { haptic } from "@/lib/haptics";
 import { space, useTheme } from "@/theme";
 import { adminCalls, useAdminAction, useEnquiries, usePeople, usePerson, useRefreshAdmin } from "../api";
 import { PEOPLE_VIEWS, STAGE_LABEL, STAGES, type EmailPreview, type LoginLinkResult, type PeopleView, type PersonRow, type StageId } from "../extra";
-import { ago, day, followUpLine, inPeopleView, plural, whatsapp, type Tone } from "../format";
+import { ago, day, followUpDate, followUpLine, inPeopleView, plural, whatsapp, type Tone } from "../format";
 import { ActionBar, Check, Dot, Facts, FilterChips, Loaded, Notice, OptionRow, Quiet, ScrollTabs, SearchBox, SelectRow, SmallButton, Status, SwipeRow, TabSwap, Tag } from "../kit";
 import { openStudent } from "../nav";
 import { useAdminRole, VIEW_ONLY_LINE } from "../role";
@@ -323,6 +323,7 @@ export function AdminPeopleScreen() {
 }
 
 const FOLLOW = [
+  { id: "keep", name: "Keep as it is", days: null },
   { id: "none", name: "No follow-up", days: null },
   { id: "1", name: "Tomorrow", days: 1 },
   { id: "3", name: "In 3 days", days: 3 },
@@ -377,6 +378,7 @@ export function AdminPersonScreen() {
                     testID="person-stage"
                     onPress={() => {
                       setStage(p.stage);
+                      setFollow(p.followUpAt ? "keep" : "none");
                       setStageOpen(true);
                     }}
                   />
@@ -416,15 +418,16 @@ export function AdminPersonScreen() {
                   <T v="small" tone="muted">
                     Follow up
                   </T>
-                  <Chips label="Follow up" value={follow} onChange={setFollow} options={FOLLOW.map((f) => ({ id: f.id, name: f.name }))} />
+                  <Chips label="Follow up" value={follow} onChange={setFollow} options={FOLLOW.filter((f) => f.id !== "keep" || p.followUpAt).map((f) => ({ id: f.id, name: f.id === "keep" ? (followUpLine(p.followUpAt) ?? f.name) : f.name }))} />
                 </View>
                 <Button
                   label="Save"
                   busy={busy === "move-stage"}
                   testID="stage-save"
                   onPress={() => {
+                    // "Keep" sends nothing, so moving the stage never clears a follow-up date.
                     const days = FOLLOW.find((f) => f.id === follow)?.days ?? null;
-                    const followUpAt = days ? new Date(Date.now() + days * 86400_000).toISOString() : null;
+                    const followUpAt = follow === "keep" ? undefined : days ? followUpDate(days) : null;
                     void run("move-stage", () => adminCalls.moveStage(p.key, { stage: stage ?? p.stage, followUpAt }), { done: `Moved to ${STAGE_LABEL[stage ?? p.stage]}` }).then((r) => r && setStageOpen(false));
                   }}
                 />
