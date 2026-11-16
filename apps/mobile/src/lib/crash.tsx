@@ -3,6 +3,7 @@ import { Platform, Pressable, ScrollView, Text, View, useColorScheme } from "rea
 
 import * as SplashScreen from "expo-splash-screen";
 
+import { crumb, describeCrumb } from "./breadcrumb";
 import { createStore } from "./store";
 
 /**
@@ -101,6 +102,13 @@ export function resetCrashNet(): void {
 export function CrashScreen({ crash, onRetry }: { crash: Crash; onRetry: () => void }) {
   const dark = useColorScheme() === "dark";
   const [open, setOpen] = React.useState(false);
+  const [where] = React.useState(() => {
+    try {
+      return describeCrumb(crumb.current());
+    } catch {
+      return "";
+    }
+  });
   // A crash before the first screen would otherwise stay hidden behind the splash.
   React.useEffect(() => {
     void SplashScreen.hideAsync().catch(() => undefined);
@@ -114,13 +122,18 @@ export function CrashScreen({ crash, onRetry }: { crash: Crash; onRetry: () => v
           Something went wrong
         </Text>
         <Text style={{ fontSize: 16, lineHeight: 24, color: c.muted }}>The app ran into a problem on this screen. Your work is saved. Try again, and if it keeps happening, send us a screenshot of this page.</Text>
+        {where ? (
+          <Text testID="crash-where" style={{ fontSize: 14, lineHeight: 20, color: c.muted }}>
+            {`It happened on: ${where}`}
+          </Text>
+        ) : null}
         <Pressable accessibilityRole="button" accessibilityState={{ expanded: open }} onPress={() => setOpen((o) => !o)} testID="crash-details-toggle" style={{ paddingVertical: 8 }}>
           <Text style={{ fontSize: 14, color: c.muted, textDecorationLine: "underline" }}>{open ? "Hide details" : "Show details"}</Text>
         </Pressable>
         {open ? (
           <ScrollView style={{ maxHeight: 220, borderWidth: 1, borderColor: c.line, borderRadius: 12, backgroundColor: c.card }} contentContainerStyle={{ padding: 12 }}>
             <Text selectable testID="crash-details" style={{ fontFamily: mono, fontSize: 12, lineHeight: 17, color: c.ink }}>
-              {`${crash.message}\n(${crash.where})${crash.detail ? `\n\n${crash.detail}` : ""}`}
+              {`${crash.message}\n(${crash.where})${where ? `\nScreen: ${where}` : ""}${crash.detail ? `\n\n${crash.detail}` : ""}`}
             </Text>
           </ScrollView>
         ) : null}
