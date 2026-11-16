@@ -15,6 +15,7 @@ import { Block, ConfirmSheet, DayBars, Facts, Figures, Loaded, Meter, Notice, Qu
 import { openCompose } from "../nav";
 import { useAdminRole } from "../role";
 import { CertLine } from "./certificates";
+import { FromRow } from "@/motion";
 
 const TABS = [
   { id: "overview" as const, name: "Overview" },
@@ -242,7 +243,9 @@ export function AdminStudentView({ r, d, tab, onTab, phone }: { r: AdminStudentR
   return (
     <>
       <View style={{ gap: space[2] }}>
-        <T v="h1">{r.name}</T>
+        <FromRow title={r.name}>
+          <T v="h1">{r.name}</T>
+        </FromRow>
         <T v="small" tone="muted" num>
           {r.rollNumber ?? "No roll number"} · {r.email}
         </T>

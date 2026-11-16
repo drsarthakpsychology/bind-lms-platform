@@ -11,7 +11,7 @@ import { api } from "@/auth";
 import { Button, Field, Loaded, RowsSkeleton, Screen, T } from "@/ds";
 import { toast } from "@/ds/toast";
 import { haptic } from "@/lib/haptics";
-import { Press, RollingNumber, Stamp } from "@/motion";
+import { FromRow, Press, RollingNumber, Stamp } from "@/motion";
 import { when } from "@/screens/notifications/list";
 import { layout, space, useTheme } from "@/theme";
 
@@ -109,7 +109,9 @@ export function DoubtScreen() {
         {(d) => (
           <>
             <View style={{ gap: space[2] }}>
-              <T v="h1">{d.title}</T>
+              <FromRow title={d.title}>
+                <T v="h1">{d.title}</T>
+              </FromRow>
               <T v="small" tone="muted">
                 {[d.topic, d.mine ? "You" : d.author, when(d.createdAt), d.status === "solved" ? "Solved" : null].filter(Boolean).join(" · ")}
               </T>

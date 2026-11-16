@@ -16,7 +16,7 @@ import { ClassMark } from "./marks";
 import { searchMeds } from "./meds";
 import type { MedicinePage, MedSection } from "@/practise/contract";
 import { useReducedMotion } from "react-native-reanimated";
-import { Enter, Swap } from "@/motion";
+import { FromRow, Enter, Swap } from "@/motion";
 
 type View_ = "student" | "clinician";
 
@@ -233,7 +233,9 @@ export function MedicinePageView({ page, jump }: { page: MedicinePage; jump?: st
               {page.group} · {page.cls}
             </T>
           </View>
-          <T v="display">{page.name}</T>
+          <FromRow title={page.name}>
+            <T v="display">{page.name}</T>
+          </FromRow>
           {page.brands.length ? (
             <T v="small" tone="muted">
               Brands in India: {page.brands.join(", ")}
