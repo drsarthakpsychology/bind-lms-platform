@@ -91,7 +91,8 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
     predictiveBackGestureEnabled: true,
     softwareKeyboardLayoutMode: "resize",
     // USE_BIOMETRIC: the opt-in fingerprint or face unlock (Settings > This phone); a normal permission, no prompt.
-    permissions: ["POST_NOTIFICATIONS", "VIBRATE", "RECORD_AUDIO", "MODIFY_AUDIO_SETTINGS", "USE_BIOMETRIC"],
+    // CAMERA: only when a student scans the attendance code (expo-camera asks first).
+    permissions: ["POST_NOTIFICATIONS", "VIBRATE", "RECORD_AUDIO", "MODIFY_AUDIO_SETTINGS", "USE_BIOMETRIC", "CAMERA"],
     // The microphone is asked for only when a student records an assignment answer.
     // Files are chosen with the system picker, which needs no storage permission. READ_MEDIA_IMAGES
     // comes from expo-screen-capture's screenshot listener, which the app does not use (it blocks
@@ -102,6 +103,8 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
       "android.permission.READ_MEDIA_IMAGES",
       "android.permission.READ_MEDIA_VIDEO",
       "android.permission.SYSTEM_ALERT_WINDOW",
+      // The attendance code screen brightens only its own window (expo-brightness), never the phone's setting.
+      "android.permission.WRITE_SETTINGS",
       // No advertising: the advertising id is never read.
       "com.google.android.gms.permission.AD_ID",
     ],
@@ -163,6 +166,8 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
     ["expo-local-authentication", { faceIDPermission: "Vibha Psychology can use Face ID to unlock the app instead of your PIN." }],
     ["expo-audio", { microphonePermission: "Vibha Psychology uses the microphone only when you record an answer to an assignment." }],
     ["expo-notifications", { icon: "./assets/images/notification.png", color: BLUE, defaultChannel: "default" }],
+    // The attendance QR scanner (barcode scanning only; no photos, no video, no microphone).
+    ["expo-camera", { cameraPermission: "Vibha Psychology uses the camera only to scan the attendance code at your session.", microphonePermission: false, recordAudioAndroid: false }],
     ["expo-video", { supportsBackgroundPlayback: false, supportsPictureInPicture: false }],
     ["expo-screen-orientation", { initialOrientation: "DEFAULT" }],
     ["expo-build-properties", { android: { minSdkVersion: 24, targetSdkVersion: TARGET_SDK } }],
