@@ -8,7 +8,7 @@ import type { ClinicSession } from "@/lib/app-api/contract";
 export const runtime = "nodejs";
 
 /** PATCH /api/app/v1/clinic/admin/sessions/:id: move, edit, cancel or restore, note. */
-export const PATCH = appRoute<{ id: string }>({ auth: "superAdmin" }, async ({ user, params, body, limitWrite }): Promise<ClinicSession> => {
+export const PATCH = appRoute<{ id: string }>({ auth: "superAdmin", sandbox: true }, async ({ user, params, body, limitWrite }): Promise<ClinicSession> => {
   if (!isUuid(params.id)) throw new ApiFail("not_found");
   const b = await body(sessionPatchSchema, 8192);
   await limitWrite(`app:clinic-admin:${user.profile.id}`, 120);

@@ -7,6 +7,7 @@ import { isHiddenAccount } from "@/lib/people/hidden";
 import { requireAdmin, requireSuperAdmin } from "@/lib/auth/guards";
 import { createAdminClient } from "@/lib/supabase/server";
 import { sendResendEmail, sendCredentialEmails, logEmailSend } from "@/lib/auth/roster";
+import { isTestCohort } from "@/lib/test-mode/rules";
 
 export type RecipientData = {
   courses: Array<{ id: string; title: string }>;
@@ -50,7 +51,7 @@ export async function loadRecipientData(): Promise<RecipientData> {
 
   return {
     courses: (courses ?? []).map((c) => ({ id: c.id, title: c.title })),
-    cohorts: cohortsRes.error ? [] : (cohortsRes.data ?? []).map((c) => ({ id: c.id as string, name: c.name as string, status: String(c.status ?? "active") })),
+    cohorts: cohortsRes.error ? [] : (cohortsRes.data ?? []).filter((c) => !isTestCohort(c)).map((c) => ({ id: c.id as string, name: c.name as string, status: String(c.status ?? "active") })),
     students: (students ?? []).filter((s) => !isHiddenAccount(s)).map((s) => ({ id: s.id, email: s.email })),
     enrolledByCourse,
     membersByCohort,

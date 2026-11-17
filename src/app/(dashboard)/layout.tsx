@@ -22,6 +22,8 @@ import { loadMyBlocks } from "@/lib/access/blocks";
 import { blockedBy } from "@/lib/access/features";
 import { createClient } from "@/lib/supabase/server";
 import { VIEW_MODE_COOKIE } from "./view-mode-constants";
+import { currentTestScope } from "@/lib/test-mode/server";
+import { TestModeBar, TestModeSwitch } from "@/components/test-mode/test-mode-bar";
 
 export default async function DashboardLayout({
   children,
@@ -137,6 +139,8 @@ export default async function DashboardLayout({
   }
 
   const flags = await readFlags();
+  // Test mode: the bar shows on every page (admin with test mode on, or the test student).
+  const testScope = await currentTestScope();
   return (
     <AppShell
       unread={unread}
@@ -150,12 +154,16 @@ export default async function DashboardLayout({
       blocked={blocked}
       viewModeSwitch={
         role === "admin" || role === "view_admin" ? (
-          <ViewModeToggle currentMode={viewingAsStudent ? "student" : "admin"} />
+          <>
+            <ViewModeToggle currentMode={viewingAsStudent ? "student" : "admin"} />
+            {testScope ? null : <TestModeSwitch />}
+          </>
         ) : undefined
       }
     >
       {/* Tells the shared loading, error and not-found states and the first-login form which design is on. */}
       <UiV2Provider value={mode === "student" && uiV2For(flags, role)}>
+        {testScope ? <TestModeBar as={testScope.as} /> : null}
         {gate}
         {role === "student" ? <VisitTracker /> : null}
         {/* Sends queued work to the server and says so when a save keeps failing. */}

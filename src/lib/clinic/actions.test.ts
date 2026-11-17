@@ -14,6 +14,7 @@ vi.mock("@/lib/auth/guards", () => ({
   requireSession: async () => h.profile,
   requireAdmin: async () => (h.profile && ["admin", "view_admin"].includes(h.profile.role) ? h.profile : null),
   requireSuperAdmin: async () => (h.profile?.role === "admin" ? h.profile : null),
+  requireSuperAdminSandbox: async () => (h.profile?.role === "admin" ? h.profile : null),
   isSuperAdmin: (p: { role: string } | null) => p?.role === "admin",
 }));
 vi.mock("@/lib/rate-limit", () => ({ rateLimitWrite: async () => !h.limited }));

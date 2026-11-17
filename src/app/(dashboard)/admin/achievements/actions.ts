@@ -1,5 +1,7 @@
 "use server";
 
+import { loadHiddenIds } from "@/lib/people/hidden-ids";
+
 import { revalidatePath } from "next/cache";
 import { istToday } from "@/lib/practice/streaks";
 import { requireSuperAdmin, requireAdmin } from "@/lib/auth/guards";
@@ -161,7 +163,9 @@ export async function listCredentials(opts: { status?: string; type?: string; se
   if (opts.search) q = q.ilike("student_name", `%${opts.search}%`);
   const { data, count, error } = await q.order("created_at", { ascending: false }).range((page - 1) * size, page * size - 1);
   if (error) return { rows: [], total: 0 };
-  const rows = (data ?? []).map((c) => {
+  // Test and robot accounts are never in the registry.
+  const hidden = await loadHiddenIds().catch(() => new Set<string>());
+  const rows = (data ?? []).filter((c) => !hidden.has(c.user_id as string)).map((c) => {
     const a = Array.isArray(c.achievements) ? c.achievements[0] : c.achievements;
     return {
       id: c.id as string,

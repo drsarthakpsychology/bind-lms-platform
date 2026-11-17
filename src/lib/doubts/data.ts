@@ -2,6 +2,15 @@ import "server-only";
 import { createAdminClient } from "@/lib/supabase/server";
 import { displayName } from "@/lib/learn/leaderboard";
 import { lastReplyBy, type LastReplyBy } from "./last-reply";
+import { loadHiddenIds } from "@/lib/people/hidden-ids";
+import { currentTestScope } from "@/lib/test-mode/server";
+import { canSeeAuthor } from "@/lib/test-mode/rules";
+
+/** Test mode: a test student's posts show only to itself and its own admin in test mode. */
+async function authorFilter(viewerId: string): Promise<(authorId: string) => boolean> {
+  const [hidden, scope] = await Promise.all([loadHiddenIds().catch(() => new Set<string>()), currentTestScope()]);
+  return (authorId) => canSeeAuthor(authorId, viewerId, scope, hidden);
+}
 
 export type DoubtListItem = {
   id: string;
@@ -64,7 +73,9 @@ export async function loadDoubts(opts: { userId: string; isAdmin: boolean; cohor
   if (opts.isAdmin && opts.authorFilter) q = q.eq("user_id", opts.authorFilter);
   const { data: doubts, error } = await q;
   if (error) return [];
+  const visible = await authorFilter(opts.userId);
   const rows = (doubts ?? []).filter((d) => {
+    if (!visible(d.user_id as string)) return false;
     if (opts.isAdmin) return true;
     if (d.status === "hidden") return false;
     const mine = d.user_id === opts.userId;
@@ -106,6 +117,8 @@ export async function loadDoubt(id: string, opts: { userId: string; isAdmin: boo
   const admin = createAdminClient();
   const { data: d } = await admin.from("doubts").select("id, title, body, topic, kind, status, cohort_id, user_id, solved_reply_id, created_at").eq("id", id).maybeSingle();
   if (!d) return null;
+  const visible = await authorFilter(opts.userId);
+  if (!visible(d.user_id as string)) return null;
   const mine = d.user_id === opts.userId;
   if (!opts.isAdmin) {
     if (d.status === "hidden" && !mine) return null;

@@ -10,6 +10,7 @@ import { AccessManager, type AccessRow } from "./access-manager";
 import { readFlags } from "@/lib/flags";
 import { uiV2For } from "@/lib/ui/v2";
 import { AdminPage, Notice } from "../_v2/kit";
+import { isTestCohort } from "@/lib/test-mode/rules";
 
 export const metadata: Metadata = { title: "Access" };
 export const dynamic = "force-dynamic";
@@ -38,7 +39,7 @@ export default async function AccessPage({ searchParams }: { searchParams: Promi
     admin.from("cohort_members").select("cohort_id, user_id").limit(50000),
     loadAllBlocks(),
   ]);
-  const cohorts = cohortsRes.error ? [] : (cohortsRes.data ?? []).map((c) => ({ id: c.id as string, name: c.name as string, courseId: (c.course_id as string | null) ?? null }));
+  const cohorts = cohortsRes.error ? [] : (cohortsRes.data ?? []).filter((c) => !isTestCohort(c)).map((c) => ({ id: c.id as string, name: c.name as string, courseId: (c.course_id as string | null) ?? null }));
   const inCohort = new Map<string, string[]>();
   for (const m of membersRes.error ? [] : (membersRes.data ?? [])) inCohort.set(m.user_id as string, [...(inCohort.get(m.user_id as string) ?? []), m.cohort_id as string]);
   const rows: AccessRow[] = (profiles ?? [])

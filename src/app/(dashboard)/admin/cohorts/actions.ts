@@ -7,6 +7,7 @@ import { createAdminClient } from "@/lib/supabase/server";
 import { deriveName, generateCredential, sendCredentialEmails, sendResendEmail } from "@/lib/auth/roster";
 import { parseEmails } from "@/lib/cohorts/rules";
 import { matchNames, splitPeople, type NameMatch } from "../students/people-paste";
+import { isTestCohort } from "@/lib/test-mode/rules";
 
 type Result = { error: string | null };
 const APP_URL = () => liveAppUrl();
@@ -30,6 +31,7 @@ export async function createCohort(form: { name: string; startsOn?: string; stat
   if (!(await requireSuperAdmin())) return { error: "Not authorized." };
   const name = form.name.trim();
   if (!name) return { error: "Give the cohort a name." };
+  if (isTestCohort({ name })) return { error: "That name is kept for test mode. Pick another." };
   const admin = createAdminClient();
   const { data, error } = await admin
     .from("cohorts")

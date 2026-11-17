@@ -4,6 +4,7 @@ import { sendResendEmail, logEmailSend } from "@/lib/auth/roster";
 import { appUrl as liveAppUrl, cleanAppUrl } from "@/lib/app-url";
 import { CUSTOM_SIGNATORY, linkedInAddToProfileUrl } from "./linkedin";
 import { queuePush } from "@/lib/app-api/push";
+import { sandboxRecipients } from "@/lib/test-mode/server";
 
 /**
  * Achievement + certificate notifications. In-app rows are written first (they
@@ -36,6 +37,9 @@ export async function notifyCredential(input: NotifyInput): Promise<void> {
     input.type === "badge"
       ? `Congratulations. You've earned the "${input.title}" achievement${input.moduleName ? ` for ${input.moduleName}` : ""}. It's now on your My Achievements page.`
       : `Your certificate for "${input.title}" has been officially issued. View and share it from My Achievements.`;
+
+  // Test mode: never a bell or email to a test account from a real request (and the other way round).
+  if (!(await sandboxRecipients([input.userId])).includes(input.userId)) return;
 
   // In-app notification (source of truth; written even if email fails).
   const bell = { id: crypto.randomUUID(), user_id: input.userId, type: input.type, credential_id: input.credentialId, title, body, href: "/achievements" };

@@ -11,6 +11,7 @@ import { percentileLine, percentileOf } from "./percentile";
 import { relativeView, zoneNote, type ViewItem, type ZoneNote } from "./relative";
 import { groupTier, promotionLine, rankGroup, tierName, zoneSize, type Closed, type Tier } from "./tiers";
 import { daysLeftInWeek, leagueWeek, monthLabel, monthOf, nextMonth } from "./week";
+import { isTestCohort } from "@/lib/test-mode/rules";
 
 /**
  * Everything the /leaderboard page shows one student. Only names, points and
@@ -81,7 +82,8 @@ export const loadMyLeague = cache(async (userId: string, at?: string): Promise<M
     admin
       .from("cohorts")
       .select("id, name")
-      .then((r) => (r.error ? [] : ((r.data ?? []) as { id: string; name: string }[])), () => [] as { id: string; name: string }[]),
+      // Test cohorts (test mode) never take part.
+      .then((r) => (r.error ? [] : ((r.data ?? []) as { id: string; name: string }[]).filter((c) => !isTestCohort(c))), () => [] as { id: string; name: string }[]),
   ]);
   const wp = new Map([...weekPts].map(([k, v]) => [k, v.total]));
   const mp = new Map([...monthPts].map(([k, v]) => [k, v.total]));

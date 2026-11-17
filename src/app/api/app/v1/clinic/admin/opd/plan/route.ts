@@ -13,7 +13,7 @@ export const GET = appRoute({ auth: "admin" }, async ({ query }): Promise<Clinic
 });
 
 /** DELETE /api/app/v1/clinic/admin/opd/plan?cohort=: throw the draft away. */
-export const DELETE = appRoute({ auth: "superAdmin" }, async ({ user, query, limitWrite }) => {
+export const DELETE = appRoute({ auth: "superAdmin", sandbox: true }, async ({ user, query, limitWrite }) => {
   await limitWrite(`app:clinic-admin:${user.profile.id}`, 120);
   return discardDraft(clinicDb(), idOrNull(query.get("cohort")));
 });

@@ -2,6 +2,9 @@ import "server-only";
 import type { ClinicBatch, ClinicLeaveBalance, ClinicMySession, ClinicTrackerRow, ClinicVisit } from "@/lib/app-api/contract";
 import { tableMissing } from "@/lib/app-api/devices";
 import { ApiFail } from "@/lib/app-api/respond";
+import { currentTestScope } from "@/lib/test-mode/server";
+import { cohortsAllowed, cohortsFor, TEST_MODE_REFUSED } from "@/lib/test-mode/rules";
+import { isHiddenAccount } from "@/lib/people/hidden";
 import { isOpen, myStatus, summarize } from "./attendance";
 import { quotaOf, toVisit, visitTally, countsAsLeave } from "./cases";
 import { approvedLeaveMap, balance, earlyLeaveMap } from "./leave";
@@ -69,20 +72,39 @@ export type Person = { userId: string; name: string | null; roll: string | null;
 export async function cohortStudents(db: Db, cohortId: string): Promise<Person[]> {
   const members = await fetchAll<{ user_id: string; added_at: string | null }>(() => db.from("cohort_members").select("user_id, added_at").eq("cohort_id", cohortId));
   if (!members.length) return [];
-  const people: { id: string; name: string | null; roll_number: string | null; role: string }[] = [];
+  const people: { id: string; name: string | null; roll_number: string | null; role: string; email?: string | null; is_test?: boolean | null }[] = [];
   for (const ids of chunk(members.map((m) => m.user_id))) {
-    people.push(...must(await db.from("profiles").select("id, name, roll_number, role").in("id", ids), []));
+    people.push(...must(await db.from("profiles").select("id, name, roll_number, role, email, is_test").in("id", ids), []));
   }
   const byId = new Map(people.map((p) => [p.id, p]));
+  // Test and robot accounts never count for a real cohort (trackers, OPD plan,
+  // notices). The one exception: the test student, for its own admin in test mode.
+  const scope = await currentTestScope();
+  const counts = (id: string) => {
+    const p = byId.get(id);
+    return Boolean(p) && p!.role === "student" && (!isHiddenAccount(p!) || id === scope?.testUserId);
+  };
   return members
-    .filter((m) => byId.get(m.user_id)?.role === "student")
+    .filter((m) => counts(m.user_id))
     .map((m) => ({ userId: m.user_id, name: byId.get(m.user_id)?.name ?? null, roll: byId.get(m.user_id)?.roll_number ?? null, joinedOn: m.added_at ? localDate(Date.parse(m.added_at)) : null }))
     .sort((a, b) => (a.name ?? "").localeCompare(b.name ?? "") || a.userId.localeCompare(b.userId));
 }
 
+/**
+ * The cohorts the admin's clinic screens may use: every real cohort, or, with
+ * test mode on, only the admin's own test cohort. Test cohorts never show to
+ * anyone else.
+ */
 export async function cohortList(db: Db): Promise<{ id: string; name: string }[]> {
-  const rows = must(await db.from("cohorts").select("id, name, created_at").order("created_at", { ascending: false }), [] as { id: string; name: string }[]);
-  return rows.map((r) => ({ id: r.id, name: r.name }));
+  const rows = must(await db.from("cohorts").select("*").order("created_at", { ascending: false }), [] as { id: string; name: string; is_test?: boolean | null }[]);
+  return cohortsFor(rows, await currentTestScope()).map((r) => ({ id: r.id, name: r.name }));
+}
+
+/** Test mode on: a row must belong to the admin's test cohort, or the change is refused. */
+export async function assertSandbox(cohortIds: readonly (string | null | undefined)[]): Promise<void> {
+  const scope = await currentTestScope();
+  if (scope?.as !== "admin") return;
+  if (!cohortsAllowed(cohortIds.filter((c): c is string => typeof c === "string"), scope)) throw new ApiFail("forbidden", TEST_MODE_REFUSED);
 }
 
 /** The admin's cohort: the one asked for, or the newest. */

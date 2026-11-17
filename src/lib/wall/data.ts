@@ -1,5 +1,8 @@
 import "server-only";
 import { createClient } from "@/lib/supabase/server";
+import { loadHiddenIds } from "@/lib/people/hidden-ids";
+import { currentTestScope } from "@/lib/test-mode/server";
+import { canSeeAuthor } from "@/lib/test-mode/rules";
 
 /**
  * The class wall (/wall), shared by the website page, its API routes
@@ -43,7 +46,11 @@ export async function loadWall(userId?: string | null): Promise<WallPostData[]> 
     .order("created_at", { ascending: false })
     .limit(50);
 
-  const postIds = (posts ?? []).map((p) => p.id as string);
+  // Test mode: a test student's posts and replies show only to itself and its own admin.
+  const [hidden, scope] = await Promise.all([loadHiddenIds().catch(() => new Set<string>()), currentTestScope()]);
+  const seen = (row: Row) => canSeeAuthor(String(row.author_id ?? ""), userId ?? null, scope, hidden);
+  const shown = ((posts ?? []) as Row[]).filter(seen);
+  const postIds = shown.map((p) => p.id as string);
   const none = Promise.resolve({ data: [] as Row[] });
   const [{ data: replies }, { data: reactions }, { data: replyReactions }, { data: mineRows }] = await Promise.all([
     postIds.length ? supabase.from("wall_replies_visible").select("id, post_id, content, is_anonymous, is_faculty, created_at, author_id").in("post_id", postIds).order("created_at", { ascending: true }) : none,
@@ -60,12 +67,12 @@ export async function loadWall(userId?: string | null): Promise<WallPostData[]> 
     mine.set(k, [...(mine.get(k) ?? []), String(r.reaction)]);
   }
   const repliesByPost = new Map<string, Row[]>();
-  for (const r of (replies ?? []) as Row[]) {
+  for (const r of ((replies ?? []) as Row[]).filter(seen)) {
     const k = String(r.post_id);
     repliesByPost.set(k, [...(repliesByPost.get(k) ?? []), r]);
   }
 
-  return (posts ?? []).map((p) => ({
+  return shown.map((p) => ({
     id: String(p.id),
     content: String(p.content),
     isAnonymous: Boolean(p.is_anonymous),
@@ -91,6 +98,8 @@ export type WallWrite<T> = { ok: true; value: T } | { ok: false; error: string }
 
 /** A new post. The author is stored; the views hide it on anonymous posts. */
 export async function addWallPost(userId: string, input: { content: string; isAnonymous: boolean }): Promise<WallWrite<{ id: string }>> {
+  // A test student never posts anonymously, so its posts can always be kept from real people.
+  if ((await currentTestScope())?.as === "student") input = { ...input, isAnonymous: false };
   const supabase = await createClient();
   const { data, error } = await supabase.from("wall_posts").insert({ author_id: userId, content: input.content, is_anonymous: input.isAnonymous, is_faculty: false }).select("id").single();
   if (error || !data) return { ok: false, error: error?.message ?? "insert failed" };
@@ -99,6 +108,8 @@ export async function addWallPost(userId: string, input: { content: string; isAn
 
 /** A reply to a post (same privacy rule as posts). */
 export async function addWallReply(userId: string, input: { postId: string; content: string; isAnonymous: boolean }): Promise<WallWrite<{ id: string }>> {
+  // A test student never posts anonymously, so its posts can always be kept from real people.
+  if ((await currentTestScope())?.as === "student") input = { ...input, isAnonymous: false };
   const supabase = await createClient();
   const { data, error } = await supabase.from("wall_replies").insert({ post_id: input.postId, author_id: userId, content: input.content, is_anonymous: input.isAnonymous, is_faculty: false }).select("id").single();
   if (error || !data) return { ok: false, error: error?.message ?? "insert failed" };

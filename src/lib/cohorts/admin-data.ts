@@ -4,6 +4,7 @@ import { isHiddenAccount } from "@/lib/people/hidden";
 import { createAdminClient } from "@/lib/supabase/server";
 import type { CohortRow } from "./access";
 import type { CourseCohortLite } from "./rules";
+import { isTestCohort } from "@/lib/test-mode/rules";
 
 export type CohortSummary = CohortRow & { members: number; lectures: number; detailsDone: number };
 
@@ -32,6 +33,7 @@ export async function loadCohortSummaries(): Promise<{ cohorts: CohortSummary[];
     admin.from("profiles").select("id, email, is_test").eq("role", "student").limit(20000),
   ]);
   if (error) return { cohorts: [], unassigned: 0, tablesMissing: true };
+  const realCohorts = (cohorts ?? []).filter((c) => !isTestCohort(c));
   const done = new Set((details ?? []).filter((d) => d.confirmed_at).map((d) => d.user_id as string));
   const real = new Set((students ?? []).filter((s) => !isHiddenAccount(s)).map((s) => s.id as string));
   const members = (allMembers ?? []).filter((m) => real.has(m.user_id as string));
@@ -39,7 +41,7 @@ export async function loadCohortSummaries(): Promise<{ cohorts: CohortSummary[];
   return {
     tablesMissing: false,
     unassigned: [...real].filter((id) => !assigned.has(id)).length,
-    cohorts: (cohorts ?? []).map((c) => {
+    cohorts: realCohorts.map((c) => {
       const mine = (members ?? []).filter((m) => m.cohort_id === c.id);
       return {
         ...(c as CohortRow),
@@ -160,7 +162,7 @@ export const loadCourseCohorts = cache(async (courseId: string): Promise<CourseC
     ? await admin.from("lesson_cohorts").select("lesson_id, cohort_id").in("lesson_id", lessonIds.slice(0, 1000)).limit(20000)
     : { data: [] as { lesson_id: string; cohort_id: string }[] };
   const sharing = new Set((shared ?? []).map((s) => s.cohort_id as string));
-  const rows = (cohortsRes.data ?? []).filter((c) => c.course_id === courseId || sharing.has(c.id as string));
+  const rows = (cohortsRes.data ?? []).filter((c) => !isTestCohort(c) && (c.course_id === courseId || sharing.has(c.id as string)));
   const ids = new Set(rows.map((c) => c.id as string));
   const links = new Map<string, string[]>();
   for (const l of shared ?? []) {

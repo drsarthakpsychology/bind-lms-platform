@@ -5,6 +5,7 @@ import { htmlToPlain, richToEmailHtml, sanitizeRich } from "@/lib/email/rich-htm
 import { isQuotaStop } from "@/lib/email/pace";
 import { appUrl } from "@/lib/app-url";
 import { queuePush } from "@/lib/app-api/push";
+import { sandboxRecipients } from "@/lib/test-mode/server";
 
 export type NotifyInput = {
   userIds: string[];
@@ -43,7 +44,9 @@ export async function sendNotifications(input: NotifyInput): Promise<NotifyRepor
   if (!title) return { error: "Add a title.", created: 0, emailed: 0, emailFailed: 0, batchId: null };
   if (!text) return { error: "Write the message.", created: 0, emailed: 0, emailFailed: 0, batchId: null };
 
-  const { data: people } = await admin.from("profiles").select("id, email, name, status, is_test, role").in("id", [...new Set(input.userIds)].slice(0, 5000));
+  // Test mode: an admin's send reaches only their test student; real sends never reach a test account.
+  const allowed = await sandboxRecipients([...new Set(input.userIds)].slice(0, 5000));
+  const { data: people } = allowed.length ? await admin.from("profiles").select("id, email, name, status, is_test, role").in("id", allowed) : { data: [] };
   const targets = (people ?? []).filter((p) => p.status !== "blocked");
   if (!targets.length) return { error: "Pick at least one student.", created: 0, emailed: 0, emailFailed: 0, batchId: null };
 
@@ -80,7 +83,8 @@ export async function sendNotifications(input: NotifyInput): Promise<NotifyRepor
     let stop = false;
     for (const p of targets) {
       const email = String(p.email ?? "");
-      if (!email) continue;
+      // Test accounts have no real inbox.
+      if (!email || p.is_test) continue;
       if (stop) {
         emailFailed++;
         continue;

@@ -7,6 +7,8 @@ import { loadMyCohorts } from "@/lib/cohorts/access";
 import { kindFor } from "@/lib/doubts/classify";
 import { rateLimitWrite } from "@/lib/rate-limit";
 import { notifyAdminsOfDoubt, notifyAskerOfReply } from "@/lib/notify/doubts";
+import { currentTestScope } from "@/lib/test-mode/server";
+import { TEST_MODE_REFUSED } from "@/lib/test-mode/rules";
 import { canMarkSolved, canParticipate, isUuid, type DoubtRow } from "./visibility";
 
 type R = { error: string | null; id?: string };
@@ -72,7 +74,11 @@ export async function replyToDoubt(doubtId: string, body: string): Promise<R> {
   if (!(await rateLimitWrite(`doubtreply:${me.id}`, 40))) return { error: "Slow down a moment and try again." };
   const text = clean(body, 5000);
   if (text.length < 1) return { error: "Write your answer first." };
-  if (!(await loadVisibleDoubt(doubtId, me))) return { error: "That doubt isn't open to you." };
+  const d = await loadVisibleDoubt(doubtId, me);
+  if (!d) return { error: "That doubt isn't open to you." };
+  // Test mode: the admin answers only their test student; the test student answers only its own posts.
+  const scope = await currentTestScope();
+  if (scope && d.user_id !== scope.testUserId) return { error: TEST_MODE_REFUSED };
   const { error } = await createAdminClient().from("doubt_replies").insert({ doubt_id: doubtId, user_id: me.id, body: text });
   if (error) return { error: "Couldn't post your answer. Try again." };
   await notifyAskerOfReply({ doubtId, replierId: me.id, body: text });
@@ -85,7 +91,10 @@ export async function voteReply(doubtId: string, replyId: string, on: boolean): 
   const me = await requireSession();
   if (!me) return { error: "Please sign in again." };
   if (!(await rateLimitWrite(`doubtvote:${me.id}`, 60))) return { error: "Slow down a moment and try again." };
-  if (!(await loadVisibleDoubt(doubtId, me)) || !(await replyOnDoubt(replyId, doubtId))) return { error: "That answer isn't open to you." };
+  const d = await loadVisibleDoubt(doubtId, me);
+  if (!d || !(await replyOnDoubt(replyId, doubtId))) return { error: "That answer isn't open to you." };
+  const scope = await currentTestScope();
+  if (scope && d.user_id !== scope.testUserId) return { error: TEST_MODE_REFUSED };
   const admin = createAdminClient();
   if (on) await admin.from("doubt_votes").upsert({ reply_id: replyId, user_id: me.id }, { onConflict: "reply_id,user_id", ignoreDuplicates: true });
   else await admin.from("doubt_votes").delete().eq("reply_id", replyId).eq("user_id", me.id);

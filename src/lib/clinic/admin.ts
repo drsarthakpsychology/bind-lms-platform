@@ -32,7 +32,9 @@ import { notifyClinic } from "@/lib/notify/clinic";
 import { isOpen, myStatus, sessionTimes } from "./attendance";
 import {
   adminCohort,
+  assertSandbox,
   balanceOf,
+  cohortList,
   batchOf,
   chunk,
   cohortStudents,
@@ -94,8 +96,16 @@ export async function listSlots(db: Db, cohort: string | null | undefined): Prom
 }
 
 async function checkCohorts(db: Db, ids: readonly string[]): Promise<void> {
-  const rows = must(await db.from("cohorts").select("id").in("id", [...ids]), [] as { id: string }[]);
-  if (rows.length !== new Set(ids).size) throw new ApiFail("bad_request", "One of those cohorts was not found.", { fields: ["cohortIds"] });
+  // Only cohorts this admin may use: real ones, or with test mode on, only the test cohort.
+  await assertSandbox(ids);
+  const allowed = new Set((await cohortList(db)).map((c) => c.id));
+  if (!ids.every((id) => allowed.has(id))) throw new ApiFail("bad_request", "One of those cohorts was not found.", { fields: ["cohortIds"] });
+}
+
+/** A slot or session found by id: with test mode on it must be on the test cohort. */
+async function sandboxRow<T extends { cohort_ids: string[] } | null>(row: T): Promise<T> {
+  if (row) await assertSandbox(row.cohort_ids);
+  return row;
 }
 
 function slotRow(body: ClinicSlotBody) {
@@ -125,14 +135,16 @@ export async function createSlot(db: Db, body: ClinicSlotBody, actor: string): P
 
 export async function updateSlot(db: Db, id: string, body: ClinicSlotBody, now: number): Promise<ClinicSlot> {
   await checkCohorts(db, body.cohortIds);
+  await sandboxRow(must(await db.from("clinic_timetable_slots").select("cohort_ids").eq("id", id).maybeSingle(), null as { cohort_ids: string[] } | null));
   const rows = must(await db.from("clinic_timetable_slots").update({ ...slotRow(body), updated_at: new Date(now).toISOString() }).eq("id", id).select("*"), [] as SlotRow[]);
   if (!rows[0]) throw new ApiFail("not_found");
   return toSlot(rows[0]);
 }
 
 export async function deleteSlot(db: Db, id: string): Promise<{ deleted: true }> {
-  const rows = must(await db.from("clinic_timetable_slots").select("id").eq("id", id), [] as { id: string }[]);
+  const rows = must(await db.from("clinic_timetable_slots").select("id, cohort_ids").eq("id", id), [] as { id: string; cohort_ids: string[] }[]);
   if (!rows.length) throw new ApiFail("not_found");
+  await sandboxRow(rows[0]!);
   must(await db.from("clinic_timetable_slots").delete().eq("id", id), null);
   return { deleted: true };
 }
@@ -221,7 +233,7 @@ export async function createSession(db: Db, body: ClinicSessionBody, actor: stri
 }
 
 export async function patchSession(db: Db, id: string, patch: ClinicSessionPatch, actor: string, now: number): Promise<ClinicSession> {
-  const found = must(await db.from("clinic_sessions").select("*").eq("id", id).maybeSingle(), null as SessionRow | null);
+  const found = await sandboxRow(must(await db.from("clinic_sessions").select("*").eq("id", id).maybeSingle(), null as SessionRow | null));
   if (!found) throw new ApiFail("not_found");
   const old = { ...found };
   const next: Partial<SessionRow> & { updated_at: string } = { updated_at: new Date(now).toISOString() };
@@ -268,7 +280,7 @@ export async function setDayNote(db: Db, body: { cohortId: string; date: string;
  * makes the session's secret; a View Admin can show it once it exists.
  */
 export async function showSessionCode(db: Db, sessionId: string, actor: string, canWrite: boolean, now: number): Promise<ClinicShowCode> {
-  const row = must(await db.from("clinic_sessions").select("*").eq("id", sessionId).maybeSingle(), null as SessionRow | null);
+  const row = await sandboxRow(must(await db.from("clinic_sessions").select("*").eq("id", sessionId).maybeSingle(), null as SessionRow | null));
   if (!row) throw new ApiFail("not_found");
   const s = toSession(row);
   if (s.status === "cancelled") throw new ApiFail("conflict", "This session was cancelled.");
@@ -332,7 +344,7 @@ function liveRows(b: Bundle, row: SessionRow, people: readonly Person[], now: nu
 }
 
 export async function liveAttendance(db: Db, sessionId: string, now: number): Promise<ClinicLiveAttendance> {
-  const row = must(await db.from("clinic_sessions").select("*").eq("id", sessionId).maybeSingle(), null as SessionRow | null);
+  const row = await sandboxRow(must(await db.from("clinic_sessions").select("*").eq("id", sessionId).maybeSingle(), null as SessionRow | null));
   if (!row) throw new ApiFail("not_found");
   const cohortId = row.cohort_ids[0]!;
   const b = await loadBundle(db, cohortId);
@@ -352,7 +364,7 @@ export async function liveAttendance(db: Db, sessionId: string, now: number): Pr
 }
 
 export async function manualMark(db: Db, sessionId: string, body: ClinicManualMarkBody, actor: string, now: number): Promise<ClinicLiveAttendance> {
-  const row = must(await db.from("clinic_sessions").select("*").eq("id", sessionId).maybeSingle(), null as SessionRow | null);
+  const row = await sandboxRow(must(await db.from("clinic_sessions").select("*").eq("id", sessionId).maybeSingle(), null as SessionRow | null));
   if (!row) throw new ApiFail("not_found");
   const people = await studentsOfCohorts(db, row.cohort_ids);
   if (!people.some((p) => p.userId === body.userId)) throw new ApiFail("bad_request", "That student is not in this session's cohort.", { fields: ["userId"] });
@@ -405,6 +417,7 @@ export async function leaveQueue(db: Db, cohort: string | null | undefined, stat
 export async function decideLeave(db: Db, id: string, body: { decision: "approve" | "reject"; note?: string }, actor: string, now: number): Promise<ClinicLeaveRequest> {
   const row = must(await db.from("clinic_leave_requests").select("*").eq("id", id).maybeSingle(), null as LeaveRow | null);
   if (!row || row.kind === "missed") throw new ApiFail("not_found");
+  await assertSandbox([row.cohort_id]);
   if (row.status !== "pending") throw new ApiFail("conflict", "This request was already decided.");
   const b = await loadBundle(db, row.cohort_id, row.user_id);
   const approve = body.decision === "approve";
@@ -654,6 +667,7 @@ export async function moveAssignment(db: Db, body: ClinicMoveBody, actor: string
   const today = todayOf(now);
   const found = must(await db.from("clinic_opd_assignments").select("*").eq("id", body.assignmentId).maybeSingle(), null as AssignmentRow | null);
   if (!found) throw new ApiFail("not_found");
+  await assertSandbox([found.cohort_id]);
   const a = { ...found };
   if (a.date < today) throw new ApiFail("conflict", "Past OPD days stay as they were.");
   if (body.date < today) throw new ApiFail("bad_request", "Pick today or a later day.", { fields: ["date"] });

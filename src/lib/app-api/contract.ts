@@ -376,7 +376,26 @@ export type Me = {
   /** Text for the moving video watermark. */
   watermark: Watermark;
   unreadNotifications: number;
+  /**
+   * Test mode: "admin" for an admin with test mode on, "student" for the
+   * admin's hidden test student. Absent or null for everyone else.
+   */
+  testMode?: { as: "admin" | "student" } | null;
 };
+
+// ---------------------------------------------------------------------------
+// Test mode (admins): a hidden test student per admin
+// ---------------------------------------------------------------------------
+
+/** GET /test-mode. `ready` is false until the database step ran. */
+export type TestModeState = { ready: boolean; as: "admin" | "student" | null; active: boolean; hasTestStudent: boolean };
+/** PUT /test-mode: switch it on (makes the test student the first time) or off. Any admin. */
+export type TestModeBody = { on: boolean; mirrorCohortId?: string | null };
+/** POST /test-mode/session: tokens for the admin's test student on this phone (test mode must be on). */
+export type TestModeSessionBody = { device: DeviceInfo };
+export type TestModeSessionResult = SignInResult;
+/** POST /test-mode/reset: wipe the test student's progress and everything made in test mode. */
+export type TestModeResetResult = { reset: true; cleared: number };
 
 /** PATCH /me */
 export type UpdateMeBody = {

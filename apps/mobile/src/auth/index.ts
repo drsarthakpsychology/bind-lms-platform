@@ -43,6 +43,8 @@ export const session = createSession({
     void setBiometricEnabled(false);
     signedOutListeners.forEach((fn) => fn());
   },
+  // Test mode switch: the same clean-up as a sign-out (caches, waiting saves), but the phone stays signed in.
+  onAccountSwitched: () => signedOutListeners.forEach((fn) => fn()),
   beforeSignOut: async () => {
     await Promise.all([...beforeSignOutTasks].map((fn) => fn().catch(() => undefined)));
   },

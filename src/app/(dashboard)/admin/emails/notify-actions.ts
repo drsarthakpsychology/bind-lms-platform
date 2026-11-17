@@ -1,7 +1,7 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
-import { requireSuperAdmin } from "@/lib/auth/guards";
+import { requireSuperAdminSandbox } from "@/lib/auth/guards";
 import { createAdminClient } from "@/lib/supabase/server";
 import { sendNotifications, type NotifyReport } from "@/lib/notify/send";
 
@@ -13,7 +13,8 @@ export async function sendNotificationAction(input: {
   html: string;
   alsoEmail: boolean;
 }): Promise<NotifyReport> {
-  const me = await requireSuperAdmin();
+  // Sandbox-aware: in test mode sendNotifications reaches only the test student.
+  const me = await requireSuperAdminSandbox();
   if (!me) return { error: "Only the Super Admin can send notifications.", created: 0, emailed: 0, emailFailed: 0, batchId: null };
   let ids = input.userIds ?? [];
   const emails = (input.recipientEmails ?? []).map((e) => e.trim().toLowerCase()).filter(Boolean);

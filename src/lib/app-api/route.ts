@@ -7,12 +7,17 @@ import { rateLimitFast } from "@/lib/rate-limit-fast";
 import { runInAppContext } from "./context";
 import { assertVersion, requireAppUser, type ApiGate, type AppUser } from "./guard";
 import { ApiFail, fail, ok, okTagged } from "./respond";
+import { scopeForProfile } from "@/lib/test-mode/server";
+import { TEST_MODE_REFUSED } from "@/lib/test-mode/rules";
 
 /**
  * The wrapper every /api/app/v1 route is written with. It gives each route
  * the same error shape, the minimum-version check, the bearer guard, and it
  * runs the handler inside the app request scope so the website's existing
  * server functions act as the signed-in app user.
+ *
+ * `sandbox: true` lets an admin in test mode call a write route; only for
+ * routes whose code keeps to the test student (src/lib/test-mode).
  *
  *   export const GET = appRoute({ auth: "student", gates: { path: "/courses" } }, async ({ user, params }) => {
  *     return await loadSomething(user.profile, params.courseId);   // answered as { ok: true, data }
@@ -94,11 +99,11 @@ function onError(e: unknown, where: string): NextResponse {
 
 export function appRoute<P = Record<string, never>>(opts: { auth: "public" }, handler: PublicHandler<P>): (req: Request, ctx: Ctx<P>) => Promise<Response>;
 export function appRoute<P = Record<string, never>>(
-  opts: { auth: Exclude<Auth, "public">; gates?: ApiGate | readonly ApiGate[] },
+  opts: { auth: Exclude<Auth, "public">; gates?: ApiGate | readonly ApiGate[]; sandbox?: boolean },
   handler: UserHandler<P>,
 ): (req: Request, ctx: Ctx<P>) => Promise<Response>;
 export function appRoute<P>(
-  opts: { auth: Auth; gates?: ApiGate | readonly ApiGate[] },
+  opts: { auth: Auth; gates?: ApiGate | readonly ApiGate[]; sandbox?: boolean },
   handler: PublicHandler<P> | UserHandler<P>,
 ): (req: Request, ctx: Ctx<P>) => Promise<Response> {
   return async (req, ctx) => {
@@ -113,6 +118,11 @@ export function appRoute<P>(
       const user = await requireAppUser(req, opts.gates ?? []);
       if (opts.auth === "admin" && !isAdminLike(user.profile)) throw new ApiFail("forbidden");
       if (opts.auth === "superAdmin" && !isSuperAdmin(user.profile)) throw new ApiFail("forbidden");
+      // Test mode on: admin changes to real data are refused. Routes marked
+      // `sandbox` keep to the test student and test cohort themselves.
+      if ((opts.auth === "admin" || opts.auth === "superAdmin") && req.method !== "GET" && !opts.sandbox && (await scopeForProfile(user.profile))?.as === "admin") {
+        throw new ApiFail("forbidden", TEST_MODE_REFUSED);
+      }
       return await runInAppContext(user.context, async () => finish(req, await (handler as UserHandler<P>)({ ...h, user })));
     } catch (e) {
       return onError(e, where);

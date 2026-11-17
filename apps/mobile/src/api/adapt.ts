@@ -40,6 +40,10 @@ export function meView(raw: unknown): C.Me {
     rollNumber: strOrNull(m.rollNumber),
     mobileNumber: strOrNull(m.mobileNumber),
     askMobileNumber: m.askMobileNumber === true,
+    testMode: (() => {
+      const t = obj(m.testMode);
+      return t.as === "admin" || t.as === "student" ? { as: t.as } : null;
+    })(),
     expiresAt: strOrNull(m.expiresAt),
     cohorts: arr(m.cohorts).map(obj).map((c) => ({ id: str(c.id), name: str(c.name) })),
     access: {

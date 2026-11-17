@@ -132,6 +132,10 @@ The one-phone rule:
 | built | `GET /me` | bearer | none | `Me` | `buildMe` (`src/lib/app-api/me.ts`): profile, `loadMyCohorts`, `loadMyBlocks`, `readFlags`, `lectureOnlyAllowed`, `blockedBy` |
 | built | `PATCH /me` | bearer | `UpdateMeBody` | `Me` | `saveMobileNumber`, `skipMobileNumber` (`(dashboard)/dashboard/actions.ts`) |
 | built | `POST /me/deletion-request` | bearer, 3 a minute | `DeletionRequestBody` | `DeletionRequestResult` | `requestDeletion` (`src/lib/app-api/deletion.ts`): stores the request in `app_deletion_requests` and sends the super admin a bell notice and push. Nothing is deleted automatically; a person handles it |
+| built | `GET /test-mode` | bearer | none | `TestModeState` | `testModeState` (`src/lib/test-mode/server.ts`) |
+| built | `PUT /test-mode` | bearer, admins (any), 20 a minute | `TestModeBody` | `TestModeState` | `setTestMode`: makes the admin's hidden test student and test cohort the first time, then switches test mode on or off |
+| built | `POST /test-mode/session` | bearer, admins with test mode on | `TestModeSessionBody` | `TestModeSessionResult` | `appTestStudentSignIn` (`src/lib/app-api/auth.ts`): tokens for the test student, no password. The app keeps the admin's tokens to come back |
+| built | `POST /test-mode/reset` | bearer, admins (any), 6 a minute | none | `TestModeResetResult` | `resetTestData`: wipes the test student's progress and everything made in test mode |
 
 ### 2.4 Home, courses, lectures
 

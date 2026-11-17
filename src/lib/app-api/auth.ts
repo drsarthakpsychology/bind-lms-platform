@@ -7,6 +7,8 @@ import { accountProblem } from "./guard-rules";
 import { buildMe } from "./me";
 import { ApiFail } from "./respond";
 import { createStatelessAuthClient } from "./supabase";
+import type { Profile } from "@/lib/auth/session";
+import { testStudentSession } from "@/lib/test-mode/server";
 
 /**
  * Sign-in, refresh and sign-out for the mobile app. The same Supabase
@@ -82,4 +84,22 @@ export async function appRefresh(input: { refreshToken: string; deviceId: string
 export async function appSignOut(input: { userId: string; accessToken: string; deviceId: string }): Promise<void> {
   await signOutDevice(input.userId, input.deviceId);
   await revoke(input.accessToken);
+}
+
+/**
+ * Test mode: sign this phone in as the admin's hidden test student. No
+ * password: the server makes and uses a one-time sign-in link. The admin's own
+ * tokens stay on the phone (the app keeps them to come back). The phone is
+ * registered without the one-phone limit (it is the admin's phone).
+ */
+export async function appTestStudentSignIn(admin: Profile, device: DeviceInfo): Promise<SignInResult> {
+  const r = await testStudentSession(admin);
+  if (!r.ok) throw new ApiFail("forbidden", r.error);
+  const loaded = await loadProfileRow(r.testUserId);
+  if (!loaded) {
+    await revoke(r.session.access_token);
+    throw new ApiFail("unauthenticated");
+  }
+  const registered = await registerDevice({ userId: r.testUserId, role: "admin", email: loaded.profile.email, device });
+  return { tokens: tokensOf(r.session), me: await buildMe(loaded.profile, loaded.name), device: registered.ok ? registered.state : { enforced: false, current: null, changesUsed: 0, limit: null, nextChangeAt: null } };
 }

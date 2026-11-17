@@ -7,6 +7,7 @@ import { loadMyCohorts } from "@/lib/cohorts/access";
 import { readFlags, type FlagStatus } from "@/lib/flags";
 import { createAdminClient } from "@/lib/supabase/server";
 import type { Access, Me, Watermark } from "./contract";
+import { scopeForProfile } from "@/lib/test-mode/server";
 
 /** "Name · VIBHA-000123" for the moving video watermark. Falls back to the email, then a short id. */
 export function watermarkFor(profile: Pick<Profile, "id" | "email" | "roll_number">, name: string | null): Watermark {
@@ -68,12 +69,13 @@ async function singleLesson(userId: string): Promise<string | null> {
 /** Everything the app needs to know about the signed-in account. */
 export async function buildMe(profile: Profile, name: string | null): Promise<Me> {
   const student = profile.role === "student";
-  const [blocks, flags, cohorts, unread, lessonId] = await Promise.all([
+  const [blocks, flags, cohorts, unread, lessonId, test] = await Promise.all([
     student ? loadMyBlocks(profile.id) : Promise.resolve([] as string[]),
     readFlags(),
     profile.role === "admin" || profile.role === "view_admin" ? Promise.resolve([]) : loadMyCohorts(profile.id),
     unreadCount(profile.id),
     isLecturesOnly(profile) ? singleLesson(profile.id) : Promise.resolve(null),
+    scopeForProfile(profile).catch(() => null),
   ]);
   return {
     id: profile.id,
@@ -90,5 +92,6 @@ export async function buildMe(profile: Profile, name: string | null): Promise<Me
     access: buildAccess(profile, blocks, flags, lessonId),
     watermark: watermarkFor(profile, name),
     unreadNotifications: unread,
+    testMode: test ? { as: test.as } : null,
   };
 }

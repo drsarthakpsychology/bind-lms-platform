@@ -13,6 +13,7 @@ import { QuietPanel } from "./quiet-panel";
 import { readFlags } from "@/lib/flags";
 import { uiV2For } from "@/lib/ui/v2";
 import { AdminPage } from "../_v2/kit";
+import { isTestCohort } from "@/lib/test-mode/rules";
 
 export const dynamic = "force-dynamic";
 
@@ -71,7 +72,7 @@ export default async function AdminPulsePage({ searchParams }: { searchParams: P
   // Quiet-student email: platform hours and cohorts come from the standing totals.
   const standingById = new Map(standing.map((s) => [s.userId, s]));
   const statusById = new Map(seen.map((r) => [r.id, r.status]));
-  const cohorts = cohortsRes.error ? [] : (cohortsRes.data ?? []).map((c) => ({ id: c.id as string, name: String(c.name) }));
+  const cohorts = cohortsRes.error ? [] : (cohortsRes.data ?? []).filter((c) => !isTestCohort(c)).map((c) => ({ id: c.id as string, name: String(c.name) }));
   const quietStudents: NudgeStudent[] = rows.map((r) => ({
     id: r.user_id,
     name: r.name,

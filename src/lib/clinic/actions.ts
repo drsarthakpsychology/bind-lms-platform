@@ -10,7 +10,7 @@
  * Each answers { ok: true, data } or { ok: false, code, error } (plain words).
  */
 import type { z } from "zod";
-import { requireAdmin, requireSession, requireSuperAdmin, isSuperAdmin } from "@/lib/auth/guards";
+import { requireAdmin, requireSession, requireSuperAdminSandbox, isSuperAdmin } from "@/lib/auth/guards";
 import type { Profile } from "@/lib/auth/session";
 import type { ApiErrorCode } from "@/lib/app-api/contract";
 import { ApiFail, MESSAGE } from "@/lib/app-api/respond";
@@ -26,7 +26,7 @@ type Role = "self" | "admin" | "super";
 
 async function run<T>(role: Role, fn: (p: Profile) => Promise<T>, limit?: string): Promise<ClinicActionResult<T>> {
   try {
-    const p = role === "super" ? await requireSuperAdmin() : role === "admin" ? await requireAdmin() : await requireSession();
+    const p = role === "super" ? await requireSuperAdminSandbox() : role === "admin" ? await requireAdmin() : await requireSession();
     if (!p) return { ok: false, code: role === "self" ? "unauthenticated" : "forbidden", error: role === "self" ? MESSAGE.unauthenticated : MESSAGE.forbidden };
     if (limit && !(await rateLimitWrite(`web:${limit}:${p.id}`, limit === "clinic-scan" ? 12 : 60))) throw new ApiFail("rate_limited");
     return { ok: true, data: await fn(p) };

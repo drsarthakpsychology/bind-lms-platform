@@ -11,6 +11,7 @@ import { AddPeopleForm } from "@/components/admin/cohorts-ui";
 import { BulkImportForm } from "../../tools/bulk-import-form";
 import { CreateStudentForm } from "../create-student-form";
 import { cn } from "@/lib/utils";
+import { isTestCohort } from "@/lib/test-mode/rules";
 
 export const dynamic = "force-dynamic";
 
@@ -28,7 +29,7 @@ export default async function AddStudentsPage({ searchParams }: { searchParams: 
   const sp = await searchParams;
   const way = sp.way === "file" ? "file" : "type";
   const { data: cohorts } = await createAdminClient().from("cohorts").select("id, name, status").order("created_at", { ascending: true });
-  const opts = (cohorts ?? []).map((c) => ({ id: c.id as string, name: c.name as string }));
+  const opts = (cohorts ?? []).filter((c) => !isTestCohort(c)).map((c) => ({ id: c.id as string, name: c.name as string }));
 
   const tab = (id: "type" | "file", label: string, Icon: typeof Keyboard) => (
     <Link

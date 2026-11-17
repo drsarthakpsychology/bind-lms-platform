@@ -5,6 +5,7 @@ import { SiteHeader } from "@/components/site/site-header";
 import { normaliseCertificateId } from "@/lib/certificates/id";
 import { certStatus, istDay } from "@/lib/certificates/kinds";
 import { layoutCertificate } from "@/lib/certificates/layout";
+import { loadHiddenIds } from "@/lib/people/hidden-ids";
 import { docFromRecord, isStudioRecord, loadCredential, recordKind, recordSignatories, recordTitle, signatureUrls } from "@/lib/certificates/server";
 import { CertificateSvg } from "@/lib/certificates/svg";
 import { VerifyNotFound, VerifyView, type VerifyFacts } from "./verify-view";
@@ -24,7 +25,9 @@ export const dynamic = "force-dynamic";
 export default async function VerifyCertificatePage({ params }: { params: Promise<{ certificateId: string }> }) {
   const { certificateId } = await params;
   const admin = createAdminClient();
-  const cred = await loadCredential(admin, normaliseCertificateId(certificateId));
+  const found = await loadCredential(admin, normaliseCertificateId(certificateId));
+  // A test or robot account's certificate is never confirmed to the public (test mode).
+  const cred = found && !(await loadHiddenIds().catch(() => new Set<string>())).has(String(found.user_id)) ? found : null;
 
   let body: React.ReactNode = <VerifyNotFound />;
   if (cred) {

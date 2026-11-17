@@ -14,7 +14,7 @@ const schema = z.object({ text: z.string().trim().min(1).max(10_000) });
  * team (the website's replyFromInbox: the doubt reply action's own rate limit
  * and visibility, then the student's notice; super admin only).
  */
-export const POST = appRoute<{ id: string }>({ auth: "superAdmin" }, async ({ params, body }): Promise<AdminReplyResult> => {
+export const POST = appRoute<{ id: string }>({ auth: "superAdmin", sandbox: true }, async ({ params, body }): Promise<AdminReplyResult> => {
   if (!uuid.safeParse(params.id).success) throw new ApiFail("not_found");
   const { text } = await body(schema, 64_000);
   const r = await replyFromInbox(params.id, text);

@@ -10,7 +10,7 @@ export const runtime = "nodejs";
 export const GET = appRoute({ auth: "admin" }, async ({ query }): Promise<{ slots: ClinicSlot[] }> => listSlots(clinicDb(), idOrNull(query.get("cohort"))));
 
 /** POST /api/app/v1/clinic/admin/timetable: add a weekly slot. */
-export const POST = appRoute({ auth: "superAdmin" }, async ({ user, body, limitWrite }): Promise<ClinicSlot> => {
+export const POST = appRoute({ auth: "superAdmin", sandbox: true }, async ({ user, body, limitWrite }): Promise<ClinicSlot> => {
   const b = await body(slotSchema, 8192);
   await limitWrite(`app:clinic-admin:${user.profile.id}`, 120);
   return createSlot(clinicDb(), b, user.profile.id);

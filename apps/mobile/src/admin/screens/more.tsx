@@ -21,6 +21,7 @@ import { ADMIN_PUSH } from "../push";
 import { isWaiting } from "./doubts";
 import { useAdminRole } from "../role";
 import { startViewAs } from "../view-as";
+import { TestModeSection } from "../test-mode";
 
 /** More: every admin place that is not a tab, grouped, then your account. */
 export function AdminMoreScreen() {
@@ -82,6 +83,7 @@ export function AdminMoreScreen() {
           <Row title="Help" icon={<CircleHelp {...icon} />} onPress={() => router.push("/help")} />
         </RowList>
       </Section>
+      <TestModeSection />
       <Section title="Account">
         <RowList>
           <Row title="View as student" meta="See VIBHA the way students see it" icon={<GraduationCap {...icon} />} onPress={startViewAs} testID="more-view-as" />

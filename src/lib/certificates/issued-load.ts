@@ -1,6 +1,7 @@
 import "server-only";
 import type { SupabaseClient } from "@supabase/supabase-js";
 import { loadRoster } from "@/lib/people/roster-data";
+import { loadHiddenIds } from "@/lib/people/hidden-ids";
 import { isStudioRecord, LEGACY_COLS, recordKind, recordTitle, STUDIO_COLS, type CredentialRecord } from "./server";
 import type { IssuedRow } from "./issued";
 
@@ -22,7 +23,9 @@ export async function loadIssued(admin: SupabaseClient): Promise<{
   const [roster, queueRes] = await Promise.all([loadRoster(), admin.from("certificate_email_queue").select("id", { count: "exact", head: true }).eq("status", "queued")]);
 
   const people = new Map(roster.rows.map((r) => [r.id, r]));
-  const records = (read.data ?? []) as unknown as CredentialRecord[];
+  // Test and robot accounts are never in the registry.
+  const hidden = await loadHiddenIds().catch(() => new Set<string>());
+  const records = ((read.data ?? []) as unknown as CredentialRecord[]).filter((r) => !r.user_id || !hidden.has(r.user_id));
   const rows: IssuedRow[] = records.map((r) => {
     const p = r.user_id ? people.get(r.user_id) : undefined;
     const badge = r.type === "badge";

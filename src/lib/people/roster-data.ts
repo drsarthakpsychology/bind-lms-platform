@@ -7,6 +7,7 @@ import { isHiddenAccount } from "@/lib/people/hidden";
 import { presenceOf, type Presence } from "@/lib/people/presence";
 import { accountStatus, NEEDS_ACTION, type AccountStatus } from "./account-status";
 import { attentionFlags, type AttentionFlag } from "./attention";
+import { isTestCohort } from "@/lib/test-mode/rules";
 
 /**
  * One row per real student with everything an admin screen needs: the single
@@ -65,7 +66,7 @@ async function readRoster(): Promise<Roster> {
   ]);
 
   const act = new Map(activity.rows.map((r) => [r.id, r]));
-  const cohorts = cohortsRes.error ? [] : (cohortsRes.data ?? []);
+  const cohorts = cohortsRes.error ? [] : (cohortsRes.data ?? []).filter((c) => !isTestCohort(c));
   const cohortName = new Map(cohorts.map((c) => [c.id as string, c.name as string]));
   const memberOf = new Map<string, string[]>();
   for (const m of membersRes.error ? [] : (membersRes.data ?? [])) {

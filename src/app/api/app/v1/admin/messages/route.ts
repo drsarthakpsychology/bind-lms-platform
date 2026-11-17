@@ -46,7 +46,7 @@ const schema = z.union([current, legacy.transform((b) => ({ to: "students" as co
  * The recipients are worked out the website's way (loadRecipientData, as the
  * compose tab) and sent with the website's sendNotificationAction (super admin only).
  */
-export const POST = appRoute({ auth: "superAdmin" }, async ({ user, body, limitWrite }): Promise<AdminSendResult> => {
+export const POST = appRoute({ auth: "superAdmin", sandbox: true }, async ({ user, body, limitWrite }): Promise<AdminSendResult> => {
   const input = await body(schema, 256_000);
   await limitWrite(`app:message:${user.profile.id}`, 10);
   let ids: string[] = [];

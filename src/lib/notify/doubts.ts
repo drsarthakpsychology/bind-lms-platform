@@ -3,6 +3,7 @@ import { createAdminClient } from "@/lib/supabase/server";
 import { queuePush } from "@/lib/app-api/push";
 import { queueAdminPush } from "@/lib/app-api/admin-push";
 import type { PushKind } from "@/lib/app-api/prefs";
+import { sandboxRecipients } from "@/lib/test-mode/server";
 
 /**
  * Bell notifications for the doubts board, both directions:
@@ -40,9 +41,13 @@ async function nameOf(userId: string): Promise<string | null> {
   }
 }
 
-async function insert(rows: Row[], push: PushKind, forAdmins?: { id: string }) {
-  if (!rows.length) return;
+async function insert(all: Row[], push: PushKind, forAdmins?: { id: string }) {
+  if (!all.length) return;
   try {
+    // A test student's doubt tells only its own admin; real notices never reach a test account.
+    const allowed = new Set(await sandboxRecipients(all.map((r) => r.user_id)));
+    const rows = all.filter((r) => allowed.has(r.user_id));
+    if (!rows.length) return;
     const written = await createAdminClient().from("notifications").insert(rows);
     // The same notice on the phone (Vibha Psychology app); never blocks the post.
     // Admins get it only when their "new doubts" phone notice is on.

@@ -1,5 +1,5 @@
 import { createClient, type ApiClient, type SessionEvent, type Transport } from "@/api/client";
-import type { AuthTokens, DeviceInfo, Me, SignInResult, SignOutResult } from "@/api/contract";
+import type { AuthTokens, DeviceInfo, Me, SignInResult, SignOutResult, TestModeSessionResult } from "@/api/contract";
 import { meView } from "@/api/adapt";
 import { ApiFailure } from "@/api/errors";
 import { createStore } from "@/lib/store";
@@ -26,7 +26,10 @@ export type Gate = null | { kind: "update"; minVersion: string | null; storeUrl:
 
 export type SessionState = { phase: Phase; me: Me | null; notice: Notice; gate: Gate; triesLeft: number };
 
-const K = { tokens: "vibha.tokens.v1", device: "vibha.device.v1", me: "vibha.me.v1" } as const;
+const K = { tokens: "vibha.tokens.v1", device: "vibha.device.v1", me: "vibha.me.v1", adminReturn: "vibha.test-return.v1" } as const;
+
+/** Test mode: the admin's own sign-in, kept while the phone is the test student. */
+type AdminReturn = { tokens: AuthTokens; me: Me | null };
 
 export type SessionDeps = {
   secure: KeyValue;
@@ -44,6 +47,8 @@ export type SessionDeps = {
   onSignedOut?: () => void;
   /** Called before a sign-out the person chose, while the tokens still work: send what is waiting. */
   beforeSignOut?: () => Promise<void>;
+  /** Test mode: the phone changed account (admin to test student or back). Clear cached data and waiting saves. */
+  onAccountSwitched?: () => void;
 };
 
 export function createSession(deps: SessionDeps) {
@@ -54,10 +59,13 @@ export function createSession(deps: SessionDeps) {
   let deviceId = "";
   let backgroundedAt: number | null = null;
   let lockAfterMs = deps.lockAfterMs;
+  /** Test mode: the admin's tokens are kept on the phone (the phone is the test student now). */
+  let adminReturn: AdminReturn | null = null;
 
   async function clearLocal(): Promise<void> {
     tokens = null;
-    await Promise.all([deps.secure.remove(K.tokens), deps.prefs.remove(K.me), pin.clear()]).catch(() => undefined);
+    adminReturn = null;
+    await Promise.all([deps.secure.remove(K.tokens), deps.secure.remove(K.adminReturn), deps.prefs.remove(K.me), pin.clear()]).catch(() => undefined);
     deps.onSignedOut?.();
   }
 
@@ -67,6 +75,12 @@ export function createSession(deps: SessionDeps) {
   }
 
   function onSessionEvent(e: SessionEvent): void {
+    // Test mode: the test student's sign-in ended (reset, or test mode switched off
+    // elsewhere): go back to the admin instead of signing the phone out.
+    if (adminReturn && (e.code === "unauthenticated" || e.code === "device_replaced" || e.code === "account_expired")) {
+      void switchBack(false);
+      return;
+    }
     switch (e.code) {
       case "device_replaced":
         void endSession("device_replaced");
@@ -108,6 +122,29 @@ export function createSession(deps: SessionDeps) {
     await deps.prefs.set(K.me, JSON.stringify(me)).catch(() => undefined);
   }
 
+  /** Send what is waiting (a few seconds at most) before the account changes. */
+  async function flushWaiting(): Promise<void> {
+    if (tokens && deps.beforeSignOut) await Promise.race([deps.beforeSignOut().catch(() => undefined), new Promise((r) => setTimeout(r, 5000))]);
+  }
+
+  /** Test mode: back to the admin's own tokens. `tellServer` ends the test student's sign-in on the server. */
+  async function switchBack(tellServer: boolean): Promise<boolean> {
+    const back = adminReturn;
+    if (!back) return false;
+    adminReturn = null;
+    if (tellServer) {
+      await flushWaiting();
+      await api.post<SignOutResult>("/auth/sign-out").catch(() => undefined);
+    }
+    tokens = back.tokens;
+    await deps.secure.set(K.tokens, JSON.stringify(back.tokens)).catch(() => undefined);
+    await deps.secure.remove(K.adminReturn).catch(() => undefined);
+    deps.onAccountSwitched?.();
+    if (back.me) await setMe(back.me);
+    store.set({ gate: null, notice: null });
+    return true;
+  }
+
   return {
     store,
     api,
@@ -146,6 +183,13 @@ export function createSession(deps: SessionDeps) {
         await clearLocal();
         store.set({ phase: "visitor" });
         return;
+      }
+      try {
+        const kept = await deps.secure.get(K.adminReturn);
+        const parsed = kept ? (JSON.parse(kept) as AdminReturn) : null;
+        adminReturn = parsed?.tokens?.refreshToken ? parsed : null;
+      } catch {
+        adminReturn = null;
       }
       let me: Me | null = null;
       try {
@@ -227,7 +271,38 @@ export function createSession(deps: SessionDeps) {
       await this.signOut("forgot_pin");
     },
 
+    /** Test mode: the phone is the admin's test student right now. */
+    isTestStudent: () => adminReturn !== null,
+
+    /**
+     * Test mode: use the student side as the admin's hidden test student. The
+     * admin's tokens stay in the keystore for the way back (no password, no PIN
+     * change). Throws ApiFailure with the server's message.
+     */
+    async openTestStudent(): Promise<void> {
+      if (!tokens) throw new ApiFailure("unauthenticated", "Please sign in again.");
+      if (adminReturn) return;
+      const device: DeviceInfo = { id: deviceId, ...(deps.device?.() ?? { name: "Phone", platform: "android" }) };
+      const r = await api.post<TestModeSessionResult>("/test-mode/session", { device });
+      if (!r?.tokens?.accessToken || !r.tokens.refreshToken || !r.me) throw new ApiFailure("server_error", "The server gave an answer the app did not understand. Try again.");
+      await flushWaiting();
+      adminReturn = { tokens, me: store.get().me };
+      await deps.secure.set(K.adminReturn, JSON.stringify(adminReturn));
+      tokens = r.tokens;
+      await deps.secure.set(K.tokens, JSON.stringify(r.tokens));
+      deps.onAccountSwitched?.();
+      await setMe(r.me);
+    },
+
+    /** Test mode: back to the admin. False when the phone was not the test student. */
+    backToAdmin: () => switchBack(true),
+
     async signOut(notice: Notice = null): Promise<void> {
+      // Test mode: "Sign out" as the test student goes back to the admin.
+      if (adminReturn && notice === null) {
+        await switchBack(true);
+        return;
+      }
       // Signing out by choice (or to choose a new PIN): send the saves still on the phone first,
       // for a few seconds at most, or that watch time and progress would be thrown away.
       if (tokens && (notice === null || notice === "forgot_pin") && deps.beforeSignOut) {

@@ -1,5 +1,6 @@
 import "server-only";
 import { getSession, type Profile } from "./session";
+import { adminInTestMode } from "@/lib/test-mode/server";
 
 /**
  * For Server Actions. Every admin action file previously rolled its own
@@ -32,6 +33,20 @@ export function isAdminLike(profile: Profile | null | undefined): boolean {
  * Admin and students are rejected here.
  */
 export async function requireSuperAdmin(): Promise<Profile | null> {
+  const profile = await requireSession();
+  if (!isSuperAdmin(profile)) return null;
+  // Test mode on: real data is off limits. Only the sandbox-aware actions
+  // (requireSuperAdminSandbox) may write, and they keep to the test student.
+  if (await adminInTestMode(profile)) return null;
+  return profile;
+}
+
+/**
+ * Super Admin, test mode or not. ONLY for actions that keep to the sandbox
+ * themselves while test mode is on (clinic, messages, doubt answers): they
+ * reach only the test student and the test cohort (src/lib/test-mode).
+ */
+export async function requireSuperAdminSandbox(): Promise<Profile | null> {
   const profile = await requireSession();
   return isSuperAdmin(profile) ? profile : null;
 }

@@ -1,6 +1,7 @@
 import "server-only";
 import { createAdminClient } from "@/lib/supabase/server";
 import { queuePush } from "@/lib/app-api/push";
+import { sandboxRecipients } from "@/lib/test-mode/server";
 
 /**
  * Bell notices (and phone push) for the clinic: leave decisions, sessions
@@ -14,7 +15,8 @@ export const CLINIC_LINK = "/clinic";
 const esc = (s: string) => s.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c] as string);
 
 export async function notifyClinic(input: { userIds: readonly string[]; title: string; text: string; sentBy: string | null; link?: string }): Promise<number> {
-  const ids = [...new Set(input.userIds)].slice(0, 2000);
+  // Test mode: only the test student; real notices never reach a test account.
+  const ids = await sandboxRecipients([...new Set(input.userIds)].slice(0, 2000)).catch(() => [] as string[]);
   if (!ids.length) return 0;
   const link = input.link ?? CLINIC_LINK;
   const rows = ids.map((userId) => {

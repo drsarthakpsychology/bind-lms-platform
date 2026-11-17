@@ -11,6 +11,7 @@ import { useReducedMotion } from "react-native-reanimated";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 
 import { useViewingAsStudent, ViewAsBar } from "@/admin/view-as";
+import { TestModeBar, useTestMode } from "@/admin/test-mode";
 import { installAppLifecycle, onOpened } from "@/api/lifecycle";
 import { installPrefetch } from "@/api/prefetch";
 import { persistOptions, persister, queryClient, useConfig } from "@/api/queries";
@@ -171,6 +172,7 @@ function Shell() {
   const cfg = useConfig();
   const segments = useSegments();
   const viewing = useViewingAsStudent() && segments[0] === "(student)";
+  const testSide = useTestMode();
   const opening = useOpening(phase, segments[0] as string | undefined);
   const holdPin = handoff.use((s) => s.holdPin);
   const pathname = usePathname();
@@ -291,6 +293,7 @@ function Shell() {
         }
       </View>
       <ViewAsBar visible={viewing && !overlay} />
+      {overlay || phase !== "ready" ? null : <TestModeBar side={testSide} lift={viewing ? 56 : 0} />}
       {overlay}
       <ToastHost />
     </View>
