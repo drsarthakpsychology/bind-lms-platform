@@ -1,7 +1,5 @@
 import { Stack } from "expo-router";
-import { useReducedMotion } from "react-native-reanimated";
-
-import { stackMotion } from "@/motion";
+import { useStackMotion } from "@/motion";
 import { useTheme } from "@/theme";
 
 /**
@@ -15,9 +13,9 @@ export const unstable_settings = { initialRouteName: "welcome" };
 
 export default function VisitorStack() {
   const c = useTheme();
-  const reduce = !!useReducedMotion();
+  const m = useStackMotion();
   return (
-    <Stack screenOptions={{ headerShown: false, contentStyle: { backgroundColor: c.bg }, ...stackMotion(reduce) }}>
+    <Stack screenOptions={{ headerShown: false, contentStyle: { backgroundColor: c.bg }, ...m.push }}>
       <Stack.Screen name="welcome" />
       <Stack.Screen name="sign-in" />
       <Stack.Screen

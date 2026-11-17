@@ -49,7 +49,7 @@ export function LibraryScreen() {
         ) : null}
       </View>
       {q.data ? <Chips scroll label="Group" options={[{ id: "All", name: "All" }, ...q.data.groups.map((g) => ({ id: g, name: g, mark: <ClassMark group={g} size={10} /> }))]} value={group} onChange={setGroup} /> : null}
-      {q.isError ? (
+      {(q.isError && q.data === undefined) ? (
         soon ? <SoonState web="/library" /> : <LoadError error={q.error} what="the medicine library" onRetry={() => void q.refetch()} />
       ) : !q.data ? (
         <View style={{ gap: space[3] }}>

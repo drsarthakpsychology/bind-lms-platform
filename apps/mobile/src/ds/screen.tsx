@@ -1,12 +1,12 @@
 import { Bell, CloudOff, Search } from "lucide-react-native";
 import * as React from "react";
 import { Pressable, RefreshControl, ScrollView, StyleSheet, View, type StyleProp, type ViewStyle } from "react-native";
-import Animated, { useReducedMotion } from "react-native-reanimated";
+import { useIsFocused } from "expo-router";
+import Animated, { useAnimatedStyle, useReducedMotion, useSharedValue, withDelay, withTiming } from "react-native-reanimated";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { useOffline } from "@/api/online";
-import { haptic } from "@/lib/haptics";
-import { FlowGap, presets, usePressScale } from "@/motion";
+import { curves, FlowGap, presets, tabSwitchCount, useFromRow, useMotionTier, usePressScale } from "@/motion";
 import Svg, { Defs, LinearGradient, Rect, Stop } from "react-native-svg";
 
 import { AreaProvider, fonts, layout, space, useAccent, useTheme, type Area } from "@/theme";
@@ -17,16 +17,17 @@ import { useKeyboardPad } from "./keyboard-pad";
 import { T } from "./text";
 import { TitleInk } from "@/moments/title";
 
-/** The VIBHA wordmark: wide black Archivo, with the school line under it. */
+/** The VIBHA wordmark, as on the website: wide black Archivo, with the school line under it in the pixel face. */
 export function Wordmark({ sub = "School of Psychology", size = 22 }: { sub?: string | null; size?: number }) {
   const c = useTheme();
+  const subSize = Math.max(9, Math.round(size * 0.45));
   return (
     <View accessible accessibilityRole="header" accessibilityLabel={sub ? `VIBHA ${sub}` : "VIBHA"}>
       <T style={{ fontFamily: fonts.wordmark, fontSize: size, lineHeight: size + 2, letterSpacing: -0.4, color: c.ink }} maxFontSizeMultiplier={1.2}>
         VIBHA
       </T>
       {sub ? (
-        <T v="caption" tone="muted" maxFontSizeMultiplier={1.2}>
+        <T tone="muted" maxFontSizeMultiplier={1.2} style={{ fontFamily: fonts.pixel, fontSize: subSize, lineHeight: subSize + 4, letterSpacing: subSize * 0.06, textTransform: "uppercase", marginTop: 2 }}>
           {sub}
         </T>
       ) : null}
@@ -72,19 +73,25 @@ export function TopBar({ onSearch, onBell, unread = 0, sub }: { onSearch?: () =>
   );
 }
 
-/** One thin line while the phone cannot reach the server. Saved copies still show under it. */
+/**
+ * A small calm pill while the phone cannot reach the server: what is on the
+ * screen is the copy saved on this phone, and it refreshes by itself when the
+ * internet is back. Never an error screen while there is something to show.
+ */
 export function OfflineLine() {
   const c = useTheme();
   const offline = useOffline();
   const reduce = useReducedMotion();
   if (!offline) return null;
   return (
-    <Animated.View entering={reduce ? undefined : presets.rise(0)} testID="offline-line" accessibilityRole="alert" accessibilityLiveRegion="polite" style={{ flexDirection: "row", alignItems: "center", gap: space[2], paddingVertical: space[2], paddingHorizontal: layout.gutter, backgroundColor: c.band }}>
-      <CloudOff size={16} color={c.onBand} />
-      <T v="small" tone="onBand" style={{ flex: 1 }}>
-        You are offline. Showing what was saved on this phone.
-      </T>
-    </Animated.View>
+    <View pointerEvents="none" style={{ alignItems: "center", paddingTop: space[2], paddingHorizontal: layout.gutter }}>
+      <Animated.View entering={reduce ? undefined : presets.rise(0)} testID="offline-line" accessibilityRole="alert" accessibilityLiveRegion="polite" accessibilityLabel="Offline. Showing what was saved on this phone." style={{ flexDirection: "row", alignItems: "center", gap: space[1], paddingVertical: 6, paddingHorizontal: space[3], borderRadius: 999, backgroundColor: c.band }}>
+        <CloudOff size={14} color={c.onBand} />
+        <T v="caption" tone="onBand" maxFontSizeMultiplier={1.4}>
+          Offline, showing saved
+        </T>
+      </Animated.View>
+    </View>
   );
 }
 
@@ -116,12 +123,13 @@ export type ScreenProps = {
 };
 
 /** The soft pastel glow behind a tab screen's header: the area's wash fading into the canvas. Scrolls away with the page. */
-function AreaGlow({ area }: { area: Area }) {
+function AreaGlow({ area, wash }: { area: Area; /** A tab screen: the glow washes down from the top each time the tab comes to the front. */ wash?: boolean }) {
   const a = useAccent();
+  const style = useWash(!!wash);
   // One gradient id per area: tabs stay mounted side by side, and a shared id would paint every glow in the first tab's colour.
   const id = `area-glow-${area}`;
   return (
-    <View pointerEvents="none" accessible={false} importantForAccessibility="no-hide-descendants" testID="area-glow" style={{ position: "absolute", top: 0, left: 0, right: 0, height: 260 }}>
+    <Animated.View pointerEvents="none" accessible={false} importantForAccessibility="no-hide-descendants" testID="area-glow" style={[{ position: "absolute", top: 0, left: 0, right: 0, height: 260, transformOrigin: "top" }, style]}>
       <Svg width="100%" height="100%">
         <Defs>
           <LinearGradient id={id} x1="0" y1="0" x2="0" y2="1">
@@ -132,8 +140,43 @@ function AreaGlow({ area }: { area: Area }) {
         </Defs>
         <Rect x="0" y="0" width="100%" height="100%" fill={`url(#${id})`} />
       </Svg>
-    </View>
+    </Animated.View>
   );
+}
+
+/**
+ * The area colour washing in when a tab comes to the front: the glow fades up
+ * and pours down from the top edge (scaleY 0.6 to 1 from the top), 420ms,
+ * just behind the tab's own fade through. Transform and opacity only, on the
+ * UI thread. Low-end Android: the fade alone. Reduce Motion: still.
+ */
+function useWash(on: boolean) {
+  const focused = useIsFocused();
+  const reduce = useReducedMotion();
+  const { low } = useMotionTier();
+  // Starts clear on a tab (no full-strength frame before the wash), full elsewhere.
+  const v = useSharedValue(on && !reduce ? 0 : 1);
+  const seen = React.useRef(-1);
+  React.useEffect(() => {
+    if (!on || reduce || !focused) return;
+    // A frame later, once the tab bar has counted the switch: wash only when this tab came to the
+    // front (first visit or a tab switch), not when a page pushed over it was closed.
+    const raf = requestAnimationFrame(() => {
+      const n = tabSwitchCount();
+      if (n === seen.current) {
+        v.set(1);
+        return;
+      }
+      seen.current = n;
+      v.set(0);
+      v.set(withDelay(60, withTiming(1, { duration: 420, easing: curves.out })));
+    });
+    return () => cancelAnimationFrame(raf);
+  }, [on, focused, reduce, v]);
+  return useAnimatedStyle(() => ({
+    opacity: v.value,
+    transform: [{ scaleY: low ? 1 : 0.6 + 0.4 * v.value }],
+  }));
 }
 
 /**
@@ -146,15 +189,14 @@ export function Screen({ children, title, lead, top, footer, onRefresh, refreshi
   const c = useTheme();
   const insets = useSafeAreaInsets();
   const reduce = useReducedMotion();
+  const tier = useMotionTier();
   // Pull to refresh: the spinner shows only for the person's own pull (never
-  // for quiet background refreshes), for at least 500ms so it never blinks,
-  // and the pull gives a selection haptic.
+  // for quiet background refreshes), for at least 500ms so it never blinks.
   const [pulled, setPulled] = React.useState(false);
   const [hold, setHold] = React.useState(false);
   if (pulled && !hold && !refreshing) setPulled(false);
   const pull = React.useCallback(() => {
     if (!onRefresh) return;
-    haptic.select();
     setPulled(true);
     setHold(true);
     setTimeout(() => setHold(false), 500);
@@ -168,31 +210,41 @@ export function Screen({ children, title, lead, top, footer, onRefresh, refreshi
   useBottomChrome(footer ? footH : 0, !!tab, kb);
   const side = bleed ? 0 : layout.gutter;
   const padBottom = (footer || tab ? 0 : insets.bottom) + space[6];
+  // Arrival choreography (UI thread layout animations): header, then body. Low-end Android: fades only.
+  const head = reduce ? undefined : presets.head(tier.low);
+  const bodyIn = reduce ? undefined : presets.body(tier.low);
+  const fromRow = useFromRow(title);
   const own = StyleSheet.flatten(contentStyle)?.gap;
   const flowGap = typeof own === "number" ? own : gap;
   const body = (
     <View style={[{ width: "100%", maxWidth: bleed ? undefined : layout.readingWidth + side * 2, alignSelf: "center", paddingLeft: Math.max(side, bleed ? 0 : insets.left), paddingRight: Math.max(side, bleed ? 0 : insets.right), paddingTop: space[5], paddingBottom: padBottom, gap }, contentStyle]}>
       {title || lead ? (
-        <View style={{ gap: space[1] }}>
+        // Header first: the title (gliding out of the row that opened it, when one did), then the lead.
+        <Animated.View entering={fromRow ? undefined : head} style={{ gap: space[1] }}>
           {title ? (
-            <Animated.View entering={reduce ? undefined : presets.rise(0)}>
+            <Animated.View entering={fromRow}>
               <T v="h1">{title}</T>
               {tab ? <TitleInk title={title} /> : null}
             </Animated.View>
           ) : null}
           {lead ? (
-            <T v="small" tone="muted">
-              {lead}
-            </T>
+            <Animated.View entering={fromRow ? head : undefined}>
+              <T v="small" tone="muted">
+                {lead}
+              </T>
+            </Animated.View>
           ) : null}
-        </View>
+        </Animated.View>
       ) : null}
-      <FlowGap.Provider value={flowGap}>{children}</FlowGap.Provider>
+      {/* Then the body, 70ms behind (its own gap, so the sections keep their spacing). */}
+      <Animated.View entering={title || lead ? bodyIn : head} style={{ gap: flowGap }}>
+        <FlowGap.Provider value={flowGap}>{children}</FlowGap.Provider>
+      </Animated.View>
     </View>
   );
   const inner = area ? (
     <View>
-      <AreaGlow area={area} />
+      <AreaGlow area={area} wash={tab} />
       {body}
     </View>
   ) : (
@@ -203,7 +255,7 @@ export function Screen({ children, title, lead, top, footer, onRefresh, refreshi
     <View ref={root} onLayout={kbLayout} testID={testID} style={{ flex: 1, backgroundColor: c.bg, paddingTop: safeTop ? insets.top : 0, paddingBottom: kb }}>
       {top}
       <OfflineLine />
-      <Animated.View entering={reduce ? undefined : presets.fadeState()} style={{ flex: 1 }}>
+      <View style={{ flex: 1 }}>
         {scroll ? (
           <ScrollView
             keyboardShouldPersistTaps="handled"
@@ -217,7 +269,7 @@ export function Screen({ children, title, lead, top, footer, onRefresh, refreshi
         ) : (
           <View style={{ flex: 1 }}>{inner}</View>
         )}
-      </Animated.View>
+      </View>
       {footer ? (
         <View onLayout={(e) => setFootH(Math.round(e.nativeEvent.layout.height))} style={{ backgroundColor: c.bg, borderTopWidth: 1, borderColor: c.hairline, paddingTop: space[3], paddingBottom: (tab || kb ? 0 : insets.bottom) + space[3], paddingLeft: Math.max(layout.gutter, insets.left), paddingRight: Math.max(layout.gutter, insets.right) }}>
           <View style={{ width: "100%", maxWidth: layout.readingWidth, alignSelf: "center", gap: space[2] }}>{footer}</View>

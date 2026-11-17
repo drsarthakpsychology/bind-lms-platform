@@ -212,6 +212,31 @@ export function board(id: string): C.Leaderboard {
   return { v: 1, board: id, label: label[id]!, period: id === "overall" ? "All time" : "This week", explainer: id === "league" ? "Points from everything you practise. Monday to Sunday." : "Your best scores this week.", scope: "Your cohort only. First name and initial.", rows, me: { rank: 2, total: rows.length }, raw: {} };
 }
 
+const ADMIN_COHORTS = [
+  { id: "c1", name: "Cohort One" },
+  { id: "c2", name: "Cohort Two" },
+];
+const FIRST = ["Aarav", "Ananya", "Diya", "Ishaan", "Kabir", "Meera", "Neha", "Rohan", "Saanvi", "Vihaan", "Zara", "Arjun"];
+const LAST = ["Mehta", "Shah", "Patel", "Iyer", "Rao", "Desai"];
+
+/** The admin answer for league, quiz and overall: 72 students in two cohorts, a third of them on 0. Same query as the server. */
+export function adminBoard(id: string, q: URLSearchParams): C.Leaderboard {
+  const base = board(id);
+  const all = Array.from({ length: 72 }, (_, i) => ({ name: `${FIRST[i % FIRST.length]} ${LAST[Math.floor(i / FIRST.length) % LAST.length]}`, cohort: ADMIN_COHORTS[i % 2]!, points: i % 3 === 2 ? 0 : 2000 - i * 23 }));
+  const cohort = ADMIN_COHORTS.some((c) => c.id === q.get("cohort")) ? q.get("cohort") : null;
+  const ranked = all.filter((s) => !cohort || s.cohort.id === cohort).sort((a, b) => b.points - a.points || a.name.localeCompare(b.name));
+  let rank = 0;
+  const withRank = ranked.map((s, i) => ({ ...s, rank: i > 0 && ranked[i - 1]!.points === s.points ? rank : (rank = i + 1) }));
+  const needle = (q.get("q") ?? "").trim().toLowerCase();
+  const sort = q.get("sort") === "name" ? "name" : q.get("sort") === "cohort" ? "cohort" : "rank";
+  const found = withRank.filter((s) => !needle || s.name.toLowerCase().includes(needle)).sort((a, b) => (sort === "name" ? a.name.localeCompare(b.name) : sort === "cohort" ? a.cohort.name.localeCompare(b.cohort.name) || a.rank - b.rank : a.rank - b.rank));
+  const size = 50;
+  const pages = Math.max(1, Math.ceil(found.length / size));
+  const page = Math.min(pages, Math.max(1, Number(q.get("page")) || 1));
+  const rows = found.slice((page - 1) * size, page * size).map((s) => ({ rank: s.rank, name: s.name, points: s.points, me: false, title: s.cohort.name, extra: { level: 1, hours: 0, tier: "Neuron", xp: s.points } }));
+  return { ...base, scope: `${cohort ? ADMIN_COHORTS.find((c) => c.id === cohort)!.name : "All cohorts"}. Every student, full names.`, rows, me: { rank: null, total: ranked.length }, admin: { page, pages, size, total: ranked.length, matched: found.length, q: needle, cohort, sort, dir: "asc", cohorts: ADMIN_COHORTS } };
+}
+
 
 /* ------------------------------------------------------------------- shop */
 const LOOKS = [

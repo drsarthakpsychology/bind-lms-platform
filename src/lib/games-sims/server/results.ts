@@ -98,19 +98,26 @@ export async function saveResult(userId: string, row: { game: string; item: stri
   }
 }
 
-/** Display names of students in the viewer's cohort(s) (everyone, if not in a cohort). */
+/** Display names of students in the viewer's cohort(s); every student when the viewer is an admin. */
 export async function cohortNames(me: string | null): Promise<Map<string, string>> {
   const db = adminDb();
   const out = new Map<string, string>();
   if (!db) return out;
   try {
-    const [{ data, error }, cohorts] = await Promise.all([db.from("profiles").select("id, name, email, role, is_test").in("role", ["student", "alumni"]).limit(5000), loadCohortMap()]);
+    const [{ data, error }, cohorts, viewer] = await Promise.all([
+      db.from("profiles").select("id, name, email, role, is_test").in("role", ["student", "alumni"]).limit(5000),
+      loadCohortMap(),
+      me ? db.from("profiles").select("role").eq("id", me).maybeSingle() : Promise.resolve({ data: null }),
+    ]);
     if (error) return out;
+    // Admins see every student who played; students see their own cohort only.
+    const role = (viewer.data as { role?: string } | null)?.role;
+    const everyone = role === "admin" || role === "view_admin";
     const mine = (me && cohorts.get(me)) || [];
     for (const p of data ?? []) {
       if (isHiddenAccount(p)) continue;
       const id = p.id as string;
-      if (id !== me && !sameGroup(mine, cohorts.get(id) ?? [])) continue;
+      if (!everyone && id !== me && !sameGroup(mine, cohorts.get(id) ?? [])) continue;
       out.set(id, displayName(p.name as string | null, String(p.email ?? "")));
     }
   } catch {

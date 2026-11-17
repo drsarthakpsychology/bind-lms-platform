@@ -52,7 +52,7 @@ const HOW_FALLBACK = ["Pick the diagnosis: +100.", "Then pick what tells it apar
 /** Differential duel against the bot. */
 export function DuelGame() {
   const tool = useTool("duel");
-  if (tool.isError) return <FrameError title="Differential duel" error={tool.error} onRetry={() => void tool.refetch()} />;
+  if (tool.isError && tool.data === undefined) return <FrameError title="Differential duel" error={tool.error} onRetry={() => void tool.refetch()} />;
   if (!tool.data) return <FrameLoading title="Differential duel" />;
   const d = tool.data.data as { profile: Profile; offlineItems: Item[] | null };
   const how = tool.data.howTo.length ? tool.data.howTo : HOW_FALLBACK;

@@ -1,4 +1,8 @@
 import type { Metadata } from "next";
+import { isAdminLike } from "@/lib/auth/guards";
+import { AdminBoard } from "@/components/standing/admin-board";
+import { loadAdminBoard } from "@/lib/standing/admin-board-data";
+import { parseAdminQuery } from "@/lib/standing/admin-board";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, Crown, Flame } from "lucide-react";
 import { requireFeature } from "@/lib/flags";
@@ -21,10 +25,12 @@ export const dynamic = "force-dynamic";
  * everyone in the cohort, so no one can hide at the bottom. The overall board
  * is one tap away.
  */
-export default async function QuizLeaderboardPage() {
+export default async function QuizLeaderboardPage({ searchParams }: { searchParams: Promise<Record<string, string | string[] | undefined>> }) {
   await requireFeature("learn");
   const session = await getSession();
   if (session.status !== "ok") return leaveWithoutSession(session);
+  // Admins see every student in the cohort (zero scores too), not the student view.
+  if (isAdminLike(session.profile)) return <AdminBoard board="quiz" data={await loadAdminBoard("quiz", parseAdminQuery(await searchParams))} />;
   const userId = session.profile.id;
   const [{ rows, myRank, total }, cohorts] = await Promise.all([loadQuizBoard(userId), loadMyCohorts(userId).catch(() => [])]);
 

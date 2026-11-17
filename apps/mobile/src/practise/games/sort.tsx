@@ -91,7 +91,6 @@ function Board({ view, again }: { view: SortView; again: () => void }) {
   const takeOut = (tile: number) => setPlace((p) => p.map((x, i) => (i === tile ? null : x)));
   const skip = () => {
     if (deck.length < 2 || top === null) return;
-    haptic.select();
     const at = deck.indexOf(top);
     setSel(deck[(at + 1) % deck.length]!);
   };

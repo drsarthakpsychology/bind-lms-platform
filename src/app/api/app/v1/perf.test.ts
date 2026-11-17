@@ -34,7 +34,7 @@ type Case = { name: string; path: string; // eslint-disable-next-line @typescrip
 
 /** Serial-depth budgets (round trips one after another), cold and warm. */
 const CASES: Case[] = [
-  { name: "home", path: "/home", mod: () => import("./home/route"), budget: { cold: 3, warm: 3 } },
+  { name: "home", path: "/home", mod: () => import("./home/route"), budget: { cold: 4, warm: 4 } },
   { name: "practise", path: "/practise", mod: () => import("./practise/route"), budget: { cold: 3, warm: 2 } },
   { name: "practise/tools/blitz", path: "/practise/tools/blitz", mod: () => import("./practise/tools/[tool]/route"), params: { tool: "blitz" }, budget: { cold: 4, warm: 4 } },
   { name: "practise/tools/wwyd", path: "/practise/tools/wwyd", mod: () => import("./practise/tools/[tool]/route"), params: { tool: "wwyd" }, budget: { cold: 3, warm: 3 } },

@@ -173,7 +173,7 @@ const base = ({ config }: ConfigContext): ExpoConfig => ({
     [
       "expo-splash-screen",
       {
-        // The VIBHA mark on blue, in light and dark mode alike (assets/brand, scripts/make-assets.py).
+        // The VIBHA wordmark on blue, in light and dark mode alike (assets/brand, scripts/make-assets.py).
         image: "./assets/images/splash.png",
         imageWidth: 200,
         resizeMode: "contain",

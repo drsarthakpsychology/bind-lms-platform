@@ -68,7 +68,7 @@ export function ShopScreen() {
   const d = q.data;
   const first = (me.data?.name ?? "You").split(" ")[0] ?? "You";
 
-  if (q.isError) return <Screen title="XP shop"><LoadError error={q.error} what="the shop" onRetry={() => void q.refetch()} /></Screen>;
+  if (q.isError && q.data === undefined) return <Screen title="XP shop"><LoadError error={q.error} what="the shop" onRetry={() => void q.refetch()} /></Screen>;
   if (!d) {
     return (
       <Screen title="XP shop">
@@ -188,7 +188,7 @@ export function ShopScreen() {
                     </View>
                   </Stamp>
                 ) : (
-                  <PriceButton cost={it.cost} disabled={off || (it.id === "streak_repair" && !d.repair.ok)} label={off ? "Coming soon" : undefined} onPress={() => { haptic.tap(); setError(null); setPending({ kind: "item", item: it }); }} testID={`shop-buy-${it.id}`} />
+                  <PriceButton cost={it.cost} disabled={off || (it.id === "streak_repair" && !d.repair.ok)} label={off ? "Coming soon" : undefined} onPress={() => { setError(null); setPending({ kind: "item", item: it }); }} testID={`shop-buy-${it.id}`} />
                 )}
               </View>
             );
@@ -211,7 +211,7 @@ export function ShopScreen() {
                   {mine ? (
                     <Button kind={on ? "quiet" : "primary"} full={false} label={on ? "Take off" : "Wear"} onPress={() => void wear(l, !on)} testID={`shop-wear-${l.id}`} />
                   ) : (
-                    <PriceButton cost={l.cost} disabled={!d.ready} onPress={() => { haptic.tap(); setError(null); setPending({ kind: "look", look: l }); }} testID={`shop-buy-${l.id}`} />
+                    <PriceButton cost={l.cost} disabled={!d.ready} onPress={() => { setError(null); setPending({ kind: "look", look: l }); }} testID={`shop-buy-${l.id}`} />
                   )}
                 </View>
                 <View style={{ flexDirection: "row", alignItems: "center", gap: space[2] }}>

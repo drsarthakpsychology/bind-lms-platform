@@ -16,6 +16,8 @@ export const G = {
   flags: {} as Record<string, string>,
   blocks: [] as string[],
   limited: new Set<string>(),
+  /** Supabase Auth cannot be reached (its fetch fails). */
+  authDown: false,
   /** Every rate-limit key asked for. */
   limits: [] as string[],
   storage: {
@@ -29,6 +31,7 @@ export function resetGuard(over: Record<string, Record<string, unknown>[]> = {},
   G.users = { [STUDENT_TOKEN]: { id: STUDENT_ID, email: "asha@example.com" }, [ADMIN_TOKEN]: { id: ADMIN_ID, email: "owner@example.com" } };
   G.flags = { learn: "unlocked" };
   G.blocks = [];
+  G.authDown = false;
   G.limited.clear();
   G.limits = [];
 }
@@ -47,7 +50,7 @@ export function statelessMock() {
   return {
     createStatelessAuthClient: () => ({
       auth: {
-        getUser: async (t: string) => (G.users[t] ? { data: { user: G.users[t] }, error: null } : { data: { user: null }, error: { message: "invalid JWT" } }),
+        getUser: async (t: string) => (G.authDown ? { data: { user: null }, error: { name: "AuthRetryableFetchError", status: 0, message: "fetch failed" } } : G.users[t] ? { data: { user: G.users[t] }, error: null } : { data: { user: null }, error: { message: "invalid JWT" } }),
       },
     }),
   };

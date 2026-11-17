@@ -7,6 +7,7 @@ import { session } from "@/auth";
 import { readQuery } from "@/practise/api";
 import type * as C from "./contract";
 import { learnQo } from "./learn";
+import { isSlow, netStore } from "./online";
 import { qo, queryClient } from "./queries";
 
 /**
@@ -22,6 +23,10 @@ import { qo, queryClient } from "./queries";
  * Every read here is the same query the screen asks for (src/api/queries.ts
  * `qo`), and one that is still fresh is not asked for again. A failed
  * prefetch is silent: the screen asks again and shows its own error.
+ *
+ * Kind to data and battery: nothing is loaded ahead while the phone is
+ * offline, and while the connection is too slow only what was tapped loads
+ * (moment 2); the guesses (1 and 3) wait for a better connection.
  */
 
 /** A ready-made query of any shape (each one's own types are checked where it is made). */
@@ -30,6 +35,14 @@ type Read = { queryKey: QueryKey };
 function load(reads: (Read | null | undefined | false)[]): void {
   for (const r of reads) if (r) void queryClient.prefetchQuery(r as FetchQueryOptions);
 }
+
+/** Loading ahead on a guess is worth it now (online, and not on a crawling connection). */
+export function canGuess(): boolean {
+  return !netStore.get().offline && !isSlow();
+}
+
+/** How many list rows to load ahead (the ones on screen first). */
+export const AHEAD_ROWS = 3;
 
 /** The first reads of the account's tabs (what each tab screen asks for when it opens). */
 export function tabReads(me: C.Me | null): Read[] {
@@ -117,7 +130,7 @@ export function routeReads(href: string): Read[] {
 
 /** Start loading what the screen at `href` shows (a tap, a link). Safe to call with anything. */
 export function prefetchRoute(href: string | null | undefined): void {
-  if (!href || !session.hasTokens()) return;
+  if (!href || !session.hasTokens() || netStore.get().offline) return;
   try {
     load(routeReads(href));
   } catch {
@@ -176,6 +189,36 @@ export function nextReads(key: QueryKey, data: unknown): string[] {
       if (first) out.push(`/course/${encodeURIComponent(first.id)}`);
       break;
     }
+    case "course": {
+      // The lecture the student is on (the one marked next, else the one started).
+      const lessons = ((d as Partial<C.CourseDetail>).weeks ?? []).flatMap((w) => (Array.isArray(w?.lessons) ? w.lessons : []));
+      const on = lessons.find((l) => l.openable && l.state === "next") ?? lessons.find((l) => l.openable && l.state === "started");
+      if (on) out.push(`/lecture/${encodeURIComponent(on.id)}`);
+      break;
+    }
+    case "lecture": {
+      const next = (d as Partial<C.LectureDetail>).next;
+      if (next?.id) out.push(`/lecture/${encodeURIComponent(next.id)}`);
+      break;
+    }
+    case "section": {
+      // The next section of the same module: reading on opens at once.
+      const next = (d as { next?: { sectionId?: string } | null }).next;
+      const m = typeof key[1] === "string" ? key[1] : "";
+      if (m && next?.sectionId) out.push(`/study/${encodeURIComponent(m)}/${encodeURIComponent(next.sectionId)}`);
+      break;
+    }
+    case "notes": {
+      const list = (d as { notes?: { id: string; readOn?: string | null }[] }).notes ?? [];
+      const next = list.find((n) => !n.readOn);
+      if (next) out.push(`/notes/${encodeURIComponent(next.id)}`);
+      break;
+    }
+    case "doubts": {
+      // The first rows on screen. (Notifications are not loaded ahead: opening one marks it read.)
+      for (const x of ((d as { items?: { id: string }[] }).items ?? []).slice(0, AHEAD_ROWS)) out.push(`/doubt/${encodeURIComponent(x.id)}`);
+      break;
+    }
     default:
       break;
   }
@@ -200,21 +243,29 @@ export function installPrefetch(): () => void {
     if (opened === id) return;
     opened = id;
     try {
-      load(tabReads(s.me));
+      // Offline: nothing would arrive (the screens show their saved copies). Crawling: Home first, the rest on tap.
+      if (netStore.get().offline) opened = null;
+      else load(isSlow() ? tabReads(s.me).slice(0, 1) : tabReads(s.me));
     } catch {
       /* never break the opening */
     }
   };
   const offSession = session.store.subscribe(onSession);
+  // Back online after opening offline: load the tabs then.
+  const offNet = netStore.subscribe(() => {
+    if (!netStore.get().offline && opened === null) onSession();
+  });
   onSession();
   const offCache = queryClient.getQueryCache().subscribe((e) => {
     if (e.type !== "updated" || e.action.type !== "success") return;
     // Only answers from the server, not copies restored from the phone or written by a screen.
     if (e.action.manual) return;
+    if (!canGuess()) return;
     for (const href of nextReads(e.query.queryKey, e.query.state.data)) prefetchRoute(href);
   });
   return () => {
     offSession();
+    offNet();
     offCache();
   };
 }

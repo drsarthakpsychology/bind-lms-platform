@@ -31,7 +31,6 @@ export function DateField({ label, value, onChange, hint, error, min, optional, 
         accessibilityLabel={`${label}: ${shown || "not set"}`}
         accessibilityHint={error ?? "Opens a calendar"}
         onPress={() => {
-          haptic.select();
           setOpen(true);
         }}
         {...handlers}
@@ -82,7 +81,6 @@ function DateSheet({ open, title, value, min, optional, onClose, onPick, testID 
     if (open) setYm({ y: Number(start.slice(0, 4)), m: Number(start.slice(5, 7)) - 1 });
   }
   const step = (d: number) => {
-    haptic.select();
     setYm(({ y, m }) => {
       const n = m + d;
       return { y: y + Math.floor(n / 12), m: ((n % 12) + 12) % 12 };

@@ -10,6 +10,7 @@ import { Button, Loaded, RowsSkeleton, Screen, T } from "@/ds";
 import { openTarget } from "@/nav/targets";
 import { space } from "@/theme";
 import { when } from "./list";
+import { FromRow } from "@/motion";
 
 function Spans({ spans }: { spans: MessageSpan[] }) {
   return (
@@ -88,7 +89,9 @@ export function NotificationScreen() {
           return (
             <>
               <View style={{ gap: space[2] }}>
-                <T v="h1">{n.title}</T>
+                <FromRow title={n.title}>
+                  <T v="h1">{n.title}</T>
+                </FromRow>
                 <T v="small" tone="muted">
                   {[n.from, when(n.createdAt)].filter(Boolean).join(" · ")}
                 </T>

@@ -14,6 +14,7 @@ import { openLink } from "@/lib/open";
 import { TextSizeRow } from "@/lib/reading";
 import { settingsStore, updateSettings } from "@/lib/settings";
 import { disablePush, enablePush, setStudyReminder } from "@/push";
+import { PermissionsSection } from "@/screens/me/permissions";
 import { PhoneSecurity } from "@/screens/me/security";
 import { space } from "@/theme";
 
@@ -22,6 +23,12 @@ const TIMES = [
   { id: "13:00", name: "1 pm" },
   { id: "19:00", name: "7 pm" },
   { id: "21:00", name: "9 pm" },
+];
+const STRENGTHS = [
+  { id: "off" as const, name: "Off" },
+  { id: "light" as const, name: "Light" },
+  { id: "medium" as const, name: "Medium" },
+  { id: "strong" as const, name: "Strong" },
 ];
 const THEMES = [
   { id: "system" as const, name: "Match phone" },
@@ -135,9 +142,22 @@ export function SettingsScreen() {
                 </T>
                 <Chips label="Appearance" options={THEMES} value={theme} onChange={(t) => updateSettings({ theme: t })} />
               </View>
+              <View testID="pref-haptics" style={{ gap: space[2] }}>
+                <T v="small" tone="muted">
+                  Vibration
+                </T>
+                <Chips
+                  label="Vibration"
+                  options={STRENGTHS}
+                  value={haptics}
+                  onChange={(v) => {
+                    updateSettings({ haptics: v });
+                    haptic.tap();
+                  }}
+                />
+              </View>
               <RowList>
                 <TextSizeRow />
-                <SwitchRow testID="pref-haptics" title="Vibration on taps" value={haptics} onChange={(v) => updateSettings({ haptics: v })} />
                 <SwitchRow testID="pref-reactions" title="Funny reactions" meta="A meme and a cheeky line after some answers. This phone only." value={reactions} onChange={(v) => updateSettings({ reactions: v })} />
               </RowList>
             </Section>
@@ -149,6 +169,7 @@ export function SettingsScreen() {
               </RowList>
             </Section>
             <Notifications prefs={s.notifications} />
+            <PermissionsSection />
             <Section title="Privacy" quiet>
               <RowList>
                 <Row testID="settings-privacy" title="Privacy policy" onPress={() => void openLink(s.legal.privacyUrl)} />

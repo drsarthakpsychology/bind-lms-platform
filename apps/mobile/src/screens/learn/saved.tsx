@@ -6,7 +6,9 @@ import { View } from "react-native";
 
 import { moduleDetailView } from "@/api/adapt-learn";
 import type { Marks, MarksResult, SaveMarksResult } from "@/api/contract";
+import { ApiFailure } from "@/api/errors";
 import { learnKeys, useMarks } from "@/api/learn";
+import { queueWrite } from "@/api/queued";
 import { keys, useStudyHome } from "@/api/queries";
 import { api } from "@/auth";
 import { Button, EmptyState, Field, Loaded, Row, RowList, RowsSkeleton, Screen, Section, Sheet, T } from "@/ds";
@@ -30,7 +32,16 @@ export async function saveMark(qc: ReturnType<typeof useQueryClient>, changes: M
     const r = await api.put<SaveMarksResult>("/study/marks", { changes });
     qc.setQueryData<MarksResult>(learnKeys.marks, { marks: r.marks, synced: r.synced });
     return true;
-  } catch {
+  } catch (e) {
+    // No internet or our server hiccuped: the change is kept on the phone and sent when it can be, in order.
+    if (e instanceof ApiFailure && (e.code === "network" || e.code === "server_error" || e.code === "rate_limited")) {
+      void queueWrite({ method: "PUT", path: "/study/marks", body: { changes }, scope: "marks" })
+        .then((r) => {
+          const x = r as SaveMarksResult | undefined;
+          if (x?.marks) qc.setQueryData<MarksResult>(learnKeys.marks, { marks: x.marks, synced: x.synced });
+        })
+        .catch(() => undefined);
+    }
     return false;
   }
 }

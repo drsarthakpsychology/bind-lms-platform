@@ -40,7 +40,7 @@ export function LongScreen() {
   const title = d?.level === "subject" ? longTitle((d.data as unknown as LongSubject).title) : d?.level === "topic" ? (d.data as unknown as LongTopic).title : "Long answers";
   return (
     <Screen testID="prep-long" title={title} lead={d?.level === "home" || !d ? "Write your answer first, on paper or in your head. Then see the model answer." : undefined}>
-      {q.isError ? (
+      {(q.isError && q.data === undefined) ? (
         <LoadError error={q.error} onRetry={() => void q.refetch()} />
       ) : !d ? (
         <View style={{ gap: space[3] }}>
@@ -98,7 +98,7 @@ function LongQuestion({ q, subject, topic }: { q: LongQ; subject: string; topic:
   const thumb = open ? (
     next ? <Button label="Next question" onPress={() => router.replace(`/prep/long?subject=${enc(subject)}&topic=${enc(topic)}&id=${enc(next.id)}`)} testID="long-next" /> : <Button kind="quiet" label="Back to the list" onPress={() => router.back()} />
   ) : (
-    <Button label="Show answer" onPress={() => { haptic.tap(); setOpen(true); }} testID="long-show" />
+    <Button label="Show answer" onPress={() => setOpen(true)} testID="long-show" />
   );
   return (
     <GameFrame testID="long-question" title={`${item.marks} marks`} thumb={thumb}>

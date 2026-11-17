@@ -9,7 +9,6 @@ import { bulletText } from "@/api/adapt-learn";
 import type { RevisionNote, RevisionNoteList, RevisionNoteSummary } from "@/api/contract";
 import { learnKeys, useNote, useNotes, useTerms } from "@/api/learn";
 import { Chips, EmptyState, Hero, Loaded, Row, RowList, RowsSkeleton, Screen, Section, T, Tint } from "@/ds";
-import { haptic } from "@/lib/haptics";
 import { OnceHint } from "@/lib/once";
 import { ReadingSize } from "@/lib/reading";
 import { settingsStore, updateSettings } from "@/lib/settings";
@@ -20,6 +19,7 @@ import { saveLearn, withNoteRead } from "@/study/state";
 import { Rich, TermPress } from "@/study/rich";
 import { FigureWidget } from "@/study/widgets/diagrams";
 import { layout, space, useTheme } from "@/theme";
+import { go } from "@/api/prefetch";
 
 /**
  * Notes: the website's one-page revision notes (/study/notes), grouped by
@@ -43,14 +43,14 @@ export function NotesBody({ d }: { d: RevisionNoteList }) {
     <>
       {next ? (
         <Enter i={0}>
-          <Hero context={read ? "Next note" : "Start here"} title={next.title} meta={next.tagline} progress={d.notes.length ? Math.round((read / d.notes.length) * 100) : undefined} progressLabel={`${read} of ${d.notes.length} notes read`} action={{ label: read ? "Carry on" : "Read it", onPress: () => router.push(`/notes/${encodeURIComponent(next.id)}`), icon: <ArrowRight size={20} color={c.onPrimary} />, testID: "notes-next" }} />
+          <Hero context={read ? "Next note" : "Start here"} title={next.title} meta={next.tagline} progress={d.notes.length ? Math.round((read / d.notes.length) * 100) : undefined} progressLabel={`${read} of ${d.notes.length} notes read`} action={{ label: read ? "Carry on" : "Read it", onPress: () => go(`/notes/${encodeURIComponent(next.id)}`), icon: <ArrowRight size={20} color={c.onPrimary} />, testID: "notes-next" }} />
         </Enter>
       ) : null}
       {groups.map((g) => (
         <Section key={g.title} title={g.title}>
           <RowList>
             {g.items.map((n) => (
-              <Row key={n.id} testID={`note-${n.id}`} icon={<NotebookText size={20} color={c.muted} />} title={n.title} meta={n.tagline} trailing={n.readOn ? <Check size={20} color={c.ink} accessibilityLabel="Read" /> : undefined} onPress={() => router.push(`/notes/${encodeURIComponent(n.id)}`)} />
+              <Row key={n.id} testID={`note-${n.id}`} icon={<NotebookText size={20} color={c.muted} />} title={n.title} meta={n.tagline} trailing={n.readOn ? <Check size={20} color={c.ink} accessibilityLabel="Read" /> : undefined} onPress={() => go(`/notes/${encodeURIComponent(n.id)}`)} />
             ))}
           </RowList>
         </Section>
@@ -82,7 +82,6 @@ function FlipCard({ lay, term, i }: { lay: string; term: string; i: number }) {
   const front = useAnimatedStyle(() => ({ opacity: turn.value < 0.5 ? 1 : 0, transform: [{ perspective: 800 }, { rotateY: `${turn.value * 180}deg` }] }));
   const back = useAnimatedStyle(() => ({ opacity: turn.value >= 0.5 ? 1 : 0, transform: [{ perspective: 800 }, { rotateY: `${turn.value * 180 - 180}deg` }] }));
   const flip = () => {
-    haptic.select();
     const next = !on;
     setOn(next);
     turn.value = reduce ? (next ? 1 : 0) : withSpring(next ? 1 : 0, springs.snappy);

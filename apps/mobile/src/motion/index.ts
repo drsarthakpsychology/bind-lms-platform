@@ -3,14 +3,15 @@
  * Full guide with examples: apps/mobile/docs/MOTION.md.
  *
  *   tokens     springs, dur, curves, stagger
- *   press      Press, usePressScale         press feedback (scale + haptic)
+ *   press      Press, usePressScale         press feedback (scale; haptic only if asked)
  *   enter      Enter, StaggerList, useEnter, presets, staggerDelay
  *   skeleton   Shimmer, SkeletonIn, Reveal  loading to content
  *   number     RollingNumber                digits roll into place
  *   progress   ProgressRing, ProgressFill, useFill
  *   burst      Burst, Confetti, Stamp       success moments
  *   tabbar     MotionTabBar, tabSceneOptions
- *   stack      stackMotion, modalMotion, fadeMotion
+ *   stack      useStackMotion, routeMotion   push, sheet, overlay, play per route
+ *   continuity useFromRow, continuity     list row title glides into its page
  *   refresh    useRefresh                   pull to refresh
  *   wins       useNewWins                   celebrate each win once
  *   swap       Swap                         keyed content swaps with no blank frame
@@ -42,3 +43,4 @@ export * from "./mask";
 export * from "./tier";
 export * from "./sprite";
 export * from "./celebrate";
+export * from "./continuity";

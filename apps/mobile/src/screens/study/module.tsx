@@ -133,7 +133,7 @@ export function ModuleBody({ m }: { m: ModuleDetail }) {
       ) : null}
       {m.noteId ? (
         <RowList>
-          <Row testID="module-note" title="One-page note for this module" meta="Read it before the test" onPress={() => router.push(`/notes/${encodeURIComponent(m.noteId!)}`)} />
+          <Row testID="module-note" title="One-page note for this module" meta="Read it before the test" onPress={() => go(`/notes/${encodeURIComponent(m.noteId!)}`)} />
         </RowList>
       ) : null}
       {m.outcomes.length ? (
@@ -150,7 +150,7 @@ export function ModuleBody({ m }: { m: ModuleDetail }) {
       ) : null}
       {m.nextModule ? (
         <RowList>
-          <Row title={`Next module: ${m.nextModule.title}`} meta={`Module ${m.nextModule.num}`} onPress={() => router.push(`/study/${encodeURIComponent(m.nextModule!.id)}`)} />
+          <Row title={`Next module: ${m.nextModule.title}`} meta={`Module ${m.nextModule.num}`} onPress={() => go(`/study/${encodeURIComponent(m.nextModule!.id)}`)} />
         </RowList>
       ) : null}
     </>

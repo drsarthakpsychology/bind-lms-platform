@@ -175,7 +175,7 @@ export function SignInScreen({ defaultEmail = "" }: { defaultEmail?: string }) {
           ) : null}
           <SubmitButton label="Sign in" busyLabel="Signing in" doneLabel="Signed in" state={state} onPress={() => void submit()} testID="sign-in-submit" />
           <View style={{ flex: 1 }} />
-          <Press onPress={() => router.push("/request")} accessibilityRole="button" accessibilityLabel="New here? Request an invitation" testID="sign-in-request" feel="tap" innerStyle={{ minHeight: layout.target, flexDirection: "row", alignItems: "center", justifyContent: "center", gap: space[1] }}>
+          <Press onPress={() => router.push("/request")} accessibilityRole="button" accessibilityLabel="New here? Request an invitation" testID="sign-in-request" innerStyle={{ minHeight: layout.target, flexDirection: "row", alignItems: "center", justifyContent: "center", gap: space[1] }}>
             <T v="small" tone="muted">
               New here?
             </T>
@@ -225,7 +225,7 @@ function BandName() {
       <Text allowFontScaling={false} style={{ fontFamily: fonts.wordmark, fontSize: 24, color: "#ffffff", letterSpacing: -0.4 }}>
         VIBHA
       </Text>
-      <Text allowFontScaling={false} style={{ fontFamily: fonts.semibold, fontSize: 12, color: "rgba(255,255,255,0.8)", paddingBottom: 4 }}>
+      <Text allowFontScaling={false} style={{ fontFamily: fonts.pixel, fontSize: 11, letterSpacing: 0.66, textTransform: "uppercase", color: "rgba(255,255,255,0.85)", paddingBottom: 5 }}>
         School of Psychology
       </Text>
     </View>

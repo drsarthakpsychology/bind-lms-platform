@@ -11,7 +11,6 @@ import { useMaterial } from "@/api/queries";
 import { session } from "@/auth";
 import { Button, EmptyState, Loaded, RowsSkeleton, Screen, Skeleton, T } from "@/ds";
 import { config } from "@/lib/config";
-import { haptic } from "@/lib/haptics";
 import { OnceHint } from "@/lib/once";
 import { openLink } from "@/lib/open";
 import { fixed, layout, space, useTheme } from "@/theme";
@@ -140,7 +139,6 @@ function PdfReader({ m }: { m: Material }) {
             accessibilityRole="image"
             accessibilityLabel={`Page ${i + 1} of ${doc.pages}. Tap to ${zoom ? "fit the screen" : "zoom in"}`}
             onPress={() => {
-              haptic.select();
               setZoom((z) => !z);
             }}
             style={{ width: w, height: h, backgroundColor: c.paper, borderRadius: 6, borderWidth: 1, borderColor: c.hairline, overflow: "hidden" }}

@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { medicinePaletteEntries, modulePaletteEntries, searchPalette, startEntries, STATIC_ENTRIES, scoreEntry, visibleEntries } from "./palette";
+import { groupEntries, medicinePaletteEntries, mergeResults, modulePaletteEntries, searchPalette, serverEntries, startEntries, STATIC_ENTRIES, scoreEntry, visibleEntries } from "./palette";
 import { MODULES } from "@/lib/study";
 import { lectureOnlyAllowed } from "@/lib/auth/scope";
 import { MEDS } from "@/lib/meds";
@@ -131,5 +131,29 @@ describe("search keeps the top bar's promise: lectures, topics, medicines", () =
     const ids = visibleEntries(STATIC_ENTRIES, { flags: { learn: "unlocked" }, allowed: lectureOnlyAllowed }).map((e) => e.id);
     expect(ids).toEqual(expect.arrayContaining(["home", "lectures", "doubts"]));
     for (const id of ["practice", "medicines", "study", "wall", "daily", "leaderboard"]) expect(ids, id).not.toContain(id);
+  });
+});
+
+describe("typo tolerance and the server's rows", () => {
+  const open = visibleEntries([...STATIC_ENTRIES, ...modulePaletteEntries(MODULES), ...medicinePaletteEntries(MEDS)], { flags: { learn: "unlocked" } });
+
+  it("finds a medicine or tool spelt a letter or two off", () => {
+    expect(searchPalette(open, "lithum").some((h) => h.href === "/practice/medicines/lithium")).toBe(true);
+    expect(searchPalette(open, "detectve").some((h) => h.id === "detective")).toBe(true);
+  });
+
+  it("exact matches still come first", () => {
+    expect(searchPalette(open, "lithium")[0]!.href).toBe("/practice/medicines/lithium");
+  });
+
+  it("merges the server's rows once per page, in a fixed group order", () => {
+    const local = searchPalette(open, "lithium");
+    const server = serverEntries([
+      { id: "medicine:lithium", type: "medicine", title: "Lithium", meta: "Mood stabiliser", href: "/practice/medicines/lithium" },
+      { id: "lecture:l1", type: "lecture", title: "Lithium in practice", meta: "Lecture 4", href: "/courses/c/lessons/l1" },
+    ]);
+    const merged = mergeResults(local, server);
+    expect(merged.filter((e) => e.href === "/practice/medicines/lithium")).toHaveLength(1);
+    expect(groupEntries(merged)[0]!.group).toBe("Lectures");
   });
 });

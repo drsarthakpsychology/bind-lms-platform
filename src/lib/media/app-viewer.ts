@@ -19,7 +19,7 @@ import { deviceHash, type AppStreamTokenPayload } from "./app-stream-token";
  *    paused or ended, and the phone must still be the signed-in one. A
  *    paused student or a replaced phone stops within a minute.
  */
-export type AppViewer = { ok: true; profile: Pick<Profile, "id" | "role" | "scope"> } | { ok: false; status: 401 | 403; error: string };
+export type AppViewer = { ok: true; profile: Pick<Profile, "id" | "role" | "scope"> } | { ok: false; status: 401 | 403 | 503; error: string };
 
 const cache = new Map<string, { viewer: Pick<Profile, "id" | "role" | "scope">; until: number }>();
 
@@ -37,7 +37,9 @@ export async function checkAppStreamViewer(payload: AppStreamTokenPayload, devic
   const hit = cache.get(key);
   if (hit && hit.until > now) return { ok: true, profile: hit.viewer };
 
-  const loaded = await loadProfileRow(payload.uid);
+  // A database blip refuses this one request (the player asks again), never "not signed in".
+  const loaded = await loadProfileRow(payload.uid).catch(() => undefined);
+  if (loaded === undefined) return { ok: false, status: 503, error: "Try again in a moment." };
   if (!loaded) return { ok: false, status: 401, error: "Not signed in." };
   const { profile } = loaded;
   const problem = accountProblem(profile, now);

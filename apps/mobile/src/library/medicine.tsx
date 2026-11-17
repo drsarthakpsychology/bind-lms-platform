@@ -6,7 +6,6 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { ApiFailure } from "@/api/errors";
 import { Button, EmptyState, LoadError, Row, RowList, RowsSkeleton, Sheet, StillTrying, T } from "@/ds";
-import { haptic } from "@/lib/haptics";
 import { openTarget } from "@/nav/targets";
 import { fonts, layout, space, useTheme } from "@/theme";
 import { MedicineDiagrams } from "./med-diagrams";
@@ -16,7 +15,7 @@ import { ClassMark } from "./marks";
 import { searchMeds } from "./meds";
 import type { MedicinePage, MedSection } from "@/practise/contract";
 import { useReducedMotion } from "react-native-reanimated";
-import { Enter, Swap } from "@/motion";
+import { FromRow, Enter, Swap } from "@/motion";
 
 type View_ = "student" | "clinician";
 
@@ -64,7 +63,7 @@ export function MedicineScreen() {
   React.useEffect(() => {
     if (openedId) recentMedicines.add(openedId);
   }, [openedId]);
-  if (q.isError) {
+  if (q.isError && q.data === undefined) {
     const soon = q.error instanceof ApiFailure && q.error.code === "not_found";
     return <View style={{ flex: 1, padding: layout.gutter }}>{soon ? <EmptyState mood="soon" title="Not in the library yet" body="This medicine page arrives in the app soon." /> : <LoadError error={q.error} what="this medicine" onRetry={() => void q.refetch()} />}</View>;
   }
@@ -132,7 +131,6 @@ export function MedicinePageView({ page, jump }: { page: MedicinePage; jump?: st
                   accessibilityState={{ selected: k === dose }}
                   accessibilityLabel={`${o.label}: ${o.amount}`}
                   onPress={() => {
-                    haptic.select();
                     setDose(k);
                   }}
                   testID={`med-dose-${k}`}
@@ -233,7 +231,9 @@ export function MedicinePageView({ page, jump }: { page: MedicinePage; jump?: st
               {page.group} · {page.cls}
             </T>
           </View>
-          <T v="display">{page.name}</T>
+          <FromRow title={page.name}>
+            <T v="display">{page.name}</T>
+          </FromRow>
           {page.brands.length ? (
             <T v="small" tone="muted">
               Brands in India: {page.brands.join(", ")}
@@ -247,7 +247,6 @@ export function MedicinePageView({ page, jump }: { page: MedicinePage; jump?: st
                   accessibilityRole="radio"
                   accessibilityState={{ selected: view === v }}
                   onPress={() => {
-                    haptic.select();
                     setView(v);
                   }}
                   testID={`med-view-${v}`}

@@ -55,7 +55,7 @@ async function studentPaletteEntries(): Promise<PaletteEntry[]> {
         label: String(p.name ?? "").trim() || email.split("@")[0],
         hint: `${roll ?? "No roll no."} · ${email}`,
         href: `/admin/students/${p.id}`,
-        group: "Admin" as const,
+        group: "Students" as const,
         keywords: [email, roll ?? "", mobile ?? "", "student"].filter(Boolean).map((k) => k.toLowerCase()),
       };
     });

@@ -41,6 +41,23 @@ export function jwtSubject(token: string): string | null {
   }
 }
 
+/**
+ * What a refusal from Supabase Auth means for the app. Only a real refusal
+ * (a bad or revoked token) is "unauthenticated", which signs the phone out.
+ * Auth being slow, down or busy is not the student's fault: it answers
+ * server_error or rate_limited, so the app keeps the sign-in and tries again.
+ * (Every Auth hiccup used to sign students out.)
+ */
+export function authFailureCode(error: { name?: string; status?: number; message?: string } | null | undefined): "token_expired" | "unauthenticated" | "server_error" | "rate_limited" {
+  if (!error) return "unauthenticated";
+  const status = typeof error.status === "number" ? error.status : 0;
+  const name = typeof error.name === "string" ? error.name : "";
+  if (status === 429) return "rate_limited";
+  if (name === "AuthRetryableFetchError" || name === "AuthUnknownError" || status >= 500) return "server_error";
+  if (/expired/i.test(error.message ?? "")) return "token_expired";
+  return "unauthenticated";
+}
+
 /** Access has ended (students only; alumni keep read access for good). Same rule as getSession. */
 export function isExpired(expiresAt: string | null | undefined, role: string | undefined, now: number): boolean {
   if (!expiresAt) return false;

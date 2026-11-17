@@ -137,7 +137,6 @@ export function FlowWidget({ d }: { d: FlowData }) {
             <G
               key={n.id}
               onPress={() => {
-                haptic.select();
                 setOn(active ? null : n.id);
               }}
             >
@@ -189,7 +188,6 @@ export function LayersWidget({ d }: { d: LayersData }) {
             <G
               key={i}
               onPress={() => {
-                haptic.select();
                 setOn(active ? null : i);
               }}
             >
@@ -372,7 +370,6 @@ export function FigureWidget({ d }: { d: FigureData }) {
               current={on === l.id}
               chevron={false}
               onPress={() => {
-                haptic.select();
                 setOn(l.id);
                 if (d.quiz) setShown((s) => new Set(s).add(l.id));
               }}

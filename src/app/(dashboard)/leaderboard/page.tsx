@@ -1,4 +1,8 @@
 import type { Metadata } from "next";
+import { isAdminLike } from "@/lib/auth/guards";
+import { AdminBoard } from "@/components/standing/admin-board";
+import { loadAdminBoard } from "@/lib/standing/admin-board-data";
+import { parseAdminQuery } from "@/lib/standing/admin-board";
 import Link from "next/link";
 import { Fragment } from "react";
 import { ArrowDown, ArrowRight, ArrowUp, Crown, Lock, MoreVertical, ShieldAlert, ShoppingBag, Swords, Trophy, Users } from "lucide-react";
@@ -24,9 +28,11 @@ export const dynamic = "force-dynamic";
  * (real names), platform board (alias), private percentile and the monthly
  * batch war. No public list of the bottom places.
  */
-export default async function LeaguePage() {
+export default async function LeaguePage({ searchParams }: { searchParams: Promise<Record<string, string | string[] | undefined>> }) {
   const session = await getSession();
   if (session.status !== "ok") return leaveWithoutSession(session);
+  // Admins see every student in the cohort (zero scores too), not the student view.
+  if (isAdminLike(session.profile)) return <AdminBoard board="league" data={await loadAdminBoard("league", parseAdminQuery(await searchParams))} />;
   const data = await loadMyLeague(session.profile.id);
   const relegates = data.tier > 1;
   if (await uiV2Role(session.profile.role)) return <LeaderboardV2 data={data} />;

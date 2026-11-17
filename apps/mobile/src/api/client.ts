@@ -17,7 +17,7 @@ import { ApiFailure } from "./errors";
 
 export type Method = "GET" | "POST" | "PUT" | "PATCH" | "DELETE";
 export type RawRequest = { method: Method; path: string; headers: Record<string, string>; body?: unknown };
-export type RawResponse = { status: number; json: unknown; /** The answer's ETag header, when it has one (GETs). */ etag?: string | null };
+export type RawResponse = { status: number; json: unknown; /** The answer's ETag header, when it has one (GETs). */ etag?: string | null; /** The server's clock (the Date header), to correct a phone whose clock is wrong. */ date?: string | null };
 export type Transport = (req: RawRequest) => Promise<RawResponse>;
 
 export type TokenSource = {
@@ -29,35 +29,49 @@ export type TokenSource = {
 /** Codes that end or pause the session; the session store listens for them. */
 export type SessionEvent = { code: Extract<ApiErrorCode, "device_replaced" | "account_expired" | "account_blocked" | "upgrade_required" | "unauthenticated">; message: string; details: Record<string, unknown> };
 
-/** How long one call may take. React Native's fetch has no time limit of its own, so a stalled
+/** How long the server may take to start answering. React Native's fetch has no time limit of its own, so a stalled
  * mobile connection left a screen on its skeleton for ever. */
 export const CALL_TIMEOUT_MS = 30_000;
+/**
+ * Once the answer has started, how long its body may take to arrive. A big answer (the
+ * medicine library, a long section) on a slow but working connection used to run out of the
+ * same 30 seconds and fail every time, retries included.
+ */
+export const BODY_TIMEOUT_MS = 60_000;
 
-export function makeFetchTransport(f: typeof fetch = (...a) => fetch(...a), timeoutMs = CALL_TIMEOUT_MS): Transport {
+const SLOW_LINE = "The connection is too slow right now. Check your internet and try again.";
+
+export function makeFetchTransport(f: typeof fetch = (...a) => fetch(...a), timeoutMs = CALL_TIMEOUT_MS, bodyMs = BODY_TIMEOUT_MS): Transport {
   return async (req) => {
     const ctrl = typeof AbortController === "function" ? new AbortController() : null;
-    const timer = ctrl ? setTimeout(() => ctrl.abort(), timeoutMs) : null;
+    let timer = ctrl ? setTimeout(() => ctrl.abort(), timeoutMs) : null;
     try {
       let res: Response;
       try {
         res = await f(config.apiUrl + req.path, { method: req.method, headers: req.headers, body: req.body === undefined ? undefined : JSON.stringify(req.body), signal: ctrl?.signal });
       } catch {
-        throw new ApiFailure("network", ctrl?.signal.aborted ? "The connection is too slow right now. Check your internet and try again." : "No internet. Check your connection and try again.");
+        // `timeout` lets the online check tell "too slow" from "no internet".
+        throw ctrl?.signal.aborted ? new ApiFailure("network", SLOW_LINE, 0, { timeout: true }) : new ApiFailure("network", "No internet. Check your connection and try again.");
       }
+      // The server has answered: the body gets its own, longer, time.
+      if (timer) clearTimeout(timer);
+      timer = ctrl ? setTimeout(() => ctrl.abort(), bodyMs) : null;
       let json: unknown = null;
       try {
-        json = await res.json();
+        json = res.status === 304 ? null : await res.json();
       } catch {
-        if (ctrl?.signal.aborted) throw new ApiFailure("network", "The connection is too slow right now. Check your internet and try again.");
+        if (ctrl?.signal.aborted) throw new ApiFailure("network", SLOW_LINE, 0, { timeout: true });
         json = null;
       }
       let etag: string | null = null;
+      let date: string | null = null;
       try {
         etag = res.headers?.get?.("ETag") ?? null;
+        date = res.headers?.get?.("Date") ?? null;
       } catch {
         etag = null;
       }
-      return { status: res.status, json, etag };
+      return { status: res.status, json, etag, date };
     } finally {
       if (timer) clearTimeout(timer);
     }
@@ -86,6 +100,21 @@ export const HELD_MAX = 200;
 
 export function createClient(deps: { transport: Transport; tokens: TokenSource; onSessionEvent?: (e: SessionEvent) => void; version?: string; platform?: string }) {
   let refreshing: Promise<AuthTokens> | null = null;
+  /**
+   * How far the phone's clock is from the server's (server minus phone, ms), from the Date
+   * header of each answer. A phone set hours ahead thought every new token had already run
+   * out, so every call renewed the sign-in first; the renewals hit the limit and screens
+   * showed "Could not load". Only large gaps count (the header has one-second steps).
+   */
+  let skew = 0;
+  const serverNow = () => Date.now() + skew;
+  const noteDate = (d: string | null | undefined) => {
+    if (!d) return;
+    const t = Date.parse(d);
+    if (!Number.isFinite(t)) return;
+    const gap = t - Date.now();
+    skew = Math.abs(gap) > 60_000 ? gap : 0;
+  };
   /**
    * The last answer of each GET address with its ETag (docs/app/API_CONTRACT.md
    * section 1). The next GET of that address sends If-None-Match; an unchanged
@@ -136,6 +165,7 @@ export function createClient(deps: { transport: Transport; tokens: TokenSource; 
     const mine = method === "GET" ? held.get(full) : undefined;
     if (mine) headers["If-None-Match"] = mine.etag;
     let res = await deps.transport({ method, path: full, headers, body: opts.body });
+    noteDate(res.date);
     if (res.status === 304) {
       // Unchanged: the copy we hold is the answer.
       if (mine) {
@@ -199,8 +229,17 @@ export function createClient(deps: { transport: Transport; tokens: TokenSource; 
     try {
       let tokens = auth ? deps.tokens.get() : null;
       if (auth && !tokens) throw new ApiFailure("unauthenticated", "Sign in again.", 401);
-      // Refresh a little early so a request does not fail just to learn the token ran out.
-      if (tokens && Date.parse(tokens.expiresAt) - Date.now() < 30_000) tokens = await refresh();
+      // Refresh a little early so a request does not fail just to learn the token ran out
+      // (by the server's clock). When that early renewal cannot get through, the token may
+      // still be good for a few seconds: try with it rather than fail at once.
+      if (tokens && Date.parse(tokens.expiresAt) - serverNow() < 30_000) {
+        try {
+          tokens = await refresh();
+        } catch (e) {
+          const stillGood = Date.parse(tokens.expiresAt) - serverNow() > 0;
+          if (!(stillGood && e instanceof ApiFailure && (e.code === "network" || e.code === "server_error" || e.code === "rate_limited"))) throw e;
+        }
+      }
       try {
         return await send<T>(method, path, opts, tokens?.accessToken ?? null);
       } catch (e) {
@@ -225,6 +264,8 @@ export function createClient(deps: { transport: Transport; tokens: TokenSource; 
     del: <T,>(path: string, opts?: Omit<CallOptions, "body">) => call<T>("DELETE", path, opts),
     /** Drop every held answer (sign-out: the next account never gets this one's copies). */
     forgetHeld: () => held.clear(),
+    /** The server's time now, as best the client knows it (ms). */
+    serverNow,
   };
 }
 

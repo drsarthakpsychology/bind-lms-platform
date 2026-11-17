@@ -1,7 +1,9 @@
 import { focusManager } from "@tanstack/react-query";
 import { AppState, Platform, type AppStateStatus } from "react-native";
 
+import { setForeground } from "./online";
 import { outbox } from "./outbox";
+import { resumeWrites } from "./queued";
 
 /**
  * What the app does when it comes back to the front, and once it is open.
@@ -14,7 +16,12 @@ export function onAppState(status: AppStateStatus, signedIn: boolean): void {
   if (Platform.OS === "web") return;
   const active = status === "active";
   focusManager.setFocused(active);
-  if (active && signedIn) void outbox.flush().catch(() => undefined);
+  // No server checks while the app is away; one at once on return if it was offline.
+  setForeground(active);
+  if (active && signedIn) {
+    void outbox.flush().catch(() => undefined);
+    void resumeWrites();
+  }
 }
 
 /** Call once from the root layout. Returns the unsubscribe. */
@@ -26,4 +33,10 @@ export function installAppLifecycle(signedIn: () => boolean): () => void {
 /** The app is open for a signed-in account: send what is waiting. */
 export function onOpened(): void {
   void outbox.flush().catch(() => undefined);
+  void resumeWrites();
+}
+
+/** The phone's cache copy has been read back (PersistQueryClientProvider onSuccess): send the writes kept in it. */
+export function onRestored(): void {
+  void resumeWrites();
 }

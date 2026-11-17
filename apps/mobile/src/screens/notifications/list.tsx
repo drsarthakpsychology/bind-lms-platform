@@ -1,16 +1,18 @@
 import { useQueryClient } from "@tanstack/react-query";
-import { Stack, router } from "expo-router";
+import { Stack } from "expo-router";
 import * as React from "react";
 import { Platform } from "react-native";
 
 import type { NotificationList, NotificationRow, ReadAllResult } from "@/api/contract";
 import { notificationListView } from "@/api/adapt-learn";
+import { ApiFailure } from "@/api/errors";
+import { go } from "@/api/prefetch";
+import { queueWrite } from "@/api/queued";
 import { keys, useNotifications } from "@/api/queries";
 import { api } from "@/auth";
 import { Button, EmptyState, Loaded, Row, RowList, Screen, Section } from "@/ds";
 import { MoreButton, useMorePages } from "@/ds/more";
 import { toast } from "@/ds/toast";
-import { haptic } from "@/lib/haptics";
 
 /** "Today 12:40", "Yesterday", "12 Nov". */
 export function when(iso: string | null | undefined, now = Date.now()): string {
@@ -51,7 +53,7 @@ export function NotificationRows({ items }: { items: NotificationRow[] }) {
   return (
     <RowList>
       {items.map((n) => (
-        <Row key={n.id} testID={`notification-${n.id}`} unread={!n.readAt} title={n.title} meta={n.body} trailing={when(n.createdAt)} chevron={false} onPress={() => router.push(`/notification/${encodeURIComponent(n.id)}`)} accessibilityLabel={`${n.readAt ? "" : "Unread. "}${n.title}. ${n.body}`} />
+        <Row key={n.id} testID={`notification-${n.id}`} unread={!n.readAt} title={n.title} meta={n.body} trailing={when(n.createdAt)} chevron={false} onPress={() => go(`/notification/${encodeURIComponent(n.id)}`)} accessibilityLabel={`${n.readAt ? "" : "Unread. "}${n.title}. ${n.body}`} />
       ))}
     </RowList>
   );
@@ -77,10 +79,16 @@ export function NotificationsScreen() {
     setBusy(true);
     try {
       await api.post<ReadAllResult>("/notifications/read-all");
-      haptic.select();
       await Promise.all([qc.invalidateQueries({ queryKey: keys.notifications }), qc.invalidateQueries({ queryKey: keys.me })]);
-    } catch {
-      toast.show("Could not mark them read. Try again.");
+    } catch (e) {
+      if (e instanceof ApiFailure && e.code === "network") {
+        // Offline: mark them read here now, and tell the server when the internet is back.
+        const at = new Date().toISOString();
+        qc.setQueryData<NotificationList>(keys.notifications, (l) => (l ? { ...l, unread: 0, items: l.items.map((n) => (n.readAt ? n : { ...n, readAt: at })) } : l));
+        void queueWrite({ method: "POST", path: "/notifications/read-all", scope: "read-all" })
+          .then(() => Promise.all([qc.invalidateQueries({ queryKey: keys.notifications }), qc.invalidateQueries({ queryKey: keys.me })]))
+          .catch(() => undefined);
+      } else toast.show("Could not mark them read. Try again.");
     } finally {
       setBusy(false);
     }

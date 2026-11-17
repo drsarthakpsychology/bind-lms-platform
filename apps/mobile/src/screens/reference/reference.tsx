@@ -10,6 +10,7 @@ import { Enter, Press, Reveal } from "@/motion";
 import { ReadingSize } from "@/lib/reading";
 import { Rich } from "@/study/rich";
 import { layout, space, type as scale, useTheme } from "@/theme";
+import { go } from "@/api/prefetch";
 
 /**
  * Quick reference: the website's A to Z of disorders, medicines and terms
@@ -106,7 +107,7 @@ export function ReferenceScreen() {
             return (
               <RowList still>
                 {rows.slice(0, 60).map((r) => (
-                  <Row key={r.slug} testID={`ref-${r.slug}`} title={r.label} meta={`${KIND_WORD[r.kind]} · ${r.summary}`} onPress={() => router.push(`/reference/${encodeURIComponent(r.slug)}`)} />
+                  <Row key={r.slug} testID={`ref-${r.slug}`} title={r.label} meta={`${KIND_WORD[r.kind]} · ${r.summary}`} onPress={() => go(`/reference/${encodeURIComponent(r.slug)}`)} />
                 ))}
               </RowList>
             );
@@ -134,7 +135,7 @@ function AToZ({ rows, kind }: { rows: RefIndexItem[]; kind: string }) {
         <Section key={g.letter} title={g.letter} quiet>
           <RowList>
             {g.items.map((r) => (
-              <Row key={r.slug} testID={`ref-${r.slug}`} title={r.label} meta={kind === "all" ? `${KIND_WORD[r.kind]} · ${r.summary}` : r.summary} onPress={() => router.push(`/reference/${encodeURIComponent(r.slug)}`)} />
+              <Row key={r.slug} testID={`ref-${r.slug}`} title={r.label} meta={kind === "all" ? `${KIND_WORD[r.kind]} · ${r.summary}` : r.summary} onPress={() => go(`/reference/${encodeURIComponent(r.slug)}`)} />
             ))}
           </RowList>
         </Section>
@@ -349,7 +350,7 @@ export function TermSheet({ word, onClose }: { word: string | null; onClose: () 
   };
   return (
     <Sheet open={word !== null} onClose={onClose} title={hit?.label ?? word ?? ""} testID="term-sheet">
-      {index.isError || entry.isError ? (
+      {(index.isError && index.data === undefined) || (entry.isError && entry.data === undefined) ? (
         <LoadError what="this word" error={index.isError ? index.error : entry.error} onRetry={() => void (index.isError ? index.refetch() : entry.refetch())} />
       ) : !index.data || (hit && !entry.data) ? (
         <View style={{ gap: space[3] }}>

@@ -2,7 +2,7 @@ import { useQueryClient } from "@tanstack/react-query";
 import { go } from "@/api/prefetch";
 import { openLink } from "@/lib/open";
 import { router } from "expo-router";
-import { Award, Bell, BellRing, CalendarClock, BookOpen, CircleHelp, ClipboardList, FileCheck, Gauge, GraduationCap, LogOut, MessageCircleQuestion, Radar, Settings, Users } from "lucide-react-native";
+import { Award, Bell, BellRing, CalendarClock, BookOpen, CircleHelp, ClipboardList, FileCheck, Gauge, GraduationCap, LogOut, MessageCircleQuestion, Radar, Settings, Trophy, Users } from "lucide-react-native";
 import * as React from "react";
 import { View } from "react-native";
 
@@ -11,7 +11,6 @@ import { session } from "@/auth";
 import { Row, RowList, RowsSkeleton, Screen, Section, SwitchRow, T } from "@/ds";
 import { toast } from "@/ds/toast";
 import { config } from "@/lib/config";
-import { haptic } from "@/lib/haptics";
 import { space, useTheme } from "@/theme";
 import { adminCalls, useAdminDoubts, usePushPrefs, useSubmissions } from "../api";
 import type { AdminPushPrefs } from "../extra";
@@ -55,6 +54,7 @@ export function AdminMoreScreen() {
           <Row title="Cohorts" icon={<Users {...icon} />} onPress={() => router.push("/admin/cohorts")} testID="more-cohorts" />
           <Row title="People" meta="Enquiries and who to contact next" icon={<Radar {...icon} />} onPress={() => router.push("/admin/people")} testID="more-people" />
           <Row title="Forms" meta="Answers, and email who answered" icon={<ClipboardList {...icon} />} onPress={() => router.push("/admin/forms")} testID="more-forms" />
+          <Row title="Leaderboards" meta="Every student, by cohort" icon={<Trophy {...icon} />} onPress={() => router.push("/game/leaderboard")} testID="more-leaderboards" />
         </RowList>
       </Section>
       <Section title="Clinic">
@@ -100,7 +100,6 @@ export function AdminAlertsScreen() {
   const q = usePushPrefs();
   const qc = useQueryClient();
   const set = async (p: Partial<AdminPushPrefs>) => {
-    haptic.select();
     qc.setQueryData<AdminPushPrefs>(["admin", "push-prefs", ""], (prev) => (prev ? { ...prev, ...p } : prev));
     try {
       await adminCalls.pushPrefs(p);

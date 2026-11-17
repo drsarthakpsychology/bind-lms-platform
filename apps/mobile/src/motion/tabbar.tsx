@@ -1,17 +1,22 @@
 import type { BottomTabBarProps, BottomTabNavigationOptions } from "expo-router/build/layouts/Tabs";
 import * as React from "react";
 import { Animated as RNAnimated, Easing as RNEasing, Pressable, View, type LayoutChangeEvent } from "react-native";
-import Animated, { interpolate, useAnimatedReaction, useAnimatedStyle, useReducedMotion, useSharedValue, withSequence, withSpring, withTiming } from "react-native-reanimated";
+import Animated, { interpolate, interpolateColor, useAnimatedReaction, useAnimatedStyle, useReducedMotion, useSharedValue, withSequence, withSpring, withTiming } from "react-native-reanimated";
 import { scheduleOnRN } from "react-native-worklets";
 
 import { reportTabBar } from "@/ds/bottom-chrome";
 import { T } from "@/ds/text";
-import { haptic } from "@/lib/haptics";
 import { KeyboardState, useKeyboard } from "@/lib/keyboard";
-import { fonts, useTheme } from "@/theme";
+import { fonts, useTheme, type Area } from "@/theme";
 import { dur, shift, springs } from "./tokens";
 
 export type TabIcon = React.ComponentType<{ size?: number; color?: string; strokeWidth?: number }>;
+
+/** Counts tab switches, so a screen can tell "its tab came to the front" from "the page above it closed". */
+let switches = 0;
+export function tabSwitchCount(): number {
+  return switches;
+}
 
 const PILL_W = 60;
 const PILL_H = 32;
@@ -42,7 +47,7 @@ function useKeyboardBar(barH: number) {
   return { up, style };
 }
 
-function TabItem({ label, Icon, focused, onPress, onLongPress, a11y }: { label: string; Icon?: TabIcon; focused: boolean; onPress: () => void; onLongPress: () => void; a11y?: string }) {
+function TabItem({ label, Icon, focused, onPress, onLongPress, a11y, area }: { label: string; Icon?: TabIcon; focused: boolean; onPress: () => void; onLongPress: () => void; a11y?: string; area?: Area }) {
   const c = useTheme();
   const reduce = useReducedMotion();
   const pop = useSharedValue(1);
@@ -59,7 +64,8 @@ function TabItem({ label, Icon, focused, onPress, onLongPress, a11y }: { label: 
   const iconStyle = useAnimatedStyle(() => ({
     transform: [{ scale: pop.value * (1 - press.value * 0.08) }, { translateY: -press.value }],
   }));
-  const color = focused ? c.link : c.muted;
+  // The current tab wears its area's deep colour (4.5:1 or more on the wash pill, both themes).
+  const color = focused ? (area ? c.areas[area].deep : c.link) : c.muted;
   return (
     <Pressable
       accessibilityRole="tab"
@@ -96,13 +102,13 @@ function TabItem({ label, Icon, focused, onPress, onLongPress, a11y }: { label: 
  * The bottom tab bar with motion: a soft pill sits behind the current tab's
  * icon and springs to the tab you press, stretching a little as it travels
  * (it reads as one thing moving, never two indicators crossing). The icon
- * pops on arrival, presses sink slightly, and each press gives a selection
- * haptic. With Reduce Motion the pill jumps and nothing pops.
+ * pops on arrival and presses sink slightly. No haptic: switching tabs is
+ * navigation. With Reduce Motion the pill jumps and nothing pops.
  *
  * Pass as `tabBar` to Expo Router's <Tabs>; give each screen
  * `options.tabBarIcon` as a plain icon component via `tabIcons`.
  */
-export function MotionTabBar({ state, descriptors, emitter, navigateToTab, insets, icons }: BottomTabBarProps & { icons: Record<string, TabIcon> }) {
+export function MotionTabBar({ state, descriptors, emitter, navigateToTab, insets, icons, areas }: BottomTabBarProps & { icons: Record<string, TabIcon>; /** Each tab's area: the pill washes into that colour as it travels. */ areas?: Record<string, Area | undefined> }) {
   const c = useTheme();
   const reduce = useReducedMotion();
   const kb = useKeyboardBar(BAR_H + insets.bottom);
@@ -117,6 +123,16 @@ export function MotionTabBar({ state, descriptors, emitter, navigateToTab, inset
   React.useEffect(() => {
     x.set(reduce ? state.index : withSpring(state.index, springs.snappy));
   }, [state.index, reduce, x]);
+  React.useEffect(() => {
+    switches += 1;
+  }, [state.index]);
+  // One colour per tab (its area's wash, or the plain pill), blended on the UI thread as the pill travels.
+  const washes = state.routes.map((r) => {
+    const a = areas?.[r.name];
+    return a ? c.areas[a].wash : c.pill;
+  });
+  const steps = washes.map((_, i) => i);
+  const tinted = washes.length > 1 && washes.some((w) => w !== c.pill);
   const pill = useAnimatedStyle(() => {
     const w = itemW.value;
     const target = Math.round(x.value);
@@ -124,11 +140,11 @@ export function MotionTabBar({ state, descriptors, emitter, navigateToTab, inset
     const travel = Math.min(1, Math.abs(x.value - target) * 2);
     return {
       opacity: w > 0 ? 1 : 0,
+      backgroundColor: tinted ? interpolateColor(x.value, steps, washes) : washes[0] ?? "transparent",
       transform: [{ translateX: x.value * w + (w - PILL_W) / 2 }, { scaleX: 1 + travel * 0.6 }, { scaleY: 1 - travel * 0.12 }],
     };
   });
   if (kb.up) return null;
-  const pillColor = c.pill;
   return (
     <Animated.View onLayout={(e: LayoutChangeEvent) => reportTabBar(Math.round(e.nativeEvent.layout.height))} style={[{ backgroundColor: c.card, borderTopWidth: 1, borderColor: c.hairline, paddingBottom: insets.bottom, paddingLeft: insets.left, paddingRight: insets.right }, kb.style]}>
       <View accessibilityRole="tablist" style={{ flexDirection: "row", height: BAR_H }} onLayout={(e: LayoutChangeEvent) => itemW.set(e.nativeEvent.layout.width / n)}>
@@ -143,7 +159,6 @@ export function MotionTabBar({ state, descriptors, emitter, navigateToTab, inset
               height: PILL_H,
               marginTop: (BAR_H - PILL_H - 18) / 2,
               borderRadius: PILL_H / 2,
-              backgroundColor: pillColor,
             },
             pill,
           ]}
@@ -159,8 +174,8 @@ export function MotionTabBar({ state, descriptors, emitter, navigateToTab, inset
               Icon={icons[route.name]}
               focused={focused}
               a11y={options?.tabBarAccessibilityLabel}
+              area={areas?.[route.name]}
               onPress={() => {
-                haptic.select();
                 const event = emitter.emit({
                   type: "tabPress",
                   target: route.key,
@@ -179,10 +194,11 @@ export function MotionTabBar({ state, descriptors, emitter, navigateToTab, inset
 
 /**
  * Tab screens switch with Material's "fade through": the old tab fades out in
- * the first half, the new one fades in and rises 8px in the second half, so
- * two pages of text never show at once (220ms). Off with Reduce Motion.
+ * the first third, the new one fades in and lifts 8px into place after it, so
+ * two pages of text never show at once (220ms, native driver). Low-end
+ * Android: the fade alone (no lift). Off with Reduce Motion.
  */
-export function tabSceneOptions(reduce: boolean): Pick<BottomTabNavigationOptions, "animation" | "sceneStyleInterpolator" | "transitionSpec"> {
+export function tabSceneOptions(reduce: boolean, low = false): Pick<BottomTabNavigationOptions, "animation" | "sceneStyleInterpolator" | "transitionSpec"> {
   if (reduce) return { animation: "none" };
   return {
     animation: "shift",
@@ -191,10 +207,12 @@ export function tabSceneOptions(reduce: boolean): Pick<BottomTabNavigationOption
       config: { duration: dur.tabOut + dur.tabIn, easing: RNEasing.bezier(0.2, 0, 0, 1) },
     },
     sceneStyleInterpolator: ({ current }: { current: { progress: RNAnimated.Value } }) => ({
-      sceneStyle: {
-        opacity: current.progress.interpolate({ inputRange: [-1, -0.5, 0, 0.5, 1], outputRange: [0, 0, 1, 0, 0] }),
-        transform: [{ translateY: current.progress.interpolate({ inputRange: [-1, 0, 1], outputRange: [shift.tab, 0, shift.tab] }) }],
-      },
+      sceneStyle: low
+        ? { opacity: current.progress.interpolate({ inputRange: [-1, -0.5, 0, 0.5, 1], outputRange: [0, 0, 1, 0, 0] }) }
+        : {
+            opacity: current.progress.interpolate({ inputRange: [-1, -0.5, 0, 0.5, 1], outputRange: [0, 0, 1, 0, 0] }),
+            transform: [{ translateY: current.progress.interpolate({ inputRange: [-1, 0, 1], outputRange: [shift.tab, 0, shift.tab] }) }],
+          },
     }),
   };
 }

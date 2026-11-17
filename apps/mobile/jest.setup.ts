@@ -89,7 +89,9 @@ jest.mock("expo-haptics", () => ({
   selectionAsync: jest.fn(async () => undefined),
   impactAsync: jest.fn(async () => undefined),
   notificationAsync: jest.fn(async () => undefined),
-  ImpactFeedbackStyle: { Light: "light", Medium: "medium" },
+  performAndroidHapticsAsync: jest.fn(async () => undefined),
+  ImpactFeedbackStyle: { Light: "light", Medium: "medium", Heavy: "heavy", Soft: "soft", Rigid: "rigid" },
+  AndroidHaptics: { Confirm: "confirm", Reject: "reject", Clock_Tick: "clock-tick", Context_Click: "context-click", Virtual_Key: "virtual-key", Long_Press: "long-press" },
   NotificationFeedbackType: { Success: "success", Warning: "warning", Error: "error" },
 }));
 
@@ -187,6 +189,10 @@ jest.mock("expo-camera", () => {
   const g = globalThis as unknown as { __camera?: { onBarcodeScanned?: (r: { data: string }) => void } };
   return {
     useCameraPermissions: jest.fn(() => [{ granted: true, canAskAgain: true, status: "granted" }, jest.fn(async () => ({ granted: true }))]),
+    Camera: {
+      getCameraPermissionsAsync: jest.fn(async () => ({ granted: true, canAskAgain: true, status: "granted" })),
+      requestCameraPermissionsAsync: jest.fn(async () => ({ granted: true, canAskAgain: true, status: "granted" })),
+    },
     CameraView: (props: { onBarcodeScanned?: (r: { data: string }) => void }) => {
       g.__camera = { onBarcodeScanned: props.onBarcodeScanned };
       return React.createElement(View, { testID: "camera-view" });

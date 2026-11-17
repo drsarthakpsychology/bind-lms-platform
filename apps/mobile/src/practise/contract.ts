@@ -235,7 +235,26 @@ export type Leaderboard = {
   me: { rank: number | null; total: number };
   /** The website's own answer for this board (league tiers, zones, the shop and so on). */
   raw: Record<string, unknown>;
+  /** Only for admins: the board is every student, one page of it. `title` on each row is the cohort names. */
+  admin?: LeaderboardAdmin;
 };
+
+/** The admin board's page and its query (send back as ?q=&cohort=&sort=&dir=&page=). */
+export type LeaderboardAdmin = {
+  page: number;
+  pages: number;
+  size: number;
+  /** Students in the chosen cohort (or all). */
+  total: number;
+  /** Students left after the search. */
+  matched: number;
+  q: string;
+  cohort: string | null;
+  sort: "rank" | "name" | "cohort";
+  dir: "asc" | "desc";
+  cohorts: { id: string; name: string }[];
+};
+
 
 // ---------------------------------------------------------------- Exam Prep
 

@@ -6,7 +6,6 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { onSignedOut } from "@/auth";
 import { T } from "@/ds";
-import { haptic } from "@/lib/haptics";
 import { createStore } from "@/lib/store";
 import { layout, space, useTheme } from "@/theme";
 
@@ -19,13 +18,11 @@ export const viewAsStore = createStore<{ on: boolean }>({ on: false });
 onSignedOut(() => viewAsStore.set({ on: false }));
 
 export function startViewAs(): void {
-  haptic.select();
   viewAsStore.set({ on: true });
   router.replace("/home");
 }
 
 export function stopViewAs(): void {
-  haptic.select();
   viewAsStore.set({ on: false });
   router.replace("/admin/home");
 }

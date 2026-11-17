@@ -31,7 +31,8 @@ the student wins something.
    drawing, 3 bursts, 1 confetti of 36 pieces. Decorative loops stop after
    two cycles; only a real loader and the skeleton shimmer loop.
 11. **Low-end Android** (`useMotionTier().low`): half the particles, no
-   page-behind scale on sheets, no blur. Everything else stays.
+   page-behind scale on sheets, no blur, screen transitions and arrivals
+   become plain fades. Everything else stays.
 12. **Every animated SVG path goes through `safePath` / `finite`** from
    `src/lib/svg-safe.ts`, so a NaN in data can never crash the native view.
 
@@ -45,6 +46,7 @@ the student wins something.
 | `springs.smooth` | 260 / 34 / 0.8 | content and list rows arriving |
 | `springs.sheet` | 380 / 40 / 0.9 | bottom sheets |
 | `springs.digit` | 280 / 18 / 0.3 | rolling digits |
+| `springs.morph` | 420 / 40 / 0.8 | a row title gliding into its page title |
 | `springs.dot`, `wave`, `art`, `room`, `dropBack`, `toggle` | see tokens.ts | PIN dots and success wave, gate art, Welcome room, drag spring back, meters and switches |
 | `dur.*` | micro 100, press 120, state 180, enter 260, exit 180, fill 700, burst 560, confetti 1600, shimmer 1300 | timings |
 | `dur.skeletonDelay` / `skeletonMin` | 120 / 380 | skeleton waits 120ms, then stays at least 380ms |
@@ -196,16 +198,58 @@ Worked out once per launch: low-end is Android with 2GB RAM or less, Android
 ### Tab bar and screen transitions
 - `src/nav/tabs.tsx` uses `MotionTabBar`: a soft pill springs behind the current
   icon and stretches a little as it travels, the icon pops on arrival, presses
-  sink. Tab screens "fade through" (`tabSceneOptions`): the old one fades out
-  in the first 70ms, the new one fades in with an 8px rise after it, so two
-  pages of text never show at once. The other tabs render in the background
-  1.2s after the first one settles, so a first visit never shows an empty
-  frame. The bar slides down behind the keyboard frame by frame
-  (`useAnimatedKeyboard`, UI thread) and comes back as the keyboard closes.
-- `app/_layout.tsx` spreads `stackMotion(reduce)` into the stack: native
-  slide-from-right with parallax on both platforms, edge swipe anywhere,
-  `modalMotion` (slide up) for Ask a doubt and New message, `fadeMotion` for
-  Search. All become a short fade with Reduce Motion.
+  sink. On the student tabs (`TabDef.area`) the pill washes from one area's
+  colour into the next as it travels (`interpolateColor` on the UI thread) and
+  the current icon and label wear the area's deep colour. Tab screens "fade
+  through" (`tabSceneOptions(reduce, low)`, native driver): the old one fades
+  out in the first 70ms, the new one fades in with an 8px lift after it, so
+  two pages of text never show at once; low-end Android fades only. The tab
+  screen's area glow then washes down from the top (`AreaGlow` in `Screen`,
+  420ms, fade only on low-end) each time the tab comes to the front. The other
+  tabs render in the background 1.2s after the first one settles, so a first
+  visit never shows an empty frame. The bar slides down behind the keyboard
+  frame by frame (`useAnimatedKeyboard`, UI thread) and comes back as the
+  keyboard closes.
+- Every stack (root, admin, visitor) takes its transitions from
+  `useStackMotion()` (`src/motion/stack.ts`), one kind per route:
+
+  | Kind | Routes | Phone | Low-end Android | Reduce Motion |
+  |---|---|---|---|---|
+  | `push` | every step deeper (default) | slide from the right over a parallaxed, dimmed page, 320ms; back is the exact reverse; edge swipe anywhere | fade 200ms | fade 150ms |
+  | `sheet` | Ask a doubt, New message | iPhone: system page sheet (page behind steps back, swipe down). Android: slides up, 300ms | fade 200ms | fade 150ms |
+  | `overlay` | Search, attendance code, the signed-out group | fade 180ms | fade 200ms | fade 150ms |
+  | `play` | games, cases, tests, checkpoints, map practice, prep sets, mocks | fades up from the bottom, 260ms, no edge swipe | fade 200ms | fade 150ms |
+
+  The account groups (student, lecture, admin) switch with no animation: the
+  PIN gate lifting away is the only move.
+- **Predictive back (Android 14+)**: on (`predictiveBackGestureEnabled` in
+  app.config.ts). At the root of the app the system shows its back-to-home
+  preview as the finger moves. Inside the app, react-native-screens 4.30 has
+  no in-app predictive preview, so the gesture plays the push's reverse on
+  release. Keep `BackHandler` listeners scoped to a focused screen
+  (`useHardwareBack`), or the system preview at the root is lost.
+
+### Screen arrival choreography
+`Screen` plays one short sequence on arrival, on the UI thread, alongside the
+native slide: the header (title and lead) fades in and lifts 10px (220ms,
+`presets.head`), then the body follows 70ms behind with an 8px lift (240ms,
+`presets.body`), so the screen has landed by about 310ms. Low-end Android:
+fades only (180ms, the body 40ms behind). Reduce Motion: nothing moves. No
+need to add your own whole-screen fade; `Enter` and `RowList` inside the body
+still stagger their own rows.
+
+### List to page continuity
+```tsx
+<FromRow title={page.name}><T v="display">{page.name}</T></FromRow>
+const entering = useFromRow(title, presets.head()); // for your own view
+```
+A pressed `Row` notes its title and where it sat on screen
+(`continuity.mark`, kept one second). A page whose title matches lets its
+title glide from the row's height into its own place (at most 160px, from
+0.94 and a light opacity, `springs.morph`) while the page slides in, so the
+row reads as having opened into the page. Used by `Screen`'s title, the
+medicine page, a notification, a doubt and an admin's student page. Low-end
+Android: the plain header fade. Reduce Motion: still.
 
 ### Sheets
 `Sheet` in `@/ds` springs up from its own measured height (`springs.sheet`, no
@@ -213,7 +257,7 @@ time spent off screen), and the scrim and the sheet move from one value, so
 they always agree. Drag runs on the UI thread (gesture-handler Pan): on the
 grabber always, on the whole sheet once its content is scrolled to the top. It
 follows the finger 1:1 (rubber band upward), closes past 25% of its height or
-on a flick over 0.4px/ms, else springs back. A selection haptic on open. With
+on a flick over 0.4px/ms, else springs back. No haptic on open or close. With
 the keyboard up it sits on top of it (`useKeyboardPad`).
 
 ### Toast
@@ -225,8 +269,8 @@ the keyboard, so it never covers a footer button.
 
 ### Pull to refresh
 `Screen` handles it: pass `onRefresh` and `refreshing` as before. The spinner
-only shows for the person's own pull (not for quiet background refreshes), stays
-at least 500ms, and the pull gives a selection haptic. `useRefresh(...refetch)`
+only shows for the person's own pull (not for quiet background refreshes) and
+stays at least 500ms. No haptic (a pull is scrolling). `useRefresh(...refetch)`
 gives the same for screens that do not use `Screen`.
 
 ## Performance
@@ -249,3 +293,17 @@ their still versions in tests. `__tests__/motion-kit.test.tsx` covers the
 kit's helpers (path lengths, tier scaling, celebration order, toast
 placement) and renders each part. Layout animation builders chain freely in the
 mock (`jest.setup.ts`).
+
+## Haptics
+
+`haptic.select | tap | success | warn` from `@/lib/haptics`, nothing else. Every
+call goes through the Vibration choice in Me > Settings (Off, Light, Medium,
+Strong; Light by default). Light is soft ticks and gentle bumps; on Android,
+Light and Medium use the phone's haptic engine and only Strong uses the motor.
+A pick right after another haptic (under 80ms) is dropped.
+
+Use them for meaningful moments only: an answer right or wrong, saved, scan
+done, long-press, start recording, a vote, a failed or destructive action, and
+picking a choice (answer option, switch, stepper). Never for opening a screen,
+switching tabs, filter chips, opening or closing a sheet, expanding a row,
+paging, or scrolling. `Press` has no haptic unless you pass `feel`.

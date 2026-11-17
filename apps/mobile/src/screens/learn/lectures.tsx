@@ -1,4 +1,3 @@
-import { router } from "expo-router";
 import { ArrowRight } from "lucide-react-native";
 import * as React from "react";
 import { View } from "react-native";
@@ -12,6 +11,7 @@ import { openTarget } from "@/nav/targets";
 import { TabTop } from "@/nav/top";
 import { layout, space, useTheme } from "@/theme";
 import { WeekList } from "./course";
+import { go } from "@/api/prefetch";
 
 /** "Lecture 5 · Week 3" */
 export function nextLine(n: NonNullable<CourseSummary["next"]>): string {
@@ -63,7 +63,7 @@ export function LecturesBody({ courses }: { courses: CourseSummary[] }) {
                       <CourseLine pct={pct} title={x.title} />
                     </View>
                   }
-                  onPress={() => router.push(`/course/${encodeURIComponent(x.id)}`)}
+                  onPress={() => go(`/course/${encodeURIComponent(x.id)}`)}
                 />
               );
             })}

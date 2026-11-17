@@ -39,7 +39,6 @@ function RecallCards({ cards }: { cards: RecallCard[] }) {
           accessibilityRole="button"
           accessibilityState={{ expanded: open.has(i) }}
           onPress={() => {
-            haptic.select();
             setOpen((s) => new Set(s).add(i));
           }}
           style={{ borderRadius: layout.radius, backgroundColor: c.tint, padding: space[4], gap: space[2], minHeight: layout.row }}
