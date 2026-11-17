@@ -133,7 +133,7 @@ describe("test mode switch", () => {
 
 describe("test mode bar", () => {
   it("shows on both sides and says where a tap goes", async () => {
-    const { TestModeBar } = await import("@/admin/test-mode");
+    const { TestModeBar } = require("@/admin/test-mode") as typeof import("@/admin/test-mode");
     const a = await render(<TestModeBar side="admin" />);
     expect(a.getByLabelText("Test mode. Open as test student")).toBeTruthy();
     a.unmount();
