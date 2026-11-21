@@ -1,4 +1,5 @@
 {
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
   "permissions": {
     "allow": [
       "Read",
@@ -8,87 +9,40 @@
       "Write",
       "NotebookEdit",
       "TodoWrite",
-      "Task",
+      "Agent",
       "Bash",
       "WebSearch",
-      "WebFetch",
-      "Bash(git push:*)",
-      "Bash(vercel:*)",
-      "Bash(npx vercel:*)",
-      "Bash(supabase db push:*)",
-      "Bash(psql:*)",
-      "Edit(supabase/**)",
-      "Edit(src/lib/auth/**)",
-      "Edit(src/lib/media/**)",
-      "Edit(src/proxy.ts)",
-      "Edit(.github/workflows/**)"
+      "WebFetch"
     ],
-    "defaultMode": "bypassPermissions"
-  },
-  "hooks": {
-    "PreToolUse": [
-      {
-        "matcher": "WebSearch|WebFetch",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "jq -n '{hookSpecificOutput:{hookEventName:\"PreToolUse\",permissionDecision:\"allow\",permissionDecisionReason:\"read-only network tool auto-approved\"}}'"
-          }
-        ]
-      }
+    "ask": [
+      "Bash(git push *)",
+      "Bash(vercel *)",
+      "Bash(npx vercel *)",
+      "Bash(supabase db push *)",
+      "Bash(npx supabase db push *)",
+      "Bash(psql *)",
+      "Bash(eas build *)",
+      "Bash(npx eas build *)"
     ],
-    "Stop": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/keep-going.sh",
-            "timeout": 30
-          }
-        ]
-      }
-    ],
-    "SubagentStop": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/keep-going.sh",
-            "timeout": 30
-          }
-        ]
-      }
-    ],
-    "PreCompact": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/survive-compact.sh",
-            "timeout": 30
-          }
-        ]
-      }
-    ],
-    "SessionStart": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "cat \"$CLAUDE_PROJECT_DIR\"/.claude/DIRECTIVE.md 2>/dev/null; echo; echo \"--- FIRST UNCHECKED TASK ---\"; grep -m1 -E \"^[[:space:]]*-[[:space:]]*\\\\[ \\\\]\" \"$CLAUDE_PROJECT_DIR\"/QUEUE.md 2>/dev/null",
-            "timeout": 15
-          }
-        ]
-      }
+    "deny": [
+      "Read(.env)",
+      "Read(.env.*)",
+      "Read(!.env.example)",
+      "Edit(.env)",
+      "Edit(.env.*)",
+      "Edit(!.env.example)",
+      "Read(**/*.pem)",
+      "Read(~/.ssh/**)",
+      "Read(~/.aws/**)",
+      "Read(scripts/roster/*.csv)",
+      "Bash(next build *)",
+      "Bash(npx next build *)",
+      "Bash(npm run build *)"
     ]
   },
   "enabledPlugins": {
     "42crunch-api-security-testing@claude-plugins-official": true,
     "skill-creator@claude-plugins-official": true,
     "data-engineering@claude-plugins-official": true
-  },
-  "env": {
-    "CLAUDE_CODE_STOP_HOOK_BLOCK_CAP": "500",
-    "CLAUDE_MAX_CONTINUES": "500"
   }
 }
