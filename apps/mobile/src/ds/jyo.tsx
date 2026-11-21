@@ -107,3 +107,31 @@ export function Jyo({ pose = "hello", size = 72, still, label, testID = "jyo" }:
     </View>
   );
 }
+
+/**
+ * Jyo's flame alone, for a wait: it flickers while `on` (pull to refresh, a
+ * long save) and rests when the wait is over. `Screen` shows it by itself
+ * while a pull to refresh runs. Transform only, UI thread; a still flame with
+ * Reduce Motion. Not the companion's face: it may sit where Jyo may not.
+ */
+export function Flame({ on = true, size = 28, testID = "flame" }: { on?: boolean; size?: number; testID?: string }) {
+  const c = useTheme();
+  const reduce = useReducedMotion();
+  const v = useSharedValue(0);
+  React.useEffect(() => {
+    if (!on || reduce) {
+      v.set(withTiming(0, { duration: 160 }));
+      return;
+    }
+    v.set(withRepeat(withSequence(withTiming(1, { duration: 260, easing: Easing.inOut(Easing.sin) }), withTiming(-1, { duration: 420, easing: Easing.inOut(Easing.sin) }), withTiming(0, { duration: 220, easing: Easing.inOut(Easing.sin) })), -1, false));
+  }, [on, reduce, v]);
+  const style = useAnimatedStyle(() => ({ transform: [{ rotate: `${v.value * 7}deg` }, { scaleX: 1 - Math.abs(v.value) * 0.08 }, { scaleY: 1 + Math.abs(v.value) * 0.12 }] }));
+  return (
+    <Animated.View testID={testID} accessible accessibilityRole="progressbar" accessibilityLabel="Refreshing" style={[{ width: size, height: size, transformOrigin: "bottom" }, style]}>
+      <Svg width={size} height={size} viewBox="38 16 44 52">
+        <Path d="M60 66 C43 58 46 40 60 20 C74 40 77 58 60 66 Z" fill="#cdf24b" stroke={c.dark ? "#e6ff8a" : "#8eae14"} strokeWidth={1.6} strokeLinejoin="round" />
+        <Path d="M60 62 C53 57 55 48 60 40 C65 48 67 57 60 62 Z" fill="#fff" opacity={0.8} />
+      </Svg>
+    </Animated.View>
+  );
+}

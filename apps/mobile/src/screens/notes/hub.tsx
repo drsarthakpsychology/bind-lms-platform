@@ -7,7 +7,7 @@ import { useNotes, useTerms } from "@/api/learn";
 import { go } from "@/api/prefetch";
 import { Label, Row, RowList, Screen, Stone, T } from "@/ds";
 import { useMedicineList } from "@/library/list";
-import { Enter, growFrom, useCardRef, Press } from "@/motion";
+import { Enter, Press } from "@/motion";
 import { TabTop } from "@/nav/top";
 import { fonts, space, useTheme, type Area } from "@/theme";
 
@@ -74,10 +74,9 @@ export function NotesHubScreen() {
 /** One shelf of the library: a stone in its area's quiet wash, an icon pebble, the name in the title face and a count. */
 function Shelf({ title, meta, icon: Icon, href, area, wide, testID }: { title: string; meta: string; icon: React.ComponentType<{ size?: number; color?: string; strokeWidth?: number }>; href: string; area: Area; wide?: boolean; testID: string }) {
   const c = useTheme();
-  const ref = useCardRef();
   const a = c.areas[area];
   return (
-    <Stone ref={ref} testID={testID} accessibilityLabel={`${title}. ${meta}`} onPress={() => growFrom(ref, () => router.push(href))} pad={space[4]} style={{ flex: 1 }}>
+    <Stone testID={testID} accessibilityLabel={`${title}. ${meta}`} grow={() => router.push(href)} pad={space[4]} style={{ flex: 1 }}>
       <View style={{ minHeight: wide ? 0 : 132, flexDirection: wide ? "row" : "column", alignItems: wide ? "center" : "flex-start", justifyContent: "space-between", gap: space[3] }}>
         <View style={{ width: 48, height: 48, alignItems: "center", justifyContent: "center", backgroundColor: a.wash, borderTopLeftRadius: 22, borderTopRightRadius: 26, borderBottomRightRadius: 23, borderBottomLeftRadius: 25 }}>
           <Icon size={22} color={a.deep} strokeWidth={1.9} />

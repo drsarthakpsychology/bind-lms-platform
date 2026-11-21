@@ -13,20 +13,24 @@ type Feel = "select" | "tap" | "none";
  * inside it. Scale runs on the UI thread with a spring, so it stays smooth
  * while the JS thread is busy. With Reduce Motion it dims instead of scaling.
  */
-export function usePressScale(to = 0.97) {
+export function usePressScale(to = 0.97, /** Squish like something soft: wider and flatter while held, a small wobble on release. For pebbles and round buttons. */ squish = false) {
   const reduce = useReducedMotion();
   const p = useSharedValue(0);
-  const style = useAnimatedStyle(() => (reduce ? { opacity: 1 - p.value * 0.3 } : { transform: [{ scale: 1 - p.value * (1 - to) }] }));
+  const style = useAnimatedStyle(() => {
+    if (reduce) return { opacity: 1 - p.value * 0.3 };
+    if (squish) return { transform: [{ scaleX: 1 + p.value * (1 - to) * 0.5 }, { scaleY: 1 - p.value * (1 - to) * 1.4 }] };
+    return { transform: [{ scale: 1 - p.value * (1 - to) }] };
+  });
   const handlers = React.useMemo(
     () => ({
       onPressIn: () => {
         p.set(reduce ? withTiming(1, { duration: dur.micro }) : withSpring(1, springs.press));
       },
       onPressOut: () => {
-        p.set(reduce ? withTiming(0, { duration: dur.micro }) : withSpring(0, springs.press));
+        p.set(reduce ? withTiming(0, { duration: dur.micro }) : withSpring(0, squish ? springs.bouncy : springs.press));
       },
     }),
-    [p, reduce],
+    [p, reduce, squish],
   );
   return { style, handlers };
 }
@@ -41,6 +45,8 @@ export type PressProps = Omit<PressableProps, "style" | "children"> & {
   scale?: number;
   /** The haptic on press: none (default; plain navigation has none), "select" for picking a choice, "tap" for an action that commits. */
   feel?: Feel;
+  /** Soft squish instead of an even shrink (pebbles, round buttons). */
+  squish?: boolean;
 };
 
 /**
@@ -48,8 +54,8 @@ export type PressProps = Omit<PressableProps, "style" | "children"> & {
  * spring while held (so the screen feels like it is listening). No haptic
  * unless `feel` asks for one: opening things is not a haptic moment. Use it for cards, tiles, icon buttons and custom rows.
  */
-export function Press({ children, style, innerStyle, scale = 0.97, feel = "none", onPress, onPressIn, onPressOut, ...rest }: PressProps) {
-  const { style: anim, handlers } = usePressScale(scale);
+export function Press({ children, style, innerStyle, scale = 0.97, feel = "none", squish, onPress, onPressIn, onPressOut, ...rest }: PressProps) {
+  const { style: anim, handlers } = usePressScale(scale, squish);
   return (
     <Pressable
       {...rest}

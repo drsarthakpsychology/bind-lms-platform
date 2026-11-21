@@ -123,6 +123,18 @@ export const presets = {
         animations: { opacity: withTiming(1, { duration: dur.state, easing: curves.out }), transform: [{ translateY: withSpring(0, move) }, { scale: withSpring(1, move) }] },
       };
     }),
+  /**
+   * A layer rising over the field: it comes up 36px on the soft layer spring
+   * and settles (a hair of overshoot), fading in over the first 140ms.
+   * `low`: a fade only.
+   */
+  layer: (low = false) =>
+    cached(`layer${low}`, () => () => {
+      "worklet";
+      return low
+        ? { initialValues: { opacity: 0 }, animations: { opacity: withTiming(1, { duration: dur.state, easing: curves.out }) } }
+        : { initialValues: { opacity: 0.6, transform: [{ translateY: 36 }] }, animations: { opacity: withTiming(1, { duration: 140, easing: curves.out }), transform: [{ translateY: withSpring(0, springs.layer) }] } };
+    }),
   /** A toast rising in from the bottom edge: 12px and a fade, 180ms. */
   toast: () =>
     cached("toast", () => () => {

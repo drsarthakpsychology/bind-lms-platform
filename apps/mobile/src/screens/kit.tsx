@@ -2,7 +2,8 @@ import { CalendarOff, NotebookText, Pill, QrCode, X } from "lucide-react-native"
 import * as React from "react";
 import { View } from "react-native";
 
-import { Button, ChoicePebbles, FieldCard, FieldProgress, Flood, HintBubble, HintText, HoldButton, Jyo, Label, OptionList, Pebbles, QuietEmpty, ResultSheet, RoundButton, Row, RowList, Screen, Stone, T, type JyoPose } from "@/ds";
+import { Button, ChoicePebbles, EmptyState, ProgressLine, toast, FieldCard, FieldProgress, Flood, HintBubble, HintText, HoldButton, Jyo, Label, OptionList, Pebbles, QuietEmpty, ResultSheet, RoundButton, Row, RowList, Screen, Stone, T, type JyoPose } from "@/ds";
+import { ProgressRing } from "@/motion";
 import { space, useTheme } from "@/theme";
 
 const OPTIONS = ["Major depressive episode", "Persistent depressive disorder", "Adjustment disorder", "Generalised anxiety disorder"];
@@ -81,6 +82,19 @@ export function KitScreen({ start }: { start?: string }) {
             <Row title="A second row" trailing="12" onPress={noop} />
           </RowList>
         </View>
+        <View style={{ gap: space[3] }}>
+          <Label>Progress ring, progress bar, toast</Label>
+          <Stone>
+            <View style={{ flexDirection: "row", alignItems: "center", gap: space[4] }}>
+              <ProgressRing pct={28} size={58} stroke={5} color={c.dark ? c.lime : c.brand} track={c.hairline} />
+              <View style={{ flex: 1, gap: space[2] }}>
+                <T v="bodyStrong">Module 2 of 8</T>
+                <ProgressLine value={40} label="40 percent done" />
+              </View>
+            </View>
+          </Stone>
+          <Button kind="quiet" label="Show a toast" onPress={() => toast.show("Saved")} testID="kit-toast" />
+        </View>
         <View style={{ gap: space[2] }}>
           <Label>Pebbles</Label>
           <Pebbles
@@ -122,6 +136,7 @@ export function KitScreen({ start }: { start?: string }) {
               </View>
             ))}
           </View>
+          <EmptyState title="No doubts yet" body="EmptyState is the older, plain one. It still works everywhere." action={{ label: "Ask a doubt", onPress: noop }} />
           <QuietEmpty art={<Jyo pose="resting" size={56} still />} title="Nothing due today" body="An empty screen is one of the few places Jyo may sit." />
         </View>
       </Screen>

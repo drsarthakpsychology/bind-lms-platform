@@ -13,7 +13,7 @@ import { opdLine, sessionMeta, sessionTitle } from "@/clinic/logic";
 import type { QuestCard } from "@/api/contract";
 import { FieldCard, IconDot, Jyo, Label, LoadError, Pebbles, QuietEmpty, Row, RowList, Screen, Sheet, Skeleton, StillTrying, Stone, T } from "@/ds";
 import { haptic } from "@/lib/haptics";
-import { Enter, growFrom, useCardRef, PixelBurst, ProgressRing, RollingNumber, SkeletonIn, Stamp } from "@/motion";
+import { Enter, PixelBurst, ProgressRing, RollingNumber, SkeletonIn, Stamp } from "@/motion";
 import { openTarget } from "@/nav/targets";
 import { TabTop } from "@/nav/top";
 import { layout, space, useAccent, useTheme } from "@/theme";
@@ -24,9 +24,10 @@ import { layout, space, useAccent, useTheme } from "@/theme";
  * On the layer, top to bottom:
  *   1. Keep going: the one thing to pick up (it grows into the screen it opens)
  *   2. Quick: four pebbles (Scan, Medicines, Notes, Leave)
- *   3. Your day: the clinic's sessions for today
- *   4. Today: the goal ring and streak; the quests open in a sheet
- *   5. After that: what comes next
+ *   3. After that: what comes next
+ *   4. Your day: the clinic's sessions for today (src/clinic/today.tsx, not restyled yet)
+ *   5. Today: the goal ring and streak; the quests open in a sheet
+ * Jyo sits here only when the day is empty.
  */
 
 const UP_ICON = { lecture: Play, study: BookOpen, weak: Dumbbell, daily: Stethoscope } as const;
@@ -281,17 +282,16 @@ function NowCard() {
  */
 function KeepGoing({ data }: { data: HomeData }) {
   const c = useTheme();
-  const ref = useCardRef();
   const { step, allDone, progress, welcomeBack } = data;
   if (!allDone && !step) return null;
   const title = allDone ? "Nothing left to do today" : step?.title || "Carry on";
   const meta = allDone ? "Revise a weak topic or try a case." : [!welcomeBack && step?.kind === "lecture" ? "Start your first lecture" : step?.eyebrow, step?.meta].filter(Boolean).join(" · ");
   const pct = !allDone && progress ? progress.pct : allDone ? 100 : 0;
-  const open = () => growFrom(ref, () => (step && !allDone ? openTarget(step.target) : router.push("/practise")));
+  const open = () => (step && !allDone ? openTarget(step.target) : router.push("/practise"));
   return (
     <View style={{ gap: space[2] }}>
       <Label>{allDone ? "All caught up" : "Keep going"}</Label>
-      <Stone ref={ref} testID="home-continue" accessibilityLabel={`${allDone ? "Practise" : step?.cta || "Open"}: ${title}${meta ? `. ${meta}` : ""}`} onPress={open}>
+      <Stone testID="home-continue" accessibilityLabel={`${allDone ? "Practise" : step?.cta || "Open"}: ${title}${meta ? `. ${meta}` : ""}`} grow={open}>
         <View style={{ flexDirection: "row", alignItems: "center", gap: space[4] }}>
           <ProgressRing pct={pct} size={58} stroke={5} delay={200} color={c.dark ? c.lime : c.brand} track={c.hairline} label={progress?.label}>
             <View style={{ width: 36, height: 36, borderRadius: 18, backgroundColor: c.lime, alignItems: "center", justifyContent: "center" }}>{allDone ? <ArrowRight size={18} color={c.onLime} strokeWidth={2.6} /> : <Play size={15} color={c.onLime} fill={c.onLime} />}</View>
@@ -334,17 +334,8 @@ export function HomeView({ data }: { data: HomeData }) {
           />
         </View>
       </Enter>
-      <TodayBlock />
-      {goal ? (
-        <Enter i={3}>
-          <View style={{ gap: space[2] }}>
-            <Label>Today</Label>
-            <Today goal={goal} quests={data.quests} fresh={!welcomeBack && goal.points <= 0} />
-          </View>
-        </Enter>
-      ) : null}
       {next ? (
-        <Enter i={4}>
+        <Enter i={2}>
           <View style={{ gap: space[2] }}>
             <Label>After that</Label>
             <Stone quiet testID="up-next-0" accessibilityLabel={`${next.title}${next.meta ? `. ${next.meta}` : ""}`} onPress={() => openTarget(next.target)}>
@@ -369,6 +360,15 @@ export function HomeView({ data }: { data: HomeData }) {
                 })}
               </RowList>
             ) : null}
+          </View>
+        </Enter>
+      ) : null}
+      <TodayBlock />
+      {goal ? (
+        <Enter i={4}>
+          <View style={{ gap: space[2] }}>
+            <Label>Today</Label>
+            <Today goal={goal} quests={data.quests} fresh={!welcomeBack && goal.points <= 0} />
           </View>
         </Enter>
       ) : null}

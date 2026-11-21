@@ -1,12 +1,13 @@
 import { Check, Lightbulb } from "lucide-react-native";
 import * as React from "react";
 import { AccessibilityInfo, Platform, Pressable, View, type StyleProp, type ViewStyle } from "react-native";
-import Animated, { cancelAnimation, Easing, LinearTransition, useAnimatedStyle, useReducedMotion, useSharedValue, withDelay, withRepeat, withSequence, withTiming } from "react-native-reanimated";
+import Animated, { cancelAnimation, Easing, LinearTransition, useAnimatedStyle, useReducedMotion, useSharedValue, withDelay, withRepeat, withSequence, withSpring, withTiming } from "react-native-reanimated";
 import Svg, { Path } from "react-native-svg";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { scheduleOnRN } from "react-native-worklets";
 
 import { haptic } from "@/lib/haptics";
-import { curves, dur, Press, usePressScale, useMotionTier } from "@/motion";
+import { Burst, curves, dur, presets, Press, springs, useCardRef, useGrowCard, usePressScale, useMotionTier } from "@/motion";
 import { fonts, layout, space, useTheme, type Palette } from "@/theme";
 import { Button } from "./button";
 import { T } from "./text";
@@ -27,6 +28,38 @@ export function layerShadow(c: Palette): ViewStyle {
   if (Platform.OS === "web") return { boxShadow: c.dark ? "0 -12px 30px -12px rgba(0,0,10,0.7)" : "0 -12px 30px -12px rgba(5,10,40,0.45)" } as ViewStyle;
   if (Platform.OS === "android") return { elevation: 6, shadowColor: "#050a28" };
   return { shadowColor: "#050a28", shadowOpacity: 0.28, shadowRadius: 16, shadowOffset: { width: 0, height: -8 } };
+}
+
+/* ------------------------------------------------------- field and layer */
+
+/**
+ * The blue field, for a screen that lays itself out (a player, a scanner).
+ * Most screens use `Screen`, which already is a field with a layer on it.
+ * Holds the status-bar inset and white text; put a `Layer` after it.
+ */
+export function BlueField({ children, style, safeTop = true }: { children?: React.ReactNode; style?: StyleProp<ViewStyle>; safeTop?: boolean }) {
+  const c = useTheme();
+  const insets = useSafeAreaInsets();
+  return <View style={[{ backgroundColor: c.field, paddingTop: (safeTop ? insets.top : 0) + space[3], paddingHorizontal: layout.gutter, paddingBottom: space[5] + LAYER_OVERLAP, gap: space[3] }, style]}>{children}</View>;
+}
+
+/** how far a `Layer` climbs over the `BlueField` above it. */
+export const LAYER_OVERLAP = 28;
+
+/**
+ * The soft white layer that rises over the field: 30px top corners, one soft
+ * shadow, and it arrives by rising and settling on the layer spring (a fade on
+ * low-end Android, nothing with Reduce Motion). Put it right after a `BlueField`.
+ */
+export function Layer({ children, style, testID = "layer" }: { children?: React.ReactNode; style?: StyleProp<ViewStyle>; testID?: string }) {
+  const c = useTheme();
+  const reduce = useReducedMotion();
+  const { low } = useMotionTier();
+  return (
+    <Animated.View testID={testID} entering={reduce ? undefined : presets.layer(low)} style={[{ flex: 1, marginTop: -LAYER_OVERLAP, backgroundColor: c.bg, borderTopLeftRadius: layout.radiusLayer, borderTopRightRadius: layout.radiusLayer, paddingTop: space[5], paddingHorizontal: layout.gutter, gap: space[5], ...layerShadow(c) }, style]}>
+      {children}
+    </Animated.View>
+  );
 }
 
 /* ------------------------------------------------------------ on the field */
@@ -105,7 +138,7 @@ export function FieldProgress({ done, total, label }: { done: number; total: num
 export function RoundButton({ label, onPress, children, onField, testID }: { label: string; onPress: () => void; children: React.ReactNode; onField?: boolean; testID?: string }) {
   const c = useTheme();
   return (
-    <Press testID={testID} accessibilityRole="button" accessibilityLabel={label} onPress={onPress} hitSlop={6} scale={0.9} innerStyle={{ width: 40, height: 40, borderRadius: 20, backgroundColor: onField ? c.fieldTint : c.card, alignItems: "center", justifyContent: "center" }}>
+    <Press testID={testID} accessibilityRole="button" accessibilityLabel={label} onPress={onPress} hitSlop={6} scale={0.9} squish innerStyle={{ width: 40, height: 40, borderRadius: 20, backgroundColor: onField ? c.fieldTint : c.card, alignItems: "center", justifyContent: "center" }}>
       {children}
     </Press>
   );
@@ -125,10 +158,33 @@ export function Label({ children, action }: { children: string; /** A text link 
   );
 }
 
-/** A stone surface resting on the layer: 26px corners, no outline, no shadow. Pressable when `onPress` is given. `ref` is for `growFrom`. */
-export const Stone = React.forwardRef<React.ComponentRef<typeof View>, { children?: React.ReactNode; onPress?: () => void; accessibilityLabel?: string; /** An outline instead of a fill, for the quieter second thing. */ quiet?: boolean; pad?: number; style?: StyleProp<ViewStyle>; testID?: string }>(function Stone({ children, onPress, accessibilityLabel, quiet, pad = space[4], style, testID }, ref) {
+type StoneProps = {
+  children?: React.ReactNode;
+  onPress?: () => void;
+  /** Opens the next screen by growing into it (pass the `router.push`). The card settles back when you return. Use instead of `onPress`. */
+  grow?: () => void;
+  accessibilityLabel?: string;
+  /** An outline instead of a fill, for the quieter second thing. */
+  quiet?: boolean;
+  pad?: number;
+  style?: StyleProp<ViewStyle>;
+  testID?: string;
+};
+
+function stoneFace(c: Palette, quiet: boolean | undefined, pad: number): ViewStyle {
+  return { borderRadius: quiet ? 22 : layout.radiusLg, padding: pad, backgroundColor: quiet ? "transparent" : c.card, borderWidth: quiet ? 1.5 : 0, borderColor: c.card };
+}
+
+/** A stone surface resting on the layer: 26px corners, no outline, no shadow. Pressable with `onPress`, or `grow` when it opens a screen. */
+export const Stone = React.forwardRef<React.ComponentRef<typeof View>, StoneProps>(function Stone({ children, onPress, grow, accessibilityLabel, quiet, pad = space[4], style, testID }, ref) {
   const c = useTheme();
-  const face: ViewStyle = { borderRadius: quiet ? 22 : layout.radiusLg, padding: pad, backgroundColor: quiet ? "transparent" : c.card, borderWidth: quiet ? 1.5 : 0, borderColor: c.card };
+  const face = stoneFace(c, quiet, pad);
+  if (grow)
+    return (
+      <GrowStone open={grow} face={face} accessibilityLabel={accessibilityLabel} style={style} testID={testID}>
+        {children}
+      </GrowStone>
+    );
   if (!onPress)
     return (
       <View ref={ref} testID={testID} style={[face, style]}>
@@ -143,6 +199,18 @@ export const Stone = React.forwardRef<React.ComponentRef<typeof View>, { childre
     </View>
   );
 });
+
+function GrowStone({ children, open, face, accessibilityLabel, style, testID }: { children?: React.ReactNode; open: () => void; face: ViewStyle; accessibilityLabel?: string; style?: StyleProp<ViewStyle>; testID?: string }) {
+  const ref = useCardRef();
+  const { style: settle, press } = useGrowCard(ref, open);
+  return (
+    <Animated.View ref={ref} collapsable={false} style={[style, settle]}>
+      <Press testID={testID} accessibilityRole="button" accessibilityLabel={accessibilityLabel} onPress={press} scale={0.98} innerStyle={face}>
+        {children}
+      </Press>
+    </Animated.View>
+  );
+}
 
 /** Four hand-shaped corner sets, so no two pebbles in a row are the same. */
 const PEBBLE: ViewStyle[] = [
@@ -164,7 +232,7 @@ export function Pebbles({ items }: { items: Pebble[] }) {
   return (
     <View style={{ flexDirection: "row" }}>
       {items.slice(0, 4).map((it, i) => (
-        <Press key={it.label} testID={it.testID} accessibilityRole="button" accessibilityLabel={it.label} onPress={it.onPress} scale={0.94} style={{ flex: 1 }} innerStyle={{ alignItems: "center", gap: 6, paddingVertical: 2 }}>
+        <Press key={it.label} testID={it.testID} accessibilityRole="button" accessibilityLabel={it.label} onPress={it.onPress} scale={0.9} squish style={{ flex: 1 }} innerStyle={{ alignItems: "center", gap: 6, paddingVertical: 2 }}>
           <View style={[{ width: 60, height: 60, alignItems: "center", justifyContent: "center", backgroundColor: it.live ? c.lime : c.card }, pebbleShape(i)]}>
             <it.icon size={22} color={it.live ? c.onLime : c.ink} strokeWidth={1.9} />
           </View>
@@ -235,7 +303,7 @@ function OptionPill({ text, picked, checked, right, onPress, testID }: { text: s
 export function HintBubble({ open, onToggle }: { open: boolean; onToggle: () => void }) {
   const c = useTheme();
   return (
-    <Press testID="hint-button" accessibilityRole="button" accessibilityLabel={open ? "Hide the hint" : "Show a hint"} accessibilityState={{ expanded: open }} onPress={onToggle} hitSlop={4} scale={0.9} innerStyle={{ width: 44, height: 44, alignItems: "center", justifyContent: "center", backgroundColor: open ? c.lime : c.card, borderTopLeftRadius: 20, borderTopRightRadius: 23, borderBottomRightRadius: 24, borderBottomLeftRadius: 19 }}>
+    <Press testID="hint-button" accessibilityRole="button" accessibilityLabel={open ? "Hide the hint" : "Show a hint"} accessibilityState={{ expanded: open }} onPress={onToggle} hitSlop={4} scale={0.9} squish innerStyle={{ width: 44, height: 44, alignItems: "center", justifyContent: "center", backgroundColor: open ? c.lime : c.card, borderTopLeftRadius: 20, borderTopRightRadius: 23, borderBottomRightRadius: 24, borderBottomLeftRadius: 19 }}>
       <Lightbulb size={20} color={open ? c.onLime : c.ink} />
     </Press>
   );
@@ -290,25 +358,33 @@ export function QuietEmpty({ title, body, action, art, testID }: { title: string
  * the way it came. With Reduce Motion it appears in place. The haptic
  * (success or warn) fires once as it arrives.
  */
-export function ResultSheet({ open, right, title, why, action, testID = "result" }: { open: boolean; right: boolean; /** "Yes, that fits" or "Not quite". */ title: string; why?: string | null; action: { label: string; onPress: () => void }; testID?: string }) {
+export function ResultSheet({ open, right, win, title, why, action, testID = "result" }: { open: boolean; right: boolean; /** A real win (a set finished, a first right answer on a weak topic): sparks fly from the tick, once. Not for every right answer. */ win?: boolean; /** "Yes, that fits" or "Not quite". */ title: string; why?: string | null; action: { label: string; onPress: () => void }; testID?: string }) {
   const c = useTheme();
   const reduce = useReducedMotion();
   const v = useSharedValue(open ? 1 : 0);
   const [shown, setShown] = React.useState(open);
   if (open && !shown) setShown(true);
+  if (!open && shown && reduce) setShown(false);
   React.useEffect(() => {
     if (open) {
       if (right) haptic.success();
       else haptic.warn();
-      v.set(reduce ? 1 : withTiming(1, { duration: 420, easing: curves.sheet }));
+      // Rises and settles on the sheet spring.
+      v.set(reduce ? 1 : withSpring(1, springs.sheet));
     } else {
       v.set(reduce ? 0 : withTiming(0, { duration: 220, easing: curves.out }, (done) => {
         if (done) scheduleOnRN(setShown, false);
       }));
-      if (reduce) setShown(false);
     }
   }, [open, right, reduce, v]);
   const style = useAnimatedStyle(() => ({ transform: [{ translateY: `${(1 - v.value) * 105}%` }] }));
+  // The celebration: after the sheet has landed, once per opening.
+  const [fire, setFire] = React.useState(0);
+  React.useEffect(() => {
+    if (!open || !right || !win) return;
+    const id = setTimeout(() => setFire((n) => n + 1), 320);
+    return () => clearTimeout(id);
+  }, [open, right, win]);
   if (!shown) return null;
   return (
     <Animated.View testID={testID} accessibilityLiveRegion="polite" accessibilityViewIsModal style={[{ position: "absolute", left: 0, right: 0, bottom: 0, backgroundColor: c.card, borderTopLeftRadius: 28, borderTopRightRadius: 28, paddingTop: space[5], paddingHorizontal: layout.gutter, paddingBottom: space[5], gap: space[2], ...layerShadow(c) }, style]}>
@@ -316,6 +392,7 @@ export function ResultSheet({ open, right, title, why, action, testID = "result"
         {right ? (
           <View style={{ width: 26, height: 26, borderRadius: 13, backgroundColor: c.lime, alignItems: "center", justifyContent: "center" }}>
             <Check size={16} color={c.onLime} strokeWidth={3} />
+            {win ? <Burst fire={fire} reach={38} /> : null}
           </View>
         ) : null}
         <T v="h2">{title}</T>
@@ -404,7 +481,8 @@ export function ChoicePebbles<V extends string>({ options, value, onChange, labe
               accessibilityLabel={`${o.word}. ${o.sub}`}
               feel="select"
               onPress={() => onChange(o.id)}
-              scale={0.97}
+              scale={0.95}
+              squish
               style={{ flex: 1 }}
               innerStyle={[{ flex: 1, height, justifyContent: "flex-end", padding: space[4], overflow: "hidden", backgroundColor: o.tone === "lime" ? c.lime : c.dark ? "#2b3fae" : c.field }, i === 0 ? { borderTopLeftRadius: 44, borderTopRightRadius: 36, borderBottomRightRadius: 40, borderBottomLeftRadius: 32 } : { borderTopLeftRadius: 36, borderTopRightRadius: 44, borderBottomRightRadius: 32, borderBottomLeftRadius: 40 }]}
             >

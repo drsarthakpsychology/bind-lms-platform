@@ -10,8 +10,9 @@ import { FlowGap, presets, useFromRow, useGrowIn, useMotionTier, usePressScale }
 import { AreaProvider, fonts, layout, space, useAccent, useLightStatusBar, useTheme, type Area } from "@/theme";
 import { Button } from "./button";
 import { ProgressLine } from "./parts";
-import { useBottomChrome } from "./bottom-chrome";
+import { bottomChrome, useBottomChrome } from "./bottom-chrome";
 import { useKeyboardPad } from "./keyboard-pad";
+import { Flame } from "./jyo";
 import { layerShadow } from "./layers";
 import { T } from "./text";
 
@@ -159,7 +160,10 @@ export function Screen({ children, title, lead, top, footer, onRefresh, refreshi
   const [footH, setFootH] = React.useState(0);
   useBottomChrome(footer ? footH : 0, !!tab, kb);
   const side = bleed ? 0 : layout.gutter;
-  const padBottom = (footer || tab ? 0 : insets.bottom) + space[6];
+  // The tab bar floats over the layer: the page scrolls under it, and its last thing must clear it.
+  const barH = bottomChrome.use((s) => s.tabBar);
+  const bar = tab && !kb ? barH || 74 : 0;
+  const padBottom = (footer ? 0 : tab ? bar : insets.bottom) + (tab && !footer ? space[4] : space[6]);
   // Arrival choreography (UI thread layout animations): header, then body. Low-end Android: fades only.
   const head = reduce ? undefined : presets.head(tier.low);
   const bodyIn = reduce ? undefined : presets.body(tier.low);
@@ -200,13 +204,13 @@ export function Screen({ children, title, lead, top, footer, onRefresh, refreshi
   ) : null;
   // The layer: soft white, 30px top corners, one soft shadow onto the field.
   const layer = (
-    <View testID="layer" style={[{ flexGrow: 1, backgroundColor: c.bg }, onField ? { borderTopLeftRadius: layout.radiusLayer, borderTopRightRadius: layout.radiusLayer, ...layerShadow(c) } : null]}>
+    <Animated.View testID="layer" entering={onField && !reduce ? presets.layer(tier.low) : undefined} style={[{ flexGrow: 1, backgroundColor: c.bg }, onField ? { borderTopLeftRadius: layout.radiusLayer, borderTopRightRadius: layout.radiusLayer, ...layerShadow(c) } : null]}>
       <View style={[column, { paddingLeft: padL, paddingRight: padR, paddingTop: onField ? space[5] : space[5], paddingBottom: padBottom, gap }, contentStyle]}>
         <Animated.View entering={hasHead ? bodyIn : head} style={{ gap: flowGap }}>
           <FlowGap.Provider value={flowGap}>{children}</FlowGap.Provider>
         </Animated.View>
       </View>
-    </View>
+    </Animated.View>
   );
   return (
     <AreaProvider area={area}>
@@ -223,7 +227,8 @@ export function Screen({ children, title, lead, top, footer, onRefresh, refreshi
               contentInsetAdjustmentBehavior="automatic"
               showsVerticalScrollIndicator={false}
               contentContainerStyle={{ flexGrow: 1 }}
-              refreshControl={onRefresh ? <RefreshControl refreshing={spinning} onRefresh={pull} tintColor={onField ? c.onField : c.muted} colors={[c.brand]} progressBackgroundColor={c.raised} /> : undefined}
+              // On the field the wait is shown by Jyo's flame (below); the system spinner is tinted to match.
+              refreshControl={onRefresh ? <RefreshControl refreshing={spinning} onRefresh={pull} tintColor={onField ? "transparent" : c.muted} colors={[onField ? c.lime : c.brand]} progressBackgroundColor={onField ? c.field : c.raised} /> : undefined}
             >
               {headBlock}
               {layer}
@@ -235,8 +240,13 @@ export function Screen({ children, title, lead, top, footer, onRefresh, refreshi
             </View>
           )}
         </View>
+        {onField && spinning ? (
+          <Animated.View pointerEvents="none" entering={reduce ? undefined : presets.pop(0)} exiting={reduce ? undefined : presets.out()} style={{ position: "absolute", left: 0, right: 0, top: (safeTop || top ? insets.top : 0) + 10, alignItems: "center" }}>
+            <Flame size={30} testID="refresh-flame" />
+          </Animated.View>
+        ) : null}
         {footer ? (
-          <View onLayout={(e) => setFootH(Math.round(e.nativeEvent.layout.height))} style={{ backgroundColor: c.bg, paddingTop: space[3], paddingBottom: (tab || kb ? 0 : insets.bottom) + space[3], paddingLeft: Math.max(layout.gutter, insets.left), paddingRight: Math.max(layout.gutter, insets.right) }}>
+          <View onLayout={(e) => setFootH(Math.round(e.nativeEvent.layout.height))} style={{ backgroundColor: c.bg, paddingTop: space[3], paddingBottom: (kb ? 0 : tab ? bar : insets.bottom) + space[3], paddingLeft: Math.max(layout.gutter, insets.left), paddingRight: Math.max(layout.gutter, insets.right) }}>
             <View style={{ width: "100%", maxWidth: layout.readingWidth, alignSelf: "center", gap: space[2] }}>{footer}</View>
           </View>
         ) : null}

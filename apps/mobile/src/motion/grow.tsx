@@ -1,8 +1,9 @@
+import { useFocusEffect } from "expo-router";
 import * as React from "react";
 import { Dimensions, type StyleProp, type View, type ViewStyle } from "react-native";
 import Animated, { interpolate, useAnimatedStyle, useReducedMotion, useSharedValue, withTiming } from "react-native-reanimated";
 
-import { stackDur, type StackMotion } from "./stack";
+import type { StackMotion } from "./stack";
 import { useMotionTier } from "./tier";
 import { curves } from "./tokens";
 
@@ -19,8 +20,10 @@ import { curves } from "./tokens";
  *
  * The route must use `growOr(route.key, m.push)` for its stack animation (see
  * app/_layout.tsx), so the native slide does not fight the grow. Going back,
- * the screen fades out over the page it came from (the native stack cannot be
- * held while a swipe back is under way, so a true shrink is not attempted).
+ * the screen fades out over the page it came from and the card it came out of
+ * settles back into place (0.96 to 1), so the eye lands where it started. The
+ * native stack cannot be held while a swipe back is under way, so the page
+ * itself does not shrink frame by frame.
  *
  * Reduce Motion: a short fade, no growth. Low-end Android: the same.
  * A screen opened any other way (a row, a link, a notification) slides in from
@@ -37,6 +40,8 @@ export function useCardRef() {
 
 let mark: { rect: Rect; at: number } | null = null;
 const WINDOW = 600;
+/** How long a card takes to become the screen. */
+export const GROW_MS = 420;
 
 function pending(): Rect | null {
   return mark && Date.now() - mark.at < WINDOW ? mark.rect : null;
@@ -70,7 +75,8 @@ export function growOr(routeKey: string, normal: StackMotion, reduce = false): S
     if (decided.size > 60) decided.clear();
     decided.set(routeKey, !reduce && pending() !== null);
   }
-  return decided.get(routeKey) ? { animation: "fade", animationDuration: stackDur.fade, gestureEnabled: true } : normal;
+  // The fade lasts as long as the grow, so the page behind stays in view until the new one is full size.
+  return decided.get(routeKey) ? { animation: "fade", animationDuration: GROW_MS, gestureEnabled: true } : normal;
 }
 
 /** The animated style for the root of a screen that may have grown out of a card. Plain (no style) otherwise. */
@@ -86,7 +92,7 @@ export function useGrowIn(): StyleProp<ViewStyle> | null {
   const on = !!from && !reduce && !low;
   const p = useSharedValue(on ? 0 : 1);
   React.useEffect(() => {
-    if (on) p.set(withTiming(1, { duration: 440, easing: curves.sheet }));
+    if (on) p.set(withTiming(1, { duration: GROW_MS, easing: curves.sheet }));
   }, [on, p]);
   const win = Dimensions.get("window");
   const style = useAnimatedStyle(() => {
@@ -103,6 +109,32 @@ export function useGrowIn(): StyleProp<ViewStyle> | null {
     };
   });
   return on ? (style as unknown as StyleProp<ViewStyle>) : null;
+}
+
+/**
+ * Everything a card needs to grow into the next screen and settle when you
+ * come back: make a ref with `useCardRef()`, put it and `style` on an
+ * Animated.View around the card, and call `press` on tap. (`Stone grow={...}` does all of this.)
+ */
+export function useGrowCard(ref: React.RefObject<Measurable | null>, open: () => void) {
+  const reduce = useReducedMotion();
+  const v = useSharedValue(1);
+  const armed = React.useRef(false);
+  useFocusEffect(
+    React.useCallback(() => {
+      if (!armed.current) return;
+      armed.current = false;
+      if (reduce) return;
+      v.set(0.96);
+      v.set(withTiming(1, { duration: 320, easing: curves.out }));
+    }, [reduce, v]),
+  );
+  const style = useAnimatedStyle(() => ({ transform: [{ scale: v.value }] }));
+  const press = () => {
+    armed.current = true;
+    growFrom(ref, open);
+  };
+  return { style, press };
 }
 
 /** For a screen that does not use `Screen` from the kit: wrap its root in this. */
