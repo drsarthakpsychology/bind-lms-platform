@@ -6,6 +6,16 @@ tokens live in `src/theme/tokens.ts`. See every part in its real states at the
 route `/kit` (file `src/screens/kit.tsx`). The finished reference screen is
 Today (`src/screens/home/home.tsx`). Motion numbers are in `docs/MOTION.md`.
 
+**Who owns what.** The kit (`src/ds`), the theme (`src/theme`), the motion
+kit (`src/motion`), the tab bar and `app/_layout.tsx` have one owner (the
+foundation builder). Area builders do not edit them: if a part is missing or
+wrong, write it up as a "Kit wish" in your report. Kit names and props only
+grow; nothing is renamed or removed.
+
+**Scope.** Build only features that are live on the website. Uploading
+courses and lectures is not built in the app (the upload recipe is for
+student hand-ins and photos only).
+
 This phase is design only. Do not change the API client, server routes, the
 website or the database. Where a screen needs data the app does not have yet,
 see "Mock data" and "To connect" at the end.
@@ -33,7 +43,7 @@ outlines around cards, no gradients.
 | Raised | `c.raised` | `#ffffff` | `#2a2e3b` | A thing above stone: a sheet, a menu |
 | Lime | `c.lime` (same as `c.primary`), text `c.onLime` | `#cdf24b` | `#cdf24b` | The one live action, progress, the current tab |
 | Ink | `c.ink`, text on it `tone="onInk"` | `#12131a` | `#f2f3f7` | Text, the picked option, the result button |
-| Muted, faint | `c.muted`, `c.faint` | `#565864`, `#666874` | `#aeb2c0`, `#8f93a3` | Second and third level text |
+| Muted, faint | `c.muted`, `c.faint` | `#565864`, `#5e606c` | `#aeb2c0`, `#9ea2b2` | Second and third level text |
 | Wrong pick | `c.missBg` | `#ffd9c9` | `#5c2a1a` | A wrong answer. Warm, never red alarm |
 | Link | `c.link` | blue | soft blue | Text links only |
 | Danger | `c.danger`, `c.alertBg`, `c.alertFg` | | | Delete, sign out, real errors |
@@ -110,7 +120,7 @@ Import from `@/ds` and `@/motion`.
 | `RollingNumber` | Digits roll to the value | `<RollingNumber value={18} />` |
 | `Stat` | A number with its label | `<Stat value="86%" label="Attendance" />` |
 | `QuietEmpty` | Empty state on the layer; may hold Jyo | `<QuietEmpty title="Nothing due today" body="..." art={<Jyo pose="resting" size={56} />} />` |
-| `EmptyState`, `LoadError` | The older plain ones, still fine | `<LoadError what="your notes" onRetry={refetch} />` |
+| `EmptyState`, `LoadError` | The older ones (they show a sticker when "Funny reactions" is on). Keep `LoadError` for failed loads; use `QuietEmpty` for new empty screens | `<LoadError what="your notes" onRetry={refetch} />` |
 | `Loaded`, `Skeleton`, `LoadSwap` | Loading that becomes content | `<Loaded q={q} skeleton={<RowsSkeleton />}>{(d) => ...}</Loaded>` |
 | `Sheet` | Bottom sheet you can drag down | `<Sheet open={o} onClose={close} title="Filters">...</Sheet>` |
 | `toast` | One short line above the tab bar | `toast.show("Saved")` |

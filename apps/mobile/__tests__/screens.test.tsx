@@ -38,8 +38,8 @@ describe("Home", () => {
 
   it("greets a new student with their first lecture", async () => {
     await render(<HomeView data={{ ...fx.home("new"), quests: null }} />);
-    expect(screen.getByText("Start your first lecture")).toBeTruthy();
-    expect(screen.getByText(/Welcome to VIBHA/)).toBeTruthy();
+    // Today, Layers look: the first lecture is the Keep going card; the greeting sits on the field (TodayField), outside HomeView.
+    expect(screen.getByText(/Start your first lecture/)).toBeTruthy();
     expect(screen.queryByText(/0 days in a row/)).toBeNull();
     expect(screen.getByText("Your first points come from the first lecture")).toBeTruthy();
   });
@@ -57,8 +57,8 @@ describe("Home", () => {
 
   it("says when everything is done", async () => {
     await render(<HomeView data={{ ...fx.home("done"), quests: null }} />);
-    expect(screen.getByText("Nothing left to do today.")).toBeTruthy();
-    expect(screen.getByText("Practise")).toBeTruthy();
+    expect(screen.getByText("Nothing left to do today")).toBeTruthy();
+    expect(screen.getByLabelText(/^Practise: /)).toBeTruthy();
   });
 });
 

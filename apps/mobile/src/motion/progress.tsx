@@ -75,7 +75,7 @@ export function ProgressFill({ pct, height = 6, color, track, delay = 0 }: { pct
             height: "100%",
             width: "100%",
             borderRadius: height / 2,
-            backgroundColor: color ?? (c.dark ? c.primary : c.ink),
+            backgroundColor: color ?? (c.dark ? c.primary : c.brand),
           },
           bar,
         ]}

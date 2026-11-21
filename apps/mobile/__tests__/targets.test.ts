@@ -51,7 +51,7 @@ describe("server targets for Prep, medicines and the clinic open the exact scree
   it("medicines and the case library", () => {
     expect(practice("/tools/psychopharm/compare")).toBe("/medicine/compare");
     expect(practice("/tools/psychopharm/lithium")).toBe("/medicine/lithium");
-    expect(practice("/tools/psychopharm/learn")).toBe("/library");
+    expect(practice("/tools/psychopharm/learn")).toBe("/medicines");
     expect(practice("/practice/medicines/m1")).toBe("/medicine/m1");
     expect(practice("/practice/library")).toBe("/case/library");
     expect(practice("/practice/terms")).toBe("/case/say-it");
